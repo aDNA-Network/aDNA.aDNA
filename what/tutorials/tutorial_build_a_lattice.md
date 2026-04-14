@@ -1,0 +1,156 @@
+---
+type: tutorial
+created: 2026-04-14
+updated: 2026-04-14
+status: active
+level: advanced
+prerequisites: [concept_lattice_composition, concept_ontology, concept_fair_metadata]
+estimated_time: "30 minutes"
+dual_audience: true
+last_edited_by: agent_stanley
+tags: [tutorial, advanced, lattice, yaml, composition]
+---
+
+# Build a Lattice
+
+## What You'll Build
+
+A validated `.lattice.yaml` file that defines a workflow as a directed graph of nodes and edges. By the end, you'll have a composable, FAIR-annotated lattice ready for execution or federation.
+
+## Prerequisites
+
+- [[what/concepts/concept_lattice_composition|Lattice Composition]] — types, nodes, edges, composition patterns
+- [[what/concepts/concept_ontology|Ontology]] — the entity types that serve as lattice building blocks
+- [[what/concepts/concept_fair_metadata|FAIR Metadata]] — the metadata envelope every lattice needs
+
+## Steps
+
+### Step 1: Define the Workflow
+
+Sketch your workflow as nodes and data flow. Example — a data analysis pipeline:
+
+```
+Collect Data → Clean Data → Analyze → Visualize → Report
+```
+
+Each box becomes a node. Each arrow becomes an edge.
+
+### Step 2: Choose the Lattice Type
+
+| If your workflow... | Choose | Execution Mode |
+|---------------------|--------|---------------|
+| Processes data through stages | `pipeline` | `sequential` |
+| Makes decisions and loops | `agent` | `hybrid` |
+| Retrieves and reasons over knowledge | `context_graph` | varies |
+| Orchestrates multiple sub-processes | `workflow` | `hybrid` |
+
+Our data analysis pipeline is a `pipeline` with `sequential` execution.
+
+### Step 3: Write the YAML
+
+Create `my_analysis.lattice.yaml`:
+
+```yaml
+lattice:
+  name: data_analysis
+  version: "1.0.0"
+  lattice_type: pipeline
+  description: "End-to-end data analysis from collection to report"
+
+  execution:
+    mode: sequential
+    runtime: local
+    tier: L1
+
+  nodes:
+    - id: collect_data
+      type: process
+      description: "Gather raw data from sources"
+
+    - id: clean_data
+      type: module
+      ref: "what/modules/module_data_cleaner"
+      description: "Remove duplicates, handle missing values"
+
+    - id: analyze
+      type: module
+      ref: "what/modules/module_statistical_analysis"
+      description: "Run statistical analysis on clean data"
+
+    - id: visualize
+      type: module
+      ref: "what/modules/module_chart_generator"
+      description: "Generate charts and figures"
+
+    - id: report
+      type: process
+      description: "Compile findings into a report"
+
+  edges:
+    - from: collect_data
+      to: clean_data
+      label: "raw data"
+    - from: clean_data
+      to: analyze
+      label: "clean dataset"
+      data_mapping:
+        clean_output: analysis_input
+    - from: analyze
+      to: visualize
+      label: "statistical results"
+    - from: visualize
+      to: report
+      label: "charts and figures"
+
+  fair:
+    license: "MIT"
+    keywords: [data-analysis, pipeline, statistics]
+    creators: ["Your Name"]
+    provenance: "Built for quarterly data reporting"
+```
+
+**Key decisions**:
+- Node IDs are `snake_case` and descriptive (not `node_1`, `step_a`)
+- `module` nodes have `ref` pointing to implementations; `process` nodes are human/agent steps
+- Edges use `data_mapping` for explicit field mapping
+- The `fair` block has at least `keywords` and `license`
+
+### Step 4: Validate
+
+Run the schema validator:
+
+```bash
+python what/lattices/tools/lattice_validate.py my_analysis.lattice.yaml
+```
+
+Fix any errors: missing required fields, invalid node references, disconnected nodes.
+
+### Step 5: Add Federation Metadata (Optional)
+
+If you want to share this lattice with other projects:
+
+```yaml
+  federation:
+    shareable: true
+    source_instance: my_project
+    version_policy: minor
+```
+
+This enables the lattice to be imported and composed into other vaults. See the [[what/patterns/pattern_federation_readiness|federation readiness]] checklist.
+
+### Step 6: Validate Again
+
+Re-run validation after adding federation properties — the validator checks federation consistency too.
+
+## What You Learned
+
+- Lattices are declarative graphs: nodes + edges + metadata (§5.1)
+- [[what/concepts/concept_lattice_composition|Four types]] cover all workflow patterns
+- [[what/concepts/concept_fair_metadata|FAIR metadata]] is required — `keywords` and `license` minimum
+- Explicit `data_mapping` on edges prevents implicit assumptions
+
+## Next Steps
+
+- [[what/tutorials/tutorial_run_a_campaign|Run a Campaign]] — orchestrate multi-mission work
+- [[what/tutorials/tutorial_federate_a_vault|Federate a Vault]] — share lattices across instances
+- [[what/patterns/pattern_federation_readiness|Federation Readiness]] — prepare for cross-instance sharing

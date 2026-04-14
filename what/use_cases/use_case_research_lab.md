@@ -1,0 +1,62 @@
+---
+type: use_case
+created: 2026-04-14
+updated: 2026-04-14
+status: active
+domain: research
+persona: "Dr. Maya Chen"
+deployment_form: bare
+last_edited_by: agent_stanley
+tags: [use_case, research, lab, biotech, ai_agents]
+---
+
+# A Research Lab Organizes with aDNA
+
+## Meet Dr. Maya Chen
+
+Maya is a principal investigator running a computational biology lab with 8 researchers, 3 AI agents, and a growing mountain of experimental data. She publishes 10+ papers a year and her lab generates protocols, datasets, analysis pipelines, and collaboration notes faster than anyone can organize them.
+
+## The Challenge
+
+Maya's lab knowledge lives everywhere: Slack threads, Google Docs, Jupyter notebooks, a shared drive with 2,000 files in folders named things like "data_final_v3_REAL." New postdocs spend their first month just figuring out where things are. AI agents asked to help with analysis produce generic output because they have no context about the lab's methods, conventions, or active projects.
+
+## How aDNA Helps
+
+Maya adopts aDNA as the lab's knowledge architecture. She creates a bare-triad vault and extends the ontology with domain-specific types:
+
+**Knowledge layer** (`what/`): The context library gets subtopics on the lab's core methods — protein folding, binding assays, computational docking. Each file is 150-300 lines, table-driven, quality-scored. When an agent starts a new analysis, it loads the relevant context and produces lab-specific output instead of textbook answers.
+
+**Operations layer** (`how/`): Experiments become missions with objectives. A 6-month project tracking protein binder candidates is a campaign with phased execution. Session tracking creates an audit trail — who did what, when, and what happened.
+
+**People layer** (`who/`): Lab governance defines agent roles and human oversight policies. Coordination notes handle handoffs between researchers working different shifts.
+
+## What Their Vault Looks Like
+
+```
+chen_lab.aDNA/
+├── what/
+│   ├── context/          # 8 topics: protein_folding, binding, docking, ...
+│   ├── protocols/        # [EXT] 25 experimental protocols
+│   ├── datasets/         # Dataset metadata + lineage tracking
+│   ├── lattices/         # Analysis pipelines (lattice YAML)
+│   └── decisions/        # Method choices with rationale
+├── how/
+│   ├── campaigns/        # Multi-month research projects
+│   ├── missions/         # Individual experiments
+│   ├── sessions/         # Audit trail
+│   └── templates/        # Protocol templates, report templates
+└── who/
+    ├── governance/       # Lab policies, agent oversight
+    ├── team/             # 8 researchers + 3 agents
+    └── coordination/     # Shift handoff notes
+```
+
+## Outcome
+
+New postdocs orient in a day instead of a month — they read CLAUDE.md, browse the context library, and understand the lab's methods. AI agents produce lab-specific analysis instead of generic output. The protocol library eliminates "how did we do this last time?" conversations. Federation lets Maya share validated analysis lattices with collaborating labs without emailing YAML files.
+
+## Related
+
+- [[what/concepts/concept_governance_files|Governance Files]] — how CLAUDE.md orients new lab members
+- [[what/tutorials/tutorial_extend_the_ontology|Extend the Ontology]] — how Maya added `protocols/` as a custom entity type
+- [[what/concepts/concept_fair_metadata|FAIR Metadata]] — how FAIR enables sharing analysis pipelines

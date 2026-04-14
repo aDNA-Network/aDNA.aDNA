@@ -33,7 +33,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 |-------|--------|----------|---------|-------------|
 | **0: Scaffold** | Complete | M00 | 0 content | Fork, governance, ontology extension, campaign setup |
 | **1: Core Content** | **Complete** | M01-M05 | 26/26 files | Concepts, patterns, comparisons |
-| **2: Human Path** | Planned | M06-M08 | 15 files | Tutorials, use cases |
+| **2: Human Path** | **Complete** | M06-M08 | 15/15 files | Tutorials, use cases |
 | **3: The Who** | Planned | M09-M11 | ~33 files | Community, adopters, glossary |
 | **4: The How** | Planned | M12-M14 | ~12 files | Publishing, workshops, lattices |
 | **5: Website** | Deferred | — | — | AstroJS documentation site |
@@ -54,9 +54,9 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 
 | Mission | Title | Status | Files | Dependencies |
 |---------|-------|--------|-------|-------------|
-| M06 | Beginner Tutorials | pending | 3 tutorials | Phase 1 |
-| M07 | Intermediate Tutorials | pending | 3 tutorials | M06 |
-| M08 | Advanced Tutorials + Use Cases | pending | 3 tutorials + 6 use cases | M07 |
+| M06 | Beginner Tutorials | **completed** | 3 tutorials | Phase 1 |
+| M07 | Intermediate Tutorials | **completed** | 3 tutorials | M06 |
+| M08 | Advanced Tutorials + Use Cases | **completed** | 3 tutorials + 6 use cases | M07 |
 
 ### Phase 3: The Who
 

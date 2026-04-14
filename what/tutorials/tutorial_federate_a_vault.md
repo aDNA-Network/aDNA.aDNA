@@ -1,0 +1,141 @@
+---
+type: tutorial
+created: 2026-04-14
+updated: 2026-04-14
+status: active
+level: advanced
+prerequisites: [concept_lattice_composition, concept_fair_metadata, concept_open_standard, pattern_federation_readiness, pattern_fair_envelope]
+estimated_time: "30 minutes"
+dual_audience: true
+last_edited_by: agent_stanley
+tags: [tutorial, advanced, federation, sharing, cross_instance]
+---
+
+# Federate a Vault
+
+## What You'll Build
+
+A federated connection between two aDNA instances — exporting a lattice from one project, importing it into another, and composing it into a larger workflow. By the end, you'll understand the full federation lifecycle.
+
+## Prerequisites
+
+- [[what/concepts/concept_lattice_composition|Lattice Composition]] — inline vs. external composition
+- [[what/concepts/concept_fair_metadata|FAIR Metadata]] — the trust envelope for shared objects
+- [[what/concepts/concept_open_standard|Open Standard]] — why federation works across independent projects
+- [[what/patterns/pattern_federation_readiness|Federation Readiness]] — the 6-point checklist
+- [[what/patterns/pattern_fair_envelope|FAIR Envelope]] — metadata for findability and reuse
+
+## Steps
+
+### Step 1: Prepare the Source Lattice
+
+Start with a lattice in your project that you want to share. Run the [[what/patterns/pattern_federation_readiness|federation readiness]] checklist:
+
+| # | Check | Command/Action |
+|---|-------|---------------|
+| 1 | Schema valid | `python what/lattices/tools/lattice_validate.py my_lattice.lattice.yaml` |
+| 2 | Shareable opt-in | Set `federation.shareable: true` |
+| 3 | Source instance | Set `federation.source_instance: my_project` |
+| 4 | License | Set `fair.license: "MIT"` (or your choice) |
+| 5 | Keywords | Set `fair.keywords: [at-least-one]` |
+| 6 | References resolve | Check all `ref` fields — replace local paths with `lattice://` URIs |
+
+### Step 2: Convert Local References to URIs
+
+Any `ref` field pointing to a local path needs to become a `lattice://` URI for cross-instance use:
+
+```yaml
+# Before (local)
+ref: "what/modules/module_data_cleaner"
+
+# After (federable)
+ref: "lattice://my_project/data_cleaner_module"
+```
+
+URI format: `lattice://<instance_id>/<lattice_name>[/<node_id>]`
+
+### Step 3: Export
+
+Export the lattice using the CLI (if available) or copy the `.lattice.yaml` file:
+
+```bash
+latlab lattice publish my_lattice.lattice.yaml
+```
+
+The publish command validates, registers in the local registry, and makes it available for pull.
+
+### Step 4: Import into the Target Project
+
+In the target project:
+
+```bash
+latlab lattice pull my_lattice
+```
+
+This downloads the lattice and runs **ontology unification** — checking that the source's entity types are compatible with the target's. If conflicts exist, the 4-step merge algorithm resolves them (§11.3).
+
+### Step 5: Compose into a Larger Workflow
+
+Now compose the imported lattice into a parent workflow. You have two options:
+
+**External reference** (recommended — minimal token cost):
+
+```yaml
+nodes:
+  - id: data_analysis
+    type: module
+    ref: "lattice://my_project/data_analysis"
+    description: "Imported data analysis pipeline"
+
+edges:
+  - from: data_collection
+    to: data_analysis
+    label: "raw data for analysis"
+    data_mapping:
+      raw_data: collect_data_input
+    port: collect_data    # child entry node
+```
+
+**Inline composition** (when you need access to child internals):
+
+```bash
+latlab lattice compose parent.lattice.yaml child.lattice.yaml --pattern inline --seam-edges '[{"from":"parent_node","to":"child_entry"}]'
+```
+
+### Step 6: Validate the Composition
+
+Run the validator on the composed parent:
+
+```bash
+python what/lattices/tools/lattice_validate.py parent.lattice.yaml
+```
+
+Check: all seam edges have `data_mapping`, all `lattice://` URIs resolve, no orphaned nodes.
+
+### Step 7: Set Version Policy
+
+Choose how the target tracks source updates:
+
+| Policy | Set When |
+|--------|----------|
+| `locked` | Production: no surprises |
+| `patch` | Stable: accept bug fixes |
+| `minor` | Active development: accept features |
+| `latest` | Experimental: always latest |
+
+```yaml
+federation:
+  version_policy: minor
+```
+
+## What You Learned
+
+- Federation is a 5-step lifecycle: validate → export → share → import → compose (§11)
+- [[what/patterns/pattern_fair_envelope|FAIR metadata]] is the trust gate — no license, no federation
+- External reference is the default composition pattern — minimal token cost
+- Version policies manage dependency drift between source and target
+
+## Next Steps
+
+- [[what/concepts/concept_context_commons|Context Commons]] — the vision of community-wide knowledge sharing
+- [[what/concepts/concept_lattice_composition|Lattice Composition]] — deeper dive into composition patterns
