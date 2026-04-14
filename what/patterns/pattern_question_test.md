@@ -1,0 +1,65 @@
+---
+type: pattern
+created: 2026-04-14
+updated: 2026-04-14
+status: active
+pattern_category: structural
+applies_to: [context, decisions, missions, sessions, governance, coordination, team]
+last_edited_by: agent_stanley
+tags: [pattern, question_test, triad, sorting, structural]
+---
+
+# The Question Test — Sorting Content Into the Triad
+
+## Problem
+
+When adding a new file to an aDNA project, you need to decide which triad leg it belongs in. With three categories and dozens of entity types, this should be simple — but edge cases create hesitation. Is a team standup protocol a WHO thing (it involves people) or a HOW thing (it's a process)? Is a decision record a WHAT thing (it's knowledge) or a HOW thing (it documents a process)?
+
+Hesitation leads to inconsistency. Inconsistency leads to files scattered across legs, breaking the navigability that makes the triad valuable.
+
+## Solution
+
+Apply the **question test** (§3.1): ask "Is this about WHAT we know, HOW we work, or WHO is involved?" The answer determines the triad leg.
+
+| Question | Triad Leg | Contains |
+|----------|-----------|----------|
+| WHAT does this project know? | `what/` | Knowledge, context, decisions, domain entities |
+| HOW does this project work? | `how/` | Plans, processes, templates, sessions, skills |
+| WHO is involved? | `who/` | People, teams, roles, coordination, governance |
+
+**The decisive rule**: if the file's primary purpose is to capture knowledge, it's WHAT. If it's to drive action, it's HOW. If it's to describe people or relationships, it's WHO.
+
+**Edge case resolution**: When a file seems to span two legs, it's trying to do two things. Split it. A meeting protocol (HOW — it's a process) is separate from the team roster it references (WHO — it's about people). A decision record (WHAT — it captures knowledge) is separate from the mission that prompted it (HOW — it drives action).
+
+The test always produces exactly one answer. If it produces two, the content needs splitting, not a fourth category.
+
+## When to Use
+
+- Every time you create a new file in an aDNA vault
+- When reviewing vault structure for misplaced content
+- When onboarding someone unfamiliar with the triad
+- When designing ontology extensions (the extension goes under the leg its question maps to)
+
+## Example: This Vault
+
+This file — `pattern_question_test.md` — lives in `what/patterns/` because it answers "WHAT does this project know?" It knows about the question test pattern.
+
+The mission file that scheduled its creation lives in `how/campaigns/campaign_rosetta/missions/` because it answers "HOW does this project work?" It works by executing missions.
+
+The governance policies in `who/governance/` answer "WHO is involved?" — they define roles and authority.
+
+Every file in this vault was placed by applying the question test. Navigate to any directory and ask "which question does this answer?" — the answer will match the triad leg it's in.
+
+## Anti-Pattern
+
+**The miscellaneous drawer**: Creating a fourth top-level directory (`resources/`, `shared/`, `misc/`) because some files "don't fit." They always fit — the question test was applied incorrectly or the file is trying to do two things.
+
+**Sorting by format**: Putting all PDFs in one place, all YAML in another. Format is orthogonal to the triad. A YAML lattice definition (`what/`) and a YAML session config (`how/`) answer different questions despite sharing a format.
+
+**WHO/HOW confusion**: Placing process documentation under `who/` because people execute processes. The test is about the file's primary purpose, not its participants. A sprint protocol is HOW (process); the team running it is WHO (people).
+
+## Related
+
+- [[what/concepts/concept_triad|The Triad]] — the architectural principle the question test implements
+- [[what/concepts/concept_ontology|Ontology]] — the entity types within each triad leg
+- [[what/patterns/pattern_base_extension|Base/Extension]] — how new entity types inherit their triad placement

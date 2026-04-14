@@ -1,0 +1,91 @@
+---
+type: pattern
+created: 2026-04-14
+updated: 2026-04-14
+status: active
+pattern_category: federation
+applies_to: [lattices, modules]
+last_edited_by: agent_stanley
+tags: [pattern, federation, readiness, sharing, checklist, federation]
+---
+
+# Federation Readiness — Preparing Lattices for Cross-Instance Sharing
+
+## Problem
+
+A lattice that works perfectly within one project may fail when shared with another. Internal references break (`ref: what/modules/my_module` doesn't exist in the target project). Missing metadata blocks federation validation. Undeclared provenance makes the lattice untrustworthy. The gap between "works locally" and "shareable across instances" requires deliberate preparation.
+
+## Solution
+
+Before federating a lattice, run the **6-point readiness checklist** (§11):
+
+| # | Check | Field | Why |
+|---|-------|-------|-----|
+| 1 | Schema validation | Run `lattice_validate.py` | Catches structural errors before they propagate |
+| 2 | Shareable opt-in | `federation.shareable: true` | Federation is never accidental — explicit consent |
+| 3 | Source instance | `federation.source_instance` | Provenance: where did this come from? |
+| 4 | License declared | `fair.license` | Legal: can the recipient use this? |
+| 5 | Keywords present | `fair.keywords` (≥1) | Discovery: can someone find this? |
+| 6 | References resolve | All `ref` fields are valid paths or `lattice://` URIs | Integrity: no broken links in the target |
+
+**The readiness workflow**:
+
+1. **Validate** — Run the schema validator against the `.lattice.yaml`. Fix any errors.
+2. **Audit references** — Check every `ref` field. Replace local paths with `lattice://` URIs for cross-instance references. Remove or document references that are instance-specific.
+3. **Add FAIR metadata** — Ensure the `fair:` block has at least `keywords` and `license`. Add `provenance` and `creators` for full trust.
+4. **Set federation block** — Enable `shareable: true`, set `source_instance`, choose a `version_policy`.
+5. **Document interfaces** — If the lattice will be composed (not just imported whole), declare entry/exit nodes and their expected data types.
+6. **Re-validate** — Run the validator again. Federation properties have their own consistency checks.
+
+**Version policy selection**:
+
+| Policy | Behavior | Best For |
+|--------|----------|---------|
+| `locked` | Halt on any version change | Production dependencies |
+| `patch` | Accept patches, halt on minor/major | Stable integrations |
+| `minor` | Accept minor changes, halt on major | Active development |
+| `latest` | Always use latest, warn on breaking | Experimental use |
+
+## When to Use
+
+- Before publishing a lattice to a registry
+- Before sharing a lattice with another aDNA instance
+- When extracting a sub-lattice from a larger pipeline for independent use
+- During quality reviews of lattice objects
+
+## Example: This Vault
+
+The lattice examples at `what/lattices/examples/` demonstrate federation readiness at different stages:
+
+**Federated example**: The `docking_assessment` lattice carries a complete federation block:
+
+```yaml
+federation:
+  shareable: true
+  source_instance: adna
+  parent_lattice: protein_binder_design
+  version_policy: locked
+  extracted_nodes: [structure_prediction, interface_analysis, ranking]
+```
+
+This lattice passes all 6 checks: schema-valid, opted in, provenance set, licensed, keyworded, and its `extracted_nodes` cross-reference against the parent lattice.
+
+**Validation tools**: `what/lattices/tools/lattice_validate.py` implements checks 1-6 programmatically. Running it against a lattice file reports schema compliance, node ID uniqueness, edge reference validity, and federation property consistency.
+
+**The readiness checklist in practice**: The federation guide at `what/context/adna_core/context_adna_core_federation.md` includes both pre-federation and post-federation checklists — the full workflow from "private lattice" to "composed into another project."
+
+## Anti-Pattern
+
+**Accidental federation**: Setting `shareable: true` on a lattice that contains internal references, proprietary data, or unresolved dependencies. Federation must be deliberate.
+
+**Local paths in shared lattices**: A `ref: what/modules/my_custom_module` that only exists in the source project. Shared lattices must use `lattice://` URIs or document that the reference is instance-specific.
+
+**Missing version policy**: Federating without declaring a `version_policy`. The default is `minor`, but explicit is always better — the policy determines what happens when the source updates.
+
+**Skipping post-federation validation**: Importing a lattice into a target project without re-validating. The lattice may be valid in source but incompatible in target (different ontology, missing dependencies).
+
+## Related
+
+- [[what/concepts/concept_lattice_composition|Lattice Composition]] — the composition patterns that federation-ready lattices enable
+- [[what/patterns/pattern_fair_envelope|FAIR Envelope]] — the metadata pattern that federation readiness depends on
+- [[what/concepts/concept_open_standard|Open Standard]] — the governance model that makes cross-instance federation possible

@@ -1,0 +1,79 @@
+---
+type: pattern
+created: 2026-04-14
+updated: 2026-04-14
+status: active
+pattern_category: structural
+applies_to: [context, modules, lattices, governance]
+last_edited_by: agent_stanley
+tags: [pattern, base_extension, ontology, extensibility, structural]
+---
+
+# Base/Extension — Extending the Ontology Without Breaking Core
+
+## Problem
+
+An open standard must be stable enough to build on, yet flexible enough to serve diverse domains. If every project modifies the core types, interoperability collapses — no two projects speak the same language. If the core is frozen, projects can't represent domain-specific knowledge and the standard becomes irrelevant.
+
+## Solution
+
+aDNA separates entity types into a **base layer** (14 types defined by the spec) and an **extension layer** (domain-specific types added by projects). The rule (§5): extensions MUST NOT modify base types — they add alongside them.
+
+**Base layer** (shared across all aDNA instances):
+
+| Triad | Base Entities |
+|-------|--------------|
+| WHO | `governance`, `team`, `coordination` |
+| WHAT | `context`, `decisions`, `modules`, `lattices` |
+| HOW | `campaigns`, `missions`, `sessions`, `templates`, `skills`, `pipelines`, `backlog` |
+
+**Extension rules**:
+1. New types go under the correct triad leg (apply the [[what/patterns/pattern_question_test|question test]])
+2. Each extension type gets its own subdirectory under the triad leg
+3. Each subdirectory gets an AGENTS.md and a template
+4. Extension types use the same frontmatter conventions as base types (`type`, `created`, `updated`, `status`, `last_edited_by`, `tags`)
+5. Base types are never modified, renamed, or removed
+
+This gives projects full freedom to represent their domain while preserving the shared vocabulary that makes cross-project tools and agent orientation possible.
+
+## When to Use
+
+- When a project needs to represent domain knowledge that doesn't fit existing entity types
+- When forking the base template into a new project
+- When designing ontology for a new domain (biotech, education, legal, etc.)
+- When evaluating whether a proposed change belongs in the base spec or as a project extension
+
+## Example: This Vault
+
+This vault (`aDNA.aDNA/`) extends the base 14 types with 10 project-specific types:
+
+| Extension | Triad | Directory | Purpose |
+|-----------|-------|-----------|---------|
+| `concept` | WHAT | `what/concepts/` | Core aDNA concepts at dual-audience depth |
+| `tutorial` | WHAT | `what/tutorials/` | Step-by-step learning paths |
+| `pattern` | WHAT | `what/patterns/` | Reusable architectural patterns (you're reading one) |
+| `glossary_entry` | WHAT | `what/glossary/` | Canonical term definitions |
+| `use_case` | WHAT | `what/use_cases/` | Adoption stories by domain |
+| `comparison` | WHAT | `what/comparisons/` | aDNA vs. other architectures |
+| `community` | WHO | `who/community/` | Community roles and contribution paths |
+| `adopter` | WHO | `who/adopters/` | Adopter personas and deployment profiles |
+| `workshop` | HOW | `how/workshops/` | Workshop kits and facilitation guides |
+| `publishing` | HOW | `how/publishing/` | Vault-to-web publishing pipeline |
+
+Each extension directory has an AGENTS.md and a template in `how/templates/`. The base types (`context`, `campaigns`, `missions`, `sessions`, etc.) are unchanged — they work exactly as the spec defines. An agent familiar with any aDNA project can navigate the base layer here; the extensions are additive.
+
+## Anti-Pattern
+
+**Modifying base types**: Renaming `sessions` to `logs` or changing the `missions` frontmatter schema. This breaks every tool and agent that expects the standard vocabulary.
+
+**Extension sprawl**: Creating 30 extension types for a project that only needs 5. Each type requires a directory, AGENTS.md, and template — the overhead compounds. Only extend when existing types genuinely don't fit.
+
+**Extension without AGENTS.md**: Adding a new directory under `what/` without creating an AGENTS.md. The extension exists structurally but is invisible to agents following the routing protocol.
+
+**Triad misplacement**: Creating an extension type under the wrong leg (e.g., `community` under HOW instead of WHO). Apply the question test — "Who is involved?" → WHO.
+
+## Related
+
+- [[what/concepts/concept_ontology|Ontology]] — the entity type system that base/extension partitions
+- [[what/concepts/concept_open_standard|Open Standard]] — the governance model that keeps the base stable
+- [[what/patterns/pattern_question_test|Question Test]] — how to determine which triad leg an extension belongs under

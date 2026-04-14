@@ -1,0 +1,86 @@
+---
+type: pattern
+created: 2026-04-14
+updated: 2026-04-14
+status: active
+pattern_category: operational
+applies_to: [context, missions, sessions]
+last_edited_by: agent_stanley
+tags: [pattern, context_recipe, composition, token_budget, operational]
+---
+
+# Context Recipe — Pre-Defined Multi-Topic Assemblies
+
+## Problem
+
+Many tasks require knowledge from multiple context topics. An agent designing a federated lattice needs context from `adna_core/lattice_design`, `adna_core/federation`, and `object_standards/overview`. Without guidance, agents improvise — loading too many subtopics ("just in case") or too few (missing critical context). The result is either token waste or knowledge gaps.
+
+## Solution
+
+Define **context recipes** — named, pre-built combinations of subtopics for common task types (§10). Each recipe specifies:
+
+| Field | Purpose |
+|-------|---------|
+| Recipe name | Descriptive identifier for the task type |
+| Subtopic list | Exactly which files to load |
+| Token budget | Total cost at each tier |
+| When to use | Task conditions that trigger this recipe |
+
+**Three budget tiers**:
+
+| Tier | Budget | Use When |
+|------|--------|----------|
+| Minimal | <5K tokens | Narrow task, agent already knows the domain |
+| Standard | <12K tokens | Typical development session |
+| Full | All subtopics | Deep research, comprehensive review |
+
+**How recipes work**:
+1. Agent reads the recipe index (`what/context/context_recipes.md`)
+2. Matches current task to a recipe by keyword or description
+3. Loads the listed subtopics at the appropriate tier
+4. Begins work with a predictable, pre-validated context assembly
+
+Recipes prevent two failure modes: **over-loading** (agent loads 30K tokens when 8K would suffice) and **improvisation** (agent guesses which subtopics are relevant and misses critical ones).
+
+**Creating new recipes**: When you find yourself loading the same combination of subtopics for recurring task types, codify it as a recipe. List the subtopics, calculate the token budget, and add it to the index.
+
+## When to Use
+
+- Any task that spans multiple context topics
+- When onboarding new agents to recurring task types
+- When token budgets are tight and loading must be precise
+- Campaign and mission planning (declare the recipe as a context dependency)
+
+## Example: This Vault
+
+The recipe index at `what/context/context_recipes.md` pre-defines assemblies for common tasks in this vault.
+
+Mission files demonstrate recipe-like thinking in their context dependency sections. Look at `mission_m03_advanced_concepts.md` — it lists exactly which context subtopics to load:
+
+```
+- context_adna_core_paradigm_overview.md — general grounding
+- context_adna_core_context_engineering.md — for context_optimization
+- context_adna_core_lattice_design.md — for lattice_composition
+- context_adna_core_federation.md — for lattice_composition, open_standard
+- context_adna_core_fair_mapping.md — for fair_metadata
+```
+
+This is a recipe embedded in a mission: specific subtopics, matched to specific objectives, with a declared budget (~15K tokens). An agent starting M03 doesn't need to figure out which context to load — the mission tells it.
+
+The AGENTS.md at `what/context/adna_core/AGENTS.md` supports recipe design by listing every subtopic with its token estimate and a "Usage by task" table mapping tasks to recommended subtopics. This table is the raw material from which recipes are composed.
+
+## Anti-Pattern
+
+**Loading everything**: Loading all 13 adna_core subtopics (~13K tokens) when a task only needs 2-3 (~2K tokens). The extra 11K tokens dilute focus and consume reasoning budget.
+
+**Improvised assembly**: An agent loading subtopics by intuition rather than recipe, resulting in inconsistent context across sessions working on similar tasks. One session loads federation context; the next forgets it. Quality varies.
+
+**Stale recipes**: Recipes that reference subtopics that have been renamed, split, or removed. Recipes must be maintained alongside the context library.
+
+**Single-topic recipes**: A recipe that loads only one subtopic isn't a recipe — it's just loading a file. Recipes add value when they combine subtopics that non-obviously belong together.
+
+## Related
+
+- [[what/concepts/concept_context_optimization|Context Optimization]] — the design principles that make individual files worth including in recipes
+- [[what/concepts/concept_token_selection|Token Selection]] — the broader discipline of loading the right knowledge
+- [[what/patterns/pattern_agents_md|AGENTS.md Routing]] — the directory-level decisions that recipes build upon
