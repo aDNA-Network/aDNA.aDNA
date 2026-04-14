@@ -1,0 +1,79 @@
+---
+type: comparison
+created: 2026-04-14
+updated: 2026-04-14
+status: active
+compared_to: "PARA (Projects, Areas, Resources, Archives)"
+categories: [organizing_principle, audience, agent_support, scalability, learning_curve]
+last_edited_by: agent_stanley
+tags: [comparison, para, forte, personal_knowledge]
+---
+
+# aDNA vs. PARA
+
+Two systems for organizing knowledge — one designed for personal productivity, the other for AI-native project collaboration.
+
+## Overview
+
+### aDNA
+
+A knowledge architecture standard for AI-native projects (§1). Organizes all project knowledge into three directories — `what/`, `how/`, `who/` — determined by the [[what/concepts/concept_triad|question test]]. Designed for both human and AI-agent navigation. Includes governance files, session tracking, federation, and FAIR metadata. Open standard with spec, template, and extension system.
+
+### PARA
+
+Tiago Forte's organizational system from *Building a Second Brain*. Organizes personal knowledge into four categories: **P**rojects (active), **A**reas (ongoing responsibilities), **R**esources (reference material), **A**rchives (inactive). Designed for individual knowledge management across tools like Notion, Obsidian, and Evernote.
+
+## Comparison
+
+| Dimension | aDNA | PARA |
+|-----------|------|------|
+| **Organizing principle** | 3 categories by question type (what/how/who) | 4 categories by actionability (projects/areas/resources/archives) |
+| **Primary audience** | Teams + AI agents | Individual humans |
+| **Agent support** | Native: CLAUDE.md, AGENTS.md, session tracking, convergence model | None: no agent orientation, no routing, no governance files |
+| **Knowledge types** | 14+ entity types with typed frontmatter | Untyped: any note can go anywhere within the 4 buckets |
+| **Scalability** | Multi-agent, multi-project, federated | Single-person, cross-tool |
+| **Learning curve** | Moderate: spec, templates, governance files | Low: 4 simple categories, minimal rules |
+| **Extensibility** | [[what/patterns/pattern_base_extension|Base/extension]] architecture with domain types | Flexible but informal: no extension framework |
+| **Collaboration** | Built-in: sessions, coordination notes, handoff protocols | Bolted-on: depends on the tool's sharing features |
+| **Standards** | Open spec (§1-§13), FAIR metadata, typed I/O | No spec: a method, not a standard |
+
+## Where aDNA Excels
+
+- **Agent collaboration**: PARA has no concept of AI agents navigating knowledge. aDNA's governance files, AGENTS.md routing, and session tracking were built for agent-first operation.
+- **Team scale**: PARA is personal. aDNA handles multi-agent coordination, conflict detection, and handoff continuity.
+- **Typed knowledge**: aDNA's 14 base entity types and frontmatter conventions make knowledge machine-queryable. PARA notes are freeform.
+- **Federation**: aDNA lattices can be shared across instances. PARA has no cross-system sharing protocol.
+
+## Where PARA Excels
+
+- **Simplicity**: Four buckets. No frontmatter. No governance files. You can explain PARA in 5 minutes. aDNA takes longer to learn.
+- **Personal fit**: PARA was designed for how individuals think about their own projects and responsibilities. aDNA was designed for projects, not people.
+- **Tool agnosticism**: PARA works in any notes app. aDNA works best with AI agents (Claude Code, etc.) and Obsidian — its governance files are meaningless without agent tooling.
+- **Low overhead**: No session files, no AGENTS.md, no templates. PARA is lightweight by design.
+
+## When to Choose Which
+
+| If you need... | Choose |
+|---------------|--------|
+| Personal knowledge management across apps | PARA |
+| AI-agent-navigable project knowledge | aDNA |
+| A quick organizational system for your notes | PARA |
+| Multi-agent collaboration with audit trails | aDNA |
+| Minimal overhead, maximum simplicity | PARA |
+| Typed, federable, FAIR-annotated knowledge objects | aDNA |
+| To organize existing personal notes better | PARA |
+| To build a knowledge architecture for a team or project | aDNA |
+
+They're not mutually exclusive. A developer might use PARA for personal notes and aDNA for shared project knowledge.
+
+## Sources
+
+- Tiago Forte, *Building a Second Brain* (2022) — PARA method definition
+- Forte Labs: fortelabs.com/blog/para — PARA overview
+- aDNA Standard v2.1, §1 (Introduction), §3 (Triad Architecture) — aDNA specification
+
+## Related
+
+- [[what/concepts/concept_triad|The Triad]] — aDNA's three-category organizing principle (compare to PARA's four)
+- [[what/concepts/concept_governance_files|Governance Files]] — the agent-orientation layer PARA lacks
+- [[what/concepts/concept_agentic_literacy|Agentic Literacy]] — the skill set aDNA develops that PARA doesn't address

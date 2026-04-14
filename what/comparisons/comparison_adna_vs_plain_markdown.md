@@ -1,0 +1,93 @@
+---
+type: comparison
+created: 2026-04-14
+updated: 2026-04-14
+status: active
+compared_to: "Plain Markdown (unstructured)"
+categories: [structure, agent_support, scalability, overhead, collaboration]
+last_edited_by: agent_stanley
+tags: [comparison, markdown, unstructured, docs_as_code]
+---
+
+# aDNA vs. Plain Markdown
+
+The most common question: "Why not just use a folder of markdown files?"
+
+## Overview
+
+### aDNA
+
+A knowledge architecture standard (§1) that imposes structure on markdown files: the what/how/who triad, typed entities with YAML frontmatter, governance files (CLAUDE.md, AGENTS.md, STATE.md), session tracking, and [[what/concepts/concept_convergence|convergent narrowing]]. The files are still markdown — aDNA adds conventions that make them navigable by AI agents.
+
+### Plain Markdown
+
+A folder (or nested folders) of `.md` files with no imposed structure. Files organized however the author sees fit — maybe by topic, by date, by project, or not organized at all. No frontmatter requirements, no governance files, no naming conventions. The simplest possible approach: create a file, write in it.
+
+## Comparison
+
+| Dimension | aDNA | Plain Markdown |
+|-----------|------|---------------|
+| **Structure** | Prescribed: triad, typed entities, AGENTS.md routing | Ad hoc: whatever the author decides |
+| **Agent orientation** | CLAUDE.md + STATE.md = agent knows who it is, what's happening | Agent reads files blindly — no governance, no routing, no context hierarchy |
+| **Frontmatter** | Required: type, status, dates, tags, entity-specific fields | Optional: whatever you want, if anything |
+| **Naming** | Convention: `type_descriptive_name.md` | Freeform: anything.md |
+| **Navigation** | AGENTS.md routing + knowledge graph + convergence model | grep, search, browse |
+| **Scalability** | Designed for 500K+ tokens across hundreds of files | Degrades: at 100+ files, finding what you need becomes guesswork |
+| **Collaboration** | Sessions, coordination notes, conflict detection | Depends entirely on external tooling (git, Google Docs) |
+| **Overhead** | Moderate: governance files, frontmatter, templates | Zero: write and go |
+| **Portability** | Fully portable: standard markdown + YAML frontmatter | Fully portable: it's just markdown |
+
+## Where aDNA Excels
+
+- **Agent effectiveness**: Give an AI agent a plain markdown folder and it will produce generic output. Give it an aDNA vault and it produces informed, project-specific work. The difference is [[what/concepts/concept_governance_files|governance files]] and [[what/concepts/concept_token_selection|token selection]] — the agent knows what matters.
+- **Scale**: Plain markdown folders collapse under their own weight at ~100 files. aDNA's triad, AGENTS.md routing, and convergence model keep navigation systematic regardless of vault size.
+- **Knowledge reuse**: aDNA's [[what/concepts/concept_fair_metadata|FAIR metadata]] and federation protocol make knowledge shareable. Plain markdown files are trapped in their folder.
+- **Consistency**: aDNA's templates and frontmatter conventions ensure every file of a given type has the same structure. Plain markdown files vary wildly between authors.
+- **Operational infrastructure**: Sessions, missions, campaigns — aDNA tracks work. Plain markdown doesn't know what's in progress.
+
+## Where Plain Markdown Excels
+
+- **Zero friction**: Open editor, create file, write. No governance files to create, no frontmatter to populate, no naming conventions to follow.
+- **No learning curve**: Everyone knows how to create a markdown file. aDNA requires understanding the triad, entity types, frontmatter schema, and governance model.
+- **Maximum flexibility**: No structure means no constraints. Experimentation, quick notes, scratch files — all fine.
+- **Appropriate for small projects**: A 10-file project doesn't need governance files, AGENTS.md routing, or session tracking. The overhead doesn't justify itself until a project reaches a certain size.
+- **Universal tooling**: Every editor supports markdown. aDNA's governance files are meaningless without agent tooling.
+
+## The Tipping Point
+
+The comparison has a **crossover point** — a project size where aDNA's overhead starts paying for itself:
+
+| Project Size | Recommendation | Why |
+|-------------|----------------|-----|
+| 1-20 files | Plain markdown | Overhead isn't justified. You can hold the whole project in your head. |
+| 20-50 files | Consider aDNA | Navigation is getting harder. Agent-assisted work would benefit from governance. |
+| 50+ files | aDNA | Finding the right file, loading the right context, maintaining consistency — all problems aDNA solves. |
+| 100+ files | aDNA strongly recommended | Plain markdown at this scale is an archaeological dig. |
+
+The tipping point isn't just file count — it's also agent involvement. If you're working with AI agents on a 15-file project, aDNA is still worth it because the governance files dramatically improve agent output quality.
+
+## When to Choose Which
+
+| If you need... | Choose |
+|---------------|--------|
+| Quick notes, scratch files, personal logs | Plain markdown |
+| AI-agent-navigable project knowledge | aDNA |
+| Maximum flexibility with zero overhead | Plain markdown |
+| Consistency across dozens or hundreds of files | aDNA |
+| A small project without AI agent involvement | Plain markdown |
+| Multi-agent collaboration, federation, FAIR metadata | aDNA |
+| To start writing immediately with no setup | Plain markdown |
+| A knowledge architecture that scales | aDNA |
+
+The migration path is straightforward: start with plain markdown, adopt aDNA when the project outgrows ad hoc organization. The base template (`.adna/`) provides a fork-and-customize starting point.
+
+## Sources
+
+- commonmark.org — CommonMark markdown specification
+- aDNA Standard v2.1, §1 (Introduction), §3 (Triad), §4 (Governance) — aDNA specification
+
+## Related
+
+- [[what/concepts/concept_triad|The Triad]] — the structure aDNA adds on top of plain markdown
+- [[what/concepts/concept_agentic_literacy|Agentic Literacy]] — the skill gap between "folder of files" and "agent-navigable architecture"
+- [[what/concepts/concept_convergence|Convergence Model]] — what makes aDNA scale where plain markdown doesn't
