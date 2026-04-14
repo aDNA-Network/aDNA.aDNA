@@ -13,7 +13,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 0 — Scaffold complete.** Project forked from aDNA base template. Governance customized (Rosetta persona, 10 standing orders). Ontology extended with 10 new entity types (concepts, tutorials, patterns, glossary, use_cases, comparisons, community, adopters, workshops, publishing). Campaign Rosetta created with 5-phase structure. Ready for Phase 1 content creation.
+**Phase 1 — Core Content in progress.** Mission M01 (Triad & Foundations) complete — 3 foundational concept files written and quality-gated. Mission M02 (Governance & Operations) is next.
 
 ## Active Campaign
 
@@ -22,7 +22,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 | Phase | Status | Missions | Content Files |
 |-------|--------|----------|---------------|
 | Phase 0: Scaffold | Complete | M00 | 0 content, 10 AGENTS.md, 10 templates, 2 skills |
-| Phase 1: Core Content | Next | M01-M05 | 13 concepts + 8 patterns + 5 comparisons |
+| Phase 1: Core Content | Active (M01 done) | M01-M05 | 3/26 content files complete |
 | Phase 2: Human Path | Planned | M06-M08 | 9 tutorials + 6 use cases |
 | Phase 3: The Who | Planned | M09-M11 | Community + adopters + glossary |
 | Phase 4: The How | Planned | M12-M14 | Publishing + workshops + lattices |
@@ -36,7 +36,8 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 - 10 ontology extensions scaffolded (directories + AGENTS.md + templates)
 - 2 project-specific skills (dual_audience_review, self_reference_check)
 - Campaign Rosetta created with phase structure and mission board
-- Self-referential design: vault structure demonstrates aDNA concepts
+- **M01 complete**: concept_triad, concept_ontology, concept_knowledge_graph — all pass 6/6 quality gates
+- Concept writing workflow validated: context loading → template → write → quality gate review
 
 ## Active Blockers
 
@@ -44,18 +45,17 @@ None.
 
 ## Last Session (2026-04-13)
 
-Completed full Phase 0 scaffold in a single session. Commit `65b6546`.
+Completed Mission M01 — 3 foundational concept files. All quality gates passed. Mission AAR appended. Campaign board updated.
 
 ## Next Steps
 
-1. Begin **Phase 1, Mission M01** — Core Concepts: The Triad & Foundations
-   - Create `concept_triad.md`, `concept_ontology.md`, `concept_knowledge_graph.md`
-   - Load context: `what/context/adna_core/context_adna_core_paradigm_overview.md`, `what/context/adna_core/context_adna_core_entity_definitions.md`
-   - Load campaign context: `how/campaigns/campaign_rosetta/CLAUDE.md` for quality gates and voice guide
-   - Reference upstream spec: `what/docs/adna_standard.md` for normative claims
-2. After M01: proceed through M02-M05 (governance concepts, advanced concepts, patterns, comparisons)
+1. Begin **Phase 1, Mission M02** — Core Concepts: Governance & Operations
+   - Create `concept_governance_files.md`, `concept_token_selection.md`, `concept_convergence.md`, `concept_dual_audience.md`
+   - Load context: paradigm overview, convergence model, context engineering
+   - These files resolve forward references from M01 concepts
+2. After M02: proceed through M03-M05 (advanced concepts, patterns, comparisons)
 3. Phase gate: user approval required before advancing to Phase 2
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 0 (scaffold) is complete — governance customized, 10 ontology extensions scaffolded, campaign_rosetta created. Begin Phase 1, Mission M01: write the first 3 concept files (`concept_triad.md`, `concept_ontology.md`, `concept_knowledge_graph.md`) in `what/concepts/`. Load the campaign CLAUDE.md at `how/campaigns/campaign_rosetta/CLAUDE.md` for quality gates and voice guide. Load `what/context/adna_core/context_adna_core_paradigm_overview.md` and `what/context/adna_core/context_adna_core_entity_definitions.md` as domain context. Use `how/templates/template_concept.md` as the structural template. Every file must pass the dual-audience test, include self-references to the vault, cite `adna_standard.md` for normative claims, and cross-link to 2+ related files.
+> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 1 is active — M01 (triad, ontology, knowledge graph) is complete. Begin Mission M02: write 4 governance and operations concept files (`concept_governance_files.md`, `concept_token_selection.md`, `concept_convergence.md`, `concept_dual_audience.md`) in `what/concepts/`. Load campaign CLAUDE.md at `how/campaigns/campaign_rosetta/CLAUDE.md` for quality gates. Load `what/context/adna_core/context_adna_core_paradigm_overview.md`, `context_adna_core_convergence_model.md`, and `context_adna_core_context_engineering.md` as domain context. Use `how/templates/template_concept.md` as the structural template. Read existing M01 concepts for cross-linking targets. Every file must pass all 6 quality gates.

@@ -44,7 +44,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 
 | Mission | Title | Status | Files | Dependencies |
 |---------|-------|--------|-------|-------------|
-| M01 | Core Concepts: Triad & Foundations | pending | concept_triad, concept_ontology, concept_knowledge_graph | Phase 0 |
+| M01 | Core Concepts: Triad & Foundations | **completed** | concept_triad, concept_ontology, concept_knowledge_graph | Phase 0 |
 | M02 | Core Concepts: Governance & Operations | pending | concept_governance_files, concept_token_selection, concept_convergence, concept_dual_audience | M01 |
 | M03 | Core Concepts: Advanced | pending | concept_context_optimization, concept_lattice_composition, concept_open_standard, concept_agentic_literacy, concept_context_commons, concept_fair_metadata | M01, M02 |
 | M04 | Pattern Library | pending | 8 pattern files | M01, M02 |

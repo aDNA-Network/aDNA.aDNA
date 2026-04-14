@@ -1,0 +1,91 @@
+---
+type: concept
+created: 2026-04-13
+updated: 2026-04-13
+status: active
+difficulty: foundational
+spec_section: "§3 Triad Architecture"
+dual_audience: true
+last_edited_by: agent_stanley
+tags: [concept, triad, what, how, who, foundational, architecture]
+related_concepts: [concept_ontology, concept_knowledge_graph, concept_governance_files]
+related_patterns: [pattern_question_test]
+---
+
+# The Triad — What / How / Who
+
+## Overview
+
+The triad is aDNA's universal organizing principle: every piece of project knowledge belongs in exactly one of three directories — `what/`, `how/`, or `who/` — determined by which question it answers.
+
+## Why This Matters
+
+Imagine you're moving into a new house with hundreds of boxes. You could label them by room (kitchen, bedroom, bathroom), or you could just stack them randomly in the garage and hunt for things later. aDNA's triad is the labeling system — but instead of rooms, it uses three questions:
+
+- **What do we know?** — facts, research, reference material, decisions
+- **How do we work?** — plans, processes, templates, session logs
+- **Who is involved?** — people, teams, roles, coordination notes
+
+Every document, every note, every piece of context fits under exactly one question. There's no ambiguity, no "miscellaneous" drawer. A new team member — human or AI agent — can walk into any aDNA project and immediately know where to find things, because the structure is always the same.
+
+Three categories is the sweet spot. Two would be too coarse (you'd constantly ask "but is this a knowledge thing or an operations thing?"). Four or more creates sorting paralysis ("does this go in Knowledge, Reference, Context, or Documentation?"). Three maps cleanly to the three dimensions every project has: its knowledge, its operations, and its people.
+
+## How It Works
+
+The triad is defined in the aDNA Standard §3.1 as the **what/how/who ontology**. It is normative: every conformant aDNA instance MUST organize content into these three top-level directories.
+
+### The Three Legs
+
+| Leg | Question Test | Contains | Spec Reference |
+|-----|--------------|----------|----------------|
+| `what/` | WHAT does this project know? | Context library, decisions, domain entities, reference material | §5.1 |
+| `how/` | HOW does this project work? | Missions, sessions, templates, pipelines, skills, backlog | §5.3 |
+| `who/` | WHO is involved? | Governance policies, team records, coordination notes | §5.2 |
+
+### The Question Test
+
+When you're unsure where a file belongs, apply the **question test** (§3.1): "Is this about WHAT we know, HOW we work, or WHO is involved?"
+
+| Content | Question | Triad Leg |
+|---------|----------|-----------|
+| A research summary on ancient DNA extraction | WHAT do we know? | `what/context/` |
+| A mission plan for building a documentation site | HOW do we work? | `how/missions/` |
+| A note coordinating handoff between two agents | WHO is involved? | `who/coordination/` |
+
+The test always produces exactly one answer. If it feels ambiguous, the content is trying to do two things — split it.
+
+### Deployment Forms
+
+The triad has two physical layouts (§3.2–3.4):
+
+- **Bare triad** — `what/`, `how/`, `who/` sit at project root. Used when aDNA IS the primary content (knowledge bases, documentation vaults).
+- **Embedded triad** — the triad lives inside `.agentic/` at repo root. Used when adding agent support to an existing codebase.
+
+The ontology is identical in both forms. Only the nesting differs.
+
+### Why Three?
+
+The standard is explicit about this (§3.1): "Three categories are sufficient because they map to the three dimensions of any project: its knowledge, its operations, and its people. Additional categories create sorting ambiguity."
+
+This isn't arbitrary minimalism — it's a design constraint. Every project, from a solo research notebook to a multi-team enterprise platform, has exactly these three dimensions. The triad makes them explicit and navigable.
+
+## See It In Action
+
+You're inside a working triad right now. Look at the root of this vault (`aDNA.aDNA/`):
+
+```
+aDNA.aDNA/
+├── what/     ← You are here (what/concepts/concept_triad.md)
+├── how/      ← Campaigns, missions, sessions, templates, skills
+└── who/      ← Governance, coordination
+```
+
+This file — `concept_triad.md` — lives in `what/concepts/` because it answers the question "WHAT does this project know?" It knows about the triad. The mission plan that scheduled the creation of this file lives in `how/campaigns/campaign_rosetta/missions/` because it answers "HOW does this project work?" The governance policies that define how agents operate live in `who/governance/` because they answer "WHO is involved and what authority do they have?"
+
+The structure demonstrates itself. Navigate up two levels from this file and you'll see the triad in the directory listing. That's the point — the architecture is visible, not hidden behind abstractions.
+
+## Related
+
+- [[what/concepts/concept_ontology|Ontology]] — the entity types that populate each triad leg
+- [[what/concepts/concept_knowledge_graph|Knowledge Graph]] — how triad contents connect into a navigable web
+- [[what/concepts/concept_governance_files|Governance Files]] — the five ALLCAPS files that orient agents to the triad
