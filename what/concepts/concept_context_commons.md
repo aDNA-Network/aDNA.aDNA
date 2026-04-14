@@ -1,0 +1,111 @@
+---
+type: concept
+created: 2026-04-13
+updated: 2026-04-13
+status: active
+difficulty: advanced
+spec_section: "§10 Context Library, §11 Federation Protocol, §6 FAIR Metadata"
+dual_audience: true
+last_edited_by: agent_stanley
+tags: [concept, context_commons, community, federation, sharing, advanced]
+related_concepts: [concept_fair_metadata, concept_agentic_literacy, concept_open_standard, concept_lattice_composition]
+related_patterns: [pattern_federation_readiness, pattern_context_recipe]
+---
+
+# Context Commons — Shared Knowledge as a Public Good
+
+## Overview
+
+The Context Commons is the vision of a community-maintained library of context files, lattices, and patterns that anyone can use, improve, and share. Built on aDNA's federation protocol and FAIR metadata, it transforms project-local knowledge into reusable public goods — curated context that helps agents across many projects, not just one.
+
+## Why This Matters
+
+Think about open-source software. Before it became normal, every company wrote its own web server, its own database driver, its own logging library. The same problems were solved thousands of times in thousands of private codebases. Open source changed this: someone writes a good solution, publishes it with a license, and everyone benefits. The collective saves millions of hours of duplicated effort.
+
+AI-agent knowledge has the same duplication problem today. Every team writes its own CLAUDE.md from scratch. Every project builds its own context library. Every vault rediscovers the same patterns for organizing knowledge, managing token budgets, and structuring agent workflows. The insights stay trapped in private projects, invisible to the wider community.
+
+The Context Commons is the open-source moment for agent knowledge. A research lab writes a high-quality context file on protein structure prediction — instead of staying in their vault, it becomes a findable, FAIR-annotated, community-maintained resource that any biotech project can load. A startup develops a pattern for multi-agent coordination — it gets published as a reusable lattice that other teams compose into their workflows.
+
+This isn't hypothetical altruism. It's practical efficiency. A commons reduces the cost of starting a new project (don't write from scratch, pull from the commons). It raises quality (community review > individual effort). And it accelerates the development of [[what/concepts/concept_agentic_literacy|agentic literacy]] by giving learners real, validated examples to study.
+
+## How It Works
+
+### The Infrastructure Layer
+
+The Context Commons doesn't require new technology — it's built on aDNA capabilities that already exist:
+
+| Capability | aDNA Feature | Commons Role |
+|-----------|-------------|-------------|
+| **Publishing** | Federation export (§11) | How knowledge leaves a private project |
+| **Discovery** | FAIR metadata — keywords, identifiers (§6) | How published knowledge gets found |
+| **Trust** | FAIR metadata — license, provenance, creators | How users evaluate quality and legal status |
+| **Consumption** | Federation import + composition | How knowledge enters a new project |
+| **Quality** | Context quality rubric (§10) — signal density, actionability | How the community maintains standards |
+
+The commons is federation at community scale. The same protocol that lets two projects share a lattice lets a thousand projects share a context library.
+
+### What Gets Shared
+
+Not everything belongs in a commons. The most valuable shared resources are those that solve common problems across many domains:
+
+| Resource Type | Commons Value | Example |
+|--------------|--------------|---------|
+| **Context files** | High — domain knowledge is expensive to create, cheap to share | "How protein folding works" context for biotech projects |
+| **Patterns** | High — structural solutions transfer across domains | "How to design a multi-stage pipeline" pattern |
+| **Lattice templates** | Medium-High — composable workflow blueprints | "Data ingestion → validation → storage" pipeline |
+| **Governance templates** | Medium — operational boilerplate | CLAUDE.md templates for specific project types |
+| **Glossary entries** | Medium — shared terminology reduces ambiguity | Canonical definitions for cross-domain terms |
+| **Full project vaults** | Low — too domain-specific to transfer | (Keep as reference implementations, not shared resources) |
+
+The principle: share the reusable, keep the specific. Context files and patterns have the highest leverage because they're domain knowledge distilled to its most transferable form.
+
+### Governance Without Central Authority
+
+A commons needs governance — rules about quality, licensing, and contribution — but not necessarily a central authority. aDNA's approach:
+
+**FAIR as the entry gate**: Every shared resource must carry FAIR metadata. Minimum: `keywords` (findable) and `license` (accessible/reusable). This is a low bar that still ensures basic discoverability and legal clarity.
+
+**Quality rubric as the standard**: The context quality rubric (§10) provides a shared vocabulary for evaluating contributions. Signal density, actionability, source diversity — the same axes used to score context files within a project apply to commons contributions. Target composite score: 3.5+.
+
+**Federation as the mechanism**: Resources enter and leave the commons through the federation protocol. Import triggers ontology unification (§11.3) to ensure compatibility. Version policies (locked, patch, minor, latest) manage dependency relationships.
+
+**Community review over gatekeeping**: Rather than a review board that approves contributions, the commons relies on transparent quality scores and community usage signals. A context file with signal density 5/5, used by 50 projects, is de facto validated — no committee needed.
+
+### The Contribution Cycle
+
+Knowledge flows through the commons in a cycle:
+
+```
+Create (in a project)
+  → Generalize (remove project-specific details)
+    → Annotate (add FAIR metadata + quality scores)
+      → Publish (federation export)
+        → Discover (keyword search / recipe index)
+          → Import (federation import)
+            → Adapt (customize for local project)
+              → Improve (fix issues, update sources)
+                → Contribute back (updated version)
+```
+
+Each step adds value. The original creator does the hardest work — distilling domain knowledge. The commons makes that work accessible to everyone. Consumers who improve and contribute back create a virtuous cycle.
+
+## See It In Action
+
+This vault contains the seeds of a Context Commons:
+
+**The context library itself**: `what/context/` contains 5 topics, 27 subtopics, and ~75K tokens of curated knowledge. This library was created for this vault but is designed to be sharable: every file has FAIR-aligned metadata (sources, tags, quality scores), token estimates, and self-contained content. It's a proto-commons.
+
+**Community infrastructure**: `who/community/` is scaffolded for community roles and contribution paths. When populated, it will define how contributors propose, review, and maintain shared resources.
+
+**FAIR metadata everywhere**: Every object in this vault carries the metadata envelope that makes commons participation possible — `keywords`, `license`, `provenance`, `sources`. The infrastructure is in place; the community scales it.
+
+**The base template**: The upstream `adna/` repository (github.com/LatticeProtocol/Agentic-DNA) is itself a commons contribution — a shared, forkable starting point that reduces the cost of creating new aDNA projects from hours to minutes. Every `.aDNA/` project in the workspace was forked from this commons resource.
+
+**Context recipes as curated collections**: `what/context/context_recipes.md` pre-defines which context subtopics to load together for common tasks. These recipes are a form of commons curation — someone figured out the right combination so you don't have to.
+
+## Related
+
+- [[what/concepts/concept_fair_metadata|FAIR Metadata]] — the metadata standard that makes commons resources findable, trustworthy, and reusable
+- [[what/concepts/concept_agentic_literacy|Agentic Literacy]] — the literacy movement the commons accelerates by providing real examples
+- [[what/concepts/concept_open_standard|Open Standard]] — the open governance model that enables a commons to exist without vendor lock-in
+- [[what/concepts/concept_lattice_composition|Lattice Composition]] — the composability that makes commons lattices useful in new projects

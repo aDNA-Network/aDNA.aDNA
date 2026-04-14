@@ -32,7 +32,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | Phase | Status | Missions | Content | Description |
 |-------|--------|----------|---------|-------------|
 | **0: Scaffold** | Complete | M00 | 0 content | Fork, governance, ontology extension, campaign setup |
-| **1: Core Content** | Active | M01-M05 | 26 files | Concepts, patterns, comparisons |
+| **1: Core Content** | Active | M01-M05 | 26 files (13/26 complete) | Concepts, patterns, comparisons |
 | **2: Human Path** | Planned | M06-M08 | 15 files | Tutorials, use cases |
 | **3: The Who** | Planned | M09-M11 | ~33 files | Community, adopters, glossary |
 | **4: The How** | Planned | M12-M14 | ~12 files | Publishing, workshops, lattices |
@@ -46,7 +46,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 |---------|-------|--------|-------|-------------|
 | M01 | Core Concepts: Triad & Foundations | **completed** | concept_triad, concept_ontology, concept_knowledge_graph | Phase 0 |
 | M02 | Core Concepts: Governance & Operations | **completed** | concept_governance_files, concept_token_selection, concept_convergence, concept_dual_audience | M01 |
-| M03 | Core Concepts: Advanced | pending | concept_context_optimization, concept_lattice_composition, concept_open_standard, concept_agentic_literacy, concept_context_commons, concept_fair_metadata | M01, M02 |
+| M03 | Core Concepts: Advanced | **completed** | concept_context_optimization, concept_lattice_composition, concept_open_standard, concept_agentic_literacy, concept_context_commons, concept_fair_metadata | M01, M02 |
 | M04 | Pattern Library | pending | 8 pattern files | M01, M02 |
 | M05 | Comparisons | pending | 5 comparison files (vs PARA, Zettelkasten, Notion, Johnny.Decimal, plain markdown) | M01-M03 |
 

@@ -1,0 +1,129 @@
+---
+type: concept
+created: 2026-04-13
+updated: 2026-04-13
+status: active
+difficulty: intermediate
+spec_section: "§5.1 Lattice Objects, §11 Federation Protocol"
+dual_audience: true
+last_edited_by: agent_stanley
+tags: [concept, lattice, composition, federation, modules, intermediate]
+related_concepts: [concept_ontology, concept_knowledge_graph, concept_fair_metadata, concept_open_standard]
+related_patterns: [pattern_lattice_extraction, pattern_seam_edge]
+---
+
+# Lattice Composition — Building Workflows from Parts
+
+## Overview
+
+Lattice composition is how aDNA builds complex workflows from simpler pieces. A lattice is a directed graph of nodes (modules, datasets, processes) connected by edges (data flow). Lattices can be composed — combined into larger workflows — through two patterns: inline merging and external referencing. This composability is what makes lattices reusable, shareable, and scalable.
+
+## Why This Matters
+
+Think of it like cooking. A recipe for a full dinner isn't one monolithic instruction — it's composed from sub-recipes. The salad dressing is its own recipe. The roasted vegetables are their own recipe. The dinner recipe combines them, specifying how the salad dressing goes on the salad and the vegetables go alongside the main course.
+
+Lattices work the same way. A protein drug discovery pipeline might involve structure prediction, binding analysis, and ranking — each a complex workflow in its own right. Rather than writing one enormous pipeline from scratch, you compose it from smaller, tested lattices. The structure prediction team maintains their lattice. The binding analysis team maintains theirs. The pipeline team composes them, specifying how data flows between them.
+
+This is powerful for three reasons. First, each piece can be developed, tested, and improved independently. Second, pieces can be shared across projects — a structure prediction lattice is useful in many pipelines, not just one. Third, composition makes complexity manageable — you can understand a 50-node workflow as 5 composed lattices of 10 nodes each, not as one flat graph.
+
+## How It Works
+
+### The Lattice YAML Structure
+
+Every lattice is declared in a `.lattice.yaml` file that validates against the schema at `what/lattices/lattice_yaml_schema.json`. The core elements (§5.1):
+
+| Element | Purpose | Required |
+|---------|---------|----------|
+| `lattice.name` | Unique identifier (`snake_case`) | Yes |
+| `lattice.version` | Semantic version | Yes |
+| `lattice.lattice_type` | Category: `pipeline`, `agent`, `context_graph`, `workflow`, `skill`, `infrastructure`, `context_set` | Yes |
+| `execution.mode` | Runtime behavior: `sequential`, `parallel`, `hybrid` | Yes |
+| `nodes[]` | The processing units (modules, datasets, processes, checkpoints) | Yes |
+| `edges[]` | Data flow connections between nodes | Yes (for 2+ nodes) |
+| `fair` | FAIR metadata block (license, keywords, provenance) | Yes |
+
+### Seven Lattice Types
+
+| Type | Purpose | Execution Mode | Example |
+|------|---------|---------------|---------|
+| `pipeline` | Sequential data processing | `sequential` or `hybrid` | Protein binder design |
+| `agent` | LLM-driven reasoning loops | `hybrid` | Decision-making workflows |
+| `context_graph` | Knowledge retrieval and reasoning | varies | Knowledge base assembly |
+| `workflow` | Orchestrated multi-step operations | `hybrid` | Deep research pipeline |
+| `skill` | Promoted Claude skill as lattice | varies | Published agent recipe |
+| `infrastructure` | Physical/network topology | varies | Cluster configuration |
+| `context_set` | Domain overlay inheriting from base | varies | Disease-specific pipeline |
+
+### Two Composition Patterns
+
+When combining lattices, you choose between two patterns (§11):
+
+**Inline composition** — child nodes merge into the parent with namespace prefixes.
+
+| Property | Detail |
+|----------|--------|
+| Child visibility | All child nodes become first-class in parent |
+| Node naming | `{child_name}_{node_id}` |
+| Token cost | +N tokens (all child nodes materialized) |
+| Best when | Parent needs fine-grained access to child internals |
+| Seam edges | Required: parent → child entry node, child exit → parent |
+
+**External reference** — child appears as a single opaque node with a `lattice://` URI.
+
+| Property | Detail |
+|----------|--------|
+| Child visibility | Internal structure hidden |
+| Node type | `module` with `ref: lattice://instance/name` |
+| Token cost | +1 node (single opaque reference) |
+| Best when | Parent treats child as black-box |
+| Seam edges | Required: edges to/from opaque node with `data_mapping` and `port` |
+
+**Default recommendation**: External reference. It minimizes token cost while preserving composability. Use inline only when the parent genuinely needs to inspect or modify child internals.
+
+### Seam Edges
+
+Seam edges are the connectors between composed lattices. They require explicit data mapping — no implicit pass-through:
+
+```yaml
+edges:
+  - from: parent_design_step
+    to: docking_assessment          # opaque child node
+    label: "designed sequences for validation"
+    data_mapping:
+      sequences: input_sequences    # explicit field mapping
+    port: structure_prediction      # child entry node
+```
+
+Rules: at least one edge into the child's entry and one out of its exit. Every seam edge needs `data_mapping`. External references need `port` to identify which child node receives the data.
+
+### Federation Readiness
+
+For a lattice to be composable across aDNA instances (not just within one project), it must pass six readiness checks (§11):
+
+| Check | Requirement |
+|-------|------------|
+| Schema valid | Passes `lattice_validate.py` |
+| Opt-in | `federation.shareable: true` |
+| Provenance | `federation.source_instance` set |
+| License | `fair.license` declared |
+| Findable | `fair.keywords` has at least 1 entry |
+| References resolve | All `ref` fields are valid paths or URIs |
+
+## See It In Action
+
+This vault contains the full lattice infrastructure at `what/lattices/`:
+
+**Schema**: `what/lattices/lattice_yaml_schema.json` — the JSON Schema that all lattice files validate against. Open it to see the `nodes`, `edges`, `federation`, and `fair` block definitions.
+
+**Examples**: `what/lattices/examples/` contains validated lattice files covering all types and composition patterns. The `docking_assessment` example demonstrates external reference federation — it was extracted from a larger `protein_binder_design` pipeline and carries `federation.parent_lattice` provenance.
+
+**Validation tools**: `what/lattices/tools/lattice_validate.py` checks schema compliance, node ID uniqueness, edge reference validity, and federation property consistency. Run it against any `.lattice.yaml` to verify composition correctness.
+
+**The vault itself is a context graph**: The knowledge structure you're navigating — concepts linking to concepts, AGENTS.md routing agents through directories — is a `context_graph` lattice. The nodes are files. The edges are wikilinks and AGENTS.md references. The execution mode is agent-driven graph traversal.
+
+## Related
+
+- [[what/concepts/concept_ontology|Ontology]] — the entity types (module, dataset, lattice) that serve as lattice building blocks
+- [[what/concepts/concept_knowledge_graph|Knowledge Graph]] — the broader connected structure that lattices formalize as declarative YAML
+- [[what/concepts/concept_fair_metadata|FAIR Metadata]] — the metadata envelope that makes lattices findable, shareable, and reusable
+- [[what/concepts/concept_open_standard|Open Standard]] — how federation enables lattice composition across independent aDNA instances
