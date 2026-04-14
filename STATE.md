@@ -42,10 +42,20 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 None.
 
+## Last Session (2026-04-13)
+
+Completed full Phase 0 scaffold in a single session. Commit `65b6546`.
+
 ## Next Steps
 
 1. Begin **Phase 1, Mission M01** — Core Concepts: The Triad & Foundations
    - Create `concept_triad.md`, `concept_ontology.md`, `concept_knowledge_graph.md`
-   - Load context: `adna_core/paradigm_overview`, `adna_core/entity_definitions`
+   - Load context: `what/context/adna_core/context_adna_core_paradigm_overview.md`, `what/context/adna_core/context_adna_core_entity_definitions.md`
+   - Load campaign context: `how/campaigns/campaign_rosetta/CLAUDE.md` for quality gates and voice guide
+   - Reference upstream spec: `what/docs/adna_standard.md` for normative claims
 2. After M01: proceed through M02-M05 (governance concepts, advanced concepts, patterns, comparisons)
 3. Phase gate: user approval required before advancing to Phase 2
+
+## Next Session Prompt
+
+> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 0 (scaffold) is complete — governance customized, 10 ontology extensions scaffolded, campaign_rosetta created. Begin Phase 1, Mission M01: write the first 3 concept files (`concept_triad.md`, `concept_ontology.md`, `concept_knowledge_graph.md`) in `what/concepts/`. Load the campaign CLAUDE.md at `how/campaigns/campaign_rosetta/CLAUDE.md` for quality gates and voice guide. Load `what/context/adna_core/context_adna_core_paradigm_overview.md` and `what/context/adna_core/context_adna_core_entity_definitions.md` as domain context. Use `how/templates/template_concept.md` as the structural template. Every file must pass the dual-audience test, include self-references to the vault, cite `adna_standard.md` for normative claims, and cross-link to 2+ related files.
