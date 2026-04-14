@@ -1,7 +1,7 @@
 ---
 type: manifest
 created: 2026-04-13
-updated: 2026-04-13
+updated: 2026-04-14
 last_edited_by: agent_stanley
 tags: [manifest, governance]
 ---
@@ -134,11 +134,12 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | Component | Status | Description |
 |-----------|--------|-------------|
 | Phase 0: Scaffold | Complete | Fork, governance customization, 10 ontology extensions, campaign_rosetta |
-| Phase 1: Core Content | Planned | 13 concept files, 8 pattern files, 5 comparison files |
-| Phase 2: Human Path | Planned | 9 tutorials, 6 use case narratives |
-| Phase 3: The Who | Planned | Community architecture, adopter personas, glossary |
-| Phase 4: The How | Planned | Publishing pipeline, workshop kits, lattice definitions |
-| Phase 5: Website | Deferred | AstroJS documentation site |
+| Phase 1: Core Content | Complete | 13 concept files, 8 pattern files, 5 comparison files |
+| Phase 2: Human Path | Complete | 9 tutorials, 6 use case narratives |
+| Phase 3: Website v1 | **Active** | AstroJS docs site via SiteForge at `site/`, Vercel deploy |
+| Phase 4: The Who | Planned | Community architecture, adopter personas, glossary |
+| Phase 5: The How | Planned | Publishing pipeline, workshop kits, lattice definitions |
+| Phase 6: Website v2 | Planned | Final content sync, quality pass, brand refinement |
 
 ### Inherited Infrastructure (from base template)
 

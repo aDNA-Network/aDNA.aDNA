@@ -4,16 +4,16 @@ type: campaign
 title: "Operation Rosetta — Self-Referential aDNA Context Graph"
 owner: stanley
 status: active
-current_phase: 1
-phase_count: 5
-mission_count: 15
-estimated_sessions: "25-35"
+current_phase: 3
+phase_count: 6
+mission_count: 19
+estimated_sessions: "30-40"
 estimation_class: content-novel
 priority: high
 created: 2026-04-13
-updated: 2026-04-13
+updated: 2026-04-14
 last_edited_by: agent_stanley
-tags: [campaign, rosetta, adna, documentation, education]
+tags: [campaign, rosetta, adna, documentation, education, website]
 ---
 
 # Operation Rosetta
@@ -34,9 +34,12 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | **0: Scaffold** | Complete | M00 | 0 content | Fork, governance, ontology extension, campaign setup |
 | **1: Core Content** | **Complete** | M01-M05 | 26/26 files | Concepts, patterns, comparisons |
 | **2: Human Path** | **Complete** | M06-M08 | 15/15 files | Tutorials, use cases |
-| **3: The Who** | Planned | M09-M11 | ~33 files | Community, adopters, glossary |
-| **4: The How** | Planned | M12-M14 | ~12 files | Publishing, workshops, lattices |
-| **5: Website** | Deferred | — | — | AstroJS documentation site |
+| **3: Website v1** | **Active** | M09-M12 | site build | AstroJS docs site via SiteForge (full content inventory) |
+| **4: The Who** | Planned | M13-M15 | ~33 files | Community, adopters, glossary |
+| **5: The How** | Planned | M16-M18 | ~12 files | Publishing, workshops, lattices |
+| **6: Website v2** | Planned | M19 | site polish | Final content sync, quality pass, brand refinement |
+
+> **Restructured 2026-04-14**: Website moved from deferred Phase 5 to active Phase 3. Content graph phases (Who, How) slide to Phases 4-5. New Phase 6 adds a final website polish pass after all content is complete.
 
 ## Mission Board
 
@@ -58,21 +61,36 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | M07 | Intermediate Tutorials | **completed** | 3 tutorials | M06 |
 | M08 | Advanced Tutorials + Use Cases | **completed** | 3 tutorials + 6 use cases | M07 |
 
-### Phase 3: The Who
+### Phase 3: Website v1
+
+| Mission | Title | Status | Deliverables | Dependencies |
+|---------|-------|--------|-------------|-------------|
+| M09 | Website Architecture & Branding | pending | branding.json, site IA, content mapping, gap list | Phase 2 |
+| M10 | Site Scaffold & Content Collections | pending | Astro 6 project at aDNA.aDNA/site/, clean build | M09 |
+| M11 | Content Integration | pending | All pages populated, internal links, homepage | M10 |
+| M12 | Quality Gates & Launch | pending | 10 gates passing, Vercel deploy, live site | M11 |
+
+### Phase 4: The Who
 
 | Mission | Title | Status | Files | Dependencies |
 |---------|-------|--------|-------|-------------|
-| M09 | Community Architecture | pending | 3 community files | Phase 1 |
-| M10 | Adopter Personas | pending | 5 persona cards | M08 |
-| M11 | Glossary + Governance | pending | ~25 glossary entries + 3 governance docs | Phase 1 |
+| M13 | Community Architecture | pending | 3 community files | Phase 1 |
+| M14 | Adopter Personas | pending | 5 persona cards | M08 |
+| M15 | Glossary + Governance | pending | ~25 glossary entries + 3 governance docs | Phase 1 |
 
-### Phase 4: The How
+### Phase 5: The How
 
 | Mission | Title | Status | Files | Dependencies |
 |---------|-------|--------|-------|-------------|
-| M12 | Publishing Pipeline | pending | 3 files | Phases 1-3 |
-| M13 | Workshop Kits | pending | 3 workshops + facilitation guide | Phase 2 |
-| M14 | Lattice Definitions + Closeout | pending | 4 lattice YAMLs + campaign AAR | All phases |
+| M16 | Publishing Pipeline | pending | 3 files | Phases 1-4 |
+| M17 | Workshop Kits | pending | 3 workshops + facilitation guide | Phase 2 |
+| M18 | Lattice Definitions + Closeout | pending | 4 lattice YAMLs + campaign AAR | All phases |
+
+### Phase 6: Website v2
+
+| Mission | Title | Status | Deliverables | Dependencies |
+|---------|-------|--------|-------------|-------------|
+| M19 | Website Review & Polish | pending | Phase 4-5 content synced, glossary section, quality re-run | Phases 4-5 |
 
 ## Quality Gates
 

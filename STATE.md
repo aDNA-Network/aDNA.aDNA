@@ -13,56 +13,51 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 2 — Human Path COMPLETE.** Phases 0-2 finished — 41 content files across 8 missions. **Phase gate: user approval required before advancing to Phase 3.**
+**Phase 3 — Website v1 IN PROGRESS.** Phases 0-2 complete (41 content files). Campaign restructured: website moved from deferred Phase 5 to active Phase 3. Building AstroJS documentation site via SiteForge at `aDNA.aDNA/site/`, deploying to Vercel.
 
 ## Active Campaign
 
 **Operation Rosetta** (`how/campaigns/campaign_rosetta/`) — build the self-referential aDNA context graph.
 
-| Phase | Status | Missions | Content Files |
-|-------|--------|----------|---------------|
+| Phase | Status | Missions | Content |
+|-------|--------|----------|---------|
 | Phase 0: Scaffold | Complete | M00 | 0 content, 10 AGENTS.md, 10 templates, 2 skills |
 | Phase 1: Core Content | **Complete** | M01-M05 | 26/26 (13 concepts, 8 patterns, 5 comparisons) |
 | Phase 2: Human Path | **Complete** | M06-M08 | 15/15 (9 tutorials, 6 use cases) |
-| Phase 3: The Who | Planned | M09-M11 | Community + adopters + glossary |
-| Phase 4: The How | Planned | M12-M14 | Publishing + workshops + lattices |
-| Phase 5: Website | Deferred | — | AstroJS site (out of scope) |
+| Phase 3: Website v1 | **Active** | M09-M12 | AstroJS docs site (SiteForge, Vercel) |
+| Phase 4: The Who | Planned | M13-M15 | Community, adopters, glossary |
+| Phase 5: The How | Planned | M16-M18 | Publishing, workshops, lattices |
+| Phase 6: Website v2 | Planned | M19 | Final content sync + quality pass |
 
-## Phase 2 Deliverables
+## Campaign Restructuring (2026-04-14)
 
-| Mission | Type | Count | Files |
-|---------|------|-------|-------|
-| M06 | Beginner tutorials | 3 | navigate_a_vault, first_claude_md, question_test |
-| M07 | Intermediate tutorials | 3 | extend_the_ontology, write_a_context_file, design_a_mission |
-| M08 | Advanced tutorials | 3 | build_a_lattice, run_a_campaign, federate_a_vault |
-| M08 | Use cases | 6 | research_lab, startup, enterprise_team, educator, open_source_project, solo_developer |
+Website pulled forward from deferred Phase 5 to active Phase 3. Rationale: a live site turns 41 vault-only files into a public resource immediately, and publishing reveals content gaps that vault-only authoring does not. Old Phases 3-4 renumbered to 4-5. New Phase 6 adds a final website polish pass after all content is complete.
+
+**Key decisions**: Brand designed from scratch, Vercel hosting, site at `aDNA.aDNA/site/`, full content inventory (41 files + upstream spec/guides).
 
 ## What's Working
 
 - Complete learning path: beginner → intermediate → advanced tutorials (9 files)
 - 6 domain-specific use cases with named personas
 - All tutorials are executable — readers produce concrete outcomes
-- Use cases follow consistent narrative arc (persona → challenge → solution → vault → outcome)
 - Dense cross-linking: tutorials → concepts → patterns, use cases → concepts → comparisons
 - 41 total content files across Phases 1-2, all quality-gated
 
 ## Active Blockers
 
-**Phase gate**: User approval required to advance from Phase 2 to Phase 3.
+None. Phase 3 approved and in progress.
 
 ## Last Session (2026-04-14)
 
-Completed all Phase 2 missions (M06-M08) — 9 tutorials + 6 use cases. AARs appended. Campaign board updated: Phase 2 complete.
+Restructured campaign: website moved from deferred Phase 5 to active Phase 3 (M09-M12). Old Phases 3-4 renumbered to 4-5, new Phase 6 for final website polish (M19). All governance docs updated. M09 mission file created with 4 objectives. No M09 objectives executed yet — ready for next session.
 
 ## Next Steps
 
-1. **Phase gate decision** — user approves or adjusts before Phase 3 begins
-2. Phase 3 (The Who):
-   - M09: Community Architecture (3 community files)
-   - M10: Adopter Personas (5 persona cards — can seed from M08 use case personas)
-   - M11: Glossary + Governance (~25 glossary entries + 3 governance docs)
-3. Phase 3 introduces WHO-leg content — community roles, adopter profiles, canonical terminology
+1. **M09: Website Architecture & Branding** — design IA, create branding.json, map content to site pages
+2. **M10: Site Scaffold** — run SiteForge scaffold, configure content collections
+3. **M11: Content Integration** — transform vault content to site pages, create homepage
+4. **M12: Quality & Launch** — run 10 quality gates, deploy to Vercel
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. Phases 1-2 complete (41 content files). Phase gate: confirm with user before starting Phase 3. Phase 3 (The Who) covers M09-M11: community architecture, adopter personas, glossary + governance. Check `who/community/AGENTS.md`, `who/adopters/AGENTS.md`, and `what/glossary/AGENTS.md` for directory conventions. M10 adopter personas can seed from M08 use case personas (Maya Chen, Alex Rivera, Jordan Okafor, Sarah Kim, Kai Nakamura, Sam Torres).
+> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 3 (Website v1) is active. Execute M09 (Website Architecture & Branding) — mission file at `how/campaigns/campaign_rosetta/missions/mission_m09_website_architecture.md`. Four objectives all pending: (O1) design site information architecture, (O2) create `branding.json` with aDNA visual identity designed from scratch, (O3) build content mapping table (41 vault files + 4 upstream docs → site pages), (O4) identify content gaps (homepage, get-started, what-is-adna overview, 404). Site uses SiteForge.aDNA `documentation` archetype (`direct_instruction` voice register). Read `SiteForge.aDNA/how/skills/skill_site_scaffold.md` for branding.json schema. Site deploys to Vercel at `aDNA.aDNA/site/`. Full content inventory: 41 vault files + upstream spec docs from `adna/.adna/what/docs/`.
