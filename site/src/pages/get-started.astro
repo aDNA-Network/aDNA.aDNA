@@ -1,0 +1,36 @@
+---
+import DocumentationLayout from '../layouts/DocumentationLayout.astro';
+import { buildWebPageJsonLD } from '../utils/seo';
+
+const jsonLD = buildWebPageJsonLD({
+  title: 'Get Started with aDNA',
+  description: 'Set up your first aDNA project in three steps.',
+  url: Astro.url.href,
+});
+---
+
+<DocumentationLayout
+  title="Get Started"
+  description="Set up your first aDNA project in three steps."
+  jsonLD={jsonLD}
+>
+  <p>Get your first aDNA project running in three steps.</p>
+
+  <h2 id="step-1">1. Clone the template</h2>
+  <pre><code>git clone https://github.com/LatticeProtocol/Agentic-DNA.git my-project
+cd my-project</code></pre>
+  <p>This gives you the base <code>.adna/</code> template with governance files, skills, and context structure.</p>
+
+  <h2 id="step-2">2. Open in your editor</h2>
+  <p>Open the project in Obsidian, VS Code, or any Markdown editor. The <code>CLAUDE.md</code> file at the root is your starting point — it tells AI agents how to navigate the project.</p>
+
+  <h2 id="step-3">3. Run your first session</h2>
+  <p>Start a session with Claude Code (or your preferred AI agent). The agent will read <code>CLAUDE.md</code>, detect a fresh project, and walk you through onboarding.</p>
+
+  <h2 id="next-steps">Next steps</h2>
+  <ul>
+    <li><a href="/learn/tutorials/first-claude-md">Tutorial: Create Your First CLAUDE.md</a></li>
+    <li><a href="/learn/what-is-adna">What is aDNA?</a></li>
+    <li><a href="/learn/concepts/triad">Learn about the Triad</a></li>
+  </ul>
+</DocumentationLayout>

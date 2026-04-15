@@ -1,0 +1,91 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SidebarNav from '../components/sections/SidebarNav.astro';
+import TOCPanel from '../components/sections/TOCPanel.astro';
+import PrevNextNav from '../components/sections/PrevNextNav.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  headings?: { depth: number; slug: string; text: string }[];
+  prev?: { label: string; href: string };
+  next?: { label: string; href: string };
+  jsonLD?: Record<string, unknown>;
+}
+
+const { title, description, headings = [], prev, next, jsonLD } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} jsonLD={jsonLD}>
+  <div class="doc-layout">
+    <aside class="doc-sidebar" aria-label="Documentation navigation">
+      <SidebarNav />
+    </aside>
+
+    <article class="doc-content prose">
+      <h1>{title}</h1>
+      <slot />
+      {(prev || next) && <PrevNextNav prev={prev} next={next} />}
+    </article>
+
+    <aside class="doc-toc" aria-label="Table of contents">
+      {headings.length > 0 && <TOCPanel headings={headings} />}
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .doc-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    min-height: calc(100vh - 8rem);
+  }
+
+  .doc-sidebar {
+    display: none;
+    position: sticky;
+    top: 3.5rem;
+    height: calc(100vh - 3.5rem);
+    overflow-y: auto;
+    padding: var(--space-6) var(--space-4);
+    border-right: 1px solid var(--color-border);
+  }
+
+  .doc-content {
+    padding: var(--space-8) var(--space-6);
+    min-width: 0;
+  }
+
+  .doc-toc {
+    display: none;
+    position: sticky;
+    top: 3.5rem;
+    height: calc(100vh - 3.5rem);
+    overflow-y: auto;
+    padding: var(--space-6) var(--space-4);
+  }
+
+  /* Tablet: show sidebar */
+  @media (min-width: 768px) {
+    .doc-layout {
+      grid-template-columns: var(--sidebar-width) 1fr;
+    }
+
+    .doc-sidebar {
+      display: block;
+    }
+  }
+
+  /* Desktop: show TOC */
+  @media (min-width: 1280px) {
+    .doc-layout {
+      grid-template-columns: var(--sidebar-width) 1fr var(--toc-width);
+    }
+
+    .doc-toc {
+      display: block;
+    }
+  }
+</style>

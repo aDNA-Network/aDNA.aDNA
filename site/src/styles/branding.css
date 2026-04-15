@@ -1,0 +1,38 @@
+/* src/styles/branding.css — Generated from branding.json
+ *
+ * Brand: aDNA (Agentic DNA Knowledge Architecture)
+ * Primary: Teal #0D7377 | Accent: Amber #D4A017
+ * Typography: Space Grotesk (display) / Inter (body) / JetBrains Mono (code)
+ *
+ * WCAG AA Contrast Ratios (on white #fff):
+ *   --brand-primary    #0D7377 → 5.0:1 ✓ (text + large text)
+ *   --brand-primary-dark #0A4F52 → 7.8:1 ✓ (text + large text)
+ *   --color-text        hsl(0 0% 12%) → 15.4:1 ✓
+ *   --color-text-muted  hsl(0 0% 40%) → 5.3:1 ✓
+ *   --brand-accent      #D4A017 → 3.1:1 ✗ (large text only, not body text)
+ */
+
+:root {
+  /* Brand colors */
+  --brand-primary: #0D7377;
+  --brand-primary-dark: #0A4F52;
+  --brand-primary-light: #14919B;
+  --brand-accent: #D4A017;
+  --brand-accent-light: #F0D060;
+
+  /* Semantic color mappings (override neutral defaults) */
+  --color-primary: var(--brand-primary);
+  --color-primary-hover: var(--brand-primary-dark);
+  --color-accent: var(--brand-accent);
+  --color-link: var(--brand-primary);
+  --color-link-hover: var(--brand-primary-dark);
+}
+
+/* Dark mode — lightened brand values for contrast on dark backgrounds */
+.dark {
+  --color-primary: var(--brand-primary-light);
+  --color-primary-hover: var(--brand-primary);
+  --color-accent: var(--brand-accent-light);
+  --color-link: var(--brand-primary-light);
+  --color-link-hover: #5FC4C8;
+}

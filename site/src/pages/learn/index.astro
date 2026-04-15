@@ -1,0 +1,35 @@
+---
+import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../components/sections/CardGrid.astro';
+
+const sections = [
+  {
+    title: 'What is aDNA?',
+    description: 'A comprehensive overview of the Agentic DNA knowledge architecture.',
+    href: '/learn/what-is-adna',
+  },
+  {
+    title: 'Concepts',
+    description: '13 core concepts from the Triad to FAIR Metadata.',
+    href: '/learn/concepts',
+  },
+  {
+    title: 'Tutorials',
+    description: '9 step-by-step guides from beginner to advanced.',
+    href: '/learn/tutorials',
+  },
+  {
+    title: 'Comparisons',
+    description: 'How aDNA compares to PARA, Zettelkasten, Notion, and more.',
+    href: '/learn/comparisons',
+  },
+];
+---
+
+<DocumentationLayout
+  title="Learn aDNA"
+  description="Learn the aDNA knowledge architecture through concepts, tutorials, and comparisons."
+>
+  <p>Start with the overview, explore concepts in depth, follow hands-on tutorials, or see how aDNA compares to systems you already know.</p>
+  <CardGrid cards={sections} columns={2} />
+</DocumentationLayout>

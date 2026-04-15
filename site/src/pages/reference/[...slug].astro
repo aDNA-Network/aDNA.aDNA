@@ -1,0 +1,80 @@
+---
+import { getCollection, render } from 'astro:content';
+import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import { buildTechArticleJsonLD } from '../../utils/seo';
+
+export async function getStaticPaths() {
+  const refs = await getCollection('reference', ({ data }) => !data.draft);
+  return refs.map((ref) => ({
+    params: { slug: ref.id },
+    props: { ref },
+  }));
+}
+
+const { ref } = Astro.props;
+const { Content, headings } = await render(ref);
+
+const jsonLD = buildTechArticleJsonLD({
+  title: ref.data.ref_title,
+  description: ref.data.description ?? '',
+  url: Astro.url.href,
+  dateModified: ref.data.updated?.toISOString(),
+});
+---
+
+<DocumentationLayout
+  title={ref.data.ref_title}
+  description={ref.data.description ?? `${ref.data.ref_title} — aDNA reference.`}
+  headings={headings}
+  jsonLD={jsonLD}
+>
+  {ref.data.version && (
+    <div class="ref-meta">
+      <span class="ref-version">v{ref.data.version}</span>
+      <span class:list={['ref-stability', ref.data.stability]}>{ref.data.stability}</span>
+    </div>
+  )}
+  <Content />
+</DocumentationLayout>
+
+<style>
+  .ref-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    font-size: var(--text-sm);
+  }
+
+  .ref-version {
+    font-family: var(--font-mono);
+    color: var(--color-text-muted);
+  }
+
+  .ref-stability {
+    padding: 0.15em 0.6em;
+    border-radius: var(--radius-full);
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+
+  .ref-stability.stable {
+    background: color-mix(in srgb, var(--color-success) 15%, transparent);
+    color: var(--color-success);
+  }
+
+  .ref-stability.beta {
+    background: color-mix(in srgb, var(--color-info) 15%, transparent);
+    color: var(--color-info);
+  }
+
+  .ref-stability.experimental {
+    background: color-mix(in srgb, var(--color-warning) 15%, transparent);
+    color: var(--color-warning);
+  }
+
+  .ref-stability.deprecated {
+    background: color-mix(in srgb, var(--color-error) 15%, transparent);
+    color: var(--color-error);
+  }
+</style>

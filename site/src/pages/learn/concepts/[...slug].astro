@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from 'astro:content';
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import { buildTechArticleJsonLD } from '../../../utils/seo';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs', ({ data }) => data.section === 'concepts' && !data.draft);
+  return docs.map((doc) => ({
+    params: { slug: doc.id },
+    props: { doc },
+  }));
+}
+
+const { doc } = Astro.props;
+const { Content, headings } = await render(doc);
+
+const jsonLD = buildTechArticleJsonLD({
+  title: doc.data.doc_title,
+  description: doc.data.description ?? '',
+  url: Astro.url.href,
+  dateModified: doc.data.updated?.toISOString(),
+});
+
+const prev = doc.data.prev ? { label: doc.data.prev, href: `/learn/concepts/${doc.data.prev}` } : undefined;
+const next = doc.data.next ? { label: doc.data.next, href: `/learn/concepts/${doc.data.next}` } : undefined;
+---
+
+<DocumentationLayout
+  title={doc.data.doc_title}
+  description={doc.data.description ?? `Learn about ${doc.data.doc_title} in the aDNA knowledge architecture.`}
+  headings={headings}
+  prev={prev}
+  next={next}
+  jsonLD={jsonLD}
+>
+  <Content />
+</DocumentationLayout>

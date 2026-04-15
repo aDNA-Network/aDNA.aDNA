@@ -1,0 +1,20 @@
+---
+import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../components/sections/CardGrid.astro';
+import { getSortedReference } from '../../utils/collections';
+
+const refs = await getSortedReference();
+const cards = refs.map((doc) => ({
+  title: doc.data.ref_title,
+  description: doc.data.description,
+  href: `/reference/${doc.id}`,
+}));
+---
+
+<DocumentationLayout
+  title="Reference"
+  description="aDNA specification documents, design rationale, and governance model."
+>
+  <p>Upstream specification documents for the aDNA standard. These are the normative references — when in doubt, the spec is authoritative.</p>
+  <CardGrid cards={cards} columns={2} />
+</DocumentationLayout>

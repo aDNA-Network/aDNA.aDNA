@@ -1,0 +1,20 @@
+---
+import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../components/sections/CardGrid.astro';
+import { getDocsBySection } from '../../utils/collections';
+
+const patterns = await getDocsBySection('patterns');
+const cards = patterns.map((doc) => ({
+  title: doc.data.doc_title,
+  description: doc.data.description,
+  href: `/patterns/${doc.id}`,
+}));
+---
+
+<DocumentationLayout
+  title="Patterns"
+  description="Reusable aDNA architectural patterns for common knowledge architecture challenges."
+>
+  <p>8 proven patterns that solve recurring challenges in aDNA projects. Each pattern describes the problem, the solution, and where to find a working example in this vault.</p>
+  <CardGrid cards={cards} columns={2} />
+</DocumentationLayout>

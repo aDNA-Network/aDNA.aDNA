@@ -1,0 +1,114 @@
+/**
+ * Sidebar navigation data structure matching M09 site IA.
+ * 4 top-level groups with ordered pages.
+ */
+
+export interface NavItem {
+  label: string;
+  href: string;
+  order: number;
+}
+
+export interface NavSubgroup {
+  label: string;
+  items: NavItem[];
+}
+
+export interface NavGroup {
+  label: string;
+  items: (NavItem | NavSubgroup)[];
+}
+
+function isSubgroup(item: NavItem | NavSubgroup): item is NavSubgroup {
+  return 'items' in item;
+}
+
+export { isSubgroup };
+
+export const navigation: NavGroup[] = [
+  {
+    label: 'Learn',
+    items: [
+      { label: 'What is aDNA?', href: '/learn/what-is-adna', order: 1 },
+      {
+        label: 'Concepts',
+        items: [
+          { label: 'The Triad', href: '/learn/concepts/triad', order: 2 },
+          { label: 'The Ontology', href: '/learn/concepts/ontology', order: 3 },
+          { label: 'The Knowledge Graph', href: '/learn/concepts/knowledge-graph', order: 4 },
+          { label: 'Governance Files', href: '/learn/concepts/governance-files', order: 5 },
+          { label: 'Token Selection', href: '/learn/concepts/token-selection', order: 6 },
+          { label: 'The Convergence Model', href: '/learn/concepts/convergence', order: 7 },
+          { label: 'Dual Audience', href: '/learn/concepts/dual-audience', order: 8 },
+          { label: 'Context Optimization', href: '/learn/concepts/context-optimization', order: 9 },
+          { label: 'Lattice Composition', href: '/learn/concepts/lattice-composition', order: 10 },
+          { label: 'Open Standard', href: '/learn/concepts/open-standard', order: 11 },
+          { label: 'Agentic Literacy', href: '/learn/concepts/agentic-literacy', order: 12 },
+          { label: 'Context Commons', href: '/learn/concepts/context-commons', order: 13 },
+          { label: 'FAIR Metadata', href: '/learn/concepts/fair-metadata', order: 14 },
+        ],
+      },
+      {
+        label: 'Tutorials',
+        items: [
+          { label: 'Create Your First CLAUDE.md', href: '/learn/tutorials/first-claude-md', order: 15 },
+          { label: 'Navigate an aDNA Vault', href: '/learn/tutorials/navigate-a-vault', order: 16 },
+          { label: 'Apply the Question Test', href: '/learn/tutorials/question-test', order: 17 },
+          { label: 'Write a Context File', href: '/learn/tutorials/write-a-context-file', order: 18 },
+          { label: 'Design a Mission', href: '/learn/tutorials/design-a-mission', order: 19 },
+          { label: 'Extend the Ontology', href: '/learn/tutorials/extend-the-ontology', order: 20 },
+          { label: 'Build a Lattice', href: '/learn/tutorials/build-a-lattice', order: 21 },
+          { label: 'Run a Campaign', href: '/learn/tutorials/run-a-campaign', order: 22 },
+          { label: 'Federate a Vault', href: '/learn/tutorials/federate-a-vault', order: 23 },
+        ],
+      },
+      {
+        label: 'Comparisons',
+        items: [
+          { label: 'aDNA vs. PARA', href: '/learn/comparisons/adna-vs-para', order: 24 },
+          { label: 'aDNA vs. Zettelkasten', href: '/learn/comparisons/adna-vs-zettelkasten', order: 25 },
+          { label: 'aDNA vs. Notion', href: '/learn/comparisons/adna-vs-notion', order: 26 },
+          { label: 'aDNA vs. Johnny.Decimal', href: '/learn/comparisons/adna-vs-johnny-decimal', order: 27 },
+          { label: 'aDNA vs. Plain Markdown', href: '/learn/comparisons/adna-vs-plain-markdown', order: 28 },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Use Cases',
+    items: [
+      { label: 'Solo Developer', href: '/use-cases/solo-developer', order: 1 },
+      { label: 'Startup', href: '/use-cases/startup', order: 2 },
+      { label: 'Research Lab', href: '/use-cases/research-lab', order: 3 },
+      { label: 'Enterprise Team', href: '/use-cases/enterprise-team', order: 4 },
+      { label: 'Educator', href: '/use-cases/educator', order: 5 },
+      { label: 'Open Source Project', href: '/use-cases/open-source-project', order: 6 },
+    ],
+  },
+  {
+    label: 'Patterns',
+    items: [
+      { label: 'The Question Test', href: '/patterns/question-test', order: 1 },
+      { label: 'AGENTS.md Routing', href: '/patterns/agents-md', order: 2 },
+      { label: 'Dual-Audience Writing', href: '/patterns/dual-audience', order: 3 },
+      { label: 'Base/Extension', href: '/patterns/base-extension', order: 4 },
+      { label: 'Context Recipe', href: '/patterns/context-recipe', order: 5 },
+      { label: 'FAIR Envelope', href: '/patterns/fair-envelope', order: 6 },
+      { label: 'Mission Decomposition', href: '/patterns/mission-decomposition', order: 7 },
+      { label: 'Federation Readiness', href: '/patterns/federation-readiness', order: 8 },
+    ],
+  },
+  {
+    label: 'Reference',
+    items: [
+      { label: 'Specification', href: '/reference/specification', order: 1 },
+      { label: 'Design Rationale', href: '/reference/design-rationale', order: 2 },
+      { label: 'Reading Guide', href: '/reference/reading-guide', order: 3 },
+      { label: 'Agent-First Guide', href: '/reference/agent-first-guide', order: 4 },
+      { label: 'Migration Guide', href: '/reference/migration-guide', order: 5 },
+      { label: 'Tool Setup', href: '/reference/tool-setup', order: 6 },
+      { label: 'Governance Model', href: '/reference/governance-model', order: 7 },
+      { label: 'Quality Rubric', href: '/reference/quality-rubric', order: 8 },
+    ],
+  },
+];

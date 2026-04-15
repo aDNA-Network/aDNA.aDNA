@@ -1,0 +1,43 @@
+---
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../../components/sections/CardGrid.astro';
+import { getGuidesByDifficulty } from '../../../utils/collections';
+
+const { beginner, intermediate, advanced } = await getGuidesByDifficulty();
+
+function toCards(guides: typeof beginner) {
+  return guides.map((g) => ({
+    title: g.data.guide_title,
+    description: `${g.data.estimated_time} — ${g.data.description ?? ''}`.trim(),
+    href: `/learn/tutorials/${g.id}`,
+  }));
+}
+---
+
+<DocumentationLayout
+  title="Tutorials"
+  description="Step-by-step aDNA tutorials from beginner to advanced."
+>
+  <p>9 hands-on tutorials grouped by difficulty. Each produces a concrete outcome you can use in your own projects.</p>
+
+  {beginner.length > 0 && (
+    <>
+      <h2 id="beginner">Beginner</h2>
+      <CardGrid cards={toCards(beginner)} columns={2} />
+    </>
+  )}
+
+  {intermediate.length > 0 && (
+    <>
+      <h2 id="intermediate">Intermediate</h2>
+      <CardGrid cards={toCards(intermediate)} columns={2} />
+    </>
+  )}
+
+  {advanced.length > 0 && (
+    <>
+      <h2 id="advanced">Advanced</h2>
+      <CardGrid cards={toCards(advanced)} columns={2} />
+    </>
+  )}
+</DocumentationLayout>

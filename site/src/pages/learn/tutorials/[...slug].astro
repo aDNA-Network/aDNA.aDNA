@@ -1,0 +1,73 @@
+---
+import { getCollection, render } from 'astro:content';
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import { buildTechArticleJsonLD } from '../../../utils/seo';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides', ({ data }) => !data.draft);
+  return guides.map((guide) => ({
+    params: { slug: guide.id },
+    props: { guide },
+  }));
+}
+
+const { guide } = Astro.props;
+const { Content, headings } = await render(guide);
+
+const jsonLD = buildTechArticleJsonLD({
+  title: guide.data.guide_title,
+  description: guide.data.description ?? '',
+  url: Astro.url.href,
+  datePublished: guide.data.date?.toISOString(),
+  dateModified: guide.data.updated?.toISOString(),
+});
+---
+
+<DocumentationLayout
+  title={guide.data.guide_title}
+  description={guide.data.description ?? `Learn how to ${guide.data.guide_title.toLowerCase()}.`}
+  headings={headings}
+  jsonLD={jsonLD}
+>
+  <div class="guide-meta">
+    <span class:list={['difficulty-badge', guide.data.difficulty]}>{guide.data.difficulty}</span>
+    <span class="estimated-time">{guide.data.estimated_time}</span>
+  </div>
+  <Content />
+</DocumentationLayout>
+
+<style>
+  .guide-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    font-size: var(--text-sm);
+  }
+
+  .difficulty-badge {
+    padding: 0.15em 0.6em;
+    border-radius: var(--radius-full);
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+
+  .difficulty-badge.beginner {
+    background: color-mix(in srgb, var(--color-success) 15%, transparent);
+    color: var(--color-success);
+  }
+
+  .difficulty-badge.intermediate {
+    background: color-mix(in srgb, var(--color-info) 15%, transparent);
+    color: var(--color-info);
+  }
+
+  .difficulty-badge.advanced {
+    background: color-mix(in srgb, var(--color-warning) 15%, transparent);
+    color: var(--color-warning);
+  }
+
+  .estimated-time {
+    color: var(--color-text-muted);
+  }
+</style>

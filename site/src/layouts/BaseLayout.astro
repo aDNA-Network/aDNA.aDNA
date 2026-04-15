@@ -1,0 +1,80 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import SEOHead from '../components/common/SEOHead.astro';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+import '@fontsource/space-grotesk/400.css';
+import '@fontsource/space-grotesk/700.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource-variable/jetbrains-mono';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonicalURL?: string;
+  jsonLD?: Record<string, unknown>;
+  bodyClass?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  ogImage,
+  canonicalURL,
+  jsonLD,
+  bodyClass = '',
+  noindex = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <SEOHead
+      title={title}
+      description={description}
+      ogImage={ogImage}
+      canonicalURL={canonicalURL}
+      jsonLD={jsonLD}
+      noindex={noindex}
+    />
+
+    <script is:inline>
+      document.documentElement.classList.remove('no-js');
+    </script>
+
+    <ClientRouter />
+  </head>
+  <body class:list={['min-h-screen flex flex-col', bodyClass]}>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+      Skip to main content
+    </a>
+
+    <Header />
+
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </body>
+</html>

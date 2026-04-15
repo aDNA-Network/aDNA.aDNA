@@ -1,0 +1,91 @@
+/* src/styles/tokens.css — Base design tokens (all archetypes) */
+
+:root {
+  /* Typography scale (modular, 1.25 ratio) */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', 'Fira Code', monospace;
+
+  --text-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
+  --text-sm: clamp(0.8rem, 0.75rem + 0.25vw, 0.9rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.3rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.6rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.4rem + 2.5vw, 2.8rem);
+  --text-4xl: clamp(2.25rem, 1.5rem + 3.75vw, 3.6rem);
+
+  /* Spacing scale (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Layout */
+  --content-width: 72rem;
+  --prose-width: 65ch;
+  --sidebar-width: 16rem;
+  --toc-width: 14rem;
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Colors — neutral palette (overridden by branding) */
+  --color-bg: hsl(0 0% 100%);
+  --color-bg-alt: hsl(0 0% 97%);
+  --color-surface: hsl(0 0% 100%);
+  --color-border: hsl(0 0% 88%);
+  --color-text: hsl(0 0% 12%);
+  --color-text-muted: hsl(0 0% 40%);
+  --color-text-heading: hsl(0 0% 8%);
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-primary-hover);
+  --color-error: hsl(0 72% 51%);
+  --color-success: hsl(142 72% 40%);
+  --color-warning: hsl(38 92% 50%);
+  --color-info: hsl(199 89% 48%);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.05);
+  --shadow-md: 0 4px 6px hsl(0 0% 0% / 0.07);
+  --shadow-lg: 0 10px 15px hsl(0 0% 0% / 0.1);
+}
+
+/* Dark mode overrides */
+.dark {
+  --color-bg: hsl(0 0% 8%);
+  --color-bg-alt: hsl(0 0% 12%);
+  --color-surface: hsl(0 0% 14%);
+  --color-border: hsl(0 0% 25%);
+  --color-text: hsl(0 0% 92%);
+  --color-text-muted: hsl(0 0% 60%);
+  --color-text-heading: hsl(0 0% 96%);
+  --color-error: hsl(0 72% 65%);
+  --color-success: hsl(142 72% 55%);
+  --color-warning: hsl(38 92% 60%);
+  --color-info: hsl(199 89% 58%);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+    --transition-slow: 0ms;
+  }
+}

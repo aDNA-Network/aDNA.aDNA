@@ -1,0 +1,87 @@
+---
+// CodeBlock — wraps Astro's Shiki-powered code blocks with a copy button.
+// Used in DocumentationLayout for code samples.
+interface Props {
+  filename?: string;
+}
+
+const { filename } = Astro.props;
+---
+
+<div class="code-block">
+  {filename && <div class="code-filename">{filename}</div>}
+  <div class="code-content">
+    <slot />
+  </div>
+  <button class="copy-btn" aria-label="Copy code" type="button">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+      <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+    </svg>
+  </button>
+</div>
+
+<script>
+  document.querySelectorAll('.code-block .copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const code = btn.closest('.code-block')?.querySelector('code')?.textContent ?? '';
+      await navigator.clipboard.writeText(code);
+      btn.setAttribute('aria-label', 'Copied!');
+      setTimeout(() => btn.setAttribute('aria-label', 'Copy code'), 2000);
+    });
+  });
+</script>
+
+<style>
+  .code-block {
+    position: relative;
+    margin: var(--space-6) 0;
+  }
+
+  .code-filename {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-bottom: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    padding: var(--space-2) var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .code-content :global(pre) {
+    margin: 0;
+    border-radius: var(--radius-md);
+  }
+
+  .code-filename + .code-content :global(pre) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-1);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
+  }
+
+  .code-filename ~ .copy-btn {
+    top: calc(var(--text-xs) + var(--space-4) + var(--space-2));
+  }
+
+  .code-block:hover .copy-btn {
+    opacity: 1;
+  }
+
+  .copy-btn:hover {
+    color: var(--color-text);
+  }
+</style>

@@ -1,0 +1,37 @@
+---
+import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import { buildTechArticleJsonLD } from '../../utils/seo';
+
+const jsonLD = buildTechArticleJsonLD({
+  title: 'What is aDNA?',
+  description: 'aDNA (Agentic DNA) is an open standard for organizing project knowledge so that both humans and AI agents can navigate it.',
+  url: Astro.url.href,
+});
+---
+
+<DocumentationLayout
+  title="What is aDNA?"
+  description="aDNA (Agentic DNA) is an open standard for organizing project knowledge so that both humans and AI agents can navigate it."
+  jsonLD={jsonLD}
+  next={{ label: 'The Triad', href: '/learn/concepts/triad' }}
+>
+  <p>aDNA (Agentic DNA) is an open standard for organizing project knowledge so that both humans and AI agents can navigate it. Think of it as a genome for your project — a structured encoding of what your project knows, who is involved, and how work gets done.</p>
+
+  <h2 id="the-problem">The problem</h2>
+  <p>AI agents are increasingly capable, but they struggle with the same thing humans do: finding the right context in a sea of files. Without structure, agents waste tokens loading irrelevant information or miss critical context entirely.</p>
+
+  <h2 id="the-solution">The aDNA approach</h2>
+  <p>aDNA provides three things:</p>
+  <ul>
+    <li><strong>The Triad</strong> — every project is organized into Who (people and governance), What (knowledge and decisions), and How (operations and workflows).</li>
+    <li><strong>Governance files</strong> — CLAUDE.md, AGENTS.md, MANIFEST.md, STATE.md, and README.md give agents the orientation they need at every level of the project.</li>
+    <li><strong>Typed entities</strong> — 14 base entity types (concepts, missions, sessions, lattices, etc.) with consistent frontmatter and naming conventions.</li>
+  </ul>
+
+  <h2 id="next-steps">Explore further</h2>
+  <ul>
+    <li><a href="/learn/concepts/triad">The Triad</a> — the foundational structure</li>
+    <li><a href="/get-started">Get Started</a> — set up your first aDNA project</li>
+    <li><a href="/learn/tutorials/first-claude-md">Tutorial: Create Your First CLAUDE.md</a></li>
+  </ul>
+</DocumentationLayout>

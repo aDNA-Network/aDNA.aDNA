@@ -1,0 +1,21 @@
+---
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../../components/sections/CardGrid.astro';
+import { getDocsBySection } from '../../../utils/collections';
+
+const concepts = await getDocsBySection('concepts');
+const cards = concepts.map((doc) => ({
+  title: doc.data.doc_title,
+  description: doc.data.description,
+  href: `/learn/concepts/${doc.id}`,
+  badge: doc.data.badge,
+}));
+---
+
+<DocumentationLayout
+  title="Concepts"
+  description="Core aDNA concepts from the Triad to FAIR Metadata."
+>
+  <p>13 core concepts that make up the aDNA knowledge architecture, ordered from concrete foundations to philosophical principles.</p>
+  <CardGrid cards={cards} columns={2} />
+</DocumentationLayout>

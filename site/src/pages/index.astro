@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { buildWebSiteJsonLD } from '../utils/seo';
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
+const jsonLD = buildWebSiteJsonLD(siteUrl);
+---
+
+<BaseLayout
+  title="aDNA — Agentic DNA Knowledge Architecture"
+  description="Give your project a knowledge architecture that both humans and AI agents can navigate."
+  jsonLD={jsonLD}
+>
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">
+        Give your project a <span class="hero-highlight">knowledge architecture</span>
+      </h1>
+      <p class="hero-subtitle">
+        aDNA is an open standard for organizing project knowledge so that both humans and AI agents can navigate it. Structure your context once — use it everywhere.
+      </p>
+      <div class="hero-actions">
+        <a href="/get-started" class="btn btn-primary">Get Started</a>
+        <a href="/learn/what-is-adna" class="btn btn-secondary">What is aDNA?</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="features-inner">
+      <div class="feature">
+        <h2>Agent-native</h2>
+        <p>Built for AI agents from the ground up. CLAUDE.md, AGENTS.md, and typed context files give agents the orientation they need to work effectively.</p>
+      </div>
+      <div class="feature">
+        <h2>Human-readable</h2>
+        <p>Every file is plain Markdown. Browse in Obsidian, VS Code, or GitHub. No proprietary formats, no lock-in.</p>
+      </div>
+      <div class="feature">
+        <h2>Composable</h2>
+        <p>Modules, datasets, and lattices compose into workflows. Start small, scale to multi-team campaigns with the same primitives.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--color-primary) 4%, var(--color-bg)), var(--color-bg));
+    padding: var(--space-24) var(--space-6) var(--space-16);
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--color-text-heading);
+    margin-bottom: var(--space-6);
+    line-height: 1.1;
+  }
+
+  .hero-highlight {
+    color: var(--color-primary);
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-8);
+    max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-lg);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-base);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .btn-primary {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-hover);
+    color: white;
+  }
+
+  .btn-secondary {
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    background: var(--color-surface);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .features {
+    padding: var(--space-16) var(--space-6);
+    max-width: var(--content-width);
+    margin: 0 auto;
+  }
+
+  .features-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-8);
+  }
+
+  .feature h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .feature p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+</style>

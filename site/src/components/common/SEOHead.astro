@@ -1,0 +1,49 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonicalURL?: string;
+  jsonLD?: Record<string, unknown>;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/images/og-default.png',
+  canonicalURL = Astro.url.href,
+  jsonLD,
+  noindex = false,
+} = Astro.props;
+
+const fullTitle = title.includes('aDNA') ? title : `${title} — aDNA`;
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex" />}
+
+<!-- Canonical -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:site_name" content="aDNA" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+<!-- JSON-LD -->
+{jsonLD && (
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} />
+)}

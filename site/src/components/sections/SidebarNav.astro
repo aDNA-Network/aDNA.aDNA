@@ -1,0 +1,133 @@
+---
+import { navigation, isSubgroup } from '../../utils/navigation';
+import type { NavGroup, NavSubgroup, NavItem } from '../../utils/navigation';
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
+---
+
+<nav class="sidebar-nav" aria-label="Documentation sections">
+  {navigation.map((group: NavGroup) => (
+    <div class="nav-group">
+      <h3 class="group-label">{group.label}</h3>
+      <ul class="group-list">
+        {group.items.map((item) => {
+          if (isSubgroup(item)) {
+            const subgroup = item as NavSubgroup;
+            const isOpen = subgroup.items.some(
+              (si: NavItem) => currentPath === si.href.replace(/\/$/, '')
+            );
+            return (
+              <li class="subgroup">
+                <details open={isOpen}>
+                  <summary class="subgroup-label">{subgroup.label}</summary>
+                  <ul class="subgroup-list">
+                    {subgroup.items.map((si: NavItem) => (
+                      <li>
+                        <a
+                          href={si.href}
+                          class:list={['nav-item', { active: currentPath === si.href.replace(/\/$/, '') }]}
+                          aria-current={currentPath === si.href.replace(/\/$/, '') ? 'page' : undefined}
+                        >
+                          {si.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            );
+          }
+          const navItem = item as NavItem;
+          return (
+            <li>
+              <a
+                href={navItem.href}
+                class:list={['nav-item', { active: currentPath === navItem.href.replace(/\/$/, '') }]}
+                aria-current={currentPath === navItem.href.replace(/\/$/, '') ? 'page' : undefined}
+              >
+                {navItem.label}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  ))}
+</nav>
+
+<style>
+  .sidebar-nav {
+    font-size: var(--text-sm);
+  }
+
+  .nav-group {
+    margin-bottom: var(--space-6);
+  }
+
+  .group-label {
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    padding: var(--space-1) var(--space-2);
+    margin-bottom: var(--space-1);
+  }
+
+  .group-list,
+  .subgroup-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .subgroup-list {
+    padding-left: var(--space-3);
+  }
+
+  .subgroup-label {
+    font-weight: 500;
+    color: var(--color-text);
+    padding: var(--space-1) var(--space-2);
+    cursor: pointer;
+    list-style: none;
+    font-size: var(--text-sm);
+  }
+
+  .subgroup-label::-webkit-details-marker {
+    display: none;
+  }
+
+  .subgroup-label::before {
+    content: '▸ ';
+    display: inline-block;
+    transition: transform var(--transition-fast);
+    font-size: 0.7em;
+    margin-right: var(--space-1);
+  }
+
+  details[open] > .subgroup-label::before {
+    transform: rotate(90deg);
+  }
+
+  .nav-item {
+    display: block;
+    padding: var(--space-1) var(--space-2);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .nav-item:hover {
+    color: var(--color-text);
+    background: var(--color-bg-alt);
+  }
+
+  .nav-item.active {
+    color: var(--color-primary);
+    background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+    font-weight: 500;
+  }
+</style>
