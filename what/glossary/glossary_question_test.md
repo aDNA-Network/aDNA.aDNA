@@ -1,0 +1,33 @@
+---
+type: glossary_entry
+created: 2026-04-14
+updated: 2026-04-14
+status: active
+term: "Question Test"
+spec_section: "§3.1"
+see_also: [triad, what, how, who]
+last_edited_by: agent_stanley
+tags: [glossary, architecture]
+---
+
+# Question Test
+
+## Plain-Language Definition
+
+The question test is the three-question method for deciding where a file belongs in the aDNA triad. Ask: "Is this about WHAT we know, HOW we work, or WHO is involved?" The answer tells you which folder to put it in. If you are unsure, the question test resolves the ambiguity.
+
+## Technical Definition
+
+The canonical classification method for placing content in the [[what/glossary/glossary_triad|triad]]. Applied by testing each artifact against three questions: "WHAT does this project know?" (→ `what/`), "HOW does this project work?" (→ `how/`), "WHO is involved?" (→ `who/`). Every piece of project knowledge belongs in exactly one leg. The triad's deliberate minimalism (three categories, not more) ensures the question test produces unambiguous results. (aDNA Standard §3.1)
+
+## Usage Examples
+
+- "Where does a glossary entry go?" → "WHAT does this project know about terminology?" → `what/glossary/`. This entry demonstrates its own classification.
+- "Where does a mission plan go?" → "HOW does this project work?" → `how/missions/`.
+- "Where does a contributor role definition go?" → "WHO is involved?" → `who/community/`.
+
+## See Also
+
+- [[what/glossary/glossary_triad|Triad]]
+- [[what/concepts/concept_triad|Triad (concept)]]
+- [[what/glossary/glossary_what|what/]] | [[what/glossary/glossary_how|how/]] | [[what/glossary/glossary_who|who/]]

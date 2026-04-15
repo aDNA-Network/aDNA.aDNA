@@ -1,0 +1,60 @@
+---
+type: adopter
+created: 2026-04-14
+updated: 2026-04-14
+status: active
+persona_type: team
+technical_level: intermediate
+domain: "startup (developer tools)"
+deployment_form: bare
+last_edited_by: agent_stanley
+tags: [adopter, startup, onboarding, decisions]
+---
+
+# Startup
+
+## Background
+
+A CTO of a 12-person AI startup building a developer tool. Ships weekly, hires monthly, relies heavily on AI agents for code generation, documentation, and planning. Constant context switching between features. Institutional knowledge lives in the heads of 3 founding engineers — and increasingly in forgotten Slack threads.
+
+## Goals
+
+- Accelerate onboarding: new hires should find answers independently within their first week
+- Capture architectural decisions before they're forgotten in Slack
+- Make AI agents codebase-aware so generated code matches project conventions
+- Maintain visibility of priorities despite rapid pace
+
+## Pain Points
+
+- Feature decisions made in Slack and forgotten within days
+- Architecture knowledge siloed in founding engineers — bus factor of 3
+- New hires can't find answers: "Why Postgres?" "Where's auth documented?" "What's the current priority?"
+- AI agents produce generic boilerplate that misses project conventions
+
+## How They Use aDNA
+
+Heavy use of the knowledge and operations layers to capture institutional memory:
+
+- **`what/decisions/`** — 40+ architecture decision records (ADRs) capturing the "why" behind every technical choice
+- **`what/context/`** — architecture overview, API conventions, tech stack rationale loaded by agents before code generation
+- **STATE.md** — updated weekly with sprint focus, blockers, shipping timeline
+- **`how/campaigns/`** and **`how/missions/`** — quarterly goals decomposed into sprint-sized [[what/glossary/glossary_mission|missions]]
+- **`what/lattices/`** — CI/CD pipeline and deployment workflow captured as composable lattice definitions
+
+The startup vault grows fast. Within 6 months it has more files than most mature vaults, driven by the pace of decision-making and feature shipping.
+
+**Self-reference**: This vault's `what/decisions/` directory demonstrates the ADR pattern the startup relies on. Each decision file captures context, the decision itself, and consequences — exactly the institutional memory that would otherwise evaporate in Slack.
+
+## Typical Ontology Extensions
+
+| Entity | Triad | Purpose |
+|--------|-------|---------|
+| `api_spec` | what/ | API endpoint documentation with versioning |
+| `onboarding_checklist` | how/ | New hire setup and orientation tasks |
+| `customer_feedback` | who/ | Structured customer feedback tracking |
+
+## Related
+
+- [[what/use_cases/use_case_startup|Startup Use Case]] — full narrative
+- [[what/tutorials/tutorial_build_a_campaign|Tutorial: Build a Campaign]] — structuring quarterly goals
+- [[what/patterns/pattern_progressive_enrichment|Progressive Enrichment Pattern]] — growing the vault organically

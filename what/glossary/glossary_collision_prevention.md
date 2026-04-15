@@ -1,0 +1,32 @@
+---
+type: glossary_entry
+created: 2026-04-14
+updated: 2026-04-14
+status: active
+term: "Collision Prevention"
+spec_section: "§13.1"
+see_also: [frontmatter, coordination note, session]
+last_edited_by: agent_stanley
+tags: [glossary, safety]
+---
+
+# Collision Prevention
+
+## Plain-Language Definition
+
+Collision prevention is how aDNA protects files from being accidentally overwritten when multiple agents (or humans) work in the same project. It uses three tiers: basic rules everyone follows (like "read before you write"), extra precautions for synced environments, and full coordination protocols for concurrent multi-agent work.
+
+## Technical Definition
+
+A tiered system protecting against data loss from concurrent modifications. Tier 1 (Universal, MUST): [[what/glossary/glossary_frontmatter|frontmatter]] attribution on every edit, read-before-write, new-file safety. Tier 2 (Sync Environments, SHOULD): file safety tiers, archive-don't-rename, one shared config at a time. Tier 3 (Multi-Agent, SHOULD): [[what/glossary/glossary_coordination_note|coordination notes]], session scope declarations, update-field conflict checks. Projects adopt tiers based on their operational complexity. (aDNA Standard §13.1-§13.4)
+
+## Usage Examples
+
+- This vault follows Tier 1 collision prevention: every file edit updates `last_edited_by` and `updated` in frontmatter — including this glossary entry you are reading now.
+- The escalation from Tier 1 → 3 mirrors the vault's own growth: a solo project needs only Tier 1; a team project with concurrent agents adds Tier 3.
+
+## See Also
+
+- [[what/glossary/glossary_frontmatter|Frontmatter]]
+- [[what/glossary/glossary_coordination_note|Coordination Note]]
+- [[what/glossary/glossary_session|Session]]

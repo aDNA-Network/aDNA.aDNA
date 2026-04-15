@@ -13,7 +13,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 3 — Website v1 COMPLETE.** Phases 0-3 complete (41 content files + 60-page live site). Site deployed to Vercel. Next: Phase 4 (The Who).
+**Phase 4 — The Who COMPLETE.** Phases 0-4 complete (78 content files + 60-page live site). Next: Phase 5 (The How).
 
 ## Active Campaign
 
@@ -25,44 +25,41 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 | Phase 1: Core Content | **Complete** | M01-M05 | 26/26 (13 concepts, 8 patterns, 5 comparisons) |
 | Phase 2: Human Path | **Complete** | M06-M08 | 15/15 (9 tutorials, 6 use cases) |
 | Phase 3: Website v1 | **Complete** | M09-M12 | 60-page site live on Vercel |
-| Phase 4: The Who | **Next** | M13-M15 | Community, adopters, glossary |
-| Phase 5: The How | Planned | M16-M18 | Publishing, workshops, lattices |
+| Phase 4: The Who | **Complete** | M13-M15 | 37/37 (25 glossary + 1 index, 3 governance, 3 community, 5 adopters) |
+| Phase 5: The How | **Next** | M16-M18 | Publishing, workshops, lattices |
 | Phase 6: Website v2 | Planned | M19 | Final content sync + quality pass |
 
-## M12 Deliverables
+## Phase 4 Deliverables
 
-- **10/10 quality gates passing** (G1-G10)
-- **Lighthouse scores**: Performance 100, Accessibility 95, Best Practices 100, SEO 100
-- **Zero WCAG AA violations** across 5 audited pages
-- **Security headers**: CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy
-- **Live site**: https://site-nu-lovat.vercel.app (60 pages)
-- **Test suite**: 30 Playwright tests (A11y, Meta, Responsive, Brand screenshots)
-- **Fixes applied**: badge contrast (WCAG AA), table overflow (320px responsive), schema draft fields
+- **25 glossary entries** covering all core aDNA terminology from adna_standard.md §2 + key operational terms
+- **1 glossary index** (glossary_index.md) — quick-reference lookup table
+- **3 governance docs** — code of conduct, contribution standards, conflict resolution
+- **3 community files** — roles/progression ladder, contribution processes, Context Commons connection
+- **5 adopter personas** — solo developer, enterprise team, educator, startup, researcher
+- **3 mission files** — M13, M14, M15 (executed in order M15 → M13 → M14)
+- All files pass quality gates: frontmatter complete, 2+ wikilinks, self-reference, spec citations
 
 ## What's Working
 
 - Full documentation site live on Vercel with all Phase 1-2 content
-- 3-column layout: sidebar nav → content → TOC
-- All wikilinks resolved to site URLs
-- Responsive design tested at 4 breakpoints (320/768/1024/1440px)
-- Dark mode toggle
-- SEO: JSON-LD, OG tags, sitemap, meta descriptions
-- Security headers (CSP, DENY framing, nosniff, strict referrer)
-- Zero WCAG AA violations
+- WHO triad leg fully populated (governance, community, adopters)
+- Glossary provides canonical term definitions linking to concept deep dives
+- 78 content files total across all phases
+- Cross-linking density high — community/adopter/glossary files heavily interlinked
 
 ## Active Blockers
 
-None. Phase 4 ready to execute.
+None. Phase 5 ready to execute.
 
 ## Last Session (2026-04-14)
 
-Executed M12 (Quality Gates & Launch). Ran all 10 SiteForge quality gates — fixed 3 issues (type errors from missing `draft` field, badge color contrast, table overflow at 320px). Deployed to Vercel. Site live at https://site-nu-lovat.vercel.app. Phase 3 complete.
+Executed Phase 4 (The Who) in a single session. Reversed execution order to M15 → M13 → M14 for optimal cross-linking. Created 40 new files: 26 glossary (25 entries + index), 3 governance docs, 3 community files, 5 adopter personas, 3 mission files. All quality gates pass.
 
 ## Next Steps
 
-1. **Phase 4: The Who** — M13 (Community Architecture), M14 (Adopter Personas), M15 (Glossary + Governance)
-2. After Phase 5: M19 (Website v2) — sync Phase 4-5 content, OG image, CSP nonce migration, custom domain
+1. **Phase 5: The How** — M16 (Publishing Pipeline), M17 (Workshop Kits), M18 (Lattice Definitions + Closeout)
+2. After Phase 5: M19 (Website v2) — sync Phase 4-5 content to site, add glossary section, quality re-run
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 3 (Website v1) is complete — site is live at https://site-nu-lovat.vercel.app. Begin Phase 4 (The Who). Start with M13 (Community Architecture) — define community roles, contribution paths, and governance structures. See `how/campaigns/campaign_rosetta/campaign_rosetta.md` for the full mission board. Phase gate: confirm with user before starting Phase 4 content creation.
+> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 4 (The Who) is complete — 37 files across glossary, governance, community, and adopters. Begin Phase 5 (The How). Start with M16 (Publishing Pipeline) — define the vault-to-web publishing workflow in `how/publishing/`. See `how/campaigns/campaign_rosetta/campaign_rosetta.md` for the full mission board. Phase gate: confirm with user before starting Phase 5 content creation.

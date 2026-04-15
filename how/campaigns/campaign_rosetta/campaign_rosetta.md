@@ -4,7 +4,7 @@ type: campaign
 title: "Operation Rosetta — Self-Referential aDNA Context Graph"
 owner: stanley
 status: active
-current_phase: 3
+current_phase: 4
 phase_count: 6
 mission_count: 19
 estimated_sessions: "30-40"
@@ -35,8 +35,8 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | **1: Core Content** | **Complete** | M01-M05 | 26/26 files | Concepts, patterns, comparisons |
 | **2: Human Path** | **Complete** | M06-M08 | 15/15 files | Tutorials, use cases |
 | **3: Website v1** | **Complete** | M09-M12 | site live | AstroJS docs site via SiteForge (full content inventory) |
-| **4: The Who** | **Next** | M13-M15 | ~33 files | Community, adopters, glossary |
-| **5: The How** | Planned | M16-M18 | ~12 files | Publishing, workshops, lattices |
+| **4: The Who** | **Complete** | M13-M15 | 37 files | Community, adopters, glossary |
+| **5: The How** | **Next** | M16-M18 | ~12 files | Publishing, workshops, lattices |
 | **6: Website v2** | Planned | M19 | site polish | Final content sync, quality pass, brand refinement |
 
 > **Restructured 2026-04-14**: Website moved from deferred Phase 5 to active Phase 3. Content graph phases (Who, How) slide to Phases 4-5. New Phase 6 adds a final website polish pass after all content is complete.
@@ -74,9 +74,9 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 
 | Mission | Title | Status | Files | Dependencies |
 |---------|-------|--------|-------|-------------|
-| M13 | Community Architecture | pending | 3 community files | Phase 1 |
-| M14 | Adopter Personas | pending | 5 persona cards | M08 |
-| M15 | Glossary + Governance | pending | ~25 glossary entries + 3 governance docs | Phase 1 |
+| M13 | Community Architecture | **completed** | 3 community files | Phase 1 |
+| M14 | Adopter Personas | **completed** | 5 persona cards | M08 |
+| M15 | Glossary + Governance | **completed** | 25 glossary entries + 1 index + 3 governance docs | Phase 1 |
 
 ### Phase 5: The How
 
