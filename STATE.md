@@ -13,7 +13,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 3 — Website v1 IN PROGRESS.** Phases 0-2 complete (41 content files). M09-M11 complete — site builds 60 pages with all content integrated. Next: M12 (Quality Gates & Launch).
+**Phase 3 — Website v1 COMPLETE.** Phases 0-3 complete (41 content files + 60-page live site). Site deployed to Vercel. Next: Phase 4 (The Who).
 
 ## Active Campaign
 
@@ -24,41 +24,45 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 | Phase 0: Scaffold | Complete | M00 | 0 content, 10 AGENTS.md, 10 templates, 2 skills |
 | Phase 1: Core Content | **Complete** | M01-M05 | 26/26 (13 concepts, 8 patterns, 5 comparisons) |
 | Phase 2: Human Path | **Complete** | M06-M08 | 15/15 (9 tutorials, 6 use cases) |
-| Phase 3: Website v1 | **Active** | M09-M12 | M09-M11 complete, M12 pending |
-| Phase 4: The Who | Planned | M13-M15 | Community, adopters, glossary |
+| Phase 3: Website v1 | **Complete** | M09-M12 | 60-page site live on Vercel |
+| Phase 4: The Who | **Next** | M13-M15 | Community, adopters, glossary |
 | Phase 5: The How | Planned | M16-M18 | Publishing, workshops, lattices |
 | Phase 6: Website v2 | Planned | M19 | Final content sync + quality pass |
 
-## M11 Deliverables
+## M12 Deliverables
 
-- **49 content files transformed** to site MDX via batch script
-- **60 pages built** in 1.74s, zero errors
-- **Wikilink rewriting**: 49-entry mapping table, all vault `[[wikilinks]]` converted to site URLs
-- **MDX compatibility**: `<` escaping, HTML comment → MDX comment conversion
-- **Content breakdown**: 32 docs (13 concepts + 8 patterns + 5 comparisons + 6 use cases), 9 guides, 8 reference, 1 changelog
+- **10/10 quality gates passing** (G1-G10)
+- **Lighthouse scores**: Performance 100, Accessibility 95, Best Practices 100, SEO 100
+- **Zero WCAG AA violations** across 5 audited pages
+- **Security headers**: CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy
+- **Live site**: https://site-nu-lovat.vercel.app (60 pages)
+- **Test suite**: 30 Playwright tests (A11y, Meta, Responsive, Brand screenshots)
+- **Fixes applied**: badge contrast (WCAG AA), table overflow (320px responsive), schema draft fields
 
 ## What's Working
 
-- Full documentation site builds with all Phase 1-2 content
+- Full documentation site live on Vercel with all Phase 1-2 content
 - 3-column layout: sidebar nav → content → TOC
 - All wikilinks resolved to site URLs
-- Responsive design with mobile breakpoints
+- Responsive design tested at 4 breakpoints (320/768/1024/1440px)
 - Dark mode toggle
 - SEO: JSON-LD, OG tags, sitemap, meta descriptions
+- Security headers (CSP, DENY framing, nosniff, strict referrer)
+- Zero WCAG AA violations
 
 ## Active Blockers
 
-None. M12 ready to execute.
+None. Phase 4 ready to execute.
 
 ## Last Session (2026-04-14)
 
-Executed M10 (Site Scaffold) and M11 (Content Integration) in a single session. M10 created the Astro 6 scaffold (~45 files). M11 built a batch transformation script and converted 49 vault files to site MDX, fixed MDX compatibility issues (bare `<` and HTML comments), achieved 60-page clean build.
+Executed M12 (Quality Gates & Launch). Ran all 10 SiteForge quality gates — fixed 3 issues (type errors from missing `draft` field, badge color contrast, table overflow at 320px). Deployed to Vercel. Site live at https://site-nu-lovat.vercel.app. Phase 3 complete.
 
 ## Next Steps
 
-1. **M12: Quality Gates & Launch** — Vercel deploy, quality checks
-2. After Phase 3: Phase 4 (Community, Adopters, Glossary)
+1. **Phase 4: The Who** — M13 (Community Architecture), M14 (Adopter Personas), M15 (Glossary + Governance)
+2. After Phase 5: M19 (Website v2) — sync Phase 4-5 content, OG image, CSP nonce migration, custom domain
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 3 (Website v1) is active. Execute M12 (Quality Gates & Launch). The site at `aDNA.aDNA/site/` builds 60 pages cleanly. Run the SiteForge quality gates (see `SiteForge.aDNA/what/artifacts/sf_m02_quality_gate_framework.md`) — check: build success, type checking, accessibility (axe-core), broken links, sitemap validity, meta tags, JSON-LD, responsive layout, dark mode, 404 page. Deploy to Vercel. Phase 3 complete after successful deploy.
+> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 3 (Website v1) is complete — site is live at https://site-nu-lovat.vercel.app. Begin Phase 4 (The Who). Start with M13 (Community Architecture) — define community roles, contribution paths, and governance structures. See `how/campaigns/campaign_rosetta/campaign_rosetta.md` for the full mission board. Phase gate: confirm with user before starting Phase 4 content creation.

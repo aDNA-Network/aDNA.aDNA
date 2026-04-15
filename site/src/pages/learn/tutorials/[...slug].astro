@@ -54,17 +54,17 @@ const jsonLD = buildTechArticleJsonLD({
 
   .difficulty-badge.beginner {
     background: color-mix(in srgb, var(--color-success) 15%, transparent);
-    color: var(--color-success);
+    color: hsl(142 72% 28%); /* darker green for WCAG AA contrast (5.4:1) */
   }
 
   .difficulty-badge.intermediate {
     background: color-mix(in srgb, var(--color-info) 15%, transparent);
-    color: var(--color-info);
+    color: hsl(217 91% 35%); /* darker blue for WCAG AA contrast */
   }
 
   .difficulty-badge.advanced {
     background: color-mix(in srgb, var(--color-warning) 15%, transparent);
-    color: var(--color-warning);
+    color: hsl(25 95% 35%); /* darker orange for WCAG AA contrast */
   }
 
   .estimated-time {

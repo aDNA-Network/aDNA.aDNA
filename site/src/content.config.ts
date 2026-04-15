@@ -42,6 +42,7 @@ const guides = defineCollection({
     date: dateSchema.optional(),
     updated: dateSchema.optional(),
     featured: z.boolean().default(false),
+    draft: z.boolean().default(false),
   }),
 });
 
@@ -54,6 +55,7 @@ const reference = defineCollection({
     version: z.string().optional(),
     stability: z.enum(['stable', 'beta', 'experimental', 'deprecated']).default('stable'),
     updated: dateSchema.optional(),
+    draft: z.boolean().default(false),
   }),
 });
 

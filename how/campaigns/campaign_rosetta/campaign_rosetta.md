@@ -34,8 +34,8 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | **0: Scaffold** | Complete | M00 | 0 content | Fork, governance, ontology extension, campaign setup |
 | **1: Core Content** | **Complete** | M01-M05 | 26/26 files | Concepts, patterns, comparisons |
 | **2: Human Path** | **Complete** | M06-M08 | 15/15 files | Tutorials, use cases |
-| **3: Website v1** | **Active** | M09-M12 | site build | AstroJS docs site via SiteForge (full content inventory) |
-| **4: The Who** | Planned | M13-M15 | ~33 files | Community, adopters, glossary |
+| **3: Website v1** | **Complete** | M09-M12 | site live | AstroJS docs site via SiteForge (full content inventory) |
+| **4: The Who** | **Next** | M13-M15 | ~33 files | Community, adopters, glossary |
 | **5: The How** | Planned | M16-M18 | ~12 files | Publishing, workshops, lattices |
 | **6: Website v2** | Planned | M19 | site polish | Final content sync, quality pass, brand refinement |
 
@@ -68,7 +68,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | M09 | Website Architecture & Branding | **completed** | branding.json, site IA, content mapping, gap list | Phase 2 |
 | M10 | Site Scaffold & Content Collections | **completed** | Astro 6 project at aDNA.aDNA/site/, clean build | M09 |
 | M11 | Content Integration | **completed** | All pages populated, internal links, homepage | M10 |
-| M12 | Quality Gates & Launch | pending | 10 gates passing, Vercel deploy, live site | M11 |
+| M12 | Quality Gates & Launch | **completed** | 10 gates passing, Vercel deploy, live site | M11 |
 
 ### Phase 4: The Who
 
