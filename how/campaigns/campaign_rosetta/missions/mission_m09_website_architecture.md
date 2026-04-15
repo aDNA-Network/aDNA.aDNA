@@ -4,7 +4,7 @@ type: mission
 title: "Website Architecture & Branding"
 campaign: campaign_rosetta
 phase: 3
-status: active
+status: completed
 owner: agent_stanley
 created: 2026-04-14
 updated: 2026-04-14
@@ -22,7 +22,7 @@ Phase 3 (Website v1) builds an AstroJS documentation site from the 41 content fi
 
 ## Objectives
 
-### O1: Information Architecture ▸ pending
+### O1: Information Architecture ▸ complete
 
 Define the sitemap and navigation structure. Map all vault content + upstream docs to site sections and pages.
 
@@ -46,7 +46,7 @@ Homepage (hero + value prop + CTA)
 
 **Output**: Site IA document with page inventory
 
-### O2: Branding ▸ pending
+### O2: Branding ▸ complete
 
 Design aDNA's visual identity and create `branding.json` per SiteForge schema.
 
@@ -59,7 +59,7 @@ Design aDNA's visual identity and create `branding.json` per SiteForge schema.
 
 **Output**: `branding.json` at `aDNA.aDNA/site/branding.json`
 
-### O3: Content Mapping ▸ pending
+### O3: Content Mapping ▸ complete
 
 Create a mapping document listing every vault file → site page with transformation notes.
 
@@ -72,7 +72,7 @@ Create a mapping document listing every vault file → site page with transforma
 
 **Output**: Content mapping table
 
-### O4: Gap Identification ▸ pending
+### O4: Gap Identification ▸ complete
 
 Identify content that must be created for the site but doesn't exist yet.
 
@@ -88,6 +88,14 @@ Known gaps:
 
 - Phase 2 complete (all 41 content files exist)
 - SiteForge.aDNA `documentation` archetype available
+
+## AAR (After Action Review)
+
+- **Worked**: Clean 4-objective decomposition — each produced a distinct artifact. Content inventory from Phases 1-2 was complete and well-frontmatted (all tutorials had `level` and `estimated_time`). branding.json schema from SiteForge was well-documented.
+- **Didn't**: Upstream docs (20 files) were more numerous than the mission anticipated (4). Required triage into 3 tiers.
+- **Finding**: The SiteForge documentation archetype's 4-collection model (docs/guides/reference/changelog) maps well to aDNA content when using the `section` field to differentiate concepts, patterns, comparisons, and use cases within the `docs` collection.
+- **Change**: Expanded Reference section from 4 to 8 upstream docs — the 4 additions (reading guide, tool setup, governance model, quality rubric) are user-facing and directly serve site visitors.
+- **Follow-up**: M10 should consume all 4 artifacts directly. The branding.json color palette uses teal/amber — verify rendered appearance during M10 scaffold.
 
 ## Key References
 

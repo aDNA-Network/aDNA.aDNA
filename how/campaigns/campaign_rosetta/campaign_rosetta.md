@@ -65,7 +65,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 
 | Mission | Title | Status | Deliverables | Dependencies |
 |---------|-------|--------|-------------|-------------|
-| M09 | Website Architecture & Branding | pending | branding.json, site IA, content mapping, gap list | Phase 2 |
+| M09 | Website Architecture & Branding | **completed** | branding.json, site IA, content mapping, gap list | Phase 2 |
 | M10 | Site Scaffold & Content Collections | pending | Astro 6 project at aDNA.aDNA/site/, clean build | M09 |
 | M11 | Content Integration | pending | All pages populated, internal links, homepage | M10 |
 | M12 | Quality Gates & Launch | pending | 10 gates passing, Vercel deploy, live site | M11 |

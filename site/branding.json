@@ -1,0 +1,24 @@
+{
+  "entity": "aDNA",
+  "entityType": "project",
+  "title": "aDNA",
+  "subtitle": "Agentic DNA Knowledge Architecture",
+  "tagline": "Give your project a knowledge architecture that both humans and AI agents can navigate",
+  "archetype": "documentation",
+  "voice_register": "direct_instruction",
+  "colors": {
+    "primary": "#0D7377",
+    "primary_dark": "#0A4F52",
+    "primary_light": "#14919B",
+    "accent": "#D4A017",
+    "accent_light": "#F0D060"
+  },
+  "typography": {
+    "display": "Space Grotesk",
+    "body": "Inter",
+    "mono": "JetBrains Mono"
+  },
+  "social": {
+    "github": "https://github.com/LatticeProtocol/Agentic-DNA"
+  }
+}
