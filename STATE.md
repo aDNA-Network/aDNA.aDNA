@@ -41,7 +41,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## What's Working
 
-- Full documentation site live on Vercel with all Phase 1-2 content
+- Full documentation site live at https://adna-docs.vercel.app with all Phase 1-2 content
 - WHO triad leg fully populated (governance, community, adopters)
 - Glossary provides canonical term definitions linking to concept deep dives
 - 78 content files total across all phases

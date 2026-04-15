@@ -48,8 +48,8 @@ Run all 10 SiteForge quality gates against the aDNA documentation site, fix any 
 
 ## Deployment
 
-- **URL**: https://site-nu-lovat.vercel.app
-- **Vercel project**: science-stanleys-projects/site
+- **URL**: https://adna-docs.vercel.app
+- **Vercel project**: science-stanleys-projects/adna-docs
 - **Deploy method**: `vercel deploy --prod` (Vercel remote build reads vercel.json for headers)
 - **Smoke test**: 9/9 pages returning HTTP 200
 
