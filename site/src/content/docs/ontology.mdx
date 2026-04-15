@@ -1,0 +1,107 @@
+---
+title: "The Ontology — aDNA Concepts"
+description: "The aDNA ontology is a typed vocabulary of 14 base entity types — organized across the triad — that defines what kinds of things a project can contain. ..."
+doc_title: "The Ontology"
+section: "concepts"
+order: 2
+---
+
+## Overview
+
+The aDNA ontology is a typed vocabulary of 14 base entity types — organized across the triad — that defines what kinds of things a project can contain. Projects extend the ontology by adding domain-specific types without modifying the base.
+
+## Why This Matters
+
+Think of a library. Every book has a category — fiction, biography, science, history. Librarians don't invent a new system for every library; they use a shared classification that everyone understands. When you walk into any library in the world, you already know roughly where to look.
+
+aDNA's ontology works the same way. It defines 14 "categories" — called entity types — that cover the operational needs of any project: things like `context` (research notes), `missions` (plans), `sessions` (work logs), and `governance` (rules). Every file in the vault has a `type` field in its metadata that says what kind of thing it is.
+
+The real power is extensibility. The 14 base types handle operations, but your project probably has domain-specific things too — patients, experiments, customers, models. You add those as extensions under the appropriate triad leg, and they inherit the same conventions: typed frontmatter, AGENTS.md guides, templates. The base vocabulary is shared; the extensions are yours.
+
+## How It Works
+
+### The 14 Base Entity Types
+
+The aDNA Standard defines 14 base types distributed across the triad (§5.1–5.3). Every type has a home directory, required frontmatter fields, and an AGENTS.md guide.
+
+**WHO leg** (3 types):
+
+| Type | Directory | Purpose |
+|------|-----------|---------|
+| `governance` | `who/governance/` | Decision rights, policies, organizational charter |
+| `team` | `who/team/` | People, roles, agent identities |
+| `coordination` | `who/coordination/` | Ephemeral cross-agent sync notes |
+
+**WHAT leg** (4 types):
+
+| Type | Directory | Purpose |
+|------|-----------|---------|
+| `context` | `what/context/` | Pre-synthesized domain knowledge for agents |
+| `decisions` | `what/decisions/` | Architecture Decision Records (ADRs) |
+| `modules` | `what/modules/` | Atomic computation units (tools, models) |
+| `lattices` | `what/lattices/` | Composition graphs connecting modules and datasets |
+
+**HOW leg** (7 types):
+
+| Type | Directory | Purpose |
+|------|-----------|---------|
+| `campaigns` | `how/campaigns/` | Multi-mission strategic initiatives |
+| `missions` | `how/missions/` | Multi-session task decompositions |
+| `sessions` | `how/sessions/` | Per-invocation work records |
+| `templates` | `how/templates/` | Reusable file scaffolds |
+| `skills` | `how/skills/` | Documented agent recipes and procedures |
+| `pipelines` | `how/pipelines/` | Content-as-code workflows |
+| `backlog` | `how/backlog/` | Ideation intake and idea tracking |
+
+The HOW leg has the most types because operations are the most varied dimension. Knowledge (WHAT) is comparatively uniform; people (WHO) are comparatively simple. This asymmetry is intentional and reflects how projects actually work.
+
+### Extension Mechanism
+
+The base ontology covers operational infrastructure. Domain knowledge requires custom types. The standard supports this through extension (§5.1, §5.3):
+
+1. **Choose the triad leg.** Apply the question test — does this domain entity represent something you *know*, something about *how you work*, or something about *who is involved*?
+2. **Create the directory.** Add a new subdirectory under the appropriate leg: `what/experiments/`, `who/adopters/`, etc.
+3. **Add an AGENTS.md.** Every entity type directory gets an agent guide explaining purpose, naming conventions, and working rules.
+4. **Create a template.** Add `template_{type}.md` to `how/templates/` so new instances are structurally consistent.
+5. **Use the `type` prefix.** Files follow the `type_descriptive_name.md` pattern (§6.1): `experiment_pcr_optimization.md`, `adopter_research_lab.md`.
+
+Extensions inherit all base conventions: frontmatter requirements (§7), naming rules (§6), session tracking (§8). They compose with the existing infrastructure rather than replacing it.
+
+### The Type Field
+
+Every content file in an aDNA vault MUST include a `type` field in its YAML frontmatter (§7.2). This field is the machine-readable identity of the entity:
+
+```yaml
+---
+type: concept
+created: 2026-04-13
+status: active
+---
+```
+
+The `type` field enables filtering, validation, and template matching. Combined with the `type_` filename prefix, it provides both human-scannable and machine-queryable identification.
+
+## See It In Action
+
+This vault demonstrates both the base ontology and the extension mechanism. The 14 base types power the operational infrastructure you see in `how/` — campaigns, missions, sessions, templates, skills. But this project also added 10 custom types to teach aDNA:
+
+| Extension | Leg | Directory | Purpose |
+|-----------|-----|-----------|---------|
+| `concept` | WHAT | `what/concepts/` | Core aDNA concepts (this file is one) |
+| `tutorial` | WHAT | `what/tutorials/` | Step-by-step learning paths |
+| `pattern` | WHAT | `what/patterns/` | Reusable architectural patterns |
+| `glossary_entry` | WHAT | `what/glossary/` | Canonical term definitions |
+| `use_case` | WHAT | `what/use_cases/` | Adoption stories by domain |
+| `comparison` | WHAT | `what/comparisons/` | aDNA vs. other architectures |
+| `community` | WHO | `who/community/` | Community roles and contribution paths |
+| `adopter` | WHO | `who/adopters/` | Adopter personas and deployment profiles |
+| `workshop` | HOW | `how/workshops/` | Workshop kits and facilitation guides |
+| `publishing` | HOW | `how/publishing/` | Vault-to-web publishing pipeline |
+
+Each extension has its own AGENTS.md, its own template in `how/templates/`, and follows the same conventions as the base types. Open any of those directories and you'll see the pattern: purpose statement, naming rules, frontmatter requirements, load/skip decision guide. The extension mechanism is uniform — new types slot in without modifying the base.
+
+## Related
+
+- [The Triad](/learn/concepts/triad) — the three-leg structure that the ontology populates
+- [Knowledge Graph](/learn/concepts/knowledge-graph) — how typed entities connect into a navigable web
+- [Convergence Model](/learn/concepts/convergence) — how the ontology enables context narrowing

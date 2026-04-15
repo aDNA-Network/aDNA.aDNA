@@ -1,0 +1,129 @@
+---
+title: "Run a Campaign — aDNA Tutorial"
+description: "A campaign document with phased execution, a mission board, and quality gates. By the end, you'll have a strategic plan that can coordinate multiple age..."
+guide_title: "Run a Campaign"
+difficulty: "advanced"
+estimated_time: "30 minutes"
+date: 2026-04-14
+---
+
+## What You'll Build
+
+A campaign document with phased execution, a mission board, and quality gates. By the end, you'll have a strategic plan that can coordinate multiple agents across multiple sessions toward a shared goal.
+
+## Prerequisites
+
+- [Convergence Model](/learn/concepts/convergence) — how campaigns narrow to missions to objectives
+- [Mission Decomposition](/patterns/mission-decomposition) — breaking work into claimable objectives
+- [Design a Mission](/learn/tutorials/design-a-mission) — writing individual mission files
+
+## Steps
+
+### Step 1: Define the Strategic Goal
+
+A campaign is bigger than a mission. It coordinates multiple missions toward a strategic outcome. Write the goal as one sentence:
+
+> "Build a self-referential aDNA documentation vault with 80+ content files across 5 phases."
+
+If the goal can be achieved in a single mission (3-8 objectives), it doesn't need a campaign.
+
+### Step 2: Design the Phases
+
+Break the campaign into phases — each phase is a coherent stage with a gate before the next:
+
+| Phase | Focus | Why It's Separate |
+|-------|-------|------------------|
+| 0 | Scaffold | Infrastructure before content |
+| 1 | Core Content | Concepts, patterns, comparisons — the vocabulary |
+| 2 | Human Path | Tutorials, use cases — the learning path |
+| 3 | Community | People, governance — the social layer |
+| 4 | Operations | Publishing, workshops — the delivery mechanisms |
+
+**Phase gate rule**: phases don't auto-advance. A human approves the transition. This prevents runaway execution and ensures strategic alignment at each boundary.
+
+### Step 3: Create the Mission Board
+
+Within each phase, list the missions:
+
+```markdown
+### Phase 1: Core Content
+
+| Mission | Title | Status | Files | Dependencies |
+|---------|-------|--------|-------|-------------|
+| M01 | Foundational Concepts | pending | 3 files | Phase 0 |
+| M02 | Governance Concepts | pending | 4 files | M01 |
+| M03 | Advanced Concepts | pending | 6 files | M01, M02 |
+```
+
+Each row is a mission with specific deliverables and dependencies. An agent scanning this board knows what's done, what's next, and what's blocked.
+
+### Step 4: Define Quality Gates
+
+Quality gates apply to all content within the campaign:
+
+```markdown
+## Quality Gates
+
+1. Dual audience test — legible to developers AND newcomers
+2. Self-reference check — cites concrete vault examples
+3. Spec citation — normative claims reference the standard
+4. Cross-linking — 2+ wikilinks per file
+5. Frontmatter complete — all required fields populated
+```
+
+Gates are checked before marking any objective complete. No exceptions.
+
+### Step 5: Write the Campaign File
+
+Create `how/campaigns/campaign_{name}/campaign_{name}.md`:
+
+```markdown
+---
+campaign_id: campaign_docs
+type: campaign
+title: "Documentation Campaign"
+status: active
+current_phase: 1
+mission_count: 8
+priority: high
+created: 2026-04-14
+updated: 2026-04-14
+last_edited_by: agent_stanley
+tags: [campaign]
+---
+
+# Documentation Campaign
+
+## Strategic Intent
+{Why this campaign exists and what success looks like.}
+
+## Phase Structure
+{Table of phases with status.}
+
+## Mission Board
+{Tables of missions per phase.}
+
+## Quality Gates
+{Standards every deliverable must meet.}
+
+## Success Criteria
+{How to know the campaign achieved its goal.}
+```
+
+### Step 6: Execute the First Mission
+
+Create the first mission file inside `how/campaigns/campaign_{name}/missions/`. Claim the first objective. Start a session. Do the work. Close with a SITREP.
+
+**See it in action**: This vault's Operation Rosetta (`how/campaigns/campaign_rosetta/campaign_rosetta.md`) has 5 phases, 15 missions, and 6 quality gates. Browse the mission files in `how/campaigns/campaign_rosetta/missions/` — each one demonstrates the decomposition pattern with objectives, context dependencies, and AARs.
+
+## What You Learned
+
+- Campaigns coordinate multiple missions toward a strategic goal
+- Phases group missions with human gates between them — no auto-advancing
+- The mission board provides at-a-glance status for all work
+- Quality gates ensure consistent output across all missions and sessions
+
+## Next Steps
+
+- [Federate a Vault](/learn/tutorials/federate-a-vault) — share your campaign's outputs with other projects
+- [Open Standard](/learn/concepts/open-standard) — how campaigns contribute to the broader aDNA ecosystem

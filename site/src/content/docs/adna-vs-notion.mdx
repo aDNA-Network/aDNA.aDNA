@@ -1,0 +1,78 @@
+---
+title: "aDNA vs. Notion — aDNA Comparisons"
+description: "A standard for AI-native knowledge architecture vs. a SaaS platform for team collaboration — different layers, different trade-offs."
+doc_title: "aDNA vs. Notion"
+section: "comparisons"
+order: 3
+---
+
+A standard for AI-native knowledge architecture vs. a SaaS platform for team collaboration — different layers, different trade-offs.
+
+## Overview
+
+### aDNA
+
+An open standard (§1) defining how project knowledge should be structured for human and AI-agent collaboration. Files live on disk (or in git), organized by the what/how/who triad. Governance is embedded in the project via CLAUDE.md, AGENTS.md, and typed frontmatter. The standard is tool-agnostic but works best with Obsidian and Claude Code.
+
+### Notion
+
+A SaaS collaboration platform that combines wikis, databases, documents, and project management in a single cloud workspace. Rich block-based editor, flexible database views, real-time collaboration, integrations ecosystem. Knowledge lives in Notion's cloud, accessed via browser or app.
+
+## Comparison
+
+| Dimension | aDNA | Notion |
+|-----------|------|--------|
+| **Architecture** | Open standard + local files (git-backed) | Proprietary platform (cloud-hosted) |
+| **Agent support** | Native: governance files, AGENTS.md routing, convergence model | Emerging: Notion AI assistant, but no agent-oriented governance layer |
+| **Collaboration** | Git-based: sessions, coordination notes, conflict detection | Real-time: simultaneous editing, comments, @mentions |
+| **Data ownership** | Full: files on your disk, version-controlled in git | Platform-dependent: data lives in Notion's cloud |
+| **Structure** | Prescribed: triad, typed entities, frontmatter schema | Flexible: any structure, databases with custom properties |
+| **Extensibility** | [Base/extension](/patterns/base-extension) with typed entity system | Custom databases, formulas, integrations |
+| **Learning curve** | Moderate: spec, governance, templates | Low-to-moderate: intuitive editor, database setup takes time |
+| **Federation** | Native: `lattice://` URIs, 5-capability lifecycle | None: sharing = duplicate or link between Notion workspaces |
+| **Offline** | Full offline support (local files) | Limited offline support |
+| **Visual editing** | Markdown + Obsidian canvas | Rich block editor with embeds, databases, galleries |
+
+## Where aDNA Excels
+
+- **Agent-first architecture**: aDNA's governance files, AGENTS.md routing, and [convergence model](/learn/concepts/convergence) were designed for AI agents to navigate systematically. Notion AI is a feature; aDNA is an architecture.
+- **Data sovereignty**: aDNA files are local, git-versioned, and portable. No vendor dependency for access to your own knowledge.
+- **Federation**: aDNA lattices can be shared and composed across instances using a defined protocol. Notion workspaces are isolated silos.
+- **Typed knowledge**: aDNA's entity types and [FAIR metadata](/learn/concepts/fair-metadata) make knowledge machine-queryable and standards-compliant. Notion databases are flexible but project-specific.
+- **Open standard**: Anyone can build tools for aDNA. Notion's ecosystem depends on Notion's API and platform decisions.
+
+## Where Notion Excels
+
+- **Real-time collaboration**: Multiple people editing simultaneously with visual presence indicators. aDNA uses git — async by nature, conflicts possible.
+- **Visual richness**: Block editor, database views (table, board, calendar, gallery, timeline), embedded media. aDNA is markdown files.
+- **Low barrier to entry**: No spec to learn, no frontmatter schema, no governance files. Create a page and start typing.
+- **Built-in project management**: Kanban boards, sprint tracking, calendars, formulas — all in one tool. aDNA's operational layer (missions, sessions) is lighter-weight.
+- **Integrations ecosystem**: Slack, GitHub, Figma, Google Drive, and hundreds more. aDNA integrates through git and Claude Code.
+- **Non-technical accessibility**: Anyone can use Notion's GUI. aDNA requires comfort with files, folders, and markdown.
+
+## When to Choose Which
+
+| If you need... | Choose |
+|---------------|--------|
+| Real-time team wiki with rich editing | Notion |
+| AI-agent-navigable knowledge architecture | aDNA |
+| Quick setup with no learning curve | Notion |
+| Data sovereignty and git version control | aDNA |
+| Visual project management (boards, timelines) | Notion |
+| Typed, federable, standards-compliant knowledge objects | aDNA |
+| Non-technical team members editing content | Notion |
+| Multi-agent project execution with governance | aDNA |
+
+Some teams use both: Notion for real-time collaboration and project management, aDNA for the AI-agent knowledge layer that powers deeper work.
+
+## Sources
+
+- notion.so/product — Notion platform documentation
+- Notion AI documentation — notion.so/product/ai
+- aDNA Standard v2.1, §1 (Introduction), §3 (Triad), §11 (Federation) — aDNA specification
+
+## Related
+
+- [Open Standard](/learn/concepts/open-standard) — why aDNA is a standard rather than a platform (contrast with Notion's approach)
+- [Governance Files](/learn/concepts/governance-files) — aDNA's agent-orientation layer that Notion lacks
+- [Context Commons](/learn/concepts/context-commons) — the shared-knowledge vision enabled by federation, impossible with siloed platforms

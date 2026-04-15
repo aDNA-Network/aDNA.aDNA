@@ -1,0 +1,100 @@
+---
+title: "Context Optimization — aDNA Concepts"
+description: "Context optimization is the practice of designing context files — the curated knowledge agents load before doing work — so they deliver maximum decision..."
+doc_title: "Context Optimization"
+section: "concepts"
+order: 8
+---
+
+## Overview
+
+Context optimization is the practice of designing context files — the curated knowledge agents load before doing work — so they deliver maximum decision-relevant information per token consumed. It covers file structure, format selection, quality scoring, and the discipline of saying less to communicate more.
+
+## Why This Matters
+
+Imagine you have 60 seconds to brief a colleague before they walk into a meeting. You could ramble about background history, or you could give them three bullet points that let them make the right call. Context optimization is the art of writing the three bullet points.
+
+AI agents face a strict version of this constraint. Their "working memory" — the context window — has a hard limit, and the aDNA 75% rule (§8.7) reserves a quarter of it for reasoning. Every token spent on preamble, filler, or redundant explanation is a token the agent can't use for actual knowledge. When you load a context file into an agent's window, you're spending a budget. The question is whether you're buying signal or noise.
+
+This matters at scale. A project with 50 context files across 5 topics could easily contain 50K tokens. An agent session might have budget for 15K. If your files are well-optimized — tables instead of prose, principles instead of preambles, decisions instead of descriptions — 15K tokens might be plenty. If they're prose-heavy, 15K buys you generic background that doesn't actually help the agent do its job.
+
+## How It Works
+
+### The Three Subtypes
+
+Not all context files serve the same purpose. The aDNA Standard (§10) defines three subtypes, each with different density targets:
+
+| Subtype | Purpose | Token Density | Example |
+|---------|---------|---------------|---------|
+| `context_research` | Synthesized domain knowledge from external sources | Dense, citational | Federation composability patterns |
+| `context_guide` | Prescriptive how-to instructions | Step-by-step, actionable | Context engineering guide |
+| `context_core` | Foundational project definitions | Concise, authoritative | Paradigm overview |
+
+Choosing the right subtype is the first optimization decision. A file that tries to be both research synthesis and step-by-step guide will be mediocre at both.
+
+### Format Selection
+
+The single most impactful optimization is format selection. The same information in different formats can vary 3-5x in token cost:
+
+| Content Type | Best Format | Why | Token Savings |
+|-------------|-------------|-----|---------------|
+| Comparisons | Decision tables | Side-by-side, scannable | 3-5x vs. prose |
+| Procedures | Numbered steps | Sequential, unambiguous | 2-3x vs. prose |
+| Rules & constraints | Constraint tables | Structured, queryable | 3-4x vs. prose |
+| Examples | Code blocks with annotations | Directly executable | 2x vs. described |
+| Principles | Numbered list, most important first | Priority-ordered, memorable | 2x vs. paragraphs |
+
+The default should always be tables over prose. Prose is appropriate for motivation and metaphor (like the "Why This Matters" section you're reading now) but not for reference material an agent will query.
+
+### The Quality Rubric
+
+aDNA scores context files on six axes (§10). Three are directly about optimization:
+
+| Axis | Score 1-5 | Optimization Impact |
+|------|-----------|-------------------|
+| **Signal density** | Fraction of tokens that drive decisions | High — the core metric |
+| **Actionability** | Can an agent produce concrete output? | High — files that inform but don't enable action are overhead |
+| **Coverage uniformity** | Balanced depth across sections | Medium — lopsided files waste tokens on over-covered topics |
+
+The floor rule: any axis scoring 2 or below flags the file for revision. The composite target is 3.5+ across all five numeric axes.
+
+### Anti-Patterns
+
+| Anti-Pattern | Token Cost | Fix |
+|-------------|-----------|-----|
+| Background preamble ("In the rapidly evolving field of...") | 50-200 wasted tokens per file | Start with first principle |
+| Prose where tables work | 3-5x overhead | Convert to tables |
+| Monolithic files (>4K tokens) | Agents load everything to get one section | Split into subtopics |
+| Single-source content (source diversity ≤ 2) | Low credibility, narrow perspective | Diversify sources |
+| Redundant coverage across files | Double-loading penalty | Scope notes differentiating files |
+| Missing AGENTS.md | Agents can't find the file | Every topic directory needs an index |
+
+### The Composition System
+
+Individual file optimization isn't enough when tasks span multiple topics. The context composition system (§10) provides **recipes** — pre-defined combinations of subtopics for multi-disciplinary tasks, at three budget tiers:
+
+| Tier | Budget | When to Use |
+|------|--------|------------|
+| Minimal | &lt;5K tokens | Narrow task, known domain |
+| Standard | &lt;12K tokens | Typical development session |
+| Full | All subtopics | Deep research or comprehensive review |
+
+Recipes prevent the common failure of loading "just in case" — pre-selecting which subtopics to combine for a given task type.
+
+## See It In Action
+
+This vault's context library (`what/context/`) is a working example of context optimization at every level:
+
+**File-level optimization**: Open `what/context/adna_core/context_adna_core_context_engineering.md` — it's the guide for writing context files, and it practices what it preaches. Tables dominate. Principles are numbered. Anti-patterns are listed. Signal density: 5/5.
+
+**Token budgets**: Every context file carries a `token_estimate` in its frontmatter. The AGENTS.md at `what/context/adna_core/AGENTS.md` lists all 13 subtopics with their token costs, totaling ~13,100 tokens. An agent can decide exactly which subtopics to load and predict the cost before loading them.
+
+**Format selection in practice**: Compare the "Key Principles" section in any context file (numbered list, table-driven) with the "Why This Matters" section in concept files (prose, metaphor-driven). Different audiences, different formats, both optimized for their purpose.
+
+**Composition recipes**: The recipe index at `what/context/context_recipes.md` pre-defines which subtopics to load together for common task types, preventing agents from improvising (and over-loading) on multi-topic tasks.
+
+## Related
+
+- [Token Selection](/learn/concepts/token-selection) — the mechanisms (AGENTS.md routing, recipes, budgets) that implement context optimization decisions
+- [Convergence Model](/learn/concepts/convergence) — the structural principle that ensures optimization compounds across campaign → mission → objective
+- [Knowledge Graph](/learn/concepts/knowledge-graph) — the connected structure that optimization helps agents traverse efficiently

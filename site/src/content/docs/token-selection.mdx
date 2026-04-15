@@ -1,0 +1,100 @@
+---
+title: "Token Selection — aDNA Concepts"
+description: "Token selection is the discipline of choosing which knowledge to load into an AI agent's context window — and, critically, which knowledge to leave out...."
+doc_title: "Token Selection"
+section: "concepts"
+order: 5
+---
+
+## Overview
+
+Token selection is the discipline of choosing which knowledge to load into an AI agent's context window — and, critically, which knowledge to leave out. aDNA provides structured mechanisms (AGENTS.md routing, context recipes, token budgets) to make this selection systematic rather than ad hoc.
+
+## Why This Matters
+
+Imagine you're studying for a history exam. You have 300 pages of notes, but the exam is in two hours. You can't read everything — you need to pick the 30 pages that matter most. If you pick well, you ace the test. If you pick poorly or try to read all 300, you run out of time and remember nothing clearly.
+
+AI agents face exactly this problem on every task. They have a fixed-size "working memory" called the context window — typically enough room for 50,000 to 200,000 tokens of text. A real project might contain 500,000 tokens of knowledge across hundreds of files. Loading everything doesn't work: the agent drowns in information, loses track of what's relevant, and produces worse output. Loading nothing doesn't work either: the agent hallucinates or misses critical context.
+
+Token selection is the art of the middle path — loading exactly the knowledge an agent needs for its current task, at the right level of detail, without wasting space on irrelevant material. It's what separates an agent that produces generic output from one that produces informed, project-specific work.
+
+## How It Works
+
+### The 75% Rule
+
+The aDNA Standard establishes a hard constraint: agents SHOULD reserve at least 25% of their context window for reasoning (§8.7). This means knowledge loading — governance files, context files, mission plans, the task itself — must fit within 75% of the available space.
+
+| Window Size | 75% Budget | Typical Allocation |
+|-------------|------------|-------------------|
+| 100K tokens | 75K | ~5K governance + ~15K context + ~5K mission + ~50K working space |
+| 200K tokens | 150K | ~5K governance + ~30K context + ~5K mission + ~110K working space |
+
+The 25% reasoning reserve ensures the agent has room to think, not just room to remember.
+
+### Three Selection Mechanisms
+
+aDNA provides three complementary mechanisms for token selection:
+
+**1. AGENTS.md routing (§4.5)**
+
+Every directory has an AGENTS.md with a **load/skip decision** — a brief statement telling agents whether this directory's content is relevant to their current task. When an agent navigates the vault, it reads AGENTS.md at each junction and decides whether to descend or skip. This turns the directory tree into a decision tree, pruning irrelevant branches before they consume tokens.
+
+**2. Context recipes (`what/context/context_recipes.md`)**
+
+For multi-topic tasks, pre-defined recipes list exactly which context subtopics to load, at three budget tiers:
+
+| Tier | Budget | Use When |
+|------|--------|----------|
+| Minimal | &lt;5K tokens | Task is narrow, you know the domain |
+| Standard | &lt;12K tokens | Typical development session |
+| Full | All subtopics | Deep research or comprehensive review |
+
+Recipes prevent the common failure mode of loading too much "just in case."
+
+**3. Token estimates on files**
+
+Context files and AGENTS.md files carry `token_estimate` fields in their frontmatter. This lets agents make cost-aware loading decisions: "This file costs ~2K tokens — is it worth it for the current objective?"
+
+### The Loading Protocol
+
+Combining these mechanisms, an agent's loading sequence looks like:
+
+1. **CLAUDE.md** — auto-loaded (~2-4K tokens). Non-negotiable.
+2. **STATE.md** — current operational state (~1-2K tokens). Nearly always loaded.
+3. **Campaign/mission docs** — task framing (~2-3K tokens). Loaded when executing mission work.
+4. **Context files** — domain knowledge (~5-20K tokens). Selected via AGENTS.md routing and context recipes.
+5. **Working files** — the actual files being created or modified. Variable.
+
+Each step is a selection decision: load this, skip that. The governance files (steps 1-2) are almost always loaded because they're compact and universally useful. Domain context (step 4) is where the real selection discipline applies — and where the [convergence model](/learn/concepts/convergence) earns its keep.
+
+### Signal Density
+
+Not all tokens are equal. A well-written context file packs more decision-relevant information per token than a rambling one. aDNA measures this as **signal density** — one of six quality axes in the context quality rubric (§10):
+
+| Signal Density | Description |
+|---------------|-------------|
+| 5 | Every sentence drives a decision or action |
+| 4 | Occasional filler, mostly actionable |
+| 3 | Mixed signal and background |
+| 2 | More background than signal |
+| 1 | Mostly filler |
+
+Token selection isn't just about *which* files to load — it's about ensuring the files themselves are worth loading. Tables over prose. Principles over preambles. Decisions over descriptions.
+
+## See It In Action
+
+This vault demonstrates token selection at every level:
+
+**AGENTS.md routing**: Open `what/concepts/AGENTS.md` — it tells agents to load this directory when working on concept documentation and to skip it when working on operational infrastructure. An agent building a mission plan would never load this file, saving ~15K tokens.
+
+**Token estimates**: Look at any context file's frontmatter — e.g., `what/context/adna_core/context_adna_core_convergence_model.md` carries `token_estimate: ~500`. An agent can decide whether 500 tokens of convergence model context is worth it for its current task.
+
+**Campaign context budget**: The campaign master doc (`how/campaigns/campaign_rosetta/campaign_rosetta.md`) declares its total context budget: ~5K campaign context + ~15K domain context + ~2-3K per mission. This budget discipline keeps sessions focused.
+
+**The CLAUDE.md itself**: This vault's CLAUDE.md is ~4K tokens — comprehensive enough to orient a cold agent, compact enough to leave room for work. That's token selection applied to governance: every section earns its space.
+
+## Related
+
+- [Convergence Model](/learn/concepts/convergence) — the structural principle that makes token selection scale across campaign → mission → objective
+- [Governance Files](/learn/concepts/governance-files) — the orientation layer that consumes the first ~5K tokens in every session
+- [Knowledge Graph](/learn/concepts/knowledge-graph) — the connected structure that AGENTS.md routing traverses during selection

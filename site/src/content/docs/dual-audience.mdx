@@ -1,0 +1,67 @@
+---
+title: "Dual-Audience Writing — aDNA Patterns"
+description: "aDNA documentation must serve two audiences with different needs: developers seeking technical precision for implementation, and newcomers seeking plain..."
+doc_title: "Dual-Audience Writing"
+section: "patterns"
+order: 3
+---
+
+## Problem
+
+aDNA documentation must serve two audiences with different needs: developers seeking technical precision for implementation, and newcomers seeking plain-language understanding of what aDNA is and why it matters. Writing only for developers excludes newcomers. Writing only for newcomers frustrates developers who need spec references, field names, and decision tables.
+
+Most documentation systems solve this by creating separate documents — a "Getting Started" guide and an "API Reference." This doubles maintenance cost and creates drift between the two versions.
+
+## Solution
+
+Write every content file with **layered depth** — both audiences served in one document, in a specific order (Campaign CLAUDE.md, Quality Gate 1):
+
+| Section | Audience | Purpose |
+|---------|----------|---------|
+| **Opening** (1-3 sentences) | Everyone | Plain-language summary a 14-year-old could follow |
+| **Why This Matters** | Newcomers first, developers second | Metaphor-driven motivation, no jargon, then bridge to technical impact |
+| **How It Works** | Both | Technical substance with tables, spec citations, and decision frameworks |
+| **See It In Action** | Both | Self-referential example from this vault |
+| **Related** | Both | Cross-links for further exploration |
+
+**Key principles**:
+
+1. **Plain-language opening is mandatory.** The first sentences must be jargon-free. If a concept can't be explained simply, the file isn't ready.
+2. **Metaphor before mechanism.** Give the reader a mental model ("think of it like a funnel") before introducing technical terms.
+3. **Tables over prose for technical content.** Developers scan tables; newcomers read the surrounding prose. Tables serve both.
+4. **Spec citations for precision, not authority.** "§3.1" tells a developer exactly where to look. A newcomer skips it without losing understanding.
+5. **One file, two reads.** A newcomer reads the opening and motivation, gets the gist, and moves on. A developer reads the tables and spec citations, gets the implementation details. Neither needs a separate document.
+
+## When to Use
+
+- Every concept, pattern, tutorial, and comparison file in an aDNA documentation vault
+- Governance files that may be read by non-technical stakeholders
+- README files and entry-point documentation
+- Any content intended for a mixed-expertise audience
+
+## Example: This Vault
+
+Every concept file in `what/concepts/` demonstrates dual-audience writing. Open `concept_convergence.md`:
+
+- **Opening**: "The convergence model is aDNA's structural principle for managing complexity..." — one sentence, no jargon, immediately clear.
+- **Why This Matters**: "Picture a funnel..." — starts with a spatial metaphor any reader can follow, then bridges to the technical problem (token limits, context windows).
+- **How It Works**: Decision tables, token budgets, spec references (§8.7, §9, §10) — a developer's reference material.
+- **See It In Action**: Points to actual files and token counts in this vault — concrete, verifiable.
+
+The same layering appears in this file you're reading now. The Problem section is plain-language. The Solution section has tables for developers. Both audiences are served without duplication.
+
+## Anti-Pattern
+
+**Jargon-first writing**: "The convergence model implements monotone-decreasing token bounds across the execution hierarchy DAG." Technically accurate. Newcomers leave immediately.
+
+**Dumbing down**: Removing all technical depth to be "accessible." Developers can't find the spec references, field names, or decision criteria they need. Accessibility doesn't mean simplification — it means layered depth.
+
+**Separate documents**: Writing a "Simple Guide" and a "Technical Reference" for the same concept. Maintenance doubles, versions drift, and there's no single source of truth.
+
+**Apologetic jargon**: "This might sound complicated, but..." Don't apologize. Give the metaphor first, then give the technical term. Confidence, not condescension.
+
+## Related
+
+- [Dual-Audience Writing](/learn/concepts/dual-audience) — the concept that explains why this pattern exists
+- [Agentic Literacy](/learn/concepts/agentic-literacy) — the literacy movement that dual-audience writing makes inclusive
+- [Question Test](/patterns/question-test) — another pattern where simplicity serves dual audiences
