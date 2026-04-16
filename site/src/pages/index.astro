@@ -76,6 +76,9 @@ const stats = [
 >
   <!-- Hero -->
   <section class="hero">
+    <h1 class="hero-title">
+      A knowledge architecture for humans and AI agents
+    </h1>
     <div class="hero-banner">
       <Image
         src={bannerImage}
@@ -87,11 +90,8 @@ const stats = [
       />
     </div>
     <div class="hero-inner">
-      <h1 class="hero-title">
-        Stop rebuilding context for every tool and agent
-      </h1>
       <p class="hero-subtitle">
-        aDNA is an open standard that gives your project a shared brain — one knowledge structure that both humans and AI agents can read, navigate, and build on.
+        Structure your project's knowledge once — who's involved, what you know, how work gets done — and every agent and teammate can navigate it. Plain Markdown, open standard, no lock-in.
       </p>
       <div class="hero-actions">
         <a href="/get-started" class="btn btn-primary">Get Started</a>
@@ -256,14 +256,9 @@ const stats = [
 <style>
   /* ——— Hero ——— */
   .hero {
-    padding: var(--space-12) var(--space-6) var(--space-16);
+    padding: var(--space-16) var(--space-6) var(--space-16);
     text-align: center;
     max-width: var(--content-width);
-    margin: 0 auto;
-  }
-
-  .hero-inner {
-    max-width: 44rem;
     margin: 0 auto;
   }
 
@@ -271,17 +266,22 @@ const stats = [
     font-size: var(--text-4xl);
     font-weight: 700;
     color: var(--color-text-heading);
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-8);
     line-height: 1.1;
+    max-width: 44rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-inner {
+    max-width: 40rem;
+    margin: 0 auto;
   }
 
   .hero-subtitle {
     font-size: var(--text-lg);
     color: var(--color-text-muted);
     margin-bottom: var(--space-8);
-    max-width: 38rem;
-    margin-left: auto;
-    margin-right: auto;
     line-height: 1.6;
   }
 
