@@ -6,12 +6,12 @@ owner: stanley
 status: active
 current_phase: 5
 phase_count: 7
-mission_count: 23
-estimated_sessions: "30-40"
+mission_count: 35
+estimated_sessions: "65-85"
 estimation_class: content-novel
 priority: high
 created: 2026-04-13
-updated: 2026-04-14
+updated: 2026-04-15
 last_edited_by: agent_stanley
 tags: [campaign, rosetta, adna, documentation, education, website]
 ---
@@ -39,6 +39,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | **4.5: III Site Improvements** | **Complete** | M20-M23 | site upgrade | Hero, new sections, components, OG images, III review |
 | **5: The How** | **Next** | M16-M18 | ~12 files | Publishing, workshops, lattices |
 | **6: Website v2** | Planned | M19 | site polish | Final content sync, quality pass, brand refinement |
+| **7: 100-Cycle III Loop** | Planned | M24-M35 | site perfection | 100 iterative improvement cycles across 10 themed decadals |
 
 > **Restructured 2026-04-14**: Website moved from deferred Phase 5 to active Phase 3. Content graph phases (Who, How) slide to Phases 4-5. New Phase 6 adds a final website polish pass after all content is complete.
 
@@ -101,6 +102,27 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | Mission | Title | Status | Deliverables | Dependencies |
 |---------|-------|--------|-------------|-------------|
 | M19 | Website Review & Polish | pending | Phase 4-5 content synced, glossary section, quality re-run | Phases 4-5 |
+
+### Phase 7: 100-Cycle III Loop
+
+| Mission | Title | Cycles | Status | Description |
+|---------|-------|--------|--------|-------------|
+| M24 | III Loop Setup & Baseline | — | pending | Create skills, cycle tracker, measurement infrastructure, initial baseline |
+| M25 | D1: Accessibility Perfection | 1-10 | pending | WCAG AA → Lighthouse a11y 100, keyboard nav, screen reader, focus indicators |
+| M26 | D2: Content Clarity Sprint | 11-20 | pending | Anti-slop, progressive disclosure, reading flow, plain-language openings |
+| M27 | D3: Navigation & IA | 21-30 | pending | Information architecture, cross-linking, breadcrumbs, time-to-first-insight |
+| M28 | D4: Visual Polish | 31-40 | pending | Typography refinement, whitespace, dark mode parity, visual hierarchy |
+| M29 | D5: Mobile Experience | 41-50 | pending | Touch targets, responsive tables, mobile nav, code block scrolling |
+| M30 | D6: Performance & Loading | 51-60 | pending | Font loading, image optimization, critical CSS, prefetching, edge caching |
+| M31 | D7: SEO & Discoverability | 61-70 | pending | Structured data, internal linking, heading hierarchy, sitemap completeness |
+| M32 | D8: Component & Interaction | 71-80 | pending | Callout/CodeBlock/Mermaid enhancements, MediaPlaceholder replacement |
+| M33 | D9: Persona-Driven Polish | 81-90 | pending | Per-persona task completion tests, onboarding flows, trust signals |
+| M34 | D10: Hardening & Closeout | 91-100 | pending | Regression testing, final audit, measurement dashboard |
+| M35 | Phase 7 Closeout & Campaign AAR | — | pending | Final Lighthouse, full persona ranker, campaign-level AAR |
+
+> **Cycle protocol**: Each cycle follows `skill_iii_cycle.md` (7-step: Measure → Orient → Select → Implement → Re-measure → Validate → Record). Every 10th cycle runs `skill_decadal_aar.md` (8-step persona ranker review). Decadal themes focus effort but don't prohibit opportunistic fixes.
+
+> **Phase exit gate**: All 100 cycles completed. Final Lighthouse audit shows no regressions from baseline. All persona ranker dimensions average >= 4.0. Campaign AAR filed.
 
 ## Quality Gates
 

@@ -1,7 +1,7 @@
 ---
 type: manifest
 created: 2026-04-13
-updated: 2026-04-14
+updated: 2026-04-15
 last_edited_by: agent_stanley
 tags: [manifest, governance]
 ---
@@ -120,14 +120,16 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | `template_workshop.md` | `how/workshops/` |
 | `template_publishing_task.md` | `how/publishing/` |
 
-### Skills (15)
+### Skills (17)
 
-13 base skills (inherited) + 2 project-specific:
+13 base skills (inherited) + 4 project-specific:
 
 | Skill | Type | Purpose |
 |-------|------|---------|
 | `skill_dual_audience_review` | agent | Review content against dual-audience test |
 | `skill_self_reference_check` | agent | Verify self-referential vault citations |
+| `skill_iii_cycle` | agent | Single III improvement cycle (7-step: measure → implement → validate) |
+| `skill_decadal_aar` | agent | Decadal AAR with 5-persona ranker review (every 10 cycles) |
 
 ## Active Builds
 
@@ -141,6 +143,7 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | Phase 4.5: III Site Improvements | Complete | Hero redesign, 37 new site pages, components, OG images, III review |
 | Phase 5: The How | **Next** | Publishing pipeline, workshop kits, lattice definitions |
 | Phase 6: Website v2 | Planned | Final content sync, quality pass, brand refinement |
+| Phase 7: 100-Cycle III Loop | Planned | 100 iterative improvement cycles (10 themed decadals) + persona ranker AARs |
 
 ### Inherited Infrastructure (from base template)
 

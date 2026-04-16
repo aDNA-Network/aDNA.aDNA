@@ -245,6 +245,8 @@ Reusable agent recipes and documented procedures in `how/skills/`. Skills have t
 | `skill_orchestration_tiers` | process | Multi-file tasks, tier classification, agent spawning, model routing decisions |
 | `skill_dual_audience_review` | agent | Review content file against dual-audience test (developer + non-developer legibility) |
 | `skill_self_reference_check` | agent | Verify content file cites concrete vault examples as self-referential demonstration |
+| `skill_iii_cycle` | agent | Single III improvement cycle — 7-step: measure, orient, select, implement, re-measure, validate, record |
+| `skill_decadal_aar` | agent | Decadal AAR with 5-persona ranker review — every 10th III cycle in Phase 7 |
 
 ---
 
