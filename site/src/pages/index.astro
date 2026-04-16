@@ -74,30 +74,29 @@ const stats = [
   description="Give your project a knowledge architecture that both humans and AI agents can navigate."
   jsonLD={jsonLD}
 >
-  <!-- Hero with banner background -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-bg">
-      <Image
-        src={bannerImage}
-        alt=""
-        widths={[640, 1024, 1408]}
-        sizes="100vw"
-        class="hero-bg-img"
-        loading="eager"
-      />
-      <div class="hero-overlay"></div>
-    </div>
     <div class="hero-inner">
       <h1 class="hero-title">
-        Give your project a <span class="hero-highlight">knowledge architecture</span>
+        Stop rebuilding context for every tool and agent
       </h1>
       <p class="hero-subtitle">
-        aDNA is an open standard for organizing project knowledge so that both humans and AI agents can navigate it. Structure your context once — use it everywhere.
+        aDNA is an open standard that gives your project a shared brain — one knowledge structure that both humans and AI agents can read, navigate, and build on.
       </p>
       <div class="hero-actions">
         <a href="/get-started" class="btn btn-primary">Get Started</a>
-        <a href="/learn/what-is-adna" class="btn btn-hero-secondary">What is aDNA?</a>
+        <a href="/learn/what-is-adna" class="btn btn-secondary">What is aDNA?</a>
       </div>
+    </div>
+    <div class="hero-banner">
+      <Image
+        src={bannerImage}
+        alt="aDNA — three glowing DNA helices (representing the who/what/how triad) rising from a workspace of monitors and instruments"
+        widths={[640, 1024, 1408]}
+        sizes="(max-width: 768px) 100vw, 72rem"
+        class="hero-banner-img"
+        loading="eager"
+      />
     </div>
   </section>
 
@@ -106,7 +105,7 @@ const stats = [
     <div class="features-inner">
       <div class="feature">
         <h2>Agent-native</h2>
-        <p>Built for AI agents from the ground up. CLAUDE.md, AGENTS.md, and typed context files give agents the orientation they need to work effectively.</p>
+        <p>Built for AI agents from the ground up. Governance files and typed context give agents the orientation they need — no prompt re-engineering every session.</p>
       </div>
       <div class="feature">
         <h2>Human-readable</h2>
@@ -139,6 +138,79 @@ const stats = [
             </div>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Operational Ontology -->
+  <section class="ontology">
+    <div class="section-inner">
+      <h2 class="section-title">An Operational Ontology</h2>
+      <p class="section-subtitle">14 entity types across three triad legs give your project a typed vocabulary — from planning to execution to knowledge capture.</p>
+      <div class="ontology-grid">
+        <div class="ontology-leg">
+          <h3 class="ontology-leg-title"><span class="ontology-badge badge-who">WHO</span> People &amp; Governance</h3>
+          <ul class="ontology-list">
+            <li><strong>Governance</strong> — who decides, what the rules are</li>
+            <li><strong>Team</strong> — who does the work</li>
+            <li><strong>Coordination</strong> — how agents and people sync</li>
+          </ul>
+        </div>
+        <div class="ontology-leg">
+          <h3 class="ontology-leg-title"><span class="ontology-badge badge-what">WHAT</span> Knowledge &amp; Artifacts</h3>
+          <ul class="ontology-list">
+            <li><strong>Context</strong> — curated knowledge agents load before working</li>
+            <li><strong>Decisions</strong> — architecture decision records</li>
+            <li><strong>Modules</strong> — atomic capability units with typed I/O</li>
+            <li><strong>Lattices</strong> — directed graphs that compose modules into workflows</li>
+          </ul>
+        </div>
+        <div class="ontology-leg">
+          <h3 class="ontology-leg-title"><span class="ontology-badge badge-how">HOW</span> Operations &amp; Execution</h3>
+          <ul class="ontology-list">
+            <li><strong>Campaigns</strong> — multi-mission strategic initiatives</li>
+            <li><strong>Missions</strong> — tasks decomposed into session-sized objectives</li>
+            <li><strong>Sessions</strong> — bounded units of agent work with audit trails</li>
+            <li><strong>Templates, Skills, Pipelines, Backlog</strong></li>
+          </ul>
+        </div>
+      </div>
+      <p class="ontology-footer">
+        The hierarchy narrows context at each level: <strong>Campaign → Mission → Objective</strong>. An agent working on a single objective loads only the files it needs — not the entire vault. <a href="/learn/concepts/convergence">Learn about convergence →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Context Engineering -->
+  <section class="context-eng">
+    <div class="section-inner">
+      <h2 class="section-title">Context Engineering, Built In</h2>
+      <p class="section-subtitle">aDNA treats agent context as a first-class engineering problem — not an afterthought bolted onto your docs.</p>
+      <div class="context-grid">
+        <div class="context-card">
+          <span class="context-icon">🎯</span>
+          <h3>Context Optimization</h3>
+          <p>Every context file is scored on signal density, actionability, and coverage. A 6-axis quality rubric keeps your agent knowledge sharp — not bloated.</p>
+          <a href="/learn/concepts/context-optimization" class="card-link">How it works →</a>
+        </div>
+        <div class="context-card">
+          <span class="context-icon">📐</span>
+          <h3>Convergence Model</h3>
+          <p>Each level of the execution hierarchy narrows scope. A vault might hold 75K tokens of context — but a single session loads only the 5K it actually needs.</p>
+          <a href="/learn/concepts/convergence" class="card-link">See the model →</a>
+        </div>
+        <div class="context-card">
+          <span class="context-icon">🧩</span>
+          <h3>Context Recipes</h3>
+          <p>Pre-built assemblies for common tasks. Need to design a lattice? There's a recipe that pulls exactly the right context subtopics — minimal, standard, or full.</p>
+          <a href="/patterns/context-recipe" class="card-link">Browse recipes →</a>
+        </div>
+        <div class="context-card">
+          <span class="context-icon">🏛️</span>
+          <h3>Context Commons</h3>
+          <p>A community-maintained library of reusable context files. Contribute what you learn, pull what others have validated. Knowledge compounds across projects.</p>
+          <a href="/learn/concepts/context-commons" class="card-link">Join the commons →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -184,75 +256,28 @@ const stats = [
 <style>
   /* ——— Hero ——— */
   .hero {
-    position: relative;
-    padding: var(--space-32) var(--space-6) var(--space-24);
+    padding: var(--space-24) var(--space-6) var(--space-16);
     text-align: center;
-    overflow: hidden;
-    min-height: 28rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .hero-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      hsl(185 80% 4% / 0.55) 0%,
-      hsl(185 80% 4% / 0.7) 50%,
-      hsl(185 80% 4% / 0.85) 100%
-    );
-  }
-
-  :global(.dark) .hero-overlay {
-    background: linear-gradient(
-      to bottom,
-      hsl(0 0% 4% / 0.65) 0%,
-      hsl(0 0% 4% / 0.8) 50%,
-      hsl(0 0% 4% / 0.92) 100%
-    );
+    max-width: var(--content-width);
+    margin: 0 auto;
   }
 
   .hero-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 48rem;
-    margin: 0 auto;
+    max-width: 44rem;
+    margin: 0 auto var(--space-12);
   }
 
   .hero-title {
     font-size: var(--text-4xl);
     font-weight: 700;
-    color: hsl(0 0% 100%);
+    color: var(--color-text-heading);
     margin-bottom: var(--space-6);
     line-height: 1.1;
   }
 
-  .hero-highlight {
-    color: hsl(180 70% 65%);
-  }
-
-  :global(.dark) .hero-highlight {
-    color: hsl(180 70% 70%);
-  }
-
   .hero-subtitle {
     font-size: var(--text-lg);
-    color: hsl(0 0% 85%);
+    color: var(--color-text-muted);
     margin-bottom: var(--space-8);
     max-width: 38rem;
     margin-left: auto;
@@ -265,6 +290,21 @@ const stats = [
     gap: var(--space-4);
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .hero-banner {
+    max-width: 56rem;
+    margin: 0 auto;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+  }
+
+  .hero-banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .btn {
@@ -287,19 +327,6 @@ const stats = [
   .btn-primary:hover {
     background: var(--color-primary-hover);
     color: white;
-  }
-
-  .btn-hero-secondary {
-    border: 1px solid hsl(0 0% 100% / 0.4);
-    color: hsl(0 0% 100%);
-    background: hsl(0 0% 100% / 0.08);
-    backdrop-filter: blur(4px);
-  }
-
-  .btn-hero-secondary:hover {
-    border-color: hsl(0 0% 100% / 0.7);
-    color: hsl(0 0% 100%);
-    background: hsl(0 0% 100% / 0.15);
   }
 
   .btn-secondary {
@@ -436,6 +463,169 @@ const stats = [
     font-style: italic;
   }
 
+  /* ——— Operational Ontology ——— */
+  .ontology {
+    padding: var(--space-24) 0;
+  }
+
+  .ontology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-8);
+    margin-bottom: var(--space-8);
+  }
+
+  .ontology-leg {
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+  }
+
+  .ontology-leg-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .ontology-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15em 0.5em;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .badge-who {
+    background: hsl(280 60% 92%);
+    color: hsl(280 60% 35%);
+  }
+
+  :global(.dark) .badge-who {
+    background: hsl(280 40% 20%);
+    color: hsl(280 60% 75%);
+  }
+
+  .badge-what {
+    background: hsl(180 60% 90%);
+    color: hsl(180 60% 25%);
+  }
+
+  :global(.dark) .badge-what {
+    background: hsl(180 40% 18%);
+    color: hsl(180 60% 70%);
+  }
+
+  .badge-how {
+    background: hsl(38 80% 90%);
+    color: hsl(38 70% 30%);
+  }
+
+  :global(.dark) .badge-how {
+    background: hsl(38 50% 18%);
+    color: hsl(38 70% 70%);
+  }
+
+  .ontology-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .ontology-list li {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .ontology-list li strong {
+    color: var(--color-text);
+  }
+
+  .ontology-footer {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .ontology-footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .ontology-footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* ——— Context Engineering ——— */
+  .context-eng {
+    padding: var(--space-24) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .context-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .context-card {
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-fast);
+  }
+
+  .context-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+  }
+
+  .context-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: var(--space-3);
+    line-height: 1;
+  }
+
+  .context-card h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+  }
+
+  .context-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-3);
+  }
+
+  .card-link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .card-link:hover {
+    text-decoration: underline;
+  }
+
   /* ——— Who Uses aDNA ——— */
   .who-uses {
     padding: var(--space-24) 0;
@@ -527,8 +717,11 @@ const stats = [
   /* ——— Responsive ——— */
   @media (max-width: 768px) {
     .hero {
-      padding: var(--space-24) var(--space-4) var(--space-16);
-      min-height: 24rem;
+      padding: var(--space-16) var(--space-4) var(--space-12);
+    }
+
+    .hero-banner {
+      max-width: 100%;
     }
 
     .stats-row {
@@ -542,8 +735,7 @@ const stats = [
 
   @media (max-width: 480px) {
     .hero {
-      padding: var(--space-16) var(--space-4) var(--space-12);
-      min-height: auto;
+      padding: var(--space-12) var(--space-4) var(--space-8);
     }
 
     .hero-title {
