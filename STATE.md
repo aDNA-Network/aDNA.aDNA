@@ -1,7 +1,7 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-04-15
+updated: 2026-04-16
 status: active
 last_edited_by: agent_stanley
 tags: [state, governance]
@@ -13,7 +13,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 4.5 — III Site Improvements COMPLETE.** Phases 0-4.5 complete (78 content files + 97-page live site). Next: Phase 5 (The How).
+**Phase 7 infrastructure built. Homepage redesigned.** Phases 0-4.5 complete (78 content files + 97-page live site). Phase 7 (M24-M35) added with III skills and cycle tracker. Homepage III review completed. Next: Phase 5 (The How).
 
 ## Active Campaign
 
@@ -41,31 +41,34 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## What's Working
 
-- Full documentation site live at https://adna-docs.vercel.app with all Phase 1-4 content
+- Full documentation site live at https://adna-docs.vercel.app with all Phase 1-4.5 content
+- Homepage: branded aDNA banner (watermark cropped), Operational Ontology section, Context Engineering section
 - WHO triad leg fully populated (governance, community, adopters)
 - Glossary provides canonical term definitions with dedicated site section
 - 78 vault content files + 97 site pages total
 - OG images render correctly per section for social sharing
-- Banner hero with responsive WebP optimization
+- Phase 7 III infrastructure ready: 2 skills, cycle tracker, 12 missions defined
 
 ## Active Blockers
 
 None. Phase 5 ready to execute.
 
-## Last Session (2026-04-14)
-
-Executed Phase 4.5 (III Site Improvements) in a single session. Created 4 missions (M20-M23): hero homepage redesign with banner image, 37 new content pages (glossary/community/adopters), 4 new/enhanced components (MediaPlaceholder, MermaidDiagram, Callout self-reference, CardGrid icons), 5 OG images with section-aware selection. Site grew from 60 → 97 pages.
-
 ## Next Steps
 
-1. **Phase 5: The How** — M16 (Publishing Pipeline), M17 (Workshop Kits), M18 (Lattice Definitions + Closeout)
-2. **Phase 6: Website v2** — M19: sync Phase 5 content to site, quality re-run, brand refinement
-3. **Phase 7: 100-Cycle III Loop** — M24-M35: 100 iterative improvement cycles across 10 themed decadals (Accessibility → Content Clarity → Navigation → Visual → Mobile → Performance → SEO → Components → Personas → Hardening). Persona ranker AAR every 10 cycles. Skills: `skill_iii_cycle.md`, `skill_decadal_aar.md`. Tracker: `missions/artifacts/iii_cycle_tracker.md`.
+1. **Complete M24** — run Lighthouse baseline on 5 representative pages, record in cycle tracker
+2. **Phase 5: The How** — M16 (Publishing Pipeline), M17 (Workshop Kits), M18 (Lattice Definitions + Closeout)
+3. **Phase 6: Website v2** — M19: sync Phase 5 content to site, quality re-run, brand refinement
+4. **Phase 7: 100-Cycle III Loop** — M24-M35: 100 iterative improvement cycles across 10 themed decadals (Accessibility → Content Clarity → Navigation → Visual → Mobile → Performance → SEO → Components → Personas → Hardening). Persona ranker AAR every 10 cycles. Skills: `skill_iii_cycle.md`, `skill_decadal_aar.md`. Tracker: `missions/artifacts/iii_cycle_tracker.md`.
 
-## Last Session (2026-04-15)
+## Pending Manual Actions
 
-Committed and pushed Phase 4.5 work (66 files, 97-page site). Added Phase 7 (100-Cycle III Loop) to the campaign: 12 new missions (M24-M35), 2 new skills (`skill_iii_cycle.md`, `skill_decadal_aar.md`), cycle tracker artifact. Updated campaign doc, STATE.md, MANIFEST.md. GitHub social preview requires manual upload via web UI.
+- **GitHub social preview**: Upload `site/public/images/og-default.png` at github.com/LatticeProtocol/aDNA.aDNA > Settings > Social preview
+- **Vercel Git integration**: Connect repo at vercel.com > adna-docs > Settings > Git for auto-deploy (currently manual via `vercel --prod`)
+
+## Last Session (2026-04-15 → 2026-04-16)
+
+Two-part session. (1) Committed Phase 4.5 (66 files), added Phase 7 to campaign (M24-M35, 2 skills, tracker), pushed to GitHub, deployed to Vercel. (2) Homepage III review and redesign — added Operational Ontology and Context Engineering sections, swapped to branded banner from upstream (cropped watermark), iterated hero layout 5 times to final: centered banner + subtitle "An integrated standard for context and knowledge." + CTAs. 7 commits, 6 Vercel deploys.
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 4.5 complete, Phase 7 (100-Cycle III Loop) added to campaign with M24-M35 and supporting skills. Begin Phase 5 (The How). Start with M16 (Publishing Pipeline) — define the vault-to-web publishing workflow in `how/publishing/`. See `how/campaigns/campaign_rosetta/campaign_rosetta.md` for the full mission board. Phase gate: confirm with user before starting Phase 5 content creation.
+> Resume Operation Rosetta in `aDNA.aDNA/`. Homepage redesigned, Phase 7 infrastructure built (skills + tracker + M24-M35). M24 needs Lighthouse baseline measurement to complete. Next major work: Phase 5 (The How) — start with M16 Publishing Pipeline in `how/publishing/`. Vercel deploys manually via `vercel --prod` from `site/`. See `campaign_rosetta.md` for full mission board. Phase gate: confirm with user before starting Phase 5.
