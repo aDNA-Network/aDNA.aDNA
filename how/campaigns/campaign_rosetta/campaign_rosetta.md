@@ -107,7 +107,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 
 | Mission | Title | Cycles | Status | Description |
 |---------|-------|--------|--------|-------------|
-| M24 | III Loop Setup & Baseline | — | pending | Create skills, cycle tracker, measurement infrastructure, initial baseline |
+| M24 | III Loop Setup & Baseline | — | **completed** | Create skills, cycle tracker, measurement infrastructure, initial baseline |
 | M25 | D1: Accessibility Perfection | 1-10 | pending | WCAG AA → Lighthouse a11y 100, keyboard nav, screen reader, focus indicators |
 | M26 | D2: Content Clarity Sprint | 11-20 | pending | Anti-slop, progressive disclosure, reading flow, plain-language openings |
 | M27 | D3: Navigation & IA | 21-30 | pending | Information architecture, cross-linking, breadcrumbs, time-to-first-insight |

@@ -13,7 +13,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 7 infrastructure built. Homepage redesigned.** Phases 0-4.5 complete (78 content files + 97-page live site). Phase 7 (M24-M35) added with III skills and cycle tracker. Homepage III review completed. Next: Phase 5 (The How).
+**Phase 7 baseline complete. Ready for Phase 5.** Phases 0-4.5 complete (78 content files + 97-page live site). Phase 7 infrastructure complete — M24 closed with measured Lighthouse baseline across 5 pages (avg: Perf 97.4, A11y 98.4, BP 100, SEO 100). Next: Phase 5 (The How).
 
 ## Active Campaign
 
@@ -29,7 +29,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 | Phase 4.5: III Site Improvements | **Complete** | M20-M23 | Hero redesign, 37 new pages, components, OG images |
 | Phase 5: The How | **Next** | M16-M18 | Publishing, workshops, lattices |
 | Phase 6: Website v2 | Planned | M19 | Final content sync + quality pass |
-| Phase 7: 100-Cycle III Loop | Planned | M24-M35 | 100 improvement cycles, 10 decadal themes, persona ranker AARs |
+| Phase 7: 100-Cycle III Loop | M24 complete | M24-M35 | 100 improvement cycles, 10 decadal themes, persona ranker AARs |
 
 ## Phase 4.5 Deliverables
 
@@ -47,7 +47,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 - Glossary provides canonical term definitions with dedicated site section
 - 78 vault content files + 97 site pages total
 - OG images render correctly per section for social sharing
-- Phase 7 III infrastructure ready: 2 skills, cycle tracker, 12 missions defined
+- Phase 7 III infrastructure complete: 2 skills, cycle tracker, 12 missions defined, M24 baseline measured
 
 ## Active Blockers
 
@@ -55,20 +55,19 @@ None. Phase 5 ready to execute.
 
 ## Next Steps
 
-1. **Complete M24** — run Lighthouse baseline on 5 representative pages, record in cycle tracker
-2. **Phase 5: The How** — M16 (Publishing Pipeline), M17 (Workshop Kits), M18 (Lattice Definitions + Closeout)
-3. **Phase 6: Website v2** — M19: sync Phase 5 content to site, quality re-run, brand refinement
-4. **Phase 7: 100-Cycle III Loop** — M24-M35: 100 iterative improvement cycles across 10 themed decadals (Accessibility → Content Clarity → Navigation → Visual → Mobile → Performance → SEO → Components → Personas → Hardening). Persona ranker AAR every 10 cycles. Skills: `skill_iii_cycle.md`, `skill_decadal_aar.md`. Tracker: `missions/artifacts/iii_cycle_tracker.md`.
+1. **Phase 5: The How** — M16 (Publishing Pipeline), M17 (Workshop Kits), M18 (Lattice Definitions + Closeout). Phase gate: confirm with user before starting.
+2. **Phase 6: Website v2** — M19: sync Phase 5 content to site, quality re-run, brand refinement
+3. **Phase 7: 100-Cycle III Loop** — M25-M35: 100 iterative improvement cycles across 10 themed decadals (Accessibility → Content Clarity → Navigation → Visual → Mobile → Performance → SEO → Components → Personas → Hardening). Baseline established (M24 complete). Skills: `skill_iii_cycle.md`, `skill_decadal_aar.md`. Tracker: `missions/artifacts/iii_cycle_tracker.md`.
 
 ## Pending Manual Actions
 
 - **GitHub social preview**: Upload `site/public/images/og-default.png` at github.com/LatticeProtocol/aDNA.aDNA > Settings > Social preview
 - **Vercel Git integration**: Connect repo at vercel.com > adna-docs > Settings > Git for auto-deploy (currently manual via `vercel --prod`)
 
-## Last Session (2026-04-15 → 2026-04-16)
+## Last Session (2026-04-16)
 
-Two-part session. (1) Committed Phase 4.5 (66 files), added Phase 7 to campaign (M24-M35, 2 skills, tracker), pushed to GitHub, deployed to Vercel. (2) Homepage III review and redesign — added Operational Ontology and Context Engineering sections, swapped to branded banner from upstream (cropped watermark), iterated hero layout 5 times to final: centered banner + subtitle "An integrated standard for context and knowledge." + CTAs. 7 commits, 6 Vercel deploys.
+Completed M24 (III Loop Setup & Baseline). Ran Lighthouse 13.1.0 on 5 representative pages against local preview. Results: Performance avg 97.4, Accessibility avg 98.4, Best Practices 100, SEO 100. Ran Playwright gates (30/30 pass). Updated cycle tracker with measured values, created M24 mission file with AAR, closed mission.
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. Homepage redesigned, Phase 7 infrastructure built (skills + tracker + M24-M35). M24 needs Lighthouse baseline measurement to complete. Next major work: Phase 5 (The How) — start with M16 Publishing Pipeline in `how/publishing/`. Vercel deploys manually via `vercel --prod` from `site/`. See `campaign_rosetta.md` for full mission board. Phase gate: confirm with user before starting Phase 5.
+> Resume Operation Rosetta in `aDNA.aDNA/`. M24 complete — Lighthouse baseline measured and recorded. Phase 5 (The How) is next: M16 Publishing Pipeline (`how/publishing/`), M17 Workshop Kits (`how/workshops/`), M18 Lattice Definitions + Closeout. Phase gate: confirm with user before starting Phase 5. Vercel deploys manually via `vercel --prod` from `site/`. See `campaign_rosetta.md` for full mission board.

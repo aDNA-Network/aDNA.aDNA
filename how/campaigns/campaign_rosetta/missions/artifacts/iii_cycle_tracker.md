@@ -1,7 +1,7 @@
 ---
 type: artifact
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-04-16
 status: active
 last_edited_by: agent_stanley
 tags: [artifact, iii, cycle-tracker, phase-7]
@@ -28,19 +28,35 @@ Structured log for all 100 improvement cycles across 10 decadals. Each cycle app
 
 ## Baseline (Pre-Phase 7)
 
-Captured at M24 setup. Values below are from Phase 4.5 completion (2026-04-14).
+Measured at M24 completion (2026-04-16). Lighthouse 13.1.0 against `localhost:4323` preview of built site.
+
+### Lighthouse Scores by Page
+
+| Page | Performance | Accessibility | Best Practices | SEO |
+|------|-------------|---------------|----------------|-----|
+| Homepage (`/`) | 97 | 96 | 100 | 100 |
+| Concept (`/learn/concepts/triad`) | 96 | 100 | 100 | 100 |
+| Tutorial (`/learn/tutorials/first-claude-md`) | 97 | 96 | 100 | 100 |
+| Glossary (`/glossary/glossary-adna`) | 99 | 100 | 100 | 100 |
+| Adopter (`/adopters/adopter-solo-developer`) | 98 | 100 | 100 | 100 |
+| **Average** | **97.4** | **98.4** | **100** | **100** |
+
+### Build Stats
 
 | Metric | Value |
 |--------|-------|
-| Lighthouse Performance | 100 |
-| Lighthouse Accessibility | 95 |
-| Lighthouse Best Practices | 100 |
-| Lighthouse SEO | 100 |
 | Site Pages | 97 |
-| Build Time | 2.21s |
+| Build Time | 2.38s |
 | Build Errors | 0 |
-| Playwright Gates | All pass |
+| Playwright Gates | 30/30 pass |
 | Broken Links | Not yet tracked |
+
+### Notes
+
+- Performance < 100 on all pages — primarily due to hero banner image (homepage) and font/CSS loading. Opportunity for D6 (Performance & Loading).
+- Accessibility 96 on homepage and tutorial — likely image alt text or contrast issues. Primary target for D1 (Accessibility Perfection).
+- Best Practices and SEO are perfect across all 5 pages.
+- Evidence files: `site/evidence/lighthouse_baseline_{homepage,concept,tutorial,glossary,adopter}.json`
 
 ## Persona Ranker Baseline
 
