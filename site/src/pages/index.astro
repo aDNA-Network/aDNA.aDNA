@@ -76,6 +76,16 @@ const stats = [
 >
   <!-- Hero -->
   <section class="hero">
+    <div class="hero-banner">
+      <Image
+        src={bannerImage}
+        alt="aDNA — three glowing DNA helices (representing the who/what/how triad) rising from a workspace of monitors and instruments"
+        widths={[640, 1024, 1408]}
+        sizes="(max-width: 768px) 100vw, 72rem"
+        class="hero-banner-img"
+        loading="eager"
+      />
+    </div>
     <div class="hero-inner">
       <h1 class="hero-title">
         Stop rebuilding context for every tool and agent
@@ -87,16 +97,6 @@ const stats = [
         <a href="/get-started" class="btn btn-primary">Get Started</a>
         <a href="/learn/what-is-adna" class="btn btn-secondary">What is aDNA?</a>
       </div>
-    </div>
-    <div class="hero-banner">
-      <Image
-        src={bannerImage}
-        alt="aDNA — three glowing DNA helices (representing the who/what/how triad) rising from a workspace of monitors and instruments"
-        widths={[640, 1024, 1408]}
-        sizes="(max-width: 768px) 100vw, 72rem"
-        class="hero-banner-img"
-        loading="eager"
-      />
     </div>
   </section>
 
@@ -256,7 +256,7 @@ const stats = [
 <style>
   /* ——— Hero ——— */
   .hero {
-    padding: var(--space-24) var(--space-6) var(--space-16);
+    padding: var(--space-12) var(--space-6) var(--space-16);
     text-align: center;
     max-width: var(--content-width);
     margin: 0 auto;
@@ -264,7 +264,7 @@ const stats = [
 
   .hero-inner {
     max-width: 44rem;
-    margin: 0 auto var(--space-12);
+    margin: 0 auto;
   }
 
   .hero-title {
@@ -294,7 +294,7 @@ const stats = [
 
   .hero-banner {
     max-width: 56rem;
-    margin: 0 auto;
+    margin: 0 auto var(--space-10);
     border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
