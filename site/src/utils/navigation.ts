@@ -99,6 +99,75 @@ export const navigation: NavGroup[] = [
     ],
   },
   {
+    label: 'Glossary',
+    items: [
+      {
+        label: 'Core Architecture',
+        items: [
+          { label: 'aDNA', href: '/glossary/glossary-adna', order: 1 },
+          { label: 'Triad', href: '/glossary/glossary-triad', order: 2 },
+          { label: 'what/', href: '/glossary/glossary-what', order: 3 },
+          { label: 'how/', href: '/glossary/glossary-how', order: 4 },
+          { label: 'who/', href: '/glossary/glossary-who', order: 5 },
+          { label: 'Question Test', href: '/glossary/glossary-question-test', order: 6 },
+          { label: 'Bare Triad', href: '/glossary/glossary-bare-triad', order: 7 },
+          { label: 'Embedded Triad', href: '/glossary/glossary-embedded-triad', order: 8 },
+          { label: 'Deployment Form', href: '/glossary/glossary-deployment-form', order: 9 },
+          { label: 'Ontology Extension', href: '/glossary/glossary-ontology-extension', order: 10 },
+        ],
+      },
+      {
+        label: 'Governance & Metadata',
+        items: [
+          { label: 'Governance File', href: '/glossary/glossary-governance-file', order: 11 },
+          { label: 'AGENTS.md', href: '/glossary/glossary-agents-md', order: 12 },
+          { label: 'README.md', href: '/glossary/glossary-readme-md', order: 13 },
+          { label: 'Frontmatter', href: '/glossary/glossary-frontmatter', order: 14 },
+          { label: 'Conformance Level', href: '/glossary/glossary-conformance-level', order: 15 },
+          { label: 'Conformant Instance', href: '/glossary/glossary-conformant-instance', order: 16 },
+        ],
+      },
+      {
+        label: 'Operations',
+        items: [
+          { label: 'Session', href: '/glossary/glossary-session', order: 17 },
+          { label: 'SITREP', href: '/glossary/glossary-sitrep', order: 18 },
+          { label: 'Mission', href: '/glossary/glossary-mission', order: 19 },
+          { label: 'Template', href: '/glossary/glossary-template', order: 20 },
+          { label: 'Skill', href: '/glossary/glossary-skill', order: 21 },
+          { label: 'Content-as-Code', href: '/glossary/glossary-content-as-code', order: 22 },
+        ],
+      },
+      {
+        label: 'Knowledge & Coordination',
+        items: [
+          { label: 'Context Library', href: '/glossary/glossary-context-library', order: 23 },
+          { label: 'Coordination Note', href: '/glossary/glossary-coordination-note', order: 24 },
+          { label: 'Collision Prevention', href: '/glossary/glossary-collision-prevention', order: 25 },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Community',
+    items: [
+      { label: 'Roles & Progression', href: '/community/community-roles', order: 1 },
+      { label: 'Processes', href: '/community/community-processes', order: 2 },
+      { label: 'Context Commons', href: '/community/community-context-commons', order: 3 },
+      { label: 'Contribution Standards', href: '/community/community-contribution-standards', order: 4 },
+      {
+        label: 'Adopter Personas',
+        items: [
+          { label: 'Solo Developer', href: '/adopters/adopter-solo-developer', order: 5 },
+          { label: 'Enterprise Team', href: '/adopters/adopter-enterprise-team', order: 6 },
+          { label: 'Educator', href: '/adopters/adopter-educator', order: 7 },
+          { label: 'Startup', href: '/adopters/adopter-startup', order: 8 },
+          { label: 'Researcher', href: '/adopters/adopter-researcher', order: 9 },
+        ],
+      },
+    ],
+  },
+  {
     label: 'Reference',
     items: [
       { label: 'Specification', href: '/reference/specification', order: 1 },

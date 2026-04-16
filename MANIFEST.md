@@ -138,6 +138,7 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | Phase 2: Human Path | Complete | 9 tutorials, 6 use case narratives |
 | Phase 3: Website v1 | Complete | AstroJS docs site via SiteForge at `site/`, Vercel deploy |
 | Phase 4: The Who | Complete | 25 glossary entries + index, 3 governance docs, 3 community files, 5 adopter personas |
+| Phase 4.5: III Site Improvements | Complete | Hero redesign, 37 new site pages, components, OG images, III review |
 | Phase 5: The How | **Next** | Publishing pipeline, workshop kits, lattice definitions |
 | Phase 6: Website v2 | Planned | Final content sync, quality pass, brand refinement |
 

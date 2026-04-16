@@ -1,0 +1,72 @@
+---
+title: "Contribution Standards — aDNA Community"
+description: "Naming conventions, quality gates, and submission workflows for contributing to the aDNA standard and community."
+doc_title: "Contribution Standards"
+section: "community"
+order: 4
+---
+
+# Contribution Standards
+
+## Overview
+
+This document defines the quality bar and submission process for contributing to the aDNA ecosystem. Whether you're submitting a glossary correction or a new ontology extension, these standards apply.
+
+## Naming Conventions
+
+All content files use the same naming pattern:
+
+```
+type_descriptive_name.md
+```
+
+- **Always underscores, never hyphens** in vault filenames
+- **Type prefix** matches the entity type: `concept_`, `tutorial_`, `pattern_`, `glossary_`, etc.
+- **Lowercase** throughout
+- **Descriptive** — a reader should guess the file's content from its name
+
+## Quality Gates
+
+Every contribution must pass these checks:
+
+1. **Frontmatter complete** — all required fields populated per the relevant template in `how/templates/`
+2. **Dual-audience test** — legible to both developers and non-developers
+3. **Self-reference check** — cites a concrete vault example when explaining aDNA concepts
+4. **Spec citation** — normative claims reference `adna_standard.md` with section numbers
+5. **Cross-linking** — minimum 2 wikilinks to related files
+
+## Submission Workflows
+
+### Vault Contribution (Your Own Project)
+
+Create and customize content in your own vault. No review required — your vault, your rules.
+
+### Upstream Contribution (To the Standard)
+
+1. Agent surfaces a framework-level improvement during normal work
+2. You approve filing it as `how/backlog/idea_upstream_{slug}.md`
+3. Optionally open a GitHub issue on `LatticeProtocol/Agentic-DNA`
+4. Maintainers and [Stewards](/community/community-roles) review
+5. Accepted improvements merge into the next standard version
+
+### Side-Quest Submission
+
+1. Run the quest procedure in your vault
+2. Record results in the specified format
+3. Submit as a PR to the quest's `results/` directory
+4. Results are aggregated across participants
+
+## Participation Level Mapping
+
+| Level | What You Can Submit |
+|-------|-------------------|
+| **Level 0 (User)** | Nothing required — work in your own vault |
+| **Level 1 (Contributor)** | Upstream issues, backlog items |
+| **Level 2 (Quest Runner)** | Quest results, improvement proposals |
+| **Level 3 (Steward)** | Quest designs, migration prompts, standard updates |
+
+## Related
+
+- [Community Roles](/community/community-roles) — the participation ladder
+- [Community Processes](/community/community-processes) — detailed workflow steps
+- [Conformance Level](/glossary/glossary-conformance-level) — Starter/Standard/Full compliance tiers

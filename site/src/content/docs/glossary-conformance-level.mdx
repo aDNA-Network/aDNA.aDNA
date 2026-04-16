@@ -1,0 +1,28 @@
+---
+title: "Conformance Level — aDNA Glossary"
+description: "Conformance levels are three tiers — Starter, Standard, and Full — that define how much of the aDNA standard a project implements."
+doc_title: "Conformance Level"
+section: "glossary"
+order: 15
+---
+
+# Conformance Level
+
+## Plain-Language Definition
+
+Conformance levels are three tiers — Starter, Standard, and Full — that define how much of the aDNA standard a project implements. Think of them like belt colors: Starter is the minimum viable setup, Standard adds multi-agent coordination, and Full adds federation-ready metadata and a complete template library.
+
+## Technical Definition
+
+A graduated tier (Starter, Standard, Full) defining the minimum requirements an aDNA instance MUST meet to claim conformance at that level. Starter requires governance files + triad directories + required subdirectories + base frontmatter. Standard adds STATE.md, per-directory AGENTS.md, session lifecycle compliance. Full adds context library with token estimates, FAIR metadata, ontology artifact, and template compliance. Projects declare their level via `adna_conformance` in MANIFEST.md frontmatter. (aDNA Standard §5.5)
+
+## Usage Examples
+
+- This vault (`aDNA.aDNA/`) meets Full conformance: it has all governance files, per-directory AGENTS.md files, a context library with token estimates, FAIR metadata on lattice objects, an ontology artifact, and templates for all content types.
+- A brand-new project forked from the base template starts at Starter conformance and graduates upward as it adds infrastructure.
+
+## See Also
+
+- [Conformant Instance](/glossary/glossary-conformant-instance)
+- [Governance File](/glossary/glossary-governance-file)
+- [Open Standard (concept)](/learn/concepts/open-standard)

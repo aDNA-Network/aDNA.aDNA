@@ -11,15 +11,28 @@ interface Props {
 const {
   title,
   description,
-  ogImage = '/images/og-default.png',
+  ogImage,
   canonicalURL = Astro.url.href,
   jsonLD,
   noindex = false,
 } = Astro.props;
 
+// Select OG image based on page path if not explicitly provided
+function selectOgImage(path: string): string {
+  if (path.startsWith('/learn/') || path === '/learn') return '/images/og-learn.png';
+  if (path.startsWith('/patterns/') || path === '/patterns') return '/images/og-patterns.png';
+  if (path.startsWith('/reference/') || path === '/reference') return '/images/og-reference.png';
+  if (path.startsWith('/glossary/') || path === '/glossary') return '/images/og-reference.png';
+  if (path.startsWith('/community/') || path === '/community') return '/images/og-community.png';
+  if (path.startsWith('/adopters/') || path === '/adopters') return '/images/og-community.png';
+  return '/images/og-default.png';
+}
+
+const resolvedOgImage = ogImage ?? selectOgImage(Astro.url.pathname);
+
 const fullTitle = title.includes('aDNA') ? title : `${title} — aDNA`;
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
-const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+const ogImageUrl = resolvedOgImage.startsWith('http') ? resolvedOgImage : `${siteUrl}${resolvedOgImage}`;
 ---
 
 <title>{fullTitle}</title>

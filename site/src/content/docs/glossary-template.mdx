@@ -1,0 +1,28 @@
+---
+title: "Template — aDNA Glossary"
+description: "A template is a reusable blueprint for creating new files of a specific type."
+doc_title: "Template"
+section: "glossary"
+order: 20
+---
+
+# Template
+
+## Plain-Language Definition
+
+A template is a reusable blueprint for creating new files of a specific type. Instead of starting from scratch, agents copy the template and fill in the blanks. Templates ensure every file of the same type has consistent structure and metadata — like a form with pre-printed field labels.
+
+## Technical Definition
+
+Reusable file structures stored in `how/templates/`, following the naming pattern `template_{type}.md`. Templates MUST include [frontmatter](/glossary/glossary-frontmatter) with all base fields plus type-specific fields pre-populated. Three graduated sets: Starter (session, mission, context — MUST exist), Standard (adds coordination, backlog, ADR — SHOULD exist), Full (adds domain-specific types — MAY exist). A template index is RECOMMENDED for projects with 5+ templates. (aDNA Standard §12.1-§12.2)
+
+## Usage Examples
+
+- This vault has 32 templates (22 base + 10 extensions). The glossary entries you are reading were created from `how/templates/template_glossary_entry.md`, which pre-defines the frontmatter fields (`term`, `spec_section`, `see_also`) and section structure (Plain-Language Definition, Technical Definition, Usage Examples, See Also).
+- Every content type used in the vault has a matching template — this is a Full [conformance](/glossary/glossary-conformance-level) requirement.
+
+## See Also
+
+- [Frontmatter](/glossary/glossary-frontmatter)
+- [how/](/glossary/glossary-how)
+- [Conformance Level](/glossary/glossary-conformance-level)

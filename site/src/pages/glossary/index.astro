@@ -1,0 +1,90 @@
+---
+import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import { getDocsBySection } from '../../utils/collections';
+
+const glossaryEntries = await getDocsBySection('glossary');
+
+// Group entries by category based on order ranges
+const categories = [
+  { label: 'Core Architecture', entries: glossaryEntries.filter(e => e.data.order >= 1 && e.data.order <= 10) },
+  { label: 'Governance & Metadata', entries: glossaryEntries.filter(e => e.data.order >= 11 && e.data.order <= 16) },
+  { label: 'Operations', entries: glossaryEntries.filter(e => e.data.order >= 17 && e.data.order <= 22) },
+  { label: 'Knowledge & Coordination', entries: glossaryEntries.filter(e => e.data.order >= 23 && e.data.order <= 25) },
+];
+---
+
+<DocumentationLayout
+  title="aDNA Glossary"
+  description="Quick-reference definitions for all aDNA terms. Each entry includes plain-language and technical explanations."
+>
+  <p>A single-page lookup table for all aDNA terms. Click any term for its full definition with plain-language and technical explanations.</p>
+
+  {categories.map((cat) => (
+    <section class="glossary-category">
+      <h2>{cat.label}</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Term</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cat.entries.map((entry) => (
+            <tr>
+              <td><a href={`/glossary/${entry.id}`}>{entry.data.doc_title}</a></td>
+              <td>{entry.data.description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  ))}
+</DocumentationLayout>
+
+<style>
+  .glossary-category {
+    margin-bottom: var(--space-8);
+  }
+
+  .glossary-category h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+    color: var(--color-text-heading);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--space-6);
+  }
+
+  th, td {
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  th {
+    font-weight: 600;
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  td a {
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  td a:hover {
+    text-decoration: underline;
+  }
+
+  td:last-child {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+title: "Enterprise Team — aDNA Adopter Personas"
+description: "A platform engineering team at a financial services company deploying aDNA across three concurrent AI-agent-assisted projects with compliance requirements."
+doc_title: "Enterprise Team"
+section: "adopters"
+order: 2
+---
+
+# Enterprise Team
+
+## Background
+
+A platform engineering manager leading a 50-person organization at a financial services company. Three teams run concurrent AI-agent-assisted projects. Compliance requires audit trails for all agent-generated work. Knowledge silos between teams waste effort through repeated problem-solving.
+
+## Goals
+
+- Establish a governance framework for AI agent work that satisfies compliance
+- Create auditable trails: which agent wrote what, with what context, and was it reviewed
+- Enable cross-team knowledge sharing without sacrificing team autonomy
+- Standardize documentation approach across teams (replacing a mix of wikis, Confluence, and markdown)
+
+## Pain Points
+
+- Cannot answer compliance questions: "Which agent wrote this code?" "What context was it given?"
+- Each team uses a different documentation system — no shared conventions
+- Knowledge duplication: same infrastructure problems solved three times independently
+- No mechanism for cross-team sharing of validated solutions
+
+## How They Use aDNA
+
+Deploys aDNA as the standard knowledge architecture across all three teams, each with its own vault:
+
+- **`how/sessions/`** creates compliance-ready audit trails: session ID, intent, files touched, [SITREP](/glossary/glossary-sitrep)
+- **`who/governance/`** provides consistent agent policies and review requirements across teams
+- **Federation** connects team vaults — shareable pipelines and validated patterns flow between teams via lattice composition
+- **[Embedded triad](/glossary/glossary-embedded-triad)** deployment (`.agentic/`) keeps aDNA structure separate from codebases
+
+The enterprise team operates at the intersection of [Level 0](/community/community-roles) (vault usage) and [Level 1](/community/community-roles) (upstream improvements surfaced across three teams).
+
+**Self-reference**: The session tracking system this vault uses (`how/sessions/active/` → `how/sessions/history/YYYY-MM/`) is the same audit trail the enterprise team needs for compliance — just at a smaller scale.
+
+## Typical Ontology Extensions
+
+| Entity | Triad | Purpose |
+|--------|-------|---------|
+| `compliance_check` | how/ | Audit checkpoints and review sign-offs |
+| `team_policy` | who/ | Team-specific agent behavior policies |
+| `shared_pipeline` | what/ | Cross-team reusable infrastructure patterns |
+
+## Related
+
+- [Enterprise Team Use Case](/use-cases/enterprise-team) — full narrative
+- [Tutorial: Extend the Ontology](/learn/tutorials/extend-the-ontology) — adding domain entities
+- [Federation Readiness Pattern](/patterns/federation-readiness) — multi-vault governance

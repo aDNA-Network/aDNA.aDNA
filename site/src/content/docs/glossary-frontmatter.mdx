@@ -1,0 +1,28 @@
+---
+title: "Frontmatter — aDNA Glossary"
+description: "Frontmatter is the structured metadata block at the top of every aDNA file, wrapped in `---` fences."
+doc_title: "Frontmatter"
+section: "glossary"
+order: 14
+---
+
+# Frontmatter
+
+## Plain-Language Definition
+
+Frontmatter is the structured metadata block at the top of every aDNA file, wrapped in `---` fences. It records what type of content the file is, when it was created and updated, who last edited it, and what tags apply. It is the file's ID card — agents read it to understand what they are looking at before reading the content.
+
+## Technical Definition
+
+YAML metadata required at the top of every content file inside the triad. Base fields (MUST on all files): `type`, `status`, `created`, `updated`, `last_edited_by`, `tags`. Extended fields (type-specific): vary by content type and are defined in [templates](/glossary/glossary-template). The `last_edited_by` and `updated` fields MUST be updated on every modification as part of [collision prevention](/glossary/glossary-collision-prevention) (Tier 1). (aDNA Standard §7.1-§7.2)
+
+## Usage Examples
+
+- This glossary entry's own frontmatter (visible at the top of this file) demonstrates the pattern: `type: glossary_entry`, `term: "Frontmatter"`, `spec_section: "§7.1-§7.2"`, `see_also: [...]`.
+- The `status` field enables content lifecycle management: `draft` → `active` → `archived`.
+
+## See Also
+
+- [Collision Prevention](/glossary/glossary-collision-prevention)
+- [Template](/glossary/glossary-template)
+- [Governance Files (concept)](/learn/concepts/governance-files)

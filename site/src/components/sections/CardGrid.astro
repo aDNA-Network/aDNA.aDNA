@@ -4,6 +4,7 @@ interface Card {
   description?: string;
   href: string;
   badge?: string;
+  icon?: string;
 }
 
 interface Props {
@@ -16,7 +17,8 @@ const { cards, columns = 3 } = Astro.props;
 
 <div class:list={['card-grid', `cols-${columns}`]}>
   {cards.map((card) => (
-    <a href={card.href} class="card">
+    <a href={card.href} class:list={['card', { 'card-with-icon': !!card.icon }]}>
+      {card.icon && <span class="card-icon" aria-hidden="true">{card.icon}</span>}
       <div class="card-header">
         <h3 class="card-title">{card.title}</h3>
         {card.badge && <span class:list={['card-badge', `badge-${card.badge}`]}>{card.badge}</span>}
@@ -96,6 +98,11 @@ const { cards, columns = 3 } = Astro.props;
   .badge-experimental {
     background: color-mix(in srgb, var(--color-accent) 15%, transparent);
     color: var(--color-accent);
+  }
+
+  .card-icon {
+    font-size: 1.75rem;
+    line-height: 1;
   }
 
   .card-description {

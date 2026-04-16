@@ -1,0 +1,54 @@
+---
+title: "Solo Developer — aDNA Adopter Personas"
+description: "A freelance developer juggling 3-4 client projects simultaneously, using aDNA as a personal knowledge backbone for AI agent sessions."
+doc_title: "Solo Developer"
+section: "adopters"
+order: 1
+---
+
+# Solo Developer
+
+## Background
+
+A freelance developer juggling 3-4 client projects simultaneously, relying heavily on AI agents for code generation, documentation, and architecture planning. Works alone, ships fast, but struggles with context loss between sessions and across projects.
+
+## Goals
+
+- Eliminate repeated context-setting at the start of every AI session
+- Maintain consistency across sessions (error handling, patterns, naming conventions)
+- Track project state and architectural decisions without heavyweight tooling
+- Get productive with a new agent session in under a minute
+
+## Pain Points
+
+- Must re-explain project context (tech stack, auth flow, client requirements) at every session start
+- Agent approaches differ day to day — no persistent conventions
+- No continuous state tracking between work sessions
+- Architectural decisions made and forgotten — no durable record
+
+## How They Use aDNA
+
+Lightweight setup: 10-15 files, 30 minutes to configure. The core value is instant agent orientation:
+
+- **CLAUDE.md** captures project identity, tech stack, and conventions — solves 80% of the context problem
+- **STATE.md** tracks momentum: what was done last session, what's next, active blockers
+- **`what/decisions/`** captures architectural choices with rationale (why Postgres, why this auth pattern)
+- **`how/sessions/`** creates a lightweight audit trail of agent work
+
+No federation, no multi-agent coordination, no community engagement. Pure [Level 0](/community/community-roles) usage — aDNA as a personal productivity tool.
+
+**Self-reference**: This vault's own `STATE.md` demonstrates the pattern — a solo operator (Stanley) tracking campaign progress across sessions. The "Next Session Prompt" at the bottom is exactly the cold-start accelerator the solo developer needs.
+
+## Typical Ontology Extensions
+
+| Entity | Triad | Purpose |
+|--------|-------|---------|
+| (none) | — | Uses base triad only — CLAUDE.md, STATE.md, decisions, sessions |
+
+The solo developer typically does not extend the ontology. The base [triad](/glossary/glossary-triad) with [governance files](/glossary/glossary-governance-file) is sufficient for individual project management.
+
+## Related
+
+- [Solo Developer Use Case](/use-cases/solo-developer) — full narrative
+- [Tutorial: Your First CLAUDE.md](/learn/tutorials/first-claude-md) — recommended starting point
+- [Community Roles](/community/community-roles) — Level 0 participation

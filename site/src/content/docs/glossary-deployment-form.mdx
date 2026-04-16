@@ -1,0 +1,28 @@
+---
+title: "Deployment Form — aDNA Glossary"
+description: "The deployment form is *how* you physically set up the aDNA folders in your project."
+doc_title: "Deployment Form"
+section: "glossary"
+order: 9
+---
+
+# Deployment Form
+
+## Plain-Language Definition
+
+The deployment form is *how* you physically set up the aDNA folders in your project. There are two choices: bare (folders at root) or embedded (folders inside `.agentic/`). Pick one and stick with it — every project uses exactly one.
+
+## Technical Definition
+
+The physical instantiation strategy for the [triad](/glossary/glossary-triad). Two forms are defined: [bare](/glossary/glossary-bare-triad) (triad at project root) and [embedded](/glossary/glossary-embedded-triad) (triad inside `.agentic/`). Both forms are first-class; the triad ontology is identical in both — only the nesting differs. A project MUST use exactly one deployment form. CLAUDE.md bridges any path differences. (aDNA Standard §3.4)
+
+## Usage Examples
+
+- This vault uses bare deployment (`what/`, `how/`, `who/` at root) because it is a knowledge-first project.
+- A team adding aDNA to an existing Python library would choose embedded deployment to avoid mixing knowledge directories with source code.
+
+## See Also
+
+- [Bare Triad](/glossary/glossary-bare-triad) | [Embedded Triad](/glossary/glossary-embedded-triad)
+- [Triad (concept)](/learn/concepts/triad)
+- [aDNA](/glossary/glossary-adna)

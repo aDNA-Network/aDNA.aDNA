@@ -1,0 +1,20 @@
+---
+import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../components/sections/CardGrid.astro';
+import { getDocsBySection } from '../../utils/collections';
+
+const adopters = await getDocsBySection('adopters');
+const cards = adopters.map((doc) => ({
+  title: doc.data.doc_title,
+  description: doc.data.description,
+  href: `/adopters/${doc.id}`,
+}));
+---
+
+<DocumentationLayout
+  title="Adopter Personas"
+  description="Quick-reference profiles for aDNA's target audiences — solo developers, enterprise teams, educators, startups, and researchers."
+>
+  <p>Each persona extracts structured data from a real-world use case narrative. The use case tells the story; the persona card provides the reference.</p>
+  <CardGrid cards={cards} columns={2} />
+</DocumentationLayout>

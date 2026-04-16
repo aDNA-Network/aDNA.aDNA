@@ -1,0 +1,20 @@
+---
+import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../components/sections/CardGrid.astro';
+import { getDocsBySection } from '../../utils/collections';
+
+const communityDocs = await getDocsBySection('community');
+const cards = communityDocs.map((doc) => ({
+  title: doc.data.doc_title,
+  description: doc.data.description,
+  href: `/community/${doc.id}`,
+}));
+---
+
+<DocumentationLayout
+  title="Community"
+  description="Roles, processes, and contribution paths for the aDNA community."
+>
+  <p>The aDNA community is organized around a participation ladder — from individual vault users to standard stewards. Explore the roles, processes, and shared knowledge commons.</p>
+  <CardGrid cards={cards} columns={2} />
+</DocumentationLayout>

@@ -1,9 +1,72 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { buildWebSiteJsonLD } from '../utils/seo';
+import bannerImage from '../assets/banner.jpg';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
 const jsonLD = buildWebSiteJsonLD(siteUrl);
+
+const steps = [
+  {
+    number: '01',
+    title: 'Structure',
+    description: 'Organize your project into what you know, how you work, and who is involved. Three directories — one architecture.',
+    icon: '🗂',
+  },
+  {
+    number: '02',
+    title: 'Orient',
+    description: 'Agents read CLAUDE.md and AGENTS.md to understand your project. Typed context files give them the depth they need.',
+    icon: '🧭',
+  },
+  {
+    number: '03',
+    title: 'Execute',
+    description: 'Sessions, missions, and campaigns decompose work into context-sized chunks. Progress compounds across sessions.',
+    icon: '🚀',
+  },
+];
+
+const personas = [
+  {
+    title: 'Solo Developer',
+    summary: 'Freelancers and indie hackers using aDNA as a personal knowledge backbone.',
+    href: '/use-cases/solo-developer',
+    icon: '👩‍💻',
+  },
+  {
+    title: 'Enterprise Team',
+    summary: 'Cross-functional teams embedding aDNA into existing codebases and workflows.',
+    href: '/use-cases/enterprise-team',
+    icon: '🏢',
+  },
+  {
+    title: 'Educator',
+    summary: 'Teachers and professors structuring course materials for student-agent collaboration.',
+    href: '/use-cases/educator',
+    icon: '🎓',
+  },
+  {
+    title: 'Startup',
+    summary: 'Fast-moving teams using aDNA to preserve institutional knowledge as they scale.',
+    href: '/use-cases/startup',
+    icon: '⚡',
+  },
+  {
+    title: 'Researcher',
+    summary: 'Labs and research groups tracking protocols, datasets, and experiments.',
+    href: '/use-cases/research-lab',
+    icon: '🔬',
+  },
+];
+
+const stats = [
+  { value: '14', label: 'Entity Types' },
+  { value: '3', label: 'Conformance Levels' },
+  { value: 'v2.2', label: 'Current Version' },
+  { value: 'MIT', label: 'Licensed' },
+];
 ---
 
 <BaseLayout
@@ -11,7 +74,19 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
   description="Give your project a knowledge architecture that both humans and AI agents can navigate."
   jsonLD={jsonLD}
 >
+  <!-- Hero with banner background -->
   <section class="hero">
+    <div class="hero-bg">
+      <Image
+        src={bannerImage}
+        alt=""
+        widths={[640, 1024, 1408]}
+        sizes="100vw"
+        class="hero-bg-img"
+        loading="eager"
+      />
+      <div class="hero-overlay"></div>
+    </div>
     <div class="hero-inner">
       <h1 class="hero-title">
         Give your project a <span class="hero-highlight">knowledge architecture</span>
@@ -21,11 +96,12 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
       </p>
       <div class="hero-actions">
         <a href="/get-started" class="btn btn-primary">Get Started</a>
-        <a href="/learn/what-is-adna" class="btn btn-secondary">What is aDNA?</a>
+        <a href="/learn/what-is-adna" class="btn btn-hero-secondary">What is aDNA?</a>
       </div>
     </div>
   </section>
 
+  <!-- Core features -->
   <section class="features">
     <div class="features-inner">
       <div class="feature">
@@ -42,16 +118,118 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
       </div>
     </div>
   </section>
+
+  <!-- How it Works -->
+  <section class="how-it-works">
+    <div class="section-inner">
+      <h2 class="section-title">How it Works</h2>
+      <p class="section-subtitle">Three steps to a project that agents can understand.</p>
+      <div class="steps-grid">
+        {steps.map((step) => (
+          <div class="step">
+            <div class="step-number">{step.number}</div>
+            <div class="step-icon">{step.icon}</div>
+            <h3 class="step-title">{step.title}</h3>
+            <p class="step-description">{step.description}</p>
+            <div class="media-placeholder" data-media="gif" data-content={`step-${step.number}`}>
+              <div class="media-placeholder-inner">
+                <span class="media-placeholder-icon">▶</span>
+                <span class="media-placeholder-label">Demo coming soon</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Uses aDNA -->
+  <section class="who-uses">
+    <div class="section-inner">
+      <h2 class="section-title">Who Uses aDNA</h2>
+      <p class="section-subtitle">From solo developers to enterprise teams — aDNA scales with your project.</p>
+      <div class="persona-grid">
+        {personas.map((persona) => (
+          <a href={persona.href} class="persona-card">
+            <span class="persona-icon">{persona.icon}</span>
+            <h3 class="persona-title">{persona.title}</h3>
+            <p class="persona-summary">{persona.summary}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- The Standard -->
+  <section class="the-standard">
+    <div class="section-inner">
+      <h2 class="section-title">The Standard</h2>
+      <p class="section-subtitle">aDNA is an open specification — MIT licensed, community-driven, designed for extension.</p>
+      <div class="stats-row">
+        {stats.map((stat) => (
+          <div class="stat">
+            <span class="stat-value">{stat.value}</span>
+            <span class="stat-label">{stat.label}</span>
+          </div>
+        ))}
+      </div>
+      <div class="standard-cta">
+        <a href="/reference/specification" class="btn btn-primary">Read the Specification</a>
+        <a href="https://github.com/LatticeProtocol/Agentic-DNA" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
+  /* ——— Hero ——— */
   .hero {
-    background: linear-gradient(to bottom, color-mix(in srgb, var(--color-primary) 4%, var(--color-bg)), var(--color-bg));
-    padding: var(--space-24) var(--space-6) var(--space-16);
+    position: relative;
+    padding: var(--space-32) var(--space-6) var(--space-24);
     text-align: center;
+    overflow: hidden;
+    min-height: 28rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      hsl(185 80% 4% / 0.55) 0%,
+      hsl(185 80% 4% / 0.7) 50%,
+      hsl(185 80% 4% / 0.85) 100%
+    );
+  }
+
+  :global(.dark) .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      hsl(0 0% 4% / 0.65) 0%,
+      hsl(0 0% 4% / 0.8) 50%,
+      hsl(0 0% 4% / 0.92) 100%
+    );
   }
 
   .hero-inner {
+    position: relative;
+    z-index: 1;
     max-width: 48rem;
     margin: 0 auto;
   }
@@ -59,18 +237,22 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
   .hero-title {
     font-size: var(--text-4xl);
     font-weight: 700;
-    color: var(--color-text-heading);
+    color: hsl(0 0% 100%);
     margin-bottom: var(--space-6);
     line-height: 1.1;
   }
 
   .hero-highlight {
-    color: var(--color-primary);
+    color: hsl(180 70% 65%);
+  }
+
+  :global(.dark) .hero-highlight {
+    color: hsl(180 70% 70%);
   }
 
   .hero-subtitle {
     font-size: var(--text-lg);
-    color: var(--color-text-muted);
+    color: hsl(0 0% 85%);
     margin-bottom: var(--space-8);
     max-width: 38rem;
     margin-left: auto;
@@ -107,6 +289,19 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
     color: white;
   }
 
+  .btn-hero-secondary {
+    border: 1px solid hsl(0 0% 100% / 0.4);
+    color: hsl(0 0% 100%);
+    background: hsl(0 0% 100% / 0.08);
+    backdrop-filter: blur(4px);
+  }
+
+  .btn-hero-secondary:hover {
+    border-color: hsl(0 0% 100% / 0.7);
+    color: hsl(0 0% 100%);
+    background: hsl(0 0% 100% / 0.15);
+  }
+
   .btn-secondary {
     border: 1px solid var(--color-border);
     color: var(--color-text);
@@ -118,6 +313,7 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
     color: var(--color-primary);
   }
 
+  /* ——— Features ——— */
   .features {
     padding: var(--space-16) var(--space-6);
     max-width: var(--content-width);
@@ -138,5 +334,226 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
   .feature p {
     color: var(--color-text-muted);
     line-height: 1.6;
+  }
+
+  /* ——— Shared section styles ——— */
+  .section-inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+  }
+
+  .section-title {
+    font-size: var(--text-3xl);
+    text-align: center;
+    margin-bottom: var(--space-3);
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    max-width: 36rem;
+    margin: 0 auto var(--space-12);
+    line-height: 1.6;
+  }
+
+  /* ——— How it Works ——— */
+  .how-it-works {
+    padding: var(--space-24) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-8);
+  }
+
+  .step {
+    text-align: center;
+    padding: var(--space-8) var(--space-6);
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+  }
+
+  .step-number {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+
+  .step-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-4);
+    line-height: 1;
+  }
+
+  .step-title {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .step-description {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+  }
+
+  /* ——— Media Placeholder ——— */
+  .media-placeholder {
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-primary) 3%, transparent),
+      color-mix(in srgb, var(--color-accent) 3%, transparent)
+    );
+  }
+
+  .media-placeholder-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-text-muted);
+  }
+
+  .media-placeholder-icon {
+    font-size: var(--text-2xl);
+    opacity: 0.4;
+  }
+
+  .media-placeholder-label {
+    font-size: var(--text-sm);
+    font-style: italic;
+  }
+
+  /* ——— Who Uses aDNA ——— */
+  .who-uses {
+    padding: var(--space-24) 0;
+  }
+
+  .persona-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .persona-card {
+    display: block;
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .persona-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .persona-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: var(--space-3);
+    line-height: 1;
+  }
+
+  .persona-title {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+    color: var(--color-text-heading);
+  }
+
+  .persona-summary {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  /* ——— The Standard ——— */
+  .the-standard {
+    padding: var(--space-24) 0 var(--space-32);
+    background: var(--color-bg-alt);
+  }
+
+  .stats-row {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-12);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-8);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .stat-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .standard-cta {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ——— Responsive ——— */
+  @media (max-width: 768px) {
+    .hero {
+      padding: var(--space-24) var(--space-4) var(--space-16);
+      min-height: 24rem;
+    }
+
+    .stats-row {
+      gap: var(--space-8);
+    }
+
+    .stat-value {
+      font-size: var(--text-2xl);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: var(--space-16) var(--space-4) var(--space-12);
+      min-height: auto;
+    }
+
+    .hero-title {
+      font-size: var(--text-3xl);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+    }
   }
 </style>

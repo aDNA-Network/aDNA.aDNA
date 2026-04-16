@@ -1,0 +1,28 @@
+---
+title: "Embedded Triad — aDNA Glossary"
+description: "An embedded triad wraps the three aDNA folders inside a hidden `.agentic/` directory, keeping them separate from a codebase's source files."
+doc_title: "Embedded Triad"
+section: "glossary"
+order: 8
+---
+
+# Embedded Triad
+
+## Plain-Language Definition
+
+An embedded triad wraps the three aDNA folders inside a hidden `.agentic/` directory, keeping them separate from a codebase's source files. Use this when adding aDNA to an existing code repository — the knowledge architecture sits alongside the code without cluttering the project root.
+
+## Technical Definition
+
+A [deployment form](/glossary/glossary-deployment-form) where the triad is nested inside `.agentic/` at the repository root (`.agentic/what/`, `.agentic/how/`, `.agentic/who/`). Governance files remain at the repository root, not inside `.agentic/`. Follows the convention of dot-prefixed directories for meta/config in git repos (like `.github/`, `.vscode/`). Contrast with [bare triad](/glossary/glossary-bare-triad). (aDNA Standard §3.3)
+
+## Usage Examples
+
+- The `lattice-protocol/` codebase uses an embedded triad: its source code lives at root, while aDNA knowledge lives in `.agentic/what/`, `.agentic/how/`, `.agentic/who/`.
+- An aDNA instance MUST use exactly one deployment form — mixing bare and embedded within the same project is prohibited (§3.4).
+
+## See Also
+
+- [Bare Triad](/glossary/glossary-bare-triad)
+- [Deployment Form](/glossary/glossary-deployment-form)
+- [Triad (concept)](/learn/concepts/triad)

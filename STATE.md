@@ -13,7 +13,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 4 — The Who COMPLETE.** Phases 0-4 complete (78 content files + 60-page live site). Next: Phase 5 (The How).
+**Phase 4.5 — III Site Improvements COMPLETE.** Phases 0-4.5 complete (78 content files + 97-page live site). Next: Phase 5 (The How).
 
 ## Active Campaign
 
@@ -26,26 +26,26 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 | Phase 2: Human Path | **Complete** | M06-M08 | 15/15 (9 tutorials, 6 use cases) |
 | Phase 3: Website v1 | **Complete** | M09-M12 | 60-page site live on Vercel |
 | Phase 4: The Who | **Complete** | M13-M15 | 37/37 (25 glossary + 1 index, 3 governance, 3 community, 5 adopters) |
+| Phase 4.5: III Site Improvements | **Complete** | M20-M23 | Hero redesign, 37 new pages, components, OG images |
 | Phase 5: The How | **Next** | M16-M18 | Publishing, workshops, lattices |
 | Phase 6: Website v2 | Planned | M19 | Final content sync + quality pass |
 
-## Phase 4 Deliverables
+## Phase 4.5 Deliverables
 
-- **25 glossary entries** covering all core aDNA terminology from adna_standard.md §2 + key operational terms
-- **1 glossary index** (glossary_index.md) — quick-reference lookup table
-- **3 governance docs** — code of conduct, contribution standards, conflict resolution
-- **3 community files** — roles/progression ladder, contribution processes, Context Commons connection
-- **5 adopter personas** — solo developer, enterprise team, educator, startup, researcher
-- **3 mission files** — M13, M14, M15 (executed in order M15 → M13 → M14)
-- All files pass quality gates: frontmatter complete, 2+ wikilinks, self-reference, spec citations
+- **M20: Hero & Homepage Redesign** — Banner hero image (auto-optimized WebP), 3 new homepage sections (How it Works, Who Uses aDNA, The Standard), media placeholders for future GIFs
+- **M21: New Content Sections** — 37 new pages: 25 glossary entries + index, 4 community pages + index, 5 adopter personas + index. Glossary/Community/Adopters nav groups added to sidebar and header
+- **M22: Component Polish** — MediaPlaceholder, MermaidDiagram island, enhanced Callout (self-reference variant), enhanced CardGrid (icon support)
+- **M23: OG Images & III Review** — 5 branded OG images (default, learn, patterns, reference, community), section-aware OG selection in SEOHead, III semantic review
+- **Site grew from 60 → 97 pages** with zero build errors
 
 ## What's Working
 
-- Full documentation site live at https://adna-docs.vercel.app with all Phase 1-2 content
+- Full documentation site live at https://adna-docs.vercel.app with all Phase 1-4 content
 - WHO triad leg fully populated (governance, community, adopters)
-- Glossary provides canonical term definitions linking to concept deep dives
-- 78 content files total across all phases
-- Cross-linking density high — community/adopter/glossary files heavily interlinked
+- Glossary provides canonical term definitions with dedicated site section
+- 78 vault content files + 97 site pages total
+- OG images render correctly per section for social sharing
+- Banner hero with responsive WebP optimization
 
 ## Active Blockers
 
@@ -53,13 +53,13 @@ None. Phase 5 ready to execute.
 
 ## Last Session (2026-04-14)
 
-Executed Phase 4 (The Who) in a single session. Reversed execution order to M15 → M13 → M14 for optimal cross-linking. Created 40 new files: 26 glossary (25 entries + index), 3 governance docs, 3 community files, 5 adopter personas, 3 mission files. All quality gates pass.
+Executed Phase 4.5 (III Site Improvements) in a single session. Created 4 missions (M20-M23): hero homepage redesign with banner image, 37 new content pages (glossary/community/adopters), 4 new/enhanced components (MediaPlaceholder, MermaidDiagram, Callout self-reference, CardGrid icons), 5 OG images with section-aware selection. Site grew from 60 → 97 pages.
 
 ## Next Steps
 
 1. **Phase 5: The How** — M16 (Publishing Pipeline), M17 (Workshop Kits), M18 (Lattice Definitions + Closeout)
-2. After Phase 5: M19 (Website v2) — sync Phase 4-5 content to site, add glossary section, quality re-run
+2. After Phase 5: M19 (Website v2) — sync Phase 5 content to site, quality re-run, brand refinement
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 4 (The Who) is complete — 37 files across glossary, governance, community, and adopters. Begin Phase 5 (The How). Start with M16 (Publishing Pipeline) — define the vault-to-web publishing workflow in `how/publishing/`. See `how/campaigns/campaign_rosetta/campaign_rosetta.md` for the full mission board. Phase gate: confirm with user before starting Phase 5 content creation.
+> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 4.5 (III Site Improvements) is complete — 97-page site with hero, glossary/community/adopter sections, components, and OG images. Begin Phase 5 (The How). Start with M16 (Publishing Pipeline) — define the vault-to-web publishing workflow in `how/publishing/`. See `how/campaigns/campaign_rosetta/campaign_rosetta.md` for the full mission board. Phase gate: confirm with user before starting Phase 5 content creation.

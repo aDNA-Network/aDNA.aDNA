@@ -1,0 +1,28 @@
+---
+title: "Conformant Instance — aDNA Glossary"
+description: "A conformant instance is any project directory that meets the requirements for at least the Starter level of the aDNA standard."
+doc_title: "Conformant Instance"
+section: "glossary"
+order: 16
+---
+
+# Conformant Instance
+
+## Plain-Language Definition
+
+A conformant instance is any project directory that meets the requirements for at least the Starter level of the aDNA standard. It has the right folders, the right governance files, and properly formatted metadata. It is a working aDNA project, not just files in a directory.
+
+## Technical Definition
+
+A directory tree that satisfies all MUST requirements for at least the Starter [conformance level](/glossary/glossary-conformance-level) defined in §5.5. At minimum: CLAUDE.md, MANIFEST.md, and README.md at root; `what/`, `how/`, `who/` triad directories; required subdirectories (`what/context/`, `how/missions/`, `how/sessions/`, `how/templates/`, `who/coordination/`, `who/governance/`); and base frontmatter fields on all content files. (aDNA Standard §5.5)
+
+## Usage Examples
+
+- This vault is a conformant instance at Full level. You can verify conformance programmatically using `what/lattices/tools/compliance_checker.py`.
+- An instance that does not declare a conformance level in MANIFEST.md is assumed to be unverified — it may conform, but hasn't been checked.
+
+## See Also
+
+- [Conformance Level](/glossary/glossary-conformance-level)
+- [aDNA](/glossary/glossary-adna)
+- [Triad](/glossary/glossary-triad)

@@ -4,9 +4,9 @@ type: campaign
 title: "Operation Rosetta — Self-Referential aDNA Context Graph"
 owner: stanley
 status: active
-current_phase: 4
-phase_count: 6
-mission_count: 19
+current_phase: 5
+phase_count: 7
+mission_count: 23
 estimated_sessions: "30-40"
 estimation_class: content-novel
 priority: high
@@ -36,6 +36,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | **2: Human Path** | **Complete** | M06-M08 | 15/15 files | Tutorials, use cases |
 | **3: Website v1** | **Complete** | M09-M12 | site live | AstroJS docs site via SiteForge (full content inventory) |
 | **4: The Who** | **Complete** | M13-M15 | 37 files | Community, adopters, glossary |
+| **4.5: III Site Improvements** | **Complete** | M20-M23 | site upgrade | Hero, new sections, components, OG images, III review |
 | **5: The How** | **Next** | M16-M18 | ~12 files | Publishing, workshops, lattices |
 | **6: Website v2** | Planned | M19 | site polish | Final content sync, quality pass, brand refinement |
 
@@ -77,6 +78,15 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | M13 | Community Architecture | **completed** | 3 community files | Phase 1 |
 | M14 | Adopter Personas | **completed** | 5 persona cards | M08 |
 | M15 | Glossary + Governance | **completed** | 25 glossary entries + 1 index + 3 governance docs | Phase 1 |
+
+### Phase 4.5: III Site Improvements
+
+| Mission | Title | Status | Deliverables | Dependencies |
+|---------|-------|--------|-------------|-------------|
+| M20 | Hero & Homepage Redesign | **completed** | Banner hero, 3 new homepage sections, responsive | M12, M14 |
+| M21 | New Content Sections | **completed** | 37 new pages (25 glossary, 4 community, 5 adopters, 3 indexes) | M12-M15 |
+| M22 | Component Polish & Media Blocking | **completed** | MediaPlaceholder, MermaidDiagram, enhanced Callout/CardGrid | M20 |
+| M23 | OG Images & III Review | **completed** | 5 OG images, section-aware selection, III review findings | M20-M22 |
 
 ### Phase 5: The How
 
