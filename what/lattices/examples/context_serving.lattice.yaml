@@ -1,0 +1,94 @@
+lattice:
+  name: context_serving
+  version: "1.0.0"
+  lattice_type: context_graph
+  description: >
+    Context serving graph implementing the aDNA convergence model. Each agent
+    session traverses this graph to load only the subgraph reachable from the
+    current objective — narrowing from full vault to exact files needed.
+    Self-referential: this lattice IS the startup protocol described in
+    CLAUDE.md Agent Protocol and what/context/prompt_engineering/context_prompt_engineering_convergence_model.md.
+  execution:
+    mode: reasoning
+    runtime: local
+    tier: L1
+    model: "claude-opus-4-6"
+  nodes:
+    - id: claude_md
+      type: dataset
+      description: "Project CLAUDE.md — auto-loaded master context with safety rules, standing orders, domain knowledge"
+      ref: "CLAUDE.md"
+    - id: state_md
+      type: dataset
+      description: "STATE.md — operational snapshot with current phase, blockers, next steps"
+      ref: "STATE.md"
+    - id: agents_md_router
+      type: reasoning
+      description: "Read AGENTS.md in target directory to make load/skip decision"
+      prompt: >
+        Read the AGENTS.md file in the target directory. Based on the
+        Load/Skip Decision section and the current session's objective,
+        decide whether to load this directory's content into context.
+        Consider token cost vs. relevance.
+    - id: context_library
+      type: dataset
+      description: "Context library at what/context/ — 5 topics, 27 subtopics, ~75K tokens total"
+      ref: "what/context/"
+    - id: context_recipe
+      type: reasoning
+      description: "Check context_recipes.md for pre-assembled cross-topic bundles matching this session's domain"
+      prompt: >
+        Given the session's task domain, check context_recipes.md for a
+        matching recipe. Load the recipe's specified subtopics at the
+        appropriate budget tier (Minimal/Standard/Full). Prefer recipes
+        over manual subtopic selection.
+      ref: "what/context/context_recipes.md"
+    - id: campaign_context
+      type: dataset
+      description: "Active campaign docs — campaign master doc + campaign CLAUDE.md"
+      ref: "how/campaigns/campaign_rosetta/"
+    - id: mission_context
+      type: dataset
+      description: "Active mission file — objectives, dependencies, progress"
+    - id: session_context
+      type: dataset
+      description: "Assembled context for this session — the convergence output"
+  edges:
+    - from: claude_md
+      to: state_md
+      label: "project rules loaded"
+    - from: state_md
+      to: agents_md_router
+      label: "operational state known"
+    - from: agents_md_router
+      to: context_library
+      label: "directory loaded"
+      condition: "load_decision == true"
+    - from: agents_md_router
+      to: campaign_context
+      label: "skip to campaign"
+      condition: "load_decision == false"
+    - from: context_library
+      to: context_recipe
+      label: "raw subtopics"
+    - from: context_recipe
+      to: campaign_context
+      label: "assembled domain context"
+    - from: campaign_context
+      to: mission_context
+      label: "campaign scope"
+    - from: mission_context
+      to: session_context
+      label: "mission objectives"
+  fair:
+    license: "MIT"
+    creators:
+      - "Lattice Labs"
+    keywords:
+      - context serving
+      - convergence model
+      - token selection
+      - agents.md
+      - context recipe
+      - self-referential
+    provenance: "Models the aDNA convergence model — the context loading strategy every agent session uses at startup. Derived from the Agent Protocol in CLAUDE.md."

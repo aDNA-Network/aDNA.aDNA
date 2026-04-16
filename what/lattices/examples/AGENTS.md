@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-19
-updated: 2026-03-02
-last_edited_by: agent_init
+updated: 2026-04-16
+last_edited_by: agent_stanley
 tags: [directory_index, lattice, examples, canvas]
 ---
 
@@ -26,6 +26,17 @@ Example `.lattice.yaml` files demonstrating different lattice types, execution m
 | `deep_research.lattice.yaml` | pipeline | hybrid | Multi-agent research pipeline with validation loops and phase gates |
 | `knowledge_base.lattice.yaml` | context_graph | reasoning | Knowledge retrieval + LLM reasoning — only `context_graph` type example |
 | `research_orchestrator.lattice.yaml` | agent | hybrid | Orchestrator pattern — LLM-driven coordination with human checkpoints |
+
+### Self-Referential Examples (Phase 5)
+
+Lattices that model this vault's own workflows — the structure IS the lesson.
+
+| File | Lattice Type | Execution Mode | Demonstrates |
+|------|-------------|---------------|-------------|
+| `content_pipeline.lattice.yaml` | pipeline | hybrid | Vault-to-site publishing pipeline — models the exact process that built adna-docs.vercel.app |
+| `campaign_execution.lattice.yaml` | workflow | workflow | Campaign hierarchy — models Operation Rosetta's own Campaign → Mission → Objective flow |
+| `context_serving.lattice.yaml` | context_graph | reasoning | Convergence model — models the startup protocol every agent session uses |
+| `dual_audience_review.lattice.yaml` | agent | hybrid | Quality review agent — models the quality gate every content file passed |
 
 ### Biotech / Federation Examples
 

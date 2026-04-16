@@ -1,7 +1,7 @@
 ---
 type: manifest
 created: 2026-04-13
-updated: 2026-04-15
+updated: 2026-04-16
 last_edited_by: agent_stanley
 tags: [manifest, governance]
 ---
@@ -141,7 +141,7 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | Phase 3: Website v1 | Complete | AstroJS docs site via SiteForge at `site/`, Vercel deploy |
 | Phase 4: The Who | Complete | 25 glossary entries + index, 3 governance docs, 3 community files, 5 adopter personas |
 | Phase 4.5: III Site Improvements | Complete | Hero redesign, 37 new site pages, components, OG images, III review |
-| Phase 5: The How | **Next** | Publishing pipeline, workshop kits, lattice definitions |
+| Phase 5: The How | Complete | 3 publishing docs, 4 workshop kits, 4 self-referential lattice YAMLs |
 | Phase 6: Website v2 | Planned | Final content sync, quality pass, brand refinement |
 | Phase 7: 100-Cycle III Loop | Planned | 100 iterative improvement cycles (10 themed decadals) + persona ranker AARs |
 
@@ -151,7 +151,7 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 |-----------|--------|-------------|
 | aDNA Standard v2.2 | Inherited | Core specification — triad, ontology, sessions, missions, campaigns |
 | Context library | Inherited | 5 topics, 27 subtopics, ~75K tokens |
-| Lattice YAML tools | Inherited | Validate, convert (YAML↔canvas), JSON Schema, 15 examples |
+| Lattice YAML tools | Inherited | Validate, convert (YAML↔canvas), JSON Schema, 19 examples |
 | 22 base templates | Inherited | Full operational template set |
 | 13 base skills | Inherited | Onboarding, fork, entity type, quality audit, etc. |
 | Execution hierarchy v2 | Inherited | OODA cascade, AAR protocol, escalation cascade |

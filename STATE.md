@@ -13,7 +13,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 7 baseline complete. Ready for Phase 5.** Phases 0-4.5 complete (78 content files + 97-page live site). Phase 7 infrastructure complete — M24 closed with measured Lighthouse baseline across 5 pages (avg: Perf 97.4, A11y 98.4, BP 100, SEO 100). Next: Phase 5 (The How).
+**Phase 5 complete. Ready for Phase 6.** Phases 0-5 complete (89 content files + 97-page live site). Phase 5 added 11 files: 3 publishing docs, 4 workshop kits, 4 self-referential lattice YAMLs. Phase 7 infrastructure complete (M24 baseline measured). Next: Phase 6 (Website v2).
 
 ## Active Campaign
 
@@ -27,37 +27,33 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 | Phase 3: Website v1 | **Complete** | M09-M12 | 60-page site live on Vercel |
 | Phase 4: The Who | **Complete** | M13-M15 | 37/37 (25 glossary + 1 index, 3 governance, 3 community, 5 adopters) |
 | Phase 4.5: III Site Improvements | **Complete** | M20-M23 | Hero redesign, 37 new pages, components, OG images |
-| Phase 5: The How | **Next** | M16-M18 | Publishing, workshops, lattices |
-| Phase 6: Website v2 | Planned | M19 | Final content sync + quality pass |
+| Phase 5: The How | **Complete** | M16-M18 | 11/11 (3 publishing, 4 workshops, 4 lattice YAMLs) |
+| Phase 6: Website v2 | **Next** | M19 | Final content sync + quality pass |
 | Phase 7: 100-Cycle III Loop | M24 complete | M24-M35 | 100 improvement cycles, 10 decadal themes, persona ranker AARs |
 
-## Phase 4.5 Deliverables
+## Phase 5 Deliverables
 
-- **M20: Hero & Homepage Redesign** — Banner hero image (auto-optimized WebP), 3 new homepage sections (How it Works, Who Uses aDNA, The Standard), media placeholders for future GIFs
-- **M21: New Content Sections** — 37 new pages: 25 glossary entries + index, 4 community pages + index, 5 adopter personas + index. Glossary/Community/Adopters nav groups added to sidebar and header
-- **M22: Component Polish** — MediaPlaceholder, MermaidDiagram island, enhanced Callout (self-reference variant), enhanced CardGrid (icon support)
-- **M23: OG Images & III Review** — 5 branded OG images (default, learn, patterns, reference, community), section-aware OG selection in SEOHead, III semantic review
-- **Site grew from 60 → 97 pages** with zero build errors
+- **M16: Publishing Pipeline** — 3 docs: vault-to-site pipeline (`publishing_vault_to_site.md`), content mapping with 2-pathway architecture (`publishing_content_mapping.md`), OG image system (`publishing_social_sharing.md`)
+- **M17: Workshop Kits** — 3 workshops spanning skill ladder: Vault Exploration (60 min, beginner), Build Your First Vault (90 min, intermediate), Lattice Design (120 min, advanced), plus facilitation guide
+- **M18: Lattice Definitions + Closeout** — 4 self-referential lattice YAMLs: content_pipeline, campaign_execution, context_serving, dual_audience_review. All validate against schema. Examples directory now has 19 lattices.
 
 ## What's Working
 
 - Full documentation site live at https://adna-docs.vercel.app with all Phase 1-4.5 content
 - Homepage: branded aDNA banner (watermark cropped), Operational Ontology section, Context Engineering section
-- WHO triad leg fully populated (governance, community, adopters)
-- Glossary provides canonical term definitions with dedicated site section
-- 78 vault content files + 97 site pages total
-- OG images render correctly per section for social sharing
+- All three triad legs populated: WHO (governance, community, adopters), WHAT (concepts, patterns, tutorials, comparisons, use cases, glossary, lattices), HOW (publishing, workshops, campaigns, sessions, skills)
+- 89 vault content files + 97 site pages total
+- Lattice examples directory: 19 YAMLs (15 general/biotech + 4 self-referential) + 4 canvas templates
 - Phase 7 III infrastructure complete: 2 skills, cycle tracker, 12 missions defined, M24 baseline measured
 
 ## Active Blockers
 
-None. Phase 5 ready to execute.
+None. Phase 6 ready to execute.
 
 ## Next Steps
 
-1. **Phase 5: The How** — M16 (Publishing Pipeline), M17 (Workshop Kits), M18 (Lattice Definitions + Closeout). Phase gate: confirm with user before starting.
-2. **Phase 6: Website v2** — M19: sync Phase 5 content to site, quality re-run, brand refinement
-3. **Phase 7: 100-Cycle III Loop** — M25-M35: 100 iterative improvement cycles across 10 themed decadals (Accessibility → Content Clarity → Navigation → Visual → Mobile → Performance → SEO → Components → Personas → Hardening). Baseline established (M24 complete). Skills: `skill_iii_cycle.md`, `skill_decadal_aar.md`. Tracker: `missions/artifacts/iii_cycle_tracker.md`.
+1. **Phase 6: Website v2** — M19: sync Phase 5 content to site (publishing, workshops, self-referential lattices), quality re-run, brand refinement. Phase gate: confirm with user before starting.
+2. **Phase 7: 100-Cycle III Loop** — M25-M35: 100 iterative improvement cycles across 10 themed decadals (Accessibility → Content Clarity → Navigation → Visual → Mobile → Performance → SEO → Components → Personas → Hardening). Baseline established (M24 complete). Skills: `skill_iii_cycle.md`, `skill_decadal_aar.md`. Tracker: `missions/artifacts/iii_cycle_tracker.md`.
 
 ## Pending Manual Actions
 
@@ -66,8 +62,8 @@ None. Phase 5 ready to execute.
 
 ## Last Session (2026-04-16)
 
-Completed M24 (III Loop Setup & Baseline). Ran Lighthouse 13.1.0 on 5 representative pages against local preview. Results: Performance avg 97.4, Accessibility avg 98.4, Best Practices 100, SEO 100. Ran Playwright gates (30/30 pass). Updated cycle tracker with measured values, created M24 mission file with AAR, closed mission.
+Completed Phase 5 (The How) in a single session: M16 (3 publishing docs), M17 (4 workshop files), M18 (4 lattice YAMLs + closeout). 11 new content files total. All lattice YAMLs validate against schema. Campaign board and governance updated.
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. M24 complete — Lighthouse baseline measured and recorded. Phase 5 (The How) is next: M16 Publishing Pipeline (`how/publishing/`), M17 Workshop Kits (`how/workshops/`), M18 Lattice Definitions + Closeout. Phase gate: confirm with user before starting Phase 5. Vercel deploys manually via `vercel --prod` from `site/`. See `campaign_rosetta.md` for full mission board.
+> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 5 complete (11 files: publishing, workshops, lattices). Phase 6 (Website v2) is next: M19 — sync Phase 5 content to site, add HOW sections (publishing, workshops), quality re-run, brand refinement. Phase gate: confirm with user before starting Phase 6. Vercel deploys manually via `vercel --prod` from `site/`. See `campaign_rosetta.md` for full mission board.

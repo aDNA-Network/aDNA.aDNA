@@ -37,7 +37,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | **3: Website v1** | **Complete** | M09-M12 | site live | AstroJS docs site via SiteForge (full content inventory) |
 | **4: The Who** | **Complete** | M13-M15 | 37 files | Community, adopters, glossary |
 | **4.5: III Site Improvements** | **Complete** | M20-M23 | site upgrade | Hero, new sections, components, OG images, III review |
-| **5: The How** | **Next** | M16-M18 | ~12 files | Publishing, workshops, lattices |
+| **5: The How** | **Complete** | M16-M18 | 11 files | Publishing, workshops, lattices |
 | **6: Website v2** | Planned | M19 | site polish | Final content sync, quality pass, brand refinement |
 | **7: 100-Cycle III Loop** | Planned | M24-M35 | site perfection | 100 iterative improvement cycles across 10 themed decadals |
 
@@ -93,9 +93,9 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 
 | Mission | Title | Status | Files | Dependencies |
 |---------|-------|--------|-------|-------------|
-| M16 | Publishing Pipeline | pending | 3 files | Phases 1-4 |
-| M17 | Workshop Kits | pending | 3 workshops + facilitation guide | Phase 2 |
-| M18 | Lattice Definitions + Closeout | pending | 4 lattice YAMLs + campaign AAR | All phases |
+| M16 | Publishing Pipeline | **completed** | 3 files | Phases 1-4 |
+| M17 | Workshop Kits | **completed** | 3 workshops + facilitation guide | Phase 2 |
+| M18 | Lattice Definitions + Closeout | **completed** | 4 lattice YAMLs + Phase 5 closeout | All phases |
 
 ### Phase 6: Website v2
 

@@ -1,0 +1,95 @@
+lattice:
+  name: campaign_execution
+  version: "1.0.0"
+  lattice_type: workflow
+  description: >
+    Campaign execution hierarchy for aDNA operational projects. Models the
+    Campaign -> Mission -> Objective decomposition with phase gates, session
+    tracking, and AAR protocol. Self-referential: this lattice models Operation
+    Rosetta's own execution model in how/campaigns/campaign_rosetta/.
+  execution:
+    mode: workflow
+    runtime: local
+    tier: L1
+  nodes:
+    - id: campaign_plan
+      type: dataset
+      description: "Campaign master document — strategic intent, phase structure, mission board, success criteria"
+      ref: "how/campaigns/campaign_rosetta/campaign_rosetta.md"
+    - id: phase_gate
+      type: process
+      description: "Human approval gate between campaign phases — prevents auto-advancement"
+    - id: mission_create
+      type: process
+      description: "Decompose phase into missions with objectives, dependencies, and quality gates"
+    - id: session_open
+      type: process
+      description: "Create session file in how/sessions/active/, claim objective, begin work"
+    - id: objective_execute
+      type: process
+      description: "Atomic work unit — completable in one session with defined deliverables"
+    - id: session_close
+      type: process
+      description: "Write SITREP (completed, in progress, next up, blockers, files touched)"
+    - id: mission_complete
+      type: process
+      description: "All objectives done — write 5-line AAR (Worked, Didn't, Finding, Change, Follow-up)"
+    - id: phase_complete
+      type: dataset
+      description: "Phase completion summary — all missions closed, campaign board updated"
+    - id: campaign_aar
+      type: dataset
+      description: "Campaign-level AAR — full retrospective at campaign close"
+  edges:
+    - from: campaign_plan
+      to: phase_gate
+      label: "phase ready"
+    - from: phase_gate
+      to: mission_create
+      label: "phase approved"
+      condition: "human_approval == true"
+    - from: mission_create
+      to: session_open
+      label: "mission with objectives"
+    - from: session_open
+      to: objective_execute
+      label: "claimed objective"
+    - from: objective_execute
+      to: session_close
+      label: "work complete"
+    - from: session_close
+      to: session_open
+      label: "next objective"
+      condition: "mission_objectives_remaining > 0"
+    - from: session_close
+      to: mission_complete
+      label: "all objectives done"
+      condition: "mission_objectives_remaining == 0"
+    - from: mission_complete
+      to: mission_create
+      label: "next mission in phase"
+      condition: "phase_missions_remaining > 0"
+    - from: mission_complete
+      to: phase_complete
+      label: "phase done"
+      condition: "phase_missions_remaining == 0"
+    - from: phase_complete
+      to: phase_gate
+      label: "next phase"
+      condition: "campaign_phases_remaining > 0"
+    - from: phase_complete
+      to: campaign_aar
+      label: "campaign done"
+      condition: "campaign_phases_remaining == 0"
+  fair:
+    license: "MIT"
+    creators:
+      - "Lattice Labs"
+    keywords:
+      - campaign
+      - execution hierarchy
+      - mission decomposition
+      - aar
+      - phase gate
+      - self-referential
+    provenance: "Models the aDNA campaign execution hierarchy. Derived from Operation Rosetta's actual 7-phase, 35-mission structure."

@@ -1,0 +1,90 @@
+lattice:
+  name: content_pipeline
+  version: "1.0.0"
+  lattice_type: pipeline
+  description: >
+    Vault-to-site publishing pipeline for aDNA.aDNA. Transforms vault Markdown
+    into Astro MDX content collections and deploys to Vercel. Self-referential:
+    this lattice models the exact pipeline that built adna-docs.vercel.app.
+    See how/publishing/publishing_vault_to_site.md for the narrative description.
+  execution:
+    mode: hybrid
+    runtime: local
+    tier: L1
+  nodes:
+    - id: vault_content
+      type: dataset
+      description: "Source Markdown files from vault directories (what/concepts/, what/tutorials/, etc.)"
+      ref: "what/concepts/"
+    - id: content_mapping
+      type: reasoning
+      description: "Select which vault entities to publish and map them to site sections"
+      prompt: >
+        Given the vault entity types (concept, tutorial, pattern, comparison,
+        use_case, reference), determine the correct site collection and URL
+        pattern for each. Route WHAT-triad content through the transform script,
+        WHO-triad content through direct Astro pages.
+    - id: frontmatter_rewrite
+      type: process
+      description: "Strip vault frontmatter (type, created, tags) and replace with Astro-specific fields (title, description, section, order)"
+    - id: wikilink_rewrite
+      type: process
+      description: "Convert Obsidian [[wikilinks]] to standard Markdown [label](url) using the 48-entry wikilink registry"
+    - id: h1_strip
+      type: process
+      description: "Remove first H1 heading — Astro layouts render the title from frontmatter"
+    - id: description_gen
+      type: process
+      description: "Extract first non-heading paragraph and truncate to 155 characters for SEO meta description"
+    - id: mdx_output
+      type: dataset
+      description: "Transformed MDX files in site/src/content/ (docs/, guides/, reference/)"
+    - id: astro_build
+      type: process
+      description: "Astro 6 static site build from site/ directory"
+    - id: deploy
+      type: process
+      description: "Deploy to Vercel via vercel --prod"
+    - id: live_site
+      type: dataset
+      description: "Live documentation site at adna-docs.vercel.app"
+  edges:
+    - from: vault_content
+      to: content_mapping
+      label: "raw vault files"
+    - from: content_mapping
+      to: frontmatter_rewrite
+      label: "selected files with target sections"
+    - from: frontmatter_rewrite
+      to: wikilink_rewrite
+      label: "astro frontmatter"
+    - from: wikilink_rewrite
+      to: h1_strip
+      label: "resolved links"
+    - from: h1_strip
+      to: description_gen
+      label: "clean content"
+    - from: description_gen
+      to: mdx_output
+      label: "complete MDX files"
+    - from: mdx_output
+      to: astro_build
+      label: "content collections"
+    - from: astro_build
+      to: deploy
+      label: "static site bundle"
+    - from: deploy
+      to: live_site
+      label: "deployed site"
+  fair:
+    license: "MIT"
+    creators:
+      - "Lattice Labs"
+    keywords:
+      - publishing
+      - content pipeline
+      - astro
+      - vercel
+      - vault to web
+      - self-referential
+    provenance: "Models the actual vault-to-site publishing pipeline used by aDNA.aDNA. See transform-content.mjs for the implementation."
