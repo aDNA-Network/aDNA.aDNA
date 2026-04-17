@@ -1,12 +1,12 @@
 ---
 title: "aDNA Specification — aDNA Reference"
-description: "{/*  v2.2 | 2026-03-20 */}"
+description: "Agentic DNA (aDNA) — A knowledge architecture standard for AI-native projects."
 ref_title: "aDNA Specification"
 stability: "stable"
 version: "2.2"
 ---
 
-{/*  v2.2 | 2026-03-20 */}
+{/*  v2.2 | 2026-03-20  */}
 
 **Agentic DNA (aDNA)** — A knowledge architecture standard for AI-native projects.
 
@@ -105,21 +105,21 @@ The triad is deliberately minimal. Three categories are sufficient because they 
 ```mermaid
 flowchart TB
     Root["aDNA Instance"]
-    Root */} W["what/<br/>Knowledge"]
-    Root */} H["how/<br/>Operations"]
-    Root */} O["who/<br/>Organization"]
+    Root --> W["what/<br/>Knowledge"]
+    Root --> H["how/<br/>Operations"]
+    Root --> O["who/<br/>Organization"]
 
-    W */} ctx["context/"]
-    W */} dec["decisions/"]
-    W */} dom["domain entities"]
+    W --> ctx["context/"]
+    W --> dec["decisions/"]
+    W --> dom["domain entities"]
 
-    H */} mis["missions/"]
-    H */} ses["sessions/"]
-    H */} tpl["templates/"]
+    H --> mis["missions/"]
+    H --> ses["sessions/"]
+    H --> tpl["templates/"]
 
-    O */} coord["coordination/"]
-    O */} gov["governance/"]
-    O */} ppl["people & teams"]
+    O --> coord["coordination/"]
+    O --> gov["governance/"]
+    O --> ppl["people & teams"]
 
     style W fill:#0d9488,color:#fff
     style H fill:#22c55e,color:#fff
@@ -235,9 +235,9 @@ flowchart LR
     AGENTS["AGENTS.md<br/>Directory guide"]
     README["README.md<br/>Human guide"]
 
-    CLAUDE */}|"structure + rules"| STATE
-    CLAUDE */}|"references"| MANIFEST
-    STATE */}|"updated each session"| CLAUDE
+    CLAUDE -->|"structure + rules"| STATE
+    CLAUDE -->|"references"| MANIFEST
+    STATE -->|"updated each session"| CLAUDE
     AGENTS -.->|"per-directory"| CLAUDE
     README -.->|"per-directory"| CLAUDE
 
@@ -278,7 +278,7 @@ CLAUDE.md is the primary agent orientation document. It MUST exist at the projec
 - Machine Setup — multi-machine path patterns and tool requirements
 - Environment-Specific Rules — sync, IDE, CI/CD integration
 
-**Versioning**: CLAUDE.md SHOULD include a version comment in its header: `{/*  vX.Y | YYYY-MM-DD */}`. Major version for structural changes, minor for significant updates. Session history serves as the detailed changelog.
+**Versioning**: CLAUDE.md SHOULD include a version comment in its header: `{/*  vX.Y | YYYY-MM-DD  */}`. Major version for structural changes, minor for significant updates. Session history serves as the detailed changelog.
 
 **Persona framework**: When a persona is defined, it MUST include: identity (name, role metaphor, mission), operating style (3-5 behavioral principles), and communication norms (tone, greeting/close patterns). See Appendix A for the full framework and reference implementation.
 
@@ -692,16 +692,16 @@ A session file MUST be created before an agent modifies any other project files.
 
 ```mermaid
 stateDiagram-v2
-    [*] */} Create: Agent starts work
-    Create */} Active: Session file written
-    Active */} Active: Work + log activity
-    Active */} Close: SITREP written
-    Close */} Archive: Move to history/YYYY-MM/
-    Archive */} [*]
+    [*] --> Create: Agent starts work
+    Create --> Active: Session file written
+    Active --> Active: Work + log activity
+    Active --> Close: SITREP written
+    Close --> Archive: Move to history/YYYY-MM/
+    Archive --> [*]
 
     state Active {
-        [*] */} Working
-        Working */} Working: Modify files<br/>Update frontmatter
+        [*] --> Working
+        Working --> Working: Modify files<br/>Update frontmatter
     }
 ```
 
@@ -956,17 +956,17 @@ flowchart TB
     T2["Tier 2 — Sync Environments<br/>Cloud storage, team sync"]
     T3["Tier 3 — Multi-Agent<br/>Concurrent agents"]
 
-    T1 */} A1["Frontmatter attribution"]
-    T1 */} A2["Read-before-write"]
-    T1 */} A3["New-file safety"]
+    T1 --> A1["Frontmatter attribution"]
+    T1 --> A2["Read-before-write"]
+    T1 --> A3["New-file safety"]
 
-    T2 */} B1["File safety tiers"]
-    T2 */} B2["Archive-don't-rename"]
-    T2 */} B3["One config at a time"]
+    T2 --> B1["File safety tiers"]
+    T2 --> B2["Archive-don't-rename"]
+    T2 --> B3["One config at a time"]
 
-    T3 */} C1["Coordination notes"]
-    T3 */} C2["Scope declarations"]
-    T3 */} C3["Update-field check"]
+    T3 --> C1["Coordination notes"]
+    T3 --> C2["Scope declarations"]
+    T3 --> C3["Update-field check"]
 
     T1 -.->|extends| T2
     T2 -.->|extends| T3
@@ -1017,12 +1017,12 @@ This paradigm applies wherever content flows through defined stages — research
 ```mermaid
 stateDiagram-v2
     direction LR
-    [*] */} inbox: New content
-    inbox */} processing: Agent picks up
-    processing */} review: Processing complete
-    review */} done: Approved
-    review */} processing: Revision needed
-    done */} [*]
+    [*] --> inbox: New content
+    inbox --> processing: Agent picks up
+    processing --> review: Processing complete
+    review --> done: Approved
+    review --> processing: Revision needed
+    done --> [*]
 
     note right of inbox: AGENTS.md defines<br/>acceptance criteria
     note right of processing: AGENTS.md defines<br/>processing steps
@@ -1083,7 +1083,7 @@ Session history SHOULD NOT be auto-deleted. Manual cleanup after 6 months is acc
 
 ### 15.3 Versioning
 
-aDNA instances track their own version via a comment in CLAUDE.md: `{/*  vX.Y | YYYY-MM-DD */}`.
+aDNA instances track their own version via a comment in CLAUDE.md: `{/*  vX.Y | YYYY-MM-DD  */}`.
 
 Major version increments indicate structural changes. Minor version increments indicate significant content updates. Session history serves as the detailed changelog — no formal CHANGELOG.md is required.
 
@@ -1139,8 +1139,8 @@ flowchart TB
         F10["Graph / canvas views"]
     end
 
-    T1 */}|"any YAML reader"| T2
-    T2 */}|"specific tools"| T3
+    T1 -->|"any YAML reader"| T2
+    T2 -->|"specific tools"| T3
 
     style T1 fill:#22c55e,color:#fff
     style T2 fill:#3b82f6,color:#fff
@@ -1178,11 +1178,11 @@ Implementation examples: Dataview queries, shell scripts that parse frontmatter,
 
 ```mermaid
 flowchart LR
-    E["Error detected"] */} S1{"Data at risk?"}
-    S1 */}|Yes| T1["Tier 1: STOP<br/>Escalate to human"]
-    S1 */}|No| S2{"State inconsistent?"}
-    S2 */}|Yes| T2["Tier 2: Fix + log<br/>Continue work"]
-    S2 */}|No| T3["Tier 3: Note + workaround<br/>Backlog idea"]
+    E["Error detected"] --> S1{"Data at risk?"}
+    S1 -->|Yes| T1["Tier 1: STOP<br/>Escalate to human"]
+    S1 -->|No| S2{"State inconsistent?"}
+    S2 -->|Yes| T2["Tier 2: Fix + log<br/>Continue work"]
+    S2 -->|No| T3["Tier 3: Note + workaround<br/>Backlog idea"]
 
     style T1 fill:#ef4444,color:#fff
     style T2 fill:#eab308,color:#000
@@ -1226,8 +1226,8 @@ flowchart TB
         A3["Dual-Audience"]
     end
 
-    MIN */}|mature| REC
-    REC */}|excellent| ASP
+    MIN -->|mature| REC
+    REC -->|excellent| ASP
 
     style MIN fill:#22c55e,color:#fff
     style REC fill:#3b82f6,color:#fff

@@ -1,0 +1,21 @@
+---
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../../components/sections/CardGrid.astro';
+import { getDocsBySection } from '../../../utils/collections';
+
+const latticeDocs = await getDocsBySection('lattice-examples');
+const cards = latticeDocs.map((doc) => ({
+  title: doc.data.doc_title,
+  description: doc.data.description,
+  href: `/how/lattice-examples/${doc.id}`,
+  badge: doc.data.badge,
+}));
+---
+
+<DocumentationLayout
+  title="Lattice Examples"
+  description="Self-referential lattice definitions that model the processes used to build this vault and documentation site."
+>
+  <p>These four lattice definitions are self-referential — each one models a real process used to build this vault and site. The content pipeline lattice describes the transform that produced these pages. The campaign execution lattice models Operation Rosetta. The context serving lattice IS the agent startup protocol. The dual audience review lattice IS the quality gate every content file passed.</p>
+  <CardGrid cards={cards} columns={2} />
+</DocumentationLayout>

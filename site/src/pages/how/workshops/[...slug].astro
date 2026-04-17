@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from 'astro:content';
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import { buildTechArticleJsonLD } from '../../../utils/seo';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs', ({ data }) => data.section === 'workshops' && !data.draft);
+  return docs.map((doc) => ({
+    params: { slug: doc.id },
+    props: { doc },
+  }));
+}
+
+const { doc } = Astro.props;
+const { Content, headings } = await render(doc);
+
+const jsonLD = buildTechArticleJsonLD({
+  title: doc.data.doc_title,
+  description: doc.data.description ?? '',
+  url: Astro.url.href,
+});
+---
+
+<DocumentationLayout
+  title={doc.data.doc_title}
+  description={doc.data.description ?? `${doc.data.doc_title} — aDNA workshop.`}
+  headings={headings}
+  jsonLD={jsonLD}
+>
+  <Content />
+</DocumentationLayout>

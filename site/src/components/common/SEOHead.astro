@@ -25,6 +25,7 @@ function selectOgImage(path: string): string {
   if (path.startsWith('/glossary/') || path === '/glossary') return '/images/og-reference.png';
   if (path.startsWith('/community/') || path === '/community') return '/images/og-community.png';
   if (path.startsWith('/adopters/') || path === '/adopters') return '/images/og-community.png';
+  if (path.startsWith('/how/') || path === '/how') return '/images/og-how.png';
   return '/images/og-default.png';
 }
 

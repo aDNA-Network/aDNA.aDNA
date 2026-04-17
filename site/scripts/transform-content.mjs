@@ -68,6 +68,23 @@ const wikilinkMap = {
   'use_case_educator': { url: '/use-cases/educator', label: 'Educator' },
   'use_case_open_source_project': { url: '/use-cases/open-source-project', label: 'Open Source Project' },
 
+  // Publishing
+  'publishing_vault_to_site': { url: '/how/publishing/vault-to-site', label: 'Vault-to-Site Pipeline' },
+  'publishing_content_mapping': { url: '/how/publishing/content-mapping', label: 'Content Mapping' },
+  'publishing_social_sharing': { url: '/how/publishing/social-sharing', label: 'Social Sharing' },
+
+  // Workshops
+  'workshop_vault_exploration': { url: '/how/workshops/vault-exploration', label: 'Vault Exploration' },
+  'workshop_build_your_first_vault': { url: '/how/workshops/build-your-first-vault', label: 'Build Your First Vault' },
+  'workshop_lattice_design': { url: '/how/workshops/lattice-design', label: 'Lattice Design' },
+  'workshop_facilitation_guide': { url: '/how/workshops/facilitation-guide', label: 'Facilitation Guide' },
+
+  // Lattice examples
+  'content_pipeline': { url: '/how/lattice-examples/content-pipeline', label: 'Content Pipeline' },
+  'campaign_execution': { url: '/how/lattice-examples/campaign-execution', label: 'Campaign Execution' },
+  'context_serving': { url: '/how/lattice-examples/context-serving', label: 'Context Serving' },
+  'dual_audience_review': { url: '/how/lattice-examples/dual-audience-review', label: 'Dual Audience Review' },
+
   // Reference docs
   'adna_standard': { url: '/reference/specification', label: 'aDNA Specification' },
   'adna_design': { url: '/reference/design-rationale', label: 'Design Rationale' },
@@ -121,6 +138,21 @@ function parseFrontmatter(text) {
   return { meta, body };
 }
 
+function escapeMdxSyntax(content) {
+  // Fix MDX-incompatible syntax outside fenced code blocks:
+  // 1. Escape < followed by a digit (e.g., <5K) — MDX treats these as JSX tags
+  // 2. Convert HTML comments to MDX comments — MDX doesn't support <!-- -->
+  const lines = content.split('\n');
+  let inCodeBlock = false;
+  return lines.map(line => {
+    if (line.trimStart().startsWith('```')) inCodeBlock = !inCodeBlock;
+    if (inCodeBlock) return line;
+    line = line.replace(/<(\d)/g, '&lt;$1');
+    line = line.replace(/<!--(.*?)-->/g, '{/* $1 */}');
+    return line;
+  }).join('\n');
+}
+
 function stripH1(body) {
   // Remove first H1 heading (Astro layouts render the title from frontmatter)
   // Handles leading whitespace/newlines before the H1
@@ -133,10 +165,10 @@ function generateDescription(body, maxLen = 155) {
   const paragraphs = stripped.split('\n\n');
   const firstPara = paragraphs.find(p => {
     const t = p.trim();
-    return t && !t.startsWith('#') && !t.startsWith('|') && !t.startsWith('-') && !t.startsWith('```') && !t.startsWith('>');
+    return t && !t.startsWith('#') && !t.startsWith('|') && !t.startsWith('-') && !t.startsWith('```') && !t.startsWith('>') && !t.startsWith('<!--') && !t.startsWith('{/*');
   });
   if (!firstPara) return '';
-  const clean = firstPara.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2').replace(/\[\[([^\]]+)\]\]/g, '$1').replace(/[*_`]/g, '').replace(/\n/g, ' ').trim();
+  const clean = firstPara.replace(/<!--.*?-->/g, '').replace(/\{\/\*.*?\*\/\}/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2').replace(/\[\[([^\]]+)\]\]/g, '$1').replace(/[*_`]/g, '').replace(/\n/g, ' ').trim();
   return clean.length > maxLen ? clean.slice(0, maxLen - 3) + '...' : clean;
 }
 
@@ -209,6 +241,19 @@ const referenceMapping = [
   { source: 'context_quality_rubric.md', slug: 'quality-rubric', title: 'Quality Rubric', stability: 'stable' },
 ];
 
+const publishingMapping = [
+  { source: 'publishing_vault_to_site.md', slug: 'vault-to-site', title: 'Vault-to-Site Pipeline', order: 1 },
+  { source: 'publishing_content_mapping.md', slug: 'content-mapping', title: 'Content Mapping', order: 2 },
+  { source: 'publishing_social_sharing.md', slug: 'social-sharing', title: 'Social Sharing', order: 3 },
+];
+
+const workshopMapping = [
+  { source: 'workshop_vault_exploration.md', slug: 'vault-exploration', title: 'Vault Exploration', order: 1 },
+  { source: 'workshop_build_your_first_vault.md', slug: 'build-your-first-vault', title: 'Build Your First Vault', order: 2 },
+  { source: 'workshop_lattice_design.md', slug: 'lattice-design', title: 'Lattice Design', order: 3 },
+  { source: 'workshop_facilitation_guide.md', slug: 'facilitation-guide', title: 'Facilitation Guide', order: 4 },
+];
+
 // ── Transform functions ──────────────────────────────────────────
 
 function transformDoc(sourceDir, mapping, section) {
@@ -219,12 +264,12 @@ function transformDoc(sourceDir, mapping, section) {
     try { raw = readFileSync(sourcePath, 'utf-8'); } catch { console.warn(`  SKIP: ${sourcePath} not found`); continue; }
 
     const { body } = parseFrontmatter(raw);
-    const content = rewriteWikilinks(stripH1(body));
+    const content = escapeMdxSyntax(rewriteWikilinks(stripH1(body)));
     const desc = generateDescription(content);
 
     const frontmatter = [
       '---',
-      `title: "${entry.title} — aDNA ${section === 'concepts' ? 'Concepts' : section === 'patterns' ? 'Patterns' : section === 'comparisons' ? 'Comparisons' : 'Use Cases'}"`,
+      `title: "${entry.title} — aDNA ${{ concepts: 'Concepts', patterns: 'Patterns', comparisons: 'Comparisons', 'use-cases': 'Use Cases', publishing: 'Publishing', workshops: 'Workshops' }[section] ?? section}"`,
       `description: "${desc.replace(/"/g, '\\"')}"`,
       `doc_title: "${entry.title}"`,
       `section: "${section}"`,
@@ -247,7 +292,7 @@ function transformGuides() {
     try { raw = readFileSync(sourcePath, 'utf-8'); } catch { console.warn(`  SKIP: ${sourcePath} not found`); continue; }
 
     const { body } = parseFrontmatter(raw);
-    const content = rewriteWikilinks(stripH1(body));
+    const content = escapeMdxSyntax(rewriteWikilinks(stripH1(body)));
     const desc = generateDescription(content);
 
     const frontmatter = [
@@ -276,7 +321,7 @@ function transformReference() {
     try { raw = readFileSync(sourcePath, 'utf-8'); } catch { console.warn(`  SKIP: ${sourcePath} not found`); continue; }
 
     const { body } = parseFrontmatter(raw);
-    const content = rewriteWikilinks(stripH1(body));
+    const content = escapeMdxSyntax(rewriteWikilinks(stripH1(body)));
     const desc = generateDescription(content);
 
     const lines = [
@@ -314,6 +359,12 @@ total += transformDoc('what/comparisons', comparisonMapping, 'comparisons');
 
 console.log('Use Cases → docs (section: use-cases)');
 total += transformDoc('what/use_cases', useCaseMapping, 'use-cases');
+
+console.log('Publishing → docs (section: publishing)');
+total += transformDoc('how/publishing', publishingMapping, 'publishing');
+
+console.log('Workshops → docs (section: workshops)');
+total += transformDoc('how/workshops', workshopMapping, 'workshops');
 
 console.log('Tutorials → guides');
 total += transformGuides();

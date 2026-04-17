@@ -1,0 +1,20 @@
+---
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../../components/sections/CardGrid.astro';
+import { getDocsBySection } from '../../../utils/collections';
+
+const publishingDocs = await getDocsBySection('publishing');
+const cards = publishingDocs.map((doc) => ({
+  title: doc.data.doc_title,
+  description: doc.data.description,
+  href: `/how/publishing/${doc.id}`,
+}));
+---
+
+<DocumentationLayout
+  title="Publishing"
+  description="How aDNA vault content becomes a live documentation site — pipeline, content mapping, and social sharing."
+>
+  <p>The publishing pipeline transforms vault Markdown into the Astro documentation site you are reading now. These docs cover the end-to-end pipeline, the content mapping between vault entities and site sections, and the OG image system for social sharing.</p>
+  <CardGrid cards={cards} columns={2} />
+</DocumentationLayout>

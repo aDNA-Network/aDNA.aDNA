@@ -1,0 +1,123 @@
+---
+title: "Build Your First Vault — aDNA Workshops"
+description: "A 90-minute hands-on workshop where participants fork the aDNA template, customize it for their own project, and leave with a working vault. By the end,..."
+doc_title: "Build Your First Vault"
+section: "workshops"
+order: 2
+---
+
+A 90-minute hands-on workshop where participants fork the aDNA template, customize it for their own project, and leave with a working vault. By the end, an AI agent can be dropped into their project cold and orient itself.
+
+## Workshop Goals
+
+By the end of this workshop, participants will have:
+
+1. A forked aDNA vault customized for their project domain
+2. A working CLAUDE.md with project-specific rules, personality, and structure
+3. One custom ontology extension (a new entity type specific to their domain)
+4. A mission file decomposing their first real task into objectives
+
+## Pre-Work
+
+Complete before arriving (45 minutes total):
+
+- [Create Your First CLAUDE.md](/learn/tutorials/first-claude-md) (20 min) — understand governance file structure
+- [Extend the Ontology](/learn/tutorials/extend-the-ontology) (25 min) — learn how to add custom entity types
+
+## Agenda
+
+| Time | Activity | Description |
+|------|----------|-------------|
+| 0:00 | Welcome & Context | Why build a vault? Brief recap of the triad. Show aDNA.aDNA as the reference implementation. |
+| 0:10 | Exercise 1: Fork | Clone the aDNA template, run the fork skill, choose a project name. Verify the triad directories exist. |
+| 0:25 | Exercise 2: CLAUDE.md | Write a CLAUDE.md for your project. Define: identity, safety rules, standing orders, domain knowledge. Test it — can an agent orient from cold? |
+| 0:45 | Exercise 3: Extend the Ontology | Identify one entity type unique to your domain. Create the directory, AGENTS.md, and template. Add it to your MANIFEST.md. |
+| 1:05 | Exercise 4: First Mission | Pick a real task from your project. Decompose it into a mission with 3-5 objectives. Write the mission file. |
+| 1:20 | Show & Tell | 2-3 volunteers share their vault. Group discusses: what worked? What was hard? |
+| 1:25 | Wrap-up | Next steps, resources, workshop_lattice_design preview. |
+
+## Facilitator Notes
+
+- **Use aDNA.aDNA as the worked example.** When explaining each step, show how this vault did it. The CLAUDE.md participants are writing mirrors the one in `aDNA.aDNA/CLAUDE.md`. The ontology extension mirrors the 10 extensions in `MANIFEST.md`. This is the [Dual Audience](/learn/concepts/dual-audience) principle in action: teach by showing, not telling.
+- **CLAUDE.md is the hardest exercise.** Participants struggle with what to include. Suggest they start with three questions: What is this project? What rules must agents follow? What does the domain look like? The rest fills itself in.
+- **Domain diversity is an asset.** Participants will have wildly different projects — a biotech lab, a marketing team, a solo developer. This is a feature, not a bug. Different domains produce different ontology extensions, which demonstrates that aDNA adapts rather than prescribes.
+- **Timebox exercise 2.** CLAUDE.md can absorb unlimited time. Set a hard 20-minute limit and tell participants they can refine later.
+
+## Materials / Prerequisites
+
+- **Required**: Git, Obsidian, a code editor, the aDNA template repo cloned (`github.com/LatticeProtocol/Agentic-DNA`)
+- **Optional**: Claude Code for live agent testing during exercise 2
+- **Handout**: One-page CLAUDE.md template with section prompts (Identity, Safety, Standing Orders, Domain Knowledge)
+
+## Exercises
+
+### Exercise 1: Fork the Template
+
+**Instructions**: Clone the aDNA template and create your project:
+
+```bash
+git clone https://github.com/LatticeProtocol/Agentic-DNA.git
+cp -r Agentic-DNA/.adna/ my_project.aDNA/
+cd my_project.aDNA
+```
+
+Open in Obsidian. Verify you see `who/`, `what/`, `how/` directories.
+
+**Expected outcome**: A fresh vault with the base triad structure, governance files, and templates ready for customization.
+
+### Exercise 2: Write Your CLAUDE.md
+
+**Instructions**: Open `CLAUDE.md` and replace the template content with your project. Address these sections:
+
+1. **Identity** — What is this project? What personality should agents adopt?
+2. **Safety Rules** — What must agents never do? What requires confirmation?
+3. **Standing Orders** — Rules that apply to every session
+4. **Domain Knowledge** — Key concepts, entity types, vocabulary specific to your project
+
+**Test**: If available, start Claude Code in your vault directory. Can it describe what the project is? Can it find files? Does it follow your rules?
+
+**Expected outcome**: An agent dropped into this vault cold can orient and begin useful work within 30 seconds.
+
+### Exercise 3: Extend the Ontology
+
+**Instructions**: Identify one entity type unique to your domain. Examples: `experiment` (research lab), `campaign` (marketing team), `model_card` (ML team), `protocol` (biotech lab).
+
+1. Create the directory under the appropriate triad leg (most domain entities go in `what/`)
+2. Write an `AGENTS.md` with: What's Here, Working Rules, Load/Skip Decision
+3. Create a template in `how/templates/` named `template_{your_type}.md`
+4. Add the new type to your MANIFEST.md ontology table
+
+**Expected outcome**: A new entity type with directory, routing, and template — ready for content.
+
+### Exercise 4: First Mission
+
+**Instructions**: Pick a real task from your project that's too big for one session. Decompose it:
+
+1. Write a mission brief (1-2 sentences: what and why)
+2. Define 3-5 objectives (each completable in one session)
+3. Identify dependencies between objectives
+4. Save as `how/missions/mission_{name}.md`
+
+**Expected outcome**: A structured mission file that could be handed to any agent or team member.
+
+## Assessment / Feedback
+
+**Exit questions**:
+
+1. Does your vault have a working CLAUDE.md, one ontology extension, and one mission?
+2. Could an agent orient itself in your vault without additional instructions?
+3. What's one thing you'd change about how you currently organize project knowledge?
+
+**Success signal**: Participants leave with a vault they'll actually use next week.
+
+## Self-Reference
+
+This workshop follows the exact process that created aDNA.aDNA itself. Phase 0 (M00) of [[campaign_rosetta|Operation Rosetta]] forked the template, customized governance, and extended the ontology with 10 new entity types — the same steps participants complete in exercises 1-3. The mission file participants write in exercise 4 mirrors the 24 mission files in `how/campaigns/campaign_rosetta/missions/`.
+
+## Related
+
+- [Vault Exploration](/how/workshops/vault-exploration) — prerequisite workshop
+- [Lattice Design](/how/workshops/lattice-design) — next workshop in the series
+- [Facilitation Guide](/how/workshops/facilitation-guide) — meta-guide for running any aDNA workshop
+- [Governance Files](/learn/concepts/governance-files) — the concept behind exercise 2
+- [Mission Decomposition](/patterns/mission-decomposition) — the pattern behind exercise 4

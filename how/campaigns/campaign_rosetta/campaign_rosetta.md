@@ -4,14 +4,14 @@ type: campaign
 title: "Operation Rosetta — Self-Referential aDNA Context Graph"
 owner: stanley
 status: active
-current_phase: 5
+current_phase: 6
 phase_count: 7
 mission_count: 35
 estimated_sessions: "65-85"
 estimation_class: content-novel
 priority: high
 created: 2026-04-13
-updated: 2026-04-15
+updated: 2026-04-17
 last_edited_by: agent_stanley
 tags: [campaign, rosetta, adna, documentation, education, website]
 ---
@@ -38,7 +38,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | **4: The Who** | **Complete** | M13-M15 | 37 files | Community, adopters, glossary |
 | **4.5: III Site Improvements** | **Complete** | M20-M23 | site upgrade | Hero, new sections, components, OG images, III review |
 | **5: The How** | **Complete** | M16-M18 | 11 files | Publishing, workshops, lattices |
-| **6: Website v2** | Planned | M19 | site polish | Final content sync, quality pass, brand refinement |
+| **6: Website v2** | **Complete** | M19 | 112 pages | How section: 11 new pages + 4 indexes, MDX escaping, OG image |
 | **7: 100-Cycle III Loop** | Planned | M24-M35 | site perfection | 100 iterative improvement cycles across 10 themed decadals |
 
 > **Restructured 2026-04-14**: Website moved from deferred Phase 5 to active Phase 3. Content graph phases (Who, How) slide to Phases 4-5. New Phase 6 adds a final website polish pass after all content is complete.
@@ -101,7 +101,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 
 | Mission | Title | Status | Deliverables | Dependencies |
 |---------|-------|--------|-------------|-------------|
-| M19 | Website Review & Polish | pending | Phase 4-5 content synced, glossary section, quality re-run | Phases 4-5 |
+| M19 | Website Review & Polish | **completed** | How section: 11 content pages + 4 indexes, MDX escaping, OG image | Phases 4-5 |
 
 ### Phase 7: 100-Cycle III Loop
 

@@ -104,6 +104,12 @@ const variants = [
     subtitle: 'Roles, contributions, and adopter personas',
     accent: '#14919B',
   },
+  {
+    file: 'og-how.png',
+    title: 'aDNA How',
+    subtitle: 'Publishing, workshops, and lattice examples',
+    accent: '#2A9D8F',
+  },
 ];
 
 for (const v of variants) {

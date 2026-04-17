@@ -1,0 +1,20 @@
+---
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../../components/sections/CardGrid.astro';
+import { getDocsBySection } from '../../../utils/collections';
+
+const workshopDocs = await getDocsBySection('workshops');
+const cards = workshopDocs.map((doc) => ({
+  title: doc.data.doc_title,
+  description: doc.data.description,
+  href: `/how/workshops/${doc.id}`,
+}));
+---
+
+<DocumentationLayout
+  title="Workshops"
+  description="Structured workshop kits for teaching aDNA — beginner to advanced, 60 to 120 minutes."
+>
+  <p>Workshop kits for teaching aDNA at different proficiency levels. Each kit includes goals, a timed agenda, exercises, facilitator notes, and assessment criteria. Start with Vault Exploration for beginners or jump to Lattice Design for advanced practitioners.</p>
+  <CardGrid cards={cards} columns={2} />
+</DocumentationLayout>

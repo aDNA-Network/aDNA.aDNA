@@ -1,0 +1,30 @@
+---
+import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../components/sections/CardGrid.astro';
+
+const sections = [
+  {
+    title: 'Publishing',
+    description: 'How vault content becomes a live documentation site — the transform pipeline, content mapping, and social sharing system.',
+    href: '/how/publishing/',
+  },
+  {
+    title: 'Workshops',
+    description: 'Structured workshop kits for teaching aDNA — from beginner vault exploration to advanced lattice design.',
+    href: '/how/workshops/',
+  },
+  {
+    title: 'Lattice Examples',
+    description: 'Self-referential lattice definitions that model the processes used to build this vault and site.',
+    href: '/how/lattice-examples/',
+  },
+];
+---
+
+<DocumentationLayout
+  title="How"
+  description="Operational processes for aDNA — publishing pipelines, workshops, and lattice examples."
+>
+  <p>The <strong>how/</strong> leg of the aDNA triad covers operational processes — the repeatable workflows that turn knowledge into outcomes. This section documents the publishing pipeline behind this site, workshop kits for teaching aDNA, and self-referential lattice definitions that model aDNA's own processes.</p>
+  <CardGrid cards={sections} columns={3} />
+</DocumentationLayout>

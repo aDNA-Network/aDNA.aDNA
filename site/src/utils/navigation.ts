@@ -168,6 +168,37 @@ export const navigation: NavGroup[] = [
     ],
   },
   {
+    label: 'How',
+    items: [
+      {
+        label: 'Publishing',
+        items: [
+          { label: 'Vault-to-Site Pipeline', href: '/how/publishing/vault-to-site', order: 1 },
+          { label: 'Content Mapping', href: '/how/publishing/content-mapping', order: 2 },
+          { label: 'Social Sharing', href: '/how/publishing/social-sharing', order: 3 },
+        ],
+      },
+      {
+        label: 'Workshops',
+        items: [
+          { label: 'Vault Exploration', href: '/how/workshops/vault-exploration', order: 1 },
+          { label: 'Build Your First Vault', href: '/how/workshops/build-your-first-vault', order: 2 },
+          { label: 'Lattice Design', href: '/how/workshops/lattice-design', order: 3 },
+          { label: 'Facilitation Guide', href: '/how/workshops/facilitation-guide', order: 4 },
+        ],
+      },
+      {
+        label: 'Lattice Examples',
+        items: [
+          { label: 'Content Pipeline', href: '/how/lattice-examples/content-pipeline', order: 1 },
+          { label: 'Campaign Execution', href: '/how/lattice-examples/campaign-execution', order: 2 },
+          { label: 'Context Serving', href: '/how/lattice-examples/context-serving', order: 3 },
+          { label: 'Dual Audience Review', href: '/how/lattice-examples/dual-audience-review', order: 4 },
+        ],
+      },
+    ],
+  },
+  {
     label: 'Reference',
     items: [
       { label: 'Specification', href: '/reference/specification', order: 1 },

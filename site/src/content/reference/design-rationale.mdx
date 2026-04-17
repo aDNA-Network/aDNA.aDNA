@@ -1,11 +1,11 @@
 ---
 title: "Design Rationale — aDNA Reference"
-description: "{/*  Companion to the aDNA Universal Standard v2.1 */}"
+description: "This document explains why aDNA is designed the way it is. It is the companion to the aDNA Universal Standard, which defines what to do. A third piece —..."
 ref_title: "Design Rationale"
 stability: "stable"
 ---
 
-{/*  Companion to the aDNA Universal Standard v2.1 */}
+{/*  Companion to the aDNA Universal Standard v2.1  */}
 
 ## 1. Preamble
 
@@ -141,20 +141,20 @@ The following diagram shows both deployment forms side by side. The triad ontolo
 flowchart TB
     subgraph BARE["Bare Triad (Knowledge Base)"]
         BR["project_root/"]
-        BR */} BC["CLAUDE.md"]
-        BR */} BW["what/"]
-        BR */} BH["how/"]
-        BR */} BO["who/"]
+        BR --> BC["CLAUDE.md"]
+        BR --> BW["what/"]
+        BR --> BH["how/"]
+        BR --> BO["who/"]
     end
 
     subgraph EMBED["Embedded Triad (Git Repo)"]
         ER["repo_root/"]
-        ER */} EC["CLAUDE.md"]
-        ER */} EA[".agentic/"]
-        ER */} ES["src/"]
-        EA */} EW["what/"]
-        EA */} EH["how/"]
-        EA */} EO["who/"]
+        ER --> EC["CLAUDE.md"]
+        ER --> EA[".agentic/"]
+        ER --> ES["src/"]
+        EA --> EW["what/"]
+        EA --> EH["how/"]
+        EA --> EO["who/"]
     end
 
     BARE ---|"Same ontology<br/>Different packaging"| EMBED
@@ -316,13 +316,13 @@ This means collision prevention must be cooperative, not enforced. Agents follow
 
 ```mermaid
 flowchart TB
-    Start["Agent wants to<br/>modify a file"] */} Read["Read current content"]
-    Read */} Check{"updated = today<br/>AND different author?"}
-    Check */}|No| Safe["Write with<br/>frontmatter attribution"]
-    Check */}|Yes| Ask["Confirm with user<br/>before overwriting"]
-    Ask */}|Approved| Safe
-    Ask */}|Denied| New["Create new file instead<br/>(zero collision risk)"]
-    Safe */} Done["Update last_edited_by<br/>+ updated fields"]
+    Start["Agent wants to<br/>modify a file"] --> Read["Read current content"]
+    Read --> Check{"updated = today<br/>AND different author?"}
+    Check -->|No| Safe["Write with<br/>frontmatter attribution"]
+    Check -->|Yes| Ask["Confirm with user<br/>before overwriting"]
+    Ask -->|Approved| Safe
+    Ask -->|Denied| New["Create new file instead<br/>(zero collision risk)"]
+    Safe --> Done["Update last_edited_by<br/>+ updated fields"]
 
     style Safe fill:#22c55e,color:#fff
     style Ask fill:#eab308,color:#000
@@ -398,11 +398,11 @@ We made pipelines optional rather than required because not every project has st
 ```mermaid
 stateDiagram-v2
     direction LR
-    [*] */} inbox
-    inbox */} processing: Agent picks up
-    processing */} review: Work complete
-    review */} done: Approved
-    review */} processing: Needs revision
+    [*] --> inbox
+    inbox --> processing: Agent picks up
+    processing --> review: Work complete
+    review --> done: Approved
+    review --> processing: Needs revision
 
     note left of inbox: File location<br/>= processing state
     note right of done: No separate<br/>status database
@@ -475,14 +475,14 @@ A reference implementation — a fully worked example — demonstrates how to fi
 ```mermaid
 flowchart TB
     P["Persona Framework"]
-    P */} ID["Identity<br/>Name, role, mission"]
-    P */} OS["Operating Style<br/>3-5 behavioral principles"]
-    P */} CN["Communication Norms<br/>Tone, format, greetings"]
-    P */} DA["Domain Awareness<br/>Project-specific context"]
+    P --> ID["Identity<br/>Name, role, mission"]
+    P --> OS["Operating Style<br/>3-5 behavioral principles"]
+    P --> CN["Communication Norms<br/>Tone, format, greetings"]
+    P --> DA["Domain Awareness<br/>Project-specific context"]
 
-    ID */} EX1["e.g. Chief of Staff<br/>to the operation"]
-    OS */} EX2["e.g. Orient first,<br/>think in lines of effort"]
-    CN */} EX3["e.g. Direct, SITREP format,<br/>no filler"]
+    ID --> EX1["e.g. Chief of Staff<br/>to the operation"]
+    OS --> EX2["e.g. Orient first,<br/>think in lines of effort"]
+    CN --> EX3["e.g. Direct, SITREP format,<br/>no filler"]
 
     style P fill:#8b5cf6,color:#fff
 ```

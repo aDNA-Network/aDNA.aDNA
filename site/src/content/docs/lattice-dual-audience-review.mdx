@@ -1,0 +1,109 @@
+---
+title: "Dual Audience Review — aDNA Lattice Examples"
+description: "A 6-node agent lattice implementing the quality gate every content file passes: developer review, newcomer review, self-reference scan, and cross-link check."
+doc_title: "Dual Audience Review"
+section: "lattice-examples"
+order: 4
+badge: "new"
+---
+
+This lattice is the quality gate. Every content file on this site — every concept, tutorial, pattern, and comparison — passed through this review process before being marked complete. The content file fans out to four parallel checks (developer review, newcomer review, self-reference scan, cross-link check), and the results converge into a single quality verdict.
+
+The fan-out/fan-in topology is deliberate: the developer and newcomer perspectives are independent evaluations that should not influence each other. A file that scores 5/5 for technical depth but 1/5 for newcomer accessibility is not done — both audiences must be served.
+
+| Property | Value |
+|----------|-------|
+| **Lattice type** | `agent` |
+| **Execution mode** | `hybrid` |
+| **Node count** | 6 |
+| **Tier** | L1 (local) |
+
+## How it connects
+
+This lattice implements [Dual-Audience Writing](/patterns/dual-audience) as an executable quality gate. The developer review node checks for spec citations per the [aDNA Specification](/reference/specification). The newcomer review node enforces the plain-language opening rule. The self-reference scan ensures every file cites a concrete vault example — the principle that makes this documentation self-demonstrating. See [Dual Audience](/learn/concepts/dual-audience) for the concept.
+
+## Full lattice definition
+
+```yaml
+lattice:
+  name: dual_audience_review
+  version: "1.0.0"
+  lattice_type: agent
+  description: >
+    Quality review agent for aDNA content files. Evaluates each file against
+    two audience perspectives (developer and newcomer), checks for
+    self-referential vault citations, verifies cross-linking, and produces a
+    quality verdict. Self-referential: this lattice IS the quality gate that
+    every content file in aDNA.aDNA passed during Operation Rosetta.
+  execution:
+    mode: hybrid
+    runtime: local
+    tier: L1
+    model: "claude-opus-4-6"
+  nodes:
+    - id: content_file
+      type: dataset
+      description: "The vault content file under review (concept, tutorial, pattern, etc.)"
+    - id: developer_review
+      type: reasoning
+      description: "Evaluate from a developer perspective — technical precision, spec citations, integration guidance"
+      prompt: >
+        Review this content file as a developer building with aDNA.
+        Check: Are technical claims precise? Do normative claims cite
+        adna_standard.md sections? Would a developer find enough detail
+        to implement? Rate technical depth 1-5.
+    - id: newcomer_review
+      type: reasoning
+      description: "Evaluate from a newcomer perspective — plain language, metaphors, accessibility"
+      prompt: >
+        Review this content file as someone encountering aDNA for the
+        first time. Check: Does the opening paragraph make sense without
+        jargon? Are there metaphors or examples? Could a 14-year-old
+        follow the first 3 sentences? Rate accessibility 1-5.
+    - id: self_reference_scan
+      type: process
+      description: "Verify the file cites at least one concrete example from THIS vault — a directory, file, or governance chain the reader can inspect"
+    - id: cross_link_check
+      type: process
+      description: "Verify minimum 2 wikilinks to other content files in the vault"
+    - id: quality_verdict
+      type: dataset
+      description: "Combined quality assessment — pass/fail with dimension scores and improvement suggestions"
+  edges:
+    - from: content_file
+      to: developer_review
+      label: "file content"
+    - from: content_file
+      to: newcomer_review
+      label: "file content"
+    - from: content_file
+      to: self_reference_scan
+      label: "file content"
+    - from: content_file
+      to: cross_link_check
+      label: "file content"
+    - from: developer_review
+      to: quality_verdict
+      label: "technical score"
+    - from: newcomer_review
+      to: quality_verdict
+      label: "accessibility score"
+    - from: self_reference_scan
+      to: quality_verdict
+      label: "self-ref pass/fail"
+    - from: cross_link_check
+      to: quality_verdict
+      label: "link count"
+  fair:
+    license: "MIT"
+    creators:
+      - "Lattice Labs"
+    keywords:
+      - quality review
+      - dual audience
+      - self-reference
+      - content quality
+      - agent
+      - self-referential
+    provenance: "Models the dual-audience quality review process used by Operation Rosetta. Implements skill_dual_audience_review.md and skill_self_reference_check.md as a lattice."
+```
