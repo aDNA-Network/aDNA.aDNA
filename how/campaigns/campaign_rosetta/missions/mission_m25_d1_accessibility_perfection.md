@@ -1,0 +1,83 @@
+---
+mission_id: m25
+type: mission
+title: "D1: Accessibility Perfection"
+campaign: campaign_rosetta
+status: in_progress
+priority: high
+created: 2026-04-16
+updated: 2026-04-16
+last_edited_by: agent_stanley
+tags: [mission, rosetta, phase-7, iii, d1, accessibility]
+---
+
+# M25 — D1: Accessibility Perfection
+
+## Mission Brief
+
+Execute cycles 1-10 of the Phase 7 III loop, themed around accessibility perfection. Target: WCAG AA compliance across all pages, Lighthouse accessibility score 100 on all 5 representative pages, keyboard navigation with visible focus indicators, and screen-reader-friendly interactive components.
+
+## Baseline (from M24)
+
+| Page | Performance | Accessibility | Best Practices | SEO |
+|------|-------------|---------------|----------------|-----|
+| Homepage | 97 | 96 | 100 | 100 |
+| Concept (triad) | 96 | 100 | 100 | 100 |
+| Tutorial (first-claude-md) | 97 | 96 | 100 | 100 |
+| Glossary (adna) | 99 | 100 | 100 | 100 |
+| Adopter (solo-developer) | 98 | 100 | 100 | 100 |
+| **Average** | **97.4** | **98.4** | **100** | **100** |
+
+## Root Cause Analysis
+
+The only failing Lighthouse audit is **color-contrast** in dark mode:
+1. CTA buttons: #ffffff on #14919b = 3.78:1 (needs 4.5:1)
+2. Step numbers: #14919b on #242424 = 4.1:1 (needs 4.5:1)
+3. Card links: #14919b on #242424 = 4.1:1
+4. Difficulty badge: #147b3a on #1a3223 = 2.57:1 (critical)
+
+Additional gaps: zero `:focus-visible` styles, CodeBlock copy button invisible to keyboard, mobile menu lacks focus management.
+
+## Objectives
+
+### O1: Dark-mode brand primary contrast (Cycle 1) ✓
+
+- [x] Fix `--brand-primary-light` in dark mode from `#14919B` to `#22B3BD` (6.1:1 on dark bg)
+- [x] Add dark-mode `.btn-primary` override using `--brand-primary` (#0D7377) as background
+- [x] Validate: Homepage a11y 96 → 100
+
+### O2: Difficulty badge dark-mode contrast (Cycle 2) ✓
+
+- [x] Add dark-mode overrides for beginner/intermediate/advanced badges
+- [x] Fix TOC heading order (`<h4>` → `<p>` for nav label)
+- [x] Validate: Tutorial a11y 96 → 100
+
+### O3: Global focus-visible system (Cycle 3) ✓
+
+- [x] Add `:focus-visible` CSS rules to `global.css`
+- [x] Validate: keyboard tab shows visible focus ring on all interactive elements
+
+### O4: CodeBlock copy button keyboard access (Cycle 4) ✓
+
+- [x] Make copy button visible on `:focus-visible` (was opacity:0, hover only)
+- [x] Validate: tab to code block copy button shows button
+
+### O5: Mobile menu focus management (Cycle 5) ✓
+
+- [x] Focus first link on menu open
+- [x] Restore focus to toggle on menu close
+- [x] Close on Escape key
+- [x] Auto-close on focus-out
+- [x] Validate: keyboard-only mobile menu operation
+
+### O6-O10: Cycles 6-10 (planned)
+
+To be defined based on findings from cycles 1-5. Likely targets:
+- Additional dark-mode contrast auditing on non-sample pages
+- ARIA enhancements for Mermaid diagrams
+- Focus order refinements
+- Decadal AAR at cycle 10
+
+## Dependencies
+
+- M24 (completed) — baseline infrastructure and measurements

@@ -28,8 +28,15 @@
   --color-link-hover: var(--brand-primary-dark);
 }
 
-/* Dark mode — lightened brand values for contrast on dark backgrounds */
+/* Dark mode — lightened brand values for contrast on dark backgrounds
+ *
+ * WCAG AA Contrast Ratios (on dark bg #242424):
+ *   --brand-primary-light #22B3BD → 6.1:1 ✓ (text on dark bg)
+ *   --brand-primary       #0D7377 → 5.6:1 ✓ (button bg with white text)
+ *   --color-link-hover    #5FC4C8 → 8.7:1 ✓ (text on dark bg)
+ */
 .dark {
+  --brand-primary-light: #22B3BD;
   --color-primary: var(--brand-primary-light);
   --color-primary-hover: var(--brand-primary);
   --color-accent: var(--brand-accent-light);

@@ -310,6 +310,15 @@ const stats = [
     color: white;
   }
 
+  /* Dark mode: use darker bg so white text passes WCAG AA (5.6:1) */
+  :global(.dark) .btn-primary {
+    background: var(--brand-primary);
+  }
+
+  :global(.dark) .btn-primary:hover {
+    background: var(--brand-primary-dark);
+  }
+
   .btn-secondary {
     border: 1px solid var(--color-border);
     color: var(--color-text);

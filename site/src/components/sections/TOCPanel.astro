@@ -9,7 +9,7 @@ const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 
 {tocHeadings.length > 0 && (
   <div class="toc-panel">
-    <h4 class="toc-title">On this page</h4>
+    <p class="toc-title">On this page</p>
     <ul class="toc-list">
       {tocHeadings.map((heading) => (
         <li class:list={[`toc-depth-${heading.depth}`]}>

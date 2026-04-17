@@ -77,7 +77,8 @@ const { filename } = Astro.props;
     top: calc(var(--text-xs) + var(--space-4) + var(--space-2));
   }
 
-  .code-block:hover .copy-btn {
+  .code-block:hover .copy-btn,
+  .copy-btn:focus-visible {
     opacity: 1;
   }
 

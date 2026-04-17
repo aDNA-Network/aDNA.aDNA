@@ -1,7 +1,7 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-04-17
+updated: 2026-04-16
 status: active
 last_edited_by: agent_stanley
 tags: [state, governance]
@@ -13,7 +13,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 6 complete. Ready for Phase 7.** Phases 0-6 complete (89 vault content files + 112-page live site). Phase 6 synced all Phase 5 content to the site: new How section with Publishing (3 pages), Workshops (4 pages), Lattice Examples (4 pages) + 4 index pages. Also fixed MDX angle bracket and HTML comment escaping in the transform pipeline. Next: Phase 7 (100-Cycle III Loop).
+**Phase 7 active — M25 (D1: Accessibility Perfection) in progress.** Phases 0-6 complete (89 vault content files + 112-page live site). Phase 6 deployed to Vercel 2026-04-16. Phase 7 executing: 100-cycle III loop across 10 themed decadals. Currently on D1 (Accessibility Perfection, cycles 1-10).
 
 ## Active Campaign
 
@@ -29,11 +29,11 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 | Phase 4.5: III Site Improvements | **Complete** | M20-M23 | Hero redesign, 37 new pages, components, OG images |
 | Phase 5: The How | **Complete** | M16-M18 | 11/11 (3 publishing, 4 workshops, 4 lattice YAMLs) |
 | Phase 6: Website v2 | **Complete** | M19 | How section live: 11 new pages + 4 index pages, MDX escaping fixes |
-| Phase 7: 100-Cycle III Loop | **Next** | M24-M35 | 100 improvement cycles, 10 decadal themes, persona ranker AARs |
+| Phase 7: 100-Cycle III Loop | **Active** | M24-M35 | 100 improvement cycles, 10 decadal themes, persona ranker AARs |
 
-## Phase 6 Deliverables
+## Phase 7 Progress
 
-- **M19: Website v2** — New "How" section with 3 subsections (Publishing, Workshops, Lattice Examples). 11 new content pages + 4 index pages. Transform script extended with publishing/workshop mappings + MDX syntax escaping (angle brackets, HTML comments). 6th OG image (`og-how.png`). Navigation updated to 8 sections. 112 total site pages. Clean build.
+- **M25: D1 Accessibility Perfection** (in progress) — Targeting WCAG AA compliance, Lighthouse a11y 100 on all pages, keyboard nav focus indicators. Root cause: dark-mode color contrast failures (`--brand-primary-light: #14919b` insufficient on dark backgrounds).
 
 ## What's Working
 
@@ -51,18 +51,18 @@ None. Phase 7 ready to execute.
 
 ## Next Steps
 
-1. **Phase 7: 100-Cycle III Loop** — M25-M35: 100 iterative improvement cycles across 10 themed decadals (Accessibility → Content Clarity → Navigation → Visual → Mobile → Performance → SEO → Components → Personas → Hardening). Baseline established (M24 complete). Skills: `skill_iii_cycle.md`, `skill_decadal_aar.md`. Tracker: `missions/artifacts/iii_cycle_tracker.md`. Phase gate: confirm with user before starting.
-2. **Deploy Phase 6 to Vercel** — run `vercel --prod` from `site/` to push How section live.
+1. **Complete D1 cycles 1-10** — Fix contrast, add focus-visible, keyboard accessibility improvements. Decadal AAR at cycle 10.
+2. **D2: Content Clarity Sprint** (M26) — after D1 completes.
 
 ## Pending Manual Actions
 
 - **GitHub social preview**: Upload `site/public/images/og-default.png` at github.com/LatticeProtocol/aDNA.aDNA > Settings > Social preview
 - **Vercel Git integration**: Connect repo at vercel.com > adna-docs > Settings > Git for auto-deploy (currently manual via `vercel --prod`)
 
-## Last Session (2026-04-17)
+## Last Session (2026-04-16)
 
-Completed Phase 6 (Website v2) — M19: synced all Phase 5 content to site. Added How section with Publishing (3 pages), Workshops (4 pages), Lattice Examples (4 pages) + 4 index pages + How landing page. Extended transform script with new mapping tables, MDX angle bracket escaping, and HTML comment conversion. Generated `og-how.png`. Fixed pre-existing MDX syntax issues in 4 reference files. 112-page site builds clean.
+Phase 7 started. Deployed Phase 6 to Vercel (112 pages live). Completed III cycles 1-5 of D1 (Accessibility Perfection): dark-mode color contrast fixes (brand primary + difficulty badges + TOC heading order), global `:focus-visible` system, CodeBlock copy button keyboard visibility, mobile menu focus management. All 5 Lighthouse sample pages now score **100/100/100/100** (Perf/A11y/BP/SEO). 30/30 Playwright gates pass.
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 6 complete (How section live on site: 112 pages). Deploy to Vercel via `vercel --prod` from `site/`. Phase 7 (100-Cycle III Loop) is next: M25 (D1: Accessibility Perfection) — WCAG AA compliance, Lighthouse a11y 100, keyboard nav, focus indicators. Baseline from M24: Perf 97.4, A11y 98.4, BP 100, SEO 100. Use `skill_iii_cycle.md` for each cycle, `skill_decadal_aar.md` every 10th cycle. Phase gate: confirm with user before starting.
+> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 7 active — M25 D1 cycles 1-5 complete (all pages 100 a11y). Continue with cycles 6-9 (Tier 2 agent-assessable improvements: ARIA enhancements, dark-mode contrast on non-sample pages, focus order). Cycle 10 triggers decadal AAR using `skill_decadal_aar.md` with 5-persona ranker. Check cycle tracker at `missions/artifacts/iii_cycle_tracker.md`.
