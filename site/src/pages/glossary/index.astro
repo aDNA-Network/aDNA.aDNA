@@ -19,10 +19,10 @@ const categories = [
 >
   <p>A single-page lookup table for all aDNA terms. Click any term for its full definition with plain-language and technical explanations.</p>
 
-  {categories.map((cat) => (
+  {categories.map((cat, i) => (
     <section class="glossary-category">
-      <h2>{cat.label}</h2>
-      <table>
+      <h2 id={`glossary-cat-${i}`}>{cat.label}</h2>
+      <table aria-labelledby={`glossary-cat-${i}`}>
         <thead>
           <tr>
             <th>Term</th>

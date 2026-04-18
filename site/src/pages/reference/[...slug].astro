@@ -60,21 +60,27 @@ const jsonLD = buildTechArticleJsonLD({
 
   .ref-stability.stable {
     background: color-mix(in srgb, var(--color-success) 15%, transparent);
-    color: var(--color-success);
+    color: hsl(142 72% 28%); /* darker green for WCAG AA (5.4:1 on white) */
   }
 
   .ref-stability.beta {
     background: color-mix(in srgb, var(--color-info) 15%, transparent);
-    color: var(--color-info);
+    color: hsl(199 89% 32%); /* darker blue for WCAG AA */
   }
 
   .ref-stability.experimental {
     background: color-mix(in srgb, var(--color-warning) 15%, transparent);
-    color: var(--color-warning);
+    color: hsl(38 92% 32%); /* darker amber for WCAG AA */
   }
 
   .ref-stability.deprecated {
     background: color-mix(in srgb, var(--color-error) 15%, transparent);
-    color: var(--color-error);
+    color: hsl(0 72% 35%); /* darker red for WCAG AA */
   }
+
+  /* Dark mode: lighten badge text for dark backgrounds */
+  :global(.dark) .ref-stability.stable { color: #34C06E; }
+  :global(.dark) .ref-stability.beta { color: #5CB8E8; }
+  :global(.dark) .ref-stability.experimental { color: #E89545; }
+  :global(.dark) .ref-stability.deprecated { color: #E87070; }
 </style>

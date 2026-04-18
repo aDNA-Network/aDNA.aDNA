@@ -116,6 +116,14 @@ code {
   font-family: var(--font-display);
 }
 
+/* ——— Shiki code block comment contrast fix (WCAG AA) ——— */
+/* Shiki github-dark uses #6A737D for comments (3.04:1 on #24292E — fails AA).
+   Override to #8B949E (4.65:1 on #24292E — passes AA). */
+.prose pre span[style*="color:#6A737D"],
+.prose pre span[style*="color: #6A737D"] {
+  color: #8B949E !important;
+}
+
 /* ——— Focus indicators (WCAG 2.1 AA keyboard accessibility) ——— */
 :focus-visible {
   outline: 2px solid var(--color-primary);
@@ -132,4 +140,53 @@ button:focus-visible,
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 25%, transparent);
+}
+
+/* Programmatic focus on <main id="main-content" tabindex="-1"> (skip link target)
+   should not render a visible ring — keyboard UA triggers :focus-visible on
+   <a>-driven hash jumps. */
+main:focus {
+  outline: none;
+}
+
+/* ——— Skip link (WCAG 2.4.1 Bypass Blocks) ——— */
+/* Visually hidden until focused; on keyboard focus it reveals a themed pill
+   above all sticky UI. */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -120%);
+  z-index: 100;
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-primary);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 35%, transparent);
+  transition: transform var(--transition-fast);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translate(-50%, var(--space-2));
+  outline: 2px solid var(--color-text-heading);
+  outline-offset: 2px;
+}
+
+/* ——— Motion preferences (WCAG 2.3.3 Animation from Interactions) ——— */
+/* Honor OS-level reduced-motion preference. Near-zero (not zero) durations
+   keep state changes accessible to screen readers while eliminating motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

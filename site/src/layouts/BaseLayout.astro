@@ -56,13 +56,11 @@ const {
     <ClientRouter />
   </head>
   <body class:list={['min-h-screen flex flex-col', bodyClass]}>
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black">
-      Skip to main content
-    </a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <Header />
 
-    <main id="main-content" class="flex-1">
+    <main id="main-content" class="flex-1" tabindex="-1">
       <slot />
     </main>
 

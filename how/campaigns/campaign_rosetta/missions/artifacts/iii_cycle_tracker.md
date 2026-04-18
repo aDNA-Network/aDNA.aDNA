@@ -1,7 +1,7 @@
 ---
 type: artifact
 created: 2026-04-15
-updated: 2026-04-16
+updated: 2026-04-17
 status: active
 last_edited_by: agent_stanley
 tags: [artifact, iii, cycle-tracker, phase-7]
@@ -15,7 +15,7 @@ Structured log for all 100 improvement cycles across 10 decadals. Each cycle app
 
 | Decadal | Cycles | Theme | Status | AAR |
 |---------|--------|-------|--------|-----|
-| D1 | 1-10 | Accessibility Perfection | in_progress (5/10) | — |
+| D1 | 1-10 | Accessibility Perfection | complete | [aar_phase7_d1.md](aar_phase7_d1.md) |
 | D2 | 11-20 | Content Clarity Sprint | pending | — |
 | D3 | 21-30 | Navigation & IA | pending | — |
 | D4 | 31-40 | Visual Polish | pending | — |
@@ -172,3 +172,105 @@ To be established at D1 AAR (cycle 10).
 
 **Validation**: PASS — Build: 112 pages, 2.23s, 0 errors. Gates: 30/30 pass.
 **Carry-Forward**: none.
+
+### Cycle 6 — 2026-04-16
+
+**Decadal**: D1 (Accessibility Perfection)
+**Target**: Glossary table accessibility — tables lacked `aria-labelledby` (WCAG 1.3.1)
+**Before**: 4 glossary category tables had no accessible name
+**After**: Each table linked to its category heading via `aria-labelledby`
+
+**Changes**:
+- `site/src/pages/glossary/index.astro`: Added `id` to category `<h2>` headings and `aria-labelledby` to corresponding `<table>` elements.
+
+**Validation**: PASS — Build: 112 pages. Gates: 30/30 pass. Glossary page a11y: 100.
+**Carry-Forward**: none.
+
+### Cycle 7 — 2026-04-16
+
+**Decadal**: D1 (Accessibility Perfection)
+**Target**: Footer semantic landmark — links not wrapped in `<nav>` element
+**Before**: Footer links in a plain `<div class="footer-links">`
+**After**: Footer links wrapped in `<nav aria-label="Footer navigation">`
+
+**Changes**:
+- `site/src/components/common/Footer.astro`: Changed `<div class="footer-links">` to `<nav class="footer-links" aria-label="Footer navigation">`.
+
+**Validation**: PASS — Build: 112 pages. Gates: 30/30 pass.
+**Carry-Forward**: none.
+
+### Cycle 8 — 2026-04-16
+
+**Decadal**: D1 (Accessibility Perfection)
+**Target**: MermaidDiagram component accessible markup — future-proofing WCAG 1.1.1
+**Before**: Mermaid container had no `role` or `aria-label`; rendered SVGs had no accessibility attributes
+**After**: Container has `role="img"` + `aria-label` (from caption or default); rendered SVGs marked `aria-hidden="true"` (container provides accessible name)
+
+**Changes**:
+- `site/src/components/islands/MermaidDiagram.astro`: Added `role="img"` and `aria-label` to `.mermaid-container`. Post-render script marks SVG `aria-hidden="true"`.
+
+**Note**: MermaidDiagram is not currently imported in any content files — this is a preventive fix for when diagrams are added.
+
+**Validation**: PASS — Build: 112 pages. Gates: 30/30 pass.
+**Carry-Forward**: none.
+
+### Cycle 9 — 2026-04-16
+
+**Decadal**: D1 (Accessibility Perfection)
+**Target**: Extended axe-core sweep — found 2 issues on non-sample pages
+**Before**: /reference/specification/ had 5 color-contrast violations (ref-stability badge + Shiki code comments)
+**After**: All 15 tested pages pass axe-core WCAG AA with zero violations
+
+**Changes**:
+- `site/src/pages/reference/[...slug].astro`: Darkened stability badge text colors for light mode (stable, beta, experimental, deprecated). Added dark-mode overrides for all 4 badge variants.
+- `site/src/styles/global.css`: Added CSS override for Shiki `github-dark` comment color (`#6A737D` → `#8B949E`, 4.65:1 on `#24292E`).
+
+**Extended axe-core results** (15 pages beyond the 5 Lighthouse samples):
+| Status | Pages |
+|--------|-------|
+| PASS | /community/, /community/community-roles/, /adopters/, /adopters/adopter-educator/, /use-cases/, /use-cases/solo-developer/, /how/, /how/workshops/build-your-first-vault/, /how/publishing/vault-to-site/, /how/lattice-examples/lattice-context-serving/, /learn/comparisons/adna-vs-para/, /glossary/, /reference/specification/, /get-started/, /changelog/ |
+| FAIL | none |
+
+**Lighthouse** (specification page, desktop):
+| Category | Score |
+|----------|-------|
+| Performance | 100 |
+| Accessibility | 100 |
+| Best Practices | 100 |
+| SEO | 100 |
+
+**Validation**: PASS — Build: 112 pages, 2.29s, 0 errors. Gates: 30/30 pass.
+**Carry-Forward**: none.
+
+### Cycle 10 — 2026-04-17
+
+**Decadal**: D1 (Accessibility Perfection) — closeout cycle + Decadal AAR
+**Target**: Skip link polish (WCAG 2.4.1 Bypass Blocks) + motion preferences (WCAG 2.3.3)
+**Before**: Skip link existed in `BaseLayout.astro` but used unstyled Tailwind `focus:bg-white` classes; `<main>` lacked `tabindex="-1"` so focus didn't reliably land on activation. No `prefers-reduced-motion` support anywhere.
+**After**: Skip link reveals as a themed branded pill on keyboard focus with brand-primary background + high-contrast text and outline; `<main tabindex="-1">` receives focus cleanly without showing a ring (main-level `:focus { outline: none }` override). Global `@media (prefers-reduced-motion: reduce)` honors OS preference across all animations and transitions.
+
+**Changes**:
+- `site/src/layouts/BaseLayout.astro`: Replaced raw Tailwind utility classes on the skip link with a single `.skip-link` class. Added `tabindex="-1"` to `<main id="main-content">` so programmatic/hash-jump focus can land there.
+- `site/src/styles/global.css`: Added themed `.skip-link` rules (translated off-screen by default, slides into view on `:focus`/`:focus-visible`, brand-primary background, drop shadow, heading-color outline on focus). Added `main:focus { outline: none }` to suppress the default focus ring on the skip-link target. Added `@media (prefers-reduced-motion: reduce)` block that reduces animation/transition durations to 0.01ms and disables smooth-scroll for all elements.
+
+**Lighthouse** (all 5 pages, desktop preset):
+| Page | Perf | A11y | BP | SEO |
+|------|------|------|----|-----|
+| Homepage | 100 | 100 | 100 | 100 |
+| Concept (triad) | 100 | 100 | 100 | 100 |
+| Tutorial (first-claude-md) | 100 | 100 | 100 | 100 |
+| Glossary (glossary-adna) | 100 | 100 | 100 | 100 |
+| Adopter (solo-developer) | 100 | 100 | 100 | 100 |
+| **Average** | **100** | **100** | **100** | **100** |
+
+**Validation**: PASS — Build: 112 pages, 2.24s, 0 errors. Gates: 30/30 pass. Rendered HTML confirms `<a href="#main-content" class="skip-link">` + `<main id="main-content" ... tabindex="-1">`; compiled CSS bundle contains `prefers-reduced-motion` rule.
+**Carry-Forward**: none.
+
+---
+
+## Decadal D1 Summary — Accessibility Perfection (Cycles 1-10)
+
+- **AAR artifact**: [aar_phase7_d1.md](aar_phase7_d1.md)
+- **Persona ranker averages (D1 baseline)**: Findability 4.0 · Comprehension 3.8 · Actionability 3.6 · Trust 4.8 · Relevance 3.6 · Delight 4.0 (overall avg 4.0)
+- **Lighthouse**: All 5 sample pages improved from 97.4/98.4/100/100 → 100/100/100/100 (Perf/A11y/BP/SEO). Extended axe-core sweep of 15 additional pages: 0 violations.
+- **Key carry-forwards into D2**: Content clarity variance (plain-language opening depth), in-page cross-link density, landing-page scent for Enterprise + Researcher personas, actionable "next step" calls on tutorial + concept endings.

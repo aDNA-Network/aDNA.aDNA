@@ -9,7 +9,13 @@ const diagramId = `mermaid-${Math.random().toString(36).slice(2, 9)}`;
 ---
 
 <figure class="mermaid-figure">
-  <div class="mermaid-container" id={diagramId} data-chart={chart}>
+  <div
+    class="mermaid-container"
+    id={diagramId}
+    data-chart={chart}
+    role="img"
+    aria-label={caption || "Mermaid diagram"}
+  >
     <noscript>
       <pre><code>{chart}</code></pre>
     </noscript>
@@ -55,6 +61,9 @@ const diagramId = `mermaid-${Math.random().toString(36).slice(2, 9)}`;
         const { svg } = await mermaid.render(`${container.id}-svg`, chart);
         container.innerHTML = svg;
         container.removeAttribute('data-chart');
+        // Mark rendered SVG as presentational — container has the accessible name
+        const svgEl = container.querySelector('svg');
+        if (svgEl) svgEl.setAttribute('aria-hidden', 'true');
       } catch (e) {
         container.innerHTML = `<pre><code>${chart}</code></pre>`;
       }
