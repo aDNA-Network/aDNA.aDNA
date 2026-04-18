@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-17
 status: active
 pattern_category: federation
 applies_to: [lattices, modules]
@@ -13,7 +13,7 @@ tags: [pattern, federation, readiness, sharing, checklist, federation]
 
 ## Problem
 
-A lattice that works perfectly within one project may fail when shared with another. Internal references break (`ref: what/modules/my_module` doesn't exist in the target project). Missing metadata blocks federation validation. Undeclared provenance makes the lattice untrustworthy. The gap between "works locally" and "shareable across instances" requires deliberate preparation.
+Something that works in your project isn't automatically safe to hand to someone else. A workflow may rely on files only you have, skip the labels a stranger needs to trust it, or miss the licensing a partner's legal team will ask for. The gap between "works locally" and "safe to share across projects" takes deliberate preparation — internal references break, metadata is missing, provenance is undeclared.
 
 ## Solution
 

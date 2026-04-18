@@ -7,6 +7,8 @@ estimated_time: "25 minutes"
 date: 2026-04-14
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## What You'll Build
 
 A new entity type for your project — complete with a directory, AGENTS.md, template, and your first instance file. By the end, your vault speaks your domain's language.
@@ -137,5 +139,7 @@ Check your extension against the [base/extension](/patterns/base-extension) rule
 
 ## Next Steps
 
-- [Write a Context File](/learn/tutorials/write-a-context-file) — create curated knowledge for your context library
-- [Context Optimization](/learn/concepts/context-optimization) — make your context files token-efficient
+<CardGrid columns={2} cards={[
+  { title: "Write a Context File", href: "/learn/tutorials/write-a-context-file", description: "Create curated knowledge for your context library." },
+  { title: "Context Optimization", href: "/learn/concepts/context-optimization", description: "Make your context files token-efficient." }
+]} />

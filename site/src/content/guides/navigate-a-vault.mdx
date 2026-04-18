@@ -7,6 +7,8 @@ estimated_time: "15 minutes"
 date: 2026-04-14
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## What You'll Build
 
 Nothing — this is a guided tour. By the end, you'll understand how an aDNA vault is organized and be able to find any piece of knowledge within it. You'll navigate the vault you're reading right now.
@@ -110,5 +112,7 @@ Pick any concept file — say `what/concepts/concept_triad.md`. Open it. At the 
 
 ## Next Steps
 
-- [Create Your First CLAUDE.md](/learn/tutorials/first-claude-md) — build the agent-orientation file
-- [The Triad](/learn/concepts/triad) — deeper understanding of the organizing principle
+<CardGrid columns={2} cards={[
+  { title: "Create Your First CLAUDE.md", href: "/learn/tutorials/first-claude-md", description: "Build the agent-orientation file at the root of your project." },
+  { title: "The Triad", href: "/learn/concepts/triad", description: "Deeper understanding of the organizing principle behind every aDNA vault." }
+]} />

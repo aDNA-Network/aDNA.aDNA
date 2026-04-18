@@ -6,6 +6,8 @@ section: "concepts"
 order: 12
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Overview
 
 The Context Commons is the vision of a community-maintained library of context files, lattices, and patterns that anyone can use, improve, and share. Built on aDNA's federation protocol and FAIR metadata, it transforms project-local knowledge into reusable public goods — curated context that helps agents across many projects, not just one.
@@ -95,9 +97,11 @@ This vault contains the seeds of a Context Commons:
 
 **Context recipes as curated collections**: `what/context/context_recipes.md` pre-defines which context subtopics to load together for common tasks. These recipes are a form of commons curation — someone figured out the right combination so you don't have to.
 
-## Related
+## Next Steps
 
-- [FAIR Metadata](/learn/concepts/fair-metadata) — the metadata standard that makes commons resources findable, trustworthy, and reusable
-- [Agentic Literacy](/learn/concepts/agentic-literacy) — the literacy movement the commons accelerates by providing real examples
-- [Open Standard](/learn/concepts/open-standard) — the open governance model that enables a commons to exist without vendor lock-in
-- [Lattice Composition](/learn/concepts/lattice-composition) — the composability that makes commons lattices useful in new projects
+<CardGrid columns={2} cards={[
+  { title: "FAIR Metadata", href: "/learn/concepts/fair-metadata", description: "The metadata standard that makes commons resources findable, trustworthy, and reusable." },
+  { title: "Agentic Literacy", href: "/learn/concepts/agentic-literacy", description: "The literacy movement the commons accelerates by providing real examples." },
+  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "The open governance model that enables a commons to exist without vendor lock-in." },
+  { title: "Lattice Composition", href: "/learn/concepts/lattice-composition", description: "The composability that makes commons lattices useful in new projects." }
+]} />

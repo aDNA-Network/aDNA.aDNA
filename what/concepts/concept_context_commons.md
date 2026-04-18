@@ -1,7 +1,7 @@
 ---
 type: concept
 created: 2026-04-13
-updated: 2026-04-13
+updated: 2026-04-17
 status: active
 difficulty: advanced
 spec_section: "§10 Context Library, §11 Federation Protocol, §6 FAIR Metadata"
@@ -16,7 +16,7 @@ related_patterns: [pattern_federation_readiness, pattern_context_recipe]
 
 ## Overview
 
-The Context Commons is the vision of a community-maintained library of context files, lattices, and patterns that anyone can use, improve, and share. Built on aDNA's federation protocol and FAIR metadata, it transforms project-local knowledge into reusable public goods — curated context that helps agents across many projects, not just one.
+Think of the Context Commons as a shared library of "how to teach an AI assistant your project" — like GitHub, but for agent knowledge instead of code. Anyone can publish what they've learned, and anyone can pull what others have validated. The rest of this concept explains how aDNA's federation protocol and FAIR metadata turn that idea into working infrastructure — curated context that helps agents across many projects, not just one.
 
 ## Why This Matters
 

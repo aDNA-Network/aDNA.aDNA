@@ -1,7 +1,7 @@
 ---
 type: concept
 created: 2026-04-13
-updated: 2026-04-13
+updated: 2026-04-17
 status: active
 difficulty: intermediate
 spec_section: "§6 FAIR Metadata, §11 Federation Protocol"
@@ -16,7 +16,7 @@ related_patterns: [pattern_fair_envelope, pattern_federation_readiness]
 
 ## Overview
 
-FAIR metadata is aDNA's system for ensuring that every knowledge object — modules, datasets, lattices — is Findable, Accessible, Interoperable, and Reusable. Borrowed from the scientific data community and adapted for AI-native knowledge architectures, FAIR metadata is the envelope that makes sharing possible: without it, a lattice is a local file; with it, the lattice is a discoverable, trustworthy, composable unit.
+FAIR is a simple four-question test: can someone else **F**ind your work, **A**ccess it, **I**nteroperate with it, and **R**euse it? aDNA bakes that test into every piece of project knowledge — from individual tools to whole workflows — by wrapping them in a short metadata envelope. Without it, a piece of work stays trapped inside one project; with it, the same piece becomes discoverable, trustworthy, and composable by anyone who speaks the standard.
 
 ## Why This Matters
 

@@ -7,6 +7,8 @@ estimated_time: "30 minutes"
 date: 2026-04-14
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## What You'll Build
 
 A validated `.lattice.yaml` file that defines a workflow as a directed graph of nodes and edges. By the end, you'll have a composable, FAIR-annotated lattice ready for execution or federation.
@@ -145,6 +147,8 @@ Re-run validation after adding federation properties — the validator checks fe
 
 ## Next Steps
 
-- [Run a Campaign](/learn/tutorials/run-a-campaign) — orchestrate multi-mission work
-- [Federate a Vault](/learn/tutorials/federate-a-vault) — share lattices across instances
-- [Federation Readiness](/patterns/federation-readiness) — prepare for cross-instance sharing
+<CardGrid columns={2} cards={[
+  { title: "Run a Campaign", href: "/learn/tutorials/run-a-campaign", description: "Orchestrate multi-mission work with phase gates and quality controls." },
+  { title: "Federate a Vault", href: "/learn/tutorials/federate-a-vault", description: "Share lattices across aDNA instances with FAIR metadata." },
+  { title: "Federation Readiness", href: "/patterns/federation-readiness", description: "Prepare a lattice for cross-instance sharing." }
+]} />

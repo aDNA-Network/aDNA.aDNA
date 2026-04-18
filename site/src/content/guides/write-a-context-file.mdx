@@ -7,6 +7,8 @@ estimated_time: "30 minutes"
 date: 2026-04-14
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## What You'll Build
 
 A quality-scored context file ready for your vault's context library. By the end, you'll have a file that an AI agent can load to make better domain decisions — with a quality score and token estimate.
@@ -140,5 +142,7 @@ Update the total token budget.
 
 ## Next Steps
 
-- [Design a Mission](/learn/tutorials/design-a-mission) — plan multi-session work using the execution hierarchy
-- [Context Recipe](/patterns/context-recipe) — combine context files into task-specific assemblies
+<CardGrid columns={2} cards={[
+  { title: "Design a Mission", href: "/learn/tutorials/design-a-mission", description: "Plan multi-session work using the execution hierarchy." },
+  { title: "Context Recipe", href: "/patterns/context-recipe", description: "Combine context files into task-specific assemblies." }
+]} />

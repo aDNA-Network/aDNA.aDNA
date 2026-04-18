@@ -6,9 +6,12 @@ section: "concepts"
 order: 6
 ---
 
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Overview
 
-The convergence model is aDNA's structural principle for managing complexity: each level of the execution hierarchy (campaign → mission → objective) narrows the working set of knowledge, reducing token count while increasing signal density. Context serving is graph traversal — agents walk the knowledge graph from broad to specific, loading only the subgraph relevant to their current task.
+The convergence model is aDNA's structural principle for managing complexity: each level of the <GlossaryTooltip term="execution hierarchy" slug="mission" definition="Campaign → Mission → Objective. The three-tier structure aDNA uses to break big goals into session-sized work." /> (campaign → mission → objective) narrows the working set of knowledge, reducing token count while increasing signal density. Context serving is graph traversal — agents walk the knowledge graph from broad to specific, loading only the subgraph relevant to their current task.
 
 ## Why This Matters
 
@@ -82,9 +85,11 @@ This vault demonstrates convergence through its own execution hierarchy:
 
 The convergence is visible in the directory structure itself. The campaign lives in `how/campaigns/campaign_rosetta/` — one subdirectory of `how/campaigns/`. The mission lives inside that campaign's `missions/` directory. The objective lives inside the mission file. Each nesting level is a narrowing step.
 
-## Related
+## Next Steps
 
-- [Token Selection](/learn/concepts/token-selection) — the tactical mechanisms (AGENTS.md routing, context recipes, token estimates) that implement convergence
-- [Knowledge Graph](/learn/concepts/knowledge-graph) — the connected structure that convergence traverses from broad to specific
-- [Ontology](/learn/concepts/ontology) — the entity types that define what kinds of nodes exist at each convergence level
-- [The Triad](/learn/concepts/triad) — the three-leg structure that provides the first level of narrowing
+<CardGrid columns={2} cards={[
+  { title: "Token Selection", href: "/learn/concepts/token-selection", description: "The tactical mechanisms — AGENTS.md routing, context recipes, token estimates — that implement convergence." },
+  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "The connected structure that convergence traverses from broad to specific." },
+  { title: "Ontology", href: "/learn/concepts/ontology", description: "The entity types that define what kinds of nodes exist at each convergence level." },
+  { title: "The Triad", href: "/learn/concepts/triad", description: "The three-leg structure that provides the first level of narrowing." }
+]} />

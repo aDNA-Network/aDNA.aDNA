@@ -6,6 +6,8 @@ section: "concepts"
 order: 2
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Overview
 
 The aDNA ontology is a typed vocabulary of 14 base entity types — organized across the triad — that defines what kinds of things a project can contain. Projects extend the ontology by adding domain-specific types without modifying the base.
@@ -100,8 +102,10 @@ This vault demonstrates both the base ontology and the extension mechanism. The 
 
 Each extension has its own AGENTS.md, its own template in `how/templates/`, and follows the same conventions as the base types. Open any of those directories and you'll see the pattern: purpose statement, naming rules, frontmatter requirements, load/skip decision guide. The extension mechanism is uniform — new types slot in without modifying the base.
 
-## Related
+## Next Steps
 
-- [The Triad](/learn/concepts/triad) — the three-leg structure that the ontology populates
-- [Knowledge Graph](/learn/concepts/knowledge-graph) — how typed entities connect into a navigable web
-- [Convergence Model](/learn/concepts/convergence) — how the ontology enables context narrowing
+<CardGrid columns={2} cards={[
+  { title: "The Triad", href: "/learn/concepts/triad", description: "The three-leg structure that the ontology populates." },
+  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "How typed entities connect into a navigable web." },
+  { title: "Convergence Model", href: "/learn/concepts/convergence", description: "How the ontology enables context narrowing." }
+]} />

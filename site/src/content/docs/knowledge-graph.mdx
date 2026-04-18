@@ -6,6 +6,8 @@ section: "concepts"
 order: 3
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Overview
 
 An aDNA vault is not a filing cabinet — it's a knowledge graph. Files are nodes, wikilinks are edges, and AGENTS.md files are the navigation layer that helps agents traverse the graph efficiently. The structure is simultaneously a directory tree (for humans browsing) and a connected graph (for agents reasoning about relationships).
@@ -94,8 +96,10 @@ This vault is a live knowledge graph. Here's how the connections work in practic
 
 Open Obsidian's graph view on this vault and you'll see the web forming. Every concept links to related concepts and patterns. Every mission links to its deliverables. The graph is the navigational substrate — the structure that makes the vault more than a folder of files.
 
-## Related
+## Next Steps
 
-- [The Triad](/learn/concepts/triad) — the three-leg structure that organizes the graph's nodes
-- [Ontology](/learn/concepts/ontology) — the entity types that define what kinds of nodes exist
-- [Convergence Model](/learn/concepts/convergence) — how graph traversal narrows context for focused work
+<CardGrid columns={2} cards={[
+  { title: "The Triad", href: "/learn/concepts/triad", description: "The three-leg structure that organizes the graph's nodes." },
+  { title: "Ontology", href: "/learn/concepts/ontology", description: "The entity types that define what kinds of nodes exist." },
+  { title: "Convergence Model", href: "/learn/concepts/convergence", description: "How graph traversal narrows context for focused work." }
+]} />

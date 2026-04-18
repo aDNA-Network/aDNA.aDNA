@@ -6,6 +6,8 @@ section: "concepts"
 order: 1
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Overview
 
 The triad is aDNA's universal organizing principle: every piece of project knowledge belongs in exactly one of three directories — `what/`, `how/`, or `who/` — determined by which question it answers.
@@ -76,8 +78,10 @@ This file — `concept_triad.md` — lives in `what/concepts/` because it answer
 
 The structure demonstrates itself. Navigate up two levels from this file and you'll see the triad in the directory listing. That's the point — the architecture is visible, not hidden behind abstractions.
 
-## Related
+## Next Steps
 
-- [Ontology](/learn/concepts/ontology) — the entity types that populate each triad leg
-- [Knowledge Graph](/learn/concepts/knowledge-graph) — how triad contents connect into a navigable web
-- [Governance Files](/learn/concepts/governance-files) — the five ALLCAPS files that orient agents to the triad
+<CardGrid columns={2} cards={[
+  { title: "Ontology", href: "/learn/concepts/ontology", description: "The entity types that populate each triad leg." },
+  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "How triad contents connect into a navigable web." },
+  { title: "Governance Files", href: "/learn/concepts/governance-files", description: "The five ALLCAPS files that orient agents to the triad." }
+]} />

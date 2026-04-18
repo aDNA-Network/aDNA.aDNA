@@ -13,7 +13,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 7 active — M25 (D1: Accessibility Perfection) complete. M26 (D2: Content Clarity Sprint) queued.** Phases 0-6 complete (89 vault content files + 112-page live site). Phase 6 deployed to Vercel 2026-04-16. Phase 7 executing: 100-cycle III loop across 10 themed decadals. D1 closed 2026-04-17 — all 5 sample pages 100/100/100/100, first persona ranker baseline established.
+**Phase 7 active — M26 (D2: Content Clarity Sprint) complete. M27 (D3: Navigation & IA) queued pending user phase-gate approval.** Phases 0-6 complete (89 vault content files + 116-page live site). Phase 6 deployed to Vercel 2026-04-16. Phase 7 executing: 100-cycle III loop across 10 themed decadals. D1 + D2 closed 2026-04-17 — persona ranker 4.0 → 4.70 across D2 (Δ +0.70, first pre/post delta in Phase 7).
 
 ## Active Campaign
 
@@ -29,45 +29,48 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 | Phase 4.5: III Site Improvements | **Complete** | M20-M23 | Hero redesign, 37 new pages, components, OG images |
 | Phase 5: The How | **Complete** | M16-M18 | 11/11 (3 publishing, 4 workshops, 4 lattice YAMLs) |
 | Phase 6: Website v2 | **Complete** | M19 | How section live: 11 new pages + 4 index pages, MDX escaping fixes |
-| Phase 7: 100-Cycle III Loop | **Active** | M24-M35 | D1 complete (cycles 1-10), D2-D10 pending |
+| Phase 7: 100-Cycle III Loop | **Active** | M24-M35 | D1 + D2 complete (cycles 1-20), D3-D10 pending |
 
 ## Phase 7 Progress
 
 - **M24: Baseline** — Complete (97.4/98.4/100/100 average across 5 sample pages).
-- **M25: D1 Accessibility Perfection** — **Complete** (cycles 1-10). All 5 sample pages now 100/100/100/100. Extended axe-core across 15 additional pages: 0 violations. AAR: [aar_phase7_d1.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d1.md).
-- **M26: D2 Content Clarity Sprint** — Queued. Priority queue (10 items) seeded in D1 AAR.
+- **M25: D1 Accessibility Perfection** — **Complete** (cycles 1-10). All 5 sample pages 100/100/100/100. Extended axe-core across 15 additional pages: 0 violations. AAR: [aar_phase7_d1.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d1.md).
+- **M26: D2 Content Clarity Sprint** — **Complete** (cycles 11-20). Persona ranker 4.0 → **4.70** (Δ +0.70 — first pre/post delta). 4 new persona landings (`/educators`, `/enterprise`, `/compliance`, `/startup-first-hour`) — every D1 persona-gap item closed. 21 content files (13 concepts + 8 patterns) brought to rule-#6 compliance; 21 files (12 concepts + 9 tutorials) converted to `## Next Steps` CardGrid. AAR: [aar_phase7_d2.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d2.md).
+- **M27: D3 Navigation & IA** — Queued. Priority queue (10 items) seeded in D2 AAR. Awaiting user phase-gate approval.
 
-### Persona Ranker Baseline (established at D1 close)
+### Persona Ranker (D2 close, 2026-04-17)
 
-| Dimension | Avg (1-5) |
-|-----------|-----------|
-| Findability | 4.0 |
-| Comprehension | 3.8 |
-| Actionability | 3.6 |
-| Trust | 4.8 |
-| Relevance | 3.6 |
-| Delight | 4.0 |
-| **Overall** | **4.0** |
+| Dimension | D1 close | D2 start | D2 close | Δ (D2 start→close) |
+|-----------|----------|----------|----------|---------------------|
+| Findability | 4.0 | 4.0 | 4.6 | +0.6 |
+| Comprehension | 3.8 | 3.8 | 4.8 | +1.0 |
+| Actionability | 3.6 | 3.6 | 5.0 | +1.4 |
+| Trust | 4.8 | 4.8 | 5.0 | +0.2 |
+| Relevance | 3.6 | 3.6 | 4.8 | +1.2 |
+| Delight | 4.0 | 4.0 | 4.0 | 0 |
+| **Overall** | **4.0** | **4.0** | **4.70** | **+0.70** |
 
 ## What's Working
 
-- Full documentation site live at https://adna-docs.vercel.app with all Phase 1-6 content
-- Homepage: branded aDNA banner (watermark cropped), Operational Ontology section, Context Engineering section
-- All three triad legs on site: WHAT (Learn, Use Cases, Patterns, Glossary), WHO (Community, Adopters), HOW (Publishing, Workshops, Lattice Examples), plus Reference
-- 89 vault content files + 112 site pages
-- 8 sidebar nav sections, 6 OG images, full SEO metadata
-- Lattice examples directory: 19 YAMLs (15 general/biotech + 4 self-referential) + 4 canvas templates
-- Full keyboard accessibility: skip link, `:focus-visible` indicators, focus-managed mobile menu, `prefers-reduced-motion` support
-- WCAG 2.1 AA: 20 pages tested (5 Lighthouse sample + 15 axe-core sweep) — zero violations
+- Full documentation site live at https://adna-docs.vercel.app — 116 pages
+- Homepage: branded aDNA banner, plain-language lede, Operational Ontology section, Context Engineering section, all with sub-glosses (D2 cycle 11)
+- All three triad legs on site plus 4 persona-targeted landings: `/educators`, `/enterprise`, `/compliance`, `/startup-first-hour`
+- 89 vault content files + 116 site pages
+- Rule #6 (plain-language opening) satisfied on all 13 concepts and 8 patterns
+- `## Next Steps` CardGrid standard on all 12 concept pages + 9 tutorial pages (D2 cycle 16)
+- `GlossaryTooltip.astro` component built and demo-wired in 2 pages (rollout parked for D3)
+- `scripts/reading_level.mjs` available for ongoing FKGL measurement
+- Full keyboard accessibility + WCAG 2.1 AA across the site — 20+ pages tested, zero violations
+- Lighthouse 100/100/100/100 on all 5 sample pages held through D2 close (no regression across 10 cycles of content work)
 
 ## Active Blockers
 
-None. D2 ready to execute.
+None. D3 ready to execute pending user phase-gate approval (standing order #1).
 
 ## Next Steps
 
-1. **Kick off M26 (D2: Content Clarity Sprint)** — Execute cycles 11-20 against the priority queue seeded in `aar_phase7_d1.md`. Start with the themed items (homepage plain-language lead, glossary tooltips, concept-opening audit).
-2. **Record D2 persona ranker at decadal start** — Per D1 AAR "Change" finding: capture ranker in cycle 11 (not just at cycle 20) to produce a pre/post delta.
+1. **User phase-gate approval** — the D2 → D3 transition is a phase gate per standing order #1. Once approved, open **M27 (D3: Navigation & IA)**, cycles 21-30.
+2. **First D3 cycle (21)** — record D3 persona-ranker start matrix (per D1 Change finding established in D2), then begin priority queue: likely start with (a) global cross-section "Related Elsewhere" affordance or (b) breadcrumb trail on every content page. See D2 AAR for full queue.
 
 ## Pending Manual Actions
 
@@ -76,8 +79,8 @@ None. D2 ready to execute.
 
 ## Last Session (2026-04-17)
 
-M25 closeout: Cycle 10 landed skip-link polish + `prefers-reduced-motion`. Full Lighthouse re-measurement on all 5 sample pages confirmed 100/100/100/100 sustained. D1 decadal AAR filed with 5-persona ranker matrix (overall 4.0 / 5). D2 priority queue seeded (5 themed + 5 persona-driven). M25 status set to `completed`; STATE.md updated.
+M26 D2 closeout: Cycle 19 shipped `/compliance` (5-question procurement walkthrough) and `/startup-first-hour` (4-stage 60-minute CTO bootstrap) — both at 100/100/100/100, demonstrating the CardGrid-index Perf ceiling is DOM-density-dependent (not inherent). Cycle 20 re-scored the persona ranker at D2 close (4.70 overall, Δ +0.70 from D2 start) and filed `aar_phase7_d2.md` with the full pre/post matrix and a 10-item D3 priority queue. M26 set to `completed`; STATE.md updated; D3 queued behind a phase gate.
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 7 active — D1 complete. Begin **M26 (D2: Content Clarity Sprint)**, cycles 11-20. Start with themed items from the D1 AAR priority queue: (1) homepage plain-language lead, (2) concept-file plain-language-opening audit (enforces campaign rule #6 across 13 concepts), (3) glossary tooltip/link component. Per D1 "Change" finding: record persona ranker in cycle 11 (decadal start), not only at cycle 20. Read `how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d1.md` for the full queue and `iii_cycle_tracker.md` for the cycle log format.
+> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 7 active — D1 + D2 complete (persona ranker 4.0 → 4.70). M27 (D3: Navigation & IA), cycles 21-30, is queued pending user phase-gate approval per standing order #1. Do not auto-advance — confirm with the user first. On approval, read `how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d2.md` for the full D3 priority queue (5 themed IA items + 5 persona-driven items). Begin cycle 21 with the D3 persona-ranker start matrix (per the Change methodology established in D2). Likely first targets: global cross-section "Related Elsewhere" affordance, breadcrumbs, pattern-page Next Steps CardGrid rollout.

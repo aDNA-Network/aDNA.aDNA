@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-17
 status: active
 pattern_category: operational
 applies_to: [campaigns, missions, sessions]
@@ -13,7 +13,7 @@ tags: [pattern, mission_decomposition, convergence, execution_hierarchy, operati
 
 ## Problem
 
-A task too large for a single agent session — writing 13 concept files, or building a full documentation site — can't be executed atomically. Without decomposition, agents either attempt too much (exceeding context limits, losing coherence) or work without a plan (duplicating effort, missing dependencies).
+Some jobs — writing thirteen concept files, or building a whole documentation site — are too big for any one agent session to finish in one go. Without a plan that breaks them into smaller pieces, agents either bite off more than their context window can hold or wander without direction and duplicate each other's work.
 
 ## Solution
 

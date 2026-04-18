@@ -7,6 +7,8 @@ estimated_time: "25 minutes"
 date: 2026-04-14
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## What You'll Build
 
 A mission file that decomposes a multi-session task into claimable objectives. By the end, any agent can pick up your mission, understand what needs to be done, and start working on the next objective.
@@ -137,6 +139,8 @@ context_budget: "~12K tokens"
 
 ## Next Steps
 
-- [Build a Lattice](/learn/tutorials/build-a-lattice) — compose a workflow from modules (advanced)
-- [Convergence Model](/learn/concepts/convergence) — deeper understanding of how missions narrow scope
-- [Context Recipe](/patterns/context-recipe) — pre-define the context assembly for common mission types
+<CardGrid columns={2} cards={[
+  { title: "Build a Lattice", href: "/learn/tutorials/build-a-lattice", description: "Compose a workflow from modules — advanced." },
+  { title: "Convergence Model", href: "/learn/concepts/convergence", description: "Deeper understanding of how missions narrow scope into session-sized work." },
+  { title: "Context Recipe", href: "/patterns/context-recipe", description: "Pre-define the context assembly for common mission types." }
+]} />

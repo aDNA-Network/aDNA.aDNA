@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-17
 status: active
 pattern_category: operational
 applies_to: [context, missions, sessions]
@@ -13,7 +13,7 @@ tags: [pattern, context_recipe, composition, token_budget, operational]
 
 ## Problem
 
-Many tasks require knowledge from multiple context topics. An agent designing a federated lattice needs context from `adna_core/lattice_design`, `adna_core/federation`, and `object_standards/overview`. Without guidance, agents improvise — loading too many subtopics ("just in case") or too few (missing critical context). The result is either token waste or knowledge gaps.
+Most real tasks need knowledge from several areas at once — not one clean topic. Without a pre-built list of what to load, an agent either grabs everything "just in case" (wasting tokens) or misses a piece and gets stuck halfway. A federated lattice, for example, needs lattice-design knowledge + federation rules + object standards — three separate topic areas.
 
 ## Solution
 

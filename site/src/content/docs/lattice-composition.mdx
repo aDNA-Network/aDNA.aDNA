@@ -6,6 +6,8 @@ section: "concepts"
 order: 9
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Overview
 
 Lattice composition is how aDNA builds complex workflows from simpler pieces. A lattice is a directed graph of nodes (modules, datasets, processes) connected by edges (data flow). Lattices can be composed — combined into larger workflows — through two patterns: inline merging and external referencing. This composability is what makes lattices reusable, shareable, and scalable.
@@ -113,9 +115,11 @@ This vault contains the full lattice infrastructure at `what/lattices/`:
 
 **The vault itself is a context graph**: The knowledge structure you're navigating — concepts linking to concepts, AGENTS.md routing agents through directories — is a `context_graph` lattice. The nodes are files. The edges are wikilinks and AGENTS.md references. The execution mode is agent-driven graph traversal.
 
-## Related
+## Next Steps
 
-- [Ontology](/learn/concepts/ontology) — the entity types (module, dataset, lattice) that serve as lattice building blocks
-- [Knowledge Graph](/learn/concepts/knowledge-graph) — the broader connected structure that lattices formalize as declarative YAML
-- [FAIR Metadata](/learn/concepts/fair-metadata) — the metadata envelope that makes lattices findable, shareable, and reusable
-- [Open Standard](/learn/concepts/open-standard) — how federation enables lattice composition across independent aDNA instances
+<CardGrid columns={2} cards={[
+  { title: "Ontology", href: "/learn/concepts/ontology", description: "The entity types — module, dataset, lattice — that serve as lattice building blocks." },
+  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "The broader connected structure that lattices formalize as declarative YAML." },
+  { title: "FAIR Metadata", href: "/learn/concepts/fair-metadata", description: "The metadata envelope that makes lattices findable, shareable, and reusable." },
+  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "How federation enables lattice composition across independent aDNA instances." }
+]} />

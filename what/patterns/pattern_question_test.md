@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-17
 status: active
 pattern_category: structural
 applies_to: [context, decisions, missions, sessions, governance, coordination, team]
@@ -13,7 +13,7 @@ tags: [pattern, question_test, triad, sorting, structural]
 
 ## Problem
 
-When adding a new file to an aDNA project, you need to decide which triad leg it belongs in. With three categories and dozens of entity types, this should be simple — but edge cases create hesitation. Is a team standup protocol a WHO thing (it involves people) or a HOW thing (it's a process)? Is a decision record a WHAT thing (it's knowledge) or a HOW thing (it documents a process)?
+Every new file in an aDNA project needs to land in one of three folders — `what/`, `how/`, or `who/`. Most files are obvious; edge cases cause hesitation. Is a team standup protocol a WHO thing (it involves people) or a HOW thing (it's a process)? Is a decision record a WHAT thing (it's knowledge) or a HOW thing (it documents a process)?
 
 Hesitation leads to inconsistency. Inconsistency leads to files scattered across legs, breaking the navigability that makes the triad valuable.
 

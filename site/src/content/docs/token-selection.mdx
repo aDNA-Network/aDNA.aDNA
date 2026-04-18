@@ -6,6 +6,8 @@ section: "concepts"
 order: 5
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Overview
 
 Token selection is the discipline of choosing which knowledge to load into an AI agent's context window — and, critically, which knowledge to leave out. aDNA provides structured mechanisms (AGENTS.md routing, context recipes, token budgets) to make this selection systematic rather than ad hoc.
@@ -93,8 +95,10 @@ This vault demonstrates token selection at every level:
 
 **The CLAUDE.md itself**: This vault's CLAUDE.md is ~4K tokens — comprehensive enough to orient a cold agent, compact enough to leave room for work. That's token selection applied to governance: every section earns its space.
 
-## Related
+## Next Steps
 
-- [Convergence Model](/learn/concepts/convergence) — the structural principle that makes token selection scale across campaign → mission → objective
-- [Governance Files](/learn/concepts/governance-files) — the orientation layer that consumes the first ~5K tokens in every session
-- [Knowledge Graph](/learn/concepts/knowledge-graph) — the connected structure that AGENTS.md routing traverses during selection
+<CardGrid columns={2} cards={[
+  { title: "Convergence Model", href: "/learn/concepts/convergence", description: "The structural principle that makes token selection scale across campaign → mission → objective." },
+  { title: "Governance Files", href: "/learn/concepts/governance-files", description: "The orientation layer that consumes the first ~5K tokens in every session." },
+  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "The connected structure that AGENTS.md routing traverses during selection." }
+]} />

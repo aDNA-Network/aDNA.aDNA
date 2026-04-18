@@ -1,0 +1,267 @@
+---
+import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../components/sections/CardGrid.astro';
+import { buildTechArticleJsonLD } from '../../utils/seo';
+
+const jsonLD = buildTechArticleJsonLD({
+  title: 'aDNA Enterprise Adoption Checklist',
+  description: 'A procurement-ready evaluation guide for enterprise platform teams: compliance, session audit, federation, and integration surface with existing engineering practice.',
+  url: Astro.url.href,
+});
+
+const complianceCards = [
+  {
+    title: 'Governance Files',
+    href: '/learn/concepts/governance-files',
+    description: 'Four root-level files (CLAUDE.md, MANIFEST.md, STATE.md, AGENTS.md) declare policy, inventory, state, and agent routing — the same for every vault, so auditors orient once and reuse the mental model across teams.',
+  },
+  {
+    title: 'Architecture Decisions',
+    href: '/patterns/dual-audience',
+    description: 'ADR files under what/decisions/ pair each technical choice with its rationale, trade-offs, and legal/compliance context — designed to satisfy both engineering and non-engineering reviewers.',
+  },
+  {
+    title: 'Dual-Audience Review',
+    href: '/patterns/dual-audience',
+    description: 'Every governance artifact is legible to a platform engineer and to a compliance officer without translation — the pattern that keeps audit prep from becoming a separate workstream.',
+  },
+];
+
+const auditCards = [
+  {
+    title: 'Session Glossary',
+    href: '/glossary/glossary-session',
+    description: 'Every agent-assisted work unit produces a file in how/sessions/ with session ID, intent, files touched, and a SITREP. The audit trail is the working artifact, not an afterthought.',
+  },
+  {
+    title: 'Enterprise Team Use Case',
+    href: '/use-cases/enterprise-team',
+    description: 'Narrative walkthrough: a 50-person platform org replaces week-long compliance investigations with SQL queries against the session corpus. The governance overhead is what the agents already do.',
+  },
+  {
+    title: 'Collision Prevention',
+    href: '/glossary/glossary-collision-prevention',
+    description: 'The last-edited-by + updated + read-before-write contract prevents parallel agents and humans from clobbering one another — the primitive that makes a shared vault safe for concurrent work.',
+  },
+];
+
+const federationCards = [
+  {
+    title: 'Federation Readiness',
+    href: '/patterns/federation-readiness',
+    description: 'Six-point checklist (schema valid, opt-in, source instance, license, keywords, resolved references) gates every shared artifact. Federation is never accidental.',
+  },
+  {
+    title: 'Lattice Composition',
+    href: '/learn/concepts/lattice-composition',
+    description: 'Teams publish reusable pipelines as lattices; sibling teams pull and compose them. Three implementations collapse to one maintained source — with explicit version policy.',
+  },
+  {
+    title: 'FAIR Envelope',
+    href: '/patterns/fair-envelope',
+    description: 'License, creators, keywords, provenance, and identifier travel with every federated artifact. Legal provenance is a data field, not a separate document.',
+  },
+];
+
+const integrationCards = [
+  {
+    title: 'AGENTS.md Routing',
+    href: '/patterns/agents-md',
+    description: 'Drop-in routing files let aDNA coexist with existing documentation systems — Confluence, internal wikis, and repo READMEs remain authoritative; AGENTS.md just points agents at them.',
+  },
+  {
+    title: 'Base + Extension',
+    href: '/patterns/base-extension',
+    description: 'Keep the 14-entity base ontology; add domain-specific entity types (compliance_check, team_policy, shared_pipeline) per team without forking the standard.',
+  },
+  {
+    title: 'Open Standard',
+    href: '/learn/concepts/open-standard',
+    description: 'The specification is open and permissively licensed — no vendor lock-in, no platform dependency. Teams can self-host, audit the spec, and exit cleanly.',
+  },
+];
+
+const followUpCards = [
+  {
+    title: 'Enterprise Team Persona',
+    href: '/adopters/adopter-enterprise-team',
+    description: 'Quick-reference adopter profile: pain points, typical ontology extensions, and deployment pattern for platform engineering organizations.',
+  },
+  {
+    title: 'Extend the Ontology',
+    href: '/learn/tutorials/extend-the-ontology',
+    description: 'Step-by-step: add a domain-specific entity type (directory + AGENTS.md + template) without forking the base standard. 25 minutes.',
+  },
+  {
+    title: 'Federate a Vault',
+    href: '/learn/tutorials/federate-a-vault',
+    description: 'Walk through export, import, and compose across two aDNA instances — the handshake Teams A, B, and C will use in production. 30 minutes.',
+  },
+];
+---
+
+<DocumentationLayout
+  title="aDNA Enterprise Adoption Checklist"
+  description="A procurement-ready evaluation guide for enterprise platform teams: compliance posture, session audit trail, federation surface, and integration with existing engineering practice."
+  jsonLD={jsonLD}
+>
+  <p class="lede">
+    A structured walkthrough for procurement, security, and platform
+    engineering reviewers evaluating aDNA for multi-team deployment. Four
+    domains — <strong>compliance</strong>, <strong>session audit</strong>,
+    <strong>federation</strong>, and <strong>integration surface</strong> —
+    each backed by concrete vault artifacts and spec citations. The pattern
+    you evaluate is the pattern you deploy.
+  </p>
+
+  <h2 id="who-this-is-for">Who this is for</h2>
+  <p>
+    Platform engineering leads, compliance officers, and procurement teams
+    assessing aDNA before a multi-team rollout. The shape of this page
+    mirrors a procurement questionnaire — scan the section you own; the
+    cards below each section link to the authoritative reference.
+  </p>
+
+  <h2 id="compliance">1 · Compliance posture</h2>
+  <p>
+    Every aDNA vault ships with the same four root-level governance files.
+    The consistency is the audit primitive: an auditor who orients once can
+    orient across every team vault without relearning structure. Policies,
+    decisions, and current operational state live at fixed paths.
+  </p>
+  <ul>
+    <li>
+      <strong>Policy source of truth:</strong> CLAUDE.md at the vault root
+      names standing orders, priority hierarchy, and escalation cascade.
+    </li>
+    <li>
+      <strong>Decision trail:</strong> ADR files under <code>what/decisions/</code>
+      pair each technical choice with rationale, trade-offs, and reviewer
+      attribution.
+    </li>
+    <li>
+      <strong>Operational snapshot:</strong> STATE.md captures current
+      phase, blockers tagged <code>#needs-human</code>, and next actions —
+      so status reviews don't require a meeting.
+    </li>
+  </ul>
+  <CardGrid cards={complianceCards} columns={2} />
+
+  <h2 id="session-audit">2 · Session audit trail</h2>
+  <p>
+    Agent work is not ephemeral. Every session — whether agent-assisted or
+    human — creates a tracked file in <code>how/sessions/</code> with
+    session ID, intent, files touched, and a closing SITREP. The audit
+    trail is a byproduct of normal execution, not an additional workstream.
+  </p>
+  <ul>
+    <li>
+      <strong>Traceability:</strong> any committed artifact traces back to
+      session → mission → campaign → context inputs.
+    </li>
+    <li>
+      <strong>Collision prevention:</strong> the <code>last_edited_by</code>
+      + <code>updated</code> + read-before-write contract makes concurrent
+      work safe without locks.
+    </li>
+    <li>
+      <strong>Queryable history:</strong> session files are YAML-headed
+      markdown — scriptable with standard tooling, no proprietary query
+      layer.
+    </li>
+  </ul>
+  <CardGrid cards={auditCards} columns={2} />
+
+  <h2 id="federation">3 · Federation surface</h2>
+  <p>
+    Three teams should not solve the same problem three times. aDNA's
+    federation model lets Team A publish a validated pipeline as a lattice;
+    Teams B and C pull and compose it with explicit version policy. Every
+    shared artifact passes a six-point readiness check before it crosses a
+    team boundary.
+  </p>
+  <ul>
+    <li>
+      <strong>Opt-in by default:</strong> nothing federates without
+      <code>federation.shareable: true</code> and a declared source
+      instance.
+    </li>
+    <li>
+      <strong>Version policy is explicit:</strong> locked / patch / minor /
+      latest — downstream teams choose their own change tolerance.
+    </li>
+    <li>
+      <strong>Provenance travels with the artifact:</strong> FAIR envelope
+      (license, creators, keywords, provenance, identifier) is part of the
+      file, not a side document.
+    </li>
+  </ul>
+  <CardGrid cards={federationCards} columns={2} />
+
+  <h2 id="integration-surface">4 · Integration with existing practice</h2>
+  <p>
+    aDNA is a knowledge architecture, not a platform replacement.
+    Confluence, internal wikis, existing repo READMEs, and your current
+    identity stack stay where they are. aDNA adds a routing layer
+    (AGENTS.md) that points agents at those systems and a governance layer
+    that lives in git alongside the code it governs.
+  </p>
+  <ul>
+    <li>
+      <strong>No vendor lock-in:</strong> the standard is open and
+      permissively licensed. The vault is plain markdown in git.
+    </li>
+    <li>
+      <strong>Ontology extension without fork:</strong> add
+      <code>compliance_check</code>, <code>team_policy</code>, or
+      <code>shared_pipeline</code> entity types per team without breaking
+      the base specification.
+    </li>
+    <li>
+      <strong>Tool-agnostic:</strong> Obsidian, VS Code, JetBrains, plain
+      CLI — any editor that reads markdown works.
+    </li>
+  </ul>
+  <CardGrid cards={integrationCards} columns={2} />
+
+  <h2 id="evaluation-checklist">Evaluation checklist</h2>
+  <p>
+    A reviewer working through this page should be able to answer the
+    following in a procurement memo:
+  </p>
+  <ul>
+    <li>
+      Does the governance layer give us the same artifact for every team?
+      <em>Yes — four root files at fixed paths, identical across vaults.</em>
+    </li>
+    <li>
+      Can we trace any AI-assisted output back to its source context and
+      reviewer? <em>Yes — session → mission → campaign → context inputs.</em>
+    </li>
+    <li>
+      Can teams share work without three independent reimplementations?
+      <em>Yes — lattice publish / pull / compose with explicit version
+      policy and a 6-point readiness gate.</em>
+    </li>
+    <li>
+      Can we adopt without replacing existing systems? <em>Yes — AGENTS.md
+      routes agents at existing wikis / repos / identity stacks.</em>
+    </li>
+    <li>
+      Can we exit cleanly? <em>Yes — the vault is plain markdown in git,
+      under an open specification.</em>
+    </li>
+  </ul>
+
+  <h2 id="next-steps">Next Steps</h2>
+  <CardGrid cards={followUpCards} columns={2} />
+</DocumentationLayout>
+
+<style>
+  .lede {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: var(--space-8);
+  }
+</style>

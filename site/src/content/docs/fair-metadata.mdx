@@ -6,6 +6,8 @@ section: "concepts"
 order: 13
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Overview
 
 FAIR metadata is aDNA's system for ensuring that every knowledge object — modules, datasets, lattices — is Findable, Accessible, Interoperable, and Reusable. Borrowed from the scientific data community and adapted for AI-native knowledge architectures, FAIR metadata is the envelope that makes sharing possible: without it, a lattice is a local file; with it, the lattice is a discoverable, trustworthy, composable unit.
@@ -92,9 +94,11 @@ FAIR metadata is visible throughout this vault:
 
 **The FAIR mapping guide**: The complete interconversion specification between flat and nested FAIR lives at `what/context/adna_core/context_adna_core_fair_mapping.md` — itself a context file demonstrating the optimization principles described in [Context Optimization](/learn/concepts/context-optimization).
 
-## Related
+## Next Steps
 
-- [Lattice Composition](/learn/concepts/lattice-composition) — the workflow composition that FAIR metadata makes shareable and trustworthy
-- [Ontology](/learn/concepts/ontology) — the entity types (module, dataset, lattice) that carry FAIR envelopes
-- [Context Commons](/learn/concepts/context-commons) — the vision of community-shared knowledge that FAIR principles enable
-- [Open Standard](/learn/concepts/open-standard) — how FAIR metadata fits into aDNA's broader open governance model
+<CardGrid columns={2} cards={[
+  { title: "Lattice Composition", href: "/learn/concepts/lattice-composition", description: "The workflow composition that FAIR metadata makes shareable and trustworthy." },
+  { title: "Ontology", href: "/learn/concepts/ontology", description: "The entity types — module, dataset, lattice — that carry FAIR envelopes." },
+  { title: "Context Commons", href: "/learn/concepts/context-commons", description: "The vision of community-shared knowledge that FAIR principles enable." },
+  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "How FAIR metadata fits into aDNA's broader open governance model." }
+]} />

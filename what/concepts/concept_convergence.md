@@ -1,7 +1,7 @@
 ---
 type: concept
 created: 2026-04-13
-updated: 2026-04-13
+updated: 2026-04-17
 status: active
 difficulty: foundational
 spec_section: "§8.7 The 75% Rule, §9 Mission System, §10 Context Library"
@@ -16,7 +16,7 @@ related_patterns: [pattern_agents_md, pattern_mission_decomposition]
 
 ## Overview
 
-The convergence model is aDNA's structural principle for managing complexity: each level of the execution hierarchy (campaign → mission → objective) narrows the working set of knowledge, reducing token count while increasing signal density. Context serving is graph traversal — agents walk the knowledge graph from broad to specific, loading only the subgraph relevant to their current task.
+A project can know more than any AI agent can hold in mind at once. The convergence model solves that by narrowing the knowledge in play at each stage of work — the whole project at the top, the specific task at the bottom. Each level of aDNA's hierarchy (campaign → mission → objective) shrinks the set of files an agent sees while sharpening their relevance, so context serving becomes graph traversal: agents walk from broad to specific and load only the subgraph that matters.
 
 ## Why This Matters
 

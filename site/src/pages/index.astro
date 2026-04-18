@@ -86,6 +86,7 @@ const stats = [
         loading="eager"
       />
     </div>
+    <p class="hero-lead">aDNA is a shared folder layout that tells AI assistants where everything is — so they can help without re-learning your project every time.</p>
     <p class="hero-subtitle">An integrated standard for context and knowledge.</p>
     <div class="hero-actions">
       <a href="/get-started" class="btn btn-primary">Get Started</a>
@@ -143,6 +144,7 @@ const stats = [
       <div class="ontology-grid">
         <div class="ontology-leg">
           <h3 class="ontology-leg-title"><span class="ontology-badge badge-who">WHO</span> People &amp; Governance</h3>
+          <p class="ontology-leg-gloss">The people side — who decides, who does the work, and how they stay in sync.</p>
           <ul class="ontology-list">
             <li><strong>Governance</strong> — who decides, what the rules are</li>
             <li><strong>Team</strong> — who does the work</li>
@@ -151,6 +153,7 @@ const stats = [
         </div>
         <div class="ontology-leg">
           <h3 class="ontology-leg-title"><span class="ontology-badge badge-what">WHAT</span> Knowledge &amp; Artifacts</h3>
+          <p class="ontology-leg-gloss">The knowledge side — everything the project knows, decides, builds, and composes.</p>
           <ul class="ontology-list">
             <li><strong>Context</strong> — curated knowledge agents load before working</li>
             <li><strong>Decisions</strong> — architecture decision records</li>
@@ -160,6 +163,7 @@ const stats = [
         </div>
         <div class="ontology-leg">
           <h3 class="ontology-leg-title"><span class="ontology-badge badge-how">HOW</span> Operations &amp; Execution</h3>
+          <p class="ontology-leg-gloss">The operations side — how work breaks down, gets done, and leaves an audit trail.</p>
           <ul class="ontology-list">
             <li><strong>Campaigns</strong> — multi-mission strategic initiatives</li>
             <li><strong>Missions</strong> — tasks decomposed into session-sized objectives</li>
@@ -183,24 +187,28 @@ const stats = [
         <div class="context-card">
           <span class="context-icon">🎯</span>
           <h3>Context Optimization</h3>
+          <p class="context-gloss">Keep your agent's knowledge sharp — not bloated.</p>
           <p>Every context file is scored on signal density, actionability, and coverage. A 6-axis quality rubric keeps your agent knowledge sharp — not bloated.</p>
           <a href="/learn/concepts/context-optimization" class="card-link">How it works →</a>
         </div>
         <div class="context-card">
           <span class="context-icon">📐</span>
           <h3>Convergence Model</h3>
+          <p class="context-gloss">Load only the knowledge this task needs.</p>
           <p>Each level of the execution hierarchy narrows scope. A vault might hold 75K tokens of context — but a single session loads only the 5K it actually needs.</p>
           <a href="/learn/concepts/convergence" class="card-link">See the model →</a>
         </div>
         <div class="context-card">
           <span class="context-icon">🧩</span>
           <h3>Context Recipes</h3>
+          <p class="context-gloss">Pre-built context bundles for common jobs.</p>
           <p>Pre-built assemblies for common tasks. Need to design a lattice? There's a recipe that pulls exactly the right context subtopics — minimal, standard, or full.</p>
           <a href="/patterns/context-recipe" class="card-link">Browse recipes →</a>
         </div>
         <div class="context-card">
           <span class="context-icon">🏛️</span>
           <h3>Context Commons</h3>
+          <p class="context-gloss">A shared library of agent knowledge.</p>
           <p>A community-maintained library of reusable context files. Contribute what you learn, pull what others have validated. Knowledge compounds across projects.</p>
           <a href="/learn/concepts/context-commons" class="card-link">Join the commons →</a>
         </div>
@@ -272,9 +280,19 @@ const stats = [
     display: block;
   }
 
-  .hero-subtitle {
+  .hero-lead {
     font-family: var(--font-display);
     font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-text-heading);
+    max-width: 42rem;
+    margin: 0 auto var(--space-4);
+    line-height: 1.35;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
     font-weight: 500;
     color: var(--color-text-muted);
     margin-bottom: var(--space-8);
@@ -523,6 +541,14 @@ const stats = [
     color: hsl(38 70% 70%);
   }
 
+  .ontology-leg-gloss {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin: 0 0 var(--space-4);
+    font-style: italic;
+  }
+
   .ontology-list {
     list-style: none;
     padding: 0;
@@ -595,6 +621,14 @@ const stats = [
 
   .context-card h3 {
     font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+  }
+
+  .context-card .context-gloss {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    font-weight: 600;
+    line-height: 1.5;
     margin-bottom: var(--space-2);
   }
 
@@ -728,8 +762,12 @@ const stats = [
       padding: var(--space-8) var(--space-4) var(--space-8);
     }
 
-    .hero-subtitle {
+    .hero-lead {
       font-size: var(--text-xl);
+    }
+
+    .hero-subtitle {
+      font-size: var(--text-base);
     }
 
     .stats-row {

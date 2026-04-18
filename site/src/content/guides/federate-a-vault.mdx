@@ -7,6 +7,8 @@ estimated_time: "30 minutes"
 date: 2026-04-14
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## What You'll Build
 
 A federated connection between two aDNA instances — exporting a lattice from one project, importing it into another, and composing it into a larger workflow. By the end, you'll understand the full federation lifecycle.
@@ -131,5 +133,7 @@ federation:
 
 ## Next Steps
 
-- [Context Commons](/learn/concepts/context-commons) — the vision of community-wide knowledge sharing
-- [Lattice Composition](/learn/concepts/lattice-composition) — deeper dive into composition patterns
+<CardGrid columns={2} cards={[
+  { title: "Context Commons", href: "/learn/concepts/context-commons", description: "The vision of community-wide knowledge sharing that federation enables." },
+  { title: "Lattice Composition", href: "/learn/concepts/lattice-composition", description: "Deeper dive into composition patterns across instances." }
+]} />

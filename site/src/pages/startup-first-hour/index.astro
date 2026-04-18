@@ -1,0 +1,237 @@
+---
+import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../components/sections/CardGrid.astro';
+import { buildTechArticleJsonLD } from '../../utils/seo';
+
+const jsonLD = buildTechArticleJsonLD({
+  title: 'aDNA Startup First Hour',
+  description: 'A 60-minute timeboxed quickstart for startup CTOs: clone, point an agent at CLAUDE.md, seed STATE.md, and file the first ADR. Your AI agent is project-aware by the end of the hour.',
+  url: Astro.url.href,
+});
+
+const stageCards = [
+  {
+    title: 'Minutes 0–10 · Clone and install',
+    href: '/learn/tutorials/navigate-a-vault',
+    description: 'Fork the base template, clone it into your repo root, and open it in your editor. The base gives you the triad (what/, how/, who/), the 14-entity base ontology, and a working CLAUDE.md scaffold.',
+  },
+  {
+    title: 'Minutes 10–25 · CLAUDE.md',
+    href: '/learn/tutorials/first-claude-md',
+    description: 'Edit the root CLAUDE.md so it names your project, your voice, and the standing orders you care about. When you point an agent at your repo, this is the first thing it reads.',
+  },
+  {
+    title: 'Minutes 25–40 · STATE.md',
+    href: '/learn/concepts/governance-files',
+    description: 'Write a one-paragraph operational snapshot: current phase, active blockers, next steps. This becomes the file every new hire and every new agent session reads first — your rolling sprint status in agent-addressable form.',
+  },
+  {
+    title: 'Minutes 40–60 · First ADR',
+    href: '/learn/concepts/knowledge-graph',
+    description: 'Capture one decision that currently lives in a Slack thread. Create what/decisions/adr_001_&lt;short-slug&gt;.md with context, decision, and consequences. Future agents — and future hires — will read this instead of re-asking.',
+  },
+];
+
+const checkpointCards = [
+  {
+    title: 'Vault is legible to an agent',
+    href: '/learn/concepts/governance-files',
+    description: 'CLAUDE.md + STATE.md means a fresh agent session opens your project, reads two files, and knows where everything is. No per-session re-explanation.',
+  },
+  {
+    title: 'Decisions stop evaporating',
+    href: '/patterns/dual-audience',
+    description: 'One ADR is the seed of a decision log. Within a month the three-founding-engineer bus factor starts breaking down — the "why" lives on disk.',
+  },
+  {
+    title: 'Onboarding has an entry point',
+    href: '/adopters/adopter-startup',
+    description: 'When your next hire starts, they read STATE.md and walk the ADR list. No Slack archaeology, no "ping me if you have questions."',
+  },
+];
+
+const followUpCards = [
+  {
+    title: 'Tutorial: Your First CLAUDE.md',
+    href: '/learn/tutorials/first-claude-md',
+    description: 'The long-form tutorial for the 10–25 minute stage. Use it to go deeper when you have 20 minutes to invest in the agent-orientation file.',
+  },
+  {
+    title: 'Governance Files',
+    href: '/learn/concepts/governance-files',
+    description: 'The four root-level files (CLAUDE.md, MANIFEST.md, STATE.md, AGENTS.md) and what each one does. Reference this when you graduate past hour one.',
+  },
+  {
+    title: 'Startup Persona',
+    href: '/adopters/adopter-startup',
+    description: 'Quick-reference adopter profile: pain points, typical ontology extensions (api_spec, onboarding_checklist, customer_feedback), and deployment pattern.',
+  },
+  {
+    title: 'Tutorial: Design a Mission',
+    href: '/learn/tutorials/design-a-mission',
+    description: 'Hour one is individual discipline; hour two is team coordination. When you have a sprint-sized goal, a mission file turns it into claimable objectives.',
+  },
+];
+---
+
+<DocumentationLayout
+  title="aDNA Startup First Hour"
+  description="A 60-minute timeboxed quickstart for startup CTOs: clone, point an agent at CLAUDE.md, seed STATE.md, and file the first ADR. Your AI agent is project-aware by the end of the hour."
+  jsonLD={jsonLD}
+>
+  <p class="lede">
+    One hour, four stages, one project-aware AI agent. By the end you have
+    a working governance layer — CLAUDE.md, STATE.md, and one ADR — that
+    turns every future agent session from "let me re-explain the project"
+    into "continue where we left off." Skim the stages below, then open
+    the terminal and run the clock.
+  </p>
+
+  <h2 id="who-this-is-for">Who this is for</h2>
+  <p>
+    Startup CTOs and founding engineers on a 10–50 person team using AI
+    agents heavily. You ship weekly, hire monthly, and your institutional
+    knowledge is already living in Slack threads and three engineers'
+    heads. The goal of this hour is to stop that leak — not to adopt the
+    full <a href="/learn/concepts/triad">triad</a> today.
+  </p>
+
+  <h2 id="the-four-stages">The four stages</h2>
+  <p>
+    Each stage names a time budget, an action, and the governance file it
+    produces. Work them in order; don't skip ahead. The file produced in
+    one stage is the input the next stage reads.
+  </p>
+  <CardGrid cards={stageCards} columns={2} />
+
+  <h2 id="stage-1">Minutes 0–10 · Clone and install</h2>
+  <p>
+    Start from the base template (<a href="https://github.com/LatticeProtocol/Agentic-DNA">Agentic-DNA</a>
+    on GitHub) or the quick-fork flow in the base workspace guide. Copy
+    the <code>.adna/</code> template directory into your repo root so
+    agents find it at a known path. No code changes yet — this stage is
+    about getting the scaffold on disk and the directory tree in place.
+  </p>
+  <ul>
+    <li>
+      <strong>Produced:</strong> base <code>CLAUDE.md</code>,
+      <code>MANIFEST.md</code>, and the <code>what/</code>, <code>how/</code>,
+      <code>who/</code> triad directories.
+    </li>
+    <li>
+      <strong>Checkpoint:</strong> running <code>ls what/ how/ who/</code>
+      shows three populated directories; <code>cat CLAUDE.md</code> shows
+      the generic standing-orders template.
+    </li>
+  </ul>
+
+  <h2 id="stage-2">Minutes 10–25 · Make CLAUDE.md yours</h2>
+  <p>
+    Open <code>CLAUDE.md</code> at the vault root and edit three things:
+    the project name and one-line description in the opening header, the
+    voice / tone paragraph (how you want agents to write), and the
+    standing orders specific to your team (merge-freeze windows, review
+    policies, default branch). The full
+    <a href="/learn/tutorials/first-claude-md">Your First CLAUDE.md</a>
+    tutorial is the 20-minute long-form version of this stage if you want
+    to go deeper.
+  </p>
+  <ul>
+    <li>
+      <strong>Produced:</strong> a customized <code>CLAUDE.md</code>
+      naming your project and your agent-work norms.
+    </li>
+    <li>
+      <strong>Checkpoint:</strong> open a fresh agent session pointed at
+      your repo; the agent's opening message reflects your project name
+      and voice rather than the generic template copy.
+    </li>
+  </ul>
+
+  <h2 id="stage-3">Minutes 25–40 · Seed STATE.md</h2>
+  <p>
+    Write a short operational snapshot — the shortest useful version is
+    one paragraph: "We are in Q2 of $PROJECT. Current focus: $FEATURE.
+    Blockers: none / &lt;blocker&gt;. Next up: &lt;the 2-3 things that
+    matter this week&gt;." Keep it under 30 lines. The
+    <a href="/learn/concepts/governance-files">governance files</a>
+    concept page explains the four root files and why STATE.md is the
+    "what's happening right now" slot.
+  </p>
+  <ul>
+    <li>
+      <strong>Produced:</strong> <code>STATE.md</code> with current
+      phase, blockers, and next steps.
+    </li>
+    <li>
+      <strong>Checkpoint:</strong> a new hire — or a new agent session —
+      reading CLAUDE.md + STATE.md can answer "what is this project and
+      what are we working on this week" without asking anyone.
+    </li>
+  </ul>
+
+  <h2 id="stage-4">Minutes 40–60 · File the first ADR</h2>
+  <p>
+    Pick one decision that currently lives only in Slack and write it as
+    an Architecture Decision Record. Create
+    <code>what/decisions/adr_001_&lt;slug&gt;.md</code> with three
+    sections — Context, Decision, Consequences. Two paragraphs per
+    section is plenty. Future agents and future hires read this instead
+    of re-excavating the Slack thread. The
+    <a href="/learn/concepts/knowledge-graph">knowledge-graph</a> concept
+    page explains how ADRs cross-link into the rest of the vault.
+  </p>
+  <ul>
+    <li>
+      <strong>Produced:</strong> <code>what/decisions/adr_001_*.md</code>
+      — the seed of your decision log.
+    </li>
+    <li>
+      <strong>Checkpoint:</strong> git commit, push, and open a fresh
+      agent session. Ask "why did we choose &lt;X&gt;?" — the agent
+      finds the ADR without being pointed at it.
+    </li>
+  </ul>
+
+  <h2 id="end-of-hour">End of hour · What changed</h2>
+  <p>
+    Three files exist that didn't exist at minute zero, and together they
+    move the project from "ambient knowledge" to "agent-addressable
+    knowledge." The next 60 minutes of your team's AI-assisted work reads
+    these files before it generates anything.
+  </p>
+  <CardGrid cards={checkpointCards} columns={2} />
+
+  <h2 id="self-reference">Self-reference: this vault ran this hour</h2>
+  <p>
+    The aDNA.aDNA vault itself went through its own version of this hour
+    on 2026-04-13: a forked base template, a customized
+    <code>CLAUDE.md</code>, an initial <code>STATE.md</code> in
+    <code>how/</code>, and a first ADR captured under
+    <code>what/decisions/</code>. The session log for that bootstrap is
+    visible in <code>how/sessions/history/</code>. Read through it to see
+    the same hour play out on a vault you can browse.
+  </p>
+
+  <h2 id="hour-two">Hour two and beyond</h2>
+  <p>
+    Don't scale prematurely. Run the vault for a week on just three files
+    before adding more structure. When a second decision needs capturing,
+    add <code>adr_002</code>. When the work gets bigger than a session,
+    graduate to a mission file. The
+    <a href="/adopters/adopter-startup">startup persona page</a> sketches
+    the 3–6 month trajectory.
+  </p>
+
+  <h2 id="next-steps">Next Steps</h2>
+  <CardGrid cards={followUpCards} columns={2} />
+</DocumentationLayout>
+
+<style>
+  .lede {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: var(--space-8);
+  }
+</style>

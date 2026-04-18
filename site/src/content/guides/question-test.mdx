@@ -7,6 +7,8 @@ estimated_time: "15 minutes"
 date: 2026-04-14
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## What You'll Build
 
 A sorted inventory of 10 project items placed into the correct triad leg. By the end, you'll be able to instantly sort any new file into `what/`, `how/`, or `who/` using the [question test](/patterns/question-test).
@@ -93,6 +95,8 @@ If any item feels like it belongs in two legs, it's trying to do two things. Spl
 
 ## Next Steps
 
-- [Extend the Ontology](/learn/tutorials/extend-the-ontology) — add custom entity types to the triad
-- [Ontology](/learn/concepts/ontology) — understand the entity types within each leg
-- [Base/Extension](/patterns/base-extension) — how to add types without breaking the core
+<CardGrid columns={2} cards={[
+  { title: "Extend the Ontology", href: "/learn/tutorials/extend-the-ontology", description: "Add custom entity types under the right triad leg." },
+  { title: "Ontology", href: "/learn/concepts/ontology", description: "Understand the entity types within each triad leg." },
+  { title: "Base/Extension", href: "/patterns/base-extension", description: "How to add types without breaking the core 14." }
+]} />

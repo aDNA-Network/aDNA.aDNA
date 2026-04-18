@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-17
 status: active
 pattern_category: structural
 applies_to: [context, modules, lattices, governance]
@@ -13,7 +13,7 @@ tags: [pattern, base_extension, ontology, extensibility, structural]
 
 ## Problem
 
-An open standard must be stable enough to build on, yet flexible enough to serve diverse domains. If every project modifies the core types, interoperability collapses — no two projects speak the same language. If the core is frozen, projects can't represent domain-specific knowledge and the standard becomes irrelevant.
+A shared standard has to be stable enough that teams can build on it, but flexible enough to handle work the authors never imagined. If every team changes the core, nothing lines up across projects. If the core is locked down, teams can't capture the things their work actually needs — and the standard stops being useful.
 
 ## Solution
 

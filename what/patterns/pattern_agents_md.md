@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-17
 status: active
 pattern_category: structural
 applies_to: [context, modules, lattices, decisions, campaigns, missions, sessions]
@@ -13,7 +13,7 @@ tags: [pattern, agents_md, routing, convergence, token_selection, structural]
 
 ## Problem
 
-An aDNA vault may contain hundreds of files across dozens of directories. An agent working on a specific task doesn't need most of them — but how does it know which directories to enter and which to skip? Without routing, agents either load too much (drowning in irrelevant context) or too little (missing critical knowledge).
+A project folder can hold hundreds of files. An AI agent working on a single task needs only a handful of them — but how does it know which folders to open and which to walk past? Without signs, the agent either drowns in files it doesn't need or misses the ones that matter.
 
 ## Solution
 

@@ -6,6 +6,8 @@ section: "concepts"
 order: 11
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Overview
 
 Agentic literacy is the ability to work effectively with AI agents — not just prompting them, but structuring knowledge so agents can find, understand, and act on it. aDNA treats this as a learnable skill with a clear progression: from understanding what agents need, to organizing knowledge for them, to building collaborative human-agent workflows.
@@ -73,9 +75,11 @@ This vault is itself an agentic literacy tool:
 
 **The community directory**: `who/community/` is scaffolded for community roles and contribution paths — the social infrastructure for scaling agentic literacy beyond individual practitioners to organizations and communities.
 
-## Related
+## Next Steps
 
-- [Dual-Audience Writing](/learn/concepts/dual-audience) — the writing discipline that makes knowledge serve both humans and agents
-- [Context Commons](/learn/concepts/context-commons) — the vision of shared knowledge resources that agentic literacy makes possible
-- [Open Standard](/learn/concepts/open-standard) — how openness lowers the barrier to developing agentic literacy
-- [The Triad](/learn/concepts/triad) — the organizing principle that is the first lesson in agentic literacy
+<CardGrid columns={2} cards={[
+  { title: "Dual-Audience Writing", href: "/learn/concepts/dual-audience", description: "The writing discipline that makes knowledge serve both humans and agents." },
+  { title: "Context Commons", href: "/learn/concepts/context-commons", description: "The vision of shared knowledge resources that agentic literacy makes possible." },
+  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "How openness lowers the barrier to developing agentic literacy." },
+  { title: "The Triad", href: "/learn/concepts/triad", description: "The organizing principle that is the first lesson in agentic literacy." }
+]} />

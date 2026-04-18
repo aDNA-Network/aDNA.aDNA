@@ -1,7 +1,7 @@
 ---
 type: concept
 created: 2026-04-13
-updated: 2026-04-13
+updated: 2026-04-17
 status: active
 difficulty: intermediate
 spec_section: "§5.1 Lattice Objects, §11 Federation Protocol"
@@ -16,7 +16,7 @@ related_patterns: [pattern_lattice_extraction, pattern_seam_edge]
 
 ## Overview
 
-Lattice composition is how aDNA builds complex workflows from simpler pieces. A lattice is a directed graph of nodes (modules, datasets, processes) connected by edges (data flow). Lattices can be composed — combined into larger workflows — through two patterns: inline merging and external referencing. This composability is what makes lattices reusable, shareable, and scalable.
+Big jobs are usually too big for one workflow. Lattice composition is how aDNA snaps smaller workflows together to make bigger ones — the same way a dinner recipe is built from smaller recipes for the sauce, the vegetables, and the main. A lattice is a directed graph of nodes (modules, datasets, processes) connected by edges (data flow); composition combines lattices through two patterns — inline merging and external referencing — which is what makes them reusable, shareable, and scalable.
 
 ## Why This Matters
 

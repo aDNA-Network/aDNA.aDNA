@@ -6,6 +6,8 @@ section: "concepts"
 order: 8
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Overview
 
 Context optimization is the practice of designing context files — the curated knowledge agents load before doing work — so they deliver maximum decision-relevant information per token consumed. It covers file structure, format selection, quality scoring, and the discipline of saying less to communicate more.
@@ -93,8 +95,10 @@ This vault's context library (`what/context/`) is a working example of context o
 
 **Composition recipes**: The recipe index at `what/context/context_recipes.md` pre-defines which subtopics to load together for common task types, preventing agents from improvising (and over-loading) on multi-topic tasks.
 
-## Related
+## Next Steps
 
-- [Token Selection](/learn/concepts/token-selection) — the mechanisms (AGENTS.md routing, recipes, budgets) that implement context optimization decisions
-- [Convergence Model](/learn/concepts/convergence) — the structural principle that ensures optimization compounds across campaign → mission → objective
-- [Knowledge Graph](/learn/concepts/knowledge-graph) — the connected structure that optimization helps agents traverse efficiently
+<CardGrid columns={2} cards={[
+  { title: "Token Selection", href: "/learn/concepts/token-selection", description: "The mechanisms — AGENTS.md routing, recipes, budgets — that implement context optimization decisions." },
+  { title: "Convergence Model", href: "/learn/concepts/convergence", description: "The structural principle that ensures optimization compounds across campaign → mission → objective." },
+  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "The connected structure that optimization helps agents traverse efficiently." }
+]} />

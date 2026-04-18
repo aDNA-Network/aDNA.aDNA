@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-17
 status: active
 pattern_category: federation
 applies_to: [modules, lattices, context]
@@ -13,7 +13,7 @@ tags: [pattern, fair, metadata, envelope, findability, federation]
 
 ## Problem
 
-A lattice, module, or dataset that lacks standardized metadata is a black box. Other projects can't discover it, can't assess whether it's trustworthy, can't determine its licensing, and can't integrate it with their own knowledge. Without metadata, sharing is manual — someone emails a file and explains it verbally. That doesn't scale.
+A shareable object without a label is a black box — nobody outside your project can find it, tell if it's trustworthy, know who made it, or use it legally. This pattern applies to aDNA's shareable units (lattices, modules, datasets): without a standard metadata envelope, sharing them means emailing files around and explaining each one by hand. That doesn't scale.
 
 ## Solution
 
