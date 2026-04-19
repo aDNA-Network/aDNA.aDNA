@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import SidebarNav from '../components/sections/SidebarNav.astro';
 import TOCPanel from '../components/sections/TOCPanel.astro';
 import PrevNextNav from '../components/sections/PrevNextNav.astro';
+import Breadcrumb from '../components/sections/Breadcrumb.astro';
 
 interface Props {
   title: string;
@@ -23,6 +24,7 @@ const { title, description, headings = [], prev, next, jsonLD } = Astro.props;
     </aside>
 
     <article class="doc-content prose">
+      <Breadcrumb pageTitle={title} />
       <h1>{title}</h1>
       <slot />
       {(prev || next) && <PrevNextNav prev={prev} next={next} />}

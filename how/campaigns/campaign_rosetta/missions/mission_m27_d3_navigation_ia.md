@@ -9,6 +9,7 @@ created: 2026-04-18
 updated: 2026-04-18
 last_edited_by: agent_stanley
 tags: [mission, rosetta, phase-7, iii, d3, navigation-ia]
+progress: 1/10 cycles complete (cycle 21)
 ---
 
 # M27 — D3: Navigation & IA
@@ -51,12 +52,12 @@ Top cross-persona pain points at D2 close (verbatim from `aar_phase7_d2.md`, the
 
 Each objective corresponds to one III cycle (`skill_iii_cycle.md`). Hold Lighthouse 100/100/100/100 on all 5 sample pages every cycle.
 
-### O1: D3 ranker baseline + breadcrumb trail rollout (Cycle 21)
+### O1: D3 ranker baseline + breadcrumb trail rollout (Cycle 21) — ✅ Complete (2026-04-18)
 
-- [ ] Record 5-persona ranker at decadal start (matches D2-close rubric for comparability) — expected ~4.70 overall
-- [ ] Add breadcrumb component / rendering to every content page: Triad leg › Section › Page (e.g., "WHAT › Concepts › Triad")
-- [ ] Validate: Lighthouse 100/100/100/100 held on all 5 sample pages; axe-core 0 violations on breadcrumb nav
-- [ ] Commit at cycle close
+- [x] Record 5-persona ranker at decadal start (matches D2-close rubric for comparability) — recorded as **4.70 overall** (Findability 4.6, Comprehension 4.8, Actionability 5.0, Trust 5.0, Relevance 4.8, Delight 4.0) in `iii_cycle_tracker.md` cycle 21 entry
+- [x] Add breadcrumb component / rendering to every content page: Triad leg › Section › Page (e.g., "WHAT › Concepts › Triad") — implemented as `site/src/components/sections/Breadcrumb.astro` with 12-entry route map, wired into `DocumentationLayout.astro` above `<h1>`. Self-suppresses on homepage, 404, section indexes, and persona-landing roots.
+- [x] Validate: Lighthouse 100/100/100/100 held on all 5 sample pages; axe-core 0 violations on breadcrumb nav (30/30 Playwright gates pass)
+- [x] Commit at cycle close
 
 ### O2: Pattern-page Next Steps CardGrid rollout (Cycle 22)
 

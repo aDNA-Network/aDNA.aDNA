@@ -1,7 +1,7 @@
 ---
 type: artifact
 created: 2026-04-15
-updated: 2026-04-17
+updated: 2026-04-18
 status: active
 last_edited_by: agent_stanley
 tags: [artifact, iii, cycle-tracker, phase-7]
@@ -17,7 +17,7 @@ Structured log for all 100 improvement cycles across 10 decadals. Each cycle app
 |---------|--------|-------|--------|-----|
 | D1 | 1-10 | Accessibility Perfection | complete | [aar_phase7_d1.md](aar_phase7_d1.md) |
 | D2 | 11-20 | Content Clarity Sprint | complete | [aar_phase7_d2.md](aar_phase7_d2.md) |
-| D3 | 21-30 | Navigation & IA | in_progress | — (M27 open: [mission_m27_d3_navigation_ia.md](../mission_m27_d3_navigation_ia.md); cycle 21 pending next session) |
+| D3 | 21-30 | Navigation & IA | in_progress (1/10) | — (M27 open: [mission_m27_d3_navigation_ia.md](../mission_m27_d3_navigation_ia.md); cycle 21 complete, cycle 22 next) |
 | D4 | 31-40 | Visual Polish | pending | — |
 | D5 | 41-50 | Mobile Experience | pending | — |
 | D6 | 51-60 | Performance & Loading | pending | — |
@@ -612,3 +612,55 @@ Every page at the ceiling — both new pages hit 100 Perf out of the gate, contr
 - **Content work**: 13/13 concepts and 8/8 patterns brought to rule-#6 compliance (plain-language opening). 21 files (12 concepts + 9 tutorials) converted from bullet-list endings to `## Next Steps` CardGrid. `GlossaryTooltip.astro` built and demo-wired in 2 files. Automated reading-level script (`scripts/reading_level.mjs`) authored for ongoing FKGL measurement.
 - **Persona-gap closure**: all four D1-AAR persona-gap items closed — `/educators` (educator teaching kit), `/enterprise` (enterprise adoption checklist), `/compliance` (compliance walkthrough), `/startup-first-hour` (CTO 60-minute bootstrap).
 - **Key carry-forwards into D3**: global cross-section "Related Elsewhere" affordance, breadcrumbs, pattern-page Next Steps rollout (8 pages), sidebar nav audit, researcher persona landing, tooltip rollout across 21 content files. Whole-file FKGL Grade-10 rewrite and CardGrid-dense perf tuning remain parked for D3-or-later and D6 respectively.
+
+---
+
+## Decadal D3 — Navigation & IA (Cycles 21-30)
+
+### Cycle 21 — 2026-04-18
+
+**Decadal**: D3 (Navigation & IA)
+**Target**: O1 — D3 persona-ranker baseline + breadcrumb trail rollout (`Triad leg › Section › Page`) across every content page
+**Before**: No breadcrumb nav; lateral navigation scent between sections requires returning to an index (top D2-residual pain point, cited by Researcher + Solo Developer)
+**After**: Semantic `<nav aria-label="Breadcrumb">` renders above `<h1>` on every content detail page (concepts, patterns, tutorials, glossary, use-cases, comparisons, reference, adopters, community, how/publishing, how/workshops, how/lattice-examples) — leg + section + current-page trail. Component self-suppresses on homepage, 404, section indexes, and persona-landing roots.
+
+**D3 persona ranker (decadal start — baseline = D2 close, per M27 mission):**
+| Dimension | D3 start | D3 end (target) |
+|-----------|----------|-----------------|
+| Findability | 4.6 | 4.8+ |
+| Comprehension | 4.8 | 5.0 |
+| Actionability | 5.0 | 5.0 |
+| Trust | 5.0 | 5.0 |
+| Relevance | 4.8 | 5.0 |
+| Delight | 4.0 | 4.0 (accepted flat) |
+| **Overall** | **4.70** | **4.85+** |
+
+**Lighthouse (5 sample pages, cycle 21 close — post-implementation):**
+| Page | Perf | A11y | BP | SEO |
+|------|------|------|----|----|
+| Homepage | 100 | 100 | 100 | 100 |
+| Concept (triad) | 100 | 100 | 100 | 100 |
+| Tutorial (first-claude-md) | 100 | 100 | 100 | 100 |
+| Glossary (glossary-adna) | 100 | 100 | 100 | 100 |
+| Adopter (solo-developer) | 100 | 100 | 100 | 100 |
+| **Average** | **100** | **100** | **100** | **100** |
+
+| Category | Before (D2 close) | After (cycle 21) | Delta |
+|----------|-------------------|------------------|-------|
+| Performance | 100 | 100 | 0 |
+| Accessibility | 100 | 100 | 0 |
+| Best Practices | 100 | 100 | 0 |
+| SEO | 100 | 100 | 0 |
+
+**Changes**:
+- NEW: `site/src/components/sections/Breadcrumb.astro` — self-contained component. Reads `Astro.url.pathname` against a 12-entry route map (`/learn/concepts/`, `/patterns/`, `/glossary/`, `/use-cases/`, `/learn/tutorials/`, `/learn/comparisons/`, `/reference/`, `/adopters/`, `/community/`, `/how/publishing/`, `/how/workshops/`, `/how/lattice-examples/`). Renders `<nav aria-label="Breadcrumb"><ol>` with leg-label `<li>`, `<a>` section link, and `aria-current="page"` trailing `<li>`. Separator `›` wrapped `aria-hidden="true"`. Suppresses when path does not match a detail-page prefix (homepage, persona landings, section indexes).
+- `site/src/layouts/DocumentationLayout.astro`: imported Breadcrumb; rendered `<Breadcrumb pageTitle={title} />` inside `.doc-content` article, immediately above `<h1>`.
+
+**Validation**: PASS
+- Build: 116 pages, 2.45s, 0 errors.
+- Playwright gates: 30/30 pass (including G4 axe-core WCAG 2.1 AA on homepage, concept, tutorial, pattern, 404 — all zero violations).
+- Lighthouse: 100/100/100/100 on all 5 sample pages; no category dropped.
+- Markup spot-check: 11 pages across concepts / tutorials / patterns / glossary / use-cases / comparisons / reference / adopters / community / how-publishing confirmed rendering breadcrumb with correct leg + section + title; homepage + section-index + persona-landing correctly suppress.
+- Evidence: `site/evidence/cycle21/lh_{homepage,concept,tutorial,glossary,adopter}.json`
+
+**Carry-Forward**: none — baseline cleanly recorded; component has no known gaps. Subsequent "back-to-index" affordance (O4, cycle 24) will refine the parent-link interaction by adding `← All concepts / All patterns / …` prefix links; current section link serves that role for now.

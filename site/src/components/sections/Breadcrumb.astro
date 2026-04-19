@@ -1,0 +1,102 @@
+---
+interface Props {
+  pageTitle: string;
+}
+
+const { pageTitle } = Astro.props;
+
+type Route = {
+  prefix: string;
+  leg: 'WHAT' | 'HOW' | 'WHO';
+  sectionLabel: string;
+  sectionHref: string;
+};
+
+const routes: Route[] = [
+  { prefix: '/learn/concepts/', leg: 'WHAT', sectionLabel: 'Concepts', sectionHref: '/learn/concepts/' },
+  { prefix: '/learn/tutorials/', leg: 'WHAT', sectionLabel: 'Tutorials', sectionHref: '/learn/tutorials/' },
+  { prefix: '/learn/comparisons/', leg: 'WHAT', sectionLabel: 'Comparisons', sectionHref: '/learn/comparisons/' },
+  { prefix: '/patterns/', leg: 'WHAT', sectionLabel: 'Patterns', sectionHref: '/patterns/' },
+  { prefix: '/glossary/', leg: 'WHAT', sectionLabel: 'Glossary', sectionHref: '/glossary/' },
+  { prefix: '/use-cases/', leg: 'WHAT', sectionLabel: 'Use Cases', sectionHref: '/use-cases/' },
+  { prefix: '/reference/', leg: 'WHAT', sectionLabel: 'Reference', sectionHref: '/reference/' },
+  { prefix: '/adopters/', leg: 'WHO', sectionLabel: 'Adopters', sectionHref: '/adopters/' },
+  { prefix: '/community/', leg: 'WHO', sectionLabel: 'Community', sectionHref: '/community/' },
+  { prefix: '/how/publishing/', leg: 'HOW', sectionLabel: 'Publishing', sectionHref: '/how/publishing/' },
+  { prefix: '/how/workshops/', leg: 'HOW', sectionLabel: 'Workshops', sectionHref: '/how/workshops/' },
+  { prefix: '/how/lattice-examples/', leg: 'HOW', sectionLabel: 'Lattice Examples', sectionHref: '/how/lattice-examples/' },
+];
+
+const path = Astro.url.pathname;
+
+const match = routes.find((r) => {
+  const trimmed = r.prefix.replace(/\/$/, '');
+  return (path === r.prefix || path.startsWith(r.prefix)) && path !== trimmed && path !== r.prefix;
+});
+---
+
+{match && (
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <ol>
+      <li class="leg">{match.leg}</li>
+      <li class="sep" aria-hidden="true">›</li>
+      <li><a href={match.sectionHref}>{match.sectionLabel}</a></li>
+      <li class="sep" aria-hidden="true">›</li>
+      <li aria-current="page" class="current">{pageTitle}</li>
+    </ol>
+  </nav>
+)}
+
+<style>
+  .breadcrumb {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+  }
+
+  .breadcrumb ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .breadcrumb .leg {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--color-text);
+    border-bottom-color: currentColor;
+  }
+
+  .breadcrumb a:focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .breadcrumb .sep {
+    color: var(--color-text-muted);
+    user-select: none;
+  }
+
+  .breadcrumb .current {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+</style>
