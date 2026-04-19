@@ -1,7 +1,7 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-04-17
+updated: 2026-04-18
 status: active
 last_edited_by: agent_stanley
 tags: [state, governance]
@@ -13,7 +13,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 7 active — M26 (D2: Content Clarity Sprint) complete. M27 (D3: Navigation & IA) queued pending user phase-gate approval.** Phases 0-6 complete (89 vault content files + 116-page live site). Phase 6 deployed to Vercel 2026-04-16. Phase 7 executing: 100-cycle III loop across 10 themed decadals. D1 + D2 closed 2026-04-17 — persona ranker 4.0 → 4.70 across D2 (Δ +0.70, first pre/post delta in Phase 7).
+**Phase 7 active — M26 (D2) complete; M27 (D3: Navigation & IA) open — phase gate approved 2026-04-18; cycle 21 ready to begin.** Phases 0-6 complete (89 vault content files + 116-page live site). Phase 6 deployed to Vercel 2026-04-16. Phase 7 executing: 100-cycle III loop across 10 themed decadals. D1 + D2 closed 2026-04-17 — persona ranker 4.0 → 4.70 across D2 (Δ +0.70, first pre/post delta in Phase 7). D2 decadal commit: `dde61b0`.
 
 ## Active Campaign
 
@@ -36,7 +36,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 - **M24: Baseline** — Complete (97.4/98.4/100/100 average across 5 sample pages).
 - **M25: D1 Accessibility Perfection** — **Complete** (cycles 1-10). All 5 sample pages 100/100/100/100. Extended axe-core across 15 additional pages: 0 violations. AAR: [aar_phase7_d1.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d1.md).
 - **M26: D2 Content Clarity Sprint** — **Complete** (cycles 11-20). Persona ranker 4.0 → **4.70** (Δ +0.70 — first pre/post delta). 4 new persona landings (`/educators`, `/enterprise`, `/compliance`, `/startup-first-hour`) — every D1 persona-gap item closed. 21 content files (13 concepts + 8 patterns) brought to rule-#6 compliance; 21 files (12 concepts + 9 tutorials) converted to `## Next Steps` CardGrid. AAR: [aar_phase7_d2.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d2.md).
-- **M27: D3 Navigation & IA** — Queued. Priority queue (10 items) seeded in D2 AAR. Awaiting user phase-gate approval.
+- **M27: D3 Navigation & IA** — **Active** (cycles 21-30). Mission scaffolded 2026-04-18 ([mission_m27_d3_navigation_ia.md](how/campaigns/campaign_rosetta/missions/mission_m27_d3_navigation_ia.md)); 10 objectives mapped from D2 AAR priority queue. Cycle 21 = D3 ranker baseline + breadcrumb rollout.
 
 ### Persona Ranker (D2 close, 2026-04-17)
 
@@ -65,22 +65,22 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Active Blockers
 
-None. D3 ready to execute pending user phase-gate approval (standing order #1).
+None. D3 open; cycle 21 is the next execution step.
 
 ## Next Steps
 
-1. **User phase-gate approval** — the D2 → D3 transition is a phase gate per standing order #1. Once approved, open **M27 (D3: Navigation & IA)**, cycles 21-30.
-2. **First D3 cycle (21)** — record D3 persona-ranker start matrix (per D1 Change finding established in D2), then begin priority queue: likely start with (a) global cross-section "Related Elsewhere" affordance or (b) breadcrumb trail on every content page. See D2 AAR for full queue.
+1. **Open cycle 21 (D3 kickoff)** — read `how/campaigns/campaign_rosetta/missions/mission_m27_d3_navigation_ia.md` and execute O1: (a) record the D3 persona-ranker start matrix (baseline = D2-close matrix above), then (b) roll breadcrumbs (`Triad leg › Section › Page`) across every content page. Commit at cycle close.
+2. **Subsequent cycles (22-30)** — follow the 10-objective plan in M27: pattern Next Steps rollout, Related Elsewhere cross-section grid, back-to-index + sidebar audit, tooltip rollout (concepts then tutorials), Researcher persona landing, tutorial-ordering + adopter decision tree, reference-section linkage, then D3 AAR at cycle 30.
 
 ## Pending Manual Actions
 
 - **GitHub social preview**: Upload `site/public/images/og-default.png` at github.com/LatticeProtocol/aDNA.aDNA > Settings > Social preview
 - **Vercel Git integration**: Connect repo at vercel.com > adna-docs > Settings > Git for auto-deploy (currently manual via `vercel --prod`)
 
-## Last Session (2026-04-17)
+## Last Session (2026-04-18)
 
-M26 D2 closeout: Cycle 19 shipped `/compliance` (5-question procurement walkthrough) and `/startup-first-hour` (4-stage 60-minute CTO bootstrap) — both at 100/100/100/100, demonstrating the CardGrid-index Perf ceiling is DOM-density-dependent (not inherent). Cycle 20 re-scored the persona ranker at D2 close (4.70 overall, Δ +0.70 from D2 start) and filed `aar_phase7_d2.md` with the full pre/post matrix and a 10-item D3 priority queue. M26 set to `completed`; STATE.md updated; D3 queued behind a phase gate.
+D2→D3 phase-gate approval + wind-down. D2 decadal commit `dde61b0` pushed yesterday; user approved the phase gate this session. M27 (D3: Navigation & IA) scaffolded with 10 objectives mapped from the D2 AAR priority queue; STATE and iii_cycle_tracker flipped to reflect D3 open; lightweight session record filed. No cycle work executed — this was a governance handoff session only. Cycle 21 is the next execution step.
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 7 active — D1 + D2 complete (persona ranker 4.0 → 4.70). M27 (D3: Navigation & IA), cycles 21-30, is queued pending user phase-gate approval per standing order #1. Do not auto-advance — confirm with the user first. On approval, read `how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d2.md` for the full D3 priority queue (5 themed IA items + 5 persona-driven items). Begin cycle 21 with the D3 persona-ranker start matrix (per the Change methodology established in D2). Likely first targets: global cross-section "Related Elsewhere" affordance, breadcrumbs, pattern-page Next Steps CardGrid rollout.
+> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 7 active — D1 + D2 complete (persona ranker 4.0 → 4.70, committed at `dde61b0`). **D3 phase gate approved 2026-04-18 — no confirmation required.** Read `how/campaigns/campaign_rosetta/missions/mission_m27_d3_navigation_ia.md` and begin cycle 21 per `how/skills/skill_iii_cycle.md`: (1) record the D3 persona-ranker start matrix (baseline = D2-close matrix in STATE.md), then (2) execute O1 — breadcrumb trail (`Triad leg › Section › Page`) on every content page. Validation gate: hold Lighthouse 100/100/100/100 on the 5 sample pages; axe-core 0 violations. Commit at cycle 21 close; do not batch.
