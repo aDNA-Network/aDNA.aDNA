@@ -9,7 +9,7 @@ created: 2026-04-18
 updated: 2026-04-19
 last_edited_by: agent_stanley
 tags: [mission, rosetta, phase-7, iii, d3, navigation-ia]
-progress: 2/10 cycles complete (cycles 21-22)
+progress: 3/10 cycles complete (cycles 21-23)
 ---
 
 # M27 — D3: Navigation & IA
@@ -65,11 +65,11 @@ Each objective corresponds to one III cycle (`skill_iii_cycle.md`). Hold Lightho
 - [x] Each card: 2-4 cards per page with scent-carrying description — every page received 4 cards; every description earns the click with "what you find after" framing rather than restating the linked title.
 - [x] Validate: 116 pages hold; Lighthouse 100/100/100/100 on sample pages; axe-core clean — all gates pass (build 116 pages/2.48s/0 errors, Playwright 30/30, Lighthouse 100/100/100/100 on 5 sample pages, 7 new link targets spot-checked 200). Incidentally removed a pre-existing broken `/learn/concepts/dual-audience` link from `dual-audience.mdx`'s Related list during the rewrite. Evidence: `site/evidence/cycle22/`.
 
-### O3: Global "Related Elsewhere" cross-section affordance (Cycle 23)
+### O3: Global "Related Elsewhere" cross-section affordance (Cycle 23) — ✅ Complete (2026-04-19)
 
-- [ ] On every concept/pattern/tutorial, render a second CardGrid below Next Steps that links *sideways*: concepts → 1-2 related patterns + 1-2 related tutorials, patterns → concepts + tutorials, tutorials → concepts + patterns
-- [ ] Option: build a small `RelatedElsewhere.astro` component that takes a frontmatter field like `related:` and renders the grid — reduces per-file edit surface
-- [ ] Validate: graph view becomes a connected web (project CLAUDE.md rule #10); Lighthouse held
+- [x] On every concept/pattern/tutorial, render a second CardGrid below Next Steps that links *sideways*: concepts → 1-2 related patterns + 1-2 related tutorials, patterns → concepts + tutorials, tutorials → concepts + patterns — shipped as **4 cards per page (2+2 across the other two sections)** on all 29 content files; 116 new lateral edges.
+- [x] Option: build a small `RelatedElsewhere.astro` component that takes a frontmatter field like `related:` and renders the grid — reduces per-file edit surface — **not taken.** Inline CardGrid blocks per file chosen to preserve cycle 22's "earn the click" description discipline and avoid an Astro content-schema edit. Per-file edges remain reviewable in git diff.
+- [x] Validate: graph view becomes a connected web (project CLAUDE.md rule #10); Lighthouse held — **PASS.** Build 116 pages / 2.43s / 0 errors; Playwright 30/30; Lighthouse 100/100/100/100 on 5 sample pages; 19 cross-section href spot-checks 200; two stacked CardGrids confirmed rendering on sample concept page with `next-steps` + `related-elsewhere` anchors. Evidence: `site/evidence/cycle23/`.
 
 ### O4: Back-to-index + sidebar nav completeness (Cycle 24)
 

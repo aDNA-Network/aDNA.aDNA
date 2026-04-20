@@ -17,7 +17,7 @@ Structured log for all 100 improvement cycles across 10 decadals. Each cycle app
 |---------|--------|-------|--------|-----|
 | D1 | 1-10 | Accessibility Perfection | complete | [aar_phase7_d1.md](aar_phase7_d1.md) |
 | D2 | 11-20 | Content Clarity Sprint | complete | [aar_phase7_d2.md](aar_phase7_d2.md) |
-| D3 | 21-30 | Navigation & IA | in_progress (2/10) | — (M27 open: [mission_m27_d3_navigation_ia.md](../mission_m27_d3_navigation_ia.md); cycles 21-22 complete, cycle 23 next) |
+| D3 | 21-30 | Navigation & IA | in_progress (3/10) | — (M27 open: [mission_m27_d3_navigation_ia.md](../mission_m27_d3_navigation_ia.md); cycles 21-23 complete, cycle 24 next) |
 | D4 | 31-40 | Visual Polish | pending | — |
 | D5 | 41-50 | Mobile Experience | pending | — |
 | D6 | 51-60 | Performance & Loading | pending | — |
@@ -708,3 +708,43 @@ Every page at the ceiling — both new pages hit 100 Perf out of the gate, contr
 - Evidence: `site/evidence/cycle22/lh_{homepage,concept,tutorial,glossary,adopter}.json`.
 
 **Carry-Forward**: none — rollout clean across all 8 files. Existing `/learn/concepts/dual-audience` broken link incidentally removed (was a pre-existing defect in `dual-audience.mdx`'s Related list; not part of O2 scope but the rewrite forced its resolution). "Related Elsewhere" cross-section affordance (O3, cycle 23) will layer a second CardGrid below Next Steps to widen the lateral scent further.
+
+### Cycle 23 — 2026-04-19
+
+**Decadal**: D3 (Navigation & IA)
+**Target**: O3 — Global "Related Elsewhere" cross-section affordance. Every concept, pattern, and tutorial gains a second `<CardGrid columns={2}>` block below `## Next Steps`, linking *sideways across sections* (concepts → 2 patterns + 2 tutorials; patterns → 2 concepts + 2 tutorials; tutorials → 2 concepts + 2 patterns). Operationalizes project CLAUDE.md rule #10 (connected web, not isolated islands) and closes the top D2-residual pain point (lateral navigation scent — cited by Researcher + Solo Developer in D2 AAR).
+**Before**: Next Steps grids were overwhelmingly intra-section (concepts → concepts, patterns → mostly concepts + 1 pattern, tutorials → mostly tutorials). No systematic cross-section affordance. Readers deep in a concept had to return to an index to jump sections.
+**After**: All 29 content pages (12 concepts + 8 patterns + 9 tutorials) end with two stacked CardGrids: `## Next Steps` (primary CTA, stays in section) and `## Related Elsewhere` (secondary CTA, jumps sections). 116 new lateral scent edges added (29 × 4 cards), every description crafted "what you find after" (cycle 22 convention, not title restatements). Every href resolves to a real page (curl -I 200 on 19 distinct targets).
+
+**Changes**:
+- 12 concept MDX files in `site/src/content/docs/` — appended `## Related Elsewhere` + `<CardGrid columns={2}>` with 4 cards (2 patterns + 2 tutorials) to: agentic-literacy, context-commons, context-optimization, convergence, fair-metadata, governance-files, knowledge-graph, lattice-composition, ontology, open-standard, token-selection, triad
+- 8 pattern MDX files in `site/src/content/docs/` — appended same block with 4 cards (2 concepts + 2 tutorials) to: agents-md, base-extension, context-recipe, dual-audience, fair-envelope, federation-readiness, mission-decomposition, question-test
+- 9 tutorial MDX files in `site/src/content/guides/` — appended same block with 4 cards (2 concepts + 2 patterns) to: build-a-lattice, design-a-mission, extend-the-ontology, federate-a-vault, first-claude-md, navigate-a-vault, question-test, run-a-campaign, write-a-context-file
+- No component, schema, or layout changes — `CardGrid.astro` already supports 4 cards at `columns={2}`; cycle 16 + 22 imports already present on every file.
+
+**Lighthouse (5 sample pages, desktop preset, local preview — matches cycle 21+22 methodology):**
+| Page | Perf | A11y | BP | SEO |
+|------|------|------|----|----|
+| Homepage | 100 | 100 | 100 | 100 |
+| Concept (triad) | 100 | 100 | 100 | 100 |
+| Tutorial (first-claude-md) | 100 | 100 | 100 | 100 |
+| Glossary (glossary-adna) | 100 | 100 | 100 | 100 |
+| Adopter (adopter-solo-developer) | 100 | 100 | 100 | 100 |
+| **Average** | **100** | **100** | **100** | **100** |
+
+| Category | Before (cycle 22) | After (cycle 23) | Delta |
+|----------|-------------------|------------------|-------|
+| Performance | 100 | 100 | 0 |
+| Accessibility | 100 | 100 | 0 |
+| Best Practices | 100 | 100 | 0 |
+| SEO | 100 | 100 | 0 |
+
+**Validation**: PASS
+- Build: 116 pages, 2.43s, 0 errors.
+- Playwright gates: 30/30 pass (including G4 axe-core WCAG 2.1 AA on homepage, concept, tutorial, pattern, 404 — all zero violations).
+- Lighthouse: 100/100/100/100 on all 5 sample pages; no category dropped. Adding a second CardGrid per page did not move Perf — CardGrid is pure CSS grid, no JS, minimal DOM growth.
+- Link spot-check: 19 distinct cross-section hrefs return 200 in preview (all 8 pattern slugs; `/learn/concepts/knowledge-graph`, `/learn/concepts/governance-files`; all 9 tutorial slugs).
+- Markup spot-check: `curl /learn/concepts/triad/` renders two stacked `<div class="card-grid cols-2">` blocks; ToC picks up both `next-steps` and `related-elsewhere` anchors.
+- Evidence: `site/evidence/cycle23/lh_{homepage,concept,tutorial,glossary,adopter}.json`.
+
+**Carry-Forward**: none. 116 new lateral edges landed without regression. Graph connectivity is now dense across all three content sections — every concept reaches the 9 tutorials in ≤2 hops, every tutorial reaches the 8 patterns in ≤2 hops, every pattern reaches the 12 concepts in ≤2 hops. O4 (cycle 24) back-to-index + sidebar audit will layer the "← All concepts" affordance on top; the breadcrumb (cycle 21) + section link already cover most of that work.
