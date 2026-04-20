@@ -6,6 +6,8 @@ section: "patterns"
 order: 7
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Problem
 
 A task too large for a single agent session — writing 13 concept files, or building a full documentation site — can't be executed atomically. Without decomposition, agents either attempt too much (exceeding context limits, losing coherence) or work without a plan (duplicating effort, missing dependencies).
@@ -71,8 +73,11 @@ The decomposition also demonstrates [convergence](/learn/concepts/convergence): 
 
 **Skipping the AAR**: Completing a mission without the 5-line After-Action Review. The AAR captures what worked, what didn't, and what the next mission should know. Without it, the same mistakes repeat.
 
-## Related
+## Next Steps
 
-- [Convergence Model](/learn/concepts/convergence) — the structural principle that makes decomposition necessary and effective
-- [Token Selection](/learn/concepts/token-selection) — the context budget discipline that sizes objectives to sessions
-- [AGENTS.md Routing](/patterns/agents-md) — how agents navigate to their mission's working files
+<CardGrid columns={2} cards={[
+  { title: "Convergence", href: "/learn/concepts/convergence", description: "The structural principle that makes campaign → mission → objective a convergent context funnel." },
+  { title: "Token Selection", href: "/learn/concepts/token-selection", description: "The context-budget discipline that sizes each objective to fit inside a single agent session." },
+  { title: "AGENTS.md Routing", href: "/patterns/agents-md", description: "The directory-level routing every objective relies on when claiming its working files." },
+  { title: "Run a Campaign", href: "/learn/tutorials/run-a-campaign", description: "Hands-on walkthrough: author a campaign file, decompose it into missions, and log the first session." }
+]} />

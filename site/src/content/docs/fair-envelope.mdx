@@ -6,6 +6,8 @@ section: "patterns"
 order: 6
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Problem
 
 A lattice, module, or dataset that lacks standardized metadata is a black box. Other projects can't discover it, can't assess whether it's trustworthy, can't determine its licensing, and can't integrate it with their own knowledge. Without metadata, sharing is manual — someone emails a file and explains it verbally. That doesn't scale.
@@ -77,8 +79,11 @@ Four lines that make this lattice discoverable, legally clear, attributable, and
 
 **Mixing flat and nested**: Using `fair.findable.keywords` in a `.lattice.yaml` file (should be flat `fair.keywords`) or `fair.keywords` in vault frontmatter (should be nested `fair.findable.keywords`). Pick the format for the file type and be consistent.
 
-## Related
+## Next Steps
 
-- [FAIR Metadata](/learn/concepts/fair-metadata) — the concept explaining why FAIR matters and how it works
-- [Federation Readiness](/patterns/federation-readiness) — the broader checklist that includes FAIR as a prerequisite
-- [Context Commons](/learn/concepts/context-commons) — the community sharing vision FAIR enables
+<CardGrid columns={2} cards={[
+  { title: "FAIR Metadata", href: "/learn/concepts/fair-metadata", description: "The concept behind the envelope — why two required fields unlock four downstream properties." },
+  { title: "Federation Readiness", href: "/patterns/federation-readiness", description: "The 6-point checklist that includes the FAIR envelope as its licensing and findability prerequisite." },
+  { title: "Context Commons", href: "/learn/concepts/context-commons", description: "The community-sharing vision that the envelope turns from ambition into an enforceable contract." },
+  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "The governance model that keeps the envelope's field names stable across every aDNA instance." }
+]} />

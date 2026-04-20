@@ -1,7 +1,7 @@
 ---
 type: artifact
 created: 2026-04-15
-updated: 2026-04-18
+updated: 2026-04-19
 status: active
 last_edited_by: agent_stanley
 tags: [artifact, iii, cycle-tracker, phase-7]
@@ -17,7 +17,7 @@ Structured log for all 100 improvement cycles across 10 decadals. Each cycle app
 |---------|--------|-------|--------|-----|
 | D1 | 1-10 | Accessibility Perfection | complete | [aar_phase7_d1.md](aar_phase7_d1.md) |
 | D2 | 11-20 | Content Clarity Sprint | complete | [aar_phase7_d2.md](aar_phase7_d2.md) |
-| D3 | 21-30 | Navigation & IA | in_progress (1/10) | — (M27 open: [mission_m27_d3_navigation_ia.md](../mission_m27_d3_navigation_ia.md); cycle 21 complete, cycle 22 next) |
+| D3 | 21-30 | Navigation & IA | in_progress (2/10) | — (M27 open: [mission_m27_d3_navigation_ia.md](../mission_m27_d3_navigation_ia.md); cycles 21-22 complete, cycle 23 next) |
 | D4 | 31-40 | Visual Polish | pending | — |
 | D5 | 41-50 | Mobile Experience | pending | — |
 | D6 | 51-60 | Performance & Loading | pending | — |
@@ -664,3 +664,47 @@ Every page at the ceiling — both new pages hit 100 Perf out of the gate, contr
 - Evidence: `site/evidence/cycle21/lh_{homepage,concept,tutorial,glossary,adopter}.json`
 
 **Carry-Forward**: none — baseline cleanly recorded; component has no known gaps. Subsequent "back-to-index" affordance (O4, cycle 24) will refine the parent-link interaction by adding `← All concepts / All patterns / …` prefix links; current section link serves that role for now.
+
+### Cycle 22 — 2026-04-19
+
+**Decadal**: D3 (Navigation & IA)
+**Target**: O2 — Pattern-page Next Steps CardGrid rollout (parallel to cycle 16's concept + tutorial rollout; 8 pattern pages were the one content-type still ending in a bullet-list `## Related`, cited by Enterprise in the D2 AAR as lateral-scent gap)
+**Before**: 8 pattern pages (agents-md, base-extension, context-recipe, dual-audience, fair-envelope, federation-readiness, mission-decomposition, question-test) ended with `## Related` + 3-item bullet list. `dual-audience.mdx` Related list included a broken link to `/learn/concepts/dual-audience` (no concept file with that slug exists).
+**After**: All 8 pattern pages end with `## Next Steps` + `<CardGrid columns={2}>` block carrying 4 scent-carrying cards each. Broken `/learn/concepts/dual-audience` link removed from `dual-audience.mdx` in the rewrite. Every card href verified against the site routes (all 200). Fourth card per page adds a lateral cross-section scent target (e.g., `question-test` → Knowledge Graph; `agents-md` → Context Optimization; `federation-readiness` → Knowledge Graph; `mission-decomposition` → Run a Campaign tutorial).
+
+**Changes**:
+- `site/src/content/docs/question-test.mdx` — added `import CardGrid`; replaced `## Related` with `## Next Steps` + CardGrid (Triad, Ontology, Base/Extension, Knowledge Graph)
+- `site/src/content/docs/agents-md.mdx` — as above (Convergence, Token Selection, Context Recipe, Context Optimization)
+- `site/src/content/docs/dual-audience.mdx` — as above, replacing broken concept link (Agentic Literacy, Question Test, Context Optimization, Governance Files)
+- `site/src/content/docs/base-extension.mdx` — as above (Ontology, Open Standard, Question Test, FAIR Envelope)
+- `site/src/content/docs/context-recipe.mdx` — as above (Context Optimization, Token Selection, AGENTS.md Routing, Convergence)
+- `site/src/content/docs/fair-envelope.mdx` — as above (FAIR Metadata, Federation Readiness, Context Commons, Open Standard)
+- `site/src/content/docs/mission-decomposition.mdx` — as above (Convergence, Token Selection, AGENTS.md Routing, Run a Campaign tutorial)
+- `site/src/content/docs/federation-readiness.mdx` — as above (Lattice Composition, FAIR Envelope, Open Standard, Knowledge Graph)
+
+**Lighthouse (5 sample pages, desktop preset, local preview — matches cycle 21 methodology):**
+| Page | Perf | A11y | BP | SEO |
+|------|------|------|----|----|
+| Homepage | 100 | 100 | 100 | 100 |
+| Concept (triad) | 100 | 100 | 100 | 100 |
+| Tutorial (first-claude-md) | 100 | 100 | 100 | 100 |
+| Glossary (glossary-adna) | 100 | 100 | 100 | 100 |
+| Adopter (adopter-solo-developer) | 100 | 100 | 100 | 100 |
+| **Average** | **100** | **100** | **100** | **100** |
+
+| Category | Before (cycle 21) | After (cycle 22) | Delta |
+|----------|-------------------|------------------|-------|
+| Performance | 100 | 100 | 0 |
+| Accessibility | 100 | 100 | 0 |
+| Best Practices | 100 | 100 | 0 |
+| SEO | 100 | 100 | 0 |
+
+**Validation**: PASS
+- Build: 116 pages, 2.48s, 0 errors.
+- Playwright gates: 30/30 pass (including G4 axe-core WCAG 2.1 AA on homepage, concept, tutorial, pattern, 404 — all zero violations).
+- Lighthouse: 100/100/100/100 on all 5 sample pages; no category dropped.
+- Link spot-check: all 4 distinct new 4th-card hrefs return 200 in preview (`/learn/concepts/knowledge-graph`, `/learn/concepts/context-optimization`, `/learn/concepts/governance-files`, `/patterns/fair-envelope`, `/learn/concepts/convergence`, `/learn/concepts/open-standard`, `/learn/tutorials/run-a-campaign`).
+- Markup spot-check: curl `/patterns/agents-md/` renders 4 `<a class="card">` under `<h2 id="next-steps">`; ToC picks up `next-steps` anchor.
+- Evidence: `site/evidence/cycle22/lh_{homepage,concept,tutorial,glossary,adopter}.json`.
+
+**Carry-Forward**: none — rollout clean across all 8 files. Existing `/learn/concepts/dual-audience` broken link incidentally removed (was a pre-existing defect in `dual-audience.mdx`'s Related list; not part of O2 scope but the rewrite forced its resolution). "Related Elsewhere" cross-section affordance (O3, cycle 23) will layer a second CardGrid below Next Steps to widen the lateral scent further.

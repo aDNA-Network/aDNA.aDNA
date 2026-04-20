@@ -6,6 +6,8 @@ section: "patterns"
 order: 2
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Problem
 
 An aDNA vault may contain hundreds of files across dozens of directories. An agent working on a specific task doesn't need most of them — but how does it know which directories to enter and which to skip? Without routing, agents either load too much (drowning in irrelevant context) or too little (missing critical knowledge).
@@ -53,8 +55,11 @@ The context library at `what/context/adna_core/AGENTS.md` goes further — it li
 
 **Stale routing**: AGENTS.md that describes directory contents that have changed. If you add entity types or restructure, update the AGENTS.md. Stale routing is worse than missing routing — it actively misdirects.
 
-## Related
+## Next Steps
 
-- [Convergence Model](/learn/concepts/convergence) — the structural principle that AGENTS.md routing implements
-- [Token Selection](/learn/concepts/token-selection) — the broader discipline of choosing what to load
-- [Context Recipe](/patterns/context-recipe) — multi-directory assembly that builds on AGENTS.md routing
+<CardGrid columns={2} cards={[
+  { title: "Convergence", href: "/learn/concepts/convergence", description: "The structural principle that turns each AGENTS.md load/skip decision into a token-budget win." },
+  { title: "Token Selection", href: "/learn/concepts/token-selection", description: "The broader discipline of choosing what to load — AGENTS.md is one implementation of it." },
+  { title: "Context Recipe", href: "/patterns/context-recipe", description: "Named multi-directory assemblies that build on AGENTS.md routing for recurring task types." },
+  { title: "Context Optimization", href: "/learn/concepts/context-optimization", description: "Why per-directory orientation files beat single-file monoliths for agent navigation." }
+]} />

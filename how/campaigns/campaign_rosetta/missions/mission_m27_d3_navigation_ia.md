@@ -6,10 +6,10 @@ campaign: campaign_rosetta
 status: active
 priority: high
 created: 2026-04-18
-updated: 2026-04-18
+updated: 2026-04-19
 last_edited_by: agent_stanley
 tags: [mission, rosetta, phase-7, iii, d3, navigation-ia]
-progress: 1/10 cycles complete (cycle 21)
+progress: 2/10 cycles complete (cycles 21-22)
 ---
 
 # M27 — D3: Navigation & IA
@@ -59,11 +59,11 @@ Each objective corresponds to one III cycle (`skill_iii_cycle.md`). Hold Lightho
 - [x] Validate: Lighthouse 100/100/100/100 held on all 5 sample pages; axe-core 0 violations on breadcrumb nav (30/30 Playwright gates pass)
 - [x] Commit at cycle close
 
-### O2: Pattern-page Next Steps CardGrid rollout (Cycle 22)
+### O2: Pattern-page Next Steps CardGrid rollout (Cycle 22) — ✅ Complete (2026-04-19)
 
-- [ ] Add `## Next Steps` + `<CardGrid columns={2}>` block to all 8 pattern MDX files — parallel to cycle 16's concept+tutorial work
-- [ ] Each card: 2-4 cards per page with scent-carrying description
-- [ ] Validate: 116 pages hold; Lighthouse 100/100/100/100 on sample pages; axe-core clean
+- [x] Add `## Next Steps` + `<CardGrid columns={2}>` block to all 8 pattern MDX files — parallel to cycle 16's concept+tutorial work. Shipped with 4 scent-carrying cards per page (3 carried from existing Related lists + 1 new lateral-scent target per page).
+- [x] Each card: 2-4 cards per page with scent-carrying description — every page received 4 cards; every description earns the click with "what you find after" framing rather than restating the linked title.
+- [x] Validate: 116 pages hold; Lighthouse 100/100/100/100 on sample pages; axe-core clean — all gates pass (build 116 pages/2.48s/0 errors, Playwright 30/30, Lighthouse 100/100/100/100 on 5 sample pages, 7 new link targets spot-checked 200). Incidentally removed a pre-existing broken `/learn/concepts/dual-audience` link from `dual-audience.mdx`'s Related list during the rewrite. Evidence: `site/evidence/cycle22/`.
 
 ### O3: Global "Related Elsewhere" cross-section affordance (Cycle 23)
 

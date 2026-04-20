@@ -6,6 +6,8 @@ section: "patterns"
 order: 1
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Problem
 
 When adding a new file to an aDNA project, you need to decide which triad leg it belongs in. With three categories and dozens of entity types, this should be simple — but edge cases create hesitation. Is a team standup protocol a WHO thing (it involves people) or a HOW thing (it's a process)? Is a decision record a WHAT thing (it's knowledge) or a HOW thing (it documents a process)?
@@ -53,8 +55,11 @@ Every file in this vault was placed by applying the question test. Navigate to a
 
 **WHO/HOW confusion**: Placing process documentation under `who/` because people execute processes. The test is about the file's primary purpose, not its participants. A sprint protocol is HOW (process); the team running it is WHO (people).
 
-## Related
+## Next Steps
 
-- [The Triad](/learn/concepts/triad) — the architectural principle the question test implements
-- [Ontology](/learn/concepts/ontology) — the entity types within each triad leg
-- [Base/Extension](/patterns/base-extension) — how new entity types inherit their triad placement
+<CardGrid columns={2} cards={[
+  { title: "The Triad", href: "/learn/concepts/triad", description: "The three-category principle the question test operationalizes into a daily filing decision." },
+  { title: "Ontology", href: "/learn/concepts/ontology", description: "The 14 base entity types inside each leg — the destinations the test routes files toward." },
+  { title: "Base/Extension", href: "/patterns/base-extension", description: "How extension types inherit their triad placement by re-running the same question on a new type." },
+  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "The connected web that emerges once every file lives under the leg its question answers." }
+]} />

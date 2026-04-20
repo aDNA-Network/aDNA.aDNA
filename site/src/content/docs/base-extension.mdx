@@ -6,6 +6,8 @@ section: "patterns"
 order: 4
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Problem
 
 An open standard must be stable enough to build on, yet flexible enough to serve diverse domains. If every project modifies the core types, interoperability collapses — no two projects speak the same language. If the core is frozen, projects can't represent domain-specific knowledge and the standard becomes irrelevant.
@@ -67,8 +69,11 @@ Each extension directory has an AGENTS.md and a template in `how/templates/`. Th
 
 **Triad misplacement**: Creating an extension type under the wrong leg (e.g., `community` under HOW instead of WHO). Apply the question test — "Who is involved?" → WHO.
 
-## Related
+## Next Steps
 
-- [Ontology](/learn/concepts/ontology) — the entity type system that base/extension partitions
-- [Open Standard](/learn/concepts/open-standard) — the governance model that keeps the base stable
-- [Question Test](/patterns/question-test) — how to determine which triad leg an extension belongs under
+<CardGrid columns={2} cards={[
+  { title: "Ontology", href: "/learn/concepts/ontology", description: "The entity type system that the base/extension rule partitions into stable core and domain growth." },
+  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "The governance model that keeps base types frozen so every aDNA project can speak the same vocabulary." },
+  { title: "Question Test", href: "/patterns/question-test", description: "The filing rule new extension types must satisfy before they earn a directory under a triad leg." },
+  { title: "FAIR Envelope", href: "/patterns/fair-envelope", description: "The metadata block extension types inherit for free — interoperability without re-negotiation." }
+]} />

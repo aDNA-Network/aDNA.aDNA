@@ -6,6 +6,8 @@ section: "patterns"
 order: 5
 ---
 
+import CardGrid from '../../components/sections/CardGrid.astro';
+
 ## Problem
 
 Many tasks require knowledge from multiple context topics. An agent designing a federated lattice needs context from `adna_core/lattice_design`, `adna_core/federation`, and `object_standards/overview`. Without guidance, agents improvise — loading too many subtopics ("just in case") or too few (missing critical context). The result is either token waste or knowledge gaps.
@@ -74,8 +76,11 @@ The AGENTS.md at `what/context/adna_core/AGENTS.md` supports recipe design by li
 
 **Single-topic recipes**: A recipe that loads only one subtopic isn't a recipe — it's just loading a file. Recipes add value when they combine subtopics that non-obviously belong together.
 
-## Related
+## Next Steps
 
-- [Context Optimization](/learn/concepts/context-optimization) — the design principles that make individual files worth including in recipes
-- [Token Selection](/learn/concepts/token-selection) — the broader discipline of loading the right knowledge
-- [AGENTS.md Routing](/patterns/agents-md) — the directory-level decisions that recipes build upon
+<CardGrid columns={2} cards={[
+  { title: "Context Optimization", href: "/learn/concepts/context-optimization", description: "The design principles that make individual subtopics worth including in a recipe." },
+  { title: "Token Selection", href: "/learn/concepts/token-selection", description: "The broader discipline of loading the right knowledge — recipes are pre-validated selections." },
+  { title: "AGENTS.md Routing", href: "/patterns/agents-md", description: "The directory-level load/skip decisions recipes build upon when assembling multi-topic context." },
+  { title: "Convergence", href: "/learn/concepts/convergence", description: "The structural principle that explains why a three-line recipe can replace thirty improvised loads." }
+]} />
