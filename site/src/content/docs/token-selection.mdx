@@ -7,6 +7,7 @@ order: 5
 ---
 
 import CardGrid from '../../components/sections/CardGrid.astro';
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
 
 ## Overview
 
@@ -39,7 +40,7 @@ aDNA provides three complementary mechanisms for token selection:
 
 **1. AGENTS.md routing (§4.5)**
 
-Every directory has an AGENTS.md with a **load/skip decision** — a brief statement telling agents whether this directory's content is relevant to their current task. When an agent navigates the vault, it reads AGENTS.md at each junction and decides whether to descend or skip. This turns the directory tree into a decision tree, pruning irrelevant branches before they consume tokens.
+Every directory has an <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." /> with a **load/skip decision** — a brief statement telling agents whether this directory's content is relevant to their current task. When an agent navigates the vault, it reads AGENTS.md at each junction and decides whether to descend or skip. This turns the directory tree into a decision tree, pruning irrelevant branches before they consume tokens.
 
 **2. Context recipes (`what/context/context_recipes.md`)**
 
@@ -55,13 +56,13 @@ Recipes prevent the common failure mode of loading too much "just in case."
 
 **3. Token estimates on files**
 
-Context files and AGENTS.md files carry `token_estimate` fields in their frontmatter. This lets agents make cost-aware loading decisions: "This file costs ~2K tokens — is it worth it for the current objective?"
+Context files and AGENTS.md files carry `token_estimate` fields in their <GlossaryTooltip term="frontmatter" slug="frontmatter" definition="The YAML metadata block at the top of every aDNA file, wrapped in --- fences. Records type, dates, editor, tags — the file's ID card." />. This lets agents make cost-aware loading decisions: "This file costs ~2K tokens — is it worth it for the current objective?"
 
 ### The Loading Protocol
 
 Combining these mechanisms, an agent's loading sequence looks like:
 
-1. **CLAUDE.md** — auto-loaded (~2-4K tokens). Non-negotiable.
+1. <GlossaryTooltip term="CLAUDE.md" slug="governance-file" definition="One of the five ALLCAPS governance files at an aDNA project root — the agent's auto-loaded entry point with persona, project map, safety rules, and startup protocol." /> — auto-loaded (~2-4K tokens). Non-negotiable.
 2. **STATE.md** — current operational state (~1-2K tokens). Nearly always loaded.
 3. **Campaign/mission docs** — task framing (~2-3K tokens). Loaded when executing mission work.
 4. **Context files** — domain knowledge (~5-20K tokens). Selected via AGENTS.md routing and context recipes.

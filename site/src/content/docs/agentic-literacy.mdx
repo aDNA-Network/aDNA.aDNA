@@ -7,6 +7,7 @@ order: 11
 ---
 
 import CardGrid from '../../components/sections/CardGrid.astro';
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
 
 ## Overview
 
@@ -67,7 +68,7 @@ This vault (`aDNA.aDNA/`) exists for exactly this purpose. A reader learning abo
 
 This vault is itself an agentic literacy tool:
 
-**Progressive structure**: Navigate from `README.md` (human entry point) → `CLAUDE.md` (agent entry point) → `STATE.md` (operational context) → `what/concepts/` (concept library). Each step teaches a literacy concept by requiring you to practice it: following governance files, using the triad, reading AGENTS.md routing.
+**Progressive structure**: Navigate from `README.md` (human entry point) → <GlossaryTooltip term="CLAUDE.md" slug="governance-file" definition="One of the five ALLCAPS governance files at an aDNA project root — the agent's auto-loaded entry point with persona, project map, safety rules, and startup protocol." /> (agent entry point) → `STATE.md` (operational context) → `what/concepts/` (concept library). Each step teaches a literacy concept by requiring you to practice it: following governance files, using the triad, reading <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." /> routing.
 
 **The tutorials directory**: `what/tutorials/` is scaffolded for a beginner → intermediate → advanced learning path. When populated, each tutorial will walk a learner through a specific agentic literacy skill — from "create your first CLAUDE.md" to "design a multi-mission campaign."
 

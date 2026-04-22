@@ -7,6 +7,7 @@ order: 13
 ---
 
 import CardGrid from '../../components/sections/CardGrid.astro';
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
 
 ## Overview
 
@@ -88,7 +89,7 @@ FAIR metadata is visible throughout this vault:
 
 **Lattice YAML files**: Open any `.lattice.yaml` in `what/lattices/examples/` — every one has a `fair:` block with `license`, `keywords`, `creators`, and `provenance`. This is flat FAIR in its natural habitat.
 
-**Context file frontmatter**: Look at the frontmatter of any context file — e.g., `what/context/adna_core/context_adna_core_paradigm_overview.md`. The `sources` field is provenance. The `tags` field serves the findability role that `keywords` serves in YAML objects.
+**Context file frontmatter**: Look at the <GlossaryTooltip term="frontmatter" slug="frontmatter" definition="The YAML metadata block at the top of every aDNA file, wrapped in --- fences. Records type, dates, editor, tags — the file's ID card." /> of any context file — e.g., `what/context/adna_core/context_adna_core_paradigm_overview.md`. The `sources` field is provenance. The `tags` field serves the findability role that `keywords` serves in YAML objects.
 
 **Federation examples**: The `docking_assessment` example lattice at `what/lattices/examples/` carries both `fair` and `federation` blocks — showing how FAIR metadata enables a lattice to move from one project to another with trust intact.
 

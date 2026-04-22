@@ -7,6 +7,7 @@ order: 8
 ---
 
 import CardGrid from '../../components/sections/CardGrid.astro';
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
 
 ## Overview
 
@@ -85,11 +86,11 @@ Recipes prevent the common failure of loading "just in case" — pre-selecting w
 
 ## See It In Action
 
-This vault's context library (`what/context/`) is a working example of context optimization at every level:
+This vault's <GlossaryTooltip term="context library" slug="context-library" definition="The structured knowledge store in what/context/ — organized by topic with subtopics and token estimates so agents load only what they need." /> (`what/context/`) is a working example of context optimization at every level:
 
 **File-level optimization**: Open `what/context/adna_core/context_adna_core_context_engineering.md` — it's the guide for writing context files, and it practices what it preaches. Tables dominate. Principles are numbered. Anti-patterns are listed. Signal density: 5/5.
 
-**Token budgets**: Every context file carries a `token_estimate` in its frontmatter. The AGENTS.md at `what/context/adna_core/AGENTS.md` lists all 13 subtopics with their token costs, totaling ~13,100 tokens. An agent can decide exactly which subtopics to load and predict the cost before loading them.
+**Token budgets**: Every context file carries a `token_estimate` in its <GlossaryTooltip term="frontmatter" slug="frontmatter" definition="The YAML metadata block at the top of every aDNA file, wrapped in --- fences. Records type, dates, editor, tags — the file's ID card." />. The <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." /> at `what/context/adna_core/AGENTS.md` lists all 13 subtopics with their token costs, totaling ~13,100 tokens. An agent can decide exactly which subtopics to load and predict the cost before loading them.
 
 **Format selection in practice**: Compare the "Key Principles" section in any context file (numbered list, table-driven) with the "Why This Matters" section in concept files (prose, metaphor-driven). Different audiences, different formats, both optimized for their purpose.
 

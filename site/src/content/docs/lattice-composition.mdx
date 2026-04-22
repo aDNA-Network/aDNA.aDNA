@@ -7,6 +7,7 @@ order: 9
 ---
 
 import CardGrid from '../../components/sections/CardGrid.astro';
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
 
 ## Overview
 
@@ -107,13 +108,13 @@ For a lattice to be composable across aDNA instances (not just within one projec
 
 This vault contains the full lattice infrastructure at `what/lattices/`:
 
-**Schema**: `what/lattices/lattice_yaml_schema.json` — the JSON Schema that all lattice files validate against. Open it to see the `nodes`, `edges`, `federation`, and `fair` block definitions.
+**Schema**: `what/lattices/lattice_yaml_schema.json` — the JSON Schema that all lattice files validate against. Open it to see the `nodes`, `edges`, `federation`, and `fair` block definitions. A <GlossaryTooltip term="skill" slug="skill" definition="A reusable step-by-step recipe agents follow to accomplish a task. A procedure, not a file blueprint — codified expertise in a repeatable form." /> can also be promoted into the registry as a `lattice_type: skill` — the degenerate lattice form.
 
 **Examples**: `what/lattices/examples/` contains validated lattice files covering all types and composition patterns. The `docking_assessment` example demonstrates external reference federation — it was extracted from a larger `protein_binder_design` pipeline and carries `federation.parent_lattice` provenance.
 
 **Validation tools**: `what/lattices/tools/lattice_validate.py` checks schema compliance, node ID uniqueness, edge reference validity, and federation property consistency. Run it against any `.lattice.yaml` to verify composition correctness.
 
-**The vault itself is a context graph**: The knowledge structure you're navigating — concepts linking to concepts, AGENTS.md routing agents through directories — is a `context_graph` lattice. The nodes are files. The edges are wikilinks and AGENTS.md references. The execution mode is agent-driven graph traversal.
+**The vault itself is a context graph**: The knowledge structure you're navigating — concepts linking to concepts, <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." /> routing agents through directories — is a `context_graph` lattice. The nodes are files. The edges are wikilinks and AGENTS.md references. The execution mode is agent-driven graph traversal.
 
 ## Next Steps
 

@@ -7,6 +7,7 @@ order: 12
 ---
 
 import CardGrid from '../../components/sections/CardGrid.astro';
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
 
 ## Overview
 
@@ -87,11 +88,11 @@ Each step adds value. The original creator does the hardest work — distilling 
 
 This vault contains the seeds of a Context Commons:
 
-**The context library itself**: `what/context/` contains 5 topics, 27 subtopics, and ~75K tokens of curated knowledge. This library was created for this vault but is designed to be sharable: every file has FAIR-aligned metadata (sources, tags, quality scores), token estimates, and self-contained content. It's a proto-commons.
+**The <GlossaryTooltip term="context library" slug="context-library" definition="The structured knowledge store in what/context/ — organized by topic with subtopics and token estimates so agents load only what they need." /> itself**: `what/context/` contains 5 topics, 27 subtopics, and ~75K tokens of curated knowledge. This library was created for this vault but is designed to be sharable: every file has FAIR-aligned metadata (sources, tags, quality scores), token estimates, and self-contained content. It's a proto-commons.
 
 **Community infrastructure**: `who/community/` is scaffolded for community roles and contribution paths. When populated, it will define how contributors propose, review, and maintain shared resources.
 
-**FAIR metadata everywhere**: Every object in this vault carries the metadata envelope that makes commons participation possible — `keywords`, `license`, `provenance`, `sources`. The infrastructure is in place; the community scales it.
+**FAIR metadata everywhere**: Every object in this vault carries the metadata envelope that makes commons participation possible — `keywords`, `license`, `provenance`, `sources` — declared in each file's <GlossaryTooltip term="frontmatter" slug="frontmatter" definition="The YAML metadata block at the top of every aDNA file, wrapped in --- fences. Records type, dates, editor, tags — the file's ID card." />. The infrastructure is in place; the community scales it.
 
 **The base template**: The upstream `adna/` repository (github.com/LatticeProtocol/Agentic-DNA) is itself a commons contribution — a shared, forkable starting point that reduces the cost of creating new aDNA projects from hours to minutes. Every `.aDNA/` project in the workspace was forked from this commons resource.
 

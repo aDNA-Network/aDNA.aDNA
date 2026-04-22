@@ -7,6 +7,7 @@ order: 1
 ---
 
 import CardGrid from '../../components/sections/CardGrid.astro';
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
 
 ## Overview
 
@@ -38,7 +39,7 @@ The triad is defined in the aDNA Standard §3.1 as the **what/how/who ontology**
 
 ### The Question Test
 
-When you're unsure where a file belongs, apply the **question test** (§3.1): "Is this about WHAT we know, HOW we work, or WHO is involved?"
+When you're unsure where a file belongs, apply the <GlossaryTooltip term="question test" slug="question-test" definition="The three-question filing rule: 'Is this about what we know, how we work, or who is involved?' Routes any new file to the correct triad leg." /> (§3.1): "Is this about WHAT we know, HOW we work, or WHO is involved?"
 
 | Content | Question | Triad Leg |
 |---------|----------|-----------|
@@ -52,8 +53,8 @@ The test always produces exactly one answer. If it feels ambiguous, the content 
 
 The triad has two physical layouts (§3.2–3.4):
 
-- **Bare triad** — `what/`, `how/`, `who/` sit at project root. Used when aDNA IS the primary content (knowledge bases, documentation vaults).
-- **Embedded triad** — the triad lives inside `.agentic/` at repo root. Used when adding agent support to an existing codebase.
+- <GlossaryTooltip term="Bare triad" slug="bare-triad" definition="The deployment where what/, how/, who/ sit directly at project root. Used when aDNA IS the project — docs vaults, knowledge bases." /> — `what/`, `how/`, `who/` sit at project root. Used when aDNA IS the primary content (knowledge bases, documentation vaults).
+- <GlossaryTooltip term="Embedded triad" slug="embedded-triad" definition="The deployment where the triad lives inside .agentic/ at repo root. Used to add agent support to an existing codebase without reshaping it." /> — the triad lives inside `.agentic/` at repo root. Used when adding agent support to an existing codebase.
 
 The ontology is identical in both forms. Only the nesting differs.
 

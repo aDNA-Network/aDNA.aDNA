@@ -7,6 +7,7 @@ order: 4
 ---
 
 import CardGrid from '../../components/sections/CardGrid.astro';
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
 
 ## Overview
 
@@ -58,7 +59,7 @@ Because it's auto-loaded, CLAUDE.md carries a unique responsibility: it must be 
 
 ### AGENTS.md: The Per-Directory Guide
 
-While CLAUDE.md exists only at root, AGENTS.md appears in every directory where agents operate (§4.5). Each one answers three questions:
+While CLAUDE.md exists only at root, <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." /> appears in every directory where agents operate (§4.5). Each one answers three questions:
 
 - **What's here?** — purpose and contents of this directory
 - **What are the rules?** — naming conventions, required frontmatter, behavioral constraints

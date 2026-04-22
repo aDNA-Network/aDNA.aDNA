@@ -7,9 +7,9 @@ status: active
 priority: high
 created: 2026-04-18
 updated: 2026-04-21
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [mission, rosetta, phase-7, iii, d3, navigation-ia]
-progress: 4/10 cycles complete (cycles 21-24)
+progress: 5/10 cycles complete (cycles 21-25)
 ---
 
 # M27 — D3: Navigation & IA
@@ -77,11 +77,11 @@ Each objective corresponds to one III cycle (`skill_iii_cycle.md`). Hold Lightho
 - [x] Audit sidebar nav: every page reachable in ≤2 hops from homepage, no orphans, section headings match nav labels — **PASS.** 5 dead nav hrefs fixed in `utils/navigation.ts` (4 Lattice Examples entries missing `lattice-` slug prefix + 1 stale "Dual Audience" concept entry duplicating the Patterns page). 2 true 0-inbound orphans closed: `/how/` added to Header nav (now linked from every page); `/changelog/` added to Footer (now linked from every page). `.footer-links` gained `flex-wrap: wrap` + `gap: var(--space-3) var(--space-6)` to keep G9 responsive-320 gate green with 4 links. Label mismatch "Glossary" vs h1 "aDNA Glossary" accepted (terse sidebar convention).
 - [x] Validate: Lighthouse held; manual nav walk from homepage reaches all 116 pages within 2 hops — **PASS.** Build 116 pages / 2.32s / 0 errors; Playwright 30/30 (initial G9 320-overflow regression fixed before recording); Lighthouse 100/100/100/100 on all 5 sample pages; automated 2-hop reachability walk reaches 115/115 content pages. Evidence: `site/evidence/cycle24/`.
 
-### O5: Tooltip rollout across 12 concepts (Cycle 25)
+### O5: Tooltip rollout across 12 concepts (Cycle 25) — ✅ Complete (2026-04-21)
 
-- [ ] Wire `GlossaryTooltip.astro` on first-mention of every glossary-defined term in each of 12 concept files (import + wrap 1-3 terms per file)
-- [ ] Canonicalize term list from `what/glossary/` (25 glossary entries) — cover top 5-8 most-linked terms
-- [ ] Validate: Lighthouse held; axe-core confirms `aria-describedby` + focus behavior clean across the rollout
+- [x] Wire `GlossaryTooltip.astro` on first-mention of every glossary-defined term in each of 12 concept files (import + wrap 1-3 terms per file) — shipped 23 new tooltips across 11 previously-unwired files (convergence.mdx retained as the 12th, pre-wired demo); per-file cap of 3 respected; average 2.1 per file.
+- [x] Canonicalize term list from `what/glossary/` (25 glossary entries) — cover top 5-8 most-linked terms — covered 9 canonical slugs: `question-test`, `bare-triad`, `embedded-triad`, `governance-file`, `agents-md`, `context-library`, `frontmatter`, `mission`, `skill`, `ontology-extension`, `triad`. Mapped to first prose mentions; zero wraps in headings, tables, code blocks, or `CardGrid` card-descriptions.
+- [x] Validate: Lighthouse held; axe-core confirms `aria-describedby` + focus behavior clean across the rollout — **PASS.** Build 116 pages / 0 errors; Playwright 30/30 (G4 axe-core WCAG 2.1 AA zero violations on tooltip-bearing concept page); Lighthouse 100/100/100/100 on all 5 sample pages after cache warm-up. Evidence: `site/evidence/cycle25/`.
 
 ### O6: Tooltip rollout across 9 tutorials (Cycle 26)
 

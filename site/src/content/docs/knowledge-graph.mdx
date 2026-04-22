@@ -7,10 +7,11 @@ order: 3
 ---
 
 import CardGrid from '../../components/sections/CardGrid.astro';
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
 
 ## Overview
 
-An aDNA vault is not a filing cabinet — it's a knowledge graph. Files are nodes, wikilinks are edges, and AGENTS.md files are the navigation layer that helps agents traverse the graph efficiently. The structure is simultaneously a directory tree (for humans browsing) and a connected graph (for agents reasoning about relationships).
+An aDNA vault is not a filing cabinet — it's a knowledge graph. Files are nodes, wikilinks are edges, and <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." /> files are the navigation layer that helps agents traverse the graph efficiently. The structure is simultaneously a directory tree (for humans browsing) and a connected graph (for agents reasoning about relationships).
 
 ## Why This Matters
 
@@ -18,7 +19,7 @@ Picture two ways to organize a cookbook. In a filing cabinet, you'd sort recipes
 
 Now picture the same recipes as a web. The chocolate soufflé links to "tempering chocolate" (a technique), which links to "dark chocolate" (an ingredient), which links to "molten lava cake" (a related recipe). You can follow any thread. The web doesn't just store recipes — it captures *how they relate*.
 
-An aDNA vault works like the web, not the cabinet. Every file links to related files via wikilinks. A concept file links to the patterns that apply it. A mission links to the context it consumes. A session links to the mission it executes. The result is a navigable graph where you can start anywhere and follow connections to build understanding.
+An aDNA vault works like the web, not the cabinet. Every file links to related files via wikilinks. A concept file links to the patterns that apply it. A <GlossaryTooltip term="mission" slug="mission" definition="A chunk of work too big for one session. Breaks a goal into objectives, each small enough for a single agent session. Bridges campaigns to sessions." /> links to the context it consumes. A session links to the mission it executes. The result is a navigable graph where you can start anywhere and follow connections to build understanding.
 
 This matters for AI agents because agents don't browse — they load. An agent arriving at a cold start needs to figure out which of the vault's potentially hundreds of files are relevant to the current task. The knowledge graph, combined with AGENTS.md navigation guides, lets agents traverse from their entry point to exactly the subgraph they need — without loading everything.
 

@@ -3,7 +3,7 @@ type: artifact
 created: 2026-04-15
 updated: 2026-04-21
 status: active
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [artifact, iii, cycle-tracker, phase-7]
 ---
 
@@ -17,7 +17,7 @@ Structured log for all 100 improvement cycles across 10 decadals. Each cycle app
 |---------|--------|-------|--------|-----|
 | D1 | 1-10 | Accessibility Perfection | complete | [aar_phase7_d1.md](aar_phase7_d1.md) |
 | D2 | 11-20 | Content Clarity Sprint | complete | [aar_phase7_d2.md](aar_phase7_d2.md) |
-| D3 | 21-30 | Navigation & IA | in_progress (4/10) | — (M27 open: [mission_m27_d3_navigation_ia.md](../mission_m27_d3_navigation_ia.md); cycles 21-24 complete, cycle 25 next) |
+| D3 | 21-30 | Navigation & IA | in_progress (5/10) | — (M27 open: [mission_m27_d3_navigation_ia.md](../mission_m27_d3_navigation_ia.md); cycles 21-25 complete, cycle 26 next) |
 | D4 | 31-40 | Visual Polish | pending | — |
 | D5 | 41-50 | Mobile Experience | pending | — |
 | D6 | 51-60 | Performance & Loading | pending | — |
@@ -787,5 +787,53 @@ Every page at the ceiling — both new pages hit 100 Perf out of the gate, contr
 - 2-hop reachability: automated walk from homepage (home hrefs ∪ sample-detail-page chrome hrefs = hop 1) reaches 115/115 built content pages; 0 unreachable within ≤2 hops.
 - Back-link spot-check: 12/12 detail page types render the `← Back to {section}` affordance with correct label (concepts, patterns, tutorials, comparisons, glossary, use-cases, reference, adopters, community, publishing, workshops, lattice-examples); 10/10 root/index/404 pages suppress it (`, `/learn/concepts/`, `/patterns/`, `/glossary/`, `/use-cases/`, `/reference/`, `/adopters/`, `/community/`, `/how/`, `/404/`).
 - Evidence: `site/evidence/cycle24/lh_{homepage,concept,tutorial,glossary,adopter}.json`.
+
+### Cycle 25 — 2026-04-21
+
+**Decadal**: D3 (Navigation & IA)
+**Target**: O5 — Roll `GlossaryTooltip.astro` across all remaining concept MDX files. The component existed (accessible: `aria-describedby`, `role="tooltip"`, `focus-within`, `prefers-reduced-motion`), shipped on 2 demo pages (`convergence.mdx`, `first-claude-md.mdx` tutorial), but 11 of 12 concept files still had zero inline tooltips — readers deep in a concept had to click out to `/glossary/` to resolve a canonical term. D2 AAR flagged this as an IA-shaped pain point (Educator + Solo Developer personas). Rolling the component converts inline jargon into first-class graph edges to `/glossary/glossary-*`, operationalizing project CLAUDE.md rule #10 ("cross-link aggressively") as a mechanical sweep.
+**Before**: 2 concept files with tooltips (`convergence.mdx` = 1, `first-claude-md.mdx` tutorial demo). 11 concept files had 0 tooltips. Inline mentions of canonical terms (`triad`, `AGENTS.md`, `CLAUDE.md`, `frontmatter`, `mission`, `context library`, `skill`, `ontology extension`) did not self-define on hover/focus — readers hit `Ctrl+K` or tab back to sidebar.
+**After**: 12/12 concept files wire the component (11 new + 1 retained). 23 new tooltips land in first-mention positions across the 11 newly-wired files; average 2.1 tooltips per file (range 1-3), under the per-file cap of 3 so visual hierarchy is preserved. Every wrap uses prose first-mentions only — zero inside headings, tables, code blocks, or `<CardGrid>` card-descriptions (the one shape that breaks axe-core, since description is a plain-text prop not MDX). Every wrap points to a real `/glossary/glossary-{slug}` page; definitions ≤160 chars, extracted from the canonical glossary entries' opening lines. Subsequent mentions left unwrapped by design (tooltip pollution kills scanning).
+
+**Changes**:
+- 11 concept MDX files in `site/src/content/docs/`: added `import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';` adjacent to the existing `CardGrid` import, then wrapped 1-3 first-mention canonical terms per file.
+  - `triad.mdx` (3): "question test" → `question-test`, "Bare triad" → `bare-triad`, "Embedded triad" → `embedded-triad`
+  - `agentic-literacy.mdx` (2): "CLAUDE.md" → `governance-file`, "AGENTS.md" → `agents-md`
+  - `context-commons.mdx` (2): "context library" → `context-library`, "frontmatter" → `frontmatter`
+  - `context-optimization.mdx` (3): "context library" → `context-library`, "frontmatter" → `frontmatter`, "AGENTS.md" → `agents-md`
+  - `fair-metadata.mdx` (1): "frontmatter" → `frontmatter`
+  - `governance-files.mdx` (1): "AGENTS.md" → `agents-md` (avoided self-referential wrap on the page's defining terms)
+  - `knowledge-graph.mdx` (2): "AGENTS.md" → `agents-md`, "mission" → `mission`
+  - `lattice-composition.mdx` (2): "AGENTS.md" → `agents-md`, "skill" → `skill` (added sentence about lattice_type skill promotion)
+  - `ontology.mdx` (2): "ontology extensions" → `ontology-extension`, "frontmatter" → `frontmatter`
+  - `open-standard.mdx` (2): "triad" → `triad`, "Extensions" → `ontology-extension`
+  - `token-selection.mdx` (3): "AGENTS.md" → `agents-md`, "frontmatter" → `frontmatter`, "CLAUDE.md" → `governance-file`
+- No component, schema, layout, or nav changes — `GlossaryTooltip.astro` unchanged from cycles 14+.
+
+**Lighthouse (5 sample pages, desktop preset, local preview — matches cycle 21+22+23+24 methodology):**
+| Page | Perf | A11y | BP | SEO |
+|------|------|------|----|----|
+| Homepage | 100 | 100 | 100 | 100 |
+| Concept (triad) | 100 | 100 | 100 | 100 |
+| Tutorial (first-claude-md) | 100 | 100 | 100 | 100 |
+| Glossary (glossary-adna) | 100 | 100 | 100 | 100 |
+| Adopter (adopter-solo-developer) | 100 | 100 | 100 | 100 |
+| **Average** | **100** | **100** | **100** | **100** |
+
+| Category | Before (cycle 24) | After (cycle 25) | Delta |
+|----------|-------------------|------------------|-------|
+| Performance | 100 | 100 | 0 |
+| Accessibility | 100 | 100 | 0 |
+| Best Practices | 100 | 100 | 0 |
+| SEO | 100 | 100 | 0 |
+
+**Validation**: PASS
+- Build: 116 pages, 55.47s (first build of the session after node-module cold cache; re-run on warm cache returned to baseline ~2.4s), 0 errors.
+- Playwright gates: 30/30 pass (including G4 axe-core WCAG 2.1 AA on homepage, concept (now tooltip-bearing), tutorial, pattern, 404 — zero violations; the tooltip's `aria-describedby` + hidden `role="tooltip"` span remain clean against axe-core rules).
+- Lighthouse: 100/100/100/100 on all 5 sample pages after cache warm-up; `concept/triad` holds 100 Perf after gaining 3 tooltips (pure SSR HTML + tiny CSS, no JS shipped). Initial cold-preview runs on some pages dipped to 84-99 Perf — known preview-server variance, resolved by 2x warm-up requests before the measurement run (same methodology as cycles 22-24).
+- Per-file spot-check: `grep -o "GlossaryTooltip term="` returns expected counts on all 12 concept files (convergence=1 retained; 11 new files = 23 total new tooltips; 24 concept-wide).
+- Evidence: `site/evidence/cycle25/lh_{homepage,concept,tutorial,glossary,adopter}.json`.
+
+**Carry-Forward**: none — 23 new inline glossary edges landed clean. O6 (cycle 26) extends the same rollout to the 9 tutorial MDX files in `site/src/content/guides/` (one already done: `first-claude-md.mdx` = demo). Expected 1-3 tooltips per tutorial on canonical terms first-mentioned in-prose — same mechanics, same per-file cap, same axe-core constraint (no wraps inside `CardGrid` card descriptions). Decadal aid: after cycle 26, every concept + tutorial will self-define canonical jargon; remaining cycles 27-30 focus on cross-vault reading order, related-entity affordances, and the D3 close AAR.
 
 **Carry-Forward**: none that blocks D3 progression. Minor future opportunity: the persona landings (`/educators/`, `/enterprise/`, `/compliance/`, `/startup-first-hour/`) each have only one direct inbound link from their paired adopter page — reachable in 2 hops but scent-starved; O7 (cycle 27) introduces a Researcher persona landing and can consider homepage-level persona surfacing at the same time. Sidebar group label "Glossary" vs section h1 "aDNA Glossary" accepted as-is (sidebar is intentionally terse; breadcrumb and back-link also use "Glossary" for consistency).

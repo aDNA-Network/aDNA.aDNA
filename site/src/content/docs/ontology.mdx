@@ -7,6 +7,7 @@ order: 2
 ---
 
 import CardGrid from '../../components/sections/CardGrid.astro';
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
 
 ## Overview
 
@@ -18,7 +19,7 @@ Think of a library. Every book has a category — fiction, biography, science, h
 
 aDNA's ontology works the same way. It defines 14 "categories" — called entity types — that cover the operational needs of any project: things like `context` (research notes), `missions` (plans), `sessions` (work logs), and `governance` (rules). Every file in the vault has a `type` field in its metadata that says what kind of thing it is.
 
-The real power is extensibility. The 14 base types handle operations, but your project probably has domain-specific things too — patients, experiments, customers, models. You add those as extensions under the appropriate triad leg, and they inherit the same conventions: typed frontmatter, AGENTS.md guides, templates. The base vocabulary is shared; the extensions are yours.
+The real power is extensibility. The 14 base types handle operations, but your project probably has domain-specific things too — patients, experiments, customers, models. You add those as <GlossaryTooltip term="ontology extensions" slug="ontology-extension" definition="A new entity type a project adds beyond aDNA's base 14 — a subdirectory under the right triad leg with its own AGENTS.md and template." /> under the appropriate triad leg, and they inherit the same conventions: typed frontmatter, AGENTS.md guides, templates. The base vocabulary is shared; the extensions are yours.
 
 ## How It Works
 
@@ -71,7 +72,7 @@ Extensions inherit all base conventions: frontmatter requirements (§7), naming 
 
 ### The Type Field
 
-Every content file in an aDNA vault MUST include a `type` field in its YAML frontmatter (§7.2). This field is the machine-readable identity of the entity:
+Every content file in an aDNA vault MUST include a `type` field in its YAML <GlossaryTooltip term="frontmatter" slug="frontmatter" definition="The YAML metadata block at the top of every aDNA file, wrapped in --- fences. Records type, dates, editor, tags — the file's ID card." /> (§7.2). This field is the machine-readable identity of the entity:
 
 ```yaml
 ---
