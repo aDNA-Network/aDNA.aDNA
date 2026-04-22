@@ -1,7 +1,7 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-04-21
+updated: 2026-04-22
 status: active
 last_edited_by: agent_rosetta
 tags: [state, governance]
@@ -65,12 +65,14 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Active Blockers
 
-None. D3 open; cycle 26 is the next execution step.
+None that block execution. One **known UX bug** queued for evaluation at cycle 26 open:
+- **Light/dark mode flash + view-transition persistence gap.** Theme-apply script is at end of `<body>` (should be in `<head>`); `ClientRouter` is active but script doesn't re-run on `astro:page-load`; no `remove('dark')` branch. Filed 2026-04-22 as [`how/backlog/idea_theme_persistence_bug.md`](how/backlog/idea_theme_persistence_bug.md). Triage at cycle 26 open — decide: co-ship with O6, or dedicated mini-cycle before O7.
 
 ## Next Steps
 
-1. **Cycle 26 (D3 O6 — Glossary tooltip rollout on tutorials)** — wire `GlossaryTooltip.astro` on first-mention canonical terms across the 9 tutorial MDX files in `site/src/content/guides/` (1-3 terms per file; `first-claude-md.mdx` already demo-wired). Same mechanics as cycle 25: prose-only first-mentions, per-file cap of 3, no wraps in `CardGrid` card-descriptions. Validate: Lighthouse held; axe-core clean.
-2. **Cycles 27-30** — follow the 10-objective plan in M27: Researcher persona landing (O7), tutorial-ordering + adopter decision tree (O8), reference-section linkage (O9), D3 ranker close + decadal AAR (O10).
+1. **Cycle 26 open — triage theme bug first.** Read `how/backlog/idea_theme_persistence_bug.md`; decide whether to co-ship the 3-step fix (move script to `<head>` + idempotent toggle + `astro:page-load` listener) with O6 tutorial tooltip rollout, or cut a dedicated cycle. Either path: validate with Lighthouse 100/100/100/100 + Playwright 30/30 + manual cold-load / navigate-3-pages / toggle-both-ways smoke test.
+2. **Cycle 26 (D3 O6 — Glossary tooltip rollout on tutorials)** — wire `GlossaryTooltip.astro` on first-mention canonical terms across the 9 tutorial MDX files in `site/src/content/guides/` (1-3 terms per file; `first-claude-md.mdx` already demo-wired). Same mechanics as cycle 25: prose-only first-mentions, per-file cap of 3, no wraps in `CardGrid` card-descriptions. Validate: Lighthouse held; axe-core clean.
+3. **Cycles 27-30** — follow the 10-objective plan in M27: Researcher persona landing (O7), tutorial-ordering + adopter decision tree (O8), reference-section linkage (O9), D3 ranker close + decadal AAR (O10).
 
 ## Pending Manual Actions
 
@@ -83,4 +85,4 @@ Phase 7 D3 O5 executed. Rolled `site/src/components/sections/GlossaryTooltip.ast
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 7 D3 active — cycles 21-25 ✅ complete (breadcrumb trail + pattern-page Next Steps CardGrid + global Related Elsewhere cross-section CardGrid + back-to-index link + sidebar nav audit + glossary tooltip rollout across all 12 concept MDX files). **Cycle 26 next** per `mission_m27_d3_navigation_ia.md` O6: wire `GlossaryTooltip.astro` on first-mention canonical terms across the 9 tutorial MDX files in `site/src/content/guides/` (1-3 terms per file; `first-claude-md.mdx` already demo-wired). Same mechanics as cycle 25 — prose-only first-mentions, per-file cap of 3, zero wraps in `<CardGrid>` card-descriptions (axe-core breaks on those). Canonical term map from cycle 25 tracker entry is reusable. Execute per `how/skills/skill_iii_cycle.md` 7-step protocol. Validation gate: 116 pages hold; Lighthouse 100/100/100/100 on the 5 sample pages (warm preview); Playwright 30/30 pass (G4 axe-core WCAG 2.1 AA on tooltip-bearing pages). Commit at cycle 26 close; do not batch.
+> Resume Operation Rosetta in `aDNA.aDNA/`. Phase 7 D3 active — cycles 21-25 ✅ complete (breadcrumb trail + pattern-page Next Steps CardGrid + global Related Elsewhere cross-section CardGrid + back-to-index link + sidebar nav audit + glossary tooltip rollout across all 12 concept MDX files). **Open first: [`how/backlog/idea_theme_persistence_bug.md`](how/backlog/idea_theme_persistence_bug.md)** — user-reported light/dark mode FOUC + view-transition persistence gap (script at end of `<body>`, no `astro:page-load` re-run, no `remove('dark')` branch; one-component fix in `site/src/layouts/BaseLayout.astro:52-76`). Decide: co-ship with O6 or cut a dedicated mini-cycle. **Then cycle 26** per `mission_m27_d3_navigation_ia.md` O6: wire `GlossaryTooltip.astro` on first-mention canonical terms across the 9 tutorial MDX files in `site/src/content/guides/` (1-3 terms per file; `first-claude-md.mdx` already demo-wired). Same mechanics as cycle 25 — prose-only first-mentions, per-file cap of 3, zero wraps in `<CardGrid>` card-descriptions (axe-core breaks on those). Canonical term map from cycle 25 tracker entry is reusable. Execute per `how/skills/skill_iii_cycle.md` 7-step protocol. Validation gate: 116 pages hold; Lighthouse 100/100/100/100 on the 5 sample pages (warm preview); Playwright 30/30 pass (G4 axe-core WCAG 2.1 AA on tooltip-bearing pages). Commit at cycle 26 close; do not batch.
