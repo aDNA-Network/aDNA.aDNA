@@ -1,7 +1,7 @@
 ---
 type: artifact
 created: 2026-04-15
-updated: 2026-04-19
+updated: 2026-04-21
 status: active
 last_edited_by: agent_stanley
 tags: [artifact, iii, cycle-tracker, phase-7]
@@ -17,7 +17,7 @@ Structured log for all 100 improvement cycles across 10 decadals. Each cycle app
 |---------|--------|-------|--------|-----|
 | D1 | 1-10 | Accessibility Perfection | complete | [aar_phase7_d1.md](aar_phase7_d1.md) |
 | D2 | 11-20 | Content Clarity Sprint | complete | [aar_phase7_d2.md](aar_phase7_d2.md) |
-| D3 | 21-30 | Navigation & IA | in_progress (3/10) | — (M27 open: [mission_m27_d3_navigation_ia.md](../mission_m27_d3_navigation_ia.md); cycles 21-23 complete, cycle 24 next) |
+| D3 | 21-30 | Navigation & IA | in_progress (4/10) | — (M27 open: [mission_m27_d3_navigation_ia.md](../mission_m27_d3_navigation_ia.md); cycles 21-24 complete, cycle 25 next) |
 | D4 | 31-40 | Visual Polish | pending | — |
 | D5 | 41-50 | Mobile Experience | pending | — |
 | D6 | 51-60 | Performance & Loading | pending | — |
@@ -748,3 +748,44 @@ Every page at the ceiling — both new pages hit 100 Perf out of the gate, contr
 - Evidence: `site/evidence/cycle23/lh_{homepage,concept,tutorial,glossary,adopter}.json`.
 
 **Carry-Forward**: none. 116 new lateral edges landed without regression. Graph connectivity is now dense across all three content sections — every concept reaches the 9 tutorials in ≤2 hops, every tutorial reaches the 8 patterns in ≤2 hops, every pattern reaches the 12 concepts in ≤2 hops. O4 (cycle 24) back-to-index + sidebar audit will layer the "← All concepts" affordance on top; the breadcrumb (cycle 21) + section link already cover most of that work.
+
+### Cycle 24 — 2026-04-21
+
+**Decadal**: D3 (Navigation & IA)
+**Target**: O4 — (a) add a subtle `← Back to {section}` back-to-index link above the breadcrumb on every content detail page, scoped to the parent section; (b) audit sidebar nav for dead links, orphans, label mismatches, and 2-hop reachability from the homepage; apply surgical fixes only for true breaks.
+**Before**: Breadcrumb rendered `LEG › Section › Page` with a clickable section link, but no dedicated left-arrow "return" affordance (conventionally stronger scent in docs UIs). Five stale nav hrefs existed: 4 Lattice-Examples entries missing the `lattice-` slug prefix → 404, and 1 stale "Dual Audience" concept entry that duplicated the pattern-section page → 404. Two section indexes were 0-inbound orphans reachable only by URL typing: `/how/` (top-level How index; not in Header nav, breadcrumbs go to sub-indexes only) and `/changelog/` (no footer link). Persona landings `/educators/`, `/enterprise/`, `/compliance/`, `/startup-first-hour/` had only 1-2 inbound links each but were reachable from home in ≤2 hops via sidebar → adopter detail → persona link (OK).
+**After**: `Breadcrumb.astro` emits a subtle `<a class="back-to-index">← Back to {sectionLabel.toLowerCase()}</a>` above the existing breadcrumb `<nav>` — one component, shared 12-route map, shared suppression (hides on roots, section indexes, 404). Renders correctly on all 12 detail page types (concepts, patterns, tutorials, comparisons, glossary, use-cases, reference, adopters, community, publishing, workshops, lattice-examples) and suppresses on all 10 root/index/404 pages. The display pattern `← Back to X` was chosen over the mission-spec `← All X` because three section labels (Glossary, Reference, Community) and two subcategories (Publishing, Workshops) are mass nouns that don't pluralize cleanly ("All glossary" / "All reference" read oddly); "Back to" parses naturally for all 11 section labels and matches the MDN / Stripe / Vercel convention. Affordance intent preserved. Nav audit closed 5 dead hrefs in `utils/navigation.ts`, added `How` to `Header.astro` top nav (closes `/how/` 0-inbound orphan; now linked from every page chrome), and added `Changelog` to `Footer.astro` (closes `/changelog/` 0-inbound orphan).
+
+**Changes**:
+- `site/src/components/sections/Breadcrumb.astro`: wrapped the conditional in a fragment; emitted a new `<a class="back-to-index">` element above the existing breadcrumb `<nav>`; added 19 lines of CSS (muted color, subtle hover underline, focus-visible ring matching breadcrumb palette).
+- `site/src/utils/navigation.ts`: fixed 4 `lattice-examples` hrefs (`content-pipeline` → `lattice-content-pipeline`, `campaign-execution` → `lattice-campaign-execution`, `context-serving` → `lattice-context-serving`, `dual-audience-review` → `lattice-dual-audience-review`); removed stale `Dual Audience → /learn/concepts/dual-audience` entry (the content is classified `section: patterns` and lives under `/patterns/dual-audience/`, already listed in the Patterns nav group); renumbered remaining concepts orders 7-13.
+- `site/src/components/common/Header.astro`: added `{ label: 'How', href: '/how' }` between Community and Reference in `navLinks` array, bringing Header in line with sidebar's 7 top-level groups.
+- `site/src/components/common/Footer.astro`: added `<a href="/changelog">Changelog</a>` to footer-links nav; added `flex-wrap: wrap` and `gap: var(--space-3) var(--space-6)` on `.footer-links` to prevent horizontal overflow at 320px (4 links instead of 3 tipped the row over the viewport).
+
+**Lighthouse (5 sample pages, desktop preset, local preview — matches cycle 21+22+23 methodology):**
+| Page | Perf | A11y | BP | SEO |
+|------|------|------|----|----|
+| Homepage | 100 | 100 | 100 | 100 |
+| Concept (triad) | 100 | 100 | 100 | 100 |
+| Tutorial (first-claude-md) | 100 | 100 | 100 | 100 |
+| Glossary (glossary-adna) | 100 | 100 | 100 | 100 |
+| Adopter (adopter-solo-developer) | 100 | 100 | 100 | 100 |
+| **Average** | **100** | **100** | **100** | **100** |
+
+| Category | Before (cycle 23) | After (cycle 24) | Delta |
+|----------|-------------------|------------------|-------|
+| Performance | 100 | 100 | 0 |
+| Accessibility | 100 | 100 | 0 |
+| Best Practices | 100 | 100 | 0 |
+| SEO | 100 | 100 | 0 |
+
+**Validation**: PASS
+- Build: 116 pages, 2.32s, 0 errors.
+- Playwright gates: 30/30 pass (including G4 axe-core WCAG 2.1 AA and G9 responsive-overflow 320/768/1024/1440). G9 initially regressed (homepage + concept, 320px) because the 4th footer link crossed the viewport; fixed with `flex-wrap: wrap` on `.footer-links` before re-measuring.
+- Lighthouse: 100/100/100/100 on all 5 sample pages; no category dropped. The new back-link is a single inline `<a>` + span with 19 lines of scoped CSS — zero measurable Perf / A11y impact.
+- Nav audit post-fix: 94 nav hrefs / 0 dead (was 95/5 pre-fix). `/how/` inbound 0 → 116 (every-page chrome via Header). `/changelog/` inbound 0 → 116 (every-page chrome via Footer).
+- 2-hop reachability: automated walk from homepage (home hrefs ∪ sample-detail-page chrome hrefs = hop 1) reaches 115/115 built content pages; 0 unreachable within ≤2 hops.
+- Back-link spot-check: 12/12 detail page types render the `← Back to {section}` affordance with correct label (concepts, patterns, tutorials, comparisons, glossary, use-cases, reference, adopters, community, publishing, workshops, lattice-examples); 10/10 root/index/404 pages suppress it (`, `/learn/concepts/`, `/patterns/`, `/glossary/`, `/use-cases/`, `/reference/`, `/adopters/`, `/community/`, `/how/`, `/404/`).
+- Evidence: `site/evidence/cycle24/lh_{homepage,concept,tutorial,glossary,adopter}.json`.
+
+**Carry-Forward**: none that blocks D3 progression. Minor future opportunity: the persona landings (`/educators/`, `/enterprise/`, `/compliance/`, `/startup-first-hour/`) each have only one direct inbound link from their paired adopter page — reachable in 2 hops but scent-starved; O7 (cycle 27) introduces a Researcher persona landing and can consider homepage-level persona surfacing at the same time. Sidebar group label "Glossary" vs section h1 "aDNA Glossary" accepted as-is (sidebar is intentionally terse; breadcrumb and back-link also use "Glossary" for consistency).

@@ -36,18 +36,44 @@ const match = routes.find((r) => {
 ---
 
 {match && (
-  <nav aria-label="Breadcrumb" class="breadcrumb">
-    <ol>
-      <li class="leg">{match.leg}</li>
-      <li class="sep" aria-hidden="true">›</li>
-      <li><a href={match.sectionHref}>{match.sectionLabel}</a></li>
-      <li class="sep" aria-hidden="true">›</li>
-      <li aria-current="page" class="current">{pageTitle}</li>
-    </ol>
-  </nav>
+  <>
+    <a href={match.sectionHref} class="back-to-index">
+      <span aria-hidden="true">←</span> Back to {match.sectionLabel.toLowerCase()}
+    </a>
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol>
+        <li class="leg">{match.leg}</li>
+        <li class="sep" aria-hidden="true">›</li>
+        <li><a href={match.sectionHref}>{match.sectionLabel}</a></li>
+        <li class="sep" aria-hidden="true">›</li>
+        <li aria-current="page" class="current">{pageTitle}</li>
+      </ol>
+    </nav>
+  </>
 )}
 
 <style>
+  .back-to-index {
+    display: inline-block;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    margin-bottom: var(--space-2);
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .back-to-index:hover {
+    color: var(--color-text);
+    border-bottom-color: currentColor;
+  }
+
+  .back-to-index:focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
   .breadcrumb {
     font-size: var(--text-sm);
     color: var(--color-text-muted);

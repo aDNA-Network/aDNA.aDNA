@@ -6,10 +6,10 @@ campaign: campaign_rosetta
 status: active
 priority: high
 created: 2026-04-18
-updated: 2026-04-19
+updated: 2026-04-21
 last_edited_by: agent_stanley
 tags: [mission, rosetta, phase-7, iii, d3, navigation-ia]
-progress: 3/10 cycles complete (cycles 21-23)
+progress: 4/10 cycles complete (cycles 21-24)
 ---
 
 # M27 — D3: Navigation & IA
@@ -71,11 +71,11 @@ Each objective corresponds to one III cycle (`skill_iii_cycle.md`). Hold Lightho
 - [x] Option: build a small `RelatedElsewhere.astro` component that takes a frontmatter field like `related:` and renders the grid — reduces per-file edit surface — **not taken.** Inline CardGrid blocks per file chosen to preserve cycle 22's "earn the click" description discipline and avoid an Astro content-schema edit. Per-file edges remain reviewable in git diff.
 - [x] Validate: graph view becomes a connected web (project CLAUDE.md rule #10); Lighthouse held — **PASS.** Build 116 pages / 2.43s / 0 errors; Playwright 30/30; Lighthouse 100/100/100/100 on 5 sample pages; 19 cross-section href spot-checks 200; two stacked CardGrids confirmed rendering on sample concept page with `next-steps` + `related-elsewhere` anchors. Evidence: `site/evidence/cycle23/`.
 
-### O4: Back-to-index + sidebar nav completeness (Cycle 24)
+### O4: Back-to-index + sidebar nav completeness (Cycle 24) — ✅ Complete (2026-04-21)
 
-- [ ] Add subtle "← All concepts" / "← All patterns" / etc. link at top of each detail page
-- [ ] Audit sidebar nav: every page reachable in ≤2 hops from homepage, no orphans, section headings match nav labels
-- [ ] Validate: Lighthouse held; manual nav walk from homepage reaches all 116 pages within 2 hops
+- [x] Add subtle "← All concepts" / "← All patterns" / etc. link at top of each detail page — shipped as an in-component extension of `Breadcrumb.astro` (shared 12-route map, shared suppression). Pattern `← Back to {sectionLabel.toLowerCase()}` chosen over `← All X` for grammatical uniformity across mass-noun sections (Glossary / Reference / Community / Publishing / Workshops); renders on all 12 detail page types, suppresses on all 10 root/index/404 pages.
+- [x] Audit sidebar nav: every page reachable in ≤2 hops from homepage, no orphans, section headings match nav labels — **PASS.** 5 dead nav hrefs fixed in `utils/navigation.ts` (4 Lattice Examples entries missing `lattice-` slug prefix + 1 stale "Dual Audience" concept entry duplicating the Patterns page). 2 true 0-inbound orphans closed: `/how/` added to Header nav (now linked from every page); `/changelog/` added to Footer (now linked from every page). `.footer-links` gained `flex-wrap: wrap` + `gap: var(--space-3) var(--space-6)` to keep G9 responsive-320 gate green with 4 links. Label mismatch "Glossary" vs h1 "aDNA Glossary" accepted (terse sidebar convention).
+- [x] Validate: Lighthouse held; manual nav walk from homepage reaches all 116 pages within 2 hops — **PASS.** Build 116 pages / 2.32s / 0 errors; Playwright 30/30 (initial G9 320-overflow regression fixed before recording); Lighthouse 100/100/100/100 on all 5 sample pages; automated 2-hop reachability walk reaches 115/115 content pages. Evidence: `site/evidence/cycle24/`.
 
 ### O5: Tooltip rollout across 12 concepts (Cycle 25)
 
