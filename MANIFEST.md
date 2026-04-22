@@ -1,8 +1,8 @@
 ---
 type: manifest
 created: 2026-04-13
-updated: 2026-04-17
-last_edited_by: agent_stanley
+updated: 2026-04-22
+last_edited_by: agent_rosetta
 tags: [manifest, governance]
 ---
 

@@ -4,15 +4,15 @@ type: campaign
 title: "Operation Rosetta — Self-Referential aDNA Context Graph"
 owner: stanley
 status: active
-current_phase: 6
+current_phase: 7
 phase_count: 7
 mission_count: 35
 estimated_sessions: "65-85"
 estimation_class: content-novel
 priority: high
 created: 2026-04-13
-updated: 2026-04-17
-last_edited_by: agent_stanley
+updated: 2026-04-22
+last_edited_by: agent_rosetta
 tags: [campaign, rosetta, adna, documentation, education, website]
 ---
 
@@ -108,9 +108,9 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | Mission | Title | Cycles | Status | Description |
 |---------|-------|--------|--------|-------------|
 | M24 | III Loop Setup & Baseline | — | **completed** | Create skills, cycle tracker, measurement infrastructure, initial baseline |
-| M25 | D1: Accessibility Perfection | 1-10 | pending | WCAG AA → Lighthouse a11y 100, keyboard nav, screen reader, focus indicators |
-| M26 | D2: Content Clarity Sprint | 11-20 | pending | Anti-slop, progressive disclosure, reading flow, plain-language openings |
-| M27 | D3: Navigation & IA | 21-30 | pending | Information architecture, cross-linking, breadcrumbs, time-to-first-insight |
+| M25 | D1: Accessibility Perfection | 1-10 | **completed** | WCAG AA → Lighthouse a11y 100, keyboard nav, screen reader, focus indicators |
+| M26 | D2: Content Clarity Sprint | 11-20 | **completed** | Anti-slop, progressive disclosure, reading flow, plain-language openings |
+| M27 | D3: Navigation & IA | 21-30 | **active (5/10)** | Information architecture, cross-linking, breadcrumbs, time-to-first-insight |
 | M28 | D4: Visual Polish | 31-40 | pending | Typography refinement, whitespace, dark mode parity, visual hierarchy |
 | M29 | D5: Mobile Experience | 41-50 | pending | Touch targets, responsive tables, mobile nav, code block scrolling |
 | M30 | D6: Performance & Loading | 51-60 | pending | Font loading, image optimization, critical CSS, prefetching, edge caching |
