@@ -8,10 +8,11 @@ date: 2026-04-14
 ---
 
 import CardGrid from '../../components/sections/CardGrid.astro';
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
 
 ## What You'll Build
 
-A campaign document with phased execution, a mission board, and quality gates. By the end, you'll have a strategic plan that can coordinate multiple agents across multiple sessions toward a shared goal.
+A campaign document with phased execution, a <GlossaryTooltip term="mission" slug="mission" definition="A chunk of work too big for one session. Breaks a goal into objectives, each small enough for a single agent session. Bridges campaigns to sessions." /> board, and quality gates. By the end, you'll have a strategic plan that can coordinate multiple agents across multiple sessions toward a shared goal.
 
 ## Prerequisites
 
@@ -114,7 +115,7 @@ tags: [campaign]
 
 ### Step 6: Execute the First Mission
 
-Create the first mission file inside `how/campaigns/campaign_{name}/missions/`. Claim the first objective. Start a session. Do the work. Close with a SITREP.
+Create the first mission file inside `how/campaigns/campaign_{name}/missions/`. Claim the first objective. Start a <GlossaryTooltip term="session" slug="session" definition="One stretch of work by an agent. Clear start, middle, and end — each session produces a file that records what happened and leaves an audit trail." />. Do the work. Close with a SITREP.
 
 **See it in action**: This vault's Operation Rosetta (`how/campaigns/campaign_rosetta/campaign_rosetta.md`) has 5 phases, 15 missions, and 6 quality gates. Browse the mission files in `how/campaigns/campaign_rosetta/missions/` — each one demonstrates the decomposition pattern with objectives, context dependencies, and AARs.
 

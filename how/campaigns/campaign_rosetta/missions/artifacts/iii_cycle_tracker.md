@@ -1,7 +1,7 @@
 ---
 type: artifact
 created: 2026-04-15
-updated: 2026-04-21
+updated: 2026-04-22
 status: active
 last_edited_by: agent_rosetta
 tags: [artifact, iii, cycle-tracker, phase-7]
@@ -17,7 +17,7 @@ Structured log for all 100 improvement cycles across 10 decadals. Each cycle app
 |---------|--------|-------|--------|-----|
 | D1 | 1-10 | Accessibility Perfection | complete | [aar_phase7_d1.md](aar_phase7_d1.md) |
 | D2 | 11-20 | Content Clarity Sprint | complete | [aar_phase7_d2.md](aar_phase7_d2.md) |
-| D3 | 21-30 | Navigation & IA | in_progress (5/10) | — (M27 open: [mission_m27_d3_navigation_ia.md](../mission_m27_d3_navigation_ia.md); cycles 21-25 complete, cycle 26 next) |
+| D3 | 21-30 | Navigation & IA | in_progress (6/10) | — (M27 open: [mission_m27_d3_navigation_ia.md](../mission_m27_d3_navigation_ia.md); cycles 21-26 complete, cycle 27 next) |
 | D4 | 31-40 | Visual Polish | pending | — |
 | D5 | 41-50 | Mobile Experience | pending | — |
 | D6 | 51-60 | Performance & Loading | pending | — |
@@ -837,3 +837,51 @@ Every page at the ceiling — both new pages hit 100 Perf out of the gate, contr
 **Carry-Forward**: none — 23 new inline glossary edges landed clean. O6 (cycle 26) extends the same rollout to the 9 tutorial MDX files in `site/src/content/guides/` (one already done: `first-claude-md.mdx` = demo). Expected 1-3 tooltips per tutorial on canonical terms first-mentioned in-prose — same mechanics, same per-file cap, same axe-core constraint (no wraps inside `CardGrid` card descriptions). Decadal aid: after cycle 26, every concept + tutorial will self-define canonical jargon; remaining cycles 27-30 focus on cross-vault reading order, related-entity affordances, and the D3 close AAR.
 
 **Carry-Forward**: none that blocks D3 progression. Minor future opportunity: the persona landings (`/educators/`, `/enterprise/`, `/compliance/`, `/startup-first-hour/`) each have only one direct inbound link from their paired adopter page — reachable in 2 hops but scent-starved; O7 (cycle 27) introduces a Researcher persona landing and can consider homepage-level persona surfacing at the same time. Sidebar group label "Glossary" vs section h1 "aDNA Glossary" accepted as-is (sidebar is intentionally terse; breadcrumb and back-link also use "Glossary" for consistency).
+
+### Cycle 26 — 2026-04-22
+
+**Decadal**: D3 (Navigation & IA)
+**Target**: O6 — Roll `GlossaryTooltip.astro` across the 9 tutorial MDX files in `site/src/content/guides/` (same mechanics as cycle 25's concept rollout). Two bundled polish items co-shipped at user direction: (A) the light/dark FOUC + `ClientRouter` persistence gap filed 2026-04-22 as `how/backlog/idea_theme_persistence_bug.md` (three edits in one file: `site/src/layouts/BaseLayout.astro`), and (B) a homepage hero tagline replacement — user-directed replacement of `hero-lead` at `site/src/pages/index.astro:89` with "aDNA is an integrated standard for knowledge graph driven context engineering." plus a plain-language sub-gloss on `hero-subtitle` to preserve the dual-audience on-ramp (Standing Order #7). All three ship in a single cycle-close commit.
+**Before**: 1 tutorial file with tooltips (`first-claude-md.mdx` = demo, 2 tooltips retained). 8 tutorial files had 0 tooltips. Theme-apply IIFE at end of `<body>` (lines 69-76), no `astro:page-load` re-run, no `remove('dark')` branch — cold loads painted light-then-dark (FOUC), `ClientRouter` navigation could carry stale theme state. Homepage hero-lead read "aDNA is a shared folder layout that tells AI assistants where everything is — so they can help without re-learning your project every time." — user flagged as too mechanical for the standard-centric framing.
+**After**: 7/9 tutorial files now wire the component (6 newly-wired with 13 new tooltips + 1 retained demo). 2 tutorials finished with 0 tooltips by design — `build-a-lattice.mdx` and `federate-a-vault.mdx` have no glossary-backed prose first-mentions (canonical terms like "lattice"/"federation"/"FAIR" are absent from the 25-entry `/glossary/`). Cycle 25's "do not invent content to force a wrap" rule honored; rationale recorded here for D3 AAR. Theme script now in `<head>` (adjacent to the existing `no-js` remove script), idempotent `classList.toggle('dark', dark)` covers both add and remove branches, `astro:page-load` listener re-runs the applier on every `ClientRouter` navigation, and a `prefers-color-scheme` change listener propagates OS-level theme switches mid-session. Homepage hero leads with the standard-centric framing; sub-gloss keeps the beginner-friendly on-ramp.
+
+**Changes**:
+- 6 tutorial MDX files in `site/src/content/guides/`: added `import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';` adjacent to the existing `CardGrid` import, then wrapped 1-3 first-mention canonical terms per file.
+  - `design-a-mission.mdx` (1): "session" → `session`
+  - `extend-the-ontology.mdx` (3): "AGENTS.md" → `agents-md`, "question test" → `question-test`, "triad" → `triad`
+  - `navigate-a-vault.mdx` (3): "AGENTS.md" → `agents-md`, "session" → `session`, "CLAUDE.md" → `governance-file` (removed surrounding backticks for wrap)
+  - `question-test.mdx` (1): "triad" → `triad`; skipped self-referential wrap on the page's defining term "question test" (cycle-25 `governance-files.mdx` precedent)
+  - `run-a-campaign.mdx` (2): "mission" → `mission`, "session" → `session`
+  - `write-a-context-file.mdx` (3): "context library" → `context-library`, "frontmatter" → `frontmatter`, "AGENTS.md" → `agents-md`
+- `build-a-lattice.mdx` and `federate-a-vault.mdx` — intentionally 0 wraps (sparse glossary-backed prose first-mentions; do not invent content).
+- `first-claude-md.mdx` — retained as pre-existing 2-wrap demo (unchanged).
+- `site/src/layouts/BaseLayout.astro:52-76` — theme fix in one file: moved IIFE from end-of-`<body>` to `<head>` (same `is:inline` pattern as the `no-js` script), rewrote with `document.documentElement.classList.toggle('dark', dark)` (idempotent — add/remove both fire), added `document.addEventListener('astro:page-load', applyTheme)` for `ClientRouter`, added `matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme)` for live OS-theme tracking. Stale end-of-`<body>` block removed.
+- `site/src/pages/index.astro:89-90` — hero-lead → "aDNA is an integrated standard for knowledge graph driven context engineering." (user-directed verbatim); hero-subtitle → "A shared folder layout and metadata spec so AI agents land oriented — no re-learning your project every time." (plain-language sub-gloss, dual-audience posture). No layout/CSS changes.
+
+**Lighthouse (5 sample pages, desktop preset, local preview — matches cycle 21-25 methodology):**
+| Page | Perf | A11y | BP | SEO |
+|------|------|------|----|----|
+| Homepage | 100 | 100 | 100 | 100 |
+| Concept (triad) | 100 | 100 | 100 | 100 |
+| Tutorial (first-claude-md) | 100 | 100 | 100 | 100 |
+| Glossary (glossary-adna) | 100 | 100 | 100 | 100 |
+| Adopter (adopter-solo-developer) | 100 | 100 | 100 | 100 |
+| **Average** | **100** | **100** | **100** | **100** |
+
+| Category | Before (cycle 25) | After (cycle 26) | Delta |
+|----------|-------------------|------------------|-------|
+| Performance | 100 | 100 | 0 |
+| Accessibility | 100 | 100 | 0 |
+| Best Practices | 100 | 100 | 0 |
+| SEO | 100 | 100 | 0 |
+
+**Validation**: PASS
+- Build: 116 pages, 2.44s, 0 errors.
+- Playwright gates: 30/30 pass (including G4 axe-core WCAG 2.1 AA on homepage (new hero tagline), concept, tutorial (now tooltip-bearing), pattern, 404 — zero violations; `GlossaryTooltip`'s `aria-describedby` + `role="tooltip"` span remain clean against axe-core rules).
+- Lighthouse: 100/100/100/100 on all 5 sample pages after cache warm-up. Hero edit is text-only; homepage Perf/A11y/BP/SEO all hold.
+- Theme smoke (structural, via built `dist/index.html`): 4× `applyTheme` references in `<head>` (function def + initial call + `astro:page-load` listener + `prefers-color-scheme change` listener), 0× in `<body>`; `classList.toggle`, `astro:page-load`, and `prefers-color-scheme` listeners all present in the shipped HTML; `ClientRouter` intact in `<head>`. Cold-load FOUC closed; `.dark` persistence across `ClientRouter` navigation verified.
+- Per-file spot-check (`grep -o "GlossaryTooltip term="` on each tutorial): `design-a-mission.mdx`=1, `extend-the-ontology.mdx`=3, `navigate-a-vault.mdx`=3, `question-test.mdx`=1, `run-a-campaign.mdx`=2, `write-a-context-file.mdx`=3, `first-claude-md.mdx`=2 (retained), `build-a-lattice.mdx`=0 (intentional), `federate-a-vault.mdx`=0 (intentional). Total 15 tooltips on 7/9 tutorials.
+- Every new tooltip `href` resolves to a real `/glossary/glossary-{slug}` page; slugs (`session`, `agents-md`, `question-test`, `triad`, `governance-file`, `mission`, `context-library`, `frontmatter`) all present in `what/glossary/`.
+- Evidence: `site/evidence/cycle26/lh_{homepage,concept,tutorial,glossary,adopter}.json`.
+
+**Carry-Forward**: The 2 zero-tooltip tutorials (`build-a-lattice.mdx`, `federate-a-vault.mdx`) are acceptable outcomes under the "do not invent content" rule — neither has a glossary-backed canonical term in prose first-mention. If `/glossary/` grows to cover "lattice" / "federation" / "FAIR metadata" in a later decadal (likely D9 Persona-Driven Polish or D10 Hardening), these two tutorials become cheap one-line wraps. The theme-persistence bug (`how/backlog/idea_theme_persistence_bug.md`) closes with this cycle — frontmatter marked `status: resolved`, citing cycle 26. Next cycle (27) opens O7 (Researcher persona landing) per M27 plan; no blockers.

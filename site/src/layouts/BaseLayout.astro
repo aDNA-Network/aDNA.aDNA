@@ -53,6 +53,20 @@ const {
       document.documentElement.classList.remove('no-js');
     </script>
 
+    <script is:inline>
+      (function () {
+        const applyTheme = () => {
+          const theme = localStorage.getItem('theme');
+          const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+          const dark = theme === 'dark' || (!theme && prefersDark);
+          document.documentElement.classList.toggle('dark', dark);
+        };
+        applyTheme();
+        document.addEventListener('astro:page-load', applyTheme);
+        matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+      })();
+    </script>
+
     <ClientRouter />
   </head>
   <body class:list={['min-h-screen flex flex-col', bodyClass]}>
@@ -65,14 +79,5 @@ const {
     </main>
 
     <Footer />
-
-    <script is:inline>
-      (function() {
-        const theme = localStorage.getItem('theme');
-        if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.classList.add('dark');
-        }
-      })();
-    </script>
   </body>
 </html>

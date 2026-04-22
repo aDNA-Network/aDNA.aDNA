@@ -8,6 +8,7 @@ date: 2026-04-14
 ---
 
 import CardGrid from '../../components/sections/CardGrid.astro';
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
 
 ## What You'll Build
 
@@ -55,7 +56,7 @@ what/
 └── lattices/      ← Workflow definitions (YAML + tools)
 ```
 
-Each directory has an `AGENTS.md` that tells AI agents whether to load it. Open `what/concepts/AGENTS.md` — it says "Load when creating or reviewing concept documentation. Skip when working on operational infrastructure." That's [AGENTS.md routing](/patterns/agents-md) in action.
+Each directory has an <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." /> that tells AI agents whether to load it. Open `what/concepts/AGENTS.md` — it says "Load when creating or reviewing concept documentation. Skip when working on operational infrastructure." That's [AGENTS.md routing](/patterns/agents-md) in action.
 
 ### Step 3: Explore How the Project Works
 
@@ -95,9 +96,9 @@ Smaller than `what/` and `how/`, but critical. Governance policies, team coordin
 
 Back at the root, open `STATE.md`. This tells you the project's current operational status — what phase it's in, what's working, what's blocked, and what to do next. An AI agent reads this on every startup to understand where things stand.
 
-Now open `MANIFEST.md`. This tells you what the project IS — its identity, purpose, and scope. `STATE.md` changes every session; `MANIFEST.md` changes rarely.
+Now open `MANIFEST.md`. This tells you what the project IS — its identity, purpose, and scope. `STATE.md` changes every <GlossaryTooltip term="session" slug="session" definition="One stretch of work by an agent. Clear start, middle, and end — each session produces a file that records what happened and leaves an audit trail." />; `MANIFEST.md` changes rarely.
 
-Together with `CLAUDE.md` (agent instructions), `AGENTS.md` (navigation), and `README.md` (human entry point), these five files are the [governance files](/learn/concepts/governance-files) — the orientation layer for the entire vault.
+Together with <GlossaryTooltip term="CLAUDE.md" slug="governance-file" definition="One of the five ALLCAPS governance files at an aDNA project root — the agent's auto-loaded entry point with persona, project map, safety rules, and startup protocol." /> (agent instructions), `AGENTS.md` (navigation), and `README.md` (human entry point), these five files are the [governance files](/learn/concepts/governance-files) — the orientation layer for the entire vault.
 
 ### Step 6: Follow a Thread
 

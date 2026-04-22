@@ -8,10 +8,11 @@ date: 2026-04-14
 ---
 
 import CardGrid from '../../components/sections/CardGrid.astro';
+import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
 
 ## What You'll Build
 
-A quality-scored context file ready for your vault's context library. By the end, you'll have a file that an AI agent can load to make better domain decisions — with a quality score and token estimate.
+A quality-scored context file ready for your vault's <GlossaryTooltip term="context library" slug="context-library" definition="The structured knowledge store in what/context/ — organized by topic with subtopics and token estimates so agents load only what they need." />. By the end, you'll have a file that an AI agent can load to make better domain decisions — with a quality score and token estimate.
 
 ## Prerequisites
 
@@ -97,7 +98,7 @@ Rate your file on 5 axes (1-5 each):
 
 **Composite target**: 3.5+ average. **Floor rule**: any axis ≤ 2 flags for revision.
 
-Add the scores to your frontmatter:
+Add the scores to your <GlossaryTooltip term="frontmatter" slug="frontmatter" definition="The YAML metadata block at the top of every aDNA file, wrapped in --- fences. Records type, dates, editor, tags — the file's ID card." />:
 
 ```yaml
 quality_score: 4.0
@@ -110,7 +111,7 @@ cross_topic_coherence: 4
 
 ### Step 5: Add to the Topic AGENTS.md
 
-If this is a new topic, create a topic directory with an AGENTS.md. If adding to an existing topic, update the AGENTS.md subtopic table:
+If this is a new topic, create a topic directory with an <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." />. If adding to an existing topic, update the AGENTS.md subtopic table:
 
 ```markdown
 | # | Subtopic | File | ~Tokens | Key Content |

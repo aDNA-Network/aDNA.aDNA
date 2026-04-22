@@ -6,10 +6,10 @@ campaign: campaign_rosetta
 status: active
 priority: high
 created: 2026-04-18
-updated: 2026-04-21
+updated: 2026-04-22
 last_edited_by: agent_rosetta
 tags: [mission, rosetta, phase-7, iii, d3, navigation-ia]
-progress: 5/10 cycles complete (cycles 21-25)
+progress: 6/10 cycles complete (cycles 21-26)
 ---
 
 # M27 — D3: Navigation & IA
@@ -83,10 +83,11 @@ Each objective corresponds to one III cycle (`skill_iii_cycle.md`). Hold Lightho
 - [x] Canonicalize term list from `what/glossary/` (25 glossary entries) — cover top 5-8 most-linked terms — covered 9 canonical slugs: `question-test`, `bare-triad`, `embedded-triad`, `governance-file`, `agents-md`, `context-library`, `frontmatter`, `mission`, `skill`, `ontology-extension`, `triad`. Mapped to first prose mentions; zero wraps in headings, tables, code blocks, or `CardGrid` card-descriptions.
 - [x] Validate: Lighthouse held; axe-core confirms `aria-describedby` + focus behavior clean across the rollout — **PASS.** Build 116 pages / 0 errors; Playwright 30/30 (G4 axe-core WCAG 2.1 AA zero violations on tooltip-bearing concept page); Lighthouse 100/100/100/100 on all 5 sample pages after cache warm-up. Evidence: `site/evidence/cycle25/`.
 
-### O6: Tooltip rollout across 9 tutorials (Cycle 26)
+### O6: Tooltip rollout across 9 tutorials (Cycle 26) — ✅ Complete (2026-04-22)
 
-- [ ] Same mechanics as O5, applied to all 9 tutorial MDX files
-- [ ] Validate: as O5
+- [x] Same mechanics as O5, applied to all 9 tutorial MDX files — shipped 13 new tooltips across 6 newly-wired files (`design-a-mission.mdx`=1, `extend-the-ontology.mdx`=3, `navigate-a-vault.mdx`=3, `question-test.mdx`=1, `run-a-campaign.mdx`=2, `write-a-context-file.mdx`=3). `first-claude-md.mdx` retained as demo (2 wraps, unchanged). `build-a-lattice.mdx` + `federate-a-vault.mdx` finished with 0 wraps by design — no glossary-backed prose first-mentions (canonical terms "lattice"/"federation"/"FAIR" absent from the 25-entry `/glossary/`; cycle-25 "do not invent content" rule honored). Per-file cap of 3 respected.
+- [x] Validate: as O5 — **PASS.** Build 116 pages / 2.44s / 0 errors; Playwright 30/30 (G4 axe-core WCAG 2.1 AA zero violations on tooltip-bearing tutorial); Lighthouse 100/100/100/100 on all 5 sample pages after cache warm-up. Evidence: `site/evidence/cycle26/`.
+- [x] Co-shipped bundled polish: (A) theme-persistence fix — `site/src/layouts/BaseLayout.astro` IIFE moved to `<head>`, idempotent `classList.toggle`, `astro:page-load` + `prefers-color-scheme change` listeners — FOUC closed + `ClientRouter` persistence restored; backlog idea `how/backlog/idea_theme_persistence_bug.md` resolved. (B) Homepage hero tagline — user-directed replacement of `hero-lead` at `site/src/pages/index.astro:89` with "aDNA is an integrated standard for knowledge graph driven context engineering." + plain-language sub-gloss on `hero-subtitle` (dual-audience posture).
 
 ### O7: Researcher persona landing (Cycle 27)
 

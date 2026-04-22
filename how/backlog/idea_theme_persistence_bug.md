@@ -1,13 +1,18 @@
 ---
 type: backlog_idea
-status: planned
+status: resolved
 priority: high
 created: 2026-04-22
+updated: 2026-04-22
 last_edited_by: agent_rosetta
-tags: [backlog, site, dark-mode, theme, fouc, ux-bug, d3-carry-forward]
+tags: [backlog, site, dark-mode, theme, fouc, ux-bug, d3-carry-forward, resolved]
 ---
 
 # Idea: Fix Light/Dark Mode Flash + View-Transition Persistence
+
+## Resolution
+
+**Resolved 2026-04-22 — Phase 7 D3 cycle 26 (bundled with M27 O6 + homepage tagline).** All four proposed steps shipped in one edit to `site/src/layouts/BaseLayout.astro`: theme-apply IIFE moved to `<head>` (same `is:inline` pattern as the `no-js` remove script); rewritten with idempotent `document.documentElement.classList.toggle('dark', dark)` (both branches fire); `astro:page-load` listener added so `ClientRouter` navigation re-evaluates theme; `prefers-color-scheme` change listener added for live OS-theme tracking. Validation: `npm run build` 116 pages / 0 errors; `npm run test:gates` 30/30; Lighthouse 100/100/100/100 on all 5 sample pages; structural smoke-test via built `dist/index.html` confirms 4× `applyTheme` references in `<head>` (function def + initial call + `astro:page-load` listener + `prefers-color-scheme change` listener), 0× in `<body>`. See `iii_cycle_tracker.md` cycle 26 entry for full validation evidence.
 
 ## Problem
 
