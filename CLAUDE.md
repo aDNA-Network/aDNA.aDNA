@@ -79,10 +79,11 @@ aDNA.aDNA/
     ├── coordination/            # Cross-agent ephemeral notes
     ├── governance/              # Roles, policies, VISION.md
     ├── community/               # [EXT] Community roles, contribution paths
-    └── adopters/                # [EXT] Adopter personas and deployment profiles
+    ├── adopters/                # [EXT] Adopter personas and deployment profiles
+    └── reviewers/               # [EXT] Specialist UX/design reviewer personas (decadal AAR lens)
 ```
 
-> `[EXT]` marks the 10 ontology extensions added by this project (6 WHAT, 2 HOW, 2 WHO).
+> `[EXT]` marks the 11 ontology extensions added by this project (6 WHAT, 2 HOW, 3 WHO).
 
 ---
 
@@ -262,7 +263,7 @@ Reusable agent recipes and documented procedures in `how/skills/`. Skills have t
 
 Extend by adding domain-specific entities under the appropriate triad leg. The base gives operational infrastructure; extensions add domain knowledge.
 
-### Extended Ontology (10 Rosetta Entity Types)
+### Extended Ontology (11 Rosetta Entity Types)
 
 | Triad | Entity | Directory | Purpose |
 |-------|--------|-----------|---------|
@@ -274,6 +275,7 @@ Extend by adding domain-specific entities under the appropriate triad leg. The b
 | **WHAT** | `comparison` | `what/comparisons/` | aDNA vs. other knowledge architectures (honest positioning) |
 | **WHO** | `community` | `who/community/` | Community roles, contribution paths, governance |
 | **WHO** | `adopter` | `who/adopters/` | Adopter personas and deployment profiles |
+| **WHO** | `reviewer` | `who/reviewers/` | Specialist UX/design reviewer personas (Design Critic, Accessibility Auditor, Content Strategist, Information Architect, Newcomer Stress-Tester) — invoked during decadal AAR Step 4b |
 | **HOW** | `workshop` | `how/workshops/` | Workshop kits and facilitation guides |
 | **HOW** | `publishing` | `how/publishing/` | Vault-to-web content publishing pipeline |
 

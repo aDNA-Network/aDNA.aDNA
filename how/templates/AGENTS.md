@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-19
-updated: 2026-03-19
-last_edited_by: agent_init
+updated: 2026-04-23
+last_edited_by: agent_stanley
 tags: [directory_index, templates]
 ---
 
@@ -48,9 +48,9 @@ These templates have no Templater auto-trigger. Copy their structure manually or
 | `template_registry.md` | Registry publication metadata | varies | `template` | Used for publishing, not regular file creation |
 | `template_strategic_compass.md` | Strategic compass | `who/governance/` | `governance` | Rare — governance dir already mapped for other use |
 
-### Extension Templates — Rosetta (10)
+### Extension Templates — Rosetta (11)
 
-Manual-apply templates for the 10 ontology extensions added by this project:
+Manual-apply templates for the 11 ontology extensions added by this project:
 
 | Template | Target Type | Target Directory | Frontmatter `type` |
 |----------|------------|-----------------|-------------------|
@@ -62,6 +62,7 @@ Manual-apply templates for the 10 ontology extensions added by this project:
 | `template_comparison.md` | System comparison | `what/comparisons/` | `comparison` |
 | `template_community_role.md` | Community structure/role | `who/community/` | `community` |
 | `template_adopter.md` | Adopter persona | `who/adopters/` | `adopter` |
+| `template_reviewer.md` | Reviewer persona (decadal AAR lens) | `who/reviewers/` | `reviewer` |
 | `template_workshop.md` | Workshop kit | `how/workshops/` | `workshop` |
 | `template_publishing_task.md` | Publishing task | `how/publishing/` | `publishing` |
 
