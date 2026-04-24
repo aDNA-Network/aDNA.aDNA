@@ -1,0 +1,16 @@
+# Node / build
+node_modules/
+site/node_modules/
+site/dist/
+site/.vercel/
+
+# Playwright test artifacts
+test-results/
+playwright-report/
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+*.swp
