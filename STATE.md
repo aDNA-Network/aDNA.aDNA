@@ -14,7 +14,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 7 active — D7 complete (cycles 61-70), D8 queued behind phase gate.** Phases 0-6 complete (89 vault content files + 117-page live site). Phase 7 executing: 100-cycle III loop across 10 themed decadals. D1→4.35. D2→4.70. D3→4.83. D4→4.91. D5→4.94. D6→**4.96** (+0.02). D7 (SEO & Discoverability, 2026-04-24) closed →**4.97** (+0.01). **D7 changes**: JSON-LD coverage 55%→97% (16 missing index pages + HowTo for tutorials + BreadcrumbList via @graph bundle), heading hierarchy 45 violations→0 (CardGrid `<h3>`→`<p>` + 33 Pathway-2 MDX H1 strips), concept→tutorial cross-links (6 added), Patterns a11y 98→100. New `seo.ts` builders: `buildCollectionPageJsonLD`, `buildHowToJsonLD`, `buildBreadcrumbListJsonLD`. Gate-6-meta updated for @graph shape. Playwright 47/47. D7 AAR filed; M31 completed. D8 (Interaction Depth, cycles 71-80) opens on user command — **phase gate pending**.
+**Phase 7 active — D7 complete (cycles 61-70), D8 queued behind phase gate.** Phases 0-6 complete (89 vault content files + 117-page live site). Phase 7 executing: 100-cycle III loop across 10 themed decadals. D1→4.35. D2→4.70. D3→4.83. D4→4.91. D5→4.94. D6→**4.96** (+0.02). D7 (SEO & Discoverability, 2026-04-24) closed →**4.97** (+0.01). **D7 changes**: JSON-LD coverage 55%→97% (16 missing index pages + HowTo for tutorials + BreadcrumbList via @graph bundle), heading hierarchy 45 violations→0 (CardGrid `<h3>`→`<p>` + 33 Pathway-2 MDX H1 strips), concept→tutorial cross-links (6 added), Patterns a11y 98→100. New `seo.ts` builders: `buildCollectionPageJsonLD`, `buildHowToJsonLD`, `buildBreadcrumbListJsonLD`. Gate-6-meta updated for @graph shape. Playwright 47/47. D7 AAR filed; M31 completed. D8 (Interaction Depth, cycles 71-80) **ACTIVE** — M32 created 2026-04-24, cycles 71-80 in progress.
 
 ## Active Campaign
 
@@ -45,7 +45,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 - **M31: D7 SEO & Discoverability** — **Complete** (cycles 61-70, 2026-04-24). Ranker 4.96→**4.97** (Δ +0.01). JSON-LD 55%→97%, heading hierarchy 45 violations→0, Patterns a11y 98→100, 6 concept→tutorial cross-links. AAR: [aar_phase7_d7.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d7.md).
 
-- **M32: D8 Interaction Depth** — **Pending** (cycles 71-80). **Phase gate: awaiting user command to open.** Priority queue: replace "Demo coming soon" placeholders, add interactive code examples to tutorials, embed architecture diagrams on concept pages, "Try this in Claude Code" CTAs, progressive disclosure for glossary.
+- **M32: D8 Interaction Depth** — **Active** (cycles 71-80). Opened 2026-04-24. Mission file: [[how/campaigns/campaign_rosetta/missions/mission_m32_d8_interaction_depth]]. Priority queue: (1) gate measurement + placeholder audit (cycle 71), (2) replace media placeholders (cycles 72-73), (3) clipboard-copy on CodeBlocks (cycle 74), (4) architecture diagrams on concept pages (cycle 75), (5) "Try this in Claude Code" CTAs (cycle 76), (6) Reviewer Lens Pass — Design Critic + Newcomer Stress-Tester (cycles 77-78), (7) glossary progressive disclosure (cycle 79).
 
 ### Persona Ranker Summary
 
@@ -89,7 +89,7 @@ None.
 
 ## Next Steps
 
-1. **D8 phase gate** — user opens D8 (Interaction Depth, cycles 71-80). Priority queue from D7 AAR: replace media placeholders, add interactive code examples, embed architecture diagrams, "Try this in Claude Code" CTAs, progressive disclosure for glossary.
+1. **D8 active (cycles 71-80)** — M32 created (2026-04-24). Start cycle 71: establish gate measurement (count media placeholders + demo placeholder elements as regression baseline). See `how/campaigns/campaign_rosetta/missions/mission_m32_d8_interaction_depth.md`.
 2. **Verification tags (user action)** — register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add `<meta name="google-site-verification">` + `<meta name="msvalidate.01">` to `SEOHead.astro`.
 3. **Deploy D7 to Vercel** — `cd site && vercel --prod` to push D7 changes to production.
 4. **D9-D10** — Narrative Onboarding (Reviewer Lens Pass mandatory), Hardening & Closeout.
@@ -108,4 +108,4 @@ D7 closed at ranker **4.97** (+0.01). All 10 cycles (61-70) passed build and Pla
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. D7 complete — ranker 4.97. **Open D8: Interaction Depth (cycles 71-80).** Priority queue from D7 AAR (`how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d7.md`): (1) Replace "Demo coming soon" media placeholders with real content — this is the primary Delight and Actionability ceiling for Educator persona, (2) Add interactive code examples or clipboard-copy to tutorial pages, (3) Embed architecture diagram (SVG/mermaid) on concept pages for visual learners, (4) Add "Try this in Claude Code" deep-link CTAs at tutorial completion, (5) Progressive disclosure for glossary entries. Before starting: deploy D7 to Vercel (`cd site && vercel --prod`). Create mission file M32 and begin cycle 71. Remember to add a gate before implementing any D8 feature (track placeholder count or demo count so progress is measurable).
+> Resume Operation Rosetta in `aDNA.aDNA/`. D7 complete — ranker 4.97. **D8 ACTIVE (cycles 71-80)** — M32 created. Load mission file `how/campaigns/campaign_rosetta/missions/mission_m32_d8_interaction_depth.md`. Begin cycle 71: gate measurement pass — count all media placeholders and demo placeholder elements in built site (create `gate-7-interaction.spec.ts` to lock in the baseline count). Then cycle 72: replace top 3 highest-traffic MediaPlaceholder instances with real content (GIF, screenshot, or inline walkthrough). Before starting: deploy D7 to Vercel (`cd site && vercel --prod`). Ranker baseline: 4.97. Target: ≥4.98. Delight (4.83) is the primary lever — interactive content is the fix.
