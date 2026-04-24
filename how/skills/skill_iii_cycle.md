@@ -118,6 +118,8 @@ Where:
 
 Prefer targets aligned with the current decadal theme. At least one target should be a quick win (achievable this cycle). One may be part of a multi-cycle arc.
 
+For design-adjacent cycles (decadals themed Visual Identity, Interaction Depth, or Narrative Onboarding), consult the reviewer bench at `who/reviewers/` before finalizing the target. Reviewer lenses surface failure modes (generic-AI aesthetic, cognitive overload, onboarding scent) that the priority formula alone may miss.
+
 ### Step 4: Implement
 
 Make the improvement. Types of changes:

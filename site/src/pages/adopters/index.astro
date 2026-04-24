@@ -9,12 +9,40 @@ const cards = adopters.map((doc) => ({
   description: doc.data.description,
   href: `/adopters/${doc.id}`,
 }));
+
+const pathCards = [
+  {
+    title: 'Educator',
+    href: '/educators',
+    description: 'Teaching AI-augmented knowledge work? Start with the 3-week curriculum kit — 9 tutorials in pedagogical order with facilitation guidance.',
+  },
+  {
+    title: 'Researcher',
+    href: '/researchers',
+    description: 'Running a lab or science team? Start with the research reading path — FAIR metadata, lattice workflows, and domain ontology extension.',
+  },
+  {
+    title: 'Enterprise Team',
+    href: '/enterprise',
+    description: 'Evaluating aDNA for organizational adoption? Start with the enterprise path — governance, multi-team coordination, and compliance posture.',
+  },
+  {
+    title: 'Startup',
+    href: '/startup-first-hour',
+    description: 'Moving fast and scaling? Get aDNA running in your first hour — the minimal viable vault for a growing team.',
+  },
+];
 ---
 
 <DocumentationLayout
   title="Adopter Personas"
   description="Quick-reference profiles for aDNA's target audiences — solo developers, enterprise teams, educators, startups, and researchers."
 >
-  <p>Each persona extracts structured data from a real-world use case narrative. The use case tells the story; the persona card provides the reference.</p>
+  <h2 id="find-your-path">Find your path</h2>
+  <p>Not sure where to start? These guided entry points are tailored to your context:</p>
+  <CardGrid cards={pathCards} columns={2} />
+
+  <h2 id="persona-cards">Persona reference cards</h2>
+  <p>Structured profiles for each audience — pain points, typical ontology extensions, and adoption narrative. The use case pages tell the full story; these cards give you the quick reference.</p>
   <CardGrid cards={cards} columns={2} />
 </DocumentationLayout>

@@ -18,20 +18,55 @@ const jsonLD = buildTechArticleJsonLD({
   <p>aDNA (Agentic DNA) is an open standard for organizing project knowledge so that both humans and AI agents can navigate it. Think of it as a genome for your project — a structured encoding of what your project knows, who is involved, and how work gets done.</p>
 
   <h2 id="the-problem">The problem</h2>
-  <p>AI agents are increasingly capable, but they struggle with the same thing humans do: finding the right context in a sea of files. Without structure, agents waste tokens loading irrelevant information or miss critical context entirely.</p>
+  <p>AI agents are increasingly capable, but they struggle with the same thing humans do: finding the right context in a sea of files. Without structure, agents waste tokens loading irrelevant information or miss critical context entirely. The result: you re-explain your project at the start of every session, agents make decisions that contradict earlier ones, and knowledge accumulated over weeks evaporates when the context window closes.</p>
+
+  <p>This isn't an agent capability problem. It's a knowledge architecture problem. The agent is capable — it just has nowhere to look.</p>
+
+  <h2 id="why">Why aDNA exists</h2>
+  <p>aDNA exists because there was no shared standard for how a project should present itself to an AI agent. Every team invented their own approach: some dropped a long README into the prompt, others used custom system instructions, others relied on the agent to figure it out. None of these scale across sessions, across agents, or across teams.</p>
+
+  <p>aDNA is the attempt to solve this once, openly — a standard that any team can adopt, any tool can support, and any agent can navigate without custom configuration.</p>
 
   <h2 id="the-solution">The aDNA approach</h2>
   <p>aDNA provides three things:</p>
   <ul>
-    <li><strong>The Triad</strong> — every project is organized into Who (people and governance), What (knowledge and decisions), and How (operations and workflows).</li>
-    <li><strong>Governance files</strong> — CLAUDE.md, AGENTS.md, MANIFEST.md, STATE.md, and README.md give agents the orientation they need at every level of the project.</li>
-    <li><strong>Typed entities</strong> — 14 base entity types (concepts, missions, sessions, lattices, etc.) with consistent frontmatter and naming conventions.</li>
+    <li><strong>The Triad</strong> — every project is organized into <a href="/learn/concepts/triad">three directories</a>: <code>who/</code> (people and governance), <code>what/</code> (knowledge and decisions), and <code>how/</code> (operations and workflows). The layout itself is the first piece of orientation — an agent that has seen one aDNA project knows where to look in any other.</li>
+    <li><strong>Governance files</strong> — <code>CLAUDE.md</code>, <code>AGENTS.md</code>, <code>MANIFEST.md</code>, <code>STATE.md</code>, and <code>README.md</code> give agents the orientation they need at every level of the project. The root <code>CLAUDE.md</code> is the agent's entry point: it explains the project's purpose, structure, rules, and where to start working.</li>
+    <li><strong>Typed entities</strong> — 14 base entity types (concepts, missions, sessions, lattices, and more) with consistent frontmatter and naming conventions. Typed entities are predictable: an agent that knows what a <code>mission</code> file looks like can load any mission file in any aDNA project and understand its structure immediately.</li>
   </ul>
+
+  <h2 id="before-after">Before and after</h2>
+  <p>Here is what the same project looks like with and without aDNA:</p>
+
+  <p><strong>Without aDNA:</strong> A research lab has 200 files spread across Notion, Google Drive, and a Git repo. Every time a new agent session starts, the team pastes a summary into the prompt. The summary is always outdated. The agent asks clarifying questions. Decisions made last month get re-litigated. A new collaborator takes three days to get oriented.</p>
+
+  <p><strong>With aDNA:</strong> The same project has a <code>what/context/</code> library of curated knowledge files. The <code>STATE.md</code> shows current priorities and blockers. The <code>how/missions/</code> directory has the active work decomposed into claimable objectives. A new agent loads the root <code>CLAUDE.md</code>, reads the relevant context files, and starts working in the right direction — in the same session.</p>
+
+  <h2 id="self-reference">See it live</h2>
+  <p>This documentation site is itself an aDNA project — <code>aDNA.aDNA/</code> — that teaches the standard by using the standard. Every concept explained on this site has a corresponding file in the vault that demonstrates it:</p>
+  <ul>
+    <li><code>aDNA.aDNA/STATE.md</code> — the live operational snapshot: current phase, active missions, blockers</li>
+    <li><code>aDNA.aDNA/what/context/</code> — the curated knowledge library agents load before working</li>
+    <li><code>aDNA.aDNA/how/campaigns/campaign_rosetta/</code> — the active campaign building this very site, with mission files, cycle records, and AARs</li>
+    <li><code>aDNA.aDNA/who/governance/</code> — the governance structure that keeps the project coherent across sessions</li>
+  </ul>
+  <p>The vault is open. Navigate it in Obsidian, VS Code, or GitHub and you are navigating a working example of every concept on this site.</p>
+
+  <h2 id="three-questions">The three-question test</h2>
+  <p>A well-structured aDNA project should let any agent answer three questions immediately, without asking:</p>
+  <ol>
+    <li><strong>What is this project?</strong> — answered by <code>CLAUDE.md</code> and <code>MANIFEST.md</code> at the root</li>
+    <li><strong>What is the current state?</strong> — answered by <code>STATE.md</code> (blockers, active work, next steps)</li>
+    <li><strong>Where do I start working?</strong> — answered by the active mission file in <code>how/missions/</code> or the relevant <code>AGENTS.md</code> in the working directory</li>
+  </ol>
+  <p>If your project can answer all three in under 10 seconds of reading, it is aDNA-ready.</p>
 
   <h2 id="next-steps">Explore further</h2>
   <ul>
-    <li><a href="/learn/concepts/triad">The Triad</a> — the foundational structure</li>
-    <li><a href="/get-started">Get Started</a> — set up your first aDNA project</li>
-    <li><a href="/learn/tutorials/first-claude-md">Tutorial: Create Your First CLAUDE.md</a></li>
+    <li><a href="/learn/concepts/triad">The Triad</a> — the foundational structure: who, what, how</li>
+    <li><a href="/learn/concepts/governance-files">Governance Files</a> — CLAUDE.md, AGENTS.md, STATE.md, and their roles</li>
+    <li><a href="/get-started">Get Started</a> — set up your first aDNA project in three steps</li>
+    <li><a href="/learn/tutorials/first-claude-md">Tutorial: Create Your First CLAUDE.md</a> — hands-on, 20 minutes</li>
+    <li><a href="/learn/concepts/convergence">The Convergence Model</a> — how aDNA narrows context at each level of the execution hierarchy</li>
   </ul>
 </DocumentationLayout>

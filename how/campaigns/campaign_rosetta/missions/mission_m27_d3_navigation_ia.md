@@ -3,13 +3,13 @@ mission_id: m27
 type: mission
 title: "D3: Navigation & IA"
 campaign: campaign_rosetta
-status: active
+status: completed
 priority: high
 created: 2026-04-18
-updated: 2026-04-22
+updated: 2026-04-23
 last_edited_by: agent_rosetta
 tags: [mission, rosetta, phase-7, iii, d3, navigation-ia]
-progress: 6/10 cycles complete (cycles 21-26)
+progress: 10/10 cycles complete (cycles 21-30)
 ---
 
 # M27 — D3: Navigation & IA
@@ -90,6 +90,8 @@ Each objective corresponds to one III cycle (`skill_iii_cycle.md`). Hold Lightho
 - [x] Co-shipped bundled polish: (A) theme-persistence fix — `site/src/layouts/BaseLayout.astro` IIFE moved to `<head>`, idempotent `classList.toggle`, `astro:page-load` + `prefers-color-scheme change` listeners — FOUC closed + `ClientRouter` persistence restored; backlog idea `how/backlog/idea_theme_persistence_bug.md` resolved. (B) Homepage hero tagline — user-directed replacement of `hero-lead` at `site/src/pages/index.astro:89` with "aDNA is an integrated standard for knowledge graph driven context engineering." + plain-language sub-gloss on `hero-subtitle` (dual-audience posture).
 
 ### O7: Researcher persona landing (Cycle 27)
+
+> UX audit findings F-02 (under-sized explainer, ~130 author words behind homepage CTA) and F-06 (self-reference missing on `/learn/what-is-adna` and `/get-started`) directly inform this cycle. The researcher landing addresses F-02's audience-specific depth gap; F-06 fixes are co-shipped on `/learn/what-is-adna` and `/get-started`. F-01 (hero-lead jargon) and F-03 (How it Works crispness) pulled forward from D4 and co-shipped this cycle. Source: `how/campaigns/campaign_rosetta/missions/artifacts/ux_audit_2026_04_23.md`.
 
 - [ ] Create `site/src/pages/researchers/index.astro` (or `/researcher-reading-path/`) — sibling to `/educators`, `/enterprise`, `/startup-first-hour`, `/compliance`
 - [ ] Ordered reading path through FAIR metadata, lattice YAML examples, context-engineering content, convergence model

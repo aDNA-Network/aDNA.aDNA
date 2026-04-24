@@ -11,19 +11,19 @@ const steps = [
   {
     number: '01',
     title: 'Structure',
-    description: 'Organize your project into what you know, how you work, and who is involved. Three directories — one architecture.',
+    description: 'Every agent session starts from scratch — agents relearn your project by rummaging through files. aDNA ends that. Three directories (what you know, how you work, who\'s involved) give any agent instant orientation.',
     icon: '🗂',
   },
   {
     number: '02',
     title: 'Orient',
-    description: 'Agents read CLAUDE.md and AGENTS.md to understand your project. Typed context files give them the depth they need.',
+    description: 'Agents read your CLAUDE.md and AGENTS.md before they touch anything. Typed context files load exactly the depth they need — not your entire project, not a blank slate.',
     icon: '🧭',
   },
   {
     number: '03',
     title: 'Execute',
-    description: 'Sessions, missions, and campaigns decompose work into context-sized chunks. Progress compounds across sessions.',
+    description: 'Work decomposes into sessions, missions, and campaigns — context-sized chunks that fit inside a single agent window. Progress compounds: what one agent learns, the next agent inherits.',
     icon: '🚀',
   },
 ];
@@ -86,8 +86,8 @@ const stats = [
         loading="eager"
       />
     </div>
-    <p class="hero-lead">aDNA is an integrated standard for knowledge graph driven context engineering.</p>
-    <p class="hero-subtitle">A shared folder layout and metadata spec so AI agents land oriented — no re-learning your project every time.</p>
+    <p class="hero-lead">aDNA is the genome of your project — structured knowledge every AI agent can navigate without being re-briefed from scratch.</p>
+    <p class="hero-subtitle">An open standard: a folder layout, metadata spec, and governance files so agents land oriented every session.</p>
     <div class="hero-actions">
       <a href="/get-started" class="btn btn-primary">Get Started</a>
       <a href="/learn/what-is-adna" class="btn btn-secondary">What is aDNA?</a>
@@ -116,7 +116,7 @@ const stats = [
   <section class="how-it-works">
     <div class="section-inner">
       <h2 class="section-title">How it Works</h2>
-      <p class="section-subtitle">Three steps to a project that agents can understand.</p>
+      <p class="section-subtitle">Three steps from scattered files to a project your agents can navigate — and keep navigating.</p>
       <div class="steps-grid">
         {steps.map((step) => (
           <div class="step">

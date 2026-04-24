@@ -1,0 +1,128 @@
+---
+import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../components/sections/CardGrid.astro';
+import { buildTechArticleJsonLD } from '../../utils/seo';
+
+const jsonLD = buildTechArticleJsonLD({
+  title: 'aDNA for Researchers',
+  description: 'How research labs and science teams use aDNA to maintain knowledge provenance, reproducibility, and multi-agent context fidelity across long-running projects.',
+  url: Astro.url.href,
+});
+
+const readingPathCards = [
+  {
+    title: 'Write a Context File',
+    href: '/learn/tutorials/write-a-context-file',
+    description: '30 min · Intermediate — curate a quality-rubric-scored knowledge file your agents load before working on a specific domain or dataset.',
+  },
+  {
+    title: 'Extend the Ontology',
+    href: '/learn/tutorials/extend-the-ontology',
+    description: '25 min · Intermediate — add domain-specific entity types: experiment, protocol, finding, hypothesis — whatever your research taxonomy demands.',
+  },
+  {
+    title: 'Design a Mission',
+    href: '/learn/tutorials/design-a-mission',
+    description: '25 min · Intermediate — decompose a multi-week analysis arc into claimable objectives. Each objective fits in a single agent session.',
+  },
+  {
+    title: 'Build a Lattice',
+    href: '/learn/tutorials/build-a-lattice',
+    description: '30 min · Advanced — compose a research workflow as a validated .lattice.yaml graph of modules. Machine-executable, human-readable.',
+  },
+];
+
+const referenceCards = [
+  {
+    title: 'FAIR Metadata',
+    href: '/learn/concepts/fair-metadata',
+    description: 'How aDNA satisfies the FAIR data principles — Findable, Accessible, Interoperable, Reusable — at the knowledge architecture level.',
+  },
+  {
+    title: 'The Convergence Model',
+    href: '/learn/concepts/convergence',
+    description: 'Load exactly the context a task needs — not the entire dataset catalog. How aDNA narrows scope from vault to campaign to session.',
+  },
+  {
+    title: 'Researcher Persona',
+    href: '/adopters/adopter-researcher',
+    description: 'Full pain points, typical ontology extensions, and adoption narrative for research labs using aDNA across multi-agent pipelines.',
+  },
+  {
+    title: 'Research Lab Use Case',
+    href: '/use-cases/research-lab',
+    description: 'Long-form narrative: how a computational biology lab runs protocols, datasets, and multi-month campaigns on aDNA.',
+  },
+];
+---
+
+<DocumentationLayout
+  title="aDNA for Researchers"
+  description="How research labs and science teams use aDNA to maintain knowledge provenance, reproducibility, and multi-agent context fidelity across long-running projects."
+  jsonLD={jsonLD}
+>
+  <p class="lede">
+    Your citations are only as good as your context graph. aDNA gives research teams a structured, agent-navigable knowledge layer — so every session starts oriented, every protocol is traceable, and knowledge accumulated over months doesn't evaporate when the context window closes.
+  </p>
+
+  <h2 id="who-this-is-for">Who this is for</h2>
+  <p>
+    Research labs, computational science teams, and independent researchers who run long-horizon projects with multiple collaborators — human or AI. If your work involves datasets, protocols, hypotheses, and findings that need to stay coherent across months of sessions and handoffs, aDNA was built for exactly this problem.
+  </p>
+
+  <h2 id="the-research-knowledge-problem">The research knowledge problem</h2>
+  <p>
+    Research projects accumulate knowledge faster than any one person — or agent — can track. Protocols drift. Analysis decisions get made in a Slack thread and forgotten. A new collaborator joins and spends a week reconstructing context from scattered READMEs. An agent session produces a finding that the next session contradicts, because neither session had the full picture.
+  </p>
+  <p>
+    The deeper problem: research knowledge is relational. A finding only makes sense relative to its protocol, its dataset version, its assumptions. Without a structure that preserves those relationships, knowledge isn't reproducible — it's anecdotal.
+  </p>
+
+  <h2 id="how-adna-helps">How aDNA helps</h2>
+  <p>
+    aDNA structures research knowledge as a <a href="/learn/concepts/triad">typed, navigable graph</a> — not a flat document pile. Three properties matter most to research teams:
+  </p>
+  <ul>
+    <li>
+      <strong>Knowledge provenance.</strong> Every context file, decision record, and session log carries frontmatter: who created it, when, what it links to, and what version of the standard it targets. Agents that modify knowledge files update the provenance automatically. The audit trail is structural, not documentary.
+    </li>
+    <li>
+      <strong>FAIR metadata, built in.</strong> Every <a href="/learn/concepts/fair-metadata">lattice object</a> in aDNA includes a <code>fair</code> block: license, creators, keywords, identifier (DOI or persistent ID), and provenance description. Publishing a lattice to the registry is a single command — FAIR compliance is not a separate checklist.
+    </li>
+    <li>
+      <strong>Multi-agent context fidelity.</strong> The <a href="/learn/concepts/convergence">convergence model</a> means an agent working on a specific analysis objective loads exactly the context it needs — the relevant dataset metadata, the active protocol, the prior findings — not the entire project. Multiple agents can work in parallel on different objectives without context bleed.
+    </li>
+  </ul>
+
+  <h2 id="typical-ontology-extensions">Typical ontology extensions</h2>
+  <p>
+    Research teams typically extend the base 14 entity types with domain-specific ones. Common extensions for science projects:
+  </p>
+  <ul>
+    <li><strong>experiment</strong> — a bounded empirical test with hypothesis, method, and outcome fields</li>
+    <li><strong>protocol</strong> — a versioned, reusable procedure with preconditions and reproducibility notes</li>
+    <li><strong>finding</strong> — a validated result linked to the experiment and dataset that produced it</li>
+    <li><strong>dataset</strong> — a data object with FAIR metadata, lineage, and access notes</li>
+  </ul>
+  <p>
+    The <a href="/learn/tutorials/extend-the-ontology">Extend the Ontology tutorial</a> walks through adding any of these in 25 minutes — directory, AGENTS.md, template, and frontmatter schema.
+  </p>
+
+  <h2 id="reading-path">Research reading path</h2>
+  <p>
+    Start here if you are new to aDNA. These four tutorials build a complete research knowledge architecture — from curated context files to executable workflow graphs.
+  </p>
+  <CardGrid cards={readingPathCards} columns={2} />
+
+  <h2 id="reference">Reference and depth</h2>
+  <CardGrid cards={referenceCards} columns={2} />
+</DocumentationLayout>
+
+<style>
+  .lede {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: var(--space-8);
+  }
+</style>

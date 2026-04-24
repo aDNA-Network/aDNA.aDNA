@@ -17,13 +17,13 @@ Structured log for all 100 improvement cycles across 10 decadals. Each cycle app
 |---------|--------|-------|--------|-----|
 | D1 | 1-10 | Accessibility Perfection | complete | [aar_phase7_d1.md](aar_phase7_d1.md) |
 | D2 | 11-20 | Content Clarity Sprint | complete | [aar_phase7_d2.md](aar_phase7_d2.md) |
-| D3 | 21-30 | Navigation & IA | in_progress (6/10) | — (M27 open: [mission_m27_d3_navigation_ia.md](../mission_m27_d3_navigation_ia.md); cycles 21-26 complete, cycle 27 next) |
-| D4 | 31-40 | Visual Polish | pending | — |
+| D3 | 21-30 | Navigation & IA | **complete** | [aar_phase7_d3.md](aar_phase7_d3.md) — Ranker: 4.83 (+0.13 from 4.70 baseline) |
+| D4 | 31-40 | Visual Identity & First-Contact | pending | — |
 | D5 | 41-50 | Mobile Experience | pending | — |
 | D6 | 51-60 | Performance & Loading | pending | — |
 | D7 | 61-70 | SEO & Discoverability | pending | — |
-| D8 | 71-80 | Component & Interaction | pending | — |
-| D9 | 81-90 | Persona-Driven Polish | pending | — |
+| D8 | 71-80 | Interaction Depth | pending | — |
+| D9 | 81-90 | Narrative Onboarding | pending | — |
 | D10 | 91-100 | Hardening & Closeout | pending | — |
 
 ## Baseline (Pre-Phase 7)
@@ -884,4 +884,109 @@ Every page at the ceiling — both new pages hit 100 Perf out of the gate, contr
 - Every new tooltip `href` resolves to a real `/glossary/glossary-{slug}` page; slugs (`session`, `agents-md`, `question-test`, `triad`, `governance-file`, `mission`, `context-library`, `frontmatter`) all present in `what/glossary/`.
 - Evidence: `site/evidence/cycle26/lh_{homepage,concept,tutorial,glossary,adopter}.json`.
 
-**Carry-Forward**: The 2 zero-tooltip tutorials (`build-a-lattice.mdx`, `federate-a-vault.mdx`) are acceptable outcomes under the "do not invent content" rule — neither has a glossary-backed canonical term in prose first-mention. If `/glossary/` grows to cover "lattice" / "federation" / "FAIR metadata" in a later decadal (likely D9 Persona-Driven Polish or D10 Hardening), these two tutorials become cheap one-line wraps. The theme-persistence bug (`how/backlog/idea_theme_persistence_bug.md`) closes with this cycle — frontmatter marked `status: resolved`, citing cycle 26. Next cycle (27) opens O7 (Researcher persona landing) per M27 plan; no blockers.
+**Carry-Forward**: The 2 zero-tooltip tutorials (`build-a-lattice.mdx`, `federate-a-vault.mdx`) are acceptable outcomes under the "do not invent content" rule — neither has a glossary-backed canonical term in prose first-mention. If `/glossary/` grows to cover "lattice" / "federation" / "FAIR metadata" in a later decadal (likely D9 Narrative Onboarding or D10 Hardening), these two tutorials become cheap one-line wraps. The theme-persistence bug (`how/backlog/idea_theme_persistence_bug.md`) closes with this cycle — frontmatter marked `status: resolved`, citing cycle 26. Next cycle (27) opens O7 (Researcher persona landing) per M27 plan; no blockers.
+
+---
+
+### UX Audit — 2026-04-23 (between cycles 26 and 27)
+
+**Source**: `how/campaigns/campaign_rosetta/missions/artifacts/ux_audit_2026_04_23.md`
+**Reviewer system**: `who/reviewers/` bench activated (11th Rosetta ontology extension, Workstream B); `skill_decadal_aar.md` Step 4b added (Workstream C).
+
+**10 findings** (3 High / 4 Medium / 3 Low) — D3 residual routing:
+
+| ID | Severity | Finding | Route |
+|----|----------|---------|-------|
+| F-01 | HIGH | Hero-lead jargon ("integrated standard for knowledge graph driven context engineering") | **Pulled to D3 cycle 27** |
+| F-02 | HIGH | `/learn/what-is-adna` ~130 author words behind homepage CTA expectation | **Pulled to D3 cycle 27** |
+| F-03 | HIGH | Why/How crispness fails 60-second newcomer test | **Pulled to D3 cycle 27** |
+| F-04 | MEDIUM | "Demo coming soon" placeholders signal unfinished product | D8 (Interaction Depth) |
+| F-05 | MEDIUM | 12+ decorative emoji — generic-AI aesthetic tell | D4 (Visual Identity) |
+| F-06 | MEDIUM | Self-reference missing on `/learn/what-is-adna` and `/get-started` | **Pulled to D3 cycle 27** |
+| F-07 | MEDIUM | Homepage 7 competing sections at cognitive span ceiling | D4 (Visual Identity) |
+| F-08 | LOW | `/get-started` assumes Claude Code knowledge, no install pointer | D9 (Narrative Onboarding) |
+| F-09 | LOW | Main nav 7 items — "Learn"+"Reference" and "Patterns"+"How" overlap | M27 O9 / D4 |
+| F-10 | LOW | Trust signals buried in final section, never seen by scanners | D4 (Visual Identity) |
+
+---
+
+### Cycle 27 — 2026-04-23
+
+**Decadal**: D3 (Navigation & IA)
+**Target**: O7 — Researcher persona landing page + co-shipped UX audit fixes F-01/F-02/F-03/F-06 (pulled from D4 at user direction)
+
+**Changes**:
+- `site/src/pages/researchers/index.astro` (new): Researcher persona landing page — hero hook ("Your citations are only as good as your context graph"), pain state, how aDNA helps (FAIR metadata, convergence, multi-agent fidelity), reading path CardGrid (4 cards), reference CardGrid (4 cards). Sibling to `/educators`, `/enterprise`, `/startup-first-hour`, `/compliance`.
+- `site/src/pages/index.astro:89` (F-01): Hero-lead rewrite — "aDNA is the genome of your project — structured knowledge every AI agent can navigate without being re-briefed from scratch." (14-year-old legibility test: pass).
+- `site/src/pages/index.astro:90` (F-01): Hero-subtitle update — "An open standard: a folder layout, metadata spec, and governance files so agents land oriented every session."
+- `site/src/pages/index.astro:10-29` (F-03): Steps array rewrites — Problem→Shape→Win arc. Step 01 names the pain (agents relearn from scratch), Step 02 names the mechanism (typed context files load exactly what's needed), Step 03 names the win (progress compounds across sessions).
+- `site/src/pages/index.astro:118-119` (F-03): Section subtitle — "Three steps from scattered files to a project your agents can navigate — and keep navigating."
+- `site/src/pages/learn/what-is-adna.astro` (F-02 + F-06): Expanded from ~130 to ~700 author words. Added: before/after example, "Why aDNA exists" section, 3-question test (What/Why/How answered in order), "See it live" self-reference section (4 vault paths), 5 links in Explore Further. Self-reference satisfies standing rule #8.
+- `site/src/pages/get-started.astro` (F-06): Added "See it live" section with 3 vault path pointers (`CLAUDE.md`, `STATE.md`, `how/sessions/active/`).
+
+**Lighthouse** (5 sample pages):
+| Page | Perf | A11y | BP | SEO |
+|------|------|------|----|----|
+| Homepage | 100 | 100 | 100 | 100 |
+| Concept (triad) | 100 | 100 | 100 | 100 |
+| Tutorial (first-claude-md) | 100 | 100 | 100 | 100 |
+| Glossary (glossary-adna) | 100 | 100 | 100 | 100 |
+| Adopter (adopter-solo-developer) | 100 | 100 | 100 | 100 |
+
+**Validation**: PASS — Build: 117 pages (+1 researcher), 2.33s, 0 errors. Playwright: 30/30.
+**Carry-Forward**: F-04 (demo placeholders), F-05 (emoji), F-07 (section density), F-08 (get-started install pointer), F-09 (nav collapse), F-10 (trust signal placement) — all routed to D4 or D9.
+
+---
+
+### Cycle 28 — 2026-04-23
+
+**Decadal**: D3 (Navigation & IA)
+**Target**: O8 — Tutorial ordering signal + adopter decision tree
+
+**Changes**:
+- `site/src/pages/learn/tutorials/index.astro`: Added per-section intros for Beginner (≈50 min), Intermediate (≈80 min), and Advanced (≈90 min) tiers. Each intro names who the tier is for and what they'll have by the end. Total time estimates surface the investment upfront.
+- `site/src/pages/adopters/index.astro`: Added "Find your path" section at top — 4-card decision grid routing readers to `/educators`, `/researchers`, `/enterprise`, `/startup-first-hour` by context. Persona reference cards follow beneath.
+
+**Validation**: PASS — Build: 117 pages, 2.28s, 0 errors. Playwright: 30/30.
+**Carry-Forward**: Full 5-question interactive decision tree (JavaScript-driven) deferred to D4 for interactive component work.
+
+---
+
+### Cycle 29 — 2026-04-23
+
+**Decadal**: D3 (Navigation & IA)
+**Target**: O9 — Reference-section linkage on concept pages
+
+**Changes**:
+- `site/src/content/docs/fair-metadata.mdx`: Added "From the Reference" CardGrid (2 cards: Quality Rubric + Specification).
+- `site/src/content/docs/lattice-composition.mdx`: Added "From the Reference" CardGrid (2 cards: Specification + Design Rationale).
+- `site/src/content/docs/convergence.mdx`: Added "From the Reference" CardGrid (2 cards: Specification + Agent-First Guide).
+- `site/src/content/docs/context-optimization.mdx`: Added "From the Reference" CardGrid (2 cards: Quality Rubric + Agent-First Guide).
+
+8 new reference section inbound links. Reference section now reachable from the most spec-adjacent concept pages without knowing the section exists.
+
+**Validation**: PASS — Build: 117 pages, 2.28s, 0 errors. Playwright: 30/30.
+**Carry-Forward**: Remaining 9 concept pages + 8 pattern pages do not have reference links — acceptable, as they are less spec-adjacent. Complete coverage deferred to D7 (SEO & Discoverability).
+
+---
+
+### Cycle 30 — 2026-04-23 (Decadal AAR)
+
+**Decadal**: D3 close (Navigation & IA)
+**Target**: O10 — D3 ranker re-score + decadal AAR
+
+**Ranker (D3 close):**
+| Dimension | D3 Start | D3 End | Delta |
+|-----------|---------|--------|-------|
+| Findability | 4.6 | 4.92 | +0.32 |
+| Comprehension | 4.8 | 5.00 | +0.20 |
+| Actionability | 5.0 | 5.00 | 0 |
+| Trust | 5.0 | 5.00 | 0 |
+| Relevance | 4.8 | 5.00 | +0.20 |
+| Delight | 4.0 | 4.08 | +0.08 |
+| **Overall** | **4.70** | **4.83** | **+0.13** |
+
+**AAR Artifact**: [aar_phase7_d3.md](aar_phase7_d3.md)
+**D4 Priority Queue seeded**: Yes — nav collapse (F-09), emoji→typographic (F-05), section collapse (F-07), trust strip (F-10), typography refinement. Reviewer Lens Pass mandatory for D4 (Design Critic, Accessibility Auditor, Content Strategist).
+
+**Validation**: PASS — Build: 117 pages, 2.28s, 0 errors. Playwright: 30/30. All 5 persona ranker dimensions ≥ 4.0 (gate: ≥ 4.0). Overall 4.83 > baseline 4.70. M27 marked completed. STATE.md updated. D4 queued behind phase gate.

@@ -18,25 +18,28 @@ function toCards(guides: typeof beginner) {
   title="Tutorials"
   description="Step-by-step aDNA tutorials from beginner to advanced."
 >
-  <p>9 hands-on tutorials grouped by difficulty. Each produces a concrete outcome you can use in your own projects.</p>
+  <p>9 hands-on tutorials, each producing a concrete outcome you can use in your own project. Grouped by difficulty — start at <strong>Beginner</strong> if this is your first aDNA project, or jump to <strong>Intermediate</strong> if you already have a vault and a CLAUDE.md.</p>
 
   {beginner.length > 0 && (
     <>
-      <h2 id="beginner">Beginner</h2>
+      <h2 id="beginner">Beginner — Start here (≈ 50 min total)</h2>
+      <p>If you have never worked with aDNA before, these three tutorials build your foundation. By the end you will have a working vault, a CLAUDE.md, and a way to classify any piece of project knowledge.</p>
       <CardGrid cards={toCards(beginner)} columns={2} />
     </>
   )}
 
   {intermediate.length > 0 && (
     <>
-      <h2 id="intermediate">Intermediate</h2>
+      <h2 id="intermediate">Intermediate — Build it out (≈ 80 min total)</h2>
+      <p>For teams or individuals who have a working vault and want to add curated context, domain-specific entity types, and mission decomposition. These tutorials work in any order, but the sequence here is recommended.</p>
       <CardGrid cards={toCards(intermediate)} columns={2} />
     </>
   )}
 
   {advanced.length > 0 && (
     <>
-      <h2 id="advanced">Advanced</h2>
+      <h2 id="advanced">Advanced — Scale and connect (≈ 90 min total)</h2>
+      <p>For teams ready to compose executable workflows, run phased campaigns, and share lattices with other aDNA instances. Prerequisites: at least one Beginner and one Intermediate tutorial complete.</p>
       <CardGrid cards={toCards(advanced)} columns={2} />
     </>
   )}

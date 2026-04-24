@@ -95,6 +95,47 @@ Run all Playwright quality gates. Record pass/fail for each gate.
 5. **Suggest 3 improvements** — concrete changes that would most benefit this persona
 6. **Unload the persona** before loading the next (context management)
 
+### Step 4b: Reviewer Lens Pass
+
+**Mandatory on D4 (Visual Identity & First-Contact), D8 (Interaction Depth), D9 (Narrative Onboarding). Optional on all other decadals.**
+
+For design-adjacent decadals, invoke the reviewer bench at `who/reviewers/` after completing persona simulations (Step 4) and before synthesizing scores (Step 5). The reviewer lens catches failure modes that the 5-adopter personas miss — generic-AI aesthetic, cognitive overload, onboarding scent collapse.
+
+**Procedure**:
+
+1. **Load reviewer files** from `who/reviewers/` — load only the reviewers relevant to the decadal's theme (see table below)
+2. **For each relevant reviewer**, apply their evaluation criteria to the same 5-page sample used in Steps 1-3:
+   - Score on their primary dimension(s) using their rubric (1-5)
+   - Identify 1-2 specific failures they would flag with file path + line reference
+   - Note one concrete fix
+3. **Produce a Reviewer Scorecard** (parallel to the Persona Matrix — not a replacement):
+
+```markdown
+| Reviewer | Primary Lens | Score (1-5) | Top Flag | Concrete Fix |
+|----------|-------------|-------------|----------|-------------|
+| Design Critic | Visual Clarity | {score} | {finding} | {fix} |
+| Accessibility Auditor | Cognitive Load | {score} | {finding} | {fix} |
+| Content Strategist | Comprehension | {score} | {finding} | {fix} |
+| Information Architect | Onboarding Scent | {score} | {finding} | {fix} |
+| Newcomer Stress-Tester | Actionability | {score} | {finding} | {fix} |
+```
+
+**Dimension definitions** (for scoring):
+- **Visual Clarity**: Typographic distinctiveness, palette cohesion, absence of generic-AI aesthetic tells (12+ decorative emoji, stock illustration style, filler-phrase density)
+- **Cognitive Load**: Reading-level parity with audience, jargon density per screen, working-memory budget (how many concepts a reader must hold simultaneously to parse a section)
+- **Onboarding Scent**: Per-click scent — each link's label predicts what the reader will find after clicking; newcomer can answer What/Why/How within 60 seconds of landing
+
+**Reviewer-to-Decadal routing** (which reviewers are mandatory per decadal theme):
+
+| Decadal | Mandatory Reviewers |
+|---------|-------------------|
+| D4: Visual Identity & First-Contact | Design Critic, Accessibility Auditor, Content Strategist |
+| D8: Interaction Depth | Design Critic, Newcomer Stress-Tester |
+| D9: Narrative Onboarding | Content Strategist, Information Architect, Newcomer Stress-Tester |
+| All others | Optional — invoke if cycles touched design-adjacent dimensions |
+
+**Preservation clause**: The 6-dim × 5-adopter persona ranker matrix remains the hard gate for campaign phase exit. Reviewer scorecards are parallel reporting — they inform the D{N+1} priority queue but do not override the persona ranker as the primary success metric.
+
 ### Step 5: Build Persona Ranker Matrix
 
 Synthesize the 5 individual evaluations into a combined matrix:
