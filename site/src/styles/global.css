@@ -19,6 +19,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-wrap: break-word;
 }
 
 h1, h2, h3, h4 {
@@ -46,6 +47,8 @@ code {
 /* Prose container for content pages */
 .prose {
   max-width: var(--prose-width);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .prose h1 {

@@ -1,12 +1,14 @@
 /**
  * Gate 9: Responsive Layout
- * Criterion: No horizontal overflow at 320px, 768px, 1024px, 1440px.
- * Tests homepage and a documentation page at all breakpoints.
+ * Criterion: No horizontal overflow at 320px, 375px, 768px, 1024px, 1440px.
+ * Tests homepage, concept, tutorial, and glossary pages at all breakpoints.
+ * Updated D5 (cycle 46): added 375px viewport; expanded page coverage.
  */
 import { test, expect } from '@playwright/test';
 
 const viewports = [
   { name: 'mobile_small', width: 320, height: 568 },
+  { name: 'mobile_standard', width: 375, height: 812 },
   { name: 'tablet', width: 768, height: 1024 },
   { name: 'desktop_small', width: 1024, height: 768 },
   { name: 'desktop_large', width: 1440, height: 900 },
@@ -15,6 +17,8 @@ const viewports = [
 const pages = [
   { name: 'Homepage', path: '/' },
   { name: 'Concept page', path: '/learn/concepts/triad' },
+  { name: 'Tutorial page', path: '/learn/tutorials/first-claude-md' },
+  { name: 'Glossary page', path: '/glossary/glossary-adna' },
 ];
 
 for (const vp of viewports) {

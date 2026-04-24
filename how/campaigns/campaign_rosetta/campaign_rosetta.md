@@ -11,7 +11,7 @@ estimated_sessions: "65-85"
 estimation_class: content-novel
 priority: high
 created: 2026-04-13
-updated: 2026-04-22
+updated: 2026-04-24
 last_edited_by: agent_rosetta
 tags: [campaign, rosetta, adna, documentation, education, website]
 ---
@@ -112,7 +112,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | M26 | D2: Content Clarity Sprint | 11-20 | **completed** | Anti-slop, progressive disclosure, reading flow, plain-language openings |
 | M27 | D3: Navigation & IA | 21-30 | complete (ranker 4.83) | Information architecture, cross-linking, breadcrumbs, time-to-first-insight |
 | M28 | D4: Visual Identity & First-Contact | 31-40 | complete (ranker 4.91) | Nav 7→5, emoji removed, sections 7→4, trust strip, typography, persona accents, meta tags, Reviewer Lens Pass. D4 +0.08 overall. |
-| M29 | D5: Mobile Experience | 41-50 | pending | Touch targets, responsive tables, mobile nav, code block scrolling |
+| M29 | D5: Mobile Experience | 41-50 | **complete (ranker 4.94)** | Section padding mobile, touch targets 44px, overflow-wrap, PrevNextNav 1-col mobile, CodeBlock copy visible, G9 expanded (42 tests), tap feedback. Delight 4.50→4.71 (+0.21). |
 | M30 | D6: Performance & Loading | 51-60 | pending | Font loading, image optimization, critical CSS, prefetching, edge caching |
 | M31 | D7: SEO & Discoverability | 61-70 | pending | Structured data, internal linking, heading hierarchy, sitemap completeness |
 | M32 | D8: Interaction Depth | 71-80 | pending | Demo GIF/screenshot replacements for MediaPlaceholder, interactive callout/CodeBlock polish. **Reviewer Lens Pass mandatory** (Design Critic, Newcomer Stress-Tester). |

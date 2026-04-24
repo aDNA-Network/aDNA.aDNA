@@ -54,6 +54,15 @@ const { prev, next } = Astro.props;
     text-align: right;
   }
 
+  @media (max-width: 640px) {
+    .prev-next-nav {
+      grid-template-columns: 1fr;
+    }
+    .prev-next-link.next {
+      text-align: left;
+    }
+  }
+
   .prev-next-direction {
     font-size: var(--text-xs);
     color: var(--color-text-muted);

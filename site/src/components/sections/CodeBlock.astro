@@ -85,4 +85,16 @@ const { filename } = Astro.props;
   .copy-btn:hover {
     color: var(--color-text);
   }
+
+  @media (max-width: 640px) {
+    .copy-btn {
+      opacity: 1;
+      min-height: 44px;
+      min-width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-2);
+    }
+  }
 </style>

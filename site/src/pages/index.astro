@@ -510,6 +510,20 @@ const stats = [
     flex-wrap: wrap;
   }
 
+  /* ——— Touch device tap feedback (no-hover devices) ——— */
+  @media (hover: none) and (pointer: coarse) {
+    .persona-card:active {
+      transform: scale(0.98);
+      box-shadow: var(--shadow-sm);
+      transition: transform 80ms ease, box-shadow 80ms ease;
+    }
+
+    .btn:active {
+      opacity: 0.85;
+      transition: opacity 80ms ease;
+    }
+  }
+
   /* ——— Responsive ——— */
   @media (max-width: 768px) {
     .hero {
@@ -542,6 +556,39 @@ const stats = [
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: var(--space-4);
+    }
+
+    .section-title {
+      font-size: var(--text-2xl);
+    }
+
+    .section-subtitle {
+      font-size: var(--text-base);
+      margin-bottom: var(--space-6);
+    }
+
+    .how-it-works {
+      padding: var(--space-12) 0;
+    }
+
+    .who-uses {
+      padding: var(--space-12) 0;
+    }
+
+    .the-standard {
+      padding: var(--space-12) 0 var(--space-16);
+    }
+
+    .steps-grid {
+      gap: var(--space-6);
+    }
+
+    .feature-strip {
+      margin-bottom: var(--space-8);
+    }
+
+    .how-footer {
+      margin-top: var(--space-6);
     }
   }
 </style>
