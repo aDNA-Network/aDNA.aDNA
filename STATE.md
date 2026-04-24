@@ -1,7 +1,7 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-04-23
+updated: 2026-04-24
 status: active
 last_edited_by: agent_rosetta
 tags: [state, governance]
@@ -13,7 +13,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 7 active — D3 complete (cycles 21-30), D4 queued behind phase gate.** Phases 0-6 complete (89 vault content files + 117-page live site). Phase 7 executing: 100-cycle III loop across 10 themed decadals. D1 (cycles 1-10) closed 4.0→4.35. D2 (cycles 11-20) closed 4.35→4.70. D3 (cycles 21-30) closed 4.70→**4.83** (+0.13). **Cycles 27-30 shipped 2026-04-23**: researcher persona landing (`/researchers/`), UX audit fixes F-01/F-02/F-03/F-06 (hero-lead plain-language rewrite, `/learn/what-is-adna` expanded ~130→~700 words, How it Works Problem→Shape→Win arc, get-started self-reference), tutorial ordering signals, adopter decision tree, reference section linkage on 4 concept pages. D3 AAR filed; M27 completed. D4 (Visual Identity & First-Contact, cycles 31-40) opens on user command — **phase gate pending**.
+**Phase 7 active — D4 complete (cycles 31-40), D5 queued behind phase gate.** Phases 0-6 complete (89 vault content files + 117-page live site). Phase 7 executing: 100-cycle III loop across 10 themed decadals. D1→4.35 (+0.35). D2→4.70 (+0.35). D3→4.83 (+0.13). D4 (Visual Identity & First-Contact, 2026-04-24) closed →**4.91** (+0.08). **D4 changes**: nav 7→5 items (Glossary + How demoted to Reference hub), homepage emoji removed site-wide, homepage sections 7→4 (Ontology + Context Eng demoted; Features merged into How it Works feature-strip), trust strip (stats) moved below hero CTAs, typography refinement (h1/h2/h3/h4, prose line-height 1.75), persona card primary accents, meta pill tags in The Standard. Reviewer Lens Pass: Design Critic B+, Accessibility Auditor A-, Content Strategist A-. D4 AAR filed; M28 completed. D5 (Mobile Experience, cycles 41-50) opens on user command — **phase gate pending**.
 
 ## Active Campaign
 
@@ -37,7 +37,8 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 - **M25: D1 Accessibility Perfection** — **Complete** (cycles 1-10). Ranker close: 4.35. AAR: [aar_phase7_d1.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d1.md).
 - **M26: D2 Content Clarity Sprint** — **Complete** (cycles 11-20). Ranker 4.35→**4.70** (Δ +0.35). AAR: [aar_phase7_d2.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d2.md).
 - **M27: D3 Navigation & IA** — **Complete** (cycles 21-30). Ranker 4.70→**4.83** (Δ +0.13). AAR: [aar_phase7_d3.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d3.md).
-- **M28: D4 Visual Identity & First-Contact** — **Pending** (cycles 31-40). **Phase gate: awaiting user command to open.** Priority queue seeded from D3 AAR: nav collapse (F-09), emoji→typographic marks (F-05), homepage section collapse (F-07), trust strip (F-10), typography refinement. **Reviewer Lens Pass mandatory** (Design Critic, Accessibility Auditor, Content Strategist per `skill_decadal_aar.md` Step 4b).
+- **M28: D4 Visual Identity & First-Contact** — **Complete** (cycles 31-40). Ranker 4.83→**4.91** (Δ +0.08). AAR: [aar_phase7_d4.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d4.md).
+- **M29: D5 Mobile Experience** — **Pending** (cycles 41-50). **Phase gate: awaiting user command to open.** Priority queue seeded from D4 AAR: mobile typography, persona card mobile rendering, feature-strip 1-col collapse, trust-strip 2×2 grid at 375px.
 
 ### Persona Ranker Summary
 
@@ -45,9 +46,10 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 |---------|------------|-------|
 | D1 (Accessibility) | 4.35 | +0.35 |
 | D2 (Content Clarity) | 4.70 | +0.35 |
-| D3 (Navigation & IA) | **4.83** | **+0.13** |
+| D3 (Navigation & IA) | 4.83 | +0.13 |
+| D4 (Visual Identity) | **4.91** | **+0.08** |
 
-**D3 dimension breakdown**: Findability 4.92 (+0.32) · Comprehension 5.00 (+0.20) · Actionability 5.00 (0) · Trust 5.00 (0) · Relevance 5.00 (+0.20) · Delight 4.08 (+0.08)
+**D4 dimension breakdown**: Findability 4.97 (+0.05) · Comprehension 5.00 (0) · Actionability 5.00 (0) · Trust 5.00 (0) · Relevance 5.00 (0) · Delight 4.50 (+0.42)
 
 ## What's Working
 

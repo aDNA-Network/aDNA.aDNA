@@ -9,12 +9,29 @@ const cards = refs.map((doc) => ({
   description: doc.data.description,
   href: `/reference/${doc.id}`,
 }));
+
+const resourceCards = [
+  {
+    title: 'Glossary',
+    description: '25 canonical aDNA term definitions — from AGENTS.md to Vault, with spec cross-references.',
+    href: '/glossary',
+  },
+  {
+    title: 'How',
+    description: 'Operational guides: workshop kits, publishing pipeline, lattice examples, and skill recipes.',
+    href: '/how',
+  },
+];
 ---
 
 <DocumentationLayout
   title="Reference"
-  description="aDNA specification documents, design rationale, and governance model."
+  description="aDNA specification documents, design rationale, governance model, glossary, and operational guides."
 >
   <p>Upstream specification documents for the aDNA standard. These are the normative references — when in doubt, the spec is authoritative.</p>
   <CardGrid cards={cards} columns={2} />
+
+  <h2>Resources</h2>
+  <p>Vocabulary and operational guides that support the specification.</p>
+  <CardGrid cards={resourceCards} columns={2} />
 </DocumentationLayout>

@@ -1043,4 +1043,101 @@ Every page at the ceiling — both new pages hit 100 Perf out of the gate, contr
 **Validation**: PASS — Build: 117 pages, 2.32s, 0 errors. Playwright: 30/30.
 **Carry-Forward**: Consider adding GitHub star count or site page count to trust strip in D9 when social proof data is available.
 
-**Validation**: PASS — Build: 117 pages, 2.28s, 0 errors. Playwright: 30/30. All 5 persona ranker dimensions ≥ 4.0 (gate: ≥ 4.0). Overall 4.83 > baseline 4.70. M27 marked completed. STATE.md updated. D4 queued behind phase gate.
+---
+
+### Cycle 35 — 2026-04-24
+
+**Decadal**: D4 (Visual Identity & First-Contact)
+**Target**: Typography/whitespace refinement on content pages
+
+**Changes**:
+- `site/src/styles/global.css`: Added explicit `.prose h1` (font-size: text-3xl, margin-bottom: space-8). Added `.prose h4` (small-caps treatment: uppercase, letter-spacing 0.08em, text-muted, text-sm). Increased `.prose h2` top margin from space-12 to space-16 for stronger visual section breaks. Added `line-height: 1.75` to `.prose p` (up from body default 1.6). Added `.prose hr` (1px border-top, space-12 margin). Affects all 117 content pages using the `.prose` class in DocumentationLayout.
+
+**Validation**: PASS — Build: 117 pages, 2.43s, 0 errors. Playwright: 30/30.
+**Carry-Forward**: h4 style is new — confirm no existing content uses h4 in a way that conflicts with the small-caps treatment.
+
+---
+
+### Cycle 36 — 2026-04-24
+
+**Decadal**: D4 (Visual Identity & First-Contact)
+**Target**: Persona card visual anchors (homepage)
+
+**Changes**:
+- `site/src/pages/index.astro`: Added `border-top: 3px solid var(--color-primary)` to `.persona-card` (replaces the emoji that served as visual anchors). Changed `.persona-title` color from `var(--color-text-heading)` to `var(--color-primary)` — creates colored text anchor within each card. Result: 5-card persona grid now has consistent visual rhythm through primary-color accents without any emoji.
+
+**Validation**: PASS — Build: 117 pages, 2.10s, 0 errors. Playwright: 30/30.
+**Carry-Forward**: Hover state still includes `border-color: var(--color-primary)` — on hover, all four borders become primary color. This is slightly heavy since border-top is already primary. Consider refining in D8 to only transition border-left or bottom on hover.
+
+---
+
+### Cycle 37 — 2026-04-24
+
+**Decadal**: D4 (Visual Identity & First-Contact)
+**Target**: The Standard section visual polish
+
+**Changes**:
+- `site/src/pages/index.astro`: Added `.standard-meta` row with 4 `.meta-tag` pill badges (v2.2, MIT License, Open Standard, 14 Entity Types) between the section subtitle and CTA buttons. Pills are monospace font, small, muted — deliberate spec-data aesthetic. The Standard section now reads as: title → subtitle → spec metadata pills → CTAs. No longer sparse.
+
+**Validation**: PASS — Build: 117 pages, 2.10s, 0 errors. Playwright: 30/30.
+**Carry-Forward**: Meta tags duplicate trust-strip stats. This is intentional — trust strip = first-contact proof; Standard section = closing confirmation. Duplication is acceptable.
+
+---
+
+### Cycle 38 — 2026-04-24 (Ranker Measurement)
+
+**Decadal**: D4 (Visual Identity & First-Contact)
+**Target**: 5-persona 6-dimension ranker score
+
+**Ranker (D4 mid-point, pre-catch-fix):**
+| Dimension | D3 End | D4 Pre-fix | Delta |
+|-----------|--------|------------|-------|
+| Findability | 4.92 | 4.95 | +0.03 |
+| Comprehension | 5.00 | 5.00 | 0 |
+| Actionability | 5.00 | 5.00 | 0 |
+| Trust | 5.00 | 5.00 | 0 |
+| Relevance | 5.00 | 5.00 | 0 |
+| Delight | 4.08 | 4.50 | +0.42 |
+| **Overall** | **4.83** | **4.90** | **+0.07** |
+
+**Gap identified**: Findability gap — Glossary and How pages orphaned from nav after cycle 31. Reference index did not yet link to them. Fix in cycle 39.
+
+---
+
+### Cycle 39 — 2026-04-24 (Catch Fixes)
+
+**Decadal**: D4 (Visual Identity & First-Contact)
+**Target**: Findability fix (Glossary + How discoverability) + feature-strip visual weight
+
+**Changes**:
+- `site/src/pages/reference/index.astro`: Added "Resources" section after spec CardGrid with 2 cards: Glossary (/glossary — "25 canonical aDNA term definitions") and How (/how — "Operational guides: workshop kits, publishing pipeline, lattice examples, skill recipes"). Reference index description updated to include glossary and operational guides. Glossary and How are now reachable via Reference index from the top nav.
+- `site/src/pages/index.astro`: Added `padding-left: var(--space-4)` and `border-left: 2px solid var(--color-primary)` to `.feature-item` — gives the 3-column feature-strip visual rhythm matching the persona card accents. Consistent primary-color accent language across the page.
+
+**Validation**: PASS — Build: 117 pages, 2.00s, 0 errors. Playwright: 30/30.
+**Carry-Forward**: None.
+
+---
+
+### Cycle 40 — 2026-04-24 (Decadal AAR + Reviewer Lens Pass)
+
+**Decadal**: D4 close (Visual Identity & First-Contact)
+**Target**: Reviewer Lens Pass + final ranker + AAR
+
+**Reviewer Lens Pass**: Design Critic (B+), Accessibility Auditor (A-), Content Strategist (A-)
+See full verdicts in `aar_phase7_d4.md`.
+
+**Final Ranker (D4 close):**
+| Dimension | D3 End | D4 Close | Delta |
+|-----------|--------|---------|-------|
+| Findability | 4.92 | 4.97 | +0.05 |
+| Comprehension | 5.00 | 5.00 | 0 |
+| Actionability | 5.00 | 5.00 | 0 |
+| Trust | 5.00 | 5.00 | 0 |
+| Relevance | 5.00 | 5.00 | 0 |
+| Delight | 4.08 | 4.50 | +0.42 |
+| **Overall** | **4.83** | **4.91** | **+0.08** |
+
+**AAR Artifact**: [aar_phase7_d4.md](aar_phase7_d4.md)
+**D5 Priority Queue seeded**: Yes — mobile typography audit, persona card mobile rendering, feature-strip collapse, trust-strip 2×2 grid at 375px. See `aar_phase7_d4.md` for full list.
+
+**Validation**: PASS — Build: 117 pages, 2.00s, 0 errors. Playwright: 30/30. All 6 ranker dimensions ≥ 4.0 (gate: ≥ 4.0). Overall 4.91 > D4 baseline 4.83. M28 marked completed. STATE.md updated. D5 queued.

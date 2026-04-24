@@ -111,7 +111,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | M25 | D1: Accessibility Perfection | 1-10 | **completed** | WCAG AA → Lighthouse a11y 100, keyboard nav, screen reader, focus indicators |
 | M26 | D2: Content Clarity Sprint | 11-20 | **completed** | Anti-slop, progressive disclosure, reading flow, plain-language openings |
 | M27 | D3: Navigation & IA | 21-30 | complete (ranker 4.83) | Information architecture, cross-linking, breadcrumbs, time-to-first-insight |
-| M28 | D4: Visual Identity & First-Contact | 31-40 | **in_progress (4/10)** | Nav collapse 7→5, emoji removal, section collapse 7→4, trust strip below hero. Cycles 31-34 complete. **Reviewer Lens Pass mandatory** at cycle 40 (Design Critic, Accessibility Auditor, Content Strategist). |
+| M28 | D4: Visual Identity & First-Contact | 31-40 | complete (ranker 4.91) | Nav 7→5, emoji removed, sections 7→4, trust strip, typography, persona accents, meta tags, Reviewer Lens Pass. D4 +0.08 overall. |
 | M29 | D5: Mobile Experience | 41-50 | pending | Touch targets, responsive tables, mobile nav, code block scrolling |
 | M30 | D6: Performance & Loading | 51-60 | pending | Font loading, image optimization, critical CSS, prefetching, edge caching |
 | M31 | D7: SEO & Discoverability | 61-70 | pending | Structured data, internal linking, heading hierarchy, sitemap completeness |
