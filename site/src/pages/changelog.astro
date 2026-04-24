@@ -1,6 +1,7 @@
 ---
 import DocumentationLayout from '../layouts/DocumentationLayout.astro';
 import { getSortedChangelog } from '../utils/collections';
+import { buildWebPageJsonLD } from '../utils/seo';
 import { render } from 'astro:content';
 
 const entries = await getSortedChangelog();
@@ -10,11 +11,18 @@ const rendered = await Promise.all(
     return { entry, Content };
   })
 );
+
+const jsonLD = buildWebPageJsonLD({
+  title: 'Changelog',
+  description: 'Version history for the aDNA documentation site — release notes, breaking changes, and improvements by version.',
+  url: Astro.url.href,
+});
 ---
 
 <DocumentationLayout
   title="Changelog"
-  description="Version history for the aDNA documentation site."
+  description="Version history for the aDNA documentation site — release notes, breaking changes, and improvements by version."
+  jsonLD={jsonLD}
 >
   {rendered.length === 0 ? (
     <p>No changelog entries yet.</p>

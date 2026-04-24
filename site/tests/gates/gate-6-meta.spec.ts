@@ -41,14 +41,17 @@ for (const { name, path } of pages) {
     const ogDesc = page.locator('meta[property="og:description"]');
     await expect(ogDesc, `${name}: missing og:description`).toHaveCount(1);
 
-    // JSON-LD structured data
+    // JSON-LD structured data — may be single schema or @graph bundle
     const jsonLd = page.locator('script[type="application/ld+json"]');
     await expect(jsonLd, `${name}: missing JSON-LD`).toHaveCount(1);
 
     const jsonLdContent = await jsonLd.textContent();
     const parsed = JSON.parse(jsonLdContent!);
     expect(parsed['@context'], `${name}: JSON-LD missing @context`).toBe('https://schema.org');
-    expect(parsed['@type'], `${name}: JSON-LD missing @type`).toBeTruthy();
+    // Accept either a single typed schema or a @graph bundle
+    const hasType = Boolean(parsed['@type']);
+    const hasGraph = Array.isArray(parsed['@graph']) && parsed['@graph'].length > 0;
+    expect(hasType || hasGraph, `${name}: JSON-LD missing @type or @graph`).toBe(true);
   });
 }
 

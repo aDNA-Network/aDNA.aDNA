@@ -14,12 +14,14 @@ import interLatinFont from '@fontsource/inter/files/inter-latin-400-normal.woff2
 import spaceGroteskLatinFont from '@fontsource/space-grotesk/files/space-grotesk-latin-400-normal.woff2';
 import spaceGroteskLatin700Font from '@fontsource/space-grotesk/files/space-grotesk-latin-700-normal.woff2';
 
+type JsonLDValue = Record<string, unknown> | Record<string, unknown>[];
+
 interface Props {
   title: string;
   description: string;
   ogImage?: string;
   canonicalURL?: string;
-  jsonLD?: Record<string, unknown>;
+  jsonLD?: JsonLDValue;
   bodyClass?: string;
   noindex?: boolean;
 }

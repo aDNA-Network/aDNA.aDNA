@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
-import { buildTechArticleJsonLD } from '../../../utils/seo';
+import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
 
 export async function getStaticPaths() {
   const docs = await getCollection('docs', ({ data }) => data.section === 'lattice-examples' && !data.draft);
@@ -14,11 +14,21 @@ export async function getStaticPaths() {
 const { doc } = Astro.props;
 const { Content, headings } = await render(doc);
 
-const jsonLD = buildTechArticleJsonLD({
-  title: doc.data.doc_title,
-  description: doc.data.description ?? '',
-  url: Astro.url.href,
-});
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
+
+const jsonLD = [
+  buildTechArticleJsonLD({
+    title: doc.data.doc_title,
+    description: doc.data.description ?? '',
+    url: Astro.url.href,
+  }),
+  buildBreadcrumbListJsonLD([
+    { name: 'Home', url: `${siteBase}/` },
+    { name: 'How', url: `${siteBase}/how/` },
+    { name: 'Lattice Examples', url: `${siteBase}/how/lattice-examples/` },
+    { name: doc.data.doc_title },
+  ]),
+];
 ---
 
 <DocumentationLayout

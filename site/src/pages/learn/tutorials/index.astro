@@ -2,6 +2,7 @@
 import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../../components/sections/CardGrid.astro';
 import { getGuidesByDifficulty } from '../../../utils/collections';
+import { buildCollectionPageJsonLD } from '../../../utils/seo';
 
 const { beginner, intermediate, advanced } = await getGuidesByDifficulty();
 
@@ -12,11 +13,18 @@ function toCards(guides: typeof beginner) {
     href: `/learn/tutorials/${g.id}`,
   }));
 }
+
+const jsonLD = buildCollectionPageJsonLD({
+  title: 'Tutorials',
+  description: 'Step-by-step aDNA tutorials from beginner to advanced.',
+  url: Astro.url.href,
+});
 ---
 
 <DocumentationLayout
   title="Tutorials"
   description="Step-by-step aDNA tutorials from beginner to advanced."
+  jsonLD={jsonLD}
 >
   <p>9 hands-on tutorials, each producing a concrete outcome you can use in your own project. Grouped by difficulty — start at <strong>Beginner</strong> if this is your first aDNA project, or jump to <strong>Intermediate</strong> if you already have a vault and a CLAUDE.md.</p>
 

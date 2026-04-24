@@ -1,10 +1,12 @@
 ---
+type JsonLDValue = Record<string, unknown> | Record<string, unknown>[];
+
 interface Props {
   title: string;
   description: string;
   ogImage?: string;
   canonicalURL?: string;
-  jsonLD?: Record<string, unknown>;
+  jsonLD?: JsonLDValue;
   noindex?: boolean;
 }
 
@@ -57,7 +59,11 @@ const ogImageUrl = resolvedOgImage.startsWith('http') ? resolvedOgImage : `${sit
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageUrl} />
 
-<!-- JSON-LD -->
-{jsonLD && (
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} />
+<!-- JSON-LD: single schema or @graph bundle for multiple schemas -->
+{jsonLD && (Array.isArray(jsonLD)
+  ? <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': jsonLD.map(({ '@context': _ctx, ...rest }) => rest),
+    })} />
+  : <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} />
 )}

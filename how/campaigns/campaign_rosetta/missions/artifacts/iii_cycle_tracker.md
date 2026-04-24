@@ -2,8 +2,8 @@
 type: artifact
 created: 2026-04-15
 updated: 2026-04-24
-status: active
 last_edited_by: agent_rosetta
+status: active
 tags: [artifact, iii, cycle-tracker, phase-7]
 ---
 
@@ -20,8 +20,8 @@ Structured log for all 100 improvement cycles across 10 decadals. Each cycle app
 | D3 | 21-30 | Navigation & IA | **complete** | [aar_phase7_d3.md](aar_phase7_d3.md) — Ranker: 4.83 (+0.13 from 4.70 baseline) |
 | D4 | 31-40 | Visual Identity & First-Contact | **complete** | [aar_phase7_d4.md](aar_phase7_d4.md) — Ranker: 4.91 (+0.08 from 4.83 baseline) |
 | D5 | 41-50 | Mobile Experience | **complete** | [aar_phase7_d5.md](aar_phase7_d5.md) — Ranker: 4.94 (+0.03 from 4.91 baseline); Delight +0.21 |
-| D6 | 51-60 | Performance & Loading | pending | — |
-| D7 | 61-70 | SEO & Discoverability | pending | — |
+| D6 | 51-60 | Performance & Loading | **complete** | [aar_phase7_d6.md](aar_phase7_d6.md) — Ranker: 4.96 (+0.02 from 4.94 baseline); Mobile LH 98-100 |
+| D7 | 61-70 | SEO & Discoverability | **in_progress** | — |
 | D8 | 71-80 | Interaction Depth | pending | — |
 | D9 | 81-90 | Narrative Onboarding | pending | — |
 | D10 | 91-100 | Hardening & Closeout | pending | — |
@@ -1630,3 +1630,127 @@ Pre-close ranker: **4.96** (+0.02 from 4.94 baseline). Target ≥4.96: **MET**.
 | Build Time | 2.34s | 2.51s | +0.17s (stable) |
 | Pages | 117 | 117 | 0 |
 | Mobile LH Perf | unknown | **98-100** | ≥+8 above 90 target |
+
+---
+
+## D7 — SEO & Discoverability (Cycles 61-70)
+
+**Ranker baseline**: 4.96 (D6 close)
+**Theme**: JSON-LD structured data, heading hierarchy, BreadcrumbList schema, HowTo schema, sitemap, meta descriptions, internal linking, a11y fixes.
+
+### Cycle 61 — 2026-04-24
+
+**Decadal**: D7 (SEO & Discoverability)
+**Target**: JSON-LD structured data for 15 missing index/utility pages (CollectionPage + WebPage schemas)
+**Before**: JSON-LD coverage 55% — 20/36 pages had structured data; all section indexes and sub-section indexes lacked CollectionPage schema
+**After**: JSON-LD coverage ~97% — 35/36 pages (404 intentionally excluded; not crawled)
+
+**Changes**:
+- `site/src/utils/seo.ts`: Added `buildCollectionPageJsonLD()` — CollectionPage schema with `isPartOf` WebSite relationship
+- `site/src/pages/learn/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/patterns/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/glossary/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/community/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/reference/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/use-cases/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/adopters/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/how/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/learn/concepts/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/learn/tutorials/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/learn/comparisons/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/how/workshops/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/how/publishing/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/how/lattice-examples/index.astro`: CollectionPage JSON-LD
+- `site/src/pages/changelog.astro`: WebPage JSON-LD (via existing `buildWebPageJsonLD`)
+
+**Lighthouse** (build validation — no score delta expected for JSON-LD additions):
+| Category | Before (D6 close) | After | Delta |
+|----------|-------------------|-------|-------|
+| Performance | 98 | 98 | 0 |
+| Accessibility | 100 | 100 | 0 |
+| Best Practices | 100 | 100 | 0 |
+| SEO | 100 | 100 | 0 |
+
+**Validation**: PASS — Build: 117 pages, 2.27s, 0 errors. Playwright: 47/47.
+**Carry-Forward**: none — S-02 (HowTo schema for tutorials) next.
+
+### Cycle 62 — 2026-04-24
+
+**Decadal**: D7 (SEO & Discoverability)
+**Target**: HowTo schema for tutorial pages (replaces TechArticle)
+**Before**: Tutorial pages used `TechArticle` JSON-LD — technically correct but semantically imprecise for step-by-step instructional content
+**After**: Tutorial pages use `HowTo` with `totalTime` derived from `estimated_time` frontmatter (e.g. "20 min" → "PT20M")
+
+**Changes**:
+- `site/src/utils/seo.ts`: Added `buildHowToJsonLD()` — HowTo schema with optional `totalTime` (ISO 8601 duration)
+- `site/src/pages/learn/tutorials/[...slug].astro`: Switched from `buildTechArticleJsonLD` to `buildHowToJsonLD`; added `totalTime` conversion regex
+
+**Lighthouse** (build validation only):
+| Category | Before | After | Delta |
+|----------|--------|-------|-------|
+| SEO | 100 | 100 | 0 |
+
+**Validation**: PASS — Build: 117 pages, 2.28s, 0 errors. Playwright: 47/47. HowTo JSON-LD verified in `/learn/tutorials/first-claude-md/` with `totalTime: "PT20M"`.
+**Carry-Forward**: none — S-03 (BreadcrumbList schema) next.
+
+### Cycle 63 — 2026-04-24
+
+**Decadal**: D7 (SEO & Discoverability)
+**Target**: BreadcrumbList schema on all content hierarchy pages
+**Before**: No BreadcrumbList schema on any page — visual breadcrumbs rendered by Breadcrumb.astro but not machine-readable
+**After**: All 12 dynamic slug page routes emit TechArticle/HowTo + BreadcrumbList as `@graph` bundle (1 script per page)
+
+**Changes**:
+- `site/src/utils/seo.ts`: Added `buildBreadcrumbListJsonLD()` — schema.org BreadcrumbList with itemListElement array
+- `site/src/components/common/SEOHead.astro`: Updated to accept `JsonLDValue` (single or array); arrays rendered as `@graph` bundle (single `<script>` tag preserving gate-6 contract)
+- `site/src/layouts/BaseLayout.astro`: Updated prop type to `JsonLDValue`
+- `site/src/layouts/DocumentationLayout.astro`: Updated prop type to `JsonLDValue`
+- `site/tests/gates/gate-6-meta.spec.ts`: Updated JSON-LD assertion to accept `@type` (single) or `@graph` (bundle)
+- Updated 12 slug pages with BreadcrumbList: concepts/[slug], tutorials/[slug], patterns/[slug], comparisons/[slug], use-cases/[slug], adopters/[slug], community/[slug], glossary/[slug], reference/[slug], how/publishing/[slug], how/lattice-examples/[slug], how/workshops/[slug]
+
+**Lighthouse** (build validation only — no visual change):
+| Category | Before | After | Delta |
+|----------|--------|-------|-------|
+| SEO | 100 | 100 | 0 |
+
+**Validation**: PASS — Build: 117 pages, 2.26s, 0 errors. Playwright: 47/47. @graph output verified on `/learn/concepts/triad/` (TechArticle + BreadcrumbList).
+**Carry-Forward**: none — S-04 (heading hierarchy audit) next.
+
+### Cycle 64 — 2026-04-24
+
+**Decadal**: D7 (SEO & Discoverability)
+**Target**: Heading hierarchy audit — H1→H2→H3 correctness across all 117 pages
+**Before**: 45 violations — 6 SKIP H1→H3 (index pages via CardGrid H3 cards) + 39 MULTIPLE H1 (glossary/community/adopters MDX files with un-stripped H1 headings)
+**After**: 0 violations across all 117 pages
+
+**Root Causes Found**:
+1. `CardGrid.astro` used `<h3>` for card titles (navigation items, not document sections) — fixed to `<p>` (CSS unaffected, styling preserved via `.card-title` class)
+2. Glossary (24), community (4), and adopters (5) MDX content files retained first `# Title` H1 — they were generated via Pathway 2 (direct file creation, not transform script), so `stripH1()` in transform-content.mjs was never applied to them. Fixed with targeted Python strip. One extra fix for `glossary-frontmatter.mdx` where embedded `---` in YAML description tripped the frontmatter regex.
+
+**Changes**:
+- `site/src/components/sections/CardGrid.astro`: `<h3>` → `<p>` for card titles
+- `site/src/content/docs/glossary-*.mdx` (24 files): First `# Title` H1 stripped
+- `site/src/content/docs/community-*.mdx` (4 files): First `# Title` H1 stripped
+- `site/src/content/docs/adopter-*.mdx` (5 files): First `# Title` H1 stripped
+
+**Validation**: PASS — Build: 117 pages, 2.36s, 0 errors. Playwright: 47/47. Heading audit: 0 violations.
+**Carry-Forward**: none — S-05 (sitemap completeness) next.
+
+### Cycle 65 — 2026-04-24
+
+**Decadal**: D7 (SEO & Discoverability)
+**Target**: Sitemap completeness — verify all pages present, no duplicates, no missing critical pages
+**Before**: Unknown — first systematic audit of sitemap-0.xml
+**After**: VERIFIED COMPLETE — 116/116 pages (404 correctly excluded), 0 duplicates, 18 critical pages confirmed present
+
+**Findings**:
+- `sitemap-0.xml`: 116 URLs (116 indexable pages — 117 total minus 404)
+- No duplicate URLs
+- All critical navigation pages present (homepage, get-started, learn, patterns, glossary, community, reference, how, use-cases, adopters, changelog, persona landing pages)
+- Sitemap generated by `@astrojs/sitemap` integration — no manual maintenance needed
+- `robots.txt` correctly points to `https://adna.dev/sitemap-index.xml`
+
+**Changes**: None — sitemap was already correct.
+
+**Validation**: PASS — No action required. Build: 117 pages. Sitemap: 116 URLs, 0 duplicates.
+**Carry-Forward**: none — S-06 (meta description audit) next.

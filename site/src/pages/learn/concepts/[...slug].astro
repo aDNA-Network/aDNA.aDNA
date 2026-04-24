@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
-import { buildTechArticleJsonLD } from '../../../utils/seo';
+import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
 
 export async function getStaticPaths() {
   const docs = await getCollection('docs', ({ data }) => data.section === 'concepts' && !data.draft);
@@ -14,12 +14,22 @@ export async function getStaticPaths() {
 const { doc } = Astro.props;
 const { Content, headings } = await render(doc);
 
-const jsonLD = buildTechArticleJsonLD({
-  title: doc.data.doc_title,
-  description: doc.data.description ?? '',
-  url: Astro.url.href,
-  dateModified: doc.data.updated?.toISOString(),
-});
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
+
+const jsonLD = [
+  buildTechArticleJsonLD({
+    title: doc.data.doc_title,
+    description: doc.data.description ?? '',
+    url: Astro.url.href,
+    dateModified: doc.data.updated?.toISOString(),
+  }),
+  buildBreadcrumbListJsonLD([
+    { name: 'Home', url: `${siteBase}/` },
+    { name: 'Learn', url: `${siteBase}/learn/` },
+    { name: 'Concepts', url: `${siteBase}/learn/concepts/` },
+    { name: doc.data.doc_title },
+  ]),
+];
 
 const prev = doc.data.prev ? { label: doc.data.prev, href: `/learn/concepts/${doc.data.prev}` } : undefined;
 const next = doc.data.next ? { label: doc.data.next, href: `/learn/concepts/${doc.data.next}` } : undefined;

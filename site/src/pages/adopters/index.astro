@@ -2,6 +2,7 @@
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
 import { getDocsBySection } from '../../utils/collections';
+import { buildCollectionPageJsonLD } from '../../utils/seo';
 
 const adopters = await getDocsBySection('adopters');
 const cards = adopters.map((doc) => ({
@@ -32,11 +33,18 @@ const pathCards = [
     description: 'Moving fast and scaling? Get aDNA running in your first hour — the minimal viable vault for a growing team.',
   },
 ];
+
+const jsonLD = buildCollectionPageJsonLD({
+  title: 'Adopter Personas',
+  description: 'Quick-reference profiles for aDNA\'s target audiences — solo developers, enterprise teams, educators, startups, and researchers.',
+  url: Astro.url.href,
+});
 ---
 
 <DocumentationLayout
   title="Adopter Personas"
   description="Quick-reference profiles for aDNA's target audiences — solo developers, enterprise teams, educators, startups, and researchers."
+  jsonLD={jsonLD}
 >
   <h2 id="find-your-path">Find your path</h2>
   <p>Not sure where to start? These guided entry points are tailored to your context:</p>

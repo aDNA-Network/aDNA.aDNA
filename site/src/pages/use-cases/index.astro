@@ -2,6 +2,7 @@
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
 import { getDocsBySection } from '../../utils/collections';
+import { buildCollectionPageJsonLD } from '../../utils/seo';
 
 const useCases = await getDocsBySection('use-cases');
 const cards = useCases.map((doc) => ({
@@ -9,11 +10,18 @@ const cards = useCases.map((doc) => ({
   description: doc.data.description,
   href: `/use-cases/${doc.id}`,
 }));
+
+const jsonLD = buildCollectionPageJsonLD({
+  title: 'Use Cases',
+  description: 'Real-world aDNA adoption stories across solo developers, startups, research labs, and enterprises.',
+  url: Astro.url.href,
+});
 ---
 
 <DocumentationLayout
   title="Use Cases"
   description="Real-world aDNA adoption stories across solo developers, startups, research labs, and enterprises."
+  jsonLD={jsonLD}
 >
   <p>See how different teams and individuals use aDNA to organize their projects. Each use case follows a named persona through a concrete deployment.</p>
   <CardGrid cards={cards} columns={2} />

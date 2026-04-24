@@ -1,6 +1,7 @@
 ---
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import { getDocsBySection } from '../../utils/collections';
+import { buildCollectionPageJsonLD } from '../../utils/seo';
 
 const glossaryEntries = await getDocsBySection('glossary');
 
@@ -11,11 +12,18 @@ const categories = [
   { label: 'Operations', entries: glossaryEntries.filter(e => e.data.order >= 17 && e.data.order <= 22) },
   { label: 'Knowledge & Coordination', entries: glossaryEntries.filter(e => e.data.order >= 23 && e.data.order <= 25) },
 ];
+
+const jsonLD = buildCollectionPageJsonLD({
+  title: 'aDNA Glossary',
+  description: 'Quick-reference definitions for all aDNA terms. Each entry includes plain-language and technical explanations.',
+  url: Astro.url.href,
+});
 ---
 
 <DocumentationLayout
   title="aDNA Glossary"
   description="Quick-reference definitions for all aDNA terms. Each entry includes plain-language and technical explanations."
+  jsonLD={jsonLD}
 >
   <p>A single-page lookup table for all aDNA terms. Click any term for its full definition with plain-language and technical explanations.</p>
 

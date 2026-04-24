@@ -1,6 +1,7 @@
 ---
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
+import { buildCollectionPageJsonLD } from '../../utils/seo';
 
 const sections = [
   {
@@ -24,11 +25,18 @@ const sections = [
     href: '/learn/comparisons',
   },
 ];
+
+const jsonLD = buildCollectionPageJsonLD({
+  title: 'Learn aDNA',
+  description: 'Learn the aDNA knowledge architecture through concepts, tutorials, and comparisons.',
+  url: Astro.url.href,
+});
 ---
 
 <DocumentationLayout
   title="Learn aDNA"
   description="Learn the aDNA knowledge architecture through concepts, tutorials, and comparisons."
+  jsonLD={jsonLD}
 >
   <p>Start with the overview, explore concepts in depth, follow hands-on tutorials, or see how aDNA compares to systems you already know.</p>
   <CardGrid cards={sections} columns={2} />

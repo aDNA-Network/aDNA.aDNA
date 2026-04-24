@@ -5,13 +5,15 @@ import TOCPanel from '../components/sections/TOCPanel.astro';
 import PrevNextNav from '../components/sections/PrevNextNav.astro';
 import Breadcrumb from '../components/sections/Breadcrumb.astro';
 
+type JsonLDValue = Record<string, unknown> | Record<string, unknown>[];
+
 interface Props {
   title: string;
   description: string;
   headings?: { depth: number; slug: string; text: string }[];
   prev?: { label: string; href: string };
   next?: { label: string; href: string };
-  jsonLD?: Record<string, unknown>;
+  jsonLD?: JsonLDValue;
 }
 
 const { title, description, headings = [], prev, next, jsonLD } = Astro.props;

@@ -2,6 +2,7 @@
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
 import { getDocsBySection } from '../../utils/collections';
+import { buildCollectionPageJsonLD } from '../../utils/seo';
 
 const communityDocs = await getDocsBySection('community');
 const cards = communityDocs.map((doc) => ({
@@ -9,11 +10,18 @@ const cards = communityDocs.map((doc) => ({
   description: doc.data.description,
   href: `/community/${doc.id}`,
 }));
+
+const jsonLD = buildCollectionPageJsonLD({
+  title: 'Community',
+  description: 'Roles, processes, and contribution paths for the aDNA community.',
+  url: Astro.url.href,
+});
 ---
 
 <DocumentationLayout
   title="Community"
   description="Roles, processes, and contribution paths for the aDNA community."
+  jsonLD={jsonLD}
 >
   <p>The aDNA community is organized around a participation ladder — from individual vault users to standard stewards. Explore the roles, processes, and shared knowledge commons.</p>
   <CardGrid cards={cards} columns={2} />

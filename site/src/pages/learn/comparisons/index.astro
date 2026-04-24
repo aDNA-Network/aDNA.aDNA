@@ -2,6 +2,7 @@
 import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../../components/sections/CardGrid.astro';
 import { getDocsBySection } from '../../../utils/collections';
+import { buildCollectionPageJsonLD } from '../../../utils/seo';
 
 const comparisons = await getDocsBySection('comparisons');
 const cards = comparisons.map((doc) => ({
@@ -9,11 +10,18 @@ const cards = comparisons.map((doc) => ({
   description: doc.data.description,
   href: `/learn/comparisons/${doc.id}`,
 }));
+
+const jsonLD = buildCollectionPageJsonLD({
+  title: 'Comparisons',
+  description: 'How aDNA compares to PARA, Zettelkasten, Notion, Johnny.Decimal, and plain Markdown.',
+  url: Astro.url.href,
+});
 ---
 
 <DocumentationLayout
   title="Comparisons"
   description="How aDNA compares to PARA, Zettelkasten, Notion, Johnny.Decimal, and plain Markdown."
+  jsonLD={jsonLD}
 >
   <p>Honest comparisons between aDNA and other knowledge architectures. Every system has strengths — these pages help you understand when aDNA is the right fit.</p>
   <CardGrid cards={cards} columns={2} />

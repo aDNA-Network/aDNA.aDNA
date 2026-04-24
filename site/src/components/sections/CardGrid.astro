@@ -20,7 +20,7 @@ const { cards, columns = 3 } = Astro.props;
     <a href={card.href} class:list={['card', { 'card-with-icon': !!card.icon }]}>
       {card.icon && <span class="card-icon" aria-hidden="true">{card.icon}</span>}
       <div class="card-header">
-        <h3 class="card-title">{card.title}</h3>
+        <p class="card-title">{card.title}</p>
         {card.badge && <span class:list={['card-badge', `badge-${card.badge}`]}>{card.badge}</span>}
       </div>
       {card.description && <p class="card-description">{card.description}</p>}

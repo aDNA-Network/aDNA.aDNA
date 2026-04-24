@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
-import { buildTechArticleJsonLD } from '../../../utils/seo';
+import { buildHowToJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides', ({ data }) => !data.draft);
@@ -14,13 +14,27 @@ export async function getStaticPaths() {
 const { guide } = Astro.props;
 const { Content, headings } = await render(guide);
 
-const jsonLD = buildTechArticleJsonLD({
-  title: guide.data.guide_title,
-  description: guide.data.description ?? '',
-  url: Astro.url.href,
-  datePublished: guide.data.date?.toISOString(),
-  dateModified: guide.data.updated?.toISOString(),
-});
+// Convert "15 min" → "PT15M" for schema.org totalTime
+const totalTime = guide.data.estimated_time?.match(/(\d+)\s*min/)?.[1]
+  ? `PT${guide.data.estimated_time.match(/(\d+)\s*min/)![1]}M`
+  : undefined;
+
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
+
+const jsonLD = [
+  buildHowToJsonLD({
+    title: guide.data.guide_title,
+    description: guide.data.description ?? '',
+    url: Astro.url.href,
+    totalTime,
+  }),
+  buildBreadcrumbListJsonLD([
+    { name: 'Home', url: `${siteBase}/` },
+    { name: 'Learn', url: `${siteBase}/learn/` },
+    { name: 'Tutorials', url: `${siteBase}/learn/tutorials/` },
+    { name: guide.data.guide_title },
+  ]),
+];
 ---
 
 <DocumentationLayout

@@ -2,6 +2,7 @@
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
 import { getDocsBySection } from '../../utils/collections';
+import { buildCollectionPageJsonLD } from '../../utils/seo';
 
 const patterns = await getDocsBySection('patterns');
 const cards = patterns.map((doc) => ({
@@ -9,11 +10,18 @@ const cards = patterns.map((doc) => ({
   description: doc.data.description,
   href: `/patterns/${doc.id}`,
 }));
+
+const jsonLD = buildCollectionPageJsonLD({
+  title: 'Patterns',
+  description: 'Reusable aDNA architectural patterns for common knowledge architecture challenges.',
+  url: Astro.url.href,
+});
 ---
 
 <DocumentationLayout
   title="Patterns"
   description="Reusable aDNA architectural patterns for common knowledge architecture challenges."
+  jsonLD={jsonLD}
 >
   <p>8 proven patterns that solve recurring challenges in aDNA projects. Each pattern describes the problem, the solution, and where to find a working example in this vault.</p>
   <CardGrid cards={cards} columns={2} />

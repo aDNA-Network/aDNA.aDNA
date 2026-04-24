@@ -1,6 +1,7 @@
 ---
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
+import { buildCollectionPageJsonLD } from '../../utils/seo';
 
 const sections = [
   {
@@ -19,11 +20,18 @@ const sections = [
     href: '/how/lattice-examples/',
   },
 ];
+
+const jsonLD = buildCollectionPageJsonLD({
+  title: 'How',
+  description: 'Operational processes for aDNA — publishing pipelines, workshops, and lattice examples.',
+  url: Astro.url.href,
+});
 ---
 
 <DocumentationLayout
   title="How"
   description="Operational processes for aDNA — publishing pipelines, workshops, and lattice examples."
+  jsonLD={jsonLD}
 >
   <p>The <strong>how/</strong> leg of the aDNA triad covers operational processes — the repeatable workflows that turn knowledge into outcomes. This section documents the publishing pipeline behind this site, workshop kits for teaching aDNA, and self-referential lattice definitions that model aDNA's own processes.</p>
   <CardGrid cards={sections} columns={3} />

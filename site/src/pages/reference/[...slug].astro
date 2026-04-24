@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
-import { buildTechArticleJsonLD } from '../../utils/seo';
+import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../utils/seo';
 
 export async function getStaticPaths() {
   const refs = await getCollection('reference', ({ data }) => !data.draft);
@@ -14,12 +14,21 @@ export async function getStaticPaths() {
 const { ref } = Astro.props;
 const { Content, headings } = await render(ref);
 
-const jsonLD = buildTechArticleJsonLD({
-  title: ref.data.ref_title,
-  description: ref.data.description ?? '',
-  url: Astro.url.href,
-  dateModified: ref.data.updated?.toISOString(),
-});
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
+
+const jsonLD = [
+  buildTechArticleJsonLD({
+    title: ref.data.ref_title,
+    description: ref.data.description ?? '',
+    url: Astro.url.href,
+    dateModified: ref.data.updated?.toISOString(),
+  }),
+  buildBreadcrumbListJsonLD([
+    { name: 'Home', url: `${siteBase}/` },
+    { name: 'Reference', url: `${siteBase}/reference/` },
+    { name: ref.data.ref_title },
+  ]),
+];
 ---
 
 <DocumentationLayout
