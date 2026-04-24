@@ -1,16 +1,14 @@
 ---
 title: "AGENTS.md Routing — aDNA Patterns"
-description: "An aDNA vault may contain hundreds of files across dozens of directories. An agent working on a specific task doesn't need most of them — but how does i..."
+description: "A project folder can hold hundreds of files. An AI agent working on a single task needs only a handful of them — but how does it know which folders to o..."
 doc_title: "AGENTS.md Routing"
 section: "patterns"
 order: 2
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-
 ## Problem
 
-An aDNA vault may contain hundreds of files across dozens of directories. An agent working on a specific task doesn't need most of them — but how does it know which directories to enter and which to skip? Without routing, agents either load too much (drowning in irrelevant context) or too little (missing critical knowledge).
+A project folder can hold hundreds of files. An AI agent working on a single task needs only a handful of them — but how does it know which folders to open and which to walk past? Without signs, the agent either drowns in files it doesn't need or misses the ones that matter.
 
 ## Solution
 
@@ -55,20 +53,8 @@ The context library at `what/context/adna_core/AGENTS.md` goes further — it li
 
 **Stale routing**: AGENTS.md that describes directory contents that have changed. If you add entity types or restructure, update the AGENTS.md. Stale routing is worse than missing routing — it actively misdirects.
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "Convergence", href: "/learn/concepts/convergence", description: "The structural principle that turns each AGENTS.md load/skip decision into a token-budget win." },
-  { title: "Token Selection", href: "/learn/concepts/token-selection", description: "The broader discipline of choosing what to load — AGENTS.md is one implementation of it." },
-  { title: "Context Recipe", href: "/patterns/context-recipe", description: "Named multi-directory assemblies that build on AGENTS.md routing for recurring task types." },
-  { title: "Context Optimization", href: "/learn/concepts/context-optimization", description: "Why per-directory orientation files beat single-file monoliths for agent navigation." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "The connected structure AGENTS.md is the navigation layer for." },
-  { title: "Governance Files", href: "/learn/concepts/governance-files", description: "The five ALLCAPS files at the root — AGENTS.md is the per-directory partner that scales them into every subdirectory." },
-  { title: "Navigate an aDNA Vault", href: "/learn/tutorials/navigate-a-vault", description: "Walk a real vault and feel how AGENTS.md guides decisions without being read cover-to-cover." },
-  { title: "Write a Context File", href: "/learn/tutorials/write-a-context-file", description: "Hands-on: add a file whose entry the directory's AGENTS.md index now has to describe — routing made concrete." }
-]} />
+- [Convergence Model](/learn/concepts/convergence) — the structural principle that AGENTS.md routing implements
+- [Token Selection](/learn/concepts/token-selection) — the broader discipline of choosing what to load
+- [Context Recipe](/patterns/context-recipe) — multi-directory assembly that builds on AGENTS.md routing

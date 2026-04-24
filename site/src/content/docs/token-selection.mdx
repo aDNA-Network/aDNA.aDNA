@@ -6,9 +6,6 @@ section: "concepts"
 order: 5
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-
 ## Overview
 
 Token selection is the discipline of choosing which knowledge to load into an AI agent's context window — and, critically, which knowledge to leave out. aDNA provides structured mechanisms (AGENTS.md routing, context recipes, token budgets) to make this selection systematic rather than ad hoc.
@@ -40,7 +37,7 @@ aDNA provides three complementary mechanisms for token selection:
 
 **1. AGENTS.md routing (§4.5)**
 
-Every directory has an <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." /> with a **load/skip decision** — a brief statement telling agents whether this directory's content is relevant to their current task. When an agent navigates the vault, it reads AGENTS.md at each junction and decides whether to descend or skip. This turns the directory tree into a decision tree, pruning irrelevant branches before they consume tokens.
+Every directory has an AGENTS.md with a **load/skip decision** — a brief statement telling agents whether this directory's content is relevant to their current task. When an agent navigates the vault, it reads AGENTS.md at each junction and decides whether to descend or skip. This turns the directory tree into a decision tree, pruning irrelevant branches before they consume tokens.
 
 **2. Context recipes (`what/context/context_recipes.md`)**
 
@@ -56,13 +53,13 @@ Recipes prevent the common failure mode of loading too much "just in case."
 
 **3. Token estimates on files**
 
-Context files and AGENTS.md files carry `token_estimate` fields in their <GlossaryTooltip term="frontmatter" slug="frontmatter" definition="The YAML metadata block at the top of every aDNA file, wrapped in --- fences. Records type, dates, editor, tags — the file's ID card." />. This lets agents make cost-aware loading decisions: "This file costs ~2K tokens — is it worth it for the current objective?"
+Context files and AGENTS.md files carry `token_estimate` fields in their frontmatter. This lets agents make cost-aware loading decisions: "This file costs ~2K tokens — is it worth it for the current objective?"
 
 ### The Loading Protocol
 
 Combining these mechanisms, an agent's loading sequence looks like:
 
-1. <GlossaryTooltip term="CLAUDE.md" slug="governance-file" definition="One of the five ALLCAPS governance files at an aDNA project root — the agent's auto-loaded entry point with persona, project map, safety rules, and startup protocol." /> — auto-loaded (~2-4K tokens). Non-negotiable.
+1. **CLAUDE.md** — auto-loaded (~2-4K tokens). Non-negotiable.
 2. **STATE.md** — current operational state (~1-2K tokens). Nearly always loaded.
 3. **Campaign/mission docs** — task framing (~2-3K tokens). Loaded when executing mission work.
 4. **Context files** — domain knowledge (~5-20K tokens). Selected via AGENTS.md routing and context recipes.
@@ -96,19 +93,8 @@ This vault demonstrates token selection at every level:
 
 **The CLAUDE.md itself**: This vault's CLAUDE.md is ~4K tokens — comprehensive enough to orient a cold agent, compact enough to leave room for work. That's token selection applied to governance: every section earns its space.
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "Convergence Model", href: "/learn/concepts/convergence", description: "The structural principle that makes token selection scale across campaign → mission → objective." },
-  { title: "Governance Files", href: "/learn/concepts/governance-files", description: "The orientation layer that consumes the first ~5K tokens in every session." },
-  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "The connected structure that AGENTS.md routing traverses during selection." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "Context Recipe", href: "/patterns/context-recipe", description: "Pre-validated multi-topic assemblies — selection decisions made once, reused every session." },
-  { title: "AGENTS.md Routing", href: "/patterns/agents-md", description: "The per-directory load/skip interface that makes token selection a local decision, not a global one." },
-  { title: "Write a Context File", href: "/learn/tutorials/write-a-context-file", description: "Hands-on: author a context file that earns every token it costs." },
-  { title: "Create Your First CLAUDE.md", href: "/learn/tutorials/first-claude-md", description: "Build the governance file agents read first — the first ~4K tokens every session will spend." }
-]} />
+- [Convergence Model](/learn/concepts/convergence) — the structural principle that makes token selection scale across campaign → mission → objective
+- [Governance Files](/learn/concepts/governance-files) — the orientation layer that consumes the first ~5K tokens in every session
+- [Knowledge Graph](/learn/concepts/knowledge-graph) — the connected structure that AGENTS.md routing traverses during selection

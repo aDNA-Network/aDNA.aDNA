@@ -6,9 +6,6 @@ section: "concepts"
 order: 10
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-
 ## Overview
 
 aDNA is an open standard — a publicly documented specification that anyone can implement, extend, and build upon without permission or payment. The upstream spec (aDNA Standard v2.1, published at `github.com/LatticeProtocol/Agentic-DNA`) defines the normative rules. Individual projects implement the standard, extending it for their domain while maintaining compatibility with the shared core.
@@ -17,7 +14,7 @@ aDNA is an open standard — a publicly documented specification that anyone can
 
 Think about how roads work. Every country has roads, but they all follow standards — lane widths, traffic signs, signal colors. You don't need permission to build a road. You don't pay a license to put up a stop sign. The standards exist so that a driver from one city can navigate another city's roads without relearning everything. And any city can add its own features — bike lanes, roundabouts, local signage — as long as the core conventions hold.
 
-aDNA works the same way. The standard defines the basics: the what/how/who <GlossaryTooltip term="triad" slug="triad" definition="The three-folder structure at every aDNA project's root: what/, how/, who/. Every file fits in exactly one — the universal classifier." />, governance files, session tracking, FAIR metadata. Any project can implement these basics and get a working AI-native knowledge architecture. Then each project extends for its domain — a biotech lab adds molecular entity types, a startup adds customer personas, a research group adds publication workflows. The extensions are different, but the core is shared. An agent that understands one aDNA project can orient in any other.
+aDNA works the same way. The standard defines the basics: the what/how/who triad, governance files, session tracking, FAIR metadata. Any project can implement these basics and get a working AI-native knowledge architecture. Then each project extends for its domain — a biotech lab adds molecular entity types, a startup adds customer personas, a research group adds publication workflows. The extensions are different, but the core is shared. An agent that understands one aDNA project can orient in any other.
 
 This is the opposite of a proprietary platform. There's no vendor lock-in, no subscription, no permission required. The spec is public. The template is forkable. The standard grows through community contribution, not corporate roadmap.
 
@@ -45,7 +42,7 @@ The standard defines 14 base entity types organized across the triad (§5). Thes
 | WHAT | `context`, `decisions`, `modules`, `lattices` | 4 |
 | HOW | `campaigns`, `missions`, `sessions`, `templates`, `skills`, `pipelines`, `backlog` | 7 |
 
-Projects extend by adding domain-specific entity types under the appropriate triad leg. <GlossaryTooltip term="Extensions" slug="ontology-extension" definition="New entity types a project adds beyond aDNA's base 14 — subdirectories under the right triad leg with their own AGENTS.md and templates." /> MUST NOT modify base types — they add alongside them:
+Projects extend by adding domain-specific entity types under the appropriate triad leg. Extensions MUST NOT modify base types — they add alongside them:
 
 | Extension | Triad | Added By |
 |-----------|-------|----------|
@@ -90,20 +87,9 @@ This vault is a living demonstration of the open standard in practice:
 
 **The standing rule**: This vault's CLAUDE.md contains the rule "Never modify `.adna/` or `adna/`" — enforcing the spec/implementation boundary. The template is read-only. The instance is writable. That's the architecture of an open standard: shared core, local freedom.
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "The Triad", href: "/learn/concepts/triad", description: "The universal organizing principle the spec defines and every implementation shares." },
-  { title: "Governance Files", href: "/learn/concepts/governance-files", description: "The five files the spec mandates for agent orientation." },
-  { title: "FAIR Metadata", href: "/learn/concepts/fair-metadata", description: "The metadata standard that enables trust in federated exchanges." },
-  { title: "Ontology", href: "/learn/concepts/ontology", description: "The base/extension type system the spec defines and projects customize." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "Base/Extension", href: "/patterns/base-extension", description: "The stability-plus-freedom rule that makes 'open' mean something at the type level, not just the license level." },
-  { title: "Federation Readiness", href: "/patterns/federation-readiness", description: "The checklist that turns the open standard into a cross-instance contract — permissionless sharing with trust." },
-  { title: "Federate a Vault", href: "/learn/tutorials/federate-a-vault", description: "Exercise the open-standard guarantee — move a lattice between instances with nothing but the spec between them." },
-  { title: "Extend the Ontology", href: "/learn/tutorials/extend-the-ontology", description: "Practice the extension mechanism the spec defines — freedom exercised inside stable boundaries." }
-]} />
+- [The Triad](/learn/concepts/triad) — the universal organizing principle defined by the spec that every implementation shares
+- [Governance Files](/learn/concepts/governance-files) — the five files the spec mandates for agent orientation
+- [FAIR Metadata](/learn/concepts/fair-metadata) — the metadata standard that enables trust in federated exchanges
+- [Ontology](/learn/concepts/ontology) — the base/extension type system the spec defines and projects customize

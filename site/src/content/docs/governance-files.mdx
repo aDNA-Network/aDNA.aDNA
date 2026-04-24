@@ -6,9 +6,6 @@ section: "concepts"
 order: 4
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-
 ## Overview
 
 Every aDNA project has five ALLCAPS governance files at its root — CLAUDE.md, MANIFEST.md, STATE.md, AGENTS.md, and README.md. Together, they form the orientation layer: the minimum an agent or human needs to read before doing useful work.
@@ -59,7 +56,7 @@ Because it's auto-loaded, CLAUDE.md carries a unique responsibility: it must be 
 
 ### AGENTS.md: The Per-Directory Guide
 
-While CLAUDE.md exists only at root, <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." /> appears in every directory where agents operate (§4.5). Each one answers three questions:
+While CLAUDE.md exists only at root, AGENTS.md appears in every directory where agents operate (§4.5). Each one answers three questions:
 
 - **What's here?** — purpose and contents of this directory
 - **What are the rules?** — naming conventions, required frontmatter, behavioral constraints
@@ -85,20 +82,10 @@ You're inside a vault that demonstrates every governance file:
 
 Notice the layering. CLAUDE.md references STATE.md for current state. STATE.md references campaign docs for detail. Campaign docs reference missions. Missions reference the files they produce. Each layer narrows the scope, following the [convergence model](/learn/concepts/convergence).
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "The Triad", href: "/learn/concepts/triad", description: "The three-leg structure that governance files orient agents to." },
-  { title: "Token Selection", href: "/learn/concepts/token-selection", description: "How governance files balance comprehensiveness with context budget." },
-  { title: "Convergence Model", href: "/learn/concepts/convergence", description: "How AGENTS.md load/skip decisions implement convergent narrowing." },
-  { title: "Ontology", href: "/learn/concepts/ontology", description: "The entity types that governance files describe and govern." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "AGENTS.md Routing", href: "/patterns/agents-md", description: "The per-directory routing partner to the five ALLCAPS files — local orientation, everywhere." },
-  { title: "Dual-Audience Writing", href: "/patterns/dual-audience", description: "The writing rule every CLAUDE.md, AGENTS.md, and MANIFEST.md must satisfy to serve cold readers." },
-  { title: "Create Your First CLAUDE.md", href: "/learn/tutorials/first-claude-md", description: "Hands-on: author a working CLAUDE.md from scratch — the governance file every agent reads first." },
-  { title: "Navigate an aDNA Vault", href: "/learn/tutorials/navigate-a-vault", description: "Walk a real vault and see how the five files compose into a cold-start orientation." }
-]} />
+- [The Triad](/learn/concepts/triad) — the three-leg structure that governance files orient agents to
+- [Token Selection](/learn/concepts/token-selection) — how governance files balance comprehensiveness with context budget
+- [Convergence Model](/learn/concepts/convergence) — how AGENTS.md load/skip decisions implement convergent narrowing
+- [Ontology](/learn/concepts/ontology) — the entity types that governance files describe and govern
+- [Create Your First CLAUDE.md](/learn/tutorials/first-claude-md) — hands-on: build the root governance file step by step

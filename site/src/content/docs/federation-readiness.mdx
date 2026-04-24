@@ -1,16 +1,14 @@
 ---
 title: "Federation Readiness — aDNA Patterns"
-description: "A lattice that works perfectly within one project may fail when shared with another. Internal references break (ref: what/modules/mymodule doesn't exist..."
+description: "Something that works in your project isn't automatically safe to hand to someone else. A workflow may rely on files only you have, skip the labels a str..."
 doc_title: "Federation Readiness"
 section: "patterns"
 order: 8
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-
 ## Problem
 
-A lattice that works perfectly within one project may fail when shared with another. Internal references break (`ref: what/modules/my_module` doesn't exist in the target project). Missing metadata blocks federation validation. Undeclared provenance makes the lattice untrustworthy. The gap between "works locally" and "shareable across instances" requires deliberate preparation.
+Something that works in your project isn't automatically safe to hand to someone else. A workflow may rely on files only you have, skip the labels a stranger needs to trust it, or miss the licensing a partner's legal team will ask for. The gap between "works locally" and "safe to share across projects" takes deliberate preparation — internal references break, metadata is missing, provenance is undeclared.
 
 ## Solution
 
@@ -81,20 +79,8 @@ This lattice passes all 6 checks: schema-valid, opted in, provenance set, licens
 
 **Skipping post-federation validation**: Importing a lattice into a target project without re-validating. The lattice may be valid in source but incompatible in target (different ontology, missing dependencies).
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "Lattice Composition", href: "/learn/concepts/lattice-composition", description: "The composition patterns — external-reference and inline — that a federation-ready lattice unlocks." },
-  { title: "FAIR Envelope", href: "/patterns/fair-envelope", description: "The metadata block the readiness checklist leans on for its license and keyword prerequisites." },
-  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "The governance model that makes cross-instance federation possible without a central authority." },
-  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "The connected web federation extends beyond a single vault — every readiness check protects it." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "FAIR Metadata", href: "/learn/concepts/fair-metadata", description: "The metadata principles the readiness checklist enforces — findable, accessible, interoperable, reusable." },
-  { title: "Context Commons", href: "/learn/concepts/context-commons", description: "The vision of community-wide sharing that the checklist makes safe to participate in." },
-  { title: "Federate a Vault", href: "/learn/tutorials/federate-a-vault", description: "Walk through exporting and importing a lattice — the checklist applied end-to-end." },
-  { title: "Build a Lattice", href: "/learn/tutorials/build-a-lattice", description: "Build a new lattice that ships federation-ready from cycle one — no retrofitting required." }
-]} />
+- [Lattice Composition](/learn/concepts/lattice-composition) — the composition patterns that federation-ready lattices enable
+- [FAIR Envelope](/patterns/fair-envelope) — the metadata pattern that federation readiness depends on
+- [Open Standard](/learn/concepts/open-standard) — the governance model that makes cross-instance federation possible

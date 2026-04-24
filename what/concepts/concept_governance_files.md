@@ -96,3 +96,4 @@ Notice the layering. CLAUDE.md references STATE.md for current state. STATE.md r
 - [[what/concepts/concept_token_selection|Token Selection]] — how governance files balance comprehensiveness with context budget
 - [[what/concepts/concept_convergence|Convergence Model]] — how AGENTS.md load/skip decisions implement convergent narrowing
 - [[what/concepts/concept_ontology|Ontology]] — the entity types that governance files describe and govern
+- [[what/tutorials/tutorial_first_claude_md|Create Your First CLAUDE.md]] — hands-on: build the root governance file step by step

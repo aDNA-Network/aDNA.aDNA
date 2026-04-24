@@ -6,9 +6,6 @@ section: "concepts"
 order: 2
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-
 ## Overview
 
 The aDNA ontology is a typed vocabulary of 14 base entity types — organized across the triad — that defines what kinds of things a project can contain. Projects extend the ontology by adding domain-specific types without modifying the base.
@@ -19,7 +16,7 @@ Think of a library. Every book has a category — fiction, biography, science, h
 
 aDNA's ontology works the same way. It defines 14 "categories" — called entity types — that cover the operational needs of any project: things like `context` (research notes), `missions` (plans), `sessions` (work logs), and `governance` (rules). Every file in the vault has a `type` field in its metadata that says what kind of thing it is.
 
-The real power is extensibility. The 14 base types handle operations, but your project probably has domain-specific things too — patients, experiments, customers, models. You add those as <GlossaryTooltip term="ontology extensions" slug="ontology-extension" definition="A new entity type a project adds beyond aDNA's base 14 — a subdirectory under the right triad leg with its own AGENTS.md and template." /> under the appropriate triad leg, and they inherit the same conventions: typed frontmatter, AGENTS.md guides, templates. The base vocabulary is shared; the extensions are yours.
+The real power is extensibility. The 14 base types handle operations, but your project probably has domain-specific things too — patients, experiments, customers, models. You add those as extensions under the appropriate triad leg, and they inherit the same conventions: typed frontmatter, AGENTS.md guides, templates. The base vocabulary is shared; the extensions are yours.
 
 ## How It Works
 
@@ -72,7 +69,7 @@ Extensions inherit all base conventions: frontmatter requirements (§7), naming 
 
 ### The Type Field
 
-Every content file in an aDNA vault MUST include a `type` field in its YAML <GlossaryTooltip term="frontmatter" slug="frontmatter" definition="The YAML metadata block at the top of every aDNA file, wrapped in --- fences. Records type, dates, editor, tags — the file's ID card." /> (§7.2). This field is the machine-readable identity of the entity:
+Every content file in an aDNA vault MUST include a `type` field in its YAML frontmatter (§7.2). This field is the machine-readable identity of the entity:
 
 ```yaml
 ---
@@ -103,19 +100,9 @@ This vault demonstrates both the base ontology and the extension mechanism. The 
 
 Each extension has its own AGENTS.md, its own template in `how/templates/`, and follows the same conventions as the base types. Open any of those directories and you'll see the pattern: purpose statement, naming rules, frontmatter requirements, load/skip decision guide. The extension mechanism is uniform — new types slot in without modifying the base.
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "The Triad", href: "/learn/concepts/triad", description: "The three-leg structure that the ontology populates." },
-  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "How typed entities connect into a navigable web." },
-  { title: "Convergence Model", href: "/learn/concepts/convergence", description: "How the ontology enables context narrowing." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "Base/Extension", href: "/patterns/base-extension", description: "The rule that keeps the base 14 frozen while projects extend freely — ontology evolution without schism." },
-  { title: "The Question Test", href: "/patterns/question-test", description: "The filing rule every ontology decision rests on: which leg, which type, which directory." },
-  { title: "Extend the Ontology", href: "/learn/tutorials/extend-the-ontology", description: "Hands-on: add a custom entity type under the right triad leg — three artifacts, one pattern." },
-  { title: "Apply the Question Test", href: "/learn/tutorials/question-test", description: "Practice sorting ten real items into what/how/who — ontology as daily discipline." }
-]} />
+- [The Triad](/learn/concepts/triad) — the three-leg structure that the ontology populates
+- [Knowledge Graph](/learn/concepts/knowledge-graph) — how typed entities connect into a navigable web
+- [Convergence Model](/learn/concepts/convergence) — how the ontology enables context narrowing
+- [Extend the Ontology](/learn/tutorials/extend-the-ontology) — hands-on: add a custom entity type to your vault

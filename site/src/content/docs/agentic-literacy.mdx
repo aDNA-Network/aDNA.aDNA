@@ -6,9 +6,6 @@ section: "concepts"
 order: 11
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-
 ## Overview
 
 Agentic literacy is the ability to work effectively with AI agents — not just prompting them, but structuring knowledge so agents can find, understand, and act on it. aDNA treats this as a learnable skill with a clear progression: from understanding what agents need, to organizing knowledge for them, to building collaborative human-agent workflows.
@@ -68,7 +65,7 @@ This vault (`aDNA.aDNA/`) exists for exactly this purpose. A reader learning abo
 
 This vault is itself an agentic literacy tool:
 
-**Progressive structure**: Navigate from `README.md` (human entry point) → <GlossaryTooltip term="CLAUDE.md" slug="governance-file" definition="One of the five ALLCAPS governance files at an aDNA project root — the agent's auto-loaded entry point with persona, project map, safety rules, and startup protocol." /> (agent entry point) → `STATE.md` (operational context) → `what/concepts/` (concept library). Each step teaches a literacy concept by requiring you to practice it: following governance files, using the triad, reading <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." /> routing.
+**Progressive structure**: Navigate from `README.md` (human entry point) → `CLAUDE.md` (agent entry point) → `STATE.md` (operational context) → `what/concepts/` (concept library). Each step teaches a literacy concept by requiring you to practice it: following governance files, using the triad, reading AGENTS.md routing.
 
 **The tutorials directory**: `what/tutorials/` is scaffolded for a beginner → intermediate → advanced learning path. When populated, each tutorial will walk a learner through a specific agentic literacy skill — from "create your first CLAUDE.md" to "design a multi-mission campaign."
 
@@ -76,20 +73,9 @@ This vault is itself an agentic literacy tool:
 
 **The community directory**: `who/community/` is scaffolded for community roles and contribution paths — the social infrastructure for scaling agentic literacy beyond individual practitioners to organizations and communities.
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "Dual-Audience Writing", href: "/learn/concepts/dual-audience", description: "The writing discipline that makes knowledge serve both humans and agents." },
-  { title: "Context Commons", href: "/learn/concepts/context-commons", description: "The vision of shared knowledge resources that agentic literacy makes possible." },
-  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "How openness lowers the barrier to developing agentic literacy." },
-  { title: "The Triad", href: "/learn/concepts/triad", description: "The organizing principle that is the first lesson in agentic literacy." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "Dual-Audience Writing", href: "/patterns/dual-audience", description: "The writing rules that keep knowledge accessible to newcomers without losing developer precision." },
-  { title: "AGENTS.md Routing", href: "/patterns/agents-md", description: "Per-directory orientation files that let literacy scale — agents self-route without being told what to load." },
-  { title: "Navigate an aDNA Vault", href: "/learn/tutorials/navigate-a-vault", description: "A 15-minute guided tour of a real vault — the reading path that turns conceptual literacy into navigation instinct." },
-  { title: "Write a Context File", href: "/learn/tutorials/write-a-context-file", description: "Hands-on: build a context file an agent can actually use — literacy applied at the file level." }
-]} />
+- [Dual-Audience Writing](/learn/concepts/dual-audience) — the writing discipline that makes knowledge serve both humans and agents
+- [Context Commons](/learn/concepts/context-commons) — the vision of shared knowledge resources that agentic literacy makes possible
+- [Open Standard](/learn/concepts/open-standard) — how openness lowers the barrier to developing agentic literacy
+- [The Triad](/learn/concepts/triad) — the organizing principle that is the first lesson in agentic literacy

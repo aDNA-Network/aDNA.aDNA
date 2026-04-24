@@ -113,3 +113,4 @@ Each extension has its own AGENTS.md, its own template in `how/templates/`, and 
 - [[what/concepts/concept_triad|The Triad]] — the three-leg structure that the ontology populates
 - [[what/concepts/concept_knowledge_graph|Knowledge Graph]] — how typed entities connect into a navigable web
 - [[what/concepts/concept_convergence|Convergence Model]] — how the ontology enables context narrowing
+- [[what/tutorials/tutorial_extend_the_ontology|Extend the Ontology]] — hands-on: add a custom entity type to your vault

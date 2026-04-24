@@ -3,7 +3,7 @@ plan_id: mission_m31
 type: plan
 title: "M31 — D7: SEO & Discoverability (Cycles 61-70)"
 owner: stanley
-status: in_progress
+status: completed
 mission_class: implementation
 created: 2026-04-24
 updated: 2026-04-24
@@ -14,6 +14,7 @@ decadal: D7
 cycles: 61-70
 ranker_baseline: 4.96
 ranker_target: "≥4.97"
+ranker_close: 4.97
 ---
 
 # M31 — D7: SEO & Discoverability (Cycles 61-70)
@@ -28,16 +29,16 @@ Ranker baseline: **4.96** (D6 close). Target: **≥4.97**.
 
 | ID | Cycle | Item | Status |
 |----|-------|------|--------|
-| S-01 | 61 | JSON-LD for 16 missing index/utility pages (CollectionPage + WebPage schemas) | in_progress |
-| S-02 | 62 | HowTo schema for tutorial pages — update `seo.ts` builder, wire up tutorial route | pending |
-| S-03 | 63 | BreadcrumbList schema on content hierarchy pages (patterns/slug, learn/concepts/slug, etc.) | pending |
-| S-04 | 64 | Heading hierarchy audit — H1→H2→H3 scan across all 117 pages, fix violations | pending |
-| S-05 | 65 | Sitemap completeness — verify 120 URLs vs 117 pages, resolve discrepancies | pending |
-| S-06 | 66 | Meta description audit — find missing or duplicate descriptions, write fixes | pending |
-| S-07 | 67 | Internal linking density — add 2-3 cross-links per concept/pattern page | pending |
-| S-08 | 68 | Patterns a11y 98 investigation + fix (pre-existing gap from D6) | pending |
-| S-09 | 69 | Verification meta tags (Google Search Console, Bing) + pre-close ranker measurement | pending |
-| S-10 | 70 | D7 decadal close: full Playwright suite, 5-persona ranker, AAR | pending |
+| S-01 | 61 | JSON-LD for 16 missing index/utility pages (CollectionPage + WebPage schemas) | ✅ complete |
+| S-02 | 62 | HowTo schema for tutorial pages — update `seo.ts` builder, wire up tutorial route | ✅ complete |
+| S-03 | 63 | BreadcrumbList schema on content hierarchy pages (patterns/slug, learn/concepts/slug, etc.) | ✅ complete |
+| S-04 | 64 | Heading hierarchy audit — H1→H2→H3 scan across all 117 pages, fix violations | ✅ complete |
+| S-05 | 65 | Sitemap completeness — verify 120 URLs vs 117 pages, resolve discrepancies | ✅ complete |
+| S-06 | 66 | Meta description audit — find missing or duplicate descriptions, write fixes | ✅ complete |
+| S-07 | 67 | Internal linking density — add 2-3 cross-links per concept/pattern page | ✅ complete |
+| S-08 | 68 | Patterns a11y 98 investigation + fix (pre-existing gap from D6) | ✅ resolved (Cycle 64 fix) |
+| S-09 | 69 | Verification meta tags (Google Search Console, Bing) + pre-close ranker measurement | ✅ ranker done; tags deferred (user action) |
+| S-10 | 70 | D7 decadal close: full Playwright suite, 5-persona ranker, AAR | ✅ complete |
 
 ## Tasks
 
@@ -102,4 +103,18 @@ Ranker baseline: **4.96** (D6 close). Target: **≥4.97**.
 
 ## Completion Summary
 
-<!-- To be filled in at cycle 70 close -->
+D7 closed 2026-04-24. Ranker 4.96→**4.97** (+0.01). All 10 cycles complete. Playwright 47/47. Build 117 pages, 0 errors.
+
+**Biggest wins**: JSON-LD coverage 55%→97% via @graph bundle pattern (SEOHead renders array of schemas as single `<script>` tag); heading hierarchy 45 violations→0 via dual fix (CardGrid tag + 33 Pathway-2 MDX H1 strips); Patterns a11y 98→100.
+
+**Carry-forward**: Verification tags (Google Search Console + Bing — user action); nav duplicate link text differentiation (D9 candidate).
+
+**AAR**: `how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d7.md`
+
+### Mission AAR
+
+- **Worked**: @graph bundle pattern handled the "two schemas, one tag" gate constraint elegantly — SEOHead now supports single or array of schemas without any gate regressions.
+- **Didn't**: Heading hierarchy had two independent root causes that required separate fixes; the dual-pathway architecture (transform script vs. direct Pathway-2) creates ongoing maintenance asymmetry.
+- **Finding**: Lighthouse Accessibility 98 on Patterns was a heading-level issue (H1→H3 skip), not flagged by axe-core — coverage gap in gate-4-a11y. D8 should add a heading-hierarchy gate.
+- **Change**: For D8, add a gate tracking media placeholder count before implementing interactive content, so progress is measurable and regression-proof.
+- **Follow-up**: Nav duplicate link text (Solo Developer / Startup / Enterprise Team / Educator / Context Commons) — D9 candidate for label differentiation.

@@ -89,3 +89,4 @@ The structure demonstrates itself. Navigate up two levels from this file and you
 - [[what/concepts/concept_ontology|Ontology]] — the entity types that populate each triad leg
 - [[what/concepts/concept_knowledge_graph|Knowledge Graph]] — how triad contents connect into a navigable web
 - [[what/concepts/concept_governance_files|Governance Files]] — the five ALLCAPS files that orient agents to the triad
+- [[what/tutorials/tutorial_navigate_a_vault|Navigate an aDNA Vault]] — hands-on: explore a live triad in 15 minutes

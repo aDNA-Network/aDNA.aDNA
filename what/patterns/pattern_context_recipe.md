@@ -84,3 +84,4 @@ The AGENTS.md at `what/context/adna_core/AGENTS.md` supports recipe design by li
 - [[what/concepts/concept_context_optimization|Context Optimization]] — the design principles that make individual files worth including in recipes
 - [[what/concepts/concept_token_selection|Token Selection]] — the broader discipline of loading the right knowledge
 - [[what/patterns/pattern_agents_md|AGENTS.md Routing]] — the directory-level decisions that recipes build upon
+- [[what/tutorials/tutorial_write_a_context_file|Write a Context File]] — hands-on: author a context file and see the recipe in practice

@@ -6,9 +6,6 @@ section: "concepts"
 order: 8
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-
 ## Overview
 
 Context optimization is the practice of designing context files — the curated knowledge agents load before doing work — so they deliver maximum decision-relevant information per token consumed. It covers file structure, format selection, quality scoring, and the discipline of saying less to communicate more.
@@ -86,36 +83,19 @@ Recipes prevent the common failure of loading "just in case" — pre-selecting w
 
 ## See It In Action
 
-This vault's <GlossaryTooltip term="context library" slug="context-library" definition="The structured knowledge store in what/context/ — organized by topic with subtopics and token estimates so agents load only what they need." /> (`what/context/`) is a working example of context optimization at every level:
+This vault's context library (`what/context/`) is a working example of context optimization at every level:
 
 **File-level optimization**: Open `what/context/adna_core/context_adna_core_context_engineering.md` — it's the guide for writing context files, and it practices what it preaches. Tables dominate. Principles are numbered. Anti-patterns are listed. Signal density: 5/5.
 
-**Token budgets**: Every context file carries a `token_estimate` in its <GlossaryTooltip term="frontmatter" slug="frontmatter" definition="The YAML metadata block at the top of every aDNA file, wrapped in --- fences. Records type, dates, editor, tags — the file's ID card." />. The <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." /> at `what/context/adna_core/AGENTS.md` lists all 13 subtopics with their token costs, totaling ~13,100 tokens. An agent can decide exactly which subtopics to load and predict the cost before loading them.
+**Token budgets**: Every context file carries a `token_estimate` in its frontmatter. The AGENTS.md at `what/context/adna_core/AGENTS.md` lists all 13 subtopics with their token costs, totaling ~13,100 tokens. An agent can decide exactly which subtopics to load and predict the cost before loading them.
 
 **Format selection in practice**: Compare the "Key Principles" section in any context file (numbered list, table-driven) with the "Why This Matters" section in concept files (prose, metaphor-driven). Different audiences, different formats, both optimized for their purpose.
 
 **Composition recipes**: The recipe index at `what/context/context_recipes.md` pre-defines which subtopics to load together for common task types, preventing agents from improvising (and over-loading) on multi-topic tasks.
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "Token Selection", href: "/learn/concepts/token-selection", description: "The mechanisms — AGENTS.md routing, recipes, budgets — that implement context optimization decisions." },
-  { title: "Convergence Model", href: "/learn/concepts/convergence", description: "The structural principle that ensures optimization compounds across campaign → mission → objective." },
-  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "The connected structure that optimization helps agents traverse efficiently." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "Context Recipe", href: "/patterns/context-recipe", description: "Named multi-directory assemblies — pre-validated selections that replace improvised loading." },
-  { title: "AGENTS.md Routing", href: "/patterns/agents-md", description: "The directory-level load/skip interface that makes optimization decisions routine." },
-  { title: "Write a Context File", href: "/learn/tutorials/write-a-context-file", description: "Hands-on: apply the optimization principles — tables over prose, signal density, token budgets." },
-  { title: "Design a Mission", href: "/learn/tutorials/design-a-mission", description: "Scope a mission to fit inside one session — optimization applied at the planning layer." }
-]} />
-
-## From the Reference
-
-<CardGrid columns={2} cards={[
-  { title: "Quality Rubric", href: "/reference/quality-rubric", description: "The 6-axis rubric — signal density, actionability, coverage, and more — used to score every aDNA context file." },
-  { title: "Agent-First Guide", href: "/reference/agent-first-guide", description: "The practical companion to the spec — how agents should use optimization principles when loading context for a task." }
-]} />
+- [Token Selection](/learn/concepts/token-selection) — the mechanisms (AGENTS.md routing, recipes, budgets) that implement context optimization decisions
+- [Convergence Model](/learn/concepts/convergence) — the structural principle that ensures optimization compounds across campaign → mission → objective
+- [Knowledge Graph](/learn/concepts/knowledge-graph) — the connected structure that optimization helps agents traverse efficiently
+- [Write a Context File](/learn/tutorials/write-a-context-file) — hands-on: author a context file using optimization principles

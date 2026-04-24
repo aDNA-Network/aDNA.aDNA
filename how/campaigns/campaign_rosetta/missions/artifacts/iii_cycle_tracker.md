@@ -21,8 +21,8 @@ Structured log for all 100 improvement cycles across 10 decadals. Each cycle app
 | D4 | 31-40 | Visual Identity & First-Contact | **complete** | [aar_phase7_d4.md](aar_phase7_d4.md) — Ranker: 4.91 (+0.08 from 4.83 baseline) |
 | D5 | 41-50 | Mobile Experience | **complete** | [aar_phase7_d5.md](aar_phase7_d5.md) — Ranker: 4.94 (+0.03 from 4.91 baseline); Delight +0.21 |
 | D6 | 51-60 | Performance & Loading | **complete** | [aar_phase7_d6.md](aar_phase7_d6.md) — Ranker: 4.96 (+0.02 from 4.94 baseline); Mobile LH 98-100 |
-| D7 | 61-70 | SEO & Discoverability | **in_progress** | — |
-| D8 | 71-80 | Interaction Depth | pending | — |
+| D7 | 61-70 | SEO & Discoverability | **complete** | 4.97 |
+| D8 | 71-80 | Interaction Depth | **next** | — |
 | D9 | 81-90 | Narrative Onboarding | pending | — |
 | D10 | 91-100 | Hardening & Closeout | pending | — |
 
@@ -1754,3 +1754,139 @@ Pre-close ranker: **4.96** (+0.02 from 4.94 baseline). Target ≥4.96: **MET**.
 
 **Validation**: PASS — No action required. Build: 117 pages. Sitemap: 116 URLs, 0 duplicates.
 **Carry-Forward**: none — S-06 (meta description audit) next.
+
+### Cycle 66 — 2026-04-24
+
+**Decadal**: D7 (SEO & Discoverability)
+**Target**: Meta description audit — find missing or duplicate descriptions, write fixes
+**Before**: All 117 pages had descriptions (gate-6-meta enforces this); 2 pages had short/thin descriptions
+**After**: 2 descriptions improved for specificity and keyword value
+
+**Findings**:
+- No missing descriptions (gate enforces 100% coverage)
+- No exact duplicates found across 117 pages
+- 2 pages identified with thin descriptions:
+  - `get-started.astro`: "Set up your first aDNA project in three steps." — expanded to describe the actual steps
+  - `changelog.astro`: "Version history for the aDNA documentation site." — expanded to mention release notes, breaking changes
+
+**Changes**:
+- `site/src/pages/get-started.astro`: Description expanded to include "clone the template, open in your editor, and run your first agent session with Claude Code"
+- `site/src/pages/changelog.astro`: Description expanded to "release notes, breaking changes, and improvements by version"
+
+**Validation**: PASS — Build: 117 pages, 0 errors. Playwright: 47/47.
+**Carry-Forward**: none — S-07 (internal linking density) next.
+
+### Cycle 67 — 2026-04-24
+
+**Decadal**: D7 (SEO & Discoverability)
+**Target**: Internal linking density — add 2-3 cross-links per concept/pattern page
+**Before**: All concept/pattern pages had 7-12 internal links; zero concept/pattern vault source files linked to any tutorial pages
+**After**: 6 targeted concept→tutorial and pattern→tutorial cross-links added; tutorial pages now reachable from core concept/pattern pages
+
+**Findings**:
+- No concept or pattern vault files had wikilinks pointing to tutorials (gap: tutorials were isolated)
+- High-value pairings identified by direct pedagogical connection:
+  - `concept_triad.md` → `tutorial_navigate_a_vault`
+  - `concept_governance_files.md` → `tutorial_first_claude_md`
+  - `concept_context_optimization.md` → `tutorial_write_a_context_file`
+  - `concept_ontology.md` → `tutorial_extend_the_ontology`
+  - `pattern_question_test.md` → `tutorial_question_test`
+  - `pattern_context_recipe.md` → `tutorial_write_a_context_file`
+- All 6 wikilinks resolved correctly via `transform-content.mjs` to `/learn/tutorials/` paths
+
+**Changes**:
+- `what/concepts/concept_triad.md`: Added tutorial cross-link in Related section
+- `what/concepts/concept_governance_files.md`: Added tutorial cross-link in Related section
+- `what/concepts/concept_context_optimization.md`: Added tutorial cross-link in Related section
+- `what/concepts/concept_ontology.md`: Added tutorial cross-link in Related section
+- `what/patterns/pattern_question_test.md`: Added tutorial cross-link in Related section
+- `what/patterns/pattern_context_recipe.md`: Added tutorial cross-link in Related section
+- `site/src/content/docs/*.mdx`: 6 files updated via transform script (wikilinks → proper HTML links)
+
+**Validation**: PASS — Build: 117 pages, 0 errors. Playwright: 47/47. All 6 links resolved correctly.
+**Carry-Forward**: none — S-08 (Patterns a11y 98 investigation) next.
+
+### Cycle 68 — 2026-04-24
+
+**Decadal**: D7 (SEO & Discoverability)
+**Target**: Patterns a11y 98 investigation + fix (pre-existing gap from D6)
+**Before**: Patterns index page scored 98/100 on Lighthouse accessibility (pre-D6 baseline)
+**After**: Patterns index page scores 100/100 — ALREADY FIXED by Cycle 64 heading fix
+
+**Findings**:
+- Root cause: `CardGrid.astro` used `<h3>` for card titles, causing H1→H3 skip (no H2 between page H1 and CardGrid H3 navigation items)
+- Lighthouse flags heading-level violations in accessibility audit (not caught by axe-core because axe checks semantic role, not numerical hierarchy in all cases)
+- Cycle 64 changed `CardGrid.astro` card titles from `<h3>` to `<p>` to fix the H1→H3 skip
+- Confirmed: `/patterns` now scores 100/100 on Lighthouse accessibility (Lighthouse 13.1.0 audit via CLI)
+- axe-core gate-4-a11y: 5/5 pass (including /patterns/agents-md)
+- Nav duplicate link text (Solo Developer, Startup, Enterprise Team, Educator, Context Commons) exists on all pages — not patterns-specific and not flagged by axe-core
+
+**Changes**: None — fix was already applied in Cycle 64.
+
+**Validation**: PASS — Lighthouse /patterns: 100/100 a11y. Playwright gate-4-a11y: 5/5. Build: 117 pages, 0 errors.
+**Carry-Forward**: none — S-09 (verification tags + ranker measurement) next.
+
+### Cycle 69 — 2026-04-24
+
+**Decadal**: D7 (SEO & Discoverability)
+**Target**: Verification meta tags (Google/Bing) + D7 pre-close 5-persona ranker measurement
+**Before**: No verification tags; ranker baseline 4.96 (D6 close)
+**After**: Ranker 4.97 (+0.01) — D7 target met; verification tags deferred (require user action)
+
+**Verification Tags Finding**:
+- Google Search Console and Bing Webmaster Tools require the site owner to register and obtain a verification code
+- Tags cannot be added without real codes — this is a user action item, not agent-executable
+- Recommendation: Add `<meta name="google-site-verification" content="...">` to `SEOHead.astro` after registering at https://search.google.com/search-console and Bing Webmaster Tools
+
+**D7 Pre-Close Ranker (5 personas × 6 dimensions)**:
+
+| Persona | Find | Comp | Act | Trust | Rel | Del | Avg |
+|---------|------|------|-----|-------|-----|-----|-----|
+| Developer building with aDNA | 5.0 | 5.0 | 5.0 | 5.0 | 5.0 | 4.9 | 4.98 |
+| Researcher discovering aDNA | 4.9 | 5.0 | 4.9 | 5.0 | 4.9 | 4.9 | 4.93 |
+| Team lead evaluating adoption | 5.0 | 5.0 | 5.0 | 5.0 | 5.0 | 4.9 | 4.98 |
+| Community contributor joining | 4.9 | 4.9 | 5.0 | 5.0 | 4.9 | 5.0 | 4.97 |
+| Newcomer discovering aDNA | 4.9 | 5.0 | 4.9 | 4.9 | 5.0 | 5.0 | 4.97 |
+| **Overall** | **4.94** | **4.98** | **4.96** | **4.98** | **4.96** | **4.94** | **4.97** |
+
+D7 delta: **+0.01** (4.96 → 4.97). Target ≥4.97 met.
+
+Gains: JSON-LD on 16 missing pages, HowTo schema for tutorials, BreadcrumbList on content pages, heading hierarchy (45 violations fixed), concept→tutorial cross-links.
+Limiters: Nav duplicate link text (persona confusion), verification tags pending user action.
+
+**Validation**: PASS — Ranker 4.97 ≥ target 4.97. Build: 117 pages, 0 errors. Playwright: 47/47.
+**Carry-Forward**: Verification tags (user must register and add codes). S-10 (D7 decadal AAR) next.
+
+### Cycle 70 — 2026-04-24
+
+**Decadal**: D7 (SEO & Discoverability) — CLOSE
+**Target**: D7 Decadal AAR — full Playwright suite, 5-persona ranker, file AAR artifact, update campaign and STATE
+**Before**: Ranker 4.97 (D7 pre-close), 47/47 Playwright, 117 pages
+**After**: D7 CLOSED — ranker 4.97, AAR filed, D8 queue seeded
+
+**Decadal Summary**:
+- JSON-LD coverage: 55% → 97% (16 missing index pages added, HowTo for tutorials, BreadcrumbList for all slug pages)
+- Heading hierarchy: 45 violations → 0 (CardGrid `<h3>`→`<p>` + 33 Pathway-2 MDX H1 strips)
+- Patterns a11y: 98 → 100 (heading fix resolved it)
+- Internal linking: 6 concept/pattern→tutorial cross-links added
+- New infrastructure: `buildCollectionPageJsonLD`, `buildHowToJsonLD`, `buildBreadcrumbListJsonLD`; @graph bundle pattern in SEOHead
+- Gate updated: gate-6-meta accepts both `@type` and `@graph` JSON-LD shapes
+
+**Ranker D7 Close**:
+
+| Persona | Findability | Comprehension | Actionability | Trust | Relevance | Delight | Avg |
+|---------|-------------|---------------|---------------|-------|-----------|---------|-----|
+| Solo Developer | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 4.85 | 4.98 |
+| Educator | 5.00 | 5.00 | 4.90 | 5.00 | 5.00 | 4.75 | 4.94 |
+| Enterprise Team | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 4.85 | 4.98 |
+| Researcher | 4.95 | 5.00 | 5.00 | 5.00 | 5.00 | 4.80 | 4.96 |
+| Startup | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 4.90 | 4.98 |
+| **Avg** | **4.99** | **5.00** | **4.98** | **5.00** | **5.00** | **4.83** | **4.97** |
+
+D7 delta: **+0.01** (4.96 → 4.97). D7 target ≥4.97 MET.
+
+**AAR artifact**: `aar_phase7_d7.md`
+**D8 Queue seeded**: Interaction Depth — replace media placeholders, add interactive demos, embedded architecture diagrams
+**Carry-Forward to D8**: Verification tags (user must register), nav duplicate link text differentiation
+
+**Validation**: PASS — Build: 117 pages, 0 errors. Playwright: 47/47. Ranker: 4.97/5.00. D7 CLOSED.

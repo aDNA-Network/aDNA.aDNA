@@ -6,9 +6,6 @@ section: "concepts"
 order: 1
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-
 ## Overview
 
 The triad is aDNA's universal organizing principle: every piece of project knowledge belongs in exactly one of three directories — `what/`, `how/`, or `who/` — determined by which question it answers.
@@ -39,7 +36,7 @@ The triad is defined in the aDNA Standard §3.1 as the **what/how/who ontology**
 
 ### The Question Test
 
-When you're unsure where a file belongs, apply the <GlossaryTooltip term="question test" slug="question-test" definition="The three-question filing rule: 'Is this about what we know, how we work, or who is involved?' Routes any new file to the correct triad leg." /> (§3.1): "Is this about WHAT we know, HOW we work, or WHO is involved?"
+When you're unsure where a file belongs, apply the **question test** (§3.1): "Is this about WHAT we know, HOW we work, or WHO is involved?"
 
 | Content | Question | Triad Leg |
 |---------|----------|-----------|
@@ -53,8 +50,8 @@ The test always produces exactly one answer. If it feels ambiguous, the content 
 
 The triad has two physical layouts (§3.2–3.4):
 
-- <GlossaryTooltip term="Bare triad" slug="bare-triad" definition="The deployment where what/, how/, who/ sit directly at project root. Used when aDNA IS the project — docs vaults, knowledge bases." /> — `what/`, `how/`, `who/` sit at project root. Used when aDNA IS the primary content (knowledge bases, documentation vaults).
-- <GlossaryTooltip term="Embedded triad" slug="embedded-triad" definition="The deployment where the triad lives inside .agentic/ at repo root. Used to add agent support to an existing codebase without reshaping it." /> — the triad lives inside `.agentic/` at repo root. Used when adding agent support to an existing codebase.
+- **Bare triad** — `what/`, `how/`, `who/` sit at project root. Used when aDNA IS the primary content (knowledge bases, documentation vaults).
+- **Embedded triad** — the triad lives inside `.agentic/` at repo root. Used when adding agent support to an existing codebase.
 
 The ontology is identical in both forms. Only the nesting differs.
 
@@ -79,19 +76,9 @@ This file — `concept_triad.md` — lives in `what/concepts/` because it answer
 
 The structure demonstrates itself. Navigate up two levels from this file and you'll see the triad in the directory listing. That's the point — the architecture is visible, not hidden behind abstractions.
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "Ontology", href: "/learn/concepts/ontology", description: "The entity types that populate each triad leg." },
-  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "How triad contents connect into a navigable web." },
-  { title: "Governance Files", href: "/learn/concepts/governance-files", description: "The five ALLCAPS files that orient agents to the triad." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "The Question Test", href: "/patterns/question-test", description: "The three-question filing rule that turns the triad into a daily decision any contributor can make." },
-  { title: "Base/Extension", href: "/patterns/base-extension", description: "How to add domain types under the right leg without breaking the three-category invariant." },
-  { title: "Navigate an aDNA Vault", href: "/learn/tutorials/navigate-a-vault", description: "A 15-minute walkthrough where the triad stops being a diagram and starts being a navigation instinct." },
-  { title: "Apply the Question Test", href: "/learn/tutorials/question-test", description: "Practice sorting ten items into what/how/who — the triad drill every new contributor runs once." }
-]} />
+- [Ontology](/learn/concepts/ontology) — the entity types that populate each triad leg
+- [Knowledge Graph](/learn/concepts/knowledge-graph) — how triad contents connect into a navigable web
+- [Governance Files](/learn/concepts/governance-files) — the five ALLCAPS files that orient agents to the triad
+- [Navigate an aDNA Vault](/learn/tutorials/navigate-a-vault) — hands-on: explore a live triad in 15 minutes

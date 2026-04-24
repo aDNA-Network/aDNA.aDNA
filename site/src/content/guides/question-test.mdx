@@ -7,12 +7,9 @@ estimated_time: "15 minutes"
 date: 2026-04-14
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-
 ## What You'll Build
 
-A sorted inventory of 10 project items placed into the correct <GlossaryTooltip term="triad" slug="triad" definition="The three-folder structure at every aDNA project's root: what/, how/, who/. Every file fits in exactly one — the universal classifier." /> leg. By the end, you'll be able to instantly sort any new file into `what/`, `how/`, or `who/` using the [question test](/patterns/question-test).
+A sorted inventory of 10 project items placed into the correct triad leg. By the end, you'll be able to instantly sort any new file into `what/`, `how/`, or `who/` using the [question test](/patterns/question-test).
 
 ## Prerequisites
 
@@ -96,17 +93,6 @@ If any item feels like it belongs in two legs, it's trying to do two things. Spl
 
 ## Next Steps
 
-<CardGrid columns={2} cards={[
-  { title: "Extend the Ontology", href: "/learn/tutorials/extend-the-ontology", description: "Add custom entity types under the right triad leg." },
-  { title: "Ontology", href: "/learn/concepts/ontology", description: "Understand the entity types within each triad leg." },
-  { title: "Base/Extension", href: "/patterns/base-extension", description: "How to add types without breaking the core 14." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "The Triad", href: "/learn/concepts/triad", description: "The three-category principle behind the three-question sort." },
-  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "Why correctly filed files stay findable — placement is graph hygiene." },
-  { title: "The Question Test", href: "/patterns/question-test", description: "The pattern doc behind this drill — decision rules, edge cases, anti-patterns." },
-  { title: "AGENTS.md Routing", href: "/patterns/agents-md", description: "How the routing layer benefits when every file is on the right leg." }
-]} />
+- [Extend the Ontology](/learn/tutorials/extend-the-ontology) — add custom entity types to the triad
+- [Ontology](/learn/concepts/ontology) — understand the entity types within each leg
+- [Base/Extension](/patterns/base-extension) — how to add types without breaking the core

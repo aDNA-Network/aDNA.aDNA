@@ -1,17 +1,14 @@
 ---
 title: "Lattice Composition — aDNA Concepts"
-description: "Lattice composition is how aDNA builds complex workflows from simpler pieces. A lattice is a directed graph of nodes (modules, datasets, processes) conn..."
+description: "Big jobs are usually too big for one workflow. Lattice composition is how aDNA snaps smaller workflows together to make bigger ones — the same way a din..."
 doc_title: "Lattice Composition"
 section: "concepts"
 order: 9
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-
 ## Overview
 
-Lattice composition is how aDNA builds complex workflows from simpler pieces. A lattice is a directed graph of nodes (modules, datasets, processes) connected by edges (data flow). Lattices can be composed — combined into larger workflows — through two patterns: inline merging and external referencing. This composability is what makes lattices reusable, shareable, and scalable.
+Big jobs are usually too big for one workflow. Lattice composition is how aDNA snaps smaller workflows together to make bigger ones — the same way a dinner recipe is built from smaller recipes for the sauce, the vegetables, and the main. A lattice is a directed graph of nodes (modules, datasets, processes) connected by edges (data flow); composition combines lattices through two patterns — inline merging and external referencing — which is what makes them reusable, shareable, and scalable.
 
 ## Why This Matters
 
@@ -108,35 +105,17 @@ For a lattice to be composable across aDNA instances (not just within one projec
 
 This vault contains the full lattice infrastructure at `what/lattices/`:
 
-**Schema**: `what/lattices/lattice_yaml_schema.json` — the JSON Schema that all lattice files validate against. Open it to see the `nodes`, `edges`, `federation`, and `fair` block definitions. A <GlossaryTooltip term="skill" slug="skill" definition="A reusable step-by-step recipe agents follow to accomplish a task. A procedure, not a file blueprint — codified expertise in a repeatable form." /> can also be promoted into the registry as a `lattice_type: skill` — the degenerate lattice form.
+**Schema**: `what/lattices/lattice_yaml_schema.json` — the JSON Schema that all lattice files validate against. Open it to see the `nodes`, `edges`, `federation`, and `fair` block definitions.
 
 **Examples**: `what/lattices/examples/` contains validated lattice files covering all types and composition patterns. The `docking_assessment` example demonstrates external reference federation — it was extracted from a larger `protein_binder_design` pipeline and carries `federation.parent_lattice` provenance.
 
 **Validation tools**: `what/lattices/tools/lattice_validate.py` checks schema compliance, node ID uniqueness, edge reference validity, and federation property consistency. Run it against any `.lattice.yaml` to verify composition correctness.
 
-**The vault itself is a context graph**: The knowledge structure you're navigating — concepts linking to concepts, <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." /> routing agents through directories — is a `context_graph` lattice. The nodes are files. The edges are wikilinks and AGENTS.md references. The execution mode is agent-driven graph traversal.
+**The vault itself is a context graph**: The knowledge structure you're navigating — concepts linking to concepts, AGENTS.md routing agents through directories — is a `context_graph` lattice. The nodes are files. The edges are wikilinks and AGENTS.md references. The execution mode is agent-driven graph traversal.
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "Ontology", href: "/learn/concepts/ontology", description: "The entity types — module, dataset, lattice — that serve as lattice building blocks." },
-  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "The broader connected structure that lattices formalize as declarative YAML." },
-  { title: "FAIR Metadata", href: "/learn/concepts/fair-metadata", description: "The metadata envelope that makes lattices findable, shareable, and reusable." },
-  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "How federation enables lattice composition across independent aDNA instances." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "Federation Readiness", href: "/patterns/federation-readiness", description: "The six checks a lattice must pass before it's safe to compose into another project." },
-  { title: "FAIR Envelope", href: "/patterns/fair-envelope", description: "The metadata block that makes a composed lattice discoverable and legally reusable." },
-  { title: "Build a Lattice", href: "/learn/tutorials/build-a-lattice", description: "Hands-on: author a validated `.lattice.yaml` — composition's atomic unit." },
-  { title: "Federate a Vault", href: "/learn/tutorials/federate-a-vault", description: "Walk through cross-instance composition — external reference vs. inline, with the actual commands." }
-]} />
-
-## From the Reference
-
-<CardGrid columns={2} cards={[
-  { title: "Specification", href: "/reference/specification", description: "Normative aDNA specification — §9 defines the lattice YAML schema; §11 defines federation readiness checks for composed lattices." },
-  { title: "Design Rationale", href: "/reference/design-rationale", description: "Why aDNA chose declarative YAML graphs over imperative scripts — composability and reproducibility as first principles." }
-]} />
+- [Ontology](/learn/concepts/ontology) — the entity types (module, dataset, lattice) that serve as lattice building blocks
+- [Knowledge Graph](/learn/concepts/knowledge-graph) — the broader connected structure that lattices formalize as declarative YAML
+- [FAIR Metadata](/learn/concepts/fair-metadata) — the metadata envelope that makes lattices findable, shareable, and reusable
+- [Open Standard](/learn/concepts/open-standard) — how federation enables lattice composition across independent aDNA instances

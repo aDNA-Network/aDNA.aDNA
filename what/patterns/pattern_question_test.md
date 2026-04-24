@@ -63,3 +63,4 @@ Every file in this vault was placed by applying the question test. Navigate to a
 - [[what/concepts/concept_triad|The Triad]] — the architectural principle the question test implements
 - [[what/concepts/concept_ontology|Ontology]] — the entity types within each triad leg
 - [[what/patterns/pattern_base_extension|Base/Extension]] — how new entity types inherit their triad placement
+- [[what/tutorials/tutorial_question_test|Apply the Question Test]] — hands-on: use the test to classify 10 real project files

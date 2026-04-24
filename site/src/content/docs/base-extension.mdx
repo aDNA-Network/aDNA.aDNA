@@ -1,16 +1,14 @@
 ---
 title: "Base/Extension — aDNA Patterns"
-description: "An open standard must be stable enough to build on, yet flexible enough to serve diverse domains. If every project modifies the core types, interoperabi..."
+description: "A shared standard has to be stable enough that teams can build on it, but flexible enough to handle work the authors never imagined. If every team chang..."
 doc_title: "Base/Extension"
 section: "patterns"
 order: 4
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-
 ## Problem
 
-An open standard must be stable enough to build on, yet flexible enough to serve diverse domains. If every project modifies the core types, interoperability collapses — no two projects speak the same language. If the core is frozen, projects can't represent domain-specific knowledge and the standard becomes irrelevant.
+A shared standard has to be stable enough that teams can build on it, but flexible enough to handle work the authors never imagined. If every team changes the core, nothing lines up across projects. If the core is locked down, teams can't capture the things their work actually needs — and the standard stops being useful.
 
 ## Solution
 
@@ -69,20 +67,8 @@ Each extension directory has an AGENTS.md and a template in `how/templates/`. Th
 
 **Triad misplacement**: Creating an extension type under the wrong leg (e.g., `community` under HOW instead of WHO). Apply the question test — "Who is involved?" → WHO.
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "Ontology", href: "/learn/concepts/ontology", description: "The entity type system that the base/extension rule partitions into stable core and domain growth." },
-  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "The governance model that keeps base types frozen so every aDNA project can speak the same vocabulary." },
-  { title: "Question Test", href: "/patterns/question-test", description: "The filing rule new extension types must satisfy before they earn a directory under a triad leg." },
-  { title: "FAIR Envelope", href: "/patterns/fair-envelope", description: "The metadata block extension types inherit for free — interoperability without re-negotiation." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "The Triad", href: "/learn/concepts/triad", description: "The three-leg partition every extension type must slot cleanly into." },
-  { title: "Agentic Literacy", href: "/learn/concepts/agentic-literacy", description: "Why the base/extension split matters for onboarding — new contributors learn base first, then extend." },
-  { title: "Extend the Ontology", href: "/learn/tutorials/extend-the-ontology", description: "Hands-on: walk through adding a custom entity type under the right triad leg." },
-  { title: "Apply the Question Test", href: "/learn/tutorials/question-test", description: "Practice the filing drill every extension decision rests on." }
-]} />
+- [Ontology](/learn/concepts/ontology) — the entity type system that base/extension partitions
+- [Open Standard](/learn/concepts/open-standard) — the governance model that keeps the base stable
+- [Question Test](/patterns/question-test) — how to determine which triad leg an extension belongs under

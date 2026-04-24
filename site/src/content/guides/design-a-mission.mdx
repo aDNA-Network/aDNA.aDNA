@@ -7,9 +7,6 @@ estimated_time: "25 minutes"
 date: 2026-04-14
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-
 ## What You'll Build
 
 A mission file that decomposes a multi-session task into claimable objectives. By the end, any agent can pick up your mission, understand what needs to be done, and start working on the next objective.
@@ -28,7 +25,7 @@ Start with what you're trying to accomplish. Write it as a single sentence:
 
 > "Write 8 pattern files documenting reusable aDNA architectural patterns."
 
-If the sentence describes work that can fit in one <GlossaryTooltip term="session" slug="session" definition="One stretch of work by an agent. Clear start, middle, and end — each session produces a file that records what happened and leaves an audit trail." /> (2-4 hours of agent work), it might not need a mission — just do it. If it spans multiple sessions or involves distinct deliverables, it's a mission.
+If the sentence describes work that can fit in one session (2-4 hours of agent work), it might not need a mission — just do it. If it spans multiple sessions or involves distinct deliverables, it's a mission.
 
 ### Step 2: Identify Deliverables
 
@@ -140,17 +137,6 @@ context_budget: "~12K tokens"
 
 ## Next Steps
 
-<CardGrid columns={2} cards={[
-  { title: "Build a Lattice", href: "/learn/tutorials/build-a-lattice", description: "Compose a workflow from modules — advanced." },
-  { title: "Convergence Model", href: "/learn/concepts/convergence", description: "Deeper understanding of how missions narrow scope into session-sized work." },
-  { title: "Context Recipe", href: "/patterns/context-recipe", description: "Pre-define the context assembly for common mission types." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "Token Selection", href: "/learn/concepts/token-selection", description: "The context-budget discipline that sizes each objective to fit inside a single session." },
-  { title: "Governance Files", href: "/learn/concepts/governance-files", description: "The files your mission will reference and write into — STATE.md, campaign docs, artifacts." },
-  { title: "Mission Decomposition", href: "/patterns/mission-decomposition", description: "The decomposition recipe behind this tutorial — decision rules, anti-patterns, objective shape." },
-  { title: "AGENTS.md Routing", href: "/patterns/agents-md", description: "The per-directory routing every objective will hit when claiming its working files." }
-]} />
+- [Build a Lattice](/learn/tutorials/build-a-lattice) — compose a workflow from modules (advanced)
+- [Convergence Model](/learn/concepts/convergence) — deeper understanding of how missions narrow scope
+- [Context Recipe](/patterns/context-recipe) — pre-define the context assembly for common mission types

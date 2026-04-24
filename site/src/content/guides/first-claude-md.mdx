@@ -7,12 +7,9 @@ estimated_time: "20 minutes"
 date: 2026-04-14
 ---
 
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-import CardGrid from '../../components/sections/CardGrid.astro';
-
 ## What You'll Build
 
-A working CLAUDE.md file — the master <GlossaryTooltip term="governance file" slug="governance-file" definition="A root-level markdown file that sets the rules, roles, and routing for an aDNA project. CLAUDE.md, AGENTS.md, MANIFEST.md, and STATE.md are the four canonical ones." /> that tells AI agents who they are, what rules to follow, and how your project is structured. By the end, an AI agent dropped into your project cold can orient and begin useful work.
+A working CLAUDE.md file — the master governance document that tells AI agents who they are, what rules to follow, and how your project is structured. By the end, an AI agent dropped into your project cold can orient and begin useful work.
 
 ## Prerequisites
 
@@ -125,16 +122,5 @@ Test your CLAUDE.md by answering these questions:
 
 ## Next Steps
 
-<CardGrid columns={2} cards={[
-  { title: "Apply the Question Test", href: "/learn/tutorials/question-test", description: "Practice sorting content into the triad." },
-  { title: "Token Selection", href: "/learn/concepts/token-selection", description: "How CLAUDE.md fits into an agent's token budget." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "Governance Files", href: "/learn/concepts/governance-files", description: "The five ALLCAPS files your CLAUDE.md is the first of — full set in context." },
-  { title: "The Triad", href: "/learn/concepts/triad", description: "The what/how/who partition your project map will reflect." },
-  { title: "AGENTS.md Routing", href: "/patterns/agents-md", description: "The per-directory routing that scales CLAUDE.md's orientation into every subdirectory." },
-  { title: "Dual-Audience Writing", href: "/patterns/dual-audience", description: "The writing rule your CLAUDE.md must satisfy — legible to agents and human reviewers in the same read." }
-]} />
+- [Apply the Question Test](/learn/tutorials/question-test) — practice sorting content into the triad
+- [Token Selection](/learn/concepts/token-selection) — how CLAUDE.md fits into the token budget

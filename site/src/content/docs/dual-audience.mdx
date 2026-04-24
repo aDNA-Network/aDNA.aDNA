@@ -6,8 +6,6 @@ section: "patterns"
 order: 3
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-
 ## Problem
 
 aDNA documentation must serve two audiences with different needs: developers seeking technical precision for implementation, and newcomers seeking plain-language understanding of what aDNA is and why it matters. Writing only for developers excludes newcomers. Writing only for newcomers frustrates developers who need spec references, field names, and decision tables.
@@ -62,20 +60,8 @@ The same layering appears in this file you're reading now. The Problem section i
 
 **Apologetic jargon**: "This might sound complicated, but..." Don't apologize. Give the metaphor first, then give the technical term. Confidence, not condescension.
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "Agentic Literacy", href: "/learn/concepts/agentic-literacy", description: "The literacy movement that dual-audience writing makes inclusive — why the second audience exists." },
-  { title: "Question Test", href: "/patterns/question-test", description: "Another pattern where plain-language simplicity serves developers and newcomers in the same file." },
-  { title: "Context Optimization", href: "/learn/concepts/context-optimization", description: "The token-budget discipline that forces dual-audience writers to earn every sentence." },
-  { title: "Governance Files", href: "/learn/concepts/governance-files", description: "The five ALLCAPS files that must be legible to both audiences within thirty seconds of arrival." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "The governance model that invites the second audience in — newcomers need a shared spec, not insider lore." },
-  { title: "Knowledge Graph", href: "/learn/concepts/knowledge-graph", description: "Links serve both audiences — developers follow them to detail, newcomers use them as a working glossary." },
-  { title: "Create Your First CLAUDE.md", href: "/learn/tutorials/first-claude-md", description: "Author a CLAUDE.md that scores for both audiences — opening metaphor plus technical precision, in one file." },
-  { title: "Write a Context File", href: "/learn/tutorials/write-a-context-file", description: "Apply the dual-audience rule inside a context file — every section legible to both readers." }
-]} />
+- [Dual-Audience Writing](/learn/concepts/dual-audience) — the concept that explains why this pattern exists
+- [Agentic Literacy](/learn/concepts/agentic-literacy) — the literacy movement that dual-audience writing makes inclusive
+- [Question Test](/patterns/question-test) — another pattern where simplicity serves dual audiences

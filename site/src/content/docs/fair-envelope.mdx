@@ -1,16 +1,14 @@
 ---
 title: "FAIR Envelope — aDNA Patterns"
-description: "A lattice, module, or dataset that lacks standardized metadata is a black box. Other projects can't discover it, can't assess whether it's trustworthy, ..."
+description: "A shareable object without a label is a black box — nobody outside your project can find it, tell if it's trustworthy, know who made it, or use it legal..."
 doc_title: "FAIR Envelope"
 section: "patterns"
 order: 6
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-
 ## Problem
 
-A lattice, module, or dataset that lacks standardized metadata is a black box. Other projects can't discover it, can't assess whether it's trustworthy, can't determine its licensing, and can't integrate it with their own knowledge. Without metadata, sharing is manual — someone emails a file and explains it verbally. That doesn't scale.
+A shareable object without a label is a black box — nobody outside your project can find it, tell if it's trustworthy, know who made it, or use it legally. This pattern applies to aDNA's shareable units (lattices, modules, datasets): without a standard metadata envelope, sharing them means emailing files around and explaining each one by hand. That doesn't scale.
 
 ## Solution
 
@@ -79,20 +77,8 @@ Four lines that make this lattice discoverable, legally clear, attributable, and
 
 **Mixing flat and nested**: Using `fair.findable.keywords` in a `.lattice.yaml` file (should be flat `fair.keywords`) or `fair.keywords` in vault frontmatter (should be nested `fair.findable.keywords`). Pick the format for the file type and be consistent.
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "FAIR Metadata", href: "/learn/concepts/fair-metadata", description: "The concept behind the envelope — why two required fields unlock four downstream properties." },
-  { title: "Federation Readiness", href: "/patterns/federation-readiness", description: "The 6-point checklist that includes the FAIR envelope as its licensing and findability prerequisite." },
-  { title: "Context Commons", href: "/learn/concepts/context-commons", description: "The community-sharing vision that the envelope turns from ambition into an enforceable contract." },
-  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "The governance model that keeps the envelope's field names stable across every aDNA instance." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "Lattice Composition", href: "/learn/concepts/lattice-composition", description: "The composition model the envelope makes safe — cross-project reuse with trust intact." },
-  { title: "Ontology", href: "/learn/concepts/ontology", description: "The entity types — module, dataset, lattice — the envelope wraps with required metadata." },
-  { title: "Build a Lattice", href: "/learn/tutorials/build-a-lattice", description: "Hands-on: author a lattice whose FAIR block passes the validator at commit time." },
-  { title: "Federate a Vault", href: "/learn/tutorials/federate-a-vault", description: "Watch the envelope earn its keep — the metadata block that turns export into an enforceable contract." }
-]} />
+- [FAIR Metadata](/learn/concepts/fair-metadata) — the concept explaining why FAIR matters and how it works
+- [Federation Readiness](/patterns/federation-readiness) — the broader checklist that includes FAIR as a prerequisite
+- [Context Commons](/learn/concepts/context-commons) — the community sharing vision FAIR enables

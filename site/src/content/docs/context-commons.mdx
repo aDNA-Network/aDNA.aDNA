@@ -1,17 +1,14 @@
 ---
 title: "Context Commons — aDNA Concepts"
-description: "The Context Commons is the vision of a community-maintained library of context files, lattices, and patterns that anyone can use, improve, and share. Bu..."
+description: "Think of the Context Commons as a shared library of \"how to teach an AI assistant your project\" — like GitHub, but for agent knowledge instead of code. ..."
 doc_title: "Context Commons"
 section: "concepts"
 order: 12
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-
 ## Overview
 
-The Context Commons is the vision of a community-maintained library of context files, lattices, and patterns that anyone can use, improve, and share. Built on aDNA's federation protocol and FAIR metadata, it transforms project-local knowledge into reusable public goods — curated context that helps agents across many projects, not just one.
+Think of the Context Commons as a shared library of "how to teach an AI assistant your project" — like GitHub, but for agent knowledge instead of code. Anyone can publish what they've learned, and anyone can pull what others have validated. The rest of this concept explains how aDNA's federation protocol and FAIR metadata turn that idea into working infrastructure — curated context that helps agents across many projects, not just one.
 
 ## Why This Matters
 
@@ -88,30 +85,19 @@ Each step adds value. The original creator does the hardest work — distilling 
 
 This vault contains the seeds of a Context Commons:
 
-**The <GlossaryTooltip term="context library" slug="context-library" definition="The structured knowledge store in what/context/ — organized by topic with subtopics and token estimates so agents load only what they need." /> itself**: `what/context/` contains 5 topics, 27 subtopics, and ~75K tokens of curated knowledge. This library was created for this vault but is designed to be sharable: every file has FAIR-aligned metadata (sources, tags, quality scores), token estimates, and self-contained content. It's a proto-commons.
+**The context library itself**: `what/context/` contains 5 topics, 27 subtopics, and ~75K tokens of curated knowledge. This library was created for this vault but is designed to be sharable: every file has FAIR-aligned metadata (sources, tags, quality scores), token estimates, and self-contained content. It's a proto-commons.
 
 **Community infrastructure**: `who/community/` is scaffolded for community roles and contribution paths. When populated, it will define how contributors propose, review, and maintain shared resources.
 
-**FAIR metadata everywhere**: Every object in this vault carries the metadata envelope that makes commons participation possible — `keywords`, `license`, `provenance`, `sources` — declared in each file's <GlossaryTooltip term="frontmatter" slug="frontmatter" definition="The YAML metadata block at the top of every aDNA file, wrapped in --- fences. Records type, dates, editor, tags — the file's ID card." />. The infrastructure is in place; the community scales it.
+**FAIR metadata everywhere**: Every object in this vault carries the metadata envelope that makes commons participation possible — `keywords`, `license`, `provenance`, `sources`. The infrastructure is in place; the community scales it.
 
 **The base template**: The upstream `adna/` repository (github.com/LatticeProtocol/Agentic-DNA) is itself a commons contribution — a shared, forkable starting point that reduces the cost of creating new aDNA projects from hours to minutes. Every `.aDNA/` project in the workspace was forked from this commons resource.
 
 **Context recipes as curated collections**: `what/context/context_recipes.md` pre-defines which context subtopics to load together for common tasks. These recipes are a form of commons curation — someone figured out the right combination so you don't have to.
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "FAIR Metadata", href: "/learn/concepts/fair-metadata", description: "The metadata standard that makes commons resources findable, trustworthy, and reusable." },
-  { title: "Agentic Literacy", href: "/learn/concepts/agentic-literacy", description: "The literacy movement the commons accelerates by providing real examples." },
-  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "The open governance model that enables a commons to exist without vendor lock-in." },
-  { title: "Lattice Composition", href: "/learn/concepts/lattice-composition", description: "The composability that makes commons lattices useful in new projects." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "FAIR Envelope", href: "/patterns/fair-envelope", description: "The metadata block every commons resource needs before strangers can trust it — license and keywords minimum." },
-  { title: "Federation Readiness", href: "/patterns/federation-readiness", description: "The six checks that turn a local lattice into a commons-shareable artifact." },
-  { title: "Federate a Vault", href: "/learn/tutorials/federate-a-vault", description: "Walk through exporting, importing, and composing across aDNA instances — commons mechanics, end to end." },
-  { title: "Build a Lattice", href: "/learn/tutorials/build-a-lattice", description: "Build a FAIR-annotated lattice from scratch — the atomic contribution unit a commons depends on." }
-]} />
+- [FAIR Metadata](/learn/concepts/fair-metadata) — the metadata standard that makes commons resources findable, trustworthy, and reusable
+- [Agentic Literacy](/learn/concepts/agentic-literacy) — the literacy movement the commons accelerates by providing real examples
+- [Open Standard](/learn/concepts/open-standard) — the open governance model that enables a commons to exist without vendor lock-in
+- [Lattice Composition](/learn/concepts/lattice-composition) — the composability that makes commons lattices useful in new projects

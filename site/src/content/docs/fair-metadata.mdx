@@ -1,17 +1,14 @@
 ---
 title: "FAIR Metadata — aDNA Concepts"
-description: "FAIR metadata is aDNA's system for ensuring that every knowledge object — modules, datasets, lattices — is Findable, Accessible, Interoperable, and Reus..."
+description: "FAIR is a simple four-question test: can someone else Find your work, Access it, Interoperate with it, and Reuse it? aDNA bakes that test into every pie..."
 doc_title: "FAIR Metadata"
 section: "concepts"
 order: 13
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-
 ## Overview
 
-FAIR metadata is aDNA's system for ensuring that every knowledge object — modules, datasets, lattices — is Findable, Accessible, Interoperable, and Reusable. Borrowed from the scientific data community and adapted for AI-native knowledge architectures, FAIR metadata is the envelope that makes sharing possible: without it, a lattice is a local file; with it, the lattice is a discoverable, trustworthy, composable unit.
+FAIR is a simple four-question test: can someone else **F**ind your work, **A**ccess it, **I**nteroperate with it, and **R**euse it? aDNA bakes that test into every piece of project knowledge — from individual tools to whole workflows — by wrapping them in a short metadata envelope. Without it, a piece of work stays trapped inside one project; with it, the same piece becomes discoverable, trustworthy, and composable by anyone who speaks the standard.
 
 ## Why This Matters
 
@@ -89,33 +86,15 @@ FAIR metadata is visible throughout this vault:
 
 **Lattice YAML files**: Open any `.lattice.yaml` in `what/lattices/examples/` — every one has a `fair:` block with `license`, `keywords`, `creators`, and `provenance`. This is flat FAIR in its natural habitat.
 
-**Context file frontmatter**: Look at the <GlossaryTooltip term="frontmatter" slug="frontmatter" definition="The YAML metadata block at the top of every aDNA file, wrapped in --- fences. Records type, dates, editor, tags — the file's ID card." /> of any context file — e.g., `what/context/adna_core/context_adna_core_paradigm_overview.md`. The `sources` field is provenance. The `tags` field serves the findability role that `keywords` serves in YAML objects.
+**Context file frontmatter**: Look at the frontmatter of any context file — e.g., `what/context/adna_core/context_adna_core_paradigm_overview.md`. The `sources` field is provenance. The `tags` field serves the findability role that `keywords` serves in YAML objects.
 
 **Federation examples**: The `docking_assessment` example lattice at `what/lattices/examples/` carries both `fair` and `federation` blocks — showing how FAIR metadata enables a lattice to move from one project to another with trust intact.
 
 **The FAIR mapping guide**: The complete interconversion specification between flat and nested FAIR lives at `what/context/adna_core/context_adna_core_fair_mapping.md` — itself a context file demonstrating the optimization principles described in [Context Optimization](/learn/concepts/context-optimization).
 
-## Next Steps
+## Related
 
-<CardGrid columns={2} cards={[
-  { title: "Lattice Composition", href: "/learn/concepts/lattice-composition", description: "The workflow composition that FAIR metadata makes shareable and trustworthy." },
-  { title: "Ontology", href: "/learn/concepts/ontology", description: "The entity types — module, dataset, lattice — that carry FAIR envelopes." },
-  { title: "Context Commons", href: "/learn/concepts/context-commons", description: "The vision of community-shared knowledge that FAIR principles enable." },
-  { title: "Open Standard", href: "/learn/concepts/open-standard", description: "How FAIR metadata fits into aDNA's broader open governance model." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "FAIR Envelope", href: "/patterns/fair-envelope", description: "The concrete YAML block — two required fields — that materializes the FAIR principles into real files." },
-  { title: "Federation Readiness", href: "/patterns/federation-readiness", description: "The checklist that leans on FAIR metadata as its licensing and findability gate." },
-  { title: "Build a Lattice", href: "/learn/tutorials/build-a-lattice", description: "Hands-on: author a FAIR-annotated lattice from scratch — `keywords` and `license` enforced at validate time." },
-  { title: "Federate a Vault", href: "/learn/tutorials/federate-a-vault", description: "Export, import, and compose lattices across instances — FAIR metadata is the trust boundary between them." }
-]} />
-
-## From the Reference
-
-<CardGrid columns={2} cards={[
-  { title: "Quality Rubric", href: "/reference/quality-rubric", description: "The 6-axis rubric used to score aDNA knowledge objects — including how FAIR completeness maps to coverage and reproducibility scores." },
-  { title: "Specification", href: "/reference/specification", description: "Normative aDNA specification — §7 defines the type vocabulary; §11 defines federation readiness checks including FAIR requirements." }
-]} />
+- [Lattice Composition](/learn/concepts/lattice-composition) — the workflow composition that FAIR metadata makes shareable and trustworthy
+- [Ontology](/learn/concepts/ontology) — the entity types (module, dataset, lattice) that carry FAIR envelopes
+- [Context Commons](/learn/concepts/context-commons) — the vision of community-shared knowledge that FAIR principles enable
+- [Open Standard](/learn/concepts/open-standard) — how FAIR metadata fits into aDNA's broader open governance model

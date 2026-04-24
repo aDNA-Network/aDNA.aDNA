@@ -7,12 +7,9 @@ estimated_time: "25 minutes"
 date: 2026-04-14
 ---
 
-import CardGrid from '../../components/sections/CardGrid.astro';
-import GlossaryTooltip from '../../components/sections/GlossaryTooltip.astro';
-
 ## What You'll Build
 
-A new entity type for your project — complete with a directory, <GlossaryTooltip term="AGENTS.md" slug="agents-md" definition="A per-directory guide written for agents — purpose, key files, conventions. A signpost at the entrance to each room in the vault." />, template, and your first instance file. By the end, your vault speaks your domain's language.
+A new entity type for your project — complete with a directory, AGENTS.md, template, and your first instance file. By the end, your vault speaks your domain's language.
 
 ## Prerequisites
 
@@ -37,7 +34,7 @@ Ask: "Is a protocol about WHAT we know, HOW we work, or WHO is involved?"
 
 A protocol documents knowledge about how to run an experiment. But its *primary purpose* is to capture knowledge — the procedure exists as reference material. That puts it under `what/`.
 
-(If the protocol were an executable workflow an agent runs, it would be `how/`. The <GlossaryTooltip term="question test" slug="question-test" definition="The three-question filing rule: 'Is this about what we know, how we work, or who is involved?' Routes any new file to the correct triad leg." /> resolves ambiguity by focusing on primary purpose.)
+(If the protocol were an executable workflow an agent runs, it would be `how/`. The question test resolves ambiguity by focusing on primary purpose.)
 
 ### Step 3: Create the Directory
 
@@ -45,7 +42,7 @@ A protocol documents knowledge about how to run an experiment. But its *primary 
 mkdir -p what/protocols
 ```
 
-Extension types always live as a subdirectory under their <GlossaryTooltip term="triad" slug="triad" definition="The three-folder structure at every aDNA project's root: what/, how/, who/. Every file fits in exactly one — the universal classifier." /> leg. Never create a new top-level directory — the triad has exactly three legs.
+Extension types always live as a subdirectory under their triad leg. Never create a new top-level directory — the triad has exactly three legs.
 
 ### Step 4: Write the AGENTS.md
 
@@ -140,16 +137,5 @@ Check your extension against the [base/extension](/patterns/base-extension) rule
 
 ## Next Steps
 
-<CardGrid columns={2} cards={[
-  { title: "Write a Context File", href: "/learn/tutorials/write-a-context-file", description: "Create curated knowledge for your context library." },
-  { title: "Context Optimization", href: "/learn/concepts/context-optimization", description: "Make your context files token-efficient." }
-]} />
-
-## Related Elsewhere
-
-<CardGrid columns={2} cards={[
-  { title: "Ontology", href: "/learn/concepts/ontology", description: "The base 14 types your extension will slot alongside without modifying." },
-  { title: "The Triad", href: "/learn/concepts/triad", description: "The three-leg partition your new type's directory must land on." },
-  { title: "Base/Extension", href: "/patterns/base-extension", description: "The stability-plus-freedom rule that keeps your extension from breaking the open standard." },
-  { title: "The Question Test", href: "/patterns/question-test", description: "The filing drill that decides which leg your extension's directory belongs under." }
-]} />
+- [Write a Context File](/learn/tutorials/write-a-context-file) — create curated knowledge for your context library
+- [Context Optimization](/learn/concepts/context-optimization) — make your context files token-efficient

@@ -14,7 +14,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 7 active — D6 complete (cycles 51-60), D7 queued behind phase gate.** Phases 0-6 complete (89 vault content files + 117-page live site). Phase 7 executing: 100-cycle III loop across 10 themed decadals. D1→4.35. D2→4.70. D3→4.83. D4→4.91. D5→4.94. D6 (Performance & Loading, 2026-04-24) closed →**4.96** (+0.02). **D6 changes**: JetBrains Mono `font-display:optional`, hero AVIF format (110kB→10kB at 480px, 91% reduction), Astro prefetch (nav+PrevNextNav+CTAs), font preloads (Inter 400 + Space Grotesk 400+700 latin), gate-10-perf.spec.ts (5 tests). Mobile Lighthouse 98-100 across all pages (target ≥90 exceeded by 8 pts). Delight 4.71→**4.81** (+0.10). D6 AAR filed; M30 completed. D7 (SEO & Discoverability, cycles 61-70) opens on user command — **phase gate pending**.
+**Phase 7 active — D7 complete (cycles 61-70), D8 queued behind phase gate.** Phases 0-6 complete (89 vault content files + 117-page live site). Phase 7 executing: 100-cycle III loop across 10 themed decadals. D1→4.35. D2→4.70. D3→4.83. D4→4.91. D5→4.94. D6→**4.96** (+0.02). D7 (SEO & Discoverability, 2026-04-24) closed →**4.97** (+0.01). **D7 changes**: JSON-LD coverage 55%→97% (16 missing index pages + HowTo for tutorials + BreadcrumbList via @graph bundle), heading hierarchy 45 violations→0 (CardGrid `<h3>`→`<p>` + 33 Pathway-2 MDX H1 strips), concept→tutorial cross-links (6 added), Patterns a11y 98→100. New `seo.ts` builders: `buildCollectionPageJsonLD`, `buildHowToJsonLD`, `buildBreadcrumbListJsonLD`. Gate-6-meta updated for @graph shape. Playwright 47/47. D7 AAR filed; M31 completed. D8 (Interaction Depth, cycles 71-80) opens on user command — **phase gate pending**.
 
 ## Active Campaign
 
@@ -30,7 +30,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 | Phase 4.5: III Site Improvements | **Complete** | M20-M23 | Hero redesign, 37 new pages, components, OG images |
 | Phase 5: The How | **Complete** | M16-M18 | 11/11 (3 publishing, 4 workshops, 4 lattice YAMLs) |
 | Phase 6: Website v2 | **Complete** | M19 | How section live: 11 new pages + 4 index pages |
-| Phase 7: 100-Cycle III Loop | **Active** | M24-M35 | D1-D6 complete (cycles 1-60, ranker 4.96); D7 pending phase gate (cycles 61-70) |
+| Phase 7: 100-Cycle III Loop | **Active** | M24-M35 | D1-D7 complete (cycles 1-70, ranker 4.97); D8 pending phase gate (cycles 71-80) |
 
 ## Phase 7 Progress
 
@@ -43,7 +43,9 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 - **M30: D6 Performance & Loading** — **Complete** (cycles 51-60). Ranker 4.94→**4.96** (Δ +0.02). Delight 4.71→4.81 (+0.10). Mobile LH 98-100. AAR: [aar_phase7_d6.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d6.md).
 
-- **M31: D7 SEO & Discoverability** — **Pending** (cycles 61-70). **Phase gate: awaiting user command to open.** Priority queue seeded from D6 AAR: structured data JSON-LD, heading hierarchy, internal linking, sitemap completeness, meta descriptions.
+- **M31: D7 SEO & Discoverability** — **Complete** (cycles 61-70, 2026-04-24). Ranker 4.96→**4.97** (Δ +0.01). JSON-LD 55%→97%, heading hierarchy 45 violations→0, Patterns a11y 98→100, 6 concept→tutorial cross-links. AAR: [aar_phase7_d7.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d7.md).
+
+- **M32: D8 Interaction Depth** — **Pending** (cycles 71-80). **Phase gate: awaiting user command to open.** Priority queue: replace "Demo coming soon" placeholders, add interactive code examples to tutorials, embed architecture diagrams on concept pages, "Try this in Claude Code" CTAs, progressive disclosure for glossary.
 
 ### Persona Ranker Summary
 
@@ -54,9 +56,10 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 | D3 (Navigation & IA) | 4.83 | +0.13 |
 | D4 (Visual Identity) | 4.91 | +0.08 |
 | D5 (Mobile Experience) | 4.94 | +0.03 |
-| D6 (Performance & Loading) | **4.96** | **+0.02** |
+| D6 (Performance & Loading) | 4.96 | +0.02 |
+| D7 (SEO & Discoverability) | **4.97** | **+0.01** |
 
-**D6 dimension breakdown**: Findability 4.98 (0) · Comprehension 5.00 (0) · Actionability 4.97 (0) · Trust 5.00 (0) · Relevance 5.00 (0) · Delight 4.81 (+0.10)
+**D7 dimension breakdown**: Findability 4.99 (+0.01) · Comprehension 5.00 (0) · Actionability 4.98 (+0.01) · Trust 5.00 (0) · Relevance 5.00 (0) · Delight 4.83 (+0.02)
 
 ## What's Working
 
@@ -75,6 +78,10 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 - Hero banner: AVIF format (110kB→10kB at 480px, 91% compression), WebP fallback
 - Prefetch: hover strategy on all nav links, PrevNextNav, and homepage CTAs
 - Font preloads: Inter 400 + Space Grotesk 400+700 latin in every page `<head>`
+- JSON-LD structured data: 97% coverage (35/36 Astro pages) — CollectionPage, TechArticle, HowTo, BreadcrumbList, WebPage, WebSite schemas
+- Heading hierarchy: 0 violations (CardGrid `<h3>`→`<p>`, 33 Pathway-2 MDX files H1-stripped)
+- Patterns a11y: 100/100 Lighthouse (was 98 pre-D7)
+- Concept→tutorial cross-links: 6 targeted cross-links added (concepts and patterns link to their hands-on tutorials)
 
 ## Active Blockers
 
@@ -82,19 +89,23 @@ None.
 
 ## Next Steps
 
-1. **D7 phase gate** — user opens D7 (SEO & Discoverability, cycles 61-70). Priority queue from D6 AAR: JSON-LD structured data for concept/tutorial pages, heading hierarchy audit, internal linking, sitemap completeness, meta descriptions.
-2. **Patterns a11y 98** — investigate pre-existing accessibility gap on `/patterns` (D6 verification found this; not a D6 regression). File in D7 queue.
-3. **D8-D10** — Interaction Depth (Reviewer Lens Pass mandatory), Narrative Onboarding (Reviewer Lens Pass mandatory), Hardening & Closeout.
+1. **D8 phase gate** — user opens D8 (Interaction Depth, cycles 71-80). Priority queue from D7 AAR: replace media placeholders, add interactive code examples, embed architecture diagrams, "Try this in Claude Code" CTAs, progressive disclosure for glossary.
+2. **Verification tags (user action)** — register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add `<meta name="google-site-verification">` + `<meta name="msvalidate.01">` to `SEOHead.astro`.
+3. **Deploy D7 to Vercel** — `cd site && vercel --prod` to push D7 changes to production.
+4. **D9-D10** — Narrative Onboarding (Reviewer Lens Pass mandatory), Hardening & Closeout.
 
 ## Pending Manual Actions
 
 - **GitHub social preview**: Upload `site/public/images/og-default.png` at github.com/LatticeProtocol/aDNA.aDNA > Settings > Social preview
 - **Vercel Git integration**: Connect repo at vercel.com > adna-docs > Settings > Git for auto-deploy (currently manual via `vercel --prod`)
+- **Vercel deploy (D7)**: Run `cd site && vercel --prod` to push D7 changes to production
+- **Google Search Console**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="google-site-verification" content="...">` to `SEOHead.astro`
+- **Bing Webmaster Tools**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="msvalidate.01" content="...">` to `SEOHead.astro`
 
-## Last Session (2026-04-24 — D6 complete)
+## Last Session (2026-04-24 — D7 complete)
 
-D6 closed at ranker **4.96** (+0.02). All 10 cycles (51-60) passed build and Playwright gates (47/47). Key D6 changes: JetBrains Mono `font-display:optional` override (code font FOUT eliminated), hero `<Picture>` with AVIF format (110kB→10kB at 480px, 91% reduction), Astro prefetch enabled (hover strategy on nav+PrevNextNav+CTAs), font preloads for Inter 400 + Space Grotesk 400+700 latin, gate-10-perf.spec.ts added (5 performance invariant tests). Mobile Lighthouse Performance 98-100 across all tested pages (target ≥90, exceeded by 8 pts). Delight 4.71→4.81 (+0.10, Startup biggest beneficiary at +0.15). M30 marked completed. D7 phase gate pending.
+D7 closed at ranker **4.97** (+0.01). All 10 cycles (61-70) passed build and Playwright gates (47/47). Key D7 changes: JSON-LD coverage raised from 55% to 97% — CollectionPage on 16 missing index pages, HowTo on 5 tutorial pages, BreadcrumbList on 12 slug pages via @graph bundle pattern; heading hierarchy 45 violations → 0 (CardGrid `<h3>`→`<p>`, 33 Pathway-2 MDX H1 strips); Patterns a11y 98→100; 6 concept→tutorial cross-links added. New `seo.ts` builders: `buildCollectionPageJsonLD`, `buildHowToJsonLD`, `buildBreadcrumbListJsonLD`. SEOHead supports @graph bundle (array of schemas → one `<script>` tag). Gate-6-meta updated to accept both `@type` and `@graph` JSON-LD shapes. M31 marked completed. D8 phase gate pending.
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. D6 complete — ranker 4.96. **Open D7: SEO & Discoverability (cycles 61-70).** Priority queue from D6 AAR (`how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d6.md`): (1) JSON-LD structured data for concept/tutorial pages (`TechArticle` or `HowTo` type), (2) Heading hierarchy audit — ensure H1→H2→H3 nesting on all 117 pages, (3) Internal linking density — add cross-links between related concept/pattern pages, (4) Sitemap completeness — verify all 117 pages in sitemap-index.xml, (5) Meta description audit. Investigate Patterns a11y 98 (pre-existing gap found in D6). Create mission file M31 and begin cycle 61.
+> Resume Operation Rosetta in `aDNA.aDNA/`. D7 complete — ranker 4.97. **Open D8: Interaction Depth (cycles 71-80).** Priority queue from D7 AAR (`how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d7.md`): (1) Replace "Demo coming soon" media placeholders with real content — this is the primary Delight and Actionability ceiling for Educator persona, (2) Add interactive code examples or clipboard-copy to tutorial pages, (3) Embed architecture diagram (SVG/mermaid) on concept pages for visual learners, (4) Add "Try this in Claude Code" deep-link CTAs at tutorial completion, (5) Progressive disclosure for glossary entries. Before starting: deploy D7 to Vercel (`cd site && vercel --prod`). Create mission file M32 and begin cycle 71. Remember to add a gate before implementing any D8 feature (track placeholder count or demo count so progress is measurable).

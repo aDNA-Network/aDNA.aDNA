@@ -106,3 +106,4 @@ This vault's context library (`what/context/`) is a working example of context o
 - [[what/concepts/concept_token_selection|Token Selection]] — the mechanisms (AGENTS.md routing, recipes, budgets) that implement context optimization decisions
 - [[what/concepts/concept_convergence|Convergence Model]] — the structural principle that ensures optimization compounds across campaign → mission → objective
 - [[what/concepts/concept_knowledge_graph|Knowledge Graph]] — the connected structure that optimization helps agents traverse efficiently
+- [[what/tutorials/tutorial_write_a_context_file|Write a Context File]] — hands-on: author a context file using optimization principles
