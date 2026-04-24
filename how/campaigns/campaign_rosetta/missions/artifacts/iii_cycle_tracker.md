@@ -1,7 +1,7 @@
 ---
 type: artifact
 created: 2026-04-15
-updated: 2026-04-22
+updated: 2026-04-24
 status: active
 last_edited_by: agent_rosetta
 tags: [artifact, iii, cycle-tracker, phase-7]
@@ -18,7 +18,7 @@ Structured log for all 100 improvement cycles across 10 decadals. Each cycle app
 | D1 | 1-10 | Accessibility Perfection | complete | [aar_phase7_d1.md](aar_phase7_d1.md) |
 | D2 | 11-20 | Content Clarity Sprint | complete | [aar_phase7_d2.md](aar_phase7_d2.md) |
 | D3 | 21-30 | Navigation & IA | **complete** | [aar_phase7_d3.md](aar_phase7_d3.md) — Ranker: 4.83 (+0.13 from 4.70 baseline) |
-| D4 | 31-40 | Visual Identity & First-Contact | pending | — |
+| D4 | 31-40 | Visual Identity & First-Contact | **in_progress** | — |
 | D5 | 41-50 | Mobile Experience | pending | — |
 | D6 | 51-60 | Performance & Loading | pending | — |
 | D7 | 61-70 | SEO & Discoverability | pending | — |
@@ -988,5 +988,59 @@ Every page at the ceiling — both new pages hit 100 Perf out of the gate, contr
 
 **AAR Artifact**: [aar_phase7_d3.md](aar_phase7_d3.md)
 **D4 Priority Queue seeded**: Yes — nav collapse (F-09), emoji→typographic (F-05), section collapse (F-07), trust strip (F-10), typography refinement. Reviewer Lens Pass mandatory for D4 (Design Critic, Accessibility Auditor, Content Strategist).
+
+---
+
+## D4 — Visual Identity & First-Contact (Cycles 31-40)
+
+### Cycle 31 — 2026-04-24
+
+**Decadal**: D4 (Visual Identity & First-Contact)
+**Target**: F-09 — Nav collapse: 7 → 5 items
+
+**Changes**:
+- `site/src/components/common/Header.astro`: Removed Glossary and How from navLinks. Remaining 5 items: Learn, Patterns, Use Cases, Community, Reference. Reference now serves as the hub for glossary and how-to content discoverable from its index page.
+
+**Validation**: PASS — Build: 117 pages, 2.32s, 0 errors. Playwright: 30/30.
+**Carry-Forward**: Glossary and How pages remain fully functional; only removed from primary nav. Consider adding "Glossary" and "How" links on the Reference index page in a later cycle.
+
+---
+
+### Cycle 32 — 2026-04-24
+
+**Decadal**: D4 (Visual Identity & First-Contact)
+**Target**: F-05 — Emoji → typographic marks (homepage)
+
+**Changes**:
+- `site/src/pages/index.astro`: Removed `icon` field from all `steps` data and `personas` data arrays. Removed `<div class="step-icon">` render and `.step-icon` CSS. Removed `<span class="persona-icon">` render and `.persona-icon` CSS. Removed context-engineering section (see Cycle 33) which carried all remaining homepage emoji. Homepage now emoji-free. Step visual hierarchy carried entirely by the numbered `.step-number` element.
+
+**Validation**: PASS — Build: 117 pages, 2.32s, 0 errors. Playwright: 30/30.
+**Carry-Forward**: MDX content pages may still contain incidental emoji in prose — sweep deferred to D9 (Narrative Onboarding).
+
+---
+
+### Cycle 33 — 2026-04-24
+
+**Decadal**: D4 (Visual Identity & First-Contact)
+**Target**: F-07 — Homepage section collapse: 7 → 4
+
+**Changes**:
+- `site/src/pages/index.astro`: Removed "Operational Ontology" section (WHO/WHAT/HOW grid). Removed "Context Engineering" section (4 context cards). Merged "Features" section into "How it Works" as a `.feature-strip` (3-col inline grid: Agent-native, Human-readable, Composable) above the steps grid. Added `.how-footer` link row at bottom of How it Works pointing to Convergence Model, Concepts & Tutorials, and Reference Specification. Final 4-section layout: Hero → How it Works → Who Uses aDNA → The Standard.
+
+**Validation**: PASS — Build: 117 pages, 2.32s, 0 errors. Playwright: 30/30.
+**Carry-Forward**: Ontology and Context Engineering content is still fully accessible via /learn and /reference; they are not lost, just de-surfaced from the homepage to reduce cognitive load.
+
+---
+
+### Cycle 34 — 2026-04-24
+
+**Decadal**: D4 (Visual Identity & First-Contact)
+**Target**: F-10 — Trust strip below hero CTAs
+
+**Changes**:
+- `site/src/pages/index.astro`: Moved stats row (14 Entity Types, 3 Conformance Levels, v2.2, MIT) from "The Standard" section to a `.trust-strip` div immediately below `.hero-actions`. Styled as a compact horizontal strip separated from CTAs by a thin border-top line. Smaller font (text-xl for value, text-xs for label) vs the original text-3xl stat values — reads as proof point, not a feature section. "The Standard" section now contains only the title, subtitle, and two CTA buttons — clean closing section.
+
+**Validation**: PASS — Build: 117 pages, 2.32s, 0 errors. Playwright: 30/30.
+**Carry-Forward**: Consider adding GitHub star count or site page count to trust strip in D9 when social proof data is available.
 
 **Validation**: PASS — Build: 117 pages, 2.28s, 0 errors. Playwright: 30/30. All 5 persona ranker dimensions ≥ 4.0 (gate: ≥ 4.0). Overall 4.83 > baseline 4.70. M27 marked completed. STATE.md updated. D4 queued behind phase gate.
