@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { buildWebSiteJsonLD } from '../utils/seo';
 import bannerImage from '../assets/banner.jpg';
@@ -69,10 +69,11 @@ const stats = [
   <!-- Hero -->
   <section class="hero">
     <div class="hero-banner">
-      <Image
+      <Picture
         src={bannerImage}
         alt="aDNA — three glowing DNA helices representing the who/what/how triad, rising from a workspace of monitors and instruments"
         widths={[480, 768, 964]}
+        formats={["avif", "webp"]}
         sizes="(max-width: 768px) calc(100vw - 3rem), 56rem"
         class="hero-banner-img"
         loading="eager"
@@ -81,8 +82,8 @@ const stats = [
     <p class="hero-lead">aDNA is the genome of your project — structured knowledge every AI agent can navigate without being re-briefed from scratch.</p>
     <p class="hero-subtitle">An open standard: a folder layout, metadata spec, and governance files so agents land oriented every session.</p>
     <div class="hero-actions">
-      <a href="/get-started" class="btn btn-primary">Get Started</a>
-      <a href="/learn/what-is-adna" class="btn btn-secondary">What is aDNA?</a>
+      <a href="/get-started" class="btn btn-primary" data-astro-prefetch>Get Started</a>
+      <a href="/learn/what-is-adna" class="btn btn-secondary" data-astro-prefetch>What is aDNA?</a>
     </div>
     <div class="trust-strip">
       {stats.map((stat) => (
@@ -162,7 +163,7 @@ const stats = [
         <span class="meta-tag">14 Entity Types</span>
       </div>
       <div class="standard-cta">
-        <a href="/reference/specification" class="btn btn-primary">Read the Specification</a>
+        <a href="/reference/specification" class="btn btn-primary" data-astro-prefetch>Read the Specification</a>
         <a href="https://github.com/LatticeProtocol/Agentic-DNA" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </div>

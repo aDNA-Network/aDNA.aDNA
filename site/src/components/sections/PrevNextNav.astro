@@ -10,13 +10,13 @@ const { prev, next } = Astro.props;
 {(prev || next) && (
   <nav class="prev-next-nav" aria-label="Page navigation">
     {prev ? (
-      <a href={prev.href} class="prev-next-link prev">
+      <a href={prev.href} class="prev-next-link prev" data-astro-prefetch>
         <span class="prev-next-direction">&larr; Previous</span>
         <span class="prev-next-label">{prev.label}</span>
       </a>
     ) : <div />}
     {next ? (
-      <a href={next.href} class="prev-next-link next">
+      <a href={next.href} class="prev-next-link next" data-astro-prefetch>
         <span class="prev-next-direction">Next &rarr;</span>
         <span class="prev-next-label">{next.label}</span>
       </a>

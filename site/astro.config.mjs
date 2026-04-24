@@ -9,6 +9,10 @@ export default defineConfig({
   output: 'static',
   adapter: vercel(),
   integrations: [mdx(), sitemap()],
+  prefetch: {
+    prefetchAll: false,
+    defaultStrategy: 'hover',
+  },
   vite: {
     plugins: [tailwindcss()],
   },

@@ -10,6 +10,9 @@ import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
 import '@fontsource-variable/jetbrains-mono';
 import '../styles/global.css';
+import interLatinFont from '@fontsource/inter/files/inter-latin-400-normal.woff2';
+import spaceGroteskLatinFont from '@fontsource/space-grotesk/files/space-grotesk-latin-400-normal.woff2';
+import spaceGroteskLatin700Font from '@fontsource/space-grotesk/files/space-grotesk-latin-700-normal.woff2';
 
 interface Props {
   title: string;
@@ -39,6 +42,11 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Preload critical above-fold fonts (latin subsets only) -->
+    <link rel="preload" href={interLatinFont} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={spaceGroteskLatinFont} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={spaceGroteskLatin700Font} as="font" type="font/woff2" crossorigin />
 
     <SEOHead
       title={title}
