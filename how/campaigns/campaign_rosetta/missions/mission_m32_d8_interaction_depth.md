@@ -28,9 +28,9 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 
 | ID | Cycle | Item | Status |
 |----|-------|------|--------|
-| I-00 | 71 | Gate measurement: count media placeholders + demo placeholder elements; establish baseline | planned |
-| I-01 | 72 | Replace top 3 highest-traffic "Demo coming soon" MediaPlaceholder instances with real content (GIF, screenshot, or inline walkthrough) | planned |
-| I-02 | 73 | Replace remaining MediaPlaceholder instances; audit all tutorial pages for static placeholders | planned |
+| I-00 | 71 | Gate measurement: count media placeholders + demo placeholder elements; establish baseline | **done** |
+| I-01 | 72 | Replace top 3 highest-traffic "Demo coming soon" MediaPlaceholder instances with real content (GIF, screenshot, or inline walkthrough) | **done** |
+| I-02 | 73 | Replace remaining MediaPlaceholder instances; audit all tutorial pages for static placeholders | **done** |
 | I-03 | 74 | Clipboard-copy button on all CodeBlock instances across tutorial pages | planned |
 | I-04 | 75 | Embed Mermaid/SVG architecture diagram on each of the 13 concept pages (one diagram per page minimum) | planned |
 | I-05 | 76 | "Try this in Claude Code" CTA component at tutorial completion — pre-filled prompt deep-link | planned |
@@ -43,21 +43,21 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 
 ### 1. Cycle 71 — Gate measurement + placeholder audit (I-00)
 
-- **Status**: planned
+- **Status**: completed
 - **Description**: Before implementing any D8 feature, run a measurement pass. Count all `.demo-placeholder` or `<MediaPlaceholder>` instances in built HTML. Count tutorial pages with no clipboard-copy. Count concept pages with no inline diagram. This baseline count becomes the D8 regression fence — it should monotonically decrease across cycles 72-79.
 - **Files**: `site/src/`, `site/dist/` (built output), new Playwright spec `gate-7-interaction.spec.ts`
 - **Gate**: Baseline count established. Playwright spec written asserting count ≤ baseline (prevents regression without forward progress).
 
 ### 2. Cycle 72 — Top placeholder replacements (I-01)
 
-- **Status**: planned
+- **Status**: completed
 - **Description**: Replace the 3 highest-traffic MediaPlaceholder instances with real content. Candidates: homepage "See it in action" section, tutorial/getting-started walkthrough, and the what-is-adna page demo. Use short terminal GIF (asciinema or screen recording), screenshot sequence, or embedded step-by-step with annotated images.
 - **Files**: `site/src/pages/learn/tutorials/`, `site/src/pages/` (homepage), relevant MDX
 - **Gate**: Playwright count ≤ (baseline − 3). Build 117+ pages, 0 errors. LH 100/100/100/100 maintained.
 
 ### 3. Cycle 73 — Remaining placeholder replacements (I-02)
 
-- **Status**: planned
+- **Status**: completed
 - **Description**: Replace all remaining MediaPlaceholder instances in use-case pages, adopter pages, and any tutorial with static placeholder content. Each replacement: real screenshot OR embedded Loom/GIF OR clearly-written walkthrough prose (no blank placeholder boxes).
 - **Files**: use-case MDX, adopter MDX, tutorial MDX
 - **Gate**: Playwright count = 0 (zero media placeholders remaining).

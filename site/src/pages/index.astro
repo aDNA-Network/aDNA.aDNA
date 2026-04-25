@@ -12,16 +12,62 @@ const steps = [
     number: '01',
     title: 'Structure',
     description: 'Every agent session starts from scratch — agents relearn your project by rummaging through files. aDNA ends that. Three directories (what you know, how you work, who\'s involved) give any agent instant orientation.',
+    demo: `<div class="step-demo">
+  <div class="step-demo-bar">
+    <span class="demo-dots"><span></span><span></span><span></span></span>
+    <span class="demo-filename">project/</span>
+  </div>
+  <pre class="step-demo-pre">my-project/
+├── CLAUDE.md       ← agent master context
+├── what/           ← what the project knows
+│   └── context/      typed context files
+├── how/            ← how it operates
+│   └── missions/     decomposed work plans
+└── who/            ← who&#39;s involved
+    └── governance/   roles &amp; rules</pre>
+</div>`,
   },
   {
     number: '02',
     title: 'Orient',
     description: 'Agents read your CLAUDE.md and AGENTS.md before they touch anything. Typed context files load exactly the depth they need — not your entire project, not a blank slate.',
+    demo: `<div class="step-demo">
+  <div class="step-demo-bar">
+    <span class="demo-dots"><span></span><span></span><span></span></span>
+    <span class="demo-filename">CLAUDE.md</span>
+  </div>
+  <pre class="step-demo-pre"># CLAUDE.md — climate-pipeline
+
+You are working on climate-pipeline.
+A data pipeline for surface temperature
+records (1990–present).
+
+## Priority Rules
+1. Never overwrite raw sensor data
+2. All outputs need uncertainty ranges
+3. Ingestion changes need peer review</pre>
+</div>`,
   },
   {
     number: '03',
     title: 'Execute',
     description: 'Work decomposes into sessions, missions, and campaigns — context-sized chunks that fit inside a single agent window. Progress compounds: what one agent learns, the next agent inherits.',
+    demo: `<div class="step-demo">
+  <div class="step-demo-bar">
+    <span class="demo-dots"><span></span><span></span><span></span></span>
+    <span class="demo-filename">mission_schema_v2.md</span>
+  </div>
+  <pre class="step-demo-pre">plan_id: mission_schema_v2
+status: active
+
+## Objective 1 — Migrate schema
+- Status: ✓ complete
+- Files: data/schema.py
+
+## Objective 2 — Backfill validation
+- Status: in_progress
+- Depends on: [1]</pre>
+</div>`,
   },
 ];
 
@@ -120,12 +166,7 @@ const stats = [
             <div class="step-number">{step.number}</div>
             <h3 class="step-title">{step.title}</h3>
             <p class="step-description">{step.description}</p>
-            <div class="media-placeholder" data-media="gif" data-content={`step-${step.number}`}>
-              <div class="media-placeholder-inner">
-                <span class="media-placeholder-icon">▶</span>
-                <span class="media-placeholder-label">Demo coming soon</span>
-              </div>
-            </div>
+            <Fragment set:html={step.demo} />
           </div>
         ))}
       </div>
@@ -322,6 +363,7 @@ const stats = [
   .how-it-works {
     padding: var(--space-24) 0;
     background: var(--color-bg-alt);
+    overflow-x: hidden;
   }
 
   .feature-strip {
@@ -366,6 +408,7 @@ const stats = [
     background: var(--color-surface);
     border-radius: var(--radius-xl);
     border: 1px solid var(--color-border);
+    min-width: 0;
   }
 
   .step-number {
@@ -387,36 +430,58 @@ const stats = [
     margin-bottom: var(--space-6);
   }
 
-  .media-placeholder {
-    border: 2px dashed var(--color-border);
+  .step-demo {
     border-radius: var(--radius-md);
-    aspect-ratio: 16 / 9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--color-primary) 3%, transparent),
-      color-mix(in srgb, var(--color-accent) 3%, transparent)
-    );
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    background: #13131f;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .media-placeholder-inner {
+  .step-demo-bar {
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: var(--space-2);
-    color: var(--color-text-muted);
+    padding: var(--space-2) var(--space-3);
+    background: #1c1c2e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   }
 
-  .media-placeholder-icon {
-    font-size: var(--text-2xl);
-    opacity: 0.4;
+  .demo-dots {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
   }
 
-  .media-placeholder-label {
-    font-size: var(--text-sm);
-    font-style: italic;
+  .demo-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .demo-dots span:nth-child(1) { background: #ff5f57; }
+  .demo-dots span:nth-child(2) { background: #febc2e; }
+  .demo-dots span:nth-child(3) { background: #28c840; }
+
+  .demo-filename {
+    color: #aaa;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.01em;
+  }
+
+  .step-demo-pre {
+    margin: 0;
+    padding: var(--space-4);
+    color: #c9c9df;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: 1.65;
+    white-space: pre;
+    overflow-x: auto;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .how-footer {
