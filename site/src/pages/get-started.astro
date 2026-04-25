@@ -1,5 +1,6 @@
 ---
 import DocumentationLayout from '../layouts/DocumentationLayout.astro';
+import Callout from '../components/sections/Callout.astro';
 import { buildWebPageJsonLD } from '../utils/seo';
 
 const jsonLD = buildWebPageJsonLD({
@@ -14,7 +15,17 @@ const jsonLD = buildWebPageJsonLD({
   description="Set up your first aDNA project in three steps: clone the template, open in your editor, and run your first agent session with Claude Code."
   jsonLD={jsonLD}
 >
-  <p>Get your first aDNA project running in three steps.</p>
+  <p>Get your first aDNA project running in about 5 minutes.</p>
+
+  <Callout variant="info" title="Prerequisites">
+    <p>You need <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">Claude Code installed</a> before step 3. Install it with:</p>
+    <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+    <p>Git is also required for step 1.</p>
+  </Callout>
+
+  <Callout variant="tip" title="What you'll have when you're done">
+    <p>A working aDNA project with <code>CLAUDE.md</code>, <code>what/</code>, <code>how/</code>, and <code>who/</code> directories. Run <code>claude</code> inside the project folder and your agent reads the governance files automatically — no re-briefing needed.</p>
+  </Callout>
 
   <h2 id="step-1">1. Clone the template</h2>
   <pre><code>git clone https://github.com/LatticeProtocol/Agentic-DNA.git my-project
