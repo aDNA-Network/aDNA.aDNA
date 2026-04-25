@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import TryInClaudeCode from '../../../components/sections/TryInClaudeCode.astro';
 import { buildHowToJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
 
 export async function getStaticPaths() {
@@ -48,6 +49,7 @@ const jsonLD = [
     <span class="estimated-time">{guide.data.estimated_time}</span>
   </div>
   <Content />
+  <TryInClaudeCode tutorialTitle={guide.data.guide_title} />
 </DocumentationLayout>
 
 <style>

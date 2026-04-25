@@ -33,7 +33,7 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 | I-02 | 73 | Replace remaining MediaPlaceholder instances; audit all tutorial pages for static placeholders | **done** |
 | I-03 | 74 | Clipboard-copy button on all CodeBlock instances across tutorial pages | **done** |
 | I-04 | 75 | Embed Mermaid/SVG architecture diagram on each of the 13 concept pages (one diagram per page minimum) | **done** |
-| I-05 | 76 | "Try this in Claude Code" CTA component at tutorial completion — pre-filled prompt deep-link | planned |
+| I-05 | 76 | "Try this in Claude Code" CTA component at tutorial completion — pre-filled prompt deep-link | **done** |
 | I-06 | 77 | Reviewer Lens Pass — Design Critic: visual hierarchy, interactive affordances, diagram clarity | planned |
 | I-07 | 78 | Reviewer Lens Pass — Newcomer Stress-Tester: first-time experience with demos and CTAs | planned |
 | I-08 | 79 | Progressive disclosure for glossary entries — inline definition expand, full context on click | planned |
@@ -78,7 +78,7 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 
 ### 6. Cycle 76 — "Try this in Claude Code" CTA (I-05)
 
-- **Status**: planned
+- **Status**: completed
 - **Description**: Create a `<TryInClaudeCode>` CTA component. Renders a styled button/callout at the end of tutorial pages with a pre-filled prompt linking to the concept just taught. Example: "Try this in Claude Code → Open Claude Code and run: `claude` — then ask: 'Explain the triad structure in this project.'" Each of the 9 tutorial pages gets a tailored CTA.
 - **Files**: `site/src/components/TryInClaudeCode.astro` (new), tutorial MDX (9 files)
 - **Gate**: All 9 tutorial pages contain the CTA component. Component renders correctly on mobile and desktop. Lighthouse scores unchanged.

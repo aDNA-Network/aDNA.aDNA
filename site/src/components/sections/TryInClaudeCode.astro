@@ -1,0 +1,139 @@
+---
+// TryInClaudeCode — CTA shown at the bottom of tutorial pages.
+// Encourages users to run the tutorial interactively with Claude Code.
+
+interface Props {
+  tutorialTitle?: string;
+}
+
+const { tutorialTitle } = Astro.props;
+const label = tutorialTitle ? `Try "${tutorialTitle}" in Claude Code` : 'Try this in Claude Code';
+---
+
+<aside class="try-claude-cta" data-cta="try-claude" aria-label={label}>
+  <div class="cta-icon" aria-hidden="true">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="4 17 10 11 4 5" />
+      <line x1="12" y1="19" x2="20" y2="19" />
+    </svg>
+  </div>
+  <div class="cta-body">
+    <p class="cta-title">{label}</p>
+    <p class="cta-desc">
+      Claude Code is Anthropic's official CLI. Run this tutorial step by step with AI assistance — ask questions, get unstuck, and go deeper on any concept.
+    </p>
+    <div class="cta-install">
+      <code class="cta-cmd">npm install -g @anthropic-ai/claude-code</code>
+      <button class="cta-copy" type="button" aria-label="Copy install command">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+          <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</aside>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.try-claude-cta .cta-copy').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const cmd = btn.closest('.cta-install')?.querySelector('.cta-cmd')?.textContent ?? '';
+      await navigator.clipboard.writeText(cmd);
+      btn.setAttribute('aria-label', 'Copied!');
+      setTimeout(() => btn.setAttribute('aria-label', 'Copy install command'), 2000);
+    });
+  });
+</script>
+
+<style>
+  .try-claude-cta {
+    display: flex;
+    gap: var(--space-4);
+    margin: var(--space-12) 0 var(--space-4);
+    padding: var(--space-6);
+    background: color-mix(in srgb, var(--color-accent) 8%, var(--color-bg-alt));
+    border: 1px solid color-mix(in srgb, var(--color-accent) 30%, var(--color-border));
+    border-radius: var(--radius-lg);
+    align-items: flex-start;
+  }
+
+  .cta-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: color-mix(in srgb, var(--color-accent) 15%, transparent);
+    border-radius: var(--radius-md);
+    color: var(--color-accent);
+    margin-top: 0.1rem;
+  }
+
+  .cta-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .cta-title {
+    font-weight: 600;
+    font-size: var(--text-base);
+    color: var(--color-text);
+    margin: 0 0 var(--space-2);
+  }
+
+  .cta-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-4);
+    line-height: 1.6;
+  }
+
+  .cta-install {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-2) var(--space-3);
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .cta-cmd {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text);
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .cta-copy {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    padding: var(--space-1);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .cta-copy:hover {
+    color: var(--color-text);
+    background: var(--color-border);
+  }
+
+  @media (max-width: 480px) {
+    .try-claude-cta {
+      flex-direction: column;
+    }
+  }
+</style>

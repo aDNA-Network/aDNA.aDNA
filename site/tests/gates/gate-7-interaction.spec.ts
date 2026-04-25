@@ -11,11 +11,11 @@
  */
 import { test, expect } from '@playwright/test';
 
-// --- Cycle 75 baselines (Mermaid diagrams on all 12 concept pages) ---
+// --- Cycle 76 baselines (TryInClaudeCode CTA on all 8 tutorial pages) ---
 const MAX_MEDIA_PLACEHOLDERS = 0;      // all placeholders replaced with live step-demo terminals
 const MIN_CONCEPT_DIAGRAM_PAGES = 12;  // cycle 75: MermaidDiagram added to all 12 concept pages
 const MIN_TUTORIAL_COPY_BLOCKS = 6;    // cycle 74: DocumentationLayout script wraps all pre elements — all 8 tutorials have code blocks
-const MIN_TRY_CTA_PAGES = 0;          // no CTAs yet — will increase at cycle 76
+const MIN_TRY_CTA_PAGES = 8;          // cycle 76: TryInClaudeCode CTA added to tutorial [...slug].astro template
 
 const CONCEPT_PAGES = [
   '/learn/concepts/triad',
