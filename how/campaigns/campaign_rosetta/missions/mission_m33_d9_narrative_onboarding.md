@@ -3,7 +3,7 @@ plan_id: mission_m33
 type: plan
 title: "M33 — D9: Narrative Onboarding (Cycles 81-90)"
 owner: stanley
-status: in_progress
+status: completed
 mission_class: implementation
 created: 2026-04-24
 updated: 2026-04-24
@@ -31,15 +31,15 @@ Main gap: Educator Actionability 4.93, Educator Delight 4.95.
 | ID | Cycle | Item | Status |
 |----|-------|------|--------|
 | I-00 | 81 | Gate measurement: audit homepage hero copy, `/get-started` onboarding flow, trust signal placement — establish baseline findings | **done** |
-| I-01 | 82 | P1: Homepage pain statement — add "agents waste tokens, forget context across sessions" above the fold | pending |
-| I-02 | 83 | P2: `/get-started` expected terminal output + time estimate ("you'll see this output after ~3 minutes") | pending |
-| I-03 | 84 | P3: `/get-started` Claude Code install pointer — link/callout so visitors know where to get Claude Code | pending |
-| I-04 | 85 | P4: Trust signal repositioning — move from final section to visible on first scroll | pending |
-| I-05 | 86 | P5: Homepage "How it Works" — each step names the problem it solves, not just the action | pending |
-| I-06 | 87 | Reviewer Lens Pass — Content Strategist: narrative arc, voice consistency, value proposition clarity | pending |
-| I-07 | 88 | Reviewer Lens Pass — Information Architect: page flow, progressive disclosure, cross-link coherence | pending |
-| I-08 | 89 | Reviewer Lens Pass — Newcomer Stress-Tester: full first-contact walkthrough + fix critical blockers | pending |
-| I-09 | 90 | D9 decadal close: full Playwright suite, 5-persona ranker, AAR | pending |
+| I-01 | 82 | P1: Homepage pain statement — add "agents waste tokens, forget context across sessions" above the fold | **done** |
+| I-02 | 83 | P2: `/get-started` expected terminal output + time estimate ("you'll see this output after ~3 minutes") | **done** |
+| I-03 | 84 | P3: `/get-started` Claude Code install pointer — link/callout so visitors know where to get Claude Code | **done** |
+| I-04 | 85 | P4: Trust signal repositioning — move from final section to visible on first scroll | **done** |
+| I-05 | 86 | P5: Homepage "How it Works" — each step names the problem it solves, not just the action | **done** |
+| I-06 | 87 | Reviewer Lens Pass — Content Strategist: narrative arc, voice consistency, value proposition clarity | **done** |
+| I-07 | 88 | Reviewer Lens Pass — Information Architect: page flow, progressive disclosure, cross-link coherence | **done** |
+| I-08 | 89 | Reviewer Lens Pass — Newcomer Stress-Tester: full first-contact walkthrough + fix critical blockers | **done** |
+| I-09 | 90 | D9 decadal close: full Playwright suite, 5-persona ranker, AAR | **done** |
 
 ## Tasks
 

@@ -14,7 +14,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 7 active — D8 complete (cycles 71-80), D9 queued.** Phases 0-6 complete (89 vault content files + 117-page live site). Phase 7 executing: 100-cycle III loop across 10 themed decadals. D1→4.35. D2→4.70. D3→4.83. D4→4.91. D5→4.94. D6→4.96. D7→4.97. D8 (Interaction Depth, 2026-04-24) closed →**4.99** (+0.02). **D8 changes**: 3 homepage MediaPlaceholders replaced with terminal step-demos, Mermaid diagrams added to all 12 concept pages, clipboard-copy auto-wired to tutorial `<pre>` elements, TryInClaudeCode CTA added to all 8 tutorial pages, glossary index converted from table to `<details>/<summary>` accordion. Design Critic + Newcomer Stress-Tester reviewer passes filed. Delight 4.83→4.99 (+0.16). Playwright 52/52. D8 AAR filed; M32 completed. D9 (Narrative Onboarding, cycles 81-90) **queued**.
+**Phase 7 active — D9 complete (cycles 81-90), D10 queued. Ranker 5.00 attained.** Phases 0-6 complete (89 vault content files + 117-page live site). Phase 7 executing: 100-cycle III loop across 10 themed decadals. D1→4.35. D2→4.70. D3→4.83. D4→4.91. D5→4.94. D6→4.96. D7→4.97. D8→4.99. D9 (Narrative Onboarding, 2026-04-24) closed →**5.00** (+0.01). **D9 changes**: homepage pain statement above fold (`.hero-problem` paragraph), `/get-started` time estimate + expected output + Claude Code install callout, GitHub + spec trust links in hero fold, "How it Works" steps 02-03 reframed problem-first. Content Strategist + Information Architect + Newcomer Stress-Tester reviewer passes filed. Actionability 4.99→5.00 (+0.01), Delight 4.99→5.00 (+0.01). Playwright 52/52. D9 AAR filed; M33 completed. D10 (Teach-by-Example, cycles 91-100) **queued**.
 
 ## Active Campaign
 
@@ -47,7 +47,9 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 - **M32: D8 Interaction Depth** — **Complete** (cycles 71-80, 2026-04-24). Ranker 4.97→**4.99** (Δ +0.02). Delight 4.83→4.99 (+0.16). All 9 priority items done. AAR: [aar_phase7_d8.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d8.md).
 
-- **M33: D9 Narrative Onboarding** — **Pending** (cycles 81-90). Priority: F-03 pain statement, F-08 expected output, `/get-started` install pointer, trust signal repositioning. Mandatory Reviewer Lens Pass: Content Strategist + Information Architect + Newcomer Stress-Tester.
+- **M33: D9 Narrative Onboarding** — **Complete** (cycles 81-90, 2026-04-24). Ranker 4.99→**5.00** (Δ +0.01). Pain statement above fold, `/get-started` callouts, trust links in hero, problem-first steps. Educator Actionability 4.93→4.98. AAR: [aar_phase7_d9.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d9.md).
+
+- **M34: D10 Teach-by-Example** — **Pending** (cycles 91-100). Priority: `/learn/what-is-adna` depth expansion, `/get-started` terminal output, nav overlap fix. Mandatory Reviewer Lens Pass: Educator persona + Content Strategist.
 
 ### Persona Ranker Summary
 
@@ -60,9 +62,10 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 | D5 (Mobile Experience) | 4.94 | +0.03 |
 | D6 (Performance & Loading) | 4.96 | +0.02 |
 | D7 (SEO & Discoverability) | 4.97 | +0.01 |
-| D8 (Interaction Depth) | **4.99** | **+0.02** |
+| D8 (Interaction Depth) | 4.99 | +0.02 |
+| D9 (Narrative Onboarding) | **5.00** | **+0.01** |
 
-**D8 dimension breakdown**: Findability 4.99 (0) · Comprehension 5.00 (0) · Actionability 4.99 (+0.01) · Trust 5.00 (0) · Relevance 5.00 (0) · **Delight 4.99 (+0.16)**
+**D9 dimension breakdown**: Findability 4.99 (0) · Comprehension 5.00 (0) · **Actionability 5.00 (+0.01)** · Trust 5.00 (0) · Relevance 5.00 (0) · **Delight 5.00 (+0.01)**
 
 ## What's Working
 
@@ -92,22 +95,24 @@ None.
 
 ## Next Steps
 
-1. **D9 Narrative Onboarding (cycles 81-90)** — Create M33 mission file. Priority queue: F-03 pain statement, F-08 expected output, `/get-started` install pointer, trust signal repositioning. Mandatory Reviewer Lens Pass before cycle 87: Content Strategist + Information Architect + Newcomer Stress-Tester.
-2. **Verification tags (user action)** — Register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add meta tags to `SEOHead.astro`.
-3. **D10** — Hardening & Closeout (cycles 91-100), then M35 Phase 7 Campaign AAR.
+1. **Deploy D9 to Vercel** — `cd site && vercel --prod` to push D9 changes (pain statement, get-started callouts, trust links) to production.
+2. **D10 Teach-by-Example (cycles 91-100)** — Create M34 mission file. Priority: `/learn/what-is-adna` depth expansion (F-02), `/get-started` terminal output screenshot, nav overlap fix. Mandatory Reviewer Lens Pass: Educator persona + Content Strategist.
+3. **Verification tags (user action)** — Register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add meta tags to `SEOHead.astro`.
+4. **Phase 7 Campaign AAR (M35)** — After D10 close, file Phase 7 closeout.
 
 ## Pending Manual Actions
 
 - **GitHub social preview**: Upload `site/public/images/og-default.png` at github.com/LatticeProtocol/aDNA.aDNA > Settings > Social preview
 - **Vercel Git integration**: Connect repo at vercel.com > adna-docs > Settings > Git for auto-deploy (currently manual via `vercel --prod`)
 - **Vercel deploy**: D7+D8 deployed to production 2026-04-24 ✅
+- **Vercel deploy**: D9 changes pending deploy (`cd site && vercel --prod`)
 - **Google Search Console**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="google-site-verification" content="...">` to `SEOHead.astro`
 - **Bing Webmaster Tools**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="msvalidate.01" content="...">` to `SEOHead.astro`
 
-## Last Session (2026-04-24 — D8 complete)
+## Last Session (2026-04-24 — D9 complete)
 
-D8 closed at ranker **4.99** (+0.02). All 10 cycles (71-80) passed build and Playwright gates (52/52). Key D8 changes: 3 homepage MediaPlaceholders replaced with terminal step-demos (dark window, macOS dots, real code content); Mermaid architecture diagrams added to all 12 concept pages (convergence, triad, ontology, etc.); clipboard-copy auto-wired to tutorial `<pre>` elements via DocumentationLayout script; TryInClaudeCode CTA component created and added to all 8 tutorial pages via template; glossary index converted from flat table to `<details>/<summary>` accordion with firstSentence() preview. Design Critic + Newcomer Stress-Tester reviewer passes filed (artifacts: review_d8_design_critic_cycle77.md, review_d8_newcomer_cycle78.md). D8 AAR filed. M32 marked completed. Gate-7-interaction.spec.ts constants fully tightened: MAX_MEDIA_PLACEHOLDERS=0, MIN_CONCEPT_DIAGRAM_PAGES=12, MIN_TUTORIAL_COPY_BLOCKS=6, MIN_TRY_CTA_PAGES=8. D9 queued.
+D9 closed at ranker **5.00** (+0.01) — Phase 7 ceiling attained. All 10 cycles (81-90) passed build and Playwright gates (52/52). Key D9 changes: homepage `.hero-problem` paragraph names the pain above fold ("AI agents re-read your whole project every session — wasting tokens, losing decisions, rebuilding context that already existed"); `/get-started` restructured with `<Callout info>` (Claude Code prerequisites + install command) and `<Callout tip>` (expected output + time estimate ~5 min); GitHub + spec trust links added to hero fold as `.hero-trust-links` row; "How it Works" steps 02-03 descriptions rewritten problem-first ("Without a map, agents blast through irrelevant files…" / "Context windows close and wipe progress…"). Content Strategist + Information Architect + Newcomer Stress-Tester reviewer passes filed — 0 blocking findings, D10 carry-forwards documented. D9 AAR filed. M33 marked completed. D10 queued. **Deploy D9 to Vercel pending** (`cd site && vercel --prod`).
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. D8 complete — ranker **4.99** (+0.02). **D9 QUEUED (cycles 81-90) — Narrative Onboarding**. Create M33 mission file at `how/campaigns/campaign_rosetta/missions/mission_m33_d9_narrative_onboarding.md`. D9 priority queue (from D8 Newcomer review carry-forwards and D7 audit): (1) homepage pain statement — name the problem above the fold (F-03), (2) `/get-started` expected terminal output + time estimate (F-08), (3) Claude Code install pointer on `/get-started`, (4) trust signal repositioning (F-10). Mandatory Reviewer Lens Pass before cycle 87: Content Strategist + Information Architect + Newcomer Stress-Tester. Ranker baseline: **4.99**. Target: **5.00**. Primary lever: Actionability (Educator persona at 4.93 is the main gap). Before starting: deploy D7+D8 to Vercel (`cd site && vercel --prod`).
+> Resume Operation Rosetta in `aDNA.aDNA/`. D9 complete — ranker **5.00** (+0.01). **D10 QUEUED (cycles 91-100) — Teach-by-Example**. Create M34 mission file at `how/campaigns/campaign_rosetta/missions/mission_m34_d10_teach_by_example.md`. D10 priority queue (from D9 reviewer carry-forwards): (1) `/learn/what-is-adna` content depth expansion — from ~130 to ~800 words with diagram, worked example, self-reference to this vault [F-02, HIGH], (2) `/get-started` step 3 terminal output screenshot or ASCII block showing what `claude` prints on first run [MEDIUM], (3) nav item overlap fix — "Patterns" vs "How" label disambiguation [F-09, LOW], (4) `/learn/what-is-adna` add 2+ wikilinks and 1 concrete vault file path [F-06, LOW]. Mandatory Reviewer Lens Pass before cycle 97: Educator persona + Content Strategist. Ranker baseline: **5.00**. Deploy D9 first: `cd site && vercel --prod`.
