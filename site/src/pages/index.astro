@@ -30,7 +30,7 @@ const steps = [
   {
     number: '02',
     title: 'Orient',
-    description: 'Agents read your CLAUDE.md and AGENTS.md before they touch anything. Typed context files load exactly the depth they need — not your entire project, not a blank slate.',
+    description: 'Without a map, agents blast through irrelevant files or ask you to re-explain the project. Agents read your CLAUDE.md and AGENTS.md first, then pull typed context at exactly the depth they need — not your entire repo, not a blank slate.',
     demo: `<div class="step-demo">
   <div class="step-demo-bar">
     <span class="demo-dots"><span></span><span></span><span></span></span>
@@ -51,7 +51,7 @@ records (1990–present).
   {
     number: '03',
     title: 'Execute',
-    description: 'Work decomposes into sessions, missions, and campaigns — context-sized chunks that fit inside a single agent window. Progress compounds: what one agent learns, the next agent inherits.',
+    description: 'Context windows close and wipe progress — the next agent starts over. aDNA decomposes work into sessions, missions, and campaigns — context-sized chunks that fit a single agent window. What one agent learns, the next inherits.',
     demo: `<div class="step-demo">
   <div class="step-demo-bar">
     <span class="demo-dots"><span></span><span></span><span></span></span>
@@ -125,11 +125,17 @@ const stats = [
         loading="eager"
       />
     </div>
+    <p class="hero-problem">AI agents re-read your whole project every session — wasting tokens, losing decisions, rebuilding context that already existed.</p>
     <p class="hero-lead">aDNA is the genome of your project — structured knowledge every AI agent can navigate without being re-briefed from scratch.</p>
     <p class="hero-subtitle">An open standard: a folder layout, metadata spec, and governance files so agents land oriented every session.</p>
     <div class="hero-actions">
       <a href="/get-started" class="btn btn-primary" data-astro-prefetch>Get Started</a>
       <a href="/learn/what-is-adna" class="btn btn-secondary" data-astro-prefetch>What is aDNA?</a>
+    </div>
+    <div class="hero-trust-links">
+      <a href="https://github.com/LatticeProtocol/Agentic-DNA" target="_blank" rel="noopener" class="trust-link">View on GitHub</a>
+      <span class="trust-sep" aria-hidden="true">·</span>
+      <a href="/reference/specification" class="trust-link" data-astro-prefetch>Read the Specification</a>
     </div>
     <div class="trust-strip">
       {stats.map((stat) => (
@@ -237,6 +243,21 @@ const stats = [
     display: block;
   }
 
+  .hero-problem {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    max-width: 38rem;
+    margin: 0 auto var(--space-5);
+    line-height: 1.5;
+    padding: var(--space-3) var(--space-5);
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--radius-md);
+  }
+
   .hero-lead {
     font-family: var(--font-display);
     font-size: var(--text-2xl);
@@ -261,6 +282,29 @@ const stats = [
     gap: var(--space-4);
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .hero-trust-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+    font-size: var(--text-sm);
+  }
+
+  .trust-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+  }
+
+  .trust-link:hover {
+    color: var(--color-primary);
+  }
+
+  .trust-sep {
+    color: var(--color-border);
   }
 
   .trust-strip {
