@@ -36,7 +36,7 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 | I-05 | 76 | "Try this in Claude Code" CTA component at tutorial completion — pre-filled prompt deep-link | **done** |
 | I-06 | 77 | Reviewer Lens Pass — Design Critic: visual hierarchy, interactive affordances, diagram clarity | **done** |
 | I-07 | 78 | Reviewer Lens Pass — Newcomer Stress-Tester: first-time experience with demos and CTAs | **done** |
-| I-08 | 79 | Progressive disclosure for glossary entries — inline definition expand, full context on click | planned |
+| I-08 | 79 | Progressive disclosure for glossary entries — inline definition expand, full context on click | **done** |
 | I-09 | 80 | D8 decadal close: full Playwright suite, 5-persona ranker, AAR | planned |
 
 ## Tasks
@@ -94,7 +94,7 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 
 ### 8. Cycle 79 — Glossary progressive disclosure (I-08)
 
-- **Status**: planned
+- **Status**: completed
 - **Description**: Implement progressive disclosure on glossary entries. Pattern: show term + 1-sentence definition inline; "expand" reveals full definition, examples, and related terms. Use `<details>`/`<summary>` HTML or a lightweight Astro component. All 25 glossary entries updated.
 - **Files**: `site/src/pages/glossary/index.astro` or `[...slug].astro`, `who/glossary/` MDX files
 - **Gate**: Glossary page loads with all entries collapsed. Expand interaction works. Lighthouse a11y 100/100.
