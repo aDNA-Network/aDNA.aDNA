@@ -34,8 +34,8 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 | I-03 | 74 | Clipboard-copy button on all CodeBlock instances across tutorial pages | **done** |
 | I-04 | 75 | Embed Mermaid/SVG architecture diagram on each of the 13 concept pages (one diagram per page minimum) | **done** |
 | I-05 | 76 | "Try this in Claude Code" CTA component at tutorial completion — pre-filled prompt deep-link | **done** |
-| I-06 | 77 | Reviewer Lens Pass — Design Critic: visual hierarchy, interactive affordances, diagram clarity | planned |
-| I-07 | 78 | Reviewer Lens Pass — Newcomer Stress-Tester: first-time experience with demos and CTAs | planned |
+| I-06 | 77 | Reviewer Lens Pass — Design Critic: visual hierarchy, interactive affordances, diagram clarity | **done** |
+| I-07 | 78 | Reviewer Lens Pass — Newcomer Stress-Tester: first-time experience with demos and CTAs | **done** |
 | I-08 | 79 | Progressive disclosure for glossary entries — inline definition expand, full context on click | planned |
 | I-09 | 80 | D8 decadal close: full Playwright suite, 5-persona ranker, AAR | planned |
 
@@ -85,7 +85,7 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 
 ### 7. Cycles 77-78 — Reviewer Lens Pass (I-06, I-07)
 
-- **Status**: planned
+- **Status**: completed
 - **Description**: Mandatory D8 Reviewer Lens Pass per `skill_decadal_aar.md` Step 4b.
   - **Cycle 77 — Design Critic**: Evaluate visual hierarchy of interactive elements, diagram clarity, CTA prominence and affordance, clipboard-copy discoverability.
   - **Cycle 78 — Newcomer Stress-Tester**: First-contact experience with demos, diagrams, and CTAs. Does a newcomer understand what to click? Do the CTAs make sense without prior aDNA knowledge?

@@ -9,11 +9,13 @@ order: 10
 import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
 
 <MermaidDiagram chart={`graph TD
-    spec["aDNA Standard\nadna_standard.md"]
-    impl["Your Vault\nimplements the spec"]
-    forge["Forge\nbuilds tools on spec"]
-    platform["Platform\ndeploys with spec"]
-    spec --> impl & forge & platform`} caption="One open spec; many implementations — vaults, forges, and platforms all inherit" />
+    spec["aDNA Standard — adna_standard.md"]
+    impl["Your Vault"]
+    forge["Forge"]
+    platform["Platform"]
+    spec -->|"implements"| impl
+    spec -->|"builds tools"| forge
+    spec -->|"deploys with"| platform`} caption="One open spec; many implementations — vaults, forges, and platforms all inherit" />
 
 ## Overview
 

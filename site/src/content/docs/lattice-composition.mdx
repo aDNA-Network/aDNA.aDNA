@@ -9,9 +9,9 @@ order: 9
 import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
 
 <MermaidDiagram chart={`graph LR
-    A["Lattice A\nData retrieval"] -->|"seam edge"| C["Composed Lattice\nFull pipeline"]
-    B["Lattice B\nReasoning"] -->|"seam edge"| C
-    C --> D["Artifact\nor Result"]`} caption="Lattice composition connects smaller workflows into larger pipelines" />
+    A["Lattice A — Data retrieval"] -->|"seam edge"| C["Composed Lattice"]
+    B["Lattice B — Reasoning"] -->|"seam edge"| C
+    C --> D["Artifact or Result"]`} caption="Lattice composition connects smaller workflows into larger pipelines" />
 
 ## Overview
 
