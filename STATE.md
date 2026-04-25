@@ -92,16 +92,15 @@ None.
 
 ## Next Steps
 
-1. **Deploy D8 to Vercel (user action)** — `cd site && vercel --prod` to push D8 changes to production. (D7+D8 changes combined — see git log since last deploy.)
-2. **D9 Narrative Onboarding (cycles 81-90)** — Create M33 mission file. Priority queue: F-03 pain statement, F-08 expected output, `/get-started` install pointer, trust signal repositioning. Mandatory Reviewer Lens Pass before cycle 87: Content Strategist + Information Architect + Newcomer Stress-Tester.
-3. **Verification tags (user action)** — Register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add meta tags to `SEOHead.astro`.
-4. **D10** — Hardening & Closeout (cycles 91-100), then M35 Phase 7 Campaign AAR.
+1. **D9 Narrative Onboarding (cycles 81-90)** — Create M33 mission file. Priority queue: F-03 pain statement, F-08 expected output, `/get-started` install pointer, trust signal repositioning. Mandatory Reviewer Lens Pass before cycle 87: Content Strategist + Information Architect + Newcomer Stress-Tester.
+2. **Verification tags (user action)** — Register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add meta tags to `SEOHead.astro`.
+3. **D10** — Hardening & Closeout (cycles 91-100), then M35 Phase 7 Campaign AAR.
 
 ## Pending Manual Actions
 
 - **GitHub social preview**: Upload `site/public/images/og-default.png` at github.com/LatticeProtocol/aDNA.aDNA > Settings > Social preview
 - **Vercel Git integration**: Connect repo at vercel.com > adna-docs > Settings > Git for auto-deploy (currently manual via `vercel --prod`)
-- **Vercel deploy (D7+D8)**: Run `cd site && vercel --prod` to push D7+D8 changes to production (git branch is ahead of last Vercel deploy)
+- **Vercel deploy**: D7+D8 deployed to production 2026-04-24 ✅
 - **Google Search Console**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="google-site-verification" content="...">` to `SEOHead.astro`
 - **Bing Webmaster Tools**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="msvalidate.01" content="...">` to `SEOHead.astro`
 
