@@ -11,10 +11,10 @@
  */
 import { test, expect } from '@playwright/test';
 
-// --- Cycle 73 baselines (tightened after replacing all 3 homepage demo placeholders) ---
+// --- Cycle 74 baselines (copy buttons on all tutorial pre elements via DocumentationLayout script) ---
 const MAX_MEDIA_PLACEHOLDERS = 0;      // all placeholders replaced with live step-demo terminals
 const MIN_CONCEPT_DIAGRAM_PAGES = 0;   // no diagrams yet — will increase at cycle 75
-const MIN_TUTORIAL_COPY_BLOCKS = 0;    // no raw-pre copy buttons yet — will increase at cycle 74
+const MIN_TUTORIAL_COPY_BLOCKS = 6;    // cycle 74: DocumentationLayout script wraps all pre elements — all 8 tutorials have code blocks
 const MIN_TRY_CTA_PAGES = 0;          // no CTAs yet — will increase at cycle 76
 
 const CONCEPT_PAGES = [

@@ -38,6 +38,45 @@ const { title, description, headings = [], prev, next, jsonLD } = Astro.props;
   </div>
 </BaseLayout>
 
+<script>
+  // Wrap bare <pre> elements in .doc-content with a copy button.
+  // Skips pre elements already inside .code-block (those are handled by CodeBlock.astro).
+  function initCopyButtons() {
+    const pres = document.querySelectorAll<HTMLPreElement>('.doc-content pre:not(.code-block pre)');
+    pres.forEach((pre) => {
+      if (pre.closest('.code-block')) return; // already wrapped
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'code-block';
+
+      const inner = document.createElement('div');
+      inner.className = 'code-content';
+
+      pre.parentNode!.insertBefore(wrapper, pre);
+      wrapper.appendChild(inner);
+      inner.appendChild(pre);
+
+      const btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'Copy code');
+      btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>`;
+      wrapper.appendChild(btn);
+
+      btn.addEventListener('click', async () => {
+        const text = pre.querySelector('code')?.textContent ?? pre.textContent ?? '';
+        await navigator.clipboard.writeText(text);
+        btn.setAttribute('aria-label', 'Copied!');
+        setTimeout(() => btn.setAttribute('aria-label', 'Copy code'), 2000);
+      });
+    });
+  }
+
+  // Run on initial load and after each client-side navigation
+  initCopyButtons();
+  document.addEventListener('astro:page-load', initCopyButtons);
+</script>
+
 <style>
   .doc-layout {
     display: grid;

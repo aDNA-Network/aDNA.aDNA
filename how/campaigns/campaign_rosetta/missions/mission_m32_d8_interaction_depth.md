@@ -31,7 +31,7 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 | I-00 | 71 | Gate measurement: count media placeholders + demo placeholder elements; establish baseline | **done** |
 | I-01 | 72 | Replace top 3 highest-traffic "Demo coming soon" MediaPlaceholder instances with real content (GIF, screenshot, or inline walkthrough) | **done** |
 | I-02 | 73 | Replace remaining MediaPlaceholder instances; audit all tutorial pages for static placeholders | **done** |
-| I-03 | 74 | Clipboard-copy button on all CodeBlock instances across tutorial pages | planned |
+| I-03 | 74 | Clipboard-copy button on all CodeBlock instances across tutorial pages | **done** |
 | I-04 | 75 | Embed Mermaid/SVG architecture diagram on each of the 13 concept pages (one diagram per page minimum) | planned |
 | I-05 | 76 | "Try this in Claude Code" CTA component at tutorial completion — pre-filled prompt deep-link | planned |
 | I-06 | 77 | Reviewer Lens Pass — Design Critic: visual hierarchy, interactive affordances, diagram clarity | planned |
@@ -64,7 +64,7 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 
 ### 4. Cycle 74 — Clipboard-copy on all CodeBlocks (I-03)
 
-- **Status**: planned
+- **Status**: completed
 - **Description**: Audit all tutorial and concept pages for CodeBlock instances lacking clipboard-copy. The `<CodeBlock>` component received a copy button in D5 (M29) — verify all instances use it. Add copy button to any raw Markdown fenced code blocks that bypassed the component.
 - **Files**: `site/src/components/CodeBlock.astro`, tutorial MDX files
 - **Gate**: Playwright clipboard-copy gate passes for all tutorial pages (count ≥ 1 copy button per tutorial).
