@@ -3,7 +3,7 @@ plan_id: mission_m32
 type: plan
 title: "M32 — D8: Interaction Depth (Cycles 71-80)"
 owner: stanley
-status: active
+status: completed
 mission_class: implementation
 created: 2026-04-24
 updated: 2026-04-24
@@ -37,7 +37,7 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 | I-06 | 77 | Reviewer Lens Pass — Design Critic: visual hierarchy, interactive affordances, diagram clarity | **done** |
 | I-07 | 78 | Reviewer Lens Pass — Newcomer Stress-Tester: first-time experience with demos and CTAs | **done** |
 | I-08 | 79 | Progressive disclosure for glossary entries — inline definition expand, full context on click | **done** |
-| I-09 | 80 | D8 decadal close: full Playwright suite, 5-persona ranker, AAR | planned |
+| I-09 | 80 | D8 decadal close: full Playwright suite, 5-persona ranker, AAR | **done** |
 
 ## Tasks
 
@@ -101,7 +101,7 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 
 ### 9. Cycle 80 — Decadal close + AAR (I-09)
 
-- **Status**: planned
+- **Status**: completed
 - **Description**: Full decadal close per `skill_decadal_aar.md`. 5-persona ranker final scores. File `aar_phase7_d8.md`. Seed D9 priority queue (Narrative Onboarding). Update campaign doc and STATE.md. Reviewer Lens Pass for D9 must include Content Strategist, Information Architect, and Newcomer Stress-Tester.
 - **Files**: `how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d8.md`, campaign doc, STATE.md
 
