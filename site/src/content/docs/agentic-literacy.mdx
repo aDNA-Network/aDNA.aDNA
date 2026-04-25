@@ -6,6 +6,13 @@ section: "concepts"
 order: 11
 ---
 
+import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
+
+<MermaidDiagram chart={`graph LR
+    L0["L0 Aware\nknows AI exists"] --> L1["L1 User\nprompts agents"]
+    L1 --> L2["L2 Builder\nstructures context with aDNA"]
+    L2 --> L3["L3 Architect\ndesigns lattices and campaigns"]`} caption="Four levels of agentic literacy — from awareness to architecture" />
+
 ## Overview
 
 Agentic literacy is the ability to work effectively with AI agents — not just prompting them, but structuring knowledge so agents can find, understand, and act on it. aDNA treats this as a learnable skill with a clear progression: from understanding what agents need, to organizing knowledge for them, to building collaborative human-agent workflows.

@@ -6,6 +6,13 @@ section: "concepts"
 order: 2
 ---
 
+import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
+
+<MermaidDiagram chart={`graph LR
+    WHO --> governance & team & coordination
+    WHAT --> context & decisions & modules & lattices
+    HOW --> campaigns & missions & sessions & templates & skills`} caption="14 base entity types organized across the aDNA Triad" />
+
 ## Overview
 
 The aDNA ontology is a typed vocabulary of 14 base entity types — organized across the triad — that defines what kinds of things a project can contain. Projects extend the ontology by adding domain-specific types without modifying the base.

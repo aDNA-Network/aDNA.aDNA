@@ -6,6 +6,13 @@ section: "concepts"
 order: 9
 ---
 
+import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
+
+<MermaidDiagram chart={`graph LR
+    A["Lattice A\nData retrieval"] -->|"seam edge"| C["Composed Lattice\nFull pipeline"]
+    B["Lattice B\nReasoning"] -->|"seam edge"| C
+    C --> D["Artifact\nor Result"]`} caption="Lattice composition connects smaller workflows into larger pipelines" />
+
 ## Overview
 
 Big jobs are usually too big for one workflow. Lattice composition is how aDNA snaps smaller workflows together to make bigger ones — the same way a dinner recipe is built from smaller recipes for the sauce, the vegetables, and the main. A lattice is a directed graph of nodes (modules, datasets, processes) connected by edges (data flow); composition combines lattices through two patterns — inline merging and external referencing — which is what makes them reusable, shareable, and scalable.

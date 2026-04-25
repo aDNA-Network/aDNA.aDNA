@@ -6,6 +6,13 @@ section: "concepts"
 order: 8
 ---
 
+import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
+
+<MermaidDiagram chart={`graph LR
+    signal["High signal\nContext file"] -->|"loads fast, decides well"| agent["Agent\nContext Window"]
+    noise["Low signal\nDump file"] -->|"wastes tokens, slows decisions"| agent
+    agent --> output["Decision\nor Artifact"]`} caption="Signal-dense context files lead to better, faster agent decisions" />
+
 ## Overview
 
 Context optimization is the practice of designing context files — the curated knowledge agents load before doing work — so they deliver maximum decision-relevant information per token consumed. It covers file structure, format selection, quality scoring, and the discipline of saying less to communicate more.

@@ -6,6 +6,14 @@ section: "concepts"
 order: 5
 ---
 
+import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
+
+<MermaidDiagram chart={`graph LR
+    A["Vault — all files"] -->|"filter by campaign"| B["Campaign scope"]
+    B -->|"filter by mission"| C["Mission files"]
+    C -->|"filter by objective"| D["Session context"]
+    D -->|"fit in window"| E["Active tokens"]`} caption="Token selection narrows the knowledge loaded at each stage" />
+
 ## Overview
 
 Token selection is the discipline of choosing which knowledge to load into an AI agent's context window — and, critically, which knowledge to leave out. aDNA provides structured mechanisms (AGENTS.md routing, context recipes, token budgets) to make this selection systematic rather than ad hoc.

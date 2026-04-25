@@ -6,6 +6,17 @@ section: "concepts"
 order: 4
 ---
 
+import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
+
+<MermaidDiagram chart={`graph TD
+    CLAUDE["CLAUDE.md — Agent master context"]
+    MANIFEST["MANIFEST.md — Project overview"]
+    STATE["STATE.md — Operational state"]
+    AGENTS["AGENTS.md — Directory guide"]
+    README["README.md — Human entry point"]
+    CLAUDE --> MANIFEST & STATE
+    AGENTS -.->|"per directory"| CLAUDE`} caption="The five root governance files every aDNA project carries" />
+
 ## Overview
 
 Every aDNA project has five ALLCAPS governance files at its root — CLAUDE.md, MANIFEST.md, STATE.md, AGENTS.md, and README.md. Together, they form the orientation layer: the minimum an agent or human needs to read before doing useful work.

@@ -6,6 +6,15 @@ section: "concepts"
 order: 12
 ---
 
+import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
+
+<MermaidDiagram chart={`graph TD
+    pub["Public Layer\nopen specs and standards"]
+    shared["Shared Layer\ncommunity lattices and patterns"]
+    org["Org Layer\nteam and domain context"]
+    priv["Private Layer\nproject and session context"]
+    pub --> shared --> org --> priv`} caption="Context layers — public knowledge flows down into increasingly specific contexts" />
+
 ## Overview
 
 Think of the Context Commons as a shared library of "how to teach an AI assistant your project" — like GitHub, but for agent knowledge instead of code. Anyone can publish what they've learned, and anyone can pull what others have validated. The rest of this concept explains how aDNA's federation protocol and FAIR metadata turn that idea into working infrastructure — curated context that helps agents across many projects, not just one.

@@ -32,7 +32,7 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 | I-01 | 72 | Replace top 3 highest-traffic "Demo coming soon" MediaPlaceholder instances with real content (GIF, screenshot, or inline walkthrough) | **done** |
 | I-02 | 73 | Replace remaining MediaPlaceholder instances; audit all tutorial pages for static placeholders | **done** |
 | I-03 | 74 | Clipboard-copy button on all CodeBlock instances across tutorial pages | **done** |
-| I-04 | 75 | Embed Mermaid/SVG architecture diagram on each of the 13 concept pages (one diagram per page minimum) | planned |
+| I-04 | 75 | Embed Mermaid/SVG architecture diagram on each of the 13 concept pages (one diagram per page minimum) | **done** |
 | I-05 | 76 | "Try this in Claude Code" CTA component at tutorial completion — pre-filled prompt deep-link | planned |
 | I-06 | 77 | Reviewer Lens Pass — Design Critic: visual hierarchy, interactive affordances, diagram clarity | planned |
 | I-07 | 78 | Reviewer Lens Pass — Newcomer Stress-Tester: first-time experience with demos and CTAs | planned |
@@ -71,7 +71,7 @@ Ranker baseline: **4.97** (D7 close). Target: **≥4.98**.
 
 ### 5. Cycle 75 — Architecture diagrams on concept pages (I-04)
 
-- **Status**: planned
+- **Status**: completed
 - **Description**: Add one Mermaid or inline SVG architecture diagram to each of the 13 concept pages. Diagrams must be dark/light safe (no hardcoded colors). Use `<MermaidDiagram>` component (introduced D4/M22). Priority concepts: triad, ontology, context_optimization, lattice_composition, convergence_model.
 - **Files**: `what/concepts/` MDX files, `site/src/components/MermaidDiagram.astro`
 - **Gate**: All 13 concept pages contain at least one diagram. Playwright a11y 100/100 maintained.

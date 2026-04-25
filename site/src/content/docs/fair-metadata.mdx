@@ -6,6 +6,13 @@ section: "concepts"
 order: 13
 ---
 
+import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
+
+<MermaidDiagram chart={`graph LR
+    F["Findable\nkeywords + identifier"] --> A["Accessible\nopen license + URI"]
+    A --> I["Interoperable\nshared vocabulary"]
+    I --> R["Reusable\nprovenance + license"]`} caption="FAIR: four requirements for knowledge objects that can be shared" />
+
 ## Overview
 
 FAIR is a simple four-question test: can someone else **F**ind your work, **A**ccess it, **I**nteroperate with it, and **R**euse it? aDNA bakes that test into every piece of project knowledge — from individual tools to whole workflows — by wrapping them in a short metadata envelope. Without it, a piece of work stays trapped inside one project; with it, the same piece becomes discoverable, trustworthy, and composable by anyone who speaks the standard.

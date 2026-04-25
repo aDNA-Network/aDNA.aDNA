@@ -6,6 +6,13 @@ section: "concepts"
 order: 6
 ---
 
+import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
+
+<MermaidDiagram chart={`graph LR
+    Campaign["Campaign\n100+ files"] --> Mission["Mission\n5–10 files"]
+    Mission --> Objective["Objective\n2–3 files"]
+    Objective --> Session["Session\n1 context window"]`} caption="Convergence narrows knowledge at each execution level" />
+
 ## Overview
 
 A project can know more than any AI agent can hold in mind at once. The convergence model solves that by narrowing the knowledge in play at each stage of work — the whole project at the top, the specific task at the bottom. Each level of aDNA's hierarchy (campaign → mission → objective) shrinks the set of files an agent sees while sharpening their relevance, so context serving becomes graph traversal: agents walk from broad to specific and load only the subgraph that matters.

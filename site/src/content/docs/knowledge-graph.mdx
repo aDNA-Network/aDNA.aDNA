@@ -6,6 +6,14 @@ section: "concepts"
 order: 3
 ---
 
+import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
+
+<MermaidDiagram chart={`graph LR
+    concept["Concept"] <-->|"uses"| pattern["Pattern"]
+    concept <-->|"taught by"| tutorial["Tutorial"]
+    tutorial <-->|"references"| glossary["Glossary Entry"]
+    pattern <-->|"assembled into"| lattice["Lattice"]`} caption="aDNA vault as knowledge graph — files are nodes, wikilinks are edges" />
+
 ## Overview
 
 An aDNA vault is not a filing cabinet — it's a knowledge graph. Files are nodes, wikilinks are edges, and AGENTS.md files are the navigation layer that helps agents traverse the graph efficiently. The structure is simultaneously a directory tree (for humans browsing) and a connected graph (for agents reasoning about relationships).

@@ -6,6 +6,13 @@ section: "concepts"
 order: 1
 ---
 
+import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
+
+<MermaidDiagram chart={`graph LR
+    WHAT["what/ — Knowledge"] <-->|"informs"| HOW["how/ — Operations"]
+    HOW <-->|"reports to"| WHO["who/ — People"]
+    WHO <-->|"scopes"| WHAT`} caption="The aDNA Triad — every project's three organizing directories" />
+
 ## Overview
 
 The triad is aDNA's universal organizing principle: every piece of project knowledge belongs in exactly one of three directories — `what/`, `how/`, or `who/` — determined by which question it answers.
