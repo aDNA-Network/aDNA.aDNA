@@ -96,7 +96,7 @@ None.
 ## Next Steps
 
 1. **Deploy D9 to Vercel** — `cd site && vercel --prod` to push D9 changes (pain statement, get-started callouts, trust links) to production.
-2. **D10 Teach-by-Example (cycles 91-100)** — Create M34 mission file. Priority: `/learn/what-is-adna` depth expansion (F-02), `/get-started` terminal output screenshot, nav overlap fix. Mandatory Reviewer Lens Pass: Educator persona + Content Strategist.
+2. **D10 Teach-by-Example (cycles 91-100)** — Create M34 mission file. Priority: **P0** `.hero-problem` restyling — remove comment-panel box (background + left-border + radius) and render pain statement as plain hero text (user feedback 2026-04-26); `/learn/what-is-adna` depth expansion (F-02, HIGH); `/get-started` terminal output screenshot; nav overlap fix. Mandatory Reviewer Lens Pass: Educator persona + Content Strategist.
 3. **Verification tags (user action)** — Register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add meta tags to `SEOHead.astro`.
 4. **Phase 7 Campaign AAR (M35)** — After D10 close, file Phase 7 closeout.
 

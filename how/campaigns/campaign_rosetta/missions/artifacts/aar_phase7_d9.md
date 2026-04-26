@@ -67,6 +67,7 @@ D10 focus: deepen the site's self-demonstrating layer — show aDNA working, not
 
 | Priority | Item | Source | Severity |
 |----------|------|--------|----------|
+| P0 | `.hero-problem` restyling — remove comment-panel visual (background + left-border + border-radius); render pain statement as plain hero text without box framing | User feedback post-deploy 2026-04-26 | **HIGH** |
 | P1 | `/learn/what-is-adna` content depth — expand from ~130 to ~800 words with diagram, worked example (CLAUDE.md snippet), and self-reference to this vault | F-02 (Content Strategist carry-forward, D4+D9) | HIGH |
 | P2 | `/get-started` step 3 terminal output — show what `claude` prints when it reads a CLAUDE.md for the first time (screenshot or ASCII block) | D9 Educator gap 4.98 | MEDIUM |
 | P3 | Nav item overlap fix — "Patterns" and "How" both route to operational content; consolidate or relabel | F-09 (IA carry-forward, D7) | LOW |
