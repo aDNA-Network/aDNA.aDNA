@@ -95,10 +95,9 @@ None.
 
 ## Next Steps
 
-1. **Deploy D9 to Vercel** — `cd site && vercel --prod` to push D9 changes (pain statement, get-started callouts, trust links) to production.
-2. **D10 Teach-by-Example (cycles 91-100)** — Create M34 mission file. Priority: **P0** `.hero-problem` restyling — remove comment-panel box (background + left-border + radius) and render pain statement as plain hero text (user feedback 2026-04-26); `/learn/what-is-adna` depth expansion (F-02, HIGH); `/get-started` terminal output screenshot; nav overlap fix. Mandatory Reviewer Lens Pass: Educator persona + Content Strategist.
-3. **Verification tags (user action)** — Register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add meta tags to `SEOHead.astro`.
-4. **Phase 7 Campaign AAR (M35)** — After D10 close, file Phase 7 closeout.
+1. **D10 Teach-by-Example (cycles 91-100)** — Create M34 mission file. P0: restyle `.hero-problem` (remove comment-panel box); P1: `/learn/what-is-adna` depth expansion (F-02); P2: `/get-started` terminal output; P3: nav overlap fix. Mandatory Reviewer Lens Pass: Educator persona + Content Strategist.
+2. **Verification tags (user action)** — Register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add meta tags to `SEOHead.astro`.
+3. **Phase 7 Campaign AAR (M35)** — After D10 close, file Phase 7 closeout.
 
 ## Pending Manual Actions
 
@@ -109,10 +108,10 @@ None.
 - **Google Search Console**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="google-site-verification" content="...">` to `SEOHead.astro`
 - **Bing Webmaster Tools**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="msvalidate.01" content="...">` to `SEOHead.astro`
 
-## Last Session (2026-04-24 — D9 complete)
+## Last Session (2026-04-26 — D9 deployed + D10 backlog seeded)
 
-D9 closed at ranker **5.00** (+0.01) — Phase 7 ceiling attained. All 10 cycles (81-90) passed build and Playwright gates (52/52). Key D9 changes: homepage `.hero-problem` paragraph names the pain above fold ("AI agents re-read your whole project every session — wasting tokens, losing decisions, rebuilding context that already existed"); `/get-started` restructured with `<Callout info>` (Claude Code prerequisites + install command) and `<Callout tip>` (expected output + time estimate ~5 min); GitHub + spec trust links added to hero fold as `.hero-trust-links` row; "How it Works" steps 02-03 descriptions rewritten problem-first ("Without a map, agents blast through irrelevant files…" / "Context windows close and wipe progress…"). Content Strategist + Information Architect + Newcomer Stress-Tester reviewer passes filed — 0 blocking findings, D10 carry-forwards documented. D9 AAR filed. M33 marked completed. D10 queued. **Deploy D9 to Vercel pending** (`cd site && vercel --prod`).
+D9 deployed to Vercel production 2026-04-26. Post-deploy user feedback: `.hero-problem` box styling (background + left-border + border-radius) reads as a comment/callout widget rather than hero copy — logged as **D10 P0**. Pain statement content is correct; only the visual treatment needs to change. All D9 commits pushed to `origin/main` (7 commits total, working tree clean).
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. D9 complete — ranker **5.00** (+0.01). **D10 QUEUED (cycles 91-100) — Teach-by-Example**. Create M34 mission file at `how/campaigns/campaign_rosetta/missions/mission_m34_d10_teach_by_example.md`. D10 priority queue (from D9 reviewer carry-forwards): (1) `/learn/what-is-adna` content depth expansion — from ~130 to ~800 words with diagram, worked example, self-reference to this vault [F-02, HIGH], (2) `/get-started` step 3 terminal output screenshot or ASCII block showing what `claude` prints on first run [MEDIUM], (3) nav item overlap fix — "Patterns" vs "How" label disambiguation [F-09, LOW], (4) `/learn/what-is-adna` add 2+ wikilinks and 1 concrete vault file path [F-06, LOW]. Mandatory Reviewer Lens Pass before cycle 97: Educator persona + Content Strategist. Ranker baseline: **5.00**. Deploy D9 first: `cd site && vercel --prod`.
+> Resume Operation Rosetta in `aDNA.aDNA/`. D9 complete and deployed — ranker **5.00**. **D10 QUEUED (cycles 91-100) — Teach-by-Example**. Create M34 mission file at `how/campaigns/campaign_rosetta/missions/mission_m34_d10_teach_by_example.md`. D10 priority queue: **(P0)** restyle `.hero-problem` in `site/src/pages/index.astro` — remove background/border/radius so the pain statement reads as plain hero text, not a comment panel [user feedback 2026-04-26]; **(P1)** `/learn/what-is-adna` content depth — expand from ~130 to ~800 words with diagram, worked example, self-reference to this vault [F-02, HIGH]; **(P2)** `/get-started` terminal output — show what `claude` prints on first run [MEDIUM]; **(P3)** nav overlap fix — "Patterns" vs "How" label disambiguation [F-09, LOW]; **(P4)** `/learn/what-is-adna` add 2+ wikilinks + 1 concrete vault file path [F-06, LOW]. Mandatory Reviewer Lens Pass before cycle 97: Educator persona + Content Strategist. Ranker baseline: **5.00**. Working tree is clean — start by creating M34 and a session file.
