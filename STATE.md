@@ -99,8 +99,7 @@ None.
 ## Next Steps
 
 1. **Phase 7 Campaign AAR (M35)** — Full retrospective on 100 cycles, 10 decadals, Phases 0-7 arc. Lessons for Phase 8. Create M35 mission file at `how/campaigns/campaign_rosetta/missions/mission_m35_phase7_campaign_aar.md`.
-2. **Vercel deploy** — Push all D10 commits, deploy `vercel --prod`.
-3. **Verification tags (user action)** — Register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add meta tags to `SEOHead.astro`.
+2. **Verification tags (user action)** — Register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add meta tags to `SEOHead.astro`.
 
 ## Pending Manual Actions
 
@@ -108,7 +107,7 @@ None.
 - **Vercel Git integration**: Connect repo at vercel.com > adna-docs > Settings > Git for auto-deploy (currently manual via `vercel --prod`)
 - **Vercel deploy**: D7+D8 deployed to production 2026-04-24 ✅
 - **Vercel deploy**: D9 deployed to production 2026-04-26 ✅
-- **Vercel deploy**: D10 — push commits + `vercel --prod` (pending this session close)
+- **Vercel deploy**: D10 deployed to production 2026-04-26 ✅
 - **Google Search Console**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="google-site-verification" content="...">` to `SEOHead.astro`
 - **Bing Webmaster Tools**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="msvalidate.01" content="...">` to `SEOHead.astro`
 
@@ -118,4 +117,4 @@ D10 (Teach-by-Example, cycles 91-100) completed 2026-04-26. P0 hero-problem rest
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. **Phase 7 complete** — D10 done, ranker 5.00. **M35 queued: Phase 7 Campaign AAR.** Create M35 mission file at `how/campaigns/campaign_rosetta/missions/mission_m35_phase7_campaign_aar.md`. M35 scope: full Phase 7 retrospective (100 cycles across 10 decadals, 4.35→5.00, +0.65 total gain), Phases 0-7 arc summary, lessons learned, Phase 8 seeding (Researcher Findability 4.95 gap, Educator interactive demo gap, live workshop kit). Also: push all D10 commits to `origin/main`, deploy `vercel --prod`. Working tree: commits pending push.
+> Resume Operation Rosetta in `aDNA.aDNA/`. **Phase 7 complete** — D10 done and deployed, ranker 5.00. **M35 queued: Phase 7 Campaign AAR.** Create M35 mission file at `how/campaigns/campaign_rosetta/missions/mission_m35_phase7_campaign_aar.md`. M35 scope: full Phase 7 retrospective (100 cycles across 10 decadals, 4.35→5.00, +0.65 total gain), Phases 0-7 arc summary, lessons learned, Phase 8 seeding (Researcher Findability 4.95 gap, Educator interactive demo gap, live workshop kit). Working tree is clean — start by creating M35 and a session file.
