@@ -105,7 +105,7 @@ None.
 - **GitHub social preview**: Upload `site/public/images/og-default.png` at github.com/LatticeProtocol/aDNA.aDNA > Settings > Social preview
 - **Vercel Git integration**: Connect repo at vercel.com > adna-docs > Settings > Git for auto-deploy (currently manual via `vercel --prod`)
 - **Vercel deploy**: D7+D8 deployed to production 2026-04-24 ✅
-- **Vercel deploy**: D9 changes pending deploy (`cd site && vercel --prod`)
+- **Vercel deploy**: D9 deployed to production 2026-04-26 ✅
 - **Google Search Console**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="google-site-verification" content="...">` to `SEOHead.astro`
 - **Bing Webmaster Tools**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="msvalidate.01" content="...">` to `SEOHead.astro`
 
