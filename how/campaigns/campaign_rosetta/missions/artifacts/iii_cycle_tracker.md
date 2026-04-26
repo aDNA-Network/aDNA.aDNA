@@ -1890,3 +1890,134 @@ D7 delta: **+0.01** (4.96 → 4.97). D7 target ≥4.97 MET.
 **Carry-Forward to D8**: Verification tags (user must register), nav duplicate link text differentiation
 
 **Validation**: PASS — Build: 117 pages, 0 errors. Playwright: 47/47. Ranker: 4.97/5.00. D7 CLOSED.
+
+---
+
+## Decadal 8 — Interaction Depth (Cycles 71-80, 2026-04-24)
+
+**Theme**: Deepen interactive layer — architecture diagrams, interactive demos, light/dark FOUC fix, hero banner compression, tooltip system.
+
+**Ranker D8 Close**:
+
+| Persona | Findability | Comprehension | Actionability | Trust | Relevance | Delight | Avg |
+|---------|-------------|---------------|---------------|-------|-----------|---------|-----|
+| Solo Developer | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 |
+| Educator | 5.00 | 5.00 | 4.93 | 5.00 | 5.00 | 4.95 | 4.98 |
+| Enterprise Team | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 4.98 | 4.99 |
+| Researcher | 4.95 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 4.99 |
+| Startup | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 |
+| **Avg** | **4.99** | **5.00** | **4.99** | **5.00** | **5.00** | **4.99** | **4.99** |
+
+D8 delta: **+0.02** (4.97 → 4.99). Delight 4.83→4.99 (+0.16).
+
+Key gains: light/dark FOUC fix, hero banner AVIF (110kB→10kB), 39 tooltips, Mermaid diagrams on concept pages, Design Critic + Newcomer reviewer passes.
+**AAR artifact**: `aar_phase7_d8.md`
+**Validation**: PASS — Playwright: 52/52. Ranker: 4.99/5.00. D8 CLOSED.
+
+---
+
+## Decadal 9 — Narrative Onboarding (Cycles 81-90, 2026-04-24)
+
+**Theme**: Name the problem above the fold; set concrete expectations on /get-started; reframe How it Works steps as problem-first.
+
+**Ranker D9 Close**:
+
+| Persona | Findability | Comprehension | Actionability | Trust | Relevance | Delight | Avg |
+|---------|-------------|---------------|---------------|-------|-----------|---------|-----|
+| Solo Developer | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 |
+| Educator | 5.00 | 5.00 | **4.98** | 5.00 | 5.00 | **4.98** | 4.99 |
+| Enterprise Team | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 4.98 | 5.00 |
+| Researcher | 4.95 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 4.99 |
+| Startup | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 |
+| **Avg** | **4.99** | **5.00** | **5.00** | **5.00** | **5.00** | **5.00** | **5.00** |
+
+D9 delta: **+0.01** (4.99 → 5.00). Actionability 4.99→5.00, Delight 4.99→5.00.
+
+Key gains: `.hero-problem` pain statement above fold, /get-started time estimate + expected output + Claude Code install callout, GitHub + spec trust links in hero, "How it Works" steps 02-03 problem-first reframe. Content Strategist + IA + Newcomer reviewer passes filed.
+**AAR artifact**: `aar_phase7_d9.md`
+**Validation**: PASS — Playwright: 52/52. Ranker: 5.00/5.00. D9 CLOSED. Deployed to Vercel production 2026-04-26.
+
+---
+
+## Decadal 10 — Teach-by-Example (Cycles 91-100, 2026-04-26)
+
+**Theme**: Show aDNA working, not just describe it. Deepen self-demonstrating layer, resolve F-02/F-06, address Educator persona gaps.
+
+### Cycle 91 — 2026-04-26
+
+**Decadal**: D10 Open
+**Target**: M34 mission file + session file; D10 baseline established
+**Before**: Ranker 5.00, working tree clean, D10 priority queue seeded from aar_phase7_d9
+**After**: M34 created (`mission_m34_d10_teach_by_example.md`), session file created, baseline noted
+**Validation**: PASS — Playwright: 52/52.
+
+### Cycle 92 — 2026-04-26
+
+**Decadal**: D10 (P0)
+**Target**: `.hero-problem` restyle — remove box framing, render as plain hero text
+**Before**: `.hero-problem` had background/border/border-left/border-radius — read as a comment-panel widget
+**After**: Stripped: padding, background, border, border-left, border-radius. Pain statement reads as plain hero prose.
+**Validation**: PASS — Playwright: 52/52. Visual: pain statement flows as hero text, no callout box.
+
+### Cycle 93-94 — 2026-04-26
+
+**Decadal**: D10 (P1)
+**Target**: `/learn/what-is-adna` expand from ~130 to ~1000 words — triad diagram + entity table + CLAUDE.md snippet + self-reference
+**Before**: ~130 prose words, 4 short sections. F-02 open (Content Strategist carry-forward). F-06 open (self-reference missing).
+**After**: ~1000 words. Added: triad directory code block, 14-entity-type table, CLAUDE.md code snippet with annotation, "This site IS an aDNA vault" section with 4 GitHub links to live vault files. F-02 RESOLVED. F-06 RESOLVED.
+**Validation**: PASS — Playwright: 52/52.
+
+### Cycle 95 — 2026-04-26
+
+**Decadal**: D10 (P2)
+**Target**: `/get-started` step 3 — add terminal output ASCII block
+**Before**: Step 3 was prose-only: "The agent will read CLAUDE.md, detect a fresh project, and walk you through onboarding."
+**After**: Added representative Claude Code terminal output block showing: banner, CLAUDE.md load confirmation, agent first message detecting fresh project and offering onboarding. Follow-on prose: "The agent reads your CLAUDE.md before asking a single question."
+**Validation**: PASS — Playwright: 52/52.
+
+### Cycle 96 — 2026-04-26
+
+**Decadal**: D10 (P3)
+**Target**: Nav overlap fix — "How" sidebar label disambiguation
+**Before**: Sidebar group "How" — ambiguous (confused with How it Works, HOW triad leg, operational how-to)
+**After**: Sidebar group renamed to "Guides" — unambiguous signal for operational workflows (publishing, workshops, lattice examples). F-09 RESOLVED.
+**Validation**: PASS — Playwright: 52/52.
+
+### Cycles 97-98 — 2026-04-26
+
+**Decadal**: D10 (Reviewer Lens Pass — Mandatory)
+**Target**: Educator persona review + Content Strategist review of all D10 changes
+**Educator**: Actionability +0.01 (P1+P2), Delight +0.01 (P1 page depth). No blocking issues. Artifacts: `review_d10_educator_cycle97.md`
+**Content Strategist**: F-02 RESOLVED, F-06 RESOLVED, voice consistent, no new blocking issues. Artifacts: `review_d10_content_strategist_cycle98.md`
+**Validation**: PASS — both reviewers clear.
+
+### Cycle 99 — 2026-04-26
+
+**Decadal**: D10 (P4/P5 cleanup)
+**Target**: P4 wikilinks verified; P5 hero metaphor parenthetical
+**P4**: `/learn/what-is-adna` confirmed 5+ internal links + vault file paths (done in cycles 93-94).
+**P5**: Added parenthetical to hero-lead: "aDNA is the genome of your project (a structured, persistent context layer) — …" Grounds metaphor for true newcomers per D9 Newcomer finding.
+**Validation**: PASS — Playwright: 52/52.
+
+### Cycle 100 — 2026-04-26
+
+**Decadal**: D10 CLOSE
+**Target**: Full ranker, AAR, STATE.md update, M34 completed, deploy
+**Before**: Ranker 5.00 (D9 close), Educator 4.99
+
+**Ranker D10 Close**:
+
+| Persona | Findability | Comprehension | Actionability | Trust | Relevance | Delight | Avg |
+|---------|-------------|---------------|---------------|-------|-----------|---------|-----|
+| Solo Developer | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 |
+| Educator | 5.00 | 5.00 | **4.99** | 5.00 | 5.00 | **4.99** | 4.99 |
+| Enterprise Team | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | **4.99** | 5.00 |
+| Researcher | 4.95 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 4.99 |
+| Startup | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 | 5.00 |
+| **Avg** | **4.99** | **5.00** | **5.00** | **5.00** | **5.00** | **5.00** | **5.00** |
+
+D10 delta: **0.00** (5.00 → 5.00). Ranker holds at ceiling. Educator Actionability 4.98→4.99 (+0.01), Educator Delight 4.98→4.99 (+0.01), Enterprise Delight 4.98→4.99 (+0.01).
+
+Key gains: P0 hero-problem restyle (plain text, no box), P1 what-is-adna ~1000 words (F-02+F-06 resolved), P2 get-started terminal output, P3 nav "How"→"Guides", P5 hero parenthetical.
+**AAR artifact**: `aar_phase7_d10.md`
+**Validation**: PASS — Playwright: 52/52. Ranker: 5.00/5.00. D10 CLOSED. Phase 7 complete — 100 cycles across 10 decadals. M35 Campaign AAR queued.

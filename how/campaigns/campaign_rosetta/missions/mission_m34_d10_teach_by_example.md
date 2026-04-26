@@ -3,7 +3,7 @@ plan_id: mission_m34
 type: plan
 title: "M34 — D10: Teach-by-Example (Cycles 91-100)"
 owner: stanley
-status: in_progress
+status: completed
 mission_class: implementation
 created: 2026-04-26
 updated: 2026-04-26
@@ -30,14 +30,14 @@ Ranker baseline: **5.00** (D9 close). Target: hold 5.00, edge Educator Actionabi
 |----|-------|------|--------|
 | I-00 | 91 | Gate measurement: Playwright baseline, confirm ranker 5.00 | **done** |
 | I-01 | 92 | P0: `.hero-problem` restyle — remove box framing (background/border/radius), render as plain hero text | **done** |
-| I-02 | 93 | P1a: `/learn/what-is-adna` — triad diagram + entity table + agent before/after expansion | pending |
-| I-03 | 94 | P1b: `/learn/what-is-adna` — CLAUDE.md worked example snippet + self-reference callout + wikilinks | pending |
-| I-04 | 95 | P2: `/get-started` step 3 — terminal output ASCII block | pending |
-| I-05 | 96 | P3: Nav overlap fix — "Patterns" vs "How" label disambiguation | pending |
-| I-06 | 97 | Reviewer Lens Pass — Educator persona: Actionability + Delight scoring | pending |
-| I-07 | 98 | Reviewer Lens Pass — Content Strategist: F-02 resolved, F-06 resolved, voice consistency | pending |
-| I-08 | 99 | P4/P5 cleanup: verify wikilinks + vault path in what-is-adna; hero metaphor parenthetical | pending |
-| I-09 | 100 | D10 decadal close: full Playwright suite, 5-persona ranker, AAR, deploy | pending |
+| I-02 | 93 | P1a: `/learn/what-is-adna` — triad diagram + entity table + agent before/after expansion | **done** |
+| I-03 | 94 | P1b: `/learn/what-is-adna` — CLAUDE.md worked example snippet + self-reference callout + wikilinks | **done** |
+| I-04 | 95 | P2: `/get-started` step 3 — terminal output ASCII block | **done** |
+| I-05 | 96 | P3: Nav overlap fix — "How" → "Guides" label disambiguation | **done** |
+| I-06 | 97 | Reviewer Lens Pass — Educator persona: Actionability +0.01, Delight +0.01 | **done** |
+| I-07 | 98 | Reviewer Lens Pass — Content Strategist: F-02 RESOLVED, F-06 RESOLVED | **done** |
+| I-08 | 99 | P4/P5 cleanup: wikilinks confirmed, hero parenthetical applied | **done** |
+| I-09 | 100 | D10 decadal close: Playwright 52/52, ranker 5.00, AAR filed | **done** |
 
 ## Tasks
 

@@ -1,7 +1,7 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-04-24
+updated: 2026-04-26
 status: active
 last_edited_by: agent_rosetta
 
@@ -14,7 +14,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 7 active — D9 complete (cycles 81-90), D10 queued. Ranker 5.00 attained.** Phases 0-6 complete (89 vault content files + 117-page live site). Phase 7 executing: 100-cycle III loop across 10 themed decadals. D1→4.35. D2→4.70. D3→4.83. D4→4.91. D5→4.94. D6→4.96. D7→4.97. D8→4.99. D9 (Narrative Onboarding, 2026-04-24) closed →**5.00** (+0.01). **D9 changes**: homepage pain statement above fold (`.hero-problem` paragraph), `/get-started` time estimate + expected output + Claude Code install callout, GitHub + spec trust links in hero fold, "How it Works" steps 02-03 reframed problem-first. Content Strategist + Information Architect + Newcomer Stress-Tester reviewer passes filed. Actionability 4.99→5.00 (+0.01), Delight 4.99→5.00 (+0.01). Playwright 52/52. D9 AAR filed; M33 completed. D10 (Teach-by-Example, cycles 91-100) **queued**.
+**Phase 7 complete — D10 done (cycles 91-100), ranker 5.00 held. Phase 7 Campaign AAR (M35) queued.** Phases 0-6 complete (89 vault content files + 117-page live site). Phase 7 complete: 100-cycle III loop across 10 themed decadals. D1→4.35. D2→4.70. D3→4.83. D4→4.91. D5→4.94. D6→4.96. D7→4.97. D8→4.99. D9→5.00. D10 (Teach-by-Example, 2026-04-26) closed →**5.00** (ceiling held). **D10 changes**: `.hero-problem` restyle (plain hero text, no box), `/learn/what-is-adna` expanded ~130→~1000 words (triad diagram + entity table + CLAUDE.md snippet + self-reference callout — F-02+F-06 resolved), `/get-started` step 3 terminal output ASCII block, nav "How"→"Guides" (F-09 resolved), hero parenthetical. Educator Actionability 4.98→4.99, Educator Delight 4.98→4.99. Playwright 52/52. D10 AAR filed; M34 completed. **M35: Phase 7 Campaign AAR** queued.
 
 ## Active Campaign
 
@@ -49,7 +49,9 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 - **M33: D9 Narrative Onboarding** — **Complete** (cycles 81-90, 2026-04-24). Ranker 4.99→**5.00** (Δ +0.01). Pain statement above fold, `/get-started` callouts, trust links in hero, problem-first steps. Educator Actionability 4.93→4.98. AAR: [aar_phase7_d9.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d9.md).
 
-- **M34: D10 Teach-by-Example** — **Pending** (cycles 91-100). Priority: `/learn/what-is-adna` depth expansion, `/get-started` terminal output, nav overlap fix. Mandatory Reviewer Lens Pass: Educator persona + Content Strategist.
+- **M34: D10 Teach-by-Example** — **Complete** (cycles 91-100, 2026-04-26). Ranker 5.00→**5.00** (ceiling held). `.hero-problem` restyle, `what-is-adna` ~1000 words (F-02+F-06 resolved), get-started terminal output, nav "How"→"Guides", hero parenthetical. Educator Actionability 4.98→4.99, Delight 4.98→4.99. AAR: [aar_phase7_d10.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d10.md).
+
+- **M35: Phase 7 Campaign AAR** — **Pending**. Full Phase 7 retrospective — 100 cycles, 10 decadals, 4.35→5.00 (+0.65). Document arc Phases 0-7, lessons for Phase 8 planning.
 
 ### Persona Ranker Summary
 
@@ -63,17 +65,18 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 | D6 (Performance & Loading) | 4.96 | +0.02 |
 | D7 (SEO & Discoverability) | 4.97 | +0.01 |
 | D8 (Interaction Depth) | 4.99 | +0.02 |
-| D9 (Narrative Onboarding) | **5.00** | **+0.01** |
+| D9 (Narrative Onboarding) | 5.00 | +0.01 |
+| D10 (Teach-by-Example) | **5.00** | **0.00** |
 
-**D9 dimension breakdown**: Findability 4.99 (0) · Comprehension 5.00 (0) · **Actionability 5.00 (+0.01)** · Trust 5.00 (0) · Relevance 5.00 (0) · **Delight 5.00 (+0.01)**
+**D10 dimension breakdown**: Findability 4.99 (0) · Comprehension 5.00 (0) · Actionability 5.00 (0) · Trust 5.00 (0) · Relevance 5.00 (0) · Delight 5.00 (0) · **Phase 7 total: 4.35→5.00 (+0.65)**
 
 ## What's Working
 
 - Full documentation site live at https://adna-docs.vercel.app — **117 pages**
 - Lighthouse 100/100/100/100 desktop + **98-100 mobile Performance** across all tested pages (target ≥90 exceeded)
 - Playwright **47/47** gates pass (gate-10-perf.spec.ts added D6)
-- Homepage: plain-language hero-lead ("the genome of your project"), Problem→Shape→Win How it Works arc, dual-audience hero-subtitle
-- `/learn/what-is-adna` expanded to ~700 words — before/after example, 3-question test, live vault self-reference
+- Homepage: plain-language hero-lead ("the genome of your project (a structured, persistent context layer)"), pain statement as plain hero text (no box), Problem→Shape→Win How it Works arc, dual-audience hero-subtitle
+- `/learn/what-is-adna` expanded to ~1000 words — triad diagram, 14-entity table, CLAUDE.md snippet, "This site IS an aDNA vault" self-reference with 4 GitHub links (F-02 + F-06 resolved)
 - 6 persona landings: `/educators`, `/enterprise`, `/compliance`, `/startup-first-hour`, `/researchers` (new D3), `/adopters` (with decision tree)
 - Breadcrumbs site-wide + Related Elsewhere CardGrids on all 29 content pages + Back-to-index links + tooltip rollout (39 tooltips total)
 - Tutorial index: difficulty-tiered with time estimates and per-tier guidance
@@ -95,9 +98,9 @@ None.
 
 ## Next Steps
 
-1. **D10 Teach-by-Example (cycles 91-100)** — Create M34 mission file. P0: restyle `.hero-problem` (remove comment-panel box); P1: `/learn/what-is-adna` depth expansion (F-02); P2: `/get-started` terminal output; P3: nav overlap fix. Mandatory Reviewer Lens Pass: Educator persona + Content Strategist.
-2. **Verification tags (user action)** — Register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add meta tags to `SEOHead.astro`.
-3. **Phase 7 Campaign AAR (M35)** — After D10 close, file Phase 7 closeout.
+1. **Phase 7 Campaign AAR (M35)** — Full retrospective on 100 cycles, 10 decadals, Phases 0-7 arc. Lessons for Phase 8. Create M35 mission file at `how/campaigns/campaign_rosetta/missions/mission_m35_phase7_campaign_aar.md`.
+2. **Vercel deploy** — Push all D10 commits, deploy `vercel --prod`.
+3. **Verification tags (user action)** — Register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add meta tags to `SEOHead.astro`.
 
 ## Pending Manual Actions
 
@@ -105,13 +108,14 @@ None.
 - **Vercel Git integration**: Connect repo at vercel.com > adna-docs > Settings > Git for auto-deploy (currently manual via `vercel --prod`)
 - **Vercel deploy**: D7+D8 deployed to production 2026-04-24 ✅
 - **Vercel deploy**: D9 deployed to production 2026-04-26 ✅
+- **Vercel deploy**: D10 — push commits + `vercel --prod` (pending this session close)
 - **Google Search Console**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="google-site-verification" content="...">` to `SEOHead.astro`
 - **Bing Webmaster Tools**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="msvalidate.01" content="...">` to `SEOHead.astro`
 
-## Last Session (2026-04-26 — D9 deployed + D10 backlog seeded)
+## Last Session (2026-04-26 — D10 complete, Phase 7 done)
 
-D9 deployed to Vercel production 2026-04-26. Post-deploy user feedback: `.hero-problem` box styling (background + left-border + border-radius) reads as a comment/callout widget rather than hero copy — logged as **D10 P0**. Pain statement content is correct; only the visual treatment needs to change. All D9 commits pushed to `origin/main` (7 commits total, working tree clean).
+D10 (Teach-by-Example, cycles 91-100) completed 2026-04-26. P0 hero-problem restyle, P1 what-is-adna ~1000 words (F-02+F-06 resolved), P2 get-started terminal output, P3 nav "How"→"Guides", P5 hero parenthetical. Educator Actionability 4.98→4.99, Delight 4.98→4.99. Playwright 52/52 throughout. D10 AAR filed. M34 completed. Ranker holds at **5.00**. Phase 7 complete — 100 cycles, 10 decadals, 4.35→5.00 (+0.65). **M35 (Phase 7 Campaign AAR) queued.**
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. D9 complete and deployed — ranker **5.00**. **D10 QUEUED (cycles 91-100) — Teach-by-Example**. Create M34 mission file at `how/campaigns/campaign_rosetta/missions/mission_m34_d10_teach_by_example.md`. D10 priority queue: **(P0)** restyle `.hero-problem` in `site/src/pages/index.astro` — remove background/border/radius so the pain statement reads as plain hero text, not a comment panel [user feedback 2026-04-26]; **(P1)** `/learn/what-is-adna` content depth — expand from ~130 to ~800 words with diagram, worked example, self-reference to this vault [F-02, HIGH]; **(P2)** `/get-started` terminal output — show what `claude` prints on first run [MEDIUM]; **(P3)** nav overlap fix — "Patterns" vs "How" label disambiguation [F-09, LOW]; **(P4)** `/learn/what-is-adna` add 2+ wikilinks + 1 concrete vault file path [F-06, LOW]. Mandatory Reviewer Lens Pass before cycle 97: Educator persona + Content Strategist. Ranker baseline: **5.00**. Working tree is clean — start by creating M34 and a session file.
+> Resume Operation Rosetta in `aDNA.aDNA/`. **Phase 7 complete** — D10 done, ranker 5.00. **M35 queued: Phase 7 Campaign AAR.** Create M35 mission file at `how/campaigns/campaign_rosetta/missions/mission_m35_phase7_campaign_aar.md`. M35 scope: full Phase 7 retrospective (100 cycles across 10 decadals, 4.35→5.00, +0.65 total gain), Phases 0-7 arc summary, lessons learned, Phase 8 seeding (Researcher Findability 4.95 gap, Educator interactive demo gap, live workshop kit). Also: push all D10 commits to `origin/main`, deploy `vercel --prod`. Working tree: commits pending push.
