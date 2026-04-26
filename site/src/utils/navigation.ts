@@ -167,7 +167,7 @@ export const navigation: NavGroup[] = [
     ],
   },
   {
-    label: 'How',
+    label: 'Guides',
     items: [
       {
         label: 'Publishing',
