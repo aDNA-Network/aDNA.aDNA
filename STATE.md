@@ -109,12 +109,13 @@ None.
 - **Vercel deploy**: D7+D8 deployed to production 2026-04-24 ✅
 - **Vercel deploy**: D9 deployed to production 2026-04-26 ✅
 - **Vercel deploy**: D10 deployed to production 2026-04-26 ✅
+- **Vercel deploy**: Wind-down (M35 AAR, campaign closeout) deployed to production 2026-04-26 ✅
 - **Google Search Console**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="google-site-verification" content="...">` to `SEOHead.astro`
 - **Bing Webmaster Tools**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="msvalidate.01" content="...">` to `SEOHead.astro`
 
-## Last Session (2026-04-26 — M35 complete, Operation Rosetta Phases 0-7 done)
+## Last Session (2026-04-26 — Wind-down: M35 + Operation Rosetta Phases 0-7 complete, deployed)
 
-M35 (Phase 7 Campaign AAR) completed 2026-04-26. Campaign closeout AAR filed at `missions/artifacts/aar_phase7_campaign_closeout.md`. Key synthesis: decreasing-returns curve confirmed, pain-statement above fold highest-ROI change (D9), reviewer bench adds non-redundant signal, Researcher Findability 4.95 and Educator Actionability 4.99 are structural carry-forwards for Phase 8. Operation Rosetta Phases 0-7 complete. 89 content files, 117 site pages, ranker 5.00.
+M35 (Phase 7 Campaign AAR) completed 2026-04-26. Campaign closeout AAR filed at `missions/artifacts/aar_phase7_campaign_closeout.md`. Key synthesis: decreasing-returns curve confirmed, pain-statement above fold highest-ROI change (D9), reviewer bench adds non-redundant signal, Researcher Findability 4.95 and Educator Actionability 4.99 are structural carry-forwards for Phase 8. Operation Rosetta Phases 0-7 complete. 89 content files, 117 site pages, ranker 5.00. **Deployed to Vercel production 2026-04-26** — live at https://adna-docs.vercel.app.
 
 ## Next Session Prompt
 
