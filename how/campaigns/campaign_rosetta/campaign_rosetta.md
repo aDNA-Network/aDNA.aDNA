@@ -11,7 +11,7 @@ estimated_sessions: "65-85"
 estimation_class: content-novel
 priority: high
 created: 2026-04-13
-updated: 2026-04-24
+updated: 2026-04-26
 last_edited_by: agent_rosetta
 tags: [campaign, rosetta, adna, documentation, education, website]
 ---
@@ -118,7 +118,7 @@ Build the self-referential aDNA context graph at `aDNA.aDNA/` — a vault that t
 | M32 | D8: Interaction Depth | 71-80 | **complete (ranker 4.99)** | Demo/media placeholder replacements, clipboard-copy on CodeBlocks, architecture diagrams on concept pages, "Try this in Claude Code" CTAs, progressive disclosure for glossary. Reviewer Lens Pass: Design Critic + Newcomer Stress-Tester. Delight 4.83→4.99 (+0.16). |
 | M33 | D9: Narrative Onboarding | 81-90 | pending | /get-started install pointer + expected output (F-08), onboarding flows, trust signal relocation (F-10). **Reviewer Lens Pass mandatory** (Content Strategist, Information Architect, Newcomer Stress-Tester). |
 | M34 | D10: Hardening & Closeout | 91-100 | pending | Regression testing, final audit, measurement dashboard |
-| M35 | Phase 7 Closeout & Campaign AAR | — | pending | Final Lighthouse, full persona ranker, campaign-level AAR |
+| M35 | Phase 7 Campaign AAR | — | **completed** | Campaign-level AAR: 100 cycles, 10 decadals, 4.35→5.00 (+0.65). Phases 0-7 arc summary. Phase 8 seeding. |
 
 > **Cycle protocol**: Each cycle follows `skill_iii_cycle.md` (7-step: Measure → Orient → Select → Implement → Re-measure → Validate → Record). Every 10th cycle runs `skill_decadal_aar.md` (8-step persona ranker review). Decadal themes focus effort but don't prohibit opportunistic fixes.
 

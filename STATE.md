@@ -4,7 +4,6 @@ created: 2026-04-13
 updated: 2026-04-26
 status: active
 last_edited_by: agent_rosetta
-
 tags: [state, governance]
 ---
 
@@ -14,7 +13,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Phase 7 complete — D10 done (cycles 91-100), ranker 5.00 held. Phase 7 Campaign AAR (M35) queued.** Phases 0-6 complete (89 vault content files + 117-page live site). Phase 7 complete: 100-cycle III loop across 10 themed decadals. D1→4.35. D2→4.70. D3→4.83. D4→4.91. D5→4.94. D6→4.96. D7→4.97. D8→4.99. D9→5.00. D10 (Teach-by-Example, 2026-04-26) closed →**5.00** (ceiling held). **D10 changes**: `.hero-problem` restyle (plain hero text, no box), `/learn/what-is-adna` expanded ~130→~1000 words (triad diagram + entity table + CLAUDE.md snippet + self-reference callout — F-02+F-06 resolved), `/get-started` step 3 terminal output ASCII block, nav "How"→"Guides" (F-09 resolved), hero parenthetical. Educator Actionability 4.98→4.99, Educator Delight 4.98→4.99. Playwright 52/52. D10 AAR filed; M34 completed. **M35: Phase 7 Campaign AAR** queued.
+**Operation Rosetta Phases 0-7 complete. M35 (Phase 7 Campaign AAR) complete 2026-04-26. Phase 8 queued.** 89 vault content files + 117-page live site. Phase 7: 100-cycle III loop across 10 themed decadals, ranker 4.35→5.00 (+0.65). Ceiling reached D9, held D10. Campaign AAR filed: `missions/artifacts/aar_phase7_campaign_closeout.md`. Phase 8 opening priorities: Researcher Findability (spec citations + dataset cross-refs), Educator interactive demo/workshop kit page.
 
 ## Active Campaign
 
@@ -51,7 +50,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 - **M34: D10 Teach-by-Example** — **Complete** (cycles 91-100, 2026-04-26). Ranker 5.00→**5.00** (ceiling held). `.hero-problem` restyle, `what-is-adna` ~1000 words (F-02+F-06 resolved), get-started terminal output, nav "How"→"Guides", hero parenthetical. Educator Actionability 4.98→4.99, Delight 4.98→4.99. AAR: [aar_phase7_d10.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d10.md).
 
-- **M35: Phase 7 Campaign AAR** — **Pending**. Full Phase 7 retrospective — 100 cycles, 10 decadals, 4.35→5.00 (+0.65). Document arc Phases 0-7, lessons for Phase 8 planning.
+- **M35: Phase 7 Campaign AAR** — **Complete** (2026-04-26). Campaign-level AAR synthesizing 100 cycles, 10 decadals, 4.35→5.00 (+0.65). Phase arc Phases 0-7 documented. Phase 8 seeded. AAR: [aar_phase7_campaign_closeout.md](how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_campaign_closeout.md).
 
 ### Persona Ranker Summary
 
@@ -98,8 +97,10 @@ None.
 
 ## Next Steps
 
-1. **Phase 7 Campaign AAR (M35)** — Full retrospective on 100 cycles, 10 decadals, Phases 0-7 arc. Lessons for Phase 8. Create M35 mission file at `how/campaigns/campaign_rosetta/missions/mission_m35_phase7_campaign_aar.md`.
+1. **Phase 8 kickoff** — Open with new baseline persona ranker and P0 spec citation pass (add `adna_standard.md` section references to all 13 concept pages). Assign M36.
 2. **Verification tags (user action)** — Register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add meta tags to `SEOHead.astro`.
+3. **Educator interactive demo** — Live workshop kit page or in-browser demo (Educator Actionability 4.99 ceiling resolution).
+4. **Researcher dataset cross-links** — Cross-link concept pages to aDNA-annotated datasets.
 
 ## Pending Manual Actions
 
@@ -111,10 +112,10 @@ None.
 - **Google Search Console**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="google-site-verification" content="...">` to `SEOHead.astro`
 - **Bing Webmaster Tools**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="msvalidate.01" content="...">` to `SEOHead.astro`
 
-## Last Session (2026-04-26 — D10 complete, Phase 7 done)
+## Last Session (2026-04-26 — M35 complete, Operation Rosetta Phases 0-7 done)
 
-D10 (Teach-by-Example, cycles 91-100) completed 2026-04-26. P0 hero-problem restyle, P1 what-is-adna ~1000 words (F-02+F-06 resolved), P2 get-started terminal output, P3 nav "How"→"Guides", P5 hero parenthetical. Educator Actionability 4.98→4.99, Delight 4.98→4.99. Playwright 52/52 throughout. D10 AAR filed. M34 completed. Ranker holds at **5.00**. Phase 7 complete — 100 cycles, 10 decadals, 4.35→5.00 (+0.65). **M35 (Phase 7 Campaign AAR) queued.**
+M35 (Phase 7 Campaign AAR) completed 2026-04-26. Campaign closeout AAR filed at `missions/artifacts/aar_phase7_campaign_closeout.md`. Key synthesis: decreasing-returns curve confirmed, pain-statement above fold highest-ROI change (D9), reviewer bench adds non-redundant signal, Researcher Findability 4.95 and Educator Actionability 4.99 are structural carry-forwards for Phase 8. Operation Rosetta Phases 0-7 complete. 89 content files, 117 site pages, ranker 5.00.
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. **Phase 7 complete** — D10 done and deployed, ranker 5.00. **M35 queued: Phase 7 Campaign AAR.** Create M35 mission file at `how/campaigns/campaign_rosetta/missions/mission_m35_phase7_campaign_aar.md`. M35 scope: full Phase 7 retrospective (100 cycles across 10 decadals, 4.35→5.00, +0.65 total gain), Phases 0-7 arc summary, lessons learned, Phase 8 seeding (Researcher Findability 4.95 gap, Educator interactive demo gap, live workshop kit). Working tree is clean — start by creating M35 and a session file.
+> Resume Operation Rosetta in `aDNA.aDNA/`. **Phases 0-7 complete** — M35 done, Operation Rosetta campaign AAR filed. **Phase 8 queued.** Open Phase 8 by creating M36 at `how/campaigns/campaign_rosetta/missions/mission_m36_phase8_kickoff.md`. Phase 8 P0: add `adna_standard.md` section citations to all 13 concept pages (Researcher Findability 4.95 gap). P1: design Educator interactive demo / live workshop kit page. Begin with new baseline persona ranker measurement. Lock cycle tracker at decadal close discipline.
