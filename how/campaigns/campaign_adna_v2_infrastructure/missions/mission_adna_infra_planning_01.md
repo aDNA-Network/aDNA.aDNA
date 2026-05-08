@@ -3,10 +3,11 @@ type: mission
 mission_id: mission_adna_infra_planning_01
 campaign: campaign_adna_v2_infrastructure
 campaign_phase: 0
-status: planned
+status: completed
 mission_class: planning
 created: 2026-05-07
 updated: 2026-05-08
+completed: 2026-05-08T23:55:00Z
 last_edited_by: agent_stanley
 amendments:
   - 2026-05-08: "Campaign Amendment Session (S2 S2.5) — folded airlock template integration (ADR-008 slot in Obj 2 / M03) + naming/repo convention codification (ADR-009 slot in Obj 7 / M07) into existing objective scope; added scope notes to Obj 4 (cross-graph coord memo using airlock request schema as exemplar), Obj 5 (naming convention audit), Obj 8 (upgrade guide airlock + naming sections), Obj 11 (multi-campaign successor seeding); recalibrated estimated effort 5-6 → 6-7 sessions; added deliverables 20-22. See artifacts/m01_amendment_log.md."

@@ -11,6 +11,7 @@ updated: 2026-05-08
 last_edited_by: agent_stanley
 amendments:
   - 2026-05-08: "Stage 2 Session 2.5 (Campaign Amendment Session) — folded airlock template integration (ADR-008 slot in M03) + naming/repo convention codification (ADR-009 slot in M07) into existing mission scope; seeded campaign_adna_v3_ecosystem_compliance/ as planned successor stub. See missions/artifacts/m01_amendment_log.md."
+  - 2026-05-08: "Stage 2 Session 6 — M01 closed (22 deliverables; AAR at missions/artifacts/aar_m01_planning.md). Obj 9 → Obj 10 schema-fit gate walked with operator; v0.1 LatticeScope schema locked (file_category enum + session_type index + context_traversal table + recipe_id column). Platform.aDNA category promotes to workspace-canonical at LatticeScope MLS-0 (second instance after RareHarness). P0 → P1 phase-gate review pending operator."
 tags: [campaign, adna, infrastructure, v2, node_vault, publish, context_engine, lattice_scope_adna, migration, airlock, naming_convention]
 ---
 
@@ -76,7 +77,7 @@ existing operators have a migration path in hand before their `.adna/` structure
 
 | Mission | Phase | Description | Status |
 |---|---|---|---|
-| M01: Planning | P0 | Produces this campaign's full mission tree | **planned** — entry point |
+| M01: Planning | P0 | Produces this campaign's full mission tree | **completed** (S2 S6, 2026-05-08) — 22 deliverables landed; AAR at `missions/artifacts/aar_m01_planning.md`; **P0 → P1 phase-gate review pending operator** |
 | M02: Ecosystem compatibility matrix | P1 | Inventory all vaults; map impact of each change | planned |
 | **M08a: Upgrade guide + coordination memos (pre-flatten)** | P1 | CHANGELOG draft entry; v6→v7 upgrade guide; per-vault coordination memos; published BEFORE M03 lands | planned |
 | M03: Repo structure simplification | P1 | Flatten `.adna`, update `skill_project_fork` + `skill_workspace_upgrade`, migration runbook | planned |
