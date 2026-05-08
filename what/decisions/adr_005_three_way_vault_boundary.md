@@ -2,9 +2,9 @@
 type: adr
 adr_number: 005
 title: "Three-way vault boundary: node.aDNA / aDNA.aDNA / lattice-labs"
-status: proposed
+status: accepted
 created: 2026-05-07
-updated: 2026-05-07
+updated: 2026-05-08
 last_edited_by: agent_stanley
 supersedes:
 superseded_by:
@@ -15,7 +15,7 @@ tags: [adr, decision, vault_boundary, node_adna, adna_adna, lattice_labs, govern
 
 ## Status
 
-Proposed (Stage 1 of `campaign_adna_v2_infrastructure`, 2026-05-07).
+Accepted at Stage 2 Session 1 of `campaign_adna_v2_infrastructure`, 2026-05-08 (proposed 2026-05-07; promoted by operator at session start per Stage 1 refinement-log recommendation).
 
 ## Context
 
