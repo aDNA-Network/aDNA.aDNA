@@ -23,7 +23,7 @@ tags: [mission, planned, adna, infrastructure, planning, v2, ecosystem, node_vau
 During a Spacemacs.aDNA P3-02 customization session (2026-05-07), two structural issues
 surfaced that trace to the aDNA template level:
 
-1. **`skill_publish_lattice` uses a detached `.publish-clone/` workaround** instead of a
+1. **`skill_lattice_publish` uses a detached `.publish-clone/` workaround** instead of a
    proper `git remote`. Every vault using this skill has no configured origin, making normal
    git ops (push, pull, branch, PR) impossible. Root cause: the skill was designed to solve a
    private-file exclusion problem that `.gitignore` already solves.
@@ -54,7 +54,7 @@ other objective.
 
 **Read:**
 1. `ls /Users/stanley/lattice/` — full directory listing; identify all `.aDNA` vaults
-2. For each active vault: check if it contains `how/skills/skill_publish_lattice.md` (or any
+2. For each active vault: check if it contains `how/skills/skill_lattice_publish.md` (or any
    template skill copies) — note which vaults carry the publish skill
 3. Check which vaults have a configured `git remote` vs. not (spot-check 3-4 vaults)
 4. Read `lattice/CLAUDE.md` project discovery table — the canonical vault list
@@ -67,7 +67,7 @@ other objective.
 | Change | New users | Existing vaults (local) | Vaults with publish skill | Workspace root |
 |---|---|---|---|---|
 | Repo flatten (.adna/) | Clone step changes | `mv adna .adna` or fresh clone | No impact | Symlink removed |
-| skill_publish_lattice rewrite | Gets better skill | Must update skill copy | Must configure remote + install hook | n/a |
+| skill_lattice_publish rewrite | Gets better skill | Must update skill copy | Must configure remote + install hook | n/a |
 | node.aDNA/ | Bootstrap instructions in CLAUDE.md | Opt-in; nothing breaks | Opt-in | New directory |
 | GitHub repo name | New clone URL | Update remote if renamed | Update remote if renamed | n/a |
 | aDNA v7.0 tag | Auto-discovers latest | Can stay on older version | Can stay on older version | n/a |
@@ -84,10 +84,21 @@ With the ecosystem map in hand, read the technical current state:
 3. `adna/.adna/CLAUDE.md` — the template's own governance; note current version
 4. `adna/.adna/adna.md` — the one-page aDNA primer; baseline quality check
 5. `adna/.adna/how/skills/` — full skill inventory; list all skills, note any that reference
-   the `.adna/` path or the publish workaround
-6. `adna/.adna/how/skills/skill_publish_lattice.md` — full read; confirm the rsync pattern
+   the `.adna/` path or the publish workaround. Confirmed-current inventory (verified during
+   M01 planning, 2026-05-07): `skill_context_graduation`, `skill_context_quality_audit`,
+   `skill_l1_upgrade`, `skill_lattice_publish`, `skill_new_entity_type`, `skill_onboarding`,
+   `skill_orchestration_tiers`, `skill_project_fork`, `skill_sqlite_persistence`,
+   `skill_upstream_contribution`, `skill_vault_review`, `skill_version_migration`,
+   `skill_workspace_init` (DEPRECATED — root CLAUDE.md ships pre-authored),
+   `skill_workspace_upgrade` (handles `.adna/` symlink creation today; see lines ~105+).
+   No `skill_install.md` or `skill_deploy.md` exist today; both are referenced by intent
+   below — `skill_install` is shorthand for the actual install paths (deprecated init +
+   active upgrade); `skill_deploy` is a NEW skill M05 creates.
+6. `adna/.adna/how/skills/skill_lattice_publish.md` — full read; confirm the rsync pattern
 7. `adna/.adna/how/skills/skill_project_fork.md` — how forks work; what gets excluded
-8. `adna/.adna/how/skills/skill_install.md` — does it create the symlink? Note the step
+8. `adna/.adna/how/skills/skill_workspace_upgrade.md` — confirm the symlink-creation step
+   (lines ~105+: `ln -s <adna_folder>/.adna .adna`). Plan its removal in M03 once the
+   repo flatten lands
 9. `adna/.adna/how/templates/` — template files for campaigns, missions, sessions, AARs
 10. `adna/.adna/how/skills/skill_onboarding.md` — first-run flow; assess for v7.0 update
 11. `git -C adna remote -v` — confirm remote URL; note `Agentic-DNA` name
@@ -165,10 +176,12 @@ b) **`skill_project_fork` update** (M03):
      `prepare_for_onboarding.sh` (these are repo-level, not template-level)
    - Add `deploy_manifest.yaml` to exclusion (now in `.github/` but be explicit)
 
-c) **`skill_install` / `skill_onboarding` update** (M03):
-   - If either creates the symlink `.adna -> adna/.adna`, remove that step
-   - Replace with: `git clone https://github.com/LatticeProtocol/adna.git .adna`
-   - Provide in-place migration step for existing users
+c) **`skill_workspace_upgrade` / `skill_onboarding` update** (M03):
+   - `skill_workspace_upgrade.md` creates the symlink today (lines ~105+: `ln -s <adna_folder>/.adna .adna`); remove that step entirely after the flatten
+   - Replace install path with: `git clone https://github.com/LatticeProtocol/adna.git .adna` (direct clone — no symlink, no nested `.adna/`)
+   - `skill_workspace_init.md` (deprecated) — leave or formally retire as part of M03; document the rationale
+   - `skill_onboarding.md` — verify it does not assume the old two-level structure
+   - Provide in-place migration step for existing users (see migration runbook below)
 
 d) **Workspace `CLAUDE.md` update** (M03):
    - Update project discovery table: `.adna/` is a direct clone, not a symlink
@@ -186,13 +199,26 @@ forks from the restructured `.adna/` and that the resulting vault has no leaked 
 
 ### Obj 3 — Design `node.aDNA/` local lattice node vault
 
-**Purpose:** The operator's local lattice control plane. Distinct from `lattice-labs/`
-(strategic/operational hub for external-facing work). This vault:
+**Three-way vault boundary (locked by ADR-005, 2026-05-07):**
+
+| Vault | Scope | Who has one |
+|---|---|---|
+| `node.aDNA/` | Per-node config / operations / permissions / state of *this particular node* in the broader operational context of the local lattices / context-networks it participates in | Most aDNA users (one per node) |
+| `aDNA.aDNA/` | Development vault for the aDNA project / ecosystem / **standard** itself — patterns, governance, the standard's own evolution | Anyone working on the standard (this campaign lives here) |
+| `lattice-labs/` | Context vault/graph for the **Lattice Labs org/team/community** that develops lattice-protocol, latlab, the aDNA standard, etc. | Only Lattice Labs itself (most users do *not* have a fork) |
+
+**`node.aDNA/` purpose** (per ADR-005): the operator's per-node operational context graph.
+Tracks what vaults are installed *on this node*, their versions, health, and the node's own
+participation/permissions on the local lattices and context-networks it participates in.
+**Distinct from `lattice-labs/`** (which is the Lattice Labs *organization*'s context graph
+— not most users will have a fork) **and from `aDNA.aDNA/`** (which is the *standard*'s
+development vault — where this campaign lives, per ADR-004). This vault:
+
 - Tracks what vaults are installed locally, their versions, health
 - Tracks machine state (tool chain, Emacs version, node identity)
-- Tracks LatticeProtocol network membership
-- Serves as the filing destination for cross-project improvement work
-- Hosts global campaigns like `campaign_adna_v2_infrastructure`
+- Tracks LatticeProtocol network membership / participation / permissions
+- Hosts node-operational campaigns (e.g., "upgrade this machine's tool-chain")
+- **Does not** host campaigns about the aDNA standard — those live in `aDNA.aDNA/` per ADR-004
 
 **Persona: Hestia** — goddess of the hearth. Keeps the fire; maintains the household's
 operational continuity; quietly foundational while other personas pursue grand projects.
@@ -255,7 +281,7 @@ mission should specify what node.aDNA supplies for dimensions 4-10:
 - D9 Companions: inventory YAML companions for structured queries
 - D10 Reproducibility: `skill_node_health_check` is the reproducibility gate
 
-### Obj 4 — Design `skill_publish_lattice` rewrite
+### Obj 4 — Design `skill_lattice_publish` rewrite
 
 **Core insight:** The vault IS the git repo. `.gitignore` already excludes private files
 (`what/local/`, `how/local/`, `who/operators/`, `deploy/`). The rsync workaround solves a
@@ -273,7 +299,7 @@ Step 5: git push -u origin main --tags
 Step 6: Record receipt to who/peers/published/<utc>.md
 ```
 
-**`skill_publish_lattice.md`** (rewritten — normal publish flow):
+**`skill_lattice_publish.md`** (rewritten — normal publish flow):
 ```
 Step 1: git status --porcelain → refuse if uncommitted changes
 Step 2: Sanitization scan runs automatically (pre-push hook; see below)
@@ -286,9 +312,11 @@ Step 5: Record publish receipt (commit, tag, timestamp, sanitization: hook-verif
 - Runs LAYER_CONTRACT §4 scan automatically on every `git push`
 - Exit 1 (FAIL) → push aborted; operator must fix violations and re-push
 - Exit 2 (WARN-only) → hook prompts operator confirmation before allowing push
-- **Installation:** `skill_deploy` (not just `skill_install`) installs the hook to
-  `.git/hooks/pre-push` on every deploy cycle. This ensures hook stays current even if
-  the template hook is updated. `skill_install` also installs it on first setup.
+- **Installation:** A new skill, **`skill_deploy.md`** (created by M05; does not exist today),
+  installs the hook to `.git/hooks/pre-push` on every deploy cycle. This ensures the hook
+  stays current even when the template hook is updated upstream. First-time setup also runs
+  `skill_deploy` (likely invoked from the post-flatten clone instructions in CLAUDE.md and/or
+  from a `setup.sh` successor that M03 produces).
 
 **`skill_publish_tarball.md`** (extracted — optional offline artifact):
 - Standalone; not required for normal git publish workflow
@@ -296,12 +324,25 @@ Step 5: Record publish receipt (commit, tag, timestamp, sanitization: hook-verif
 
 **Downstream migration per vault (drafted as coordination memo in M08):**
 1. `skill_git_remote_setup` — first-time remote configuration (one-time per vault)
-2. `skill_deploy` — reinstall pre-push hook (runs automatically on next deploy)
+2. `skill_deploy` (NEW skill, created by M05) — reinstall pre-push hook (runs automatically on next deploy)
 3. Delete `.publish-clone/` if it exists
 4. Going forward: `git push` replaces the old publish ritual
 
-**Compatibility note:** Vaults that have never run `skill_publish_lattice` (most vaults)
+**Compatibility note:** Vaults that have never run `skill_lattice_publish` (most vaults)
 just need step 1. The breaking change is only for vaults that were actively using the old skill.
+
+**Cross-graph coordination with Spacemacs.aDNA (Daedalus):** The publish-skill rewrite was
+triggered by `Spacemacs.aDNA/how/backlog/idea_skill_publish_lattice_git_fix.md`. M05 must
+draft a cross-graph coord memo (pattern from `WilhelmAI/RareArchive` coupling — see
+`lattice/CLAUDE.md` "Cross-graph coord memos" lineage) at:
+
+- `aDNA.aDNA/who/coordination/coord_<YYYY-MM-DD>_publish_rewrite.md`
+- Mirror: `Spacemacs.aDNA/who/coordination/coord_<YYYY-MM-DD>_adna_publish_rewrite.md`
+
+Memo confirms: (1) the design Daedalus expected matches what M05 ships; (2) the close-out
+trigger for `idea_skill_publish_lattice_git_fix` (i.e., backlog idea moves to `closed/`
+with link to M05 AAR). Co-sign by both vault personas (Rosetta + Daedalus) before M05
+ships to other ecosystem vaults.
 
 ### Obj 5 — GitHub repo minimalism
 
@@ -334,32 +375,56 @@ After the Obj 2 flatten, the repo root will look like:
    the GitHub repo page? Goal: template directories (how/, what/, who/) are browsable;
    `.github/` is hidden in the GitHub UI; README is the authoritative landing page.
 
-### Obj 6 — aDNA template version bump
+### Obj 6 — aDNA template version bump (Governance track only)
 
-This campaign's changes constitute the next major template version. This objective designs
-the version bump and ensures all version-related artifacts are consistent.
+This campaign's changes constitute a major **Governance-track** version bump. This objective
+designs the bump and ensures all version-related artifacts are consistent.
 
-**Current version:** Read from `adna/.adna/CHANGELOG.md` during Obj 1. The template CLAUDE.md
-header declares `v6.0`. This campaign targets **v7.0**.
+**Existing two-track version policy** (`adna/.adna/CHANGELOG.md` Version Policy section):
+aDNA tracks two independent version numbers:
 
-**Version bump checklist:**
-a) `adna/.adna/CHANGELOG.md` — add v7.0 entry summarizing all changes from this campaign
-b) `adna/.adna/CLAUDE.md` header — update version reference from v6.0 to v7.0
-c) `adna/.adna/MANIFEST.md` — update version field
-d) Git tag: `git tag v7.0 -m "aDNA v7.0 — infrastructure: flat repo, node.aDNA, publish fix, LatticeScope.aDNA"`
-e) GitHub release: create a release from the v7.0 tag with release notes
+| Track | File | Field | What it covers |
+|---|---|---|---|
+| **Governance** | `adna/.adna/CLAUDE.md` | `version` (frontmatter) | Vault structure, agent protocol, safety rules, templates, skills |
+| **Standard** | `adna/.adna/what/docs/adna_standard.md` | Document title | Normative spec — triad structure, object schemas, FAIR metadata |
+
+Both tracks use **Major.Minor only — no patch level.**
+
+**Locked decision (operator-approved 2026-05-07):** v7.0 bumps the **Governance** track
+only. The **Standard** track stays at its current version because none of this campaign's
+changes touch the normative spec (no schema changes, no triad changes, no FAIR-envelope
+changes). Confirmed during Stage 1 review: repo flatten, publish-skill rewrite, node.aDNA,
+LatticeScope.aDNA, and version-tagging are all governance-layer changes.
+
+**Current version:** Governance `v6.0` (`adna/.adna/CLAUDE.md` frontmatter, confirmed
+2026-05-07). Standard track: confirm current version during Obj 1 read pass.
+
+**Version bump checklist (Governance-only):**
+
+a) `adna/.adna/CHANGELOG.md` — append `## [v7.0] — YYYY-MM-DD` entry under Governance,
+   following Keep-a-Changelog format (Added / Changed / Deprecated / Removed / Fixed / Security).
+b) `adna/.adna/CLAUDE.md` frontmatter — update `version: "6.0"` → `version: "7.0"`.
+c) `adna/.adna/MANIFEST.md` — update version field if present.
+d) `adna/.adna/what/docs/adna_standard.md` — leave the Standard version untouched. Add a
+   one-line note in CHANGELOG entry confirming "Standard track: no change."
+e) Git tag: `git tag v7.0 -m "aDNA v7.0 (Governance) — flat repo, node.aDNA, publish-skill rewrite, LatticeScope.aDNA"`
+f) GitHub release: create a release from the v7.0 tag with release notes; explicitly call
+   out "Governance only" in the release description so operators know whether they need to
+   re-read the spec.
 
 **Upgrade signal for existing vaults:** The template CHANGELOG is the canonical upgrade
 signal. Vault operators who `git pull` their `.adna/` clone will see the CHANGELOG entry.
-No other push mechanism is needed — the pull-based model is intentional.
+No push mechanism is needed — the pull-based model is intentional.
 
-**Semantic versioning discipline:** Define what constitutes a major vs minor vs patch bump
-for the aDNA template. Proposed in planning; ratified as ADR:
-- **Major (X.0):** Breaking changes to skill interfaces, vault structure, or clone process
-- **Minor (X.Y):** New skills, new patterns, new entity types (additive)
-- **Patch (X.Y.Z):** Prose improvements, dead link fixes, minor clarifications
+**Semver discipline ADR draft (Governance-track):**
 
-This campaign = major (repo structure change is breaking) → v7.0.
+| Bump type | Triggers |
+|---|---|
+| **Major (X.0)** | Breaking changes to vault structure, CLAUDE.md format, frontmatter schema, or clone process |
+| **Minor (X.Y)** | New skills, new patterns, new entity types, new templates, prose improvements, dead-link fixes, additive corrections |
+
+Both tracks Major.Minor only — no patch level. (Existing CHANGELOG policy; this ADR
+codifies it explicitly.) This campaign = Major → Governance v7.0. Standard track unchanged.
 
 ### Obj 7 — General repo review and simplify
 
@@ -370,7 +435,7 @@ Apply `/simplify` discipline and best-practice repo hygiene across the `adna` te
 Apply the 10-dimension scoring rubric (from `what/context/object_standards/`) to:
 - `node.aDNA/` template (as it will appear after bootstrap)
 - `skill_git_remote_setup.md` (new skill)
-- `skill_publish_lattice.md` (rewritten skill)
+- `skill_lattice_publish.md` (rewritten skill)
 - `LatticeScope.aDNA/` template (as it will appear at genesis)
 Score all 10 dimensions; document in audit findings. Any dimension < 3 must be addressed
 before the campaign closes.
@@ -407,11 +472,15 @@ f) **aDNA.aDNA vault audit** — same checklist applied locally:
 
 ### Obj 8 — Upgrade guide and ecosystem propagation plan
 
-*Companion to M08 in the campaign mission tree. This objective designs the communication and
-coordination artifacts; M08 executes them.*
+*Companion to **M08a (pre-flatten)** + **M08b (post-flatten)** in the campaign mission tree.
+This objective designs both the pre-flatten communication kit and the post-flatten propagation
+receipt protocol; M08a/M08b execute them.*
 
-Existing operators cannot discover template changes by magic — they need a clear signal and
-actionable steps. This objective produces the communication kit.
+**Locked sequencing decision (2026-05-07):** The upgrade guide and per-vault coordination
+memos ship **before** M03 lands the breaking repo flatten. Existing operators cannot
+discover template changes by magic — they need a clear signal and actionable steps in hand
+before their structure breaks. M08a executes between M02 (matrix) and M03 (flatten); M08b
+collects propagation receipts after the flatten + version-bump are live.
 
 **Upgrade guide** (`adna/.adna/how/docs/upgrade_v6_to_v7.md`):
 ```
@@ -422,8 +491,8 @@ Overview: what changed and why (3 paragraphs, dual-audience)
 Breaking changes:
   1. Repo structure: adna/ → .adna/ (clone path changes)
      Migration: [step-by-step, 2 commands]
-  2. skill_publish_lattice: rsync → git push
-     Migration: run skill_git_remote_setup; reinstall pre-push hook via skill_deploy
+  2. skill_lattice_publish: rsync → git push
+     Migration: run skill_git_remote_setup (NEW); reinstall pre-push hook via skill_deploy (NEW)
 
 New patterns (opt-in):
   - node.aDNA/ local node vault
@@ -442,13 +511,23 @@ Validation: run skill_health_check after migration to verify vault is clean
 - v7.0 section: Added / Changed / Deprecated / Removed / Fixed / Security
 
 **Coordination memo template** (for vaults with active publish-skill usage):
-A short memo (< 1 page) drafted per-vault explaining what to do. M08 fills in the vault name
-and sends (or drops a file in the vault's `who/coordination/` dir).
+A short memo (< 1 page) drafted per-vault explaining what to do. M08a fills in the vault name
+and delivers (drops a file in the vault's `who/coordination/` dir).
 
 **External users question:** If any vault operators are external to Stanley's `~/lattice/`,
 the upgrade guide goes into the aDNA.aDNA docs site (adna-docs.vercel.app) as a new page.
 M01 Obj 0 should establish whether external operators exist. If yes, escalate this to an
 announcement (GitHub release notes + possible community post).
+
+**Mapping Obj 8 outputs to M08a vs M08b:**
+
+| Output | M08a (pre-flatten) | M08b (post-flatten) |
+|---|---|---|
+| Upgrade guide (`upgrade_v6_to_v7.md`) | Drafted, reviewed, published | Update with flatten/tag receipts |
+| CHANGELOG entry | Drafted | Finalized + dated when v7.0 tag lands |
+| Per-vault coordination memos | Delivered to all ~17 vaults | Acknowledgment receipts collected |
+| External announcement (if external operators exist) | Drafted + scheduled | Posted at v7.0 release |
+| Validation runbook (`skill_health_check`) | Drafted (target: works on current structure) | Re-validated post-flatten |
 
 ### Obj 9 — Context/token optimization audit
 
@@ -489,6 +568,14 @@ e) **Calibration output:**
    - Top 3 optimization opportunities by estimated impact
 
 **Output:** Token baseline document + optimization opportunity list, ready to feed LatticeScope.
+
+**Checkpoint with operator (Obj 9 → Obj 10 gate):** Before starting Obj 10, present the
+token-baseline findings to the operator and confirm that the proposed LatticeScope.aDNA
+schema in Obj 10 matches the measurement needs the audit revealed. If the audit surfaces
+metrics the proposed schema cannot capture (e.g., context-graph traversal depth, per-AGENTS.md
+load cost, recipe-vs-manual cost differential), Obj 10's schema design is revised accordingly
+**before** the LatticeScope sub-campaign doc is drafted. This gate prevents the LatticeScope
+campaign from being scoped on stale assumptions.
 
 ### Obj 10 — LatticeScope.aDNA — vault design + campaign planning mission
 
@@ -616,7 +703,7 @@ d) **Next campaign planning doc** — `how/campaigns/campaign_adna_v3_*/` stub:
 | 4 | Migration runbook draft | 2 | M03, M08 |
 | 5 | `node.aDNA/` design doc + Hestia persona spec | 3 | M04 |
 | 6 | 10-dimension compliance pre-check for node.aDNA | 3 | M04 |
-| 7 | `skill_publish_lattice` rewrite spec | 4 | M05 |
+| 7 | `skill_lattice_publish` rewrite spec | 4 | M05 |
 | 8 | `skill_git_remote_setup` spec | 4 | M05 |
 | 9 | Pre-push hook spec | 4 | M05 |
 | 10 | GitHub minimalism + workflow audit notes | 5 | M06 |
@@ -634,14 +721,26 @@ d) **Next campaign planning doc** — `how/campaigns/campaign_adna_v3_*/` stub:
 
 ## Estimated effort
 
-**4 sessions:**
-- Session 1: Obj 0 (ecosystem) + Obj 1 (read/orient) → deliverables 1-2
-- Session 2: Obj 2-5 (repo structure, node.aDNA, publish fix, minimalism) → deliverables 3-11
-- Session 3: Obj 6-8 (version bump, repo review, upgrade guide) → deliverables 12-13 + audit table
-- Session 4: Obj 9-11 (token audit, LatticeScope.aDNA, final seed) → deliverables 14-19
+**5–6 sessions** (recalibrated 2026-05-07 from initial 4-session estimate; the original
+estimate underweighted dual-audience review per Standing Order #1, self-reference checks
+per Standing Order #2, and the M10 LatticeScope.aDNA scope which is essentially a
+sub-campaign-doc on its own):
 
-Sessions 1-2 are the highest-stakes (design decisions with ecosystem impact). Sessions 3-4
-are execution-heavy but lower-risk (review + new project seeding).
+- **Session 1**: Obj 0 (ecosystem matrix) + Obj 1 (read/orient + skill inventory) → deliverables 1–2
+- **Session 2**: Obj 2 (repo flatten, ADRs A/B) + Obj 3 (`node.aDNA/` design + Hestia + 10-dim pre-check) → deliverables 3–6
+- **Session 3**: Obj 4 (publish rewrite + git remote setup + pre-push hook + Daedalus coord memo) + Obj 5 (GitHub minimalism) → deliverables 7–10
+- **Session 4**: Obj 6 (Governance v7.0 bump + semver ADR) + Obj 7 (repo review/simplify + 10-dim audit) + Obj 8 (upgrade guide draft + M08a/b mapping) → deliverables 11–13 + audit table
+- **Session 5**: Obj 9 (token audit) → checkpoint with operator → Obj 10 (LatticeScope.aDNA vault + Prometheus + sub-campaign doc) → deliverables 14–17
+- **Session 6**: Obj 11 (close-out plan) + final deliverables (campaign doc update, SITREP+next-session for M02) + M01 AAR → deliverables 18–19
+
+Sessions 1–3 are highest-stakes (design decisions with ecosystem impact). Sessions 4–5
+are execution-heavy with one operator checkpoint between Obj 9 and Obj 10. Session 6 is
+synthesis + handoff. The 4→5 expansion mostly absorbs Obj 4 + Obj 8's added work.
+
+**M10 split contingency:** If Session 5 runs over (likely if the LatticeScope schema
+needs significant revision after the Obj 9 checkpoint), split into **M01 Obj 10a** (vault
+design + Prometheus persona + ADRs 000/001) and **M01 Obj 10b** (sub-campaign doc) — and
+add Session 5b. Decision deferred to mid-S5 based on actual scope.
 
 ---
 
@@ -649,9 +748,10 @@ are execution-heavy but lower-risk (review + new project seeding).
 
 | Resource | Used by |
 |---|---|
-| `adna/.adna/how/skills/skill_publish_lattice.md` | Obj 4 (rewrite target) |
+| `adna/.adna/how/skills/skill_lattice_publish.md` | Obj 4 (rewrite target) |
 | `adna/.adna/how/skills/skill_project_fork.md` | Obj 2 (update target) |
-| `adna/.adna/how/skills/skill_install.md` | Obj 2 (symlink step removal) |
+| `adna/.adna/how/skills/skill_workspace_upgrade.md` | Obj 2 (symlink-step removal — lines ~105+) |
+| `adna/.adna/how/skills/skill_workspace_init.md` (DEPRECATED) | Obj 2 (decide: retire vs. update) |
 | `adna/.adna/how/skills/skill_onboarding.md` | Obj 2 (update target) |
 | `adna/.adna/CLAUDE.md` | Obj 7 (simplify target); Obj 3 (bootstrap section) |
 | `adna/.adna/CHANGELOG.md` | Obj 6 (version bump target) |

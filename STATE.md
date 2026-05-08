@@ -1,9 +1,9 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-04-26
+updated: 2026-05-08
 status: active
-last_edited_by: agent_rosetta
+last_edited_by: agent_stanley
 tags: [state, governance]
 ---
 
@@ -13,11 +13,22 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Current Phase
 
-**Operation Rosetta Phases 0-7 complete. M35 (Phase 7 Campaign AAR) complete 2026-04-26. Phase 8 queued.** 89 vault content files + 117-page live site. Phase 7: 100-cycle III loop across 10 themed decadals, ranker 4.35→5.00 (+0.65). Ceiling reached D9, held D10. Campaign AAR filed: `missions/artifacts/aar_phase7_campaign_closeout.md`. Phase 8 opening priorities: Researcher Findability (spec citations + dataset cross-refs), Educator interactive demo/workshop kit page.
+**Two campaigns in this vault:**
 
-## Active Campaign
+1. **`campaign_adna_v2_infrastructure`** — **NEW (planning, P0 active)**. Seeded 2026-05-07; Stage 1 review/refinement of M01 completed 2026-05-08. Targets aDNA Governance v7.0 (repo flatten, `node.aDNA/` bootstrap, publish-skill rewrite, LatticeScope.aDNA seeding). Affects ~17 ecosystem vaults. Two new ADRs filed: ADR-004 (campaign home) + ADR-005 (three-way vault boundary).
+2. **Operation Rosetta** — **Phases 0-7 complete (M35 done 2026-04-26). Phase 8 queued.** 89 vault content files + 117-page live site. Phase 7: 100-cycle III loop across 10 themed decadals, ranker 4.35→5.00 (+0.65). Ceiling reached D9, held D10. Campaign AAR filed: `missions/artifacts/aar_phase7_campaign_closeout.md`. Phase 8 opening priorities: Researcher Findability (spec citations + dataset cross-refs), Educator interactive demo/workshop kit page.
 
-**Operation Rosetta** (`how/campaigns/campaign_rosetta/`) — build the self-referential aDNA context graph.
+## Active Campaigns
+
+### `campaign_adna_v2_infrastructure` (P0, planning)
+
+`how/campaigns/campaign_adna_v2_infrastructure/` — aDNA v2 Infrastructure (Governance v7.0 target). Strategic intent: the next major template version, addressing repo structure, local node governance, publish workflow, and observability tooling. Phase order (locked at Stage 1): M02 ecosystem matrix → **M08a pre-flatten upgrade guide** → M03 repo flatten → M04 `node.aDNA/` bootstrap → M05 publish-skill rewrite (with Spacemacs/Daedalus coord memo) → M06 minimalism + Governance v7.0 tag → M07 review/simplify → **M08b post-flatten propagation receipts** → M09 token audit → checkpoint → M10 LatticeScope.aDNA planning → M11 close-out. Estimated 5–6 sessions to complete M01; total campaign ~25–35 sessions across 5 phases.
+
+Stage 1 (refinement) outputs: refined M01 mission file, refined campaign doc, ADR-004, ADR-005, `m01_refinement_log.md`. Next: Stage 2 Session 1 (Obj 0 ecosystem matrix + Obj 1 read/orient).
+
+### Operation Rosetta (Phase 8 queued)
+
+`how/campaigns/campaign_rosetta/` — build the self-referential aDNA context graph.
 
 | Phase | Status | Missions | Content |
 |-------|--------|----------|---------|
@@ -97,6 +108,12 @@ None.
 
 ## Next Steps
 
+**Primary track — `campaign_adna_v2_infrastructure` Stage 2 Session 1**:
+1. Execute M01 Session 1 — **Obj 0 (ecosystem compatibility matrix)** + **Obj 1 (read/orient + skill inventory current-state summary)**. Produces deliverables 1–2 of M01.
+2. Operator-action: confirm ADR-004 + ADR-005 status promotion (proposed → accepted) at session start.
+3. Operator-action: confirm whether external (non-Stanley) aDNA operators exist — answer changes the Obj 8 communication-plan scope from "local migration memos" to "public announcement + GitHub release coordination."
+
+**Secondary track — Operation Rosetta Phase 8 (queued, no active sessions until v2 infrastructure completes its current phase):**
 1. **Phase 8 kickoff** — Open with new baseline persona ranker and P0 spec citation pass (add `adna_standard.md` section references to all 13 concept pages). Assign M36.
 2. **Verification tags (user action)** — Register adna-docs.vercel.app at Google Search Console + Bing Webmaster Tools, obtain verification codes, add meta tags to `SEOHead.astro`.
 3. **Educator interactive demo** — Live workshop kit page or in-browser demo (Educator Actionability 4.99 ceiling resolution).
@@ -113,10 +130,10 @@ None.
 - **Google Search Console**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="google-site-verification" content="...">` to `SEOHead.astro`
 - **Bing Webmaster Tools**: Register adna-docs.vercel.app, obtain verification code, add `<meta name="msvalidate.01" content="...">` to `SEOHead.astro`
 
-## Last Session (2026-04-26 — Wind-down: M35 + Operation Rosetta Phases 0-7 complete, deployed)
+## Last Session (2026-05-07 → 2026-05-08 — Stage 1 refinement of M01 + campaign_adna_v2_infrastructure)
 
-M35 (Phase 7 Campaign AAR) completed 2026-04-26. Campaign closeout AAR filed at `missions/artifacts/aar_phase7_campaign_closeout.md`. Key synthesis: decreasing-returns curve confirmed, pain-statement above fold highest-ROI change (D9), reviewer bench adds non-redundant signal, Researcher Findability 4.95 and Educator Actionability 4.99 are structural carry-forwards for Phase 8. Operation Rosetta Phases 0-7 complete. 89 content files, 117 site pages, ranker 5.00. **Deployed to Vercel production 2026-04-26** — live at https://adna-docs.vercel.app.
+Plan-mode planning session followed by Stage 1 execution. Reviewed M01 + campaign doc, identified 12 findings (3 blockers, 4 locked decisions, 5 nice-to-fix). Operator approved plan; locked decisions: Governance-only v7.0 bump, upgrade guide ships before flatten, campaign stays in `aDNA.aDNA/`, three-way vault boundary canonized. Stage 1 deliverables: refined M01 + campaign doc, ADR-004 (campaign home) + ADR-005 (vault boundary), `m01_refinement_log.md`. Effort estimate recalibrated 4 → 5–6 sessions for M01 execution. Mission tree restructured: M02 → M08a → M03 → M04 → M05 → M06 → M07 → M08b → M09 → checkpoint → M10 → M11. Operation Rosetta Phase 8 stays queued — no work this session.
 
 ## Next Session Prompt
 
-> Resume Operation Rosetta in `aDNA.aDNA/`. **Phases 0-7 complete** — M35 done, Operation Rosetta campaign AAR filed. **Phase 8 queued.** Open Phase 8 by creating M36 at `how/campaigns/campaign_rosetta/missions/mission_m36_phase8_kickoff.md`. Phase 8 P0: add `adna_standard.md` section citations to all 13 concept pages (Researcher Findability 4.95 gap). P1: design Educator interactive demo / live workshop kit page. Begin with new baseline persona ranker measurement. Lock cycle tracker at decadal close discipline.
+> Resume `campaign_adna_v2_infrastructure` in `aDNA.aDNA/`. **Stage 1 (refinement) closed 2026-05-08.** Open **Stage 2 Session 1** — M01 Objective 0 (ecosystem compatibility matrix) + Objective 1 (read/orient + skill inventory). Read in order: (1) the refined `campaign_adna_v2_infrastructure.md` + `mission_adna_infra_planning_01.md`; (2) `aDNA.aDNA/what/decisions/adr_004_campaign_home_stays_in_adna_adna.md` + `adr_005_three_way_vault_boundary.md` (confirm proposed → accepted with operator); (3) `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_refinement_log.md` for Stage 1 context. Then execute Obj 0 — produce ecosystem compatibility matrix per the M01 template (one row per change, columns per affected vault category; spot-check 3-4 vaults for `git remote` configuration). Critical question to answer in Obj 0: *Are any vault operators external to Stanley's `~/lattice/`?* Answer changes the M08a/Obj 8 scope from "local migration memos" to "public announcement + GitHub release coordination." Then Obj 1 — produce current-state summary covering repo structure (ASCII diagram of two-level `adna/.adna/` nesting), full skill inventory (14 skills confirmed; `skill_workspace_init` is DEPRECATED), and prioritized issue list feeding Obj 2-10. Deliver: `missions/artifacts/m01_obj0_ecosystem_matrix.md` and `missions/artifacts/m01_obj1_current_state.md`. Operation Rosetta Phase 8 still queued — do not start Phase 8 work until v2 infrastructure campaign completes its current phase or operator routes you there explicitly.
