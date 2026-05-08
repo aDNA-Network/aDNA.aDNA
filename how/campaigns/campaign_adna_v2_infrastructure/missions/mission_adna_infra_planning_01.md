@@ -20,7 +20,7 @@ tags: [mission, planned, adna, infrastructure, planning, v2, ecosystem, node_vau
 
 ## Why this mission exists
 
-During a SpaceLattice.aDNA P3-02 customization session (2026-05-07), two structural issues
+During a Spacemacs.aDNA P3-02 customization session (2026-05-07), two structural issues
 surfaced that trace to the aDNA template level:
 
 1. **`skill_publish_lattice` uses a detached `.publish-clone/` workaround** instead of a
@@ -93,7 +93,7 @@ With the ecosystem map in hand, read the technical current state:
 11. `git -C adna remote -v` — confirm remote URL; note `Agentic-DNA` name
 12. `aDNA.aDNA/STATE.md` — current vault state; confirm Phase 7 complete, Phase 8 queued
 13. `aDNA.aDNA/how/backlog/` — list all backlog ideas; any that overlap with this campaign?
-14. `SpaceLattice.aDNA/how/backlog/` — the two seeded ideas from 2026-05-07
+14. `Spacemacs.aDNA/how/backlog/` — the two seeded ideas from 2026-05-07
 
 **Produce:** Current-state summary covering: repo structure diagram (ASCII), full skill
 inventory table, gaps identified, and a prioritized issue list feeding into Obj 2-10.
@@ -197,7 +197,7 @@ forks from the restructured `.adna/` and that the resulting vault has no leaked 
 **Persona: Hestia** — goddess of the hearth. Keeps the fire; maintains the household's
 operational continuity; quietly foundational while other personas pursue grand projects.
 Operating style: dependable, steady, inventory-focused, escalates clearly when something
-breaks. Pairs well with Daedalus (SpaceLattice), Hygieia (WilhelmAI), Prometheus (LatticeScope).
+breaks. Pairs well with Daedalus (Spacemacs), Hygieia (WilhelmAI), Prometheus (LatticeScope).
 
 **Directory structure:**
 ```
@@ -506,7 +506,7 @@ foresight ("pro-metheus" = forethought). Here: steals context visibility from fr
 (where it currently lives as proprietary telemetry) and gives it to operators; foresight as
 the ability to predict context budget exhaustion before it happens. Operating style: bold,
 technically rigorous, community-oriented, liberation-minded. Pairs with Hestia (node.aDNA —
-the steady home that hosts the data) and Daedalus (SpaceLattice — the IDE that instruments it).
+the steady home that hosts the data) and Daedalus (Spacemacs — the IDE that instruments it).
 
 **`LatticeScope.aDNA/` vault — Platform.aDNA category** (follows the RareHarness pattern):
 - Governance vault: `LatticeScope.aDNA/` — owns design, protocol specs, federation schema,
@@ -587,7 +587,7 @@ a) **AAR aggregation** — synthesize AARs from M02-M10:
 b) **Open items audit** across all affected vaults:
    - `adna/` repo: open issues or PRs?
    - `aDNA.aDNA/how/backlog/`: ideas ready for promotion?
-   - `SpaceLattice.aDNA/how/backlog/`: `idea_skill_publish_lattice_git_fix` (closeable post-M05?);
+   - `Spacemacs.aDNA/how/backlog/`: `idea_skill_publish_lattice_git_fix` (closeable post-M05?);
      `idea_agentic_layout_system` (still P4 mission — separate campaign)
    - `node.aDNA/how/backlog/`: ideas accumulated during this campaign
    - `LatticeScope.aDNA/how/backlog/`: seeded by M10?
@@ -658,8 +658,8 @@ are execution-heavy but lower-risk (review + new project seeding).
 | `adna/CLAUDE.md` | Obj 2 (assess for merge/drop, Decision B) |
 | `adna/.adna/how/templates/` | Obj 7 (completeness check) |
 | `lattice/CLAUDE.md` | Obj 3 (router update for node.aDNA) |
-| `SpaceLattice.aDNA/how/backlog/idea_skill_publish_lattice_git_fix.md` | Obj 0 (downstream trigger) |
-| `SpaceLattice.aDNA/how/backlog/idea_agentic_layout_system.md` | Obj 11 (open items) |
+| `Spacemacs.aDNA/how/backlog/idea_skill_publish_lattice_git_fix.md` | Obj 0 (downstream trigger) |
+| `Spacemacs.aDNA/how/backlog/idea_agentic_layout_system.md` | Obj 11 (open items) |
 | `aDNA.aDNA/STATE.md` | Obj 1 (current vault state) |
 | `aDNA.aDNA/how/backlog/` | Obj 1 + Obj 11 |
 | Claude Code hooks docs | Obj 9 (PostToolUse hook for token measurement) |

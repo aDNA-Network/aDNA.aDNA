@@ -75,7 +75,7 @@ Vaults consuming aDNA template skills (approximate — M02 produces the authorit
 science_stanley.aDNA, SiteForge.aDNA, zeta.aDNA, la_startup.aDNA, wga.aDNA,
 context_commons.aDNA, aDNA.aDNA, ComfyForge.aDNA, VAASLattice.aDNA, LPWhitepaper.aDNA,
 CanvasForge.aDNA, RareHarness.aDNA, RareArchive.aDNA, WilhelmAI.aDNA, VideoForge.aDNA,
-SpaceLattice.aDNA (~17 active)
+Spacemacs.aDNA (~17 active)
 
 **Per-change impact:**
 - Repo structure flatten → workspace root only (one location; all vaults unaffected in place)
@@ -92,8 +92,8 @@ SpaceLattice.aDNA (~17 active)
 
 ## Cross-vault references
 
-- `SpaceLattice.aDNA/how/backlog/idea_skill_publish_lattice_git_fix.md` — downstream trigger (M05)
-- `SpaceLattice.aDNA/how/backlog/idea_agentic_layout_system.md` — peer improvement (separate P4 mission)
+- `Spacemacs.aDNA/how/backlog/idea_skill_publish_lattice_git_fix.md` — downstream trigger (M05)
+- `Spacemacs.aDNA/how/backlog/idea_agentic_layout_system.md` — peer improvement (separate P4 mission)
 - `adna/` repo remote: `github.com/LatticeProtocol/Agentic-DNA.git` (rename decision in M06)
 - `aDNA.aDNA/` — Operation Rosetta Phase 7 complete; Phase 8 queued separately; this vault hosts the campaign
 - `lattice-labs/STATE.md` — strategic coordination reference

@@ -26,7 +26,7 @@ the change is consistent with how aDNA.aDNA itself is organized. Self-reference 
 
 ### Upstream-first mindset
 
-Issues identified in specific vaults (SpaceLattice, etc.) that trace to the aDNA template
+Issues identified in specific vaults (Spacemacs, etc.) that trace to the aDNA template
 should be fixed at the template level, not patched in place. This campaign is the vehicle for
 those upstream fixes.
 
