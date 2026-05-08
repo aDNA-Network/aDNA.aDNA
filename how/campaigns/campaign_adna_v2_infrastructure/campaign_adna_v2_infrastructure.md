@@ -1,15 +1,17 @@
 ---
 type: campaign
 campaign_id: campaign_adna_v2_infrastructure
-title: "aDNA v2 Infrastructure — Repo Structure, Node Vault, Publish Fix, Context Engine"
+title: "aDNA v2 Infrastructure — Repo Structure, Node Vault, Publish Fix, Context Engine, Airlock + Naming Convention"
 status: planning
 phase: 0
 adna_version_target: "governance_v7.0"
 adna_version_track: "governance_only"
 created: 2026-05-07
-updated: 2026-05-07
+updated: 2026-05-08
 last_edited_by: agent_stanley
-tags: [campaign, adna, infrastructure, v2, node_vault, publish, context_engine, lattice_scope_adna, migration]
+amendments:
+  - 2026-05-08: "Stage 2 Session 2.5 (Campaign Amendment Session) — folded airlock template integration (ADR-008 slot in M03) + naming/repo convention codification (ADR-009 slot in M07) into existing mission scope; seeded campaign_adna_v3_ecosystem_compliance/ as planned successor stub. See missions/artifacts/m01_amendment_log.md."
+tags: [campaign, adna, infrastructure, v2, node_vault, publish, context_engine, lattice_scope_adna, migration, airlock, naming_convention]
 ---
 
 # Campaign — aDNA v2 Infrastructure
@@ -20,6 +22,18 @@ Operation Rosetta (Phases 0-7) established the documentation site and content la
 campaign addresses the infrastructure beneath the standard: the repo structure, local node
 governance, publish workflow, and observability tooling. The outputs ship as **aDNA v7.0** —
 a version bump to the template itself — and propagate to all vaults in the ecosystem.
+
+**Amended scope (2026-05-08, Stage 2 Session 2.5):** v7.0 also surfaces the **airlock
+pattern** at template level (a vault-agnostic cross-vault coordination surface that already
+exists in `III.aDNA/`, `VideoForge.aDNA/`, and is exercised by `CanvasForge.aDNA/`) and
+codifies the **`<name>.aDNA/` directory ↔ `<name>.aDNA.git` GitHub repo naming
+convention**. Both are template-level only this campaign — a small `/.adna/how/airlock/`
+stub with `skill_project_fork.md` integration (M03 / ADR-008) and a naming-convention ADR
+(M07 / ADR-009) that documents the convention going forward without forcing per-vault
+renames. Per-vault adoption (per-vault airlock installation, repo renames, full v7.0
+compliance pass across all 19 active ecosystem vaults) is the scope of the **successor
+campaign** `campaign_adna_v3_ecosystem_compliance`, seeded in this amendment as a
+`status: planned` stub and opening at this campaign's P3 phase gate.
 
 Every change in this campaign must answer two questions before landing:
 1. Does this work for a brand-new operator setting up their first lattice?
@@ -39,6 +53,8 @@ Every change in this campaign must answer two questions before landing:
 | Context/token optimization audit | No systematic measurement; convergence model unvalidated | Additive: measurement infrastructure |
 | LatticeScope.aDNA | No open observability layer for distributed agentic systems | New project: `LatticeScope.aDNA/` vault + `latticescope/` code repo |
 | Upgrade guide + communication | Existing users need a migration path before changes land | Prerequisite for publishing any of the above |
+| Airlock template stub (NEW — amendment 2026-05-08) | III + VideoForge + CanvasForge airlock pattern matures; vault-agnostic; cheap to land at template level when M03 is touching the template anyway | Additive opt-in; no breaking change to vaults that ignore it |
+| Repo naming convention codification (NEW — amendment 2026-05-08) | Obj 0 surfaced 4 non-uniform repo names (`science-stanley-adna`, `wga-adna`, `context-commons-adna`, `LAStartupLattice`) + 7 vaults with no remote; v7.0 is the natural inflection to codify `<name>.aDNA/` ↔ `<name>.aDNA.git` | Codifies-only, doesn't force renames; per-vault application is successor-campaign scope |
 | Final review + next campaign seed | Close audit loop; plan what comes after | Closure |
 
 ## Phase structure
@@ -96,21 +112,37 @@ Spacemacs.aDNA (~17 active)
 |---|---|---|---|---|
 | `node.aDNA/` | Org-Vault (local node) | Hestia | n/a (local) | Bootstrapped in M04 |
 | `LatticeScope.aDNA/` | Platform.aDNA | Prometheus | `latticescope/` | Campaign planned in M10; bootstrapped post-campaign |
+| `campaign_adna_v3_ecosystem_compliance/` | Campaign (successor; added by amendment 2026-05-08) | Rosetta (continues) | n/a (governance-only campaign) | Stub seeded 2026-05-08; status `planned`; opens at v2 P3 phase gate; M11 finalizes mission tree |
 
 ## Cross-vault references
 
 - `Spacemacs.aDNA/how/backlog/idea_skill_publish_lattice_git_fix.md` — downstream trigger (M05)
 - `Spacemacs.aDNA/how/backlog/idea_agentic_layout_system.md` — peer improvement (separate P4 mission)
-- `adna/` repo remote: `github.com/LatticeProtocol/Agentic-DNA.git` (rename decision in M06)
+- `adna/` repo remote: `github.com/LatticeProtocol/Agentic-DNA.git` (rename decision in M06 / ADR-006)
 - `aDNA.aDNA/` — Operation Rosetta Phase 7 complete; Phase 8 queued separately; this vault hosts the campaign per ADR-004
 - `lattice-labs/STATE.md` — strategic coordination reference
 
+**Airlock pattern references (M03 / ADR-008 source material — added by amendment 2026-05-08):**
+- `III.aDNA/how/airlock/AIRLOCK.md` — canonical airlock spec (v0.1; 5 entry paths: A-Text, B-Web/Visual, C-Code, D-Video, E-Vault Maintenance). The template stub M03 produces mirrors this structure.
+- `VideoForge.aDNA/how/airlock/AIRLOCK.md` — Forge.aDNA reference implementation (v0.1; 4 entry paths: consumer wrapper, cross-forge request, RLHF tuner, vault maintenance). Exemplar for cross-forge request pattern.
+- `CanvasForge.aDNA/who/coordination/coord_2026_05_08_videoforge_requests_carly_herb_deck.md` — worked example of airlock-shaped cross-vault request (VideoForge → CanvasForge deck-build)
+- `III.aDNA/who/coordination/coord_2026_05_08_airlock_v0_2_videoforge_findings.md` — 5-gap analysis filed as input to III.aDNA Campaign C (v0.2 standardization)
+
+**Successor campaign (added by amendment 2026-05-08):**
+- `aDNA.aDNA/how/campaigns/campaign_adna_v3_ecosystem_compliance/campaign_adna_v3_ecosystem_compliance.md` — applies v7.0 changes (flatten + publish-skill rewrite + node.aDNA + airlock + naming convention) per-vault to the 19 active ecosystem vaults. Status: `planned`. Opens at this campaign's P3 phase gate. M11 finalizes its mission tree.
+
 ## ADRs
 
+**Accepted (Stage 1 of M01, 2026-05-07; promoted to accepted at Stage 2 Session 1, 2026-05-08):**
 - `aDNA.aDNA/what/decisions/adr_004_campaign_home_stays_in_adna_adna.md` — campaign home stays here, does not migrate to `node.aDNA/`
 - `aDNA.aDNA/what/decisions/adr_005_three_way_vault_boundary.md` — canonical scope distinction for `node.aDNA/` / `aDNA.aDNA/` / `lattice-labs/`
-- *ADR drafts produced during M01 execution (Stage 2)*:
-  - ADR Decision A — GitHub repo rename (Obj 2)
-  - ADR Decision B — outer `adna/CLAUDE.md` disposition (Obj 2)
-  - Semver discipline ADR (Obj 6) — Major.Minor only, two-track Governance + Standard
-  - LatticeScope.aDNA ADR-000 (project identity, Obj 10) + ADR-001 (language choice)
+
+**Drafted as proposed (Stage 2 Session 2 of M01, 2026-05-08; await operator ratification at M03 phase gate):**
+- `aDNA.aDNA/what/decisions/adr_006_github_repo_rename_to_adna.md` — GitHub repo rename `Agentic-DNA` → `adna` (URL-slug only)
+- `aDNA.aDNA/what/decisions/adr_007_outer_adna_claude_md_disposition.md` — outer `adna/CLAUDE.md` becomes `template_workspace_claude.md` (NEW)
+
+**Drafted in remaining M01 objectives (Stage 2 Sessions 3-6):**
+- ADR-008 (Obj 2 / M03 — Airlock template stub): integration of `/.adna/how/airlock/AIRLOCK.md` reference stub + `skill_project_fork.md` airlock-dir-generation update. Mirrors III.aDNA canonical (5 entry paths). Ratified at M03 phase gate alongside ADR-006/007. *(Slot added by amendment 2026-05-08.)*
+- Semver discipline ADR (Obj 6 / M06) — Major.Minor only, two-track Governance + Standard
+- ADR-009 (Obj 7 / M07 — Naming/repo convention): codifies `<name>.aDNA/` directory ↔ `<name>.aDNA.git` GitHub repo. Documents existing exceptions (the 4 hyphen-flat names + 7 no-remote + 1 non-standard local-path) as grandfathered; rename application is operator-discretionary, not forced. Per-vault application is successor-campaign scope. *(Slot added by amendment 2026-05-08.)*
+- LatticeScope.aDNA ADR-000 (project identity, Obj 10) + ADR-001 (language choice)

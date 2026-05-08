@@ -6,9 +6,11 @@ campaign_phase: 0
 status: planned
 mission_class: planning
 created: 2026-05-07
-updated: 2026-05-07
+updated: 2026-05-08
 last_edited_by: agent_stanley
-tags: [mission, planned, adna, infrastructure, planning, v2, ecosystem, node_vault, publish, lattice_scope_adna, migration]
+amendments:
+  - 2026-05-08: "Campaign Amendment Session (S2 S2.5) — folded airlock template integration (ADR-008 slot in Obj 2 / M03) + naming/repo convention codification (ADR-009 slot in Obj 7 / M07) into existing objective scope; added scope notes to Obj 4 (cross-graph coord memo using airlock request schema as exemplar), Obj 5 (naming convention audit), Obj 8 (upgrade guide airlock + naming sections), Obj 11 (multi-campaign successor seeding); recalibrated estimated effort 5-6 → 6-7 sessions; added deliverables 20-22. See artifacts/m01_amendment_log.md."
+tags: [mission, planned, adna, infrastructure, planning, v2, ecosystem, node_vault, publish, lattice_scope_adna, migration, airlock, naming_convention]
 ---
 
 # Mission — M01: aDNA v2 Infrastructure Planning
@@ -143,6 +145,17 @@ lattice/
 ```
 
 **Decisions to make and record as ADRs:**
+
+> **Amendment 2026-05-08:** Decisions A and B were drafted as **ADR-006** and **ADR-007**
+> in Stage 2 Session 2 (`adr_006_github_repo_rename_to_adna.md` +
+> `adr_007_outer_adna_claude_md_disposition.md`); both are at `proposed`, awaiting M03
+> phase-gate ratification. **A third ADR slot — ADR-008 — is added by amendment**:
+> airlock template stub. M03 produces (a) the ADR-008 draft, (b) a new
+> `/.adna/how/airlock/AIRLOCK.md` reference stub mirroring `III.aDNA/how/airlock/AIRLOCK.md`
+> (5 entry paths: A-Text, B-Web/Visual, C-Code, D-Video, E-Vault Maintenance), and (c) an
+> update to `skill_project_fork.md` Step 3 to generate `<vault>/how/airlock/AIRLOCK.md`
+> for forked projects. Per-vault airlock adoption is the successor campaign's scope, not
+> M03's. See `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_amendment_log.md`.
 
 **Decision A — GitHub repo name:** Current name is `Agentic-DNA`. Options:
 - Keep `Agentic-DNA` — no breaking change to existing clone URLs
@@ -344,6 +357,13 @@ trigger for `idea_skill_publish_lattice_git_fix` (i.e., backlog idea moves to `c
 with link to M05 AAR). Co-sign by both vault personas (Rosetta + Daedalus) before M05
 ships to other ecosystem vaults.
 
+> **Amendment 2026-05-08:** This coord memo is the **first cross-graph airlock-pattern
+> exercise originating from `aDNA.aDNA/`** — it should adopt the airlock request schema as
+> exemplar. Cross-link the memo to `III.aDNA/how/airlock/AIRLOCK.md` (canonical) and
+> `VideoForge.aDNA/how/airlock/AIRLOCK.md` (reference Forge implementation). The memo's
+> structure (header → request → handshake → response) is the prototype for vault-local
+> airlock adoption in the successor campaign.
+
 ### Obj 5 — GitHub repo minimalism
 
 *Largely resolved by Obj 2 (flatten) and Obj 6 (version bump). This objective handles the
@@ -449,6 +469,15 @@ a) **Skill freshness** — for each skill in `.adna/how/skills/`:
 
 b) **Naming consistency** — all files/dirs use underscores, not hyphens. Check for exceptions.
 
+b.1) **Naming-convention audit (added by amendment 2026-05-08, feeds Obj 7 ADR-009):**
+For each reference to a vault or repo URL in `.adna/CLAUDE.md`, `README.md`, `CHANGELOG.md`,
+and `MANIFEST.md` — verify the form follows `<name>.aDNA/` (directory) and
+`<name>.aDNA.git` (GitHub repo). Flag drift: any `<name>-adna` (hyphen-flat),
+`<NameVariant>` (mixed-case), or `<name>-vault` (suffix-flat) reference. Document the four
+known grandfathered exceptions surfaced in `m01_obj0_ecosystem_matrix.md` §1
+(`science-stanley-adna`, `wga-adna`, `context-commons-adna`, `LAStartupLattice`) — those
+are operator-discretionary in the successor campaign, not blockers here.
+
 c) **Template completeness** — required frontmatter fields in all template files; YAML schema
    in `what/lattices/lattice_yaml_schema.json` is current; example files in `how/templates/`
    are accurate.
@@ -466,6 +495,19 @@ f) **aDNA.aDNA vault audit** — same checklist applied locally:
    - Rosetta-specific entity types still needed / well-described post-Phase-7?
    - 13 skills still relevant?
    - STATE.md accurate to post-Phase-7 state?
+
+g) **(Added by amendment 2026-05-08) Naming/repo convention codification — ADR-009 draft.**
+M07 produces the ADR draft for review. Codifies:
+   - **Directory ↔ repo isomorphism**: `<name>.aDNA/` directory ↔ `<name>.aDNA.git` GitHub repo
+   - **Underscores in `<name>`**: snake_case for the `<name>` portion (e.g., `science_stanley.aDNA`, `context_commons.aDNA`)
+   - **Grandfathered exceptions documented**: 4 known hyphen-flat repo names + 7 no-remote vaults + 1 non-standard local-path remote (LPWhitepaper) per `m01_obj0_ecosystem_matrix.md` §5 spot-check log. Renames are **operator-discretionary**, not forced by ADR-009 — application is the successor campaign's scope.
+   - **Going-forward enforcement**: `skill_project_fork.md` warns on non-conformant names; `skill_workspace_upgrade.md` and `skill_lattice_publish.md` reference the convention in their docs. Ratified at M07 close.
+
+h) **(Added by amendment 2026-05-08) Airlock-presence audit — D7 Federation extension.**
+The 10-dim audit gains a new sub-check under D7 (Federation): does the vault carry a
+`how/airlock/AIRLOCK.md`? For the template repo's own audit, the answer post-M03 is yes
+(the M03 stub). For consumer-vault audits in the successor campaign, the answer drives the
+M05-EC airlock-adoption mission scope.
 
 **Deliverable:** Audit findings table at `missions/artifacts/audit_adna_v2_repo_review.md`
 (file → finding → severity → action → status). Apply fixes inline during the mission.
@@ -517,7 +559,26 @@ and delivers (drops a file in the vault's `who/coordination/` dir).
 **External users question:** If any vault operators are external to Stanley's `~/lattice/`,
 the upgrade guide goes into the aDNA.aDNA docs site (adna-docs.vercel.app) as a new page.
 M01 Obj 0 should establish whether external operators exist. If yes, escalate this to an
-announcement (GitHub release notes + possible community post).
+announcement (GitHub release notes + possible community post). **Resolved Stage 2 Session 1
+(2026-05-08): yes — Wilhelm Foundation × 2 vaults, TAPP joint venture, Super League
+engagement.** M08a scope therefore includes public announcement + GitHub release
+coordination per `m01_obj0_ecosystem_matrix.md` §3.
+
+> **Amendment 2026-05-08 — airlock + naming convention sections:** The upgrade guide
+> gains two new optional sections (in addition to breaking-changes + new-patterns +
+> non-breaking + validation already specified above):
+>
+> **Optional: adopt airlock pattern** — v7.0 enables `how/airlock/AIRLOCK.md` per vault for
+> cross-vault work. Reference: `III.aDNA/how/airlock/AIRLOCK.md` (canonical, 5 entry
+> paths). Adoption is opt-in; vaults that don't do cross-vault work can skip. The template
+> ships a stub at `/.adna/how/airlock/AIRLOCK.md` (per ADR-008) that `skill_project_fork.md`
+> copies into new projects.
+>
+> **Naming convention going forward** — v7.0 codifies `<name>.aDNA/` directory ↔
+> `<name>.aDNA.git` GitHub repo (per ADR-009). Existing non-conformant repo names
+> (`science-stanley-adna`, `wga-adna`, `context-commons-adna`, `LAStartupLattice`,
+> `LPWhitepaper`'s non-standard remote) are grandfathered. Renames are operator-discretionary
+> and tracked under the successor campaign `campaign_adna_v3_ecosystem_compliance`.
 
 **Mapping Obj 8 outputs to M08a vs M08b:**
 
@@ -685,11 +746,20 @@ c) **Campaign retrospective:**
    - Did the upgrade guide land before the breaking changes shipped?
    - Did ecosystem propagation reach all affected vaults?
 
-d) **Next campaign planning doc** — `how/campaigns/campaign_adna_v3_*/` stub:
-   - Strategic intent: likely LatticeScope execution, agentic layout system, Phase 8 Rosetta,
-     federation protocol hardening, context-commons.aDNA integration
-   - Estimated phase count + session budget
-   - Dependencies + gate conditions
+d) **Next campaign planning doc(s)** — multiple successor campaigns (per amendment 2026-05-08):
+   - **Primary successor: `campaign_adna_v3_ecosystem_compliance`** — already seeded as
+     `status: planned` stub on 2026-05-08 by the Campaign Amendment Session (S2 S2.5).
+     M11 finalizes its mission tree (M01-EC through M07-EC: per-vault audit, bulk
+     publish-skill upgrade, git remote setup, GitHub repo naming standardization, airlock
+     adoption per vault, workspace router resync, final ecosystem audit + AAR). Strategic
+     intent: apply v7.0 standard changes systematically to the 19 active aDNA ecosystem
+     vaults. Opens at this campaign's P3 phase gate.
+   - **`campaign_lattice_scope`** (per Obj 10) — ready to execute post-v2; bootstraps
+     `LatticeScope.aDNA/` Platform.aDNA vault + Prometheus persona + observability runtime.
+   - **Operation Rosetta Phase 8** (queued separately) — unblocks once v2 closes; opens
+     with new baseline persona ranker + Researcher Findability + Educator interactive demo.
+   - Future possibilities (not seeded by M11): agentic layout system, federation protocol
+     hardening, `context_commons.aDNA` integration, Spacemacs cross-vault coordination.
 
 ---
 
@@ -716,15 +786,21 @@ d) **Next campaign planning doc** — `how/campaigns/campaign_adna_v3_*/` stub:
 | 17 | 10-dimension compliance pre-check for LatticeScope.aDNA | 10 | M10 |
 | 18 | Campaign doc update (mission tree + calibrated effort estimates) | — | All |
 | 19 | Session SITREP + next session prompt for M02 | — | Next agent |
+| 20 | ADR-008 draft — airlock template stub (added by amendment 2026-05-08) | 2 | M03 |
+| 21 | ADR-009 draft — `<name>.aDNA/` ↔ `<name>.aDNA.git` naming convention (added by amendment 2026-05-08) | 7 | M07 |
+| 22 | Successor campaign stub `campaign_adna_v3_ecosystem_compliance/` (added by amendment 2026-05-08; **seeded in S2 S2.5, finalized in M11**) | 11 | Successor campaign + post-v2 work |
 
 ---
 
 ## Estimated effort
 
-**5–6 sessions** (recalibrated 2026-05-07 from initial 4-session estimate; the original
-estimate underweighted dual-audience review per Standing Order #1, self-reference checks
-per Standing Order #2, and the M10 LatticeScope.aDNA scope which is essentially a
-sub-campaign-doc on its own):
+**6–7 sessions** (recalibrated 2026-05-08 by amendment from 5–6; the amendment adds
+ADR-008 (airlock) drafting work to S2 S3 / Obj 4 zone, ADR-009 (naming convention)
+drafting + airlock-presence audit to S2 S4 / Obj 7 zone, and successor-campaign-aware
+output framing to S2 S6 / Obj 11. Sessions 1–2 are completed (effort sunk); Sessions 3–6
+each pick up +5–10% effort. Plus a half-session "Stage 2 Session 2.5 — Campaign Amendment
+Session" that runs in 2026-05-08 between S2 S2 and S2 S3, covered separately in
+`m01_amendment_log.md`):
 
 - **Session 1**: Obj 0 (ecosystem matrix) + Obj 1 (read/orient + skill inventory) → deliverables 1–2
 - **Session 2**: Obj 2 (repo flatten, ADRs A/B) + Obj 3 (`node.aDNA/` design + Hestia + 10-dim pre-check) → deliverables 3–6
