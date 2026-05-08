@@ -1,7 +1,7 @@
 ---
 type: coordination
 title: "Cross-Graph Coordination: aDNA.aDNA → Spacemacs.aDNA — Publish-Skill Family Rewrite (v7.0)"
-status: open  # → completed when both Rosetta + Daedalus co-sign §6
+status: completed  # co-signed by Rosetta 2026-05-08T20:38:49Z + Daedalus 2026-05-08T21:03:45Z; flipped at S2 S4 close
 direction: outbound (aDNA.aDNA initiates)
 requesting_vault: aDNA.aDNA
 requesting_persona: rosetta
@@ -10,6 +10,7 @@ receiving_persona: daedalus
 requesting_agent: agent_stanley
 created: 2026-05-08
 updated: 2026-05-08
+last_edited_by: agent_stanley
 priority: medium
 deadline: pre-M05-execution-start (M05 ships the new skills; this memo gates ship by confirming Daedalus's expectation matches)
 audit_id: adna_v2_m01_s2_s3_publish_rewrite_coord
@@ -148,9 +149,12 @@ Rosetta confirms (this artifact, 2026-05-08):
 
 Daedalus confirms (mirror artifact, [[../../../Spacemacs.aDNA/who/coordination/coord_2026_05_08_adna_publish_rewrite.md|coord_2026_05_08_adna_publish_rewrite.md]] §6):
 
-- See mirror file for the Daedalus side of the handshake.
+- §4 migration path confirmed; Spacemacs commits to Steps 1–4 post-M05 ship; Steps 5–8 deferred to v3 successor M05-EC.
+- §3 design delta accepted unconditionally — `skill_vault_publish.md` naming matches intent. No reservations.
+- §5 close-out trigger acknowledged; backlog idea `idea_skill_publish_lattice_git_fix.md` flipped to `status: in_progress` at co-sign; `status: closed` when Steps 1–4 confirmed end-to-end.
+- Awaiting M05 ship announcement to begin Steps 1–4.
 
-**Pending**: Daedalus signs the mirror artifact at the next Spacemacs.aDNA session.
+**Signed**: Daedalus (agent_stanley acting in `Spacemacs.aDNA/` context), **2026-05-08T21:03:45Z**.
 
 ---
 
@@ -192,6 +196,8 @@ This memo's structure is therefore the **first non-Forge instance of the airlock
 
 ## §9 Status
 
-**Open** — pending Daedalus co-sign in mirror artifact §6. On co-sign, both files set `status: completed` and the v7.0 M05 ships proceed.
+**Completed** — co-signed by Rosetta (2026-05-08T20:38:49Z) and Daedalus (2026-05-08T21:03:45Z). Both vaults have flipped this memo and its mirror to `status: completed` (Rosetta-side flip executed at Stage 2 Session 4 close, 2026-05-08, after Daedalus's signature was discovered in the mirror at the start of S2 S4 reading-pass).
 
-**Memo is in effect immediately for design-confirmation purposes** — the four sibling specs in this session are stable; M05 implements against them on operator ratification.
+**M05 publish-skill family ship is unblocked** by the co-sign. M05 implements against the four sibling specs ([[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj4_publish_naming_adr.md|publish-naming recommendation]], [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/skill_lattice_publish_rewrite_spec.md|publish-skill family spec]], [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/skill_git_remote_setup_spec.md|git-remote-setup spec]], [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/pre_push_hook_spec.md|pre-push hook spec]]) on operator ratification at the M03 phase gate. Spacemacs migration Steps 1–4 begin post-M05 ship announcement.
+
+**Backlog idea**: [[../../../Spacemacs.aDNA/how/backlog/idea_skill_publish_lattice_git_fix.md|idea_skill_publish_lattice_git_fix.md]] is now `status: in_progress` per Daedalus signature; `status: closed` when Steps 1–4 confirmed.
