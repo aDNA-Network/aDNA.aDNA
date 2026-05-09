@@ -2,7 +2,7 @@
 type: adr
 adr_number: 009
 title: "aDNA naming convention: <name>.aDNA/ directory ↔ <name>.aDNA.git GitHub repo"
-status: proposed
+status: accepted
 created: 2026-05-08
 updated: 2026-05-08
 last_edited_by: agent_stanley
@@ -12,7 +12,9 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_planning_01
 objective: 7
 decision_letter: G  # mission §Obj 7 amendment subsection (g) — naming/repo convention codification
-ratification_phase: P3  # operator ratifies at M07 close
+ratification_phase: P1  # ratified at P0 → P1 phase-gate review session 2026-05-08 (early relative to original M07-close target — operator chose to lock convention before M03/M05 skills reference it)
+ratified: 2026-05-08
+ratified_session: session_stanley_20260509_013646_adna_v2_p0_p1_gate_review
 tags: [adr, decision, campaign_adna_v2_infrastructure, naming_convention, repo_isomorphism, snake_case, grandfathered_exceptions, m07, v7_0, skill_project_fork, skill_lattice_publish]
 ---
 
@@ -20,7 +22,7 @@ tags: [adr, decision, campaign_adna_v2_infrastructure, naming_convention, repo_i
 
 ## Status
 
-**Proposed** (Stage 2 Session 4 of `campaign_adna_v2_infrastructure`, drafted 2026-05-08 by Rosetta as M01 Obj 7 deliverable 12b). **Operator ratifies to `accepted` at M07 close per amendment 2026-05-08.** Companions to [[adr_006_github_repo_rename_to_adna.md|ADR-006]] (template-repo rename) and the forthcoming ADR-008 (airlock stub, M03).
+**Accepted** at the P0 → P1 phase-gate review session 2026-05-08 (`session_stanley_20260509_013646_adna_v2_p0_p1_gate_review`). Drafted Stage 2 Session 4 of `campaign_adna_v2_infrastructure` 2026-05-08 by Rosetta as M01 Obj 7 deliverable 12b; reviewed without amendment across S2 S5-S6; ratified at P0 → P1 gate (early relative to the original M07-close target — operator chose to lock the convention now so M03/M05/M07 skills can reference an `accepted` ADR rather than a `proposed` one when they wire the enforcement touchpoints). The §3 grandfathered-exception list and §5 application-scope (operator-discretionary for existing vaults; partner-org-discretionary for external repos) remain unchanged at ratification. Companions to [[adr_006_github_repo_rename_to_adna.md|ADR-006]] (template-repo rename) and the forthcoming ADR-008 (airlock stub, M03).
 
 ## Context
 
@@ -215,4 +217,4 @@ Total cross-links: **15+** in this ADR. Standing Order #10 ✓.
 
 ---
 
-**Status**: Proposed. Awaiting M07-close operator ratification.
+**Status**: Accepted at P0 → P1 phase-gate review session 2026-05-08 (early relative to original M07-close target). Per-vault rename application remains operator-discretionary; v3 successor `M04-EC` mission opens that scope.

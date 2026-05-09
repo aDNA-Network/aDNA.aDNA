@@ -2,7 +2,7 @@
 type: adr
 adr_number: 006
 title: "GitHub repo rename Agentic-DNA → adna (URL-slug only; display name unchanged)"
-status: proposed
+status: accepted
 created: 2026-05-08
 updated: 2026-05-08
 last_edited_by: agent_stanley
@@ -12,7 +12,9 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_planning_01
 objective: 2
 decision_letter: A  # mission §Obj 2 §Decision A
-ratification_phase: P1  # operator ratifies at start of M03 execution
+ratification_phase: P1  # ratified at P0 → P1 phase-gate review session 2026-05-08 (early relative to original M03-start target)
+ratified: 2026-05-08
+ratified_session: session_stanley_20260509_013646_adna_v2_p0_p1_gate_review
 tags: [adr, decision, campaign_adna_v2_infrastructure, github, repo_rename, url, governance, naming]
 ---
 
@@ -20,7 +22,7 @@ tags: [adr, decision, campaign_adna_v2_infrastructure, github, repo_rename, url,
 
 ## Status
 
-Proposed (Stage 2 Session 1 of `campaign_adna_v2_infrastructure`, drafted 2026-05-08 by Rosetta as M01 Obj 2 deliverable). **Operator ratifies to `accepted` at the start of M03 execution per Standing Order #1 (phase gates are human gates).** This ADR is a draft until that ratification.
+**Accepted** at the P0 → P1 phase-gate review session 2026-05-08 (`session_stanley_20260509_013646_adna_v2_p0_p1_gate_review`). Drafted Stage 2 Session 1 of `campaign_adna_v2_infrastructure` 2026-05-08 by Rosetta as M01 Obj 2 deliverable; reviewed without amendment across S2 S2-S6; ratified at the P0 → P1 gate (early relative to the original M03-start target — operator chose to remove the uncertainty before M02 ecosystem-matrix execution opens). M03 consumes the rename mechanic (GitHub UI rename + redirect-confirmation + optional `git remote set-url` propagation).
 
 ## Context
 

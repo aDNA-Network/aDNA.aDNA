@@ -2,7 +2,7 @@
 type: adr
 adr_number: 007
 title: "Outer adna/CLAUDE.md disposition: convert to template_workspace_claude.md (NEW)"
-status: proposed
+status: accepted
 created: 2026-05-08
 updated: 2026-05-08
 last_edited_by: agent_stanley
@@ -12,7 +12,9 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_planning_01
 objective: 2
 decision_letter: B  # mission §Obj 2 §Decision B
-ratification_phase: P1  # operator ratifies at start of M03 execution
+ratification_phase: P1  # ratified at P0 → P1 phase-gate review session 2026-05-08 (early relative to original M03-start target)
+ratified: 2026-05-08
+ratified_session: session_stanley_20260509_013646_adna_v2_p0_p1_gate_review
 tags: [adr, decision, campaign_adna_v2_infrastructure, claude_md, template, workspace_router, governance]
 ---
 
@@ -20,7 +22,7 @@ tags: [adr, decision, campaign_adna_v2_infrastructure, claude_md, template, work
 
 ## Status
 
-Proposed (Stage 2 Session 1 of `campaign_adna_v2_infrastructure`, drafted 2026-05-08 by Rosetta as M01 Obj 2 deliverable). **Operator ratifies to `accepted` at the start of M03 execution per Standing Order #1.** Companion to [[adr_006_github_repo_rename_to_adna.md|ADR-006]].
+**Accepted** at the P0 → P1 phase-gate review session 2026-05-08 (`session_stanley_20260509_013646_adna_v2_p0_p1_gate_review`). Drafted Stage 2 Session 1 of `campaign_adna_v2_infrastructure` 2026-05-08 by Rosetta as M01 Obj 2 deliverable; reviewed without amendment across S2 S2-S6; ratified together with companion [[adr_006_github_repo_rename_to_adna.md|ADR-006]] at the P0 → P1 gate (early relative to the original M03-start target). M03 consumes the conversion mechanic (file move + 3 minor edits + `skill_workspace_upgrade.md` Step 3 alternative integration).
 
 ## Context
 

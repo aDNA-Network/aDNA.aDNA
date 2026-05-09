@@ -2,8 +2,8 @@
 type: campaign
 campaign_id: campaign_adna_v2_infrastructure
 title: "aDNA v2 Infrastructure — Repo Structure, Node Vault, Publish Fix, Context Engine, Airlock + Naming Convention"
-status: planning
-phase: 0
+status: executing
+phase: 1
 adna_version_target: "governance_v7.0"
 adna_version_track: "governance_only"
 created: 2026-05-07
@@ -12,6 +12,7 @@ last_edited_by: agent_stanley
 amendments:
   - 2026-05-08: "Stage 2 Session 2.5 (Campaign Amendment Session) — folded airlock template integration (ADR-008 slot in M03) + naming/repo convention codification (ADR-009 slot in M07) into existing mission scope; seeded campaign_adna_v3_ecosystem_compliance/ as planned successor stub. See missions/artifacts/m01_amendment_log.md."
   - 2026-05-08: "Stage 2 Session 6 — M01 closed (22 deliverables; AAR at missions/artifacts/aar_m01_planning.md). Obj 9 → Obj 10 schema-fit gate walked with operator; v0.1 LatticeScope schema locked (file_category enum + session_type index + context_traversal table + recipe_id column). Platform.aDNA category promotes to workspace-canonical at LatticeScope MLS-0 (second instance after RareHarness). P0 → P1 phase-gate review pending operator."
+  - 2026-05-08: "P0 → P1 phase-gate review session — operator ratified mission tree (M02→M11 sequencing locked); ADRs 006/007/009 promoted proposed → accepted at this gate (early relative to per-ADR target slots — operator chose to remove uncertainty before M02 opens); LatticeScope sub-campaign + campaign_adna_v3_ecosystem_compliance both confirmed deferred to v2 P3 phase gate; campaign master phase: 0 → 1, status: planning → executing; M02 stub mission file opened at missions/mission_adna_infra_p1_02_ecosystem_matrix.md. Gate session: session_stanley_20260509_013646_adna_v2_p0_p1_gate_review."
 tags: [campaign, adna, infrastructure, v2, node_vault, publish, context_engine, lattice_scope_adna, migration, airlock, naming_convention]
 ---
 
@@ -77,8 +78,8 @@ existing operators have a migration path in hand before their `.adna/` structure
 
 | Mission | Phase | Description | Status |
 |---|---|---|---|
-| M01: Planning | P0 | Produces this campaign's full mission tree | **completed** (S2 S6, 2026-05-08) — 22 deliverables landed; AAR at `missions/artifacts/aar_m01_planning.md`; **P0 → P1 phase-gate review pending operator** |
-| M02: Ecosystem compatibility matrix | P1 | Inventory all vaults; map impact of each change | planned |
+| M01: Planning | P0 | Produces this campaign's full mission tree | **completed** (S2 S6, 2026-05-08) — 22 deliverables landed; AAR at `missions/artifacts/aar_m01_planning.md`; **P0 → P1 phase gate ratified 2026-05-08** (`session_stanley_20260509_013646_adna_v2_p0_p1_gate_review`) |
+| M02: Ecosystem compatibility matrix | P1 | Inventory all vaults; map impact of each change | planned (stub opened 2026-05-08; full spec at first execution session) |
 | **M08a: Upgrade guide + coordination memos (pre-flatten)** | P1 | CHANGELOG draft entry; v6→v7 upgrade guide; per-vault coordination memos; published BEFORE M03 lands | planned |
 | M03: Repo structure simplification | P1 | Flatten `.adna`, update `skill_project_fork` + `skill_workspace_upgrade`, migration runbook | planned |
 | M04: `node.aDNA/` design + bootstrap | P1 | Full vault design; persona (Hestia); workspace CLAUDE.md update | planned |
@@ -138,12 +139,12 @@ Spacemacs.aDNA (~17 active)
 - `aDNA.aDNA/what/decisions/adr_004_campaign_home_stays_in_adna_adna.md` — campaign home stays here, does not migrate to `node.aDNA/`
 - `aDNA.aDNA/what/decisions/adr_005_three_way_vault_boundary.md` — canonical scope distinction for `node.aDNA/` / `aDNA.aDNA/` / `lattice-labs/`
 
-**Drafted as proposed (Stage 2 Session 2 of M01, 2026-05-08; await operator ratification at M03 phase gate):**
-- `aDNA.aDNA/what/decisions/adr_006_github_repo_rename_to_adna.md` — GitHub repo rename `Agentic-DNA` → `adna` (URL-slug only)
-- `aDNA.aDNA/what/decisions/adr_007_outer_adna_claude_md_disposition.md` — outer `adna/CLAUDE.md` becomes `template_workspace_claude.md` (NEW)
+**Accepted at P0 → P1 phase-gate review session (2026-05-08; early relative to per-ADR target slots — operator chose to remove uncertainty before M02 opens):**
+- `aDNA.aDNA/what/decisions/adr_006_github_repo_rename_to_adna.md` — GitHub repo rename `Agentic-DNA` → `adna` (URL-slug only). Originally targeted M03-start ratification; promoted at P0 → P1 gate.
+- `aDNA.aDNA/what/decisions/adr_007_outer_adna_claude_md_disposition.md` — outer `adna/CLAUDE.md` becomes `template_workspace_claude.md` (NEW). Originally targeted M03-start ratification; promoted at P0 → P1 gate alongside companion ADR-006.
+- `aDNA.aDNA/what/decisions/adr_009_aDNA_naming_convention.md` — `<name>.aDNA/` directory ↔ `<name>.aDNA.git` GitHub repo naming convention; documents 4 grandfathered exception classes (hyphen-flat × 4 + no-remote × 7 + path-style × 1 + template-repo × 1); rename application operator-discretionary; per-vault adoption is v3 successor scope. Originally targeted M07-close ratification; promoted at P0 → P1 gate so M03/M05/M07 skills can cite an `accepted` ADR when wiring enforcement touchpoints.
 
-**Drafted in remaining M01 objectives (Stage 2 Sessions 3-6):**
-- ADR-008 (Obj 2 / M03 — Airlock template stub): integration of `/.adna/how/airlock/AIRLOCK.md` reference stub + `skill_project_fork.md` airlock-dir-generation update. Mirrors III.aDNA canonical (5 entry paths). Ratified at M03 phase gate alongside ADR-006/007. *(Slot added by amendment 2026-05-08.)*
-- Semver discipline ADR (Obj 6 / M06) — Major.Minor only, two-track Governance + Standard
-- ADR-009 (Obj 7 / M07 — Naming/repo convention): codifies `<name>.aDNA/` directory ↔ `<name>.aDNA.git` GitHub repo. Documents existing exceptions (the 4 hyphen-flat names + 7 no-remote + 1 non-standard local-path) as grandfathered; rename application is operator-discretionary, not forced. Per-vault application is successor-campaign scope. *(Slot added by amendment 2026-05-08.)*
-- LatticeScope.aDNA ADR-000 (project identity, Obj 10) + ADR-001 (language choice)
+**Drafted in remaining M01 objectives (Stage 2 Sessions 3-6); drafted-or-ratified during execution missions:**
+- ADR-008 (Obj 2 / M03 — Airlock template stub): integration of `/.adna/how/airlock/AIRLOCK.md` reference stub + `skill_project_fork.md` airlock-dir-generation update. Mirrors III.aDNA canonical (5 entry paths). **Drafted + ratified at M03 phase gate.** *(Slot added by amendment 2026-05-08.)*
+- Semver discipline ADR (Obj 6 / M06) — Major.Minor only, two-track Governance + Standard. Drafted at M06 (alongside the Governance v7.0 tag); ratified at M06 close.
+- LatticeScope.aDNA ADR-000 (project identity, Obj 10) + ADR-001 (language choice). Drafted at sub-campaign opening; ratified at LatticeScope MLS-0.
