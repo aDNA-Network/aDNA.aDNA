@@ -7,12 +7,13 @@ phase: 1
 adna_version_target: "governance_v7.0"
 adna_version_track: "governance_only"
 created: 2026-05-07
-updated: 2026-05-08
+updated: 2026-05-09
 last_edited_by: agent_stanley
 amendments:
   - 2026-05-08: "Stage 2 Session 2.5 (Campaign Amendment Session) — folded airlock template integration (ADR-008 slot in M03) + naming/repo convention codification (ADR-009 slot in M07) into existing mission scope; seeded campaign_adna_v3_ecosystem_compliance/ as planned successor stub. See missions/artifacts/m01_amendment_log.md."
   - 2026-05-08: "Stage 2 Session 6 — M01 closed (22 deliverables; AAR at missions/artifacts/aar_m01_planning.md). Obj 9 → Obj 10 schema-fit gate walked with operator; v0.1 LatticeScope schema locked (file_category enum + session_type index + context_traversal table + recipe_id column). Platform.aDNA category promotes to workspace-canonical at LatticeScope MLS-0 (second instance after RareHarness). P0 → P1 phase-gate review pending operator."
   - 2026-05-08: "P0 → P1 phase-gate review session — operator ratified mission tree (M02→M11 sequencing locked); ADRs 006/007/009 promoted proposed → accepted at this gate (early relative to per-ADR target slots — operator chose to remove uncertainty before M02 opens); LatticeScope sub-campaign + campaign_adna_v3_ecosystem_compliance both confirmed deferred to v2 P3 phase gate; campaign master phase: 0 → 1, status: planning → executing; M02 stub mission file opened at missions/mission_adna_infra_p1_02_ecosystem_matrix.md. Gate session: session_stanley_20260509_013646_adna_v2_p0_p1_gate_review."
+  - 2026-05-09: "M02 closed at single-session execution (session_stanley_20260509_031540_adna_v2_m02_first_exec). 6 of 6 deliverables landed; AAR at missions/artifacts/aar_m02_ecosystem_matrix.md. Zero drift across all 4 validation dimensions (directory / remote-state / publish-skill / partner-readiness). Locked baseline at missions/artifacts/m02_obj5_ecosystem_baseline_locked.md is M08a's primary input. Verification mission class confirmed: pre-flight validation queries during plan-mode collapsed Obj 1-4 from discovery to lock — pattern reusable at M08b. M08a opens next per locked sequencing."
 tags: [campaign, adna, infrastructure, v2, node_vault, publish, context_engine, lattice_scope_adna, migration, airlock, naming_convention]
 ---
 
@@ -79,8 +80,8 @@ existing operators have a migration path in hand before their `.adna/` structure
 | Mission | Phase | Description | Status |
 |---|---|---|---|
 | M01: Planning | P0 | Produces this campaign's full mission tree | **completed** (S2 S6, 2026-05-08) — 22 deliverables landed; AAR at `missions/artifacts/aar_m01_planning.md`; **P0 → P1 phase gate ratified 2026-05-08** (`session_stanley_20260509_013646_adna_v2_p0_p1_gate_review`) |
-| M02: Ecosystem compatibility matrix | P1 | Inventory all vaults; map impact of each change | planned (stub opened 2026-05-08; full spec at first execution session) |
-| **M08a: Upgrade guide + coordination memos (pre-flatten)** | P1 | CHANGELOG draft entry; v6→v7 upgrade guide; per-vault coordination memos; published BEFORE M03 lands | planned |
+| M02: Ecosystem compatibility matrix | P1 | Inventory all vaults; map impact of each change | **completed** (single-session, 2026-05-09) — 6 of 6 deliverables landed; AAR at `missions/artifacts/aar_m02_ecosystem_matrix.md`; locked baseline at `missions/artifacts/m02_obj5_ecosystem_baseline_locked.md`; zero drift across 4 validation dimensions |
+| **M08a: Upgrade guide + coordination memos (pre-flatten)** | P1 | CHANGELOG draft entry; v6→v7 upgrade guide; per-vault coordination memos; published BEFORE M03 lands | **next** (opens immediately; consumes M02 Obj 5 locked baseline as primary input) |
 | M03: Repo structure simplification | P1 | Flatten `.adna`, update `skill_project_fork` + `skill_workspace_upgrade`, migration runbook | planned |
 | M04: `node.aDNA/` design + bootstrap | P1 | Full vault design; persona (Hestia); workspace CLAUDE.md update | planned |
 | M05: `skill_lattice_publish` rewrite | P2 | Rewritten skill + `skill_git_remote_setup` (NEW) + `skill_deploy` (NEW; pre-push hook installer) | planned |

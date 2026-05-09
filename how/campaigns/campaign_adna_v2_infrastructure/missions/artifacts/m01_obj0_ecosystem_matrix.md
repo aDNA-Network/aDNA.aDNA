@@ -257,6 +257,7 @@ origin	https://github.com/LatticeProtocol/SuperLeague.aDNA.git (push)
 | [[../../../../what/decisions/adr_004_campaign_home_stays_in_adna_adna.md|ADR-004]] | Campaign home rationale | upstream (now `accepted`) |
 | [[../../../../what/decisions/adr_005_three_way_vault_boundary.md|ADR-005]] | Vault category column header source | upstream (now `accepted`) |
 | `lattice/CLAUDE.md` Project Discovery table | Vault inventory baseline | upstream — must be updated by M07 with the two undocumented vaults (F-1) |
+| [[m02_obj5_ecosystem_baseline_locked.md\|m02_obj5_ecosystem_baseline_locked.md]] | **Validates this matrix into a locked operational baseline (M02 Obj 5, 2026-05-09)** | this doc → forward consumer (closes the validation loop) |
 
 ## §7 Self-reference note
 
