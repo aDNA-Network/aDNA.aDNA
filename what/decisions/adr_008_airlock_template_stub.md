@@ -2,7 +2,7 @@
 type: adr
 adr_number: 008
 title: "Airlock template stub at .adna/how/airlock/AIRLOCK.md (minimal; federates to III.aDNA v0.2.0; opt-in per vault)"
-status: proposed
+status: accepted
 created: 2026-05-11
 updated: 2026-05-11
 last_edited_by: agent_stanley
@@ -12,10 +12,10 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_p1_03_repo_flatten
 objective: 1
 decision_letter: H  # mission §Obj 1 — airlock template stub (decision following the §Obj 7 §G ADR-009 naming convention)
-ratification_phase: P1  # ratifies at M03 phase gate (Session 3) per campaign master mission tree; M03 is the airlock-stub authoring mission
+ratification_phase: P1  # ratified at M03 phase gate (Session 3 mission close) per campaign master mission tree
 ratification_mission: mission_adna_infra_p1_03_repo_flatten
-ratified:  # filled at Session 3 mission close
-ratified_session:  # filled at Session 3 mission close
+ratified: 2026-05-11
+ratified_session: session_stanley_20260511_194613_adna_v2_m03_s3
 federation_ref:
   source: "III.aDNA/what/artifacts/iii_airlock_standard_spec.md"
   version: "0.2.0"
@@ -27,7 +27,9 @@ tags: [adr, decision, campaign_adna_v2_infrastructure, airlock, template_stub, f
 
 ## Status
 
-**Proposed** at Session 1 of mission `mission_adna_infra_p1_03_repo_flatten` 2026-05-11 by Rosetta as M03 Obj 1 deliverable. Ratification target: M03 phase gate (Session 3 mission close). M03 is the airlock-stub authoring mission per the campaign master mission tree (Stage 2 Session 2.5 Campaign Amendment Session 2026-05-08 opened the ADR-008 slot in M03). Companions: ADR-006 (template-repo rename `Agentic-DNA` → `adna`; accepted at P0→P1 gate), ADR-007 (outer `adna/CLAUDE.md` → `template_workspace_claude.md`; accepted), ADR-009 (`<name>.aDNA/` ↔ `<name>.aDNA.git` naming convention; accepted). ADR-008's federation_ref pin points to III.aDNA airlock standard at v0.2.0 (verified by grep at draft authoring: `/Users/stanley/lattice/III.aDNA/what/artifacts/iii_airlock_standard_spec.md` `version: "0.2.0"`).
+**Accepted** at M03 phase gate Session 3 mission close 2026-05-11T19:46:13Z+ (`session_stanley_20260511_194613_adna_v2_m03_s3`). Operator authorized ratification post-S2-harness-pass (V1-V13 + R1-R11 24/24 PASS). Cross-references: M03 mission AAR at [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/aar_m03_repo_flatten.md|`aar_m03_repo_flatten.md`]] (load-bearing finding identifies this ADR as the 5th instance in the airlock lineage); M03 spec §Obj 6 specified ratification mechanics; M03 S2 commit `6f1822a` landed the template-stub file at `.adna/how/airlock/AIRLOCK.md` per the inline spec below.
+
+**Originally proposed** at Session 1 of mission `mission_adna_infra_p1_03_repo_flatten` 2026-05-11 by Rosetta as M03 Obj 1 deliverable. M03 is the airlock-stub authoring mission per the campaign master mission tree (Stage 2 Session 2.5 Campaign Amendment Session 2026-05-08 opened the ADR-008 slot in M03). Companions: ADR-006 (template-repo rename `Agentic-DNA` → `adna`; accepted at P0→P1 gate), ADR-007 (outer `adna/CLAUDE.md` → `template_workspace_claude.md`; accepted), ADR-009 (`<name>.aDNA/` ↔ `<name>.aDNA.git` naming convention; accepted). ADR-008's federation_ref pin points to III.aDNA airlock standard at v0.2.0 (verified by grep at draft authoring + re-verified at S2 entry: `/Users/stanley/lattice/III.aDNA/what/artifacts/iii_airlock_standard_spec.md` `version: "0.2.0"`).
 
 ## Context
 

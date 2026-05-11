@@ -3,10 +3,13 @@ type: mission
 mission_id: mission_adna_infra_p1_03_repo_flatten
 campaign: campaign_adna_v2_infrastructure
 campaign_phase: 1
-status: in_progress
+status: completed
 mission_class: implementation  # M03 is the first implementation-class mission of the campaign — destructive upstream-repo edits + downstream skill updates
 created: 2026-05-11
 updated: 2026-05-11
+closed_at: 2026-05-11T19:46:13Z
+closed_session: session_stanley_20260511_194613_adna_v2_m03_s3
+sessions_actual: 3  # S1 spec + ADR-008 draft (non-destructive); S2 destructive flatten + V/R harness 24/24 PASS; S3 mission close + AAR + ADR-008 ratification
 last_edited_by: agent_stanley
 opened_at: M08a_close_handoff
 opened_session: session_stanley_20260511_165755_adna_v2_m03_s1
@@ -348,6 +351,21 @@ These are NOT spec gaps — they're discretionary calls the spec intentionally d
 ---
 
 ## Status
+
+**Mission complete** at Session 3 close 2026-05-11T19:46:13Z+ (`session_stanley_20260511_194613_adna_v2_m03_s3`). Frontmatter `status: in_progress → completed`. **All 21 deliverables landed across 3 sessions; 30/30 acceptance criteria boxes checked.**
+
+Session arc:
+- **Session 1** (2026-05-11T16:57Z+, `session_stanley_20260511_165755_adna_v2_m03_s1`): non-destructive spec authoring + ADR-008 draft (commit `608f737`). Spec frontmatter `spec_completeness: complete`; 6 objectives + 21 deliverables + 30 acceptance criteria + 18-input table + 9 hard constraints. ADR-008 drafted with `status: proposed` + federation_ref pin to III v0.2.0 + minimal-stub posture. S1 review-refinement applied post-close (commit `3de6d53`) per operator-approved Path 1 — 3 fixes (Fix A Agentic-DNA count, Fix B P-1 ratification, Fix C node.aDNA scope) + 5 risk mitigations + new §Operator decisions required at Session 2 entry section (3 decisions A/B/B).
+- **Session 2** (2026-05-11T19:24Z+, `session_stanley_20260511_190653_adna_v2_m03_s2`): destructive flatten + V/R harness 24/24 PASS (commit `c3f184c`). 14 upstream commits to `LatticeProtocol/adna` main (`37cb474..6282680`): B0 inner README preservation + B1 outer wrapper conversion + B2 prepare_for_onboarding move (Option A) + B3 deploy_manifest move + B4 workflow URLs + B5 .gitignore rewrite (amended) + B6 flatten promotion + B7 airlock stub + B8 Agentic-DNA URL sweep + B9 README clone command + B10 CHANGELOG v7.0 verbatim copy + C1-C3 skill commits (C4 no-op). Tag v7.0 deferred to M06 per campaign master. Phase F workspace-level rename: `~/lattice/.adna` is now real directory. V1-V13 (V12/V13 satisfied via Risk 3 syntax-validation) + R1-R11 harness all PASS. Results artifacts at `missions/artifacts/m03_obj5_*_results.md`.
+- **Session 3** (2026-05-11T19:46Z+, `session_stanley_20260511_194613_adna_v2_m03_s3`): mission close + AAR + ADR-008 ratification. ADR-008 `status: proposed → accepted` + `ratified: 2026-05-11` + `ratified_session` populated. Mission AAR at [[artifacts/aar_m03_repo_flatten.md|`aar_m03_repo_flatten.md`]] (lightweight 5-line + 4-category extended findings per M08a precedent; load-bearing finding: **ADR-008 is the 5th instance in the airlock lineage** — template stub completes the ∞-scaling progression from III canonical → VideoForge reference → CanvasForge worked example → M08a multilateral → template stub via federation discipline).
+
+**Hands off to M04** (`node.aDNA/` bootstrap) at operator discretion per Standing Order #1. M05 stays blocked-by-M04; M06 stays blocked-by-M05 (v7.0 tag mission); M07/M08b/M08c/M09/M10/M11 stay planned. LatticeScope sub-campaign + `campaign_adna_v3_ecosystem_compliance` successor stay deferred to v2 P3 phase gate. Operation Rosetta Phase 8 stays queued.
+
+**Self-reference (Standing Order #2)**: This spec demonstrates the implementation-mission class working as designed — prior planning (M01) + verification (M02) + authoring (M08a) missions produced the runbook + locked baseline + operator-readiness inputs; M03 was the rendering pass that converted those inputs into landed structural change. The mission's chosen self-reference (airlock template stub as the v7.0 codification of a pattern the campaign itself exercised multilaterally in M08a) became the load-bearing AAR finding — the airlock lineage now has 5 instances, with the template stub providing universal coverage via federation rather than duplication.
+
+---
+
+## Status (legacy — preserved for audit; superseded by §Status above)
 
 **Mission in_progress** at Session 1 open 2026-05-11T16:57:55Z+ (`session_stanley_20260511_165755_adna_v2_m03_s1`). Frontmatter `spec_completeness: complete`; `status: in_progress`. **Session 1 scope**: this mission spec authoring (Phase B; deliverable 1.spec) + ADR-008 draft (Phase C; Obj 1, deliverable 1) + Phase D session close (campaign master amendments entry + STATE.md update + session file move + commit/push). Session 1 is **non-destructive** — no upstream-repo edits, no symlink touches, no workspace router mutations. Session 2 (destructive flatten + verification harness) requires operator approval to enter per Standing Order #1; ADR-008 awaits phase-gate ratification at Session 3.
 
