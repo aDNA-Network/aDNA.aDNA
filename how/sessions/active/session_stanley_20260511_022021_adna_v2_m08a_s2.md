@@ -21,6 +21,9 @@ files_modified:
   - how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj8_upgrade_guide_v6_to_v7.md
 files_created:
   - how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m08a_upgrade_guide_publication_log.md
+  - how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m08a_github_release_notes_v7.md
+  - how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m08a_readme_badge_spec.md
+  - how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m08a_social_comms_post_draft.md
 tags: [session, active, adna, infrastructure, p1, m08a, s2, authoring, upgrade_guide_finalization, public_announcement]
 ---
 
@@ -56,6 +59,13 @@ Plan file: `/Users/stanley/.claude/plans/please-read-the-claude-md-golden-hammin
 - 02:38 — Edit 4/4: §13 Status rewrite from "Complete (draft)" to "Finalized for publication (M08a Session 2, 2026-05-11)" with explicit Still-pending subsection naming owners (M06 / M08b / Op Rosetta Phase 8) + Forward-references update. Also updated leading body `> Status` blockquote (was "draft", now "finalized for publication").
 - 02:50 — `m08a_upgrade_guide_publication_log.md` authored. 6 sections: §1 finalization edits (4 edits enumerated diff-style), §2 dual-audience review verdict (8 criteria all PASS — developer + non-developer), §3 docs-site publication-readiness check (5 stand-as-is + 5 need-adaptation items + Phase 8 mission tag recommendation + coordination note), §4 post-flatten path note (M08b mechanics), §5 cross-references (5 inputs consumed + 6 outputs consumed-by), §6 self-reference + dual-audience block. Frontmatter `status: complete` (artifact lifecycle); `target_missions: [M06, M08b]`.
 - 02:55 — Phase A done. 2 of 5 Session-2 deliverables landed (Obj 2 closed within Phase A). Mission stays `status: in_progress` (Obj 3 + Obj 4 pending).
+- 02:58 — Phase A commit `bd4d0fe` pushed to `origin/main`. 3 files / 281 insertions / 8 deletions.
+- 03:00 — Phase B start: Obj 3 public-announcement workstream (3 deliverables).
+- 03:15 — `m08a_github_release_notes_v7.md` authored. 6 sections inheriting M01 Obj 6 §6 template. §0 M06 publish instructions / §1 title / §2 body verbatim-paste / §3 placeholder fills table / §4 ADR-010 embargo guard (Wilhelm acknowledgment line wrapped in HTML comments + decision tree) / §5 cross-refs / §6 self-reference + dual-audience. `status: draft`; `delivery_held_until: M06-tag-ship`.
+- 03:30 — `m08a_readme_badge_spec.md` authored. 8 sections covering badge additions, H1 rename, clone command fix, workspace layout diagram fix, What's-Inside fix, M03/M06 sequencing, cross-refs, dual-audience. 4 badges spec'd (Governance v7.0 with Rebecca Purple `#663399` vault accent, Standard v2.2, Docs, License MIT). 5 string fixes catalogued for M03/M06 absorb. `status: draft`.
+- 03:50 — `m08a_social_comms_post_draft.md` authored. 6 sections covering 3 short-form variants (neutral/developer/newcomer, all ≤280 char), 7-post thread (8th optional embargo-guarded), ~700-word long-form blog draft, embargo summary table + verification commands, cross-refs, dual-audience. Wilhelm-affiliated mentions in optional thread Post 8 + long-form §Acknowledgments both wrapped in HTML-comment embargo guards. `status: draft`; `delivery_held_until: M06-tag-ship`.
+- 03:55 — Phase B verification: 4 m08a_*.md artifacts present (1 complete + 3 draft); upgrade guide frontmatter `status: finalized` confirmed; Wilhelm embargo markers present in release notes + social/comms post; migration URL cross-link present in release notes; no partner-vault mutation; mission file still `status: in_progress`. All checks PASS.
+- 03:56 — Phase B done. All 5 Session-2 deliverables landed across Obj 2 + Obj 3. Mission stays `status: in_progress` (Obj 4 = AAR + mission close + STATE.md flip = Session 3 scope per operator-locked scope decision 2026-05-11).
 
 ## SITREP
 
