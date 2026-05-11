@@ -8,10 +8,11 @@ target_missions:
   - M08a  # ships this guide pre-flatten; copies it to .adna/how/docs/upgrade_v6_to_v7.md after flatten
   - M08b  # finalizes (dates the v7.0 tag entry; collects propagation receipts)
 created: 2026-05-08
-updated: 2026-05-08
-status: complete
+updated: 2026-05-11
+status: finalized  # M01: status: complete (artifact authored). M08a Session 2 2026-05-11: status: finalized (cross-reference closure + dual-audience pass + §13 update; ready for M06 tag-date fill + M08b post-flatten copy).
+finalized: 2026-05-11
 last_edited_by: agent_stanley
-tags: [artifact, mission_deliverable, m01, obj8, upgrade_guide, v6_to_v7, dual_audience, migration_runbook, m08a, m08b, airlock_amendment, naming_convention_amendment]
+tags: [artifact, mission_deliverable, m01, obj8, upgrade_guide, v6_to_v7, dual_audience, migration_runbook, m08a, m08b, airlock_amendment, naming_convention_amendment, finalized]
 related_artifacts:
   - m01_obj0_ecosystem_matrix.md           # source: 19-vault inventory + per-change blast radius + external operators
   - m01_obj1_current_state.md              # source: current Governance v6.0 baseline
@@ -38,7 +39,7 @@ related_decisions:
 
 > **Deliverable 23 of M01** (per [[../mission_adna_infra_planning_01.md|mission_adna_infra_planning_01]] §Deliverables row 23 — re-numbered from "12" in original mission spec to avoid collision with Obj 7's deliverables 12a/12b authored at S2 S4). M08a destination after flatten: `.adna/how/docs/upgrade_v6_to_v7.md`. Pre-flatten draft path: this artifact. M08a publishes the same content to `adna-docs.vercel.app/learn/upgrade-v6-to-v7` so external operators can discover it without `.adna/` clone access.
 >
-> **Status**: draft (will date and finalize at M08a ship). v7.0 tag date is left as `YYYY-MM-DD` until M06 fires the tag — M08b updates this guide with the actual date once `git tag v7.0` lands.
+> **Status**: finalized for publication (M08a Session 2, 2026-05-11). v7.0 tag date is left as `YYYY-MM-DD` until M06 fires the tag — M08b updates this guide with the actual date once `git tag v7.0` lands. Operation Rosetta Phase 8 authors the MDX page at `adna-docs.vercel.app/learn/upgrade-v6-to-v7`; this prose is publication-ready as-is (see [[m08a_upgrade_guide_publication_log.md|publication log]] §3 for MDX-readiness check).
 
 ---
 
@@ -356,13 +357,13 @@ To be explicit about scope:
 |---|---|
 | GitHub issues — `github.com/LatticeProtocol/adna` | Migration bugs, broken paths, audit-finding follow-ups |
 | GitHub release notes — `github.com/LatticeProtocol/adna/releases/v7.0` | What landed, dated, with verification |
-| Per-vault coord memos (delivered to your vault's `who/coordination/`) | Vault-specific migration steps for your operator |
+| Per-vault coord memos (delivered to your vault's `who/coordination/`) | Vault-specific migration steps for your operator. For the v7.0 rollout, look for `coord_2026_05_09_v7_<vault_snake>.md` — 17 memos rendered at M08a Session 1 (13 LP-internal `status: ready`; 4 partner-affiliated `status: draft` held by `delivery_held_until`). |
 | `adna-docs.vercel.app/learn/upgrade-v6-to-v7` | This guide as a public web page |
 | Mission file `mission_adna_infra_planning_01.md` | Original spec; the why behind every change |
 | AAR for M01 (after S2 S6/S7) | Lessons from the planning phase; what was deferred |
 | AAR for M03/M05/M06/M07/M08a/M08b | Mission-by-mission outcomes; gotchas; verifications |
 
-For external operators (Wilhelm Foundation, TAPP, Super League): a per-partner coord memo is delivered alongside the v7.0 announcement covering organization-specific implications (Apache-2.0/CC-BY-4.0 licensing per WilhelmAI ADR 002, cross-federation attribution for Strategos/SIL, v0.1 → v1.0 trajectory for SuperLeague). See [[m01_obj8_per_vault_coord_memo_template.md|the per-vault coord memo template]] for the structure each memo follows.
+For external operators (Wilhelm Foundation, TAPP, Super League): a per-partner coord memo is delivered alongside the v7.0 announcement covering organization-specific implications (Apache-2.0/CC-BY-4.0 licensing per WilhelmAI ADR 002, cross-federation attribution for Strategos/SIL, v0.1 → v1.0 trajectory for SuperLeague). See [[m01_obj8_per_vault_coord_memo_template.md|the per-vault coord memo template]] for the structure each memo follows. The four partner-affiliated drafts — [[../../../../who/coordination/coord_2026_05_09_v7_rarearchive.md|RareArchive]], [[../../../../who/coordination/coord_2026_05_09_v7_wilhelmai.md|WilhelmAI]], [[../../../../who/coordination/coord_2026_05_09_v7_superleague.md|SuperLeague]], and [[../../../../who/coordination/coord_2026_05_09_v7_strategic_interface_protocol.md|strategic_interface_protocol]] — remain `status: draft` with `delivery_held_until` markers until operator gates open (Wilhelm × 2 honor WilhelmAI ADR 010 publication-timing).
 
 ---
 
@@ -409,6 +410,12 @@ Both reads land at the same conclusion: **v7.0 is non-coercive; you can stay on 
 
 ## §13 Status
 
-**Complete (draft).** Ready for M08a consumption: M08a polishes prose, fills in the `YYYY-MM-DD` for the v7.0 tag, copies this file to `.adna/how/docs/upgrade_v6_to_v7.md` (post-flatten), publishes to `adna-docs.vercel.app/learn/upgrade-v6-to-v7`, and delivers per-vault coord memos using the [[m01_obj8_per_vault_coord_memo_template.md|companion template]]. M08b finalizes after the v7.0 tag lands — updates this guide with receipts and an actual tag date.
+**Finalized for publication** (M08a Session 2, 2026-05-11). Cross-reference closure complete (§10 points operators at the rendered 2026-05-09 coord-memo filename pattern + names the 4 partner-affiliated drafts held by `delivery_held_until`). Dual-audience pass run per [[../../../../how/skills/skill_dual_audience_review.md|skill_dual_audience_review.md]] — verdict recorded in [[m08a_upgrade_guide_publication_log.md|m08a_upgrade_guide_publication_log.md]]. Frontmatter `status: complete → finalized`; `updated: 2026-05-11`; `finalized: 2026-05-11`.
 
-**Forward-references**: M08a + M08b + Operation Rosetta site team consume this guide. Findings cited in M01 AAR (S2 S6 or S2 S7 — mission close).
+**Still pending** (not finalized by Session 2 — owners named):
+- The `YYYY-MM-DD` placeholder for the v7.0 tag throughout (§5 + this section's earlier `> Status` note + frontmatter implied tag context) — **M06 fills at tag time**.
+- Copy to `.adna/how/docs/upgrade_v6_to_v7.md` post-flatten — **M08b owns** (after M03 lands the flatten).
+- Publish as MDX at `adna-docs.vercel.app/learn/upgrade-v6-to-v7` — **Operation Rosetta Phase 8** owns (the publication log §3 documents the MDX-readiness check).
+- Post-tag receipts and tag date update — **M08b owns**.
+
+**Forward-references**: M06 (tag-date fill), M08b (post-flatten copy + tag-date + receipts), Operation Rosetta Phase 8 (MDX authoring) consume this guide. Findings already cited in [[aar_m01_planning.md|M01 AAR]] (S2 S6 — mission close). M08a Session 2 finalization edits logged in [[m08a_upgrade_guide_publication_log.md|publication log]].
