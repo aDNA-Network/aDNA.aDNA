@@ -197,6 +197,13 @@ Total: 17 memos. Verification clean (`grep '{{' coord_2026_05_09_v7_*.md` return
 
 **Mission scope retained**: 6 deliverables remain (Phase 3 upgrade-guide finalization Obj 2; Phase 4 public-announcement workstream Obj 3 — release notes + README badge spec + social/comms post; Phase 5 mission close Obj 4 — AAR + status flips + STATE.md update). Mission file `status: in_progress` retained. Campaign master M08a row reflects Session 1 progress.
 
+**Wind-down audit (2026-05-11, `session_stanley_20260511_013233_adna_v2_m08a_s1_winddown`)** — operator-raised verification asks resolved without scope expansion:
+
+1. **`aDNA.aDNA` private-vault status confirmed** ✓: `gh repo view LatticeProtocol/aDNA.aDNA --json visibility` returns `PRIVATE`. The development vault for the aDNA standard lives at `LatticeProtocol/aDNA.aDNA` (private) as expected; description matches Operation Rosetta framing. No action needed.
+2. **Public template repo rename coverage confirmed** ✓: ADR-006 (accepted 2026-05-08 at P0→P1 gate) decides `LatticeProtocol/Agentic-DNA` → `LatticeProtocol/adna` (lowercase URL slug only; display name unchanged per v6.0 convention). M06 (P2) executes the GitHub UI rename + redirect verification + documentation sweep. The 17 per-vault coord memos delivered in M08a Session 1 already reference the lowercase target correctly (spot-checked 7 memos that mention the rename).
+3. **Operator clarification 2026-05-10**: operator's text said "aDNA" (mixed case); ADR-006 explicitly rejected mixed case in its Alternatives table (ambiguous; reserves `aDNA` for running-text abbreviation, not URIs). Operator confirmed via AskUserQuestion: keep ADR-006's lowercase decision; no override; no new ADR.
+4. **Small text-fix landed**: campaign master M06 row refreshed (`assess repo rename` → `execute repo rename per ADR-006`); line 125 refreshed (`rename decision` → `rename execution`). No content changes; just removes stale "decide-now" phrasing now that ADR-006 is accepted.
+
 **Operation Rosetta Phase 8** stays queued — no work this session.
 
 ## Next Session Prompt

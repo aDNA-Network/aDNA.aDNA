@@ -86,7 +86,7 @@ existing operators have a migration path in hand before their `.adna/` structure
 | M03: Repo structure simplification | P1 | Flatten `.adna`, update `skill_project_fork` + `skill_workspace_upgrade`, migration runbook | planned |
 | M04: `node.aDNA/` design + bootstrap | P1 | Full vault design; persona (Hestia); workspace CLAUDE.md update | planned |
 | M05: `skill_lattice_publish` rewrite | P2 | Rewritten skill + `skill_git_remote_setup` (NEW) + `skill_deploy` (NEW; pre-push hook installer) | planned |
-| M06: GitHub minimalism + Governance v7.0 tag | P2 | Move `deploy_manifest`, assess repo rename, tag Governance `v7.0` (Standard track unchanged) | planned |
+| M06: GitHub minimalism + Governance v7.0 tag | P2 | Move `deploy_manifest`, **execute repo rename per ADR-006 (accepted; `LatticeProtocol/Agentic-DNA` → `LatticeProtocol/adna` lowercase URL slug only)**, tag Governance `v7.0` (Standard track unchanged) | planned |
 | M07: General repo review + simplify | P3 | `/simplify` pass; skill freshness audit; 10-dimension compliance | planned |
 | **M08b: Post-flatten ecosystem propagation receipts** | P3 | Confirm ~17 vault operators acknowledged; collect migration receipts; resolve any breakage | planned |
 | M09: Context/token audit | P4 | Token baselines; measurement protocol; optimization opportunities | planned |
@@ -122,7 +122,7 @@ Spacemacs.aDNA (~17 active)
 
 - `Spacemacs.aDNA/how/backlog/idea_skill_publish_lattice_git_fix.md` — downstream trigger (M05)
 - `Spacemacs.aDNA/how/backlog/idea_agentic_layout_system.md` — peer improvement (separate P4 mission)
-- `adna/` repo remote: `github.com/LatticeProtocol/Agentic-DNA.git` (rename decision in M06 / ADR-006)
+- `adna/` repo remote: `github.com/LatticeProtocol/Agentic-DNA.git` (rename **execution** in M06 per ADR-006 — accepted 2026-05-08 at P0→P1 gate; target `github.com/LatticeProtocol/adna.git` lowercase)
 - `aDNA.aDNA/` — Operation Rosetta Phase 7 complete; Phase 8 queued separately; this vault hosts the campaign per ADR-004
 - `lattice-labs/STATE.md` — strategic coordination reference
 
