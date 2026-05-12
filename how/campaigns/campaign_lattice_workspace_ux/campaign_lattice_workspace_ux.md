@@ -3,8 +3,8 @@ type: campaign
 campaign_id: campaign_lattice_workspace_ux
 title: "Lattice Workspace UX — Dynamic node.aDNA Bootstrap + ~/lattice/ as Obsidian Vault"
 owner: stanley
-status: planned
-phase: -1  # not yet open; opens at operator discretion after M04b close (mission tree finalized 2026-05-12 by v2 M04b S1)
+status: executing
+phase: 1  # opened 2026-05-12T22:18Z+ at operator discretion after M04b close; M-LWX-02 enters in_progress under reframed Option C scope (see session_stanley_20260512_221833_mlwx02_s1)
 predecessor: campaign_adna_v2_infrastructure
 phase_count: 3  # P0 planning (subsumed by M04b in v2; complete) + P1 implementation + P2 integration & closeout
 mission_count: 3  # M-LWX-01 + M-LWX-02 + M-LWX-03 (finalized 2026-05-12 by v2 M04b Obj 4)
@@ -15,6 +15,12 @@ priority: medium  # interstitial between v2 M04 and v2 M05; not on critical path
 created: 2026-05-12
 updated: 2026-05-12
 last_edited_by: agent_stanley
+opened_at: 2026-05-12T22:18:33Z
+opens_session: session_stanley_20260512_221833_mlwx02_s1
+scope_reframe:
+  date: 2026-05-12
+  session: session_stanley_20260512_221833_mlwx02_s1
+  summary: "M-LWX-02 reframed under Option C (no rename) per operator architectural review during plan-mode. M-LWX-02 deliverables are now additive expansion of node.aDNA/ (HOME.md + workspace.json + ADR-001 + README section). The original M04b Obj 3 outer-workspace-vault spec is preserved as the input spec; M-LWX-02 implements its intent without standing up ~/lattice/.obsidian/. See plan at /Users/stanley/.claude/plans/please-read-the-claude-md-composed-wigderson.md."
 seeded_by:
   campaign: campaign_adna_v2_infrastructure
   mission: mission_adna_infra_p1_04b_workspace_ux_planning
@@ -146,7 +152,7 @@ stubs land in `missions/` (this session); operator-discretionary mini-campaign o
 | Mission | Title | Sessions | D5 disposition | Dependencies | Status |
 |---------|-------|----------|---|-------------|--------|
 | **M-LWX-01** | Dynamic `node.aDNA/` bootstrap interview implementation | 2-3 | **upstream** (`.adna/how/skills/skill_node_bootstrap_interview.md` + 1-line update to workspace router Step 0.3 prompt) | v2 M04b close (Obj 2 spec) | planned (stub authored 2026-05-12 by M04b) |
-| **M-LWX-02** | `~/lattice/` Obsidian vault setup | 2 | **local** (`~/lattice/.obsidian/` + `HOME.md` + `.obsidianignore` + Step 0.5 in workspace router) | v2 M04b close (Obj 3 spec) — independent of M-LWX-01 (parallel-eligible) | planned (stub authored 2026-05-12 by M04b) |
+| **M-LWX-02** | `node.aDNA/` role expansion as integrated lattice-home Obsidian vault (Option C, no rename) | 1 | **local** to `node.aDNA/` (HOME.md + workspace.json + ADR-001 + README section + CHANGELOG v0.2) | v2 M04b close (Obj 3 spec — reframed under Option C); no `~/lattice/` mutations | **completed** (single-session 2026-05-12T22:18Z → 22:35Z+ at `session_stanley_20260512_221833_mlwx02_s1`; 8/8 deliverables; 25/25 agent-side smoke PASS; 7 operator-side smoke checks deferred; AAR at `missions/artifacts/aar_mlwx_02_node_vault_role_expansion.md`; ADR-001 ratified `accepted`) |
 
 **Phase exit gate**: dynamic bootstrap implemented + Obsidian vault config live at
 `~/lattice/.obsidian/` + HOME.md gallery rendering from `inventory_vaults.yaml`.
