@@ -1,0 +1,12 @@
+# missions/ — populated by v2 M04b Obj 4
+#
+# This directory holds the M-LWX-01, M-LWX-02, M-LWX-03 mission stub files once
+# v2 M04b runs Obj 4 (mini-campaign mission tree authoring). Until then it's empty.
+#
+# Forecast contents (per campaign_lattice_workspace_ux.md preliminary tree):
+#   mission_lwx_01_dynamic_bootstrap_interview.md      (M-LWX-01; planned)
+#   mission_lwx_02_lattice_obsidian_vault.md           (M-LWX-02; planned)
+#   mission_lwx_03_integration_test_and_aar.md         (M-LWX-03; planned)
+#   artifacts/                                          (mission deliverables + AARs)
+#
+# Seeded 2026-05-12 by session_stanley_20260512_185037_adna_v2_m04b_amendment.
