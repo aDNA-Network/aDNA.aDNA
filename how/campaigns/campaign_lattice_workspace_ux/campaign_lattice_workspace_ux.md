@@ -21,6 +21,12 @@ scope_reframe:
   date: 2026-05-12
   session: session_stanley_20260512_221833_mlwx02_s1
   summary: "M-LWX-02 reframed under Option C (no rename) per operator architectural review during plan-mode. M-LWX-02 deliverables are now additive expansion of node.aDNA/ (HOME.md + workspace.json + ADR-001 + README section). The original M04b Obj 3 outer-workspace-vault spec is preserved as the input spec; M-LWX-02 implements its intent without standing up ~/lattice/.obsidian/. See plan at /Users/stanley/.claude/plans/please-read-the-claude-md-composed-wigderson.md."
+amendments:
+  - date: 2026-05-12T22:40Z+
+    session: session_stanley_20260512_221833_mlwx02_s1
+    target: mission_lwx_01_dynamic_bootstrap_interview
+    type: scope_amendment
+    summary: "M-LWX-01 scope expanded post-M-LWX-02 close per operator architectural review. M-LWX-02's HOME.md + workspace.default.json work landed local-only on this node; without parallel upstream template work, future node.aDNA forks on other machines wouldn't inherit the role-expanded UX. M-LWX-01 (the upstream-bound mission) absorbs the template extraction: adds (.adna/HOME.md template with {{VARS}} + .adna/.obsidian/workspace.default.json HOME.md ref fix) to its single upstream commit. Deliverable count 6 → 8; estimated sessions unchanged (2-3); M-LWX-02 working example is the template-extraction source."
 seeded_by:
   campaign: campaign_adna_v2_infrastructure
   mission: mission_adna_infra_p1_04b_workspace_ux_planning
@@ -151,7 +157,7 @@ stubs land in `missions/` (this session); operator-discretionary mini-campaign o
 
 | Mission | Title | Sessions | D5 disposition | Dependencies | Status |
 |---------|-------|----------|---|-------------|--------|
-| **M-LWX-01** | Dynamic `node.aDNA/` bootstrap interview implementation | 2-3 | **upstream** (`.adna/how/skills/skill_node_bootstrap_interview.md` + 1-line update to workspace router Step 0.3 prompt) | v2 M04b close (Obj 2 spec) | planned (stub authored 2026-05-12 by M04b) |
+| **M-LWX-01** | Dynamic `node.aDNA/` bootstrap interview implementation + `.adna/HOME.md` template + `.adna/.obsidian/workspace.default.json` HOME.md ref fix | 2-3 | **upstream** (`.adna/how/skills/skill_node_bootstrap_interview.md` + `.adna/HOME.md` template + `.adna/.obsidian/workspace.default.json` update + 1-line workspace router Step 0.3 prompt) | v2 M04b close (Obj 2 spec); M-LWX-02 close (working example for template-extraction) | planned (stub authored 2026-05-12 by M04b; **scope amended 2026-05-12T22:40Z+ at M-LWX-02 close architectural review** — added HOME.md template + workspace.default.json fix upstream to ensure future forks inherit role-expanded UX; 8 deliverables; estimated sessions unchanged) |
 | **M-LWX-02** | `node.aDNA/` role expansion as integrated lattice-home Obsidian vault (Option C, no rename) | 1 | **local** to `node.aDNA/` (HOME.md + workspace.json + ADR-001 + README section + CHANGELOG v0.2) | v2 M04b close (Obj 3 spec — reframed under Option C); no `~/lattice/` mutations | **completed** (single-session 2026-05-12T22:18Z → 22:35Z+ at `session_stanley_20260512_221833_mlwx02_s1`; 8/8 deliverables; 25/25 agent-side smoke PASS; 7 operator-side smoke checks deferred; AAR at `missions/artifacts/aar_mlwx_02_node_vault_role_expansion.md`; ADR-001 ratified `accepted`) |
 
 **Phase exit gate**: dynamic bootstrap implemented + Obsidian vault config live at
