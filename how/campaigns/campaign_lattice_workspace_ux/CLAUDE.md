@@ -9,11 +9,11 @@ tags: [governance, campaign, planned, adna, workspace_ux, dynamic_bootstrap, obs
 
 # CLAUDE.md — Campaign: Lattice Workspace UX (mini-campaign)
 
-> **Status: planned. This campaign is queued.** It opens at the close of v2's M04b
-> mission (the planning mission that finalizes this mini-campaign's mission tree).
-> Do **not** open M-LWX-01 until M04b has populated the mission tree in
-> `campaign_lattice_workspace_ux.md` and the operator has authorized the mini-campaign
-> open per Standing Order #1.
+> **Status: planned (mission tree finalized 2026-05-12 by v2 M04b S1).** Mission tree
+> + 3 stub files (M-LWX-01 / M-LWX-02 / M-LWX-03) live in `missions/`. Campaign
+> remains `phase: -1` (not yet open). Do **not** open M-LWX-01 until v2 M04b is
+> formally closed AND the operator has authorized the mini-campaign open per
+> Standing Order #1.
 
 ## Campaign Identity
 
@@ -21,8 +21,8 @@ tags: [governance, campaign, planned, adna, workspace_ux, dynamic_bootstrap, obs
 |-------|-------|
 | Campaign | `campaign_lattice_workspace_ux` |
 | Owner | stanley |
-| Status | **planned** (stub seeded 2026-05-12 by v2 Campaign Amendment Session; opens at v2 M04b close) |
-| Current Phase | not yet open — awaits v2 M04b close |
+| Status | **planned** (stub seeded 2026-05-12 by v2 Campaign Amendment Session; mission tree finalized 2026-05-12 by v2 M04b S1 Obj 4) |
+| Current Phase | not yet open — awaits operator authorization post v2 M04b close |
 | Predecessor | `campaign_adna_v2_infrastructure` (specifically v2 M04b mission) |
 | Persona | Rosetta (continues from v2; per-vault interactions adopt host persona — Hestia for node.aDNA invocations, project persona inside `.aDNA/` projects) |
 
@@ -31,7 +31,7 @@ tags: [governance, campaign, planned, adna, workspace_ux, dynamic_bootstrap, obs
 1. Confirm v2 M04b close:
    - `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/mission_adna_infra_p1_04b_workspace_ux_planning.md` has `status: completed`
    - `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/aar_m04b_workspace_ux_planning.md` exists
-   - This campaign's `campaign_lattice_workspace_ux.md` has `phase: -1` flipped to `phase: 1` and mission tree populated (no longer TBD)
+   - This campaign's `campaign_lattice_workspace_ux.md` has mission tree finalized (3 rows: M-LWX-01 + M-LWX-02 + M-LWX-03 with non-TBD content); `phase: -1` flips to `phase: 1` at mini-campaign open (operator-gated, not at M04b close)
    - `aDNA.aDNA/STATE.md` Next Session Prompt names M-LWX-01 as next-to-open
 2. Read this CLAUDE.md (auto-loaded), then read `campaign_lattice_workspace_ux.md`
 3. Read M04b's outputs (the design inputs):
@@ -104,21 +104,23 @@ Load these resources for mini-campaign work:
 
 This campaign was **stubbed by Rosetta on 2026-05-12** during the Campaign Amendment
 Session of `campaign_adna_v2_infrastructure`
-(`session_stanley_20260512_185037_adna_v2_m04b_amendment`). The stub captures the goal,
-the predecessor dependency (v2 M04b), and the preliminary 3-mission outline. **The stub
-does not finalize the mission tree** — that finalization happens in v2 M04b Obj 4,
-after M04b's gap analysis + design objectives produce the implementation requirements
-this mini-campaign serves.
+(`session_stanley_20260512_185037_adna_v2_m04b_amendment`). The **mission tree was
+finalized 2026-05-12 by v2 M04b S1 Obj 4** (`session_stanley_20260512_200414_adna_v2_m04b_s1`)
+based on the Obj 1 gap analysis + Obj 2 interview spec + Obj 3 Obsidian vault spec —
+all three M04b design artifacts live at `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/`.
 
 If you are an agent opening this campaign for the first time:
-- The mission tree below is **preliminary**. Treat it as a sketch.
-- v2 M04b should have produced an **updated** version of this campaign's master file
-  before you arrived. If `campaign_lattice_workspace_ux.md` still has frontmatter
-  `phase: -1`, M04b has not yet finalized it — escalate to operator before proceeding.
+- The mission tree is **finalized**, not preliminary. Stubs for M-LWX-01 / M-LWX-02 /
+  M-LWX-03 live in `missions/`; full Read/Produce blocks land at each mission's
+  first-execution-session per the M02 / M04 / M04b first-execution-session pattern.
+- `campaign_lattice_workspace_ux.md` `phase: -1` is intentional — the mini-campaign
+  has a finalized tree but is **not yet open**. Phase flips to `1` at operator
+  authorization. Do not assume open simply because the tree is finalized.
 - The seeding artifact is at
-  `aDNA.aDNA/how/sessions/history/2026-05/session_stanley_20260512_185037_adna_v2_m04b_amendment.md`
-  — it explains why this campaign was seeded early and what M04b is responsible for
-  finalizing.
+  `aDNA.aDNA/how/sessions/history/2026-05/session_stanley_20260512_185037_adna_v2_m04b_amendment.md`;
+  the finalization session is at
+  `aDNA.aDNA/how/sessions/history/2026-05/session_stanley_20260512_200414_adna_v2_m04b_s1.md`
+  (or `active/` if the session is still in flight when you arrive).
 
 ## Vault-in-vault disclaimer
 

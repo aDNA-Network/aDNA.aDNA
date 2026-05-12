@@ -4,12 +4,12 @@ campaign_id: campaign_lattice_workspace_ux
 title: "Lattice Workspace UX — Dynamic node.aDNA Bootstrap + ~/lattice/ as Obsidian Vault"
 owner: stanley
 status: planned
-phase: -1  # not yet open; awaits campaign_adna_v2_infrastructure M04b close (mini-campaign mission tree finalized)
+phase: -1  # not yet open; opens at operator discretion after M04b close (mission tree finalized 2026-05-12 by v2 M04b S1)
 predecessor: campaign_adna_v2_infrastructure
-phase_count: 3  # P0 planning (subsumed by M04b in v2) + P1 implementation + P2 integration & closeout
-mission_count: 3  # M-LWX-01 + M-LWX-02 + M-LWX-03 (preliminary; finalized at M04b of v2)
-estimated_sessions: "5-8"  # rough; recalibrated at M04b
-calibrated_sessions: ""
+phase_count: 3  # P0 planning (subsumed by M04b in v2; complete) + P1 implementation + P2 integration & closeout
+mission_count: 3  # M-LWX-01 + M-LWX-02 + M-LWX-03 (finalized 2026-05-12 by v2 M04b Obj 4)
+estimated_sessions: "5-7"  # M-LWX-01: 2-3 sessions + M-LWX-02: 2 sessions + M-LWX-03: 1-2 sessions
+calibrated_sessions: "5-7"  # recalibrated at M04b close based on Obj 2 + Obj 3 spec scope
 estimation_class: "ux-implementation"
 priority: medium  # interstitial between v2 M04 and v2 M05; not on critical path of v7.0 ship
 created: 2026-05-12
@@ -25,13 +25,20 @@ blocks_in_parent: [mission_adna_infra_p2_05_publish_skill_rewrite]  # M05 of v2 
 tags: [campaign, planned, adna, workspace_ux, dynamic_bootstrap, obsidian_vault, side_campaign, mini_campaign, lattice_workspace, ux, node_adna_extension, p1_5]
 ---
 
-# Campaign — Lattice Workspace UX (mini-campaign; planned)
+# Campaign — Lattice Workspace UX (mini-campaign; planned, mission tree finalized)
 
-> **Status: planned. This is a stub.** Seeded 2026-05-12 by the Campaign Amendment Session
-> of `campaign_adna_v2_infrastructure`. The mission tree below is **preliminary** — M04b
-> of the v2 campaign will finalize it after authoring the gap analysis + interview skill
-> spec + Obsidian vault spec. This mini-campaign **opens** at M04b close and is not
-> active until then.
+> **Status: planned. Mission tree finalized 2026-05-12 by v2 M04b S1.** Seeded
+> 2026-05-12 by the Campaign Amendment Session of `campaign_adna_v2_infrastructure`;
+> mission tree authored at v2 M04b Obj 4 based on the Obj 1 gap analysis + Obj 2
+> interview spec + Obj 3 Obsidian vault spec.
+>
+> **Mission stubs**: 3 (M-LWX-01 + M-LWX-02 + M-LWX-03) — see Phase 1 + Phase 2 tables
+> below. Each stub is `status: planned`, `spec_completeness: stub`; full Read/Produce
+> blocks land at first-execution-session per the M02 / M04 / M04b first-execution-
+> session pattern.
+>
+> This mini-campaign **opens** at operator discretion after v2 M04b close and is
+> not active until then.
 
 ## Goal
 
@@ -121,37 +128,41 @@ skill rewrite).
 | Workspace router Step 0.3 dynamic-interview gap | open | M-LWX-01 |
 | `~/lattice/` Obsidian vault setup | not yet open | M-LWX-02 |
 
-## Phases & Missions (preliminary — finalized at M04b of v2)
+## Phases & Missions (finalized 2026-05-12 by v2 M04b S1)
 
-### Phase 0: Planning (subsumed by v2 M04b)
+### Phase 0: Planning (subsumed by v2 M04b — complete)
 
-M04b in `campaign_adna_v2_infrastructure` plans this mini-campaign. The planning
-output is this campaign master's mission tree (currently TBD) + 3 mission stub files
-in `missions/`.
+v2 M04b planned this mini-campaign. Phase 0 outputs (lives in `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/`):
 
-**Phase exit gate**: M04b mission close — mission tree finalized + each mission has a
-1-page stub.
+- `m04b_obj1_dynamic_ux_gap_analysis.md` — 40 items classified; 7 strict gaps + 2 overlay gaps mapped to 5 interview topics
+- `m04b_obj2_skill_node_bootstrap_interview_spec.md` — 19-question interview skill spec; D5 resolved upstream
+- `m04b_obj3_lattice_obsidian_vault_spec.md` — `.obsidian/` config + HOME.md gallery + .obsidianignore + Step 0.5 workspace-router addition; D5 resolved local
+
+**Phase exit gate**: ✅ M04b mission close — mission tree finalized below; 3 mission
+stubs land in `missions/` (this session); operator-discretionary mini-campaign open.
 
 ### Phase 1: Implementation (M-LWX-01, M-LWX-02)
 
-| Mission | Title | Sessions | Dependencies | Status |
-|---------|-------|----------|-------------|--------|
-| M-LWX-01 | Dynamic node.aDNA bootstrap interview implementation | 2-3 | M04b close (interview skill spec) | planned (stub authored at M04b Obj 4) |
-| M-LWX-02 | `~/lattice/` Obsidian vault setup | 2 | M-LWX-01 OR parallel (independent if D5 resolves no-upstream-for-LWX-01) | planned (stub authored at M04b Obj 4) |
+| Mission | Title | Sessions | D5 disposition | Dependencies | Status |
+|---------|-------|----------|---|-------------|--------|
+| **M-LWX-01** | Dynamic `node.aDNA/` bootstrap interview implementation | 2-3 | **upstream** (`.adna/how/skills/skill_node_bootstrap_interview.md` + 1-line update to workspace router Step 0.3 prompt) | v2 M04b close (Obj 2 spec) | planned (stub authored 2026-05-12 by M04b) |
+| **M-LWX-02** | `~/lattice/` Obsidian vault setup | 2 | **local** (`~/lattice/.obsidian/` + `HOME.md` + `.obsidianignore` + Step 0.5 in workspace router) | v2 M04b close (Obj 3 spec) — independent of M-LWX-01 (parallel-eligible) | planned (stub authored 2026-05-12 by M04b) |
 
 **Phase exit gate**: dynamic bootstrap implemented + Obsidian vault config live at
-`~/lattice/.obsidian/` + home-page gallery rendering correctly from
-`inventory_vaults.yaml`.
+`~/lattice/.obsidian/` + HOME.md gallery rendering from `inventory_vaults.yaml`.
+M-LWX-01 + M-LWX-02 are independent (Obj 2 ships upstream, Obj 3 stays local) — they
+may run in any order or in parallel.
 
 ### Phase 2: Integration & closeout (M-LWX-03)
 
-| Mission | Title | Sessions | Dependencies | Status |
-|---------|-------|----------|-------------|--------|
-| M-LWX-03 | Integration test + AAR + cross-graph findings → v2 main campaign | 1-2 | M-LWX-01 + M-LWX-02 close | planned (stub authored at M04b Obj 4) |
+| Mission | Title | Sessions | D5 disposition | Dependencies | Status |
+|---------|-------|----------|---|-------------|--------|
+| **M-LWX-03** | Integration test (8 tests per Obj 3 §6) + AAR + cross-graph findings → v2 main campaign | 1-2 | mixed (test results local; cross-graph findings memo lives in v2's `aDNA.aDNA/`; potential upstream amendments to `.adna/` template if findings warrant) | M-LWX-01 + M-LWX-02 close | planned (stub authored 2026-05-12 by M04b) |
 
-**Phase exit gate**: end-to-end UX validated on clean slate; findings integrated back
-into v2 main campaign as amendment entries +/or `.adna/` template upstream commits;
-mini-campaign AAR; v2 resumes at M05.
+**Phase exit gate**: end-to-end UX validated on Stanley's L1 (this node) as canonical
+reference (8 integration tests per Obj 3 §6 PASS); findings integrated back into v2
+main campaign as amendment entries +/or `.adna/` template upstream commits if
+warranted; mini-campaign AAR; v2 resumes at M05 (publish-skill rewrite).
 
 ## Decision Points
 

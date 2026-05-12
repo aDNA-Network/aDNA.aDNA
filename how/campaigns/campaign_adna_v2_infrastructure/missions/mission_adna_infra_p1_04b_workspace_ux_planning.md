@@ -3,15 +3,18 @@ type: mission
 mission_id: mission_adna_infra_p1_04b_workspace_ux_planning
 campaign: campaign_adna_v2_infrastructure
 campaign_phase: 1
-status: planned
-mission_class: planning  # M04b is a planning mission whose output IS the side-campaign master+tree (precedent: M01 within v2 for v2 itself)
+status: completed
+mission_class: planning  # M04b is a planning mission whose output IS the side-campaign master+tree (precedent: M01 within v2 for v2 itself); single-session-execution viable per M02 precedent
 created: 2026-05-12
 updated: 2026-05-12
 last_edited_by: agent_stanley
-opened_at: M04_close_handoff  # M04 closed 2026-05-12T01:33Z+; M04b opens at operator discretion
-opens_session: TBD  # first execution session ID; populated at mission open
-spec_completeness: stub  # bare-bones authored at Campaign Amendment Session 2026-05-12; full Read/Produce blocks + Deliverables table + Acceptance criteria boxes authored at mission open per M02 first-execution-session pattern
-estimated_sessions: 1-2  # planning-class single-session-execution likely (M02 precedent: 6 objectives, 1 session); recalibrated at mission open
+opened_at: 2026-05-12T20:04:14Z  # M04 closed 2026-05-12T01:33Z+; M04b opened at operator discretion via session_stanley_20260512_200414_adna_v2_m04b_s1 (operator chose "Open M04b now" via plan-mode AskUserQuestion)
+opens_session: session_stanley_20260512_200414_adna_v2_m04b_s1  # first execution session ID
+closed_at: 2026-05-12T20:27:24Z
+closed_session: session_stanley_20260512_200414_adna_v2_m04b_s1  # closed same session — single-session execution
+sessions_actual: 1  # single-session execution: D1-D5 defaults accepted in one AskUserQuestion + 5 objectives + 7 deliverables landed sequentially
+spec_completeness: complete  # mid at session start, complete at mission close per first-execution-session pattern
+estimated_sessions: 1-2  # estimate 1-2; actual 1 (lower bound)
 prerequisite_missions:
   - mission_adna_infra_p1_04_node_adna_bootstrap  # M04 produced the node.aDNA/ baseline that M04b reviews + extends
 prerequisite_adrs:
@@ -253,6 +256,8 @@ per Standing Order #1.
 
 Defaults are applied at S1 entry if operator does not surface them.
 
+> **Resolved at S1 entry 2026-05-12T20:04Z** (operator accepted all 5 defaults via plan-mode AskUserQuestion at session_stanley_20260512_200414_adna_v2_m04b_s1; no overrides): **D1=b** (hybrid bootstrap) · **D2=b** (Obsidian +Bases) · **D3=a** (exclude `*.aDNA/` via `.obsidianignore`) · **D4=a** (marketplace web link only) · **D5=a** (decide per-design at Obj 2 + Obj 3). These resolutions are operative for Obj 1-5 of this mission.
+
 ---
 
 ## Inputs forecast (will be tightened at mission open)
@@ -339,31 +344,27 @@ Forecast checklist (~10-12 boxes at mission open):
 
 ## Status
 
-**Mission planned.** Stub authored at Campaign Amendment Session 2026-05-12
-(`session_stanley_20260512_185037_adna_v2_m04b_amendment`). Frontmatter
-`spec_completeness: stub`; `status: planned`. Full Read/Produce blocks + Deliverables
-table + Acceptance criteria boxes authored at mission open per the M02 first-execution
--session pattern.
+**Mission complete** at Session 1 close 2026-05-12T20:27:24Z+ (`session_stanley_20260512_200414_adna_v2_m04b_s1`). Mission frontmatter `status: in_progress → completed`; `closed_at` + `closed_session` + `sessions_actual: 1` populated; `spec_completeness: complete`. **Single-session execution** per M02 precedent — operator accepted all 5 Rosetta defaults (b/b/a/a/a) at S1 entry via plan-mode AskUserQuestion; 5 objectives + 7 deliverables landed sequentially without operator re-engagement.
 
-Opens at **operator discretion** after M04 close (2026-05-12T01:33Z+) — Standing
-Order #1 (phase gates are human gates). M04b's prerequisite (M04 completed) is
-satisfied; the gate is the operator's choice. Sequencing options:
+**Outputs landed**:
+1. [[artifacts/m04b_obj1_dynamic_ux_gap_analysis.md|`m04b_obj1_dynamic_ux_gap_analysis.md`]] — Obj 1 gap analysis (40 items classified across 8 categories; 7 strict gaps + 2 overlay gaps mapped to 5 interview topics)
+2. [[artifacts/m04b_obj2_skill_node_bootstrap_interview_spec.md|`m04b_obj2_skill_node_bootstrap_interview_spec.md`]] — Obj 2 interview skill spec (19 questions × 5 topics; **D5 = upstream** ships to `.adna/how/skills/`)
+3. [[artifacts/m04b_obj3_lattice_obsidian_vault_spec.md|`m04b_obj3_lattice_obsidian_vault_spec.md`]] — Obj 3 Obsidian vault spec (5 `.obsidian/` config files + HOME.md + .obsidianignore + Step 0.5; **D5 = local** ships to `~/lattice/`)
+4. Side-campaign master `campaign_lattice_workspace_ux/campaign_lattice_workspace_ux.md` flipped from "preliminary" to "finalized 2026-05-12 by v2 M04b S1"
+5. 3 mission stub files at `campaign_lattice_workspace_ux/missions/`:
+   - `mission_lwx_01_dynamic_bootstrap_interview.md` (upstream)
+   - `mission_lwx_02_lattice_obsidian_vault.md` (local; parallel-eligible with LWX-01)
+   - `mission_lwx_03_integration_test_and_closeout.md` (mixed)
+6. [[artifacts/aar_m04b_workspace_ux_planning.md|M04b AAR]] — lightweight 5-line per single-session-execution path
+7. STATE.md flip — Last Session block replaced with M04b S1 close; Next Session Prompt rewritten for mini-campaign M-LWX-01 opening
 
-- **Open M04b now** — produce side-campaign spec + open mini-campaign immediately
-  after; M05 deferred until mini-campaign closes (~3-7 sessions of work between
-  M04b and M05).
-- **Skip M04b** (defer to v2 P3 or later) — open M05 directly; workspace UX work
-  re-queued in `campaign_adna_v3_ecosystem_compliance` or a new campaign. Cost:
-  M05's publish-skill family can't assume mature workspace-UX baseline.
-- **Open M04b later** (operator pause) — `campaign_lattice_workspace_ux/` stub stays
-  seeded but inactive; M05 can open in parallel if operator chooses; M04b returns
-  when operator has bandwidth.
+**Decisions resolved**: D1-D5 operator decisions all accepted at Rosetta defaults (b/b/a/a/a) at S1 entry; per-artifact D5 disposition explicit (Obj 2 upstream, Obj 3 local, mini-campaign M-LWX-03 mixed).
 
-**Self-reference (Standing Order #2)**: M04b's design must be exemplifiable in
-`aDNA.aDNA/` itself — if the interview asks "what's this node for?", the design
-shows how Stanley would have answered for his Mac on 2026-05-11 when M04 bootstrapped
-node.aDNA. The mini-campaign's M-LWX-03 integration test re-runs the bootstrap as
-self-reference validation.
+**Hard constraints honored**: zero M04 / `node.aDNA/` / `~/lattice/.obsidian/` / upstream-repo / partner-vault / M08a / coord-memo / v7.0-tag mutations; ADRs 004-009 all stay accepted; ADR-010 stays not-drafted.
+
+Hands off to **mini-campaign `campaign_lattice_workspace_ux/`** at operator discretion per Standing Order #1. M-LWX-01 (upstream interview skill) + M-LWX-02 (local Obsidian vault) are parallel-eligible. M-LWX-03 (integration + AAR + cross-graph findings) opens after both close. After M-LWX-03 close, v2 resumes at M05 (publish-skill rewrite; soft-gate released).
+
+**Self-reference (Standing Order #2)**: M04b demonstrated the M01 Obj 3 design by *enacting* the hybrid-bootstrap principle in the design artifacts it produced — the gap analysis (Obj 1) classifies each M04 output by which path produced it; the interview spec (Obj 2) closes only the gaps surfaced by Obj 1; the Obsidian vault spec (Obj 3) reads the same inventory data the bootstrap writes. The campaign documents the framework by *applying* the framework to its own outputs. M-LWX-03 will re-run the bootstrap as the canonical reference on Stanley's L1 (this Mac), validating the framework end-to-end.
 
 **Cross-references** (sources for the workspace UX gaps this mission addresses):
 - M04 S2 session file Activity Log §"Conceptual contribution (candidate AAR
