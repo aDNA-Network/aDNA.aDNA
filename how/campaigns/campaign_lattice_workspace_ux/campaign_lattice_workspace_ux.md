@@ -13,7 +13,7 @@ calibrated_sessions: "5-7"  # recalibrated at M04b close based on Obj 2 + Obj 3 
 estimation_class: "ux-implementation"
 priority: medium  # interstitial between v2 M04 and v2 M05; not on critical path of v7.0 ship
 created: 2026-05-12
-updated: 2026-05-12
+updated: 2026-05-13
 last_edited_by: agent_stanley
 opened_at: 2026-05-12T22:18:33Z
 opens_session: session_stanley_20260512_221833_mlwx02_s1
@@ -27,6 +27,11 @@ amendments:
     target: mission_lwx_01_dynamic_bootstrap_interview
     type: scope_amendment
     summary: "M-LWX-01 scope expanded post-M-LWX-02 close per operator architectural review. M-LWX-02's HOME.md + workspace.default.json work landed local-only on this node; without parallel upstream template work, future node.aDNA forks on other machines wouldn't inherit the role-expanded UX. M-LWX-01 (the upstream-bound mission) absorbs the template extraction: adds (.adna/HOME.md template with {{VARS}} + .adna/.obsidian/workspace.default.json HOME.md ref fix) to its single upstream commit. Deliverable count 6 → 8; estimated sessions unchanged (2-3); M-LWX-02 working example is the template-extraction source."
+  - date: 2026-05-13T01:05Z+
+    session: session_stanley_20260513_005300_mlwx01_s2
+    target: mission_lwx_01_dynamic_bootstrap_interview
+    type: mission_close
+    summary: "M-LWX-01 closed at S2 (2 actual sessions vs 2-3 estimated). Obj 5 sandbox smoke at `/tmp/sandbox_lwx_01/` with mirror-this-node values (per D-Smoke) confirmed 9/9 verification-matrix gates PASS; HOME.md `{{VARS}}` substitution clean (0 residual); workspace.default.json HOME.md refs intact (3 of 3); structural section diff matches gold (16 visible headers). Obj 6 lightweight AAR + extended findings appendix landed (4 patterns + 3 surprises + 3 conceptual contributions + 5 items deferred). 5 findings route to M-LWX-03 cross-graph findings memo or follow-up upstream patches: (1) NEW substitution-into-HTML-comments source-bloat (4.9KB on 8KB file; render-invisible; fix candidate: rephrase inline comments to plain prose — would be 4th instance of additive-upstream pattern); (2) workspace router procedural list gap carried from S1; (3) hostname substitution semantics carried from S1; (4) identity-file create-vs-pre-exist asymmetry surfaced by smoke; (5) node-skills + what/inventory/ not in .adna/ upstream — out of M-LWX-01 scope, flag to v2 M05. Conceptual contribution: 3rd instance of single-commit additive upstream pattern (after ADR-008 + e3b3bcc); pattern now settled. Production-comparison smoke (mirror-this-node + structural diff vs working example) generalizes as canonical smoke pattern for template-extraction missions. Hard constraints honored: zero ~/lattice/node.aDNA/ mutation (HEAD `1032d8d` unchanged); zero ~/lattice/.adna/ upstream mutation (HEAD `c32930e` unchanged); sandbox content lives only in /tmp/. Phase 1 progress: 2/2 missions closed (M-LWX-01 + M-LWX-02); M-LWX-03 unblocked, awaits operator authorization per Standing Order #1."
 seeded_by:
   campaign: campaign_adna_v2_infrastructure
   mission: mission_adna_infra_p1_04b_workspace_ux_planning
@@ -157,7 +162,7 @@ stubs land in `missions/` (this session); operator-discretionary mini-campaign o
 
 | Mission | Title | Sessions | D5 disposition | Dependencies | Status |
 |---------|-------|----------|---|-------------|--------|
-| **M-LWX-01** | Dynamic `node.aDNA/` bootstrap interview implementation + `.adna/HOME.md` template + `.adna/.obsidian/workspace.default.json` HOME.md ref fix | 2-3 | **upstream** (`.adna/how/skills/skill_node_bootstrap_interview.md` + `.adna/HOME.md` template + `.adna/.obsidian/workspace.default.json` update + 1-line workspace router Step 0.3 prompt) | v2 M04b close (Obj 2 spec); M-LWX-02 close (working example for template-extraction) | **in_progress** (S1 opened 2026-05-12T23:19:09Z at `session_stanley_20260512_231909_mlwx01_s1`; spec_completeness: full; first-execution-session covering Obj 1-4 + scope-amendment files; Obj 5-6 deferred to S2) |
+| **M-LWX-01** | Dynamic `node.aDNA/` bootstrap interview implementation + `.adna/HOME.md` template + `.adna/.obsidian/workspace.default.json` HOME.md ref fix | 2 (actual) | **upstream** (`.adna/how/skills/skill_node_bootstrap_interview.md` + `.adna/HOME.md` template + `.adna/.obsidian/workspace.default.json` update + 1-line workspace router Step 0.3 prompt) | v2 M04b close (Obj 2 spec); M-LWX-02 close (working example for template-extraction) | **completed** (S1 2026-05-12T23:19Z + S2 close 2026-05-13T01:05Z+ at `session_stanley_20260513_005300_mlwx01_s2`; 8/8 deliverables; 9/9 sandbox smoke gates PASS; 5 findings → M-LWX-03 cross-graph; AAR at `missions/artifacts/aar_mlwx_01_dynamic_bootstrap_interview.md`; smoke results at `missions/artifacts/mlwx_01_obj5_smoke_results.md`; 3rd instance of single-commit additive upstream pattern after ADR-008 + `e3b3bcc`) |
 | **M-LWX-02** | `node.aDNA/` role expansion as integrated lattice-home Obsidian vault (Option C, no rename) | 1 | **local** to `node.aDNA/` (HOME.md + workspace.json + ADR-001 + README section + CHANGELOG v0.2) | v2 M04b close (Obj 3 spec — reframed under Option C); no `~/lattice/` mutations | **completed** (single-session 2026-05-12T22:18Z → 22:35Z+ at `session_stanley_20260512_221833_mlwx02_s1`; 8/8 deliverables; 25/25 agent-side smoke PASS; 7 operator-side smoke checks deferred; AAR at `missions/artifacts/aar_mlwx_02_node_vault_role_expansion.md`; ADR-001 ratified `accepted`) |
 
 **Phase exit gate**: dynamic bootstrap implemented + Obsidian vault config live at

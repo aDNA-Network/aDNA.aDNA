@@ -3,10 +3,13 @@ type: mission
 mission_id: mission_lwx_01_dynamic_bootstrap_interview
 campaign: campaign_lattice_workspace_ux
 campaign_phase: 1
-status: in_progress
+status: completed
+closed_at: 2026-05-13T01:05:00Z
+closed_session: session_stanley_20260513_005300_mlwx01_s2
+sessions_actual: 2
 mission_class: implementation
 created: 2026-05-12
-updated: 2026-05-12
+updated: 2026-05-13
 last_edited_by: agent_stanley
 opens_at: mini_campaign_open  # operator-gated; opens when v2 M04b is closed AND operator authorizes mini-campaign open
 opens_session: session_stanley_20260512_231909_mlwx01_s1  # first-execution-session; opened 2026-05-12T23:19:09Z
@@ -187,9 +190,9 @@ across purpose / user-info / stack / hardware / connections.
 
 ## Status
 
-**S1 in_progress (mostly complete; 6 of 8 deliverables landed).** S1 opened 2026-05-12T23:19:09Z at `session_stanley_20260512_231909_mlwx01_s1`. Upstream commit `8673383` to `LatticeProtocol/adna` lands the 4 upstream files (skill + AGENTS + HOME.md template + workspace.default.json fix); workspace-local 1-line prompt edit at `~/lattice/CLAUDE.md`. Obj 5 (integration smoke) + Obj 6 (AAR + close) deferred to S2.
+**Mission CLOSED 2026-05-13T01:05Z+ (S2 — sandbox smoke + AAR + status flips).** 2 sessions total (S1 + S2); all 8 deliverables landed. Upstream commit `8673383` to `LatticeProtocol/adna` (3rd instance of the additive-upstream pattern). S2 sandbox smoke at `/tmp/sandbox_lwx_01/` (mirror-this-node values per D-Smoke) confirmed 9/9 verification-matrix gates PASS; 5 findings surfaced (1 new bug class, 4 carried) → route to M-LWX-03 cross-graph findings memo.
 
-**Deliverables status (6 of 8 ✅, 2 pending S2)**:
+**Deliverables status (8 of 8 ✅)**:
 
 | # | Deliverable | Status | Reference |
 |---|---|---|---|
@@ -199,26 +202,30 @@ across purpose / user-info / stack / hardware / connections.
 | 4 | `.adna/.obsidian/workspace.default.json` fix (3 refs: file/title/lastOpenFiles) | ✅ S1 | commit `8673383` |
 | 5 | Workspace router Step 0.3 prompt update (1-line) | ✅ S1 | `~/lattice/CLAUDE.md` (workspace-local; not in any repo) |
 | 6 | Single upstream commit to `LatticeProtocol/adna` | ✅ S1 | commit `8673383` pushed to origin/main 2026-05-12T23:23:27Z |
-| 7 | Integration smoke results | ⏳ S2 | `missions/artifacts/mlwx_01_obj5_smoke_results.md` |
-| 8 | M-LWX-01 AAR (lightweight 5-line) | ⏳ S2 | `missions/artifacts/aar_mlwx_01_dynamic_bootstrap_interview.md` |
+| 7 | Integration smoke results | ✅ S2 | `missions/artifacts/mlwx_01_obj5_smoke_results.md` (9/9 gates PASS; 5 findings) |
+| 8 | M-LWX-01 AAR (lightweight 5-line + extended findings appendix) | ✅ S2 | `missions/artifacts/aar_mlwx_01_dynamic_bootstrap_interview.md` |
 
-**Acceptance criteria status (S1 scope)**:
+**Acceptance criteria (final)**:
 
 - ✅ `skill_node_bootstrap_interview.md` authored per Obj 2 spec (19 questions × 5 topics; Hestia voice; composition contract; exit codes 0/2/3/4)
-- ⏳ Skill substitutes HOME.md template `{{VARS}}` at fork time (substitution logic spec'd in Step 9; verification at Obj 5 smoke)
+- ✅ Skill substitutes HOME.md template `{{VARS}}` at fork time (substitution logic spec'd in Step 9; smoke verified 0 residual `{{VARS}}` post-substitution with mirror-this-node values)
 - ✅ Skill index updated in `.adna/how/skills/AGENTS.md`
-- ✅ `.adna/HOME.md` template authored with `{{VARS}}` (12 vars: 8 primary + 4 table generators + auxiliary)
-- ✅ `.adna/.obsidian/workspace.default.json` `Home.md` → `HOME.md` (3 refs)
+- ✅ `.adna/HOME.md` template authored with `{{VARS}}` (12 vars: 8 primary + 4 auxiliary; 4 table generators)
+- ✅ `.adna/.obsidian/workspace.default.json` `Home.md` → `HOME.md` (3 refs: file + title + lastOpenFiles; smoke confirmed 0 dangling lowercase)
 - ✅ Workspace router Step 0.3 prompt updated (1 line)
 - ✅ Single upstream commit to `LatticeProtocol/adna` (4 files; 366 insertions; commit `8673383`)
-- ⏳ Integration smoke (S2 / Obj 5)
-- ⏳ M-LWX-01 AAR (S2 / Obj 6)
-- ⏳ Mission file `status: in_progress → completed` (at Obj 6)
-- ⏳ Campaign master M-LWX-01 row flipped to `completed` (at Obj 6)
-- ✅ No mutation of M04 / M04b / M-LWX-02 outputs / partner vaults / non-target `.adna/` files / existing `node.aDNA/` directly (template additions only; this node's vault is the working example, not the template)
+- ✅ Integration smoke: 19/19 answer surfaces reachable (6 pre-existing in fork; 2 interview-created at Steps 4+7 — by-spec); HOME.md substitution clean; workspace.default.json refs intact; structural diff matches gold (16 visible headers)
+- ✅ M-LWX-01 AAR landed (lightweight 5-line + 4-category extended findings appendix: 4 patterns + 3 surprises + 3 conceptual + 5 items deferred)
+- ✅ Mission file `status: in_progress → completed`
+- ✅ Campaign master M-LWX-01 row flipped to `completed` (this session — Phase C)
+- ✅ No mutation of M04 / M04b / M-LWX-02 outputs / partner vaults / non-target `.adna/` files / existing `node.aDNA/` (hard-constraint guard verified pre+post smoke: `~/lattice/node.aDNA/` HEAD `1032d8d` unchanged; `~/lattice/.adna/` HEAD `c32930e` unchanged)
 
-**Findings surfaced for M-LWX-03 (or follow-up)**:
+**Findings carried forward to M-LWX-03 (or `.adna/` follow-up patch)**:
 
-1. **Workspace router procedural list gap**: Step 0.3 prompt now mentions the interview, but the procedural list at `~/lattice/CLAUDE.md` lines 28-33 still routes through `skill_project_fork → skill_inventory_refresh → persona → STATE.md → git init` without invoking `skill_node_bootstrap_interview.md` between auto-detect and persona. Mission spec's "1-line, no other edits" constraint was honored at S1; sandbox re-fork smoke (Obj 5) will catch this. Resolution is a small 3-line procedural-list addition; lands at M-LWX-03 cross-graph findings memo or as a separate follow-up commit.
+1. **NEW (S2 smoke): Substitution-into-HTML-comments source-bloat** — naive `string.replace()` mirrors expanded `{{TOKEN}}` references inside inline HTML comments in `.adna/HOME.md` (lines 40, 54, 65). Render-invisible; source-bloat ~4.9KB on a ~8KB file. Fix: rephrase inline comments to plain prose references (preferred, ~10min upstream patch) OR amend skill Step 9 to skip HTML-comment regions (heavier, defensive). Would be 4th instance of single-commit additive upstream pattern.
+2. **Workspace router procedural list gap** (S1): Step 0.3 prompt mentions interview but procedural list at `~/lattice/CLAUDE.md` lines 28-33 doesn't yet invoke it. Resolution: 3-line procedural-list amendment between Step 2 (inventory_refresh) and Step 3 (persona). Routes to M-LWX-03 or separate follow-up commit.
+3. **`hostname` substitution semantics** (S1): `hostname -s` may return long-form while convention uses friendly short form (e.g., `Mac`). Operator U1 override pattern handles this; documentation note for interview-skill comments. Non-blocking.
+4. **Identity-file create-vs-pre-exist asymmetry** (S2 smoke): `who/identity/identity_node.yaml` + `who/identity/identity_lattice_protocol.yaml` are interview-created (not in fresh fork), while `what/inventory/*.yaml` are pre-populated by inventory_refresh. Asymmetry by-spec but worth documenting. Low priority for M-LWX-03 notes.
+5. **Node-skills + `what/inventory/` not in `.adna/` upstream** (S2 smoke; out of M-LWX-01 scope): bootstrap chain documented in skill Steps 1-4 can't complete on a vanilla `.adna/` fork (node-specific skills + inventory entity-type live only in `node.aDNA/`). Flag to v2 main campaign for M05 consideration or future M-LWX-style mission.
 
-2. **`hostname` substitution semantics**: HOME.md template uses `{{node_hostname}}`. Current convention on this node uses `Mac` (short, friendly). `hostname -s` may return something different (e.g., `MacBook-Pro.local`). The skill Step 9 substitutes from `hostname -s` by default; operator U1-style override pattern from the interview could extend to hostname if it becomes an issue. Note for Obj 5 smoke design.
+**Pattern precedent contribution**: 3rd instance of single-commit additive upstream pattern (after ADR-008 airlock template stub + `e3b3bcc` cross-project routing hook). Pattern now considered settled — future additive-upstream missions adopt without further design discussion. Finding 1 fix would be the 4th instance.
