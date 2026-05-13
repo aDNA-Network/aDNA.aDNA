@@ -1,0 +1,134 @@
+---
+type: integration_test_results
+mission: mission_lwx_03_integration_test_and_closeout
+objective: 2
+session: session_stanley_20260513_030626_mlwx03_s1
+operator: stanley
+ran_at: 2026-05-13T03:15:00Z  # agent portion
+result_agent_side: COMPLETE_WITH_STRUCTURAL_DIVERGENCE
+result_operator_side: DEFERRED_TO_S2
+operator_side_check_count: 6  # 4 mapped + 2 new dimensions; original Test 7 deferred-pending-impl + 3 N/A
+created: 2026-05-13
+updated: 2026-05-13
+last_edited_by: agent_stanley
+tags: [integration_test, mlwx_03, obj2, outer_vault, option_c_adapted, structural_divergence, m04b_obj3_section6, operator_side_deferred]
+---
+
+# M-LWX-03 Obj 2 — Outer-Vault Integration Tests (Option-C-Adapted)
+
+## Summary
+
+**Agent-side result**: COMPLETE — Option C structural mapping done. Of the 8 tests in `m04b_obj3_lattice_obsidian_vault_spec.md` §6 (authored assuming the **outer-vault** model `~/lattice/.obsidian/`): **4 tests structurally N/A** under M-LWX-02's Option C reframe (no outer vault); **4 tests MAPPED** to M-LWX-02's 7 deferred operator-side checks (O1, O2/O3, O5, O6); **1 test DEFERRED-PENDING-IMPL** (Test 7 — depends on `skill_inventory_refresh` extension, currently a backlog item per M-LWX-02 AAR deferred #1); **2 NEW DIMENSIONS** added by M-LWX-02 that the original 8 didn't cover (O4 within-vault wikilinks + O7 theme/accent).
+
+**Operator-side result**: DEFERRED to S2 per D-S1Scope=B. The 6 operator-side checks (4 mapped + 2 new) require launching Obsidian on this Mac; agent cannot execute them. Operator runs O1-O7 between S1 and S2.
+
+**Net effect**: under Option C, the "8 outer-vault tests" reduce to **6 testable surfaces** (all node.aDNA-scoped via Obsidian on this Mac), 1 deferred backlog item, and 3 structural N/As. The divergence from the M04b spec is **not a regression** — it reflects the architectural decision M-LWX-02 captured in ADR-001 (scope-vs-role naming; outer-workspace-vault rejected in favor of additive role-expansion of node.aDNA).
+
+---
+
+## Method
+
+Per Obj 2 spec ("Open `~/lattice/` in Obsidian. Run each of the 8 tests from Obj 3 §6 sequentially. Capture PASS/FAIL + screenshots or text evidence for each. Any FAIL gates the AAR (corrective patch + re-test required)"):
+
+**Step 1 (agent-side, this session)**: build the Option C mapping table — re-classify each of M04b Obj 3 §6's 8 tests against M-LWX-02's actual deliverables (Option C reframe — `node.aDNA/` role-expanded; no outer `~/lattice/.obsidian/`).
+
+**Step 2 (operator-side, deferred to S2)**: operator runs the 7 M-LWX-02 deferred checks (O1-O7) on this Mac with Obsidian, captures PASS/FAIL + evidence.
+
+**Step 3 (S2)**: integrate operator-side results; any FAIL → corrective patch + re-test.
+
+---
+
+## Option C structural mapping table
+
+| M04b §6 Test | Pre-Option-C assumption | Option C reality | Mapping | M-LWX-02 O-check | Status |
+|--------------|--------------------------|------------------|---------|------------------|--------|
+| **Test 1 — Outer vault opens cleanly** | Operator opens `~/lattice/` in Obsidian | No outer vault; operator opens `node.aDNA/` | MAPPED | **O1** — Obsidian opens `node.aDNA/` cleanly; HOME.md visible as default | Deferred to operator (S2) |
+| **Test 2 — Inner `.aDNA/` excluded** | Outer file explorer hides `.aDNA/` subfolders via `.obsidianignore` at workspace root | No outer vault, so nothing to exclude from | **N/A** | n/a | N/A — Option C structural |
+| **Test 3 — Bases gallery renders** | HOME.md `BASES` blocks render queryable tables | M-LWX-02 deferred Bases (schema couldn't be validated without Obsidian launch); used **static markdown tables** instead | MAPPED (markdown-fallback variant) | **O2** + **O3** — HOME.md renders; markdown tables enumerate correctly (21 vaults + 11 named projects + 3 drift) | Deferred to operator (S2) |
+| **Test 4 — Marketplace link clickable** | Click marketplace link in HOME.md preview | Same — node.aDNA HOME.md has marketplace link with placeholder | MAPPED | **O6** — marketplace link clickable | Deferred to operator (S2) |
+| **Test 5 — Sub-vault opening** | From outer-vault HOME.md, right-click `aDNA.aDNA/` → Open with Obsidian | From node.aDNA HOME.md, click `[CanvasForge.aDNA](../CanvasForge.aDNA/)` → file manager → Open with Obsidian | MAPPED | **O5** — cross-vault markdown links open file manager; right-click enters that vault | Deferred to operator (S2) |
+| **Test 6 — `.obsidianignore` enforces** | Outer indexer doesn't pick up file events inside inner `.aDNA/` | No outer indexer; node.aDNA's own `.obsidianignore` already governs its scope (pre-mission) | **N/A** | n/a | N/A — Option C structural |
+| **Test 7 — HOME.md regenerates on `skill_inventory_refresh`** | Re-running inventory_refresh re-renders HOME.md tables | `skill_inventory_refresh.md` does NOT currently extend to HOME.md table regeneration (manual re-render only) | **DEFERRED-PENDING-IMPL** | n/a (no operator-side check defined) | Backlog (M-LWX-02 AAR §Items deferred #1) |
+| **Test 8 — Workspace router Step 0.5 fires** | Fresh `claude` session at `~/lattice/` prompts for Obsidian setup | Step 0.5 not added under Option C; D-RouterFix adds 3-line Step 0.3 amendment (different scope) | **N/A** | n/a | N/A — Option C structural |
+
+**Map summary**: 4 MAPPED (Tests 1/3/4/5 → O1/O2+O3/O6/O5) + 3 N/A (Tests 2/6/8) + 1 DEFERRED-PENDING-IMPL (Test 7).
+
+---
+
+## Dimensions added by M-LWX-02 (not in original 8 tests)
+
+M-LWX-02 introduced two operator-side checks that the M04b §6 8-test list did NOT specify. These augment the integration-test scope under Option C:
+
+| O-check | What it tests | Why M04b §6 didn't cover |
+|---------|---------------|--------------------------|
+| **O4 — Within-vault wikilinks navigate** | `[[CLAUDE]]` clickable in HOME.md → opens `node.aDNA/CLAUDE.md` | M04b §6 assumed outer-vault; wikilinks-within-node.aDNA wasn't a test surface because node.aDNA's `.obsidian/` was already set up pre-mission. Under Option C, HOME.md gallery introduces NEW wikilinks (to inner files) that need indexer verification. |
+| **O7 — Theme + accent applied** | Tokyo Night theme + Rebecca Purple accent visible on Obsidian launch | M04b §6 focused on functional checks (does the indexer index correctly); didn't specify visual checks. M-LWX-02 surfaced this because Option C requires the per-vault `.obsidian/appearance.json` to remain authoritative — a regression would silently break operator UX. |
+
+**Net testable surface under Option C** = 4 mapped + 2 new = **6 operator-side checks** (O1 + O2 + O3 + O4 + O5 + O6 + O7 of M-LWX-02; O3 is a sub-component of O2).
+
+---
+
+## Operator-side O1-O7 results (DEFERRED to S2)
+
+**To be filled in S2** after operator runs the 7 deferred Obsidian checks. Pre-populated table below; operator fills `Result` + `Evidence` columns and returns the artifact at S2 entry.
+
+| # | Check | Method | Expected | Result | Evidence |
+|---|-------|--------|----------|--------|----------|
+| O1 | Obsidian opens `node.aDNA/` cleanly | File → Open Vault → `~/lattice/node.aDNA/` (or `obsidian://open?vault=node.aDNA`) | Vault opens; HOME.md visible in preview mode as the default open file; no error toasts | _PENDING_ | _PENDING_ |
+| O2 | HOME.md renders | Visual inspection on open | Header + 6 vault-class tables + Named Projects table + Drift table + Marketplace link + Tools & quick nav | _PENDING_ | _PENDING_ |
+| O3 | Markdown tables enumerate correctly | Compare HOME.md vault count to `inventory_vaults.yaml` | 21 `.aDNA` vaults + 11 named projects + 3 drift entries — all present | _PENDING_ | _PENDING_ |
+| O4 | Within-vault wikilinks navigate | Click `[[CLAUDE]]` in HOME.md | Opens `node.aDNA/CLAUDE.md` | _PENDING_ | _PENDING_ |
+| O5 | Cross-vault markdown links open | Click `[CanvasForge.aDNA](../CanvasForge.aDNA/)` | Opens file manager at `~/lattice/CanvasForge.aDNA/`; right-click → "Open with Obsidian" enters that vault as a separate session | _PENDING_ | _PENDING_ |
+| O6 | Marketplace link clickable | Click marketplace link | Browser opens to `https://lattice-protocol.com/marketplace` (or 404 placeholder note) | _PENDING_ | _PENDING_ |
+| O7 | Theme + accent applied | Visual inspection | Tokyo Night theme + Rebecca Purple accent (per existing `.obsidian/appearance.json`) | _PENDING_ | _PENDING_ |
+
+**Gating**: Any FAIL → re-open M-LWX-02 S2 for fix + re-test. Most-likely failure mode (per M-LWX-02 smoke results §Conclusion): markdown-table regeneration or fallback note.
+
+---
+
+## Findings routed forward
+
+### F-Obj2-1 — Spec-vs-implementation divergence (medium, expected)
+
+M04b Obj 3 §6's 8-test list was authored before M-LWX-02's Option C reframe. 3 of 8 tests (Test 2 / Test 6 / Test 8) became structurally N/A; 1 (Test 7) became DEFERRED-PENDING-IMPL. The spec is **architecturally tied to the rejected outer-vault model**; if a future operator reads only M04b Obj 3 §6 without M-LWX-02's AAR + ADR-001 context, the test list will read as "5/8 incomplete" rather than "Option C structurally re-scoped to 6 testable surfaces."
+
+**Fix candidate**: Add a `## §6.5 — Option C addendum` to `m04b_obj3_lattice_obsidian_vault_spec.md` (in `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/`) referencing M-LWX-02 ADR-001 + this Obj 2 artifact. Preserves the original 8-test list (Standing Order #6 archive-not-delete) + adds the Option-C-adapted mapping.
+
+**Route**: cross-graph memo § "M04b Obj 3 §6 addendum."
+
+### F-Obj2-2 — Test 7 (HOME.md regeneration) is a real gap (low-medium)
+
+`skill_inventory_refresh.md` does NOT currently extend to HOME.md table regeneration. Operator must manually re-run the Step 9 substitution if `inventory_vaults.yaml` changes. M-LWX-02 AAR §Items deferred #1 already flagged this as backlog.
+
+**Fix candidate**: amend `skill_inventory_refresh.md` to detect `node.aDNA/HOME.md` presence + re-run table-generator substitution if so. ~20 lines addition; LP-internal skill (lives at `node.aDNA/how/skills/`); not upstream-bound until/unless Finding F-Obj1-2 routes node-skills to `.adna/`.
+
+**Route**: cross-graph memo § "skill_inventory_refresh HOME.md auto-regen" — bundles cleanly with F-Obj1-2 if node-skills get upstreamed in M05.
+
+### F-Obj2-3 — Two operator-side dimensions not in original spec (cosmetic-clarification)
+
+M-LWX-02's O4 (within-vault wikilinks) + O7 (theme/accent) tests added integration-test surface area not in M04b Obj 3 §6's original 8 tests. These are valuable additions; the divergence shows the design's testable surface grows when role-expansion lands within an existing vault (vs. greenfield outer-vault creation).
+
+**Fix candidate**: include O4/O7-equivalent dimensions in the M04b Obj 3 spec addendum (F-Obj2-1).
+
+**Route**: cross-graph memo (bundled with F-Obj2-1).
+
+---
+
+## Cross-references
+
+- Mission spec: `aDNA.aDNA/how/campaigns/campaign_lattice_workspace_ux/missions/mission_lwx_03_integration_test_and_closeout.md`
+- Original 8-test spec: `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m04b_obj3_lattice_obsidian_vault_spec.md` §6
+- M-LWX-02 7-check operator-side smoke: `mlwx_02_obj6_smoke_results.md` §Operator-side manual smoke
+- M-LWX-02 AAR (Option C decision rationale): `aar_mlwx_02_node_vault_role_expansion.md` + ADR-001
+- Sibling artifact: `mlwx_03_obj1_refork_test_results.md` (Obj 1; bootstrap chain test)
+- Plan file: `/Users/stanley/.claude/plans/please-read-the-claude-md-shiny-cherny.md`
+- ADR-001 (Option C rationale): `node.aDNA/what/decisions/adr_001_node_vault_role_expansion.md`
+- D-StdADR forthcoming: `aDNA.aDNA/what/decisions/adr_013_workspace_vault_naming_scope_vs_role.md` (M-LWX-03 Phase F)
+
+---
+
+## Conclusion
+
+**Agent-side: COMPLETE.** Option C mapping established; 4 of 8 original tests mapped to M-LWX-02 O-checks; 3 N/A under Option C structural reframe; 1 DEFERRED-PENDING-IMPL (Test 7); 2 new dimensions added by M-LWX-02 (O4 + O7). Three findings routed to cross-graph memo (F-Obj2-1 spec addendum / F-Obj2-2 HOME.md regen / F-Obj2-3 new dimensions).
+
+**Operator-side: DEFERRED to S2.** Operator runs 7 deferred Obsidian checks (O1-O7) on this Mac between S1 and S2; returns this artifact at S2 entry with Result + Evidence columns filled.

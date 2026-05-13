@@ -3,15 +3,21 @@ type: mission
 mission_id: mission_lwx_03_integration_test_and_closeout
 campaign: campaign_lattice_workspace_ux
 campaign_phase: 2
-status: planned
+status: in_progress
 mission_class: verification_and_closeout
 created: 2026-05-12
-updated: 2026-05-12
+updated: 2026-05-13
 last_edited_by: agent_stanley
 opens_at: phase_1_close  # opens after M-LWX-01 AND M-LWX-02 both close
-opens_session: TBD
-spec_completeness: stub
-estimated_sessions: "1-2"  # S1 8 integration tests on Stanley's L1 (this node) + findings; S2 if needed for cross-graph findings memo + campaign AAR
+opens_session: session_stanley_20260513_030626_mlwx03_s1
+opened_at: 2026-05-13T03:06:26Z
+spec_completeness: stub  # full Read/Produce blocks deferred to S2 close (D-S1Scope=B); stub + plan file drives execution
+estimated_sessions: "2"  # confirmed at S1 entry per D-S1Scope=B
+operator_decisions_resolved:
+  D-StdADR: A  # author ADR-013
+  D-F1Fix: A  # include 4th additive-upstream patch
+  D-RouterFix: A  # apply Step 0.3 amendment
+  D-S1Scope: B  # 2 sessions
 prerequisite_missions:
   - mission_lwx_01_dynamic_bootstrap_interview  # must be completed
   - mission_lwx_02_lattice_obsidian_vault  # must be completed
