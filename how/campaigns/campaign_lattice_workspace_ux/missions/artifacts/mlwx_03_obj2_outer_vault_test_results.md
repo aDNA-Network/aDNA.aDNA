@@ -2,16 +2,37 @@
 type: integration_test_results
 mission: mission_lwx_03_integration_test_and_closeout
 objective: 2
-session: session_stanley_20260513_030626_mlwx03_s1
+session_s1: session_stanley_20260513_030626_mlwx03_s1  # agent-side mapping (closed)
+session_s2: session_stanley_20260513_043947_mlwx03_s2  # operator-side partial + dispatch decision
 operator: stanley
-ran_at: 2026-05-13T03:15:00Z  # agent portion
+ran_at_s1: 2026-05-13T03:15:00Z  # agent portion
+ran_at_s2: 2026-05-13T05:55:00Z  # operator-side O1/O2/O3-partial/O7
 result_agent_side: COMPLETE_WITH_STRUCTURAL_DIVERGENCE
-result_operator_side: DEFERRED_TO_S2
-operator_side_check_count: 6  # 4 mapped + 2 new dimensions; original Test 7 deferred-pending-impl + 3 N/A
+result_operator_side: PARTIAL_PASS_WITH_REMAINDER_DISPATCHED  # S2; O1/O2/O3-partial/O7 PASS by operator+Rosetta; O4/O5/O6/O3-extended dispatched
+operator_side_check_count: 7  # 4 PASS by operator + 4 DISPATCHED (incl. new O3-extended row)
+dispatched_to:
+  coord_memo: lattice-labs/who/coordination/coord_2026_05_13_carly_herb_node_adna_validation_dispatch.md
+  campaign: lattice-labs/how/campaigns/campaign_validation_node_adna_lwx_outputs/
+  mission: mission_vnal_01_node_adna_obsidian_operator_side_checks
+  agents: [agent_carly, agent_herb]
+path_alpha_scope_expansion:
+  triggered_at: 2026-05-13T04:55:00Z
+  reason: first-open Obsidian audit surfaced uninstalled plugin binaries (16 enabled in JSON, 0 installed)
+  actions: ["copy .adna/setup.sh → node.aDNA/setup.sh", "run ./setup.sh --force (15 plugins + Tokyo Night)", "restore workspace.json from workspace.default.json (Obsidian had clobbered)"]
+  node_aDNA_head_advance: "1032d8d → [post-S2-commit]"
+findings_routed_at_s2:
+  - F-S2-1  # setup.sh fork propagation gap
+  - F-S2-2  # config-binary asymmetry (no auto-download)
+  - F-S2-3  # agent vs operator smoke handoff
+  - F-S2-4  # Obsidian first-open clobbers workspace.json
+  - F-S2-5  # Obsidian normalizes tracked .obsidian/*.json
+  - F-S2-6  # NN per-vault data.json not shipped (triad colors missing)
+  - F-S2-7  # template placeholder tags leak into vault tag index
+  - F-S2-8  # agent-driven Obsidian inspection (Local REST API + MCP)
 created: 2026-05-13
 updated: 2026-05-13
 last_edited_by: agent_stanley
-tags: [integration_test, mlwx_03, obj2, outer_vault, option_c_adapted, structural_divergence, m04b_obj3_section6, operator_side_deferred]
+tags: [integration_test, mlwx_03, obj2, outer_vault, option_c_adapted, structural_divergence, m04b_obj3_section6, operator_side_partial, validation_dispatched, path_alpha_scope_expansion, carly_herb_dispatch]
 ---
 
 # M-LWX-03 Obj 2 — Outer-Vault Integration Tests (Option-C-Adapted)
@@ -68,21 +89,26 @@ M-LWX-02 introduced two operator-side checks that the M04b §6 8-test list did N
 
 ---
 
-## Operator-side O1-O7 results (DEFERRED to S2)
+## Operator-side O1-O7 results (S2 — partial complete + remainder DISPATCHED)
 
-**To be filled in S2** after operator runs the 7 deferred Obsidian checks. Pre-populated table below; operator fills `Result` + `Evidence` columns and returns the artifact at S2 entry.
+**S2 execution 2026-05-13T04:39Z+ → T06:35Z+**: Operator (Stanley) ran O1, O2, O3 (partial), O7 with Rosetta walkthrough. Remaining checks (O4, O5, O6, O3-extended) **dispatched** to Carly + Herb per `lattice-labs/who/coordination/coord_2026_05_13_carly_herb_node_adna_validation_dispatch.md` (campaign `campaign_validation_node_adna_lwx_outputs` in `lattice-labs/how/campaigns/`).
+
+**Path α scope expansion was authorized mid-S2** when the first-open audit surfaced uninstalled plugin binaries — operator ran `setup.sh --force` to install 15 community plugins + Tokyo Night theme + restored `workspace.json` from `workspace.default.json` (Obsidian had clobbered it on first open). Sub-findings F-S2-1 through F-S2-8 routed to cross-graph memo + `campaign_obsidian_deployment_stabilization` (implementation successor in aDNA.aDNA).
 
 | # | Check | Method | Expected | Result | Evidence |
 |---|-------|--------|----------|--------|----------|
-| O1 | Obsidian opens `node.aDNA/` cleanly | File → Open Vault → `~/lattice/node.aDNA/` (or `obsidian://open?vault=node.aDNA`) | Vault opens; HOME.md visible in preview mode as the default open file; no error toasts | _PENDING_ | _PENDING_ |
-| O2 | HOME.md renders | Visual inspection on open | Header + 6 vault-class tables + Named Projects table + Drift table + Marketplace link + Tools & quick nav | _PENDING_ | _PENDING_ |
-| O3 | Markdown tables enumerate correctly | Compare HOME.md vault count to `inventory_vaults.yaml` | 21 `.aDNA` vaults + 11 named projects + 3 drift entries — all present | _PENDING_ | _PENDING_ |
-| O4 | Within-vault wikilinks navigate | Click `[[CLAUDE]]` in HOME.md | Opens `node.aDNA/CLAUDE.md` | _PENDING_ | _PENDING_ |
-| O5 | Cross-vault markdown links open | Click `[CanvasForge.aDNA](../CanvasForge.aDNA/)` | Opens file manager at `~/lattice/CanvasForge.aDNA/`; right-click → "Open with Obsidian" enters that vault as a separate session | _PENDING_ | _PENDING_ |
-| O6 | Marketplace link clickable | Click marketplace link | Browser opens to `https://lattice-protocol.com/marketplace` (or 404 placeholder note) | _PENDING_ | _PENDING_ |
-| O7 | Theme + accent applied | Visual inspection | Tokyo Night theme + Rebecca Purple accent (per existing `.obsidian/appearance.json`) | _PENDING_ | _PENDING_ |
+| O1 | Obsidian opens `node.aDNA/` cleanly | File → Open Vault → `~/lattice/node.aDNA/` (or `obsidian://open?vault=node.aDNA`) | Vault opens; HOME.md visible in preview mode as the default open file; no error toasts | **PASS** (S2) | Vault registered in `~/Library/Application Support/obsidian/obsidian.json` post-open; HOME.md visible in preview mode; no error toasts. **Attempt 1** (URL scheme `obsidian://open?vault=node.aDNA`) FAILED expectedly — vault not in registry; **Attempt 2** (File → Open Vault) PASSED. **Workflow nuance captured**: URL scheme requires prior registration → routes to F-O1-1 (operator-onboarding skill update). |
+| O2 | HOME.md renders | Visual inspection on open | Header + 6 vault-class tables + Named Projects table + Drift table + Marketplace link + Tools & quick nav | **PASS** (S2, post-setup.sh restart) | Operator screenshot 2026-05-13T05:55Z+. Visible: header "HOME" + Properties collapsible + H1 "Lattice — Mac (operator: stanley)" + Hestia callout with purple left border + 9-row Properties table (Node/Operator/Machine class/Persona/Workspace root/Vault count/Drift entries/Last inventory refresh/Governance) + footer ("Counts and entries are sourced from `./what/inventory/inventory_vaults.yaml`") + status bar "3 backlinks · 9 properties · 959 words · 7,749 characters." No render errors. Full vault-class tables below the fold — see O3-extended (DISPATCHED). |
+| O3 | Markdown tables enumerate correctly | Compare HOME.md vault count to `inventory_vaults.yaml` | 21 `.aDNA` vaults + 11 named projects + 3 drift entries — all present | **PARTIAL PASS** (S2, properties row) | Properties row values confirmed via screenshot: Vault count = "21 `.aDNA` + 11 named projects" ✓; Drift entries = "3 (see §Drift below)" ✓; Governance = 4 wikilinks (CLAUDE · MANIFEST · STATE · CHANGELOG) ✓. Full vault-class tables (6 tables + Named Projects + Drift) not visible in current screenshot → **O3-extended DISPATCHED below**. |
+| O4 | Within-vault wikilinks navigate | Click `[[CLAUDE]]` in HOME.md | Opens `node.aDNA/CLAUDE.md` | **DISPATCHED → M-VNAL-01 Obj 1** | See `lattice-labs/who/coordination/coord_2026_05_13_carly_herb_node_adna_validation_dispatch.md` + `lattice-labs/how/campaigns/campaign_validation_node_adna_lwx_outputs/missions/mission_vnal_01_node_adna_obsidian_operator_side_checks.md`. Carly (content/UX). |
+| O5 | Cross-vault markdown links open | Click `[CanvasForge.aDNA](../CanvasForge.aDNA/)` | Opens file manager at `~/lattice/CanvasForge.aDNA/`; right-click → "Open with Obsidian" enters that vault as a separate session | **DISPATCHED → M-VNAL-01 Obj 2** | Same coord. Herb (cross-vault link resolution = infrastructure). |
+| O6 | Marketplace link clickable | Click marketplace link | Browser opens to `https://lattice-protocol.com/marketplace` (or 404 placeholder note) | **DISPATCHED → M-VNAL-01 Obj 3** | Same coord. Carly (content/UX). |
+| O7 | Theme + accent applied | Visual inspection | Tokyo Night theme + Rebecca Purple accent (per existing `.obsidian/appearance.json`) | **PASS-with-sub-finding F-S2-6** (S2, post-setup.sh restart) | Operator screenshot 2026-05-13T05:55Z+. Visible: Tokyo Night dark background ✓; Rebecca Purple accent on highlighted code spans (`Mac`, `stanley`, `/Users/stanley/lattice/`, `.aDNA`, file paths) + callout left border + folder-pane background ✓; wikilinks rendered blue ✓; H1 in pink/coral (Tokyo Night default, not a regression). **Sub-finding F-S2-6**: NN folder triad colors (purple `who/`, cyan `what/`, green `how/` per OBSIDIAN_CLAUDE.md:170-174) NOT applied — NN's per-vault `data.json` config not shipped by setup.sh. Routes to F-S2-6 backlog + `campaign_obsidian_deployment_stabilization` T4. |
+| **O3-extended** (NEW) | Full vault-class + Named Projects + Drift tables enumerate correctly | Scroll past Properties table in HOME.md → confirm 6 vault-class tables (Forge / Platform / Framework / Org-Vault / Domain / External) + Named Projects table + Drift table render with correct row counts | **DISPATCHED → M-VNAL-01 Obj 4** | Same coord. Carly (visual content check) + Herb (row-count infrastructure check). |
 
-**Gating**: Any FAIL → re-open M-LWX-02 S2 for fix + re-test. Most-likely failure mode (per M-LWX-02 smoke results §Conclusion): markdown-table regeneration or fallback note.
+**Gating** (revised): Any FAIL surfaced by Carly/Herb during their dispatched validation re-opens the dispatched mission's S2 OR seeds a corrective patch via `campaign_obsidian_deployment_stabilization`. No re-open of M-LWX-03 itself; M-LWX-03 closes "with validation dispatched" per the operator decision at S2 close.
+
+**Validation disposition**: `partial_pass_with_remainder_dispatched`. Mini-campaign AAR (`aar_campaign_lattice_workspace_ux.md`) captures the dispatch model as a load-bearing finding.
 
 ---
 

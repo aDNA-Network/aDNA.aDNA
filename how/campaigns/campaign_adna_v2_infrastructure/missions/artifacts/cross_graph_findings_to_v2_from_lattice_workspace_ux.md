@@ -6,13 +6,17 @@ source_mission: mission_lwx_03_integration_test_and_closeout
 source_session: session_stanley_20260513_030626_mlwx03_s1
 authored_at: 2026-05-13T03:30:00Z
 operator: stanley
-status: draft  # finalized at M-LWX-03 S2 close after operator-side O1-O7 results integrate
-total_findings: 13
-resolved_at_m_lwx_03: 3  # D-F1Fix + D-RouterFix + D-StdADR (ADR-013)
-routed_to_v2_m05: 2  # node-skills upstream + skill_inventory_refresh HOME.md regen
-routed_to_v2_m07: 4  # spec addendum + 4 small clarifications
-routed_to_v3_ec: 2  # schema asymmetry + ecosystem-wide pattern absorption
-operator_discretionary: 2  # node.aDNA git checkpoint + Bases dynamic gallery
+status: final  # finalized at M-LWX-03 S2 close 2026-05-13T07:00Z+; operator-side O1-O7 results integrated; 8 new F-S2-* findings appended; validation-dispatch model documented
+finalized_at: 2026-05-13T07:00:00Z
+finalized_session: session_stanley_20260513_043947_mlwx03_s2
+total_findings: 21  # 13 S1-routed + 8 S2 F-S2-*
+resolved_at_m_lwx_03: 3  # D-F1Fix + D-RouterFix + D-StdADR (ADR-013) — from S1
+routed_to_v2_m05: 2  # node-skills upstream + skill_inventory_refresh HOME.md regen (from S1)
+routed_to_v2_m07: 4  # spec addendum + 4 small clarifications (from S1)
+routed_to_v3_ec: 2  # schema asymmetry + ecosystem-wide pattern absorption (from S1)
+operator_discretionary: 2  # node.aDNA git checkpoint + Bases dynamic gallery (from S1)
+routed_to_successor_a: 8  # F-S2-1..8 to campaign_obsidian_deployment_stabilization (aDNA.aDNA; implementation; Rosetta)
+dispatched_to_successor_b: "O4 + O5 + O6 + O3-extended"  # to campaign_validation_node_adna_lwx_outputs (lattice-labs; validation; Berthier+Carly+Herb)
 created: 2026-05-13
 updated: 2026-05-13
 last_edited_by: agent_stanley
@@ -154,6 +158,50 @@ Both M-LWX-01 S2 and M-LWX-03 Obj 1 used "mirror-this-node" sandbox methodology 
 
 ## §6 — Status
 
-**Memo status**: `draft` at S1 close (this session). Finalized at S2 close after operator-side O1-O7 results integrate (any new findings from operator-side Obsidian smoke get appended to §2). Cross-references frozen at S2 close.
+**Memo status**: **`final`** at M-LWX-03 S2 Phase K close 2026-05-13T07:00Z+. 8 new findings F-S2-1..8 + dispatch-model subsection appended below; cross-references frozen.
 
-**v2 main-campaign amendment lands at S2** alongside this memo: campaign master amendments table updated (per §3.1) + STATE.md Last Session block + Next Session Prompt rewritten for v2 M05 opening (mini-campaign closeout releases the soft-gate). M-LWX-03 mission + side-campaign master flip to `completed` at S2 close.
+**v2 main-campaign amendment landed at S2 alongside this memo**: v2 main-campaign master mini-campaign row flipped to `completed` (with successor pointers); STATE.md Last Session block + Next Session Prompt rewritten for v2 M05 opening (mini-campaign soft-gate released); M-LWX-03 mission + mini-campaign master both flipped `completed`. Mini-campaign closeout activated successor campaign A (`campaign_obsidian_deployment_stabilization` in aDNA.aDNA, Rosetta-owned, F-S2-1..8 routing target) and successor campaign B (`campaign_validation_node_adna_lwx_outputs` in lattice-labs, Berthier-owned with Carly+Herb dispatched, O4/O5/O6/O3-extended routing target).
+
+---
+
+## §7 — M-LWX-03 S2 plugin-bootstrap findings (8 new, all → successor campaign A)
+
+Surfaced during M-LWX-03 S2 operator-side walkthrough + path α scope expansion. Source files in mission AAR + Obj 2 artifact + plan file at `/Users/stanley/.claude/plans/please-read-the-claude-md-merry-dewdrop.md`.
+
+| # | Finding | Severity | Routes to | Implementation track |
+|---|---|---|---|---|
+| **F-S2-1** | `skill_project_fork.md` does not propagate `setup.sh` from `.adna/` to forked vaults at fork time; plugin/theme bootstrap chain broken at fork. 5th-instance candidate for single-commit additive-upstream pattern (after ADR-008 + e3b3bcc + 8673383 + 202c9ec). | high (architectural propagation gap) | Successor A | **T1** — Fork propagation |
+| **F-S2-2** | `community-plugins.json` enabled list ≠ installed binaries. Obsidian doesn't auto-download from enabled list. Silent failure mode — no error toast when binaries are missing, just empty navigation. Operator first-open shows "configured but empty." | high (silent failure mode; operator UX) | Successor A | **T3** — Plugin-binary install validation (add `setup.sh --verify` mode + integrate into `skill_node_health_check.md`) |
+| **F-S2-3** | M-LWX-02 25/25 agent-side smoke PASSED despite vault being functionally incomplete (no plugin binaries, no theme, no setup.sh). Agent-side smoke verifies structural fields (file presence + JSON validity); cannot verify runtime properties (plugin loads, theme renders, layout preserved, clicks resolve). Two distinct verification layers were conflated as one. | architectural-load-bearing (drives the verification-handoff topology) | Successor A + B | **T7** — Verification handoff documentation (Successor A) + **dispatch model adoption** (Successor B is the first instance of the dispatched-validation pattern) |
+| **F-S2-4** | Obsidian first-open destructively rewrites `workspace.json` against a config-only vault — erases workspace.default.json-derived layout. setup.sh's workspace-copy block (`.adna/setup.sh:175-184`) only `cp`s when workspace.json doesn't exist. | medium-high (lost intended layout; operator must restore manually) | Successor A | **T2** — Workspace layout idempotency (`setup.sh --reset-layout` flag) |
+| **F-S2-5** | Obsidian "normalizes" tracked `.obsidian/*.json` files on open — moves fields to their schema-correct home (e.g., `monospaceFontFamily` from app.json to appearance.json), reformats arrays, strips trailing newlines. Benign in this case (Obsidian fixed an M-LWX-02 misconfiguration) but architecturally any tracked .obsidian config diverges from upstream as soon as Obsidian runs. | low-medium (workflow nuance; potential canonicalization need) | Successor A | **T4** — Obsidian config canonicalization (`skill_obsidian_canonicalize.md`) |
+| **F-S2-6** | NN plugin per-vault config (`data.json` inside `.obsidian/plugins/notebook-navigator/`) is NOT shipped by setup.sh; folder triad colors (purple `who/` / cyan `what/` / green `how/` per OBSIDIAN_CLAUDE.md:170-174) NOT applied — folders render in default white. Plugin "data" layer is distinct from plugin binary layer; setup.sh only addresses binary layer. | cosmetic + architectural (sub-layer of plugin-config asymmetry) | Successor A | **T4** — Obsidian config canonicalization (extend to plugin-data layer) |
+| **F-S2-7** | Template placeholder tags leak into vault tag index. `tags: [<project_slug>]` in `how/templates/template_prd.md` + `template_rfc.md` shows up as literal `<project_slug>` tag in Obsidian's tag pane (visible in operator screenshot 2026-05-13T05:55Z+). Fix: add `how/templates/` to `.obsidianignore` or switch templates to Templater `<% tp.frontmatter.project_slug %>` syntax. | cosmetic | Successor A | **T4** — Obsidian config canonicalization (or T5 — first-open UX standardization for `.obsidianignore` hardening) |
+| **F-S2-8** | Agent-driven Obsidian inspection — no current tooling for agents to drive/validate Obsidian without operator intermediation. Available options: Obsidian Local REST API plugin (HTTPS API on localhost; coddingtonbear/obsidian-local-rest-api; MIT) + community MCP server (e.g., MarkusPfundstein/mcp-obsidian) → first-class `mcp__obsidian__*` tools. Operator framing: "easy and fluid context graphs" requires reducing operator-validation bandwidth burden. | architectural (closes the verification-handoff topology to agent-driven half) | Successor A | **T8 (NEW)** — Agent-driven Obsidian inspection (Local REST API + MCP server + skill_obsidian_agent_inspect.md) |
+
+## §8 — Validation dispatch model adopted
+
+**Operator decision at M-LWX-03 S2 2026-05-13T06:25Z+**: dispatch the remainder of operator-side runtime verification (O4 wikilinks + O5 cross-vault markdown links + O6 marketplace link + O3-extended full vault tables) to Carly + Herb instead of operator continuing inline. Closes M-LWX-03 "with validation dispatched"; routes outstanding work to new campaign.
+
+**Successor campaign B**: `campaign_validation_node_adna_lwx_outputs` at `lattice-labs/how/campaigns/`. Owner: Berthier (lattice-labs persona). Executors: Carly (content/UX) + Herb (infrastructure). Phase 1 narrow: M-VNAL-01 covers the 4 outstanding O-checks on Stanley's MacBook (or Carly+Herb's own machines per their preference). Phase 2+ broader: recurring "validate-all-aDNA-features" dispatch pattern; each future aDNA feature ship triggers a follow-on validation mission in this campaign.
+
+**Coord memo**: `lattice-labs/who/coordination/coord_2026_05_13_carly_herb_node_adna_validation_dispatch.md` — per the established 2026-05-12 Carly L1 hardening dispatch pattern. Coord memo is the first instance of an *explicit validation-dispatch* coord memo (prior dispatches were operational; this one establishes the recurring validation pattern).
+
+**Architectural significance**: this is the **first explicit instance of the validation-as-dispatched-campaign pattern**. It directly addresses F-S2-3 (verification-handoff topology) by codifying the agent-side (Rosetta+Stanley implementation) → operator-side (Carly+Herb runtime verification) handoff at campaign granularity. Successor campaign A's T7 (verification handoff documentation) will codify this as a reusable `skill_verification_handoff.md`; Successor A's T6 (integration test framework) will provide the agent-side smoke skill; Successor A's T8 will close the operator-side surface to agent-driven inspection where appropriate (with operator-side handoff persisting for genuinely visual/UX-feel checks).
+
+## §9 — Operator-side O1-O7 results integrated (Phase I of S2)
+
+Reference: `mlwx_03_obj2_outer_vault_test_results.md` operator-side table. Summary:
+
+| # | Check | Result | Note |
+|---|---|---|---|
+| O1 | Obsidian opens `node.aDNA/` cleanly | **PASS** | Required Attempt 2 (File → Open Vault); Attempt 1 (URL scheme) failed expectedly because vault not yet registered. F-O1-1 captures the URL-scheme-requires-registration friction. |
+| O2 | HOME.md renders | **PASS** | Operator screenshot confirms all 9 properties-table rows + Hestia callout + header + footer. |
+| O3 | Markdown tables enumerate correctly (properties row) | **PASS** | Vault count: 21 .aDNA + 11 named projects ✓; Drift: 3 ✓; Governance: 4 wikilinks ✓. |
+| O3-extended | Full vault-class + Named Projects + Drift tables | **DISPATCHED → M-VNAL-01 Obj 4** | Below the screenshot fold; routes to Carly+Herb. |
+| O4 | Within-vault wikilinks | **DISPATCHED → M-VNAL-01 Obj 1** | Carly (content/UX). |
+| O5 | Cross-vault markdown links | **DISPATCHED → M-VNAL-01 Obj 2** | Herb (cross-vault link resolution = infrastructure). |
+| O6 | Marketplace link | **DISPATCHED → M-VNAL-01 Obj 3** | Carly (content/UX). |
+| O7 | Theme + accent applied | **PASS-with-sub-finding F-S2-6** | Tokyo Night + Rebecca Purple visible; NN folder triad colors NOT applied (F-S2-6 → successor A T4). |
+
+**Overall**: 4 PASS + 4 DISPATCHED. Validation disposition for M-LWX-03 = `partial_pass_with_remainder_dispatched`. Mini-campaign closes; outstanding validation flows to dispatched campaign.

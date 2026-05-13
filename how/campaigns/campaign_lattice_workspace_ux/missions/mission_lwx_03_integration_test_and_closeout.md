@@ -3,7 +3,7 @@ type: mission
 mission_id: mission_lwx_03_integration_test_and_closeout
 campaign: campaign_lattice_workspace_ux
 campaign_phase: 2
-status: in_progress
+status: completed
 mission_class: verification_and_closeout
 created: 2026-05-12
 updated: 2026-05-13
@@ -11,13 +11,27 @@ last_edited_by: agent_stanley
 opens_at: phase_1_close  # opens after M-LWX-01 AND M-LWX-02 both close
 opens_session: session_stanley_20260513_030626_mlwx03_s1
 opened_at: 2026-05-13T03:06:26Z
+closed_session: session_stanley_20260513_043947_mlwx03_s2
+closed_at: 2026-05-13T07:00:00Z
+sessions_actual: 2  # S1 (agent-side, 2026-05-13T03:06Z+) + S2 (operator-side partial + dispatch decision + Phase L authoring + Phase M commit, 2026-05-13T04:39Z+)
+validation_disposition: dispatched  # operator-side O4/O5/O6/O3-extended dispatched to Carly+Herb via lattice-labs/who/coordination/coord_2026_05_13_carly_herb_node_adna_validation_dispatch.md
+scope_expansion_path_alpha:
+  triggered_at: 2026-05-13T04:55:00Z+  # mid-S2
+  reason: first-open Obsidian audit surfaced uninstalled plugin binaries (16 enabled in JSON, 0 installed) — additive scope expansion to install plugins + theme + setup.sh
+  node_aDNA_head_advance: "1032d8d → [committed at Phase M]"
 spec_completeness: stub  # full Read/Produce blocks deferred to S2 close (D-S1Scope=B); stub + plan file drives execution
 estimated_sessions: "2"  # confirmed at S1 entry per D-S1Scope=B
 operator_decisions_resolved:
-  D-StdADR: A  # author ADR-013
-  D-F1Fix: A  # include 4th additive-upstream patch
-  D-RouterFix: A  # apply Step 0.3 amendment
-  D-S1Scope: B  # 2 sessions
+  D-StdADR: A  # ADR-013 authored at S1
+  D-F1Fix: A  # 4th additive-upstream patch landed at S1 (upstream commit 202c9ec)
+  D-RouterFix: A  # workspace router Step 0.3 amendment landed at S1
+  D-S1Scope: B  # 2 sessions (S1 + S2)
+operator_decisions_s2:
+  D-Walkthrough: A  # walk operator through O1-O7 one check at a time (sub-case A.ii)
+  D-PathAlpha: chosen  # plugin install via setup.sh; additive node.aDNA mutation authorized
+  D-Reframe: dispatch  # remainder O4/O5/O6/O3-extended dispatched to Carly+Herb instead of operator continuing
+  D-CampaignBLocation: A  # lattice-labs/how/campaigns/ (workspace coordination)
+  D-CampaignBScope: phase_1_narrow_phase_2_broader
 prerequisite_missions:
   - mission_lwx_01_dynamic_bootstrap_interview  # must be completed
   - mission_lwx_02_lattice_obsidian_vault  # must be completed
@@ -28,12 +42,33 @@ prerequisite_artifacts:
   - aar_mlwx_01_dynamic_bootstrap_interview.md  # produced at M-LWX-01 close
   - aar_mlwx_02_lattice_obsidian_vault.md  # produced at M-LWX-02 close
 ships_to: campaign_close
-d5_disposition: mixed  # test results local; cross-graph findings memo lives in v2's aDNA.aDNA/; potential upstream amendments to .adna/ template if findings warrant
+d5_disposition: mixed  # test results local; cross-graph findings memo lives in v2's aDNA.aDNA/; upstream commit 202c9ec landed at S1; successor campaigns A (in aDNA.aDNA) + B (in lattice-labs) seeded at Phase L
+artifacts_produced:
+  - mlwx_03_obj1_refork_test_results.md  # S1
+  - mlwx_03_obj2_outer_vault_test_results.md  # S1 agent-side + S2 operator-partial-with-dispatch
+  - adr_013_workspace_vault_naming_scope_vs_role.md  # S1
+  - cross_graph_findings_to_v2_from_lattice_workspace_ux.md  # S1 draft → S2 final
+  - aar_mlwx_03_integration_test_and_closeout.md  # S2 (this mission AAR)
+  - aar_campaign_lattice_workspace_ux.md  # S2 (campaign AAR)
+upstream_commits:
+  - repo: LatticeProtocol/adna
+    commit: 202c9ec
+    summary: 4th instance of single-commit additive-upstream pattern (.adna/HOME.md inline-comment {{TOKEN}} rephrase)
+successor_campaigns_seeded:
+  - campaign: campaign_obsidian_deployment_stabilization
+    location: aDNA.aDNA/how/campaigns/
+    owner: Rosetta
+    scope: implementation (8 tracks T1-T8)
+  - campaign: campaign_validation_node_adna_lwx_outputs
+    location: lattice-labs/how/campaigns/
+    owner: Berthier
+    executors: [agent_carly, agent_herb]
+    scope: validation (Phase 1 narrow → Phase 2+ broader)
 external_dependencies:
   - Stanley's MacBook Pro (L1) as canonical clinician-MBP-template (operator-confirmed at v2 RareHarness MP2-2c precedent for "Stanley's L1 = canonical template")
   - ~/lattice/ + ~/lattice/node.aDNA/ + ~/lattice/.obsidian/ (live system under test)
   - Obsidian app (live UI test)
-tags: [mission, planned, lwx_03, integration_test, verification, aar, cross_graph_findings, m_lwx_03, stub, phase_2]
+tags: [mission, completed, lwx_03, integration_test, verification, aar, cross_graph_findings, m_lwx_03, phase_2, path_alpha_scope_expansion, dispatch_model_adopted, fourth_additive_upstream_settled, fifth_additive_upstream_candidate, carly_herb_dispatch]
 ---
 
 # Mission M-LWX-03 — Integration Test + AAR + Cross-Graph Findings → v2 Main Campaign

@@ -3,8 +3,15 @@ type: campaign
 campaign_id: campaign_lattice_workspace_ux
 title: "Lattice Workspace UX — Dynamic node.aDNA Bootstrap + ~/lattice/ as Obsidian Vault"
 owner: stanley
-status: executing
-phase: 1  # opened 2026-05-12T22:18Z+ at operator discretion after M04b close; M-LWX-02 enters in_progress under reframed Option C scope (see session_stanley_20260512_221833_mlwx02_s1)
+status: completed
+phase: completed  # was phase: 1; flipped at M-LWX-03 S2 Phase K (2026-05-13T07:00Z+); 3/3 missions closed, mini-campaign close ratified
+closed_at: 2026-05-13T07:00:00Z
+closed_session: session_stanley_20260513_043947_mlwx03_s2  # M-LWX-03 S2 Phase K
+sessions_actual: 5  # M-LWX-02 S1 + M-LWX-01 S1 + M-LWX-01 S2 + M-LWX-03 S1 + M-LWX-03 S2
+within_estimate: true  # 5 actual vs 5-7 estimated
+successor_campaigns:
+  - campaign_obsidian_deployment_stabilization  # implementation, Rosetta, aDNA.aDNA
+  - campaign_validation_node_adna_lwx_outputs  # validation, Berthier+Carly+Herb, lattice-labs
 predecessor: campaign_adna_v2_infrastructure
 phase_count: 3  # P0 planning (subsumed by M04b in v2; complete) + P1 implementation + P2 integration & closeout
 mission_count: 3  # M-LWX-01 + M-LWX-02 + M-LWX-03 (finalized 2026-05-12 by v2 M04b Obj 4)
@@ -174,7 +181,7 @@ may run in any order or in parallel.
 
 | Mission | Title | Sessions | D5 disposition | Dependencies | Status |
 |---------|-------|----------|---|-------------|--------|
-| **M-LWX-03** | Integration test (8 tests per Obj 3 §6) + AAR + cross-graph findings → v2 main campaign | 1-2 | mixed (test results local; cross-graph findings memo lives in v2's `aDNA.aDNA/`; potential upstream amendments to `.adna/` template if findings warrant) | M-LWX-01 + M-LWX-02 close | planned (stub authored 2026-05-12 by M04b) |
+| **M-LWX-03** | Integration test + AAR + cross-graph findings → v2 main campaign + path α scope expansion (plugin install) + dispatch model adoption | 2 (actual) | mixed (test results local; cross-graph findings memo in v2's `aDNA.aDNA/`; **4th additive-upstream commit `202c9ec` landed at S1**; path α additive node.aDNA mutations; 2 successor campaigns seeded at S2 Phase L — implementation A in aDNA.aDNA, validation B in lattice-labs) | M-LWX-01 + M-LWX-02 close | **completed** (S1 2026-05-13T03:06Z+ → T03:35Z+; S2 2026-05-13T04:39Z+ → T07:00Z+ at `session_stanley_20260513_043947_mlwx03_s2`; 5 objectives addressed — 4 complete + Obj 2 partial-with-dispatch; AAR at `missions/artifacts/aar_mlwx_03_integration_test_and_closeout.md`; validation_disposition: dispatched to Carly+Herb via M-VNAL-01) |
 
 **Phase exit gate**: end-to-end UX validated on Stanley's L1 (this node) as canonical
 reference (8 integration tests per Obj 3 §6 PASS); findings integrated back into v2
@@ -245,29 +252,49 @@ relevant local persona) operates it.
 
 ## Completion Summary
 
-*Fill out when setting `status: completed`.*
+Mini-campaign closed 2026-05-13T07:00Z+ at M-LWX-03 S2 Phase K. **3/3 missions completed; 5/5-7 sessions actually used (within estimate)**. Full AAR at `missions/artifacts/aar_campaign_lattice_workspace_ux.md`.
 
-### Deliverables
-- [TBD by M-LWX-03 AAR]
+### Deliverables (across all 3 missions)
+
+- **M-LWX-02**: HOME.md gallery + workspace.default.json + workspace.json + ADR-001 + README "Opening in Obsidian" + CHANGELOG v0.2 entry (8/8)
+- **M-LWX-01**: skill_node_bootstrap_interview.md + AGENTS.md skill row + .adna/HOME.md template + .adna/.obsidian/workspace.default.json fix + workspace router Step 0.3 prompt + Obj 5 sandbox smoke + Obj 6 lightweight AAR + extended findings (8/8); single upstream commit `8673383` to LatticeProtocol/adna (3rd-instance additive-upstream pattern, now settled)
+- **M-LWX-03**: re-fork integration test results + outer-vault Option-C-mapping test results + ADR-013 (workspace-scope role-expansion design test) + cross-graph findings memo + path α scope expansion (setup.sh + 15 plugin binaries + Tokyo Night theme + workspace.json restore) + mission AAR + campaign AAR (this file's pair) + dispatch coord memo (lattice-labs) + Campaign B seed (lattice-labs) + 8 backlog F-S2-* files (aDNA.aDNA) + Campaign A seed (aDNA.aDNA)
 
 ### Descoped
-- [TBD]
+
+- **M-LWX-02**: Bases-driven dynamic gallery (deferred indefinitely; static markdown tables sufficient)
+- **M-LWX-03 Obj 2 operator-side**: O4/O5/O6/O3-extended (DISPATCHED to Carly+Herb via `campaign_validation_node_adna_lwx_outputs` M-VNAL-01) — not "descoped" but reclassified as dispatched-pending
 
 ### Key Findings
-- [TBD]
+
+1. **4-instance single-commit additive-upstream pattern settled** (ADR-008 + e3b3bcc + 8673383 + 202c9ec) — now stable as documented pattern; 5th-instance candidate (skill_project_fork.md propagating setup.sh) routes to successor campaign A T1.
+2. **Scope-vs-role naming codified** at ADR-001 (node-scope) + ADR-013 (workspace-scope, 4-sub-rule design test R1-R4) — every `.aDNA/` vault names its scope, persona carries the role.
+3. **Mirror-this-node verification fidelity** established — production smoke uses real inventory + identity overlays, not synthetic.
+4. **Verification-handoff topology codified** (load-bearing finding) — agent-side smoke + operator-side runtime smoke + dispatch connector OR agent-driven inspection. Different layers verify different properties. → Drives successor campaigns A (implementation T7 + T8) + B (validation dispatch precedent).
+5. **Easy/fluid context graphs** saved as north-star UX metric (memory `project_adna_lattice_ux_goal.md`) — drives successor work prioritization across the forge ecosystem.
+6. **Path α scope expansion** as mid-mission pattern — when unexpected gap surfaces and fix is bounded + reversible, expand additively rather than re-plan or defer.
+7. **Plan-mode-first execution + plan-mode re-entry** as quality habits — M-LWX-03 S2's 4 plan re-entries produced a 700+ line plan file that serves as the mission's reasoning fossil record.
 
 ### Scope Changes
-- [TBD]
+
+- **M-LWX-02 Option C reframe** (2026-05-12, plan-mode pushback) — rejected `node.aDNA → home.aDNA` rename + outer-workspace-vault layer; chose additive role expansion of node.aDNA/. Preserved scope-based naming consistency across ecosystem; saved ~10 deliverables of migration cost.
+- **M-LWX-01 scope amendment** (2026-05-12, post-M-LWX-02 close) — added `.adna/HOME.md` template + `.adna/.obsidian/workspace.default.json` HOME.md ref fix to M-LWX-01's upstream-bound deliverables (6 → 8). M-LWX-02 became template-extraction source.
+- **M-LWX-03 Path α scope expansion** (2026-05-13T04:55Z+, mid-S2) — added `node.aDNA/setup.sh` copy + plugin binary install + theme install + workspace.json restore. node.aDNA HEAD advanced from `1032d8d` (preserved through S1) to [committed at Phase M].
+- **M-LWX-03 dispatch reframe** (2026-05-13T06:25Z+, operator decision) — remainder of operator-side O-checks dispatched to Carly+Herb instead of operator continuing inline. Closes mission "with validation dispatched"; opens new validation campaign in lattice-labs.
 
 ### Follow-Up Campaigns / Missions
-- [TBD — feeds v2 main campaign amendment entries; potentially shapes v3-EC M-LWX-style ecosystem-wide UX adoption]
+
+- **`campaign_obsidian_deployment_stabilization`** (Rosetta; aDNA.aDNA; 8 tracks T1-T8): fork propagation, workspace layout idempotency, plugin-binary install validation, Obsidian config canonicalization, first-open UX standardization, integration test framework, verification handoff doc, agent-driven Obsidian inspection (Local REST API + MCP). Drives F-S2-1..8 to resolution.
+- **`campaign_validation_node_adna_lwx_outputs`** (Berthier; lattice-labs; Carly+Herb dispatched): Phase 1 narrow — M-VNAL-01 covers outstanding O4/O5/O6/O3-extended; Phase 2+ broader — recurring "validate-all-aDNA-features" pattern.
+- **v2 M05** (publish-skill rewrite): unblocked by this close; next aDNA-infrastructure mission per v2 main-campaign mission tree.
+- **F-Obj1-1 + F-Obj1-2 + F-Obj1-3 + F-Obj2-1 + F-Obj2-2 + F-Obj2-3** (from S1 cross-graph memo): routes per memo's table — 4 to v2 M05, 2 to v2 M07, 2 to v3-EC M01-EC, 2 to operator-discretionary backlog.
 
 ## Campaign AAR
 
-*Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
+Full AAR at `missions/artifacts/aar_campaign_lattice_workspace_ux.md` (lightweight 5-line + 4-category extended findings — 8 successful patterns + 6 surprises + 7 conceptual contributions + items deferred from all 3 missions). Summary below:
 
-- **Worked**: [TBD]
-- **Didn't**: [TBD]
-- **Finding**: [TBD]
-- **Change**: [TBD]
-- **Follow-up**: [TBD]
+- **Worked**: 3-mission decomposition was sound (upstream-bound + local-bound parallel-eligible + integration/closeout). Plan-mode-first execution model from M-LWX-02 propagated forward; M-LWX-03 S2's 4 plan re-entries converted tactical friction into permanent architectural patterns without losing closeout momentum.
+- **Didn't**: Agent-side smoke (25/25 PASS at M-LWX-02) reported a vault as functionally complete when its runtime layer was empty. Two distinct verification layers conflated as one — gap surfaced only at first Obsidian launch.
+- **Finding**: **3 patterns settled and 1 architectural primitive codified** at this mini-campaign — (1) 4-instance additive-upstream pattern, (2) scope-vs-role naming at ADR-001 + ADR-013, (3) mirror-this-node smoke fidelity, (4) **verification-handoff topology** (load-bearing — agent-side + operator-side + dispatch connector).
+- **Change**: Future aDNA feature missions plan agent-side smoke + operator-side runtime verification as **two distinct gates**, dispatched to Carly+Herb in parallel with implementation when bandwidth requires. Document in `skill_verification_handoff.md` (T7 of successor implementation campaign).
+- **Follow-up**: 2 successor campaigns open at operator discretion — campaign_obsidian_deployment_stabilization (A; Rosetta in aDNA.aDNA; 8 tracks) + campaign_validation_node_adna_lwx_outputs (B; Berthier in lattice-labs; Carly+Herb dispatched). v2 M05 unblocked.
