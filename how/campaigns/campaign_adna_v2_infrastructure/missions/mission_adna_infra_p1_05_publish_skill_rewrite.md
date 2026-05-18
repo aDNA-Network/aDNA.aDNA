@@ -164,6 +164,7 @@ Per spec §6 sketch — defer to S2 or M07 if S1 budget exhausted. Minimal sketc
 ## Session log
 
 - **S1** (2026-05-18T04:55:58Z, `session_stanley_20260518_045558_adna_v2_m05_s1`) — open + ADR-010 ratify + author all v7.0 publish family deliverables; defer test-vault verification + tarball sketch to S2
+- **S2** (2026-05-18T05:49:24Z, `session_stanley_20260518_054924_adna_v2_m05_s2`) — test-vault end-to-end verification PASSED (5/5 gates: skill_git_remote_setup → skill_deploy → skill_vault_publish clean-path → hook FAIL path on intentional R1 violation → scratch dir cleanup; scratch repo deletion deferred to operator post-session per `delete_repo` gh-scope gap); 8 self-test fixtures authored (2 clean + 5 dirty covering R1/R2/R3/R4/R6 + fixture README); hook `--self-test` upgraded from warn-and-skip stub to real validation (PASSED 7/7); **2 in-session defect fixes** — (a) skill path mismatch with post-M03-flatten layout (4 files now check `how/standard/hooks/...` vault-local first, fallback to `.adna/how/...` legacy), (b) R2 secret-pattern quote-class bug (`[\x27\x22]?` was treated literally by POSIX `grep -E`; ANSI-C quoting `$'...'` applied to all 7 secret_patterns so they now correctly catch quoted secrets). M05 stays `in_progress`; S3 = AAR + status flips + v8 M1.1 coord checkpoint fire.
 
 ## Self-reference (Standing Order #2)
 
