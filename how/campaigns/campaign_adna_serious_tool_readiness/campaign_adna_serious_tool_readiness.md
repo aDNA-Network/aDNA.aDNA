@@ -21,8 +21,10 @@ absorbed_campaigns:
   - campaign_obsidian_deployment_stabilization  # 8 tracks T1-T8 ABSORBED into v8 Phase 3
 tag_target_at_close: v8.0  # Major Governance bump per ADR-011 semver
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-05-18
 last_edited_by: agent_stanley
+amendments:
+  - 2026-05-18: "v8 M1.1 coord checkpoint fired — `campaign_adna_v2_infrastructure` M05 ship-before COMPLETE per 3-session arc closure 2026-05-18T15:19:07Z+ (`session_stanley_20260518_151907_adna_v2_m05_s3`; AAR at `../campaign_adna_v2_infrastructure/missions/artifacts/aar_m05_publish_skill_rewrite.md`). M05 delivered: ADR-010 ratified (Keep + Add naming) · `skill_lattice_publish.md` light-edited + 3 NEW skills (`skill_vault_publish.md` + `skill_git_remote_setup.md` + `skill_deploy.md`) · `pre-push-sanitize.sh` LAYER_CONTRACT_VERSION=4.0.1 + 8 self-test fixtures + hook self-test upgraded warn-to-validate · 2 in-session defect fixes (post-flatten path-form drift + POSIX-vs-PCRE regex escape interpretation; both upstream-committed `.adna` `dfced67`). Upstream `LatticeProtocol/adna` HEAD = `dfced67` (M05 S2). aDNA.aDNA HEAD = `2b02a3e` (M05 S2). Load-bearing finding (verification-as-first-class deliverable) informs v8 implementation-class missions: M3.4 codifies `skill_verification_handoff.md` per Standing Order #16; M3.x and M4.x implementation missions plan verification phases before mission close. **M06 (v7.0 tag execution + GitHub repo rename per ADR-006) still required for v8 P1 entry** per D7 + Standing Order #16 (v7.0 tag dependency hard). M06 unblocked at M05 S3 close; opens at operator discretion per Standing Order #1 (phase gates are human gates). v8 stays at P0 — P0 → P1 transition awaits M06 v7.0 tag ship. No v8 mission file mutations this fire; no v8 deliverables consumed; lightweight amendments-entry mechanism per plan §D4 Option A (internal coord checkpoint; not a partner handoff) + v2 amendments-entry precedent."
 tags: [campaign, v8, serious_tool_readiness, comprehensive_upgrade, multi_vault, rosetta]
 ---
 

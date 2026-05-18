@@ -7,11 +7,13 @@ mission_number: 5
 slug: publish_skill_rewrite
 created: 2026-05-18
 updated: 2026-05-18
-status: in_progress
+status: completed
 opens_at: 2026-05-18T04:55:58Z
 opened_session: session_stanley_20260518_045558_adna_v2_m05_s1
+closed_at: 2026-05-18T15:19:07Z+
+closed_session: session_stanley_20260518_151907_adna_v2_m05_s3
 estimated_sessions: 6-8
-actual_sessions: 1 (in progress)
+actual_sessions: 3   # efficient verification-class path; well within budget
 persona: rosetta
 last_edited_by: agent_stanley
 spec_completeness: complete
@@ -135,19 +137,19 @@ Per spec §6 sketch — defer to S2 or M07 if S1 budget exhausted. Minimal sketc
 ## Exit gate (mission close)
 
 **All deliverables landed**:
-- [ ] ADR-010 ratified + formal file `accepted`
-- [ ] `skill_lattice_publish.md` light-edits complete
-- [ ] `skill_vault_publish.md` shipped
-- [ ] `skill_git_remote_setup.md` shipped
-- [ ] `pre-push-sanitize.sh` shipped (LAYER_CONTRACT_VERSION=4.0.1)
-- [ ] `skill_deploy.md` shipped
-- [ ] (Optional) `skill_publish_tarball.md` shipped
-- [ ] **Test-vault end-to-end verification PASSED** (S2: fresh `.adna/` fork → `skill_git_remote_setup` → `skill_deploy` → `skill_vault_publish` → receipt landed + hook FAIL path verified)
-- [ ] CHANGELOG v7.0 entry updated
-- [ ] Mission AAR landed at `missions/artifacts/aar_m05_publish_skill_rewrite.md`
-- [ ] Daedalus / Spacemacs migration Steps 1-4 acknowledged (post-ship; not S1 blocker)
-- [ ] **v8 M1.1 coord checkpoint fired** (notify in `campaign_adna_serious_tool_readiness`)
-- [ ] M06 unblocked (v7.0 tag execution can proceed)
+- [x] ADR-010 ratified + formal file `accepted` (S1)
+- [x] `skill_lattice_publish.md` light-edits complete (S1)
+- [x] `skill_vault_publish.md` shipped (S1)
+- [x] `skill_git_remote_setup.md` shipped (S1)
+- [x] `pre-push-sanitize.sh` shipped (LAYER_CONTRACT_VERSION=4.0.1) (S1) — self-test upgraded warn-to-validate at S2 + 2 in-session defect fixes (skill-path mismatch + R2 quote-class) upstream-committed at `.adna` `dfced67`
+- [x] `skill_deploy.md` shipped (S1)
+- [x] (Optional) `skill_publish_tarball.md` shipped — *sketch* shipped S1 per Obj 8 framing; full content deferred to M07 / v3-EC per AAR §Items deferred #3
+- [x] **Test-vault end-to-end verification PASSED** (S2: 5/5 gates — `skill_git_remote_setup` 8 steps + `skill_deploy` 5 steps + `skill_vault_publish` clean-path push + hook FAIL path on R1 violation + cleanup; ran against `ScienceStanley/m05-test` scratch repo)
+- [ ] CHANGELOG v7.0 entry updated — *deferred to M06* per AAR §Items deferred #8 (M06 fills the `YYYY-MM-DD` placeholder in `.adna/CHANGELOG.md` v7.0 entry at tag execution; M05 close does NOT fill the placeholder)
+- [x] Mission AAR landed at `missions/artifacts/aar_m05_publish_skill_rewrite.md` (S3) — lightweight 5-line + 4-category extended findings; load-bearing finding: **verification-as-first-class deliverable**
+- [x] Daedalus / Spacemacs migration Steps 1-4 acknowledged (post-ship; not S1 blocker) — shipped-memo authored S3 at `who/coordination/coord_2026_05_18_publish_rewrite_shipped_daedalus.md` (status `draft`, `delivery_held_until: operator-approval`; additive to predecessor `coord_2026_05_08_publish_rewrite.md` which stays `status: completed`); Steps 1-4 trigger on operator-approved delivery
+- [x] **v8 M1.1 coord checkpoint fired** (notify in `campaign_adna_serious_tool_readiness`) — amendments append S3 to v8 master frontmatter naming M05 ship-before complete + M06 still gating
+- [x] M06 unblocked (v7.0 tag execution can proceed) — M05 closure clears M06's `blocked_by` constraint per campaign master mission tree; M06 opens at operator discretion per Standing Order #1
 
 ## Out-of-scope (deferred)
 
@@ -165,6 +167,7 @@ Per spec §6 sketch — defer to S2 or M07 if S1 budget exhausted. Minimal sketc
 
 - **S1** (2026-05-18T04:55:58Z, `session_stanley_20260518_045558_adna_v2_m05_s1`) — open + ADR-010 ratify + author all v7.0 publish family deliverables; defer test-vault verification + tarball sketch to S2
 - **S2** (2026-05-18T05:49:24Z, `session_stanley_20260518_054924_adna_v2_m05_s2`) — test-vault end-to-end verification PASSED (5/5 gates: skill_git_remote_setup → skill_deploy → skill_vault_publish clean-path → hook FAIL path on intentional R1 violation → scratch dir cleanup; scratch repo deletion deferred to operator post-session per `delete_repo` gh-scope gap); 8 self-test fixtures authored (2 clean + 5 dirty covering R1/R2/R3/R4/R6 + fixture README); hook `--self-test` upgraded from warn-and-skip stub to real validation (PASSED 7/7); **2 in-session defect fixes** — (a) skill path mismatch with post-M03-flatten layout (4 files now check `how/standard/hooks/...` vault-local first, fallback to `.adna/how/...` legacy), (b) R2 secret-pattern quote-class bug (`[\x27\x22]?` was treated literally by POSIX `grep -E`; ANSI-C quoting `$'...'` applied to all 7 secret_patterns so they now correctly catch quoted secrets). M05 stays `in_progress`; S3 = AAR + status flips + v8 M1.1 coord checkpoint fire.
+- **S3** (2026-05-18T15:19:07Z, `session_stanley_20260518_151907_adna_v2_m05_s3`) — mission close. AAR landed at `missions/artifacts/aar_m05_publish_skill_rewrite.md` (lightweight 5-line + 4-category extended findings; **load-bearing finding: verification-as-first-class deliverable** — S2 ran the full publish path against a real GitHub remote, surfacing 2 defect classes that spec-only review missed; defects fixed in-session). 7 Successful patterns + 4 Surprises and friction + 5 Conceptual contributions + 12 Items deferred. Mission frontmatter `status: in_progress → completed`; `closed_at` + `closed_session` + `actual_sessions: 3` populated. All exit-gate boxes ticked except CHANGELOG v7.0 entry box (deferred to M06 tag execution per AAR §Items deferred #8) and `skill_publish_tarball.md` full content (sketch sufficient per Obj 8; full content M07 / v3-EC). Campaign master `amendments:` appended with M05-close entry; M05 mission tree row flipped to `completed`. **v8 M1.1 coord checkpoint fired** — amendments append to `campaign_adna_serious_tool_readiness.md` frontmatter naming M05 ship-before complete + M06 still gating + forward-ref to this AAR. **Daedalus shipped-memo authored** at `who/coordination/coord_2026_05_18_publish_rewrite_shipped_daedalus.md` (additive to predecessor `coord_2026_05_08_publish_rewrite.md`; status `draft`, `delivery_held_until: operator-approval`; v7.0 commit pins to `.adna` S1 `f9c49ea` + S2 `dfced67`; Migration Steps 1-4 trigger on delivery). STATE.md rewritten: M05 S2 "Last Session" block flipped to `## Last Session DEPRECATED-marker` per Standing Order #6 archive-not-delete; new "Last Session" block for M05 S3 close; Current Phase + Active Campaigns v2 row + Next Steps + Next Session Prompt all updated to route at M06 entry. **Hard constraints honored throughout 3-session arc**: M08a + M03 + M04 + M04b + LWX outputs untouched; ADRs 004/005/006/007/008/009/010/013 all stay `accepted`; 4 partner-affiliated memos still `status: draft` + `delivery_held_until` preserved; 3 public-announcement drafts still `delivery_held_until: M06-tag-ship`; finalized upgrade guide stays `status: finalized`; node.aDNA/ untouched; workspace router untouched; no v7.0 tag execution (M06's job); no GitHub repo rename (M06 / ADR-006); upstream `LatticeProtocol/adna` at HEAD `dfced67` (M05 S2; not modified at S3). M06 unblocks at this S3 close; opens at operator discretion per Standing Order #1 (phase gates are human gates).
 
 ## Self-reference (Standing Order #2)
 
