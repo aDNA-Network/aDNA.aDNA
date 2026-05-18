@@ -8,10 +8,12 @@ target_missions:
   - M06  # applies this diff to README.md at v7.0 tag time
   - M03  # may absorb some of the path/URL fixes earlier (the flatten); M06 verifies post-flatten
 created: 2026-05-11
-updated: 2026-05-11
-status: draft
+updated: 2026-05-18
+status: delivered
+delivered: 2026-05-18
+delivered_via: m06_s2_pre_tag_commit  # diff applied as part of .adna 27e6395 pre-tag commit; URLs in badges use mixed-case per D1 amendment
 last_edited_by: agent_stanley
-target_repo: LatticeProtocol/adna  # post-rename per ADR-006
+target_repo: LatticeProtocol/aDNA  # post-rename per ADR-006, amended 2026-05-18 to mixed-case
 target_file: README.md
 tags: [artifact, mission_deliverable, m08a, obj3, readme_badge_spec, v7_0, github_release, draft, m06_input, m03_partial_input]
 related_artifacts:

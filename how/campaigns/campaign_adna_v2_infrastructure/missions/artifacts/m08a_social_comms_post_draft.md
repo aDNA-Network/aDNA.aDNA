@@ -7,9 +7,10 @@ objective: 3
 target_missions:
   - M06  # publishes short-form + thread at v7.0 tag time; long-form may stage earlier or later per operator discretion
 created: 2026-05-11
-updated: 2026-05-11
-status: draft
-delivery_held_until: M06-tag-ship
+updated: 2026-05-18
+status: ready  # tag-ship gate satisfied at M06 S2 2026-05-18; operator handles social-channel posting within 24h per D4 timing
+delivery_held_until: M06-tag-ship  # gate satisfied at v7.0 tag push 2026-05-18; status: ready → delivered when operator posts to social channels
+tag_ship_satisfied: 2026-05-18
 last_edited_by: agent_stanley
 publication_url_target: "https://adna-docs.vercel.app/learn/upgrade-v6-to-v7"
 embargo_partner_acknowledgments:

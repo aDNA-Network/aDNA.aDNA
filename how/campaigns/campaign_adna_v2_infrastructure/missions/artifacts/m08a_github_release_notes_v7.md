@@ -8,11 +8,15 @@ target_missions:
   - M06  # publishes this body at the v7.0 tag-time GitHub release form
   - M08b  # may collect post-tag receipts and link them back here
 created: 2026-05-11
-updated: 2026-05-11
-status: draft
-delivery_held_until: M06-tag-ship
+updated: 2026-05-18
+status: delivered
+delivered: 2026-05-18
+delivery_held_until: M06-tag-ship  # gate satisfied at M06 S2 v7.0 tag push 2026-05-18
+published_url: "https://github.com/LatticeProtocol/aDNA/releases/tag/v7.0"
+published_at: 2026-05-18
 last_edited_by: agent_stanley
-publication_url_target: "https://github.com/LatticeProtocol/adna/releases/new?tag=v7.0"
+publication_url_target: "https://github.com/LatticeProtocol/aDNA/releases/new?tag=v7.0"
+wilhelm_acknowledgment_redacted: true  # ADR-010-window still in force at M06 S2 publish time; embargo guard §4 honored; M08b may add post-co-sign
 embargo_partner_acknowledgments:
   wilhelm_foundation: ADR-010-window  # WilhelmAI ADR 010 currently signed Chief Steward, pending Wilhelm batch co-sign at MP0-1
   tapp: operator-approval

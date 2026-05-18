@@ -1,8 +1,9 @@
 ---
 type: coordination
 title: "Cross-Graph Announcement: aDNA.aDNA → Spacemacs.aDNA — v7.0 Publish-Skill Family Shipped (Migration Steps 1-4 Trigger)"
-status: draft
-delivery_held_until: operator-approval
+status: delivered
+delivered: 2026-05-18
+delivery_held_until: operator-approval  # gate satisfied at M06 S2 v7.0 tag push 2026-05-18 (D3 pre-tag delivery per Rosetta default)
 direction: outbound (aDNA.aDNA initiates)
 requesting_vault: aDNA.aDNA
 requesting_persona: rosetta

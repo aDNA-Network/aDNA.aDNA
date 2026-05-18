@@ -1,10 +1,10 @@
 ---
 type: adr
 adr_number: 006
-title: "GitHub repo rename Agentic-DNA → adna (URL-slug only; display name unchanged)"
+title: "GitHub repo rename Agentic-DNA → aDNA (URL-slug only; display name unchanged) — amended 2026-05-18 (M06 S2 D1) to canonicalize mixed-case slug"
 status: accepted
 created: 2026-05-08
-updated: 2026-05-08
+updated: 2026-05-18
 last_edited_by: agent_stanley
 supersedes:
 superseded_by:
@@ -15,10 +15,14 @@ decision_letter: A  # mission §Obj 2 §Decision A
 ratification_phase: P1  # ratified at P0 → P1 phase-gate review session 2026-05-08 (early relative to original M03-start target)
 ratified: 2026-05-08
 ratified_session: session_stanley_20260509_013646_adna_v2_p0_p1_gate_review
-tags: [adr, decision, campaign_adna_v2_infrastructure, github, repo_rename, url, governance, naming]
+amendments:
+  - 2026-05-18:M06_S2_D1_mixed_case_canonicalization  # amends Decision + Alternatives; original lowercase target superseded by realized mixed-case GitHub state
+tags: [adr, decision, campaign_adna_v2_infrastructure, github, repo_rename, url, governance, naming, amended_2026_05_18]
 ---
 
-# ADR-006: GitHub repo rename `Agentic-DNA` → `adna` (URL-slug only)
+# ADR-006: GitHub repo rename `Agentic-DNA` → `aDNA` (URL-slug only)
+
+> **Amended 2026-05-18 at M06 S2 D1** — Decision target updated from lowercase `adna` to mixed-case `aDNA`; original lowercase target superseded by realized GitHub state. Amendment record at §Amendment 2026-05-18.
 
 ## Status
 
@@ -41,7 +45,7 @@ The campaign's M01 mission file ([[../../how/campaigns/campaign_adna_v2_infrastr
 
 ## Decision
 
-**Rename the GitHub repository slug from `LatticeProtocol/Agentic-DNA` to `LatticeProtocol/adna`.**
+**Rename the GitHub repository slug from `LatticeProtocol/Agentic-DNA` to `LatticeProtocol/aDNA`** (mixed-case canonical per 2026-05-18 amendment; original lowercase `adna` target superseded — see §Amendment 2026-05-18).
 
 The rename is **URL-slug-only**:
 - **Display name in `Repository description`** stays `Agentic-DNA` (or becomes `Agentic-DNA (aDNA)` if useful for SEO).
@@ -98,7 +102,7 @@ This **aligns the GitHub URL with the v6.0 lowercase URI convention** that the c
 |---|---|
 | **Keep `Agentic-DNA`** | Self-inconsistent with v6.0 convention (URIs are lowercase). The clone command's destination-rename step is friction every new operator hits. Inertia is the only argument for keeping it. |
 | **Rename to `.adna`** | GitHub does not allow leading-dot repository names. (Rejected by mission §Obj 2 §Decision A; confirmed.) |
-| **Rename to `aDNA`** | Mixed-case is ambiguous (`aDNA` vs `Adna` vs `ADNA`); search engines and shells handle all-lowercase better. The v6.0 convention reserves `aDNA` for running-text abbreviation, not URIs. |
+| **Rename to `aDNA`** | ~~Mixed-case is ambiguous (`aDNA` vs `Adna` vs `ADNA`); search engines and shells handle all-lowercase better. The v6.0 convention reserves `aDNA` for running-text abbreviation, not URIs.~~ **SUPERSEDED 2026-05-18 (M06 S2 D1)** — mixed-case `aDNA` is now the canonical URL slug. Realized GitHub state matches this form (auto-canonicalized at rename); GitHub URLs are case-insensitive for routing so ambiguity concerns are operationally moot; the `.aDNA` directory-suffix convention pervasive across the ecosystem makes mixed-case the consistent choice. See §Amendment 2026-05-18. |
 | **Rename to `agentic-dna`** | Lowercase but still hyphenated and verbose; loses the v6.0 abbreviation discipline (`adna` is already the canonical lowercase form). |
 
 ## Forward-references
@@ -111,3 +115,34 @@ This **aligns the GitHub URL with the v6.0 lowercase URI convention** that the c
 ## Companion
 
 - [[adr_007_outer_adna_claude_md_disposition.md|ADR-007]] (Decision B) — outer `adna/CLAUDE.md` disposition. Both ADRs are M01 Obj 2 deliverables; both move from `proposed` to `accepted` at the M03 phase gate.
+- [[adr_011_aDNA_semver_discipline.md|ADR-011]] (semver discipline) — concurrent v7.0 ratification cohort member; ADR-006 and ADR-011 together codify the campaign's two Major-class trigger axes (URL rename + version policy).
+
+## Amendment 2026-05-18 (M06 S2 D1)
+
+**Amended**: §Decision target slug; §Alternatives `Rename to aDNA` row.
+
+**Context**: During M03 S2 execution of the GitHub UI rename, the operator action via Settings → Repository name produced **mixed-case `LatticeProtocol/aDNA`** rather than the lowercase `LatticeProtocol/adna` that this ADR originally targeted. The mixed-case form arose either from GitHub's case-preserving rename behavior or from operator entry of the form `aDNA` at the UI prompt. The rename otherwise discharged correctly (301 redirect from legacy URL active; all stars / issues / PRs / actions / wiki carried over).
+
+**Realized state observation (2026-05-18, M06 S2 pre-flight)**:
+- `gh repo view LatticeProtocol/aDNA` returns `nameWithOwner: LatticeProtocol/aDNA` (mixed-case canonical).
+- `curl -sI https://github.com/LatticeProtocol/Agentic-DNA` returns `HTTP/2 301` → `https://github.com/LatticeProtocol/aDNA` ✓.
+- Local `.adna/` git remote URL is `https://github.com/LatticeProtocol/adna.git` (lowercase form); GitHub routes both forms case-insensitively via 301 redirect chain, so existing clones continue to function without intervention.
+
+**Decision (amendment)**: Canonicalize the mixed-case form `aDNA` as the authoritative URL slug for the template repository. This:
+
+1. **Matches realized state** — no further GitHub UI action needed.
+2. **Aligns with the `.aDNA` directory-suffix convention** used pervasively across the ecosystem (`<name>.aDNA/` directory convention per [[adr_009_aDNA_naming_convention.md|ADR-009]]; workspace router `CLAUDE.md` `*.aDNA/` glob; 19+ live vaults named `<Name>.aDNA/`).
+3. **Removes M03 AAR Items deferred #1** (the GitHub auto-canonicalization observation flagged at M03 S2).
+4. **Functionally inert for existing operators** — case-insensitive routing means lowercase `adna` URLs continue to redirect-to-canonical without breaking. Operators with lowercase remotes may update at their own cadence using:
+   ```sh
+   git -C ~/lattice/.adna remote set-url origin https://github.com/LatticeProtocol/aDNA.git
+   ```
+   No urgency; documentation grep+update sweep treats mixed-case as the going-forward canonical form.
+
+**Naming convention reconciliation**: The v6.0 naming convention reserved `aDNA` for running-text abbreviation and `adna` for protocol URIs. This amendment carves out one specific URI — the template repository URL — to use the mixed-case form, on the grounds that (a) GitHub URLs are case-insensitive for routing (so the URI-lowercase rule is operationally inert at the protocol layer), (b) the mixed-case form is consistent with the `<name>.aDNA/` directory-suffix convention which is the dominant ecosystem-wide pattern, and (c) the v6.0 convention's stated goal (consistency) is better served by aligning with the directory-suffix convention than by enforcing URI-lowercase against a case-insensitive routing layer. The convention amendment is narrow: protocol URIs continue to prefer lowercase; this single URL-slug exception is documented here and in the v7.0 CHANGELOG entry.
+
+**Operator-discretionary remote URL update**: Existing operators on lowercase remote URLs can update to mixed-case canonical at their own cadence. No deadline; no enforcement. The 301 redirect chain keeps both forms working indefinitely.
+
+**Cross-link discharge**: ADR-009 (naming convention) does not require amendment — its `<name>.aDNA/` ↔ `<name>.aDNA.git` isomorphism rule continues to govern *new* vaults under the convention; ADR-006's mixed-case canonicalization is the template-repo-specific exception within the existing convention. (If a v7.x successor ratifies broader URI-mixed-case patterns ecosystem-wide, ADR-009 amends concurrently; that is out-of-scope here.)
+
+**Amendment ratification**: D1=Option A operator decision recorded at M06 S2 entry 2026-05-18. This amendment is in effect from 2026-05-18 onward; CHANGELOG v7.0 entry's "Changed" section reflects mixed-case `aDNA` as the new canonical URL slug.

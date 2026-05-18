@@ -5,14 +5,16 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_planning_01
 objective: 8
 target_missions:
-  - M08a  # ships this guide pre-flatten; copies it to .adna/how/docs/upgrade_v6_to_v7.md after flatten
-  - M08b  # finalizes (dates the v7.0 tag entry; collects propagation receipts)
+  - M08a  # finalized upgrade guide for publication 2026-05-11
+  - M06   # copied to .adna/how/docs/upgrade_v6_to_v7.md at S2 pre-tag commit 2026-05-18 (F3 fold-in; original M08b assignment absorbed)
 created: 2026-05-08
-updated: 2026-05-11
-status: finalized  # M01: status: complete (artifact authored). M08a Session 2 2026-05-11: status: finalized (cross-reference closure + dual-audience pass + §13 update; ready for M06 tag-date fill + M08b post-flatten copy).
+updated: 2026-05-18
+status: published  # M01: complete (authored). M08a Session 2 2026-05-11: finalized. M06 S2 2026-05-18: published (copied to .adna/how/docs/upgrade_v6_to_v7.md at pre-tag commit; F3 fold-in absorbed M08b's copy responsibility per M08a Items Deferred #14).
 finalized: 2026-05-11
+published: 2026-05-18
+finalized_destination: /Users/stanley/lattice/.adna/how/docs/upgrade_v6_to_v7.md
 last_edited_by: agent_stanley
-tags: [artifact, mission_deliverable, m01, obj8, upgrade_guide, v6_to_v7, dual_audience, migration_runbook, m08a, m08b, airlock_amendment, naming_convention_amendment, finalized]
+tags: [artifact, mission_deliverable, m01, obj8, upgrade_guide, v6_to_v7, dual_audience, migration_runbook, m08a, m06_s2_fold_in, airlock_amendment, naming_convention_amendment, published]
 related_artifacts:
   - m01_obj0_ecosystem_matrix.md           # source: 19-vault inventory + per-change blast radius + external operators
   - m01_obj1_current_state.md              # source: current Governance v6.0 baseline

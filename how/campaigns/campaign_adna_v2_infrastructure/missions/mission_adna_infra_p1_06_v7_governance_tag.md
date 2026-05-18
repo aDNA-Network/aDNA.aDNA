@@ -7,13 +7,13 @@ mission_number: 6
 slug: v7_governance_tag
 created: 2026-05-18
 updated: 2026-05-18
-status: in_progress
+status: completed
 opens_at: 2026-05-18T16:40:42Z
 opened_session: session_stanley_20260518_164042_adna_v2_m06_s1
-closed_at:
-closed_session:
-estimated_sessions: 3   # S1 spec authoring + S2 destructive execution + S3 close
-actual_sessions:
+closed_at: 2026-05-18T19:10:00Z
+closed_session: session_stanley_20260518_183851_adna_v2_m06_s2
+estimated_sessions: 3   # S1 spec authoring + S2 destructive execution + S3 close (S2 absorbed S3)
+actual_sessions: 2  # S1 spec authoring + S2 destructive execution (S3 mission/campaign close absorbed into S2 per Rosetta default sequencing)
 persona: rosetta
 last_edited_by: agent_stanley
 spec_completeness: complete
