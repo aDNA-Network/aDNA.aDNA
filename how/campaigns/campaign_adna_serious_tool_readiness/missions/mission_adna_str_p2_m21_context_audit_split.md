@@ -7,16 +7,16 @@ mission_number: 2.1
 slug: context_audit_split
 created: 2026-05-19
 updated: 2026-05-19
-status: in_progress
+status: completed
 opens_at: 2026-05-19T19:33:44Z
 opened_session: session_stanley_20260519T193344Z_v8_m21_s1
-closed_at: null
-closed_session: null
+closed_at: 2026-05-19T23:30Z+
+closed_session: session_stanley_20260519T223400Z_v8_m21_s3
 estimated_sessions: 2-3
-actual_sessions: null  # populated at S3 close
+actual_sessions: 3  # canonical 3-session shape; 3rd instance after M1.3 + M1.4
 persona: rosetta
 last_edited_by: agent_stanley
-spec_completeness: in_progress  # S1 authoring this turn; S2 + S3 execution pending
+spec_completeness: complete  # S1 spec + 3 design artifacts + S2 destructive (Op 1 + Op 2) + S3 validation + AAR + node.aDNA addendum + close all landed
 mission_class: implementation  # canonical 3-session shape per Campaign S.O. #17 (3rd instance after M1.3, M1.4)
 token_budget_estimated: "S1 ~60-90 kT (Type C planning; Op 1/2/3 scope pre-specified by M1.3 Obj 7 + M1.4 Obj 7); S2 ~100-180 kT (destructive: STATE.md split + AGENTS.md hint + MEMORY.md line + backlog placeholder); S3 ~60-80 kT (validation + AAR + token_baselines.md addendum)"  # per Campaign S.O. #12; self-measured at session close for calibration
 tags: [mission, m2_1, v8, p2, context_audit, state_md_split, agents_md_hint, archive_convention, router_archive_pattern, op1_op2_op3, type_c_implementation]
@@ -143,7 +143,7 @@ Implementation-class; canonical 3-session shape (S1 non-destructive design / S2 
 | 4 | Op 3 auto-archive convention design spec | S1 | **landed at S1** (`artifacts/m21_obj4_archive_convention_design.md`) |
 | 5 | Op 1 destructive execution — STATE.md split | S2 | **landed at S2** (Phase A `STATE_archive.md` create SHA `95332df` + Phase B `STATE.md` router rewrite SHA `7a87022` + Phase C no-op cross-link audit 5/5 wikilink PASS + Phase D verification snapshot 841% router reduction factor) |
 | 6 | Op 2 destructive execution — AGENTS.md hint + MEMORY.md line + backlog placeholder | S2 | **landed at S2** (SHA `235c3fd`; 4 file writes: `AGENTS.md` Heavy-File Read Convention + auto-memory `MEMORY.md` index + auto-memory `feedback_heavy_file_read.md` + `how/backlog/idea_upstream_state_md_read_hint.md`) |
-| 7 | Validation output + AAR + node.aDNA addendum + mission close | S3 | pending S3 |
+| 7 | Validation output + AAR + node.aDNA addendum + mission close | S3 | **landed at S3** (`session_stanley_20260519T223400Z_v8_m21_s3`; `artifacts/m21_obj7_validation_output.md` + `artifacts/aar_m21_context_audit_split.md` + `node.aDNA/what/context/token_baselines.md` v0.1.1+addendum + companion `.yaml` + `inventory_vaults.yaml` row + campaign master M2.1 row flip + STATE.md router refresh + mission frontmatter status → completed) |
 
 ## Acceptance criteria
 
@@ -263,8 +263,22 @@ P1 → P2 phase exit gate approved at plan ratification 2026-05-19 per Campaign 
 
 ## Completion summary
 
-(populated at S3 close)
+**M2.1 closed 2026-05-19T~23:30Z+ at `session_stanley_20260519T223400Z_v8_m21_s3`.** Canonical 3-session shape held (3rd instance after M1.3 + M1.4). 7/7 deliverables landed:
+
+1. ✅ Mission spec (S1) — this file
+2. ✅ Op 1 STATE.md split design (`artifacts/m21_obj2_state_split_design.md`; S1)
+3. ✅ Op 2 AGENTS.md hint design (`artifacts/m21_obj3_agents_md_hint_design.md`; S1)
+4. ✅ Op 3 auto-archive convention design (`artifacts/m21_obj4_archive_convention_design.md`; S1)
+5. ✅ Op 1 destructive execution (S2; SHA `95332df` + `7a87022`; router 41,791 B + archive 197,228 B; **8.41× / 841% reduction factor — 2.1× over ≥ 4× target**)
+6. ✅ Op 2 destructive execution (S2; SHA `235c3fd`; `AGENTS.md` Heavy-File Read Convention + auto-memory `MEMORY.md` + `feedback_heavy_file_read.md` + `how/backlog/idea_upstream_state_md_read_hint.md`)
+7. ✅ S3 close (`artifacts/m21_obj7_validation_output.md` + `artifacts/aar_m21_context_audit_split.md` + `node.aDNA/what/context/token_baselines.md` v0.1.1+addendum §6 Split-as-pattern + companion `.yaml` + `inventory_vaults.yaml` row + campaign master M2.1 row flip + STATE.md router refresh)
+
+**Acceptance criteria**: 13/13 PASS (criterion #7 PASS-with-note — auto-memory location reality vs design-spec wording; function preserved). See `artifacts/aar_m21_context_audit_split.md` §scorecard.
+
+**Load-bearing finding**: the protocol that designs a split also pays the splitting tax mid-execution — S2 hit the Read-tool 256 KB hard backstop on the pre-split STATE.md during the session executing the split. Recursive self-reference per Standing Order #8; load-bearing for ADR-016 motivation.
+
+**Unblocks**: M2.2 ADR-016 ratification (operator-discretionary parallel) + M2.3 convergence-model retrospective (operator-discretionary parallel) + M2.4 AGENTS.md heat map (still gated on ≥ 10 live-hook sessions). M1.5 coord-network discharge stays queued (operator-discretionary; timing target ≤ 2026-05-26 per disruption assessment §6).
 
 ## AAR
 
-(populated at S3 close — `artifacts/aar_m21_context_audit_split.md`)
+See [[artifacts/aar_m21_context_audit_split.md|`artifacts/aar_m21_context_audit_split.md`]] — lightweight 5-line + 4-category extended findings + 13-row acceptance-criteria scorecard + 13-row Standing-Order discharge table + token-budget table + load-bearing-finding propagation map.
