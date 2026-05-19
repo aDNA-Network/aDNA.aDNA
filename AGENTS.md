@@ -85,6 +85,12 @@ aDNA.aDNA/
 - **Set `last_edited_by` and `updated`** — on every modification
 - **New files are safe** — creating new files has no collision risk
 
+## Heavy-File Read Convention
+
+For any file ≥ ~ 50 kT content-load OR ≥ 200 KB byte size, default to `offset` + `limit` parameters on Read. Typical heavy files: `STATE.md` (this vault and others), campaign masters, mission files at S3 close, large AAR aggregates. The router-vs-archive pattern (see [[STATE_archive.md|STATE_archive.md]] for the canonical instance) splits heavy files into a live router + an audit archive; even the router benefits from partial Reads when only the top bullet is needed. See `node.aDNA/what/context/token_baselines.md` v0.1.1 for measured costs.
+
+**Rule of thumb**: if Read returns `File content exceeds maximum`, that's a router-vs-archive split candidate — flag for backlog if not already split.
+
 ## Priority Hierarchy
 
 1. **Data integrity** — never corrupt or lose existing data
