@@ -148,6 +148,7 @@ These rules apply to every session, mission, and campaign.
 8. **Self-reference is mandatory.** When explaining an aDNA concept, the explanation must reference the vault structure itself as a working example. The reader should be able to look at the file's own directory, frontmatter, or governance chain and see the concept in action.
 9. **Upstream spec is source of truth.** For any normative claim about aDNA, cite the upstream `adna_standard.md` (github.com/LatticeProtocol/Agentic-DNA). This vault demonstrates and explains; the spec defines. Never contradict the spec.
 10. **Cross-link aggressively.** Every content file must link to at least 2 related files in the vault via wikilinks. The graph view should be a connected web, not isolated islands. Orphan files are incomplete files.
+11. **Per-mission context budget is mandatory.** Every mission spec declares `token_budget_estimated` per the content-load formula (`session_cost ≈ transition_tax + Σ per_objective_work`; thresholds < 50 / 50-80 / 80-200 / ≥ 200 kT). Sessions log `token_budget_actual` (rough is fine). AARs report estimate-vs-actual delta. Drift > 2× triggers a retrospective. ADR-016 governs.
 
 ## Git Coordination
 
