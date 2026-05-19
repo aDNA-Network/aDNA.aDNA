@@ -7,13 +7,13 @@ mission_number: 1.4
 slug: latticescope_schema
 created: 2026-05-18
 updated: 2026-05-19
-status: in_progress
+status: completed
 opens_at: 2026-05-19T04:47:14Z
 opened_session: session_stanley_20260518_214714_v8_m14_s1
-closed_at:
-closed_session:
+closed_at: 2026-05-19T19:00:00Z
+closed_session: session_stanley_20260519T185248Z_v8_m14_s3
 estimated_sessions: 2-3
-actual_sessions: 2  # S1 + S2 closed; S3 pending (validation + AAR + token_baselines refresh)
+actual_sessions: 3  # S1 spec + S2 destructive + S3 close — canonical 3-session implementation shape (within forecast band)
 persona: rosetta
 last_edited_by: agent_stanley
 spec_completeness: complete  # S1 authoring complete; S2 + S3 execution pending
@@ -143,7 +143,7 @@ Implementation-class; canonical 3-session shape (S1 non-destructive spec authori
 | 4 | Schema migration applied + Amendments D+E live; `--self-test` PASS post-migration | S2 | ✅ landed 2026-05-19T17:54Z (user_version 0→101; 174 tool_calls preserved; live sessions row populated) |
 | 5 | `ingest_transcript.py` implementation + backfill execution (per D3 default A: all existing transcripts) | S2 | ✅ landed 2026-05-19T17:55Z (48 jsonl processed; 3577 turns; 645,265 kT cache_read total; reports at `~/.adna/measurement/reports/`) |
 | 6 | Amendments A + B + C live (per D1 default A) OR documented deferral to M1.5 | S2 | ✅ landed 2026-05-19T17:55Z (A/B/C wired in hook; RECIPE_PROTOCOL.md authored at `~/.adna/measurement/`; B/C will fire when triggered by env or cross-vault path) |
-| 7 | Validation output + AAR + token_baselines.md v0.1.1 refresh + mission close | S3 | pending |
+| 7 | Validation output + AAR + token_baselines.md v0.1.1 refresh + mission close | S3 | ✅ landed 2026-05-19T19:00Z (`m14_obj7_validation_output.md` 8 sections; `aar_m14_latticescope_schema.md` 5-line + 4-category; token_baselines.md v0.1.1 + companion + inventory_vaults.yaml row bump; campaign master M1.4 row `completed` + M2.x rows `next` + amendments row; STATE.md top-bullet updated; mission frontmatter `status: completed`) |
 
 ## Acceptance criteria
 
@@ -234,7 +234,19 @@ Both audiences land at the same conclusion: **approximation got us a directional
 
 ## Status
 
-**S2 CLOSED 2026-05-19T17:55Z** (`session_stanley_20260519T174844Z_v8_m14_s2`). 6 of 7 deliverables landed:
+**S3 + MISSION CLOSED 2026-05-19T19:00Z** (`session_stanley_20260519T185248Z_v8_m14_s3`). 7 of 7 deliverables landed. Canonical 3-session implementation shape ratified (2nd instance after M1.3).
+
+**S3 deliverable 7 (composite, non-destructive)**:
+- `missions/artifacts/m14_obj7_validation_output.md` — 8-section validation output; **convergence-model verdict Mid-magnitude (refined)** with two empirical bounds (transition tax ~300-500 kT cache_creation per session entry; per-session cache_read snowball scales `turn_count × mean_cached_context_per_turn`); **pattern α/β/γ/δ re-rank**: α=25 (top, unchanged) · β=12 (unchanged) · **δ=10 UPGRADED from 6** (cache_creation floor ~17× M1.3 content-load CP-1 estimate) · γ=6 (unchanged); **top-3 M2.1 queue CONFIRMED unchanged**; ADR-016 prep notes addendum (one Standing-Order-#11 bullet for two-metric reporting + API-billing companion formula forecast — M2.3 ratifies).
+- `missions/artifacts/aar_m14_latticescope_schema.md` — lightweight 5-line + 4-category extended findings; load-bearing finding: **two-metric reality** (content-load M1.3 vs API-billing M1.4 measure DIFFERENT phenomena; M1.3 under-counted API cost by 5-134× depending on metric; M1.3 directional verdict survives augmented); 12/12 acceptance-criteria scorecard; S.O. discharge table; token-budget table.
+- `node.aDNA/what/context/token_baselines.md` v0.1.0 → v0.1.1 refresh — frontmatter `context_version: "0.1.1"`; §2.1 add (Authoritative API-billing aggregate); §3 refined Mid-magnitude verdict paragraph; §4 pattern re-rank δ-upgrade; §5 API-billing companion formula forecast; revision history v0.1.1 row.
+- `node.aDNA/what/context/token_baselines.yaml` companion FAIR — `content_entity.version: "0.1.1"`; `revision.current_version: "0.1.1"`; provenance + dependencies + caveats extended; v0_1_1_mission/session lineage; keywords extended.
+- `node.aDNA/what/inventory/inventory_vaults.yaml` content_entities token_baselines row — `version: "0.1.1"` + v0_1_1_mission/session lineage + extended note describing both metrics.
+- Campaign master M1.4 row `in_progress → completed`; M2.1/M2.2/M2.3/M2.4 rows marked `next`; amendments entry appended.
+- `aDNA.aDNA/STATE.md` top "Current Phase" bullet updated (conservative ≤20-line bullet per self-discipline against M2.1 Op 1 target).
+- This mission file: frontmatter `status: completed` + `closed_at` + `closed_session` + `actual_sessions: 3`; Completion summary populated below.
+
+**S2 CLOSED 2026-05-19T17:55Z** (`session_stanley_20260519T174844Z_v8_m14_s2`). 6 of 7 deliverables landed cumulative:
 - Schema migration applied: `user_version` 0 → 101; 3 new columns (sessions.transcript_path, tool_calls.traversal_id, tool_calls.recipe_id) + context_traversal table + 4 new indexes; 174 tool_calls preserved (additive-only).
 - Hook v0.1.1 active: Amendments D (transcript_path resolution) + E (sessions INSERT OR IGNORE) + A (additional `.tool_input.usage.cache_*` defensive path) + B (cross-vault traversal detection → context_traversal INSERT) + C (`ADNA_RECIPE_ID` env or `# recipe:` first-line scan → tool_calls.recipe_id).
 - Live capture confirmed: 1 sessions row at `548dc261-18fb-4068-a17e-98f2b69fe52c` with vault=`aDNA.aDNA` + transcript_path resolved; 182 tool_calls with `claude_session_id` populated.
@@ -242,11 +254,9 @@ Both audiences land at the same conclusion: **approximation got us a directional
 - Hook `--self-test` PASS post-migration; `ingest_transcript.py --self-test` PASS (messageId dedup verified).
 - CHANGELOG v0.1.1 at `~/.adna/measurement/CHANGELOG.md`; RECIPE_PROTOCOL.md at `~/.adna/measurement/`.
 
-**S3 pending** (operator-gated per Standing Order #1): validation report `m14_obj7_validation_output.md` (pre/post-backfill convergence-model verdict refinement; pattern α/β/γ/δ re-rank; top-3 M2.1 queue sequencing) + AAR `aar_m14_latticescope_schema.md` + `node.aDNA/what/context/token_baselines.md` v0.1.0 → v0.1.1 refresh + campaign master M1.4 row flip to `completed` + STATE.md update + P1 → P2 phase-gate readiness signal.
-
 **S1 CLOSED 2026-05-19T05:04Z** (`session_stanley_20260518_214714_v8_m14_s1`). Mission spec + DDL spec + transcript resolver spec authored. Non-destructive authoring per canonical 3-session shape.
 
-**Forward-references**: M1.4 close unblocks the v8 P2 mission cohort (M2.1 context audit + M2.2 ADR-016 ratification + M2.3 convergence model validation + M2.4 AGENTS.md heat map). M2.3 specifically requires Amendment D (transcript_path) for CP-2..CP-4 measurement — M1.4 is M2.3's hard precondition.
+**Forward-references**: M1.4 close UNBLOCKED the v8 P2 mission cohort (M2.1 context audit + M2.2 ADR-016 ratification + M2.3 convergence model validation + M2.4 AGENTS.md heat map); all four marked `next` in campaign master. M2.3 specifically required Amendment D (transcript_path) for CP-2..CP-4 measurement — now LIVE. M1.5 coord-network discharge remains queued as operator-discretionary parallel/next slot (independent track; not gated on M1.4 close). P1 → P2 phase exit gate READY (operator approval per Campaign Standing Order #19).
 
 ## Cross-references
 
@@ -268,20 +278,44 @@ Both audiences land at the same conclusion: **approximation got us a directional
 
 ## Completion summary
 
-Filled at S3 close.
+M1.4 closed at S3 2026-05-19T19:00Z. Canonical 3-session implementation shape (2nd instance after M1.3); 7/7 deliverables landed; 12/12 acceptance criteria discharged; estimate-vs-actual within band (content-load drift < 10%; calibration signal stable).
 
-### Deliverables
-[S3 will populate]
+### Deliverables (7/7)
+
+| # | Artifact / target | Session |
+|---|---|---|
+| 1 | `mission_adna_str_p1_m14_latticescope_schema.md` (this file) | S1 |
+| 2 | `missions/artifacts/m14_obj2_schema_v011_ddl.md` | S1 |
+| 3 | `missions/artifacts/m14_obj3_transcript_resolver_spec.md` | S1 |
+| 4 | `~/.adna/measurement/migrate_v01_to_v011.sh` + live `--apply` (user_version 0→101) + 3 new columns + context_traversal table + 4 indexes | S2 |
+| 5 | `~/.adna/measurement/ingest_transcript.py` + `--all` backfill (48 jsonl / 3577 turns / 645,265 kT cache_read) + 48 reports | S2 |
+| 6 | `~/.adna/measurement/measurement_hook.sh` v0.1.1 (Amendments D+E+A+B+C) + RECIPE_PROTOCOL.md + CHANGELOG | S2 |
+| 7 | `missions/artifacts/m14_obj7_validation_output.md` + `missions/artifacts/aar_m14_latticescope_schema.md` + `node.aDNA/what/context/token_baselines.md` v0.1.1 refresh + companion YAML + inventory_vaults.yaml row bump + campaign master + STATE.md | S3 |
 
 ### Descoped
-[S3 will populate if anything descoped]
 
-### Key findings
-[S3 will populate]
+- Per-tool authoritative token attribution — deferred to LatticeScope sub-campaign MLS-1 (turn-level allocation heuristic) OR upstream Anthropic per-tool PostToolUse usage contribution. Out of M1.4 scope; not blocking on any v8 P1/P2 mission.
+- `LatticeScope.aDNA/` sub-vault bootstrap — per D2 default B, MLS-0 stays at v8 P6 phase gate.
+- ADR-007 (schema-bump policy) — per Campaign S.O. #14, ratifies at LatticeScope sub-campaign MLS-2.
+- ADR-016 (per-mission context budget) — per Campaign S.O. #14, ratifies at M2.2; M1.4 produces prep notes addendum only.
+
+### Key findings (propagate to v8 P2 + M2.3 + M2.4 + v8 P6)
+
+1. **Two-metric reality (load-bearing)**: content-load (M1.3 chars ÷ 4 of files Read; ~ 23 kT CP-1) and API-billing (M1.4 cache_read + cache_creation per assistant turn; mean cache_read 13.4 M / cache_creation 403 K per session) measure DIFFERENT phenomena. Both useful for different decisions. Content-load = in-session planning. API-billing = cross-session-decomposition planning.
+2. **Convergence-model verdict Mid-magnitude (refined)** — directional claim survives; transition tax in API-billing units ~ 300–500 kT cache_creation per session entry (~ 17× M1.3 content-load CP-1); per-session cache_read snowball scales `turn_count × mean_cached_context_per_turn`.
+3. **Pattern δ under-counted in M1.3** — cache_creation floor ~ 400 kT per fresh session = ~ 17× M1.3 CP-1 23 kT proxy. δ rank upgraded 6 → 10; M2.4 measurement focus + handoff hygiene doctrine candidate.
+4. **Pattern α dominance authoritatively confirmed** — every full-file Read inflates cache_creation immediately AND multiplies per-turn cache_read for the rest of the session. Top-3 M2.1 queue CONFIRMED unchanged (Op 1 / Op 2 / Op 3 sequencing intact).
+5. **`ingest_transcript.py` is the canonical retrospective tool** — stdlib-only Python; idempotent re-runs; runs `--all` in < 1 sec over 48 jsonl. Becomes the standard at any S3 close OR M2.3-class retrospective.
+6. **Cross-vault traversal observability now native** — `context_traversal` table + `tool_calls.traversal_id` FK enable inter-vault context-flow queries (15 rows captured at S3 close; corpus too small for ranking but mechanism live).
 
 ### Scope changes
-[S3 will populate]
+
+- None. All 5 operator decision gates resolved at plan exit (D1=A all 5 amendments / D2=B defer LatticeScope bootstrap / D3=A all 48 transcripts / D4=B CHANGELOG-only / D5=A canonical 3-session). S3 stayed within the spec (no late-discovery scope expansion).
+
+### Cross-session continuity
+
+S1 (spec authoring) and S2 (destructive execution) ran on `session_stanley_20260518_214714_v8_m14_s1` and `session_stanley_20260519T174844Z_v8_m14_s2` respectively. S3 (this close) ran on `session_stanley_20260519T185248Z_v8_m14_s3`. S2 and S3 were operator-discretionary continuations after explicit plan-mode approval per Standing Order #1. Hard constraints honored end-to-end across all 3 sessions (zero `.adna/` touches; zero partner-vault contact; zero `~/.claude/settings.json` modifications; zero ADR drafts at M1.4; `node.aDNA/` local-only; no file content captured).
 
 ## AAR
 
-Filled at S3 close. See [[../missions/artifacts/aar_m14_latticescope_schema.md|aar_m14_latticescope_schema.md]] (S3 deliverable).
+See [[../missions/artifacts/aar_m14_latticescope_schema.md|aar_m14_latticescope_schema.md]] (S3 deliverable; lightweight 5-line + 4-category extended findings; 12/12 acceptance-criteria scorecard; Standing-Order discharge table; token-budget estimate-vs-actual table).
