@@ -6,14 +6,14 @@ phase: 1
 mission_number: 1.4
 slug: latticescope_schema
 created: 2026-05-18
-updated: 2026-05-18
+updated: 2026-05-19
 status: in_progress
 opens_at: 2026-05-19T04:47:14Z
 opened_session: session_stanley_20260518_214714_v8_m14_s1
 closed_at:
 closed_session:
 estimated_sessions: 2-3
-actual_sessions:
+actual_sessions: 2  # S1 + S2 closed; S3 pending (validation + AAR + token_baselines refresh)
 persona: rosetta
 last_edited_by: agent_stanley
 spec_completeness: complete  # S1 authoring complete; S2 + S3 execution pending
@@ -137,12 +137,12 @@ Implementation-class; canonical 3-session shape (S1 non-destructive spec authori
 
 | # | Deliverable | Session | Status |
 |---|---|---|---|
-| 1 | M1.4 mission spec | S1 | 🟡 in_progress (this file) |
-| 2 | v0.1.1 schema bump DDL spec | S1 | pending |
-| 3 | Transcript resolver + `ingest_transcript.py` design spec | S1 | pending |
-| 4 | Schema migration applied + Amendments D+E live; `--self-test` PASS post-migration | S2 | pending |
-| 5 | `ingest_transcript.py` implementation + backfill execution (per D3 default A: all existing transcripts) | S2 | pending |
-| 6 | Amendments A + B + C live (per D1 default A) OR documented deferral to M1.5 | S2 | pending |
+| 1 | M1.4 mission spec | S1 | ✅ landed 2026-05-19T05:04Z |
+| 2 | v0.1.1 schema bump DDL spec | S1 | ✅ landed 2026-05-19T05:04Z (`m14_obj2_schema_v011_ddl.md`) |
+| 3 | Transcript resolver + `ingest_transcript.py` design spec | S1 | ✅ landed 2026-05-19T05:04Z (`m14_obj3_transcript_resolver_spec.md`) |
+| 4 | Schema migration applied + Amendments D+E live; `--self-test` PASS post-migration | S2 | ✅ landed 2026-05-19T17:54Z (user_version 0→101; 174 tool_calls preserved; live sessions row populated) |
+| 5 | `ingest_transcript.py` implementation + backfill execution (per D3 default A: all existing transcripts) | S2 | ✅ landed 2026-05-19T17:55Z (48 jsonl processed; 3577 turns; 645,265 kT cache_read total; reports at `~/.adna/measurement/reports/`) |
+| 6 | Amendments A + B + C live (per D1 default A) OR documented deferral to M1.5 | S2 | ✅ landed 2026-05-19T17:55Z (A/B/C wired in hook; RECIPE_PROTOCOL.md authored at `~/.adna/measurement/`; B/C will fire when triggered by env or cross-vault path) |
 | 7 | Validation output + AAR + token_baselines.md v0.1.1 refresh + mission close | S3 | pending |
 
 ## Acceptance criteria
@@ -234,7 +234,17 @@ Both audiences land at the same conclusion: **approximation got us a directional
 
 ## Status
 
-**S1 IN-PROGRESS** (this session — `session_stanley_20260518_214714_v8_m14_s1`; opened 2026-05-19T04:47:14Z). Spec authoring + 2 design-artifact authoring (Obj 2 + Obj 3). S2 + S3 destructive + close-out operator-gated per Standing Order #1.
+**S2 CLOSED 2026-05-19T17:55Z** (`session_stanley_20260519T174844Z_v8_m14_s2`). 6 of 7 deliverables landed:
+- Schema migration applied: `user_version` 0 → 101; 3 new columns (sessions.transcript_path, tool_calls.traversal_id, tool_calls.recipe_id) + context_traversal table + 4 new indexes; 174 tool_calls preserved (additive-only).
+- Hook v0.1.1 active: Amendments D (transcript_path resolution) + E (sessions INSERT OR IGNORE) + A (additional `.tool_input.usage.cache_*` defensive path) + B (cross-vault traversal detection → context_traversal INSERT) + C (`ADNA_RECIPE_ID` env or `# recipe:` first-line scan → tool_calls.recipe_id).
+- Live capture confirmed: 1 sessions row at `548dc261-18fb-4068-a17e-98f2b69fe52c` with vault=`aDNA.aDNA` + transcript_path resolved; 182 tool_calls with `claude_session_id` populated.
+- `ingest_transcript.py --all` processed 48 jsonl files in 0.36 sec: 3577 turns, 645,265 kT cache_read total, 19,350 kT cache_creation, 5287 kT output. Reports at `~/.adna/measurement/reports/session_<uuid>_usage.json`.
+- Hook `--self-test` PASS post-migration; `ingest_transcript.py --self-test` PASS (messageId dedup verified).
+- CHANGELOG v0.1.1 at `~/.adna/measurement/CHANGELOG.md`; RECIPE_PROTOCOL.md at `~/.adna/measurement/`.
+
+**S3 pending** (operator-gated per Standing Order #1): validation report `m14_obj7_validation_output.md` (pre/post-backfill convergence-model verdict refinement; pattern α/β/γ/δ re-rank; top-3 M2.1 queue sequencing) + AAR `aar_m14_latticescope_schema.md` + `node.aDNA/what/context/token_baselines.md` v0.1.0 → v0.1.1 refresh + campaign master M1.4 row flip to `completed` + STATE.md update + P1 → P2 phase-gate readiness signal.
+
+**S1 CLOSED 2026-05-19T05:04Z** (`session_stanley_20260518_214714_v8_m14_s1`). Mission spec + DDL spec + transcript resolver spec authored. Non-destructive authoring per canonical 3-session shape.
 
 **Forward-references**: M1.4 close unblocks the v8 P2 mission cohort (M2.1 context audit + M2.2 ADR-016 ratification + M2.3 convergence model validation + M2.4 AGENTS.md heat map). M2.3 specifically requires Amendment D (transcript_path) for CP-2..CP-4 measurement — M1.4 is M2.3's hard precondition.
 
