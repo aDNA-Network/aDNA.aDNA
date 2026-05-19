@@ -137,12 +137,12 @@ Implementation-class; canonical 3-session shape (S1 non-destructive design / S2 
 
 | # | Deliverable | Session | Status |
 |---|---|---|---|
-| 1 | M2.1 mission spec | S1 | landing this session |
-| 2 | Op 1 STATE.md split design spec | S1 | pending S1 |
-| 3 | Op 2 AGENTS.md hint design spec | S1 | pending S1 |
-| 4 | Op 3 auto-archive convention design spec | S1 | pending S1 |
-| 5 | Op 1 destructive execution — STATE.md split | S2 | pending S2 |
-| 6 | Op 2 destructive execution — AGENTS.md hint + MEMORY.md line + backlog placeholder | S2 | pending S2 |
+| 1 | M2.1 mission spec | S1 | **landed at S1** (this file; `mission_adna_str_p2_m21_context_audit_split.md`) |
+| 2 | Op 1 STATE.md split design spec | S1 | **landed at S1** (`artifacts/m21_obj2_state_split_design.md`) |
+| 3 | Op 2 AGENTS.md hint design spec | S1 | **landed at S1** (`artifacts/m21_obj3_agents_md_hint_design.md`) |
+| 4 | Op 3 auto-archive convention design spec | S1 | **landed at S1** (`artifacts/m21_obj4_archive_convention_design.md`) |
+| 5 | Op 1 destructive execution — STATE.md split | S2 | **landed at S2** (Phase A `STATE_archive.md` create SHA `95332df` + Phase B `STATE.md` router rewrite SHA `7a87022` + Phase C no-op cross-link audit 5/5 wikilink PASS + Phase D verification snapshot 841% router reduction factor) |
+| 6 | Op 2 destructive execution — AGENTS.md hint + MEMORY.md line + backlog placeholder | S2 | **landed at S2** (SHA `235c3fd`; 4 file writes: `AGENTS.md` Heavy-File Read Convention + auto-memory `MEMORY.md` index + auto-memory `feedback_heavy_file_read.md` + `how/backlog/idea_upstream_state_md_read_hint.md`) |
 | 7 | Validation output + AAR + node.aDNA addendum + mission close | S3 | pending S3 |
 
 ## Acceptance criteria
