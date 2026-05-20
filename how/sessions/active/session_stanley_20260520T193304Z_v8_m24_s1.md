@@ -8,7 +8,7 @@ session_id: session_stanley_20260520T193304Z_v8_m24_s1
 user: stanley
 started: 2026-05-20T19:33:04Z
 ended: 2026-05-20T19:45:00Z   # approximate S1 close per SITREP; flips to status: completed at S2 entry per M2.3 mission convention; file stays in active/ until S3 close moves to history/2026-05/
-status: active   # flips to completed at S2 entry per M2.3 mission convention
+status: completed   # flipped from active at S2 entry 2026-05-20T21:49:15Z per M2.3 mission convention; stays in active/ until S3 close moves both to history/2026-05/
 mission: mission_adna_str_p2_m24_agents_md_heatmap
 campaign: campaign_adna_serious_tool_readiness
 vault: aDNA.aDNA

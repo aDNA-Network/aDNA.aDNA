@@ -13,7 +13,9 @@ opened_session: session_stanley_20260520T193304Z_v8_m24_s1
 closed_at:
 closed_session:
 estimated_sessions: 3   # canonical 3-session shape — 5th instance after M1.3 + M1.4 + M2.1 + M2.3; overrides campaign-master pre-empirical 2-session forecast (ADR-016 Appendix A measurement+implementation hybrid)
-actual_sessions:
+actual_sessions: 2   # S1 + S2 complete; S3 pending — populates fully at S3 close per M2.3 convention
+s2_session: session_stanley_20260520T214915Z_v8_m24_s2   # destructive governance entry; Obj 3+4+5 landed; ADR-007 → ADR-019 → ADR-022 two-step slot reassignment chain documented at S2
+adr_007_slot_reassigned_to: ADR-022   # iterative slot reassignment: ADR-007 occupied by 2026-05-08 v2 M01 outer-CLAUDE.md disposition (1st collision at S2 entry); ADR-019 forecast-reserved at campaign master row 310 for Modular III for Obsidian (2nd collision mid-S2); ADR-022 final = next clear unreserved slot beyond all forecast reservations (ADR-014/015/018/019/020 all forecast-reserved); M1.5 ADR-017 reassignment precedent extended to two-step chain
 persona: rosetta
 last_edited_by: agent_stanley
 spec_completeness: in_progress   # S1 lands Obj 1 + Obj 2 = 2/6; S2 lands Obj 3 + Obj 4 + Obj 5 = 5/6; S3 lands Obj 6 = 6/6
@@ -120,7 +122,7 @@ Hybrid measurement+implementation class; canonical 3-session shape (S1 spec + he
 
 ### 3. Pattern β final verdict at ≥ 10-session sample (S2)
 
-- **Status**: pending S2
+- **Status**: completed (S2; this session 2026-05-20T214915Z) — HOLD at 14 ratified; 27.44% aggregate re-read on n=14 (in 20-28% band); CV 0.353 (< 0.4); correlation r=0.142 (< 0.4 PROMOTE threshold); per-mission-class binning unavailable (`session_type` NULL); forward refresh trigger M3.x ≥ 20 sessions
 - **Session**: S2
 - **Read**: Obj 2 §3 + §5 (Q2 + Q4 results); `aar_m23_convergence_validation.md` line 62-65 (CANDIDATE PROMOTION text); `m13_obj7_calibration_output.md` §6 pattern α/β/γ/δ definitions; `m23_obj3_initial_findings.md` §2 β candidate text.
 - **Produce**: `missions/artifacts/m24_obj3_pattern_beta_final_verdict.md` — 5 §sections:
@@ -134,7 +136,7 @@ Hybrid measurement+implementation class; canonical 3-session shape (S1 spec + he
 
 ### 4. AGENTS.md per-directory hardening audit (S2 — audit only per D5=B)
 
-- **Status**: pending S2
+- **Status**: completed (S2; this session 2026-05-20T214915Z) — 44-row inventory scored (8 canonical / 13 domain-OK / 22 procedural / 1 stale / 0 missing-invariant); 7-item per-directory invariants spec ratified (5 mandatory + 2 conditional); deterministic top-12 priority list from subtree-frequency proxy; 5 bulk-edit gap codes mapped; M2.4.5 OR M3.1 absorption dispatched at §7
 - **Session**: S2
 - **Read**: All 40 active AGENTS.md files (path inventory from Obj 2 Q1+Q4 deterministic sort); `m21_obj3_agents_md_hint_design.md` (Op 2 Heavy-File Read Convention reference for invariant item 4); `how/AGENTS.md` (canonical operations router shape); `what/context/AGENTS.md` (excellent-quality reference with 6-axis quality rubric).
 - **Produce**: `missions/artifacts/m24_obj4_agents_md_hardening_audit.md` — 7 §sections:
@@ -150,7 +152,7 @@ Hybrid measurement+implementation class; canonical 3-session shape (S1 spec + he
 
 ### 5. ADR-007 elevation (S2 — operator-gated; armed per M2.3 forward contract)
 
-- **Status**: pending S2
+- **Status**: completed (S2; this session 2026-05-20T214915Z) — **ADR-007 slot collision discovered at S2 entry → initial reassignment attempt ADR-019 → second collision discovered mid-S2 (ADR-019 forecast-reserved for Modular III for Obsidian at campaign master row 310) → final reassignment to ADR-022** (next clear unreserved slot beyond all forecast reservations); ADR-022 LIVE at `what/decisions/adr_022_tool_use_logging.md` with `status: accepted` + 3 clauses A (PostToolUse hook payload capture) + B (SQLite store schema + retention; v0.1.1) + C (analysis dispatch contract names `m24_obj2_heatmap_query_suite.md` as first consumer per `m23_obj5` §3 verbatim); elevation chain: provisional (M1.3) → queued-forecast (M2.2) → deferred (M2.3 S2) → accepted (M2.4 S2); slot reassignment chain ADR-007 → ADR-019 → ADR-022 documented at the ADR's `slot_reassignment_history` frontmatter block + §Status (M1.5 ADR-017 forward-only precedent extended to two-step chain)
 - **Session**: S2
 - **Read**: `m23_obj5_adr_007_deferral_memo.md` §2-3 (threshold + forward contract verbatim); `adr_016_per_mission_context_budget.md` (amendment shape; 3-clause + appendix structure as elevation pattern); current `m13_obj7_calibration_output.md` §6 ADR-007 candidate paragraph (provisional source); current campaign master ADR roadmap row (`adr_007` line).
 - **Verify trigger**: at S2 plan ratification, run `sqlite3 -readonly ~/.adna/measurement/measurement.sqlite "SELECT COUNT(*) FROM sessions;"`. Expected ≥ 10 (12+ with M2.3 S3 + M2.3.5 S1 + M2.4 S1 cumulative). If MET: produce ADR; if NOT MET: refresh deferral memo.
