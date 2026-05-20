@@ -9,7 +9,7 @@ status: active
 last_edited_by: agent_stanley
 tags: [spec, ecosystem, org_vault, org_graph, network, aDNA_pattern]
 extraction_source: ~/lattice/CLAUDE.md lines 204-252 (extracted at compliance campaign M01)
-co_signed_adr: aDNA.aDNA/what/decisions/adr_009_ecosystem_spec_extraction.md
+co_signed_adr: aDNA.aDNA/what/decisions/adr_012_ecosystem_spec_extraction.md
 covers_categories: [Org-Vault.aDNA, Org-Graph.aDNA, Network.aDNA]
 ---
 

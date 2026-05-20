@@ -9,7 +9,7 @@ status: active
 last_edited_by: agent_stanley
 tags: [spec, ecosystem, framework, aDNA_pattern]
 extraction_source: ~/lattice/CLAUDE.md lines 192-202 (extracted at compliance campaign M01)
-co_signed_adr: aDNA.aDNA/what/decisions/adr_009_ecosystem_spec_extraction.md
+co_signed_adr: aDNA.aDNA/what/decisions/adr_012_ecosystem_spec_extraction.md
 ---
 
 # Framework Ecosystem

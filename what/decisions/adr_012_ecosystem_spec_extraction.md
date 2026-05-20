@@ -1,5 +1,5 @@
 ---
-adr_id: adr_009
+adr_id: adr_012
 type: decision
 title: "Workspace-router ecosystem detail extracted to aDNA.aDNA/what/specs/"
 status: proposed
@@ -13,7 +13,9 @@ last_edited_by: agent_stanley
 tags: [adr, ecosystem, spec, claude_md_prune, router_token_budget]
 ---
 
-# ADR 009 — Workspace-Router Ecosystem Detail Extracted to `aDNA.aDNA/what/specs/`
+# ADR 012 — Workspace-Router Ecosystem Detail Extracted to `aDNA.aDNA/what/specs/`
+
+> Renumbered from ADR-009 to ADR-012 at apply time (compliance M01 Obj 6) — ADR-009 was concurrently claimed by `adr_009_aDNA_naming_convention.md` (committed `dfb5d2c` 2026-05 at P0→P1 gate of campaign_adna_v2_infrastructure). 012 was the lowest unused slot at apply time.
 
 ## Context
 
