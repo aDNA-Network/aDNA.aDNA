@@ -7,8 +7,8 @@ tags: [session, m24, v8, p2, agents_md_hardening_audit_only, pattern_beta_final_
 session_id: session_stanley_20260520T214915Z_v8_m24_s2
 user: stanley
 started: 2026-05-20T21:49:15Z
-ended:
-status: active   # flips to completed at S3 entry per M2.3 mission convention; both S1 + S2 stay in active/ until S3 close moves all 3 to history/2026-05/
+ended: 2026-05-20T23:11:30Z   # flipped at S3 entry per M2.3 mission convention; S1 + S2 + S3 all move to history/2026-05/ at S3 commit
+status: completed   # flipped at S3 entry per M2.3 mission convention; both S1 + S2 stay in active/ until S3 close moves all 3 to history/2026-05/
 mission: mission_adna_str_p2_m24_agents_md_heatmap
 campaign: campaign_adna_serious_tool_readiness
 vault: aDNA.aDNA

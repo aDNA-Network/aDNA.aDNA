@@ -7,18 +7,19 @@ mission_number: 2.4
 slug: agents_md_heatmap
 created: 2026-05-20
 updated: 2026-05-20
-status: in_progress
+status: completed
 opens_at: 2026-05-20T19:33:04Z
 opened_session: session_stanley_20260520T193304Z_v8_m24_s1
-closed_at:
-closed_session:
+closed_at: 2026-05-20T23:11:30Z+
+closed_session: session_stanley_20260520T231130Z_v8_m24_s3
 estimated_sessions: 3   # canonical 3-session shape — 5th instance after M1.3 + M1.4 + M2.1 + M2.3; overrides campaign-master pre-empirical 2-session forecast (ADR-016 Appendix A measurement+implementation hybrid)
-actual_sessions: 2   # S1 + S2 complete; S3 pending — populates fully at S3 close per M2.3 convention
+actual_sessions: 3   # S1 + S2 + S3 complete; canonical 3-session implementation-class shape — 5th instance ratified
 s2_session: session_stanley_20260520T214915Z_v8_m24_s2   # destructive governance entry; Obj 3+4+5 landed; ADR-007 → ADR-019 → ADR-022 two-step slot reassignment chain documented at S2
+s3_session: session_stanley_20260520T231130Z_v8_m24_s3   # non-destructive consolidation entry; Obj 6 mission close; AAR + obj7 + node.aDNA v0.1.3 + campaign master close + STATE.md Op 3 6th canonical instance + 3 session moves
 adr_007_slot_reassigned_to: ADR-022   # iterative slot reassignment: ADR-007 occupied by 2026-05-08 v2 M01 outer-CLAUDE.md disposition (1st collision at S2 entry); ADR-019 forecast-reserved at campaign master row 310 for Modular III for Obsidian (2nd collision mid-S2); ADR-022 final = next clear unreserved slot beyond all forecast reservations (ADR-014/015/018/019/020 all forecast-reserved); M1.5 ADR-017 reassignment precedent extended to two-step chain
 persona: rosetta
 last_edited_by: agent_stanley
-spec_completeness: in_progress   # S1 lands Obj 1 + Obj 2 = 2/6; S2 lands Obj 3 + Obj 4 + Obj 5 = 5/6; S3 lands Obj 6 = 6/6
+spec_completeness: complete   # S1 lands Obj 1 + Obj 2 = 2/6; S2 lands Obj 3 + Obj 4 + Obj 5 = 5/6; S3 lands Obj 6 = 6/6 (all deliverables LIVE at 2026-05-20T23:11:30Z+)
 mission_class: hybrid   # measurement (4 SQL queries against ≥10-session corpus + pattern-β re-rank) + implementation (AGENTS.md invariants codification + ADR-007 elevation) — lives at intersection of ADR-016 Appendix A measurement-row + implementation-row
 token_budget_estimated: "S1 ~60-100 kT content-load / ~10-15 M API-billing cache_read / ~60-100 turns (mission spec + heat-map query suite + Mermaid digraph; non-destructive); S2 ~90-150 kT / ~15-22 M / ~90-140 turns (β verdict + AGENTS.md audit-only + ADR-007 elevation; destructive); S3 ~60-90 kT / ~10-13 M / ~60-90 turns (AAR + obj7 + node.aDNA refresh + STATE.md Op-3 6th canonical instance + campaign master close + session moves). Aggregate ~210-340 kT / ~35-50 M / ~210-330 turns across 3 sessions. Two-metric form per ADR-016 Clause A refined columns + Clause C ratified formula (`cache_creation ≈ 328 K + turns × 1 K`; `cache_read ≈ 4.1 M + turns × 126 K`); Project SO #11 (refined at M2.3 S2) drift > 2× retrospective trigger."
 tags: [mission, m2_4, v8, p2, agents_md_per_directory_hardening, context_graph_traversal_heat_map, pattern_beta_re_rank_final_verdict, adr_007_elevation_armed, adr_016_consumer, m23_consumer, m23_5_template_consumer, m1_3_consumer, m1_4_consumer, m2_1_consumer, hybrid_class, canonical_3_session_shape_5th_instance, p2_exit_gate_closing_brick, m2_x_terminal_mission, audit_only_d5_b]
@@ -165,7 +166,7 @@ Hybrid measurement+implementation class; canonical 3-session shape (S1 spec + he
 
 ### 6. Mission close (S3)
 
-- **Status**: pending S3
+- **Status**: completed (S3; this session 2026-05-20T231130Z) — 6 sub-artifacts landed in one S3 commit: AAR `aar_m24_agents_md_heatmap.md` (lightweight 5-line + 4-category extended findings + 12/12 acceptance scorecard + 14/14 Standing-Order discharge + 3-session two-metric token-budget table + load-bearing finding propagation map covering BOTH AGENTS.md under-use re-frame [primary] AND ADR slot-reassignment chain doctrine [strong-extended]; load_bearing: true; Standing Order #8 self-reference 7th canonical instance closes M2.4) + `m24_obj7_validation_output.md` (8-section consolidation §1 Method / §2 Pattern re-rank confirmation HOLD β=14 / §3 API-billing companion validation + slot-reassignment investigation overhead noted / §4 Per-mission-class N/A note `sessions.session_type` NULL / §5 Threshold rule reconfirmation / §6 ADR-022 substrate-naming + 6 consumer-contract invariants / §7 Forward refs P2 → P3 phase exit gate READY + M2.4.5 OR M3.1 absorption + M2.1.5 + M3.x + v8 P6 / §8 12/12 acceptance) + `node.aDNA/what/context/token_baselines.md` v0.1.2 → v0.1.3 (§4 pattern β HOLD ratification update + Final ranking M2.4 ratified + NEW §8 AGENTS.md heat-map summary section + NEW Appendix B per-directory AGENTS.md invariants spec verbatim from m24_obj4 §3 + revision history v0.1.3 row + frontmatter context_version + tags + provenance extended) + companion `.yaml` (content_entity.version + revision.current_version 0.1.2 → 0.1.3 + provenance.method.m24_heat_map_and_invariants added + dependencies.upstream extended with 6 M2.4 artifacts + ADR-022 + history v0.1.3 row) + `inventory_vaults.yaml` (token_baselines row version-bump 0.1.2 → 0.1.3 + v0_1_3 lineage fields + note extended) + Campaign master M2.4 row `in_progress → completed` + amendments-table entry + ADR-022 roadmap finalization + STATE.md router Op 3 archive-on-close pattern **6th canonical instance** (As-of header refreshed; M2.4 CLOSED bullet at top with full S3 detail; M2.4 S2 LANDED bullet demoted to concise form; Next Steps refreshed for P2 → P3 phase exit gate READY; Last Session block + Next Session Prompt updated; ≤ 20 kT cap maintained) + 3 session files (S1 + S2 + S3) moved `active/` → `history/2026-05/` at S3 commit.
 - **Session**: S3
 - **Produce**:
   - `missions/artifacts/aar_m24_agents_md_heatmap.md` — lightweight 5-line + 4-category extended findings; load-bearing tag if hardening invariants spec is operationally adopted; 12+ acceptance scorecard; 14+ row Standing-Order discharge table; two-metric token-budget table (estimate vs actual all 3 sessions).
