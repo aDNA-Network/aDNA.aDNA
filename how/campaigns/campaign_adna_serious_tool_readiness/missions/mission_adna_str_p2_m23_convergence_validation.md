@@ -7,16 +7,16 @@ mission_number: 2.3
 slug: convergence_validation
 created: 2026-05-20
 updated: 2026-05-20
-status: in_progress
+status: completed
 opens_at: 2026-05-20T04:32:48Z
 opened_session: session_stanley_20260520T043248Z_v8_m23_s1
-closed_at:
-closed_session:
+closed_at: 2026-05-20T10:24:16Z
+closed_session: session_stanley_20260520T102416Z_v8_m23_s3
 estimated_sessions: 3   # canonical implementation-class shape (4th instance after M1.3 + M1.4 + M2.1)
-actual_sessions:
+actual_sessions: 3
 persona: rosetta
 last_edited_by: agent_stanley
-spec_completeness: in_progress   # 3 of 7 deliverables at S1 (mission spec + corpus extraction + initial findings); 4 remaining at S2/S3
+spec_completeness: complete   # 7/7 deliverables landed: S1 (1-3) + S2 (4-6) + S3 (7)
 mission_class: implementation   # heavy NEW data analysis (per-mission-type cache distributions across 49-session corpus); produces measurement artifacts + governance synthesis input; distinct from M2.2/M1.5 planning-class
 token_budget_estimated: "S1 ~60-90 kT (mission spec + corpus extraction + initial findings) / S2 ~80-150 kT (synthesis + ADR amendment or ADR-018 draft) / S3 ~60-90 kT (AAR + status flips + STATE.md router refresh + node.aDNA token_baselines.md v0.1.1+M23 addendum)"   # per ADR-016 Clause A + Project Standing Order #11
 tags: [mission, m2_3, v8, p2, adr_016_consumer, adr_007_candidate, convergence_model_validation, cross_campaign_retrospective, api_billing_formula_ratification, per_mission_type_distributions, pattern_re_rank, m13_obj7_consumer, m14_obj7_consumer, m21_obj7_consumer, ingest_transcript_corpus, 49_session_corpus, implementation_class, canonical_3_session_shape]
@@ -171,13 +171,13 @@ Implementation-class; canonical 3-session shape (S1 design + initial extraction 
 
 | # | Deliverable | Session | Status |
 |---|---|---|---|
-| 1 | M2.3 mission spec | S1 | **landed at S1** (this file) |
-| 2 | `missions/artifacts/m23_obj2_corpus_extraction.md` | S1 | pending S1 (in-flight) |
-| 3 | `missions/artifacts/m23_obj3_initial_findings.md` | S1 | pending S1 |
-| 4 | ADR-016 amendment OR new `adr_018_api_billing_companion_formula.md` | S2 | pending S2 (operator-gated; D1 ratifies) |
-| 5 | ADR-007 elevation decision (+ optional draft) | S2 | pending S2 (operator-gated; D2 ratifies) |
-| 6 | Per-mission-type distribution table (appendix to governance artifact) | S2 | pending S2 |
-| 7 | AAR + obj7 validation + node.aDNA token_baselines update + campaign master + STATE.md refresh + session close | S3 | pending S3 (operator-gated) |
+| 1 | M2.3 mission spec | S1 | ✅ **landed at S1** (this file) |
+| 2 | `missions/artifacts/m23_obj2_corpus_extraction.md` | S1 | ✅ **landed at S1** (14 §sections; 49-session aggregate + linear regression + time-trend + heavy-file compliance + re-read + traversal + per-mission-type) |
+| 3 | `missions/artifacts/m23_obj3_initial_findings.md` | S1 | ✅ **landed at S1** (8 §sections; verdict + pattern re-rank + API-billing formula candidate + per-mission-type table + D1-D5 flags + forward refs) |
+| 4 | ADR-016 amendment OR new `adr_018_api_billing_companion_formula.md` | S2 | ✅ **landed at S2 — D1=A path** (ADR-016 amendment in place; Clause C ratified + Clause A threshold dual columns + Appendix A per-mission-type; line count 146 → 200) |
+| 5 | ADR-007 elevation decision (+ optional draft) | S2 | ✅ **landed at S2 — D2=B path** (`m23_obj5_adr_007_deferral_memo.md` 6-section memo with gap analysis n=7 < ≥10 + M2.4 dispatch contract + alternative-considered rejection) |
+| 6 | Per-mission-type distribution table (appendix to governance artifact) | S2 | ✅ **landed at S2 — D4=B path** (ADR-016 §Appendix A 5 mission-class rows; n=2-9 caveats explicit; v8 baseline; codification deferred to future cumulative ADR at n ≥ 5 per class) |
+| 7 | AAR + obj7 validation + node.aDNA token_baselines update + campaign master + STATE.md refresh + session close | S3 | ✅ **landed at S3** (this session; `aar_m23_convergence_validation.md` + `m23_obj7_validation_output.md` + node.aDNA `token_baselines.md` v0.1.1 → v0.1.2 + companion `.yaml` + `inventory_vaults.yaml` row + this mission frontmatter flip + campaign master M2.3 row + STATE.md router Op-3 4th canonical instance refresh + 3 session moves) |
 
 ## Acceptance criteria
 
@@ -272,6 +272,10 @@ Dual-audience test:
 **S1 OPENED 2026-05-20T04:32:48Z** (`session_stanley_20260520T043248Z_v8_m23_s1`). Mission spec authoring in progress per plan `/Users/stanley/.claude/plans/please-read-the-claude-md-delegated-seahorse.md`.
 
 Plan covers S1 only (non-destructive: mission spec + corpus extraction + initial findings). S2 + S3 operator-gated per Project Standing Order #1.
+
+**S2 LANDED 2026-05-20T~06:25Z+** (`session_stanley_20260520T060143Z_v8_m23_s2`). Plan ratified at `/Users/stanley/.claude/plans/please-read-the-claude-md-majestic-pie.md`. All 5 D-decisions (D1-D5) ratified with Rosetta defaults: D1=A in-place ADR-016 Clause C amendment / D2=B ADR-007 deferral to M2.4 via memo / D3=A Project SO #11 single-sentence refinement / D4=B per-mission-type as ADR-016 Appendix A / D5=A Clause A threshold table API-billing companion columns. 6/7 cumulative deliverables landed; ADR-016 line count 146 → 200; Project Standing Order #11 refined at `aDNA.aDNA/CLAUDE.md` line 151; `m23_obj5_adr_007_deferral_memo.md` filed.
+
+**S3 + MISSION CLOSED 2026-05-20T10:24:16Z** (`session_stanley_20260520T102416Z_v8_m23_s3`). Plan ratified at `/Users/stanley/.claude/plans/please-read-the-claude-md-fuzzy-newell.md`. 7/7 cumulative deliverables landed; canonical 3-session implementation-class shape **4th instance** after M1.3 + M1.4 + M2.1. Final deliverable 7 produced: (a) `missions/artifacts/aar_m23_convergence_validation.md` — implementation-class AAR with lightweight 5-line + 4-category extended findings + 15/15 acceptance scorecard PASS + 14-row Standing-Order discharge table + 3-session token-budget table (S1+S2+S3 all within band) + load-bearing-finding propagation map; load-bearing finding **"the calibration formula was ratified on the very session it was designed to predict"** (Standing Order #8 self-reference 3rd canonical instance after M2.2 + M1.5; M2.3 S2 own estimate-vs-actual data point fed Clause A threshold table). (b) `missions/artifacts/m23_obj7_validation_output.md` — 8-section post-ratification consolidation (verdict + pattern re-rank + ratified API-billing formula + per-mission-type calibration + threshold rule + ADR-007 deferral rationale + forward references + 15/15 acceptance scorecard final). (c) `node.aDNA/what/context/token_baselines.md` v0.1.1 → v0.1.2 — fold-in: §2.2 RATIFIED API-billing formula + §3 corpus-extended verdict with Clause A dual columns + §4 corpus-extended pattern ranking (β=14 candidate promotion) + §5 ratified Clause C constants + §7 NEW per-mission-type calibration table (5 mission classes). (d) Companion `node.aDNA/what/context/token_baselines.yaml` — content_entity.version + revision.current_version 0.1.1 → 0.1.2 + v0_1_2 revision row + provenance + dependencies + sources + tags extended. (e) `node.aDNA/what/inventory/inventory_vaults.yaml` token_baselines row — version 0.1.1 → 0.1.2 + v0_1_2_mission/session lineage fields + extended note. (f) Campaign master M2.3 row `in_progress → completed` + ADR-016 roadmap row final state + amendments-table 2026-05-20 entry appended. (g) STATE.md (router) Op-3 archive-on-close pattern **4th canonical instance** refresh — M2.3-CLOSED bullet replaces M1.5-CLOSED at top; M1.5 demoted to concise form; Next Steps surfaces M2.4 unblock at SQLite session ≥ 10 threshold (per `m23_obj5` §2 closing-the-gap forecast). (h) All 3 M2.3 session files (S1 + S2 + S3) moved `active/` → `history/2026-05/` per M2.3 mission convention. **Hard constraints honored end-to-end**: zero `.adna/` upstream touches (v7.0 frozen at `27e6395`); zero partner-vault contact (4 embargo memos preserved); zero `~/.claude/settings.json` modifications; zero `~/.adna/measurement/measurement.sqlite` mutations (read-only throughout); zero hook modifications; node.aDNA writes bounded to exactly 3 files (`token_baselines.md` + `.yaml` + `inventory_vaults.yaml` row); zero new ADR work at S3 (ADR-016 amendment landed at S2; ADR-007 stays deferred per `m23_obj5`; ADR-018 slot preserved for validation-as-dispatched-campaign). **M2.3 close UNBLOCKS** M2.4 AGENTS.md heat map (SQLite session count crosses 7 → 10 at this S3 close per `m23_obj5` §2; M2.4 entry adds 1 for one-session buffer); M2.1.5 retroactive Op 3 stays `planned-optional` (operator-discretionary parallel; D4=A default to M3.x); v8 P6 ecosystem propagation queue inherits ADR-016 amendment + Standing Order #11 refinement at v8.0 tag firing.
 
 **Forward references**:
 - **M2.4 AGENTS.md heat map** — consumes M2.3 §6 re-read rate analysis; gates on ≥ 10 live-hook sessions (M2.3 contributes 3 sessions: S1 + S2 + S3); pre-threshold post-M2.3 close (would need ~7 more sessions).
