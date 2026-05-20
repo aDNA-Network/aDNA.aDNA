@@ -81,6 +81,15 @@ Domain-specific entity types added by the aDNA.aDNA project for documentation, e
 | 23 | workshop | HOW | `how/workshops/` | Workshop kits and facilitation guides | extension/rosetta |
 | 24 | publishing | HOW | `how/publishing/` | Vault-to-web content publishing pipeline | extension/rosetta |
 
+### Network.aDNA Extensions (2 Entity Types)
+
+Domain-specific entity types added by the `LatticeNetwork.aDNA` (Alpha Lattice) instance for the Network.aDNA pattern category (6th canonical pattern per LIP-0006; ratified at aDNA standard via [[decisions/adr_017_network_adna_pattern_category_and_namespace_ratification.md|ADR-017]] 2026-05-20 — single comprehensive ADR covering LIP-0006 countersign + `network_` namespace reservation + parallel-discharge of both entity-types per peer ADR-005 rule 6 + ADR-008 §f invariant). Namespace `network_` co-claim (peer ADR-005 rule 2(c)) — single namespace covers both rows. v8.0 P6 batch promotion to base ontology per ADR-017 §Decisions D5+D8.
+
+| # | Entity | Triad | Directory | Purpose | Merge Behavior |
+|---|--------|-------|-----------|---------|----------------|
+| 25 | network_node_mirror | WHAT | `what/network/nodes/<hostname>.aDNA/` | Per-node mirror directory (source: each node's own `node.aDNA`; SO-7 read-mostly invariant; aggregator-side; full sub-triad structurally distinct from base `context` per peer ADR-002 §a) | extension/network |
+| 26 | permission_edge | WHAT | `what/network/permissions/<edge_id>.yaml` | Directed authentication edge between nodes (10-field body per peer ADR-008 §g; lifecycle bound to LIP-0003 ledger events at peer arch_01 §6.4 call-site 3) | extension/network |
+
 ### Triad Structure (Diagram 1)
 
 ```mermaid
@@ -193,7 +202,7 @@ At each execution level, irrelevant knowledge is pruned — the working set decr
 
 | Level | Entity Types in Scope | Reduction |
 |-------|----------------------|-----------|
-| Full ontology | 32 types (14 base + 18 extension) | — |
+| Full ontology | 34 types (14 base + 20 extension) | — |
 | Campaign: org_formation | 22 types (CRM + Science pruned) | 32 → 22 (31%) |
 | Mission: Role Architecture | 5 types (role, member, team, sessions, decisions) | 22 → 5 (77%) |
 | Objective: Draft role charters | 2 types (role, member) | 5 → 2 (60%) |

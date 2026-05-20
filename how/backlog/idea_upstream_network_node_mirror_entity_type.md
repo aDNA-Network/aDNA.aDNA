@@ -1,8 +1,9 @@
 ---
 type: backlog
-status: pending_upstream_review
+status: ratified_local  # flipped from pending_upstream_review at M1.5 S1 close 2026-05-20 via ADR-017 §Decision Clause C parallel-discharge per peer ADR-005 rule 6 + ADR-008 §f
 created: 2026-05-18
 filed_retroactively: 2026-05-19
+updated: 2026-05-20
 last_edited_by: agent_stanley
 originating_vault: LatticeNetwork.aDNA (display: Alpha Lattice)
 originating_session: session_stanley_20260518_143528_arch_01_spec_body
@@ -14,7 +15,16 @@ upstream_target: adna_v8_namespace_network_node_mirror_extension
 fold_in_checkpoint: phase_7_cross_check_in_to_adna_adna
 carry_ref: LatticeNetwork.aDNA/who/coordination/coord_2026_05_18_adna_standard_interop.md
 parallel_discharge_with: idea_upstream_permission_edge_entity_type.md  # same namespace claim; same upstream contract; ADR-005 rule 6 + ADR-008 §f parallel discharge
-tags: [backlog, upstream_proposal, vault_local_extension, network_, network_node_mirror, network_adna, latticenetwork, alphalattice, awaiting_countersign]
+ratification_log:
+  - ratified_at: 2026-05-20  # M1.5 S1 close UTC (filled at commit)
+    ratified_session: session_stanley_20260520T031453Z_v8_m15_s1
+    via_adr: adr_017_network_adna_pattern_category_and_namespace_ratification
+    via_ontology_update: what/ontology.md  # §Network.aDNA Extensions (2 Entity Types) subsection
+    via_response_memo: who/coordination/coord_2026_05_19_v8_m15_latticenetwork_ratification_response.md
+    commit_hash: <filled at commit>
+    parallel_discharge_sibling_status: ratified_local  # idea_upstream_permission_edge_entity_type.md flipped together per ADR-005 rule 6
+    v8_p6_promotion_target: base_ontology  # per ADR-017 §Decisions D8=A
+tags: [backlog, upstream_proposal, vault_local_extension, network_, network_node_mirror, network_adna, latticenetwork, alphalattice, ratified_local, adr_017, parallel_discharge_complete]
 ---
 
 # Upstream proposal — `network_node_mirror` entity-type (namespace `network_`)
@@ -91,6 +101,32 @@ Per ADR-005 rule 6 + ADR-008 §f, partial discharge (one entity-type but not the
 3. Countersign at Phase-7 cross-check-in OR file counter-proposal per ADR-005 rule 6 escalation
 4. If counter-proposing namespace rename (e.g., to `mirror_` instead of `network_`), apply rename to BOTH entity-types in parallel; partial rename invalidates the rule 2(c) co-claim inheritance
 5. Consider whether the pre-transmission-dossier-plus-post-transmission-mirror co-location pattern (genesis prototype `percy_l1.aDNA/`) warrants explicit v8.0+ documentation as a sibling pattern
+
+## Ratification log
+
+| Field | Value |
+|---|---|
+| **Ratified** | 2026-05-20 (M1.5 S1 close) |
+| **Ratified-session** | `session_stanley_20260520T031453Z_v8_m15_s1` |
+| **Via ADR** | [[../../what/decisions/adr_017_network_adna_pattern_category_and_namespace_ratification.md\|ADR-017]] §Decision Clause C |
+| **Via ontology update** | [[../../what/ontology.md\|`aDNA.aDNA/what/ontology.md`]] `### Network.aDNA Extensions (2 Entity Types)` subsection — `network_node_mirror` row 25 |
+| **Via response memo** | [[../../who/coordination/coord_2026_05_19_v8_m15_latticenetwork_ratification_response.md\|`coord_2026_05_19_v8_m15_latticenetwork_ratification_response.md`]] §3.2 |
+| **Commit hash** | `<filled at commit>` |
+| **Parallel-discharge sibling status** | `idea_upstream_permission_edge_entity_type.md` — also `ratified_local` (flipped in same commit per peer ADR-005 rule 6 + ADR-008 §f) |
+| **v8 P6 promotion target** | base ontology (14 → 14+2 base types at v8.0 tag per ADR-017 §Decisions D5 + D8) |
+
+**Status transition**: `pending_upstream_review → ratified_local`. Vault-local namespace + entity-type now recognized at the aDNA standard-owner level; v8.0 P6 batch propagation to `.adna/` upstream template + base-ontology table queued per Campaign S.O. #14 + ADR-005 rule 3.
+
+**F-S13-02 finding fully discharged**: this placeholder was created retroactively 2026-05-19 (Session 15 / arch_04 pre-flight) per F-S13-02 cleanup; ratification at M1.5 closes the F-S13-02 lifecycle. Both sibling placeholders now ratified together — the parallel-discharge invariant holds even though the placeholders were filed asymmetrically (sibling filed 2026-05-18; this one filed 2026-05-19 retroactively).
+
+**Peer-vault flips pending at Venus's next session** (out of M1.5 scope per Hard Constraint zero-writes-into-peer-vaults — Venus reads ADR-017 via git-as-coordination-bus + applies):
+
+- `LatticeNetwork.aDNA/MANIFEST.md` `### Vault-local extension entity types` table row 1 `Standard?` column update.
+- `LatticeNetwork.aDNA/what/specs/spec_network_adna_structure.md §3` `assumes_draft: true → false` flip per peer ADR-003 rule 4.
+- `LatticeNetwork.aDNA/who/governance/adr_002_network_adna_graph_schema.md §a` `assumes_draft: true → false` flip.
+- `LatticeNetwork.aDNA/who/governance/adr_005_vault_local_entity_type_ratification_protocol.md` §Ratification log entry.
+- `LatticeNetwork.aDNA/what/network/nodes/AGENTS.md` `assumes_draft: true → false` flip; genesis prototype exemplar `percy_l1.aDNA/` SO-8 disclaimer can stay (pre-transmission dossier; not a verified mirror — distinct from `network_node_mirror` ratification).
+- `LatticeNetwork.aDNA/CHANGELOG.md` entry recording the parallel discharge.
 
 ## Cross-references
 
