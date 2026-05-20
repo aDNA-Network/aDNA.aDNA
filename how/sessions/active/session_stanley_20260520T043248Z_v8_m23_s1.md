@@ -7,7 +7,8 @@ tags: [session, m23, v8, p2, convergence_model_validation, cross_campaign_retros
 session_id: session_stanley_20260520T043248Z_v8_m23_s1
 user: stanley
 started: 2026-05-20T04:32:48Z
-status: in_progress
+ended: 2026-05-20T05:00:00Z   # approximate close per S1 SITREP
+status: completed   # flipped at M2.3 S2 entry 2026-05-20T06:01:43Z; file stays in active/ until S3 close moves to history/2026-05/ per M2.3 mission convention
 mission: mission_adna_str_p2_m23_convergence_validation
 campaign: campaign_adna_serious_tool_readiness
 vault: aDNA.aDNA
