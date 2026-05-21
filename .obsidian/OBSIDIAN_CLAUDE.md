@@ -1,6 +1,17 @@
+---
+type: governance
+created: 2026-05-21
+updated: 2026-05-21
+status: active
+last_edited_by: agent_stanley
+tags: [obsidian, governance, ai_agent_guide, plugins, snippets, safety_rules, m31_obj5_docs_drift_fix]
+---
+
 # OBSIDIAN_CLAUDE.md — AI Guide for Obsidian Interaction
 
 This guide helps AI agents safely interact with the Obsidian configuration in an aDNA vault.
+
+> **Authoritative source for plugin enablement**: [`community-plugins.json`](community-plugins.json). The plugin tables below mirror that JSON; any discrepancy is a documentation bug. See [`README.md`](README.md) for the human-facing plugin overview.
 
 ## Configuration Structure
 
@@ -46,7 +57,7 @@ These files are excluded from git (`.gitignore`) because they contain machine-sp
 4. **ALWAYS** validate JSON syntax before saving
 5. **NEVER** modify `workspace.json` while Obsidian is running
 
-## Plugins (14 community plugins)
+## Plugins (15 community plugins)
 
 ### Essential (vault functionality depends on these)
 
@@ -64,7 +75,7 @@ These files are excluded from git (`.gitignore`) because they contain machine-sp
 | Homepage | `homepage` | Set start page on vault open | Configured in plugin data.json |
 | Style Settings | `obsidian-style-settings` | GUI controls for CSS snippet options | Required for @settings blocks |
 | Icon Folder | `obsidian-icon-folder` | Custom folder/file icons | Triad folder icons |
-| Advanced Canvas | `advanced-canvas` | Extended canvas features | Groups, portals, styles |
+| Advanced Canvas | `obsidian-advanced-canvas` | Extended canvas features | Groups, portals, styles |
 | BRAT | `obsidian42-brat` | Beta plugin manager | Auto-installs/updates Termy |
 
 ### Optional (nice-to-have)
@@ -76,6 +87,7 @@ These files are excluded from git (`.gitignore`) because they contain machine-sp
 | Termy | `termy` | Terminal with preset scripts | 3 agent CLI presets (Claude Code, Codex, Gemini) |
 | Pretty Properties | `pretty-properties` | Polished property display | Renders frontmatter |
 | Fold Properties | `fold-properties-by-default` | Auto-fold frontmatter | Cleaner reading view |
+| Settings Search | `settings-search` | Fuzzy-find any Obsidian setting or plugin option | Useful for discovering hidden settings |
 
 ### Templater Folder Mappings
 

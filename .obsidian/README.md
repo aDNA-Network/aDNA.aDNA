@@ -6,6 +6,8 @@ This directory contains Obsidian vault configuration. Most files are checked int
 
 ## Plugins (15 community plugins)
 
+> **Authoritative source**: [`community-plugins.json`](community-plugins.json) — Obsidian reads this file to determine which plugins are enabled. The table below mirrors the JSON; any discrepancy is a documentation bug (see [`OBSIDIAN_CLAUDE.md`](OBSIDIAN_CLAUDE.md) for full plugin metadata).
+
 | Plugin | ID | Purpose |
 |--------|----|---------|
 | Dataview | `dataview` | Query and display structured data from frontmatter |
@@ -15,9 +17,9 @@ This directory contains Obsidian vault configuration. Most files are checked int
 | Tasks | `obsidian-tasks-plugin` | Task tracking with queries |
 | Style Settings | `obsidian-style-settings` | Customize CSS snippet options via GUI |
 | Table Editor | `table-editor-obsidian` | Better markdown table editing |
-| Omnisearch | `omnisearch` | Vault-wide fuzzy search |
-| Terminal | `terminal` | Terminal access from Obsidian |
-| Folder Notes | `folder-notes` | Index files for folder navigation |
+| BRAT | `obsidian42-brat` | Beta plugin manager (auto-installs/updates Termy) |
+| Termy | `termy` | Terminal with preset scripts (3 agent CLI presets) |
+| Settings Search | `settings-search` | Fuzzy-find any Obsidian setting or plugin option |
 | Notebook Navigator | `notebook-navigator` | Folder-based notebook navigation with icons |
 | Icon Folder | `obsidian-icon-folder` | Custom folder/file icons (triad colors) |
 | Advanced Canvas | `obsidian-advanced-canvas` | Extended canvas features (groups, portals) |
