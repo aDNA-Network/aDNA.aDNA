@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-17
-updated: 2026-04-03
-last_edited_by: agent_init
+updated: 2026-05-20
+last_edited_by: agent_stanley
 tags: [directory_index, campaign]
 ---
 
@@ -189,3 +189,16 @@ For campaigns that will be executed by multiple agents or span many sessions, cr
 - Already know the campaign directory path and are drilling into a specific campaign
 
 **Token cost**: ~1,100 tokens (this AGENTS.md)
+
+## Heavy-File Warning
+
+Campaign master documents accumulate amendments across all missions in a campaign and can become heavy (≥ 50 kT) by mid-to-late phases. The v8 campaign master (`campaign_adna_serious_tool_readiness/campaign_adna_serious_tool_readiness.md`) currently exceeds the heavy threshold per the M2.1 Heavy-File Read Convention. Default to `offset` + `limit` Reads on campaign masters when you need only the recent amendments or a specific phase row; full Reads should be reserved for campaign closeout audits. See [[../../what/decisions/adr_016_per_mission_context_budget.md|ADR-016 Clause B]] for the canonical Heavy-File Read Convention.
+
+## Cross-References
+
+- [[../AGENTS.md|how/AGENTS]] — Operations layer index
+- [[../missions/AGENTS.md|how/missions/AGENTS]] — Standalone missions (campaign missions live inside their campaign directory)
+- [[../missions/artifacts/AGENTS.md|how/missions/artifacts/AGENTS]] — Mission AAR + artifact directory
+- [[../sessions/AGENTS.md|how/sessions/AGENTS]] — Session protocol (sessions execute campaign-mission objectives)
+- [[../templates/template_campaign.md|template_campaign]] — Campaign master document template
+- [[../templates/template_aar_lightweight.md|template_aar_lightweight]] — 5-line AAR format (mandatory before mission/campaign close)

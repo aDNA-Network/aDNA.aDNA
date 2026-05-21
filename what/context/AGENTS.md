@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-17
-updated: 2026-03-28
-last_edited_by: agent_aria
+updated: 2026-05-20
+last_edited_by: agent_stanley
 tags: [directory_index, context]
 ---
 
@@ -158,3 +158,10 @@ Pre-defined context assemblies for multi-disciplinary tasks. See `context_recipe
 **Token budget awareness**: This AGENTS.md is ~1,100 tokens. Each topic has its own AGENTS.md (~300-400 tokens) with a subtopic index. Load the topic index first, then only the subtopics you need — never load an entire topic directory blindly.
 
 **Token cost**: ~1,100 tokens (this AGENTS.md)
+
+## Cross-References
+
+- [[../AGENTS.md|what/AGENTS]] — Knowledge layer index
+- [[context_recipes.md|context_recipes]] — Cross-topic context assembly recipes (3-tier budget)
+- [[../docs/context_quality_rubric.md|context_quality_rubric]] — 6-axis evaluation rubric for context quality
+- [[../../how/templates/template_context.md|template_context]] — Context file template

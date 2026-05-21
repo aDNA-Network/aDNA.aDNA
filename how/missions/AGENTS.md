@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-17
-updated: 2026-04-03
-last_edited_by: agent_init
+updated: 2026-05-20
+last_edited_by: agent_stanley
 tags: [directory_index, missions]
 ---
 
@@ -111,3 +111,19 @@ Before updating mission status fields (`status`, task `status`):
 - Already know the mission file path and can load it directly
 
 **Token cost**: ~600 tokens (this AGENTS.md)
+
+## Safety Hints (Inv 2 — destructive-state dir)
+
+⚠ Mission `status` fields are destructive-state transitions (`planning → active → in_progress → completed | abandoned`). Read before writing; check `updated` to avoid overwriting another agent's status edit. Never delete a mission file — set `status: abandoned` with rationale per the Lifecycle §Abandoning a plan section. Mission specs at S3-close can be heavy (≥ 50 kT); see Heavy-File Warning below.
+
+## Heavy-File Warning (Inv 5)
+
+Mission spec files often grow heavy at S3 close (≥ 50 kT) because each session adds session-close prose to the §Status section. Examples: [[../campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p2_m24_agents_md_heatmap.md|M2.4 mission spec]] (multi-session implementation-class shape; large S3 close prose). Default to `offset` + `limit` Reads on closed mission specs when looking for a specific objective + acceptance criterion; full Reads are appropriate at mission opening for context-loading. See [[../../what/decisions/adr_016_per_mission_context_budget.md|ADR-016 Clause B]].
+
+## Cross-References
+
+- [[../AGENTS.md|how/AGENTS]] — Operations layer index (parent directory)
+- [[../campaigns/AGENTS.md|how/campaigns/AGENTS]] — Campaign protocol (campaign missions live inside their campaign directory at `how/campaigns/campaign_<name>/missions/`; this directory holds standalone missions only)
+- [[artifacts/AGENTS.md|how/missions/artifacts/AGENTS]] — Mission AAR + artifact directory (parent-child triangle vertex)
+- [[../sessions/AGENTS.md|how/sessions/AGENTS]] — Session protocol (sessions execute mission objectives)
+- [[../templates/template_mission.md|template_mission]] — Mission spec template

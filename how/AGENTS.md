@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-17
-updated: 2026-03-19
-last_edited_by: agent_init
+updated: 2026-05-20
+last_edited_by: agent_stanley
 tags: [directory_index, ops]
 ---
 

@@ -1,7 +1,7 @@
 ---
 type: directory_index
 created: 2026-04-13
-updated: 2026-04-13
+updated: 2026-05-20
 last_edited_by: agent_stanley
 tags: [directory_index, root]
 ---
@@ -78,6 +78,19 @@ aDNA.aDNA/
 - [how/AGENTS](how/AGENTS.md) — Operations (HOW) — campaigns, workshops, publishing, missions, sessions, templates, skills, pipelines
 - [who/AGENTS](who/AGENTS.md) — Organization (WHO) — community, adopters, coordination, governance
 
+## Load/Skip Decision
+
+**Load this directory when**:
+- Cold-start orientation — confirming Rosetta persona, project structure, learning paths
+- Routing decision before drilling into a specific triad leg
+- Reviewing safety rules + heavy-file convention before destructive work
+
+**Skip when**:
+- Already oriented mid-session and drilling into a specific subdirectory
+- The task is local to a single triad leg and the leg's AGENTS.md is loaded
+
+**Token cost**: ~700 tokens (this AGENTS.md)
+
 ## Safety Rules
 
 - **Read before write** — always read current content before modifying
@@ -85,9 +98,13 @@ aDNA.aDNA/
 - **Set `last_edited_by` and `updated`** — on every modification
 - **New files are safe** — creating new files has no collision risk
 
+## Archive Cross-Reference (Op 3 — router-vs-archive)
+
+The canonical instance of the **Op 3 archive-on-close** pattern at this vault is the `STATE.md` ↔ [[STATE_archive.md|STATE_archive.md]] split (ratified at M2.1 S2 2026-05-19; refreshed at every mission close via the Op 3 archive convention). The router (`STATE.md`) holds the most-recent live session block + Next Session Prompt; historical session prose accumulates in the archive. When you need to load operational state, default to the router; consult the archive only for audit / historical investigation.
+
 ## Heavy-File Read Convention
 
-For any file ≥ ~ 50 kT content-load OR ≥ 200 KB byte size, default to `offset` + `limit` parameters on Read. Typical heavy files: `STATE.md` (this vault and others), campaign masters, mission files at S3 close, large AAR aggregates. The router-vs-archive pattern (see [[STATE_archive.md|STATE_archive.md]] for the canonical instance) splits heavy files into a live router + an audit archive; even the router benefits from partial Reads when only the top bullet is needed. See `node.aDNA/what/context/token_baselines.md` v0.1.1 for measured costs.
+For any file ≥ ~ 50 kT content-load OR ≥ 200 KB byte size, default to `offset` + `limit` parameters on Read. Typical heavy files: `STATE.md` (this vault and others), campaign masters (e.g., `how/campaigns/campaign_adna_serious_tool_readiness/campaign_adna_serious_tool_readiness.md`), mission files at S3 close, large AAR aggregates. The router-vs-archive pattern (see [[STATE_archive.md|STATE_archive.md]] for the canonical instance) splits heavy files into a live router + an audit archive; even the router benefits from partial Reads when only the top bullet is needed. See `node.aDNA/what/context/token_baselines.md` v0.1.3 for measured costs + Appendix B per-directory AGENTS.md invariants spec.
 
 **Rule of thumb**: if Read returns `File content exceeds maximum`, that's a router-vs-archive split candidate — flag for backlog if not already split.
 

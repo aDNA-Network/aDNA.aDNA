@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-17
-updated: 2026-02-19
-last_edited_by: agent_init
+updated: 2026-05-20
+last_edited_by: agent_stanley
 tags: [directory_index, coordination]
 ---
 
@@ -65,3 +65,13 @@ Brief description of what other agents need to know.
 - Mid-session and not posting a new coordination note
 
 **Token cost**: ~400 tokens (this AGENTS.md)
+
+## Safety Hints (Inv 2 — destructive-state dir)
+
+⚠ Coord memos can carry cross-vault state (partner-vault embargo flags, dispatch contracts, phase-coupling commitments). Read before writing; if `urgency: blocking` is present in another agent's note, **stop and consult the user** before proceeding with the affected work. Never delete a memo that records a cross-vault commitment without operator approval — set `expires` or `status: acknowledged` instead. Cross-vault coord memos (e.g., `coord_2026_05_19_v8_cross_vault_network_coordination.md`) survive longer than the `expires` field suggests; treat them as governance state until the receiving vault confirms ack.
+
+## Cross-References
+
+- [[../AGENTS.md|who/AGENTS]] — Organization layer index
+- [[../governance/AGENTS.md|who/governance/AGENTS]] — Governance policies + roles (related WHO subdirectory)
+- [[../../CLAUDE.md|project CLAUDE.md]] — Agent Startup Checklist step 5 reads this directory at session entry

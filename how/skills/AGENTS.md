@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-18
-updated: 2026-03-19
-last_edited_by: agent_init
+updated: 2026-05-20
+last_edited_by: agent_stanley
 tags: [directory_index, skill]
 ---
 
@@ -113,3 +113,11 @@ tags: []
 - Already know the skill file path and can load it directly
 
 **Token cost**: ~700 tokens (this AGENTS.md). Individual skill files vary widely (50-400 lines).
+
+## Cross-References
+
+- [[../AGENTS.md|how/AGENTS]] — Operations layer index
+- [[../templates/template_skill.md|template_skill]] — Skill file template
+- [[../../what/lattices/AGENTS.md|what/lattices/AGENTS]] — Skill graduation target (when a skill earns lattice publishing)
+- [[../../what/docs/standard_reading_guide.md|standard_reading_guide]] §4 — Skill vs. Lattice comparison
+- [[skill_lattice_publish.md|skill_lattice_publish]] — Promotion workflow from skill to lattice

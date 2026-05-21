@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-17
-updated: 2026-02-19
-last_edited_by: agent_init
+updated: 2026-05-20
+last_edited_by: agent_stanley
 tags: [directory_index, sessions]
 ---
 
@@ -154,3 +154,15 @@ Template: `how/templates/template_session.md`
 - Already created the session file and remember the Tier 1/Tier 2 rules
 
 **Token cost**: ~1,100 tokens (this AGENTS.md)
+
+## Archive Cross-Reference (Inv 4 — active/ ↔ history/ pattern)
+
+This directory implements a router-vs-archive variant: `active/` holds running sessions; `history/YYYY-MM/` archives completed sessions bucketed by month. The transition (`active/` → `history/{YYYY-MM}/`) fires at session close per the SITREP protocol — distinct from but parallel to the canonical **STATE.md ↔ STATE_archive.md** Op 3 instance at the project root. When you need to find a past session, drill into `history/{YYYY-MM}/` directly; never delete archived sessions.
+
+## Cross-References
+
+- [[../AGENTS.md|how/AGENTS]] — Operations layer index
+- [[../missions/AGENTS.md|how/missions/AGENTS]] — Mission protocol (sessions execute mission objectives)
+- [[../campaigns/AGENTS.md|how/campaigns/AGENTS]] — Campaign protocol (sessions inside campaign missions)
+- [[../templates/template_session.md|template_session]] — Session file template
+- [[../../STATE.md|STATE.md]] — Operational state router (canonical Op 3 archive-on-close instance)
