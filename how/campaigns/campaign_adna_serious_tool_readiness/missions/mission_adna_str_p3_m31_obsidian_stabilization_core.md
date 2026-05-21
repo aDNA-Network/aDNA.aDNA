@@ -7,13 +7,16 @@ mission_number: 3.1
 slug: obsidian_stabilization_core
 created: 2026-05-21
 updated: 2026-05-21
-status: in_progress
+status: completed
 opens_at: 2026-05-21T02:34:03Z
 opened_session: session_stanley_20260521T023403Z_v8_m31_s1
+closed_at: 2026-05-21T07:28:03Z
+closed_session: session_stanley_20260521T072803Z_v8_m31_s3
 estimated_sessions: 3   # canonical 3-session implementation-class shape — 6th instance after M1.3 + M1.4 + M2.1 + M2.3 + M2.4
+actual_sessions: 3   # ratified at S3 close — 6th instance of canonical 3-session implementation-class shape
 persona: rosetta
 last_edited_by: agent_stanley
-spec_completeness: partial   # S1 authors spec; S2 fills in T1/T2 design-spec content tables; S3 close fills deliverables landed
+spec_completeness: complete   # S1 authors spec; S2 fills in T1/T2 design-spec content tables; S3 close fills deliverables landed + Completion Summary populated
 mission_class: implementation   # T1+T2 design specs + proposed-patch artifacts + aDNA.aDNA docs-drift fixes; design at P3, propagation at P6
 token_budget_estimated: "S1 ~110-150 kT content-load (recon reads digested + mission spec auth + decision-surface backlog idea + campaign master amendments + STATE router refresh + session file) + S2 ~120-150 kT (T1 design spec + T2 design spec + proposed-patch artifacts + aDNA.aDNA docs-drift fixes) + S3 ~70-100 kT (AAR + STATE Op 3 8th canonical instance + campaign master close + 3 session moves). Three-session total ~300-400 kT. API-billing companion per ADR-016 Clause C empirical formula (`cache_creation ≈ 328 K + turns × 1 K`; `cache_read ≈ 4.1 M + turns × 126 K`): S1 ~14-18 M cache_read at 8 turns; S2 ~13-17 M cache_read at 7 turns; S3 ~10-14 M cache_read at 5 turns; total ~37-49 M cache_read across the 3-session arc. Per ADR-016 Clause A + Project Standing Order #11; declared in mission frontmatter per Standing Order #8 self-reference (M3.1 declares its own budget per the field ADR-016 Clause A ratified)."
 tags: [mission, m3_1, v8, p3, obsidian_stabilization, core, t1_fork_propagation, t2_workspace_idempotency, canonical_3_session_implementation_shape_6th_instance_candidate, obsidian_stab_absorbed_t1_t2, north_star_easy_fluid_context_graphs, design_at_p3_propagation_at_p6_pattern, adna_aDNA_docs_drift_fix, rosetta]
@@ -131,12 +134,12 @@ Canonical 3-session implementation-class shape — **6th instance candidate** af
 
 | # | Deliverable | Session | Status |
 |---|---|---|---|
-| 1 | M3.1 mission spec (this file) | S1 | in_progress S1 |
-| 2 | `idea_interactive_decision_surface.md` + M3.0.5 forecast row | S1 | pending S1 |
-| 3 | `m31_obj3_t1_design_spec.md` — T1 fork-propagation patches | S2 | pending S2 |
-| 4 | `m31_obj4_t2_design_spec.md` — T2 workspace-idempotency patches | S2 | pending S2 |
-| 5 | aDNA.aDNA docs-drift fix bundle (`.obsidian/README.md` + `.obsidian/OBSIDIAN_CLAUDE.md`) | S2 | pending S2 |
-| 6 | AAR + campaign master close + STATE.md refresh + session moves | S3 | pending S3 |
+| 1 | M3.1 mission spec (this file) | S1 | ✅ landed S1 |
+| 2 | `idea_interactive_decision_surface.md` + M3.0.5 forecast row | S1 | ✅ landed S1 |
+| 3 | `m31_obj3_t1_design_spec.md` — T1 fork-propagation patches | S2 | ✅ landed S2 |
+| 4 | `m31_obj4_t2_design_spec.md` — T2 workspace-idempotency patches | S2 | ✅ landed S2 |
+| 5 | aDNA.aDNA docs-drift fix bundle (`.obsidian/README.md` + `.obsidian/OBSIDIAN_CLAUDE.md`) | S2 | ✅ landed S2 |
+| 6 | AAR + campaign master close + STATE.md refresh + session moves | S3 | ✅ landed S3 |
 
 ## Current State — Obsidian recon-audit findings (S1)
 
@@ -297,16 +300,29 @@ The mission also self-applies its own substrate: M3.1's docs-drift fix to `OBSID
 
 ## Completion Summary
 
-*Filled at S3 close.*
+**Closed 2026-05-21T07:28:03Z** at `session_stanley_20260521T072803Z_v8_m31_s3`. Canonical 3-session implementation-class shape **6th instance ratified** (after M1.3 + M1.4 + M2.1 + M2.3 + M2.4). 6/6 cumulative deliverables LIVE. Zero scope expansion mid-mission. All 11 hard constraints honored end-to-end (zero `.adna/` touches; zero partner contact; zero new ADRs; zero `node.aDNA/` writes; zero push to origin). **Design-at-P3-propagation-at-P6 pattern ratified** as canonical for absorbed-upstream-work; v8 P6 propagation queue grows from 5 → 7 doctrinal additions (adding T1 fork-propagation patch + T2 workspace-idempotency patch). **Proposed-patch artifact ratifies as `aDNA.aDNA/missions/artifacts/` first-class deliverable type** (STRONG-EXTENDED finding).
 
 ### Deliverables landed
 
-*Filled at S3.*
+1. ✅ M3.1 mission spec (this file) — S1
+2. ✅ `how/backlog/idea_interactive_decision_surface.md` (decision-surface backlog idea; 6 sections + opinion memo; M3.0.5 forecast row in campaign master Phase 3 table) — S1
+3. ✅ `missions/artifacts/m31_obj3_t1_design_spec.md` — T1 fork-propagation pattern (5th-instance additive-upstream candidate; ~17 KB; 9 H2 sections; 7 wikilinks; literal patch-style diff for `.adna/skill_project_fork.md`; v8 P6 propagation contract) — S2
+4. ✅ `missions/artifacts/m31_obj4_t2_design_spec.md` — T2 workspace-idempotency pattern (`setup.sh --reset-layout` flag; ~20 KB; 8 H2 sections; 6 wikilinks; literal patch-style diff for `.adna/setup.sh:173-184` + `skill_project_fork.md` Step 5 + `skill_onboarding.md` Step 10; T4 cross-cut hook for M3.2) — S2
+5. ✅ aDNA.aDNA docs-drift fix bundle: `.obsidian/README.md` D1 fix (Omnisearch→BRAT / Terminal→Termy / Folder Notes→Settings Search; 15-row plugin table aligned with `community-plugins.json` JSON ground truth) + `.obsidian/OBSIDIAN_CLAUDE.md` D2 fix (14→15 plugin count) + D3 fix (`advanced-canvas` → `obsidian-advanced-canvas`) + Settings Search row appended + frontmatter added (`type: governance` + dates + `status: active` + `last_edited_by` + tags including `m31_obj5_docs_drift_fix`) — S2
+6. ✅ Obj 6 close cascade — S3:
+   - `missions/artifacts/aar_m31_obsidian_stabilization_core.md` (lightweight 5-line + 19/19 acceptance scorecard PASS + 14-row Standing-Order discharge + 3-category extended findings × 4 each = 12 + token-budget two-metric table + 2 load-bearing findings + 20 cross-references)
+   - This mission file frontmatter `in_progress → completed` + `closed_at` + `closed_session` + `actual_sessions: 3` + `spec_completeness: complete` + §Deliverables table all 6 marked landed + §Completion Summary populated (this section)
+   - Campaign master M3.1 row `in_progress → completed` + amendments-table 2026-05-21 entry (M3.1 close + 6/6 deliverables + canonical 3-session 6th-instance ratification + design-at-P3-propagation-at-P6 pattern ratified + v8 P6 propagation queue grows to 7)
+   - STATE.md router **Op 3 archive-on-close 9th canonical instance** refresh (demote M3.1 S1 OPENED bullet to concise form; new M3.1 CLOSED top bullet; refresh Next Steps + Last Session + Next Session Prompt; ≤ 20 kT cap maintained)
+   - 3 session files (S1 + S2 + S3) moved `active/` → `history/2026-05/` at S3 commit
 
 ### Key findings
 
-*Filled at S3.*
+- **PRIMARY (campaign-strategic)**: *Design-at-P3-propagation-at-P6 is the canonical pattern for absorbed-upstream-work.* When P3+ phase missions surface upstream-pointed findings under the v8 hard constraint forbidding `.adna/` touches (v7.0 frozen at `27e6395`), the resolution = design specs + proposed-patch artifacts land at P3 (mutable inside `aDNA.aDNA/`); v8 P6 owns the upstream propagation cycle (single-commit-per-patch). Doctrinal framework: ADR-005 rule 3 + Campaign SO #14 + ADR-005 rule 6 + ADR-008 §f. Skill graduation candidate `skill_aDNA_upgrade_cycle.md` triggered (3 of 3 instances per `m21_obj4` rubric — M2.3.5 + M2.4 close inheritance + M3.1 = 3).
+- **STRONG-EXTENDED (procedural)**: *Proposed-patch artifact ratifies as `aDNA.aDNA/missions/artifacts/` first-class deliverable type.* The 6-section structure (finding / root cause / option matrix ≥ 3 / recommended option + rationale / literal patch text / v8 P6 propagation contract) is canonical for design-spec class. T1 (~17 KB; 9 H2 sections) + T2 (~20 KB; 8 H2 sections) demonstrate both minimum and extended shapes. Skill graduation candidate `skill_design_spec_authoring.md` at ≥ 3 use instances (current 2 of 3; M3.2 T3 or T4 spec triggers graduation).
+- **Standing Order #8 self-reference 12th tactical invocation candidate in v8** (8 prior in P2 + 4 at M3.1 S1+S2+S3 progression). M3.1's design specs cite the M2.4.5-hardened routing layer that gates the directory M3.1's mission file lives in. The docs-drift fix to `OBSIDIAN_CLAUDE.md` aligns the AI-agent interaction guide using the very Obsidian config the mission is auditing. Candidate skill `skill_self_reference_design.md` at v8 P6.
+- **Op 3 archive-on-close pattern 9th canonical instance** at this S3 close (after M2.1 + M2.2 + M1.5 + M2.3 + M2.3.5 + M2.4 + M2.4.5 + M3.1 S1 = 8 prior). `skill_campaign_close_archive.md` graduation now satisfied by 3× margin.
 
 ## Mission AAR
 
-*Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`. Lands at `missions/artifacts/aar_m31_obsidian_stabilization_core.md` at Obj 6 (S3).*
+See [[artifacts/aar_m31_obsidian_stabilization_core.md|aar_m31_obsidian_stabilization_core.md]] — lightweight 5-line + 19/19 acceptance scorecard + 14-row Standing-Order discharge + 12 extended findings + token-budget two-metric table + 2 load-bearing findings (PRIMARY + STRONG-EXTENDED) + 20 cross-references. Authored at this S3 close per `how/templates/template_aar_lightweight.md`.
