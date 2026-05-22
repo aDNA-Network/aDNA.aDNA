@@ -184,6 +184,47 @@ The deployed Astro site hero + README banner on github.com + GitHub social-previ
 
 ---
 
+## Operator-Override Addendum — 2026-05-22 (post-M3.2-close upstream fix)
+
+**Trigger**: Operator screenshot of https://github.com/LatticeProtocol/aDNA at 14:15 PT 2026-05-22 (post-M3.2-close discovery) showed a broken banner image at the top of the upstream README. Investigation revealed that the M03 flatten (`campaign_adna_v2_infrastructure` M03, 2026-05-18) promoted `.adna/*` to the repo root but left **six `.adna/`-prefixed markdown link/image paths** in `README.md` untouched — broken on github.com because the live repo no longer has a `.adna/` subdirectory.
+
+**Hard constraint overrides** (explicitly authorized by operator via plan AskUserQuestion 2026-05-22 ~14:35 PT):
+1. **Workspace CLAUDE.md Standing Rule #1**: *"Never modify `.adna/` — it is a standalone clone of the LatticeProtocol/adna template repo."* — OVERRIDDEN for this single isolated commit.
+2. **v8 P2-P5 Campaign hard constraint**: *"Zero `.adna/` upstream touches; v7.0 frozen at `27e6395`."* — OVERRIDDEN per Campaign SO #14 exception clause (load-bearing decision blocking phase progress; here: blocking public-facing first-contact UX at the canonical aDNA spec landing surface).
+
+**v8 P6 propagation queue early-fire framing**: The banner-as-ecosystem-polish-signal item (STRONG-EXTENDED load-bearing finding from this AAR) was forecast for the formal v8 P6 cycle. By firing it early here, **item #1 of 10-11 propagation queue items lands at 2026-05-22**; the remaining **9-10 items stay queued** for the formal P6 cycle (T1 fork-propagation patch + T2 workspace-idempotency patch + T3 setup.sh --verify + T4 setup.sh canonicalize + T4 .obsidianignore + T4 NN data.json + AGENTS.md invariants + ADR-022 + ADR-016 amendment + Project SO #11 refinement + Heavy-File Read Convention). No scope creep — this is a surgical fix to a specific user-visible bug, not a general license to modify `.adna/`.
+
+**Upstream commit landed**: `LatticeProtocol/aDNA` HEAD `5861133` (commit on top of v7.0 tag commit `27e6395`; v7.0 tag itself at `3681f76` annotating `27e6395` is unchanged — this is a patch commit, not a release). Subject: `README: fix M03-flatten residue + adopt new banner asset`. 2 files changed, 5 insertions(+), 6 deletions(-).
+
+**Fix scope** (6 path corrections):
+- Line 2: `<img src=".adna/what/assets/banner.jpg">` → `<img src="what/assets/aDNABanner.png">` + alt text refreshed to match new pixel-art content
+- Line 12: `(.adna/CONTRIBUTING.md)` → `(CONTRIBUTING.md)` (PRs Welcome badge link)
+- Line 143 (Detailed README self-reference): **removed entirely** (post-flatten the "detailed README" IS this same README; bullet had no purpose)
+- Line 144: `(.adna/what/docs/adna_standard.md)` → `(what/docs/adna_standard.md)`
+- Line 145: `(.adna/CONTRIBUTING.md)` → `(CONTRIBUTING.md)`
+- Line 146: `(.adna/CHANGELOG.md)` → `(CHANGELOG.md)`
+
+**Asset propagation**: New `aDNABanner.png` (1288×512 pixel-art aDNA wordmark; 762 KB; same asset as M3.2 S3 carry) added at `.adna/what/assets/aDNABanner.png` (lands on github.com at `what/assets/aDNABanner.png` post-flatten). Existing `.adna/what/assets/banner.jpg` (96 KB JPG; v7.0-era) retained alongside as a one-release-cycle fallback per the established M3.2 pattern.
+
+**Prose references unchanged** — lines 33, 38, 48, 72, 81, 83, 98, 141 describe the local cloned-template filesystem layout (`.adna/` as a directory in `~/lattice/`); these are intentionally correct and untouched.
+
+**github.com render verified** via `gh api repos/LatticeProtocol/aDNA/contents/README.md` post-push:
+- Banner image: `<img src="what/assets/aDNABanner.png" alt="aDNA — retro pixel-art wordmark...">` ✓
+- PRs Welcome badge: `](CONTRIBUTING.md)` ✓
+- Footer links: `[aDNA Standard](what/docs/adna_standard.md)`, `[Contributing](CONTRIBUTING.md)`, `[Changelog](CHANGELOG.md)` ✓
+- Banner asset binary: SHA `4f7efb47a09a9ef3fd736c05ca4d0ce1f6c49355`, size 762619 bytes (matches local) ✓
+
+**Reconciliation with M3.2 close narrative**: M3.2 close commit `81670fc` stated *"v8 P6 propagation queue grows 7 → 10-11"*. This addendum fires queue item #1 (banner ecosystem-polish signal) early, so the post-addendum queue count is **9-10 (M3.2 close baseline) + 0 (no new items) − 1 (fired early) = effectively 8-9 remaining for the formal P6 cycle** — but the canonical count remains "10-11 doctrinal additions queued for v8 P6 propagation as of M3.2 close" with this addendum noting that #1 has been fired early. Future references should cite "10-11 minus 1 = 9-10 remaining for formal P6 cycle" when computing the residual queue size.
+
+**Precedent discipline**: This override is NOT a general license to modify `.adna/`. The 5-criteria gate from the S3-with-carry PRIMARY finding does NOT apply to upstream `.adna/` commits (those carry a higher constraint level). The Campaign SO #14 exception clause requires explicit operator authorization for each `.adna/` touch during v8 P2-P5; this addendum documents one such authorization. Subsequent `.adna/` modifications require fresh operator authorization OR formal v8 P6 cycle entry.
+
+**Cross-references**:
+- Commit at `LatticeProtocol/aDNA`: HEAD `5861133` (parent `27e6395` = v7.0 tag commit)
+- Banner asset at `.adna/what/assets/aDNABanner.png` (same binary as `aDNA.aDNA/aDNABanner.png` + `aDNA.aDNA/site/src/assets/aDNABanner.png` + `aDNA.aDNA/what/assets/aDNABanner.png`)
+- This AAR's STRONG-EXTENDED finding (first-contact-polish v8 P6 ecosystem signal) is now operationally validated by one ecosystem instance (`LatticeProtocol/aDNA` itself); `skill_first_contact_polish.md` graduation candidate advances from 1 of 3 use instances to **2 of 3** (M3.2 aDNA.aDNA banner + `.adna/` upstream banner = 2 instances; SiteForge or another ecosystem vault would trigger graduation as 3rd instance)
+
+---
+
 ## Cross-references
 
 - [[../mission_adna_str_p3_m32_obsidian_stabilization_extension.md|M3.2 mission spec]] — this AAR closes the mission spec
