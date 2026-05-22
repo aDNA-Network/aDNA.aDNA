@@ -2,7 +2,7 @@
 import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { buildWebSiteJsonLD } from '../utils/seo';
-import bannerImage from '../assets/banner.jpg';
+import bannerImage from '../assets/aDNABanner.png';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
 const jsonLD = buildWebSiteJsonLD(siteUrl);
@@ -117,7 +117,7 @@ const stats = [
     <div class="hero-banner">
       <Picture
         src={bannerImage}
-        alt="aDNA — three glowing DNA helices representing the who/what/how triad, rising from a workspace of monitors and instruments"
+        alt="aDNA — retro pixel-art wordmark on a metal plate, set against glowing DNA helices rising from a workspace of laboratory instruments"
         widths={[480, 768, 964]}
         formats={["avif", "webp"]}
         sizes="(max-width: 768px) calc(100vw - 3rem), 56rem"

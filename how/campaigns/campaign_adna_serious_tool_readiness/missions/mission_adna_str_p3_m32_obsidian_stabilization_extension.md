@@ -6,16 +6,18 @@ phase: 3
 mission_number: 3.2
 slug: obsidian_stabilization_extension
 created: 2026-05-21
-updated: 2026-05-21
-status: in_progress
+updated: 2026-05-22
+status: completed
 opens_at: 2026-05-21T13:52:58Z
 opened_session: session_stanley_20260521T135258Z_v8_m32_s1
+closed_at: 2026-05-22T19:31:32Z
+closed_session: session_stanley_20260522T193132Z_v8_m32_s3
 estimated_sessions: 3   # canonical 3-session implementation-class shape — 7th instance candidate after M1.3 + M1.4 + M2.1 + M2.3 + M2.4 + M3.1
-actual_sessions: 1   # in-progress at S1; fills final value at S3 close
+actual_sessions: 3   # canonical 3-session implementation-class shape — 7th instance RATIFIED at S3 close with S3-with-carry sub-mode (banner Deliverable 7 absorbed)
 persona: rosetta
 last_edited_by: agent_stanley
-spec_completeness: in_progress   # S1 authors spec; S2 fills in T3+T4 design-spec content + new skill; S3 close fills deliverables landed + Completion Summary populated
-mission_class: implementation   # T3+T4 design specs + proposed-patch artifacts + NEW skill_obsidian_canonicalize.md authoring; design at P3, propagation at P6
+spec_completeness: complete   # S1 authored spec; S2 landed T3+T4 design-spec content + new skill; S3 close landed AAR + close cascade + banner propagation S3 carry as Deliverable 7
+mission_class: implementation   # T3+T4 design specs + proposed-patch artifacts + NEW skill_obsidian_canonicalize.md authoring; design at P3, propagation at P6; S3-with-carry sub-mode for banner Deliverable 7
 token_budget_estimated: "S1 ~80-110 kT content-load (M3.1 spec template digestion + 4 backlog reads F-S2-2/5/6/7 + absorbed-campaign tracks 3+4 + mission spec auth + campaign master amendments + STATE router refresh + session file) + S2 ~140-180 kT (T3 design spec + T4 combined design spec covering F-S2-5+6+7 + NEW skill_obsidian_canonicalize.md authoring + possibly minimal docs-drift carry-over) + S3 ~70-100 kT (AAR + STATE Op 3 11th canonical instance + campaign master close + 3 session moves). Three-session total ~290-390 kT (lighter than M3.1 ~300-400 because no Obsidian recon-audit at M3.2 — M3.1 captured that; S2 heavier because 3 deliverables incl. new skill vs M3.1 S2's 3 design-spec-only deliverables). API-billing companion per ADR-016 Clause C empirical formula (`cache_creation ≈ 328 K + turns × 1 K`; `cache_read ≈ 4.1 M + turns × 126 K`): S1 ~11-15 M cache_read at 6 turns; S2 ~13-17 M cache_read at 7 turns; S3 ~10-14 M cache_read at 5 turns; total ~34-46 M cache_read across the 3-session arc. Per ADR-016 Clause A + Project Standing Order #11; declared in mission frontmatter per Standing Order #8 self-reference (M3.2 declares its own budget per the field ADR-016 Clause A ratified)."
 tags: [mission, m3_2, v8, p3, obsidian_stabilization, extension, t3_plugin_binary_install_validation, t4_obsidian_config_canonicalization, canonical_3_session_implementation_shape_7th_instance_candidate, obsidian_stab_absorbed_t3_t4, north_star_easy_fluid_context_graphs, design_at_p3_propagation_at_p6_pattern, new_skill_obsidian_canonicalize, rosetta]
 prerequisite_missions:
@@ -44,7 +46,7 @@ prerequisite_artifacts:
   - aDNA.aDNA/what/decisions/adr_022_tool_use_logging.md                                                            # PostToolUse hook contract
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m245_obj3_measurement_contract.md # M3.x re-measurement trigger conditions (≥ 20-session corpus)
   - "/Users/stanley/lattice/node.aDNA/what/context/token_baselines.md v0.1.3 Appendix B"                              # AGENTS.md invariants spec
-deliverables_count: 6   # 1 mission spec + 1 T3 design spec + 1 T4 design spec (combined; D1 default) + 1 NEW skill_obsidian_canonicalize.md + 1 close (AAR + STATE + campaign master) + 1 governance bundle (campaign master row flip + amendments + STATE router refresh at S1)
+deliverables_count: 7   # 1 mission spec + 1 governance bundle (S1) + 1 T3 design spec + 1 T4 design spec + 1 NEW skill_obsidian_canonicalize.md (S2) + 1 close cascade (AAR + STATE + campaign master + session moves) + 1 BANNER PROPAGATION S3 CARRY (Deliverable 7 absorbed per S3-with-carry sub-mode — aDNABanner.png across Astro hero + README + canonical mirror + Playwright Gate 11)
 phase_authorization: "P3 already open via M3.1 S1 entry 2026-05-21T02:34:03Z; M3.2 inherits P3 status. Operator-authorized M3.2 opening at this session 2026-05-21T13:52:58Z (via plan ratification at `/Users/stanley/.claude/plans/please-read-the-claude-md-jazzy-sifakis.md` + operator AskUserQuestion answer 'Open M3.2 (T3+T4)'); recorded in campaign master amendments-table at S1 open per Project SO #1 + Campaign SO #19 (mission opens are operator-decision under phase-gates-are-human-gates doctrine even within an open phase)"
 hard_dependency_satisfied: "M3.1 closed 2026-05-21T07:28:03Z+ at session_stanley_20260521T072803Z_v8_m31_s3 (HEAD `1ed4758`); M3.1 close UNBLOCKS M3.2 per campaign master Phase 3 table line 164 (M3.2 dependency = M3.1). 6/6 M3.1 deliverables LIVE (T1 + T2 design specs + docs-drift fix bundle + decision-surface backlog idea + M3.0.5 forecast row + AAR + close cascade). Design-at-P3-propagation-at-P6 pattern ratified as canonical for absorbed-upstream-work. 6-section design-spec structure ratified as `aDNA.aDNA/missions/artifacts/` first-class deliverable type. v7.0 frozen at `LatticeProtocol/aDNA@27e6395`; HEAD 11 commits ahead of origin/main + this S1 commit = 12 ahead post-S1. M2.1.5 retroactive Op 3 stays `planned-optional`; M3.0.5 stays `planned-stub`."
 ---
@@ -140,12 +142,13 @@ Canonical 3-session implementation-class shape — **7th instance candidate** af
 
 | # | Deliverable | Session | Status |
 |---|---|---|---|
-| 1 | M3.2 mission spec (this file) | S1 | in_progress S1 |
-| 2 | Campaign master M3.2 row flip + amendments entry + STATE.md router refresh (governance bundle) | S1 | pending S1 |
-| 3 | `m32_obj3_t3_design_spec.md` — T3 plugin-binary install validation | S2 | pending S2 |
-| 4 | `m32_obj4_t4_design_spec.md` — T4 combined Obsidian config canonicalization (F-S2-5+6+7) | S2 | pending S2 |
-| 5 | NEW `aDNA.aDNA/how/skills/skill_obsidian_canonicalize.md` — full skill (3 modes) | S2 | pending S2 |
-| 6 | AAR + campaign master close + STATE.md refresh + session moves | S3 | pending S3 |
+| 1 | M3.2 mission spec (this file) | S1 | ✅ landed S1 |
+| 2 | Campaign master M3.2 row flip + amendments entry + STATE.md router refresh (governance bundle) | S1 | ✅ landed S1 |
+| 3 | `m32_obj3_t3_design_spec.md` — T3 plugin-binary install validation | S2 | ✅ landed S2 |
+| 4 | `m32_obj4_t4_design_spec.md` — T4 combined Obsidian config canonicalization (F-S2-5+6+7) | S2 | ✅ landed S2 |
+| 5 | NEW `aDNA.aDNA/how/skills/skill_obsidian_canonicalize.md` — full skill (3 modes: `--canonicalize` / `--reset-layout` / `--verify`) | S2 | ✅ landed S2 |
+| 6 | AAR + campaign master close + STATE.md refresh + session moves | S3 | ✅ landed S3 |
+| 7 | **BANNER PROPAGATION S3 CARRY** — `aDNABanner.png` across canonical root + `site/src/assets/` + `what/assets/` + Astro `index.astro` import + alt text refresh + README banner image prepend + Playwright Gate 11 (`tests/gates/gate-11-hero-banner.spec.ts`) PASS 4/4 + Astro build (10 image variants generated) + screenshot evidence at `site/evidence/hero_banner/hero_banner.png` + GitHub social-preview manual step documented for operator | S3 | ✅ landed S3 (S3-with-carry sub-mode — 5-criteria gate SATISFIED) |
 
 ## Current State — inherited from M3.1 recon-audit (no fresh recon at M3.2)
 
@@ -291,4 +294,25 @@ The mission also self-applies its own substrate: M3.2's `skill_obsidian_canonica
 
 ## Completion Summary
 
-*Filled at S3 close.*
+**Closed**: 2026-05-22T19:31:32Z at `session_stanley_20260522T193132Z_v8_m32_s3`. 3-session arc executed canonically with S3-with-carry sub-mode authorized for Deliverable 7 (banner propagation).
+
+### Deliverables landed (7/7)
+
+1. **M3.2 mission spec** (this file) — S1 2026-05-21T13:52:58Z+. Frontmatter + Objectives 1-6 + Scope + Acceptance criteria + Hard constraints + Standing-Order discharges (preview) + Improvements classification + Cross-vault impact + Cross-Mission Dependencies + Self-reference + Risks + Notes + 11 wikilink cross-references.
+2. **Governance bundle (S1)** — Campaign master M3.2 row `planned → in_progress` at line 164 + amendments-table 2026-05-21 entry; STATE.md router Op 3 archive-on-close **10th canonical instance** refresh. HEAD `fc80f3a`.
+3. **T3 design spec** (`missions/artifacts/m32_obj3_t3_design_spec.md`) — S2 2026-05-21T21:50:14Z+. 6-section structure per ratified template — finding (config-binary asymmetry: silent-failure mode on missing plugin binaries) + root cause (Obsidian security-conscious no-auto-fetch + setup.sh silent failure modes) + 4-option matrix (Option 1 verify mode + Option 2 health-check sub-check + Option 3 fork-time gate + Option 4 layered combo) + recommended Option 4 layered + literal patch text for `.adna/setup.sh` + `.adna/how/skills/skill_node_health_check.md` + optional `.adna/how/skills/skill_project_fork.md` + v8 P6 propagation contract.
+4. **T4 design spec** (`missions/artifacts/m32_obj4_t4_design_spec.md`) — S2 2026-05-21T21:50:14Z+. 6-section structure — finding (3-sub: Obsidian normalizes tracked `.obsidian/*.json` on open + NN plugin data.json triad colors not shipped + template tags pollute graph via missing `.obsidianignore` extension) + root cause + 4-option matrix + recommended Option 1 unified canonicalize skill + literal patch text for `skill_obsidian_canonicalize.md` + `.adna/setup.sh` + `.adna/.obsidianignore` + v8 P6 propagation contract. NN data.json **6th-instance additive-upstream candidate evaluated**.
+5. **NEW `skill_obsidian_canonicalize.md`** (`aDNA.aDNA/how/skills/`) — S2 2026-05-21T21:50:14Z+. Full skill (not stub): 3 modes (`--canonicalize` reads upstream + diffs + delta-aware merge with operator-local-override preservation; `--reset-layout` absorbs T2 forecast — forces `cp workspace.default.json workspace.json`; `--verify` absorbs T3 design — reads `community-plugins.json` + checks plugin binaries). Modeled on `skill_node_health_check.md` + `skill_workspace_upgrade.md` patterns. **FIRST behavioral test of M2.4.5-hardened `how/skills/AGENTS.md` routing layer for new-skill discoverability**. HEAD `c6eeddc`.
+6. **AAR + close cascade** (`missions/artifacts/aar_m32_obsidian_stabilization_extension.md` + this file + campaign master + STATE refresh + 3 session moves) — S3 2026-05-22T19:31:32Z+. Lightweight 5-line + 17-row acceptance scorecard (16 from spec + 1 banner Deliverable 7 expansion) + 15-row Standing-Order discharge (14 standard + 1 carry-specific 5-criteria gate) + 12 extended findings (3 categories × 4) + token-budget two-metric table + **2 load-bearing findings** PRIMARY *S3-with-carry sub-mode* + STRONG-EXTENDED *first-contact-polish v8 P6 ecosystem signal* + 19 cross-references.
+7. **Banner propagation S3 carry (Deliverable 7)** — S3 2026-05-22T19:31:32Z+. Operator-driven operational-maintenance drop absorbed per S3-with-carry sub-mode (PRIMARY load-bearing finding from this AAR): 3 asset copies (`aDNABanner.png` at canonical root + `site/src/assets/` + `what/assets/`) + Astro `site/src/pages/index.astro` import path update (banner.jpg → aDNABanner.png) + alt text refresh (matched new pixel-art content) + README banner image prepend + Playwright Gate 11 NEW (`site/tests/gates/gate-11-hero-banner.spec.ts` 4 tests PASS in 4.7s — img-renders + alt-reflects-new-content + Picture-emits-AVIF+WebP + screenshot-evidence) + Astro build clean (10 image variants generated: 3 AVIF + 3 WebP + 4 PNG fallbacks; 744 KB source → 5-839 KB optimized) + screenshot evidence at `site/evidence/hero_banner/hero_banner.png` + GitHub social-preview manual step documented for operator (no API/CLI path) + old `banner.jpg` retained as fallback per [[../../../how/backlog/idea_banner_asset_cleanup.md|`idea_banner_asset_cleanup.md`]] tracking.
+
+### Key findings (load-bearing — propagate to campaign + STATE)
+
+- **PRIMARY (methodology-strategic)**: *S3 close sessions can absorb small-scope, reversible, operator-prepared operational-maintenance drops without violating non-destructive-consolidation discipline — the "S3-with-carry" sub-mode.* 5-criteria gate documented + ratified. Canonical 3-session implementation-class shape **7th instance RATIFIED with S3-with-carry sub-mode**. `skill_s3_with_carry_eligibility.md` graduation candidate at ≥ 3 use instances per `m21_obj4` rubric (current count: 1 of 3). Plausible 8th-instance precedent candidate at M3.3+ close.
+- **STRONG-EXTENDED (north-star-UX-strategic)**: *First-contact visual surface (banner) is a north-star UX deliverable — belongs in v8 P6 propagation queue as ecosystem-polish signal.* Banner work is not an `.adna/` patch (lives in `aDNA.aDNA/site/` + `README.md` + asset mirrors) but signals a reusable methodology for ecosystem vaults' own landing-surface polish. v8 P6 propagation queue grows 9-10 → 10-11. `skill_first_contact_polish.md` graduation candidate at ≥ 3 use instances per `m21_obj4` rubric (current count: 1 of 3).
+- **Standing Order #8 self-reference 14th tactical invocation candidate in v8** (M3.2's new skill drop is FIRST behavioral test of M2.4.5-hardened routing layer; banner propagation IS an aDNA-doctrine application since public-facing surfaces are governed by the same vault that explains aDNA; the S3-with-carry sub-mode AAR documents its own carry).
+- **Op 3 archive-on-close pattern 11th canonical instance** at STATE refresh; ≤ 20 kT cap discipline scales with aggressive demotion of older entries.
+
+### Mission AAR
+
+[[../missions/artifacts/aar_m32_obsidian_stabilization_extension.md|aar_m32_obsidian_stabilization_extension.md]] — load_bearing: true; 17/17 acceptance + 2 load-bearing findings + 19 cross-references + Operator follow-up section.

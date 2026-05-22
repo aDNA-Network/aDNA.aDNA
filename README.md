@@ -1,3 +1,5 @@
+![aDNA — Agentic Knowledge Architecture](./aDNABanner.png)
+
 # Agentic-DNA
 
 **Give your project a knowledge architecture that both humans and AI agents can navigate.**
