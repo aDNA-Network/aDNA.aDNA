@@ -7,13 +7,16 @@ mission_number: 3.3
 slug: obsidian_stabilization_ux_and_tests
 created: 2026-05-23
 updated: 2026-05-23
-status: in_progress
+status: completed
 opens_at: 2026-05-23T04:17:39Z
 opened_session: session_stanley_20260523T041739Z_v8_m33_s1
+closed_at: 2026-05-23T05:29:27Z
+closed_session: session_stanley_20260523T052927Z_v8_m33_s3
 estimated_sessions: 3   # canonical 3-session implementation-class shape — 8th instance candidate after M1.3 + M1.4 + M2.1 + M2.3 + M2.4 + M3.1 + M3.2
+actual_sessions: 3   # canonical 3-session implementation-class shape 8th instance RATIFIED (S1+S2+S3) — substrate-inversion narrative stabilizes at spec+skill S2 mix; vanilla S3 close per D-CARRY=no-carry
 persona: rosetta
 last_edited_by: agent_stanley
-spec_completeness: in_progress   # S1 authored spec; S2 will land T5+T6 design specs + new skill; S3 close lands AAR + close cascade (S3-with-carry sub-mode available per M3.2 PRIMARY 5-criteria gate)
+spec_completeness: completed   # S1 authored spec + governance bundle; S2 landed T5+T6 design specs + new skill (cross-skill primitive composition pattern RATIFIED); S3 closed with AAR + close cascade (D-CARRY=no-carry; 7th-deliverable slot not invoked)
 mission_class: implementation   # T5+T6 design specs + proposed-patch artifacts + NEW skill_obsidian_integration_test.md authoring; design at P3, propagation at P6; S3-with-carry sub-mode available
 token_budget_estimated: "S1 ~85-115 kT content-load (M3.2 spec template digestion + absorbed-campaign Tracks 5+6 sections + LWX M-LWX-03 mission spec + AAR reads for O1-O7 source content + mission spec auth + campaign master amendments + STATE router refresh + session file) + S2 ~145-185 kT (T5 design spec + T6 design spec + NEW skill_obsidian_integration_test.md authoring; slightly heavier than M3.2 S2 ~140-180 due to LWX O1-O7 generalization scope) + S3 ~75-110 kT (AAR + STATE Op 3 13th canonical instance + campaign master close + 3 session moves; +10-15 kT if S3-with-carry triggers per M3.2 actual). Three-session total ~305-410 kT (~5% above M3.2 ~295-400 due to extra LWX reads at S1). API-billing companion per ADR-016 Clause C empirical formula (`cache_creation ≈ 328 K + turns × 1 K`; `cache_read ≈ 4.1 M + turns × 126 K`): S1 ~11-15 M cache_read at 6 turns; S2 ~13-18 M cache_read at 7-8 turns; S3 ~10-14 M cache_read at 6-7 turns; total ~34-47 M cache_read across the 3-session arc; ~1.0 M cache_creation total. Per ADR-016 Clause A + Project Standing Order #11; declared in mission frontmatter per Standing Order #8 self-reference (M3.3 declares its own budget per the field ADR-016 Clause A ratified)."
 tags: [mission, m3_3, v8, p3, obsidian_stabilization, ux_and_tests, t5_first_open_ux_standardization, t6_integration_test_framework, canonical_3_session_implementation_shape_8th_instance_candidate, obsidian_stab_absorbed_t5_t6, north_star_easy_fluid_context_graphs, design_at_p3_propagation_at_p6_pattern, s3_with_carry_sub_mode_available, new_skill_obsidian_integration_test, rosetta]
@@ -150,13 +153,13 @@ Canonical 3-session implementation-class shape — **8th instance candidate** af
 
 | # | Deliverable | Session | Status |
 |---|---|---|---|
-| 1 | M3.3 mission spec (this file) | S1 | in_progress S1 |
-| 2 | Campaign master M3.3 row flip + amendments entry + STATE.md router refresh (governance bundle) | S1 | pending S1 |
-| 3 | `m33_obj3_t5_design_spec.md` — T5 first-open UX standardization | S2 | pending S2 |
-| 4 | `m33_obj4_t6_design_spec.md` — T6 integration test framework | S2 | pending S2 |
-| 5 | NEW `aDNA.aDNA/how/skills/skill_obsidian_integration_test.md` — full skill (vault-agnostic O1-O7 + `--vault` + `--profile` + cross-skill delegation) | S2 | pending S2 |
-| 6 | AAR + campaign master close + STATE.md refresh + session moves | S3 | pending S3 |
-| 7 | **OPTIONAL S3-with-carry sub-mode absorption** if 5-criteria gate satisfied at close window | S3 | conditional S3 |
+| 1 | M3.3 mission spec (this file) | S1 | ✅ S1 (`b3659b8`) |
+| 2 | Campaign master M3.3 row flip + amendments entry + STATE.md router refresh (governance bundle) | S1 | ✅ S1 (`b3659b8`) |
+| 3 | `m33_obj3_t5_design_spec.md` — T5 first-open UX standardization | S2 | ✅ S2 (`6d3e5b4`; 253 lines; 6-section 4th canonical instance) |
+| 4 | `m33_obj4_t6_design_spec.md` — T6 integration test framework | S2 | ✅ S2 (`6d3e5b4`; 379 lines; 6-section 5th canonical instance; cross-skill DELEGATION primary substrate) |
+| 5 | NEW `aDNA.aDNA/how/skills/skill_obsidian_integration_test.md` — full skill (vault-agnostic O1-O7 + `--vault` + `--profile` + cross-skill delegation) | S2 | ✅ S2 (`6d3e5b4`; 700 lines; O1-O7 generalized from M-LWX-03; cross-skill DELEGATES to M3.2 skill `--verify`) |
+| 6 | AAR + campaign master close + STATE.md refresh + session moves | S3 | ✅ S3 (this close commit) |
+| 7 | **OPTIONAL S3-with-carry sub-mode absorption** if 5-criteria gate satisfied at close window | S3 | NOT TRIGGERED (D-CARRY=no-carry; vanilla 8th canonical instance) |
 
 ## Current State — inherited from M3.1 recon-audit + M3.2 substrate (no fresh recon at M3.3)
 
@@ -311,4 +314,19 @@ The mission also self-applies its own substrate: M3.3's T6 design spec DELEGATES
 
 ## Completion Summary
 
-*Filled when status flips to `completed` at S3 close.*
+**Closed**: 2026-05-23T05:29:27Z at `session_stanley_20260523T052927Z_v8_m33_s3` (S3 closeout session). **3 sessions actual** (estimated 3; perfect match). **6/6 deliverables LIVE**; D-CARRY=no-carry per operator (7th-deliverable slot not invoked; vanilla 8th canonical instance ratifies). **Hard constraints honored end-to-end** (zero `.adna/` touches; zero partner contact; zero hook/settings/SQLite/node.aDNA/.obsidian mutations; zero ADR drafts; zero scope creep).
+
+**Canonical 3-session implementation-class shape — 8th instance RATIFIED** after M1.3 + M1.4 + M2.1 + M2.3 + M2.4 + M3.1 + M3.2 (7 prior instances). **Substrate-inversion narrative stabilizes**: spec+skill S2 mix (M3.2 T3+T4+canonicalize → M3.3 T5+T6+integration_test) is now the canonical implementation-class shape, not the exception.
+
+**Load-bearing findings** (per [[artifacts/aar_m33_obsidian_stabilization_ux_and_tests.md|M3.3 AAR]]):
+- **PRIMARY (methodology-architectural)**: *T6 cross-skill delegation pattern is a reusable primitive-composition discipline for cross-mission skill consumption.* 4-layer chain (T6 skill → M3.2 skill → setup.sh → Obsidian state); DELEGATE not REIMPLEMENT; operator-traceable depth ≤ 5 layers; `skill_cross_skill_primitive_composition.md` graduation candidate at 1 of 3 use instances (M3.4 T7+T8 plausibly 2nd+3rd).
+- **STRONG-EXTENDED (convention-strategic)**: *T8 forward-reference-stub discipline ratifies as design-spec convention for cross-mission forward integration.* `## Forward integration with <next mission>` stub sections name WHO + WHAT touch points; defer WHEN + HOW + WHY to consumer mission; reduces consumer-mission entry-cost; `skill_forward_reference_stub_design.md` graduation candidate at 1 of 3 use instances (M3.4 + M3.5 plausibly 2nd+3rd).
+
+**Forward signals**:
+- **Standing Order #8 self-reference 15th tactical invocation in v8** (after 14 prior in P2 + M3.1 + M3.2).
+- **Op 3 archive-on-close pattern 13th canonical instance** at this S3 close (`skill_campaign_close_archive.md` graduation candidate at 4.3× margin over ≥ 3 threshold).
+- **`skill_design_spec_authoring.md` graduation** advances 4 → 6 of 3+ use instances (T5+T6 add 5th+6th post-ratification reinforcement after M3.2 close).
+- **v8 P6 propagation queue grows 10-11 → 12-14** (T5 `skill_onboarding.md` Step 4.5 doc-integration patch + T5 `skill_project_fork.md` Step 5 warning block + T6 optional `.adna/setup.sh --test` mode hook + T6 `skill_obsidian_integration_test.md` upstream-promotion candidate).
+- **M3.3 close = 3 of 4 P3 phase-exit bricks** (M3.4 + M3.5 remain before P3 → P4 phase-exit gate per Campaign SO #19).
+
+**Cross-references**: [[artifacts/aar_m33_obsidian_stabilization_ux_and_tests.md|M3.3 AAR]] + [[artifacts/m33_obj3_t5_design_spec.md|T5 design spec]] + [[artifacts/m33_obj4_t6_design_spec.md|T6 design spec]] + [[../../../how/skills/skill_obsidian_integration_test.md|new skill]] + [[../campaign_adna_serious_tool_readiness.md|campaign master]] + [[../../../STATE.md|STATE router]].
