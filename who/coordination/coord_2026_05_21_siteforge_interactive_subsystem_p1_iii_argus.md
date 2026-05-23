@@ -140,3 +140,7 @@ No urgency on any of the above — Loom's Phase 3 is multiple decadal arcs out; 
 
 ---
 *Fired by agent at SiteForge.aDNA P1.3 (Phase 1 close), 2026-05-21. III.aDNA current state: Campaign D active; DG-D 2/11 (MD-B1 ✅ 2026-05-20 + MD-B2 ✅ 2026-05-21; canonical md5 rotated). Seed session: aDNA.aDNA `session_stanley_20260521T023403Z_v8_m31_s1`. Predecessor memo: `coord_2026_05_21_siteforge_interactive_subsystem_genesis_iii_argus.md`.*
+
+---
+
+> Campaign renamed 2026-05-22 → `campaign_siteforge_sis`; pack renamed → `context_iii_domain_packs_sis.md`. Filename preserved as historical anchor per parent-plan locked decision (operator-approved at `~/.claude/plans/please-read-the-claude-md-floating-forest.md`).

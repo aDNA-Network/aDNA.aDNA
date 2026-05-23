@@ -97,3 +97,7 @@ If Berthier requires anything else for the reservation — e.g., a one-pager LIP
 
 ---
 *Fired by agent at SiteForge.aDNA P1.3 (Phase 1 close), 2026-05-21. Architecture anchor: P1.2 draft ADR + full architecture spec (50KB) — both at `SiteForge.aDNA/how/campaigns/campaign_siteforge_interactive_subsystem/missions/artifacts/`. Seed session: aDNA.aDNA `session_stanley_20260521T023403Z_v8_m31_s1`.*
+
+---
+
+> Campaign renamed 2026-05-22 → `campaign_siteforge_sis`; pack renamed → `context_iii_domain_packs_sis.md`. Filename preserved as historical anchor per parent-plan locked decision (operator-approved at `~/.claude/plans/please-read-the-claude-md-floating-forest.md`).

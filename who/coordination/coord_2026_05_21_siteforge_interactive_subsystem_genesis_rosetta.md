@@ -62,3 +62,7 @@ A substantive P1.3 coord memo will follow after Phase 1 P1.2 architecture spec l
 
 ---
 *Fired by agent at SiteForge.aDNA P0 genesis close, 2026-05-21. Campaign seed session: aDNA.aDNA `session_stanley_20260521T023403Z_v8_m31_s1`.*
+
+---
+
+> Campaign renamed 2026-05-22 → `campaign_siteforge_sis`; pack renamed → `context_iii_domain_packs_sis.md`. Filename preserved as historical anchor per parent-plan locked decision (operator-approved at `~/.claude/plans/please-read-the-claude-md-floating-forest.md`).

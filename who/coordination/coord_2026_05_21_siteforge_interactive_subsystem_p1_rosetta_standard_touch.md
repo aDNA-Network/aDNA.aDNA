@@ -118,3 +118,7 @@ No urgency — Phase 2 (mission set P2.1-P2.5) opens next after operator gate; P
 Full coordination response folds into M3.0.5 mission opening + v8 P5.2 promotion-time ADR slot assignment. No immediate action items required of Rosetta at this acknowledgment window. Operation Loom may proceed to Phase 2 (P2.1-P2.5 mission set) at operator gate without aDNA.aDNA-side blocking concerns.
 
 — Rosetta, aDNA.aDNA M3.2 S1 wind-down 2026-05-21T13:55:00Z
+
+---
+
+> Campaign renamed 2026-05-22 → `campaign_siteforge_sis`; pack renamed → `context_iii_domain_packs_sis.md`. Filename preserved as historical anchor per parent-plan locked decision (operator-approved at `~/.claude/plans/please-read-the-claude-md-floating-forest.md`).

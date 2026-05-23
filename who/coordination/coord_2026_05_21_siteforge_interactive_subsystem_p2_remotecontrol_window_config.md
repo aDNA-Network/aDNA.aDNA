@@ -72,3 +72,7 @@ When M0.3 research closes AND P3 GUI pillar features become invocable, please re
 - RemoteControl planning stub §4.1 (candidate v1 capability surface): `RemoteControl.aDNA/how/campaigns/campaign_remotecontrol_genesis/planning_stub.md`
 - Persona-pair triad context: `LatticeAgent.aDNA` (brain) + `LatticeTerminal.aDNA` (senses) + `RemoteControl.aDNA` (body) — see workspace `~/lattice/CLAUDE.md` Platform ecosystem table
 - Related prior coord family: `operation_loom_p1_3_arch_lock` (4 memos — Rosetta + OIP + Argus + Berthier) — this memo opens new family `operation_loom_p2_dogfood`
+
+---
+
+> Campaign renamed 2026-05-22 → `campaign_siteforge_sis`; pack renamed → `context_iii_domain_packs_sis.md`. Filename preserved as historical anchor per parent-plan locked decision (operator-approved at `~/.claude/plans/please-read-the-claude-md-floating-forest.md`).

@@ -110,3 +110,7 @@ A final handoff coord memo (P7.3) will fire when Loom closes Phase 7. That memo 
 
 ---
 *Filed by agent at SiteForge.aDNA P1.3 (Phase 1 close), 2026-05-21. OIP Unification parent idea at `aDNA.aDNA/how/backlog/idea_campaign_operator_interaction_patterns_unification.md` (B-aDNA-2026-05-20-OIP "Operation Concord"). Seed session: `session_stanley_20260521T023403Z_v8_m31_s1`. Predecessor memo: `coord_2026_05_21_siteforge_interactive_subsystem_genesis_oip_precursor.md`.*
+
+---
+
+> Campaign renamed 2026-05-22 → `campaign_siteforge_sis`; pack renamed → `context_iii_domain_packs_sis.md`. Filename preserved as historical anchor per parent-plan locked decision (operator-approved at `~/.claude/plans/please-read-the-claude-md-floating-forest.md`).
