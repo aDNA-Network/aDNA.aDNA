@@ -216,6 +216,104 @@ Omit the `swot:` block entirely → the template renders `<div class="analysis-i
 
 `SiteForge.aDNA/how/campaigns/campaign_siteforge_sis/missions/artifacts/swot_panel_spec_p3p_5.md` (locked 2026-05-23, variant A-2 sentiment-cued column-tint) — JSON schema, persona-token map, placement rule, CSS contract. Reference example: `SiteForge.aDNA/how/gates/p3p_5_demo_gate.{data.json,html}`.
 
+## Recommendation authoring discipline
+
+The structured recommendation block (landed P3p.6; variant 1 flat stacked) replaces the per-section flat `verdict: string` + `actions: [string]` pair with `recommendation: { rationale, key_factors[], risks[], confidence, next_actions[] }`. Surfaces the agent's reasoning inline (not just the conclusion) — operator sees *why* before approving. Section-header `rec-pill` gains a `· ●●●●○` confidence-dot suffix when `confidence` is set.
+
+**When to use structured rec vs. flat verdict+actions**: prefer structured for any section where the operator's approve/amend/defer decision benefits from auditable reasoning. Legacy flat shape stays valid for trivial / one-line sections where rationale + risks would be padding. Default to structured unless the section is genuinely simple.
+
+### Field schema
+
+Per-section (in `phase_exit.html`) or top-level (in `decision_gate_3option.html`, via `recommendation_full_block_html` placeholder):
+
+```json
+{
+  "recommendation": {
+    "rationale": "1–3 sentences — why this is the right call",
+    "key_factors": ["Bullet — load-bearing consideration", "Bullet", "Bullet"],
+    "risks": ["Bullet — what could go wrong", "Bullet"],
+    "confidence": 4,
+    "next_actions": ["Bullet — what happens on approve", "Bullet", "Bullet"]
+  }
+}
+```
+
+| Key | Required | Convention |
+|---|---|---|
+| `rationale` | recommended | 1–3 sentences; paragraph prose (not bullets); states the case for the recommended path |
+| `key_factors` | recommended | 3–5 bullets; **≤ 14 words per bullet**; the considerations that drove the call |
+| `risks` | recommended | 1–3 bullets; **explicit acknowledgment** of what could go wrong; never omit because "nothing's wrong" — author the bullet "No material risks at this scope" if so |
+| `confidence` | recommended | Integer 1–5; agent's own confidence; renders as 5-dot indicator in CONFIDENCE row AND as section-header pill suffix |
+| `next_actions` | recommended | 2–5 bullets; what happens on approve; lifted from the legacy `actions[]` shape |
+
+All fields are optional; absent fields cleanly omit their subsection (no empty label). Empty `recommendation: {}` falls through to legacy `verdict` + `actions[]` if both are present, otherwise renders nothing in the rec block. **At minimum populate `rationale` + `key_factors` + `confidence`** — those three carry the load-bearing signal.
+
+### Field semantics — pick by axis
+
+| Field | Axis | Pick when |
+|---|---|---|
+| `rationale` | summative — why | The one-paragraph case for the recommended path; states the call in prose so the operator can read it in 5 seconds |
+| `key_factors` | supportive — what | The 3–5 considerations the rationale rests on; each bullet should be a distinct load-bearing point, not a restatement of rationale |
+| `risks` | adversarial — what could fail | The 1–3 failure modes the operator should weigh; force yourself to articulate them even when confidence is high |
+| `confidence` | meta — how sure | The agent's honest 1–5 self-assessment; not a polling target — under-claim rather than over-claim |
+| `next_actions` | prescriptive — what now | The concrete steps that happen on approve; previously the legacy `actions[]` list |
+
+Don't conflate axes — "use the v1 PROTOTYPE state for all P3 authoring" is a `next_action` (prescriptive), not a `key_factor` (supportive). When in doubt: "is this why I recommend it, or what happens after we approve?"
+
+### Writing the bullets — apply D-WC carries
+
+- **C-D5-1 verb-first labels** for `key_factors` + `next_actions`: "Approve the v1 PROTOTYPE state" beats "v1 PROTOTYPE state should be approved". "Skill captures all 7 sections" beats "There are 7 sections captured in the skill".
+- **C-DWC-1 anti-slop**: drop hedges, parentheticals, abstract framing. "Cross-vault propagation manual until P5.5" beats "It should be noted that cross-vault propagation may potentially still need to be handled manually pending the arrival of P5.5".
+- **≤ 14 words per bullet** keeps each bullet a one-row read; **rationale** can be longer (1–3 sentences) because it's paragraph prose, not a list.
+- **Honest confidence**: 5 = "I'd stake my work on this"; 4 = "high confidence, one nagging risk"; 3 = "right call as I see it, but operator may have context I don't"; 2 = "leaning this way; need operator input"; 1 = "low confidence; flagged for discussion". Don't inflate.
+
+### Worked example (full structured rec — load-bearing section)
+
+```json
+{
+  "id": "p2_1",
+  "title": "Authoring skill",
+  "rec_class": "approve",
+  "rec_label": "APPROVE",
+  "question": "Is the prototype skill sufficient for Phase 2's needs?",
+  "recommendation": {
+    "rationale": "Authoring skill provides the load-bearing scaffold for rapid SIS creation. At 99 LOC (cap = 100) it covers the full authoring pattern without leaking architectural detail, and the PROTOTYPE marker keeps the canonical-lift seam visible for P5.1.",
+    "key_factors": [
+      "Skill captures all 7 sections required for cold-start authoring",
+      "Forward-references to P2.2-P2.4 artifacts resolve at P2.5 — no broken links",
+      "PROTOTYPE banner + frontmatter make the v1 fitness boundary explicit"
+    ],
+    "risks": [
+      "Skill lives in aDNA.aDNA/how/skills/ at PROTOTYPE — agents must understand the lift seam",
+      "Workspace Standing Order #8 wording was ambiguous; flagged for P5.3 sweep"
+    ],
+    "confidence": 4,
+    "next_actions": [
+      "Approve the v1 PROTOTYPE state and use for all P3 mini-sprint authoring",
+      "Defer canonical lift + banner removal to P5.1 ceremony",
+      "P5.3 absorbs the Standing Order #8 wording clarification"
+    ]
+  }
+}
+```
+
+### Backward compatibility
+
+Two legacy shapes still work:
+
+1. **Bare strings in `actions`**: `"actions": ["step 1", "step 2"]` — generator handles both string lists and `[{"value": "..."}]` dict lists in the legacy fallback path.
+2. **Omit `recommendation` entirely**: section renders the legacy `.rec-verdict` + `.rec-actions` from `verdict` + `actions` fields. No section-header confidence-dot suffix (since `recommendation.confidence` is absent).
+
+Existing gates (e.g. the P2 phase-exit gate at `SiteForge.aDNA/how/gates/p2_phase_exit_gate.html`) without `recommendation` blocks stay valid. The augmentation pattern (add `recommendation` alongside existing `verdict` + `actions` for forward compat) was used at P3p.6 cycle 6b/6c on P2.1 + P2.3.
+
+### Top-level rec (decision_gate_3option, optional)
+
+`decision_gate_3option.html` has NO static `.rec-block` container in markup. The `{{recommendation_full_block_html}}` placeholder renders the full block (orange container + ◆ label + structured inner) when top-level `data.recommendation` is provided, OR empty string when absent — the placeholder vanishes silently. Use this when you want a single agent-recommendation summary above the operator's option picks (e.g. "the agent recommends Option B because…").
+
+### Authoritative spec
+
+`SiteForge.aDNA/how/campaigns/campaign_siteforge_sis/missions/artifacts/recommendation_block_spec_p3p_6.md` (locked 2026-05-23, variant 1 flat stacked) — field schema, axis semantics, visual constraints, CSS contract, token list. Reference example: `SiteForge.aDNA/how/gates/p3p_6_demo_gate.{data.json,html}` exercises all 3 render paths (full / partial / legacy).
+
 ## Writing discipline (D-WC carries from Dark-Mode 50-Cycle Sprint)
 
 The Dark-Mode 50-Cycle Sprint's D-WC (Writing & Content) arc distilled five carry-forward findings about prose authoring inside SIS data JSON. Apply when populating any prose-bearing field (SITREP values, composite_question, section.title/analysis/verdict, footer_text, recommendation cards).
