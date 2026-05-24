@@ -7,16 +7,16 @@ mission_number: 3.4
 slug: verification_handoff_and_agent_inspection
 created: 2026-05-24
 updated: 2026-05-24
-status: in_progress
+status: completed
 opens_at: 2026-05-24T01:19:08Z
 opened_session: session_stanley_20260524T011908Z_v8_m34_s1
-closed_at: null
-closed_session: null
+closed_at: 2026-05-24T04:41:50Z
+closed_session: session_stanley_20260524T044150Z_v8_m34_s3
 estimated_sessions: 3   # canonical 3-session implementation-class shape — 9th instance candidate after M1.3 + M1.4 + M2.1 + M2.3 + M2.4 + M3.1 + M3.2 + M3.3
-actual_sessions: null   # ratifies at S3 close
+actual_sessions: 3   # RATIFIED at S3 close — 9th canonical instance of the 3-session implementation-class shape; spec+skill+ADR S2 mix ratifies as 2nd canonical sub-pattern (substrate-inversion-with-ADR variant) alongside M3.3's spec+skill-only mix
 persona: rosetta
 last_edited_by: agent_stanley
-spec_completeness: in_progress   # S1 authors spec + governance bundle; S2 lands T7+T8 design specs + 2 new skills + ADR-014 draft; S3 closes with AAR + ADR-014 ratify + close cascade
+spec_completeness: complete   # S1 authored spec + governance bundle (`4153244`); S2 landed T7+T8 design specs + 2 new skills + ADR-014 draft (`1dcfd14`); S3 closed with AAR + ADR-014 ratify + close cascade
 mission_class: implementation   # T7+T8 design specs + 2 new skills (skill_verification_handoff + skill_obsidian_agent_inspect) + ADR-014 doctrinal; design at P3, propagation at P6; spec+skill+ADR S2 mix is heavier-than-M3.3 9th-instance variant
 token_budget_estimated: "S1 ~90-120 kT content-load (M3.3 spec template digestion + absorbed-campaign Tracks 7+8 sections + LWX M-LWX-03 AAR re-read for verification-handoff topology source + M3.3 T6 spec + skill stub-section re-read + ADR-014 forecast row + mission spec auth + campaign master amendments + STATE router refresh + session file; slightly heavier than M3.3 S1 ~85-115 due to ADR-014 substrate setup) + S2 ~165-205 kT (T7 design spec + T8 design spec + NEW skill_verification_handoff.md + NEW skill_obsidian_agent_inspect.md + ADR-014 draft authoring; ~13% above M3.3 S2 ~145-185 due to 4 destructive landings vs M3.3 S2's 3; ADR-014 draft is small relative to specs+skills) + S3 ~80-115 kT (AAR + ADR-014 ratification + STATE Op 3 15th canonical instance + campaign master close + 3 session moves; +5-10 kT over M3.3 S3 due to ADR-014 ratification edit). Three-session total ~335-440 kT (~10% above M3.3 ~305-410 due to 2 skills + ADR draft S2 overhead). API-billing companion per ADR-016 Clause C empirical formula (`cache_creation ≈ 328 K + turns × 1 K`; `cache_read ≈ 4.1 M + turns × 126 K`): S1 ~12-16 M cache_read at 6-7 turns; S2 ~15-20 M cache_read at 8-9 turns; S3 ~11-15 M cache_read at 7-8 turns; total ~38-51 M cache_read across the 3-session arc; ~1.1 M cache_creation total. Per ADR-016 Clause A + Project Standing Order #11; declared in mission frontmatter per Standing Order #8 self-reference (M3.4 declares its own budget per the field ADR-016 Clause A ratified)."
 tags: [mission, m3_4, v8, p3, verification_handoff, agent_driven_obsidian_inspection, t7_skill_verification_handoff, t8_local_rest_api_and_mcp, t8a_obsidian_local_rest_api, t8b_per_vault_keyed_data_json, t8c_mcp_obsidian_server, t8d_skill_obsidian_agent_inspect, t8e_t6_skill_mode_profile_activation, adr_014_verification_handoff_topology, canonical_3_session_implementation_shape_9th_instance_candidate, cross_skill_primitive_composition_graduation_path_2nd_and_3rd_instances, t8_forward_reference_stub_discipline_graduation_path_2nd_and_3rd_instances, design_at_p3_propagation_at_p6_pattern_3rd_survival_test, six_section_design_spec_structure_6th_and_7th_canonical_instances, north_star_easy_fluid_context_graphs, p3_phase_exit_brick_4_of_4_agent_autonomy_prong, rosetta]
@@ -96,7 +96,7 @@ Canonical 3-session implementation-class shape — **9th instance candidate** af
 
 ### 1. Mission spec authoring + design-spec template digestion (S1)
 
-- **Status**: in_progress (S1; this file)
+- **Status**: completed S1 (`4153244`)
 - **Session**: S1
 - **Read**: M3.3 mission spec (template; ~332 lines); M3.3 AAR (PRIMARY cross-skill primitive composition + STRONG-EXTENDED T8 forward-reference-stub findings); M3.3 T6 design spec lines 256-269 (T8 forward-reference stub); M3.3 skill_obsidian_integration_test.md lines 585-601 (T8 forward-reference stub); absorbed campaign `campaign_obsidian_deployment_stabilization.md` Tracks 7+8 sections (lines 64-77 verbatim); LWX mini-campaign AAR (verification-handoff topology source); plan file (`please-read-the-claude-md-ethereal-rainbow.md`); campaign-specific CLAUDE.md (Standing Orders 11-19 incl. #14 in-phase exception clause + #16 verification-handoff mandate); ADR-014 forecast row at campaign master line 310.
 - **Produce**: this file (frontmatter + Objectives + Scope + Acceptance + Hard constraints + Standing-Order discharges + §Improvements classification table + Cross-vault impact + Cross-Mission Dependencies + Self-reference + Risks + Notes).
@@ -104,7 +104,7 @@ Canonical 3-session implementation-class shape — **9th instance candidate** af
 
 ### 2. Campaign master M3.4 row flip + amendments entry + STATE refresh (S1)
 
-- **Status**: pending S1
+- **Status**: completed S1 (`4153244`)
 - **Session**: S1
 - **Read**: campaign master `campaign_adna_serious_tool_readiness.md` Phase 3 table (current line 168 row state + amendments-table tail).
 - **Produce**:
@@ -116,7 +116,7 @@ Canonical 3-session implementation-class shape — **9th instance candidate** af
 
 ### 3. T7 design spec — verification-handoff topology codification (S2)
 
-- **Status**: pending S2
+- **Status**: completed S2 (`1dcfd14`)
 - **Session**: S2
 - **Read**: absorbed-campaign Track 7 (line 64-66 verbatim); LWX M-LWX-03 mission spec + AAR (M-VNAL-01 dispatch precedent); M3.3 T6 design spec (6-section template); ADR-016/-017/-022 (ADR-format-at-implementation-mission-close precedent).
 - **Produce**: `missions/artifacts/m34_obj3_t7_design_spec.md` with 6 sections per Mission scope §2.
@@ -125,7 +125,7 @@ Canonical 3-session implementation-class shape — **9th instance candidate** af
 
 ### 4. T8 design spec — agent-driven Obsidian inspection (S2)
 
-- **Status**: pending S2
+- **Status**: completed S2 (`1dcfd14`)
 - **Session**: S2
 - **Read**: absorbed-campaign Track 8 + sub-tracks T8a-T8e (line 67-77 verbatim); `backlog_F_S2_8_agent_driven_obsidian_inspection.md`; `obsidian-local-rest-api` plugin readme (https://github.com/coddingtonbear/obsidian-local-rest-api — README spec; offline reading if needed); `mcp-obsidian` server readme (https://github.com/MarkusPfundstein/mcp-obsidian — README spec); M3.3 T6 design spec (6-section template); M3.3 skill_obsidian_integration_test.md (T6 skill — DELEGATION target for T8d).
 - **Produce**: `missions/artifacts/m34_obj4_t8_design_spec.md` with 6 sections per Mission scope §3.
@@ -134,7 +134,7 @@ Canonical 3-session implementation-class shape — **9th instance candidate** af
 
 ### 5. NEW skill `skill_verification_handoff.md` authoring (S2; T7 deliverable)
 
-- **Status**: pending S2
+- **Status**: completed S2 (`1dcfd14`)
 - **Session**: S2
 - **Read**: F-S2-5 backlog §Critical files (skill location precedent at `aDNA.aDNA/how/skills/`); M3.3 `skill_obsidian_integration_test.md` (skill API + `--vault` + `--profile` + DELEGATION pattern); LWX AAR (M-LWX-02 → M-LWX-03 → M-VNAL-01 dispatch model — substantive content source); `aDNA.aDNA/how/skills/AGENTS.md` (M2.4.5-hardened routing layer for skills).
 - **Produce**: NEW `aDNA.aDNA/how/skills/skill_verification_handoff.md` — full skill spec with frontmatter (type/created/updated/last_edited_by/tags) + skill API (dispatch decision tree + `--mission <mission_id>` + `--surface <agent | operator | dispatch>` + `--check-set <T6 | custom>` slots) + invocation contract + safety preconditions + outputs verification verdict (PASS / FAIL / DISPATCHED) + handoff coordinates + DELEGATION block citing T6 `skill_obsidian_integration_test.md` for binary-presence + cross-references to M-VNAL-01 dispatch precedent + LWX AAR + ADR-014 + `## Forward integration with M3.5` stub + `## Forward integration with M3.7` stub.
@@ -143,7 +143,7 @@ Canonical 3-session implementation-class shape — **9th instance candidate** af
 
 ### 6. NEW skill `skill_obsidian_agent_inspect.md` authoring (S2; T8d deliverable per D1=A)
 
-- **Status**: pending S2
+- **Status**: completed S2 (`1dcfd14`)
 - **Session**: S2
 - **Read**: F-S2-5 backlog §Critical files (skill placement); M3.3 `skill_obsidian_integration_test.md` (T6 — DELEGATION target); M3.2 `skill_obsidian_canonicalize.md` (depth-3 delegation reach); `obsidian-local-rest-api` plugin README (API endpoints + key format); `mcp-obsidian` server README (MCP tool list + invocation pattern); T8 design spec (Obj 4) for skill API surface.
 - **Produce**: NEW `aDNA.aDNA/how/skills/skill_obsidian_agent_inspect.md` — full skill spec with frontmatter + skill API (`--mode agent_driven | hybrid | operator_side` + `--vault <path>` + `--profile <profile>` slots) + invocation contract + safety preconditions (Obsidian running + plugin loaded + API key valid + MCP reachable) + error handling for partial-availability + DELEGATION block citing T6 `skill_obsidian_integration_test.md` as consumer + T7 `skill_verification_handoff.md` as dispatcher + M3.2 `skill_obsidian_canonicalize.md` reachable at depth 3 + cross-references + `## Forward integration with M3.7` stub.
@@ -152,7 +152,7 @@ Canonical 3-session implementation-class shape — **9th instance candidate** af
 
 ### 7. ADR-014 draft + ratification (S2 draft → S3 ratify per D2=A)
 
-- **Status**: pending S2 (draft) → pending S3 (ratify)
+- **Status**: completed S2 (`1dcfd14`) (draft) → pending S3 (ratify)
 - **Session**: S2 draft + S3 ratify
 - **Read**: ADR-016 / ADR-017 / ADR-022 (ratification-at-implementation-mission-close precedent); T7 design spec (substrate; from Obj 3); T7 skill (operational primitive; from Obj 5); Campaign SO #14 in-phase exception clause + #16 verification-handoff mandate; LWX AAR.
 - **Produce**: `aDNA.aDNA/what/decisions/adr_014_verification_handoff_topology.md` — full ADR with frontmatter (adr_id + status + supersedes/superseded_by + tags) + 3 clauses (A topology-definition + B dispatch-decision-tree + C consumer-mission obligations) + decision rationale + alternatives considered + consequences + relationship to ADR-016 (per-mission budget) + ADR-022 (PostToolUse hook) + Campaign SO #14 + #16 references.
@@ -161,7 +161,7 @@ Canonical 3-session implementation-class shape — **9th instance candidate** af
 
 ### 8. AAR + close cascade (S3)
 
-- **Status**: pending S3
+- **Status**: completed S3 (this close commit)
 - **Session**: S3
 - **Read**: this mission file (S3 final state); S1 + S2 session files (SITREP synthesis); 5 S2 artifact files (T7 + T8 design specs + 2 new skills + ADR-014 draft).
 - **Produce**:
@@ -179,14 +179,14 @@ Canonical 3-session implementation-class shape — **9th instance candidate** af
 
 | # | Deliverable | Session | Status |
 |---|---|---|---|
-| 1 | M3.4 mission spec (this file) | S1 | 🚧 S1 (in progress this commit) |
-| 2 | Campaign master M3.4 row flip + amendments entry + STATE.md router refresh (governance bundle) | S1 | 🚧 S1 (in progress this commit) |
-| 3 | `m34_obj3_t7_design_spec.md` — T7 verification-handoff topology codification | S2 | ⏳ pending S2 |
-| 4 | `m34_obj4_t8_design_spec.md` — T8 agent-driven Obsidian inspection (5 sub-tracks T8a-T8e) | S2 | ⏳ pending S2 |
-| 5 | NEW `aDNA.aDNA/how/skills/skill_verification_handoff.md` — T7 skill (dispatch decision tree + DELEGATES to T6 for binary checks) | S2 | ⏳ pending S2 |
-| 6 | NEW `aDNA.aDNA/how/skills/skill_obsidian_agent_inspect.md` — T8d skill (agent-driven inspection + DELEGATES to T6 + T7) | S2 | ⏳ pending S2 |
-| 7 | `what/decisions/adr_014_verification_handoff_topology.md` — ADR-014 (3 clauses A/B/C; draft S2 → accepted S3) + AAR + campaign master close + STATE refresh + session moves | S2 draft + S3 ratify + close | ⏳ pending S2/S3 |
-| 8 | **OPTIONAL S3-with-carry sub-mode absorption** if 5-criteria gate satisfied at close window | S3 | NOT TRIGGERED (default D-CARRY=no-carry) |
+| 1 | M3.4 mission spec (this file) | S1 | ✅ S1 (`4153244`) |
+| 2 | Campaign master M3.4 row flip + amendments entry + STATE.md router refresh (governance bundle) | S1 | ✅ S1 (`4153244`; Op 3 14th canonical instance) |
+| 3 | `m34_obj3_t7_design_spec.md` — T7 verification-handoff topology codification | S2 | ✅ S2 (`1dcfd14`; ~390 lines; 6-section 6th canonical instance) |
+| 4 | `m34_obj4_t8_design_spec.md` — T8 agent-driven Obsidian inspection (5 sub-tracks T8a-T8e) | S2 | ✅ S2 (`1dcfd14`; ~520 lines; 6-section 7th canonical instance) |
+| 5 | NEW `aDNA.aDNA/how/skills/skill_verification_handoff.md` — T7 skill (dispatch decision tree + DELEGATES to T6 for binary checks) | S2 | ✅ S2 (`1dcfd14`; ~440 lines; SO #8 16th tactical invocation; 3rd behavioral test of M2.4.5-hardened skills routing layer) |
+| 6 | NEW `aDNA.aDNA/how/skills/skill_obsidian_agent_inspect.md` — T8d skill (agent-driven inspection + DELEGATES to T6 + T7) | S2 | ✅ S2 (`1dcfd14`; ~480 lines; TRIPLE DELEGATION; cross-skill primitive composition 3 of 3 ratifies HERE; SO #8 17th tactical invocation; 4th behavioral test of M2.4.5-hardened skills routing layer) |
+| 7 | `what/decisions/adr_014_verification_handoff_topology.md` — ADR-014 (3 clauses A/B/C; draft S2 → accepted S3) + AAR + campaign master close + STATE refresh + session moves | S2 draft + S3 ratify + close | ✅ S2 draft (`1dcfd14`; ~270 lines) + S3 ratify (this close commit; status `draft → accepted`; first behavioral-primitive-paired-with-operational-skill ADR in v8) + AAR (this close commit; PRIMARY = cross-skill primitive composition graduation at 3/3) + close cascade |
+| 8 | **OPTIONAL S3-with-carry sub-mode absorption** if 5-criteria gate satisfied at close window | S3 | NOT TRIGGERED (default D-CARRY=no-carry per operator) |
 
 ## Current State — inherited from M3.1 recon-audit + M3.2/M3.3 substrate (no fresh recon at M3.4)
 
@@ -347,4 +347,28 @@ The mission also self-applies its own substrate: M3.4's T7+T8d skills DELEGATE t
 
 ## Completion Summary
 
-*Filled at S3 close.*
+**Closed 2026-05-24 at S3 (`session_stanley_20260524T044150Z_v8_m34_s3`)**. 7/7 cumulative deliverables LIVE (D-CARRY=no-carry per operator; 8th-deliverable slot not invoked); canonical 3-session implementation-class shape **9th instance RATIFIED** (substrate-inversion-with-ADR variant ratifies as 2nd canonical sub-pattern alongside M3.3's spec+skill-only mix). HEAD post-close = 7 commits ahead of M3.3 close baseline `3b856b0` (4 substrate-pure absorption commits + S1 + S2 + S3 close).
+
+### Pattern graduations (both at 3 of 3 use instances per `m21_obj4` rubric)
+
+1. **Cross-skill primitive composition pattern — GRADUATED** at 3 of 3 use instances. Instances: (i) M3.3 T6 → M3.2 skill (linear 4-layer chain); (ii) M3.4 T7 → T6 skill (linear 5-layer chain); (iii) M3.4 T8d → T6 + T7 + M3.2 skill (TRIPLE DELEGATION = branching graph; 3 paths within single skill body). `skill_cross_skill_primitive_composition.md` skill file authoring **deferred to follow-up** per D-GRAD operator choice (backlog idea filed at `how/backlog/idea_pattern_graduation_skill_authoring.md`).
+
+2. **T8 forward-reference-stub discipline — GRADUATED** at 3 of 3 use instances. Instances: (i) M3.3 T6 spec + new skill T8 stubs; (ii) M3.4 T7 spec + T7 skill M3.5/M3.7 stubs; (iii) M3.4 T8 spec + T8d skill M3.5/M3.7 stubs. `skill_forward_reference_stub_design.md` skill file authoring **deferred to follow-up** per D-GRAD (same backlog idea file).
+
+### ADR-014 ratification
+
+ADR-014 status `draft → accepted` at this S3 close per Campaign SO #14 in-phase exception clause (D2=A operator-ratified at S1 plan approval; load-bearing for M3.5/M3.7 + cross-vault propagation; mirrors ADR-016/-017/-022 ratification-at-implementation-mission-close pattern). First **behavioral-primitive-paired-with-operational-skill** ADR in v8 — the skill-+-ADR pairing pattern is now established for future architectural primitives.
+
+### P3 phase-exit gate progress
+
+**4 of 4 P3 phase-exit bricks complete for the agent-autonomy prong** ("Agent can drive Obsidian autonomously"). The other 3 prongs ("HOME polished + airlock streamlined + modular III operational") remain — M3.5 + M3.6 + M3.7 must close before P3 → P4 phase-exit gate per Campaign SO #19. M3.4 close does NOT auto-open M3.5 or P4 per Project SO #1.
+
+### v8 P6 propagation queue forecast growth
+
+Queue grew 12-14 → ~17-20 doctrinal additions at this M3.4 close (adding T7 skill upstream-promotion candidate + T8a `obsidian-local-rest-api` PLUGIN_IDS extension as 6th-instance additive-upstream candidate + T8b per-vault keyed `data.json` template as 7th-instance candidate + T8c MCP config patch + T8d skill upstream-promotion candidate + T8e T6 mode-profile activation patch + ADR-014 upstream-promotion). Largest single-commit-per-patch batch in v8 by quantity when v8 P6 cycle opens. M2.3.5 push-readiness checklist template is the inheritance baseline for the P6 cycle.
+
+### Hard constraints honored end-to-end across all 3 sessions
+
+Zero `.adna/` touches (v7.0 frozen at `27e6395`); zero partner-vault contact (17 embargo memos preserved); zero `~/.claude/settings.json` modifications; zero `~/.adna/measurement/measurement.sqlite` deliberate mutations; zero hook modifications; **single new ADR (ADR-014) at M3.4** per D2=A + Campaign SO #14 in-phase exception clause; zero `node.aDNA/` mutations; zero `.obsidian/` config or plugin mutations (T8a-T8e are PATCH-TEXT-ONLY in design specs); zero M2.1.5/M3.0.5/M3.5-M3.7 scope creep; push to origin AUTHORIZED at this S3 (D-PUSH=push-after per operator).
+
+See [[../missions/artifacts/aar_m34_verification_handoff_and_agent_inspection.md|M3.4 AAR]] for the full close report.

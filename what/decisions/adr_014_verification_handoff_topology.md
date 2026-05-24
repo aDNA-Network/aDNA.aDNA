@@ -2,7 +2,7 @@
 type: adr
 adr_number: 014
 title: "Verification Handoff Topology — agent-side surface + operator-side surface + dispatch connector + agent-driven branch as canonical doctrine"
-status: draft   # ratifies at M3.4 S3 close per Campaign SO #14 in-phase exception clause
+status: accepted   # ratified at M3.4 S3 close per Campaign SO #14 in-phase exception clause
 created: 2026-05-24
 updated: 2026-05-24
 last_edited_by: agent_stanley
@@ -13,8 +13,8 @@ mission: mission_adna_str_p3_m34_verification_handoff_and_agent_inspection
 objective: 7
 decision_letter: A   # M3.4 D2=A operator-default ratified at S1 plan approval (Campaign SO #14 in-phase exception clause invocation)
 ratification_phase: M34_S3_close_via_campaign_so_14_in_phase_exception_clause_load_bearing_for_m35_m37_consumers
-ratified: null   # will be set to S3 close date at ratification
-ratified_session: null   # will be set to S3 session_id at ratification
+ratified: 2026-05-24   # set at S3 close
+ratified_session: session_stanley_20260524T044150Z_v8_m34_s3   # set at S3 close
 deciders: [agent_stanley, operator_stanley]
 informed: [berthier, argus, hermes, spock, mnemosyne, hygieia, asclepius, daedalus, iris, mentor]   # all personas with verification responsibilities across the lattice
 related_decisions: [adr_016_per_mission_context_budget, adr_017_network_adna_pattern_category_and_namespace_ratification, adr_022_tool_use_logging]
@@ -27,7 +27,11 @@ tags: [adr, decision, adr_014, campaign_adna_serious_tool_readiness, m34, v8, p3
 
 ## Status
 
-**Draft** at M3.4 S2 2026-05-24 (`session_stanley_20260524T035548Z_v8_m34_s2`). Drafts alongside T7 design spec + T7 skill (`skill_verification_handoff.md`) per Campaign SO #14 in-phase exception clause D2=A operator-ratified at M3.4 S1 plan approval. **Ratifies (status `draft → accepted`) at M3.4 S3 close** after T7 skill lands as operational primitive, T7 + T8 design specs land as proposed-patch substrate, and the S3 AAR documents the load-bearing rationale.
+**Accepted** at M3.4 S3 close 2026-05-24 (`session_stanley_20260524T044150Z_v8_m34_s3`). Drafted at M3.4 S2 2026-05-24 (`session_stanley_20260524T035548Z_v8_m34_s2`) alongside T7 design spec + T7 skill (`skill_verification_handoff.md`) per Campaign SO #14 in-phase exception clause D2=A operator-ratified at M3.4 S1 plan approval. **Ratification confirmed at M3.4 S3 close** after T7 skill (`skill_verification_handoff.md`) + T8d skill (`skill_obsidian_agent_inspect.md`) shipped as operational primitives at S2, T7 + T8 design specs landed as proposed-patch substrate, and the S3 AAR (`missions/artifacts/aar_m34_verification_handoff_and_agent_inspection.md`) documents the load-bearing rationale — acceptance scorecard row 5 confirms ratification preconditions met. Campaign SO #14 in-phase exception clause invocation completes per D2=A.
+
+### Ratification
+
+Status transitions `draft → accepted` at M3.4 S3 close commit. The 3 clauses A topology-definition + B dispatch-decision-tree + C consumer-mission obligations are operational from this commit forward. **Downstream consumers** (M3.5 HOME-polish + M3.7 modular III for Obsidian + cross-vault propagation via federation_ref to LatticeLabs.aDNA / LatticeNetwork.aDNA / SiteForge.aDNA / RareHarness.aDNA / WilhelmAI.aDNA) may cite this ADR as canonical doctrine immediately. v8 P6 ecosystem propagation will land the upstream-promotion candidate (ADR-014 itself + the operational skill `skill_verification_handoff.md`) at `LatticeProtocol/aDNA` per the design-at-P3-propagation-at-P6 pattern.
 
 ### Elevation chain
 
