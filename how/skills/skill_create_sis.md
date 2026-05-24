@@ -2,14 +2,14 @@
 type: skill
 skill_type: agent
 created: 2026-05-21
-updated: 2026-05-22
+updated: 2026-05-23
 status: draft
 prototype: true
 prototype_lifted_canonical_at: mission_p5_1_canonical_skill_lift
 category: communication
 trigger: agent needs operator decision/input richer than AskUserQuestion can carry
 last_edited_by: agent_stanley
-tags: [skill, sis, decision_gate, operator_io, prototype, operation_loom, sitrep_authoring_discipline, d_wc_carries]
+tags: [skill, sis, decision_gate, operator_io, prototype, operation_loom, sitrep_authoring_discipline, swot_authoring_discipline, d_wc_carries]
 ---
 
 # skill_create_sis
@@ -32,7 +32,7 @@ Otherwise prefer `AskUserQuestion` (≤ 4 options, no rich context).
 1. **Pick outer tier** — probe `$DISPLAY`/`$BROWSER`/`open` + `<vault>/how/gates/` writable + receiver `:8765/health`. Pass → web. Fail + ≤4 opts → `AskUserQuestion`. Fail + rich context → copy-paste.
 2. **Pick template** from `SiteForge.aDNA/what/lib/sis/templates/`: `decision_gate_3option`, `decision_gate_n_ranking`, `approval_gate`, `confidence_rating`, `phase_exit`, `structured_input_form`, `adr_gate`, `pilot_evaluation`.
 3. **Pick persona** via `--persona`: default = consumer-vault persona; universal fallback = `franklin`. Available: franklin / hermes / rosetta / partner / tokyo / neutral.
-4. **Bind data** — JSON keyed by the template's `{{placeholders}}` (title, options[], reasoning, context, gate_id, …). Optionally add a top-level `sitrep:` block (6 fields) — see §"SITREP authoring discipline" below. Omit it for terse/legacy gates; the template falls through to the existing `subtitle` rendering.
+4. **Bind data** — JSON keyed by the template's `{{placeholders}}` (title, options[], reasoning, context, gate_id, …). Optionally add a top-level `sitrep:` block (6 fields) — see §"SITREP authoring discipline" below. Optionally add structured `swot:` blocks per section (`phase_exit`) or top-level (`decision_gate_3option`) — see §"SWOT authoring discipline" below. Omit both for terse/legacy gates; templates fall through to existing `subtitle` and freeform `analysis`/`context` rendering.
 5. **Generate**:
    ```bash
    python ~/lattice/SiteForge.aDNA/what/lib/sis/runtime/generator.py \
@@ -132,6 +132,89 @@ Omit the `sitrep:` block entirely → the template renders `<div class="hdr-sub"
 ### Authoritative spec
 
 `SiteForge.aDNA/how/campaigns/campaign_siteforge_sis/missions/artifacts/sitrep_panel_spec_p3p_2.md` (locked 2026-05-22, operator-scored 5/5 one-round) — JSON schema, persona-token map, placement rule, CSS contract. Reference example: `SiteForge.aDNA/how/gates/p3p_3_demo_gate.{data.json,html}`.
+
+## SWOT authoring discipline
+
+The SWOT 2×2 panel (landed P3p.5; variant A-2 sentiment-cued) replaces freeform `analysis` / `context` prose with a structured 4-quadrant grid. Forces the agent to take explicit positions on present/forward × positive/negative axes; lets operators scan and compare sections at a glance.
+
+**When to use SWOT vs. freeform**: prefer SWOT for any section where the operator must decide. Freeform `analysis` stays appropriate for narrative context that doesn't translate to bullets (e.g. quoting a partner-supplied paragraph). Default to SWOT unless prose is load-bearing.
+
+### Field schema
+
+Per-section (in `phase_exit.html`) or top-level (in `decision_gate_3option.html`):
+
+```json
+{
+  "swot": {
+    "strengths": ["Locks visual before code (P3p.2 pattern)", "Backward compat byte-identical", "11 tests green"],
+    "weaknesses": ["CSS still inline in 3 templates", "Empty-quadrant case TBD"],
+    "opportunities": ["Lift CSS to primitives at first multi-template use", "Pattern reused at P3p.6"],
+    "threats": ["Grid wraps on narrow viewport", "Multi-byte char drift in bullet count"]
+  }
+}
+```
+
+| Key | Required | Convention |
+|---|---|---|
+| `swot.strengths` | yes (may be `[]`) | 1–4 bullets; **≤ 12 words per bullet** for scannability (soft cap; not enforced) |
+| `swot.weaknesses` | yes (may be `[]`) | Same |
+| `swot.opportunities` | yes (may be `[]`) | Same |
+| `swot.threats` | yes (may be `[]`) | Same |
+
+Empty arrays render as italic em-dash `—` placeholder — preserves 2×2 grid integrity; signals deliberate "no entries" rather than missing field.
+
+### Quadrant semantics — pick by axis
+
+| Quadrant | Axis | Pick when |
+|---|---|---|
+| `strengths` | present + positive | What the recommended path already has going for it; concrete evidence of the current state working |
+| `weaknesses` | present + negative | What's missing, inadequate, or fragile in the current state; honest deficits |
+| `opportunities` | forward + positive | What unlocks if we approve; downstream wins; cascading benefits |
+| `threats` | forward + negative | What could go wrong; explicit risks; failure modes the operator should weigh |
+
+Don't conflate axes — "we'll lift CSS to primitives" is an opportunity (forward), not a strength (present). When in doubt, ask "is this true today, or is it a future consequence?"
+
+### Writing the bullets — apply D-WC carries
+
+- **C-D5-1 verb-first labels** (for quadrants where bullets describe actions): "Lift CSS to primitives" beats "CSS lift to primitives". "Render em-dash placeholder" beats "Em-dash placeholder for empty quadrants".
+- **C-DWC-1 anti-slop**: drop hedges, parentheticals, abstract framing. "Multi-byte char drift in bullet count" beats "There is potential drift in bullet length counts due to multi-byte characters when the locale is not UTF-8 normalized".
+- **≤ 12 words is the line that fits on one row** in the locked grid. Bullets that wrap to 3+ lines kill scannability — the whole point of SWOT.
+
+### Worked example (load-bearing section with full SWOT)
+
+```json
+{
+  "id": "p3p_3_sitrep",
+  "title": "SITREP panel implementation (P3p.3)",
+  "swot": {
+    "strengths": [
+      "Locks visual before code (P3p.2 pattern)",
+      "Backward compat byte-identical to baseline",
+      "11 generator tests green first run"
+    ],
+    "weaknesses": [
+      "CSS lives in 3 template <style> blocks pre-lift",
+      "Empty-quadrant rendering not yet specified"
+    ],
+    "opportunities": [
+      "Lift CSS to primitives at first multi-template use",
+      "Helper pattern reused at P3p.6 recommendation"
+    ],
+    "threats": [
+      "Grid wraps on viewports < 500px wide",
+      "Multi-byte chars drift bullet-length word count"
+    ]
+  }
+}
+```
+
+### Backward compatibility
+
+Omit the `swot:` block entirely → the template renders `<div class="analysis-inner">{{analysis}}</div>` (sections) or `<div class="analysis-inner">{{context}}</div>` (decision_gate) as before. Existing gates (e.g. the P2 phase-exit gate) are immutable historical artifacts and stay unchanged. Quick-fire / legacy gates remain valid without `swot`.
+
+### Authoritative spec
+
+`SiteForge.aDNA/how/campaigns/campaign_siteforge_sis/missions/artifacts/swot_panel_spec_p3p_5.md` (locked 2026-05-23, variant A-2 sentiment-cued column-tint) — JSON schema, persona-token map, placement rule, CSS contract. Reference example: `SiteForge.aDNA/how/gates/p3p_5_demo_gate.{data.json,html}`.
 
 ## Writing discipline (D-WC carries from Dark-Mode 50-Cycle Sprint)
 
