@@ -4,7 +4,10 @@ backlog_id: idea_campaign_visualdna_adna_framework
 title: "VisualDNA.aDNA — Framework.aDNA for visual-DNA-per-entity standard ('any context graph becomes its own cartoon show')"
 proposed_by: stanley
 proposed_at: 2026-05-23
-status: seeded_for_genesis_planning_at_future_election
+status: stub_vault_bootstrapped_awaiting_pilot_aar_then_activation
+stub_vault_path: ~/lattice/VisualDNA.aDNA/  (lightweight stub bootstrapped 2026-05-23)
+stub_vault_persona: Pygmalion
+stub_vault_activation_trigger: CanvasForge.aDNA pilot S6 AAR close + Stanley election
 priority: high
 category: framework_adna_new_project
 references_pilot: CanvasForge.aDNA/how/campaigns/campaign_canvasforge_v1_2/missions/mission_m_v1_2_f_visual_dna_pilot.md
@@ -85,14 +88,36 @@ The CanvasForge v1.2 sub-campaign `M-V1-2-F-VDP-01` (Visual-DNA pilot) is **prov
 7. **Discovery mechanism**: vault-level `visualdna/index.yaml` enumerates all entity DNAs; agents query this to compose scenes
 8. **Wrapper template generator**: `skill_create_visualdna_wrapper.md` — like SiteForge's wrapper-creation skill
 
-## Pre-genesis-planning checklist
+## Pre-genesis-planning checklist (UPDATED 2026-05-23)
+
+**Update 2026-05-23**: Pilot scope expanded 3 → 6 sessions; stub vault bootstrapped at `~/lattice/VisualDNA.aDNA/` (persona Pygmalion); 5-consumer integration matrix documented.
 
 Items that must be true before genesis planning opens:
 
-- [ ] CanvasForge.aDNA `M-V1-2-F-VDP-01` pilot CLOSES with integration test PASS (proves pattern viability)
-- [ ] ScienceStanley.aDNA `what/visual_dna/` populated with ≥1 character + ≥1 location DNA bundle as reference implementations
-- [ ] Pilot AAR captures: schema design decisions; composition-rule edge cases; hybrid image-conditioning lessons; cross-vault wrapper-pattern observations
-- [ ] Stanley election to convert this seed → genesis-planning campaign
+- [x] **Stub vault bootstrapped** 2026-05-23 (lightweight; 7 files); persona = Pygmalion; campaign-planning mission stub at `VisualDNA.aDNA/how/campaigns/campaign_visualdna_genesis_planning/missions/mission_p0_meta_planning_stub.md` tagged `populate_after: CanvasForge pilot`
+- [x] **First consumer bundle pre-landed** at `ScienceStanley.aDNA/what/visual_dna/characters/stanley/` (5 canonical references: anchor + vars 1-4)
+- [ ] CanvasForge.aDNA `M-V1-2-F-VDP-01` pilot CLOSES (6 sessions; S1 schema v0.2 → S2 SS character validate → S3 location DNA → S4 ComfyForge LoRA → S5 VideoForge consumer → S6 social + metaverse + AAR)
+- [ ] ScienceStanley.aDNA `what/visual_dna/` populated with: ≥1 character bundle (✓ stanley.yaml at S2 close); ≥1 location bundle (lab_interior at S3); LoRA refs (S4); social-content samples (S6)
+- [ ] Pilot AAR captures: schema decisions (S1); composition rules (S3); LoRA-as-visual-DNA-component pattern (S4); VideoForge consumer pattern (S5); social + metaverse hookup (S6); 5-consumer integration matrix learnings
+- [ ] Pilot S6 populates `mission_p0_meta_planning_stub.md` with AAR content
+- [ ] Stanley elects activation → full `skill_project_fork.md` flow runs → stub vault becomes complete vault → genesis-planning campaign executes
+
+## 5-consumer integration matrix (informed by pilot scope)
+
+| Consumer | Validates at | Pattern |
+|----------|-------------|---------|
+| **Gemini** (via CanvasForge canonical) | Already validated (anchor + 4 vars 2026-05-23) | text-to-image (Imagen Ultra) + image-edit (Flash Image) consume `text_prompt` + `reference_image_set` |
+| **ComfyForge LoRAs** | Pilot S4 | trains LoRA on `reference_image_set`; LoRA path → `lora_refs` field; downstream consumers opt into LoRA-augmented gen |
+| **VideoForge (Iris)** | Pilot S5 | reads character DNA + `lora_refs` for character-consistent video frames |
+| **Social content generator** | Pilot S6 | topic + visual_dna → auto-generated in-context character image |
+| **Metaverse character spec** | Pilot S6 (doc) + future metaverse-side campaign | character DNA → 3D / avatar / pixel-art derivatives all canon-consistent |
+
+## Cross-vault coord memos filed 2026-05-23
+
+- ScienceStanley.aDNA — inbound visual_dna bundle pre-landing (✓)
+- ComfyForge.aDNA — LoRA consumer pattern (✓)
+- VideoForge.aDNA — video consumer pattern (✓)
+- VisualDNA.aDNA — stub bootstrap notice (✓)
 
 ## Predecessor / contextual inputs
 

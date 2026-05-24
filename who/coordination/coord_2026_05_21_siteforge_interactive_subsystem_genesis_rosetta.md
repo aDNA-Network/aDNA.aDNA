@@ -66,3 +66,7 @@ A substantive P1.3 coord memo will follow after Phase 1 P1.2 architecture spec l
 ---
 
 > Campaign renamed 2026-05-22 → `campaign_siteforge_sis`; pack renamed → `context_iii_domain_packs_sis.md`. Filename preserved as historical anchor per parent-plan locked decision (operator-approved at `~/.claude/plans/please-read-the-claude-md-floating-forest.md`).
+
+---
+
+> **2026-05-23 P3p.6r ISS rename**: campaign `campaign_siteforge_sis` → `campaign_siteforge_iss`; SIS (site-interaction-surface) → ISS (Interaction Surface Site). Historical content preserved verbatim.

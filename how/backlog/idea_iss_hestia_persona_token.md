@@ -7,15 +7,15 @@ priority: low
 last_edited_by: agent_stanley
 source_mission: node.aDNA campaign_lattice_compliance_upgrade M19 (Finding D)
 target_vault: SiteForge.aDNA
-target_subsystem: what/lib/sis/tokens/
-tags: [backlog, sis, persona_token, hestia, node_adna, cross_vault, upstream_contribution]
+target_subsystem: what/lib/iss/tokens/
+tags: [backlog, iss, persona_token, hestia, node_adna, cross_vault, upstream_contribution]
 ---
 
-# SIS persona-token addition: hestia
+# ISS persona-token addition: hestia
 
 ## Finding (node.aDNA M19)
 
-SiteForge.aDNA's SIS subsystem (`what/lib/sis/tokens/`) ships 6 persona token CSS files:
+SiteForge.aDNA's ISS subsystem (`what/lib/iss/tokens/`) ships 6 persona token CSS files:
 
 - `tokens_base.css` (structural invariants)
 - `persona_franklin.css`
@@ -25,13 +25,13 @@ SiteForge.aDNA's SIS subsystem (`what/lib/sis/tokens/`) ships 6 persona token CS
 - `persona_tokyo.css`
 - `persona_neutral.css`
 
-There is no `persona_hestia.css`. node.aDNA's canonical persona is **Hestia** (goddess of the hearth — `node.aDNA/CLAUDE.md` §Identity). For the M19 pilot review SIS object + M19.5 range-review SIS, node.aDNA used `tokyo` as a fallback because hestia is unavailable upstream.
+There is no `persona_hestia.css`. node.aDNA's canonical persona is **Hestia** (goddess of the hearth — `node.aDNA/CLAUDE.md` §Identity). For the M19 pilot review ISS object + M19.5 range-review ISS, node.aDNA used `tokyo` as a fallback because hestia is unavailable upstream.
 
 `tokyo` is a reasonable fallback (dark, dense, dev-lab vibe matches SS Bio-Digital Cozy aesthetic), but a proper hestia token would: warmer amber + terracotta accents (the hearth-fire palette), domestic-cozy padding, R7+R4 "wonder + zoom" type voice cues in any micro-copy slots.
 
 ## Proposed fix
 
-Add `SiteForge.aDNA/what/lib/sis/tokens/persona_hestia.css` modeled on the existing persona token pattern (e.g., copy `persona_tokyo.css` and re-anchor color tokens):
+Add `SiteForge.aDNA/what/lib/iss/tokens/persona_hestia.css` modeled on the existing persona token pattern (e.g., copy `persona_tokyo.css` and re-anchor color tokens):
 
 - Primary accent: warm amber (≈ `#E8A75E` — the hearth-fire mid-tone)
 - Secondary accent: terracotta / clay (`#C76A4B`)
@@ -42,13 +42,13 @@ Cross-reference: `ScienceStanley.aDNA/what/context/visual/context_visual_color_s
 
 ## Affected files
 
-- New: `SiteForge.aDNA/what/lib/sis/tokens/persona_hestia.css`
-- `SiteForge.aDNA/what/lib/sis/runtime/generator.py` — extend `VALID_PERSONAS = {"franklin", "hermes", "rosetta", "partner", "tokyo", "neutral"}` to include `"hestia"`.
+- New: `SiteForge.aDNA/what/lib/iss/tokens/persona_hestia.css`
+- `SiteForge.aDNA/what/lib/iss/runtime/generator.py` — extend `VALID_PERSONAS = {"franklin", "hermes", "rosetta", "partner", "tokyo", "neutral"}` to include `"hestia"`.
 
 ## Downstream consumers
 
 - `node.aDNA/siteforge/CLAUDE.md` — flip the persona default from `tokyo` to `hestia` once landed.
-- M20+M21+M22+M23 SIS objects will use `hestia` natively after the upstream PR lands.
+- M20+M21+M22+M23 ISS objects will use `hestia` natively after the upstream PR lands.
 
 ## Scope
 

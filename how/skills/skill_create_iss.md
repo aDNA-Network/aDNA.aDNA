@@ -9,12 +9,14 @@ prototype_lifted_canonical_at: mission_p5_1_canonical_skill_lift
 category: communication
 trigger: agent needs operator decision/input richer than AskUserQuestion can carry
 last_edited_by: agent_stanley
-tags: [skill, sis, decision_gate, operator_io, prototype, operation_loom, sitrep_authoring_discipline, swot_authoring_discipline, d_wc_carries]
+tags: [skill, iss, decision_gate, operator_io, prototype, operation_loom, sitrep_authoring_discipline, swot_authoring_discipline, d_wc_carries]
 ---
 
-# skill_create_sis
+# skill_create_iss
 
-> **PROTOTYPE** — built at `campaign_siteforge_sis` ("Operation Loom") P2.1. Promotes canonical at P5.1 (removes this banner; adds inventory row). Authoritative spec: `SiteForge.aDNA/how/campaigns/campaign_siteforge_sis/missions/artifacts/architecture_spec_p1_2.md`. ADR draft: `…/missions/artifacts/adr_draft_sis_architecture.md`.
+> **PROTOTYPE** — built at `campaign_siteforge_iss` ("Operation Loom") P2.1. Promotes canonical at P5.1 (removes this banner; adds inventory row). Authoritative spec: `SiteForge.aDNA/how/campaigns/campaign_siteforge_iss/missions/artifacts/architecture_spec_p1_2.md`. ADR draft: `…/missions/artifacts/adr_draft_iss_architecture.md`.
+
+> **Naming note**: ISS = *Interaction Surface Site* (this skill's context, not the International Space Station). Renamed 2026-05-23 at P3p.6r from SIS = *site-interaction-surface* — orientation flipped to frame these as the site that IS the interaction surface, rather than something living on a site. Lineage preserved in `campaign_siteforge_iss/CLAUDE.md`.
 
 ## When to invoke
 
@@ -30,12 +32,12 @@ Otherwise prefer `AskUserQuestion` (≤ 4 options, no rich context).
 ## Authoring workflow (the 7-step happy path)
 
 1. **Pick outer tier** — probe `$DISPLAY`/`$BROWSER`/`open` + `<vault>/how/gates/` writable + receiver `:8765/health`. Pass → web. Fail + ≤4 opts → `AskUserQuestion`. Fail + rich context → copy-paste.
-2. **Pick template** from `SiteForge.aDNA/what/lib/sis/templates/`: `decision_gate_3option`, `decision_gate_n_ranking`, `approval_gate`, `confidence_rating`, `phase_exit`, `structured_input_form`, `adr_gate`, `pilot_evaluation`.
+2. **Pick template** from `SiteForge.aDNA/what/lib/iss/templates/`: `decision_gate_3option`, `decision_gate_n_ranking`, `approval_gate`, `confidence_rating`, `phase_exit`, `structured_input_form`, `adr_gate`, `pilot_evaluation`.
 3. **Pick persona** via `--persona`: default = consumer-vault persona; universal fallback = `franklin`. Available: franklin / hermes / rosetta / partner / tokyo / neutral.
 4. **Bind data** — JSON keyed by the template's `{{placeholders}}` (title, options[], reasoning, context, gate_id, …). Optionally add a top-level `sitrep:` block (6 fields) — see §"SITREP authoring discipline" below. Optionally add structured `swot:` blocks per section (`phase_exit`) or top-level (`decision_gate_3option`) — see §"SWOT authoring discipline" below. Omit both for terse/legacy gates; templates fall through to existing `subtitle` and freeform `analysis`/`context` rendering.
 5. **Generate**:
    ```bash
-   python ~/lattice/SiteForge.aDNA/what/lib/sis/runtime/generator.py \
+   python ~/lattice/SiteForge.aDNA/what/lib/iss/runtime/generator.py \
      --template <name> --persona <name> --font-mode {online|offline|system} \
      --data <json-or-path> --output <vault>/how/gates/<gate_id>.html
    ```
@@ -49,10 +51,10 @@ The SITREP panel (landed P3p.3) renders 6 fields of operational context at the t
 ```json
 {
   "sitrep": {
-    "campaign": "campaign_siteforge_sis · Operation Loom",
+    "campaign": "campaign_siteforge_iss · Operation Loom",
     "phase": "Phase 3 — III Iterative Refinement",
     "mission": "P3.2 — Pre-cycle baseline",
-    "gate_purpose": "Designate the case-study AAR as the III baseline and record initial 6-axis scores against the v2 SIS substrate.",
+    "gate_purpose": "Designate the case-study AAR as the III baseline and record initial 6-axis scores against the v2 ISS substrate.",
     "importance": "load-bearing",
     "importance_reason": "cascades to 10 decadal arcs (D1-D10)",
     "output_destination": "how/gates/p3_2_baseline_gate.output.json"
@@ -64,7 +66,7 @@ The SITREP panel (landed P3p.3) renders 6 fields of operational context at the t
 
 | Key | Required when `sitrep` present | Convention |
 |---|---|---|
-| `campaign` | yes | `<slug> · <code_name>` (e.g. `campaign_siteforge_sis · Operation Loom`) |
+| `campaign` | yes | `<slug> · <code_name>` (e.g. `campaign_siteforge_iss · Operation Loom`) |
 | `phase` | yes | `Phase N — <name>` (e.g. `Phase 3 — III Iterative Refinement`) |
 | `mission` | yes | `<id> — <short_title>` (e.g. `P3.2 — Pre-cycle baseline`) |
 | `gate_purpose` | yes | The ASKING line — one sentence, imperative voice, **recommended ≤ 180 chars** |
@@ -89,7 +91,7 @@ When in doubt between two values, pick the higher (operator scrutiny scales). Do
 **Routine** — cycle-internal decision:
 ```json
 "sitrep": {
-  "campaign": "campaign_siteforge_sis · Operation Loom",
+  "campaign": "campaign_siteforge_iss · Operation Loom",
   "phase": "Phase 3 — III Iterative Refinement",
   "mission": "P3.4 — D2 cycle 23",
   "gate_purpose": "Approve cycle 23's tweak to overview-strip chip spacing before cycle 24 opens.",
@@ -102,10 +104,10 @@ When in doubt between two values, pick the higher (operator scrutiny scales). Do
 **Load-bearing** — multi-arc cascade:
 ```json
 "sitrep": {
-  "campaign": "campaign_siteforge_sis · Operation Loom",
+  "campaign": "campaign_siteforge_iss · Operation Loom",
   "phase": "Phase 3 — III Iterative Refinement",
   "mission": "P3.2 — Pre-cycle baseline",
-  "gate_purpose": "Designate the case-study AAR as the III baseline and record initial 6-axis scores against the v2 SIS substrate.",
+  "gate_purpose": "Designate the case-study AAR as the III baseline and record initial 6-axis scores against the v2 ISS substrate.",
   "importance": "load-bearing",
   "importance_reason": "cascades to 10 decadal arcs (D1-D10)",
   "output_destination": "how/gates/p3_2_baseline_gate.output.json"
@@ -115,7 +117,7 @@ When in doubt between two values, pick the higher (operator scrutiny scales). Do
 **Irreversible** — workspace-canonical commit:
 ```json
 "sitrep": {
-  "campaign": "campaign_siteforge_sis · Operation Loom",
+  "campaign": "campaign_siteforge_iss · Operation Loom",
   "phase": "Phase 7 — Workspace Ratification",
   "mission": "P7.2 — LIP authoring + workspace-canonical ratification",
   "gate_purpose": "Approve the LIP for merge to lattice-labs canonical (workspace standard touch; new LIP required to roll back).",
@@ -131,7 +133,7 @@ Omit the `sitrep:` block entirely → the template renders `<div class="hdr-sub"
 
 ### Authoritative spec
 
-`SiteForge.aDNA/how/campaigns/campaign_siteforge_sis/missions/artifacts/sitrep_panel_spec_p3p_2.md` (locked 2026-05-22, operator-scored 5/5 one-round) — JSON schema, persona-token map, placement rule, CSS contract. Reference example: `SiteForge.aDNA/how/gates/p3p_3_demo_gate.{data.json,html}`.
+`SiteForge.aDNA/how/campaigns/campaign_siteforge_iss/missions/artifacts/sitrep_panel_spec_p3p_2.md` (locked 2026-05-22, operator-scored 5/5 one-round) — JSON schema, persona-token map, placement rule, CSS contract. Reference example: `SiteForge.aDNA/how/gates/p3p_3_demo_gate.{data.json,html}`.
 
 ## SWOT authoring discipline
 
@@ -214,7 +216,7 @@ Omit the `swot:` block entirely → the template renders `<div class="analysis-i
 
 ### Authoritative spec
 
-`SiteForge.aDNA/how/campaigns/campaign_siteforge_sis/missions/artifacts/swot_panel_spec_p3p_5.md` (locked 2026-05-23, variant A-2 sentiment-cued column-tint) — JSON schema, persona-token map, placement rule, CSS contract. Reference example: `SiteForge.aDNA/how/gates/p3p_5_demo_gate.{data.json,html}`.
+`SiteForge.aDNA/how/campaigns/campaign_siteforge_iss/missions/artifacts/swot_panel_spec_p3p_5.md` (locked 2026-05-23, variant A-2 sentiment-cued column-tint) — JSON schema, persona-token map, placement rule, CSS contract. Reference example: `SiteForge.aDNA/how/gates/p3p_5_demo_gate.{data.json,html}`.
 
 ## Recommendation authoring discipline
 
@@ -277,7 +279,7 @@ Don't conflate axes — "use the v1 PROTOTYPE state for all P3 authoring" is a `
   "rec_label": "APPROVE",
   "question": "Is the prototype skill sufficient for Phase 2's needs?",
   "recommendation": {
-    "rationale": "Authoring skill provides the load-bearing scaffold for rapid SIS creation. At 99 LOC (cap = 100) it covers the full authoring pattern without leaking architectural detail, and the PROTOTYPE marker keeps the canonical-lift seam visible for P5.1.",
+    "rationale": "Authoring skill provides the load-bearing scaffold for rapid ISS creation. At 99 LOC (cap = 100) it covers the full authoring pattern without leaking architectural detail, and the PROTOTYPE marker keeps the canonical-lift seam visible for P5.1.",
     "key_factors": [
       "Skill captures all 7 sections required for cold-start authoring",
       "Forward-references to P2.2-P2.4 artifacts resolve at P2.5 — no broken links",
@@ -312,11 +314,11 @@ Existing gates (e.g. the P2 phase-exit gate at `SiteForge.aDNA/how/gates/p2_phas
 
 ### Authoritative spec
 
-`SiteForge.aDNA/how/campaigns/campaign_siteforge_sis/missions/artifacts/recommendation_block_spec_p3p_6.md` (locked 2026-05-23, variant 1 flat stacked) — field schema, axis semantics, visual constraints, CSS contract, token list. Reference example: `SiteForge.aDNA/how/gates/p3p_6_demo_gate.{data.json,html}` exercises all 3 render paths (full / partial / legacy).
+`SiteForge.aDNA/how/campaigns/campaign_siteforge_iss/missions/artifacts/recommendation_block_spec_p3p_6.md` (locked 2026-05-23, variant 1 flat stacked) — field schema, axis semantics, visual constraints, CSS contract, token list. Reference example: `SiteForge.aDNA/how/gates/p3p_6_demo_gate.{data.json,html}` exercises all 3 render paths (full / partial / legacy).
 
 ## Writing discipline (D-WC carries from Dark-Mode 50-Cycle Sprint)
 
-The Dark-Mode 50-Cycle Sprint's D-WC (Writing & Content) arc distilled five carry-forward findings about prose authoring inside SIS data JSON. Apply when populating any prose-bearing field (SITREP values, composite_question, section.title/analysis/verdict, footer_text, recommendation cards).
+The Dark-Mode 50-Cycle Sprint's D-WC (Writing & Content) arc distilled five carry-forward findings about prose authoring inside ISS data JSON. Apply when populating any prose-bearing field (SITREP values, composite_question, section.title/analysis/verdict, footer_text, recommendation cards).
 
 ### C-DWC-1 — Anti-slop applies to data-JSON content
 
@@ -325,7 +327,7 @@ The 6 SITREP fields and every prose-bearing JSON key are operator-facing prose. 
 | Stuffy / verbose | Tight |
 |---|---|
 | "Confirm the locked Variant A SITREP panel renders correctly end-to-end through the generator and matches the P3p.2 ASCII reference" (175 chars) | "Verify the locked Variant A SITREP panel renders correctly and matches the P3p.2 ASCII reference." (97 chars) |
-| "Validates the P3p.2 → P3p.3 implementation handoff; unblocks the rest of the SIS Mini-Sprint" (94 chars) | "P3p.2 → P3p.3 implementation handoff; unblocks the Mini-Sprint tail" (66 chars) |
+| "Validates the P3p.2 → P3p.3 implementation handoff; unblocks the rest of the ISS Mini-Sprint" (94 chars) | "P3p.2 → P3p.3 implementation handoff; unblocks the Mini-Sprint tail" (66 chars) |
 | `wordmark`: `"SITEFORGE · OPERATION LOOM · P3p.3 SITREP DEMO"` (redundant suffix) | `wordmark`: `"SITEFORGE · OPERATION LOOM · P3p.3"` |
 
 ### C-DWC-2 — Verdict pattern: "Recommend X — \<one-line reason\>"
@@ -359,7 +361,7 @@ Lead with the verb. Verb-first labels are objectively shorter, more scannable, a
 
 ### C-D2-3 — Type-scale reference
 
-When authoring custom inline styles or one-off components (rare; prefer primitives), pin to the established type-scale to stay coherent with the SIS substrate:
+When authoring custom inline styles or one-off components (rare; prefer primitives), pin to the established type-scale to stay coherent with the ISS substrate:
 
 | Size | Use |
 |---|---|
@@ -371,7 +373,7 @@ When authoring custom inline styles or one-off components (rare; prefer primitiv
 | 11 px | Caption · timestamp |
 | 10.5 px | SITREP label (mono uppercase) |
 
-Out-of-scale sizes (e.g. 16 px, 18 px) signal a missed primitive — check `SiteForge.aDNA/what/lib/sis/primitives/primitives.css` first.
+Out-of-scale sizes (e.g. 16 px, 18 px) signal a missed primitive — check `SiteForge.aDNA/what/lib/iss/primitives/primitives.css` first.
 
 ## Round-trip discipline
 
@@ -423,7 +425,7 @@ Agent populates `created_at`; submit populates `completed_at`. Delta logged for 
 
 ## Forward references (P2.2-P2.4 deliverables this skill consumes)
 
-- `SiteForge.aDNA/what/lib/sis/runtime/{generator.py, gate_receiver.py, round_trip.js, state_manager.js}` (P2.3 + P2.4)
-- `SiteForge.aDNA/what/lib/sis/templates/*.html` (P2.4; 8 templates)
-- `SiteForge.aDNA/what/lib/sis/tokens/persona_*.css` (P2.4; 6 personas + neutral + base)
-- Operator-side pairings (PROTOTYPE; canonical: `RemoteControl.aDNA` M0.2/M0.3/M0.4 → P3 pillar): open + position window (`skill_open_sis.md`); auto-resume on submission (`skill_watch_sis.md`); receiver lifecycle start/stop/status/clean (`skill_manage_gate_receiver.md`) — all at `SiteForge.aDNA/how/skills/`
+- `SiteForge.aDNA/what/lib/iss/runtime/{generator.py, gate_receiver.py, round_trip.js, state_manager.js}` (P2.3 + P2.4)
+- `SiteForge.aDNA/what/lib/iss/templates/*.html` (P2.4; 8 templates)
+- `SiteForge.aDNA/what/lib/iss/tokens/persona_*.css` (P2.4; 6 personas + neutral + base)
+- Operator-side pairings (PROTOTYPE; canonical: `RemoteControl.aDNA` M0.2/M0.3/M0.4 → P3 pillar): open + position window (`skill_open_iss.md`); auto-resume on submission (`skill_watch_iss.md`); receiver lifecycle start/stop/status/clean (`skill_manage_gate_receiver.md`) — all at `SiteForge.aDNA/how/skills/`

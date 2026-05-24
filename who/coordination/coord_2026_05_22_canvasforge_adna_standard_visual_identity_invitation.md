@@ -59,7 +59,7 @@ CanvasForge-side prerequisites all landed 2026-05-22:
 - **Design artifact** (source of truth): `~/lattice/CanvasForge.aDNA/how/missions/artifacts/visual_style_rlhf_subsystem_design.md`
 - **Skill** (agent protocol): `~/lattice/CanvasForge.aDNA/how/skills/skill_style_search_rlhf.md`
 - **Runner**: `~/lattice/CanvasForge.aDNA/how/campaigns/campaign_canvasforge_v1_2/runners/style_search_runner.py` (extending for `--target adna_standard` requires adding deterministic Round 1 prompt set OR full scout invocation at Round 1; current runner has SS character Round 1 deterministic)
-- **SIS template** (cross-vault): `~/lattice/SiteForge.aDNA/what/lib/sis/templates/image_grid_variant.html`
+- **ISS template** (cross-vault): `~/lattice/SiteForge.aDNA/what/lib/iss/templates/image_grid_variant.html`
 
 ## What aDNA.aDNA operator owns
 
@@ -70,7 +70,7 @@ CanvasForge-side prerequisites all landed 2026-05-22:
 
 ## What CanvasForge.aDNA owns
 
-- Producer-subsystem maintenance (ADR-006 + skill + runner + SIS template at canonical homes)
+- Producer-subsystem maintenance (ADR-006 + skill + runner + ISS template at canonical homes)
 - Imagen Ultra API access (4-key rotation pool at `~/.lattice/secrets.json` GEMINI_API_KEYS; keys [2] + [3] are paid tier per F-V1-VAL-01.WIND.A finding)
 - Subsystem upgrades (per Pillar F mission close + future Pillar F successor missions)
 
