@@ -1,0 +1,84 @@
+---
+type: session
+created: 2026-05-24
+updated: 2026-05-24
+last_edited_by: agent_stanley
+tags: [session, active, v8, p3, m3_4, s1, verification_handoff, agent_driven_obsidian_inspection, t7_skill_verification_handoff, t8_local_rest_api_and_mcp, adr_014_verification_handoff_topology, canonical_3_session_implementation_shape_9th_instance_candidate, rosetta, design_at_p3_propagation_at_p6_inherited, cross_skill_primitive_composition_graduation_path, t8_forward_reference_stub_discipline_graduation_path]
+session_id: session_stanley_20260524T011908Z_v8_m34_s1
+user: stanley
+started: 2026-05-24T01:19:08Z
+status: active
+intent: "v8 M3.4 S1 — open M3.4 verification handoff documentation (T7 = skill_verification_handoff + ADR-014) + agent-driven Obsidian inspection (T8 = Local REST API + MCP; 5 sub-tracks T8a-T8e) as fourth mission in Phase 3 per Campaign SO #19 (mission opens are operator-decision); inherit M3.3-ratified cross-skill primitive composition pattern + T8 forward-reference-stub discipline + canonical 3-session implementation-class shape (9th instance candidate) + design-at-P3-propagation-at-P6 + 6-section design-spec structure + S3-with-carry sub-mode as methodology defaults; deliver M3.4 mission spec + campaign master M3.4 row flip + amendments-table entry + STATE.md router Op 3 14th canonical instance refresh + this session file"
+mission_class: implementation
+token_budget_estimated: "~90-120 kT content-load (M3.3 spec template digestion + absorbed-campaign Tracks 7+8 + M3.3 T6 spec/skill T8 forward-reference stub re-read + LWX AAR + ADR-014 substrate setup + mission spec auth + campaign master amendments + STATE router refresh + this session file). API-billing companion ~12-16 M cache_read at 6-7 turns per ADR-016 Clause C empirical formula (`cache_read ≈ 4.1 M + turns × 126 K`)."
+files_modified:
+  - how/campaigns/campaign_adna_serious_tool_readiness/campaign_adna_serious_tool_readiness.md
+  - STATE.md
+files_created:
+  - how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p3_m34_verification_handoff_and_agent_inspection.md
+  - how/sessions/active/session_stanley_20260524T011908Z_v8_m34_s1.md
+completed: false
+---
+
+## Activity Log
+
+- 01:19 — Session started. Operator request: "Please read the claude.md and let's continue the campaign here." Loaded workspace `lattice/CLAUDE.md` + project `aDNA.aDNA/CLAUDE.md` (Rosetta persona) + auto-memory MEMORY.md + STATE.md router (heavy-file Read with offset+limit per `feedback_heavy_file_read.md` convention; STATE.md is 28.7 kT — exceeds 25 kT read cap so partial reads required).
+- 01:21 — Cold-start orientation: identified M3.3 closed 2026-05-23T05:29:27Z + v8 P3 active + M3.4 entry-gate as natural next P3 mission (4 of 4 P3 phase-exit bricks for the "agent autonomy" prong; M3.5/M3.6/M3.7 remain for HOME/airlock/modular-III prongs). Per Campaign SO #19, M3.3 close does NOT auto-open M3.4 — operator authorization required.
+- 01:23 — Plan-mode Phase 1: launched 1 Explore agent to gather M3.4 substrate (campaign master M3.4 row at line 168 + Tracks 7+8 verbatim source from absorbed campaign at lines 64-77 + T8 forward-reference stub content from M3.3 T6 design spec lines 256-269 + M3.3 skill_obsidian_integration_test.md lines 585-601 + ADR-014 forecast at campaign master line 310 + verification-handoff topology references in CLAUDE.md SO #16 + LWX AAR + F-S2-8 backlog source).
+- 01:28 — Phase 1 Explore agent reported (concise summary; cited file paths + line numbers). Key findings: M3.4 row line 168 = `| M3.4 | Verification handoff documentation (T7) + agent-driven Obsidian inspection (T8 — Local REST API + MCP) | 2-3 | M3.3 | planned |`; Tracks 7+8 at absorbed campaign lines 64-77 with 5 sub-tracks T8a-T8e enumerated; T8 forward-reference stub present at M3.3 T6 spec + skill (Local REST API + MCP + profile flag `mode: operator_side | agent_driven | hybrid`); ADR-014 = Verification-handoff topology codification; verification-handoff topology load-bearing finding routed from LWX M-LWX-03 → VNAL-01 dispatch model; F-S2-8 backlog file exists.
+- 01:34 — Phase 2 design (synthesized in-context from M3.3 mission spec template; no separate Plan agent — template-shaped task). Plan structure: 7 deliverables (one more than M3.3 due to ADR-014 inclusion); spec+skill+ADR S2 mix (heavier than M3.3 S2 spec+skill); 2 new skills at S2 per D1=A (skill_verification_handoff + skill_obsidian_agent_inspect); ADR-014 draft at S2 + ratify at S3 close per D2=A invoking Campaign SO #14 in-phase exception clause; cross-skill primitive composition pattern + T8 forward-reference-stub discipline both graduate (1 → 3 of 3 use instances) at M3.4 close.
+- 01:38 — Phase 4: wrote final plan at `/Users/stanley/.claude/plans/please-read-the-claude-md-ethereal-rainbow.md` (canonical Context + Recommended Approach + Critical Files + Decision points + Verification + Out-of-scope).
+- 01:42 — AskUserQuestion 1 (D1+D2): presented 3-option slate for T8d skill timing + 3-option slate for ADR-014 timing. Operator picked **D1=A (Author full T8d skill at S2)** + **D2=A (Draft at S2; ratify at S3 close)** — both recommended defaults.
+- 01:45 — Plan file edits: ratified D1+D2 decisions inline; deliverables_count adjusted 6 → 7 (one more than M3.3 due to ADR-014); S2 forecast revised to 5 incremental landings (T7 spec + T8 spec + T7 skill + T8d skill + ADR-014 draft).
+- 01:47 — ExitPlanMode called. **Plan approved by operator** (no overrides; D1+D2 recommended defaults ratified).
+- 01:49 — Post-plan git status reveal: working tree NOT clean — 1 modified file `how/skills/skill_create_sis.md` (+153/-3 SITREP authoring discipline addition; SiteForge cross-vault prototype skill upgrade staged between M3.3 close and M3.4 S1 entry).
+- 01:51 — AskUserQuestion 2 (Pre-S1 carry): how to handle the pre-existing `skill_create_sis.md` modification. Operator picked **(1) Fire substrate-pure pre-S1 commit (Recommended)** — mirrors `410c6bc` SiteForge-rename absorption pattern at M3.3 S1 entry; becomes 1st canonical instance of substrate-pure separation discipline within M3.4 lifecycle.
+- 01:53 — Committed substrate-pure pre-S1 absorption at HEAD `4863f8b` (`campaign_adna_serious_tool_readiness: SiteForge cross-vault SITREP authoring discipline carry-forward absorption (operator pre-staged between M3.3 close and M3.4 S1 entry)`; 1 file changed, 153 insertions, 3 deletions). Working tree clean.
+- 01:55 — TaskCreate × 6 covering Read M3.3 template / Author M3.4 mission spec / Create S1 session file / Update campaign master / Update STATE.md / Verify constraints + SITREP. TaskUpdate Task 2 (Read M3.3 template) in_progress.
+- 02:05 — Read M3.3 mission spec full (332 lines) as canonical structural template. Identified delta adaptations for M3.4: mission_id + slug + 7 deliverables + spec+skill+ADR S2 mix + cross-skill primitive composition graduation path (1→3) + T8 forward-reference-stub discipline graduation path (1→3) + Standing Order #8 16th+17th invocations + ADR-014 in-phase ratification + Op 3 14th canonical instance + 4 of 4 P3 phase-exit bricks for agent-autonomy prong.
+- 02:10 — Read campaign master frontmatter (amendments-table tail) + Phase 3 table at lines 160-173 + Phase 4 entry-gate text + ADR-014 forecast row (line 310) as substrate for amendments-table entry format.
+- 02:15 — Wrote M3.4 mission spec at `how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p3_m34_verification_handoff_and_agent_inspection.md` — 8 objectives mapped S1+S2+S3 per canonical 3-session implementation-class shape (9th instance candidate); frontmatter (mission_class implementation; estimated 3 sessions; token_budget_estimated two-metric per ADR-016 Clause A; 9 prerequisite missions; 14 prerequisite artifacts; deliverables_count=7 with optional 8th via S3-with-carry); §Mission scope (7 substantive objectives) + §Deliverables (7 rows + 1 optional) + §Current State (M3.1+M3.2+M3.3 recon inherited; T7+T8 substrate deltas) + §Improvements classification + §Acceptance criteria (17 rows) + §Operator decision gates D1-D6 + §Hard constraints (10 rows) + §Standing Order discharges (14 rows) + §Cross-vault impact + §Cross-Mission Dependencies + §Self-reference + dual-audience + §Risks (9 rows) + §Notes with 14 wikilink cross-references.
+- 02:25 — TaskUpdate Task 4 (Create S1 session file) in_progress. Begin S1 session file authoring (this file).
+- 02:50 — Wrote campaign master M3.4 row flip + amendments-table 2026-05-24 entry inserted at end-of-list; updated STATE.md (Op 3 14th canonical instance refresh: M3.3 CLOSED demoted from full to concise + new M3.4 S1 OPENED top bullet + As-of header + Next Steps + Operator options + Last Session + Next Session Prompt all refreshed; M3.3 S2 + S1 bullets removed since absorbed into M3.3 CLOSED concise form).
+- 03:05 — Pre-commit verification: `git status` revealed a **2nd staged change** to `how/skills/skill_create_sis.md` (+89/-3 SWOT authoring discipline addition; staged AFTER pre-S1 absorption commit `4863f8b`). AskUserQuestion 3 (SWOT addition): operator picked **(1) Fire 2nd pre-S1 substrate-pure commit (Recommended)** — mirrors M3.3 lifecycle's 2-instance pattern (pre-S1 `410c6bc` + pre-S3 `6d3e5b4`); becomes 2nd canonical instance of substrate-pure separation discipline within M3.4 lifecycle.
+- 03:08 — Committed 2nd substrate-pure absorption at HEAD `d074158` (`campaign_adna_serious_tool_readiness: SiteForge cross-vault SWOT authoring discipline carry-forward absorption (operator pre-staged during M3.4 S1 session; 2nd substrate-pure separation instance within M3.4 lifecycle)`; 1 file changed, 86 insertions, 3 deletions). HEAD now 2 commits ahead of `3b856b0` baseline = `4863f8b` SITREP + `d074158` SWOT (M3.4 S1 substrate commit fires next as 3rd commit ahead).
+- 03:15 — Cascading updates across mission spec + campaign master M3.4 row + amendments entry + STATE.md (As-of + S1 bullet + Pre-S1 housekeeping + Last Session + Next Session Prompt) to reflect 1st + 2nd substrate-pure instances; HEAD-ahead count 2 → 3 forecast.
+
+## SITREP
+
+**Completed (S1; 2/7 cumulative deliverables landed)**:
+- Obj 1 mission spec authored at `how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p3_m34_verification_handoff_and_agent_inspection.md` — see Activity Log 02:15 for content summary.
+- Obj 2 governance bundle (in progress this commit):
+  - (a) campaign master M3.4 row flipped `planned → in_progress` at line 168 with comprehensive close-state text covering S1 deliverables + D1-D6 resolutions + inheritance defaults + cross-skill primitive composition pattern graduation path (1→3) + T8 forward-reference-stub discipline graduation path (1→3) + ADR-014 in-phase ratification per Campaign SO #14 exception + Standing Order #8 16th+17th invocation candidates + v8 P6 propagation queue forecast growth 12-14 → ~17-20 + hard constraints + pre-S1 substrate-pure absorption noted
+  - (b) 2026-05-24 amendments-table entry inserted at the top of the amendments list (above M3.3 close 2026-05-23 entries)
+  - (c) STATE.md router Op 3 archive-on-close 14th canonical instance refresh: As-of header refreshed; new M3.4 S1 OPENED top bullet (full form); M3.3 CLOSED bullet demoted from full to concise form; Next Steps refreshed for S2 entry; Operator options refreshed; Last Session block refreshed; Next Session Prompt refreshed
+  - (d) S1 session file created at `how/sessions/active/session_stanley_20260524T011908Z_v8_m34_s1.md` (this file)
+
+**Pre-S1-entry housekeeping (HEAD `4863f8b` + `d074158`)**: Operator-decisioned substrate-pure separation discipline absorbed TWO SiteForge cross-vault carry-forwards as standalone commits BEFORE the M3.4 S1 substrate-pure commit fires. 1st absorption at `4863f8b` = SITREP authoring discipline (1 file = `how/skills/skill_create_sis.md` +153/-3; added §"SITREP authoring discipline" section documenting the 6-field sitrep block landed at SiteForge P3p.3; tag additions sitrep_authoring_discipline + d_wc_carries; prototype: true preserved). 2nd absorption at `d074158` = SWOT authoring discipline addition that surfaced mid-session (same file +89/-3; added §"SWOT authoring discipline" 4-quadrant template support for phase_exit + decision_gate_3option SIS templates; tag addition swot_authoring_discipline). M3.4 lifecycle matches M3.3 lifecycle's 2-instance substrate-pure separation pattern at S1 entry boundary (M3.3 had pre-S1 `410c6bc` + pre-S3 `6d3e5b4`; M3.4 has pre-S1 `4863f8b` + mid-S1 `d074158`).
+
+**In progress**: None at S1 close (S1 deliverables complete; S2 + S3 are future-session work).
+
+**Next up (S2 — destructive within aDNA.aDNA; ~165-205 kT content-load forecast)**:
+- Obj 3 T7 design spec at `missions/artifacts/m34_obj3_t7_design_spec.md` — verification-handoff topology codification; 6-section structure per ratified template; ≥ 3 option matrix; literal patch-style content for NEW skill (Obj 5 forward-reference) + ADR-014 (Obj 7 forward-reference)
+- Obj 4 T8 design spec at `missions/artifacts/m34_obj4_t8_design_spec.md` — agent-driven Obsidian inspection covering 5 sub-tracks T8a-T8e; 6-section structure; ≥ 4 option matrix; literal patch-style content for `.adna/setup.sh` PLUGIN_IDS extension + `.obsidian/plugins/obsidian-local-rest-api/data.json` template + MCP config patch + T8d skill forward-reference (Obj 6) + T8e T6 skill mode-profile activation patch
+- Obj 5 NEW `aDNA.aDNA/how/skills/skill_verification_handoff.md` — full skill (not stub); dispatch decision tree + `--surface` slot + DELEGATES binary-presence to T6 skill + `## Forward integration with M3.5` + `## Forward integration with M3.7` stub sections; 3rd behavioral test of M2.4.5-hardened skills routing layer
+- Obj 6 NEW `aDNA.aDNA/how/skills/skill_obsidian_agent_inspect.md` — full skill (not stub) per D1=A; `--mode agent_driven | hybrid | operator_side` slot + DELEGATES to T6 (binary-presence) + T7 (dispatch) + M3.2 skill (depth 3); cross-skill primitive composition pattern 3 of 3 ratifies HERE; `## Forward integration with M3.7` stub section; 4th behavioral test of M2.4.5-hardened skills routing layer
+- Obj 7 ADR-014 draft at `aDNA.aDNA/what/decisions/adr_014_verification_handoff_topology.md` — 3 clauses A topology-definition + B dispatch-decision-tree + C consumer-mission obligations; status `draft` at S2 (ratifies at S3); Campaign SO #14 in-phase exception clause invoked + documented per D2=A
+- Estimate: ~165-205 kT content-load + ~15-20 M cache_read API-billing companion per ADR-016 Clause A at 8-9 turns
+
+**Blockers**: None. M3.4 S1 closes cleanly within S1 deliverable scope. P3 already open at M3.1 entry; M3.4 mission entry operator-authorized at this session; no further gates blocking S2.
+
+**Files touched (S1)**:
+- **Created**:
+  - `how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p3_m34_verification_handoff_and_agent_inspection.md` (M3.4 mission spec; ~360 lines)
+  - `how/sessions/active/session_stanley_20260524T011908Z_v8_m34_s1.md` (this session file)
+- **Modified**:
+  - `how/campaigns/campaign_adna_serious_tool_readiness/campaign_adna_serious_tool_readiness.md` (M3.4 row flipped at line 168 + amendments-table 2026-05-24 entry inserted at top)
+  - `STATE.md` (Op 3 archive-on-close pattern 14th canonical instance refresh; As-of header + new M3.4 S1 OPENED top bullet + M3.3 CLOSED demoted to concise + Next Steps + Operator options + Last Session + Next Session Prompt)
+- **Already-committed pre-S1 carry-forwards** (HEAD `4863f8b` SITREP + HEAD `d074158` SWOT): same file `how/skills/skill_create_sis.md` received two operator-staged additions — see Activity Log 01:49-01:53 (SITREP absorption) + a later mid-session SWOT absorption fired at `d074158` after the SWOT addition surfaced; 2nd substrate-pure absorption per same discipline.
+
+**Token budget self-report (S1)**: estimated 90-120 kT content-load; actual TBD (per Project SO #11 + ADR-016 Clause A two-metric reporting). Will be measured against `~/.adna/measurement/measurement.sqlite` after S1 commit + transcript ingest via `ingest_transcript.py`. API-billing companion measured at turn-level via SQLite `sessions.*` aggregates per ADR-016 Clause C empirical formula (`cache_read ≈ 4.1 M + turns × 126 K`).
+
+**Hard constraints honored at S1**: zero `.adna/` upstream touches; zero partner-vault contact (17 embargo memos preserved); zero `~/.claude/settings.json` modifications; zero `~/.adna/measurement/measurement.sqlite` deliberate mutations (hook firing normal); zero hook modifications; zero ADR drafts at S1 (ADR-014 stays scheduled for S2 draft per D2=A); zero `node.aDNA/` mutations; zero `.obsidian/` config or plugin mutations; zero M2.1.5/M3.0.5/M3.5-M3.7 scope creep; zero push to origin at this S1 (D-PUSH=push-after-S3 per M3.3 precedent).
+
+**Next Session Prompt**: see STATE.md §Next Session Prompt (refreshed at this S1 close).
