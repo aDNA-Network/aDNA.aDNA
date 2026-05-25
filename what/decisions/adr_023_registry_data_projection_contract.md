@@ -2,7 +2,7 @@
 type: adr
 adr_number: 023
 title: "Registry Data-Projection Contract — build-time JSON projection from canonical YAML + per-vault frontmatter overlays + CI/Vercel fallback as canonical doctrine"
-status: draft   # ratification deferred to M3.5 S3 close per Campaign SO #14 in-phase exception clause D2=A
+status: accepted   # ratified at M3.5 S3 close per Campaign SO #14 in-phase exception clause D2=A — 2nd invocation in v8 after M3.4 ADR-014
 created: 2026-05-25
 updated: 2026-05-25
 last_edited_by: agent_stanley
@@ -13,8 +13,8 @@ mission: mission_adna_str_p3_m35_home_polish_and_per_vault_info_pages
 objective: 8
 decision_letter: A   # M3.5 D2=A operator-default ratified at S1 plan approval (Campaign SO #14 in-phase exception clause invocation — 2nd in v8)
 ratification_phase: M35_S3_close_via_campaign_so_14_in_phase_exception_clause_load_bearing_for_cross_vault_registry_consumers
-ratified: null   # set at M3.5 S3 close
-ratified_session: null   # set at M3.5 S3 close
+ratified: 2026-05-25   # set at M3.5 S3 close (session_stanley_20260525T032752Z_v8_m35_s3)
+ratified_session: session_stanley_20260525T032752Z_v8_m35_s3   # set at M3.5 S3 close
 deciders: [agent_stanley, operator_stanley]
 informed: [berthier, argus, hermes, spock, mnemosyne, hygieia, asclepius, daedalus, iris, mentor, venus, hestia, franklin, ariadne, robert_kennedy]   # all personas with registry-surface consumer obligations across the lattice
 related_decisions: [adr_014_verification_handoff_topology, adr_016_per_mission_context_budget, adr_022_tool_use_logging]
@@ -27,11 +27,15 @@ tags: [adr, decision, adr_023, campaign_adna_serious_tool_readiness, m35, v8, p3
 
 ## Status
 
-**Draft** at M3.5 S2b 2026-05-25 (`session_stanley_20260525T022725Z_v8_m35_s2b`). Drafted alongside T11 Astro `/vaults/` registry surface design spec (`m35_obj5_t11_design_spec.md`) + the populate-apply pass landing `aDNA.aDNA/scripts/build_vaults_data.mjs` + `vaults.json` + `vaults.schema.json` + 3 Astro routes + 3 section components per Campaign SO #14 in-phase exception clause D2=A operator-ratified at M3.5 S1 plan approval. **Ratification deferred to M3.5 S3 close** after the projection script ships + Astro builds clean + AAR documents the load-bearing rationale — acceptance scorecard row will confirm ratification preconditions met. Campaign SO #14 in-phase exception clause invocation — **2nd invocation in v8** after M3.4 ADR-014.
+**Accepted** at M3.5 S3 close 2026-05-25 (`session_stanley_20260525T032752Z_v8_m35_s3`). Drafted at S2b 2026-05-25 (`session_stanley_20260525T022725Z_v8_m35_s2b`) alongside T11 Astro `/vaults/` registry surface design spec (`m35_obj5_t11_design_spec.md`) + the populate-apply pass landing `aDNA.aDNA/scripts/build_vaults_data.mjs` + `vaults.json` (sha `63e28408c8e87f77`) + `vaults.schema.json` + 3 Astro routes + 3 section components per Campaign SO #14 in-phase exception clause D2=A operator-ratified at M3.5 S1 plan approval. **Ratified at S3 close** — projection script shipped + Astro built clean (150 pages including 31 vault detail + index + graph) + AAR documents the load-bearing rationale + Clause A.2 idempotency contract demonstrated empirically at S2b (`diff /tmp/vaults_first.json src/data/vaults.json` clean after second run of `npm run sync:vaults` — first canonical consumer satisfies the contract). Campaign SO #14 in-phase exception clause invocation — **2nd invocation in v8** after M3.4 ADR-014 (2026-05-24).
 
-### Ratification (forecast)
+### Ratification
 
-Status transitions `draft → accepted` at M3.5 S3 close commit. The 3 clauses A data-projection-contract-definition + B consumer-mission-obligations + C cross-vault-freshness-semantics will be operational from that commit forward. **Downstream consumers** — SiteForge.aDNA partner-site templates (Day-1 consumer at v8 P6 propagation) + LatticeLabs.aDNA partner-vault registry (Berthier-persona-authored registry surface in LL.aDNA successor missions) + LatticeNetwork.aDNA Venus-persona Network.aDNA aggregate registry + RareHarness.aDNA + WilhelmAI.aDNA + CakeHealth.aDNA + SuperLeague.aDNA — may cite this ADR as canonical doctrine immediately upon ratification. v8 P6 ecosystem propagation will land the upstream-promotion candidate (ADR-023 itself + the projection-script pattern at `.adna/template_build_data_projection.mjs` + the JSON Schema template + the 3-route Astro pattern as `.adna/template_registry_surface/`) at `LatticeProtocol/aDNA` per the design-at-P3-propagation-at-P6 pattern (4th survival test passed via M3.5 inheritance from M3.1+M3.2+M3.3+M3.4).
+Status transitioned `draft → accepted` at M3.5 S3 close commit. The 3 clauses A data-projection-contract-definition + B consumer-mission-obligations + C cross-vault-freshness-semantics are now operational. **Downstream consumers** — SiteForge.aDNA partner-site templates (Day-1 consumer at v8 P6 propagation) + LatticeLabs.aDNA partner-vault registry (Berthier-persona-authored registry surface in LL.aDNA successor missions) + LatticeNetwork.aDNA Venus-persona Network.aDNA aggregate registry + RareHarness.aDNA + WilhelmAI.aDNA + CakeHealth.aDNA + SuperLeague.aDNA — may cite this ADR as canonical doctrine immediately upon ratification (i.e., from this S3 close commit forward). v8 P6 ecosystem propagation will land the upstream-promotion candidate (ADR-023 itself + the projection-script pattern at `.adna/template_build_data_projection.mjs` + the JSON Schema template + the 3-route Astro pattern as `.adna/template_registry_surface/`) at `LatticeProtocol/aDNA` per the design-at-P3-propagation-at-P6 pattern (5th survival test passed via M3.5 inheritance from M3.1+M3.2+M3.3+M3.4).
+
+**At 2nd invocation in v8, Campaign SO #14 in-phase exception clause stabilizes as canonical-for-load-bearing-decisions-that-block-cross-vault-propagation.** Both invocations (M3.4 ADR-014 + M3.5 ADR-023) cite the same trigger — load-bearing for in-phase consumers + cross-vault propagation that would otherwise stall on phase-exit gating. The variant ratifies as canonical at M3.5 S3 close AAR §Pattern graduation block (advances to 2 of 3 use instances; graduation gate at M3.6 or M3.7 close).
+
+**Note on D7d carve-out**: D7d (31 vault_card image regen via Imagen 4) was carved out from M3.5 S3 to M3.5.5 interstitial mission at this S3 close (auth blocker + clipboard mechanism friction; operator AskUserQuestion 2026-05-25T~03:50Z). The carve-out does NOT affect ADR-023 ratification — D7d image regen is a downstream visual-polish consumer of the projection contract (it consumes `vault_card.img_path` values projected through `build_vaults_data.mjs`), not a precondition for ratification. Clause C cross-vault freshness semantics (`source_inventory_sha:` + per-vault `last_synced:`) remain authoritative and are unaffected by the image-content carve-out.
 
 ### Elevation chain — slot reassignment
 

@@ -7,16 +7,16 @@ mission_number: 3.5
 slug: home_polish_and_per_vault_info_pages
 created: 2026-05-24
 updated: 2026-05-24
-status: in_progress
+status: completed
 opens_at: 2026-05-24T06:09:28Z
 opened_session: session_stanley_20260524T060928Z_v8_m35_s1
-closed_at: null
-closed_session: null
+closed_at: 2026-05-25T03:27:52Z
+closed_session: session_stanley_20260525T032752Z_v8_m35_s3
 estimated_sessions: 4   # split-fired at S2 mid-checkpoint 2026-05-25T~02:00Z+ per plan `please-read-the-claude-md-lexical-hippo.md` Step 5 criterion (≥155 kT burned AND ≤4/8 deliverables landed — both met). Operator confirmed split via AskUserQuestion. Mission becomes 4-session shape: S1 (mission spec + governance) + S2 ("S2a"; 4 design specs T9+T10+T11+T12) + S2b (2 skills + populate-apply + ADR-023 draft) + S3 (AAR + ratify + close). Stretch-escape-valve fires; ratifies the 4-session-with-mid-checkpoint-split precedent. Originally forecast 3 with stretch escape valve at >70% burn AND <60% deliverables.
-actual_sessions: null   # set at S3 close
+actual_sessions: 4   # set at S3 close — S1 + S2/S2a + S2b + S3; 4-session-with-mid-checkpoint-split canonical sub-shape 1st instance in v8
 persona: rosetta
 last_edited_by: agent_stanley
-spec_completeness: in_progress   # S1 authoring spec + governance bundle; S2 will land 4 design specs (T9+T10+T11+T12) + 2 new skills + populate-apply pass; S3 will close with AAR + ADR-023 ratify
+spec_completeness: complete   # S1 mission spec + governance; S2/S2a landed 4 design specs; S2b landed 2 new skills + populate-apply pass + ADR-023 draft; S3 closed with AAR + ADR-023 ratify (status: draft → accepted) + close cascade; D7d image regen carved out to M3.5.5 interstitial per operator AskUserQuestion 2026-05-25T~03:50Z (auth + clipboard friction)
 mission_class: implementation   # 4 design specs (T9 Bases HOME + T10 vault_card schema + T11 Astro registry + T12 III-target forward-stub) + 2 new skills (skill_home_polish + skill_vault_card_authoring) + populate-apply pass (node.aDNA HOME + ~33 vault_cards + Astro routes) + ADR-023 doctrinal; design at P3, applied (in-scope) at M3.5 per operator hybrid-scope decision; v8 P6 propagation contracts in design specs name what propagates upstream at the future P6 cycle (HOME template + vault_card template + data-projection contract)
 verification_surface: operator   # per ADR-014 Clause C consumer-mission obligation — operator-side verification dominates for M3.5 (Obsidian rendering checks + docs-site browse smoke + per-vault card visual review are qualitative; T6 O1-O7 operator-side check-set covers); agent-driven verification available via T7 dispatch topology for build-time checks (Astro build clean + projection idempotency + frontmatter validates + slug coverage 1:1)
 token_budget_estimated: "S1 ~90-130 kT content-load (M3.4 spec template digestion ~32 kT + M3.4 AAR re-read ~14 kT + T7 design spec re-read ~12 kT [for forward-reference M3.5 stub] + skill_verification_handoff re-read ~10 kT + ADR-014 re-read ~6 kT + inventory_vaults.yaml ~10 kT + 3-4 sample vault_cards ~3 kT + node.aDNA HOME.md ~5 kT + Astro pages directory scan ~3 kT + campaign master Phase 3 table ~6 kT + STATE refresh ~8 kT + mission spec auth ~10 kT + amendments + session file ~8 kT; heavier than M3.4 S1 ~90-120 due to broader read-set spanning 3 surfaces — Obsidian + docs-site + agent-inspect inheritance) + S2 ~220-280 kT (4 design specs T9+T10+T11+T12 + 2 NEW skills + populate-apply pass [node.aDNA HOME rewrite + ~33 vault_cards: ~16 elaborations + ~17 new creations via skill_vault_card_authoring --mode author + Astro /vaults/ index+slug+graph routes + VaultRelationshipBlock + VaultCard + VaultClassFacet components + build_vaults_data.mjs projection script + vaults.json + vaults.schema.json + vaults_graph.mmd + package.json prebuild wire + ADR-023 draft]; heaviest M3.x S2 — populate-apply pass is templated/lower-density than design-spec authoring, partially offsetting raw scope; +25-35% above M3.4 S2 ~165-205 due to apply-pass and Astro substrate) + S3 ~100-140 kT (AAR + ADR-023 ratification + STATE Op 3 17th canonical instance + campaign master close + 3 session moves; +20-25 kT over M3.4 S3 ~80-115 due to ~20-26 row acceptance scorecard vs M3.4's 17 + ADR slot reassignment chain documentation). Three-session total ~410-550 kT (~25% above M3.4 ~335-440 due to apply-pass + Astro substrate + ADR-023 + broader 3-surface read-set at S1). API-billing companion per ADR-016 Clause C empirical formula (`cache_creation ≈ 328 K + turns × 1 K`; `cache_read ≈ 4.1 M + turns × 126 K`): S1 ~5.0-5.1 M cache_read at 7-8 turns; S2 ~5.4-5.6 M cache_read at 10-12 turns (more turns due to populate-apply); S3 ~5.1-5.2 M cache_read at 8-9 turns; total ~15.5-15.9 M cache_read across the 3-session arc; ~1.01 M cache_creation total. Note: this cache_read forecast is BELOW M3.4 actual ~38-51 M because S2 is write-heavy (populate-apply pass + Astro authoring + 33 vault_cards bulk writes), not read-heavy. Per ADR-016 Clause A + Project Standing Order #11; declared in mission frontmatter per Standing Order #8 self-reference (M3.5 declares its own budget per the field ADR-016 Clause A ratified)."
@@ -128,7 +128,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 1. Mission spec authoring + governance bundle (S1)
 
-- **Status**: in_progress S1 (this commit)
+- **Status**: ✅ completed S1 (`3ce86d7` 2026-05-24T06:09:28Z)
 - **Session**: S1
 - **Read**: M3.4 mission spec (template; ~375 lines); M3.4 AAR (cross-skill primitive composition + T8 forward-reference-stub graduations + substrate-inversion-with-ADR ratification + agent-autonomy threshold cross); M3.4 T7 + T8 design specs (M3.5 forward-reference stub language); skill_verification_handoff (Forward integration with M3.5 stub); skill_obsidian_agent_inspect (TRIPLE DELEGATION evidence); ADR-014 (Clause C consumer-mission obligation); campaign master Phase 3 table + ADR Roadmap (ADR slot reassignment chain discovery); inventory_vaults.yaml (vault_count: 31; cf. live vault list); 3-4 sample vault_cards (invariant detection); node.aDNA/HOME.md (line 42 mutation target identification); aDNA.aDNA/site/src/pages/ (Astro route destinations); plan file (`please-read-the-claude-md-peppy-peacock.md`); campaign-specific CLAUDE.md (Standing Orders 11-19).
 - **Produce**: this file (frontmatter + Objectives + Scope + Acceptance + Hard constraints + Standing-Order discharges + §Improvements classification + Cross-vault impact + Cross-Mission Dependencies + Self-reference + Risks + Notes).
@@ -136,7 +136,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 2. Campaign master M3.5 row flip + amendments entry + ADR-023 roadmap row + STATE refresh (S1)
 
-- **Status**: in_progress S1 (this commit)
+- **Status**: ✅ completed S1 (`3ce86d7` 2026-05-24T06:09:28Z)
 - **Session**: S1
 - **Read**: campaign master `campaign_adna_serious_tool_readiness.md` Phase 3 table (current line 172 row state + amendments-table tail + ADR Roadmap rows 313-321).
 - **Produce**:
@@ -203,7 +203,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 9. Populate-apply pass + ADR-023 draft (S2)
 
-- **Status**: ✅ landed S2b 2026-05-25 (D7c 4-of-5 sub-steps text+structure layer COMPLETE: HOME.md line 42 + vault_gallery.base + 16 elaborations + 15 NEW vault_cards + Astro /vaults/ 9-patch surface + projection idempotent + `npm run build` PASS 150 pages; D8 ADR-023 full 3-clause draft LIVE status:draft; D7d image-gen DEFERRED via missions/artifacts/m35_d7d_image_regen_followup.md per operator AskUserQuestion 2026-05-25T~04:00Z auth-blocker defer-trigger)
+- **Status**: ✅ completed S2b+S3 (D7c 4-of-5 sub-steps text+structure layer COMPLETE: HOME.md line 42 + vault_gallery.base + 16 elaborations + 15 NEW vault_cards + Astro /vaults/ 9-patch surface + projection idempotent sha=`63e28408c8e87f77` + `npm run build` PASS 150 pages; D8 ADR-023 ratified status:`draft → accepted` at S3 close `session_stanley_20260525T032752Z_v8_m35_s3` per Campaign SO #14 in-phase exception clause 2nd invocation in v8; **D7d image-gen CARVED-OUT-TO-M3.5.5** interstitial sub-mission per operator AskUserQuestion 2026-05-25T~03:50Z — sub-task spec at `missions/artifacts/m35_d7d_image_regen_followup.md` preserved as de facto M3.5.5 mission spec; campaign master Phase 3 table M3.5.5 row added at S3 close; HOME gallery degrades gracefully via existing `onerror=display:none` fallback until M3.5.5 executes)
 - **Session**: S2
 - **Read**: full inventory_vaults.yaml (live vault count + per-vault class/persona/health metadata); existing 16 vault_cards in full (elaboration target review); aDNA.aDNA/site/package.json + astro.config.mjs (Astro build config for prebuild wire); existing MermaidDiagram.astro (component reuse pattern).
 - **Produce**:
@@ -222,7 +222,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 10. AAR + close cascade (S3)
 
-- **Status**: pending S3
+- **Status**: ✅ completed S3 (`session_stanley_20260525T032752Z_v8_m35_s3` 2026-05-25T03:27:52Z; AAR landed at `missions/artifacts/aar_m35_home_polish_and_per_vault_info_pages.md`; ADR-023 ratified; campaign master M3.5 row closed + M3.5.5 row added; STATE.md Op 3 17th canonical instance refresh; 4 session files moved active/ → history/2026-05/; push fires per D-PUSH=push-after-S3)
 - **Session**: S3
 - **Read**: this mission file (S3 final state); S1 + S2 session files (SITREP synthesis); all S2 artifact files (4 design specs + 2 new skills + populate-apply artifacts + ADR-023 draft).
 - **Produce**:
@@ -240,15 +240,16 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 | # | Deliverable | Session | Status |
 |---|---|---|---|
-| 1 | M3.5 mission spec (this file) | S1 | 🟡 IN PROGRESS (this commit) |
-| 2 | Campaign master M3.5 row flip + ADR-023 forecast row + amendments entry + STATE.md router refresh (governance bundle) | S1 | 🟡 IN PROGRESS (this commit; Op 3 16th canonical instance) |
+| 1 | M3.5 mission spec (this file) | S1 | ✅ LANDED (`3ce86d7`) |
+| 2 | Campaign master M3.5 row flip + ADR-023 forecast row + amendments entry + STATE.md router refresh (governance bundle) | S1 | ✅ LANDED (`3ce86d7`; Op 3 16th canonical instance) |
 | 3 | `m35_obj3_t9_design_spec.md` — Bases-driven HOME.md template (3-tier fallback) | S2a | ✅ LANDED (HEAD `0b366e4`) |
 | 4 | `m35_obj4_t10_design_spec.md` — per-vault info-page schema canonical v0.2 (22-field frontmatter + 9-section body + 9 class variants + backwards-compat) | S2a | ✅ LANDED (HEAD `0b366e4`) |
 | 5 | `m35_obj5_t11_design_spec.md` — Astro `/vaults/` registry surface (faceted index + per-vault detail + Mermaid graph; data-projection contract = ADR-023) | S2a | ✅ LANDED (HEAD `0b366e4`) |
 | 6 | `m35_obj6_t12_design_spec.md` — III-target forward-reference (5 dimensions: persona_growth_v0 + research_context_generation_v0 + 3 supporting quality) | S2a | ✅ LANDED (HEAD `0b366e4`) |
-| 7 | NEW `aDNA.aDNA/how/skills/skill_home_polish.md` (Hestia-class HOME generator/refresh + DELEGATES to T7+T6+M3.2 skill chain) + NEW `aDNA.aDNA/how/skills/skill_vault_card_authoring.md` (vault-card authoring + audit + per-vault-class template logic; DELEGATES to T6+T7) + populate-apply pass (node.aDNA HOME rewrite + Bases definition file + ~33 vault_cards + Astro routes + projection script + package.json wire) + ADR-023 draft | S2b | pending (deferred at S2a close per split-trigger) |
-| 8 | `what/decisions/adr_023_registry_data_projection_contract.md` — ADR-023 (3 clauses A/B/C + slot reassignment chain; draft S2b → accepted S3) + AAR + campaign master close + STATE refresh + session moves | S3 | pending |
-| 9 | **OPTIONAL S3-with-carry sub-mode absorption** if 5-criteria gate satisfied at close window | S3 | pending (default D-CARRY=no-carry per operator) |
+| 7 | NEW `aDNA.aDNA/how/skills/skill_home_polish.md` + NEW `aDNA.aDNA/how/skills/skill_vault_card_authoring.md` + populate-apply pass (node.aDNA HOME rewrite + Bases definition file + 31 vault_cards + Astro routes + projection script + package.json wire) + ADR-023 draft | S2b | ✅ LANDED (`ed770af` C1 + `0d1d90f` C2 + `8a26b6f` C3 + `561327b` SITREP) |
+| 8 | `what/decisions/adr_023_registry_data_projection_contract.md` — ADR-023 ratify (status `draft → accepted` per Campaign SO #14 in-phase exception clause 2nd invocation in v8) + AAR + campaign master close + M3.5.5 row added + STATE refresh Op 3 17th + 4 session moves | S3 | ✅ LANDED (this S3 commit) |
+| 9 | **D7d image regen (CARVED-OUT-TO-M3.5.5)** — auth + clipboard friction; sub-task spec at `missions/artifacts/m35_d7d_image_regen_followup.md` preserved as de facto M3.5.5 mission spec; HOME gallery degrades gracefully via `onerror=display:none` fallback until M3.5.5 executes | (M3.5.5) | ⏸ CARVED-OUT (operator AskUserQuestion 2026-05-25T~03:50Z) |
+| 10 | **OPTIONAL S3-with-carry sub-mode absorption** if 5-criteria gate satisfied at close window | S3 | ⏸ NOT INVOKED (D-CARRY=no-carry preserved per operator) |
 
 ## Current State — inherited from M3.1+M3.2+M3.3+M3.4 recon-audit + M3.4 substrate (no fresh recon at M3.5)
 
@@ -440,5 +441,30 @@ The mission is also the **first batteries-included context-graph-as-product** in
 - **`skill_s3_with_carry_eligibility.md` graduation candidate** stays at 1 of 3 (advances to 2 of 3 only if M3.5 S3-with-carry triggers; default D-CARRY=no-carry).
 - **`skill_first_contact_polish.md` graduation candidate** at 2 of 3 (M3.2 banner asset + post-M3.5 may add registry surface as 3rd instance if III-decadal target language qualifies).
 - **`skill_in_phase_adr_ratification.md` graduation candidate SEEDED** at M3.5 close if ADR-023 ratifies smoothly per Campaign SO #14 in-phase exception clause (2nd instance after M3.4 ADR-014); graduates at 3rd instance (M3.6 or M3.7 if those surface load-bearing decisions).
-- **`skill_adr_slot_reassignment_forward_only.md` graduation candidate SEEDED** at M3.5 close if ADR-023 slot reassignment lands as documented (2nd instance after M2.4 ADR-007→ADR-019→ADR-022 chain); graduates at 3rd instance.
+- **`skill_adr_slot_reassignment_forward_only.md` graduation candidate SEEDED** at M3.5 close if ADR-023 slot reassignment lands as documented (2nd instance after M2.4 ADR-007→ADR-019→ADR-022 chain); graduates at 3rd instance. **CONFIRMED at S3 close**: ADR-023 ratified per Campaign SO #14 in-phase exception clause (2nd invocation in v8) + 7-step slot reassignment chain documented at ADR-023 body + this mission spec + AAR; candidate advances to 2 of 3 use instances.
+
+## Mission Close Notes (appended at S3 close 2026-05-25T03:27:52Z)
+
+M3.5 closed at S3 `session_stanley_20260525T032752Z_v8_m35_s3` against **7 of 8 deliverables LANDED + 1 (D7d image regen) CARVED-OUT-TO-M3.5.5** — the 4-session canonical-with-mid-checkpoint-split sub-shape (S1 + S2/S2a + S2b + S3) ratifies as **1st instance** in v8, extending the canonical 3-session implementation-class shape via the operator-authorized stretch escape valve.
+
+**Substrate-inversion-with-apply-pass ratifies as 3rd canonical sub-pattern of substrate-inversion** at this close — alongside M3.3's spec+skill-only (1st sub-pattern; 8 prior instances) and M3.4's spec+skill+ADR (2nd sub-pattern). M3.5 demonstrates that hybrid scope can preserve the design-at-P3-propagation-at-P6 doctrine (zero `.adna/` touches across all 4 sessions; v7.0 frozen at `27e6395`) while applying design specs to live in-scope operational surfaces (node.aDNA HOME.md line 42 + 31 vault_cards + Astro `/vaults/` registry surface = 150 pages clean).
+
+**ADR-023 (Registry Data-Projection Contract) ratified** at this S3 close (status `draft → accepted`) per Campaign SO #14 in-phase exception clause — **2nd invocation in v8** after M3.4 ADR-014 (2026-05-24). Both invocations cite the same trigger (load-bearing for downstream consumers + cross-vault propagation); the variant **stabilizes as canonical-for-load-bearing-decisions-that-block-cross-vault-propagation** at this 2nd invocation. ADR-023 ratification block in body documents the 7-step slot reassignment chain (ADR-015→ADR-018→ADR-019→ADR-020→ADR-021-gap→ADR-022-accepted→ADR-023) — 2nd multi-step forward-only ADR reassignment in v8.
+
+**D7d carve-out discipline** (1st canonical instance in v8): when a single deliverable hits a hard external blocker mid-execution (auth blocker at S2b + clipboard mechanism friction at S3 entry), the plan-time defer-trigger pattern fires; the deliverable carves out to a follow-up sub-task spec at the immediate session close (`missions/artifacts/m35_d7d_image_regen_followup.md` from S2b); and becomes a small interstitial sub-mission (**M3.5.5**) at the next mission close cascade. The carve-out preserves the main mission's canonical shape — M3.5 stays 4-session; the deferred sub-task spec becomes the de facto M3.5.5 mission spec without duplicate authoring. Plan-time defer-trigger pattern covers **3 blocker classes** in M3.5 lifecycle (budget at S2 mid-checkpoint + auth at S2b Phase 5 + access at S3 entry) — same single-mechanic pattern generalizes across uncoordinated blocker classes; `skill_plan_time_defer_trigger.md` graduation candidate SEEDED at 1 of 3 use instances.
+
+**2 of 4 P3 phase-exit bricks** now complete for the *node.aDNA HOME polished* prong. M3.6 (airlock streamlining) + M3.7 (modular III for Obsidian) remain for the other 2 P3 phase-exit bricks; P3 → P4 phase-exit gate stays operator-decisioned after M3.6 + M3.7 close per Campaign SO #19. **M3.5.5** opens at operator-decision whenever Imagen 4 paid-tier access is reliably accessible (resolution paths A/B/C/D documented in the deferred sub-task spec).
+
+**Pattern reinforcement summary at this close**:
+- Cross-skill primitive composition pattern post-graduation reinforcement at **5/5 use instances** (M3.4 graduation HOLDS)
+- T8 forward-reference-stub discipline post-graduation reinforcement at **6/6 instances** within M3.5 lifecycle alone, cumulatively 9/9 across M3.3+M3.4+M3.5 (M3.4 graduation HOLDS; strongest in v8)
+- 6-section design-spec structure 8th-11th canonical instances at T9+T10+T11+T12 (`skill_design_spec_authoring.md` 12 of 3+ at 4× margin)
+- Op 3 archive-on-close 17th canonical instance at this S3 (`skill_campaign_close_archive.md` 5.7× margin)
+- Standing Order #8 self-reference 18th + 19th tactical invocations
+- 4 NEW graduation candidates SEEDED at M3.5 close: `skill_substrate_inversion_apply_pass.md` + `skill_4_session_with_mid_checkpoint_split.md` + `skill_sub_mission_carve_out.md` + `skill_plan_time_defer_trigger.md` (combined backlog idea `idea_pattern_graduation_substrate_inversion_apply_pass.md` per D-GRAD)
+- 2 existing graduation candidates ADVANCE: `skill_implementation_mission_close.md` 1→2 of 3 + `skill_in_phase_adr_ratification.md` 1→2 of 3
+
+**Hard constraints honored end-to-end across all 4 sessions**: zero `.adna/` touches + zero partner-vault contact (17 embargo memos preserved) + zero `~/.claude/settings.json` mutations + zero `~/.adna/measurement/measurement.sqlite` deliberate mutations + zero hook modifications + zero `.obsidian/` config or plugin mutations + zero M2.1.5/M3.0.5/M3.6/M3.7 scope creep + D-CARRY=no-carry preserved + D-GRAD=ratify-as-finding-defer-skill-authoring preserved. **D-PUSH=push-after-S3** fires at this S3 close (push to origin per M3.3+M3.4 precedent; `node.aDNA` push gated on Standing Rule #4 — probe `git remote -v` first).
+
+**Next mission** at operator-decision: M3.6 (airlock streamlining; absorbs `campaign_comic_pipeline_canvas` M0-M1 output) OR M3.7 (modular III for Obsidian; depends on M3.4 + M3.6) OR M3.5.5 (D7d image regen interstitial; depends on Imagen 4 paid-tier unblocker) — operator selects per Campaign SO #19 phase-exit-gate-is-human-gate doctrine.
 - **Cross-references** for routing (≥ 2 wikilinks per Project SO #10): [[how/campaigns/campaign_adna_serious_tool_readiness/campaign_adna_serious_tool_readiness.md|campaign master]] + [[how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p3_m34_verification_handoff_and_agent_inspection.md|M3.4 mission spec]] (immediate predecessor; structural template) + [[how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_m34_verification_handoff_and_agent_inspection.md|M3.4 AAR]] (cross-skill primitive composition + T8 forward-reference-stub graduations) + [[how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m34_obj3_t7_design_spec.md|M3.4 T7 design spec]] (M3.5 forward-reference stub lines 225-227) + [[how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m34_obj4_t8_design_spec.md|M3.4 T8 design spec]] (M3.5 forward-reference stub) + [[how/skills/skill_verification_handoff.md|M3.4 T7 skill]] (M3.5 DELEGATION target; Forward integration with M3.5 stub) + [[how/skills/skill_obsidian_agent_inspect.md|M3.4 T8d skill]] (TRIPLE DELEGATION evidence template) + [[how/skills/skill_obsidian_integration_test.md|M3.3 T6 skill]] (depth-2 DELEGATION via T7) + [[how/skills/skill_obsidian_canonicalize.md|M3.2 skill]] (depth-3 DELEGATION via T6) + [[what/decisions/adr_014_verification_handoff_topology.md|ADR-014]] (Clause C consumer-mission obligation; M3.5 frontmatter declares verification_surface: operator) + [[what/decisions/adr_016_per_mission_context_budget.md|ADR-016]] (Clause A two-metric; M3.5 declares own budget) + [[what/decisions/adr_022_tool_use_logging.md|ADR-022]] (ADR slot reassignment chain precedent) + [[STATE.md|STATE router]] + [[how/backlog/idea_pattern_graduation_skill_authoring.md|graduation-deferred backlog idea]] (M3.4 D-GRAD).
