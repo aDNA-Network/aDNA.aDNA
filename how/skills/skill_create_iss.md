@@ -436,6 +436,38 @@ When authoring custom inline styles or one-off components (rare; prefer primitiv
 
 Out-of-scale sizes (e.g. 16 px, 18 px) signal a missed primitive — check `SiteForge.aDNA/what/lib/iss/primitives/primitives.css` first.
 
+### C-D6-1 — Mobile + Responsive discipline
+
+The D6 decadal arc (cycles 51-60) added layered mobile + responsive behavior across the substrate. Authors writing new gates or new sibling templates MUST observe:
+
+**Touch targets (≥44px at ≤600px viewport)**:
+- Every interactive element (button, radio, link in actions area) gets ≥44px effective tap target at mobile.
+- The substrate's `@media (max-width: 600px)` block in `primitives.css` already covers `.gen-btn`, `.cancel-btn`, `.copy-btn`, `.radio-opt`, `.scale .radio-opt`, `.radio-opt--defer`. New interactive elements added to template `<style>` blocks must mirror.
+
+**Single-column layout (at ≤640px)**:
+- Any 2-column grid the author adds (`grid-template-columns: <fixed> 1fr` or `1fr 1fr`) MUST have a `@media (max-width: 640px) { … grid-template-columns: 1fr; }` companion rule.
+- The substrate handles `.swot-grid`, `.sitrep`, `.iss-review-dl`, `.submit-feedback-dl`, `.hdr` in primitives.css. Template-local `.axis-row` is handled in the template's own `<style>` block (cascade order — template `<style>` loads after primitives, so primitives.css cannot override template-internal rules).
+
+**No-horizontal-scroll**:
+- Long-text containers (titles, decision questions, list items, key/value cells) declare `overflow-wrap: break-word` so over-cap text wraps rather than overflowing.
+- The substrate covers `.c-title`, `.swot-list`, `.sitrep-val` in primitives, and `.composite-title`, `.composite-q` in phase_exit. New text containers in sibling templates should mirror.
+- Pair this with D5 authoring advisories: `validate_authoring: true` flags titles >80 chars; `overflow-wrap` makes the wrap graceful when slip-through happens.
+
+**Form fields full-width at mobile**:
+- The substrate's `@media (max-width: 600px)` block in primitives sets `width: 100%; box-sizing: border-box;` on `textarea, input[type="text|number|email|search"]` as a safety net.
+- Per-input rules that already declare `width: 100%` at desktop are unaffected.
+- Template-local number/text inputs without explicit width SHOULD add a template-local `@media (max-width: 640px) { .my-input { width: 100%; box-sizing: border-box; } }` rule.
+
+**No hover-only interactions**:
+- Every `:hover` rule MUST have a `:focus-visible` or `:focus-within` sibling so keyboard and touch users get the same affordance. Touch users have no hover state at all.
+- Audit before adding any new `:hover`: does a touch user need this feedback? If yes, add the sibling rule.
+
+**Auto-save drafts (opt-in `auto_save_drafts: true`)**:
+- D3's `save_draft: true` surfaces a modal restore dialog; D6 adds an inline non-modal resume banner via `auto_save_drafts: true`. Independent flags — banner takes UI precedence at init if both enabled.
+- Enable for mobile-targeted gates and long-form gates where the modal would feel intrusive. Default-off preserves existing behavior.
+
+**Authoritative spec**: `SiteForge.aDNA/what/lib/iss/templates/README.md` §"Mobile + Responsive contract (D6)" + §"Auto-save drafts contract (D6-C57)".
+
 ## Round-trip discipline
 
 Sentinel handshake (AD-6):
