@@ -225,3 +225,17 @@ Single combined backlog idea at `how/backlog/idea_pattern_graduation_substrate_i
 - [[../../../STATE.md|STATE router]] — Op 3 archive-on-close 17th canonical instance refresh at this S3
 - Plan files (4 across mission lifecycle): `/Users/stanley/.claude/plans/please-read-the-claude-md-peppy-peacock.md` (S1) + `please-read-the-claude-md-lexical-hippo.md` (S2) + `please-read-the-claude-md-swift-bentley.md` (S2b) + `please-read-the-claude-md-linked-pie.md` (S3)
 - [[../../../how/backlog/idea_pattern_graduation_substrate_inversion_apply_pass.md|graduation-deferred backlog idea]] — D-GRAD ratify-as-finding skill authoring deferral memo (6 graduation candidates SEEDED at M3.5 close)
+
+---
+
+## D7d Addendum — M3.5.5 Interstitial Image Regen Warm-Up (executed 2026-05-25T~20:55Z)
+
+**Worked**: 30 of 31 vault_card JPGs regenerated cleanly via Imagen 4 Ultra (Path B Gemini API paid plan; CanvasForge substrate end-to-end + PIL PNG→JPG; ~$1.20 cost; node.aDNA commit `9e1c364`). 7 Hestia-aesthetic references archived to `_pre_m35_s2b/` per SO #6.
+
+**Didn't**: zeta.aDNA hit Imagen 4 Ultra paid-tier-1 daily quota (30/day hard cap); zeta retains prior-gen JPG. M3.5.5b retry follow-up carved out for tomorrow post-UTC-midnight quota reset.
+
+**Finding**: Two surfaces for D11-D20 planning — (1) **30 calls/day Imagen 4 Ultra paid-tier-1 quota** (multi-decadal days need wait-for-reset OR pro-tier fallback OR tier 2+ billing; D11 ~20 calls/day fits cleanly); (2) **runner must include PIL PNG→JPG conversion** (substrate outputs PNG; consumer expects JPG).
+
+**Change**: Sub-mission carve-out discipline advances `skill_sub_mission_carve_out.md` 1 → 2 of 3 (carve-then-execute round trip closed). NEW seed `skill_canvasforge_substrate_consumption.md` at 1 of 3 (Python sys.path injection + Protocol consumption + PIL conversion + JSONL ledger pattern; D11-D20 are 2nd-instance candidates). Substrate-pure separation 12th canonical instance via governance-vs-artifact commit split.
+
+**Follow-up**: M3.5.5b zeta retry (~1 call; tomorrow; absorb naturally). M5.1 research mission opens next (8 OSS targets; 2-3 sessions). Pipeline pre-validation COMPLETE — D11 cycle 101 can consume the same path with confidence; ledger schema at `aDNA.aDNA/what/measurement/iii_results/2026-05/m355_d7d_regen.jsonl` (31 rows) is forward-compatible with M5.0 §3 Step 7 III-result contract.

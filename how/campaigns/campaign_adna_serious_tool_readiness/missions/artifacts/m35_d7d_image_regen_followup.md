@@ -5,8 +5,10 @@ parent_mission: mission_adna_str_p3_m35_home_polish_and_per_vault_info_pages
 parent_session_deferred_from: session_stanley_20260525T022725Z_v8_m35_s2b
 campaign: campaign_adna_serious_tool_readiness
 created: 2026-05-25
-updated: 2026-05-25
-status: deferred
+updated: 2026-05-25  # status: deferred → completed at M3.5.5 S1 close 2026-05-25T~20:55Z
+status: completed
+closed_at: 2026-05-25T20:55:00Z
+closed_session: session_stanley_20260525T202630Z_v8_m355_s1
 last_edited_by: agent_stanley
 defer_reason: auth_blocker_imagen_4_paid_plan_required_and_gcloud_tokens_stale
 defer_decided_at: 2026-05-25T~04:00Z
@@ -14,12 +16,39 @@ defer_authority: operator_stanley_via_askuserquestion_2026_05_25_post_phase_4
 plan_anticipated_at: please-read-the-claude-md-swift-bentley_md_mid_checkpoint_trigger_phase_5_defer_clause
 target_vault_count: 31
 target_directory: /Users/stanley/lattice/node.aDNA/who/assets/vault_cards/
+resolution_path_used: B  # Gemini API paid plan via SS_GEMINI_API_KEY macOS Keychain entry
+substrate_consumed: canvasforge_what_code_canvas_core_image_generation_py_plus_latlab_mcp_image_server_GeminiImageClient
+ledger_path: aDNA.aDNA/what/measurement/iii_results/2026-05/m355_d7d_regen.jsonl
+generation_outcome:
+  attempted: 31
+  succeeded: 30
+  failed: 1
+  failed_vaults: [zeta.aDNA]
+  failure_class: imagen_4_ultra_paid_tier_1_daily_quota_30_per_day_cap_hit
+  cost_usd: 1.20
+node_adna_commit: 9e1c364
+roster_addition: [LiteratureForge.aDNA]  # vault forked 2026-05-25; Thoth persona; not present when this spec authored
 tags: [deferred_sub_task, m35_d7d, image_regen, imagen_4_ultra, vertex_ai_paid_plan_required, gcloud_auth_login_required, gemini_api_key_free_tier_quota_zero, hf_spaces_alternative, comfyforge_dispatch_alternative, twenty_six_archived_predecessor_attempts_at_pre_m20_directories, consistent_prompt_template, hestia_lattice_hearth_aesthetic_anchor, pixel_art_16_9_dna_helix_band, scope_expansion_d7d_per_operator_askuserquestion_2026_05_25_post_s2a, defer_per_plan_mid_checkpoint_trigger, rosetta]
 ---
 
 # Deferred Sub-Task — M3.5 D7d Image Regen (31 vault_cards via Imagen 4)
 
 ## Status
+
+**COMPLETED** 2026-05-25T~20:55Z at `session_stanley_20260525T202630Z_v8_m355_s1` (interstitial M3.5.5 single-session execution; plan ratified at `/Users/stanley/.claude/plans/please-read-the-claude-md-mossy-whisper.md`; node.aDNA commit `9e1c364`). **30 of 31 vault_cards regenerated** via Path B (Gemini API paid plan; `SS_GEMINI_API_KEY` Keychain entry; CanvasForge `what/code/canvas_core/image_generation.py` substrate-neutral `ImageRequest` Protocol + `latlab.mcp.image.server.GeminiImageClient` adapter; PNG→JPG via PIL quality=88). 1 failure: **zeta.aDNA** hit Imagen 4 Ultra paid-tier-1 daily quota (30 calls/day; documented in §Findings below). zeta retains its prior-gen JPG; will retry tomorrow when quota resets. Cost: **$1.20** (2.5% of $50 v8 P5 budget). Pre-validates the Gemini pipeline end-to-end ahead of D11 cycle 101 per `m50_visual_inspection_methodology.md` §3 Step 3 consumption pattern.
+
+### Findings (warm-up surfaces 2 items for D11+ planning)
+
+1. **Imagen 4 Ultra paid-tier-1 daily quota = 30 calls/day** (hard limit per `quotaMetric: generativelanguage.googleapis.com/predict_requests_per_model_per_day_paid_tier_1`). Implications for D11-D20:
+   - D11 (Visual Identity v2 + Image Regen) ~20 calls in single session is fine.
+   - **Multi-decadal days** (≥31 calls across decadals on the same calendar day) need either:
+     (a) wait for daily reset (UTC midnight; ~24h cycle), OR
+     (b) fall back to `imagen-4.0-generate-001` ("pro" tier) for the 31st+ call (quota typically separate; quality slightly below Ultra),
+     OR (c) upgrade Gemini billing tier (tier 2+ has 5,000 calls/day per docs).
+   - Recommendation: surface to M5.0 visual inspection methodology §4 as an additive note; doesn't gate D11 open.
+2. **PNG output requires PIL conversion to JPG** for vault_card slots — runners must include the PIL conversion step (or update consumer to accept PNG). Documented in runner `m355_d7d_vault_card_regen.py`.
+
+### Original defer record (preserved)
 
 **DEFERRED** at S2b mid-Phase-5 entry 2026-05-25T~04:00Z per operator AskUserQuestion. Authority: operator_stanley. Trigger: auth blocker on the chosen Imagen 4 mechanism (gcloud tokens stale + Gemini API key free-tier quota=0). The plan (`please-read-the-claude-md-swift-bentley.md` Phase 5 mid-checkpoint trigger) explicitly anticipated this scenario — *"defer image-gen to S2c or a parallel out-of-band sub-task before S3. Text+structure layer is the value-bearing deliverable; images are visual polish that degrade gracefully without (existing onerror=display:none fallback)"*. Defer-trigger fires; D7d carves out of S2b into this follow-up sub-task; M3.5 main mission shape is preserved (S1 + S2/S2a + S2b + S3 stays 4-session canonical).
 
