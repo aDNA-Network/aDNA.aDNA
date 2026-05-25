@@ -83,6 +83,28 @@ When the next session has spare context budget (e.g., interstitial between M3.5/
 5. Cross-linking back to this file + AAR + example skills + `m21_obj4` graduation rubric
 6. Filing graduation-complete AAR-snippet at the next session's SITREP
 
+## M3.7 close extension (2026-05-25)
+
+M3.7 S2 close ratifies 1 additional graduation + seeds 2 new candidates + reinforces 9 post-graduation. Skill file authoring stays deferred per D-GRAD precedent inherited (M3.4 + M3.5 + M3.6 + M3.7 all defer). The combined backlog extends:
+
+**1 new GRADUATION at M3.7 (skill file authoring deferred)**:
+- `skill_substrate_inversion_with_adr.md` — GRADUATES at 3rd canonical instance (M3.4 ADR-014 1st + M3.6 ADR-024 2nd + M3.7 ADR-025+ADR-026 twin 3rd; per ≥ 3 instances rubric). Variant stabilizes as canonical-for-implementation-class-missions-that-design-cross-vault-contracts-with-load-bearing-decisions. Section-structure forecast: 5-section skill (when-to-use + invariants + step-by-step ADR drafting + close-cascade ratify ceremony + cross-references); evidence table cites M3.4 + M3.6 + M3.7 + ADR-014 + ADR-024 + ADR-025 + ADR-026 + M3.4/M3.6/M3.7 AAR pattern graduation blocks.
+
+**2 NEW SEEDS at M3.7 (authoring deferred until graduation)**:
+- `skill_twin_adr_ratification.md` — NEW SEED at 1 of 3 instances (M3.7 ADR-025 + ADR-026 twin = 1st canonical instance). Eligibility = two ADRs share tightly-coupled load-bearing decision surface within single mission close. Section-structure forecast: 5-section skill (when-to-use [eligibility criterion] + invariants + step-by-step twin drafting + close-cascade twin-ratify ceremony + cross-references). Graduates at 3rd instance if M3.8 or later applies.
+- `skill_modular_iii_consumer_interface_design.md` — NEW SEED at 1 of 3 instances (M3.7 design spec is 1st cross-vault modular III consumer-interface design). Eligibility = aDNA-Forge-Platform.aDNA consumer adopting III modular framework with consumer-interface contracts only. Section-structure forecast: 5-section skill (when-to-use + invariants [zero internal modular-III touches; consumer-interface contracts only] + step-by-step design-spec + ADR + AAR ceremony + cross-references). Graduates at 3rd instance if future cross-vault III consumer applies.
+
+**9 post-graduation reinforcement updates at M3.7**:
+- `skill_in_phase_adr_ratification.md` — post-graduation reinforcement at 5/3+ (4th + 5th invocations via ADR-025 + ADR-026 twin at M3.7 close); already-GRADUATED at M3.6
+- `skill_implementation_mission_close.md` — post-graduation reinforcement at 4/3+ (M3.7 S2 close cascade matches M3.4 + M3.5 + M3.6 close shape); already-GRADUATED at M3.6
+- `skill_design_spec_authoring.md` — post-graduation reinforcement at 14/3+ (4.7× margin; M3.7 design spec is 14th canonical instance of 6-section structure); already-GRADUATED at M3.4
+- `skill_campaign_close_archive.md` — post-graduation reinforcement at 21/3+ (7× margin; Op 3 archive-on-close 20th + 21st canonical instances at M3.7 S1 + S2 STATE refreshes); already-GRADUATED at M3.4-or-earlier
+- `skill_substrate_pure_separation.md` — post-graduation reinforcement at 9/3 (8th canonical instance pre-S1 `173516e` SiteForge C-D6-1 carry-forward + 9th canonical instance pre-S2 `f390a0b` SiteForge D7 carry-forward); already-GRADUATED at M3.4-or-earlier
+- `skill_substrate_gathering_subagent_dispatch.md` — graduation candidate ADVANCES 1 → 2 of 3 (M3.6 1st + M3.7 2nd Explore subagent dispatch at S1 entry per ADR-016 Clause B); graduates at 3rd instance
+- `skill_two_session_close_cascade.md` — graduation candidate ADVANCES 1 → 2 of 3 (M3.6 1st + M3.7 2nd canonical 2-session implementation-class shape); graduates at 3rd instance if M3.8 or later applies
+- `skill_forward_reference_stub_design.md` — post-graduation reinforcement at 11/3+ (T8 forward-reference-stub discipline; M3.7 design spec §6 forward-integration stub names v8 P5 + III.aDNA Campaign E); already-GRADUATED at M3.4
+- `skill_cross_skill_primitive_composition.md` — HOLD at 5/5 (M3.7 produced no new operational skill at S2; path A scope; M3.4 graduated at 3/3; M3.5 reinforced 4-5); future cross-skill chain at v8 P5 100-III-loops capstone may add 6th instance
+
 ## Cross-references
 
 - [[../campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_m34_verification_handoff_and_agent_inspection.md|M3.4 AAR]] — Pattern graduation block + 3 of 3 evidence tables

@@ -109,11 +109,53 @@ At v8 P6 cycle open, fire coord memos:
 - `coord_2026_XX_XX_v8_p6_airlock_streamline_adr_008_re_pin.md` for the `.adna/` template-stub bump
 - 1 omnibus coord memo to lattice-labs (Berthier) + III.aDNA (Argus) ack'ing M3.6 close + design-spec promotion
 
+## M3.7 extension — Modular III for Obsidian propagation (30 additional migration-matrix cells; 75 total)
+
+Extended at M3.7 S2 close 2026-05-25 (`session_stanley_20260525T163023Z_v8_m37_s2`). Covers all 30 migration-matrix cells from `missions/artifacts/m37_modular_iii_design_spec.md` §4 (5 wrappers × 6 M3.7 streamline integration primitives). Total cumulative cells now 75 (M3.6 45 + M3.7 30).
+
+### M3.7's 6 streamline integration primitives
+
+From M3.7 design spec §2:
+
+- **P1 HOME.md Bases-gallery measurement contract** — 3 new gallery columns (persona_growth + research_ctx_gen + freshness) under existing card grid; gallery scope shows 3 of 5 dimensions; click-through to card detail shows all 5. Target: `node.aDNA/HOME.md` line 42 + `vault_gallery.base`.
+- **P2 vault_card per-dimension scoring** — 5-dimension `iii_target` schema {score, last_measured, notes} per dimension. Target: T10 v0.2 vault_card body `## III & Context` 9th H2 section + reserved `iii_target: {}` frontmatter slot.
+- **P3 III-decadal cycle orchestration skill + coord-memo protocol** — NEW skill candidate `aDNA.aDNA/how/skills/skill_iii_modular_cycle.md` (DEFERRED authoring per D-GRAD); coord-memo template at `aDNA.aDNA/how/templates/template_coord_iii_decadal_result.md` (DEFERRED).
+- **P4 ledger-observation consumer contract** — primary canonical at III.aDNA per ADR-026 Clause A; fallback M3.6 P3 skeleton per Clause B; dual-mode transport per Clause C.
+- **P5 wrapper airlock-activation audit aggregation** — federated reader of M3.6 P9 `.audit/airlock_activation.jsonl` per-wrapper emissions; per-wrapper opt-in via inventory_vaults.yaml `iii_aggregation_opt_in: true`.
+- **P6 III result persistence** — `aDNA.aDNA/what/measurement/iii_results/<YYYY-MM>/` canonical layout + per-cycle JSONL + digest + rolling aggregations.
+
+### M3.7 migration-matrix (5 wrappers × 6 primitives = 30 cells)
+
+| Wrapper | P1 HOME | P2 vault_card | P3 cycle skill | P4 ledger consumer | P5 audit aggregation | P6 result persist |
+|---|---|---|---|---|---|---|
+| SiteForge.aDNA | additive (gallery) | additive (5-dim scoring) | consumes (skill federation) | consumes (per ADR-026) | opt-in (per ADR-024 B + privacy opt-in) | n/a (vault-local) |
+| VideoForge.aDNA | additive | additive | consumes | consumes | opt-in | n/a |
+| CanvasForge.aDNA | additive | additive | consumes | consumes | opt-in | n/a |
+| wga.aDNA | additive | additive | consumes | consumes | opt-in | n/a |
+| LPWhitepaper.aDNA | additive | additive | consumes | consumes | opt-in | n/a |
+
+### M3.7 propagation worklist (5 per-wrapper batches at v8 P6)
+
+At v8 P6 cycle open, each wrapper sweep batch lands a single commit covering opt-in M3.7 primitives + M3.6 primitives (combined wrapper batch covers M3.6 + M3.7 propagation queue per single-commit-per-patch budget).
+
+### M3.7 ADR upstream-promotion candidates
+
+- **ADR-025 III-Decadal Coordination across Vaults upstream-promotion** — propagated to `.adna/` template-level if accepted as canonical hint at v8 P6.
+- **ADR-026 Ledger-Observation-as-Shared-Primitive upstream-promotion** — propagated to `.adna/` template-level if accepted as canonical hint at v8 P6.
+- **III-target schema consumer-interface contract upstream-promotion** — additive hint at `.adna/how/templates/template_vault_card.md` v0.3 candidate (M3.7 P2 5-dimension shape).
+- **`aDNA.aDNA/iii/` wrapper directory creation candidate** — additive `.adna/` template hint at v8 P6 (per Decision 2 deferral).
+- **`skill_iii_modular_cycle.md` upstream-promotion candidate** — skill file authoring deferred per D-GRAD; if authored at v8 P5 + adopted at `.adna/` template level, becomes additive template skill addition at v8 P6.
+
 ## Cross-references
 
 - [[../campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p3_m36_airlock_aar_and_streamline.md|M3.6 mission spec]] (source mission)
 - [[../campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m36_streamline_design_spec.md|M3.6 streamline design spec]] (source design spec §4)
 - [[../campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_airlock_ecosystem_m36.md|M3.6 AAR]] (§3 Streamline Candidates + §4 Forward Doctrine)
+- [[../campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p3_m37_modular_iii_for_obsidian.md|M3.7 mission spec]] (M3.7 extension source)
+- [[../campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m37_modular_iii_design_spec.md|M3.7 design spec]] (§4 migration delta)
+- [[../campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_m37_modular_iii_for_obsidian.md|M3.7 AAR]] (§6 Follow-up + §10 cross-references)
+- [[../../what/decisions/adr_025_iii_decadal_coordination.md|ADR-025]] (M3.7 upstream-promotion candidate)
+- [[../../what/decisions/adr_026_ledger_observation_shared_primitive.md|ADR-026]] (M3.7 upstream-promotion candidate)
 - [[../../what/decisions/adr_024_airlock_streamline_contract.md|ADR-024 Airlock Streamline Contract]] (canonical doctrine; 3 clauses A/B/C)
 - [[../../what/decisions/adr_008_airlock_template_stub.md|ADR-008 Airlock Template Stub]] (v0.3 re-pin candidate at v8 P6)
 - [[../../who/coordination/coord_2026_05_19_v8_cross_vault_disruption_assessment.md|cross-vault disruption assessment]] (forge-vault-side posture)

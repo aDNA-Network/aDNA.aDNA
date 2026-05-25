@@ -7,9 +7,11 @@ mission_number: 3.7
 slug: modular_iii_for_obsidian
 created: 2026-05-25
 updated: 2026-05-25
-status: in_progress
+status: completed
 opens_at: 2026-05-25T15:13:00Z
 opened_session: session_stanley_20260525T151300Z_v8_m37_s1
+closed_at: 2026-05-25T16:30:00Z   # M3.7 S2 close cascade 2026-05-25; 6/6 cumulative deliverables LIVE; ADR-025 + ADR-026 twin-ratified; substrate-inversion-with-ADR variant GRADUATES at 3rd canonical instance
+closed_session: session_stanley_20260525T163023Z_v8_m37_s2
 estimated_sessions: 2   # implementation-class 2-session shape per Phase 3 table line 175 (`M3.7 | Modular III for Obsidian (concern #6 capstone) | 2 | M3.4 + M3.6 | planned`); canonical 2-session implementation-class shape candidate for 2nd instance after M3.6 1st (advances `skill_two_session_close_cascade.md` graduation candidate 1 → 2 of 3)
 persona: rosetta
 last_edited_by: agent_stanley
@@ -203,4 +205,23 @@ Mission-time declarations per Standing Order #8 self-reference 22nd tactical inv
 
 ## Mission Close Notes (populated at S2 close)
 
-(To be appended at S2 close per Mission Close Notes discipline.)
+**Closed**: 2026-05-25T16:30Z at `session_stanley_20260525T163023Z_v8_m37_s2` (S2 close cascade).
+
+**Cumulative deliverables (6/6 LIVE)**:
+1. ✅ M3.7 mission spec (this file) — `status: in_progress` at S1 open 2026-05-25T15:13Z → `status: completed` at S2 close 2026-05-25T16:30Z
+2. ✅ Governance bundle — campaign master M3.7 row flipped `planned → in_progress` at S1 + `in_progress → completed` at S2; amendments-table entries at S1 + S2; ADR-025 + ADR-026 rows added to ADR Roadmap with `status: accepted`; STATE.md Op 3 archive-on-close 20th canonical instance refresh at S1 + 21st at S2 close
+3. ✅ ADR-025 III-Decadal Coordination across Vaults — `accepted` at S2 close per Campaign SO #14 in-phase exception clause 4th invocation in v8; 3 clauses A=cycle-location-shape-distributed-but-coordinated + B=dimension-definition-ownership-iii.aDNA-canonical + C=ack-debt-protocol-coord-memo-cycle; substrate-inversion-with-ADR variant GRADUATES at 3rd canonical instance per ≥ 3 instances rubric
+4. ✅ ADR-026 Ledger-Observation-as-Shared-Primitive — `accepted` at S2 close per Campaign SO #14 in-phase exception clause 5th invocation; 3 clauses A=canonical-poller-location-iii.aDNA + B=consumer-fallback-pattern-m36-p3-skeleton + C=federation-transport-airlock-or-direct-file-read; twin-ADR ratification with ADR-025 ratifies as **1st canonical instance** of dual-ADR-at-same-mission-close pattern
+5. ✅ Design spec — `missions/artifacts/m37_modular_iii_design_spec.md` — 6-section structure 13th canonical instance (skill_design_spec_authoring.md post-graduation reinforcement 14/3+; 4.7× margin); 6 streamline integration primitives (P1 HOME Bases-gallery measurement contract + P2 vault_card per-dimension scoring + P3 III-decadal cycle orchestration skill + coord-memo protocol + P4 ledger-observation consumer contract + P5 wrapper airlock-activation audit aggregation + P6 III result persistence); 30-cell zero-break invariant table; 6 integration-shape decisions all resolved
+6. ✅ Close cascade — AAR finalized 10 sections + composite v8 P6 backlog placeholder extension + mission spec close + campaign master close + STATE Op 3 21st canonical instance + 2 session files moved active → history/2026-05/ + push at G3 gate
+
+**Pattern dispositions**:
+- 1 GRADUATES: `skill_substrate_inversion_with_adr.md` at 3rd canonical instance (M3.4 1st + M3.6 2nd + M3.7 3rd)
+- 2 NEW SEEDS: `skill_twin_adr_ratification.md` 1 of 3 (dual-ADR-at-same-mission-close pattern); `skill_modular_iii_consumer_interface_design.md` 1 of 3 (cross-vault modular III consumer-interface design pattern)
+- 9 reinforcements: skill_in_phase_adr_ratification post-graduation 5/3+; skill_implementation_mission_close 4/3+; skill_design_spec_authoring 14/3+; skill_campaign_close_archive 21/3+; skill_substrate_pure_separation 9/3+; skill_substrate_gathering_subagent_dispatch 2/3; skill_two_session_close_cascade 2/3; skill_forward_reference_stub_design 11/3+; skill_cross_skill_primitive_composition HOLD 5/5
+
+**Hard constraints**: all 14 honored end-to-end (zero `.adna/` + III.aDNA + node.aDNA + lattice-labs + forge-vault wrappers + aDNA.aDNA/site/ + .obsidian + settings.json + measurement.sqlite + hook + ADR-019 split touches).
+
+**P3 → P4 phase-exit gate UNBLOCKED**: M3.7 close = **4 of 4 P3 phase-exit bricks** satisfied. All 4 prongs complete (agent-autonomy + HOME-polished + airlock workflow streamlined + modular III operational). Gate stays operator-decisioned per Campaign SO #19. Operator decisions at gate: (a) authorize P4 open / (b) interstitial / (c) carry-forward triage / (d) other.
+
+**See**: `aar_m37_modular_iii_for_obsidian.md` for full AAR + token-budget two-metric table + extended findings + pattern graduation block.
