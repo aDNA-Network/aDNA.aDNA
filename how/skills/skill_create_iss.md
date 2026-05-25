@@ -411,6 +411,15 @@ Lead with the verb. Verb-first labels are objectively shorter, more scannable, a
 | "Deferral to next cycle" | "Defer to next cycle" |
 | "Score visual fidelity 1-5" | (already verb-first; keep) |
 
+### C-D4-1 — Verb-first extends to JS-populated content (CF-D3→D4-1)
+
+The D2-C18 verb-first contract for `composite_title` extends to two additional surfaces an agent may author:
+
+- **`consequence_text`** (optional opt-in override for the hardcoded `consequence_explicit` subtitle) — name the action the operator is authorizing, verb-first. "Commit this decision permanently…" beats "The decision will be recorded…".
+- **Review-dialog body fragments** populated by template JS from live state — the section titles + ranker axis labels the JS reads must themselves be verb-first so the auto-populated review reads as a coherent decision summary.
+
+Set `validate_authoring: true` in the data JSON to enable a stderr advisory log when the generator detects a non-verb-first opener (no render-time behavior change; default off, byte-identical render). Recognized decision-verb allowlist + full contract at `SiteForge.aDNA/what/lib/iss/templates/README.md` § "Title authoring discipline" → § "JS-populated content discipline".
+
 ### C-D2-3 — Type-scale reference
 
 When authoring custom inline styles or one-off components (rare; prefer primitives), pin to the established type-scale to stay coherent with the ISS substrate:
