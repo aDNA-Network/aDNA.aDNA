@@ -468,6 +468,50 @@ The D6 decadal arc (cycles 51-60) added layered mobile + responsive behavior acr
 
 **Authoritative spec**: `SiteForge.aDNA/what/lib/iss/templates/README.md` §"Mobile + Responsive contract (D6)" + §"Auto-save drafts contract (D6-C57)".
 
+### C-D7-1 — Error recovery + resilience discipline
+
+The D7 decadal arc (cycles 61-70) added a coherent error-recovery contract spanning seven UX surfaces + receiver/watch backend hardening. Authors writing new gates SHOULD opt in to the appropriate D7 flags for their gate's risk profile:
+
+**Cancel-without-loss (`confirm_discard_when_dirty: true`, D7-C62)**:
+- Use when the gate is multi-section or otherwise time-consuming to fill.
+- Default D3-C26 `window.confirm()` fires regardless of state; the D7 flag only confronts the operator when work would be lost (clean state closes immediately — frictionless cancel for unused gates).
+
+**Partial-save guarantees (`partial_save_interval_ms: 30000`, D7-C63)**:
+- Use for long-form gates where the operator may step away mid-fill. Pairs naturally with `save_draft: true`.
+- Adds a visible 30s heartbeat via the `.save-status-pill` + onblur trigger. The actual persistence is unchanged (D3 `StateManager` writes on every set); the heartbeat is operator-visible reassurance.
+
+**Actionable error-state messaging (`PRIM-ERROR-STATE` primitive, D7-C64)**:
+- Use `build_error_state_html(problem, action, retry)` for any new error surface. The triplet is the canonical actionable-error shape: WHAT broke / WHAT to do RIGHT NOW / HOW to retry.
+- Bare strings like "An error occurred" are NOT acceptable — the gate must name the problem AND the action AND the retry path.
+- HTML-escape all three fields (the helper does this; manual error construction should mirror).
+
+**Ambiguous-input guidance (`validate_authoring: true` extended, D7-C65)**:
+- The existing `validate_authoring` lint now also catches duplicate `value` OR `label` strings within any radio group. Enable during gate authoring to catch accidental copy-paste duplications.
+- For intentional similarity (two options with overlapping wording but distinct intent), render `.ambiguity-hint` inline below the option label as a disambiguator.
+
+**Gate-expiry handling (`expires_at: "<ISO 8601>"`, D7-C66)**:
+- Set when the gate's authoring context has a wall-clock deadline (e.g. agent-session-window expiry; pilot-evaluation cutoff).
+- The overlay is a WARNING (dismissable + lets operator continue) — not a hard block. Use `expiry_messages: {problem, action, retry}` to override the default messages with gate-specific context.
+
+**2-step confirm for unrecoverable actions (`confirm_two_step: true`, D7-C67)**:
+- ONLY effective when paired with `irreversible: true` (the existing D3-C25 review-dialog flag). Standalone `confirm_two_step` is a no-op.
+- Adds the type-`SUBMIT` text input matching AWS console + GitHub enterprise-gate patterns. Case-sensitive, exact match required.
+- Use for substrate-altering decisions where accidental submit would force a manual rollback.
+
+**Back-button safety (`guard_unload: true`, D7-C68)**:
+- Use for any gate the operator should not lose mid-fill. Two-layer protection: `beforeunload` covers tab-close/refresh; `history.pushState` covers back-button.
+- The `beforeunload` guard only fires when `isStateDirty()` returns true — clean state doesn't bother the operator with the unsaved-changes prompt.
+
+**Receiver-port discovery (D7-C69, F-2)**:
+- `gate_receiver.py` v0.3.0 auto-discovers a free port on collision (scans `--port..+10` by default) and writes `<gates_root>/.gate_receiver.port` as the single-source-of-truth pointer.
+- `generator.py` reads the sidecar at gate creation and embeds the active port via `<body data-receiver-url="...">`. No author action required — explicit `receiver_url` in data.json overrides; absence triggers sidecar discovery; both absent falls back to `localhost:8765`.
+
+**Watch-pattern hardening (D7-C69, F-4)**:
+- Reference: `SiteForge.aDNA/how/skills/skill_watch_iss.md` §"D7-C69 hardening (F-4)".
+- Wrap watch loops with `timeout 7200` (2-hour cap); use `[ -e ]` over `[ -f ]` for symlink/special-file safety; agent scans `how/gates/*.output.json` on session-open for cross-session resume.
+
+**Authoritative spec**: `SiteForge.aDNA/what/lib/iss/templates/README.md` §"Error-recovery contract (D7)".
+
 ## Round-trip discipline
 
 Sentinel handshake (AD-6):
