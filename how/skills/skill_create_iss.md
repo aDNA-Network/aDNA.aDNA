@@ -512,6 +512,46 @@ The D7 decadal arc (cycles 61-70) added a coherent error-recovery contract spann
 
 **Authoritative spec**: `SiteForge.aDNA/what/lib/iss/templates/README.md` §"Error-recovery contract (D7)".
 
+### C-D8-1 — Multi-modal coherence discipline
+
+D8 ensures the operator experiences the gate the same way regardless of which tier of
+the fallback chain is active. Five opt-in surfaces — all default-off, byte-equivalent
+when unset.
+
+**3-tier fallback chain** (the canonical interpretation of "multi-modal"):
+
+| Tier | Channel | When to invoke |
+|---|---|---|
+| **Tier 1** | Web (rendered HTML, browser-opened, receiver-bound) | Default. Browser reachable + receiver port can bind. |
+| **Tier 2** | AskUserQuestion harness tool | Browser unreachable but harness has AUQ available (Claude Code remote session, etc.). Paste the AUQ payload from the Tier 2 fallback block of the rendered HTML. |
+| **Tier 3** | Plain-text copy-paste (chat / email / terminal) | No harness, no browser. Copy the plain-text block from the rendered HTML into any text channel. |
+
+**Detection is agent-side**, not generator-side. The generator emits ALL three tier
+surfaces into the HTML when `show_fallback_tiers: true`; the calling agent picks the
+one the environment supports.
+
+**Five D8 opt-in flags**:
+
+| Flag | Effect | Default |
+|---|---|---|
+| `sync_expiry_across_tabs: true` | BroadcastChannel sync of `.iss-expired-dialog` across browser tabs sharing the same `gate_id` (CF-D7→D8-1). Requires `expires_at`. | false |
+| `show_tier_indicator: true` | Small "Tier 1 · Web" badge near the header wordmark. Optional `tier_label` overrides the badge text. | false |
+| `show_fallback_tiers: true` | Renders BOTH the Tier 2 AUQ JSON payload + the Tier 3 plain-text template in collapsed-by-default `<details>` blocks below the composite section. | false |
+| `composite_options: [...]` | Overrides the canonical 3-option set (APPROVE/AMEND/DEFER). Tier 2 + Tier 3 mirror automatically — no per-tier paraphrase. | — |
+| (existing) `escape_hatch: true` | Adds NEED MORE INFO as a 4th option across all tiers (Tier 1 radio + Tier 2 AUQ option + Tier 3 numbered list). | false |
+
+**Anti-pattern guard**: do NOT paraphrase option labels between tiers. The
+`_canonical_composite_options(data)` function is the single source of truth. Authors
+override via `composite_options` in data; the helper threads the same option list into
+Tier 1 (template hardcoded; advisory parity lint when `validate_authoring: true`),
+Tier 2 (AUQ payload), and Tier 3 (numbered plain-text list).
+
+**gate_id is load-bearing under D8**. When any D8 flag is active, `_check_gate_id_consistency()`
+raises `ValueError` if `gate_id` is missing or not slug-shaped (`^[a-z0-9][a-z0-9_-]*$`).
+Cross-tier coherence anchors on this single identifier.
+
+**Authoritative spec**: `SiteForge.aDNA/what/lib/iss/templates/README.md` §"Multi-modal coherence contract (D8)".
+
 ## Round-trip discipline
 
 Sentinel handshake (AD-6):
