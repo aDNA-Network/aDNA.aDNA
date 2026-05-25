@@ -316,6 +316,20 @@ Existing gates (e.g. the P2 phase-exit gate at `SiteForge.aDNA/how/gates/p2_phas
 
 `SiteForge.aDNA/how/campaigns/campaign_siteforge_iss/missions/artifacts/recommendation_block_spec_p3p_6.md` (locked 2026-05-23, variant 1 flat stacked) — field schema, axis semantics, visual constraints, CSS contract, token list. Reference example: `SiteForge.aDNA/how/gates/p3p_6_demo_gate.{data.json,html}` exercises all 3 render paths (full / partial / legacy).
 
+## Visual artifact discipline (interim — pre-P3p.8)
+
+The ISS substrate has **no visual-artifact field today**. Every prose field in `generator.py` passes through `_esc()` — raw SVG, raw HTML, and mermaid blocks inline in JSON do not render. Operators evaluate decisions with inherent visual structure (architecture stacks, schema trees, workflow flows, timelines, deltas) using prose alone.
+
+**Surfaced as in-mission finding 2026-05-24** (P3p.7 validation gate review). Full design space + 4-tier ladder (ASCII / mermaid / SVG / Gemini-image) tracked at `SiteForge.aDNA/how/backlog/idea_iss_visual_artifacts.md`. Absorption mission **P3p.8** is a candidate (intercalary, single-session like P3p.6r) — opens post-P3p.7 close.
+
+**Interim guidance until P3p.8 lands**:
+- Default to prose. Visuals are not yet first-class; do not contort JSON to embed them.
+- For very simple text shapes (2-3 line stacks), plain-text shapes inside `rationale` or `analysis` survive proportional render — but anything alignment-sensitive will break (no monospace).
+- When a decision genuinely needs a visual (architectural / schematic / temporal / quantitative), call it out explicitly in `recommendation.risks` as "decision has visual structure under-served by prose alone" and flag the section as a P3p.8 candidate. The gap itself is a load-bearing signal.
+- Cite the backlog idea in `next_actions` so the gap is auditable across gates.
+
+**When to consider visuals (forward — once P3p.8 lands)**: architectural relationships · schema / data shape · workflow / state machine · timeline / cascade · quantitative delta. Default still = prose; opt-in per section; soft cap ≤ 2 visuals per gate.
+
 ## Writing discipline (D-WC carries from Dark-Mode 50-Cycle Sprint)
 
 The Dark-Mode 50-Cycle Sprint's D-WC (Writing & Content) arc distilled five carry-forward findings about prose authoring inside ISS data JSON. Apply when populating any prose-bearing field (SITREP values, composite_question, section.title/analysis/verdict, footer_text, recommendation cards).
