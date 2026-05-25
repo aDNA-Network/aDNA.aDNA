@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import VaultCard from '../../components/sections/VaultCard.astro';
+import VaultClassFacet from '../../components/sections/VaultClassFacet.astro';
+import vaultsData from '../../data/vaults.json';
+
+const { vaults, vault_count } = vaultsData as { vaults: any[]; vault_count: number };
+
+// Group by class for facet display
+const classGroups: Record<string, any[]> = vaults.reduce((acc: Record<string, any[]>, v: any) => {
+  (acc[v.class] = acc[v.class] || []).push(v);
+  return acc;
+}, {});
+
+const classOrder = ['standard_dev', 'framework', 'framework_candidate', 'forge', 'platform', 'org_vault', 'org_graph', 'network', 'node_operational', 'coordination', 'document', 'knowledge_graph', 'tooling', 'workspace', 'superseded'];
+const orderedClasses = classOrder.filter(c => c in classGroups);
+---
+
+<BaseLayout title="The Lattice — vault registry" description={`Browse the ${vault_count}-vault aDNA lattice — personae, classes, cross-vault relationships`}>
+  <main class="vaults-index">
+    <section class="vaults-hero">
+      <h1>The Lattice</h1>
+      <p class="vaults-tagline">
+        {vault_count} vaults across {orderedClasses.length} classes — each with its own persona, governance, and place in the cross-vault graph.
+      </p>
+      <p class="vaults-cta">
+        <a href="/vaults/graph/">View the relationship graph &rarr;</a>
+      </p>
+    </section>
+
+    <section class="vaults-facets">
+      <h2>Browse by class</h2>
+      <div class="facet-chips">
+        {orderedClasses.map(cls => (
+          <VaultClassFacet vaultClass={cls} count={classGroups[cls].length} />
+        ))}
+      </div>
+    </section>
+
+    {orderedClasses.map(cls => (
+      <section class="vaults-class-section" id={`class-${cls}`}>
+        <h2>{cls.replace(/_/g, ' ')} <span class="class-count">({classGroups[cls].length})</span></h2>
+        <div class="vaults-grid">
+          {classGroups[cls].map((v: any) => (
+            <VaultCard vault={v} />
+          ))}
+        </div>
+      </section>
+    ))}
+  </main>
+</BaseLayout>
+
+<style>
+  .vaults-index { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+  .vaults-hero { padding: 2rem 0; text-align: center; }
+  .vaults-tagline { font-size: 1.2rem; max-width: 60ch; margin: 1rem auto; }
+  .vaults-facets { padding: 2rem 0; }
+  .facet-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .vaults-class-section { margin: 2rem 0; }
+  .vaults-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+  .class-count { font-size: 0.85em; color: #666; }
+</style>

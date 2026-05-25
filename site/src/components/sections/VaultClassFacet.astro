@@ -1,0 +1,14 @@
+---
+interface Props { vaultClass: string; count: number; }
+const { vaultClass, count } = Astro.props;
+---
+
+<a href={`#class-${vaultClass}`} class={`facet-chip facet-${vaultClass}`}>
+  {vaultClass.replace(/_/g, ' ')} <span class="facet-count">{count}</span>
+</a>
+
+<style>
+  .facet-chip { display: inline-block; padding: 0.4rem 0.8rem; border-radius: 1rem; background: #f0f0f0; text-decoration: none; color: #333; font-size: 0.9em; }
+  .facet-chip:hover { background: #4a86e8; color: white; }
+  .facet-count { opacity: 0.7; margin-left: 0.25rem; }
+</style>

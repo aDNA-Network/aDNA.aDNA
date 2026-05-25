@@ -1,0 +1,30 @@
+---
+interface Props { vault: any; }
+const { vault } = Astro.props;
+---
+
+<article class={`vault-card class-${vault.class}`}>
+  <h3>
+    <a href={`/vaults/${vault.vault_slug}/`}>{vault.display_name}</a>
+  </h3>
+  {vault.persona && <p class="vault-card-persona">{vault.persona}</p>}
+  {vault.tagline && <p class="vault-card-tagline">{vault.tagline}</p>}
+  <p class="vault-card-meta">
+    <span class={`vault-status status-${vault.status}`}>{vault.status}</span>
+    {vault.current_phase && <span class="vault-phase">{vault.current_phase}</span>}
+  </p>
+</article>
+
+<style>
+  .vault-card { padding: 1rem; border: 1px solid #ddd; border-radius: 0.5rem; transition: border-color 0.15s; }
+  .vault-card:hover { border-color: #4a86e8; }
+  .vault-card h3 a { text-decoration: none; color: inherit; }
+  .vault-card-persona { color: #555; font-size: 0.9em; margin: 0.25rem 0; }
+  .vault-card-tagline { font-style: italic; color: #444; margin: 0.5rem 0; }
+  .vault-card-meta { font-size: 0.8em; margin-top: 0.5rem; }
+  .vault-status { padding: 0.1rem 0.4rem; border-radius: 0.2rem; }
+  .status-active { background: #b9e4d0; }
+  .status-genesis { background: #fef1d1; }
+  .status-pending { background: #e7e7e7; }
+  .status-superseded { background: #cccccc; }
+</style>

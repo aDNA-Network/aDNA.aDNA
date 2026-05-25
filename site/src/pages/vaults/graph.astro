@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const graphPath = path.resolve(__dirname, '../../data/vaults_graph.mmd');
+const chart = fs.existsSync(graphPath) ? fs.readFileSync(graphPath, 'utf-8') : 'flowchart LR\n  empty["(no data)"]';
+---
+
+<BaseLayout title="The Lattice — relationship graph" description="Cross-vault relationships across the aDNA lattice — umbrella, companion, federation, partner, supersedes edges.">
+  <main class="vaults-graph">
+    <section class="vaults-graph-hero">
+      <p class="vault-breadcrumb"><a href="/vaults/">&larr; The Lattice</a></p>
+      <h1>Relationship graph</h1>
+      <p>
+        Edges: <strong>umbrella</strong> (org_vault → org_graph children) ·
+        <strong>companion</strong> (sibling persona-pair) ·
+        <strong>federation</strong> (forge/framework consumer wrapper) ·
+        <strong>partner</strong> (platform default-partner) ·
+        <strong>supersedes</strong> (lifecycle).
+      </p>
+    </section>
+
+    <MermaidDiagram chart={chart} caption="aDNA cross-vault relationship graph" />
+  </main>
+</BaseLayout>
+
+<style>
+  .vaults-graph { max-width: 100%; padding: 2rem 1rem; }
+  .vaults-graph-hero { max-width: 80ch; margin: 0 auto 2rem; }
+  .vault-breadcrumb { color: #666; }
+</style>

@@ -1,0 +1,10 @@
+{
+  "name": "adna-scripts",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Build-time projection scripts for aDNA.aDNA/site/. See ADR-023 for the data-projection contract.",
+  "dependencies": {
+    "yaml": "^2.9.0"
+  }
+}

@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import VaultRelationshipBlock from '../../components/sections/VaultRelationshipBlock.astro';
+import vaultsData from '../../data/vaults.json';
+
+export function getStaticPaths() {
+  const data = vaultsData as { vaults: any[]; edges: any[] };
+  return data.vaults.map(v => ({
+    params: { slug: v.vault_slug },
+    props: { vault: v, allVaults: data.vaults, allEdges: data.edges },
+  }));
+}
+
+const { vault, allVaults, allEdges } = Astro.props as { vault: any; allVaults: any[]; allEdges: any[] };
+---
+
+<BaseLayout
+  title={`${vault.display_name} — ${vault.persona || vault.class}`}
+  description={vault.tagline || vault.note || `aDNA vault: ${vault.display_name}`}
+>
+  <main class="vault-detail">
+    <section class="vault-hero">
+      <p class="vault-breadcrumb"><a href="/vaults/">&larr; The Lattice</a></p>
+      <h1>{vault.display_name}</h1>
+      {vault.tagline && <p class="vault-tagline">{vault.tagline}</p>}
+      <p class="vault-meta">
+        <strong>Persona</strong> {vault.persona || '—'} ·
+        <strong>Class</strong> {vault.class} ·
+        <strong>Status</strong> {vault.status}
+        {vault.current_phase && <> · <strong>Phase</strong> {vault.current_phase}</>}
+      </p>
+    </section>
+
+    {vault.persona_archetype && (
+      <section class="vault-persona">
+        <h2>Persona</h2>
+        <p>{vault.persona_archetype}</p>
+      </section>
+    )}
+
+    {vault.headline_mission && (
+      <section class="vault-focus">
+        <h2>Current focus</h2>
+        <p>{vault.headline_mission} <span class={`mission-state state-${vault.headline_mission_state}`}>{vault.headline_mission_state}</span></p>
+      </section>
+    )}
+
+    <VaultRelationshipBlock vault={vault} allEdges={allEdges} allVaults={allVaults} />
+
+    {vault.headline_adrs && vault.headline_adrs.length > 0 && (
+      <section class="vault-adrs">
+        <h2>Headline ADRs</h2>
+        <ul>
+          {vault.headline_adrs.map((adr: string) => <li><code>{adr}</code></li>)}
+        </ul>
+      </section>
+    )}
+
+    {vault.recent_closed && vault.recent_closed.length > 0 && (
+      <section class="vault-missions">
+        <h2>Recent missions</h2>
+        <ul>
+          {vault.recent_closed.map((m: string) => <li>{m}</li>)}
+        </ul>
+      </section>
+    )}
+
+    <section class="vault-links">
+      <h2>Quick links</h2>
+      <ul>
+        {vault.github_url && <li><a href={vault.github_url}>GitHub &rarr;</a></li>}
+        {vault.docs_site_url && <li><a href={vault.docs_site_url}>Docs site &rarr;</a></li>}
+        {vault.canonical_governance && <li>Governance: <code>{vault.canonical_governance}</code></li>}
+      </ul>
+    </section>
+
+    {vault.note && (
+      <section class="vault-note">
+        <h2>On the lattice</h2>
+        <p>{vault.note}</p>
+      </section>
+    )}
+  </main>
+</BaseLayout>
+
+<style>
+  .vault-detail { max-width: 80ch; margin: 0 auto; padding: 2rem 1rem; }
+  .vault-breadcrumb { color: #666; }
+  .vault-tagline { font-size: 1.2rem; font-style: italic; color: #444; }
+  .vault-meta { padding: 0.5rem 0; color: #555; }
+  .mission-state { padding: 0.1rem 0.5rem; border-radius: 0.25rem; font-size: 0.85em; }
+  .state-in_progress { background: #fef1d1; }
+  .state-completed { background: #b9e4d0; }
+  .state-planned { background: #e7e7e7; }
+</style>

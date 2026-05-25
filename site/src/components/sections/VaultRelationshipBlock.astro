@@ -1,0 +1,43 @@
+---
+interface Props { vault: any; allEdges: any[]; allVaults: any[]; }
+const { vault, allEdges, allVaults } = Astro.props;
+
+const outgoing = allEdges.filter((e: any) => e.source === vault.vault_slug);
+const incoming = allEdges.filter((e: any) => e.target === vault.vault_slug);
+
+const allRelated = new Set([
+  ...outgoing.map((e: any) => e.target),
+  ...incoming.map((e: any) => e.source),
+  vault.vault_slug,
+]);
+
+// Build mini-graph mermaid DSL
+const lines = ['flowchart LR'];
+for (const slug of allRelated) {
+  const v = allVaults.find((x: any) => x.vault_slug === slug);
+  if (!v) continue;
+  lines.push(`  ${slug}["${v.display_name}"]`);
+}
+for (const e of outgoing) lines.push(`  ${e.source} -->|${e.type}| ${e.target}`);
+for (const e of incoming) lines.push(`  ${e.source} -->|${e.type}| ${e.target}`);
+
+const miniChart = lines.join('\n');
+const hasEdges = outgoing.length + incoming.length > 0;
+---
+
+<section class="vault-relationships">
+  <h2>Cross-vault relationships</h2>
+  {hasEdges ? (
+    <>
+      <p>{outgoing.length} outgoing · {incoming.length} incoming</p>
+      <pre class="mermaid-inline"><code>{miniChart}</code></pre>
+      <ul>
+        {outgoing.map((e: any) => <li><strong>{e.type}</strong> &rarr; <a href={`/vaults/${e.target}/`}>{e.target}</a></li>)}
+        {incoming.map((e: any) => <li><a href={`/vaults/${e.source}/`}>{e.source}</a> <strong>&larr; {e.type}</strong></li>)}
+      </ul>
+    </>
+  ) : (
+    <p>No cross-vault edges declared yet.</p>
+  )}
+  <p><a href="/vaults/graph/">View full relationship graph &rarr;</a></p>
+</section>
