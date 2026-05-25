@@ -5,8 +5,8 @@ agent: stanley
 persona: rosetta
 tier: 1
 created: 2026-05-24
-updated: 2026-05-24
-status: active
+updated: 2026-05-25
+status: completed
 intent: "M3.5 S2 — substrate-landing destructive session per /Users/stanley/.claude/plans/please-read-the-claude-md-lexical-hippo.md. 6 of 8 cumulative deliverables target this session: T9 + T10 + T11 + T12 design specs (sequential per operator AskUserQuestion 2026-05-24 Q2=T9→T10→T11→T12 source-of-truth order) + 2 NEW skills (skill_home_polish + skill_vault_card_authoring) + populate-apply pass (node.aDNA HOME line 42 rewrite + vault_gallery.base + ~16 elaborations + ~15 NEW vault_cards + Astro /vaults/ routes + projection script + package.json wire) + ADR-023 draft. Single-S2-with-mid-checkpoint-trigger shape per operator AskUserQuestion 2026-05-24 Q1=Single (4-session escape valve fires post-Step-5 if ≥155 kT burned AND ≤4/8 deliverables landed). Pre-S2 substrate-pure absorption HEAD = 45b2aeb (skill_create_iss.md visual-artifact discipline section; 2nd canonical instance of substrate-pure separation discipline within M3.5 lifecycle after pre-S1 6e4c703). S1 stays active/ per canonical 3-session shape (3 files move active/→history/ together at S3 close)."
 campaign: campaign_adna_serious_tool_readiness
 mission: mission_adna_str_p3_m35_home_polish_and_per_vault_info_pages

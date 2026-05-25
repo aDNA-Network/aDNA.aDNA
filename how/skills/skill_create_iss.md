@@ -316,19 +316,57 @@ Existing gates (e.g. the P2 phase-exit gate at `SiteForge.aDNA/how/gates/p2_phas
 
 `SiteForge.aDNA/how/campaigns/campaign_siteforge_iss/missions/artifacts/recommendation_block_spec_p3p_6.md` (locked 2026-05-23, variant 1 flat stacked) — field schema, axis semantics, visual constraints, CSS contract, token list. Reference example: `SiteForge.aDNA/how/gates/p3p_6_demo_gate.{data.json,html}` exercises all 3 render paths (full / partial / legacy).
 
-## Visual artifact discipline (interim — pre-P3p.8)
+## Visual artifact discipline
 
-The ISS substrate has **no visual-artifact field today**. Every prose field in `generator.py` passes through `_esc()` — raw SVG, raw HTML, and mermaid blocks inline in JSON do not render. Operators evaluate decisions with inherent visual structure (architecture stacks, schema trees, workflow flows, timelines, deltas) using prose alone.
+The ISS substrate supports **Tier-1 visual artifacts** (monospace ASCII inside `<pre>`) at section scope. Tiers 2 (mermaid) and 3 (image) remain proposed (`SiteForge.aDNA/how/backlog/idea_iss_visual_artifacts.md`); absorb at a later decadal arc or successor campaign. Authored at P3p.8 — locked spec `SiteForge.aDNA/how/campaigns/campaign_siteforge_iss/missions/artifacts/visual_ascii_spec_p3p_8.md`; reference example `SiteForge.aDNA/how/gates/p3p_8_demo_gate.{data.json,html}` exercises mixed-mode (1 section with visual + 1 without).
 
-**Surfaced as in-mission finding 2026-05-24** (P3p.7 validation gate review). Full design space + 4-tier ladder (ASCII / mermaid / SVG / Gemini-image) tracked at `SiteForge.aDNA/how/backlog/idea_iss_visual_artifacts.md`. Absorption mission **P3p.8** is a candidate (intercalary, single-session like P3p.6r) — opens post-P3p.7 close.
+### Schema
 
-**Interim guidance until P3p.8 lands**:
-- Default to prose. Visuals are not yet first-class; do not contort JSON to embed them.
-- For very simple text shapes (2-3 line stacks), plain-text shapes inside `rationale` or `analysis` survive proportional render — but anything alignment-sensitive will break (no monospace).
-- When a decision genuinely needs a visual (architectural / schematic / temporal / quantitative), call it out explicitly in `recommendation.risks` as "decision has visual structure under-served by prose alone" and flag the section as a P3p.8 candidate. The gap itself is a load-bearing signal.
-- Cite the backlog idea in `next_actions` so the gap is auditable across gates.
+Section-level, additive on the existing P3p.6 section shape — both fields optional:
 
-**When to consider visuals (forward — once P3p.8 lands)**: architectural relationships · schema / data shape · workflow / state machine · timeline / cascade · quantitative delta. Default still = prose; opt-in per section; soft cap ≤ 2 visuals per gate.
+```json
+{
+  "id": "s1",
+  "title": "...",
+  "swot": {...},
+  "recommendation": {...},
+  "visual_ascii": "┌─────────────┐\n│ stack frame │\n└─────────────┘",
+  "visual_caption": "v2+Tier-1 ISS stack — top to bottom"
+}
+```
+
+Missing `visual_ascii` → no markup emitted; backward-compat byte-identical. Rendered inside the section card between the SWOT/analysis block and the rec block. Caption renders directly below the `<pre>` in mono-dim. Content + caption are HTML-escaped via stdlib `html.escape()` (XSS-safe; Unicode box-drawing characters pass through; literal `<` / `>` / `&` get correctly escaped).
+
+### When to add a visual
+
+| Add visual when… | Stay prose-only when… |
+|---|---|
+| Decision involves architectural relationships (components, layers, stacks) | Decision is purely textual / narrative |
+| Schema / data shape needs to be inspected | Operator can hold the structure in working memory |
+| Workflow / process / state machine is load-bearing | Single-step or trivially sequential decision |
+| Timeline / cascade / dependency graph affects choice | No temporal / dependency structure |
+| Quantitative delta / comparison aids judgment | Numbers are simple (1-2 values) and named clearly |
+| Operator unfamiliar with the domain | Operator deeply familiar; visual would be remedial |
+
+### Anti-pattern guard
+
+- **Augment, never substitute.** Prose (`rationale`, `key_factors`, `risks`) carries the load-bearing decision content. A visual that contradicts the prose is worse than no visual.
+- **Auditability.** Visual cannot introduce facts absent from prose.
+- **Decidability.** Removing the visual must not break the gate — operator must be able to decide from prose alone.
+- **Soft cap ≤ 2 visuals per gate.** More than 2 → consider whether the gate should split.
+
+### Authoring conventions
+
+- **Box-drawing characters preferred** for stacks / trees / tables: ─│┌┐└┘├┤┬┴┼ ╔╗╚╝═║. Avoid pure-ASCII `+----+` shapes when Unicode is cleaner.
+- **Pin the line width** before drawing — narrow content (≤ 32 chars) renders cleanly on mobile too.
+- **Caption is one line.** If you need a paragraph, that's not a caption — put it in `rationale` and let the visual speak for itself.
+- **Soft cap reminder.** Two visuals = the practical max per gate. Three or more = signal the gate should split.
+
+### Out of scope (forward — Tier 2 / Tier 3)
+
+- **Tier 2 — `visual_mermaid`**: client-side mermaid render via bundled or CDN `mermaid.min.js`. Bundle / CDN decision + persona theme integration required. Deferred.
+- **Tier 3 — `visual_image`**: API-generated PNG/SVG sidecar assets at `<gate_id>.assets/<name>.{png,svg}`. API integration + sidecar discipline + alt-text fallback required. Deferred.
+- **Top-level `visual_ascii`** on single-card templates (`decision_gate_3option`, `adr_gate`). Deferred until first real gate needs it.
 
 ## Writing discipline (D-WC carries from Dark-Mode 50-Cycle Sprint)
 

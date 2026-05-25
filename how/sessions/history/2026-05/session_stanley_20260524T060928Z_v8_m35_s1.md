@@ -5,8 +5,8 @@ agent: stanley
 persona: rosetta
 tier: 1
 created: 2026-05-24
-updated: 2026-05-24
-status: active
+updated: 2026-05-25
+status: completed
 intent: "M3.5 S1 — Bases-driven HOME.md + per-vault info pages — context-graph inventory/registry surface batteries-included; S1 OPENED with mission spec + governance bundle (2/8 deliverables). Canonical 3-session implementation-class shape — 10th instance candidate after M1.3+M1.4+M2.1+M2.3+M2.4+M3.1+M3.2+M3.3+M3.4. Substrate-inversion-with-apply-pass — 3rd canonical sub-pattern candidate alongside M3.3's spec+skill-only mix + M3.4's spec+skill+ADR variant. Hybrid scope per operator AskUserQuestion: design specs + apply to node.aDNA + Astro docs-site /vaults/ registry surface LIVE; centralized per-vault info pages at node.aDNA/what/vault_cards/ (16 stubs → ~33 elaborated); full registry surface with faceted index + per-vault detail + Mermaid relationship graph. Plan ratified at /Users/stanley/.claude/plans/please-read-the-claude-md-peppy-peacock.md. Operator-confirmation gates: D1=Bases-primary-with-Dataview-fallback (Bases core plugin confirmed enabled at node.aDNA/.obsidian/core-plugins.json) · D2=A ratify-at-S3-close (ADR-023 Registry Data-Projection Contract per Campaign SO #14 in-phase exception clause; ADR slot reassignment chain ADR-015 reserved-P4 → ADR-018 reserved-P3-M3.4-or-P5 → ADR-019 reserved-P3-M3.7 → ADR-020 reserved-P6-close → ADR-021 gap-skip → ADR-022 accepted-M2.4 → ADR-023 = next clear unreserved slot per M2.4 forward-only precedent) · D3=push-after-S3 · D4=no-carry · D5=3-canonical (4-session stretch escape valve)."
 campaign: campaign_adna_serious_tool_readiness
 mission: mission_adna_str_p3_m35_home_polish_and_per_vault_info_pages

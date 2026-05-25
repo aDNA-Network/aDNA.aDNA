@@ -6,7 +6,7 @@ persona: rosetta
 tier: 1
 created: 2026-05-25
 updated: 2026-05-25
-status: active
+status: completed
 intent: "M3.5 S2b — completes the mid-checkpoint split started at S2/S2a 2026-05-25T~02:00Z+. Lands 4 of 8 remaining cumulative deliverables: D7a skill_home_polish.md + D7b skill_vault_card_authoring.md + D7c populate-apply pass (HOME.md line 42 + vault_gallery.base + 16 elaborations + 15 NEW vault_cards + Astro /vaults/ routes + projection script + package.json) + D7d (NEW; operator scope-expansion 2026-05-25 post-S2a) full regen of 31 vault_card images via Google Imagen 4 direct Vertex AI / Gemini API call + D8 ADR-023 draft. Plan ratified at /Users/stanley/.claude/plans/please-read-the-claude-md-swift-bentley.md. Operator AskUserQuestion 2026-05-25 confirmed: full coverage 16 elab + 15 NEW + 31-image full regen + Imagen 4 via Vertex AI / Gemini API direct + full 3-clause ADR-023 draft. S2/S2a stays active/ for the close cascade move at S3."
 campaign: campaign_adna_serious_tool_readiness
 mission: mission_adna_str_p3_m35_home_polish_and_per_vault_info_pages
