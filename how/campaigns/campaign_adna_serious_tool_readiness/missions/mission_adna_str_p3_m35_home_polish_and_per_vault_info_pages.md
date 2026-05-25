@@ -12,7 +12,7 @@ opens_at: 2026-05-24T06:09:28Z
 opened_session: session_stanley_20260524T060928Z_v8_m35_s1
 closed_at: null
 closed_session: null
-estimated_sessions: 3   # canonical 3-session implementation-class shape — 10th instance candidate after M1.3 + M1.4 + M2.1 + M2.3 + M2.4 + M3.1 + M3.2 + M3.3 + M3.4 (9 prior ratified at M3.4 close); 4-session stretch escape valve authorized at S1 if S2 mid-checkpoint shows >70% budget burn with <60% deliverables landed (S2 splits into S2a specs+skills + S2b populate-apply+Astro)
+estimated_sessions: 4   # split-fired at S2 mid-checkpoint 2026-05-25T~02:00Z+ per plan `please-read-the-claude-md-lexical-hippo.md` Step 5 criterion (≥155 kT burned AND ≤4/8 deliverables landed — both met). Operator confirmed split via AskUserQuestion. Mission becomes 4-session shape: S1 (mission spec + governance) + S2 ("S2a"; 4 design specs T9+T10+T11+T12) + S2b (2 skills + populate-apply + ADR-023 draft) + S3 (AAR + ratify + close). Stretch-escape-valve fires; ratifies the 4-session-with-mid-checkpoint-split precedent. Originally forecast 3 with stretch escape valve at >70% burn AND <60% deliverables.
 actual_sessions: null   # set at S3 close
 persona: rosetta
 last_edited_by: agent_stanley
@@ -149,7 +149,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 3. T9 design spec — Bases-driven HOME.md template (S2)
 
-- **Status**: pending S2
+- **Status**: ✅ landed S2a (HEAD `0b366e4` 2026-05-25)
 - **Session**: S2
 - **Read**: node.aDNA/HOME.md full file (136 lines); inventory_vaults.yaml in full; sample 2-3 vault_cards for invariant detection; node.aDNA/.obsidian/core-plugins.json (Bases enabled verification); node.aDNA/.obsidian/community-plugins.json (Dataview availability); node.aDNA HOME.md Maintenance footer line 130-132 (plugin-agnostic rationale).
 - **Produce**: `missions/artifacts/m35_obj3_t9_design_spec.md` with 6 sections per Mission scope §2.
@@ -158,7 +158,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 4. T10 design spec — per-vault info-page schema canonical v0.2 (S2)
 
-- **Status**: pending S2
+- **Status**: ✅ landed S2a (HEAD `0b366e4` 2026-05-25)
 - **Session**: S2
 - **Read**: 4-5 existing vault_cards in full (the_aDNA.aDNA.md + the_III.aDNA.md + the_node.aDNA.md + the_LatticeAgent.aDNA.md + the_RareHarness.aDNA.md for cross-class invariant coverage); inventory_vaults.yaml in full; node.aDNA MANIFEST.md (vault identity baseline); CLAUDE.md workspace router master vault table (persona/class/status cross-reference); spec_org_pattern_ecosystem.md + spec_forge_ecosystem.md + spec_platform_ecosystem.md + spec_framework_ecosystem.md (per-vault-class variant rationale).
 - **Produce**: `missions/artifacts/m35_obj4_t10_design_spec.md` with 6 sections per Mission scope §3.
@@ -167,7 +167,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 5. T11 design spec — Astro `/vaults/` registry surface (S2)
 
-- **Status**: pending S2
+- **Status**: ✅ landed S2a (HEAD `0b366e4` 2026-05-25)
 - **Session**: S2
 - **Read**: aDNA.aDNA/site/astro.config.mjs + package.json; aDNA.aDNA/site/src/pages/index.astro (homepage shape); 1-2 existing route pages for layout convention (e.g. site/src/pages/learn/concepts/knowledge-graph.mdx + site/src/pages/glossary/index.astro if exists); aDNA.aDNA/site/src/components/islands/MermaidDiagram.astro (Mermaid render island); aDNA.aDNA/site/src/content/config.ts (content-collection schema); existing branding.json (D10 design tokens).
 - **Produce**: `missions/artifacts/m35_obj5_t11_design_spec.md` with 6 sections per Mission scope §4.
@@ -176,7 +176,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 6. T12 design spec — III-target forward-reference (S2)
 
-- **Status**: pending S2
+- **Status**: ✅ landed S2a (HEAD `0b366e4` 2026-05-25)
 - **Session**: S2
 - **Read**: skill_iii_cycle.md + skill_decadal_aar.md (7-step cycle + 5-persona reviewer bench); who/reviewers/AGENTS.md (5 specialist personas: Design Critic + Accessibility Auditor + Content Strategist + Information Architect + Newcomer Stress-Tester); aar_phase7_d10.md (D10 5.00 ranker outcomes + ranker dimension breakdown).
 - **Produce**: `missions/artifacts/m35_obj6_t12_design_spec.md` with 6 sections per Mission scope §5.
@@ -185,7 +185,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 7. NEW skill `skill_home_polish.md` authoring (S2)
 
-- **Status**: pending S2
+- **Status**: pending S2b (deferred at S2a close per split-trigger 2026-05-25T~02:00Z+)
 - **Session**: S2
 - **Read**: F-S2-5 backlog §Critical files (skill location precedent); M3.4 `skill_verification_handoff.md` (skill API + `--vault` + `--surface` + DELEGATION pattern); M3.4 `skill_obsidian_agent_inspect.md` (TRIPLE DELEGATION evidence); aDNA.aDNA/how/skills/AGENTS.md (M2.4.5-hardened routing layer for skills).
 - **Produce**: NEW `aDNA.aDNA/how/skills/skill_home_polish.md` — full skill spec with frontmatter (type/created/updated/last_edited_by/tags) + skill API (`--vault`, `--mode generate|refresh|verify`, `--inventory-source`, `--render-tier bases|dataview|plain` slots) + invocation contract + safety preconditions + outputs (regenerated HOME.md + verify-mode verdict) + DELEGATION block citing T7 `skill_verification_handoff.md` as dispatcher + T6 `skill_obsidian_integration_test.md` at depth-2 + M3.2 `skill_obsidian_canonicalize.md` at depth-3 + cross-references to ≥ 4 prior skills + T9 design spec + ADR-014 + ADR-023 + `## Forward integration with M3.7` stub.
@@ -194,7 +194,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 8. NEW skill `skill_vault_card_authoring.md` authoring (S2)
 
-- **Status**: pending S2
+- **Status**: pending S2b (deferred at S2a close per split-trigger 2026-05-25T~02:00Z+)
 - **Session**: S2
 - **Read**: F-S2-5 backlog §Critical files; M3.4 skill_obsidian_agent_inspect.md (TRIPLE DELEGATION template); T10 design spec (Obj 4) for v0.2 schema + per-vault-class variants.
 - **Produce**: NEW `aDNA.aDNA/how/skills/skill_vault_card_authoring.md` — full skill spec with frontmatter + skill API (`--vault-card-dir`, `--mode author|audit|schema-only`, `--inventory-source`, `--target-vault` slots) + invocation contract + safety preconditions + per-vault-class template logic (9 classes per T10) + backwards-compat handling for 16 existing stub cards (audit reports drift; author elaboration mode preserves stub fields + adds v0.2 optional fields) + DELEGATION block citing T6 + T7 + outputs per mode + cross-references + `## Forward integration with M3.7` stub.
@@ -203,7 +203,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 9. Populate-apply pass + ADR-023 draft (S2)
 
-- **Status**: pending S2
+- **Status**: pending S2b (deferred at S2a close per split-trigger 2026-05-25T~02:00Z+)
 - **Session**: S2
 - **Read**: full inventory_vaults.yaml (live vault count + per-vault class/persona/health metadata); existing 16 vault_cards in full (elaboration target review); aDNA.aDNA/site/package.json + astro.config.mjs (Astro build config for prebuild wire); existing MermaidDiagram.astro (component reuse pattern).
 - **Produce**:
@@ -242,12 +242,12 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 |---|---|---|---|
 | 1 | M3.5 mission spec (this file) | S1 | 🟡 IN PROGRESS (this commit) |
 | 2 | Campaign master M3.5 row flip + ADR-023 forecast row + amendments entry + STATE.md router refresh (governance bundle) | S1 | 🟡 IN PROGRESS (this commit; Op 3 16th canonical instance) |
-| 3 | `m35_obj3_t9_design_spec.md` — Bases-driven HOME.md template (3-tier fallback) | S2 | pending |
-| 4 | `m35_obj4_t10_design_spec.md` — per-vault info-page schema canonical v0.2 (22-field frontmatter + 9-section body + 9 class variants + backwards-compat) | S2 | pending |
-| 5 | `m35_obj5_t11_design_spec.md` — Astro `/vaults/` registry surface (faceted index + per-vault detail + Mermaid graph; data-projection contract = ADR-023) | S2 | pending |
-| 6 | `m35_obj6_t12_design_spec.md` — III-target forward-reference (5 dimensions: persona_growth_v0 + research_context_generation_v0 + 3 supporting quality) | S2 | pending |
-| 7 | NEW `aDNA.aDNA/how/skills/skill_home_polish.md` (Hestia-class HOME generator/refresh + DELEGATES to T7+T6+M3.2 skill chain) + NEW `aDNA.aDNA/how/skills/skill_vault_card_authoring.md` (vault-card authoring + audit + per-vault-class template logic; DELEGATES to T6+T7) + populate-apply pass (node.aDNA HOME rewrite + Bases definition file + ~33 vault_cards + Astro routes + projection script + package.json wire) + ADR-023 draft | S2 | pending |
-| 8 | `what/decisions/adr_023_registry_data_projection_contract.md` — ADR-023 (3 clauses A/B/C + slot reassignment chain; draft S2 → accepted S3) + AAR + campaign master close + STATE refresh + session moves | S3 | pending |
+| 3 | `m35_obj3_t9_design_spec.md` — Bases-driven HOME.md template (3-tier fallback) | S2a | ✅ LANDED (HEAD `0b366e4`) |
+| 4 | `m35_obj4_t10_design_spec.md` — per-vault info-page schema canonical v0.2 (22-field frontmatter + 9-section body + 9 class variants + backwards-compat) | S2a | ✅ LANDED (HEAD `0b366e4`) |
+| 5 | `m35_obj5_t11_design_spec.md` — Astro `/vaults/` registry surface (faceted index + per-vault detail + Mermaid graph; data-projection contract = ADR-023) | S2a | ✅ LANDED (HEAD `0b366e4`) |
+| 6 | `m35_obj6_t12_design_spec.md` — III-target forward-reference (5 dimensions: persona_growth_v0 + research_context_generation_v0 + 3 supporting quality) | S2a | ✅ LANDED (HEAD `0b366e4`) |
+| 7 | NEW `aDNA.aDNA/how/skills/skill_home_polish.md` (Hestia-class HOME generator/refresh + DELEGATES to T7+T6+M3.2 skill chain) + NEW `aDNA.aDNA/how/skills/skill_vault_card_authoring.md` (vault-card authoring + audit + per-vault-class template logic; DELEGATES to T6+T7) + populate-apply pass (node.aDNA HOME rewrite + Bases definition file + ~33 vault_cards + Astro routes + projection script + package.json wire) + ADR-023 draft | S2b | pending (deferred at S2a close per split-trigger) |
+| 8 | `what/decisions/adr_023_registry_data_projection_contract.md` — ADR-023 (3 clauses A/B/C + slot reassignment chain; draft S2b → accepted S3) + AAR + campaign master close + STATE refresh + session moves | S3 | pending |
 | 9 | **OPTIONAL S3-with-carry sub-mode absorption** if 5-criteria gate satisfied at close window | S3 | pending (default D-CARRY=no-carry per operator) |
 
 ## Current State — inherited from M3.1+M3.2+M3.3+M3.4 recon-audit + M3.4 substrate (no fresh recon at M3.5)
