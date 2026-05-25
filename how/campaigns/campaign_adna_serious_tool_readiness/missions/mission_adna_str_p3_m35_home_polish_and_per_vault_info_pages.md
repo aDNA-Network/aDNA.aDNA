@@ -185,7 +185,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 7. NEW skill `skill_home_polish.md` authoring (S2)
 
-- **Status**: pending S2b (deferred at S2a close per split-trigger 2026-05-25T~02:00Z+)
+- **Status**: ✅ landed S2b 2026-05-25 (D7a; ~290 lines; cross-skill primitive composition pattern 4th post-graduation use instance)
 - **Session**: S2
 - **Read**: F-S2-5 backlog §Critical files (skill location precedent); M3.4 `skill_verification_handoff.md` (skill API + `--vault` + `--surface` + DELEGATION pattern); M3.4 `skill_obsidian_agent_inspect.md` (TRIPLE DELEGATION evidence); aDNA.aDNA/how/skills/AGENTS.md (M2.4.5-hardened routing layer for skills).
 - **Produce**: NEW `aDNA.aDNA/how/skills/skill_home_polish.md` — full skill spec with frontmatter (type/created/updated/last_edited_by/tags) + skill API (`--vault`, `--mode generate|refresh|verify`, `--inventory-source`, `--render-tier bases|dataview|plain` slots) + invocation contract + safety preconditions + outputs (regenerated HOME.md + verify-mode verdict) + DELEGATION block citing T7 `skill_verification_handoff.md` as dispatcher + T6 `skill_obsidian_integration_test.md` at depth-2 + M3.2 `skill_obsidian_canonicalize.md` at depth-3 + cross-references to ≥ 4 prior skills + T9 design spec + ADR-014 + ADR-023 + `## Forward integration with M3.7` stub.
@@ -194,7 +194,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 8. NEW skill `skill_vault_card_authoring.md` authoring (S2)
 
-- **Status**: pending S2b (deferred at S2a close per split-trigger 2026-05-25T~02:00Z+)
+- **Status**: ✅ landed S2b 2026-05-25 (D7b; ~340 lines; cross-skill primitive composition pattern 5th post-graduation use instance)
 - **Session**: S2
 - **Read**: F-S2-5 backlog §Critical files; M3.4 skill_obsidian_agent_inspect.md (TRIPLE DELEGATION template); T10 design spec (Obj 4) for v0.2 schema + per-vault-class variants.
 - **Produce**: NEW `aDNA.aDNA/how/skills/skill_vault_card_authoring.md` — full skill spec with frontmatter + skill API (`--vault-card-dir`, `--mode author|audit|schema-only`, `--inventory-source`, `--target-vault` slots) + invocation contract + safety preconditions + per-vault-class template logic (9 classes per T10) + backwards-compat handling for 16 existing stub cards (audit reports drift; author elaboration mode preserves stub fields + adds v0.2 optional fields) + DELEGATION block citing T6 + T7 + outputs per mode + cross-references + `## Forward integration with M3.7` stub.
@@ -203,7 +203,7 @@ Canonical 3-session implementation-class shape — **10th instance candidate** a
 
 ### 9. Populate-apply pass + ADR-023 draft (S2)
 
-- **Status**: pending S2b (deferred at S2a close per split-trigger 2026-05-25T~02:00Z+)
+- **Status**: ✅ landed S2b 2026-05-25 (D7c 4-of-5 sub-steps text+structure layer COMPLETE: HOME.md line 42 + vault_gallery.base + 16 elaborations + 15 NEW vault_cards + Astro /vaults/ 9-patch surface + projection idempotent + `npm run build` PASS 150 pages; D8 ADR-023 full 3-clause draft LIVE status:draft; D7d image-gen DEFERRED via missions/artifacts/m35_d7d_image_regen_followup.md per operator AskUserQuestion 2026-05-25T~04:00Z auth-blocker defer-trigger)
 - **Session**: S2
 - **Read**: full inventory_vaults.yaml (live vault count + per-vault class/persona/health metadata); existing 16 vault_cards in full (elaboration target review); aDNA.aDNA/site/package.json + astro.config.mjs (Astro build config for prebuild wire); existing MermaidDiagram.astro (component reuse pattern).
 - **Produce**:
