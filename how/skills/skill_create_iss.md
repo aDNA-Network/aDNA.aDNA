@@ -606,6 +606,66 @@ contract (D9-C81)", "Decision-significance badge (D9-C82)", "Post-submit explain
 (D9-C83)", "Confidence tooltips (D9-C84)", "First-timer hint (D9-C85)", "Agent
 onboarding contract (D9-C86)", "Provenance footer (D9-C88)".
 
+### C-D10-1 — Persona handoff + skin selection discipline
+
+D1-D9 surfaced 20+ opt-in flags and 6 personas. D10 consolidates them so a calling agent
+in a consumer vault picks the right combination via 4 composable layers (vault skin →
+preset → per-gate flags → persona), with explicit values always winning over defaults.
+
+**Decision tree** when authoring a new gate:
+
+| Layer | Choose by asking | Default behavior |
+|---|---|---|
+| **Skin** | Which consumer vault owns this gate? | If `skin: "<vault_id>"` set, descriptor at `SiteForge.aDNA/what/lib/iss/skins/<vault_id>/skin.yaml` loads. Fills in `preset` if descriptor names one and `data` lacks one. Appends `brand_css` to TOKENS_CSS. |
+| **Preset** | Which decision class is this? | `partner_onboarding` / `clinician_evaluation` / `minimal_ux` / `enterprise_decision`. Expands to a flag bundle. |
+| **Flags + fields** | Any per-gate overrides? | Explicit values in `data` beat skin + preset defaults. |
+| **Persona** | Which visual identity should the operator see? | `persona=` arg to `generate()`. Skin's `recommended_persona` is a *hint*, not a binding. |
+
+**Resolution order** — `generate()` runs:
+
+1. `_resolve_skin(data)` — descriptor fills in `preset` default + brand_css
+2. `_resolve_preset(data)` — preset expands to flag defaults (explicit values still win)
+3. `_advisory_log_authoring(data)` — lints walk the merged view
+4. Renders with the resolved data
+
+**Cross-vault staging boundary**: D10 stages skin descriptors INSIDE
+`SiteForge.aDNA/what/lib/iss/skins/<vault_id>/`. Phase 4 deploys consumer-vault wrappers
+under operator gate per Campaign SO #12. Do NOT write into MoleculeForge.aDNA /
+RareHarness.aDNA / WilhelmAI.aDNA from the SiteForge side.
+
+**Worked example** — RareHarness clinician-grade dataset-share gate with an explicit
+override:
+
+```python
+data = {
+    "skin": "rareharness",                # vault identity → applies clinician_evaluation
+    "gate_id": "approve_dataset_share_001",
+    "composite_title": "Approve patient-data share with KINN L1",
+    "decision_significance": "advisory",   # OVERRIDE skin's clinician-eval default ('phase_exit')
+    # ... section data ...
+}
+html = generator.generate("phase_exit", persona="franklin", font_mode="online", data=data)
+# Result: confirm_two_step / irreversible / show_provenance all True (skin → preset)
+#         decision_significance = "advisory" (explicit per-gate override won)
+```
+
+**Anti-patterns to avoid**:
+
+- Don't set `skin: "rareharness"` AND `persona: "partner"` in the same gate — the skin
+  cascades dark-substrate tokens that don't compose with partner's light bg. The skin
+  `recommended_persona` exists for this reason.
+- Don't paraphrase preset semantics in per-gate copy — the four preset names are the
+  controlled vocabulary; downstream consumers (III RLHF aggregation, telemetry) read
+  these strings directly.
+- Don't author skin descriptors that fork `tokens_base.css` defaults — the brand_css
+  block is for layer-on identity, not base-token replacement. Base tokens stay
+  semantically uniform across all consumer vaults (this is what `tokens_base.css`
+  is *for*).
+
+**Authoritative spec**: `SiteForge.aDNA/what/lib/iss/templates/README.md`
+§§ "Presets family (D10-C91)" and "Persona handoff + skin selection (D10-C97)"; skin
+descriptor contract at `SiteForge.aDNA/what/lib/iss/skins/README.md`.
+
 ## Round-trip discipline
 
 Sentinel handshake (AD-6):
