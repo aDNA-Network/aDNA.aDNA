@@ -2,7 +2,7 @@
 type: adr
 adr_number: 024
 title: "Airlock Streamline Contract — additive-only streamline primitives for III v0.3.0 airlock surface + opt-in via spec version note + v8 P6 propagation channel as canonical doctrine"
-status: draft   # ratifies at M3.6 S2 close per Campaign SO #14 in-phase exception clause D2=A — 3rd invocation in v8 after M3.4 ADR-014 + M3.5 ADR-023
+status: accepted   # ratified at M3.6 S2 close 2026-05-25 per Campaign SO #14 in-phase exception clause D2=A — 3rd invocation in v8 after M3.4 ADR-014 + M3.5 ADR-023; canonical-for-load-bearing-decisions-that-block-cross-vault-propagation variant GRADUATES per ≥ 3 instances rubric; skill_in_phase_adr_ratification.md graduation candidate ADVANCES 2 → 3 of 3 = GRADUATES at this S2 ratify
 created: 2026-05-25
 updated: 2026-05-25
 last_edited_by: agent_stanley
@@ -13,8 +13,8 @@ mission: mission_adna_str_p3_m36_airlock_aar_and_streamline
 objective: 5
 decision_letter: A   # M3.6 D2=A operator-ratified at S1 mid-checkpoint G2 AskUserQuestion (Campaign SO #14 in-phase exception clause invocation — 3rd in v8)
 ratification_phase: M36_S2_close_via_campaign_so_14_in_phase_exception_clause_load_bearing_for_5_consumer_wrappers_plus_iii_v0_4_forward_pointer
-ratified: ""   # set at M3.6 S2 close
-ratified_session: ""   # set at M3.6 S2 close
+ratified: 2026-05-25
+ratified_session: session_stanley_20260525T062446Z_v8_m36_s2
 deciders: [agent_stanley, operator_stanley]
 informed: [argus, berthier, hermes, iris, spock, mnemosyne, hygieia, asclepius, daedalus, mentor, venus, hestia, franklin, ariadne, robert_kennedy]   # argus first (III owner); all personas with airlock activation obligations across the lattice
 related_decisions: [adr_008_airlock_template_stub, adr_014_verification_handoff_topology, adr_016_per_mission_context_budget, adr_022_tool_use_logging, adr_023_registry_data_projection_contract]
@@ -27,11 +27,11 @@ tags: [adr, decision, adr_024, campaign_adna_serious_tool_readiness, m36, v8, p3
 
 ## Status
 
-**Draft** at M3.6 S1-end 2026-05-25 (`session_stanley_20260525T052048Z_v8_m36_s1`). **Ratifies at M3.6 S2 close** per Campaign SO #14 in-phase exception clause D2=A operator-ratified at M3.6 S1 mid-checkpoint G2 AskUserQuestion. Campaign SO #14 in-phase exception clause invocation — **3rd invocation in v8** after M3.4 ADR-014 (verification handoff topology; 2026-05-24) + M3.5 ADR-023 (registry data-projection contract; 2026-05-25). 
+**Accepted** at M3.6 S2 close 2026-05-25 (`session_stanley_20260525T062446Z_v8_m36_s2`). Drafted at M3.6 S1-end 2026-05-25 (`session_stanley_20260525T052048Z_v8_m36_s1`) per Campaign SO #14 in-phase exception clause D2=A operator-ratified at M3.6 S1 mid-checkpoint G2 AskUserQuestion. Campaign SO #14 in-phase exception clause invocation — **3rd invocation in v8** after M3.4 ADR-014 (verification handoff topology; 2026-05-24) + M3.5 ADR-023 (registry data-projection contract; 2026-05-25). **At 3rd invocation the canonical-for-load-bearing-decisions-that-block-cross-vault-propagation variant GRADUATES per ≥ 3 instances rubric**; `skill_in_phase_adr_ratification.md` graduation candidate ADVANCES 2 → 3 of 3 = **GRADUATES** at this S2 ratify (skill file authoring deferred per D-GRAD=ratify-as-finding-defer-skill-authoring inherited from M3.4 + M3.5 precedent).
 
 ### Ratification (at M3.6 S2 close)
 
-Status will transition `draft → accepted` at M3.6 S2 close commit upon completion of close cascade (AAR finalization + mission spec close + campaign master close + STATE Op 3 19th canonical instance + session moves + push). The 3 clauses A=streamline-primitive-additive-only-invariant + B=opt-in-via-spec-version-note + C=v8-P6-propagation-channel become operational at S2 ratify. **Downstream consumers** — 5 live III v0.3.0 consumer wrappers (SiteForge.aDNA + VideoForge.aDNA + CanvasForge.aDNA + wga.aDNA + LPWhitepaper.aDNA; all pinned at commit `a309ad4`) + future III v0.4 minor-bump (which may absorb streamline primitives as v0.4-baseline) + M3.7 modular III for Obsidian (first cross-mission consumer per `m36_streamline_design_spec.md` §6 forward-integration stub) — may cite this ADR as canonical doctrine immediately upon ratification. v8 P6 ecosystem propagation will land the upstream-promotion candidate (ADR-024 itself + ADR-008 v0.3 re-pin proposal per design spec §4.3 + AIRLOCK.md template P1+P7 sections + impl-doc Appendices A+B + impl-doc §1.5 consolidated rejection-reason enum + spec §4.3.1 sig field defaults table + spec §6 minimal v0.3-era worked example) at `LatticeProtocol/aDNA` per the design-at-P3-propagation-at-P6 pattern (5th survival test passed via M3.5 + 6th survival test via M3.6 inheritance).
+Status transitioned `draft → accepted` at M3.6 S2 close commit 2026-05-25 alongside close cascade (AAR finalization + mission spec close + campaign master close + STATE Op 3 19th canonical instance + session moves + push). The 3 clauses A=streamline-primitive-additive-only-invariant + B=opt-in-via-spec-version-note + C=v8-P6-propagation-channel are operational from this S2 ratify. **Downstream consumers** — 5 live III v0.3.0 consumer wrappers (SiteForge.aDNA + VideoForge.aDNA + CanvasForge.aDNA + wga.aDNA + LPWhitepaper.aDNA; all pinned at commit `a309ad4`) + future III v0.4 minor-bump (which may absorb streamline primitives as v0.4-baseline) + M3.7 modular III for Obsidian (first cross-mission consumer per `m36_streamline_design_spec.md` §6 forward-integration stub) — may cite this ADR as canonical doctrine immediately upon ratification. v8 P6 ecosystem propagation will land the upstream-promotion candidate (ADR-024 itself + ADR-008 v0.3 re-pin proposal per design spec §4.3 + AIRLOCK.md template P1+P7 sections + impl-doc Appendices A+B + impl-doc §1.5 consolidated rejection-reason enum + spec §4.3.1 sig field defaults table + spec §6 minimal v0.3-era worked example) at `LatticeProtocol/aDNA` per the design-at-P3-propagation-at-P6 pattern (5th survival test passed via M3.5 + 6th survival test via M3.6 inheritance).
 
 **At 3rd invocation in v8, Campaign SO #14 in-phase exception clause GRADUATES the canonical-for-load-bearing-decisions-that-block-cross-vault-propagation variant per ≥ 3 instances rubric.** All three invocations (M3.4 ADR-014 + M3.5 ADR-023 + M3.6 ADR-024) cite the same trigger — load-bearing for in-phase consumers + cross-vault propagation that would otherwise stall on phase-exit gating. `skill_in_phase_adr_ratification.md` graduation candidate advances **2 → 3 of 3 use instances = GRADUATES** at M3.6 S2 ratify per AAR §Pattern graduation block.
 

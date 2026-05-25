@@ -7,16 +7,16 @@ mission_number: 3.6
 slug: airlock_aar_and_streamline
 created: 2026-05-25
 updated: 2026-05-25
-status: in_progress
+status: completed
 opens_at: 2026-05-25T05:20:48Z
 opened_session: session_stanley_20260525T052048Z_v8_m36_s1
-closed_at: ""
-closed_session: ""
-estimated_sessions: 2   # implementation-class 2-session shape per Phase 3 table line 174 ("1-2 | M3.5 (or parallel) | planned"); S1-compression option ratified at mid-checkpoint AskUserQuestion if ADR path = B AND ≥ 80% deliverables landed (would graduate skill_implementation_mission_close.md from 2 of 3 to 3 of 3); mid-checkpoint split-trigger ALSO available if S1 burn > 70% with < 60% deliverables landed (matches M3.5 4-session-with-mid-checkpoint-split precedent — 2nd instance if fires; default = neither fires and 2-session shape ratifies)
-actual_sessions: 0  # set at close
+closed_at: 2026-05-25T06:24:46Z
+closed_session: session_stanley_20260525T062446Z_v8_m36_s2
+estimated_sessions: 2   # implementation-class 2-session shape per Phase 3 table line 174 ratified at this S2 close as 1st canonical instance of 2-session implementation-class shape (path A + full 2-session per G2 mid-checkpoint decision)
+actual_sessions: 2  # S1 substrate gathering + drafting (5/6 deliverables); S2 ADR ratify + AAR finalize + close cascade (6/6 cumulative)
 persona: rosetta
 last_edited_by: agent_stanley
-spec_completeness: in_progress   # S1 mission spec + governance + substrate gathering + AAR draft (4 sections) + streamline design spec (6 sections) + ADR-decision + (conditional) ADR-024 draft; S2 ratifies ADR-024 (if path A) + finalizes AAR + closes mission
+spec_completeness: complete   # S1 mission spec + governance + substrate gathering + AAR draft + streamline design spec + ADR-024 draft (path A); S2 ratified ADR-024 + finalized AAR (§5-§9) + composite v8 P6 backlog placeholder + close cascade
 mission_class: implementation   # AAR synthesis + streamline design spec + (conditional) ADR-024 + (conditional) skill update; design at P3, propagation at v8 P6 per design-at-P3-propagation-at-P6 pattern (5th survival test in v8)
 verification_surface: agent   # per ADR-014 Clause C — M3.6 outputs are doctrinal artifacts (AAR + design spec + ADR + skill); verification is build-time/parse-time (frontmatter valid + section count + cross-references resolvable) + agent-side static analysis (markdown render + link integrity); no operator-side runtime checks needed (unlike M3.5 hybrid-scope which required operator Obsidian rendering checks)
 token_budget_estimated: "S1 ~140-180 kT content-load (substrate gathering ~60 kT cross-vault Reads of III + lattice-labs artifacts already SYNTHESIZED via Explore subagent at S1 entry [subagent isolation protects context — synthesis report becomes the substrate-citation source for AAR + design spec authoring without re-reading source files] + AAR drafting ~40 kT [4 sections; ~300-400 lines] + design spec drafting ~40 kT [6 sections; ~400-500 lines] + governance bundle ~20 kT [campaign master M3.6 row + STATE.md Op 3 18th canonical instance refresh] + (conditional) ADR-024 draft ~20 kT [path A; ~250-350 lines following ADR-014/ADR-023 shape]). S2 ~60-90 kT (close cascade: ADR-024 ratify [if path A] + AAR finalize [pattern graduation block + token-budget two-metric table + acceptance scorecard + standing-order discharges + extended findings] + mission spec close + campaign master close + STATE Op 3 19th canonical instance + 1-2 session moves + push). Two-session total ~200-270 kT (~50% below M3.5 ~510-590 due to no apply-pass + substrate-gathering subagent isolation + lighter design-spec count [1 vs 4]). S1-compressed alternative: ~190-240 kT single-session (absorbs S2 close cascade into S1 end; ratifies single-session implementation-class shape as 2nd instance after M2.4.5). API-billing companion per ADR-016 Clause C empirical formula (cache_creation ≈ 328 K + turns × 1 K; cache_read ≈ 4.1 M + turns × 126 K): S1 ~5-6 M cache_read at 8-10 turns + ~330-360 K cache_creation; S2 ~2-3 M cache_read at 5-6 turns + ~190-220 K cache_creation; two-session total ~7-9 M cache_read + ~520-580 K cache_creation. Per ADR-016 Clause A + Project Standing Order #11; declared in mission frontmatter per Standing Order #8 self-reference."
@@ -197,4 +197,29 @@ Consume the M3.5 mission spec template + ratified design-at-P3-propagation-at-P6
 
 ## Mission Close Notes
 
-(Appended at S2 close.)
+**Closed 2026-05-25T06:24:46Z at `session_stanley_20260525T062446Z_v8_m36_s2`** with **6/6 cumulative deliverables LIVE** + ADR-024 ACCEPTED + 2 graduations fired + 2 new graduation seeds.
+
+**Canonical 2-session implementation-class shape — 1st instance RATIFIED** (path A + full 2-session per G2 mid-checkpoint decision; distinct from 3-session and 4-session-with-mid-checkpoint-split shapes). Eligibility criteria: mission_class = implementation + read-only substrate only + zero apply-pass + ≤ 1 design spec + verification_surface = agent. Uses Explore subagent dispatch at S1 entry per ADR-016 Clause B Heavy-File Read convention as substrate-isolation substitute for dedicated substrate session.
+
+**Substrate-inversion-with-ADR variant ADVANCES to 2nd canonical instance** (M3.4 1st instance; M3.6 2nd; graduation requires 3rd via M3.7 or later per ≥ 3 instances rubric).
+
+**Pattern graduations + seeds at close**:
+- `skill_in_phase_adr_ratification.md` 2 → 3 of 3 = **GRADUATES** (Campaign SO #14 in-phase exception clause 3rd invocation; canonical-for-load-bearing-decisions-that-block-cross-vault-propagation variant stabilizes)
+- `skill_implementation_mission_close.md` 2 → 3 of 3 = **GRADUATES** (M3.4 + M3.5 + M3.6 close cascade shape match)
+- `skill_airlock_aar_synthesis.md` NEW SEED at 1 of 3 (cross-ecosystem AAR synthesis via Explore subagent dispatch)
+- `skill_two_session_close_cascade.md` NEW SEED at 1 of 3 (path A + full 2-session canonical sub-shape)
+- `skill_design_spec_authoring.md` 12 → 13 of 3+ post-graduation reinforcement (4.3× margin)
+- `skill_campaign_close_archive.md` 18 → 19 canonical instances post-graduation reinforcement (6× margin)
+- `skill_substrate_pure_separation.md` 7th canonical instance (M3.6 lifecycle: pre-S1 `e11dee1` + mid-S1 `1444fb9`)
+- `skill_cross_skill_primitive_composition.md` HOLD at 5/5 (no streamline-skill update at M3.6; path A had no operational primitive)
+- `skill_forward_reference_stub_design.md` 9 → 10 via design spec §6 M3.7 stub
+
+**Hard constraints honored end-to-end across both sessions**: zero `.adna/` touches (v7.0 frozen at `27e6395`) + zero partner-vault contact (17 embargo memos preserved) + zero `~/.claude/settings.json` mutations + zero `~/.adna/measurement/measurement.sqlite` deliberate mutations + zero hook modifications + zero `.obsidian/` config or plugin mutations + zero `node.aDNA/` or `aDNA.aDNA/site/` mutations + zero M2.1.5/M3.0.5/M3.5.5/M3.7 scope creep + zero III.aDNA touches (substrate read-only via Explore subagent) + zero forge-vault wrapper touches (5 consumer wrappers untouched) + zero lattice-labs touches (canvas pipeline read-only) + single new ADR (ADR-024 only per path A).
+
+**P3 phase exit progress**: M3.6 close = **3 of 4 P3 phase-exit bricks** (airlock workflow streamlined prong COMPLETE). M3.7 (modular III for Obsidian) remains for the modular III operational prong; P3 → P4 phase-exit gate stays operator-decisioned per Campaign SO #19 after M3.7 close.
+
+**v8 P6 propagation queue grew ~22-26 → ~27-31** at M3.6 close: streamline design spec primitives (9 across 3 clusters) + ADR-024 upstream-promotion + ADR-008 v0.2 → v0.3 re-pin proposal + AAR-synthesis-pattern primitive + composite 45-cell migration matrix as single propagation-budget unit.
+
+**D-CARRY=no-carry + D-GRAD=ratify-as-finding-defer-skill-authoring + D-PUSH=push-after-S2** all preserved. Push at S2-end at G3 gate.
+
+**M3.6 close UNBLOCKS** M3.7 (modular III for Obsidian capstone — first consumer of streamlined airlock surface per design spec §6 forward-integration stub).
