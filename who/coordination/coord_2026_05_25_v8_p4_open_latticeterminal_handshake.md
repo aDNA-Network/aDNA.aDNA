@@ -9,6 +9,7 @@ to_persona: Spock
 to_vault: LatticeTerminal.aDNA
 urgency: action_requested   # upgraded from `info` (predecessor coord_2026_05_17 was advance-signal info-only); M4.1 is the active handshake
 delivery_active: 2026-05-25   # upgraded from predecessor's `delivery_held_until: operator-acknowledgment`; M4.1 mission open authorizes active delivery
+pause_annotation: "2026-05-25T~20:55Z — M4.x PAUSED at M5.0 close per operator pivot 2026-05-25T~19:50Z (operator exploring alternative terminal/agent solutions; M4.2 ratification timeline TBD; Spock ack still welcome — informs eventual resume timing; M08 charter elevation Spock-side unaffected). See sister-memo `coord_2026_05_25_v8_p4_pause_p5_pivot.md` for full pause posture + P5 pivot context. This D2 active-handshake memo preserved end-to-end per Campaign SO #13 archive-not-delete + paused-but-not-replaced discipline. Resume gates: post-P5 close (default) OR after alternative-terminal-agent-solution exploration concludes (operator-decisioned timing) OR absorbed to v8.x successor at P6 entry (alternative path)."
 expires: 2026-08-25   # 3-month soft expiry; renew at M4.2 ADR-015 ratification
 extends: aDNA.aDNA/who/coordination/coord_2026_05_17_v8_campaign_open_latticeterminal.md
 last_edited_by: agent_stanley

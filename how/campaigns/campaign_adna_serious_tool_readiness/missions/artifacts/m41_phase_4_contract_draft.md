@@ -58,7 +58,7 @@ The canonical installer is hosted at **`aDNA.aDNA/how/skills/install/`** (single
 
 ## Clause B — Agent Harness Ownership
 
-**[STATUS: draft; finalize at M4.2 ADR-015 ratification]**
+**[STATUS: draft | M4.2-PAUSED 2026-05-25T~19:50Z operator-pivot; resumable post-P5; finalize at M4.2 ADR-015 ratification when M4.2 resumes]**
 
 `LatticeAgent.aDNA` (Stanley persona) owns the **HARNESS-CONTRACT** (provider-side contract for harness composition) + **PROVIDER-CONTRACT** (provider-generic registry of supported harnesses). v8.0 ships with:
 
@@ -70,7 +70,7 @@ The unified installer at Clause A invokes Claude Code installation via `npm i -g
 
 ## Clause C — Workspace Router Sync
 
-**[STATUS: draft; finalize at M4.3 co-design]**
+**[STATUS: draft | M4.3-PAUSED 2026-05-25T~19:50Z operator-pivot; resumable post-P5; finalize at M4.3 co-design when M4.3 resumes]**
 
 The unified installer at Clause A produces:
 
@@ -86,7 +86,7 @@ M4.3 co-design finalizes the orchestration sequence (base layer first → worksp
 
 ## Clause D — CI/CD Platform Strategy
 
-**[STATUS: draft; finalize at M4.4 CI/CD]**
+**[STATUS: draft | M4.4-PAUSED 2026-05-25T~19:50Z operator-pivot; resumable post-P5; finalize at M4.4 CI/CD when M4.4 resumes]**
 
 **GitHub Actions** is the canonical CI/CD platform (matches both vault patterns; LatticeTerminal already uses GitHub Actions for tests; aDNA already uses GitHub Pages for site deployment).
 
@@ -101,7 +101,7 @@ M4.4 finalizes the GitHub Actions workflow YAML + release-trigger discipline.
 
 ## Clause E — Binary Distribution Channels
 
-**[STATUS: draft; finalize at M4.2 ADR-015 ratification]**
+**[STATUS: draft | M4.2-PAUSED 2026-05-25T~19:50Z operator-pivot; resumable post-P5; finalize at M4.2 ADR-015 ratification when M4.2 resumes]**
 
 **v8.0 ship channels** (macOS-first per LatticeTerminal ADR-019):
 
@@ -117,7 +117,7 @@ M4.4 finalizes the GitHub Actions workflow YAML + release-trigger discipline.
 
 ## Clause F — Cross-Platform Support Matrix
 
-**[STATUS: draft; finalize at M4.2 ADR-015 ratification]**
+**[STATUS: draft | M4.2-PAUSED 2026-05-25T~19:50Z operator-pivot; resumable post-P5; finalize at M4.2 ADR-015 ratification when M4.2 resumes]**
 
 **Inherits from LatticeTerminal ADR-016 BACKEND-MATRIX**:
 
@@ -136,7 +136,7 @@ v8.0 ships **macOS-only**. Linux/Windows tracked in v8.x successor + ADR-019 DG-
 
 ## Clause G — LatticeTerminal Signoff Gate
 
-**[STATUS: draft; finalize at M4.3 co-design close]**
+**[STATUS: draft | M4.3-PAUSED 2026-05-25T~19:50Z operator-pivot; resumable post-P5; finalize at M4.3 co-design close when M4.3 resumes]**
 
 **Spock signoff via coord memo** required at:
 
@@ -150,7 +150,7 @@ v8.0 ships **macOS-only**. Linux/Windows tracked in v8.x successor + ADR-019 DG-
 
 ## Clause H — Code-Signing + Notarization
 
-**[STATUS: draft; finalize at M4.4 CI/CD + ADR-015]**
+**[STATUS: draft | M4.4-PAUSED 2026-05-25T~19:50Z operator-pivot; resumable post-P5; finalize at M4.4 CI/CD + ADR-015 when M4.x resumes]**
 
 **v8.0 ship requirements**:
 
@@ -164,6 +164,50 @@ v8.0 ships **macOS-only**. Linux/Windows tracked in v8.x successor + ADR-019 DG-
 5. **Linux signing** — package-manager-specific (GPG-signed `.deb`/`.rpm` repository; AUR PGP-signed) — DG-C-gated
 
 M4.4 GitHub Actions workflow YAML specifies signing + notarization automation; ADR-015 (M4.2) specifies high-level signing strategy.
+
+## §I — Pause Provenance (added at M5.0 close 2026-05-25T~20:55Z per operator pivot 2026-05-25T~19:50Z)
+
+**Pause trigger**: Operator pivot at 2026-05-25T~19:50Z (post-M4.1 close 2026-05-25T18:00Z): the operator stated *"I'm currently setting up some potentially different terminal/agent solutions, so for now we may want to pause the installer/binary project... in the mean time why don't we move up the public readiness campaign..."*
+
+**Pause posture**: paused-but-resumable per operator G2 mid-checkpoint AskUserQuestion at M5.0 S1 entry 2026-05-25T~19:50Z. M4.2/M4.3/M4.4 stay in queue (status: `planned → paused`); Phase-4 contract draft preserved end-to-end with clause-level STATUS field updates (M4.x-PAUSED). Nothing thrown away.
+
+**What's preserved**:
+1. **Clause A LOCKED** (D10 ratification of aDNA-hosts-unified-installer) — **STANDS** unless alternative-terminal-agent-solution exploration leads to a different stack (operator-amendable via future memo); rationale: D10 is independent of M4.2 packaging mechanics
+2. **Clauses B-H drafted** — STATUS field updated to include `M4.{2|3|4}-PAUSED` annotation; clause content unchanged; resumes via M4.2/M4.3/M4.4 finalization when those missions resume
+3. **D2 active-handshake coord memo** (`coord_2026_05_25_v8_p4_open_latticeterminal_handshake.md`) preserved with new `pause_annotation` field added at this M5.0 close; sister-memo (`coord_2026_05_25_v8_p4_pause_p5_pivot.md`) filed at M5.0 close as Campaign SO #13 preservation discipline
+4. **Predecessor advance-signal memo** (`coord_2026_05_17_v8_campaign_open_latticeterminal.md`) preserved by reference (already had `delivery_held_until: operator-acknowledgment`)
+
+**What changes**:
+1. **M4.2 timeline** = TBD (was: gated on Spock ack of D2; now: gated on Spock ack AND operator alternative-terminal-agent-solution exploration conclusion)
+2. **Provider stance at v8.0 ship** (Clause B) = open to amendment if alternative-terminal-agent-solution exploration leads to a different harness; default still Claude Code v1-default until amended
+3. **PROVIDER-CONTRACT version pin** (Clause B) = deferred to M4.2 resume; Spock confirms version at that time
+4. **M1.1 retention + lift-verbatim posture at M4.3** (Q5+Q6 in D2 coord memo §6) = operator-discretionary at M4.3; may be amended pre-resume if scope changes
+
+**Resumption gates** (M4.x reopens via):
+- **Path A (default; recommended)**: Post-P5 close (M5.5 D20 completion); operator decides to resume M4.x as the natural next phase
+- **Path B**: After alternative-terminal-agent-solution exploration concludes (operator-decisioned timing); may resume mid-P5 if exploration is fast OR after P5 if exploration is long
+- **Path C**: Absorb to v8.x successor campaign at P6 entry (defer M4.x to post-v8.0-ship; v8.0 ships WITHOUT installer; v8.x successor ships installer post-stabilization)
+
+**Operator-decision-required at resumption**:
+1. Alternative-terminal-agent-solution disposition (if changes occurred during exploration)
+2. Phase-4 contract clause B + C + E + F + G + H amendments (if needed based on alternative-stack disposition)
+3. M4.2 ADR-015 ratification (proceed with original D10 outcome OR amend per alternative-stack)
+4. M4.3 implementation scope (M1.1 logic lift verbatim OR rewrite based on alternative-stack)
+
+**This pause does NOT block**:
+- Spock-side LatticeTerminal.aDNA work (M08 charter elevation + downstream M09+ proceed unaffected)
+- Spock ack of D2 active-handshake (welcome at any time; informs eventual resume timing)
+- Sister-memo `coord_2026_05_25_v8_p4_pause_p5_pivot.md` ack (welcome at any time)
+- Operator's alternative-terminal-agent-solution exploration (the explicit reason for pause)
+
+**Resume protocol**:
+1. Operator authorizes M4.x resume via plan ratification + AskUserQuestion at relevant session
+2. New mission `M4.1.5` carve-out (or amendment to M4.2) may be needed if alternative-stack disposition requires clause B + C + E + F amendments
+3. Spock re-engaged via fresh coord memo (or update to D2 active-handshake `acknowledged:` field + response coord memo) at LatticeTerminal session
+4. M4.2 ADR-015 ratification proceeds per amended (or unchanged) Phase-4 contract surface
+5. M4.3 + M4.4 follow per original sequence
+
+**Cross-reference**: see `aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p5_m50_p5_entry_planning.md` + `aDNA.aDNA/who/coordination/coord_2026_05_25_v8_p4_pause_p5_pivot.md` for full M5.0 amendment context.
 
 ## Notes
 
