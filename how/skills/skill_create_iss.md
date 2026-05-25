@@ -552,6 +552,60 @@ Cross-tier coherence anchors on this single identifier.
 
 **Authoritative spec**: `SiteForge.aDNA/what/lib/iss/templates/README.md` §"Multi-modal coherence contract (D8)".
 
+### C-D9-1 — Onboarding discipline (dual audience)
+
+D9 (the tenth decadal arc) makes the gate self-explanatory for two audiences in parallel:
+the first-time human operator + the fresh agent in a sibling vault who has never invoked
+ISS before. Five new opt-in boolean flags + one new enum + six new optional override
+fields, all default-off byte-equivalent.
+
+**Five new opt-in flags**:
+
+| Flag | Effect | Default |
+|---|---|---|
+| `first_timer_hint: true` | Dismissable banner at top of body explaining the gate flow. localStorage key `iss-seen-<gate_id>` records dismissal per-device per-gate. Override copy via `first_timer_hint_message` (HTML-escaped). | false |
+| `decision_significance: "phase_exit"\|"advisory"\|"reversible"` | Small badge near `composite_title` naming decision weight. Tone cascades from existing `--semantic-*` tokens — no new tokens. Unrecognized value renders empty + emits `validate_authoring` lint. | — |
+| `show_post_submit_explainer: true` | Collapsed-by-default `<details>` block between `composite_question` and the form. 3-step Output / Next reader / Revision list. Reversibility line pulls from `decision_significance` when set. Overrides: `post_submit_reviewer_text`, `post_submit_output_text`. | false |
+| `confidence_tooltips: true` | Collapsed `<details>` block under the 5-radio confidence scale with a 5-row `<dl>` mapping each rating to its canonical meaning. Closes the sighted/SR-parity gap on confidence-radio aria-labels. | false |
+| `show_provenance: true` | Inside the existing `<footer role="contentinfo">`, adds a 2-column `<dl>` (Vault / Requesting agent / Authored by / Why). Overrides: `provenance_skill_version`, `provenance_why`, `requesting_agent`. | false |
+
+`show_fallback_tiers: true` (existing from D8) gains a new surface at D9-C81: an
+explanatory preamble above the Tier 2/3 fallback blocks naming the 3-tier chain.
+Validates that the D8 fallback blocks function as onboarding surfaces. Same opt-in flag —
+no new flag introduced.
+
+**Audience #2 — the agent-onboarding contract** (D9-C86 / D9-C87):
+
+A fresh agent in any sibling vault must discover and use ISS via the canonical T1→T4
+trace in ≤ 2 min:
+
+| Tier | Path | Role |
+|---|---|---|
+| T1 | `~/lattice/CLAUDE.md` | Workspace router — routes to `SiteForge.aDNA` |
+| T2 | `~/lattice/SiteForge.aDNA/CLAUDE.md` Standing Rule 8 | Project governance — names canonical skill + library code path |
+| T3 | `~/lattice/aDNA.aDNA/how/skills/skill_create_iss.md` | THIS document — single canonical authoring skill |
+| T4 | `~/lattice/SiteForge.aDNA/what/lib/iss/runtime/generator.py` | Library — `from what.lib.iss.runtime import generator` |
+
+Four contract conditions: every tier points at next; no out-of-context references;
+T3 lists full opt-in flag inventory; T4 importable without side effects. Verified by
+inspection at D9-C87 against the MoleculeForge.aDNA-perspective trace —
+`zero_regression_confirmed: true` (artifact:
+`SiteForge.aDNA/how/campaigns/campaign_siteforge_iss/missions/artifacts/cross_vault_discovery_d9.md`).
+
+**Anti-pattern guards**:
+
+- Don't enable `first_timer_hint` without a stable slug-shaped `gate_id` — the
+  localStorage dismiss key needs it.
+- Don't enable `show_post_submit_explainer` without populating `consequence_text` OR
+  `decision_significance` — the explainer's Revision line is then less actionable.
+- Don't paraphrase the `CONFIDENCE_SCALE_MEANINGS` controlled vocabulary across surfaces;
+  the helper is the single source of truth.
+
+**Authoritative spec**: `SiteForge.aDNA/what/lib/iss/templates/README.md` §§ "Onboarding
+contract (D9-C81)", "Decision-significance badge (D9-C82)", "Post-submit explainer
+(D9-C83)", "Confidence tooltips (D9-C84)", "First-timer hint (D9-C85)", "Agent
+onboarding contract (D9-C86)", "Provenance footer (D9-C88)".
+
 ## Round-trip discipline
 
 Sentinel handshake (AD-6):
