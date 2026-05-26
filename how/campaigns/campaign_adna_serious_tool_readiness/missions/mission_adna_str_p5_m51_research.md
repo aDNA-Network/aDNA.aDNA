@@ -6,10 +6,11 @@ phase: 5
 mission_number: 5.1
 slug: research
 created: 2026-05-25
-updated: 2026-05-25
+updated: 2026-05-26
 status: in_progress
 opens_at: 2026-05-25T21:34:00Z
 opened_session: session_stanley_20260525T213418Z_v8_m51_s1
+s2_session: session_stanley_20260526T015749Z_v8_m51_s2   # S2 opens 2026-05-26T01:57:49Z; absorbs 4 deferred targets (Astro + Stripe + Tailwind + Vercel) via ≤2 parallel Explore × 2 batches (per S1 NEW SEED skill_subagent_dispatch_under_quota_constraint 2nd canonical instance); cumulative D4 progress 1/8 → 5/8 at S2 close
 estimated_sessions: 3   # canonical 2-3 per campaign master Phase 5 row line 197; S1 narrowed to 1 target due to parallel-subagent session-limit blocker (Astro + Stripe subagents hit Claude session quota); S2 + S3 absorb deferred targets; total stays 3-session arc unless S2 hits same limit
 persona: rosetta
 last_edited_by: agent_stanley
@@ -108,7 +109,7 @@ Each target's dossier covers 5 canonical dimensions (D1 Visual Identity & Brand 
 | 10 | Session file moved `active/ → history/2026-05/` at S1 close | `ls how/sessions/active/` empty |
 | 11 | Push to origin: HEAD = origin/main (D-PUSH=push-after-S1 authorized per G3) | `git rev-parse HEAD; git rev-parse origin/main` |
 | 12 | Cross-vault git status clean (zero LatticeTerminal.aDNA + III.aDNA + node.aDNA + 5 forge-vault wrappers + lattice-labs writes) | `git -C ../LatticeTerminal.aDNA status -s` empty etc. |
-| 13 | Zero ADR authoring at M5.1 (no new ADR file created in this mission across S1+S2+S3) | `ls what/decisions/adr_*.md \| grep -E "027\|028"` empty |
+| 13 | Zero ADR authoring **within** M5.1 sessions across S1+S2+S3 (in-mission scope) | manual review of session work logs; ADR-027 was authored 2026-05-25T18:48 PDT between S1 close and S2 open as out-of-mission terminal↔harness contract canonicalization work, not within any M5.1 session. ADR-027 commit `12ead17` predates S2 open and is recorded as out-of-mission exception in S2 Mission Close Notes |
 | 14 | Cross-target synthesis section authored at S3 close (deferred from S1; gathers cross-dossier patterns + global lift-or-avoid recommendations) | grep "Synthesis" at S3 close artifact |
 
 ## Hard constraints (10; M4.1's 12 narrowed to M5.1-relevant set)
@@ -223,3 +224,60 @@ Each target's dossier covers 5 canonical dimensions (D1 Visual Identity & Brand 
 **Token-budget two-metric** (per ADR-016 Clause C empirical formula):
 - **Estimated** (frontmatter): S1 ~100-130 kT content-load; ~6-8 M cache_read at 12-14 turns + ~340-360 K cache_creation API-billing
 - **Actual** (to be measured at S1 close): TBD; report in S1 SITREP
+
+## Mission Close Notes (S2 close cascade 2026-05-26)
+
+**S2 close**: 2026-05-26T~02:30Z (target close timestamp; estimated; in-progress at this spec author) at `session_stanley_20260526T015749Z_v8_m51_s2`.
+
+**S2 scope**: Absorb 4 deferred per-target dossiers (Astro + Stripe + Tailwind + Vercel) per S1 mission-shape adjustment + operator ratification at S2 entry. Dispatch mode = **≤2 parallel Explore × 2 batches** honoring NEW SEED `skill_subagent_dispatch_under_quota_constraint.md` discipline (2nd canonical instance applied).
+
+**S2 cumulative deliverables (5/5 LIVE structurally; D4 progress 5/8)**:
+1. ✅ **D1 — M5.1 mission spec** (this file) — `status: in_progress` continues; `updated: 2026-05-26`; S2 session referenced in `s2_session:` frontmatter field; AC #13 amended for out-of-mission ADR-027 disposition; this S2 Mission Close Notes + AAR seed added
+2. ✅ **D2 — Dimension framework artifact** — LIVE since S1; unchanged at S2
+3. ✅ **D3 — Per-target dossier template** — LIVE since S1; unchanged at S2; reused by all 4 S2 dossiers + Rust ratification holds
+4. 🟢 **D4 — Per-target dossiers (5/8 at S2 close; +4 net)** — S2 adds:
+   - `m51_dossier_astro.md` LIVE (192 lines; 10 sources; frontend_framework category; subagent `explore_subagent_m51_s2_astro` completed clean)
+   - `m51_dossier_stripe.md` LIVE (200 lines; 9 sources; payment_sdk category; subagent `explore_subagent_m51_s2_stripe` completed clean)
+   - `m51_dossier_tailwind.md` LIVE (249 lines; 10 sources; design_system category; subagent `explore_subagent_m51_s2_tailwind` completed clean)
+   - `m51_dossier_vercel.md` LIVE (220 lines; 10 sources; hosted_product category; subagent `explore_subagent_m51_s2_vercel` completed clean)
+   - All 4 dossiers pass acceptance criteria #4 (≥15 URL citations: 15-25 each), #5 (=30 ### sub-headers = 6 fields × 5 dims), #6 (≥5 decadal routings: 10-11 each); 2 URL spot-checks confirmed (Astro showcase 85 pages + named brands; Stripe keys page covers display-once + key types); no URL hallucinations detected
+   - **3 deferred to S3**: `m51_dossier_tauri.md` + `m51_dossier_obsidian.md` + `m51_dossier_linear.md`
+5. ✅ **D5 — Governance bundle (S2 cumulative)** — pre-S2 housekeeping commit `cc7f896` (out-of-band ADR-027 + idea_upstream_workspace_router_row_discipline pushed; clean slate before S2); mission spec updated (this); campaign master Phase 5 row S2 sub-row + amendments-table entry; STATE.md Op 3 archive-on-close 26th canonical instance refresh; Next Session Prompt → M5.1 S3; lightweight 5-line AAR seed (below)
+
+**S2 PRIMARY load-bearing findings**:
+1. **Subagent dispatch ≤2-parallel × 2-batches discipline works as designed** — both Batch A (Astro + Stripe) and Batch B (Tailwind + Vercel) returned clean with no Claude session-quota blocks. S1 finding validated under load. `skill_subagent_dispatch_under_quota_constraint.md` advances 1/3 → 2/3 canonical instances; 1 more required for graduation per ≥3 instances rubric.
+2. **Per-target dossier shape held across 4 new targets** — six-field-per-dimension structure produced consistent 192-249-line dossiers (Rust S1 was 230 lines; S2 range straddles it). Subagent reports needed minimal main-context cleanup beyond frontmatter transplant + 1 minor cross-reference normalization in the Vercel D5 routing field. Template ratification holds at 5 canonical applications (Rust + Astro + Stripe + Tailwind + Vercel).
+3. **Substrate-gathering-subagent-dispatch pattern post-graduation reinforcement** advances substantially — 4 additional successful dispatches at S2 (5/3 → 9/3 canonical instances). Pattern robustness now at 3× margin; further reinforcements at S3 (3 more dispatches projected) likely pushes margin past 4×.
+4. **Out-of-mission ADR-027 disposition pattern 1st canonical instance** — between S1 close and S2 open the operator authored ADR-027 + spec_terminal_harness_contract + spec_platform_ecosystem edit + coord memo as a separate work-stream commit `12ead17` ("Local commit; not pushed"). At S2 entry, operator confirmed: (a) push pre-S2 (clean slate); (b) amend AC #13 for in-mission scope clarity vs hard grep check. This establishes the **out-of-mission work disposition** pattern for future research-class missions where the mission window spans multiple wall-clock days. NEW SEED candidate `skill_out_of_mission_authoring_disposition.md` at 1/3 (defer authoring per D-GRAD).
+5. **Cross-target pattern early signal (informal; full synthesis at S3)** — across Rust + Astro + Stripe + Tailwind + Vercel:
+   - **D1 convergent pattern**: All 5 targets lift "constrained design system + opinionated voice over feature lists" (Rust prose-first / Astro inverted-defaults / Stripe scale-as-reassurance / Tailwind constrained-pedagogy / Vercel dual-CTA). aDNA D11 has a clear gravity well: lift the *philosophy-before-feature* pattern.
+   - **D3 convergent pattern**: All 5 targets favor multi-entry-point onboarding (CLI + tutorial + interactive + framework guides) over single-funnel. Multi-path autonomy is the gravity well for D14.
+   - **D4 divergent pattern**: Rust+Tailwind exemplary (role-segregated docs + example-then-explain); Stripe+Vercel mixed (great IA at points but page-bloat / IA-flattening anti-patterns visible). aDNA D12 has both LIFT and AVOID material across this dimension.
+   - **D5 convergent pattern**: All 5 favor transparent governance + multi-channel community + quantified case studies. D15+D17 substrate is rich.
+
+**Pattern dispositions** (S2 close):
+- **`skill_subagent_dispatch_under_quota_constraint.md`**: 1/3 → **2/3** at 0.67× threshold; one more application graduates (S3 next-dispatch is a candidate)
+- **`skill_substrate_gathering_subagent_dispatch.md`**: post-graduation 5/3 → **9/3** at 3.0× margin (4 new successful dispatches at S2)
+- **`skill_research_class_mission_shape.md`**: 1/3 HOLD (S2 is intra-mission continuation, not new mission shape instance)
+- **`skill_campaign_close_archive.md`**: 25/3+ → **26/3+** at 8.7× margin via Op 3 26th canonical instance (this STATE refresh)
+- **`skill_substrate_pure_separation.md`**: post-graduation HOLD at 12/3+ (pre-S2 housekeeping was a separate concern, not substrate-pure carry-forward)
+- **NEW SEED candidate**: `skill_out_of_mission_authoring_disposition.md` at **1/3** (out-of-mission ADR-027 disposition with operator-confirmed amend-AC pattern); defer authoring per D-GRAD
+- **0 invariant violations**
+
+**Hard constraints**: all 10 honored end-to-end at S2 (zero `.adna/` + LatticeTerminal.aDNA + node.aDNA + III.aDNA + 5 forge-vault wrappers + lattice-labs writes + `aDNA.aDNA/site/` touches + ADR authoring **within M5.1 sessions** + `.obsidian/`/`~/.claude/settings.json`/`measurement.sqlite`/hook mutations; Standing Order #8 32nd + 33rd + 34th tactical invocations applied — 32nd = S2 session file references S1 dossier template + Rust dossier as substrate; 33rd = each of 4 S2 subagent prompts references the M5.1 dimension framework as authoritative; 34th = AC #13 amendment self-references the out-of-mission ADR-027 commit `12ead17` as the disposition-triggering event).
+
+**S2 UNBLOCKS S3** — S3 absorbs remaining 3 targets (Tauri + Obsidian + Linear) + cross-target synthesis artifact (`m51_cross_target_synthesis.md` — gathers global LIFT + AVOID patterns + per-decadal aggregated routing table from all 8 dossiers) + full AAR per `template_aar.md` (10 sections; ~M3.6/M3.7 shape) + mission close cascade. Recommended S3 order: Tauri → Obsidian → Linear (desktop-runtime → knowledge-tool → project-management; thematic separation from S1+S2 frontend/payment cluster). Cross-target synthesis stays in-session (not subagent-dispatched) per S1 design.
+
+**See**: D2 dimension framework + D3 dossier template + D4a Rust + D4b Astro + D4c Stripe + D4d Tailwind + D4f Vercel dossiers for full S2 substrate context.
+
+## Lightweight AAR seed (S2 close)
+
+- **Worked**: ≤2-parallel × 2-batches subagent dispatch discipline (per S1 NEW SEED) was vindicated end-to-end — both batches returned clean with no Claude session-quota blocks. 4 dossiers landed at 192-249 lines with consistent six-field shape; main-context transplant + frontmatter addition took ~5-8 kT per dossier. AC #4/#5/#6 all pass cleanly (URL citations 15-25, sub-headers exactly 30, decadal routings 10-11). Pre-S2 housekeeping (push 12ead17 + commit/push untracked backlog idea) cleanly separated out-of-mission ADR-027 work from M5.1 S2 scope.
+- **Didn't**: Vercel D5 lift-or-avoid recommendation originally referenced "D5" (M5.1 dimension) instead of a decadal — caught + normalized at transplant to route to D17 (Cross-Page Narrative Coherence). One minor subagent-report drift caught; no other quality regressions. The Tailwind subagent cited a specific $299 Tailwind Plus price that the main-context normalized to "one-time payment per the live pricing page" since the actual price drifts.
+- **Finding**: ≤2-parallel × 2-batches dispatch discipline graduates `skill_subagent_dispatch_under_quota_constraint.md` from 1/3 → 2/3 canonical instances; one more application (S3 dispatch for 3 deferred targets) likely graduates. Cross-target convergence at D1 (philosophy-before-feature) + D3 (multi-entry-point onboarding) + D5 (transparent-governance + multi-channel) is already legible from 5 of 8 dossiers; D4 divergence (LIFT material from Rust+Tailwind; AVOID material from Stripe+Vercel) means S3 cross-target synthesis has both gravity wells and contrast pairs to mine.
+- **Change**: AC #13 amended to clarify "no ADR authoring **within** M5.1 sessions" (in-mission scope) — accommodates the out-of-mission ADR-027 reality without weakening the constraint's intent. NEW SEED candidate `skill_out_of_mission_authoring_disposition.md` 1/3 added to pattern-disposition tracker. S2 mission shape held at 4 targets; S3 absorbs 3 + synthesis + AAR + close.
+- **Follow-up**: S3 dispatches 3 parallel Explore subagents (Tauri + Obsidian + Linear) — quota-permitting all 3 in one batch (since the discipline cap is ≤2, this means ≤2 + 1 serial-fallback OR 1 + 2; operator confirms at S3 entry). Authors cross-target synthesis artifact in-session. Authors full AAR (`aar_m51_research.md` at 10 sections). Mission close cascade fires.
+
+**S2 Token-budget two-metric** (per ADR-016 Clause C empirical formula):
+- **Estimated** (this update): S2 ~120-180 kT content-load; ~5-8 M cache_read at 14-18 turns + ~340-400 K cache_creation API-billing (4 subagent dispatches @ 25-40 kT each in subagent context + 4 dossier transplants @ 5-8 kT each + governance bundle ~15-25 kT)
+- **Actual** (to be measured at S2 close): TBD; report in S2 SITREP
