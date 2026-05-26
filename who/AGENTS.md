@@ -1,9 +1,9 @@
 ---
 type: directory_index
 created: 2026-02-17
-updated: 2026-05-20
+updated: 2026-05-26   # M5.2 bench expansion: 21-persona bench live (10 reviewers + 11 adopters)
 last_edited_by: agent_stanley
-tags: [directory_index, who]
+tags: [directory_index, who, m5_2_bench_expansion]
 ---
 
 # who/ — Organization (Agent Reference)
@@ -19,7 +19,8 @@ tags: [directory_index, who]
 | `coordination/` | Cross-agent ephemeral notes — handoffs, urgency signals | Required |
 | `governance/` | Roles, decision authority, policies | Required |
 | `community/` | **[EXT]** Community roles, contribution paths, governance | Active |
-| `adopters/` | **[EXT]** Adopter personas and deployment profiles | Active |
+| `adopters/` | **[EXT]** Adopter personas and deployment profiles — **11 personas at M5.2** (5 original_rosetta + 6 p5_planned) | Active |
+| `reviewers/` | **[EXT]** Specialist UX/design reviewer personas — **10 personas at M5.2** (5 existing_specialist + 5 visual_focused) | Active |
 
 ## Naming
 
@@ -45,11 +46,21 @@ All files follow `type_descriptive_name.md` (underscores only, never hyphens).
 
 **Token cost**: ~300 tokens (this AGENTS.md)
 
+## 21-Persona Evaluation Bench (M5.2 ratified)
+
+The full evaluation bench for the v8 P5 100-cycle decadal program (D11-D20):
+
+- **11 adopters** at [adopters/AGENTS](adopters/AGENTS.md) (5 original_rosetta + 6 p5_planned NEW M5.2)
+- **10 reviewers** at [reviewers/AGENTS](reviewers/AGENTS.md) (5 existing_specialist + 5 visual_focused NEW M5.2)
+- Per-decadal allocation + 10-dim scoring rubric: [m50_persona_bench_expansion](../how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m50_persona_bench_expansion.md)
+- Empirical binding evidence (8 OSS dossiers): [m51_cross_target_synthesis §4](../how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m51_cross_target_synthesis.md)
+
 ## Cross-References
 
 - [who/coordination/AGENTS](coordination/AGENTS.md) — Cross-agent coordination protocol
 - [who/governance/AGENTS](governance/AGENTS.md) — Governance reference
 - [who/community/AGENTS](community/AGENTS.md) — Community architecture
-- [who/adopters/AGENTS](adopters/AGENTS.md) — Adopter personas
+- [who/adopters/AGENTS](adopters/AGENTS.md) — Adopter personas (11 at M5.2)
+- [who/reviewers/AGENTS](reviewers/AGENTS.md) — Reviewer personas (10 at M5.2)
 - [what/AGENTS](../what/AGENTS.md) — Knowledge objects (WHAT)
 - [how/AGENTS](../how/AGENTS.md) — Operations (HOW)
