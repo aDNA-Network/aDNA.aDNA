@@ -7,10 +7,12 @@ mission_number: 5.1
 slug: research
 created: 2026-05-25
 updated: 2026-05-26
-status: in_progress
+status: completed
 opens_at: 2026-05-25T21:34:00Z
 opened_session: session_stanley_20260525T213418Z_v8_m51_s1
 s2_session: session_stanley_20260526T015749Z_v8_m51_s2   # S2 opens 2026-05-26T01:57:49Z; absorbs 4 deferred targets (Astro + Stripe + Tailwind + Vercel) via ≤2 parallel Explore × 2 batches (per S1 NEW SEED skill_subagent_dispatch_under_quota_constraint 2nd canonical instance); cumulative D4 progress 1/8 → 5/8 at S2 close
+s3_session: session_stanley_20260526T025741Z_v8_m51_s3   # S3 opens 2026-05-26T02:57:41Z; absorbs 3 remaining (Tauri + Obsidian + Linear) via ≤2-parallel × 2-batches (Batch A Tauri+Obsidian, Batch B Linear solo); skill_subagent_dispatch_under_quota_constraint GRADUATES 3/3; cross-target synthesis LIVE (AC #14 discharge); full AAR LIVE (10-section heavy shape); mission close 2026-05-26T~03:30Z
+closed_at: 2026-05-26T03:30:00Z   # MISSION CLOSED — 5/5 deliverables LIVE + AAR; 8/8 per-target dossiers LIVE; AC #1-#14 ALL satisfied; zero hard-constraint violations; Op 3 27th canonical instance; Standing Order #8 invocations crossed 37
 estimated_sessions: 3   # canonical 2-3 per campaign master Phase 5 row line 197; S1 narrowed to 1 target due to parallel-subagent session-limit blocker (Astro + Stripe subagents hit Claude session quota); S2 + S3 absorb deferred targets; total stays 3-session arc unless S2 hits same limit
 persona: rosetta
 last_edited_by: agent_stanley
@@ -281,3 +283,70 @@ Each target's dossier covers 5 canonical dimensions (D1 Visual Identity & Brand 
 **S2 Token-budget two-metric** (per ADR-016 Clause C empirical formula):
 - **Estimated** (this update): S2 ~120-180 kT content-load; ~5-8 M cache_read at 14-18 turns + ~340-400 K cache_creation API-billing (4 subagent dispatches @ 25-40 kT each in subagent context + 4 dossier transplants @ 5-8 kT each + governance bundle ~15-25 kT)
 - **Actual** (to be measured at S2 close): TBD; report in S2 SITREP
+
+## Mission Close Notes (S3 close cascade 2026-05-26)
+
+**S3 close + MISSION CLOSED**: 2026-05-26T~03:30Z at `session_stanley_20260526T025741Z_v8_m51_s3`.
+
+**S3 scope**: Absorb 3 remaining per-target dossiers (Tauri + Obsidian + Linear); author cross-target synthesis artifact in-session (AC #14 discharge; not subagent-dispatched per S1 design — quality-judgment surface); author full AAR per `template_aar.md` 10-section heavy shape (M3.6/M3.7 precedent); execute mission close cascade. Dispatch mode = ≤2-parallel × 2-batches per S2-vindicated discipline = Batch A (Tauri + Obsidian) + Batch B (Linear solo; densest IA → solo dispatch for highest fidelity).
+
+**S3 cumulative deliverables (6/6 LIVE at mission close = 5 spec deliverables + AAR per SO #5)**:
+1. ✅ **D1 — M5.1 mission spec** (this file) — `status: in_progress → completed`; `closed_at:` populated; `s3_session:` frontmatter field added; S3 Mission Close Notes appended (this section)
+2. ✅ **D2 — Dimension framework artifact** — LIVE since S1; unchanged at S3; reused by all 3 S3 dossiers + cross-target synthesis §1-§4
+3. ✅ **D3 — Per-target dossier template** — LIVE since S1; unchanged at S3; reused by all 3 S3 dossiers; template ratification holds at 8 canonical applications cumulatively (Rust + Astro + Stripe + Tailwind + Vercel + Tauri + Obsidian + Linear)
+4. 🟢 **D4 — Per-target dossiers (8/8 at S3 close; +3 net)** — S3 adds:
+   - `m51_dossier_tauri.md` LIVE (desktop_runtime; 15 sources; 25+ URLs; 30 ### sub-headers; 10 decadal routings; subagent `explore_subagent_m51_s3_tauri` clean)
+   - `m51_dossier_obsidian.md` LIVE (knowledge_tool; 10 sources; 20+ URLs; 30 ### sub-headers; 10 decadal routings; subagent `explore_subagent_m51_s3_obsidian` clean)
+   - `m51_dossier_linear.md` LIVE (project_management; 11 sources; 25+ URLs; 30 ### sub-headers; many decadal routings D11-D18; subagent `explore_subagent_m51_s3_linear` clean solo dispatch)
+   - All 3 dossiers pass AC #4 + #5 + #6
+   - 3 URL spot-checks via WebFetch confirmed: Tauri Commons Conservancy governance + Obsidian no-signup freemium + Linear 25K orgs + named customers (OpenAI/Coinbase/Vercel/Substack)
+   - **No URL hallucinations detected** across S3 dossiers
+5. ✅ **D5 — Governance bundle final** — mission spec status flip + S3 Mission Close Notes (this) + campaign master M5.1 row `in_progress → completed` + S3 sub-row + amendments-table entry + STATE.md Op 3 archive-on-close 27th canonical instance refresh + Next Session Prompt → M5.2 + session file move active → history/2026-05/ + D-PUSH=push-after-S3 fired at G3
+6. ✅ **AAR (per SO #5)** — `missions/artifacts/aar_m51_research.md` LIVE; 10-section heavy shape per `template_aar.md` + M3.6/M3.7 precedent (Mission Identity + Scorecard 6/6 validated + Gap Register 5 entries 0 critical + Technical Debt 5 entries + Readiness Assessment GO for M5.2 + Recommendation + Lessons Learned 12 entries + Token-budget two-metric within estimate + Standing Order discharges 14/14 + Pattern disposition final state: 2 graduations + 3 new seeds + 5 reinforcements + 0 invariant violations)
+
+**Cross-target synthesis artifact LIVE** at `missions/artifacts/m51_cross_target_synthesis.md` (AC #14 discharged; ~22-25 kT; 5-layer structure):
+1. §1 — 4 global LIFT patterns (philosophy-before-feature minimalism 7/8 dossiers; multi-entry-point onboarding 8/8 universal; transparent-governance + cadence transparency 6/8; role-segregated documents + explicit out-of-scope statements 3/8 highest-leverage)
+2. §2 — 5 global AVOID anti-patterns (categorical-hierarchical + search-first; marketing-style hero imagery by-avoidance; video-first conceptual content; stability-promises-without-enforcement by-avoidance; plugin/extension ecosystem fragmentation)
+3. §3 — per-decadal D11-D20 aggregated routing table (10 rows; each decadal lists LIFT + AVOID contributors + primary recommendation)
+4. §4 — persona-binding aggregation by dimension (Newcomer Stress-Tester 7/8 D3 + 4/8 D1 + 3/8 D4 — highest-load-bearing; Visual Designer + OSS Maintainer NEW personas empirically validated)
+5. §5 — 4 contrast pairs (Rust ⇄ Linear D4; Tailwind ⇄ Stripe D3+D4; Obsidian-plugins ⇄ Rust-role-segregation D4; Tauri ⇄ Vercel D5)
+- §6 — recommended decadal priorities for M5.3-M5.5: D11 → D14 → D16 → D17 → D13 → D12 (continuous) → D15 → D18 → D19 → D20
+- §7 — cross-references to all 8 dossiers + 3 frame artifacts + 3 M5.0 artifacts + AAR = 15 sibling links
+
+**S3 PRIMARY load-bearing findings** (mission-level; final):
+1. **`skill_subagent_dispatch_under_quota_constraint.md` GRADUATES at 3/3** per ≥ 3 instances rubric — S1 1st instance (quota-blocked) → S2 2nd instance (≤2 × 2-batches vindicated) → S3 3rd instance (≤2 + 1 vindicated). Upstream-promotion candidate for `.adna/` since pattern applies broadly to any campaign with parallel subagent fan-out under Claude account-level quota.
+2. **Cross-target synthesis 5-layer structure ratified as 1st canonical instance** for research-class missions — NEW SEED candidate `skill_cross_target_synthesis_authoring.md` at 1/3 HOLD; future research-class missions advance.
+3. **§4 of synthesis (persona-binding aggregation) empirically validates M5.0 21-persona allocation table** — Newcomer Stress-Tester confirmed as highest-load-bearing persona; Visual Designer + OSS Maintainer NEW personas empirically validated; Enterprise Architect D20-only-acceptable confirmed.
+4. **§6 of synthesis recommends decadal sequencing** — informs M5.3-M5.5 mission ordering.
+5. **Research-class mission shape (`skill_research_class_mission_shape.md`) 1st canonical instance at S1 HOLDS at 1/3 across S2+S3** — intra-mission continuation does not advance instance count; future research-class missions in v8 P6 or post-v8 advance.
+
+**Pattern dispositions** (S3 close — final state):
+- **1 GRADUATION**: `skill_subagent_dispatch_under_quota_constraint.md` 2/3 → **3/3 GRADUATES** (skill file authoring deferred per D-GRAD; upstream-promotion candidate)
+- **1 NEW SEED CANDIDATE**: `skill_cross_target_synthesis_authoring.md` at 1/3 (HOLD; defer authoring per D-GRAD)
+- **1 post-graduation reinforcement**: `skill_substrate_gathering_subagent_dispatch.md` 9/3 → **12/3 at 4.0× margin** (+3 successful dispatches at S3)
+- **1 post-graduation reinforcement**: `skill_campaign_close_archive.md` 26/3+ → **27/3+ at 9.0× margin** via Op 3 27th canonical instance
+- **3 HOLDS**: `skill_research_class_mission_shape.md` 1/3; `skill_out_of_mission_authoring_disposition.md` 1/3; `skill_substrate_pure_separation.md` 12/3+
+- **0 invariant violations** end-to-end across S1+S2+S3
+
+**Hard constraints honored end-to-end at S3** (and across S1+S2+S3 cumulatively): all 10 from §Hard constraints satisfied. AC #13 amended at S2 + honored at S3 (zero ADR authoring within any M5.1 session; ADR-027 was out-of-mission). Standing Order #8 self-reference 35th + 36th + 37th tactical invocations applied at S3 (35th = S3 session file references S1+S2 dossiers; 36th = each of 3 S3 subagent prompts references framework + template + reference dossiers; 37th = cross-target synthesis + AAR both reference all 8 dossiers + 3 frame artifacts + 3 M5.0 artifacts as substrate). Op 3 archive-on-close pattern 27th canonical instance at S3 STATE refresh.
+
+**D-PUSH=push-after-S3** authorized + fires at this S3 close per S1+S2+M5.0+M3.5.5+M3.7+M3.6 precedent. Final mission push includes: 3 new dossiers + cross-target synthesis + AAR + mission spec status update + campaign master M5.1 row close + amendments entry + STATE.md Op 3 27th instance refresh + S3 session file (then moved to history at close).
+
+**M5.1 MISSION CLOSE UNBLOCKS M5.2** — NEW persona authoring; 11 NEW persona files = 6 P5-planned (OSS Maintainer + Dev-Tools Designer + Framework Docs Expert + Community Organizer + Indie Hacker + Enterprise Architect) + 5 visual-focused (Visual Designer + Infographic Specialist + Anti-Bloat Editor + UX Writer + Diagram Reviewer); estimated 1-2 sessions. **M5.2 sequencing recommendation per AAR §6**: author Newcomer Stress-Tester FIRST (highest single-dimension persona bind at 7/8 D3 across M5.1 dossiers; note: Newcomer Stress-Tester is technically an existing specialist reviewer — M5.2 reviews/updates rather than authors if file already exists), then 5 visual-focused, then 5 remaining P5-planned. M5.2 inherits §3 per-decadal routing table + §4 persona-binding aggregation as authoring substrate.
+
+**See**: D2 dimension framework + D3 dossier template + all 8 dossiers (Rust + Astro + Stripe + Tailwind + Vercel + Tauri + Obsidian + Linear) + cross-target synthesis + full AAR for end-to-end M5.1 substrate.
+
+## Lightweight AAR seed (S3 close — superseded by full AAR per SO #5)
+
+> S3 lightweight seed is captured here for continuity; the canonical 10-section AAR per Standing Order #5 lives at `missions/artifacts/aar_m51_research.md`.
+
+- **Worked**: ≤2-parallel × 2-batches subagent dispatch discipline (graduated to 3/3) returned 3 clean dossiers (Tauri + Obsidian + Linear) with no quota blocks. 3 URL spot-checks confirmed accuracy (Tauri Commons Conservancy, Obsidian no-signup freemium, Linear 25K orgs + named customers). Cross-target synthesis 5-layer structure surfaced 4 LIFT gravity wells + 5 AVOID anti-patterns + per-decadal routing table + persona-binding aggregation (§4 empirically validates M5.0 21-persona allocation) + 4 contrast pairs in ~22-25 kT in-session authoring. Full AAR per template_aar.md 10-section heavy shape held cleanly.
+- **Didn't**: No subagent quality regressions at S3 dispatch; spot-checks all passed. Linear's "25K orgs + OpenAI 3K users" claim seemed suspicious before verification; spot-check confirmed accuracy — discipline of spot-checking 1 URL per dossier transplant is sufficient quality gate at the M5.1 dispatch density (~1-4 dispatches per session).
+- **Finding**: M5.1 produces durable substrate for M5.2 + M5.3-M5.5. The 5-dimension framework + 8-target dossier corpus + cross-target synthesis is the kind of empirical research artifact that future v8 P6 propagation will reuse across consumer vaults. Recommended decadal sequencing (§6) gives M5.3 a clear starting move (D11 first; substrate-rich + image-pipeline pre-validated at M3.5.5).
+- **Change**: Mission close completes the 3-session research-class arc as designed. NEW SEED `skill_cross_target_synthesis_authoring.md` at 1/3 captures the 5-layer authoring structure as a reusable pattern for future research-class missions. M5.2 entry inherits §4 persona-binding aggregation as Newcomer-Stress-Tester-first sequencing guidance.
+- **Follow-up**: M5.2 NEW persona authoring (11 NEW persona files; 1-2 sessions); M5.3 D11 Visual Identity v2 + Image Regen entry (substrate ready from §3 synthesis + image pipeline pre-validated at M3.5.5); M5.4 + M5.5 follow per §6 sequencing.
+
+**S3 Token-budget two-metric** (per ADR-016 Clause C empirical formula):
+- **Estimated** (S3): ~80-150 kT content-load; ~5-7 M cache_read at 12-16 turns + ~300-350 K cache_creation API-billing
+- **Actual** (S3 close): ~110-140 kT content-load (3 subagent dispatches + 3 dossier transplants + synthesis ~22 kT + AAR ~14 kT + 3 URL spot-checks + governance bundle close cascade); ~6 M cache_read + ~330 K cache_creation @ 14 turns. **Delta < 2× per ADR-016 Clause C threshold — no retrospective required**.
+- **Mission cumulative**: estimated 280-400 kT / actual ~340-380 kT total across 3 sessions. Within 1.5× upper bound; well under 2× threshold.
