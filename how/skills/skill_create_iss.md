@@ -2,19 +2,17 @@
 type: skill
 skill_type: agent
 created: 2026-05-21
-updated: 2026-05-23
-status: draft
-prototype: true
-prototype_lifted_canonical_at: mission_p5_1_canonical_skill_lift
+updated: 2026-05-26
+status: active
 category: communication
 trigger: agent needs operator decision/input richer than AskUserQuestion can carry
-last_edited_by: agent_stanley
-tags: [skill, iss, decision_gate, operator_io, prototype, operation_loom, sitrep_authoring_discipline, swot_authoring_discipline, d_wc_carries]
+last_edited_by: agent_siteforge_native
+tags: [skill, iss, decision_gate, operator_io, operation_loom, sitrep_authoring_discipline, swot_authoring_discipline, d_wc_carries, canonical]
+canonical_lifted_at: mission_p5_1_canonical_skill_lift
+canonical_lifted_on: 2026-05-26
 ---
 
 # skill_create_iss
-
-> **PROTOTYPE** — built at `campaign_siteforge_iss` ("Operation Loom") P2.1. Promotes canonical at P5.1 (removes this banner; adds inventory row). Authoritative spec: `SiteForge.aDNA/how/campaigns/campaign_siteforge_iss/missions/artifacts/architecture_spec_p1_2.md`. ADR draft: `…/missions/artifacts/adr_draft_iss_architecture.md`.
 
 > **Naming note**: ISS = *Interaction Surface Site* (this skill's context, not the International Space Station). Renamed 2026-05-23 at P3p.6r from SIS = *site-interaction-surface* — orientation flipped to frame these as the site that IS the interaction surface, rather than something living on a site. Lineage preserved in `campaign_siteforge_iss/CLAUDE.md`.
 
@@ -28,6 +26,18 @@ Any of:
 - Decision benefits from side-by-side comparison or rich context
 
 Otherwise prefer `AskUserQuestion` (≤ 4 options, no rich context).
+
+## Vault adaptation
+
+ISS is adopted differently depending on the aDNA pattern category of the consumer vault. The three adaptation guides at `SiteForge.aDNA/what/lib/iss/adaptation_guides/` cover all 8 categories — read the one matching your vault before authoring the first gate.
+
+| Guide | Covers | When to read |
+|---|---|---|
+| `forge_platform_guide.md` | Forge.aDNA · Platform.aDNA | Adopting ISS in a forge (e.g. MoleculeForge, RareHarness, VideoForge) — IM-D Configure+Launch composite + ST2 multi-field input + Platform safety presets like `clinician_evaluation`. Canonical wrappers: MoleculeForge.aDNA/iss/ (Forge), RareHarness.aDNA/iss/ (Platform). |
+| `framework_orgvault_orggraph_guide.md` | Framework.aDNA · Org-Vault · Org-Graph | Adopting ISS in a framework (III, ContextCompass), org-vault (LatticeLabs, WilhelmAI, ScienceStanley), or org-graph (CakeHealth, SuperLeague) — audience-respect doctrine + `partner_onboarding` preset + ADR ratification gates. Canonical wrapper: WilhelmAI.aDNA/iss/ (Org-Vault). Framework + Org-Graph remain hypothetical until first pilot wrapper deploys. |
+| `network_node_coordination_guide.md` | Network.aDNA · Node · Coordination | Adopting ISS in a network (LatticeNetwork), node (node.aDNA), or coordination (TaskForge) — federation gates + local-by-default provenance per Workspace Standing Rule 4 + multi-stakeholder limitations (v2-scope) + gate-id ↔ lease-id linkage. All three remain hypothetical until first pilot wrappers deploy. |
+
+Each guide includes a worked example, a 6-decision design extraction, and a per-category decision tree. Cross-vault wrappers deploy at `<vault>/iss/CLAUDE.md` with a `federation_ref:` block pinning the SiteForge ISS substrate version.
 
 ## Authoring workflow (the 7-step happy path)
 
@@ -507,7 +517,7 @@ The D7 decadal arc (cycles 61-70) added a coherent error-recovery contract spann
 - `generator.py` reads the sidecar at gate creation and embeds the active port via `<body data-receiver-url="...">`. No author action required — explicit `receiver_url` in data.json overrides; absence triggers sidecar discovery; both absent falls back to `localhost:8765`.
 
 **Watch-pattern hardening (D7-C69, F-4)**:
-- Reference: `SiteForge.aDNA/how/skills/skill_watch_iss.md` §"D7-C69 hardening (F-4)".
+- Reference: `aDNA.aDNA/how/skills/skill_watch_iss.md` §"D7-C69 hardening (F-4)".
 - Wrap watch loops with `timeout 7200` (2-hour cap); use `[ -e ]` over `[ -f ]` for symlink/special-file safety; agent scans `how/gates/*.output.json` on session-open for cross-session resume.
 
 **Authoritative spec**: `SiteForge.aDNA/what/lib/iss/templates/README.md` §"Error-recovery contract (D7)".
@@ -666,6 +676,18 @@ html = generator.generate("phase_exit", persona="franklin", font_mode="online", 
 §§ "Presets family (D10-C91)" and "Persona handoff + skin selection (D10-C97)"; skin
 descriptor contract at `SiteForge.aDNA/what/lib/iss/skins/README.md`.
 
+## Gotchas
+
+### Mustache-literal in data JSON text (F-3, P2 case-study)
+
+The generator is single-pass mustache: data JSON text containing the literal `{{` sequence gets partially interpreted as a placeholder and substituted away. This bites most often when authoring a gate ABOUT mustache templates (e.g. a phase-exit gate analyzing template syntax) or quoting generator code in `analysis` / `rationale` prose.
+
+**Workaround**: HTML-entity-escape the braces in the data JSON. Use `&#123;&#123;` for `{{` and `&#125;&#125;` for `}}`. The HTML render preserves the visible braces; the mustache pass sees entities, not literal braces.
+
+**Surfaces affected**: SITREP values, `composite_question`, `section.title` / `analysis` / `verdict`, `footer_text`, `recommendation.rationale` / `key_factors` / `risks` / `next_actions`, `swot` quadrants — anywhere prose appears in the data JSON.
+
+**Alternative**: if you need many literal braces, author the prose without them and add a separate `visual_ascii` block with the brace-bearing snippet — `visual_ascii` content goes through `html.escape()` only, no mustache pass.
+
 ## Round-trip discipline
 
 Sentinel handshake (AD-6):
@@ -714,9 +736,18 @@ Md5-invariant — writes target SiteForge local learning store only; canonical u
 
 Agent populates `created_at`; submit populates `completed_at`. Delta logged for decadal AAR 7th-axis ranker.
 
-## Forward references (P2.2-P2.4 deliverables this skill consumes)
+## References
 
-- `SiteForge.aDNA/what/lib/iss/runtime/{generator.py, gate_receiver.py, round_trip.js, state_manager.js}` (P2.3 + P2.4)
-- `SiteForge.aDNA/what/lib/iss/templates/*.html` (P2.4; 8 templates)
-- `SiteForge.aDNA/what/lib/iss/tokens/persona_*.css` (P2.4; 6 personas + neutral + base)
-- Operator-side pairings (PROTOTYPE; canonical: `RemoteControl.aDNA` M0.2/M0.3/M0.4 → P3 pillar): open + position window (`skill_open_iss.md`); auto-resume on submission (`skill_watch_iss.md`); receiver lifecycle start/stop/status/clean (`skill_manage_gate_receiver.md`) — all at `SiteForge.aDNA/how/skills/`
+**Substrate library** (SiteForge ISS, current at v0.3 / HEAD `903f461`):
+- `SiteForge.aDNA/what/lib/iss/runtime/{generator.py, gate_receiver.py, round_trip.js, state_manager.js}`
+- `SiteForge.aDNA/what/lib/iss/templates/*.html` (8 templates)
+- `SiteForge.aDNA/what/lib/iss/tokens/persona_*.css` (6 personas + neutral + base)
+- `SiteForge.aDNA/what/lib/iss/skins/<vault_id>/skin.yaml` (consumer-vault skin descriptors)
+- `SiteForge.aDNA/what/lib/iss/adaptation_guides/{forge_platform,framework_orgvault_orggraph,network_node_coordination}_guide.md` (8-category vault adaptation guidance — see "Vault adaptation" section above)
+
+**Operator-side pairings** (canonical aDNA skills; absorbed into `RemoteControl.aDNA` when its GUI pillar lands):
+- `aDNA.aDNA/how/skills/skill_open_iss.md` — open + position window (macOS osascript)
+- `aDNA.aDNA/how/skills/skill_watch_iss.md` — agent-side auto-resume watch pattern
+- `SiteForge.aDNA/how/skills/skill_manage_gate_receiver.md` — receiver lifecycle start/stop/status/clean (SiteForge-local until next canonical-lift)
+
+**Campaign provenance**: built at `campaign_siteforge_iss` ("Operation Loom") P2.1; promoted to canonical at P5.M1 (2026-05-26). Architecture spec: `SiteForge.aDNA/how/campaigns/campaign_siteforge_iss/missions/artifacts/architecture_spec_p1_2.md`.

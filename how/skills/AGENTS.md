@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-18
-updated: 2026-05-20
-last_edited_by: agent_stanley
+updated: 2026-05-26
+last_edited_by: agent_siteforge_native
 tags: [directory_index, skill]
 ---
 
@@ -70,6 +70,9 @@ Pattern: `skill_[name].md`
 Examples:
 - `skill_machine_setup.md` (agent)
 - `skill_create_deck.md` (agent)
+- `skill_create_iss.md` (agent) — author an Interaction Surface Site for an operator decision/input (canonical 2026-05-26 via `campaign_siteforge_iss` P5.M1)
+- `skill_open_iss.md` (process) — operator-side: open + position a generated ISS gate (macOS osascript)
+- `skill_watch_iss.md` (process) — agent-side: auto-resume on operator gate submission (in-session watch pattern)
 - `skill_customer_onboarding.md` (process)
 - `skill_incident_response.md` (process)
 - `skill_lattice_publish.md` (agent)
