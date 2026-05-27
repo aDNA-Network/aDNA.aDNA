@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import BaseLayout from './BaseLayout.astro';
 import SidebarNav from '../components/sections/SidebarNav.astro';
 import TOCPanel from '../components/sections/TOCPanel.astro';
@@ -14,9 +16,10 @@ interface Props {
   prev?: { label: string; href: string };
   next?: { label: string; href: string };
   jsonLD?: JsonLDValue;
+  heroImage?: { src: ImageMetadata; alt: string };
 }
 
-const { title, description, headings = [], prev, next, jsonLD } = Astro.props;
+const { title, description, headings = [], prev, next, jsonLD, heroImage } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} jsonLD={jsonLD}>
@@ -27,6 +30,16 @@ const { title, description, headings = [], prev, next, jsonLD } = Astro.props;
 
     <article class="doc-content prose">
       <Breadcrumb pageTitle={title} />
+      {heroImage && (
+        <Image
+          src={heroImage.src}
+          alt={heroImage.alt}
+          class="doc-hero"
+          widths={[640, 960, 1280, 1408]}
+          sizes="(min-width: 1280px) 880px, (min-width: 768px) calc(100vw - 14rem), 100vw"
+          loading="eager"
+        />
+      )}
       <h1>{title}</h1>
       <slot />
       {(prev || next) && <PrevNextNav prev={prev} next={next} />}
@@ -100,6 +113,17 @@ const { title, description, headings = [], prev, next, jsonLD } = Astro.props;
     padding: var(--space-8) var(--space-6);
     min-width: 0;
     overflow-x: hidden;
+  }
+
+  .doc-content :global(.doc-hero) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-6);
+    background: var(--color-bg-alt);
   }
 
   .doc-toc {

@@ -2,6 +2,7 @@
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
+import heroLearn from '../../assets/heroes/hero_learn.png';
 
 const sections = [
   {
@@ -37,6 +38,7 @@ const jsonLD = buildCollectionPageJsonLD({
   title="Learn aDNA"
   description="Learn the aDNA knowledge architecture through concepts, tutorials, and comparisons."
   jsonLD={jsonLD}
+  heroImage={{ src: heroLearn, alt: 'Stacked rounded paths motif representing aDNA learning progression' }}
 >
   <p>Start with the overview, explore concepts in depth, follow hands-on tutorials, or see how aDNA compares to systems you already know.</p>
   <CardGrid cards={sections} columns={2} />

@@ -1,0 +1,141 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026; inherits shape from cycle_102_d11_hero_variants.json. Image-gen log refs empty (cycle 104 is layout-wiring only; no Imagen calls).",
+  "cycle_id": "cycle_104_d11_hero_wire_learn_how",
+  "decadal": "D11",
+  "decadal_title": "Visual Identity v2 + Image Regen",
+  "cycle_number": 104,
+  "cycle_in_decadal": 4,
+  "slug": "hero_wire_learn_how",
+  "mission": "mission_adna_str_p5_m53_d11_visual_identity",
+  "session": "session_stanley_20260527T041321Z_v8_m53_s2",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-27T04:14:00Z",
+  "closed_at": "2026-05-27T04:22:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "step_1_capture_state": {
+    "target_surface": "site/src/layouts/DocumentationLayout.astro + site/src/pages/{learn,how}/index.astro (wire 2 of 4 hero PNGs produced at cycle 102)",
+    "method": "agentic discovery via Read tool + md5 fingerprint of pre-change files + grep for existing Astro <Image> + ImageMetadata precedent",
+    "pre_change_inventory": {
+      "hero_assets_present": [
+        "site/src/assets/heroes/hero_learn.png (882,656 bytes; 1408x792 PNG; md5 b12e31f06c3d92e3d0830c5063d00721)",
+        "site/src/assets/heroes/hero_how.png (712,226 bytes; 1408x792 PNG; md5 49e912ac7f4b7076aad72fa41a2704b4)",
+        "site/src/assets/heroes/hero_patterns.png (defer to cycle 105)",
+        "site/src/assets/heroes/hero_reference.png (defer to cycle 105)"
+      ],
+      "documentation_layout_md5_pre_change": "794147a01fd5499c336cdd4aab898fb9",
+      "documentation_layout_props": "{ title, description, headings?, prev?, next?, jsonLD? } — heroImage prop absent",
+      "section_index_pages_pre_change": [
+        "site/src/pages/learn/index.astro (44 lines; passes title + description + jsonLD; no hero)",
+        "site/src/pages/how/index.astro (39 lines; passes title + description + jsonLD; no hero)"
+      ],
+      "astro_image_usage_in_layouts": "absent — no astro:assets Image import anywhere in site/src/{layouts,components/sections}/*.astro pre-cycle-104",
+      "astro_version": "astro@^6.1.3"
+    },
+    "scope_decision": "Cycle 104 wires the 2 highest-priority section heroes (learn + how — highest-traffic entry surfaces per M5.0 visual inspection methodology) via a pure-additive optional Props extension on DocumentationLayout. Approach: Astro <Image> from astro:assets with responsive widths [640, 960, 1280, 1408] + sizes hint matching the 3-col grid breakpoints (mobile / tablet / desktop) + eager loading (above-fold). Heroes are rendered above <h1> inside .doc-content; aspect-ratio: 16/9 + object-fit: cover. Patterns + reference deferred to cycle 105 (same wiring pattern; no further layout changes)."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_design_critic", "reviewer_visual_designer", "reviewer_newcomer_stress_tester", "reviewer_accessibility_auditor"],
+    "method": "agent-simulated; persona files re-anchored at session entry. Q&A focus per cycle 104 mission scope = hero PLACEMENT/SIZING/RESPONSIVENESS/A11Y (assets already validated at cycle 102 step_6).",
+    "qa_protocol_focus": "Q1 Visual Style (band placement above h1) + Q2 Clarity (sizing + crop behavior at narrow viewports) + Q4 Bloat (load weight; eager vs lazy) + a11y dimension (alt text + role semantics + decorative-vs-informational classification)",
+    "design_question_at_cycle_entry": "Where should the hero band sit relative to Breadcrumb + h1? And: should it be eager-loaded (above-fold; LCP impact) or lazy (below-fold safety)?",
+    "persona_consensus": {
+      "design_critic": "Above h1, below breadcrumb. Breadcrumb gives location signal first (cognitive anchor); hero confirms section identity; h1 then carries the title weight. Inverting this (hero before breadcrumb) would confuse the user's vertical scan; tucking hero below h1 would weaken the recognition-from-OG-share affordance that cycle 102 designed for.",
+      "visual_designer": "16:9 aspect-ratio + object-fit:cover with border-radius matches the rest of the site's card visual vocabulary. Eager loading on index pages is correct — heroes are clearly above-fold and skipping lazy avoids the layout-shift penalty. Set background to color-bg-alt as a load-state placeholder so the band doesn't collapse before image decodes.",
+      "newcomer_stress_tester": "From an OG share to /learn, I want immediate recognition. The hero showing the same paths motif as the OG card I saw is the recognition signal. Eager loading is essential — if the hero pops in late, my first scan misses the confirmation.",
+      "accessibility_auditor": "Alt text is required even though the hero is largely decorative; some users will navigate via screen reader and benefit from a brief motif description. Avoid alt=\"\" (which would hide entirely). Use a 1-line description grounded in the motif (e.g., 'Stacked rounded paths motif representing aDNA learning progression') — informational-decorative hybrid. Loading=eager is acceptable here since heroes are above-fold."
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "visual_clarity": "N/A — pre-change has no hero rendered in layout (assets exist on disk but not wired)",
+      "explanation_quality": 2.5,
+      "cognitive_load": 3.5,
+      "findability": 3.5
+    },
+    "qa_synthesis": "4/4 personas converge on: band placement = below breadcrumb, above h1; aspect-ratio = 16/9 with object-fit:cover; loading=eager (above-fold); alt = informational-decorative hybrid (1-line motif description). No regen calls needed — cycle 102 already passed asset validation 4/4 at 4.0-4.5 on Visual_Clarity."
+  },
+
+  "step_3_generate_or_regen_images": {
+    "decision": "NO image generation — cycle 104 is layout-wiring only. Cycle 102 4/4 hero PNGs already pass persona Q&A at asset level (visual_clarity 4.5/explanation_quality 4.0/cognitive_load 4.0 aggregate); regen budget reserved for cycle 105 only if persona Q&A at cycle 105 surfaces a wiring-time concern.",
+    "image_gen_log_refs": [],
+    "cost_usd": 0.00,
+    "calls_made": 0
+  },
+
+  "step_4_implement": {
+    "files_modified": [
+      "site/src/layouts/DocumentationLayout.astro (Props: + heroImage?: { src: ImageMetadata; alt: string }; import: + { Image } from 'astro:assets', + type ImageMetadata; render: <Image src/alt/widths/sizes/loading=eager class=doc-hero/> conditional on heroImage; CSS: + .doc-content :global(.doc-hero) { display block; width 100%; aspect-ratio 16/9; object-fit cover; border-radius var(--radius-md); margin-bottom var(--space-6); background var(--color-bg-alt) })",
+      "site/src/pages/learn/index.astro (import heroLearn from ../../assets/heroes/hero_learn.png; pass heroImage={{ src: heroLearn, alt: 'Stacked rounded paths motif representing aDNA learning progression' }})",
+      "site/src/pages/how/index.astro (import heroHow from ../../assets/heroes/hero_how.png; pass heroImage={{ src: heroHow, alt: 'Workflow arrows motif representing aDNA operational processes' }})"
+    ],
+    "implementation_notes": "Pure-additive extension. Existing DocumentationLayout consumers (all other section pages + content pages) unaffected — heroImage is optional. Astro <Image> auto-generates 4 responsive webp variants per source (640/960/1280/1408 widths) at build time; original PNG stays as fallback. sizes hint computed against the 3-col grid: desktop = 880px (content column inside 1fr after var(--sidebar-width) and var(--toc-width)); tablet = 100vw - 14rem (sidebar visible, toc hidden); mobile = 100vw."
+  },
+
+  "step_5_recapture": {
+    "method": "Astro production build + image-pipeline log inspection",
+    "post_change_artifacts": [
+      "/_astro/hero_how.Cu0qiCjF_1zg4zG.webp (4 KB) + ZbxXlq (8 KB) + 28Ge95 (11 KB) + Zu6fOG (13 KB) — 4 responsive webp variants for hero_how (640/960/1280/1408w)",
+      "/_astro/hero_learn.r9PkPnf9_Z10AFax.webp (8 KB) + ZIrNdj (14 KB) + Z1UdEi2 (20 KB) + 1o2PLC (22 KB) — 4 responsive webp variants for hero_learn"
+    ],
+    "build_result": "152 pages built in 5.68s; 18 images optimized in 192ms (12 reused cache + 6 fresh for hero variants); 0 type errors; 0 a11y warnings"
+  },
+
+  "step_6_validate": {
+    "method": "Astro production build (npm run build) exits 0 + Astro type-check via @astrojs/check passes + persona post-change scoring on layout-integration quality",
+    "post_change_dimension_scores": {
+      "visual_clarity": 4.5,
+      "explanation_quality": 4.0,
+      "cognitive_load": 4.0,
+      "findability": 4.5
+    },
+    "persona_specific_post_change_notes": {
+      "design_critic": "Wiring matches the spec: hero band sits below breadcrumb + above h1, 16:9 + rounded corners, eager loaded. Acceptable visual rhythm. The 880px content-width crop on desktop slightly trims the leftmost/rightmost margin of the source — fine for cover-style heroes (no information loss). Score 4.5/5.0 Visual_Clarity.",
+      "visual_designer": "Border-radius matches the rest of the card vocabulary. background var(--color-bg-alt) avoids the empty-band flash during decode. Responsive sizes hint correctly avoids serving the 1408px variant to mobile (saves ~18 KB per hero per first-paint). Score 4.5/5.0.",
+      "newcomer_stress_tester": "From OG-share → /learn, the matching paths motif lands within the first viewport scan. Recognition signal works as designed. Score 4.0/5.0 Cognitive_Load.",
+      "accessibility_auditor": "Alt text is informational-decorative hybrid as discussed; screen readers will surface 1-line motif description. No WCAG violation (decorative imagery permits any alt; non-empty alt assists motif-context users). Score 4.5/5.0 Visual_Clarity."
+    },
+    "lift_avoid_verification": {
+      "m51_d11_lift_1_philosophy_before_feature_minimalism": "HONORED — wiring adds no marketing chrome (no overlay text on hero, no CTA buttons, no aspirational badges); the hero acts as a contextual signal layer, not a sales banner.",
+      "m51_d11_avoid_2_marketing_style_hero_imagery": "AVOIDED — both wired heroes (learn + how) are abstract geometric motifs (paths, arrows); no human figures, no aspirational photography, no product mockups."
+    },
+    "cycle_acceptance": "PASS — DocumentationLayout extended cleanly (additive only; existing consumers unaffected); 2/4 heroes wired (learn + how); build clean at 152 pages 5.68s; responsive image pipeline produces 4 webp variants per hero at /_astro/; persona post-change aggregate 4.0-4.5 across all 4 dimensions; LIFT-1 honored + AVOID-2 avoided."
+  },
+
+  "step_7_record_iii_result": {
+    "this_file": "what/measurement/iii_results/2026-06/cycle_104_d11_hero_wire_learn_how.json",
+    "image_gen_log_companion": "n/a — cycle 104 had 0 image-gen calls (layout-wiring only)",
+    "schema_conformance_adr_025_026": "Conforms; inherits cycle 102 shape with image_gen_log_refs[] empty (1st canonical instance of layout-wiring cycle JSON in v8 P5; cycles 105+106 inherit this no-image-gen shape)."
+  },
+
+  "lift_avoid_routing": {
+    "lift_carried_forward_to_cycle_105": [
+      "Pure-additive Props extension pattern is reusable for patterns + reference heroes (cycle 105) without further layout changes",
+      "responsive sizes hint '(min-width: 1280px) 880px, (min-width: 768px) calc(100vw - 14rem), 100vw' fits the 3-col grid exactly; reuse verbatim at cycle 105"
+    ],
+    "lift_carried_forward_to_cycle_106": [
+      "import-asset + pass-as-prop pattern can apply to icons-in-band wiring decision (deferred to cycle 106 Step-4 implement based on Q&A)",
+      "background: var(--color-bg-alt) load-placeholder discipline works for icons-in-band too"
+    ],
+    "avoid_carried_forward": [
+      "do NOT lazy-load above-fold heroes (LCP penalty + recognition-signal-from-OG-share weakens)",
+      "do NOT use alt='' on heroes (screen reader users lose motif context; decorative-but-informational hybrid is the right shape)"
+    ],
+    "skill_documentation_layout_props_additive_extension": "NEW SEED candidate 1/3 — pattern: extend a layout's Props with an optional render-block prop + conditional render + scoped global CSS. Reusable across other shared layouts (HomeLayout, MarketingLayout if/when authored). Promote at 3/3."
+  },
+
+  "links": {
+    "mission_spec": "[[mission_adna_str_p5_m53_d11_visual_identity]]",
+    "session_file": "[[session_stanley_20260527T041321Z_v8_m53_s2]]",
+    "prior_cycle_103": "[[cycle_103_d11_section_icons]]",
+    "asset_origin_cycle_102": "[[cycle_102_d11_hero_variants]]",
+    "decadal_theme_set_d11_row": "[[m50_decadal_theme_set#D11 — Visual Identity v2 + Image Regen]]",
+    "persona_bench_d11_allocation": "[[m50_persona_bench_expansion#§3 Per-Decadal Persona Allocation]]",
+    "visual_inspection_methodology": "[[m50_visual_inspection_methodology]]",
+    "m51_synthesis_d11_row": "[[m51_cross_target_synthesis#LIFT-1: Philosophy-before-feature minimalism]]",
+    "adr_025": "[[adr_025_iii_decadal_coordination]]",
+    "adr_026": "[[adr_026_ledger_observation_shared_primitive]]"
+  }
+}
