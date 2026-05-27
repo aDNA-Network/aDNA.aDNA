@@ -1,0 +1,133 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026. New cycle JSON sub-shape: doc-authoring cycle (distinct from cycle 104-106 layout-wiring + cycle 107-108 diagram-component-authoring).",
+  "cycle_id": "cycle_109_d11_visual_identity_guidelines",
+  "decadal": "D11",
+  "decadal_title": "Visual Identity v2 + Image Regen",
+  "cycle_number": 109,
+  "cycle_in_decadal": 9,
+  "slug": "visual_identity_guidelines",
+  "mission": "mission_adna_str_p5_m53_d11_visual_identity",
+  "session": "session_stanley_20260527T222636Z_v8_m53_s3",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-27T22:34:00Z",
+  "closed_at": "2026-05-27T22:38:55Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "step_1_capture_state": {
+    "target_surface": "site/src/content/reference/visual-identity-v2.mdx — new reference doc establishing the canonical visual identity guidelines crystallized at M5.3 D11",
+    "method": "agentic discovery via Read of tokens.css + branding.css + content.config.ts + reference collection inventory + decision about routing (private _meta/ vs public reference/ collection)",
+    "pre_change_inventory": {
+      "content_collections": "src/content/{docs,guides,reference,changelog}/ — 4 collections per content.config.ts",
+      "reference_collection_schema": "seoSchema (title max 70 + description max 160 + canonical + og_image) + ref_title + stability (stable|beta|experimental|deprecated default stable) + updated date + draft default false",
+      "existing_reference_docs": "8 entries — agent-first-guide, design-rationale, governance-model, migration-guide, quality-rubric, reading-guide, specification, tool-setup; visual-identity-v2 is a natural 9th",
+      "routing_decision": "PUBLIC reference/ — guidelines benefit external contributors AND internal agents; design-rationale precedent confirms reference is the right collection for explanatory-canonical material",
+      "no_existing_visual_identity_doc": "branding.css comment block has 5 lines of WCAG hex; tokens.css comments name token semantics but no consolidated guidelines doc exists yet"
+    },
+    "scope_decision": "Cycle 109 authors visual-identity-v2.mdx as the canonical guidelines reference at the PUBLIC reference/ collection (not private _meta/). 9 numbered sections: Color palette + Typography + Spacing + Image-prompt conventions + Icon vocabulary + Diagram component vocabulary + Dark mode parity + Accessibility minima + Change discipline + See also. Includes LIVE examples of TriadDiagram + ConvergenceFunnel as embedded MDX components (Standing Order #8 self-reference: the doc itself uses the components it documents)."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_visual_designer", "reviewer_ux_writer", "reviewer_anti_bloat_editor", "reviewer_newcomer_stress_tester"],
+    "method": "agent-simulated 5-question Q&A; focus per M5.0 §3 cycle 109 row = Explanation_Quality + Conciseness + Visual_Clarity for the doc itself",
+    "qa_protocol_focus": "Q1 Style (table-heavy reference shape vs prose) + Q2 Clarity (token name → use-site mapping completeness) + Q3 Hierarchy (9 sections; reading order) + Q4 Bloat (which sections can be lighter without losing load-bearing info?) + Q5 Comprehension (will a first-time contributor find what they need?)",
+    "design_question_at_cycle_entry": "Should the doc include LIVE diagram examples (rendering TriadDiagram + ConvergenceFunnel inline) or just describe them? Should the prompt skeleton for image generation be templated (copyable) or inline-prose?",
+    "persona_consensus": {
+      "visual_designer": "LIVE examples — embedding TriadDiagram + ConvergenceFunnel inline is doubly correct: (a) demonstrates the components in their natural reference context; (b) self-reference per Standing Order #8 (the visual-identity doc demonstrates the visual identity); (c) gives a visible diff-target if the components are later refined. Templated prompt skeleton is right — contributors should copy-paste-modify, not parse prose. Score 4.5/5.0.",
+      "ux_writer": "Section structure (Purpose → Color → Typography → Spacing → Image prompts → Icons → Diagrams → Dark mode → A11y → Change discipline → See also) is the right order for a contributor's mental model: 'what colors do I use', 'what fonts', 'what sizes', 'how do I generate an image', 'how do I add an icon', 'how do I add a diagram', then operational concerns (dark mode + a11y), then change protocol, then related links. Section 4 Image-prompt conventions delivers the most concentrated value per word (the prompt skeleton + post-generation pipeline + hard guardrails). Score 4.5/5.0 Explanation_Quality.",
+      "anti_bloat_editor": "Reference docs are inherently table-heavy; this one strikes the right balance — tables for token enumerations + prose for rules and rationale. Could the Color palette section be tighter? Probably not — every token row carries an actionable column (Use). Could the Typography scale table be compressed? No — the range column is the operative value. Section lengths feel calibrated. Score 4.5/5.0 Conciseness.",
+      "newcomer_stress_tester": "Section 4 'Image-prompt conventions' is the section I would have looked for first as a newcomer attempting to generate a new asset. It's positioned at the natural moment (mid-doc; after the contributor knows colors+typography+spacing). The prompt skeleton with `[PLACEHOLDERS]` is immediately copyable. Hard guardrails surface the AVOID anti-patterns explicitly. Score 4.5/5.0 Cognitive_Load."
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "visual_clarity": 3.0,
+      "explanation_quality": 3.0,
+      "conciseness": 3.5,
+      "cognitive_load": 3.5
+    },
+    "qa_synthesis": "4/4 personas converge on (a) LIVE diagram embedding + (b) templated prompt skeleton + (c) section structure as authored + (d) public reference collection routing. No image generation."
+  },
+
+  "step_3_generate_or_regen_images": {
+    "decision": "NO image generation — doc-authoring cycle; references existing assets but generates none.",
+    "image_gen_log_refs": [],
+    "cost_usd": 0.00,
+    "calls_made": 0
+  },
+
+  "step_4_implement": {
+    "files_modified": [
+      "site/src/content/reference/visual-identity-v2.mdx (NEW — 264 lines; 9 sections; LIVE TriadDiagram + ConvergenceFunnel embedded as section-6 examples; frontmatter: title (60 chars) + description (149 chars after schema-violation fix) + ref_title 'Visual Identity v2' + stability 'stable' + updated 2026-05-27; consumes design tokens by name throughout; cross-references concepts/triad + concepts/convergence + reference/design-rationale + reference/specification)"
+    ],
+    "implementation_notes": "Schema-violation caught on 1st build attempt: initial description was 169 chars (>160 limit); trimmed to 149 by removing 'Authored at M5.3 D11 cycle 109' trailing clause. Schema-validated frontmatter is part of the Astro Content collection contract — content.config.ts validates each new file against the seoSchema + reference-specific schema. MDX runtime error caught on 2nd build attempt: line 226 contained nested backtick-quoted JS-template-literal expression `aria-labelledby={`${titleId} ${descId}`}` inside inline-code, which MDX parsed as an actual `${titleId}` interpolation (titleId undefined in MDX scope). Fix: rewrite the line as plain prose without backtick-inside-backtick nesting. Build succeeds on 3rd attempt. **Lesson for future doc cycles**: avoid nested-backtick code samples in MDX prose; use fenced code blocks for any code containing curly-brace interpolation."
+  },
+
+  "step_5_recapture": {
+    "method": "Astro production build + dist HTML spot-check + size sanity",
+    "post_change_artifacts": [
+      "dist/reference/visual-identity-v2/index.html — 69 KB; 4 occurrences of triad-diagram + convergence-funnel CSS classes (2 TriadDiagram + 2 ConvergenceFunnel from the section-6 LIVE examples)",
+      "153 pages built (up from 152; +1 for the new reference doc)",
+      "Build time 5.07s; 0 type errors; 0 a11y warnings"
+    ],
+    "build_result": "153 pages built in 5.07s; 0 type errors; 0 a11y warnings; build completes cleanly"
+  },
+
+  "step_6_validate": {
+    "method": "Astro production build (npm run build) exits 0 + dist HTML spot-check (grep for triad-diagram + convergence-funnel class occurrences confirms LIVE examples rendered) + persona post-change scoring",
+    "post_change_dimension_scores": {
+      "visual_clarity": 4.5,
+      "explanation_quality": 4.5,
+      "conciseness": 4.5,
+      "cognitive_load": 4.5
+    },
+    "persona_specific_post_change_notes": {
+      "visual_designer": "LIVE diagrams in section 6 give the doc its own visual anchor; reading the section is itself a demonstration of the components it describes. Score 4.5/5.0.",
+      "ux_writer": "Every section delivers actionable guidance. The 9-section structure scans cleanly in the TOC. Cross-references at See also tie back to the conceptual companion docs. Score 4.5/5.0.",
+      "anti_bloat_editor": "Tables compress what would otherwise be 3-5x prose; the prompt skeleton uses code-fence economy of language; the change-discipline section is 3 numbered steps. Score 4.5/5.0.",
+      "newcomer_stress_tester": "First-time contributor scans → finds image-prompt section → copies skeleton → fills placeholders → has a usable prompt within 60 seconds. Cognitive_Load score: 4.5/5.0."
+    },
+    "lift_avoid_verification": {
+      "m51_d11_lift_1_philosophy_before_feature_minimalism": "HONORED — doc itself is minimalist (table-heavy, no marketing copy, no aspirational claims); each section is functional reference material.",
+      "m51_d11_avoid_2_marketing_style_hero_imagery": "AVOIDED — no images in the doc; only embedded geometric diagram components.",
+      "standing_order_8_self_reference": "HONORED — section 6 embeds the very components it documents (TriadDiagram + ConvergenceFunnel as LIVE examples); the doc demonstrates what it describes."
+    },
+    "cycle_acceptance": "PASS — visual-identity-v2.mdx LIVE at site/src/content/reference/ (264 lines; 9 sections); schema-validated frontmatter; MDX-render-clean; 153-page build clean at 5.07s; dist spot-check confirms 4 class occurrences of the embedded diagram components; persona post-change aggregate 4.5/5.0 across all 4 dimensions; LIFT-1 + Standing Order #8 honored; AVOID-2 avoided.",
+    "design_finding_for_cycle_110": "Cycle 110 D11 decadal AAR should reference visual-identity-v2.mdx as the consolidated tangible deliverable of the decadal (cycle 109 produced THE artifact that crystallizes the cycle 101-108 outputs); the AAR scorecard should evaluate the doc's coverage of all 10 cycles' learnings as one of its acceptance criteria."
+  },
+
+  "step_7_record_iii_result": {
+    "this_file": "what/measurement/iii_results/2026-06/cycle_109_d11_visual_identity_guidelines.json",
+    "image_gen_log_companion": "n/a — cycle 109 had 0 image-gen calls",
+    "schema_conformance_adr_025_026": "Conforms; 1st canonical instance of doc-authoring cycle JSON shape (distinct from cycle 104-106 layout-wiring + cycle 107-108 diagram-component-authoring; common ancestor: no-image-gen + single-binary-commit). M5.3 cycle JSON sub-shapes now: image-gen-asset (101+102+103); layout-wiring (104+105+106); diagram-component-authoring (107+108); doc-authoring (109); decadal-AAR + close-cascade (110, upcoming)."
+  },
+
+  "lift_avoid_routing": {
+    "lift_carried_forward_to_cycle_110": [
+      "Standing Order #8 self-reference: cycle 110 decadal AAR should explicitly identify visual-identity-v2.mdx as the consolidated tangible deliverable + the diagram library + the icon-set refinement + the hero-wiring as the 4 layered outputs of D11",
+      "Schema-validate-then-MDX-render-validate is a two-stage gate for new content/* files — fold into doc-authoring-cycle protocol going forward",
+      "LIVE-diagram-embedding pattern transfers to other reference docs that document UI primitives (e.g., a future component library reference)"
+    ],
+    "avoid_carried_forward": [
+      "Do NOT nest backtick-quoted JS template literals inside inline-code in MDX prose — MDX parses the inner `${var}` as an actual expression; use fenced code blocks for any code sample containing curly-brace JS interpolation",
+      "Do NOT exceed 160 chars in reference-collection descriptions (or 70 chars in titles) — schema validation is a fast-fail check at build time; better to author within bounds than fix after"
+    ],
+    "skill_doc_authoring_with_live_examples_new_seed_candidate": "NEW SEED candidate 1/3 — pattern: reference doc that documents UI primitives (icons, components, tokens) embeds LIVE renderings of those primitives in the relevant section; reader sees both the description and the artifact in context. Standing Order #8 self-reference adapter pattern.",
+    "skill_two_stage_content_validation_new_seed_candidate": "NEW SEED candidate 1/3 — pattern: new content/* files validate against (a) content.config.ts schema first (catches frontmatter violations fast); then (b) MDX runtime render (catches expression-interpolation issues). Both gates are needed; passing (a) does not imply (b).",
+    "skill_substrate_pure_separation_post_grad_hold": "post-graduation hold — cycle 109 had no separate substrate-pure commit (the doc IS the artifact; nothing to pre-separate)."
+  },
+
+  "links": {
+    "mission_spec": "[[mission_adna_str_p5_m53_d11_visual_identity]]",
+    "session_file": "[[session_stanley_20260527T222636Z_v8_m53_s3]]",
+    "prior_cycle_108": "[[cycle_108_d11_diagram_component_2]]",
+    "doc_authored": "[[visual-identity-v2]]",
+    "diagram_library_state_post_cycle_109": "site/src/components/diagrams/ contains TriadDiagram.astro + ConvergenceFunnel.astro (2 components); referenced from visual-identity-v2.mdx section 6",
+    "decadal_theme_set_d11_row": "[[m50_decadal_theme_set#D11 — Visual Identity v2 + Image Regen]]",
+    "persona_bench_d11_allocation": "[[m50_persona_bench_expansion#§3 Per-Decadal Persona Allocation]]",
+    "visual_inspection_methodology": "[[m50_visual_inspection_methodology]]",
+    "m51_synthesis_d11_row": "[[m51_cross_target_synthesis#LIFT-1: Philosophy-before-feature minimalism]]",
+    "adr_025": "[[adr_025_iii_decadal_coordination]]",
+    "adr_026": "[[adr_026_ledger_observation_shared_primitive]]"
+  }
+}
