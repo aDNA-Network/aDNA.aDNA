@@ -172,9 +172,9 @@ hard_dependency_satisfied: "M5.2 closed 2026-05-26T~20:30Z at session_stanley_20
 | 101 | OG cards regen (6 cards) | pending | S1 (this) | - | 6 | $0.24 (est) | cycle_101_d11_og_cards_regen.json | TBD |
 | 102 | Hero variants (4-6) | pending | S1 (this) | - | 4-6 | $0.16-0.24 (est) | cycle_102_d11_hero_variants.json | TBD |
 | 103 | Section icons (6) | pending | S1 (this) | - | 6 | $0.24 (est) | cycle_103_d11_section_icons.json | TBD |
-| 104 | Per-section hero refinement (1-2 sections) | pending | S2 | - | 2 | $0.08 (est) | cycle_104_d11_hero_refine_a.json | depends on 102 |
-| 105 | Per-section hero refinement (2 more sections) | pending | S2 | - | 2 | $0.08 (est) | cycle_105_d11_hero_refine_b.json | depends on 102 |
-| 106 | Section icon integration (nav + breadcrumbs + heroes) | pending | S2 | - | 0 | $0 | cycle_106_d11_icon_integration.json | depends on 103 |
+| 104 | Hero wiring (learn + how) | completed | S2 | 5d135f1 | 0 | $0 | cycle_104_d11_hero_wire_learn_how.json | DocumentationLayout heroImage prop extended; 4 webp variants per hero; build clean 152 pages |
+| 105 | Hero wiring (patterns + reference) | completed | S2 | 4b3ff67 | 0 | $0 | cycle_105_d11_hero_wire_patterns_reference.json | consumer-side prop pass; zero layout changes; 4/4 hero PNGs now wired |
+| 106 | Section icon integration + icon_how refinement | completed | S2 | d72f00c | 0 | $0 | cycle_106_d11_icon_integration.json | icon_how straight-shaft + chevron arrows refinement (cycle 103 finding discharged); 7 sidebar groups + 12 breadcrumb routes wired; Vite ?raw + currentColor |
 | 107 | Diagram component library skeleton + 1st component | pending | S2 or S3 | - | 0-2 | $0-0.08 (est) | cycle_107_d11_diagram_library_skeleton.json | implementation-heavy |
 | 108 | 2nd diagram component | pending | S3 | - | 0-1 | $0-0.04 (est) | cycle_108_d11_diagram_component_2.json | depends on 107 |
 | 109 | Visual identity guidelines v2 doc | pending | S3 | - | 0 | $0 | cycle_109_d11_visual_identity_guidelines.json | implementation-heavy |
@@ -187,9 +187,10 @@ hard_dependency_satisfied: "M5.2 closed 2026-05-26T~20:30Z at session_stanley_20
 |---|---|---|---|
 | M3.5.5 D7d (closed 2026-05-25) | $1.20 | $1.20 | 2.4% |
 | M5.3 S1 (cycles 101-103; estimated) | $0.64 | $1.84 | 3.7% |
-| M5.3 S2 (cycles 104-107; estimated) | $0.16-0.32 | $2.00-2.16 | 4.0-4.3% |
-| M5.3 S3 (cycles 108-110; estimated) | $0-0.12 | $2.00-2.28 | 4.0-4.6% |
-| **M5.3 total estimated** | **$0.80-1.20** | **$2.00-2.40** | **4.0-4.8%** |
+| M5.3 S1 (cycles 101-103; actual) | $0.52 | $1.72 | 3.4% |
+| M5.3 S2 (cycles 104-106; actual) | $0.00 | $1.72 | 3.4% |
+| M5.3 S3 (cycles 107-110; estimated) | $0-0.16 | $1.72-1.88 | 3.4-3.8% |
+| **M5.3 cumulative actual + estimated** | **$0.52-0.68** | **$1.72-1.88** | **3.4-3.8%** |
 
 Alarm at 50% of M5.3 cap ($1.00 spent within M5.3) → operator-notify before continuing. Alarm at 90% of v8 P5 cap ($45 cumulative) → halt all image-gen until operator confirms.
 
