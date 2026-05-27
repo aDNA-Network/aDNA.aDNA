@@ -1,0 +1,131 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026; inherits layout-wiring shape from cycle_104_d11_hero_wire_learn_how.json (1st canonical instance of no-image-gen cycle JSON).",
+  "cycle_id": "cycle_105_d11_hero_wire_patterns_reference",
+  "decadal": "D11",
+  "decadal_title": "Visual Identity v2 + Image Regen",
+  "cycle_number": 105,
+  "cycle_in_decadal": 5,
+  "slug": "hero_wire_patterns_reference",
+  "mission": "mission_adna_str_p5_m53_d11_visual_identity",
+  "session": "session_stanley_20260527T041321Z_v8_m53_s2",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-27T04:22:00Z",
+  "closed_at": "2026-05-27T04:26:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "step_1_capture_state": {
+    "target_surface": "site/src/pages/{patterns,reference}/index.astro (wire 2 of 4 hero PNGs produced at cycle 102; same Props extension consumed from cycle 104)",
+    "method": "agentic discovery via Read tool + md5 fingerprint of pre-change files",
+    "pre_change_inventory": {
+      "hero_assets_present": [
+        "site/src/assets/heroes/hero_patterns.png (880,648 bytes; 1408x792 PNG; md5 298afc388d141bdbb894a4f3db434a94)",
+        "site/src/assets/heroes/hero_reference.png (944,163 bytes; 1408x792 PNG; md5 566f1e32532634b364060fdd814931f9)"
+      ],
+      "documentation_layout_state": "heroImage prop extension LIVE at HEAD 5d135f1 (cycle 104); no further layout changes needed",
+      "section_index_pages_pre_change": [
+        "site/src/pages/patterns/index.astro (29 lines; passes title + description + jsonLD; reads patterns via getDocsBySection)",
+        "site/src/pages/reference/index.astro (46 lines; passes title + description + jsonLD; reads refs via getSortedReference + resourceCards literal)"
+      ],
+      "carry_forward_from_cycle_104": "DocumentationLayout Props now accepts heroImage?: { src: ImageMetadata; alt: string }; consumers pass via heroImage={{ src, alt }}"
+    },
+    "scope_decision": "Cycle 105 wires the remaining 2 of 4 hero PNGs (patterns + reference) into their section index pages. Pure consumer-side change — no layout modification; reuses the heroImage prop extension established at cycle 104. Same eager-loading + responsive widths + informational-decorative alt pattern."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_design_critic", "reviewer_visual_designer", "reviewer_newcomer_stress_tester", "reviewer_accessibility_auditor"],
+    "method": "agent-simulated; Q&A focus carry-forward from cycle 104 (placement/sizing/responsiveness/a11y validated; cycle 105 personas evaluate whether the patterns + reference heroes specifically benefit from the same wiring discipline).",
+    "qa_protocol_focus": "Q1 Visual Style (alt-text accuracy for hexagonal-tessellation + blueprint-grid motifs) + Q5 Explanation Quality (do these specific heroes earn their above-fold position, or do they crowd the dense card-grid content below?)",
+    "design_question_at_cycle_entry": "Reference + patterns pages have denser content than learn/how (collection-driven card grids with 8-15 cards each). Does the hero band add or subtract value when the user is already past the OG-share recognition phase and deep-linking into structured navigation?",
+    "persona_consensus": {
+      "design_critic": "Add. Even with dense cards below, the hero gives the page a visual identity that distinguishes /reference from /patterns at a glance — without it, all 6 section index pages would look interchangeable on first scan. The hero is the 'this is what this section is about' signal that no amount of card-grid affordance can substitute for.",
+      "visual_designer": "Add. hero_reference (blueprint grid) is the strongest hero in the set per cycle 102 step_6 — densest geometric activity, most narrative weight; deserves above-fold position. hero_patterns (hexagonal tessellation) carries the strongest motif-vocabulary match to its content type (tessellation literally is a 'pattern' visual). Both earn their position.",
+      "newcomer_stress_tester": "Add. From OG-share → /patterns, hero_patterns is the recognition signal. For deep-link entries (e.g., direct nav to /reference), the hero still serves a 'section identity at a glance' function. Cognitive_Load is reduced by the hero, not increased.",
+      "accessibility_auditor": "Add — provided alt text is informational-decorative hybrid (not empty). Inform alt='Hexagonal tessellation motif representing aDNA architectural patterns' + alt='Blueprint grid motif with dimensional callouts representing aDNA specification reference' per cycle 104 discipline."
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "visual_clarity": 3.0,
+      "explanation_quality": 2.5,
+      "cognitive_load": 3.0,
+      "findability": 3.5
+    },
+    "qa_synthesis": "4/4 personas converge on add-the-hero. Apply cycle 104 wiring discipline verbatim (import → pass heroImage prop → 1-line motif-grounded informational-decorative alt). No regens needed; cycle 102 already passed asset-level validation."
+  },
+
+  "step_3_generate_or_regen_images": {
+    "decision": "NO image generation — cycle 105 is layout-wiring only (same scope shape as cycle 104).",
+    "image_gen_log_refs": [],
+    "cost_usd": 0.00,
+    "calls_made": 0
+  },
+
+  "step_4_implement": {
+    "files_modified": [
+      "site/src/pages/patterns/index.astro (import heroPatterns from ../../assets/heroes/hero_patterns.png; pass heroImage={{ src: heroPatterns, alt: 'Hexagonal tessellation motif representing aDNA architectural patterns' }})",
+      "site/src/pages/reference/index.astro (import heroReference from ../../assets/heroes/hero_reference.png; pass heroImage={{ src: heroReference, alt: 'Blueprint grid motif with dimensional callouts representing aDNA specification reference' }})"
+    ],
+    "implementation_notes": "Cleanest possible cycle — 2 imports + 2 prop additions; zero further changes to layout, components, or styles. Reuses cycle 104 infrastructure verbatim. skill_documentation_layout_props_additive_extension advances 1/3 → 2/3 (cycle 104 1st instance + cycle 105 2nd instance with zero modification beyond consumer-side prop pass)."
+  },
+
+  "step_5_recapture": {
+    "method": "Astro production build + image-pipeline log inspection",
+    "post_change_artifacts": [
+      "/_astro/hero_patterns.BSeC2zsM_wqtmN.webp (7 KB) + 1FoKbw (15 KB) + Z28Rqmy (23 KB) + L4maD (26 KB) — 4 responsive webp variants",
+      "/_astro/hero_reference.BNvTxTVV_13VzXg.webp (8 KB) + 12tSQG (16 KB) + Z2hgn3l (23 KB) + 2sd40c (27 KB) — 4 responsive webp variants"
+    ],
+    "build_result": "152 pages built in 5.26s; 26 images optimized in 171ms (18 reused cache + 8 fresh for patterns + reference variants); 0 type errors; 0 a11y warnings"
+  },
+
+  "step_6_validate": {
+    "method": "Astro production build (npm run build) exits 0 + persona post-change scoring",
+    "post_change_dimension_scores": {
+      "visual_clarity": 4.5,
+      "explanation_quality": 4.0,
+      "cognitive_load": 4.0,
+      "findability": 4.5
+    },
+    "persona_specific_post_change_notes": {
+      "design_critic": "Visual rhythm consistent with cycle 104 wiring; all 4 section index pages (learn/how/patterns/reference) now have above-fold hero confirmation. Section-identity-at-a-glance achieved. Score 4.5/5.0 Visual_Clarity.",
+      "visual_designer": "hero_reference + hero_patterns produce 27 + 26 KB at the largest responsive variant (1408w) — smallest of the 4 heroes despite being the densest motifs (good webp compression on geometric line art). Score 4.5/5.0.",
+      "newcomer_stress_tester": "From OG-share → any of /learn, /how, /patterns, /reference, the hero band lands within first viewport scan with matching motif. Recognition discipline complete for 4 of 6 sections (community + use-cases deferred — out of S2 scope; future cycle if/when their hero assets are produced). Score 4.0/5.0 Cognitive_Load.",
+      "accessibility_auditor": "All 4 alt texts are informational-decorative hybrid 1-liners; screen readers will surface motif context without overdescribing. Score 4.5/5.0 Visual_Clarity."
+    },
+    "lift_avoid_verification": {
+      "m51_d11_lift_1_philosophy_before_feature_minimalism": "HONORED — pattern grid + spec blueprint are both architectural/technical motifs; no marketing chrome.",
+      "m51_d11_avoid_2_marketing_style_hero_imagery": "AVOIDED — no human figures, no aspirational compositions, no photographic stock-photo aesthetic."
+    },
+    "cycle_acceptance": "PASS — 2/4 remaining heroes wired (patterns + reference); build clean at 152 pages 5.26s; 4 of 4 cycle-102 hero PNGs now consumed; persona post-change aggregate identical to cycle 104 (4.0-4.5 across all 4 dimensions); LIFT-1 honored + AVOID-2 avoided."
+  },
+
+  "step_7_record_iii_result": {
+    "this_file": "what/measurement/iii_results/2026-06/cycle_105_d11_hero_wire_patterns_reference.json",
+    "image_gen_log_companion": "n/a — cycle 105 had 0 image-gen calls",
+    "schema_conformance_adr_025_026": "Conforms; inherits cycle 104 layout-wiring shape; cycles 102 (asset gen) + 104+105 (wiring) demonstrate the asset-then-wiring 2-step pattern for hero work."
+  },
+
+  "lift_avoid_routing": {
+    "lift_carried_forward_to_cycle_106": [
+      "Pure consumer-side prop-pass pattern (no further layout changes once Props extension lands) is reusable for icon-in-band wiring if cycle 106 surfaces that need",
+      "informational-decorative alt-text discipline (1-line motif description + 'representing aDNA X') transfers to icon alt-text vocabulary"
+    ],
+    "avoid_carried_forward": [
+      "Do NOT batch hero wiring across 4 sections in a single cycle — splitting at 2+2 across cycles 104+105 allowed cycle 104 to land + verify the layout-Props extension before cycle 105 consumed it. Same pattern recommended if/when community + use-cases heroes get authored (defer to future cycle)"
+    ],
+    "skill_documentation_layout_props_additive_extension_advance": "1/3 → 2/3 (cycle 104 1st canonical instance + cycle 105 2nd canonical instance with zero modification beyond consumer prop-pass; promotes to 3/3 at next reuse — could be icon-band, marketing layout if/when authored, or any future shared layout that grows an optional prop)"
+  },
+
+  "links": {
+    "mission_spec": "[[mission_adna_str_p5_m53_d11_visual_identity]]",
+    "session_file": "[[session_stanley_20260527T041321Z_v8_m53_s2]]",
+    "prior_cycle_104": "[[cycle_104_d11_hero_wire_learn_how]]",
+    "asset_origin_cycle_102": "[[cycle_102_d11_hero_variants]]",
+    "decadal_theme_set_d11_row": "[[m50_decadal_theme_set#D11 — Visual Identity v2 + Image Regen]]",
+    "persona_bench_d11_allocation": "[[m50_persona_bench_expansion#§3 Per-Decadal Persona Allocation]]",
+    "visual_inspection_methodology": "[[m50_visual_inspection_methodology]]",
+    "m51_synthesis_d11_row": "[[m51_cross_target_synthesis#LIFT-1: Philosophy-before-feature minimalism]]",
+    "adr_025": "[[adr_025_iii_decadal_coordination]]",
+    "adr_026": "[[adr_026_ledger_observation_shared_primitive]]"
+  }
+}

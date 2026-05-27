@@ -3,6 +3,7 @@ import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
 import { getSortedReference } from '../../utils/collections';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
+import heroReference from '../../assets/heroes/hero_reference.png';
 
 const refs = await getSortedReference();
 const cards = refs.map((doc) => ({
@@ -35,6 +36,7 @@ const jsonLD = buildCollectionPageJsonLD({
   title="Reference"
   description="aDNA specification documents, design rationale, governance model, glossary, and operational guides."
   jsonLD={jsonLD}
+  heroImage={{ src: heroReference, alt: 'Blueprint grid motif with dimensional callouts representing aDNA specification reference' }}
 >
   <p>Upstream specification documents for the aDNA standard. These are the normative references — when in doubt, the spec is authoritative.</p>
   <CardGrid cards={cards} columns={2} />
