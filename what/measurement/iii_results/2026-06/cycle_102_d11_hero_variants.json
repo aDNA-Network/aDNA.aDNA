@@ -1,0 +1,149 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026; inherits shape from cycle_101_d11_og_cards_regen.json (1st canonical instance).",
+  "cycle_id": "cycle_102_d11_hero_variants",
+  "decadal": "D11",
+  "decadal_title": "Visual Identity v2 + Image Regen",
+  "cycle_number": 102,
+  "cycle_in_decadal": 2,
+  "slug": "hero_variants",
+  "mission": "mission_adna_str_p5_m53_d11_visual_identity",
+  "session": "session_stanley_20260527T002719Z_v8_m53_s1",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-27T00:58:00Z",
+  "closed_at": "2026-05-27T01:08:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [
+    "what/measurement/iii_results/2026-06/cycle_102_d11_hero_variants.image_gen_log.json"
+  ],
+
+  "step_1_capture_state": {
+    "target_surface": "site/src/assets/heroes/ (NEW directory; 4 hero PNGs for /learn /how /patterns /reference section landing pages)",
+    "method": "agentic discovery of current section index pages + DocumentationLayout props",
+    "pre_change_inventory": {
+      "current_hero_assets_in_site": "site/src/assets/aDNABanner.png (home page only; 1288x512 pixel-art wordmark on metal plate) + site/src/assets/banner.jpg (legacy)",
+      "section_index_hero_state": "NONE — learn/how/patterns/reference/community index.astro pages have only <p> intro + CardGrid; no hero imagery",
+      "documentation_layout_hero_support": "absent — Props interface = {title, description, headings, prev, next, jsonLD}; heroImage prop not yet defined"
+    },
+    "scope_decision": "cycle 102 generates 4 hero ASSETS only (learn + how + patterns + reference; 4 highest-distinct sections); layout wiring (DocumentationLayout heroImage prop extension + per-section index.astro consumer) deferred to S2 cycle 104-106 per M5.0 §3 D11 per-cycle assignment table (cycle 5-6 = section icon integration; cycle 102 = asset generation only). Community + use-cases heroes deferred to cycle 104 (would have brought total to 6 per M5.0 spec)."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_design_critic", "reviewer_visual_designer", "reviewer_newcomer_stress_tester", "reviewer_accessibility_auditor"],
+    "method": "agent-simulated (Q&A focus per cycle 102 mission spec: Q1 Visual Style + Q5 Explanation Quality per M5.1 D11 LIFT-1 philosophy-before-feature gravity well)",
+    "qa_protocol_focus": "Q1 + Q5 emphasized per M5.3 mission spec cycle 102 scope (philosophy-before-feature minimalism is the central design tension; hero is the most visible carrier of that posture)",
+    "design_question_at_cycle_entry": "Should section hero match cycle-101 OG card aesthetic (consistency) or differentiate at landing-page-scale (variety)?",
+    "persona_consensus": {
+      "design_critic": "Match. Section hero + OG card form a brand system — the OG card is a 1200x630 preview of what the user sees on the section landing page. Mismatching would break recognition. Match motif vocabulary; widen to 16:9 hero band.",
+      "visual_designer": "Match. Consistency wins for a methodology project (vs. variety for a consumer product). Per-section motif (paths / hexagons / blueprint / workflow) carries across both surfaces without becoming repetitive because each section reads its own visual story.",
+      "newcomer_stress_tester": "Match. When I clicked through from an OG-preview share to the actual page, I want the visual to confirm I'm in the right place — recognition signal beats variety surprise.",
+      "accessibility_auditor": "Match. Consistency reduces cognitive load (Cognitive_Load dimension; one of the 4 NEW M5.0 secondary). Variety would require relearning visual vocabulary on each page entry."
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "visual_clarity": "N/A — pre-change has no hero asset at section pages",
+      "explanation_quality": 2.0,
+      "cognitive_load": 3.5,
+      "findability": 3.0
+    },
+    "qa_synthesis": "4/4 personas converge on match-cycle-101-motif-vocabulary. Cycle 102 generates 16:9 wide hero bands using the same per-section motif language as cycle 101 OG cards (learn=paths, how=workflow, patterns=hexagons, reference=blueprint). Restraint discipline carries forward: dark teal palette + single accent + abstract-geometric + no text + no human figures + no marketing-style."
+  },
+
+  "step_3_generate_images": {
+    "model": "imagen-4.0-ultra-generate-001",
+    "aspect_ratio_requested": "16:9",
+    "output_resolution_target": "1408x792",
+    "calls_total": 4,
+    "calls_first_pass": 4,
+    "calls_regen": 0,
+    "regen_reason": "N/A — cycle 102 prompts inherit the hex-code-stripped discipline from cycle 101 regen pass; first pass clean (no text bleed in any of 4 cards). Validates skill_imagen_prompt_text_stripping pattern at 2nd canonical instance (1/3 → 2/3).",
+    "cost_usd": 0.16,
+    "calls_succeeded": 4,
+    "calls_failed": 0,
+    "elapsed_total_sec": 88,
+    "wall_clock_sec_per_call_avg": 22.0,
+    "auth_method": "SS_GEMINI_API_KEY from macOS Keychain via /usr/bin/security (non-TTY-safe; same as cycle 101)",
+    "runner_artifact": "how/campaigns/campaign_adna_serious_tool_readiness/runners/m53_cycle_102_hero_variants.py",
+    "image_gen_log_path": "what/measurement/iii_results/2026-06/cycle_102_d11_hero_variants.image_gen_log.json",
+    "prompt_discipline": "Per-section motif sentence + shared restraint tail. Hero-specific adjustment vs OG cards: motif fills full width (no 'left half quiet' instruction); text overlay handled by Astro layout (not PIL) so no compositing step. Per-section motifs match cycle 101 vocabulary: layered geometric paths (learn); workflow arrows curving between rectangular nodes (how); tessellating hexagons (patterns); technical blueprint grid (reference).",
+    "approach_validated": "Pure Imagen Ultra at 16:9 native (no resize/crop needed since Imagen returns 1408x768 ~~ 1408x792 target); no PIL text compositing for heroes (text overlay = Astro <Picture> + sibling <h1>/<p> elements at layout level, not baked into image). Output: clean 4/4."
+  },
+
+  "step_4_implement": {
+    "method": "Runner script writes 4 PNGs to site/src/assets/heroes/{learn,how,patterns,reference}.png. No Astro layout changes this cycle (deferred to S2 cycle 104-106).",
+    "files_created": [
+      "site/src/assets/heroes/hero_learn.png",
+      "site/src/assets/heroes/hero_how.png",
+      "site/src/assets/heroes/hero_patterns.png",
+      "site/src/assets/heroes/hero_reference.png",
+      "how/campaigns/campaign_adna_serious_tool_readiness/runners/m53_cycle_102_hero_variants.py",
+      "what/measurement/iii_results/2026-06/cycle_102_d11_hero_variants.image_gen_log.json",
+      "what/measurement/iii_results/2026-06/cycle_102_d11_hero_variants.json"
+    ],
+    "astro_build_skipped": "Per AC #10 — cycle 102 is pure asset generation (no .astro template or .ts component changes); next Astro build will discover the new asset paths via standard Vite resolution when consumer pages import them. No build verification at this commit; verification deferred to cycle 106 (wiring cycle)."
+  },
+
+  "step_5_recapture": {
+    "method": "Visual Read tool review of all 4 generated hero PNGs at full resolution.",
+    "files_size_summary": {
+      "hero_learn": "861 KB",
+      "hero_how": "695 KB",
+      "hero_patterns": "860 KB",
+      "hero_reference": "922 KB",
+      "total_kb": 3338,
+      "avg_kb": 835,
+      "size_concern_note": "Per-hero ~835 KB; consumer-side <Picture> with avif/webp formats + responsive widths (per existing aDNABanner.png pattern in site/src/pages/index.astro) will compress these to ~150-250 KB final delivery. Acceptable trade-off."
+    }
+  },
+
+  "step_6_validate": {
+    "method": "Agent-simulated persona scoring on the 4 new hero assets (without yet seeing them rendered in layout context — pure asset-level scoring; layout-integration rescoring at cycle 106).",
+    "post_change_dimension_scores": {
+      "visual_clarity": 4.5,
+      "explanation_quality": 4.0,
+      "cognitive_load": 4.0,
+      "findability": "N/A — heroes not yet wired into layout; findability scoring at cycle 106 post-integration"
+    },
+    "persona_specific_post_change_notes": {
+      "design_critic": "All 4 heroes maintain the cycle-101 motif vocabulary cleanly. hero_reference (blueprint grid) is the strongest visual — densest geometric activity. hero_how (workflow arrows) is the most narrative — flows left-to-right which suits a documentation hero band. hero_learn + hero_patterns are clean but lighter-density (intentional restraint). Score 4.5/5.0 on Visual_Clarity.",
+      "visual_designer": "Per-section accent colors register cleanly even at wide aspect — cyan/teal-green/amber-gold/deep-teal each distinct. Tone discipline preserved across all 4 (no off-palette colors, no aspirational glow effects). Score 4.5/5.0.",
+      "newcomer_stress_tester": "If I clicked through from an OG share to the section page (e.g., OG-learn → /learn), seeing hero_learn with matching motif at the top would confirm I'm in the right place. Recognition signal works. Score 4.0/5.0 on Cognitive_Load.",
+      "accessibility_auditor": "Hero assets themselves are non-textual (good — text overlay handled by Astro layout at WCAG-tested CSS); contrast within image is fine (geometric forms ~3-5:1 vs background, but these are decorative not informational so WCAG doesn't apply). Score 4.5/5.0 on Visual_Clarity."
+    },
+    "lift_avoid_verification": {
+      "m51_d11_lift_1_philosophy_before_feature_minimalism": "HONORED — all 4 heroes are abstract geometric compositions; no aspirational imagery; no product mockups; no human-figure scenes.",
+      "m51_d11_avoid_2_marketing_style_hero_imagery": "AVOIDED — no photographic stock-photo aesthetic; no over-saturated colors; no aspirational compositions. Heroes read as architectural/technical, not promotional. Especially hero_how (workflow arrows) and hero_reference (blueprint) — these read as documentation infrastructure, not marketing decoration."
+    },
+    "cycle_acceptance": "PASS — 4/4 heroes clean (no text bleed; restraint posture honored; per-section motif vocabulary matches cycle 101 OG cards); budget within cap ($0.16 of $1.50 S1 cap, cumulative S1 = $0.52). Wiring deferred to S2 cycle 104-106 per scope decision."
+  },
+
+  "step_7_record_iii_result": {
+    "this_file": "what/measurement/iii_results/2026-06/cycle_102_d11_hero_variants.json",
+    "image_gen_log_companion": "what/measurement/iii_results/2026-06/cycle_102_d11_hero_variants.image_gen_log.json",
+    "schema_conformance_adr_025_026": "Conforms; inherits shape from cycle 101 JSON (1st canonical instance). Cycles 103-110 continue this shape."
+  },
+
+  "lift_avoid_routing": {
+    "lift_carried_forward_to_cycle_103": [
+      "per-section motif vocabulary works across aspect ratios (16:9 hero vs 1200x630 OG card vs square icon); cycle 103 section icons can follow same motif language at icon scale"
+    ],
+    "avoid_carried_forward": [
+      "no text in image (universal Imagen discipline; carries through cycle 103+ unless icon explicitly needs glyph-text per accessibility)",
+      "no hex codes in prompts (validated at 2nd canonical instance; skill_imagen_prompt_text_stripping advances 1/3 → 2/3)"
+    ],
+    "skill_imagen_background_plus_pil_text_overlay_advance": "1/3 → still 1/3 (cycle 102 did NOT use the two-pass pattern — heroes are pure Imagen without text overlay; this pattern applies specifically to text-bearing surfaces like OG cards, not text-free heroes)",
+    "skill_imagen_prompt_text_stripping_advance": "1/3 → 2/3 (cycle 101 1st instance with regen-after-failure; cycle 102 2nd instance with clean-first-pass via inherited discipline)"
+  },
+
+  "links": {
+    "mission_spec": "[[mission_adna_str_p5_m53_d11_visual_identity]]",
+    "session_file": "[[session_stanley_20260527T002719Z_v8_m53_s1]]",
+    "prior_cycle_101": "[[cycle_101_d11_og_cards_regen]]",
+    "decadal_theme_set_d11_row": "[[m50_decadal_theme_set#D11 — Visual Identity v2 + Image Regen]]",
+    "persona_bench_d11_allocation": "[[m50_persona_bench_expansion#§3 Per-Decadal Persona Allocation]]",
+    "visual_inspection_methodology": "[[m50_visual_inspection_methodology]]",
+    "m51_synthesis_d11_row": "[[m51_cross_target_synthesis#LIFT-1: Philosophy-before-feature minimalism]]",
+    "adr_025": "[[adr_025_iii_decadal_coordination]]",
+    "adr_026": "[[adr_026_ledger_observation_shared_primitive]]"
+  }
+}

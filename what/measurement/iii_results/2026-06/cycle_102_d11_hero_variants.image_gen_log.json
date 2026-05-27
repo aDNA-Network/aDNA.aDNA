@@ -1,0 +1,55 @@
+{
+  "cycle_id": "cycle_102_d11_hero_variants",
+  "mission": "mission_adna_str_p5_m53_d11_visual_identity",
+  "session": "session_stanley_20260527T002719Z_v8_m53_s1",
+  "decadal": "D11",
+  "step": "step_3_generate_images",
+  "model": "imagen-4.0-ultra-generate-001",
+  "aspect_ratio": "16:9",
+  "output_target": "1408x792",
+  "started_at": "2026-05-27T01:01:56.253488+00:00",
+  "calls": [
+    {
+      "slug": "learn",
+      "accent": "cyan",
+      "out_path": "site/src/assets/heroes/hero_learn.png",
+      "prompt_chars": 810,
+      "status": "success",
+      "bytes": 882656,
+      "elapsed_sec": 31.62,
+      "cost_usd": 0.04
+    },
+    {
+      "slug": "how",
+      "accent": "teal-green",
+      "out_path": "site/src/assets/heroes/hero_how.png",
+      "prompt_chars": 802,
+      "status": "success",
+      "bytes": 712226,
+      "elapsed_sec": 21.76,
+      "cost_usd": 0.04
+    },
+    {
+      "slug": "patterns",
+      "accent": "warm amber-gold",
+      "out_path": "site/src/assets/heroes/hero_patterns.png",
+      "prompt_chars": 777,
+      "status": "success",
+      "bytes": 880648,
+      "elapsed_sec": 15.52,
+      "cost_usd": 0.04
+    },
+    {
+      "slug": "reference",
+      "accent": "deep teal",
+      "out_path": "site/src/assets/heroes/hero_reference.png",
+      "prompt_chars": 786,
+      "status": "success",
+      "bytes": 944163,
+      "elapsed_sec": 19.67,
+      "cost_usd": 0.04
+    }
+  ],
+  "total_cost_usd": 0.16,
+  "finished_at": "2026-05-27T01:03:24.834947+00:00"
+}
