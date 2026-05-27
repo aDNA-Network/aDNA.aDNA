@@ -1,0 +1,166 @@
+---
+/**
+ * ConvergenceFunnel — Vault → Campaign → Mission → Objective convergence visualization.
+ *
+ * Canonical aDNA execution-hierarchy illustration: each stage narrows the working
+ * set, visualized as a top-down funnel with progressively narrower bands. Defaults
+ * to the standard 4-stage convergence (Vault → Campaign → Mission → Objective);
+ * stages are operator-overridable for adaptation (e.g., Campaign → Mission →
+ * Objective → Session per the execution hierarchy, or domain-specific funnels).
+ *
+ * Pattern lineage (cycle 107 carry-forward):
+ *   - Inline SVG directly in template (NOT ?raw import — stages are dynamic).
+ *   - currentColor inheritance for theme/dark-mode parity.
+ *   - Additive Props extension — all props optional with canonical defaults.
+ *   - Semantic role=img + aria-labelledby (<title> + <desc>); this IS the explanation.
+ *   - Stroke 1.6 matches site icon + TriadDiagram vocabulary.
+ *   - Directional flow — unlike the symmetric triad, convergence IS asymmetric
+ *     (top → bottom decomposition); subtle arrowheads on the connectors.
+ */
+
+import type { HTMLAttributes } from 'astro/types';
+
+export interface ConvergenceStage {
+  label: string;
+  detail?: string;
+}
+
+interface Props extends HTMLAttributes<'figure'> {
+  stages?: [ConvergenceStage, ConvergenceStage, ConvergenceStage, ConvergenceStage];
+  caption?: string;
+  ariaLabel?: string;
+}
+
+const {
+  stages = [
+    { label: 'Vault',     detail: 'Total knowledge' },
+    { label: 'Campaign',  detail: 'Hundreds of files → tens' },
+    { label: 'Mission',   detail: 'Tens of files → handful' },
+    { label: 'Objective', detail: 'The exact files needed' },
+  ],
+  caption,
+  ariaLabel,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const titleId = `convergence-title-${Math.random().toString(36).slice(2, 9)}`;
+const descId  = `convergence-desc-${Math.random().toString(36).slice(2, 9)}`;
+
+const computedLabel =
+  ariaLabel ??
+  `Convergence funnel: ${stages.map((s) => s.label).join(' to ')}.`;
+
+// Geometry: 4 trapezoids stacked vertically, each narrower than the one above.
+// viewBox 320x320; horizontal center 160; widths shrink 280 → 220 → 160 → 100;
+// each band 56 tall; 8-px arrow gap between bands.
+const bands = stages.map((stage, i) => {
+  const topWidth    = 280 - i * 60;
+  const bottomWidth = 280 - (i + 1) * 60;
+  const yTop        = 16 + i * 72;
+  const yBottom     = yTop + 56;
+  const topLeft     = 160 - topWidth / 2;
+  const topRight    = 160 + topWidth / 2;
+  const botLeft     = 160 - bottomWidth / 2;
+  const botRight    = 160 + bottomWidth / 2;
+  return {
+    stage,
+    pathD: `M ${topLeft} ${yTop} L ${topRight} ${yTop} L ${botRight} ${yBottom} L ${botLeft} ${yBottom} Z`,
+    labelY: yTop + 28,
+    detailY: yTop + 44,
+    arrowFromY: yBottom,
+    arrowToY: yBottom + 8,
+    showArrow: i < stages.length - 1,
+  };
+});
+---
+
+<figure
+  class:list={['convergence-funnel', className]}
+  {...rest}
+>
+  <svg
+    viewBox="0 0 320 320"
+    role="img"
+    aria-labelledby={`${titleId} ${descId}`}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id={titleId}>{computedLabel}</title>
+    <desc id={descId}>
+      Four stages arranged in a top-down funnel that narrows at each step.
+      Top to bottom: {stages.map((s) => s.label).join(', then ')}.
+      Each stage narrows the set of files in play.
+    </desc>
+
+    {/* Arrowhead marker definition — small chevron matching the site icon vocabulary */}
+    <defs>
+      <marker
+        id={`convergence-arrow-${titleId}`}
+        viewBox="0 0 8 8"
+        refX="4"
+        refY="4"
+        markerWidth="6"
+        markerHeight="6"
+        orient="auto-start-reverse"
+      >
+        <path d="M 1 1 L 5 4 L 1 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+      </marker>
+    </defs>
+
+    {/* Trapezoidal bands */}
+    <g class="funnel-bands" stroke="currentColor" stroke-width="1.6" fill="var(--color-bg)">
+      {bands.map((b) => <path d={b.pathD} />)}
+    </g>
+
+    {/* Connecting arrows between bands */}
+    <g class="funnel-arrows" stroke="currentColor" stroke-width="1.6" fill="none">
+      {bands.filter((b) => b.showArrow).map((b) => (
+        <line
+          x1="160"
+          y1={b.arrowFromY}
+          x2="160"
+          y2={b.arrowToY}
+          marker-end={`url(#convergence-arrow-${titleId})`}
+        />
+      ))}
+    </g>
+
+    {/* Stage labels */}
+    <g class="funnel-labels" fill="currentColor" text-anchor="middle" font-family="var(--font-display, system-ui)" font-weight="600">
+      {bands.map((b) => <text x="160" y={b.labelY} font-size="14">{b.stage.label}</text>)}
+    </g>
+
+    {/* Stage details (sub-line) */}
+    {bands.some((b) => b.stage.detail) && (
+      <g class="funnel-details" fill="currentColor" text-anchor="middle" font-family="var(--font-body, system-ui)" font-size="10" opacity="0.75">
+        {bands.map((b) => b.stage.detail && <text x="160" y={b.detailY}>{b.stage.detail}</text>)}
+      </g>
+    )}
+  </svg>
+
+  {caption && <figcaption class="convergence-caption">{caption}</figcaption>}
+</figure>
+
+<style>
+  .convergence-funnel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    margin: var(--space-6) 0;
+    color: var(--color-text-muted);
+  }
+
+  .convergence-funnel svg {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .convergence-caption {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-align: center;
+    max-width: 36rem;
+  }
+</style>

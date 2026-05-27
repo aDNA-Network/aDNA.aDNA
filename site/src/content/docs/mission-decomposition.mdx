@@ -6,6 +6,8 @@ section: "patterns"
 order: 7
 ---
 
+import ConvergenceFunnel from '../../components/diagrams/ConvergenceFunnel.astro';
+
 ## Problem
 
 Some jobs — writing thirteen concept files, or building a whole documentation site — are too big for any one agent session to finish in one go. Without a plan that breaks them into smaller pieces, agents either bite off more than their context window can hold or wander without direction and duplicate each other's work.
@@ -18,6 +20,9 @@ Decompose large tasks into **missions**, each containing **objectives** that fit
 Campaign → Mission → Objective
 (strategic)  (tactical)  (session-sized)
 ```
+
+<ConvergenceFunnel caption="Decomposition narrows the working set at each step — vault to objective." />
+
 
 **Mission design rules**:
 

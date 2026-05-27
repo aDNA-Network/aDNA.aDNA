@@ -1,0 +1,139 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026; inherits diagram-component-authoring shape from cycle 107.",
+  "cycle_id": "cycle_108_d11_diagram_component_2",
+  "decadal": "D11",
+  "decadal_title": "Visual Identity v2 + Image Regen",
+  "cycle_number": 108,
+  "cycle_in_decadal": 8,
+  "slug": "diagram_component_2_convergence_funnel",
+  "mission": "mission_adna_str_p5_m53_d11_visual_identity",
+  "session": "session_stanley_20260527T222636Z_v8_m53_s3",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-27T22:30:00Z",
+  "closed_at": "2026-05-27T22:33:48Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "step_1_capture_state": {
+    "target_surface": "site/src/components/diagrams/ConvergenceFunnel.astro (2nd component in the diagram library) + additive consumer-side wiring into one MDX content surface",
+    "method": "agentic discovery + cycle 107 carry-forward consumption (design_finding_for_cycle_108 recommended ConvergenceFunnel)",
+    "pre_change_inventory": {
+      "diagram_library_state_post_cycle_107": "site/src/components/diagrams/ contains TriadDiagram.astro only (1 component)",
+      "convergence_model_canonical_4_stages_per_clauded_md": "Vault → Campaign → Mission → Objective (per CLAUDE.md Convergence Model table at root + Project SO #5/8/9 referencing context_adna_core_ooda_cascade.md + context_prompt_engineering_convergence_model.md)",
+      "existing_convergence_consumer": "site/src/content/docs/convergence.mdx uses MermaidDiagram LR graph (Campaign → Mission → Objective → Session); do NOT swap per cycle 107 AVOID",
+      "natural_consumer_options": [
+        "(a) site/src/content/docs/mission-decomposition.mdx — patterns page; ASCII hierarchy code block; no existing diagram; natural fit for ConvergenceFunnel as additive companion",
+        "(b) site/src/content/docs/lattice-campaign-execution.mdx — workflow lattice example page; secondary fit",
+        "(c) NEW concepts page — out of scope cycle 108"
+      ],
+      "decision": "Option (a) — mission-decomposition.mdx; additive after the ASCII hierarchy code block; zero existing-content disturbance."
+    },
+    "scope_decision": "Cycle 108 (a) authors ConvergenceFunnel.astro inheriting TriadDiagram patterns (inline SVG + currentColor + role=img + aria-labelledby + optional Props + figure/figcaption); (b) introduces directional arrows between bands (per cycle 107 design_finding — convergence IS asymmetric flow, distinct from triad symmetric relationships); (c) wires component into mission-decomposition.mdx as additive consumption proof."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_design_critic", "reviewer_visual_designer", "reviewer_diagram_reviewer", "reviewer_accessibility_auditor", "reviewer_newcomer_stress_tester"],
+    "method": "agent-simulated; 5-question Q&A; focus shift from triad (symmetric triangle) to funnel (asymmetric top-down narrowing)",
+    "qa_protocol_focus": "Q1 Visual Style (trapezoidal bands vs nested rectangles vs proper funnel/cone) + Q2 Clarity (narrowing visual cue is the central affordance) + Q3 Hierarchy (top-to-bottom reading order) + Q4 Bloat (4 bands + arrows + labels + details = is this too dense?) + Q5 Accessibility (semantic role=img + aria-labelledby with sequential description)",
+    "design_question_at_cycle_entry": "Should the funnel narrow continuously (single smooth cone) or step-wise (4 discrete trapezoidal bands)? Should the arrows be visually prominent (dominate the connectors) or subtle (small chevron marker)?",
+    "persona_consensus": {
+      "design_critic": "Step-wise trapezoidal bands are RIGHT — discrete stages match the discrete execution hierarchy levels (Vault, Campaign, Mission, Objective are NOT a continuum; each is a distinct unit). Single-cone would imply continuous narrowing which contradicts the convergence model's discrete steps. Subtle chevron arrows (marker, not full-stroke) keep the arrows from visually competing with the band content — readers see narrowing-shape first, arrows second. Score 4.5/5.0 Visual_Clarity.",
+      "visual_designer": "1.6 stroke-width consistency with cycle 103+106+107 icon+TriadDiagram vocabulary maintained. The marker-end approach for arrows is clean (no manual polyline math; SVG handles orientation). var(--color-bg) fill on bands prevents text/edge overlap. 4 bands at 56px tall + 8px arrow gap = 248px total content + 16px margin = 264px utilized of 320px viewBox = generous breathing room. Score 4.5/5.0.",
+      "diagram_reviewer": "Two-line label-detail structure per band works well (Vault / Total knowledge; Campaign / Hundreds of files → tens; etc.) — primary label is bold display-font; detail is body-font opacity 0.75. Operator can omit detail field per stage (the {bands.some(b => b.stage.detail) && ...} guard hides the detail group if NO stages have details; per-stage conditional handles partial fills). Operator can override stages prop to swap labels (e.g., Campaign → Mission → Objective → Session for the execution-hierarchy framing). Score 4.5/5.0 Explanation_Quality.",
+      "accessibility_auditor": "<title> + <desc> provide sequential description ('Four stages arranged in a top-down funnel that narrows at each step. Top to bottom: ...'). Screen reader reads the narrowing-funnel concept + the stage sequence + the per-stage detail (since SVG <text> elements are read in document order). Score 4.5/5.0 Visual_Clarity.",
+      "newcomer_stress_tester": "Visual narrowing (top wide → bottom narrow) IS the affordance — even without reading labels, a newcomer immediately grasps 'this is a narrowing process'. Combined with the stage labels + details ('Vault / Total knowledge' → 'Objective / The exact files needed'), the funnel teaches the convergence model in <5 seconds. Cognitive_Load score: 4.5/5.0."
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "visual_clarity": 3.5,
+      "explanation_quality": 3.5,
+      "cognitive_load": 3.5,
+      "findability": 3.5
+    },
+    "qa_synthesis": "5/5 personas converge on (a) trapezoidal step-wise bands + (b) subtle chevron marker arrows + (c) two-line label-detail per band + (d) operator-overridable stages + (e) role=img with aria-labelledby + sequential <desc>. No image generation needed."
+  },
+
+  "step_3_generate_or_regen_images": {
+    "decision": "NO image generation — ConvergenceFunnel is build-time-rendered inline SVG with geometric primitives + text + marker arrows; zero Imagen calls.",
+    "image_gen_log_refs": [],
+    "cost_usd": 0.00,
+    "calls_made": 0
+  },
+
+  "step_4_implement": {
+    "files_modified": [
+      "site/src/components/diagrams/ConvergenceFunnel.astro (NEW — 156 lines; viewBox 320x320; 4 trapezoidal bands stacked vertically with widths 280→220→160→100→40 progression; 3 connecting arrows with marker-end chevron; SVG-native text labels + details; Props extend HTMLAttributes<'figure'> with optional stages tuple [4] + caption + ariaLabel; titleId+descId random suffixes prevent collision; tokens.css design tokens consumed via var(--font-display) + var(--font-body) + var(--color-bg) + var(--color-text-muted) + var(--space-*); 23 lines of scoped <style>)",
+      "site/src/content/docs/mission-decomposition.mdx (+ 1 import line + 1 component tag with caption; ZERO existing content disturbed)"
+    ],
+    "implementation_notes": "ConvergenceFunnel inherits TriadDiagram's overall scaffolding (figure wrapper + svg with viewBox + role=img + aria-labelledby + <title>+<desc> + currentColor + design-token consumption + figcaption). Key differentiators from TriadDiagram: (1) directional arrows via SVG marker-end pattern (chevron path 'M 1 1 L 5 4 L 1 7'); (2) computed bands via stages.map → topWidth/bottomWidth/yTop/yBottom math (each band 56 tall; widths shrink by 60 per stage); (3) two-line label + detail per band (label at yTop+28; detail at yTop+44; detail opacity 0.75); (4) marker ID includes titleId suffix to prevent collision across multiple-instances-per-page (different titleId → different marker ID; SVG marker uses are scoped by ID-string match). The marker pattern is reusable for future cycle-109+ diagram components that need directional arrows (e.g., OODA loop)."
+  },
+
+  "step_5_recapture": {
+    "method": "Astro production build + dist HTML spot-check via grep + class-name presence verification",
+    "post_change_artifacts": [
+      "dist/patterns/mission-decomposition/index.html — 3 occurrences of convergence-funnel + funnel-bands + funnel-arrows CSS classes; <title>Convergence funnel: Vault to Campaign to Mission to Objective.</title> rendered; <figcaption> caption rendered as 'Decomposition narrows the working set at each step — vault to objective.'",
+      "152 pages built in 5.17s (1 new MDX content edit + 1 NEW component file; component is build-time rendered so no runtime JS added)",
+      "26 images cached (no new image processing)"
+    ],
+    "build_result": "152 pages built in 5.17s; 0 type errors; 0 a11y warnings; build completes cleanly"
+  },
+
+  "step_6_validate": {
+    "method": "Astro production build (npm run build) exits 0 + dist HTML spot-check (grep for convergence-funnel + funnel-bands + funnel-arrows CSS classes + <title> render text + <figcaption> render text) + persona post-change scoring",
+    "post_change_dimension_scores": {
+      "visual_clarity": 4.5,
+      "explanation_quality": 4.5,
+      "cognitive_load": 4.5,
+      "findability": 4.0
+    },
+    "persona_specific_post_change_notes": {
+      "design_critic": "Funnel narrows visibly through the 4 bands; arrow markers point downward; reading order top-to-bottom matches the convergence model framing. Score 4.5/5.0.",
+      "visual_designer": "Component sits naturally after the ASCII hierarchy code block in mission-decomposition.mdx — text → ASCII → visual diagram is a 3-layer reinforcement of the same concept. Score 4.5/5.0.",
+      "diagram_reviewer": "Default stages (Vault / Campaign / Mission / Objective) match the project CLAUDE.md Convergence Model table verbatim. Self-reference through the vault's own governance doc is the canonical aDNA discipline (Standing Order #8). Score 4.5/5.0.",
+      "accessibility_auditor": "Marker IDs are uniquified per instance (convergence-arrow-{titleId-random-suffix}) — multiple-instances-per-page render without ID collision. <title> + <desc> provide complete screen-reader content. Score 4.5/5.0.",
+      "newcomer_stress_tester": "First-time reader of mission-decomposition.mdx now gets 3 reinforcements: prose explanation → ASCII hierarchy → visual funnel. Each frames the same idea in a different cognitive register. Score 4.5/5.0."
+    },
+    "lift_avoid_verification": {
+      "m51_d11_lift_1_philosophy_before_feature_minimalism": "HONORED — diagram is geometric primitives + restraint (4 trapezoids + 3 arrows + 8 text labels). No marketing imagery; no aspirational decoration; pure structural illustration.",
+      "m51_d11_avoid_2_marketing_style_hero_imagery": "AVOIDED — abstract geometric line-art only; no figurative imagery; no photography; no gradient flourishes.",
+      "cycle_107_directional_vs_symmetric_distinction": "HONORED — ConvergenceFunnel uses directional arrows (asymmetric flow); TriadDiagram used undirected lines (symmetric relationship); the distinction is now established in the diagram library vocabulary."
+    },
+    "cycle_acceptance": "PASS — ConvergenceFunnel component LIVE at site/src/components/diagrams/ConvergenceFunnel.astro (156 lines); 2nd component in the diagram library; mission-decomposition.mdx wires the component as additive proof-of-consumption (1 import + 1 component tag with caption; zero existing-content disturbance); build clean at 152 pages 5.17s; dist HTML spot-check confirms 3-class occurrences + title + caption; persona post-change aggregate 4.4/5.0 across 4 primary dimensions; LIFT-1 honored + AVOID-2 avoided; directional-vs-symmetric distinction established."
+  },
+
+  "step_7_record_iii_result": {
+    "this_file": "what/measurement/iii_results/2026-06/cycle_108_d11_diagram_component_2.json",
+    "image_gen_log_companion": "n/a — cycle 108 had 0 image-gen calls",
+    "schema_conformance_adr_025_026": "Conforms; 2nd canonical instance of diagram-component-authoring cycle JSON shape (cycle 107 1st + cycle 108 2nd); shape stabilized."
+  },
+
+  "lift_avoid_routing": {
+    "lift_carried_forward_to_cycle_109": [
+      "Diagram library now has 2 reusable components (TriadDiagram + ConvergenceFunnel); cycle 109 visual identity guidelines v2 doc should reference both as canonical patterns + document the diagram-component-authoring shape: viewBox math + currentColor + role=img + aria-labelledby + figure/figcaption + Props with safe defaults",
+      "Marker arrow pattern via marker-end + per-instance ID-suffix transfers to any future directional diagram (OODA loop arrows, lattice graph edges with direction)",
+      "Two-line label+detail per band/node pattern transfers to other multi-stage diagrams"
+    ],
+    "avoid_carried_forward": [
+      "Do NOT cascade-rebuild after EVERY MDX content edit during cycle work — Astro caches all 26 images; rebuild only at cycle Step-5 (validate) to catch errors at a single checkpoint",
+      "Do NOT add interactive JS to diagram components without operator gate — build-time-rendered SVG is the M5.3 D11 baseline; runtime JS adds bundle cost + a11y complexity; defer to D17 if interactive diagrams are operator-requested"
+    ],
+    "skill_documentation_layout_props_additive_extension": "3/3 GRADUATED at cycle 107 + reinforces here (4th canonical instance; post-graduation 4/3 at 1.3x margin)",
+    "skill_inline_svg_raw_import_currentColor_inheritance": "2/3 → 3/3 GRADUATES — cycle 106 ?raw form + cycle 107 inline-template form + cycle 108 inline-template form with arrows = 3 canonical instances; pattern family graduates; upstream-promotion candidate for v8 P6.",
+    "skill_aDNA_concept_diagram_component_pattern": "1/3 → 2/3 — TriadDiagram + ConvergenceFunnel both fit the pattern; promote at 3/3 next reuse (cycle 109 doc that establishes the pattern formally OR a future 3rd component)."
+  },
+
+  "links": {
+    "mission_spec": "[[mission_adna_str_p5_m53_d11_visual_identity]]",
+    "session_file": "[[session_stanley_20260527T222636Z_v8_m53_s3]]",
+    "prior_cycle_107": "[[cycle_107_d11_diagram_library_skeleton]]",
+    "cycle_107_design_finding_consumed": "[[cycle_107_d11_diagram_library_skeleton#step_6_validate.design_finding_for_cycle_108]]",
+    "decadal_theme_set_d11_row": "[[m50_decadal_theme_set#D11 — Visual Identity v2 + Image Regen]]",
+    "persona_bench_d11_allocation": "[[m50_persona_bench_expansion#§3 Per-Decadal Persona Allocation]]",
+    "visual_inspection_methodology": "[[m50_visual_inspection_methodology]]",
+    "m51_synthesis_d11_row": "[[m51_cross_target_synthesis#LIFT-1: Philosophy-before-feature minimalism]]",
+    "convergence_model_root_claude_md": "[[CLAUDE.md#Convergence Model]]",
+    "adr_025": "[[adr_025_iii_decadal_coordination]]",
+    "adr_026": "[[adr_026_ledger_observation_shared_primitive]]"
+  }
+}
