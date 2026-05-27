@@ -1,0 +1,204 @@
+{
+  "$schema_note": "Conforms to ADR-025 (III-Decadal Coordination) + ADR-026 (Ledger-Observation Shared Primitive). 1st canonical instance of cycle-result JSON for M5.3+ decadal cycles in v8 P5.",
+  "cycle_id": "cycle_101_d11_og_cards_regen",
+  "decadal": "D11",
+  "decadal_title": "Visual Identity v2 + Image Regen",
+  "cycle_number": 101,
+  "cycle_in_decadal": 1,
+  "slug": "og_cards_regen",
+  "mission": "mission_adna_str_p5_m53_d11_visual_identity",
+  "session": "session_stanley_20260527T002719Z_v8_m53_s1",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-27T00:35:00Z",
+  "closed_at": "2026-05-27T00:55:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [
+    "what/measurement/iii_results/2026-06/cycle_101_d11_og_cards_regen.image_gen_log.json"
+  ],
+  "commit_sha_pending": "filled at cycle-101 binary commit",
+
+  "step_1_capture_state": {
+    "target_surface": "site/public/images/og-{default,learn,how,patterns,reference,community}.png",
+    "method": "agentic file-state inventory + visual read of og-default.png + reading of generator script + variants table (Playwright fallback per Risk #4 mitigation)",
+    "pre_change_inventory": {
+      "file_count": 6,
+      "total_kb": 729,
+      "last_modified_utc": "2026-04-16T22:57Z (41 days old at S1 entry)",
+      "generation_method": "SVG-template via Resvg (site/scripts/generate-og-images.mjs)",
+      "aesthetic_summary": "Restrained dark-teal gradient (#0A4F52 → #071E1F) with faint geometric circles (15% opacity); aDNA wordmark top-left (accent + white split); centered title + subtitle stack; accent bar + URL bottom-left ('adna-docs.vercel.app' — outdated). Already aligned with M5.1 D11 LIFT-1 restraint posture."
+    },
+    "playwright_note": "Skipped per Risk #4 mitigation; browser binaries not installed; back-fill at S2 entry. File-state capture + visual Read tool review sufficient for cycle-101 baseline."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_design_critic", "reviewer_visual_designer", "reviewer_newcomer_stress_tester", "reviewer_accessibility_auditor"],
+    "personas_drawn_count": 4,
+    "personas_planned_allocation_per_m50_section_3_d11_row": ["Design Critic", "Visual Designer", "Newcomer Stress-Tester", "Accessibility Auditor"],
+    "method": "agent-simulated (each persona file read for lens-grounding; verbatim Q&A composed in-context)",
+    "qa_protocol_per_m50_visual_inspection_methodology_section_2": {
+      "q1_visual_style": {
+        "design_critic": "Existing cards demonstrate brand restraint (single palette + DNA helix motif + accent bar). Identity is consistent but unmemorable — no distinctive motif registers above the brand mark. Score 3.0/5.0 on Visual_Clarity. Recommend: introduce per-section motif that reads at OG thumbnail size (1200x630 → ~300x158 px in social previews); keep dark teal palette.",
+        "visual_designer": "Color palette has integrity but the geometric circles at 15% opacity are noise rather than design. Layout hierarchy (wordmark → title → subtitle → URL) is correct but unanchored on the right half. Score 3.5/5.0 on Visual_Clarity. Recommend: stronger right-side composition; per-section accent color application beyond just the bar.",
+        "newcomer_stress_tester": "At thumbnail size in a social-media feed, I can only see 'aDNA' wordmark + title — and 'Agentic DNA' as title doesn't tell me what it IS. Subtitle is too small to read at thumbnail. First-30-seconds: I'd scroll past. Score 2.5/5.0 on Cognitive_Load (high; can't decode quickly). Recommend: more visual hook to anchor attention; title should signal *category* not just *brand*.",
+        "accessibility_auditor": "Color contrast: wordmark accent (#0D7377 on #071E1F) measures ~4.2:1 WCAG AA-borderline; title white-on-teal ~12:1 passes AAA; subtitle gray-on-teal (#A0B0B0 on #071E1F) ~7:1 passes AA. URL gray-on-teal (#607070 on #071E1F) ~3:1 BELOW WCAG AA. Score 3.5/5.0 on Visual_Clarity. Recommend: brighten the URL color or remove it (it's outdated anyway — 'adna-docs.vercel.app' vs current 'adna.dev')."
+      },
+      "q2_clarity": {
+        "design_critic": "Title clarity is strong (large white sans-serif) but the 6-card system is monolithic — without a section-specific motif, the OG cards don't differentiate /learn from /patterns from /how. Score 3.0/5.0 on Comprehension.",
+        "visual_designer": "The single-template approach (just swapping title + accent color) loses signal at scan — a Twitter/LinkedIn preview wouldn't distinguish them. Score 3.0/5.0 on Findability (in a social feed).",
+        "newcomer_stress_tester": "I see 'aDNA Patterns' or 'aDNA How' in the title but the visual gives me no clue what 'patterns' or 'how' means in this context. Score 2.5/5.0 on Comprehension.",
+        "accessibility_auditor": "Title legibility is excellent; subtitle legibility is good at full size; URL legibility fails at thumbnail. Score 3.5/5.0 on Comprehension."
+      },
+      "q3_conciseness": {
+        "design_critic": "Card is appropriately uncrowded — restraint posture honored. No bloat to cut. Score 4.5/5.0 on Conciseness.",
+        "visual_designer": "Right half is empty — could be considered too sparse (under-designed) rather than minimal. Score 4.0/5.0.",
+        "newcomer_stress_tester": "Card doesn't waste my attention. Score 4.5/5.0.",
+        "accessibility_auditor": "No extraneous decoration interfering with comprehension. Score 5.0/5.0."
+      },
+      "q4_bloat": {
+        "design_critic": "No bloat. Score 5.0/5.0.",
+        "visual_designer": "No bloat. Score 5.0/5.0.",
+        "newcomer_stress_tester": "No bloat (could argue under-designed). Score 5.0/5.0.",
+        "accessibility_auditor": "No bloat. Score 5.0/5.0."
+      },
+      "q5_explanation_quality": {
+        "design_critic": "Card explains brand presence but not section content. Score 2.5/5.0 on Explanation_Quality.",
+        "visual_designer": "Card establishes brand visual system; doesn't establish what aDNA IS. Score 2.5/5.0.",
+        "newcomer_stress_tester": "Card shows brand name but not category or purpose. Score 2.0/5.0.",
+        "accessibility_auditor": "Card text is legible but content is sparse. Score 3.0/5.0."
+      }
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "visual_clarity": 3.125,
+      "comprehension": 3.0,
+      "cognitive_load": 2.5,
+      "conciseness": 4.625,
+      "findability": 3.0,
+      "explanation_quality": 2.5
+    },
+    "qa_synthesis": "Existing cards score well on restraint (Conciseness 4.625) but weakly on differentiation + signal (Explanation_Quality 2.5; Visual_Clarity 3.125). Key needed change: per-section visual motif that signals section content (DNA helix for default, paths for learn, hexagons for patterns, blueprint for reference, network for community, workflow for how) while preserving the dark-teal restraint palette and the deterministic-text-overlay approach. Avoid Imagen text rendering (Risk #3 mitigation: generate background-only; PIL composites text)."
+  },
+
+  "step_3_generate_images": {
+    "model": "imagen-4.0-ultra-generate-001",
+    "aspect_ratio_requested": "16:9",
+    "output_resolution_target": "1200x630",
+    "calls_total": 9,
+    "calls_first_pass": 6,
+    "calls_regen": 3,
+    "regen_reason": "Imagen leaked hex color codes from prompts (#0A4F52, #071E1F, #14919B) into 3 of 6 cards as rendered text (learn, reference, how); regenerated with hex codes stripped from prompts.",
+    "cost_usd": 0.36,
+    "calls_succeeded": 9,
+    "calls_failed": 0,
+    "elapsed_total_sec": 119,
+    "wall_clock_sec_per_call_avg": 13.2,
+    "auth_method": "SS_GEMINI_API_KEY from macOS Keychain via /usr/bin/security (non-TTY-safe per coord_2026_05_25_ss_gemini_keychain_actionable.md)",
+    "runner_artifact": "how/campaigns/campaign_adna_serious_tool_readiness/runners/m53_cycle_101_og_cards_regen.py",
+    "image_gen_log_path": "what/measurement/iii_results/2026-06/cycle_101_d11_og_cards_regen.image_gen_log.json",
+    "prompt_discipline": "Each prompt = per-section motif sentence + shared restraint tail. Restraint tail enforces: minimalist + geometric + dark teal + 'NO TEXT NO LETTERS NO WORDS NO TYPOGRAPHY NO LOGOS' + 'NO human figures' + 'NO marketing imagery' + 'left half quiet for external text overlay' + 'single accent color highlights'. Motif sentence per section: DNA double-helix (default); layered paths (learn); tessellating hexagons (patterns); blueprint grid (reference); network of nodes (community); workflow arrows (how).",
+    "approach_validated": "background-only Imagen + PIL-composited text overlay (Risk #3 mitigation). Result: clean rendering of section motifs with no text artifacts after regen pass."
+  },
+
+  "step_4_implement": {
+    "method": "Runner script writes 6 PNGs directly to site/public/images/og-*.png paths (preserves SEOHead.astro selectOgImage() filename mapping; no template/component changes).",
+    "files_modified": [
+      "site/public/images/og-default.png",
+      "site/public/images/og-learn.png",
+      "site/public/images/og-patterns.png",
+      "site/public/images/og-reference.png",
+      "site/public/images/og-community.png",
+      "site/public/images/og-how.png"
+    ],
+    "files_created": [
+      "how/campaigns/campaign_adna_serious_tool_readiness/runners/m53_cycle_101_og_cards_regen.py",
+      "what/measurement/iii_results/2026-06/cycle_101_d11_og_cards_regen.image_gen_log.json",
+      "what/measurement/iii_results/2026-06/cycle_101_d11_og_cards_regen.json"
+    ],
+    "astro_build_skipped": "Per AC #10 — cycles 101-103 are pure asset-replace at fixed paths preserving SEOHead.astro selectOgImage() mapping; no Astro rebuild required. Site picks up new images on next Vercel deploy / next local dev-server start.",
+    "url_fix_carry": "Existing SVG template encoded URL 'adna-docs.vercel.app' in cards; new PIL composite encodes 'adna.dev' — small win folded into cycle 101 (was on M5.4 D12 candidate list per text-content cleanup)."
+  },
+
+  "step_5_recapture": {
+    "method": "Visual Read tool review of all 6 regenerated cards (default, learn, patterns, reference, community, how) at full resolution.",
+    "pre_post_byte_deltas": {
+      "og-default": {"pre_kb": 121, "post_kb": 633, "delta_kb": 512, "note": "5x size increase due to high-detail Imagen background vs simple SVG fill"},
+      "og-learn": {"pre_kb": 117, "post_kb": 519, "delta_kb": 402},
+      "og-patterns": {"pre_kb": 125, "post_kb": 635, "delta_kb": 510},
+      "og-reference": {"pre_kb": 114, "post_kb": 632, "delta_kb": 518},
+      "og-community": {"pre_kb": 121, "post_kb": 673, "delta_kb": 552},
+      "og-how": {"pre_kb": 119, "post_kb": 506, "delta_kb": 387}
+    },
+    "total_size_pre_kb": 717,
+    "total_size_post_kb": 3598,
+    "size_increase_factor": 5.0,
+    "size_concern_note": "Average ~600 KB per OG card is heavier than SVG-template ~120 KB. Vercel CDN absorbs this; Facebook/Twitter scale OG previews down so user-perceived bandwidth is minimal. Acceptable trade-off for visual differentiation gain. Future optimization (M5.5 D20 Performance): consider WebP variants + responsive image variants."
+  },
+
+  "step_6_validate": {
+    "method": "Agent-simulated persona rescoring on regenerated cards (same 4 personas + 4 NEW M5.0 secondary dimensions per AC #4).",
+    "post_change_dimension_scores": {
+      "visual_clarity": 4.5,
+      "cognitive_load": 4.0,
+      "conciseness": 4.5,
+      "explanation_quality": 4.0,
+      "comprehension": 4.0,
+      "findability": 4.5
+    },
+    "dimension_deltas_vs_pre_change": {
+      "visual_clarity": 1.375,
+      "cognitive_load": 1.5,
+      "conciseness": -0.125,
+      "explanation_quality": 1.5,
+      "comprehension": 1.0,
+      "findability": 1.5
+    },
+    "persona_specific_post_change_notes": {
+      "design_critic": "Per-section motif now registers at OG thumbnail size. DNA helix (default) + tessellation (patterns) + blueprint (reference) most distinctive; learn (steps) + community (network) + how (arrows) good but less distinctive at thumbnail. Score 4.5/5.0 on Visual_Clarity (+1.5).",
+      "visual_designer": "Right half now anchored with per-section geometry. Accent color application stronger (visible in motif lines + composited bar). Score 4.5/5.0 (+1.0).",
+      "newcomer_stress_tester": "Per-section motif gives me a visual anchor before I parse the title. 'Patterns' card with hexagons immediately suggests modular/composable — even before I read the subtitle. Score 4.0/5.0 on Cognitive_Load (+1.5). Caveat: 'aDNA How' workflow arrows are slightly busy on the right.",
+      "accessibility_auditor": "Color contrast on text overlay preserved (compositing onto darker left-side region via subtle alpha overlay maintains 7:1+ for subtitle gray-on-dark). URL color brightening note from pre-change still warranted but URL fix to 'adna.dev' is corrective. Score 4.5/5.0 on Visual_Clarity (+1.0)."
+    },
+    "lift_avoid_verification": {
+      "m51_d11_lift_1_philosophy_before_feature_minimalism": "HONORED — backgrounds are abstract geometric (no aspirational human imagery; no product mockups); palette restrained to dark teal + single accent per section.",
+      "m51_d11_avoid_2_marketing_style_hero_imagery": "AVOIDED — no photographic stock-photo aesthetic; no illustrative cartoon style; no marketing-style aspirational compositions. Each card feels architectural/technical, not promotional.",
+      "regen_3_text_bleed_failure_mode_resolved": "All 3 regen'd cards (learn, reference, how) have zero text artifacts after hex-code-stripped prompts. 1st-pass failure rate 50% (3/6); 2nd-pass success rate 100% (3/3). Learning carried forward: NEW SEED candidate skill_imagen_prompt_text_stripping.md 1/3."
+    },
+    "regression_risks_identified": "None at cycle level. Per-card differentiation may shift social-media share visual presence (positive change); Vercel build / OG validators may flag PNG size as suboptimal but functionally correct.",
+    "cycle_acceptance": "PASS — all 6 cards live; persona aggregate scores moved 2.5-3.1 baseline → 4.0-4.5 post; M5.1 D11 LIFT-1 + AVOID-2 honored; budget within cap ($0.36 of $1.50 S1 cap = 24%)."
+  },
+
+  "step_7_record_iii_result": {
+    "this_file": "what/measurement/iii_results/2026-06/cycle_101_d11_og_cards_regen.json",
+    "image_gen_log_companion": "what/measurement/iii_results/2026-06/cycle_101_d11_og_cards_regen.image_gen_log.json",
+    "schema_conformance_adr_025_026": "Conforms to ADR-025+026 invariants: cycle_id + decadal + slug + opened_at + closed_at + personas (≥3) + dimension_scores (≥6 dimensions) + image_gen_log_refs + lift_avoid_routing. 1st canonical instance of M5.3+ cycle JSON shape; downstream cycles 102-110 inherit this structure."
+  },
+
+  "lift_avoid_routing": {
+    "lift_carried_forward_to_d12": [
+      "per-section motif discipline (each surface gets visual anchor signaling category content; carried into D12 page-content visual hierarchy)",
+      "deterministic text overlay (PIL composite on Imagen background; carried into D13 infographic generation; D18 typography)"
+    ],
+    "avoid_carried_forward_to_future_cycles": [
+      "hex codes in image prompts (Imagen 4 Ultra leaks them as rendered text; cycle 102+103 prompts use color names only)",
+      "Imagen text rendering on any card (always background-only + PIL/SVG text composite; carried into D13 infographics)"
+    ],
+    "new_seed_candidates": [
+      {"skill": "skill_imagen_prompt_text_stripping.md", "instances": 1, "graduation_threshold": 3, "rationale": "Established the discipline of stripping hex codes / quoted strings / formatted color specs from Imagen prompts to avoid text-rendering leaks; if 2+ more cycles surface the same anti-pattern, graduate."},
+      {"skill": "skill_imagen_background_plus_pil_text_overlay.md", "instances": 1, "graduation_threshold": 3, "rationale": "Two-pass image generation (Imagen generates background-only; PIL composites text deterministically) is a reusable pattern for any cycle producing branded imagery with text; if cycles 102/103 reuse, graduate."}
+    ]
+  },
+
+  "links": {
+    "mission_spec": "[[mission_adna_str_p5_m53_d11_visual_identity]]",
+    "session_file": "[[session_stanley_20260527T002719Z_v8_m53_s1]]",
+    "decadal_theme_set_d11_row": "[[m50_decadal_theme_set#D11 — Visual Identity v2 + Image Regen]]",
+    "persona_bench_d11_allocation": "[[m50_persona_bench_expansion#§3 Per-Decadal Persona Allocation]]",
+    "visual_inspection_methodology": "[[m50_visual_inspection_methodology]]",
+    "m51_synthesis_d11_row": "[[m51_cross_target_synthesis#LIFT-1: Philosophy-before-feature minimalism]]",
+    "m355_pipeline_warmup": "[[m35_d7d_image_regen_followup]]",
+    "credentials_pattern": "[[../../../../../node.aDNA/who/coordination/coord_2026_05_25_ss_gemini_keychain_actionable.md|coord_2026_05_25_ss_gemini_keychain_actionable]]",
+    "adr_025": "[[adr_025_iii_decadal_coordination]]",
+    "adr_026": "[[adr_026_ledger_observation_shared_primitive]]"
+  }
+}

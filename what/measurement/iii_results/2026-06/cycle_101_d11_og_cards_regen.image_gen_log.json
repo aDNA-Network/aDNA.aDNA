@@ -1,0 +1,82 @@
+{
+  "cycle_id": "cycle_101_d11_og_cards_regen",
+  "mission": "mission_adna_str_p5_m53_d11_visual_identity",
+  "session": "session_stanley_20260527T002719Z_v8_m53_s1",
+  "decadal": "D11",
+  "step": "step_3_generate_images",
+  "model": "imagen-4.0-ultra-generate-001",
+  "aspect_ratio": "16:9",
+  "output_target": "1200x630",
+  "started_at": "2026-05-27T00:49:02.331121+00:00",
+  "calls": [
+    {
+      "slug": "default",
+      "title": "Agentic DNA",
+      "accent": "#0D7377",
+      "out_path": "site/public/images/og-default.png",
+      "prompt_chars": 1062,
+      "status": "success",
+      "bytes": 648295,
+      "elapsed_sec": 38.15,
+      "cost_usd": 0.04
+    },
+    {
+      "slug": "learn",
+      "title": "Learn aDNA",
+      "accent": "#14919B",
+      "out_path": "site/public/images/og-learn.png",
+      "prompt_chars": 1053,
+      "status": "success",
+      "bytes": 567459,
+      "elapsed_sec": 37.53,
+      "cost_usd": 0.04
+    },
+    {
+      "slug": "patterns",
+      "title": "aDNA Patterns",
+      "accent": "#D4A017",
+      "out_path": "site/public/images/og-patterns.png",
+      "prompt_chars": 1064,
+      "status": "success",
+      "bytes": 650765,
+      "elapsed_sec": 31.99,
+      "cost_usd": 0.04
+    },
+    {
+      "slug": "reference",
+      "title": "aDNA Reference",
+      "accent": "#0A4F52",
+      "out_path": "site/public/images/og-reference.png",
+      "prompt_chars": 1045,
+      "status": "success",
+      "bytes": 621132,
+      "elapsed_sec": 27.84,
+      "cost_usd": 0.04
+    },
+    {
+      "slug": "community",
+      "title": "aDNA Community",
+      "accent": "#14919B",
+      "out_path": "site/public/images/og-community.png",
+      "prompt_chars": 1106,
+      "status": "success",
+      "bytes": 689902,
+      "elapsed_sec": 37.65,
+      "cost_usd": 0.04
+    },
+    {
+      "slug": "how",
+      "title": "aDNA How",
+      "accent": "#2A9D8F",
+      "out_path": "site/public/images/og-how.png",
+      "prompt_chars": 1071,
+      "status": "success",
+      "bytes": 511029,
+      "elapsed_sec": 36.02,
+      "cost_usd": 0.04
+    }
+  ],
+  "total_cost_usd": 0.24000000000000002,
+  "dry_run": false,
+  "finished_at": "2026-05-27T00:52:31.542934+00:00"
+}
