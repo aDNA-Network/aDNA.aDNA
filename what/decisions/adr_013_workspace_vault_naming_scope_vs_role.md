@@ -3,14 +3,17 @@ type: decision
 adr_id: adr_013
 scope: standard
 title: "Scope-vs-role naming as design test for `.aDNA/` vault rename proposals"
-status: accepted
+status: amended
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-05-26
 last_edited_by: agent_stanley
 ratified_session: session_stanley_20260513_030626_mlwx03_s1
 ratification_phase: campaign_lattice_workspace_ux M-LWX-03 close
 mission: mission_lwx_03_integration_test_and_closeout
 campaign: campaign_lattice_workspace_ux
+amended_at: 2026-05-26
+amendment_reference: campaign_lattice_compliance_upgrade.R02
+amendment_summary: "§Exception subsection added documenting node.aDNA → LatticeHome.aDNA as one deliberate exception to R1–R4; rule remains active for all other rename proposals"
 companion_adrs:
   - aDNA.aDNA/what/decisions/adr_009_aDNA_naming_convention.md  # naming convention; ADR-013 sits inside the rules ADR-009 codifies
   - node.aDNA/what/decisions/adr_001_node_vault_role_expansion.md  # node-scope counterpart; this ADR generalizes the design test surfaced there
@@ -18,7 +21,7 @@ related_artifacts:
   - aDNA.aDNA/how/campaigns/campaign_lattice_workspace_ux/missions/artifacts/aar_mlwx_02_node_vault_role_expansion.md  # load-bearing finding source
   - aDNA.aDNA/how/campaigns/campaign_lattice_workspace_ux/missions/mission_lwx_03_integration_test_and_closeout.md
   - /Users/stanley/.claude/plans/please-read-the-claude-md-shiny-cherny.md  # M-LWX-03 plan with D-StdADR resolution
-tags: [decision, standard, adr_013, naming_convention, scope_vs_role, rename_test, persona_role_carrier, m_lwx_03, mini_campaign_load_bearing_finding, rosetta]
+tags: [decision, standard, adr_013, naming_convention, scope_vs_role, rename_test, persona_role_carrier, m_lwx_03, mini_campaign_load_bearing_finding, rosetta, amended, latticehome_exception, campaign_lattice_compliance_upgrade_r02]
 ---
 
 # ADR-013 — Scope-vs-role naming as design test for `.aDNA/` vault rename proposals
@@ -145,6 +148,42 @@ Within Option C, the operator chose the **4-sub-rule formulation** (R1 scope che
 - Initial vault creation naming (covered by ADR-009 + `skill_project_fork.md` §Name validation)
 - Persona introduction or evolution (persona changes don't trigger vault rename per the persona-role-carrier principle)
 - Internal vault refactoring that doesn't change `.aDNA/` directory name (free to rename internal directories, files, ADRs)
+
+## Exception — `node.aDNA/` → `LatticeHome.aDNA/` (2026-05-26)
+
+This ADR is `status: amended` to document one deliberate exception to the R1–R4 design test for the rename `node.aDNA/` → `LatticeHome.aDNA/`. The §Decision and the worked precedent in §Application notes remain authoritative for all OTHER future rename proposals.
+
+### §Exception.1 — Trigger
+
+- **Campaign**: `campaign_lattice_compliance_upgrade` Phase 4-Rename (charter v1.5 → v1.6 at R01 close 2026-05-25; mission_count 31 → 41).
+- **Mission**: R02 (this amendment); R03 executes the directory rename; R04–R10 propagate cross-vault / multi-node.
+- **Operator decision**: D1–D4 lock at `AskUserQuestion` 2026-05-25 — D1 = `LatticeHome.aDNA` (over `Home.aDNA` / `Hearth.aDNA`), D2 = insert into compliance_upgrade (not a standalone campaign), D3 = surgical internal scope (protocol-layer "node" term preserved), D4 = amend ADR-013 with §Exception subsection over supersession.
+- **Plan files**: R01 meta-planning `~/.claude/plans/please-read-the-claude-md-steady-scott.md`; R02 amendment `~/.claude/plans/please-read-the-claude-md-spicy-raccoon.md`.
+
+### §Exception.2 — Specific exception
+
+Exactly one rename: `node.aDNA/` → `LatticeHome.aDNA/` — the local-by-default per-node operational vault on this operator's machine plus the 5 partner-node `node.aDNA/` instances coordinated via R09 (wga_l1, sws_l1, kinn_l1, lmu_l2, science_stanley_l1). The vault keeps its scope (per-node hearth + lattice-home gallery + memberships + node-operational campaigns), its persona (Hestia), and its operating semantics. Only the directory-level identifier changes. Protocol-layer "node" terms — `identity_node`, `inventory_*`, `campaign_node_credentials`, `skill_node_*` filenames, LP-network `node_id` keys — all remain (per operator D3-surgical).
+
+Namespace-explicit alignment with the `Lattice*` family (`LatticeNetwork.aDNA`, `LatticeLabs.aDNA`, `LatticeTerminal.aDNA`, `LatticeAgent.aDNA`, `LatticeHome.aDNA`) is the operator-cited motivation; `LatticeHome` carries the lattice namespace AND the home semantics simultaneously where bare `home.aDNA/` (the original M-LWX-02 proposal) carried neither.
+
+### §Exception.3 — R1–R4 disposition (steelman)
+
+| Rule | Original reading (2026-05-13) | §Exception re-reading (2026-05-26) |
+|---|---|---|
+| **R1 (scope)** | Δscope = no — `node.aDNA/` is still "the node." | Negotiable. Since 2026-05-12 the vault has absorbed the lattice-home gallery (HOME.md + `workspace.json` default-open per ADR-001), 30+ vault cards across M19–M20 imagery work, persona pairings with every other Hestia-paired vault, and credential-broker authority (`campaign_node_credentials`). Scope has accumulated from "machine-state tracker" → "the operator's home vault on this node." The §Decision retains R1 as a check for FUTURE proposals — at the time ADR-001 was authored, R1 = no was the correct reading; what changed is the accumulated functional surface. |
+| **R2 (role only)** | Δrole only = yes → DO NOT RENAME. | The role-only reading still holds in pure form, BUT the per-user-singleton precedent (`~/Documents`, `~/Pictures`, `~/Library`) shows filesystem-local naming can be uniform across machines without collapsing into a role-only label. `LatticeHome.aDNA` is namespace-qualified (`Lattice*`) and reads as a scope-carrying identifier, not a bare role. |
+| **R3 (multi-instance)** | `home.aDNA/` collapses distinguishability across N machines. | **Overstated.** Per-user-singleton precedent: every macOS user has `~/Documents` at the same path on every machine — uniformity is the feature. Each operator's machine carries its own `LatticeHome.aDNA/` at `~/lattice/`; the directory IS the per-node singleton. LP-protocol multi-node addressing (`node_id`, `identity_node`, federation manifests) is preserved at the protocol layer, untouched by the directory rename. |
+| **R4 (migration cost)** | >10 files + upstream-template-change + cross-graph propagation → high-cost; R1 = no, fails cost-benefit. | Contextually absorbed. R01 recon: ~118 active files / ~765 refs to update; ~465 frozen files / ~4,019 refs leave-alone; 5 partner-node `node.aDNA` instances need rename via R09; 30-day symlink shim window 2026-05-25 → 2026-06-24. Cost is real but the broader upgrade/development cycle is in flight (compliance_upgrade Phase 4) and the operator has accepted multi-node coordination ownership. |
+
+### §Exception.4 — Forward governance
+
+R1–R4 **continue to apply** to all future `.aDNA/` rename proposals. This subsection documents ONE specific case; it does not create a general carve-out for role-readable names.
+
+- **No blanket carve-out**: new exceptions require their own §Exception subsection on this ADR (or a fresh ADR amendment) with the same trigger / specific / R1–R4 disposition / forward-governance structure. Operator approval at plan-mode + a charter amendment in the consuming campaign are prerequisites.
+- **`skill_project_fork.md` name-validation behavior unchanged**: proposed names that read role-like (`dashboard`, `hub`, `gallery`) still warrant the R1–R4 walk-through at fork time per §Application notes. Namespace-qualified role-readable names (e.g., a hypothetical `LatticeHub.aDNA`) would face the same walk-through; the `LatticeHome.aDNA` precedent is fact-specific, not a template.
+- **ADR-009 orthography unchanged**: `<name>.aDNA/` ↔ `<name>.aDNA.git` isomorphism and snake_case / PascalCase grandfathered exceptions remain governed by ADR-009.
+- **Node-scope predecessor `adr_001_node_vault_role_expansion`** (the M-LWX-02 rejection) gains a §Supersession-by-§Exception note pointing here; its role-expansion finding for the broader Org-Vault.aDNA-as-control-plane pattern remains valid.
+- **M-LWX-02 AAR** carries a forward-pointer to this §Exception for discoverability; the scope-vs-role finding itself (a load-bearing conceptual contribution) remains active and re-applies to future rename proposals.
 
 ## Self-reference (Standing Order #2)
 
