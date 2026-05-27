@@ -1,4 +1,11 @@
 ---
+import iconLearn from '../../assets/icons/icon_learn.svg?raw';
+import iconHow from '../../assets/icons/icon_how.svg?raw';
+import iconPatterns from '../../assets/icons/icon_patterns.svg?raw';
+import iconReference from '../../assets/icons/icon_reference.svg?raw';
+import iconCommunity from '../../assets/icons/icon_community.svg?raw';
+import iconUseCases from '../../assets/icons/icon_use_cases.svg?raw';
+
 interface Props {
   pageTitle: string;
 }
@@ -10,21 +17,22 @@ type Route = {
   leg: 'WHAT' | 'HOW' | 'WHO';
   sectionLabel: string;
   sectionHref: string;
+  icon: string;
 };
 
 const routes: Route[] = [
-  { prefix: '/learn/concepts/', leg: 'WHAT', sectionLabel: 'Concepts', sectionHref: '/learn/concepts/' },
-  { prefix: '/learn/tutorials/', leg: 'WHAT', sectionLabel: 'Tutorials', sectionHref: '/learn/tutorials/' },
-  { prefix: '/learn/comparisons/', leg: 'WHAT', sectionLabel: 'Comparisons', sectionHref: '/learn/comparisons/' },
-  { prefix: '/patterns/', leg: 'WHAT', sectionLabel: 'Patterns', sectionHref: '/patterns/' },
-  { prefix: '/glossary/', leg: 'WHAT', sectionLabel: 'Glossary', sectionHref: '/glossary/' },
-  { prefix: '/use-cases/', leg: 'WHAT', sectionLabel: 'Use Cases', sectionHref: '/use-cases/' },
-  { prefix: '/reference/', leg: 'WHAT', sectionLabel: 'Reference', sectionHref: '/reference/' },
-  { prefix: '/adopters/', leg: 'WHO', sectionLabel: 'Adopters', sectionHref: '/adopters/' },
-  { prefix: '/community/', leg: 'WHO', sectionLabel: 'Community', sectionHref: '/community/' },
-  { prefix: '/how/publishing/', leg: 'HOW', sectionLabel: 'Publishing', sectionHref: '/how/publishing/' },
-  { prefix: '/how/workshops/', leg: 'HOW', sectionLabel: 'Workshops', sectionHref: '/how/workshops/' },
-  { prefix: '/how/lattice-examples/', leg: 'HOW', sectionLabel: 'Lattice Examples', sectionHref: '/how/lattice-examples/' },
+  { prefix: '/learn/concepts/', leg: 'WHAT', sectionLabel: 'Concepts', sectionHref: '/learn/concepts/', icon: iconLearn },
+  { prefix: '/learn/tutorials/', leg: 'WHAT', sectionLabel: 'Tutorials', sectionHref: '/learn/tutorials/', icon: iconLearn },
+  { prefix: '/learn/comparisons/', leg: 'WHAT', sectionLabel: 'Comparisons', sectionHref: '/learn/comparisons/', icon: iconLearn },
+  { prefix: '/patterns/', leg: 'WHAT', sectionLabel: 'Patterns', sectionHref: '/patterns/', icon: iconPatterns },
+  { prefix: '/glossary/', leg: 'WHAT', sectionLabel: 'Glossary', sectionHref: '/glossary/', icon: iconReference },
+  { prefix: '/use-cases/', leg: 'WHAT', sectionLabel: 'Use Cases', sectionHref: '/use-cases/', icon: iconUseCases },
+  { prefix: '/reference/', leg: 'WHAT', sectionLabel: 'Reference', sectionHref: '/reference/', icon: iconReference },
+  { prefix: '/adopters/', leg: 'WHO', sectionLabel: 'Adopters', sectionHref: '/adopters/', icon: iconUseCases },
+  { prefix: '/community/', leg: 'WHO', sectionLabel: 'Community', sectionHref: '/community/', icon: iconCommunity },
+  { prefix: '/how/publishing/', leg: 'HOW', sectionLabel: 'Publishing', sectionHref: '/how/publishing/', icon: iconHow },
+  { prefix: '/how/workshops/', leg: 'HOW', sectionLabel: 'Workshops', sectionHref: '/how/workshops/', icon: iconHow },
+  { prefix: '/how/lattice-examples/', leg: 'HOW', sectionLabel: 'Lattice Examples', sectionHref: '/how/lattice-examples/', icon: iconHow },
 ];
 
 const path = Astro.url.pathname;
@@ -44,7 +52,10 @@ const match = routes.find((r) => {
       <ol>
         <li class="leg">{match.leg}</li>
         <li class="sep" aria-hidden="true">›</li>
-        <li><a href={match.sectionHref}>{match.sectionLabel}</a></li>
+        <li class="section-cell">
+          <span class="section-icon" aria-hidden="true" set:html={match.icon} />
+          <a href={match.sectionHref}>{match.sectionLabel}</a>
+        </li>
         <li class="sep" aria-hidden="true">›</li>
         <li aria-current="page" class="current">{pageTitle}</li>
       </ol>
@@ -96,6 +107,25 @@ const match = routes.find((r) => {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-text-muted);
+  }
+
+  .breadcrumb .section-cell {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .breadcrumb .section-icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    color: var(--color-text-muted);
+  }
+
+  .breadcrumb .section-icon :global(svg) {
+    width: 100%;
+    height: 100%;
   }
 
   .breadcrumb a {

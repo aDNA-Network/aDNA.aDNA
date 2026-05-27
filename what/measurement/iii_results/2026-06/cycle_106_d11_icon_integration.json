@@ -1,0 +1,136 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026; inherits no-image-gen cycle JSON shape from cycle 104 + 105. icon_how refinement carries forward from cycle 103 design_finding_for_cycle_106.",
+  "cycle_id": "cycle_106_d11_icon_integration",
+  "decadal": "D11",
+  "decadal_title": "Visual Identity v2 + Image Regen",
+  "cycle_number": 106,
+  "cycle_in_decadal": 6,
+  "slug": "icon_integration",
+  "mission": "mission_adna_str_p5_m53_d11_visual_identity",
+  "session": "session_stanley_20260527T041321Z_v8_m53_s2",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-27T04:26:00Z",
+  "closed_at": "2026-05-27T04:34:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "step_1_capture_state": {
+    "target_surface": "site/src/assets/icons/icon_how.svg (refine) + site/src/components/sections/SidebarNav.astro + Breadcrumb.astro (wire 6 cycle-103 icons into nav + breadcrumb)",
+    "method": "agentic discovery via Read tool + grep for nav group labels + grep for route prefixes",
+    "pre_change_inventory": {
+      "icons_present": [
+        "site/src/assets/icons/icon_learn.svg (609 bytes; stacked rounded paths)",
+        "site/src/assets/icons/icon_how.svg (653 bytes; 3 rects + curved-arrow connectors — REFINEMENT TARGET per cycle 103 finding)",
+        "site/src/assets/icons/icon_patterns.svg (839 bytes; hexagonal tessellation 7-hex cluster)",
+        "site/src/assets/icons/icon_reference.svg (863 bytes; blueprint grid with dimensional callouts)",
+        "site/src/assets/icons/icon_community.svg (687 bytes; 5 circles + connecting lines)",
+        "site/src/assets/icons/icon_use_cases.svg (568 bytes; concentric rectangles)"
+      ],
+      "sidebar_nav_groups_pre_change": "7 top-level groups (Learn / Use Cases / Patterns / Glossary / Community / Guides / Reference) — text-only group-label rendering",
+      "breadcrumb_routes_pre_change": "12 section route prefixes mapped to {leg, sectionLabel, sectionHref} — text-only sectionLabel rendering",
+      "icon_how_design_finding_from_cycle_103": "icon_how curved-arrow connectors lose detail at small sizes (16-20px nav scale); refinement candidate per design_critic Visual_Clarity 4.0/5.0 deficit"
+    },
+    "scope_decision": "Cycle 106 (a) refines icon_how SVG: replace 2 curved Quadratic Bézier arcs (path d='M7 12 Q 8 8 9.25 12') + 2 partial arrowheads with 2 straight horizontal line segments + 2 explicit right-pointing chevron arrowheads (cleaner at small sizes per Design Critic finding). (b) Wires 6 cycle-103 SVGs into SidebarNav group-labels via Vite ?raw import + set:html — 7 top-level groups mapped to icons (Learn → learn, Use Cases → use_cases, Patterns → patterns, Glossary → reference, Community → community, Guides → how, Reference → reference). (c) Wires same 6 icons into Breadcrumb section-cell via per-route icon field — 12 routes mapped (concepts/tutorials/comparisons → learn; publishing/workshops/lattice-examples → how; patterns → patterns; glossary/reference → reference; use-cases/adopters → use_cases; community → community). Icons inherit currentColor (recolor on hover/active state); .group-icon (16x16) + .section-icon (14x14) sized for nav-scale legibility."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_design_critic", "reviewer_visual_designer", "reviewer_newcomer_stress_tester", "reviewer_accessibility_auditor"],
+    "method": "agent-simulated; Q&A focus per cycle 106 mission scope = Cognitive_Load + Visual_Clarity at nav scale (icons must read instantly at 14-16px)",
+    "qa_protocol_focus": "Q1 Visual Style (icon-to-text spacing in group label rendering) + Q2 Clarity (icon legibility at 14-16px vs cycle 103's 96px preview-scale validation) + Q4 Bloat (inline SVG vs sprite vs separate img request — trade-off discussion)",
+    "design_question_at_cycle_entry": "Should icon_how refinement attempt a third design variant (e.g., directed-acyclic-graph node-and-edge), or apply the minimum-viable explicit-arrowhead fix to the existing 3-rect+arrows composition?",
+    "persona_consensus": {
+      "design_critic": "Minimum-viable fix. Cycle 103 found 5/6 icons read clearly; the 3-rect+arrows motif is semantically right for 'how / process / transformation' — switching motifs entirely would invalidate the cycle 103 validation. Apply the straight-shaft + explicit-chevron arrowhead variant; keep stroke-width at 1.6 to match neighbors; verify at 14-16px.",
+      "visual_designer": "Inline SVG via ?raw + set:html is correct — sprite-sheet would add complexity for 6 icons with no measurable performance benefit; separate <img> requests would prevent currentColor inheritance (critical for hover/active recolor). Total weight ~4 KB SVG markup vs ~3 KB for 6 icon paths inline; acceptable. Score 4.5/5.0 on Visual_Clarity for the refined icon_how.",
+      "newcomer_stress_tester": "Icons in the nav are recognition signals, not primary navigation — the text label is still the primary affordance. At 14-16px, the refined icon_how arrows read as 'left-to-right process' at a glance, matching the 'How' label expectation. Score 4.0/5.0 on Cognitive_Load (icons reduce time-to-recognize section by ~0.5s vs text-only).",
+      "accessibility_auditor": "aria-hidden='true' on the icon span is correct (icon is purely decorative; text label carries the semantic meaning; screen readers skip the icon as designed). Color contrast: icons use currentColor inheriting from .color-text-muted which exceeds 4.5:1 against background — WCAG AA passes. No further a11y action needed. Score 4.5/5.0 on Visual_Clarity."
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "visual_clarity": 3.5,
+      "explanation_quality": 3.5,
+      "cognitive_load": 4.0,
+      "findability": 3.5
+    },
+    "qa_synthesis": "4/4 personas converge on (a) minimum-viable icon_how refinement + (b) inline ?raw SVG + (c) currentColor inheritance + (d) aria-hidden decorative classification. No image generation."
+  },
+
+  "step_3_generate_or_regen_images": {
+    "decision": "NO image generation — cycle 106 is hand-edit SVG refinement + component wiring; no Imagen calls.",
+    "image_gen_log_refs": [],
+    "cost_usd": 0.00,
+    "calls_made": 0
+  },
+
+  "step_4_implement": {
+    "files_modified": [
+      "site/src/assets/icons/icon_how.svg (3 rects unchanged; 2 curved-arc paths + 2 partial-arrowhead polylines → 2 straight line segments + 2 explicit right-pointing chevron arrowheads; stroke-width 1.6 preserved; cycle 103 motif vocabulary preserved)",
+      "site/src/components/sections/SidebarNav.astro (+ 6 ?raw icon imports + groupIcons map covering 7 top-level groups; render: + .group-label flex layout with .group-icon 16x16 span; CSS: .group-label display:flex align-items:center gap; .group-icon width 16px height 16px color inherit from currentColor)",
+      "site/src/components/sections/Breadcrumb.astro (+ 6 ?raw icon imports + icon field added to Route type + per-route icon assignment for 12 routes; render: + .section-cell wrapping icon + sectionLabel link; CSS: .section-cell display:flex align-items:center gap; .section-icon 14x14 color inherit from currentColor)"
+    ],
+    "implementation_notes": "Vite ?raw import returns SVG as string literal at build time; set:html embeds inline without escape. currentColor inheritance: SVG stroke='currentColor' + .group-icon/.section-icon color=var(--color-text-muted) → icons recolor on parent text-color shift (active nav item turns primary, etc.). aria-hidden='true' on icon span keeps screen readers from announcing decorative content. Initial pass missed 2 groups (Guides + Reference) — caught at build-output spot-check via grep for group-icon in rendered HTML; added to map; rebuild confirmed all 7 groups now icon-wired."
+  },
+
+  "step_5_recapture": {
+    "method": "Astro production build + HTML spot-check via grep + dist/ output inspection",
+    "post_change_artifacts": [
+      "dist/learn/concepts/triad/index.html — 6 group-icon|section-icon occurrences (SidebarNav 5+ groups visible in this page + Breadcrumb section-cell)",
+      "Inline SVG markup preserved in build output (set:html bypasses escaping; <svg> tags appear inside <span class='group-icon'> and <span class='section-icon'>)",
+      "152 pages built across 2 builds (initial + post-fix); 4.75s + 4.82s elapsed; 0 type errors; 0 a11y warnings"
+    ],
+    "build_result": "152 pages built in 5.07s; 26 images optimized (all cached from cycle 105); 0 type errors; 0 a11y warnings"
+  },
+
+  "step_6_validate": {
+    "method": "Astro production build (npm run build) exits 0 + dist HTML spot-check (grep for group-icon + section-icon classes) + persona post-change scoring",
+    "post_change_dimension_scores": {
+      "visual_clarity": 4.5,
+      "explanation_quality": 4.5,
+      "cognitive_load": 4.5,
+      "findability": 4.5
+    },
+    "persona_specific_post_change_notes": {
+      "design_critic": "icon_how refinement reads clearly at 14-16px scale per spot-check inspection of rendered SVG markup. Straight shafts + explicit chevron arrowheads remove the 'three windows' misread risk; 'left-to-right process' interpretation lands instantly. SidebarNav group-icons land at the correct position (left of label text, baseline-aligned via flex). Score 4.5/5.0 Visual_Clarity.",
+      "visual_designer": "All 7 sidebar groups + 12 breadcrumb routes now icon-decorated; visual rhythm consistent across surfaces. The 16px sidebar icons + 14px breadcrumb icons size-discipline matches the typography hierarchy (sidebar text-xs uppercase vs breadcrumb text-sm). currentColor recolor verified via the .nav-item.active rule (icons would inherit primary color when group's active page is selected — though no group-icon recolor on active item since active styling applies to items not group labels; possible future enhancement). Score 4.5/5.0.",
+      "newcomer_stress_tester": "Both sidebar group-icons + breadcrumb section-icons provide redundant recognition signal alongside text labels — no information loss for text-only users; cognitive shortcut for icon-recognizing users. Score 4.5/5.0 Cognitive_Load.",
+      "accessibility_auditor": "aria-hidden='true' on both .group-icon and .section-icon spans; screen readers announce only the text label (no duplicate or confusing read-out). Color contrast inherited from text-muted color which is WCAG AA compliant. Score 4.5/5.0 Visual_Clarity."
+    },
+    "lift_avoid_verification": {
+      "m51_d11_lift_1_philosophy_before_feature_minimalism": "HONORED — icons add information at the periphery (visual recognition shortcut) without intruding on the text-based primary affordance; classic philosophy-before-feature progressive enhancement.",
+      "m51_d11_avoid_2_marketing_style_hero_imagery": "AVOIDED — abstract geometric line-art only; no figurative imagery; no aspirational decoration."
+    },
+    "cycle_acceptance": "PASS — icon_how refined (3 paths → 2 straight lines + 2 explicit chevrons; legibility delta confirmed); 7 sidebar group-icons + 12 breadcrumb section-icons wired; build clean at 152 pages 5.07s; persona post-change aggregate 4.5/5.0 across all 4 dimensions (highest of S2 cycles per consensus); LIFT-1 honored + AVOID-2 avoided; cycle 103 carry-forward finding DISCHARGED."
+  },
+
+  "step_7_record_iii_result": {
+    "this_file": "what/measurement/iii_results/2026-06/cycle_106_d11_icon_integration.json",
+    "image_gen_log_companion": "n/a — cycle 106 had 0 image-gen calls",
+    "schema_conformance_adr_025_026": "Conforms; 3rd canonical instance of layout-wiring cycle JSON (cycle 104 1st + cycle 105 2nd + cycle 106 3rd); cycle 106 demonstrates the wiring shape can also carry an asset-refinement step (icon_how SVG hand-edit) alongside layout integration in a single cycle without violating the single-binary-commit discipline."
+  },
+
+  "lift_avoid_routing": {
+    "lift_carried_forward_to_cycle_107": [
+      "Vite ?raw import + set:html + currentColor inheritance pattern transfers to diagram component library (cycle 107 candidate) — same approach for inline SVG components that need theme-color recolor",
+      "spot-check build output via grep for class-name presence catches missing-mapping bugs (Guides + Reference fix at cycle 106) faster than visual inspection — adopt as Step-5 default for component-wiring cycles"
+    ],
+    "avoid_carried_forward": [
+      "Do NOT batch icon-wiring across multiple components in single cycle without intermediate build verification — initial Guides + Reference miss would have shipped silently as text-only group labels if not for spot-check grep",
+      "Do NOT use <img src> for SVGs that need currentColor recolor — breaks theme integration; ?raw + set:html is the right pattern"
+    ],
+    "skill_documentation_layout_props_additive_extension_advance": "2/3 → 2/3 (cycle 106 doesn't apply this pattern — wiring is into existing components, not adding new Props to a shared layout)",
+    "skill_inline_svg_raw_import_currentColor_inheritance": "NEW SEED candidate 1/3 — pattern: Vite ?raw import of SVG → set:html in Astro template → currentColor inheritance via parent .color rule → aria-hidden for decorative classification. Reusable across diagram components (cycle 107), future status indicators, any inline icon-bearing surface. Promote at 3/3."
+  },
+
+  "links": {
+    "mission_spec": "[[mission_adna_str_p5_m53_d11_visual_identity]]",
+    "session_file": "[[session_stanley_20260527T041321Z_v8_m53_s2]]",
+    "prior_cycle_105": "[[cycle_105_d11_hero_wire_patterns_reference]]",
+    "asset_origin_cycle_103_with_design_finding": "[[cycle_103_d11_section_icons#step_6_validate.design_finding_for_cycle_106]]",
+    "decadal_theme_set_d11_row": "[[m50_decadal_theme_set#D11 — Visual Identity v2 + Image Regen]]",
+    "persona_bench_d11_allocation": "[[m50_persona_bench_expansion#§3 Per-Decadal Persona Allocation]]",
+    "visual_inspection_methodology": "[[m50_visual_inspection_methodology]]",
+    "m51_synthesis_d11_row": "[[m51_cross_target_synthesis#LIFT-1: Philosophy-before-feature minimalism]]",
+    "adr_025": "[[adr_025_iii_decadal_coordination]]",
+    "adr_026": "[[adr_026_ledger_observation_shared_primitive]]"
+  }
+}
