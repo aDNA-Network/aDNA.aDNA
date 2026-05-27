@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- how — abstract workflow arrows between nodes (M5.3 cycle 103 D11 motif vocabulary: process / transformation) -->
+  <rect x="1.5" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="9.25" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="17" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <path d="M7 12 Q 8 8 9.25 12"/>
+  <polyline points="8.45 10.6 9.25 12 8.05 12"/>
+  <path d="M14.75 12 Q 15.75 8 17 12"/>
+  <polyline points="16.2 10.6 17 12 15.8 12"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>

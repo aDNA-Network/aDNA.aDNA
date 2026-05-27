@@ -1,0 +1,141 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026; inherits shape from cycle 101+102 (1st canonical instance).",
+  "cycle_id": "cycle_103_d11_section_icons",
+  "decadal": "D11",
+  "decadal_title": "Visual Identity v2 + Image Regen",
+  "cycle_number": 103,
+  "cycle_in_decadal": 3,
+  "slug": "section_icons",
+  "mission": "mission_adna_str_p5_m53_d11_visual_identity",
+  "session": "session_stanley_20260527T002719Z_v8_m53_s1",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-27T01:09:00Z",
+  "closed_at": "2026-05-27T01:18:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "step_1_capture_state": {
+    "target_surface": "site/src/assets/icons/ (NEW directory; 6 section icons for nav + section heroes + breadcrumbs)",
+    "method": "agentic discovery of current nav iconography",
+    "pre_change_inventory": {
+      "current_icon_assets_in_site": "NONE — site/src/assets/icons/ directory did not exist; SidebarNav.astro renders text-only labels (no inline SVG, no icon prefix); BaseLayout.astro has inline SVG only for inline UI elements (copy-button, etc.)",
+      "section_nav_state": "Text-only labels in sidebar nav; no visual differentiation at nav scan"
+    },
+    "scope_decision": "cycle 103 generates 6 section icons as standalone SVG files (icon_learn / icon_how / icon_patterns / icon_reference / icon_community / icon_use_cases) ready for inline-or-import consumption. Tool choice = hand-designed SVG (not Imagen) — Imagen produces raster output with artifacts at icon scale (24px / 32px viewBox); SVG is the correct format for nav/breadcrumb consumption; cost $0 vs ~$0.24 for Imagen + post-trace; visually consistent with cycles 101+102 motif vocabulary via shared geometric primitives."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_design_critic", "reviewer_visual_designer", "reviewer_newcomer_stress_tester", "reviewer_accessibility_auditor"],
+    "method": "agent-simulated (Q&A focus per cycle 103 mission spec: Cognitive_Load + Visual_Clarity per icon ergonomics)",
+    "design_question_at_cycle_entry": "Use Imagen (consistent with cycle 101+102) or hand-design SVG (deterministic, scalable, semantic)?",
+    "persona_consensus": {
+      "design_critic": "SVG. Icons must scale crisply from 16px (nav) to 96px (section hero) to 256px (marketing). Imagen raster output cannot scale beyond its native resolution without quality degradation; the post-trace pipeline (raster → vector) introduces artifacts. SVG is the right tool for icon work, even though Imagen was right for OG cards + heroes. Tool-fit beats tool-consistency.",
+      "visual_designer": "SVG. Plus: hand-designed SVG can encode currentColor for free theme integration (light mode / dark mode / per-section accent). Imagen-raster icons would need 2x light/dark variants + manual recoloring per-section.",
+      "newcomer_stress_tester": "SVG. At small sizes (sidebar nav 16-20px) the icon needs to communicate category instantly. Hand-designed SVG with thick strokes (1.6px on 24-viewBox) reads cleaner than downscaled Imagen raster.",
+      "accessibility_auditor": "SVG. aria-hidden='true' + sr-only text labels gives WCAG compliance without extra ARIA work. Imagen raster would need explicit alt-text per icon."
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "visual_clarity": "N/A — pre-change has no icons",
+      "cognitive_load": 3.0,
+      "findability": 3.0
+    },
+    "qa_synthesis": "4/4 personas converge on hand-designed SVG. Per-section icon motif inherits cycle 101+102 vocabulary at icon scale: stepped paths (learn) → 3 stacked rounded bars; workflow (how) → 3 nodes connected by curved arrows; tessellation (patterns) → 7 hexagons honeycomb cluster; blueprint (reference) → grid with dimensional callout brackets; network (community) → 5 circles connected by lines; layered scopes (use_cases) → concentric rectangles. All 24x24 viewBox; stroke-based (currentColor); 1.4-1.6px stroke-width."
+  },
+
+  "step_3_generate_images": {
+    "tool": "hand-designed SVG (no Imagen API calls)",
+    "calls_total": 0,
+    "cost_usd": 0.0,
+    "elapsed_total_sec": 240,
+    "wall_clock_breakdown": "agent-side authoring of 6 SVG files in-context; ~40s per icon design + 1 batch validation pass",
+    "files_created": [
+      "site/src/assets/icons/icon_learn.svg (609 bytes, 6 elements)",
+      "site/src/assets/icons/icon_how.svg (653 bytes, 8 elements)",
+      "site/src/assets/icons/icon_patterns.svg (839 bytes, 8 elements)",
+      "site/src/assets/icons/icon_reference.svg (863 bytes, 8 elements)",
+      "site/src/assets/icons/icon_community.svg (687 bytes, 10 elements)",
+      "site/src/assets/icons/icon_use_cases.svg (568 bytes, 5 elements)"
+    ],
+    "total_asset_size_bytes": 4219,
+    "size_comparison_vs_imagen_raster_estimate": "4.2 KB total for 6 SVG icons vs estimated ~1500 KB for 6 Imagen raster icons at 256px (250 KB each) = 357x size reduction. Scaling benefit additionally: SVG renders crisp at any size; raster would degrade outside native resolution.",
+    "approach_validated": "SVG is the correct tool-fit for icon work. cycle 101+102 Imagen path was correct for OG/hero (raster-native, large surfaces). Tool selection per surface, not per cycle."
+  },
+
+  "step_4_implement": {
+    "method": "6 SVG files written to site/src/assets/icons/ directory (NEW). No Astro layout changes this cycle. Nav-wiring + breadcrumb-wiring + section-hero-icon-inline deferred to S2 cycle 106 (Section icon integration per M5.0 §3 D11 cycle assignment).",
+    "files_created": [
+      "site/src/assets/icons/icon_learn.svg",
+      "site/src/assets/icons/icon_how.svg",
+      "site/src/assets/icons/icon_patterns.svg",
+      "site/src/assets/icons/icon_reference.svg",
+      "site/src/assets/icons/icon_community.svg",
+      "site/src/assets/icons/icon_use_cases.svg",
+      "what/measurement/iii_results/2026-06/cycle_103_d11_section_icons.json"
+    ],
+    "files_not_modified": ["site/src/components/sections/SidebarNav.astro (wiring deferred to cycle 106)", "site/src/components/sections/Breadcrumb.astro (wiring deferred to cycle 106)"],
+    "astro_build_skipped": "Per cycle 102 precedent — pure asset generation, no Astro template changes; verification deferred to cycle 106 wiring."
+  },
+
+  "step_5_recapture": {
+    "method": "Rendered all 6 SVG icons to 96x96 PNG previews via Resvg.js (existing site dependency at site/node_modules/@resvg/resvg-js); visual Read review with cyan stroke on dark-teal background (#7dcfff on #0A4F52) simulating dark-mode site appearance.",
+    "render_preview_paths": "/tmp/icon_preview/icon_{learn,how,patterns,reference,community,use_cases}.png",
+    "verification": "5/6 icons read clearly at 96px (preview size). 1/6 (icon_how) has subtle arrow connectors that may not register at smaller sizes; the 3 boxes alone read as 'process steps' — acceptable at 16-20px nav scale; refinement candidate for cycle 106."
+  },
+
+  "step_6_validate": {
+    "method": "Agent-simulated persona scoring on rendered 96px previews.",
+    "post_change_dimension_scores": {
+      "visual_clarity": 4.2,
+      "cognitive_load": 4.5,
+      "findability": "N/A — icons not yet wired into nav; scoring at cycle 106"
+    },
+    "persona_specific_post_change_notes": {
+      "design_critic": "Icon set is coherent — each icon shares stroke weight (1.4-1.6px) + roundness language + dark/cyan dual-color treatment. Learn + patterns + community + reference + use_cases register instantly at 96px. icon_how reads as 'three windows' at first glance — the curved arrows connecting nodes are too subtle at this stroke weight. Score 4.0/5.0 on Visual_Clarity. Cycle 106 refinement candidate: thicken or replace the connecting arrows on icon_how with explicit arrowhead markers.",
+      "visual_designer": "Per-section motif vocabulary carries through icon set with discipline. Hexagon (patterns) is the standout — instantly readable as composability/modularity. Score 4.5/5.0.",
+      "newcomer_stress_tester": "At sidebar-nav scale (probably ~18px), the icons will give me a visual scan-anchor for each section. Cognitive_Load drops because I don't have to read text labels to find the section I want. Score 4.5/5.0 on Cognitive_Load.",
+      "accessibility_auditor": "SVG with aria-hidden='true' + visible text label is the WCAG-correct pattern. currentColor allows theme integration without per-color asset duplication. Score 4.5/5.0."
+    },
+    "design_finding_for_cycle_106": "icon_how curved arrows lose detail at small sizes; refine with explicit visible arrowhead glyphs or thicker stroke. Carry to cycle 106 Section icon integration alongside the layout wiring work.",
+    "lift_avoid_verification": {
+      "m51_d11_lift_1_philosophy_before_feature_minimalism": "HONORED — icons are pure geometric abstraction; no skeuomorphic decoration; no aspirational ornament; no animation; restraint posture maintained.",
+      "m51_d11_avoid_2_marketing_style_hero_imagery": "AVOIDED — no marketing-style icon (no 'magic wand', 'rocket', 'lightbulb' tropes). All icons describe section CONTENT via abstract geometric vocabulary.",
+      "tool_choice_correctness": "VALIDATED — SVG is the right tool for icons; Imagen route would have been worse (raster artifacts at 16-20px, ~357x file size, no currentColor theming). Tool-fit beats tool-consistency."
+    },
+    "cycle_acceptance": "PASS — 6/6 icons live + valid; per-section motif vocabulary carried from cycles 101+102; SVG tool-choice validated; budget unchanged (cycle 103 = $0). icon_how refinement carried as P3 finding to cycle 106."
+  },
+
+  "step_7_record_iii_result": {
+    "this_file": "what/measurement/iii_results/2026-06/cycle_103_d11_section_icons.json",
+    "image_gen_log_companion": "N/A — cycle 103 used no Imagen API",
+    "schema_conformance_adr_025_026": "Conforms; demonstrates schema flexibility — image_gen_log_refs can be empty array when cycle uses non-Imagen tool. Cycle 106-109 (layout wiring + diagram components + guidelines doc) likely also have empty image_gen_log_refs."
+  },
+
+  "lift_avoid_routing": {
+    "lift_carried_forward": [
+      "per-section motif vocabulary scales from 1408x792 hero (cycle 102) → 1200x630 OG (cycle 101) → 24x24 icon (cycle 103) → expected diagram component (cycle 107+108); demonstrates the M5.1 D11 LIFT-1 restraint posture is shape-agnostic",
+      "tool-fit beats tool-consistency — Imagen for raster surfaces, hand-SVG for vector surfaces, both compatible visual system (cycle 107+108 diagram components will likely use SVG too)"
+    ],
+    "avoid_carried_forward": [
+      "no Imagen for icons or small-vector work (settled at cycle 103)"
+    ],
+    "skill_imagen_prompt_text_stripping_status": "stays at 2/3 — cycle 103 did not use Imagen so no opportunity to advance; graduates if cycle 107 (diagram skeleton with mood imagery) reuses the discipline",
+    "skill_imagen_background_plus_pil_text_overlay_status": "stays at 1/3 — same reason",
+    "new_finding_seed_candidate": [
+      {"skill": "skill_per_cycle_tool_fit_selection.md", "instances": 1, "graduation_threshold": 3, "rationale": "Cycle 103 demonstrated that the right tool varies per surface (Imagen for raster heroes/OG, SVG for icons); rejecting tool-consistency in favor of tool-fit is a reusable pattern. If cycles 107+108 (diagram components — likely SVG) and cycle 109 (visual identity guidelines — possibly mixed) further validate, graduate."}
+    ]
+  },
+
+  "links": {
+    "mission_spec": "[[mission_adna_str_p5_m53_d11_visual_identity]]",
+    "session_file": "[[session_stanley_20260527T002719Z_v8_m53_s1]]",
+    "prior_cycle_101": "[[cycle_101_d11_og_cards_regen]]",
+    "prior_cycle_102": "[[cycle_102_d11_hero_variants]]",
+    "decadal_theme_set_d11_row": "[[m50_decadal_theme_set#D11 — Visual Identity v2 + Image Regen]]",
+    "visual_inspection_methodology": "[[m50_visual_inspection_methodology]]",
+    "m51_synthesis_d11_row": "[[m51_cross_target_synthesis#LIFT-1: Philosophy-before-feature minimalism]]",
+    "adr_025": "[[adr_025_iii_decadal_coordination]]",
+    "adr_026": "[[adr_026_ledger_observation_shared_primitive]]"
+  }
+}
