@@ -10,6 +10,7 @@ updated: 2026-05-28
 status: in_progress
 opens_at: 2026-05-28T06:39:33Z
 opened_session: session_stanley_20260528T063933Z_v8_m54_s1
+s2_session: session_stanley_20260528T225352Z_v8_m54_s2   # cycles 112-115; 4/10 cumulative complete this session; 5/10 cumulative across mission
 estimated_sessions: 3
 actual_sessions: ""   # filled at mission close
 persona: rosetta
@@ -170,11 +171,11 @@ Mission closes at cycle 120 with a **lightweight 5-line D12 AAR** (no full Revie
 
 | Cycle | Theme | Status | Session | Commit SHA | Lines Before → After | Cycle JSON | Notes |
 |---|---|---|---|---|---|---|---|
-| 111 | README streamline (problem-first → persona-led) | pending | S1 (this) | - | 872 → ~400 | cycle_111_d12_readme_streamline.json | TBD; single biggest D12 win |
-| 112 | index.astro extraction part 1 (Hero component) | pending | S2 | - | 697 → ~520 | cycle_112_d12_index_extraction_part1.json | TBD; Hero component extraction |
-| 113 | index.astro extraction part 2 (persona card iteration) | pending | S2 | - | 697 → ~350 (cumulative) | cycle_113_d12_index_extraction_part2.json | TBD; persona card iteration |
-| 114 | compliance/index.astro streamline | pending | S2 | - | 272 → ~150 | cycle_114_d12_compliance_streamline.json | TBD |
-| 115 | enterprise/index.astro streamline | pending | S2 | - | 267 → ~150 | cycle_115_d12_enterprise_streamline.json | TBD |
+| 111 | README streamline (problem-first → persona-led) | completed | S1 | 237704f | 872 → 446 (48.9%) | cycle_111_d12_readme_streamline.json | 4/4 personas 4.5/5.0; 1st canonical D12 JSON sub-shape (text-only-streamline); 1 NEW SEED skill_continuous_discipline_overlay_at_step_6 |
+| 112 | index.astro extraction part 1 (Hero component) | completed | S2 | 6efe86a | 697 → 471 (32.4%) | cycle_112_d12_index_extraction_part1.json | NEW site/src/components/sections/HomeHero.astro (198 lines; Props pattern mirrors cycle 107 TriadDiagram); .btn utilities promoted to global.css (+49 lines); dead CSS removal (.hero-problem + .hero-subtitle); 2nd D12 JSON sub-shape (component-extraction) |
+| 113 | index.astro extraction part 2 (data module) | completed | S2 | d5955e1 | 471 → 373 (cumulative 697 → 373 = 46.5%) | cycle_113_d12_index_extraction_part2.json | NEW site/src/data/home.ts (127 lines; TS module for steps + personas + stats; preserves multi-line template literals); 3rd D12 JSON sub-shape (data-extraction); GRADUATES skill_continuous_discipline_overlay_at_step_6 at 3/3; 1 NEW SEED skill_typed_data_module_extraction + 1 NEW SEED skill_build_output_regen_partial_rename_revert |
+| 114 | compliance/index.astro streamline | completed | S2 | b8a12c5 | 272 → 116 (57.4%) | cycle_114_d12_compliance_streamline.json | Hybrid prose-compression + data-extraction (4th D12 JSON sub-shape); NEW site/src/data/compliance.ts (91 lines); 5 H2 intros compressed to 1-2 sentences; 15 <li> items tightened; "Who this is for" folded into lede; "Self-reference" consolidated to 1 sentence |
+| 115 | enterprise/index.astro streamline | completed | S2 | e4f05f0 | 267 → 135 (49.4%) | cycle_115_d12_enterprise_streamline.json | Hybrid recipe applied from-start (5th D12 JSON sub-shape; recipe stabilized); NEW site/src/data/enterprise.ts (104 lines); Evaluation checklist rewritten as 2-column scan-by-row .eval-table; lens-5 reference-collection scan ENGAGED (operator-facing surface); GRADUATES skill_typed_data_module_extraction at 3/3 (home.ts + compliance.ts + enterprise.ts) |
 | 116 | startup-first-hour/index.astro streamline | pending | S3 | - | 237 → ~150 | cycle_116_d12_startup_streamline.json | TBD |
 | 117 | educators/index.astro + researchers/index.astro combined | pending | S3 | - | 177 → ~120 + 128 → ~100 | cycle_117_d12_educators_researchers_combined.json | TBD; combined cycle |
 | 118 | glossary/index.astro YAML migration | pending | S3 | - | 176 → ~80 | cycle_118_d12_glossary_yaml_migration.json | TBD; data → YAML |
