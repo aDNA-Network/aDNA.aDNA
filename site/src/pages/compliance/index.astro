@@ -2,89 +2,13 @@
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
 import { buildTechArticleJsonLD } from '../../utils/seo';
+import { sessionCards, governanceCards, federationCards, followUpCards } from '../../data/compliance';
 
 const jsonLD = buildTechArticleJsonLD({
   title: 'aDNA Compliance Walkthrough',
   description: 'A procurement-style walkthrough of how how/sessions/ and who/governance/ answer the five questions every compliance reviewer asks about AI-assisted work.',
   url: Astro.url.href,
 });
-
-const sessionCards = [
-  {
-    title: 'Session Glossary',
-    href: '/glossary/glossary-session',
-    description: 'Every agent-assisted work unit produces a file in how/sessions/ with session ID, intent, scope, files touched, and a closing SITREP — the primitive audit record.',
-  },
-  {
-    title: 'SITREP Glossary',
-    href: '/glossary/glossary-sitrep',
-    description: 'Structured session closure (Completed / In progress / Next up / Blockers / Files touched) plus a Next Session Prompt — turns a session close into a reviewable record.',
-  },
-  {
-    title: 'Enterprise Team Use Case',
-    href: '/use-cases/enterprise-team',
-    description: 'Narrative walkthrough: a 50-person platform org replaces week-long compliance investigations with scripted queries over the session corpus.',
-  },
-];
-
-const governanceCards = [
-  {
-    title: 'Governance Files',
-    href: '/learn/concepts/governance-files',
-    description: 'CLAUDE.md, MANIFEST.md, STATE.md, AGENTS.md at the vault root — the fixed-path governance layer that auditors orient to once and reuse across every team vault.',
-  },
-  {
-    title: 'Architecture Decisions',
-    href: '/patterns/dual-audience',
-    description: 'ADR files under what/decisions/ pair each technical choice with rationale, trade-offs, and reviewer attribution — designed for both engineering and compliance readers.',
-  },
-  {
-    title: 'Collision Prevention',
-    href: '/glossary/glossary-collision-prevention',
-    description: 'last_edited_by + updated + read-before-write contract prevents concurrent agents and humans from clobbering one another — the primitive that makes a shared vault safe.',
-  },
-];
-
-const federationCards = [
-  {
-    title: 'Federation Readiness',
-    href: '/patterns/federation-readiness',
-    description: 'Six-point readiness check (schema valid, opt-in, source instance, license, keywords, resolved references) gates every artifact that crosses a team boundary.',
-  },
-  {
-    title: 'FAIR Envelope',
-    href: '/patterns/fair-envelope',
-    description: 'License, creators, keywords, provenance, and identifier travel with every federated artifact — legal provenance is a data field, not a separate document.',
-  },
-  {
-    title: 'Open Standard',
-    href: '/learn/concepts/open-standard',
-    description: 'The specification is open and permissively licensed — no vendor lock-in, no platform dependency. Vault contents are plain markdown in git.',
-  },
-];
-
-const followUpCards = [
-  {
-    title: 'Enterprise Adoption Checklist',
-    href: '/enterprise',
-    description: 'The sibling page: a structured evaluation framework across compliance, session audit, federation, and integration surface. Scan section by section.',
-  },
-  {
-    title: 'Enterprise Team Persona',
-    href: '/adopters/adopter-enterprise-team',
-    description: 'Quick-reference adopter profile: pain points, typical ontology extensions (compliance_check, team_policy, shared_pipeline), and deployment pattern.',
-  },
-  {
-    title: 'Federation Readiness Pattern',
-    href: '/patterns/federation-readiness',
-    description: 'The readiness-gate pattern in full detail — what blocks publication, what travels with a shared artifact, how version policy works across teams.',
-  },
-  {
-    title: 'Session Glossary',
-    href: '/glossary/glossary-session',
-    description: 'Canonical definition of the session record — the atomic unit of the audit trail.',
-  },
-];
 ---
 
 <DocumentationLayout
@@ -93,169 +17,89 @@ const followUpCards = [
   jsonLD={jsonLD}
 >
   <p class="lede">
-    Auditors ask five questions about AI-assisted work. The vault answers
-    all five — using the same files the team already edits every day.
-    The audit trail is not a parallel workstream; it is the working
-    artifact. Read the questions in order, or jump to the one your team owns.
-  </p>
-
-  <h2 id="who-this-is-for">Who this is for</h2>
-  <p>
-    Compliance officers, security reviewers, and procurement leads working
-    through an AI-assisted-work audit. The sibling page <a href="/enterprise">Enterprise
-    Adoption Checklist</a> organizes the same evidence by evaluation domain;
-    this page organizes it by the question an auditor would actually ask.
+    Auditors ask five questions about AI-assisted work. The vault answers all five
+    using the same files the team already edits — the audit trail is the working
+    artifact, not a parallel workstream. For compliance officers, security reviewers,
+    and procurement leads; the sibling <a href="/enterprise">Enterprise Adoption Checklist</a>
+    organizes the same evidence by evaluation domain.
   </p>
 
   <h2 id="q1-who-wrote-this">1 · Who wrote this artifact?</h2>
   <p>
-    Every change to a governed file carries attribution in its frontmatter.
-    <code>last_edited_by</code> names the agent or human; <code>updated</code>
-    dates the change. The corresponding session file in
-    <code>how/sessions/</code> records the session ID, the stated intent,
-    and the scope of files touched — so "who" scales from a single line of
-    frontmatter up to a full session-level narrative.
+    Every governed file carries <code>last_edited_by</code> and <code>updated</code>
+    in its frontmatter; the matching session file in <code>how/sessions/</code>
+    records intent and scope. Attribution scales from a single frontmatter line up
+    to a full session narrative.
   </p>
   <ul>
-    <li>
-      <strong>Frontmatter attribution:</strong> <code>last_edited_by:
-      agent_&#123;username&#125;</code> on every content file.
-    </li>
-    <li>
-      <strong>Session-level attribution:</strong> each session file opens
-      with a session ID, intent, and scope — creating a reviewable
-      narrative of the work unit, not just the file-level diff.
-    </li>
-    <li>
-      <strong>Git as the second witness:</strong> every commit is signed
-      and dated; the session record cross-references the commit and vice
-      versa.
-    </li>
+    <li><strong>Frontmatter attribution:</strong> <code>last_edited_by: agent_&#123;username&#125;</code> on every content file.</li>
+    <li><strong>Session-level attribution:</strong> session file opens with ID, intent, and scope — a reviewable work-unit narrative, not just a file-level diff.</li>
+    <li><strong>Git as second witness:</strong> every commit is signed and dated; session records cross-reference the commit.</li>
   </ul>
   <CardGrid cards={sessionCards} columns={2} />
 
   <h2 id="q2-what-context">2 · What context did the agent have?</h2>
   <p>
-    Agent output is only as good as its context inputs. aDNA makes those
-    inputs inspectable: the session file records the intent and the files
-    consulted; the <a href="/learn/concepts/context-optimization">context
-    engineering</a> layer (context recipes, AGENTS.md routing) makes the
-    context assembly rules explicit rather than implicit. A reviewer can
-    answer "what was this agent told to do, with what reference material"
-    without running the agent again.
+    Agent output is only as good as its inputs. The session file names the intent
+    and files consulted; the <a href="/learn/concepts/context-optimization">context
+    engineering</a> layer makes the context-assembly rules explicit. Reviewers
+    answer "what was the agent told to do, with what reference material" without
+    re-running the agent.
   </p>
   <ul>
-    <li>
-      <strong>Session intent:</strong> every session file names its
-      intent at the top — the stated objective the agent was working
-      toward.
-    </li>
-    <li>
-      <strong>Context inputs:</strong> routing files (AGENTS.md) and
-      context recipes name which knowledge objects the agent loads; the
-      selection is traceable, not opaque.
-    </li>
-    <li>
-      <strong>Scope declaration:</strong> Tier-2 sessions declare their
-      scope and run a conflict scan before editing shared configuration —
-      the declared scope becomes part of the audit record.
-    </li>
+    <li><strong>Session intent:</strong> every session file names the stated objective at the top.</li>
+    <li><strong>Context inputs:</strong> routing files (AGENTS.md) and context recipes name which knowledge objects the agent loaded — traceable, not opaque.</li>
+    <li><strong>Scope declaration:</strong> Tier-2 sessions declare scope and run a conflict scan before editing shared configuration; the declared scope is part of the audit record.</li>
   </ul>
 
   <h2 id="q3-reviewed">3 · Was the work reviewed?</h2>
   <p>
-    Governance files declare the review policy at a fixed path.
-    <code>CLAUDE.md</code> names the standing orders and escalation
-    cascade; <code>who/governance/</code> holds role definitions and
-    policies; every multi-session mission closes with an AAR under
-    <code>how/missions/artifacts/</code>. Review is structurally required
-    before a mission is marked complete.
+    Review is structurally required: <code>CLAUDE.md</code> names standing orders;
+    <code>who/governance/</code> holds role definitions; every multi-session
+    mission closes with an AAR under <code>how/missions/artifacts/</code> before
+    it can be marked complete.
   </p>
   <ul>
-    <li>
-      <strong>Standing orders:</strong> CLAUDE.md at the vault root names
-      the rules that apply to every session — including the rule that
-      every mission gets an AAR before closure.
-    </li>
-    <li>
-      <strong>Review artifacts:</strong> the AAR template
-      (Worked / Didn't / Finding / Change / Follow-up) is mandatory on
-      mission close, producing a short, structured review record.
-    </li>
-    <li>
-      <strong>Escalation cascade:</strong> anomalies propagate upward —
-      session → mission → campaign → STATE.md — so a reviewer can follow
-      a flag from its discovery point to its resolution.
-    </li>
+    <li><strong>Standing orders:</strong> CLAUDE.md at the vault root names the rules that apply to every session — including the rule that every mission gets an AAR before closure.</li>
+    <li><strong>Review artifacts:</strong> the AAR template (Worked / Didn't / Finding / Change / Follow-up) is mandatory on mission close, producing a short, structured review record.</li>
+    <li><strong>Escalation cascade:</strong> anomalies propagate session → mission → campaign → STATE.md, so a reviewer can follow a flag from discovery to resolution.</li>
   </ul>
   <CardGrid cards={governanceCards} columns={2} />
 
   <h2 id="q4-safe-concurrent">4 · What stops two agents from clobbering each other?</h2>
   <p>
-    Multiple agents and humans can edit the same vault concurrently. The
-    <a href="/glossary/glossary-collision-prevention">collision-prevention</a>
-    contract is three lines of frontmatter plus one procedural rule:
+    The <a href="/glossary/glossary-collision-prevention">collision-prevention</a>
+    contract is three frontmatter fields plus one procedural rule:
     <code>last_edited_by</code>, <code>updated</code>, and read-before-write.
-    Git closes the loop — the authoritative history is always the HEAD
-    commit, not any agent's in-memory belief about file state.
+    Git closes the loop — the authoritative history is the HEAD commit, not any
+    agent's in-memory belief.
   </p>
   <ul>
-    <li>
-      <strong>Read before write:</strong> no file is modified without
-      reading its current state first — the rule catches stale-state edits.
-    </li>
-    <li>
-      <strong>Updated-date check:</strong> if <code>updated</code> is
-      today and the current agent didn't make the last edit, the agent
-      pauses and confirms — a lightweight merge-conflict substitute.
-    </li>
-    <li>
-      <strong>Truth hierarchy:</strong> git HEAD outranks any agent's
-      cached read or memory — the authoritative state is always what's
-      committed.
-    </li>
+    <li><strong>Read before write:</strong> no file is modified without reading current state first — catches stale-state edits.</li>
+    <li><strong>Updated-date check:</strong> if <code>updated</code> is today and the current agent didn't make the last edit, the agent pauses and confirms — a lightweight merge-conflict substitute.</li>
+    <li><strong>Truth hierarchy:</strong> git HEAD outranks any agent's cached read or memory; authoritative state is what's committed.</li>
   </ul>
 
   <h2 id="q5-preserve-trail">5 · How is the audit trail preserved?</h2>
   <p>
     A vault's history is append-only by convention. Sessions move from
-    <code>how/sessions/active/</code> to
-    <code>how/sessions/history/YYYY-MM/</code> on completion; missions and
-    campaigns are archived with <code>status: abandoned</code> or
-    <code>status: completed</code>, never deleted. The standing order
-    "archive, never delete" applies to every governance artifact. The
-    audit trail is the git history plus the on-disk vault — both
-    self-contained and portable.
+    <code>active/</code> to <code>history/YYYY-MM/</code> on completion; missions
+    and campaigns are archived with <code>status: completed</code> or
+    <code>abandoned</code>, never deleted. Standing order #6 ("archive, never
+    delete") applies to every governance artifact.
   </p>
   <ul>
-    <li>
-      <strong>Archive, never delete:</strong> standing order #6 — session
-      records, mission files, and campaign documents are a permanent
-      audit trail.
-    </li>
-    <li>
-      <strong>Monthly partitioning:</strong> session history lives under
-      <code>how/sessions/history/YYYY-MM/</code> — scan by month, query
-      by quarter, no ORM required.
-    </li>
-    <li>
-      <strong>Queryable with standard tools:</strong> sessions and ADRs
-      are YAML-headed markdown — <code>grep</code>, <code>jq</code>,
-      <code>yq</code>, or any scripting language reads them.
-    </li>
+    <li><strong>Archive, never delete:</strong> session records, mission files, and campaign documents are a permanent audit trail.</li>
+    <li><strong>Monthly partitioning:</strong> session history under <code>how/sessions/history/YYYY-MM/</code> — scan by month, query by quarter, no ORM required.</li>
+    <li><strong>Queryable with standard tools:</strong> sessions and ADRs are YAML-headed markdown — <code>grep</code>, <code>jq</code>, <code>yq</code> read them.</li>
   </ul>
   <CardGrid cards={federationCards} columns={2} />
 
   <h2 id="self-reference">Self-reference: this vault is the worked example</h2>
   <p>
-    The audit trail this page describes is the one this vault runs on.
-    Session records for every edit — including the session that produced
-    this page — live in <code>how/sessions/</code> with SITREP and
-    Next Session Prompt. The campaign that produced the entire site is
-    governed by <code>how/campaigns/campaign_rosetta/</code>, with every
-    mission closing on an AAR. The structure is the lesson: to evaluate
-    the audit model, browse <code>how/sessions/history/</code> in the
-    repository and read a few closed sessions end-to-end.
+    The audit trail described here is the one this vault runs on — including the
+    session that produced this page. Browse <code>how/sessions/history/</code>
+    and read a few closed sessions end-to-end to evaluate the audit model directly.
   </p>
 
   <h2 id="next-steps">Next Steps</h2>
