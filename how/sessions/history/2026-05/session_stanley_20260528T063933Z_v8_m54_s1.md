@@ -6,8 +6,9 @@ persona: rosetta
 tier: 1
 created: 2026-05-28
 updated: 2026-05-28
-status: active
+status: completed
 opened_at: 2026-05-28T06:39:33Z
+closed_at: 2026-05-28T07:02:47Z   # M5.4 S1 OPEN — D12 Clarity & Conciseness mission OPEN; 2nd implementation-class mission in v8 P5; 3-commit ordering held (substrate-pure 4885d73 → mission spec OPEN b89202d → cycle 111 binary 237704f); cycle 111 README streamline 872 → 446 lines = 48.9% reduction within 30-50% target; 4-persona Q&A 4/4 at 4.5/5.0; LIFT 4/4 HONORED + AVOID 4/4 AVOIDED; continuous-discipline overlay LIVE; cumulative v8 P5 image-gen UNCHANGED at $1.72 of $50 (3.4%); Op 3 32nd canonical instance; D-PUSH=push-after-S1 fires at G3 per 14-precedent chain
 intent: "M5.4 D12 Clarity & Conciseness S1 — open the 2nd implementation-class mission in v8 P5 (1st was M5.3 D11). Path (a) per AskUserQuestion at S1 entry: pre-S1 substrate-pure commit (writing-guidelines.mdx) + mission spec open + cycle 111 README streamline (single biggest win; 872 → ~400 lines; problem-first → persona-led ordering) in a single session. Mirrors M5.3 S1 cadence (3 things: spec + substrate + 1 cycle). Plan ratified at /Users/stanley/.claude/plans/please-read-the-claude-md-fizzy-cosmos.md. M5.4 canonical 10-cycle plan governed VERBATIM by `m50_decadal_theme_set.md` D12 row lines 108-126 (source-of-truth); D11 AAR §6 reconciliation note confirms this and reframes the prose-tightening 5-cycle queue as a continuous-discipline overlay (HOW the work is done; M5.0 §3 is WHAT the work targets). Continuous-discipline overlay: every persona Q&A reads the writing-guidelines clarity-checklist; every Step-6 validate includes a 5-lens conciseness pass."
 campaign: campaign_adna_serious_tool_readiness
 mission: mission_adna_str_p5_m54_d12_clarity_conciseness
@@ -106,4 +107,45 @@ Delta > 2× on either metric triggers AAR retrospective. Lighter than M5.3 S3 (c
 
 Overlay is HOW the work is done; M5.0 §3 is WHAT the work targets.
 
-(SITREP appended at S1 close)
+## SITREP (M5.4 S1 close)
+
+### Completed
+
+- **Pre-S1 substrate-pure commit `4885d73`** — `site/src/content/reference/writing-guidelines.mdx` LIVE (179 lines; 6 sections: Purpose + Clarity checklist + Voice precedents + Per-page conciseness contract + 5-lens pass + Two-stage validation gate + Change discipline + See also). Both Astro schema gate + MDX render gate PASS on 1st build attempt (title 35/70 chars; description 142/160 chars; 154 pages built in 5.42s up from 153). `skill_substrate_pure_separation` 15/3+ → 16/3+ at 5.3× margin.
+- **M5.4 mission spec OPEN commit `b89202d`** — `missions/mission_adna_str_p5_m54_d12_clarity_conciseness.md` LIVE (229 lines; mission_class=implementation 2nd canonical instance in v8 P5; 14 AC; 7 risks; continuous-discipline overlay clause LIVE; Per-Cycle Execution Log cycles 111-120 with M5.0 §3 D12 assignments verbatim).
+- **Cycle 111 binary commit `237704f`** — README.md 872 → 446 lines (48.9% reduction within 30-50% target). Restructuring: persona prose → table; Mermaid removed (defers to Astro site visuals); §15+§16 Lattices (167 lines) → "Lattices (Optional)" + Further Reading pointer; Quick Start 3 paths → 1 default + 2 blockquote alternatives; FAQ 8 Qs → 5; §4+§6+§7+§18 overlap removed; pre-existing broken `../LICENSE` link fixed; all 15 external relative links verified post-streamline. Cycle 111 III JSON LIVE (1st canonical instance of D12 cycle JSON sub-shape with `continuous_discipline_overlay_verification` field). Persona post-change 4.5/5.0 across all 4 dimensions; LIFT 4/4 HONORED + AVOID 4/4 AVOIDED.
+- **Governance close commit (this)** — campaign master M5.4 row `planned → in_progress` + amendments-table 2026-05-28 entry; STATE.md Op 3 32nd canonical instance refresh + Next Session Prompt → M5.4 S2 cycles 112-115; session file SITREP + status `active → completed` + move active → history/2026-05/.
+
+### In progress
+
+(none — M5.4 S1 closes cleanly)
+
+### Next up
+
+- **M5.4 S2** (default path a): cycles 112+113+114+115 = 4 cycles in 1 session per M5.4 mission shape S1=1 + S2=4 + S3=5 = 10 cycles total. Cycles 112-113 = `site/src/pages/index.astro` 697 → ~350 lines via Hero component extraction + persona card iteration. Cycles 114-115 = compliance/index.astro 272 → ~150 + enterprise/index.astro 267 → ~150.
+- Operator confirms S2 path (a default / b split / c reorder / d interstitial) at S2 session entry.
+- Continuous-discipline overlay (5-lens conciseness pass per writing-guidelines.mdx §4) carries forward to every cycle's Step-2 Q&A + Step-6 validate.
+
+### Blockers
+
+(none)
+
+### Files touched (final)
+
+- `aDNA.aDNA/how/sessions/active/session_stanley_20260528T063933Z_v8_m54_s1.md` → moves to `history/2026-05/` at this close commit
+- `aDNA.aDNA/site/src/content/reference/writing-guidelines.mdx` (NEW; substrate-pure commit 4885d73)
+- `aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p5_m54_d12_clarity_conciseness.md` (NEW; spec-open commit b89202d)
+- `aDNA.aDNA/README.md` (MODIFIED; cycle 111 commit 237704f; 872 → 446 lines)
+- `aDNA.aDNA/what/measurement/iii_results/2026-06/cycle_111_d12_readme_streamline.json` (NEW; cycle 111 commit 237704f)
+- `aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/campaign_adna_serious_tool_readiness.md` (MODIFIED; this close commit; M5.4 row flip + amendments)
+- `aDNA.aDNA/STATE.md` (MODIFIED; this close commit; Op 3 32nd canonical instance + Next Session Prompt → M5.4 S2)
+
+### Token-budget two-metric (per ADR-016 Clause C; S1 actual)
+
+- **Estimated content-load**: 90-150 kT (per session frontmatter)
+- **Actual content-load**: ~120-140 kT (within estimate; lighter than M5.3 S3 which had cycle 110 AAR as heaviest cycle)
+- **Within 2× threshold**: YES — no retrospective required
+
+### Next Session Prompt (S1 close)
+
+See `STATE.md` "## Next Session Prompt" — points to M5.4 S2 cycles 112-115 entry path (a) default.
