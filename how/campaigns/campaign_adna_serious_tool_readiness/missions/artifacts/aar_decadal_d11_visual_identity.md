@@ -142,6 +142,14 @@ D11 is the **first decadal** of the v8 P5 10-decadal program (D11–D20; cycles 
 
 **Proceed to M5.4 — D12 Clarity & Conciseness.**
 
+### Reconciliation note (added 2026-05-27 at M5.3 close wind-down)
+
+The M5.0 §3 D12 row already specifies a **canonical 10-cycle per-file plan** (cycle 111 README streamline 872 → ~400 lines + cycle 112-113 `index.astro` extraction + cycle 114 `compliance/index.astro` + cycle 115 `enterprise/index.astro` + cycle 116 `startup-first-hour/index.astro` + cycle 117 `educators/index.astro` + `researchers/index.astro` combined + cycle 118 `glossary/index.astro` to YAML + cycle 119 `what-is-adna.astro` + tutorials template + vaults page combined + cycle 120 D12 AAR; target 30-50% line reduction per page; primary outputs include `site/src/content/_meta/conciseness_contract.md`). **That M5.0 §3 plan governs M5.4 verbatim** — it is the source-of-truth for cycle-by-cycle assignments.
+
+The 5-cycle priority queue authored below is **reframed as a continuous-discipline overlay**: a clarity-checklist lens that applies ACROSS the M5.0 §3 cycles, not a competing cycle list. Every M5.0 §3 cycle's persona Q&A reads the clarity-checklist; every cycle's Step-6 validate includes a conciseness pass against the writing-guidelines reference doc. The overlay is HOW the work is done; M5.0 §3 is WHAT the work targets.
+
+**Pre-D12 substrate-pure pre-S1 commit at M5.4 entry**: author `site/src/content/reference/writing-guidelines.mdx` (clarity-checklist + sentence/paragraph/jargon flags + voice precedents from M5.1 §1 Rust + Stripe + Linear). Reference companion to `visual-identity-v2.mdx`. Apply cycle-109 doc-authoring shape + two-stage content validation gate (schema + MDX-render). This is the substrate D12 cycles 111-120 consume.
+
 ### Decadal sequence (per M5.1 AAR §6; re-affirmed)
 
 Recommended ordering for M5.4 → M5.5:
@@ -158,9 +166,9 @@ Recommended ordering for M5.4 → M5.5:
 | 8 | D19 | (M5.5+) | Mobile & Responsive v2 | |
 | 9 | D20 | (M5.5+) | Performance & Hardening & Adversarial Capstone | Phase 5 exit gate; ranker bench across SITE + REPO |
 
-### Carry-forward 5-cycle priority queue for D12
+### Continuous-discipline overlay for D12 (5-lens clarity checklist)
 
-D12 (Clarity & Conciseness) should open with these 5 priority cycles seeded from D11:
+Per the reconciliation note above, these 5 disciplines apply ACROSS the M5.0 §3 D12 cycles (overlay, not cycle plan):
 
 1. **Cycle 111**: Audit existing prose surfaces in `site/src/content/docs/*.mdx` for word-count outliers (1.5× median = candidates for D12 compression).
 2. **Cycle 112**: Pass D12 on the top 3 word-count outliers — apply Anti-Bloat Editor lens + UX Writer lens.
