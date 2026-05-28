@@ -1,0 +1,179 @@
+---
+title: "Writing Guidelines — aDNA Reference"
+description: "Canonical clarity and conciseness guidelines for aDNA prose surfaces — checklist, voice precedents, conciseness contract, and validation gate."
+ref_title: "Writing Guidelines"
+stability: "stable"
+updated: 2026-05-28
+---
+
+## Purpose
+
+This is the contributor-facing reference for prose decisions across the aDNA documentation surface. If you are authoring a page, a guide, a README section, or a glossary entry, this document tells you which sentence lengths to honor, which voice precedents to draw from, how to cap page length, and how to validate a new MDX file before committing it.
+
+The guidelines crystallize the decisions ratified during the M5.3 D11 close wind-down (AAR §6 reconciliation note) and operationalize the [Cross-Target Synthesis](/reference/specification) §3 D12 row: lift task-focused imperative language from Rust + Astro + Tailwind + Tauri; avoid the page-bloat and IA-fragmentation patterns of Stripe + Vercel + Linear + Obsidian-plugin-ecosystem docs.
+
+The shorter version: **shorter sentences, fewer paragraphs, named-thing nouns, no marketing copy, persona-led ordering**.
+
+Companion documents:
+
+- The [Visual Identity v2](/reference/visual-identity-v2) — what aDNA surfaces should look like.
+- The [Design Rationale](/reference/design-rationale) — why aDNA is built this way.
+- This document — how to write prose that matches the surface.
+
+---
+
+## 1. Clarity checklist
+
+Apply this checklist before committing any new prose surface. Each line is a flag, not a hard rule — a violation is a candidate for revision, not an automatic reject.
+
+| Flag | Threshold | Why it matters |
+|---|---|---|
+| **Long sentence** | > 25 words | Beyond 25 words, comprehension drops and clause-tracking fails for non-native readers. |
+| **Long paragraph** | > 4 sentences | More than 4 sentences in a paragraph buries the topic sentence; readers skim past it. |
+| **Passive voice** | "is/are/was/were + past-participle" without a clear subject | Passive voice hides agency. The reader cannot tell who decides, who acts, or who is affected. |
+| **Jargon without definition** | Term used on first appearance without a parenthetical, link, or inline gloss | Newcomers hit an undefined term and either give up or context-switch. |
+
+### How to revise
+
+1. **Long sentence** — break at the conjunction, or extract a parenthetical clause into its own sentence.
+2. **Long paragraph** — split at the next topic shift, or convert a list of points into a bullet list.
+3. **Passive voice** — name the actor. *"The lattice IS executed"* → *"Latlab executes the lattice"*. If the actor is genuinely unknown, the sentence may be reporting a state, not an action — consider whether the prose is in the right form.
+4. **Jargon without definition** — link to the glossary entry on first appearance, or add a parenthetical: *"the triad (WHAT / HOW / WHO)"*.
+
+### A note on this document
+
+This document is the reference, not the law. Every flag is a hint to look closer. A 30-word sentence that scans cleanly is fine. A passive voice that names the actor in the next sentence is fine. The flags exist to surface candidates for review, not to fail builds.
+
+---
+
+## 2. Voice precedents
+
+The M5.1 cross-target research dossier surfaced four LIFT precedents and four AVOID precedents for D12 (Clarity & Conciseness). They are summarized here; the dossier itself is the deeper substrate.
+
+### LIFT — voices to imitate
+
+| Target | Pattern | Where it applies |
+|---|---|---|
+| **Rust** (rust-lang.org/book) | Role-segregated documents — Book ≠ Reference ≠ Std ≠ Examples. Each document has an explicit out-of-scope statement. | Use when a single concept needs both a tutorial and a reference treatment — split them. |
+| **Astro** (docs.astro.build) | Concept-before-syntax. Each page opens with what the thing IS before showing how to use it. | Use in guides and tutorials — open with the mental model, not the API. |
+| **Tailwind** (tailwindcss.com/docs) | Task-focused imperative language. "Add a class" not "Classes can be added". Named-thing nouns over abstract noun phrases. | Use in step-by-step and how-to surfaces. |
+| **Tauri** (tauri.app) | Capability-based organization. Docs group around what the reader can do, not around source structure. | Use for index pages and section landings — name the capability, not the directory. |
+
+### AVOID — patterns to refuse
+
+| Target | Anti-pattern | Why we refuse it |
+|---|---|---|
+| **Stripe** (docs.stripe.com) | Page-bloat at top-level — every page tries to be both reference and tutorial. | Splits attention; readers cannot tell which mode of page they are reading. |
+| **Vercel** (vercel.com/docs) | Marketing copy in technical pages. "Blazingly fast" and "delightful" in reference docs. | Adjectives without measurement train readers to skim past them. |
+| **Linear** (linear.app/docs) | Categorical-hierarchy-only IA. Concepts grouped by category, not by reader task. | Forces a category mental model before the reader has one. |
+| **Obsidian plugins** | IA fragmentation. Plugin docs scattered across community forums, GitHub READMEs, and partial wiki pages. | No canonical surface; readers cannot tell which copy is authoritative. |
+
+### A concrete contrast
+
+The same sentence in three registers:
+
+| Register | Sentence |
+|---|---|
+| LIFT (Rust/Tailwind) | Run `latlab lattice validate <path>` to check schema conformance. |
+| Neutral | Lattice validation can be performed by invoking the validate subcommand. |
+| AVOID (Vercel-style) | Effortlessly validate your lattice with our blazingly fast validation engine. |
+
+The LIFT register names the actor (you), the verb (run), the artifact (the command), and the goal (check schema conformance) in 11 words. Match this register.
+
+---
+
+## 3. Per-page conciseness contract
+
+Every prose surface should fit a per-page line guideline. The contract below is the default; deviations are explicit decisions, not drift.
+
+| Surface | Target line budget | Section purpose constraint |
+|---|---|---|
+| **README** | ≤ 400 lines | Problem-first hook; persona-led entry points; pointer to canonical site. Not a full tutorial. |
+| **Section index page** (e.g., `learn/index.astro`) | ≤ 150 lines | One hook, one card-row, one onward link per persona. Not a TOC dump. |
+| **Tutorial page** | 200-500 lines | One concept per page; one mental-model paragraph; numbered steps. Not a reference. |
+| **Reference page** | 200-500 lines | One canonical thing per page (one component, one API, one token table). Not a guide. |
+| **Glossary entry** | 5-15 lines | One paragraph definition; one "see also" line. Not an essay. |
+| **Concept page** | 300-600 lines | Mental model + canonical example + cross-references. Not a how-to. |
+
+### Per-section purpose constraint
+
+Every section header should answer one question. If a section answers multiple questions, split it. If a section answers no question, delete it.
+
+### Componentization triggers
+
+Extract a component when:
+
+1. The same prose pattern appears on 3+ pages (e.g., a hero block, a persona card grid).
+2. A prose section is > 80 lines AND its structure (not its content) repeats.
+3. The prose is data-driven (e.g., a list of vaults, a list of glossary entries) — move it to YAML and render via a single template.
+
+---
+
+## 4. The 5-lens conciseness pass
+
+Apply this pass at Step-6 (validate) of every M5.0 §3 D12 cycle. It is the continuous-discipline overlay per the D11 AAR §6 reconciliation note.
+
+1. **Word-count outliers** — flag any paragraph or section > 1.5× the median length on that page. Outliers are revision candidates.
+2. **Top-outlier pass** — the longest 3 paragraphs on the page get an Anti-Bloat Editor + UX Writer review.
+3. **Glossary tightening** — definitional surfaces follow the Stripe + Linear voice precedent (terse, definitional, no marketing copy).
+4. **Clarity-checklist** — apply §1 above to every paragraph.
+5. **Reference collection scan** — operator-facing material (`agent-first-guide`, `governance-model`, `quality-rubric`, `tool-setup`) is the highest-leverage conciseness surface in the whole vault. Treat it accordingly.
+
+### Lens order matters
+
+Run the lenses in order. Lens 1 surfaces candidates; lens 2 acts on the top three; lens 3 catches the glossary-specific failure mode; lens 4 is the universal check; lens 5 is the "remember the high-leverage surfaces" reminder. Skipping lens 1 produces work without prioritization; skipping lens 5 produces work without focus.
+
+---
+
+## 5. Two-stage content validation gate
+
+Every new file under `site/src/content/` validates against two gates in sequence:
+
+### Gate 1 — Schema validation
+
+Astro content collections enforce frontmatter schemas at build time. Catches:
+
+- Title > 70 chars (reference + docs collections)
+- Description > 160 chars
+- Missing required fields (`updated`, `ref_title`, `stability`)
+- Invalid enum values (`stability` outside `stable | beta | experimental | deprecated`)
+
+Run via `cd site && npm run build`. Failures abort the build with a clear collection + file pointer.
+
+### Gate 2 — MDX render
+
+MDX files compile through the unified pipeline. Catches:
+
+- Unbalanced JSX (unclosed tag, missing brace)
+- Expression interpolation inside inline-code (the cycle-109 trap — see warning below)
+- Imported component path errors
+- Missing default exports in component imports
+
+Run via the same `npm run build`. Failures surface a line number and the parser context.
+
+### Warning — the nested-backtick trap
+
+Do not write JSX template-literal expressions inside backtick-quoted inline code in MDX prose. The MDX parser interprets the inner template literal as an actual expression and fails to resolve it. Use a fenced code block instead — fenced code is treated as literal and the parser leaves it alone.
+
+If you need to show an Astro expression in prose, write it inside a fenced code block (triple backticks with `astro` as the language), not inside inline code.
+
+---
+
+## 6. Change discipline
+
+This document is the canonical writing reference. Changes go through:
+
+1. Persona Q&A in a D12 (or D15 / D17) decadal cycle.
+2. Operator ratification at mission close or phase gate.
+3. Update to relevant prose surfaces + this document in the same commit batch.
+
+For one-off prose additions (a new glossary entry, a new tutorial), follow the per-page contract above; record the cycle JSON per ADR-025+026 if the addition is part of a D12 cycle.
+
+---
+
+## See also
+
+- [Visual Identity v2](/reference/visual-identity-v2) — companion reference for how prose surfaces look.
+- [Design Rationale](/reference/design-rationale) — why aDNA is structured the way it is.
+- [aDNA Universal Standard](/reference/specification) — the normative spec this surface demonstrates.
+- [Agent-First Guide](/reference/agent-first-guide) — the highest-leverage operator-facing surface; conciseness lens 5 applies here.
