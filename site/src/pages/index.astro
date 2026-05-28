@@ -1,6 +1,6 @@
 ---
-import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeHero from '../components/sections/HomeHero.astro';
 import { buildWebSiteJsonLD } from '../utils/seo';
 import bannerImage from '../assets/aDNABanner.png';
 
@@ -112,38 +112,7 @@ const stats = [
   description="An open standard that structures your project's context and knowledge so both humans and AI agents can navigate it."
   jsonLD={jsonLD}
 >
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-banner">
-      <Picture
-        src={bannerImage}
-        alt="aDNA — retro pixel-art wordmark on a metal plate, set against glowing DNA helices rising from a workspace of laboratory instruments"
-        widths={[480, 768, 964]}
-        formats={["avif", "webp"]}
-        sizes="(max-width: 768px) calc(100vw - 3rem), 56rem"
-        class="hero-banner-img"
-        loading="eager"
-      />
-    </div>
-    <p class="hero-lead">An open standard for context and knowledge.</p>
-    <div class="hero-actions">
-      <a href="/get-started" class="btn btn-primary" data-astro-prefetch>Get Started</a>
-      <a href="/learn/what-is-adna" class="btn btn-secondary" data-astro-prefetch>What is aDNA?</a>
-    </div>
-    <div class="hero-trust-links">
-      <a href="https://github.com/LatticeProtocol/Agentic-DNA" target="_blank" rel="noopener" class="trust-link">View on GitHub</a>
-      <span class="trust-sep" aria-hidden="true">·</span>
-      <a href="/reference/specification" class="trust-link" data-astro-prefetch>Read the Specification</a>
-    </div>
-    <div class="trust-strip">
-      {stats.map((stat) => (
-        <div class="trust-stat">
-          <span class="trust-value">{stat.value}</span>
-          <span class="trust-label">{stat.label}</span>
-        </div>
-      ))}
-    </div>
-  </section>
+  <HomeHero bannerImage={bannerImage} stats={stats} />
 
   <!-- How it Works -->
   <section class="how-it-works">
@@ -216,164 +185,6 @@ const stats = [
 </BaseLayout>
 
 <style>
-  /* ——— Hero ——— */
-  .hero {
-    padding: var(--space-12) var(--space-6) var(--space-16);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-banner {
-    max-width: 56rem;
-    width: 100%;
-    margin: 0 auto var(--space-8);
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--color-border);
-  }
-
-  .hero-banner-img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .hero-problem {
-    font-family: var(--font-display);
-    font-size: var(--text-base);
-    font-weight: 500;
-    color: var(--color-text-muted);
-    max-width: 38rem;
-    margin: 0 auto var(--space-5);
-    line-height: 1.5;
-  }
-
-  .hero-lead {
-    font-family: var(--font-display);
-    font-size: var(--text-2xl);
-    font-weight: 600;
-    color: var(--color-text-heading);
-    max-width: 42rem;
-    margin: 0 auto var(--space-4);
-    line-height: 1.35;
-  }
-
-  .hero-subtitle {
-    font-family: var(--font-display);
-    font-size: var(--text-lg);
-    font-weight: 500;
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-8);
-    line-height: 1.4;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: var(--space-4);
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-trust-links {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-    margin-top: var(--space-4);
-    font-size: var(--text-sm);
-  }
-
-  .trust-link {
-    color: var(--color-text-muted);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color var(--transition-fast);
-  }
-
-  .trust-link:hover {
-    color: var(--color-primary);
-  }
-
-  .trust-sep {
-    color: var(--color-border);
-  }
-
-  .trust-strip {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-8);
-    flex-wrap: wrap;
-    margin-top: var(--space-8);
-    padding-top: var(--space-6);
-    border-top: 1px solid var(--color-border);
-    width: 100%;
-    max-width: 36rem;
-  }
-
-  .trust-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-1);
-  }
-
-  .trust-value {
-    font-family: var(--font-display);
-    font-size: var(--text-xl);
-    font-weight: 700;
-    color: var(--color-primary);
-  }
-
-  .trust-label {
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    padding: var(--space-3) var(--space-6);
-    border-radius: var(--radius-lg);
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: var(--text-base);
-    text-decoration: none;
-    transition: all var(--transition-fast);
-  }
-
-  .btn-primary {
-    background: var(--color-primary);
-    color: white;
-  }
-
-  .btn-primary:hover {
-    background: var(--color-primary-hover);
-    color: white;
-  }
-
-  :global(.dark) .btn-primary {
-    background: var(--brand-primary);
-  }
-
-  :global(.dark) .btn-primary:hover {
-    background: var(--brand-primary-dark);
-  }
-
-  .btn-secondary {
-    border: 1px solid var(--color-border);
-    color: var(--color-text);
-    background: var(--color-surface);
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-  }
-
   /* ——— Shared section styles ——— */
   .section-inner {
     max-width: var(--content-width);
@@ -620,47 +431,10 @@ const stats = [
       box-shadow: var(--shadow-sm);
       transition: transform 80ms ease, box-shadow 80ms ease;
     }
-
-    .btn:active {
-      opacity: 0.85;
-      transition: opacity 80ms ease;
-    }
   }
 
   /* ——— Responsive ——— */
-  @media (max-width: 768px) {
-    .hero {
-      padding: var(--space-16) var(--space-4) var(--space-12);
-    }
-
-    .hero-banner {
-      max-width: 100%;
-    }
-
-    .trust-strip {
-      gap: var(--space-6);
-    }
-  }
-
   @media (max-width: 480px) {
-    .hero {
-      padding: var(--space-8) var(--space-4) var(--space-8);
-    }
-
-    .hero-lead {
-      font-size: var(--text-xl);
-    }
-
-    .hero-subtitle {
-      font-size: var(--text-base);
-    }
-
-    .trust-strip {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-4);
-    }
-
     .section-title {
       font-size: var(--text-2xl);
     }
