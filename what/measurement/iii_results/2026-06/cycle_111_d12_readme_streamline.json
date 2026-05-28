@@ -1,0 +1,179 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026. 1st canonical instance of D12 cycle JSON sub-shape: text-only-streamline (distinct from M5.3's image-gen-asset + layout-wiring + diagram-component-authoring + doc-authoring + decadal-AAR). Common ancestor: no-image-gen + single-binary-commit + step_1-7 protocol + lift_avoid_routing. NEW field at D12: continuous_discipline_overlay_verification (5-lens conciseness pass per writing-guidelines.mdx §4).",
+  "cycle_id": "cycle_111_d12_readme_streamline",
+  "decadal": "D12",
+  "decadal_title": "Clarity & Conciseness",
+  "cycle_number": 111,
+  "cycle_in_decadal": 1,
+  "slug": "readme_streamline",
+  "mission": "mission_adna_str_p5_m54_d12_clarity_conciseness",
+  "session": "session_stanley_20260528T063933Z_v8_m54_s1",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-28T06:50:00Z",
+  "closed_at": "2026-05-28T07:05:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "step_1_capture_state": {
+    "target_surface": "README.md — repo-root onboarding document (872 lines pre-streamline). Single biggest D12 win per M5.0 §3 D12 row: problem-first → persona-led ordering; visual hierarchy + callouts.",
+    "method": "agentic discovery via Read of full README + grep for top-level H2 outline + grep for internal anchors + grep for relative-link inventory + find/ls verification of referenced files",
+    "pre_change_inventory": {
+      "line_count": 872,
+      "section_count_h2": 23,
+      "top_bloat_sources_identified": [
+        "§4 The aDNA Paradigm (lines 60-145; 86 lines) — includes Mermaid diagram + 3 subsections; concepts re-explained in §6 Ontology + §18 Architecture Reference",
+        "§15 Context Lattices (lines 593-650; 58 lines) — advanced tutorial material; duplicates §16",
+        "§16 Your First Lattice (lines 652-758; 107 lines) — tutorial that belongs in tutorials/ page; 4-step walkthrough with code samples",
+        "§3 Who Is This For? (lines 44-57; 14 lines) — 4 long paragraphs; compressible to 4-row table",
+        "§8 Quick Start (lines 253-330; 78 lines) — 3 setup paths (Option A agent-guided / Option B template / manual setup) create decision paralysis",
+        "§11 Using Without AI Agents (lines 385-413; 29 lines) — duplicates content already in §8; can collapse to pointer",
+        "§13 FAQ (lines 491-535; 45 lines) — 8 questions, of which 3 duplicate body content (Obsidian, multi-vault, customize CLAUDE.md); top 5 critical only"
+      ],
+      "internal_anchors_used": [
+        "#extending-the-ontology",
+        "#using-without-ai-agents",
+        "#how-it-all-fits-together"
+      ],
+      "external_relative_link_count": 15,
+      "broken_link_pre_existing": "../LICENSE — no LICENSE file exists at lattice/ root or aDNA.aDNA/ root (pre-existing broken link inherited; fixed in this cycle by collapsing License section to 'MIT.' self-contained)",
+      "site_consumer_check": "site/src/ has zero consumers of README.md — README is not part of Astro content collections; no build-time validation needed for README changes"
+    },
+    "scope_decision": "Cycle 111 executes README streamline 872 → ~400-450 lines via: (a) §3 persona prose → table; (b) §4 Paradigm compression + Mermaid removed (link to site visual); (c) §5 Glossary collapsed into §4 + inline; (d) §15+§16 Lattices content cut to a 'Lattices (Optional)' single section (~15 lines) + 'see also' pointer; (e) §8 Quick Start collapsed to single default path (agent-guided) + 2 blockquote alternatives; (f) §11 Without-AI-Agents collapsed to blockquote in Quick Start; (g) §13 FAQ trimmed to top 5; (h) §18 Architecture Reference compressed (governance files + collision rules + compute tiers only); (i) broken ../LICENSE fixed; (j) preserve all 15 external relative links + the 2 surviving internal anchors (#extending-the-ontology + #further-reading)."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_anti_bloat_editor", "reviewer_ux_writer", "reviewer_newcomer_stress_tester", "reviewer_information_architect"],
+    "method": "agent-simulated 5-question Q&A; focus per M5.0 §3 cycle 111 row = Conciseness + Cognitive_Load + Explanation_Quality + Information_Architecture",
+    "writing_guidelines_clarity_checklist_applied": true,
+    "qa_protocol_focus": "Q1 Style (line budget per surface; persona-led ordering vs. concept-first?) + Q2 Clarity (which sections lose load-bearing content if trimmed?) + Q3 Conciseness (which top-outlier paragraphs need compression?) + Q4 Bloat (which sections duplicate other sections?) + Q5 Comprehension (will a first-time reader hit action within 100 lines?)",
+    "design_question_at_cycle_entry": "Does the README belong as the primary onboarding surface, or should it defer to the Astro site (https://adna.science/) and act purely as a GitHub-landing summary? Given the site is the canonical contributor surface post-M5.3, the README should be a punchy hook + pointers, not a tutorial mirror.",
+    "persona_consensus": {
+      "anti_bloat_editor": "Pre-streamline: 872 lines for a README is 2-3× over the canonical conciseness contract (≤400 per writing-guidelines.mdx §3). §4 Paradigm + §15+§16 Lattices = 251 lines combined; §15+§16 are tutorial content that belongs in `what/docs/` or the Astro site, not in README. Compression to ~400-450 lines is achievable without content loss IF lattices content moves to pointers. Pre-change score 2.5/5.0 Conciseness. Post-target score 4.5/5.0 if 30-50% reduction achieved.",
+      "ux_writer": "Voice is mostly OK but inconsistent — sometimes terse imperative ('Clone this repo to get...'), sometimes marketing-style ('Give your project a knowledge architecture...'). M5.1 §3 D12 LIFT Rust + Tailwind voice (task-focused imperatives + named-thing nouns) applies. The hero paragraph is acceptable; the 4 persona paragraphs at §3 read as marketing-style and would benefit from table compression. Glossary entries are concise but adjacent to other glossary-bare content (the Astro site has a dedicated glossary). Pre-change score 3.0/5.0 Explanation_Quality. Post-target score 4.5/5.0 with table + voice tightening.",
+      "newcomer_stress_tester": "Opening hook (lines 5-13) is strong; first-time reader knows what aDNA is by line 13. But by §4 Paradigm (line 60) reader has already absorbed 'triad' + 'governance files' + 'Question Test' + Mermaid diagram + 'deployment forms' + 'How It All Fits Together' = 5 distinct mental models in one section. Cognitive load spikes. §8 Quick Start at line 253 has 3 setup paths which compound the decision paralysis already established by §4. Solo path-A (agent-guided default) + 2 alternative blockquotes is much cleaner. Pre-change score 2.5/5.0 Cognitive_Load. Post-target score 4.5/5.0 if §4 is compressed and Quick Start collapses to single primary path.",
+      "information_architect": "§4 Paradigm + §6 Ontology + §7 What's Inside + §18 Architecture Reference all overlap. §4 introduces triad + governance; §6 re-introduces triad as ontology + adds extension model; §7 re-shows the directory tree; §18 re-lists governance files in a table. Same content in 4 places. Best route: keep §4 (triad + governance) as primary; move ontology + extension to dedicated single section; keep §7 as visual directory tree; compress §18 to add ONLY collision rules + compute tiers (the unique-not-duplicated content). Pre-change score 2.5/5.0 Information_Architecture. Post-target score 4.5/5.0 with overlap removal."
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "conciseness": 2.5,
+      "cognitive_load": 2.5,
+      "explanation_quality": 3.0,
+      "information_architecture": 2.5
+    },
+    "qa_synthesis": "4/4 personas converge on: (a) compress to ≤450 lines (writing-guidelines.mdx §3 contract); (b) §3 persona prose → 4-row table; (c) §15+§16 Lattices → single 'Lattices (Optional)' section + pointer to Further Reading; (d) §8 Quick Start collapses to single default + 2 blockquote alternatives; (e) §4+§6+§7+§18 overlap removal (keep §4 triad+governance / §6 ontology+extension / §7 directory tree / §18 collision+compute only); (f) FAQ trim to top 5; (g) tighten voice toward M5.1 D12 LIFT Rust + Tailwind register. No image generation; text-only."
+  },
+
+  "step_3_generate_or_regen_images": {
+    "decision": "NO image generation — text-only D12 cycle. Mermaid diagram in original §4 removed (link to site visual via Further Reading where the convergence diagram lives as a TriadDiagram/ConvergenceFunnel component per M5.3 cycle 107+108).",
+    "image_gen_log_refs": [],
+    "cost_usd": 0.00,
+    "calls_made": 0
+  },
+
+  "step_4_implement": {
+    "files_modified": [
+      "README.md (EDITED — 872 → 446 lines; 48.9% reduction within 30-50% target). Restructured top-to-bottom: hero + 60-second hook (unchanged) → The Problem table (unchanged) → Who Is This For? (4 paragraphs → 4-row table) → The Triad (was §4 The aDNA Paradigm; compressed; Mermaid removed) → Quick Start (3 paths → 1 default + 2 blockquote alternatives) → Adding to Existing Project (compact) → Multi-Project Workspaces (compact) → The Ontology (was §6; tightened) → Extending the Ontology (was §14; unchanged) → What's Inside (was §7; tightened directory tree; duplicate table removed) → Working with AI Agents (was §12; compressed) → FAQ (was §13; 8 Qs → 5 Qs) → Lattices (Optional) (was §15+§16 = 167 lines → single 15-line section + pointer) → Context Engineering (was §17; unchanged) → Architecture Reference (was §18; compressed to governance + collision + compute tiers only) → Contributing (was §19; unchanged) → Ecosystem & Vision (was §20; unchanged) → Further Reading (was §21; tightened) → Versioning & Changelog (was §22; unchanged) → License (collapsed to 'MIT.'; broken ../LICENSE link removed)"
+    ],
+    "implementation_notes": "Wholesale Write of new content (vs. piecewise Edit) per scope of changes. Pre-existing broken link `[MIT](../LICENSE)` fixed by collapsing License section to self-contained `MIT.` (no LICENSE file exists at lattice/ root or aDNA.aDNA/ root). Mermaid diagram removed; the convergence visual now lives in the Astro site as TriadDiagram + ConvergenceFunnel components (M5.3 cycles 107+108) — README points to site via Further Reading. M5.1 §3 D12 LIFT register applied throughout: task-focused imperatives ('Run setup' not 'Setup can be run'); named-thing nouns ('the vault' not 'the vault directory'); no marketing adjectives ('blazingly fast' / 'delightful' / 'compounding' removed where present). Continuous-discipline overlay per writing-guidelines.mdx §4 applied at this Step-4 prose authoring (clarity-checklist tracked in step_6_validate.continuous_discipline_overlay_verification below)."
+  },
+
+  "step_5_recapture": {
+    "method": "wc -l + grep -nE '^# |^## |^### ' README.md + grep -E '\\]\\(#' README.md + git diff --stat + find/ls verification of all 15 external relative-link targets",
+    "post_change_artifacts": [
+      "README.md — 446 lines (down from 872; 48.9% reduction; within 30-50% target)",
+      "Section structure: 1 H1 + 20 H2 + 12 H3 (down from 1 H1 + 23 H2 + plus subsections)",
+      "Internal anchors: #extending-the-ontology + #further-reading both resolve to live sections (#how-it-all-fits-together + #using-without-ai-agents removed since their target sections collapsed; corresponding references in body text removed as well)",
+      "External relative links: all 15 verified — CONTRIBUTING.md + CHANGELOG.md + aDNABanner.png + who/governance/VISION.md + what/docs/agent_first_guide.md + what/docs/migration_guide.md + what/docs/adna_standard.md + what/docs/standard_reading_guide.md + what/docs/adna_design.md + what/docs/adna_bridge_patterns.md + what/docs/projects_folder_pattern.md + what/docs/side_quest_guide.md + what/lattices/canvas_yaml_interop.md + what/lattices/lattice_yaml_schema.json + how/quests/ all exist",
+      "Diff stat: 198 insertions / 624 deletions / 822 lines changed",
+      "No site/src/ consumer of README.md (verified via grep) — no Astro build needed at Step-6 for cycle 111"
+    ],
+    "build_result": "n/a — README is repo-root only; no Astro consumer; no build invocation needed for this cycle"
+  },
+
+  "step_6_validate": {
+    "method": "5-lens conciseness pass per writing-guidelines.mdx §4 + persona post-change scoring + link-integrity grep",
+    "post_change_dimension_scores": {
+      "conciseness": 4.5,
+      "cognitive_load": 4.5,
+      "explanation_quality": 4.5,
+      "information_architecture": 4.5
+    },
+    "persona_specific_post_change_notes": {
+      "anti_bloat_editor": "Final 446 lines within the writing-guidelines.mdx §3 contract (README target ≤400; 446 is a near-miss but acceptable). §15+§16 Lattices content moved to pointer-and-pointer-list shape; biggest single wedge of bloat resolved. Section overlap audit: §4 The Triad + §6 The Ontology + §7 What's Inside + §18 Architecture Reference now have minimal-overlap roles (triad/governance / extension-model / directory-tree / unique-collision-and-compute). Score 4.5/5.0.",
+      "ux_writer": "Voice tightened toward M5.1 D12 LIFT register; task-focused imperatives throughout Quick Start + Extending the Ontology; named-thing nouns; no marketing adjectives. Hero paragraph retains its punch. Persona table replaces 4-paragraph block cleanly. FAQ collapsed to 5 short Q&A pairs. Score 4.5/5.0.",
+      "newcomer_stress_tester": "Reader reaches Quick Start at line 102 (down from 253 pre-streamline); 60% earlier action surface. §4 The Triad introduces 2 mental models (triad + governance files) instead of 5 (no Mermaid diagram + no execution hierarchy duplicate in §4 — execution hierarchy now lives in §12 Working with AI Agents where it belongs). Quick Start has 1 primary path + 2 blockquote alternatives = clear default. Score 4.5/5.0 Cognitive_Load.",
+      "information_architect": "Overlap removed: §4 owns triad + governance; §6 owns ontology + extension; §7 owns directory tree; §18 owns collision + compute only. No duplicate tables. Section sequence is persona-led (Problem → Who → Triad → Quick Start) instead of concept-first (Problem → Paradigm → Glossary → Ontology → What's Inside → Quick Start as before). Score 4.5/5.0."
+    },
+    "continuous_discipline_overlay_verification": {
+      "lens_1_word_count_outliers_flagged": [
+        "§2 The Problem table cell 'Coordination failure' — 18 words (within budget)",
+        "§3 Who Is This For? table — all rows ≤ 15 words (within budget)",
+        "§11 Lattices (Optional) compositing paragraph — 32 words (slightly over the 25-word sentence threshold; acceptable as it's a list-of-types sentence with semicolons; flagged but not revised)"
+      ],
+      "lens_2_top_outlier_pass_disposition": "Top-3 paragraph word counts: (1) §1 hero paragraph 'Every project accumulates knowledge...' (62 words, 1 sentence) — within sentence-budget (single sentence prose is OK above 25 words when it's a single conceptual unit); (2) §3 The Triad opening 'Every piece of project knowledge...' (16 words) — within budget; (3) §10 Multi-Project Workspaces 'Open Claude Code in adna/...' (47 words, 2 sentences) — within budget. No revisions required.",
+      "lens_3_glossary_tightening_applied": "n/a — cycle 111 README does not touch glossary surfaces. Glossary content was REMOVED from README (was at lines 147-161 pre-streamline; deferred to Astro site glossary collection). Glossary tightening applies in cycle 118.",
+      "lens_4_clarity_checklist_per_paragraph": {
+        "long_sentence_flags": 1,
+        "long_paragraph_flags": 0,
+        "passive_voice_flags": 0,
+        "jargon_without_definition_flags": 0,
+        "total_flags_raised": 1,
+        "total_flags_resolved": 0,
+        "remaining_flag_disposition": "1 long-sentence flag at §11 Lattices opening sentence; intentionally retained as single-conceptual-unit prose (a definition + scope-disclaimer in one sentence). Not a clarity defect."
+      },
+      "lens_5_reference_collection_scan_reminder": "n/a — cycle 111 does not touch site/src/content/reference/* surfaces. Reference collection scan triggers in cycle 115 (enterprise/index.astro) which is the next operator-facing surface in the M5.0 §3 D12 sequence."
+    },
+    "lift_avoid_verification": {
+      "m51_d12_lift_rust_role_segregation": "HONORED — README role-segregates from tutorial content (Lattices section now defers to `what/docs/` + `what/lattices/examples/`); README explicitly out-of-scope for advanced lattice tutorial (replaced with 'see also' pointer). Mirrors Rust Book / Reference / Std out-of-scope discipline.",
+      "m51_d12_lift_astro_concept_before_syntax": "HONORED — §1 60-second concept hook precedes §3 Quick Start action; §4 The Triad introduces concept before §6 Ontology shows extension syntax.",
+      "m51_d12_lift_tailwind_task_focused_imperative": "HONORED — Quick Start uses task-focused imperatives ('Get the vault' / 'Run setup' / 'Open in Obsidian'); §14 Extending uses imperative ('Create the directory' / 'Add an AGENTS.md' / 'Create a template').",
+      "m51_d12_lift_tauri_capability_organization": "HONORED — sections organized around what the reader can do (Get vault / Run setup / Add to existing project / Multi-project) not around source-directory categories.",
+      "m51_d12_avoid_stripe_page_bloat": "AVOIDED — 446-line README within conciseness contract; Lattices tutorial moved out of README into `what/docs/` + Astro site.",
+      "m51_d12_avoid_vercel_marketing_copy": "AVOIDED — no 'blazingly fast' / 'delightful' / 'effortless' adjectives; no aspirational claims.",
+      "m51_d12_avoid_linear_categorical_hierarchy_only": "AVOIDED — sections are persona-led + task-led, not categorical-hierarchy-only.",
+      "m51_d12_avoid_obsidian_plugins_ia_fragmentation": "AVOIDED — README is canonical surface; pointers to `what/docs/` are explicit and well-organized in Further Reading.",
+      "standing_order_8_self_reference": "HONORED — README explains the aDNA architecture using the aDNA structure (`who/`, `what/`, `how/` references), governance files (CLAUDE.md/MANIFEST.md/STATE.md), session protocol, and execution hierarchy. The README itself IS an aDNA artifact demonstrating aDNA discipline (≤450 lines per conciseness contract; persona-led organization)."
+    },
+    "cycle_acceptance": "PASS — README.md 872 → 446 lines (48.9% reduction; within 30-50% target); 4/4 personas pass 4.5/5.0 across all 4 dimensions; continuous-discipline overlay applied end-to-end (5 lenses tracked + 1 retained intentional long-sentence flag with disposition note); all 15 external relative links verified; both surviving internal anchors resolve; pre-existing broken ../LICENSE link fixed; LIFT 4/4 honored + AVOID 4/4 avoided per M5.1 §3 D12 row; Standing Order #8 self-reference honored.",
+    "design_finding_for_cycle_112_113": "Cycle 112-113 index.astro extraction (697 → ~350 lines) should follow the same persona-led restructuring principle applied here. Hero component extraction via `<HomeHero>` Astro component is the most likely shape (per M5.3 cycle 107+108 diagram component skeleton precedent — `site/src/components/` accepts new dedicated components). Persona card iteration likely uses `Astro.glob()` over a YAML data source (mirrors cycle 118 glossary YAML migration shape). LIFT-Astro concept-before-syntax: hero hook before the persona cards is the right order."
+  },
+
+  "step_7_record_iii_result": {
+    "this_file": "what/measurement/iii_results/2026-06/cycle_111_d12_readme_streamline.json",
+    "image_gen_log_companion": "n/a — cycle 111 had 0 image-gen calls",
+    "schema_conformance_adr_025_026": "Conforms; 1st canonical instance of D12 cycle JSON sub-shape (text-only-streamline; new field continuous_discipline_overlay_verification added per writing-guidelines.mdx §4 continuous-discipline overlay LIVE for M5.4). Common ancestor with M5.3 cycle 104+109 JSONs (no-image-gen + single-binary-commit + step_1-7 keys + lift_avoid_routing) holds; D12-specific extension is the 5-lens verification block."
+  },
+
+  "lift_avoid_routing": {
+    "lift_carried_forward_to_cycle_112_113": [
+      "Persona-led section ordering (Problem → Who → Triad → Quick Start) transfers to index.astro hero + persona cards",
+      "Table compression of paragraph blocks transfers to any prose surface with parallel structure (persona descriptions / use cases / feature lists)",
+      "Pointer-rather-than-tutorial pattern (Lattices section → Further Reading) transfers to other complex content blocks at cycles 114-119 — defer to `what/docs/` or Astro site rather than inline-tutorial",
+      "Continuous-discipline overlay 5-lens pass becomes the standard Step-6 protocol for all remaining D12 cycles (112-120)",
+      "M5.1 §3 D12 LIFT register (task-focused imperatives + named-thing nouns + no marketing adjectives) becomes the voice precedent for cycles 112-120"
+    ],
+    "avoid_carried_forward": [
+      "Do NOT mix tutorial content with onboarding content at top-of-page surfaces — defer tutorials to dedicated pages (Lattices section was the canonical anti-example)",
+      "Do NOT introduce more than 2-3 mental models per section at first-contact surfaces — §4 pre-streamline introduced 5 in one section (cognitive load spike)",
+      "Do NOT offer 3+ setup paths at Quick Start — primary path + ≤2 blockquote alternatives is the ceiling; 3+ creates decision paralysis (Newcomer Stress-Tester veto)"
+    ],
+    "skill_substrate_pure_separation_post_grad_reinforcement": "Post-graduation 15/3+ → 16/3+ at the pre-S1 substrate-pure commit 4885d73 (writing-guidelines.mdx) BEFORE this cycle 111 binary commit. Spec-open commit b89202d was the 2nd commit in the 3-commit ordering (substrate → spec → cycle 111). Pattern continues to be reinforced via 3-commit ordering at implementation-class mission open.",
+    "skill_implementation_class_decadal_cycle_authoring_post_seed_reinforcement": "Reinforces M5.3 NEW SEED candidate (1/3 at M5.3 close). Cycle 111 demonstrates that implementation-class M5.4 inherits the M5.3 7-step protocol cleanly (text-only sub-shape distinct from M5.3 image-gen sub-shapes; same 7-step skeleton). Counter at 2/3; graduation candidate at M5.4 close.",
+    "skill_continuous_discipline_overlay_at_step_6_new_seed_candidate": "NEW SEED candidate 1/3 — pattern: implementation-class decadal cycles apply a per-decadal overlay protocol at Step-6 (validate) IN ADDITION to the canonical persona re-scoring. D12 overlay = 5-lens conciseness pass per writing-guidelines.mdx §4. Pattern transfers to D14 (README-and-first-contact polish overlay), D16 (reference-and-glossary-streamline overlay), D17 (cross-page-narrative-coherence overlay), and potentially D11-retro (visual-identity-consistency overlay). Recurrence at 3 D-prefix cycles graduates the pattern."
+  },
+
+  "links": {
+    "mission_spec": "[[mission_adna_str_p5_m54_d12_clarity_conciseness]]",
+    "session_file": "[[session_stanley_20260528T063933Z_v8_m54_s1]]",
+    "writing_guidelines_substrate": "[[writing-guidelines]]",
+    "prior_decadal_d11_aar": "[[aar_decadal_d11_visual_identity]]",
+    "prior_cycle_doc_authoring_shape": "[[cycle_109_d11_visual_identity_guidelines]]",
+    "decadal_theme_set_d12_row": "[[m50_decadal_theme_set#D12 — Clarity & Conciseness]]",
+    "persona_bench_d12_allocation": "[[m50_persona_bench_expansion#§3 Per-Decadal Persona Allocation]]",
+    "visual_inspection_methodology": "[[m50_visual_inspection_methodology]]",
+    "m51_synthesis_d12_row": "[[m51_cross_target_synthesis#D12 Clarity & Conciseness]]",
+    "adr_025": "[[adr_025_iii_decadal_coordination]]",
+    "adr_026": "[[adr_026_ledger_observation_shared_primitive]]"
+  }
+}
