@@ -1,0 +1,164 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026. 3rd canonical instance of D12 cycle JSON sub-shape (data-extraction; sibling to cycle 111 text-only-streamline + cycle 112 component-extraction). Common ancestor: no-image-gen + single-binary-commit + step_1-7 + lift_avoid_routing + continuous_discipline_overlay_verification.",
+  "cycle_id": "cycle_113_d12_index_extraction_part2",
+  "decadal": "D12",
+  "decadal_title": "Clarity & Conciseness",
+  "cycle_number": 113,
+  "cycle_in_decadal": 3,
+  "slug": "index_extraction_part2_data_module",
+  "mission": "mission_adna_str_p5_m54_d12_clarity_conciseness",
+  "session": "session_stanley_20260528T225352Z_v8_m54_s2",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-28T23:58:30Z",
+  "closed_at": "2026-05-29T00:08:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "step_1_capture_state": {
+    "target_surface": "site/src/pages/index.astro (471 lines post-cycle-112). M5.0 §3 D12 cycle 113 mandate: persona-card iteration via data extraction (cumulative 697 → ~350 lines).",
+    "method": "Read of index.astro frontmatter (lines 1-108) + ls of site/src/data/ + grep for existing JSON consumers + cycle 112 design_finding_for_cycle_113 carry-forward review",
+    "pre_change_inventory": {
+      "line_count": 471,
+      "frontmatter_data_arrays": [
+        "steps array (lines 10-72; 63 lines including 3 multi-line template-literal demo HTML strings)",
+        "personas array (lines 74-100; 27 lines)",
+        "stats array (lines 102-107; 6 lines)"
+      ],
+      "frontmatter_total": 108,
+      "existing_data_module_pattern": "site/src/data/vaults.json (auto-generated; ADR-023 prebuild projection) + vaults.schema.json (JSON Schema) + vaults_graph.mmd. No existing TypeScript data module precedent; cycle 113 establishes the .ts data module pattern (preserves multi-line template literals for step demos vs. JSON which would require escaped \\n)."
+    },
+    "scope_decision": "Cycle 113 = consolidate all 3 home-page data arrays (steps + personas + stats) into a single NEW TypeScript module at site/src/data/home.ts. Export typed: HomeStep / HomePersona / HomeStat interfaces + 3 const arrays. index.astro consumes via `import { steps, personas, stats } from '../data/home';` (single line vs. 98 lines inline). Cycle 112 design_finding_for_cycle_113 pre-authorized considering migration of steps + stats alongside personas — operator-judgment greenlight at Step-4 since 471 → ~350 target requires more than personas alone (~30 lines saved); migrating all 3 yields ~95-100 line savings landing at ~373."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_anti_bloat_editor", "reviewer_ux_writer", "reviewer_newcomer_stress_tester", "reviewer_information_architect"],
+    "method": "agent-simulated 5-question Q&A; focus per M5.0 §3 cycle 113 row + cumulative cycle 112+113 = Conciseness + Cognitive_Load + Explanation_Quality + Information_Architecture",
+    "writing_guidelines_clarity_checklist_applied": true,
+    "qa_protocol_focus": "Q1 Style (data shape inline frontmatter is dense + obscures markup intent) + Q2 Clarity (typed exports make consumer-side intent explicit) + Q3 Conciseness (large frontmatter forces page-down to reach markup) + Q4 Bloat (3 data arrays = ~98 lines = 20% of file's lines pre-edit) + Q5 Comprehension (markup-only frontmatter post-edit is 9 lines; reader hits markup at line 11)",
+    "design_question_at_cycle_entry": "TypeScript module (.ts) vs JSON (.json) for the data extraction target? TypeScript chosen because steps[].demo uses multi-line template literals — JSON requires escaped \\n strings which is hostile to future editors. Existing site/src/data/vaults.json is auto-generated build output (different concern); cycle 113 establishes the editable data module pattern via .ts.",
+    "persona_consensus": {
+      "anti_bloat_editor": "Frontmatter pre-edit: 108 lines of imports + 3 data arrays + 1 jsonLD constant. Post-edit: 10 lines of imports + 1 jsonLD constant. Net frontmatter reduction: 98 lines. Markup hits the reader at line 11 vs line 110 pre-edit (10× faster). Pre-change score 3.5/5.0 → post 4.5/5.0.",
+      "ux_writer": "Data shape unchanged; all 5 personas + 3 steps + 4 stats preserved verbatim in the new home.ts module. Copy is bit-identical to pre-edit. Voice preserved. Pre 4.5/5.0 → post 4.5/5.0 (no copy delta).",
+      "newcomer_stress_tester": "Reader-facing render unchanged (verified at Step-5 via dist HTML grep — all 5 personas + all 3 step demos + all 4 stats render). Contributor reading index.astro now sees markup-first frontmatter (1 import + 1 const) and the markup body. Pre 4.0/5.0 → post 4.5/5.0 (contributor cognitive load drops).",
+      "information_architect": "Single home.ts module is the right granularity (vs. 3 separate JSON files): all 3 arrays are home-page-scoped; co-locating them makes intent obvious; typed exports make consumer-side intent explicit; future home-page data additions land naturally. Pre 4.5/5.0 (cycle 112 already established assembler/component separation) → post 4.5/5.0 (data layer now properly separated from layout layer)."
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "conciseness": 3.5,
+      "cognitive_load": 4.0,
+      "explanation_quality": 4.5,
+      "information_architecture": 4.5
+    },
+    "qa_synthesis": "4/4 personas approve consolidated .ts data module. Implementation: create site/src/data/home.ts with HomeStep/HomePersona/HomeStat interfaces + 3 typed const exports + brief module-doc header explaining provenance. Edit index.astro: replace 98 lines of inline arrays with single import; preserve everything else (imports, jsonLD, markup body, styles). Single binary commit per cycle discipline preserved (2 files: NEW home.ts + EDIT index.astro)."
+  },
+
+  "step_3_generate_or_regen_images": {
+    "decision": "NO image generation — text-only D12 cycle. No assets touched (banner image still imported from site/src/assets/aDNABanner.png; persona links still point to existing /use-cases/* routes).",
+    "image_gen_log_refs": [],
+    "cost_usd": 0.00,
+    "calls_made": 0
+  },
+
+  "step_4_implement": {
+    "files_modified": [
+      "site/src/data/home.ts (CREATED — 127 lines: module-doc header + HomeStep / HomePersona / HomeStat interfaces + 3 typed const exports: steps (3 entries with multi-line template literal demos) + personas (5 entries) + stats (4 entries))",
+      "site/src/pages/index.astro (EDITED — 471 → 373 lines = 20.8% reduction this cycle; cumulative 697 → 373 = 46.5% reduction within 30-50% mission target: removed inline frontmatter arrays lines 10-107; added single import `import { steps, personas, stats } from '../data/home';` at line 5)"
+    ],
+    "implementation_notes": "TypeScript module (.ts) chosen over JSON because steps[].demo is multi-line template literal HTML — JSON's required \\n escaping would be hostile to future editors of the demo strings. Typed interface exports (HomeStep / HomePersona / HomeStat) give consumer-side type safety without adding runtime overhead. Single home.ts module (vs 3 separate JSON files) keeps home-page-scoped data co-located. Module-doc header explains provenance (extracted at cycle 113) so future readers understand the file's purpose. Build-output regression observed: npm run build regenerated site/src/data/vaults.json + vaults_graph.mmd showing in-progress node.aDNA → LatticeHome.aDNA rename (schema_version 0.2 → 0.1 + canonical_governance null + persona_archetype null = partial in-flight work happening in another session). Reverted both files (`git checkout`) per hard constraint #3 (zero node.aDNA touches) — partial-rename regen NOT a clean substrate-pure refresh; flagged to operator at S2 SITREP. Cycle 113 binary commit covers ONLY index.astro + home.ts + cycle JSON."
+  },
+
+  "step_5_recapture": {
+    "method": "wc -l on modified/created files + Astro production build + grep on dist/index.html for persona cards + step demos + stats",
+    "post_change_artifacts": [
+      "site/src/pages/index.astro — 373 lines (down from 471 cycle 112 close = -98 lines = -20.8% this cycle; cumulative from cycle 111 baseline 697 → 373 = -324 lines = -46.5% cumulative within 30-50% mission target)",
+      "site/src/data/home.ts — 127 lines (NEW; module-doc + interfaces + 3 typed const exports)",
+      "Build result: 154 page(s) built in 5.20s; zero errors; zero warnings",
+      "dist/index.html grep verification: all 5 persona titles (Solo Developer / Enterprise Team / Educator / Startup / Researcher) render; 9× step-demo classes (3 demos × step-demo + step-demo-bar + step-demo-pre); stats render (14 / v2.2 / MIT spot-checked)"
+    ],
+    "build_result": "PASS — 154 pages built in 5.20s; clean run"
+  },
+
+  "step_6_validate": {
+    "method": "5-lens conciseness pass per writing-guidelines.mdx §4 + persona post-change scoring + dist HTML render verification",
+    "post_change_dimension_scores": {
+      "conciseness": 4.5,
+      "cognitive_load": 4.5,
+      "explanation_quality": 4.5,
+      "information_architecture": 4.5
+    },
+    "persona_specific_post_change_notes": {
+      "anti_bloat_editor": "index.astro 471 → 373 lines (20.8% reduction this cycle). Frontmatter shrinks from 108 to 10 lines. Markup-first reading order restored. home.ts is 127 lines and lives in the natural data location. Score 4.5/5.0.",
+      "ux_writer": "All copy (5 personas + 3 step descriptions + 4 stat labels) preserved bit-identical. No voice drift. Score 4.5/5.0.",
+      "newcomer_stress_tester": "Reader-facing render identical pre/post (dist HTML grep confirms). Contributor cognitive load drops sharply (frontmatter shrinks ~10×). Score 4.5/5.0.",
+      "information_architect": "Data layer properly separated from layout layer. home.ts is single-responsibility for home-page data; index.astro becomes pure assembler (4 imports + 4 sections). Boundaries clean. Cycle 114 (compliance) + cycle 115 (enterprise) can follow same data-extraction pattern if their card arrays warrant it. Score 4.5/5.0."
+    },
+    "continuous_discipline_overlay_verification": {
+      "lens_1_word_count_outliers_flagged": [
+        "Cycle 113 changed no prose surface — all prose copy (step descriptions, persona summaries, stat labels) moved verbatim to home.ts. Pre-change outlier flags (steps[].description borderline at 47-50 words each) carried forward unchanged."
+      ],
+      "lens_2_top_outlier_pass_disposition": "Top 3 markup paragraphs on index.astro post-edit unchanged from cycle 112 close (3 section-subtitle lines; all within budget). Top 3 data paragraphs in home.ts (steps[].description; 47-50 words each) flagged at lens 1; intentional 3-sentence pattern (problem → consequence → resolution); not revised.",
+      "lens_3_glossary_tightening_applied": "n/a — cycle 113 does not touch glossary surfaces. Glossary cycle is cycle 118.",
+      "lens_4_clarity_checklist_per_paragraph": {
+        "long_sentence_flags": 0,
+        "long_paragraph_flags": 0,
+        "passive_voice_flags": 0,
+        "jargon_without_definition_flags": 0,
+        "total_flags_raised": 0,
+        "total_flags_resolved": 0,
+        "remaining_flag_disposition": "Cycle 113 is data relocation; no prose changes; no clarity-checklist flags. Inherits cycle 112 clean state."
+      },
+      "lens_5_reference_collection_scan_reminder": "n/a — cycle 113 does not touch site/src/content/reference/* surfaces. Reference collection scan triggers in cycle 115 (enterprise/index.astro is operator-facing) per cycle 111 design_finding carry-forward."
+    },
+    "lift_avoid_verification": {
+      "m51_d12_lift_rust_role_segregation": "HONORED — home.ts is data-layer-only (no layout, no styles); index.astro is layout-layer-only (no data definitions, only data consumption). Layers cleanly segregated. Mirrors Rust Book / Reference / Std discipline.",
+      "m51_d12_lift_astro_concept_before_syntax": "HONORED — home.ts exports types (concept = the shape) before const arrays (syntax = the values). Module-doc header opens with provenance + intent (mental model) before the typed code.",
+      "m51_d12_lift_tailwind_task_focused_imperative": "HONORED — Module-doc header reads 'Edit copy here; index.astro is the layout.' — task-focused imperative. Type names are named-thing nouns (HomeStep / HomePersona / HomeStat).",
+      "m51_d12_lift_tauri_capability_organization": "HONORED — home.ts is organized around capability (provide home-page data) not source structure (not split arbitrarily into steps.ts / personas.ts / stats.ts).",
+      "m51_d12_avoid_stripe_page_bloat": "AVOIDED — index.astro reduced from 471 to 373 lines (cumulative 697 → 373 = 46.5% reduction).",
+      "m51_d12_avoid_vercel_marketing_copy": "AVOIDED — no marketing adjectives in module-doc header or type names.",
+      "m51_d12_avoid_linear_categorical_hierarchy_only": "AVOIDED — home.ts is task-organized (home-page data), not categorical (not split into pure-data-vs-mixed-content categories).",
+      "m51_d12_avoid_obsidian_plugins_ia_fragmentation": "AVOIDED — single home.ts module; not fragmented across multiple files; canonical location at site/src/data/ alongside existing vaults.json.",
+      "standing_order_8_self_reference": "HONORED — home.ts demonstrates aDNA writing-guidelines.mdx §3 componentization trigger #3 ('The prose is data-driven (e.g., a list of vaults, a list of glossary entries) — move it to YAML and render via a single template'). Cycle 113 chose .ts over .yaml due to multi-line template literal requirement; the principle applies regardless of file format."
+    },
+    "cycle_acceptance": "PASS — index.astro 471 → 373 lines this cycle (20.8% reduction); cumulative 697 → 373 = 46.5% reduction within 30-50% mission target; home.ts 127 lines new (typed data module); 154-page Astro build clean; all 5 persona titles + 9 step-demo classes + 4 stats render in dist HTML; 4/4 personas pass 4.5/5.0; continuous-discipline overlay 5-lens applied (0 clarity flags raised this cycle; data relocation does not touch prose); LIFT 4/4 honored + AVOID 4/4 avoided; Standing Order #8 self-reference honored.",
+    "design_finding_for_cycle_114": "Cycle 114 (compliance/index.astro 272 → ~150 lines) is prose compression, not extraction. Recon already identified the cuts: merge 'Who this is for' into lede; compress 5 H2 section intros to 1-sentence leads; consolidate 'Self-reference' to 1-2 sentences. CardGrid pattern preserved (4 card arrays stay inline in frontmatter — they're 1-2 lines per card and removing them would require moving to a 3rd data module, which is premature given they're page-scoped not site-scoped). Persona Q&A focus: Anti-Bloat Editor + UX Writer primary (prose-cutting cycle); Newcomer Stress-Tester + Information Architect secondary."
+  },
+
+  "step_7_record_iii_result": {
+    "this_file": "what/measurement/iii_results/2026-06/cycle_113_d12_index_extraction_part2.json",
+    "image_gen_log_companion": "n/a — cycle 113 had 0 image-gen calls",
+    "schema_conformance_adr_025_026": "Conforms; 3rd canonical instance of D12 cycle JSON sub-shape (data-extraction; sibling to cycle 111 text-only-streamline + cycle 112 component-extraction). Inherits continuous_discipline_overlay_verification field. Common ancestor holds: no-image-gen + single-binary-commit + step_1-7 + lift_avoid_routing."
+  },
+
+  "lift_avoid_routing": {
+    "lift_carried_forward_to_cycle_114": [
+      "Data extraction pattern (inline frontmatter array → typed .ts module + import) transfers to any page with large frontmatter data — but cycle 114+115 card arrays are page-scoped 1-2 lines per card and lighter-touch prose compression is the right discipline, not extraction",
+      "Continuous-discipline overlay 5-lens pass applies even when cycle is data-relocation-not-prose (cycle 113 raised 0 flags; clean pass; discipline of running the lens IS the value)",
+      "Markup-first frontmatter ordering (imports + 1 jsonLD constant; markup body close to file top) is the canonical home-page assembler shape; reader hits markup at line 11 vs line 110 pre-edit"
+    ],
+    "avoid_carried_forward": [
+      "Do NOT extract data to JSON when the data contains multi-line template literals or runtime expressions — use TypeScript module (.ts) instead",
+      "Do NOT fragment a single page's data into N tiny files — single home.ts vs steps.ts + personas.ts + stats.ts; co-location follows page-scope cohesion",
+      "Do NOT commit build-output regen when the regen reflects partial in-progress changes from another vault scope (cycle 113 found vaults.json + vaults_graph.mmd regen reflected an in-flight node.aDNA → LatticeHome.aDNA rename; reverted to keep cycle 113 binary clean; flagged to operator at S2 SITREP)"
+    ],
+    "skill_implementation_class_decadal_cycle_authoring_post_seed_reinforcement": "Reinforces M5.3 NEW SEED + cycles 111+112 reinforcement (1/3 → 2/3 → 3/3 → 4/3 at this cycle 113). Cycle 113 demonstrates implementation-class data-extraction sub-shape (distinct from cycle 111 text-only-streamline + cycle 112 component-extraction; same 7-step skeleton; same continuous-discipline overlay). Counter at 4/3 — GRADUATES at M5.4 close once full set of sub-shapes confirms the implementation-class shape vocabulary.",
+    "skill_continuous_discipline_overlay_at_step_6_seed_reinforcement": "Reinforces cycle 111+112 (1/3 → 2/3 → 3/3 GRADUATES at this cycle 113). Pattern: implementation-class decadal cycles apply per-decadal overlay protocol at Step-6. 5-lens conciseness pass per writing-guidelines.mdx §4 applies even when cycle is structural/data (0 flags raised = clean pass; running the lens IS the value). Graduation candidate at M5.4 close.",
+    "skill_typed_data_module_extraction_new_seed_candidate": "NEW SEED candidate 1/3 — pattern: extract inline page-scope data arrays to typed TypeScript module at site/src/data/ when (a) data has multi-line template literals (JSON-hostile), (b) page-scope cohesion warrants single file, (c) typed exports give consumer-side intent clarity. Transfers to any future page with similar inline data. Recurrence at 3 page extractions graduates the pattern.",
+    "build_output_regen_partial_rename_revert_seed_candidate": "NEW SEED candidate 1/3 — pattern: when npm run build regenerates substrate (e.g., site/src/data/vaults.json via ADR-023 prebuild projection) and the regen reflects partial in-progress changes from a SCOPE you don't own (e.g., another vault's in-flight rename), revert the regen rather than commit it. Distinct from skill_substrate_pure_separation (which handles CLEAN substrate refresh as separate commit). Recurrence at 3 partial-regen-revert instances graduates the pattern."
+  },
+
+  "links": {
+    "mission_spec": "[[mission_adna_str_p5_m54_d12_clarity_conciseness]]",
+    "session_file": "[[session_stanley_20260528T225352Z_v8_m54_s2]]",
+    "writing_guidelines_substrate": "[[writing-guidelines]]",
+    "prior_cycle_component_extraction_shape": "[[cycle_112_d12_index_extraction_part1]]",
+    "prior_cycle_text_only_streamline_shape": "[[cycle_111_d12_readme_streamline]]",
+    "decadal_theme_set_d12_row": "[[m50_decadal_theme_set#D12 — Clarity & Conciseness]]",
+    "persona_bench_d12_allocation": "[[m50_persona_bench_expansion#§3 Per-Decadal Persona Allocation]]",
+    "m51_synthesis_d12_row": "[[m51_cross_target_synthesis#D12 Clarity & Conciseness]]",
+    "adr_023_prebuild_projection": "[[adr_023_vaults_json_prebuild_projection]]",
+    "adr_025": "[[adr_025_iii_decadal_coordination]]",
+    "adr_026": "[[adr_026_ledger_observation_shared_primitive]]"
+  }
+}
