@@ -1,0 +1,197 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026 + M5.5 AC #6. 5th canonical D14 cycle JSON. 1st D11-icon-reuse instance in M5.5 (D14); 1st instance of pre-existing-tight-baseline iterative-cuts pattern.",
+  "cycle_id": "cycle_125_d14_standard_reading_guide_polish",
+  "decadal": "D14",
+  "decadal_title": "README & First-Contact Polish",
+  "cycle_number": 125,
+  "cycle_in_decadal": 5,
+  "slug": "standard_reading_guide_polish",
+  "mission": "mission_adna_str_p5_m55_d14_readme_first_contact_polish",
+  "session": "session_stanley_20260529T030444Z_v8_m55_s2",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-29T03:36:00Z",
+  "closed_at": "2026-05-29T03:50:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "content_class_declaration": {
+    "class": "adopter-conversion",
+    "ceiling_band_percent": "30-70",
+    "ceiling_band_rationale": "standard_reading_guide.md is the canonical reader-conversion surface routing newcomers through the 1,336-line aDNA Universal Standard via 3 persona-based paths. Adopter-conversion class 30-70% ceiling per M5.4 D12 lightweight AAR Finding. M5.5 mission spec §S2 cycle 125 sets target 100-115 from 161 (~30%).",
+    "ceiling_compliance_at_close": true,
+    "actual_reduction_percent": 31.1,
+    "ceiling_compliance_note": "31.1% sits 1.1pp above 30% nominal lower bound; squarely in 30-70% adopter-conversion band. Absolute target 100-115 lines MET at 111 lines. NOTE: required 2-pass iterative-cut approach — 1st pass (10.6%, 144 lines) UNDER-TARGET due to pre-existing 4.3/5.0 persona baseline density; 2nd pass cuts to §4 Skill-vs-Lattice comparison-table + §5 Quick Reference + §1 path-section bullet-runs achieved band compliance."
+  },
+
+  "step_1_capture_state": {
+    "target_surface": "aDNA.aDNA/what/docs/standard_reading_guide.md (161 lines pre-cycle)",
+    "method": "Read full file + h2 outline + top-3-longest-block identification + inbound-reference grep (including ANCHORED references)",
+    "pre_change_inventory": {
+      "total_lines": 161,
+      "h2_count": 5,
+      "h2_sections": ["1. Reading Paths", "2. Section Map", "3. When to Read the Design Document", "4. Skill vs. Lattice: When to Use Which", "5. Quick Reference"],
+      "baseline_density_assessment": "4.3/5.0 persona aggregate pre-cycle (higher than predecessors at 3.6-3.85 baseline) — file already tight",
+      "bloat_hotspots_identified": [
+        {"block": "§4 Skill vs Lattice comparison + scenario tables (lines 105-130)", "rationale": "6-row dimension table + 4-row scenario table; both can compress to 1 narrative paragraph + 1 decision rule paragraph with inline examples"},
+        {"block": "§1 New Adopter / Extension Builder Path numbered lists (lines 28-48)", "rationale": "Per-section bullet items can compress to inline arrow-chain narrative (saves vertical lines, preserves section-routing)"},
+        {"block": "§5 Quick Reference 11-row table (lines 138-150)", "rationale": "Some rows duplicate section references with just §-number; trim verbose section-name suffixes"},
+        {"block": "§3 Design Document (lines 89-97)", "rationale": "10-line section can compress to 3-line narrative paragraph"}
+      ],
+      "inbound_anchored_reference_constraint": "`how/skills/AGENTS.md:34` + `:125` reference `#4-skill-vs-lattice-when-to-use-which` anchor — §4 heading text MUST preserve GitHub-anchor-equivalent slug (period after 'vs' optional; colon optional)"
+    },
+    "scope_decision": "2 surgical passes via Write + 3 Edits: (1) initial Write replacement with §3+§4 prose tightening + §5 minor trim + D11 icons added — landed at 144 lines (10.6%); (2) 3 surgical Edits: §4 comparison + scenario tables collapsed to 2 narrative paragraphs; §5 Quick Reference verbose-suffix trim + 1-row drop (collision prevention §13 covered by §1 routing); §1 numbered lists compressed to arrow-chain narrative — final at 111 lines (31.1%). D11 icons reused via 6 inline `<img>` tags: 3 in summary table + 3 in subsection headers + relative path `../../site/src/assets/icons/icon_{learn,how,reference}.svg`."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_ux_writer", "reviewer_newcomer_stress_tester", "reviewer_information_architect", "reviewer_visual_designer"],
+    "personas_drawn_count": 4,
+    "method": "agent-simulated 5-question Q&A — UX Writer + Newcomer + IA + Visual Designer (D11-icon adapt cycle; Visual primary)",
+    "writing_guidelines_clarity_checklist_applied": true,
+    "qa_protocol_focus": "Q1 Style + Q2 Clarity + Q3 Conciseness + Q4 Bloat + Q5 Comprehension",
+    "persona_consensus": {
+      "ux_writer": "File starts tight (4.5/5.0 style baseline). §1 numbered lists per path are scannable but vertical-heavy. §4 comparison table is reference-clear but verbose. D11 icons add gentle visual cuing without distracting from text. Score 4.5/5.0 baseline.",
+      "newcomer_stress_tester": "Persona-routing in §1 + §2 section map is genuinely useful — newcomer can self-route. §3 Design Document section is unnecessary scaffolding. §4 skill-vs-lattice question is THE clarifying value of this doc. Score 4.0/5.0 baseline.",
+      "information_architect": "Cross-doc anchored reference at `how/skills/AGENTS.md` to §4 heading must be preserved through any §4 prose changes (anchor based on heading slug). §2 Section Map is canonical reference card — keep. Score 5.0/5.0 baseline.",
+      "visual_designer": "Currently text-only document — adopter-conversion class with visual differentiation potential via D11 icons. 3 persona paths get 3 distinct icons (learn / how / reference). Inline `<img>` width=16-18 appropriate for body-text scale. Score 4.5/5.0 baseline."
+    },
+    "qa_aggregate_score": 4.3,
+    "qa_synthesis": "4/4 personas approve. D11 icon adapt is high-value visual change. §4 + §5 + §1 tightening required for band compliance. Anchor preservation honored (§4 heading slug stable across edits)."
+  },
+
+  "step_3_generate_or_regen_images": {
+    "decision": "NO new image generation — D11 SECTION ICONS REUSED per operator decision at plan-approval. 6 inline `<img>` references to existing `site/src/assets/icons/icon_{learn,how,reference}.svg` (3 distinct icons used; each appears 2× in file — once in summary table + once in subsection header). Cumulative v8 P5 image-gen ledger UNCHANGED at $1.72 of $50 (3.4%).",
+    "d11_icon_reuse_adapt_disposition": "1st canonical D11-icon-reuse instance in M5.5 (mission spec §S2 cycle 125 ratifies cycles 125-126 as D11-icon-reuse window per operator decision at plan-approval).",
+    "d11_icon_assets_referenced": [
+      "site/src/assets/icons/icon_learn.svg (New Adopter Path)",
+      "site/src/assets/icons/icon_how.svg (Extension Builder Path)",
+      "site/src/assets/icons/icon_reference.svg (Standard Contributor Path)"
+    ],
+    "d13_substrate_dependency_disposition": "ADAPTED — D13 infographic substrate deferred at plan-approval; D11 icons reused as visual differentiation pattern instead.",
+    "path_correction_note": "Mission spec §S2 cycle 125 references `site/src/components/icons/section_*.svg` but actual location is `site/src/assets/icons/icon_*.svg`; this cycle adapts to actual path. Inbound-reference convention for what/docs/ Markdown: relative path `../../site/src/assets/icons/`.",
+    "image_gen_log_refs": [],
+    "cost_usd": 0.00,
+    "calls_made": 0
+  },
+
+  "step_4_implement": {
+    "files_modified": [
+      "aDNA.aDNA/what/docs/standard_reading_guide.md (1 Write replacement + 3 Edits across 2 passes: full-file Write with §3+§4 prose tightening + D11-icon addition (161→144); then Edit collapse §4 comparison + scenario tables to narrative paragraphs; Edit trim §5 Quick Reference verbose suffixes + 1-row drop; Edit §1 numbered lists compressed to arrow-chain narrative — final 111 lines; frontmatter updated:/last_edited_by:/token_estimate: refreshed 3000→2200)"
+    ],
+    "implementation_notes": "Single binary commit cycle per skill_iii_cycle cadence (multiple Edit calls bundled into one commit). D11 icons added as 6 inline `<img>` tags at width=16-18; relative path `../../site/src/assets/icons/icon_{learn,how,reference}.svg`. Inbound anchored reference `#4-skill-vs-lattice-when-to-use-which` preserved (heading slug stable — 'vs.' → 'vs' period drop is anchor-neutral; ':' optional in GitHub anchor generation). 2-pass iterative-cuts approach surfaces NEW SEED `skill_iterative_cuts_to_band_compliance` (when 1st-pass under-targets due to tight baseline, do 2nd targeted-Edit pass before commit)."
+  },
+
+  "step_5_recapture": {
+    "method": "wc -l + h2 outline + inbound anchored-reference verification",
+    "post_change_inventory": {
+      "total_lines": 111,
+      "h2_count": 5,
+      "h2_sections_preserved": ["1. Reading Paths", "2. Section Map", "3. When to Read the Design Document", "4. Skill vs Lattice: When to Use Which", "5. Quick Reference — \"I want to...\""],
+      "delta_lines": -50,
+      "delta_percent_reduction": 31.1,
+      "absolute_line_target_band": "100-115",
+      "absolute_line_actual": 111,
+      "d11_icons_inserted_count": 6,
+      "d11_icons_distinct_assets_used": 3,
+      "d11_icon_image_gen_cost_added": 0.00,
+      "inbound_references_verified": [
+        "README.md:347 (no anchor; whole-file link) — PRESERVED",
+        "how/skills/AGENTS.md:34 `#4-skill-vs-lattice-when-to-use-which` ANCHORED — PRESERVED (§4 heading slug 'skill-vs-lattice-when-to-use-which' stable; period after 'vs' drop and colon drop are GitHub-anchor-neutral)",
+        "how/skills/AGENTS.md:125 (wikilink `[[../../what/docs/standard_reading_guide.md|standard_reading_guide]] §4`) — PRESERVED (§4 section preserved)",
+        "site/src/content/reference/tool-setup.mdx:178 (no anchor) — PRESERVED",
+        "site/src/content/reference/reading-guide.mdx (MDX twin; not directly anchored to source .md) — N/A"
+      ],
+      "anchor_breakage": "NONE — §4 heading slug-equivalent preserved through prose changes; other anchors not touched"
+    },
+    "post_change_artifacts": [
+      "aDNA.aDNA/what/docs/standard_reading_guide.md = 111 lines (was 161); 31.1% reduction; 5 h2 sections preserved; 6 D11-icon inline `<img>` references added with relative path; §4 comparison + scenario tables collapsed to 2 narrative paragraphs preserving information; §5 Quick Reference verbose-suffix trim; §1 numbered lists → arrow-chain narrative"
+    ],
+    "build_result": "n/a — .md in what/docs/; build last validated PASS at cycle 122 (154 pages, 17.01s); image-references in .md are not consumed by Astro build (consumed only at Obsidian render time)"
+  },
+
+  "step_6_validate": {
+    "method": "5-lens conciseness pass + content-class ceiling verification + persona post-change re-score + inbound anchored-reference preservation check + 2-pass iterative-cuts pattern surface",
+    "post_change_dimension_scores": {
+      "style": 4.5,
+      "clarity": 4.5,
+      "conciseness": 4.5,
+      "bloat_removed": 4.5,
+      "comprehension_newcomer_time_to_first_success": 4.5,
+      "cognitive_load": 4.5,
+      "explanation_quality": 4.5,
+      "visual_clarity": 5.0,
+      "newcomer_time_to_first_success_d14_new_dimension": 4.5
+    },
+    "persona_specific_post_change_notes": {
+      "ux_writer": "Voice tightened end-to-end; §4 narrative-paragraph form reads faster than comparison-table-then-decision-rule format while preserving information.",
+      "newcomer_stress_tester": "Persona-routing clearer with icon affordance; §1 arrow-chain compression scans faster than vertical numbered lists.",
+      "information_architect": "§4 heading slug preserved through prose changes; cross-doc anchored references unaffected; §2 Section Map (THE reference card) preserved fully.",
+      "visual_designer": "D11 icon adapt is the unlock — 3 persona paths get distinct visual identity; inline width=16-18 is body-scale appropriate; reuse-not-regen honors zero-image-gen constraint."
+    },
+    "content_class_ceiling_verification": {
+      "declared_content_class": "adopter-conversion",
+      "declared_ceiling_band_percent": "30-70",
+      "actual_reduction_percent": 31.1,
+      "absolute_line_target_band": "100-115",
+      "absolute_line_actual": 111,
+      "ceiling_compliance": "PASS — 31.1% in 30-70% band; 111 lines in absolute 100-115 band"
+    },
+    "continuous_discipline_overlay_verification": {
+      "lens_1_word_count_outliers_flagged": [
+        "Pre-edit §4 6-row comparison + 4-row scenario tables addressed via 2-paragraph narrative collapse",
+        "Pre-edit §1 numbered lists (12 lines combined) addressed via arrow-chain narrative compression (4 lines combined)",
+        "Pre-edit §3 Design Document (10 lines) addressed via single 3-line paragraph"
+      ],
+      "lens_2_top_outlier_pass_disposition": "Pre-edit top outliers all addressed across 2-pass iterative-cuts approach. Post-edit: no h2 section exceeds 30 lines.",
+      "lens_3_glossary_tightening_applied": "n/a — no glossary terms on this surface.",
+      "lens_4_clarity_checklist_per_paragraph": {
+        "long_sentence_flags": 0,
+        "long_paragraph_flags": 0,
+        "passive_voice_flags": 0,
+        "jargon_without_definition_flags": 0,
+        "total_flags_raised": 0,
+        "total_flags_resolved": 0
+      },
+      "lens_5_reference_collection_scan_reminder": "ENGAGED — Cross-References section routes to 6 companion docs; §3 routes to adna_design.md as the 'why' companion; §4 Decision rule routes to how/skills/skill_lattice_publish.md (skill-collection scan)"
+    },
+    "lift_avoid_routing": {
+      "lift_precedents_applied": [
+        "Stripe FIRST-PAGE simplicity: §1 3-row persona table routes by reader intent up front",
+        "Rust persona-paths: 3 distinct persona paths with explicit goal + time estimate — opposite-routing precedent for D14 specifically",
+        "Astro problem-first: §1 immediately answers 'which sections do I need to read'"
+      ],
+      "avoid_precedents_avoided": [
+        "Marketing-copy excess: dry navigation tone preserved",
+        "Categorical-hierarchy-only: §1 + §5 use persona/goal routing not abstract category trees",
+        "IA-fragmentation: §4 Skill-vs-Lattice narrative-paragraph form avoids dual-table fragmentation",
+        "Agent-onboarding-mixed-with-human: doc is human-newcomer-routing; agent protocol elsewhere"
+      ]
+    }
+  },
+
+  "step_7_record_iii_result": {
+    "file_path": "aDNA.aDNA/what/measurement/iii_results/2026-06/cycle_125_d14_standard_reading_guide_polish.json",
+    "schema_conformance": "ADR-025 + ADR-026 + M5.5 AC #6 (content_class_declaration NEW field)",
+    "cycle_outcome_summary": "standard_reading_guide.md 161 → 111 lines (31.1% reduction; adopter-conversion 30-70% band PASS; absolute target 100-115 MET at 111). 4/4 personas (UX Writer + Newcomer + IA + Visual) score 4.5+/5.0 aggregate; Visual_Clarity 5.0 (D11 icon unlock). 2-pass iterative-cuts approach: pass 1 Write (10.6%, 144 lines) + pass 2 3 surgical Edits (§4 tables → narrative + §5 verbose-suffix trim + §1 arrow-chain compression, achieves 31.1%, 111 lines). 6 D11-icon inline `<img>` references added reusing icon_learn + icon_how + icon_reference (zero new image-gen). Inbound anchored reference `#4-skill-vs-lattice-when-to-use-which` preserved. 5th canonical D14 cycle JSON; 1st D11-icon-reuse instance in M5.5. Image-gen $0.00; cumulative v8 P5 ledger unchanged at $1.72 of $50."
+  },
+
+  "carry_forward_signals": {
+    "seeds_advanced": [
+      "skill_cross_doc_reference_preservation_at_streamline: cycle 124 1/3 → cycle 125 2/3 (2nd canonical instance: §4 anchored reference preserved through prose changes)",
+      "skill_d11_icon_reuse_in_markdown_via_relative_path: NEW SEED at 1/3 (cycle 125 1st canonical — reuse D11 site/src/assets/icons/ SVGs via relative-path inline `<img>` in what/docs/ Markdown; pattern transfers to cycle 126)"
+    ],
+    "seeds_new_at_cycle_125": [
+      "skill_iterative_cuts_to_band_compliance: NEW SEED at 1/3 (when 1st-pass cuts under-target due to pre-existing tight baseline ≥4.0/5.0, do 2nd targeted-Edit pass before committing; multiple Edit calls bundle into single commit; surfaced at cycle 125 161→144→111)",
+      "skill_table_collapse_to_narrative_paragraph: NEW SEED at 1/3 (cycle 125 1st canonical — when a 4-6-row comparison table + decision rule paragraph pair appears in a dense doc, collapse to single narrative paragraph with inline examples; saves vertical lines while preserving information)"
+    ],
+    "post_graduation_reinforcements": [
+      "skill_continuous_discipline_overlay_at_step_6: 13/3 → 14/3 at cycle 125 (4.67× margin)",
+      "skill_implementation_class_decadal_cycle_authoring: 14/3 → 15/3 at cycle 125 (5.0× margin)",
+      "skill_content_class_declaration_per_cycle: GRADUATED 3/3 reinforced — cycle 125 5th canonical instance"
+    ],
+    "next_cycle_carries": [
+      "Cycle 126 Tutorials combined polish (canonical+adopter-conversion mix) — 2 tutorial files combined commit per skill_combined_multi_file_binary_commit graduated pattern; ADAPT-to-D11-icons per operator (tutorial-meta visual hierarchy); zero new image-gen; skill_d11_icon_reuse_in_markdown_via_relative_path advance to 2/3 candidate"
+    ]
+  }
+}
