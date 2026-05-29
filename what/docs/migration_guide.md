@@ -2,9 +2,9 @@
 type: context
 title: "aDNA Migration Guide — Adding aDNA to an Existing Project"
 created: 2026-03-18
-updated: 2026-03-18
+updated: 2026-05-29
 status: approved
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [adna, migration, adoption, guide, getting-started]
 ---
 
@@ -14,32 +14,30 @@ tags: [adna, migration, adoption, guide, getting-started]
 
 ## 1. Introduction
 
-This guide is for developers who already have a project and want to add aDNA to it. If you're starting fresh, use the [Quick Start](../../README.md#quick-start) instead — clone the repo, open in Obsidian, done.
+For developers with an existing project who want to add aDNA. If you're starting fresh, use the [Quick Start](../../README.md#quick-start) instead — clone the repo, open in Obsidian, done.
 
-**What you'll have at the end**: Your existing project with a working aDNA knowledge architecture — governance files that orient AI agents on first contact, a triad structure for organizing project knowledge, and session tracking for continuous context across agent conversations.
+**You'll end with**: your existing project with a working aDNA knowledge architecture — governance files that orient AI agents on first contact, a triad for organizing project knowledge, session tracking for continuous context across agent conversations.
 
-**Time estimate**: 10-15 minutes for the core structure. Under 5 minutes if you copy-paste the starter templates without customization.
-
-**Prerequisites**: A text editor. Optionally, [Obsidian](https://obsidian.md) for visual browsing. No special tooling required.
+**Time**: 10-15 minutes for the core; under 5 minutes if you copy-paste starter templates without customization. **Prerequisites**: a text editor. Optionally, [Obsidian](https://obsidian.md) for visual browsing.
 
 ---
 
 ## 2. Which Form Is Right for You?
 
-aDNA deploys in two forms. Pick the one that matches your project:
+aDNA deploys in two forms. Pick the one matching your project:
 
 | Factor | Bare triad | Embedded triad |
-|--------|-----------|----------------|
+|---|---|---|
 | **Structure** | `who/` `what/` `how/` at project root | `.agentic/who/` `.agentic/what/` `.agentic/how/` |
-| **Best for** | Knowledge bases, documentation projects, Obsidian vaults, repos where aDNA IS the project | Code repos, existing apps, repos where aDNA lives ALONGSIDE source code |
-| **Root clutter** | Adds 3 directories + 3 files to root | Adds 1 directory + 1 file to root |
-| **Agent discovery** | Direct — agents see triad immediately | Indirect — agents read CLAUDE.md, which points to `.agentic/` |
-| **Collision risk** | Higher — `who/`, `what/`, `how/` may conflict with existing dirs | Minimal — `.agentic/` is unlikely to exist |
-| **.gitignore** | No changes needed | Add `.agentic/` exception if dotfiles are ignored |
+| **Best for** | Knowledge bases, docs projects, Obsidian vaults, repos where aDNA IS the project | Code repos, existing apps, repos where aDNA lives ALONGSIDE source code |
+| **Root clutter** | 3 directories + 3 files added | 1 directory + 1 file added |
+| **Agent discovery** | Direct — agents see triad immediately | Indirect — agents read CLAUDE.md → `.agentic/` |
+| **Collision risk** | Higher — `who/`/`what/`/`how/` may clash | Minimal — `.agentic/` unlikely to exist |
+| **.gitignore** | None needed | Add `.agentic/` exception if dotfiles are ignored |
 
-**Decision rule**: If you're adding aDNA to a codebase with `src/`, `lib/`, `tests/`, etc. — use **embedded**. If aDNA *is* the project (a knowledge base, documentation vault, or wiki) — use **bare**.
+**Decision rule**: codebase with `src/`/`lib/`/`tests/` → **embedded**. aDNA *is* the project (knowledge base, docs vault, wiki) → **bare**.
 
-> **Not sure?** Start with embedded. You can always promote to bare later by moving `.agentic/who|what|how/` to the root.
+> **Not sure?** Start with embedded. You can promote to bare later by moving `.agentic/who|what|how/` to root.
 
 ---
 
@@ -47,41 +45,35 @@ aDNA deploys in two forms. Pick the one that matches your project:
 
 The smallest aDNA installation that delivers Day 1 value:
 
-### Essential files (5)
+### Essential files (5) + triad directories (3)
 
 | File | Location | Purpose |
-|------|----------|---------|
-| `CLAUDE.md` | Project root (always) | Agent master context — project identity, structure, safety rules |
-| `MANIFEST.md` | Project root | Project identity card — what this is, architecture, entry points |
+|---|---|---|
+| `CLAUDE.md` | Project root (always) | Agent master context — identity, structure, safety rules |
+| `MANIFEST.md` | Project root | Project identity card — architecture, entry points |
 | `STATE.md` | Project root | Operational state — current phase, next steps, blockers |
-| `AGENTS.md` | One per triad directory (3 total) | Per-directory guide — what's here, how to work with it |
+| `AGENTS.md` | One per triad directory (×3) | Per-directory guide — what's here, how to work with it |
 
-### Triad directories (3)
+Triad directories (bare or embedded form): `who/` (people & orgs) · `what/` (knowledge & artifacts) · `how/` (operations & process).
 
-| Directory | Bare form | Embedded form |
-|-----------|-----------|---------------|
-| People & orgs | `who/` | `.agentic/who/` |
-| Knowledge & artifacts | `what/` | `.agentic/what/` |
-| Operations & process | `how/` | `.agentic/how/` |
-
-That's it — **5 files + 3 directories**. Everything else (templates, sessions, campaigns, lattices, context library, Obsidian config) is enhancement you add when you need it.
+That's it — **5 files + 3 directories**. Everything else is enhancement.
 
 ### What you can add later
 
 | Enhancement | When to add | What it gives you |
-|-------------|-------------|-------------------|
-| `how/sessions/` | When you want cross-session continuity | Agents pick up where the last one left off |
-| `how/templates/` | When you create the same file type repeatedly | Consistent frontmatter, less boilerplate |
-| `how/campaigns/` + `how/missions/` | When work spans multiple sessions | Structured decomposition of complex initiatives |
-| `what/context/` | When agents need domain knowledge | Pre-loaded expertise files for specific topics |
-| `what/decisions/` | When you want to track ADRs | Architecture Decision Records with linked rationale |
-| `.obsidian/` | When you want visual browsing | Graph view, wikilinks, canvas, themes |
+|---|---|---|
+| `how/sessions/` | Want cross-session continuity | Agents pick up where the last one left off |
+| `how/templates/` | Same file type created repeatedly | Consistent frontmatter, less boilerplate |
+| `how/campaigns/` + `how/missions/` | Work spans multiple sessions | Structured decomposition of complex initiatives |
+| `what/context/` | Agents need domain knowledge | Pre-loaded expertise for specific topics |
+| `what/decisions/` | Tracking ADRs | Architecture Decision Records with rationale |
+| `.obsidian/` | Want visual browsing | Graph view, wikilinks, canvas, themes |
 
 ---
 
 ## 4. Walkthrough: Embedded Form
 
-For code repos where aDNA lives alongside source code. Each step includes a timing checkpoint — total should be under 15 minutes.
+For code repos where aDNA lives alongside source. Total: under 15 minutes.
 
 ### Step 1: Create the structure (~30 seconds)
 
@@ -90,25 +82,11 @@ For code repos where aDNA lives alongside source code. Each step includes a timi
 mkdir -p .agentic/who .agentic/what .agentic/how
 ```
 
-Your project now looks like:
-
-```
-my-project/
-├── src/                    # Your existing code
-├── tests/                  # Your existing tests
-├── .agentic/               # aDNA knowledge architecture
-│   ├── who/                # People & organizations
-│   ├── what/               # Knowledge & artifacts
-│   └── how/                # Operations & process
-├── CLAUDE.md               # (next step)
-└── ...                     # Your existing files
-```
-
-**Checkpoint**: ~30 seconds elapsed.
+`.agentic/` sits alongside `src/`, `tests/`, and the rest. **Checkpoint**: ~30 seconds.
 
 ### Step 2: Write CLAUDE.md (~3 minutes)
 
-Create `CLAUDE.md` **at your project root** (not inside `.agentic/`). This is the file AI agents auto-load on startup.
+Create `CLAUDE.md` **at your project root** (not inside `.agentic/`) — AI agents auto-load it on startup.
 
 ```markdown
 # CLAUDE.md — [Your Project Name]
@@ -125,7 +103,7 @@ Project knowledge lives in `.agentic/` using the aDNA triad:
 - `.agentic/what/` — research, decisions, domain knowledge, artifacts
 - `.agentic/how/` — plans, processes, sessions, workflows
 
-Source code lives in the standard project structure ([describe briefly: src/, lib/, etc.]).
+Source code lives in the standard project structure ([describe: src/, lib/, ...]).
 
 ## Agent Protocol
 
@@ -135,20 +113,17 @@ Source code lives in the standard project structure ([describe briefly: src/, li
 
 ## Safety Rules
 
-- Read before write — always check current content before modifying
+- Read before write — check current content before modifying
 - Set `last_edited_by` and `updated` in frontmatter when editing `.agentic/` files
 - Do not modify files outside `.agentic/` without explicit instruction
 
 ## Domain
 
-[Add 3-5 bullet points about your domain — what this project does,
-key terminology, important conventions. This is where agents learn
-what makes YOUR project different.]
+[3-5 bullets about your domain — what this project does, key terminology, important
+conventions. This is where agents learn what makes YOUR project different.]
 ```
 
-**Customize**: Replace the bracketed sections. The `## Domain` section is where you teach agents about your project — spend a minute here writing a few bullet points. Everything else is structural.
-
-**Checkpoint**: ~3.5 minutes elapsed.
+Replace bracketed sections. `## Domain` is where you teach agents about your project — spend a minute writing a few bullets. **Checkpoint**: ~3.5 minutes.
 
 ### Step 3: Write MANIFEST.md and STATE.md (~2 minutes)
 
@@ -164,15 +139,12 @@ updated: 2026-03-18
 # [Your Project Name]
 
 ## What This Is
-
 [2-3 sentences: what the project does, who it's for, why it exists.]
 
 ## Architecture
-
-[Brief description of the codebase structure — languages, frameworks, key directories.]
+[Languages, frameworks, key directories.]
 
 ## Active Builds
-
 - [Current focus area or sprint goal]
 ```
 
@@ -188,159 +160,83 @@ updated: 2026-03-18
 # Operational State
 
 ## Current Phase
-
-[What's happening right now — the active sprint, milestone, or focus area.]
+[What's happening right now — active sprint, milestone, or focus.]
 
 ## Next Steps
-
 - [Immediate next action]
 - [Following action]
 
 ## Blockers
-
 - [None, or list current blockers]
 ```
 
-**Checkpoint**: ~5.5 minutes elapsed.
+**Checkpoint**: ~5.5 minutes.
 
 ### Step 4: Write AGENTS.md for each triad directory (~3 minutes)
 
-Each triad directory gets an `AGENTS.md` telling agents what belongs here. These are short — 5-10 lines each.
-
-**.agentic/who/AGENTS.md**:
+Each triad directory gets an `AGENTS.md` — 5-10 lines telling agents what belongs there. One template, three placements:
 
 ```markdown
-# who/ — Agent Guide
+# [DIR]/ — Agent Guide
 
 ## What's Here
 
-People, teams, and organizations related to [your project].
+[Topic per row below] for [your project].
 
 ## Working Rules
 
-- One file per person or organization
+- [Naming convention per row below]
 - Use frontmatter: `type`, `created`, `updated`, `tags`
 - Link to related entries with `[[wikilinks]]`
 ```
 
-**.agentic/what/AGENTS.md**:
+Substitute `[DIR]` and `[Topic]` per directory:
 
-```markdown
-# what/ — Agent Guide
+| `[DIR]` | `[Topic]` | Naming convention |
+|---|---|---|
+| `.agentic/who` | People, teams, organizations | One file per person or organization |
+| `.agentic/what` | Knowledge, research, decisions, artifacts | Decisions → `what/decisions/` as ADRs; domain knowledge → `what/context/` |
+| `.agentic/how` | Operational processes, plans, session tracking | Sessions → `how/sessions/`; multi-session plans → `how/missions/`; add `status` to frontmatter |
 
-## What's Here
-
-Knowledge, research, decisions, and artifacts for [your project].
-
-## Working Rules
-
-- Decisions go in `what/decisions/` as ADRs
-- Domain knowledge goes in `what/context/`
-- Use frontmatter: `type`, `created`, `updated`, `tags`
-```
-
-**.agentic/how/AGENTS.md**:
-
-```markdown
-# how/ — Agent Guide
-
-## What's Here
-
-Operational processes, plans, and session tracking for [your project].
-
-## Working Rules
-
-- Session files go in `how/sessions/`
-- Multi-session plans go in `how/missions/`
-- Use frontmatter: `type`, `created`, `updated`, `status`, `tags`
-```
-
-**Checkpoint**: ~8.5 minutes elapsed.
+**Checkpoint**: ~8.5 minutes.
 
 ### Step 5: Classify existing knowledge (~3-5 minutes)
 
-Look at your existing project files. Do any of them contain knowledge that belongs in the triad? Use the **Question Test**:
+Use the **Question Test** on existing files:
 
 | If the content answers... | It belongs in... |
-|---------------------------|------------------|
-| "Who is involved?" — team members, stakeholders, contacts | `.agentic/who/` |
+|---|---|
+| "Who is involved?" — teams, stakeholders, contacts | `.agentic/who/` |
 | "What do we know?" — research, decisions, specs, designs | `.agentic/what/` |
 | "How do we work?" — processes, runbooks, checklists, plans | `.agentic/how/` |
 
-Common candidates:
+Common candidates: **CONTRIBUTING.md** → key points into `.agentic/how/` (keep original for GitHub); **architecture docs** → `.agentic/what/decisions/`; **team/contacts** → `.agentic/who/`; **runbooks** → `.agentic/how/`.
 
-- **CONTRIBUTING.md** → copy key points into `.agentic/how/` (keep the original for GitHub)
-- **Architecture docs** → move or link into `.agentic/what/decisions/`
-- **Team/contacts info** → move to `.agentic/who/`
-- **Runbooks/playbooks** → move to `.agentic/how/`
+> **Don't over-migrate.** Move 2-3 files on Day 1. The triad grows organically.
 
-> **Don't over-migrate.** Move 2-3 files on Day 1. The triad grows organically — you'll naturally file new knowledge into the right directory as you create it.
-
-**Checkpoint**: ~12 minutes elapsed.
+**Checkpoint**: ~12 minutes.
 
 ### Step 6: Test (~1 minute)
 
-Open a terminal in your project directory and start your AI agent:
-
-```bash
-claude    # or your preferred agent
-```
-
-The agent should:
-1. Read `CLAUDE.md` automatically
-2. Understand your project structure
-3. Know where to find and file knowledge
-4. Follow the safety rules you defined
-
-Try asking: *"What is this project and how is the knowledge organized?"*
-
-If the agent can answer correctly, your aDNA installation is working.
-
-**Checkpoint**: ~13 minutes. Done.
+Open a terminal in your project and start your agent (`claude` or equivalent). It should auto-load `CLAUDE.md`, understand structure, know where to file knowledge, and follow your safety rules. Try: *"What is this project and how is the knowledge organized?"* — if it answers correctly, you're operational. **Checkpoint**: ~13 minutes. Done.
 
 ---
 
 ## 5. Walkthrough: Bare Form
 
-For knowledge bases, documentation projects, and repos where aDNA IS the project. The steps are identical to the embedded form with these differences:
-
-### Structure differences
+For knowledge bases, documentation projects, and repos where aDNA IS the project. Steps are identical to embedded form with these differences:
 
 ```bash
 # Instead of .agentic/ subdirectories:
 mkdir -p who what how
 ```
 
-```
-my-knowledge-base/
-├── who/                    # People & organizations
-├── what/                   # Knowledge & artifacts
-├── how/                    # Operations & process
-├── CLAUDE.md               # Agent master context
-├── MANIFEST.md             # Project identity
-├── STATE.md                # Operational state
-└── ...                     # Any existing files
-```
+Project structure becomes `who/` + `what/` + `how/` + `CLAUDE.md` + `MANIFEST.md` + `STATE.md` at root. Update `CLAUDE.md` `## Structure` section to reference root-level triad (`who/`/`what/`/`how/` instead of `.agentic/who/`/...).
 
-### CLAUDE.md differences
-
-Update the `## Structure` section to reference root-level directories:
-
-```markdown
-## Structure
-
-Project knowledge uses the aDNA triad at the project root:
-
-- `who/` — people, teams, contacts, stakeholders
-- `what/` — research, decisions, domain knowledge, artifacts
-- `how/` — plans, processes, sessions, workflows
-```
-
-### Extra considerations
-
-- **Existing directories**: If you already have a `how/` or `what/` directory, you have two options: (a) adopt the aDNA naming and add `AGENTS.md` files to your existing directories, or (b) switch to the embedded form to avoid collisions.
-- **Root file count**: The bare form adds `CLAUDE.md`, `MANIFEST.md`, `STATE.md`, and `README.md` to your root. If your root is already crowded, embedded form keeps it cleaner.
-- **Mixed content**: In bare form, the triad directories contain only aDNA-managed knowledge. Keep source code, build artifacts, and tooling configs at the root or in their own directories — don't put code inside `what/` or `how/`.
+**Extra considerations**:
+- **Existing `how/` or `what/`**: adopt aDNA naming with `AGENTS.md` files, or switch to embedded form to avoid collisions.
+- **Root crowding**: bare adds `CLAUDE.md`, `MANIFEST.md`, `STATE.md`, `README.md`. Embedded keeps root cleaner.
+- **Mixed content**: in bare form, triad directories hold only aDNA-managed knowledge. Code, build artifacts, tooling configs stay at root or in their own directories.
 
 ---
 
@@ -348,94 +244,67 @@ Project knowledge uses the aDNA triad at the project root:
 
 Copy-paste-ready minimal versions. Customize the bracketed sections.
 
-### CLAUDE.md (~25 lines)
+### CLAUDE.md
 
 ```markdown
 # CLAUDE.md — [Your Project Name]
 
 ## Identity
-
 This is [one-sentence project description].
 
 ## Structure
-
 [Bare: `who/`, `what/`, `how/` at root]
 [Embedded: `.agentic/who/`, `.agentic/what/`, `.agentic/how/`]
 
 ## Agent Protocol
-
 1. Read this file (auto-loaded)
 2. Read `STATE.md` for current context
 3. Read the `AGENTS.md` in the directory you're working in
 
 ## Safety Rules
-
 - Read before write
 - Set `last_edited_by` and `updated` on every edit
 - Do not modify files outside the triad without explicit instruction
 
 ## Domain
-
 - [Key fact about your project]
 - [Important convention or pattern]
 - [Domain terminology to know]
 ```
 
-### MANIFEST.md (~15 lines)
+### MANIFEST.md / STATE.md
 
 ```markdown
 ---
-type: manifest
+type: manifest   # or 'state'
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 ---
 
-# [Your Project Name]
+# [Your Project Name]   # or '# Operational State'
 
-## What This Is
-
+## What This Is        # MANIFEST only
 [2-3 sentences describing the project.]
 
-## Architecture
-
+## Architecture        # MANIFEST only
 [Languages, frameworks, key directories.]
 
-## Active Builds
-
-- [Current focus]
-```
-
-### STATE.md (~10 lines)
-
-```markdown
----
-type: state
-created: YYYY-MM-DD
-updated: YYYY-MM-DD
----
-
-# Operational State
-
-## Current Phase
-
+## Current Phase       # STATE only
 [What's happening now.]
 
 ## Next Steps
-
 - [Next action]
 ```
 
-### AGENTS.md (~8 lines)
+### AGENTS.md
 
 ```markdown
 # [directory_name]/ — Agent Guide
 
 ## What's Here
-
 [One sentence: what this directory contains.]
 
 ## Working Rules
-
 - [Naming convention for files]
 - Use frontmatter: `type`, `created`, `updated`, `tags`
 ```
@@ -444,61 +313,25 @@ updated: YYYY-MM-DD
 
 ## 7. Common Pitfalls
 
-Things that trip people up when adding aDNA to an existing project:
-
-### Putting CLAUDE.md inside `.agentic/` instead of the project root
-
-AI agents auto-load `CLAUDE.md` from the project root. If it's inside `.agentic/`, agents won't find it on startup and lose all orientation. **Always place CLAUDE.md at the project root**, regardless of which triad form you use.
-
-### Over-engineering Day 1
-
-You don't need 14 entity types, custom templates, campaign hierarchies, and a context library on your first day. Start with the minimum viable set (5 files + 3 directories). Add structure as you discover you need it — the triad grows organically.
-
-### Frontmatter perfectionism
-
-Start with three fields: `type`, `created`, `tags`. Add `updated`, `status`, `last_edited_by` when you have multiple agents or collaborators. Add domain-specific fields when you find yourself repeatedly including the same information. Don't design the perfect schema upfront.
-
-### Forgetting AGENTS.md files
-
-Every triad directory needs an `AGENTS.md`. Without it, agents have no routing information for that directory and will either skip it or read everything in it (wasting tokens). Even a 3-line AGENTS.md is better than none.
-
-### Migrating everything at once
-
-Don't dump all your existing docs into the triad in one session. Move 2-3 files to prove the pattern works. Let the structure grow as new knowledge is created. Forced migrations create filing confusion and don't stick.
-
-### Treating aDNA as a replacement for your existing structure
-
-aDNA doesn't replace your codebase structure (`src/`, `lib/`, `tests/`). In the embedded form, `.agentic/` sits alongside your code — it manages *project knowledge*, not source code. Your code organization stays exactly as it is.
+- **CLAUDE.md inside `.agentic/`**: AI agents auto-load from project root. If it's nested, they lose orientation. **Always at project root**, regardless of triad form.
+- **Over-engineering Day 1**: 14 entity types + custom templates + campaign hierarchies + context library = paralysis. Start with the minimum (5 files + 3 dirs); add structure when you need it.
+- **Frontmatter perfectionism**: start with `type`, `created`, `tags`. Add `updated`, `status`, `last_edited_by` when you have collaborators. Add domain fields when you repeatedly include the same info. Don't design the perfect schema upfront.
+- **Forgetting AGENTS.md**: every triad directory needs one. Without it, agents have no routing and either skip the directory or read everything (wasting tokens). Even a 3-line AGENTS.md beats none.
+- **Migrating everything at once**: don't dump all existing docs into the triad in one session. Move 2-3 files to prove the pattern. Let structure grow with new knowledge. Forced migrations create filing confusion and don't stick.
+- **Replacing your existing structure**: aDNA doesn't replace `src/`/`lib/`/`tests/`. In embedded form, `.agentic/` sits alongside your code — it manages *project knowledge*, not source.
 
 ---
 
 ## 8. What to Do Next
 
-Once the core structure is working, enhance it progressively:
+Once the core is working, enhance progressively:
 
-### Week 1: Session tracking
-
-Add `how/sessions/` (bare) or `.agentic/how/sessions/` (embedded). Each agent session creates a file here before modifying the vault. Sessions create continuity — the next agent reads the last session's handoff notes and picks up where it left off.
-
-### Week 2: Templates
-
-Create templates in `how/templates/` for file types you create repeatedly. A template is just a Markdown file with pre-filled frontmatter that gets copied when you create a new file of that type.
-
-### Week 3: Your first campaign
-
-When you have a multi-session initiative (a feature build, a research project, a migration), create a campaign file in `how/campaigns/`. Campaigns decompose into missions (multi-session tasks) which decompose into objectives (single-session units). This gives agents structured context about what you're working toward.
-
-### When needed: Context library
-
-As your project accumulates domain knowledge that agents need repeatedly, organize it into `what/context/` with topic-based files. Each file covers one domain topic with structured information that agents can load on demand instead of re-discovering it each session.
-
-### When collaborating: Obsidian config
-
-If your team uses Obsidian for visual browsing, add `.obsidian/` with theme and plugin configuration. See the [Agentic-DNA repo](https://github.com/LatticeProtocol/Agentic-DNA) for a pre-configured setup with 15 plugins and the Tokyo Night theme.
-
-### When connecting: Bridge patterns
-
-When your project needs to reference or compose with other aDNA instances, see [`adna_bridge_patterns.md`](adna_bridge_patterns.md) for nesting, sibling, and monorepo composition patterns.
+- **Week 1: Session tracking**. Add `how/sessions/`. Each session creates a file here before modifying the vault — the next agent reads the last session's handoff notes and continues.
+- **Week 2: Templates**. Create `how/templates/` for file types you create repeatedly. A template is a Markdown file with pre-filled frontmatter copied at creation.
+- **Week 3: Your first campaign**. For multi-session initiatives (feature build, research project, migration), create `how/campaigns/`. Campaigns → missions → objectives gives agents structured context about what you're working toward.
+- **When needed: Context library**. As domain knowledge accumulates, organize into `what/context/` with topic-based files. Agents load on demand instead of re-discovering each session.
+- **When collaborating: Obsidian config**. Add `.obsidian/` with theme + plugin config. See the [Agentic-DNA repo](https://github.com/LatticeProtocol/Agentic-DNA) for 15-plugin Tokyo Night setup.
+- **When connecting: Bridge patterns**. To reference or compose with other aDNA instances, see [`adna_bridge_patterns.md`](adna_bridge_patterns.md) for nesting, sibling, and monorepo composition.
 
 ---
 
@@ -507,7 +340,7 @@ When your project needs to reference or compose with other aDNA instances, see [
 ### The Question Test
 
 | Question | Triad leg |
-|----------|-----------|
+|---|---|
 | Who is involved? | `who/` |
 | What does this project know? | `what/` |
 | How does this project work? | `how/` |
@@ -520,10 +353,10 @@ Project root:
   ✓ MANIFEST.md        (project identity)
   ✓ STATE.md           (operational state)
 
-Triad directories (bare: root / embedded: .agentic/):
-  ✓ who/AGENTS.md      (people directory guide)
-  ✓ what/AGENTS.md     (knowledge directory guide)
-  ✓ how/AGENTS.md      (operations directory guide)
+Triad (bare: root / embedded: .agentic/):
+  ✓ who/AGENTS.md
+  ✓ what/AGENTS.md
+  ✓ how/AGENTS.md
 ```
 
 ### Minimum frontmatter
@@ -538,4 +371,4 @@ tags: [relevant, tags]
 
 ---
 
-*Migration guide v1.0 | Companion to the [aDNA Standard](adna_standard.md), [Design Document](adna_design.md), and [Bridge Patterns](adna_bridge_patterns.md)*
+*Migration guide v1.1 | Companion to the [aDNA Standard](adna_standard.md), [Design Document](adna_design.md), and [Bridge Patterns](adna_bridge_patterns.md)*
