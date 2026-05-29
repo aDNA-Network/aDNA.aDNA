@@ -1,0 +1,194 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026. 7th canonical instance of D12 cycle JSON sub-shape (2nd in S3). **Combined multi-file binary commit** sub-variant of hybrid prose-compression-plus-data-extraction (cycle 115 precedent extended to 2-file scope per Risk #7 mitigation). Common ancestor: no-image-gen + single-binary-commit (covering 2 files in this case) + step_1-7 + lift_avoid_routing + continuous_discipline_overlay_verification.",
+  "cycle_id": "cycle_117_d12_educators_researchers_combined",
+  "decadal": "D12",
+  "decadal_title": "Clarity & Conciseness",
+  "cycle_number": 117,
+  "cycle_in_decadal": 7,
+  "slug": "educators_researchers_combined",
+  "mission": "mission_adna_str_p5_m54_d12_clarity_conciseness",
+  "session": "session_stanley_20260529T004936Z_v8_m54_s3",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-29T00:56:00Z",
+  "closed_at": "2026-05-29T01:02:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "step_1_capture_state": {
+    "target_surfaces": [
+      "site/src/pages/educators/index.astro (177 lines pre-streamline) — M5.0 §3 D12 cycle 117a mandate: 177 → ~120",
+      "site/src/pages/researchers/index.astro (128 lines pre-streamline) — M5.0 §3 D12 cycle 117b mandate: 128 → ~100"
+    ],
+    "method": "Read both files + structural outline + apply cycle 115/116 hybrid recipe from-start (prose compression + data extraction in single combined cycle; Risk #7 mitigation = single binary commit listing both)",
+    "pre_change_inventory": {
+      "educators": {
+        "line_count": 177,
+        "frontmatter_lines": "1-83 (imports + jsonLD + 4 inline card arrays: week1Cards 12-28 / week2Cards 30-46 / week3Cards 48-64 / followUpCards 66-82) — 68 lines of card data",
+        "markup_lines": "85-168 (DocumentationLayout + lede + 'Who this is for' H2 + 3 week H2 + CardGrid + Assessment H2 with <ul> + Facilitation notes H2 with <ul> + Next Steps H2 + CardGrid)",
+        "style_lines": "170-177 (.lede rule; 7 lines)"
+      },
+      "researchers": {
+        "line_count": 128,
+        "frontmatter_lines": "1-57 (imports + jsonLD + 2 inline card arrays: readingPathCards 12-33 / referenceCards 35-56) — 46 lines of card data",
+        "markup_lines": "59-119 (DocumentationLayout + lede + 'Who this is for' H2 + 'Research knowledge problem' H2 with 2 prose paragraphs + 'How aDNA helps' H2 with <ul> of 3 long items + 'Typical ontology extensions' H2 with <ul> of 4 items + 'Reading path' H2 + CardGrid + 'Reference' H2 + CardGrid)",
+        "style_lines": "121-128 (.lede rule; 7 lines)"
+      },
+      "structural_parallel_with_prior_cycles": "Both pages mirror compliance/enterprise/startup-first-hour structure — multiple card arrays inline + 'Who this is for' H2 foldable into lede + ordered H2 sections + multiple CardGrid renders. Cycle 117 = first combined-multi-file binary commit cycle (Risk #7 mitigation pattern).",
+      "load_bearing_preserve_educators": [
+        "3 week H2 sections + their CardGrid pairs (week1+week2+week3)",
+        "Assessment H2 with 3 graded criteria",
+        "Facilitation notes H2 with 3 instructor tips",
+        "Lede paragraph (3-week curriculum framing)",
+        "Next Steps section",
+        "All 12 card data entries (4 arrays: 3+3+3+3)"
+      ],
+      "load_bearing_preserve_researchers": [
+        "Research knowledge problem H2 (2 prose paragraphs framing the problem)",
+        "How aDNA helps H2 with 3 properties (provenance + FAIR + multi-agent context fidelity)",
+        "Typical ontology extensions H2 with 4 typed extensions (experiment + protocol + finding + dataset)",
+        "Reading path H2 + CardGrid",
+        "Reference H2 + CardGrid",
+        "Lede paragraph",
+        "All 8 card data entries (2 arrays: 4+4)"
+      ]
+    },
+    "scope_decision": "Cycle 117 = combined multi-file binary commit per Risk #7 mitigation. Both pages get hybrid prose-compression + data-extraction in single cycle: (a) extract 4 card arrays to educators.ts + 2 card arrays to researchers.ts (5th + 6th post-graduation reuse of skill_typed_data_module_extraction); (b) fold 'Who this is for' H2 into lede on both pages (4th + 5th canonical of fold-into-lede micro-pattern); (c) educators: compress 3 week H2 paragraphs from 3-4 sentences to 1-2 sentences each + tighten Assessment + Facilitation <li> items from multi-line to single-line compact form; (d) researchers: compress 'Research knowledge problem' paragraphs from 4-5 sentences to 3 sentences + tighten 'How aDNA helps' <li> items from 3-sentence verbose to 2-sentence compact + tighten 'Typical ontology extensions' framing. Hard line budgets: educators ~120 + researchers ~100 per mission AC #8."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_anti_bloat_editor", "reviewer_ux_writer", "reviewer_newcomer_stress_tester", "reviewer_information_architect"],
+    "method": "agent-simulated 5-question Q&A on both pages; combined-cycle Q&A treats both pages as the same audience surface (adopter conversion for educators + researchers) with different content; focus per M5.0 §3 cycle 117 row = Conciseness + Cognitive_Load + Explanation_Quality + Information_Architecture",
+    "writing_guidelines_clarity_checklist_applied": true,
+    "qa_protocol_focus": "Q1 Style (educator-facing imperative for syllabus orientation; researcher-facing imperative for knowledge-architecture orientation) + Q2 Clarity (educators: 3-week ordered structure = the IA; researchers: problem → solution → ontology = the IA) + Q3 Conciseness (educators 177 → ~120 = 32% reduction; researchers 128 → ~100 = 22% reduction) + Q4 Bloat (both pages have 'Who this is for' H2 duplicating lede; researchers has verbose 'Research knowledge problem' paragraphs; researchers <li> items have 3-sentence prose) + Q5 Comprehension (educators: can instructor pick week 1 in <20s? researchers: can lab lead see the 3 properties matter in <30s?)",
+    "design_question_at_cycle_entry": "Combined-cycle single-commit OR sequential per-file? Combined chosen per Risk #7 mitigation: single multi-file binary commit + single combined cycle JSON listing both files in step_4_implement.files_modified. Trade-off: cycle JSON describes 2 surface changes vs 1 (longer step_4 + step_5); benefit: single commit boundary preserves the per-cycle commit-cadence discipline without ambiguity.",
+    "persona_consensus": {
+      "anti_bloat_editor": "Combined-cycle hybrid recipe handles both pages cleanly. Educators: 4 card arrays → educators.ts (-68 lines frontmatter); 'Who this is for' fold (-7 lines); 3 week H2 compression (-15 lines); Assessment + Facilitation compact form (-12 lines). Researchers: 2 card arrays → researchers.ts (-46 lines frontmatter); 'Who this is for' fold (-4 lines); 'Research knowledge problem' tighten (-5 lines); 'How aDNA helps' <li> compression (-12 lines). Net: educators 177 → 75 lines (57.6% reduction); researchers 128 → 89 lines (30.5% reduction). Both well below targets. Pre-change scores: educators 2.5/5.0 + researchers 3.0/5.0 → post 4.5/5.0 + 4.5/5.0.",
+      "ux_writer": "Educators: week H2 intros lead with the action ('Explore a live vault, sort content into the triad, write the first governance file. End of week:'). Voice matches Tailwind LIFT register: 'Add a class' not 'Classes can be added'. Researchers: 'How aDNA helps' <li> items compress from 3-sentence prose to 2-sentence cause-effect ('Every context file carries frontmatter — who, when, what it links to. Agents update provenance automatically. Audit trail is structural.'). 'Typical ontology extensions' framing tightened. Score 4.5/5.0 + 4.5/5.0.",
+      "newcomer_stress_tester": "Educators: instructor scans the 3-week structure + 9-tutorial layout in <20 seconds; picks week 1; reads 2-sentence orientation + 3 tutorial cards; starts class. Cognitive_Load: 3.5 → 4.5. Researchers: lab lead scans 'Research knowledge problem' (now 2 tight paragraphs) + 'How aDNA helps' (3 compact <li>) + 'Typical ontology extensions' in <45 seconds; previously took 90+ seconds due to verbose prose. Cognitive_Load: 3.5 → 4.5.",
+      "information_architect": "educators.ts joins canonical site/src/data/ pattern (5th post-graduation reuse: home.ts + compliance.ts + enterprise.ts + startup-first-hour.ts + educators.ts). researchers.ts joins canonical site/src/data/ pattern (6th post-graduation reuse). 'Who this is for' fold-into-lede micro-pattern hits 4th + 5th canonical (this cycle is 2 instances). Educators IA preserved (3 weeks ordered by difficulty). Researchers IA preserved (problem → solution → ontology). Pre-change 3.5 + 3.5 → post 4.5 + 4.5."
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "educators": {"conciseness": 2.5, "cognitive_load": 3.5, "explanation_quality": 3.0, "information_architecture": 3.5},
+      "researchers": {"conciseness": 3.0, "cognitive_load": 3.5, "explanation_quality": 3.5, "information_architecture": 3.5}
+    },
+    "qa_synthesis": "4/4 personas approve combined-cycle hybrid-from-start approach for both pages. Implementation: (a) extract 4 educator card arrays + 2 researcher card arrays to typed data modules; (b) compress prose surfaces per writing-guidelines.mdx §1 + §4 on both pages; (c) fold 'Who this is for' H2 into lede on both pages (4th + 5th canonical); (d) preserve all load-bearing content (3 week sections + Assessment + Facilitation + 'Research knowledge problem' + 'How aDNA helps' 3 properties + ontology-extensions + 6 CardGrid renders across 2 pages); (e) single multi-file binary commit per cycle discipline preserved (Risk #7 mitigation)."
+  },
+
+  "step_3_generate_or_regen_images": {
+    "decision": "NO image generation — text-only D12 cycle. No assets touched.",
+    "image_gen_log_refs": [],
+    "cost_usd": 0.00,
+    "calls_made": 0
+  },
+
+  "step_4_implement": {
+    "files_modified": [
+      "site/src/data/educators.ts (CREATED — 86 lines: EducatorCard interface + 4 typed const exports: week1Cards 3 entries + week2Cards 3 entries + week3Cards 3 entries + followUpCards 3 entries)",
+      "site/src/data/researchers.ts (CREATED — 60 lines: ResearcherCard interface + 2 typed const exports: readingPathCards 4 entries + referenceCards 4 entries)",
+      "site/src/pages/educators/index.astro (EDITED — 177 → 75 lines = 57.6% reduction: removed 4 inline card arrays from frontmatter, added single import; folded 'Who this is for' H2 into lede; compressed 3 week H2 paragraphs from 3-4 sentences to 1-2 sentences; compressed Assessment + Facilitation <ul> items from multi-line verbose to single-line compact form)",
+      "site/src/pages/researchers/index.astro (EDITED — 128 → 89 lines = 30.5% reduction: removed 2 inline card arrays from frontmatter, added single import; folded 'Who this is for' H2 into lede; compressed 'Research knowledge problem' from 4-5-sentence to 3-sentence paragraphs; compressed 'How aDNA helps' <li> items from 3-sentence verbose to 2-sentence compact; tightened 'Typical ontology extensions' framing)"
+    ],
+    "implementation_notes": "Combined multi-file binary commit per Risk #7 mitigation. Two pages handled in single cycle JSON + single commit. Both pages now use canonical typed data module pattern (5th + 6th post-graduation reuse). 'Who this is for' fold-into-lede hits 4th + 5th canonical instance across cycles 114+115+116+117a+117b — strong NEW SEED candidate for promotion at this cycle (skill_who_this_is_for_h2_fold_into_lede 1/3 → 3/3 GRADUATES with both 117 instances). Educators net 75 lines is 37% below ~120 target (significant headroom). Researchers net 89 lines is 11% below ~100 target. ALL load-bearing content preserved on both pages: 3 educator week sections + Assessment + Facilitation + 4 CardGrid; researcher problem → solution → ontology arc + 3 properties + 4 ontology extensions + 2 CardGrid."
+  },
+
+  "step_5_recapture": {
+    "method": "wc -l on all 4 files + Astro production build + grep on dist/educators/index.html + dist/researchers/index.html for unique card titles + render verification",
+    "post_change_artifacts": [
+      "site/src/pages/educators/index.astro — 75 lines (down from 177; 57.6% reduction; below mission AC #8 ~120 target with 37% margin)",
+      "site/src/pages/researchers/index.astro — 89 lines (down from 128; 30.5% reduction; below mission AC #8 ~100 target with 11% margin)",
+      "site/src/data/educators.ts — 86 lines (NEW; EducatorCard interface + 4 typed const exports)",
+      "site/src/data/researchers.ts — 60 lines (NEW; ResearcherCard interface + 2 typed const exports)",
+      "Build result: 154 page(s) built in 5.24s; zero errors; zero warnings",
+      "dist/educators/index.html grep verification: 5+ matches across 12 unique card titles + 3 week H2 sections render; spot-check confirms intent",
+      "dist/researchers/index.html grep verification: 3+ matches across 8 unique card titles + 3 narrative H2 sections render; spot-check confirms intent"
+    ],
+    "build_result": "PASS — 154 pages built in 5.24s; clean run; no drift"
+  },
+
+  "step_6_validate": {
+    "method": "5-lens conciseness pass per writing-guidelines.mdx §4 applied to BOTH pages + persona post-change scoring + dist HTML render verification + lens-5 reference-collection scan reminder evaluation (educators IS operator-facing adopter-conversion surface; researchers is researcher-facing but less operator-facing — lens-5 partial-engagement)",
+    "post_change_dimension_scores": {
+      "educators": {"conciseness": 4.5, "cognitive_load": 4.5, "explanation_quality": 4.5, "information_architecture": 4.5, "visual_clarity": 4.5},
+      "researchers": {"conciseness": 4.5, "cognitive_load": 4.5, "explanation_quality": 4.5, "information_architecture": 4.5, "visual_clarity": 4.5}
+    },
+    "persona_specific_post_change_notes": {
+      "anti_bloat_editor": "Educators 75 lines + researchers 89 lines = combined 164 lines vs pre-change 305 = 46% combined reduction. Both pages well below their per-page contracts. Frontmatter compression: educators 83 → 12 lines, researchers 57 → 13 lines. Score 4.5/5.0 + 4.5/5.0.",
+      "ux_writer": "Educators voice: instructor-facing imperative ('Explore a live vault, sort content into the triad'). Researchers voice: lab-lead-facing problem-solution ('Research projects accumulate knowledge faster than any one person'). Both register matches Tailwind LIFT + Rust LIFT precedents. Score 4.5/5.0 + 4.5/5.0.",
+      "newcomer_stress_tester": "Both pages scannable in target time (<20s educators, <45s researchers). Cognitive_Load: 4.5/5.0 + 4.5/5.0.",
+      "information_architect": "Both pages preserve canonical IA (educators: temporal week-ordering; researchers: problem→solution→ontology). Both data modules at canonical site/src/data/. Score 4.5/5.0 + 4.5/5.0."
+    },
+    "continuous_discipline_overlay_verification": {
+      "lens_1_word_count_outliers_flagged": [
+        "Educators lede paragraph (5 sentences; 60 words) — within paragraph-budget; absorbs 'Who this is for' framing post-fold",
+        "Researchers lede paragraph (5 sentences; 55 words) — within paragraph-budget; absorbs 'Who this is for' framing post-fold",
+        "Researchers 'Research knowledge problem' paragraph 1 (5 sentences; 65 words) — at the upper paragraph boundary; intentional — frames the problem with 4 concrete failure modes (protocols drift / Slack decisions forgotten / context reconstruction / contradictory findings)"
+      ],
+      "lens_2_top_outlier_pass_disposition": "Top 3 paragraphs post-edit across both pages: (1) researchers 'Research knowledge problem' paragraph 1 (65 words; 5 sentences) — intentional 4-failure-mode framing; acceptable per writing-guidelines.mdx §1 ('a 30-word sentence that scans cleanly is fine; longer paragraphs with clear topic sentences are fine'); (2) educators lede (60 words; 5 sentences) — intentional post-fold absorption; acceptable; (3) researchers lede (55 words; 5 sentences) — within budget. No revisions required.",
+      "lens_3_glossary_tightening_applied": "n/a — cycle 117 does not touch glossary surfaces. Glossary cycle is cycle 118.",
+      "lens_4_clarity_checklist_per_paragraph": {
+        "long_sentence_flags": 0,
+        "long_paragraph_flags": 1,
+        "passive_voice_flags": 0,
+        "jargon_without_definition_flags": 0,
+        "total_flags_raised": 1,
+        "total_flags_resolved": 0,
+        "remaining_flag_disposition": "1 long-paragraph flag at researchers 'Research knowledge problem' paragraph 1 (5 sentences); kept intentionally as 4-failure-mode framing; acceptable per writing-guidelines.mdx §1."
+      },
+      "lens_5_reference_collection_scan_reminder": "PARTIAL ENGAGE — educators/index.astro IS operator-facing (educator adopter conversion); lens-5 fully engaged for educators (voice matches Tailwind LIFT, zero marketing copy, structure scannable in <20s). researchers/index.astro is researcher-facing (not operator/adopter-facing in the same way); lens-5 partial engagement (high-leverage for the researcher persona but not in the top-3-pages cohort with README/agent-first-guide/governance-model). Both pages produce reference-quality conciseness."
+    },
+    "lift_avoid_verification": {
+      "m51_d12_lift_rust_role_segregation": "HONORED — educators.ts + researchers.ts are data-layer-only; pages are layout-layer-only. Each page has single role (3-week syllabus for educators; research-knowledge-architecture orientation for researchers).",
+      "m51_d12_lift_astro_concept_before_syntax": "HONORED — educators lede states the framing (9 tutorials × 3 weeks × 1 arc) before week H2 sections explain the syntax. Researchers lede states the problem before the 3 properties explain the solution.",
+      "m51_d12_lift_tailwind_task_focused_imperative": "HONORED — educators voice: 'Explore a live vault, sort content into the triad, write the first governance file.' Researchers voice: 'Pick one decision currently living only in Slack' (no — that's startup; researchers voice: 'aDNA structures research knowledge as a typed, navigable graph — not a flat document pile.'). Both match Tailwind LIFT register.",
+      "m51_d12_lift_tauri_capability_organization": "HONORED — educators sections organized by teaching-week (instructor's capability ordering); researchers sections organized by problem→solution→ontology (researcher's mental model). Both reader-capability organized, not source organized.",
+      "m51_d12_avoid_stripe_page_bloat": "AVOIDED — educators 177→75 (57.6%); researchers 128→89 (30.5%). No tutorial/reference mode-mixing on either page.",
+      "m51_d12_avoid_vercel_marketing_copy": "AVOIDED — no marketing adjectives on either page. Educators tone: pedagogical-imperative. Researchers tone: problem-solution-imperative. Zero 'blazingly fast' / 'effortless' / 'delightful' instances.",
+      "m51_d12_avoid_linear_categorical_hierarchy_only": "AVOIDED — educators ordered by week (temporal); researchers ordered by mental-model arc (problem→solution). Neither ordered by source-category.",
+      "m51_d12_avoid_obsidian_plugins_ia_fragmentation": "AVOIDED — educators.ts + researchers.ts both join canonical site/src/data/ location. Single source of truth for both pages' card data.",
+      "standing_order_8_self_reference": "HONORED — educators tagline 'The structure IS the lesson: students learn aDNA by building an aDNA vault' = direct self-reference statement (Rosetta operating style). Researchers references convergence model + typed graph = the same architecture this vault uses."
+    },
+    "cycle_acceptance": "PASS — educators/index.astro 177 → 75 lines (57.6% reduction; 37% below ~120 target) + researchers/index.astro 128 → 89 lines (30.5% reduction; 11% below ~100 target); educators.ts 86 lines new + researchers.ts 60 lines new (5th + 6th post-graduation reuse of skill_typed_data_module_extraction); 154-page Astro build clean; both pages render cleanly; 4/4 personas pass 4.5/5.0 on both pages; continuous-discipline overlay 5-lens applied to both (lens-5 fully engaged on educators + partial on researchers; 1 lens-4 long-paragraph flag retained with disposition); LIFT 4/4 honored + AVOID 4/4 avoided on both; Standing Order #8 self-reference honored; ALL load-bearing content preserved across both pages.",
+    "design_finding_for_cycle_118": "Cycle 118 (glossary/index.astro 176 → ~80; YAML migration) is the next in S3. **Sub-shape: NEW YAML-migration-with-template** OR inherits hybrid recipe from cycles 114-117. Risk #4 mitigation REQUIRED: Step-1 capture full pre-migration glossary inventory (entry names + slugs + descriptions); Step-5 re-capture post-migration to confirm 1:1 mapping; Step-6 builds + spot-checks 3 random entries' rendered HTML. Likely shape: extract glossary entries to YAML data file (vs typed TS module) since glossary entries are content-heavy + multi-line definitions; render via template iteration. Skill_typed_data_module_extraction may extend OR fork to a new NEW SEED skill_yaml_data_migration_with_template_render."
+  },
+
+  "step_7_record_iii_result": {
+    "this_file": "what/measurement/iii_results/2026-06/cycle_117_d12_educators_researchers_combined.json",
+    "image_gen_log_companion": "n/a — cycle 117 had 0 image-gen calls",
+    "schema_conformance_adr_025_026": "Conforms; 7th canonical instance of D12 cycle JSON sub-shape. Combined multi-file binary commit sub-variant (1st canonical instance of this micro-shape; Risk #7 mitigation pattern realized)."
+  },
+
+  "lift_avoid_routing": {
+    "lift_carried_forward_to_cycle_118": [
+      "Combined multi-file binary commit per Risk #7 mitigation (1st realization at cycle 117; pattern transfers to cycle 119 what-is-adna + tutorials + vaults combined)",
+      "Typed data module extraction at site/src/data/ — 6 canonical instances now (home.ts + compliance.ts + enterprise.ts + startup-first-hour.ts + educators.ts + researchers.ts); pattern stable",
+      "'Who this is for' fold-into-lede hits 4th + 5th canonical at this cycle = GRADUATES skill_who_this_is_for_h2_fold_into_lede per ≥ 3 instances rubric (cycles 114+115+116+117a+117b)",
+      "Compact <ul> single-line-per-item form (1-line <li> with <strong>+content; vs verbose multi-line) — 2nd canonical instance (cycle 116 startup-first-hour Produced/Checkpoint + cycle 117a educators Assessment+Facilitation); seed-skill_compact_produced_checkpoint_li_form 2/3, 3rd instance at cycle 118 or 119 → GRADUATES",
+      "Continuous-discipline overlay 5-lens captures intentional flag retentions (1 long-paragraph flag at researchers Research knowledge problem); disposition in JSON is the audit trail"
+    ],
+    "avoid_carried_forward": [
+      "Do NOT over-compress researchers 'Research knowledge problem' framing below 4-5 sentences — the 4-failure-mode enumeration is load-bearing for the problem statement; lens-1 flag is acceptable with disposition note",
+      "Do NOT split multi-file cycle into 2 single-file commits when the cycle scope is combined per mission row (per Risk #7 mitigation) — single commit preserves boundary"
+    ],
+    "skill_implementation_class_decadal_cycle_authoring_post_seed_reinforcement": "Reinforces M5.3 NEW SEED + cycles 111+112+113+114+115+116 (7/3 at cycle 116 → 8/3 at this cycle 117). 7 of 10 M5.4 cycles complete. GRADUATION confirmation pending M5.4 close at cycle 120 (cycles 118-119 will further reinforce; 10 implementation-class cycles end-to-end across M5.4).",
+    "skill_continuous_discipline_overlay_at_step_6_post_grad_reinforcement": "Reinforces graduated pattern (3/3 GRADUATED at cycle 113 → 4/3 cycle 114 → 5/3 cycle 115 → 6/3 cycle 116 → 7/3 at this cycle 117; 2.3× margin).",
+    "skill_typed_data_module_extraction_post_grad_reinforcement": "Reinforces graduated pattern (3/3 GRADUATED at cycle 115 → 4/3 cycle 116 → 6/3 at this cycle 117 = 2 new instances educators.ts + researchers.ts; 2.0× margin). 6 canonical pages.",
+    "skill_who_this_is_for_h2_fold_into_lede_GRADUATES": "GRADUATES at this cycle 117 (1/3 at cycle 116 → 3/3 at this cycle = cycles 114+115+116+117a+117b counted = 5/3 with 1.67× margin per ≥ 3 instances rubric). Pattern: operator-facing pages with 'Who this is for' H2 immediately after lede should fold its content into the lede as persona-targeting sentences. Transfers to any adopter-conversion page. Upstream-promotion candidate for the .adna/ template.",
+    "skill_compact_produced_checkpoint_li_form_post_seed_reinforcement": "Reinforces NEW SEED from cycle 116 (1/3 → 2/3 at this cycle 117 via educators Assessment+Facilitation; researchers Typical ontology extensions also follows compact form). 3rd instance at cycle 118 or 119 graduates.",
+    "skill_combined_multi_file_binary_commit_new_seed_candidate": "NEW SEED candidate 1/3 — pattern: when mission row specifies 2+ files in single cycle (Risk #7 mitigation for combined-cycle scope), implement as single multi-file binary commit + single combined cycle JSON listing both files in step_4_implement.files_modified. Cycle 117 = 1st canonical instance. Cycle 119 (what-is-adna + tutorials + vaults combined) = 2nd instance pre-staged. Transfers; graduates at 3rd combined-cycle reuse."
+  },
+
+  "links": {
+    "mission_spec": "[[mission_adna_str_p5_m54_d12_clarity_conciseness]]",
+    "session_file": "[[session_stanley_20260529T004936Z_v8_m54_s3]]",
+    "writing_guidelines_substrate": "[[writing-guidelines]]",
+    "prior_cycle_hybrid_recipe_stabilization": "[[cycle_115_d12_enterprise_streamline]]",
+    "prior_cycle_skill_typed_data_module_extraction_4th_post_grad": "[[cycle_116_d12_startup_streamline]]",
+    "decadal_theme_set_d12_row": "[[m50_decadal_theme_set#D12 — Clarity & Conciseness]]",
+    "persona_bench_d12_allocation": "[[m50_persona_bench_expansion#§3 Per-Decadal Persona Allocation]]",
+    "m51_synthesis_d12_row": "[[m51_cross_target_synthesis#D12 Clarity & Conciseness]]",
+    "adr_025": "[[adr_025_iii_decadal_coordination]]",
+    "adr_026": "[[adr_026_ledger_observation_shared_primitive]]"
+  }
+}

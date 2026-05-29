@@ -2,84 +2,13 @@
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
 import { buildTechArticleJsonLD } from '../../utils/seo';
+import { week1Cards, week2Cards, week3Cards, followUpCards } from '../../data/educators';
 
 const jsonLD = buildTechArticleJsonLD({
   title: 'aDNA Teaching Kit',
   description: 'A 3-week curriculum for teaching AI-augmented knowledge work — the 9 core tutorials in pedagogical order with week-by-week guidance.',
   url: Astro.url.href,
 });
-
-const week1Cards = [
-  {
-    title: 'Navigate an aDNA Vault',
-    href: '/learn/tutorials/navigate-a-vault',
-    description: 'Week 1 · 15 min · Beginner — guided tour of a live aDNA vault. Students learn the triad and governance files by walking them.',
-  },
-  {
-    title: 'Apply the Question Test',
-    href: '/learn/tutorials/question-test',
-    description: 'Week 1 · 15 min · Beginner — sort 10 sample items into what/how/who. First structural-thinking exercise.',
-  },
-  {
-    title: 'Create Your First CLAUDE.md',
-    href: '/learn/tutorials/first-claude-md',
-    description: 'Week 1 · 20 min · Beginner — students write the agent-orientation file for their forked project vault.',
-  },
-];
-
-const week2Cards = [
-  {
-    title: 'Write a Context File',
-    href: '/learn/tutorials/write-a-context-file',
-    description: 'Week 2 · 30 min · Intermediate — quality-rubric-scored context file ready for their vault library.',
-  },
-  {
-    title: 'Extend the Ontology',
-    href: '/learn/tutorials/extend-the-ontology',
-    description: 'Week 2 · 25 min · Intermediate — domain-specific entity type with directory, AGENTS.md, template.',
-  },
-  {
-    title: 'Design a Mission',
-    href: '/learn/tutorials/design-a-mission',
-    description: 'Week 2 · 25 min · Intermediate — decompose multi-session work into claimable objectives.',
-  },
-];
-
-const week3Cards = [
-  {
-    title: 'Build a Lattice',
-    href: '/learn/tutorials/build-a-lattice',
-    description: 'Week 3 · 30 min · Advanced — validated .lattice.yaml as a directed graph of modules.',
-  },
-  {
-    title: 'Run a Campaign',
-    href: '/learn/tutorials/run-a-campaign',
-    description: 'Week 3 · 30 min · Advanced — phased multi-mission initiative with quality gates.',
-  },
-  {
-    title: 'Federate a Vault',
-    href: '/learn/tutorials/federate-a-vault',
-    description: 'Week 3 · 30 min · Advanced — export, import, and compose lattices across aDNA instances.',
-  },
-];
-
-const followUpCards = [
-  {
-    title: 'Educator Persona',
-    href: '/adopters/adopter-educator',
-    description: 'Full pain points, typical ontology extensions, and adoption narrative for university instructors.',
-  },
-  {
-    title: 'Educator Use Case',
-    href: '/use-cases/educator',
-    description: 'Long-form narrative: how a graduate course in AI-augmented knowledge work runs on aDNA.',
-  },
-  {
-    title: 'Dual-Audience Writing',
-    href: '/patterns/dual-audience',
-    description: 'The assessment rubric turned into a writing discipline: can a non-expert navigate this vault?',
-  },
-];
 ---
 
 <DocumentationLayout
@@ -89,78 +18,47 @@ const followUpCards = [
 >
   <p class="lede">
     A ready-to-import syllabus for teaching agentic literacy. Nine tutorials,
-    three weeks, one coherent learning arc — from navigating your first vault
-    to federating work across instances. The structure <em>is</em> the lesson:
-    students learn aDNA by building an aDNA vault.
-  </p>
-
-  <h2 id="who-this-is-for">Who this is for</h2>
-  <p>
-    University instructors, bootcamp leads, and workshop facilitators teaching
-    <a href="/learn/concepts/agentic-literacy">agentic literacy</a> as a
-    first-class skill — not as flat prompting, but as structural knowledge
-    design that AI agents and humans can both navigate.
+    three weeks, one coherent arc — from navigating your first vault to
+    federating work across instances. Built for university instructors,
+    bootcamp leads, and workshop facilitators. The structure <em>is</em>
+    the lesson: students learn aDNA by building an aDNA vault.
   </p>
 
   <h2 id="week-1">Week 1 — Foundations</h2>
   <p>
-    Students explore a live vault, learn to sort content into the
-    <a href="/learn/concepts/triad">triad</a>, and write their first governance
-    file. By end of week they have a forked project vault with a working
-    CLAUDE.md.
+    Explore a live vault, sort content into the
+    <a href="/learn/concepts/triad">triad</a>, write the first governance
+    file. End of week: a forked project vault with a working CLAUDE.md.
   </p>
   <CardGrid cards={week1Cards} columns={2} />
 
   <h2 id="week-2">Week 2 — Building Blocks</h2>
   <p>
-    Students add their own knowledge to the vault — context files, ontology
-    extensions, and their first mission. The move from consumers of a vault
-    to producers of one.
+    Add knowledge to the vault — context files, ontology extensions, first
+    mission. The move from consumer to producer.
   </p>
   <CardGrid cards={week2Cards} columns={2} />
 
   <h2 id="week-3">Week 3 — Systems</h2>
   <p>
-    Students compose their work into larger wholes: executable lattices,
-    phased campaigns, and federated exchange with peer vaults. The course
-    ends with their work shareable beyond the classroom.
+    Compose work into larger wholes: executable lattices, phased campaigns,
+    federated exchange with peer vaults. The course ends shareable beyond
+    the classroom.
   </p>
   <CardGrid cards={week3Cards} columns={2} />
 
   <h2 id="assessment">Assessment</h2>
   <ul>
-    <li>
-      <strong>Navigability grade</strong> — can a classmate from a different
-      discipline navigate your vault and understand your domain? This is the
-      <a href="/patterns/dual-audience">dual-audience</a> principle as
-      grading rubric.
-    </li>
-    <li>
-      <strong>AGENTS.md routing</strong> — do the routing files correctly
-      guide a fresh agent to the right working files for a given task?
-    </li>
-    <li>
-      <strong>Mission decomposition</strong> — does each objective name a
-      verifiable deliverable? Can a peer claim and complete one without
-      additional context?
-    </li>
+    <li><strong>Navigability grade</strong> — can a classmate from a different discipline navigate your vault and understand your domain? <a href="/patterns/dual-audience">Dual-audience</a> as grading rubric.</li>
+    <li><strong>AGENTS.md routing</strong> — do the routing files correctly guide a fresh agent to the right working files for a given task?</li>
+    <li><strong>Mission decomposition</strong> — does each objective name a verifiable deliverable? Can a peer claim and complete one without additional context?</li>
   </ul>
 
   <h2 id="facilitation-notes">Facilitation notes</h2>
   <ul>
-    <li>
-      Start every class in the vault, not in slides. Open a file, point to
-      it, name the concept it demonstrates.
-    </li>
-    <li>
-      Pair students across disciplines — a CS student and a humanities
-      student on one vault surfaces the dual-audience tension immediately.
-    </li>
-    <li>
-      Use <a href="/learn/concepts/convergence">convergence</a> as the
-      grading heuristic: a well-designed mission narrows broad scope to
-      specific action. Vague objectives are the most common failure mode.
-    </li>
+    <li>Start every class in the vault, not in slides. Open a file, point to it, name the concept it demonstrates.</li>
+    <li>Pair students across disciplines — a CS student and a humanities student on one vault surfaces the dual-audience tension immediately.</li>
+    <li>Use <a href="/learn/concepts/convergence">convergence</a> as the grading heuristic: a well-designed mission narrows broad scope to specific action. Vague objectives are the most common failure mode.</li>
   </ul>
 
   <h2 id="next-steps">Next Steps</h2>
