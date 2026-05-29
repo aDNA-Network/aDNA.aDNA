@@ -37,7 +37,7 @@ tags: [campaign, side_campaign, lattice_home_pattern, splash_pattern, cmux_lift,
 | Mission | Class | Sessions | Deliverables | Goal |
 |---|---|---|---|---|
 | **M1** Pattern lift + skill + template + upstream-promotion idea | planning | 1-2 | 4 files (`pattern_*` + `skill_*` + `template_*` + `idea_upstream_*`) — **completed 2026-05-29T05:40Z; 4/4 LIVE; estimated_sessions met at 1; 475 lines / ~3.5-4 kT cumulative** | Codify CMux splash as a vault-portable aDNA primitive ✓ |
-| **M2** aDNA.aDNA in-vault install | implementation | 1 | 5 files (`how/configs/bin/lattice` + `home/home_template.md` + `conf.d/55-lattice-home.zsh` + `install.sh` + `uninstall.sh` + runbook) | Prove the lift; make aDNA.aDNA canonical-instance #2 of #2 (CMux is #1) |
+| **M2** aDNA.aDNA in-vault install | implementation | 1 | 6 substrate files + mission spec (`how/configs/bin/lattice` + `home/home_template.md` + `conf.d/55-lattice-home.zsh` + `install.sh` + `uninstall.sh` + runbook) — **completed 2026-05-29T12:58Z; 6/6 LIVE; 10/10 smoke-verify PASS; ~715 lines / ~8 kT cumulative; canonical-instance #2 LIVE; 3 NEW SEED adaptations surfaced (per-vault PWD binding + realpath canonicalization + dirname+git-config identity probe) for skill v2 at M3** | Prove the lift; make aDNA.aDNA canonical-instance #2 of #2 (CMux is #1) ✓ |
 | **M3** Campaign-lifecycle splash variants + side-campaign close | planning | 1 | 3 files (`skill_campaign_sitrep_splash.md` + 2 template variants) + side-campaign close cascade | Extend splash to campaign-open + campaign-close moments; route Next Session Prompt → M5.6 D15 |
 
 **Total NEW files**: 12 (4 + 5 + 3). **Modified files**: only the side-campaign master / mission specs / STATE.md (own governance) + a few `AGENTS.md` index updates at fresh entries. **Touched governance files**: STATE.md (Op 3 archive-on-close 38th canonical at side-campaign close). **Token-add budget**: ≤ 6 kT cumulative across 12 NEW files (audited at side-campaign close per plan §Verification §Bloat audit).
@@ -68,7 +68,7 @@ This campaign inherits project-level Standing Orders 1-10 from `aDNA.aDNA/CLAUDE
 | ID | Mission | Status | Notes |
 |---|---|---|---|
 | M1 | `mission_lhp_m1_pattern_lift.md` | **completed 2026-05-29T05:40Z** | 4/4 deliverables LIVE; M2 UNBLOCKED |
-| M2 | `mission_lhp_m2_adna_vault_install.md` | planned | Opens at M1 close (this commit); M2 spec authored next session |
+| M2 | `mission_lhp_m2_adna_vault_install.md` | **completed 2026-05-29T12:58Z** | 6/6 substrate LIVE + 10/10 smoke-verify PASS; M3 UNBLOCKED |
 | M3 | `mission_lhp_m3_lifecycle_variants_and_close.md` | planned | Closes side campaign + Next Session Prompt → M5.6 D15 |
 
 ## Exit gate

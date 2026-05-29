@@ -1,0 +1,189 @@
+#!/usr/bin/env bash
+# lattice — aDNA.aDNA in-vault Lattice Home CLI (Rosetta).
+# Canonical-instance #2 of pattern_lattice_home (CMux.aDNA was #1 at EP2 ex_04 close 2026-05-28).
+# Lifted + parameterized from CMux.aDNA/how/configs/bin/lattice at SHA 7747a15a per
+# skill_lattice_home_install step 1-2. Single subcommand: `home`.
+#
+# Per skill step 2, parameterization vs CMux:
+#   env var gate     CMUX_LATTICE                         → ADNA_LATTICE
+#   identity stub    what/cmux/graph/node.adna.yaml       → MANIFEST.md (vault-binding)
+#   vault badge      🧬 aDNA node                         → 🧬 aDNA / Rosetta
+#   mission glob     how/campaigns/*/missions/*.md        → (unchanged; vault-portable)
+#
+# Per pattern_lattice_home Anti-Pattern row 5 (5-block schema cap), CMux-specific
+# subcommands (cmux/graph/intro/tree/theme/prompt/cli/install) are intentionally
+# OMITTED. Pattern stays minimal; richer surfaces belong in other CLIs.
+
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+lattice — aDNA.aDNA in-vault Lattice Home CLI (Rosetta)
+
+Usage:
+  lattice home        Print the idle home destination (dual-gated; pattern_lattice_home)
+  lattice -h | --help This help
+
+Activation gates (both must pass; silent on miss):
+  1. ADNA_LATTICE env var unset or non-zero  (operator escape hatch: ADNA_LATTICE=0)
+  2. PWD descends from this binary's vault root  (binds binary ↔ vault)
+
+Reads:    <vault>/MANIFEST.md                                  (vault binding)
+          <vault>/how/configs/home/home_template.md            (5-block ASCII template)
+          <vault>/how/campaigns/*/missions/*.md                (mission state)
+EOF
+}
+
+# Resolve the vault root (script-relative; ADR-013 portability via CMux convention).
+# Script lives at <vault>/how/configs/bin/lattice → vault is 3 dirs up.
+resolve_vault_root() {
+  local script_path
+  if command -v realpath >/dev/null 2>&1; then
+    script_path="$(realpath "${BASH_SOURCE[0]}")"
+  else
+    script_path="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
+  fi
+  printf '%s\n' "$(cd "$(dirname "$script_path")/../../.." && pwd)"
+}
+
+cmd_home() {
+  # Print the idle home destination — the 5-block ASCII splash.
+  # Dual-gated: ADNA_LATTICE env (default ON; explicit 0 suppresses)
+  #           + PWD descends from this binary's vault root (per-vault binding).
+
+  if [[ "${ADNA_LATTICE:-1}" == "0" ]]; then
+    printf 'lattice home: suppressed (ADNA_LATTICE=0)\n' >&2
+    return 1
+  fi
+
+  local vault
+  vault="$(resolve_vault_root)"
+
+  # Per-vault binding: PWD must descend from THIS binary's vault root.
+  # Prevents misleading-render-in-wrong-vault (Risk #3 in M2 mission spec) —
+  # MANIFEST.md exists in many aDNA vaults; only this binary's own vault counts.
+  local pwd_canon
+  if command -v realpath >/dev/null 2>&1; then
+    pwd_canon="$(realpath "$PWD")"
+  else
+    pwd_canon="$(cd -P "$PWD" 2>/dev/null && /bin/pwd)"
+  fi
+  case "$pwd_canon" in
+    "$vault"|"$vault"/*) ;;
+    *)
+      printf 'lattice home: suppressed (PWD not inside vault root %s)\n' "$vault" >&2
+      return 1
+      ;;
+  esac
+
+  # Vault binding gate: MANIFEST.md must exist at the vault root.
+  if [[ ! -r "$vault/MANIFEST.md" ]]; then
+    printf 'lattice home: suppressed (MANIFEST.md absent at vault root)\n' >&2
+    return 1
+  fi
+
+  local template="$vault/how/configs/home/home_template.md"
+  if [[ ! -r "$template" ]]; then
+    printf 'lattice home: fail (template absent: %s)\n' "$template" >&2
+    return 1
+  fi
+
+  # Identity probes (derive NODE_ID from vault dirname; OPERATOR from git config).
+  local node_id operator
+  node_id="$(basename "$vault")"
+  operator="$(git -C "$vault" config user.name 2>/dev/null || true)"
+  [[ -n "$operator" ]] || operator="?"
+
+  # Git probes (vault-root-relative; harmless if not a git tree).
+  local branch upstream_status vault_status dirty_count
+  branch="$(git -C "$vault" branch --show-current 2>/dev/null || true)"
+  [[ -n "$branch" ]] || branch="(detached or no repo)"
+
+  local upstream behind ahead
+  if upstream="$(git -C "$vault" rev-parse --abbrev-ref --symbolic-full-name '@{u}' 2>/dev/null)"; then
+    read -r behind ahead < <(git -C "$vault" rev-list --left-right --count "$upstream"...HEAD 2>/dev/null || echo "0 0")
+    upstream_status="↑${ahead:-0} ↓${behind:-0} upstream"
+  else
+    upstream_status="local-only"
+  fi
+
+  dirty_count="$(git -C "$vault" status --porcelain 2>/dev/null | wc -l | tr -d ' ')"
+  if [[ "$dirty_count" == "0" ]]; then
+    vault_status="✓ vault clean"
+  else
+    vault_status="⚠ $dirty_count uncommitted"
+  fi
+
+  # Open missions: grep stub filtered by frontmatter status field.
+  # Per M2 Risk #4: glob may match non-mission files; filter by status: lines only.
+  local open_missions="" id path
+  while IFS= read -r path; do
+    [[ -n "$path" ]] || continue
+    id="$(basename "$path" .md)"
+    open_missions+="│    ▶ $id"$'\n'
+  done < <(grep -lE "^status: (planned|in_progress|active)$" "$vault"/how/campaigns/*/missions/*.md 2>/dev/null | head -5)
+  if [[ -z "$open_missions" ]]; then
+    open_missions="│    (none)"
+  else
+    open_missions="${open_missions%$'\n'}"
+  fi
+
+  # Recent: last 3 completed mission cards by mtime.
+  local recent="" mtime_date
+  while IFS= read -r path; do
+    [[ -n "$path" ]] || continue
+    id="$(basename "$path" .md)"
+    mtime_date="$(stat -f '%Sm' -t '%Y-%m-%d' "$path" 2>/dev/null)"
+    recent+="│    ✓ $id    $mtime_date"$'\n'
+  done < <(grep -lE "^status: completed$" "$vault"/how/campaigns/*/missions/*.md 2>/dev/null \
+            | xargs -I{} stat -f '%m %N' {} 2>/dev/null \
+            | sort -rn | head -3 | awk '{print $2}')
+  if [[ -z "$recent" ]]; then
+    recent="│    (none)"
+  else
+    recent="${recent%$'\n'}"
+  fi
+
+  # Capability: cheap probes (full provider/MCP detection deferred to future surfaces).
+  local providers mcp_status theme_tier graphics_status
+  if command -v claude >/dev/null 2>&1; then
+    providers="claude-code ✓"
+  else
+    providers="claude-code ◌"
+  fi
+  mcp_status="(probe → future)"
+  theme_tier="(probe → future)"
+  graphics_status="(probe → future)"
+
+  # Awk-extract verbatim render block from template; line-by-line bash substitution.
+  # OPEN_MISSIONS / RECENT are multi-line — handled by case + printf.
+  local line
+  awk '/^```$/{flag=!flag; next} flag' "$template" | while IFS= read -r line; do
+    case "$line" in
+      *'{{OPEN_MISSIONS}}'*) printf '%s\n' "$open_missions" ;;
+      *'{{RECENT}}'*)        printf '%s\n' "$recent" ;;
+      *)
+        line="${line//\{\{NODE_ID\}\}/$node_id}"
+        line="${line//\{\{OPERATOR\}\}/$operator}"
+        line="${line//\{\{BRANCH\}\}/$branch}"
+        line="${line//\{\{UPSTREAM_STATUS\}\}/$upstream_status}"
+        line="${line//\{\{VAULT_STATUS\}\}/$vault_status}"
+        line="${line//\{\{PROVIDERS\}\}/$providers}"
+        line="${line//\{\{MCP_STATUS\}\}/$mcp_status}"
+        line="${line//\{\{THEME_TIER\}\}/$theme_tier}"
+        line="${line//\{\{GRAPHICS_STATUS\}\}/$graphics_status}"
+        printf '%s\n' "$line"
+        ;;
+    esac
+  done
+}
+
+main() {
+  case "${1:-}" in
+    home)              shift; cmd_home "$@" ;;
+    -h|--help|help|"") usage ;;
+    *) printf 'lattice: unknown subcommand: %s\n' "$1" >&2; usage >&2; exit 2 ;;
+  esac
+}
+
+main "$@"
