@@ -1,0 +1,128 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026 + M5.5 AC #6. 9th canonical D14 cycle JSON. 1st canonical instance of idea_upstream_ authoring as a D14 closing cycle (post-codification at cycle 128). New-artifact class with absolute line band 60-90 met at 70.",
+  "cycle_id": "cycle_129_d14_upstream_readme_pattern",
+  "decadal": "D14",
+  "decadal_title": "README & First-Contact Polish",
+  "cycle_number": 129,
+  "cycle_in_decadal": 9,
+  "slug": "upstream_readme_pattern",
+  "mission": "mission_adna_str_p5_m55_d14_readme_first_contact_polish",
+  "session": "session_stanley_20260529T043057Z_v8_m55_s3",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-29T04:39:00Z",
+  "closed_at": "2026-05-29T04:42:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "content_class_declaration": {
+    "class_declared_in_mission_spec": "new-artifact (idea_upstream_ shape)",
+    "class_effective_at_close": "new-artifact (idea_upstream_)",
+    "absolute_line_target_band": "60-90 lines per mission spec line 94",
+    "actual_lines": 70,
+    "ceiling_compliance_at_close": true,
+    "ceiling_compliance_note": "70 lines mid-band. New-artifact class with idea_upstream_ prefix per skill_upstream_contribution.md shape: frontmatter (filing_authorization + upstream_target + github_issue) + Problem (with concrete evidence) + Evidence (this campaign) + Proposal (5 codify-and-ship items) + Phase-6 propagation candidates table (7 vaults) + Related upstream candidates (2 sibling ideas) + Adoption discipline."
+  },
+
+  "step_1_capture_state": {
+    "target_surfaces": ["aDNA.aDNA/how/backlog/idea_upstream_readme_first_contact_pattern.md (NEW; 0 lines pre-cycle)"],
+    "method": "Read 1 existing idea_upstream_ exemplar (idea_upstream_workspace_router_row_discipline.md) to confirm shape; author new file per pattern + content from M5.4 AAR Finding + M5.5 cycles 121+127+128",
+    "pre_change_inventory": {
+      "existing_idea_upstream_count": 10,
+      "exemplar_referenced": "idea_upstream_workspace_router_row_discipline.md (sibling discipline)",
+      "skill_upstream_contribution_md_exists": true
+    },
+    "scope_decision": "1st canonical instance of D14 closing-cycle idea_upstream_ authoring shape. Layered structure: Problem (with concrete-evidence pattern from idea_upstream_workspace_router_row_discipline) + Evidence (this campaign — cycles 121 + 127 + 128 + M5.4 cumulative reduction) + Proposal (5 codification items naming the same 5 sections as the README style guide cycle 128) + Phase-6 propagation candidates table (7 vaults × surface × class × current state × notes) + Related upstream candidates (cross-link to 2 sibling ideas) + Adoption discipline (no retroactive reformat; new forks inherit via template)."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_oss_maintainer", "reviewer_ux_writer"],
+    "personas_drawn_count": 2,
+    "method": "agent-simulated 5-question Q&A — 2 personas per mission spec §Scope cycle 129 row (OSS Maintainer primary for cross-vault scope; UX Writer secondary for authoring discipline).",
+    "qa_protocol_focus": "Q1 Style + Q2 Clarity + Q3 Conciseness + Q4 Bloat + Q5 Comprehension + Q6 Cross-Vault-Scope (NEW for cycle 129)",
+    "persona_consensus": {
+      "oss_maintainer": "Phase-6 propagation candidates table names 7 vaults with surface + class + current state + notes — each vault gets a one-row entry that any future Phase-6 propagator can use as a checklist. 'Adopt at next upstream version bump (post-v2.2 minor release)' is explicit; 'no retroactive reformat' protects existing vault commits; 'new vault forks inherit via template' makes the discipline self-propagating after the upstream ships. Cross-link to 2 sibling ideas (workspace_router_row_discipline + credential_broker_template_inheritance) embeds this idea in the upstream-promotion graph. Score 4.75/5.0.",
+      "ux_writer": "Problem section names 4 concrete README-quality drift symptoms (800+ line / agent-onboarding-mixed / inconsistent reduction / inconsistent persona-led structure) before proposing the fix — matches the persona-led structural pattern this idea itself proposes (META: the idea opens with the problem it solves). Evidence-this-campaign section cites M5.4 + M5.5 cycle numbers with line-count deltas — quantified-not-narrative. Proposal-section 5-item numbered list maps 1:1 to the 5 sections of the cycle-128 style guide. Cross-references to 2 sibling upstream-promotion ideas. Maintenance cadence stated. Score 4.5/5.0."
+    },
+    "aggregate_score": 4.625
+  },
+
+  "step_3_generate_or_regen": {
+    "decision": "NO image generation — D14 is text-only end-to-end; cycle 129 is new-artifact idea-file authoring. Cumulative v8 P5 image-gen ledger UNCHANGED at $1.72 of $50 (3.4%).",
+    "image_gen_log_refs": []
+  },
+
+  "step_4_implement": {
+    "method": "1 Write authoring pass. Zero edits to existing files (purely additive new-artifact).",
+    "changes_applied": [
+      "NEW aDNA.aDNA/how/backlog/idea_upstream_readme_first_contact_pattern.md (70 lines) with frontmatter per skill_upstream_contribution shape (filing_authorization + upstream_target + github_issue: TBD + tags) + Problem (4 README-quality drift symptoms) + Evidence (this campaign — 4 M5.5 + M5.4 data points with line-count quantification) + Proposal (5 codify-and-ship items: content-class taxonomy + persona-led structural pattern + scan-affordance ToC + 5-lens conciseness pass + voice precedents) + Phase-6 propagation candidates (7-row table: lattice-labs + latlab + LatticeAgent.aDNA + LatticeTerminal.aDNA + SiteForge.aDNA + III.aDNA + CanvasForge.aDNA) + Related upstream candidates (wikilinks to idea_upstream_workspace_router_row_discipline + idea_upstream_credential_broker_template_inheritance) + Adoption discipline section (next version bump + no retroactive reformat + new forks inherit via template + Phase-6 operator-discretionary)"
+    ],
+    "lift_precedents_honored": [
+      "Stripe FIRST-PAGE simplicity: opening Problem paragraph names the drift symptoms in plain language",
+      "Rust persona-paths: Phase-6 propagation candidates table routes by vault category (operational + product + platform + forge + framework)",
+      "Astro problem-first: Problem section opens the file; Proposal follows; Adoption discipline closes",
+      "Linear voice: Evidence section uses quantified-not-narrative discipline (cycle 121: 446 → 368 = 17.5%; cycle 127: 368 → 382 = +14)"
+    ],
+    "avoid_precedents_avoided": [
+      "Marketing-copy excess: zero adjective-stacking; every claim has line-count or vault-name backing",
+      "Categorical-hierarchy-only: 5-item Proposal uses functional groupings (taxonomy / pattern / ToC / pass / precedents) not abstract category trees",
+      "IA-fragmentation: 7 sections + cross-references; sibling-link form (wikilinks to 2 other idea_upstream_ files); embeds this idea in upstream-promotion graph",
+      "Agent-onboarding-mixed-with-human-onboarding: this idea is human-author-facing (operator who will file the GitHub issue at upstream); references human-facing precedents only"
+    ]
+  },
+
+  "step_5_re_capture": {
+    "post_change_inventory": {
+      "file_path": "aDNA.aDNA/how/backlog/idea_upstream_readme_first_contact_pattern.md",
+      "total_lines": 70,
+      "h2_section_count": 7,
+      "wikilink_count": 2,
+      "phase_6_propagation_candidates_table_row_count": 7,
+      "absolute_line_target_band_pass": true,
+      "idea_upstream_count_after_cycle": 11
+    }
+  },
+
+  "step_6_validate": {
+    "five_lens_conciseness_pass": {
+      "lens_1_word_count_outliers": "PASS — no paragraph exceeds 80 words; longest is Problem opening (~70 words)",
+      "lens_2_top_outlier_anti_bloat_ux_writer_dual_pass": "PASS — applied at authoring time; Proposal section tightened from prescriptive prose to numbered-list-with-action-verbs",
+      "lens_3_glossary_tightening": "N/A — no glossary entries referenced (M5.4/M5.5 cycle numbers serve as in-line anchors)",
+      "lens_4_clarity_checklist_paragraph_scan": "PASS — each paragraph passes (i) noun-strong opener, (ii) one idea per sentence, (iii) imperative-or-declarative voice, (iv) no marketing words, (v) no leading 'In order to' constructions",
+      "lens_5_reference_collection_scan": "PASS — 2 wikilinks (idea_upstream_workspace_router_row_discipline + idea_upstream_credential_broker_template_inheritance) validated against existing files; 7 vault names in Phase-6 propagation table validated against workspace CLAUDE.md project table"
+    },
+    "continuous_discipline_overlay_at_step_6": "PASS — 5-lens applied as continuous overlay during authoring; post-graduated skill_continuous_discipline_overlay_at_step_6 at 17/3 → 18/3 (6.0× margin)",
+    "astro_build_clean": "N/A for cycle 129 — how/backlog/ files are not in Astro build content tree; no rebuild needed",
+    "link_integrity_check": {
+      "wikilinks_checked": 2,
+      "wikilinks_passing": 2,
+      "vault_references_in_phase_6_table": 7,
+      "vault_references_passing": 7,
+      "broken_links": []
+    }
+  },
+
+  "step_7_record_iii_result": {
+    "file_path": "aDNA.aDNA/what/measurement/iii_results/2026-06/cycle_129_d14_upstream_readme_pattern.json",
+    "schema_conformance": "ADR-025 + ADR-026 + M5.5 AC #6 (content_class_declaration with new-artifact bounded-by-absolute-target-band variant)",
+    "cycle_outcome_summary": "Cycle 129 authors NEW how/backlog/idea_upstream_readme_first_contact_pattern.md (70 lines; within 60-90 band per mission spec line 94). 1st canonical instance of D14 closing-cycle idea_upstream_ authoring shape. Frames the M5.4 AAR Finding (content-class taxonomy) + M5.5 codifications (persona-led structural pattern + scan-affordance ToC + 5-lens conciseness pass) as generalizable across 19+ ecosystem vaults; flags 7 Phase-6 propagation candidates (lattice-labs + latlab + LatticeAgent.aDNA + LatticeTerminal.aDNA + SiteForge.aDNA + III.aDNA + CanvasForge.aDNA). Cross-links to 2 sibling upstream-promotion ideas (workspace_router_row_discipline + credential_broker_template_inheritance). 2/2 personas (OSS Maintainer + UX Writer) score 4.5-4.75/5.0; aggregate 4.625. Astro build N/A. Image-gen $0.00; cumulative v8 P5 ledger UNCHANGED at $1.72 of $50 (3.4%). 9th canonical D14 cycle JSON."
+  },
+
+  "carry_forward_signals": {
+    "seeds_advanced": [],
+    "seeds_new_at_cycle_129": [
+      "skill_d14_closing_cycle_idea_upstream_authoring_shape: NEW SEED at 1/3 (when a D-decadal mission produces a codification artifact at cycle N (e.g., D14 cycle 128 style guide), follow at cycle N+1 with an idea_upstream_ file that frames the codification as generalizable across the ecosystem + flags Phase-6 propagation candidates; cycle 129 1st canonical instance — codify-then-promote-upstream pattern)",
+      "skill_phase_6_propagation_candidates_table_at_idea_upstream: NEW SEED at 1/3 (when filing an idea_upstream_ for ecosystem-wide discipline, include a 5+row candidates table with surface + class + current state + notes per vault; gives future propagators a one-glance checklist; cycle 129 1st canonical instance)"
+    ],
+    "post_graduation_reinforcements": [
+      "skill_continuous_discipline_overlay_at_step_6: 17/3 → 18/3 at cycle 129 (6.0× margin)",
+      "skill_implementation_class_decadal_cycle_authoring: 18/3 → 19/3 at cycle 129 (6.33× margin)",
+      "skill_upstream_contribution: post-graduated at v7 (11+ idea_upstream_ files filed); cycle 129 adds 11th instance; pattern reinforced",
+      "skill_content_class_declaration_per_cycle: GRADUATED reinforced — cycle 129 9th canonical instance"
+    ],
+    "next_cycle_carries": [
+      "Cycle 130 will fire D14 decadal AAR (full 10-section heavy shape per aar_decadal_d11_visual_identity precedent) + §11 5-persona Reviewer Lens Pass (UX Writer + Newcomer + IA + Visual Designer + OSS Maintainer) + mission close cascade (mission spec status completed + lightweight 5-line AAR + campaign master row + STATE.md Op 3 37th canonical instance + session file move + Next Session Prompt → M5.6 D15)"
+    ]
+  }
+}
