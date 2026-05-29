@@ -1,7 +1,7 @@
 ---
 type: tutorial
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-05-29
 status: active
 level: beginner
 prerequisites: [concept_triad, concept_governance_files]
@@ -11,22 +11,19 @@ last_edited_by: agent_stanley
 tags: [tutorial, beginner, claude_md, governance, setup]
 ---
 
-# Create Your First CLAUDE.md
+# <img src="../../site/src/assets/icons/icon_how.svg" alt="how" width="22" /> Create Your First CLAUDE.md
 
 ## What You'll Build
 
-A working CLAUDE.md file — the master governance document that tells AI agents who they are, what rules to follow, and how your project is structured. By the end, an AI agent dropped into your project cold can orient and begin useful work.
+A working CLAUDE.md — the master governance document that tells AI agents who they are, what rules to follow, and how your project is structured. An AI agent dropped into your project cold can orient and begin useful work.
 
-## Prerequisites
-
-- Understand the [[what/concepts/concept_triad|triad]] (what/how/who)
-- Understand [[what/concepts/concept_governance_files|governance files]] (what they do and why)
+**Prerequisites**: [[what/concepts/concept_triad|triad]] (what/how/who) + [[what/concepts/concept_governance_files|governance files]] (what they do and why).
 
 ## Steps
 
 ### Step 1: Create the File
 
-At the root of your project, create a file called `CLAUDE.md`. This name matters — AI tools like Claude Code auto-load it on startup. It's the first thing an agent reads.
+At project root, create `CLAUDE.md`. The name matters — AI tools like Claude Code auto-load it on startup.
 
 ```bash
 touch CLAUDE.md
@@ -49,9 +46,9 @@ You are working on [project name] — [one sentence describing what it does].
 - [Any persona traits? "Be concise." "Explain your reasoning."]
 ```
 
-This section replaces the generic "I'm an AI assistant" behavior with project-specific identity. The agent becomes a team member, not a generic tool.
+Project-specific identity replaces the generic "I'm an AI assistant" behavior — the agent becomes a team member, not a generic tool.
 
-**See it in action**: Open this vault's `CLAUDE.md` (at `aDNA.aDNA/CLAUDE.md`). The identity section defines the Rosetta persona — "named after the Rosetta Stone" — with specific operating style rules like "the structure IS the lesson" and "warm and precise, anti-jargon-first."
+**See it in action**: open this vault's `CLAUDE.md` (at `aDNA.aDNA/CLAUDE.md`). The identity section defines the Rosetta persona ("named after the Rosetta Stone") with operating-style rules like "the structure IS the lesson" and "warm and precise, anti-jargon-first."
 
 ### Step 3: Write the Project Map
 
@@ -74,11 +71,11 @@ my_project/
 \```
 ```
 
-An agent reading this knows immediately what exists and where to find it. Without it, the agent guesses — and guesses wrong.
+Without it, the agent guesses — and guesses wrong.
 
-### Step 4: Add Standing Rules
+### Step 4: Add Standing Rules and Agent Protocol
 
-Define the rules that apply to every session:
+Define the rules that apply to every session, then tell the agent what to do on startup:
 
 ```markdown
 ## Standing Rules
@@ -87,15 +84,7 @@ Define the rules that apply to every session:
 2. **Never modify shared configs without reading first.** Read-before-write prevents overwrites.
 3. **Set `last_edited_by` on every edit.** Attribution enables conflict detection.
 4. **Commit after significant changes.** Don't rely on auto-save.
-```
 
-Rules should be specific and actionable. "Be careful" is not a rule. "Read STATE.md before working" is.
-
-### Step 5: Define the Agent Protocol
-
-Tell the agent what to do on startup:
-
-```markdown
 ## Agent Protocol
 
 ### Startup Checklist
@@ -106,27 +95,26 @@ Tell the agent what to do on startup:
 4. Create a session file and begin work
 ```
 
-This is the [[what/concepts/concept_convergence|convergence model]] in miniature: the agent starts broad (CLAUDE.md = everything about the project) and narrows to the specific (STATE.md → active session → current task).
+Rules should be specific and actionable ("Be careful" is not a rule; "Read STATE.md before working" is). The startup checklist is the [[what/concepts/concept_convergence|convergence model]] in miniature — the agent starts broad (CLAUDE.md) and narrows to the specific (STATE.md → active session → current task).
 
-### Step 6: Validate It
+### Step 5: Validate It
 
-Test your CLAUDE.md by answering these questions:
+Test by answering:
 
 | Question | If Yes → Done | If No → Fix |
-|----------|---------------|-------------|
-| Could a new agent orient from this file alone? | The identity and map are sufficient | Add more context to the project map |
+|---|---|---|
+| Could a new agent orient from this file alone? | Identity + map sufficient | Add more context to the project map |
 | Are the rules specific and actionable? | Rules will be followed | Replace vague rules with concrete instructions |
-| Does the startup checklist produce a working session? | The protocol works | Add missing steps |
-| Is the tone consistent with how you want agents to work? | The persona is set | Adjust the operating style |
+| Does the startup checklist produce a working session? | Protocol works | Add missing steps |
+| Is the tone consistent with how you want agents to work? | Persona is set | Adjust the operating style |
 
 ## What You Learned
 
-- CLAUDE.md is the single most important file in an aDNA project — it's the agent's first read
-- Four sections do the heavy lifting: identity, project map, standing rules, agent protocol
-- Specificity beats generality: "Read STATE.md first" > "Be careful"
-- The file demonstrates [[what/concepts/concept_convergence|convergence]] — broad orientation narrowing to specific action
+- CLAUDE.md is the single most important file in an aDNA project — the agent's first read.
+- Four sections do the heavy lifting: identity, project map, standing rules, agent protocol.
+- Specificity beats generality. The file demonstrates [[what/concepts/concept_convergence|convergence]] — broad orientation narrowing to specific action.
 
 ## Next Steps
 
-- [[what/tutorials/tutorial_question_test|Apply the Question Test]] — practice sorting content into the triad
-- [[what/concepts/concept_token_selection|Token Selection]] — how CLAUDE.md fits into the token budget
+- [[what/tutorials/tutorial_question_test|Apply the Question Test]] — sort content into the triad
+- [[what/concepts/concept_token_selection|Token Selection]] — how CLAUDE.md fits the token budget
