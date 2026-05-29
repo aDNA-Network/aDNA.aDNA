@@ -18,57 +18,36 @@ const jsonLD = buildWebPageJsonLD({
   <p>Get your first aDNA project running in about 5 minutes.</p>
 
   <Callout variant="info" title="Prerequisites">
-    <p>You need <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">Claude Code installed</a> before step 3. Install it with:</p>
-    <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
-    <p>Git is also required for step 1.</p>
+    <p>Git, and <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">Claude Code</a> installed via <code>npm install -g @anthropic-ai/claude-code</code>.</p>
   </Callout>
 
   <Callout variant="tip" title="What you'll have when you're done">
-    <p>A working aDNA project with <code>CLAUDE.md</code>, <code>what/</code>, <code>how/</code>, and <code>who/</code> directories. Run <code>claude</code> inside the project folder and your agent reads the governance files automatically — no re-briefing needed.</p>
+    <p>A working aDNA project with <code>CLAUDE.md</code> + the <code>what/</code> / <code>how/</code> / <code>who/</code> triad. Run <code>claude</code> inside the folder and your agent reads the governance files automatically.</p>
   </Callout>
 
   <h2 id="step-1">1. Clone the template</h2>
   <pre><code>git clone https://github.com/LatticeProtocol/Agentic-DNA.git my-project
 cd my-project</code></pre>
-  <p>This gives you the base <code>.adna/</code> template with governance files, skills, and context structure.</p>
 
   <h2 id="step-2">2. Open in your editor</h2>
-  <p>Open the project in Obsidian, VS Code, or any Markdown editor. The <code>CLAUDE.md</code> file at the root is your starting point — it tells AI agents how to navigate the project.</p>
+  <p>Open in Obsidian, VS Code, or any Markdown editor. <code>CLAUDE.md</code> at the root is your agent's entry point.</p>
 
   <h2 id="step-3">3. Run your first session</h2>
-  <p>Start a session with Claude Code (or your preferred AI agent). The agent will read <code>CLAUDE.md</code>, detect a fresh project, and walk you through onboarding.</p>
+  <p>Start Claude Code. It reads <code>CLAUDE.md</code>, detects a fresh project, and walks you through onboarding:</p>
   <pre><code>$ claude
-
-╭─────────────────────────────────────╮
-│ Claude Code                         │
-╰─────────────────────────────────────╯
-
 ✓  Loaded CLAUDE.md (project instructions)
 
-I can see this is a fresh aDNA project — your governance files
-are in place and the triad structure (who/ what/ how/) is ready.
-
-This looks like an uncustomized fork. I'll walk you through
-onboarding: let's set your project identity, confirm the triad
-structure, and create your first session file.
+I can see this is a fresh aDNA project. Let's set your project
+identity and create your first session file.
 
 What is this project called, and what problem does it solve?
-
 &gt; _</code></pre>
-  <p>The agent reads your <code>CLAUDE.md</code> before asking a single question. You start every session with a collaborator that already knows the project — not one you have to brief from scratch.</p>
-
-  <h2 id="see-it-live">See it live</h2>
-  <p>The <code>aDNA.aDNA/</code> repository is a working aDNA project — open it alongside this tutorial to see every concept in action:</p>
-  <ul>
-    <li><code>aDNA.aDNA/CLAUDE.md</code> — the root governance file your agent reads first</li>
-    <li><code>aDNA.aDNA/STATE.md</code> — live operational snapshot: current phase, blockers, next steps</li>
-    <li><code>aDNA.aDNA/how/sessions/active/</code> — active session files, one per working session</li>
-  </ul>
 
   <h2 id="next-steps">Next steps</h2>
   <ul>
     <li><a href="/learn/tutorials/first-claude-md">Tutorial: Create Your First CLAUDE.md</a></li>
     <li><a href="/learn/what-is-adna">What is aDNA?</a></li>
     <li><a href="/learn/concepts/triad">Learn about the Triad</a></li>
+    <li>See it live: the <a href="https://github.com/LatticeProtocol/aDNA-aDNA" target="_blank" rel="noopener">aDNA.aDNA repository</a> is a working aDNA project — every concept demonstrated in a real vault.</li>
   </ul>
 </DocumentationLayout>
