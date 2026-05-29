@@ -101,49 +101,23 @@ Agents read `CLAUDE.md` → `STATE.md` → directory-level `AGENTS.md` files. Hu
 
 ## Quick Start
 
-**Clone and open: ~5 minutes.** Agent-guided customization: 15-30 minutes.
-
-### Prerequisites
-
-- [Obsidian](https://obsidian.md) 1.0+ (free, all platforms) — optional but recommended
-- Python 3.6+ — only needed for lattice YAML validation tools
-
-### 1. Get the vault
+Clone the template, run setup, then start an agent. ~5 minutes.
 
 ```bash
-mkdir -p ~/lattice
-cd ~/lattice
+mkdir -p ~/lattice && cd ~/lattice
 git clone https://github.com/LatticeProtocol/Agentic-DNA.git adna
-cd adna
+cd adna && ./setup.sh
 ```
 
-The `adna/` directory is the base template — fork it into project directories, keep the template clean for updates.
-
-> Alternatively, click **[Use this template](https://github.com/LatticeProtocol/Agentic-DNA/generate)** on GitHub for a clean-history copy. Clone into `~/lattice/`.
-
-### 2. Run setup
-
-```bash
-./setup.sh
-```
-
-Downloads 15 community plugins, the Tokyo Night theme, and ships a curated workspace layout. Windows users: run via Git Bash or WSL.
-
-### 3. Open in Obsidian and start an agent
-
-Open `adna/` as a vault. Enable community plugins when prompted.
-
-In a terminal at the vault root:
+`setup.sh` ships 15 community plugins, the Tokyo Night theme, and a curated workspace layout (Git Bash or WSL on Windows). Open `adna/` in Obsidian and enable community plugins when prompted. Then, from the vault root:
 
 ```bash
 claude
 ```
 
-**Berthier** — the vault's built-in agent — detects that this is the base template and guides you through workspace setup, forking your first project (e.g., `~/lattice/my_research_lab.aDNA/`), and customizing governance files. The base `adna/` template stays clean.
+**Berthier** — the vault's built-in agent — detects the base template, walks you through workspace setup, and forks your first project (e.g., `~/lattice/my_research_lab.aDNA/`). The base `adna/` stays clean for updates.
 
-> No Obsidian? aDNA works terminal-first. See [`what/docs/agent_first_guide.md`](what/docs/agent_first_guide.md) for the full agent-first walkthrough.
->
-> No AI agents? Edit `MANIFEST.md` + `STATE.md` directly. Create files using templates in `how/templates/`. See [`what/docs/migration_guide.md`](what/docs/migration_guide.md) for manual setup.
+Persona-specific paths, a terminal-first walkthrough, and manual setup (no AI agent) are documented in [`get-started`](./site/src/pages/get-started.astro), [`agent_first_guide.md`](what/docs/agent_first_guide.md), and [`migration_guide.md`](what/docs/migration_guide.md).
 
 ---
 
@@ -288,37 +262,9 @@ Lattice tools, the JSON schema, 15 example lattices (business / research / creat
 
 ## Working with AI Agents
 
-aDNA is designed for **human-agent collaboration**. The architecture serves both audiences simultaneously.
+aDNA is designed for human-agent collaboration. Humans browse the vault in Obsidian; agents read structured Markdown. Same knowledge, two entry paths.
 
-### Agent Orientation
-
-When an AI agent opens an aDNA vault, it reads `CLAUDE.md` and immediately understands: project structure, safety rules, active state, session protocol, and domain knowledge. No prompt engineering required — the architecture *is* the prompt.
-
-### Session Tracking
-
-Every agent session creates a file in `how/sessions/active/` before modifying vault files. On completion, sessions close with a **SITREP** — a structured handoff covering completed work, in-progress work, next actions, blockers, and files touched. The next agent reads the last SITREP and picks up where the previous one left off.
-
-### The Execution Hierarchy
-
-For work larger than a single session:
-
-```
-Campaign  (strategic initiative — weeks to months)
-├── Phase  (logical grouping with human gate)
-│   └── Mission  (multi-session task — 1-5 sessions)
-│       └── Objective  (session-sized unit of work)
-└── Phase
-```
-
-Each level narrows the context an agent loads. A campaign might reference 50K tokens of project knowledge; a mission needs ~15K; an objective needs ~5K. Agents spend tokens on doing the work, not re-reading the project.
-
-### Cross-Agent Coordination
-
-Multiple agents coordinate through `who/coordination/` — structured notes that flag dependencies, handoffs, and blockers. Each agent checks coordination on startup.
-
-### Team Use — Multi-User Vaults
-
-For teams sharing a vault via git, install [Obsidian Git](https://github.com/denolehov/obsidian-git). Per-device files (`workspace.json`, `graph.json`) are pre-excluded via `.gitignore`.
+Agent protocol — session tracking, the Campaign → Mission → Objective execution hierarchy, coordination conventions, and SITREP handoffs — lives in [`CLAUDE.md`](CLAUDE.md) (auto-loaded on session start) and the per-directory [`AGENTS.md`](how/sessions/AGENTS.md) files. Multi-user teams sharing a vault via git: install [Obsidian Git](https://github.com/denolehov/obsidian-git); per-device files are pre-excluded.
 
 ---
 
@@ -369,31 +315,7 @@ The `what/context/` directory implements these as a **context library** — stru
 
 ## Architecture Reference
 
-### Governance files
-
-| File | Loaded by | Scope | Update frequency |
-|---|---|---|---|
-| `CLAUDE.md` | Agents (auto) | Global — project structure, safety, protocol | Rarely (version-gated) |
-| `MANIFEST.md` | Both | Global — project identity | On structural changes |
-| `STATE.md` | Both | Global — current plans, blockers | Every session |
-| `AGENTS.md` | Agents | Per-directory | When directory contents change |
-| `README.md` | Humans | Global — external onboarding | On major updates |
-
-### Collision prevention
-
-Three rules keep multi-agent work safe:
-
-1. **Read before write** — always read current content immediately before writing.
-2. **Check `updated`** — if another agent edited today, confirm before overwriting.
-3. **Set `last_edited_by`** — every edit updates the frontmatter audit trail.
-
-### Compute tiers (for lattices)
-
-| Tier | Scope |
-|---|---|
-| **L1 Edge** | Local/edge compute, lightweight inference (laptop GPU, edge device) |
-| **L2 Regional** | Institutional clusters, moderate training (university HPC, on-prem) |
-| **L3 Cloud/HPC** | Large-scale data centers, heavy training (cloud GPU fleet) |
+Governance files (CLAUDE / MANIFEST / STATE / AGENTS / README), collision-prevention rules, compute tiers (L1 Edge / L2 Regional / L3 Cloud), and the full normative model are documented in [`what/docs/adna_standard.md`](what/docs/adna_standard.md) and [`what/docs/adna_design.md`](what/docs/adna_design.md). Agents read `CLAUDE.md` + per-directory `AGENTS.md`; humans read `README.md` + `MANIFEST.md`.
 
 ---
 
