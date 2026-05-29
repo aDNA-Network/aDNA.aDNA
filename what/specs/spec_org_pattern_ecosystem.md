@@ -63,7 +63,7 @@ An org-vault may sit under an org-vault umbrella that holds program-level frame 
 |-----------|---------|-------------|------------------|------|----------|
 | `SuperLeague.aDNA` | TBD | SuperLeague-the-company | TBD (Carly + Herb partner-clone work in progress; Stanley not yet cloned) | `LatticeProtocol/SuperLeague.aDNA` (partner-cloned by Carly + Herb 2026-05-13) | **Reclassified Org-Graph.aDNA 2026-05-15** (LIP-0005) |
 | `CakeHealth.aDNA` | Berthier | Dr. Ami Mac's clinical practice + the emerging CAKE Health vision (Operation CAKE) | Operation CAKE M00-M08 missions (M01 partial; M02-M08 planned) | `https://github.com/LatticeProtocol/CakeHealth.aDNA` (private; Stanley + Herb local clones) | **Reclassified Org-Graph.aDNA 2026-05-15** (LIP-0005) |
-| `PercySleep.aDNA` | TBD | Percy's sleep-research org | TBD (Herb's machine) | Herb-local | **Reclassified Org-Graph.aDNA 2026-05-15** (LIP-0005) |
+| `PercySleep.aDNA` | Hypnos | Percy Sleep Inc — contactless 60GHz behavioral sleep-monitoring device + AI platform + clinician dashboard | TBD (no engagement scope defined; v1 OUR-confidential) | Stanley-local (genesis 2026-05-28; local-by-default) | **Genesis — "Operation Somnograph"; P0–P1 complete 2026-05-28, P2 (GitHub) + P3 (DuploCloud) gated** (LIP-0005) |
 
 ### Cross-Vault Federation Posture
 
