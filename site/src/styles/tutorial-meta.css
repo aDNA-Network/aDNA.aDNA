@@ -1,0 +1,49 @@
+/* Tutorial page meta styles (difficulty badge + estimated time) — extracted at M5.4 D12 cycle 119
+ * from inline <style> block in site/src/pages/learn/tutorials/[...slug].astro. */
+
+.guide-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  font-size: var(--text-sm);
+}
+
+.difficulty-badge {
+  padding: 0.15em 0.6em;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.difficulty-badge.beginner {
+  background: color-mix(in srgb, var(--color-success) 15%, transparent);
+  color: hsl(142 72% 28%); /* darker green for WCAG AA contrast (5.4:1) */
+}
+
+.difficulty-badge.intermediate {
+  background: color-mix(in srgb, var(--color-info) 15%, transparent);
+  color: hsl(217 91% 35%); /* darker blue for WCAG AA contrast */
+}
+
+.difficulty-badge.advanced {
+  background: color-mix(in srgb, var(--color-warning) 15%, transparent);
+  color: hsl(25 95% 35%); /* darker orange for WCAG AA contrast */
+}
+
+/* Dark mode: lighten badge text for contrast on dark color-mix backgrounds */
+:global(.dark) .difficulty-badge.beginner {
+  color: #34C06E; /* 5.85:1 on dark green bg */
+}
+
+:global(.dark) .difficulty-badge.intermediate {
+  color: #5CB8E8; /* 6.53:1 on dark blue bg */
+}
+
+:global(.dark) .difficulty-badge.advanced {
+  color: #E89545; /* 5.83:1 on dark orange bg */
+}
+
+.estimated-time {
+  color: var(--color-text-muted);
+}

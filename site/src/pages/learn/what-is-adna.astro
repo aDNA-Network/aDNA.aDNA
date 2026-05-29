@@ -15,28 +15,24 @@ const jsonLD = buildTechArticleJsonLD({
   jsonLD={jsonLD}
   next={{ label: 'The Triad', href: '/learn/concepts/triad' }}
 >
-  <p>aDNA (Agentic DNA) is an open standard for organizing project knowledge so that both humans and AI agents can navigate it. Think of it as a genome for your project — a structured encoding of what your project knows, who is involved, and how work gets done.</p>
+  <p>aDNA (Agentic DNA) is an open standard for organizing project knowledge so both humans and AI agents can navigate it. Think of it as a genome for your project — a structured encoding of what your project knows, who is involved, and how work gets done.</p>
 
   <h2 id="the-problem">The problem</h2>
-  <p>AI agents are increasingly capable, but they struggle with the same thing humans do: finding the right context in a sea of files. Without structure, agents waste tokens loading irrelevant information or miss critical context entirely. The result: you re-explain your project at the start of every session, agents make decisions that contradict earlier ones, and knowledge accumulated over weeks evaporates when the context window closes.</p>
-
-  <p>This isn't an agent capability problem. It's a knowledge architecture problem. The agent is capable — it just has nowhere to look.</p>
+  <p>AI agents struggle with the same thing humans do: finding the right context in a sea of files. Without structure, agents waste tokens on irrelevant content or miss critical context. You re-explain your project at the start of every session; agents make decisions that contradict earlier ones; knowledge from weeks of work evaporates when the context window closes. This is a knowledge architecture problem, not an agent capability problem — the agent is capable; it has nowhere to look.</p>
 
   <h2 id="why">Why aDNA exists</h2>
-  <p>aDNA exists because there was no shared standard for how a project should present itself to an AI agent. Every team invented their own approach: some dropped a long README into the prompt, others used custom system instructions, others relied on the agent to figure it out. None of these scale across sessions, across agents, or across teams.</p>
-
-  <p>aDNA is the attempt to solve this once, openly — a standard that any team can adopt, any tool can support, and any agent can navigate without custom configuration.</p>
+  <p>Before aDNA there was no shared standard for how a project should present itself to an agent. Every team improvised — long READMEs in the prompt, custom system instructions, agents left to figure it out. None scale across sessions, agents, or teams. aDNA is the attempt to solve this once, openly: a standard any team can adopt, any tool can support, and any agent can navigate without custom configuration.</p>
 
   <h2 id="the-solution">The aDNA approach</h2>
   <p>aDNA provides three things:</p>
   <ul>
-    <li><strong>The Triad</strong> — every project is organized into <a href="/learn/concepts/triad">three directories</a>: <code>who/</code> (people and governance), <code>what/</code> (knowledge and decisions), and <code>how/</code> (operations and workflows). The layout itself is the first piece of orientation — an agent that has seen one aDNA project knows where to look in any other.</li>
-    <li><strong>Governance files</strong> — <code>CLAUDE.md</code>, <code>AGENTS.md</code>, <code>MANIFEST.md</code>, <code>STATE.md</code>, and <code>README.md</code> give agents the orientation they need at every level of the project. The root <code>CLAUDE.md</code> is the agent's entry point: it explains the project's purpose, structure, rules, and where to start working.</li>
-    <li><strong>Typed entities</strong> — 14 base entity types (concepts, missions, sessions, lattices, and more) with consistent frontmatter and naming conventions. Typed entities are predictable: an agent that knows what a <code>mission</code> file looks like can load any mission file in any aDNA project and understand its structure immediately.</li>
+    <li><strong>The Triad</strong> — every project is organized into <a href="/learn/concepts/triad">three directories</a>: <code>who/</code> (people and governance), <code>what/</code> (knowledge and decisions), and <code>how/</code> (operations and workflows). An agent that has seen one aDNA project knows where to look in any other.</li>
+    <li><strong>Governance files</strong> — <code>CLAUDE.md</code>, <code>AGENTS.md</code>, <code>MANIFEST.md</code>, <code>STATE.md</code>, and <code>README.md</code> orient agents at every level. The root <code>CLAUDE.md</code> is the agent's entry point: purpose, structure, rules, where to start.</li>
+    <li><strong>Typed entities</strong> — 14 base entity types (concepts, missions, sessions, lattices, and more) with consistent frontmatter and naming. An agent that knows what a <code>mission</code> file looks like can load any mission file in any aDNA project and understand it immediately.</li>
   </ul>
 
   <h3 id="directory-structure">What the structure looks like</h3>
-  <p>A minimal aDNA project — three directories, five governance files, everything the agent needs to orient and act:</p>
+  <p>A minimal aDNA project — three directories, five governance files, everything an agent needs to orient:</p>
   <pre><code>your-project.aDNA/
 ├── CLAUDE.md          # Agent entry point: purpose, rules, where to start
 ├── STATE.md           # Live snapshot: blockers, active work, next steps
@@ -48,10 +44,10 @@ const jsonLD = buildTechArticleJsonLD({
 └── how/               # HOW — operations, plans, execution
     ├── missions/      # Work decomposed into claimable objectives
     └── sessions/      # Per-session tracking and handoff notes</code></pre>
-  <p>An agent that has seen one aDNA project recognises this layout in any other. The structure is the orientation — before the agent reads a single word of content.</p>
+  <p>An agent that has seen one aDNA project recognises this in any other — before reading a single word of content.</p>
 
   <h3 id="entity-types">The 14 entity types</h3>
-  <p>Every file in an aDNA project has a declared type. This predictability is what makes cross-project navigation possible without custom configuration:</p>
+  <p>Every file has a declared type. Predictability is what makes cross-project navigation possible without custom configuration:</p>
   <table>
     <thead><tr><th>Triad</th><th>Entity</th><th>Purpose</th></tr></thead>
     <tbody>
@@ -73,7 +69,7 @@ const jsonLD = buildTechArticleJsonLD({
   </table>
 
   <h3 id="claude-md-example">What a CLAUDE.md looks like</h3>
-  <p>The <code>CLAUDE.md</code> is not a README — it is the agent's operating protocol. Here is the opening of the real <code>CLAUDE.md</code> from this documentation vault (<a href="https://github.com/LatticeProtocol/aDNA.aDNA/blob/main/CLAUDE.md"><code>aDNA.aDNA/CLAUDE.md</code></a>):</p>
+  <p>The <code>CLAUDE.md</code> is not a README — it is the agent's operating protocol. The opening of the real one from this documentation vault (<a href="https://github.com/LatticeProtocol/aDNA.aDNA/blob/main/CLAUDE.md"><code>aDNA.aDNA/CLAUDE.md</code></a>):</p>
   <pre><code># CLAUDE.md — aDNA.aDNA
 
 You are Rosetta — named after the Rosetta Stone, the artifact that decoded
@@ -95,33 +91,30 @@ aDNA.aDNA/
 1. Phase gates are human gates — never auto-advance between phases.
 2. Every mission gets an AAR before marking it completed.
 3. Upstream spec is source of truth — cite adna_standard.md for normative claims.</code></pre>
-  <p>The agent reads this file at the start of every session. It replaces the informal "just figure it out from the README" approach with a structured, reliable contract between the project and any agent that works on it.</p>
+  <p>The agent reads this at the start of every session. It replaces "just figure it out from the README" with a structured contract between project and agent.</p>
 
   <h2 id="before-after">Before and after</h2>
-  <p>Here is what the same project looks like with and without aDNA:</p>
-
-  <p><strong>Without aDNA:</strong> A research lab has 200 files spread across Notion, Google Drive, and a Git repo. Every time a new agent session starts, the team pastes a summary into the prompt. The summary is always outdated. The agent asks clarifying questions. Decisions made last month get re-litigated. A new collaborator takes three days to get oriented.</p>
-
-  <p><strong>With aDNA:</strong> The same project has a <code>what/context/</code> library of curated knowledge files. The <code>STATE.md</code> shows current priorities and blockers. The <code>how/missions/</code> directory has the active work decomposed into claimable objectives. A new agent loads the root <code>CLAUDE.md</code>, reads the relevant context files, and starts working in the right direction — in the same session.</p>
+  <p><strong>Without aDNA:</strong> a research lab has 200 files across Notion, Drive, and Git. Every new agent session pastes an outdated summary into the prompt. Decisions from last month get re-litigated. A new collaborator takes three days to orient.</p>
+  <p><strong>With aDNA:</strong> the same project has a <code>what/context/</code> library, a <code>STATE.md</code> showing current priorities and blockers, and a <code>how/missions/</code> directory with active work decomposed into claimable objectives. A new agent loads <code>CLAUDE.md</code>, reads the relevant context, and starts working in the right direction — in the same session.</p>
 
   <h2 id="self-reference">This site is a live aDNA vault</h2>
-  <p><strong>This documentation site IS an aDNA vault.</strong> The pages you are reading are generated from files inside <a href="https://github.com/LatticeProtocol/aDNA.aDNA"><code>github.com/LatticeProtocol/aDNA.aDNA</code></a> — a real, actively maintained aDNA project that teaches the standard by using the standard. Every concept explained here has a corresponding file in the vault that demonstrates it in practice:</p>
+  <p><strong>This documentation site IS an aDNA vault.</strong> The pages you are reading are generated from files inside <a href="https://github.com/LatticeProtocol/aDNA.aDNA"><code>github.com/LatticeProtocol/aDNA.aDNA</code></a> — a real, actively maintained aDNA project that teaches the standard by using the standard. Every concept here has a corresponding file in the vault that demonstrates it:</p>
   <ul>
-    <li><a href="https://github.com/LatticeProtocol/aDNA.aDNA/blob/main/STATE.md"><code>aDNA.aDNA/STATE.md</code></a> — the live operational snapshot: current phase, active missions, blockers</li>
-    <li><a href="https://github.com/LatticeProtocol/aDNA.aDNA/tree/main/what/context"><code>aDNA.aDNA/what/context/</code></a> — the curated knowledge library agents load before working</li>
-    <li><a href="https://github.com/LatticeProtocol/aDNA.aDNA/tree/main/how/campaigns/campaign_rosetta"><code>aDNA.aDNA/how/campaigns/campaign_rosetta/</code></a> — the campaign that built this site, with mission files, cycle records, and AARs</li>
+    <li><a href="https://github.com/LatticeProtocol/aDNA.aDNA/blob/main/STATE.md"><code>aDNA.aDNA/STATE.md</code></a> — live operational snapshot</li>
+    <li><a href="https://github.com/LatticeProtocol/aDNA.aDNA/tree/main/what/context"><code>aDNA.aDNA/what/context/</code></a> — curated knowledge library agents load before working</li>
+    <li><a href="https://github.com/LatticeProtocol/aDNA.aDNA/tree/main/how/campaigns/campaign_rosetta"><code>aDNA.aDNA/how/campaigns/campaign_rosetta/</code></a> — the campaign that built this site</li>
     <li><a href="https://github.com/LatticeProtocol/aDNA.aDNA/blob/main/CLAUDE.md"><code>aDNA.aDNA/CLAUDE.md</code></a> — the exact CLAUDE.md snippet shown above, in full</li>
   </ul>
-  <p>Navigate the vault in Obsidian, VS Code, or GitHub. Every directory you open, every frontmatter field you read — that is an aDNA concept in action, not just described.</p>
+  <p>Navigate the vault in Obsidian, VS Code, or GitHub. Every directory and frontmatter field is an aDNA concept in action.</p>
 
   <h2 id="three-questions">The three-question test</h2>
   <p>A well-structured aDNA project should let any agent answer three questions immediately, without asking:</p>
   <ol>
     <li><strong>What is this project?</strong> — answered by <code>CLAUDE.md</code> and <code>MANIFEST.md</code> at the root</li>
     <li><strong>What is the current state?</strong> — answered by <code>STATE.md</code> (blockers, active work, next steps)</li>
-    <li><strong>Where do I start working?</strong> — answered by the active mission file in <code>how/missions/</code> or the relevant <code>AGENTS.md</code> in the working directory</li>
+    <li><strong>Where do I start?</strong> — answered by the active mission file in <code>how/missions/</code> or the relevant <code>AGENTS.md</code></li>
   </ol>
-  <p>If your project can answer all three in under 10 seconds of reading, it is aDNA-ready.</p>
+  <p>If your project answers all three in under 10 seconds of reading, it is aDNA-ready.</p>
 
   <h2 id="next-steps">Explore further</h2>
   <ul>

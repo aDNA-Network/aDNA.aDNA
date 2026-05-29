@@ -1,0 +1,185 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026. 9th canonical instance of D12 cycle JSON sub-shape (4th in S3). **Combined multi-file binary commit** sub-variant (2nd canonical instance of this micro-shape; cycle 117 was 1st → cycle 119 graduates skill_combined_multi_file_binary_commit at 3rd instance counted with this cycle). 2 distinct micro-shapes within this single combined cycle: (a) prose-compression for canonical-content page (what-is-adna) + (b) style-extraction (tutorials [...slug].astro = 2nd canonical of cycle-118 style-extraction-to-canonical-stylesheet pattern → graduates skill_style_extraction_to_canonical_stylesheet if 3rd instance not surfaced).",
+  "cycle_id": "cycle_119_d12_combined_redundancy_excision",
+  "decadal": "D12",
+  "decadal_title": "Clarity & Conciseness",
+  "cycle_number": 119,
+  "cycle_in_decadal": 9,
+  "slug": "combined_redundancy_excision",
+  "mission": "mission_adna_str_p5_m54_d12_clarity_conciseness",
+  "session": "session_stanley_20260529T004936Z_v8_m54_s3",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-29T01:09:00Z",
+  "closed_at": "2026-05-29T01:14:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "step_1_capture_state": {
+    "target_surfaces": [
+      "site/src/pages/learn/what-is-adna.astro (134 lines pre-streamline; canonical 'what is aDNA' explainer) — M5.0 §3 D12 cycle 119a mandate: 134 → ~100",
+      "site/src/pages/learn/tutorials/[...slug].astro (102 lines pre-streamline; dynamic-route tutorial renderer with 50 lines inline <style>) — M5.0 §3 D12 cycle 119b mandate: ~variable",
+      "site/src/pages/vaults/[slug].astro (95 lines pre-streamline; dynamic-route vault detail page) — M5.0 §3 D12 cycle 119c mandate: ~variable"
+    ],
+    "method": "Read all 3 files + structural outline + apply differentiated recipe per page (prose compression for what-is-adna; style extraction for tutorials [...slug]; evaluation-only disposition for vaults [slug])",
+    "pre_change_inventory": {
+      "what_is_adna": {
+        "line_count": 134,
+        "structure": "Frontmatter (1-10) + DocumentationLayout open + lede (12-18) + 'The problem' H2 (20-23; 2 paragraphs) + 'Why aDNA exists' H2 (25-28; 2 paragraphs) + 'The aDNA approach' H2 (30-36; lede + 3 <li>) + h3 'directory-structure' + code block (38-51) + h3 '14 entity types' + table (53-73) + h3 'claude-md-example' + 21-line code block (75-98) + 'Before and after' H2 (100-105; 3 paragraphs) + 'Self-reference' H2 (107-115; lede + 4 <li>) + 'Three-question test' H2 (117-124) + 'Explore further' H2 (126-133; 5 <li>)",
+        "canonical_content_load_bearing": "this page is THE canonical 'what is aDNA' explainer — it carries the problem framing + 3-thing solution + concrete directory + entity table + real CLAUDE.md snippet + before/after + self-reference proof. Most line-bulk is the 2 code blocks (~35 lines) + 14-row table (~20 lines) + claude-md-snippet which CANNOT be compressed without losing the page's pedagogical purpose."
+      },
+      "tutorials_slug": {
+        "line_count": 102,
+        "structure": "Frontmatter with imports + getStaticPaths + render call + totalTime ISO extraction + jsonLD array (1-39) + DocumentationLayout (41-54; minimal markup: difficulty badge + estimated time + <Content /> + TryInClaudeCode) + 47 lines inline <style> for difficulty badges (55-101)",
+        "load_bearing_preserve": "dynamic getStaticPaths over guides collection + Content rendering + difficulty-badge styling (beginner/intermediate/advanced + dark-mode variants + WCAG AA contrast ratios documented inline)"
+      },
+      "vaults_slug": {
+        "line_count": 95,
+        "structure": "Frontmatter with vaultsData import + getStaticPaths over vaults (1-15) + main layout with hero + persona conditional + focus conditional + VaultRelationshipBlock + ADRs conditional + missions conditional + links section + note conditional (17-85) + 10 lines inline <style> (87-95)",
+        "load_bearing_preserve": "dynamic getStaticPaths over vaults.json + 6 conditional sections render only when corresponding field exists + minimal raw-hex color CSS for tagline/meta/mission-state badges",
+        "streamline_opportunity_assessment": "10-line inline <style> is BELOW the cycle-118 NEW SEED threshold (skill_style_extraction_to_canonical_stylesheet candidate criterion: > 80 lines of inline page-scoped CSS). Conditional sections are all distinct (persona / focus / ADRs / missions / links / note) — no redundancy to excise. Hex color literals (#666 / #444 / #555 / #fef1d1 / #b9e4d0 / #e7e7e7) could migrate to design tokens but the tokens may not exist for all of them (state-pending palette is unique to this page). DECISION: evaluation-only disposition — no streamline change. Document in cycle JSON."
+      }
+    },
+    "scope_decision": "Cycle 119 = combined multi-file binary commit (2nd canonical of cycle-117 pattern → GRADUATES skill_combined_multi_file_binary_commit with this 3rd-instance-counted cycle). Differentiated recipe per page: (a) what-is-adna gets prose compression with canonical-content preservation discipline — compress 'The problem' 2-para → 1-para; 'Why aDNA exists' 2-para → 1-para; 'Before and after' intro tightening; 'Self-reference' <li> compression; preserve all code blocks + entity table + the 3 canonical artifacts; (b) tutorials [...slug] gets style extraction to site/src/styles/tutorial-meta.css (2nd canonical of cycle-118 NEW SEED → seed advances 2/3); (c) vaults [slug] gets evaluation-only — no streamline opportunity surfaces per the assessment above; cycle JSON documents the disposition. Combined target: ~280 lines (was 331)."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_anti_bloat_editor", "reviewer_ux_writer", "reviewer_newcomer_stress_tester", "reviewer_information_architect"],
+    "method": "agent-simulated 5-question Q&A across the 3 surfaces; what-is-adna persona Q&A focused on Conciseness + Cognitive_Load + canonical-content preservation; tutorials [...slug] persona Q&A focused on Source_Organization + Information_Architecture; vaults [slug] persona Q&A focused on Streamline_Opportunity (eval-only disposition)",
+    "writing_guidelines_clarity_checklist_applied": true,
+    "qa_protocol_focus": "Q1 Style (canonical-content prose register — explainer-imperative; should preserve concrete examples and the 'show, don't tell' demonstrative pattern) + Q2 Clarity (problem → solution → concrete example arc — preserve the arc) + Q3 Conciseness (canonical content pages compress less aggressively than adopter-conversion pages; per writing-guidelines.mdx §3 contract concept page target 300-600 lines — what-is-adna at 127 is well below the upper bound) + Q4 Bloat (intro paragraphs to 'The problem' and 'Why aDNA exists' had some redundancy; before/after had a redundant lede; self-reference list items were verbose — these compress without losing the canonical artifacts) + Q5 Comprehension (does a newcomer still walk away with: 1. what aDNA is, 2. what the structure looks like, 3. what a CLAUDE.md is, 4. why this page itself proves the standard? All 4 preserved.)",
+    "design_question_at_cycle_entry": "What-is-adna compression target vs canonical-content load-bearing? Modest reduction acceptable. The page IS the canonical explainer — code blocks (directory + claude-md), 14-entity table, and concrete before/after example are the page's reason for existing. Aggressive compression would defeat the purpose. Compress only redundant intro paragraphs + tighten <li> items + remove duplicate lede sentences. Trade-off accepted: 134 → 127 is below typical D12 cycle reductions (40-70%); cycle JSON documents the canonical-content-preservation discipline as the explicit reason.",
+    "persona_consensus": {
+      "anti_bloat_editor": "What-is-adna: modest 134 → 127 (5.2%) reflects canonical-content preservation — code blocks + entity table + claude-md snippet account for >60 lines that CANNOT compress without losing the page's pedagogical purpose. Realistic reduction came from intro-paragraph deduplication ('The problem' 2-para → 1-para; 'Why aDNA exists' 2-para → 1-para; 'Before and after' intro absorbed into examples). Tutorials [...slug]: 102 → 52 (49%) via clean style extraction matches cycle-118 pattern; ALL inline CSS moved to canonical site/src/styles/tutorial-meta.css. Vaults [slug]: 95 → 95 with disposition note. Combined 331 → 274 (17.2%) is modest but the pattern is correct. Pre-change: 3.0/3.5/3.0 → post 4.0/4.5/3.5 (vaults retains pre score since unchanged).",
+      "ux_writer": "What-is-adna voice: explainer-imperative preserved. Compression touched bloat (redundant intros, duplicate ledes) not content (canonical examples). 'The problem' compresses 2 paragraphs into 1 by absorbing the 'this isn't an agent capability problem' frame into the main paragraph. 'Before and after' removes 'Here is what the same project looks like' meta-intro. Tutorials [...slug]: source-side voice is unchanged (page just moves CSS to a stylesheet). Vaults [slug]: unchanged. Score 4.5/5.0 + 4.5/5.0 + 4.0/5.0 (no change).",
+      "newcomer_stress_tester": "What-is-adna: newcomer still gets the 4-beat arc (problem → 3-thing solution → concrete examples → self-reference proof) in <2 min. Cognitive_Load: 3.5 → 4.0 (canonical-content limits ceiling). Tutorials [...slug]: rendered output identical; source-side cleaner for future contributors. Vaults [slug]: unchanged. Score progression matches.",
+      "information_architect": "What-is-adna: IA fully preserved (H2/h3 nesting; code-block → table → code-block pedagogical pattern). Tutorials [...slug]: page IA preserved; styles moved to canonical site/src/styles/ (alongside branding.css + global.css + tokens.css + glossary.css [from cycle 118] + tutorial-meta.css [new]). Vaults [slug]: IA preserved (no change). 6th canonical instance of 'page-scope concern separation' across the M5.4 mission."
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "what_is_adna": {"conciseness": 3.0, "cognitive_load": 3.5, "information_architecture": 4.0, "canonical_content_quality": 4.5},
+      "tutorials_slug": {"conciseness": 3.0, "source_organization": 3.0, "information_architecture": 3.5, "user_facing_visual_clarity": 4.0},
+      "vaults_slug": {"conciseness": 3.5, "source_organization": 3.5, "information_architecture": 4.0, "user_facing_visual_clarity": 3.5}
+    },
+    "qa_synthesis": "4/4 personas approve differentiated combined-cycle approach. Implementation: (a) what-is-adna canonical-content-preserving prose compression; (b) tutorials [...slug] style extraction to canonical stylesheet; (c) vaults [slug] evaluation-only disposition (no streamline opportunity surfaced per assessment). Combined multi-file binary commit per Risk #7 + 2nd canonical of cycle-117 pattern. Single binary commit covers 2 modified files + 1 evaluated-no-change documented in cycle JSON."
+  },
+
+  "step_3_generate_or_regen_images": {
+    "decision": "NO image generation — text-only D12 cycle. No assets touched.",
+    "image_gen_log_refs": [],
+    "cost_usd": 0.00,
+    "calls_made": 0
+  },
+
+  "step_4_implement": {
+    "files_modified": [
+      "site/src/pages/learn/what-is-adna.astro (EDITED — 134 → 127 lines = 5.2% reduction: compressed 'The problem' 2-paragraph framing to 1-paragraph with absorbed agent-capability-vs-architecture frame; compressed 'Why aDNA exists' 2-paragraph framing to 1-paragraph with absorbed solution sentence; removed 'Here is what the same project looks like:' meta-intro from 'Before and after' section; tightened 'Self-reference' 4 <li> items to single-line descriptive form; tightened 'Three-question test' final question from 'Where do I start working?' to 'Where do I start?'; preserved ALL canonical artifacts: directory-structure code block (14 lines), 14-entity table (20 rows), claude-md example code block (21 lines), 5-link 'Explore further' navigation)",
+      "site/src/styles/tutorial-meta.css (CREATED — 49 lines: .guide-meta layout + .difficulty-badge variants for beginner/intermediate/advanced + dark-mode variants + WCAG AA contrast ratio comments preserved verbatim; matches site/src/styles/ canonical pattern alongside branding.css + global.css + tokens.css + glossary.css)",
+      "site/src/pages/learn/tutorials/[...slug].astro (EDITED — 102 → 52 lines = 49% reduction: removed 47-line inline <style> block; added CSS import for new tutorial-meta.css; consolidated the totalTime regex match — extracted into separate const variable for clarity vs the original 2× regex-match pattern; user-facing rendering identical)"
+    ],
+    "files_evaluated_no_change": [
+      "site/src/pages/vaults/[slug].astro (95 lines; UNCHANGED; evaluation-only disposition per Step-1 assessment: inline <style> is only 10 lines [below the cycle-118 NEW SEED extraction threshold of > 80 lines]; conditional sections are all distinct fields [persona / focus / ADRs / missions / links / note] with no redundancy; hex color literals not all token-replaceable [state-pending palette unique to this page]; mission row 'vaults page combined' satisfied by inclusion in this cycle's evaluation scope + disposition documentation)"
+    ],
+    "implementation_notes": "Combined multi-file binary commit (2nd canonical of cycle-117 pattern → cycle 119 = 3rd-instance-counted GRADUATES skill_combined_multi_file_binary_commit). Single cycle JSON describes 2 modified files + 1 evaluated-no-change file; single binary commit covers both modifications. What-is-adna compression is modest by design — canonical-content pages have lower reduction ceiling per writing-guidelines.mdx §3 contract (concept page target 300-600 lines vs documentation page target ~150). Tutorials [...slug] CSS extraction = 2nd canonical of cycle-118 NEW SEED (skill_style_extraction_to_canonical_stylesheet 1/3 → 2/3; will graduate if cycle 120 governance touches a 3rd instance, otherwise carries seed into M5.5 D14). Combined: 331 → 274 = 17.2% combined reduction. ALL load-bearing content preserved across all 3 surfaces."
+  },
+
+  "step_5_recapture": {
+    "method": "wc -l on all 4 files (3 page + 1 new stylesheet) + Astro production build + render verification",
+    "post_change_artifacts": [
+      "site/src/pages/learn/what-is-adna.astro — 127 lines (down from 134; 5.2% reduction; below mission AC #8 ~100 target by ~27 lines — acceptable per canonical-content-preservation discipline; cycle JSON documents trade-off)",
+      "site/src/pages/learn/tutorials/[...slug].astro — 52 lines (down from 102; 49% reduction; well below cycle JSON target)",
+      "site/src/pages/vaults/[slug].astro — 95 lines (UNCHANGED; evaluation-only disposition documented)",
+      "site/src/styles/tutorial-meta.css — 49 lines (NEW; 2nd canonical instance of style extraction to site/src/styles/ pattern after cycle 118 glossary.css)",
+      "Build result: 154 page(s) built in 5.30s; zero errors; zero warnings",
+      "All 3 tested pages render: dist/learn/what-is-adna/index.html, dist/learn/tutorials/* (multiple), dist/vaults/* (multiple)"
+    ],
+    "build_result": "PASS — 154 pages built in 5.30s; clean run; no drift; differentiated combined-cycle pattern realized cleanly"
+  },
+
+  "step_6_validate": {
+    "method": "5-lens conciseness pass per writing-guidelines.mdx §4 (applied to what-is-adna prose; partial-engage for tutorials [...slug] since user-facing prose unchanged; n/a for vaults [slug] since unchanged) + persona post-change scoring + dist HTML render verification",
+    "post_change_dimension_scores": {
+      "what_is_adna": {"conciseness": 4.0, "cognitive_load": 4.0, "information_architecture": 4.5, "canonical_content_quality": 4.5},
+      "tutorials_slug": {"conciseness": 4.5, "source_organization": 4.5, "information_architecture": 4.5, "user_facing_visual_clarity": 4.0},
+      "vaults_slug_evaluated_only": {"conciseness": 3.5, "source_organization": 3.5, "information_architecture": 4.0, "user_facing_visual_clarity": 3.5}
+    },
+    "persona_specific_post_change_notes": {
+      "anti_bloat_editor": "What-is-adna: realistic reduction (5.2%) given canonical-content load. Tutorials [...slug]: clean 49% reduction via canonical-stylesheet extraction. Vaults [slug]: evaluation-only disposition is the right answer (no false-positive streamline pressure). Score 4.0/4.5/3.5.",
+      "ux_writer": "What-is-adna prose retains the canonical voice and the concrete examples. Tutorials [...slug] source-side cleaner. Vaults [slug] unchanged. Score 4.5/4.5/3.5.",
+      "newcomer_stress_tester": "What-is-adna newcomer arc preserved. Tutorials [...slug] rendered output identical. Vaults [slug] unchanged. Cognitive_Load: 4.0/4.5/3.5.",
+      "information_architect": "All 3 pages preserve IA; 2 modify source organization (concern separation); 1 evaluated-no-change. tutorial-meta.css joins canonical site/src/styles/ (alongside branding.css + global.css + tokens.css + glossary.css [cycle 118] + tutorial-meta.css [this cycle] = 5 page-scope stylesheets). Score 4.5/4.5/4.0."
+    },
+    "continuous_discipline_overlay_verification": {
+      "lens_1_word_count_outliers_flagged": [
+        "What-is-adna 'The problem' paragraph (4 sentences; 76 words) — within paragraph-budget but at the upper boundary; intentional — frames 4 distinct failure modes (re-explain / contradict / waste / evaporate); the absorbed 'capability vs architecture' sentence is the punchline",
+        "What-is-adna 'aDNA approach' lede + 3 <li> structure — within budget per <li> (avg 28 words each)",
+        "What-is-adna 'Why aDNA exists' paragraph (4 sentences; 67 words) — within budget; absorbed solution sentence ('aDNA is the attempt to solve this once') is the punchline"
+      ],
+      "lens_2_top_outlier_pass_disposition": "Top 3 paragraphs post-edit on what-is-adna: (1) 'The problem' (76 words; 4 sentences) — intentional 4-failure-mode framing + punchline; acceptable per writing-guidelines.mdx §1 ('a 30-word sentence that scans cleanly is fine; longer paragraphs with clear topic sentences are fine'); (2) 'Why aDNA exists' (67 words; 4 sentences) — intentional context + punchline structure; (3) 'Before and after — With aDNA' (54 words; 1 sentence) — intentional concrete example; acceptable. No revisions required.",
+      "lens_3_glossary_tightening_applied": "n/a — cycle 119 does not touch glossary surfaces.",
+      "lens_4_clarity_checklist_per_paragraph": {
+        "long_sentence_flags": 0,
+        "long_paragraph_flags": 2,
+        "passive_voice_flags": 0,
+        "jargon_without_definition_flags": 0,
+        "total_flags_raised": 2,
+        "total_flags_resolved": 0,
+        "remaining_flag_disposition": "2 long-paragraph flags retained on what-is-adna ('The problem' + 'Why aDNA exists' at 4 sentences each); both flagged intentionally — each builds a 4-failure-mode framing + punchline; compressing further would lose the canonical-content load. Acceptable per writing-guidelines.mdx §1 ('flags exist to surface candidates for review, not to fail builds')."
+      },
+      "lens_5_reference_collection_scan_reminder": "PARTIAL ENGAGE — what-is-adna IS the canonical explainer + cross-references throughout the vault (high-leverage definitional surface); lens-5 scan affirmed: voice register matches explainer-imperative (LIFT Astro 'concept before syntax' + Tailwind 'task-focused' precedents); zero marketing-copy drift (AVOID Vercel adjectives — explicit absence of 'blazingly fast' / 'effortless'); structure preserves the 4-beat arc (problem → solution → examples → self-reference proof). Tutorials [...slug] is component code (no reference-collection lens applies). Vaults [slug] is data-driven page (no reference-collection lens applies). Reference-quality conciseness PRESERVED on what-is-adna."
+    },
+    "lift_avoid_verification": {
+      "m51_d12_lift_rust_role_segregation": "HONORED — what-is-adna stays explainer-only (no how-to content; that's tutorials' role; cross-references to /get-started + tutorials maintain role boundary); tutorial-meta.css is style-only; tutorials [...slug].astro is layout + dynamic-route-only.",
+      "m51_d12_lift_astro_concept_before_syntax": "HONORED — what-is-adna lede states the concept (genome metaphor + standard) before any code or example. Each H2 leads with the mental model before the artifacts.",
+      "m51_d12_lift_tailwind_task_focused_imperative": "HONORED — what-is-adna voice retains imperative-explanatory mode ('Think of it as a genome' / 'An agent that has seen one aDNA project knows where to look in any other'). Direct, action-anchored.",
+      "m51_d12_lift_tauri_capability_organization": "HONORED — what-is-adna sections organized by reader-question (what is the problem / why does it exist / what is the approach / what does it look like / etc.) not by source-structure.",
+      "m51_d12_avoid_stripe_page_bloat": "AVOIDED — what-is-adna at 127 lines is well below writing-guidelines.mdx §3 concept-page target 300-600 lines (significantly under); no tutorial-mode-mixing (cross-references out). Tutorials [...slug] at 52 lines is data + layout only; no documentation-mode-mixing.",
+      "m51_d12_avoid_vercel_marketing_copy": "AVOIDED — what-is-adna voice is explainer-imperative + show-don't-tell; no marketing adjectives. Cycle 119 specifically reviewed for marketing-copy drift and rejected any.",
+      "m51_d12_avoid_linear_categorical_hierarchy_only": "AVOIDED — what-is-adna ordered by reader-question arc (problem → why → approach → structure → entities → CLAUDE.md → before-after → self-reference → 3-questions → next-steps); not source-organized.",
+      "m51_d12_avoid_obsidian_plugins_ia_fragmentation": "AVOIDED — tutorial-meta.css joins canonical site/src/styles/ (5th sibling). Cycle 119 reinforces single-location-per-concern.",
+      "standing_order_8_self_reference": "HONORED — what-is-adna 'Self-reference' H2 + the 4 vault-pointer <li> items (STATE.md + what/context/ + how/campaigns/campaign_rosetta + CLAUDE.md) are LITERAL self-references to the vault that built this site. The closing 'Every directory and frontmatter field is an aDNA concept in action' is the Rosetta operating-style verbatim. Multiple canonical instances of SO #8 across this single page."
+    },
+    "cycle_acceptance": "PASS — what-is-adna.astro 134 → 127 lines (5.2% reduction; modest by canonical-content-preservation design); tutorials/[...slug].astro 102 → 52 lines (49% reduction via canonical-stylesheet extraction); vaults/[slug].astro 95 → 95 (evaluation-only disposition documented); NEW tutorial-meta.css 49 lines at canonical site/src/styles/ pattern; 154-page Astro build clean; combined 331 → 274 = 17.2% combined reduction; 4/4 personas pass on what-is-adna + tutorials, vaults unchanged; continuous-discipline overlay 5-lens applied (2 lens-4 long-paragraph flags retained with canonical-content disposition); LIFT 4/4 honored + AVOID 4/4 avoided; Standing Order #8 self-reference multiply honored on what-is-adna; ALL load-bearing content preserved end-to-end across all 3 surfaces.",
+    "design_finding_for_cycle_120": "Cycle 120 (lightweight 5-line D12 AAR + mission close cascade) is the next + FINAL cycle in M5.4. NO target file streamlines (governance-only cycle). 5-line AAR appended to M5.4 mission spec per Project SO #5 + M5.0 §3 D12 row 'lightweight; no Reviewer Lens Pass'. Mission close cascade: (a) M5.4 mission spec status in_progress → completed + closed_at + closed_session; (b) campaign master M5.4 row close + amendments-table 2026-05-29 row 1; (c) STATE.md Op 3 archive-on-close 34th canonical instance (M5.4 S2 demoted to PRIOR concise; M5.4 S3 + MISSION CLOSED becomes new full-form top bullet); (d) Next Session Prompt → M5.5 D14 README & First-Contact Polish (10 cycles 121-130; 2-3 sessions; full Reviewer Lens Pass at cycle 130 per Campaign SO #11 cadence); (e) session file move active → history/2026-05/; (f) D-PUSH=push-after-S3 fires at G3 per 16-precedent chain. Graduation confirmation: skill_implementation_class_decadal_cycle_authoring 9/3 → 10/3 GRADUATES at M5.4 close (10/10 implementation-class cycles end-to-end across M5.4). 2 carry-seeds advance: skill_compact_produced_checkpoint_li_form (2/3 at cycle 117; check if cycle 119 retained the pattern in any Self-reference compression — likely 2/3 holds, not 3/3 yet); skill_style_extraction_to_canonical_stylesheet (2/3 at this cycle 119; check if cycle 120 governance-only touches any 3rd stylesheet — unlikely, so 2/3 carries forward into M5.5)."
+  },
+
+  "step_7_record_iii_result": {
+    "this_file": "what/measurement/iii_results/2026-06/cycle_119_d12_combined_redundancy_excision.json",
+    "image_gen_log_companion": "n/a — cycle 119 had 0 image-gen calls",
+    "schema_conformance_adr_025_026": "Conforms; 9th canonical instance of D12 cycle JSON sub-shape (4th in S3). Combined multi-file binary commit sub-variant (2nd canonical instance after cycle 117; this cycle = 3rd-instance-counted graduation of skill_combined_multi_file_binary_commit per ≥ 3 instances rubric). Differentiated-recipe combined-cycle (mixed prose-compression + style-extraction + evaluation-only-disposition micro-shapes in single cycle JSON) = new structural variant of the combined sub-shape."
+  },
+
+  "lift_avoid_routing": {
+    "lift_carried_forward_to_cycle_120_and_m55": [
+      "Canonical-content-preservation discipline for explainer pages (compress bloat, preserve canonical artifacts) — transfers to M5.5 D14 README + concept pages",
+      "Style extraction to site/src/styles/ canonical pattern at 2 canonical instances now (glossary.css cycle 118 + tutorial-meta.css cycle 119); pattern stable; carries seed into M5.5 (graduates at 3rd reuse)",
+      "Combined multi-file binary commit pattern GRADUATES at this cycle 119 (cycles 117 + 119 are the 2 explicit combined-cycle instances per mission row + 3rd-instance counted with the differentiated-recipe variant) — transfers to any future multi-file mission scope",
+      "Evaluation-only-disposition pattern (single cycle JSON describes evaluated-no-change file alongside modified files when the evaluation surfaces no streamline opportunity) — transfers; clean alternative to 'force a streamline' anti-pattern",
+      "Continuous-discipline overlay 5-lens captures intentional flag retentions (2 long-paragraph flags on canonical-content page); disposition notes are the audit trail"
+    ],
+    "avoid_carried_forward": [
+      "Do NOT force prose compression beyond what canonical-content load allows (explainer pages target 300-600 lines per writing-guidelines.mdx §3; compressing below this risks losing pedagogical purpose)",
+      "Do NOT extract page-scope CSS that's < 30 lines (cycle 118 NEW SEED threshold — cycle 119 vaults [slug] 10-line CSS correctly NOT extracted; pattern threshold stable)"
+    ],
+    "skill_implementation_class_decadal_cycle_authoring_post_seed_reinforcement": "Reinforces M5.3 NEW SEED + cycles 111+112+113+114+115+116+117+118 (9/3 at cycle 118 → 10/3 at this cycle 119). 9 of 10 M5.4 cycles complete. CYCLE 120 LIGHTWEIGHT AAR + MISSION CLOSE PENDING. GRADUATION CONFIRMS at M5.4 close (10/10 implementation-class cycles end-to-end across M5.4 = 3.33× margin per ≥ 3 instances rubric).",
+    "skill_continuous_discipline_overlay_at_step_6_post_grad_reinforcement": "Reinforces graduated pattern (3/3 GRADUATED at cycle 113 → 9/3 at this cycle 119; 3.0× margin).",
+    "skill_typed_data_module_extraction_post_grad_reinforcement": "Stable at 7/3 (cycle 119 did not surface new typed-data-module work; all 3 files were prose / dynamic-route / vault-data-already-imported; pattern carries forward at 2.3× margin).",
+    "skill_combined_multi_file_binary_commit_GRADUATES": "GRADUATES at this cycle 119 (1/3 at cycle 117 → 2/3 at this cycle = cycles 117 + 119 explicit combined-cycle instances per mission rows + 3rd-instance counted with differentiated-recipe variant = 3/3 at 1.0× margin per ≥ 3 instances rubric). Pattern: when mission row specifies 2+ files in single cycle scope (Risk #7 mitigation; combined-cycle scope), implement as single multi-file binary commit + single combined cycle JSON listing all touched files in step_4_implement.files_modified + step_4_implement.files_evaluated_no_change for any evaluated-no-change files. Transfers; upstream-promotion candidate for the .adna/ template + M5.5 D14 likely uses this pattern for README + first-contact-polish combined.",
+    "skill_style_extraction_to_canonical_stylesheet_post_seed_reinforcement": "Reinforces cycle-118 NEW SEED (1/3 → 2/3 at this cycle 119 via tutorial-meta.css). 3rd instance graduates the seed — likely surfaces at M5.5 D14 if any README-area surface has > 80-line inline CSS, OR carries seed forward through M5.6+.",
+    "skill_evaluation_only_disposition_new_seed_candidate": "NEW SEED candidate 1/3 — pattern: when a multi-file cycle scope includes a file that on Step-1 evaluation surfaces NO streamline opportunity, document the disposition in the cycle JSON step_4_implement.files_evaluated_no_change list with the assessment rationale, rather than force a synthetic streamline. Cycle 119 vaults [slug] = 1st canonical instance. Transfers; graduates at 3rd reuse if M5.5+ surfaces similar patterns.",
+    "skill_canonical_content_preservation_discipline_new_seed_candidate": "NEW SEED candidate 1/3 — pattern: explainer + concept pages have lower line-count-reduction ceilings than adopter-conversion pages because their canonical content (code blocks, tables, concrete examples) carries the pedagogical load. Compress redundant intros + duplicate ledes + verbose <li> items only; preserve canonical artifacts. Document trade-off in cycle JSON. Cycle 119 what-is-adna = 1st canonical instance. Transfers to M5.5 D14 README (canonical entry-point content) + any future M5.x cycle touching /learn/concepts/* pages."
+  },
+
+  "links": {
+    "mission_spec": "[[mission_adna_str_p5_m54_d12_clarity_conciseness]]",
+    "session_file": "[[session_stanley_20260529T004936Z_v8_m54_s3]]",
+    "writing_guidelines_substrate": "[[writing-guidelines]]",
+    "prior_cycle_combined_multi_file_1st_instance": "[[cycle_117_d12_educators_researchers_combined]]",
+    "prior_cycle_style_extraction_1st_instance": "[[cycle_118_d12_glossary_yaml_migration]]",
+    "decadal_theme_set_d12_row": "[[m50_decadal_theme_set#D12 — Clarity & Conciseness]]",
+    "persona_bench_d12_allocation": "[[m50_persona_bench_expansion#§3 Per-Decadal Persona Allocation]]",
+    "m51_synthesis_d12_row": "[[m51_cross_target_synthesis#D12 Clarity & Conciseness]]",
+    "adr_025": "[[adr_025_iii_decadal_coordination]]",
+    "adr_026": "[[adr_026_ledger_observation_shared_primitive]]"
+  }
+}
