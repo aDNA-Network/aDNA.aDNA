@@ -5,26 +5,10 @@ import { buildCollectionPageJsonLD } from '../../utils/seo';
 import heroLearn from '../../assets/heroes/hero_learn.png';
 
 const sections = [
-  {
-    title: 'What is aDNA?',
-    description: 'A comprehensive overview of the Agentic DNA knowledge architecture.',
-    href: '/learn/what-is-adna',
-  },
-  {
-    title: 'Concepts',
-    description: '13 core concepts from the Triad to FAIR Metadata.',
-    href: '/learn/concepts',
-  },
-  {
-    title: 'Tutorials',
-    description: '9 step-by-step guides from beginner to advanced.',
-    href: '/learn/tutorials',
-  },
-  {
-    title: 'Comparisons',
-    description: 'How aDNA compares to PARA, Zettelkasten, Notion, and more.',
-    href: '/learn/comparisons',
-  },
+  { title: 'What is aDNA?', description: 'Overview of the aDNA knowledge architecture.', href: '/learn/what-is-adna' },
+  { title: 'Concepts', description: '13 core concepts — Triad to FAIR Metadata.', href: '/learn/concepts' },
+  { title: 'Tutorials', description: '9 step-by-step guides, beginner to advanced.', href: '/learn/tutorials' },
+  { title: 'Comparisons', description: 'aDNA vs. PARA, Zettelkasten, Notion, and more.', href: '/learn/comparisons' },
 ];
 
 const jsonLD = buildCollectionPageJsonLD({
@@ -40,6 +24,6 @@ const jsonLD = buildCollectionPageJsonLD({
   jsonLD={jsonLD}
   heroImage={{ src: heroLearn, alt: 'Stacked rounded paths motif representing aDNA learning progression' }}
 >
-  <p>Start with the overview, explore concepts in depth, follow hands-on tutorials, or see how aDNA compares to systems you already know.</p>
+  <p>Start with the overview, dive into concepts, follow hands-on tutorials, or compare aDNA to systems you already know.</p>
   <CardGrid cards={sections} columns={2} />
 </DocumentationLayout>

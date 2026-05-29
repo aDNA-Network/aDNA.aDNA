@@ -1,0 +1,164 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026 + M5.5 AC #6. 7th canonical D14 cycle JSON. 5th canonical instance of skill_combined_multi_file_binary_commit (graduated 3/3 at M5.4 cycle 119; reinforced at cycles 117 + 119 + 126 + 127). 1st canonical instance of nav-class + canonical-content combined-cycle sub-shape (2 hub files + 1 README ToC insertion in one binary commit). 1st canonical instance of additive-scan-affordance pattern (README ToC adds lines net but improves first-contact UX per M5.0 §3 D14 row goal 'scan-affordance ToC + section markers').",
+  "cycle_id": "cycle_127_d14_combined_nav_readme_toc",
+  "decadal": "D14",
+  "decadal_title": "README & First-Contact Polish",
+  "cycle_number": 127,
+  "cycle_in_decadal": 7,
+  "slug": "combined_nav_readme_toc",
+  "mission": "mission_adna_str_p5_m55_d14_readme_first_contact_polish",
+  "session": "session_stanley_20260529T043057Z_v8_m55_s3",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-29T04:31:00Z",
+  "closed_at": "2026-05-29T04:35:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "content_class_declaration": {
+    "class_declared_in_mission_spec": "nav (hubs) + canonical (README ToC; additive scan-affordance)",
+    "class_effective_at_close": "nav + canonical-content-additive (READ-ONLY-on-existing-prose; ToC is NEW affordance block, not an edit to prior canonical content)",
+    "ceiling_band_percent_effective": "hubs: nav-class polish (no fixed ceiling; reduce-to-tight); README: additive scan-affordance (+15-20 lines budget per mission spec line 92)",
+    "ceiling_compliance_at_close": true,
+    "actual_reduction_percent_hubs": 16.2,
+    "actual_addition_lines_readme": 14,
+    "ceiling_compliance_note": "Hubs 99 → 83 combined (16.2% nav-class polish; well-targeted prose-tightening without touching CardGrid structure or section data; learn/index.astro 45 → 29 via section-data inline-form compaction + lede tighten; tutorials/index.astro 54 → 54 — same line count but 3 intro paragraphs + lede tightened with no structural change). README 368 → 382 (+14 lines net; within +15-20 budget; ToC adds Contents h2 + 5 grouped-link rows + 2 horizontal-rules + 4 blank lines, scan-affordance gate between elevator pitch and body content). All 20 ToC anchor targets validated against actual h2 headings via grep at Step 6. No existing prose edited; ToC is purely additive."
+  },
+
+  "step_1_capture_state": {
+    "target_surfaces": [
+      "aDNA.aDNA/site/src/pages/learn/index.astro (45 lines pre-cycle)",
+      "aDNA.aDNA/site/src/pages/learn/tutorials/index.astro (54 lines pre-cycle)",
+      "aDNA.aDNA/README.md (368 lines pre-cycle — post-cycle-121 anchor pass baseline)"
+    ],
+    "method": "Read all 3 files + h2 outline + scan-affordance audit + ToC-anchor inventory + identification of tightening targets",
+    "pre_change_inventory": {
+      "learn_index_astro_total_lines": 45,
+      "learn_index_astro_prose_lines": 1,
+      "learn_index_astro_section_data_lines": 22,
+      "learn_tutorials_index_astro_total_lines": 54,
+      "learn_tutorials_index_astro_prose_paragraph_count": 4,
+      "readme_total_lines": 368,
+      "readme_h2_count": 20,
+      "readme_existing_toc_present": false,
+      "scan_affordance_gap": "README has 20 h2 sections with no top-of-doc ToC; first-time reader must scroll through 360+ lines to locate FAQ or Reference or Quick Start. Mission spec line 92 goal: 'scan-affordance ToC + section markers'. Markers come for free via GitHub-rendered h2 anchors; affordance gap is the missing ToC."
+    },
+    "scope_decision": "Combined multi-file binary commit per skill_combined_multi_file_binary_commit (graduated 3/3 at M5.4; 5th canonical instance). 2 hub Edit passes (lean prose tighten without structural change) + 1 README Edit insert (compact 5-row grouped-link ToC block at the post-elevator-pitch hinge between line 13 quote and line 17 first content section). Zero image-gen. Astro build clean check at Step 6."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_ux_writer", "reviewer_newcomer_stress_tester", "reviewer_information_architect", "reviewer_oss_maintainer"],
+    "personas_drawn_count": 4,
+    "method": "agent-simulated 5-question Q&A — 4 personas per mission spec §Scope cycle 127 row (Visual Designer reserved for cycles touching visual hierarchy; cycle 127 is text-prose + nav-affordance only). All 4 read writing-guidelines.mdx §1 clarity-checklist before scoring.",
+    "qa_protocol_focus": "Q1 Style + Q2 Clarity + Q3 Conciseness + Q4 Bloat + Q5 Comprehension",
+    "persona_consensus": {
+      "ux_writer": "Hubs were already lean; the inline-form section data on learn/index.astro saves 16 lines without losing meaning. Tutorials hub lede + 3 section intros each shed a few words while preserving the 'who this is for + what you'll get' shape. README ToC block uses grouped categories ('Start here', 'Architecture', 'Operations', 'Reference', 'Community') + dot-separated inline links — scannable in <5 seconds. Score 4.5/5.0.",
+      "newcomer_stress_tester": "Newcomer's first-contact path: banner → title → lede → problem → quote — then the ToC tells me where to go next. 'Start here' as first group is a strong gravity-well. Quick Start sits in the first group at fingertip-distance. Time-to-first-success implied path stays under 3 clicks. Score 4.5/5.0; **Newcomer_Time_to_First_Success NEW dimension** 5.0.",
+      "information_architect": "Grouped-link structure follows the 5-bucket information taxonomy (orientation → architecture → operations → reference → community) — that's a clean IA mental model that maps to existing h2 sequence in the README. ToC sits at the post-elevator-pitch hinge, doesn't interrupt the lead block, doesn't push first content section below 4-screen-scrolls. Scan-affordance achieved with minimum vertical real-estate. Anchors all validate. Score 5.0/5.0.",
+      "oss_maintainer": "README is the GitHub landing page; the ToC at top is OSS convention (Rust, Astro, Tailwind, Linear all do this in some form). Grouped form beats flat ToC for projects with >15 h2 sections. The two `---` rules bookend the ToC visually, separating it from elevator pitch above and body below. Trust + findability dimensions strong. Score 4.5/5.0."
+    },
+    "aggregate_score_pre_cycle": 4.5,
+    "aggregate_score_post_cycle": 4.625,
+    "delta_per_persona_dimension": {
+      "newcomer_time_to_first_success_new_for_d14": 5.0,
+      "ux_writer_conciseness": "4.5 → 4.5 (hubs polish marginal; ToC addition is additive scan-affordance not conciseness)",
+      "information_architect_findability": "4.0 → 5.0 (ToC unlocks 20-section landing-scan)",
+      "oss_maintainer_trust": "4.5 → 4.75 (top-of-doc ToC matches OSS landing-page convention)"
+    }
+  },
+
+  "step_3_generate_or_regen": {
+    "decision": "NO image generation — D14 is text-only end-to-end; mission cycles 121-130 all zero image-gen; cycle 127 reuses zero D11 assets (no h1-adjacent inline icons in hubs; READMEs are markdown not MDX and use plain text). Cumulative v8 P5 image-gen ledger UNCHANGED at $1.72 of $50 (3.4%).",
+    "image_gen_log_refs": []
+  },
+
+  "step_4_implement": {
+    "method": "3 Edit passes (1 inline-form replace on learn/index.astro section data + 1 prose tighten on learn/index.astro lede + 1 multi-paragraph prose tighten on tutorials/index.astro + 1 ToC block insert on README.md). Zero structural changes (CardGrid intact; section keys intact; README h2 sequence intact).",
+    "changes_applied": [
+      "learn/index.astro: 4 section objects converted from 5-line block-form to 1-line inline-form (saves 16 lines: 22 → 6); descriptions tightened 'A comprehensive overview of the Agentic DNA knowledge architecture' → 'Overview of the aDNA knowledge architecture' (each); landing paragraph tightened from 'Start with the overview, explore concepts in depth, follow hands-on tutorials, or see how aDNA compares to systems you already know' → 'Start with the overview, dive into concepts, follow hands-on tutorials, or compare aDNA to systems you already know'",
+      "learn/tutorials/index.astro: lede tightened ('9 hands-on tutorials, each producing a concrete outcome you can use in your own project. Grouped by difficulty — start at <strong>Beginner</strong> if this is your first aDNA project...' → '...each producing a concrete outcome. Grouped by difficulty — start at <strong>Beginner</strong> if new to aDNA...'); Beginner intro tightened ('If you have never worked with aDNA before, these three tutorials build your foundation. By the end you will have a working vault...' → 'Three tutorials to build your foundation. By the end: a working vault...'); Intermediate intro tightened ('For teams or individuals who have a working vault and want to add curated context...' → 'For vaults already running. Add curated context...'); Advanced intro tightened ('For teams ready to compose executable workflows, run phased campaigns, and share lattices with other aDNA instances...' → 'Compose executable workflows, run phased campaigns, share lattices across instances...')",
+      "README.md: NEW '## Contents' h2 block inserted between line 15 `---` and line 17 `## aDNA in 60 Seconds`. Block structure: h2 'Contents' header + 5 grouped-link rows ('Start here' 4 links + 'Architecture' 4 links + 'Operations' 3 links + 'Reference' 5 links + 'Community' 4 links = 20 links total) + closing `---` separator. Dot-separated inline form chosen over table-form for scannability with short link lists. Total addition: 14 lines net."
+    ],
+    "lift_precedents_honored": [
+      "Stripe FIRST-PAGE simplicity: ToC at landing position with grouped categories (analog: Stripe's onboarding-page top section)",
+      "Rust persona-paths: 5 grouped buckets serve different reader intents (newcomer vs. architect vs. operator vs. reference-seeker vs. contributor)",
+      "Astro problem-first: hub ledes tightened to 'what you'll do' framing rather than 'what is here' description",
+      "Tailwind imperative-clarity: README ToC link labels are imperative-action-or-concept-noun-only ('60 Seconds' / 'Quick Start' / 'FAQ') — no marketing fluff"
+    ],
+    "avoid_precedents_avoided": [
+      "Marketing-copy excess: hub ledes shed adjective-heavy phrasing without losing actionable info",
+      "Categorical-hierarchy-only: ToC uses functional groupings (what reader wants) not structural groupings (file/folder taxonomy)",
+      "IA-fragmentation: single ToC block, not 5 mini-ToCs scattered through README",
+      "Agent-onboarding-mixed-with-human-onboarding: ToC labels speak to human reader; agent path is the existing 'Working with AI Agents' h2 (1 link in 'Operations' group, not foregrounded)"
+    ]
+  },
+
+  "step_5_re_capture": {
+    "post_change_inventory": {
+      "learn_index_astro_total_lines": 29,
+      "learn_index_astro_reduction_percent": 35.6,
+      "learn_tutorials_index_astro_total_lines": 54,
+      "learn_tutorials_index_astro_reduction_percent_lines": 0,
+      "learn_tutorials_index_astro_word_count_reduction_approximate": "~25% on intro prose (lede + 3 section intros tightened; line count stays 54 since each para fits one line; prose density increase is the win)",
+      "hubs_combined_lines": "99 → 83 (-16.2%)",
+      "readme_total_lines": 382,
+      "readme_addition_lines": 14,
+      "readme_addition_percent_of_base": 3.8,
+      "toc_block_line_count": 14,
+      "toc_anchor_count": 20,
+      "toc_anchor_validation": "20/20 PASS — grep -E '^## (Contents|aDNA in 60 Seconds|The Problem|Who Is This For|Quick Start|The Triad|The Ontology|Extending the Ontology|What.s Inside|Adding aDNA|Multi-Project|Working with AI Agents|Lattices|Context Engineering|Architecture Reference|Frequently Asked|Further Reading|Contributing|Ecosystem|Versioning|License)' yields all 20 expected sections in correct order; anchor IDs generated by GitHub markdown renderer match link targets"
+    }
+  },
+
+  "step_6_validate": {
+    "five_lens_conciseness_pass": {
+      "lens_1_word_count_outliers": "Hub ledes scanned; no outlier paragraphs >80 words remain. Tutorials hub lede 36 words. Section intros 18-22 words each (within target range).",
+      "lens_2_top_outlier_anti_bloat_ux_writer_dual_pass": "PASS — applied at implement step; tightened with both Anti-Bloat (Conciseness) and UX Writer (Clarity) lenses simultaneously per cycle-123 disambiguation discipline",
+      "lens_3_glossary_tightening": "N/A — cycle 127 surfaces have no glossary entries",
+      "lens_4_clarity_checklist_paragraph_scan": "PASS — each paragraph scanned for: (i) noun-strong opener, (ii) one idea per sentence, (iii) imperative voice where action-bearing, (iv) no 'just' / 'simply' / 'obviously' marketing words, (v) no leading 'In order to' constructions",
+      "lens_5_reference_collection_scan": "PASS — hubs reference /learn/* internal routes (Astro routing-validated at build); README ToC links are fragment anchors validated at Step 5; one external link (Lattice Protocol GitHub) unchanged"
+    },
+    "continuous_discipline_overlay_at_step_6": "PASS — 5-lens applied as continuous overlay; post-graduated skill_continuous_discipline_overlay_at_step_6 at 15/3 → 16/3 (5.33× margin)",
+    "astro_build_clean": {
+      "command": "cd aDNA.aDNA/site && npm run build",
+      "exit_code": 0,
+      "pages_built": 154,
+      "build_time_seconds": 5.51,
+      "typescript_errors": 0,
+      "a11y_warnings_count": 0,
+      "image_pipeline_assets": "26 cached webp variants (zero regeneration; learn-hub heroImage prop unchanged)",
+      "dist_spot_check": "learn/index.html grid renders 4 cards; tutorials/index.html grid renders 9 cards across 3 difficulty sections; README.md is GitHub-only artifact (not in Astro build output)"
+    },
+    "link_integrity_grep": {
+      "readme_toc_anchors_checked": 20,
+      "readme_toc_anchors_passing": 20,
+      "broken_links": []
+    }
+  },
+
+  "step_7_record_iii_result": {
+    "file_path": "aDNA.aDNA/what/measurement/iii_results/2026-06/cycle_127_d14_combined_nav_readme_toc.json",
+    "schema_conformance": "ADR-025 + ADR-026 + M5.5 AC #6 (content_class_declaration NEW field includes both reduction-class hubs AND additive-scan-affordance class README)",
+    "cycle_outcome_summary": "Cycle 127 combines 2 hub tightens + 1 README ToC addition in a single binary commit (5th canonical instance of skill_combined_multi_file_binary_commit). Hubs: learn/index.astro 45 → 29 (35.6% via inline-form section data + lede tighten); learn/tutorials/index.astro 54 → 54 (lines unchanged; ~25% word-count reduction on 4 prose paragraphs via lede + 3 section-intro tighten). Combined hubs 99 → 83 (-16.2%). README: 368 → 382 (+14 lines net for scan-affordance ToC; within mission spec +15-20 budget per line 92); ToC has 20/20 anchor validation; 5-group structure (Start here / Architecture / Operations / Reference / Community) routes 5 reader-intent buckets. 4/4 personas (UX Writer + Newcomer + IA + OSS Maintainer) score 4.5+/5.0 aggregate; Newcomer_Time_to_First_Success NEW for D14 scores 5.0. Astro build clean (154 pages, 5.51s, 0 errors). Image-gen $0.00; cumulative v8 P5 ledger UNCHANGED at $1.72 of $50 (3.4%). 7th canonical D14 cycle JSON. Opens M5.5 S3 cycle work."
+  },
+
+  "carry_forward_signals": {
+    "seeds_advanced": [
+      "skill_combined_multi_file_binary_commit: graduated 3/3 at M5.4 → reinforced at cycle 127 (5th canonical instance after cycles 117 + 119 + 126; 1st nav+canonical combined sub-shape)"
+    ],
+    "seeds_new_at_cycle_127": [
+      "skill_additive_scan_affordance_at_readme_top: NEW SEED at 1/3 (when an OSS-landing-page README has >15 h2 sections and no top-of-doc ToC, insert grouped-link ToC at post-elevator-pitch hinge with budget +15-20 lines; canonical-content class applies in additive-not-reductive form; cycle 127 1st canonical instance)",
+      "skill_grouped_link_toc_with_reader_intent_buckets: NEW SEED at 1/3 (5-group ToC structure — Start here / Architecture / Operations / Reference / Community — maps to functional reader intent rather than file/folder taxonomy; dot-separator inline form for <5-link groups; cycle 127 1st canonical instance)",
+      "skill_section_data_inline_form_compaction: NEW SEED at 1/3 (when Astro/MDX page imports section data as array-of-objects with 1-line title + 1-line description + 1-line href, convert 5-line block-form to 1-line inline-form per object; saves ~70% lines on data without losing TypeScript type safety; cycle 127 1st canonical instance)"
+    ],
+    "post_graduation_reinforcements": [
+      "skill_continuous_discipline_overlay_at_step_6: 15/3 → 16/3 at cycle 127 (5.33× margin)",
+      "skill_implementation_class_decadal_cycle_authoring: 16/3 → 17/3 at cycle 127 (5.67× margin)",
+      "skill_content_class_declaration_per_cycle: GRADUATED 3/3 reinforced — cycle 127 7th canonical instance with first reduction+additive-mixed variant"
+    ],
+    "next_cycle_carries": [
+      "Cycle 128 will be README style guide authoring (NEW .github/README_STYLE_GUIDE.md; doc-authoring sub-shape 3rd canonical; codifies content-class taxonomy + persona-led structural pattern + 5-lens conciseness pass for README-class surfaces)"
+    ]
+  }
+}

@@ -14,6 +14,20 @@ Clone this repo to get a ready-to-use vault with templates, tools, and examples.
 
 ---
 
+## Contents
+
+**Start here** — [60 Seconds](#adna-in-60-seconds) · [The Problem](#the-problem) · [Who Is This For?](#who-is-this-for) · [Quick Start](#quick-start)
+
+**Architecture** — [The Triad](#the-triad) · [The Ontology](#the-ontology) · [Extending the Ontology](#extending-the-ontology) · [What's Inside](#whats-inside)
+
+**Operations** — [Adding aDNA to an Existing Project](#adding-adna-to-an-existing-project) · [Multi-Project Workspaces](#multi-project-workspaces) · [Working with AI Agents](#working-with-ai-agents)
+
+**Reference** — [Lattices](#lattices-optional) · [Context Engineering](#context-engineering) · [Architecture Reference](#architecture-reference) · [FAQ](#frequently-asked-questions) · [Further Reading](#further-reading)
+
+**Community** — [Contributing](#contributing) · [Ecosystem & Vision](#ecosystem--vision) · [Changelog](#versioning--changelog) · [License](#license)
+
+---
+
 ## aDNA in 60 Seconds
 
 Project knowledge has three kinds: **people** (contacts, teams, partners), **things you know** (research, decisions, designs), and **how you work** (plans, processes, workflows). aDNA gives each a folder — `who/`, `what/`, `how/`.
