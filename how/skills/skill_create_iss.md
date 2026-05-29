@@ -2,7 +2,7 @@
 type: skill
 skill_type: agent
 created: 2026-05-21
-updated: 2026-05-26
+updated: 2026-05-28
 status: active
 category: communication
 trigger: agent needs operator decision/input richer than AskUserQuestion can carry
@@ -675,6 +675,77 @@ html = generator.generate("phase_exit", persona="franklin", font_mode="online", 
 **Authoritative spec**: `SiteForge.aDNA/what/lib/iss/templates/README.md`
 §§ "Presets family (D10-C91)" and "Persona handoff + skin selection (D10-C97)"; skin
 descriptor contract at `SiteForge.aDNA/what/lib/iss/skins/README.md`.
+
+## Pre-publish checklist (P5.M6)
+
+Before calling `generate()`, run the gate's instruction prose against the resolved template's controls. The substrate enforces *shape* coherence; it does not enforce *semantic* coherence between what the prose asks for and what the form can capture. ZenZachary.aDNA Operation Sangha Gate 1B (`p1_1b_voice_anti_patterns`, 2026-05-28) is the canonical failure example — a `confidence_rating` render whose prose asked for 10 per-item ratings, a slider, and an "add at the bottom" affordance the template does not surface.
+
+Four checks, in order. Pass all four before render:
+
+### 1. Template-to-prose match (F-2 guard)
+
+Every named UI element in the instruction prose must exist in the resolved `template_name`. Cross-check against `SiteForge.aDNA/what/lib/iss/templates/<template_name>.html`.
+
+| ✗ Don't | ✓ Do |
+|---|---|
+| `template_name="confidence_rating"` + prose: *"Use the **slider** for your calibration"* (no slider in template) | `template_name="confidence_rating"` + prose: *"Rate your overall confidence 1-5"* (matches the radio control) |
+| Prose names "checkbox" or "per-item rating" against a single-radio template | Switch to `structured_input_form` if per-item input is needed |
+
+### 2. Semantic-dimension match (F-3 guard)
+
+The question's primary dimension (what is being rated) must match the resolved template's scale label.
+
+| Template | Scale label | Use for questions about… |
+|---|---|---|
+| `confidence_rating` | CONFIDENCE (1=LOW · 5=HIGH) | how sure the operator is of their answer |
+| `decision_gate_3option` / `adr_gate` / `approval_gate` | (3-way decision) | approve / amend / discuss verdicts |
+| `decision_gate_n_ranking` | (rank order) | ordinal preference across N options |
+| `structured_input_form` | (per-field) | typed inputs (text / number / url / select) |
+| `pilot_evaluation` | (multi-criterion) | structured evaluation of a pilot result |
+| `phase_exit` | (sectional decision) | phase-by-phase ratification cascade |
+
+✗ *"Rate each anti-pattern by avoidance priority 1-5"* against `confidence_rating` — the rendered control labels its scale "CONFIDENCE," not "avoidance priority." Operator can score 5 on either dimension; the two answers mean opposite things.
+
+✓ Override the displayed label via `data["rate_dimension_label"]` when the template supports it, OR switch templates to one whose scale label matches your dimension, OR rephrase the question so the operator's answer IS a confidence rating.
+
+### 3. Per-item structure check (F-1 guard)
+
+If the prose enumerates N items (N ≥ 2) and asks the operator to act on each one, the resolved template must support N-row structured input.
+
+| Cue in prose | Required template shape |
+|---|---|
+| *"For each of these 10 anti-patterns…"* | `structured_input_form` with N field rows |
+| *"Rate each option 1-5…"* | `structured_input_form` (per-row rate) OR `decision_gate_n_ranking` (ordinal) |
+| *"Pick your top 3 from the list…"* | `decision_gate_n_ranking` |
+| *"Score this single artifact…"* | `confidence_rating` is fine (scalar) |
+
+✗ A scalar template (`confidence_rating`, single 3-radio gate) cannot capture N per-item answers. The operator either picks one global value (losing per-item detail) or jams a comma-separated list into the comment box (unstructured output the calling agent must re-parse).
+
+✓ Switch to a per-item template, OR restructure the question as a single scalar judgment over the whole set.
+
+### 4. Extensibility match (F-4 guard)
+
+If the prose invites the operator to add unnamed items ("at the bottom", "anything I missed", "add your own"), the template must surface an add-item affordance.
+
+✗ *"Anti-patterns I haven't named, add at the bottom"* against a template with no add-item button. Operator falls back to free-text in the comment box; additions are unstructured and indistinguishable from per-item adjustments.
+
+✓ Use `structured_input_form` with `data["allow_user_added_rows"]: true` if the template supports it. If no add-affordance is available, restructure prose to capture additions in a designated single field with explicit framing: *"List any anti-patterns I missed in the comment box, one per line, prefixed with `+`."*
+
+### Worked example: ZZ Gate 1B (all four failures in one render)
+
+| Layer | Authored | Rendered | Failure |
+|---|---|---|---|
+| `template_name` | `confidence_rating` | 1× radio (1-5) + 1× textarea | — |
+| Prose cite "slider" | yes | no slider in template | F-2 |
+| Question dimension | avoidance priority | scale label "CONFIDENCE" | F-3 |
+| Per-item count | 10 anti-patterns | single scalar control | F-1 |
+| Extensibility ask | "add at the bottom" | no add affordance | F-4 |
+
+**Correct rewrite**: `template_name="structured_input_form"` with 10 per-item rows (each row = one anti-pattern, with a 1-5 rate field labeled "avoidance priority") + `allow_user_added_rows: true` + an introductory paragraph framing the 1-5 scale. All four failure modes resolved by a single template switch + dimension realignment.
+
+### Lint hook
+
+When `data["validate_authoring"] = true` (default in the `enterprise_decision` preset; opt-in elsewhere), the generator emits stderr advisories tagged `P5.M6-F1` through `P5.M6-F4` for each detected failure mode. See `SiteForge.aDNA/what/lib/iss/runtime/generator.py:1607` (`_advisory_log_authoring`) and `TEMPLATE_FORM_CONTROL_INVENTORY` for the detection surface; tests at `what/lib/iss/tests/test_generator.py` (`TestAuthoringLintFailureModes`) lock the four-failure taxonomy against the ZZ Gate 1B fixture.
 
 ## Gotchas
 
