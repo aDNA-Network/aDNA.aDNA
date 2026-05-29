@@ -1,0 +1,178 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026. 8th canonical instance of D12 cycle JSON sub-shape (3rd in S3). **Style-extraction-plus-config-module sub-variant** of hybrid recipe (cycle 115 stabilization extended to handle pages where the bulk is page-scoped CSS rather than inline data arrays). Common ancestor: no-image-gen + single-binary-commit + step_1-7 + lift_avoid_routing + continuous_discipline_overlay_verification. Mission spec Risk #4 mitigation FULLY DISCHARGED.",
+  "cycle_id": "cycle_118_d12_glossary_yaml_migration",
+  "decadal": "D12",
+  "decadal_title": "Clarity & Conciseness",
+  "cycle_number": 118,
+  "cycle_in_decadal": 8,
+  "slug": "glossary_yaml_migration",
+  "mission": "mission_adna_str_p5_m54_d12_clarity_conciseness",
+  "session": "session_stanley_20260529T004936Z_v8_m54_s3",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-29T01:03:00Z",
+  "closed_at": "2026-05-29T01:08:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "step_1_capture_state": {
+    "target_surface": "site/src/pages/glossary/index.astro (176 lines pre-streamline). M5.0 §3 D12 cycle 118 mandate: 176 → ~80 lines; data → YAML; render via template. Risk #4 mitigation REQUIRED: pre-migration glossary inventory captured + post-migration 1:1 mapping verified + 3 random rendered entries spot-checked.",
+    "method": "Read full file + structural outline + verify actual data architecture (turned out to differ from mission spec assumption) + apply adapted recipe",
+    "pre_change_inventory": {
+      "line_count": 176,
+      "frontmatter_lines": "1-27 (imports + getDocsBySection + firstSentence helper + categories array config + jsonLD)",
+      "markup_lines": "29-59 (DocumentationLayout + lede paragraph + categories.map render with <details>/<summary>/<div> glossary item structure)",
+      "style_lines": "61-176 (115 lines of page-scoped CSS for .glossary-category + .glossary-list + .glossary-item + .glossary-summary + .glossary-term + .glossary-preview + .glossary-body + .glossary-full-link + responsive media query)",
+      "glossary_entry_actual_location": "src/content/docs/glossary-*.mdx (Astro content collection); loaded via getDocsBySection('glossary'); 25 entries confirmed by `grep -l '^section: \"glossary\"'`",
+      "dist_directory_count_pre_migration": 26,
+      "mission_spec_assumption_correction": "Mission spec Risk #4 + cycle 118 row assumed 'glossary entries from inline .astro to YAML data + template' — but entries are ALREADY in Astro content collection (not inline). The achievable line-count reduction comes from: (a) extract `categories` array config + `firstSentence` helper to typed data module; (b) extract 115-line <style> block to separate stylesheet. Risk #4 mitigation gates (pre/post 1:1 mapping + 3-entry spot-check) STILL APPLY because we touch the rendered output.",
+      "load_bearing_preserve": [
+        "25 glossary entries in src/content/docs/glossary-*.mdx (content collection unchanged)",
+        "4 category groupings with order-range filtering (Core Architecture 1-10 / Governance & Metadata 11-16 / Operations 17-22 / Knowledge & Coordination 23-25)",
+        "<details>/<summary> interactive accordion UI with rotation chevron + hover state",
+        "firstSentence preview truncation for collapsed state",
+        "Lede paragraph",
+        "All glossary entry rendering (term + description + Full definition link)",
+        "Responsive preview-hide at < 600px"
+      ]
+    },
+    "scope_decision": "Cycle 118 = style-extraction + config-module sub-variant of hybrid recipe. (a) Extract `categoryConfig` (with explicit orderMin + orderMax for typed semantics) + `firstSentence` helper to NEW site/src/data/glossary.ts (7th post-graduation reuse of skill_typed_data_module_extraction; structural variant — exports interface + config array + helper function vs prior card-array-only exports); (b) extract 115-line <style> block to NEW site/src/styles/glossary.css imported via Astro CSS import (matches the existing site/src/styles/ pattern alongside branding.css + global.css + tokens.css); (c) refactor `categories` computation to map over `categoryConfig` (cleaner separation of config from data + filtering logic). Hard line budget: target ~80 lines per mission AC #8."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_anti_bloat_editor", "reviewer_ux_writer", "reviewer_newcomer_stress_tester", "reviewer_information_architect"],
+    "method": "agent-simulated 5-question Q&A on glossary page; focus per M5.0 §3 cycle 118 row = Conciseness + Cognitive_Load + Information_Architecture (page-render code is the surface; user-facing rendered output preserved 1:1)",
+    "writing_guidelines_clarity_checklist_applied": true,
+    "qa_protocol_focus": "Q1 Style (page-scoped CSS belongs in stylesheet not inline; categories config belongs in data module not inline; standard separation-of-concerns) + Q2 Clarity (page-render code now has 3 concerns: layout structure / category config / styling — each in its own file) + Q3 Conciseness (176 → ~80 = 55% reduction; CSS extraction is 65% of the savings + config module is 5% + map refactor is 1%) + Q4 Bloat (115 lines of inline CSS is the bloat; categories array hardcoded is mild bloat) + Q5 Comprehension (does the rendered glossary still work identically? Risk #4 spot-check gates)",
+    "design_question_at_cycle_entry": "Mission spec Risk #4 'glossary entries from inline .astro to YAML data + template' — but entries are ALREADY in content collection. What does cycle 118 actually do? Adapt scope: extract config + CSS rather than entries (entries already extracted; mission planner authored under assumption that wasn't checked). Trade-off: cycle 118 sub-shape becomes 'style-extraction-plus-config-module' (new variant); Risk #4 mitigation gates apply unchanged (test the rendered output).",
+    "persona_consensus": {
+      "anti_bloat_editor": "115-line inline <style> block in a page file is the textbook anti-pattern. Page logic + page styling + page data all interleaved at file scope. Extracting CSS to glossary.css + config to glossary.ts produces 3 single-concern files vs 1 mixed-concern file. Pre-change line count 176 → 52 = 70.5% reduction (well below ~80 target). Score 2.0/5.0 → 4.5/5.0.",
+      "ux_writer": "Page lede paragraph (single sentence) preserved verbatim. Interactive accordion behavior preserved (hover state + rotation chevron + responsive preview-hide). User-facing experience unchanged; only the source organization changed. Score 4.0/5.0 (page was already good UX) → 4.5/5.0 (cleaner source).",
+      "newcomer_stress_tester": "User-facing: 25 glossary entries render in 4 categories with interactive accordion; nothing changed. Source-facing: a contributor opening glossary/index.astro now sees the page layout in 52 lines instead of 176; can find the styling by following the CSS import; can find the category config by following the data import. Cognitive_Load (source-side): 3.0 → 4.5.",
+      "information_architect": "glossary.ts joins canonical site/src/data/ pattern (7th post-graduation reuse: home.ts + compliance.ts + enterprise.ts + startup-first-hour.ts + educators.ts + researchers.ts + glossary.ts). glossary.css joins canonical site/src/styles/ pattern (alongside branding.css + global.css + tokens.css). categoryConfig as typed interface (orderMin/orderMax) is structurally clearer than tuple-style range filtering at use-site. Score 3.0/5.0 → 4.5/5.0."
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "conciseness": 2.0,
+      "cognitive_load": 3.0,
+      "information_architecture": 3.0,
+      "user_facing_visual_clarity": 4.0
+    },
+    "qa_synthesis": "4/4 personas approve style-extraction + config-module sub-variant approach. Implementation: (a) NEW glossary.ts with categoryConfig + firstSentence; (b) NEW glossary.css with extracted <style> block contents; (c) refactor categories computation to map over categoryConfig; (d) preserve all load-bearing content (25 entries + 4 categories + accordion UI + responsive behavior); (e) single binary commit per cycle discipline preserved."
+  },
+
+  "step_3_generate_or_regen_images": {
+    "decision": "NO image generation — text-only D12 cycle. No assets touched.",
+    "image_gen_log_refs": [],
+    "cost_usd": 0.00,
+    "calls_made": 0
+  },
+
+  "step_4_implement": {
+    "files_modified": [
+      "site/src/data/glossary.ts (CREATED — 30 lines: GlossaryCategoryConfig interface + categoryConfig 4 entries + firstSentence helper function; 7th post-graduation reuse of skill_typed_data_module_extraction with new sub-shape — exports config + helper vs card-array-only)",
+      "site/src/styles/glossary.css (CREATED — 117 lines: all .glossary-* selectors + responsive media query extracted from inline <style>; matches existing site/src/styles/ pattern alongside branding.css + global.css + tokens.css)",
+      "site/src/pages/glossary/index.astro (EDITED — 176 → 52 lines = 70.5% reduction: removed inline categories array + firstSentence helper + entire <style> block; added 2 imports for glossary.ts + glossary.css; refactored categories computation to map over categoryConfig)"
+    ],
+    "implementation_notes": "Style-extraction-plus-config-module sub-variant of hybrid recipe. Cycle 118 adapts the scope per Risk #4 (the actual reality: glossary entries were already in content collection; the line-count bulk was the inline <style> block). New stylesheet at site/src/styles/glossary.css matches existing branding.css/global.css/tokens.css pattern. Typed config interface (orderMin/orderMax) replaces tuple-style hardcoded ranges. Net 52 lines is 35% below ~80 target. ALL load-bearing content preserved: 25 entries render via content collection; 4 categories grouped by order range; <details>/<summary> accordion intact with rotation chevron + hover + responsive preview-hide. Risk #4 mitigation gates all PASS (see step_5 + step_6)."
+  },
+
+  "step_5_recapture": {
+    "method": "wc -l on all 3 files + Astro production build + Risk #4 mitigation: post-migration entry count (1:1 mapping) + 3 random entry render spot-check + 4 category render spot-check",
+    "post_change_artifacts": [
+      "site/src/pages/glossary/index.astro — 52 lines (down from 176; 70.5% reduction; below mission AC #8 ~80 target with 35% margin)",
+      "site/src/data/glossary.ts — 30 lines (NEW; GlossaryCategoryConfig interface + categoryConfig + firstSentence helper)",
+      "site/src/styles/glossary.css — 117 lines (NEW; extracted from inline <style> block; identical CSS contents)",
+      "Build result: 154 page(s) built in 5.29s; zero errors; zero warnings",
+      "Risk #4 mitigation 1:1 mapping: pre-migration 25 MDX entries + 26 dist/ glossary subdirectories → post-migration 25 MDX entries + 26 dist/ glossary subdirectories ✓ PRESERVED",
+      "Risk #4 mitigation 3-entry spot-check on dist/glossary/index.html: 'aDNA' 21 matches + 'Bare Triad' 2 matches + 'Question Test' 4 matches ✓ ALL RENDER",
+      "Risk #4 mitigation category render: 'Core Architecture' 2 + 'Governance' 4 + 'Operations' 2 + 'Knowledge' 4 ✓ ALL RENDER"
+    ],
+    "build_result": "PASS — 154 pages built in 5.29s; clean run; no drift; Risk #4 mitigation FULLY DISCHARGED"
+  },
+
+  "step_6_validate": {
+    "method": "5-lens conciseness pass per writing-guidelines.mdx §4 (applied to source-side conciseness since user-facing prose unchanged) + persona post-change scoring + dist HTML render verification + Risk #4 mitigation full discharge",
+    "post_change_dimension_scores": {
+      "conciseness": 4.5,
+      "cognitive_load": 4.5,
+      "information_architecture": 4.5,
+      "user_facing_visual_clarity": 4.5,
+      "source_organization": 4.5
+    },
+    "persona_specific_post_change_notes": {
+      "anti_bloat_editor": "Final 52 lines well below ~80 target. Page now contains layout + data binding only; styling lives in stylesheet; config lives in data module. Score 4.5/5.0.",
+      "ux_writer": "User-facing prose unchanged (1 lede sentence). Interactive behavior unchanged. Source-side: contributor sees clean page in 52 lines. Score 4.5/5.0.",
+      "newcomer_stress_tester": "Rendered output identical (25 entries × 4 categories × accordion UI). Source-side onboarding: a contributor adding a 26th category opens glossary.ts not glossary/index.astro. Score 4.5/5.0.",
+      "information_architect": "Page concerns now properly separated: layout in .astro / config in .ts / styles in .css. categoryConfig as typed interface is structurally cleaner. Score 4.5/5.0."
+    },
+    "continuous_discipline_overlay_verification": {
+      "lens_1_word_count_outliers_flagged": [
+        "Lede paragraph (1 sentence; 22 words) — well within budget; preserved verbatim"
+      ],
+      "lens_2_top_outlier_pass_disposition": "Only 1 paragraph on the page (the lede); within budget. No revisions required.",
+      "lens_3_glossary_tightening_applied": "n/a at meta level — cycle 118 touches the glossary INDEX page render, not glossary entry contents. Individual glossary entries in src/content/docs/glossary-*.mdx remain unchanged (would be a separate D-cycle scope per any future glossary-content-tightening mission).",
+      "lens_4_clarity_checklist_per_paragraph": {
+        "long_sentence_flags": 0,
+        "long_paragraph_flags": 0,
+        "passive_voice_flags": 0,
+        "jargon_without_definition_flags": 0,
+        "total_flags_raised": 0,
+        "total_flags_resolved": 0,
+        "remaining_flag_disposition": "Zero clarity-checklist flags post-edit on the page prose (lede unchanged at 22 words / 1 sentence)."
+      },
+      "lens_5_reference_collection_scan_reminder": "PARTIAL ENGAGE — glossary index IS a reference surface (definitional lookup); the reference-collection lens applies to glossary entry contents (in src/content/docs/glossary-*.mdx) rather than the index page render code. Cycle 118 preserved the index lede + interactive accordion behavior unchanged; index page reference quality unaffected. Glossary entry tightening (per writing-guidelines.mdx §3 contract of '5-15 lines per glossary entry') would be a separate cycle scope."
+    },
+    "lift_avoid_verification": {
+      "m51_d12_lift_rust_role_segregation": "HONORED — glossary.ts is config-layer-only; glossary.css is style-layer-only; glossary/index.astro is layout-layer-only. Pure separation of concerns.",
+      "m51_d12_lift_astro_concept_before_syntax": "HONORED — page lede ('A quick-reference lookup for all aDNA terms...') states the concept before the categories.map renders the entries.",
+      "m51_d12_lift_tailwind_task_focused_imperative": "HONORED — lede uses imperative voice ('Expand any term for an inline preview, or follow the link...'). Direct + action-focused.",
+      "m51_d12_lift_tauri_capability_organization": "HONORED — page sections organized by reader-capability (4 conceptual categories ordered for reading flow: Core Architecture → Governance & Metadata → Operations → Knowledge & Coordination).",
+      "m51_d12_avoid_stripe_page_bloat": "AVOIDED — page reduced 176 → 52 (70.5%). Pure single-purpose lookup page.",
+      "m51_d12_avoid_vercel_marketing_copy": "AVOIDED — single lede sentence is definitional + actionable, not aspirational.",
+      "m51_d12_avoid_linear_categorical_hierarchy_only": "AVOIDED — categories ordered by conceptual layering (architecture → governance → operations → knowledge) not by source-grouping.",
+      "m51_d12_avoid_obsidian_plugins_ia_fragmentation": "AVOIDED — glossary.ts at canonical site/src/data/ + glossary.css at canonical site/src/styles/; not fragmented.",
+      "standing_order_8_self_reference": "HONORED — the glossary IS the self-referential vault terminology lookup; this very vault relies on agents/contributors finding 'CLAUDE.md', 'ADR', 'lattice' etc. via the same glossary. Source code now models the same separation discipline (data + config + style + layout) that the aDNA standard teaches at the entity-type level."
+    },
+    "cycle_acceptance": "PASS — glossary/index.astro 176 → 52 lines (70.5% reduction; 35% below ~80 target); glossary.ts 30 lines new (7th post-graduation canonical instance of skill_typed_data_module_extraction; new sub-shape — config + helper exports vs card-array-only) + glossary.css 117 lines new (style extraction to canonical site/src/styles/ pattern); 154-page Astro build clean; **Risk #4 mitigation FULLY DISCHARGED** (pre/post 25 entries + 26 dist dirs 1:1 mapping ✓ · 3 random entries render ✓ · 4 categories render ✓); 4/4 personas pass 4.5/5.0; continuous-discipline overlay 5-lens applied (lens-5 partial engage; lens-3 noted as n/a at meta-level); LIFT 4/4 honored + AVOID 4/4 avoided; Standing Order #8 self-reference honored; ALL load-bearing content preserved end-to-end (25 entries + 4 categories + interactive accordion + responsive behavior).",
+    "design_finding_for_cycle_119": "Cycle 119 (learn/what-is-adna.astro 134 → ~100 + tutorials template + vaults page combined; combined cycle per Risk #7) is the next in S3. Apply combined multi-file binary commit pattern (cycle 117 1st canonical → cycle 119 2nd canonical = GRADUATES skill_combined_multi_file_binary_commit if 3rd instance not surfaced earlier). Likely shape: each page gets hybrid recipe (data extraction + prose compression OR style extraction depending on what's bulk). Risk: tutorials template [...slug].astro is a dynamic route — touching may break tutorial rendering; capture pre/post tutorial count + spot-check a tutorial entry rendered."
+  },
+
+  "step_7_record_iii_result": {
+    "this_file": "what/measurement/iii_results/2026-06/cycle_118_d12_glossary_yaml_migration.json",
+    "image_gen_log_companion": "n/a — cycle 118 had 0 image-gen calls",
+    "schema_conformance_adr_025_026": "Conforms; 8th canonical instance of D12 cycle JSON sub-shape. Style-extraction-plus-config-module sub-variant (1st canonical instance of this micro-shape; applies to pages where the line-count bulk is page-scoped CSS rather than inline data arrays)."
+  },
+
+  "lift_avoid_routing": {
+    "lift_carried_forward_to_cycle_119": [
+      "Risk #4 mitigation pattern (pre/post 1:1 mapping + N-random-entry spot-check) transfers to any page that consumes a content collection — including cycle 119 tutorials template if it touches dynamic routes",
+      "Style extraction to site/src/styles/ canonical pattern (new sibling stylesheet alongside branding.css + global.css + tokens.css) — transfers to any page with > 80 lines of inline <style>",
+      "Typed config interface (orderMin/orderMax with explicit semantics) replaces tuple-style hardcoded ranges — transfers to any config that filters by numeric range",
+      "Hybrid recipe extended to handle 'bulk is CSS' case via style extraction (vs 'bulk is data arrays' via data module + 'bulk is prose' via compression)",
+      "Continuous-discipline overlay 5-lens adapts to source-side conciseness when user-facing prose is minimal (1-paragraph lede pages); lens-5 partial-engage at meta level when content lives elsewhere (in content collection)"
+    ],
+    "avoid_carried_forward": [
+      "Do NOT assume mission spec assumptions match current code state — cycle 118 reality (entries already in collection) differed from mission spec Risk #4 framing (entries to migrate from inline); verify at Step-1 capture before committing to a sub-shape",
+      "Do NOT extract CSS that's < 30 lines (the threshold for extracting an inline <style> block to a sibling stylesheet; cycle 118 had 115 lines = 4× the threshold; clean extraction)"
+    ],
+    "skill_implementation_class_decadal_cycle_authoring_post_seed_reinforcement": "Reinforces M5.3 NEW SEED + cycles 111+112+113+114+115+116+117 (8/3 at cycle 117 → 9/3 at this cycle 118). 8 of 10 M5.4 cycles complete. GRADUATION confirmation pending M5.4 close at cycle 120 (cycle 119 will further reinforce; 10 implementation-class cycles end-to-end across M5.4).",
+    "skill_continuous_discipline_overlay_at_step_6_post_grad_reinforcement": "Reinforces graduated pattern (3/3 GRADUATED at cycle 113 → 8/3 at this cycle 118; 2.7× margin). Adapted for source-side conciseness when user-facing prose is minimal.",
+    "skill_typed_data_module_extraction_post_grad_reinforcement": "Reinforces graduated pattern at 7/3 (3/3 GRADUATED at cycle 115 → 7/3 at this cycle 118 = home.ts + compliance.ts + enterprise.ts + startup-first-hour.ts + educators.ts + researchers.ts + glossary.ts; 2.3× margin). NEW SUB-SHAPE: config + helper exports vs card-array-only — pattern extends naturally to non-card-data page-scope state.",
+    "skill_style_extraction_to_canonical_stylesheet_new_seed_candidate": "NEW SEED candidate 1/3 — pattern: when a page has > 80 lines of page-scoped inline <style>, extract to NEW site/src/styles/<page>.css imported via Astro CSS import. Matches existing site/src/styles/ pattern (branding.css + global.css + tokens.css). Cycle 118 = 1st canonical instance. Transfers to any future page with bulk page-scoped CSS. Graduates at 3rd reuse if cycles 119+ surface similar patterns.",
+    "skill_risk_mitigation_pre_post_inventory_render_spot_check_new_seed_candidate": "NEW SEED candidate 1/3 — pattern: when a cycle touches a page consuming a content collection or external data source, capture pre-migration entry/render inventory at Step-1 + post-migration 1:1 mapping verification + N random rendered-output spot-checks at Step-5+6. Cycle 118 = 1st canonical instance discharging Risk #4. Transfers to any future cycle touching content collection pages. Graduates at 3rd reuse."
+  },
+
+  "links": {
+    "mission_spec": "[[mission_adna_str_p5_m54_d12_clarity_conciseness]]",
+    "session_file": "[[session_stanley_20260529T004936Z_v8_m54_s3]]",
+    "writing_guidelines_substrate": "[[writing-guidelines]]",
+    "prior_cycle_combined_multi_file_pattern": "[[cycle_117_d12_educators_researchers_combined]]",
+    "prior_cycle_typed_data_module_extraction_6th_post_grad": "[[cycle_117_d12_educators_researchers_combined]]",
+    "decadal_theme_set_d12_row": "[[m50_decadal_theme_set#D12 — Clarity & Conciseness]]",
+    "persona_bench_d12_allocation": "[[m50_persona_bench_expansion#§3 Per-Decadal Persona Allocation]]",
+    "m51_synthesis_d12_row": "[[m51_cross_target_synthesis#D12 Clarity & Conciseness]]",
+    "adr_025": "[[adr_025_iii_decadal_coordination]]",
+    "adr_026": "[[adr_026_ledger_observation_shared_primitive]]"
+  }
+}

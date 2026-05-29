@@ -2,22 +2,15 @@
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import { getDocsBySection } from '../../utils/collections';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
+import { categoryConfig, firstSentence } from '../../data/glossary';
+import '../../styles/glossary.css';
 
 const glossaryEntries = await getDocsBySection('glossary');
 
-// Truncate description to first sentence for the summary preview
-function firstSentence(text: string): string {
-  const match = text.match(/^[^.!?]+[.!?]/);
-  return match ? match[0] : text.slice(0, 80) + '…';
-}
-
-// Group entries by category based on order ranges
-const categories = [
-  { label: 'Core Architecture', entries: glossaryEntries.filter(e => e.data.order >= 1 && e.data.order <= 10) },
-  { label: 'Governance & Metadata', entries: glossaryEntries.filter(e => e.data.order >= 11 && e.data.order <= 16) },
-  { label: 'Operations', entries: glossaryEntries.filter(e => e.data.order >= 17 && e.data.order <= 22) },
-  { label: 'Knowledge & Coordination', entries: glossaryEntries.filter(e => e.data.order >= 23 && e.data.order <= 25) },
-];
+const categories = categoryConfig.map((c) => ({
+  label: c.label,
+  entries: glossaryEntries.filter((e) => e.data.order >= c.orderMin && e.data.order <= c.orderMax),
+}));
 
 const jsonLD = buildCollectionPageJsonLD({
   title: 'aDNA Glossary',
@@ -57,120 +50,3 @@ const jsonLD = buildCollectionPageJsonLD({
     </section>
   ))}
 </DocumentationLayout>
-
-<style>
-  .glossary-category {
-    margin-bottom: var(--space-10);
-  }
-
-  .glossary-category h2 {
-    font-size: var(--text-xl);
-    margin-bottom: var(--space-4);
-    color: var(--color-text-heading);
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--space-2);
-  }
-
-  .glossary-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .glossary-item {
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .glossary-item:first-child {
-    border-top: 1px solid var(--color-border);
-  }
-
-  details {
-    width: 100%;
-  }
-
-  .glossary-summary {
-    display: flex;
-    align-items: baseline;
-    gap: var(--space-3);
-    padding: var(--space-3) var(--space-2);
-    cursor: pointer;
-    list-style: none;
-    user-select: none;
-    transition: background var(--transition-fast);
-  }
-
-  .glossary-summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .glossary-summary::before {
-    content: '›';
-    flex-shrink: 0;
-    font-size: 1.1em;
-    color: var(--color-text-muted);
-    transition: transform var(--transition-fast);
-    display: inline-block;
-    width: 1em;
-    text-align: center;
-  }
-
-  details[open] .glossary-summary::before {
-    transform: rotate(90deg);
-  }
-
-  .glossary-summary:hover,
-  .glossary-summary:focus-visible {
-    background: var(--color-bg-alt);
-    border-radius: var(--radius-sm);
-  }
-
-  .glossary-term {
-    font-weight: 600;
-    font-size: var(--text-base);
-    color: var(--color-text);
-    flex-shrink: 0;
-    min-width: 8rem;
-  }
-
-  .glossary-preview {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    flex: 1;
-  }
-
-  details[open] .glossary-preview {
-    display: none;
-  }
-
-  .glossary-body {
-    padding: var(--space-2) var(--space-2) var(--space-4) calc(var(--space-2) + 1em + var(--space-3));
-  }
-
-  .glossary-body p {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    line-height: 1.65;
-    margin: 0 0 var(--space-3);
-  }
-
-  .glossary-full-link {
-    font-size: var(--text-sm);
-    font-weight: 500;
-    color: var(--color-accent);
-    text-decoration: none;
-  }
-
-  .glossary-full-link:hover {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 600px) {
-    .glossary-preview {
-      display: none;
-    }
-  }
-</style>
