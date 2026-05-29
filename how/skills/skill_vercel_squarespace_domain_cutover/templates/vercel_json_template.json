@@ -1,0 +1,41 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "astro",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "dev.<DOMAIN_APEX>" }],
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    }
+  ],
+  "_comment_redirects": "Vercel auto-301s non-canonical aliases to the canonical (apex or www, per dashboard setting). Declaring redirects here is optional IaC-cleanliness; remove this _comment and uncomment the redirects array below if explicit declaration is preferred.",
+  "_redirects_example_apex_canonical": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.<DOMAIN_APEX>" }],
+      "destination": "https://<DOMAIN_APEX>/:path*",
+      "permanent": true
+    }
+  ],
+  "_redirects_example_www_canonical": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "<DOMAIN_APEX>" }],
+      "destination": "https://www.<DOMAIN_APEX>/:path*",
+      "permanent": true
+    }
+  ]
+}

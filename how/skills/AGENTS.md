@@ -81,6 +81,7 @@ Examples:
 - `skill_version_migration.md` (agent)
 - `skill_workspace_upgrade.md` (agent)
 - `skill_vault_review.md` (process)
+- `skill_vercel_squarespace_domain_cutover.md` (process) — 5-phase DNS cutover playbook for going live on Vercel + Squarespace, with optional `dev.<domain>` blue/green subdomain (graduated from ScienceStanley M08 2026-05-28)
 
 ## Template
 

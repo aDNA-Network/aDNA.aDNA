@@ -28,6 +28,20 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ---
 
+## [Unreleased]
+
+### Added
+- `how/skills/skill_vercel_squarespace_domain_cutover.md` (v0.1.0) — 5-phase playbook (P-T-24 → P-D → P-D-Mon → P-D-T+48 → P-E) for cutting a registered Squarespace domain over to a Vercel-hosted Astro site, with optional `dev.<domain>` blue/green subdomain. Graduated from `ScienceStanley.aDNA` mission M08 (live cutover 2026-05-28 → 2026-05-29). Encodes operational quirks: Squarespace TTL dropdown is discrete-only (1800s minimum), Vercel `--token=` flag leaks via `ps -ef` (env-var-only auth), Hobby author-email mismatch blocks deploys, MX side-effect during CNAME write at Squarespace, Deployment Protection 401 on preview deploys. Apex-vs-www addendum documents both canonical-form DNS shapes.
+- `how/skills/skill_vercel_squarespace_domain_cutover/templates/` — `mission_template_dns_cutover.md` (consumer-vault mission template), `vercel_json_template.json` (security headers + dev-host noindex rule), `dns_baseline_schema.json` (snapshot schema for rollback source-of-truth), `inputs_schema.json` (per-cutover configuration schema).
+- `how/skills/skill_vercel_squarespace_domain_cutover/scripts/README.md` — Path A (run from ScienceStanley vault) / Path B (copy harness into consumer) / Path C (v0.3.0 shared library) usage guidance; 17-script catalog with phase mapping.
+
+### Notes
+- **First consumer**: `wga.aDNA` cutover to `worldgeno.me` (campaign_wga_site_v2, between c91 and c92). Mission file at `wga.aDNA/how/missions/mission_wga_m08_dns_cutover_worldgeno_me/` will be authored at P-T-24 open.
+- **Skill version trajectory**: v0.1.0 = playbook + templates only (Playwright harness stays at ScienceStanley); v0.2.0 (post-WGA) = encode WGA-specific learnings + add `init-consumer-harness.sh` to automate Path B; v0.3.0 (after 3rd consumer) = graduate harness to shared workspace lib.
+- This entry is staged as `[Unreleased]` per Keep-a-Changelog convention; the operator decides when to formalize as a governance minor bump (likely v6.1 following the v5.3 single-skill-addition precedent).
+
+---
+
 ## [v6.0] — 2026-04-03
 
 ### Changed

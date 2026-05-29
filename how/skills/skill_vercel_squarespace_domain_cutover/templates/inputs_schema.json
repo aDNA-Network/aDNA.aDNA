@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DNS Cutover Mission Inputs",
+  "description": "Per-cutover configuration. Pinned at mission open in <consumer_vault>/how/missions/mission_<id>_dns_cutover_<domain>/audit/inputs.json.",
+  "type": "object",
+  "required": [
+    "vercel_project_id",
+    "vercel_org_id",
+    "vercel_token_keychain_name",
+    "domain_apex",
+    "canonical_form",
+    "dev_subdomain_enabled",
+    "consumer_vault_path",
+    "existing_email_provider"
+  ],
+  "properties": {
+    "vercel_project_id": {
+      "type": "string",
+      "pattern": "^prj_[A-Za-z0-9]+$",
+      "description": "Vercel project ID from <consumer>/site/.vercel/project.json."
+    },
+    "vercel_org_id": {
+      "type": "string",
+      "pattern": "^team_[A-Za-z0-9]+$",
+      "description": "Vercel team/org ID from same file."
+    },
+    "vercel_token_keychain_name": {
+      "type": "string",
+      "description": "macOS Keychain entry name holding the Vercel API token. Retrieved via 'security find-generic-password -a $USER -s <name> -w'. Token must NEVER be passed as 'vercel --token=' CLI flag (leaks via ps -ef); always set as VERCEL_TOKEN env var."
+    },
+    "domain_apex": {
+      "type": "string",
+      "pattern": "^[a-z0-9]([a-z0-9-]*[a-z0-9])?(\\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)+$",
+      "description": "Bare domain, lowercase, no scheme, no www. E.g., 'worldgeno.me'."
+    },
+    "canonical_form": {
+      "type": "string",
+      "enum": ["apex", "www"],
+      "description": "Which form is the user-visible canonical URL. 'apex' = https://<domain>; 'www' = https://www.<domain>. Affects DNS shape (see skill apex-vs-www addendum)."
+    },
+    "dev_subdomain_enabled": {
+      "type": "boolean",
+      "description": "If true, configure dev.<domain> as a Vercel Branch Domain bound to dev_branch_name."
+    },
+    "dev_branch_name": {
+      "type": "string",
+      "default": "dev",
+      "description": "Git branch name bound to the dev subdomain (only used if dev_subdomain_enabled)."
+    },
+    "consumer_vault_path": {
+      "type": "string",
+      "description": "Absolute path to the consumer vault root."
+    },
+    "cutover_window_iso": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Operator-named cutover window start (ISO-8601 UTC). Pinned at P-T-24 close; must be >=24h after that close. Null until pinned."
+    },
+    "existing_email_provider": {
+      "type": "string",
+      "enum": ["google_workspace", "microsoft_365", "proton", "fastmail", "none"],
+      "description": "Drives the email-continuity check's expected MX/SPF/DKIM records."
+    },
+    "vercel_dns_subdomain": {
+      "type": ["string", "null"],
+      "description": "Vercel-issued project-specific CNAME target (e.g., '895869db08eb5498.vercel-dns-017.com.'). Captured from 'vercel domains inspect <domain>' after Vercel-side domain provisioning. Null until captured."
+    },
+    "vercel_apex_ips": {
+      "type": "array",
+      "items": { "type": "string", "format": "ipv4" },
+      "description": "Vercel-issued apex A-record targets. Default ['216.198.79.1', '64.29.17.1'] (as of M08 2026-05-28; Vercel may rotate — re-capture from dashboard at P-D)."
+    }
+  }
+}

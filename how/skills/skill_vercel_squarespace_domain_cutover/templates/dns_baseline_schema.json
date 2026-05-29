@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DNS Baseline Snapshot",
+  "description": "Snapshot of every Squarespace DNS record for the cutover domain at a given point in time. Used as the source-of-truth for rollback and as the baseline for the email-continuity delta check.",
+  "type": "object",
+  "required": ["domain_apex", "captured_at", "captured_by", "records"],
+  "properties": {
+    "domain_apex": {
+      "type": "string",
+      "description": "Bare domain (no scheme, no www). E.g., 'worldgeno.me'."
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 UTC timestamp of capture."
+    },
+    "captured_by": {
+      "type": "string",
+      "description": "Agent persona or operator name + tooling version. E.g., 'agent_berthier via 02_baseline_dns.ts@1.4.0'."
+    },
+    "vercel_project_id": {
+      "type": "string",
+      "description": "Vercel project ID this cutover targets. Captured for cross-reference."
+    },
+    "purpose": {
+      "type": "string",
+      "enum": ["pre_cutover_rollback_source", "post_cutover_evidence", "ttl_lower_pre_snapshot", "ttl_restore_pre_snapshot"],
+      "description": "Why this snapshot was taken."
+    },
+    "records": {
+      "type": "array",
+      "description": "All DNS records at the registrar for the domain. Capture every record type the registrar exposes — do not filter.",
+      "items": {
+        "type": "object",
+        "required": ["type", "host", "value", "ttl_seconds"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["A", "AAAA", "ALIAS", "ANAME", "CNAME", "MX", "TXT", "SRV", "CAA", "NS", "PTR", "SSHFP", "TLSA", "SVCB", "HTTPS"]
+          },
+          "host": {
+            "type": "string",
+            "description": "Record host (e.g., '@' for apex, 'www', 'dev', '_dmarc', 'google._domainkey')."
+          },
+          "value": {
+            "type": "string",
+            "description": "Record target value (IP for A/AAAA; hostname for CNAME/ALIAS/MX/NS; quoted-string for TXT including SPF/DKIM/DMARC; priority+target for MX/SRV)."
+          },
+          "priority": {
+            "type": ["integer", "null"],
+            "description": "Priority for MX/SRV records; null for other types."
+          },
+          "ttl_seconds": {
+            "type": "integer",
+            "minimum": 60,
+            "description": "TTL in seconds."
+          },
+          "registrar_id": {
+            "type": ["string", "null"],
+            "description": "Squarespace-internal record ID if captured (used for targeted rollback)."
+          },
+          "notes": {
+            "type": ["string", "null"],
+            "description": "Free-text annotation (e.g., 'Google Workspace MX', 'M01 baseline match')."
+          }
+        }
+      }
+    },
+    "checksum": {
+      "type": "string",
+      "description": "SHA-256 of the canonical-serialized records array. Used to detect drift between successive snapshots."
+    }
+  }
+}
