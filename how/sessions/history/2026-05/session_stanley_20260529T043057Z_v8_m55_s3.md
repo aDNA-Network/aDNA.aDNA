@@ -3,8 +3,10 @@ type: session
 session_id: session_stanley_20260529T043057Z_v8_m55_s3
 created: 2026-05-29
 updated: 2026-05-29
-status: in_progress
+status: completed
 opens_at: 2026-05-29T04:30:57Z
+closed_at: 2026-05-29T04:50:00Z
+token_budget_actual: "~110-140 kT content-load (within 120-180 kT estimate; lower-mid range since substrate pre-loaded at plan-mode + session-file pre-authored at S3 open + heavy AAR drew on D11 precedent shape; no retrospective required). API-billing companion per ADR-016 Clause C: ~6-9 M cache_read + ~60-90 K cache_creation at ~50-70 turns."
 tier: 1
 agent: agent_stanley
 persona: rosetta
@@ -42,12 +44,28 @@ Execute cycles 127-130 of `mission_adna_str_p5_m55_d14_readme_first_contact_poli
 
 ## Files touched
 
-(populated as session progresses)
+**Pre-S3 substrate-pure commit `63b54d8`**: `what/exemplars/exemplar_consumer_vault_iss_integration.md` (302 lines; SiteForge-authored cross-vault arrival).
+
+**Cycle 127 commit `f4956c4`**: `site/src/pages/learn/index.astro` (45 → 29) + `site/src/pages/learn/tutorials/index.astro` (54 word-tightened) + `README.md` (368 → 382; +14 net for ToC) + `what/measurement/iii_results/2026-06/cycle_127_d14_combined_nav_readme_toc.json` (NEW) + this session file (NEW).
+
+**Cycle 128 commit `beff65c`**: `.github/README_STYLE_GUIDE.md` (NEW 84 lines) + `what/measurement/iii_results/2026-06/cycle_128_d14_readme_style_guide.json` (NEW).
+
+**Cycle 129 commit `436e5ee`**: `how/backlog/idea_upstream_readme_first_contact_pattern.md` (NEW 70 lines) + `what/measurement/iii_results/2026-06/cycle_129_d14_upstream_readme_pattern.json` (NEW).
+
+**Cycle 130 (this commit) governance close**: `how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_decadal_d14_readme_first_contact.md` (NEW 334 lines) + `what/measurement/iii_results/2026-06/cycle_130_d14_decadal_aar.json` (NEW) + mission spec status edit (in_progress → completed) + campaign master amendments row 4 + STATE.md Op 3 37th canonical refresh + this session file move active → history/2026-05/.
 
 ## SITREP
 
-(populated at S3 close)
+**Completed**: Pre-S3 substrate-pure (1 commit) + 4 D14 cycles 127-130 (4 commits) + full decadal D14 AAR (334 lines per template_aar.md 11-section heavy + §11 5-persona RLP at 4.75/5.0 aggregate; IMPROVES on D11 close baseline 4.5/5.0 +0.25) + mission close cascade (6 substeps discharged).
+
+**In progress**: None at S3 close.
+
+**Blockers**: None.
+
+**Next up**: M5.6 D15 Persona Page Consolidation (10 cycles 131-140; 2-3 sessions; non-RLP lightweight per Campaign SO #11). M5.5 mission CLOSE UNBLOCKS M5.6 per AAR §5 GO assessment + §6 sequencing recommendation.
+
+**Files moved**: This file `active/` → `history/2026-05/` at S3 close.
 
 ## Next Session Prompt
 
-(populated at S3 close → routes to M5.6)
+Routes to **M5.6 S1 — D15 Persona Page Consolidation MISSION OPEN** per STATE.md `## Next Session Prompt` section + D14 decadal AAR §6 Recommendation. See updated STATE.md + `aar_decadal_d14_readme_first_contact.md` for full S3 substrate + M5.6 entry path options (a default / b hybrid / c operator-confirmed / d interstitial).

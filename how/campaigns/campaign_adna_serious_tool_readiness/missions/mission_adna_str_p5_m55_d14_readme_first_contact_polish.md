@@ -7,10 +7,12 @@ mission_number: 5.5
 slug: d14_readme_first_contact_polish
 created: 2026-05-29
 updated: 2026-05-29
-status: in_progress
+status: completed
 opens_at: 2026-05-29T02:45:43Z
 opened_session: session_stanley_20260529T024543Z_v8_m55_s1
-estimated_sessions: 3   # S1 = mission spec + cycle 121 (1 cycle); S2 = cycles 122-126 (5 cycles); S3 = cycles 127-130 (4 cycles incl. RLP + close)
+closed_at: 2026-05-29T04:50:00Z
+closed_session: session_stanley_20260529T043057Z_v8_m55_s3
+estimated_sessions: 3   # S1 = mission spec + cycle 121 (1 cycle); S2 = cycles 122-126 (5 cycles); S3 = cycles 127-130 (4 cycles incl. RLP + close) — EXACTLY MATCHED 3/3
 persona: rosetta
 last_edited_by: agent_stanley
 spec_completeness: complete   # 10 cycles + decadal D14 AAR + 5-persona Reviewer Lens Pass at cycle 130 + governance bundle scoped
@@ -239,32 +241,30 @@ Overlay LIVE for all 10 cycles 121-130 + the decadal D14 AAR.
 - **D-PUSH=push-after-S1**: 15-precedent chain extending to 17 at S3 close (M3.5+M3.6+M3.7+M4.1+M5.0+M3.5.5+M5.1×3+M5.2+M5.3×3+M5.4×3 → M5.5-S1 = 15; +S2+S3 = 17); push at G3 fires after S1 commits (1 spec-open + 1 cycle-121 + 1 governance = 3 commits at S1 close).
 - **Op 3 archive-on-close at S1**: STATE Op 3 35th canonical instance — M5.4 close demoted to PRIOR concise (since M5.5 S1 is mission-open, NOT mission-close); M5.5 S1 OPEN full-form top bullet; Next Session Prompt → M5.5 S2 cycles 122-126.
 
-## Mission Close Notes (S3 cycle 130; scaffold)
+## Mission Close Notes (S3 cycle 130)
 
-**Closed at**: tbd by tbd. 10/10 cycles LIVE across 3 sessions (S1 1 cycle + S2 5 cycles + S3 4 cycles per planned mission shape). Cumulative line reduction across all D14 surfaces: tbd. NEW artifacts created: README style guide (cycle 128) + cross-vault README pattern idea-file (cycle 129). Cumulative v8 P5 image-gen tbd ($1.72 forecast unchanged).
+**Closed at 2026-05-29T04:50:00Z by agent_stanley at session_stanley_20260529T043057Z_v8_m55_s3.** 10/10 cycles LIVE across 3 sessions (S1 1 cycle 121 + S2 5 cycles 122-126 + S3 4 cycles 127-130) — EXACTLY MATCHED `estimated_sessions: 3` per mission frontmatter. Cumulative line reduction across 6 reduction-target surfaces (cycles 121-126): **1786 → 1322 = 26.0% mass reduction**. Additive lines for scan-affordance ToC (cycle 127): +14 net. Additive lines for 2 NEW authoring artifacts (cycles 128 + 129): +154. **NEW artifacts created**: `.github/README_STYLE_GUIDE.md` (84 lines; cycle 128) + `how/backlog/idea_upstream_readme_first_contact_pattern.md` (70 lines; cycle 129) + `missions/artifacts/aar_decadal_d14_readme_first_contact.md` (334 lines; cycle 130). **Cumulative v8 P5 image-gen UNCHANGED at $1.72 of $50 (3.4%)** — D14 text-only end-to-end (cycles 125-126 reused D11 section icons via inline `<img>` relative paths).
 
-**D14 cycle JSON sub-shapes ratified across the mission**: tbd.
+**D14 cycle JSON sub-shapes ratified across the mission** (10 distinct sub-shapes): canonical-content (cycle 121) + adopter-conversion-absolute-band-met (cycle 122) + bloat-vs-reference-disambiguation (cycle 123) + reference-with-cross-doc-preservation (cycle 124) + 2-pass-iterative-cuts-with-d11-icon-reuse (cycle 125) + tutorial-as-canonical-mix-with-combined-multi-file-binary-commit (cycle 126) + combined-nav-plus-canonical-additive-with-readme-toc (cycle 127) + doc-authoring-new-artifact-with-absolute-line-band (cycle 128) + idea-upstream-with-phase-6-propagation-candidates-table (cycle 129) + decadal-aar-with-5-persona-reviewer-lens-pass (cycle 130).
 
-**Graduations**: tbd (skill_canonical_content_preservation_discipline carry-forward seed at 1/3 from M5.4 cycle 119 advances if reinforced at cycle 121; skill_combined_multi_file_binary_commit post-graduation reinforcement at 4/3+ at cycles 126 + 127).
+**Graduations** (2 at M5.5): `skill_content_class_declaration_per_cycle` 2/3 → **3/3 GRADUATES** at cycle 123 + reinforced to 9/3+ at cycle 129 (3.0× margin; upstream-promotion candidate; M5.5 load-bearing pattern); `skill_canonical_content_preservation_discipline` 1/3 carry from M5.4 cycle 119 → **3/3 GRADUATES** at cycle 122 via canonical-floor-honored-when-absolute-target-met disambiguation.
 
-**New seeds carried forward into M5.6+**: tbd.
+**16 NEW SEEDS carried forward into M5.6+** (D-decadal queue): `skill_bloat_vs_reference_disambiguation` 1/3 + `skill_cross_doc_reference_preservation_at_streamline` 2/3 + `skill_triplicate_code_block_collapse_to_template_plus_substitution_table` 1/3 + `skill_d11_icon_reuse_in_markdown_via_relative_path` 2/3 + `skill_iterative_cuts_to_band_compliance` 1/3 + `skill_table_collapse_to_narrative_paragraph` 1/3 + `skill_tutorial_as_canonical_content_reclassification` 1/3 + `skill_combined_two_step_merge_in_tutorial` 1/3 + `skill_additive_scan_affordance_at_readme_top` 1/3 + `skill_grouped_link_toc_with_reader_intent_buckets` 1/3 + `skill_section_data_inline_form_compaction` 1/3 + `skill_companion_doc_framing_for_layered_discipline` 1/3 + `skill_reduction_ceiling_taxonomy_table` 1/3 + `skill_three_second_reader_opener_for_first_contact_meta_doc` 1/3 + `skill_d14_closing_cycle_idea_upstream_authoring_shape` 1/3 + `skill_phase_6_propagation_candidates_table_at_idea_upstream` 1/3.
 
-**Standing Order discharge** (all 15 AC PASS): tbd.
+**7 POST-GRADUATION REINFORCEMENTS** at M5.5 close: `skill_continuous_discipline_overlay_at_step_6` 19/3+ (6.33× margin) + `skill_implementation_class_decadal_cycle_authoring` 20/3+ (6.67× margin; M5.5 = 3rd implementation-class mission in v8 P5) + `skill_combined_multi_file_binary_commit` 5/3+ (1.67× margin; cycle 127 = 5th canonical instance; 1st nav+canonical-additive sub-shape) + `skill_substrate_pure_separation` 16/3+ (pre-S3 exemplar commit) + `skill_campaign_close_archive` 37/3+ (Op 3 37th canonical instance) + `skill_design_spec_authoring` 32+/3+ (via cycle-128 style guide + this AAR) + `skill_decadal_aar_authoring` 2/3 (carry from M5.3 cycle 110; one more at D17 graduates).
 
-**Sub-mission carve-outs and dispatches**: tbd.
+**Standing Order discharge** (15/15 AC PASS): all 15 acceptance criteria validated at §2 of the heavy AAR (mission spec authored + 10 cycles per 7-step protocol + 21-persona bench consumed + zero image-gen + per-cycle JSON + content_class_declaration NEW field + single binary commit per cycle + D11-icon reuse + decadal AAR + 5-persona RLP + style guide NEW + idea_upstream_ NEW + mission close cascade + hard constraints + only aDNA.aDNA writes).
 
-## Decadal D14 AAR (scaffold; populated at cycle 130)
+**Sub-mission carve-outs and dispatches**: NONE — M5.5 ran end-to-end as a single 3-session implementation-class mission. **Out-of-mission cross-vault**: 2 items absorbed pre-S3 substrate-pure (Berthier `skill_vercel_squarespace_domain_cutover` v0.1.0 committed at `7a3d04b` between S2 close and S3 open; SiteForge `exemplar_consumer_vault_iss_integration` v1.0 committed at `63b54d8` as Step 0 of S3 — `skill_out_of_mission_authoring_disposition` advances 1/3 → 2/3).
 
-Full 10-section heavy AAR shape per [[aar_decadal_d11_visual_identity]] precedent; §11 5-persona Reviewer Lens Pass. To be authored at cycle 130 close.
+### Lightweight 5-line AAR (Standing Order 5)
 
-1. **Mission Identity** — tbd
-2. **Cycles 121-130 Summary** — tbd
-3. **Cumulative Outputs** — tbd
-4. **Scorecard** (14-row per D11 shape) — tbd
-5. **Standing-Order Discharge** (extended row count) — tbd
-6. **Reconciliation Note / Cross-Mission Handoff** — tbd
-7. **Top Findings** (gaps + debts + lessons) — tbd
-8. **Graduations + New Seeds** — tbd
-9. **Token Budget Estimate vs Actual** (two-metric per ADR-016) — tbd
-10. **Image-Gen Budget Final** — $1.72 cumulative forecast
-11. **§11 Reviewer Lens Pass** — 5-persona verdicts (UX Writer + Newcomer Stress-Tester + Information Architect + Visual Designer + OSS Maintainer); aggregate ≥ 4.0/5.0 target
+1. **Worked**: hybrid scope adaptation (M5.0 §3 D14 strict README-only-8-cycles queue → 121 README anchor + 122-126 spread + 127-129 cap + 130 close) produced 26% mass reduction across 6 first-contact surfaces while honoring per-class ceilings; content_class_declaration NEW frontmatter field at AC #6 forced explicit class declaration at Step-1 of every cycle.
+2. **Didn't**: cycle 126 tutorials 9.1% reduction looked low without effective-class-after-disambiguation context — required mid-cycle reclassification to canonical-dominant and a NEW SEED to document the pattern (mission spec's "~30%" estimate reflected mixed-class assumption that didn't hold at baseline).
+3. **Finding**: codify-then-promote-upstream is the canonical closing-cycle pattern for D-decadal missions — cycle 128 codification (style guide) + cycle 129 upstream-promotion idea-file + cycle 130 heavy AAR forms a tight 3-cycle close shape that future RLP-cadence decadals (D17 + D20) should adopt verbatim.
+4. **Change**: M5.6 D15 mission spec should inherit content-class taxonomy as Step-1 discipline (not just lightweight-AAR Finding); cycle JSONs should retain content_class_declaration field as AC mandatory across all polish-class decadals.
+5. **Follow-up**: file the cycle-129 idea_upstream_readme_first_contact_pattern.md as a GitHub issue at LatticeProtocol/Agentic-DNA when next upstream contact window opens; M5.6+ tracks status field in idea-file frontmatter.
+
+## Decadal D14 AAR
+
+Full 11-section heavy AAR shape + §11 5-persona Reviewer Lens Pass: **[[aar_decadal_d14_readme_first_contact|aar_decadal_d14_readme_first_contact.md]]** (334 lines; cycle 130 output). RLP aggregate **4.75/5.0** (UX Writer 4.75 + Newcomer 5.0 + IA 4.75 + Visual Designer 4.5 + OSS Maintainer 4.75); improves on D11 close baseline (4.5/5.0; +0.25); on track for Phase 5 ≥ 4.95 exit gate at D20.
