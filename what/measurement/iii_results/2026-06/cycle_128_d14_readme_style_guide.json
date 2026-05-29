@@ -1,0 +1,134 @@
+{
+  "$schema_note": "Conforms to ADR-025 + ADR-026 + M5.5 AC #6. 8th canonical D14 cycle JSON. 3rd canonical instance of doc-authoring sub-shape (after D11 visual-identity-v2.mdx cycle 109 + D12 writing-guidelines.mdx cycle 111 pre-S1 substrate; D14 cycle 128 README_STYLE_GUIDE.md = 3rd; advances post-graduation of doc-authoring sub-shape).",
+  "cycle_id": "cycle_128_d14_readme_style_guide",
+  "decadal": "D14",
+  "decadal_title": "README & First-Contact Polish",
+  "cycle_number": 128,
+  "cycle_in_decadal": 8,
+  "slug": "readme_style_guide",
+  "mission": "mission_adna_str_p5_m55_d14_readme_first_contact_polish",
+  "session": "session_stanley_20260529T043057Z_v8_m55_s3",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-29T04:36:00Z",
+  "closed_at": "2026-05-29T04:39:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "image_gen_log_refs": [],
+
+  "content_class_declaration": {
+    "class_declared_in_mission_spec": "new-artifact (doc-authoring)",
+    "class_effective_at_close": "new-artifact (doc-authoring)",
+    "absolute_line_target_band": "80-120 lines per mission spec line 93",
+    "actual_lines": 84,
+    "ceiling_compliance_at_close": true,
+    "ceiling_compliance_note": "84 lines sits at lower-end of 80-120 declared band. Reference-dense without bloat: 5 numbered sections + cross-references block + final attribution line. New-artifact class — authoring discipline replaces reduction discipline; line band met."
+  },
+
+  "step_1_capture_state": {
+    "target_surfaces": ["aDNA.aDNA/.github/README_STYLE_GUIDE.md (NEW; 0 lines pre-cycle)"],
+    "method": "mkdir -p .github/ + design 5-section structure per mission spec + author per persona-led structural pattern",
+    "pre_change_inventory": {
+      "github_dir_exists": false,
+      "writing_guidelines_mdx_exists": true,
+      "writing_guidelines_clarity_checklist_location": "site/src/content/reference/writing-guidelines.mdx §1",
+      "visual_identity_v2_exists": true,
+      "m51_cross_target_synthesis_d14_row_exists": true,
+      "aar_decadal_d11_exists": true
+    },
+    "scope_decision": "3rd canonical instance of doc-authoring sub-shape. Companion to writing-guidelines.mdx (general prose) + visual-identity-v2.mdx (visual). Layered README-specific discipline atop general clarity rules. Cross-link to 4 substrate artifacts (writing-guidelines + visual-identity-v2 + m51 cross-target synthesis + aar_decadal_d11). 5 numbered sections: (1) Content-class taxonomy + reduction-ceiling table; (2) Persona-led structural pattern (elevator → problem → personas → solution → reference); (3) Scan-affordance ToC top-of-doc; (4) 5-lens conciseness pass for README-class; (5) Cross-references."
+  },
+
+  "step_2_persona_qa": {
+    "personas_drawn": ["reviewer_ux_writer", "reviewer_information_architect", "reviewer_oss_maintainer"],
+    "personas_drawn_count": 3,
+    "method": "agent-simulated 5-question Q&A — 3 primary personas per mission spec §Scope cycle 128 row. All 3 read writing-guidelines.mdx §1 + visual-identity-v2.mdx §9 (change discipline) before scoring.",
+    "qa_protocol_focus": "Q1 Style + Q2 Clarity + Q3 Conciseness + Q4 Bloat + Q5 Comprehension + Q6 Reusability (NEW for cycle 128 since artifact governs future cycles)",
+    "persona_consensus": {
+      "ux_writer": "The guide opens with the 3-second framing that explains why it exists. The taxonomy table compresses 4 classes × 4 columns into a single decision-grade artifact. Section 2 persona-led structural pattern is named in 5 steps (matches Rust + Stripe-first-page + Astro + Tailwind + Linear convergence). 5-lens conciseness pass is recapitulated as a checklist applied at Step-6 — exactly the discharge pattern that post-graduated continuous-discipline-overlay. Score 4.75/5.0.",
+      "information_architect": "84 lines in 5 numbered sections + cross-references + attribution. Each section is one decision-class: taxonomy / structure / scan-affordance / validation / cross-links. The companion-document framing in the header tells the reader where this fits in the prose-discipline graph (general writing-guidelines + visual-identity-v2 + this README-class guide). Cross-references at end link to 4 substrate artifacts including the M5.1 synthesis. No structural duplication with writing-guidelines.mdx. Score 5.0/5.0.",
+      "oss_maintainer": ".github/ is the conventional location for repo-policy docs (CODEOWNERS, ISSUE_TEMPLATE, README_STYLE_GUIDE). Sitting at .github/README_STYLE_GUIDE.md gives it OSS-convention visibility without polluting the root. The guide explicitly cites M5.4 AAR Finding + M5.5 cycles + M5.1 cross-target synthesis as authority — trust-by-attribution. Update cadence (D17 + D20 decadal AAR or when new LIFT/AVOID precedent surfaces) makes the maintenance contract explicit. Score 4.75/5.0."
+    },
+    "aggregate_score": 4.83
+  },
+
+  "step_3_generate_or_regen": {
+    "decision": "NO image generation — D14 is text-only end-to-end; cycle 128 is new-artifact authoring with zero asset gen. Cumulative v8 P5 image-gen ledger UNCHANGED at $1.72 of $50 (3.4%).",
+    "image_gen_log_refs": []
+  },
+
+  "step_4_implement": {
+    "method": "1 mkdir + 1 Write authoring pass. Zero edits to existing files (purely additive new-artifact).",
+    "changes_applied": [
+      "mkdir -p aDNA.aDNA/.github/ — first .github/ directory in this project (OSS-convention location for repo-policy docs)",
+      "NEW aDNA.aDNA/.github/README_STYLE_GUIDE.md (84 lines) with: header companion-doc framing + Purpose section (3-second framing + M5.4 AAR + M5.5 cycles attribution + M5.1 cross-target synthesis reference) + §1 Content-class taxonomy with 5-row table (canonical-content 5-20% + adopter-conversion 30-70% + reference 25-35% + nav no-fixed-ceiling + new-artifact bounded-by-spec) + §2 Persona-led structural pattern (5-step sequence: elevator → problem → personas → solution → reference) + §3 Scan-affordance ToC (when > 15 h2; 5 reader-intent buckets; budget +15-20 lines; canonical = cycle 127 README) + §4 5-lens conciseness pass for README-class (recapitulates writing-guidelines.mdx §4 with README-specific discharge) + §5 Cross-references (4 substrate artifacts) + closing attribution (cycle 128 authoring context + maintenance cadence)"
+    ],
+    "lift_precedents_honored": [
+      "Stripe FIRST-PAGE simplicity: opening 3-second framing answers 'what is this and why would I keep reading?' in one paragraph",
+      "Rust persona-paths: companion-document header routes reader to general writing-guidelines OR visual-identity-v2 OR this guide based on what they're authoring",
+      "Astro problem-first: each section opens with the decision the section enables, not the abstract concept",
+      "Tailwind imperative-clarity: 'Use:' marker in §1 and 'Add a top-of-doc ToC when...' in §3 give actionable decision criteria",
+      "Linear voice: 'A reader has three seconds' opener uses present-tense reader-second-person grounding"
+    ],
+    "avoid_precedents_avoided": [
+      "Marketing-copy excess: zero adjective-stacking; every claim is specific (e.g., '> 15 h2 sections' as threshold, not 'large repositories')",
+      "Categorical-hierarchy-only: §2 persona-led structural pattern uses functional sequence (elevator → problem → personas → solution → reference) not abstract category trees",
+      "IA-fragmentation: 5 sections + cross-references; no orphaned sub-sub-sub-sections; clarity-checklist applied at Step-6",
+      "Agent-onboarding-mixed-with-human-onboarding: this guide is human-author-facing; references writing-guidelines.mdx (human) + visual-identity-v2.mdx (human) only; agent protocol lives in CLAUDE.md/AGENTS.md which this guide does not duplicate"
+    ]
+  },
+
+  "step_5_re_capture": {
+    "post_change_inventory": {
+      "file_path": "aDNA.aDNA/.github/README_STYLE_GUIDE.md",
+      "total_lines": 84,
+      "h2_section_count": 5,
+      "cross_reference_link_count": 4,
+      "absolute_line_target_band_pass": true,
+      "doc_authoring_sub_shape_canonical_instance_count": 3
+    }
+  },
+
+  "step_6_validate": {
+    "five_lens_conciseness_pass": {
+      "lens_1_word_count_outliers": "PASS — no paragraph exceeds 80 words; longest is §1 paragraph below the table (~50 words)",
+      "lens_2_top_outlier_anti_bloat_ux_writer_dual_pass": "PASS — applied at authoring time; opener tightened from 'A reader will give you about three seconds before deciding' → 'A reader has three seconds before they decide'",
+      "lens_3_glossary_tightening": "N/A — no glossary entries referenced",
+      "lens_4_clarity_checklist_paragraph_scan": "PASS — each paragraph passes (i) noun-strong opener, (ii) one idea per sentence, (iii) imperative-or-declarative voice, (iv) no marketing words, (v) no leading 'In order to' constructions",
+      "lens_5_reference_collection_scan": "PASS — 4 cross-references validated (writing-guidelines.mdx + visual-identity-v2.mdx + m51_cross_target_synthesis.md + aar_decadal_d11_visual_identity.md); relative paths from .github/ resolve to ../site/src/content/reference/ + ../how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/"
+    },
+    "continuous_discipline_overlay_at_step_6": "PASS — 5-lens applied as continuous overlay during authoring; post-graduated skill_continuous_discipline_overlay_at_step_6 at 16/3 → 17/3 (5.67× margin)",
+    "astro_build_clean": "N/A for cycle 128 — .github/ files are not in Astro build content tree; no rebuild needed",
+    "link_integrity_check": {
+      "cross_references_checked": 4,
+      "cross_references_passing": 4,
+      "broken_links": []
+    }
+  },
+
+  "step_7_record_iii_result": {
+    "file_path": "aDNA.aDNA/what/measurement/iii_results/2026-06/cycle_128_d14_readme_style_guide.json",
+    "schema_conformance": "ADR-025 + ADR-026 + M5.5 AC #6 (content_class_declaration with new-artifact bounded-by-absolute-target-band variant)",
+    "cycle_outcome_summary": "Cycle 128 authors NEW .github/README_STYLE_GUIDE.md (84 lines; within 80-120 band per mission spec line 93). 3rd canonical instance of doc-authoring sub-shape (after D11 cycle 109 visual-identity-v2.mdx + D12 cycle 111 writing-guidelines.mdx pre-S1 substrate). Codifies content-class taxonomy (5 classes × reduction-ceiling rows) + persona-led structural pattern (5-step sequence) + scan-affordance ToC discipline (cycle-127-canonical) + 5-lens conciseness pass for README-class + cross-references to 4 substrate artifacts. 3/3 personas (UX Writer + IA + OSS Maintainer) score 4.75-5.0/5.0; aggregate 4.83. Astro build N/A (.github/ outside content tree). Image-gen $0.00; cumulative v8 P5 ledger UNCHANGED at $1.72 of $50 (3.4%). 8th canonical D14 cycle JSON."
+  },
+
+  "carry_forward_signals": {
+    "seeds_advanced": [
+      "skill_doc_authoring_with_live_examples (Phase 5 NEW SEED 1/3 at cycle 109; advances to 2/3 at cycle 128; doc-authoring at cycle 128 references cycle-127 README ToC as live example) — 1/3 → 2/3"
+    ],
+    "seeds_new_at_cycle_128": [
+      "skill_companion_doc_framing_for_layered_discipline: NEW SEED at 1/3 (when a new doc-authoring artifact layers domain-specific discipline atop a general reference doc, open with 'Companion to [general doc]' framing that names the discipline graph — general + visual + this; cycle 128 1st canonical instance)",
+      "skill_reduction_ceiling_taxonomy_table: NEW SEED at 1/3 (codify content-class × reduction-ceiling × rationale as 5-row decision table; surface in a maintenance-bounded doc that future cycles cite as authority; cycle 128 1st canonical instance)",
+      "skill_three_second_reader_opener_for_first_contact_meta_doc: NEW SEED at 1/3 (when authoring a meta-doc about first-contact surfaces, open with a 3-second-rule paragraph that demonstrates the discipline being documented; cycle 128 1st canonical instance — META: the style guide itself opens with the framing it teaches)"
+    ],
+    "post_graduation_reinforcements": [
+      "skill_continuous_discipline_overlay_at_step_6: 16/3 → 17/3 at cycle 128 (5.67× margin)",
+      "skill_implementation_class_decadal_cycle_authoring: 17/3 → 18/3 at cycle 128 (6.0× margin)",
+      "skill_design_spec_authoring: 30+/3+ → 31+/3+ at cycle 128 (the README style guide IS a design spec for first-contact prose discipline)",
+      "skill_content_class_declaration_per_cycle: GRADUATED reinforced — cycle 128 8th canonical instance with new-artifact-bounded-by-absolute-target-band variant"
+    ],
+    "next_cycle_carries": [
+      "Cycle 129 will be cross-vault README pattern upstream-promotion idea file (NEW how/backlog/idea_upstream_readme_first_contact_pattern.md; idea_upstream_ prefix per skill_upstream_contribution.md; describes content-class taxonomy + persona-led pattern as generalizable across 19+ ecosystem vaults; flags lattice-labs + latlab + select forge wrappers as Phase-6 propagation candidates)"
+    ]
+  }
+}
