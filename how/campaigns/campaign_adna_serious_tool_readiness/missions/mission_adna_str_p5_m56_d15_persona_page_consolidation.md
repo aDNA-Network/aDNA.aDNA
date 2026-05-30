@@ -13,7 +13,7 @@ opened_session: session_stanley_20260530T043600Z_v8_m56_s1
 closed_at:
 closed_session:
 s1_session: session_stanley_20260530T043600Z_v8_m56_s1  # cycles 131-132 complete (b0ef7be + a13adaa)
-s2_session:  # cycles 133-137 (4 migrations + shared-utility sweep)
+s2_session: session_stanley_20260530T052831Z_v8_m56_s2  # cycles 133-137 complete (22d6fdd + 8ecaadd + 0231619 + b64c746 + 8e21d22)
 s3_session:  # cycles 138-140 (visual pass + verify + close)
 estimated_sessions: 3
 actual_sessions:
@@ -153,15 +153,15 @@ D15 consolidates the **5 role-landing site pages** — `educators`, `researchers
 |-------|-------|---------------|--------|---------|------------|----------------------|-----------|-------|
 | 131 | Audit 5 pages + data modules; design `<PersonaPage>` API | nav/planning | completed | S1 | b0ef7be | n/a (audit) | cycle_131_d15_persona_page_audit.json | 538 ln total; target = 5× jsonLD + 5× byte-identical .lede; API designed |
 | 132 | Build `<PersonaPage>` + migrate enterprise (reference, parity proof) | new-artifact + adopter-conversion | completed | S1 | a13adaa | 135 → 121 (+57 component) | cycle_132_d15_personapage_component_enterprise.json | build clean 155p; lede CID-matched (inlined); jsonLD byte-for-byte; eval-table local |
-| 133 | Migrate educators | adopter-conversion | pending | S2 | tbd | 75 → ? | cycle_133_d15_educators_migrate.json | |
-| 134 | Migrate researchers | adopter-conversion | pending | S2 | tbd | 89 → ? | cycle_134_d15_researchers_migrate.json | |
-| 135 | Migrate startup-first-hour | adopter-conversion | pending | S2 | tbd | 123 → ? | cycle_135_d15_startup_migrate.json | |
-| 136 | Migrate compliance | adopter-conversion | pending | S2 | tbd | 116 → ? | cycle_136_d15_compliance_migrate.json | |
-| 137 | Shared-utility + cross-link/SEO-parity sweep | canonical | pending | S2 | tbd | tally | cycle_137_d15_shared_utility_sweep.json | reconcile remaining repeats |
+| 133 | Migrate educators | adopter-conversion | completed | S2 | 22d6fdd | 75 → 59 | cycle_133_d15_educators_migrate.json | build clean 155p; **jsonLDDescription override** (drops trailing " for instructors"); lede CID-matched; 6 H2 intact |
+| 134 | Migrate researchers | adopter-conversion | completed | S2 | 8ecaadd | 89 → 72 | cycle_134_d15_researchers_migrate.json | no override (desc byte-identical) — contrast case; 5 H2 intact |
+| 135 | Migrate startup-first-hour | adopter-conversion | completed | S2 | 0231619 | 123 → 106 | cycle_135_d15_startup_migrate.json | no override; longest page (9 H2) holds in thin wrapper |
+| 136 | Migrate compliance | adopter-conversion | completed | S2 | b64c746 | 116 → 99 | cycle_136_d15_compliance_migrate.json | no override; inline /enterprise link survives named slot; 7 H2 intact |
+| 137 | Shared-utility + cross-link/SEO-parity sweep | canonical | completed | S2 | 8e21d22 | 538 → 457 (-15.1%) | cycle_137_d15_shared_utility_sweep.json | evaluation-only; override matrix 2 (educators+enterprise) / 3 none; nothing else crosses extraction bar; +60-ln component |
 | 138 | Consistent visual-language pass (all 5) | canonical | pending | S3 | tbd | n/a | cycle_138_d15_visual_language_pass.json | typography/spacing rhythm unified |
 | 139 | Build verify + line tally + dead-CSS cleanup | reference | pending | S3 | tbd | tally | cycle_139_d15_verify_cleanup.json | render spot-check |
 | 140 | Decadal close — lightweight AAR + close cascade | governance | pending | S3 | tbd | n/a | cycle_140_d15_decadal_close.json | non-RLP; 5-line AAR |
-| **Total** | | | | | | **538 → tbd** | | 5 pages + 1 new component |
+| **Total (thru S2)** | | | | | | **538 → 457** (5 pages, -81/-15.1%) + 60-ln component | | 5/5 pages migrated; jsonLD + .lede duplication eliminated; build steady 155p; S3 138-140 remain |
 
 ## Image-Gen Budget Tracker
 
