@@ -3,10 +3,12 @@ type: campaign
 campaign_id: campaign_lattice_home_pattern
 created: 2026-05-29
 updated: 2026-05-29
-status: active
+status: completed
 persona: rosetta
 opens_at: 2026-05-29T05:20:55Z
 opened_session: session_stanley_20260529T052055Z_lhp_m1_s1
+closed_at: 2026-05-30T01:30:00Z
+closed_session: session_stanley_20260530T005905Z_lhp_m3_s1
 parent_campaign: null
 side_campaign_of: campaign_adna_serious_tool_readiness  # detour between M5.5 close + M5.6 entry
 detour_authorization: "Operator-authorized 2026-05-29 at plan-approval `please-read-the-claude-md-prancy-badger.md` after AskUserQuestion confirming 3-mission side-campaign scope + Mission 2 actually installs splash in aDNA.aDNA. Mainline campaign_adna_serious_tool_readiness HOLDS at M5.5 close until this side campaign closes and Next Session Prompt → M5.6 D15 fires."
@@ -38,9 +40,9 @@ tags: [campaign, side_campaign, lattice_home_pattern, splash_pattern, cmux_lift,
 |---|---|---|---|---|
 | **M1** Pattern lift + skill + template + upstream-promotion idea | planning | 1-2 | 4 files (`pattern_*` + `skill_*` + `template_*` + `idea_upstream_*`) — **completed 2026-05-29T05:40Z; 4/4 LIVE; estimated_sessions met at 1; 475 lines / ~3.5-4 kT cumulative** | Codify CMux splash as a vault-portable aDNA primitive ✓ |
 | **M2** aDNA.aDNA in-vault install | implementation | 1 | 6 substrate files + mission spec (`how/configs/bin/lattice` + `home/home_template.md` + `conf.d/55-lattice-home.zsh` + `install.sh` + `uninstall.sh` + runbook) — **completed 2026-05-29T12:58Z; 6/6 LIVE; 10/10 smoke-verify PASS; ~715 lines / ~8 kT cumulative; canonical-instance #2 LIVE; 3 NEW SEED adaptations surfaced (per-vault PWD binding + realpath canonicalization + dirname+git-config identity probe) for skill v2 at M3** | Prove the lift; make aDNA.aDNA canonical-instance #2 of #2 (CMux is #1) ✓ |
-| **M3** Campaign-lifecycle splash variants + side-campaign close | planning | 1 | 3 files (`skill_campaign_sitrep_splash.md` + 2 template variants) + side-campaign close cascade | Extend splash to campaign-open + campaign-close moments; route Next Session Prompt → M5.6 D15 |
+| **M3** Campaign-lifecycle splash variants + side-campaign close | planning | 1 | 3 files (`skill_campaign_sitrep_splash.md` + `template_campaign_open_splash.md` + `template_campaign_close_splash.md`) + `skill_lattice_home_install` v2 amendment (3 NEW SEEDs) + side-campaign close cascade — **completed 2026-05-30T01:30Z; 4/4 LIVE; ~510 lines / ~10–11 kT cumulative; forward-link `[[skill_campaign_sitrep_splash]]` resolved; close-template self-references the side-campaign's own close** | Extend splash to campaign-open + campaign-close moments; route Next Session Prompt → M5.6 D15 ✓ |
 
-**Total NEW files**: 12 (4 + 5 + 3). **Modified files**: only the side-campaign master / mission specs / STATE.md (own governance) + a few `AGENTS.md` index updates at fresh entries. **Touched governance files**: STATE.md (Op 3 archive-on-close 38th canonical at side-campaign close). **Token-add budget**: ≤ 6 kT cumulative across 12 NEW files (audited at side-campaign close per plan §Verification §Bloat audit).
+**Total NEW files**: 13 (4 + 6 + 3) — *reconciled from the stale "12 (4 + 5 + 3)" at M3 close: M2 delivered 6 substrate files (bin/lattice, install.sh, uninstall.sh, home_template.md, conf.d hook, runbook), not 5; mission specs are not counted per the M1 deliverable convention*. **Modified files**: the side-campaign master / mission specs / STATE.md (own governance) + the M3 `skill_lattice_home_install` v2 amendment (this-campaign edit). Per M1 precedent, **no `AGENTS.md` index rows** were added. **Touched governance files**: STATE.md (Op 3 archive-on-close 39th canonical at side-campaign close). **Token-add budget**: ≈ 10–11 kT cumulative across the 13 NEW files — marginally over the ≤ 10 kT hard cap (≤ 6 kT was the target; M2's implementation-class substrate drove the overage); documented-rationale escape per [[mission_lhp_m3_lifecycle_variants_and_close|M3 close notes §Bloat audit]].
 
 ## Hard constraints (per plan §Hard constraints; bloat mitigation per explicit operator request)
 
@@ -69,23 +71,32 @@ This campaign inherits project-level Standing Orders 1-10 from `aDNA.aDNA/CLAUDE
 |---|---|---|---|
 | M1 | `mission_lhp_m1_pattern_lift.md` | **completed 2026-05-29T05:40Z** | 4/4 deliverables LIVE; M2 UNBLOCKED |
 | M2 | `mission_lhp_m2_adna_vault_install.md` | **completed 2026-05-29T12:58Z** | 6/6 substrate LIVE + 10/10 smoke-verify PASS; M3 UNBLOCKED |
-| M3 | `mission_lhp_m3_lifecycle_variants_and_close.md` | planned | Closes side campaign + Next Session Prompt → M5.6 D15 |
+| M3 | `mission_lhp_m3_lifecycle_variants_and_close.md` | **completed 2026-05-30T01:30Z** | 4/4 deliverables LIVE; side campaign CLOSED; Next Session Prompt → M5.6 D15 |
 
 ## Exit gate
 
-**Side campaign closes when**:
-1. All 3 missions completed
-2. 12 NEW files LIVE + pushed to origin/main
-3. Bloat audit pass (≤ 10 kT cumulative; target ≤ 6 kT)
-4. Lightweight 5-line side-campaign AAR appended to this file
-5. STATE.md Op 3 archive-on-close 38th canonical instance applied
-6. Next Session Prompt → M5.6 D15 Persona Page Consolidation LIVE
-7. `git push origin main` clean
+**Side campaign closes when** (all discharged at M3 close 2026-05-30T01:30Z):
+1. ✅ All 3 missions completed (M1 05-29T05:40Z · M2 05-29T12:58Z · M3 05-30T01:30Z)
+2. ✅ 13 NEW files LIVE + pushed to origin/main *(reconciled from stale "12")*
+3. ✅ Bloat audit recorded — ≈10–11 kT cumulative; marginally over the ≤10 kT cap; documented-rationale escape
+4. ✅ Lightweight 5-line side-campaign AAR appended (below)
+5. ✅ STATE.md Op 3 archive-on-close **39th** canonical instance applied *(reconciled from stale "38th"; M2 was 38th)*
+6. ✅ Next Session Prompt → M5.6 D15 Persona Page Consolidation LIVE
+7. ✅ `git push origin main` clean
+
+## Side-campaign AAR (Lightweight 5-line; Standing Order 5)
+
+1. **Worked**: a 3-mission side campaign codified the CMux splash as a vault-portable aDNA primitive end-to-end — pattern + install skill + render template (M1), live in-vault install with 10/10 smoke-verify (M2), and a three-variant lifecycle family (cold-start + campaign-open + campaign-close) with a sibling skill (M3) — all inside the M5.5→M5.6 interstitial without touching the frozen mainline. The vault demonstrated its own primitive on its own closing moment (M3 close splash self-references this campaign).
+2. **Didn't**: did not wire CLI verbs for the lifecycle variants (author-only, deferred like M1 deferred install to M2); did not propagate to sibling vaults (Phase-6 / upstream-promotion concern); did not file the upstream PR (operator-discretionary per M1 D4).
+3. **Finding**: aDNA-class vaults (bare `MANIFEST.md` identity) need 3 adaptations beyond the CMux-class 4-substitution protocol — surfaced at M2, folded into `skill_lattice_home_install` v2 at M3. SO-LH-2 (splash augments AAR) is best enforced *structurally* (a mandatory AAR-pointer block in the close template), not by exhortation.
+4. **Change**: the upstream-promotion idea-file should describe a *three-variant* render family sharing one template vocabulary + the CMux-class vs aDNA-class identity-class fork — fold at PR time.
+5. **Follow-up**: side campaign CLOSED; mainline `campaign_adna_serious_tool_readiness` resumes at **M5.6 D15 Persona Page Consolidation** per the Next Session Prompt. Open carries: path-coexistence SEED (`lattice-adna` vault-prefix) for Phase-6 multi-vault propagation; the v8.0+ upstream PR for the lattice-home pattern family.
 
 ## See also
 
 - [[mission_lhp_m1_pattern_lift|M1 mission spec]]
 - [[mission_lhp_m2_adna_vault_install|M2 mission spec]] (planned)
-- [[mission_lhp_m3_lifecycle_variants_and_close|M3 mission spec]] (planned)
-- [[campaign_adna_serious_tool_readiness|Mainline campaign]] (held at M5.5 close until this side campaign closes)
+- [[mission_lhp_m3_lifecycle_variants_and_close|M3 mission spec]] (completed)
+- [[skill_campaign_sitrep_splash|M3 D1 lifecycle skill]] · [[template_campaign_open_splash|M3 D2 open template]] · [[template_campaign_close_splash|M3 D3 close template]]
+- [[campaign_adna_serious_tool_readiness|Mainline campaign]] (resumes at M5.6 D15 now that this side campaign has closed)
 - [[aar_decadal_d14_readme_first_contact|D14 decadal AAR]] (immediate predecessor)

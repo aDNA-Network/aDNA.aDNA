@@ -5,8 +5,9 @@ category: infrastructure
 created: 2026-05-29
 updated: 2026-05-29
 status: active
+skill_version: 2   # v2 at campaign_lattice_home_pattern M3: vault-identity-class conditional + 5th substitution row + 3 NEW SEEDs from M2 close
 last_edited_by: agent_stanley
-token_estimate: ~1800
+token_estimate: ~2100
 trigger: "User wants their aDNA vault to ship a terminal cold-start splash — a 5-block ASCII status surface rendered when an interactive shell opens inside the vault graph root. Also triggers when migrating from a bespoke shell startup script to the canonical [[pattern_lattice_home]] pipeline."
 requirements:
   tools: [bash, awk, git, ln, sed]
@@ -56,8 +57,41 @@ Apply 4 parameter substitutions to the lifted substrate before writing into the 
 | Graph-root stub | `what/cmux/graph/node.adna.yaml` | `<IDENTITY_STUB>` | `MANIFEST.md` (aDNA.aDNA), `LatticeHome.aDNA/MANIFEST.md` (LatticeHome) |
 | Mission grep glob | `how/campaigns/*/missions/*.md` | `<MISSION_GLOB>` | same (aDNA.aDNA; pattern stable across vaults) |
 | Vault badge | `🧬 aDNA node` | `<VAULT_BADGE>` | `🧬 aDNA / Rosetta` (aDNA.aDNA), `🌙 LatticeHome / Hestia` (LatticeHome) |
+| Identity probe *(v2)* | (read from `node.adna.yaml`) | `<IDENTITY_PROBE>` | `basename "$vault"` for NODE_ID + `git config user.name` for OPERATOR (aDNA-class) |
 
 The parameterization protocol is the **single non-trivial step** in the skill. Use the [[template_lattice_home_render]] canonical template as the substitution starter — do NOT verbatim-copy the CMux template (drifts diverge if both are touched).
+
+#### Step 2a — Vault-identity class (v2; added at campaign_lattice_home_pattern M3 from the M2 install findings)
+
+Before substituting, classify the target vault by **how its root identity is encoded** — this determines whether the 4 substitutions above suffice or whether 3 additional adaptations apply:
+
+| Identity class | Test | Substitutions |
+|---|---|---|
+| **CMux-class** | Vault carries a *unique* identity stub at a known path (e.g. `what/cmux/graph/node.adna.yaml`) that exists in this vault and no other | The 4 base substitutions apply as-is; identity probe reads named fields from the stub |
+| **aDNA-class** | Vault root identity is the *bare* `MANIFEST.md` — present in **every** aDNA vault (including `.adna/` + siblings) and carrying no `node_id`/`operator` fields | The 4 base substitutions **plus** the 3 adaptations below + the 5th `<IDENTITY_PROBE>` row |
+
+For an **aDNA-class** vault, apply these 3 adaptations (surfaced at aDNA.aDNA install, canonical-instance #2 — see [[mission_lhp_m2_adna_vault_install|M2 close notes §Drift-audit]]):
+
+1. **Per-vault PWD binding** — gate the graph-root walk to the binary's *own* vault root, not "any ancestor with a `MANIFEST.md`":
+   ```bash
+   case "$pwd_canon" in "$vault"|"$vault"/*) ;; *) return 1 ;; esac
+   ```
+   Without this, a vault whose `lattice` is on `PATH` (active mode) would render its badge over a *sibling* vault's mission data, because `MANIFEST.md` is universal. (Not needed for CMux-class — the unique stub is the binding.)
+
+2. **PWD canonicalization via `realpath`** — substitute `realpath` for `cd "$PWD" && pwd -P`:
+   ```bash
+   pwd_canon="$(realpath "$PWD" 2>/dev/null || echo "$PWD")"
+   ```
+   On BSD/macOS, `cd "$PWD" && pwd -P` follows a lowercase symlink target (e.g. `adna.adna` → `aDNA.aDNA`) and masks the vault-root match. `realpath` canonicalizes both sides consistently.
+
+3. **dirname + git-config identity probe** — derive identity without a stub:
+   ```bash
+   NODE_ID="$(basename "$vault")"
+   OPERATOR="$(git -C "$vault" config user.name 2>/dev/null || echo '?')"
+   ```
+   `MANIFEST.md` carries no `node_id`/`operator` frontmatter, so do not parse it for identity; use the directory name + git config with a `?` fallback. This is the `<IDENTITY_PROBE>` 5th substitution row above.
+
+> These 3 adaptations are the M2 NEW SEEDs. They are **conditional on aDNA-class** — a CMux-class vault with a unique identity stub does not need them. Record which class the target is in the vault's `STATE.md` drift notes so a future drift audit (step 6) compares like-for-like.
 
 ### Step 3 — Substrate
 
@@ -174,7 +208,9 @@ Operator runs install per vault adoption choice. Splash renders Hestia-flavored 
 - [[pattern_lattice_home]] — the pattern this skill installs
 - [[template_lattice_home_render]] — the canonical template for the parameterization in step 2
 - [[idea_upstream_lattice_home_pattern]] — upstream-promotion candidate for the skill itself
-- [[skill_campaign_sitrep_splash]] — sibling skill for lifecycle-variant splash render (Mission 3)
+- [[skill_campaign_sitrep_splash]] — sibling skill for lifecycle-variant splash render (Mission 3; LIVE)
+- [[template_campaign_open_splash]] — campaign-open lifecycle template (Mission 3 D2)
+- [[template_campaign_close_splash]] — campaign-close lifecycle template (Mission 3 D3)
 - [[skill_upstream_contribution]] — parent workflow for filing upstream-promotion ideas
 - [[CMux.aDNA/how/campaigns/campaign_cmux_execution/missions/ex_02_overlay_bundle_install|CMux ex_02]] — graph-local install discipline precedent
 - [[CMux.aDNA/how/campaigns/campaign_cmux_execution/missions/ex_04_home_page|CMux ex_04]] — original splash execution mission
