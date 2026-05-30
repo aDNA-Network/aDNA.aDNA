@@ -2,11 +2,11 @@
 type: skill
 skill_type: process
 created: 2026-05-21
-updated: 2026-05-26
+updated: 2026-05-29
 status: active
 category: operations
 trigger: agent wrote an ISS gate to <vault>/how/gates/ and the operator wants it opened + positioned for review
-last_edited_by: agent_siteforge_native
+last_edited_by: agent_stanley
 tags: [skill, iss, operator_io, window_positioning, operation_loom, remotecontrol_eventual_home, canonical]
 canonical_lifted_at: mission_p5_1_canonical_skill_lift
 canonical_lifted_on: 2026-05-26
@@ -27,9 +27,16 @@ Skip when: gate not yet ready; operator prefers to open manually; multi-display 
 
 Tooling verified 2026-05-21 on Darwin 25.5.0:
 - Built-in: `osascript` — only window-positioning tool installed (no yabai/Rectangle/Hammerspoon/displayplacer).
-- Browsers present: Safari (default), Google Chrome.
+- Browsers present: Google Chrome (default for ISS gates), Safari.
 
-Pattern (Safari, right-half default — substitute `"Google Chrome"` for the Chrome variant):
+**Chrome is the default for ISS gates.** Safari blocks `file://` pages from loading image
+subresources via `../` upward directory traversal — which the `image_grid_variant` template uses
+(`../../what/assets/...png` from `how/gates/`), so images render **broken** in Safari unless the
+operator enables Develop → "Disable Local File Restrictions". Chrome treats all `file://` as one
+opaque origin and loads them. The open command also differs by browser: **Chrome uses `open location
+"file://…"`**; Safari uses `open POSIX file "…"`. (Confirmed 2026-05-29, ScienceStanley M12 Pe gate.)
+
+Pattern (Google Chrome, right-half default — see Browser variants below for Safari/Arc):
 
 ```bash
 osascript <<'APPLESCRIPT'
@@ -40,10 +47,10 @@ set screenW to item 3 of b
 set screenH to item 4 of b
 set halfW to screenW / 2
 
-tell application "Safari"
+tell application "Google Chrome"
   activate
-  open POSIX file "<absolute-path-to-gate.html>"
-  delay 0.4
+  open location "file://<absolute-path-to-gate.html>"
+  delay 0.6
   set bounds of front window to {halfW, 0, screenW, screenH}
 end tell
 APPLESCRIPT
@@ -70,13 +77,13 @@ The generated gate HTML embeds the receiver URL on `<body data-receiver-url="...
 
 If the receiver is restarted on a different port after gate generation, regenerate the gate (or set `receiver_url` explicitly in `data.json`).
 
-## Browser variants (substitute the `tell application` block)
+## Browser variants (substitute the `tell application` block + open command)
 
-| Browser | Block target |
-|---|---|
-| Safari (default) | `tell application "Safari"` |
-| Chrome | `tell application "Google Chrome"` |
-| Arc | `tell application "Arc"` |
+| Browser | Block target | Open command |
+|---|---|---|
+| Google Chrome (default) | `tell application "Google Chrome"` | `open location "file://<abs-path>"` |
+| Safari | `tell application "Safari"` | `open POSIX file "<abs-path>"` — ⚠ blocks `../` `file://` image subresources (image gates render broken unless Develop → "Disable Local File Restrictions") |
+| Arc | `tell application "Arc"` | `open location "file://<abs-path>"` |
 
 ## Limitations
 
