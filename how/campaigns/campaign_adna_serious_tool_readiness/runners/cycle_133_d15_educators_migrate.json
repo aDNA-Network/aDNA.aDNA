@@ -1,0 +1,103 @@
+{
+  "cycle_id": "cycle_133_d15_educators_migrate",
+  "decadal": "D15",
+  "decadal_title": "Persona Page Consolidation",
+  "cycle_number": 133,
+  "cycle_in_decadal": 3,
+  "mission": "mission_adna_str_p5_m56_d15_persona_page_consolidation",
+  "session": "session_stanley_20260530T052831Z_v8_m56_s2",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-30T05:30:00Z",
+  "closed_at": "2026-05-30T05:33:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "content_class_declaration": "adopter-conversion (educators role page migrated to <PersonaPage>)",
+  "image_gen_log_refs": [],
+  "step_1_capture_state": {
+    "target_surface": "site/src/pages/educators/index.astro",
+    "method": "migrate onto <PersonaPage> per the cycle-132 enterprise pattern; npm run build; inspect built HTML for lede/SEO/IA parity",
+    "pre_change_inventory": {
+      "lines": 75,
+      "duplication": "imports DocumentationLayout + buildTechArticleJsonLD; local jsonLD const; <style> with only the shared .lede rule (no single-use styles)",
+      "jsonld_override_needed": "jsonLDDescription — page jsonLD description omits the trailing ' for instructors' present in the layout description (byte-for-byte verified)"
+    }
+  },
+  "step_2_persona_qa": {
+    "personas_drawn": ["information_architect", "adopter_educator", "adopter_solo_developer"],
+    "personas_drawn_count": 3,
+    "method": "agent-simulated 3-persona Q&A on the migration",
+    "writing_guidelines_clarity_checklist_applied": true,
+    "qa_protocol_per_m50_visual_inspection_methodology_section_2": {
+      "q1_parity": {
+        "persona": "information_architect",
+        "question": "Same 6 sections, same lede, same SEO after migration?",
+        "answer": "Yes — 6 H2 sections preserved (week-1/2/3 + assessment + facilitation-notes + next-steps); lede text + style preserved (.lede[data-astro-cid-h6dpntfm] inlined rule CID-matches the <p class='lede' data-astro-cid-h6dpntfm> element); meta+og description keep '...for instructors.' while jsonLD keeps the short '...guidance.' via the jsonLDDescription override — byte-for-byte vs pre-change."
+      },
+      "q2_voice": {
+        "persona": "adopter_educator",
+        "question": "Does the teaching-kit lede keep its voice (the 'structure is the lesson' close, the <em>is</em>)?",
+        "answer": "Yes — lede markup moved verbatim into <Fragment slot='lede'>, inline <em> preserved; the syllabus framing and instructor-audience callout are untouched."
+      },
+      "q3_maintainability": {
+        "persona": "adopter_solo_developer",
+        "question": "Net lines removed?",
+        "answer": "75 -> 59 (-16): the jsonLD import + const and the 6-line .lede <style> block are gone; the page now declares only its title/description/override + body."
+      }
+    }
+  },
+  "step_3_decide": {
+    "change_selected": "Migrate educators onto <PersonaPage>: drop DocumentationLayout+buildTechArticleJsonLD imports + local jsonLD const; <DocumentationLayout> -> <PersonaPage> with jsonLDDescription override; lede -> named slot; delete the .lede <style> block.",
+    "content_class": "adopter-conversion",
+    "ceiling_declared": "structural DRY; -16 lines (within adopter-conversion expectations; page already lean post-D12, no prose cut)"
+  },
+  "step_4_implement": {
+    "files_modified": [
+      "site/src/pages/educators/index.astro (75 -> 59 lines)"
+    ],
+    "implementation_notes": "Imports: removed DocumentationLayout + buildTechArticleJsonLD, added PersonaPage; kept CardGrid + educators data import. Removed local jsonLD const. <DocumentationLayout title/description jsonLD={jsonLD}> -> <PersonaPage title/description jsonLDDescription=...> (override because jsonLD description differs from layout description by the trailing ' for instructors'). Lede <p class='lede'>...</p> -> <Fragment slot='lede'>...</Fragment> (inline <em> preserved). Removed the entire <style> block (only the shared .lede rule, now owned by the component).",
+    "lift_precedents_honored": ["thin-wrapper-over-existing-layout", "typed-data-module imports unchanged", "seo-parity-override-props (jsonLDDescription)"],
+    "avoid_precedents_avoided": ["props-everything over-abstraction", "route/IA change", "jsonLD payload drift", "lede-via-default-slot (would lose scoped style)"]
+  },
+  "step_5_re_capture": {
+    "method": "npm run build + built-HTML inspection (dist/educators/index.html)",
+    "post_change_inventory": {
+      "build_exit": 0,
+      "pages_built": 155,
+      "build_time_s": 5.2,
+      "lede_element": "<p class=\"lede\" data-astro-cid-h6dpntfm>",
+      "lede_css_rule_inlined": ".lede[data-astro-cid-h6dpntfm]{font-size:var(--text-lg);line-height:1.6;color:var(--color-text);margin-bottom:var(--space-8)}",
+      "lede_selector_matches_element": true,
+      "meta_description_byte_for_byte": "A 3-week curriculum for teaching AI-augmented knowledge work — the 9 core tutorials in pedagogical order with week-by-week guidance for instructors. (meta + og:description; full text preserved)",
+      "jsonld_description_byte_for_byte": "A 3-week curriculum for teaching AI-augmented knowledge work — the 9 core tutorials in pedagogical order with week-by-week guidance. (preserved via jsonLDDescription override)",
+      "h2_sections": 6,
+      "techarticle_jsonld_present": true
+    }
+  },
+  "step_6_validate": {
+    "method": "5-lens continuous-discipline overlay (markup-only migration; lede prose preserved verbatim)",
+    "five_lens": {
+      "lens_1_word_count_outliers": "n/a — no page prose edited (markup-only migration; lede text preserved verbatim)",
+      "lens_2_top_outlier_pass": "n/a",
+      "lens_3_glossary_tightening": "n/a",
+      "lens_4_clarity_checklist": "pass — lede unchanged; one concept per prop on the wrapper",
+      "lens_5_reference_collection_scan": "n/a"
+    },
+    "build_clean": "PASS — exit 0, 155 pages, no broken imports / collection-schema errors",
+    "parity_verdict": "PASS — section/IA/SEO/style parity confirmed in built HTML; lede scoped-style CID-matched; jsonLD short description + meta long description both byte-for-byte vs pre-change"
+  },
+  "step_7_record": {
+    "iii_result": "Cycle 133 complete. educators migrated to <PersonaPage> (75 -> 59, -16). Build clean (155 pages, 5.2s). Lede styled via named slot (inlined scoped rule CID-matched); jsonLDDescription override preserves the short SEO description byte-for-byte while meta/og keep the full text; 6 H2 sections + all in-content links intact. First of the 4 S2 migrations; mechanism from the enterprise parity proof holds.",
+    "lift_avoid_routing": {
+      "lift_honored": ["thin-wrapper-over-existing-layout", "seo-parity-override-props", "typed-data-module preserved"],
+      "avoid_avoided": ["over-abstraction", "route/SEO drift", "lede-via-default-slot"]
+    },
+    "content_class_declaration": "adopter-conversion",
+    "self_reference_so8": "educators is the second of five role pages collapsing onto the shared primitive — the vault practicing the module->composition DRY it teaches.",
+    "seeds": [
+      "skill_thin_wrapper_component_extraction (3/3) — GRADUATION CANDIDATE: confirmed on a 3rd page (enterprise 132 + educators 133 + component build), thin-wrapper migration is reproducible",
+      "skill_seo_parity_override_props (3/3) — GRADUATION CANDIDATE: jsonLDDescription override preserved educators SEO byte-for-byte (2nd override-needing page after enterprise)",
+      "skill_astro_scoped_style_slot_constraint (3/3) — GRADUATION CANDIDATE: named-slot lede CID-matches the inlined scoped .lede rule on a 3rd page"
+    ]
+  }
+}

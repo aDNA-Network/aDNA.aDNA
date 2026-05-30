@@ -1,28 +1,21 @@
 ---
-import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import PersonaPage from '../../components/sections/PersonaPage.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
-import { buildTechArticleJsonLD } from '../../utils/seo';
 import { week1Cards, week2Cards, week3Cards, followUpCards } from '../../data/educators';
-
-const jsonLD = buildTechArticleJsonLD({
-  title: 'aDNA Teaching Kit',
-  description: 'A 3-week curriculum for teaching AI-augmented knowledge work — the 9 core tutorials in pedagogical order with week-by-week guidance.',
-  url: Astro.url.href,
-});
 ---
 
-<DocumentationLayout
+<PersonaPage
   title="aDNA Teaching Kit"
   description="A 3-week curriculum for teaching AI-augmented knowledge work — the 9 core tutorials in pedagogical order with week-by-week guidance for instructors."
-  jsonLD={jsonLD}
+  jsonLDDescription="A 3-week curriculum for teaching AI-augmented knowledge work — the 9 core tutorials in pedagogical order with week-by-week guidance."
 >
-  <p class="lede">
+  <Fragment slot="lede">
     A ready-to-import syllabus for teaching agentic literacy. Nine tutorials,
     three weeks, one coherent arc — from navigating your first vault to
     federating work across instances. Built for university instructors,
     bootcamp leads, and workshop facilitators. The structure <em>is</em>
     the lesson: students learn aDNA by building an aDNA vault.
-  </p>
+  </Fragment>
 
   <h2 id="week-1">Week 1 — Foundations</h2>
   <p>
@@ -63,13 +56,4 @@ const jsonLD = buildTechArticleJsonLD({
 
   <h2 id="next-steps">Next Steps</h2>
   <CardGrid cards={followUpCards} columns={2} />
-</DocumentationLayout>
-
-<style>
-  .lede {
-    font-size: var(--text-lg);
-    line-height: 1.6;
-    color: var(--color-text);
-    margin-bottom: var(--space-8);
-  }
-</style>
+</PersonaPage>
