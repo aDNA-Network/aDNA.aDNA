@@ -1,0 +1,102 @@
+{
+  "cycle_id": "cycle_135_d15_startup_migrate",
+  "decadal": "D15",
+  "decadal_title": "Persona Page Consolidation",
+  "cycle_number": 135,
+  "cycle_in_decadal": 5,
+  "mission": "mission_adna_str_p5_m56_d15_persona_page_consolidation",
+  "session": "session_stanley_20260530T052831Z_v8_m56_s2",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-30T05:38:00Z",
+  "closed_at": "2026-05-30T05:41:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "content_class_declaration": "adopter-conversion (startup-first-hour role page migrated to <PersonaPage>)",
+  "image_gen_log_refs": [],
+  "step_1_capture_state": {
+    "target_surface": "site/src/pages/startup-first-hour/index.astro",
+    "method": "migrate onto <PersonaPage>; npm run build; inspect built HTML for lede/SEO/IA parity",
+    "pre_change_inventory": {
+      "lines": 123,
+      "duplication": "imports DocumentationLayout + buildTechArticleJsonLD; local jsonLD const; <style> with only the shared .lede rule",
+      "jsonld_override_needed": "NONE — page jsonLD description byte-identical to layout description (verified)"
+    }
+  },
+  "step_2_persona_qa": {
+    "personas_drawn": ["information_architect", "adopter_solo_developer", "adopter_enterprise_architect"],
+    "personas_drawn_count": 3,
+    "method": "agent-simulated 3-persona Q&A on the migration",
+    "writing_guidelines_clarity_checklist_applied": true,
+    "qa_protocol_per_m50_visual_inspection_methodology_section_2": {
+      "q1_parity": {
+        "persona": "information_architect",
+        "question": "Same 9 sections (the longest page), same lede, same SEO?",
+        "answer": "Yes — all 9 H2 sections preserved (the-four-stages + stage-1..4 + end-of-hour + self-reference + hour-two + next-steps); lede CID-matched; jsonLD == meta description byte-for-byte (no override). The timeboxed step-list body (the page's distinctive shape) flows untouched through the default slot."
+      },
+      "q2_abstraction": {
+        "persona": "adopter_solo_developer",
+        "question": "Does the thin wrapper constrain the longest, most structured page?",
+        "answer": "No — the per-stage produced/checkpoint <ul> lists, the self-reference block, and the hour-two trajectory link all pass through the default slot; the component only owns the lede + jsonLD."
+      },
+      "q3_maintainability": {
+        "persona": "adopter_enterprise_architect",
+        "question": "Net lines removed; cross-links intact?",
+        "answer": "123 -> 106 (-17); the in-content links (first-claude-md / governance-files / knowledge-graph concept+tutorial links + the adopter-startup persona link) are body content, untouched."
+      }
+    }
+  },
+  "step_3_decide": {
+    "change_selected": "Migrate startup-first-hour onto <PersonaPage> with NO jsonLD override; lede -> named slot; delete the .lede <style> block.",
+    "content_class": "adopter-conversion",
+    "ceiling_declared": "structural DRY; -17 lines (no prose cut)"
+  },
+  "step_4_implement": {
+    "files_modified": [
+      "site/src/pages/startup-first-hour/index.astro (123 -> 106 lines)"
+    ],
+    "implementation_notes": "Imports: DocumentationLayout + buildTechArticleJsonLD removed, PersonaPage added; CardGrid + startup-first-hour data kept. Local jsonLD const removed. <DocumentationLayout ... jsonLD={jsonLD}> -> <PersonaPage title/description> (no override). Lede -> <Fragment slot='lede'>. <style> block (only .lede) removed.",
+    "lift_precedents_honored": ["thin-wrapper-over-existing-layout", "typed-data-module imports unchanged", "parity-holds-on-longest-page"],
+    "avoid_precedents_avoided": ["redundant SEO override", "route/IA change", "jsonLD payload drift", "lede-via-default-slot"]
+  },
+  "step_5_re_capture": {
+    "method": "npm run build + built-HTML inspection (dist/startup-first-hour/index.html)",
+    "post_change_inventory": {
+      "build_exit": 0,
+      "pages_built": 155,
+      "build_time_s": 5.16,
+      "lede_element": "<p class=\"lede\" data-astro-cid-h6dpntfm>",
+      "lede_selector_matches_element": true,
+      "meta_description_byte_for_byte": "A 60-minute timeboxed quickstart for startup CTOs: clone, point an agent at CLAUDE.md, seed STATE.md, and file the first ADR. Your AI agent is project-aware by the end of the hour.",
+      "jsonld_description_byte_for_byte": "A 60-minute timeboxed quickstart for startup CTOs: clone, point an agent at CLAUDE.md, seed STATE.md, and file the first ADR. Your AI agent is project-aware by the end of the hour. (equals meta; no override)",
+      "h2_sections": 9,
+      "techarticle_jsonld_present": true
+    }
+  },
+  "step_6_validate": {
+    "method": "5-lens continuous-discipline overlay (markup-only migration; lede prose preserved verbatim)",
+    "five_lens": {
+      "lens_1_word_count_outliers": "n/a — no page prose edited",
+      "lens_2_top_outlier_pass": "n/a",
+      "lens_3_glossary_tightening": "n/a",
+      "lens_4_clarity_checklist": "pass — lede unchanged; one concept per prop",
+      "lens_5_reference_collection_scan": "n/a"
+    },
+    "build_clean": "PASS — exit 0, 155 pages",
+    "parity_verdict": "PASS — 9-section/IA/SEO/style parity confirmed on the longest page; lede CID-matched; jsonLD == meta description byte-for-byte"
+  },
+  "step_7_record": {
+    "iii_result": "Cycle 135 complete. startup-first-hour migrated to <PersonaPage> (123 -> 106, -17). Build clean (155 pages, 5.16s). The thin wrapper holds on the longest/most-structured page (9 H2s, timeboxed step-list) without constraining it. No jsonLD override (descriptions byte-identical).",
+    "lift_avoid_routing": {
+      "lift_honored": ["thin-wrapper-over-existing-layout", "parity-holds-on-longest-page", "typed-data-module preserved"],
+      "avoid_avoided": ["redundant SEO override", "route/SEO drift", "lede-via-default-slot"]
+    },
+    "content_class_declaration": "adopter-conversion",
+    "self_reference_so8": "startup-first-hour is the fourth of five role pages folding onto the shared primitive; its own lede ('this vault ran this hour') already self-references — the migration keeps that intact.",
+    "seeds": [
+      "skill_thin_wrapper_component_extraction (post-graduation 5/3+) — reinforced on the longest page",
+      "skill_astro_scoped_style_slot_constraint (post-graduation 5/3+) — lede CID-matched again",
+      "skill_seo_parity_override_conditional_omission (2/3) — 2nd no-override page (researchers + startup-first-hour)"
+    ]
+  }
+}

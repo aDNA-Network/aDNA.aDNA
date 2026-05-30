@@ -1,28 +1,20 @@
 ---
-import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import PersonaPage from '../../components/sections/PersonaPage.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
-import { buildTechArticleJsonLD } from '../../utils/seo';
 import { stageCards, checkpointCards, followUpCards } from '../../data/startup-first-hour';
-
-const jsonLD = buildTechArticleJsonLD({
-  title: 'aDNA Startup First Hour',
-  description: 'A 60-minute timeboxed quickstart for startup CTOs: clone, point an agent at CLAUDE.md, seed STATE.md, and file the first ADR. Your AI agent is project-aware by the end of the hour.',
-  url: Astro.url.href,
-});
 ---
 
-<DocumentationLayout
+<PersonaPage
   title="aDNA Startup First Hour"
   description="A 60-minute timeboxed quickstart for startup CTOs: clone, point an agent at CLAUDE.md, seed STATE.md, and file the first ADR. Your AI agent is project-aware by the end of the hour."
-  jsonLD={jsonLD}
 >
-  <p class="lede">
+  <Fragment slot="lede">
     One hour, four stages, one project-aware AI agent. For startup CTOs and
     founding engineers on a 10–50 person team: ship weekly, hire monthly,
     and stop institutional knowledge from leaking into Slack threads. By
     the end you have CLAUDE.md, STATE.md, and one ADR — agent-addressable
     governance. Skim the stages, then run the clock.
-  </p>
+  </Fragment>
 
   <h2 id="the-four-stages">The four stages</h2>
   <p>
@@ -111,13 +103,4 @@ const jsonLD = buildTechArticleJsonLD({
 
   <h2 id="next-steps">Next Steps</h2>
   <CardGrid cards={followUpCards} columns={2} />
-</DocumentationLayout>
-
-<style>
-  .lede {
-    font-size: var(--text-lg);
-    line-height: 1.6;
-    color: var(--color-text);
-    margin-bottom: var(--space-8);
-  }
-</style>
+</PersonaPage>
