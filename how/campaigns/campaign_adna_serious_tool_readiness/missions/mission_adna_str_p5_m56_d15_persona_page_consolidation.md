@@ -7,16 +7,16 @@ mission_number: 5.6
 slug: d15_persona_page_consolidation
 created: 2026-05-30
 updated: 2026-05-30
-status: in_progress
+status: completed
 opens_at: 2026-05-30T04:36:00Z
 opened_session: session_stanley_20260530T043600Z_v8_m56_s1
-closed_at:
-closed_session:
+closed_at: 2026-05-30T22:40:00Z
+closed_session: session_stanley_20260530T222807Z_v8_m56_s3
 s1_session: session_stanley_20260530T043600Z_v8_m56_s1  # cycles 131-132 complete (b0ef7be + a13adaa)
 s2_session: session_stanley_20260530T052831Z_v8_m56_s2  # cycles 133-137 complete (22d6fdd + 8ecaadd + 0231619 + b64c746 + 8e21d22)
-s3_session:  # cycles 138-140 (visual pass + verify + close)
+s3_session: session_stanley_20260530T222807Z_v8_m56_s3  # cycles 138-140 complete (5763b05 + 435848c + close)
 estimated_sessions: 3
-actual_sessions:
+actual_sessions: 3
 persona: rosetta
 last_edited_by: agent_stanley
 spec_completeness: complete
@@ -158,10 +158,10 @@ D15 consolidates the **5 role-landing site pages** — `educators`, `researchers
 | 135 | Migrate startup-first-hour | adopter-conversion | completed | S2 | 0231619 | 123 → 106 | cycle_135_d15_startup_migrate.json | no override; longest page (9 H2) holds in thin wrapper |
 | 136 | Migrate compliance | adopter-conversion | completed | S2 | b64c746 | 116 → 99 | cycle_136_d15_compliance_migrate.json | no override; inline /enterprise link survives named slot; 7 H2 intact |
 | 137 | Shared-utility + cross-link/SEO-parity sweep | canonical | completed | S2 | 8e21d22 | 538 → 457 (-15.1%) | cycle_137_d15_shared_utility_sweep.json | evaluation-only; override matrix 2 (educators+enterprise) / 3 none; nothing else crosses extraction bar; +60-ln component |
-| 138 | Consistent visual-language pass (all 5) | canonical | pending | S3 | tbd | n/a | cycle_138_d15_visual_language_pass.json | typography/spacing rhythm unified |
-| 139 | Build verify + line tally + dead-CSS cleanup | reference | pending | S3 | tbd | tally | cycle_139_d15_verify_cleanup.json | render spot-check |
-| 140 | Decadal close — lightweight AAR + close cascade | governance | pending | S3 | tbd | n/a | cycle_140_d15_decadal_close.json | non-RLP; 5-line AAR |
-| **Total (thru S2)** | | | | | | **538 → 457** (5 pages, -81/-15.1%) + 60-ln component | | 5/5 pages migrated; jsonLD + .lede duplication eliminated; build steady 155p; S3 138-140 remain |
+| 138 | Consistent visual-language pass (all 5) | canonical | completed | S3 | 5763b05 | n/a (+11 component doc) | cycle_138_d15_visual_language_pass.json | verify-and-codify: visual language already unified by global `.prose` + centralized `.lede`; codified the layered visual contract in the component doc-comment; no additive CSS (Risk #7); build 155p |
+| 139 | Build verify + line tally + dead-CSS check | reference | completed | S3 | 435848c | tally (no change) | cycle_139_d15_verify_cleanup.json | evaluation-only: no dead CSS (enterprise `.eval-table` fully used); 5/5 routes lede+jsonLD+meta; override matrix 2/3 byte-for-byte; build 155p |
+| 140 | Decadal close — lightweight AAR + close cascade | governance | completed | S3 | (close) | n/a | cycle_140_d15_decadal_close.json | non-RLP; 5-line AAR; 15/15 AC; 4 graduations; Op-3 40th; Next Session Prompt → M5.7/D16 |
+| **Total** | | | | | | **538 → 457** (5 pages, -81/-15.1%) + 71-ln component (60 + 11 cycle-138 doc); net -10 code lines + 5× jsonLD + 5× `.lede` collapsed to 1× | | **10/10 cycles across 3 sessions**; all 5 pages on `<PersonaPage>`; jsonLD + `.lede` duplication eliminated; build steady 155p end-to-end |
 
 ## Image-Gen Budget Tracker
 
@@ -180,14 +180,55 @@ Per D11 AAR §6 reconciliation (post-graduated at M5.4 D12; 19/3+ at M5.5 close)
 
 ## Mission Close Notes (S3 cycle 140)
 
-*(Filled at close.)* Close timestamp + session; 10/10 cycles across 3 sessions; cumulative line reduction across 5 pages + new component; `<PersonaPage>` LIVE; per-page jsonLD + `.lede` duplication removed; graduations + seeds carried forward; AC #1-#15 discharge enumeration; build-clean proof; Op-3 archive-on-close cascade; Next Session Prompt → M5.7 / D16.
+**Closed at**: 2026-05-30T22:40:00Z by `session_stanley_20260530T222807Z_v8_m56_s3`.
+
+**Cycles**: 10/10 (131-140) across S1 (131-132) + S2 (133-137) + S3 (138-140) = **3 sessions, matching `estimated_sessions: 3` exactly**.
+
+**Outcome**: all 5 role pages (`educators`, `researchers`, `enterprise`, `startup-first-hour`, `compliance`) now wrap the shared **`<PersonaPage>`** component over `DocumentationLayout`. The two verified duplications are eliminated — the 5× `buildTechArticleJsonLD` boilerplate and the 5× byte-identical `.lede` CSS rule are each collapsed to **1×** in the component (built internally, with optional `jsonLDTitle`/`jsonLDDescription` overrides). The component owns `.lede` and exposes a `lede` named slot + default body slot; each page keeps its distinct middle and any single-use styles (only enterprise's `.eval-table` remains local).
+
+**Line tally (honest)**: 5 pages **538 → 457 (−81, −15.1%)**; component **71 lines** (60 at creation cycle 132 + 11 doc-comment at cycle 138). Net code delta = 457 + 71 = 528 vs pre-mission 538 = **−10 net lines**, *plus* the structural-DRY win not captured by line count (5× jsonLD boilerplate + 5× `.lede` rule → 1× each). The dominant win is structural DRY + a reusable primitive + a documented visual contract, exactly as the spec re-baselined at cycle 131 (NOT a 30-50% cut — see Risk #4).
+
+**Build**: `npm run build` clean (exit 0, **155 pages**) after every site-touching cycle and at close; page count unchanged vs pre-mission baseline; all 5 routes render with section + IA + URL parity; byte-for-byte SEO parity verified in built HTML with the **override matrix = educators + enterprise override / researchers + startup-first-hour + compliance none** (2 override / 3 none).
+
+**AC #1-#15 discharge** (15/15):
+1. Mission spec authored with full section set (no RLP, no separate decadal AAR — non-RLP). ✓
+2. All 10 cycles executed; per-cycle binary commit. ✓
+3. 10 valid III JSONs in `runners/` per ADR-025+026 (7 steps + `content_class_declaration` + `five_lens` + persona Q&A). ✓
+4. ≥3 personas/cycle at Step 2 (IA + Solo Dev + Educator + Enterprise Architect allocation). ✓
+5. 5-lens overlay at Step 6 of every prose-touching cycle. ✓
+6. `PersonaPage.astro` created (cycle 132), wraps `DocumentationLayout`, builds jsonLD internally with overrides, owns `.lede`, `lede` named + default slots. ✓
+7. All 5 pages migrated; duplicated jsonLD + `.lede` removed (centralized). ✓
+8. Content-class taxonomy declared + honored per cycle. ✓
+9. Build clean after every migration cycle; final page count unchanged; all 5 routes render with section + IA parity. ✓
+10. Visual-language pass verified (cycle 138); line-reduction tally logged (cycle 139). ✓
+11. Lightweight 5-line AAR appended (cycle 140); NO full decadal AAR + RLP (non-RLP per Campaign SO #11). ✓
+12. Hard constraints 1-12 honored end-to-end (binary commits confirmed; render-layer only; only `aDNA.aDNA/` paths). ✓
+13. D-PUSH fires at G3 (push after S3 close) — 19-precedent chain. ✓
+14. Token-budget two-metric declared + actuals in SITREP + AAR. ✓
+15. STATE.md + campaign master updated at close (Op-3 archive-on-close 40th canonical instance); Next Session Prompt → M5.7/D16. ✓
+
+**4 GRADUATIONS** (all reached 3/3 during M5.6):
+- `skill_thin_wrapper_component_extraction` — 3/3 at cycle 133; reinforced to 6/3+ by cycle 136 (load-bearing M5.6 pattern; upstream-promotion candidate).
+- `skill_seo_parity_override_props` — 3/3 at cycle 133 (optional override props preserve byte-for-byte SEO when centralizing jsonLD).
+- `skill_astro_scoped_style_slot_constraint` — 3/3 at cycle 133; reinforced to 6/3+ by cycle 136 (shared styled elements render via named slot, never default slot).
+- `skill_seo_parity_override_conditional_omission` — 3/3 at cycle 136 (omit the override when page+layout descriptions are byte-identical; the override is conditional on a real byte-diff — 2 override / 3 none).
+
+Plus **`skill_evaluation_only_disposition` reinforced to 4 canonical instances** (M5.4 c119 + M5.6 c137 + c138 + c139; graduation-eligible) and `skill_campaign_close_archive` post-graduation 39/3+ → **40/3+** (Op-3 40th canonical instance).
+
+**5 NEW SEEDS carried to M5.7+ watchlist**: `skill_parity_proof_on_hardest_instance_first` (1/3) · `skill_named_slot_preserves_inline_html` (1/3) · `skill_consolidation_reconciliation_sweep` (2/3) · `skill_visual_contract_codification` (1/3) · `skill_honest_net_line_accounting` (1/3). Two notes: `seed_estimate_drift_finding_for_d16` (theme-set per-decadal line/visual expectations predate D12's trim — D16 must re-baseline at its own cycle-1 audit) and `seed_content_finding_asymmetric_sibling_crosslink` (enterprise↔compliance cross-link asymmetry, deferred to a content-class cycle).
+
+**0 invariant violations** end-to-end (S1+S2+S3): zero `.adna/` / other-vault / `.obsidian/` / settings / `measurement.sqlite` / hook writes; zero image-gen (ledger frozen $1.72 of $50, 3.4%); only `aDNA.aDNA/` paths touched.
+
+**Op-3 archive-on-close cascade**: mission spec → completed; campaign master M5.6 row added (completed) + amendments row 2026-05-30; STATE.md new M5.6 MISSION CLOSED top bullet (prior demoted to concise) + Next Session Prompt → **M5.7 / D16 (Reference & Glossary Streamline)**.
+
+**Token-budget two-metric** (ADR-016 Clause A + C): estimated cumulative 270-360 kT content-load / actual ~290-330 kT (within band; no retrospective). S3 estimated 80-110 kT / actual ~70-90 kT (light — two of three S3 cycles were evaluation/governance). API-billing companion (Clause C): roughly within the 49-session regression envelope; no anomaly.
 
 ## Lightweight AAR (per Project SO #5)
 
-*(Filled at close — 5-line per `template_aar_lightweight.md`. D15 is non-RLP: lightweight only, no full Reviewer Lens Pass.)*
+*(5-line per `template_aar_lightweight.md`. D15 is non-RLP: lightweight only, no full Reviewer Lens Pass.)*
 
-- **Worked**:
-- **Didn't**:
-- **Finding**:
-- **Change**:
-- **Follow-up**:
+- **Worked**: Thin-wrapper extraction migrated all 5 role pages onto one `<PersonaPage>` primitive with zero IA/URL/SEO loss (build steady 155p; override matrix 2/3 byte-for-byte); 4 patterns graduated and the parity-on-hardest-instance-first sequencing (enterprise in cycle 132) de-risked the whole batch.
+- **Didn't**: The headline line-reduction is modest (−15.1% pages; −10 net once the +71 component counts) — the theme-set's "150-270 ln / 30-50% cut" expectation didn't match post-D12 reality; cycle 138's "visual-language pass" found the look already unified by global `.prose` + the migration, so it became verify-and-codify rather than a CSS change.
+- **Finding**: When a global stylesheet (`.prose`) + a shared primitive already unify the visual language, the correct visual cycle is to **codify the ownership contract on the primitive**, not add component CSS (which would duplicate `.prose` and, via the default slot, not even reach the content — Risk #7). Honest net-line accounting (pages + component, separate from the NxBoilerplate→1x DRY win) keeps a doc-comment addition from reading as regression.
+- **Change**: For D16+ decadal missions, re-baseline per-decadal targets at the mission's own cycle-1 audit against measured current state — do not inherit the theme-set's pre-D12 line/visual estimates (`seed_estimate_drift_finding_for_d16`).
+- **Follow-up**: Carry 5 NEW SEEDS to M5.7+ watchlist (thin-wrapper graduations are upstream-promotion candidates); 2 deferred notes (D16 target re-baseline; enterprise↔compliance asymmetric cross-link for a future content cycle). Next: M5.7 / D16 Reference & Glossary Streamline.
