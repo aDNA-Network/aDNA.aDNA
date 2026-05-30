@@ -12,8 +12,9 @@ opens_at: 2026-05-30T04:36:00Z
 opened_session: session_stanley_20260530T043600Z_v8_m56_s1
 closed_at:
 closed_session:
-s2_session:
-s3_session:
+s1_session: session_stanley_20260530T043600Z_v8_m56_s1  # cycles 131-132 complete (b0ef7be + a13adaa)
+s2_session:  # cycles 133-137 (4 migrations + shared-utility sweep)
+s3_session:  # cycles 138-140 (visual pass + verify + close)
 estimated_sessions: 3
 actual_sessions:
 persona: rosetta
@@ -150,8 +151,8 @@ D15 consolidates the **5 role-landing site pages** — `educators`, `researchers
 
 | Cycle | Theme | Content Class | Status | Session | Commit SHA | Lines Before → After | Cycle JSON | Notes |
 |-------|-------|---------------|--------|---------|------------|----------------------|-----------|-------|
-| 131 | Audit 5 pages + data modules; design `<PersonaPage>` API | nav/planning | pending | S1 | tbd | n/a (audit) | cycle_131_d15_persona_page_audit.json | pre-change inventory + component API design |
-| 132 | Build `<PersonaPage>` + migrate enterprise (reference, parity proof) | new-artifact + adopter-conversion | pending | S1 | tbd | 135 → ? (+component) | cycle_132_d15_personapage_component_enterprise.json | wraps DocumentationLayout; owns .lede + jsonLD |
+| 131 | Audit 5 pages + data modules; design `<PersonaPage>` API | nav/planning | completed | S1 | b0ef7be | n/a (audit) | cycle_131_d15_persona_page_audit.json | 538 ln total; target = 5× jsonLD + 5× byte-identical .lede; API designed |
+| 132 | Build `<PersonaPage>` + migrate enterprise (reference, parity proof) | new-artifact + adopter-conversion | completed | S1 | a13adaa | 135 → 121 (+57 component) | cycle_132_d15_personapage_component_enterprise.json | build clean 155p; lede CID-matched (inlined); jsonLD byte-for-byte; eval-table local |
 | 133 | Migrate educators | adopter-conversion | pending | S2 | tbd | 75 → ? | cycle_133_d15_educators_migrate.json | |
 | 134 | Migrate researchers | adopter-conversion | pending | S2 | tbd | 89 → ? | cycle_134_d15_researchers_migrate.json | |
 | 135 | Migrate startup-first-hour | adopter-conversion | pending | S2 | tbd | 123 → ? | cycle_135_d15_startup_migrate.json | |
