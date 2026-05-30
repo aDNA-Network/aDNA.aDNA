@@ -1,28 +1,20 @@
 ---
-import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import PersonaPage from '../../components/sections/PersonaPage.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
-import { buildTechArticleJsonLD } from '../../utils/seo';
 import { sessionCards, governanceCards, federationCards, followUpCards } from '../../data/compliance';
-
-const jsonLD = buildTechArticleJsonLD({
-  title: 'aDNA Compliance Walkthrough',
-  description: 'A procurement-style walkthrough of how how/sessions/ and who/governance/ answer the five questions every compliance reviewer asks about AI-assisted work.',
-  url: Astro.url.href,
-});
 ---
 
-<DocumentationLayout
+<PersonaPage
   title="aDNA Compliance Walkthrough"
   description="A procurement-style walkthrough of how how/sessions/ and who/governance/ answer the five questions every compliance reviewer asks about AI-assisted work."
-  jsonLD={jsonLD}
 >
-  <p class="lede">
+  <Fragment slot="lede">
     Auditors ask five questions about AI-assisted work. The vault answers all five
     using the same files the team already edits — the audit trail is the working
     artifact, not a parallel workstream. For compliance officers, security reviewers,
     and procurement leads; the sibling <a href="/enterprise">Enterprise Adoption Checklist</a>
     organizes the same evidence by evaluation domain.
-  </p>
+  </Fragment>
 
   <h2 id="q1-who-wrote-this">1 · Who wrote this artifact?</h2>
   <p>
@@ -104,13 +96,4 @@ const jsonLD = buildTechArticleJsonLD({
 
   <h2 id="next-steps">Next Steps</h2>
   <CardGrid cards={followUpCards} columns={2} />
-</DocumentationLayout>
-
-<style>
-  .lede {
-    font-size: var(--text-lg);
-    line-height: 1.6;
-    color: var(--color-text);
-    margin-bottom: var(--space-8);
-  }
-</style>
+</PersonaPage>
