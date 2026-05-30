@@ -1,0 +1,101 @@
+{
+  "cycle_id": "cycle_138_d15_visual_language_pass",
+  "decadal": "D15",
+  "decadal_title": "Persona Page Consolidation",
+  "cycle_number": 138,
+  "cycle_in_decadal": 8,
+  "mission": "mission_adna_str_p5_m56_d15_persona_page_consolidation",
+  "session": "session_stanley_20260530T222807Z_v8_m56_s3",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-30T22:28:00Z",
+  "closed_at": "2026-05-30T22:31:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "content_class_declaration": "canonical (consistent visual-language pass — codify the shared visual contract in the <PersonaPage> component; verify-and-codify disposition, no additive CSS)",
+  "image_gen_log_refs": [],
+  "step_1_capture_state": {
+    "target_surface": "site/src/components/sections/PersonaPage.astro (the shared primitive all 5 role pages wrap)",
+    "method": "audit the shared visual stack across all 5 pages — identify which layer owns section rhythm vs the opener vs single-use styles — to ensure the visual language is unified AND that unification is intentional/documented (not accidental)",
+    "pre_change_inventory": {
+      "component_lines": 60,
+      "visual_stack": {
+        "section_rhythm_owner": ".prose (site/src/styles/global.css) — defines h1-h4 margins+sizes, p margin+line-height 1.75, ul/ol margin+padding, li margin, pre, hr; applied to every role page via DocumentationLayout's <article class=\"doc-content prose\">",
+        "opener_owner": ".lede — owned in PersonaPage <style>; rendered via the named `lede` slot so the scoped class applies; scoped `.lede[data-astro-cid]` (0,2,0) out-specifies `.prose p` (0,1,1) so the opener styling holds",
+        "page_local": "enterprise .eval-table only (single-use table; token-based margins/padding; correct to keep local per thin-wrapper contract)"
+      },
+      "inconsistency_scan": "NONE — all 5 pages share .prose rhythm + the now-centralized .lede; no page-local rule fights .prose; the visual language is ALREADY unified by .prose (global) + the S2 migration (.lede + jsonLD centralized)"
+    }
+  },
+  "step_2_persona_qa": {
+    "personas_drawn": ["information_architect", "adopter_solo_developer", "adopter_enterprise_architect"],
+    "personas_drawn_count": 3,
+    "method": "agent-simulated 3-persona Q&A on whether/how to unify visual language across the 5 pages",
+    "writing_guidelines_clarity_checklist_applied": true,
+    "qa_protocol_per_m50_visual_inspection_methodology_section_2": {
+      "q1_already_consistent": {
+        "persona": "information_architect",
+        "question": "Do the 5 role pages already render in a consistent visual language, or is per-page divergence visible?",
+        "answer": "Already consistent. Heading/paragraph/list rhythm is set by the global `.prose` class (applied by DocumentationLayout to every doc page, not just these 5), and the page-opener `.lede` was centralized into <PersonaPage> in S2. The only page-local style is enterprise's single-use `.eval-table`. There is no per-page typography divergence to fix."
+      },
+      "q2_right_change": {
+        "persona": "adopter_solo_developer",
+        "question": "Should this cycle add shared h2/ul/li rules to <PersonaPage> to 'unify' typography?",
+        "answer": "No — that would be a regression risk and a no-op at best. `.prose` already owns that rhythm; redeclaring it in the component would duplicate global rules, and because page bodies arrive through the DEFAULT slot, a component-scoped `h2`/`ul` rule wouldn't even reach them (mission Risk #7). The genuine, durable win is to CODIFY the visual contract in the component doc-comment so the next person who builds a role page inherits the unified look intentionally and doesn't re-add CSS that fights `.prose`."
+      },
+      "q3_maintainability": {
+        "persona": "adopter_enterprise_architect",
+        "question": "What protects visual consistency when a 6th role page is added later?",
+        "answer": "A documented contract on the primitive itself. With the layered ownership written into <PersonaPage> (`.prose` = rhythm, `.lede` = opener, single-use = local), a new page wraps the component, fills two slots, and is visually consistent by construction — no design review needed to keep parity. This is the same composition guarantee aDNA makes for modules->lattices."
+      }
+    }
+  },
+  "step_3_decide": {
+    "change_selected": "VERIFY-AND-CODIFY — confirm the visual language is already unified (.prose + centralized .lede), then codify the layered visual contract in the <PersonaPage> doc-comment (rhythm owned by global .prose via DocumentationLayout's prose article; .lede owned here; single-use styles stay local). NO additive CSS — adding h2/ul/li rules would duplicate .prose and not reach slotted content (Risk #7).",
+    "content_class": "canonical",
+    "ceiling_declared": "doc-comment codification of an existing shared contract; no rendered-output change (render parity trivially preserved)"
+  },
+  "step_4_implement": {
+    "files_modified": ["site/src/components/sections/PersonaPage.astro (60 -> 71 lines; +11 comment lines — 'Visual contract' block)"],
+    "implementation_notes": "Added a 'Visual contract' block to the component doc-comment enumerating the three ownership layers: (1) section rhythm owned by global `.prose` (site/src/styles/global.css) via DocumentationLayout's `<article class=\"doc-content prose\">` — with an explicit 'do NOT redeclare h2/p/ul/li here' note citing both duplication and the default-slot scoped-style constraint; (2) `.lede` opener owned in the component; (3) single-use page styles stay local. No CSS added; no markup changed; render output unchanged.",
+    "lift_precedents_honored": ["codify-then-inherit (document the contract on the primitive so consumers inherit it)", "self-reference (the primitive documents its own composition guarantee)"],
+    "avoid_precedents_avoided": ["over-abstraction (no new props/components)", "duplicating .prose in component scope", "scoped rules that cannot reach default-slot content (Risk #7)"]
+  },
+  "step_5_re_capture": {
+    "method": "npm run build + built-HTML spot-check (enterprise + researchers) for lede + TechArticle jsonLD presence",
+    "post_change_inventory": {
+      "build_exit": 0,
+      "pages_built": 155,
+      "build_time_s": 5.2,
+      "component_lines": 71,
+      "render_parity": "PASS — comment-only change; rendered output unchanged. Spot-check: enterprise + researchers both still emit class=\"lede\" + \"@type\":\"TechArticle\" jsonLD.",
+      "visual_language_status": "unified + now documented (was already unified by .prose + centralized .lede; this cycle makes the contract explicit)"
+    }
+  },
+  "step_6_validate": {
+    "method": "5-lens continuous-discipline overlay applied to the doc-comment prose added this cycle",
+    "five_lens": {
+      "lens_1_word_count_outliers": "pass — the Visual-contract block is tight (3 numbered layers, 1 closing sentence); no outlier verbosity",
+      "lens_2_top_outlier_pass": "n/a — no page prose edited",
+      "lens_3_glossary_tightening": "pass — uses established terms (`.prose`, default/named slot, scoped style) with no new jargon",
+      "lens_4_clarity_checklist": "pass — dual-audience: the 'why' (inherit the unified look for free) is plain; the technical specificity (duplication + Risk #7 default-slot constraint) is precise; one concept per layer",
+      "lens_5_reference_collection_scan": "n/a — no reference-collection content touched"
+    },
+    "build_clean": "PASS — exit 0, 155 pages (steady baseline)",
+    "parity_verdict": "PASS — render-layer unchanged; visual language verified consistent across all 5 pages and now codified on the primitive"
+  },
+  "step_7_record": {
+    "iii_result": "Cycle 138 complete (canonical, verify-and-codify). The 5 role pages already share one visual language — section rhythm via the global `.prose` stylesheet (applied by DocumentationLayout), the `.lede` opener centralized into <PersonaPage> in S2 — so the correct visual-language pass is to CODIFY that contract, not add CSS. Added an 11-line 'Visual contract' block to the component doc-comment naming the three ownership layers (`.prose` = rhythm, `.lede` = opener, single-use = local) with an explicit 'do not redeclare .prose rules here' note (duplication + default-slot scoped-style constraint, Risk #7). Build steady 155 pages; render output unchanged. A 6th role page now inherits the unified look by construction. Honest finding for the AAR: the theme-set's 'unify visual language' expectation was largely pre-satisfied by `.prose` + the migration; the durable cycle-138 value is the documented contract.",
+    "lift_avoid_routing": {
+      "lift_honored": ["codify-then-inherit", "self-reference", "evaluation-of-existing-state-before-acting"],
+      "avoid_avoided": ["over-abstraction", "duplicating-global-prose-in-component-scope", "scoped-rule-that-cannot-reach-default-slot"]
+    },
+    "content_class_declaration": "canonical",
+    "self_reference_so8": "the component now documents its own composition guarantee — five role pages collapse onto one primitive whose contract makes the next page consistent by construction, the same module->lattice composition discipline the vault teaches.",
+    "seeds": [
+      "skill_visual_contract_codification (1/3) — NEW SEED: a visual-language cycle whose correct disposition, once a shared stylesheet + shared primitive already unify the look, is to document the ownership contract on the primitive rather than add redundant component CSS",
+      "skill_evaluation_only_disposition (reinforced) — 3rd canonical instance after M5.4 cycle 119 + M5.6 cycle 137; here the 'no additive CSS' half is evaluation-only (the codification is the change)",
+      "seed_estimate_drift_finding_for_d16 (note) — theme-set 'unify visual language / 150-270 ln pages' expectation was pre-satisfied post-D12 + by .prose; record for D16+ target-setting (mission Risk #4)"
+    ]
+  }
+}

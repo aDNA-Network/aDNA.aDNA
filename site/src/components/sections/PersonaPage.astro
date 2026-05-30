@@ -15,6 +15,17 @@
  * (e.g. enterprise's `.eval-table`). The structure IS the lesson: five role pages
  * collapse onto one reusable primitive — the same module->lattice composition
  * discipline aDNA teaches.
+ *
+ * Visual contract — the shared language all five pages render in, layered by owner:
+ *   1. section rhythm (headings, paragraphs, lists, code, rules) is owned by the
+ *      global `.prose` stylesheet (site/src/styles/global.css), applied via
+ *      DocumentationLayout's `<article class="doc-content prose">`. Do NOT redeclare
+ *      h2/p/ul/li spacing here — it would duplicate `.prose`, and because body
+ *      content arrives through the default slot a scoped rule would not reach it;
+ *   2. the page-opener `.lede` is owned here (the scoped style below);
+ *   3. single-use page styles stay local to the page (e.g. enterprise's `.eval-table`).
+ * A new role page therefore inherits the unified look for free: wrap PersonaPage,
+ * fill the `lede` + default slots, and add only what is genuinely page-specific.
  */
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import { buildTechArticleJsonLD } from '../../utils/seo';
