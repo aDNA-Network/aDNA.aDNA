@@ -1,0 +1,146 @@
+{
+  "cycle_id": "cycle_131_d15_persona_page_audit",
+  "decadal": "D15",
+  "decadal_title": "Persona Page Consolidation",
+  "cycle_number": 131,
+  "cycle_in_decadal": 1,
+  "mission": "mission_adna_str_p5_m56_d15_persona_page_consolidation",
+  "session": "session_stanley_20260530T043600Z_v8_m56_s1",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-30T04:36:00Z",
+  "closed_at": "2026-05-30T04:48:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "content_class_declaration": "nav/planning — audit + component-API design; measured by API fitness + duplication-targeted, not reduction-%",
+  "image_gen_log_refs": [],
+  "step_1_capture_state": {
+    "target_surface": "5 role-landing pages + their typed data modules + DocumentationLayout slot structure",
+    "method": "static read of all 5 pages + DocumentationLayout (159 ln) + compliance/enterprise data modules; line inventory; duplication scan",
+    "pre_change_inventory": {
+      "page_line_counts": {
+        "site/src/pages/educators/index.astro": 75,
+        "site/src/pages/researchers/index.astro": 89,
+        "site/src/pages/enterprise/index.astro": 135,
+        "site/src/pages/startup-first-hour/index.astro": 123,
+        "site/src/pages/compliance/index.astro": 116,
+        "total": 538
+      },
+      "data_modules": [
+        "site/src/data/educators.ts",
+        "site/src/data/researchers.ts",
+        "site/src/data/enterprise.ts",
+        "site/src/data/startup-first-hour.ts",
+        "site/src/data/compliance.ts"
+      ],
+      "shared_structure": "All 5 pages: frontmatter imports DocumentationLayout + CardGrid + buildTechArticleJsonLD + their page data module; build jsonLD via buildTechArticleJsonLD({title, description, url: Astro.url.href}); render <DocumentationLayout title description jsonLD> with <p class='lede'> then <h2 id> sections + CardGrid(s); close with a 'Next Steps' CardGrid.",
+      "duplication_confirmed": {
+        "jsonLD_boilerplate": "Identical import { buildTechArticleJsonLD } from '../../utils/seo' + the const jsonLD = buildTechArticleJsonLD({ title, description, url: Astro.url.href }) call in ALL 5 pages. The title/description args differ per page (and sometimes differ from the DocumentationLayout title/description — e.g. educators jsonLD title 'aDNA Teaching Kit' matches H1; startup-first-hour jsonLD description differs slightly from layout description). So the call must move into the component WITH optional overrides to preserve byte-for-byte SEO.",
+        "lede_css_rule": "Identical 4-property rule { font-size: var(--text-lg); line-height: 1.6; color: var(--color-text); margin-bottom: var(--space-8); } in the local <style> of ALL 5 pages. Byte-identical -> safe to centralize once in the component."
+      },
+      "not_duplication_keep_local": {
+        "enterprise": ".eval-table rule (single-use procurement table)",
+        "startup_first_hour": "inline ordered step structure (single-use)",
+        "note": "Single-use styles/markup stay in their one page; centralizing them would be over-abstraction (Risk #1)."
+      },
+      "layout_structure": "DocumentationLayout wraps <slot/> inside <article class='doc-content prose'>, after rendering Breadcrumb + optional heroImage + <h1>{title}</h1>; PrevNextNav after the slot. Astro scopes a page's <style> to the markup it renders (including markup passed to a layout's slot), which is why per-page .lede works today and why the component must render the lede itself (named slot) for its scoped .lede to apply."
+    }
+  },
+  "step_2_persona_qa": {
+    "personas_drawn": ["information_architect", "adopter_solo_developer", "adopter_educator", "adopter_enterprise_architect"],
+    "personas_drawn_count": 4,
+    "method": "agent-simulated 4-persona Q&A on the consolidation approach (D15 allocation per m50_decadal_theme_set.md)",
+    "writing_guidelines_clarity_checklist_applied": true,
+    "qa_protocol_per_m50_visual_inspection_methodology_section_2": {
+      "q1_first_impression": {
+        "persona": "information_architect",
+        "question": "Do the 5 role pages read as one family or five one-offs?",
+        "answer": "Mechanically near-identical chrome (same layout, same lede, same jsonLD pattern, same Next-Steps footer) but maintained as 5 copies. A shared component makes the family explicit and keeps them from drifting apart."
+      },
+      "q2_clarity": {
+        "persona": "adopter_educator",
+        "question": "Will a shared component obscure each page's distinct teaching content?",
+        "answer": "Not if it is a thin wrapper with a default body slot. Keep each page's distinct middle (educators' 3-week arc, compliance's 5 questions); share only the chrome."
+      },
+      "q3_conciseness": {
+        "persona": "adopter_solo_developer",
+        "question": "Is there real boilerplate to cut, or is this churn?",
+        "answer": "Real: every page repeats the jsonLD call + the .lede rule. Cutting it is a genuine DRY win that also prevents the SEO/style drift already visible between pages. The per-page body stays."
+      },
+      "q4_anti_pattern": {
+        "persona": "adopter_enterprise_architect",
+        "question": "Risk of over-abstraction forcing distinct pages into one rigid mold?",
+        "answer": "Yes if props-everything. Avoid by slotting the body and only owning genuinely-shared chrome (lede + jsonLD). Leave single-use classes (.eval-table) local. Prove parity on the most complex page (enterprise) before migrating the simpler four."
+      }
+    },
+    "pre_change_dimension_aggregate_scores": {
+      "note": "planning cycle scored on design fitness, not page reduction. 4/4 consensus: thin-wrapper-over-DocumentationLayout; component owns lede (named slot) + jsonLD (with overrides); body via default slot; single-use styles stay local; enterprise migrates first as parity proof."
+    }
+  },
+  "step_3_decide": {
+    "change_selected": "Design the <PersonaPage> API; build deferred to cycle 132 (one-change-per-cycle).",
+    "content_class": "nav/planning",
+    "ceiling_declared": "n/a (structural planning cycle)",
+    "component_api_design": {
+      "file": "site/src/components/sections/PersonaPage.astro",
+      "wraps": "DocumentationLayout (reuse, not replace)",
+      "props": {
+        "title": "string (required) — DocumentationLayout title + H1",
+        "description": "string (required) — DocumentationLayout description (meta)",
+        "jsonLDTitle": "string (optional, defaults to title) — TechArticle jsonLD title; override when a page's SEO title differs from its H1",
+        "jsonLDDescription": "string (optional, defaults to description) — TechArticle jsonLD description; override to preserve byte-for-byte SEO where it differs from the layout description",
+        "prev": "optional passthrough to DocumentationLayout",
+        "next": "optional passthrough to DocumentationLayout"
+      },
+      "internal": "const jsonLD = buildTechArticleJsonLD({ title: jsonLDTitle ?? title, description: jsonLDDescription ?? description, url: Astro.url.href }); — removes the import+call from all 5 pages",
+      "slots": {
+        "lede": "named slot — rendered as <p class='lede'>...</p> inside the component so the scoped .lede style applies",
+        "default": "page body — distinct middle: sections, CardGrids, lists, tables"
+      },
+      "owns_styles": ".lede (the byte-identical 4-property rule, centralized once)",
+      "does_not_own": ".eval-table (enterprise local) + any single-use page markup/styles + CardGrid (already shared) + the page data imports",
+      "page_usage_shape": "import PersonaPage from '../../components/sections/PersonaPage.astro'; import CardGrid + data module as before; <PersonaPage title=... description=... jsonLDTitle=... jsonLDDescription=...><Fragment slot='lede'>...</Fragment> ...body... </PersonaPage>",
+      "scope_note": "The lede MUST be passed via the named 'lede' slot (rendered inside PersonaPage), NOT as default-slot markup, or PersonaPage's scoped .lede will not match it (Risk #7)."
+    }
+  },
+  "step_4_implement": {
+    "files_modified": [],
+    "implementation_notes": "Planning cycle — no code emitted (one-change-per-cycle; build is cycle 132). Deliverable is the audit inventory + the <PersonaPage> API design recorded in step_3."
+  },
+  "step_5_re_measure": {
+    "method": "design review against the 4-persona consensus + the over-abstraction guardrail (Risk #1) + the scoped-style constraint (Risk #7)",
+    "post_change_inventory": {
+      "design_complete": true,
+      "duplication_targeted": "5x jsonLD boilerplate + 5x byte-identical .lede rule",
+      "over_abstraction_guardrail": "thin wrapper + default body slot; single-use classes left local; enterprise-first parity proof",
+      "seo_parity_mechanism": "jsonLDTitle/jsonLDDescription optional overrides preserve per-page SEO byte-for-byte"
+    }
+  },
+  "step_6_validate": {
+    "method": "5-lens continuous-discipline overlay (applied to the design + spec prose; no page prose edited this cycle)",
+    "five_lens": {
+      "lens_1_word_count_outliers": "n/a — planning cycle; no rendered prose edited",
+      "lens_2_top_outlier_pass": "n/a",
+      "lens_3_glossary_tightening": "n/a",
+      "lens_4_clarity_checklist": "pass — API is one-concept-per-prop; the single non-obvious behavior (Astro scoped-style + slot) is flagged in scope_note + Risk #7",
+      "lens_5_reference_collection_scan": "n/a — design recorded in the cycle JSON (correct collection)"
+    },
+    "post_change_dimension_scores": {
+      "note": "design validated; cleared for cycle 132 (build component + migrate enterprise reference page + build green)"
+    }
+  },
+  "step_7_record": {
+    "iii_result": "Cycle 131 complete. Audit confirmed real line counts 75/89/135/123/116 = 538 and the duplication target = 5x buildTechArticleJsonLD boilerplate + 5x byte-identical .lede rule. <PersonaPage> API designed: thin wrapper over DocumentationLayout that builds jsonLD internally (with jsonLDTitle/jsonLDDescription overrides for byte-for-byte SEO parity), owns .lede, renders the lede via a named slot, and passes the body via the default slot. Enterprise migrates first (cycle 132) as the parity proof.",
+    "lift_avoid_routing": {
+      "lift_honored": ["thin-wrapper-over-existing-layout (reuse DocumentationLayout)", "typed-data-module pattern preserved (page data imports unchanged)", "parity-on-hardest-page-first"],
+      "avoid_avoided": ["props-everything over-abstraction", "centralizing single-use classes (.eval-table)", "changing routes/IA", "altering jsonLD payloads"]
+    },
+    "content_class_declaration": "nav/planning",
+    "self_reference_so8": "5 role pages collapsing onto 1 reusable primitive demonstrates aDNA's module->lattice composition discipline on the vault's own site — the structure is the lesson.",
+    "seeds": [
+      "skill_thin_wrapper_component_extraction (1/3) — extract shared chrome via a thin wrapper + default slot, leaving single-use styles local",
+      "skill_astro_scoped_style_slot_constraint (1/3) — render shared styled elements inside the component (named slot), never via default slot, so scoped CSS applies",
+      "skill_seo_parity_override_props (1/3) — when centralizing per-page SEO/jsonLD, expose optional override props so consolidation preserves byte-for-byte metadata"
+    ]
+  }
+}
