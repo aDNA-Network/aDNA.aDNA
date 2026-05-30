@@ -1,29 +1,22 @@
 ---
-import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import PersonaPage from '../../components/sections/PersonaPage.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
-import { buildTechArticleJsonLD } from '../../utils/seo';
 import { complianceCards, auditCards, federationCards, integrationCards, followUpCards } from '../../data/enterprise';
-
-const jsonLD = buildTechArticleJsonLD({
-  title: 'aDNA Enterprise Adoption Checklist',
-  description: 'A procurement-ready evaluation guide for enterprise platform teams: compliance, session audit, federation, and integration surface with existing engineering practice.',
-  url: Astro.url.href,
-});
 ---
 
-<DocumentationLayout
+<PersonaPage
   title="aDNA Enterprise Adoption Checklist"
   description="A procurement-ready evaluation guide for enterprise platform teams: compliance posture, session audit trail, federation surface, and integration with existing engineering practice."
-  jsonLD={jsonLD}
+  jsonLDDescription="A procurement-ready evaluation guide for enterprise platform teams: compliance, session audit, federation, and integration surface with existing engineering practice."
 >
-  <p class="lede">
+  <Fragment slot="lede">
     A structured walkthrough for procurement, security, and platform engineering
     reviewers evaluating aDNA for multi-team deployment. Four domains —
     <strong>compliance</strong>, <strong>session audit</strong>,
     <strong>federation</strong>, and <strong>integration surface</strong> —
     each backed by concrete vault artifacts. Scan the section you own; the pattern
     you evaluate is the pattern you deploy.
-  </p>
+  </Fragment>
 
   <h2 id="compliance">1 · Compliance posture</h2>
   <p>
@@ -97,16 +90,9 @@ const jsonLD = buildTechArticleJsonLD({
 
   <h2 id="next-steps">Next Steps</h2>
   <CardGrid cards={followUpCards} columns={2} />
-</DocumentationLayout>
+</PersonaPage>
 
 <style>
-  .lede {
-    font-size: var(--text-lg);
-    line-height: 1.6;
-    color: var(--color-text);
-    margin-bottom: var(--space-8);
-  }
-
   .eval-table {
     width: 100%;
     border-collapse: collapse;

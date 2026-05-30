@@ -1,0 +1,60 @@
+---
+/**
+ * PersonaPage — shared wrapper for the role-landing pages
+ * (educators / researchers / enterprise / startup-first-hour / compliance).
+ *
+ * Created at M5.6 D15 cycle 132 (Persona Page Consolidation). A thin wrapper over
+ * DocumentationLayout that centralizes the two things every role page duplicated:
+ *   1. the buildTechArticleJsonLD boilerplate (built here from title/description,
+ *      with optional jsonLDTitle/jsonLDDescription overrides for byte-for-byte SEO),
+ *   2. the `.lede` style (owned once here; rendered via the named `lede` slot so the
+ *      scoped class applies — passing the lede through the default slot would NOT
+ *      receive this component's scoped style).
+ *
+ * Each page keeps its distinct body (default slot) and any single-use styles
+ * (e.g. enterprise's `.eval-table`). The structure IS the lesson: five role pages
+ * collapse onto one reusable primitive — the same module->lattice composition
+ * discipline aDNA teaches.
+ */
+import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import { buildTechArticleJsonLD } from '../../utils/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  /** TechArticle jsonLD title; defaults to `title`. Override when SEO title differs from the H1. */
+  jsonLDTitle?: string;
+  /** TechArticle jsonLD description; defaults to `description`. Override to preserve per-page SEO. */
+  jsonLDDescription?: string;
+  prev?: { label: string; href: string };
+  next?: { label: string; href: string };
+}
+
+const { title, description, jsonLDTitle, jsonLDDescription, prev, next } = Astro.props;
+
+const jsonLD = buildTechArticleJsonLD({
+  title: jsonLDTitle ?? title,
+  description: jsonLDDescription ?? description,
+  url: Astro.url.href,
+});
+---
+
+<DocumentationLayout
+  title={title}
+  description={description}
+  jsonLD={jsonLD}
+  prev={prev}
+  next={next}
+>
+  <p class="lede"><slot name="lede" /></p>
+  <slot />
+</DocumentationLayout>
+
+<style>
+  .lede {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: var(--space-8);
+  }
+</style>

@@ -1,0 +1,107 @@
+{
+  "cycle_id": "cycle_132_d15_personapage_component_enterprise",
+  "decadal": "D15",
+  "decadal_title": "Persona Page Consolidation",
+  "cycle_number": 132,
+  "cycle_in_decadal": 2,
+  "mission": "mission_adna_str_p5_m56_d15_persona_page_consolidation",
+  "session": "session_stanley_20260530T043600Z_v8_m56_s1",
+  "campaign": "campaign_adna_serious_tool_readiness",
+  "phase": 5,
+  "opened_at": "2026-05-30T04:48:00Z",
+  "closed_at": "2026-05-30T05:15:00Z",
+  "operator_side": true,
+  "cycle_observation_source": "primary",
+  "content_class_declaration": "new-artifact (PersonaPage component) + adopter-conversion (enterprise reference migration)",
+  "image_gen_log_refs": [],
+  "step_1_capture_state": {
+    "target_surface": "NEW site/src/components/sections/PersonaPage.astro + site/src/pages/enterprise/index.astro (reference migration)",
+    "method": "implement component per cycle-131 API design; migrate the most complex page (enterprise, 135 ln) as the parity proof before the simpler four; npm run build; inspect built HTML",
+    "pre_change_inventory": {
+      "personapage_exists": false,
+      "enterprise_lines": 135,
+      "enterprise_duplication": "imports DocumentationLayout + buildTechArticleJsonLD; local jsonLD const; <style> with .lede (shared, to remove) + .eval-table (single-use, to keep)"
+    }
+  },
+  "step_2_persona_qa": {
+    "personas_drawn": ["information_architect", "adopter_enterprise_architect", "adopter_solo_developer"],
+    "personas_drawn_count": 3,
+    "method": "agent-simulated 3-persona Q&A on the component + reference migration",
+    "writing_guidelines_clarity_checklist_applied": true,
+    "qa_protocol_per_m50_visual_inspection_methodology_section_2": {
+      "q1_parity": {
+        "persona": "information_architect",
+        "question": "Does the migrated enterprise page render identically — same sections, same lede, same SEO?",
+        "answer": "Yes — 6 H2 sections preserved, lede text + style preserved (.lede[data-astro-cid-h6dpntfm] inlined rule matches the <p class='lede' data-astro-cid-h6dpntfm> element), jsonLD description preserved byte-for-byte via jsonLDDescription override, eval-table kept local + still scoped."
+      },
+      "q2_abstraction": {
+        "persona": "adopter_enterprise_architect",
+        "question": "Is the component thin enough to not constrain the most complex page?",
+        "answer": "Yes — enterprise's numbered checklist + eval-table + 5 CardGrids all pass through the default slot untouched; the component only owns the lede + jsonLD."
+      },
+      "q3_maintainability": {
+        "persona": "adopter_solo_developer",
+        "question": "Net lines removed on the hardest page?",
+        "answer": "135 -> 121 (-14) on enterprise alone, plus the jsonLD import/const and the 6-line .lede rule are gone; the +57-line component is amortized across all 5 pages."
+      }
+    }
+  },
+  "step_3_decide": {
+    "change_selected": "Create PersonaPage.astro (thin wrapper over DocumentationLayout owning lede via named slot + jsonLD with overrides) and migrate enterprise onto it as the parity proof.",
+    "content_class": "new-artifact + adopter-conversion",
+    "ceiling_declared": "structural DRY; enterprise -14 lines + duplication removed (within adopter-conversion expectations; page already lean post-D12)"
+  },
+  "step_4_implement": {
+    "files_modified": [
+      "site/src/components/sections/PersonaPage.astro (NEW, 57 lines)",
+      "site/src/pages/enterprise/index.astro (135 -> 121 lines)"
+    ],
+    "implementation_notes": "Component builds jsonLD internally from title/description with optional jsonLDTitle/jsonLDDescription overrides; renders <p class='lede'><slot name='lede'/></p> then default <slot/>; owns the .lede style. Enterprise: replaced DocumentationLayout+buildTechArticleJsonLD imports with PersonaPage; removed local jsonLD const; <DocumentationLayout> -> <PersonaPage> with jsonLDDescription override (its jsonLD description differs from the layout description); lede markup moved into <Fragment slot='lede'>; removed the .lede rule from the local <style> (kept .eval-table).",
+    "lift_precedents_honored": ["thin-wrapper-over-existing-layout", "typed-data-module imports unchanged", "parity-on-hardest-page-first"],
+    "avoid_precedents_avoided": ["props-everything over-abstraction", "centralizing single-use .eval-table", "route/IA change", "jsonLD payload drift"]
+  },
+  "step_5_re_capture": {
+    "method": "npm run build + built-HTML inspection (dist/enterprise/index.html)",
+    "post_change_inventory": {
+      "build_exit": 0,
+      "pages_built": 155,
+      "build_time_s": 5.0,
+      "enterprise_html_bytes": 49911,
+      "lede_element": "<p class=\"lede\" data-astro-cid-h6dpntfm>",
+      "lede_css_rule_inlined": ".lede[data-astro-cid-h6dpntfm]{font-size:var(--text-lg);line-height:1.6;color:var(--color-text);margin-bottom:var(--space-8)}",
+      "lede_selector_matches_element": true,
+      "lede_style_delivery": "Astro inlined the component's scoped style into the page <style> block (small-sheet default), not an external bundle — verified present with matching CID",
+      "jsonLD_description_byte_for_byte": "compliance, session audit, federation, and integration surface with existing engineering practice (preserved via jsonLDDescription override)",
+      "h2_sections": 6,
+      "techarticle_jsonld_present": true,
+      "eval_table_preserved": "<table class=\"eval-table\" data-astro-cid-dknlmymp> + inlined .eval-table[data-astro-cid-dknlmymp]{width:100%;border-collapse:collapse;...} rule present (single-use style kept local + scoped)"
+    }
+  },
+  "step_6_validate": {
+    "method": "5-lens continuous-discipline overlay (prose unchanged — markup-only migration; lens applies to component doc-comment + preserved lede prose)",
+    "five_lens": {
+      "lens_1_word_count_outliers": "n/a — no page prose edited (markup-only migration; lede text preserved verbatim)",
+      "lens_2_top_outlier_pass": "n/a",
+      "lens_3_glossary_tightening": "n/a",
+      "lens_4_clarity_checklist": "pass — component doc-comment states purpose + the named-slot scoped-style constraint; one concept per prop",
+      "lens_5_reference_collection_scan": "n/a"
+    },
+    "build_clean": "PASS — exit 0, 155 pages, no broken imports / collection-schema errors",
+    "parity_verdict": "PASS — section/IA/SEO/style parity confirmed in built HTML; Risk #7 (scoped-style + slot) cleared by inlined-rule CID match (.lede[data-astro-cid-h6dpntfm] <-> element h6dpntfm)"
+  },
+  "step_7_record": {
+    "iii_result": "Cycle 132 complete. <PersonaPage> LIVE (57 ln) and enterprise migrated as the parity proof (135 -> 121). Build clean (155 pages, 5.0s). Lede styled correctly via named slot (inlined scoped rule CID-matched); jsonLD SEO preserved byte-for-byte via override; eval-table kept local + scoped. Reference migration proves the mechanism for cycles 133-136.",
+    "lift_avoid_routing": {
+      "lift_honored": ["thin-wrapper-over-existing-layout", "parity-on-hardest-page-first", "typed-data-module preserved"],
+      "avoid_avoided": ["over-abstraction", "single-use-class centralization", "route/SEO drift"]
+    },
+    "content_class_declaration": "new-artifact + adopter-conversion",
+    "self_reference_so8": "PersonaPage is the vault composing a reusable primitive from five repeated pages — module->component DRY, the same composition discipline aDNA documents.",
+    "seeds": [
+      "skill_thin_wrapper_component_extraction (2/3) — confirmed on the hardest page first",
+      "skill_astro_scoped_style_slot_constraint (2/3) — named-slot lede CID-matches the inlined scoped .lede rule in built output",
+      "skill_seo_parity_override_props (2/3) — jsonLDDescription override preserved enterprise SEO byte-for-byte",
+      "skill_parity_proof_on_hardest_instance_first (1/3) — migrate the most complex instance first to de-risk the batch"
+    ]
+  }
+}
