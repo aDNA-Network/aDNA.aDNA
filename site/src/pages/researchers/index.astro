@@ -1,28 +1,20 @@
 ---
-import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import PersonaPage from '../../components/sections/PersonaPage.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
-import { buildTechArticleJsonLD } from '../../utils/seo';
 import { readingPathCards, referenceCards } from '../../data/researchers';
-
-const jsonLD = buildTechArticleJsonLD({
-  title: 'aDNA for Researchers',
-  description: 'How research labs and science teams use aDNA to maintain knowledge provenance, reproducibility, and multi-agent context fidelity across long-running projects.',
-  url: Astro.url.href,
-});
 ---
 
-<DocumentationLayout
+<PersonaPage
   title="aDNA for Researchers"
   description="How research labs and science teams use aDNA to maintain knowledge provenance, reproducibility, and multi-agent context fidelity across long-running projects."
-  jsonLD={jsonLD}
 >
-  <p class="lede">
+  <Fragment slot="lede">
     Your citations are only as good as your context graph. aDNA gives
     research labs, computational teams, and independent researchers a
     structured, agent-navigable knowledge layer — so every session starts
     oriented, every protocol is traceable, and knowledge accumulated over
     months doesn't evaporate when the context window closes.
-  </p>
+  </Fragment>
 
   <h2 id="the-research-knowledge-problem">The research knowledge problem</h2>
   <p>
@@ -77,13 +69,4 @@ const jsonLD = buildTechArticleJsonLD({
 
   <h2 id="reference">Reference and depth</h2>
   <CardGrid cards={referenceCards} columns={2} />
-</DocumentationLayout>
-
-<style>
-  .lede {
-    font-size: var(--text-lg);
-    line-height: 1.6;
-    color: var(--color-text);
-    margin-bottom: var(--space-8);
-  }
-</style>
+</PersonaPage>
