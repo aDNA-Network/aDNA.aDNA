@@ -103,3 +103,15 @@ ADR count is **3, not the 2 anticipated at P1.3** — ADR-030 was added at P6.M4
 
 ---
 *Filed by agent at SiteForge.aDNA P7.3 (Phase 7 close — final Operation Loom mission), 2026-05-30. Campaign master: `SiteForge.aDNA/how/campaigns/campaign_siteforge_iss/campaign_siteforge_iss.md` (status: completed). Campaign AAR: `…/missions/artifacts/aar_campaign_siteforge_iss.md`. OIP Unification parent idea: `aDNA.aDNA/how/backlog/idea_campaign_operator_interaction_patterns_unification.md` (B-aDNA-2026-05-20-OIP "Operation Concord"). LIP anchor: `lattice-labs/how/governance/lips/lip_0007_iss_pattern.md`.*
+
+---
+
+## Addendum (2026-05-31) — Post-campaign hardening backlog routed to Concord `arch_02`
+
+A post-close review surfaced two independent consumer-vault quality signals (Obsidian/Seshat + ScienceStanley/Content-Architect). The bounded defects + the SO #3 Playwright integrity gap are being closed in a SiteForge **post-campaign coda** (substrate hardening + QA harness; see `SiteForge.aDNA/how/campaigns/campaign_siteforge_iss/missions/artifacts/post_campaign_findings_review.md`). **One item is campaign-sized and is handed to Concord** as an additional absorption input for its web-substrate architecture phase:
+
+- **ISS context-ingestion + per-gate quality modules.** ISS currently styles gates (preset/skin) but cannot load a consumer vault's topic/community/perspective context or plug in that vault's III quality reviewers per gate (e.g. auto-populate per-variant risk flags from a consumer's `visual_identity_reviewers.yaml`; pull patient-voice context + reviewer for a rare-disease gate). This is a **new capability needing its own ADR** — natural fit for Concord `arch_02` (web substrate) alongside the other OIP substrates.
+- **Full III-on-rendered-screenshot automation** (Inspect→Introspect→Improve on the actual rendered image, not code-only). The coda lands a static density/jargon lint; the closed-loop render-time III review is Concord-scope.
+- Source asks: `ScienceStanley.aDNA/how/backlog/idea_upstream_iss_quality_context_ingestion.md` + `idea_upstream_iss_first_consumer_dogfooding.md`; consumer coords `coord_2026_05_30_ss_iss_quality_and_context_ingestion.md` + `coord_2026_05_30_obsidian_iss_output_quality.md` (both in `SiteForge.aDNA/who/coordination/`).
+
+No change to the absorption contract: Concord absorbs at its own `arch_02` + `pilot_02`, no forced timing.

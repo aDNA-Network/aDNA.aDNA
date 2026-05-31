@@ -382,6 +382,28 @@ Missing `visual_ascii` → no markup emitted; backward-compat byte-identical. Re
 
 The Dark-Mode 50-Cycle Sprint's D-WC (Writing & Content) arc distilled five carry-forward findings about prose authoring inside ISS data JSON. Apply when populating any prose-bearing field (SITREP values, composite_question, section.title/analysis/verdict, footer_text, recommendation cards).
 
+### Decision gate vs casebook (READ FIRST — coda 2026-05-31)
+
+> Two consumer vaults (Obsidian/Seshat + ScienceStanley) independently shipped gates the operator called **"convoluted / a wall of text."** Both root-caused it to the same thing: **they wrote a casebook, not a decision gate.** This is the single most common ISS authoring failure. Aim at the `p3p_6` reference demo density.
+
+A decision gate exists to get **one decision per card** with the least reading. It is not a place to dump your analysis.
+
+| | Casebook (wrong) | Decision gate (right) |
+|---|---|---|
+| Per-card length | 180–960 chars of narration | **~110 words**, ideally a one-line verdict |
+| Structure | everything visible at once | **verdict + confidence pill visible**; detail behind `Show Analysis` |
+| Evidence | inline file paths, commit hashes, `§5.8`, `hex_leak=False` | **cited by link**, not pasted into the question |
+| Acronyms | load-bearing codes **in the question** | de-jargoned; codes only where unavoidable (< 15% density) |
+| Question | 8 clauses | **one decidable question** |
+| Opt-in flags | 8 enabled at once (~30 panels) | only what the decision needs |
+
+**Rules of thumb:**
+1. **Lead with the verdict.** `rationale`/`analysis` is a one-liner; push the rest behind `analysis` (collapsed by default) or a SITREP/SWOT/structured-rec panel — never above the decision.
+2. **One card = one decision.** If a card asks two things, split it.
+3. **Cite evidence by link**, don't paste it. The operator clicks if they want depth.
+4. **Run `validate_authoring: true`** — the **F-5** density lint flags per-card word count (> ~160) and acronym density (> 15%), the two metrics that predicted "convoluted." Treat any F-5 advisory as "this card reads like a casebook — cut it."
+5. **Render and look at it.** A headless Playwright render-smoke now ships (`what/lib/iss/tests/test_template_render.py`); for high-stakes gates, screenshot the actual output before sending it to the operator.
+
 ### C-DWC-1 — Anti-slop applies to data-JSON content
 
 The 6 SITREP fields and every prose-bearing JSON key are operator-facing prose. Hedge phrases, parentheticals, meta-commentary, and abstract framing leak through to the rendered panel. Tighten before committing:
