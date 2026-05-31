@@ -1,32 +1,52 @@
 ---
 type: coordination
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-05-31
 author: agent_stanley
 from_persona: Rosetta
 from_vault: aDNA.aDNA
 to_persona: Berthier
-to_vault: LatticeLabs.aDNA
-direction: inbound_await   # aDNA.aDNA is AWAITING a memo FROM the brand-refactor effort; this is the placeholder/inbox
-urgency: action_requested
+to_vault: aDNALabs.aDNA   # HQ for Operation Homecoming (Berthier mantle from LatticeLabs.aDNA)
+direction: inbound_tracking   # refactor is now LIVE (2026-05-31); tracking Operation Homecoming (was inbound_await)
+urgency: info   # tracking note; the gate is a milestone (refactor substantially complete), not an awaited memo
 delivery_active: 2026-05-30
-delivery_held_until: "the upstream aDNA/Lattice brand-refactor coordination memo drops (operator will help locate it)"
-expires: 2026-08-30   # 3-month soft expiry; renew if the brand refactor has not landed
+delivery_held_until: "the brand refactor is substantially complete — Rosetta Stone rebrand brief (S8) + Operation Homecoming Phases 2-5 landed (operator-confirmed gate 2026-05-31)"
+expires: 2026-08-30   # 3-month soft expiry; renew if the refactor has not substantially completed
 last_edited_by: agent_stanley
 related_mission: aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p5_m57_adnalabs_expansion_planning_stub.md
 related_brief: aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m57_adnalabs_expansion_seed_brief.md
 related_skill: aDNA.aDNA/how/skills/skill_vercel_squarespace_domain_cutover.md
-ack_required: true
-ack_target_window: "when the brand-refactor coord memo is authored at LatticeLabs.aDNA (or wherever the operator directs) — link it back here"
-tags: [coordination, v8, p5, m5_7, brand_pivot, adnalabs, adna_network, inbound_await, awaiting_brand_refactor_memo, rosetta_berthier]
+related_upstream: aDNALabs.aDNA/how/campaigns/campaign_adnalabs_genesis/   # Operation Homecoming (the live tracker)
+acknowledges:
+  - aDNALabs.aDNA/who/coordination/coord_2026_05_30_adna_standard_courtesy.md   # courtesy to standard owner (no ask) — acknowledged
+  - aDNALabs.aDNA/who/coordination/coord_2026_05_30_active_campaigns_rebrand_broadcast.md   # "nothing renames before the brief" — aligned
+ack_required: false   # aDNALabs courtesy required no countersign; this note records the acknowledgment for our audit
+tags: [coordination, v8, p5, m5_7, brand_pivot, adnalabs, adna_network, inbound_tracking, refactor_underway_2026_05_31, operation_homecoming, rosetta_berthier]
 ---
 
-# Coord Memo (INBOUND-AWAIT): aDNA.network site refactor awaits the aDNA/Lattice brand-refactor memo
+# Coord Memo (INBOUND-TRACKING): aDNA.network site refactor tracks the live aDNA/Lattice brand refactor (Operation Homecoming)
 
-**From / awaiting**: Rosetta (`aDNA.aDNA/`) ← Berthier (`LatticeLabs.aDNA/`) + operator
-**Date**: 2026-05-30
-**Status**: filed as an **inbound-await placeholder** — this is the inbox the M5.7 planning mission watches; the *actual* brand-refactor coordination memo will be authored elsewhere (launched from `LatticeLabs.aDNA`) and the **operator will help locate it**.
-**Re**: pausing the aDNA.aDNA docs-polish mainline and re-scoping this vault's website into the forward face of **aDNALabs** at **aDNA.network** — gated on the upstream brand refactoring.
+**From / tracking**: Rosetta (`aDNA.aDNA/`) ↔ Berthier (`aDNALabs.aDNA/`) + operator
+**Date**: 2026-05-30 (filed) · **reconciled 2026-05-31**
+**Status**: **inbound-tracking** — the refactor is now LIVE (Operation Homecoming in `aDNALabs.aDNA`). This note no longer awaits an unknown memo; it tracks the in-flight migration/rebrand and records this vault's posture + acknowledgments. See the **Update 2026-05-31** section below (authoritative); the original await-framing below it is preserved for audit.
+**Re**: aDNA.aDNA's docs-polish mainline is paused; this vault's website re-scopes into the forward face of **aDNALabs** at **aDNA.network** — gated on the brand refactor being **substantially complete**.
+
+## Update 2026-05-31 — refactor is now underway (reconciliation; authoritative)
+
+The brand refactor has gone from hypothetical to **live**. Reconciled facts (supersede the await-framing below):
+
+- **Coordinated from `aDNALabs.aDNA`** (Berthier; fresh genesis 2026-05-30) via **Operation Homecoming** (`campaign_adnalabs_genesis`) — a 5-workstream workspace-wide migration/rebrand. Phase-0/1 CLOSED; Phase-2 gated on the **Rosetta Stone rebrand brief (S8)** (recon in `LatticeLabs.aDNA`/`campaign_rosetta_stone_rebrand`, at S2).
+- **Brand doctrine LOCKED**: *"the aDNA network runs on the Lattice Protocol"* — Lattice Protocol preserved; forks later to `LatticeProtocol.aDNA`.
+- **`aDNANetwork.aDNA`** already renamed (2026-05-31; Venus; "Alpha Lattice"). **`Lab.aDNA`** not yet live (planned post-brief fork). **`LatticeLabs.aDNA`** is the operated-over predecessor.
+- **Two aDNALabs memos received** (and hereby acknowledged by Rosetta): the **standard-owner courtesy** (`aDNALabs.aDNA/who/coordination/coord_2026_05_30_adna_standard_courtesy.md` — no ask; acknowledged, no action needed) and the **rebrand broadcast** (`..._active_campaigns_rebrand_broadcast.md` — "nothing renames before the brief"; aDNA.aDNA is aligned and will rename nothing here until the brief locks names). No memo gates our website work.
+
+**Gate (operator-confirmed 2026-05-31)**: M5.7 substantive planning (O2+) + the website overhaul **resume when the refactor is substantially complete** (rebrand brief S8 + structural renames + content migration landed — Operation Homecoming Phases 2-5; **not** the far-off Venus P6 cutover). M5.7 O1 self-expansion + provisional scoping may proceed now and firm up at the brief-S8 names-lock checkpoint.
+
+**§6 open-questions — current answers**: Q1 the refactor source is `aDNALabs.aDNA`/Operation Homecoming (not a single awaited memo); Q2 names are provisional until the brief (S8) locks them; Q3 the marketplace/network home is an M5.7 O3 design question (likely on aDNA.network, federating the registry); Q4 default per the gate above (O1 now; O2+ at refactor-substantially-complete). An outbound ACK mirror to aDNALabs is operator-discretion (courtesy required no countersign).
+
+---
+
+*The original await-framing below (2026-05-30) is preserved for audit (archive-never-delete); read it as superseded by the Update above.*
 
 ## §1 Purpose
 

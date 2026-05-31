@@ -13,13 +13,31 @@ tags: [artifact, seed_brief, m5_7, brand_pivot, adnalabs, adna_network, site_exp
 
 # M5.7 Seed Brief — aDNALabs Site Expansion (grounding for the self-expanding planning stub)
 
-> **Purpose.** This brief is the *grounding substrate* the M5.7 planning stub consumes when it expands itself (Objective 1) into the full planning mission spec. It captures the strategic pivot + the exploration findings harvested during the M5.6-close wind-down, so the next session starts from evidence, not a blank page. It is **not** the plan itself — the planning mission produces that. Authored read-only from a pre-pause audit; figures are as-of 2026-05-30 and must be re-verified at planning time.
+> **Purpose.** This brief is the *grounding substrate* the M5.7 planning stub consumes when it expands itself (Objective 1) into the full planning mission spec. It captures the strategic pivot + the exploration findings harvested during the M5.6-close wind-down, so the next session starts from evidence, not a blank page. It is **not** the plan itself — the planning mission produces that. Authored 2026-05-30; **reconciled 2026-05-31** — the refactor is now live (see the Update section immediately below; the original baseline is preserved beneath it).
+
+## Update 2026-05-31 — the refactor is now underway (reconciliation)
+
+The brand refactor has moved from hypothetical to **concretely live**. Actual topology (as-of 2026-05-31; supersedes any "launched from LatticeLabs.aDNA / awaited memo" framing in the baseline below):
+
+- **`aDNALabs.aDNA`** (persona Berthier; fresh genesis 2026-05-30) is the org HQ + brand leadership, running **Operation Homecoming** (`campaign_adnalabs_genesis`) — a workspace-wide migration/rebrand across 5 workstreams (org migration · rebrand · protocol fork · Lab contextification · coordination). Phase-0/1 CLOSED; Phase-2 (architect migration specs) opening, **gated on the Rosetta Stone rebrand brief (S8)** which locks all naming + the master sequence. That brief recon runs in `LatticeLabs.aDNA` via `campaign_rosetta_stone_rebrand` (at S2; S3 next).
+- **Brand doctrine LOCKED**: *"the aDNA network runs on the Lattice Protocol."* aDNA = brand/network/community/lab; the **Lattice Protocol is preserved** as the named substrate (NOT collapsed to "aDNA Protocol"); it forks later to `LatticeProtocol.aDNA` (fork-must-follow-rebrand).
+- **`aDNANetwork.aDNA`** — already renamed from `LatticeNetwork.aDNA` (2026-05-31, S94; persona Venus; display "Alpha Lattice"; back-compat symlink). This is the live **aDNANetwork**.
+- **`Lab.aDNA`** — **does NOT exist yet**; planned post-brief fork (WS4; fork-must-follow-rebrand). The old `latlab/` + `latlab-lab/` are its absorption candidates.
+- **`LatticeLabs.aDNA`** — stays live as the **operated-over predecessor** (content migrating into the HQ; reader-only for gated content); becomes stub-with-redirect at the Venus P6 cutover.
+- **Root router** (`/Users/stanley/lattice/CLAUDE.md`) — already updated with the aDNALabs.aDNA / aDNANetwork.aDNA / LatticeLabs-predecessor rows.
+- **Coordination toward this vault**: aDNALabs filed `aDNALabs.aDNA/who/coordination/coord_2026_05_30_adna_standard_courtesy.md` (courtesy to the standard owner; **no ask**) + `..._active_campaigns_rebrand_broadcast.md` ("**nothing renames before the brief**"). No memo gates our website work.
+
+**Gate (operator-confirmed 2026-05-31):** the aDNA.aDNA website overhaul + M5.7 substantive planning (O2+) **hold until the refactor is substantially complete** — rebrand brief (S8) delivered + structural renames + content migration landed (Operation Homecoming Phases 2-5), **not** the far-off Venus P6 cutover. M5.7 O1 self-expansion + provisional scoping may proceed now and firm up at the brief-S8 names-lock checkpoint. **Honor the broadcast**: rename nothing in aDNA.aDNA until the brief locks names.
+
+---
+
+*The baseline below (authored 2026-05-30) is preserved as the pre-reconciliation record (archive-never-delete). Where it says "launched from LatticeLabs.aDNA" or frames the refactor as awaited, read it as superseded by the Update above.*
 
 ## 1. The brand pivot (operator-stated)
 
 - **aDNA** becomes the **forward-facing name/ethos** for the network, community, and lab.
 - **Lattice** becomes "**just**" the underlying **protocol/standard** for distributed/federated/DLT compute orchestration, memorialization, compliance, and validation — the substrate **aDNA builds context on/with**.
-- Org renames (launched from `LatticeLabs.aDNA`): **`LatticeLabs` → aDNALabs**, **`LatticeNetwork` → aDNANetwork**.
+- Org renames (coordinated from `aDNALabs.aDNA` via Operation Homecoming): **`LatticeLabs` → aDNALabs** (fresh-genesis successor, live), **`LatticeNetwork` → aDNANetwork** (renamed 2026-05-31, live); `Lab.aDNA` + `LatticeProtocol.aDNA` are planned post-brief forks. *(See the Update 2026-05-31 section above for the authoritative current topology.)*
 - **This vault's website becomes the main forward face of aDNALabs** — "the people's frontier lab" and the **creator / maintainer / steward** of the Lattice Protocol and the aDNA standard/platform.
 - The site's URL moves to **aDNA.network** (Squarespace `sarosal@gmail.com` → Vercel; same path as stanley.science).
 - aDNA.network also expands to be the site **for the network of aDNA computers** sharing/operating aDNA context over the Lattice protocols.
