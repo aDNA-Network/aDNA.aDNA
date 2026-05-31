@@ -10,7 +10,8 @@ tags: [coordination, outbound, operation_loom, oip_unification_precursor, operat
 related_campaign: campaign_siteforge_interactive_subsystem
 related_campaign_parent: idea_campaign_operator_interaction_patterns_unification   # B-aDNA-2026-05-20-OIP "Operation Concord"
 related_coord_family: operation_loom_genesis_p0
-follow_up_at: P7.3 (final handoff coord at campaign close)
+follow_up_at: resolved 2026-05-30 (P7.3 final handoff fired — see closure block)
+resolved_by: aDNA.aDNA/who/coordination/coord_2026_05_30_iss_p7_3_oip_unification_handoff.md
 ---
 
 # Coord — Operation Loom Genesis Notice to OIP Unification Owner
@@ -60,3 +61,7 @@ A final handoff coord memo (P7.3) will fire when Loom closes (Phase 7 P7.3). Tha
 ---
 
 > **2026-05-23 P3p.6r ISS rename**: campaign `campaign_siteforge_sis` → `campaign_siteforge_iss`; SIS (site-interaction-surface) → ISS (Interaction Surface Site). Historical content preserved verbatim.
+
+---
+
+> **2026-05-30 — CLOSURE (P7.3).** `follow_up_at: P7.3` resolved. Operation Loom closed Phase 7 and fired the final handoff coord at `aDNA.aDNA/who/coordination/coord_2026_05_30_iss_p7_3_oip_unification_handoff.md`. The campaign is **complete**; the anticipated absorption inventory in this genesis notice is now concrete with final numbers (ADR-028/029/030, LIP-0007, `skill_create_iss.md`, `what/lib/iss/`). No further Loom-side action; Concord absorbs at its own `arch_02` + `pilot_02` when it opens.

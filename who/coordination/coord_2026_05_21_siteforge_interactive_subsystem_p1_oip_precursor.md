@@ -11,7 +11,8 @@ related_campaign: campaign_siteforge_interactive_subsystem
 related_campaign_parent: idea_campaign_operator_interaction_patterns_unification   # B-aDNA-2026-05-20-OIP "Operation Concord"
 related_coord_family: operation_loom_p1_3_arch_lock
 supersedes_predecessor: aDNA.aDNA/who/coordination/coord_2026_05_21_siteforge_interactive_subsystem_genesis_oip_precursor.md
-follow_up_at: P7.3 (final handoff coord at campaign close)
+follow_up_at: resolved 2026-05-30 (P7.3 final handoff fired — see closure block)
+resolved_by: aDNA.aDNA/who/coordination/coord_2026_05_30_iss_p7_3_oip_unification_handoff.md
 ---
 
 # Coord — Operation Loom P1.3 Architecture-Lock Notice to OIP Unification Owner
@@ -114,3 +115,7 @@ A final handoff coord memo (P7.3) will fire when Loom closes Phase 7. That memo 
 ---
 
 > Campaign renamed 2026-05-22 → `campaign_siteforge_sis`; pack renamed → `context_iii_domain_packs_sis.md`. Filename preserved as historical anchor per parent-plan locked decision (operator-approved at `~/.claude/plans/please-read-the-claude-md-floating-forest.md`).
+
+---
+
+> **2026-05-30 — CLOSURE (P7.3).** `follow_up_at: P7.3` resolved. The "Final Handoff" promised in this memo fired at `aDNA.aDNA/who/coordination/coord_2026_05_30_iss_p7_3_oip_unification_handoff.md` (which supersedes this memo). All P1.3 placeholders are now resolved to final values — `adr_NNN ×2` → **ADR-028 / ADR-029** (+ **ADR-030** added at P6.M4), `LIP-NNN` → **LIP-0007**, `skill_create_interactive_surface` → **`skill_create_iss`**, `what/lib/interactive_surface/` → **`what/lib/iss/`**. Operation Loom is **complete** (2026-05-30); coord family `operation_loom_oip_precursor` closed from Loom's side. Concord absorbs the fait-accompli web substrate at its own `arch_02` + `pilot_02`.
