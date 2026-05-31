@@ -1,7 +1,7 @@
 ---
 type: directory_index
 created: 2026-02-19
-updated: 2026-05-26
+updated: 2026-05-30
 last_edited_by: agent_siteforge_native
 tags: [directory_index, decisions]
 ---

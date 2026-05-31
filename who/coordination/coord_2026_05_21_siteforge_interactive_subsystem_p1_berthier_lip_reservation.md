@@ -100,4 +100,18 @@ If Berthier requires anything else for the reservation — e.g., a one-pager LIP
 
 ---
 
-> Campaign renamed 2026-05-22 → `campaign_siteforge_sis`; pack renamed → `context_iii_domain_packs_sis.md`. Filename preserved as historical anchor per parent-plan locked decision (operator-approved at `~/.claude/plans/please-read-the-claude-md-floating-forest.md`).
+> Campaign renamed 2026-05-22 → `campaign_siteforge_sis`; pack renamed → `context_iii_domain_packs_sis.md`. Filename preserved as historical anchor per parent-plan locked decision (operator-approved at `~/.claude/plans/please-read-the-claude-md-floating-forest.md`). Campaign renamed again 2026-05-23 → `campaign_siteforge_iss` (ISS = Interaction Surface Site).
+
+---
+
+## Berthier Acknowledgment + LIP-0007 Assignment (2026-05-30)
+
+> **Reservation resolved at Operation Loom P7.2.** Follow-up memo: `SiteForge.aDNA/who/coordination/coord_2026_05_30_iss_p7_2_berthier_lip_assignment.md`.
+
+The three asks from this P1.3 reservation are resolved:
+
+1. **LIP number assigned → LIP-0007.** Next sequential, matching the LIP-0005 / LIP-0006 band precedent (both Standard pattern/concept LIPs). Assigned under FA authority at P7.2 entry (operator decision, plan `~/.claude/plans/please-read-the-claude-md-noble-beaver.md`); not self-claimed by the campaign per its standing instruction.
+2. **Vault of record → `lattice-labs/`** (registry + all prior LIPs live here; LIP-doctrine stays until LatticeLabs.aDNA Phase-6 cutover).
+3. **LIP-doctrine heads-up → none.** LIP-0007 modeled on the LIP-0001…0006 lineage (structure from LIP-0006; frontmatter from `lip_template.md`).
+
+**Landed 2026-05-30**: `lattice-labs/how/governance/lips/lip_0007_iss_pattern.md` (Standard; status **Accepted**; v1.0; ratifies the ISS pattern by reference to ADR-028/029/030 + canonical skill + protocols + exemplars) and the registry row. `follow_up_at: P7.2` is now **closed**.
