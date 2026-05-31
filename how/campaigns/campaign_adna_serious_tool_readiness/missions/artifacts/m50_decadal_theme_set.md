@@ -23,6 +23,8 @@ tags: [decadal_theme_set, d11_d20, m50, v8, p5, public_readiness, 100_iii_cycles
 
 # M5.0 D3 — 10-Decadal Theme Set (D11-D20)
 
+> ⚠️ **D16–D20 UNDER RE-SCOPE at M5.7 (operator pivot 2026-05-30).** D11–D15 are complete and unchanged. The undone docs-polish decadals **D16–D20 are PAUSED-but-resumable** pending the M5.7 "aDNALabs Site Expansion Planning" mission, which re-scopes the campaign around the aDNA-forward brand pivot (this site becomes the forward face of **aDNALabs**: docs + context-graph marketplace/registry + community/labs/org + the **aDNANetwork**, at **aDNA.network**). D16–D20 will be reviewed/resequenced/expanded and the Phase-5 exit gate amended (operator-ratified). This artifact is preserved as-is (archive-never-delete); the re-scope is recorded in [[m57_adnalabs_expansion_seed_brief]] + the M5.7 stub. The text below remains the pre-pivot baseline.
+
 > 100-cycle improvement program for the aDNA site + GitHub readme/repo, organized into 10 thematic decadals (D11-D20; extends Rosetta D1-D10 naming continuity). Each decadal = 10 cycles + 1 decadal AAR. Operator priorities (visual style + clarity + conciseness + anti-bloat + explanation quality) map to specific decadals per the priority-decadal cross-reference table below. Filed at M5.0 close 2026-05-25.
 
 ## Decadal Index (D11-D20)
