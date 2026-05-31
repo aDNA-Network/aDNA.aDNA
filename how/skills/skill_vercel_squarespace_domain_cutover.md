@@ -3,7 +3,7 @@ type: skill
 skill_type: process
 created: 2026-05-28
 updated: 2026-05-28
-status: active
+status: legacy
 category: infrastructure
 trigger: "A consumer vault needs to cut a registered Squarespace domain over to a Vercel-hosted Astro site for the first time (going live), with optional blue/green dev subdomain."
 last_edited_by: agent_berthier
@@ -19,6 +19,8 @@ requirements:
 ---
 
 # Skill: Vercel + Squarespace Domain Cutover
+
+> ⚠️ **LEGACY — superseded-pending [[adr_031_cloudflare_dns_site_publishing_standard]] (2026-05-31).** This Squarespace UI-scripted cutover is **not viable for SSO-gated Squarespace accounts**: no Squarespace DNS API, Google-SSO login blocks automated browsers, and Chrome 148 blocks reusing the operator's live session. Surfaced by the WGA `worldgeno.me` cutover (M02). **Workspace direction (ADR-031): migrate DNS to Cloudflare** (API-driven, agent-automatable, accessibility-friendly); a successor `skill_cloudflare_dns_cutover.md` will be graduated from the worldgeno.me Cloudflare migration. Use this skill only for **non-SSO** Squarespace zones where UI scripting still works.
 
 ## Overview
 
