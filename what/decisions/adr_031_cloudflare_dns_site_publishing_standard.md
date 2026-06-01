@@ -20,7 +20,7 @@ tags: [adr, decision, dns, cloudflare, squarespace, vercel, registrar, site-publ
 
 ## Status
 
-**proposed** — operator-initiated 2026-05-31 during the WGA `worldgeno.me` cutover (M02). Ratify at an operator decision gate; flip to `accepted` once worldgeno.me is live on Cloudflare DNS (the first migration validates the standard).
+**proposed** — operator-initiated 2026-05-31 during the WGA `worldgeno.me` cutover (M02). **Validated 2026-05-31:** `adna.network` (aDNA.aDNA) became the **first executed instance** — full API-driven Cloudflare migration, live on Vercel with email continuity preserved, in a single operator-present session (operator hands-on = create one token + one nameserver change). **Ready to ratify** (`proposed`→`accepted`) at an operator decision gate; the standard is proven.
 
 ## Context
 
@@ -40,7 +40,7 @@ The Squarespace UI-scripting harness (graduated skill `skill_vercel_squarespace_
 - **Hosting stays on Vercel** for now — Cloudflare DNS points at Vercel (apex via **CNAME flattening**, `www`/`dev` via CNAME, all DNS-only / un-proxied so Vercel terminates TLS). Cloudflare Pages as a hosting target is a **separate, later** decision, not part of this ADR.
 - **Registrar**: keep current registrations where they are initially; only the **nameservers** move to Cloudflare (one manual change per domain at the current registrar). Transferring registrations to Cloudflare Registrar is optional follow-on.
 - **Credential**: a Cloudflare API token (Zone:Edit + DNS:Edit) is brokered via `LatticeHome.aDNA` (Keychain + 1Password) per Standing Rule 6.
-- **Skill**: `skill_vercel_squarespace_domain_cutover.md` is marked **legacy**; a successor `skill_cloudflare_dns_cutover.md` will be **graduated from the worldgeno.me migration** (this ADR's first instance).
+- **Skill**: `skill_vercel_squarespace_domain_cutover.md` is marked **legacy**; the successor **`skill_cloudflare_dns_cutover.md` is owned by `SiteForge.aDNA`** (`how/skills/`) as part of its build+deploy mandate — graduated **v1.0.0 from the `adna.network` migration** (the first executed instance, 2026-05-31). Consumer site-vaults invoke it via a `federation_ref_dns` block in their `siteforge/` wrapper. *(Originally scoped to graduate into aDNA.aDNA from worldgeno.me; relocated to SiteForge per operator directive 2026-05-31 — DNS go-live is a build+deploy concern.)*
 
 ## Consequences
 
@@ -59,8 +59,9 @@ The Squarespace UI-scripting harness (graduated skill `skill_vercel_squarespace_
 
 | Domain | Vault | Current | Status |
 |---|---|---|---|
-| `worldgeno.me` | wga.aDNA | Squarespace DNS → Vercel | **IN PROGRESS** (M02; first instance of this ADR) |
-| `stanley.science` | ScienceStanley.aDNA | Squarespace DNS → Vercel (M08 live) | queued (next; highest production leverage) |
+| `adna.network` | aDNA.aDNA | Squarespace DNS → **Cloudflare → Vercel** | ✅ **LIVE 2026-05-31** — first executed instance; graduated `skill_cloudflare_dns_cutover` (CF zone `667a2d5e…`, NS `keanu`/`sierra`; Mailgun MX/SPF/DKIM/DMARC preserved) |
+| `worldgeno.me` | wga.aDNA | Squarespace DNS → Vercel | **queued — now turnkey** (M02 pivoted to Cloudflare; the All-zones token is live, so it's a one-NS-change cutover; seeded for next in-vault session) |
+| `stanley.science` | ScienceStanley.aDNA | Google/Squarespace DNS → Vercel (M08 live) | queued (next; highest production leverage; seeded as SS M14) — preserve 5 Google MX + SPF/DKIM |
 | ContextCommons site domain | ContextCommons.aDNA | TBD | queued |
 | other site-vaults | RareArchive.aDNA · ZenZachary.aDNA · LatticeAgent.aDNA · (scan for more) | TBD | backlog — migrate as each next touches DNS |
 

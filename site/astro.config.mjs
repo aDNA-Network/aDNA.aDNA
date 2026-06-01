@@ -5,7 +5,7 @@ import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://adna.dev',
+  site: process.env.SITE_URL || 'https://adna.network',
   output: 'static',
   adapter: vercel(),
   integrations: [mdx(), sitemap()],
