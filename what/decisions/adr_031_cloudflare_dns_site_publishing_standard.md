@@ -3,10 +3,11 @@ type: decision
 adr_id: adr_031
 adr_number: 031
 title: "Adopt Cloudflare as the core DNS + registrar standard"
-status: proposed
+status: accepted
 created: 2026-05-31
 updated: 2026-05-31
-last_edited_by: agent_berthier
+ratified: 2026-05-31
+last_edited_by: agent_rosetta
 supersedes: none
 superseded_by: none
 related:
@@ -20,7 +21,13 @@ tags: [adr, decision, dns, cloudflare, squarespace, vercel, registrar, site-publ
 
 ## Status
 
-**proposed** — operator-initiated 2026-05-31 during the WGA `worldgeno.me` cutover (M02). **Validated 2026-05-31:** `adna.network` (aDNA.aDNA) became the **first executed instance** — full API-driven Cloudflare migration, live on Vercel with email continuity preserved, in a single operator-present session (operator hands-on = create one token + one nameserver change). **Ready to ratify** (`proposed`→`accepted`) at an operator decision gate; the standard is proven.
+**accepted** — operator-initiated 2026-05-31 during the WGA `worldgeno.me` cutover (M02); **ratified 2026-05-31** at operator endorsement ("CF will be a great way to operate sites/dns/urls for our system/context") after **three validating instances in one session**:
+
+1. **`adna.network`** (aDNA.aDNA) — first executed instance; Mailgun email preserved; canonical flipped.
+2. **`worldgeno.me`** (wga.aDNA) — SPF `-all` + DMARC `p=reject` lockdown preserved; wga M02 closed; III unblocked.
+3. **`stanley.science`** (ScienceStanley.aDNA) — **live production Google Workspace email preserved** (5 MX + SPF + 2048-bit DKIM, verified round-trip), zero mail disruption.
+
+Each cutover: operator hands-on = one nameserver change (the token was created once, on the first). The standard is proven; the reusable skill is owned by SiteForge (`skill_cloudflare_dns_cutover` v1.0.0).
 
 ## Context
 
@@ -60,8 +67,8 @@ The Squarespace UI-scripting harness (graduated skill `skill_vercel_squarespace_
 | Domain | Vault | Current | Status |
 |---|---|---|---|
 | `adna.network` | aDNA.aDNA | Squarespace DNS → **Cloudflare → Vercel** | ✅ **LIVE 2026-05-31** — first executed instance; graduated `skill_cloudflare_dns_cutover` (CF zone `667a2d5e…`, NS `keanu`/`sierra`; Mailgun MX/SPF/DKIM/DMARC preserved) |
-| `worldgeno.me` | wga.aDNA | Squarespace DNS → Vercel | **queued — now turnkey** (M02 pivoted to Cloudflare; the All-zones token is live, so it's a one-NS-change cutover; seeded for next in-vault session) |
-| `stanley.science` | ScienceStanley.aDNA | Google/Squarespace DNS → Vercel (M08 live) | queued (next; highest production leverage; seeded as SS M14) — preserve 5 Google MX + SPF/DKIM |
+| `worldgeno.me` | wga.aDNA | Squarespace DNS → **Cloudflare → Vercel** | ✅ **LIVE 2026-05-31** — 2nd instance (CF zone `4426d85f…`; SPF `-all` + DMARC `p=reject` lockdown preserved); wga M02 closed; III unblocks at c92 |
+| `stanley.science` | ScienceStanley.aDNA | Google/Squarespace DNS → **Cloudflare → Vercel** | ✅ **LIVE 2026-05-31** — 3rd instance (CF zone `6e1cf60a…`, NS keanu/sierra; HTTPS 200); **live production Google Workspace email preserved** (5 MX + SPF + 2048-bit `google._domainkey` DKIM round-trip verified, zero disruption); SS M14 closed |
 | ContextCommons site domain | ContextCommons.aDNA | TBD | queued |
 | other site-vaults | RareArchive.aDNA · ZenZachary.aDNA · LatticeAgent.aDNA · (scan for more) | TBD | backlog — migrate as each next touches DNS |
 
