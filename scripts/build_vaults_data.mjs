@@ -3,14 +3,14 @@
  * build_vaults_data.mjs — prebuild projection script
  *
  * Reads:
- *   - ../node.aDNA/what/inventory/inventory_vaults.yaml (canonical inventory)
- *   - ../node.aDNA/what/vault_cards/the_*.aDNA.md (vault_card frontmatter overlays)
+ *   - ../Home.aDNA/what/inventory/inventory_vaults.yaml (canonical inventory)
+ *   - ../Home.aDNA/what/vault_cards/the_*.aDNA.md (vault_card frontmatter overlays)
  *
  * Writes:
  *   - site/src/data/vaults.json (projected data; committed)
  *   - site/src/data/vaults_graph.mmd (Mermaid DSL output; committed)
  *
- * CI/Vercel fallback: if ../node.aDNA/ absent, log warning + skip overwrite (uses last-committed).
+ * CI/Vercel fallback: if ../Home.aDNA/ absent, log warning + skip overwrite (uses last-committed).
  *
  * Idempotency: byte-identical output on same inputs.
  *
@@ -25,15 +25,17 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(__dirname, '..');
-const NODE_VAULT = path.resolve(PROJECT_ROOT, '..', 'node.aDNA');
-const INVENTORY_YAML = path.join(NODE_VAULT, 'what/inventory/inventory_vaults.yaml');
-const VAULT_CARDS_DIR = path.join(NODE_VAULT, 'what/vault_cards');
+// Reads Home.aDNA directly. Was the node.aDNA symlink (→ Home.aDNA), archived in the Home shift
+// completion cascade — ADR-023 contract unchanged. (coord_2026_06_02_rosetta_generator_repoint.md)
+const HOME_VAULT = path.resolve(PROJECT_ROOT, '..', 'Home.aDNA');
+const INVENTORY_YAML = path.join(HOME_VAULT, 'what/inventory/inventory_vaults.yaml');
+const VAULT_CARDS_DIR = path.join(HOME_VAULT, 'what/vault_cards');
 const OUTPUT_JSON = path.join(PROJECT_ROOT, 'site/src/data/vaults.json');
 const OUTPUT_GRAPH = path.join(PROJECT_ROOT, 'site/src/data/vaults_graph.mmd');
 
 // CI/Vercel fallback per ADR-023 Clause A
-if (!fs.existsSync(NODE_VAULT)) {
-  console.warn(`[build_vaults_data] WARN: ${NODE_VAULT} not present; using last-committed vaults.json. (CI/Vercel fallback per ADR-023 Clause A.)`);
+if (!fs.existsSync(HOME_VAULT)) {
+  console.warn(`[build_vaults_data] WARN: ${HOME_VAULT} not present; using last-committed vaults.json. (CI/Vercel fallback per ADR-023 Clause A.)`);
   process.exit(0);
 }
 if (!fs.existsSync(INVENTORY_YAML)) {
