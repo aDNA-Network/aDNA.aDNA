@@ -1,0 +1,26 @@
+{
+  "cycle": 142,
+  "decadal": "E1",
+  "mission": "mission_adna_str_p5_m510_e1_brand_positioning",
+  "slug": "e1_hero_words_first",
+  "date": "2026-06-03",
+  "session": "session_stanley_20260604T022755Z_v8_m510_e1_continue",
+  "theme": "Brand & Positioning — hero words-first + banner demote (the banner-vs-words decision)",
+  "target": ["site/src/components/sections/HomeHero.astro"],
+  "change_summary": "Re-ordered the hero so the manifesto WORDS lead the fold (headline + lead + CTAs + trust line first), demoting the DNA-helix banner to a quieter supporting band BELOW the CTAs (max-width 56rem->44rem, margin-top, shadow-lg->md, opacity 0.92, loading eager->lazy). Implements the doctrine's above-fold law (ONE focus = the words, Hermes pattern) while preserving the on-brand banner asset (which resonates with the 'shared inheritance / DNA' theme).",
+  "doctrine_compliance": {
+    "above_fold_one_focus": "now the headline (words-as-focus); banner demoted below = supporting, not competing",
+    "lcp": "LCP element shifts from the banner image to the text headline (perf-positive)",
+    "dial": "~55/45 unchanged"
+  },
+  "decision": {
+    "banner_vs_words": "DEMOTE (words lead, banner supports below). Alternatives flagged for operator: (a) keep demoted [chosen], (b) restore banner on top, (c) remove banner entirely (pure manifesto). Operator to confirm at the cycle-2 check-in."
+  },
+  "validation": {
+    "astro_build": "PASS — 161 pages, 5.00s, 0 errors",
+    "lighthouse": "deferred to E1 decadal close (cycle 10)",
+    "persona_qa": "deferred to E1 decadal Reviewer Lens Pass"
+  },
+  "deploy": "deployed to adna.network prod this cycle (manual vercel --prebuilt --prod; per-cycle discipline until auto-deploy)",
+  "notes": "Cycle 2 of E1. Brand-system v3 token deltas kept minimal this cycle (DarkModeToggle already present); deeper brand tokens fold into later section cycles as needed."
+}

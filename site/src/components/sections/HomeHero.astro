@@ -36,17 +36,6 @@ const {
 ---
 
 <section class="hero">
-  <div class="hero-banner">
-    <Picture
-      src={bannerImage}
-      alt={bannerAlt}
-      widths={[480, 768, 964]}
-      formats={["avif", "webp"]}
-      sizes="(max-width: 768px) calc(100vw - 3rem), 56rem"
-      class="hero-banner-img"
-      loading="eager"
-    />
-  </div>
   <h1 class="hero-headline">{headline}</h1>
   <p class="hero-lead">{lead}</p>
   <div class="hero-actions">
@@ -57,6 +46,17 @@ const {
     <a href={githubHref} target="_blank" rel="noopener" class="trust-link">Open source on GitHub</a>
     <span class="trust-sep" aria-hidden="true">·</span>
     <span class="trust-link trust-static">MIT · built on the Lattice Protocol</span>
+  </div>
+  <div class="hero-banner">
+    <Picture
+      src={bannerImage}
+      alt={bannerAlt}
+      widths={[480, 768, 964]}
+      formats={["avif", "webp"]}
+      sizes="(max-width: 768px) calc(100vw - 3rem), 44rem"
+      class="hero-banner-img"
+      loading="lazy"
+    />
   </div>
   {stats.length > 0 && (
     <div class="trust-strip">
@@ -79,14 +79,17 @@ const {
     align-items: center;
   }
 
+  /* Banner demoted below the manifesto words (E1 c2): words lead the fold;
+     the DNA-helix mark supports the 'shared inheritance' theme as a quieter band. */
   .hero-banner {
-    max-width: 56rem;
+    max-width: 44rem;
     width: 100%;
-    margin: 0 auto var(--space-8);
+    margin: var(--space-10) auto 0;
     border-radius: var(--radius-xl);
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
     border: 1px solid var(--color-border);
+    opacity: 0.92;
   }
 
   .hero-banner-img {
