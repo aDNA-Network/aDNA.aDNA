@@ -1,0 +1,31 @@
+{
+  "cycle": 145,
+  "decadal": "E1",
+  "mission": "mission_adna_str_p5_m510_e1_brand_positioning",
+  "slug": "e1_section2_living_registry",
+  "date": "2026-06-03",
+  "session": "session_stanley_20260604T022755Z_v8_m510_e1_continue",
+  "theme": "Section 2 — 'The living registry': curated real-vault cards (registry-as-proof) + see-all/graph affordances",
+  "target": [
+    "site/src/components/sections/RegistryCard.astro",
+    "site/src/pages/index.astro"
+  ],
+  "change_summary": "Added homepage Section 2 between sec.1 and How-it-Works: a curated grid of 8 REAL vaults from data/vaults.json (aDNA/standard, III/framework, CanvasForge/forge, TaskForge/coordination, LA Venture Graph/knowledge-graph, Home/node, WGA + Rare Archive/public-good org vaults) via a new token-driven RegistryCard.astro. Each card shows only honest fields — class label, status chip, display_name, 'tended by {persona}' attribution, one-line note (first sentence, capped) — and links to the vault's /vaults/{slug}/ detail page. Section footer: 'See all 40 vaults ->' (/vaults) + 'View the relationship graph ->' (/vaults/graph). Vault count pulled live from vaults.json.",
+  "doctrine_compliance": {
+    "density_band": "Dense — one organizing principle: a slice ACROSS the network's classes (subtitle states it); scannable card grid",
+    "registry_as_proof": "real governed vaults with personas/status are the content (HF/Replicate/Val Town curate-don't-dump — 8 curated, not a 40-dump; 'see all' routes to the full registry)",
+    "honest_affordances": "live affordance = navigation into the registry (card -> detail page; footer -> graph + full list). pull/compose/github/docs NOT fabricated — github_url/docs_site_url/federation_refs are empty in vaults.json and the marketplace data-shape is a pending Berthier/Operation-Homecoming dependency (coord 2026-06-03 Q1)",
+    "two_colors": "teal (brand) dominant; amber (brand accent) on pending chips; green (success token) on active chips is semantic status, used minimally — dominant accent pair unchanged",
+    "ethos_subtle": "WGA + Rare Archive (public-good org vaults) included by curation; shown not preached",
+    "reuse": "token-driven RegistryCard authored rather than reusing /vaults' VaultCard (whose hard-coded #4a86e8 blue hover would fight the teal palette) — VaultCard left untouched for /vaults"
+  },
+  "validation": {
+    "astro_build": "PASS — 161 pages, 5.07s, 0 errors",
+    "visual_desktop": "4-up grid at 1280px; class/status/persona/note/open-vault render; WGA persona-line correctly omitted (null); footer affordances present",
+    "visual_mobile": "390px — single column, no horizontal scroll (scrollW==clientW); cards legible",
+    "lighthouse": "deferred to E1 decadal close (cycle 10)",
+    "persona_qa": "deferred to E1 decadal Reviewer Lens Pass (Marketplace Consumer + Community Lead + Design Critic)"
+  },
+  "deploy": "this cycle triggers the session's combined deploy (dark hero + sec.1 + sec.2) to adna.network",
+  "notes": "Cycle 5 of E1. Upstream/polish backlog: (1) VaultCard.astro is off-token (hard-coded hex incl. blue hover) — candidate token refactor; (2) the registry generator should populate github_url/docs_site_url/federation_refs/tagline so richer affordances + federation proof signals can light up without fabrication; (3) status colors flagged for the cycle-10 Brand Strategist (green chip vs 2-color dial)."
+}

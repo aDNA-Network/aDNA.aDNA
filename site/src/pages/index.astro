@@ -2,12 +2,45 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HomeHero from '../components/sections/HomeHero.astro';
 import NetworkDiagram from '../components/sections/NetworkDiagram.astro';
+import RegistryCard from '../components/sections/RegistryCard.astro';
 import { buildWebSiteJsonLD } from '../utils/seo';
 import { steps, stats } from '../data/home';
+import vaultsData from '../data/vaults.json';
 import bannerImage from '../assets/aDNABanner.png';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.network';
 const jsonLD = buildWebSiteJsonLD(siteUrl);
+
+// Section 2 — a curated slice across the network's classes (real data/vaults.json
+// records), including two public-good org vaults (WGA, Rare Archive) to thread the
+// ethos by what is shown. "See all" routes to the full /vaults registry.
+const REGISTRY_SLUGS = [
+  'aDNA.aDNA', 'III.aDNA', 'CanvasForge.aDNA', 'TaskForge.aDNA',
+  'LAVentureGraph.aDNA', 'Home.aDNA', 'wga.aDNA', 'RareArchive.aDNA',
+];
+const bySlug: Record<string, any> = Object.fromEntries(
+  (vaultsData.vaults as any[]).map((v) => [v.vault_slug, v])
+);
+const registryVaults = REGISTRY_SLUGS.map((s) => bySlug[s]).filter(Boolean);
+const vaultCount = vaultsData.vault_count;
+
+const CLASS_LABELS: Record<string, string> = {
+  standard_dev: 'the standard',
+  framework: 'framework',
+  framework_candidate: 'framework',
+  forge: 'forge',
+  platform: 'platform',
+  org_vault: 'org vault',
+  org_graph: 'org graph',
+  network: 'network',
+  node_operational: 'node',
+  coordination: 'coordination',
+  document: 'document',
+  knowledge_graph: 'knowledge graph',
+  tooling: 'tooling',
+  workspace: 'workspace',
+};
+const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
 ---
 
 <BaseLayout
@@ -30,6 +63,27 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
       <p class="diagram-caption">
         Real aDNA vaults — forges, frameworks, platforms, and public-good archives —
         federating on the Lattice Protocol.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2 · The living registry -->
+  <section class="living-registry">
+    <div class="section-inner">
+      <h2 class="section-title">The living registry</h2>
+      <p class="section-subtitle">
+        Every vault is a real, governed context graph — its own persona, its own history,
+        its own place in the network. Here's a slice across {vaultCount} of them.
+      </p>
+      <div class="registry-grid">
+        {registryVaults.map((v) => (
+          <RegistryCard vault={v} classLabel={classLabel(v.class)} />
+        ))}
+      </div>
+      <p class="registry-actions">
+        <a href="/vaults/">See all {vaultCount} vaults &rarr;</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="/vaults/graph/">View the relationship graph &rarr;</a>
       </p>
     </div>
   </section>
@@ -123,6 +177,43 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
     max-width: 34rem;
     margin: var(--space-8) auto 0;
     line-height: 1.6;
+  }
+
+  /* ——— 2 · The living registry ——— */
+  .living-registry {
+    padding: var(--space-24) 0;
+  }
+
+  .registry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-5);
+  }
+
+  .registry-actions {
+    text-align: center;
+    margin-top: var(--space-10);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--text-sm);
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .registry-actions a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .registry-actions a:hover {
+    text-decoration: underline;
+  }
+
+  .registry-actions .sep {
+    color: var(--color-border);
   }
 
   /* ——— How it Works ——— */
@@ -318,6 +409,10 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
     }
 
     .context-democracy {
+      padding: var(--space-12) 0;
+    }
+
+    .living-registry {
       padding: var(--space-12) 0;
     }
 

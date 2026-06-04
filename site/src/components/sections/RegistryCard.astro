@@ -1,0 +1,129 @@
+---
+/**
+ * RegistryCard.astro — one vault on the homepage "living registry" (M5.10 / E1 c5).
+ *
+ * Token-driven (no hard-coded hex — unlike the denser VaultCard used on /vaults, whose
+ * blue hover would fight the teal palette here). Renders only REAL fields from
+ * data/vaults.json: display_name, persona (attribution), a one-line note (proof of a
+ * real, governed graph), and status + class (proof signal). The live affordance is
+ * navigation into the registry (the whole card links to the vault's detail page);
+ * pull/compose/GitHub affordances are gated on the marketplace data-shape dependency
+ * (Berthier / Operation Homecoming) + the generator populating github_url/docs_site_url.
+ */
+interface Props {
+  vault: any;
+  classLabel: string;
+}
+const { vault, classLabel } = Astro.props;
+
+// First sentence of the note, capped — keeps the card to one honest line of proof.
+function shortNote(note: string | null | undefined): string {
+  if (!note) return '';
+  const firstSentence = note.split('. ')[0].replace(/\.$/, '');
+  const s = firstSentence.length <= 104 ? firstSentence : note.slice(0, 100).trimEnd();
+  return s + (s.length < (note || '').replace(/\.$/, '').length ? '…' : '');
+}
+
+const persona = vault.persona && vault.persona !== '—' ? vault.persona : null;
+const note = shortNote(vault.note);
+---
+
+<a class="reg-card" href={`/vaults/${vault.vault_slug}/`}>
+  <div class="reg-card-top">
+    <span class="reg-class">{classLabel}</span>
+    <span class:list={['reg-status', `status-${vault.status}`]}>{vault.status}</span>
+  </div>
+  <h3 class="reg-name">{vault.display_name}</h3>
+  {persona && <p class="reg-persona">tended by {persona}</p>}
+  {note && <p class="reg-note">{note}</p>}
+  <span class="reg-open" aria-hidden="true">Open vault →</span>
+</a>
+
+<style>
+  .reg-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-5) var(--space-5) var(--space-4);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .reg-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .reg-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+
+  .reg-class {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    text-transform: lowercase;
+  }
+
+  .reg-status {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    padding: 0.1em 0.55em;
+    border-radius: var(--radius-full);
+    text-transform: lowercase;
+  }
+
+  .status-active {
+    background: color-mix(in srgb, var(--color-success) 15%, transparent);
+    color: var(--color-success);
+  }
+
+  .status-pending,
+  .status-genesis {
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    color: color-mix(in srgb, var(--color-accent) 75%, var(--color-text));
+  }
+
+  .status-superseded {
+    background: color-mix(in srgb, var(--color-text-muted) 15%, transparent);
+    color: var(--color-text-muted);
+  }
+
+  .reg-name {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-text-heading);
+    margin: var(--space-1) 0 0;
+  }
+
+  .reg-persona {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  .reg-note {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin: var(--space-1) 0 var(--space-2);
+  }
+
+  .reg-open {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: auto;
+  }
+</style>
