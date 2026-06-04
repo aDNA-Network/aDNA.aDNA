@@ -1,0 +1,69 @@
+{
+  "cycle": 147,
+  "decadal": "E1",
+  "decadal_cycle": 7,
+  "mission": "mission_adna_str_p5_m510_e1_brand_positioning",
+  "slug": "e1_reskin_tokyo_night",
+  "date": "2026-06-04",
+  "session": "session_stanley_20260604T160140Z_v8_m510_e1_reskin_deploy",
+  "theme": "ADR-032 broad reskin (cycle 7): repaint aDNA.network from the minimalist teal/amber 'Rust/Tauri' register to the Science-Stanley Ghibli-pixel / Tokyo Night register, dark-first; visual-identity v2->v3; regenerate the 4 section heroes; DEPLOY.",
+  "register": "ss_ghibli_pixel / tokyo_night (#1a1b26/#24283b base, #9d7cd8 purple primary, #7dcfff cyan links, #e0a84c warm amber accent)",
+  "operator_scope": "Operator (AskUserQuestion): cycle-7 core reskin only + regenerate all 4 section heroes + deploy at session end. Folded the deploy-visible clashers (favicon, OG cards, Mermaid) into cycle 7 so the live/shared surface is coherent. Heavy ceremony (30-persona Reviewer Lens Pass + decadal AAR + full Lighthouse) DEFERRED to E1 cycle 10.",
+  "target": [
+    "site/branding.json",
+    "site/src/styles/branding.css",
+    "site/src/styles/tokens.css",
+    "site/src/styles/global.css",
+    "site/src/layouts/BaseLayout.astro",
+    "site/src/content/reference/visual-identity-v2.mdx (-> v3)",
+    "site/public/favicon.svg",
+    "site/scripts/generate-og-images.mjs (+ regen public/images/og-*.png)",
+    "site/src/components/islands/MermaidDiagram.astro",
+    "site/src/components/sections/RegistryCard.astro",
+    "site/src/pages/index.astro",
+    "site/src/pages/{learn,how,patterns,reference}/index.astro",
+    "site/src/assets/heroes/hero_{learn,how,patterns,reference}.png",
+    "site/tests/gates/gate-10-perf.spec.ts",
+    "site/tests/gates/gate-11-hero-banner.spec.ts",
+    "how/campaigns/campaign_adna_serious_tool_readiness/runners/e1_section_heroes_gen.py"
+  ],
+  "change_summary": "Repainted the design tokens to Tokyo Night: branding.json + branding.css (token NAMES preserved, VALUES repointed — purple #9d7cd8 primary, cyan #7dcfff links split from primary, warm amber #e0a84c accent; light-mode deep-purple/deep-cyan derivations for AA on white) + tokens.css .dark neutrals (#1a1b26/#1f2335/#24283b/#2f334d/#c0caf5). Flipped to DARK-FIRST: <html class='no-js dark'> + BaseLayout inline script now defaults dark (dark unless the user toggled light) so the Tokyo Night register greets every visitor; light mode stays a toggle/parity register. Rewrote visual-identity-v2.mdx -> 'v3' (slug stable): §1 palette (Tokyo Night tables), §4 imagery guardrails RELAXED to the SS-Ghibli illustrative register (illustrative pixel-art scenes allowed; kept no-baked-text/no-faces/a11y), §7 dark-first + image-led hero. Deploy-visible clashers: favicon teal->purple; OG-card generator -> Tokyo Night accents+gradient + stale 'adna-docs.vercel.app'->'adna.network' (6 cards regenerated); Mermaid theme -> dark-surface node fills + purple borders + cyan edges. Regenerated the 4 section heroes (learn/how/patterns/reference) as SS-Ghibli Tokyo-Night scenes via a cloned runner (e1_section_heroes_gen.py) + updated their alt text. A11y reconciliation: the palette change regressed several brand-colored small-text elements; fixed reg-persona->muted, reg-open + step-number->cyan link token, status pills darkened toward --color-text (AA both modes). Updated gate-10/gate-11 from the retired hero-banner-img to the cycle-146 image-led .hero-stage-img (16:9).",
+  "doctrine_compliance": {
+    "adr_032_register_pivot": "executed — Tokyo Night dark-first palette + relaxed imagery guardrails are the ratified ADR-032 deltas",
+    "purpose_over_decoration": "retained — image assets carry the warm register; chrome stays token-driven",
+    "aa_contrast": "verified BOTH modes via axe-core (gate-4): 0 color-contrast violations dark + light after reconciliation; every text/link pairing checked",
+    "reduced_motion": "untouched — no motion added; prefers-reduced-motion path intact",
+    "honest_affordances": "no fabricated UI; reg-open is a real link affordance, status pills reflect real vault status",
+    "dark_first": "hard dark-first (default dark regardless of OS; light is opt-in via toggle) — operator 'dark-first' intent; documented in v3 §7 for operator softening if desired"
+  },
+  "validation": {
+    "astro_build": "PASS — 161 pages, ~5s, 0 errors",
+    "playwright_gates": "PASS — 56/56 (was 8 failing: 7 stale hero-banner gates [gate-10 x3 + gate-11 x4] reconciled to the image-led hero; 1 a11y contrast cleared)",
+    "a11y_axe": "0 WCAG AA color-contrast violations on homepage in BOTH dark and light (down from 8 dark + 8 light at first pass)",
+    "visual_desktop": "1280px — dark-first Tokyo Night homepage; 'The aDNA Network' title legible over the node-map; purple CTA + cyan accents; /learn section hero (cozy desk) wired",
+    "visual_mobile": "390px — dark hero + title legible; manifesto/CTAs/trust/stats flow; no horizontal overflow",
+    "lighthouse": "deferred to E1 decadal close (cycle 10)",
+    "reviewer_lens_pass": "30-persona RLP deferred to E1 cycle 10 (per operator cycle-7 scope)"
+  },
+  "image_gen": {
+    "runner": "how/campaigns/campaign_adna_serious_tool_readiness/runners/e1_section_heroes_gen.py (cloned from e1_hero_adna_network_gen.py; reuses GHIBLI_TAIL + Keychain auth)",
+    "model": "imagen-4.0-fast-generate-001 (Ultra returned transient 429/503 capacity errors at gen time; Fast had capacity — same pattern as cycle 146; section banners do not need Ultra fidelity)",
+    "interpreter": "python3.13",
+    "rounds": "r1 (8 requested; learn/patterns/reference OK, how 0/8) -> r1b (how 0/3, person-implication scene tripped the safety filter empty-return) -> r2 (how reprompted peopleless, 2/2 OK)",
+    "winners": {
+      "learn": "candidates/sec_learn_r1_v1.png (cozy study desk, helix from a notebook)",
+      "how": "candidates/sec_how_r2_v1.png (peopleless modular pipeline on a desk)",
+      "patterns": "candidates/sec_patterns_r1_v1.png (isometric connected vault-blocks)",
+      "reference": "candidates/sec_reference_r1_v1.png (warm archive library, brass lamp)"
+    },
+    "cost_usd": {"r1_fast": 0.10, "r2_fast": 0.04, "total": 0.14},
+    "logs": [
+      "cycle_147_e1_section_heroes.r1.image_gen_log.json",
+      "cycle_147_e1_section_heroes.r1b.image_gen_log.json",
+      "cycle_147_e1_section_heroes.r2.image_gen_log.json"
+    ],
+    "candidates_local_only": true
+  },
+  "deploy": "deployed to aDNA.network (operator-approved this session; was gated on ADR-032 ratification which landed at the cycle-146 gate)",
+  "notes": "Cycle 7 of E1, first broad-reskin cycle under ADR-032. Findings: (1) splitting --color-primary (purple) from --color-link (cyan) is the correct Tokyo Night mapping but cascaded AA regressions into components that used --color-primary for small text — purple #9d7cd8 hits only ~4.06:1 on the #24283b card surface; fix is to route small accent text through --color-link (cyan, AA both modes) or muted. (2) Imagen returns empty ('no images returned', NOT a retried transient) when a scene strongly implies people under person_generation=dont_allow — the 'how' workbench scene failed 8x until reprompted peopleless. (3) Hard vs soft dark-first is an operator call; chose hard (Tokyo Night greets everyone) — trivially softenable. Remaining E1: cycle 10 decadal AAR + 30-persona Reviewer Lens Pass + full Lighthouse + any deferred Mermaid/OG polish."
+}

@@ -271,7 +271,8 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
   .step-number {
     font-family: var(--font-mono);
     font-size: var(--text-sm);
-    color: var(--color-primary);
+    /* Cyan accent — AA both modes (purple --color-primary fails for sm text). */
+    color: var(--color-link);
     font-weight: 600;
     margin-bottom: var(--space-4);
   }

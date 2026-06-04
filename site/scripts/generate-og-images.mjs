@@ -23,15 +23,15 @@ mkdirSync(outDir, { recursive: true });
 const WIDTH = 1200;
 const HEIGHT = 630;
 
-function buildSvg(title, subtitle, accentColor = '#0D7377') {
+function buildSvg(title, subtitle, accentColor = '#9d7cd8') {
   // Escape XML entities
   const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${HEIGHT}" viewBox="0 0 ${WIDTH} ${HEIGHT}">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0A4F52"/>
-      <stop offset="100%" stop-color="#071E1F"/>
+      <stop offset="0%" stop-color="#24283b"/>
+      <stop offset="100%" stop-color="#16161e"/>
     </linearGradient>
     <linearGradient id="helix" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="${accentColor}" stop-opacity="0.12"/>
@@ -61,14 +61,14 @@ function buildSvg(title, subtitle, accentColor = '#0D7377') {
   </text>
 
   <!-- Subtitle -->
-  <text x="80" y="370" font-family="sans-serif" font-weight="400" font-size="26" fill="#A0B0B0">
+  <text x="80" y="370" font-family="sans-serif" font-weight="400" font-size="26" fill="#9aa5ce">
     ${esc(subtitle)}
   </text>
 
   <!-- Bottom bar -->
   <rect x="80" y="530" width="60" height="4" rx="2" fill="${accentColor}"/>
-  <text x="160" y="536" font-family="sans-serif" font-size="16" fill="#607070">
-    adna-docs.vercel.app
+  <text x="160" y="536" font-family="sans-serif" font-size="16" fill="#565a6e">
+    adna.network
   </text>
 </svg>`;
 }
@@ -78,37 +78,37 @@ const variants = [
     file: 'og-default.png',
     title: 'Agentic DNA',
     subtitle: 'Give your project a knowledge architecture',
-    accent: '#0D7377',
+    accent: '#9d7cd8',
   },
   {
     file: 'og-learn.png',
     title: 'Learn aDNA',
     subtitle: 'Concepts, tutorials, and comparisons',
-    accent: '#14919B',
+    accent: '#7dcfff',
   },
   {
     file: 'og-patterns.png',
     title: 'aDNA Patterns',
     subtitle: 'Reusable architectural patterns for knowledge projects',
-    accent: '#D4A017',
+    accent: '#e0a84c',
   },
   {
     file: 'og-reference.png',
     title: 'aDNA Reference',
     subtitle: 'Specification, glossary, and technical reference',
-    accent: '#0A4F52',
+    accent: '#bb9af7',
   },
   {
     file: 'og-community.png',
     title: 'aDNA Community',
     subtitle: 'Roles, contributions, and adopter personas',
-    accent: '#14919B',
+    accent: '#7dcfff',
   },
   {
     file: 'og-how.png',
     title: 'aDNA How',
     subtitle: 'Publishing, workshops, and lattice examples',
-    accent: '#2A9D8F',
+    accent: '#7aa2f7',
   },
 ];
 

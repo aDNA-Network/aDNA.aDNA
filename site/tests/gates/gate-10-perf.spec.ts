@@ -12,7 +12,7 @@ test('G10 Perf: hero image uses modern format (WebP/AVIF, not bare JPEG)', async
   // When using <picture>, modern formats are in <source> elements; <img> is the legacy fallback.
   // Check either: a <source> in the hero uses avif/webp, or the img src itself is not a JPEG.
   const hasPictureSource = await page.evaluate(() => {
-    const picture = document.querySelector('.hero-banner picture');
+    const picture = document.querySelector('.hero-stage picture');
     if (picture) {
       const sources = Array.from(picture.querySelectorAll('source'));
       return sources.some(s => {
@@ -25,7 +25,7 @@ test('G10 Perf: hero image uses modern format (WebP/AVIF, not bare JPEG)', async
 
   if (!hasPictureSource) {
     // Fallback: plain <img> must not be a JPEG
-    const heroImg = page.locator('.hero-banner img').first();
+    const heroImg = page.locator('.hero-stage-img').first();
     const src = await heroImg.getAttribute('src');
     expect(src, 'Hero image must use WebP or AVIF — not a bare JPEG').not.toMatch(/\.jpe?g(\?|$)/i);
   } else {
@@ -36,7 +36,7 @@ test('G10 Perf: hero image uses modern format (WebP/AVIF, not bare JPEG)', async
 test('G10 Perf: hero image has sizes attribute for responsive loading', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
 
-  const heroImg = page.locator('.hero-banner img').first();
+  const heroImg = page.locator('.hero-stage-img').first();
   const sizes = await heroImg.getAttribute('sizes');
   expect(sizes, 'Hero image must have a sizes attribute for correct responsive loading').toBeTruthy();
 });
@@ -44,7 +44,7 @@ test('G10 Perf: hero image has sizes attribute for responsive loading', async ({
 test('G10 Perf: hero image has srcset for multiple breakpoints', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
 
-  const heroImg = page.locator('.hero-banner img').first();
+  const heroImg = page.locator('.hero-stage-img').first();
   const srcset = await heroImg.getAttribute('srcset');
   expect(srcset, 'Hero image must have srcset for responsive width variants').toBeTruthy();
   // Expect at least 2 width descriptors

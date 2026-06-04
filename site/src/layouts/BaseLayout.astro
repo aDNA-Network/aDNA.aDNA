@@ -38,7 +38,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -66,9 +66,10 @@ const {
     <script is:inline>
       (function () {
         const applyTheme = () => {
+          // Dark-first (ADR-032): the Tokyo Night register is the default for every
+          // visitor; light is opt-in via the toggle. Dark unless the user chose light.
           const theme = localStorage.getItem('theme');
-          const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-          const dark = theme === 'dark' || (!theme && prefersDark);
+          const dark = theme !== 'light';
           document.documentElement.classList.toggle('dark', dark);
         };
         applyTheme();

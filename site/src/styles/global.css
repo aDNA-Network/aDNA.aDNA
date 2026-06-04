@@ -191,12 +191,15 @@ button:focus-visible,
   color: white;
 }
 
+/* Dark-mode primary button keeps white text legible — uses the deep purple
+   (--brand-primary #9d7cd8 is too light for white body text: 3.3:1).
+   Base #6d4bb8 → 5.8:1; hover #7c5cc4 → 4.7:1 (lightens slightly, still AA). */
 .dark .btn-primary {
-  background: var(--brand-primary);
+  background: var(--brand-primary-dark);
 }
 
 .dark .btn-primary:hover {
-  background: var(--brand-primary-dark);
+  background: #7c5cc4;
 }
 
 .btn-secondary {

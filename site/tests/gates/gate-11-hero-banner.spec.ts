@@ -1,7 +1,8 @@
 /**
- * Gate 11: Hero Banner
- * Criterion: Homepage hero banner image renders with the current aDNABanner asset.
+ * Gate 11: Hero Image
+ * Criterion: Homepage image-led hero renders the current hero_adna_network asset.
  * Added 2026-05-22 at M3.2 S3 close (banner-propagation Deliverable 7).
+ * Updated E1 c147 (2026-06-04): banner → image-led hero (.hero-stage-img, 16:9) per ADR-032 / c146.
  */
 import { test, expect } from '@playwright/test';
 import { mkdirSync } from 'node:fs';
@@ -11,7 +12,7 @@ mkdirSync('evidence/hero_banner', { recursive: true });
 test('G11 Hero: banner img renders on homepage', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
 
-  const banner = page.locator('img.hero-banner-img');
+  const banner = page.locator('img.hero-stage-img');
   await expect(banner, 'hero banner img element missing').toHaveCount(1);
   await expect(banner, 'hero banner not visible').toBeVisible();
 
@@ -25,16 +26,16 @@ test('G11 Hero: banner img renders on homepage', async ({ page }) => {
   expect(dimensions.naturalWidth, 'hero banner has zero natural width').toBeGreaterThan(0);
   expect(dimensions.naturalHeight, 'hero banner has zero natural height').toBeGreaterThan(0);
 
-  // Source banner is 1288×512 (~2.515 aspect). Picture component picks a width
-  // from {480,768,964} based on viewport; aspect is preserved. ±10% slack.
+  // Source hero is 1408×792 (16:9 ≈ 1.778). Picture picks a width from {768,1024,1408}
+  // based on viewport; aspect is preserved. ±10% slack.
   const aspect = dimensions.naturalWidth / dimensions.naturalHeight;
-  expect(aspect, `aspect ratio ${aspect} out of expected ~2.51 ±10%`).toBeGreaterThan(2.26);
-  expect(aspect, `aspect ratio ${aspect} out of expected ~2.51 ±10%`).toBeLessThan(2.77);
+  expect(aspect, `aspect ratio ${aspect} out of expected ~1.78 ±10%`).toBeGreaterThan(1.60);
+  expect(aspect, `aspect ratio ${aspect} out of expected ~1.78 ±10%`).toBeLessThan(1.96);
 });
 
 test('G11 Hero: alt text reflects new banner content', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
-  const banner = page.locator('img.hero-banner-img');
+  const banner = page.locator('img.hero-stage-img');
   const alt = await banner.getAttribute('alt');
   expect(alt, 'banner alt text missing').toBeTruthy();
   expect(
@@ -45,7 +46,7 @@ test('G11 Hero: alt text reflects new banner content', async ({ page }) => {
 
 test('G11 Hero: Picture element emits AVIF + WebP sources', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
-  const picture = page.locator('picture:has(img.hero-banner-img)');
+  const picture = page.locator('picture:has(img.hero-stage-img)');
   await expect(picture).toHaveCount(1);
 
   const sources = picture.locator('source');
@@ -64,6 +65,6 @@ test('G11 Hero: Picture element emits AVIF + WebP sources', async ({ page }) => 
 
 test('G11 Hero: capture banner screenshot for evidence', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
-  const banner = page.locator('img.hero-banner-img');
+  const banner = page.locator('img.hero-stage-img');
   await banner.screenshot({ path: 'evidence/hero_banner/hero_banner.png' });
 });

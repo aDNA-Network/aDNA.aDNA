@@ -66,15 +66,15 @@
   --shadow-lg: 0 10px 15px hsl(0 0% 0% / 0.1);
 }
 
-/* Dark mode overrides */
+/* Dark mode overrides — Tokyo Night base (dark-first default per ADR-032) */
 .dark {
-  --color-bg: hsl(0 0% 8%);
-  --color-bg-alt: hsl(0 0% 12%);
-  --color-surface: hsl(0 0% 14%);
-  --color-border: hsl(0 0% 25%);
-  --color-text: hsl(0 0% 92%);
-  --color-text-muted: hsl(0 0% 60%);
-  --color-text-heading: hsl(0 0% 96%);
+  --color-bg: #1a1b26;          /* Tokyo Night base */
+  --color-bg-alt: #1f2335;      /* elevated */
+  --color-surface: #24283b;     /* surface/cards */
+  --color-border: #2f334d;
+  --color-text: #c0caf5;        /* TN foreground → ~11.8:1 on base ✓ */
+  --color-text-muted: #9aa5ce;  /* ~6.3:1 on base ✓ */
+  --color-text-heading: #ffffff;
   --color-error: hsl(0 72% 65%);
   --color-success: hsl(142 72% 55%);
   --color-warning: hsl(38 92% 60%);

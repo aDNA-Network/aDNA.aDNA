@@ -6,12 +6,16 @@
   "tagline": "Give your project a knowledge architecture that both humans and AI agents can navigate",
   "archetype": "documentation",
   "voice_register": "direct_instruction",
+  "_register": "Science-Stanley Ghibli-pixel / Tokyo Night — warm bio-digital retro-futurism (ADR-032)",
   "colors": {
-    "primary": "#0D7377",
-    "primary_dark": "#0A4F52",
-    "primary_light": "#14919B",
-    "accent": "#D4A017",
-    "accent_light": "#F0D060"
+    "primary": "#9d7cd8",
+    "primary_dark": "#6d4bb8",
+    "primary_light": "#bb9af7",
+    "accent": "#e0a84c",
+    "accent_light": "#f0c674",
+    "link": "#7dcfff",
+    "link_dark": "#1f6f9e",
+    "link_light": "#a9d8ff"
   },
   "typography": {
     "display": "Space Grotesk",

@@ -1,0 +1,102 @@
+{
+  "cycle_id": "cycle_147_e1_section_heroes",
+  "mission": "mission_adna_str_p5_m510_e1_brand_positioning",
+  "session": "session_stanley_20260604T160140Z_v8_m510_e1_reskin_deploy",
+  "decadal": "E1",
+  "round": "r1",
+  "step": "step_3_generate_images",
+  "model": "imagen-4.0-fast-generate-001",
+  "aspect_ratio": "16:9",
+  "output_target": "1408x792",
+  "register": "ss_ghibli_pixel / tokyo_night",
+  "started_at": "2026-06-04T16:10:02.847629+00:00",
+  "calls": [
+    {
+      "section": "learn",
+      "round": "r1",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/sec_learn_r1_v1.png",
+      "prompt_chars": 1406,
+      "status": "success",
+      "bytes": 1336554,
+      "elapsed_sec": 4.18,
+      "cost_usd": 0.02
+    },
+    {
+      "section": "learn",
+      "round": "r1",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/sec_learn_r1_v2.png",
+      "prompt_chars": 1406,
+      "status": "fail",
+      "error": "no images returned",
+      "elapsed_sec": 3.68
+    },
+    {
+      "section": "how",
+      "round": "r1",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/sec_how_r1_v1.png",
+      "prompt_chars": 1371,
+      "status": "fail",
+      "error": "no images returned",
+      "elapsed_sec": 3.73
+    },
+    {
+      "section": "how",
+      "round": "r1",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/sec_how_r1_v2.png",
+      "prompt_chars": 1371,
+      "status": "fail",
+      "error": "no images returned",
+      "elapsed_sec": 2.63
+    },
+    {
+      "section": "patterns",
+      "round": "r1",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/sec_patterns_r1_v1.png",
+      "prompt_chars": 1388,
+      "status": "success",
+      "bytes": 1382773,
+      "elapsed_sec": 3.79,
+      "cost_usd": 0.02
+    },
+    {
+      "section": "patterns",
+      "round": "r1",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/sec_patterns_r1_v2.png",
+      "prompt_chars": 1388,
+      "status": "success",
+      "bytes": 1469555,
+      "elapsed_sec": 5.61,
+      "cost_usd": 0.02
+    },
+    {
+      "section": "reference",
+      "round": "r1",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/sec_reference_r1_v1.png",
+      "prompt_chars": 1335,
+      "status": "success",
+      "bytes": 1431857,
+      "elapsed_sec": 5.38,
+      "cost_usd": 0.02
+    },
+    {
+      "section": "reference",
+      "round": "r1",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/sec_reference_r1_v2.png",
+      "prompt_chars": 1335,
+      "status": "success",
+      "bytes": 1439462,
+      "elapsed_sec": 5.16,
+      "cost_usd": 0.02
+    }
+  ],
+  "total_cost_usd": 0.1,
+  "finished_at": "2026-06-04T16:10:37.008662+00:00"
+}

@@ -1,45 +1,49 @@
 /* src/styles/branding.css — Generated from branding.json
  *
  * Brand: aDNA (Agentic DNA Knowledge Architecture)
- * Primary: Teal #0D7377 | Accent: Amber #D4A017
+ * Register: Science-Stanley "Ghibli-pixel" / Tokyo Night — warm bio-digital retro-futurism (ADR-032, ratified 2026-06-04)
+ * Primary: Purple #9d7cd8 | Links: Cyan #7dcfff | Accent: warm Amber #e0a84c
+ * Base (neutrals, tokens.css): Tokyo Night #1a1b26 / #24283b — dark-first
  * Typography: Space Grotesk (display) / Inter (body) / JetBrains Mono (code)
  *
- * WCAG AA Contrast Ratios (on white #fff):
- *   --brand-primary    #0D7377 → 5.0:1 ✓ (text + large text)
- *   --brand-primary-dark #0A4F52 → 7.8:1 ✓ (text + large text)
- *   --color-text        hsl(0 0% 12%) → 15.4:1 ✓
- *   --color-text-muted  hsl(0 0% 40%) → 5.3:1 ✓
- *   --brand-accent      #D4A017 → 3.1:1 ✗ (large text only, not body text)
+ * Token NAMES preserved from v2 (external consumers reference --brand-primary etc.); VALUES repointed.
+ *
+ * WCAG AA Contrast Ratios:
+ *   Dark mode (on base #1a1b26):
+ *     --brand-link  #7dcfff (cyan link)        → ~10.3:1 ✓
+ *     --brand-primary #9d7cd8 (purple, large/accent) → ~6.9:1 ✓ (large text/UI; 3.3:1 vs white = NOT for white body text)
+ *     --color-text  #c0caf5                     → ~11.8:1 ✓
+ *   Dark-mode primary button (white text): bg --brand-primary-dark #6d4bb8 → 5.8:1 ✓
+ *   Light mode (on white):
+ *     --color-primary --brand-primary-dark #6d4bb8 → 5.8:1 ✓
+ *     --color-link    --brand-link-dark    #1f6f9e → 5.4:1 ✓
+ *     --brand-accent  #e0a84c → large/decorative only (not body text), same rule as v2 amber
  */
 
 :root {
-  /* Brand colors */
-  --brand-primary: #0D7377;
-  --brand-primary-dark: #0A4F52;
-  --brand-primary-light: #14919B;
-  --brand-accent: #D4A017;
-  --brand-accent-light: #F0D060;
+  /* Brand colors — Tokyo Night register (names preserved, values repointed per ADR-032) */
+  --brand-primary: #9d7cd8;        /* purple — brand/primary (large text, accents, glow) */
+  --brand-primary-dark: #6d4bb8;   /* deeper purple — light-mode primary + dark-mode button bg (AA on white/with white text) */
+  --brand-primary-light: #bb9af7;  /* lighter purple — dark-mode primary accent / hover */
+  --brand-accent: #e0a84c;         /* warm amber — accent/lighting, sparing (never body text) */
+  --brand-accent-light: #f0c674;   /* soft amber — dark-mode accent */
+  --brand-link: #7dcfff;           /* cyan — links / data / connections (dark mode) */
+  --brand-link-dark: #1f6f9e;      /* deep cyan-blue — light-mode link (AA on white) */
+  --brand-link-light: #a9d8ff;     /* light cyan — dark-mode link hover */
 
-  /* Semantic color mappings (override neutral defaults) */
-  --color-primary: var(--brand-primary);
-  --color-primary-hover: var(--brand-primary-dark);
+  /* Semantic mappings — LIGHT mode (secondary register) */
+  --color-primary: var(--brand-primary-dark);
+  --color-primary-hover: #58399c;
   --color-accent: var(--brand-accent);
-  --color-link: var(--brand-primary);
-  --color-link-hover: var(--brand-primary-dark);
+  --color-link: var(--brand-link-dark);
+  --color-link-hover: #14567c;
 }
 
-/* Dark mode — lightened brand values for contrast on dark backgrounds
- *
- * WCAG AA Contrast Ratios (on dark bg #242424):
- *   --brand-primary-light #22B3BD → 6.1:1 ✓ (text on dark bg)
- *   --brand-primary       #0D7377 → 5.6:1 ✓ (button bg with white text)
- *   --color-link-hover    #5FC4C8 → 8.7:1 ✓ (text on dark bg)
- */
+/* Dark mode — DEFAULT register (Tokyo Night, dark-first per ADR-032) */
 .dark {
-  --brand-primary-light: #22B3BD;
-  --color-primary: var(--brand-primary-light);
-  --color-primary-hover: var(--brand-primary);
-  --color-accent: var(--brand-accent-light);
-  --color-link: var(--brand-primary-light);
-  --color-link-hover: #5FC4C8;
+  --color-primary: var(--brand-primary);
+  --color-primary-hover: var(--brand-primary-light);
+  --color-accent: var(--brand-accent);
+  --color-link: var(--brand-link);
+  --color-link-hover: var(--brand-link-light);
 }

@@ -1,9 +1,9 @@
 ---
-title: "Visual Identity v2 — aDNA Reference"
-description: "Canonical visual identity guidelines for the aDNA documentation surface — color, typography, spacing, image prompts, icons, and diagram vocabulary."
-ref_title: "Visual Identity v2"
+title: "Visual Identity v3 — aDNA Reference"
+description: "Canonical visual identity for aDNA.network — the Science-Stanley Ghibli-pixel / Tokyo Night register: color, type, spacing, imagery, icons, diagrams."
+ref_title: "Visual Identity v3"
 stability: "stable"
-updated: 2026-05-27
+updated: 2026-06-04
 ---
 
 import TriadDiagram from '../../components/diagrams/TriadDiagram.astro';
@@ -13,7 +13,7 @@ import ConvergenceFunnel from '../../components/diagrams/ConvergenceFunnel.astro
 
 This is the contributor-facing reference for visual decisions across the aDNA documentation surface. If you are authoring an asset — a hero image, a section icon, an inline diagram, an OG card — this document tells you which palette to draw from, which typography scale to use, what stroke-width matches the existing vocabulary, and how to prompt the image generator so the result does not look like marketing.
 
-The guidelines crystallize the decisions ratified during M5.3 D11 (Visual Identity v2 + Image Regen; cycles 101–110). The shorter version: **philosophy-before-feature minimalism + geometric restraint + currentColor inheritance + 1.6 stroke-width + abstract over figurative**.
+**v3 register pivot (ADR-032, ratified 2026-06-04).** aDNA.network has evolved from the minimalist teal/amber "Rust/Tauri" register (v2) to the Science-Stanley **"Ghibli-pixel" / Tokyo Night** warm register — *cozy bio-digital retro-futurism*: warm, hand-crafted, hopeful, dense narrative detail. The shift carries the project's public-good ethos through **warmth + craft** rather than cold restraint. What stays constant: **purpose over decoration, currentColor inheritance, AA contrast, reduced-motion, honest affordances.** What changes: the palette (Tokyo Night, dark-first — §1) and the imagery register (illustrative SS-Ghibli pixel art is now allowed — §4). The v2 baseline crystallized M5.3 D11 (cycles 101–110); this v3 supersedes its palette + imagery sections.
 
 Companion documents:
 
@@ -25,45 +25,48 @@ Companion documents:
 
 ## 1. Color palette
 
-aDNA uses a restrained two-color brand palette (teal + amber) on a neutral light/dark foundation. All colors are defined as CSS custom properties in `src/styles/branding.css`; consume them via `var(--color-*)` rather than hex literals.
+aDNA.network draws from the **Tokyo Night** palette, dark-first — a deep navy base carrying a **purple** brand accent, **cyan** links/data, and a **warm amber** for lighting. All colors are CSS custom properties in `src/styles/branding.css` (brand) + `src/styles/tokens.css` (neutrals); consume them via `var(--color-*)` rather than hex literals. Token *names* are preserved from v2; their *values* were repointed (ADR-032).
 
 ### Brand tokens
 
-| Token | Hex | Use | WCAG AA |
+| Token | Hex | Use | Contrast |
 |---|---|---|---|
-| `--brand-primary` | `#0D7377` | Primary teal — links, button backgrounds, hero accents | 5.0:1 ✓ |
-| `--brand-primary-dark` | `#0A4F52` | Hover states, dark-mode primary | 7.8:1 ✓ |
-| `--brand-primary-light` | `#14919B` | Mid-tone teal — dark-mode link color | 6.1:1 (dark bg) ✓ |
-| `--brand-accent` | `#D4A017` | Accent amber — sparingly; large text only on white | 3.1:1 (large text ok) |
-| `--brand-accent-light` | `#F0D060` | Soft amber — dark-mode accent | varies |
+| `--brand-primary` | `#9d7cd8` | Purple — brand, large text / UI accents, glow | ~6.9:1 on base ✓ (large/UI; not white body text) |
+| `--brand-primary-dark` | `#6d4bb8` | Light-mode primary + dark-mode button bg | 5.8:1 with white text ✓ |
+| `--brand-primary-light` | `#bb9af7` | Lighter purple — dark-mode hover / accent | — |
+| `--brand-link` | `#7dcfff` | Cyan — links, data, connections (dark) | ~10.3:1 on base ✓ |
+| `--brand-link-dark` | `#1f6f9e` | Deep cyan-blue — light-mode link | 5.4:1 on white ✓ |
+| `--brand-accent` | `#e0a84c` | Warm amber — accent / lighting, sparing | large/decorative only, never body text |
 
 ### Semantic mappings
 
-| Semantic token | Resolves to |
-|---|---|
-| `--color-primary` | `--brand-primary` (light) / `--brand-primary-light` (dark) |
-| `--color-link` | Same as primary |
-| `--color-link-hover` | `--brand-primary-dark` (light) / `#5FC4C8` (dark) |
-
-### Neutrals
-
-Defined in `src/styles/tokens.css`. The neutrals are pure HSL with no hue, which lets the brand teal carry all the color signal:
-
-| Token | Light | Dark |
+| Semantic token | Light (secondary) | Dark (default) |
 |---|---|---|
-| `--color-bg` | `hsl(0 0% 100%)` | `hsl(0 0% 8%)` |
-| `--color-bg-alt` | `hsl(0 0% 97%)` | `hsl(0 0% 12%)` |
-| `--color-surface` | `hsl(0 0% 100%)` | `hsl(0 0% 14%)` |
-| `--color-text` | `hsl(0 0% 12%)` | `hsl(0 0% 92%)` |
-| `--color-text-muted` | `hsl(0 0% 40%)` | `hsl(0 0% 60%)` |
-| `--color-text-heading` | `hsl(0 0% 8%)` | `hsl(0 0% 96%)` |
-| `--color-border` | `hsl(0 0% 88%)` | `hsl(0 0% 25%)` |
+| `--color-primary` | `--brand-primary-dark` `#6d4bb8` | `--brand-primary` `#9d7cd8` |
+| `--color-link` | `--brand-link-dark` `#1f6f9e` | `--brand-link` `#7dcfff` |
+| `--color-link-hover` | `#14567c` | `--brand-link-light` `#a9d8ff` |
+| `--color-accent` | `--brand-accent` `#e0a84c` | `--brand-accent` `#e0a84c` |
+
+### Neutrals (Tokyo Night, dark-first)
+
+Defined in `src/styles/tokens.css`. Dark is the **default** register (ADR-032); light mode keeps near-white neutrals so the secondary register stays usable.
+
+| Token | Dark (default) | Light |
+|---|---|---|
+| `--color-bg` | `#1a1b26` | `hsl(0 0% 100%)` |
+| `--color-bg-alt` | `#1f2335` | `hsl(0 0% 97%)` |
+| `--color-surface` | `#24283b` | `hsl(0 0% 100%)` |
+| `--color-text` | `#c0caf5` | `hsl(0 0% 12%)` |
+| `--color-text-muted` | `#9aa5ce` | `hsl(0 0% 40%)` |
+| `--color-text-heading` | `#ffffff` | `hsl(0 0% 8%)` |
+| `--color-border` | `#2f334d` | `hsl(0 0% 88%)` |
 
 ### Rules
 
-1. **Consume tokens, not hex.** New components MUST reference `var(--color-*)` so dark-mode and brand changes propagate.
-2. **Brand teal carries the signal.** Amber is reserved for sparing accent — never large surface areas, never body text.
-3. **Status colors** (`--color-error`, `--color-success`, `--color-warning`, `--color-info`) are pre-defined and tuned for both modes; do not introduce new status hues without operator gate.
+1. **Consume tokens, not hex.** New components MUST reference `var(--color-*)` so dark/light and brand changes propagate. (Illustrative image assets are the deliberate exception — §4.)
+2. **Two signals, one warm accent.** Purple carries brand/identity; cyan carries links/data/connections. Amber is reserved for sparing warm lighting — never large surface areas, never body text.
+3. **Dark-first.** Dark is the default; light mode is the supported secondary. Verify AA contrast in **both** modes for every text/link pairing.
+4. **Status colors** (`--color-error`, `--color-success`, `--color-warning`, `--color-info`) are pre-defined and tuned for both modes; do not introduce new status hues without operator gate.
 
 ---
 
@@ -132,28 +135,32 @@ Border-radius scale: `--radius-sm` through `--radius-xl` plus `--radius-full` (9
 
 ## 4. Image-prompt conventions
 
-aDNA is a methodology project. Image generators default toward illustrative / aspirational output (people-on-laptops; gradient skies; abstract data streams). That entire register is wrong for this surface — see M5.1 D11 AVOID-2 ("marketing-style hero imagery"). The prompt discipline below keeps generated imagery in the philosophy-before-feature minimalism register established by M5.1 D11 LIFT-1.
+aDNA.network is a methodology project, and under v3 it carries the **Science-Stanley "Ghibli-pixel" register** (ADR-032): *cozy bio-digital retro-futurism* — warm, hopeful, hand-crafted, dense narrative detail. This **relaxes the v2 abstract-only guardrail**: illustrative pixel-art scenes (lab desks, node-maps, connected vaults, helices) are now in-scope. What does *not* relax: no baked text, no human faces, purpose over decoration, and AA contrast on any composited text.
 
 ### Hard guardrails
 
-1. **No text inside images.** Generators (Imagen 4 Ultra included) hallucinate glyphs at small sizes; text inside hero PNGs degrades to gibberish at OG-card scale. Strip the prompt of any words that ask for typography, captions, labels, or titles. If text is needed, composite it with PIL after generation.
-2. **No figurative people.** No hands, faces, silhouettes, or postures. Diagrams and abstractions only.
-3. **No marketing gradients.** Flat tones, geometric shapes, line art. No sunsets, no horizons, no data-streaks.
-4. **Restraint over richness.** A single geometric motif with 3–5 elements outperforms a busy composition every time at thumbnail scale.
+1. **No text inside images.** Generators (Imagen included) hallucinate glyphs; text inside hero PNGs degrades to gibberish at OG-card scale. Strip the prompt of typography, captions, labels, titles. Composite any title as **live SVG/CSS text** (responsive + carries the accessible name) or via PIL after generation — never baked into the gen.
+2. **No human faces.** The runner sets `person_generation="dont_allow"`. Use scene-level / bird's-eye framing (desks, maps, vaults, helices), not portraits.
+3. **Hopeful, not dystopian.** Warm task lighting + cool monitor glow; intellectually curious mood. No sterile empty sci-fi, no dark dystopia, no photographic stock-photo aesthetic, no marketing gradients on content.
+4. **Dual-resolution craft.** Human/physical elements = high-fidelity 32-bit painterly pixel; AI/digital constructs = chunky 16-bit sprites; DNA/active-science motifs = sharp glow-emission vector pixels. No uniform pixel scaling, no flat vector UI.
 
-### Prompt skeleton (Imagen 4 Ultra)
+### Prompt skeleton (Imagen 4)
+
+The canonical style tail lives in the runner (`GHIBLI_TAIL` in `runners/e1_hero_adna_network_gen.py`) — reuse it; do not re-derive. A prompt = `[SCENE_MOTIF] + GHIBLI_TAIL`:
 
 ```
-A minimalist geometric composition featuring [SINGLE_MOTIF]
-in [PRIMARY_COLOR] on a [BACKGROUND], abstract structural
-diagram style, line art with [STROKE_WEIGHT] strokes, no text,
-no people, no gradients, restrained palette, 16:9 wide format.
+[SCENE_MOTIF — one bird's-eye / isometric scene: a cozy lab desk with a
+glowing node-map; a constellation of connected nodes; a DNA-helix resolving
+into a network; an isometric town of connected vault-buildings]
++ GHIBLI_TAIL (detailed 32-bit pixel art, cozy studio-ghibli aesthetic,
+soft dithered shading; Tokyo Night palette — base #1a1b26 / #24283b, purple
+#9d7cd8, cyan #7dcfff, warm amber #e0a84c lighting; dual-resolution rule;
+hopeful mood; ABSOLUTELY NO TEXT / NO LETTERS / NO LOGOS; no human faces;
+wide 16:9; anti-patterns: no flat vector UI, no sterile sci-fi, no dystopia)
 ```
 
-- `[SINGLE_MOTIF]` — one of: connected nodes, nested rectangles, layered bands, concentric arcs, hexagonal tessellation, grid with callouts. Pick one. Do not list two.
-- `[PRIMARY_COLOR]` — `teal #0D7377` or `dark teal #0A4F52`. Amber sparingly.
-- `[BACKGROUND]` — `clean off-white`, `neutral light gray`, or `dark charcoal` for dark-mode variants.
-- `[STROKE_WEIGHT]` — `thin`, `medium`, or `bold` (avoid pixel widths in prompts; generators interpret loosely).
+- **Palette in-prompt** — base navy `#1a1b26` / `#24283b`; purple `#9d7cd8`; cyan `#7dcfff`; warm amber `#e0a84c` (lighting only).
+- **One scene, not a checklist** — a single coherent motif beats a busy collage at hero / thumbnail scale.
 
 ### Post-generation pipeline
 
@@ -163,7 +170,7 @@ no people, no gradients, restrained palette, 16:9 wide format.
 
 ### Cost discipline
 
-Imagen 4 Ultra is $0.04/call. Per-cycle budgets are recorded in each mission's Image-Gen Budget Tracker; cumulative spend is tracked at the campaign master + STATE.md. Hard cap at $50 per phase (set at v8 P5 entry).
+Imagen 4 Ultra is $0.04/call; **Imagen 4 Fast ($0.02) is the exploration / fallback tier** when Ultra returns transient 429/503 capacity errors (the runner retries with backoff, then you pass `--model imagen-4.0-fast-generate-001`). Per-cycle budgets are recorded in each mission's Image-Gen Budget Tracker; cumulative spend is tracked at the campaign master + STATE.md. Hard cap at $50 per phase (set at v8 P5 entry).
 
 ---
 
@@ -241,23 +248,22 @@ Every diagram component MUST:
 
 ## 7. Dark mode parity
 
-Every visual decision MUST work in both light and dark mode. The mechanisms:
+Every visual decision MUST work in both modes. aDNA.network is **dark-first** (ADR-032): dark is the default register; light mode is the supported secondary. The mechanisms:
 
-1. **CSS custom properties switch on `.dark` class** (toggled by `DarkModeToggle.astro`). All `--color-*` tokens have light + dark resolutions.
+1. **CSS custom properties switch on `.dark` class.** Dark is applied by default for every visitor (`<html class="dark">` + the inline theme script in `BaseLayout.astro` — dark unless the user toggled light); the toggle (`DarkModeToggle.astro`) persists the choice. The Tokyo Night register is the experience newcomers see; light is opt-in. All `--color-*` tokens have dark (default) + light resolutions.
 2. **SVG `currentColor`** inheritance means a single SVG renders correctly in either mode automatically.
-3. **Image assets are not theme-switched.** Hero PNGs are tuned to read on both backgrounds; OG cards use a single neutral-friendly composition.
-4. **Avoid hard-coded hex in components.** A `#0D7377` literal will not switch correctly; `var(--brand-primary)` will.
+3. **Illustrative image assets are not theme-switched.** Hero / section PNGs are Tokyo-Night scenes tuned to read on the dark default; a top-down navy scrim guarantees AA title contrast independent of the asset. OG cards use a single dark composition.
+4. **Avoid hard-coded hex in components.** A `#9d7cd8` literal will not switch correctly; `var(--brand-primary)` / `var(--color-*)` will. (Image *assets* are the deliberate exception — §4.)
 
-### Brand-system v3 delta — dark-mode-first hero band (M5.10 / E1, 2026-06-03)
+### Brand-system v3 — dark-first + image-led hero (M5.10 / E1, ADR-032)
 
-The homepage **above-fold hero is always dark**, independent of the page theme — the conviction register the front-page doctrine points to (Hermes / Linear: words-as-focus on a calm dark stage). Mechanism and rules:
+The homepage hero is **image-led**: a Tokyo-Night SS-Ghibli scene leads the fold with the title composited as **live Space-Grotesk-Bold text** over a darkened upper band (reverses the E1 c2 words-below demote). Rules:
 
-- **Scope, don't fork.** The `dark` class is placed on the hero `<section>` itself, so the existing AA-verified `.dark` token resolutions (`tokens.css` + `branding.css`) cascade to that subtree only. No new hero-specific color tokens — reuse over duplication, so contrast stays verified.
-- **Light parity is preserved below the fold.** The body sections keep following the user's theme (light default, `.dark` on `<html>` when preferred). The dark hero → light body transition is made deliberate with a hairline `border-bottom` seam.
-- **Surface treatment, not imagery.** One quiet teal radial signal-glow (`color-mix(... var(--brand-primary) 20%, transparent)`) gives the dark stage depth. It stays inside the ≤2-color palette (teal carries signal) and is *not* a marketing gradient on content — the image-prompt guardrails (§4) are unchanged.
-- **The supporting banner** keeps its demoted position below the words+CTAs (E1 c2) and uses a teal-tinted glow instead of the black-based shadow (invisible on dark).
+- **Scrim guarantees contrast.** A top-down `#1a1b26` navy scrim over the image's upper band keeps the live `<h1>` at AA regardless of the underlying art; the title is real text (responsive + accessible name), never baked into the gen.
+- **Dark-first body.** The whole page now defaults dark, so the hero no longer needs to self-scope `.dark` for a light body — the calm dark stage is the site default. Light mode remains a supported parity register below.
+- **Surface treatment, not marketing.** A quiet purple/cyan glow (`color-mix(... var(--brand-primary) …, transparent)`) gives the stage depth — within the §1 palette, not a marketing gradient on content.
 
-This is a *placement/register* delta; §1 palette, §2 type, §4 imagery guardrails, and the toggle mechanism are unchanged.
+§2 type, the icon / diagram vocabularies, and the toggle mechanism are unchanged; §1 palette + §4 imagery are the v3 deltas.
 
 ---
 
