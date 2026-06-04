@@ -35,7 +35,7 @@ const {
 } = Astro.props;
 ---
 
-<section class="hero">
+<section class="hero dark">
   <h1 class="hero-headline">{headline}</h1>
   <p class="hero-lead">{lead}</p>
   <div class="hero-actions">
@@ -71,12 +71,36 @@ const {
 </section>
 
 <style>
+  /* E1 c3 (brand-system v3 delta): dark-mode-first hero band. The `dark` class on
+     the <section> scopes the AA-verified dark tokens (tokens.css / branding.css) to
+     this subtree, so the above-fold hero is always dark for the conviction register
+     (Hermes/Linear), regardless of page theme — while the body below keeps light/theme
+     parity. Documented in reference/visual-identity-v2.mdx §brand-system v3. */
   .hero {
-    padding: var(--space-12) var(--space-6) var(--space-16);
+    position: relative;
+    isolation: isolate;
+    padding: var(--space-16) var(--space-6) var(--space-16);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  /* One quiet teal signal-glow for depth — surface treatment, not imagery; stays
+     within the ≤2-color palette (teal carries signal). */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(
+      62% 55% at 50% 0%,
+      color-mix(in srgb, var(--brand-primary) 20%, transparent) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
   }
 
   /* Banner demoted below the manifesto words (E1 c2): words lead the fold;
@@ -87,9 +111,9 @@ const {
     margin: var(--space-10) auto 0;
     border-radius: var(--radius-xl);
     overflow: hidden;
-    box-shadow: var(--shadow-md);
     border: 1px solid var(--color-border);
-    opacity: 0.92;
+    box-shadow: 0 8px 40px color-mix(in srgb, var(--brand-primary) 14%, transparent);
+    opacity: 0.9;
   }
 
   .hero-banner-img {

@@ -248,6 +248,17 @@ Every visual decision MUST work in both light and dark mode. The mechanisms:
 3. **Image assets are not theme-switched.** Hero PNGs are tuned to read on both backgrounds; OG cards use a single neutral-friendly composition.
 4. **Avoid hard-coded hex in components.** A `#0D7377` literal will not switch correctly; `var(--brand-primary)` will.
 
+### Brand-system v3 delta — dark-mode-first hero band (M5.10 / E1, 2026-06-03)
+
+The homepage **above-fold hero is always dark**, independent of the page theme — the conviction register the front-page doctrine points to (Hermes / Linear: words-as-focus on a calm dark stage). Mechanism and rules:
+
+- **Scope, don't fork.** The `dark` class is placed on the hero `<section>` itself, so the existing AA-verified `.dark` token resolutions (`tokens.css` + `branding.css`) cascade to that subtree only. No new hero-specific color tokens — reuse over duplication, so contrast stays verified.
+- **Light parity is preserved below the fold.** The body sections keep following the user's theme (light default, `.dark` on `<html>` when preferred). The dark hero → light body transition is made deliberate with a hairline `border-bottom` seam.
+- **Surface treatment, not imagery.** One quiet teal radial signal-glow (`color-mix(... var(--brand-primary) 20%, transparent)`) gives the dark stage depth. It stays inside the ≤2-color palette (teal carries signal) and is *not* a marketing gradient on content — the image-prompt guardrails (§4) are unchanged.
+- **The supporting banner** keeps its demoted position below the words+CTAs (E1 c2) and uses a teal-tinted glow instead of the black-based shadow (invisible on dark).
+
+This is a *placement/register* delta; §1 palette, §2 type, §4 imagery guardrails, and the toggle mechanism are unchanged.
+
 ---
 
 ## 8. Accessibility minima

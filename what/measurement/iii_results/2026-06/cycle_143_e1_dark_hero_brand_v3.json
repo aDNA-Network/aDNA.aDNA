@@ -1,0 +1,33 @@
+{
+  "cycle": 143,
+  "decadal": "E1",
+  "mission": "mission_adna_str_p5_m510_e1_brand_positioning",
+  "slug": "e1_dark_hero_brand_v3",
+  "date": "2026-06-03",
+  "session": "session_stanley_20260604T022755Z_v8_m510_e1_continue",
+  "theme": "Brand & Positioning — brand-system v3 delta: dark-mode-first hero band (operator-chosen at this session's gate)",
+  "target": [
+    "site/src/components/sections/HomeHero.astro",
+    "site/src/content/reference/visual-identity-v2.mdx"
+  ],
+  "change_summary": "Made the above-fold hero an always-dark band (conviction register, Hermes/Linear) by scoping the existing `dark` class to the hero <section> so the AA-verified .dark token resolutions (tokens.css + branding.css) cascade to that subtree only — no new hero-specific color tokens (reuse over fork). Added a hairline border-bottom seam for a deliberate dark-hero -> light-body transition, one quiet teal radial signal-glow for depth (color-mix var(--brand-primary) 20%, transparent; within the <=2-color palette), and swapped the demoted banner's black-based shadow for a teal-tinted glow (visible on dark). Body keeps theme parity (light default). Documented the delta in visual-identity-v2 sec.7 (same-commit provenance per change discipline).",
+  "doctrine_compliance": {
+    "above_fold_one_focus": "unchanged — words lead; dark stage reinforces focus, no new competing element",
+    "two_colors_max": "teal signal + amber accent unchanged; glow is teal-tinted (no new fighting color)",
+    "motion_budget": "no new motion this cycle (the one meaningful motion = sec.1 network diagram, cycle 144)",
+    "dial": "~55/45 — dark register nudges conviction slightly without adding marketing copy",
+    "light_parity": "body sections follow user theme; .dark scoped to hero only"
+  },
+  "decision": {
+    "hero_register": "DARK-MODE-FIRST (operator-selected this session over keep-light/defer). Implemented as always-dark hero band + light body parity (vs full-site dark-first, which would lose docs-credibility light reading)."
+  },
+  "validation": {
+    "astro_build": "PASS — 161 pages, 5.26s, 0 errors (npx astro build, prebuild skipped to avoid vaults.json date churn)",
+    "contrast": "reuses AA-verified .dark tokens (heading hsl(0 0% 96%) on bg hsl(0 0% 8%); muted lead 60%; .dark .btn-primary = #0D7377 + white)",
+    "reduced_motion": "no added animation; global tokens.css reduced-motion block intact",
+    "lighthouse": "deferred to E1 decadal close (cycle 10)",
+    "persona_qa": "deferred to E1 decadal Reviewer Lens Pass (mandatory Visual Designer + Brand Strategist + Motion Designer)"
+  },
+  "deploy": "deferred to this session's combined deploy after sec.1 + sec.2 land (dark hero supersedes cycle-2 light banner-demote)",
+  "notes": "Cycle 3 of E1. First brand-system v3 delta. Reuse-first: leaned entirely on the pre-existing .dark token system + DarkModeToggle rather than authoring parallel hero tokens."
+}
