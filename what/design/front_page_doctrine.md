@@ -12,6 +12,7 @@ last_edited_by: agent_stanley
 companions:
   - site/src/content/reference/visual-identity-v2.mdx   # what surfaces LOOK like (tokens, type, palette, image prompts)
   - site/src/content/reference/writing-guidelines.mdx   # how prose READS (clarity, conciseness contract, LIFT/AVOID)
+  - what/design/narrative_ethos_public_good.md   # WHY/WHAT a surface says — the public-good ethos every surface draws from
 grounded_by:
   - what/exemplars/sites/_reference_set.md   # 10-site inspection + cross-site distributions
   - nngroup.com/articles/homepage-real-estate-allocation
@@ -63,7 +64,7 @@ Three named bands; a homepage progresses **Sparse (above fold) → Medium (mid) 
 
 A 0–100 scale (0 = pure corporate-sleek, 100 = pure revolutionary-manifesto). Inspected sites span Linear 25 → Anthropic 40 → HF/Raycast 50 → Ethereum 60 → Hermes 65.
 
-**House setting: ~55 revolutionary / 45 restraint** *(operator-set at ratification; this is the recommendation).* Calmer than Hermes's 65/35 because aDNA must keep **docs credibility** and the "good of humanity" register matches Anthropic's calm-conviction — but warmer/higher than Anthropic's ~40 because aDNA's idea is genuinely novel and should feel exciting.
+**House setting: ~55 revolutionary / 45 restraint** *(operator-RATIFIED 2026-06-03).* Calmer than Hermes's 65/35 because aDNA must keep **docs credibility** and the "good of humanity" register matches Anthropic's calm-conviction — but warmer/higher than Anthropic's ~40 because aDNA's idea is genuinely novel and should feel exciting.
 
 The dial is concrete, not vibes:
 - **Revolutionary points** come from *positioning verbs + the manifesto line* (the claim, the verbs: build · share · govern · for the good of humanity).
@@ -108,7 +109,9 @@ A synthesis of **Hermes-sparse-manifesto + HF-registry-as-proof** at the ~55/45 
 2. **The living registry** (Dense, one organizing principle) — real vaults/forges/context-graphs as cards with **live affordances** (pull · compose · view-graph · open-docs) + a proof signal (status/phase, federation count) + creator/persona attribution; scannable grid + "see all." *(Replicate entries; HF registry-as-content; Val Town curate-don't-dump.)*
 3. **How partners build & share** (Medium) — the build→share→govern flow with *real* CLAUDE.md/registry snippets, not slogans. *(Vercel dual-audience: dev proof + partner value, adjacent registers.)*
 4. **The standard underneath** (Medium) — MIT, open spec, Lattice Protocol, GitHub, version — the trust anchor, placed at **4-of-5 (visible above the footer, not buried)**. *(Anthropic substance; Design Critic F-10 "trust signals buried.")*
-5. **Join the network** (Sparse) — the partner/community CTA: how to join the democracy, governance-visible. *(Ethereum role-pathways + low-barrier; Val Town who-not-how-many.)*
+5. **Join the network** (Sparse) — the partner/community CTA: how to join the democracy, governance-visible; **teases the public-good commons** (featured mission-aligned subnetworks — WGA · Context Commons · WilhelmAI · Rare Archive — + "connect to a subnetwork"; its own Track-G surface). This is where the [[narrative_ethos_public_good|ethos]] becomes concrete — *shown, not preached*. *(Ethereum role-pathways + low-barrier; Val Town who-not-how-many.)*
+
+> **Ethos thread (subtle, front of mind):** across all five sections the [[narrative_ethos_public_good|public-good ethos]] is the gravity, not the slogan — language + DNA as shared heritage, context as a commons stewarded for the next generation, AI as scarcity-destroying → abundance. Felt in *what we choose to show* (real public-good work, a commons not a catalog) and the verbs (*for the good of humanity*); never sermonized (the writing-guidelines AVOID register is the guardrail).
 
 **Deliberately avoids:** 7-section sprawl, ≤2 fighting colors, custom SVG over emoji, no "blazingly fast" adjectives, motion only where it means something. Every number above instantiates §§1–6.
 

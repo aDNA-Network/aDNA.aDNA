@@ -23,7 +23,7 @@ tags: [decadal_theme_set, eseries, ecosystem_site, m5_7, v8, p5, rescope, amende
 >
 > **Gate discipline (do-now vs gated-build):** all theme/design/research work is **do-now**; build of brand-dependent surfaces holds until aDLabs' Operation Homecoming Steps 2–5 substantially land. Track D (aDNANetwork) is the **least-blocked first build mover** (R9 cleared 2026-06-03 → Home cascade Step 4 unblocked; registry regen done). This whole theme set is **draft pending the operator ratification gate** — nothing executes until ratified.
 
-## The 6 forward-face surfaces → tracks (from the seed-brief gap analysis)
+## The 7 forward-face surfaces → tracks (from the seed-brief gap analysis + the 2026-06-03 ethos ratification)
 
 | Track | Surface | Exists? | Owning decadal(s) | Build gate |
 |---|---|---|---|---|
@@ -32,7 +32,8 @@ tags: [decadal_theme_set, eseries, ecosystem_site, m5_7, v8, p5, rescope, amende
 | **C** | Community / labs / org | ⚠️ thin | **E3** | gated — needs aDLabs org/community structure |
 | **D** | aDNANetwork / "aDNA computers" / node onboarding | ⚠️ seed | **E4** | **least-gated — FIRST build mover** (vaults.json + federation_refs seeded) |
 | **E** | aDNALabs positioning / about / vision / blog / homepage re-frame | ❌ | **E1** (+ D18 brand system) | design do-now; final org-brand assets gated |
-| **F** | Domain → aDNA.network | ✅ **DONE** (live, Cloudflare→Vercel, ADR-031) | — (launch-verify in E5) | n/a — collapses from "cutover" to "verify" |
+| **F** | Domain → aDNA.network | ✅ **DONE** (live, Cloudflare→Vercel, ADR-031) | — (launch-verify in E6) | n/a — collapses from "cutover" to "verify" |
+| **G** | **Public-Good Commons / Subnetwork Federation** — featured aligned subnetworks; "connect to a subnetwork"; the first social surface ([[narrative_ethos_public_good|ethos]]) | ❌ NEW (operator-added at ratification 2026-06-03) | **E5** | showcase do-now (real vaults); full social layer co-designed w/ aDNANetwork/Venus (horizon) |
 
 ## Decadal index (re-scoped D16–D20 + new E1–E5)
 
@@ -46,9 +47,10 @@ tags: [decadal_theme_set, eseries, ecosystem_site, m5_7, v8, p5, rescope, amende
 | **E2** | B | **Marketplace / Registry** — browse/detail/publish UI over `lattice_yaml_schema.json` + FAIR + `skill_lattice_publish`; Replicate-style live affordances | NEW | NO | **gated** (aDLabs data shape) |
 | **E3** | C | **Community / Labs / Org** — org directory (org_vault/org_graph classes) + showcase + contribution funnel; who-not-how-many | NEW | **YES** | **gated** (aDLabs org structure) |
 | **E4** | D | **aDNANetwork & Node Onboarding** — federation/topology viz + "aDNA computers" surface + node onboarding over `vaults.json` | NEW | NO | **least-gated — FIRST build mover** |
-| **E5** | cross | **Integration, Hardening & Adversarial Capstone** — cross-surface coherence + perf/a11y/motion-budget hardening + adversarial review (skeptic + external-validator + Movement Skeptic) + launch-verify (F) + Phase-5 exit | NEW (absorbs D20 intent) | **YES (final)** | trails all built surfaces |
+| **E5** | G | **Public-Good Commons & Subnetwork Federation** — featured mission-aligned subnetworks (WGA · Context Commons · WilhelmAI · Rare Archive) + "connect to a subnetwork" + the first social surface (contributors/attribution/activity); the [[narrative_ethos_public_good|ethos]] made concrete | NEW (operator-added 2026-06-03) | **YES** | showcase do-now; full social layer horizon (Venus-gated) |
+| **E6** | cross | **Integration, Hardening & Adversarial Capstone** — cross-surface coherence + perf/a11y/motion-budget hardening + adversarial review (skeptic + external-validator + Movement Skeptic) + launch-verify (F) + Phase-5 exit | NEW (absorbs D20 intent) | **YES (final)** | trails all built surfaces |
 
-**Reviewer Lens Pass cadence:** D17 · E1 · E3 · E5 (4 passes — every-few-decadal + final, matching the STR D11/D14/D17/D20 rhythm). New reviewers mandatory on their owning tracks (see persona-bench design).
+**Reviewer Lens Pass cadence:** D17 · E1 · E3 · E5 · E6 (the ethos-bearing public-good surface E5 + the final capstone E6 both get full passes — richer than the STR 4-pass rhythm, per the MAX-III directive below). New reviewers mandatory on their owning tracks (see persona-bench design).
 
 ## Per-decadal cycle structure + AAR cadence
 
@@ -63,13 +65,15 @@ DO-NOW (design/research/brand-independent build — proceeds at ratification)
   E4 aDNANetwork surface (LEAST-GATED first build mover; vaults.json + federation_refs seeded; Step 4 unblocked)
   brand-independent shell: design-system CSS, dark-mode, meaningful-motion impl, component scaffolding
   D17 doc-journey coherence (doc personas now)
+  E5 public-good showcase (feature real aligned subnetworks — WGA/Context Commons/WilhelmAI/Rare Archive — over the registry; the ethos made concrete)
 
 GATED-BUILD (holds until Operation Homecoming Steps 2–5 substantially land)
   E2 Marketplace UI        ← aDLabs marketplace data shape
   E3 Community/Labs/Org     ← aDLabs org/community structure
   E1 final org-brand assets ← upstream brand decisions
+  E5 full social layer     ← profiles/follows/feeds/governance — co-designed w/ aDNANetwork (Venus-gated); the showcase ships now, the social layer is horizon
   D17 ecosystem-journey coherence (after those surfaces exist)
-  E5 capstone + launch      ← trails all built surfaces + operator go-signal + aDLabs brand-launch coordination
+  E6 capstone + launch      ← trails all built surfaces + operator go-signal + aDLabs brand-launch coordination
 
 RECONCILIATION SEAM: E2/E3/E4 build against STABLE SEEDS (lattice schema, vaults.json, federation_refs)
   + LOCKED names only, behind a thin adaptation layer → when aDLabs finalizes the surfaces, rebind not rebuild.
@@ -96,7 +100,15 @@ RECONCILIATION SEAM: E2/E3/E4 build against STABLE SEEDS (lattice schema, vaults
 
 ## v8.0 tag / Phase 6
 
-Because this is a **Phase-5 continuation** (operator decision), the amended exit gate now gates STR's **v8.0 tag (Phase 6)**: v8.0 ships after the re-scoped Phase 5 closes at the multi-track gate. *(Open operator question, surfaced at the gate: ship v8.0 on docs-readiness as a "Phase 5.5" checkpoint and treat the ecosystem build as continuing, OR hold v8.0 for the full multi-track close. Recommendation: hold — the tag should mean the forward face is real. Operator decides.)*
+Because this is a **Phase-5 continuation** (operator decision), the amended exit gate now gates STR's **v8.0 tag (Phase 6)**: v8.0 ships after the re-scoped Phase 5 closes at the multi-track gate. *(Open operator question, surfaced at the gate: ship v8.0 on docs-readiness as a "Phase 5.5" checkpoint and treat the ecosystem build as continuing, OR hold v8.0 for the full multi-track close. **Operator RATIFIED 2026-06-03: HOLD v8.0 for the full multi-track ecosystem close** — the tag should mean the forward face is real.)*
+
+## Ratification (2026-06-03) + the public-good ethos + MAX-III directive
+
+**Ratified by the operator at the M5.7 gate (2026-06-03):** the re-scoped Phase 5 (this theme set), the amended multi-track exit gate, the 21→30 persona-bench expansion, the sleek↔revolutionary **dial at ~55/45**, and **v8.0 holds for the full multi-track close**.
+
+**Operator-added scope (ethos — see [[narrative_ethos_public_good]]):** language + DNA are our shared, co-created heritage; the shared context of civilization should be a democratically-stewarded **public good**; AI is a scarcity-destroying technology → confident shared use of the aDNA network + Lattice Protocol yields **abundance for everyone**. Held **subtle but front of mind** across all surfaces (the writing-guidelines AVOID register is the guardrail). This added **Track G / decadal E5** (Public-Good Commons & Subnetwork Federation) and the strategic horizon of an **agentic-context social network — "the Facebook (for good!)"** — connecting mission-aligned aDNA subnetworks (MVP = featured-subnetwork showcase + "connect to a subnetwork" now; full social layer co-designed with aDNANetwork/Venus on the federation/membership substrate, horizon).
+
+**MAX-III directive (campaign-wide, operator 2026-06-03):** effort is set to **MAX** throughout. Each E-decadal runs **deep per-page/section III** — agentic inspection/introspection/review of *every* page and section — drawing context from (a) the site's design system + research (this set + [[front_page_doctrine]] + [[narrative_ethos_public_good]] + [[_reference_set]] + visual-identity-v2 + writing-guidelines), (b) the aDNA idea/ethos, (c) Lighthouse + Playwright + any web-review tooling, (d) context researched/generated by reviewing other sites ([[skill_reference_inspection]]). This is richer than the STR per-cycle pass: more cycles per surface where warranted, the full 30-persona bench engaged more often, and an extra Reviewer Lens Pass at E5. *(Candidate Campaign Standing Order #20 — ratify at the next phase gate per SO #14.)*
 
 ## Notes
 

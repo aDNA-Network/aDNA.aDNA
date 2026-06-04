@@ -41,7 +41,23 @@ Operator-approved plan (`~/.claude/plans/please-read-the-claude-md-iterative-peb
 ## Heartbeat
 
 - 00:25Z — session open; dirs created; references gathered; beginning artifact authoring.
+- ~01:30Z — M5.8 deliverables authored (manifest + 10 site captures + doctrine + 2 skills); M5.7 spec self-expanded; theme set + persona-bench design + coord memo; STR + STATE refreshed; committed `159837a` + pushed.
+- ~02:10Z — operator RATIFIED at the gate (dial ~55/45; v8.0 holds for full close) + added public-good ethos / Track G-E5 / social-network horizon / MAX-III directive; ethos saved to memory; threaded into narrative brief + theme set + doctrine + M5.7 close + STR + STATE.
 
 ## SITREP
 
-*(filled at close)*
+**Completed:**
+- **M5.8 (research) CLOSED** — 10-site reference inspection (`what/exemplars/sites/` manifest + 10 captures) + NN/g grounding → front-page **design-DNA doctrine** (`what/design/front_page_doctrine.md`) + `skill_reference_inspection` + `skill_site_design_pipeline`.
+- **M5.7 (planning) CLOSED + RATIFIED** — stub self-expanded → full spec; brand-application map + expanded IA (inline); `m57_eseries_ecosystem_theme_set` (D16–D20 re-sequenced + E1–E6; amended multi-track ≥4.95 exit gate + 3 new dims) + `m57_persona_bench_expansion_v2` (21→30); coord memo to Berthier.
+- **Operator ratification + new scope** — dial ~55/45; v8.0 holds for full close; **public-good ethos** (`narrative_ethos_public_good.md` + memory `project_adna_network_ethos`); **Track G / decadal E5** Public-Good Commons (capstone→E6); agentic-context-**social-network** horizon; **MAX-III** directive (candidate Campaign SO #20).
+- Governance: STR master (2 amendment rows) + STATE (frontmatter + new Last-Session + Next-Session-Prompt) refreshed; 2 commits pushed.
+
+**Gate discipline:** zero `site/` edits; engine files (iii_cycle / decadal_aar / visual-identity-v2 / writing-guidelines) UNEDITED — extended via new peers; archive-never-delete (D11–D20 + m50 preserved); zero renames (S8 KEEP); 1 outbound coord memo, no other cross-vault writes; no mid-phase ADR (2 candidates surfaced).
+
+**Next up (do-now, no gate):** (a) persona-file-authoring mission (M5.2-style; ~9 files); (b) **E4 aDNANetwork** + **E5 public-good showcase** as first build movers + brand-independent shell + D16/E1 design; (c) port doctrine + ethos brief → `site/src/content/reference/` at build time; (d) ratify Campaign SO #20 (MAX-III) at next phase gate.
+
+**Blockers / gated:** E2 marketplace, E3 community/org, E1 final brand assets, E5 full social layer — gated on aDLabs Homecoming Steps 2–5 + Venus (design against stable seeds behind the adaptation seam). Open: Berthier ack of the charter coord memo (Q1/Q2).
+
+**Token budget:** M5.7+M5.8 combined ~130–170 kT content-load (near the 100–150 estimate; upper band due to the same-session ratification + ethos fold-in). No retrospective trigger.
+
+**Next Session Prompt:** see STATE.md Next Session Prompt (refreshed this session — "resume at the FIRST BUILD MOVERS").

@@ -7,13 +7,13 @@ mission_number: 5.7
 slug: adnalabs_expansion_planning_stub
 created: 2026-05-30
 updated: 2026-06-03   # SELF-EXPANDED (O1) from stub → full planning spec; foundation session
-status: in_progress   # planning objectives O1-O8 authored; CLOSES at the operator ratification gate; BUILD execution is downstream (gated)
+status: completed   # RATIFIED at the operator gate 2026-06-03; planning objectives O1-O8 discharged; BUILD execution is downstream (gated)
 opens_at: 2026-06-03
 opened_session: session_stanley_20260604T002544Z_v8_m57_m58_foundation
-closed_at:
-closed_session:
-estimated_sessions: 2   # SET BY O1: foundation (this session) + ratification-gate close (next)
-actual_sessions: 1   # so far
+closed_at: 2026-06-03
+closed_session: session_stanley_20260604T002544Z_v8_m57_m58_foundation
+estimated_sessions: 2   # SET BY O1: foundation + ratification-gate close
+actual_sessions: 1   # ratification landed same session as the foundation
 persona: rosetta
 last_edited_by: agent_stanley
 spec_completeness: full   # was: stub — expanded by O1 this session
@@ -98,7 +98,19 @@ The do-now / gated-build sequencing + reconciliation seam is specified in [[m57_
 - STR campaign master amendments (M5.8 row; D16–D20 re-scope note; amended exit gate pointer; M5.7 status). 
 - Coord memo to aDLabs/Berthier (charter notice + adaptation-seam dependency). [+ Venus/forge-seam notes as follow-ups]
 - STATE.md refresh.
-- **Ratification gate** presented to operator. **AC:** master + STATE updated; ≥1 coord memo filed; gate presented; nothing auto-adopted. *(closes at gate)*
+- **Ratification gate** presented to operator. **AC:** master + STATE updated; ≥1 coord memo filed; gate presented; nothing auto-adopted. **✅ RATIFIED 2026-06-03** (see addendum below).
+
+## Ratification addendum (2026-06-03)
+
+**Operator ratified at the gate:** the re-scoped Phase 5 (E1–E6) + the amended multi-track ≥4.95 exit gate + the 21→30 persona-bench expansion; the sleek↔revolutionary **dial = ~55/45**; **v8.0 HOLDS** for the full multi-track ecosystem close (not an earlier docs-only tag).
+
+**Operator-added scope (folded in same-session):**
+1. **The public-good ethos** ([[narrative_ethos_public_good]] + memory `project_adna_network_ethos`): language + DNA as shared, co-created heritage; the shared context of civilization as a democratically-stewarded **public good**; AI as scarcity-destroying → **abundance for all** through confident shared use of the aDNA network + Lattice Protocol. Held **subtle but front of mind** across every surface (writing-guidelines AVOID register is the guardrail).
+2. **New Track G / decadal E5 — Public-Good Commons & Subnetwork Federation:** feature mission-aligned subnetworks (WGA · Context Commons · WilhelmAI · Rare Archive) + "connect to a subnetwork." Capstone renumbered E5→**E6**.
+3. **Strategic horizon — an agentic-context social network ("the Facebook, for good!"):** the site as a community social-network connecting mission-aligned aDNA subnetworks. MVP (showcase + connect-affordances) now; full social layer (profiles/feeds/governance) co-designed with aDNANetwork/Venus on the federation/membership substrate (horizon).
+4. **MAX-III campaign directive:** effort set to MAX throughout — deep per-page/section III with the full bench + Lighthouse/Playwright + reference research; an extra Reviewer Lens Pass at E5. Candidate **Campaign SO #20** (ratify at next phase gate per SO #14).
+
+All four are recorded in [[m57_eseries_ecosystem_theme_set]] (§Ratification + MAX-III; Track G/E5/E6) + [[narrative_ethos_public_good]] + the front-page doctrine ethos thread.
 
 ## Hard constraints (honored this session)
 
@@ -112,7 +124,7 @@ The do-now / gated-build sequencing + reconciliation seam is specified in [[m57_
 ## Lightweight AAR (per Project SO #5; non-RLP planning; filled at the ratification-gate close)
 
 - **Worked**: the existing quality machine (III cycle + decadal AAR + 21-persona bench + locked visual identity + forge seams) re-points cleanly — the re-scope is amplification, not rebuild; M5.8 reference-grounding made the IA/dial decisions evidence-based rather than asserted.
-- **Didn't**: *(at close)*
-- **Finding**: the operator's "Hermes" instinct + the HF/Val Town analogs converged on a clear synthesis (manifesto hero + curated living registry, ~55/45) — and the young-network scale finding (Val Town who-not-how-many) is the load-bearing constraint.
-- **Change**: *(at close)*
-- **Follow-up**: post-ratification — persona-file authoring mission (M5.2-style); then E4 (aDNANetwork) as first build mover; port doctrine into `site/src/content/reference/`.
+- **Didn't**: the ratification gate surfaced significant NEW scope (the public-good ethos + the agentic-context-social-network horizon + Track G/E5) the foundation push hadn't anticipated — folded in same-session, but it confirms the ecosystem's surface set will keep growing (managed via per-track gates + the adaptation seam).
+- **Finding**: the operator's "Hermes" instinct + the HF/Val Town analogs converged on a clear synthesis (manifesto hero + curated living registry, ~55/45) — and the young-network scale finding (Val Town who-not-how-many) is the load-bearing constraint. The ethos (context-as-public-good → abundance) is the *gravity* that makes the synthesis cohere.
+- **Change**: added Track G / decadal E5 (Public-Good Commons & Subnetwork Federation) + renumbered capstone E5→E6; ratified dial ~55/45 + v8.0-holds-for-full-close; encoded a campaign-wide MAX-III directive (candidate Campaign SO #20); saved the ethos as durable memory.
+- **Follow-up**: post-ratification — (1) persona-file authoring mission (M5.2-style; ~9 files); (2) **E4 aDNANetwork** as first build mover + E5 public-good showcase (both do-now) + brand-independent shell + D16/E1 design; (3) port `front_page_doctrine.md` + `narrative_ethos_public_good.md` → `site/src/content/reference/` at build time; (4) ratify Campaign SO #20 (MAX-III) at the next phase gate; (5) await Berthier ack (coord memo Q1/Q2).
