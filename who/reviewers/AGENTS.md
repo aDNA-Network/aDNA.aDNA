@@ -1,20 +1,20 @@
 ---
 type: directory_index
 created: 2026-04-23
-updated: 2026-05-26   # M5.2 bench expansion: 5 → 10 reviewers (5 existing_specialist + 5 NEW visual_focused per M5.0 §4)
+updated: 2026-06-03   # M5.9 ecosystem expansion: 10 → 14 reviewers (+4 ecosystem_focused: Brand Strategist, Motion Designer, Conversion/Growth Specialist, Movement Skeptic; full bench 21 → 30). Prior: M5.2 expansion 5 → 10 (5 existing_specialist + 5 visual_focused per M5.0 §4)
 last_edited_by: agent_stanley
-tags: [directory_index, reviewer, m5_2_bench_expansion]
+tags: [directory_index, reviewer, m5_2_bench_expansion, m5_9_ecosystem_expansion]
 ---
 
 # who/reviewers/ — Agent Guide
 
 ## What's Here
 
-Reviewer personas — **10 total** at M5.2 close (5 existing_specialist + 5 NEW visual_focused). Archetypal specialist UX/design critics invoked during decadal AAR cycles to supplement the 5-adopter + 6 P5-planned-adopter ranker with an *expert lens*. Adopters represent **audience** ("does this work for my persona?"); reviewers represent **expertise** ("is this well-made, and would a stranger feel welcomed?"). One file per reviewer.
+Reviewer personas — **14 total** at M5.9 close (5 existing_specialist + 5 visual_focused [M5.2] + 4 NEW ecosystem_focused [M5.9]). Archetypal specialist UX/design critics invoked during decadal AAR cycles to supplement the 5-adopter + 6 P5-planned-adopter ranker with an *expert lens*. Adopters represent **audience** ("does this work for my persona?"); reviewers represent **expertise** ("is this well-made, and would a stranger feel welcomed?"). One file per reviewer.
 
 Reviewers are the answer to a gap surfaced in the 2026-04-23 UX heuristic audit (see [[ux_audit_2026_04_23]]): Lighthouse saturates at 100/100/100/100 and the persona ranker moved 4.0 → 4.70 across D1 + D2, yet Delight stayed flat at 4.0 — both automated gates and audience self-assessment miss the "is this well-made?" question that a trained reviewer would catch on first scan. The M5.2 bench expansion adds 5 visual_focused reviewers to address operator priorities at v8 P5 pivot (visual + clarity + conciseness + anti-bloat + explanation-quality push; per `m50_persona_bench_expansion.md`).
 
-## Bench Inventory (10 total at M5.2 close)
+## Bench Inventory (14 total — 10 at M5.2 + 4 NEW ecosystem_focused at M5.9)
 
 | Category | Reviewer | Primary Lens | File |
 |---|---|---|---|
@@ -28,6 +28,12 @@ Reviewers are the answer to a gap surfaced in the 2026-04-23 UX heuristic audit 
 | **visual_focused (NEW M5.2)** | Anti-Bloat Editor | conciseness + cognitive_load | [[reviewer_anti_bloat_editor]] |
 | **visual_focused (NEW M5.2)** | UX Writer | conciseness + comprehension | [[reviewer_ux_writer]] |
 | **visual_focused (NEW M5.2)** | Diagram Reviewer | visual_clarity + comprehension | [[reviewer_diagram_reviewer]] |
+| **ecosystem_focused (NEW M5.9)** | Brand Strategist | trust + delight | [[reviewer_brand_strategist]] |
+| **ecosystem_focused (NEW M5.9)** | Motion Designer | delight + visual_clarity | [[reviewer_motion_designer]] |
+| **ecosystem_focused (NEW M5.9)** | Conversion/Growth Specialist | actionability + relevance | [[reviewer_conversion_growth_specialist]] |
+| **ecosystem_focused (NEW M5.9)** | Movement Skeptic | trust + comprehension | [[reviewer_movement_skeptic]] |
+
+> **Shape note (M5.9):** the 4 ecosystem_focused files follow the pre-M5.2 `reviewer_design_critic` shape (8-key frontmatter + Background → What They Evaluate → Critique Prompts → Primary Ranker Lens → Example Audit Finding → Related), explicitly permitted by the Working Rules below; a future pass may upgrade them to the M5.0 §4 13-key template. They ground their Example Audit Findings in the M5.8 reference set ([[../../what/exemplars/sites/_reference_set]]) + the [[../../what/design/front_page_doctrine|front-page doctrine]] rather than the 2026-04-23 audit.
 
 ## Working Rules
 
@@ -77,12 +83,12 @@ Reviewer files name any of these dimensions in `primary_lens` or `secondary_lens
 
 - **Per-cycle Q&A**: 3-5 reviewers + adopters drawn per cycle from the M5.0 §3 per-decadal allocation table (varies by decadal theme).
 - **Reviewer Lens Pass**: mandatory at D11 + D14 + D17 + D20 decadal closes (every 3rd decadal + final); produces the parallel reviewer scorecard.
-- **Full 21-persona bench**: invoked at D20 (Performance + Hardening + Adversarial Capstone) — Phase 5 exit gate readiness.
+- **Full 30-persona bench** (post-M5.9): invoked at the ecosystem **E6 capstone** (and the legacy D20 docs capstone) — Phase 5 exit gate readiness. Ecosystem decadal Reviewer Lens Pass cadence: D17 · E1 · E3 · E5 · E6 (per [[../../how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m57_eseries_ecosystem_theme_set|m57_eseries_ecosystem_theme_set]]).
 - **Out of scope**: reviewers do not run at session SITREPs and do not gate individual cycle closure (per Project SO #1 phase-gates-are-human-gates).
 
 ## Cross-References
 
-- [[../adopters/|who/adopters/]] — the audience counterpart to this directory (11 adopter personas at M5.2 close)
+- [[../adopters/|who/adopters/]] — the audience counterpart to this directory (16 adopter personas at M5.9 close)
 - [[../governance/|who/governance/]] — role definitions and escalation authority
 - [[../../how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m50_persona_bench_expansion|m50_persona_bench_expansion]] — 21-persona bench design (§3 allocation + §4 template + §5 scope)
 - [[../../how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m51_cross_target_synthesis|m51_cross_target_synthesis §4]] — empirical persona-binding aggregation across 8 OSS dossiers

@@ -1,20 +1,20 @@
 ---
 type: directory_index
 created: 2026-04-13
-updated: 2026-05-26   # M5.2 bench expansion: 5 → 11 adopters (5 original_rosetta + 6 NEW p5_planned per M5.0 §4)
+updated: 2026-06-03   # M5.9 ecosystem expansion: 11 → 16 adopters (+5 ecosystem: Marketplace Publisher, Marketplace Consumer, Lab/Org Steward, Network/Node Operator, Community Lead; full bench 21 → 30). Prior: M5.2 expansion 5 → 11 (5 original_rosetta + 6 p5_planned per M5.0 §4)
 last_edited_by: agent_stanley
-tags: [directory_index, adopter, m5_2_bench_expansion]
+tags: [directory_index, adopter, m5_2_bench_expansion, m5_9_ecosystem_expansion]
 ---
 
 # who/adopters/ — Agent Guide
 
 ## What's Here
 
-Adopter personas and deployment profiles — **11 total** at M5.2 close (5 original_rosetta + 6 NEW p5_planned). Archetypal user portraits that help the project understand its audiences — what they need, how they use aDNA, and what ontology extensions they typically create. Personas complement use cases (which are narrative) with structured profiles (which are reference). The M5.2 bench expansion adds 6 P5-planned adopter archetypes to address operator priorities at v8 P5 pivot (OSS maintainer + dev-tools designer + framework docs expert + community organizer + indie hacker + enterprise architect; per `m50_persona_bench_expansion.md`).
+Adopter personas and deployment profiles — **16 total** at M5.9 close (5 original_rosetta + 6 p5_planned [M5.2] + 5 NEW ecosystem [M5.9]). Archetypal user portraits that help the project understand its audiences — what they need, how they use aDNA, and what ontology extensions they typically create. Personas complement use cases (which are narrative) with structured profiles (which are reference). The M5.2 bench expansion adds 6 P5-planned adopter archetypes to address operator priorities at v8 P5 pivot (OSS maintainer + dev-tools designer + framework docs expert + community organizer + indie hacker + enterprise architect; per `m50_persona_bench_expansion.md`).
 
 One file per adopter persona.
 
-## Bench Inventory (11 total at M5.2 close)
+## Bench Inventory (16 total — 11 at M5.2 + 5 NEW ecosystem at M5.9)
 
 | Category | Adopter | Primary Lens | File |
 |---|---|---|---|
@@ -29,6 +29,11 @@ One file per adopter persona.
 | **p5_planned (NEW M5.2)** | Community Organizer | relevance + delight | [[adopter_community_organizer]] |
 | **p5_planned (NEW M5.2)** | Indie Hacker | actionability + conciseness | [[adopter_indie_hacker]] |
 | **p5_planned (NEW M5.2)** | Enterprise Architect | trust + cognitive_load | [[adopter_enterprise_architect]] |
+| **ecosystem (NEW M5.9)** | Marketplace Publisher | trust + actionability | [[adopter_marketplace_publisher]] |
+| **ecosystem (NEW M5.9)** | Marketplace Consumer | findability + relevance | [[adopter_marketplace_consumer]] |
+| **ecosystem (NEW M5.9)** | Lab / Org Steward | trust + cognitive_load | [[adopter_lab_org_steward]] |
+| **ecosystem (NEW M5.9)** | Network / Node Operator | actionability + trust | [[adopter_network_node_operator]] |
+| **ecosystem (NEW M5.9)** | Community Lead | relevance + delight | [[adopter_community_lead]] |
 
 ## Working Rules
 
@@ -56,6 +61,8 @@ One file per adopter persona.
 
 ## Cross-References
 
-- [[../reviewers/|who/reviewers/]] — the expertise counterpart to this directory (10 reviewer personas at M5.2 close)
+- [[../reviewers/|who/reviewers/]] — the expertise counterpart to this directory (14 reviewer personas at M5.9 close)
+
+> **Shape note (M5.9):** the 5 ecosystem adopters follow the pre-M5.2 `adopter_solo_developer` shape (Background → Goals → Pain Points → How They Use aDNA → Ranker emphasis → Self-reference → Related), grounded in the ecosystem surfaces + the [[../../what/design/narrative_ethos_public_good|public-good ethos]]. Their ranker lenses route the build-phase Reviewer Lens Pass per [[../../how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m57_persona_bench_expansion_v2|m57_persona_bench_expansion_v2]].
 - [[../../how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m50_persona_bench_expansion|m50_persona_bench_expansion]] — 21-persona bench design (§3 allocation + §4 template + §5 scope)
 - [[../../how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m51_cross_target_synthesis|m51_cross_target_synthesis §4]] — empirical persona-binding aggregation across 8 OSS dossiers
