@@ -3,10 +3,10 @@ type: decision
 adr_id: adr_032
 adr_number: 032
 title: "Brand-register pivot — aDNA.network from minimalist \"Rust/Tauri\" to Science Stanley \"Ghibli-pixel\" warm"
-status: proposed
+status: accepted
 created: 2026-06-04
 updated: 2026-06-04
-ratified: pending
+ratified: 2026-06-04
 last_edited_by: agent_rosetta
 supersedes: none
 superseded_by: none
@@ -27,11 +27,11 @@ tags: [adr, decision, brand, visual-identity, ss_ghibli, tokyo_night, register_p
 
 ## Status
 
-**proposed** — operator-set direction 2026-06-04 (captured at the E1 cycles-143–145 wind-down; briefs [[redesign_direction_ss_ghibli_pivot]] + [[hero_image_brief_adna_network]]). This ADR is **authored, not yet ratified**.
+**accepted** — operator-set direction 2026-06-04 (captured at the E1 cycles-143–145 wind-down; briefs [[redesign_direction_ss_ghibli_pivot]] + [[hero_image_brief_adna_network]]); **ratified 2026-06-04** by operator override (Campaign SO #14 — the register shift is load-bearing for the in-flight E1 redesign) at the cycle-146 gate, after the de-risking first instance (the "The aDNA Network" hero) was generated, wired, and build-verified.
 
-This is a **brand-direction pivot, not a tweak**: it deliberately revises the site's currently-ratified minimalist visual identity (`visual-identity-v2.mdx`) and front-page doctrine (`front_page_doctrine.md`). Per Standing Order #1 (project) + Campaign SO #19, a brand gate is a **human gate**.
+This is a **brand-direction pivot, not a tweak**: it deliberately revises the site's previously-ratified minimalist visual identity (`visual-identity-v2.mdx`) and front-page doctrine (`front_page_doctrine.md`). Per Standing Order #1 (project) + Campaign SO #19, a brand gate is a **human gate** — satisfied here by the operator override.
 
-**Ratification path** (Campaign SO #14 — no mid-phase ADR ratification except an operator override for a load-bearing decision): the register shift is load-bearing for the in-flight E1 redesign, so the operator may either **(a) ratify now** as an override that unblocks the broad reskin, or **(b) defer ratification to the Phase-5 exit gate**. Until ratified, **broad reskin is gated**; only the de-risking first mover (the "The aDNA Network" hero — generation + component wiring, not deployed) proceeds in parallel.
+**Now unblocked:** the broad reskin — `visual-identity-v2 → v3` + the `front_page_doctrine` revisions below — executes across E1 cycles 7–10. Deploy remains a separate operator call.
 
 ## Context
 
@@ -77,11 +77,11 @@ The **"The aDNA Network" homepage hero** (E1 cycle 146) — bird's-eye node-map,
 ### Guardrails retained (non-negotiable)
 - Purpose over decoration; AA contrast; `prefers-reduced-motion` honored; no motion-flicker; honest affordances (no fabricated UI). The doctrines stay the source of truth — this is a **governed retune**, not a free-for-all; same-commit provenance discipline holds.
 
-## Ratification checklist (for the operator gate)
-- [ ] Approve the register shift (minimalist → SS Ghibli-pixel warm) + Tokyo Night palette.
-- [ ] Approve the `visual-identity-v2 → v3` revision scope (§1 palette, §4 imagery guardrails relax).
-- [ ] Approve the `front_page_doctrine` revisions (image-led hero legal; warmer dial).
-- [ ] Choose ratification timing: **ratify now (override)** vs **defer to Phase-5 exit gate**.
+## Ratification checklist (resolved at the cycle-146 gate, 2026-06-04)
+- [x] Approve the register shift (minimalist → SS Ghibli-pixel warm) + Tokyo Night palette.
+- [x] Approve the `visual-identity-v2 → v3` revision scope (§1 palette, §4 imagery guardrails relax).
+- [x] Approve the `front_page_doctrine` revisions (image-led hero legal; warmer dial).
+- [x] Ratification timing: **ratify now (operator override)** — reskin unblocked for E1 cycles 7–10. Deploy decision held separately (operator reviewing the hero first).
 
 ## References
 - [[redesign_direction_ss_ghibli_pivot]] · [[hero_image_brief_adna_network]] · [[narrative_ethos_public_good]]
