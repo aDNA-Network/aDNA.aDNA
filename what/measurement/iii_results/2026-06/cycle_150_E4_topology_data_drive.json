@@ -1,0 +1,58 @@
+{
+  "cycle": 150,
+  "decadal": "E4",
+  "decadal_cycle": 1,
+  "mission": "mission_adna_str_p5_m511_e4_adnanetwork",
+  "slug": "e4_topology_data_drive",
+  "date": "2026-06-04",
+  "session": "session_stanley_20260604T192658Z_v8_m511_e4_open",
+  "theme": "E4 cycle 1 — the data foundation: light up the federation topology. The site carried the full 5-edge rendering machinery but 0 edges; this cycle authors a cited edge overlay, merges it through the ADR-023 generator, data-drives /vaults/graph (typed legend + honest directionality), and fixes E1 Gap #6 on the homepage NetworkDiagram (false peer-to-peer ring -> honest hub-and-spoke).",
+  "register": "Tokyo Night dark-first; registry-as-hero (the topology is the hero of /vaults/graph, ~0 marketing words); honest-topology discipline (every edge cited).",
+  "operator_scope": "Open E4 (plan + data foundation + cycle-150 viz). Local network_edges.yaml overlay merged by the build script (upstream to Home.aDNA later). New /network page + upgrade /vaults/graph; registry /vaults unchanged. /network + run-a-node onboarding spec'd now, built cycles 151+.",
+  "iii_7step": {
+    "measure": "0 edges in vaults.json (1/40 vaults carried any relationship); the network rendered as 40 disconnected nodes — Network Legibility unmeasurable.",
+    "orient": "The generator already emits edges from per-vault relationship fields; the gap is data, not machinery. Relationship data is knowable from the workspace router but never captured. Also found: vault_slug is inconsistent (full-name vs slugified) and edge targets used raw slugOf() -> would mismatch node ids once edges go live.",
+    "select": "Author a curated, cited edge overlay (adaptation seam) + reconcile the slug bug + data-drive the two topology surfaces + fix Gap #6. Defer /network + onboarding to 151+.",
+    "implement": "network_edges.yaml (22 cited edges); build_vaults_data.mjs overlay-merge + name->vault_slug resolver (no dangling) + superseded_by handling + dedupe + Mermaid-safe ids; /vaults/graph typed legend + honest framing; NetworkDiagram Gap #6 (drop ring, raise edge opacity 0.32->0.5 + halo); fixed pre-existing hardcoded-grey AA bug on /vaults/[slug].",
+    "re_measure": "22 edges (federation 10 / companion 7 / supersedes 3 / umbrella 1 / partner 1); 40 nodes, 0 orphan endpoints; byte-idempotent regen.",
+    "validate": "see validation block",
+    "record": "this JSON + cycle log in the session + mission/STATE cascade"
+  },
+  "change_summary": [
+    "NEW site/src/data/network_edges.yaml — 22 cited federation edges (each maps to a governance statement; dangling/archived targets omitted)",
+    "scripts/build_vaults_data.mjs — overlay merge in projectVault(); name->vault_slug resolver so edge endpoints match node ids; superseded_by emits successor->predecessor; edge de-dup; Mermaid-safe (dot-free) node ids",
+    "regen site/src/data/vaults.json (edges 0->22) + vaults_graph.mmd (40 nodes, 22 edges)",
+    "site/src/pages/vaults/graph.astro — UPGRADE: vault/edge counts, honest 'every edge is real and directed' framing, typed legend (line-STYLE not invented colours, mirroring Mermaid's single-colour render)",
+    "site/src/components/sections/NetworkDiagram.astro — Gap #6: dropped the false peer-to-peer ring (now hub-and-spoke), edge opacity 0.32->0.5 + faint same-hue halo",
+    "site/src/pages/vaults/[slug].astro — a11y: hardcoded #444/#555/#666 -> --color-text-muted (failed AA on dark); pinned dark text on light-pastel state badges",
+    "site/tests/gates/gate-4-a11y.spec.ts — added /vaults/graph + a vault-detail page to the permanent a11y gate"
+  ],
+  "doctrine_compliance": {
+    "honest_topology": "PASS — all 22 edges cited; 0 dangling; the false-ring removed (the direct Gap #6 remedy)",
+    "two_fighting_colors": "PASS — legend + edges use the cyan --color-link / purple --color-primary signal pair; no new accents",
+    "motion_budget": "PASS — no motion added on /vaults/graph (Mermaid static); homepage NetworkDiagram keeps its no-JS-safe + reduced-motion compose entrance",
+    "no_marketing_adjectives": "PASS — graph framing is factual (counts + 'real and directed')",
+    "engine_files_unedited": "PASS — skill_iii_cycle / skill_site_design_pipeline / skill_decadal_aar untouched",
+    "idempotency": "PASS — byte-identical vaults.json + vaults_graph.mmd on re-run (ADR-023)"
+  },
+  "validation": {
+    "build": "PASS — astro build 161 pages, 0 errors",
+    "playwright_gates": "58/58 PASS (56 prior + /vaults/graph + vault-detail added to gate-4 a11y)",
+    "axe_wcag_aa": "0 violations on the gated sample incl the 2 new network surfaces (fixed 4 pre-existing color-contrast nodes on /vaults/[slug])",
+    "lighthouse": {
+      "home": "Perf 100 / A11y 96 / BP 100 / SEO 100 — Perf hard-gate MET; A11y 96 = the known E1 fast-follow mobile target-size item (WCAG 2.5.5, not axe-AA; unchanged, not an E4 regression)",
+      "vaults_graph": "Perf 99 / A11y 100 / BP 100 / SEO 100 — Perf 99 from sub-second-metric rounding (LCP 0.79s, FCP 0.6s, CLS 0.048, TBT 0ms); only opportunity is Mermaid's own JS (inherent to a graph page). No defect; further squeeze routed to E4 iterate cycles 155-158",
+      "evidence": "site/evidence/lighthouse_e4_{home,vaults_graph}.json"
+    },
+    "data": "22 edges, 40 nodes, 0 orphan endpoints, byte-idempotent"
+  },
+  "deferred_to_151plus": [
+    "/network page (hero + 'what is an aDNA computer' + local-vs-shared boundary)",
+    "run-a-node onboarding + participation CTA (RLP Gap #1)",
+    "governance trust-anchor + nav /network link (RLP Gap #4 partial)",
+    "VaultRelationshipBlock visual polish; superseded-node subordination on the graph",
+    "/vaults/graph CLS squeeze (reserve diagram space) toward Perf 100"
+  ],
+  "deploy": "NOT deployed this session — cycle 150 is the data foundation + topology; deploy bundles with the /network surface at a later E4 cycle (avoids the SS_VERCEL_TOKEN CLI-leak path for an internal-only change). Build + gates green locally.",
+  "notes": "E4 OPENED. The crux was data, not design: one cited overlay lit up the graph, the per-vault relationship blocks, and (next) /network from a single file. Honest-topology discipline (cited edges + dropped false ring) carries E1's trust-score lesson into the network surface. NEW SEEDS: skill_edge_overlay_adaptation_seam (curate locally, merge via the ADR-023 generator, upstream later); skill_mermaid_safe_node_ids (normalize dotted vault_slugs at emission while keeping real-slug edges for route/relationship matching). Candidate ADR-033 (overlay seam) -> phase gate."
+}

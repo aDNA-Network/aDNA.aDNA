@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
+import vaultsData from '../../data/vaults.json';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -8,28 +9,112 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const graphPath = path.resolve(__dirname, '../../data/vaults_graph.mmd');
 const chart = fs.existsSync(graphPath) ? fs.readFileSync(graphPath, 'utf-8') : 'flowchart LR\n  empty["(no data)"]';
+
+const edgeCount = (vaultsData as any).edges?.length ?? 0;
+const vaultCount = (vaultsData as any).vault_count ?? 0;
+
+// The 5-edge taxonomy — differentiated by LINE STYLE (Mermaid draws every edge in one colour),
+// so the legend mirrors what is actually rendered, not an invented per-type palette.
+const legend = [
+  { key: 'umbrella', sample: 'thick', meaning: 'an org-vault contains its org-graph / pillar children' },
+  { key: 'federation', sample: 'solid', meaning: 'a consumer wrapper depends on the forge / framework it consumes' },
+  { key: 'partner', sample: 'circle', meaning: 'a platform ships with its default partner' },
+  { key: 'companion', sample: 'dashed', meaning: 'a sibling persona-pair or thematic family' },
+  { key: 'supersedes', sample: 'super', meaning: 'a successor replaced its predecessor (lifecycle)' },
+];
 ---
 
-<BaseLayout title="The Lattice — relationship graph" description="Cross-vault relationships across the aDNA lattice — umbrella, companion, federation, partner, supersedes edges.">
+<BaseLayout title="The aDNA network — relationship graph" description="The federation topology of the aDNA network: every edge is a real, directed relationship drawn from vault governance — umbrella, federation, partner, companion, supersedes.">
   <main class="vaults-graph">
     <section class="vaults-graph-hero">
       <p class="vault-breadcrumb"><a href="/vaults/">&larr; The Lattice</a></p>
-      <h1>Relationship graph</h1>
-      <p>
-        Edges: <strong>umbrella</strong> (org_vault → org_graph children) ·
-        <strong>companion</strong> (sibling persona-pair) ·
-        <strong>federation</strong> (forge/framework consumer wrapper) ·
-        <strong>partner</strong> (platform default-partner) ·
-        <strong>supersedes</strong> (lifecycle).
+      <h1>The network, drawn</h1>
+      <p class="lede">
+        {vaultCount} vaults, {edgeCount} relationships. Every edge is <strong>real and directed</strong>,
+        drawn from each vault&rsquo;s governance — a consumer points at what it is built from, an
+        org-vault at the children it contains, a successor at what it replaced. Nothing here is decorative.
       </p>
     </section>
 
-    <MermaidDiagram chart={chart} caption="aDNA cross-vault relationship graph" />
+    <section class="graph-legend" aria-label="How to read the graph">
+      <h2>How to read it</h2>
+      <ul class="legend-list">
+        {legend.map((l) => (
+          <li>
+            <span class={`le le-${l.sample}`} aria-hidden="true"></span>
+            <span class="le-text"><strong>{l.key}</strong> — {l.meaning}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <MermaidDiagram chart={chart} caption="The aDNA network — cross-vault federation topology" />
   </main>
 </BaseLayout>
 
 <style>
-  .vaults-graph { max-width: 100%; padding: 2rem 1rem; }
-  .vaults-graph-hero { max-width: 80ch; margin: 0 auto 2rem; }
-  .vault-breadcrumb { color: #666; }
+  .vaults-graph { max-width: 100%; padding: var(--space-8, 2rem) 1rem; }
+  .vaults-graph-hero { max-width: 72ch; margin: 0 auto var(--space-6, 1.5rem); }
+  .vault-breadcrumb { color: var(--color-text-muted); }
+  .vaults-graph-hero h1 { margin: 0.25rem 0 0.75rem; }
+  .lede { color: var(--color-text); line-height: 1.6; }
+
+  /* ── Typed legend — line STYLE, not colour (mirrors Mermaid's single-colour rendering) ── */
+  .graph-legend {
+    max-width: 72ch;
+    margin: 0 auto var(--space-6, 1.5rem);
+    padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+    background: var(--color-bg-alt, var(--color-surface));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md, 0.5rem);
+  }
+  .graph-legend h2 { font-size: var(--text-sm, 0.9rem); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin: 0 0 var(--space-3, 0.75rem); }
+  .legend-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+  .legend-list li { display: flex; align-items: center; gap: 0.75rem; line-height: 1.4; }
+  .le-text { color: var(--color-text); }
+  .le-text strong { font-family: var(--font-mono); color: var(--color-link); }
+
+  /* Line samples drawn with the edge colour Mermaid uses (--color-link). */
+  .le {
+    flex: 0 0 auto;
+    width: 3rem;
+    height: 0;
+    position: relative;
+    border-top: 2px solid var(--color-link);
+  }
+  .le-thick { border-top-width: 4px; }
+  .le-solid { border-top-width: 2px; }
+  .le-dashed { border-top-style: dashed; }
+  .le-super { border-top-style: dashed; }
+  /* arrowhead for all */
+  .le::after {
+    content: '';
+    position: absolute;
+    right: -1px; top: 50%;
+    transform: translateY(-50%);
+    border-left: 6px solid var(--color-link);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+  /* partner: circle end instead of arrowhead */
+  .le-circle::after {
+    border: 2px solid var(--color-link);
+    border-radius: 50%;
+    width: 7px; height: 7px;
+    background: var(--color-bg);
+    right: -3px;
+  }
+  /* supersedes: the 's' lifecycle label */
+  .le-super::before {
+    content: 's';
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -60%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-link);
+    background: var(--color-bg-alt, var(--color-surface));
+    padding: 0 0.2rem;
+    line-height: 1;
+  }
 </style>

@@ -1,5 +1,116 @@
 {
-  "edges": [],
+  "edges": [
+    {
+      "source": "MoleculeForge.aDNA",
+      "target": "SiteForge.aDNA",
+      "type": "federation"
+    },
+    {
+      "source": "adnalabs",
+      "target": "LatticeLabs.aDNA",
+      "type": "supersedes"
+    },
+    {
+      "source": "LatticeLabs.aDNA",
+      "target": "ContextCompass.aDNA",
+      "type": "federation"
+    },
+    {
+      "source": "sciencestanley",
+      "target": "SpeechForge.aDNA",
+      "type": "federation"
+    },
+    {
+      "source": "sciencestanley",
+      "target": "visualdna",
+      "type": "federation"
+    },
+    {
+      "source": "WilhelmAI.aDNA",
+      "target": "SiteForge.aDNA",
+      "type": "federation"
+    },
+    {
+      "source": "WilhelmAI.aDNA",
+      "target": "III.aDNA",
+      "type": "federation"
+    },
+    {
+      "source": "WilhelmAI.aDNA",
+      "target": "RareArchive.aDNA",
+      "type": "umbrella"
+    },
+    {
+      "source": "zenzachary",
+      "target": "sciencestanley",
+      "type": "companion"
+    },
+    {
+      "source": "zenzachary",
+      "target": "visualdna",
+      "type": "federation"
+    },
+    {
+      "source": "adnascope",
+      "target": "ContextCompass.aDNA",
+      "type": "companion"
+    },
+    {
+      "source": "Harness.aDNA",
+      "target": "SiteForge.aDNA",
+      "type": "federation"
+    },
+    {
+      "source": "Harness.aDNA",
+      "target": "III.aDNA",
+      "type": "federation"
+    },
+    {
+      "source": "Harness.aDNA",
+      "target": "LatticeAgent.aDNA",
+      "type": "supersedes"
+    },
+    {
+      "source": "LatticeTerminal.aDNA",
+      "target": "RemoteControl.aDNA",
+      "type": "companion"
+    },
+    {
+      "source": "LatticeTerminal.aDNA",
+      "target": "LatticeAgent.aDNA",
+      "type": "partner"
+    },
+    {
+      "source": "Harness.aDNA",
+      "target": "RareHarnessOld.aDNA",
+      "type": "supersedes"
+    },
+    {
+      "source": "RemoteControl.aDNA",
+      "target": "LatticeAgent.aDNA",
+      "type": "companion"
+    },
+    {
+      "source": "RemoteControl.aDNA",
+      "target": "LatticeTerminal.aDNA",
+      "type": "companion"
+    },
+    {
+      "source": "TappInterface.aDNA",
+      "target": "MoleculeForge.aDNA",
+      "type": "companion"
+    },
+    {
+      "source": "TappInterface.aDNA",
+      "target": "VAASLattice.aDNA",
+      "type": "companion"
+    },
+    {
+      "source": "aDNA.aDNA",
+      "target": "III.aDNA",
+      "type": "federation"
+    }
+  ],
   "generated_at": "2026-06-04",
   "schema_version": "0.2",
   "source_inventory_sha": "e58b62e7cccadddd",
@@ -169,7 +280,9 @@
       "default_partners": [],
       "display_name": "MoleculeForge",
       "docs_site_url": null,
-      "federation_refs": [],
+      "federation_refs": [
+        "SiteForge.aDNA"
+      ],
       "full_name": null,
       "github_url": null,
       "headline_adrs": [],
@@ -619,7 +732,7 @@
       "status": "genesis",
       "subclass": null,
       "superseded_by": null,
-      "supersedes": null,
+      "supersedes": "LatticeLabs.aDNA",
       "tagline": null,
       "umbrella_pillar": null,
       "vault": "aDNALabs.aDNA",
@@ -665,7 +778,9 @@
       "default_partners": [],
       "display_name": "Lattice Labs",
       "docs_site_url": null,
-      "federation_refs": [],
+      "federation_refs": [
+        "ContextCompass.aDNA"
+      ],
       "full_name": null,
       "github_url": null,
       "headline_adrs": [],
@@ -727,7 +842,10 @@
       "default_partners": [],
       "display_name": "Science Stanley",
       "docs_site_url": null,
-      "federation_refs": [],
+      "federation_refs": [
+        "SpeechForge.aDNA",
+        "VisualDNA.aDNA"
+      ],
       "full_name": null,
       "github_url": null,
       "headline_adrs": [],
@@ -789,7 +907,10 @@
       "default_partners": [],
       "display_name": "WilhelmAI",
       "docs_site_url": null,
-      "federation_refs": [],
+      "federation_refs": [
+        "SiteForge.aDNA",
+        "III.aDNA"
+      ],
       "full_name": null,
       "github_url": null,
       "headline_adrs": [],
@@ -807,7 +928,9 @@
       "superseded_by": null,
       "supersedes": null,
       "tagline": null,
-      "umbrella_pillar": null,
+      "umbrella_pillar": [
+        "RareArchive.aDNA"
+      ],
       "vault": "WilhelmAI.aDNA",
       "vault_slug": "WilhelmAI.aDNA"
     },
@@ -815,12 +938,16 @@
       "canonical_governance": null,
       "card_present": false,
       "class": "org_vault",
-      "companion_vaults": [],
+      "companion_vaults": [
+        "ScienceStanley.aDNA"
+      ],
       "current_phase": null,
       "default_partners": [],
       "display_name": "Zen Zachary",
       "docs_site_url": null,
-      "federation_refs": [],
+      "federation_refs": [
+        "VisualDNA.aDNA"
+      ],
       "full_name": null,
       "github_url": null,
       "headline_adrs": [],
@@ -846,7 +973,9 @@
       "canonical_governance": null,
       "card_present": false,
       "class": "platform",
-      "companion_vaults": [],
+      "companion_vaults": [
+        "ContextCompass.aDNA"
+      ],
       "current_phase": null,
       "default_partners": [],
       "display_name": "aDNAScope",
@@ -944,7 +1073,10 @@
       "default_partners": [],
       "display_name": "RareHarness",
       "docs_site_url": null,
-      "federation_refs": [],
+      "federation_refs": [
+        "SiteForge.aDNA",
+        "III.aDNA"
+      ],
       "full_name": null,
       "github_url": null,
       "headline_adrs": [],
@@ -960,7 +1092,7 @@
       "status": "genesis",
       "subclass": null,
       "superseded_by": null,
-      "supersedes": null,
+      "supersedes": "LatticeAgent.aDNA",
       "tagline": null,
       "umbrella_pillar": null,
       "vault": "Harness.aDNA",
@@ -1001,9 +1133,13 @@
       "canonical_governance": "LatticeTerminal.aDNA/CLAUDE.md",
       "card_present": true,
       "class": "platform",
-      "companion_vaults": [],
+      "companion_vaults": [
+        "RemoteControl.aDNA"
+      ],
       "current_phase": null,
-      "default_partners": [],
+      "default_partners": [
+        "LatticeAgent.aDNA"
+      ],
       "display_name": "LatticeTerminal",
       "docs_site_url": null,
       "federation_refs": [],
@@ -1094,7 +1230,10 @@
       "canonical_governance": "RemoteControl.aDNA/CLAUDE.md",
       "card_present": true,
       "class": "platform",
-      "companion_vaults": [],
+      "companion_vaults": [
+        "LatticeAgent.aDNA",
+        "LatticeTerminal.aDNA"
+      ],
       "current_phase": null,
       "default_partners": [],
       "display_name": "RemoteControl",
@@ -1125,7 +1264,10 @@
       "canonical_governance": "TappInterface.aDNA/CLAUDE.md",
       "card_present": true,
       "class": "platform",
-      "companion_vaults": [],
+      "companion_vaults": [
+        "MoleculeForge.aDNA",
+        "VAASLattice.aDNA"
+      ],
       "current_phase": null,
       "default_partners": [],
       "display_name": "TappInterface",
@@ -1161,7 +1303,9 @@
       "default_partners": [],
       "display_name": "aDNA",
       "docs_site_url": null,
-      "federation_refs": [],
+      "federation_refs": [
+        "III.aDNA"
+      ],
       "full_name": null,
       "github_url": null,
       "headline_adrs": [],

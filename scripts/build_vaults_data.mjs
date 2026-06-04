@@ -133,26 +133,71 @@ function projectVault(invVault) {
 const projectedVaults = inventoryVaults.map(projectVault);
 projectedVaults.sort((a, b) => a.class.localeCompare(b.class) || a.vault.localeCompare(b.vault));
 
-// Build relationship edges (5-edge taxonomy per T10)
-const edges = [];
+// ── Curated edge overlay (E4 aDNANetwork adaptation seam; candidate ADR-033) ────────────────
+// Loaded from PROJECT_ROOT (not Home.aDNA) so edges survive the Home-absent CI/Vercel fallback.
+// Card data wins; the overlay fills empty relationship fields. Upstreams to Home.aDNA later,
+// after which network_edges.yaml shrinks to nothing without a rebuild. See network_edges.yaml.
+const OVERLAY_PATH = path.join(PROJECT_ROOT, 'site/src/data/network_edges.yaml');
+let edgeOverlay = {};
+if (fs.existsSync(OVERLAY_PATH)) {
+  try {
+    edgeOverlay = yaml.parse(fs.readFileSync(OVERLAY_PATH, 'utf-8')) || {};
+  } catch (e) {
+    console.warn(`[build_vaults_data] WARN: network_edges.yaml parse failed: ${e.message}`);
+  }
+}
+const ARRAY_RELATIONS = ['umbrella_pillar', 'companion_vaults', 'federation_refs', 'default_partners'];
 for (const v of projectedVaults) {
-  for (const c of v.companion_vaults || []) {
-    edges.push({ source: v.vault_slug, target: slugOf(c), type: 'companion' });
+  const ov = edgeOverlay[v.vault] || edgeOverlay[v.vault_slug] || {};
+  for (const f of ARRAY_RELATIONS) {
+    const cur = v[f];
+    const empty = cur == null || (Array.isArray(cur) && cur.length === 0);
+    if (empty && ov[f] != null) v[f] = ov[f];
   }
-  for (const f of v.federation_refs || []) {
-    edges.push({ source: v.vault_slug, target: slugOf(f), type: 'federation' });
-  }
-  for (const p of v.default_partners || []) {
-    edges.push({ source: v.vault_slug, target: slugOf(p), type: 'partner' });
-  }
+  if (!v.supersedes && ov.supersedes) v.supersedes = ov.supersedes;
+  if (!v.superseded_by && ov.superseded_by) v.superseded_by = ov.superseded_by;
+}
+
+// Resolve a referenced vault name → that vault's vault_slug, so edge endpoints match the node ids
+// emitted in vaults_graph.mmd / consumed by VaultRelationshipBlock. Returns null when the target
+// is not in the registry (edge dropped — no dangling endpoints).
+const slugByName = new Map();
+for (const v of projectedVaults) {
+  slugByName.set(v.vault.toLowerCase(), v.vault_slug);
+  slugByName.set(v.vault.toLowerCase().replace(/\.adna$/, ''), v.vault_slug);
+  slugByName.set(String(v.vault_slug).toLowerCase(), v.vault_slug);
+}
+function resolveSlug(name) {
+  if (typeof name !== 'string') return null;
+  const k = name.toLowerCase();
+  return slugByName.get(k) || slugByName.get(k.replace(/\.adna$/, '')) || null;
+}
+
+// Build relationship edges (5-edge taxonomy per T10). Targets resolved to real vault_slugs;
+// supersedes derived from BOTH supersedes and superseded_by (successor → predecessor); deduped.
+const rawEdges = [];
+function pushEdge(source, target, type) {
+  if (!source || !target || source === target) return;
+  rawEdges.push({ source, target, type });
+}
+for (const v of projectedVaults) {
+  for (const c of v.companion_vaults || []) pushEdge(v.vault_slug, resolveSlug(c), 'companion');
+  for (const f of v.federation_refs || []) pushEdge(v.vault_slug, resolveSlug(f), 'federation');
+  for (const p of v.default_partners || []) pushEdge(v.vault_slug, resolveSlug(p), 'partner');
   if (v.umbrella_pillar) {
-    for (const child of [].concat(v.umbrella_pillar)) {
-      edges.push({ source: v.vault_slug, target: slugOf(child), type: 'umbrella' });
-    }
+    for (const child of [].concat(v.umbrella_pillar)) pushEdge(v.vault_slug, resolveSlug(child), 'umbrella');
   }
-  if (v.supersedes) {
-    edges.push({ source: v.vault_slug, target: slugOf(v.supersedes), type: 'supersedes' });
-  }
+  if (v.supersedes) pushEdge(v.vault_slug, resolveSlug(v.supersedes), 'supersedes');
+  if (v.superseded_by) pushEdge(resolveSlug(v.superseded_by), v.vault_slug, 'supersedes');
+}
+// De-duplicate on source|target|type, preserving first-seen order for byte-identical idempotency.
+const edges = [];
+const seenEdge = new Set();
+for (const e of rawEdges) {
+  const key = `${e.source}|${e.target}|${e.type}`;
+  if (seenEdge.has(key)) continue;
+  seenEdge.add(key);
+  edges.push(e);
 }
 
 // Project final JSON
@@ -206,16 +251,19 @@ const edgeStyles = {
   supersedes: '-.->|s|', // dashed labeled 's' (lifecycle)
 };
 
+// Mermaid node ids must be free of dots/dashes; labels keep the real vault name. Edges are new
+// in E4, so the previously-untested dotted ids are normalized here for node defs AND endpoints.
+const mmId = (s) => String(s).replace(/[^a-zA-Z0-9_]/g, '_');
 const mmdLines = ['flowchart LR'];
 for (const v of projectedVaults) {
   const label = v.persona ? `${v.vault}<br><sub>${v.persona}</sub>` : v.vault;
-  mmdLines.push(`  ${v.vault_slug}["${label}"]:::class${v.class.replace(/_/g, '')}`);
+  mmdLines.push(`  ${mmId(v.vault_slug)}["${label}"]:::class${v.class.replace(/_/g, '')}`);
 }
 mmdLines.push('');
 for (const e of edges) {
   if (!e.source || !e.target) continue;
   const arrow = edgeStyles[e.type] || '-->';
-  mmdLines.push(`  ${e.source} ${arrow} ${e.target}`);
+  mmdLines.push(`  ${mmId(e.source)} ${arrow} ${mmId(e.target)}`);
 }
 mmdLines.push('');
 for (const [cls, color] of Object.entries(classColors)) {

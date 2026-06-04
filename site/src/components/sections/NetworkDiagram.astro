@@ -23,12 +23,10 @@ const nodes = [
   { id: 'home',      label: 'Home',         cx: 188, cy: 122, lx: 170, ly: 126, anchor: 'end'    },
 ];
 
-const spokes = nodes.map((n) => ({ x1: hub.cx, y1: hub.cy, x2: n.cx, y2: n.cy }));
-const ring = nodes.map((n, i) => {
-  const m = nodes[(i + 1) % nodes.length];
-  return { x1: n.cx, y1: n.cy, x2: m.cx, y2: m.cy };
-});
-const allEdges = [...ring, ...spokes];
+// Hub-and-spoke only: vaults federate AROUND the aDNA core. (E1 Gap #6 — the prior
+// hexagonal ring between satellites implied a false peer-to-peer topology the network
+// does not have. The honest shape is each vault → the core.)
+const allEdges = nodes.map((n) => ({ x1: hub.cx, y1: hub.cy, x2: n.cx, y2: n.cy }));
 ---
 
 <figure class="netdiagram" data-netdiagram>
@@ -38,6 +36,12 @@ const allEdges = [...ring, ...spokes];
       Real aDNA vaults — SiteForge, III, RareHarness, WGA, Rare Archive, and a node's Home —
       federating around the aDNA core on the Lattice Protocol.
     </desc>
+
+    <g class="nd-edge-halos" aria-hidden="true">
+      {allEdges.map((e) => (
+        <line class="nd-edge-halo" x1={e.x1} y1={e.y1} x2={e.x2} y2={e.y2} />
+      ))}
+    </g>
 
     <g class="nd-edges">
       {allEdges.map((e, i) => (
@@ -83,12 +87,21 @@ const allEdges = [...ring, ...spokes];
     overflow: visible;
   }
 
-  /* ——— Edges ——— */
+  /* ——— Edges (E1 Gap #6: raised opacity + contrast halo against the dark section bg) ——— */
   .nd-edge {
     fill: none;
     stroke: var(--color-primary);
-    stroke-width: 1.5;
-    stroke-opacity: 0.32;
+    stroke-width: 1.75;
+    stroke-opacity: 0.5;
+    stroke-linecap: round;
+  }
+
+  /* A wider, faint same-hue halo behind each spoke separates it from the dark ground. */
+  .nd-edge-halo {
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 4;
+    stroke-opacity: 0.12;
     stroke-linecap: round;
   }
 

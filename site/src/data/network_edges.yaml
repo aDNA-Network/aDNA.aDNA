@@ -1,0 +1,90 @@
+# network_edges.yaml — curated federation-edge overlay (E4 aDNANetwork, M5.11 / cycle 150)
+#
+# WHY THIS FILE EXISTS (the adaptation seam): the site carries the full 5-edge rendering
+# machinery, but the canonical source (Home.aDNA vault cards) does not yet carry relationship
+# data — so the network renders as 40 disconnected nodes. This file is the "stable seed behind
+# a thin adaptation layer" (m57 theme set): it is curated HERE to unblock E4 now, merged by
+# scripts/build_vaults_data.mjs (the ADR-023 generator), and UPSTREAMS to
+# Home.aDNA/what/inventory/inventory_vaults.yaml + vault_cards later (Hestia coord). When it
+# does, this file shrinks to nothing without a rebuild. Candidate ADR-033 (phase-gate ratify).
+#
+# HONESTY DISCIPLINE (load-bearing): every edge maps to a governance statement (workspace
+# CLAUDE.md router row / a vault STATE / a spec). No decorative or speculative edges — this is
+# the discipline that earned E1's standout trust score and the direct remedy for E1 Gap #6
+# (false peer-to-peer ring). Relationships whose target vault is NOT in vaults.json (e.g.
+# ComicForge under Archive.aDNA; Odyssey Stories / Family Compass / Hackathon Forge) are OMITTED
+# to avoid dangling edges, and flagged for the Home.aDNA upstream.
+#
+# SCHEMA: keyed by canonical vault name. Fields mirror the vault-card fields the generator
+# already consumes (card data wins; this overlay fills empties):
+#   supersedes / superseded_by : <canonical name>      (lifecycle; successor supersedes predecessor)
+#   umbrella_pillar            : [<children>]           (org-vault contains org-graph/pillar children)
+#   federation_refs            : [<forge/framework>]    (consumer wrapper -> the thing it consumes)
+#   default_partners           : [<partner>]            (platform -> its default partner)
+#   companion_vaults           : [<sibling>]            (sibling persona-pair / thematic family)
+
+# ── supersedes (lifecycle) ─────────────────────────────────────────────────────────────────
+Harness.aDNA:
+  # "LatticeAgent SUPERSEDED 2026-06-01 — absorbed-and-superseded by Harness.aDNA (Operation Apotheosis)"
+  supersedes: LatticeAgent.aDNA
+  # "RareHarnessOld ... supersession trajectory by Harness.aDNA" (also on the RareHarnessOld card)
+  # federation: RareHarness clinical vertical consumes SiteForge ISS + III
+  federation_refs: [SiteForge.aDNA, III.aDNA]
+
+RareHarnessOld.aDNA:
+  superseded_by: Harness.aDNA   # mirrors the card; deduped at build
+
+aDNALabs.aDNA:
+  # "aDNALabs — unified successor to LatticeLabs.aDNA + lattice-labs"; LatticeLabs = "immediate predecessor"
+  supersedes: LatticeLabs.aDNA
+
+# ── umbrella (org-vault -> children) ───────────────────────────────────────────────────────
+WilhelmAI.aDNA:
+  # "AI4U umbrella over Rare-AI Archive + Odyssey Stories + Family Compass + Hackathon Forge"
+  # only RareArchive is in vaults.json; the other three OMITTED (upstream to Home.aDNA)
+  umbrella_pillar: [RareArchive.aDNA]
+  # WilhelmAI runs an iii/ wrapper + a SiteForge ISS wrapper (one of the 3 live ISS consumers)
+  federation_refs: [SiteForge.aDNA, III.aDNA]
+
+# ── federation (consumer -> forge/framework) ───────────────────────────────────────────────
+LatticeLabs.aDNA:
+  # "ContextCompass ... 1 consumer wrapper — LatticeLabs.aDNA"
+  federation_refs: [ContextCompass.aDNA]
+
+MoleculeForge.aDNA:
+  # ISS: "3 live: MoleculeForge / RareHarness / WilhelmAI" (federation_ref to SiteForge.aDNA)
+  federation_refs: [SiteForge.aDNA]
+
+aDNA.aDNA:
+  # this vault runs an iii/ consumer wrapper (campaign uses III airlock standard + iii wrapper)
+  federation_refs: [III.aDNA]
+
+ScienceStanley.aDNA:
+  # "SS speechforge/ consumer wrapper" (SpeechForge); SS brand content uses the VisualDNA standard
+  federation_refs: [SpeechForge.aDNA, VisualDNA.aDNA]
+
+ZenZachary.aDNA:
+  # "first campaign = VDP-03 (visual DNA pilot)" -> consumes the VisualDNA standard
+  federation_refs: [VisualDNA.aDNA]
+  # "Sibling to ScienceStanley.aDNA"
+  companion_vaults: [ScienceStanley.aDNA]
+
+aDNAScope.aDNA:
+  # "fuses ContextCompass optimization (map->compact->restructure) with telemetry"
+  companion_vaults: [ContextCompass.aDNA]
+
+# ── partner (platform -> default partner) ──────────────────────────────────────────────────
+LatticeTerminal.aDNA:
+  # "Default harness provider = LatticeAgent.aDNA" (lineage: LatticeAgent superseded by Harness)
+  default_partners: [LatticeAgent.aDNA]
+  # senses<->control sibling within the LatticeAgent/LatticeTerminal/RemoteControl triad
+  companion_vaults: [RemoteControl.aDNA]
+
+# ── companion (sibling persona-pair / thematic family) ─────────────────────────────────────
+RemoteControl.aDNA:
+  # "triad with LatticeAgent (brain) + LatticeTerminal (senses)"
+  companion_vaults: [LatticeAgent.aDNA, LatticeTerminal.aDNA]
+
+TappInterface.aDNA:
+  # "thematic family w/ MoleculeForge + VAASLattice"
+  companion_vaults: [MoleculeForge.aDNA, VAASLattice.aDNA]
