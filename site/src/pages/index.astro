@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HomeHero from '../components/sections/HomeHero.astro';
+import NetworkDiagram from '../components/sections/NetworkDiagram.astro';
 import { buildWebSiteJsonLD } from '../utils/seo';
-import { steps, personas, stats } from '../data/home';
+import { steps, stats } from '../data/home';
 import bannerImage from '../assets/aDNABanner.png';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.network';
@@ -15,6 +16,23 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
   jsonLD={jsonLD}
 >
   <HomeHero bannerImage={bannerImage} stats={stats} />
+
+  <!-- 1 · What a context democracy is -->
+  <section class="context-democracy">
+    <div class="section-inner">
+      <h2 class="section-title">What a context democracy is</h2>
+      <p class="section-subtitle">
+        A self-governed network where people and their agents build, share, and govern
+        context graphs in the open — each project its own graph, all of them federating
+        into a shared commons.
+      </p>
+      <NetworkDiagram />
+      <p class="diagram-caption">
+        Real aDNA vaults — forges, frameworks, platforms, and public-good archives —
+        federating on the Lattice Protocol.
+      </p>
+    </div>
+  </section>
 
   <!-- How it Works -->
   <section class="how-it-works">
@@ -48,22 +66,6 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
       <p class="how-footer">
         Dive deeper: <a href="/learn/concepts/convergence">Convergence Model</a> · <a href="/learn">Concepts &amp; Tutorials</a> · <a href="/reference">Reference Specification</a>
       </p>
-    </div>
-  </section>
-
-  <!-- Who Uses aDNA -->
-  <section class="who-uses">
-    <div class="section-inner">
-      <h2 class="section-title">Who Uses aDNA</h2>
-      <p class="section-subtitle">From solo developers to enterprise teams — aDNA scales with your project.</p>
-      <div class="persona-grid">
-        {personas.map((persona) => (
-          <a href={persona.href} class="persona-card">
-            <h3 class="persona-title">{persona.title}</h3>
-            <p class="persona-summary">{persona.summary}</p>
-          </a>
-        ))}
-      </div>
     </div>
   </section>
 
@@ -106,6 +108,20 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
     font-size: var(--text-lg);
     max-width: 36rem;
     margin: 0 auto var(--space-10);
+    line-height: 1.6;
+  }
+
+  /* ——— 1 · What a context democracy is ——— */
+  .context-democracy {
+    padding: var(--space-24) 0;
+  }
+
+  .diagram-caption {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    max-width: 34rem;
+    margin: var(--space-8) auto 0;
     line-height: 1.6;
   }
 
@@ -252,46 +268,6 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
     text-decoration: underline;
   }
 
-  /* ——— Who Uses aDNA ——— */
-  .who-uses {
-    padding: var(--space-24) 0;
-  }
-
-  .persona-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-6);
-  }
-
-  .persona-card {
-    display: block;
-    padding: var(--space-6);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-top: 3px solid var(--color-primary);
-    border-radius: var(--radius-xl);
-    text-decoration: none;
-    transition: all var(--transition-fast);
-  }
-
-  .persona-card:hover {
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-  }
-
-  .persona-title {
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-2);
-    color: var(--color-primary);
-  }
-
-  .persona-summary {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    line-height: 1.5;
-  }
-
   /* ——— The Standard ——— */
   .the-standard {
     padding: var(--space-24) 0 var(--space-32);
@@ -326,15 +302,6 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
     flex-wrap: wrap;
   }
 
-  /* ——— Touch device tap feedback (no-hover devices) ——— */
-  @media (hover: none) and (pointer: coarse) {
-    .persona-card:active {
-      transform: scale(0.98);
-      box-shadow: var(--shadow-sm);
-      transition: transform 80ms ease, box-shadow 80ms ease;
-    }
-  }
-
   /* ——— Responsive ——— */
   @media (max-width: 480px) {
     .section-title {
@@ -350,7 +317,7 @@ const jsonLD = buildWebSiteJsonLD(siteUrl);
       padding: var(--space-12) 0;
     }
 
-    .who-uses {
+    .context-democracy {
       padding: var(--space-12) 0;
     }
 

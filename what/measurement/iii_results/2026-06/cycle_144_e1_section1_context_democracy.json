@@ -1,0 +1,32 @@
+{
+  "cycle": 144,
+  "decadal": "E1",
+  "mission": "mission_adna_str_p5_m510_e1_brand_positioning",
+  "slug": "e1_section1_context_democracy",
+  "date": "2026-06-03",
+  "session": "session_stanley_20260604T022755Z_v8_m510_e1_continue",
+  "theme": "Section 1 — 'What a context democracy is': one-line definition + inline network diagram (demo-as-proof)",
+  "target": [
+    "site/src/components/sections/NetworkDiagram.astro",
+    "site/src/pages/index.astro"
+  ],
+  "change_summary": "Added homepage Section 1 directly below the hero: a one-line definition of a self-governed context-graph network + an abstract-geometric inline SVG network diagram (new NetworkDiagram.astro) showing six REAL aDNA vaults across categories (SiteForge/forge, III/framework, RareHarness/platform, WGA + Rare Archive/public-good, Home/node) federating as a hexagon ring + spokes around the aDNA hub. Grounding names from data/vaults.json. Removed the superseded 'Who Uses aDNA' persona section (new IA routes audiences via sections; home.ts personas preserved for /use-cases pages); dropped now-unused personas import + orphaned persona/who-uses styles.",
+  "doctrine_compliance": {
+    "section_budget": "body sections now hero + sec.1 + How-it-Works + The-Standard = 4 focal (within 5±1); 'Who Uses' cut per delete-the-disposable-section rule",
+    "density_band": "sec.1 Medium — one definition + one diagram (one idea per screen)",
+    "two_colors_max": "diagram is monochrome teal (signal) + neutral text; no per-class colors (restraint over the mermaid's multi-color classDefs)",
+    "motion_budget": "one meaningful motion — the diagram 'composes' (edges draw via stroke-dashoffset, nodes/hub fade-scale, staggered) on first scroll-into-view; JS-armed so no-JS = fully visible; reduced-motion = instant (global rule)",
+    "imagery": "abstract-geometric inline SVG, no raster, no image-gen (visual-identity-v2 §4/§6); role=img + title/desc a11y",
+    "movement_skeptic_guard": "the diagram shows REAL named vaults, so the hero's 'network/inheritance' claim is backed immediately",
+    "ethos_subtle": "threaded by what is shown — WGA + Rare Archive (public-good) among the nodes; caption names 'public-good archives' (shown, not preached)"
+  },
+  "validation": {
+    "astro_build": "PASS — 161 pages, 5.27s, 0 errors",
+    "visual_desktop": "dark hero → light sec.1 seam crisp/intentional; hub + 6 labeled nodes + ring/spokes render; caption centered",
+    "visual_mobile": "390px — no horizontal scroll (scrollW==clientW==390); diagram legible, labels unclipped; clean seam to How-it-Works",
+    "lighthouse": "deferred to E1 decadal close (cycle 10)",
+    "persona_qa": "deferred to E1 decadal Reviewer Lens Pass"
+  },
+  "deploy": "deferred to this session's combined deploy after sec.2 (the living registry) lands",
+  "notes": "Cycle 4 of E1. Polish backlog for the cycle-9 responsive/motion pass: diagram labels are small on narrow phones (legible but minimal) — consider a size bump or simplified mobile layout."
+}

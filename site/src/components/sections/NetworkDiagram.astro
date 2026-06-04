@@ -1,0 +1,191 @@
+---
+/**
+ * NetworkDiagram.astro — Section 1 "demo-as-proof" for the homepage (M5.10 / E1 c4).
+ *
+ * An abstract-geometric inline SVG (visual-identity-v2 §4/§6: no raster, no image-gen,
+ * currentColor-friendly, ≤2-color palette) showing REAL aDNA vaults across categories
+ * federating around the aDNA core — backing the hero's "network/inheritance" claim
+ * immediately (Movement-Skeptic guard). The grounding names come from data/vaults.json.
+ *
+ * The "composing" entrance (doctrine §5: the one meaningful motion) is JS-armed +
+ * IntersectionObserver-played, so it is fully visible with no JS and instant under
+ * prefers-reduced-motion (global tokens.css rule).
+ */
+const hub = { cx: 320, cy: 190, r: 46 };
+
+// One representative real vault per category — breadth + (subtly) the public-good thread.
+const nodes = [
+  { id: 'siteforge', label: 'SiteForge',    cx: 320, cy: 54,  lx: 320, ly: 36,  anchor: 'middle' },
+  { id: 'iii',       label: 'III',          cx: 452, cy: 122, lx: 470, ly: 126, anchor: 'start'  },
+  { id: 'harness',   label: 'RareHarness',  cx: 452, cy: 258, lx: 470, ly: 262, anchor: 'start'  },
+  { id: 'wga',       label: 'WGA',          cx: 320, cy: 326, lx: 320, ly: 348, anchor: 'middle' },
+  { id: 'rare',      label: 'Rare Archive', cx: 188, cy: 258, lx: 170, ly: 262, anchor: 'end'    },
+  { id: 'home',      label: 'Home',         cx: 188, cy: 122, lx: 170, ly: 126, anchor: 'end'    },
+];
+
+const spokes = nodes.map((n) => ({ x1: hub.cx, y1: hub.cy, x2: n.cx, y2: n.cy }));
+const ring = nodes.map((n, i) => {
+  const m = nodes[(i + 1) % nodes.length];
+  return { x1: n.cx, y1: n.cy, x2: m.cx, y2: m.cy };
+});
+const allEdges = [...ring, ...spokes];
+---
+
+<figure class="netdiagram" data-netdiagram>
+  <svg viewBox="0 0 640 384" role="img" aria-labelledby="nd-title nd-desc" class="netdiagram-svg">
+    <title id="nd-title">The aDNA network</title>
+    <desc id="nd-desc">
+      Real aDNA vaults — SiteForge, III, RareHarness, WGA, Rare Archive, and a node's Home —
+      federating around the aDNA core on the Lattice Protocol.
+    </desc>
+
+    <g class="nd-edges">
+      {allEdges.map((e, i) => (
+        <line
+          class="nd-edge"
+          x1={e.x1} y1={e.y1} x2={e.x2} y2={e.y2}
+          pathLength="1"
+          style={`--i:${i}`}
+        />
+      ))}
+    </g>
+
+    <g class="nd-nodes">
+      {nodes.map((n, i) => (
+        <g class="nd-node" style={`--i:${i}`}>
+          <circle class="nd-dot-halo" cx={n.cx} cy={n.cy} r="11" />
+          <circle class="nd-dot" cx={n.cx} cy={n.cy} r="6.5" />
+          <text class="nd-label" x={n.lx} y={n.ly} text-anchor={n.anchor}>{n.label}</text>
+        </g>
+      ))}
+    </g>
+
+    <g class="nd-hub">
+      <circle class="nd-hub-ring" cx={hub.cx} cy={hub.cy} r={hub.r + 6} />
+      <circle class="nd-hub-core" cx={hub.cx} cy={hub.cy} r={hub.r} />
+      <text class="nd-hub-mark" x={hub.cx} y={hub.cy - 4}>aDNA</text>
+      <text class="nd-hub-sub" x={hub.cx} y={hub.cy + 16}>the network</text>
+    </g>
+  </svg>
+</figure>
+
+<style>
+  .netdiagram {
+    margin: 0 auto;
+    max-width: 40rem;
+    width: 100%;
+  }
+
+  .netdiagram-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  /* ——— Edges ——— */
+  .nd-edge {
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 1.5;
+    stroke-opacity: 0.32;
+    stroke-linecap: round;
+  }
+
+  /* ——— Satellite nodes ——— */
+  .nd-dot {
+    fill: var(--color-primary);
+  }
+
+  .nd-dot-halo {
+    fill: color-mix(in srgb, var(--color-primary) 16%, transparent);
+  }
+
+  .nd-label {
+    fill: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.01em;
+    dominant-baseline: middle;
+  }
+
+  /* ——— Hub ——— */
+  .nd-hub-core {
+    fill: var(--color-primary);
+  }
+
+  .nd-hub-ring {
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-opacity: 0.28;
+    stroke-width: 1.5;
+  }
+
+  .nd-hub-mark {
+    fill: #ffffff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    text-anchor: middle;
+  }
+
+  .nd-hub-sub {
+    fill: rgba(255, 255, 255, 0.82);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-anchor: middle;
+  }
+
+  /* ——— "Composing" entrance (doctrine §5: one meaningful motion) ———
+     Only armed when JS is present; default state is fully visible (no-JS safe).
+     Global reduced-motion rule (global.css) zeros these transitions. */
+  .netdiagram[data-armed] .nd-edge {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset var(--transition-slow) ease;
+    transition-delay: calc(var(--i) * 45ms);
+  }
+  .netdiagram[data-armed] .nd-node,
+  .netdiagram[data-armed] .nd-hub {
+    opacity: 0;
+    transform: scale(0.92);
+    transform-origin: center;
+    transition: opacity var(--transition-base) ease, transform var(--transition-base) ease;
+  }
+  .netdiagram[data-armed] .nd-node {
+    transition-delay: calc(380ms + var(--i) * 55ms);
+  }
+  .netdiagram[data-armed] .nd-hub { transition-delay: 220ms; }
+
+  .netdiagram[data-armed][data-in] .nd-edge { stroke-dashoffset: 0; }
+  .netdiagram[data-armed][data-in] .nd-node,
+  .netdiagram[data-armed][data-in] .nd-hub {
+    opacity: 1;
+    transform: scale(1);
+  }
+</style>
+
+<script>
+  // Arm + play the compose animation. Arming in JS guarantees the no-JS render is
+  // the fully-composed diagram; IntersectionObserver plays it once on first view.
+  (function () {
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('[data-netdiagram]').forEach((el) => {
+      if (reduce) return; // leave fully visible; no arming
+      el.setAttribute('data-armed', '');
+      const io = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.setAttribute('data-in', '');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.35 }
+      );
+      io.observe(el);
+    });
+  })();
+</script>
