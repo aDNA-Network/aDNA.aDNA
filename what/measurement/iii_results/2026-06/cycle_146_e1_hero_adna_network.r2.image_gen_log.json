@@ -1,0 +1,53 @@
+{
+  "cycle_id": "cycle_146_e1_hero_adna_network",
+  "mission": "mission_adna_str_p5_m510_e1_brand_positioning",
+  "session": "session_stanley_20260604T065020Z_v8_m510_e1_hero_gen",
+  "decadal": "E1",
+  "round": "r2",
+  "step": "step_3_generate_images",
+  "model": "imagen-4.0-ultra-generate-001",
+  "aspect_ratio": "16:9",
+  "output_target": "1408x792",
+  "register": "ss_ghibli_pixel / tokyo_night",
+  "started_at": "2026-06-04T07:03:26.046542+00:00",
+  "calls": [
+    {
+      "round": "r2",
+      "direction": "D4",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/r2_D4_v1.png",
+      "prompt_chars": 1848,
+      "prompt_overridden": true,
+      "status": "success",
+      "bytes": 1315691,
+      "elapsed_sec": 22.34,
+      "cost_usd": 0.04
+    },
+    {
+      "round": "r2",
+      "direction": "D4",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/r2_D4_v2.png",
+      "prompt_chars": 1848,
+      "prompt_overridden": true,
+      "status": "success",
+      "bytes": 1168603,
+      "elapsed_sec": 61.89,
+      "cost_usd": 0.04
+    },
+    {
+      "round": "r2",
+      "direction": "D4",
+      "variant": 3,
+      "out_path": "site/src/assets/heroes/candidates/r2_D4_v3.png",
+      "prompt_chars": 1848,
+      "prompt_overridden": true,
+      "status": "success",
+      "bytes": 971870,
+      "elapsed_sec": 19.11,
+      "cost_usd": 0.04
+    }
+  ],
+  "total_cost_usd": 0.12,
+  "finished_at": "2026-06-04T07:05:09.386073+00:00"
+}

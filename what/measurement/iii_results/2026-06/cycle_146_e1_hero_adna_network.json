@@ -1,0 +1,60 @@
+{
+  "cycle": 146,
+  "decadal": "E1",
+  "mission": "mission_adna_str_p5_m510_e1_brand_positioning",
+  "slug": "e1_hero_adna_network",
+  "date": "2026-06-04",
+  "session": "session_stanley_20260604T065020Z_v8_m510_e1_hero_gen",
+  "theme": "'The aDNA Network' homepage hero — first concrete instance of the SS Ghibli-pixel brand pivot (ADR-032): image-led hero + live Space-Grotesk-Bold title; multi-agent gen->review->refine loop",
+  "register": "ss_ghibli_pixel / tokyo_night (#1a1b26 base, #9d7cd8 purple, #7dcfff cyan, #e0a84c warm accent)",
+  "target": [
+    "how/campaigns/campaign_adna_serious_tool_readiness/runners/e1_hero_adna_network_gen.py",
+    "site/src/assets/heroes/hero_adna_network.png",
+    "site/src/components/sections/HomeHero.astro",
+    "site/src/pages/index.astro",
+    "what/decisions/adr_032_brand_register_pivot.md"
+  ],
+  "change_summary": "Generated the new image-led homepage hero under the SS Ghibli-pixel register. Cloned the m53_cycle_102 Imagen runner with the SS Ghibli style tail + Tokyo Night palette + 4 seed directions (D1-D4). R1 exploration (8 requested; 6 produced — D1 cozy-desk filtered by person_generation=dont_allow) on Imagen 4 Fast. Adversarial 5-persona review (multi-agent Workflow): Visual Designer, Brand Strategist, Newcomer, Illustration/Motion, Movement Skeptic — each scored all 6 head-to-head. Winner D4 (isometric connected-vaults), mean 4.14; runner-up D2 constellation 3.46 (wins the 3-second network read but cold/clinical); D3 helix dropped. R2 regen of D4 on Imagen 4 Ultra with 7 synthesized refinement notes (hub-and-spoke topology, vaults spaced as discrete nodes, darkened upper title band, palette lock, keep human figures). Final = r2_D4_v1. Rewired HomeHero.astro image-led: title-image leads the fold with a live 'The aDNA Network' Space-Grotesk-Bold title (cmux shadow finish) over the darkened upper band — REVERSES the c2 banner_vs_words:DEMOTE; index.astro swapped aDNABanner -> heroImage. Surrounding chrome keeps v2 tokens (no palette reskin — gated on ADR-032).",
+  "review_panel": {
+    "method": "multi-agent Workflow (operator opt-in); 5 personas x 6 candidates head-to-head + synthesis",
+    "aggregate_means": {
+      "D4_v1": 4.14,
+      "D2_v1": 3.46,
+      "D4_v2": 3.40,
+      "D2_v2": 3.18,
+      "D3_v2": 2.78,
+      "D3_v1": 2.06
+    },
+    "winner_r1": "D4_v1 (isometric connected-vaults)",
+    "runner_up": "D2_v1 (constellation — Newcomer 4.8 instant-network read; folded into the D4 R2 refinement)",
+    "dropped": "D3 (DNA-helix direction; barely reads as a network)"
+  },
+  "doctrine_compliance": {
+    "image_led_hero": "NEW legal above-fold mode per ADR-032 §front_page_doctrine revision — title-image leads the fold; DOM order confirms hero-stage(img+title) before hero-lead before hero-actions",
+    "title_not_below_subtitles": "satisfied — reverses c2 DEMOTE; live h1 'The aDNA Network' sits in the image's upper band, above the manifesto lead + CTAs (operator directive)",
+    "live_text_title": "Space Grotesk Bold (var(--font-display)) + cmux shadow finish + soft cyan glow, composited as real <h1> text, NOT baked into the gen (a11y + responsive + accessible name)",
+    "no_baked_text": "gen prompts carry strict NO-TEXT clause; winner verified text-free",
+    "palette_discipline": "image carries the new Tokyo Night register; site tokens UNCHANGED (teal/amber v2) until visual-identity-v3 ratifies — gate-respecting",
+    "a11y": "descriptive image alt (scene, not duplicating the title); top-down navy scrim guarantees AA title contrast independent of asset; no motion added (static hero, motion budget untouched)"
+  },
+  "validation": {
+    "astro_build": "PASS — 161 pages, ~5.6s, 0 errors (built twice: placeholder then final Ultra asset)",
+    "visual_desktop": "1280px screenshot — live title leads the fold over the darkened band; hub-and-spoke network reads instantly; manifesto+CTAs below; rounded stage + glow",
+    "visual_mobile": "390px screenshot — title legible over image; image->lead->CTAs->trust->stats flow; no horizontal overflow",
+    "lighthouse": "deferred to E1 decadal close (cycle 10)",
+    "persona_qa": "R1 adversarial 5-persona panel ran THIS cycle (winner selection); full decadal Reviewer Lens Pass (30 personas) remains at cycle 10"
+  },
+  "image_gen": {
+    "model_r1": "imagen-4.0-fast-generate-001 (Ultra + standard were 429 RESOURCE_EXHAUSTED 'temporarily out of capacity' at gen time; Fast had capacity)",
+    "model_r2_final": "imagen-4.0-ultra-generate-001 (capacity returned; final winner is Ultra fidelity)",
+    "cost_usd": {"r1_fast": 0.12, "r2_ultra": 0.12, "total": 0.24},
+    "logs": [
+      "cycle_146_e1_hero_adna_network.r1.image_gen_log.json",
+      "cycle_146_e1_hero_adna_network.r2.image_gen_log.json",
+      "cycle_146_e1_hero_adna_network.smoke.image_gen_log.json"
+    ],
+    "winner_asset": "site/src/assets/heroes/hero_adna_network.png (= candidates/r2_D4_v1.png, Imagen 4 Ultra, 1408x792)"
+  },
+  "deploy": "NOT deployed — broad reskin + live deploy gated on operator ratification of ADR-032 (operator gate at session close)",
+  "notes": "Cycle 6 of E1, first cycle under the SS Ghibli-pixel pivot. Adaptations logged: (1) interpreter is python3.13 (google.genai in 3.13 user site, NOT homebrew 3.14); (2) added retry/backoff + --model to the runner for transient Imagen 429s; (3) D1 cozy-desk direction filtered by person_generation=dont_allow — D2/D3/D4 sufficed. Imagen native widest aspect is 16:9 (21:9 not supported); hero band crops visually via CSS. Candidate PNGs kept local (not committed — heavy); provenance in the image_gen_log + review aggregate above. GATE: ADR-032 is status:proposed — operator decides ratify-now vs defer-to-phase-exit before broad reskin (visual-identity-v3 + front_page_doctrine rewrite) + deploy. Remaining E1: cycles 7-10 (reskin in the new register) + cycle-10 decadal AAR + 30-persona Reviewer Lens Pass."
+}

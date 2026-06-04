@@ -8,24 +8,23 @@ interface Stat {
 }
 
 interface Props {
-  bannerImage: ImageMetadata;
-  bannerAlt?: string;
-  headline?: string;
+  heroImage: ImageMetadata;
+  heroAlt?: string;
+  title?: string;
   lead?: string;
   primaryHref?: string;
   primaryLabel?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
   githubHref?: string;
-  specHref?: string;
   stats?: Stat[];
 }
 
 const {
-  bannerImage,
-  bannerAlt = 'aDNA — retro pixel-art wordmark on a metal plate, set against glowing DNA helices rising from a workspace of laboratory instruments',
-  headline = 'Context is our shared inheritance.',
-  lead = 'Language and DNA were co-created by everyone before us. The context that powers AI should be too — built, shared, and governed in the open, for the good of all. aDNA is the network where that happens, on the Lattice Protocol.',
+  heroImage,
+  heroAlt = "A bird's-eye pixel-art map of cozy vault-buildings linked by glowing cyan and purple conduits — the aDNA network sharing context, AI, and DNA",
+  title = 'The aDNA Network',
+  lead = 'Language and DNA were co-created by everyone before us. The context that powers AI should be too — built, shared, and governed in the open, for the good of all. The open standard and network where that happens, on the Lattice Protocol.',
   primaryHref = '/vaults',
   primaryLabel = 'Explore the network',
   secondaryHref = '/reference/specification',
@@ -36,28 +35,41 @@ const {
 ---
 
 <section class="hero dark">
-  <h1 class="hero-headline">{headline}</h1>
+  {/* Image-led hero (E1 c146 / SS Ghibli-pixel pivot, ADR-032): the title-image leads
+     the fold; the live "The aDNA Network" title is composited as real text over the
+     darkened upper band of the image (Space Grotesk Bold + shadow — the cmux treatment),
+     NOT baked into the gen. Reverses the c2 `banner_vs_words: DEMOTE`. The image carries
+     the new warm register; surrounding chrome keeps v2 tokens until visual-identity-v3
+     ratifies. */}
+  <div class="hero-stage">
+    <Picture
+      src={heroImage}
+      alt={heroAlt}
+      widths={[768, 1024, 1408]}
+      formats={["avif", "webp"]}
+      sizes="(max-width: 980px) calc(100vw - 2rem), 60rem"
+      class="hero-stage-img"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="hero-title-band">
+      <h1 class="hero-title">{title}</h1>
+    </div>
+  </div>
+
   <p class="hero-lead">{lead}</p>
+
   <div class="hero-actions">
     <a href={primaryHref} class="btn btn-primary" data-astro-prefetch>{primaryLabel}</a>
     <a href={secondaryHref} class="btn btn-secondary" data-astro-prefetch>{secondaryLabel}</a>
   </div>
+
   <div class="hero-trust-links">
     <a href={githubHref} target="_blank" rel="noopener" class="trust-link">Open source on GitHub</a>
     <span class="trust-sep" aria-hidden="true">·</span>
     <span class="trust-link trust-static">MIT · built on the Lattice Protocol</span>
   </div>
-  <div class="hero-banner">
-    <Picture
-      src={bannerImage}
-      alt={bannerAlt}
-      widths={[480, 768, 964]}
-      formats={["avif", "webp"]}
-      sizes="(max-width: 768px) calc(100vw - 3rem), 44rem"
-      class="hero-banner-img"
-      loading="lazy"
-    />
-  </div>
+
   {stats.length > 0 && (
     <div class="trust-strip">
       {stats.map((stat) => (
@@ -71,15 +83,11 @@ const {
 </section>
 
 <style>
-  /* E1 c3 (brand-system v3 delta): dark-mode-first hero band. The `dark` class on
-     the <section> scopes the AA-verified dark tokens (tokens.css / branding.css) to
-     this subtree, so the above-fold hero is always dark for the conviction register
-     (Hermes/Linear), regardless of page theme — while the body below keeps light/theme
-     parity. Documented in reference/visual-identity-v2.mdx §brand-system v3. */
+  /* E1 c3 dark-mode-first hero band (scoped `.dark`) retained; c146 makes it image-led. */
   .hero {
     position: relative;
     isolation: isolate;
-    padding: var(--space-16) var(--space-6) var(--space-16);
+    padding: var(--space-12) var(--space-6) var(--space-16);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -88,8 +96,7 @@ const {
     border-bottom: 1px solid var(--color-border);
   }
 
-  /* One quiet teal signal-glow for depth — surface treatment, not imagery; stays
-     within the ≤2-color palette (teal carries signal). */
+  /* Quiet teal signal-glow for depth behind the stage — surface treatment, not imagery. */
   .hero::before {
     content: '';
     position: absolute;
@@ -97,41 +104,62 @@ const {
     z-index: -1;
     background: radial-gradient(
       62% 55% at 50% 0%,
-      color-mix(in srgb, var(--brand-primary) 20%, transparent) 0%,
+      color-mix(in srgb, var(--brand-primary) 18%, transparent) 0%,
       transparent 70%
     );
     pointer-events: none;
   }
 
-  /* Banner demoted below the manifesto words (E1 c2): words lead the fold;
-     the DNA-helix mark supports the 'shared inheritance' theme as a quieter band. */
-  .hero-banner {
-    max-width: 44rem;
+  /* Title-image stage — leads the fold. The image is the hero; the title is overlaid
+     on its darkened upper band. */
+  .hero-stage {
+    position: relative;
     width: 100%;
-    margin: var(--space-10) auto 0;
+    max-width: 60rem;
+    margin: 0 auto var(--space-8);
     border-radius: var(--radius-xl);
     overflow: hidden;
     border: 1px solid var(--color-border);
-    box-shadow: 0 8px 40px color-mix(in srgb, var(--brand-primary) 14%, transparent);
-    opacity: 0.9;
+    box-shadow: 0 12px 48px color-mix(in srgb, var(--brand-primary) 16%, transparent);
   }
 
-  .hero-banner-img {
+  .hero-stage-img {
     width: 100%;
     height: auto;
     display: block;
   }
 
-  .hero-headline {
+  /* Title band sits over the (deliberately darkened) upper portion of the image.
+     A top-down scrim guarantees AA contrast independent of the asset. */
+  .hero-title-band {
+    position: absolute;
+    inset: 0 0 auto 0;
+    display: flex;
+    justify-content: center;
+    padding: clamp(var(--space-4), 4vw, var(--space-10)) var(--space-4) var(--space-12);
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, #1a1b26 78%, transparent) 0%,
+      color-mix(in srgb, #1a1b26 40%, transparent) 55%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+
+  .hero-title {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-size: clamp(2.25rem, 7vw, 4.75rem);
     font-weight: 700;
-    color: var(--color-text-heading);
-    max-width: 18ch;
-    margin: 0 auto var(--space-4);
-    line-height: 1.08;
+    line-height: 1.02;
     letter-spacing: -0.02em;
+    color: #f7f7fb;
+    margin: 0;
     text-wrap: balance;
+    /* cmux "shadow finish" — layered drop + soft cyan glow for the pixel-block feel */
+    text-shadow:
+      0 2px 0 rgba(0, 0, 0, 0.55),
+      0 6px 22px rgba(0, 0, 0, 0.5),
+      0 0 30px color-mix(in srgb, #7dcfff 38%, transparent);
   }
 
   .hero-lead {
@@ -211,10 +239,10 @@ const {
 
   @media (max-width: 768px) {
     .hero {
-      padding: var(--space-16) var(--space-4) var(--space-12);
+      padding: var(--space-10) var(--space-4) var(--space-12);
     }
 
-    .hero-banner {
+    .hero-stage {
       max-width: 100%;
     }
 
@@ -229,7 +257,7 @@ const {
     }
 
     .hero-lead {
-      font-size: var(--text-xl);
+      font-size: var(--text-base);
     }
 
     .trust-strip {

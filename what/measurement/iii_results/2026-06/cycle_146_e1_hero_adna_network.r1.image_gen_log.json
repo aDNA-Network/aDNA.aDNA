@@ -1,0 +1,111 @@
+{
+  "cycle_id": "cycle_146_e1_hero_adna_network",
+  "mission": "mission_adna_str_p5_m510_e1_brand_positioning",
+  "session": "session_stanley_20260604T065020Z_v8_m510_e1_hero_gen",
+  "decadal": "E1",
+  "round": "r1",
+  "step": "step_3_generate_images",
+  "model": "imagen-4.0-fast-generate-001",
+  "aspect_ratio": "16:9",
+  "output_target": "1408x792",
+  "register": "ss_ghibli_pixel / tokyo_night",
+  "started_at": "2026-06-04T06:58:17.522410+00:00",
+  "calls": [
+    {
+      "round": "r1",
+      "direction": "D1",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/r1_D1_v1.png",
+      "prompt_chars": 1359,
+      "prompt_overridden": false,
+      "status": "fail",
+      "error": "no images returned",
+      "elapsed_sec": 4.03
+    },
+    {
+      "round": "r1",
+      "direction": "D1",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/r1_D1_v2.png",
+      "prompt_chars": 1359,
+      "prompt_overridden": false,
+      "status": "fail",
+      "error": "no images returned",
+      "elapsed_sec": 2.59
+    },
+    {
+      "round": "r1",
+      "direction": "D2",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/r1_D2_v1.png",
+      "prompt_chars": 1345,
+      "prompt_overridden": false,
+      "status": "success",
+      "bytes": 1104374,
+      "elapsed_sec": 4.37,
+      "cost_usd": 0.02
+    },
+    {
+      "round": "r1",
+      "direction": "D2",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/r1_D2_v2.png",
+      "prompt_chars": 1345,
+      "prompt_overridden": false,
+      "status": "success",
+      "bytes": 1080417,
+      "elapsed_sec": 4.27,
+      "cost_usd": 0.02
+    },
+    {
+      "round": "r1",
+      "direction": "D3",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/r1_D3_v1.png",
+      "prompt_chars": 1333,
+      "prompt_overridden": false,
+      "status": "success",
+      "bytes": 1088500,
+      "elapsed_sec": 3.92,
+      "cost_usd": 0.02
+    },
+    {
+      "round": "r1",
+      "direction": "D3",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/r1_D3_v2.png",
+      "prompt_chars": 1333,
+      "prompt_overridden": false,
+      "status": "success",
+      "bytes": 1114485,
+      "elapsed_sec": 3.8,
+      "cost_usd": 0.02
+    },
+    {
+      "round": "r1",
+      "direction": "D4",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/r1_D4_v1.png",
+      "prompt_chars": 1337,
+      "prompt_overridden": false,
+      "status": "success",
+      "bytes": 1748081,
+      "elapsed_sec": 4.31,
+      "cost_usd": 0.02
+    },
+    {
+      "round": "r1",
+      "direction": "D4",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/r1_D4_v2.png",
+      "prompt_chars": 1337,
+      "prompt_overridden": false,
+      "status": "success",
+      "bytes": 1586586,
+      "elapsed_sec": 6.12,
+      "cost_usd": 0.02
+    }
+  ],
+  "total_cost_usd": 0.12000000000000001,
+  "finished_at": "2026-06-04T06:58:50.913811+00:00"
+}

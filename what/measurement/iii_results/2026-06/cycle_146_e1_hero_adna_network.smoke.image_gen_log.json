@@ -1,0 +1,28 @@
+{
+  "cycle_id": "cycle_146_e1_hero_adna_network",
+  "mission": "mission_adna_str_p5_m510_e1_brand_positioning",
+  "session": "session_stanley_20260604T065020Z_v8_m510_e1_hero_gen",
+  "decadal": "E1",
+  "round": "smoke",
+  "step": "step_3_generate_images",
+  "model": "imagen-4.0-ultra-generate-001",
+  "aspect_ratio": "16:9",
+  "output_target": "1408x792",
+  "register": "ss_ghibli_pixel / tokyo_night",
+  "started_at": "2026-06-04T06:53:11.876529+00:00",
+  "calls": [
+    {
+      "round": "smoke",
+      "direction": "D2",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/smoke_D2_v1.png",
+      "prompt_chars": 1345,
+      "prompt_overridden": false,
+      "status": "fail",
+      "error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Unable to submit request because the service is temporarily out of capacity. Try again later.', 'status': 'RESOURCE_EXHAUSTED'}}",
+      "elapsed_sec": 199.14
+    }
+  ],
+  "total_cost_usd": 0.0,
+  "finished_at": "2026-06-04T06:56:31.020750+00:00"
+}

@@ -55,6 +55,10 @@ tags: [mission, m5_10, e1, v8, p5, implementation, homepage, brand, positioning,
 - Image-gen ≤ explicit cap; reuse-first; abstract-only guardrails (visual-identity-v2 §4).
 - Engine files (`skill_iii_cycle`/`skill_decadal_aar`) unedited; archive-never-delete.
 
+## Pivot note (2026-06-04, mid-mission)
+
+The operator set the **SS Ghibli-pixel brand pivot** ([[adr_032_brand_register_pivot]] `status: proposed`; brief [[redesign_direction_ss_ghibli_pivot]]). This **supersedes the abstract-only image guardrail** above (Hard constraint 5 / visual-identity-v2 §4) for E1 going forward — illustrative SS-Ghibli pixel imagery is now in-scope (the broad reskin is gated on ADR-032 ratification). **Cycle 146** (session `…T065020Z_v8_m510_e1_hero_gen`) delivered the first instance: the image-led **"The aDNA Network"** hero (Imagen 4 Ultra; multi-agent 5-persona review; winner D4 isometric connected-vaults) + live Space-Grotesk-Bold title in `HomeHero.astro` (build PASS, **not deployed**). On ADR-032 ratify, cycles 7–10 execute the reskin in the new register; O4 RLP (30-persona) + O5 decadal AAR close E1.
+
 ## Lightweight/decadal AAR (filled at decadal close; full RLP per E1)
 
 - **Worked**:

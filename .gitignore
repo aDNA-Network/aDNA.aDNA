@@ -18,3 +18,6 @@ playwright-report/
 # Python
 __pycache__/
 *.pyc
+
+# Hero image-gen candidates (heavy intermediates; finals committed, provenance in image_gen_log JSONs)
+site/src/assets/heroes/candidates/
