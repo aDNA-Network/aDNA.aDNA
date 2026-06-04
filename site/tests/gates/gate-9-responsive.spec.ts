@@ -19,6 +19,7 @@ const pages = [
   { name: 'Concept page', path: '/learn/concepts/triad' },
   { name: 'Tutorial page', path: '/learn/tutorials/first-claude-md' },
   { name: 'Glossary page', path: '/glossary/glossary-adna' },
+  { name: 'Network page', path: '/network' },
 ];
 
 for (const vp of viewports) {

@@ -12,7 +12,7 @@ opens_at: 2026-06-04
 opened_session: session_stanley_20260604T192658Z_v8_m511_e4_open
 status: active
 estimated_sessions: 3-4   # E4 decadal: design (Stages 0-4) + data foundation + build III cycles (150-~159) + AAR
-actual_sessions: 0
+actual_sessions: 2   # S1 (c150) open+data+topology; S2 (c151) /network page bands 1-3
 persona: rosetta
 last_edited_by: agent_stanley
 spec_completeness: full

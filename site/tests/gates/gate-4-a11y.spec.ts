@@ -15,6 +15,8 @@ const pages = [
   // E4 aDNANetwork surfaces (cycle 150): the federation topology + a vault detail with relationships
   { name: 'Network graph', path: '/vaults/graph/' },
   { name: 'Vault detail (with relationships)', path: '/vaults/Harness.aDNA/' },
+  // E4 aDNANetwork (cycle 151): the /network narrative + node-onboarding surface
+  { name: 'Network page', path: '/network' },
 ];
 
 for (const { name, path } of pages) {

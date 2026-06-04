@@ -1,0 +1,60 @@
+{
+  "cycle_id": "cycle_151_e4_network_hero",
+  "mission": "mission_adna_str_p5_m511_e4_adnanetwork",
+  "decadal": "E4",
+  "round": "r1",
+  "step": "step_3_generate_images",
+  "model": "imagen-4.0-ultra-generate-001",
+  "aspect_ratio": "16:9",
+  "output_target": "1408x792",
+  "register": "ss_ghibli_pixel / tokyo_night",
+  "started_at": "2026-06-04T21:45:28.031474+00:00",
+  "calls": [
+    {
+      "direction": "N1",
+      "round": "r1",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/sec_network_r1_N1_v1.png",
+      "prompt_chars": 1670,
+      "status": "success",
+      "bytes": 1585092,
+      "elapsed_sec": 18.8,
+      "cost_usd": 0.04
+    },
+    {
+      "direction": "N1",
+      "round": "r1",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/sec_network_r1_N1_v2.png",
+      "prompt_chars": 1670,
+      "status": "success",
+      "bytes": 1503538,
+      "elapsed_sec": 16.25,
+      "cost_usd": 0.04
+    },
+    {
+      "direction": "N2",
+      "round": "r1",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/sec_network_r1_N2_v1.png",
+      "prompt_chars": 1518,
+      "status": "success",
+      "bytes": 1685558,
+      "elapsed_sec": 16.27,
+      "cost_usd": 0.04
+    },
+    {
+      "direction": "N2",
+      "round": "r1",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/sec_network_r1_N2_v2.png",
+      "prompt_chars": 1518,
+      "status": "success",
+      "bytes": 1385139,
+      "elapsed_sec": 15.9,
+      "cost_usd": 0.04
+    }
+  ],
+  "total_cost_usd": 0.16,
+  "finished_at": "2026-06-04T21:46:35.255759+00:00"
+}

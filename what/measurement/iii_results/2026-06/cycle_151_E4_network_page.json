@@ -1,0 +1,62 @@
+{
+  "cycle": 151,
+  "decadal": "E4",
+  "decadal_cycle": 2,
+  "mission": "mission_adna_str_p5_m511_e4_adnanetwork",
+  "slug": "e4_network_page",
+  "date": "2026-06-04",
+  "session": "session_stanley_20260604T214417Z_v8_m511_e4_c151_network_page",
+  "theme": "E4 cycle 2 — build the /network narrative surface (design-spec bands 1-3): a sparse SS-Ghibli image-led hero ('The network of aDNA computers'), a 'network of real relationships' diagram-as-proof (the honest hub-and-spoke NetworkDiagram), a 'What is an aDNA computer?' band making the local-by-default / opt-in-federation boundary explicit (Standing Rule 4), and a 'topology at a glance' band (typed 5-edge taxonomy + live counts -> /vaults/graph). Add the Network header-nav link. Run-a-node onboarding (152) + govern-trust anchor (153) deferred by design.",
+  "register": "Tokyo Night dark-first; SS-Ghibli painterly hero (ADR-032); honest-topology discipline (the diagram is the dropped-ring hub-and-spoke; every count cited from real data); ethos shown-not-preached (a commons you join, the local/shared boundary as the operator's choice).",
+  "operator_scope": "Cycle 151 = build /network bands 1-3. Two operator decisions this session: (1) generate a NEW SS-Ghibli painterly hero (not just text+diagram); (2) add the Network header-nav link now (pulls RLP Gap #4 nav work forward from 153).",
+  "iii_7step": {
+    "measure": "/network did not exist; the network had a truthful data layer (cycle 150: 22 cited edges, data-driven /vaults/graph) and an honest homepage demo, but no narrative surface explaining what a node IS or where the local/shared boundary sits. Network-Legibility rubric items 1 (node clarity) + 3 (local/shared boundary) unaddressed; item 5 (join scent) only partial.",
+    "orient": "The page is mostly assembly, not new machinery: reuse HomeHero (image-led title hero), the honest NetworkDiagram (no props), the homepage .section-inner scaffold, the /vaults/graph .le typed-legend technique, buildWebPageJsonLD, and the proven e1_*_gen.py Imagen pattern. The only genuinely new asset is the hero image; the only genuinely new copy is the 'aDNA computer' mental model + the local/shared split.",
+    "select": "Build a standalone BaseLayout page (not a content-collection entry) with 4 bands (hero + 3 sections). Generate a peopleless Tokyo-Night hero distinct from the homepage isometric (operator picked N2_v2 'settlements map'). Add Network to the header nav. Defer run-a-node + govern-trust to 152/153.",
+    "implement": "site/src/pages/network.astro (4 bands); e4_network_hero_gen.py (sibling runner reusing GHIBLI_TAIL/load_api_key; 2 motifs x 2 variants, Ultra, 0 retries, $0.16); hero_network.png (winner N2_v2); Header.astro Network nav link (leading); /network appended to gate-4/6/9 route arrays.",
+    "re_measure": "build PASS 162 pages (was 161, +/network); idempotent prebuild data regen (no edge change this cycle). Lighthouse /network Perf 100 / A11y 100 / BP 100 / SEO 100 (LCP 0.5s, CLS 0, TBT 0ms).",
+    "validate": "see validation block",
+    "record": "this JSON + gen log (cycle_151_e4_network_hero.r1) + cycle log in the session + mission/STATE cascade"
+  },
+  "change_summary": [
+    "NEW site/src/pages/network.astro — the /network narrative surface (BaseLayout + 4 bands): HomeHero (hero_network.png + 'The network of aDNA computers' + node-centric lead + CTAs to /vaults/graph and /vaults); 'A network of real relationships' (NetworkDiagram diagram-as-proof + honest hub-and-spoke caption); 'What is an aDNA computer?' (two-column local-by-default / opt-in-federation boundary, Standing Rule 4); 'The topology at a glance' (live vault/edge counts + typed 5-edge legend reusing the /vaults/graph .le technique -> /vaults/graph)",
+    "NEW how/campaigns/campaign_adna_serious_tool_readiness/runners/e4_network_hero_gen.py — /network hero gen runner (sibling to e1_section_heroes_gen.py; reuses GHIBLI_TAIL + load_api_key from e1_hero_adna_network_gen.py; 2 peopleless node-network motifs N1/N2; Ultra default, Fast fallback, retry/backoff)",
+    "NEW site/src/assets/heroes/hero_network.png — winning SS-Ghibli Tokyo-Night hero (candidate N2_v2 'settlements map'; operator pick); candidates gitignored, provenance in the gen log",
+    "site/src/components/common/Header.astro — added { label: 'Network', href: '/network' } as the leading nav item (RLP Gap #4 nav work, pulled forward from 153 per operator)",
+    "site/tests/gates/gate-4-a11y.spec.ts + gate-6-meta.spec.ts + gate-9-responsive.spec.ts — appended /network to the route arrays (axe AA / meta / 5 responsive viewports)"
+  ],
+  "doctrine_compliance": {
+    "honest_topology": "PASS — the diagram-as-proof IS the Gap-#6 hub-and-spoke (no false ring); the topology counts (40 vaults / 22 edges) read live from vaults.json; the typed legend mirrors the real 5-edge taxonomy",
+    "two_fighting_colors": "PASS — cyan --color-link (local/data signal + legend line samples) + purple --color-primary (federation/brand signal + CTAs); amber accent untouched; no new colors",
+    "motion_budget": "PASS — only the reused NetworkDiagram compose entrance (no-JS-safe, IntersectionObserver, prefers-reduced-motion zeroed); no new motion added",
+    "no_marketing_adjectives": "PASS — copy is factual ('one machine', 'real and directed', 'an explicit, reviewable act'); no AVOID-list adjectives",
+    "dual_audience": "PASS — developers read Home.aDNA / Standing Rule 4 / registry / lattice; newcomers read 'stays on your machine vs you opt to federate'",
+    "engine_files_unedited": "PASS — skill_iii_cycle / skill_site_design_pipeline / skill_decadal_aar + the E1 runners untouched (new sibling runner only)",
+    "dark_first": "PASS — BaseLayout dark default; verified both modes"
+  },
+  "validation": {
+    "build": "PASS — astro build 162 pages (was 161; +/network), 0 errors; prebuild data regen idempotent (no edge change)",
+    "playwright_gates": "65/65 PASS (58 prior + 7 new /network runs: 1 axe-AA + 1 meta + 5 responsive viewports)",
+    "axe_wcag_aa": "0 violations BOTH modes — dark via the gate-4 suite; light via an ad-hoc @axe-core/playwright probe (localStorage theme=light), 0 violations (E1 both-modes lesson; probe was a throwaway, removed)",
+    "lighthouse": {
+      "network": "Perf 100 / A11y 100 / BP 100 / SEO 100 — LCP 0.5s, CLS 0, TBT 0ms (cleaner than the homepage's A11y 96 mobile-target-size item; /network has no such control)",
+      "evidence": "site/evidence/lighthouse_e4_network.json (gitignored; scores recorded here)"
+    },
+    "hero_gen": "4/4 candidates OK on imagen-4.0-ultra-generate-001, 0 retries, $0.16; operator picked N2_v2; log cycle_151_e4_network_hero.r1.image_gen_log.json"
+  },
+  "network_legibility_self_check": {
+    "1_node_clarity": "ADDRESSED — 'What is an aDNA computer?' states node = one machine governed by a single Home.aDNA vault carrying many vaults",
+    "2_edge_honesty": "HELD — the diagram-as-proof is the honest hub-and-spoke; the typed legend is the real 5-edge taxonomy; every count is live",
+    "3_local_shared_boundary": "ADDRESSED — the two-column 'stays on your machine / you opt to federate' split makes Standing Rule 4 explicit",
+    "4_navigability": "PARTIAL — /network <-> /vaults/graph <-> /vaults cross-links live; full vault<->relationship round-trip polish is cycle 154",
+    "5_join_scent": "PARTIAL — the boundary frames participation; the explicit run-a-node onboarding + participation CTA is cycle 152 (RLP Gap #1)"
+  },
+  "deferred_to_152plus": [
+    "Run-a-node onboarding flow + participation CTA above the fold (RLP Gap #1) — cycle 152",
+    "Govern & trust anchor band + deeper governance surface (RLP Gap #4) — cycle 153",
+    "VaultRelationshipBlock visual polish + vault<->graph round-trip cross-links — cycle 154",
+    "Network-Legibility rubric measure passes (Diagram-Reviewer / Node-Operator / IA lenses) — cycles 155-158"
+  ],
+  "deploy": "NOT deployed this session — /network bundles with a later E4 deploy (cycle 150 precedent; avoids the SS_VERCEL_TOKEN CLI-leak path for an internal change). Build + gates + Lighthouse green locally; operator visual review (dark + light) done in-session.",
+  "notes": "Cycle 151 was assembly over invention: HomeHero + NetworkDiagram + the .section-inner scaffold + the .le typed-legend + buildWebPageJsonLD carried the page; the only new code was the page composition, the hero runner, and ~2 bands of copy. NEW SEED: the gates are dark-only, so 'axe both modes' is currently a manual/ad-hoc probe — candidate to add a light-mode loop to gate-4 (would make the E1 both-modes lesson a permanent gate rather than a per-cycle manual step). The SS-Ghibli hero pick (N2_v2 settlements map) is distinct from the homepage isometric hero, so /network does not read as a homepage echo. Honest-topology discipline carried intact (the diagram-as-proof literally IS the Gap-#6 fix)."
+}

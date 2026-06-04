@@ -1,0 +1,345 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeHero from '../components/sections/HomeHero.astro';
+import NetworkDiagram from '../components/sections/NetworkDiagram.astro';
+import { buildWebPageJsonLD } from '../utils/seo';
+import vaultsData from '../data/vaults.json';
+import heroNetwork from '../assets/heroes/hero_network.png';
+
+// E4 cycle 151 — the `/network` narrative surface (design spec Stage 2/3, bands 1–3).
+// Hero (sparse) → "A network of real relationships" diagram-as-proof → "What is an aDNA
+// computer?" (the local-by-default / opt-in-federation boundary, Standing Rule 4) →
+// "The topology at a glance" (typed taxonomy + counts → /vaults/graph). The run-a-node
+// onboarding (cycle 152) and the govern-&-trust anchor (cycle 153) are deferred by design.
+
+const description =
+  'An aDNA computer is one machine carrying many context vaults. See how nodes connect through real, directed relationships — and what stays local versus what you federate.';
+
+const jsonLD = buildWebPageJsonLD({
+  title: 'The network of aDNA computers',
+  description,
+  url: Astro.url.href,
+});
+
+const vaultCount = (vaultsData as any).vault_count ?? 0;
+const edgeCount = (vaultsData as any).edges?.length ?? 0;
+
+// The 5-edge taxonomy — same source as /vaults/graph. Mermaid draws every edge in one
+// colour, so the legend differentiates by LINE STYLE, not an invented per-type palette.
+const edgeTypes = [
+  { key: 'umbrella', sample: 'thick', meaning: 'an org-vault contains its pillar children' },
+  { key: 'federation', sample: 'solid', meaning: 'a consumer depends on the forge or framework it is built from' },
+  { key: 'partner', sample: 'circle', meaning: 'a platform ships with its default partner' },
+  { key: 'companion', sample: 'dashed', meaning: 'a sibling persona-pair or thematic family' },
+  { key: 'supersedes', sample: 'super', meaning: 'a successor replaced its predecessor' },
+];
+---
+
+<BaseLayout
+  title="The network of aDNA computers"
+  description={description}
+  jsonLD={jsonLD}
+>
+  <HomeHero
+    heroImage={heroNetwork}
+    heroAlt="A wide bird's-eye pixel-art map of many small, independently lit settlements scattered across a dark Tokyo-Night ground, a few linked by glowing cyan and purple conduits — aDNA computers, each its own place, sparsely federated."
+    title="The network of aDNA computers"
+    lead="An aDNA computer is one machine — a laptop, a server, a cloud box — carrying many context vaults under a single Home vault. Nodes connect through real, directed relationships, and each node decides what stays local and what joins the shared commons."
+    primaryHref="/vaults/graph/"
+    primaryLabel="See the relationship graph"
+    secondaryHref="/vaults/"
+    secondaryLabel="Browse the vaults"
+  />
+
+  <!-- Band 1 · A network of real relationships (the diagram-as-proof) -->
+  <section class="net-proof">
+    <div class="section-inner">
+      <h2 class="section-title">A network of real relationships</h2>
+      <p class="section-subtitle">
+        The connections are not decorative. Each vault federates around the shared core through
+        relationships it actually declares — hub-and-spoke, not an invented peer-to-peer mesh.
+      </p>
+      <NetworkDiagram />
+      <p class="diagram-caption">
+        Real aDNA vaults — forges, frameworks, platforms, and public-good archives — federating
+        around the aDNA core on the Lattice Protocol.
+      </p>
+    </div>
+  </section>
+
+  <!-- Band 2 · What is an aDNA computer? (the local / shared boundary) -->
+  <section class="net-node">
+    <div class="section-inner">
+      <h2 class="section-title">What is an aDNA computer?</h2>
+      <p class="section-subtitle">
+        A node on the network is one machine, governed by a single <code>Home.aDNA</code> vault that
+        knows every other vault living on it. What that machine shares is always your choice.
+      </p>
+      <div class="boundary">
+        <div class="boundary-col boundary-local">
+          <h3>Stays on your machine</h3>
+          <p>
+            By default, everything. A node is local-first — its vaults, their full history, the
+            machine&rsquo;s inventory, and its credentials never leave the computer unless you send
+            them (Standing Rule&nbsp;4).
+          </p>
+          <ul>
+            <li>Your project vaults and their history</li>
+            <li>The node&rsquo;s inventory and machine state</li>
+            <li>Identity and credentials</li>
+          </ul>
+        </div>
+        <div class="boundary-col boundary-shared">
+          <h3>You opt to federate</h3>
+          <p>
+            Only what you choose. Publishing a vault, declaring a relationship to another vault, or
+            joining a shared lattice is an explicit, reviewable act — never a silent default.
+          </p>
+          <ul>
+            <li>A vault published to the shared registry</li>
+            <li>A relationship declared to another vault</li>
+            <li>Membership in a federated lattice</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Band 3 · The topology at a glance (typed taxonomy + counts → full graph) -->
+  <section class="net-topology">
+    <div class="section-inner">
+      <h2 class="section-title">The topology at a glance</h2>
+      <p class="section-subtitle">
+        {vaultCount} vaults, {edgeCount} relationships. Every edge is <strong>real and directed</strong>,
+        drawn from each vault&rsquo;s governance — read across five kinds of connection.
+      </p>
+      <ul class="edge-legend" aria-label="The five kinds of relationship">
+        {edgeTypes.map((e) => (
+          <li>
+            <span class={`le le-${e.sample}`} aria-hidden="true"></span>
+            <span class="le-text"><strong>{e.key}</strong> — {e.meaning}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="topology-actions">
+        <a href="/vaults/graph/">See the full relationship graph &rarr;</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="/vaults/">Browse all {vaultCount} vaults &rarr;</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ——— Shared section scaffold (mirrors index.astro) ——— */
+  .section-inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+  }
+
+  .section-title {
+    font-size: var(--text-3xl);
+    text-align: center;
+    margin-bottom: var(--space-3);
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    max-width: 40rem;
+    margin: 0 auto var(--space-10);
+    line-height: 1.6;
+  }
+
+  .net-proof,
+  .net-node,
+  .net-topology {
+    padding: var(--space-24) 0;
+    overflow-x: hidden;
+  }
+
+  .net-node {
+    background: var(--color-bg-alt);
+  }
+
+  .diagram-caption {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    max-width: 34rem;
+    margin: var(--space-8) auto 0;
+    line-height: 1.6;
+  }
+
+  /* ——— Band 2 · the local / shared boundary ——— */
+  .boundary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    align-items: start;
+  }
+
+  .boundary-col {
+    padding: var(--space-8) var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+  }
+
+  /* Cyan = local/data signal · purple = federation/brand signal (≤2 fighting colors). */
+  .boundary-local {
+    border-top: 3px solid var(--color-link);
+  }
+
+  .boundary-shared {
+    border-top: 3px solid var(--color-primary);
+  }
+
+  .boundary-col h3 {
+    font-size: var(--text-xl);
+    color: var(--color-text-heading);
+    margin: 0 0 var(--space-3);
+  }
+
+  .boundary-col p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0 0 var(--space-4);
+  }
+
+  .boundary-col ul {
+    margin: 0;
+    padding-left: var(--space-5);
+    color: var(--color-text);
+    line-height: 1.7;
+  }
+
+  .boundary-col li {
+    margin-bottom: var(--space-1);
+  }
+
+  /* ——— Band 3 · typed legend (line STYLE, not colour — mirrors /vaults/graph) ——— */
+  .edge-legend {
+    list-style: none;
+    margin: 0 auto;
+    padding: var(--space-5) var(--space-6);
+    max-width: 52rem;
+    display: grid;
+    gap: 0.7rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .edge-legend li {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .le-text {
+    color: var(--color-text);
+  }
+
+  .le-text strong {
+    font-family: var(--font-mono);
+    color: var(--color-link);
+  }
+
+  /* Line samples drawn with the edge colour Mermaid uses (--color-link). */
+  .le {
+    flex: 0 0 auto;
+    width: 3rem;
+    height: 0;
+    position: relative;
+    border-top: 2px solid var(--color-link);
+  }
+  .le-thick { border-top-width: 4px; }
+  .le-solid { border-top-width: 2px; }
+  .le-dashed { border-top-style: dashed; }
+  .le-super { border-top-style: dashed; }
+  .le::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 6px solid var(--color-link);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+  .le-circle::after {
+    border: 2px solid var(--color-link);
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    background: var(--color-bg);
+    right: -3px;
+  }
+  .le-super::before {
+    content: 's';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-link);
+    background: var(--color-surface);
+    padding: 0 0.2rem;
+    line-height: 1;
+  }
+
+  .topology-actions {
+    text-align: center;
+    margin-top: var(--space-10);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--text-sm);
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .topology-actions a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .topology-actions a:hover {
+    text-decoration: underline;
+  }
+
+  .topology-actions .sep {
+    color: var(--color-border);
+  }
+
+  /* ——— Responsive ——— */
+  @media (max-width: 700px) {
+    .boundary {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: var(--text-2xl);
+    }
+
+    .section-subtitle {
+      font-size: var(--text-base);
+      margin-bottom: var(--space-6);
+    }
+
+    .net-proof,
+    .net-node,
+    .net-topology {
+      padding: var(--space-12) 0;
+    }
+  }
+</style>

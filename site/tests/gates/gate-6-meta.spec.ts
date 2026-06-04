@@ -13,6 +13,7 @@ const pages = [
   { name: 'Reference page', path: '/reference/specification' },
   { name: 'Use case page', path: '/use-cases/solo-developer' },
   { name: 'Get started', path: '/get-started' },
+  { name: 'Network page', path: '/network' },
 ];
 
 for (const { name, path } of pages) {
