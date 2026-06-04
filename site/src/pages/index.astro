@@ -5,13 +5,13 @@ import { buildWebSiteJsonLD } from '../utils/seo';
 import { steps, personas, stats } from '../data/home';
 import bannerImage from '../assets/aDNABanner.png';
 
-const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.network';
 const jsonLD = buildWebSiteJsonLD(siteUrl);
 ---
 
 <BaseLayout
-  title="aDNA — An Integrated Standard for Context and Knowledge"
-  description="An open standard that structures your project's context and knowledge so both humans and AI agents can navigate it."
+  title="aDNA — the open standard & network for shared context"
+  description="The open standard and network to build, share, and govern the context that powers AI — in the open, for the good of all. Built on the Lattice Protocol."
   jsonLD={jsonLD}
 >
   <HomeHero bannerImage={bannerImage} stats={stats} />

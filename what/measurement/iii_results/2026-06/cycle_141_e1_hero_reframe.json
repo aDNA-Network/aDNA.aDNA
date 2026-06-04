@@ -1,0 +1,32 @@
+{
+  "cycle": 141,
+  "decadal": "E1",
+  "mission": "mission_adna_str_p5_m510_e1_brand_positioning",
+  "slug": "e1_hero_reframe",
+  "date": "2026-06-03",
+  "session": "session_stanley_20260604T014130Z_v8_m510_e1_homepage_brand",
+  "theme": "Brand & Positioning — homepage manifesto re-frame (Stage-5 build cycle 1)",
+  "target": ["site/src/components/sections/HomeHero.astro", "site/src/pages/index.astro"],
+  "change_summary": "Re-framed the homepage hero from docs-first ('An open standard for context and knowledge', no h1) to the ratified Direction-A manifesto: NEW <h1> 'Context is our shared inheritance.' + supporting ethos paragraph + the two ratified CTAs ('Explore the network' -> /vaults, 'Read the standard' -> /reference/specification). Trust line re-cast to 'Open source on GitHub · MIT · built on the Lattice Protocol'. Page <title>/description re-framed to the network/shared-context positioning. Fixed the stale adna.dev siteUrl fallback -> adna.network. Added .hero-headline (clamp display type, text-wrap:balance) + re-styled .hero-lead as supporting paragraph.",
+  "doctrine_compliance": {
+    "above_fold_one_focus": "headline is the focus (words-as-focus per Hermes); banner retained pending cycle-2 Visual-Designer call",
+    "hero_word_count": 47,
+    "ctas_above_fold": "1 primary + 1 secondary (within budget)",
+    "dial": "~55/45 (ratified); revolutionary via the inheritance claim + verbs, restraint via measured language + named substrate, zero marketing adjectives",
+    "a11y_fix": "added the page's missing <h1> (was none)"
+  },
+  "validation": {
+    "astro_build": "PASS — 161 pages built in 5.28s, 0 errors (Gate 1 schema + Gate 2 MDX)",
+    "lighthouse": "deferred to E1 decadal close (cycle 10) per MAX-III Reviewer-Lens-Pass cadence",
+    "playwright_gates": "deferred to E1 decadal close",
+    "persona_qa": "deferred to E1 decadal Reviewer Lens Pass (full 30-persona bench; mandatory Brand Strategist + Motion Designer + Design Critic + Visual Designer + Newcomer + Movement Skeptic)"
+  },
+  "commit": "see E1 cycle-1 commit (hero re-frame)",
+  "carry_forward": [
+    "cycle 2: brand-system v3 deltas + banner-vs-words Visual-Designer decision (keep/dim/replace the hero banner)",
+    "cycles 3-8: sections 1-5 (definition+diagram / living registry / build-share-govern / standard-underneath / join+public-good-tease)",
+    "cycle 9: breadth-first nav re-frame + responsive + motion pass",
+    "cycle 10: E1 decadal AAR + 30-persona Reviewer Lens Pass + Lighthouse/Playwright"
+  ],
+  "notes": "First ecosystem BUILD cycle. Homepage is now partially re-framed: NEW manifesto hero live; body sections (How it Works / Who Uses / The Standard) still the pre-pivot framing — re-themed in cycles 3-8. Honest interim state."
+}

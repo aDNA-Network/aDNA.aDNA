@@ -10,6 +10,7 @@ interface Stat {
 interface Props {
   bannerImage: ImageMetadata;
   bannerAlt?: string;
+  headline?: string;
   lead?: string;
   primaryHref?: string;
   primaryLabel?: string;
@@ -23,13 +24,13 @@ interface Props {
 const {
   bannerImage,
   bannerAlt = 'aDNA — retro pixel-art wordmark on a metal plate, set against glowing DNA helices rising from a workspace of laboratory instruments',
-  lead = 'An open standard for context and knowledge.',
-  primaryHref = '/get-started',
-  primaryLabel = 'Get Started',
-  secondaryHref = '/learn/what-is-adna',
-  secondaryLabel = 'What is aDNA?',
+  headline = 'Context is our shared inheritance.',
+  lead = 'Language and DNA were co-created by everyone before us. The context that powers AI should be too — built, shared, and governed in the open, for the good of all. aDNA is the network where that happens, on the Lattice Protocol.',
+  primaryHref = '/vaults',
+  primaryLabel = 'Explore the network',
+  secondaryHref = '/reference/specification',
+  secondaryLabel = 'Read the standard',
   githubHref = 'https://github.com/LatticeProtocol/Agentic-DNA',
-  specHref = '/reference/specification',
   stats = [],
 } = Astro.props;
 ---
@@ -46,15 +47,16 @@ const {
       loading="eager"
     />
   </div>
+  <h1 class="hero-headline">{headline}</h1>
   <p class="hero-lead">{lead}</p>
   <div class="hero-actions">
     <a href={primaryHref} class="btn btn-primary" data-astro-prefetch>{primaryLabel}</a>
     <a href={secondaryHref} class="btn btn-secondary" data-astro-prefetch>{secondaryLabel}</a>
   </div>
   <div class="hero-trust-links">
-    <a href={githubHref} target="_blank" rel="noopener" class="trust-link">View on GitHub</a>
+    <a href={githubHref} target="_blank" rel="noopener" class="trust-link">Open source on GitHub</a>
     <span class="trust-sep" aria-hidden="true">·</span>
-    <a href={specHref} class="trust-link" data-astro-prefetch>Read the Specification</a>
+    <span class="trust-link trust-static">MIT · built on the Lattice Protocol</span>
   </div>
   {stats.length > 0 && (
     <div class="trust-strip">
@@ -93,14 +95,28 @@ const {
     display: block;
   }
 
-  .hero-lead {
+  .hero-headline {
     font-family: var(--font-display);
-    font-size: var(--text-2xl);
-    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 700;
     color: var(--color-text-heading);
-    max-width: 42rem;
+    max-width: 18ch;
     margin: 0 auto var(--space-4);
-    line-height: 1.35;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  .hero-lead {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    max-width: 44rem;
+    margin: 0 auto var(--space-6);
+    line-height: 1.6;
+  }
+
+  .trust-static {
+    cursor: default;
   }
 
   .hero-actions {
