@@ -1,0 +1,50 @@
+{
+  "cycle_id": "cycle_147_e1_section_heroes",
+  "mission": "mission_adna_str_p5_m510_e1_brand_positioning",
+  "session": "session_stanley_20260604T160140Z_v8_m510_e1_reskin_deploy",
+  "decadal": "E1",
+  "round": "c148b",
+  "step": "step_3_generate_images",
+  "model": "imagen-4.0-ultra-generate-001",
+  "aspect_ratio": "16:9",
+  "output_target": "1408x792",
+  "register": "ss_ghibli_pixel / tokyo_night",
+  "started_at": "2026-06-04T18:15:05.000693+00:00",
+  "calls": [
+    {
+      "section": "how",
+      "round": "c148b",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/sec_how_c148b_v1.png",
+      "prompt_chars": 1426,
+      "status": "success",
+      "bytes": 1132053,
+      "elapsed_sec": 17.12,
+      "cost_usd": 0.04
+    },
+    {
+      "section": "how",
+      "round": "c148b",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/sec_how_c148b_v2.png",
+      "prompt_chars": 1426,
+      "status": "success",
+      "bytes": 964704,
+      "elapsed_sec": 16.28,
+      "cost_usd": 0.04
+    },
+    {
+      "section": "how",
+      "round": "c148b",
+      "variant": 3,
+      "out_path": "site/src/assets/heroes/candidates/sec_how_c148b_v3.png",
+      "prompt_chars": 1426,
+      "status": "success",
+      "bytes": 959437,
+      "elapsed_sec": 16.28,
+      "cost_usd": 0.04
+    }
+  ],
+  "total_cost_usd": 0.12,
+  "finished_at": "2026-06-04T18:15:54.672124+00:00"
+}

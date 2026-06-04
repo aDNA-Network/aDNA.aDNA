@@ -2,12 +2,12 @@
 type: design_doctrine
 artifact_class: front_page_doctrine
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-06-04
 mission: mission_adna_str_p5_m58_reference_design_dna
 campaign: campaign_adna_serious_tool_readiness
 phase: 5
 persona: rosetta
-status: draft   # ratified at the M5.7/M5.8 operator gate; the sleek↔revolutionary dial value is operator-set there
+status: active   # dial value ratified at the M5.7/M5.8 operator gate; §1/§4 reconciled to the SHIPPED homepage at the E1 decadal close (ADR-032, 2026-06-04)
 last_edited_by: agent_stanley
 companions:
   - site/src/content/reference/visual-identity-v2.mdx   # what surfaces LOOK like (tokens, type, palette, image prompts)
@@ -37,6 +37,9 @@ tags: [design_doctrine, front_page, landing_surface, how_much_is_too_much, densi
 |------|------|------|------------|
 | **Manifesto** | the home/landing surface of a movement | **35–60 words**; the claim *is* the focus; no banner image competing | Hermes ~40 · Ethereum ~30 · Anthropic ~25 (cluster 25–40; we allow up to 60 to carry the "democracy" claim, still far under bloat) |
 | **Registry-as-hero** | a marketplace/registry surface at scale | ≈0 marketing words; real trending content is the hero | Hugging Face · Replicate (note: works at *scale*; young networks use curated showcase — Val Town) |
+| **Image-led manifesto** | a movement surface with an illustrative brand register (post-ADR-032) | a single SS-Ghibli / Tokyo-Night hero **scene** as the focus, with the manifesto title + line as **live text composited over** it (not baked into the image) — image and words read as *one* composed focal unit, never competing elements | aDNA.network shipped (cycles 146–147); the warm register carries emotional conviction the bare-words mode can't |
+
+> **ADR-032 reconciliation (2026-06-04):** the shipped homepage uses **image-led manifesto** — the "The aDNA Network" hero scene with the Space-Grotesk-Bold title + manifesto line as live text over a darkened band. This *reverses* the earlier "demote the banner below the words" reading (cycle 2): the single-focus law is satisfied not by removing the image but by **composing** image + title into one focal unit (the title leads; the scene is its ground). The pre-pivot *abstract-only* imagery guardrail is superseded by the SS-Ghibli illustrative register — purpose-over-decoration, AA contrast, and **no baked title text** still hold.
 
 **CTA discipline above the fold:** **max 1 primary + 1 secondary.** More than two competing CTAs violates the single-focus law.
 
@@ -65,6 +68,8 @@ Three named bands; a homepage progresses **Sparse (above fold) → Medium (mid) 
 A 0–100 scale (0 = pure corporate-sleek, 100 = pure revolutionary-manifesto). Inspected sites span Linear 25 → Anthropic 40 → HF/Raycast 50 → Ethereum 60 → Hermes 65.
 
 **House setting: ~55 revolutionary / 45 restraint** *(operator-RATIFIED 2026-06-03).* Calmer than Hermes's 65/35 because aDNA must keep **docs credibility** and the "good of humanity" register matches Anthropic's calm-conviction — but warmer/higher than Anthropic's ~40 because aDNA's idea is genuinely novel and should feel exciting.
+
+**Shipped register (2026-06-04):** the Tokyo Night dark-first + SS-Ghibli-warm reskin (ADR-032) *realizes* this ~55/45 dial without moving it — the cozy, hopeful register supplies the conviction/emotion points (the "exciting because genuinely novel" half), while the measured claims, real artifacts, and the `writing-guidelines` AVOID discipline hold the restraint half. The dial value is unchanged; the warm register is **how 55/45 is now *felt*** rather than a re-setting of it.
 
 The dial is concrete, not vibes:
 - **Revolutionary points** come from *positioning verbs + the manifesto line* (the claim, the verbs: build · share · govern · for the good of humanity).

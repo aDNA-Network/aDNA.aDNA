@@ -1,0 +1,572 @@
+{
+  "n": 30,
+  "adopterMatrix": {
+    "findability": 4.13,
+    "comprehension": 4.44,
+    "actionability": 3.63,
+    "trust": 4.63,
+    "relevance": 3.81,
+    "delight": 4.5,
+    "OVERALL": 4.19
+  },
+  "reviewerMatrix": {
+    "findability": 4.29,
+    "comprehension": 4.5,
+    "actionability": 4.5,
+    "trust": 4.93,
+    "relevance": 4,
+    "delight": 4.29,
+    "OVERALL": 4.42
+  },
+  "fullMatrix": {
+    "findability": 4.2,
+    "comprehension": 4.47,
+    "actionability": 4.03,
+    "trust": 4.77,
+    "relevance": 3.9,
+    "delight": 4.4,
+    "OVERALL": 4.29
+  },
+  "gate": {
+    "target": 4.95,
+    "adopter_overall": 4.19,
+    "met": false,
+    "no_dim_below_480": false,
+    "lowestDims": [
+      {
+        "dim": "actionability",
+        "adopter_avg": 3.63
+      },
+      {
+        "dim": "relevance",
+        "adopter_avg": 3.81
+      },
+      {
+        "dim": "findability",
+        "adopter_avg": 4.13
+      },
+      {
+        "dim": "comprehension",
+        "adopter_avg": 4.44
+      },
+      {
+        "dim": "delight",
+        "adopter_avg": 4.5
+      },
+      {
+        "dim": "trust",
+        "adopter_avg": 4.63
+      }
+    ]
+  },
+  "mandatoryScores": [
+    {
+      "name": "Brand Strategist",
+      "present": true,
+      "primary_lens": "positioning dial / brand coherence",
+      "primary_score": 5,
+      "overall": 4.5,
+      "verdict": "approve"
+    },
+    {
+      "name": "Motion Designer",
+      "present": true,
+      "primary_lens": "motion budget / meaning",
+      "primary_score": 4,
+      "overall": 4.33,
+      "verdict": "approve"
+    },
+    {
+      "name": "Design Critic",
+      "present": true,
+      "primary_lens": "made-on-purpose / generic-AI tells",
+      "primary_score": 5,
+      "overall": 4.5,
+      "verdict": "approve"
+    },
+    {
+      "name": "Visual Designer",
+      "present": true,
+      "primary_lens": "craft / palette / typography",
+      "primary_score": 4.6,
+      "overall": 4.83,
+      "verdict": "approve"
+    },
+    {
+      "name": "Newcomer Stress-Tester",
+      "present": true,
+      "primary_lens": "60-sec What/Why/How",
+      "primary_score": 4,
+      "overall": 4.33,
+      "verdict": "approve_with_changes"
+    },
+    {
+      "name": "Movement Skeptic",
+      "present": true,
+      "primary_lens": "earned conviction vs kitsch/overclaim",
+      "primary_score": 4,
+      "overall": 4.17,
+      "verdict": "approve_with_changes"
+    }
+  ],
+  "reviewerScorecard": [
+    {
+      "name": "Accessibility Auditor",
+      "lens": "cognitive load / a11y",
+      "primary": 4,
+      "overall": 4.33,
+      "verdict": "approve_with_changes",
+      "top_flag": "Defining section answers a jargon term with more jargon — 'context graphs' and 'federating into a shared commons' are undefined at first use",
+      "fix": "Add a 6-8 word inline gloss on first use of 'context graph' so the section that exists to define the core concept does not assume two further abstractions."
+    },
+    {
+      "name": "Anti-Bloat Editor",
+      "lens": "conciseness / delete-the-disposable",
+      "primary": 4,
+      "overall": 4.5,
+      "verdict": "approve",
+      "top_flag": "Near-verbatim repetition of the 'build/share/govern ... in the open, for the good of all' triad across hero manifesto, Section-1 subtitle, and meta description",
+      "fix": "Keep the full triad once (hero). Rewrite the Section-1 subtitle to advance the idea — e.g. 'Each project is its own context graph; together they federate into a shared commons' — removing the repeated 'build, share, and govern ... in the open' phrasing."
+    },
+    {
+      "name": "Brand Strategist",
+      "lens": "positioning dial / brand coherence",
+      "primary": 5,
+      "overall": 4.5,
+      "verdict": "approve",
+      "top_flag": "Above-the-fold splits focus: title image + a 40-55-word manifesto paragraph stacked as body copy, softening the 'ONE dominant focus' law and nudging the dial toward sleek because the conviction lives in prose weight, not headline weight.",
+      "fix": "Promote one manifesto clause ('built, shared, and governed in the open, for the good of all') to a heavier display treatment as the dominant claim; let the rest recede to supporting copy — one focus, dial held at 55."
+    },
+    {
+      "name": "Content Strategist",
+      "lens": "comprehension / message architecture",
+      "primary": 4,
+      "overall": 4.5,
+      "verdict": "approve_with_changes",
+      "top_flag": "Section subtitle is abstract benefit-claim prose with no concrete example or file path inside the section — promise, not product; recurrence of UX-audit F-02 at section scale.",
+      "fix": "Add one concrete in-section anchor naming a real vault (e.g. 'aDNA.aDNA and RareArchive are two of the 40 vaults in this network') so the claim is demonstrated, not just asserted, before the diagram."
+    },
+    {
+      "name": "Conversion & Growth Specialist",
+      "lens": "CTA / funnel / activation",
+      "primary": 3,
+      "overall": 4,
+      "verdict": "approve_with_changes",
+      "top_flag": "No participation/contribution CTA on the homepage — funnel has a consumption arm but no activation arm",
+      "fix": "Add one honest participation CTA ('Start your own vault' / 'Publish a graph to the registry' linking the fork template or contribution guide) high enough that a would-be contributor finds the path in 60s — not buried in the footer 'Get Started' link."
+    },
+    {
+      "name": "Design Critic",
+      "lens": "made-on-purpose / generic-AI tells",
+      "primary": 5,
+      "overall": 4.5,
+      "verdict": "approve",
+      "top_flag": "Double 3-up density in one section — feature-strip (3 items) stacked above steps-grid (3 items) reads as a feature wall and is the only section violating 'one section, one idea, one density'",
+      "fix": "Move the .feature-strip (Agent-native/Human-readable/Composable) into the 'What a context democracy is' section as inline value props, or collapse it to a single-line band, leaving Structure/Orient/Execute as the sole 3-up in 'How it Works'."
+    },
+    {
+      "name": "Diagram Reviewer",
+      "lens": "network diagram clarity",
+      "primary": 4,
+      "overall": 4.33,
+      "verdict": "approve_with_changes",
+      "top_flag": "Ring edges assert a false peer-to-peer hexagonal topology between alphabetically-adjacent vaults; real federation is hub-mediated, not lateral.",
+      "fix": "Remove the ring from allEdges, or render ring edges with a distinct subordinate style (e.g. stroke-dasharray + lower opacity) and a desc note clarifying they are visual grouping, not federation links — so the only solid lines mean 'federates with the core'."
+    },
+    {
+      "name": "Infographic Specialist",
+      "lens": "data-as-image legibility",
+      "primary": 4,
+      "overall": 4.67,
+      "verdict": "approve",
+      "top_flag": "NetworkDiagram edges/nodes disappear against the dark section background at page scale (read-at-a-glance failure despite correct encoding)",
+      "fix": "Raise edge opacity toward 0.5 and add a contrast halo/elevated panel so the graphic separates from the section background; verify the topology is parseable in the full-page (not zoomed) render."
+    },
+    {
+      "name": "Information Architect",
+      "lens": "nav / scent / section order",
+      "primary": 4,
+      "overall": 4.5,
+      "verdict": "approve_with_changes",
+      "top_flag": "Top-nav scent overlap — 'Patterns' and 'Use Cases' are top-level peers to 'Learn', but both also appear as Learn sub-types in the hub left rail (hub_learn_dark.png shows Concepts/Tutorials/Comparisons under LEARN and Patterns as its own group). Residual F-09 (7→5 items) hover-hesitation.",
+      "fix": "Nest Patterns + Use Cases under a Learn mega-menu so top-nav = Learn / Reference / Community / GitHub — non-overlapping intent buckets matching the existing hub taxonomy."
+    },
+    {
+      "name": "Motion Designer",
+      "lens": "motion budget / meaning",
+      "primary": 4,
+      "overall": 4.33,
+      "verdict": "approve",
+      "top_flag": "Thesis-bearing motion unrealized — NetworkDiagram ships static",
+      "fix": "Add a single scroll-into-view draw-in entrance (edges via stroke-dashoffset, nodes staggered) that enacts federation; guard behind prefers-reduced-motion and keep off the LCP path so Performance stays 100. This is the one meaningful motion §5 asks for."
+    },
+    {
+      "name": "Movement Skeptic",
+      "lens": "earned conviction vs kitsch/overclaim",
+      "primary": 4,
+      "overall": 4.17,
+      "verdict": "approve_with_changes",
+      "top_flag": "'context democracy / for the good of all' claim is asserted but its load-bearing proof (public-good subnetworks) is deferred to E5, leaving the biggest claim under-evidenced on the live page",
+      "fix": "Surface one real, outbound-linked public-good vault (WGA / Rare Archive) in the registry section now, so the democracy claim points at a concrete, externally-checkable thing rather than an internal diagram. Don't wait for the full E5 showcase to put ONE proof on the board."
+    },
+    {
+      "name": "Newcomer Stress-Tester",
+      "lens": "60-sec What/Why/How",
+      "primary": 4,
+      "overall": 4.33,
+      "verdict": "approve_with_changes",
+      "top_flag": "Hero manifesto names a benefit/ethos but not the pain; the pain is buried 3 sections down — direct recurrence of the historical F-03 'Why fails' finding, only partially closed",
+      "fix": "Surface one concrete pain clause in the hero deck or immediately below it, so a cold reader hits what/why within the first screen — not after scrolling past two philosophical sections."
+    },
+    {
+      "name": "UX Writer",
+      "lens": "microcopy / voice / AVOID-list",
+      "primary": 4,
+      "overall": 4.33,
+      "verdict": "approve_with_changes",
+      "top_flag": "Hero lead is pure manifesto with no concrete mechanic; the plain-language 'what aDNA is' sentence is buried below the fold in the Structure card",
+      "fix": "Append one concrete clause to the lead: '...The open standard and network where that happens — three directories any agent can read: what you know, how you work, who's involved.' Anchors the manifesto to the mechanic above the fold."
+    },
+    {
+      "name": "Visual Designer",
+      "lens": "craft / palette / typography",
+      "primary": 4.6,
+      "overall": 4.83,
+      "verdict": "approve",
+      "top_flag": "Dark hero PNG not theme-switched creates a luminance cliff in light mode",
+      "fix": "Add a light-register hero variant (or duotone/lightened scrim) OR an intentional dark inset frame so the navy art reads as a designed block, not an orphan on near-white."
+    }
+  ],
+  "perPersona": [
+    {
+      "name": "Community Organizer",
+      "kind": "adopter",
+      "overall": 3.5,
+      "verdict": "approve_with_changes",
+      "one_line": "Beautiful, credible, genuinely community-minded substrate — but the homepage says 'community-driven' without giving me a single door to walk through: no channel, no contribute path, no CoC, no cadence. Show me the community, don't just name it.",
+      "top_pain": "The homepage asserts 'community-driven' (in The Standard) and carries a 'Community' nav item, but the landing page surfaces zero community affordances: no live channel link, no maintainer-presence signal, no contributor pathway, no Code of Conduct, no named contact, no event cadence, no contributor recognition. For my lens that is an unbacked claim — 'community-driven' with nothing to click into."
+    },
+    {
+      "name": "Marketplace Publisher",
+      "kind": "adopter",
+      "overall": 3.5,
+      "verdict": "approve_with_changes",
+      "one_line": "A credible, beautifully-restrained living commons that honors the makers it already lists — but as someone who wants to PUBLISH, there's still no door in: no publish CTA, no listing preview, no per-listing license or lineage yet.",
+      "top_pain": "No publish path anywhere — no 'submit/publish your vault' CTA and no listing preview, so as the maker deciding whether to contribute I can't see how my FAIR block (license/creators/provenance) would render before going live. The page addresses me as a browser of the commons, not a contributor to it."
+    },
+    {
+      "name": "Enterprise Architect",
+      "kind": "adopter",
+      "overall": 3.83,
+      "verdict": "approve_with_changes",
+      "one_line": "Substantive and refreshingly hype-free — the 40-vault registry with honest supersession badges is a real audit trail and the MIT/conformance signals are front-loaded — but my committee can't reach a governance model, security contact, or OSS/commercial line from this page, so it clears the 'credible' bar without yet clearing the 'adoptable at scale' one.",
+      "top_pain": "No governance surface reachable from the homepage — my first committee question is 'published governance model: RFCs, decision logs, named accountable parties?' The vault has 26 ADRs and a who/governance leg, but nothing on the page or in nav points there; I'd have to spelunk GitHub."
+    },
+    {
+      "name": "Lab/Org Steward",
+      "kind": "adopter",
+      "overall": 3.83,
+      "verdict": "approve_with_changes",
+      "one_line": "As a steward I trust this network and love how it reads as a commons — but it still shows my work as class-sorted rows, not my lab as one governed identity, and the org/governance surface I came for is honestly-but-visibly deferred.",
+      "top_pain": "No surface gathers my org as a coherent lab. The /vaults registry groups by vault class (org_vault, org_graph) not by owner/org, so my Wilhelm-anchored vaults (WilhelmAI, RareArchive) sit in different buckets with no unifying identity, people, or mission — exactly the 'scattered entries' problem I came to solve."
+    },
+    {
+      "name": "Conversion & Growth Specialist",
+      "kind": "reviewer",
+      "overall": 4,
+      "verdict": "approve_with_changes",
+      "one_line": "Beautiful, honest, zero dark patterns, trust earned by 40 real vaults — but the funnel only knows how to make me read and browse; a 'democracy' with no visible front door to JOIN converts tourists, not citizens. Add one honest participation CTA above the fold and this is an approve.",
+      "top_pain": "Both above-fold CTAs route to CONSUMPTION ('Explore the network' -> /vaults, 'Read the standard' -> /spec). There is no participation CTA anywhere on the homepage — no 'Start your own vault / Publish a graph / Add yours to the registry'. For a self-branded 'Agentic Context Democracy' commons, the path to JOIN is invisible. The only contribute scent is the 'Get Started' footer link, buried below everything — the exact F-10 funnel flaw my persona owns: the would-be participant leaves without a path."
+    },
+    {
+      "name": "Community Lead",
+      "kind": "adopter",
+      "overall": 4,
+      "verdict": "approve_with_changes",
+      "one_line": "The soul is unmistakably right — a context democracy framed as a commons, warm and free of hype — but the democracy's self-governance and the invitation to join it aren't yet visible, and a Community Lead stewards exactly those two things.",
+      "top_pain": "Governance is invisible. My #1 goal is legible self-governance — how proposals, decisions, and norms work — and the homepage says 'govern context graphs in the open' / 'community-driven' but shows no mechanism. The verb 'govern' appears; the democracy that gives it meaning does not. This is precisely the ethereum.org 'movement + credible governance' half the ethos cites, and it's the missing half."
+    },
+    {
+      "name": "Marketplace Consumer",
+      "kind": "adopter",
+      "overall": 4,
+      "verdict": "approve_with_changes",
+      "one_line": "A genuinely beautiful, trustworthy catalog of real governed graphs — but I can browse it, not yet pull or compose from it, and I discover by org-class instead of by my actual need.",
+      "top_pain": "No pull/compose/GitHub affordance on any vault card — the RegistryCard comment confirms these are gated pending the marketplace data-shape. My whole goal (discover -> trust -> compose into my vault) dead-ends at 'Open vault ->'. I can read the catalog but cannot consume it."
+    },
+    {
+      "name": "OSS Maintainer",
+      "kind": "adopter",
+      "overall": 4,
+      "verdict": "approve_with_changes",
+      "one_line": "License is MIT-clean and the 40-vault governed registry is a genuine 'governance-as-a-primitive' signal I respect — but the homepage doesn't yet answer the three questions that decide whether I'd build my roadmap on it: who's the security contact, what's the release cadence, and where's the RFC/decision process?",
+      "top_pain": "My three load-bearing questions get no on-page answer: no named security contact or disclosure timeline, no release-cadence signal (v2.2 tells me WHERE they are, not whether releases follow a predictable rhythm), and no surfaced governance mechanism — RFC/ADR process, decision logs, or named maintainers/fiscal sponsor. 'community-driven' without a documented mechanism is the exact phrasing on my red-flags list."
+    },
+    {
+      "name": "Movement Skeptic",
+      "kind": "reviewer",
+      "overall": 4.17,
+      "verdict": "approve_with_changes",
+      "one_line": "I came wanting the mission to be real, and mostly it is — the restraint is honest, the registry and superseded badges are genuine evidence, no cringe — but 'democracy / for the good of all' is still a claim leaning on an E5 IOU; point at one real public-good vault now and the conviction is earned, not promised.",
+      "top_pain": "The largest claim on the page — 'context democracy / for the good of all' — is carried by a diagram and a registry, not by visible public-good work. The load-bearing proof (WGA, Context Commons, WilhelmAI, Rare Archive) is deferred to E5, so the abundance thesis is currently asserted ahead of its evidence. A sympathetic skeptic doesn't roll their eyes, but thinks 'show me.'"
+    },
+    {
+      "name": "Dev-Tools Designer",
+      "kind": "adopter",
+      "overall": 4.17,
+      "verdict": "approve_with_changes",
+      "one_line": "Credible, clear, zero-fluff manifesto with real artifacts and a genuinely browsable registry — but it tells me what aDNA IS, never gives me the one command to RUN it, so as a CLI/DX builder I leave informed but not yet onboarded.",
+      "top_pain": "No CLI / one-command surface anywhere on the homepage. My north-star question — 'is there a discoverable, one-command 80%-case workflow?' — goes unanswered. The two CTAs ('Explore the network' / 'Read the standard') terminate in reading, not doing; there's no `npx adna init`, no copy-paste install, no `--help` preview."
+    },
+    {
+      "name": "Accessibility Auditor",
+      "kind": "reviewer",
+      "overall": 4.33,
+      "verdict": "approve_with_changes",
+      "one_line": "axe is perfect in both modes and the hero finally reads at grade 10 — F-01 is fixed — but the section that promises to define 'context democracy' answers it with two more undefined terms, and a 10pm reader still carries one abstraction too many before the first concrete example.",
+      "top_pain": "The section titled 'What a context democracy is' defines the core term using two MORE undefined terms — 'context graphs' and 'federating into a shared commons.' A tired or ESL reader now holds three abstractions before seeing one concrete example. The section that promises the definition leans on jargon to deliver it."
+    },
+    {
+      "name": "Diagram Reviewer",
+      "kind": "reviewer",
+      "overall": 4.33,
+      "verdict": "approve_with_changes",
+      "one_line": "Symbol-consistent, real-node, accessibly-captioned — a genuinely good conceptual hero; but the hexagonal ring draws a peer-to-peer topology the system doesn't have and the dots flatten real class heterogeneity, so it ships honest at the claim level yet imprecise at the diagram level.",
+      "top_pain": "The ring edges (each vault drawn to its alphabetical neighbor) assert a peer-to-peer hexagonal topology the real system does not have — vaults federate through the protocol/core, not laterally to a neighbor. The hexagon is aesthetic closure dressed as structure; a senior engineer onboarding from the diagram alone would infer a false topology."
+    },
+    {
+      "name": "Motion Designer",
+      "kind": "reviewer",
+      "overall": 4.33,
+      "verdict": "approve",
+      "one_line": "The motion budget is flawless by subtraction — zero over-motion, dual-guarded reduced-motion, Performance 100 — but it spends nothing where §5 invites one earned, thesis-bearing entrance; calm and fast and trustworthy, one meaningful node-joining animation short of the delight ceiling.",
+      "top_pain": "The motion budget is spent by REFUSING motion entirely: index.astro has no entrance/scroll-reveal, no @keyframes, no IntersectionObserver — only hover color transitions. Doctrine-compliant (0-1 triggers, Linear restraint) but it leaves §5's own delight ceiling — 'motion that SAYS the thesis: a context graph composing, a node joining' — completely unrealized. The page is fast and calm; it is not distinctive THROUGH motion."
+    },
+    {
+      "name": "Newcomer Stress-Tester",
+      "kind": "reviewer",
+      "overall": 4.33,
+      "verdict": "approve_with_changes",
+      "one_line": "Sixty seconds in, I'm genuinely moved and I trust this — the demos and the named-pain copy are a real fix to the old 'Why/How fails' problem — but the pain lives three scrolls below a hero that leads with philosophy, so my first-screen what/why is poetry before it's plain.",
+      "top_pain": "The NAMED pain ('agents relearn your project by rummaging through files', 'context windows close and wipe progress') is excellent — but it lives in 'How it Works', three sections below the fold. The hero leads with heritage philosophy ('Language and DNA were co-created by everyone before us'), so in my first 20 seconds I get ethos, not problem. My rubric docks comprehension when the pain-statement lands >20s into the read."
+    },
+    {
+      "name": "UX Writer",
+      "kind": "reviewer",
+      "overall": 4.33,
+      "verdict": "approve_with_changes",
+      "one_line": "The CTAs are contracts and the manifesto voice is genuinely written, not generated — but the fold sells the dream before it states the mechanic, and 'living registry' is the one adjective preaching what the cards already show.",
+      "top_pain": "Comprehension gap above the fold: the hero lead is a manifesto ('a context democracy') and never states the concrete mechanic. The first plain-language 'what it actually is' sentence — 'Three directories (what you know, how you work, who's involved)' — lives in the How-it-Works/Structure card, well below the fold. A cold developer reads poetry before they read substance."
+    },
+    {
+      "name": "Enterprise Team",
+      "kind": "adopter",
+      "overall": 4.33,
+      "verdict": "approve",
+      "one_line": "Credible and substantive — 40 real governed vaults, MIT, no lock-in, plain Markdown — and the peer-review CLAUDE.md demo speaks straight to my compliance pain; it just shows my governance/audit/federation story rather than naming it, so I have to do the translation a buyer wants done for them.",
+      "top_pain": "The homepage never names my concerns in words — 'audit trail', 'compliance', 'cross-team federation' — so I have to infer that session-tracking + federation solve my problems. The 'context democracy' frame is evocative but reads movement-first rather than capability-first for an enterprise buyer scanning for governance."
+    },
+    {
+      "name": "Network/Node Operator",
+      "kind": "adopter",
+      "overall": 4.33,
+      "verdict": "approve_with_changes",
+      "one_line": "The network framing and the living registry genuinely hail me and feel real and well-built — but it shows me who's on the network without yet showing me how to join it or what my node would actually share.",
+      "top_pain": "The hero names 'what stays local, what is shared' but the site never delivers it — I found no local-by-default boundary doctrine (Rule 4: what actually leaves my node when it federates), which is the single thing I need before I connect."
+    },
+    {
+      "name": "Researcher",
+      "kind": "adopter",
+      "overall": 4.33,
+      "verdict": "approve",
+      "one_line": "As a PI drowning in protocol/dataset/notebook sprawl, the 'How it Works' demos speak my dialect (raw-data rules, mission decomposition with dependencies) and the real 40-vault registry earns my trust fast — I just want federation and a research on-ramp shown, not only named, before I'd move my lab.",
+      "top_pain": "Federation — my key need (sharing validated analysis lattices/datasets with collaborating labs, with provenance + FAIR) — is named ('federating into a shared commons') but never shown on the homepage. As a PI, cross-lab sharing is the thing I'd most need to verify before committing a lab to a new substrate."
+    },
+    {
+      "name": "Anti-Bloat Editor",
+      "kind": "reviewer",
+      "overall": 4.5,
+      "verdict": "approve",
+      "one_line": "Reads like it was already cut once — substantive headings, zero throat-clearing, no marketing adjectives; my only knife-work is a triad that stutters three times in a fold and a half.",
+      "top_pain": "The build/share/govern + 'in the open / for the good of all' triad appears near-verbatim three times within a fold and a half (hero manifesto, Section-1 subtitle, and the meta description) — on scroll the hero and Section-1 read as a stutter, not reinforcement."
+    },
+    {
+      "name": "Brand Strategist",
+      "kind": "reviewer",
+      "overall": 4.5,
+      "verdict": "approve",
+      "one_line": "It finally earns its conviction — the manifesto re-frame lands at ~52-55 on the dial, the 'aDNA-network-on-Lattice-Protocol' doctrine holds verbatim, and there isn't a single 'blazingly fast' to cut; my only quarrel is that the hero whispers the public-good claim in prose where it could land it as a headline.",
+      "top_pain": "The manifesto line sits as dense body copy stacked under the title image, so the above-the-fold splits focus between two text blocks instead of landing ONE dominant typographic claim — the dial reads a hair sleeker than 55 because the conviction is in prose, not in the headline weight."
+    },
+    {
+      "name": "Content Strategist",
+      "kind": "reviewer",
+      "overall": 4.5,
+      "verdict": "approve_with_changes",
+      "one_line": "Every CTA delivers on the promise the previous page made, and the 'How it Works' section is gold-standard claim-then-proof editorial — but the 'context democracy' section and the persona copy are still promise, not product: tighten those two and the page is uncuttable.",
+      "top_pain": "The 'What a context democracy is' section is the one place the page is promise, not product — its subtitle is abstract benefit prose ('build, share, and govern context graphs in the open') with no concrete example or worked instance inside the section. It leans entirely on the diagram below to carry meaning; swap 'aDNA' for a competitor and the paragraph barely changes (Critique Prompt #5)."
+    },
+    {
+      "name": "Design Critic",
+      "kind": "reviewer",
+      "overall": 4.5,
+      "verdict": "approve",
+      "one_line": "It finally looks made on purpose — the emoji-icon wall and the seven-section pileup are gone, replaced by one coherent SS-Ghibli illustration voice and a disciplined two-signal palette; tighten the double-3-up 'How it Works' density and lift light-mode parity and it's flawless.",
+      "top_pain": "The 'How it Works' section stacks two 3-up rows (Agent-native/Human-readable/Composable feature-strip ON TOP of the Structure/Orient/Execute steps-grid with code demos) — the densest block on the page, and it momentarily reads as a feature wall. It is the one section I'd tighten or split; the feature-strip is conceptually adjacent to 'What a context democracy is' and competes with the steps for the same scan."
+    },
+    {
+      "name": "Information Architect",
+      "kind": "reviewer",
+      "overall": 4.5,
+      "verdict": "approve_with_changes",
+      "one_line": "The funnel is inevitable — concept to proof to action to commit, every section ends in a real next-step, top-nav finally drops to 5 and three-clicks-to-action holds; the only scent the structure still betrays is the Learn-vs-Patterns top-level overlap and a manifesto-first opening heading that promises a definition and delivers a stance.",
+      "top_pain": "Residual top-nav overlap: 'Patterns' and 'Use Cases' sit as top-level peers to 'Learn', yet the Learn hub's own left rail also lists Patterns/Comparisons as Learn sub-types. The F-09 defect class (down from 7 items to 5) is reduced but not eliminated — a cold newcomer still faces a hover-hesitation deciding between 'Learn' and 'Patterns'."
+    },
+    {
+      "name": "Indie Hacker",
+      "kind": "adopter",
+      "overall": 4.5,
+      "verdict": "approve",
+      "one_line": "Sharp, honest, zero-fluff — I get what aDNA is in 10 seconds and the 'first CLAUDE.md' tutorial is exactly my on-ramp; dock half a point because the hero says 'explore/read' when a shipper wants 'build', and there's no copy-paste quickstart above the fold.",
+      "top_pain": "Both hero CTAs are read/browse verbs ('Explore the network' / 'Read the standard') — no 'do' verb above the fold. The actual first-value path (the excellent 'Create Your First CLAUDE.md' tutorial) is buried below 4 sections + the standard; the fastest path to value isn't the most prominent one."
+    },
+    {
+      "name": "Startup",
+      "kind": "adopter",
+      "overall": 4.5,
+      "verdict": "approve",
+      "one_line": "As a CTO drowning in Slack-buried decisions, 'How it Works' speaks my exact pain and the 40 live vaults prove it's real — I just wish the homepage handed me a 5-minute quickstart instead of routing me to the spec.",
+      "top_pain": "The hero leads with the 'context democracy' manifesto and public-good ethos. As a CTO scanning for 'what does this do for my codebase and my agents,' I scroll past philosophy before 'How it Works' answers the real question."
+    },
+    {
+      "name": "Infographic Specialist",
+      "kind": "reviewer",
+      "overall": 4.67,
+      "verdict": "approve",
+      "one_line": "The one true data graphic on this page is honestly encoded — real labeled nodes, edges that mean federation, a caption AND a screen-reader desc, and it survives the B&W test — but it hides against its own dark background, so the proof of the whole thesis whispers where it should read at a glance; fix the contrast, anchor the 6-of-40 scale, and it's textbook.",
+      "top_pain": "The Section-1 NetworkDiagram is an honest, well-labeled node-edge SVG (6 real vaults + ring + hub, captioned, a11y-described, color-not-load-bearing) — but at shipped page scale its 0.32-opacity edges and dark-on-dark #1a1b26 nodes nearly vanish; I could not parse it in the full-page render until I read the source. Semantic weight (this IS the proof of the 'context democracy' thesis) exceeds its visual weight on the page."
+    },
+    {
+      "name": "Educator",
+      "kind": "adopter",
+      "overall": 4.67,
+      "verdict": "approve",
+      "one_line": "As a professor who'd assign this vault as both syllabus and subject, the Learn hub and CLAUDE.md tutorial are a near-perfect teaching scaffold and the credibility is bulletproof — the only gap is that the beautiful manifesto-led homepage makes my humanities students work a beat too hard to grasp 'what is this' before the 'How it Works' section rescues them.",
+      "top_pain": "The 'Agentic Context Democracy' manifesto framing is a thesis, not an onboarding — my humanities and biology students hit 'a self-governed network where people and their agents build, share, and govern context graphs' on a cold visit and stall; there's no single plain-language 'what this is' sentence near the fold for a true beginner."
+    },
+    {
+      "name": "Framework Docs Expert",
+      "kind": "adopter",
+      "overall": 4.67,
+      "verdict": "approve",
+      "one_line": "The load-bearing walls are in the right places — Reference is the normative layer, Tutorials carry prereqs/steps/next-steps, and Glossary stands alone — so the role-segregation reads true; dock half a notch only because the reference pages don't yet wear their provenance or version history on their sleeve.",
+      "top_pain": "No visible provenance/staleness signal on Reference pages — I can't tell whether the normative reference is generated-from-source or hand-maintained, and there's no 'last-updated / generated from vX' stamp. This is the exact red flag my lens hunts for."
+    },
+    {
+      "name": "Visual Designer",
+      "kind": "reviewer",
+      "overall": 4.83,
+      "verdict": "approve",
+      "one_line": "A genuinely designed page, not assembled — disciplined Tokyo-Night palette (two signals, one warm accent), clean Space-Grotesk/Inter/JetBrains hierarchy, and a cohesive curated hero family; only the un-theme-switched dark hero floating on the white light-mode body keeps craft just shy of flawless.",
+      "top_pain": "Light mode reads inverted-not-designed: the dark Tokyo-Night hero PNG is not theme-switched (doctrine §7.3), so a saturated navy scene sits atop a near-white body — a jarring luminance cliff at the hero/section seam that breaks the otherwise-intentional composition."
+    },
+    {
+      "name": "Solo Developer",
+      "kind": "adopter",
+      "overall": 4.83,
+      "verdict": "approve",
+      "one_line": "Dark, sharp, and the Step 01-03 demos speak my exact pain — I can see myself shipping a CLAUDE.md tonight; just give the working-dev hook a seat in the hero, not only below the fold.",
+      "top_pain": "The hero leads with the 'Agentic Context Democracy' manifesto — poetic and on-ethos, but as a working freelancer my first question is 'will this stop my agent re-learning my repo every session?' and that concrete promise lives below the fold in 'How it Works', not in the hero line."
+    }
+  ],
+  "topPains": [
+    {
+      "pain": "The section titled 'What a context democracy is' defines the core term using two MORE undefined terms — 'context graphs' and 'federating into a shared commons.' A tired or ESL reader now holds three abstractions before seeing one concrete example. The section that promises the definition leans on jargon to deliver it.",
+      "count": 1,
+      "by": [
+        "Accessibility Auditor"
+      ]
+    },
+    {
+      "pain": "'How it Works' stacks the Agent-native/Human-readable/Composable feature-strip ABOVE the Structure/Orient/Execute steps, so the reader meets 3 concept labels + 3 numbered steps + code demos in one section — ~6 new items in working memory at once. This is the heaviest cognitive section for ADHD / end-of-day attention.",
+      "count": 1,
+      "by": [
+        "Accessibility Auditor"
+      ]
+    },
+    {
+      "pain": "Homepage Lighthouse a11y is 96 (vs 100 elsewhere) on a mobile target-size item: the inline registry-actions links and the '·' separator are small, crowded tap targets — real WCAG 2.5.5/2.5.8 motor-a11y friction that axe-AA does not catch.",
+      "count": 1,
+      "by": [
+        "Accessibility Auditor"
+      ]
+    },
+    {
+      "pain": "The build/share/govern + 'in the open / for the good of all' triad appears near-verbatim three times within a fold and a half (hero manifesto, Section-1 subtitle, and the meta description) — on scroll the hero and Section-1 read as a stutter, not reinforcement.",
+      "count": 1,
+      "by": [
+        "Anti-Bloat Editor"
+      ]
+    },
+    {
+      "pain": "'Open' is over-spent: 'in the open' x2, 'open standard', 'open specification', 'Open Standard' meta-tag, 'open spec' — load-bearing once, decorative by the sixth.",
+      "count": 1,
+      "by": [
+        "Anti-Bloat Editor"
+      ]
+    },
+    {
+      "pain": "'Context democracy' (a coined abstraction) lands in the hero region before Section 1 defines it; the reader carries an undefined term for one viewport.",
+      "count": 1,
+      "by": [
+        "Anti-Bloat Editor"
+      ]
+    },
+    {
+      "pain": "The manifesto line sits as dense body copy stacked under the title image, so the above-the-fold splits focus between two text blocks instead of landing ONE dominant typographic claim — the dial reads a hair sleeker than 55 because the conviction is in prose, not in the headline weight.",
+      "count": 1,
+      "by": [
+        "Brand Strategist"
+      ]
+    },
+    {
+      "pain": "The use-case persona copy in home.ts ('fast-moving teams,' 'preserve institutional knowledge as they scale,' 'cross-functional teams embedding aDNA') is generic-SaaS register that drifts off the manifesto voice — it's the one place flat-corporate filler survives, even if it isn't rendered on the current homepage.",
+      "count": 1,
+      "by": [
+        "Brand Strategist"
+      ]
+    },
+    {
+      "pain": "The public-good ethos is correctly shown-not-preached, but it is *quiet* enough (two org-vault cards in a slice) that a first-time visitor may read 'open standard' and miss 'for the good of all' as the actual movement — acceptable since the showcase is deferred to E5, but the dial leans on the hero line alone to carry it.",
+      "count": 1,
+      "by": [
+        "Brand Strategist"
+      ]
+    },
+    {
+      "pain": "The 'What a context democracy is' section is the one place the page is promise, not product — its subtitle is abstract benefit prose ('build, share, and govern context graphs in the open') with no concrete example or worked instance inside the section. It leans entirely on the diagram below to carry meaning; swap 'aDNA' for a competitor and the paragraph barely changes (Critique Prompt #5).",
+      "count": 1,
+      "by": [
+        "Content Strategist"
+      ]
+    },
+    {
+      "pain": "The persona/use-case copy in home.ts is competitor-swappable boilerplate — 'Cross-functional teams embedding aDNA into existing codebases and workflows' and 'Fast-moving teams using aDNA to preserve institutional knowledge as they scale' are the lowest-evidence lines in the build; they read as marketing-persona filler, not content.",
+      "count": 1,
+      "by": [
+        "Content Strategist"
+      ]
+    },
+    {
+      "pain": "Hero manifesto is the one register-break: the 'Language and DNA were co-created by everyone before us' line is beautiful but front-loads poetry before the reader has been told concretely what aDNA *is* — comprehension for a first-time technical visitor briefly hangs on the diagram + 'How it Works' to recover the literal answer.",
+      "count": 1,
+      "by": [
+        "Content Strategist"
+      ]
+    }
+  ],
+  "verdictCounts": {
+    "approve_with_changes": 17,
+    "approve": 13
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "cycle": 148,
+  "decadal": "E1",
+  "decadal_cycle": 8,
+  "mission": "mission_adna_str_p5_m510_e1_brand_positioning",
+  "slug": "e1_polish_finalize",
+  "date": "2026-06-04",
+  "session": "session_stanley_20260604T181005Z_v8_m510_e1_decadal_close",
+  "theme": "E1 finalize & polish (decadal-close prep): re-render the 4 section heroes on Imagen Ultra (deploy used Fast under 429), reconcile front_page_doctrine §1/§4 to the SHIPPED image-led/Tokyo-Night register, verify Mermaid/OG on-palette, and clear 2 pre-existing dark-mode AA contrast misses surfaced by the full gate run.",
+  "register": "ss_ghibli_pixel / tokyo_night (#1a1b26/#24283b base, #9d7cd8 purple primary, #7dcfff cyan links, #e0a84c warm amber accent)",
+  "operator_scope": "Operator (AskUserQuestion): close E1 now (defer Section-5 public-good tease to E5 + breadth-first nav to a later pass) + run the full 30-persona RLP via Workflow + ALL polish (section heroes on Ultra + front_page_doctrine §1/§4 edits + Mermaid/OG). Redeploy in scope (bundled at close).",
+  "target": [
+    "site/src/assets/heroes/hero_learn.png (Ultra re-render)",
+    "site/src/assets/heroes/hero_how.png (Ultra re-render)",
+    "site/src/assets/heroes/hero_patterns.png (Ultra re-render)",
+    "site/src/assets/heroes/hero_reference.png (Ultra re-render)",
+    "what/design/front_page_doctrine.md (§1 image-led hero mode + §4 shipped-register note; status draft->active)",
+    "site/src/styles/tutorial-meta.css (:global(.dark)-> .dark — dropped-selector a11y fix)",
+    "site/src/pages/404.astro (dark-mode .btn AA fix)",
+    "site/evidence/lighthouse_e1_*.json (5 pages)",
+    "site/evidence/e1_rlp_screens/ (9 screenshots)"
+  ],
+  "change_summary": "POLISH: re-rendered the 4 section heroes (learn/how/patterns/reference) on Imagen 4 Ultra (8 candidates c148 + 3 'how' re-rolls c148b to dodge a faux-text module); winners learn=c148_v1, how=c148b_v2, patterns=c148_v2, reference=c148_v2 (all 1408x792, on-register, no baked title text); swapped over the live Fast heroes. Reconciled front_page_doctrine.md: §1 adds the shipped 'image-led manifesto' hero mode + an ADR-032 reconciliation note (image+title composed as one focal unit; supersedes the abstract-only guardrail), §4 adds a 'shipped register' note (Tokyo Night/SS-Ghibli realizes the ~55/45 dial without moving it); status draft->active (reconciled at this RLP decadal per the doc's own change discipline). Verified Mermaid theme + OG generator already on Tokyo Night palette + 'adna.network' (set at cycle 147) — no drift, no regen. A11y FIXES (2 pre-existing dark-mode misses the full gate run surfaced, not caught at the cycle-147 partial pass): (1) tutorial-meta.css used :global(.dark) in a PLAIN .css file — an invalid selector that gets dropped, so the light-mode green #147b3a (2.34:1) rendered in dark mode; changed to plain .dark (matches every other .css file) -> dark badge text #34C06E applies. (2) 404.astro 'Go home' .btn was white on --color-primary which flips to the lighter #9d7cd8 (3.32:1) in dark mode; mirrored the global .btn-primary fix with :global(.dark) .btn:not(.btn-outline){background:var(--brand-primary-dark)} (#6d4bb8, 5.8:1), scoped off the outline button.",
+  "doctrine_compliance": {
+    "adr_032_register_pivot": "honored — Ultra heroes are the same SS-Ghibli/Tokyo-Night register, higher fidelity; front_page_doctrine now records the image-led hero mode as legal",
+    "purpose_over_decoration": "retained — section heroes carry the per-section motif; no decorative motion added",
+    "aa_contrast": "IMPROVED — 0 WCAG-AA color-contrast violations in BOTH dark and light across the 5 sampled pages (axe); fixed 2 pre-existing dark-mode misses",
+    "reduced_motion": "honored — prefers-reduced-motion present in built CSS; no motion added",
+    "no_baked_text": "honored — winners carry no baked title text ('how' re-rolled to drop a faux-text module); diegetic UI/book-spine texture only",
+    "above_fold_law": "honored — image-led manifesto is one composed focal unit (title leads, scene grounds); ≤2 fighting colors"
+  },
+  "validation": {
+    "astro_build": "PASS — 161 pages, ~5s, 0 errors (new heroes re-optimized to WebP/AVIF)",
+    "playwright_gates": "PASS — 56/56 (the 2 a11y failures the first run surfaced were fixed; re-run green)",
+    "a11y_axe": "0 WCAG-AA color-contrast violations BOTH modes across Home/Concept/Tutorial/Pattern/404 (dark via gate-4; light via standalone axe probe)",
+    "lighthouse": {
+      "tool": "lighthouse desktop preset, 5 representative pages, local preview",
+      "performance": "100 on all 5 (home/concept/tutorial/glossary/adopter) — hard gate MET; homepage 97->100 vs Phase-7 baseline",
+      "accessibility": "mean 99 (home 96 = one mobile target-size spacing item; concept/tutorial/glossary/adopter 100)",
+      "best_practices": "100 all 5",
+      "seo": "100 all 5",
+      "reduced_motion": "honored (prefers-reduced-motion in built CSS)"
+    },
+    "screenshots": "9 captured to site/evidence/e1_rlp_screens/ (home dark/light/mobile + 4 hubs + tutorial + registry) — feed the RLP",
+    "reviewer_lens_pass": "30-persona RLP run as a Workflow (cycle 149 / decadal close)"
+  },
+  "image_gen": {
+    "runner": "how/campaigns/campaign_adna_serious_tool_readiness/runners/e1_section_heroes_gen.py",
+    "model": "imagen-4.0-ultra-generate-001 (Ultra had capacity this session; 1 transient 429 retry resolved)",
+    "interpreter": "python3.13",
+    "rounds": "c148 (8: 2 each learn/how/patterns/reference) + c148b (3 'how' re-rolls to dodge a faux-text module)",
+    "winners": {
+      "learn": "candidates/sec_learn_c148_v1.png (warm-amber-lamp study desk + helix)",
+      "how": "candidates/sec_how_c148b_v2.png (clean modular pipeline, diegetic UI tiles, warm lamp)",
+      "patterns": "candidates/sec_patterns_c148_v2.png (isometric purple/cyan vault grid)",
+      "reference": "candidates/sec_reference_c148_v2.png (rich cozy archive library)"
+    },
+    "cost_usd": {"c148": 0.32, "c148b": 0.12, "total": 0.44},
+    "logs": [
+      "cycle_148_e1_section_heroes_ultra.c148.image_gen_log.json",
+      "cycle_148_e1_section_heroes_ultra.c148b.image_gen_log.json"
+    ],
+    "candidates_local_only": true
+  },
+  "deploy": "bundled at decadal close (cycle 149) via vercel deploy --prebuilt; Vercel source-build fails because prebuild reaches ../scripts",
+  "notes": "Cycle 8 of E1 (polish/finalize). Findings: (1) Imagen Ultra had capacity this session (cycle 147 had to fall back to Fast) — Ultra winners are visibly richer; the 'how' pipeline motif tends to bake faux-text module labels, cleared by a peopleless/iconographic re-roll. (2) ROOT-CAUSE a11y find: a PLAIN .css file using :global(.dark) silently drops the rule (it is an Astro scoped-style construct only) — this is why the cycle-147 'axe 0 both modes' claim missed the difficulty-badge; the lesson is to run the FULL gate suite (gate-4 samples Tutorial + 404, not just the homepage) at the decadal close, not just homepage axe. (3) --color-primary flips light->dark (deep #6d4bb8 -> light #9d7cd8); any white-on-primary button needs a .dark override to --brand-primary-dark. Cumulative v8 P5 image-gen ledger: $1.72 (through D14) + $0.24 (cycle 146 hero) + $0.14 (cycle 147 heroes) + $0.44 (this) = ~$2.54 of $50 (5.1%)."
+}

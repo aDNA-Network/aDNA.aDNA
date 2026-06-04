@@ -31,16 +31,20 @@
   color: hsl(25 95% 35%); /* darker orange for WCAG AA contrast */
 }
 
-/* Dark mode: lighten badge text for contrast on dark color-mix backgrounds */
-:global(.dark) .difficulty-badge.beginner {
+/* Dark mode: lighten badge text for contrast on dark color-mix backgrounds.
+ * NOTE: this is a plain .css file (not an Astro component <style>), so the dark
+ * overrides use a plain `.dark` descendant selector — `:global(.dark)` is an
+ * Astro-scoped-style construct and is an INVALID selector here (silently dropped),
+ * which left the light-mode green (#147b3a, 2.34:1) rendering in dark mode. */
+.dark .difficulty-badge.beginner {
   color: #34C06E; /* 5.85:1 on dark green bg */
 }
 
-:global(.dark) .difficulty-badge.intermediate {
+.dark .difficulty-badge.intermediate {
   color: #5CB8E8; /* 6.53:1 on dark blue bg */
 }
 
-:global(.dark) .difficulty-badge.advanced {
+.dark .difficulty-badge.advanced {
   color: #E89545; /* 5.83:1 on dark orange bg */
 }
 

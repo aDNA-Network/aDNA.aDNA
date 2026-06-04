@@ -63,6 +63,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: white;
   }
 
+  /* Dark mode: --color-primary flips to the lighter #9d7cd8 (3.3:1 vs white = fails AA).
+     Mirror the global .btn-primary fix — deep purple --brand-primary-dark #6d4bb8 → 5.8:1.
+     Scoped with :not(.btn-outline) so the transparent outline button is unaffected. */
+  :global(.dark) .btn:not(.btn-outline) {
+    background: var(--brand-primary-dark);
+  }
+
+  :global(.dark) .btn:not(.btn-outline):hover {
+    background: #7c5cc4;
+  }
+
   .btn-outline {
     background: transparent;
     border: 1px solid var(--color-border);

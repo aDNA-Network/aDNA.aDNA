@@ -10,11 +10,11 @@ created: 2026-06-03
 updated: 2026-06-03
 opens_at: 2026-06-03
 opened_session: session_stanley_20260604T014130Z_v8_m510_e1_homepage_brand
-closed_at:
-closed_session:
-status: in_progress
+closed_at: 2026-06-04
+closed_session: session_stanley_20260604T181005Z_v8_m510_e1_decadal_close
+status: completed
 estimated_sessions: 2-3   # E1 decadal: design (Stages 0-4) + build (Stage 5 III cycles) + AAR/RLP
-actual_sessions:
+actual_sessions: 4   # homepage_brand + continue + hero_gen + reskin_deploy + decadal_close (the ADR-032 mid-mission pivot added the hero-gen + reskin sessions)
 persona: rosetta
 last_edited_by: agent_stanley
 spec_completeness: full
@@ -61,8 +61,12 @@ The operator set the **SS Ghibli-pixel brand pivot** ([[adr_032_brand_register_p
 
 ## Lightweight/decadal AAR (filled at decadal close; full RLP per E1)
 
-- **Worked**:
-- **Didn't**:
-- **Finding**:
-- **Change**:
-- **Follow-up**:
+- **Worked**: The manifesto re-frame + ADR-032 Tokyo Night SS-Ghibli reskin shipped live with Perf 100 / 56-56 gates / axe 0 AA both modes; the design/brand/visual reviewers (Design Critic 4.5, Brand Strategist 4.5, Visual Designer 4.83) all approve — E1's actual remit landed. The full **30-persona RLP run as a parallel Workflow** produced a decomposable, honest signal in ~3 min.
+- **Didn't**: Adopter ranker 4.19 sits below the 4.95 multi-track gate — but that gate is a D20/E6 SITE+REPO exit condition, not a single-decadal gate (D11=4.5, D14=4.75). The two low dims (actionability 3.63, relevance 3.81) are dominated by **deliberately deferred scope** (join CTA→E4, marketplace→E2, public-good proof→E5), not brand defects. Also: a homepage-only axe check at cycle 147 missed 2 dark-mode contrast misses the full gate suite caught.
+- **Finding**: A decadal can close **honestly below the phase-exit gate** when the shortfall is deferred-scope, not defects — the RLP *prices* the deferral and writes the next epics' priority queues. And: `:global(.dark)` is invalid in a plain `.css` file (silently dropped) — run the FULL gate suite at every decadal close, not homepage-only axe.
+- **Change**: Adopt the **full-bench RLP-via-Workflow** as the standard MAX-III review mechanism for E-series decadals; codify "full gate suite at decadal close" as discipline.
+- **Follow-up**: E1 RLP priority queue → E4 (join/governance) + E2 (marketplace affordances) + E3 (community/org) + E5 (public-good proof); fast-follow bucket (NetworkDiagram contrast, light-mode hero, How-it-Works density, mobile target-size, operator-gated hero concrete-clause). #needs-human: rotate `SS_VERCEL_TOKEN`. Full detail: [[aar_decadal_e1_brand_positioning]].
+
+## Mission Close Notes (2026-06-04)
+
+E1 **CLOSED** at the decadal-close session (`session_stanley_20260604T181005Z_v8_m510_e1_decadal_close`). 8 build cycles (141-148) + decadal close (149); cycle 9 (breadth-first nav) deferred by operator. O1-O5 all discharged: O1 design spec ratified (Direction A); O2 build (manifesto re-frame + ADR-032 reskin, deployed live); O3 measure (Lighthouse Perf 100 ×5 / 56-56 gates / axe 0 AA both modes); O4 **full 30-persona RLP** (adopter 4.19 / full-30 4.29 / 0 rejects; all 6 mandatory lenses approve); O5 decadal AAR + this close. Polish folded at cycle 148 (Ultra section heroes + `front_page_doctrine` §1/§4 + Mermaid/OG verify + 2 a11y fixes). **Next mover: E4 aDNANetwork** (least-gated). Artifacts: [[aar_decadal_e1_brand_positioning]] + [[rlp_e1_30persona_results]] + cycle JSONs 141-149.
