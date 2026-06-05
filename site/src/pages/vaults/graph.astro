@@ -12,6 +12,21 @@ const chart = (graphChart && graphChart.trim()) ? graphChart : 'flowchart LR\n  
 const edgeCount = (vaultsData as any).edges?.length ?? 0;
 const vaultCount = (vaultsData as any).vault_count ?? 0;
 
+// Per-type edge census (E4 c155) — live counts beside each legend row keep the typed taxonomy
+// self-honest: the reader sees federation/companion are load-bearing and umbrella/partner are rare,
+// rather than inferring five evenly-populated kinds.
+const edgeTypeCounts: Record<string, number> = ((vaultsData as any).edges ?? []).reduce(
+  (m: Record<string, number>, e: any) => { m[e.type] = (m[e.type] ?? 0) + 1; return m; },
+  {} as Record<string, number>,
+);
+// Vaults with no cited relationship yet — named on the page so the disconnected nodes read as
+// honest-sparse-by-design, not as a broken render (E4 c155 — Diagram-Reviewer top finding).
+const linkedSlugs = new Set<string>();
+for (const e of ((vaultsData as any).edges ?? [])) { linkedSlugs.add(e.source); linkedSlugs.add(e.target); }
+const unlinkedCount = ((vaultsData as any).vaults ?? []).filter(
+  (v: any) => !linkedSlugs.has(v.vault_slug) && !linkedSlugs.has(v.vault),
+).length;
+
 // The 5-edge taxonomy — differentiated by LINE STYLE (Mermaid draws every edge in one colour),
 // so the legend mirrors what is actually rendered, not an invented per-type palette.
 const legend = [
@@ -40,7 +55,8 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
       <p class="lede">
         {vaultCount} vaults, {edgeCount} relationships. Every edge is <strong>real and directed</strong>,
         drawn from each vault&rsquo;s governance — a consumer points at what it is built from, an
-        org-vault at the children it contains, a successor at what it replaced. Nothing here is decorative.
+        org-vault at the children it contains, a successor at what it replaced. {unlinkedCount} vaults
+        carry no cited relationship yet, so they sit unconnected here — that is honest topology, not missing data.
       </p>
     </section>
 
@@ -50,13 +66,13 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
         {legend.map((l) => (
           <li>
             <span class={`le le-${l.sample}`} aria-hidden="true"></span>
-            <span class="le-text"><strong>{l.key}</strong> — {l.meaning}</span>
+            <span class="le-text"><strong>{l.key}</strong> <span class="le-count">&middot; {edgeTypeCounts[l.key] ?? 0}</span> — {l.meaning}</span>
           </li>
         ))}
       </ul>
     </section>
 
-    <p class="graph-tip">Select any node to open its vault. Each vault links back here from its own relationship block.</p>
+    <p class="graph-tip">Select any node to open its vault — or browse them all on the <a href="/vaults/">vault index</a>. Each vault page links back to this graph.</p>
 
     <MermaidDiagram chart={chart} caption="The aDNA network — cross-vault federation topology" />
   </main>
@@ -130,14 +146,22 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
   .graph-back-link { margin-left: 1rem; color: var(--color-link); }
   /* Pointer affordance hint — the click target itself is wired client-side. */
   .graph-tip { max-width: 72ch; margin: 0 auto var(--space-4, 1rem); color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }
+  /* In-text link → underlined (not colour-only) for WCAG link-in-text-block, both modes. */
+  .graph-tip a { color: var(--color-link); text-decoration: underline; }
 
-  /* Focus highlight when arriving via ?focus=<slug> — cyan link stroke (within the ≤2-colour budget),
-     !important to override Mermaid's inline node stroke. Global: the SVG is rendered by the island. */
+  /* Focus highlight when arriving via ?focus=<slug>. A single cyan stroke competed with the cyan
+     focus EDGE and lost against Mermaid's per-node inline stroke (E4 c155 — IA: the focused node was
+     not findable in the 40-node coloured field). The robust cue is a drop-shadow GLOW on the whole
+     node group — it reads by shape, survives Mermaid's inline rect styling, and stays within the
+     cyan/purple budget — backed by a thicker stroke. Global: the SVG is rendered by the island. */
+  :global(.mermaid-container g.graph-focus) {
+    filter: drop-shadow(0 0 7px var(--color-link)) drop-shadow(0 0 2px var(--color-link));
+  }
   :global(.mermaid-container g.graph-focus rect),
   :global(.mermaid-container g.graph-focus polygon),
   :global(.mermaid-container g.graph-focus path) {
     stroke: var(--color-link) !important;
-    stroke-width: 3px !important;
+    stroke-width: 4px !important;
   }
   .vaults-graph-hero h1 { margin: 0.25rem 0 0.75rem; }
   .lede { color: var(--color-text); line-height: 1.6; }
@@ -156,6 +180,8 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
   .legend-list li { display: flex; align-items: center; gap: 0.75rem; line-height: 1.4; }
   .le-text { color: var(--color-text); }
   .le-text strong { font-family: var(--font-mono); color: var(--color-link); }
+  /* Per-type census — muted so the count is a quiet honesty cue, not a competing emphasis. */
+  .le-count { font-family: var(--font-mono); color: var(--color-text-muted); }
 
   /* Line samples drawn with the edge colour Mermaid uses (--color-link). */
   .le {

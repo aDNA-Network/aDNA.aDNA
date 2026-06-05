@@ -25,6 +25,14 @@ const jsonLD = buildWebPageJsonLD({
 const vaultCount = (vaultsData as any).vault_count ?? 0;
 const edgeCount = (vaultsData as any).edges?.length ?? 0;
 
+// Per-type edge census (E4 c155 — Diagram-Reviewer: the typed legend over-sold an even
+// taxonomy; the real census is two dominant kinds + three rare ones, so the legend shows
+// live counts to stay self-honest about which kinds are load-bearing).
+const edgeTypeCounts: Record<string, number> = ((vaultsData as any).edges ?? []).reduce(
+  (m: Record<string, number>, e: any) => { m[e.type] = (m[e.type] ?? 0) + 1; return m; },
+  {} as Record<string, number>,
+);
+
 // The 5-edge taxonomy — same source as /vaults/graph. Mermaid draws every edge in one
 // colour, so the legend differentiates by LINE STYLE, not an invented per-type palette.
 const edgeTypes = [
@@ -45,7 +53,7 @@ const edgeTypes = [
     heroImage={heroNetwork}
     heroAlt="A wide bird's-eye pixel-art map of many small, independently lit settlements scattered across a dark Tokyo-Night ground, a few linked by glowing cyan and purple conduits — aDNA computers, each its own place, sparsely federated."
     title="The network of aDNA computers"
-    lead="An aDNA computer is one machine — a laptop, a server, a cloud box — carrying many context vaults under a single Home vault. Nodes connect through real, directed relationships, and each node decides what stays local and what joins the shared commons."
+    lead="An aDNA computer is one machine — a laptop, a server, a cloud box — carrying many context vaults (each a self-governing folder of project knowledge) under a single Home.aDNA vault. Nodes connect through real, directed relationships, and each node decides what stays local and what joins the shared commons — the registry other nodes can pull from."
     primaryHref="/vaults/graph/"
     primaryLabel="See the relationship graph"
     secondaryHref="/vaults/"
@@ -57,13 +65,13 @@ const edgeTypes = [
     <div class="section-inner">
       <h2 class="section-title">A network of real relationships</h2>
       <p class="section-subtitle">
-        The connections are not decorative. Each vault federates around the shared core through
-        relationships it actually declares — hub-and-spoke, not an invented peer-to-peer mesh.
+        The connections are not decorative. Each line is a relationship a vault actually declares —
+        drawn here as a simple hub around the shared core, not an invented peer-to-peer mesh.
       </p>
       <NetworkDiagram />
       <p class="diagram-caption">
-        Real aDNA vaults — forges, frameworks, platforms, and public-good archives — federating
-        around the aDNA core on the Lattice Protocol.
+        Six representative aDNA vaults — forges, frameworks, platforms, and public-good archives —
+        federating around the shared aDNA core. (See all {vaultCount} in the full graph below.)
       </p>
     </div>
   </section>
@@ -112,13 +120,13 @@ const edgeTypes = [
       <h2 class="section-title">The topology at a glance</h2>
       <p class="section-subtitle">
         {vaultCount} vaults, {edgeCount} relationships. Every edge is <strong>real and directed</strong>,
-        drawn from each vault&rsquo;s governance — read across five kinds of connection.
+        drawn from each vault&rsquo;s governance, across five kinds of relationship.
       </p>
       <ul class="edge-legend" aria-label="The five kinds of relationship">
         {edgeTypes.map((e) => (
           <li>
             <span class={`le le-${e.sample}`} aria-hidden="true"></span>
-            <span class="le-text"><strong>{e.key}</strong> — {e.meaning}</span>
+            <span class="le-text"><strong>{e.key}</strong> <span class="le-count">&middot; {edgeTypeCounts[e.key] ?? 0}</span> — {e.meaning}</span>
           </li>
         ))}
       </ul>
@@ -151,6 +159,10 @@ const edgeTypes = [
             <pre class="run-code"><code>git clone https://github.com/LatticeProtocol/Agentic-DNA.git my-node
 cd my-node
 claude</code></pre>
+            <p class="run-note">
+              Takes about five minutes. Assumes <code>git</code> and the Claude Code CLI are installed —
+              see <a href="/get-started/" data-astro-prefetch>Get started</a> for the one-time setup.
+            </p>
           </div>
         </li>
         <li class="run-step">
@@ -168,9 +180,13 @@ claude</code></pre>
           <div class="run-step-body">
             <h3>Opt into federation</h3>
             <p>
-              Joining the commons is always an explicit, reviewable act. Publish a vault to the shared
-              registry, declare a relationship to another vault, or join a federated lattice — one
-              decision at a time.
+              Joining the commons is always explicit and reviewable — a change you author and inspect
+              before you push it. What actually crosses the boundary is a curated slice of your
+              <code>Home.aDNA</code> registry — which vaults exist and the relationships they declare —
+              never their contents.
+            </p>
+            <p class="run-note">
+              <a href="/reference/" data-astro-prefetch>See how federation works &rarr;</a>
             </p>
           </div>
         </li>
@@ -333,6 +349,12 @@ claude</code></pre>
     color: var(--color-link);
   }
 
+  /* Per-type census — muted so the type name stays the emphasis, the count is a quiet honesty cue. */
+  .le-count {
+    font-family: var(--font-mono);
+    color: var(--color-text-muted);
+  }
+
   /* Line samples drawn with the edge colour Mermaid uses (--color-link). */
   .le {
     flex: 0 0 auto;
@@ -459,6 +481,21 @@ claude</code></pre>
     font-size: var(--text-sm);
     line-height: 1.7;
     color: var(--color-text);
+  }
+
+  /* Prereq / pointer note under a run-step — quiet, muted, the concrete HOW the lenses asked for. */
+  .run-note {
+    margin: var(--space-3) 0 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+  }
+
+  /* Underlined, not colour-only: the step-1 "Get started" link sits inside a sentence of muted text,
+     so it needs a non-colour distinction to satisfy WCAG link-in-text-block (axe both modes). */
+  .run-note a {
+    color: var(--color-link);
+    text-decoration: underline;
   }
 
   .run-cta {

@@ -12,7 +12,7 @@ opens_at: 2026-06-04
 opened_session: session_stanley_20260604T192658Z_v8_m511_e4_open
 status: active
 estimated_sessions: 3-4   # E4 decadal: design (Stages 0-4) + data foundation + build III cycles (150-~159) + AAR
-actual_sessions: 5   # S1 (c150) open+data+topology; S2 (c151) /network page bands 1-3; S3 (c152) run-a-node band + participation CTA (RLP Gap #1); S4 (c153) govern-&-trust band (RLP Gap #4 partial) — /network bands 1-5 COMPLETE; S5 (c154) /vaults relationship-block + graph round-trip — Network-Legibility item 4 (Navigability) CLOSED + 3 latent Mermaid-render bugs fixed (graph was blank + "(no data)")
+actual_sessions: 6   # S1 (c150) open+data+topology; S2 (c151) /network page bands 1-3; S3 (c152) run-a-node band + participation CTA (RLP Gap #1); S4 (c153) govern-&-trust band (RLP Gap #4 partial) — /network bands 1-5 COMPLETE; S5 (c154) /vaults relationship-block + graph round-trip — Network-Legibility item 4 (Navigability) CLOSED + 3 latent Mermaid-render bugs fixed (graph was blank + "(no data)"); S6 (c155) Network-Legibility MEASURE+ITERATE — 4-lens Workflow (Diagram-Reviewer/Node-Operator/IA/Newcomer) found edge_honesty 3.5 + join_scent 3 below the GREEN floor, both LIFTED off the floor with copy/CSS (honest-sparseness note + per-type legend counts + step-3 transmission-unit/pointer + ?focus glow); both-modes axe promoted into gate-4 (65→73, caught a self-introduced link-in-text-block); post-fix no rubric item <4; deeper edge-honesty layout + aDNANetwork→Network.aDNA staleness deferred to c156 DATA/generator cycle
 persona: rosetta
 last_edited_by: agent_stanley
 spec_completeness: full
