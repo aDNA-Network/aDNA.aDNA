@@ -44,6 +44,10 @@ const diagramId = `mermaid-${Math.random().toString(36).slice(2, 9)}`;
             lineColor: '#7dcfff',
             secondaryColor: '#414868',
             tertiaryColor: '#1a1b26',
+            // Edge-label text is light (#ccc); mermaid's default dark label background (#585858)
+            // gives only 4.43:1 (< AA 4.5). Pin a dark Tokyo-Night label background so edge labels
+            // (federation / supersedes / …) clear AA. (E4 cycle 154.)
+            edgeLabelBackground: '#1a1b26',
           }
         : {
             primaryColor: '#6d4bb8',
@@ -60,13 +64,18 @@ const diagramId = `mermaid-${Math.random().toString(36).slice(2, 9)}`;
       const chart = container.getAttribute('data-chart');
       if (!chart) continue;
       try {
-        const { svg } = await mermaid.render(`${container.id}-svg`, chart);
-        container.innerHTML = svg;
+        // Render IN PLACE via run() rather than render()+innerHTML. render() measures labels in a
+        // detached element where getBBox() returns 0 in this bundled context → dagre collapses to an
+        // empty svg (no viewBox, no nodes). run() lays out inside the attached, visible container.
+        container.textContent = chart;
+        container.classList.add('mermaid');
         container.removeAttribute('data-chart');
+        await mermaid.run({ nodes: [container as HTMLElement] });
         // Mark rendered SVG as presentational — container has the accessible name
         const svgEl = container.querySelector('svg');
         if (svgEl) svgEl.setAttribute('aria-hidden', 'true');
       } catch (e) {
+        container.classList.remove('mermaid');
         container.innerHTML = `<pre><code>${chart}</code></pre>`;
       }
     }

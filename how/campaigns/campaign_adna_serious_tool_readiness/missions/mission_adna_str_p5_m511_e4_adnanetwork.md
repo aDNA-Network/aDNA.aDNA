@@ -12,7 +12,7 @@ opens_at: 2026-06-04
 opened_session: session_stanley_20260604T192658Z_v8_m511_e4_open
 status: active
 estimated_sessions: 3-4   # E4 decadal: design (Stages 0-4) + data foundation + build III cycles (150-~159) + AAR
-actual_sessions: 4   # S1 (c150) open+data+topology; S2 (c151) /network page bands 1-3; S3 (c152) run-a-node band + participation CTA (RLP Gap #1); S4 (c153) govern-&-trust band (RLP Gap #4 partial) — /network bands 1-5 COMPLETE
+actual_sessions: 5   # S1 (c150) open+data+topology; S2 (c151) /network page bands 1-3; S3 (c152) run-a-node band + participation CTA (RLP Gap #1); S4 (c153) govern-&-trust band (RLP Gap #4 partial) — /network bands 1-5 COMPLETE; S5 (c154) /vaults relationship-block + graph round-trip — Network-Legibility item 4 (Navigability) CLOSED + 3 latent Mermaid-render bugs fixed (graph was blank + "(no data)")
 persona: rosetta
 last_edited_by: agent_stanley
 spec_completeness: full

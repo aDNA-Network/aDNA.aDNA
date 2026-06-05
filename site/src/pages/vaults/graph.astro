@@ -2,13 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
 import vaultsData from '../../data/vaults.json';
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+// Vite `?raw` resolves the .mmd at build correctly. The prior fs.readFileSync(path.resolve(__dirname,…))
+// missed the file (in the built bundle import.meta.url points at the chunk, not the source) → the graph
+// silently fell back to "(no data)". (E4 cycle 154 fix.)
+import graphChart from '../../data/vaults_graph.mmd?raw';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const graphPath = path.resolve(__dirname, '../../data/vaults_graph.mmd');
-const chart = fs.existsSync(graphPath) ? fs.readFileSync(graphPath, 'utf-8') : 'flowchart LR\n  empty["(no data)"]';
+const chart = (graphChart && graphChart.trim()) ? graphChart : 'flowchart LR\n  empty["(no data)"]';
 
 const edgeCount = (vaultsData as any).edges?.length ?? 0;
 const vaultCount = (vaultsData as any).vault_count ?? 0;
@@ -22,12 +21,21 @@ const legend = [
   { key: 'companion', sample: 'dashed', meaning: 'a sibling persona-pair or thematic family' },
   { key: 'supersedes', sample: 'super', meaning: 'a successor replaced its predecessor (lifecycle)' },
 ];
+
+// Client round-trip map (E4 cycle 154): `label` is the Mermaid node text (the vault name, as the .mmd
+// renders it), `name` is the friendly display name for the back-link, `slug` routes to /vaults/<slug>/.
+const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
+  slug: v.vault_slug, name: v.display_name, label: v.vault,
+}));
 ---
 
 <BaseLayout title="The aDNA network — relationship graph" description="The federation topology of the aDNA network: every edge is a real, directed relationship drawn from vault governance — umbrella, federation, partner, companion, supersedes.">
   <main class="vaults-graph">
     <section class="vaults-graph-hero">
-      <p class="vault-breadcrumb"><a href="/vaults/">&larr; The Lattice</a></p>
+      <p class="vault-breadcrumb">
+        <a href="/vaults/">&larr; The Lattice</a>
+        <a id="graph-back-link" class="graph-back-link" href="/vaults/" hidden>&larr; Back to <span id="graph-back-name"></span></a>
+      </p>
       <h1>The network, drawn</h1>
       <p class="lede">
         {vaultCount} vaults, {edgeCount} relationships. Every edge is <strong>real and directed</strong>,
@@ -48,14 +56,89 @@ const legend = [
       </ul>
     </section>
 
+    <p class="graph-tip">Select any node to open its vault. Each vault links back here from its own relationship block.</p>
+
     <MermaidDiagram chart={chart} caption="The aDNA network — cross-vault federation topology" />
   </main>
+
+  <script type="application/json" id="vault-name-map" set:html={JSON.stringify(vaultNameMap)} is:inline></script>
+  <script>
+    // Round-trip cross-links (E4 cycle 154 — Network-Legibility item 4, navigability).
+    // The graph SVG is decorative (aria-hidden; the container carries the accessible name), so node
+    // navigation is a pointer affordance via click handlers on the non-focusable <g> groups — NOT
+    // focusable <a> anchors (which would trip axe aria-hidden-focus). The accessible/keyboard path is
+    // the /vaults/ index. A `?focus=<slug>` arrival signs the round-trip ("← Back to {vault}" + highlight).
+    function initGraphRoundTrip() {
+      const container = document.querySelector('.mermaid-container');
+      if (!container) return;
+      let pairs: { slug: string; name: string; label: string }[] = [];
+      try { pairs = JSON.parse(document.getElementById('vault-name-map')?.textContent || '[]'); } catch { /* noop */ }
+      // Longest labels first so a short vault name cannot pre-empt a longer node's text.
+      const byLabel = pairs.slice().sort((a, b) => b.label.length - a.label.length);
+
+      const focus = new URLSearchParams(location.search).get('focus');
+      const focusName = focus ? pairs.find((p) => p.slug === focus)?.name : null;
+      if (focus && focusName) {
+        const back = document.getElementById('graph-back-link');
+        const nameSpan = document.getElementById('graph-back-name');
+        if (back && nameSpan) {
+          back.setAttribute('href', `/vaults/${focus}/`);
+          nameSpan.textContent = focusName;
+          back.hidden = false;
+        }
+      }
+
+      let tries = 0;
+      function wire() {
+        // Poll until the NODES exist (not merely the <svg> shell) — the 40-node graph renders the
+        // svg element before its node groups are populated, so keying off the svg wired nothing.
+        const nodes = container.querySelectorAll('svg g.node');
+        if (nodes.length === 0) { if (tries++ < 300) requestAnimationFrame(wire); return; }
+        nodes.forEach((node) => {
+          const el = node as HTMLElement;
+          if (el.dataset.rtWired) return; // idempotent across astro:page-load re-fires
+          const text = (node.textContent || '').trim();
+          if (!text) return;
+          const match = byLabel.find((p) => text.indexOf(p.label) !== -1);
+          if (!match) return;
+          el.dataset.rtWired = '1';
+          el.style.cursor = 'pointer';
+          node.addEventListener('click', () => { location.href = `/vaults/${match.slug}/`; });
+          if (focus && match.slug === focus) {
+            node.classList.add('graph-focus');
+            const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+            node.scrollIntoView({ block: 'center', inline: 'center', behavior: reduce ? 'auto' : 'smooth' });
+          }
+        });
+      }
+      requestAnimationFrame(wire);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initGraphRoundTrip);
+    } else {
+      initGraphRoundTrip();
+    }
+    document.addEventListener('astro:page-load', initGraphRoundTrip);
+  </script>
 </BaseLayout>
 
 <style>
   .vaults-graph { max-width: 100%; padding: var(--space-8, 2rem) 1rem; }
   .vaults-graph-hero { max-width: 72ch; margin: 0 auto var(--space-6, 1.5rem); }
   .vault-breadcrumb { color: var(--color-text-muted); }
+  .graph-back-link { margin-left: 1rem; color: var(--color-link); }
+  /* Pointer affordance hint — the click target itself is wired client-side. */
+  .graph-tip { max-width: 72ch; margin: 0 auto var(--space-4, 1rem); color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }
+
+  /* Focus highlight when arriving via ?focus=<slug> — cyan link stroke (within the ≤2-colour budget),
+     !important to override Mermaid's inline node stroke. Global: the SVG is rendered by the island. */
+  :global(.mermaid-container g.graph-focus rect),
+  :global(.mermaid-container g.graph-focus polygon),
+  :global(.mermaid-container g.graph-focus path) {
+    stroke: var(--color-link) !important;
+    stroke-width: 3px !important;
+  }
   .vaults-graph-hero h1 { margin: 0.25rem 0 0.75rem; }
   .lede { color: var(--color-text); line-height: 1.6; }
 

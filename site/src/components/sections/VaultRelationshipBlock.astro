@@ -1,27 +1,14 @@
 ---
+// Typed-list-only (E4 cycle 154): the per-vault relationships render as a polished typed list — no
+// client Mermaid on the 40 detail pages (keeps them fast + CLS-clean; Perf-100 doctrine). The visual
+// graph is one focus-linked click away on /vaults/graph (which renders the full 40-node topology).
 interface Props { vault: any; allEdges: any[]; allVaults: any[]; }
 const { vault, allEdges, allVaults } = Astro.props;
 
+const nameOf = (slug: string) => allVaults.find((x: any) => x.vault_slug === slug)?.display_name ?? slug;
+
 const outgoing = allEdges.filter((e: any) => e.source === vault.vault_slug);
 const incoming = allEdges.filter((e: any) => e.target === vault.vault_slug);
-
-const allRelated = new Set([
-  ...outgoing.map((e: any) => e.target),
-  ...incoming.map((e: any) => e.source),
-  vault.vault_slug,
-]);
-
-// Build mini-graph mermaid DSL
-const lines = ['flowchart LR'];
-for (const slug of allRelated) {
-  const v = allVaults.find((x: any) => x.vault_slug === slug);
-  if (!v) continue;
-  lines.push(`  ${slug}["${v.display_name}"]`);
-}
-for (const e of outgoing) lines.push(`  ${e.source} -->|${e.type}| ${e.target}`);
-for (const e of incoming) lines.push(`  ${e.source} -->|${e.type}| ${e.target}`);
-
-const miniChart = lines.join('\n');
 const hasEdges = outgoing.length + incoming.length > 0;
 ---
 
@@ -29,15 +16,40 @@ const hasEdges = outgoing.length + incoming.length > 0;
   <h2>Cross-vault relationships</h2>
   {hasEdges ? (
     <>
-      <p>{outgoing.length} outgoing · {incoming.length} incoming</p>
-      <pre class="mermaid-inline"><code>{miniChart}</code></pre>
-      <ul>
-        {outgoing.map((e: any) => <li><strong>{e.type}</strong> &rarr; <a href={`/vaults/${e.target}/`}>{e.target}</a></li>)}
-        {incoming.map((e: any) => <li><a href={`/vaults/${e.source}/`}>{e.source}</a> <strong>&larr; {e.type}</strong></li>)}
+      <p class="rel-count">{outgoing.length} outgoing · {incoming.length} incoming</p>
+      <ul class="rel-list">
+        {outgoing.map((e: any) => (
+          <li>
+            <span class="rel-type">{e.type}</span>
+            <span class="rel-arrow" aria-hidden="true">&rarr;</span>
+            <a href={`/vaults/${e.target}/`}>{nameOf(e.target)}</a>
+          </li>
+        ))}
+        {incoming.map((e: any) => (
+          <li>
+            <a href={`/vaults/${e.source}/`}>{nameOf(e.source)}</a>
+            <span class="rel-arrow" aria-hidden="true">&larr;</span>
+            <span class="rel-type">{e.type}</span>
+          </li>
+        ))}
       </ul>
     </>
   ) : (
     <p>No cross-vault edges declared yet.</p>
   )}
-  <p><a href="/vaults/graph/">View full relationship graph &rarr;</a></p>
+  <p class="rel-graph-link"><a href={`/vaults/graph/?focus=${vault.vault_slug}`}>View the full relationship graph &rarr;</a></p>
 </section>
+
+<style>
+  /* Tokens, not hardcoded greys — AA on the dark-first Tokyo-Night background, both modes. */
+  .vault-relationships { margin: var(--space-6, 1.5rem) 0; }
+  .rel-count { color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }
+  .rel-list { list-style: none; margin: var(--space-4, 1rem) 0; padding: 0; display: grid; gap: 0.5rem; }
+  .rel-list li { display: flex; align-items: baseline; gap: 0.5rem; line-height: 1.4; }
+  /* Typed edge label — mono; the type is the relationship, the link is the vault. */
+  .rel-type { font-family: var(--font-mono); font-size: var(--text-xs, 0.8rem); color: var(--color-text); }
+  .rel-arrow { color: var(--color-link); }
+  .rel-list a { color: var(--color-link); }
+  .rel-graph-link { margin-top: var(--space-4, 1rem); }
+  .rel-graph-link a { color: var(--color-link); }
+</style>
