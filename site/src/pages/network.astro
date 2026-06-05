@@ -6,11 +6,12 @@ import { buildWebPageJsonLD } from '../utils/seo';
 import vaultsData from '../data/vaults.json';
 import heroNetwork from '../assets/heroes/hero_network.png';
 
-// E4 cycle 151 — the `/network` narrative surface (design spec Stage 2/3, bands 1–3).
+// E4 cycles 151–153 — the `/network` narrative surface (design spec Stage 2/3, bands 1–5).
 // Hero (sparse) → "A network of real relationships" diagram-as-proof → "What is an aDNA
 // computer?" (the local-by-default / opt-in-federation boundary, Standing Rule 4) →
-// "The topology at a glance" (typed taxonomy + counts → /vaults/graph). The run-a-node
-// onboarding (cycle 152) and the govern-&-trust anchor (cycle 153) are deferred by design.
+// "The topology at a glance" (typed taxonomy + counts → /vaults/graph) → "Run a node"
+// onboarding + participation CTA (cycle 152) → "Governed in the open" trust-anchor + the
+// public-good ethos close (cycle 153; RLP Gap #4). Sparse→Medium→Medium→Dense→Sparse.
 
 const description =
   'An aDNA computer is one machine carrying many context vaults. See how nodes connect through real, directed relationships — and what stays local versus what you federate.';
@@ -181,6 +182,31 @@ claude</code></pre>
       </div>
     </div>
   </section>
+
+  <!-- Band 5 · Govern & trust (the sparse trust-anchor close; RLP Gap #4 partial — full org surface is E3) -->
+  <section class="net-govern">
+    <div class="section-inner">
+      <h2 class="section-title">Governed in the open</h2>
+      <p class="section-subtitle">
+        The network is a commons, not a silo. The standard that holds it is openly specified and openly
+        governed &mdash; a named steward, a public process for proposing change, and every decision on the record.
+      </p>
+      <ul class="gov-signals" aria-label="How the aDNA standard is governed">
+        <li class="gov-tag">Founding-Architect stewardship</li>
+        <li class="gov-tag">Open spec &middot; MIT</li>
+        <li class="gov-tag">Public change process</li>
+        <li class="gov-tag">Quarterly standard cadence</li>
+      </ul>
+      <div class="gov-cta">
+        <a href="/reference/governance-model/" class="btn btn-primary" data-astro-prefetch>Read the governance model &rarr;</a>
+        <a href="/community/" class="btn btn-secondary" data-astro-prefetch>Join the community &rarr;</a>
+      </div>
+      <p class="gov-ethos">
+        Language and DNA are our shared heritage. So is context &mdash; the accumulated understanding of a
+        civilization, held in common and stewarded for the generations that inherit it.
+      </p>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
@@ -209,7 +235,8 @@ claude</code></pre>
   .net-proof,
   .net-node,
   .net-topology,
-  .net-run {
+  .net-run,
+  .net-govern {
     padding: var(--space-24) 0;
     overflow-x: hidden;
   }
@@ -442,6 +469,49 @@ claude</code></pre>
     flex-wrap: wrap;
   }
 
+  /* ——— Band 5 · govern & trust (trust-anchor close; mirrors homepage .the-standard) ——— */
+  /* Non-link trust facts (the on-page governance scent); the CTAs below carry the navigation. */
+  .gov-signals {
+    list-style: none;
+    margin: 0 auto var(--space-10);
+    padding: 0;
+    max-width: 48rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .gov-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25em 0.75em;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    letter-spacing: 0.03em;
+  }
+
+  .gov-cta {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* The ethos close — one muted manifesto line that lands the page (shown, not preached). */
+  .gov-ethos {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-base);
+    max-width: 38rem;
+    margin: var(--space-12) auto 0;
+    line-height: 1.7;
+  }
+
   /* ——— Responsive ——— */
   @media (max-width: 700px) {
     .boundary {
@@ -462,7 +532,8 @@ claude</code></pre>
     .net-proof,
     .net-node,
     .net-topology,
-    .net-run {
+    .net-run,
+    .net-govern {
       padding: var(--space-12) 0;
     }
   }
