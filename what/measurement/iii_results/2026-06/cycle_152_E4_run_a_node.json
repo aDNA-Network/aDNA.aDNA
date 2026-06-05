@@ -1,0 +1,58 @@
+{
+  "cycle": 152,
+  "decadal": "E4",
+  "decadal_cycle": 3,
+  "mission": "mission_adna_str_p5_m511_e4_adnanetwork",
+  "slug": "e4_run_a_node",
+  "date": "2026-06-05",
+  "session": "session_stanley_20260605T064822Z_v8_m511_e4_c152_run_a_node",
+  "theme": "E4 cycle 3 — add the Dense 'Run a node' band + the participation CTA to /network (design-spec Stage 2, per-cycle row 152). Three numbered onboarding steps in the get-started register (bootstrap the node -> stays local by default -> opt into federation), threading the band-2 local/shared boundary as the spine, closed by the participation CTA (RLP Gap #1 / Network-Legibility rubric item 5, 'join scent'). Band 5 'Govern & trust' (RLP Gap #4 full) deferred to cycle 153 by design.",
+  "register": "Tokyo Night dark-first; honest-topology (the CTA targets resolve to real existing routes -- /get-started/ and /reference/ -- no invented /run-a-node page promising a flow that doesn't ship); ethos shown-not-preached (joining the commons is 'an explicit, reviewable act ... one decision at a time' -- the operator's choice, never a silent default); writing-guidelines AVOID honored (no marketing adjectives; sentences <=25 words; actor named).",
+  "operator_scope": "Cycle 152 = the single new Dense band + its participation CTA on /network. No new route, no deploy, no Band-5 govern-&-trust (that is c153). Operator pre-ratified the E4 scope + the /network surface at the epic-open gate (cycle 150).",
+  "iii_7step": {
+    "measure": "/network (cycle 151) explained WHAT the network is (node = Home.aDNA + vaults) and WHERE the local/shared boundary sits, but never answered the visitor's 'how do I run a node and join?'. Network-Legibility rubric item 5 (join scent) was only PARTIAL; the E1 RLP Gap #1 (participation CTA) was the load-bearing open item carried from the E1 decadal close.",
+    "orient": "Pure assembly, no new machinery: the get-started page already establishes the numbered-step + code-block onboarding register; the global .btn / .btn-primary / .btn-secondary classes are AA-verified both modes (global.css comments document the dark-mode 5.8:1 / 4.7:1 contrast); the .section-inner scaffold + the .net-* alternating-band pattern already live in network.astro. The only genuinely new content is one band of copy (3 steps) + a CTA wired to two real routes.",
+    "select": "Append one band after band 3 (topology-at-a-glance), keeping the doctrine density arc Sparse->Medium->Medium->Dense. Render the band on --color-bg-alt (same device as .net-node) so it reads distinct from the default-ground topology band above it. Reuse the global button classes for the CTA rather than rolling a bespoke one (guarantees AA both modes). Point the CTA at /get-started/ (primary) + /reference/ (secondary) -- the real start + standard surfaces -- not an invented node-onboarding page. Defer Band 5 to c153.",
+    "implement": "site/src/pages/network.astro ONLY: the Dense .net-run band (an <ol class=run-steps> of 3 .run-step items with a cyan circled .run-step-no marker + a body; step 1 carries an inline <pre class=run-code> git-clone/claude block) + the .run-cta (a.btn.btn-primary 'Run your first node' -> /get-started/ + a.btn.btn-secondary 'Read the standard' -> /reference/); scoped <style> for .net-run / .run-steps / .run-step / .run-step-no / .run-step-body / .run-code / .run-cta; .net-run added to the shared band-padding rule + the bg-alt group + the 480px mobile padding-reduction. Zero new JS / motion / images.",
+    "re_measure": "build PASS 162 pages (unchanged -- same-route addition); prebuild data regen idempotent apart from a generated_at date stamp (reverted, topology byte-identical). Lighthouse /network Perf 98 / A11y 100 / BP 100 / SEO 100 (LCP 2.1s, CLS 0, TBT 0ms) -- PROVEN perf-neutral (see validation).",
+    "validate": "see validation block",
+    "record": "this JSON + cycle log in the session + mission/STATE cascade"
+  },
+  "change_summary": [
+    "site/src/pages/network.astro -- appended Band 4 'Run a node' (Dense): an ordered list of 3 numbered onboarding steps in the get-started register -- (1) 'Bootstrap your node' (clone the template + run claude -> the Home.aDNA node interview; inline git-clone/cd/claude code block), (2) 'Everything stays local by default' (local-first; vaults/history/inventory/credentials stay until you send them, Standing Rule 4 -- the band-2 stays-local spine), (3) 'Opt into federation' (publish a vault / declare a relationship / join a lattice -- an explicit, reviewable act, the opt-in spine); closed by the participation CTA (primary .btn-primary 'Run your first node' -> /get-started/, secondary .btn-secondary 'Read the standard' -> /reference/)",
+    "site/src/pages/network.astro <style> -- scoped .net-run (on --color-bg-alt, in the shared band-padding + mobile-reduction groups) + .run-steps (one-organizing-principle numbered grid) + .run-step (auto/1fr) + .run-step-no (cyan --color-link circled marker) + .run-step-body + .run-code (surface/border code block, overflow-x auto for mobile) + .run-cta (centered button row, wrap)"
+  ],
+  "doctrine_compliance": {
+    "honest_topology": "PASS -- the participation CTA points only at routes that exist (/get-started/ + /reference/, both verified present in dist); no invented /run-a-node page promising a flow the project doesn't ship; the Home.aDNA node interview described is the real root-CLAUDE.md Step-0 bootstrap",
+    "two_fighting_colors": "PASS -- cyan --color-link (the numbered step markers + the inherited link signal) + purple --color-primary (the primary CTA via the global .btn-primary) -- the same pair band 2 uses; amber accent untouched; no new colors",
+    "motion_budget": "PASS -- zero new motion; no JS added to the page; prefers-reduced-motion unaffected",
+    "no_marketing_adjectives": "PASS -- copy is factual ('one machine on your own', 'local-first', 'an explicit, reviewable act ... one decision at a time'); no AVOID-list adjectives (no 'blazingly fast / effortless / revolutionary / delightful'); sentences <=25 words; actor named (you / the agent / it)",
+    "dual_audience": "PASS -- developers read git-clone/claude + Home.aDNA + Standing Rule 4 + publish/declare/join; newcomers read 'three steps from nothing to a governed node that decides what it shares'",
+    "engine_files_unedited": "PASS -- skill_iii_cycle / skill_site_design_pipeline / skill_decadal_aar + all runners untouched; only network.astro modified",
+    "dark_first": "PASS -- BaseLayout dark default; band verified both modes (gate-4 dark + ad-hoc light probe)"
+  },
+  "validation": {
+    "build": "PASS -- astro build 162 pages, 0 errors; prebuild data regen idempotent apart from the generated_at date stamp (reverted: source_inventory_sha + all 22 edges + vault_count byte-identical)",
+    "playwright_gates": "65/65 PASS -- no route change, so no gate edits; /network was already in gate-4 (axe AA) / gate-6 (meta) / gate-9 (responsive x5 viewports), and all re-passed with the new band (incl. mobile_small 320px no-horizontal-overflow -- the code block's overflow-x:auto contains the longest line)",
+    "axe_wcag_aa": "0 violations BOTH modes -- dark via the gate-4 suite (Network page, zero WCAG AA); light via an ad-hoc @axe-core/playwright probe (addInitScript localStorage theme=light; asserted .dark absent), 0 violations (E1 both-modes lesson; throwaway spec, removed after the run)",
+    "lighthouse": {
+      "network": "Perf 98 / A11y 100 / BP 100 / SEO 100 -- LCP 2.1s, CLS 0, TBT 0ms (default-throttled npx lighthouse 13.3.0, headless, 3 consecutive runs all 98/2.1s -- stable, not noise)",
+      "perf_neutrality_proof": "PROVEN perf-neutral: the pre-c152 committed page (git show HEAD:network.astro, rebuilt) scores the IDENTICAL 98 / LCP 2.1s under the same default-throttled npx lighthouse (2 runs). The new band is below-the-fold static content and does not touch the hero LCP element. The '100 / LCP 0.5s' in c151's notes was a different measurement method (gate/desktop-preset/warm-cache), NOT a regression introduced this cycle. A11y/BP/SEO hold at 100/100/100.",
+      "evidence": "/tmp lighthouse JSON (throwaway; scores recorded here)"
+    }
+  },
+  "network_legibility_self_check": {
+    "1_node_clarity": "HELD -- band 2 'What is an aDNA computer?' carries it; the run-a-node steps reinforce node = your machine + Home.aDNA",
+    "2_edge_honesty": "HELD -- unchanged this cycle (topology bands untouched)",
+    "3_local_shared_boundary": "REINFORCED -- the band-2 boundary is now the spine of the onboarding (step 2 stays-local / step 3 opt-into-federation)",
+    "4_navigability": "PARTIAL -- /network -> /get-started/ + /reference/ added; full vault<->relationship round-trip polish is still cycle 154",
+    "5_join_scent": "ADDRESSED -- the explicit run-a-node onboarding + the participation CTA answer 'how do I run a node / participate' from the surface (closes the E1 RLP Gap #1 open item for the join-scent dimension)"
+  },
+  "deferred_to_153plus": [
+    "Band 5 'Govern & trust' anchor -- the governance/standard trust-anchor link + ethos close (RLP Gap #4 full) -- cycle 153",
+    "VaultRelationshipBlock visual polish + vault<->graph round-trip cross-links -- cycle 154",
+    "Network-Legibility rubric measure passes (Diagram-Reviewer / Node-Operator / IA lenses) -- cycles 155-158"
+  ],
+  "deploy": "NOT deployed this session -- /network bundles with a later E4 deploy (cycle 150/151 precedent; avoids the recurring SS_VERCEL_TOKEN CLI-leak path for an internal change). Build + 65/65 gates + light-probe + Lighthouse green locally.",
+  "notes": "Cycle 152 was the smallest E4 cycle yet -- one band of copy + a two-button CTA on an established scaffold, with the global .btn classes doing the AA-both-modes heavy lifting for free. Honest-topology was the only real judgment call: the design spec says 'reusing the get-started register', and the Home.aDNA node-bootstrap is real in the workspace but NOT a published site page, so the CTA points at /get-started/ (the real start flow) + /reference/ (the standard) rather than inventing a /run-a-node route -- a dedicated node-onboarding guide is a candidate for cycle 154+. NEW SEED (carried, not new this cycle): the gates remain dark-only; the light-mode axe check is still an ad-hoc per-cycle probe -- a light-mode loop in gate-4 would make the E1 both-modes lesson a permanent gate. METHOD NOTE: when a perf score looked like a regression (98 vs c151's noted 100), the rigorous move was to rebuild the prior committed page and measure it under identical conditions -- it scored the same 98, proving perf-neutrality and that the earlier 100 was a methodology difference, not a real prior state."
+}
