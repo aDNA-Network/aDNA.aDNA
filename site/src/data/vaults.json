@@ -111,9 +111,9 @@
       "type": "federation"
     }
   ],
-  "generated_at": "2026-06-04",
+  "generated_at": "2026-06-06",
   "schema_version": "0.2",
-  "source_inventory_sha": "e58b62e7cccadddd",
+  "source_inventory_sha": "bfdce8646cdc7dbb",
   "vault_count": 40,
   "vaults": [
     {
@@ -553,7 +553,7 @@
       "vault_slug": "LAVentureGraph.aDNA"
     },
     {
-      "canonical_governance": "aDNANetwork.aDNA/CLAUDE.md",
+      "canonical_governance": "Network.aDNA/CLAUDE.md",
       "card_present": true,
       "class": "network",
       "companion_vaults": [],
@@ -567,9 +567,9 @@
       "headline_adrs": [],
       "headline_mission": null,
       "headline_mission_state": null,
-      "last_synced": "2026-05-24",
+      "last_synced": "2026-06-06",
       "lifecycle_stage": null,
-      "note": "Master/Einstein-node state/membership/operations graph of the Alpha Lattice. LIP-0006 provisional. campaign_alphalattice_genesis Phase 3 (Skeleton) open; dual-substrate Tailscale+Nebula federation live. Renamed from LatticeNetwork.aDNA (Operation Rosetta, on-disk 2026-05-31; LatticeNetwork.aDNA back-compat symlink live). Local inventory uses the canonical name; the cross-vault reference sweep stays Rosetta's.",
+      "note": "Master/Einstein-node state/membership/operations graph of the Alpha Lattice. LIP-0006 provisional. campaign_alphalattice_genesis Phase 3 (Skeleton) open; dual-substrate Tailscale+Nebula federation live. Renamed AlphaLattice.aDNA -> LatticeNetwork.aDNA -> aDNANetwork.aDNA -> Network.aDNA (Network.aDNA on-disk canonical since 2026-05-31; aDNANetwork.aDNA + LatticeNetwork.aDNA back-compat symlinks live). Inventory canonical-name catch-up 2026-06-06 (was aDNANetwork.aDNA), consumed by aDNA.aDNA E4 c156 graph regen; the cross-vault credential/membership reference sweep stays Rosetta's.",
       "persona": "Venus",
       "persona_archetype": "venus",
       "recent_closed": [],
@@ -580,8 +580,8 @@
       "supersedes": null,
       "tagline": null,
       "umbrella_pillar": null,
-      "vault": "aDNANetwork.aDNA",
-      "vault_slug": "aDNANetwork.aDNA"
+      "vault": "Network.aDNA",
+      "vault_slug": "Network.aDNA"
     },
     {
       "canonical_governance": "Home.aDNA/CLAUDE.md",

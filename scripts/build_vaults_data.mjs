@@ -254,16 +254,47 @@ const edgeStyles = {
 // Mermaid node ids must be free of dots/dashes; labels keep the real vault name. Edges are new
 // in E4, so the previously-untested dotted ids are normalized here for node defs AND endpoints.
 const mmId = (s) => String(s).replace(/[^a-zA-Z0-9_]/g, '_');
-const mmdLines = ['flowchart LR'];
-for (const v of projectedVaults) {
+const nodeLine = (v, indent) => {
   const label = v.persona ? `${v.vault}<br><sub>${v.persona}</sub>` : v.vault;
-  mmdLines.push(`  ${mmId(v.vault_slug)}["${label}"]:::class${v.class.replace(/_/g, '')}`);
+  return `${indent}${mmId(v.vault_slug)}["${label}"]:::class${v.class.replace(/_/g, '')}`;
+};
+
+// Partition nodes by whether they carry any cited edge. Connected nodes render at top level; the
+// unconnected set is grouped into a labelled subgraph so the honest-sparse topology reads as an
+// intentional holding area ("not yet linked") rather than a broken render — the deeper edge-honesty
+// fix the c155 measure cycle deferred here. (E4 c156.)
+const connectedSlugs = new Set();
+for (const e of edges) { if (e.source) connectedSlugs.add(e.source); if (e.target) connectedSlugs.add(e.target); }
+const connectedVaults = projectedVaults.filter((v) => connectedSlugs.has(v.vault_slug));
+const orphanVaults = projectedVaults.filter((v) => !connectedSlugs.has(v.vault_slug));
+
+const mmdLines = ['flowchart LR'];
+for (const v of connectedVaults) mmdLines.push(nodeLine(v, '  '));
+if (orphanVaults.length) {
+  mmdLines.push('');
+  mmdLines.push(`  subgraph orphans["Not yet linked: ${orphanVaults.length} vaults with no cited relationship"]`);
+  mmdLines.push('    direction TB');
+  for (const v of orphanVaults) mmdLines.push(nodeLine(v, '    '));
+  mmdLines.push('  end');
 }
 mmdLines.push('');
+
+// Edges (between connected nodes). Track the LINK index of each supersedes edge (emitted-link
+// counter, not array index — robust to any skipped edge) so it can be given a distinct stroke below.
+let linkIdx = 0;
+const supersedesIdx = [];
 for (const e of edges) {
   if (!e.source || !e.target) continue;
   const arrow = edgeStyles[e.type] || '-->';
   mmdLines.push(`  ${mmId(e.source)} ${arrow} ${mmId(e.target)}`);
+  if (e.type === 'supersedes') supersedesIdx.push(linkIdx);
+  linkIdx++;
+}
+// Distinct supersedes stroke: long-dash + thicker, deliberately NOT a colour override — this keeps
+// the island's theme-aware lineColor (AA on both the dark and light canvases; a fixed colour can't
+// clear 3:1 graphical contrast on both) while reading clearly apart from companion's fine dash. (E4 c156.)
+if (supersedesIdx.length) {
+  mmdLines.push(`  linkStyle ${supersedesIdx.join(',')} stroke-width:2.5px,stroke-dasharray:10 6`);
 }
 mmdLines.push('');
 for (const [cls, color] of Object.entries(classColors)) {

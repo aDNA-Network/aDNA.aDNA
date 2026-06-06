@@ -75,6 +75,18 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
     <p class="graph-tip">Select any node to open its vault — or browse them all on the <a href="/vaults/">vault index</a>. Each vault page links back to this graph.</p>
 
     <MermaidDiagram chart={chart} caption="The aDNA network — cross-vault federation topology" />
+
+    {/* Keyboard node-twin (E4 c156): the SVG is decorative (aria-hidden) and its nodes are wired for
+        pointer only, so this is the focusable/AT-navigable mirror of the graph — one real anchor per
+        node, in the same order the .mmd defines them. Visually hidden; revealed on keyboard focus. */}
+    <nav class="graph-node-list visually-hidden" aria-label="Open a vault from the network graph">
+      <h2>Vaults in the graph</h2>
+      <ul>
+        {vaultNameMap.map((v) => (
+          <li><a href={`/vaults/${v.slug}/`}>{v.label}</a></li>
+        ))}
+      </ul>
+    </nav>
   </main>
 
   <script type="application/json" id="vault-name-map" set:html={JSON.stringify(vaultNameMap)} is:inline></script>
@@ -194,7 +206,9 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
   .le-thick { border-top-width: 4px; }
   .le-solid { border-top-width: 2px; }
   .le-dashed { border-top-style: dashed; }
-  .le-super { border-top-style: dashed; }
+  /* supersedes: thicker dashed (+ the 's' label below) so it reads apart from companion's thin dash,
+     mirroring the graph's long-dash/2.5px linkStyle (E4 c156). */
+  .le-super { border-top-style: dashed; border-top-width: 3px; }
   /* arrowhead for all */
   .le::after {
     content: '';
@@ -226,4 +240,35 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
     padding: 0 0.2rem;
     line-height: 1;
   }
+
+  /* ── Keyboard node-twin (E4 c156) ── the SR/keyboard mirror of the pointer-only graph nodes.
+     Visually hidden (clip-path, NOT display:none — display:none would drop it from the tab order),
+     then lifted into view when a keyboard user tabs into it (:focus-within), like a skip-link. */
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+  .graph-node-list.visually-hidden:focus-within {
+    position: static;
+    width: auto; height: auto;
+    margin: 0 auto var(--space-6, 1.5rem);
+    padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+    max-width: 72ch;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+    background: var(--color-bg-alt, var(--color-surface));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md, 0.5rem);
+  }
+  .graph-node-list h2 { font-size: var(--text-sm, 0.9rem); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin: 0 0 var(--space-3, 0.75rem); }
+  .graph-node-list ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; }
+  .graph-node-list a { color: var(--color-link); text-decoration: underline; }
 </style>
