@@ -199,6 +199,12 @@ const allEdges = nodes.map((n) => ({ x1: hub.cx, y1: hub.cy, x2: n.cx, y2: n.cy 
         { threshold: 0.35 }
       );
       io.observe(el);
+      // Safety fallback: if the 0.35 threshold is never met (short viewport, anchor
+      // landing, or no scroll), the armed diagram would stay invisible — and this is
+      // the page's marquee "real relationships" proof. Force the composed state after a
+      // short delay so it is always shown; data-in is idempotent, so a real scroll-in
+      // that fires sooner still plays the entrance. (E4 c158 — confirming-lens finding.)
+      setTimeout(() => el.setAttribute('data-in', ''), 1600);
     });
   })();
 </script>

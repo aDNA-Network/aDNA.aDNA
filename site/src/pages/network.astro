@@ -371,7 +371,10 @@ claude</code></pre>
   .le-thick { border-top-width: 4px; }
   .le-solid { border-top-width: 2px; }
   .le-dashed { border-top-style: dashed; }
-  .le-super { border-top-style: dashed; }
+  /* supersedes: thicker dash (+ the 's' label) so it reads apart from companion's thin dash —
+     mirrors /vaults/graph and the .mmd long-dash linkStyle, so the legend stops implying five
+     unique line styles when companion + supersedes share the dashed family (E4 c158 — Diagram-Reviewer). */
+  .le-super { border-top-style: dashed; border-top-width: 3px; }
   .le::after {
     content: '';
     position: absolute;
