@@ -175,6 +175,17 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
     stroke: var(--color-link) !important;
     stroke-width: 4px !important;
   }
+
+  /* The "Not yet linked" orphan cluster reads as a deliberately PARKED holding area — a muted,
+     dashed container border (pending, not active structure; the design-spec "subordinate the
+     parked nodes" cue) so the honest-sparse set looks held-by-design, not broken. The vault
+     nodes inside keep their full class styling; only the wrapping box is subordinated. The
+     deeper layout (Mermaid lays the edgeless set in one wide row) + the graph-render Perf fix
+     are paired for the c159 close. (E4 c157.) */
+  :global(.mermaid-container .cluster rect) {
+    stroke: var(--color-text-muted) !important;
+    stroke-dasharray: 6 5;
+  }
   .vaults-graph-hero h1 { margin: 0.25rem 0 0.75rem; }
   .lede { color: var(--color-text); line-height: 1.6; }
 

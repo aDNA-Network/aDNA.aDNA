@@ -53,7 +53,7 @@ const edgeTypes = [
     heroImage={heroNetwork}
     heroAlt="A wide bird's-eye pixel-art map of many small, independently lit settlements scattered across a dark Tokyo-Night ground, a few linked by glowing cyan and purple conduits — aDNA computers, each its own place, sparsely federated."
     title="The network of aDNA computers"
-    lead="An aDNA computer is one machine — a laptop, a server, a cloud box — carrying many context vaults (each a self-governing folder of project knowledge) under a single Home.aDNA vault. Nodes connect through real, directed relationships, and each node decides what stays local and what joins the shared commons — the registry other nodes can pull from."
+    lead="An aDNA computer is one machine — laptop, server, or cloud box — carrying many context vaults (self-governing folders of project knowledge) under a single Home.aDNA. Nodes connect through real, directed relationships, and each one decides what stays local and what joins the shared commons."
     primaryHref="/vaults/graph/"
     primaryLabel="See the relationship graph"
     secondaryHref="/vaults/"
@@ -146,6 +146,11 @@ const edgeTypes = [
         A node is a workspace on your own machine. Three steps take you from nothing to a governed
         node that decides what it shares — the same local-by-default boundary, made concrete.
       </p>
+      <ul class="run-meta" aria-label="What running a node takes">
+        <li>About five minutes</li>
+        <li>Needs <code>git</code> + the Claude Code CLI</li>
+        <li>Local-first — nothing leaves until you choose</li>
+      </ul>
 
       <ol class="run-steps">
         <li class="run-step">
@@ -160,8 +165,8 @@ const edgeTypes = [
 cd my-node
 claude</code></pre>
             <p class="run-note">
-              Takes about five minutes. Assumes <code>git</code> and the Claude Code CLI are installed —
-              see <a href="/get-started/" data-astro-prefetch>Get started</a> for the one-time setup.
+              See <a href="/get-started/" data-astro-prefetch>Get started</a> for the one-time setup —
+              installing <code>git</code> and the Claude Code CLI.
             </p>
           </div>
         </li>
@@ -426,6 +431,43 @@ claude</code></pre>
   }
 
   /* ——— Band 4 · run-a-node (numbered steps, one organizing principle) ——— */
+  /* Pull the subtitle tighter to the cue row below it (they are one thought: the pitch + the
+     commitment), so the cue row does not float in a space-10 gap. */
+  .net-run .section-subtitle {
+    margin-bottom: var(--space-5);
+  }
+
+  /* Commitment + safety cue row — front-loads the join-scent (what it takes, what stays
+     safe) so the barrier-to-entry is answerable before the steps, not buried in step 1. */
+  .run-meta {
+    list-style: none;
+    margin: 0 auto var(--space-12);
+    padding: 0;
+    max-width: 46rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-5);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .run-meta li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Cyan tick before each cue (the local/data signal; decorative). */
+  .run-meta li::before {
+    content: '';
+    flex: 0 0 auto;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--color-link);
+  }
+
   .run-steps {
     list-style: none;
     margin: 0 auto;

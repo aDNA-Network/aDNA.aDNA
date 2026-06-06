@@ -1,0 +1,100 @@
+{
+  "cycle": 157,
+  "decadal": "E4",
+  "decadal_cycle": 8,
+  "mission": "mission_adna_str_p5_m511_e4_adnanetwork",
+  "slug": "e4_iterate_helix_hero",
+  "date": "2026-06-06",
+  "session": "session_stanley_20260606T172438Z_v8_m511_e4_c157_iterate_helix_hero",
+  "theme": "E4 cycle 8 — a measure/iterate cycle (design-spec rows 155-158) closing the two still-undone named themes (responsive/mobile + copy tightening) plus the c156 orphan-shelf 'didn't' and a join-scent lift, PLUS an operator-added fifth thread: swap the homepage hero back toward the OLD aDNA banner (DNA helixes rising from computers) via III image planning + versions. Rubric was already GREEN after c156; this cycle iterates without a confirming-lens Workflow (operator decision — saved for c158/c159). III 7-step.",
+  "register": "Tokyo Night dark-first; <=2 fighting colors (cyan --color-link / purple --color-primary) — the band-4 cue ticks + orphan-cluster border reuse the existing cyan/muted tokens, no new accent; no new motion; no marketing adjectives; honest topology (orphan set stays NAMED + now visually subordinated, zero fabricated edges); the new homepage hero keeps the SS-Ghibli pixel register (still pixel-art; no baked text — the title composites live).",
+  "operator_scope": "Plan-gate AskUserQuestion: (1) NO confirming-lens Workflow this cycle (direct iterate; save the lens for c158/c159). (2) Scope = all four iterate threads (responsive/mobile + copy tightening + orphan-shelf polish + join-scent lift). (3) FIFTH operator-added thread: adjust the homepage hero back toward the old DNA-helix-from-computers banner via III planning + versions. (4) Mid-cycle pick gate: operator chose hero candidate r1_H2_v1 (helix -> network bridge). COMMIT-ONLY (E4 bundles its deploy later).",
+  "iii_7step": {
+    "measure": "git pull already-up-to-date (HEAD cfdec25 / c156). Baseline build 162pp/0err; gates green-by-inheritance (the clean pull changed nothing). Network-Legibility rubric GREEN after c156: node_clarity 4.5 / edge_honesty 5 / local_shared 5 / navigability 4.75 / join_scent 4 (lowest). The two design-spec measure/iterate themes still undone = responsive/mobile + copy tightening; c156 deferred the orphan-shelf layout 'didn't' + an optional confirming lens.",
+    "orient": "Read the 3 E4 surfaces + the hero stack. /network had only @media 700px+480px; gate-9 covered /network but NOT /vaults/graph or /vaults/[slug] (the 40-node Mermaid is the highest mobile risk). The hero swap is E1(closed) brand territory — operator-directed exception; HomeHero's default heroAlt describes the OLD isometric map and /network passes its own alt, so a homepage swap only needs index.astro (import + explicit alt). gate-11 requires the hero alt to match /pixel-art|wordmark/ — the SS-Ghibli helix is still pixel-art, so an honest 'pixel-art' alt keeps it green.",
+    "select": "Six threads: A1 responsive (add gate-9 coverage for /vaults/graph + /vaults/[slug], fix any overflow), A2 copy (tighten the /network hero lead), A3 orphan-shelf (subordinate the 'Not yet linked' cluster via a muted dashed border — light touch, NOT a custom-component rebuild; the layout + Perf fix pair for c159), A4 join-scent (front-load a commitment/safety cue row on band-4), B (clone the e1 hero runner -> e1_hero_helix_gen.py, generate helix candidates, operator picks, swap winner into the homepage).",
+    "implement": "A1: gate-9-responsive.spec.ts pages[] += /vaults/graph + /vaults/Harness.aDNA (the island's overflow-x:auto + svg max-width:100% already contain the wide graph — validated, not redesigned). A2: network.astro hero lead 75->~50 words (kept the inline 'vault' definition from c155; dropped the trailing registry clause band-2 covers). A3: graph.astro :global(.mermaid-container .cluster rect) muted-token dashed stroke (parked-holding-area cue). A4: network.astro band-4 .run-meta cue row ('About five minutes' / 'Needs git + the Claude Code CLI' / 'Local-first - nothing leaves until you choose') with cyan tick ::before, + trimmed the now-duplicated step-1 run-note (kept the Get-started link). FIRST .run-meta attempt used a negative top margin that OVERLAPPED the multi-line subtitle (caught by eyeball, not gates) -> fixed to a positive margin + a tighter .net-run .section-subtitle. B: e1_hero_helix_gen.py (3 helix directions H1/H2/H3, GHIBLI_TAIL reused, Ultra+fast-fallback); smoke H1 OK ($0.04), r1 fan-out 4/6 OK ($0.16; 2 hit Imagen's known empty-return, their pair variants succeeded); operator picked r1_H2_v1 -> published as hero_adna_helix.png + index.astro import swap + explicit pixel-art heroAlt.",
+    "re_measure": "build 162pp/0err. Full Playwright suite 86/86 (baseline 76 + 10 new gate-9 E4-surface tests; STATE's '73' was stale). axe gate-4 0 WCAG-AA BOTH modes on /network, /vaults/graph, /vaults/Harness.aDNA, homepage. Hero gates 10+11 green (incl. the alt-text gate now matching 'pixel-art'; aspect 1.778). Lighthouse desktop: home 100/96/100/100 (Perf 100 = hero-swap perf-neutral; A11y 96 = the pre-existing E1-baseline target-size item, NOT a regression — axe is 0 AA) / /network 100/100/100/100 (up from the 98 baseline) / /vaults/graph 100/100/100/100 (the c156 ~89 was the throttled-method dagre cost; Mermaid renders post-paint so the desktop preset reads clean — the c159 prerender deferral still stands as the robustness fix). Eyeballed dark+light, desktop+mobile (390px): band-4 cue row reads clean (post-fix), orphan cluster reads as a parked dashed holding area, homepage helix->network hero reads with the title legible over the scrim.",
+    "validate": "see validation block",
+    "record": "this JSON + session cycle log + STATE/mission cascade"
+  },
+  "self_score": {
+    "method": "Rosetta self-re-score (operator decision: no lens Workflow this cycle). Owning-lens framing retained from c155/c156.",
+    "network_legibility_rubric": {
+      "1_node_clarity": 4.75,
+      "2_edge_honesty": 5,
+      "3_local_shared_boundary": 5,
+      "4_navigability": 4.75,
+      "5_join_scent": 4.5
+    },
+    "rationale": {
+      "node_clarity_4.5_to_4.75": "The /network hero lead is tightened (75->~50 words) while keeping the inline 'vault' definition — the 'an aDNA computer = one machine + many vaults under one Home.aDNA' thought lands faster. Not a full 5 (self-score conservatism; the band-2 definitional copy is unchanged).",
+      "join_scent_4_to_4.5": "Band-4 now front-loads the commitment + safety as a scannable cue row (time, prereqs, local-first) BEFORE the steps, so 'what does it cost me to participate / is it safe' is answerable at a glance — the c155 Node-Operator concern's next increment. Not 5 because the join scent still lives only on /network (no homepage participation path; a c158/E-later item).",
+      "edge_honesty_held_5": "The orphan 'Not yet linked' cluster now reads as a deliberately PARKED holding area (muted dashed border) — reinforces the c156 structural win; zero fabricated edges. Held at 5.",
+      "navigability_held_4.75": "Responsive coverage added (gate-9 now guards /vaults/graph + /vaults/[slug] at 320/375px; the surfaces are contained at mobile), but the graph is small-but-whole on mobile (the keyboard twin + index remain the nav path) — held at 4.75; a confirming IA/Newcomer lens could move it to 5 (c158).",
+      "local_shared_held_5": "No change to the band-2 boundary content; held at 5."
+    },
+    "result": "No rubric item < 4; two items nudged up (node_clarity 4.5->4.75, join_scent 4->4.5). Rubric GREEN, mean lifted. A confirming lens Workflow (c158) can independently verify before the c159 close."
+  },
+  "homepage_hero_swap": {
+    "concept": "operator prefers the ORIGINAL aDNA banner (DNA helixes rising from computers; old ref on disk what/assets/banner.jpg) over the SS-Ghibli isometric-network map. Rendered in the CURRENT Tokyo Night register.",
+    "runner": "how/campaigns/campaign_adna_serious_tool_readiness/runners/e1_hero_helix_gen.py (cloned from e1_hero_adna_network_gen.py; reuses GHIBLI_TAIL + Keychain auth; 3 directions H1 triad-from-workspace / H2 helix-resolves-into-network / H3 helix-forest).",
+    "generation": "smoke H1 1/1 OK ($0.04); r1 all x2 = 4/6 OK ($0.16) — H1v1 + H3v1 hit Imagen's 'no images returned' empty-return (known; the pair variant of each succeeded). 5 usable candidates total.",
+    "operator_pick": "r1_H2_v1 (a central cyan DNA double-helix rising from a row of computers and branching at the top into a network of connected nodes — the literal 'shared inheritance resolves into the aDNA network' bridge).",
+    "wiring": "published candidate -> site/src/assets/heroes/hero_adna_helix.png (NEW name; the old hero_adna_network.png kept for rollback); index.astro import swap + explicit pixel-art heroAlt (HomeHero default unchanged; /network passes its own alt so it is unaffected).",
+    "image_gen_cost_usd": 0.20,
+    "image_gen_log": "what/measurement/iii_results/2026-06/cycle_157_e1_hero_helix.{smoke,r1}.image_gen_log.json"
+  },
+  "change_summary": [
+    "site/src/pages/network.astro — A2 hero lead tightened (75->~50 words, inline vault def kept); A4 band-4 .run-meta commitment/safety cue row (cyan-tick) + .net-run subtitle spacing + trimmed step-1 run-note duplication.",
+    "site/src/pages/vaults/graph.astro — A3 :global(.mermaid-container .cluster rect) muted dashed border so the 'Not yet linked' orphan cluster reads as a parked holding area (the layout + render-Perf fix pair for c159).",
+    "site/tests/gates/gate-9-responsive.spec.ts — A1 pages[] += /vaults/graph + /vaults/Harness.aDNA (10 new tests; 320/375/768/1024/1440 each); validates no horizontal overflow on the 40-node Mermaid + the vault detail at mobile.",
+    "site/src/pages/index.astro — B3 homepage hero import swap (hero_adna_network.png -> hero_adna_helix.png) + explicit pixel-art heroAlt describing the helix->network scene.",
+    "site/src/assets/heroes/hero_adna_helix.png — NEW published homepage hero (operator pick r1_H2_v1, 1408x792).",
+    "site/src/assets/heroes/candidates/helix_*.png — 5 generated candidates (smoke_H1_v1 + r1_H1_v2 + r1_H2_v1 + r1_H2_v2 + r1_H3_v2).",
+    "how/campaigns/campaign_adna_serious_tool_readiness/runners/e1_hero_helix_gen.py — NEW image-gen runner (helix direction set; cloned from the e1 hero runner).",
+    "what/measurement/iii_results/2026-06/cycle_157_E4_iterate_helix_hero.json + cycle_157_e1_hero_helix.{smoke,r1}.image_gen_log.json — cycle + image-gen logs."
+  ],
+  "doctrine_compliance": {
+    "honest_topology": "PASS — zero fabricated edges; the orphan set stays NAMED and is now visually subordinated (parked, not broken). The new hero is conceptual (helix->network) not a topology claim.",
+    "two_fighting_colors": "PASS — band-4 cue ticks + orphan-cluster border reuse the cyan --color-link / muted tokens; no new accent color. The hero stays within the Tokyo Night cyan/purple register.",
+    "motion_budget": "PASS — no new motion (the cue row is static; the orphan border is static).",
+    "no_marketing_adjectives": "PASS — new copy is plain (commitment cues, tightened lead, factual alt).",
+    "dual_audience": "PASS — newcomer/AT: tighter lead + scannable commitment cues + responsive coverage; operator/dev: the parked orphan cue + the helix->network hero.",
+    "engine_files_unedited": "PASS — skill_iii_cycle / skill_site_design_pipeline / skill_decadal_aar UNTOUCHED. NEW runner e1_hero_helix_gen.py is a cycle artifact (cloned), not an engine edit. The ADR-023 generator (build_vaults_data.mjs) was NOT touched this cycle (A3 is site-CSS only) -> vaults.json/.mmd byte-identical.",
+    "cross_vault_boundary": "PASS — only aDNA.aDNA paths; NO Home.aDNA / .adna / cross-vault writes this cycle.",
+    "e1_closed_territory": "OPERATOR-DIRECTED EXCEPTION — the homepage hero is E1(closed) brand territory; the swap is operator-requested + commit-only (live at the next deploy)."
+  },
+  "validation": {
+    "build": "PASS — astro build 162 pages, 0 errors.",
+    "playwright_gates": "86/86 PASS (baseline 76 + 10 new gate-9 E4-surface tests).",
+    "axe_wcag_aa": "0 violations BOTH modes (gate-4 dark+light) on /network, /vaults/graph, /vaults/Harness.aDNA, homepage.",
+    "hero_gates": "gate-10 (perf invariants) + gate-11 (hero img render / aspect 1.778 / alt matches pixel-art / AVIF+WebP sources) GREEN.",
+    "lighthouse": {
+      "home": "100 / 96 / 100 / 100 — Perf 100 (hero swap perf-neutral); A11y 96 = pre-existing E1-baseline target-size item (NOT a regression; axe 0 AA).",
+      "network": "100 / 100 / 100 / 100 — up from the 98 baseline.",
+      "graph": "100 / 100 / 100 / 100 (desktop preset) — the c156 ~89 was the throttled-method dagre cost; Mermaid renders post-paint so the preset reads clean. The c159 build-time prerender deferral stands as the robustness fix under heavier throttling.",
+      "evidence": "/tmp lighthouse JSON (throwaway; scores recorded here)"
+    },
+    "idempotency": "N/A this cycle — the generator (build_vaults_data.mjs) was not touched; vaults.json + vaults_graph.mmd unchanged (A3 is site-CSS only).",
+    "visual_self_check": "PASS (eyeballed dark+light, desktop 1280 + mobile 390): band-4 cue row reads clean after the negative-margin overlap fix; the 'Not yet linked' cluster reads as a parked dashed holding area; the homepage helix->network hero renders with 'The aDNA Network' legible over the scrim.",
+    "functional": "PASS — /vaults/graph + /vaults/Harness.aDNA contained at 320/375px; homepage hero img.hero-stage-img renders the new asset."
+  },
+  "deferred_to_158plus": [
+    "Optional confirming lens Workflow (Diagram-Reviewer + Node-Operator + IA + Newcomer, like c155) to INDEPENDENTLY verify the c156/c157 self-scores (edge_honesty 5, navigability 4.75, join_scent 4.5) before the c159 close — c158 measure.",
+    "/vaults/graph build-time prerender / lazy in-view render — the firm graph-render Perf fix (robust under heavy throttling; the orphan compound-subgraph reinforced the need). c159 decadal.",
+    "Orphan-shelf LAYOUT (still a wide single row; Mermaid won't grid natively) — a custom non-Mermaid chip grid is the firm fix; paired with the prerender. c159 (or accept the now-subordinated shelf).",
+    "Homepage participation scent — join_scent still lives only on /network; a homepage 'run a node' path would lift it network-wide (c158 or a later E-pass).",
+    "E4 decadal close (AAR + full Lighthouse + STATE/STR cascade; ADR-033 network_edges.yaml overlay seam ratifies at the phase-exit gate per campaign SO #14) — cycle 159.",
+    "Cross-vault Home.aDNA LatticeNetwork.aDNA credential/membership sweep (8 creds + 2 membership refs still carry the old vault_context) — Rosetta's separate pass, NOT in this cycle's scope."
+  ],
+  "deploy": "NOT deployed — commit-only (operator standing instruction; the whole E4 surface bundles its deploy later). The new homepage helix hero goes LIVE at the next deploy. #needs-human: rotate SS_VERCEL_TOKEN (recurring CLI-stdout leak class; carry-forward).",
+  "aar_lightweight": {
+    "worked": "Kicking off the image-gen fan-out in the background while doing the 4 code threads parallelized the cycle well (candidates were ready by the time the code was done). The smoke-test-first discipline validated the runner (auth + API + output) for $0.04 before the $0.16 fan-out. Eyeballing (not just gating) caught the band-4 negative-margin overlap that every gate passed through.",
+    "didnt": "The .run-meta negative top margin overlapped the multi-line centered subtitle — a reminder that negative margins can't see a flexible neighbor's height. And 2/6 Imagen calls hit the silent 'no images returned' empty-return (the known E1 quirk) — the pair variants saved the round, but it's an argument for always fanning out >=2 variants per direction.",
+    "finding": "Lighthouse Perf for the client-rendered Mermaid graph is measurement-method-dependent: the c156 throttled method read ~89, the desktop preset reads 100 (Mermaid renders post-paint). The honest read is 'fine on desktop, soft on heavy throttling' — which is exactly why the c159 prerender deferral is the right robustness call, not a Perf-gate panic.",
+    "change": "When adding a stacked element under a centered multi-line block, set spacing on the block (reduce its margin-bottom) rather than pulling the new element up with a negative margin. Keep fanning image-gen to >=2 variants/direction to absorb Imagen empty-returns.",
+    "follow_up": "c158 = optional confirming lens Workflow on the post-c157 surfaces (independent rubric re-score). c159 = E4 decadal close (AAR + ADR-033 ratify + the graph prerender Perf fix). The homepage hero deploys with the E4 bundle."
+  },
+  "notes": "A measure/iterate cycle that closed the two still-undone design-spec themes (responsive/mobile coverage now guards the 40-node graph + vault detail at 320/375; the /network hero lead tightened) plus the c156 orphan-shelf 'didn't' (the 'Not yet linked' cluster now reads as a parked, subordinated holding area) and a join-scent lift (band-4 front-loads a commitment/safety cue row). The operator-added homepage thread returned the original aDNA DNA-helix-from-computers banner concept in the current Tokyo Night register: a cloned helix runner generated candidates, the operator picked the helix->network bridge (r1_H2_v1), and it swapped into the homepage hero — gate-10/11 green, Perf-neutral. Rubric GREEN with node_clarity + join_scent nudged up. 86/86 gates; axe 0 AA both modes; commit-only; image-gen $0.20."
+}

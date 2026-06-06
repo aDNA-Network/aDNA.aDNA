@@ -1,0 +1,30 @@
+{
+  "cycle_id": "cycle_157_e1_hero_helix",
+  "mission": "mission_adna_str_p5_m511_e4_adnanetwork",
+  "session": "session_stanley_20260606T172438Z_v8_m511_e4_c157_iterate_helix_hero",
+  "decadal": "E4",
+  "round": "smoke",
+  "step": "step_b_generate_homepage_helix_hero",
+  "model": "imagen-4.0-ultra-generate-001",
+  "aspect_ratio": "16:9",
+  "output_target": "1408x792",
+  "register": "ss_ghibli_pixel / tokyo_night",
+  "concept": "old aDNA banner \u2014 three who/what/how triad DNA helices rising from a workspace of computers",
+  "started_at": "2026-06-06T17:26:31.593688+00:00",
+  "calls": [
+    {
+      "round": "smoke",
+      "direction": "H1",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/helix_smoke_H1_v1.png",
+      "prompt_chars": 1491,
+      "prompt_overridden": false,
+      "status": "success",
+      "bytes": 1477791,
+      "elapsed_sec": 15.33,
+      "cost_usd": 0.04
+    }
+  ],
+  "total_cost_usd": 0.04,
+  "finished_at": "2026-06-06T17:26:46.918999+00:00"
+}

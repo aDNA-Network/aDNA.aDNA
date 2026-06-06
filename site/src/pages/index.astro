@@ -6,7 +6,7 @@ import RegistryCard from '../components/sections/RegistryCard.astro';
 import { buildWebSiteJsonLD } from '../utils/seo';
 import { steps, stats } from '../data/home';
 import vaultsData from '../data/vaults.json';
-import heroImage from '../assets/heroes/hero_adna_network.png';
+import heroImage from '../assets/heroes/hero_adna_helix.png';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.network';
 const jsonLD = buildWebSiteJsonLD(siteUrl);
@@ -48,7 +48,11 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
   description="The open standard and network to build, share, and govern the context that powers AI — in the open, for the good of all. Built on the Lattice Protocol."
   jsonLD={jsonLD}
 >
-  <HomeHero heroImage={heroImage} stats={stats} />
+  <HomeHero
+    heroImage={heroImage}
+    heroAlt="A pixel-art hero in the Tokyo Night palette: a glowing cyan DNA double-helix rising from a row of small computers and branching at the top into a network of connected nodes — shared inheritance resolving into the aDNA network."
+    stats={stats}
+  />
 
   <!-- 1 · What a context democracy is -->
   <section class="context-democracy">

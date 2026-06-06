@@ -20,6 +20,11 @@ const pages = [
   { name: 'Tutorial page', path: '/learn/tutorials/first-claude-md' },
   { name: 'Glossary page', path: '/glossary/glossary-adna' },
   { name: 'Network page', path: '/network' },
+  // E4 c157 — the two remaining E4 surfaces. /vaults/graph is the highest mobile risk
+  // (the 40-node + orphan-shelf Mermaid SVG must scale inside its container, not overflow
+  // the viewport); the vault detail carries the typed relationship block.
+  { name: 'Graph page', path: '/vaults/graph' },
+  { name: 'Vault detail', path: '/vaults/Harness.aDNA' },
 ];
 
 for (const vp of viewports) {
