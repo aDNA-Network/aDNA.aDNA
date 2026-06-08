@@ -1,0 +1,47 @@
+{
+  "cycle": 160,
+  "decadal": "E5",
+  "decadal_cycle": 1,
+  "mission": "mission_adna_str_p5_m512_e5_public_good_commons",
+  "slug": "e5_data_foundation",
+  "date": "2026-06-07",
+  "session": "session_stanley_20260608T042346Z_v8_m512_e5_open",
+  "theme": "E5 OPEN + cycle 160 — the Public-Good Commons DATA FOUNDATION. E5 is the ethos-bearing RLP decadal (Track G). Opened the mission + Stages 0–4 design spec, passed the Stage-0 operator gate (5 decisions), then built the data foundation: a cited subnetworks.yaml overlay (4 featured subnetworks) + generator projection + a /commons scaffold proving the pipeline. Data-before-design (the E4 lesson): the 4 subnetworks were vaults.json registry stubs (status:pending, empty headline_mission), so the cited narrative is curated first.",
+  "register": "Tokyo Night dark-first; honest showcase (every subnetwork claim cites a governance source; no fabricated metrics; curated-not-exhaustive); <=2 fighting colors (cyan link signal on the cards); no image-gen this cycle; writing-guidelines AVOID honored; a11y both modes via the permanent gate-4 loop.",
+  "operator_scope": "AskUserQuestion (2026-06-07): Stage-0 gate ratified — (1) page name = /commons; (2) featured set = the 4 (WGA · Context Commons · WilhelmAI · Rare Archive), curated-not-exhaustive; (3) first-social-surface MVP = lean-minimal (real data only; full social layer = Venus-gated horizon); (4) data approach = subnetworks.yaml overlay -> subnetworks.json (candidate ADR-034, sibling ADR-033); (5) hero = Direction B ('A commons, not a catalog'). SEPARATE gate (WF embargo): operator chose 'Feature all 4 — operator clears the WF pair' (explicit ADR-010-window override; per-surface attribution + license mandatory; WF pair commit-only until close-deploy green-light; Hygieia coord note on record).",
+  "iii_7step": {
+    "measure": "git pull up-to-date (HEAD bcb67e4/c159 E4 close, then 8e9363b E5 open). Baseline: site builds 162pp; E4 closed GREEN + deployed. The 4 featured subnetworks confirmed present in vaults.json but as registry stubs (status:pending, empty headline_mission, bare display names like 'wga') — the data-before-design crux.",
+    "orient": "Crux = data, not design (E4 §7.3 reused): the registry machinery exists; the public-good narrative does not. EMBARGO FINDING surfaced + escalated mid-cycle: WilhelmAI + RareArchive are external-org (Wilhelm Foundation) material under WilhelmAI ADR-010 (RA publishing contract; public-announcement timing), status 'signed_chief_steward_pending_wilhelm_batch_co_sign' = embargo NOT auto-cleared; featuring them on a public page is a public announcement of WF material. WGA + Context Commons are LP-internal (status:ready). Escalated to the operator rather than silently include/drop.",
+    "select_iterate": "Stage-0 decisions ratified (see operator_scope). Data approach = standalone cited subnetworks.yaml overlay (mirrors ADR-033); the generator projects subnetworks.json with member-vault registry enrichment. /commons cycle-160 scope = SCAFFOLD that proves the data (text-led Direction-B hero + data-driven featured grid; image-led hero + SubnetworkCard extraction + the real connect affordance deferred to 161/162 per the per-cycle plan — no invented routes). WF pair featured under the operator override with per-surface attribution + license; commit-only until close deploy.",
+    "implement": "5 surfaces. (1) site/src/data/subnetworks.yaml NEW — 4 cited subnetworks (each: display_name, member_vaults, steward, serves, public_url, ethos_alignment, blurb, publish_status, cite; WF pair add attribution + license + operator_cleared_2026_06_07). (2) scripts/build_vaults_data.mjs — +subnetworks projection block (resolveSlug member enrichment; warns on not-in-registry; sorted-key + date-only idempotent; PROJECT_ROOT load survives Home-absent fallback). (3) site/src/pages/commons.astro NEW — Direction-B hero + featured grid over subnetworks.json (member chips -> /vaults/<slug>; external Visit links; per-surface WF provenance line). (4) tests/gates/{gate-4-a11y,gate-6-meta,gate-9-responsive}.spec.ts — +/commons coverage. (5) FIX: .subnet-ext purple --color-primary computed 4.38:1 on the elevated dark card surface (<4.5 AA small-text) -> switched to cyan --color-link (8.49:1) — link-signal-correct + AA-safe both modes.",
+    "re_measure": "npm run build 163pp/0err (+1 = /commons). subnetworks.json projected (4 subnetworks; members resolved with registry facts). vaults.json + vaults_graph.mmd byte-identical (UTC date-only churn on vaults.json reverted). Gates 91/91 (E4's 83 + 8 new /commons: a11y dark+light, meta, responsive x5). axe 0 WCAG-AA BOTH modes. Lighthouse /commons desktop 100/100/100/100.",
+    "validate": "Built /commons output verified: Direction-B title + all 4 subnetwork names + all 4 member-vault links (/vaults/{wga,ContextCommons,WilhelmAI,RareArchive}.aDNA/) + WF provenance (Wilhelm Foundation (Helene & Mikk Cederroth) · Apache-2.0) all render. Honest-showcase + Trust/Provenance discipline satisfied (cited; attribution+license on WF cards).",
+    "record": "this JSON + the Hygieia coord memo (who/coordination/coord_2026_06_07_rosetta_to_hygieia_commons_feature.md) + mission spec O1/O2/O3 progress + STATE Current Phase + session SITREP. COMMIT-ONLY (no deploy — E4 rhythm; the WF embargo override is honored by commit-only until the close green-light)."
+  },
+  "embargo_finding": {
+    "subject": "WilhelmAI + RareArchive (Wilhelm-Foundation external-org material) public-announcement timing",
+    "source": "WilhelmAI/what/decisions/adr_010_ra_publishing_contract.md status=signed_chief_steward_pending_wilhelm_batch_co_sign; coord_2026_05_09_v7_{wilhelmai,rarearchive}.md delivery_held_until=ADR-010-window",
+    "resolution": "operator explicit ADR-010-window OVERRIDE 2026-06-07 — feature all 4; per-surface attribution + Apache-2.0/CC-BY-4.0 license mandatory on WF cards (WilhelmAI ADR-002); WF pair commit-only until the operator green-lights the E5 close deploy; Hygieia/WilhelmAI coord note on record.",
+    "discipline": "honest-showcase + Trust/Provenance — escalated not buried; respects partner publication governance via commit-only-until-greenlight."
+  },
+  "change_summary": [
+    "OPEN: mission_adna_str_p5_m512_e5_public_good_commons.md (NEW) + m512_e5_public_good_commons_design_spec.md (NEW; Stages 0–4 + per-cycle plan 160–169 + full-30-persona RLP routing + ADR-034 candidate) + session open + STATE/campaign cascade (committed 8e9363b).",
+    "site/src/data/subnetworks.yaml (NEW) — 4 cited featured subnetworks; adaptation seam (ADR-034 cand.); WF pair carries attribution + license + operator-clear provenance.",
+    "scripts/build_vaults_data.mjs — subnetworks.yaml -> subnetworks.json projection (member-vault registry enrichment; idempotent; Home-absent-safe).",
+    "site/src/data/subnetworks.json (NEW; generated) — 4 subnetworks, members resolved to vault_slug + display facts.",
+    "site/src/pages/commons.astro (NEW) — /commons scaffold (Direction-B hero + data-driven featured grid; honest routes; per-surface WF provenance).",
+    "tests/gates/{gate-4-a11y,gate-6-meta,gate-9-responsive}.spec.ts — +/commons coverage (83 -> 91 gates).",
+    "FIX: .subnet-ext cyan --color-link (was purple --color-primary, 4.38:1 on dark card surface -> 8.49:1)."
+  ],
+  "doctrine_compliance": {
+    "honest_showcase": "PASS — every subnetwork claim cites a governance source (coord memos / community file); curated-not-exhaustive named on-surface; no fabricated metrics; WF provenance (attribution + license) shown.",
+    "two_fighting_colors": "PASS — cyan --color-link is the card signal (top border + tagline + chips + Visit); no new accent.",
+    "ethos_subtle": "PASS — Direction-B hero + the closing 'held in common, put to work for the good of all' line; AVOID register (no marketing adjectives); Movement-Skeptic guard noted for the RLP.",
+    "dark_first": "PASS — Lighthouse + axe verified dark-first; both-modes gate-4 clean.",
+    "no_invented_routes": "PASS — scaffold primary CTA anchors to #featured (the real connect affordance lands cycle 162); external links are real public URLs.",
+    "engine_untouched": "PASS — skill_iii_cycle / skill_site_design_pipeline / skill_decadal_aar unedited; archive-never-delete; no Home.aDNA / cross-vault / .adna writes; vaults.json/.mmd byte-identical."
+  },
+  "gates": {"build_pages": 163, "build_errors": 0, "playwright": "91/91", "axe_aa_both_modes": 0, "lighthouse_commons": "100/100/100/100"},
+  "deploy": "NONE (commit-only; E4 rhythm — the whole E5 surface, incl. the operator-cleared WF pair, deploys only at the E5 close green-light).",
+  "next": "cycle 161 — /commons bands 1–2 hi-fi: image-led HomeHero (Direction B; possible image-gen) + SubnetworkCard component extraction + featured-grid craft + reference-inspection feed (MAX-III)."
+}

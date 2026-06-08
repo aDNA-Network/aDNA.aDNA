@@ -25,6 +25,8 @@ const pages = [
   // the viewport); the vault detail carries the typed relationship block.
   { name: 'Graph page', path: '/vaults/graph' },
   { name: 'Vault detail', path: '/vaults/Harness.aDNA' },
+  // E5 Public-Good Commons (cycle 160): the subnetwork showcase (2-col grid → 1-col at ≤760px)
+  { name: 'Commons page', path: '/commons' },
 ];
 
 for (const vp of viewports) {

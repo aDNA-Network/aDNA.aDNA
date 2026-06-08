@@ -1,0 +1,107 @@
+{
+  "generated_at": "2026-06-08",
+  "schema_version": "0.1",
+  "subnetwork_count": 4,
+  "subnetworks": [
+    {
+      "attribution": null,
+      "blurb": "The World Genome Academy builds genomics education and research in the open, under a five-council model — Education, Agriculture, Research, an Indigenous-data veto, and Technology — so the science is stewarded, not enclosed.",
+      "cite": "who/coordination/coord_2026_05_09_v7_wga.md §1",
+      "display_name": "World Genome Academy",
+      "ethos_alignment": "Scientific knowledge and education, held in common",
+      "id": "world_genome_academy",
+      "license": null,
+      "members": [
+        {
+          "canonical_governance": "wga.aDNA/CLAUDE.md",
+          "class": "org_vault",
+          "display_name": "wga",
+          "persona": null,
+          "status": "pending",
+          "vault": "wga.aDNA",
+          "vault_slug": "wga.aDNA"
+        }
+      ],
+      "public_url": "https://worldgeno.me",
+      "publish_status": "ready",
+      "serves": "Genomics education & research",
+      "steward": "Five-council governance + Director",
+      "tagline": "Genomics knowledge as a shared commons"
+    },
+    {
+      "attribution": null,
+      "blurb": "A community program for agentic-context literacy and enablement — and the shared pool that forms when vaults publish their best context, patterns, and lattices for others to discover and reuse.",
+      "cite": "who/community/community_context_commons.md",
+      "display_name": "Context Commons",
+      "ethos_alignment": "Context as a commons people contribute to and steward",
+      "id": "context_commons",
+      "license": null,
+      "members": [
+        {
+          "canonical_governance": "ContextCommons.aDNA/CLAUDE.md",
+          "class": "org_vault",
+          "display_name": "ContextCommons",
+          "persona": null,
+          "status": "pending",
+          "vault": "ContextCommons.aDNA",
+          "vault_slug": "ContextCommons.aDNA"
+        }
+      ],
+      "public_url": null,
+      "publish_status": "ready",
+      "serves": "Community agentic-literacy & enablement",
+      "steward": "Community-governed",
+      "tagline": "Agentic-context literacy, shared"
+    },
+    {
+      "attribution": "Wilhelm Foundation (Helene & Mikk Cederroth)",
+      "blurb": "The Wilhelm AI Initiative for the Undiagnosed (AI4U) — the Wilhelm Foundation's umbrella over AI initiatives for people and families living with undiagnosed disease, including the open Rare-AI Archive.",
+      "cite": "who/coordination/coord_2026_05_09_v7_wilhelmai.md §1",
+      "display_name": "Wilhelm AI for the Undiagnosed",
+      "ethos_alignment": "Rare-disease AI as a public good",
+      "id": "wilhelm_ai",
+      "license": "Apache-2.0 + CC-BY-4.0",
+      "members": [
+        {
+          "canonical_governance": "WilhelmAI.aDNA/CLAUDE.md",
+          "class": "org_vault",
+          "display_name": "WilhelmAI",
+          "persona": "Hygieia",
+          "status": "pending",
+          "vault": "WilhelmAI.aDNA",
+          "vault_slug": "WilhelmAI.aDNA"
+        }
+      ],
+      "public_url": null,
+      "publish_status": "operator_cleared_2026_06_07",
+      "serves": "People & families living with undiagnosed disease",
+      "steward": "Hygieia · anchor Wilhelm Foundation",
+      "tagline": "AI for people living with undiagnosed disease"
+    },
+    {
+      "attribution": "Wilhelm Foundation (Helene & Mikk Cederroth)",
+      "blurb": "Rare Archive is an open-source rare-disease AI project — the diagnosis-acceleration pillar of AI4U — governed by a five-seat steward council, with a canonical home at Wilhelm-Foundation/rare-archive.",
+      "cite": "who/coordination/coord_2026_05_09_v7_rarearchive.md §1",
+      "display_name": "Rare Archive",
+      "ethos_alignment": "Rare-disease AI built in the open",
+      "id": "rare_archive",
+      "license": "Apache-2.0 + CC-BY-4.0",
+      "members": [
+        {
+          "canonical_governance": "RareArchive.aDNA/CLAUDE.md",
+          "class": "org_vault",
+          "display_name": "RareArchive",
+          "persona": "Mnemosyne",
+          "status": "pending",
+          "vault": "RareArchive.aDNA",
+          "vault_slug": "RareArchive.aDNA"
+        }
+      ],
+      "public_url": "https://github.com/Wilhelm-Foundation/rare-archive",
+      "publish_status": "operator_cleared_2026_06_07",
+      "serves": "Rare-disease diagnosis acceleration",
+      "steward": "Mnemosyne · five-seat steward council · anchor Wilhelm Foundation",
+      "tagline": "Open-source rare-disease AI"
+    }
+  ]
+}

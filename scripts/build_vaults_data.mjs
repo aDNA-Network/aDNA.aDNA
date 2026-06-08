@@ -305,5 +305,60 @@ const mmdOutput = mmdLines.join('\n') + '\n';
 fs.writeFileSync(OUTPUT_GRAPH, mmdOutput);
 console.log(`[build_vaults_data] wrote ${OUTPUT_GRAPH} (${edges.length} edges)`);
 
+// ── Curated subnetwork showcase overlay (E5 Public-Good Commons adaptation seam; ADR-034 cand.) ──
+// Loaded from PROJECT_ROOT (survives the Home-absent CI/Vercel fallback, like network_edges.yaml).
+// Each featured subnetwork is a curated, cited bundle pointing at real registry vault(s); member
+// names are resolved to vault_slug + enriched with registry facts so the /commons cards can
+// cross-link to /vaults/<slug> and show honest provenance. Projects subnetworks.json (committed).
+// Upstreams to Home.aDNA vault cards later, after which subnetworks.yaml shrinks to nothing.
+const SUBNETWORKS_PATH = path.join(PROJECT_ROOT, 'site/src/data/subnetworks.yaml');
+const OUTPUT_SUBNETWORKS = path.join(PROJECT_ROOT, 'site/src/data/subnetworks.json');
+if (fs.existsSync(SUBNETWORKS_PATH)) {
+  let subOverlay = {};
+  try {
+    subOverlay = yaml.parse(fs.readFileSync(SUBNETWORKS_PATH, 'utf-8')) || {};
+  } catch (e) {
+    console.warn(`[build_vaults_data] WARN: subnetworks.yaml parse failed: ${e.message}`);
+  }
+  const vaultBySlug = new Map(projectedVaults.map((v) => [v.vault_slug, v]));
+  const srcSubnets = Array.isArray(subOverlay.subnetworks) ? subOverlay.subnetworks : [];
+  const projectedSubnets = srcSubnets.map((s) => {
+    // Resolve each member vault name → its registry entry (vault_slug + display facts). A name not
+    // in the registry is kept but flagged (no silent drop; warns) so the data stays honest.
+    const members = (s.member_vaults || []).map((name) => {
+      const slug = resolveSlug(name);
+      const v = slug ? vaultBySlug.get(slug) : null;
+      if (!v) console.warn(`[build_vaults_data] WARN: subnetwork '${s.id}' references vault not in registry: ${name}`);
+      return v
+        ? { vault: v.vault, vault_slug: v.vault_slug, display_name: v.display_name, persona: v.persona, class: v.class, status: v.status, canonical_governance: v.canonical_governance }
+        : { vault: name, vault_slug: null, display_name: name, persona: null, class: null, status: 'not_in_registry', canonical_governance: null };
+    });
+    return {
+      id: s.id,
+      display_name: s.display_name || s.id,
+      tagline: s.tagline || null,
+      blurb: s.blurb || null,
+      serves: s.serves || null,
+      steward: s.steward || null,
+      public_url: s.public_url || null,
+      ethos_alignment: s.ethos_alignment || null,
+      attribution: s.attribution || null,   // WF per-surface attribution discipline (WilhelmAI ADR-002)
+      license: s.license || null,
+      publish_status: s.publish_status || 'ready',
+      cite: s.cite || null,
+      members,
+    };
+  });
+  const subnetPayload = {
+    schema_version: '0.1',
+    generated_at: new Date().toISOString().slice(0, 10), // date-only for byte-identical idempotency
+    subnetwork_count: projectedSubnets.length,
+    subnetworks: projectedSubnets,
+  };
+  const subOut = JSON.stringify(sortKeys(subnetPayload), null, 2) + '\n';
+  fs.writeFileSync(OUTPUT_SUBNETWORKS, subOut);
+  console.log(`[build_vaults_data] wrote ${OUTPUT_SUBNETWORKS} (${projectedSubnets.length} subnetworks)`);
+}
+
 // Exit 0 (success)
 process.exit(0);

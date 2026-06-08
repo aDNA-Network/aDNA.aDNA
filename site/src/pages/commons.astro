@@ -1,0 +1,328 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { buildWebPageJsonLD } from '../utils/seo';
+import subnetworksData from '../data/subnetworks.json';
+
+// E5 / M5.12 cycle 160 — the Public-Good Commons SCAFFOLD (data foundation proven by a
+// rendering surface). Hero copy = Stage-0-ratified Direction B ("A commons, not a catalog").
+// Cycle 161 elevates the hero (image-led) + extracts a SubnetworkCard component + hi-fi craft;
+// 162 wires the real "connect to a subnetwork" affordance; 163 the first social surface;
+// 164 the homepage §5 hand-off + nav entry. Commit-only through the decadal (E4 rhythm) — the
+// whole /commons surface, including the operator-cleared Wilhelm-Foundation pair, deploys only
+// at the E5 close green-light (honors the ADR-010-window override terms; see subnetworks.yaml).
+
+const description =
+  'Mission-aligned subnetworks build, share, and govern shared context in the open. See the public-good work already happening on the aDNA network — and connect to it.';
+
+const jsonLD = buildWebPageJsonLD({
+  title: 'The Public-Good Commons',
+  description,
+  url: Astro.url.href,
+});
+
+const subnetworks = (subnetworksData as any).subnetworks ?? [];
+---
+
+<BaseLayout title="The Public-Good Commons" description={description} jsonLD={jsonLD}>
+  <!-- Hero (sparse) · Stage-0-ratified Direction B -->
+  <section class="commons-hero">
+    <div class="section-inner">
+      <h1 class="commons-title">A commons, not a catalog.</h1>
+      <p class="commons-lead">
+        Mission-aligned subnetworks build, share, and govern shared context in the open &mdash; so the
+        abundance AI creates belongs to everyone. See them, trust them, connect to them.
+      </p>
+      <div class="commons-actions">
+        <a href="#featured" class="btn btn-primary">Meet the subnetworks</a>
+        <a href="/reference/" class="btn btn-secondary" data-astro-prefetch>Read the standard</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Band 1 · The featured subnetworks (curated, not exhaustive) -->
+  <section id="featured" class="commons-featured">
+    <div class="section-inner">
+      <h2 class="section-title">The subnetworks</h2>
+      <p class="section-subtitle">
+        Real public-good work already on the aDNA network &mdash; each one open, cited, and stewarded.
+        A curated set, not an exhaustive one: it grows as aligned subnetworks join.
+      </p>
+
+      <ul class="subnet-grid" role="list">
+        {subnetworks.map((s: any) => (
+          <li class="subnet-card">
+            <h3 class="subnet-name">{s.display_name}</h3>
+            {s.tagline && <p class="subnet-tagline">{s.tagline}</p>}
+            {s.blurb && <p class="subnet-blurb">{s.blurb}</p>}
+
+            <dl class="subnet-meta">
+              {s.serves && (
+                <div class="subnet-meta-row">
+                  <dt>Serves</dt>
+                  <dd>{s.serves}</dd>
+                </div>
+              )}
+              {s.steward && (
+                <div class="subnet-meta-row">
+                  <dt>Stewarded by</dt>
+                  <dd>{s.steward}</dd>
+                </div>
+              )}
+            </dl>
+
+            {s.members?.length > 0 && (
+              <p class="subnet-vaults">
+                {s.members.map((m: any) =>
+                  m.vault_slug ? (
+                    <a class="subnet-vault" href={`/vaults/${m.vault_slug}/`} data-astro-prefetch>{m.vault}</a>
+                  ) : (
+                    <span class="subnet-vault subnet-vault-missing">{m.vault}</span>
+                  )
+                )}
+              </p>
+            )}
+
+            <p class="subnet-links">
+              {s.public_url && (
+                <a class="subnet-ext" href={s.public_url} target="_blank" rel="noopener">
+                  Visit &nearr;
+                </a>
+              )}
+            </p>
+
+            {s.attribution && (
+              <p class="subnet-provenance">
+                {s.attribution}{s.license ? ` · ${s.license}` : ''}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+
+      <p class="commons-ethos">
+        Language and DNA are our shared heritage. So is context &mdash; held in common, and put to work
+        for the good of all.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ——— Shared section scaffold (mirrors network.astro / index.astro) ——— */
+  .section-inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+  }
+
+  .section-title {
+    font-size: var(--text-3xl);
+    text-align: center;
+    margin-bottom: var(--space-3);
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    max-width: 42rem;
+    margin: 0 auto var(--space-12);
+    line-height: 1.6;
+  }
+
+  /* ——— Hero (sparse; text-led scaffold — image-led HomeHero comes in cycle 161) ——— */
+  .commons-hero {
+    padding: var(--space-24) 0 var(--space-16);
+    text-align: center;
+  }
+
+  .commons-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 auto var(--space-5);
+    max-width: 18ch;
+    text-wrap: balance;
+  }
+
+  .commons-lead {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    max-width: 44rem;
+    margin: 0 auto var(--space-8);
+    line-height: 1.6;
+  }
+
+  .commons-actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ——— Band 1 · featured subnetworks ——— */
+  .commons-featured {
+    padding: var(--space-16) 0 var(--space-24);
+    background: var(--color-bg-alt);
+    overflow-x: hidden;
+  }
+
+  .subnet-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+
+  .subnet-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-8) var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    /* cyan = the connections/data signal (the same pair the rest of the site uses; ≤2 colors) */
+    border-top: 3px solid var(--color-link);
+    border-radius: var(--radius-xl);
+  }
+
+  .subnet-name {
+    font-size: var(--text-xl);
+    color: var(--color-text-heading);
+    margin: 0 0 var(--space-1);
+  }
+
+  .subnet-tagline {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-link);
+    margin: 0 0 var(--space-4);
+  }
+
+  .subnet-blurb {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0 0 var(--space-5);
+  }
+
+  .subnet-meta {
+    margin: 0 0 var(--space-5);
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .subnet-meta-row {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+
+  .subnet-meta dt {
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--text-xs);
+    padding-top: 0.15em;
+  }
+
+  .subnet-meta dd {
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .subnet-vaults {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: 0 0 var(--space-4);
+  }
+
+  .subnet-vault {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    padding: 0.25em 0.6em;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    color: var(--color-link);
+    text-decoration: none;
+    background: var(--color-bg);
+  }
+
+  .subnet-vault:hover {
+    border-color: var(--color-link);
+  }
+
+  .subnet-vault-missing {
+    color: var(--color-text-muted);
+  }
+
+  /* push the links + provenance to the card foot so cards align on a grid row */
+  .subnet-links {
+    margin: auto 0 0;
+  }
+
+  /* Link signal (cyan) — also AA-safe small-text on the elevated card surface, where purple
+     --color-primary computes to 4.38:1 in dark mode (below the 4.5:1 floor). Cyan = 8.49:1. */
+  .subnet-ext {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--text-sm);
+    color: var(--color-link);
+    text-decoration: none;
+  }
+
+  .subnet-ext:hover {
+    text-decoration: underline;
+  }
+
+  /* Trust/Provenance — per-surface attribution + license for Wilhelm-Foundation material
+     (WilhelmAI ADR-002 attribution discipline). Quiet, factual, never a badge. */
+  .subnet-provenance {
+    margin: var(--space-3) 0 0;
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .commons-ethos {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-base);
+    max-width: 40rem;
+    margin: var(--space-16) auto 0;
+    line-height: 1.7;
+  }
+
+  /* ——— Responsive ——— */
+  @media (max-width: 760px) {
+    .subnet-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .commons-hero {
+      padding: var(--space-12) 0 var(--space-10);
+    }
+
+    .commons-featured {
+      padding: var(--space-12) 0;
+    }
+
+    .section-title {
+      font-size: var(--text-2xl);
+    }
+
+    .subnet-meta-row {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+</style>

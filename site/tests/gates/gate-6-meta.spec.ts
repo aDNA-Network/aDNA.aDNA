@@ -14,6 +14,7 @@ const pages = [
   { name: 'Use case page', path: '/use-cases/solo-developer' },
   { name: 'Get started', path: '/get-started' },
   { name: 'Network page', path: '/network' },
+  { name: 'Commons page', path: '/commons' },
 ];
 
 for (const { name, path } of pages) {

@@ -1,0 +1,88 @@
+# subnetworks.yaml — curated Public-Good Commons showcase overlay
+# ---------------------------------------------------------------------------
+# E5 / M5.12 (Public-Good Commons & Subnetwork Federation). Adaptation seam —
+# candidate ADR-034, sibling to ADR-033 (network_edges.yaml). Loaded by
+# scripts/build_vaults_data.mjs from PROJECT_ROOT (survives the Home-absent
+# CI/Vercel fallback, like network_edges.yaml) and projected to subnetworks.json.
+#
+# Each featured subnetwork is a CURATED, CITED bundle pointing at real registry
+# vault(s). Honest-showcase discipline (E5 hard constraint): every claim cites a
+# governance source; no fabricated metrics; the showcase is CURATED, NOT EXHAUSTIVE
+# (it grows as aligned subnetworks join). Upstreams to Home.aDNA vault cards later
+# (Hestia coord, post-decadal); when it does, this file shrinks toward nothing.
+#
+# PROVENANCE — Wilhelm-Foundation material (wilhelm_ai, rare_archive):
+#   WilhelmAI ADR-010 (RareArchive publishing contract; public-announcement timing)
+#   is `signed_chief_steward_pending_wilhelm_batch_co_sign` — the public-announcement
+#   embargo was NOT auto-cleared. The operator EXPLICITLY CLEARED the WF pair for the
+#   commons feature on 2026-06-07 (AskUserQuestion, ADR-010-window override). Per that
+#   ratification: (1) per-surface attribution + license bundle are mandatory on these
+#   cards (WilhelmAI ADR-002 attribution discipline); (2) the WF pair stays COMMIT-ONLY
+#   until the operator green-lights the E5 close deploy (a Hygieia/WilhelmAI coord note
+#   is on record at who/coordination/coord_2026_06_07_rosetta_to_hygieia_commons_feature.md).
+# ---------------------------------------------------------------------------
+
+subnetworks:
+  - id: world_genome_academy
+    display_name: World Genome Academy
+    tagline: Genomics knowledge as a shared commons
+    member_vaults: [wga.aDNA]
+    steward: Five-council governance + Director
+    serves: Genomics education & research
+    public_url: https://worldgeno.me
+    ethos_alignment: Scientific knowledge and education, held in common
+    publish_status: ready   # LatticeProtocol-internal; cleared to publish
+    blurb: >-
+      The World Genome Academy builds genomics education and research in the open,
+      under a five-council model — Education, Agriculture, Research, an Indigenous-data
+      veto, and Technology — so the science is stewarded, not enclosed.
+    cite: who/coordination/coord_2026_05_09_v7_wga.md §1
+
+  - id: context_commons
+    display_name: Context Commons
+    tagline: Agentic-context literacy, shared
+    member_vaults: [ContextCommons.aDNA]
+    steward: Community-governed
+    serves: Community agentic-literacy & enablement
+    public_url: null
+    ethos_alignment: Context as a commons people contribute to and steward
+    publish_status: ready   # LatticeProtocol-internal; cleared to publish
+    blurb: >-
+      A community program for agentic-context literacy and enablement — and the shared
+      pool that forms when vaults publish their best context, patterns, and lattices for
+      others to discover and reuse.
+    cite: who/community/community_context_commons.md
+
+  - id: wilhelm_ai
+    display_name: Wilhelm AI for the Undiagnosed
+    tagline: AI for people living with undiagnosed disease
+    member_vaults: [WilhelmAI.aDNA]   # umbrella; the Rare-AI Archive (rare_archive below) is its diagnosis pillar
+    steward: Hygieia · anchor Wilhelm Foundation
+    serves: People & families living with undiagnosed disease
+    public_url: null
+    ethos_alignment: Rare-disease AI as a public good
+    attribution: Wilhelm Foundation (Helene & Mikk Cederroth)
+    license: Apache-2.0 + CC-BY-4.0
+    publish_status: operator_cleared_2026_06_07   # WF ADR-010-window override; commit-only until close-deploy green-light
+    blurb: >-
+      The Wilhelm AI Initiative for the Undiagnosed (AI4U) — the Wilhelm Foundation's
+      umbrella over AI initiatives for people and families living with undiagnosed
+      disease, including the open Rare-AI Archive.
+    cite: who/coordination/coord_2026_05_09_v7_wilhelmai.md §1
+
+  - id: rare_archive
+    display_name: Rare Archive
+    tagline: Open-source rare-disease AI
+    member_vaults: [RareArchive.aDNA]
+    steward: Mnemosyne · five-seat steward council · anchor Wilhelm Foundation
+    serves: Rare-disease diagnosis acceleration
+    public_url: https://github.com/Wilhelm-Foundation/rare-archive
+    ethos_alignment: Rare-disease AI built in the open
+    attribution: Wilhelm Foundation (Helene & Mikk Cederroth)
+    license: Apache-2.0 + CC-BY-4.0
+    publish_status: operator_cleared_2026_06_07   # WF ADR-010-window override; commit-only until close-deploy green-light
+    blurb: >-
+      Rare Archive is an open-source rare-disease AI project — the diagnosis-acceleration
+      pillar of AI4U — governed by a five-seat steward council, with a canonical home at
+      Wilhelm-Foundation/rare-archive.
+    cite: who/coordination/coord_2026_05_09_v7_rarearchive.md §1

@@ -23,6 +23,8 @@ const pages = [
   { name: 'Vault detail (with relationships)', path: '/vaults/Harness.aDNA/' },
   // E4 aDNANetwork (cycle 151): the /network narrative + node-onboarding surface
   { name: 'Network page', path: '/network' },
+  // E5 Public-Good Commons (cycle 160): the subnetwork showcase surface
+  { name: 'Commons page', path: '/commons' },
 ];
 
 // Dark is the default render; light is reached by seeding the theme preference before the page loads.

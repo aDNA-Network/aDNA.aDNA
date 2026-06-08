@@ -8,7 +8,7 @@ campaign: campaign_adna_serious_tool_readiness
 phase: 5
 decadal: E5
 persona: rosetta
-status: draft   # Stage-0 gate: operator ratifies the positioning/scope (page name · featured set · social-surface MVP scope · data approach · horizon line) before any site/ write
+status: ratified   # Stage-0 gate PASSED 2026-06-07 (operator): /commons · 4 subnetworks (curated) · social MVP lean-minimal · subnetworks.yaml overlay (ADR-034) · hero Direction B
 last_edited_by: agent_stanley
 grounded_by:
   - what/design/narrative_ethos_public_good.md
@@ -159,13 +159,15 @@ E5 closes on the **full 30-persona Reviewer Lens Pass** (the D17·E1·E3·E5·E6
 
 The local `site/src/data/subnetworks.yaml` overlay merged/projected by the ADR-023 generator is the theme-set's "stable seed behind a thin adaptation layer." Proposed as **ADR-034**, ratified at the **phase-exit gate** (campaign SO #14 — not mid-phase). Records: the overlay is curated in aDNA.aDNA to unblock E5, is authoritative for subnetwork narrative until upstreamed, and **upstreams to `Home.aDNA` vault cards / inventory** (Hestia coord) post-decadal, after which it shrinks toward nothing without a rebuild. Sibling to **ADR-033** (E4 edge overlay).
 
-## Stage-0 ratification (collected at the gate — operator decides before any `site/` write)
+## Stage-0 ratification — ✅ PASSED 2026-06-07 (operator, AskUserQuestion)
 
-1. **Page name** — `/commons` (recommended) vs `/subnetworks`.
-2. **Featured set** — the 4 seed subnetworks (WGA · Context Commons · WilhelmAI · Rare Archive) + the "curated, not exhaustive" framing — confirm/add/drop.
-3. **First-social-surface MVP scope** — contributors/attribution/activity from real data only, with the full social layer named as Venus-gated horizon — confirm the line.
-4. **Data approach** — a standalone `subnetworks.yaml` overlay → `subnetworks.json` (recommended; mirrors ADR-033) vs extending `vaults.json` directly.
-5. **Hero direction** — A / B / C (or an edit/blend).
+1. **Page name** — ✅ **`/commons`**.
+2. **Featured set** — ✅ the 4 seed subnetworks (WGA · Context Commons · WilhelmAI · Rare Archive), **curated, not exhaustive** (operator did not override).
+3. **First-social-surface MVP scope** — ✅ **lean minimal**: show only what the data truly knows (stewards/personas, governance owners, `updated`/changelog, federation refs — who-not-how-many); the full social layer (profiles/follows/feeds/governance) named as **Venus-gated horizon**.
+4. **Data approach** — ✅ a standalone **`subnetworks.yaml` overlay → `subnetworks.json`** (mirrors ADR-033; candidate **ADR-034**).
+5. **Hero direction** — ✅ **Direction B — "A commons, not a catalog"** ("Mission-aligned subnetworks build, share, and govern shared context in the open — so the abundance AI creates belongs to everyone. See them, trust them, connect to them." `[Connect a subnetwork]` `[Read the standard]`).
+
+> **Stage 5 build unlocked.** The Movement-Skeptic guard applies: the featured grid's *real, cited* subnetworks must immediately back the "a commons, not a catalog" claim, or it reads unearned (the E1 lesson).
 
 ## Related
 
