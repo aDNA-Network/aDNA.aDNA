@@ -1,0 +1,913 @@
+{
+  "meta": {
+    "generated": "2026-06-08",
+    "campaign": "campaign_adna_network_audit",
+    "mission": "mission_ana_p0_planning_audit",
+    "agents": 18,
+    "target": "local current-HEAD (primary) + live adna.network (E4 c159)"
+  },
+  "finding_counts": {
+    "Critical": 15,
+    "High": 20,
+    "Medium": 26,
+    "Low": 20
+  },
+  "lighthouse": {
+    "live__network": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "live__vaults": {
+      "performance": 100,
+      "accessibility": 95,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "local__home": {
+      "performance": 100,
+      "accessibility": 96,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "local__getstarted": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "local__commons": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "live__vaults_graph": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "live__getstarted": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "live__home": {
+      "performance": 100,
+      "accessibility": 96,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "local__vaults_graph": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "local__learn": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "local__vaults": {
+      "performance": 100,
+      "accessibility": 95,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "live__spec": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "live__learn": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "local__spec": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "local__network": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    }
+  },
+  "exec_summary": [
+    {
+      "rank": 1,
+      "finding": "Vault-detail pages ship raw internal campaign jargon as public meta/OG descriptions \u2014 /vaults/III.aDNA/ description reads 'Campaign C DG-C closed 2026-05-20; Campaign D CHARTERED. 6 consumer wrappers live.' (verified verbatim in description AND og:description) [local|live].",
+      "impact": "Critical credibility self-own across the largest page class (~37 pages); search snippets and link-preview cards make the public standard read as an internal scratchpad."
+    },
+    {
+      "rank": 2,
+      "finding": "Naming-discipline break: the vault registry is labeled 'The Lattice' in global nav, page title, H1, and back-links \u2014 conflating the forward-facing aDNA brand's vault collection with the underlying Lattice Protocol IP (verified Header.astro:6, vaults.json title/H1) [local|live].",
+      "impact": "Critical. Blurs the one distinction the project treats as load-bearing; same objects are also called 'the network' / 'vaults' / 'registry' elsewhere, so visitors never form a stable model."
+    },
+    {
+      "rank": 3,
+      "finding": "Two broken GitHub repo references at the conversion peak: get-started.astro:51 'See it live' \u2192 github.com/LatticeProtocol/aDNA-aDNA is a 404, and every sitewide GitHub link (Header:37, Footer:12, HomeHero:32, get-started clone:29) points to Agentic-DNA which 301-redirects, not the canonical /aDNA [local|live].",
+      "impact": "Critical. A 404 at the highest-intent clone moment plus a redirecting/old-named canonical source repo \u2014 direct credibility hit to the exact technical audience the site must convert."
+    },
+    {
+      "rank": 4,
+      "finding": "The standard contradicts its own version number: home + spec frontmatter say v2.2, but specification.mdx:1479 closes 'End of aDNA Universal Standard v2.0' and open-standard.mdx + 5 comparison docs + design-rationale cite v2.1 (verified) [local|live].",
+      "impact": "High. A spec whose entire value is normative authority disagrees with itself on its version, reading as unmaintained to spec-evaluators."
+    },
+    {
+      "rank": 5,
+      "finding": "Conversion funnel is action-poor: no styled 'Get Started' CTA exists in the header, home hero, or on any audience/community/vault-detail page (only a footer text link); home's four styled CTAs all route to reading or browsing, never building (verified home ctas[]) [local|live].",
+      "impact": "High. Every high-intent 'how do I start?' visitor must scroll-hunt the footer; targeted pages dead-end with only theme/menu toggles registering as CTAs."
+    },
+    {
+      "rank": 6,
+      "finding": "Deploy gap: the strongest message surface /commons ('A commons, not a catalog', axe-clean) is built but (a) fully orphaned \u2014 zero inbound links anywhere in src/, and (b) not on live; live also advertises a stale 40-vault count vs HEAD's 37; /commons publication is correctly blocked by the ADR-010 Wilhelm-Foundation embargo (named individuals in subnetworks.json:57).",
+      "impact": "Medium-High. The best 'why it matters' asset is invisible to real visitors and unreachable even locally; deploying as-is would also publish un-cleared partner attributions and the 404/301 repo breaks."
+    }
+  ],
+  "scorecard": [
+    {
+      "page": "home (/)",
+      "scores": {
+        "message_positioning": {
+          "score": 3,
+          "issue": "Hero H1 'The aDNA Network' + ethos lead (HomeHero.astro:27 'Language and DNA were co-created by everyone before us\u2026') leads with WHY; the functional definition is a trailing clause and the clear 'How it Works' strip sits below the 37-vault registry \u2014 fails the <10s value-prop test."
+        },
+        "ia_nav": {
+          "score": 3,
+          "issue": "No Get Started in hero or nav; the home NetworkDiagram is a non-clickable dead visual; only footer reaches /get-started."
+        },
+        "conversion_cta": {
+          "score": 3,
+          "issue": "All four styled CTAs route to /vaults + /reference (reading/browsing); zero build path above the footer."
+        },
+        "seo_metadata": {
+          "score": 5,
+          "issue": "Strong: title 'aDNA \u2014 the open standard & network for shared context', clean description, single H1, OG/Twitter/canonical present. Only blemish is the live 'See all 40 vaults' vs HEAD 37 text drift."
+        },
+        "performance": {
+          "score": 5,
+          "issue": "Lighthouse Perf 100, CWV pristine (LCP<0.75s, CLS~0, TBT 0)."
+        },
+        "accessibility": {
+          "score": 4,
+          "issue": "Lighthouse a11y 95 \u2014 target-size / mobile touch-target findings on the home hero CTAs; axe 0."
+        },
+        "content_credibility": {
+          "score": 3,
+          "issue": "GitHub CTAs point to redirecting Agentic-DNA (301); 'context democracy' coined and asserted without a concrete anchor for cold visitors."
+        },
+        "visual_brand": {
+          "score": 5,
+          "issue": "Tokyo Night dark-first identity is polished and distinctive; SS-Ghibli hero strong."
+        },
+        "registry_product": {
+          "score": 3,
+          "issue": "'See all 37 vaults' presents one operator's workspace as network scale; no contributor/star/adopter social proof to corroborate."
+        }
+      }
+    },
+    {
+      "page": "network (/network/)",
+      "scores": {
+        "message_positioning": {
+          "score": 3,
+          "issue": "Introduces a brand-new primary term 'aDNA computer' (H1 'The network of aDNA computers') absent from home/nav/vaults \u2014 a 4th-5th synonym for the core object with no bridging definition."
+        },
+        "ia_nav": {
+          "score": 4,
+          "issue": "Strong on-page next-steps, but BaseLayout means no secondary nav; CTAs aim at /reference/ index rather than /reference/specification."
+        },
+        "conversion_cta": {
+          "score": 5,
+          "issue": "Model page: distributed primary/secondary CTA pairs (Run a node / Read standard / Join community) \u2014 the pattern other pages lack."
+        },
+        "seo_metadata": {
+          "score": 5,
+          "issue": "Unique title/desc, WebPage JSON-LD, single H1, logical heading outline."
+        },
+        "performance": {
+          "score": 5,
+          "issue": "Lighthouse Perf 100, CWV pristine."
+        },
+        "accessibility": {
+          "score": 5,
+          "issue": "Lighthouse a11y 100, axe 0."
+        },
+        "content_credibility": {
+          "score": 3,
+          "issue": "'A network of real relationships' implies a multi-operator network when the live aggregate is effectively one operator's intra-workspace federation_refs; GitHub link 301s."
+        },
+        "visual_brand": {
+          "score": 5,
+          "issue": "Consistent identity; clear privacy framing ('stays on your machine')."
+        },
+        "registry_product": {
+          "score": 4,
+          "issue": "Honest 'opt to federate' framing is good; 'Browse all 37 vaults' count must derive from single source to avoid the home 40/37 split."
+        }
+      }
+    },
+    {
+      "page": "vaults (/vaults/)",
+      "scores": {
+        "message_positioning": {
+          "score": 2,
+          "issue": "Title/H1 'The Lattice' collides head-on with the Lattice Protocol IP brand; the same destination is also called 'the network'/'vaults'/'registry' elsewhere."
+        },
+        "ia_nav": {
+          "score": 4,
+          "issue": "Good class-grouped index + jump links, but four names for one destination and no 'add your vault' affordance."
+        },
+        "conversion_cta": {
+          "score": 3,
+          "issue": "73-link catalog with no primary CTA to convert browsers into builders; links feed read-only vault-detail dead-ends."
+        },
+        "seo_metadata": {
+          "score": 3,
+          "issue": "Description hardcodes '37-vault' (should derive from vault_count); jsonld absent on the highest-value registry index."
+        },
+        "performance": {
+          "score": 5,
+          "issue": "Lighthouse Perf 100."
+        },
+        "accessibility": {
+          "score": 2,
+          "issue": "axe color-contrast: 78 serious nodes, Lighthouse a11y 95 \u2014 worst is vault-status pill #c0caf5 on #b9e4d0 at 1.15:1 (illegible); persona #555 (2.29:1) and class-count #666 (2.97:1) also fail AA. Escaped gate-4 (index not tested)."
+        },
+        "content_credibility": {
+          "score": 2,
+          "issue": "28/37 vaults are pending/genesis/stub rendered as registry peers; 0 expose a public repo; unexplained persona codenames (Argus, Hermes) on every card."
+        },
+        "visual_brand": {
+          "score": 3,
+          "issue": "Class taxonomy + codename cards look rich but the low-contrast labels undercut polish."
+        },
+        "registry_product": {
+          "score": 3,
+          "issue": "Central 'living registry' proof, but count instability (37 local / 40 live / 38 seed) weakens the traction claim."
+        }
+      }
+    },
+    {
+      "page": "vaults/graph (/vaults/graph/)",
+      "scores": {
+        "message_positioning": {
+          "score": 3,
+          "issue": "Inherits the 'The Lattice' nav ambiguity; 'lattice' here means vault-graph, not protocol."
+        },
+        "ia_nav": {
+          "score": 4,
+          "issue": "Well cross-linked with ?focus deep-links, but absent from every persistent nav (header/footer/sidebar)."
+        },
+        "conversion_cta": {
+          "score": 3,
+          "issue": "Conversion-neutral: no outbound clone/get-started CTA from the graph."
+        },
+        "seo_metadata": {
+          "score": 4,
+          "issue": "Clean metadata; edge labels are insider vocabulary."
+        },
+        "performance": {
+          "score": 5,
+          "issue": "Lighthouse Perf 100."
+        },
+        "accessibility": {
+          "score": 5,
+          "issue": "axe 0, Lighthouse a11y clean."
+        },
+        "content_credibility": {
+          "score": 4,
+          "issue": "Best-earned surface \u2014 explicitly honest orphan disclaimer ('that is honest topology, not missing data'); but presented under /network's 'real relationships' banner where ~half the nodes are unlinked."
+        },
+        "visual_brand": {
+          "score": 4,
+          "issue": "Strong show-don't-tell artifact; dot-id node names read as insider."
+        },
+        "registry_product": {
+          "score": 4,
+          "issue": "Honest sparse graph supports credibility; all edges still trace to one operator."
+        }
+      }
+    },
+    {
+      "page": "reference/specification (/reference/specification/)",
+      "scores": {
+        "message_positioning": {
+          "score": 3,
+          "issue": "Self-version drift: header v2.2 but body closes 'End of aDNA Universal Standard v2.0' (specification.mdx:1479); the clearest plain-language definition (\u00a71.1) is buried here, not surfaced on home."
+        },
+        "ia_nav": {
+          "score": 4,
+          "issue": "Full SidebarNav + breadcrumb + prev/next, but the home 'clone' funnel never routes here and there's no reader-orientation banner above \u00a71."
+        },
+        "conversion_cta": {
+          "score": 3,
+          "issue": "A primary home CTA target with no follow-on 'now build one' CTA back into get-started."
+        },
+        "seo_metadata": {
+          "score": 4,
+          "issue": "Honest title 'aDNA Specification'; description repeats one-liner; audience cue implicit until \u00a71.2."
+        },
+        "performance": {
+          "score": 5,
+          "issue": "Lighthouse Perf 100 despite 52k-px single page."
+        },
+        "accessibility": {
+          "score": 5,
+          "issue": "axe 0, Lighthouse a11y 100."
+        },
+        "content_credibility": {
+          "score": 4,
+          "issue": "Genuine 20-section normative RFC-2119 spec \u2014 strongest credibility anchor; only the v2.0/v2.1/v2.2 drift undercuts it."
+        },
+        "visual_brand": {
+          "score": 4,
+          "issue": "Dense but well-structured; consistent identity."
+        },
+        "registry_product": {
+          "score": 4,
+          "issue": "'Standard v2.2 / Governance v7.0' high version numbers imply more iteration history than 18 stars / 3 forks corroborate."
+        }
+      }
+    },
+    {
+      "page": "get-started (/get-started/)",
+      "scores": {
+        "message_positioning": {
+          "score": 3,
+          "issue": "Right structure (3 steps, ~5 min) but assumes Claude Code + editor prerequisites without saying so to a true beginner."
+        },
+        "ia_nav": {
+          "score": 2,
+          "issue": "The conversion endpoint is absent from header nav AND the SidebarNav sitemap; only persistent inbound link is the footer."
+        },
+        "conversion_cta": {
+          "score": 2,
+          "issue": "No forward CTA; quickstart competes with ~110 docs-sidebar links."
+        },
+        "seo_metadata": {
+          "score": 4,
+          "issue": "Clean metadata; Anthropic docs link 301s (minor)."
+        },
+        "performance": {
+          "score": 5,
+          "issue": "Lighthouse Perf 100."
+        },
+        "accessibility": {
+          "score": 5,
+          "issue": "Lighthouse a11y 100, axe 0."
+        },
+        "content_credibility": {
+          "score": 1,
+          "issue": "CRITICAL: 'See it live' \u2192 github.com/LatticeProtocol/aDNA-aDNA returns 404 (linkcheck), and Step-1 clone uses Agentic-DNA.git (301) \u2014 broken trust at the peak conversion moment."
+        },
+        "visual_brand": {
+          "score": 4,
+          "issue": "Clean copy-button quickstart; consistent identity."
+        },
+        "registry_product": {
+          "score": 2,
+          "issue": "The 'see a real working vault' proof dead-ends on a 404 repo."
+        }
+      }
+    },
+    {
+      "page": "learn (/learn/)",
+      "scores": {
+        "message_positioning": {
+          "score": 4,
+          "issue": "Clear audience framing and a prominent 'What is aDNA?' first tile; but learn/comparison docs cite Standard v2.1 vs home v2.2."
+        },
+        "ia_nav": {
+          "score": 5,
+          "issue": "Exemplary: hub cards + full SidebarNav + breadcrumb; only nit is ~100 repeated sidebar links inflating every page."
+        },
+        "conversion_cta": {
+          "score": 3,
+          "issue": "Good on-ramp into concepts/tutorials, but no build CTA to /get-started."
+        },
+        "seo_metadata": {
+          "score": 5,
+          "issue": "Clean unique metadata, single H1."
+        },
+        "performance": {
+          "score": 5,
+          "issue": "Lighthouse Perf 100."
+        },
+        "accessibility": {
+          "score": 5,
+          "issue": "axe 0, Lighthouse a11y 100."
+        },
+        "content_credibility": {
+          "score": 4,
+          "issue": "Strong dual-audience learn content; version-citation drift is the only blemish."
+        },
+        "visual_brand": {
+          "score": 5,
+          "issue": "Hero image + consistent identity."
+        },
+        "registry_product": {
+          "score": 4,
+          "issue": "Good conceptual framing of the standard; not a registry surface."
+        }
+      }
+    },
+    {
+      "page": "community (/community/)",
+      "scores": {
+        "message_positioning": {
+          "score": 4,
+          "issue": "Clean contributor framing as a 'participation ladder'; minor \u2014 GitHub link 301-redirects."
+        },
+        "ia_nav": {
+          "score": 4,
+          "issue": "Well-structured, but the audience/adopter funnel is buried as a nested sidebar subgroup."
+        },
+        "conversion_cta": {
+          "score": 2,
+          "issue": "Contributor-recruitment page has ZERO styled CTAs \u2014 4 passive cards then footer; no Join/Contribute/good-first-issue action (verified ctas[] = toggles only)."
+        },
+        "seo_metadata": {
+          "score": 4,
+          "issue": "Clean metadata, single H1."
+        },
+        "performance": {
+          "score": 5,
+          "issue": "Lighthouse Perf 100."
+        },
+        "accessibility": {
+          "score": 5,
+          "issue": "axe 0, Lighthouse a11y clean."
+        },
+        "content_credibility": {
+          "score": 4,
+          "issue": "Inviting framing; only external action is a 301 GitHub link, and no real-people social proof."
+        },
+        "visual_brand": {
+          "score": 4,
+          "issue": "Consistent card layout."
+        },
+        "registry_product": {
+          "score": 3,
+          "issue": "Describes a contribution ladder but offers no concrete first-contribution path."
+        }
+      }
+    },
+    {
+      "page": "commons (/commons/)",
+      "scores": {
+        "message_positioning": {
+          "score": 5,
+          "issue": "The clearest 'why it matters' surface on the site \u2014 plain H1 'A commons, not a catalog.', human-stakes subnetwork cards, zero codenames."
+        },
+        "ia_nav": {
+          "score": 1,
+          "issue": "Fully orphaned: zero inbound links anywhere in src/ (not in Header, Footer, navigation.ts, or any page body) \u2014 unreachable except by direct URL."
+        },
+        "conversion_cta": {
+          "score": 3,
+          "issue": "Primary CTA is an in-page anchor jump; 'Read the standard' points to /reference/ (inconsistent with home's /reference/specification); the 'Connect/join' affordance is deferred to c162."
+        },
+        "seo_metadata": {
+          "score": 4,
+          "issue": "Clean title/description; not yet deployed so earns no live SEO value."
+        },
+        "performance": {
+          "score": 5,
+          "issue": "Lighthouse all-100 in local build."
+        },
+        "accessibility": {
+          "score": 5,
+          "issue": "axe 0, Lighthouse a11y 100."
+        },
+        "content_credibility": {
+          "score": 2,
+          "issue": "Surfaces WilhelmAI + Rare Archive with named individuals (subnetworks.json:57 'Wilhelm Foundation (Helene & Mikk Cederroth)') under ADR-010 publication embargo pending co-sign \u2014 must not deploy until cleared."
+        },
+        "visual_brand": {
+          "score": 5,
+          "issue": "Warm garden hero; the strongest ethos surface."
+        },
+        "registry_product": {
+          "score": 4,
+          "issue": "Curates real public-good subnetworks (WGA, Context Commons); per-card 'Visit' links resolve 200."
+        }
+      }
+    },
+    {
+      "page": "researchers (/researchers/)",
+      "scores": {
+        "message_positioning": {
+          "score": 4,
+          "issue": "Well-targeted ('The research knowledge problem' pain-first), but relies on the same ambiguous 'The Lattice' nav and unresolved aDNA-vs-Lattice framing."
+        },
+        "ia_nav": {
+          "score": 2,
+          "issue": "Orphan: only inbound link is from /adopters (itself a buried sidebar subgroup); absent from header, footer, and sitemap despite being a top-of-funnel landing page."
+        },
+        "conversion_cta": {
+          "score": 2,
+          "issue": "No in-content CTA (only dark-toggle + mobile-menu register); sole conversion path is the muted footer link."
+        },
+        "seo_metadata": {
+          "score": 5,
+          "issue": "Clean unique title/desc, single H1."
+        },
+        "performance": {
+          "score": 5,
+          "issue": "Lighthouse Perf 100."
+        },
+        "accessibility": {
+          "score": 5,
+          "issue": "axe 0, Lighthouse a11y clean."
+        },
+        "content_credibility": {
+          "score": 4,
+          "issue": "Relatable, well-framed; 'ontology extensions'/persona references appear before the reader has met those terms."
+        },
+        "visual_brand": {
+          "score": 4,
+          "issue": "Consistent audience-page template."
+        },
+        "registry_product": {
+          "score": 3,
+          "issue": "Good segment pitch but routes back through the under-promoted generic /get-started rather than a researcher quickstart."
+        }
+      }
+    },
+    {
+      "page": "vaults/III.aDNA (vault-detail)",
+      "scores": {
+        "message_positioning": {
+          "score": 1,
+          "issue": "Public meta/OG description leaks internal jargon verbatim: 'Campaign C DG-C closed 2026-05-20; Campaign D CHARTERED. 6 consumer wrappers live.' \u2014 unintelligible to any visitor (verified data.description + og.description)."
+        },
+        "ia_nav": {
+          "score": 5,
+          "issue": "Best IA citizen: breadcrumb back-link, 'New here? Start with what the network is \u2192' orienting link, cross-vault links, ?focus graph deep-link."
+        },
+        "conversion_cta": {
+          "score": 2,
+          "issue": "No styled CTA \u2014 ctas[] are only theme/menu toggles; 'Quick links' GitHub points to the generic Agentic-DNA monorepo (301), not III's repo or any clone path."
+        },
+        "seo_metadata": {
+          "score": 2,
+          "issue": "Description is internal shorthand; jsonld_blocks: 0 on the largest page class."
+        },
+        "performance": {
+          "score": 5,
+          "issue": "Lighthouse Perf 100."
+        },
+        "accessibility": {
+          "score": 5,
+          "issue": "axe 0 on this detail page."
+        },
+        "content_credibility": {
+          "score": 2,
+          "issue": "Surfaces 'Persona: argus_panoptes', 'Class framework', '0 outgoing \u00b7 3 incoming', edges '\u2190 federation' \u2014 insider vocabulary with no plain-English 'what this does for you'."
+        },
+        "visual_brand": {
+          "score": 3,
+          "issue": "Bare layout relative to the rest of the site."
+        },
+        "registry_product": {
+          "score": 2,
+          "issue": "A visitor arriving to adopt III finds no 'use this vault' affordance \u2014 a registry-discovery dead-end."
+        }
+      }
+    }
+  ],
+  "roadmap": {
+    "decisive_strokes": [
+      {
+        "what": "Fix the two broken GitHub repo references: repoint get-started.astro:51 'See it live' from github.com/LatticeProtocol/aDNA-aDNA (404) to the canonical github.com/LatticeProtocol/aDNA, and replace all Agentic-DNA (301) hrefs with /aDNA in Header.astro:37, Footer.astro:12, HomeHero.astro:32, get-started.astro:29 clone command. Single-source the repo URL.",
+        "why": "A 404 at the peak clone moment + a redirecting/old-named canonical source repo are Critical credibility hits to the technical-conversion audience, and an aDNA-vs-Lattice naming-discipline leak (old 'Agentic-DNA' string).",
+        "expected_effect": "Removes the only broken external link sitewide and the redirect hop on the most-clicked outbound link; clone command teaches the canonical repo name.",
+        "effort": "S \u2014 ~5 edits + add canonical URLs to the linkcheck CI gate."
+      },
+      {
+        "what": "Rename the /vaults nav item, page title, H1, and back-links from 'The Lattice' to 'Vaults' (or 'Registry'); reserve 'Lattice'/'Lattice Protocol' exclusively for the protocol. Pick one noun for the vault collection and apply it across home ('See all 37 vaults'), /network ('Browse the vaults'), and vault-detail back-links.",
+        "why": "'The Lattice' as the registry label directly conflates the forward-facing aDNA brand with the Lattice Protocol IP \u2014 the exact distinction the project treats as load-bearing (Critical per audit rules).",
+        "expected_effect": "Restores naming discipline; gives the vault collection one stable name; visitors come away with aDNA=network, Lattice=protocol, vaults=the things.",
+        "effort": "S \u2014 Header.astro navLinks, vaults page title/H1, [slug].astro back-link, 2-3 CTA strings."
+      },
+      {
+        "what": "Sanitize vault-detail public descriptions: give each vault an explicit visitor-facing one-line `tagline` and use it for <meta description>/og:description; stop falling back to internal `note`. Add a publish-time guard in the ADR-023 registry generator rejecting any public description matching /Campaign [A-Z]|CHARTERED|DG-[A-Z]|\\d{4}-\\d{2}-\\d{2}|consumer wrappers/.",
+        "why": "The largest page class ships internal campaign jargon ('Campaign C DG-C closed 2026-05-20; Campaign D CHARTERED') as the public description/OG, making the standard read as an internal scratchpad in search and social cards.",
+        "expected_effect": "Coherent, dual-audience search/social snippets for ~37 vault-detail pages; removes the single most credibility-damaging copy on the site, with a regression guard.",
+        "effort": "S-M \u2014 add tagline field + template swap + generator regex guard."
+      },
+      {
+        "what": "Add a persistent styled 'Get Started' CTA to the global Header (header-actions, before the GitHub icon) and as a third hero CTA on home; normalize 'Read the standard' destinations to /reference/specification everywhere (commons.astro currently points to /reference/).",
+        "why": "No styled build path exists anywhere except a footer text link; the home funnel routes all four CTAs to reading/browsing, leaking the highest-value 'doer' visitors.",
+        "expected_effect": "One-click onboarding from every page; balances the reader/browser funnel with a builder funnel, raising the clone conversion.",
+        "effort": "S \u2014 Header + HomeHero edits; one href normalization."
+      },
+      {
+        "what": "Fix the /vaults color-contrast failures: dark text token on the green vault-status pill (#c0caf5-on-#b9e4d0 = 1.15:1 \u2192 AA), raise persona (#555) and class-count (#666) tokens to >=4.5:1 on #1a1b26. Then ADD /vaults and /vaults/{slug} to the axe gate so it can't regress.",
+        "why": "The primary discovery surface (every 'Explore the network' CTA target) fails WCAG AA on 78 elements; status badges that signal active-vs-pending are effectively illegible. Escaped gate-4 because the index isn't tested.",
+        "expected_effect": "Brings the registry to AA, lifts Lighthouse a11y 95\u2192100, makes status badges readable, closes the gate-coverage gap.",
+        "effort": "S \u2014 3 token swaps + extend the axe gate route list."
+      }
+    ],
+    "campaigns": [
+      {
+        "what": "Rework the home hero to lead concrete-then-ethos: add one plain-language functional definition as the sub-lead (e.g. 'aDNA is an open standard for organizing project knowledge so AI agents can orient and work across any project') and promote the 'How it Works' (Agent-native / Human-readable / Composable) strip above the 37-vault registry. Surface the buried spec \u00a71.1 definition.",
+        "why": "Home leads with ethos and relegates the functional definition to a trailing clause; a dev/funder cannot answer 'what is this?' in <10s even though a crisp definition exists buried in spec \u00a71.1.",
+        "expected_effect": "Passes the <10s legibility bar for technical/funder audiences while preserving the ethos register; converts pragmatic readers instead of bouncing them into abstraction.",
+        "effort": "M \u2014 hero copy + section reorder + light content design."
+      },
+      {
+        "what": "Establish a single terminology spine and a consistent object model across home/network/vaults: define node/aDNA-computer, vault (a context graph), and network (federation of nodes) once, then use them consistently; add a bridging line on /network tying 'aDNA computer' back to home's 'vaults'.",
+        "why": "/network introduces 'aDNA computer' as a 4th-5th synonym for the core object with no bridge; visitors juggle network / The Lattice / vault / context graph / aDNA computer / node and never consolidate a mental model.",
+        "expected_effect": "One coherent object model sitewide; improved comprehension and perceived rigor for the technical audience.",
+        "effort": "M \u2014 copy + a small glossary callout + cross-page consistency pass."
+      },
+      {
+        "what": "Surface the orphaned funnels: add Commons + the audience pages (researchers/educators/enterprise/startup/compliance) to navigation \u2014 a home 'aDNA for\u2026' section and/or a 'For You'/'Solutions' nav group + footer entries \u2014 and unify secondary navigation across the BaseLayout vs DocumentationLayout split, exposing the SidebarNav on mobile via a disclosure.",
+        "why": "/commons has zero inbound links and the five audience pages hang off a single buried /adopters thread; the richest nav (SidebarNav) is absent from top-of-funnel pages and hidden entirely below 768px.",
+        "expected_effect": "Activates 6+ tailored conversion funnels that currently receive almost no internal traffic; consistent wayfinding across the funnel and on mobile.",
+        "effort": "M \u2014 nav data + layout/secondary-nav unification + mobile disclosure."
+      },
+      {
+        "what": "Add closing CTA partials to the audience-page, community, and vault-detail templates: a 'Get Started' primary + segment-relevant secondary; a 'Contribute on GitHub' / 'good first issue' band on /community; a 'Use this vault' / 'Explore the graph' block on vault-detail. Ship the deferred c162 'Connect' affordance on /commons.",
+        "why": "The pages whose entire job is conversion (/community, six audience pages, five vault-detail pages) carry zero in-content CTAs; targeted pitches and registry-browsing intent dead-end.",
+        "expected_effect": "Closes the recruitment and registry-discovery loops; one template change per class fixes many pages at once.",
+        "effort": "M \u2014 3-4 shared partials + the deferred commons connect work."
+      },
+      {
+        "what": "After resolving the ADR-010 Wilhelm-Foundation co-sign embargo (or feature-flagging the two embargoed subnetwork cards out), deploy current HEAD so /commons + the corrected repo links + refreshed 37-vault data go live in one coordinated release; establish a deploy cadence so live stops drifting multiple vaults behind HEAD.",
+        "why": "Live (E4 c159) is missing the strongest positioning surface and advertises a stale 40-vault count; but deploying as-is would publish the 404/301 breaks and un-cleared partner attributions (named individuals).",
+        "expected_effect": "Public site reflects current, stronger positioning with credibility breaks fixed and the embargo honored; closes the build-vs-deploy gap safely.",
+        "effort": "M \u2014 gated on #needs-human co-sign clearance; deploy is mechanical once cleared."
+      }
+    ],
+    "housekeeping": [
+      {
+        "what": "Single-source the standard version string (v2.2): fix specification.mdx:1479 'End of aDNA Universal Standard v2.0' \u2192 v2.2, and update open-standard.mdx:22,40, design-rationale.mdx, governance-model.mdx, and the 5 adna-vs-*.mdx footers from v2.1 \u2192 v2.2; reference a shared constant so it can't drift again.",
+        "why": "Three different version numbers (v2.0/v2.1/v2.2) for the same normative standard coexist on the site, reading as unmaintained to spec-evaluators.",
+        "expected_effect": "Consistent, current version everywhere; the spec reads as a maintained authority.",
+        "effort": "S \u2014 ~9 string fixes + a shared version constant."
+      },
+      {
+        "what": "Derive every vault count from the single vaults.json vault_count field (home CTA, /vaults title + description, /network 'Browse all N vaults') instead of hardcoding '37'/'40'; reconcile vaults.json against the registry-of-record (seed says 38) \u2014 add the missing record if 37 is wrong.",
+        "why": "Counts diverge across surfaces and environments (37 local / 40 live / 38 seed), weakening the central 'living registry' traction claim.",
+        "expected_effect": "One authoritative count everywhere; the traction claim becomes internally consistent.",
+        "effort": "S \u2014 template wiring + a registry-of-record reconciliation check."
+      },
+      {
+        "what": "Resolve the Harness/RareHarness/RareHarnessOld display split: set a clear public display_name for Harness.aDNA and label RareHarness as the clinical vertical / RareHarnessOld as legacy, so the rename story is legible on the registry.",
+        "why": "vault_slug 'Harness.aDNA' shows display_name 'RareHarness' next to a separate 'RareHarnessOld' \u2014 confusing on a credibility-bearing registry (not an aDNA-vs-Lattice violation).",
+        "expected_effect": "Coherent vault naming on the registry; removes visitor confusion.",
+        "effort": "S \u2014 vaults.json display_name + note."
+      },
+      {
+        "what": "Scope the SidebarNav to the current top-level section (active group expanded, others collapsed behind a switcher) instead of rendering all ~100 sitemap links on every documentation page; promote Glossary + Guides into the Reference section or footer for a layout-independent entry point.",
+        "why": "Every docs page renders the full ~100-link tree, raising cognitive load, diluting internal-link signal, and leaving Glossary/Guides invisible from BaseLayout pages and mobile.",
+        "expected_effect": "Sharper 'you are here / next in section' wayfinding, lower noise, better crawl signal; reference content gains a discoverable home.",
+        "effort": "M \u2014 SidebarNav scoping logic + nav promotion."
+      },
+      {
+        "what": "Add a one-line reader-orientation banner atop /reference/specification ('For implementers and evaluators. New to aDNA? Start with What is aDNA \u2192') and a 'now build one' CTA back into /get-started; add JSON-LD to the /vaults index and vault-detail pages.",
+        "why": "The credibility-anchor spec opens cold with no audience cue and no onward path; the highest-value registry pages lack structured data (jsonld_blocks: 0).",
+        "expected_effect": "Right readers stay / wrong readers reroute; richer search presentation for registry pages.",
+        "effort": "S \u2014 banner + CTA + JSON-LD blocks."
+      },
+      {
+        "what": "Note (no fix needed): the seed-flagged 'open-standard.mdx:95 says 10 entity types vs 14 elsewhere' is NOT a contradiction \u2014 line 95 reads 'This vault adds 10 entity types to the base 14', which is internally consistent (10 Rosetta extensions + 14 base). Line 48 correctly states '14 base entity types.' Do not 'fix' line 95 to 14.",
+        "why": "Prevents a well-intentioned edit from breaking a correct statement during the version/count cleanup sweep.",
+        "expected_effect": "Avoids introducing an error; documents the verified non-issue.",
+        "effort": "S \u2014 documentation only."
+      }
+    ]
+  },
+  "quick_wins": [
+    {
+      "location": "src/pages/get-started.astro:51 (also live)",
+      "current": "<a href=\"https://github.com/LatticeProtocol/aDNA-aDNA\" ...>aDNA.aDNA repository</a>  \u2014 returns 404",
+      "fix": "Repoint to the canonical repo: href=\"https://github.com/LatticeProtocol/aDNA\" (verify 200). Add this URL to the linkcheck CI allowlist so a 404 on get-started fails the build."
+    },
+    {
+      "location": "src/components/common/Header.astro:37, Footer.astro:12, HomeHero.astro:32 (githubHref default), get-started.astro:29 (clone command) \u2014 sitewide",
+      "current": "https://github.com/LatticeProtocol/Agentic-DNA  (301-redirects)",
+      "fix": "Replace all occurrences with the canonical https://github.com/LatticeProtocol/aDNA (and `git clone https://github.com/LatticeProtocol/aDNA.git my-project`). Single-source the repo URL like the version string."
+    },
+    {
+      "location": "src/components/common/Header.astro:6 navLinks; src/data/local__vaults.json title + H1 'The Lattice'; src/pages/vaults/[slug].astro back-link '\u2190 The Lattice'",
+      "current": "label: 'The Lattice', href: '/vaults' ; <title>The Lattice \u2014 vault registry \u2014 aDNA ; <h1>The Lattice ; '\u2190 The Lattice'",
+      "fix": "Use 'Vaults' (or 'Registry') everywhere for /vaults: nav label 'Vaults', title 'Vaults \u2014 the aDNA registry', H1 'Vaults', back-link '\u2190 Vaults'. Reserve 'Lattice'/'Lattice Protocol' for the protocol only."
+    },
+    {
+      "location": "src/data/vaults.json (III.aDNA note \u2192 vault-detail meta/og description, all vault-detail pages)",
+      "current": "description = 'Inspect/Introspect/Improve quality framework. Campaign C DG-C closed 2026-05-20; Campaign D CHARTERED. 6 consumer wrappers live.'",
+      "fix": "Add a public `tagline` and use it for meta/og description, e.g. 'III is an open quality framework that helps AI agents inspect, introspect, and improve any aDNA project.' Strip campaign IDs/dates from anything used as a public description."
+    },
+    {
+      "location": "src/content/reference/specification.mdx:1479",
+      "current": "*End of aDNA Universal Standard v2.0*",
+      "fix": "*End of aDNA Universal Standard v2.2*  (match the v2.2 frontmatter at specification.mdx:9 and the homepage stat)."
+    },
+    {
+      "location": "src/content/docs/open-standard.mdx:22 and :40 (plus the 5 adna-vs-*.mdx footers + design-rationale.mdx + governance-model.mdx)",
+      "current": "aDNA Standard v2.1",
+      "fix": "aDNA Standard v2.2  \u2014 sweep all v2.1 spec-citation footers to v2.2; ideally reference one shared version constant so it can never drift."
+    },
+    {
+      "location": "src/data/home.ts vault-count CTA + src/data/vaults.json description (and live shows '40')",
+      "current": "'See all 37 vaults \u2192' (local) / 'See all 40 vaults \u2192' (live); /vaults description hardcodes 'the 37-vault aDNA lattice'",
+      "fix": "Derive every count from vaults.json vault_count (currently 37) \u2014 home CTA, /vaults title/description, /network 'Browse all N vaults'. Deploy HEAD so live stops showing 40. Reconcile vault_count against the registry-of-record (seed says 38)."
+    },
+    {
+      "location": "/vaults color-contrast tokens (vault-status pill, persona label, class-count) \u2014 Lighthouse local__vaults.json color-contrast",
+      "current": "vault-status #c0caf5 on #b9e4d0 = 1.15:1; persona #555555 on #1a1b26 = 2.29:1; class-count #666666 on #1a1b26 = 2.97:1 (all fail AA)",
+      "fix": "Use a dark text token on the green status pill (or invert the pill), and raise persona/class-count to a token >=4.5:1 on #1a1b26 (e.g. the cyan --color-link the design system already passes AA with)."
+    },
+    {
+      "location": "src/pages/commons.astro CTA 'Read the standard'",
+      "current": "href=\"/reference/\"  (inconsistent with home/spec CTAs which use /reference/specification)",
+      "fix": "href=\"/reference/specification\"  \u2014 normalize all 'Read the standard' CTAs to the spec page."
+    },
+    {
+      "location": "src/components/common/Header.astro header-actions + src/components/sections/HomeHero.astro hero CTAs",
+      "current": "No styled 'Get Started' CTA in header or hero; only /get-started link is in Footer.astro:14",
+      "fix": "Add a btn-primary 'Get Started' \u2192 /get-started in Header header-actions (before the GitHub icon) and as a third hero CTA on home."
+    },
+    {
+      "location": "src/content/docs/open-standard.mdx:95 (verified NON-issue \u2014 do not change)",
+      "current": "'This vault adds 10 entity types to the base 14' (seed signal mis-flagged this as contradicting '14 entity types')",
+      "fix": "Leave as-is. It is internally consistent (10 Rosetta extensions + 14 base types, matching line 48 '14 base entity types'). Do NOT 'correct' 10\u219214 during the version/count sweep."
+    }
+  ],
+  "consistency": {
+    "findings": [
+      {
+        "claim": "The on-page 'Standard version' is stated as v2.2 on the canonical pages (homepage stat, index.astro:136 meta-tag, reference/specification.mdx frontmatter version:\"2.2\" + footer 'v2.2 | 2026-03-20'), matching the GitHub repo seed ('Standard v2.2') \u2014 BUT the same site contradicts itself elsewhere.",
+        "locations": [
+          "src/data/home.ts:125 ('v2.2','Current Version')",
+          "src/pages/index.astro:136 (<span class=\"meta-tag\">v2.2</span>)",
+          "src/content/reference/specification.mdx:9 (version:\"2.2\") + :1479 ('End of aDNA Universal Standard v2.0')",
+          "src/content/docs/open-standard.mdx:22 + :40 ('aDNA Standard v2.1')",
+          "src/content/docs/adna-vs-para.mdx:68 / adna-vs-notion.mdx:72 / adna-vs-zettelkasten.mdx:69 / adna-vs-johnny-decimal.mdx:70 / adna-vs-plain-markdown.mdx:82 (all 'aDNA Standard v2.1')",
+          "src/content/reference/design-rationale.mdx:8 ('aDNA Universal Standard v2.1')"
+        ],
+        "inconsistency": "Three different version numbers for the SAME normative standard coexist on the live site: v2.2 (homepage + spec frontmatter + repo), v2.1 (open-standard concept page, all 5 comparison pages, design-rationale companion), and v2.0 (the END-OF-DOCUMENT footer of the specification page itself, line 1479). A technical visitor who reads the spec sees 'v2.2' in the header and 'v2.0' at the bottom of the same document; the 'Open Standard' learning page and every 'aDNA vs X' comparison cite 'v2.1'. For a STANDARD whose entire pitch is normative precision and versioned backwards-compatibility, self-contradicting its own version number directly undermines credibility (audit goal c). Both envs (built-but-not-deployed work doesn't fix it; comparison/spec pages are identical local|live).",
+        "severity": "Critical",
+        "fix": "Pick the canonical version (v2.2 per repo + spec frontmatter) and sweep every occurrence: change specification.mdx:1479 'v2.0'->'v2.2'; change open-standard.mdx:22,40, design-rationale.mdx:8, and the five adna-vs-*.mdx footers from 'v2.1'->'v2.2'. Better: define the version once in a data file (e.g. home.ts already has it) and reference it, so it can never drift. EXPECTED GAIN: removes the single most credibility-damaging inconsistency on the site for the exact audience (spec-readers) the site must convert."
+      },
+      {
+        "claim": "Tag local|live. /commons (LOCAL-ONLY, built but not deployed) publicly names an external organization and its individuals, and links its external repos: 'Wilhelm Foundation (Helene & Mikk Cederroth)', 'Wilhelm AI Initiative for the Undiagnosed (AI4U)', 'Rare Archive', plus outbound links to worldgeno.me and github.com/Wilhelm-Foundation/rare-archive.",
+        "locations": [
+          "src/pages/commons.astro (route /commons/, h1 'A commons, not a catalog.')",
+          "src/data/subnetworks.json:57-97 (attribution 'Wilhelm Foundation (Helene & Mikk Cederroth)', WilhelmAI + Rare Archive blurbs, cite refs to internal coord notes)",
+          "evidence local__commons.json links[] (/vaults/WilhelmAI.aDNA/, /vaults/RareArchive.aDNA/, https://github.com/Wilhelm-Foundation/rare-archive)",
+          "src/pages/commons.astro:14 (source comment: '...including the operator-cleared Wilhelm-Foundation pair, deploys only [after clearance]')"
+        ],
+        "inconsistency": "Per the project's own ADR-010 publication embargo (external-org content requires co-sign clearance before publishing), the Wilhelm Foundation / WilhelmAI / Rare Archive material is gated. The /commons source comment acknowledges it should 'deploy only' after the 'operator-cleared Wilhelm-Foundation pair'. Right now /commons is correctly NOT on live (deploy gap protects it), but it IS in the current-HEAD build and one deploy away from publishing named third-party-org content (including founders' personal names) without confirmed co-sign. USER/ORG COST: publishing un-cleared partner attributions on a public 'public-good' page is a legal/relationship credibility hazard regardless of technical polish.",
+        "severity": "Critical",
+        "fix": "Do NOT deploy /commons until the Wilhelm-Foundation co-sign clearance is confirmed in writing (#needs-human). If the rest of the E5 work must ship sooner, gate /commons behind a build flag or feature-flag the two embargoed subnetwork cards (WilhelmAI, RareArchive) out of subnetworks.json until cleared, leaving WGA + Context Commons (already public-good, self-owned). EXPECTED GAIN: prevents an inadvertent embargo breach on deploy; preserves partner trust."
+      },
+      {
+        "claim": "Tag local|live (both envs). The get-started page links to a GitHub repo that returns 404.",
+        "locations": [
+          "src/pages/get-started.astro:51 (<a href=\"https://github.com/LatticeProtocol/aDNA-aDNA\">aDNA.aDNA repository</a>)",
+          "linkcheck.json external_nonok (https://github.com/LatticeProtocol/aDNA-aDNA -> 404, source /get-started/)"
+        ],
+        "inconsistency": "The 'See it live: the aDNA.aDNA repository is a working aDNA project' link points to github.com/LatticeProtocol/aDNA-aDNA, which 404s. The canonical repo (per seed) is LatticeProtocol/aDNA. A developer following the get-started flow \u2014 the primary conversion path \u2014 hits a dead GitHub page at the 'see a real working vault' step. USER COST: broken trust at the highest-intent moment (someone ready to clone). This ships on live today.",
+        "severity": "Critical",
+        "fix": "Repoint to the correct repo (github.com/LatticeProtocol/aDNA, or whatever the canonical aDNA.aDNA public repo URL is). Add the get-started external links to the link-check gate so a 404 on a primary CTA fails the build. EXPECTED GAIN: removes a dead end on the main developer-conversion funnel."
+      },
+      {
+        "claim": "Tag local|live (both envs). /vaults (the vault registry index) has 78 axe color-contrast failures, including a vault-status pill at 1.15:1 contrast (effectively illegible).",
+        "locations": [
+          "summary_local.json + summary_live.json (/vaults axe:1, both envs)",
+          "local__vaults.json axe[] color-contrast nodes:78, impact serious",
+          "lh/local__vaults.json color-contrast score:0 \u2014 span.vault-status #c0caf5 on #b9e4d0 = 1.15:1; p.vault-card-persona #555555 on #1a1b26 = 2.29:1; span.class-count #666666 on #1a1b26 = 2.97:1",
+          "Lighthouse a11y: local__vaults=95, live__vaults=95"
+        ],
+        "inconsistency": "The /vaults registry \u2014 the page the homepage drives every 'Explore the network' / 'See all 37 vaults' CTA toward \u2014 fails WCAG AA color contrast on 78 elements. The worst (vault-status pill, light lavender text on light-green background, 1.15:1) is essentially unreadable; persona labels (2.29:1) and class counts (2.97:1) also fail. This escaped the build's axe gate because gate-4 doesn't test the /vaults index (per seed). Both envs affected. USER COST: the central discovery surface is partly illegible, especially the status badges that tell visitors which vaults are active vs pending.",
+        "severity": "High",
+        "fix": "Fix the three token combos: vault-status pill needs a dark text token on the green background (or invert pill colors); bump persona text from #555 and class-count from #666 to a token meeting >=4.5:1 on #1a1b26 (the design system already uses such tokens elsewhere \u2014 Lighthouse a11y=100 on network/spec/learn). Then ADD /vaults (and /vaults/{slug}) to the axe gate so this can't regress. EXPECTED GAIN: brings the primary registry to AA, lifts Lighthouse a11y 95->100, makes status badges readable."
+      },
+      {
+        "claim": "Tag local|live (both envs). Per-vault detail pages emit raw internal campaign jargon as their public SEO meta-description and OpenGraph description.",
+        "locations": [
+          "src/pages/vaults/[slug].astro:19 (description={vault.tagline || vault.note || ...})",
+          "src/data/vaults.json III.aDNA note ('...Campaign C DG-C closed 2026-05-20; Campaign D CHARTERED. 6 consumer wrappers live.')",
+          "local__vaults_III.aDNA.json data.description + og.description (verbatim 'Campaign C DG-C closed 2026-05-20; Campaign D CHARTERED.')"
+        ],
+        "inconsistency": "The vault-detail template falls back to vault.note for the <meta name=description> and og:description. Several notes are operational shorthand never meant for the public: III.aDNA's description in search results and social cards reads 'Campaign C DG-C closed 2026-05-20; Campaign D CHARTERED. 6 consumer wrappers live.' To an outside technical visitor or in a Google snippet this is opaque insider acronym soup ('DG-C', 'CHARTERED'), undermining the 'governed in the open, legible' positioning. USER COST: degraded search/social presentation and a credibility signal that the project talks to itself, not to newcomers. Ships on live.",
+        "severity": "High",
+        "fix": "Give each vault an explicit visitor-facing `tagline` (one plain-language sentence) and use it for the meta/og description; keep `note` for the on-page detail body only, or strip dated campaign-state phrases from notes used as descriptions. EXPECTED GAIN: clean, dual-audience-legible search snippets and social cards across all ~37 vault-detail pages."
+      },
+      {
+        "claim": "Tag local|live (both envs). The relationship graph the site presents as proof of 'a network of real, directed relationships' shows 37 nodes but only 10 edges, and explicitly buckets 19 vaults (>half) as having no cited relationship.",
+        "locations": [
+          "src/data/vaults_graph.mmd:21 (subgraph orphans[\"Not yet linked: 19 vaults with no cited relationship\"])",
+          "vaults_graph.mmd: 37 nodes, 10 edges (grep counts)",
+          "local__network.json (h2 'A network of real relationships'; CTA 'See the relationship graph')",
+          "/vaults/graph/ route (both envs render this .mmd)"
+        ],
+        "inconsistency": "The /network page sells 'A network of real relationships' and routes visitors to /vaults/graph/ as the proof. The graph itself renders an honest-but-undermining label: 19 of 37 vaults (51%) sit in a 'Not yet linked' orphan box, with only 10 edges total. The headline claim (a richly federated network) and the visual evidence (mostly disconnected nodes) are in tension. USER COST: a skeptical technical visitor clicking 'see the relationship graph' to validate the network story finds the network is ~half unconnected \u2014 weakens the core credibility pitch (goal c). NOTE: this is internally HONEST (not a false claim), so High not Critical, but it is a claim-vs-evidence mismatch.",
+        "severity": "High",
+        "fix": "Either (a) add the missing edges to network_edges.yaml/vaults_graph.mmd so the graph reflects relationships that actually exist (the E4 work added 22 edges to a richer source \u2014 confirm /vaults/graph uses that, not this 10-edge .mmd), or (b) soften the /network copy to match ('a network forming real relationships \u2014 18 vaults linked so far'). Don't present an orphan-heavy graph under a 'real relationships' banner without framing. EXPECTED GAIN: aligns the headline claim with the visual proof; removes a self-inflicted credibility gap."
+      },
+      {
+        "claim": "DEPLOY GAP (the gap is itself a finding). Live (adna.network, E4 c159) is materially behind current-HEAD local: live has NO /commons route and renders 26 routes vs local's 27; the entire E5 Public-Good Commons surface plus latest vault/edge data is built but not deployed.",
+        "locations": [
+          "summary_local.json (n:27, includes /commons/)",
+          "summary_live.json (n:26, no /commons/)",
+          "src/pages/commons.astro (exists local, absent live)",
+          "linkcheck.json shows /commons among link sources (local crawl only)"
+        ],
+        "inconsistency": "The current HEAD contains the E5 commons work, refreshed vault data, and edge/graph improvements, none of which are on the public site. adna.network is the strategic asset (convert visitors, recruit contributors); the freshest credibility-building work (the public-good commons that carries the ethos pitch) is invisible to every real visitor. USER COST: the live experience is a stale snapshot; contributors evaluating the project don't see the latest. NOTE: the gap is currently PROTECTIVE for the embargoed /commons (see Critical finding) \u2014 so the right resolution is gated, not a blind deploy.",
+        "severity": "Medium",
+        "fix": "Resolve the Wilhelm embargo clearance first (Critical finding #2), then deploy HEAD so /commons + latest data go live. If clearance lags, deploy everything EXCEPT the embargoed commons cards. Establish a deploy cadence so live doesn't drift multiple vaults behind HEAD again. EXPECTED GAIN: public site reflects current credibility-building work; closes the stale-snapshot gap."
+      },
+      {
+        "claim": "Tag local|live (both envs). The vault registry's authoritative count of 37 is internally consistent across the whole site (vault_count:37, 37 records, all on-page strings '37', /vaults class-headings sum to 37) \u2014 but may diverge from the registry-of-record cited in the audit brief as 38.",
+        "locations": [
+          "src/data/vaults.json:92 (\"vault_count\": 37) + 37 vault_slug records",
+          "local__home.json ('See all 37 vaults', 'the 37-vault aDNA lattice')",
+          "local__network.json ('Browse all 37 vaults')",
+          "local__vaults.json class headings: standard 1+framework 3+fw-cand 1+forge 6+platform 8+org-vault 8+org-graph 3+network 1+node 1+coordination 1+document 1+knowledge-graph 1+tooling 1+workspace 1 = 37"
+        ],
+        "inconsistency": "The site self-agrees at 37 everywhere (good). The audit brief / external registry references 38 vaults. This is NOT an on-page self-contradiction (the seed's worry about '40'/'19 vaults' homepage-diagram counts checks out clean: '19 vaults' is the honest orphan-bucket label in the graph, '40' only appears in design-rationale prose '40 design decisions' and an internal vaults.json note 'vault 40', neither a registry count). The only open question is whether the registry-of-record is 37 or 38; if 38, one vault is missing from vaults.json.",
+        "severity": "Low",
+        "fix": "Reconcile vaults.json against the canonical registry-of-record: if the true count is 38, add the missing vault record (vault_count auto-derives and all strings update); if 37 is correct, no change. EXPECTED GAIN: confirms the registry the public site presents matches source-of-truth. No self-contradiction to fix on-site."
+      },
+      {
+        "claim": "Tag local|live (both envs). A vault renamed Harness.aDNA still surfaces the old display label 'RareHarness' in user-facing lists, creating a label-vs-slug split.",
+        "locations": [
+          "src/data/vaults.json Harness.aDNA record: vault_slug 'Harness.aDNA', display_name 'RareHarness', class platform, persona Panacea",
+          "local__home.json (no \u2014 Harness not in home slice)",
+          "local__vaults.json links[] (/vaults/Harness.aDNA/ labeled 'RareHarness'; heading H3 'RareHarness')",
+          "local__vaults_III.aDNA.json links[] (/vaults/Harness.aDNA/ labeled 'RareHarness')"
+        ],
+        "inconsistency": "The vault directory/slug is Harness.aDNA (renamed from RareHarness.aDNA 2026-05-31) but display_name is still 'RareHarness'. The /vaults index lists 'RareHarness' under platform, links to /vaults/Harness.aDNA/, and a separate 'RareHarnessOld' also appears \u2014 a visitor sees RareHarness (->Harness slug) and RareHarnessOld and cannot tell the rename story. Defensible (RareHarness is the clinical-vertical brand) but the label/slug/old-vault triple is confusing on a credibility-bearing registry. Low severity (not a naming-discipline aDNA-vs-Lattice violation).",
+        "severity": "Low",
+        "fix": "Decide the public display: if the vault is now 'Harness', set display_name 'Harness' (note RareHarness as the clinical vertical in the body); if 'RareHarness' is intentional branding, add a one-line note disambiguating it from RareHarnessOld. EXPECTED GAIN: removes registry confusion around the renamed platform vault."
+      }
+    ],
+    "naming_verdict": "PASS (Score 5/5). The aDNA-vs-Lattice naming discipline is held cleanly and consistently. 'aDNA' is the forward-facing brand everywhere (site title, H1 'The aDNA Network', nav brand, spec title 'aDNA Specification'); 'Lattice Protocol' is consistently the underlying protocol/IP, phrased as 'built on the Lattice Protocol' (HomeHero.astro:70, index.astro:48), 'federating on the Lattice Protocol' (index.astro:69, NetworkDiagram.astro:37), and the org/copyright entity (Footer.astro:17 '\u00a9 Lattice Protocol. Released under the MIT License', seo.ts:47/62/99 publisher 'Lattice Protocol'). No instance of the reverse (aDNA described as the protocol, or Lattice as the brand). One MINOR nuance, not a discipline violation: the nav label 'The Lattice' (Header.astro:6) points to the /vaults registry \u2014 so 'The Lattice' (vault registry) and 'the Lattice Protocol' (the IP) share the word 'Lattice' as different referents; a first-time visitor could momentarily conflate them, but context disambiguates and this is a defensible product-naming choice. The only label wrinkle is operational, not naming-discipline: the renamed Harness.aDNA vault still displays 'RareHarness' (Low finding).",
+    "version_verdict": "FAIL (Score 2/5). The site presents THREE different numbers for the same normative 'aDNA Standard': v2.2, v2.1, and v2.0. Canonical/correct = v2.2 \u2014 it matches the GitHub repo seed ('Standard v2.2'), the spec frontmatter (specification.mdx:9 version:\\\"2.2\\\"), the spec body footer date-stamp ('v2.2 | 2026-03-20'), the homepage stat (home.ts:125), and the homepage meta-tag (index.astro:136). BUT: (a) the specification page's own END-OF-DOCUMENT footer says 'End of aDNA Universal Standard v2.0' (specification.mdx:1479) \u2014 the same document is v2.2 at the top and v2.0 at the bottom; (b) the 'Open Standard' learning concept (open-standard.mdx:22,40), all five comparison pages (adna-vs-para/notion/zettelkasten/johnny-decimal/plain-markdown .mdx footers), and the design-rationale companion (design-rationale.mdx:8) all cite 'aDNA Standard v2.1'. Separately: the brief's worry about 'Governance v7.0/v8.0' does NOT appear on the site \u2014 governance-model.mdx only uses v5.5->v6.0 as an illustrative EXAMPLE of a governance bump, making no claim that contradicts the repo, so no governance-version inconsistency exists on-site. The standard-version drift is real, spans the spec itself plus 7 content pages, and is a Critical credibility issue for a versioned standard. Fix: sweep all to v2.2 (ideally source from one data constant).",
+    "counts_verdict": "MOSTLY PASS \u2014 internally consistent, one external reconcile (Score 4/5). ENTITY TYPES: CONSISTENT and CORRECT \u2014 '14 base entity types' appears ~15+ places (home.ts:122, index.astro:139, ontology.mdx, open-standard.mdx:48, base-extension.mdx:15, agent-first-guide.mdx:50, etc.) and the seed-flagged open-standard.mdx:95 ('adds 10 entity types to the base 14') is NOT a contradiction \u2014 it correctly states 14 base + 10 Rosetta extensions = 24, exactly matching this vault's documented ontology. No 14-vs-10 conflict exists. VAULT COUNT: the site is fully self-consistent at 37 (vaults.json vault_count:37, 37 records, every page string '37' \u2014 home 'See all 37 vaults' / 'the 37-vault lattice', network 'Browse all 37 vaults', /vaults class-headings sum to 37). The seed's worry about '40'/'19 vaults' is clean: '19 vaults' is the graph's honest 'Not yet linked' orphan-bucket label (vaults_graph.mmd:21), and '40' appears only in internal prose ('40 design decisions' in design-rationale, 'vault 40' in a vaults.json note) \u2014 neither is a registry-count claim. The 'graph.astro:40 14 vault' hit is a code comment ('~14 vault-class fill colours'), not user-facing. CONFORMANCE LEVELS: CONSISTENT \u2014 exactly 3 (Starter/Standard/Full) everywhere (home.ts:123 '3 Conformance Levels', glossary-conformance-level.mdx, governance-model.mdx:52, tool-setup.mdx, reading-guide.mdx). The only open item: the audit brief cites the registry-of-record as 38 while the site uses 37 \u2014 reconcile vaults.json to source-of-truth (Low finding); if 38 is canonical, one vault record is missing.",
+    "license_verdict": "PASS (Score 5/5). License is stated consistently as MIT across every surface and matches the GitHub repo seed (LatticeProtocol/aDNA = MIT). On-site: Footer.astro:17 '\u00a9 {year} Lattice Protocol. Released under the MIT License'; home stat home.ts:126 {value:'MIT', label:'Licensed'}; homepage standard meta index.astro:134 'an open specification \u2014 MIT licensed' and :137 meta-tag 'MIT License'; HomeHero.astro:70 trust-link 'MIT \u00b7 built on the Lattice Protocol'. No competing license (Apache/GPL) appears anywhere in src/ for the standard itself. (Note: spec \u00a710 FAIR-metadata text references per-object `license` frontmatter generically, not a conflicting standard license.) No inconsistency found \u2014 site MIT == repo MIT."
+  },
+  "persona_verdicts": [
+    {
+      "persona": "Newcomer (non-expert first-time visitor) \u2014 guiding question: in 60 seconds, can I tell what aDNA is, why it matters, and what to do next? Where is the jargon wall?",
+      "verdict": "Through the Newcomer lens, adna.network is visually polished and technically pristine (Lighthouse Perf/BP/SEO 100, CWV clean, a11y 95-100) but it answers WHY before WHAT and buries WHAT-NEXT. In 60 seconds a non-expert learns the ethos \u2014 context as a shared, democratic public good \u2014 and comes away moved but unable to say in plain words what aDNA actually is or what to do first, because the hero is poetry, the first section is 'context democracy', and the clearest explanation ('How it Works') sits below a 37-vault registry dense with class taxonomy and unexplained persona codenames. Three things cross into Critical for a credibility-establishing site: the get-started flow contains a hard 404 and a stale clone URL at the exact moment a newcomer is acting; and the nav/title labels the vault registry 'The Lattice', conflating the registry with the Lattice Protocol and breaking the load-bearing aDNA-vs-Lattice naming discipline. The irony of the deploy gap is sharp \u2014 the single most newcomer-legible page, /commons ('A commons, not a catalog', plain language, human stakes, a11y 100), is built locally but not yet live, so today's visitors can't see the site's best 'why it matters' surface. Fix the broken getting-started links, rename 'The Lattice' nav item to 'Vaults', add one plain-English definition sentence to the hero, promote 'How it Works', gloss the registry's class/persona jargon, and ship /commons \u2014 and this jumps from an admirable manifesto to a site that can actually onboard a stranger.\""
+    },
+    {
+      "persona": "Conversion/Growth lens \u2014 can a technical visitor reach a runnable quickstart/clone in under 60s? Counting clicks and naming friction/dead-ends.",
+      "verdict": "Through the Conversion/Growth lens, adna.network is technically immaculate (Lighthouse Perf/BP/SEO=100, CWV pristine, near-clean axe) but funnel-broken at the two moments that matter most. A technical visitor CAN reach a working clone in under 60s \u2014 but only via the under-promoted path: Home \u2192 Network nav \u2192 'Run your first node' \u2192 /get-started (2 clicks, works). The intuitive path fails: the home hero offers browsers ('Explore the network') and readers ('Read the standard') but no builder CTA, and there is no 'Get Started' in the nav \u2014 so the highest-value visitor either scrolls to a footer link or follows the primary CTA into /vaults, which dead-ends at read-only vault-detail pages that offer no clone/use affordance at all. The single worst finding is a production 404: the get-started page's one 'see a real working vault' link points to LatticeProtocol/aDNA-aDNA (dead), poisoning the exact moment intent-to-clone peaks. Compounding this, the strongest recruitment surface (/commons, 'a commons, not a catalog') is built but undeployed and even locally has no join/contribute CTA. Fixes are small and high-leverage: repoint the 404, add a 'Get Started' hero+nav CTA, add a 'Use this vault' block to vault details, ship /commons with a contribute CTA. None require redesign \u2014 they convert an asset that's beautiful-but-passive into one that actually funnels."
+    },
+    {
+      "persona": "Movement Skeptic \u2014 Is the credibility EARNED by real evidence, or asserted? Where does the site over-claim adoption/scale relative to a reality that is, on inspection, one operator and a set of AI personas?",
+      "verdict": "Through the Movement Skeptic lens, adna.network has a real and unusually strong intellectual core \u2014 a substantive 20-section normative specification, a deep concept/tutorial library, and (to its credit) a relationship graph that honestly shows a sparse, mostly-disconnected topology rather than faking density. That candor on /vaults/graph is the template for what the rest of the site should do. But the headline framing systematically over-claims scale: the site sells a '37-vault living registry' and a 'Network\u2026of real relationships' when the verifiable reality is one operator, a set of AI personas as 'tenders,' 9 active vaults out of 37 (76% pending/genesis/stub), zero public repos behind any registry entry, 17 purely intra-workspace edges, and a canonical standard repo at 18 stars / 3 forks. Worse, the number isn't even stable \u2014 live says 40, local says 37 \u2014 and the primary 'clone the template' proof link 404s, so a skeptic who tries to verify openness hits a dead repo on the most-visited deployed surface. The credibility is genuinely earned at the spec/standard layer and asserted-not-earned at the network/community/adoption layer; the fix is not more content but honest accounting \u2014 lead with the active count, badge the roadmap as roadmap, repair the verify path, deploy the corrected data, and reframe community/adopter pages as invitation rather than implied headcount. Do that and the site's real substance stops being undermined by its own inflated framing."
+    },
+    {
+      "persona": "Design Critic",
+      "verdict": "This site is unmistakably made on purpose. There is a real design system underneath it \u2014 a fluid 1.25 modular type scale, a 4px spacing scale, defined layout widths, and a fully-documented Tokyo Night palette with audited AA contrast ratios (tokens.css + branding.css) \u2014 and the marketing/section-landing surfaces (home, network, learn, commons) execute it with confidence, each carrying a distinct but family-consistent bespoke pixel-art hero whose alt text reveals genuine commissioned intent rather than stock filler. axe=0 on nearly every route and clean mobile reflows confirm the polish is more than skin-deep. The coherence is strong enough that the failures stand out sharply: the vault-detail pages \u2014 the destination of every registry CTA and the place technical evaluators actually judge a specific vault \u2014 are the system's blind spot, rendering as barren left-hugging text columns with no hero, no cards, and dead-space-heavy desktop layouts; the specification page is a typographically-tidy but structurally-undifferentiated 50k-67k-px scroll wall that loses its navigation entirely on mobile; and the site's most ambitious new surface, /commons, is built-but-not-deployed so the public never sees the best work. The throughline for the Design Critic is consistency-of-care: the front door is excellent, the deep rooms are unfinished. Bring the vault-detail template and the spec page up to the standard the rest of the site already sets, ship /commons, and this becomes a genuinely polished, coherent whole rather than a beautiful facade with thin interiors. Overall design quality today: a high 4 on the surfaces a visitor sees first, dragged toward 3 by the surfaces they reach when they go deep."
+    },
+    {
+      "persona": "Information Architect",
+      "verdict": "Within individual pages, the information architecture is frequently excellent \u2014 the vault-detail template (III.aDNA) and /vaults/graph are model wayfinding surfaces (breadcrumbs, 'New here?' hand-offs, cross-vault links, deep-linkable graph focus), and the numbered spec TOC is exemplary. The failure is at the seams. The site runs two contradictory nav systems (a 7-item header vs a 7-group doc sidebar that swaps Network/The-Lattice for Glossary/Guides), so the top-level model the user learns on the homepage is overturned the moment they enter docs. A whole tier of high-value pages \u2014 every audience page plus get-started, glossary, how, adopters, and the changelog \u2014 has no home in the global nav and highlights nothing, leaving 'where am I / where next' unanswered. Worst, the newest and most strategically important page, /commons (the public-good ethos), is a complete orphan with zero inbound links and isn't even deployed, while the conversion-critical /get-started page links recruits to a 404 repo. Compounding this, the words 'network' and 'commons' each point at multiple destinations, blurring exactly the aDNA/Lattice and Commons naming discipline the brief calls load-bearing, and the headline vault count disagrees across live (40), local (37), and GitHub (38). The bones are strong; the connective tissue and the deploy of the latest work are where credibility and conversion are leaking."
+    },
+    {
+      "persona": "Accessibility Auditor",
+      "verdict": "Through the accessibility lens the site is a study in contrasts \u2014 literally. The foundation is genuinely strong: a skip link on every page, a correct global :focus-visible ring with offset, complete image alt text, properly aria-labelled icon buttons (the dark-mode toggle, mobile menu, and ~27 copy buttons all carry labels \u2014 the harness's 'empty text' flags are false alarms), semantically-described custom SVG diagrams, and dark-mode design tokens that are carefully tuned to pass AA (muted text 6.3:1, body 11.8:1). Eight of eleven key surfaces score 4-5. But one component drags the registry \u2014 the site's credibility centerpiece \u2014 to a 1: VaultCard.astro was never migrated to the Tokyo Night reskin and hardcodes pre-reskin light-mode colors, producing a serious 78-node (84 live) color-contrast failure where persona names read at 2.29:1, class counts at 2.97:1, and status pills at a near-invisible 1.15:1 (light text on light pastel). This escaped the build gate purely because gate-4 doesn't sweep the /vaults index. The fix is small and surgical \u2014 swap hardcoded hex for the AA tokens that already exist \u2014 and would clear the only serious axe violation on the site, but until then a low-vision visitor literally cannot read which vaults are active. Secondary issues (sub-24px home tap targets; the cross-vault graph hiding its 22 relationships from screen readers) are real but bounded. Net: excellent accessibility scaffolding undermined by one un-migrated, ungated card component \u2014 fixable in an afternoon, and worth doing before the next deploy since live currently carries the larger version of the failure."
+    }
+  ],
+  "critic": {
+    "gaps": [
+      "IN-SCOPE PAGES NEVER SCORED (panel scored 12 of ~37 routes; these key/in-scope routes got captured data but ZERO scorecard entry or narrative): /patterns (123 links), /use-cases (121), /glossary (140 links \u2014 the term-discovery surface), /reference/ index, /learn/concepts/convergence/ (the one concept page explicitly named in KEY scope is /reference/specification, but convergence is in-scope and uncovered), /changelog, /adopters, /how, /educators, /enterprise, /compliance, /startup-first-hour. The four non-researcher audience pages (educators/enterprise/compliance/startup-first-hour) are asserted to share researchers' orphan+no-CTA defects but none is individually verified. RECOMMENDATION: at minimum spot-score glossary, patterns, changelog, and the 4 remaining audience pages before calling this a roadmap.",
+      "404 PAGE EXISTS BUT WAS NEVER AUDITED (src/pages/404.astro). It is genuinely good \u2014 noindex=true, two recovery CTAs ('Go home' /, 'Browse docs' /learn), and a documented dark-mode AA contrast fix (line 66-74: --brand-primary-dark for 5.8:1). But it has NO route in either summary, NO axe scan, NO screenshot, NO Lighthouse. A 404 is a real conversion-recovery surface for a credibility site; the audit is silent that it even exists. (Note: it routes 'Browse docs' to /learn, not /get-started \u2014 consistent with the panel's reader-funnel-not-builder-funnel critique.)",
+      "robots.txt POINTS CRAWLERS AT THE DEAD adna.dev DOMAIN \u2014 UNVERIFIED BY PANEL. public/robots.txt line 4: 'Sitemap: https://adna.dev/sitemap-index.xml'. adna.dev is the abandoned domain (per project memory: 'adna.dev abandoned'); the live site is adna.network and astro.config builds @astrojs/sitemap against site:'https://adna.network'. So robots.txt advertises a sitemap on a host the project no longer controls, while the real sitemap sits at adna.network/sitemap-index.xml unreferenced. This is a concrete SEO/crawlability credibility defect on the strategic asset and a SECOND live adna.dev/adna.network naming-discipline leak (alongside the Agentic-DNA repo issue). The audit's SEO axis scored 5s on metadata but never checked robots.txt or confirmed the sitemap resolves. SEVERITY: should be High, not omitted.",
+      "SITEMAP NEVER VERIFIED TO RESOLVE. The site uses @astrojs/sitemap (astro.config + package.json @astrojs/sitemap ^3.7.2), so a sitemap-index.xml should exist at the root, but linkcheck.json only tested 5 external URLs and never fetched the site's own sitemap or robots target. No evidence the sitemap actually emits or lists the right routes. Combined with the dead-domain robots pointer, search-engine discovery is asserted-good (SEO=100) but materially unverified.",
+      "LIGHT-MODE / DARK-MODE PARITY IS UNVERIFIED \u2014 ONLY DARK CAPTURED. The site ships a DarkModeToggle and project history claims 'axe 0 AA both modes', but every evidence artifact (data JSON, all 106 screenshots at __1440/__390, all Lighthouse runs) is a single default (dark) rendering. No light-mode screenshot, axe scan, or Lighthouse run exists. The /vaults color-contrast failures the panel found are dark-mode failures; light-mode contrast (and whether the 404/btn dark-fix has a light analog) is completely untested. The audit cannot claim AA without testing the light theme. RECOMMENDATION: re-run axe+shots with theme forced to light on at least the key pages.",
+      "NO RSS / FEED ON A VERSIONED, CHANGELOG-BEARING SITE \u2014 UNADDRESSED. There is a /changelog page (H2 'v0.1.0 \u2014 Site Scaffold') and the standard itself is versioned, but find shows zero RSS/feed/Atom generation anywhere in src or public. For a standard trying to recruit contributors and signal active maintenance, the absence of a subscribable feed (or 'watch releases') is a contributor-recruitment gap the panel never raised. (Also: changelog shows only one entry, v0.1.0 'Site Scaffold' \u2014 a 'maintained authority' signal the panel's version-drift finding should have connected to.)",
+      "NO NEWSLETTER / CONTACT / SEARCH \u2014 CONFIRMED ABSENT, NEVER NAMED. grep confirms ZERO real <form> elements and ZERO search UI (no input type=search, role=search) sitewide. The panel correctly notes /community has no styled CTAs, but never states the structural fact: there is no email-capture, no contact form, and no on-site search across a 200+-page docs corpus. For goals (b) recruit contributors and (a) convert visitors, having no lead-capture and no way to search the spec/glossary is a top-level conversion gap, not just a missing CTA.",
+      "NO PRINT / PDF STYLESHEET FOR THE NORMATIVE SPEC. grep '@media print' = zero matches sitewide. /reference/specification is a ~52k-px RFC-2119 normative document (213 links) that implementers and evaluators will print or save to PDF; with no print styles the sticky header, full ~100-link SidebarNav, and nav chrome all render into the printout. The panel praised the spec as the strongest credibility anchor but never tested its print/save-to-PDF form.",
+      "/learn/what-is-adna IS THE CONCEPTUAL FRONT DOOR AND WAS NEVER CAPTURED. It is a dedicated page (src/pages/learn/what-is-adna.astro), it is the FIRST tile on /learn ('What is aDNA?') and is linked from home (local__home links[] href '/learn/what-is-adna' x2) and changelog. The panel's #1 campaign recommendation is 'surface the buried spec \u00a71.1 definition' on home \u2014 but a purpose-built 'What is aDNA?' page already exists and was neither audited nor mentioned. The real finding may be 'good definition page exists but is under-surfaced', which changes the home-hero recommendation. This is an obvious missed page given it answers the exact <10s value-prop question the panel raised.",
+      "MOBILE (__390) SCREENSHOTS WERE CAPTURED BUT NEVER QUALITATIVELY REVIEWED. 53 mobile shots exist; the panel's only mobile finding is Lighthouse 'target-size/touch-target' on home (a11y 95). No narrative review of mobile layout of the heavy surfaces: the /vaults 73-link catalog, the Mermaid /vaults/graph (does a mermaid SVG overflow/zoom on 390px?), the 52k-px spec with its ~100-link sidebar, or whether the hamburger nav (switches at 900px per Header.astro:152) actually holds all 7 items without overflow as the comment claims. Mobile usability of the registry+graph+spec is under-covered.",
+      "REDUCED-MOTION ASSERTED-COVERED IN SOURCE BUT UNTESTED IN AUDIT. 7 files guard prefers-reduced-motion (NetworkDiagram, vaults/graph, SubnetworkCard, GlossaryTooltip, global.css, tokens.css). Coverage looks good in code, but no evidence artifact verifies behavior with reduced-motion emulated (e.g., Mermaid graph render, NetworkDiagram). Lower priority than the above, but it is an a11y axis the panel claimed clean a11y on without testing.",
+      "axe COVERAGE GAP IS BROADER THAN THE PANEL STATES. Panel says /vaults 'escaped gate-4 because the index isn't tested', but the same logic means EVERY route the gate doesn't cover is unverified \u2014 the gate's route list is never enumerated in the audit. The audit's own axe pass (summary shows axe:1 on /vaults, 0 elsewhere) covers only 27 local/26 live routes, while the site has 40+ generated pages ([...slug] collections: ~13 concepts, 9 tutorials, 5 comparisons, 8 patterns, 6 use-cases, 24 glossary terms, etc.). The hundreds of generated content/glossary/tutorial detail pages were never axe-scanned at all. RECOMMENDATION: state the gate's actual route coverage and scan a sample of generated detail pages.",
+      "LINKCHECK IS THIN AND ITS SOURCE ATTRIBUTION IS MISLEADING. linkcheck.json checked only 5 external URLs total and lists Agentic-DNA sources as only /adopters,/changelog,/commons,/community \u2014 yet source confirms the same 301 link is sitewide (Header.astro:37, Footer.astro:12 verified). The panel's 'sitewide 301' claim is correct from source but the linkcheck evidence under-reports it (deduped/partial crawl), so a reader auditing the evidence would undercount the blast radius. Also: internal_total is only 163 links with 0 broken, but individual pages report 120-213 links each \u2014 the internal crawl clearly did not exercise the full link graph. The clean 'internal_broken: 0' is not trustworthy at face value.",
+      "NO COVERAGE OF JS-DISABLED / PROGRESSIVE-ENHANCEMENT OR THE MERMAID GRAPH'S NO-JS STATE. /vaults/graph renders via mermaid (client JS). The audit never checks what a crawler or no-JS visitor sees on the graph page, nor whether the graph is keyboard-navigable (the panel gave it axe 0 / a11y clean, but an interactive SVG graph with ?focus deep-links is exactly where keyboard/SR access is non-trivial and axe alone won't catch it)."
+    ],
+    "verdict": "NOT comprehensive enough to ship as-is: the panel's prioritized findings (naming discipline, 404/301 repo links, jargon-in-meta, version drift, CTA poverty, orphaned /commons) are well-evidenced and correct, but the audit scored only 12 of ~37 in-scope routes and has systematic axis blind spots \u2014 it never tested the 404 page, never checked robots.txt (which points crawlers at the dead adna.dev domain), never verified the sitemap resolves, never captured light mode (so its AA claims cover only dark), never reviewed mobile layout qualitatively, missed the existing /learn/what-is-adna definition page, and flagged no RSS/search/newsletter/print gaps. Ship the current findings as Phase-1 fixes, but add a Phase-1b verification sweep (light-mode axe+shots, robots/sitemap fix, 404+remaining-audience-page scoring, generated-detail-page axe sample) before treating the roadmap as complete."
+  }
+}
