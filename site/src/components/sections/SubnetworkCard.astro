@@ -1,0 +1,231 @@
+---
+/**
+ * SubnetworkCard.astro — one featured public-good subnetwork on `/commons` (E5 / M5.12 c161).
+ *
+ * Extracted from the c160 inline grid markup and crafted up. A CURATED card distinct from the
+ * dense homepage RegistryCard: it has room for the steward (a who, not a count — the HF/Val-Town
+ * "named people, not vanity metrics" lesson, see cycle_161_reference_synthesis), one cited mission
+ * line, who-it-serves, an open-governance anchor, and one honest outbound connect path.
+ *
+ * Trust/Provenance (E5 new dimension) + E4 Gap #5 ("citations visible / one click away, never
+ * hover-gated"): the member vault is surfaced under an explicit "Open governance" label and links
+ * to its in-site /vaults/<slug> governance page — held in trust, visible, one click away. Internal
+ * curation sources (subnetworks.json `cite`) stay in the data, not dumped as raw repo paths to the
+ * public. Wilhelm-Foundation material additionally shows per-surface attribution + license
+ * (WilhelmAI ADR-002), required by the operator-cleared ADR-010 window.
+ *
+ * Colour discipline (≤2 fighting colours): cyan `--color-link` for ALL small text/links on the
+ * elevated card surface (#24283b), where purple `--color-primary` computes to 4.38:1 — below the
+ * 4.5:1 AA floor for small text. Purple = accents/large only; amber = decorative only.
+ */
+interface Props {
+  subnetwork: any;
+}
+const { subnetwork: s } = Astro.props;
+const members = s.members ?? [];
+---
+
+<li class="subnet-card">
+  <h3 class="subnet-name">{s.display_name}</h3>
+  {s.tagline && <p class="subnet-tagline">{s.tagline}</p>}
+  {s.blurb && <p class="subnet-blurb">{s.blurb}</p>}
+
+  <dl class="subnet-meta">
+    {s.serves && (
+      <div class="subnet-meta-row">
+        <dt>Serves</dt>
+        <dd>{s.serves}</dd>
+      </div>
+    )}
+    {s.steward && (
+      <div class="subnet-meta-row">
+        <dt>Stewarded by</dt>
+        <dd>{s.steward}</dd>
+      </div>
+    )}
+  </dl>
+
+  {members.length > 0 && (
+    <div class="subnet-gov">
+      <span class="subnet-gov-label">Open governance</span>
+      <p class="subnet-vaults">
+        {members.map((m: any) =>
+          m.vault_slug ? (
+            <a class="subnet-vault" href={`/vaults/${m.vault_slug}/`} data-astro-prefetch>{m.vault}</a>
+          ) : (
+            <span class="subnet-vault subnet-vault-missing">{m.vault}</span>
+          )
+        )}
+      </p>
+    </div>
+  )}
+
+  <div class="subnet-foot">
+    {s.public_url && (
+      <a class="subnet-ext" href={s.public_url} target="_blank" rel="noopener">
+        Visit &nearr;
+      </a>
+    )}
+    {s.attribution && (
+      <p class="subnet-provenance">
+        {s.attribution}{s.license ? ` · ${s.license}` : ''}
+      </p>
+    )}
+  </div>
+</li>
+
+<style>
+  .subnet-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-8) var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    /* cyan = the connections/data signal (the same pair the rest of the site uses; ≤2 colours) */
+    border-top: 3px solid var(--color-link);
+    border-radius: var(--radius-xl);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  /* Quiet "the card is alive" lift (RegistryCard pattern). Container, not a link — the card holds
+     several distinct affordances, so the lift is decorative and the children carry the actions. */
+  .subnet-card:hover {
+    border-color: var(--color-link);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .subnet-name {
+    font-size: var(--text-xl);
+    color: var(--color-text-heading);
+    margin: 0 0 var(--space-1);
+  }
+
+  .subnet-tagline {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-link);
+    margin: 0 0 var(--space-4);
+  }
+
+  .subnet-blurb {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0 0 var(--space-5);
+  }
+
+  .subnet-meta {
+    margin: 0 0 var(--space-5);
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .subnet-meta-row {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+
+  .subnet-meta dt {
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--text-xs);
+    padding-top: 0.15em;
+  }
+
+  .subnet-meta dd {
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  /* Trust/Provenance — the governance anchor, framed and visible (not hover-gated; E4 Gap #5).
+     The vault pill links to its in-site /vaults/<slug> governance page: held in trust, one click away. */
+  .subnet-gov {
+    margin: 0 0 var(--space-5);
+  }
+
+  .subnet-gov-label {
+    display: block;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: var(--text-xs);
+    margin-bottom: var(--space-2);
+  }
+
+  .subnet-vaults {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: 0;
+  }
+
+  .subnet-vault {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    padding: 0.25em 0.6em;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    color: var(--color-link);
+    text-decoration: none;
+    background: var(--color-bg);
+    transition: border-color var(--transition-fast);
+  }
+
+  .subnet-vault:hover {
+    border-color: var(--color-link);
+  }
+
+  .subnet-vault-missing {
+    color: var(--color-text-muted);
+  }
+
+  /* Card foot — outbound connect path + provenance, pushed to the bottom so cards align on a row. */
+  .subnet-foot {
+    margin: auto 0 0;
+  }
+
+  /* Link signal (cyan) — AA-safe small text on the elevated card surface, where purple
+     --color-primary computes to 4.38:1 in dark mode (below 4.5:1). Cyan = 8.49:1. */
+  .subnet-ext {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--text-sm);
+    color: var(--color-link);
+    text-decoration: none;
+  }
+
+  .subnet-ext:hover {
+    text-decoration: underline;
+  }
+
+  /* Per-surface attribution + license for Wilhelm-Foundation material (WilhelmAI ADR-002).
+     Quiet, factual, never a badge. */
+  .subnet-provenance {
+    margin: var(--space-3) 0 0;
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  /* Narrow screens — stack the meta label/value so it doesn't crush at one column. */
+  @media (max-width: 480px) {
+    .subnet-meta-row {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .subnet-card {
+      transition: none;
+    }
+    .subnet-card:hover {
+      transform: none;
+    }
+  }
+</style>

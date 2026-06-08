@@ -1,0 +1,60 @@
+{
+  "cycle_id": "cycle_161_e5_commons_hero",
+  "mission": "mission_adna_str_p5_m512_e5_public_good_commons",
+  "decadal": "E5",
+  "round": "r3",
+  "step": "step_3_generate_images",
+  "model": "imagen-4.0-ultra-generate-001",
+  "aspect_ratio": "16:9",
+  "output_target": "1408x792",
+  "register": "ss_ghibli_pixel / tokyo_night",
+  "thesis": "a commons, not a catalog \u2014 many distinct stewards contributing to / drawing from one shared common pool",
+  "started_at": "2026-06-08T20:18:01.970558+00:00",
+  "calls": [
+    {
+      "direction": "C2R2",
+      "round": "r3",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/sec_commons_r3_C2R2_v1.png",
+      "prompt_chars": 2302,
+      "status": "success",
+      "bytes": 1455592,
+      "elapsed_sec": 26.4,
+      "cost_usd": 0.04
+    },
+    {
+      "direction": "C2R2",
+      "round": "r3",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/sec_commons_r3_C2R2_v2.png",
+      "prompt_chars": 2302,
+      "status": "success",
+      "bytes": 1422793,
+      "elapsed_sec": 86.52,
+      "cost_usd": 0.04
+    },
+    {
+      "direction": "C2R2",
+      "round": "r3",
+      "variant": 3,
+      "out_path": "site/src/assets/heroes/candidates/sec_commons_r3_C2R2_v3.png",
+      "prompt_chars": 2302,
+      "status": "success",
+      "bytes": 1304072,
+      "elapsed_sec": 18.5,
+      "cost_usd": 0.04
+    },
+    {
+      "direction": "C2R2",
+      "round": "r3",
+      "variant": 4,
+      "out_path": "site/src/assets/heroes/candidates/sec_commons_r3_C2R2_v4.png",
+      "prompt_chars": 2302,
+      "status": "fail",
+      "error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/predict_requests_per_model_per_day_paid_tier_1, limit: 30, model: imagen-4.0-ultra-generate', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/predict_requests_per_model_per_day_paid_tier_1', 'quotaId': 'PredictRequestsPerDayPerProjectPerModelPaidTier1', 'quotaDimensions': {'location': 'global', 'model': 'imagen-4.0-ultra-generate'}, 'quotaValue': '30'}]}]}}",
+      "elapsed_sec": 151.05
+    }
+  ],
+  "total_cost_usd": 0.12,
+  "finished_at": "2026-06-08T20:22:44.444689+00:00"
+}

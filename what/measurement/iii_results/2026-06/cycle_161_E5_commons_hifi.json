@@ -1,0 +1,62 @@
+{
+  "cycle": 161,
+  "decadal": "E5",
+  "decadal_cycle": 2,
+  "mission": "mission_adna_str_p5_m512_e5_public_good_commons",
+  "slug": "commons_hifi",
+  "date": "2026-06-08",
+  "session": "session_stanley_20260608T200404Z_v8_m512_e5_c161",
+  "theme": "/commons bands 1-2 hi-fi — image-led Direction-B hero + SubnetworkCard extraction + grid craft",
+  "register": "ss_ghibli_pixel / tokyo_night",
+  "operator_scope": "bespoke hero: research-fed prompts + direct visual inspection + blind persona panel; regenerate until it WOWs the reviewers (MAX-III)",
+  "iii_7step": {
+    "measure": "Baseline = c160 scaffold (sparse text hero + inline grid markup/styles). /commons already at build-clean, 91 gates, axe 0 AA, LH 100s. Below-target dims (agent-assessable): hero is text-only (not image-led per cycle theme); cards are scaffold markup with no hover/provenance craft; Trust/Provenance citation present in data but unrendered (E4 Gap #5).",
+    "orient": "Reference-inspection (commons lens) over the complete M5.8 exemplar set — HF (named people > vanity metrics), Val Town (who-not-how-many), ethereum (credibility anchor + low-barrier). Lesson: named stewards + one cited mission + one honest connect path = credible; logo soup + vanity metrics = not. Artifact: cycle_161_reference_synthesis.md.",
+    "select_iterate": "Two targets: (1) bespoke image-led Direction-B hero; (2) extract SubnetworkCard with hover/lift + visible governance citation + AA cyan discipline. Grid craft folds into (2).",
+    "implement": "Hero: authored e5_commons_hero_gen.py (Imagen-4.0 Ultra, python3.13, Keychain SS_GEMINI_API_KEY); 3 gen rounds (14 candidates, $0.52): r1 C1/C2/C3 motifs -> r2 C2R (panel deltas: individuate plots, natural connective tissue, calm sky) -> r3 C2R2 (forbid floating helix/glyphs). Winner sec_commons_r3_C2R2_v3 -> hero_commons.png, wired via HomeHero (title composited, no baked text). Card: new SubnetworkCard.astro (extracted markup + styles), hover/lift (reduced-motion guarded), framed 'Open governance' provenance anchor (member vault -> in-site /vaults/<slug>; closes E4 Gap #5 visibly without dumping internal repo paths), WF attribution+license preserved (ADR-002), cyan small-text AA on #24283b surface. commons.astro grid -> <SubnetworkCard/>; dead hero + .subnet-* styles removed.",
+    "re_measure": "Build PASS 161pp/0 err (161 vs c160's 163 = prior commit c6aea4d dropped 2 archived vault pages, not this cycle). Gates 91/91 (incl. /commons a11y both modes + responsive x4 viewports). axe 0 WCAG-AA both modes on /commons. Lighthouse /commons 100/100/100/100 (desktop preset). Visual confirm: title legible over calm dark hero band; 4 cards render with provenance + WF attribution.",
+    "validate": "All gates green; page count stable vs the post-c6aea4d baseline; Lighthouse categories all 100 (>= -1 hold); both improvement targets landed; commit-only posture honored (no deploy).",
+    "record": "this file + cycle_161_reference_synthesis.md + cycle_161_e5_commons_hero.r{1,2,3}.image_gen_log.json + evidence/lighthouse_c161_commons.json"
+  },
+  "hero_selection": {
+    "runner": "how/campaigns/campaign_adna_serious_tool_readiness/runners/e5_commons_hero_gen.py",
+    "rounds": 3,
+    "candidates_generated": 14,
+    "cost_usd": 0.52,
+    "winner": "sec_commons_r3_C2R2_v3.png",
+    "thesis": "a commons, not a catalog — distinct individually-tended garden plots sharing one great living tree",
+    "panel": "blind 4-lens (Design Critic / Newcomer / Community Lead / Movement Skeptic), independent, not primed",
+    "panel_r1_verdict": "unanimous on the C2 garden direction (Newcomer 9, Community Lead 9, Design Critic 8, Movement Skeptic 6); Critic+Skeptic asked for a round to individuate plots, drop energy-beams, calm the sky, structuralize DNA",
+    "panel_confirm_verdict": "Design Critic: 'WOW / shippable: YES'; Movement Skeptic: V3 is the ship pick, residual non-blocking nit = single cyan leaf-glow at trunk base (botanical, lower-center, outside title zone)",
+    "wow_gate": "cleared (3/4 lenses ship/WOW; adversarial 4th picks V3 with one non-blocking note)",
+    "deferred_polish": "anchor/neutralize the trunk-base leaf-glow on a future Ultra-quota day (Movement Skeptic non-blocking note); daily Imagen-Ultra quota (30/req) hit at r3 v4"
+  },
+  "embargo_finding": "WilhelmAI + Rare Archive (Wilhelm-Foundation external-org) rendered under the operator-cleared ADR-010-window override; per-surface attribution + license shown on both cards (WilhelmAI ADR-002); commit-only until E5 close green-light.",
+  "change_summary": [
+    "NEW site/src/components/sections/SubnetworkCard.astro (extracted + crafted: hover/lift, Open-governance anchor, WF attribution, cyan AA, reduced-motion + 480px responsive)",
+    "NEW site/src/assets/heroes/hero_commons.png (bespoke garden-commons hero, 3 gen rounds + blind panel)",
+    "NEW how/campaigns/.../runners/e5_commons_hero_gen.py",
+    "MOD site/src/pages/commons.astro (image-led HomeHero; grid -> SubnetworkCard; dead hero + .subnet-* styles removed)"
+  ],
+  "doctrine_compliance": {
+    "tokyo_night_dark_first": true,
+    "two_fighting_colors_max": true,
+    "no_new_colors": true,
+    "reduced_motion_honored": true,
+    "abstract_geometric_imagery_no_logo_soup": true,
+    "who_not_how_many": true,
+    "avoid_register_zero_marketing_adjectives": true,
+    "engine_skills_untouched": true,
+    "archive_never_delete_rename_nothing": true
+  },
+  "gates": {
+    "build_pages": 161,
+    "build_errors": 0,
+    "playwright": "91/91",
+    "axe_aa_violations_both_modes": 0,
+    "lighthouse_commons": {"performance": 100, "accessibility": 100, "best_practices": 100, "seo": 100}
+  },
+  "deploy": "commit-only (E5 decadal rhythm; whole /commons surface + WF pair deploy at E5 close ~169 green-light)",
+  "adr_034_status": "candidate; ratifies at E5 phase-exit gate (campaign SO #14), not this cycle",
+  "next": "cycle 162 — real 'Connect a subnetwork' affordance + subnetwork -> /vaults/[slug] link-out + local/shared boundary (E4 carry)"
+}

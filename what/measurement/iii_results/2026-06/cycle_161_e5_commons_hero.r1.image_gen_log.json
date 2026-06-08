@@ -1,0 +1,83 @@
+{
+  "cycle_id": "cycle_161_e5_commons_hero",
+  "mission": "mission_adna_str_p5_m512_e5_public_good_commons",
+  "decadal": "E5",
+  "round": "r1",
+  "step": "step_3_generate_images",
+  "model": "imagen-4.0-ultra-generate-001",
+  "aspect_ratio": "16:9",
+  "output_target": "1408x792",
+  "register": "ss_ghibli_pixel / tokyo_night",
+  "thesis": "a commons, not a catalog \u2014 many distinct stewards contributing to / drawing from one shared common pool",
+  "started_at": "2026-06-08T20:06:04.000071+00:00",
+  "calls": [
+    {
+      "direction": "C1",
+      "round": "r1",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/sec_commons_r1_C1_v1.png",
+      "prompt_chars": 1679,
+      "status": "success",
+      "bytes": 1611307,
+      "elapsed_sec": 21.65,
+      "cost_usd": 0.04
+    },
+    {
+      "direction": "C1",
+      "round": "r1",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/sec_commons_r1_C1_v2.png",
+      "prompt_chars": 1679,
+      "status": "success",
+      "bytes": 1553964,
+      "elapsed_sec": 18.34,
+      "cost_usd": 0.04
+    },
+    {
+      "direction": "C2",
+      "round": "r1",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/sec_commons_r1_C2_v1.png",
+      "prompt_chars": 1613,
+      "status": "success",
+      "bytes": 1589715,
+      "elapsed_sec": 92.25,
+      "cost_usd": 0.04
+    },
+    {
+      "direction": "C2",
+      "round": "r1",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/sec_commons_r1_C2_v2.png",
+      "prompt_chars": 1613,
+      "status": "success",
+      "bytes": 1580327,
+      "elapsed_sec": 28.5,
+      "cost_usd": 0.04
+    },
+    {
+      "direction": "C3",
+      "round": "r1",
+      "variant": 1,
+      "out_path": "site/src/assets/heroes/candidates/sec_commons_r1_C3_v1.png",
+      "prompt_chars": 1607,
+      "status": "success",
+      "bytes": 1243070,
+      "elapsed_sec": 24.74,
+      "cost_usd": 0.04
+    },
+    {
+      "direction": "C3",
+      "round": "r1",
+      "variant": 2,
+      "out_path": "site/src/assets/heroes/candidates/sec_commons_r1_C3_v2.png",
+      "prompt_chars": 1607,
+      "status": "success",
+      "bytes": 1079273,
+      "elapsed_sec": 47.59,
+      "cost_usd": 0.04
+    }
+  ],
+  "total_cost_usd": 0.24000000000000002,
+  "finished_at": "2026-06-08T20:09:57.076049+00:00"
+}
