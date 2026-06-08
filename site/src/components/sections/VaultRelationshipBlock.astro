@@ -10,17 +10,32 @@ const nameOf = (slug: string) => allVaults.find((x: any) => x.vault_slug === slu
 const outgoing = allEdges.filter((e: any) => e.source === vault.vault_slug);
 const incoming = allEdges.filter((e: any) => e.target === vault.vault_slug);
 const hasEdges = outgoing.length + incoming.length > 0;
+
+// Edge-type gloss (E4 c159 — Newcomer: the raw type tokens render as naked jargon on this deep,
+// search-landable surface). Same meanings as /vaults/graph's legend; shown as a hover title so the
+// reader can decode "supersedes"/"federation" in place without a trip to the graph legend.
+const TYPE_MEANING: Record<string, string> = {
+  umbrella: 'an org-vault contains its org-graph / pillar children',
+  federation: 'a consumer wrapper depends on the forge / framework it consumes',
+  partner: 'a platform ships with its default partner',
+  companion: 'a sibling persona-pair or thematic family',
+  supersedes: 'a successor replaced its predecessor (lifecycle)',
+};
 ---
 
 <section class="vault-relationships">
   <h2>Cross-vault relationships</h2>
+  <p class="rel-intro">
+    This vault is one of many that can live on a single aDNA computer — a <strong>node</strong> is a
+    <code>Home.aDNA</code> plus the vaults that live on it. <a href="/network/">New here? Start with what the network is &rarr;</a>
+  </p>
   {hasEdges ? (
     <>
-      <p class="rel-count">{outgoing.length} outgoing · {incoming.length} incoming</p>
+      <p class="rel-count">{outgoing.length} outgoing · {incoming.length} incoming <span class="rel-key">— hover a relationship type for what it means</span></p>
       <ul class="rel-list">
         {outgoing.map((e: any) => (
           <li>
-            <span class="rel-type">{e.type}</span>
+            <span class="rel-type" title={TYPE_MEANING[e.type] ?? e.type}>{e.type}</span>
             <span class="rel-arrow" aria-hidden="true">&rarr;</span>
             <a href={`/vaults/${e.target}/`}>{nameOf(e.target)}</a>
           </li>
@@ -29,7 +44,7 @@ const hasEdges = outgoing.length + incoming.length > 0;
           <li>
             <a href={`/vaults/${e.source}/`}>{nameOf(e.source)}</a>
             <span class="rel-arrow" aria-hidden="true">&larr;</span>
-            <span class="rel-type">{e.type}</span>
+            <span class="rel-type" title={TYPE_MEANING[e.type] ?? e.type}>{e.type}</span>
           </li>
         ))}
       </ul>
@@ -43,7 +58,15 @@ const hasEdges = outgoing.length + incoming.length > 0;
 <style>
   /* Tokens, not hardcoded greys — AA on the dark-first Tokyo-Night background, both modes. */
   .vault-relationships { margin: var(--space-6, 1.5rem) 0; }
+  /* Node-clarity bridge (E4 c159 — Newcomer owned-item fix): carry "a node = Home.aDNA + its vaults"
+     onto the deepest, most search-landable surface + an escape hatch to the /network explainer. */
+  .rel-intro { color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); line-height: 1.6; margin: 0 0 var(--space-4, 1rem); max-width: 65ch; }
+  .rel-intro code { font-family: var(--font-mono); }
+  .rel-intro a { color: var(--color-link); text-decoration: underline; }
   .rel-count { color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }
+  /* The gloss hint — quiet; the meanings live on the type's title (hover) + the /vaults/graph legend. */
+  .rel-key { color: var(--color-text-muted); font-size: var(--text-xs, 0.8rem); }
+  .rel-type { cursor: help; }
   .rel-list { list-style: none; margin: var(--space-4, 1rem) 0; padding: 0; display: grid; gap: 0.5rem; }
   .rel-list li { display: flex; align-items: baseline; gap: 0.5rem; line-height: 1.4; }
   /* Typed edge label — mono; the type is the relationship, the link is the vault. */

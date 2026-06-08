@@ -1,0 +1,360 @@
+{
+  "artifact": "e4_c159_reconfirm_lens_raw_results",
+  "cycle": 159,
+  "decadal": "E4",
+  "mission": "mission_adna_str_p5_m511_e4_adnanetwork",
+  "date": "2026-06-07",
+  "method": "SECOND independent 4-agent lens Workflow (re-confirmation of the c158 lifts) on the post-fix surfaces; blind (neutral facts + paths + screenshots, NOT primed with self-scores); owning-lens authoritative. + a targeted single-lens Newcomer re-check after the c159 cheap fix.",
+  "workflow": {
+    "run_id": "wf_91a9b7b0-f31",
+    "agents": 4,
+    "subagent_tokens": 504190,
+    "duration_ms": 207115
+  },
+  "reconfirm": {
+    "lens_count": 4,
+    "per_lens": [
+      {
+        "key": "diagram_reviewer",
+        "label": "Diagram-Reviewer",
+        "scores": {
+          "node_clarity": 4.5,
+          "edge_honesty": 5,
+          "local_shared_boundary": 4.5,
+          "navigability": 4,
+          "join_scent": 4.5
+        },
+        "findings": [
+          {
+            "rubric_item": "edge_honesty",
+            "observation": "Authoritative audit of my owned item: all 22 edges cross-checked in both vaults_graph.mmd and vaults.json are real, directed, and typed (federation 10, companion 7, supersedes 3, umbrella 1, partner 1). The type->line-style mapping is exact: every solid/thick/dashed/circle-end syntax matches its declared type, and the `linkStyle 1,13,16` override targets precisely the 3 supersedes edges (verified by index). No fabricated mesh or ring. The honesty discipline is exemplary for a diagram-reviewer lens.",
+            "severity": "nit"
+          },
+          {
+            "rubric_item": "edge_honesty",
+            "observation": "The 19-vault unconnected set reads as honest-sparse-by-design, not a broken render: it is wrapped in a dashed, muted-bordered container explicitly titled 'Not yet linked: 19 vaults with no cited relationship', the hero lede states '19 vaults carry no cited relationship yet ... that is honest topology, not missing data', and the count (19) matches the data exactly. This is the single best mitigation of the classic 'why are these boxes floating?' failure mode I look for.",
+            "severity": "nit"
+          },
+          {
+            "rubric_item": "edge_honesty",
+            "observation": "The band-1 homepage NetworkDiagram is an honest hub-and-spoke (the prior hexagonal peer ring was removed per Gap #6; source confirms 'allEdges = nodes.map(... -> hub)' with no satellite-to-satellite edges) and is captioned 'Six representative aDNA vaults ... (See all 40 in the full graph below.)' so the abstraction is disclosed, not passed off as the whole network. Correct boundary between the marketing-simplified diagram and the real topology graph.",
+            "severity": "nit"
+          },
+          {
+            "rubric_item": "navigability",
+            "observation": "On the 375px mobile viewport the /vaults/graph Mermaid 'flowchart LR' is scaled to fit full width, collapsing the 40-node diagram into an illegible thumbnail: node labels are sub-pixel, line styles are indistinguishable, and the connected subgraph is shoved to the right edge with a large empty gutter on the left. As a *diagram* the deep surface does not deliver on mobile. It is backstopped by the accessible 'How to read it' legend, the 'Select any node...' graph-tip, the /vaults index link, and the keyboard node-twin nav, so it degrades to a usable text path rather than breaking outright.",
+            "severity": "major"
+          },
+          {
+            "rubric_item": "node_clarity",
+            "observation": "The 'a node = Home.aDNA + its vaults' concept reaches the deep /vaults/graph surface only through the prose bridge line ('an aDNA computer — a node — is a Home.aDNA plus the vaults that live on it, coloured below by vault class'), not through the diagram itself — and on mobile that diagram's class colours are unreadable, so the 'coloured below by vault class' promise cannot be visually verified there. The concept still lands under ~60s via the prose + the box-colour legend on desktop; the gap is that the diagram alone never teaches it.",
+            "severity": "minor"
+          },
+          {
+            "rubric_item": "edge_honesty",
+            "observation": "The legend asserts five 'kinds' with five line-style samples, but companion and supersedes both render dashed (Mermaid draws all edges one colour). The page is self-honest about this — supersedes is given a thicker dash plus an 's' lifecycle label, the source comments explicitly note the shared dashed family, and the per-type counts sit beside each row — so a reader can still disambiguate. At desktop render scale the supersedes 's'-labelled thick dash is clearly distinct; the only residual ambiguity is companion-vs-supersedes at a glance before reading the 's'.",
+            "severity": "nit"
+          },
+          {
+            "rubric_item": "navigability",
+            "observation": "Round-trip is complete and bidirectional on desktop: vault detail -> 'View the full relationship graph ->' with ?focus=<slug> -> graph highlights the node + shows a '<- Back to {vault}' link; graph node click -> /vaults/<slug>; dual breadcrumbs (The Lattice + Network) on both deep pages; 'Network' is in the global header. This is the kind of you-can-always-get-back wiring I want from a multi-surface diagram set.",
+            "severity": "nit"
+          }
+        ],
+        "top_fixes": [
+          {
+            "fix": "Make the mobile /vaults/graph readable as a diagram rather than a thumbnail: wrap the Mermaid SVG in a horizontally scrollable container with a sensible min-width (e.g. overflow-x:auto; the inner svg keeps its natural LR width) and/or switch to 'flowchart TB' under a mobile breakpoint so the 40-node graph stacks vertically and labels stay legible. Add a one-line 'scroll to explore ->' cue. Today the LR graph is squeezed to 375px and reads as decoration.",
+            "rubric_item": "navigability",
+            "est_effort": "medium"
+          },
+          {
+            "fix": "On mobile, if the visual graph cannot be made legible, surface the keyboard/SR node-twin list (currently visually-hidden until :focus-within) as the *visible* primary node index beneath the diagram on small viewports — turning the illegible thumbnail into an explicit 'graph is a map; tap a vault here' affordance so the deep surface still teaches node->vault->graph navigation.",
+            "rubric_item": "node_clarity",
+            "est_effort": "medium"
+          },
+          {
+            "fix": "Tighten the legend's 'five line styles' framing so it never implies five *unique* strokes: group the two dashed kinds visually (e.g. a 'dashed family' sub-heading or a small note 'companion & supersedes share a dash; supersedes is heavier + carries an s') — the data and styling are already honest, this is a one-line copy/markup clarity tweak that removes the only at-a-glance ambiguity in an otherwise flawless edge-honesty story.",
+            "rubric_item": "edge_honesty",
+            "est_effort": "cheap"
+          }
+        ],
+        "overall_note": "From the Diagram-Reviewer lens this surface set passes the GREEN floor (no item below 4) and is a confirm, not a block. My owned item — edge_honesty — is the standout: I audited all 22 edges against both the .mmd and the JSON and found every edge real, directed, and correctly typed, the supersedes linkStyle override targeting exactly the right three indices, the homepage hub-and-spoke purged of its prior false ring and honestly captioned as 'representative', and the 19 unconnected vaults explicitly named and counted as honest-sparse rather than a broken render. That is exemplary, marketing-simplification-free topology honesty, so I score it 5.0. The local/shared boundary, join-scent (Run-a-node), and round-trip navigability are all strong on desktop. The one real gap is the mobile /vaults/graph: the LR Mermaid diagram is scaled to an illegible thumbnail, so as a *diagram* the deep surface does not deliver on small screens — it survives only because text affordances (legend, graph-tip, index, node-twin) backstop it. That keeps navigability at the 4.0 floor and should be the headline post-close fix, but it does not warrant blocking the decadal close."
+      },
+      {
+        "key": "node_operator",
+        "label": "Node-Operator",
+        "scores": {
+          "node_clarity": 4.5,
+          "edge_honesty": 5,
+          "local_shared_boundary": 4.5,
+          "navigability": 4,
+          "join_scent": 4
+        },
+        "findings": [
+          {
+            "rubric_item": "edge_honesty",
+            "observation": "Verified against source data: vaults.json carries exactly 22 typed/directed edges and vaults_graph.mmd renders exactly 22 edge lines (10 federation, 7 companion, 3 supersedes, 1 umbrella as ==>, 1 partner as --o) — a clean 1:1 with zero fabricated/decorative connections. The 19 unconnected vaults are explicitly named 'Not yet linked: 19 vaults with no cited relationship' in a dashed holding cluster, and band-1's caption disclaims the false ring ('a simple hub... not an invented peer-to-peer mesh'). The /network lede count ('40 vaults, 22 relationships') matches the data field exactly. As an operator who distrusts buzzword topologies, this is exactly what I want: nothing is drawn that a vault did not declare.",
+            "severity": "nit"
+          },
+          {
+            "rubric_item": "local_shared_boundary",
+            "observation": "OWNED ITEM — the strongest part of the surface for my lens. Band 2 ('What is an aDNA computer?') gives an explicit two-column 'Stays on your machine' / 'You opt to federate' split, and band 4 step 2/3 restates it concretely: 'a curated slice of your Home.aDNA registry — which vaults exist and the relationships they declare — never their contents.' That single sentence answers my #1 fear (what leaves my machine?) precisely and honestly. Standing Rule 4 is cited. This lands in well under 60s.",
+            "severity": "nit"
+          },
+          {
+            "rubric_item": "local_shared_boundary",
+            "observation": "The boundary doctrine lives ONLY on /network. The two deep surfaces an operator can land on directly (via search/shared link) — /vaults/graph and the vault-detail relationship block — carry zero local-vs-shared cue. An operator who arrives at /vaults/Harness.aDNA sees typed cross-vault edges (federation/supersedes) but nothing telling them these are *declared, opt-in* relationships vs. local state. The 'New here? Start with what the network is' link on the graph partially mitigates this for the graph, but the vault-detail page's only escape hatch is the '← Network' breadcrumb with no boundary scent.",
+            "severity": "minor"
+          },
+          {
+            "rubric_item": "join_scent",
+            "observation": "OWNED ITEM — 'how do I run a node' is clearly answerable on /network. Band 4 front-loads the commitment row (~5 min, needs git + Claude Code CLI, local-first), then 3 numbered steps with a real, copyable 'git clone https://github.com/LatticeProtocol/Agentic-DNA.git my-node' block that matches /get-started exactly, plus a working 'Run your first node →' CTA. I verified /get-started, /reference, /community, and /reference/governance-model all resolve (the last via the [...slug] content-collection route, 45KB built HTML — NOT a dead link despite no .astro source file).",
+            "severity": "nit"
+          },
+          {
+            "rubric_item": "join_scent",
+            "observation": "Step 3 'Opt into federation' is the weakest of the three onboarding steps for my lens: steps 1-2 are concrete and actionable, but step 3 describes WHAT crosses the boundary without any concrete act — no command, no 'edit this file', no skill name — and its link ('See how federation works →') points to the generic /reference index rather than a federation how-to. As the operator whose whole job is federating nodes, the actual 'do federation' path trails off into a generic reference link. The local-first message is airtight; the share-a-slice mechanics are not yet operationalized on the surface.",
+            "severity": "minor"
+          },
+          {
+            "rubric_item": "join_scent",
+            "observation": "Neither deep surface (/vaults/graph, vault-detail) carries any join/participate scent. An operator who lands on the Harness vault page learns its persona, class, ADRs and edges but gets no 'this is one node's vault — here's how you'd run your own' pointer. Join-scent is concentrated entirely on /network; the deep surfaces are read-only with no participation thread.",
+            "severity": "minor"
+          },
+          {
+            "rubric_item": "node_clarity",
+            "observation": "CO-OWNED — 'an aDNA computer is a node = Home.aDNA + its vaults' lands well under 60s on the /network hero and band 2, and the bridge is carried onto the deep graph via the .lede-node line ('an aDNA computer — a node — is a Home.aDNA plus the vaults that live on it'). Good cross-surface continuity. One dissonance for my lens: on /vaults/graph, Home.aDNA — the vault that DEFINES a node — sits inside the 'Not yet linked' orphan cluster. It is honest (no cited edges), but the concept-anchoring vault being visually parked as disconnected slightly undercuts the 'a node IS Home.aDNA' story right where a curious operator is looking hardest.",
+            "severity": "minor"
+          },
+          {
+            "rubric_item": "navigability",
+            "observation": "Desktop round-trip is strong: Network is in global nav; vault-detail and graph both carry dual breadcrumbs (← The Lattice / ← Network); the relationship block links to /vaults/graph/?focus=<slug> with a working focus-glow + '← Back to {vault}' return; the keyboard node-twin gives an AT/keyboard path since the SVG is decorative. The vault->relationships->graph->back loop closes both ways.",
+            "severity": "nit"
+          },
+          {
+            "rubric_item": "navigability",
+            "observation": "The /vaults/graph mobile render (375px) is effectively unusable: the 40-node flowchart LR is scaled to max-width:100% with overflow-x:auto, collapsing the whole topology into a tiny illegible strip — node labels are far below readable size and the wide orphan row makes it worse. There is no pan/zoom and no visible scroll affordance. The deep graph — the marquee 'see the topology' surface for my lens — degrades to noise on a phone. The keyboard node-twin and /vaults index are a functional fallback, but the graph itself fails on mobile.",
+            "severity": "major"
+          }
+        ],
+        "top_fixes": [
+          {
+            "fix": "Add a single boundary/join line to the deep surfaces so a directly-landed operator gets the local-vs-shared + participate scent. On /vaults/graph add one muted line near the .lede-node bridge (e.g. 'Each relationship here is opt-in and declared — what crosses the boundary is the registry slice, never vault contents. Run your own node →' linking /get-started). On the vault-detail relationship block, add a one-line footer linking '← Network' and '/get-started'. Carries item-3 and item-5 onto the surfaces where they are currently absent.",
+            "rubric_item": "local_shared_boundary",
+            "est_effort": "cheap"
+          },
+          {
+            "fix": "Make the /vaults/graph mobile experience legible. Cheapest: a copy hint + min-width so the graph is intentionally horizontally scrollable ('Best on a wider screen — scroll to pan the topology') and the SVG keeps a readable min-width instead of scaling to 375px. Better (medium): below ~700px, hide the scaled Mermaid SVG and surface the existing keyboard node-twin / a grouped-by-class vault list as the primary mobile topology view, so phone users get a usable map instead of an illegible strip.",
+            "rubric_item": "navigability",
+            "est_effort": "medium"
+          },
+          {
+            "fix": "Strengthen band-4 step 3 'Opt into federation' from conceptual to actionable: name the concrete act (e.g. the skill/command that publishes a registry slice, or 'edit Home.aDNA's federation block') and repoint 'See how federation works →' from the generic /reference index to the specific federation how-to (or /reference/governance-model if that is the closest live doc). Closes the one place my owned join_scent trails off.",
+            "rubric_item": "join_scent",
+            "est_effort": "cheap"
+          },
+          {
+            "fix": "Address the Home.aDNA-in-orphans dissonance: either add one explanatory clause to the orphan-cluster caption noting that concept-anchor vaults like Home.aDNA are unconnected because relationships are opt-in (turning the dissonance into a teaching moment), or, if data allows, ensure Home.aDNA carries at least its real declared relationship so the node-defining vault is not parked as disconnected on the node-clarity surface.",
+            "rubric_item": "node_clarity",
+            "est_effort": "medium"
+          }
+        ],
+        "overall_note": "From the Node-Operator lens this surface is close to ready and clears the GREEN floor (no item below 4). The two things I most need are excellent: edge_honesty is flawless (I verified 22/22 edges are real, typed, and directed against vaults.json and the .mmd, with the 19 orphans named honestly and the false ring explicitly disclaimed), and local_shared_boundary — my owned item — is the clearest articulation on the whole site ('a curated slice of your Home.aDNA registry... never their contents'). Join_scent is genuinely answerable: 'Run a node' gives prereqs, a real copyable git clone, and CTAs that all resolve (I confirmed /get-started and /reference/governance-model are live, not dead links). Two real gaps keep this from a clean sweep: (1) the /vaults/graph MOBILE render is the one item I'd flag hardest as a near-blocker — the 40-node graph scales to an illegible 375px strip with no pan/zoom, so the marquee 'see the topology' surface fails on a phone (mitigated only by the keyboard node-twin fallback); and (2) the local/shared boundary and join scent live almost entirely on /network — the two deep surfaces an operator can land on directly carry no boundary cue and no participate thread. None of these rise to a close-blocker on their own: the major mobile-graph finding has an accessible fallback path and the boundary doctrine is airtight on the primary surface. I would let the decadal close proceed, with the mobile-graph fix as the top must-do follow-up."
+      },
+      {
+        "key": "information_architect",
+        "label": "Information-Architect",
+        "scores": {
+          "node_clarity": 5,
+          "edge_honesty": 5,
+          "local_shared_boundary": 5,
+          "navigability": 4,
+          "join_scent": 5
+        },
+        "findings": [
+          {
+            "rubric_item": "navigability",
+            "severity": "major",
+            "observation": "Top-nav carries 7 items (Network, The Lattice, Learn, Patterns, Use Cases, Community, Reference) — exactly at Miller's 7-ceiling — and the first two overlap in a newcomer's head. 'Network' is the narrative/onboarding surface; 'The Lattice' is the vault registry that also hosts the relationship graph. A cold visitor cannot predict from the labels which one holds the topology graph; the graph in fact lives under 'The Lattice' (/vaults/graph) while the explainer lives under 'Network'. This is the classic overlapping-scent defect: the visible cue does not uniquely predict what is behind it, producing hover-hesitation between the two network-flavored items. This is my owned-item and the reason navigability does not reach 5."
+          },
+          {
+            "rubric_item": "navigability",
+            "severity": "minor",
+            "observation": "The /vaults/graph and /vaults/[slug] breadcrumb renders two parallel parent links as a single left-arrow chain: '← The Lattice   ← Network'. Two sequential ← arrows imply one ascending hierarchy (Network is a parent of The Lattice, or vice-versa), but they are actually two co-equal parents (the registry and the narrative). The repeated identical affordance mis-signals the graph's place in the sitemap. A reader cannot tell from the breadcrumb whether Network sits above or beside The Lattice."
+          },
+          {
+            "rubric_item": "navigability",
+            "severity": "major",
+            "observation": "On mobile 375 the /vaults/graph Mermaid render collapses to an unreadable ~300px-wide thumbnail — node labels are sub-pixel and edges indistinguishable (visible in vaults_graph_mobile375.png). The real touch fallback is the /vaults/ index (the keyboard node-twin is keyboard-only and the graph nodes are pointer-wired), but nothing ON the rendered mobile graph tells a phone user 'this is too dense to read here — open the vault index instead.' The graph-tip line ('Select any node... or browse them all on the vault index') is present but reads as an equal alternative, not a 'mobile users go here' redirect. A phone visitor hits a legibility dead-end with no scent toward the working path."
+          },
+          {
+            "rubric_item": "navigability",
+            "severity": "nit",
+            "observation": "The /vaults index hero links forward to the graph ('View the relationship graph →') but does NOT surface a link to /network, even though /network is the conceptual parent that explains what the graph means. The cross-link web is complete graph<->vault<->network, but the registry index page (a very common entry point) omits the one hop to the narrative explainer that a confused newcomer most needs."
+          },
+          {
+            "rubric_item": "join_scent",
+            "severity": "nit",
+            "observation": "Band 4 step 3 'Opt into federation' ends its scent at '/reference/' ('See how federation works →') and the band CTA points at '/get-started/'. The participation funnel is otherwise excellent, but the federation deep-dive link lands on the broad Reference hub rather than a federation-specific anchor, so the last step's scent is slightly weaker than steps 1-2 (which point at the concrete Get-started setup). A reader who clicks 'See how federation works' may land on a reference index and have to hunt."
+          },
+          {
+            "rubric_item": "node_clarity",
+            "severity": "nit",
+            "observation": "Strong on all three surfaces — but the band-1 NetworkDiagram still labels a satellite 'RareHarness' while the deep graph and the example vault page use 'Harness.aDNA' (Harness, Panacea) with RareHarness as its clinical vertical. The representative-diagram naming lags the registry's canonical naming; a sharp newcomer comparing the band-1 proof to the full graph will not find a 'RareHarness' node there, only 'Harness.aDNA'. Minor scent mismatch between the proof diagram and the real topology it promises."
+          },
+          {
+            "rubric_item": "edge_honesty",
+            "severity": "nit",
+            "observation": "Exemplary edge honesty — every edge real/directed/typed, live per-type counts shown, the 19 unlinked vaults explicitly named as 'Not yet linked' rather than hidden, and the false peer-to-peer ring explicitly disavowed in both the band-1 caption and the NetworkDiagram source. No defect; recording only that the legend lists five line styles while companion+supersedes share the dashed family — already mitigated by the thicker dash + 's' label, so this is fully resolved, not a gap."
+          }
+        ],
+        "top_fixes": [
+          {
+            "fix": "Disambiguate the two network-flavored nav items so their scent does not overlap. Cheapest: rename 'The Lattice' to 'Vaults' (matches the page H1 family and the /vaults route) so 'Network' = the story, 'Vaults' = the registry+graph — the labels then predict distinct destinations. If 'The Lattice' must stay as brand, add the graph as an explicit nav affordance or a sub-label so a newcomer knows the topology lives under the registry, not under Network.",
+            "rubric_item": "navigability",
+            "est_effort": "cheap"
+          },
+          {
+            "fix": "Fix the breadcrumb to read as two parallel parents, not one chain. Replace the two identical '← X' links with a labelled pair, e.g. 'Up: The Lattice (registry) · Network (overview)' or separate them visually (a divider/'in' phrasing) so the repeated ← stops implying an ascending hierarchy between two co-equal parents.",
+            "rubric_item": "navigability",
+            "est_effort": "cheap"
+          },
+          {
+            "fix": "Add a mobile-only redirect cue above/over the graph on small viewports: a short line like 'The graph is dense on small screens — browse the vaults as a list →' linking to /vaults, shown only under a max-width breakpoint. Turns the current mobile legibility dead-end into a scented hop to the working touch path.",
+            "rubric_item": "navigability",
+            "est_effort": "cheap"
+          },
+          {
+            "fix": "Add a '← What is the network?' (→ /network) link to the /vaults index hero alongside the existing 'View the relationship graph →' CTA, completing the registry->narrative hop for the common registry-first entry point.",
+            "rubric_item": "navigability",
+            "est_effort": "cheap"
+          },
+          {
+            "fix": "Reconcile the band-1 NetworkDiagram satellite labels with the canonical registry names (use 'Harness' not 'RareHarness', etc., or pick representative vaults whose names appear verbatim in the full graph) so the proof diagram and the topology it promises use one vocabulary.",
+            "rubric_item": "node_clarity",
+            "est_effort": "medium"
+          }
+        ],
+        "overall_note": "From the Information-Architect lens, these three surfaces clear the GREEN floor (no item below 4) and nothing here should block the decadal close. Node-clarity, edge-honesty, local/shared-boundary, and join-scent are all genuinely flawless: the 'node = Home.aDNA + its vaults' definition is carried onto every surface including the deep graph; every edge is real/directed/typed with live counts; the 19 unlinked vaults are named as honest-sparse rather than hidden; the false ring is explicitly disavowed; and the 'Run a node' band makes participation answerable in three concrete steps. My owned item, navigability, is the one held at 4 not 5: the vault->relationships->graph->back round-trip works both ways and the section is reachable from global nav (the floor is cleared), but three real wayfinding frictions remain — the 7-item nav with overlapping 'Network'/'The Lattice' scent (a newcomer can't predict which holds the graph), the double-left-arrow breadcrumb that mis-signals two parallel parents as one hierarchy, and a mobile graph that is an illegible thumbnail with no on-surface redirect to the index. All three are cheap copy/markup fixes, none structural; addressing the nav-label overlap and the mobile redirect would lift navigability to 5."
+      },
+      {
+        "key": "newcomer",
+        "label": "Newcomer-Stress-Tester",
+        "scores": {
+          "node_clarity": 3.5,
+          "edge_honesty": 4.5,
+          "local_shared_boundary": 4.5,
+          "navigability": 4,
+          "join_scent": 4.5
+        },
+        "findings": [
+          {
+            "rubric_item": "node_clarity",
+            "observation": "OWNED ITEM, authoritative. The /vaults/[slug] vault-detail surface (e.g. /vaults/Harness.aDNA) carries NO node definition at all. /network's hero nails it ('An aDNA computer is one machine... carrying many context vaults... under a single Home.aDNA') and /vaults/graph got a dedicated bridge line ('an aDNA computer — a node — is a Home.aDNA plus the vaults that live on it'). But the deepest, most search-landable surface — VaultRelationshipBlock.astro — opens cold with 'Cross-vault relationships' and lists 'federation -> SiteForge', 'supersedes -> LatticeAgent' with zero explanation of what a node, a vault, federation, or supersedes is. A cold reader who lands on a vault page directly (search, shared link) cannot answer 'what is an aDNA computer/node' in 60s from this surface. The only escape is a breadcrumb. This is exactly the deep-surface gap I am told to be hardest on. Drives the sub-floor score.",
+            "severity": "major"
+          },
+          {
+            "rubric_item": "node_clarity",
+            "observation": "Unexplained jargon on the deep surface: VaultRelationshipBlock renders the raw edge-type tokens ('federation', 'supersedes', 'partner', 'companion', 'umbrella') with no inline gloss and no link to the legend that defines them (the legend lives only on /vaults/graph). On /vaults/graph the same tokens get a 'How to read it' legend; on the vault page they are naked. A newcomer reads 'supersedes -> LatticeAgent' and 'supersedes -> RareHarnessOld' with no idea what 'supersedes' means in this context.",
+            "severity": "minor"
+          },
+          {
+            "rubric_item": "navigability",
+            "observation": "The breadcrumb on both /vaults/[slug] and /vaults/graph renders TWO same-direction left-arrow crumbs side by side: '<- The Lattice   <- Network'. Two back-arrows pointing the same way reads as one back path split in two; a cold reader can't tell which is the true parent. Confirmed visible in vault_detail_harness (desktop+mobile) and vaults_graph screenshots. The scent ('which click takes me up?') is muddy.",
+            "severity": "minor"
+          },
+          {
+            "rubric_item": "navigability",
+            "observation": "Label/destination mismatch a newcomer feels: the crumb 'The Lattice' points to /vaults, and the global nav item 'The Lattice' also points to /vaults, while the page is titled around 'vaults'/'the network'. 'The Lattice' is insider vocabulary for 'the vault index'; a first-timer clicking 'The Lattice' to get 'a list of vaults' is a small scent break (click-N label does not predict the destination's content).",
+            "severity": "nit"
+          },
+          {
+            "rubric_item": "node_clarity",
+            "observation": "The vault-detail screenshots (vault_detail_harness_desktop1440.png + mobile) render in LIGHT mode (white ground, dark text) while every other surface under review is dark-first Tokyo Night. Not a legibility failure in itself, but for a confirmation pass it is worth flagging: the deep surface's first-contact appearance is inconsistent with the network narrative surfaces a newcomer just came from, and the relationship block was styled/justified explicitly for the 'dark-first Tokyo-Night background' (per its own comments). Verify the light render is intended/themed and not a default-mode regression on the deepest pages.",
+            "severity": "minor"
+          },
+          {
+            "rubric_item": "edge_honesty",
+            "observation": "STRENGTH. Edge honesty is the standout. /network band 1 states 'The connections are not decorative... not an invented peer-to-peer mesh'; the NetworkDiagram is hub-and-spoke only (Gap #6 fix, no false ring); /vaults/graph names the 19 unconnected vaults explicitly ('carry no cited relationship yet, so they sit unconnected here — that is honest topology, not missing data'); both legends show live per-type counts so the taxonomy can't over-sell an even distribution. A skeptical newcomer cannot catch the page lying about a relationship.",
+            "severity": "nit"
+          },
+          {
+            "rubric_item": "join_scent",
+            "observation": "STRENGTH. 'Run a node' (band 4) is a model join-scent: an honest time estimate ('About five minutes'), prereqs stated up front ('Needs git + the Claude Code CLI'), a safety cue ('nothing leaves until you choose'), a copy-paste 3-line code block with expected behaviour ('It detects a fresh workspace and walks you through the Home.aDNA node interview'), and a 'Run your first node ->' CTA. This answers 'how do I participate' cleanly. Minor: the code block is the one blind-leap — it does not state what success looks like after `claude` runs, only that an interview starts.",
+            "severity": "nit"
+          },
+          {
+            "rubric_item": "local_shared_boundary",
+            "observation": "STRENGTH. The local/shared boundary is explicit and repeated: band 2's two-column 'Stays on your machine' vs 'You opt to federate' with concrete bulleted examples, restated in band-4 step 2/3, and again in /vaults/graph's framing of federation as a 'curated slice'. Standing Rule 4 is cited. A newcomer leaves /network knowing exactly what is private by default.",
+            "severity": "nit"
+          }
+        ],
+        "top_fixes": [
+          {
+            "fix": "Add a one-line node-clarity bridge to VaultRelationshipBlock.astro (the same sentence already on /vaults/graph): e.g. directly under the 'Cross-vault relationships' h2, a muted line — 'This vault is one of many that can live on a single aDNA computer (a node = a Home.aDNA plus its vaults). <a href=/network/>New here? Start with what the network is -></a>'. This single edit carries node-clarity onto the deepest surface and gives the only sub-floor item its missing definition + escape hatch.",
+            "rubric_item": "node_clarity",
+            "est_effort": "cheap"
+          },
+          {
+            "fix": "Gloss the edge-type tokens on the vault page so 'federation'/'supersedes'/etc. are not naked jargon. Cheapest: add a title/tooltip and a short trailing phrase per type (reuse the meanings already defined in graph.astro's `legend` array — 'supersedes — a successor replaced its predecessor'). Better: factor the 5-type meanings into a shared data module imported by both graph.astro and VaultRelationshipBlock.astro so the gloss never drifts.",
+            "rubric_item": "node_clarity",
+            "est_effort": "medium"
+          },
+          {
+            "fix": "Fix the double-back-arrow breadcrumb. Use one '<- ' up-crumb and render the second parent without a back-arrow, or separate with a divider, e.g. '<- The Lattice  ·  Network' or 'Up: The Lattice / Network'. Applies to both [slug].astro and graph.astro breadcrumbs.",
+            "rubric_item": "navigability",
+            "est_effort": "cheap"
+          },
+          {
+            "fix": "Confirm /vaults/[slug] honours the dark-first theme (or that the light render in the screenshots is the intended user-toggled state). If it is a default-mode regression on the deep pages, restore dark-first parity so the deepest surface matches the network narrative pages a newcomer arrives from.",
+            "rubric_item": "node_clarity",
+            "est_effort": "medium"
+          },
+          {
+            "fix": "Optional polish: add a one-line 'what you'll see' success cue after the band-4 code block — e.g. 'You'll be greeted by the agent and asked ~19 quick questions to set up your node.' — closing the only blind-leap in an otherwise excellent join-scent.",
+            "rubric_item": "join_scent",
+            "est_effort": "cheap"
+          }
+        ],
+        "overall_note": "From a true first-contact lens, the /network narrative page is genuinely strong — the hero answers what/why in one screenshottable sentence, the local-vs-federated boundary is explicit and repeated, edge-honesty is exemplary (de-decorated hub-and-spoke, named unconnected vaults, live per-type counts), and 'Run a node' is a textbook join-scent with time/prereqs/code/CTA. Four of five items clear the floor comfortably. The one thing that should give a decadal close pause is my owned item, node_clarity, on the DEEP surface: a newcomer who lands directly on /vaults/Harness.aDNA (the single most likely search/share entry point) gets 'Cross-vault relationships' plus raw typed jargon ('federation', 'supersedes') with no definition of node, vault, or those edge types, and only a muddy double-back-arrow breadcrumb as an escape — while /vaults/graph already proved the cheap fix (a one-line 'a node = Home.aDNA + its vaults' bridge + an explainer link). That bridge line is missing from the vault-detail block, and the deep-page light-mode render is an inconsistency worth confirming. None of this is a hard blocker to ship, but node_clarity at 3.5 sits below the green floor specifically because the concept does not land on the deepest surface; the two cheap copy fixes (bridge line + edge-type gloss) would lift it back over 4 before the close."
+      }
+    ],
+    "owning_lens_scores": {
+      "node_clarity": 3.5,
+      "edge_honesty": 5,
+      "local_shared_boundary": 4.5,
+      "navigability": 4,
+      "join_scent": 4
+    },
+    "below_floor": [
+      "node_clarity"
+    ],
+    "mean": 4.2,
+    "green": false
+  },
+  "post_c159_fix_newcomer_recheck": {
+    "lens": "Newcomer-Stress-Tester (owning lens for node_clarity)",
+    "scores": {
+      "node_clarity": 4.4,
+      "edge_honesty": 4.8,
+      "local_shared_boundary": 4.7,
+      "navigability": 4.5,
+      "join_scent": 4.5
+    },
+    "node_clarity_verdict": "YES — the vault-detail block now opens with a plain-language node/vault definition + /network escape hatch before the typed-edge jargon; the concept lands <60s on the deep surface.",
+    "any_remaining_below_floor": "none",
+    "reservation": "per-edge-type gloss is hover-gated (title tooltips) — invisible on touch/keyboard; the node CONCEPT lands without hover; /vaults/graph legend is the accessible fallback for the type meanings (carried follow-up)."
+  },
+  "close_determination": {
+    "owning_lens_final": {
+      "node_clarity": 4.4,
+      "edge_honesty": 5,
+      "local_shared_boundary": 4.5,
+      "navigability": 4,
+      "join_scent": 4
+    },
+    "mean": 4.38,
+    "green": true,
+    "note": "navigability held at the IA authoritative 4.0 (the c159 breadcrumb disambiguation is a minor lift; the major mobile-graph + nav-label-overlap items are carried). node_clarity lifted 3.5->4.4 by the c159 vault-detail bridge+gloss. GREEN: no item < 4; mean 4.38 >= the E-series decadal baseline (E1 full-30 4.29)."
+  }
+}

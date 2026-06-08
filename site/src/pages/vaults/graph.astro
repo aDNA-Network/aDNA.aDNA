@@ -76,7 +76,8 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
     <section class="vaults-graph-hero">
       <p class="vault-breadcrumb">
         <a href="/vaults/">&larr; The Lattice</a>
-        <a class="crumb-network" href="/network/">&larr; Network</a>
+        <span class="crumb-sep" aria-hidden="true">·</span>
+        <a class="crumb-network" href="/network/">Network</a>
         <a id="graph-back-link" class="graph-back-link" href="/vaults/" hidden>&larr; Back to <span id="graph-back-name"></span></a>
       </p>
       <h1>The network, drawn</h1>
@@ -199,8 +200,10 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
   .vaults-graph-hero { max-width: 72ch; margin: 0 auto var(--space-6, 1.5rem); }
   .vault-breadcrumb { color: var(--color-text-muted); }
   .graph-back-link { margin-left: 1rem; color: var(--color-link); }
-  /* Second parent crumb → /network closes the one-way cul-de-sac the deep graph was (E4 c158 — IA). */
-  .crumb-network { margin-left: 1rem; color: var(--color-link); }
+  /* Two co-equal parents (registry · narrative), separated — not a two-arrow chain (E4 c158 cul-de-sac
+     fix + c159 IA/Newcomer disambiguation). One "←" on the registry; Network is a parallel link. */
+  .crumb-network { color: var(--color-link); }
+  .crumb-sep { margin: 0 0.6rem; color: var(--color-text-muted); }
   /* Pointer affordance hint — the click target itself is wired client-side. */
   .graph-tip { max-width: 72ch; margin: 0 auto var(--space-4, 1rem); color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }
   /* In-text link → underlined (not colour-only) for WCAG link-in-text-block, both modes. */

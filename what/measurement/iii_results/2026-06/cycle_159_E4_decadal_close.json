@@ -1,0 +1,82 @@
+{
+  "cycle": 159,
+  "decadal": "E4",
+  "decadal_cycle": 10,
+  "mission": "mission_adna_str_p5_m511_e4_adnanetwork",
+  "slug": "e4_decadal_close",
+  "date": "2026-06-07",
+  "session": "session_stanley_20260608T030330Z_v8_m511_e4_c159_decadal_close",
+  "theme": "E4 DECADAL CLOSE (cycle-10 / O5). E4 is NOT an RLP decadal — it closes on the 4-lens Network-Legibility self-assessment + the quality gates. Per the operator gate: re-confirm (a SECOND independent 4-lens Workflow on the post-fix surfaces) -> close (AAR + ADR-033 ratify + STATE/STR cascade) -> deploy (the bundled E4 ship to adna.network, on the current test-account token).",
+  "register": "Tokyo Night dark-first; honest topology (no fabricated edges; generator/data byte-identical at the close); <=2 fighting colors; motion unchanged; writing-guidelines AVOID honored; a11y both modes via the permanent gate-4 loop.",
+  "operator_scope": "AskUserQuestion (2026-06-07): (1) path = RE-CONFIRM then close; (2) deploy = on the current token, drop the SS_VERCEL_TOKEN rotation #needs-human nag (throwaway test account); (3) ratify ADR-033 at c159 (operator override of the SO #14 phase-exit default); (4) get-started node-onboarding seam = its own content cycle (c159 does NOT touch it).",
+  "iii_7step": {
+    "measure": "git pull up-to-date (HEAD 68120fb/c158); npx astro build 162pp/0err (data byte-identical); gates 83/83; preview + neutral screenshots of /network + /vaults/graph + /vaults/Harness.aDNA at 1440+375; eyeballed.",
+    "reconfirm": "Ran a SECOND independent 4-lens Workflow (wf_91a9b7b0-f31; 504,190 subagent tokens; 207s) blind on the post-fix surfaces. Owning-lens authoritative: node_clarity 3.5 [Newcomer] / edge_honesty 5.0 [Diagram-Rev] / local_shared 4.5 [Node-Op] / navigability 4.0 [IA] / join_scent 4.0 [Node-Op]; mean 4.2; ONE item below floor = node_clarity 3.5. The re-confirm BROKE the c158 self-rescore (which had node_clarity 4.5): the c158 bridge fix landed on /network + /vaults/graph but MISSED the vault-detail relationship block (the deepest, most search-landable surface), which still opened cold with raw 'federation'/'supersedes' jargon and no node definition. Independence earned its keep a THIRD time (after c155 + c158). Also probed a Newcomer 'light mode' finding on vault-detail -> CONFIRMED SCREENSHOT ARTIFACT (Playwright fullPage white-backdrop): getComputedStyle(body)=rgb(26,27,38) + a viewport capture both show dark-first; the live page is dark. NOT a bug.",
+    "select_iterate": "Cheap fixes for the one below-floor item (+ a cross-lens navigability nit), per the owning lens's exact prescription; heavier items carried. (1) VaultRelationshipBlock.astro — node-clarity bridge line ('This vault is one of many that can live on a single aDNA computer — a node is a Home.aDNA plus the vaults that live on it') + /network escape-hatch link + edge-type gloss (title tooltips reusing the graph legend meanings) + a 'hover a relationship type for what it means' hint. (2) graph.astro + [slug].astro — breadcrumb double-left-arrow ('<- The Lattice  <- Network') disambiguated to parallel parents ('<- The Lattice  ·  Network') so it stops mis-reading as one hierarchy (IA + Newcomer + Diagram-Rev).",
+    "implement": "3 files: VaultRelationshipBlock.astro (bridge + gloss + hint + .rel-intro/.rel-key styles), graph.astro (breadcrumb .crumb-sep), [slug].astro (breadcrumb .crumb-sep). Generator/.mmd/vaults.json UNTOUCHED.",
+    "re_measure_recheck": "Rebuild 162pp/0err (data byte-identical); gates 83/83; re-screenshot + a viewport dark capture confirming the vault-detail is dark + the bridge/gloss/breadcrumb render. TARGETED independent re-check: a single Newcomer-lens agent (owning lens for node_clarity; 111,822 tokens) re-scored the fixed surfaces -> node_clarity 4.4, no remaining below-floor item, verdict 'the owned failure is genuinely fixed, not papered over.' Proportionate close-verification (full fan-out to find, single owning-lens to confirm the fix).",
+    "lighthouse": "Full decadal sweep (desktop preset): / 100/96/100/100 (A11y 96 = pre-existing mobile target-size) · /network 100 · /vaults/graph 100 · vault 100 · concept 100 · tutorial 100.",
+    "deploy": "VERCEL_TOKEN env-var (no --token= flag; output redacted) vercel deploy --prebuilt --prod --yes -> READY, target production, dpl_Hirdyr5LymjKQ3stzYRx1kc6KpaA. Live-verified adna.network: / + /network + /vaults/graph + /vaults/Harness.aDNA all HTTP 200; helix homepage hero (hero_adna_helix.avif) live; 'The Lattice' nav entry live (desktop + mobile); node-color legend live; node-clarity bridge + parallel breadcrumb live; previously-blank concept Mermaid diagrams now ship the render path (c154 fix goes live).",
+    "record": "this JSON + e4_c159_reconfirm_lens_results.json (raw re-confirm + re-check) + ADR-033 + the E4 decadal AAR + mission close + STATE/campaign cascade + session SITREP"
+  },
+  "network_legibility_close": {
+    "method": "4-lens (Diagram-Reviewer/Node-Operator/IA/Newcomer) independent Workflows + a targeted owning-lens re-check; owning-lens authoritative per item.",
+    "trajectory": {
+      "node_clarity": {"c155": 4.0, "c158": 3.5, "c159_reconfirm": 3.5, "c159_final": 4.4, "owner": "Newcomer"},
+      "edge_honesty": {"c155": 4.0, "c158": 4.5, "c159_reconfirm": 5.0, "c159_final": 5.0, "owner": "Diagram-Reviewer"},
+      "local_shared_boundary": {"c155": 5.0, "c158": 5.0, "c159_reconfirm": 4.5, "c159_final": 4.5, "owner": "Node-Operator"},
+      "navigability": {"c155": 4.5, "c158": 3.0, "c159_reconfirm": 4.0, "c159_final": 4.0, "owner": "Information-Architect"},
+      "join_scent": {"c155": 4.0, "c158": 4.0, "c159_reconfirm": 4.0, "c159_final": 4.0, "owner": "Node-Operator"}
+    },
+    "final_owning_lens": {"node_clarity": 4.4, "edge_honesty": 5.0, "local_shared_boundary": 4.5, "navigability": 4.0, "join_scent": 4.0},
+    "mean": 4.38,
+    "green": true,
+    "baseline_note": "GREEN: no item < 4; mean 4.38 >= the E-series decadal baseline (E1 full-30 4.29). navigability held at the IA authoritative 4.0 (the c159 breadcrumb fix is a minor lift; the major mobile-graph + nav-label-overlap items are carried)."
+  },
+  "change_summary": [
+    "site/src/components/sections/VaultRelationshipBlock.astro — node-clarity bridge ('a node is a Home.aDNA plus the vaults that live on it') + '/network' escape hatch + a TYPE_MEANING gloss (title tooltips, meanings mirrored from graph.astro's legend) + a 'hover a relationship type for what it means' hint + .rel-intro/.rel-key styles. Closes the c159 re-confirm's one below-floor item (node_clarity 3.5 -> 4.4) on the deepest, most search-landable surface.",
+    "site/src/pages/vaults/graph.astro + site/src/pages/vaults/[slug].astro — breadcrumb double-left-arrow disambiguated: '<- The Lattice' (one up-arrow to the registry) + a '·' separator + 'Network' (parallel narrative parent), with .crumb-sep styling, so the two co-equal parents stop reading as one ascending hierarchy (IA + Newcomer + Diagram-Rev).",
+    "what/decisions/adr_033_network_edge_overlay_adaptation_seam.md (NEW) — RATIFIED 2026-06-07 (operator override of SO #14 phase-exit default): network_edges.yaml is the curated, cited adaptation seam merged by the ADR-023 generator, authoritative for edges until upstreamed to Home.aDNA vault cards (Hestia coord), then it shrinks to nothing.",
+    "how/campaigns/.../artifacts/aar_decadal_e4_adnanetwork.md (NEW) — the E4 decadal AAR (11-section + §11 4-lens Network-Legibility confirmation in lieu of a 30-persona RLP).",
+    "DEPLOY — the whole E4 surface (held commit-only since c150) + the homepage DNA-helix hero shipped live to adna.network."
+  ],
+  "doctrine_compliance": {
+    "honest_topology": "STRENGTHENED — node-clarity bridge carries the honest node definition onto the deep surface; no fabricated edges; ADR-033 codifies the cited-edge discipline; generator/data byte-identical.",
+    "two_fighting_colors": "PASS — bridge/gloss/breadcrumb chrome uses cyan --color-link + muted text; no new accent.",
+    "motion_budget": "PASS — no new motion.",
+    "no_marketing_adjectives": "PASS — plain copy ('one of many that can live on a single aDNA computer').",
+    "dual_audience": "PASS — newcomer gets the node concept + an escape hatch + a gloss hint on the deep page; the developer gets the typed edges + the graph round-trip.",
+    "engine_files_unedited": "PASS — skill_iii_cycle / skill_site_design_pipeline / skill_decadal_aar / runners / build_vaults_data.mjs + vaults.json + .mmd UNTOUCHED. 3 site files only.",
+    "dark_first": "PASS — verified both modes; the vault-detail 'light mode' re-confirm finding was a screenshot artifact (computed-style + viewport capture both confirm #1a1b26).",
+    "a11y_mechanism": "PASS — axe 0 AA both modes; in-text bridge link underlined; gloss meanings have an accessible fallback (the /vaults/graph legend) — the hover-only title is noted as a carried follow-up."
+  },
+  "validation": {
+    "build": "PASS — 162 pages, 0 errors; data layer byte-identical (npx astro build; generator untouched).",
+    "playwright_gates": "83/83 PASS (unchanged; the c159 fixes are copy/markup/CSS, no gate impact).",
+    "axe_wcag_aa": "0 violations BOTH modes (gate-4 16 dark+light tests).",
+    "lighthouse": {"home": "100/96/100/100 (A11y 96 pre-existing)", "network": "100/100/100/100", "graph": "100/100/100/100", "vault_detail": "100/100/100/100", "concept": "100/100/100/100", "tutorial": "100/100/100/100", "evidence": "site/evidence/lighthouse_c159_*.json (gitignored)"},
+    "deploy": "READY (production; dpl_Hirdyr5LymjKQ3stzYRx1kc6KpaA); adna.network live-verified across / + /network + /vaults/graph + /vaults/Harness.aDNA (all 200); helix hero + nav entry + node-color legend + node bridge + parallel breadcrumb all live; concept Mermaid diagrams render.",
+    "reconfirm_independence": "node_clarity broke the self-score a third time (4.5 self vs 3.5 independent), proving the value of the operator-chosen re-confirm; post-fix owning-lens re-check 4.4 -> GREEN."
+  },
+  "deferred_followups": [
+    "Mobile /vaults/graph legibility (Gap #1; cited by 3 lenses; medium) — the headline post-close fix: node-twin list / tap-to-zoom / flowchart TB at <=480px.",
+    "/vaults/graph desktop layout (right-third cram) + orphan-cluster hierarchy (heavy; generator/Mermaid).",
+    "Accessible edge-type gloss on vault-detail (the hover-only title is touch/keyboard-invisible; Newcomer reservation; cheap-med).",
+    "get-started node-onboarding seam (operator: its own content cycle).",
+    "Distinct supersedes stroke vs the dashed family (generator).",
+    "Nav-label overlap 'Network' vs 'The Lattice' (IA; judgment/brand).",
+    "Home.aDNA credential/membership sweep for the Network.aDNA rename (Rosetta's separate Hestia pass).",
+    "network_edges.yaml -> Home.aDNA vault-card upstream (ADR-033; retires the seam)."
+  ],
+  "deploy_record": {
+    "deployed": true,
+    "target": "production",
+    "deployment_id": "dpl_Hirdyr5LymjKQ3stzYRx1kc6KpaA",
+    "domain": "adna.network",
+    "method": "VERCEL_TOKEN env-var + vercel deploy --prebuilt --prod --yes (no --token= flag; output redacted)",
+    "ships": "the whole E4 surface (data-driven /vaults/graph + /network bands 1-5 + vault-detail relationship blocks + the c150-c159 fixes) + the homepage DNA-helix hero, all held commit-only since c150",
+    "token_note": "SS_VERCEL_TOKEN rotation nag DROPPED per operator (throwaway test account; rotate at discretion). Memory written: feedback_vercel_token_test_account."
+  },
+  "aar_pointer": "Full E4 decadal AAR (11-section + §11 4-lens confirmation): how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_decadal_e4_adnanetwork.md",
+  "notes": "The decadal close did exactly what a confirming close should: the operator-chosen RE-CONFIRM (a second independent 4-lens Workflow) broke the c158 self-rescore a third time — node_clarity was still 3.5 because the c158 bridge fix had missed the vault-detail surface — and the cheap, owning-lens-prescribed fix (bridge + gloss + breadcrumb) plus a targeted Newcomer re-check closed it to 4.4 / GREEN before shipping. E4 closes GREEN (mean 4.38, no item < 4), edge_honesty a clean 5.0, and the whole network surface + the homepage helix hero deployed live to adna.network. ADR-033 ratified (operator override). Generator/data byte-identical end-to-end; zero invariant violations. The arc's lesson: score the SEAMS between surfaces, not just the surfaces — every below-floor find across c155/c158/c159 was a between-surface gap an independent cross-surface lens caught and self-scoring missed."
+}

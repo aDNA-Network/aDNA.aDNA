@@ -22,7 +22,8 @@ const { vault, allVaults, allEdges } = Astro.props as { vault: any; allVaults: a
     <section class="vault-hero">
       <p class="vault-breadcrumb">
         <a href="/vaults/">&larr; The Lattice</a>
-        <a class="crumb-network" href="/network/">&larr; Network</a>
+        <span class="crumb-sep" aria-hidden="true">·</span>
+        <a class="crumb-network" href="/network/">Network</a>
       </p>
       <h1>{vault.display_name}</h1>
       {vault.tagline && <p class="vault-tagline">{vault.tagline}</p>}
@@ -94,7 +95,9 @@ const { vault, allVaults, allEdges } = Astro.props as { vault: any; allVaults: a
   /* Two parents: the registry (The Lattice → /vaults) and the narrative (→ /network), so the
      deep vault page is not a one-way cul-de-sac back to the explainer (E4 c158 — IA + Newcomer). */
   .vault-breadcrumb a { color: var(--color-link); }
-  .vault-breadcrumb .crumb-network { margin-left: 1rem; }
+  /* Two co-equal parents (registry · narrative), separated — not a two-arrow chain that mis-reads as
+     one hierarchy (E4 c159 — IA + Newcomer). One "←" on the registry; Network is a parallel link. */
+  .vault-breadcrumb .crumb-sep { margin: 0 0.6rem; color: var(--color-text-muted); }
   .vault-tagline { font-size: 1.2rem; font-style: italic; color: var(--color-text-muted); }
   .vault-meta { padding: 0.5rem 0; color: var(--color-text-muted); }
   /* Badges carry light pastel backgrounds in both modes → pin dark text for AA contrast. */
