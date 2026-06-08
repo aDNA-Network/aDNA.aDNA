@@ -25,8 +25,12 @@
 
 # ── supersedes (lifecycle) ─────────────────────────────────────────────────────────────────
 Harness.aDNA:
-  # "LatticeAgent SUPERSEDED 2026-06-01 — absorbed-and-superseded by Harness.aDNA (Operation Apotheosis)"
-  supersedes: LatticeAgent.aDNA
+  # supersedes: LatticeAgent.aDNA — PRUNED 2026-06-08 (Window-A registry-drop). LatticeAgent.aDNA
+  # left the active registry (archived -> Archive.aDNA/; Home source 0ba3f09), so this edge target
+  # is no longer in vaults.json. Per this overlay's honesty discipline ("relationships whose target
+  # vault is NOT in vaults.json are OMITTED to avoid dangling edges") it is removed here. The
+  # supersession lineage is preserved permanently in Archive.aDNA/LatticeAgent.aDNA's banner +
+  # workspace CLAUDE.md (SO-7); it does not belong in the LIVE registry of active vaults.
   # "RareHarnessOld ... supersession trajectory by Harness.aDNA" (also on the RareHarnessOld card)
   # federation: RareHarness clinical vertical consumes SiteForge ISS + III
   federation_refs: [SiteForge.aDNA, III.aDNA]
@@ -74,16 +78,21 @@ aDNAScope.aDNA:
   companion_vaults: [ContextCompass.aDNA]
 
 # ── partner (platform -> default partner) ──────────────────────────────────────────────────
-LatticeTerminal.aDNA:
-  # "Default harness provider = LatticeAgent.aDNA" (lineage: LatticeAgent superseded by Harness)
-  default_partners: [LatticeAgent.aDNA]
-  # senses<->control sibling within the LatticeAgent/LatticeTerminal/RemoteControl triad
-  companion_vaults: [RemoteControl.aDNA]
+# LatticeTerminal.aDNA: { default_partners: [LatticeAgent.aDNA], companion_vaults: [RemoteControl.aDNA] }
+#   ENTIRE KEY REMOVED 2026-06-08 (Window-A registry-drop). LatticeTerminal.aDNA itself left the
+#   active registry (archived -> Archive.aDNA/; Home source 0ba3f09), as did its partner
+#   LatticeAgent.aDNA. The terminal role rehomes to Cmux.aDNA (-> Terminal.aDNA at WS-3/M4); the
+#   PROVIDER/HARNESS provider relationship rehomes to Harness.aDNA. No overlay edge is authored for
+#   an archived vault. (Triad lineage preserved in the archived banners + workspace CLAUDE.md, SO-7.)
 
 # ── companion (sibling persona-pair / thematic family) ─────────────────────────────────────
 RemoteControl.aDNA:
-  # "triad with LatticeAgent (brain) + LatticeTerminal (senses)"
-  companion_vaults: [LatticeAgent.aDNA, LatticeTerminal.aDNA]
+  # "triad with LatticeAgent (brain) + LatticeTerminal (senses)" — both companions PRUNED 2026-06-08
+  # (Window-A registry-drop): LatticeAgent.aDNA + LatticeTerminal.aDNA both left the active registry
+  # (archived -> Archive.aDNA/; Home source 0ba3f09). With both triad siblings archived, RemoteControl
+  # currently has no in-registry companion; the key is retained (no empty edge authored) so the
+  # relationship re-attaches cleanly to Terminal.aDNA when Cmux->Terminal stands up (WS-3/M4).
+  companion_vaults: []
 
 TappInterface.aDNA:
   # "thematic family w/ MoleculeForge + VAASLattice"

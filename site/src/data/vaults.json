@@ -67,33 +67,8 @@
     },
     {
       "source": "Harness.aDNA",
-      "target": "LatticeAgent.aDNA",
-      "type": "supersedes"
-    },
-    {
-      "source": "LatticeTerminal.aDNA",
-      "target": "RemoteControl.aDNA",
-      "type": "companion"
-    },
-    {
-      "source": "LatticeTerminal.aDNA",
-      "target": "LatticeAgent.aDNA",
-      "type": "partner"
-    },
-    {
-      "source": "Harness.aDNA",
       "target": "RareHarnessOld.aDNA",
       "type": "supersedes"
-    },
-    {
-      "source": "RemoteControl.aDNA",
-      "target": "LatticeAgent.aDNA",
-      "type": "companion"
-    },
-    {
-      "source": "RemoteControl.aDNA",
-      "target": "LatticeTerminal.aDNA",
-      "type": "companion"
     },
     {
       "source": "TappInterface.aDNA",
@@ -111,10 +86,10 @@
       "type": "federation"
     }
   ],
-  "generated_at": "2026-06-06",
+  "generated_at": "2026-06-08",
   "schema_version": "0.2",
-  "source_inventory_sha": "bfdce8646cdc7dbb",
-  "vault_count": 40,
+  "source_inventory_sha": "e22f6c1a9f0f4630",
+  "vault_count": 38,
   "vaults": [
     {
       "canonical_governance": "TaskForge.aDNA/AGENTS.md",
@@ -1092,77 +1067,11 @@
       "status": "genesis",
       "subclass": null,
       "superseded_by": null,
-      "supersedes": "LatticeAgent.aDNA",
+      "supersedes": null,
       "tagline": null,
       "umbrella_pillar": null,
       "vault": "Harness.aDNA",
       "vault_slug": "Harness.aDNA"
-    },
-    {
-      "canonical_governance": "LatticeAgent.aDNA/CLAUDE.md",
-      "card_present": true,
-      "class": "platform",
-      "companion_vaults": [],
-      "current_phase": null,
-      "default_partners": [],
-      "display_name": "LatticeAgent",
-      "docs_site_url": null,
-      "federation_refs": [],
-      "full_name": null,
-      "github_url": null,
-      "headline_adrs": [],
-      "headline_mission": null,
-      "headline_mission_state": null,
-      "last_synced": "2026-05-24",
-      "lifecycle_stage": null,
-      "note": "aDNA-native agentically-tunable context harness. Default-partner for LatticeTerminal. campaign_latticeagent_cartograph PLANNED (39 missions; Pre-Launch Hardening F7–F12 complete).",
-      "persona": "Stanley",
-      "persona_archetype": "stanley",
-      "recent_closed": [],
-      "schema_version": "0.2",
-      "status": "genesis",
-      "subclass": null,
-      "superseded_by": null,
-      "supersedes": null,
-      "tagline": null,
-      "umbrella_pillar": null,
-      "vault": "LatticeAgent.aDNA",
-      "vault_slug": "LatticeAgent.aDNA"
-    },
-    {
-      "canonical_governance": "LatticeTerminal.aDNA/CLAUDE.md",
-      "card_present": true,
-      "class": "platform",
-      "companion_vaults": [
-        "RemoteControl.aDNA"
-      ],
-      "current_phase": null,
-      "default_partners": [
-        "LatticeAgent.aDNA"
-      ],
-      "display_name": "LatticeTerminal",
-      "docs_site_url": null,
-      "federation_refs": [],
-      "full_name": null,
-      "github_url": null,
-      "headline_adrs": [],
-      "headline_mission": null,
-      "headline_mission_state": null,
-      "last_synced": "2026-05-24",
-      "lifecycle_stage": null,
-      "note": "Canonical Lattice terminal substrate (Spock). Genesis planning; M0.4 (MC-LAUNCH) next. Renamed from terminal.aDNA 2026-05-15.",
-      "persona": "Spock",
-      "persona_archetype": "spock",
-      "recent_closed": [],
-      "schema_version": "0.2",
-      "status": "genesis",
-      "subclass": null,
-      "superseded_by": null,
-      "supersedes": null,
-      "tagline": null,
-      "umbrella_pillar": null,
-      "vault": "LatticeTerminal.aDNA",
-      "vault_slug": "LatticeTerminal.aDNA"
     },
     {
       "canonical_governance": "Obsidian.aDNA/CLAUDE.md",
@@ -1230,10 +1139,7 @@
       "canonical_governance": "RemoteControl.aDNA/CLAUDE.md",
       "card_present": true,
       "class": "platform",
-      "companion_vaults": [
-        "LatticeAgent.aDNA",
-        "LatticeTerminal.aDNA"
-      ],
+      "companion_vaults": [],
       "current_phase": null,
       "default_partners": [],
       "display_name": "RemoteControl",
