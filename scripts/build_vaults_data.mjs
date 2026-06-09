@@ -78,6 +78,30 @@ function slugOf(name) {
   return name.toLowerCase().replace(/\.adna$/, '').replace(/[^a-z0-9_-]/g, '_');
 }
 
+// Public-note sanitizer (audit P1 / campaign_adna_network_audit DS3): the inventory `note` is
+// internal/private editorial context (campaign state, partner/client identities, private repos)
+// pulled from Home.aDNA (local-by-default). It is rendered publicly (homepage RegistryCard blurb,
+// vault-detail body + meta description), so it MUST be reduced to a public-safe blurb before it
+// reaches the public vaults.json. Strategy: truncate at the first internal/private marker, redact
+// "for <Named person/org>" client clauses, drop if nothing safe remains. Conservative — prefers
+// under-sharing to leaking a named client (the live CakeHealth.aDNA exposure this fixes).
+// Internal/private/operational markers — truncate the public note at the first occurrence (keeps
+// the clean "what it is" lead). Codenames like "Operation X" are NOT markers (they're descriptive);
+// the named-client risk is handled by the "for <Name>" redaction below.
+const PRIVATE_MARKERS = /\b(Campaign\s|campaign_|CHARTERED|DG-[A-Z]|consumer wrappers?|Phase\s+\d|P\d(-P\d)?\s|genesis|ADR-\d|read-only|creds?\b|credential|DuploCloud|#needs-human|NOTE:|flagged for|Private|\d{4}-\d{2}-\d{2})/i;
+function publicNote(note) {
+  if (!note) return null;
+  let s = String(note);
+  const m = s.match(PRIVATE_MARKERS);          // 1) cut at first internal/private marker
+  if (m) s = s.slice(0, m.index);
+  // 2) redact "for <Honorific Name…>( (Org))?" or "for <Name> (Org)" client/partner clauses
+  s = s.replace(/\s+for\s+(?:(?:Dr\.|Prof\.|Mr\.|Mrs\.|Ms\.)\s*[A-Z][\w.]+(?:\s+[A-Z][\w.]+)*(?:\s*\([^)]*\))?|[A-Z][\w.]+(?:\s+[A-Z][\w.]+)*\s*\([^)]+\))/g, '');
+  s = s.replace(/[;,]\s+\w+$/, '');             // 3a) drop a trailing dangling fragment after ;/,
+  s = s.replace(/[\s,;:—-]+$/, '').trim();      // 3b) tidy trailing connectors
+  if (s && !/[.!?]$/.test(s)) s += '.';
+  return s.length >= 12 ? s : null;             // 4) drop sub-meaningful fragments
+}
+
 // Merge inventory + vault_card overlay → projected vault entry
 function projectVault(invVault) {
   const slug = invVault.name; // canonical name e.g. "aDNA.aDNA"
@@ -122,7 +146,7 @@ function projectVault(invVault) {
 
     // Provenance
     last_synced: card.last_synced || null,
-    note: invVault.note || null,
+    note: publicNote(invVault.note),
 
     // Schema metadata
     schema_version: card.schema_version || '0.1',

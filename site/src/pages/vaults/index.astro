@@ -16,10 +16,10 @@ const classOrder = ['standard_dev', 'framework', 'framework_candidate', 'forge',
 const orderedClasses = classOrder.filter(c => c in classGroups);
 ---
 
-<BaseLayout title="The Lattice — vault registry" description={`Browse the ${vault_count}-vault aDNA lattice — personae, classes, cross-vault relationships`}>
+<BaseLayout title="Vaults — the aDNA registry" description={`Browse the ${vault_count}-vault aDNA registry — personae, classes, cross-vault relationships`}>
   <main class="vaults-index">
     <section class="vaults-hero">
-      <h1>The Lattice</h1>
+      <h1>Vaults</h1>
       <p class="vaults-tagline">
         {vault_count} vaults across {orderedClasses.length} classes — each with its own persona, governance, and place in the cross-vault graph.
       </p>
@@ -58,5 +58,5 @@ const orderedClasses = classOrder.filter(c => c in classGroups);
   .facet-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .vaults-class-section { margin: 2rem 0; }
   .vaults-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
-  .class-count { font-size: 0.85em; color: #666; }
+  .class-count { font-size: 0.85em; color: var(--color-text-muted); }
 </style>

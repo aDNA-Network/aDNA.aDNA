@@ -178,7 +178,7 @@ An aDNA project directory SHOULD use the `.aDNA` suffix to indicate it follows t
 
 **Naming rules:**
 
-- The base template repository (`Agentic-DNA/`) MUST NOT use the `.aDNA` suffix — it is the source, not an instance.
+- The base template repository (`aDNA/`) MUST NOT use the `.aDNA` suffix — it is the source, not an instance.
 - Forked projects SHOULD use the pattern `ProjectName.aDNA/` (e.g., `zeta.aDNA/`, `my_research.aDNA/`).
 - The project name portion MUST match `[a-z][a-z0-9_]{0,63}` — lowercase letters, digits, and underscores only, starting with a letter, maximum 64 characters.
 - The suffix `.aDNA` uses mixed case (capital D, N, A) matching the abbreviation branding.
@@ -199,7 +199,7 @@ find . -maxdepth 1 -name "*.aDNA" -type d
 
 ```
 ~/lattice/
-├── Agentic-DNA/           # Base template (source repo, no suffix)
+├── aDNA/           # Base template (source repo, no suffix)
 ├── my_research.aDNA/      # Forked project (aDNA instance)
 ├── zeta.aDNA/             # Another project
 └── CLAUDE.md              # Workspace-level governance
@@ -1476,4 +1476,4 @@ This appendix maps every design decision to its location in the standard, ensuri
 
 ---
 
-*End of aDNA Universal Standard v2.0*
+*End of aDNA Universal Standard v2.2*

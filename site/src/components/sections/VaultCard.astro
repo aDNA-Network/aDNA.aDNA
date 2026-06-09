@@ -16,15 +16,19 @@ const { vault } = Astro.props;
 </article>
 
 <style>
-  .vault-card { padding: 1rem; border: 1px solid #ddd; border-radius: 0.5rem; transition: border-color 0.15s; }
-  .vault-card:hover { border-color: #4a86e8; }
-  .vault-card h3 a { text-decoration: none; color: inherit; }
-  .vault-card-persona { color: #555; font-size: 0.9em; margin: 0.25rem 0; }
-  .vault-card-tagline { font-style: italic; color: #444; margin: 0.5rem 0; }
+  /* Token-driven (audit P1 / campaign_adna_network_audit DS5): replaces hardcoded light-mode greys +
+     off-palette blue hover + pale-pastel status fills that inherited dark page text at 1.15:1 (78-node
+     WCAG-AA failure on the Tokyo-Night register). Status pills mirror RegistryCard's AA-safe color-mix
+     (text darkened toward --color-text so the label meets AA on its own pale tint, both modes). */
+  .vault-card { padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); transition: border-color var(--transition-fast); }
+  .vault-card:hover { border-color: var(--color-link); }
+  .vault-card h3 a { text-decoration: none; color: var(--color-text-heading); }
+  .vault-card-persona { color: var(--color-text-muted); font-size: 0.9em; margin: 0.25rem 0; }
+  .vault-card-tagline { font-style: italic; color: var(--color-text-muted); margin: 0.5rem 0; }
   .vault-card-meta { font-size: 0.8em; margin-top: 0.5rem; }
-  .vault-status { padding: 0.1rem 0.4rem; border-radius: 0.2rem; }
-  .status-active { background: #b9e4d0; }
-  .status-genesis { background: #fef1d1; }
-  .status-pending { background: #e7e7e7; }
-  .status-superseded { background: #cccccc; }
+  .vault-status { padding: 0.1rem 0.4rem; border-radius: var(--radius-full); }
+  .status-active { background: color-mix(in srgb, var(--color-success) 15%, transparent); color: color-mix(in srgb, var(--color-success) 55%, var(--color-text)); }
+  .status-genesis,
+  .status-pending { background: color-mix(in srgb, var(--color-accent) 18%, transparent); color: color-mix(in srgb, var(--color-accent) 45%, var(--color-text)); }
+  .status-superseded { background: color-mix(in srgb, var(--color-text-muted) 15%, transparent); color: var(--color-text-muted); }
 </style>

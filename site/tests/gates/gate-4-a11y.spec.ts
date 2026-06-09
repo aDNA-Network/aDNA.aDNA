@@ -25,6 +25,11 @@ const pages = [
   { name: 'Network page', path: '/network' },
   // E5 Public-Good Commons (cycle 160): the subnetwork showcase surface
   { name: 'Commons page', path: '/commons' },
+  // Audit P1 (campaign_adna_network_audit DS5): close the gate-coverage holes that let the
+  // /vaults-index 78-node color-contrast failure ship — the index, the conversion page, the spec.
+  { name: 'Vaults index', path: '/vaults' },
+  { name: 'Get Started', path: '/get-started' },
+  { name: 'Specification', path: '/reference/specification' },
 ];
 
 // Dark is the default render; light is reached by seeding the theme preference before the page loads.
