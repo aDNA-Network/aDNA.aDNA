@@ -6,9 +6,9 @@ campaign_id: campaign_adna_network_audit
 phase: 1
 mission_number: 1.1
 slug: decisive_strokes
-status: planning
+status: in_progress
 created: 2026-06-08
-updated: 2026-06-08
+updated: 2026-06-09
 last_edited_by: agent_stanley
 owner: stanley
 persona: rosetta
@@ -26,7 +26,11 @@ tags: [mission, campaign_adna_network_audit, phase1, implementation, decisive_st
 
 # P1.M1 — Execute audit roadmap
 
-> Populated from the P0 audit roadmap (`audit_adna_network_2026_06.md` §6-7). **Awaiting the P0→P1 operator gate** to confirm scope + which items (if any) ship-now vs ride the E5-close deploy. Commit-only by default.
+> Populated from the P0 audit roadmap (`audit_adna_network_2026_06.md` §6-7). Operator gate (2026-06-09): **Full P1** + **ship-now the live Criticals**.
+>
+> **✅ Session 1 DONE + DEPLOYED LIVE (commits `c0b41a6` + this).** All Critical/High credibility-privacy-naming-a11y-SEO fixes shipped to adna.network via a targeted prebuilt deploy that **excludes the ADR-010-embargoed `/commons`** (verified live: `/commons` → 404; CakeHealth → 0 "Genentech"; GitHub → canonical `/aDNA`; robots → adna.network; nav → "Vaults"; `/vaults` axe 0 both modes). Build 159pp (deploy) / 160pp (HEAD); gates 97/97. Token redacted (no leak); SS_VERCEL_TOKEN = throwaway test acct (no rotation flag).
+>
+> **Remaining: S2** (Get Started CTA in header + hero — High, conversion) **· S3** (Phase-1b verification sweep — light-mode axe on all routes, score the ~25 un-scored routes + 404, generated-detail-page axe sample, mobile-qual, RSS/search/print decisions). Both commit-only; bundle into the next deploy or the E5-close deploy.
 
 ## Goal
 Ship the audit's **decisive strokes + copy-paste quick-wins** (the cross-cutting credibility / naming / accessibility / SEO fixes) and run the **Phase-1b verification sweep** the completeness critic requires. The **campaign-tier** redesign items (home-hero concrete-then-ethos, terminology spine, nav/orphan surfacing incl. `/commons` nav entry, closing-CTA partials, coordinated deploy) are **routed into the remaining E5 cycles at P2** (they overlap E5 c162/c164 directly) — see `mission_ana_p2_closeout_realign`.
