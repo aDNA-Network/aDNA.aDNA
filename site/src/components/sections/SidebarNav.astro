@@ -19,10 +19,49 @@ const groupIcons: Record<string, string> = {
   'Guides': iconHow,
   'Reference': iconReference,
 };
+
+// Network-audit H4: every doc page rendered all 7 groups (~100 links). Scope the open tree to the
+// section the reader is in; keep every section one click away via a compact switcher at the top.
+const under = (href: string) => {
+  const h = href.replace(/\/$/, '');
+  return currentPath === h || currentPath.startsWith(h + '/');
+};
+function inGroup(group: NavGroup): boolean {
+  return group.items.some((item) =>
+    isSubgroup(item)
+      ? (item as NavSubgroup).items.some((si: NavItem) => under(si.href))
+      : under((item as NavItem).href)
+  );
+}
+function entryHref(group: NavGroup): string {
+  const first = group.items[0];
+  return isSubgroup(first) ? (first as NavSubgroup).items[0].href : (first as NavItem).href;
+}
+
+const activeGroup = navigation.find(inGroup) ?? null;
+// Fall back to the full tree only when the page isn't in the nav (no active section to scope to).
+const shownGroups: NavGroup[] = activeGroup ? [activeGroup] : navigation;
 ---
 
 <nav class="sidebar-nav" aria-label="Documentation sections">
-  {navigation.map((group: NavGroup) => (
+  <ul class="section-switcher" aria-label="All sections">
+    {navigation.map((group: NavGroup) => (
+      <li>
+        <a
+          href={entryHref(group)}
+          class:list={['switcher-link', { active: activeGroup?.label === group.label }]}
+          aria-current={activeGroup?.label === group.label ? 'true' : undefined}
+        >
+          {groupIcons[group.label] && (
+            <span class="group-icon" aria-hidden="true" set:html={groupIcons[group.label]} />
+          )}
+          <span>{group.label}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  {shownGroups.map((group: NavGroup) => (
     <div class="nav-group">
       <h3 class="group-label">
         {groupIcons[group.label] && (
@@ -79,6 +118,39 @@ const groupIcons: Record<string, string> = {
 <style>
   .sidebar-nav {
     font-size: var(--text-sm);
+  }
+
+  /* Section switcher — all top-level sections, one click away; the active one is expanded below. */
+  .section-switcher {
+    list-style: none;
+    margin: 0 0 var(--space-6);
+    padding: 0 0 var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .switcher-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .switcher-link:hover {
+    color: var(--color-text);
+    background: var(--color-bg-alt);
+  }
+
+  .switcher-link.active {
+    color: var(--color-primary);
+    background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   }
 
   .nav-group {

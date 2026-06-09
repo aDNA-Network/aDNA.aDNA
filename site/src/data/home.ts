@@ -9,6 +9,8 @@
  * Edit copy here; index.astro is the layout.
  */
 
+import { STANDARD_VERSION, ENTITY_TYPE_COUNT, CONFORMANCE_LEVELS, STANDARD_LICENSE } from './standard';
+
 export interface HomeStep {
   number: string;
   title: string;
@@ -120,8 +122,8 @@ export const personas: HomePersona[] = [
 ];
 
 export const stats: HomeStat[] = [
-  { value: '14', label: 'Entity Types' },
-  { value: '3', label: 'Conformance Levels' },
-  { value: 'v2.2', label: 'Current Version' },
-  { value: 'MIT', label: 'Licensed' },
+  { value: String(ENTITY_TYPE_COUNT), label: 'Entity Types' },
+  { value: String(CONFORMANCE_LEVELS), label: 'Conformance Levels' },
+  { value: STANDARD_VERSION, label: 'Current Version' },
+  { value: STANDARD_LICENSE, label: 'Licensed' },
 ];

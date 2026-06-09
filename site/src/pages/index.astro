@@ -5,6 +5,7 @@ import NetworkDiagram from '../components/sections/NetworkDiagram.astro';
 import RegistryCard from '../components/sections/RegistryCard.astro';
 import { buildWebSiteJsonLD } from '../utils/seo';
 import { steps, stats } from '../data/home';
+import { STANDARD_VERSION, ENTITY_TYPE_COUNT } from '../data/standard';
 import vaultsData from '../data/vaults.json';
 import heroImage from '../assets/heroes/hero_adna_helix.png';
 
@@ -134,10 +135,10 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
       <h2 class="section-title">The Standard</h2>
       <p class="section-subtitle">aDNA is an open specification — MIT licensed, community-driven, designed for extension.</p>
       <div class="standard-meta">
-        <span class="meta-tag">v2.2</span>
+        <span class="meta-tag">{STANDARD_VERSION}</span>
         <span class="meta-tag">MIT License</span>
         <span class="meta-tag">Open Standard</span>
-        <span class="meta-tag">14 Entity Types</span>
+        <span class="meta-tag">{ENTITY_TYPE_COUNT} Entity Types</span>
       </div>
       <div class="standard-cta">
         <a href="/reference/specification" class="btn btn-primary" data-astro-prefetch>Read the Specification</a>

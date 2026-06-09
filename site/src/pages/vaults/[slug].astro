@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import VaultRelationshipBlock from '../../components/sections/VaultRelationshipBlock.astro';
 import vaultsData from '../../data/vaults.json';
+import { buildWebPageJsonLD } from '../../utils/seo';
 
 export function getStaticPaths() {
   const data = vaultsData as { vaults: any[]; edges: any[] };
@@ -12,11 +13,18 @@ export function getStaticPaths() {
 }
 
 const { vault, allVaults, allEdges } = Astro.props as { vault: any; allVaults: any[]; allEdges: any[] };
+
+const jsonLD = buildWebPageJsonLD({
+  title: `${vault.display_name} — ${vault.persona || vault.class}`,
+  description: vault.tagline || vault.note || `aDNA vault: ${vault.display_name}`,
+  url: Astro.url.href,
+});
 ---
 
 <BaseLayout
   title={`${vault.display_name} — ${vault.persona || vault.class}`}
   description={vault.tagline || vault.note || `aDNA vault: ${vault.display_name}`}
+  jsonLD={jsonLD}
 >
   <main class="vault-detail">
     <section class="vault-hero">

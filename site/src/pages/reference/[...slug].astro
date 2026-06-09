@@ -37,6 +37,12 @@ const jsonLD = [
   headings={headings}
   jsonLD={jsonLD}
 >
+  {ref.id === 'specification' && (
+    <aside class="spec-orientation" aria-label="Orientation">
+      <p><strong>For implementers and evaluators.</strong> New to aDNA? Start with <a href="/learn/what-is-adna">What is aDNA &rarr;</a></p>
+      <p class="spec-orientation-build">Ready to build one? <a href="/get-started">Get started &rarr;</a></p>
+    </aside>
+  )}
   {ref.data.version && (
     <div class="ref-meta">
       <span class="ref-version">v{ref.data.version}</span>
@@ -47,6 +53,22 @@ const jsonLD = [
 </DocumentationLayout>
 
 <style>
+  /* Spec reader-orientation banner (network-audit H5): /reference/specification is an
+     entry point for implementers/evaluators but also the deepest doc — orient newcomers
+     out to "What is aDNA" and forward to "Get started" so it isn't a dead-end wall of spec. */
+  .spec-orientation {
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-primary);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    margin-bottom: var(--space-6);
+    font-size: var(--text-sm);
+  }
+  .spec-orientation p { margin: 0; }
+  .spec-orientation p + p { margin-top: var(--space-1); }
+  .spec-orientation a { color: var(--color-link); font-weight: 500; }
+
   .ref-meta {
     display: flex;
     align-items: center;

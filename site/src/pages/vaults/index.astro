@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import VaultCard from '../../components/sections/VaultCard.astro';
 import VaultClassFacet from '../../components/sections/VaultClassFacet.astro';
 import vaultsData from '../../data/vaults.json';
+import { buildCollectionPageJsonLD } from '../../utils/seo';
 
 const { vaults, vault_count } = vaultsData as { vaults: any[]; vault_count: number };
 
@@ -14,9 +15,15 @@ const classGroups: Record<string, any[]> = vaults.reduce((acc: Record<string, an
 
 const classOrder = ['standard_dev', 'framework', 'framework_candidate', 'forge', 'platform', 'org_vault', 'org_graph', 'network', 'node_operational', 'coordination', 'document', 'knowledge_graph', 'tooling', 'workspace', 'superseded'];
 const orderedClasses = classOrder.filter(c => c in classGroups);
+
+const jsonLD = buildCollectionPageJsonLD({
+  title: 'Vaults — the aDNA registry',
+  description: `Browse the ${vault_count}-vault aDNA registry — personae, classes, cross-vault relationships.`,
+  url: Astro.url.href,
+});
 ---
 
-<BaseLayout title="Vaults — the aDNA registry" description={`Browse the ${vault_count}-vault aDNA registry — personae, classes, cross-vault relationships`}>
+<BaseLayout title="Vaults — the aDNA registry" description={`Browse the ${vault_count}-vault aDNA registry — personae, classes, cross-vault relationships`} jsonLD={jsonLD}>
   <main class="vaults-index">
     <section class="vaults-hero">
       <h1>Vaults</h1>
