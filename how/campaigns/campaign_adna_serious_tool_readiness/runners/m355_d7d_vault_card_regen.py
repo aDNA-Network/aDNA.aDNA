@@ -60,7 +60,7 @@ from latlab.mcp.image.server import GeminiImageClient
 from PIL import Image
 
 
-VAULT_CARDS_DIR = Path("/Users/stanley/lattice/node.aDNA/who/assets/vault_cards")
+VAULT_CARDS_DIR = Path("/Users/stanley/lattice/Home.aDNA/who/assets/vault_cards")
 LEDGER_PATH = Path(
     "/Users/stanley/lattice/aDNA.aDNA/what/measurement/iii_results/2026-05/m355_d7d_regen.jsonl"
 )
