@@ -118,10 +118,12 @@ Agents read `CLAUDE.md` → `STATE.md` → directory-level `AGENTS.md` files. Hu
 Clone the template, run setup, then start an agent. ~5 minutes.
 
 ```bash
-mkdir -p ~/lattice && cd ~/lattice
+mkdir -p ~/aDNA && cd ~/aDNA
 git clone https://github.com/LatticeProtocol/Agentic-DNA.git adna
 cd adna && ./setup.sh
 ```
+
+> `~/aDNA/` is the recommended workspace root; any path works — `<workspace_root>` is detected, never hardcoded. Operators on the legacy `~/lattice/` root migrate via `skill_workspace_path_migration` (a turnkey agentic transition) plus a `~/lattice → ~/aDNA` symlink shim that keeps every existing reference valid mid-migration.
 
 `setup.sh` ships 15 community plugins, the Tokyo Night theme, and a curated workspace layout (Git Bash or WSL on Windows). Open `adna/` in Obsidian and enable community plugins when prompted. Then, from the vault root:
 
@@ -129,7 +131,7 @@ cd adna && ./setup.sh
 claude
 ```
 
-**Berthier** — the vault's built-in agent — detects the base template, walks you through workspace setup, and forks your first project (e.g., `~/lattice/my_research_lab.aDNA/`). The base `adna/` stays clean for updates.
+**Berthier** — the vault's built-in agent — detects the base template, walks you through workspace setup, and forks your first project (e.g., `~/aDNA/my_research_lab.aDNA/`). The base `adna/` stays clean for updates.
 
 Persona-specific paths, a terminal-first walkthrough, and manual setup (no AI agent) are documented in [`get-started`](./site/src/pages/get-started.astro), [`agent_first_guide.md`](what/docs/agent_first_guide.md), and [`migration_guide.md`](what/docs/migration_guide.md).
 
@@ -156,10 +158,10 @@ Full walkthrough: [`what/docs/migration_guide.md`](what/docs/migration_guide.md)
 
 ## Multi-Project Workspaces
 
-The `~/lattice/` workspace supports multiple projects. Each project is a fork of the Agentic-DNA template with its own governance, git history, and domain customization. Forked projects use the `.aDNA` suffix.
+The `~/aDNA/` workspace supports multiple projects. Each project is a fork of the Agentic-DNA template with its own governance, git history, and domain customization. Forked projects use the `.aDNA` suffix.
 
 ```
-~/lattice/
+~/aDNA/
 ├── CLAUDE.md              # Workspace governance (auto-created on first run)
 ├── Agentic-DNA/           # Base template (never modified)
 ├── my_research_lab.aDNA/  # Project A (forked, customized)
