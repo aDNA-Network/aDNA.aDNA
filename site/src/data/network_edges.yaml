@@ -87,12 +87,12 @@ aDNAScope.aDNA:
 
 # ── companion (sibling persona-pair / thematic family) ─────────────────────────────────────
 RemoteControl.aDNA:
-  # "triad with LatticeAgent (brain) + LatticeTerminal (senses)" — both companions PRUNED 2026-06-08
-  # (Window-A registry-drop): LatticeAgent.aDNA + LatticeTerminal.aDNA both left the active registry
-  # (archived -> Archive.aDNA/; Home source 0ba3f09). With both triad siblings archived, RemoteControl
-  # currently has no in-registry companion; the key is retained (no empty edge authored) so the
-  # relationship re-attaches cleanly to Terminal.aDNA when Cmux->Terminal stands up (WS-3/M4).
-  companion_vaults: []
+  # "triad with LatticeAgent (brain) + LatticeTerminal (senses)". Both original triad siblings were
+  # PRUNED 2026-06-08 (Window-A registry-drop): LatticeAgent.aDNA + LatticeTerminal.aDNA left the
+  # active registry (archived -> Archive.aDNA/; Home source 0ba3f09). The terminal/senses role rehomed
+  # to Cmux.aDNA, RENAMED Terminal.aDNA at WS-3/M4 (2026-06-08; Home source 95647c4). The companion
+  # edge — retained empty at v0.1.47 specifically to re-point here — is now RE-ATTACHED to Terminal.aDNA.
+  companion_vaults: [Terminal.aDNA]
 
 TappInterface.aDNA:
   # "thematic family w/ MoleculeForge + VAASLattice"

@@ -71,6 +71,11 @@
       "type": "supersedes"
     },
     {
+      "source": "RemoteControl.aDNA",
+      "target": "terminal",
+      "type": "companion"
+    },
+    {
       "source": "TappInterface.aDNA",
       "target": "MoleculeForge.aDNA",
       "type": "companion"
@@ -88,7 +93,7 @@
   ],
   "generated_at": "2026-06-09",
   "schema_version": "0.2",
-  "source_inventory_sha": "fc1262df448953fc",
+  "source_inventory_sha": "d3f3bc3503c80184",
   "vault_count": 37,
   "vaults": [
     {
@@ -978,37 +983,6 @@
       "vault_slug": "awsbootstrap"
     },
     {
-      "canonical_governance": null,
-      "card_present": false,
-      "class": "platform",
-      "companion_vaults": [],
-      "current_phase": null,
-      "default_partners": [],
-      "display_name": "Cmux",
-      "docs_site_url": null,
-      "federation_refs": [],
-      "full_name": null,
-      "github_url": null,
-      "headline_adrs": [],
-      "headline_mission": null,
-      "headline_mission_state": null,
-      "last_synced": null,
-      "lifecycle_stage": null,
-      "note": "Chief-of-staff terminal for a Lattice node; soft-fork-with-upstream of manaflow-ai/cmux (GPL-3.0-or-later; single-repo, code-as-WHAT at what/cmux/).",
-      "persona": "berthier",
-      "persona_archetype": null,
-      "recent_closed": [],
-      "schema_version": "0.1",
-      "status": "genesis",
-      "subclass": null,
-      "superseded_by": null,
-      "supersedes": null,
-      "tagline": null,
-      "umbrella_pillar": null,
-      "vault": "Cmux.aDNA",
-      "vault_slug": "cmux"
-    },
-    {
       "canonical_governance": "Harness.aDNA/CLAUDE.md",
       "card_present": true,
       "class": "platform",
@@ -1108,7 +1082,9 @@
       "canonical_governance": "RemoteControl.aDNA/CLAUDE.md",
       "card_present": true,
       "class": "platform",
-      "companion_vaults": [],
+      "companion_vaults": [
+        "Terminal.aDNA"
+      ],
       "current_phase": null,
       "default_partners": [],
       "display_name": "RemoteControl",
@@ -1168,6 +1144,37 @@
       "umbrella_pillar": null,
       "vault": "TappInterface.aDNA",
       "vault_slug": "TappInterface.aDNA"
+    },
+    {
+      "canonical_governance": null,
+      "card_present": false,
+      "class": "platform",
+      "companion_vaults": [],
+      "current_phase": null,
+      "default_partners": [],
+      "display_name": "Terminal",
+      "docs_site_url": null,
+      "federation_refs": [],
+      "full_name": null,
+      "github_url": null,
+      "headline_adrs": [],
+      "headline_mission": null,
+      "headline_mission_state": null,
+      "last_synced": null,
+      "lifecycle_stage": null,
+      "note": "Chief-of-staff terminal for a Lattice node; soft-fork-with-upstream of manaflow-ai/cmux (GPL-3.0-or-later; single-repo, code-as-WHAT at what/cmux/).",
+      "persona": "berthier",
+      "persona_archetype": null,
+      "recent_closed": [],
+      "schema_version": "0.1",
+      "status": "genesis",
+      "subclass": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "tagline": null,
+      "umbrella_pillar": null,
+      "vault": "Terminal.aDNA",
+      "vault_slug": "terminal"
     },
     {
       "canonical_governance": "aDNA.aDNA/CLAUDE.md",

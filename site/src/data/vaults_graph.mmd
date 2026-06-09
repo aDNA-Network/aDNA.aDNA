@@ -15,10 +15,12 @@ flowchart LR
   adnascope["aDNAScope.aDNA<br><sub>prometheus</sub>"]:::classplatform
   Harness_aDNA["Harness.aDNA<br><sub>Panacea</sub>"]:::classplatform
   RareHarnessOld_aDNA["RareHarnessOld.aDNA<br><sub>Asclepius</sub>"]:::classplatform
+  RemoteControl_aDNA["RemoteControl.aDNA<br><sub>Talos</sub>"]:::classplatform
   TappInterface_aDNA["TappInterface.aDNA<br><sub>Mentor</sub>"]:::classplatform
+  terminal["Terminal.aDNA<br><sub>berthier</sub>"]:::classplatform
   aDNA_aDNA["aDNA.aDNA<br><sub>Rosetta</sub>"]:::classstandarddev
 
-  subgraph orphans["Not yet linked: 19 vaults with no cited relationship"]
+  subgraph orphans["Not yet linked: 17 vaults with no cited relationship"]
     direction TB
     TaskForge_aDNA["TaskForge.aDNA<br><sub>Berthier</sub>"]:::classcoordination
     LPWhitepaper_aDNA["LPWhitepaper.aDNA"]:::classdocument
@@ -34,9 +36,7 @@ flowchart LR
     ContextCommons_aDNA["ContextCommons.aDNA"]:::classorgvault
     wga_aDNA["wga.aDNA"]:::classorgvault
     awsbootstrap["AWSBootstrap.aDNA<br><sub>hestia</sub>"]:::classplatform
-    cmux["Cmux.aDNA<br><sub>berthier</sub>"]:::classplatform
     Obsidian_aDNA["Obsidian.aDNA<br><sub>TBD</sub>"]:::classplatform
-    RemoteControl_aDNA["RemoteControl.aDNA<br><sub>Talos</sub>"]:::classplatform
     Spacemacs_aDNA["Spacemacs.aDNA<br><sub>Daedalus</sub>"]:::classtooling
     zeta_aDNA["zeta.aDNA"]:::classworkspace
   end
@@ -55,6 +55,7 @@ flowchart LR
   Harness_aDNA --> SiteForge_aDNA
   Harness_aDNA --> III_aDNA
   Harness_aDNA -.->|s| RareHarnessOld_aDNA
+  RemoteControl_aDNA -.-> terminal
   TappInterface_aDNA -.-> MoleculeForge_aDNA
   TappInterface_aDNA -.-> VAASLattice_aDNA
   aDNA_aDNA --> III_aDNA
