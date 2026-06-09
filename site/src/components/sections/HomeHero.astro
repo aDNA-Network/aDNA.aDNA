@@ -16,6 +16,9 @@ interface Props {
   primaryLabel?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
+  getStartedHref?: string;
+  getStartedLabel?: string;
+  showGetStarted?: boolean;
   githubHref?: string;
   stats?: Stat[];
 }
@@ -29,6 +32,9 @@ const {
   primaryLabel = 'Explore the network',
   secondaryHref = '/reference/specification',
   secondaryLabel = 'Read the standard',
+  getStartedHref = '/get-started',
+  getStartedLabel = 'Get Started',
+  showGetStarted = false,
   githubHref = 'https://github.com/LatticeProtocol/aDNA',
   stats = [],
 } = Astro.props;
@@ -59,8 +65,15 @@ const {
 
   <p class="hero-lead">{lead}</p>
 
+  {/* Network audit D4: the home hero had no "build" CTA — both actions routed to reading/
+     browsing. When showGetStarted is set (home only) Get Started leads as the single
+     btn-primary and the other two demote to secondary; other HomeHero consumers (e.g.
+     /commons) keep their own primary. Fuller hero rework → E5 C1 (concrete-then-ethos). */}
   <div class="hero-actions">
-    <a href={primaryHref} class="btn btn-primary" data-astro-prefetch>{primaryLabel}</a>
+    {showGetStarted && (
+      <a href={getStartedHref} class="btn btn-primary" data-astro-prefetch>{getStartedLabel}</a>
+    )}
+    <a href={primaryHref} class:list={['btn', showGetStarted ? 'btn-secondary' : 'btn-primary']} data-astro-prefetch>{primaryLabel}</a>
     <a href={secondaryHref} class="btn btn-secondary" data-astro-prefetch>{secondaryLabel}</a>
   </div>
 

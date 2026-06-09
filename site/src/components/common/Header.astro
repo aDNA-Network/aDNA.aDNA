@@ -33,6 +33,7 @@ const currentPath = Astro.url.pathname;
     </nav>
 
     <div class="header-actions">
+      <a href="/get-started" class="btn btn-primary header-cta" data-astro-prefetch>Get Started</a>
       <a
         href="https://github.com/LatticeProtocol/aDNA"
         class="github-link"
@@ -183,6 +184,13 @@ const currentPath = Astro.url.pathname;
     align-items: center;
     gap: var(--space-3);
     margin-left: auto;
+  }
+
+  /* Persistent build CTA (network audit D4 — header had no path to building;
+     only a footer text link existed). Compact reuse of the global .btn-primary. */
+  .header-cta {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
   }
 
   .github-link {
