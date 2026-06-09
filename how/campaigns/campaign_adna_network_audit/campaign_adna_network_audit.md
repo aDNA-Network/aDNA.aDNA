@@ -61,9 +61,9 @@ Complementary to — not a duplicate of — the main campaign's per-cycle III + 
 ### Phase 1: Execution
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| P1.M1+ | Apply agreed fixes (tiered: quick-wins → decisive strokes → campaigns) | 2-4 | P0 + gate | planning |
+| P1.M1 | Apply agreed fixes — S1 ✅ (credibility/privacy/naming/a11y/SEO Criticals, **deployed live**) · S2 (Get Started CTA) · S3 (Phase-1b sweep) · S4 (housekeeping) | 2-4 | P0 + gate | **in_progress** (S1 done; S2/S3/S4 pending) |
 
-**Phase exit gate**: agreed fixes shipped (committed; build + gates + axe + Lighthouse green); roadmap items closed or explicitly deferred.
+**Phase exit gate**: agreed fixes shipped (committed; build + gates + axe + Lighthouse green); roadmap items closed or explicitly deferred. Mid-campaign AAR + gap register: `missions/artifacts/aar_audit_p0_p1s1.md`.
 
 ### Phase 2: Wind-down / Realign
 | Mission | Title | Sessions | Dependencies | Status |
@@ -76,7 +76,8 @@ Complementary to — not a duplicate of — the main campaign's per-cycle III + 
 | # | When | Decision | Status |
 |---|------|----------|--------|
 | 1 | Before P0 | Audit target (Both, local-primary) · scope (full site) · orchestration (Workflow-max) | ✅ ratified 2026-06-08 (operator) |
-| 2 | P0 → P1 gate | Which roadmap tiers/items to execute; any ship-now fixes; deploy posture | pending |
+| 2 | P0 → P1 gate | Which roadmap tiers/items to execute; any ship-now fixes; deploy posture | ✅ ratified 2026-06-09 (operator): **Full P1 + ship-now the live Criticals**; targeted deploy excluding embargoed `/commons` |
+| 2b | P1 integration | How to integrate campaign-tier findings | ✅ ratified 2026-06-09: **fold into E5** (no new standalone missions; gap register routes all findings) |
 | 3 | P1 → P2 gate | Confirm fixes complete; what folds into E5 vs future | pending |
 
 ## Risk Register

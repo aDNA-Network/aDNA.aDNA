@@ -55,6 +55,13 @@ Ship the audit's **decisive strokes + copy-paste quick-wins** (the cross-cutting
 ### Session 3 — Phase-1b verification sweep (completeness-critic gaps)
 8. **Coverage + parity sweep.** Re-run axe + screenshots in **light mode** on key pages; score the **~25 un-scored in-scope routes** (patterns, use-cases, glossary, changelog, adopters, how, the 4 remaining audience pages) + the **404 page**; axe-sample generated detail pages (concepts/tutorials/comparisons/glossary terms); qualitatively review **mobile** (vaults catalog, Mermaid graph, spec sidebar); verify the Mermaid graph's keyboard/no-JS state; decide on RSS/search/newsletter/print gaps (recommend or defer). Append results to the audit report.
 
+### Session 4 — Housekeeping batch (audit roadmap H1b–H5; gap register #2–6)
+9. **Version shared-constant.** The v2.x→v2.2 string sweep shipped in S1; introduce one shared version constant (e.g. `src/data/standard.ts`) referenced by home + spec + comparison-doc footers so it can't re-drift.
+10. **Vault-count reconciliation.** Reconcile `vaults.json.vault_count` (37) against the registry-of-record (Home.aDNA inventory; seed says 38) — confirm the true count, add the missing record if 37 is wrong; ensure home CTA / `/vaults` title+desc / `/network` all derive from `vault_count` (no hardcodes).
+11. **Harness display split.** Public `display_name` for `Harness.aDNA`; label RareHarness as the clinical vertical and `RareHarnessOld` as legacy, so the rename story reads cleanly on the registry.
+12. **SidebarNav scoping.** Scope SidebarNav to the current top-level section (active group expanded; others behind a switcher) instead of ~100 links on every doc page; promote Glossary + Guides into Reference/footer for a layout-independent entry.
+13. **Spec orientation + JSON-LD.** Reader-orientation banner atop `/reference/specification` ("For implementers and evaluators. New to aDNA? Start with What is aDNA →") + a "now build one" CTA back to `/get-started`; JSON-LD on the `/vaults` index + vault-detail pages.
+
 ## Verification (per objective)
 `cd site && npm run build && npm run test:gates` + Lighthouse + axe (both modes) green; cite the closed finding; SITREP + lightweight AAR per session.
 

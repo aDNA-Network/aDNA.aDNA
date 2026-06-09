@@ -149,6 +149,18 @@ wilhelm_ai:
 | 165–168 | 6–9 | **MAX-III** deep per-page/section measure+iterate — Trust/Provenance + Participation-Scent passes; responsive/mobile (carry **E4 Gap #1**); copy tightening (AVOID register); axe both-modes; reference-inspection feed | later |
 | 169 | 10 | **E5 decadal close** — 11-section AAR + **full 30-persona Reviewer Lens Pass + Movement Skeptic** + Lighthouse/Playwright + STATE/STR cascade; ADR-034 → phase gate | later |
 
+## Audit carry-ins (from `campaign_adna_network_audit`, folded at its P2)
+
+The adna.network audit side campaign (paused E5 at c161; see `aar_audit_p0_p1s1.md` gap register) routes its **campaign-tier** findings into these cycles — pre-staged here so they're visible when E5 resumes; the full per-cycle objective edits execute at the audit's P2 (`mission_ana_p2_closeout_realign`):
+
+- **c162** — **C4** closing-CTA partials (audience/community/vault-detail) land alongside the **Connect affordance**.
+- **c164** — **C3** surface the orphaned funnels in nav: `/commons` nav entry + audience pages (researchers/educators/enterprise/compliance/startup-first-hour) + unify the BaseLayout/DocumentationLayout secondary-nav split + mobile SidebarNav disclosure.
+- **c164–168** — **C1** home-hero **concrete-then-ethos** (add a plain-language functional definition before the ethos; surface the existing `/learn/what-is-adna`; promote How-it-Works above the registry) + **C2** a single **terminology/object-model spine** (node/aDNA-computer/vault/network) across home/network/vaults.
+- **c169 (close deploy)** — **C5** once the ADR-010 Wilhelm co-sign clears, the **coordinated HEAD deploy** publishes `/commons` + the accumulated P1 fixes together; establish a **deploy cadence** (`idea_deploy_cadence`) so live stops drifting behind HEAD.
+- **MAX-III (165–168)** also absorbs the audit's Phase-1b residue (light-mode parity, generated-detail axe sample, mobile-qual) if not already closed in P1-S3.
+
+> Cross-cutting credibility/a11y/SEO fixes already shipped live in the audit's **P1-S1** (GitHub links, `The Lattice`→`Vaults`, vault-meta/CakeHealth scrub, robots, version, `/vaults` contrast). Housekeeping (version-constant, vault-count reconciliation, Harness display, SidebarNav scoping, spec banner + JSON-LD) is the audit's **P1-S4** — not E5's job.
+
 ## Persona routing (Reviewer Lens Pass at cycle 169)
 
 E5 closes on the **full 30-persona Reviewer Lens Pass** (the D17·E1·E3·E5·E6 cadence) run as a parallel multi-agent Workflow (blind: each agent given neutral facts + source paths + screenshots, NOT primed with self-scores). Mandatory reviewers: **Community Lead** (commons/contribution), **Conversion/Growth** (Participation Scent), **Newcomer** (60-sec What/Why), **Design Critic** ("made on purpose"), **Content Strategist** (copy/AVOID register), **Movement Skeptic** (earned conviction, adversarial). Adopters: all core + Marketplace Publisher/Consumer/Enterprise (Trust/Provenance). 
