@@ -18,7 +18,9 @@
 
 .difficulty-badge.beginner {
   background: color-mix(in srgb, var(--color-success) 15%, transparent);
-  color: hsl(142 72% 28%); /* darker green for WCAG AA contrast (5.4:1) */
+  /* Coupled to --color-success: the audit P1-S3 token darkening (40%→26% lightness)
+   * darkened this 15% tint too, dropping the old 28% text to 4.3:1. 24% restores ~5.5:1. */
+  color: hsl(142 72% 24%);
 }
 
 .difficulty-badge.intermediate {

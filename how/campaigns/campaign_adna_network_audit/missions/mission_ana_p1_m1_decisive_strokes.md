@@ -6,9 +6,11 @@ campaign_id: campaign_adna_network_audit
 phase: 1
 mission_number: 1.1
 slug: decisive_strokes
-status: in_progress
+status: completed
 created: 2026-06-08
-updated: 2026-06-09
+updated: 2026-06-10
+closed_at: 2026-06-10
+actual_sessions: 4
 last_edited_by: agent_stanley
 owner: stanley
 persona: rosetta
@@ -35,7 +37,7 @@ tags: [mission, campaign_adna_network_audit, phase1, implementation, decisive_st
 > **✅ Session 4 DONE (commit-only).** Obj 9/10/12/13 shipped: (9) `site/src/data/standard.ts` single-sources version + entity/conformance counts (home stats + meta-tags); (10) vault-count reconciled **37→40** — regenerated `vaults.json`/`vaults_graph.mmd` (0 sanitizer leaks; counts already derive); (12) `SidebarNav.astro` scoped to the active section + 7-link switcher, Glossary+Guides promoted to footer; (13) `/reference/specification` orientation banner (gated) + JSON-LD on `/vaults` index (`CollectionPage`) + `/vaults/[slug]` (`WebPage`). Build 163pp/40 vaults; gates **97/97**. Session: `session_stanley_20260609T062423Z_ana_p1s4.md`.
 > **⏸ Obj 11 (Harness display split) DEFERRED → Home.aDNA / Hestia.** `display_name` is sourced only from Home.aDNA (generator `build_vaults_data.mjs:113`); no site-side override seam. Fixing Harness.aDNA's display ("RareHarness"→"Harness" platform; RareHarnessOld→legacy) is a Home.aDNA vault-card edit (Rule 4; Hestia), not a site/commit-only change. Carry to P2 as a coordination item.
 >
-> **Remaining: S3** (Phase-1b verification sweep — light-mode axe on all routes, score the ~25 un-scored routes + 404, generated-detail-page axe sample, mobile-qual incl. the new sidebar switcher, RSS/search/print decisions; **run last** so it covers S2+S4). Commit-only; bundle into the E5-close deploy.
+> **✅ Session 3 DONE (commit-only) — Phase-1b verification sweep (2026-06-10).** Obj 8 shipped: reusable `@audit` harness (`site/tests/gates/audit-p1s3-sweep.spec.ts`, `npm run audit:p1s3`, excluded from `test:gates`) scoring **37 previously-unscored routes × axe both modes** + 375px overflow + S4-switcher/Mermaid-keyboard/no-JS probes → **115/115** after fixing the 3 findings it surfaced (what-is-adna `scrollable-region-focusable`; light `--color-success` token 40%→26%; 2 coupled hardcoded greens 28%→24%). robots/sitemap verified live-correct. RSS→backlog · search+newsletter→E6 · print/PDF+link-graph-crawl→D16. Full results: audit report **§9**; gates re-run **97/97**. Session: `session_stanley_20260610T145133Z_ana_p1s3_p2_e5c162.md`.
 
 ## Goal
 Ship the audit's **decisive strokes + copy-paste quick-wins** (the cross-cutting credibility / naming / accessibility / SEO fixes) and run the **Phase-1b verification sweep** the completeness critic requires. The **campaign-tier** redesign items (home-hero concrete-then-ethos, terminology spine, nav/orphan surfacing incl. `/commons` nav entry, closing-CTA partials, coordinated deploy) are **routed into the remaining E5 cycles at P2** (they overlap E5 c162/c164 directly) — see `mission_ana_p2_closeout_realign`.
@@ -71,12 +73,18 @@ Ship the audit's **decisive strokes + copy-paste quick-wins** (the cross-cutting
 `cd site && npm run build && npm run test:gates` + Lighthouse + axe (both modes) green; cite the closed finding; SITREP + lightweight AAR per session.
 
 ## Exit Gate (P1 → P2)
-- [ ] Agreed roadmap items shipped (committed; gates/axe/Lighthouse green) or explicitly deferred.
-- [ ] Phase-1b sweep complete; audit report updated with the closed coverage gaps.
-- [ ] Findings log annotated with resolution status; campaign-tier items handed to P2/E5.
+- [x] Agreed roadmap items shipped (committed; gates/axe/Lighthouse green) or explicitly deferred (Obj 11 → Home.aDNA/Hestia, P2 coordination).
+- [x] Phase-1b sweep complete; audit report updated with the closed coverage gaps (§9).
+- [x] Findings log annotated with resolution status; campaign-tier items handed to P2/E5.
+
+> **P1→P2 GATE: PASSED 2026-06-10.** Pre-approved by operator at plan ratification (2026-06-09/10 gate bundle, conditional on S3 landing green — condition met: sweep 115/115, gates 97/97). Evidence: audit report §9 + `site/evidence/p1s3/`.
 
 ## Completion Summary
-*Fill at close.*
+All four sessions shipped. **S1** (deployed live): 10 Criticals — canonical repo links, `The Lattice`→`Vaults`, vault-meta sanitizer + CakeHealth privacy scrub, robots.txt domain fix, version sweep, `/vaults` contrast + gate coverage, targeted deploy excluding embargoed `/commons`. **S2** (commit-only): persistent Get Started CTA (header + opt-in home-hero primary) + `/commons` CTA normalize. **S4** (commit-only): `standard.ts` single-sourcing, vault-count 37→40 regen (0 leaks), SidebarNav scoping + footer promotion, spec orientation banner + JSON-LD. **S3** (commit-only, run last): Phase-1b sweep closed every §8 completeness-critic gap — 37 routes × both modes axe (0 violations after 3 fixes), mobile + keyboard + no-JS probes, robots/sitemap live-verified, feature-gap decisions routed (RSS→backlog, search+newsletter→E6, print/PDF+link-crawl→D16). Deferred: Obj 11 Harness display (Home.aDNA/Hestia, P2 coordination memo). Final: build 163pp/40 vaults, gates 97/97, sweep 115/115.
 
 ## AAR
-*Fill at close.*
+- **Worked:** Running S3 last so it re-verified S2+S4 surfaces; the `@audit`-tagged harness pattern (reusable sweep without polluting `test:gates`); root-cause token fix over per-component patches.
+- **Didn't:** The light `--color-success` darkening silently broke 3 downstream hardcoded greens — two found only because gate-4/sweep covered those routes; constants coupled to token tints are invisible dependencies.
+- **Finding:** Token-coupled hardcoded colors are a recurring class (3 instances, 2 files commented "for WCAG AA" against the *old* token) — exactly what a consistency gate should catch.
+- **Change:** Carry a "token-coupled constants move with the token" check into gate-14 (docs-freshness/consistency, D16).
+- **Follow-up:** Obj-11 Hestia memo (P2); RSS backlog idea (P2); search/newsletter into M5.13 O5; print/PDF + full link-graph crawl into D16 carry-ins.

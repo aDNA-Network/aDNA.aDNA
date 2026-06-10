@@ -10,7 +10,8 @@
     "sync:vaults": "node ../scripts/build_vaults_data.mjs",
     "preview": "astro preview",
     "check": "astro check",
-    "test:gates": "playwright test"
+    "test:gates": "playwright test --grep-invert @audit",
+    "audit:p1s3": "playwright test --grep @audit"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",

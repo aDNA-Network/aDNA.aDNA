@@ -56,7 +56,9 @@
   --color-link: var(--color-primary);
   --color-link-hover: var(--color-primary-hover);
   --color-error: hsl(0 72% 51%);
-  --color-success: hsl(142 72% 40%);
+  /* 40% lightness failed WCAG AA as text on the 15% success tint (2.46:1 — audit P1-S3,
+     /how/lattice-examples badge-new in light mode). 26% clears 4.5:1 on tint + surface. */
+  --color-success: hsl(142 72% 26%);
   --color-warning: hsl(38 92% 50%);
   --color-info: hsl(199 89% 48%);
 

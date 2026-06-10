@@ -22,6 +22,12 @@ const { filename } = Astro.props;
 </div>
 
 <script>
+  // Scrollable code samples must be keyboard-reachable (axe scrollable-region-focusable —
+  // audit P1-S3, /learn/what-is-adna). Shiki renders the <pre> through the slot, so the
+  // tabindex is applied here rather than in markup.
+  document.querySelectorAll('.code-block .code-content pre').forEach((pre) => {
+    if (!pre.hasAttribute('tabindex')) pre.setAttribute('tabindex', '0');
+  });
   document.querySelectorAll('.code-block .copy-btn').forEach((btn) => {
     btn.addEventListener('click', async () => {
       const code = btn.closest('.code-block')?.querySelector('code')?.textContent ?? '';
@@ -52,6 +58,11 @@ const { filename } = Astro.props;
   .code-content :global(pre) {
     margin: 0;
     border-radius: var(--radius-md);
+  }
+
+  .code-content :global(pre:focus-visible) {
+    outline: 2px solid var(--color-link);
+    outline-offset: 2px;
   }
 
   .code-filename + .code-content :global(pre) {

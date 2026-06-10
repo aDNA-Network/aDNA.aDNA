@@ -91,9 +91,9 @@
       "type": "federation"
     }
   ],
-  "generated_at": "2026-06-09",
+  "generated_at": "2026-06-10",
   "schema_version": "0.2",
-  "source_inventory_sha": "05305b072a33e785",
+  "source_inventory_sha": "8e36112b015a8843",
   "vault_count": 40,
   "vaults": [
     {

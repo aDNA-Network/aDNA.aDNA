@@ -654,4 +654,38 @@ Gaps to close in a **Phase-1b verification sweep** (added to P1):
 - NO COVERAGE OF JS-DISABLED / PROGRESSIVE-ENHANCEMENT OR THE MERMAID GRAPH'S NO-JS STATE. /vaults/graph renders via mermaid (client JS). The audit never checks what a crawler or no-JS visitor sees on the graph page, nor whether the graph is keyboard-navigable (the panel gave it axe 0 / a11y clean, but an interactive SVG graph with ?focus deep-links is exactly where keyboard/SR access is non-trivial and axe alone won't catch it).
 
 ---
+
+## 9. Phase-1b verification sweep — RESULTS (P1-S3, 2026-06-10)
+
+**Harness:** `site/tests/gates/audit-p1s3-sweep.spec.ts` (`@audit`-tagged; excluded from `test:gates`, run via `npm run audit:p1s3`). **Final result: 115/115 pass** (after 3 fixes below). Evidence: `site/evidence/p1s3/` (per-route axe JSON ×74, probe JSON, 6 screenshots).
+
+**Coverage delivered against every §8 gap:**
+
+| §8 gap | Resolution |
+|---|---|
+| ~25 unscored routes | **37 routes scored** (every static route class + generated-detail samples: concept, tutorial, comparison, glossary term, use-case, adopter, community, workshop, publishing guide, lattice example, 2 extra vault details incl. a slug-form id) — axe wcag2a+wcag2aa in **both modes** (74 scans): **0 violations** after fixes |
+| 404 page | Covered since S1 in gate-4 (both modes, passing); route confirmed in sweep scope notes |
+| robots.txt dead domain | **Fixed in P1-S1**; verified this session: local + live `https://adna.network/robots.txt` → correct sitemap pointer (HTTP 200) |
+| Sitemap resolves | Verified: `dist/sitemap-index.xml` emits and **live `https://adna.network/sitemap-index.xml` → 200** |
+| Light-mode parity | gate-4 already both-mode on its 12 routes; sweep extends light-mode axe to the remaining 37 → **full route-class light coverage**. Light-mode regressions found + fixed (below) |
+| Mobile qualitative | 375px overflow checks on all 37 (0 overflow) + qual screenshots: `/vaults` catalog, `/vaults/graph` Mermaid, `/reference/specification` sidebar. S4 section-switcher probe: exactly 1 scoped `nav-group` at 375px ✓ |
+| Mermaid keyboard / no-JS | Keyboard node-twin: 41 focusable links, `:focus-within` reveal verified ✓. **No-JS:** server-rendered node list + lede render without JS (honest degradation) ✓ |
+| Generated-detail axe gap | Sampled across every collection class (see route list in the spec); all clean |
+| Reduced-motion | **Residual (minor):** code-guarded in 7 files; behavior not emulation-tested. Carried to D16 measure scope |
+| Linkcheck thinness | Partially closed: S1 fixed canonical links sitewide; gate-12 (install-truth, P1-S3 follow-on) adds repo-URL reachability. Full internal link-graph crawl carried to **D16** |
+
+**Findings (3) — all fixed in-session, zero open:**
+
+1. **`/learn/what-is-adna` — `scrollable-region-focusable` (serious, both modes).** A wide Shiki `<pre>` (19th code block) scrolls but was not keyboard-reachable. Root cause: `DocumentationLayout`'s client wrapper creates `.code-block` divs but never set `tabindex`. **Fix:** wrapper + `CodeBlock.astro` both set `tabindex="0"` on code `<pre>`s + `:focus-visible` outline.
+2. **`/how/lattice-examples` — light-mode `color-contrast` (serious, 4 nodes).** `.badge-new` rendered `--color-success` text (hsl 142 72% 40% = #1daf52) on its own 15% tint → 2.46:1. Root cause: the light-mode success token was tuned dark-first. **Fix at token:** `tokens.css` light `--color-success` 40%→**26%** lightness (clears 4.5:1 on tint + surface; dark token untouched).
+3. **Coupled-constant fallout (2 instances, found by the gate + sweep):** `.difficulty-badge.beginner` (`tutorial-meta.css`) and `.ref-stability.stable` (`reference/[...slug].astro`) hardcoded `hsl(142 72% 28%)` text on the success tint — the darker token darkened the tint, dropping both to 4.3:1. **Fix:** both → `hsl(142 72% 24%)` (~5.5:1). *Pattern note: text colors coupled to a token's tint must move with the token — candidate gate-14 (docs-freshness/consistency) check.*
+
+**Feature-gap decisions (operator-delegated at gate bundle):**
+
+- **RSS/feed** → backlog `idea_site_rss_feed.md` (contributor-recruitment signal; not E5/E6-blocking).
+- **On-site search** → folded into **E6 Onboarding & Install Portal** scope (a learning portal needs findability; decision recorded in M5.13 O5).
+- **Print/PDF spec stylesheet** → **D16 Reference & Glossary Streamline** carry-in (normative-doc concern, docs decadal).
+- **Newsletter/contact capture** → deferred with search to E6 funnel work (single capture surface, not scattered forms).
+
+**Verification:** full standing gate suite re-run post-fixes: **97/97 pass**. One transient: a single mobile-overflow measurement flake on `/glossary/glossary-conformance-level` during one full-suite run (passes deterministically in isolation ×2 + in the final full run; likely the copy-button DOM-wrap racing the scrollWidth read) — noted, not a finding.
 _Generated from `site/evidence/audit_2026_06/workflow_result.json` (18-agent audit Workflow) + Step-A evidence. Results JSON: `audit_adna_network_2026_06_results.json`._

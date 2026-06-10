@@ -91,7 +91,9 @@ const jsonLD = [
 
   .ref-stability.stable {
     background: color-mix(in srgb, var(--color-success) 15%, transparent);
-    color: hsl(142 72% 28%); /* darker green for WCAG AA (5.4:1 on white) */
+    /* Coupled to --color-success: the audit P1-S3 token darkening (40%→26%) darkened
+     * the 15% tint too — 28% text fell to 4.3:1 on it. 24% restores ~5.5:1. */
+    color: hsl(142 72% 24%);
   }
 
   .ref-stability.beta {
