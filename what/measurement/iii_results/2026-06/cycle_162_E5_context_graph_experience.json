@@ -1,0 +1,40 @@
+{
+  "cycle": 162,
+  "decadal": "E5",
+  "decadal_cycle": 3,
+  "mission": "mission_adna_str_p5_m512_e5_public_good_commons",
+  "slug": "e5_context_graph_experience",
+  "date": "2026-06-10",
+  "session": "session_stanley_20260610T145133Z_ana_p1s3_p2_e5c162",
+  "theme": "E5 RESUME + cycle 162 — the CONTEXT-GRAPH EXPERIENCE (inserted at the audit-campaign P2 realign; audit gap #17 + operator directive: 'improve the context-graph pages — get the glyphs from the home page and the info on the context graphs there'). The registry surfaces gain the home visual language: /vaults gets an image-led HomeHero over the freed original home network glyph (hero_adna_network.png) + a stats strip + concept cross-links; /vaults/graph gets a compact hero-stage glyph band + the context-democracy framing line. The Mermaid graph stays the graph page's centerpiece.",
+  "register": "Tokyo Night dark-first; reuse-over-invention (HomeHero verbatim on /vaults; the hand-placed Picture band on /vaults/graph copies HomeHero's exact props grammar incl. class hero-stage-img so gate-11 covers it uniformly); existing assets only (hero_adna_network.png was freed at E4 c157 when home moved to the helix; the graph band promotes candidate sec_network_r1_N2_v2 -> hero_vaults_graph.png — operator eyeball flagged in the SITREP); in-text links underlined (link-in-text-block, both modes); no vault-class iconography invented (only 6 nav SVGs exist vs 14 classes — decided against).",
+  "operator_scope": "Plan-gate bundle (2026-06-09/10): c162 = context-graph experience inserted into E5 at the audit P2 realign, hard-capped at ONE cycle; E5 stays commons-focused. Hard non-goals honored: no new routes, no Mermaid-engine rework, no graph-data changes (the vault_slug normalization gotcha stays dormant).",
+  "iii_7step": {
+    "measure": "Baseline: /vaults + /vaults/graph were the only major surfaces with text-only heroes while home/network/commons run image-led; the conceptual framing (context democracy; each-project-its-own-graph) lived only on home; hero_adna_network.png (1408x792, the original home asset) sat unused in the repo. Gate-11 covered ONLY the homepage hero; gate-9 lacked /vaults + /get-started.",
+    "orient": "The operator ask and audit IA findings converge: the registry pages ARE the context-graph product surface but didn't carry the network's visual identity or explain what the reader is looking at. Cheapest honest fix = reuse the existing glyph language + add framing copy + concept cross-links; do NOT displace the Mermaid graph (it is the page's evidence).",
+    "select_iterate": "(1) /vaults: replace the hand-rolled .vaults-hero with HomeHero (hero_adna_network.png + its original alt; title 'The vault registry'; lead carries the home framing; CTAs graph/network; stats vault_count/classes/edges from vaults.json). (2) /vaults: 'Go deeper' concept cross-link row (knowledge-graph, triad, lattice-composition, convergence) under the facets — the C2 terminology-spine seam. (3) /vaults/graph: compact .graph-stage Picture band (promoted candidate) between the ledes + one framing line ('a context democracy, drawn') with knowledge-graph + convergence links. (4) gate-11 parameterized: 5 band-hero surfaces + NEW doc-hero clause (5 section hubs incl. /get-started) — closes the previously-untested section-hero hole. (5) gate-9 += /vaults + /get-started.",
+    "implement": "site/src/pages/vaults/index.astro (HomeHero + stats + go-deeper row; one h1 preserved via HomeHero title); site/src/pages/vaults/graph.astro (Picture band + framing + scoped .graph-stage styles, hero-stage finish); site/src/assets/heroes/hero_vaults_graph.png (promoted candidate sec_network_r1_N2_v2, 1408x792 16:9 exact); tests/gates/gate-11-hero-banner.spec.ts (parameterized: band x5 + doc x5 + evidence shot); tests/gates/gate-9-responsive.spec.ts (+2 routes x5 viewports).",
+    "re_measure": "npm run build 163pp/0err. Gates 120/120 (103 post-gate-12 + 7 new gate-11 + 10 new gate-9). axe 0 WCAG-AA both modes on /vaults + /vaults/graph (gate-4 already both-modes on both routes). Desktop screenshots eyeballed: /vaults title-band over the network glyph composes cleanly; /vaults/graph band sits between ledes without displacing the Mermaid centerpiece.",
+    "validate": "Built output: /vaults renders the Picture (avif+webp), stats strip (40 vaults / 14 classes / 18 cited relationships — all data-derived), both CTAs, 4 underlined concept links; /vaults/graph renders the band + framing line + both concept links; keyboard node-twin + round-trip untouched and still green in the sweep probes.",
+    "record": "this JSON + mission/design-spec realign rows (committed at P2) + session SITREP + STATE refresh at session close."
+  },
+  "change_summary": [
+    "site/src/pages/vaults/index.astro — image-led HomeHero (hero_adna_network.png, the original home glyph) + stats strip (vault_count/classes/edges) + 'Go deeper' concept cross-link row; hand-rolled text hero removed.",
+    "site/src/pages/vaults/graph.astro — .graph-stage Picture band (hero_vaults_graph.png; class hero-stage-img) + 'a context democracy, drawn' framing line w/ knowledge-graph + convergence links; Mermaid centerpiece + legends + keyboard twin untouched.",
+    "site/src/assets/heroes/hero_vaults_graph.png NEW (promoted candidate sec_network_r1_N2_v2; 1408x792).",
+    "tests/gates/gate-11-hero-banner.spec.ts — parameterized: 5 band-hero surfaces (/, /network, /commons, /vaults, /vaults/graph) + NEW doc-hero clause (/learn, /how, /patterns, /reference, /get-started).",
+    "tests/gates/gate-9-responsive.spec.ts — + Vaults index + Get Started (x5 viewports)."
+  ],
+  "doctrine_compliance": {
+    "reuse_over_invention": "PASS — HomeHero verbatim; the graph band copies its props grammar; zero new components.",
+    "two_fighting_colors": "PASS — cyan link signal only; the glyph art carries the palette.",
+    "dark_first": "PASS — gate-4 both modes green on both routes; in-text links underlined.",
+    "no_invented_routes": "PASS — all cross-links target existing concept pages.",
+    "no_new_image_gen": "PASS — existing finished asset + existing candidate pool only ($0).",
+    "engine_untouched": "PASS — skill files unedited; no graph-data changes; vaults.json untouched this cycle.",
+    "hard_cap": "PASS — one cycle; non-goals (routes/Mermaid/data) honored."
+  },
+  "gates": {"build_pages": 163, "build_errors": 0, "playwright": "120/120", "axe_aa_both_modes": 0},
+  "deploy": "Ships in this session's operator-flagged install-truth credibility deploy (targeted, /commons excluded per ADR-010) — the deploy-cadence hotfix path; the full E5 surface still deploys at the c169 close green-light.",
+  "next": "cycle 163 — Connect-to-a-subnetwork affordance + subnetwork->/vaults/[slug] link-out + C4 closing-CTA partials (per the realigned per-cycle plan)."
+}

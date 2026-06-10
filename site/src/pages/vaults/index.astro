@@ -1,11 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomeHero from '../../components/sections/HomeHero.astro';
 import VaultCard from '../../components/sections/VaultCard.astro';
 import VaultClassFacet from '../../components/sections/VaultClassFacet.astro';
 import vaultsData from '../../data/vaults.json';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
+// E5 c162 (context-graph experience): the registry gets the original home network glyph —
+// hero_adna_network.png was freed when the homepage moved to the helix (E4 c157) and is
+// exactly "the map of the network" this page renders as cards.
+import heroAdnaNetwork from '../../assets/heroes/hero_adna_network.png';
 
-const { vaults, vault_count } = vaultsData as { vaults: any[]; vault_count: number };
+const { vaults, vault_count, edges } = vaultsData as { vaults: any[]; vault_count: number; edges: any[] };
 
 // Group by class for facet display
 const classGroups: Record<string, any[]> = vaults.reduce((acc: Record<string, any[]>, v: any) => {
@@ -21,20 +26,35 @@ const jsonLD = buildCollectionPageJsonLD({
   description: `Browse the ${vault_count}-vault aDNA registry — personae, classes, cross-vault relationships.`,
   url: Astro.url.href,
 });
+
+// Concept cross-links: the registry is a living context graph — point readers at the
+// concepts that explain what they're looking at (E5 c162; C2 terminology-spine seam).
+const goDeeper = [
+  { href: '/learn/concepts/knowledge-graph/', label: 'Knowledge graphs' },
+  { href: '/learn/concepts/triad/', label: 'The triad (what / how / who)' },
+  { href: '/learn/concepts/lattice-composition/', label: 'Lattice composition' },
+  { href: '/learn/concepts/convergence/', label: 'The convergence model' },
+];
 ---
 
 <BaseLayout title="Vaults — the aDNA registry" description={`Browse the ${vault_count}-vault aDNA registry — personae, classes, cross-vault relationships`} jsonLD={jsonLD}>
-  <main class="vaults-index">
-    <section class="vaults-hero">
-      <h1>Vaults</h1>
-      <p class="vaults-tagline">
-        {vault_count} vaults across {orderedClasses.length} classes — each with its own persona, governance, and place in the cross-vault graph.
-      </p>
-      <p class="vaults-cta">
-        <a href="/vaults/graph/">View the relationship graph &rarr;</a>
-      </p>
-    </section>
+  <HomeHero
+    heroImage={heroAdnaNetwork}
+    heroAlt="A bird's-eye pixel-art map of cozy vault-buildings linked by glowing cyan and purple conduits — the aDNA network sharing context, AI, and DNA"
+    title="The vault registry"
+    lead="Every vault below is a real, governed context graph — its own persona, its own history, its own place in the network. Each project grows its own graph; together they federate into a shared commons."
+    primaryHref="/vaults/graph/"
+    primaryLabel="View the relationship graph"
+    secondaryHref="/network/"
+    secondaryLabel="What the network is"
+    stats={[
+      { value: String(vault_count), label: 'Vaults' },
+      { value: String(orderedClasses.length), label: 'Classes' },
+      { value: String(edges?.length ?? 0), label: 'Cited relationships' },
+    ]}
+  />
 
+  <main class="vaults-index">
     <section class="vaults-facets">
       <h2>Browse by class</h2>
       <div class="facet-chips">
@@ -42,6 +62,14 @@ const jsonLD = buildCollectionPageJsonLD({
           <VaultClassFacet vaultClass={cls} count={classGroups[cls].length} />
         ))}
       </div>
+      <p class="go-deeper">
+        New to context graphs? Go deeper:
+        {goDeeper.map((l, i) => (
+          <>
+            <a href={l.href} data-astro-prefetch>{l.label}</a>{i < goDeeper.length - 1 && <span class="gd-sep" aria-hidden="true"> · </span>}
+          </>
+        ))}
+      </p>
     </section>
 
     {orderedClasses.map(cls => (
@@ -59,10 +87,12 @@ const jsonLD = buildCollectionPageJsonLD({
 
 <style>
   .vaults-index { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
-  .vaults-hero { padding: 2rem 0; text-align: center; }
-  .vaults-tagline { font-size: 1.2rem; max-width: 60ch; margin: 1rem auto; }
-  .vaults-facets { padding: 2rem 0; }
+  .vaults-facets { padding: 2rem 0 1rem; }
   .facet-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  /* In-text concept links — underlined (not colour-only) for WCAG link-in-text-block, both modes. */
+  .go-deeper { margin: 1.25rem 0 0; color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }
+  .go-deeper a { color: var(--color-link); text-decoration: underline; }
+  .gd-sep { color: var(--color-text-muted); }
   .vaults-class-section { margin: 2rem 0; }
   .vaults-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
   .class-count { font-size: 0.85em; color: var(--color-text-muted); }

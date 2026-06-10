@@ -27,6 +27,10 @@ const pages = [
   { name: 'Vault detail', path: '/vaults/Harness.aDNA' },
   // E5 Public-Good Commons (cycle 160): the subnetwork showcase (2-col grid → 1-col at ≤760px)
   { name: 'Commons page', path: '/commons' },
+  // E5 c162 (context-graph experience): the registry gained an image-led HomeHero + stats
+  // strip; /get-started gained a doc-hero + the fixture-driven command blocks (E6-O2).
+  { name: 'Vaults index', path: '/vaults' },
+  { name: 'Get Started', path: '/get-started' },
 ];
 
 for (const vp of viewports) {

@@ -1,7 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Picture } from 'astro:assets';
 import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
 import vaultsData from '../../data/vaults.json';
+// E5 c162 (context-graph experience): the deep graph surface gets the network glyph art —
+// the same visual language as home/network — so the topology page reads as part of the
+// world, not a bare diagram. Class `hero-stage-img` keeps it under gate-11's banner clauses.
+import heroVaultsGraph from '../../assets/heroes/hero_vaults_graph.png';
 // Vite `?raw` resolves the .mmd at build correctly. The prior fs.readFileSync(path.resolve(__dirname,…))
 // missed the file (in the built bundle import.meta.url points at the chunk, not the source) → the graph
 // silently fell back to "(no data)". (E4 cycle 154 fix.)
@@ -91,6 +96,23 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
         Each box is a <strong>vault</strong>; an aDNA computer — a <em>node</em> — is a <code>Home.aDNA</code>
         plus the vaults that live on it, coloured below by vault class.
         <a href="/network/">New here? Start with what the network is &rarr;</a>
+      </p>
+      <div class="graph-stage">
+        <Picture
+          src={heroVaultsGraph}
+          alt="A wide pixel-art network scene in Tokyo-Night colours — clusters of small glowing vault-buildings joined by cyan and purple connection lines across a dark landscape"
+          widths={[768, 1024, 1408]}
+          formats={["avif", "webp"]}
+          sizes="(max-width: 980px) calc(100vw - 2rem), 42rem"
+          class="hero-stage-img"
+          loading="eager"
+        />
+      </div>
+      <p class="lede lede-node">
+        This is a <strong>context democracy, drawn</strong>: each project grows its own
+        <a href="/learn/concepts/knowledge-graph/">knowledge graph</a>, and the graphs federate into a
+        shared commons — narrowing from the whole network to the one vault you need is the
+        <a href="/learn/concepts/convergence/">convergence model</a> at work.
       </p>
     </section>
 
@@ -236,6 +258,22 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
   }
   .vaults-graph-hero h1 { margin: 0.25rem 0 0.75rem; }
   .lede { color: var(--color-text); line-height: 1.6; }
+
+  /* The glyph band (E5 c162) — compact, text-column width, the hero-stage finish
+     (radius + border + signal-glow shadow) so it reads as the same family as the
+     home/network heroes without displacing the Mermaid graph as the centerpiece. */
+  .graph-stage {
+    margin: var(--space-5, 1.25rem) 0;
+    border-radius: var(--radius-xl, 1rem);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 8px 32px color-mix(in srgb, var(--brand-primary, #7aa2f7) 14%, transparent);
+  }
+  .graph-stage :global(img) {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
   /* Node-clarity bridge line (E4 c158 — Newcomer): carries "a node = Home.aDNA + its vaults" onto
      the deep graph surface (where the concept was absent) and links back to the /network explainer. */
   .lede-node { margin-top: 0.85rem; color: var(--color-text-muted); font-size: var(--text-sm, 0.95rem); }
