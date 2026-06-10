@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260610T145133Z_ana_p1s3_p2_e5c162
 created: 2026-06-10
 updated: 2026-06-10
-status: active
+status: completed
 tier: 2
 agent: agent_stanley
 persona: rosetta
@@ -37,7 +37,23 @@ Close out `campaign_adna_network_audit` (P1-S3 Phase-1b sweep → gate → expan
 - **Expanded P2 — COMPLETE (campaign CLOSED).** Final AAR (`aar_audit_p0_p1s1.md`: 13/13 scorecard; gap rows #16 install-truth / #17 context-graph→c162 / #18 docs-III→D16 added; all 18 dispositioned, zero orphans). E5 design-spec per-cycle plan REALIGNED (c162 = context-graph experience inserted; c163 Connect+C4 · c164 social · c165 §5+C3 · c166-168 MAX-III+C1/C2 · c169 close+C5; MAX-III 4→3 honest per S3 pre-close); E5 mission pause→RESUMED banner. Theme set amended (**E6/M5.13 Onboarding & Install Portal** inserted, Track H; capstone **E6→E7**; RLP cadence D17·E1·E3·E5·E6·E7-final; D16 docs-III carry-ins; cycle ledger E6=c170-179, D16=c180-189). **M5.13/E6 mission authored** (O1-O7; O2 = install-truth, pre-staged this session). Backlog: `idea_deploy_cadence` **RESOLVED** (decadal-close + hotfix path; candidate SO #21); NEW `idea_upstream_install_script` + `idea_upstream_skill_workspace_path_migration` + `idea_site_rss_feed`; `idea_upstream_onboarding_workspace_default_adna` updated (canonical repo target; **sweep-mangled diff flagged** — WS-5 sweep rewrote its quoted-before strings; PR reconstructs from upstream content). Hestia coord memo (Obj-11 display split + taglines). Doctrine **§9 Credibility Hygiene**. Both campaign masters + campaign CLAUDE.md updated; STR amendments row appended. P2 mission completed + AAR; audit campaign `status: completed`. *(STATE.md + memory refresh lands at session close, recording executed facts.)*
 
 ## SITREP
-*(at close)*
+
+**Completed** — (1) **P1-S3 Phase-1b sweep** (115/115; 3 root-cause a11y fixes; report §9) + P1 close + **P1→P2 gate PASSED**. (2) **Expanded P2** → `campaign_adna_network_audit` **COMPLETED** (final AAR 13/13; 18-row gap register zero-orphan; E5 re-mapped + resumed; **E6/M5.13 Onboarding & Install Portal authored**, capstone→E7; D16 carry-ins; doctrine §9; deploy cadence RESOLVED; Hestia memo; 4 backlog motions). (3) **Install-truth foundation** (fixture + gate-12 + `/get-started`/`/network`/README canonical-flow rewrites). (4) **E5 c162 context-graph experience** (home glyph language onto `/vaults` + `/vaults/graph`; gate-11 parameterized + doc-hero clause; ledger c162). (5) **Targeted deploy LIVE** (162pp; `/commons` held out → live 404 verified; install flow + heroes + S2/S4 fixes live; token via env, redacted). (6) **Upstream PR FILED: [`LatticeProtocol/aDNA#8`](https://github.com/LatticeProtocol/aDNA/pull/8)**. Gates **97→120**; build 163pp HEAD / 162pp deploy.
+
+**Operator eyeball flags (2 promoted hero candidates, both LIVE; cheap to swap+redeploy)** — `/get-started` doc-hero `hero_get_started.png` (← `helix_r1_H2_v2`: cozy desk + cyan helix rising); `/vaults/graph` band `hero_vaults_graph.png` (← `sec_network_r1_N2_v2`: settlements joined by cyan/purple lines). Desktop screenshots: `site/evidence/p1s3/shots/c162_*.png`.
+
+**In progress** — nothing dangling; every commit point landed (C1 `1a97dbe` · C2 `294451d` · C3 `ba8c57a` · C4 `abf7eba` · PR-staging + this close).
+
+**Next up** — E5 **c163** (Connect affordance + C4 closing-CTA partials) per the realigned design spec; then c164–169; E6 opens c170.
+
+**Blockers** — none. Pending external: PR#8 review/merge (operator); Hestia memo ack; ADR-010 co-sign (gates `/commons` at c169).
+
+**Cross-vault flag (aDNALabs/Berthier)** — WS-5 sweep blind-spot instance: the `/lattice→/aDNA` sweep rewrote the *quoted-before strings* inside `idea_upstream_onboarding_workspace_default_adna.md`'s ready-to-PR diff table (old-path-as-data treated as live ref). Diff tables/migration docs need KEEP-PROSE marking before sweeps; PR was reconstructed from upstream content.
+
+**Files touched** — site: `get-started.astro` (rewrite) · `network.astro` · `vaults/index.astro` · `vaults/graph.astro` · `package.json` · `tokens.css` · `tutorial-meta.css` · `reference/[...slug].astro` · `CodeBlock.astro` · `DocumentationLayout.astro` · `data/install_truth.json` (new) · heroes `hero_get_started.png`+`hero_vaults_graph.png` (new) · gates `audit-p1s3-sweep`(new)+`gate-12`(new)+`gate-11`(parameterized)+`gate-9`. scripts: `build_install_truth.mjs` (new). Vault `README.md`. Governance: both campaign masters + campaign CLAUDE.md, P1/P2 mission files, E5 mission + design spec, theme set, NEW M5.13 mission, final AAR, 5 backlog files, Hestia coord memo, `front_page_doctrine.md` §9, audit report §9, ledger `cycle_162_*.json`, `STATE.md`, agent memory ×3.
+
+**Token budget (SO #11/ADR-016)** — estimated ~390-660 kT (plan); actual content-load ~450-550 kT (within band; the sweep + realign + 4 implementation blocks + deploy in one session).
 
 ## Next Session Prompt
-*(at close)*
+
+Resume `campaign_adna_serious_tool_readiness` at **E5 cycle 163** (mission `mission_adna_str_p5_m512_e5_public_good_commons`, RESUMED banner; per-cycle plan in `m512_e5_public_good_commons_design_spec.md` §Per-cycle plan, realigned 2026-06-10): build the **Connect-to-a-subnetwork affordance** on `/commons` (real link-outs: member chips → `/vaults/[slug]` + outbound public URLs; no invented routes) + **C4 closing-CTA partials** on audience/community/vault-detail pages (reuse the `showGetStarted`/btn patterns; AVOID register). Verify `cd site && npm run build && npm run test:gates` (expect 163pp, 120/120). Commit-only (next deploy = c169 close, or operator-flagged hotfix). Then c164 (first social surface). Check `who/coordination/` for the Hestia vault-card ack (regen `npm run sync:vaults` + commit if landed) and `gh pr view 8 --repo LatticeProtocol/aDNA` for merge state (if merged: `git -C ~/aDNA/.adna pull && cd site && npm run sync:install`, commit the sha-bumped fixture). E6/M5.13 opens at c170 after the E5 decadal close.
