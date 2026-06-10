@@ -4,7 +4,7 @@ artifact_type: gap_analysis
 campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_p1_04b_workspace_ux_planning
 session: session_stanley_20260512_200414_adna_v2_m04b_s1
-audit_target: /Users/stanley/lattice/node.aDNA/ at git HEAD 411660e (M04 v0.1 bootstrap)
+audit_target: /Users/stanley/aDNA/node.aDNA/ at git HEAD 411660e (M04 v0.1 bootstrap)
 audit_basis:
   - mission_adna_infra_p1_04_node_adna_bootstrap.md (M04 mission spec; 22 numbered deliverables)
   - aar_m04_node_adna_bootstrap.md (M04 AAR; 10 items deferred + 4 surprises)
@@ -87,7 +87,7 @@ The auto-detected + hardcoded items (23 of 32, 72%) constitute the **fast path**
 | # | Item | M04 deliverable | Class | Evidence / Rationale |
 |---|---|---|---|---|
 | 18 | `what/inventory/AGENTS.md` | #11 | `hardcoded_from_design` | Protocol stub; template paste |
-| 19 | `inventory_vaults.{md,yaml}` content (21 vaults + 11 named projects + 3 drift entries) | #11 | `auto_detected` | `skill_inventory_refresh.md` scans `~/lattice/*.aDNA/` + grandfathered names; no operator input needed |
+| 19 | `inventory_vaults.{md,yaml}` content (21 vaults + 11 named projects + 3 drift entries) | #11 | `auto_detected` | `skill_inventory_refresh.md` scans `~/aDNA/*.aDNA/` + grandfathered names; no operator input needed |
 | 20 | `inventory_system.{md,yaml}` content (tool versions + machine class + PATH + env-var NAMES) | #11 | `auto_detected` | `skill_inventory_refresh.md` reads `git --version`, `python --version`, `node --version`, `claude --version`, `emacs --version`, `system_profiler`, `printenv | cut -d= -f1` etc. |
 | 21 | `inventory_memberships.{md,yaml}` LP-network membership data (peer-id placeholder, signing-key reference, permission summary) | #11 | **`should_be_interview_was_defaulted`** | These are operator-specific connections (what lattices does the operator subscribe to? what nodes federate with?); landed as placeholders — gap |
 | 22 | `inventory_memberships.yaml` federation block (8 keys: `shareable: false / discoverable: false / source_instance / version_policy / share_policy / license / creators / keywords`) | #11 | `hardcoded_from_design` + 1 `auto_detected` (`source_instance`) | Federation block intentionally inert by default; `source_instance` derived from hostname |

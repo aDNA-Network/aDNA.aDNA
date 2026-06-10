@@ -27,7 +27,7 @@ tags: [design_spec, proposed_patch, m3_4, obj_4, t8, t8a_obsidian_local_rest_api
 >
 > **Cross-skill primitive composition (3rd use instance — GRADUATES at M3.4 close)**: T8d skill DELEGATES to (a) M3.3 T6 skill for binary-presence + O1-O7 check-set via T6's `mode: agent_driven` patch (T8e), (b) M3.4 T7 skill for dispatch decision tree consultation, (c) M3.2 skill reachable at delegation depth 3 via the T6 chain. Triple DELEGATION evidence within a single skill. This is the **3rd explicit cross-skill primitive consumption across the M3.x cohort** (after M3.3 T6 → M3.2 skill + M3.4 T7 → T6 skill); the precedent ratified at M3.3 PRIMARY load-bearing finding now extends to M3.4 T7+T8d sibling consumers, **GRADUATING** `skill_cross_skill_primitive_composition.md` at 3 of 3 use instances at M3.4 close.
 >
-> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/lattice/.adna/`. It does NOT mutate any `.obsidian/` config or plugin file. All patch text is literal content for v8 P6 (T8a + T8b + T8e upstream) + outside-vault config edits (T8c MCP config) + Obj 6 (the new T8d skill) to apply.
+> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/aDNA/.adna/`. It does NOT mutate any `.obsidian/` config or plugin file. All patch text is literal content for v8 P6 (T8a + T8b + T8e upstream) + outside-vault config edits (T8c MCP config) + Obj 6 (the new T8d skill) to apply.
 >
 > **Standing Order #8 self-reference** — **17th tactical invocation candidate** in v8 (after 16 prior; T7 was 16th; T8d this spec is 17th). The deliverable T8d skill at Obj 6 is the **4th behavioral test** of M2.4.5-hardened `how/skills/AGENTS.md` routing layer for new-skill discoverability (after M3.2's `skill_obsidian_canonicalize.md` + M3.3's `skill_obsidian_integration_test.md` + M3.4 T7's `skill_verification_handoff.md`).
 
@@ -91,7 +91,7 @@ The compounding produces today's state: the operator is in the loop for verifica
 
 ```bash
 # Scenario A: invoke T8d skill on local vault (aDNA.aDNA itself) with --mode agent_driven (requires Obsidian running + REST API plugin loaded + valid API key + MCP server reachable)
-cd ~/lattice/aDNA.aDNA/
+cd ~/aDNA/aDNA.aDNA/
 ./how/skills/skill_obsidian_agent_inspect.md --mode agent_driven --vault . --profile default
 # Expect (when REST API + MCP both reachable): O1 (vault opens cleanly via REST API health endpoint) PASS; O2 (HOME.md fetch via REST API) PASS; O3 (content tables enumerate via REST API + frontmatter parse) PASS; O5 (cross-vault links resolve via REST API + MCP file lookup) PASS; O7 (theme + accent via REST API appearance fetch) PASS; O4 + O6 SKIPPED (defer to operator-side via T6)
 # Output: "Agent-driven inspection: 5/5 PASS (O4 + O6 deferred to operator-side); summary line emitted to STDOUT; structured JSON to STDERR for T6 consumption"
@@ -129,7 +129,7 @@ cd ~/lattice/aDNA.aDNA/
 
 # Scenario G: invoke T7 skill with --check-set T6 against M3.5 hypothetical mission (T7 dispatch routes to T6; T6 routes to T8d via mode field)
 ./how/skills/skill_verification_handoff.md --mission mission_adna_str_p3_m35_home_polish --surface operator --check-set T6
-# Expect: T7 DELEGATES to T6 --vault ~/lattice/aDNA.aDNA/ --profile default; if profile sets mode: agent_driven, T6 DELEGATES to T8d for O1-O5+O7 subset; full chain T7 → T6 → T8d → REST API + MCP; depth 3 cross-skill primitive composition
+# Expect: T7 DELEGATES to T6 --vault ~/aDNA/aDNA.aDNA/ --profile default; if profile sets mode: agent_driven, T6 DELEGATES to T8d for O1-O5+O7 subset; full chain T7 → T6 → T8d → REST API + MCP; depth 3 cross-skill primitive composition
 # Output: chained DELEGATION trace with per-skill verdicts aggregated
 # Exit 0 or 1
 ```

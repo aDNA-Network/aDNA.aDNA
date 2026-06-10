@@ -28,7 +28,7 @@ tags: [design_spec, proposed_patch, m3_2, obj_4, t4, obsidian_config_canonicaliz
 >
 > **NN `data.json` shipping** is evaluated as the **6th-instance additive-upstream candidate** after T1's 5th (or 6th if T3 bundled separately). See §6 propagation contract for the disposition decision tree.
 >
-> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/lattice/.adna/`. All patch text is literal diff content for v8 P6 to apply.
+> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/aDNA/.adna/`. All patch text is literal diff content for v8 P6 to apply.
 
 ## 1. Finding statement (3 sub-findings)
 
@@ -96,7 +96,7 @@ Obsidian models its config as a canonical internal representation; on-disk JSON 
 
 ```bash
 # Scenario A: fresh fork → setup.sh runs → triad colors visible immediately
-cd ~/lattice/<test_project>.aDNA/
+cd ~/aDNA/<test_project>.aDNA/
 ./setup.sh
 ls .obsidian/plugins/notebook-navigator/data.json  # expect: file exists (shipped per Patch B)
 grep -c "purple\|cyan\|green" .obsidian/plugins/notebook-navigator/data.json  # expect: ≥ 3 color tokens

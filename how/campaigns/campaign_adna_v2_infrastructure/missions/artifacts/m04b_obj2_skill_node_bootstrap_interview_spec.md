@@ -50,7 +50,7 @@ related_artifacts:
 The interview skill is the **middle layer** of a 3-skill bootstrap chain:
 
 ```
-operator runs `claude` in ~/lattice/ for first time
+operator runs `claude` in ~/aDNA/ for first time
   ↓
 workspace router Step 0.2 detects no `node.aDNA/` (and operator has ≥1 .aDNA project)
   ↓
@@ -183,7 +183,7 @@ When invoked (typically by workspace router Step 0.3 after operator accepts boot
 | `CLAUDE.md` (1-sentence excerpt) | persona-context paragraph (after Identity & Personality block, before Operating Style) | P1 (excerpt) |
 | `CHANGELOG.md` | v0.1 entry footnote noting interview completion + non-default license if applicable | (always; C5 footnote) |
 
-**Files NOT touched by this skill**: any partner vault; the workspace router (`/Users/stanley/lattice/CLAUDE.md`); the upstream template (`/Users/stanley/lattice/.adna/`); `node.aDNA/AGENTS.md`, `README.md`, `CHANGELOG.md` body, all `AGENTS.md` protocol stubs, all 4 node-skills, both protocol AGENTS.md, `inventory_vaults.{md,yaml}`, `inventory_memberships.md` (the .md narrative — only the YAML companion is mutated).
+**Files NOT touched by this skill**: any partner vault; the workspace router (`/Users/stanley/aDNA/CLAUDE.md`); the upstream template (`/Users/stanley/aDNA/.adna/`); `node.aDNA/AGENTS.md`, `README.md`, `CHANGELOG.md` body, all `AGENTS.md` protocol stubs, all 4 node-skills, both protocol AGENTS.md, `inventory_vaults.{md,yaml}`, `inventory_memberships.md` (the .md narrative — only the YAML companion is mutated).
 
 ---
 
@@ -212,7 +212,7 @@ When invoked (typically by workspace router Step 0.3 after operator accepts boot
 
 **Implementation venue**: M-LWX-01 (Dynamic node.aDNA bootstrap interview implementation) — single upstream commit to `LatticeProtocol/adna` adding `.adna/how/skills/skill_node_bootstrap_interview.md` + 1 update to `.adna/how/skills/AGENTS.md` (skill index). Pattern precedent: ADR-008 airlock template stub (single-commit additive change) + `e3b3bcc` cross-project routing hook (single-commit additive change). Two prior instances; this becomes the third.
 
-**Update to workspace router Step 0.3 prompt**: instead of the current static "Would you like me to bootstrap one now via `skill_project_fork`?", change to "Would you like me to bootstrap one now? I'll ask 19 quick questions (4-7 min) to fill in operator-specific fields, then auto-detect the rest." — single string change in `~/lattice/CLAUDE.md` Step 0.3.
+**Update to workspace router Step 0.3 prompt**: instead of the current static "Would you like me to bootstrap one now via `skill_project_fork`?", change to "Would you like me to bootstrap one now? I'll ask 19 quick questions (4-7 min) to fill in operator-specific fields, then auto-detect the rest." — single string change in `~/aDNA/CLAUDE.md` Step 0.3.
 
 ---
 

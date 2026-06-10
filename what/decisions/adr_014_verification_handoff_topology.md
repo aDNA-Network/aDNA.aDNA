@@ -245,7 +245,7 @@ Modify `template_mission_spec.md` to require `verification_surface:` field; prov
 - CanvasForge.aDNA (Hermes) — canvas-substrate missions with operator UX-feel verification
 - VideoForge.aDNA (Iris) — video-production missions with multi-platform output verification
 - ContextCommons.aDNA — community-driven missions with multi-stakeholder verification
-- All other 19+ partner-vaults per `~/lattice/CLAUDE.md` Project Discovery table
+- All other 19+ partner-vaults per `~/aDNA/CLAUDE.md` Project Discovery table
 
 ### Status transition path
 

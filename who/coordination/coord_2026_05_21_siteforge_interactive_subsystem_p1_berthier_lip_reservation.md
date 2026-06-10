@@ -44,7 +44,7 @@ The LIP will ratify the **Interactive Surface Subsystem pattern** as workspace-c
 3. **Standard-touch surfaces**:
    - Canonical skill at `aDNA.aDNA/how/skills/skill_create_interactive_surface.md`.
    - 2 canonical ADRs at `aDNA.aDNA/what/decisions/`.
-   - Workspace `~/lattice/CLAUDE.md` Standing Rule (T1 slot; ≤ 200 chars).
+   - Workspace `~/aDNA/CLAUDE.md` Standing Rule (T1 slot; ≤ 200 chars).
    - Upstream propagation to `LatticeProtocol/aDNA` template at P5.4 (operator-discretionary cadence).
 
 4. **Consumer federation pattern**: `<vault>/siteforge/interactive_surface/` wrapper + `federation_ref` block + opt-in per Campaign SO #10 (cross-vault context integration mechanics).
@@ -67,7 +67,7 @@ The LIP will ratify the **Interactive Surface Subsystem pattern** as workspace-c
 
 ## Vault Succession Note
 
-The workspace router (workspace `~/lattice/CLAUDE.md`) shows `lattice-labs/` is **operationally authoritative until Phase-6 cutover** (LatticeLabs.aDNA Phase 4 ✅ CLOSED 2026-05-20; Phase 5 entry-gate ✅ CROSSED; sole-mission `validate_cleanup` next).
+The workspace router (workspace `~/aDNA/CLAUDE.md`) shows `lattice-labs/` is **operationally authoritative until Phase-6 cutover** (LatticeLabs.aDNA Phase 4 ✅ CLOSED 2026-05-20; Phase 5 entry-gate ✅ CROSSED; sole-mission `validate_cleanup` next).
 
 By the time Operation Loom reaches P7.2 (~30-60 days out), LatticeLabs.aDNA may have completed Phase 6 cutover. Berthier may file the LIP reservation at either vault per ongoing LatticeLabs.aDNA migration discipline — Operation Loom defers to Berthier's judgment on which vault is authoritative at reservation-time.
 

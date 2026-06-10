@@ -100,7 +100,7 @@ Implement plan at `/Users/stanley/.claude/plans/please-read-the-claude-md-compos
 ## Hard constraints (Standing Orders + plan)
 
 - No rename of `node.aDNA/` → `home.aDNA/` (explicitly decided against; ADR-001 captures rationale)
-- No mutations at `~/lattice/` workspace root (no .obsidian/, no HOME.md, no .obsidianignore at root, no workspace router Step 0.5)
+- No mutations at `~/aDNA/` workspace root (no .obsidian/, no HOME.md, no .obsidianignore at root, no workspace router Step 0.5)
 - No upstream `.adna/` mutations (HEAD `e3b3bcc` stands; no graceful fallback needed)
 - No partner-vault touches (mini-campaign Standing Order #3 — vault-in-vault discipline)
 - No M04 / M04b output mutations (read-only references)

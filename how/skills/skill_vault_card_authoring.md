@@ -211,7 +211,7 @@ def emit_v02_card(vault_entry, existing_v01=None):
 
 ## Architecture
 
-Class **{cls}**. Governance at `{vault_entry.get('governance', name + '/CLAUDE.md')}`. Inventory path: `{vault_entry.get('path', '/Users/stanley/lattice/' + name)}`.
+Class **{cls}**. Governance at `{vault_entry.get('governance', name + '/CLAUDE.md')}`. Inventory path: `{vault_entry.get('path', '/Users/stanley/aDNA/' + name)}`.
 
 ## Cross-Vault Relationships
 
@@ -231,7 +231,7 @@ Class **{cls}**. Governance at `{vault_entry.get('governance', name + '/CLAUDE.m
 
 ## On the Lattice
 
-Adopter-facing narrative — what this vault offers to the lattice + how to engage. See workspace `~/lattice/CLAUDE.md` Project Discovery table for full context.
+Adopter-facing narrative — what this vault offers to the lattice + how to engage. See workspace `~/aDNA/CLAUDE.md` Project Discovery table for full context.
 
 ## III & Context
 
@@ -380,25 +380,25 @@ M3.7 will extend this skill with `--mode iii-prepare` that emits per-card render
 ### Author 15 NEW vault_cards in bulk
 ```
 for slug in ComfyForge.aDNA SpeechForge.aDNA VAASLattice.aDNA RemoteControl.aDNA TappInterface.aDNA TaskForge.aDNA ContextCommons.aDNA RareArchive.aDNA ScienceStanley.aDNA wga.aDNA CakeHealth.aDNA SuperLeague.aDNA LPWhitepaper.aDNA zeta.aDNA; do
-  ./how/skills/skill_vault_card_authoring.md --vault /Users/stanley/lattice/node.aDNA --mode author --target-vault "$slug"
+  ./how/skills/skill_vault_card_authoring.md --vault /Users/stanley/aDNA/node.aDNA --mode author --target-vault "$slug"
 done
 ```
 
 ### Elaborate 16 existing v0.1 stubs to v0.2 schema (elaboration sub-mode auto-detected)
 ```
 for slug in $(ls node.aDNA/what/vault_cards/ | grep -E "the_.+\.aDNA\.md" | sed 's/the_//;s/\.md//'); do
-  ./how/skills/skill_vault_card_authoring.md --vault /Users/stanley/lattice/node.aDNA --mode author --target-vault "$slug"
+  ./how/skills/skill_vault_card_authoring.md --vault /Users/stanley/aDNA/node.aDNA --mode author --target-vault "$slug"
 done
 ```
 
 ### Audit pass with T7 dispatch
 ```
-./how/skills/skill_vault_card_authoring.md --vault /Users/stanley/lattice/node.aDNA --mode audit
+./how/skills/skill_vault_card_authoring.md --vault /Users/stanley/aDNA/node.aDNA --mode audit
 ```
 
 ### Pure schema validation (no T7 dispatch)
 ```
-./how/skills/skill_vault_card_authoring.md --vault /Users/stanley/lattice/node.aDNA --mode schema-only
+./how/skills/skill_vault_card_authoring.md --vault /Users/stanley/aDNA/node.aDNA --mode schema-only
 ```
 
 ## Cross-references
@@ -414,8 +414,8 @@ done
 - [[skill_home_polish.md|sibling skill_home_polish]] — pair pattern (HOME render + per-vault info pages = co-renders of same data)
 - [[../../what/decisions/adr_023_registry_data_projection_contract.md|ADR-023 (draft)]] — this skill writes the per-vault overlays the projection script reads
 - [[../../what/decisions/adr_014_verification_handoff_topology.md|ADR-014]] — Clause C consumer-mission obligation
-- `/Users/stanley/lattice/node.aDNA/what/vault_cards/` — first canonical consumer directory (16 elaborations + 15 NEW at M3.5 Obj 9)
-- `/Users/stanley/lattice/node.aDNA/what/inventory/inventory_vaults.yaml` — canonical source-of-truth
+- `/Users/stanley/aDNA/node.aDNA/what/vault_cards/` — first canonical consumer directory (16 elaborations + 15 NEW at M3.5 Obj 9)
+- `/Users/stanley/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml` — canonical source-of-truth
 
 ## Self-reference note
 

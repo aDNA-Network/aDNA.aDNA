@@ -60,9 +60,9 @@ ADR-010 codification is **operator-discretionary at S2 entry**. The Step 0 first
 ## Hard constraints
 
 - **No node.aDNA/ deletion or destructive rewrite if a prior fork exists**. M04 S2 must verify `node.aDNA/` does NOT already exist before invoking `skill_project_fork.md`. If a prior fork is found (unlikely — this is the first M04 execution), abort with operator guidance + flag for manual reconciliation. Standing Order #6 (archive, never delete) applies — never `rm -rf node.aDNA/`.
-- **Workspace router Step 0 + Project Discovery row + Standing Rule 5 land at workspace level only**. The workspace router file `/Users/stanley/lattice/CLAUDE.md` is the single source of truth; not an upstream-template change. Per ADR-007, this file is operator-customizable and is NOT a symlink. M04 edits it directly with operator approval at S2 entry.
+- **Workspace router Step 0 + Project Discovery row + Standing Rule 5 land at workspace level only**. The workspace router file `/Users/stanley/aDNA/CLAUDE.md` is the single source of truth; not an upstream-template change. Per ADR-007, this file is operator-customizable and is NOT a symlink. M04 edits it directly with operator approval at S2 entry.
 - **Template `.adna/CLAUDE.md` cross-project routing hook is operator-discretionary**. M01 Obj 3 §6 specifies a Startup Checklist addition to `.adna/CLAUDE.md` that informs every forked vault about node-scope routing. This is an upstream-repo commit (touches `LatticeProtocol/adna`'s `.adna/CLAUDE.md`). Operator decides at S2 entry whether to include this upstream commit in M04 or defer to M07 (general repo review + simplify). Default: include (the hook is small + low-risk + future-fork-relevant; deferring leaves a forked vault with no routing awareness).
-- **No partner-vault content mutation**. M04 touches only `aDNA.aDNA/` (this campaign vault) + `~/lattice/node.aDNA/` (the new vault) + `~/lattice/CLAUDE.md` (workspace router) + optionally `~/lattice/.adna/CLAUDE.md` (template upstream commit, operator-discretionary). No partner vault is edited.
+- **No partner-vault content mutation**. M04 touches only `aDNA.aDNA/` (this campaign vault) + `~/aDNA/node.aDNA/` (the new vault) + `~/aDNA/CLAUDE.md` (workspace router) + optionally `~/aDNA/.adna/CLAUDE.md` (template upstream commit, operator-discretionary). No partner vault is edited.
 - **Hestia persona installed inline in `node.aDNA/CLAUDE.md`**, not as a separate `who/governance/persona_hestia.md` file. Mirrors the pattern of every other persona in the ecosystem (Rosetta in `aDNA.aDNA/CLAUDE.md`, Daedalus in `Spacemacs.aDNA/CLAUDE.md`, etc.) — the persona spec is part of the vault's CLAUDE.md "Identity & Personality" section. M01 Obj 3 §3 provides the authoritative Hestia spec; M04 copies it verbatim with no substantive changes (whitespace and wrapping permissible).
 - **`inventory_*.md` and `identity_*.md` use NEW entity types (`inventory` + `identity`) per ADR-005 + M01 Obj 3 §4**. These are not in the v6.0 base ontology (14 types per [[../../../CLAUDE.md|aDNA.aDNA/CLAUDE.md §Base Ontology]]). M04 ships them as node-local entity types AND files upstream-contribution ideas in `aDNA.aDNA/how/backlog/` per [[../../../how/skills/skill_upstream_contribution.md|skill_upstream_contribution.md]] so the v8.0+ template ontology can absorb them.
 - **YAML companion files (D9) ship alongside .md content for `inventory_*` and `identity_*` only**. The 5 inventory + identity MD files (`inventory_vaults.md`, `inventory_system.md`, `inventory_memberships.md`, `identity_node.md`, `identity_lattice_protocol.md`) each get a `.yaml` companion. `STATE.md`, `MANIFEST.md`, `CHANGELOG.md`, `CLAUDE.md`, `README.md` do NOT get YAML companions (these are human-facing + agent-readable directly).
@@ -71,7 +71,7 @@ ADR-010 codification is **operator-discretionary at S2 entry**. The Step 0 first
 - **Local-by-default**. `node.aDNA/` ships with no remote git origin configured. Operator may add one post-bootstrap if they want cross-node backup, but the default is local-only (Standing Rule 5 per M01 Obj 3 §7). The `MANIFEST.md` FAIR block uses `license: private` by default.
 - **No coord memo delivery**. The 17 per-vault coord memos from M08a stay at their authored statuses. M04 mission close does NOT trigger delivery. Memo delivery is operator-discretionary (M03 Items deferred #4).
 - **No v7.0 tag execution**. M06 owns v7.0 tag execution (M03 Items deferred #2). M04 may reference the v7.0 tag target in `node.aDNA/CHANGELOG.md` provenance but does not create the tag.
-- **Upstream-vs-vault clarity**. M04 may produce **at most ONE** upstream commit to `LatticeProtocol/adna` — the `.adna/CLAUDE.md` cross-project routing hook addition (operator-discretionary at S2 entry per §Operator decisions). All other M04 work lands in `aDNA.aDNA/` (this campaign vault) OR `node.aDNA/` (the new vault) OR `~/lattice/CLAUDE.md` (workspace router file). Confusion between paths is the surfaced risk for implementation-class missions per M03 AAR.
+- **Upstream-vs-vault clarity**. M04 may produce **at most ONE** upstream commit to `LatticeProtocol/adna` — the `.adna/CLAUDE.md` cross-project routing hook addition (operator-discretionary at S2 entry per §Operator decisions). All other M04 work lands in `aDNA.aDNA/` (this campaign vault) OR `node.aDNA/` (the new vault) OR `~/aDNA/CLAUDE.md` (workspace router file). Confusion between paths is the surfaced risk for implementation-class missions per M03 AAR.
 - **Verification gate at mission close**. Session 3 closes only if the 10-dim compliance audit on `node.aDNA/` reports actual ≥ predicted (42/50). Any dimension scoring <3 must be addressed before M04 closes (re-enter S3 with corrective patches) per M01 Obj 3 §9.
 
 ---
@@ -89,8 +89,8 @@ Author this mission spec at `missions/mission_adna_infra_p1_04_node_adna_bootstr
 4. [[../campaign_adna_v2_infrastructure.md|campaign master]] M04 row + mission tree sequencing — confirms M04 opens at operator discretion + consumes M01 Obj 3 design + Operator Decision 2 from M03
 5. [[../../../CLAUDE.md|aDNA.aDNA/CLAUDE.md]] §Base Ontology + §Compliance Dimensions — the 14 base entity types + 10-dim rubric M04 measures `node.aDNA/` against
 6. [[../../../what/decisions/adr_004_campaign_home_stays_in_adna_adna.md|ADR-004]] + [[../../../what/decisions/adr_005_three_way_vault_boundary.md|ADR-005]] — node.aDNA scope + campaign-home rule
-7. `/Users/stanley/lattice/CLAUDE.md` (workspace router, current state) — target of Step 0 + Project Discovery row + Standing Rule 5 additions
-8. `/Users/stanley/lattice/.adna/CLAUDE.md` (template, current post-M03 state) — target of optional cross-project routing hook addition
+7. `/Users/stanley/aDNA/CLAUDE.md` (workspace router, current state) — target of Step 0 + Project Discovery row + Standing Rule 5 additions
+8. `/Users/stanley/aDNA/.adna/CLAUDE.md` (template, current post-M03 state) — target of optional cross-project routing hook addition
 9. [[mission_adna_infra_p3_08c_standalone_installer.md|M08c spec stub]] — sibling implementation-class mission; precedent for stub-pattern (M04 produces full spec at S1 per M02 first-execution-session pattern, not stub)
 
 **Produce:**
@@ -101,16 +101,16 @@ Author this mission spec at `missions/mission_adna_infra_p1_04_node_adna_bootstr
 
 ### Obj 2 — Bootstrap `node.aDNA/` via `skill_project_fork.md` + install Hestia identity — Session 2
 
-Invoke `.adna/how/skills/skill_project_fork.md` with project_name = `node` to clone the v7.0 template into `~/lattice/node.aDNA/`. Customize the four governance files (`CLAUDE.md`, `MANIFEST.md`, `STATE.md`, `CHANGELOG.md`) per M01 Obj 3.
+Invoke `.adna/how/skills/skill_project_fork.md` with project_name = `node` to clone the v7.0 template into `~/aDNA/node.aDNA/`. Customize the four governance files (`CLAUDE.md`, `MANIFEST.md`, `STATE.md`, `CHANGELOG.md`) per M01 Obj 3.
 
 **Read:**
 1. [[../../../how/skills/skill_project_fork.md|skill_project_fork.md]] (post-M03 v7.0) — full procedure for forking the template into a new `.aDNA` project
 2. [[artifacts/m01_obj3_node_adna_design.md|M01 Obj 3]] §3 Hestia persona spec + §2 purpose + §4 directory structure
 3. [[../../../CLAUDE.md|aDNA.aDNA/CLAUDE.md]] §Identity & Personality (Rosetta) — pattern source for inline persona in CLAUDE.md
-4. Current `/Users/stanley/lattice/.adna/CLAUDE.md` (template, post-M03) — the file `skill_project_fork.md` clones from
+4. Current `/Users/stanley/aDNA/.adna/CLAUDE.md` (template, post-M03) — the file `skill_project_fork.md` clones from
 
 **Produce:**
-1. **`~/lattice/node.aDNA/` directory** via `skill_project_fork.md` (initial state: template clone with project_name = `node`)
+1. **`~/aDNA/node.aDNA/` directory** via `skill_project_fork.md` (initial state: template clone with project_name = `node`)
 2. **`node.aDNA/CLAUDE.md`**: full Hestia "Identity & Personality" section per M01 Obj 3 §3 (mythological grounding + operating principles + persona pairings + greeting); Project Map updated for node.aDNA-specific structure; Standing Orders adapted (rule numbering preserved; node-specific additions like "Local-by-default" appended); domain knowledge section reflects inventory + identity entity types
 3. **`node.aDNA/MANIFEST.md`**: node identity (hostname = stanley-mac; operator = stanley); FAIR block per M01 Obj 3 §8 D4 (`license: private`, `creators: [stanley]`, `keywords: [node, inventory, lattice_membership, host_state]`, `provenance: "forked from .adna/ at v7.0-pre-tag; describes node stanley-mac"`); `_template_version: "7.0"` field
 4. **`node.aDNA/STATE.md`**: initial vault inventory snapshot (the ~19 vaults from M02 baseline as the seed list; `last_full_health_check: never` until S2 runs `skill_inventory_refresh.md`); operator's current cross-project context state
@@ -151,15 +151,15 @@ Per M01 Obj 3 §9 deliverable 6. Each skill is full-form (frontmatter + Trigger 
 **Produce:**
 1. **`node.aDNA/how/skills/skill_node_health_check.md`**: D10 reproducibility gate. Validates: file-presence (CLAUDE.md, MANIFEST.md, STATE.md, CHANGELOG.md, all inventory_*.md + yaml, all identity_*.md + yaml, all 4 skills); frontmatter validity (yaml.safe_load every .md frontmatter); inventory-vs-disk consistency (each vault listed in inventory_vaults.md exists at the expected path with the expected git_url); federation block validity in inventory_memberships.yaml; last-update freshness (warn if any inventory_*.md older than 7 days). Reports drift in §SITREP form. Exit code 0 = healthy; >0 = drift.
 2. **`node.aDNA/how/skills/skill_update_all_vaults.md`**: runs `git pull --ff-only` across every vault listed in `inventory_vaults.md`. Per-vault outcome: pulled-clean / already-up-to-date / merge-conflict / network-error / not-a-git-repo. Emits a §SITREP table. Does NOT auto-resolve merge conflicts (flags `#needs-human`).
-3. **`node.aDNA/how/skills/skill_inventory_refresh.md`**: rebuilds `inventory_vaults.md` + `.yaml`, `inventory_system.md` + `.yaml` from current node state. Detects new vaults at `~/lattice/*.aDNA/` (or `~/lattice/<grandfathered-names>/`); detects removed vaults (was-listed-now-missing); detects version-drift (semver bump in target vault's CHANGELOG.md vs inventory recorded version). Updates `STATE.md` `last_full_health_check` timestamp.
+3. **`node.aDNA/how/skills/skill_inventory_refresh.md`**: rebuilds `inventory_vaults.md` + `.yaml`, `inventory_system.md` + `.yaml` from current node state. Detects new vaults at `~/aDNA/*.aDNA/` (or `~/aDNA/<grandfathered-names>/`); detects removed vaults (was-listed-now-missing); detects version-drift (semver bump in target vault's CHANGELOG.md vs inventory recorded version). Updates `STATE.md` `last_full_health_check` timestamp.
 4. **`node.aDNA/how/skills/skill_node_credentials_audit.md`**: enumerates credential SOURCES (NAMES ONLY, redaction-aware per M01 Obj 3 §4): env-vars matching `*_TOKEN`, `*_KEY`, `*_SECRET`; gh CLI auth status (token-name only, not token value); ssh keys at `~/.ssh/*.pub` (public keys only); keychain entries by name (where queryable). Emits redacted summary. Flags `#needs-human` if expired tokens detected (where the auth-status check provides expiry info).
 
 ### Obj 5 — Workspace router Step 0 + Project Discovery row + Workspace Layout + Standing Rule 5 — Session 2
 
-Per M01 Obj 3 §5 + §7. Lands at `/Users/stanley/lattice/CLAUDE.md` (workspace router, not a symlink per ADR-007). Operator-approved at S2 entry per §Operator decisions.
+Per M01 Obj 3 §5 + §7. Lands at `/Users/stanley/aDNA/CLAUDE.md` (workspace router, not a symlink per ADR-007). Operator-approved at S2 entry per §Operator decisions.
 
 **Read:**
-1. `/Users/stanley/lattice/CLAUDE.md` (workspace router, current state)
+1. `/Users/stanley/aDNA/CLAUDE.md` (workspace router, current state)
 2. [[artifacts/m01_obj3_node_adna_design.md|M01 Obj 3]] §5 (Step 0 block to add — verbatim source) + §7 (Project Discovery row + Workspace Layout addition + Standing Rule 5 — verbatim source)
 
 **Produce:**
@@ -173,7 +173,7 @@ Per M01 Obj 3 §5 + §7. Lands at `/Users/stanley/lattice/CLAUDE.md` (workspace 
 Per M01 Obj 3 §6 + §8 D5. Two distinct sub-deliverables: (a) upstream commit to `LatticeProtocol/adna` template adding the cross-project routing hook to `.adna/CLAUDE.md` (operator-discretionary at S2 entry per §Operator decisions); (b) two backlog idea files in `aDNA.aDNA/how/backlog/` for the new `inventory` + `identity` entity types per `skill_upstream_contribution.md`.
 
 **Read:**
-1. `/Users/stanley/lattice/.adna/CLAUDE.md` (template, post-M03 state) — target file for the cross-project routing hook (Startup Checklist addition)
+1. `/Users/stanley/aDNA/.adna/CLAUDE.md` (template, post-M03 state) — target file for the cross-project routing hook (Startup Checklist addition)
 2. [[artifacts/m01_obj3_node_adna_design.md|M01 Obj 3]] §6 (verbatim block) + §8 D5 (entity-type upstream-contribution rationale)
 3. [[../../../how/skills/skill_upstream_contribution.md|skill_upstream_contribution.md]] (post-M03 v7.0) — backlog idea file pattern (`idea_upstream_*` prefix; rationale + proposed change + impact + suggested ADR slot)
 4. [[../../../how/backlog/AGENTS.md|how/backlog/AGENTS.md]] — backlog frontmatter schema
@@ -229,7 +229,7 @@ Run the 10-dimension compliance audit on the completed `node.aDNA/` per [[../../
 | 2 | Campaign master M04 row flipped to `in_progress` + amendments entry | S1 | Row text + amendments entry verified via grep |
 | 3 | STATE.md S1 close + S2 Next Session Prompt | S1 | Last Session block + Next Session Prompt sections updated |
 | 4 | ADR-010 draft (operator-discretionary at S2 entry) | S1 or skipped | If drafted: `what/decisions/adr_010_workspace_step_0_node_routing.md` exists at `status: proposed` |
-| 5 | `node.aDNA/` directory bootstrapped via `skill_project_fork.md` | S2 | `~/lattice/node.aDNA/` exists with template-fork file set |
+| 5 | `node.aDNA/` directory bootstrapped via `skill_project_fork.md` | S2 | `~/aDNA/node.aDNA/` exists with template-fork file set |
 | 6 | `node.aDNA/CLAUDE.md` with Hestia identity | S2 | Hestia persona section verbatim from M01 Obj 3 §3 (whitespace permissible) |
 | 7 | `node.aDNA/MANIFEST.md` with node identity + FAIR block | S2 | `hostname`, `operator`, FAIR fields populated per M01 Obj 3 §8 D4 |
 | 8 | `node.aDNA/STATE.md` with initial vault inventory snapshot | S2 | Initial 19-vault snapshot present; `last_full_health_check: never` |
@@ -239,7 +239,7 @@ Run the 10-dimension compliance audit on the completed `node.aDNA/` per [[../../
 | 12 | `node.aDNA/who/identity/` (AGENTS.md + 2 MD + 2 YAML) | S2 | 5 files total |
 | 13 | `node.aDNA/what/decisions/AGENTS.md` + `who/coordination/AGENTS.md` | S2 | 2 protocol files for empty directories |
 | 14 | `node.aDNA/how/skills/` × 4 node-skills | S2 | 4 skills present, each with frontmatter + Trigger + Read + Produce + Steps + Exit criteria |
-| 15 | Workspace router Step 0 block + Project Discovery row + Workspace Layout + Standing Rule 5 | S2 | 4 additions to `/Users/stanley/lattice/CLAUDE.md` |
+| 15 | Workspace router Step 0 block + Project Discovery row + Workspace Layout + Standing Rule 5 | S2 | 4 additions to `/Users/stanley/aDNA/CLAUDE.md` |
 | 16 | Template `.adna/CLAUDE.md` cross-project routing hook (operator-discretionary upstream commit) | S2 | If included: upstream commit to LatticeProtocol/adna |
 | 17 | `aDNA.aDNA/how/backlog/idea_upstream_inventory_entity_type.md` | S2 | File exists + `idea_upstream_` prefix + proposes v8.0+ ontology addition |
 | 18 | `aDNA.aDNA/how/backlog/idea_upstream_identity_entity_type.md` | S2 | File exists + `idea_upstream_` prefix + proposes v8.0+ ontology addition |
@@ -267,7 +267,7 @@ Per the deliverables table. Mission closes when:
 - [ ] No M03 output mutations except expected M04-side touches (verified via `git diff --stat`)
 - [ ] M03 still at `status: completed`; ADR-008 still at `status: accepted`
 - [ ] `node.aDNA/` `skill_node_health_check.md` exits with code 0 (no drift detected post-bootstrap)
-- [ ] Workspace router Step 0 block verified via grep at `/Users/stanley/lattice/CLAUDE.md`
+- [ ] Workspace router Step 0 block verified via grep at `/Users/stanley/aDNA/CLAUDE.md`
 - [ ] Two upstream-contribution backlog files exist in `aDNA.aDNA/how/backlog/`
 - [ ] If template upstream commit included: LatticeProtocol/adna at HEAD+1 (one new commit since M03 close)
 - [ ] All Standing Orders honored (#1 phase gate at S2 entry + #2 self-reference in node.aDNA/CLAUDE.md + #5 AAR + #6 archive-not-delete + #7 dual-audience + #8 self-reference + #9 upstream spec + #10 cross-link)
@@ -293,8 +293,8 @@ Per the deliverables table. Mission closes when:
 | [[../../../how/skills/skill_project_fork.md|skill_project_fork.md]] | invoked at S2 Obj 2 to bootstrap node.aDNA |
 | [[../../../how/skills/skill_upstream_contribution.md|skill_upstream_contribution.md]] | informs the 2 backlog idea files for inventory + identity entity types |
 | [[../../../CLAUDE.md|aDNA.aDNA/CLAUDE.md]] | §Base Ontology + §Compliance Dimensions — 10-dim rubric source |
-| `/Users/stanley/lattice/CLAUDE.md` | workspace router — target of Step 0 + Project Discovery row + Standing Rule 5 |
-| `/Users/stanley/lattice/.adna/CLAUDE.md` | template — target of optional cross-project routing hook |
+| `/Users/stanley/aDNA/CLAUDE.md` | workspace router — target of Step 0 + Project Discovery row + Standing Rule 5 |
+| `/Users/stanley/aDNA/.adna/CLAUDE.md` | template — target of optional cross-project routing hook |
 | [[mission_adna_infra_p2_05_publish_skill_rewrite.md|M05 mission]] (planned) | sequential successor; does NOT block on M04 |
 | [[mission_adna_infra_p3_08c_standalone_installer.md|M08c mission stub]] | references M04 in `prerequisite_missions:` — M08c installer surfaces opt-in node.aDNA bootstrap to greenfield operators |
 
@@ -310,7 +310,7 @@ Surface as a single AskUserQuestion block at S2 open. Defaults apply if operator
    - **Default if absent**: Option B (no ADR-010).
 
 2. **D2 — Template `.adna/CLAUDE.md` cross-project routing hook (upstream commit at M04 S2 vs defer to M07)**
-   - **Option A (recommended; default)**: Include the upstream commit at M04 S2 Obj 6. The hook is small (~20 lines), low-risk (additive, no breaking changes), and future-fork-relevant (every forked vault after this commit gets node-aware routing). Commit to `LatticeProtocol/adna` from `~/lattice/.adna/`. Single commit, separate from any aDNA.aDNA commits.
+   - **Option A (recommended; default)**: Include the upstream commit at M04 S2 Obj 6. The hook is small (~20 lines), low-risk (additive, no breaking changes), and future-fork-relevant (every forked vault after this commit gets node-aware routing). Commit to `LatticeProtocol/adna` from `~/aDNA/.adna/`. Single commit, separate from any aDNA.aDNA commits.
    - **Option B**: Defer to M07 (general repo review + simplify). Leaves a window where forked vaults have no node-aware routing.
    - **Default if absent**: Option A (include in M04 S2).
 
@@ -325,7 +325,7 @@ Surface as a single AskUserQuestion block at S2 open. Defaults apply if operator
    - **Default if absent**: Option A (NAMES ONLY).
 
 5. **D5 — `inventory_vaults.md` seed list scope (M02 baseline only vs M02 baseline + grandfathered named projects)**
-   - **Option A (recommended; default)**: M02 baseline + grandfathered named projects (lattice-labs/, lattice-protocol/, latlab/, adna/, lattice-dataroom/, whitepaper/, etc. — the named projects per workspace CLAUDE.md). Full inventory of what's actually installed at `~/lattice/`.
+   - **Option A (recommended; default)**: M02 baseline + grandfathered named projects (lattice-labs/, lattice-protocol/, latlab/, adna/, lattice-dataroom/, whitepaper/, etc. — the named projects per workspace CLAUDE.md). Full inventory of what's actually installed at `~/aDNA/`.
    - **Option B**: M02 19-vault `.aDNA` baseline only (cleaner ontologically — only `.aDNA` projects in inventory; named projects are infrastructure).
    - **Default if absent**: Option A (full inventory).
 
@@ -333,7 +333,7 @@ Surface as a single AskUserQuestion block at S2 open. Defaults apply if operator
 
 ## Status
 
-**Mission complete** at Session 3 close 2026-05-12T01:33:14Z+ (`session_stanley_20260512_013314_adna_v2_m04_s3`). Mission frontmatter `status: in_progress → completed`; `closed_at` + `closed_session` + `sessions_actual: 3` populated. **22 of 22 non-discretionary deliverables landed** across 3 sessions (S1: 4 deliverables — mission spec + campaign master M04 row + STATE.md updates + ADR-010 deferred; S2: 14 deliverables — `node.aDNA/` directory + 6 governance files customized with Hestia identity inline + 7 inventory scaffolds + 5 identity scaffolds + 2 protocol AGENTS.md stubs + 4 node-skills + workspace router 4 additions at `/Users/stanley/lattice/CLAUDE.md` + 1 upstream commit `e3b3bcc` to `LatticeProtocol/adna` for cross-project routing hook + 2 upstream-contribution backlog ideas in `aDNA.aDNA/how/backlog/`; S3: 4 deliverables — 10-dim audit + M04 AAR + status flips + STATE.md mission-close update). **14/14 acceptance criteria boxes checked.** **10-dim compliance audit returned 42/50 = 84% PASS** ([[artifacts/m04_obj7_ten_dim_audit.md|`m04_obj7_ten_dim_audit.md`]]) — exact match to M01 Obj 3 §8 prediction; zero delta across all 10 dimensions; no dimension below the 3-floor; no corrective patches required.
+**Mission complete** at Session 3 close 2026-05-12T01:33:14Z+ (`session_stanley_20260512_013314_adna_v2_m04_s3`). Mission frontmatter `status: in_progress → completed`; `closed_at` + `closed_session` + `sessions_actual: 3` populated. **22 of 22 non-discretionary deliverables landed** across 3 sessions (S1: 4 deliverables — mission spec + campaign master M04 row + STATE.md updates + ADR-010 deferred; S2: 14 deliverables — `node.aDNA/` directory + 6 governance files customized with Hestia identity inline + 7 inventory scaffolds + 5 identity scaffolds + 2 protocol AGENTS.md stubs + 4 node-skills + workspace router 4 additions at `/Users/stanley/aDNA/CLAUDE.md` + 1 upstream commit `e3b3bcc` to `LatticeProtocol/adna` for cross-project routing hook + 2 upstream-contribution backlog ideas in `aDNA.aDNA/how/backlog/`; S3: 4 deliverables — 10-dim audit + M04 AAR + status flips + STATE.md mission-close update). **14/14 acceptance criteria boxes checked.** **10-dim compliance audit returned 42/50 = 84% PASS** ([[artifacts/m04_obj7_ten_dim_audit.md|`m04_obj7_ten_dim_audit.md`]]) — exact match to M01 Obj 3 §8 prediction; zero delta across all 10 dimensions; no dimension below the 3-floor; no corrective patches required.
 
 Operator decisions resolved at S2 entry per defaults B/A/A/A/A: D1=B (no ADR-010 drafted — M01 Obj 3 design + M04 spec are sufficient authoritative artifacts; operational changes inline in target files); D2=A (template upstream commit included at S2; commit `e3b3bcc`); D3=A (node.aDNA at top of Workspace Layout ASCII tree per router prominence); D4=A (NAMES-ONLY credentials redaction in skill_node_credentials_audit.md); D5=A (inventory_vaults seed = M02 19-vault baseline + grandfathered named projects). All 5 decisions landed without revision. **ADR-010 ratification skipped at S3** per S1 D1 default B (no ADR drafted; no further action required).
 

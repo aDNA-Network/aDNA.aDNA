@@ -21,9 +21,9 @@ files_touched_planned:
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m35_obj6_t12_design_spec.md  # NEW T12
   - aDNA.aDNA/how/skills/skill_home_polish.md                                                                      # NEW skill
   - aDNA.aDNA/how/skills/skill_vault_card_authoring.md                                                              # NEW skill
-  - /Users/stanley/lattice/node.aDNA/HOME.md                                                                        # EDIT line 42 only (Gallery section); preserve everything else verbatim
-  - /Users/stanley/lattice/node.aDNA/what/inventory/vault_gallery.base                                              # NEW Bases definition file
-  - /Users/stanley/lattice/node.aDNA/what/vault_cards/the_*.aDNA.md (~16 EDIT + ~15 NEW)                            # elaborate existing per T10 v0.2 + author new per skill_vault_card_authoring
+  - /Users/stanley/aDNA/node.aDNA/HOME.md                                                                        # EDIT line 42 only (Gallery section); preserve everything else verbatim
+  - /Users/stanley/aDNA/node.aDNA/what/inventory/vault_gallery.base                                              # NEW Bases definition file
+  - /Users/stanley/aDNA/node.aDNA/what/vault_cards/the_*.aDNA.md (~16 EDIT + ~15 NEW)                            # elaborate existing per T10 v0.2 + author new per skill_vault_card_authoring
   - aDNA.aDNA/scripts/build_vaults_data.mjs                                                                         # NEW prebuild projection script (project-root scripts/)
   - aDNA.aDNA/site/src/data/vaults.json                                                                             # NEW projected data
   - aDNA.aDNA/site/src/data/vaults.schema.json                                                                      # NEW JSON Schema

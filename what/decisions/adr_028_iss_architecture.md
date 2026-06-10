@@ -173,7 +173,7 @@ All three feed P3 priority queue. Acceptance gates: 6-axis ≥ 4.0 avg + 5-perso
 | **Per-archetype fork of components/tokens/runtime** | 4× duplication; updates fan out manually; maintenance burden compounds per cycle. |
 | **External `tokens.css` `<link>`** | Violates single-file output discipline (AD-4); breaks offline mode (AD-9); adds network dep. |
 | **Two-source skill location during P2.1-P5.1** | Fork risk if SiteForge and aDNA.aDNA copies drift; substrate recon §6 Input #5 pre-rec confirms MOVE (not copy) at P5.1. |
-| **Skill at `~/lattice/.adna/how/skills/`** | Workspace template repo is locked per Standing Rule #1 ("Never modify `.adna/`"); upstream propagation deferred to P5.4. |
+| **Skill at `~/aDNA/.adna/how/skills/`** | Workspace template repo is locked per Standing Rule #1 ("Never modify `.adna/`"); upstream propagation deferred to P5.4. |
 | **`signal_type` name collision (campaign vs adr_005)** | Two orthogonal axes; rename campaign to `signal_shape` preserves both fields side-by-side. |
 | **Single `core_domain_packs/` shared write** | Local extensions belong in vault; canonical upstream READ-ONLY per ADR-002 (III.aDNA scope). |
 | **Single mega-ADR (architecture + standard-touch bundled)** | Architecture and distribution are orthogonal axes; splitting honors single-decision-per-ADR convention; companion ADR-029 ratifies standard-touch separately. |

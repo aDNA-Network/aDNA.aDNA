@@ -203,7 +203,7 @@ Release notes: github.com/LatticeProtocol/adna/releases/tag/v7.0
 ```markdown
 # aDNA Governance v7.0 — Flat Repo, Real `git push`, and the Patterns That Finally Land
 
-When aDNA shipped its v6.0 baseline, the workspace-root layout had an awkward double-nest: the template lived at `adna/.adna/`, and a symlink at `~/lattice/.adna -> adna/.adna` papered over the gap. Anyone who set up a fresh workspace remembers the friction.
+When aDNA shipped its v6.0 baseline, the workspace-root layout had an awkward double-nest: the template lived at `adna/.adna/`, and a symlink at `~/aDNA/.adna -> adna/.adna` papered over the gap. Anyone who set up a fresh workspace remembers the friction.
 
 That double-nest is gone in v7.0. The cloned repo IS the template directory. One step, no wrapper, no symlink.
 
@@ -226,7 +226,7 @@ This release is the first one ratified under aDNA's explicit semver discipline (
 
 **Five pull-based changes** that need nothing:
 
-- Workspace router template (`template_workspace_claude.md`) extracted from the legacy outer wrapper per ADR-007. Directly installable to `~/lattice/CLAUDE.md`.
+- Workspace router template (`template_workspace_claude.md`) extracted from the legacy outer wrapper per ADR-007. Directly installable to `~/aDNA/CLAUDE.md`.
 - `deploy_manifest.yaml` → `.github/deploy_manifest.yaml`.
 - CI workflow caller-usage URLs refreshed to the new repo name.
 - Template-root `.gitignore` shipped with the v7 exclusion set.
@@ -279,12 +279,12 @@ Three places in this draft carry embargo markers; all use HTML-comment-wrapped g
 **Verification command** (M06 runs at publish time):
 
 ```bash
-cd ~/lattice/aDNA.aDNA
+cd ~/aDNA/aDNA.aDNA
 grep -c "ADR-010 embargo" how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m08a_social_comms_post_draft.md
 # expect: 4 (two guard comment-pairs, two markers each)
 
 # Wilhelm co-sign status check
-grep -A1 "co_signed_by:" /Users/stanley/lattice/WilhelmAI.aDNA/what/decisions/adr_010_*.md | head -5
+grep -A1 "co_signed_by:" /Users/stanley/aDNA/WilhelmAI.aDNA/what/decisions/adr_010_*.md | head -5
 # Inspect — if Wilhelm Anchor co-sign has landed, publish; if "pending", redact
 ```
 

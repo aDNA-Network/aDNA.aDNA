@@ -202,4 +202,4 @@ This contract names: ✅ (a) Q2 re-run trigger at M3.x ≥ 20-session corpus (§
 - [[../../../what/decisions/adr_016_per_mission_context_budget.md|ADR-016]] — Clause A + Clause C empirical constants (consumed by M2.4.5 AAR token-budget table)
 - [[../../../what/decisions/adr_022_tool_use_logging.md|ADR-022]] — PostToolUse hook contract (Clause C names m24_obj2 first consumer; this contract is the second analysis-dispatch consumer)
 - [[../campaign_adna_serious_tool_readiness.md|campaign master]] — M2.4.5 row + amendments-table 2026-05-20 entry
-- `/Users/stanley/lattice/node.aDNA/what/context/token_baselines.md` v0.1.3 — Appendix B per-directory AGENTS.md invariants spec verbatim (canonical-secondary source for invariants spec; this contract validates the spec at M3.x)
+- `/Users/stanley/aDNA/node.aDNA/what/context/token_baselines.md` v0.1.3 — Appendix B per-directory AGENTS.md invariants spec verbatim (canonical-secondary source for invariants spec; this contract validates the spec at M3.x)

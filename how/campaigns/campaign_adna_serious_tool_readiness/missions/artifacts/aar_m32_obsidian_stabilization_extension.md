@@ -177,7 +177,7 @@ The deployed Astro site hero + README banner on github.com + GitHub social-previ
 
 ## Operator follow-up
 
-1. **Upload `aDNABanner.png` to GitHub social-preview**: navigate to https://github.com/LatticeProtocol/aDNA.aDNA/settings → Social preview → drag and drop `aDNABanner.png`. The repo-root copy is at `/Users/stanley/lattice/aDNA.aDNA/aDNABanner.png`. No CLI/API path exists; this is a manual UI step.
+1. **Upload `aDNABanner.png` to GitHub social-preview**: navigate to https://github.com/LatticeProtocol/aDNA.aDNA/settings → Social preview → drag and drop `aDNABanner.png`. The repo-root copy is at `/Users/stanley/aDNA/aDNA.aDNA/aDNABanner.png`. No CLI/API path exists; this is a manual UI step.
 2. **Verify Vercel deployment** of the new banner after push: production URL should show the new pixel-art aDNA banner at the hero. If broken, revert via `git revert HEAD && git push`; the older `banner.jpg` is retained in tree as fallback per Phase B step 7 of the plan.
 3. **Verify GitHub README rendering**: open https://github.com/LatticeProtocol/aDNA.aDNA in browser; banner image should appear above the `# Agentic-DNA` heading.
 4. **Optional Playwright assertion** (after step 1 completes): re-run Playwright with a social-preview gate that asserts `<meta property="og:image">` on the rendered GitHub repo page points to the new banner.
@@ -206,7 +206,7 @@ The deployed Astro site hero + README banner on github.com + GitHub social-previ
 
 **Asset propagation**: New `aDNABanner.png` (1288×512 pixel-art aDNA wordmark; 762 KB; same asset as M3.2 S3 carry) added at `.adna/what/assets/aDNABanner.png` (lands on github.com at `what/assets/aDNABanner.png` post-flatten). Existing `.adna/what/assets/banner.jpg` (96 KB JPG; v7.0-era) retained alongside as a one-release-cycle fallback per the established M3.2 pattern.
 
-**Prose references unchanged** — lines 33, 38, 48, 72, 81, 83, 98, 141 describe the local cloned-template filesystem layout (`.adna/` as a directory in `~/lattice/`); these are intentionally correct and untouched.
+**Prose references unchanged** — lines 33, 38, 48, 72, 81, 83, 98, 141 describe the local cloned-template filesystem layout (`.adna/` as a directory in `~/aDNA/`); these are intentionally correct and untouched.
 
 **github.com render verified** via `gh api repos/LatticeProtocol/aDNA/contents/README.md` post-push:
 - Banner image: `<img src="what/assets/aDNABanner.png" alt="aDNA — retro pixel-art wordmark...">` ✓

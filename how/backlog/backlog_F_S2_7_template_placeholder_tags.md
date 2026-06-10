@@ -38,9 +38,9 @@ Recommend Option 3 (both) — small upstream change to template files + small `.
 
 ## Critical files
 
-- `/Users/stanley/lattice/.adna/how/templates/template_prd.md` (frontmatter `tags:`)
-- `/Users/stanley/lattice/.adna/how/templates/template_rfc.md` (frontmatter `tags:`)
-- `/Users/stanley/lattice/.adna/.obsidianignore` — add `how/templates/`
+- `/Users/stanley/aDNA/.adna/how/templates/template_prd.md` (frontmatter `tags:`)
+- `/Users/stanley/aDNA/.adna/how/templates/template_rfc.md` (frontmatter `tags:`)
+- `/Users/stanley/aDNA/.adna/.obsidianignore` — add `how/templates/`
 - Per-vault `.obsidianignore` (in each forked vault) inherits the change on next fork OR via canonicalization skill (T4)
 
 ## Source references

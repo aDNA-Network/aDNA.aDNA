@@ -30,8 +30,8 @@ This runbook is a **draft** — M03 may refine sequencing or add operator-specif
 
 | Persona | Starting state | Target state | Primary path |
 |---|---|---|---|
-| **Fresh-operator** | No `~/lattice/` workspace yet | Working `~/lattice/.adna/` direct-clone + workspace router | §3 (Fresh bootstrap) |
-| **Existing-operator-Stanley** | `~/lattice/` with `adna/` two-level + `.adna -> adna/.adna` symlink + active `.aDNA` projects | `~/lattice/.adna/` direct-clone + same `.aDNA` projects unaffected | §2 Path A (in-place rename) |
+| **Fresh-operator** | No `~/aDNA/` workspace yet | Working `~/aDNA/.adna/` direct-clone + workspace router | §3 (Fresh bootstrap) |
+| **Existing-operator-Stanley** | `~/aDNA/` with `adna/` two-level + `.adna -> adna/.adna` symlink + active `.aDNA` projects | `~/aDNA/.adna/` direct-clone + same `.aDNA` projects unaffected | §2 Path A (in-place rename) |
 | **Existing-operator-external** (Wilhelm Foundation, TAPP, Super League) | Local clone of own forked `.aDNA` vaults, may or may not have a `.adna/` symlink locally | Same as above | §2 Path A or §2 Path B (clean re-clone) per preference |
 | **Vault-only operator** (no template clone) | Has `.aDNA` project clones; never cloned the template repo | No-op for repo flatten; only adopts skill changes when they pull their vault's `.adna/` next | §4 (skill propagation only) |
 
@@ -45,15 +45,15 @@ Run the checks below **before** any migration step. Abort + ask if any check fai
 
 | Check | Command | Pass criterion |
 |---|---|---|
-| Template repo present (existing-operator only) | `ls -la ~/lattice/adna/` | Directory exists with `.adna/` subdir + `.git/` |
-| Template repo clean | `git -C ~/lattice/adna status --porcelain` | Empty output (no uncommitted changes) |
-| Template repo on `main` | `git -C ~/lattice/adna branch --show-current` | Outputs `main` |
-| Template repo synced | `git -C ~/lattice/adna pull --ff-only` | Returns `Already up to date` (or fast-forwards cleanly) |
-| Symlink intact (existing-operator only) | `readlink ~/lattice/.adna` | Outputs `adna/.adna` |
-| Symlink target valid | `test -f ~/lattice/.adna/MANIFEST.md && grep '^role: template' ~/lattice/.adna/MANIFEST.md` | Both succeed |
-| No active sessions in template | `ls ~/lattice/adna/.adna/how/sessions/active/ \| grep -v .gitkeep` | Empty |
-| All projects committed | `for d in ~/lattice/*.aDNA; do git -C "$d" status --porcelain; done` | All empty (commit any in-flight work before flatten — projects are unaffected by the flatten itself, but a clean tree is the right starting state) |
-| Backup exists | `ls ~/.lattice_backups/` (if you keep one) or `cp -a ~/lattice ~/lattice.pre-v7-backup` | Backup directory exists |
+| Template repo present (existing-operator only) | `ls -la ~/aDNA/adna/` | Directory exists with `.adna/` subdir + `.git/` |
+| Template repo clean | `git -C ~/aDNA/adna status --porcelain` | Empty output (no uncommitted changes) |
+| Template repo on `main` | `git -C ~/aDNA/adna branch --show-current` | Outputs `main` |
+| Template repo synced | `git -C ~/aDNA/adna pull --ff-only` | Returns `Already up to date` (or fast-forwards cleanly) |
+| Symlink intact (existing-operator only) | `readlink ~/aDNA/.adna` | Outputs `adna/.adna` |
+| Symlink target valid | `test -f ~/aDNA/.adna/MANIFEST.md && grep '^role: template' ~/aDNA/.adna/MANIFEST.md` | Both succeed |
+| No active sessions in template | `ls ~/aDNA/adna/.adna/how/sessions/active/ \| grep -v .gitkeep` | Empty |
+| All projects committed | `for d in ~/aDNA/*.aDNA; do git -C "$d" status --porcelain; done` | All empty (commit any in-flight work before flatten — projects are unaffected by the flatten itself, but a clean tree is the right starting state) |
+| Backup exists | `ls ~/.lattice_backups/` (if you keep one) or `cp -a ~/aDNA ~/aDNA.pre-v7-backup` | Backup directory exists |
 
 If any check fails, **stop**: fix the failing check before continuing.
 
@@ -69,21 +69,21 @@ Preserves the existing `.git/` history of the template repo + the existing `orig
 
 ```sh
 # Step 1: remove the symlink (no longer needed post-flatten)
-cd ~/lattice
+cd ~/aDNA
 rm .adna
 
 # Step 2: rename adna/ → .adna/ (the directory itself becomes the clone of the renamed repo)
 mv adna .adna
 
 # Step 3: confirm the .git/ moved cleanly
-git -C ~/lattice/.adna status
+git -C ~/aDNA/.adna status
 # Expected: clean working tree, branch main, ahead/behind by 0 commits
 
 # Step 4 (REQUIRED — M03 actually performs the flatten inside the repo):
 # At this point the repo still has the OLD structure (adna/.adna/* nested inside what is now .adna/.adna/).
 # M03's flatten work is committed UPSTREAM by Rosetta (the next git pull lands the flat structure).
 # Sync to land the flatten:
-cd ~/lattice/.adna
+cd ~/aDNA/.adna
 git pull --ff-only
 # After this pull, .adna/ contains the flattened structure directly:
 #   .adna/CLAUDE.md, .adna/MANIFEST.md, .adna/STATE.md, .adna/AGENTS.md, .adna/CHANGELOG.md, .adna/CONTRIBUTING.md, .adna/adna.md, .adna/README.md, .adna/LICENSE
@@ -99,11 +99,11 @@ git remote -v
 # (Optional because GitHub redirects keep the old URL working indefinitely.)
 
 # Step 6: verify symlink is gone + .adna/ is real directory
-ls -la ~/lattice/.adna  # should be a directory, NOT a symlink
-test -d ~/lattice/.adna -a ! -L ~/lattice/.adna && echo "OK: real directory" || echo "FAIL"
+ls -la ~/aDNA/.adna  # should be a directory, NOT a symlink
+test -d ~/aDNA/.adna -a ! -L ~/aDNA/.adna && echo "OK: real directory" || echo "FAIL"
 
 # Step 7: verify template marker
-grep '^role: template' ~/lattice/.adna/MANIFEST.md
+grep '^role: template' ~/aDNA/.adna/MANIFEST.md
 # Expected: role: template
 ```
 
@@ -115,9 +115,9 @@ Discards local git state; re-clones from the renamed repo URL.
 
 ```sh
 # Step 1: remove old symlink + old repo directory
-cd ~/lattice
+cd ~/aDNA
 rm .adna
-rm -rf adna  # WARNING: this deletes ~/lattice/adna/.git/ — ensure no uncommitted work there first
+rm -rf adna  # WARNING: this deletes ~/aDNA/adna/.git/ — ensure no uncommitted work there first
 # (Pre-flight check from §1 confirmed clean tree, but doublecheck if uneasy)
 
 # Step 2: clone the renamed repo directly as .adna/
@@ -125,8 +125,8 @@ git clone https://github.com/LatticeProtocol/adna.git .adna
 # This is the canonical post-v7.0 fresh-install command.
 
 # Step 3: verify
-ls -la ~/lattice/.adna
-test -d ~/lattice/.adna && grep '^role: template' ~/lattice/.adna/MANIFEST.md
+ls -la ~/aDNA/.adna
+test -d ~/aDNA/.adna && grep '^role: template' ~/aDNA/.adna/MANIFEST.md
 # Both should succeed.
 ```
 
@@ -137,21 +137,21 @@ test -d ~/lattice/.adna && grep '^role: template' ~/lattice/.adna/MANIFEST.md
 Keep both old and new in parallel for a verification window (operators who want to compare before fully cutting over).
 
 ```sh
-# Step 1: keep ~/lattice/adna/ in place; rename the symlink to a backup
-cd ~/lattice
+# Step 1: keep ~/aDNA/adna/ in place; rename the symlink to a backup
+cd ~/aDNA
 mv .adna .adna.pre-v7  # symlink renamed (still points at adna/.adna)
 
 # Step 2: clone the new flat repo as .adna
 git clone https://github.com/LatticeProtocol/adna.git .adna
 
 # Step 3: compare
-diff -r ~/lattice/.adna.pre-v7/ ~/lattice/.adna/  # expect: structural differences (flatten took effect)
+diff -r ~/aDNA/.adna.pre-v7/ ~/aDNA/.adna/  # expect: structural differences (flatten took effect)
 # Spot-check a few specific files for content equivalence:
-diff ~/lattice/.adna.pre-v7/CLAUDE.md ~/lattice/.adna/CLAUDE.md  # expect: identical or trivial diff
+diff ~/aDNA/.adna.pre-v7/CLAUDE.md ~/aDNA/.adna/CLAUDE.md  # expect: identical or trivial diff
 
 # Step 4: when satisfied, delete the old:
-rm ~/lattice/.adna.pre-v7  # removes only the renamed symlink
-rm -rf ~/lattice/adna       # removes the old two-level repo (verify clean tree first)
+rm ~/aDNA/.adna.pre-v7  # removes only the renamed symlink
+rm -rf ~/aDNA/adna       # removes the old two-level repo (verify clean tree first)
 ```
 
 **Total time**: variable — depends on operator's verification effort.
@@ -160,12 +160,12 @@ rm -rf ~/lattice/adna       # removes the old two-level repo (verify clean tree 
 
 ## §3 Fresh-operator bootstrap path
 
-For operators with **no** existing `~/lattice/` workspace yet.
+For operators with **no** existing `~/aDNA/` workspace yet.
 
 ```sh
 # Step 1: create the workspace
-mkdir -p ~/lattice
-cd ~/lattice
+mkdir -p ~/aDNA
+cd ~/aDNA
 
 # Step 2: clone the template repo as .adna
 git clone https://github.com/LatticeProtocol/adna.git .adna
@@ -178,16 +178,16 @@ cp .adna/how/templates/template_workspace_claude.md CLAUDE.md
 bash .adna/setup.sh
 
 # Step 5: verify
-ls -la ~/lattice/
+ls -la ~/aDNA/
 # Expected:
 #   .adna/        ← cloned template (real directory, not symlink)
 #   CLAUDE.md     ← workspace router (your customized copy)
-test -d ~/lattice/.adna && test -f ~/lattice/CLAUDE.md && echo "OK"
+test -d ~/aDNA/.adna && test -f ~/aDNA/CLAUDE.md && echo "OK"
 ```
 
 **Total time**: ~30 seconds + Obsidian setup time if running Step 4.
 
-**Project creation** is then per `skill_project_fork.md` (next session opens in `~/lattice/` and the operator runs project creation as usual).
+**Project creation** is then per `skill_project_fork.md` (next session opens in `~/aDNA/` and the operator runs project creation as usual).
 
 ---
 
@@ -204,12 +204,12 @@ For operators who want the new skills (M05's `skill_git_remote_setup`, `skill_de
 # (if not, follow §3 fresh-operator path through Step 2)
 
 # Step 2: copy desired skills into the vault's how/skills/
-cp ~/lattice/.adna/how/skills/skill_git_remote_setup.md ~/lattice/<your-vault>.aDNA/how/skills/
-cp ~/lattice/.adna/how/skills/skill_deploy.md          ~/lattice/<your-vault>.aDNA/how/skills/
+cp ~/aDNA/.adna/how/skills/skill_git_remote_setup.md ~/aDNA/<your-vault>.aDNA/how/skills/
+cp ~/aDNA/.adna/how/skills/skill_deploy.md          ~/aDNA/<your-vault>.aDNA/how/skills/
 # Replace the existing skill_lattice_publish.md if M05 renames it; M05 ADR resolves the naming.
 
 # Step 3: commit per usual vault flow
-cd ~/lattice/<your-vault>.aDNA
+cd ~/aDNA/<your-vault>.aDNA
 git add how/skills/
 git commit -m "adopt aDNA v7.0 skill set: skill_git_remote_setup, skill_deploy, ..."
 git push
@@ -225,18 +225,18 @@ After completing §2, §3, or §4, run the verification harness below. **All che
 
 | # | Check | Command | Pass criterion |
 |---|---|---|---|
-| V1 | `.adna/` is a real directory, not a symlink | `test -d ~/lattice/.adna -a ! -L ~/lattice/.adna && echo OK` | `OK` printed |
-| V2 | `.adna/MANIFEST.md` has `role: template` | `grep '^role: template' ~/lattice/.adna/MANIFEST.md` | `role: template` printed |
-| V3 | `adna/` (old top-level wrapper) does not exist | `! test -d ~/lattice/adna && echo OK` | `OK` printed |
-| V4 | `.adna/` git repo is clean + on `main` + tracking origin | `git -C ~/lattice/.adna status` | `On branch main`, `Your branch is up to date with 'origin/main'`, `nothing to commit` |
-| V5 | `.adna/CLAUDE.md` exists at the new flat location (not at `.adna/.adna/`) | `test -f ~/lattice/.adna/CLAUDE.md && ! test -f ~/lattice/.adna/.adna/CLAUDE.md && echo OK` | `OK` printed |
-| V6 | `.adna/CHANGELOG.md` shows v7.0 entry | `head -50 ~/lattice/.adna/CHANGELOG.md \| grep -F '[v7.0]'` | Returns the v7.0 heading line |
-| V7 | `.github/deploy_manifest.yaml` is in its new location | `test -f ~/lattice/.adna/.github/deploy_manifest.yaml && ! test -f ~/lattice/.adna/deploy_manifest.yaml && echo OK` | `OK` printed |
-| V8 | New template (workspace CLAUDE.md) exists | `test -f ~/lattice/.adna/how/templates/template_workspace_claude.md && echo OK` | `OK` printed |
-| V9 | `skill_workspace_init.md` is formally retired (status field) | `grep '^status:' ~/lattice/.adna/how/skills/skill_workspace_init.md` | Outputs `status: retired` (or whatever M03 chose; was `active` pre-v7) |
-| V10 | `skill_workspace_upgrade.md` no longer creates the symlink | `! grep -F 'ln -s' ~/lattice/.adna/how/skills/skill_workspace_upgrade.md` | Returns 0 (grep finds nothing) |
-| V11 | Project vaults intact and operable | `ls ~/lattice/*.aDNA/CLAUDE.md \| wc -l` | Count matches your project count (e.g., 19 for Stanley) |
-| V12 | Workspace router (`~/lattice/CLAUDE.md`) loads correctly | Open `claude` from `~/lattice/`, observe greeting | Berthier (workspace persona) greets correctly + lists projects |
+| V1 | `.adna/` is a real directory, not a symlink | `test -d ~/aDNA/.adna -a ! -L ~/aDNA/.adna && echo OK` | `OK` printed |
+| V2 | `.adna/MANIFEST.md` has `role: template` | `grep '^role: template' ~/aDNA/.adna/MANIFEST.md` | `role: template` printed |
+| V3 | `adna/` (old top-level wrapper) does not exist | `! test -d ~/aDNA/adna && echo OK` | `OK` printed |
+| V4 | `.adna/` git repo is clean + on `main` + tracking origin | `git -C ~/aDNA/.adna status` | `On branch main`, `Your branch is up to date with 'origin/main'`, `nothing to commit` |
+| V5 | `.adna/CLAUDE.md` exists at the new flat location (not at `.adna/.adna/`) | `test -f ~/aDNA/.adna/CLAUDE.md && ! test -f ~/aDNA/.adna/.adna/CLAUDE.md && echo OK` | `OK` printed |
+| V6 | `.adna/CHANGELOG.md` shows v7.0 entry | `head -50 ~/aDNA/.adna/CHANGELOG.md \| grep -F '[v7.0]'` | Returns the v7.0 heading line |
+| V7 | `.github/deploy_manifest.yaml` is in its new location | `test -f ~/aDNA/.adna/.github/deploy_manifest.yaml && ! test -f ~/aDNA/.adna/deploy_manifest.yaml && echo OK` | `OK` printed |
+| V8 | New template (workspace CLAUDE.md) exists | `test -f ~/aDNA/.adna/how/templates/template_workspace_claude.md && echo OK` | `OK` printed |
+| V9 | `skill_workspace_init.md` is formally retired (status field) | `grep '^status:' ~/aDNA/.adna/how/skills/skill_workspace_init.md` | Outputs `status: retired` (or whatever M03 chose; was `active` pre-v7) |
+| V10 | `skill_workspace_upgrade.md` no longer creates the symlink | `! grep -F 'ln -s' ~/aDNA/.adna/how/skills/skill_workspace_upgrade.md` | Returns 0 (grep finds nothing) |
+| V11 | Project vaults intact and operable | `ls ~/aDNA/*.aDNA/CLAUDE.md \| wc -l` | Count matches your project count (e.g., 19 for Stanley) |
+| V12 | Workspace router (`~/aDNA/CLAUDE.md`) loads correctly | Open `claude` from `~/aDNA/`, observe greeting | Berthier (workspace persona) greets correctly + lists projects |
 | V13 | Project router (any `.aDNA/CLAUDE.md`) loads correctly | Open `claude` from any `.aDNA/`, observe greeting | Project persona (Rosetta / Daedalus / etc.) greets correctly |
 
 If V1–V11 pass but V12 or V13 fail, the agent-side context is the issue — re-run startup and verify CLAUDE.md auto-loads.
@@ -311,7 +311,7 @@ If post-migration verification fails or operations break:
 ### Path A rollback (in-place rename — reversible)
 
 ```sh
-cd ~/lattice
+cd ~/aDNA
 # Restore the old structure:
 mv .adna adna   # rename back
 ln -s adna/.adna .adna   # restore symlink
@@ -322,7 +322,7 @@ test -L .adna && echo OK
 
 If you also pulled the M03 flatten commit, you'll need to revert it locally:
 ```sh
-cd ~/lattice/adna
+cd ~/aDNA/adna
 git log -1 --oneline   # find the flatten commit
 git revert <flatten-commit-sha>
 # OR: git reset --hard <pre-flatten-commit-sha>   # destructive; only if you know what you're doing
@@ -332,8 +332,8 @@ git revert <flatten-commit-sha>
 
 ```sh
 # If you made the §1 backup:
-rm -rf ~/lattice
-mv ~/lattice.pre-v7-backup ~/lattice
+rm -rf ~/aDNA
+mv ~/aDNA.pre-v7-backup ~/aDNA
 
 # Or re-clone the OLD repo URL (before the GitHub rename was performed):
 # (only works if the GitHub rename is also reversible — which it is, but file an issue with LatticeProtocol first)
@@ -341,16 +341,16 @@ mv ~/lattice.pre-v7-backup ~/lattice
 
 ### Path C rollback (parallel-keep)
 
-Trivial: just delete `~/lattice/.adna/` and rename the backup symlink:
+Trivial: just delete `~/aDNA/.adna/` and rename the backup symlink:
 ```sh
-cd ~/lattice
+cd ~/aDNA
 rm -rf .adna
 mv .adna.pre-v7 .adna
 ```
 
 ### Failure to roll back
 
-If you cannot restore the previous state, **post in `~/lattice/aDNA.aDNA/who/coordination/`** with the failing verification check and current state — Rosetta (or M03 author) will diagnose. The aDNA.aDNA campaign vault is the canonical channel for this campaign's incidents per ADR-004.
+If you cannot restore the previous state, **post in `~/aDNA/aDNA.aDNA/who/coordination/`** with the failing verification check and current state — Rosetta (or M03 author) will diagnose. The aDNA.aDNA campaign vault is the canonical channel for this campaign's incidents per ADR-004.
 
 ---
 

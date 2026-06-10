@@ -36,13 +36,13 @@ related_decisions:
 
 **Verdict**: **Zero drift** in the campaign-relevant scope (`.aDNA/` directories). The M01 Obj 0 ecosystem matrix remains accurate. M02 Obj 5 (locked baseline) inherits the M01 Obj 0 inventory verbatim with `validated_on: 2026-05-09` per row.
 
-**Out-of-scope observations**: Two non-`.aDNA/` items in `~/lattice/` are noted for awareness only; they have no effect on this campaign's blast radius (see §3).
+**Out-of-scope observations**: Two non-`.aDNA/` items in `~/aDNA/` are noted for awareness only; they have no effect on this campaign's blast radius (see §3).
 
 ---
 
 ## §1 Validation method
 
-`ls /Users/stanley/lattice/` was run twice at this session's start: once during plan authoring (pre-flight check) and once at Obj 1 execution. Both runs returned the identical listing. The listing was then filtered to `.aDNA/` suffix matches and sorted alphabetically; the resulting set was cross-referenced against [[m01_obj0_ecosystem_matrix.md|M01 Obj 0 §1 vault inventory table]] (which lists 19 active rows + 1 strikethrough/superseded row for ComicForge) and against [[../../../../CLAUDE.md|workspace router CLAUDE.md]] Project Discovery table.
+`ls /Users/stanley/aDNA/` was run twice at this session's start: once during plan authoring (pre-flight check) and once at Obj 1 execution. Both runs returned the identical listing. The listing was then filtered to `.aDNA/` suffix matches and sorted alphabetically; the resulting set was cross-referenced against [[m01_obj0_ecosystem_matrix.md|M01 Obj 0 §1 vault inventory table]] (which lists 19 active rows + 1 strikethrough/superseded row for ComicForge) and against [[../../../../CLAUDE.md|workspace router CLAUDE.md]] Project Discovery table.
 
 The validation operates at directory-name granularity only; it does not inspect vault contents (that's Obj 2-4 territory). The intent is to detect ecosystem-level changes (vault creation / rename / removal) that would invalidate downstream M08a per-vault coord memo authoring.
 
@@ -51,7 +51,7 @@ The validation operates at directory-name granularity only; it does not inspect 
 ## §2 Verbatim listing — `.aDNA/` directories on disk (2026-05-09)
 
 ```
-=== ls /Users/stanley/lattice/ | grep '\.aDNA$' | sort ===
+=== ls /Users/stanley/aDNA/ | grep '\.aDNA$' | sort ===
 aDNA.aDNA
 CanvasForge.aDNA
 ComfyForge.aDNA
@@ -84,7 +84,7 @@ zeta.aDNA
 
 ## §3 Out-of-scope observations (informational only)
 
-These items appeared in `ls /Users/stanley/lattice/` but are not `.aDNA/` directories and therefore not in M02's validation scope. They are noted here for forward-awareness only — they have no effect on M02 Obj 5 (locked baseline) or M08a per-vault coord memo authoring.
+These items appeared in `ls /Users/stanley/aDNA/` but are not `.aDNA/` directories and therefore not in M02's validation scope. They are noted here for forward-awareness only — they have no effect on M02 Obj 5 (locked baseline) or M08a per-vault coord memo authoring.
 
 | Item | Type | Documented in workspace router? | Disposition |
 |---|---|---|---|

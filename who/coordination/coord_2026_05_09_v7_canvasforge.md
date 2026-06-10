@@ -18,7 +18,7 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_p1_08a_upgrade_guide_and_coord_memos
 objective: 1
 target_mission: M08a
-mirror: /Users/stanley/lattice/CanvasForge.aDNA/who/coordination/coord_2026_05_09_v7_aDNA_adoption.md
+mirror: /Users/stanley/aDNA/CanvasForge.aDNA/who/coordination/coord_2026_05_09_v7_aDNA_adoption.md
 airlock_pattern: true
 operator_class: LatticeProtocol-internal
 external_party: (none)
@@ -47,7 +47,7 @@ This memo crosses from aDNA.aDNA (standard producer) to CanvasForge.aDNA (standa
 
 ## §2 What's changing in v7.0 (one-paragraph version)
 
-aDNA v7.0 is a Major Governance bump (Standard track unchanged at v2.2). Two breaking: (1) `~/lattice/.adna -> adna/.adna` symlink retires (M03 repo flatten); (2) publish-skill family rewrite replaces rsync with `git push` (M05). Three pull-based: v7.0 tag, repo rename, `deploy_manifest.yaml` move. Four opt-in patterns: `node.aDNA/`, `LatticeScope.aDNA`, airlock stub, naming convention codification. Full guide: [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj8_upgrade_guide_v6_to_v7.md|upgrade guide]].
+aDNA v7.0 is a Major Governance bump (Standard track unchanged at v2.2). Two breaking: (1) `~/aDNA/.adna -> adna/.adna` symlink retires (M03 repo flatten); (2) publish-skill family rewrite replaces rsync with `git push` (M05). Three pull-based: v7.0 tag, repo rename, `deploy_manifest.yaml` move. Four opt-in patterns: `node.aDNA/`, `LatticeScope.aDNA`, airlock stub, naming convention codification. Full guide: [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj8_upgrade_guide_v6_to_v7.md|upgrade guide]].
 
 ---
 

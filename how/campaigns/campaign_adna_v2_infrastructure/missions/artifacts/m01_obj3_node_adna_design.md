@@ -133,7 +133,7 @@ Hestia is the eldest of the six Olympians (Cronus + Rhea), sister of Zeus, Hera,
 | **Prometheus (`LatticeScope.aDNA`, future)** | Prometheus is the observability-tooling persona M10 designs. Hestia *is* the data source Prometheus reads — node-level inventory + telemetry. The two are tightly coupled: Hestia tends the data; Prometheus interprets it. |
 | **Asclepius (`RareHarness.aDNA`)** | Asclepius is the rare-disease clinical runtime persona; Hestia tracks RareHarness deployment health on this node (if the operator hosts a RareHarness instance). The platform runs on the node; the node hosts the platform. |
 | **Argus Panoptes (`III.aDNA`)** | Argus is the III framework persona — many-eyed observer. Hestia is the *node-local* eye Argus federates with. Argus runs III cycles across the lattice; Hestia provides the per-node ground-truth inventory that grounds those cycles. |
-| **Berthier (workspace router persona, `~/lattice/CLAUDE.md`)** | Berthier routes between projects; Hestia gives Berthier the inventory Berthier routes against. Berthier asks "which project?"; Hestia answers "these are the projects on this node, at these versions, with these health states." |
+| **Berthier (workspace router persona, `~/aDNA/CLAUDE.md`)** | Berthier routes between projects; Hestia gives Berthier the inventory Berthier routes against. Berthier asks "which project?"; Hestia answers "these are the projects on this node, at these versions, with these health states." |
 | **Rosetta (`aDNA.aDNA`)** | When the standard evolves (this campaign), Hestia tracks which version of the standard each vault on the node is on, and flags drift. |
 
 ### Greeting
@@ -315,7 +315,7 @@ In `lattice/CLAUDE.md` § `Project Discovery` § `Standard projects` table, inse
 In `lattice/CLAUDE.md` § `Workspace Layout` ASCII tree, insert (sorted alphabetically by name OR placed at top per its router-row prominence — operator preference; M04 picks):
 
 ```
-~/lattice/
+~/aDNA/
 ├── CLAUDE.md                # workspace router (this file)
 ├── .adna/                   # template clone (post-flatten)
 ├── node.aDNA/               # PER-NODE governance (Hestia) — inventory, health, memberships  ← NEW

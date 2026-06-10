@@ -18,7 +18,7 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_p1_08a_upgrade_guide_and_coord_memos
 objective: 1
 target_mission: M08a
-mirror: /Users/stanley/lattice/WilhelmAI.aDNA/who/coordination/coord_2026_05_09_v7_aDNA_adoption.md
+mirror: /Users/stanley/aDNA/WilhelmAI.aDNA/who/coordination/coord_2026_05_09_v7_aDNA_adoption.md
 wilhelm_foundation_mirror_path: (TBD per WilhelmAI ADR 010 publication-timing rules)
 airlock_pattern: true
 operator_class: external-org

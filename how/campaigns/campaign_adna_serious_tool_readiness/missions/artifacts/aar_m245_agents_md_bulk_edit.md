@@ -148,4 +148,4 @@ Propagation map:
 - [[../campaign_adna_serious_tool_readiness.md|campaign master]] — M2.4.5 row added at Phase 2 amendments
 - [[../CLAUDE.md|campaign CLAUDE.md]] — Campaign Standing Orders 11-19
 - [[../../../CLAUDE.md|project CLAUDE.md]] — Project Standing Orders 1-11
-- `/Users/stanley/lattice/node.aDNA/what/context/token_baselines.md` v0.1.3 Appendix B — invariants spec secondary canonical source (referenced by 4 of the 12 edited files via cross-links into ADR-016 Clause B)
+- `/Users/stanley/aDNA/node.aDNA/what/context/token_baselines.md` v0.1.3 Appendix B — invariants spec secondary canonical source (referenced by 4 of the 12 edited files via cross-links into ADR-016 Clause B)

@@ -36,9 +36,9 @@ Recommend implementing all 3 — they layer (verify primitive → health check i
 
 ## Critical files
 
-- `/Users/stanley/lattice/.adna/setup.sh` — add `--verify` mode (~30 lines of bash)
-- `/Users/stanley/lattice/.adna/how/skills/skill_node_health_check.md` OR `node.aDNA/how/skills/skill_node_health_check.md` — depending on upstream-vs-local decision
-- `/Users/stanley/lattice/.adna/how/skills/skill_project_fork.md` — optional post-fork verify gate
+- `/Users/stanley/aDNA/.adna/setup.sh` — add `--verify` mode (~30 lines of bash)
+- `/Users/stanley/aDNA/.adna/how/skills/skill_node_health_check.md` OR `node.aDNA/how/skills/skill_node_health_check.md` — depending on upstream-vs-local decision
+- `/Users/stanley/aDNA/.adna/how/skills/skill_project_fork.md` — optional post-fork verify gate
 
 ## Source references
 

@@ -14,14 +14,14 @@ last_edited_by: agent_stanley
 tags: [coordination, outbound, onboarding, workspace_default, lattice_to_adna, path_migration, ws5, operation_homecoming, upstream]
 ---
 
-# Coord — Rosetta → Berthier: new-user onboarding default `~/lattice/` → `~/aDNA/` (the upstream complement to WS-5)
+# Coord — Rosetta → Berthier: new-user onboarding default `~/aDNA/` → `~/aDNA/` (the upstream complement to WS-5)
 
 ## 1. Purpose
 Flag a newly-filed aDNA.aDNA upstream idea — [[../../how/backlog/idea_upstream_onboarding_workspace_default_adna|idea_upstream_onboarding_workspace_default_adna]] — as the **new-user-facing complement** to your operator-path migration `mission_path_migration_l1` (WS-5 capstone). One **sequencing decision** is yours (§4). This is a coordination notice, not a blocker.
 
 ## 2. Context
-- Operator asked (2026-06-04, during the E4 aDNANetwork session) *when new-user onboarding will set up `~/aDNA/` instead of `~/lattice/`.*
-- Two separable pieces: (a) the **operator's own** `~/lattice/ → ~/aDNA/` move = yours, `mission_path_migration_l1` (operator-path · L1-first · gated on the Home cascade · ~220-ref sweep · symlink shim). (b) the **new-user default** in the `.adna/` base template (`mkdir -p ~/lattice`) = an **upstream-standard** concern — workspace **Standing Rule 1** forbids local `.adna/` edits, so it flows to `LatticeProtocol/Agentic-DNA`. aDNA.aDNA (standard-owner) is the right party to *propose* it.
+- Operator asked (2026-06-04, during the E4 aDNANetwork session) *when new-user onboarding will set up `~/aDNA/` instead of `~/aDNA/`.*
+- Two separable pieces: (a) the **operator's own** `~/aDNA/ → ~/aDNA/` move = yours, `mission_path_migration_l1` (operator-path · L1-first · gated on the Home cascade · ~220-ref sweep · symlink shim). (b) the **new-user default** in the `.adna/` base template (`mkdir -p ~/aDNA`) = an **upstream-standard** concern — workspace **Standing Rule 1** forbids local `.adna/` edits, so it flows to `LatticeProtocol/Agentic-DNA`. aDNA.aDNA (standard-owner) is the right party to *propose* it.
 - The brief (`rosetta_deliverable_brief.md` §6) already locks `~/aDNA/` as the target and classifies the workspace-root rename as operator-path — this idea inherits that, it does not re-decide it.
 
 ## 3. What we're doing (this session — governance only, no `.adna/` edits)

@@ -33,7 +33,7 @@ related_decisions:
 
 ## AAR (lightweight)
 
-- **Worked**: The pre-flight drift check during plan authoring (re-running `ls /Users/stanley/lattice/` before session-open) collapsed Obj 1 from a discovery task to a lock task — the session opened already knowing the verdict and only needed to produce the artifact. Same pattern carried through Obj 2-3-4: queries pre-baked, session writes lock.
+- **Worked**: The pre-flight drift check during plan authoring (re-running `ls /Users/stanley/aDNA/` before session-open) collapsed Obj 1 from a discovery task to a lock task — the session opened already knowing the verdict and only needed to produce the artifact. Same pattern carried through Obj 2-3-4: queries pre-baked, session writes lock.
 - **Didn't**: Nothing material. The mission was designed-narrow at the M02 stub spec, expanded into full Read/Produce blocks at session start, and held its scope through close. No drift, no escalations, no scope creep.
 - **Finding**: **Verification missions can pre-bake their conclusions during plan-mode validation queries** and use the session itself to produce the lock artifact rather than to discover state. This shifts the cognitive work earlier (into plan authoring) and produces tighter session token profiles. Generalizable to any future P_n → P_{n+1} validation boundary in this or successor campaigns.
 - **Change**: For future verification missions in this campaign (M08b post-flatten propagation receipts is the obvious next instance), run validation queries during plan authoring; structure deliverables around lock-the-finding rather than discover-the-finding. Reduces session token cost; gives the operator a verdict-summary in the plan file before session-open.

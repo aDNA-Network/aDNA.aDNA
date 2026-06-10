@@ -14,7 +14,7 @@ text + live text is responsive + a11y).
 Auth: SS_GEMINI_API_KEY from macOS Keychain (reuses load_api_key from the cycle-101 runner).
 
 Usage:
-  cd /Users/stanley/lattice/aDNA.aDNA
+  cd /Users/stanley/aDNA/aDNA.aDNA
   # smoke (1 image, default direction D2):
   /opt/homebrew/bin/python3 how/campaigns/campaign_adna_serious_tool_readiness/runners/e1_hero_adna_network_gen.py --round smoke --direction D2 --variants 1
   # R1 fan-out (all 4 directions, 2 variants each = 8):
@@ -40,10 +40,10 @@ from pathlib import Path
 from PIL import Image
 
 # Reuse Keychain auth from cycle 101 runner (non-TTY-safe security lookup)
-sys.path.insert(0, str(Path("/Users/stanley/lattice/aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/runners")))
+sys.path.insert(0, str(Path("/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/runners")))
 from m53_cycle_101_og_cards_regen import load_api_key  # noqa: E402
 
-VAULT_ROOT = Path("/Users/stanley/lattice/aDNA.aDNA")
+VAULT_ROOT = Path("/Users/stanley/aDNA/aDNA.aDNA")
 OUT_DIR = VAULT_ROOT / "site/src/assets/heroes/candidates"
 LOG_DIR = VAULT_ROOT / "what/measurement/iii_results/2026-06"
 

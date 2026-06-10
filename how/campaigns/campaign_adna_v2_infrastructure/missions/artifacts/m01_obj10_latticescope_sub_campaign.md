@@ -38,7 +38,7 @@ related_decisions:
 | **Strategic intent** | Operationalize context-cost observability across the lattice — local-first, then federated, then anchored as community evidence base. Supersede frontier-lab proprietary observability folklore with public empirical methodology. |
 | **Persona** | **Prometheus** (per [[m01_obj10_prometheus_persona.md|persona spec]]) |
 | **Vault** | `LatticeScope.aDNA/` (per [[m01_obj10_latticescope_vault_design.md|vault design]]) |
-| **Code repo** | `~/lattice/latticescope/` (sibling repo; ADR-001 = Python primary) |
+| **Code repo** | `~/aDNA/latticescope/` (sibling repo; ADR-001 = Python primary) |
 | **Phase order** | P0 (local tool) → P1 (federation API) → P2 (benchmark community) → P3 (anchor paper) → P4 (closeout) |
 | **Mission count (preliminary)** | **10 missions**: MLS-0 (bootstrap) + MLS-1 / MLS-2 (P0) + MLS-3 / MLS-4 (P1) + MLS-5 / MLS-6 (P2) + MLS-7 / MLS-8 (P3) + MLS-9 (P4 closeout) |
 | **Effort estimate (preliminary)** | **30–55 sessions** total; recalibrated mission-by-mission against measurement data once MLS-1 ships the collector |
@@ -147,7 +147,7 @@ Four phases (P0 → P3) plus a P4 closeout. Each phase has explicit entry/exit g
 
 | ID | Phase | Subject | Effort (sessions) | Deliverables |
 |---|---|---|---|---|
-| **MLS-0** | bootstrap | Vault bootstrap + ADRs 000–003 + sibling code repo + workspace router update | 1–2 | `LatticeScope.aDNA/` materialized; `~/lattice/latticescope/` initialized; ADRs ratified |
+| **MLS-0** | bootstrap | Vault bootstrap + ADRs 000–003 + sibling code repo + workspace router update | 1–2 | `LatticeScope.aDNA/` materialized; `~/aDNA/latticescope/` initialized; ADRs ratified |
 | **MLS-1** | P0 | Collector hook + SQLite schema v0.1 + self-test mode + first baseline | 3–5 | `collector/hook.sh` + `store/schema.py` + `tests/`; first kT data |
 | **MLS-2** | P0 | Report templates (session / mission / campaign / heat-map / traversal / recipe-diff) + convergence validation | 3–5 | `reports/*.py`; convergence verdict v0 |
 | **MLS-3** | P1 | Federation protocol design + ADR-004 + ADR-005 (privacy framework) | 2–4 | `federation_protocol.md` + ADRs |

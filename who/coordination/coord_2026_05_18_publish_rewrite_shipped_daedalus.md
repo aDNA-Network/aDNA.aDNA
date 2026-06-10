@@ -20,7 +20,7 @@ audit_id: adna_v2_m05_s3_publish_shipped_announcement
 campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_p1_05_publish_skill_rewrite
 objective: mission_close_handoff
-mirror: /Users/stanley/lattice/Spacemacs.aDNA/who/coordination/coord_2026_05_18_adna_publish_rewrite_shipped.md  # mirror authored at Daedalus's discretion post-delivery
+mirror: /Users/stanley/aDNA/Spacemacs.aDNA/who/coordination/coord_2026_05_18_adna_publish_rewrite_shipped.md  # mirror authored at Daedalus's discretion post-delivery
 airlock_pattern: true   # additive announcement; adopts the bilateral co-sign memo (predecessor) as its anchor
 tags: [coordination, cross_graph, publish_rewrite, daedalus, rosetta, airlock_pattern, announcement, m05_close, v7_0_ship, migration_steps_1_4_trigger]
 ---
@@ -91,7 +91,7 @@ Per [[coord_2026_05_08_publish_rewrite.md#§4-spacemacs-side-migration-path-the-
   - [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/skill_lattice_publish_rewrite_spec.md|`skill_lattice_publish_rewrite_spec.md`]]
   - [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/skill_git_remote_setup_spec.md|`skill_git_remote_setup_spec.md`]]
   - [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/pre_push_hook_spec.md|`pre_push_hook_spec.md`]]
-- **Spacemacs backlog idea** (resolved at M05 close): `/Users/stanley/lattice/Spacemacs.aDNA/how/backlog/idea_skill_publish_lattice_git_fix.md` — flips `status: in_progress → closed` when Daedalus confirms Steps 1-4 end-to-end per predecessor §5
+- **Spacemacs backlog idea** (resolved at M05 close): `/Users/stanley/aDNA/Spacemacs.aDNA/how/backlog/idea_skill_publish_lattice_git_fix.md` — flips `status: in_progress → closed` when Daedalus confirms Steps 1-4 end-to-end per predecessor §5
 
 ---
 

@@ -19,7 +19,7 @@ cycle: 160
 operator_class: external-org
 external_party: Wilhelm Foundation (Helene & Mikk Cederroth)
 governs: WilhelmAI ADR-002 (attribution) + WilhelmAI ADR-010 (publication-timing)
-mirror: /Users/stanley/lattice/WilhelmAI.aDNA/who/coordination/   # operator-discretionary; not written cross-vault (Standing Rule 4)
+mirror: /Users/stanley/aDNA/WilhelmAI.aDNA/who/coordination/   # operator-discretionary; not written cross-vault (Standing Rule 4)
 delivery_held_until: hygieia-ack-OR-operator-close-deploy-greenlight
 tags: [coordination, cross_graph, rosetta, hygieia, wilhelmai, rarearchive, public_good_commons, e5, adr_010, adr_002, wilhelm_foundation, embargo_override, attribution_discipline]
 ---

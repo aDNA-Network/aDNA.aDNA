@@ -5,7 +5,7 @@ title: "VisualDNA.aDNA — Framework.aDNA for visual-DNA-per-entity standard ('a
 proposed_by: stanley
 proposed_at: 2026-05-23
 status: stub_vault_bootstrapped_awaiting_pilot_aar_then_activation
-stub_vault_path: ~/lattice/VisualDNA.aDNA/  (lightweight stub bootstrapped 2026-05-23)
+stub_vault_path: ~/aDNA/VisualDNA.aDNA/  (lightweight stub bootstrapped 2026-05-23)
 stub_vault_persona: Pygmalion
 stub_vault_activation_trigger: CanvasForge.aDNA pilot S6 AAR close + Stanley election
 priority: high
@@ -90,7 +90,7 @@ The CanvasForge v1.2 sub-campaign `M-V1-2-F-VDP-01` (Visual-DNA pilot) is **prov
 
 ## Pre-genesis-planning checklist (UPDATED 2026-05-23)
 
-**Update 2026-05-23**: Pilot scope expanded 3 → 6 sessions; stub vault bootstrapped at `~/lattice/VisualDNA.aDNA/` (persona Pygmalion); 5-consumer integration matrix documented.
+**Update 2026-05-23**: Pilot scope expanded 3 → 6 sessions; stub vault bootstrapped at `~/aDNA/VisualDNA.aDNA/` (persona Pygmalion); 5-consumer integration matrix documented.
 
 Items that must be true before genesis planning opens:
 

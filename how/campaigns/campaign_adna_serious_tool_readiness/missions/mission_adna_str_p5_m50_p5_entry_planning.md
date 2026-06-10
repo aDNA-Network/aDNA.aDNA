@@ -30,11 +30,11 @@ prerequisite_artifacts:
   - aDNA.aDNA/who/coordination/coord_2026_05_25_v8_p4_open_latticeterminal_handshake.md   # D2 Rosetta → Spock; pause_annotation field added at M5.0 D6
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m41_latticeterminal_state_synthesis.md   # D5 paired-read synthesis; major finding (LatticeTerminal already has skill_install) referenced
   # ScienceStanley Gemini setup (substrate; read-only)
-  - "/Users/stanley/lattice/ScienceStanley.aDNA/CLAUDE.md"   # SS persona; image-gen capability
-  - "/Users/stanley/lattice/ScienceStanley.aDNA/how/campaigns/campaign_ss_site_visual_polish/"   # 6+ Python consumer scripts for Gemini Imagen 4
+  - "/Users/stanley/aDNA/ScienceStanley.aDNA/CLAUDE.md"   # SS persona; image-gen capability
+  - "/Users/stanley/aDNA/ScienceStanley.aDNA/how/campaigns/campaign_ss_site_visual_polish/"   # 6+ Python consumer scripts for Gemini Imagen 4
   # CanvasForge substrate (substrate; read-only)
-  - "/Users/stanley/lattice/CanvasForge.aDNA/canvas_core/image_generation.py"   # substrate-neutral ImageRequest Protocol; Imagen 4 Ultra adapter
-  - "/Users/stanley/lattice/CanvasForge.aDNA/CLAUDE.md"   # Hermes persona; ADR-003 dataset schema
+  - "/Users/stanley/aDNA/CanvasForge.aDNA/canvas_core/image_generation.py"   # substrate-neutral ImageRequest Protocol; Imagen 4 Ultra adapter
+  - "/Users/stanley/aDNA/CanvasForge.aDNA/CLAUDE.md"   # Hermes persona; ADR-003 dataset schema
   # III modular system substrate (DESIGNED at M3.7; ratified ADR-025+026)
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m37_modular_iii_design_spec.md   # 6 primitives; especially P2 vault_card per-dimension scoring + P3 III-decadal cycle orchestration + P6 III result persistence
   - aDNA.aDNA/what/decisions/adr_025_iii_decadal_coordination.md   # ACCEPTED 2026-05-25; distributed-but-coordinated; ack-debt-protocol coord memo cycle

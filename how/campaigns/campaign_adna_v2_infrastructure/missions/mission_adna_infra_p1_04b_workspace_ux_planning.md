@@ -29,14 +29,14 @@ blocks: [mission_adna_infra_p2_05_publish_skill_rewrite]  # M05 deferred until m
 side_campaign: campaign_lattice_workspace_ux  # the side-campaign M04b populates
 external_dependencies:
   - node.aDNA/ at M04 baseline (audit target — design-only this mission; mini-campaign Mxx will mutate it)
-  - ~/lattice/ workspace (design target for Obsidian vault setup; mini-campaign Mxx will create .obsidian/)
-  - ~/lattice/.adna/ upstream template (potential upstream-contribution target if D5 resolves "yes" for any artifact; mini-campaign decides per-design)
+  - ~/aDNA/ workspace (design target for Obsidian vault setup; mini-campaign Mxx will create .obsidian/)
+  - ~/aDNA/.adna/ upstream template (potential upstream-contribution target if D5 resolves "yes" for any artifact; mini-campaign decides per-design)
   - Obsidian (target IDE for the workspace-vault UX; spec references but does not invoke)
   - LP context-graph registry/marketplace (web destination; M04b designs the link target — could be web page or future Obsidian extension)
 tags: [mission, planned, adna, infrastructure, p1, m04b, v7_0, workspace_ux, dynamic_bootstrap, obsidian_vault, planning_class, side_campaign_seed, lattice_workspace_ux]
 ---
 
-# Mission — M04b: Workspace UX Planning (Dynamic node.aDNA Bootstrap + ~/lattice/ Obsidian Vault)
+# Mission — M04b: Workspace UX Planning (Dynamic node.aDNA Bootstrap + ~/aDNA/ Obsidian Vault)
 
 **Phase**: P1 — Ecosystem mapping + upgrade guide + repo flatten + node vault. M04b
 follows M04's node.aDNA bootstrap with a planning pass that reviews M04 outputs against
@@ -67,9 +67,9 @@ interview-driven bootstrap**: agent asks the operator about purpose, user-info, 
 hardware, and desired lattice connections, then populates the new vault from a hybrid
 of auto-detection + interview answers.
 
-Separately, `~/lattice/` itself is not currently an Obsidian vault (verified absent
-`.obsidian/` at `/Users/stanley/lattice/`). The operator wants minimal Obsidian
-configuration at the workspace root so they can open `~/lattice/` as a vault and use
+Separately, `~/aDNA/` itself is not currently an Obsidian vault (verified absent
+`.obsidian/` at `/Users/stanley/aDNA/`). The operator wants minimal Obsidian
+configuration at the workspace root so they can open `~/aDNA/` as a vault and use
 the UI + integrated terminal to manage the full context lattice — including a home page
 gallery of context graphs (reading from `node.aDNA/what/inventory/inventory_vaults.yaml`
 as the source of truth) + a link to the LP registry/marketplace (web page or eventual
@@ -89,14 +89,14 @@ M01 Obj 3 §8 D7 federation-block 5-key-vs-8-key drift, the `inventory_membershi
 content, and the M04 AAR's surprise that the bootstrap-without-interview felt
 incomplete. Catching these before M05 ships the publish skills means the publish
 family can reference a mature workspace-UX baseline (e.g., `skill_vault_publish.md`
-can assume `~/lattice/` is an Obsidian vault if D2-D4 resolve that way).
+can assume `~/aDNA/` is an Obsidian vault if D2-D4 resolve that way).
 
 ---
 
 ## Hard constraints
 
 - **Design-only, no destructive ops**. M04b does not mutate `node.aDNA/`, does not
-  create `~/lattice/.obsidian/`, does not commit to `LatticeProtocol/adna` upstream
+  create `~/aDNA/.obsidian/`, does not commit to `LatticeProtocol/adna` upstream
   template. All implementation happens in the mini-campaign's execution missions
   (`campaign_lattice_workspace_ux/missions/M-LWX-*`).
 - **M04 outputs preserved**. The audit target stays at the M04-bootstrapped baseline
@@ -127,7 +127,7 @@ can assume `~/lattice/` is an Obsidian vault if D2-D4 resolve that way).
   question would have been answered for this vault's own bootstrap.
 - **Dual-audience (Standing Order #7)**: the design artifacts produced by the
   mini-campaign must be legible to (a) a developer wanting to extend the bootstrap
-  interview and (b) a non-developer operating their first `~/lattice/`.
+  interview and (b) a non-developer operating their first `~/aDNA/`.
 
 ---
 
@@ -180,7 +180,7 @@ Output: `m04b_obj2_skill_node_bootstrap_interview_spec.md` (full skill spec; M-L
 implements it as `.adna/how/skills/skill_node_bootstrap_interview.md` if D5 resolves
 "upstream").
 
-### Obj 3 — Design `~/lattice/` as Obsidian vault
+### Obj 3 — Design `~/aDNA/` as Obsidian vault
 
 Design the workspace-level Obsidian vault setup. Topics:
 
@@ -194,21 +194,21 @@ Design the workspace-level Obsidian vault setup. Topics:
 - **LP registry/marketplace link**: web link to `lattice-protocol.com/marketplace`
   (placeholder URL; M-LWX-02 confirms actual destination) OR placeholder for future
   Obsidian extension. D4 resolves the choice.
-- **Vault-in-vault handling**: outer `~/lattice/.obsidian/` must not conflict with
-  inner `~/lattice/<name>.aDNA/.obsidian/`. Mechanism: `~/lattice/.obsidianignore`
+- **Vault-in-vault handling**: outer `~/aDNA/.obsidian/` must not conflict with
+  inner `~/aDNA/<name>.aDNA/.obsidian/`. Mechanism: `~/aDNA/.obsidianignore`
   excluding all `*.aDNA/` subfolders so the outer vault's indexer doesn't traverse
   inner vaults. Precedent: `node.aDNA/.obsidianignore` excludes `.git/` + build
   artifacts + system files; outer ignore-list adds `*.aDNA/` pattern.
 - **Integrated terminal usage**: Obsidian's terminal plugin (if used) opens at
-  `~/lattice/` working directory; agent can be invoked from here; operator can run
+  `~/aDNA/` working directory; agent can be invoked from here; operator can run
   `claude` from the Obsidian terminal pane.
 - **Sub-vault opening pattern**: instructions for operator on how to open a specific
   `.aDNA/` as its own vault (separate Obsidian window) while keeping the outer
-  `~/lattice/` vault as the "control plane"
+  `~/aDNA/` vault as the "control plane"
 
 Output: `m04b_obj3_lattice_obsidian_vault_spec.md` (full setup spec; M-LWX-02
-implements it as `~/lattice/.obsidian/` + `~/lattice/HOME.md` (or `README.md` if
-home-page convention selected) + `~/lattice/.obsidianignore`).
+implements it as `~/aDNA/.obsidian/` + `~/aDNA/HOME.md` (or `README.md` if
+home-page convention selected) + `~/aDNA/.obsidianignore`).
 
 ### Obj 4 — Author `campaign_lattice_workspace_ux/` mini-campaign master + mission tree
 
@@ -219,7 +219,7 @@ session) with the full mission tree. Likely 3-5 missions:
   `skill_node_bootstrap_interview.md` per Obj 2 design; updates workspace router
   Step 0.3 to invoke it; may upstream to `.adna/` template per D5 resolution.
   Estimated 2-3 sessions (spec adoption + implementation + integration test).
-- **M-LWX-02 (`~/lattice/` Obsidian vault setup)**: creates `.obsidian/` config +
+- **M-LWX-02 (`~/aDNA/` Obsidian vault setup)**: creates `.obsidian/` config +
   home page + `.obsidianignore` per Obj 3 design; integration with
   `inventory_vaults.yaml` for the gallery. Estimated 2 sessions (config authoring +
   home-page authoring).
@@ -249,10 +249,10 @@ per Standing Order #1.
 | # | Decision | Options | Rosetta recommendation | Rationale |
 |---|---|---|---|---|
 | **D1** | Dynamic bootstrap depth | (a) auto-detect-only / (b) **hybrid** / (c) full-interview | **(b) hybrid** | Preserves M04's auto-detect strengths (8 tool versions, vault inventory) while adding interview for inherently operator-specific fields (purpose, connections). Avoids re-asking what's already detected. |
-| **D2** | Obsidian vault depth for `~/lattice/` | (a) markdown+canvas only / (b) **+Bases** / (c) +curated community plugins | **(b) +Bases** | Bases is built into modern Obsidian (no plugin install); renders `inventory_vaults.yaml` as a queryable table without external dependencies; zero-additional-tooling for the operator. Curated plugins are operator-installable later; M-LWX-02 doesn't preload them. |
+| **D2** | Obsidian vault depth for `~/aDNA/` | (a) markdown+canvas only / (b) **+Bases** / (c) +curated community plugins | **(b) +Bases** | Bases is built into modern Obsidian (no plugin install); renders `inventory_vaults.yaml` as a queryable table without external dependencies; zero-additional-tooling for the operator. Curated plugins are operator-installable later; M-LWX-02 doesn't preload them. |
 | **D3** | Vault-in-vault handling | (a) **exclude `.aDNA/` via `.obsidianignore`** / (b) nest as Obsidian sub-vaults / (c) something else | **(a) exclude via .obsidianignore** | Zero-conflict path. Each `.aDNA/` is opened as its own vault separately when the operator wants to work inside it. Outer vault stays focused on "control plane" usage. Precedent: `node.aDNA/.obsidianignore` excludes `.git/` + build artifacts. |
 | **D4** | Marketplace integration | (a) **web link only** / (b) Obsidian extension / (c) both | **(a) web link only** | Zero-effort. Obsidian extension is future work (potentially v8.0+ or a separate LP project). M-LWX-02 ships a markdown link to `lattice-protocol.com/marketplace` (URL placeholder; actual URL resolved at M-LWX-02 entry). |
-| **D5** | Upstream template changes (which artifacts ship to `.adna/`) | (a) **decide per-design** / (b) yes-write-everything-upstream / (c) no-local-only | **(a) decide per-design** | Per-design means M04b's Objectives 2 + 3 explicitly call out which artifacts should be upstreamed. Likely: `skill_node_bootstrap_interview.md` lives in `.adna/how/skills/` (upstream — future forks inherit); `~/lattice/.obsidian/` config stays local-only (workspace-scope not template-scope). |
+| **D5** | Upstream template changes (which artifacts ship to `.adna/`) | (a) **decide per-design** / (b) yes-write-everything-upstream / (c) no-local-only | **(a) decide per-design** | Per-design means M04b's Objectives 2 + 3 explicitly call out which artifacts should be upstreamed. Likely: `skill_node_bootstrap_interview.md` lives in `.adna/how/skills/` (upstream — future forks inherit); `~/aDNA/.obsidian/` config stays local-only (workspace-scope not template-scope). |
 
 Defaults are applied at S1 entry if operator does not surface them.
 
@@ -268,14 +268,14 @@ Defaults are applied at S1 entry if operator does not surface them.
 | M01 Obj 3 node.aDNA design | `missions/artifacts/m01_obj3_node_adna_design.md` | Obj 1, Obj 2 — authoritative design source M04 implemented from; gaps are deviations from this |
 | M04 AAR | `missions/artifacts/aar_m04_node_adna_bootstrap.md` | Obj 1 — items deferred + surprises + conceptual contributions inform gap analysis |
 | 10-dim audit artifact | `missions/artifacts/m04_obj7_ten_dim_audit.md` | Obj 1 — per-dimension score evidence + deltas |
-| Bootstrapped `node.aDNA/` | `/Users/stanley/lattice/node.aDNA/` (read-only) | Obj 1 — ground truth of what landed |
-| Workspace router 4 additions | `/Users/stanley/lattice/CLAUDE.md` (read-only) | Obj 1, Obj 2 — Step 0.3 is the entry point M04b extends |
+| Bootstrapped `node.aDNA/` | `/Users/stanley/aDNA/node.aDNA/` (read-only) | Obj 1 — ground truth of what landed |
+| Workspace router 4 additions | `/Users/stanley/aDNA/CLAUDE.md` (read-only) | Obj 1, Obj 2 — Step 0.3 is the entry point M04b extends |
 | `skill_project_fork.md` | `.adna/how/skills/skill_project_fork.md` | Obj 2 — composes with the new interview skill |
 | `skill_inventory_refresh.md` | `node.aDNA/how/skills/skill_inventory_refresh.md` | Obj 2 — auto-detect component that interview skill complements |
 | `skill_upstream_contribution.md` | `.adna/how/skills/skill_upstream_contribution.md` | Obj 4, Obj 5 — discipline for cross-graph findings → v2 main campaign |
 | Obsidian app.json / workspace.json schemas | Obsidian docs (public) | Obj 3 — minimal config field reference |
-| `node.aDNA/.obsidianignore` | `/Users/stanley/lattice/node.aDNA/.obsidianignore` | Obj 3 — vault-in-vault exclusion pattern precedent |
-| `node.aDNA/what/inventory/inventory_vaults.yaml` | `/Users/stanley/lattice/node.aDNA/what/inventory/inventory_vaults.yaml` | Obj 3 — data source for the home-page gallery |
+| `node.aDNA/.obsidianignore` | `/Users/stanley/aDNA/node.aDNA/.obsidianignore` | Obj 3 — vault-in-vault exclusion pattern precedent |
+| `node.aDNA/what/inventory/inventory_vaults.yaml` | `/Users/stanley/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml` | Obj 3 — data source for the home-page gallery |
 | ADRs 004-009 | `what/decisions/adr_00{4..9}_*.md` | Obj 2, Obj 3 — naming convention + repo flatten + airlock + template stub all constrain the design space |
 | M02 baseline | `missions/artifacts/m02_obj5_ecosystem_baseline_locked.md` | Obj 3 — vault catalog the home-page gallery enumerates |
 
@@ -310,7 +310,7 @@ Forecast checklist (~10-12 boxes at mission open):
 - [ ] Obj 3 Obsidian vault spec covers `.obsidian/` minimal config (≥4 config files) + home page format (markdown / Canvas / Bases per D2) + LP marketplace link target + `.obsidianignore` pattern + sub-vault opening pattern
 - [ ] Obj 4 side-campaign master populated with full Strategic Intent + Scope table + Phase structure + Mission tree (3-5 missions)
 - [ ] Obj 4 ≥3 mission stub files authored in `campaign_lattice_workspace_ux/missions/` (M-LWX-01/02/03 minimum)
-- [ ] D5 resolution explicit per artifact: each design artifact in Obj 2 + Obj 3 marked upstream (`.adna/`) or local (`~/lattice/`)
+- [ ] D5 resolution explicit per artifact: each design artifact in Obj 2 + Obj 3 marked upstream (`.adna/`) or local (`~/aDNA/`)
 - [ ] Mission AAR landed (lightweight 5-line; 4-category extended findings if M04b spans 2 sessions)
 - [ ] Mission file frontmatter `status: planned → in_progress → completed`
 - [ ] Campaign master M04b row flipped `next/planned → in_progress → completed`; mini-campaign first mission noted as `next`
@@ -349,7 +349,7 @@ Forecast checklist (~10-12 boxes at mission open):
 **Outputs landed**:
 1. [[artifacts/m04b_obj1_dynamic_ux_gap_analysis.md|`m04b_obj1_dynamic_ux_gap_analysis.md`]] — Obj 1 gap analysis (40 items classified across 8 categories; 7 strict gaps + 2 overlay gaps mapped to 5 interview topics)
 2. [[artifacts/m04b_obj2_skill_node_bootstrap_interview_spec.md|`m04b_obj2_skill_node_bootstrap_interview_spec.md`]] — Obj 2 interview skill spec (19 questions × 5 topics; **D5 = upstream** ships to `.adna/how/skills/`)
-3. [[artifacts/m04b_obj3_lattice_obsidian_vault_spec.md|`m04b_obj3_lattice_obsidian_vault_spec.md`]] — Obj 3 Obsidian vault spec (5 `.obsidian/` config files + HOME.md + .obsidianignore + Step 0.5; **D5 = local** ships to `~/lattice/`)
+3. [[artifacts/m04b_obj3_lattice_obsidian_vault_spec.md|`m04b_obj3_lattice_obsidian_vault_spec.md`]] — Obj 3 Obsidian vault spec (5 `.obsidian/` config files + HOME.md + .obsidianignore + Step 0.5; **D5 = local** ships to `~/aDNA/`)
 4. Side-campaign master `campaign_lattice_workspace_ux/campaign_lattice_workspace_ux.md` flipped from "preliminary" to "finalized 2026-05-12 by v2 M04b S1"
 5. 3 mission stub files at `campaign_lattice_workspace_ux/missions/`:
    - `mission_lwx_01_dynamic_bootstrap_interview.md` (upstream)
@@ -360,7 +360,7 @@ Forecast checklist (~10-12 boxes at mission open):
 
 **Decisions resolved**: D1-D5 operator decisions all accepted at Rosetta defaults (b/b/a/a/a) at S1 entry; per-artifact D5 disposition explicit (Obj 2 upstream, Obj 3 local, mini-campaign M-LWX-03 mixed).
 
-**Hard constraints honored**: zero M04 / `node.aDNA/` / `~/lattice/.obsidian/` / upstream-repo / partner-vault / M08a / coord-memo / v7.0-tag mutations; ADRs 004-009 all stay accepted; ADR-010 stays not-drafted.
+**Hard constraints honored**: zero M04 / `node.aDNA/` / `~/aDNA/.obsidian/` / upstream-repo / partner-vault / M08a / coord-memo / v7.0-tag mutations; ADRs 004-009 all stay accepted; ADR-010 stays not-drafted.
 
 Hands off to **mini-campaign `campaign_lattice_workspace_ux/`** at operator discretion per Standing Order #1. M-LWX-01 (upstream interview skill) + M-LWX-02 (local Obsidian vault) are parallel-eligible. M-LWX-03 (integration + AAR + cross-graph findings) opens after both close. After M-LWX-03 close, v2 resumes at M05 (publish-skill rewrite; soft-gate released).
 
@@ -374,5 +374,5 @@ Hands off to **mini-campaign `campaign_lattice_workspace_ux/`** at operator disc
 - M04 AAR §Items deferred items 1-4 (registry_stub.md, rebuild_procedure.md, D7
   prose tightening, README frontmatter convention) — M04b Obj 1 evaluates which
   are addressable in the mini-campaign vs. carried forward to M07 / v3-EC.
-- Workspace router Step 0.3 (line 22-32 of `/Users/stanley/lattice/CLAUDE.md`) —
+- Workspace router Step 0.3 (line 22-32 of `/Users/stanley/aDNA/CLAUDE.md`) —
   the entry point M-LWX-01 extends to invoke the new interview skill.

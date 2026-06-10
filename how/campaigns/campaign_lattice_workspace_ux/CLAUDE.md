@@ -40,7 +40,7 @@ tags: [governance, campaign, planned, adna, workspace_ux, dynamic_bootstrap, obs
    - `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m04b_obj3_lattice_obsidian_vault_spec.md` (M-LWX-02's primary input)
 4. Read M04 outputs as ground-truth baseline:
    - `node.aDNA/` (bootstrapped vault at git HEAD `411660e`)
-   - `~/lattice/CLAUDE.md` workspace router (4 M04 additions)
+   - `~/aDNA/CLAUDE.md` workspace router (4 M04 additions)
 5. Open M-LWX-01 (interview implementation). First session adopts D1-D5 resolutions
    from M04b S1 (defaults or operator-overridden) without re-asking.
 
@@ -61,9 +61,9 @@ These augment the project-level standing orders in `aDNA.aDNA/CLAUDE.md`:
    gap analysis + interview spec + Obsidian vault spec.
 2. **D5 resolution must be explicit per artifact**. When implementing a skill or
    config file in this mini-campaign, the implementing session declares "this lands
-   at `.adna/how/skills/...` (upstream)" or "this lands at `~/lattice/...` (local
+   at `.adna/how/skills/...` (upstream)" or "this lands at `~/aDNA/...` (local
    only)" before the edit. No silent upstream/local choices.
-3. **Vault-in-vault discipline**. When the agent edits anywhere under `~/lattice/`,
+3. **Vault-in-vault discipline**. When the agent edits anywhere under `~/aDNA/`,
    it does NOT touch any `*.aDNA/` subfolder unless the mission explicitly scopes
    that vault. The outer workspace and inner project vaults are separate scopes.
    `.obsidianignore` enforces this at the indexer level.
@@ -98,7 +98,7 @@ Load these resources for mini-campaign work:
 | `node.aDNA/` (whole vault) | M-LWX-01 — bootstrap target vault |
 | `node.aDNA/what/inventory/inventory_vaults.yaml` | M-LWX-02 — home-page gallery data source |
 | `node.aDNA/.obsidianignore` | M-LWX-02 — vault-in-vault exclusion pattern precedent |
-| `~/lattice/CLAUDE.md` (workspace router) | M-LWX-01 — Step 0.3 invocation point for interview skill |
+| `~/aDNA/CLAUDE.md` (workspace router) | M-LWX-01 — Step 0.3 invocation point for interview skill |
 
 ## Delegation Notes
 
@@ -124,10 +124,10 @@ If you are an agent opening this campaign for the first time:
 
 ## Vault-in-vault disclaimer
 
-`~/lattice/` will become an Obsidian vault when M-LWX-02 ships. The
+`~/aDNA/` will become an Obsidian vault when M-LWX-02 ships. The
 `*.aDNA/` subfolders (e.g., `aDNA.aDNA/`, `node.aDNA/`, `SiteForge.aDNA/`) remain
-their own Obsidian vaults. Operators open the outer `~/lattice/` vault for "control
+their own Obsidian vaults. Operators open the outer `~/aDNA/` vault for "control
 plane" work (browsing the lattice catalog, jumping to specific vaults) and open
 inner `.aDNA/` vaults separately for project work. The `.obsidianignore` at
-`~/lattice/.obsidianignore` enforces non-overlap so the outer vault's indexer never
+`~/aDNA/.obsidianignore` enforces non-overlap so the outer vault's indexer never
 sees inner-vault content as its own.

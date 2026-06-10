@@ -26,7 +26,7 @@ tags: [design_spec, proposed_patch, m3_2, obj_3, t3, plugin_binary_install_valid
 >
 > **Bundle vs. separate v8 P6 candidacy**: T3's primary patch (`--verify` mode) is the **6th-instance additive-upstream candidate** after T1's 5th. Alternative bundle: T1 + T3 land together as a single "setup.sh hardening" commit (still single-commit additive-upstream from the *commit count* perspective; the pattern is about logical-commit minimalism, not file-count). v8 P6 decision at entry-gate per Campaign SO #5 (absorbed-campaign) lineage.
 >
-> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/lattice/.adna/`. All patch text is literal diff content for v8 P6 to apply.
+> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/aDNA/.adna/`. All patch text is literal diff content for v8 P6 to apply.
 
 ## 1. Finding statement (F-S2-2)
 
@@ -74,7 +74,7 @@ Three layered causes that compound:
 
 ```bash
 # Scenario A: fresh fork → all enabled plugins should report MISSING
-cd ~/lattice/<test_project>.aDNA/
+cd ~/aDNA/<test_project>.aDNA/
 ./setup.sh --verify
 # Expect: exit 1 + "15 plugins enabled, 0 installed" report
 

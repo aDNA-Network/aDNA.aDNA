@@ -45,7 +45,7 @@ The rename is scope-vs-role-anchored, NOT a protocol-vocabulary change. **PRESER
 - Identity/inventory filenames: `identity_node`, `inventory_node*` row labels
 
 CHANGED (vault directory name only):
-- `~/lattice/node.aDNA/` → `~/lattice/LatticeHome.aDNA/`
+- `~/aDNA/node.aDNA/` → `~/aDNA/LatticeHome.aDNA/`
 - `project_name = node` (in `skill_project_fork.md` invocation) → `project_name = LatticeHome`
 - Operator-facing dashboard text: "node.aDNA vault" → "LatticeHome.aDNA vault"
 - Bootstrap interview produces `LatticeHome.aDNA/` (not `node.aDNA/`)
@@ -66,5 +66,5 @@ CHANGED (vault directory name only):
 - R06 AAR: `mission_lattice_comp_r06_other_vault_sweep.md` + 10 coord memos at each cross-vault's `who/coordination/`
 - R07 AAR (this filing): `mission_lattice_comp_r07_adna_template_upstream.md`
 - ADR-013 §Exception ratification (R02): `LatticeHome.aDNA/what/decisions/adr_013_naming_governance.md`
-- Workspace router (R04): `~/lattice/CLAUDE.md`
+- Workspace router (R04): `~/aDNA/CLAUDE.md`
 - Plan: `~/.claude/plans/please-read-the-claude-md-silly-octopus.md` (D5-Revised 2026-05-28)

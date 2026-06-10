@@ -44,7 +44,7 @@ related_decisions:
 The `adna/` template repo on disk + how it appears at the workspace root via symlink.
 
 ```
-~/lattice/                                  ← workspace root (NOT a git repo)
+~/aDNA/                                  ← workspace root (NOT a git repo)
 ├── CLAUDE.md                               ← workspace router (Berthier — workspace identity)
 ├── .adna -> adna/.adna                     ← FRAGILE symlink (target: workspace's own subdirectory; broken if adna/ is moved)
 │
@@ -91,7 +91,7 @@ The `adna/` template repo on disk + how it appears at the workspace root via sym
 **Target structure (post-M03 flatten)** for reference (NOT current state):
 
 ```
-~/lattice/                                  ← workspace root
+~/aDNA/                                  ← workspace root
 ├── CLAUDE.md                               ← workspace router (unchanged identity; updated layout diagram)
 ├── .adna/                                  ← IS the git repo (cloned directly; no symlink)
 │   ├── .git/
@@ -129,7 +129,7 @@ Inventory of `adna/.adna/how/skills/*.md`. Discrepancy flagged inline (Issue I-2
 | 3 | `skill_l1_upgrade.md` | agent | User asks about L1/compute/JupyterHub | rsync (for L1 setup, not publish) | no-change | M07 | ✓ |
 | 4 | `skill_lattice_publish.md` | agent | Publish/pull/compose a lattice via latlab CLI | **None** — this skill is about **lattice-registry publishing via latlab CLI**, NOT the vault-to-GitHub publishing flow. **Identical between template and Spacemacs.aDNA copy** (verified via `diff`). | **rename + scope-clarify** — proposal: rename to `skill_lattice_registry_publish.md` (or keep as-is); the *new* `skill_vault_publish.md` (or similar) handles the GitHub-publishing flow that the campaign trigger described. M05 ADR resolves naming. | M05 | ✓ |
 | 5 | `skill_new_entity_type.md` | agent | User wants to extend the ontology | None | no-change | M07 | ✓ |
-| 6 | `skill_onboarding.md` | agent | First-run detection in forked project | Hardcodes outer-CLAUDE-md flow + `~/lattice/` convention; no symlink references found | **light update** — verify §Step-1 still works post-flatten; no path changes needed | M03 verification | ✓ |
+| 6 | `skill_onboarding.md` | agent | First-run detection in forked project | Hardcodes outer-CLAUDE-md flow + `~/aDNA/` convention; no symlink references found | **light update** — verify §Step-1 still works post-flatten; no path changes needed | M03 verification | ✓ |
 | 7 | `skill_orchestration_tiers.md` | process | Multi-file tasks, tier classification | None | no-change | M07 | ✓ |
 | 8 | `skill_project_fork.md` | agent | Root CLAUDE.md project creation flow | Source path `.adna/` (works in current AND target structure); exclusion list incomplete for target | **update** — exclusion list grows: `.git/`, `.github/`, `README.md`, `LICENSE`, `setup.sh`, `prepare_for_onboarding.sh`, `deploy_manifest.yaml` (already in `.github/` post-M03 but be explicit) | M03 | ✓ |
 | 9 | `skill_sqlite_persistence.md` | process | Multi-agent persistence | None | no-change | M07 | ✓ |
@@ -225,7 +225,7 @@ Issue table feeding M02–M10. Format compatible with import into M07 audit find
 | **I-1** | Workspace router omits two active vaults (`strategic_interface_protocol.aDNA`, `SuperLeague.aDNA`) | standard | M07 (or M03 workspace `CLAUDE.md` update) | Add both to `lattice/CLAUDE.md` Project Discovery table with appropriate category (cross-org JV / Engagement); cross-link operators (TAPP, Super League). |
 | **I-2** | `skill_workspace_upgrade.md` exists in `.adna/how/skills/` but is missing from the Skills inventory table in `.adna/CLAUDE.md` (lines 217–232 list 13 skills; filesystem has 14) | standard | M05 + M07 | M05 adds the 3 new skills; M07 reconciles the table to match disk (16 skills total: 14 existing + 2 new) and audits ordering. Upstream finding — propagates to all forked vaults that adopt v7.0. |
 | **I-3** | 7 vaults (Spacemacs + 6 others) have **no git remote configured** | **blocker** for M05 generality | M02 (matrix detail) + M05 | M05's `skill_git_remote_setup.md` (NEW) handles all 7 cleanly. M02 confirms the list and sequences first-time-setup vs. rewrite-only adoption. Single-vault campaign-trigger is now a platform problem; treat as such. |
-| **I-4** | LPWhitepaper.aDNA uses non-standard `origin-whitepaper` named remote pointing at local-path `/Users/stanley/lattice/whitepaper` | standard | M05 | M05 decision: keep the named local remote *and* add a proper GitHub `origin` (additive — non-breaking), or migrate. Author the choice as an M05 ADR. |
+| **I-4** | LPWhitepaper.aDNA uses non-standard `origin-whitepaper` named remote pointing at local-path `/Users/stanley/aDNA/whitepaper` | standard | M05 | M05 decision: keep the named local remote *and* add a proper GitHub `origin` (additive — non-breaking), or migrate. Author the choice as an M05 ADR. |
 | **I-5** | wga.aDNA has no `how/skills/` directory at all | nice-to-fix | M07 | M07 vault audit assesses whether wga is missing standard scaffolding; backstop convention may be needed (e.g., a fresh-fork bootstrap that creates an empty skills dir + AGENTS.md). |
 | **I-6** | Campaign-trigger language was imprecise: "skill_lattice_publish uses a `.publish-clone/` workaround" → reality: skill is about latlab registry, the rsync workaround is operational and currently lives only in `Spacemacs.aDNA/.publish-clone/` (5.0M, gitignored) | standard | M05 | M05 ADR resolves naming: probable outcome is keep `skill_lattice_publish.md` for registry; create `skill_vault_publish.md` (or similar) for vault-to-GitHub. |
 | **I-7** | `skill_deploy.md` is referenced as a string in `Spacemacs.aDNA/.gitignore` ("regenerated by skill_deploy") but the file does not exist anywhere | nice-to-fix → resolves with NEW skill creation | M05 | M05 creates `skill_deploy.md` at template level; Spacemacs adopts on next pull. Confirms operator-intent precedent for the skill name. |

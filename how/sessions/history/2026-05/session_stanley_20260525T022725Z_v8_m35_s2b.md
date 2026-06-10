@@ -18,9 +18,9 @@ files_touched_planned:
   - aDNA.aDNA/how/skills/skill_home_polish.md                                          # D7a NEW
   - aDNA.aDNA/how/skills/skill_vault_card_authoring.md                                  # D7b NEW
   - aDNA.aDNA/what/decisions/adr_023_registry_data_projection_contract.md              # D8 NEW (status: draft at S2b)
-  - /Users/stanley/lattice/node.aDNA/HOME.md                                            # D7c.1 EDIT line 42 only
-  - /Users/stanley/lattice/node.aDNA/what/inventory/vault_gallery.base                  # D7c.2 NEW
-  - /Users/stanley/lattice/node.aDNA/what/vault_cards/the_*.aDNA.md                    # D7c.3+4 16 elab + 15 NEW
+  - /Users/stanley/aDNA/node.aDNA/HOME.md                                            # D7c.1 EDIT line 42 only
+  - /Users/stanley/aDNA/node.aDNA/what/inventory/vault_gallery.base                  # D7c.2 NEW
+  - /Users/stanley/aDNA/node.aDNA/what/vault_cards/the_*.aDNA.md                    # D7c.3+4 16 elab + 15 NEW
   - aDNA.aDNA/scripts/build_vaults_data.mjs                                            # D7c.5 NEW
   - aDNA.aDNA/site/src/data/vaults.json                                                # D7c.5 NEW (projected)
   - aDNA.aDNA/site/src/data/vaults.schema.json                                          # D7c.5 NEW
@@ -32,8 +32,8 @@ files_touched_planned:
   - aDNA.aDNA/site/src/components/sections/VaultClassFacet.astro                        # D7c.5 NEW
   - aDNA.aDNA/site/src/components/sections/VaultRelationshipBlock.astro                  # D7c.5 NEW
   - aDNA.aDNA/site/package.json                                                         # D7c.5 EDIT (+ prebuild + sync:vaults scripts; + yaml dep)
-  - /Users/stanley/lattice/node.aDNA/who/assets/vault_cards/*.jpg                       # D7d 31 images
-  - /Users/stanley/lattice/node.aDNA/who/assets/vault_cards/_pre_m35_s2b/                # D7d 7 archived
+  - /Users/stanley/aDNA/node.aDNA/who/assets/vault_cards/*.jpg                       # D7d 31 images
+  - /Users/stanley/aDNA/node.aDNA/who/assets/vault_cards/_pre_m35_s2b/                # D7d 7 archived
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p3_m35_home_polish_and_per_vault_info_pages.md  # EDIT Obj 6+7+8 pending → landed at close
 tags: [session, v8, p3, m35, s2b, rosetta, split_continuation, two_new_skills, skill_home_polish_new, skill_vault_card_authoring_new, populate_apply_pass, node_adna_home_line_42_rewrite, vault_gallery_base_new, sixteen_elaborations, fifteen_new_vault_cards, astro_vaults_routes_three, build_vaults_data_mjs_new, vaults_json_committed, mermaid_relationship_graph, adr_023_registry_data_projection_contract_draft, imagen_4_image_regen_31_cards, vertex_ai_direct_api, consistent_prompt_template, substrate_inversion_with_apply_pass_3rd_sub_pattern_candidate, cross_skill_primitive_composition_post_graduation_4th_5th_reinforcement, t8_forward_reference_stub_first_consumer_post_graduation_5th_and_6th, standing_order_8_18th_19th_tactical_invocations, scope_expansion_d7d_image_regen, no_push_at_s2b]
 ---
@@ -124,9 +124,9 @@ Started 2026-05-25T02:27:25Z. **CLOSED 2026-05-25T~04:15Z+** at SITREP commit. D
 2. NEW `aDNA.aDNA/how/skills/skill_home_polish.md`
 3. NEW `aDNA.aDNA/how/skills/skill_vault_card_authoring.md`
 4. NEW `aDNA.aDNA/what/decisions/adr_023_registry_data_projection_contract.md` (status: draft)
-5. EDIT `/Users/stanley/lattice/node.aDNA/HOME.md` (line 42 only — Gallery section; everything else preserved verbatim)
-6. NEW `/Users/stanley/lattice/node.aDNA/what/inventory/vault_gallery.base`
-7. EDIT × 16 + NEW × 15 `/Users/stanley/lattice/node.aDNA/what/vault_cards/the_*.aDNA.md` (= 31 cards at v0.2 schema)
+5. EDIT `/Users/stanley/aDNA/node.aDNA/HOME.md` (line 42 only — Gallery section; everything else preserved verbatim)
+6. NEW `/Users/stanley/aDNA/node.aDNA/what/inventory/vault_gallery.base`
+7. EDIT × 16 + NEW × 15 `/Users/stanley/aDNA/node.aDNA/what/vault_cards/the_*.aDNA.md` (= 31 cards at v0.2 schema)
 8. NEW `aDNA.aDNA/scripts/build_vaults_data.mjs`
 9. NEW `aDNA.aDNA/scripts/package.json` (yaml dep at script-location for ESM resolver; not in original T11 spec but required for Node 24 resolver semantics)
 10. NEW `aDNA.aDNA/site/src/data/vaults.json` (projected; 31 vaults; sha `63e28408c8e87f77`)

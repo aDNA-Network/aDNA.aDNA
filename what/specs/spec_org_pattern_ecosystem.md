@@ -8,7 +8,7 @@ version: "0.1"
 status: active
 last_edited_by: agent_stanley
 tags: [spec, ecosystem, org_vault, org_graph, network, aDNA_pattern]
-extraction_source: ~/lattice/CLAUDE.md lines 204-252 (extracted at compliance campaign M01)
+extraction_source: ~/aDNA/CLAUDE.md lines 204-252 (extracted at compliance campaign M01)
 co_signed_adr: aDNA.aDNA/what/decisions/adr_012_ecosystem_spec_extraction.md
 covers_categories: [Org-Vault.aDNA, Org-Graph.aDNA, Network.aDNA]
 ---
@@ -99,4 +99,4 @@ Deferred until ≥2 Network.aDNA instances (anti-premature-universality, same po
 
 ## Provenance
 
-Extracted from `~/lattice/CLAUDE.md` at `campaign_lattice_compliance_upgrade` M01 (2026-05-20). Pre-extraction location: workspace-router §§ Org-Vault / Org-Graph / Network (lines 204-252). Co-signed ADR: `aDNA.aDNA/what/decisions/adr_009_ecosystem_spec_extraction.md`.
+Extracted from `~/aDNA/CLAUDE.md` at `campaign_lattice_compliance_upgrade` M01 (2026-05-20). Pre-extraction location: workspace-router §§ Org-Vault / Org-Graph / Network (lines 204-252). Co-signed ADR: `aDNA.aDNA/what/decisions/adr_009_ecosystem_spec_extraction.md`.

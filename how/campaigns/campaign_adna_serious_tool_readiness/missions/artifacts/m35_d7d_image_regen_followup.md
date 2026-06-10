@@ -15,7 +15,7 @@ defer_decided_at: 2026-05-25T~04:00Z
 defer_authority: operator_stanley_via_askuserquestion_2026_05_25_post_phase_4
 plan_anticipated_at: please-read-the-claude-md-swift-bentley_md_mid_checkpoint_trigger_phase_5_defer_clause
 target_vault_count: 31
-target_directory: /Users/stanley/lattice/node.aDNA/who/assets/vault_cards/
+target_directory: /Users/stanley/aDNA/node.aDNA/who/assets/vault_cards/
 resolution_path_used: B  # Gemini API paid plan via SS_GEMINI_API_KEY macOS Keychain entry
 substrate_consumed: canvasforge_what_code_canvas_core_image_generation_py_plus_latlab_mcp_image_server_GeminiImageClient
 ledger_path: aDNA.aDNA/what/measurement/iii_results/2026-05/m355_d7d_regen.jsonl
@@ -179,6 +179,6 @@ No additional text or logos. No watermark.
 - [[m35_obj4_t10_design_spec.md|T10 design spec]] — vault_card schema includes `img_path:` field
 - [[../../../../what/decisions/adr_023_registry_data_projection_contract.md|ADR-023 (draft)]] — vault_card freshness semantics relate to but don't gate image-gen
 - [[../../../../what/decisions/adr_014_verification_handoff_topology.md|ADR-014]] — `verification_surface: operator` declaration; image visual review is operator-side
-- `/Users/stanley/lattice/node.aDNA/who/assets/vault_cards/` — target directory
-- `/Users/stanley/lattice/node.aDNA/what/inventory/inventory_vaults.yaml` — canonical vault list (31)
+- `/Users/stanley/aDNA/node.aDNA/who/assets/vault_cards/` — target directory
+- `/Users/stanley/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml` — canonical vault list (31)
 - Plan: `/Users/stanley/.claude/plans/please-read-the-claude-md-swift-bentley.md` Phase 5 mid-checkpoint defer-trigger

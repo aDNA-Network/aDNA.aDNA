@@ -21,7 +21,7 @@ prerequisite_missions:
   - mission_adna_infra_p3_08b_post_flatten_propagation_receipts  # M08b confirms ecosystem stability before installer ships
 prerequisite_adrs:
   - adr_006_github_repo_rename_to_adna  # accepted; installer clones LatticeProtocol/adna at v7.0 tag
-  - adr_007_outer_adna_claude_md_disposition  # accepted; installer copies template_workspace_claude.md → ~/lattice/CLAUDE.md (no symlink)
+  - adr_007_outer_adna_claude_md_disposition  # accepted; installer copies template_workspace_claude.md → ~/aDNA/CLAUDE.md (no symlink)
   - adr_008_airlock_template_stub  # drafted at M03; installer ensures airlock dir present at .adna/how/airlock/
   - adr_009_aDNA_naming_convention  # accepted; installer names directories per convention; template repo grandfathered exception honored
   - adr_011_semver_discipline_forecast  # forecast at M06 (Governance v7.0 tag); installer respects two-track Major.Minor policy
@@ -54,9 +54,9 @@ specifications, audits, or governance artifacts; M08c produces a running program
 
 ## Strategic Intent
 
-The current install flow for new operators is `git clone github.com/LatticeProtocol/Agentic-DNA ~/lattice && cd ~/lattice && claude` (per the `adna/README.md` Getting Started section). This works for v6.0 because the workspace structure is a simple two-level nest (`~/lattice/adna/.adna -> .adna` symlink). Post-v7.0, the install flow becomes multi-step: clone `LatticeProtocol/adna` at the v7.0 tag into `~/lattice/.adna/` (flat, no symlink); copy `template_workspace_claude.md` to `~/lattice/CLAUDE.md` with variable substitution (`{{created_date}}`, `{{compute_tier}}`, `{{adna_folder}}`); optionally run `setup.sh` for Obsidian plugin installation; optionally run `prepare_for_onboarding.sh` for L1 pre-flight checks. The README's git-clone-and-claude pattern no longer covers it.
+The current install flow for new operators is `git clone github.com/LatticeProtocol/Agentic-DNA ~/aDNA && cd ~/aDNA && claude` (per the `adna/README.md` Getting Started section). This works for v6.0 because the workspace structure is a simple two-level nest (`~/aDNA/adna/.adna -> .adna` symlink). Post-v7.0, the install flow becomes multi-step: clone `LatticeProtocol/adna` at the v7.0 tag into `~/aDNA/.adna/` (flat, no symlink); copy `template_workspace_claude.md` to `~/aDNA/CLAUDE.md` with variable substitution (`{{created_date}}`, `{{compute_tier}}`, `{{adna_folder}}`); optionally run `setup.sh` for Obsidian plugin installation; optionally run `prepare_for_onboarding.sh` for L1 pre-flight checks. The README's git-clone-and-claude pattern no longer covers it.
 
-M08c closes that gap by shipping a **standalone cross-platform installer** — a single command (or `.dmg`/`.msi`/`.deb` package, ADR-012 decides) that takes a new operator from "I have nothing" to "I have a working `~/lattice/` workspace with valid `.adna/` template, valid `CLAUDE.md` router, and a clear next-step prompt to launch Claude Code." Three platforms: **macOS** (Intel + Apple Silicon), **Windows** (PowerShell 5.1+), **Linux** (bash 4+; Ubuntu/Fedora/Arch as primary targets). The installer is greenfield-only — existing operators migrating from v6.0 use `skill_workspace_upgrade` (M03) + M08a per-vault coord memos, not this installer.
+M08c closes that gap by shipping a **standalone cross-platform installer** — a single command (or `.dmg`/`.msi`/`.deb` package, ADR-012 decides) that takes a new operator from "I have nothing" to "I have a working `~/aDNA/` workspace with valid `.adna/` template, valid `CLAUDE.md` router, and a clear next-step prompt to launch Claude Code." Three platforms: **macOS** (Intel + Apple Silicon), **Windows** (PowerShell 5.1+), **Linux** (bash 4+; Ubuntu/Fedora/Arch as primary targets). The installer is greenfield-only — existing operators migrating from v6.0 use `skill_workspace_upgrade` (M03) + M08a per-vault coord memos, not this installer.
 
 M08c is the **canonical greenfield path validation** for v7.0. By the time M08c executes (after M03/M04/M05/M06/M07/M08b), every template/process change made during the campaign has landed and been validated in the wild via M08b propagation receipts. The installer captures every change. If the installer works end-to-end on 3 platforms × 2 install modes (fresh + idempotent re-run abort), the campaign has empirically demonstrated that v7.0 works for cold-start operators — which is the closing-evidence M11 (final review) needs to synthesize against.
 
@@ -67,11 +67,11 @@ M08c is the **canonical greenfield path validation** for v7.0. By the time M08c 
 - **Cross-platform three targets**: macOS (Intel + Apple Silicon), Windows (PowerShell 5.1+ or compiled binary), Linux (bash 4+; Ubuntu 22.04 LTS + Fedora 39 + Arch as primary validation targets). Functional parity across all three.
 - **No package-manager dependency for installer execution**: operator may have git + curl/wget pre-installed (these are standard); installer does not assume Homebrew, apt-get, yum, dnf, pacman, chocolatey, or scoop. ADR-012 decides whether installer execution requires any runtime (e.g., compiled binary = none; bash + PowerShell pair = native shell only; Python+pyinstaller = bundled Python).
 - **Honors ADR-006** (clones `LatticeProtocol/adna` lowercase URL slug at the v7.0 tag, not `main`; pins exactly).
-- **Honors ADR-007** (copies `template_workspace_claude.md` to `~/lattice/CLAUDE.md` with variable substitution; no symlink; workspace CLAUDE.md is operator-customizable after install).
+- **Honors ADR-007** (copies `template_workspace_claude.md` to `~/aDNA/CLAUDE.md` with variable substitution; no symlink; workspace CLAUDE.md is operator-customizable after install).
 - **Honors ADR-008** (verifies `.adna/how/airlock/AIRLOCK.md` stub is present post-clone; surfaces operator guidance for opt-in airlock adoption).
-- **Honors ADR-009** (naming convention: snake_case workspace directories; template repo is the grandfathered exception per ADR-009 §5; installer does not enforce conventions on operator-supplied paths but defaults to `~/lattice/`).
+- **Honors ADR-009** (naming convention: snake_case workspace directories; template repo is the grandfathered exception per ADR-009 §5; installer does not enforce conventions on operator-supplied paths but defaults to `~/aDNA/`).
 - **Honors ADR-011 forecast** (semver discipline; installer prints the Governance v7.0 + Standard v2.2 version pair at install completion; respects two-track policy).
-- **Idempotency**: re-running installer on an existing `~/lattice/` aborts cleanly with operator guidance — recommends `skill_workspace_upgrade` for v6.0→v7.0 migration; does NOT overwrite or merge. Default behavior on existing-non-empty `~/lattice/`: print operator guidance + exit 0. Operator opt-in flag (`--force-greenfield`) reserved for future use; not in M08c scope.
+- **Idempotency**: re-running installer on an existing `~/aDNA/` aborts cleanly with operator guidance — recommends `skill_workspace_upgrade` for v6.0→v7.0 migration; does NOT overwrite or merge. Default behavior on existing-non-empty `~/aDNA/`: print operator guidance + exit 0. Operator opt-in flag (`--force-greenfield`) reserved for future use; not in M08c scope.
 - **No telemetry**; no analytics; no network calls beyond the git clone (`github.com/LatticeProtocol/adna.git` at v7.0 tag) + GitHub release asset fetch (if ADR-012 chooses that distribution).
 - **Greenfield-only scope**: not a substitute for `skill_workspace_upgrade` (existing-operator migration). Installer messaging makes the boundary explicit.
 - **Operator choice respected**: installer's optional steps (Obsidian setup, L1 pre-flight) default OFF and are operator-opt-in via flags (e.g., `--with-obsidian-setup`, `--with-l1-preflight`). Default install is minimal (just `.adna/` clone + workspace `CLAUDE.md`).
@@ -87,28 +87,28 @@ Design the installer end-to-end. Choose:
 - **Packaging approach**: curl-bash + PowerShell paired-script (simplest UX, no compilation, requires shell runtime) vs. compiled single binary (Go / Rust — no shell dependency, harder to update) vs. Python+pyinstaller (bundled Python, larger artifact). Trade-off analysis.
 - **Distribution mechanism**: GitHub release assets (curl from `github.com/LatticeProtocol/adna/releases/v7.0/...`) vs. curl-bash from `adna-docs.vercel.app/install` (operator runs `curl -sSL https://adna-docs.vercel.app/install | sh`) vs. npm `create-adna-workspace` (Node-dependent) vs. Homebrew tap `brew install latticeprotocol/tap/adna`.
 - **Update mechanism**: how does v7.1+ installer ship? In-place self-update vs. operator re-runs installer.
-- **Idempotency check mechanism**: how does the installer detect an existing `~/lattice/`? (Default: check for `~/lattice/.adna/` directory presence + read `.adna/MANIFEST.md` version field.)
+- **Idempotency check mechanism**: how does the installer detect an existing `~/aDNA/`? (Default: check for `~/aDNA/.adna/` directory presence + read `.adna/MANIFEST.md` version field.)
 
 Output: **ADR-012 draft** at `what/decisions/adr_012_installer_packaging_distribution.md` (status: proposed; ratified at M08c phase gate alongside Obj 4 validation matrix). 9 sections per ADR template + decision matrix + cross-platform feasibility analysis.
 
 ### Obj 2 — macOS + Linux installer implementation
 
 Build the installer for POSIX platforms (macOS Intel + Apple Silicon; Linux Ubuntu/Fedora/Arch). Likely shared bash code path OR shared compiled binary depending on ADR-012's choice. Functional scope:
-- Clone `github.com/LatticeProtocol/adna.git` at v7.0 tag → `~/lattice/.adna/`
-- Copy `~/lattice/.adna/how/templates/template_workspace_claude.md` → `~/lattice/CLAUDE.md` with variable substitution ({{created_date}} = today; {{compute_tier}} = L0 default; {{adna_folder}} = `.adna`)
+- Clone `github.com/LatticeProtocol/adna.git` at v7.0 tag → `~/aDNA/.adna/`
+- Copy `~/aDNA/.adna/how/templates/template_workspace_claude.md` → `~/aDNA/CLAUDE.md` with variable substitution ({{created_date}} = today; {{compute_tier}} = L0 default; {{adna_folder}} = `.adna`)
 - Verify ADR-008 airlock dir present
 - Verify ADR-009 naming on installer-created paths
-- Idempotency check + clean abort with operator guidance for existing `~/lattice/`
+- Idempotency check + clean abort with operator guidance for existing `~/aDNA/`
 - Optional `--with-obsidian-setup` flag: runs `.adna/setup.sh` (existing macOS-centric script — extended in Obj 2 to support Linux if needed)
 - Optional `--with-l1-preflight` flag: runs `.adna/prepare_for_onboarding.sh` (existing macOS-centric script — extended to support Linux if needed)
-- Post-install summary: prints workspace path, next-step command (`cd ~/lattice && claude`), version pair (Governance v7.0 + Standard v2.2), optional-features status.
+- Post-install summary: prints workspace path, next-step command (`cd ~/aDNA && claude`), version pair (Governance v7.0 + Standard v2.2), optional-features status.
 
 ### Obj 3 — Windows installer implementation
 
 Build the installer for Windows (PowerShell 5.1+ or compiled binary path depending on ADR-012). Functional parity with Obj 2. Windows-specific considerations:
 - Windows path separators (`\` vs `/`)
 - PowerShell execution policy (RemoteSigned bypass via signed script + Set-ExecutionPolicy guidance)
-- Windows-friendly default install location (`%USERPROFILE%\lattice\` instead of `~/lattice/`)
+- Windows-friendly default install location (`%USERPROFILE%\lattice\` instead of `~/aDNA/`)
 - Windows line-ending handling (`.gitattributes` respect; CRLF vs LF on workspace `CLAUDE.md`)
 - Obsidian setup on Windows (Obsidian plugin paths differ)
 - L1 pre-flight on Windows (out of scope — L1 stays macOS/Linux-only per current `prepare_for_onboarding.sh` scope; M08c Obj 3 may revisit)
@@ -119,7 +119,7 @@ End-to-end validation: **3 platforms × 2 install modes (fresh + idempotent re-r
 - ADR-006 conformance: installer clones lowercase `adna` URL slug + pins v7.0 tag
 - ADR-007 conformance: workspace `CLAUDE.md` is a copy with substituted variables, not a symlink
 - ADR-008 conformance: airlock dir present at `.adna/how/airlock/AIRLOCK.md`
-- ADR-009 conformance: directory naming (`~/lattice/` matches convention; `.adna/` is grandfathered)
+- ADR-009 conformance: directory naming (`~/aDNA/` matches convention; `.adna/` is grandfathered)
 - Workspace `CLAUDE.md` variable resolution: zero residual `{{` matches
 - `.adna/` post-flatten structure check: all expected directories present (`what/`, `how/`, `who/`, `airlock/`, etc.)
 - Operator next-step prompt clarity: post-install message is unambiguous
@@ -188,13 +188,13 @@ Per Standing Order #5: lightweight AAR + mission status flip + campaign master r
 Forecast checklist (~12-15 boxes at mission open):
 
 - [ ] ADR-012 drafted (status: proposed) and ratified at M08c phase gate
-- [ ] macOS installer runs cleanly on Intel + Apple Silicon; creates valid `~/lattice/` workspace
-- [ ] Linux installer runs cleanly on Ubuntu 22.04 + Fedora 39 + Arch; creates valid `~/lattice/` workspace
+- [ ] macOS installer runs cleanly on Intel + Apple Silicon; creates valid `~/aDNA/` workspace
+- [ ] Linux installer runs cleanly on Ubuntu 22.04 + Fedora 39 + Arch; creates valid `~/aDNA/` workspace
 - [ ] Windows installer runs cleanly on Windows 10/11 with PowerShell 5.1+; creates valid `%USERPROFILE%\lattice\` workspace
 - [ ] Workspace `CLAUDE.md` variable substitution: zero residual `{{` matches on any platform
 - [ ] `.adna/` clone pinned to v7.0 tag (not main/master); ADR-006 conformance verified
 - [ ] `.adna/how/airlock/AIRLOCK.md` present post-clone; ADR-008 conformance verified
-- [ ] Idempotent re-run on existing `~/lattice/` aborts cleanly with operator guidance on all 3 platforms
+- [ ] Idempotent re-run on existing `~/aDNA/` aborts cleanly with operator guidance on all 3 platforms
 - [ ] Optional `--with-obsidian-setup` flag works on macOS + Linux (Obj 3 may extend Windows)
 - [ ] Optional `--with-l1-preflight` flag works on macOS + Linux (Windows out of scope for M08c L1 path)
 - [ ] No telemetry; no analytics; no network calls beyond git clone + (optional) GitHub release asset fetch
@@ -219,7 +219,7 @@ Forecast checklist (~12-15 boxes at mission open):
 - [[artifacts/aar_m01_planning.md|M01 AAR]] — extended-findings style precedent (M08c AAR will inherit this pattern since cross-platform implementation likely warrants extended findings)
 - [[artifacts/m01_amendment_log.md|M01 amendment log]] — Campaign Amendment Session precedent
 - [[../../../what/decisions/adr_006_github_repo_rename_to_adna.md|ADR-006]] — installer clones lowercase `adna` slug at v7.0 tag
-- [[../../../what/decisions/adr_007_outer_adna_claude_md_disposition.md|ADR-007]] — installer copies template_workspace_claude.md to ~/lattice/CLAUDE.md (no symlink)
+- [[../../../what/decisions/adr_007_outer_adna_claude_md_disposition.md|ADR-007]] — installer copies template_workspace_claude.md to ~/aDNA/CLAUDE.md (no symlink)
 - ADR-008 (drafted at M03) — installer verifies airlock template stub present
 - [[../../../what/decisions/adr_009_aDNA_naming_convention.md|ADR-009]] — installer honors naming convention; template repo grandfathered exception
 - ADR-011 (forecast at M06) — installer respects semver two-track Major.Minor policy

@@ -18,9 +18,9 @@ files_created:
   - how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_m14_latticescope_schema.md
   - how/sessions/active/session_stanley_20260519T185248Z_v8_m14_s3.md  # this file (moves to history at close)
 external_files_modified:
-  - /Users/stanley/lattice/node.aDNA/what/context/token_baselines.md  # v0.1.0 → v0.1.1
-  - /Users/stanley/lattice/node.aDNA/what/context/token_baselines.yaml  # v0.1.0 → v0.1.1
-  - /Users/stanley/lattice/node.aDNA/what/inventory/inventory_vaults.yaml  # token_baselines row version-bump
+  - /Users/stanley/aDNA/node.aDNA/what/context/token_baselines.md  # v0.1.0 → v0.1.1
+  - /Users/stanley/aDNA/node.aDNA/what/context/token_baselines.yaml  # v0.1.0 → v0.1.1
+  - /Users/stanley/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml  # token_baselines row version-bump
 plan: /Users/stanley/.claude/plans/please-read-the-claude-md-noble-hartmanis.md
 completed: 2026-05-19T19:00Z
 ---

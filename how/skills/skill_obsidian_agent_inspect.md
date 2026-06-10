@@ -355,7 +355,7 @@ M3.7 ships III-on-Obsidian as an agent-driven inspection runtime. T8d skill prov
 ```bash
 $ ./how/skills/skill_obsidian_agent_inspect.md --mode agent_driven --vault . --profile default
 === Obsidian agent-driven inspection ===
-Target vault: /Users/stanley/lattice/aDNA.aDNA/
+Target vault: /Users/stanley/aDNA/aDNA.aDNA/
 Profile: default
 Mode (effective): agent_driven
 REST API: https://127.0.0.1:27124 reachable

@@ -394,7 +394,7 @@ Risk profile: medium
 Cross-vault impact: none
 
 Verdict: DISPATCHED
-Handoff: coord memo written at /Users/stanley/lattice/aDNA.aDNA/who/coordination/coord_2026_05_24_t7_dispatch_mission_adna_str_p3_m34_verification_handoff_and_agent_inspection.md; partner-persona auto to ack
+Handoff: coord memo written at /Users/stanley/aDNA/aDNA.aDNA/who/coordination/coord_2026_05_24_t7_dispatch_mission_adna_str_p3_m34_verification_handoff_and_agent_inspection.md; partner-persona auto to ack
 ```
 
 (Note: M3.4 mission spec frontmatter would declare `verification_surface: dispatch` for this dispatch to be auto-resolved per the declaration; absent declaration triggers ADR-014 Clause B auto-resolution per the decision tree.)
@@ -428,7 +428,7 @@ Risk profile: medium
 Cross-vault impact: SiteForge.aDNA
 
 Verdict: DISPATCHED
-Handoff: coord memo written at /Users/stanley/lattice/aDNA.aDNA/who/coordination/coord_2026_05_24_t7_dispatch_mission_siteforge_p5_canvas_substrate_landing.md; partner-persona hermes to ack
+Handoff: coord memo written at /Users/stanley/aDNA/aDNA.aDNA/who/coordination/coord_2026_05_24_t7_dispatch_mission_siteforge_p5_canvas_substrate_landing.md; partner-persona hermes to ack
 ```
 
 ## Cross-references

@@ -45,11 +45,11 @@ Plus supporting `audit/lib/`:
 **Use when**: this is the first or second consumer; you want zero duplication; the persistent browser profile being shared across consumers is acceptable (no concurrent cutovers).
 
 ```bash
-cd /Users/stanley/lattice/ScienceStanley.aDNA/audit
+cd /Users/stanley/aDNA/ScienceStanley.aDNA/audit
 
 # Point the scripts at the consumer's Vercel project + domain via env vars + a per-consumer inputs file.
 # Convention: stash a per-consumer inputs.json beside the consumer vault's mission file.
-CONSUMER_INPUTS=/Users/stanley/lattice/<consumer_vault>/how/missions/mission_<id>_dns_cutover_<domain>/audit/inputs.json \
+CONSUMER_INPUTS=/Users/stanley/aDNA/<consumer_vault>/how/missions/mission_<id>_dns_cutover_<domain>/audit/inputs.json \
 VERCEL_TOKEN=$(security find-generic-password -a "$USER" -s <consumer_token_name> -w) \
   npm run <script>
 ```
@@ -83,7 +83,7 @@ AUDIT_AUTO_CONFIRM=1 npx tsx scripts/m08_pd_discovery_add_cname.ts
 
 ## Path C (v0.3.0, future) — Shared workspace library
 
-**Planned**: workspace-shared `/Users/stanley/lattice/_shared/dns-cutover/` with per-consumer config files; consumers `npm link` the shared lib. Migration trigger: third consumer needing cutover within 60 days of v0.2.0.
+**Planned**: workspace-shared `/Users/stanley/aDNA/_shared/dns-cutover/` with per-consumer config files; consumers `npm link` the shared lib. Migration trigger: third consumer needing cutover within 60 days of v0.2.0.
 
 When v0.3.0 lands, this README will document the migration steps for Path A/B users.
 

@@ -19,7 +19,7 @@ tags: [adr, ecosystem, spec, claude_md_prune, router_token_budget]
 
 ## Context
 
-The workspace router (`~/lattice/CLAUDE.md`) carries the canonical descriptions of all six aDNA-pattern ecosystems (Forge / Platform / Framework / Org-Vault / Org-Graph / Network). At `campaign_lattice_compliance_upgrade` M01 baseline (2026-05-20), these six section bodies account for ~18,400 chars (~4,600 tokens; ~40% of the 43,525-char file).
+The workspace router (`~/aDNA/CLAUDE.md`) carries the canonical descriptions of all six aDNA-pattern ecosystems (Forge / Platform / Framework / Org-Vault / Org-Graph / Network). At `campaign_lattice_compliance_upgrade` M01 baseline (2026-05-20), these six section bodies account for ~18,400 chars (~4,600 tokens; ~40% of the 43,525-char file).
 
 Every session that opens in any project loads the workspace router at Step 1. The full ecosystem detail is rarely read in-router — its function is referential. Long descriptions belong in canonical spec files; the router belongs to short pointers.
 
@@ -52,4 +52,4 @@ The workspace router replaces each section with a 3-5 line pointer (persona+scop
 
 ## Provenance
 
-Drafted at `campaign_lattice_compliance_upgrade` M01 (2026-05-20). Applied at M01 Obj 6 (Stanley D3 = aggressive default sub-picks for `~/lattice/CLAUDE.md`).
+Drafted at `campaign_lattice_compliance_upgrade` M01 (2026-05-20). Applied at M01 Obj 6 (Stanley D3 = aggressive default sub-picks for `~/aDNA/CLAUDE.md`).

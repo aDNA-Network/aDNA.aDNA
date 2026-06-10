@@ -18,7 +18,7 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_p1_08a_upgrade_guide_and_coord_memos
 objective: 1
 target_mission: M08a
-mirror: /Users/stanley/lattice/LPWhitepaper.aDNA/who/coordination/coord_2026_05_09_v7_aDNA_adoption.md
+mirror: /Users/stanley/aDNA/LPWhitepaper.aDNA/who/coordination/coord_2026_05_09_v7_aDNA_adoption.md
 airlock_pattern: true
 operator_class: LatticeProtocol-internal
 external_party: (none)
@@ -56,7 +56,7 @@ aDNA v7.0 is a Major Governance bump. Two breaking (repo flatten + publish-skill
 | Vault category | Whitepaper-vault |
 | Persona | (none) |
 | Operator class | LatticeProtocol-internal |
-| Current git remote | `origin-whitepaper` → `/Users/stanley/lattice/whitepaper` (local-path remote, **grandfathered path-style**) |
+| Current git remote | `origin-whitepaper` → `/Users/stanley/aDNA/whitepaper` (local-path remote, **grandfathered path-style**) |
 | Has `skill_lattice_publish.md` | Y |
 | Has `.publish-clone/` workaround | N |
 | Naming conforms to ADR-009 | **Y** (path-style grandfathered per ADR-009 §3.4 — operator-discretionary, single-vault tooling) |
@@ -80,7 +80,7 @@ aDNA v7.0 is a Major Governance bump. Two breaking (repo flatten + publish-skill
 
 ### LPWhitepaper.aDNA-specific notes
 
-- **Path-style permanent**: ADR-009 §3.4 grandfathers `origin-whitepaper` → local-path remote as a legitimate exception class for single-vault tooling. The LaTeX whitepaper sibling clone at `/Users/stanley/lattice/whitepaper` is a documented workflow.
+- **Path-style permanent**: ADR-009 §3.4 grandfathers `origin-whitepaper` → local-path remote as a legitimate exception class for single-vault tooling. The LaTeX whitepaper sibling clone at `/Users/stanley/aDNA/whitepaper` is a documented workflow.
 - **M05 ADR-010 forward-reference**: M05 will decide whether to support keep-both, convert, or other dispositions. Until M05 ratifies ADR-010, this vault stays at its current path-style state.
 - **III review integration**: LPWhitepaper consumes III for whitepaper review pre-release; `iii/` wrapper directory (if present) follows III's own version policy.
 - **Release management**: Whitepaper release process is independent of v7.0 adoption.

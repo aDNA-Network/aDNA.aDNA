@@ -27,7 +27,7 @@ tags: [governance, campaign, planned, adna, v3, ecosystem_compliance, per_vault]
 ## Quick Start (for the agent that opens M01-EC)
 
 1. Confirm v2 P3 phase gate met:
-   - `git -C ~/lattice/.adna log --oneline -1` shows the M03 flatten commit
+   - `git -C ~/aDNA/.adna log --oneline -1` shows the M03 flatten commit
    - `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/` contains M03 + M08a + M08b AARs
    - `aDNA.aDNA/STATE.md` says `campaign_adna_v2_infrastructure` is at P3 close or beyond
 2. Read this CLAUDE.md (auto-loaded), then read `campaign_adna_v3_ecosystem_compliance.md`

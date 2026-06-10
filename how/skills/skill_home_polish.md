@@ -251,7 +251,7 @@ M3.7 (modular III for Obsidian) runs III cycles against the rendered HOME.md out
 
 ### Refresh node.aDNA HOME.md with Bases tier
 ```
-./how/skills/skill_home_polish.md --vault /Users/stanley/lattice/node.aDNA --mode refresh --render-tier bases
+./how/skills/skill_home_polish.md --vault /Users/stanley/aDNA/node.aDNA --mode refresh --render-tier bases
 ```
 Expected verdict: `PASS / tier=bases / section_replaced: true`.
 
@@ -263,7 +263,7 @@ Expected: cascade to `dataview` tier; verdict `DOWNGRADED`.
 
 ### Verify the cascade renders correctly via T7 dispatch
 ```
-./how/skills/skill_home_polish.md --vault /Users/stanley/lattice/node.aDNA --mode verify
+./how/skills/skill_home_polish.md --vault /Users/stanley/aDNA/node.aDNA --mode verify
 ```
 Expected: T7 invoked with --check-set T6; T6 runs O1-O7; verdict `DELEGATED` with T7's PASS/FAIL inline.
 
@@ -280,9 +280,9 @@ Expected: T7 invoked with --check-set T6; T6 runs O1-O7; verdict `DELEGATED` wit
 - [[skill_obsidian_agent_inspect.md|T8d skill_obsidian_agent_inspect]] — sibling pattern (TRIPLE DELEGATION evidence at M3.4)
 - [[../../what/decisions/adr_014_verification_handoff_topology.md|ADR-014]] — Clause C consumer-mission obligation (M3.5 declares verification_surface: operator)
 - [[../../what/decisions/adr_023_registry_data_projection_contract.md|ADR-023 (draft)]] — sibling render of same projection contract
-- `/Users/stanley/lattice/node.aDNA/HOME.md` — first canonical consumer (M3.5 Obj 9 populate-apply)
-- `/Users/stanley/lattice/node.aDNA/what/inventory/vault_gallery.base` — Bases definition this skill embeds
-- `/Users/stanley/lattice/node.aDNA/what/inventory/inventory_vaults.yaml` — canonical source-of-truth
+- `/Users/stanley/aDNA/node.aDNA/HOME.md` — first canonical consumer (M3.5 Obj 9 populate-apply)
+- `/Users/stanley/aDNA/node.aDNA/what/inventory/vault_gallery.base` — Bases definition this skill embeds
+- `/Users/stanley/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml` — canonical source-of-truth
 
 ## Self-reference note
 

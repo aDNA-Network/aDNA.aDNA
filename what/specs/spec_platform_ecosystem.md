@@ -8,13 +8,13 @@ version: "0.1"
 status: active
 last_edited_by: agent_stanley
 tags: [spec, ecosystem, platform, aDNA_pattern]
-extraction_source: ~/lattice/CLAUDE.md lines 178-190 (extracted at compliance campaign M01)
+extraction_source: ~/aDNA/CLAUDE.md lines 178-190 (extracted at compliance campaign M01)
 co_signed_adr: aDNA.aDNA/what/decisions/adr_012_ecosystem_spec_extraction.md
 ---
 
 # Platform Ecosystem
 
-Authoritative reference for the **Platform.aDNA** aDNA pattern category. Workspace router (`~/lattice/CLAUDE.md`) carries only a pointer to this spec.
+Authoritative reference for the **Platform.aDNA** aDNA pattern category. Workspace router (`~/aDNA/CLAUDE.md`) carries only a pointer to this spec.
 
 ## Definition
 
@@ -46,4 +46,4 @@ Terminal platforms (`LatticeTerminal`, `Cmux`) and harness platforms (`LatticeAg
 
 ## Provenance
 
-Extracted from `~/lattice/CLAUDE.md` at `campaign_lattice_compliance_upgrade` M01 (2026-05-20). Pre-extraction location: workspace-router §Platform Ecosystem (lines 178-190). Co-signed ADR: `aDNA.aDNA/what/decisions/adr_009_ecosystem_spec_extraction.md`.
+Extracted from `~/aDNA/CLAUDE.md` at `campaign_lattice_compliance_upgrade` M01 (2026-05-20). Pre-extraction location: workspace-router §Platform Ecosystem (lines 178-190). Co-signed ADR: `aDNA.aDNA/what/decisions/adr_009_ecosystem_spec_extraction.md`.

@@ -28,7 +28,7 @@ related_artifacts:
 | **Proper LatticeProtocol origin** (12 vaults) | aDNA, science_stanley, SiteForge, wga, CanvasForge, context_commons, ComfyForge, SuperLeague + (incremental from §5 reconciliation) | `aDNA.aDNA` ✓ + `CanvasForge.aDNA` ✓ | **None** |
 | **Proper external-org origin** (2 vaults) | RareArchive, WilhelmAI (both under `Wilhelm-Foundation/`) | `WilhelmAI.aDNA` ✓ | **None** |
 | **Personal-namespace origin** (1 vault) | la_startup (`ScienceStanley` user) | not spot-checked this objective (single-member bucket; covered by M01 verbatim §5) | n/a (untouched) |
-| **Non-standard local-path remote** (1 vault) | LPWhitepaper (`origin-whitepaper` → `/Users/stanley/lattice/whitepaper`) | `LPWhitepaper.aDNA` ✓ | **None** |
+| **Non-standard local-path remote** (1 vault) | LPWhitepaper (`origin-whitepaper` → `/Users/stanley/aDNA/whitepaper`) | `LPWhitepaper.aDNA` ✓ | **None** |
 | **No remote** (7 vaults) | Spacemacs, VideoForge, III, VAASLattice, zeta, RareHarness, strategic_interface_protocol | `Spacemacs.aDNA` ✓ (campaign trigger — must remain empty) | **None** |
 
 **Verdict**: **Zero drift** across all 4 buckets validated. The campaign-trigger invariant ("Spacemacs.aDNA has no remote") still holds. The LPWhitepaper non-standard remote (`origin-whitepaper` → local path) still resolves to the same target.
@@ -39,7 +39,7 @@ related_artifacts:
 
 ## §1 Validation method
 
-For each spot-check vault, ran `git -C /Users/stanley/lattice/<vault>.aDNA remote -v` and compared the output character-for-character to the corresponding entry in [[m01_obj0_ecosystem_matrix.md|M01 Obj 0 §5]]. Empty output for the no-remote bucket is treated as the canonical state — Spacemacs.aDNA is the campaign trigger and must remain remoteless until M05 lands.
+For each spot-check vault, ran `git -C /Users/stanley/aDNA/<vault>.aDNA remote -v` and compared the output character-for-character to the corresponding entry in [[m01_obj0_ecosystem_matrix.md|M01 Obj 0 §5]]. Empty output for the no-remote bucket is treated as the canonical state — Spacemacs.aDNA is the campaign trigger and must remain remoteless until M05 lands.
 
 Spot-check selection rationale (per [[../mission_adna_infra_p1_02_ecosystem_matrix.md|M02 Obj 2 spec]]):
 - **aDNA.aDNA** — self-reference (this vault validating itself); high-stability LP-origin invariant
@@ -69,8 +69,8 @@ origin	https://github.com/Wilhelm-Foundation/WilhelmAI.git (push)
 (empty)
 
 === LPWhitepaper.aDNA (non-standard local-path) ===
-origin-whitepaper	/Users/stanley/lattice/whitepaper (fetch)
-origin-whitepaper	/Users/stanley/lattice/whitepaper (push)
+origin-whitepaper	/Users/stanley/aDNA/whitepaper (fetch)
+origin-whitepaper	/Users/stanley/aDNA/whitepaper (push)
 ```
 
 **Comparison to M01 Obj 0 §5 baseline**: all 5 lines that appear in both files (aDNA.aDNA, CanvasForge.aDNA, WilhelmAI.aDNA, Spacemacs.aDNA empty, LPWhitepaper.aDNA `origin-whitepaper` line) are character-for-character identical. No drift.
@@ -93,7 +93,7 @@ la_startup.aDNA (`ScienceStanley/LAStartupLattice.git`) is unchanged per M01 §5
 
 ### Bucket 4 — Non-standard local-path remote (1 vault; 1 spot-checked)
 
-LPWhitepaper.aDNA's `origin-whitepaper` → `/Users/stanley/lattice/whitepaper` resolves identically to the M01 capture. M01 Obj 1 §5 Issue I-4 already flags this for M05 decision (keep + add proper GitHub origin, OR migrate). M02 confirms the bucket assignment is unchanged so M05 can plan against a stable target.
+LPWhitepaper.aDNA's `origin-whitepaper` → `/Users/stanley/aDNA/whitepaper` resolves identically to the M01 capture. M01 Obj 1 §5 Issue I-4 already flags this for M05 decision (keep + add proper GitHub origin, OR migrate). M02 confirms the bucket assignment is unchanged so M05 can plan against a stable target.
 
 ### Bucket 5 — No remote (7 vaults; 1 spot-checked)
 

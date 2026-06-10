@@ -28,7 +28,7 @@ prerequisite_missions:
   - mission_adna_str_p2_m22_per_mission_budget      # closed (ADR-016 ratified)
   - mission_adna_str_p2_m23_convergence_validation  # closed (ADR-016 amended; node.aDNA token_baselines.md v0.1.2)
 prerequisite_artifacts:
-  - "~/lattice/.adna/how/docs/upgrade_v6_to_v7.md (canonical v6→v7 reference; 422 lines)"
+  - "~/aDNA/.adna/how/docs/upgrade_v6_to_v7.md (canonical v6→v7 reference; 422 lines)"
   - aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj6_version_bump_checklist.md  # §0 preconditions + §7 verification harness
   - aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj0_ecosystem_matrix.md         # 19-vault per-change blast-radius template
   - aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj2_migration_runbook.md         # flat/in-place migration + 13-step rollback
@@ -36,9 +36,9 @@ prerequisite_artifacts:
   - aDNA.aDNA/what/decisions/adr_011_aDNA_semver_discipline.md       # two-track semver policy
   - aDNA.aDNA/what/decisions/adr_016_per_mission_context_budget.md   # post-M2.3 S2 amendment LIVE
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_m23_convergence_validation.md  # M2.3 close artifact
-  - "/Users/stanley/lattice/node.aDNA/what/inventory/inventory_vaults.yaml (36 vault entries post-M2.3 fold-in)"
-  - "/Users/stanley/lattice/CLAUDE.md (workspace router; cross-vault topology)"
-  - "/Users/stanley/lattice/lattice-labs/who/coordination/coord_2026_05_08_publish_rewrite.md (Daedalus coord memo prototype)"
+  - "/Users/stanley/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml (36 vault entries post-M2.3 fold-in)"
+  - "/Users/stanley/aDNA/CLAUDE.md (workspace router; cross-vault topology)"
+  - "/Users/stanley/aDNA/lattice-labs/who/coordination/coord_2026_05_08_publish_rewrite.md (Daedalus coord memo prototype)"
 deliverables_count: 5
 hard_dependency_satisfied: "M2.3 closed at S3 2026-05-20T10:24:16Z (HEAD `12b2f4a`); ADR-016 amendment LIVE; node.aDNA token_baselines.md v0.1.2 published; M2.4 UNBLOCKED but operator-discretionary (not in flight); 4 partner-affiliated embargo memos preserved; v7.0 frozen at `LatticeProtocol/aDNA@27e6395`; origin/main currently at M2.3 S2 commit `469800e` (M2.3 S3 commit `12b2f4a` is 1 commit ahead — push delta)."
 ---
@@ -255,9 +255,9 @@ Plan covers S1 only (planning-class single-session shape). All 5 D-decisions rat
 - [[../../campaign_adna_v2_infrastructure/missions/artifacts/m01_obj0_ecosystem_matrix.md|m01_obj0_ecosystem_matrix.md]] — 19-vault per-change blast-radius template (obj1 §3 adapts)
 - [[../../campaign_adna_v2_infrastructure/missions/artifacts/m01_obj6_version_bump_checklist.md|m01_obj6_version_bump_checklist.md]] §0 + §7 — 10-check verification harness (obj3 adapts)
 - [[../../campaign_adna_v2_infrastructure/missions/artifacts/m01_obj2_migration_runbook.md|m01_obj2_migration_runbook.md]] — flat/in-place migration + 13-step rollback (obj3 §Rollback)
-- `~/lattice/.adna/how/docs/upgrade_v6_to_v7.md` — canonical v6→v7 reference (obj2 §7 cites verbatim)
-- `~/lattice/CLAUDE.md` workspace router — cross-vault topology + Standing Rule #4 node.aDNA local-only (obj2 §2)
-- `~/lattice/node.aDNA/what/inventory/inventory_vaults.yaml` — 36 vault canonical list (obj1 §3 reads)
+- `~/aDNA/.adna/how/docs/upgrade_v6_to_v7.md` — canonical v6→v7 reference (obj2 §7 cites verbatim)
+- `~/aDNA/CLAUDE.md` workspace router — cross-vault topology + Standing Rule #4 node.aDNA local-only (obj2 §2)
+- `~/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml` — 36 vault canonical list (obj1 §3 reads)
 - [[../campaign_adna_serious_tool_readiness.md|campaign master]] — M2.3.5 row added at Phase 2 between M2.3 and M2.4
 - [[../CLAUDE.md|campaign CLAUDE.md]] — Campaign Standing Orders 11-19
 - [[../../../CLAUDE.md|project CLAUDE.md]] — Project Standing Orders 1-11 (M2.3.5 honors all)

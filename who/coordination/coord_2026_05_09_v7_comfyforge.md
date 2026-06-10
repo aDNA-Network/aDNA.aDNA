@@ -18,7 +18,7 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_p1_08a_upgrade_guide_and_coord_memos
 objective: 1
 target_mission: M08a
-mirror: /Users/stanley/lattice/ComfyForge.aDNA/who/coordination/coord_2026_05_09_v7_aDNA_adoption.md
+mirror: /Users/stanley/aDNA/ComfyForge.aDNA/who/coordination/coord_2026_05_09_v7_aDNA_adoption.md
 airlock_pattern: true
 operator_class: LatticeProtocol-internal
 external_party: (none)
@@ -47,7 +47,7 @@ This memo crosses from aDNA.aDNA (the standard producer) to ComfyForge.aDNA (a s
 
 ## §2 What's changing in v7.0 (one-paragraph version)
 
-aDNA v7.0 is a Major Governance bump (Standard track unchanged at v2.2). Two things break and need a one-time migration: (1) the `~/lattice/.adna -> adna/.adna` symlink retires — `.adna/` is now a real directory (M03 repo flatten); (2) the publish-skill family rewrite replaces the rsync workaround with `git push` (M05 publish family). Three things are pull-based and need nothing: the v7.0 tag, the GitHub repo rename `Agentic-DNA` → `adna`, the `deploy_manifest.yaml` move into `.github/`. Four things are new opt-in patterns: `node.aDNA/` local node vault, `LatticeScope.aDNA` observability project, the airlock-pattern adoption stub, the `<name>.aDNA/ ↔ <name>.aDNA.git` naming convention codification. Full guide: [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj8_upgrade_guide_v6_to_v7.md|upgrade guide]].
+aDNA v7.0 is a Major Governance bump (Standard track unchanged at v2.2). Two things break and need a one-time migration: (1) the `~/aDNA/.adna -> adna/.adna` symlink retires — `.adna/` is now a real directory (M03 repo flatten); (2) the publish-skill family rewrite replaces the rsync workaround with `git push` (M05 publish family). Three things are pull-based and need nothing: the v7.0 tag, the GitHub repo rename `Agentic-DNA` → `adna`, the `deploy_manifest.yaml` move into `.github/`. Four things are new opt-in patterns: `node.aDNA/` local node vault, `LatticeScope.aDNA` observability project, the airlock-pattern adoption stub, the `<name>.aDNA/ ↔ <name>.aDNA.git` naming convention codification. Full guide: [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj8_upgrade_guide_v6_to_v7.md|upgrade guide]].
 
 ---
 
@@ -71,7 +71,7 @@ aDNA v7.0 is a Major Governance bump (Standard track unchanged at v2.2). Two thi
 
 | # | Action | When | Where to look |
 |---|---|---|---|
-| 1 | **Workspace flatten**: from `~/lattice/`, remove the `.adna` symlink + `adna/` outer wrapper, then `git clone https://github.com/LatticeProtocol/adna.git .adna`. | Once M03 ships. | [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj8_upgrade_guide_v6_to_v7.md|upgrade guide]] §2 |
+| 1 | **Workspace flatten**: from `~/aDNA/`, remove the `.adna` symlink + `adna/` outer wrapper, then `git clone https://github.com/LatticeProtocol/adna.git .adna`. | Once M03 ships. | [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj8_upgrade_guide_v6_to_v7.md|upgrade guide]] §2 |
 | 2 | **Publish-skill adoption**: Your origin is already configured — run `~/.adna/how/skills/skill_deploy.md` to install the pre-push sanitization hook. | Once M05 ships. | [[../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj8_upgrade_guide_v6_to_v7.md|upgrade guide]] §3 |
 
 ### Optional actions (additive — at your discretion)

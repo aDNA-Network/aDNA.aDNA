@@ -26,7 +26,7 @@ tags: [design_spec, proposed_patch, m3_3, obj_4, t6, integration_test, vault_agn
 >
 > **Cross-skill primitive composition** — the load-bearing architectural decision: T6 skill DELEGATES the binary-presence check (O4 in the generalized O1-O7) to M3.2's `skill_obsidian_canonicalize.md --verify` mode. This is the **first explicit cross-skill primitive consumption across the M3.x cohort**; the precedent applies to M3.4+ skill compositions. T6 explicitly evaluates delegate-vs-reimplement in §3 option matrix per M3.3 mission spec line 293.
 >
-> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/lattice/.adna/`. All patch text is literal content for v8 P6 (setup.sh hook) and Obj 5 (the new skill) to apply.
+> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/aDNA/.adna/`. All patch text is literal content for v8 P6 (setup.sh hook) and Obj 5 (the new skill) to apply.
 >
 > **Standing Order #8 self-reference** — 15th tactical invocation candidate in v8 (jointly with T5; the new skill at Obj 5 is the 2nd behavioral test of M2.4.5-hardened `how/skills/AGENTS.md` routing layer for new-skill discoverability after M3.2's `skill_obsidian_canonicalize.md`).
 
@@ -84,18 +84,18 @@ The compounding produces today's state: every forge vault and partner-vault re-f
 
 ```bash
 # Scenario A: invoke T6 skill on local vault (aDNA.aDNA itself) with default profile
-cd ~/lattice/aDNA.aDNA/
+cd ~/aDNA/aDNA.aDNA/
 ./how/skills/skill_obsidian_integration_test --vault . --profile default
 # Expect: O1-O7 each report pass/fail; summary line "Integration test: 6/7 PASS — O2 FAIL: HOME.md not present (aDNA.aDNA has README.md + CLAUDE.md but no HOME.md)"
 # Exit 1 (any fail)
 
 # Scenario B: invoke T6 skill on node.aDNA (the canonical reference vault from M-LWX-03)
-./how/skills/skill_obsidian_integration_test --vault ~/lattice/node.aDNA/ --profile default
+./how/skills/skill_obsidian_integration_test --vault ~/aDNA/node.aDNA/ --profile default
 # Expect: O1-O7 each report pass/fail; summary line "Integration test: 7/7 PASS" (matches M-LWX-03 S2 operator-side results post-setup.sh)
 # Exit 0
 
 # Scenario C: invoke with per-vault profile that skips O2
-cat > ~/lattice/aDNA.aDNA/.obsidian/integration-test-profile.json <<'EOF'
+cat > ~/aDNA/aDNA.aDNA/.obsidian/integration-test-profile.json <<'EOF'
 {
   "profile_name": "aDNA.aDNA-no-home",
   "skip_checks": ["O2"],
@@ -112,7 +112,7 @@ EOF
 # T6 skill captures the delegate exit code + pass-through summary
 
 # Scenario E: v8 P6 setup.sh --test mode (if landed)
-cd ~/lattice/<some-vault>.aDNA/
+cd ~/aDNA/<some-vault>.aDNA/
 ./setup.sh --test
 # Expect: setup.sh delegates to ./how/skills/skill_obsidian_integration_test --vault . --profile default
 # Same exit code + same output as Scenario A direct invocation
@@ -210,7 +210,7 @@ requirements:
 
 ```
 === Obsidian integration test ===
-Target vault: /Users/stanley/lattice/<vault>.aDNA/
+Target vault: /Users/stanley/aDNA/<vault>.aDNA/
 Profile: default (built-in)
 Cross-skill delegations: skill_obsidian_canonicalize.md --verify (O4)
 
@@ -311,7 +311,7 @@ Adds a thin delegation in `.adna/setup.sh` that forwards `./setup.sh --test` to 
 +        echo "FAIL: skill_obsidian_integration_test.md not found at $SKILL_PATH"
 +        echo "Hint: this skill ships from aDNA.aDNA at v8 P6 upstream promotion; if M3.3 T6 skill"
 +        echo "      has not been promoted to .adna/ yet, invoke it directly from aDNA.aDNA:"
-+        echo "        ~/lattice/aDNA.aDNA/how/skills/skill_obsidian_integration_test.md --vault $VAULT_DIR"
++        echo "        ~/aDNA/aDNA.aDNA/how/skills/skill_obsidian_integration_test.md --vault $VAULT_DIR"
 +        exit 2
 +    fi
 +    bash "$SKILL_PATH" --vault "$VAULT_DIR" --profile "${PROFILE:-default}"

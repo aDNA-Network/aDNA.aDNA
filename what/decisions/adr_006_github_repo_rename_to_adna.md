@@ -60,7 +60,7 @@ This **aligns the GitHub URL with the v6.0 lowercase URI convention** that the c
 2. **GitHub URL forwarding**: GitHub automatically preserves the old URL (`github.com/LatticeProtocol/Agentic-DNA`) as a redirect to the new URL (`github.com/LatticeProtocol/adna`) **indefinitely** — as long as no new repository is created at the old name (canonical reference: GitHub Docs *"Renaming a repository"*). Existing `git clone …Agentic-DNA.git` commands and existing `origin` remotes continue to work without any operator intervention.
 3. **Operator-optional remote URL update**: operators who want the new URL on their existing clone run **one command**:
    ```sh
-   git -C ~/lattice/.adna remote set-url origin https://github.com/LatticeProtocol/adna.git
+   git -C ~/aDNA/.adna remote set-url origin https://github.com/LatticeProtocol/adna.git
    ```
    This is optional — the redirect keeps the old URL working — but recommended for cleanliness.
 4. **Documentation updates** (M03 grep+update sweep):
@@ -135,7 +135,7 @@ This **aligns the GitHub URL with the v6.0 lowercase URI convention** that the c
 3. **Removes M03 AAR Items deferred #1** (the GitHub auto-canonicalization observation flagged at M03 S2).
 4. **Functionally inert for existing operators** — case-insensitive routing means lowercase `adna` URLs continue to redirect-to-canonical without breaking. Operators with lowercase remotes may update at their own cadence using:
    ```sh
-   git -C ~/lattice/.adna remote set-url origin https://github.com/LatticeProtocol/aDNA.git
+   git -C ~/aDNA/.adna remote set-url origin https://github.com/LatticeProtocol/aDNA.git
    ```
    No urgency; documentation grep+update sweep treats mixed-case as the going-forward canonical form.
 

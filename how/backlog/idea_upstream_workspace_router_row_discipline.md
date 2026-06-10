@@ -16,7 +16,7 @@ tags: [backlog, upstream, claude_md, workspace_router, row_discipline, template,
 
 ## Problem
 
-The workspace router file (`~/lattice/CLAUDE.md`, generated from `.adna/how/templates/template_workspace_claude.md`)
+The workspace router file (`~/aDNA/CLAUDE.md`, generated from `.adna/how/templates/template_workspace_claude.md`)
 re-bloats over time because **no rule in the standard constrains what a Project Discovery row may contain**.
 Fork and upgrade flows tell agents to *append a row* per project, but never specify row content. As campaigns
 close, agents narrate operational status into rows (mission IDs, commit hashes, md5s, ADR counts, phase-gate
@@ -25,7 +25,7 @@ files — agents append operational status to governance files instead of `STATE
 
 **Concrete evidence at this node (Mac/stanley) on 2026-05-25:**
 
-- `~/lattice/CLAUDE.md` was pruned by **`campaign_lattice_compliance_upgrade` M01** on **2026-05-20** (37.5%
+- `~/aDNA/CLAUDE.md` was pruned by **`campaign_lattice_compliance_upgrade` M01** on **2026-05-20** (37.5%
   reduction, ~4,245 tokens). **Five days later (2026-05-25)** it had re-bloated to **55,530 chars / ~13,882
   tokens / 230 lines**, of which the `III.aDNA/` row alone was **12,900 chars (23% of the file)** — an
   inline Campaign A-D changelog. A second-cut compaction took it to 22,745 chars / ~5,686 tokens (−59%);

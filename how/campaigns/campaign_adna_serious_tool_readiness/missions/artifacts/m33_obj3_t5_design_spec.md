@@ -24,7 +24,7 @@ tags: [design_spec, proposed_patch, m3_3, obj_3, t5, first_open_ux, onboarding, 
 >
 > **Design-at-P3, propagation-at-P6**: this spec ships as an `aDNA.aDNA`-resident artifact under `missions/artifacts/`; v8 P6 owns the upstream cycle that lands the patches on `LatticeProtocol/aDNA`. The 2 patches are additive-text-only and may land as a single bundled commit OR as separate commits (v8 P6 operator decision; §6 propagation contract enumerates both paths).
 >
-> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/lattice/.adna/`. All patch text is literal diff content for v8 P6 to apply.
+> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/aDNA/.adna/`. All patch text is literal diff content for v8 P6 to apply.
 >
 > **Standing Order #8 self-reference** — 15th tactical invocation candidate in v8 (after 14 prior in P2+M3.1+M3.2): this spec lives at `how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/` — a directory whose `AGENTS.md` was top-12 hardened at M2.4.5. The patch text documents the FIRST OPEN of a forked vault — the moment when the operator most relies on the discoverability layer that M2.4.5 sharpened. Formal Q2 SQL re-measurement at M3.x ≥ 20-session corpus per `m245_obj3_measurement_contract.md` §6.
 
@@ -40,7 +40,7 @@ Two independent hazards converge in the operator's first 5 minutes with a freshl
 >
 > — [[../../../../how/backlog/backlog_F_S2_4_obsidian_workspace_clobber.md|backlog_F_S2_4_obsidian_workspace_clobber.md]] §Summary (2026-05-13; M-LWX-03 S2 surfaced; verified by `grep -c notebook-navigator workspace.json` returning 0 vs `workspace.default.json` returning 3)
 
-**Verification status at M3.1 S1 recon (2026-05-21T02:34Z; inherited by M3.2 + M3.3 per M3.3 mission spec §Current State)**: confirmed via static analysis of `.adna/how/skills/skill_onboarding.md:1-265` + `.adna/how/skills/skill_project_fork.md:1-180`. Neither skill currently warns the operator about either hazard. Step 5 of `skill_project_fork.md` ("Offer Immediate Onboarding") asks the user "would you like to run the onboarding interview now?" with NO mention of run-setup-first or open-via-File-not-URL. Step 4 of `skill_onboarding.md` ("Explain Deployment Diversity") mentions "this project lives inside a `~/lattice/` workspace" but does not describe the canonical first-open runbook. The two skills are exactly the two operator-facing surfaces where a "First open" runbook would be discoverable; both are silent today.
+**Verification status at M3.1 S1 recon (2026-05-21T02:34Z; inherited by M3.2 + M3.3 per M3.3 mission spec §Current State)**: confirmed via static analysis of `.adna/how/skills/skill_onboarding.md:1-265` + `.adna/how/skills/skill_project_fork.md:1-180`. Neither skill currently warns the operator about either hazard. Step 5 of `skill_project_fork.md` ("Offer Immediate Onboarding") asks the user "would you like to run the onboarding interview now?" with NO mention of run-setup-first or open-via-File-not-URL. Step 4 of `skill_onboarding.md` ("Explain Deployment Diversity") mentions "this project lives inside a `~/aDNA/` workspace" but does not describe the canonical first-open runbook. The two skills are exactly the two operator-facing surfaces where a "First open" runbook would be discoverable; both are silent today.
 
 **Why this is THE first-5-minutes UX problem**: the strategic north-star metric is *"easy and fluid way to build/operate/utilize context graphs"* (operator-stated; saved at `~/.claude/projects/-Users-stanley-lattice-aDNA-aDNA/memory/project_adna_lattice_ux_goal.md`). Both hazards land in the operator's first 5 minutes — the window where the operator decides whether aDNA is "easy and fluid" or "broken." A single first-open failure with no recovery hint is a churn event; the integration cost the campaign has accepted (T1+T2+T3+T4 design + propagation) is wasted if operators never reach the second use because of an unwritten runbook.
 
@@ -99,7 +99,7 @@ cat .adna/how/skills/skill_project_fork.md
 # agent presents first-open runbook to operator before continuing onboarding
 
 # Scenario C: operator follows the runbook on a fresh fork
-cd ~/lattice/<new>.aDNA/
+cd ~/aDNA/<new>.aDNA/
 # (Obsidian already closed per Scenario B prose)
 ./setup.sh                                              # plugin install
 open -a Obsidian .                                      # File → Open Vault equivalent

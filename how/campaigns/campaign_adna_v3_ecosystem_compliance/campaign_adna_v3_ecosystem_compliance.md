@@ -200,7 +200,7 @@ Bundled with P0 — the audit IS the planning input.
 | Check | Method |
 |-------|--------|
 | 19-vault compliance scorecard at 100% (or all exceptions documented) | M07-EC final audit |
-| Workspace router reflects ground truth | `lattice/CLAUDE.md` Project Discovery matches `ls ~/lattice/*.aDNA` |
+| Workspace router reflects ground truth | `lattice/CLAUDE.md` Project Discovery matches `ls ~/aDNA/*.aDNA` |
 | All M03-EC, M04-EC, M05-EC coord memos archived | `aDNA.aDNA/who/coordination/` + each external vault's coordination/ |
 
 ## Persona

@@ -55,7 +55,7 @@ JSON output schema v1.0 (operator-readable `<gate_id>.output.json`):
 
 - **DELTA-3 (modification delta source)**: `rlhf_modification_delta` populated from `operator_comment_overall` (free-text IM-A/B/C) or per-field structured patch (IM-D ST2 form-input, deferred to Phase 4). v1.0 covers free-text only; v1.1 adds structured patch when ST2 lands.
 
-**Md5-invariance preserved** — writes target SiteForge local learning store at `~/lattice/SiteForge.aDNA/iii/what/context/siteforge_iii_learning_store.jsonl` (never canonical upstream). Canonical jsonl rotation policy (post MD-B2 first-rotation precedent) honored — Loom does not propose direct upstream writes; graduation via ADR-003 ceremony only.
+**Md5-invariance preserved** — writes target SiteForge local learning store at `~/aDNA/SiteForge.aDNA/iii/what/context/siteforge_iii_learning_store.jsonl` (never canonical upstream). Canonical jsonl rotation policy (post MD-B2 first-rotation precedent) honored — Loom does not propose direct upstream writes; graduation via ADR-003 ceremony only.
 
 ## AD-10 Confirmed — III Decadal Cadence + Domain Pack Scope
 

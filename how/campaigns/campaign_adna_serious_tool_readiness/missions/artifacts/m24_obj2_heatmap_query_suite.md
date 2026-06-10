@@ -35,7 +35,7 @@ SELECT COUNT(*) FROM sessions;
 -- result: 10  ✅ ≥ 10 threshold MET per m23_obj5_adr_007_deferral_memo.md §3 forward contract
 ```
 
-Path normalization: vault-relative paths shown when file lies under `/Users/stanley/lattice/aDNA.aDNA/` (project root); workspace-relative when under `/Users/stanley/lattice/` but outside the project; absolute otherwise. Sort key throughout: `reads DESC` (primary) → `sessions DESC` (tiebreak).
+Path normalization: vault-relative paths shown when file lies under `/Users/stanley/aDNA/aDNA.aDNA/` (project root); workspace-relative when under `/Users/stanley/aDNA/` but outside the project; absolute otherwise. Sort key throughout: `reads DESC` (primary) → `sessions DESC` (tiebreak).
 
 ## §2 — Q1: Directory-load frequency (top 30 most-read files)
 
@@ -183,7 +183,7 @@ ORDER BY hops DESC;
 
 Q4 provides the *prioritization input* for Obj 4 §4 (top-12 hardening priority list) via two sub-queries: (Q4a) filesystem AGENTS.md inventory; (Q4b) SQLite-touched AGENTS.md subset; (Q4c) full vault-wide top-N at ≥ 3 reads gate.
 
-**Q4a — Filesystem inventory** (`find /Users/stanley/lattice/aDNA.aDNA -name 'AGENTS.md' -not -path '*/docs/examples/*' -not -path '*/.git/*' -not -path '*/.adna/*'`):
+**Q4a — Filesystem inventory** (`find /Users/stanley/aDNA/aDNA.aDNA -name 'AGENTS.md' -not -path '*/docs/examples/*' -not -path '*/.git/*' -not -path '*/.adna/*'`):
 
 **44 active AGENTS.md files** in vault (correction to Phase-1's 40 estimate; full list below).
 

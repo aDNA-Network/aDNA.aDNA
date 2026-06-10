@@ -66,7 +66,7 @@ successor_campaigns_seeded:
     scope: validation (Phase 1 narrow → Phase 2+ broader)
 external_dependencies:
   - Stanley's MacBook Pro (L1) as canonical clinician-MBP-template (operator-confirmed at v2 RareHarness MP2-2c precedent for "Stanley's L1 = canonical template")
-  - ~/lattice/ + ~/lattice/node.aDNA/ + ~/lattice/.obsidian/ (live system under test)
+  - ~/aDNA/ + ~/aDNA/node.aDNA/ + ~/aDNA/.obsidian/ (live system under test)
   - Obsidian app (live UI test)
 tags: [mission, completed, lwx_03, integration_test, verification, aar, cross_graph_findings, m_lwx_03, phase_2, path_alpha_scope_expansion, dispatch_model_adopted, fourth_additive_upstream_settled, fifth_additive_upstream_candidate, carly_herb_dispatch]
 ---
@@ -87,11 +87,11 @@ test pattern (Stanley's L1 as canonical clinician-MBP-template).
 ## Strategic Intent
 
 After M-LWX-01 + M-LWX-02 close, the workspace UX is **theoretically complete** —
-dynamic bootstrap interview ships upstream, Obsidian-vault setup lives at `~/lattice/`.
+dynamic bootstrap interview ships upstream, Obsidian-vault setup lives at `~/aDNA/`.
 M-LWX-03 verifies the loop end-to-end:
 
 1. **Re-fork test (M-LWX-01 path)**: in a clean sandbox, run workspace router Step 0.3 → interview-skill → verify 19 answers land correctly in 6 target files. This validates the upstream commit shipped a working skill, not just a syntactically valid one.
-2. **Outer-vault test (M-LWX-02 path)**: open `~/lattice/` in Obsidian on this Mac; verify the 8 integration tests from Obj 3 §6 PASS (outer vault opens cleanly, inner `.aDNA/` excluded, Bases gallery renders OR markdown fallback active, marketplace link works, sub-vault opening works, `.obsidianignore` enforces, HOME.md regenerates on inventory_refresh, Step 0.5 fires on fresh sessions).
+2. **Outer-vault test (M-LWX-02 path)**: open `~/aDNA/` in Obsidian on this Mac; verify the 8 integration tests from Obj 3 §6 PASS (outer vault opens cleanly, inner `.aDNA/` excluded, Bases gallery renders OR markdown fallback active, marketplace link works, sub-vault opening works, `.obsidianignore` enforces, HOME.md regenerates on inventory_refresh, Step 0.5 fires on fresh sessions).
 3. **Cross-graph findings**: any insight discovered during the integration run that should change v2 main campaign content (e.g., update to M01 Obj 3 design, amendment to ADR-009, new skill in `.adna/`) is captured as a v2 amendment memo. v2 M07 (general repo review + simplify) absorbs them.
 
 The integration test uses Stanley's L1 (this MacBook Pro) as the **canonical
@@ -105,8 +105,8 @@ their own L1s and inherit a proven runbook.
 ## Hard constraints
 
 - **No M-LWX-01 / M-LWX-02 output mutation**: those artifacts stay frozen at their close states; M-LWX-03 only verifies + reports.
-- **Sandbox isolation for re-fork test**: M-LWX-01 path test happens in `/tmp/sandbox_lwx_03_refork/` (NOT in `~/lattice/node.aDNA/` which would mutate M04 output).
-- **No interview re-run on `~/lattice/node.aDNA/`**: M04's bootstrap is the audit baseline; M-LWX-03 doesn't re-bootstrap the production vault. If the interview reveals it would have set different values, those become *findings* (captured in cross-graph memo), not mutations.
+- **Sandbox isolation for re-fork test**: M-LWX-01 path test happens in `/tmp/sandbox_lwx_03_refork/` (NOT in `~/aDNA/node.aDNA/` which would mutate M04 output).
+- **No interview re-run on `~/aDNA/node.aDNA/`**: M04's bootstrap is the audit baseline; M-LWX-03 doesn't re-bootstrap the production vault. If the interview reveals it would have set different values, those become *findings* (captured in cross-graph memo), not mutations.
 - **No partner-vault touches**.
 - **8 integration tests from Obj 3 §6 are mandatory**: outer vault opens · inner excluded · Bases renders · marketplace link · sub-vault opening · .obsidianignore enforces · HOME.md regenerates · Step 0.5 fires.
 - **Cross-graph findings memo lands at `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/`**: per ADR-004 (campaign-home stays in aDNA.aDNA), v2 amendments go to v2's vault, not to this mini-campaign's.
@@ -125,7 +125,7 @@ Output: `missions/artifacts/mlwx_03_obj1_refork_test_results.md`.
 
 ### Obj 2 — Outer-vault 8 integration tests (M-LWX-02 path)
 
-Open `~/lattice/` in Obsidian. Run each of the 8 tests from Obj 3 §6 sequentially. Capture PASS/FAIL + screenshots or text evidence for each. Any FAIL gates the AAR (corrective patch + re-test required).
+Open `~/aDNA/` in Obsidian. Run each of the 8 tests from Obj 3 §6 sequentially. Capture PASS/FAIL + screenshots or text evidence for each. Any FAIL gates the AAR (corrective patch + re-test required).
 
 Output: `missions/artifacts/mlwx_03_obj2_outer_vault_test_results.md`.
 

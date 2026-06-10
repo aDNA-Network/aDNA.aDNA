@@ -12,13 +12,13 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_p1_04_node_adna_bootstrap
 scope:
   directories:
-    - /Users/stanley/lattice/aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/
-    - /Users/stanley/lattice/aDNA.aDNA/how/sessions/active/
-    - /Users/stanley/lattice/node.aDNA/  # READ-ONLY this session (audit target)
+    - /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/
+    - /Users/stanley/aDNA/aDNA.aDNA/how/sessions/active/
+    - /Users/stanley/aDNA/node.aDNA/  # READ-ONLY this session (audit target)
   files:
-    - /Users/stanley/lattice/aDNA.aDNA/STATE.md
-    - /Users/stanley/lattice/aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/campaign_adna_v2_infrastructure.md
-    - /Users/stanley/lattice/aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/mission_adna_infra_p1_04_node_adna_bootstrap.md
+    - /Users/stanley/aDNA/aDNA.aDNA/STATE.md
+    - /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/campaign_adna_v2_infrastructure.md
+    - /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/mission_adna_infra_p1_04_node_adna_bootstrap.md
 heartbeat: 2026-05-12T01:33:14Z
 tags: [session, active, adna, infrastructure, p1, m04, v7_0, node_adna, hestia, ten_dim_audit, aar, mission_close, session_3, status_flips]
 ---
@@ -44,9 +44,9 @@ Plan file: `/Users/stanley/.claude/plans/please-read-the-claude-md-streamed-nyga
 
 - `aDNA.aDNA/how/sessions/active/` contained only `.gitkeep` + this newly-created session file at session open (no concurrent sessions).
 - `git pull --ff-only` aDNA.aDNA verified clean at session open (HEAD = `f994fc6` M04 S2 close commit).
-- Upstream template `/Users/stanley/lattice/.adna/` working tree clean; HEAD at `e3b3bcc` (M04 S2 cross-project routing hook commit; not touched this session).
-- `/Users/stanley/lattice/node.aDNA/` confirmed PRESENT at session open (bootstrapped at S2; `test -d` returns true; full Org-Vault tree intact per S2 SITREP).
-- `/Users/stanley/lattice/CLAUDE.md` workspace router 4 additions verified preserved (Step 0 + Project Discovery row + Workspace Layout entry + Standing Rule 5).
+- Upstream template `/Users/stanley/aDNA/.adna/` working tree clean; HEAD at `e3b3bcc` (M04 S2 cross-project routing hook commit; not touched this session).
+- `/Users/stanley/aDNA/node.aDNA/` confirmed PRESENT at session open (bootstrapped at S2; `test -d` returns true; full Org-Vault tree intact per S2 SITREP).
+- `/Users/stanley/aDNA/CLAUDE.md` workspace router 4 additions verified preserved (Step 0 + Project Discovery row + Workspace Layout entry + Standing Rule 5).
 - M08a outputs preserved pre-edit (untouched since 2026-05-11): mission file `completed`; AAR present; 17 coord memos at authored statuses; 4 partner memos `status: draft` + `delivery_held_until` preserved; 3 public announcement drafts `delivery_held_until: M06-tag-ship`; finalized upgrade guide `status: finalized`.
 - M03 outputs preserved pre-edit (untouched since 2026-05-11): mission file `status: completed`; AAR; ADR-008 `status: accepted`; V/R harness results.
 - M08c stub untouched (`status: planned`, `spec_completeness: stub`).
@@ -58,7 +58,7 @@ Plan file: `/Users/stanley/.claude/plans/please-read-the-claude-md-streamed-nyga
 ## Activity Log
 
 - 01:33 — Session opened (UTC 2026-05-12T01:33:14Z). Plan approved. Pre-flight reads: M04 mission spec §Obj 7 + M01 Obj 3 §8 (predicted 42/50 rubric) + M03 AAR (template precedent) + S2 session file (SITREP evidence) loaded.
-- 01:40 — Phase A complete: spot-walk of `~/lattice/node.aDNA/` confirmed 22 S2 deliverables present at file granularity (6 governance files + 7 inventory scaffolds + 5 identity scaffolds + 2 protocol AGENTS.md stubs + 4 node-skills); 8 federation keys verified in `inventory_memberships.yaml`; new entity types `inventory` + `identity` in use across appropriate files; README.md no-frontmatter convention verified vs `.adna/README.md` + `aDNA.aDNA/README.md` siblings (all unfrontmatted per GitHub-landing-page convention).
+- 01:40 — Phase A complete: spot-walk of `~/aDNA/node.aDNA/` confirmed 22 S2 deliverables present at file granularity (6 governance files + 7 inventory scaffolds + 5 identity scaffolds + 2 protocol AGENTS.md stubs + 4 node-skills); 8 federation keys verified in `inventory_memberships.yaml`; new entity types `inventory` + `identity` in use across appropriate files; README.md no-frontmatter convention verified vs `.adna/README.md` + `aDNA.aDNA/README.md` siblings (all unfrontmatted per GitHub-landing-page convention).
 - 01:50 — Phase B complete: `m04_obj7_ten_dim_audit.md` authored (10-dim findings table; per-dim score + evidence + delta column; D1=5/D2=5/D3=5/D4=4/D5=4/D6=4/D7=3/D8=3/D9=4/D10=5; **42/50 = 84% PASS, exact match to predicted; zero delta across all 10 dimensions; floor check ✅ all ≥3; no corrective patches required**). Audit method documented.
 - 02:00 — Phase C complete: `aar_m04_node_adna_bootstrap.md` authored (lightweight 5-line + 4-category extended findings — Successful patterns × 7 + Surprises and friction × 4 + Conceptual contributions × 5 + Items deferred × 10). **Load-bearing finding**: node.aDNA/ is the first new Org-Vault category instance bootstrapped entirely within `campaign_adna_v2_infrastructure` — first end-to-end production test of v7.0 fork-and-customize workflow on a real new vault. Companion findings: 3-session shape now has 3 independent instances (strengthens M03 AAR conjecture); 10-dim rubric is reliable forecasting tool (promotes from post-hoc to pre-execution planning); per-node operational persona is a new persona-pattern category (5th); federation discipline at template via single-commit additive change is generalizable; inline persona installation pattern confirmed across categories.
 - 02:08 — Phase D complete: status flips. M04 mission file frontmatter `status: in_progress → completed` + `closed_at: 2026-05-12T01:33:14Z` + `closed_session: session_stanley_20260512_013314_adna_v2_m04_s3` + `sessions_actual: 3` populated; §Status block paragraph rewritten with 3-session arc summary + audit results + handoff. Campaign master M04 row flipped `in_progress → completed` (full S3 close detail + audit + AAR cross-references + load-bearing finding); 15th amendments entry appended (~3KB; full 3-session retrospective). Campaign master `updated: 2026-05-11 → 2026-05-12`.
@@ -68,7 +68,7 @@ Plan file: `/Users/stanley/.claude/plans/please-read-the-claude-md-streamed-nyga
 ## SITREP
 
 **Completed**:
-- **Phase A — Spot-walk audit evidence**: verified all 22 M04 S2 deliverables at file granularity in `/Users/stanley/lattice/node.aDNA/` (6 governance files + 7 inventory scaffolds + 5 identity scaffolds + 2 protocol stubs + 4 node-skills); confirmed 8-key federation block + NEW entity types + 2 backlog ideas filed + Hestia inline + FAIR block populated.
+- **Phase A — Spot-walk audit evidence**: verified all 22 M04 S2 deliverables at file granularity in `/Users/stanley/aDNA/node.aDNA/` (6 governance files + 7 inventory scaffolds + 5 identity scaffolds + 2 protocol stubs + 4 node-skills); confirmed 8-key federation block + NEW entity types + 2 backlog ideas filed + Hestia inline + FAIR block populated.
 - **Phase B — 10-dim audit**: `missions/artifacts/m04_obj7_ten_dim_audit.md` authored. **42/50 = 84% PASS** (exact match to M01 Obj 3 §8 prediction). Zero delta on any of 10 dimensions. No dimension <3. No corrective patches.
 - **Phase C — M04 AAR**: `missions/artifacts/aar_m04_node_adna_bootstrap.md` authored. Lightweight 5-line + 4-category extended findings (7 successful patterns + 4 frictions + 5 conceptual contributions + 10 items deferred). Load-bearing finding identified.
 - **Phase D — Status flips**: M04 mission file `status: completed`; campaign master M04 row `completed` + 15th amendments entry.
@@ -105,4 +105,4 @@ Plan file: `/Users/stanley/.claude/plans/please-read-the-claude-md-streamed-nyga
 
 ## Next Session Prompt
 
-> Resume `campaign_adna_v2_infrastructure` in `aDNA.aDNA/`. **M04 mission closed at Session 3 2026-05-12T01:33:14Z+** (`session_stanley_20260512_013314_adna_v2_m04_s3`) — 10-dim audit returned 42/50 PASS (exact-match-to-predicted; zero delta); M04 AAR landed; load-bearing finding: node.aDNA/ is the first new Org-Vault category instance bootstrapped entirely within this campaign. Mission tree state: ✅ M02 → ✅ M08a → ✅ M03 → ✅ **M04** → M05 (planned; does NOT block on M04; opens at operator discretion). **Two paths forward**: (A) **Open M05** — publish-skill rewrite (P2; rewrites `skill_lattice_publish.md` + creates new `skill_git_remote_setup.md` + new `skill_vault_publish.md` + new `skill_deploy.md` + pre-push hook installer per M01 Obj 4 ADR + skill_lattice_publish_rewrite_spec.md + skill_git_remote_setup_spec.md + pre_push_hook_spec.md; Daedalus dual-vault coord memo already co-signed; implementation-class; estimated 3 sessions S1 spec + S2 destructive rewrite + S3 close). (B) **Pause to review M04 outputs** — operator inspects `~/lattice/node.aDNA/` + `git diff` workspace router + M04 audit + M04 AAR + S2's upstream commit `e3b3bcc` at `LatticeProtocol/adna`. **Greet operator, confirm M04 closed (10-dim audit 42/50 PASS + AAR + status flips + STATE.md rewrite), then ask: "Authorize M05 (publish-skill rewrite + skill_git_remote_setup + skill_deploy + pre-push hook installer; 3-session implementation; opens with S1 spec authoring), or pause to review M04 outputs first?"** Full details in `STATE.md` § Next Session Prompt.
+> Resume `campaign_adna_v2_infrastructure` in `aDNA.aDNA/`. **M04 mission closed at Session 3 2026-05-12T01:33:14Z+** (`session_stanley_20260512_013314_adna_v2_m04_s3`) — 10-dim audit returned 42/50 PASS (exact-match-to-predicted; zero delta); M04 AAR landed; load-bearing finding: node.aDNA/ is the first new Org-Vault category instance bootstrapped entirely within this campaign. Mission tree state: ✅ M02 → ✅ M08a → ✅ M03 → ✅ **M04** → M05 (planned; does NOT block on M04; opens at operator discretion). **Two paths forward**: (A) **Open M05** — publish-skill rewrite (P2; rewrites `skill_lattice_publish.md` + creates new `skill_git_remote_setup.md` + new `skill_vault_publish.md` + new `skill_deploy.md` + pre-push hook installer per M01 Obj 4 ADR + skill_lattice_publish_rewrite_spec.md + skill_git_remote_setup_spec.md + pre_push_hook_spec.md; Daedalus dual-vault coord memo already co-signed; implementation-class; estimated 3 sessions S1 spec + S2 destructive rewrite + S3 close). (B) **Pause to review M04 outputs** — operator inspects `~/aDNA/node.aDNA/` + `git diff` workspace router + M04 audit + M04 AAR + S2's upstream commit `e3b3bcc` at `LatticeProtocol/adna`. **Greet operator, confirm M04 closed (10-dim audit 42/50 PASS + AAR + status flips + STATE.md rewrite), then ask: "Authorize M05 (publish-skill rewrite + skill_git_remote_setup + skill_deploy + pre-push hook installer; 3-session implementation; opens with S1 spec authoring), or pause to review M04 outputs first?"** Full details in `STATE.md` § Next Session Prompt.

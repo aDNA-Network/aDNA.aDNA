@@ -18,7 +18,7 @@ predecessor_session: session_stanley_20260513_030626_mlwx03_s1  # S1 closed_to_s
 operator_decisions_inherited:
   D-StdADR: A  # ADR-013 authored at S1 Phase F; stays accepted
   D-F1Fix: A  # .adna/HOME.md inline-comment rephrase landed at upstream 202c9ec
-  D-RouterFix: A  # ~/lattice/CLAUDE.md Step 0.3 amendment landed local at S1 Phase E
+  D-RouterFix: A  # ~/aDNA/CLAUDE.md Step 0.3 amendment landed local at S1 Phase E
   D-S1Scope: B  # 2-session decomposition — S2 is this session
 operator_decisions_s2:
   D-Walkthrough: A  # walk operator through O1-O7 one check at a time (vs operator pastes pre-run results)
@@ -39,7 +39,7 @@ tags: [session, tier_2, mlwx_03, s2, closeout, mini_campaign_close, integration_
 
 Execute S2 closeout per plan `/Users/stanley/.claude/plans/please-read-the-claude-md-merry-dewdrop.md` — chosen Path A (run S2 now) with sub-case A.ii (walk operator through O1-O7):
 
-- **Phase I** — walk operator through 7 Obsidian checks (O1-O7) one at a time on `~/lattice/node.aDNA/`; capture PASS/FAIL + evidence; fill Result + Evidence columns in `mlwx_03_obj2_outer_vault_test_results.md`. Any FAIL gates AAR (corrective patch + re-test).
+- **Phase I** — walk operator through 7 Obsidian checks (O1-O7) one at a time on `~/aDNA/node.aDNA/`; capture PASS/FAIL + evidence; fill Result + Evidence columns in `mlwx_03_obj2_outer_vault_test_results.md`. Any FAIL gates AAR (corrective patch + re-test).
 - **Phase J** — author mini-campaign AAR `aar_campaign_lattice_workspace_ux.md` (5-line lightweight + 4-category extended findings spanning all 3 missions).
 - **Phase K** — status flips: M-LWX-03 mission `in_progress → completed`; mini-campaign master `executing → completed` + `phase: 1 → completed`; v2 main-campaign mini-campaign row → `completed` + M05 unblocked; `aDNA.aDNA/STATE.md` Last Session + Next Session Prompt rewritten for v2 M05; cross-graph memo `status: draft → final` with O1-O7 results appended.
 - **Phase L** — final commit + push + move S1 + S2 session files from `active/` to `history/2026-05/`.
@@ -58,9 +58,9 @@ Execute S2 closeout per plan `/Users/stanley/.claude/plans/please-read-the-claud
 - `aDNA.aDNA/how/sessions/active/session_stanley_20260513_030626_mlwx03_s1.md` (MOVE → `history/2026-05/` at Phase L)
 
 **Files this session will NOT touch**:
-- `~/lattice/.adna/` (HEAD `202c9ec` preserved; D-F1Fix already landed at S1)
-- `~/lattice/node.aDNA/` (HEAD `1032d8d` preserved — M-LWX-03 verifies, doesn't mutate)
-- `/Users/stanley/lattice/CLAUDE.md` (workspace router; D-RouterFix already landed at S1)
+- `~/aDNA/.adna/` (HEAD `202c9ec` preserved; D-F1Fix already landed at S1)
+- `~/aDNA/node.aDNA/` (HEAD `1032d8d` preserved — M-LWX-03 verifies, doesn't mutate)
+- `/Users/stanley/aDNA/CLAUDE.md` (workspace router; D-RouterFix already landed at S1)
 - M-LWX-01 outputs, M-LWX-02 outputs, M04 / M04b / M03 / M08a outputs
 - Any `.aDNA/` partner-vault content
 - M01 / M02 / M03 / M04 / M04b / M-LWX-01 / M-LWX-02 mission files (closed; preserved)

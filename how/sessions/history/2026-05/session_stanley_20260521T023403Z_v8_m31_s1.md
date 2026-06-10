@@ -18,11 +18,11 @@ files_created:
   - how/backlog/idea_interactive_decision_surface.md
   - how/sessions/active/session_stanley_20260521T023403Z_v8_m31_s1.md
 files_created_cross_vault:   # SiteForge.aDNA sibling seed post-M3.1-S1-close (operator-approved Light seed at post-plan-approval AskUserQuestion); renamed same day for scope expansion (I1-I6 improvements applied)
-  - /Users/stanley/lattice/SiteForge.aDNA/how/campaigns/campaign_siteforge_interactive_subsystem/campaign_siteforge_interactive_subsystem.md
-  - /Users/stanley/lattice/SiteForge.aDNA/how/campaigns/campaign_siteforge_interactive_subsystem/CLAUDE.md
-  - /Users/stanley/lattice/SiteForge.aDNA/how/campaigns/campaign_siteforge_interactive_subsystem/missions/mission_p0_genesis_planning.md
+  - /Users/stanley/aDNA/SiteForge.aDNA/how/campaigns/campaign_siteforge_interactive_subsystem/campaign_siteforge_interactive_subsystem.md
+  - /Users/stanley/aDNA/SiteForge.aDNA/how/campaigns/campaign_siteforge_interactive_subsystem/CLAUDE.md
+  - /Users/stanley/aDNA/SiteForge.aDNA/how/campaigns/campaign_siteforge_interactive_subsystem/missions/mission_p0_genesis_planning.md
 files_modified_cross_vault:   # post-rename: SiteForge STATE.md updated with new campaign listing (Recent Activity 2026-05-21 entry)
-  - /Users/stanley/lattice/SiteForge.aDNA/STATE.md
+  - /Users/stanley/aDNA/SiteForge.aDNA/STATE.md
 completed: false
 ---
 

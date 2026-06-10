@@ -32,11 +32,11 @@ Verification of the Option-C role expansion deliverables (HOME.md + workspace.js
 | 11 | ADR-001 captures 5 alternatives considered (A-E) | ✅ PASS |
 | 12 | `node.aDNA/README.md` has new "Opening this vault in Obsidian" section | ✅ PASS |
 | 13 | `node.aDNA/CHANGELOG.md` has new `[v0.2] — 2026-05-12` entry | ✅ PASS |
-| 14 | No `~/lattice/.obsidian/` workspace-root directory created | ✅ PASS (`ls ~/lattice/` shows no `.obsidian`) |
-| 15 | No `~/lattice/HOME.md` workspace-root file created | ✅ PASS |
-| 16 | No `~/lattice/.obsidianignore` workspace-root file created | ✅ PASS |
-| 17 | No `~/lattice/CLAUDE.md` workspace-router mutation | ✅ PASS (unchanged) |
-| 18 | No upstream `.adna/` mutation | ✅ PASS (`git -C ~/lattice/.adna log --oneline -1` still at `e3b3bcc`) |
+| 14 | No `~/aDNA/.obsidian/` workspace-root directory created | ✅ PASS (`ls ~/aDNA/` shows no `.obsidian`) |
+| 15 | No `~/aDNA/HOME.md` workspace-root file created | ✅ PASS |
+| 16 | No `~/aDNA/.obsidianignore` workspace-root file created | ✅ PASS |
+| 17 | No `~/aDNA/CLAUDE.md` workspace-router mutation | ✅ PASS (unchanged) |
+| 18 | No upstream `.adna/` mutation | ✅ PASS (`git -C ~/aDNA/.adna log --oneline -1` still at `e3b3bcc`) |
 | 19 | No partner-vault touches | ✅ PASS (only `node.aDNA/` and `aDNA.aDNA/` modified per `git status` in both repos) |
 | 20 | M04 audit outputs preserved | ✅ PASS (`aar_m04_node_adna_bootstrap.md` + `m04_obj7_ten_dim_audit.md` exist and unchanged per git) |
 | 21 | M04b outputs preserved | ✅ PASS (`m04b_obj1_dynamic_ux_gap_analysis.md` + `m04b_obj2_skill_node_bootstrap_interview_spec.md` + `m04b_obj3_lattice_obsidian_vault_spec.md` + `aar_m04b_workspace_ux_planning.md` unchanged) |
@@ -77,11 +77,11 @@ These checks require launching Obsidian — the agent cannot perform them. Opera
 
 | # | Check | Method | Expected |
 |---|---|---|---|
-| O1 | Obsidian opens `node.aDNA/` cleanly | File → Open Vault → `~/lattice/node.aDNA/` (or `obsidian://open?vault=node.aDNA`) | Vault opens; HOME.md visible in preview mode as the default open file; no error toasts |
+| O1 | Obsidian opens `node.aDNA/` cleanly | File → Open Vault → `~/aDNA/node.aDNA/` (or `obsidian://open?vault=node.aDNA`) | Vault opens; HOME.md visible in preview mode as the default open file; no error toasts |
 | O2 | HOME.md renders | Visual inspection on open | Header + 6 vault-class tables + Named Projects table + Drift table + Marketplace link + Tools & quick nav |
 | O3 | Markdown tables enumerate correctly | Compare HOME.md vault count to inventory_vaults.yaml | 21 `.aDNA` vaults + 11 named projects + 3 drift entries — all present |
 | O4 | Within-vault wikilinks navigate | Click `[[CLAUDE]]` in HOME.md | Opens `node.aDNA/CLAUDE.md` |
-| O5 | Cross-vault markdown links open | Click `[CanvasForge.aDNA](../CanvasForge.aDNA/)` | Opens file manager at `~/lattice/CanvasForge.aDNA/`; right-click → "Open with Obsidian" enters that vault as a separate session |
+| O5 | Cross-vault markdown links open | Click `[CanvasForge.aDNA](../CanvasForge.aDNA/)` | Opens file manager at `~/aDNA/CanvasForge.aDNA/`; right-click → "Open with Obsidian" enters that vault as a separate session |
 | O6 | Marketplace link clickable | Click marketplace link | Browser opens to `https://lattice-protocol.com/marketplace` (or 404 if not live — placeholder note acknowledges this) |
 | O7 | Theme + accent applied | Visual inspection | Tokyo Night theme + Rebecca Purple accent (per existing `.obsidian/appearance.json`) |
 

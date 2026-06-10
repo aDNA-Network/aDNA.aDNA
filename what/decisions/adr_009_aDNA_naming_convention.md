@@ -33,7 +33,7 @@ The aDNA ecosystem has grown to 20 `.aDNA` directories across 19 active vaults (
 | Standard form (directory + GitHub repo both `<name>.aDNA`) | 11 of 19 | `aDNA.aDNA/` ↔ `LatticeProtocol/aDNA.aDNA.git` |
 | Hyphen-flat GitHub repo (directory `<name>.aDNA/`; repo `<name>-adna.git`) | 4 of 19 | `science_stanley.aDNA/` ↔ `LatticeProtocol/science-stanley-adna.git` |
 | Suffix-flat-CamelCase repo | 1 of 19 | `la_startup.aDNA/` ↔ `ScienceStanley/LAStartupLattice.git` |
-| Path-style local remote (no GitHub) | 1 of 19 | `LPWhitepaper.aDNA/` ↔ `origin-whitepaper /Users/stanley/lattice/whitepaper` |
+| Path-style local remote (no GitHub) | 1 of 19 | `LPWhitepaper.aDNA/` ↔ `origin-whitepaper /Users/stanley/aDNA/whitepaper` |
 | No remote configured | 7 of 19 | `Spacemacs.aDNA/`, `VideoForge.aDNA/`, `III.aDNA/`, `VAASLattice.aDNA/`, `zeta.aDNA/`, `RareHarness.aDNA/`, `strategic_interface_protocol.aDNA/` |
 
 The standard form is already the **majority pattern** (11 of 19 = 58%). What's missing is a documented convention codifying it.
@@ -120,7 +120,7 @@ These 7 vaults will get GitHub remotes via `skill_git_remote_setup.md` (M05) at 
 
 | Vault directory | Remote | Why exception |
 |---|---|---|
-| `LPWhitepaper.aDNA/` | `origin-whitepaper → /Users/stanley/lattice/whitepaper` | Whitepaper-vault tooling pattern: separate-repo-but-co-located history with `whitepaper/` (the LaTeX repo). Local-path remote serves the publishing pipeline. |
+| `LPWhitepaper.aDNA/` | `origin-whitepaper → /Users/stanley/aDNA/whitepaper` | Whitepaper-vault tooling pattern: separate-repo-but-co-located history with `whitepaper/` (the LaTeX repo). Local-path remote serves the publishing pipeline. |
 
 The path-style remote is permitted under §1's "Path-style remotes" rule. v3 successor decides whether to add a GitHub `origin` alongside or convert.
 

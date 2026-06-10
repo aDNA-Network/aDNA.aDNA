@@ -47,7 +47,7 @@ Each guide includes a worked example, a 6-decision design extraction, and a per-
 4. **Bind data** — JSON keyed by the template's `{{placeholders}}` (title, options[], reasoning, context, gate_id, …). Optionally add a top-level `sitrep:` block (6 fields) — see §"SITREP authoring discipline" below. Optionally add structured `swot:` blocks per section (`phase_exit`) or top-level (`decision_gate_3option`) — see §"SWOT authoring discipline" below. Omit both for terse/legacy gates; templates fall through to existing `subtitle` and freeform `analysis`/`context` rendering.
 5. **Generate**:
    ```bash
-   python ~/lattice/SiteForge.aDNA/what/lib/iss/runtime/generator.py \
+   python ~/aDNA/SiteForge.aDNA/what/lib/iss/runtime/generator.py \
      --template <name> --persona <name> --font-mode {online|offline|system} \
      --data <json-or-path> --output <vault>/how/gates/<gate_id>.html
    ```
@@ -613,10 +613,10 @@ trace in ≤ 2 min:
 
 | Tier | Path | Role |
 |---|---|---|
-| T1 | `~/lattice/CLAUDE.md` | Workspace router — routes to `SiteForge.aDNA` |
-| T2 | `~/lattice/SiteForge.aDNA/CLAUDE.md` Standing Rule 8 | Project governance — names canonical skill + library code path |
-| T3 | `~/lattice/aDNA.aDNA/how/skills/skill_create_iss.md` | THIS document — single canonical authoring skill |
-| T4 | `~/lattice/SiteForge.aDNA/what/lib/iss/runtime/generator.py` | Library — `from what.lib.iss.runtime import generator` |
+| T1 | `~/aDNA/CLAUDE.md` | Workspace router — routes to `SiteForge.aDNA` |
+| T2 | `~/aDNA/SiteForge.aDNA/CLAUDE.md` Standing Rule 8 | Project governance — names canonical skill + library code path |
+| T3 | `~/aDNA/aDNA.aDNA/how/skills/skill_create_iss.md` | THIS document — single canonical authoring skill |
+| T4 | `~/aDNA/SiteForge.aDNA/what/lib/iss/runtime/generator.py` | Library — `from what.lib.iss.runtime import generator` |
 
 Four contract conditions: every tier points at next; no out-of-context references;
 T3 lists full opt-in flag inventory; T4 importable without side effects. Verified by

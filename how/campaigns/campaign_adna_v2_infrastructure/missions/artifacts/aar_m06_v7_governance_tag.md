@@ -59,7 +59,7 @@ related_decisions:
 
 4. **9 enumerated drift candidates → 11 actually reconciled**. The M06 spec enumerated 9 drift candidates for CHANGELOG; reconciliation surfaced 2 more (`skill_iii_setup.md` from III MB-6 cross-graph publish + D1 mixed-case URL sweep). Future spec drafting can underestimate drift count; the reconciliation artifact (M06 Obj 2) should be authored expecting drift discovery beyond the enumerated set.
 
-5. **M08a → M08b handoff for upgrade-guide-copy was undocumented in M06 spec P-checks**. P-4 said `test -f ~/lattice/.adna/how/docs/upgrade_v6_to_v7.md`, but the M06 spec authoring (S1) did not check M08a's Items Deferred to surface the M08b dependency. Pattern: when authoring a downstream mission spec, walk every upstream mission's Items Deferred to find hidden handoffs BEFORE the destructive border lands.
+5. **M08a → M08b handoff for upgrade-guide-copy was undocumented in M06 spec P-checks**. P-4 said `test -f ~/aDNA/.adna/how/docs/upgrade_v6_to_v7.md`, but the M06 spec authoring (S1) did not check M08a's Items Deferred to surface the M08b dependency. Pattern: when authoring a downstream mission spec, walk every upstream mission's Items Deferred to find hidden handoffs BEFORE the destructive border lands.
 
 ## §Conceptual contributions
 

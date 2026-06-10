@@ -11,7 +11,7 @@ GHIBLI_TAIL style + Keychain auth from e1_hero_adna_network_gen.py (cycle 146). 
 Interpreter: python3.13 (google.genai lives in the 3.13 user site, NOT homebrew 3.14).
 
 Usage:
-  cd /Users/stanley/lattice/aDNA.aDNA
+  cd /Users/stanley/aDNA/aDNA.aDNA
   python3.13 how/campaigns/campaign_adna_serious_tool_readiness/runners/e1_section_heroes_gen.py \
       --round r1 --section all --variants 2
   # winner pick is manual (view candidates, copy to hero_<section>.png)
@@ -33,11 +33,11 @@ from pathlib import Path
 
 from PIL import Image
 
-RUNNERS = "/Users/stanley/lattice/aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/runners"
+RUNNERS = "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/runners"
 sys.path.insert(0, RUNNERS)
 from e1_hero_adna_network_gen import GHIBLI_TAIL, load_api_key  # noqa: E402
 
-VAULT_ROOT = Path("/Users/stanley/lattice/aDNA.aDNA")
+VAULT_ROOT = Path("/Users/stanley/aDNA/aDNA.aDNA")
 OUT_DIR = VAULT_ROOT / "site/src/assets/heroes/candidates"
 LOG_DIR = VAULT_ROOT / "what/measurement/iii_results/2026-06"
 

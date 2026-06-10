@@ -16,13 +16,13 @@ sessions_actual: 1  # matched lower-bound estimate (estimated_sessions: "1-2"); 
 spec_completeness: complete  # full Read/Produce blocks authored under Option C scope at this session per M02/M04/M04b first-execution-session pattern
 estimated_sessions: "1-2"  # S1: governance flips + HOME.md + workspace.json + ADR-001 + README; actual: 1 session
 scope_reframe:
-  from: "~/lattice/ as outer Obsidian vault (5 .obsidian/ config files + HOME.md + .obsidianignore at workspace root + Step 0.5 in workspace router) per M04b Obj 3 spec"
-  to: "node.aDNA/ role expansion as integrated lattice-home Obsidian vault (HOME.md + workspace.json + ADR-001 + README section); no ~/lattice/ mutations; no rename"
-  rationale: "Operator architectural review during plan-mode (5-option analysis converged on Option C). Eliminates vault-in-vault problem, keeps ~/lattice/ clean, preserves scope-based naming pattern across the ecosystem, and reduces deliverables 8→5."
+  from: "~/aDNA/ as outer Obsidian vault (5 .obsidian/ config files + HOME.md + .obsidianignore at workspace root + Step 0.5 in workspace router) per M04b Obj 3 spec"
+  to: "node.aDNA/ role expansion as integrated lattice-home Obsidian vault (HOME.md + workspace.json + ADR-001 + README section); no ~/aDNA/ mutations; no rename"
+  rationale: "Operator architectural review during plan-mode (5-option analysis converged on Option C). Eliminates vault-in-vault problem, keeps ~/aDNA/ clean, preserves scope-based naming pattern across the ecosystem, and reduces deliverables 8→5."
   plan_file: /Users/stanley/.claude/plans/please-read-the-claude-md-composed-wigderson.md
 prerequisite_missions: []  # parallel-eligible with M-LWX-01; M04b close is the only upstream gate
 prerequisite_artifacts:
-  - m04b_obj3_lattice_obsidian_vault_spec.md  # the Obsidian-vault setup spec; reframed under Option C (HOME.md/Bases content sketches still authoritative; placement moves from ~/lattice/ to node.aDNA/)
+  - m04b_obj3_lattice_obsidian_vault_spec.md  # the Obsidian-vault setup spec; reframed under Option C (HOME.md/Bases content sketches still authoritative; placement moves from ~/aDNA/ to node.aDNA/)
 prerequisite_adrs:
   - adr_005_three_way_vault_boundary  # accepted; vault-in-vault discipline becomes moot under Option C (sibling .aDNA/ vaults aren't nested inside any outer vault)
   - adr_007_outer_adna_claude_md_disposition  # accepted; workspace CLAUDE.md untouched this mission (no Step 0.5 needed under Option C)
@@ -43,7 +43,7 @@ tags: [mission, in_progress, lwx_02, node_vault_role_expansion, integrated_home_
 Obsidian-vault setup spec authored at v2 M04b Obj 3
 ([[../../campaign_adna_v2_infrastructure/missions/artifacts/m04b_obj3_lattice_obsidian_vault_spec.md|`m04b_obj3_lattice_obsidian_vault_spec.md`]])
 — gallery, marketplace link, Bases-or-fallback, default-open file — but reframes
-the placement from outer workspace vault (`~/lattice/`) to additive role
+the placement from outer workspace vault (`~/aDNA/`) to additive role
 expansion of the existing per-node operational vault (`node.aDNA/`). All
 outputs land **local** to `node.aDNA/` (vault-scope, not workspace-scope, not
 template-scope).
@@ -55,7 +55,7 @@ files); parallel-eligible.
 > architectural review during plan-mode (5-option analysis converged on Option C
 > + reasoned rejection of `node.aDNA/` → `home.aDNA/` rename). The original
 > M04b Obj 3 spec stays the design input for HOME.md content + gallery shape;
-> placement moves from `~/lattice/` (outer workspace vault) to `node.aDNA/`
+> placement moves from `~/aDNA/` (outer workspace vault) to `node.aDNA/`
 > (additive role expansion of the existing per-node operational vault).
 > See plan at `/Users/stanley/.claude/plans/please-read-the-claude-md-composed-wigderson.md`.
 
@@ -75,7 +75,7 @@ role expansion in `adr_001_node_vault_role_expansion.md` (the first node-scope
 ADR), and add a short README section explaining the Obsidian-opening
 workflow.
 
-`~/lattice/` stays untouched. Sibling `.aDNA/` vaults open as separate vaults
+`~/aDNA/` stays untouched. Sibling `.aDNA/` vaults open as separate vaults
 when the operator needs to do project work there. No outer-workspace-vault
 layer is created; the vault-in-vault problem is avoided by not having an outer
 vault at all.
@@ -85,7 +85,7 @@ vault at all.
 ## Hard constraints
 
 - **No rename**: `node.aDNA/` stays named `node.aDNA/`. ADR-001 captures the rationale (scope-based naming consistency across the ecosystem + multi-node future).
-- **No `~/lattice/` mutations**: no `.obsidian/` at workspace root; no `HOME.md` at workspace root; no `.obsidianignore` at workspace root; no Step 0.5 added to `/Users/stanley/lattice/CLAUDE.md`.
+- **No `~/aDNA/` mutations**: no `.obsidian/` at workspace root; no `HOME.md` at workspace root; no `.obsidianignore` at workspace root; no Step 0.5 added to `/Users/stanley/aDNA/CLAUDE.md`.
 - **No upstream `.adna/` mutations**: HEAD `e3b3bcc` stands; no graceful fallback needed.
 - **No partner-vault touches**: sibling `.aDNA/` vaults retain their own Obsidian configs untouched.
 - **No M04 / M04b output mutation**: `node.aDNA/{CLAUDE,MANIFEST,STATE,CHANGELOG,README,AGENTS}.md` content unchanged; M04b spec artifacts are read-only references. README.md gets one additive section (Obsidian-opening guidance); CLAUDE.md is NOT modified.
@@ -137,7 +137,7 @@ Author `node.aDNA/what/decisions/adr_001_node_vault_role_expansion.md`:
 - Rationale:
   - Why expand the role: operator's intended UX is one integrated control plane for the lattice on this node; the per-node operational vault is the natural home for it.
   - Why NOT rename to `home.aDNA/`: scope-based naming consistency across the ecosystem (every `.aDNA/` vault in the workspace is named after what it IS, not what role it plays); multi-node future (each node gets its own `node.aDNA/`; `home.aDNA/` doesn't carry that nuance); Hestia persona already encodes the hearth/home semantics; migration cost (~15+ files + upstream commit + graceful fallback) for a cosmetic gain.
-  - Why NOT outer-workspace-vault layer at `~/lattice/`: vault-in-vault problem (inner `.aDNA/` vaults each have their own `.obsidian/`; outer indexer would collide); cross-vault wikilink degradation; clutter at `~/lattice/` root.
+  - Why NOT outer-workspace-vault layer at `~/aDNA/`: vault-in-vault problem (inner `.aDNA/` vaults each have their own `.obsidian/`; outer indexer would collide); cross-vault wikilink degradation; clutter at `~/aDNA/` root.
 - Consequences: HOME.md at vault root; workspace.default.json opens HOME.md; future v8.0+ may upstream the role-expansion pattern to `.adna/` template, but this mission keeps it local.
 - Alternatives considered (5 options A-E from plan-mode analysis): A status-quo / B symlinks / **C this decision** / D rename + retain outer vault / E thin outer + rich inner.
 
@@ -146,7 +146,7 @@ Author `node.aDNA/what/decisions/adr_001_node_vault_role_expansion.md`:
 Append a short "Opening this vault in Obsidian" section to `node.aDNA/README.md`
 between the "How to use" and "Origin" sections. Cover:
 
-- File → Open Vault → `~/lattice/node.aDNA/` (or `obsidian://open?vault=node.aDNA`)
+- File → Open Vault → `~/aDNA/node.aDNA/` (or `obsidian://open?vault=node.aDNA`)
 - HOME.md is the default open file (per workspace.default.json)
 - Gallery shows installed vaults + named projects + drift
 - Refresh data via `skill_inventory_refresh.md`
@@ -196,8 +196,8 @@ or M-LWX-03 next, per operator).
 - [ ] ADR-001 captures: rename rejection rationale (multi-node + scope-based naming + cost), outer-vault rejection rationale (vault-in-vault + wikilink degradation + clutter), Hestia hearth/home alignment
 - [ ] `node.aDNA/README.md` has new "Opening this vault in Obsidian" section
 - [ ] Obsidian opens `node.aDNA/` cleanly (manual smoke; HOME.md default; no error toasts)
-- [ ] No `~/lattice/` workspace-root mutations (`ls ~/lattice/` shows no new files; `~/lattice/CLAUDE.md` unchanged)
-- [ ] No upstream `.adna/` mutations (`git -C ~/lattice/.adna log --oneline -1` still at `e3b3bcc`)
+- [ ] No `~/aDNA/` workspace-root mutations (`ls ~/aDNA/` shows no new files; `~/aDNA/CLAUDE.md` unchanged)
+- [ ] No upstream `.adna/` mutations (`git -C ~/aDNA/.adna log --oneline -1` still at `e3b3bcc`)
 - [ ] No partner-vault touches (only `node.aDNA/` and `aDNA.aDNA/` modified)
 - [ ] No M04 audit output mutation (M04 mission file + AAR + 10-dim audit + 22 S2 artifacts preserved)
 - [ ] No M04b output mutation (M04b mission file + AAR + 3 design artifacts preserved)

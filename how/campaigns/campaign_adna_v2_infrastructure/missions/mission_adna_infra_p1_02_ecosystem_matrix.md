@@ -89,7 +89,7 @@ locks that finding.
 **Read:**
 1. [[artifacts/m01_obj0_ecosystem_matrix.md|M01 Obj 0 §1 vault inventory table]] — 19-row
    baseline (canonical list M02 validates against)
-2. `ls /Users/stanley/lattice/` — current workspace listing (re-confirm during Obj 1
+2. `ls /Users/stanley/aDNA/` — current workspace listing (re-confirm during Obj 1
    execution; pre-flight result already noted)
 3. `lattice/CLAUDE.md` Project Discovery table — workspace router's vault inventory (cross-check;
    M01 Obj 0 §1 F-1 already noted that two vaults are omitted there: `strategic_interface_protocol.aDNA`
@@ -119,7 +119,7 @@ no `git remote add` happened mid-flight).
    confirms 12 of 19 with GitHub origin / 7 of 19 no-remote / 1 of 19 non-standard local
 3. For 4 spot-check vaults (one per bucket — pick representative from each of: proper-LP-origin,
    proper-external-org-origin, no-remote, non-standard-local-path): run
-   `git -C /Users/stanley/lattice/<vault>.aDNA remote -v`
+   `git -C /Users/stanley/aDNA/<vault>.aDNA remote -v`
 
 **Produce:** `m02_obj2_remote_state_confirmed.md` — per-bucket sanity-check table with
 4 spot-check entries; verdict per bucket (unchanged / drift); cross-link to M01 Obj 0 §5.
@@ -145,8 +145,8 @@ inventory is still accurate.
 **Read:**
 1. [[artifacts/m01_obj0_ecosystem_matrix.md|M01 Obj 0 §1 vault inventory table publish skill column]] — 18 Y / 1 N baseline
 2. [[artifacts/m01_obj1_current_state.md|M01 Obj 1 §2 skill inventory table]] — 14-skill template-side baseline
-3. For 2-3 spot-check vaults: run `ls /Users/stanley/lattice/<vault>.aDNA/how/skills/skill_lattice_publish.md`
-   (or equivalent) and `ls /Users/stanley/lattice/<vault>.aDNA/how/skills/` (verify directory exists)
+3. For 2-3 spot-check vaults: run `ls /Users/stanley/aDNA/<vault>.aDNA/how/skills/skill_lattice_publish.md`
+   (or equivalent) and `ls /Users/stanley/aDNA/<vault>.aDNA/how/skills/` (verify directory exists)
 4. Specifically re-verify `wga.aDNA/how/skills/` does not exist (the structural exception)
 
 **Produce:** `m02_obj3_publish_skill_inventory_confirmed.md` — confirmed inventory table

@@ -15,8 +15,8 @@ mission_number: 3.5
 session_number: 3
 files_touched_planned:
   - aDNA.aDNA/how/sessions/active/session_stanley_20260525T032752Z_v8_m35_s3.md                                                       # this file (active at open; status: completed + git mv to history/2026-05/ at close)
-  - /Users/stanley/lattice/node.aDNA/who/assets/vault_cards/*.jpg                                                                    # D7d 31 fresh JPGs via Imagen 4 Ultra
-  - /Users/stanley/lattice/node.aDNA/who/assets/vault_cards/_pre_m35_s2b/                                                            # D7d 7 archived predecessors (provenance per Standing Order #6)
+  - /Users/stanley/aDNA/node.aDNA/who/assets/vault_cards/*.jpg                                                                    # D7d 31 fresh JPGs via Imagen 4 Ultra
+  - /Users/stanley/aDNA/node.aDNA/who/assets/vault_cards/_pre_m35_s2b/                                                            # D7d 7 archived predecessors (provenance per Standing Order #6)
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_m35_home_polish_and_per_vault_info_pages.md  # NEW M3.5 AAR (largest single artifact this session)
   - aDNA.aDNA/what/decisions/adr_023_registry_data_projection_contract.md                                                            # EDIT status: draft → accepted + ratified + ratified_session + §Status Ratification block
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p3_m35_home_polish_and_per_vault_info_pages.md  # EDIT close (status + closed_at + closed_session + actual_sessions=4 + Objectives 1-9 done + Mission Close Notes)

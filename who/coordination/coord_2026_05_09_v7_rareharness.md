@@ -18,7 +18,7 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_p1_08a_upgrade_guide_and_coord_memos
 objective: 1
 target_mission: M08a
-mirror: /Users/stanley/lattice/RareHarness.aDNA/who/coordination/coord_2026_05_09_v7_aDNA_adoption.md
+mirror: /Users/stanley/aDNA/RareHarness.aDNA/who/coordination/coord_2026_05_09_v7_aDNA_adoption.md
 airlock_pattern: true
 operator_class: LatticeProtocol-internal
 external_party: (none — anchor partner Wilhelm Foundation, but vault is LP-internal)
@@ -29,7 +29,7 @@ tags: [coordination, cross_graph, v7_0_adoption, rosetta, asclepius, rareharness
 
 # RareHarness.aDNA — aDNA v7.0 Coordination Memo
 
-> **Multilateral airlock instance** (14 of 17). **Platform.aDNA category** + **no-remote variant** — RareHarness is the canonical Platform.aDNA instance (Asclepius); paired with sibling code repo `~/lattice/rareharness/`.
+> **Multilateral airlock instance** (14 of 17). **Platform.aDNA category** + **no-remote variant** — RareHarness is the canonical Platform.aDNA instance (Asclepius); paired with sibling code repo `~/aDNA/rareharness/`.
 
 ---
 
@@ -80,7 +80,7 @@ aDNA v7.0 is a Major Governance bump. Two breaking + first-time remote. The vaul
 
 ### RareHarness.aDNA-specific notes
 
-- **Sibling code repo**: `~/lattice/rareharness/` at `d06811b` is the runtime implementation; v7.0 affects the **vault** (governance) but not the code repo. Coordinated PRs may sequence the vault and code-repo migrations.
+- **Sibling code repo**: `~/aDNA/rareharness/` at `d06811b` is the runtime implementation; v7.0 affects the **vault** (governance) but not the code repo. Coordinated PRs may sequence the vault and code-repo migrations.
 - **Rod-serpent coupling with RareArchive.aDNA** (Mnemosyne ↔ Asclepius — memory supplies, healing applies): cross-graph publishing contracts (ADR 007 in RareHarness, co-signed) govern the coupling. v7.0 adoption is independent of the rod-serpent contract; coupling preserved unchanged.
 - **Anchor partner Wilhelm Foundation**: operator-class is LP-internal (Stanley operates); WF anchor partnership is a governance relationship documented in `RareHarness.aDNA/CLAUDE.md`. v7.0 adoption is invisible to the partnership.
 - **Active P2**: RareHarness is in active P2 (MP2-0 + MP2-3 + MP2-2 closed 2026-05-08); v7.0 adoption can sequence around active mission cadence.

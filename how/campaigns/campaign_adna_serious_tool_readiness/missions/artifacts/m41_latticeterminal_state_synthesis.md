@@ -23,7 +23,7 @@ tags: [synthesis, paired_read, latticeterminal, spock, m41, p4_entry, installer_
 
 ## §1 Headline finding
 
-**LatticeTerminal already has a working installer scaffold.** The campaign master P4 mission table (line 185-189) treated installer authoring as net-new v8 work; the paired read reveals that Spock has shipped **M1.1 `skill_install`** at `what/latticeterminal/.claude/skills/skill_install/SKILL.md` with operator-confirmable, telemetry-emitting, BACKEND-MATRIX-pinned macOS-first installer **already running end-to-end**. This shifts the M4.x mission shape from *"author installer from scratch"* to *"federate the existing LatticeTerminal installer + extend it to bootstrap the aDNA workspace (`~/lattice/` + `.adna/` + workspace router + node.aDNA)"*. **D10 (repo strategy) now has a strong natural fit** — option 2 (LatticeTerminal hosts; aDNA consumes) aligns with existing reality.
+**LatticeTerminal already has a working installer scaffold.** The campaign master P4 mission table (line 185-189) treated installer authoring as net-new v8 work; the paired read reveals that Spock has shipped **M1.1 `skill_install`** at `what/latticeterminal/.claude/skills/skill_install/SKILL.md` with operator-confirmable, telemetry-emitting, BACKEND-MATRIX-pinned macOS-first installer **already running end-to-end**. This shifts the M4.x mission shape from *"author installer from scratch"* to *"federate the existing LatticeTerminal installer + extend it to bootstrap the aDNA workspace (`~/aDNA/` + `.adna/` + workspace router + node.aDNA)"*. **D10 (repo strategy) now has a strong natural fit** — option 2 (LatticeTerminal hosts; aDNA consumes) aligns with existing reality.
 
 ## §2 LatticeTerminal current state (read 2026-05-25T17:35Z)
 
@@ -67,14 +67,14 @@ Discovered via direct read of `what/latticeterminal/install/README.md`:
 
 ### MC-LAUNCH end-to-end complete
 
-Per workspace `~/lattice/CLAUDE.md` LatticeTerminal row + recon report:
+Per workspace `~/aDNA/CLAUDE.md` LatticeTerminal row + recon report:
 - M3.15 launcher (`what/latticeterminal/launcher/`; 3-stage Bubbletea Go binary)
 - M3.16 Claude Code v1-default adapter
 - M3.17 LOI surface (Letter of Intent surface for vault selection)
 - HARNESS-CONTRACT finalized (§4 registry currently STUB for Claude Code v1-default; OpenCode stubbed; LatticeAgent Phase-6 deferred)
 - PROVIDER-CONTRACT finalized + locked
 
-**Implication**: a curl-bash on macOS today *could* install Ghostty + tmux + Claude Code + LatticeTerminal launcher + drop the operator into a working terminal. What's missing from v8.0's perspective: **the workspace bootstrap layer** (`~/lattice/` directory creation + `.adna/` template clone + workspace router CLAUDE.md + node.aDNA fork + first-run skill triggering).
+**Implication**: a curl-bash on macOS today *could* install Ghostty + tmux + Claude Code + LatticeTerminal launcher + drop the operator into a working terminal. What's missing from v8.0's perspective: **the workspace bootstrap layer** (`~/aDNA/` directory creation + `.adna/` template clone + workspace router CLAUDE.md + node.aDNA fork + first-run skill triggering).
 
 ## §4 Relevant ADRs already ratified at LatticeTerminal
 
@@ -113,7 +113,7 @@ Per workspace `~/lattice/CLAUDE.md` LatticeTerminal row + recon report:
 | 2 | LatticeTerminal push discipline = local-only; no origin/main fetch | Medium | M4.x must coordinate via coord memos + operator-confirmed reads; not via `git fetch LatticeTerminal/main` |
 | 3 | ADR-019 gates Linux/Windows installer | High at v8.0 ship | v8.0 ships macOS-first installer; Linux/Windows tracked in v8.x successor; D10 + ADR-015 must spec this clearly |
 | 4 | HARNESS-CONTRACT §4 registry STUB for Claude Code v1-default | Low | M4.x freezes at "Claude Code v1-default only at v8.0"; OpenCode is post-v8.0 |
-| 5 | Existing `skill_install` is M1.1-scoped (Ghostty + tmux + Claude Code only); does NOT include `~/lattice/` workspace bootstrap | Medium | M4.x extends with a workspace-bootstrap layer (`skill_install_workspace` or similar at aDNA.aDNA side); LatticeTerminal owns base installer + aDNA owns workspace-layer is the natural seam |
+| 5 | Existing `skill_install` is M1.1-scoped (Ghostty + tmux + Claude Code only); does NOT include `~/aDNA/` workspace bootstrap | Medium | M4.x extends with a workspace-bootstrap layer (`skill_install_workspace` or similar at aDNA.aDNA side); LatticeTerminal owns base installer + aDNA owns workspace-layer is the natural seam |
 | 6 | macOS code-signing + notarization required | Medium | M4.4 (CI/CD) owns this; ADR-015 (M4.2) must specify which entity ships the signed binary (LatticeProtocol org) |
 
 ## §7 Recommended Phase-4 contract clause skeleton (input to D3)
@@ -122,7 +122,7 @@ Based on this synthesis, the 8-clause Phase-4 contract should specify:
 
 - **A. Installer repo location** = LatticeTerminal.aDNA hosts the base installer skill (existing `what/latticeterminal/.claude/skills/skill_install/SKILL.md`); aDNA.aDNA hosts the workspace-bootstrap extension at `aDNA.aDNA/how/skills/skill_install_workspace.md` (or similar; M4.3 names canonical location). Both repos cross-reference. *[Pending D10 ratification at G2]*
 - **B. Agent harness ownership** = LatticeAgent.aDNA owns the HARNESS-CONTRACT + PROVIDER-CONTRACT; v8.0 pins Claude Code v1-default only; OpenCode co-provider deferred to v8.x.
-- **C. Workspace router sync** = aDNA installer skill produces `~/lattice/CLAUDE.md` (router) + `.adna/` template clone + invokes LatticeTerminal `cmd/install` for the base layer; node.aDNA bootstrap fires per existing `.adna/how/skills/skill_node_bootstrap_interview.md`.
+- **C. Workspace router sync** = aDNA installer skill produces `~/aDNA/CLAUDE.md` (router) + `.adna/` template clone + invokes LatticeTerminal `cmd/install` for the base layer; node.aDNA bootstrap fires per existing `.adna/how/skills/skill_node_bootstrap_interview.md`.
 - **D. CI/CD platform strategy** = GitHub Actions (matches both vault patterns); release artifacts pushed to `LatticeProtocol/lattice-install` (new lightweight repo) OR to LatticeTerminal releases (TBD at M4.4).
 - **E. Binary distribution channels** = `curl install.lattice.dev | sh` (macOS Intel + Apple Silicon at v8.0); `.ps1` + Linux package candidates deferred per ADR-019.
 - **F. Cross-platform support matrix** = inherit from LatticeTerminal ADR-016 BACKEND-MATRIX; macOS SHIP at v8.0; Linux/Windows DG-C-gated.

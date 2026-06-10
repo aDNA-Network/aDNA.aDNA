@@ -60,7 +60,7 @@ Everything in [[../../../../../adna/.adna/how/skills/skill_lattice_publish.md|th
 | Edit | Reason | Impact |
 |---|---|---|
 | **Cross-link to `skill_vault_publish.md`** | A reader landing here from a "how do I publish?" search needs to disambiguate. Add a one-line "Note: this skill publishes a `.lattice.yaml` *object* to a registry. To publish a *vault* to its GitHub remote, see `skill_vault_publish.md`." near the Overview. | One sentence added |
-| **Path-drift check** | `cd ~/lattice/lattice-protocol-repo` (Step 1, line 62) — verify this path is still current in v7.0. If not, update. | 0 or 1 path edit |
+| **Path-drift check** | `cd ~/aDNA/lattice-protocol-repo` (Step 1, line 62) — verify this path is still current in v7.0. If not, update. | 0 or 1 path edit |
 | **Frontmatter `updated:`** | Bump to the M05 execution date. | One field |
 | **Frontmatter `tags:`** | Add `lattice_object` (clarifies what the skill operates on). | One value |
 | **`Related` block** | Add `skill_vault_publish.md`, `skill_git_remote_setup.md`, `skill_publish_tarball.md` cross-links. | Three lines |

@@ -22,7 +22,7 @@ related_decisions:
   - adr_009_aDNA_naming_convention.md
   # ADR-008 (airlock stub, M03), ADR-010 (publish-naming, M05), ADR-011 (semver, M06) — forward-references.
 ancestor_template:
-  - /Users/stanley/lattice/aDNA.aDNA/who/coordination/coord_2026_05_08_publish_rewrite.md  # airlock structure inherited verbatim
+  - /Users/stanley/aDNA/aDNA.aDNA/who/coordination/coord_2026_05_08_publish_rewrite.md  # airlock structure inherited verbatim
 ---
 
 # Per-Vault v7.0 Coordination Memo — Template
@@ -88,7 +88,7 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_planning_01
 objective: 8
 target_mission: M08a
-mirror: /Users/stanley/lattice/{{VAULT_NAME}}/who/coordination/coord_{{DELIVERY_DATE}}_v7_aDNA_adoption.md
+mirror: /Users/stanley/aDNA/{{VAULT_NAME}}/who/coordination/coord_{{DELIVERY_DATE}}_v7_aDNA_adoption.md
 airlock_pattern: true
 operator_class: {{OPERATOR_CLASS}}
 external_party: {{EXTERNAL_PARTY}}
@@ -112,7 +112,7 @@ This memo crosses from aDNA.aDNA (the standard producer) to {{VAULT_NAME}} (a st
 
 ## §2 What's changing in v7.0 (one-paragraph version)
 
-aDNA v7.0 is a Major Governance bump (Standard track unchanged at v2.2). Two things break and need a one-time migration: (1) the `~/lattice/.adna -> adna/.adna` symlink retires — `.adna/` is now a real directory (M03 repo flatten); (2) the publish-skill family rewrite replaces the rsync workaround with `git push` (M05 publish family). Three things are pull-based and need nothing: the v7.0 tag, the GitHub repo rename `Agentic-DNA` → `adna`, the `deploy_manifest.yaml` move into `.github/`. Four things are new opt-in patterns: `node.aDNA/` local node vault, `LatticeScope.aDNA` observability project, the airlock-pattern adoption stub, the `<name>.aDNA/ ↔ <name>.aDNA.git` naming convention codification. The full guide is at [[../../../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj8_upgrade_guide_v6_to_v7.md|`m01_obj8_upgrade_guide_v6_to_v7.md`]] (M08a will republish to `adna-docs.vercel.app/learn/upgrade-v6-to-v7`).
+aDNA v7.0 is a Major Governance bump (Standard track unchanged at v2.2). Two things break and need a one-time migration: (1) the `~/aDNA/.adna -> adna/.adna` symlink retires — `.adna/` is now a real directory (M03 repo flatten); (2) the publish-skill family rewrite replaces the rsync workaround with `git push` (M05 publish family). Three things are pull-based and need nothing: the v7.0 tag, the GitHub repo rename `Agentic-DNA` → `adna`, the `deploy_manifest.yaml` move into `.github/`. Four things are new opt-in patterns: `node.aDNA/` local node vault, `LatticeScope.aDNA` observability project, the airlock-pattern adoption stub, the `<name>.aDNA/ ↔ <name>.aDNA.git` naming convention codification. The full guide is at [[../../../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj8_upgrade_guide_v6_to_v7.md|`m01_obj8_upgrade_guide_v6_to_v7.md`]] (M08a will republish to `adna-docs.vercel.app/learn/upgrade-v6-to-v7`).
 
 ---
 
@@ -135,7 +135,7 @@ aDNA v7.0 is a Major Governance bump (Standard track unchanged at v2.2). Two thi
 
 | # | Action | When | Where to look |
 |---|---|---|---|
-| 1 | **Workspace flatten**: from `~/lattice/`, remove the `.adna` symlink + `adna/` outer wrapper, then `git clone https://github.com/LatticeProtocol/adna.git .adna` (or run the in-place migration if you have local changes). | Once M03 ships (announced in `aDNA.aDNA/STATE.md`). | [[../../../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj8_upgrade_guide_v6_to_v7.md|upgrade guide]] §2 + [[m01_obj2_migration_runbook.md|migration runbook]] §3 |
+| 1 | **Workspace flatten**: from `~/aDNA/`, remove the `.adna` symlink + `adna/` outer wrapper, then `git clone https://github.com/LatticeProtocol/adna.git .adna` (or run the in-place migration if you have local changes). | Once M03 ships (announced in `aDNA.aDNA/STATE.md`). | [[../../../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj8_upgrade_guide_v6_to_v7.md|upgrade guide]] §2 + [[m01_obj2_migration_runbook.md|migration runbook]] §3 |
 | 2 | **Publish-skill adoption**: {{remote_setup_action}} run `~/.adna/how/skills/skill_deploy.md` to install the pre-push sanitization hook. | Once M05 ships (announced in `aDNA.aDNA/STATE.md`). | [[../../../../how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj8_upgrade_guide_v6_to_v7.md|upgrade guide]] §3 + [[skill_lattice_publish_rewrite_spec.md|publish-skill family spec]] |
 
 > **M08a fills `{{remote_setup_action}}`** based on `{{REMOTE_STATE}}`:

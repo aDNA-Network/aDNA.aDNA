@@ -51,7 +51,7 @@ tags: [session, m06, s1, spec_authoring, non_destructive, campaign_adna_v2_infra
 - **Created**: `how/campaigns/campaign_adna_v2_infrastructure/missions/mission_adna_infra_p1_06_v7_governance_tag.md` (M06 spec); `how/sessions/active/session_stanley_20260518_164042_adna_v2_m06_s1.md` (this session file)
 - **Modified**: `STATE.md` (5 edits); `how/campaigns/campaign_adna_v2_infrastructure/campaign_adna_v2_infrastructure.md` (M06 row + amendments)
 - **Moved at close**: this session file `active/` → `history/2026-05/`
-- **Untouched**: `.adna/` (HEAD stays `dfced67` M05 S2); all partner vaults; all 3 public-announcement drafts (`m08a_github_release_notes_v7.md` + `m08a_readme_badge_spec.md` + `m08a_social_comms_post_draft.md` — all stay `status: draft`); Daedalus shipped-memo (`coord_2026_05_18_publish_rewrite_shipped_daedalus.md` stays `status: draft`); 4 partner-affiliated embargo memos (Wilhelm × 2 + SuperLeague + SIP, all stay `status: draft`); workspace router `/Users/stanley/lattice/CLAUDE.md`; `node.aDNA/` (HEAD `411660e`); ADRs 004-013 all `accepted`; ADR-011 stays `proposed` (S2 phase gate ratification target).
+- **Untouched**: `.adna/` (HEAD stays `dfced67` M05 S2); all partner vaults; all 3 public-announcement drafts (`m08a_github_release_notes_v7.md` + `m08a_readme_badge_spec.md` + `m08a_social_comms_post_draft.md` — all stay `status: draft`); Daedalus shipped-memo (`coord_2026_05_18_publish_rewrite_shipped_daedalus.md` stays `status: draft`); 4 partner-affiliated embargo memos (Wilhelm × 2 + SuperLeague + SIP, all stay `status: draft`); workspace router `/Users/stanley/aDNA/CLAUDE.md`; `node.aDNA/` (HEAD `411660e`); ADRs 004-013 all `accepted`; ADR-011 stays `proposed` (S2 phase gate ratification target).
 
 ---
 

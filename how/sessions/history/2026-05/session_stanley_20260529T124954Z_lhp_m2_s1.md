@@ -24,7 +24,7 @@ completed: 2026-05-29T12:58:27Z
 - 12:55 — Step 3 substrate: `mkdir -p how/configs/{bin,home,conf.d,runbooks}/`; M2 mission spec authored; 6 substrate files written in parallel via Write tool
 - 12:56 — chmod +x on 3 scripts
 - 12:57 — Step 5 smoke-verify rows 1-3 PASS (syntax + dry-run + idempotent install)
-- 12:57 — Step 5 row 4 FAIL initially (PWD gate bug — `case "$pwd_canon/" in "$vault"/*) ;;` doesn't match when PWD == vault root exactly); fixed to `"$vault"|"$vault"/*`; retry r4 still FAIL (PWD symlink resolution diff — `/Users/stanley/lattice/adna.adna` symlink vs canonical `/Users/stanley/lattice/aDNA.aDNA`); fixed via `realpath` canonicalization
+- 12:57 — Step 5 row 4 FAIL initially (PWD gate bug — `case "$pwd_canon/" in "$vault"/*) ;;` doesn't match when PWD == vault root exactly); fixed to `"$vault"|"$vault"/*`; retry r4 still FAIL (PWD symlink resolution diff — `/Users/stanley/aDNA/adna.adna` symlink vs canonical `/Users/stanley/aDNA/aDNA.aDNA`); fixed via `realpath` canonicalization
 - 12:58 — Step 5 rows 4-10 PASS (splash renders + ADNA_LATTICE=0 suppress + out-of-graph suppress + mission grep matches + claude-code ✓ + uninstall + round-trip reinstall)
 - 12:58 — Step 6 drift audit notation recorded (cmd_home 131 lines vs CMux pin 126 lines; 121 diff lines; 5-20% logic-adaptation tier = Acceptable per skill step 6)
 - 12:58 — M2 close cascade: mission spec status `in_progress → completed` + 10-row smoke-verify results table + drift-audit notation + lightweight 5-line AAR populated; campaign master M2 row `planned → completed`; STATE.md Op 3 38th canonical instance refresh applied + Next Session Prompt → M3 lifecycle variants

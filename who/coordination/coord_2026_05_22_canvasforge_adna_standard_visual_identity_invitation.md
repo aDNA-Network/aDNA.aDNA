@@ -30,7 +30,7 @@ The aDNA standard has **no canonical visual identity** today — only architectu
 
 ## Application charter scaffold
 
-Full charter at: `~/lattice/CanvasForge.aDNA/how/missions/artifacts/style_search_adna_standard_application_charter.md`
+Full charter at: `~/aDNA/CanvasForge.aDNA/how/missions/artifacts/style_search_adna_standard_application_charter.md`
 
 **Suggested Round 1 axis**: `style-anchor` — 4 broad style families to elect from:
 1. **Tech schematic / blueprint** — minimal line art, monospace overlay, blueprint-blue palette, lattice grid motif
@@ -55,16 +55,16 @@ The aDNA standard has been operational for many sessions/months across many vaul
 ## Subsystem readiness
 
 CanvasForge-side prerequisites all landed 2026-05-22:
-- **ADR-006** (architecture contract): `~/lattice/CanvasForge.aDNA/what/decisions/adr_006_visual_style_rlhf.md`
-- **Design artifact** (source of truth): `~/lattice/CanvasForge.aDNA/how/missions/artifacts/visual_style_rlhf_subsystem_design.md`
-- **Skill** (agent protocol): `~/lattice/CanvasForge.aDNA/how/skills/skill_style_search_rlhf.md`
-- **Runner**: `~/lattice/CanvasForge.aDNA/how/campaigns/campaign_canvasforge_v1_2/runners/style_search_runner.py` (extending for `--target adna_standard` requires adding deterministic Round 1 prompt set OR full scout invocation at Round 1; current runner has SS character Round 1 deterministic)
-- **ISS template** (cross-vault): `~/lattice/SiteForge.aDNA/what/lib/iss/templates/image_grid_variant.html`
+- **ADR-006** (architecture contract): `~/aDNA/CanvasForge.aDNA/what/decisions/adr_006_visual_style_rlhf.md`
+- **Design artifact** (source of truth): `~/aDNA/CanvasForge.aDNA/how/missions/artifacts/visual_style_rlhf_subsystem_design.md`
+- **Skill** (agent protocol): `~/aDNA/CanvasForge.aDNA/how/skills/skill_style_search_rlhf.md`
+- **Runner**: `~/aDNA/CanvasForge.aDNA/how/campaigns/campaign_canvasforge_v1_2/runners/style_search_runner.py` (extending for `--target adna_standard` requires adding deterministic Round 1 prompt set OR full scout invocation at Round 1; current runner has SS character Round 1 deterministic)
+- **ISS template** (cross-vault): `~/aDNA/SiteForge.aDNA/what/lib/iss/templates/image_grid_variant.html`
 
 ## What aDNA.aDNA operator owns
 
 - Charter authority for the application (when to open Round 1; mission file at aDNA.aDNA's preferred location)
-- Per-target style registry hosting at `~/lattice/aDNA.aDNA/what/artifacts/style_registry/adna_standard/` (mirror of CanvasForge.aDNA pattern; co-owned in aDNA.aDNA since aDNA.aDNA is the canonical consumer)
+- Per-target style registry hosting at `~/aDNA/aDNA.aDNA/what/artifacts/style_registry/adna_standard/` (mirror of CanvasForge.aDNA pattern; co-owned in aDNA.aDNA since aDNA.aDNA is the canonical consumer)
 - Invariant ratification at Round 1 open (refining the suggestions above)
 - Final-baseline trust ratification (when does Round N's checkpoint become the canonical baseline?)
 
@@ -86,8 +86,8 @@ Operation Loom (SiteForge.aDNA `campaign_siteforge_interactive_subsystem`) Phase
 
 ## References
 
-- **Visual-style RLHF design artifact**: `~/lattice/CanvasForge.aDNA/how/missions/artifacts/visual_style_rlhf_subsystem_design.md`
-- **ADR-006**: `~/lattice/CanvasForge.aDNA/what/decisions/adr_006_visual_style_rlhf.md`
-- **aDNA standard application charter (scaffold)**: `~/lattice/CanvasForge.aDNA/how/missions/artifacts/style_search_adna_standard_application_charter.md`
-- **aDNA standard documentation** (Operation Rosetta): `~/lattice/aDNA.aDNA/CLAUDE.md`
+- **Visual-style RLHF design artifact**: `~/aDNA/CanvasForge.aDNA/how/missions/artifacts/visual_style_rlhf_subsystem_design.md`
+- **ADR-006**: `~/aDNA/CanvasForge.aDNA/what/decisions/adr_006_visual_style_rlhf.md`
+- **aDNA standard application charter (scaffold)**: `~/aDNA/CanvasForge.aDNA/how/missions/artifacts/style_search_adna_standard_application_charter.md`
+- **aDNA standard documentation** (Operation Rosetta): `~/aDNA/aDNA.aDNA/CLAUDE.md`
 - **Re-merge rationale**: `lattice-labs/who/coordination/coord_2026_04_16_forge_split.md`

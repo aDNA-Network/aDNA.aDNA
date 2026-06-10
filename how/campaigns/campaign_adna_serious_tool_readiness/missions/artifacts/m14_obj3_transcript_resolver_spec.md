@@ -36,7 +36,7 @@ Claude Code stores per-project transcripts at `~/.claude/projects/<sanitized-cwd
 
 ```
 Live confirmation (M1.4 S1 inspection):
-  cwd: /Users/stanley/lattice/aDNA.aDNA
+  cwd: /Users/stanley/aDNA/aDNA.aDNA
   sanitized: -Users-stanley-lattice-aDNA-aDNA
   transcript dir: ~/.claude/projects/-Users-stanley-lattice-aDNA-aDNA/
 ```
@@ -47,7 +47,7 @@ Live confirmation (M1.4 S1 inspection):
 # Resolve sanitized cwd: leading slash + path separators + dots all become hyphens
 sanitize_cwd() {
   local cwd="${1:-$PWD}"
-  # Real-path resolution handles symlinks (`~/lattice` → `/Users/stanley/lattice`)
+  # Real-path resolution handles symlinks (`~/aDNA` → `/Users/stanley/aDNA`)
   cwd=$(cd "$cwd" 2>/dev/null && pwd -P || echo "$cwd")
   # Replace / and . with - (single sed pass)
   printf '%s' "$cwd" | sed 's|[/.]|-|g'

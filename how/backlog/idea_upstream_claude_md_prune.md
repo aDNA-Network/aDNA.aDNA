@@ -15,7 +15,7 @@ tags: [backlog, upstream, claude_md, token_prune, adna_template, conservative, a
 
 `.adna/CLAUDE.md` is the base aDNA template's CLAUDE.md — it loads into every session of every aDNA-based vault as the inherited governance layer. Current size: **22,243 chars (~5,560 tokens)** per `wc -c` 2026-05-20. Multiplied across the workspace (29 `.aDNA/` vaults + grandfathered named projects = ~38 consumers), the cumulative session-load cost is high — and the file likely contains parentheticals, repeated cross-refs, and spec-detail that could extract to canonical spec files.
 
-This is the **upstream cousin** of `campaign_lattice_compliance_upgrade` M01 (CLAUDE.md token prune × 5 routing files at the workspace level). M01 covers the *local* routing files (workspace + lattice-labs + node.aDNA + LatticeTerminal + LatticeAgent). The base template at `.adna/CLAUDE.md` is **out of local scope** per `~/lattice/CLAUDE.md` Standing Rule 1 ("never modify `.adna/`"). The fix path is **upstream contribution** — a PR to `LatticeProtocol/adna` per `how/skills/skill_upstream_contribution.md`.
+This is the **upstream cousin** of `campaign_lattice_compliance_upgrade` M01 (CLAUDE.md token prune × 5 routing files at the workspace level). M01 covers the *local* routing files (workspace + lattice-labs + node.aDNA + LatticeTerminal + LatticeAgent). The base template at `.adna/CLAUDE.md` is **out of local scope** per `~/aDNA/CLAUDE.md` Standing Rule 1 ("never modify `.adna/`"). The fix path is **upstream contribution** — a PR to `LatticeProtocol/adna` per `how/skills/skill_upstream_contribution.md`.
 
 ## Proposed Solution
 
@@ -61,7 +61,7 @@ Per M01 Exit-Gate criterion 7. These observations are the actual-vs-projected fe
 
 | File | D3 pick | Projected | Actual | Delta |
 |---|---|---|---|---|
-| `~/lattice/CLAUDE.md` | aggressive (default sub-picks) | ~29.2% (~3,180 tokens) | **37.5% (~4,245 tokens)** | +8.3pp (over-shot) |
+| `~/aDNA/CLAUDE.md` | aggressive (default sub-picks) | ~29.2% (~3,180 tokens) | **37.5% (~4,245 tokens)** | +8.3pp (over-shot) |
 | `node.aDNA/CLAUDE.md` | conservative | ~10.2% (~520 tokens) | **8.2% (~417 tokens)** | -2pp (under-shot) |
 | `LatticeAgent.aDNA/CLAUDE.md` | aggressive (full) | ~37.1% (~1,420 tokens) | **22.2% (~849 tokens)** | -14.9pp (under-shot) |
 | `LatticeTerminal.aDNA/CLAUDE.md` | conservative | ~7.0% (~228 tokens) | **7.4% (~243 tokens)** | +0.4pp (matched) |
@@ -81,7 +81,7 @@ Per M01 Exit-Gate criterion 7. These observations are the actual-vs-projected fe
 5. **Already-pruned baselines have limited aggressive headroom** (LatticeTerminal observation from Obj 1-5). `.adna/CLAUDE.md` has NOT been pruned recently per its v7.0 frontmatter — expect headroom closer to LatticeAgent (~22-37%) than LatticeTerminal (~7%). Estimated upper bound: ~1500-3500 tokens saveable.
 6. **Conservative savings consistently met-or-exceeded projection** (Files 3 + 5). Aggressive savings exceeded projection on dense files (File 1) but under-shot on sparse files (File 4). For `.adna/CLAUDE.md` (template — verbose by design), expect conservative to over-shoot and aggressive to be approximately on-target.
 7. **Self-vault edit risk** — does not apply to `.adna/CLAUDE.md` (upstream PR is to a separate repo). Mention only as a cross-reference for how M01 mitigated it (ADR-002 self-acceptance criterion + fresh cold-load spot-check).
-8. **Workspace router not a git repo** — does not apply to `.adna/` (which IS a git repo per `~/lattice/CLAUDE.md` Standing Rule 1). Upstream PR has standard `git revert` reversibility.
+8. **Workspace router not a git repo** — does not apply to `.adna/` (which IS a git repo per `~/aDNA/CLAUDE.md` Standing Rule 1). Upstream PR has standard `git revert` reversibility.
 
 ### Sequencing implication
 

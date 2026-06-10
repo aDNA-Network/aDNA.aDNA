@@ -209,4 +209,4 @@ For a fresh agent loading `aDNA.aDNA/STATE.md` at next session start:
   - `aDNA.aDNA/how/backlog/idea_upstream_permission_edge_entity_type.md`
   - `aDNA.aDNA/how/backlog/idea_upstream_network_node_mirror_entity_type.md`
 - **v8 master**: `aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/campaign_adna_serious_tool_readiness.md` (M1.5 row added at this commit)
-- **Workspace router**: `/Users/stanley/lattice/CLAUDE.md` (Network Ecosystem + Org-Vault Ecosystem sections describe LatticeNetwork.aDNA + LatticeLabs.aDNA states)
+- **Workspace router**: `/Users/stanley/aDNA/CLAUDE.md` (Network Ecosystem + Org-Vault Ecosystem sections describe LatticeNetwork.aDNA + LatticeLabs.aDNA states)

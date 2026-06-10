@@ -53,7 +53,7 @@ What Concord MUST decide for its broader scope (Canvas + LatticeTerminal + Latti
    - **ADR #1** — `adr_NNN_interactive_surface_architecture.md` (AD-1..AD-10 + fallback chain + RLHF schema v1.0; promotes P1.2 draft).
    - **ADR #2** — `adr_NNN_interactive_surface_standard_touch.md` (skill path + workspace CLAUDE.md slot + propagation + LIP linkage).
 
-3. **Workspace `~/lattice/CLAUDE.md` T1 Standing Rule** — added at P5.3; ≤ 200 chars per Campaign SO #2 budget; declares skill discovery path + activation criteria.
+3. **Workspace `~/aDNA/CLAUDE.md` T1 Standing Rule** — added at P5.3; ≤ 200 chars per Campaign SO #2 budget; declares skill discovery path + activation criteria.
 
 4. **P5.5 cross-vault context integration protocols** — discovery contract + context-passing schema + output-routing rules + ≤ 30-min consumer onboarding doc. (Detail TBD at P5.5; one of two co-equal load-bearing campaign threads per Campaign SO #10.)
 

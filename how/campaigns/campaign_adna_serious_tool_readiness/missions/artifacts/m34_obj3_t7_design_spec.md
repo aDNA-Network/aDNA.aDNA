@@ -26,7 +26,7 @@ tags: [design_spec, proposed_patch, m3_4, obj_3, t7, verification_handoff, dispa
 >
 > **Cross-skill primitive composition (2nd use instance — graduates at M3.4 close)**: T7 skill DELEGATES the binary-presence check primitive to M3.3's `skill_obsidian_integration_test.md` (T6) when the dispatch resolves to operator-side verification with O1-O7 check-set. This is the **2nd explicit cross-skill primitive consumption across the M3.x cohort** (after M3.3 T6 → M3.2 skill at depth 1); the precedent ratified at M3.3 PRIMARY load-bearing finding now extends to M3.4 T7+T8d sibling consumers, advancing the graduation candidate `skill_cross_skill_primitive_composition.md` from 1 → 2 of 3 use instances (Obj 6 T8d skill provides the 3rd; graduates at M3.4 close).
 >
-> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/lattice/.adna/`. All patch text is literal content for v8 P6 (skill upstream-promotion + ADR-014 ecosystem cycle) and Obj 5 + Obj 7 (the new skill + new ADR) to apply.
+> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/aDNA/.adna/`. All patch text is literal content for v8 P6 (skill upstream-promotion + ADR-014 ecosystem cycle) and Obj 5 + Obj 7 (the new skill + new ADR) to apply.
 >
 > **Standing Order #8 self-reference** — **16th tactical invocation candidate** in v8 (after 15 prior in P2 + M3.1 + M3.2 + M3.3). The deliverable skill at Obj 5 is the **3rd behavioral test** of M2.4.5-hardened `how/skills/AGENTS.md` routing layer for new-skill discoverability (after M3.2's `skill_obsidian_canonicalize.md` + M3.3's `skill_obsidian_integration_test.md`); the deliverable ADR-014 codifies the verification-handoff topology via the very skill it produces (recursive self-reference).
 
@@ -81,10 +81,10 @@ The compounding produces today's state: every implementation-class mission re-in
 
 ```bash
 # Scenario A: invoke T7 skill on M3.4 itself (recursive self-test — the skill's authoring mission consults the skill)
-cd ~/lattice/aDNA.aDNA/
+cd ~/aDNA/aDNA.aDNA/
 ./how/skills/skill_verification_handoff.md --mission mission_adna_str_p3_m34_verification_handoff_and_agent_inspection --surface dispatch --check-set T6
 # Expect: dispatch verdict PASS (M3.4 is implementation-class; produces 4 destructive artifacts; risk profile = medium; check-set T6 covers O1-O7 operator-side; topology resolves to "dispatch" because some artifacts (T7+T8 design specs) are agent-side reviewable + others (skill_verification_handoff + skill_obsidian_agent_inspect) require operator-side smoke per O1-O7)
-# Output: "Verification verdict: DISPATCHED; handoff coordinates: M3.4 S3 close + AAR section §Acceptance scorecard; check-set T6; DELEGATES to skill_obsidian_integration_test.md --vault ~/lattice/aDNA.aDNA/ --profile default"
+# Output: "Verification verdict: DISPATCHED; handoff coordinates: M3.4 S3 close + AAR section §Acceptance scorecard; check-set T6; DELEGATES to skill_obsidian_integration_test.md --vault ~/aDNA/aDNA.aDNA/ --profile default"
 # Exit 0
 
 # Scenario B: invoke T7 skill on a hypothetical agent-side-only mission (e.g., M3.0.5 decision-surface capability)

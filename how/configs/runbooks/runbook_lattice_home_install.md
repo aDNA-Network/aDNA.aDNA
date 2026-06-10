@@ -23,7 +23,7 @@ Passive mode does nothing observable beyond confirming the substrate is in place
 No user-scope writes. Operator invokes `lattice home` from the vault root.
 
 ```bash
-cd ~/lattice/aDNA.aDNA
+cd ~/aDNA/aDNA.aDNA
 bash how/configs/bin/install.sh --passive    # or just: bash how/configs/bin/install.sh
 ./how/configs/bin/lattice home               # renders the splash
 ```
@@ -39,7 +39,7 @@ Note the **vault-prefixed name** `lattice-adna` (not `lattice`) — coexists wit
 any existing `~/.local/bin/lattice` from a CMux install.
 
 ```bash
-cd ~/lattice/aDNA.aDNA
+cd ~/aDNA/aDNA.aDNA
 bash how/configs/bin/install.sh --active
 lattice-adna home                            # from any subdir of the vault
 ```
@@ -76,8 +76,8 @@ Substrate files at `how/configs/` remain in the vault. Re-install at any time.
 Compare aDNA.aDNA's parameterized `cmd_home` against the CMux substrate pin:
 
 ```bash
-diff <(awk '/^cmd_home\(\)/,/^}/' ~/lattice/aDNA.aDNA/how/configs/bin/lattice) \
-     <(git -C ~/lattice/Cmux.aDNA show 7747a15a:how/configs/bin/lattice | awk '/^cmd_home\(\)/,/^}/')
+diff <(awk '/^cmd_home\(\)/,/^}/' ~/aDNA/aDNA.aDNA/how/configs/bin/lattice) \
+     <(git -C ~/aDNA/Cmux.aDNA show 7747a15a:how/configs/bin/lattice | awk '/^cmd_home\(\)/,/^}/')
 ```
 
 Severity table (per `skill_lattice_home_install` step 6):

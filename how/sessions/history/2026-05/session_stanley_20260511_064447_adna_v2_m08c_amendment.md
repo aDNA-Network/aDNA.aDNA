@@ -38,7 +38,7 @@ Plan file: `/Users/stanley/.claude/plans/please-read-the-claude-md-piped-lagoon.
 - **Edit in place** (campaign master, 3-5 edits):
   - `how/campaigns/campaign_adna_v2_infrastructure/campaign_adna_v2_infrastructure.md` (Phase B — amendments yaml entry append; mission tree row M08c insert between M08b and M09; mission ordering paragraph extension; Scope table row append; ADRs section ADR-012 slot forecast)
 - **Edit in place** (STATE.md, 3-5 edits):
-  - `/Users/stanley/lattice/aDNA.aDNA/STATE.md` (Phase C — header HTML comment; Current Phase §1 sequencing marker insertion; Active Campaigns paragraph amendment closure note; Last Session block replacement; Next Session Prompt update; Next Steps "Primary track" 8th item)
+  - `/Users/stanley/aDNA/aDNA.aDNA/STATE.md` (Phase C — header HTML comment; Current Phase §1 sequencing marker insertion; Active Campaigns paragraph amendment closure note; Last Session block replacement; Next Session Prompt update; Next Steps "Primary track" 8th item)
 - **Create at session close** (this session file): moves from `sessions/active/` to `sessions/history/2026-05/` at frontmatter `active → completed` flip.
 
 ## Conflict scan

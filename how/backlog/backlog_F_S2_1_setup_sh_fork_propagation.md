@@ -29,15 +29,15 @@ The fork skill's exclusion list (`R2-R7` per the M03 `skill_project_fork.md` upd
 ## Proposed approaches
 
 1. **`skill_project_fork.md` amendment** — add `cp .adna/setup.sh <project>.aDNA/setup.sh` step + `chmod +x`. Single upstream commit to `LatticeProtocol/adna`.
-2. **`.adna/setup.sh` self-locating refactor** — make setup.sh runnable from any directory; eliminate the need to copy it into each fork. Operator runs `~/lattice/.adna/setup.sh --vault <name>.aDNA`. Heavier refactor.
+2. **`.adna/setup.sh` self-locating refactor** — make setup.sh runnable from any directory; eliminate the need to copy it into each fork. Operator runs `~/aDNA/.adna/setup.sh --vault <name>.aDNA`. Heavier refactor.
 3. **Hybrid** — copy setup.sh at fork time (Option 1) for offline operation; ALSO refactor for self-location (Option 2) for advanced use. Choose later based on what feels right after T2/T3 land.
 
 Recommend Option 1 for the 5th-instance pattern (minimal commit, additive); Option 2 only if T2/T3 surface a clear motivating reason.
 
 ## Critical files
 
-- `/Users/stanley/lattice/.adna/how/skills/skill_project_fork.md` — fork procedure spec
-- `/Users/stanley/lattice/.adna/setup.sh` — upstream installer (230 lines)
+- `/Users/stanley/aDNA/.adna/how/skills/skill_project_fork.md` — fork procedure spec
+- `/Users/stanley/aDNA/.adna/setup.sh` — upstream installer (230 lines)
 - Affected on next fork: any new `<name>.aDNA/` vault
 
 ## Source references

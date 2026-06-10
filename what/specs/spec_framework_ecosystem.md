@@ -8,13 +8,13 @@ version: "0.1"
 status: active
 last_edited_by: agent_stanley
 tags: [spec, ecosystem, framework, aDNA_pattern]
-extraction_source: ~/lattice/CLAUDE.md lines 192-202 (extracted at compliance campaign M01)
+extraction_source: ~/aDNA/CLAUDE.md lines 192-202 (extracted at compliance campaign M01)
 co_signed_adr: aDNA.aDNA/what/decisions/adr_012_ecosystem_spec_extraction.md
 ---
 
 # Framework Ecosystem
 
-Authoritative reference for the **Framework.aDNA** aDNA pattern category. Workspace router (`~/lattice/CLAUDE.md`) carries only a pointer to this spec.
+Authoritative reference for the **Framework.aDNA** aDNA pattern category. Workspace router (`~/aDNA/CLAUDE.md`) carries only a pointer to this spec.
 
 ## Definition
 
@@ -38,4 +38,4 @@ For III specifically, run `III.aDNA/how/skills/skill_iii_setup.md` (also publish
 
 ## Provenance
 
-Extracted from `~/lattice/CLAUDE.md` at `campaign_lattice_compliance_upgrade` M01 (2026-05-20). Pre-extraction location: workspace-router §Framework Ecosystem (lines 192-202). Co-signed ADR: `aDNA.aDNA/what/decisions/adr_009_ecosystem_spec_extraction.md`.
+Extracted from `~/aDNA/CLAUDE.md` at `campaign_lattice_compliance_upgrade` M01 (2026-05-20). Pre-extraction location: workspace-router §Framework Ecosystem (lines 192-202). Co-signed ADR: `aDNA.aDNA/what/decisions/adr_009_ecosystem_spec_extraction.md`.

@@ -155,7 +155,7 @@ The mythological depth is intentional. Personas are named because names carry fr
 | [[../../../../../RareHarness.aDNA/what/decisions/adr_000_project_identity.md|RareHarness ADR 000 §4]] | upstream | Documents Prometheus rejection for RareHarness; explains why the same persona fits LatticeScope |
 | [[../../../../../III.aDNA/CLAUDE.md|III.aDNA]] | sibling | Argus pairing partner |
 | [[../../../../../WilhelmAI.aDNA/what/decisions/adr_002_provenance_attribution.md|WilhelmAI ADR 002]] | upstream | Per-surface attribution precedent (§5 #6) |
-| `~/lattice/CLAUDE.md` Platform Ecosystem section | downstream | Workspace router cites Prometheus when LatticeScope lands |
+| `~/aDNA/CLAUDE.md` Platform Ecosystem section | downstream | Workspace router cites Prometheus when LatticeScope lands |
 
 ---
 

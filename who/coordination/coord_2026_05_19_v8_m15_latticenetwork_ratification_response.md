@@ -51,7 +51,7 @@ All 3 ACKnowledged + discharged at ADR-017 (`aDNA.aDNA/what/decisions/adr_017_ne
 **Countersign**: **ACCEPT**.
 
 - **LIP-0006 ratified at aDNA standard level** (Network.aDNA = 6th canonical aDNA pattern category, joining Forge + Platform + Framework + Org-Vault + Org-Graph). See ADR-017 §Decision Clause A.
-- **Distinguishing test** (LIP-0006 §2 *"Does this vault hold an org's operations (Org-Vault), our model of an outside org (Org-Graph), or the live aggregated state of a running network whose nodes transmit into it (Network)?"*) ratified verbatim; pre-existing provisional workspace router (`/Users/stanley/lattice/CLAUDE.md` §Network Ecosystem) categorization moves from provisional → ratified.
+- **Distinguishing test** (LIP-0006 §2 *"Does this vault hold an org's operations (Org-Vault), our model of an outside org (Org-Graph), or the live aggregated state of a running network whose nodes transmit into it (Network)?"*) ratified verbatim; pre-existing provisional workspace router (`/Users/stanley/aDNA/CLAUDE.md` §Network Ecosystem) categorization moves from provisional → ratified.
 - **Visualization-forge angle**: GraphForge.aDNA creation deferred until ≥ 2 Network.aDNA instances (matches LIP-0005 §4 Org-Graph anti-premature-universality posture). Same disposition.
 - **`aDNA.aDNA/what/ontology.md` updated** — new `### Network.aDNA Extensions (2 Entity Types)` subsection registered between Rosetta Extensions and Triad Structure (Diagram 1); see ontology.md path for verbatim shape.
 - **Upstream propagation to `.adna/CLAUDE.md` workspace router + `aDNA.aDNA/what/docs/adna_standard.md` base-ontology table** queued for v8 P6 per Campaign S.O. #14 + ADR-005 rule 3. NEW backlog placeholder filed at `aDNA.aDNA/how/backlog/idea_upstream_lip_0006_network_category_addition.md` tracks this v8 P6 batch propagation.
@@ -210,4 +210,4 @@ Per §3.4 above:
 
 ### Workspace router (informational)
 
-- `/Users/stanley/lattice/CLAUDE.md` §Network Ecosystem — provisional Network.aDNA categorization (now ratified at standard via ADR-017 Clause A)
+- `/Users/stanley/aDNA/CLAUDE.md` §Network Ecosystem — provisional Network.aDNA categorization (now ratified at standard via ADR-017 Clause A)

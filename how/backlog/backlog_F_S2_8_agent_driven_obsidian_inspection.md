@@ -54,9 +54,9 @@ Directly serves the saved north-star UX metric: *"easy and fluid way to build/op
 
 ## Critical files
 
-- `/Users/stanley/lattice/.adna/setup.sh` PLUGIN_IDS array
+- `/Users/stanley/aDNA/.adna/setup.sh` PLUGIN_IDS array
 - NEW (template): `.adna/.obsidian/plugins/obsidian-local-rest-api/data.json` — operator-key-substituted
-- `~/.claude.json` mcpServers field OR `~/lattice/.mcp.json` (TBD)
+- `~/.claude.json` mcpServers field OR `~/aDNA/.mcp.json` (TBD)
 - NEW (skill): `aDNA.aDNA/how/skills/skill_obsidian_agent_inspect.md`
 - T6 integration test skill cross-link
 

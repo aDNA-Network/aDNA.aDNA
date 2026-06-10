@@ -24,7 +24,7 @@ The brand refactor has moved from hypothetical to **concretely live**. Actual to
 - **`aDNANetwork.aDNA`** — already renamed from `LatticeNetwork.aDNA` (2026-05-31, S94; persona Venus; display "Alpha Lattice"; back-compat symlink). This is the live **aDNANetwork**.
 - **`Lab.aDNA`** — **does NOT exist yet**; planned post-brief fork (WS4; fork-must-follow-rebrand). The old `latlab/` + `latlab-lab/` are its absorption candidates.
 - **`LatticeLabs.aDNA`** — stays live as the **operated-over predecessor** (content migrating into the HQ; reader-only for gated content); becomes stub-with-redirect at the Venus P6 cutover.
-- **Root router** (`/Users/stanley/lattice/CLAUDE.md`) — already updated with the aDNALabs.aDNA / aDNANetwork.aDNA / LatticeLabs-predecessor rows.
+- **Root router** (`/Users/stanley/aDNA/CLAUDE.md`) — already updated with the aDNALabs.aDNA / aDNANetwork.aDNA / LatticeLabs-predecessor rows.
 - **Coordination toward this vault**: aDNALabs filed `aDNALabs.aDNA/who/coordination/coord_2026_05_30_adna_standard_courtesy.md` (courtesy to the standard owner; **no ask**) + `..._active_campaigns_rebrand_broadcast.md` ("**nothing renames before the brief**"). No memo gates our website work.
 
 **Gate (operator-confirmed 2026-05-31):** the aDNA.aDNA website overhaul + M5.7 substantive planning (O2+) **hold until the refactor is substantially complete** — rebrand brief (S8) delivered + structural renames + content migration landed (Operation Homecoming Phases 2-5), **not** the far-off Venus P6 cutover. M5.7 O1 self-expansion + provisional scoping may proceed now and firm up at the brief-S8 names-lock checkpoint. **Honor the broadcast**: rename nothing in aDNA.aDNA until the brief locks names.

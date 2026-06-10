@@ -35,7 +35,7 @@ Rosetta is the standard-touch coordinator for the following aDNA.aDNA artifacts 
 | P2.1 (prototype) | `skill_create_interactive_surface.md` | `how/skills/` | Prototype; promoted to canonical at P5.1 |
 | P5.1 | Canonical skill promotion | `how/skills/` | Prototype → canonical |
 | P5.2 | 2 ADRs | `what/decisions/` | Architecture + standard-touch ADRs |
-| P5.3 | Workspace CLAUDE.md addition | `~/lattice/CLAUDE.md` | T1 discovery entry; ≤ 200 chars |
+| P5.3 | Workspace CLAUDE.md addition | `~/aDNA/CLAUDE.md` | T1 discovery entry; ≤ 200 chars |
 | P7.1 | Exemplar walkthrough | `what/exemplars/` | Full walkthrough + cross-vault walkthrough |
 
 ## ADR Slot Request

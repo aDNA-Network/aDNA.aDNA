@@ -69,7 +69,7 @@ This recommendation resolves the ambiguity.
 
 | Outcome | Action | Path | Status |
 |---|---|---|---|
-| **A** | **Keep** `skill_lattice_publish.md` exactly as-is — scope unchanged: latlab CLI publishes a `.lattice.yaml` object to a registry. Light v7.0 path-drift updates only (e.g., `cd ~/lattice/lattice-protocol-repo` if any path needs refreshing). | `.adna/how/skills/skill_lattice_publish.md` | Existing skill; M05 verifies + light edits only |
+| **A** | **Keep** `skill_lattice_publish.md` exactly as-is — scope unchanged: latlab CLI publishes a `.lattice.yaml` object to a registry. Light v7.0 path-drift updates only (e.g., `cd ~/aDNA/lattice-protocol-repo` if any path needs refreshing). | `.adna/how/skills/skill_lattice_publish.md` | Existing skill; M05 verifies + light edits only |
 | **B** | **Create new** `skill_vault_publish.md` — vault → GitHub `git push` flow (the work the mission spec describes as "rewritten skill_lattice_publish"). Replaces Spacemacs's local `skill_publish_lattice.md`. | `.adna/how/skills/skill_vault_publish.md` | NEW skill; M05 ships |
 | **C** | **Create new** `skill_git_remote_setup.md` — first-time `git remote add` + `gh repo create` flow. Called once per vault. | `.adna/how/skills/skill_git_remote_setup.md` | NEW skill; M05 ships |
 | **D** | **Create new** `skill_publish_tarball.md` — optional offline-shipping tarball flow. Extracted from Spacemacs's rsync skill. | `.adna/how/skills/skill_publish_tarball.md` | NEW skill; M05 ships |

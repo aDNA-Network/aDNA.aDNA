@@ -70,7 +70,7 @@ When M0.3 research closes AND P3 GUI pillar features become invocable, please re
 - Campaign governance: `SiteForge.aDNA/how/campaigns/campaign_siteforge_interactive_subsystem/CLAUDE.md` SO #16 (operator-side window-positioning)
 - RemoteControl charter: `RemoteControl.aDNA/how/campaigns/campaign_remotecontrol_genesis/campaign_remotecontrol_genesis.md`
 - RemoteControl planning stub §4.1 (candidate v1 capability surface): `RemoteControl.aDNA/how/campaigns/campaign_remotecontrol_genesis/planning_stub.md`
-- Persona-pair triad context: `LatticeAgent.aDNA` (brain) + `LatticeTerminal.aDNA` (senses) + `RemoteControl.aDNA` (body) — see workspace `~/lattice/CLAUDE.md` Platform ecosystem table
+- Persona-pair triad context: `LatticeAgent.aDNA` (brain) + `LatticeTerminal.aDNA` (senses) + `RemoteControl.aDNA` (body) — see workspace `~/aDNA/CLAUDE.md` Platform ecosystem table
 - Related prior coord family: `operation_loom_p1_3_arch_lock` (4 memos — Rosetta + OIP + Argus + Berthier) — this memo opens new family `operation_loom_p2_dogfood`
 
 ---

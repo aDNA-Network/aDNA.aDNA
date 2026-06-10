@@ -123,7 +123,7 @@ M06 (v7.0 tag execution) unblocks at this session close.
 - Finalized upgrade guide stays `status: finalized`
 - M03 / M04 / M08a outputs untouched
 - `node.aDNA/` untouched
-- Workspace router `/Users/stanley/lattice/CLAUDE.md` untouched
+- Workspace router `/Users/stanley/aDNA/CLAUDE.md` untouched
 
 ## Session Close
 

@@ -39,7 +39,7 @@ Recommend Option 1 (cleanest; small template addition); Option 2 layered on as t
 ## Critical files
 
 - NEW (template): `.adna/.obsidian/plugins/notebook-navigator/data.json` — triad-colors-preconfigured template
-- `/Users/stanley/lattice/.adna/setup.sh` — extend to copy per-vault data.json post-download
+- `/Users/stanley/aDNA/.adna/setup.sh` — extend to copy per-vault data.json post-download
 - Affected: NN folder visual rendering across all aDNA vaults
 
 ## Source references

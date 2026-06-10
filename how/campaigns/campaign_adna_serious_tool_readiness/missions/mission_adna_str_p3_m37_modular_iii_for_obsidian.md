@@ -46,11 +46,11 @@ prerequisite_artifacts:
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m33_obj4_t6_design_spec.md  # 6-section design-spec structure 5th canonical instance
   - aDNA.aDNA/how/skills/skill_obsidian_integration_test.md  # T6 skill; M3.7 measurement modules may invoke for build-state-check
   # III.aDNA modular III substrate (read-only; M3.7 designs CONSUMER interface, not III internals)
-  - "/Users/stanley/lattice/III.aDNA/STATE.md"  # Campaign D MD-A5 close state; modular III framework readiness
-  - "/Users/stanley/lattice/III.aDNA/CLAUDE.md"  # 8 modules + 7 domain packs framework vocabulary
+  - "/Users/stanley/aDNA/III.aDNA/STATE.md"  # Campaign D MD-A5 close state; modular III framework readiness
+  - "/Users/stanley/aDNA/III.aDNA/CLAUDE.md"  # 8 modules + 7 domain packs framework vocabulary
   # node.aDNA Obsidian-side consumer surfaces (read-only; M3.5-shipped operational state)
-  - "/Users/stanley/lattice/node.aDNA/HOME.md"  # Line 42 Bases-driven Gallery; primary tier
-  - "/Users/stanley/lattice/node.aDNA/what/inventory/vault_gallery.base"  # Bases definition file (M3.5 Obj 3 = T9)
+  - "/Users/stanley/aDNA/node.aDNA/HOME.md"  # Line 42 Bases-driven Gallery; primary tier
+  - "/Users/stanley/aDNA/node.aDNA/what/inventory/vault_gallery.base"  # Bases definition file (M3.5 Obj 3 = T9)
   # M3.7-adjacent backlog (consumer-side intent signals)
   - aDNA.aDNA/how/backlog/idea_inner_readme_iii.md  # III actively reviewing aDNA.aDNA prose
   - aDNA.aDNA/how/backlog/idea_iii_code_domain_pack_subsumes_simplify.md  # III modular-pack pattern extensibility

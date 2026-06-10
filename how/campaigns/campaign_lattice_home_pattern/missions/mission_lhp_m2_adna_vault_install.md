@@ -163,9 +163,9 @@ Diff lines include 4 prescribed parameter substitutions (`CMUX_LATTICE`→`ADNA_
 
 Pre-existing `/Users/stanley/.local/bin/lattice` symlink → CMux.aDNA confirmed untouched at M2 close. Post-M2 user-scope state:
 
-- `~/.local/bin/lattice` → `/Users/stanley/lattice/Cmux.aDNA/how/configs/bin/lattice` (CMux; pre-existing; preserved)
-- `~/.local/bin/lattice-adna` → `/Users/stanley/lattice/aDNA.aDNA/how/configs/bin/lattice` (aDNA.aDNA; NEW; installed by smoke-verify row 3)
-- `~/.zsh/conf.d/55-lattice-home.zsh` → `/Users/stanley/lattice/aDNA.aDNA/how/configs/conf.d/55-lattice-home.zsh` (aDNA.aDNA; NEW; installed by smoke-verify row 3)
+- `~/.local/bin/lattice` → `/Users/stanley/aDNA/Cmux.aDNA/how/configs/bin/lattice` (CMux; pre-existing; preserved)
+- `~/.local/bin/lattice-adna` → `/Users/stanley/aDNA/aDNA.aDNA/how/configs/bin/lattice` (aDNA.aDNA; NEW; installed by smoke-verify row 3)
+- `~/.zsh/conf.d/55-lattice-home.zsh` → `/Users/stanley/aDNA/aDNA.aDNA/how/configs/conf.d/55-lattice-home.zsh` (aDNA.aDNA; NEW; installed by smoke-verify row 3)
 
 Vault-prefixed naming pattern validated. Document as M2 NEW SEED candidate (`skill_lattice_home_install_path_conflict_vault_prefix.md` 1/3; carries forward to LatticeHome / forge vaults at Phase-6 propagation).
 

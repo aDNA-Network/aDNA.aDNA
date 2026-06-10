@@ -17,7 +17,7 @@ audit_id: adna_v2_m01_s2_s3_publish_rewrite_coord
 campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_planning_01
 objective: 4
-mirror: /Users/stanley/lattice/Spacemacs.aDNA/who/coordination/coord_2026_05_08_adna_publish_rewrite.md
+mirror: /Users/stanley/aDNA/Spacemacs.aDNA/who/coordination/coord_2026_05_08_adna_publish_rewrite.md
 airlock_pattern: true   # adopts III.aDNA/how/airlock/AIRLOCK.md v0.1.0 schema as exemplar
 tags: [coordination, cross_graph, publish_rewrite, daedalus, rosetta, airlock_pattern, exemplar, m01, obj4, m05, v7_0]
 ---

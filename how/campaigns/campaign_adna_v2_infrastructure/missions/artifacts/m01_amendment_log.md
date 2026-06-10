@@ -71,7 +71,7 @@ surfaced non-uniform repo naming:
 - 4 hyphen-flat names: `science-stanley-adna`, `wga-adna`, `context-commons-adna`,
   `LAStartupLattice`
 - 7 vaults with no remote at all
-- 1 with non-standard local-path remote (LPWhitepaper → `/Users/stanley/lattice/whitepaper`)
+- 1 with non-standard local-path remote (LPWhitepaper → `/Users/stanley/aDNA/whitepaper`)
 - Conformant: `aDNA.aDNA.git`, `SiteForge.aDNA.git`, `CanvasForge.aDNA.git`,
   `ComfyForge.aDNA.git`, `SuperLeague.aDNA.git`, `WilhelmAI.git` (external),
   `rare-archive-vault.git` (external)

@@ -30,7 +30,7 @@ User-selected scope at session open: Verification + self-test fixtures (~75-90 m
 ## Scope
 
 ### Phase A — Test-vault verification
-- Bootstrap throwaway test vault by cloning `/Users/stanley/lattice/.adna` into `/tmp/m05_verify/test_vault`
+- Bootstrap throwaway test vault by cloning `/Users/stanley/aDNA/.adna` into `/tmp/m05_verify/test_vault`
 - Walk `skill_git_remote_setup` 8 steps against `ScienceStanley/m05-test` (private scratch repo)
 - Walk `skill_deploy` 5 steps (install hook, run self-test, receipt)
 - Walk `skill_vault_publish` 5 steps (clean-path push; receipt at `who/peers/published/<UTC>.md`)
@@ -57,7 +57,7 @@ User-selected scope at session open: Verification + self-test fixtures (~75-90 m
 
 ## Files Touched
 
-### Created in `/Users/stanley/lattice/.adna/` (upstream template)
+### Created in `/Users/stanley/aDNA/.adna/` (upstream template)
 - `how/standard/hooks/test_fixtures/clean/what/concepts/example_concept.md` (NEW)
 - `how/standard/hooks/test_fixtures/clean/README.md` (NEW)
 - `how/standard/hooks/test_fixtures/dirty/what/local/notes.md` (NEW; R1)
@@ -67,7 +67,7 @@ User-selected scope at session open: Verification + self-test fixtures (~75-90 m
 - `how/standard/hooks/test_fixtures/dirty/draft_post.md` (NEW; R6)
 - `how/standard/hooks/test_fixtures/README.md` (NEW; fixture-set doc — names which R rules are covered vs deferred)
 
-### Modified in `/Users/stanley/lattice/.adna/` (upstream template)
+### Modified in `/Users/stanley/aDNA/.adna/` (upstream template)
 - `how/standard/hooks/pre-push-sanitize.sh` — self-test logic implemented (lines 22-35 replaced); LAYER_CONTRACT_VERSION stays 4.0.1
 
 ### Modified in `aDNA.aDNA/`

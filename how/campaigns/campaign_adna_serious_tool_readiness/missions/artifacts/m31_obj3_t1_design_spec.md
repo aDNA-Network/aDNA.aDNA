@@ -24,7 +24,7 @@ tags: [design_spec, proposed_patch, m3_1, obj_3, t1, fork_propagation, fifth_add
 >
 > **Why this is a 5th-instance candidate**: it satisfies all three criteria of the single-commit additive-upstream pattern — (1) one logical commit in `.adna/`; (2) additive (no behavior change for existing forks; only future forks gain the fix); (3) verifiable post-landing via a single smoke test (fresh fork retains `./setup.sh` at vault root). Lineage of 4 prior instances: ADR-008 (M03 airlock template stub) + commit `e3b3bcc` (v7.0 M04 S2 cross-project routing hook) + commit `8673383` (v7.x skill_node_bootstrap_interview) + commit `202c9ec` (v7.x HOME.md inline-comment plain-prose rephrase — its own commit message explicitly names "4th instance of single-commit additive-upstream pattern").
 >
-> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/lattice/.adna/`. All patch text is literal diff content for v8 P6 to apply.
+> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/aDNA/.adna/`. All patch text is literal diff content for v8 P6 to apply.
 
 ## 1. Finding statement (F-S2-1)
 
@@ -50,7 +50,7 @@ Three layered causes that compound:
 |---|---|---|---|---|---|
 | 1 | **Simple R5 removal** (no `cp` / no `chmod`). Delete the `rm -f setup.sh` line + update the R-list comment. `cp -r` already propagated `setup.sh`; the existing self-locating logic at line 11 of setup.sh handles the rest. | `.adna/how/skills/skill_project_fork.md` 1 line removed + 1 comment updated (= ~3 lines net diff) | None | New forks gain setup.sh at vault root; existing forks unchanged | None expected; smoke test = fresh fork has `setup.sh` + executable bit preserved by `cp -r` |
 | 2 | **Explicit `cp` + `chmod`** (per F-S2-1 §Proposed approaches Option 1 literal). Remove the `rm -f setup.sh` line AND add `cp .adna/setup.sh <project>.aDNA/setup.sh; chmod +x setup.sh` after the R-list block. | `.adna/how/skills/skill_project_fork.md` 1 line removed + ~3 lines added | None | Same as Option 1; the explicit `cp` is redundant with `cp -r` but defensive against future refactors that might shrink `cp -r`'s scope | None expected; same smoke test as Option 1 |
-| 3 | **Self-locating refactor** (per F-S2-1 §Proposed approaches Option 2). Refactor `setup.sh` to accept `--vault <path>` so operators can run `~/lattice/.adna/setup.sh --vault <name>.aDNA` from anywhere; deprecate per-fork copies of setup.sh. Keep R5 (remove from fork) since the central template script is the single source of truth. | `.adna/setup.sh` heavy refactor (add arg parser; replace `VAULT_DIR=$(cd ...)` with arg-aware logic; add help text) + `.adna/how/skills/skill_project_fork.md` 1 comment updated; setup.sh stops propagating | Operator-facing: must remember the central script invocation pattern; loses self-locating convenience | Existing forks that already have a copy of setup.sh diverge from the new central one; need a one-time deprecation memo | Central template upgrades silently propagate to all vaults (good); offline operation requires `.adna/` to be present (acceptable per workspace contract) |
+| 3 | **Self-locating refactor** (per F-S2-1 §Proposed approaches Option 2). Refactor `setup.sh` to accept `--vault <path>` so operators can run `~/aDNA/.adna/setup.sh --vault <name>.aDNA` from anywhere; deprecate per-fork copies of setup.sh. Keep R5 (remove from fork) since the central template script is the single source of truth. | `.adna/setup.sh` heavy refactor (add arg parser; replace `VAULT_DIR=$(cd ...)` with arg-aware logic; add help text) + `.adna/how/skills/skill_project_fork.md` 1 comment updated; setup.sh stops propagating | Operator-facing: must remember the central script invocation pattern; loses self-locating convenience | Existing forks that already have a copy of setup.sh diverge from the new central one; need a one-time deprecation memo | Central template upgrades silently propagate to all vaults (good); offline operation requires `.adna/` to be present (acceptable per workspace contract) |
 
 ## 4. Recommendation
 
@@ -69,7 +69,7 @@ Three layered causes that compound:
 
 ```bash
 # Fresh fork via skill_project_fork.md, then:
-cd ~/lattice/<test_project>.aDNA/
+cd ~/aDNA/<test_project>.aDNA/
 [ -f setup.sh ] && echo "PASS: setup.sh present" || echo "FAIL: setup.sh missing"
 [ -x setup.sh ] && echo "PASS: setup.sh executable" || echo "FAIL: setup.sh not executable"
 ./setup.sh --force 2>&1 | tail -5  # should report plugin install attempts

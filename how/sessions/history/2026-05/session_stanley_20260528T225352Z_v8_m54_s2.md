@@ -128,7 +128,7 @@ Delta > 2× on either metric triggers AAR retrospective.
 - Hestia R06 sweep `node.aDNA` → `LatticeHome.aDNA` rename landed mid-S2 (commit `5bc4d01`)
 - Informational coord memo filed at `who/coordination/coord_2026_05_28_hestia_to_rosetta_latticehome_rename_landed.md` per Campaign SO #13
 - Protocol-layer `node` term preserved; filenames `skill_node_*` / `mission_node_*` / `campaign_node_*` / `identity_node` / `inventory_node*` all PRESERVED per Hestia's D3-surgical discipline
-- Symlink shim `~/lattice/node.aDNA → LatticeHome.aDNA` covers 30-day backward-compat (expires 2026-06-24 per R09 deprecation banner)
+- Symlink shim `~/aDNA/node.aDNA → LatticeHome.aDNA` covers 30-day backward-compat (expires 2026-06-24 per R09 deprecation banner)
 
 **Image-gen budget**: $0.00 this session (D12 text-only end-to-end); cumulative v8 P5 image-gen UNCHANGED at $1.72 of $50 (3.4%)
 

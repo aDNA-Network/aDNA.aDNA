@@ -32,7 +32,7 @@ prerequisite_artifacts:
   - what/decisions/adr_016_per_mission_context_budget.md     # Clause C forecast → M2.3 ratifies
   - "~/.adna/measurement/reports/session_*.json (49 files)"  # authoritative per-session API-billing aggregates (M1.4 backfill)
   - "~/.adna/measurement/measurement.sqlite"                 # 7 sessions + 708 tool_calls + 55 cross-vault traversals (live-hook subset; M1.4 Amendment E LIVE since 2026-05-19)
-  - "/Users/stanley/lattice/node.aDNA/what/context/token_baselines.md"   # v0.1.1+addendum — current Mid-magnitude baseline + split-as-pattern doctrine
+  - "/Users/stanley/aDNA/node.aDNA/what/context/token_baselines.md"   # v0.1.1+addendum — current Mid-magnitude baseline + split-as-pattern doctrine
   - how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_m13_token_audit.md             # estimate-vs-actual narrative
   - how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_m14_latticescope_schema.md     # token-budget table format
   - how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_m21_context_audit_split.md     # 3-session shape calibration data

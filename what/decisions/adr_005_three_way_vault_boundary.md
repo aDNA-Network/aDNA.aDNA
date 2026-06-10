@@ -23,7 +23,7 @@ Accepted at Stage 2 Session 1 of `campaign_adna_v2_infrastructure`, 2026-05-08 (
 
 - All three are governance vaults.
 - All three have CLAUDE.md, MANIFEST.md, STATE.md, and host campaigns.
-- All three sit in the same `~/lattice/` workspace.
+- All three sit in the same `~/aDNA/` workspace.
 
 A cold reader (especially a new aDNA operator who is not Stanley) would reasonably ask: *Why three vaults? When do I read which one? Which one do I fork to my own machine?*
 

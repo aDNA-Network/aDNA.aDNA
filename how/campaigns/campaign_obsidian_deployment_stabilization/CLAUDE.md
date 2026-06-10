@@ -56,12 +56,12 @@ These supplement the project-level standing orders in `aDNA.aDNA/CLAUDE.md`:
 | `campaign_lattice_workspace_ux/missions/artifacts/aar_campaign_lattice_workspace_ux.md` | Always — predecessor full context |
 | `campaign_adna_v2_infrastructure/missions/artifacts/cross_graph_findings_to_v2_from_lattice_workspace_ux.md` | Always — F-S2-1..8 specs |
 | `aDNA.aDNA/how/backlog/backlog_F_S2_*.md` (8 files) | Per-finding deep dive |
-| `~/lattice/.adna/setup.sh` | Required for T1/T2/T3/T8 work — the upstream installer being extended |
-| `~/lattice/.adna/how/skills/skill_project_fork.md` | Required for T1 + T5 work |
-| `~/lattice/.adna/how/skills/skill_node_health_check.md` | Required for T3 work |
-| `~/lattice/.adna/how/skills/skill_workspace_upgrade.md` | Required for T5 work |
-| `~/lattice/.adna/how/skills/skill_onboarding.md` | Required for T5 work |
-| `~/lattice/node.aDNA/.obsidian/OBSIDIAN_CLAUDE.md` | Useful reference for plugin loadout expectations |
+| `~/aDNA/.adna/setup.sh` | Required for T1/T2/T3/T8 work — the upstream installer being extended |
+| `~/aDNA/.adna/how/skills/skill_project_fork.md` | Required for T1 + T5 work |
+| `~/aDNA/.adna/how/skills/skill_node_health_check.md` | Required for T3 work |
+| `~/aDNA/.adna/how/skills/skill_workspace_upgrade.md` | Required for T5 work |
+| `~/aDNA/.adna/how/skills/skill_onboarding.md` | Required for T5 work |
+| `~/aDNA/node.aDNA/.obsidian/OBSIDIAN_CLAUDE.md` | Useful reference for plugin loadout expectations |
 | `lattice-labs/how/campaigns/campaign_validation_node_adna_lwx_outputs/CLAUDE.md` | Sibling validation campaign for dispatch coordination |
 
 ## Delegation Notes

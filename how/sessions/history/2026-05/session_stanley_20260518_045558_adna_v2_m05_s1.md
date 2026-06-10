@@ -54,18 +54,18 @@ Open M05 (publish-skill rewrite mission) for `campaign_adna_v2_infrastructure`. 
 - `how/campaigns/campaign_adna_v2_infrastructure/campaign_adna_v2_infrastructure.md` — M05 row updated `next → in_progress` with 7 deliverables ✅
 - `STATE.md` — new Last Session block + new Next Session Prompt (P0 Last Session marked deprecated-marker per pattern)
 
-### Created in `/Users/stanley/lattice/.adna/` (upstream template)
+### Created in `/Users/stanley/aDNA/.adna/` (upstream template)
 - `how/standard/hooks/pre-push-sanitize.sh` — NEW hook script (~280 lines bash; LAYER_CONTRACT_VERSION=4.0.1; R1-R7 sanitization rules) + new dir tree `how/standard/hooks/`
 - `how/skills/skill_vault_publish.md` — same content as aDNA.aDNA mirror
 - `how/skills/skill_git_remote_setup.md` — same content as aDNA.aDNA mirror
 - `how/skills/skill_deploy.md` — same content as aDNA.aDNA mirror
 - `how/skills/skill_publish_tarball.md` — same content as aDNA.aDNA mirror
 
-### Modified in `/Users/stanley/lattice/.adna/` (upstream template)
+### Modified in `/Users/stanley/aDNA/.adna/` (upstream template)
 - `how/skills/skill_lattice_publish.md` — same 4 edits as aDNA.aDNA mirror
 
 ### Phantom cleanup
-- Removed: `aDNA.aDNA/.adna/` (phantom dir created early in session by mistaken mkdir; corrected mid-session after discovering aDNA.aDNA has no local `.adna/` — workspace-level `/Users/stanley/lattice/.adna/` is canonical template)
+- Removed: `aDNA.aDNA/.adna/` (phantom dir created early in session by mistaken mkdir; corrected mid-session after discovering aDNA.aDNA has no local `.adna/` — workspace-level `/Users/stanley/aDNA/.adna/` is canonical template)
 
 ## Conflict Scan
 

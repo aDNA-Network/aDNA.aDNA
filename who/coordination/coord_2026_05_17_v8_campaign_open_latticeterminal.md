@@ -24,7 +24,7 @@ tags: [coordination, v8, serious_tool_readiness, latticeterminal, phase_4_instal
 
 ## Purpose
 
-aDNA.aDNA opened `campaign_adna_serious_tool_readiness` 2026-05-17 (P0 first-execution-session closed; campaign master + CLAUDE.md + P0 mission file + AAR + v2 amendments + STATE.md updates all authored this session). The campaign targets v8.0 (Major Governance bump per ADR-011) at close. **Phase 4 of this campaign requires LatticeTerminal.aDNA co-design** for a cross-platform installer that bootstraps Ghostty + the agent harness + `~/lattice/` + `.adna/` template + workspace router + node.aDNA in one operator action.
+aDNA.aDNA opened `campaign_adna_serious_tool_readiness` 2026-05-17 (P0 first-execution-session closed; campaign master + CLAUDE.md + P0 mission file + AAR + v2 amendments + STATE.md updates all authored this session). The campaign targets v8.0 (Major Governance bump per ADR-011) at close. **Phase 4 of this campaign requires LatticeTerminal.aDNA co-design** for a cross-platform installer that bootstraps Ghostty + the agent harness + `~/aDNA/` + `.adna/` template + workspace router + node.aDNA in one operator action.
 
 This memo is the **advance signal** — Phase 4 does not open this session. Spock can acknowledge at any time; Phase 4 entry (M4.1 coord-memo handshake) will produce a follow-up coord memo with concrete handshake content + read-paired-with-Spock STATE.md verification.
 

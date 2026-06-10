@@ -42,12 +42,12 @@ related_decisions:
 | **Vault name** | `LatticeScope.aDNA/` |
 | **Category** | **Platform.aDNA** (per [[../../../../../RareHarness.aDNA/what/decisions/adr_000_project_identity.md|RareHarness ADR 000]] — second instance of the category; ratifies the pattern as workspace-canonical) |
 | **Persona** | **Prometheus** (Titan; foresight; fire-from-the-gods) — full spec at [[m01_obj10_prometheus_persona.md|m01_obj10_prometheus_persona.md]] |
-| **Sibling code repo** | `~/lattice/latticescope/` (peer to `latlab/`, `lattice-protocol/`, `rareharness/`) |
+| **Sibling code repo** | `~/aDNA/latticescope/` (peer to `latlab/`, `lattice-protocol/`, `rareharness/`) |
 | **GitHub** | `github.com/LatticeProtocol/LatticeScope.aDNA` (vault) + `github.com/LatticeProtocol/latticescope` (code) |
 | **License** | Apache-2.0 (code + vault); CC-BY-4.0 (community-submitted benchmarks) |
 | **Predicted 10-dim score** | **38/50 (76%)** at vault-bootstrap time — see §8 (RareHarness floor 33; node.aDNA prediction 42; LatticeScope intermediate by design — federation product is harder to score on a fresh-vault pre-check) |
 | **Bootstrap mission** | First mission of the LatticeScope sub-campaign (codename **MLS-0**); opens at v2 P3 phase gate (post-flatten + post-M08a/M08b) |
-| **Workspace router addition** | New row in `~/lattice/CLAUDE.md` Platform Ecosystem table (per [[../../../../CLAUDE.md|aDNA.aDNA CLAUDE.md]] Platform Ecosystem section pattern) |
+| **Workspace router addition** | New row in `~/aDNA/CLAUDE.md` Platform Ecosystem table (per [[../../../../CLAUDE.md|aDNA.aDNA CLAUDE.md]] Platform Ecosystem section pattern) |
 | **First instance-of-application** | Itself: this campaign's S2 S6 session is logged as Type C in v0.1's first measurement run |
 
 ---
@@ -136,7 +136,7 @@ Why **not** Asclepius (rejected at RareHarness ADR 000) or Argus (already taken 
 
 ## §4 Directory structure
 
-### Vault: `~/lattice/LatticeScope.aDNA/`
+### Vault: `~/aDNA/LatticeScope.aDNA/`
 
 ```
 LatticeScope.aDNA/
@@ -225,7 +225,7 @@ LatticeScope.aDNA/
 └── deploy_manifest.yaml                       ← cross-vault publish config (per Obj 5 minimalism audit)
 ```
 
-### Sibling code repo: `~/lattice/latticescope/`
+### Sibling code repo: `~/aDNA/latticescope/`
 
 ```
 latticescope/
@@ -290,7 +290,7 @@ latticescope/
     └── federation_quickstart.md
 ```
 
-**Cross-repo coupling**: aDNA-vault ADR-002 pins schema-version and references SHA in `~/lattice/latticescope/`. When schema bumps, both repos receive coordinated PRs (vault: ADR + new SQL DDL; code: migration script + Python schema constants). Standing Order: vault governs, code executes.
+**Cross-repo coupling**: aDNA-vault ADR-002 pins schema-version and references SHA in `~/aDNA/latticescope/`. When schema bumps, both repos receive coordinated PRs (vault: ADR + new SQL DDL; code: migration script + Python schema constants). Standing Order: vault governs, code executes.
 
 ---
 
@@ -300,7 +300,7 @@ Four ADRs land at MLS-0 (the bootstrap mission of the LatticeScope sub-campaign)
 
 | ADR | Title | Status at MLS-0 | This artifact's role |
 |---|---|---|---|
-| **ADR-000** | Project identity — Platform.aDNA second-instance, Prometheus persona, sibling code repo at `~/lattice/latticescope/` | proposed → ratified | Drafted in §1 + §2 + §3 of this artifact + companion persona spec |
+| **ADR-000** | Project identity — Platform.aDNA second-instance, Prometheus persona, sibling code repo at `~/aDNA/latticescope/` | proposed → ratified | Drafted in §1 + §2 + §3 of this artifact + companion persona spec |
 | **ADR-001** | Language choice — Python primary; TypeScript later for optional dashboard | proposed → ratified | Drafted in §7 of this artifact (recommendation) |
 | **ADR-002** | Schema design v0.1 — encodes Obj 9 → Obj 10 gate decisions verbatim | proposed → ratified | Drafted in §6 of this artifact |
 | **ADR-003** | License policy — Apache-2.0 (code + vault) + CC-BY-4.0 (community benchmarks) | proposed → ratified | Drafted in §0 + §9 of this artifact |
@@ -532,7 +532,7 @@ LatticeScope sits at the high end. The federation discipline + schema discipline
 
 | Surface | License | Rationale |
 |---|---|---|
-| Code (`~/lattice/latticescope/`) | **Apache-2.0** | Business-friendly; permissive; matches lattice-protocol; federation-appropriate (no copyleft propagation through metric submission) |
+| Code (`~/aDNA/latticescope/`) | **Apache-2.0** | Business-friendly; permissive; matches lattice-protocol; federation-appropriate (no copyleft propagation through metric submission) |
 | Vault (`LatticeScope.aDNA/`) | **Apache-2.0** | Consistent with code; allows partner forks |
 | Schemas + metric definitions (`what/docs/`, `what/metrics/`) | **Apache-2.0** | Forkable schemas; partners can extend without legal friction |
 | Community-submitted benchmarks (`benchmarks/community_submissions/`) | **CC-BY-4.0** | Creative-commons standard for data; attribution preserved; downstream reuse allowed |
@@ -564,7 +564,7 @@ Each axis maps to a phase: P0 = axis 1; P1+P2 = axis 2; P3 = axis 3 (anchor pape
 
 ## §10 Bootstrap mechanism + workspace-router entry
 
-### Workspace router (`~/lattice/CLAUDE.md`) addition
+### Workspace router (`~/aDNA/CLAUDE.md`) addition
 
 Add a new row to the **Platform Ecosystem** table (per [[../../../../CLAUDE.md|aDNA.aDNA CLAUDE.md]]):
 
@@ -576,10 +576,10 @@ The Platform Ecosystem section's lead paragraph promotes from RareHarness-singul
 
 ### Bootstrap sequence (MLS-0 mission)
 
-1. **Vault scaffold** — `cd ~/lattice; cp -R .adna LatticeScope.aDNA; cd LatticeScope.aDNA` (post-flatten the .adna template is canonical).
+1. **Vault scaffold** — `cd ~/aDNA; cp -R .adna LatticeScope.aDNA; cd LatticeScope.aDNA` (post-flatten the .adna template is canonical).
 2. **Persona installation** — overwrite CLAUDE.md with Prometheus identity per [[m01_obj10_prometheus_persona.md|persona spec]] §greeting + standing orders.
 3. **ADR ratification** — author + sign ADR-000 (identity), ADR-001 (Python), ADR-002 (schema v0.1 — *encodes §6 verbatim*), ADR-003 (license bundle).
-4. **Sibling code repo** — `cd ~/lattice; mkdir latticescope; cd latticescope; uv init` (or equivalent); commit pyproject.toml + LICENSE + README; push to `github.com/LatticeProtocol/latticescope`.
+4. **Sibling code repo** — `cd ~/aDNA; mkdir latticescope; cd latticescope; uv init` (or equivalent); commit pyproject.toml + LICENSE + README; push to `github.com/LatticeProtocol/latticescope`.
 5. **Schema DDL** — author `LatticeScope.aDNA/what/docs/schema_v0_1.sql` (verbatim from §6); cross-reference from ADR-002.
 6. **Workspace router update** — add the Platform Ecosystem row above; update Standing Order #4 paragraph.
 7. **MANIFEST.md / STATE.md / CHANGELOG.md / README.md** authored to project conventions.
@@ -626,7 +626,7 @@ Both audiences land at the same conclusion: **observability is a public good; La
 | [[m01_obj10_prometheus_persona.md|m01_obj10_prometheus_persona.md]] | sibling | Companion persona spec (deliverable 15) |
 | [[m01_obj10_latticescope_sub_campaign.md|m01_obj10_latticescope_sub_campaign.md]] | sibling / downstream | Sub-campaign doc consumes this design |
 | [[../../../../../RareHarness.aDNA/what/decisions/adr_000_project_identity.md|RareHarness ADR 000]] | upstream | Platform.aDNA pattern source; this is second instance |
-| `~/lattice/CLAUDE.md` Platform Ecosystem section | downstream | Workspace router gains a new row at MLS-0 |
+| `~/aDNA/CLAUDE.md` Platform Ecosystem section | downstream | Workspace router gains a new row at MLS-0 |
 | [[../../../../CLAUDE.md|aDNA.aDNA CLAUDE.md]] Standing Orders #2 / #7 / #8 | upstream | Self-reference + dual-audience invariants applied |
 | [[../campaign_adna_v2_infrastructure.md|campaign master]] | upstream | Strategic intent + phase order |
 | [[../../campaign_adna_v3_ecosystem_compliance/campaign_adna_v3_ecosystem_compliance.md|v3 successor]] | downstream | M03-EC (publish-skill upgrade) may invoke `skill_collector_install` per-vault |

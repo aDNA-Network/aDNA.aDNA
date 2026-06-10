@@ -37,9 +37,9 @@ Recommend Option 1 (add `--reset-layout` flag as distinct mode; keeps `--force` 
 
 ## Critical files
 
-- `/Users/stanley/lattice/.adna/setup.sh` lines 175-184 — workspace-copy block
-- `/Users/stanley/lattice/.adna/how/skills/skill_project_fork.md` — post-fork message
-- `/Users/stanley/lattice/.adna/how/skills/skill_onboarding.md` — first-open runbook
+- `/Users/stanley/aDNA/.adna/setup.sh` lines 175-184 — workspace-copy block
+- `/Users/stanley/aDNA/.adna/how/skills/skill_project_fork.md` — post-fork message
+- `/Users/stanley/aDNA/.adna/how/skills/skill_onboarding.md` — first-open runbook
 
 ## Source references
 

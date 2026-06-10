@@ -43,14 +43,14 @@ tags: [aar, mission_close, mlwx_01, lightweight, extended_findings_appendix, hes
 ### Conceptual contributions (3)
 
 1. **Source-vs-render bloat distinction in templated content**: bloat invisible at render time can still inflate git history compression overhead, agent-context budget when reading the file, and operator scroll fatigue in source view. Templates with embedded documentation comments should treat substitution as "primary instance only" (regex-bounded to actual placeholder locations) or use prose references inside their own comments. Generalizes beyond HOME.md to any future template (.lattice.yaml, AGENTS.md skeletons, etc.) that embeds documentation about its own placeholders.
-2. **Production-comparison smoke as canonical pattern**: mirror-this-node values + structural diff against working example yields strongest fidelity signal of all smoke styles. Pattern repeatable wherever a template has a working example deployed (M-LWX-01 had `~/lattice/node.aDNA/HOME.md`; future template-extraction missions can use the working example as the smoke gold).
+2. **Production-comparison smoke as canonical pattern**: mirror-this-node values + structural diff against working example yields strongest fidelity signal of all smoke styles. Pattern repeatable wherever a template has a working example deployed (M-LWX-01 had `~/aDNA/node.aDNA/HOME.md`; future template-extraction missions can use the working example as the smoke gold).
 3. **Surface-pre-exist-vs-skill-creates asymmetry as design choice**: skills writing to multiple surfaces should classify each output file as "pre-existing (template ships it)" or "skill-created (interview writes it from scratch)". Helps implementers + reviewers reason about which surfaces are responsibility of which step in the bootstrap chain.
 
 ### Items deferred (5)
 
 1. **Standard-scope role-expansion ADR (parallel to node-scope ADR-001)** — D-StdADR (operator-approved at plan time) defers to M-LWX-03 cross-graph findings home.
 2. **Finding 1 fix — substitution-into-HTML-comments**: route via M-LWX-03 cross-graph findings memo → single-commit additive upstream patch to `.adna/HOME.md` (rephrase inline comments to use plain prose). Would be 4th instance of the additive-upstream pattern.
-3. **Workspace router procedural list amendment** (Finding 4, carried from S1): `~/lattice/CLAUDE.md` Step 0.3 lines 28-33 still don't invoke `skill_node_bootstrap_interview.md` between auto-detect and persona. Defer to M-LWX-03 cross-graph findings memo (3-line procedural-list addition).
+3. **Workspace router procedural list amendment** (Finding 4, carried from S1): `~/aDNA/CLAUDE.md` Step 0.3 lines 28-33 still don't invoke `skill_node_bootstrap_interview.md` between auto-detect and persona. Defer to M-LWX-03 cross-graph findings memo (3-line procedural-list addition).
 4. **Identity-file create-vs-pre-exist asymmetry** (Finding 2): note for M-LWX-03 / future skill cleanup; low priority — current behavior works.
 5. **Node-skills upstreaming + `what/inventory/` skeleton** (Findings 3 from S2 smoke results): separate decision; flag to v2 main campaign for M05 consideration or a future M-LWX-style mission. Out of M-LWX-01 scope.
 

@@ -37,7 +37,7 @@ related_artifacts:
 
 Per [[../mission_adna_infra_p1_02_ecosystem_matrix.md|M02 Obj 3 spec]], spot-checked 3 vaults across maturity tiers: one active content-heavy operator-vault (`science_stanley.aDNA`), one no-remote Platform.aDNA (`RareHarness.aDNA`), and the M01 structural exception (`wga.aDNA`).
 
-For each spot-check: ran `ls /Users/stanley/lattice/<vault>/how/skills/skill_lattice_publish.md` and `ls /Users/stanley/lattice/<vault>/how/skills/` (or for `wga.aDNA`, confirmed `how/skills/` does not exist). The spot-checks address two questions: (a) is the publish-skill copy present, and (b) is the vault's overall skill-directory shape consistent with the M01 capture?
+For each spot-check: ran `ls /Users/stanley/aDNA/<vault>/how/skills/skill_lattice_publish.md` and `ls /Users/stanley/aDNA/<vault>/how/skills/` (or for `wga.aDNA`, confirmed `how/skills/` does not exist). The spot-checks address two questions: (a) is the publish-skill copy present, and (b) is the vault's overall skill-directory shape consistent with the M01 capture?
 
 ---
 
@@ -45,15 +45,15 @@ For each spot-check: ran `ls /Users/stanley/lattice/<vault>/how/skills/skill_lat
 
 ```
 === science_stanley.aDNA — how/skills/skill_lattice_publish.md ===
-/Users/stanley/lattice/science_stanley.aDNA/how/skills/skill_lattice_publish.md  (file exists)
+/Users/stanley/aDNA/science_stanley.aDNA/how/skills/skill_lattice_publish.md  (file exists)
 skills directory entry count (incl. AGENTS.md): 19
 
 === RareHarness.aDNA — how/skills/skill_lattice_publish.md ===
-/Users/stanley/lattice/RareHarness.aDNA/how/skills/skill_lattice_publish.md  (file exists)
+/Users/stanley/aDNA/RareHarness.aDNA/how/skills/skill_lattice_publish.md  (file exists)
 skills directory entry count (incl. AGENTS.md): 15
 
 === wga.aDNA — how/skills/ (expected: does not exist per M01 finding F-2 / Issue I-5) ===
-ls: /Users/stanley/lattice/wga.aDNA/how/skills: No such file or directory
+ls: /Users/stanley/aDNA/wga.aDNA/how/skills: No such file or directory
 how/ does exist (3 entries; verified non-empty parent)
 ```
 

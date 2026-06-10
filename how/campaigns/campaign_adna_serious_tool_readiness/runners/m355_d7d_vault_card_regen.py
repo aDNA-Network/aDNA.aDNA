@@ -15,12 +15,12 @@ palette, per-vault persona/visual anchor.
 
 Invocation (from anywhere; uses absolute paths):
     GEMINI_API_KEY=$(security find-generic-password -a "$USER" -s SS_GEMINI_API_KEY -w) \\
-        python /Users/stanley/lattice/aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/runners/m355_d7d_vault_card_regen.py
+        python /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/runners/m355_d7d_vault_card_regen.py
 
 Requirements:
     GEMINI_API_KEY in env (Keychain via SS_GEMINI_API_KEY entry)
     google-genai >= 1.x installed
-    latlab importable from /Users/stanley/lattice/latlab/
+    latlab importable from /Users/stanley/aDNA/latlab/
     PIL (Pillow) installed for PNG → JPG conversion
 
 Cost: 31 calls x $0.04 = $1.24 (2.5% of $50 v8 P5 budget).
@@ -54,15 +54,15 @@ from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
-sys.path.insert(0, "/Users/stanley/lattice/latlab")
+sys.path.insert(0, "/Users/stanley/aDNA/latlab")
 
 from latlab.mcp.image.server import GeminiImageClient
 from PIL import Image
 
 
-VAULT_CARDS_DIR = Path("/Users/stanley/lattice/Home.aDNA/who/assets/vault_cards")
+VAULT_CARDS_DIR = Path("/Users/stanley/aDNA/Home.aDNA/who/assets/vault_cards")
 LEDGER_PATH = Path(
-    "/Users/stanley/lattice/aDNA.aDNA/what/measurement/iii_results/2026-05/m355_d7d_regen.jsonl"
+    "/Users/stanley/aDNA/aDNA.aDNA/what/measurement/iii_results/2026-05/m355_d7d_regen.jsonl"
 )
 
 PROMPT_TEMPLATE = (

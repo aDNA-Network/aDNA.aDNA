@@ -26,11 +26,11 @@ tags: [exemplar, onboarding, consumer_vault, iss_integration, 30min_budget, t1_t
 
 Before you start, confirm three things:
 
-1. **Workspace has Standing Rule 8** — `grep "^8\." ~/lattice/CLAUDE.md` returns the ISS discoverability rule. If absent, the workspace router is pre-Standing-Rule-8 and the standard hasn't propagated to your node yet; the operator should pull workspace CLAUDE.md updates first.
+1. **Workspace has Standing Rule 8** — `grep "^8\." ~/aDNA/CLAUDE.md` returns the ISS discoverability rule. If absent, the workspace router is pre-Standing-Rule-8 and the standard hasn't propagated to your node yet; the operator should pull workspace CLAUDE.md updates first.
 
 2. **Target vault exists** — `<vault>.aDNA/` is a real directory. The vault should have a `CLAUDE.md` of its own (its governance) and ideally a `STATE.md` (its operational snapshot).
 
-3. **Canonical skill is reachable** — `test -f ~/lattice/aDNA.aDNA/how/skills/skill_create_iss.md && echo OK`. If MISSING, the standard hasn't propagated and you can either bootstrap from `SiteForge.aDNA/how/skills/skill_create_iss.md` (the pre-lift location, still present per Standing Rule 8 soak-period precedent) or wait for the P5.M4 `.adna/` PR to land and clone the aDNA standard.
+3. **Canonical skill is reachable** — `test -f ~/aDNA/aDNA.aDNA/how/skills/skill_create_iss.md && echo OK`. If MISSING, the standard hasn't propagated and you can either bootstrap from `SiteForge.aDNA/how/skills/skill_create_iss.md` (the pre-lift location, still present per Standing Rule 8 soak-period precedent) or wait for the P5.M4 `.adna/` PR to land and clone the aDNA standard.
 
 If all three preconditions hold, proceed.
 
@@ -40,7 +40,7 @@ If all three preconditions hold, proceed.
 
 ```bash
 # verify Workspace Standing Rule 8 wording
-grep -A2 "^8\. \*\*Agent-authored" ~/lattice/CLAUDE.md
+grep -A2 "^8\. \*\*Agent-authored" ~/aDNA/CLAUDE.md
 ```
 
 You should see Rule 8 naming `skill_create_iss.md` + ADR-028 + ADR-029 + the `<vault>/iss/CLAUDE.md` wrapper convention + adaptation guides at `SiteForge.aDNA/what/lib/iss/adaptation_guides/`.
@@ -62,7 +62,7 @@ mkdir -p <vault>.aDNA/iss
 #    - persona: one of franklin / hermes / rosetta / partner / tokyo / neutral
 #    - default_preset: one of partner_onboarding / clinician_evaluation / minimal_ux / enterprise_decision, OR null for gate-by-gate
 #    - pinned_at_commit: SHA of SiteForge.aDNA HEAD right now (≤ 8 chars)
-PIN=$(git -C ~/lattice/SiteForge.aDNA rev-parse --short HEAD)
+PIN=$(git -C ~/aDNA/SiteForge.aDNA rev-parse --short HEAD)
 echo "PIN=$PIN"
 ```
 
@@ -106,7 +106,7 @@ federation_ref:
 <vault>'s skin descriptor is canonical at:
 
 ```
-~/lattice/SiteForge.aDNA/what/lib/iss/skins/<vault_id>/skin.yaml
+~/aDNA/SiteForge.aDNA/what/lib/iss/skins/<vault_id>/skin.yaml
 ```
 
 (If your vault does not yet have a skin descriptor, see § 3 — it is optional at first onboarding.)
@@ -166,7 +166,7 @@ brand_css: |
 
 **Objective**: author one HTML gate at `<vault>/how/gates/<gate_id>.html` using the canonical skill.
 
-The agent should now load `~/lattice/aDNA.aDNA/how/skills/skill_create_iss.md` on demand (T3 tier) and invoke `generate()` with the four fields from `context_passing_protocol.md` § 1:
+The agent should now load `~/aDNA/aDNA.aDNA/how/skills/skill_create_iss.md` on demand (T3 tier) and invoke `generate()` with the four fields from `context_passing_protocol.md` § 1:
 
 ```python
 generate(
@@ -271,22 +271,22 @@ The cleanest live worked-example is **MoleculeForge.aDNA** (Franklin persona; de
 
 ```bash
 # T1 anchor
-grep -A2 "^8\. \*\*Agent-authored" ~/lattice/CLAUDE.md
+grep -A2 "^8\. \*\*Agent-authored" ~/aDNA/CLAUDE.md
 
 # T2 wrapper
-cat ~/lattice/MoleculeForge.aDNA/iss/CLAUDE.md
+cat ~/aDNA/MoleculeForge.aDNA/iss/CLAUDE.md
 
 # T3 skill
-cat ~/lattice/aDNA.aDNA/how/skills/skill_create_iss.md
+cat ~/aDNA/aDNA.aDNA/how/skills/skill_create_iss.md
 
 # substrate library
-ls ~/lattice/SiteForge.aDNA/what/lib/iss/
+ls ~/aDNA/SiteForge.aDNA/what/lib/iss/
 
 # skin descriptor
-cat ~/lattice/SiteForge.aDNA/what/lib/iss/skins/moleculeforge/skin.yaml
+cat ~/aDNA/SiteForge.aDNA/what/lib/iss/skins/moleculeforge/skin.yaml
 
 # any submitted gates (if any)
-ls ~/lattice/MoleculeForge.aDNA/how/gates/ 2>/dev/null
+ls ~/aDNA/MoleculeForge.aDNA/how/gates/ 2>/dev/null
 ```
 
 MoleculeForge's wrapper carries `persona_token_default: franklin`, `default_preset: null` (gate-by-gate), `fallback_tier: web`. It coexists orthogonally with the sibling `iii/` wrapper landed at MoleculeForge E0.M3. The pattern this exemplar walks through is the same pattern MoleculeForge demonstrates at production scale.
@@ -296,7 +296,7 @@ MoleculeForge's wrapper carries `persona_token_default: franklin`, `default_pres
 - **Sibling protocols (substrate-level at SiteForge.aDNA)** — `what/lib/iss/protocols/discovery_contract.md` (tier model) · `context_passing_protocol.md` (authoring-call signature) · `output_routing_protocol.md` (output landing + retrieval) · `t2_wrapper_template.md` (the ≤ 500-char block this exemplar imports verbatim in § 2)
 - **Canonical skill (T3 anchor)** — `aDNA.aDNA/how/skills/skill_create_iss.md` (status `active` per P5.M1 close 2026-05-26; ~51 kB)
 - **Twin ADRs** — `aDNA.aDNA/what/decisions/adr_028_iss_architecture.md` (architecture; 10 ADs; ratified P5.M2 2026-05-26) · `adr_029_iss_standard_touch.md` (standard-touch; 6 STs; ratified P5.M2 2026-05-26)
-- **Workspace Standing Rule 8** — `~/lattice/CLAUDE.md` §Standing Rules §8 (landed P5.M3 2026-05-26)
+- **Workspace Standing Rule 8** — `~/aDNA/CLAUDE.md` §Standing Rules §8 (landed P5.M3 2026-05-26)
 - **Adaptation guides** (read per your vault's aDNA category) — `SiteForge.aDNA/what/lib/iss/adaptation_guides/forge_platform_guide.md` (Forge + Platform patterns) · `framework_orgvault_orggraph_guide.md` (Framework + Org-Vault + Org-Graph) · `network_node_coordination_guide.md` (Network + Node + Coordination)
 - **3 live wrapper canonical references** — `MoleculeForge.aDNA/iss/CLAUDE.md` (Franklin / Forge) · `WilhelmAI.aDNA/iss/CLAUDE.md` (Partner / Org-Vault; coexists with `siteforge/` wrapper) · `RareHarnessOld.aDNA/iss/CLAUDE.md` (Franklin / Platform; canonical anchor pending CF→RH-Reorg-Settlement)
 - **P5.M6 (filed stub)** — `SiteForge.aDNA/how/campaigns/campaign_siteforge_iss/missions/mission_p5_6_gate_prompt_quality_review_process.md` (will close the F-1/F-2/F-3/F-4 lint loop; until then, follow § 8 manually)

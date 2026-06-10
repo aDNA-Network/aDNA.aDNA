@@ -5,7 +5,7 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_p1_04_node_adna_bootstrap
 mission_class: implementation
 session: session_stanley_20260512_013314_adna_v2_m04_s3
-audit_target: /Users/stanley/lattice/node.aDNA/
+audit_target: /Users/stanley/aDNA/node.aDNA/
 audit_target_git_head: 411660e  # node.aDNA v0.1 initial bootstrap commit (M04 S2)
 audit_rubric_source: aDNA.aDNA/CLAUDE.md §Compliance Dimensions
 audit_rubric_prediction_source: artifacts/m01_obj3_node_adna_design.md §8
@@ -86,7 +86,7 @@ Per M04 spec §Hard constraints: "Any dimension scoring <3 must be addressed bef
 
 Audit performed at session `session_stanley_20260512_013314_adna_v2_m04_s3` via:
 
-1. **Filesystem spot-walk**: `ls -la /Users/stanley/lattice/node.aDNA/` confirms 6 governance files + 3 triad legs + .git + .obsidian + .gitignore at root.
+1. **Filesystem spot-walk**: `ls -la /Users/stanley/aDNA/node.aDNA/` confirms 6 governance files + 3 triad legs + .git + .obsidian + .gitignore at root.
 2. **Triad inspection**: `ls -d what who how` returns all three; `ls what/inventory/` returns 7 files (AGENTS.md + 3 MD + 3 YAML); `ls who/identity/` returns 5 files (AGENTS.md + 2 MD + 2 YAML); `ls what/decisions/` and `ls who/coordination/` each return 1 AGENTS.md protocol stub.
 3. **4 node-skills**: `ls how/skills/skill_node_*.md skill_update_*.md skill_inventory_*.md` returns 4 paths (`skill_node_health_check.md` + `skill_node_credentials_audit.md` + `skill_update_all_vaults.md` + `skill_inventory_refresh.md`).
 4. **Frontmatter delimiter counts**: `grep -c "^---$"` on 6 governance files returns 2 for STATE/MANIFEST/CHANGELOG/AGENTS (single frontmatter pair), 12 for CLAUDE.md (frontmatter pair + body HR separators inside structured content), 0 for README.md (intentional per ecosystem convention).
@@ -95,7 +95,7 @@ Audit performed at session `session_stanley_20260512_013314_adna_v2_m04_s3` via:
 7. **Type vocabulary verification**: `grep -n "type: inventory\|type: identity"` across `what/inventory/` and `who/identity/` confirms NEW entity types in use.
 8. **Upstream backlog confirmation**: `ls aDNA.aDNA/how/backlog/idea_upstream_*entity_type.md` returns the 2 backlog ideas filed at S2.
 9. **Reproducibility check**: `skill_node_health_check.md` line 90-105 enumerates Steps 4-5 (Identity scaffolds + 4 node-skills presence with exit codes).
-10. **Git verification**: `git -C /Users/stanley/lattice/node.aDNA log --oneline` returns `411660e v0.1: initial bootstrap (M04 S2 of campaign_adna_v2_infrastructure)`.
+10. **Git verification**: `git -C /Users/stanley/aDNA/node.aDNA log --oneline` returns `411660e v0.1: initial bootstrap (M04 S2 of campaign_adna_v2_infrastructure)`.
 
 ---
 

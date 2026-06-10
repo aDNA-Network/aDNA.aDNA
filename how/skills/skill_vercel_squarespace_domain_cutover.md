@@ -60,7 +60,7 @@ Captured in `<consumer_vault>/how/missions/mission_<id>_dns_cutover_<domain>/inp
 | `canonical_form` | enum | yes | `apex` | `apex` = `https://<domain_apex>` canonical, `www` 301s to apex. `www` = `https://www.<domain_apex>` canonical, apex 301s/ALIAS-resolves to www. |
 | `dev_subdomain_enabled` | bool | yes | `true` | If true, configures `dev.<domain_apex>` as a Vercel Branch Domain bound to `dev_branch_name`. |
 | `dev_branch_name` | string | iff `dev_subdomain_enabled` | `dev` | Git branch name bound to the dev subdomain. |
-| `consumer_vault_path` | string | yes | — | Absolute path to the consumer vault root (e.g., `/Users/stanley/lattice/wga.aDNA`). |
+| `consumer_vault_path` | string | yes | — | Absolute path to the consumer vault root (e.g., `/Users/stanley/aDNA/wga.aDNA`). |
 | `cutover_window_iso` | string | yes (at P-D-T-24 close) | — | Operator-named cutover window start (ISO-8601 UTC). Must be ≥24h after P-D-T-24 close. |
 | `existing_email_provider` | enum | yes | `none` | `google_workspace` / `microsoft_365` / `proton` / `none`. Drives the email-continuity check's expected MX/SPF/DKIM records. |
 
@@ -106,7 +106,7 @@ cd <consumer_vault>/audit
 
 **v0.2.0 will add a `init-consumer-harness.sh` helper that automates Path B.**
 
-**v0.3.0 graduates the harness to a workspace-shared library** (`/Users/stanley/lattice/_shared/dns-cutover/`) with per-consumer config files; consumers `npm link` the shared lib instead of copying.
+**v0.3.0 graduates the harness to a workspace-shared library** (`/Users/stanley/aDNA/_shared/dns-cutover/`) with per-consumer config files; consumers `npm link` the shared lib instead of copying.
 
 Until then: pick Path A for the first WGA cutover; mark Path B as a follow-on if a second cutover lands within 60 days.
 
@@ -336,7 +336,7 @@ If `"link": null`, project has no integration. Fix:
 
 ### Q2. Never pass `--token=$SECRET` as a CLI flag
 
-`ps -ef` exposes the value for the lifetime of the command. **ALWAYS** use `VERCEL_TOKEN=...` env-var form. Doctrine: `/Users/stanley/lattice/doctrine_credential_handling.md` §2.4.
+`ps -ef` exposes the value for the lifetime of the command. **ALWAYS** use `VERCEL_TOKEN=...` env-var form. Doctrine: `/Users/stanley/aDNA/doctrine_credential_handling.md` §2.4.
 
 ### Q3. Hobby private-repo author-email mismatch BLOCKS deploys
 
@@ -410,7 +410,7 @@ After P-E close:
 - **Audit scripts** (Path A invocation target): `ScienceStanley.aDNA/audit/scripts/07-17_*.ts`
 - **Selector library** (Squarespace UI): `ScienceStanley.aDNA/audit/lib/squarespace_dns_selectors.ts`
 - **Vercel API client**: `ScienceStanley.aDNA/audit/lib/vercel_api.ts`
-- **Credential doctrine**: `/Users/stanley/lattice/doctrine_credential_handling.md`
+- **Credential doctrine**: `/Users/stanley/aDNA/doctrine_credential_handling.md`
 - **ISS gate skill**: `aDNA.aDNA/how/skills/skill_create_iss.md`
 - **Skill templates**: see `skill_vercel_squarespace_domain_cutover/templates/` (sibling directory)
 

@@ -86,7 +86,7 @@ This is the first release ratified under the explicit semver discipline ADR (ADR
 - **`node.aDNA/` opt-in pattern**: local-node operational inventory vault (Hestia persona). Per-machine inventory for software, compute resources, credentials, and change history. Forward-reference to `aDNA.aDNA/how/campaigns/` per ADR-004.
 - **Airlock template stub** at `/.adna/how/airlock/AIRLOCK.md` — vault-agnostic cross-vault coordination surface. Adoption is opt-in per vault (per ADR-008).
 - **Naming convention codified** (ADR-009): `<name>.aDNA/` directory ↔ `<name>.aDNA.git` GitHub repo isomorphism. Existing non-conformant repos are grandfathered (4 hyphen-flat + 1 path-style + 7 no-remote + 2 external-partner-namespaced); no forced renames. New vaults default to the canonical pattern via `skill_project_fork.md` warnings.
-- **Workspace router template** `template_workspace_claude.md` extracted from the legacy outer wrapper per ADR-007. Directly installable to `~/lattice/CLAUDE.md`.
+- **Workspace router template** `template_workspace_claude.md` extracted from the legacy outer wrapper per ADR-007. Directly installable to `~/aDNA/CLAUDE.md`.
 - **`LatticeScope.aDNA` planning campaign** seeded for the next observability-platform initiative (Prometheus persona). Vault construction is a successor campaign.
 
 **Pull-based changes** (just `git pull` your `.adna/` clone when you're ready):

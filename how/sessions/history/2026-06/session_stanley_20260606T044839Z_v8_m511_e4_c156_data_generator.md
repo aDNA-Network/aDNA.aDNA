@@ -32,7 +32,7 @@ III 7-step (measure → orient → select → implement → re-measure → valid
 
 **Operator decisions (this session, AskUserQuestion at the plan gate):**
 - **(1) Rename = write Home.aDNA inventory now** — fix at the registry source (explicit override of Standing
-  Rule 4 / the campaign no-Home.aDNA-writes boundary; it is a catch-up to on-disk reality — `~/lattice/Network.aDNA/`
+  Rule 4 / the campaign no-Home.aDNA-writes boundary; it is a catch-up to on-disk reality — `~/aDNA/Network.aDNA/`
   is already the real dir, old names are symlinks).
 - **(2) Scope = all 4 items** in c156.
 - **(3) Verify lift = self-score** the 5-item rubric (no lens Workflow this cycle).

@@ -74,7 +74,7 @@ Convert `m01_obj4_publish_naming_adr.md` §2 into formal ADR at `what/decisions/
 
 5 small edits per `skill_lattice_publish_rewrite_spec.md` §2:
 - Overview cross-link to `skill_vault_publish.md` ("Note: ... To publish a *vault* to its GitHub remote, see `skill_vault_publish.md`.")
-- Path-drift check (`cd ~/lattice/lattice-protocol-repo` line 62 — verify)
+- Path-drift check (`cd ~/aDNA/lattice-protocol-repo` line 62 — verify)
 - Frontmatter `updated: 2026-05-18`
 - Frontmatter `tags:` add `lattice_object`
 - `Related` block: add `skill_vault_publish.md`, `skill_git_remote_setup.md`, `skill_publish_tarball.md` cross-links

@@ -292,7 +292,7 @@ Document the four grandfathered hyphen-flat exceptions surfaced in [[m01_obj0_ec
 | File | Line | Reference | Conformance |
 |---|---|---|---|
 | `.adna/CLAUDE.md` | 49 | `project_name.aDNA/` | ✅ Conformant — generic placeholder example using `<name>.aDNA/` form |
-| `.adna/README.md` | 317 | `~/lattice/my_research_lab.aDNA/` | ✅ Conformant — example fork name |
+| `.adna/README.md` | 317 | `~/aDNA/my_research_lab.aDNA/` | ✅ Conformant — example fork name |
 | `.adna/README.md` | 369 | `my_research_lab.aDNA/  # Project A (forked, customized)` | ✅ Conformant |
 | `.adna/README.md` | 370 | `client_acme.aDNA/      # Project B (forked)` | ✅ Conformant |
 | `.adna/CHANGELOG.md` | 36 | `.aDNA directory convention: adna_standard.md §3.5 with RFC 2119 naming rules, skill_project_fork.md auto-appends .aDNA suffix, CLAUDE.md workspace detection uses *.aDNA/ glob.` | ✅ Conformant — discusses the convention itself |

@@ -174,6 +174,6 @@ The recursion is the meta-lesson: **a self-referential vault doctrine-checks its
 - [[../../../what/decisions/adr_011_aDNA_semver_discipline.md|ADR-011]] (two-track semver policy)
 - [[../../../what/decisions/adr_016_per_mission_context_budget.md|ADR-016 amended at M2.3 S2]] (M2.3.5 declares budget per Clause A)
 - [[../campaign_adna_serious_tool_readiness.md|campaign master]] (M2.3.5 row added at Phase 2 + amendments-table 2026-05-20 entry)
-- `~/lattice/.adna/how/docs/upgrade_v6_to_v7.md` (canonical v6→v7 reference)
-- `~/lattice/CLAUDE.md` workspace router
-- `~/lattice/node.aDNA/what/inventory/inventory_vaults.yaml` (36-vault canonical inventory)
+- `~/aDNA/.adna/how/docs/upgrade_v6_to_v7.md` (canonical v6→v7 reference)
+- `~/aDNA/CLAUDE.md` workspace router
+- `~/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml` (36-vault canonical inventory)

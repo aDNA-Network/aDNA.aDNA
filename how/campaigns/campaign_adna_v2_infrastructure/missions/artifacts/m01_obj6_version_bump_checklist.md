@@ -34,18 +34,18 @@ This is a **runbook artifact** — not a design doc. Each section is a checklist
 
 | # | Check | Command | Expected | Action if failed |
 |---|---|---|---|---|
-| P-1 | All M01 ADRs in `accepted` status (006, 007, 008, 009, 010, 011) | `for n in 006 007 008 009 010 011; do grep -l "status: accepted" adna/.adna/what/decisions/adr_${n}_*.md; done` (run from `~/lattice/`) | All 6 paths printed | Resolve open ADRs at predecessor missions; re-run M06 phase gate |
-| P-2 | M03 flatten has shipped | `test -d ~/lattice/.adna && test -f ~/lattice/.adna/.gitignore && ! test -d ~/lattice/adna` | All three pass | Run M03 first; v7.0 cannot tag pre-flatten |
-| P-3 | M05 publish-skill family has shipped | `ls ~/lattice/.adna/how/skills/skill_{vault_publish,git_remote_setup,deploy}.md` | All three files exist | Run M05 first |
-| P-4 | M08a upgrade guide has shipped | `test -f ~/lattice/.adna/how/docs/upgrade_v6_to_v7.md` | File exists | Run M08a first |
-| P-5 | Working tree clean on `main` | `cd ~/lattice/.adna && git status --short && git rev-parse --abbrev-ref HEAD` | Empty + `main` | Commit/stash/checkout as needed |
-| P-6 | No pending v7.0 RC tags blocking | `cd ~/lattice/.adna && git tag --list "v7.0*"` | Empty (no tag yet) OR only RC tags from this campaign | If a stale `v7.0` tag exists, refuse to proceed — investigate provenance with operator |
+| P-1 | All M01 ADRs in `accepted` status (006, 007, 008, 009, 010, 011) | `for n in 006 007 008 009 010 011; do grep -l "status: accepted" adna/.adna/what/decisions/adr_${n}_*.md; done` (run from `~/aDNA/`) | All 6 paths printed | Resolve open ADRs at predecessor missions; re-run M06 phase gate |
+| P-2 | M03 flatten has shipped | `test -d ~/aDNA/.adna && test -f ~/aDNA/.adna/.gitignore && ! test -d ~/aDNA/adna` | All three pass | Run M03 first; v7.0 cannot tag pre-flatten |
+| P-3 | M05 publish-skill family has shipped | `ls ~/aDNA/.adna/how/skills/skill_{vault_publish,git_remote_setup,deploy}.md` | All three files exist | Run M05 first |
+| P-4 | M08a upgrade guide has shipped | `test -f ~/aDNA/.adna/how/docs/upgrade_v6_to_v7.md` | File exists | Run M08a first |
+| P-5 | Working tree clean on `main` | `cd ~/aDNA/.adna && git status --short && git rev-parse --abbrev-ref HEAD` | Empty + `main` | Commit/stash/checkout as needed |
+| P-6 | No pending v7.0 RC tags blocking | `cd ~/aDNA/.adna && git tag --list "v7.0*"` | Empty (no tag yet) OR only RC tags from this campaign | If a stale `v7.0` tag exists, refuse to proceed — investigate provenance with operator |
 
 ---
 
 ## §1 CHANGELOG.md v7.0 entry (skeleton + pre-populated content)
 
-**Target file**: `~/lattice/.adna/CHANGELOG.md`
+**Target file**: `~/aDNA/.adna/CHANGELOG.md`
 
 **Insertion point**: Immediately after the `---` separator below the Version Policy section (before the existing `## [v6.0] — 2026-04-03` entry).
 
@@ -67,7 +67,7 @@ This is a **runbook artifact** — not a design doc. Each section is a checklist
 - **`how/airlock/AIRLOCK.md` stub** at template level — entry-path index for cross-graph agent traffic. Adoption is opt-in per vault. (M03; ratified by ADR-008)
 - **Naming convention codification** (ADR-009): `<name>.aDNA/` directory ↔ `<name>.aDNA.git` GitHub repo isomorphism; snake_case `<name>`; grandfathered exceptions documented. Renames are operator-discretionary; per-vault application is the v3 successor's scope. (M07)
 - **Semver discipline ADR** (ADR-011): Codifies the two-track Major.Minor-only policy already practiced in this CHANGELOG. (M06; this entry IS the first release governed by it.)
-- **`template_workspace_claude.md`**: Workspace-router CLAUDE.md template extracted from the legacy outer `adna/CLAUDE.md` per ADR-007. Directly installable to `~/lattice/CLAUDE.md`. (M03)
+- **`template_workspace_claude.md`**: Workspace-router CLAUDE.md template extracted from the legacy outer `adna/CLAUDE.md` per ADR-007. Directly installable to `~/aDNA/CLAUDE.md`. (M03)
 - **`LatticeScope.aDNA` planning campaign seed**: Campaign doc for the observability-platform vault (Prometheus persona). Seeded in this campaign's M10; vault construction is a successor campaign. (M10)
 - **CI workflow caller-usage URL update** to `LatticeProtocol/adna` (3 reusable workflows). (M03)
 - **Template-root `.gitignore`**: Created with v7.0 exclusion set (`deploy/`, `what/local/`, `how/local/`, `who/operators/`, `dist/`, `.publish-clone/`, `.publish-clone.bak/`, `private/`, `*.dryrun.log`, `*.tar.gz`). (M03; per Obj 5 audit §5 G-1)
@@ -124,7 +124,7 @@ M06 fills in the date placeholder (`YYYY-MM-DD`) at execution and verifies each 
 
 ## §2 Frontmatter version flip
 
-**Target file**: `~/lattice/.adna/CLAUDE.md`
+**Target file**: `~/aDNA/.adna/CLAUDE.md`
 
 **Current state** (verified S2 S4 2026-05-08):
 ```yaml
@@ -161,7 +161,7 @@ last_edited_by: agent_stanley
 
 ## §3 Standard track verification (no change)
 
-**Target file**: `~/lattice/.adna/what/docs/adna_standard.md`
+**Target file**: `~/aDNA/.adna/what/docs/adna_standard.md`
 
 **Verify** (read-only at v7.0 tag time):
 - Line 3 frontmatter `title:` reads `"aDNA Universal Standard v2.2"` — canonical
@@ -178,7 +178,7 @@ This is the **only** change to `adna_standard.md` in this campaign. The Standard
 
 ## §4 MANIFEST.md verification (no version field)
 
-**Target file**: `~/lattice/.adna/MANIFEST.md`
+**Target file**: `~/aDNA/.adna/MANIFEST.md`
 
 **Current frontmatter** (verified S2 S4 2026-05-08):
 ```yaml
@@ -207,7 +207,7 @@ tags: [manifest, governance]
 **Pre-tag verification** (P-1 through P-6 from §0 must all pass):
 
 ```bash
-cd ~/lattice/.adna
+cd ~/aDNA/.adna
 
 # Confirm preconditions
 git status --short                                # expect empty
@@ -219,7 +219,7 @@ git tag --list "v7*"                              # expect empty (no v7.0 yet)
 git push origin main                              # ensure remote up to date before tagging
 ```
 
-**Tag command** (run from `~/lattice/.adna`):
+**Tag command** (run from `~/aDNA/.adna`):
 
 ```bash
 git tag -a v7.0 -m "aDNA v7.0 (Governance) — flat repo, node.aDNA, publish-skill rewrite, LatticeScope.aDNA seed.
@@ -305,7 +305,7 @@ All ADRs live in [`.adna/what/decisions/`](https://github.com/LatticeProtocol/ad
 Run all checks; any failure → debug before announcing.
 
 ```bash
-cd ~/lattice/.adna
+cd ~/aDNA/.adna
 
 # Tag exists locally + remotely
 git tag --list "v7.0"                              # expect: v7.0

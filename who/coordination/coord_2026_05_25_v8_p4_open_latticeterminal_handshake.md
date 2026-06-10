@@ -75,7 +75,7 @@ This memo is the **active handshake** that supersedes the advance-signal predece
 
 **M4.3 (3-4 sessions; co-design with Spock)**:
 - Co-designed installer authoring at D10-determined location
-- Composes: existing LatticeTerminal `skill_install` (base layer: Ghostty + tmux + Claude Code) + new aDNA workspace-bootstrap (`~/lattice/` + `.adna/` template clone + workspace router CLAUDE.md + node.aDNA fork + first-run skill triggering)
+- Composes: existing LatticeTerminal `skill_install` (base layer: Ghostty + tmux + Claude Code) + new aDNA workspace-bootstrap (`~/aDNA/` + `.adna/` template clone + workspace router CLAUDE.md + node.aDNA fork + first-run skill triggering)
 - M4.3 IS the co-design mission per campaign master line 187; Spock authors LatticeTerminal-side changes; Rosetta authors aDNA-side workspace-bootstrap extension; both ratify via coord memo at M4.3 close
 
 **M4.4 (2-3 sessions)**:
@@ -109,7 +109,7 @@ Full draft in `m41_phase_4_contract_draft.md` (D3); preview here for Spock's con
 
 - **A. Installer repo location** — **D10 RATIFIED 2026-05-25T~17:55Z (operator G2 mid-checkpoint)**: aDNA.aDNA hosts unified installer at `aDNA.aDNA/how/skills/install/` (canonical) + upstream-promoted to `.adna/` template at v8 P6. LatticeTerminal's existing M1.1 `skill_install` becomes the **logic precedent** (Ghostty + tmux + Claude Code v1-default + BACKEND-MATRIX + telemetry per `adna.telemetry.v1`) — M4.3 absorbs the logic into the aDNA-side skill. LatticeTerminal launcher binary at `what/latticeterminal/launcher/` is consumed as a **build artifact** per ADR-005 standalone-deployable
 - **B. Agent harness ownership** — LatticeAgent.aDNA owns HARNESS-CONTRACT + PROVIDER-CONTRACT; v8.0 pins Claude Code v1-default ONLY; OpenCode co-provider deferred to v8.x
-- **C. Workspace router sync** — aDNA installer skill produces `~/lattice/CLAUDE.md` (router) + `.adna/` template clone + invokes LatticeTerminal `cmd/install` for base layer; node.aDNA bootstrap fires per existing `.adna/how/skills/skill_node_bootstrap_interview.md`
+- **C. Workspace router sync** — aDNA installer skill produces `~/aDNA/CLAUDE.md` (router) + `.adna/` template clone + invokes LatticeTerminal `cmd/install` for base layer; node.aDNA bootstrap fires per existing `.adna/how/skills/skill_node_bootstrap_interview.md`
 - **D. CI/CD platform strategy** — GitHub Actions; release artifacts at D10-determined location (M4.4 finalizes)
 - **E. Binary distribution channels** — `curl install.lattice.dev | sh` (macOS Intel + Apple Silicon at v8.0); `.ps1` + Linux package candidates deferred per LatticeTerminal ADR-019
 - **F. Cross-platform support matrix** — inherit from LatticeTerminal ADR-016 BACKEND-MATRIX; macOS SHIP at v8.0; Linux/Windows DG-C-gated
@@ -168,7 +168,7 @@ When Spock reads this memo (operator-discretionary timing; expected this week pe
 This coord memo is **filed with `delivery_active: 2026-05-25`** — supersedes the predecessor `coord_2026_05_17`'s `delivery_held_until: operator-acknowledgment` posture. Spock receives this at the next LatticeTerminal session via standard `who/coordination/` scan (in aDNA.aDNA/who/coordination/); cross-vault discovery via standard session-entry protocol.
 
 **Action items for Stanley at next LatticeTerminal session**:
-1. Run `git -C ~/lattice/aDNA.aDNA pull` (or already-current if M4.1 close pushed)
+1. Run `git -C ~/aDNA/aDNA.aDNA pull` (or already-current if M4.1 close pushed)
 2. Read this memo in LatticeTerminal session context (Spock perspective)
 3. Add `acknowledged: <date>` field to this file (in aDNA.aDNA/who/coordination/)
 4. Optionally author response coord memo at LatticeTerminal-side

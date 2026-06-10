@@ -18,7 +18,7 @@ campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_p1_08a_upgrade_guide_and_coord_memos
 objective: 1
 target_mission: M08a
-mirror: /Users/stanley/lattice/VideoForge.aDNA/who/coordination/coord_2026_05_09_v7_aDNA_adoption.md
+mirror: /Users/stanley/aDNA/VideoForge.aDNA/who/coordination/coord_2026_05_09_v7_aDNA_adoption.md
 airlock_pattern: true
 operator_class: LatticeProtocol-internal
 external_party: (none)
@@ -37,7 +37,7 @@ tags: [coordination, cross_graph, v7_0_adoption, rosetta, iris, videoforge, m08a
 
 **aDNA.aDNA** governs aDNA standard evolution. Persona: Rosetta.
 
-**VideoForge.aDNA** is a **Forge** — composable video-production forge governed by **Iris** (messenger goddess; carries narrative across boundaries — formats, platforms, consumer graphs). Genesis planning; sibling code repo at `~/lattice/videoforge/`.
+**VideoForge.aDNA** is a **Forge** — composable video-production forge governed by **Iris** (messenger goddess; carries narrative across boundaries — formats, platforms, consumer graphs). Genesis planning; sibling code repo at `~/aDNA/videoforge/`.
 
 ---
 
@@ -80,7 +80,7 @@ aDNA v7.0 is a Major Governance bump. Two breaking — workspace flatten (M03) +
 
 ### VideoForge.aDNA-specific notes
 
-- **Sibling code repo**: VideoForge pairs with `~/lattice/videoforge/` (renamed from `lattice-video-forge/` at M_1_01 2026-05-08). The vault and the code repo have separate v7.0 considerations — the **vault** does v7.0 adoption; the code repo follows its own conventions. Coordinated PRs may sequence the vault and code-repo migrations.
+- **Sibling code repo**: VideoForge pairs with `~/aDNA/videoforge/` (renamed from `lattice-video-forge/` at M_1_01 2026-05-08). The vault and the code repo have separate v7.0 considerations — the **vault** does v7.0 adoption; the code repo follows its own conventions. Coordinated PRs may sequence the vault and code-repo migrations.
 - **Genesis planning**: VideoForge is mid-genesis; v7.0 adoption can sequence into the genesis Phase 1 work (P0–P3 seeded 2026-04-30).
 - **Day-1 consumers**: SS (`videoforge/` production-validated) + CC (`videoforge/` placeholder). v7.0 adoption in VideoForge does not require consumer-wrapper updates.
 - **First-time remote**: M05's new `skill_git_remote_setup` is designed for exactly this case — creates `github.com/LatticeProtocol/VideoForge.aDNA.git` (canonical name per ADR-009) if it doesn't already exist; configures origin in one step.

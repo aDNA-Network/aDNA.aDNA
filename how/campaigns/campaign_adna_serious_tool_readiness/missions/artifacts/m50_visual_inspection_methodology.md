@@ -233,7 +233,7 @@ aDNA.aDNA cycles consume `CanvasForge.aDNA/canvas_core/image_generation.py` (sub
 **Consumer pattern** (Python; runs in aDNA.aDNA execution context):
 ```python
 import sys
-sys.path.insert(0, "/Users/stanley/lattice/CanvasForge.aDNA")
+sys.path.insert(0, "/Users/stanley/aDNA/CanvasForge.aDNA")
 from canvas_core.image_generation import ImageRequest, generate_image
 
 # Cycle 101 example: OG card regen for learn section

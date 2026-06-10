@@ -51,7 +51,7 @@ tags: [campaign, v8, serious_tool_readiness, comprehensive_upgrade, multi_vault,
 
 ## Goal
 
-Ship aDNA v8.0 as a community-ready knowledge-architecture standard. After this campaign, an external operator can: (1) install aDNA via a one-command bootstrapper that provisions terminal + `~/lattice/` + `.adna/` template + node.aDNA; (2) operate context graphs fluidly via a Bases-driven Obsidian home page with per-vault info pages and agent-driven inspection; (3) understand the architecture in under one read of the website + readme (ranker ≥ 4.95 on both); (4) contribute via a community pathway documented in `who/community/`. Six operator-specified concern areas converge on this single outcome.
+Ship aDNA v8.0 as a community-ready knowledge-architecture standard. After this campaign, an external operator can: (1) install aDNA via a one-command bootstrapper that provisions terminal + `~/aDNA/` + `.adna/` template + node.aDNA; (2) operate context graphs fluidly via a Bases-driven Obsidian home page with per-vault info pages and agent-driven inspection; (3) understand the architecture in under one read of the website + readme (ranker ≥ 4.95 on both); (4) contribute via a community pathway documented in `who/community/`. Six operator-specified concern areas converge on this single outcome.
 
 ## Context
 
@@ -87,7 +87,7 @@ Stanley's pivot at 2026-05-17 reframes the work: instead of executing v2's queue
 
 3. **Airlock system AAR + streamline** — AAR on `campaign_comic_pipeline_canvas` M0-M1 (worked example); airlock pattern lineage review (5+ instances now); workflow improvements (handshake → request → response → co-sign latency); airlock-specific skills (`skill_airlock_open.md`, `skill_airlock_close.md`); cross-graph linking conventions; coord-memo → mission-spec → AAR audit chain hardening.
 
-4. **Terminal.aDNA / LatticeTerminal.aDNA integration** — Cross-vault co-design with `LatticeTerminal.aDNA/` (Spock); co-designed installer bootstrapping terminal + `~/lattice/` + `.adna/` template + workspace router + node.aDNA; binary distribution strategy (ADR-015 candidates: curl-bash + .ps1 vs compiled binary vs Python+pyinstaller); Ghostty + Claude Code + agentic-tool-substrate composition; cross-platform support (macOS Intel + Apple Silicon + Windows PowerShell 5.1+ + Linux Ubuntu/Fedora/Arch).
+4. **Terminal.aDNA / LatticeTerminal.aDNA integration** — Cross-vault co-design with `LatticeTerminal.aDNA/` (Spock); co-designed installer bootstrapping terminal + `~/aDNA/` + `.adna/` template + workspace router + node.aDNA; binary distribution strategy (ADR-015 candidates: curl-bash + .ps1 vs compiled binary vs Python+pyinstaller); Ghostty + Claude Code + agentic-tool-substrate composition; cross-platform support (macOS Intel + Apple Silicon + Windows PowerShell 5.1+ + Linux Ubuntu/Fedora/Arch).
 
 5. **III research missions + 100 III loops on aDNA website + readme** — Research missions: study top-tier open-source projects (Rust, Astro, Vercel, Tailwind, Tauri, Obsidian, Linear, Stripe) for design/voice/onboarding/docs patterns; pull personas from external sources (open-source maintainer, dev-tools designer, framework documentation expert, community organizer, indie hacker, enterprise architect); update `who/reviewers/` with additional decadal-relevant personas; 100 III loops total: D9+D10 of existing Rosetta Phase 7 (20 cycles) + 80 new on github readme/repo.
 
@@ -184,7 +184,7 @@ Stanley's pivot at 2026-05-17 reframes the work: instead of executing v2's queue
 |---|---|---|---|---|
 | M4.1 | Cross-vault audit + LatticeTerminal.aDNA sync (coord-memo handshake + paired read of LatticeTerminal STATE.md + Phase-4 contract draft) | 1-2 | P3 close | **completed** 2026-05-25T18:00Z (single-session; reconnaissance-class; 5/5 deliverables LIVE; D10 ratified; Phase-4 contract clause A LOCKED; clauses B-H drafted; cross-vault coord pattern 2nd canonical instance) |
 | M4.2 | ADR-015 installer packaging + distribution (ratify; candidate: curl-bash + .ps1 vs compiled binary vs Python+pyinstaller) | 1-2 | M4.1 | **paused** (operator-pivot 2026-05-25T~19:50Z; resumable post-P5 OR after alternative terminal/agent solution settles; Phase-4 contract draft preserved with M4.x-paused status + §I Pause Provenance) |
-| M4.3 | Co-designed installer authoring (Ghostty + agent harness + `~/lattice/` + `.adna/` + workspace router + node.aDNA; cross-platform) | 3-4 | M4.2 | **paused** (operator-pivot 2026-05-25T~19:50Z; resumes with M4.2) |
+| M4.3 | Co-designed installer authoring (Ghostty + agent harness + `~/aDNA/` + `.adna/` + workspace router + node.aDNA; cross-platform) | 3-4 | M4.2 | **paused** (operator-pivot 2026-05-25T~19:50Z; resumes with M4.2) |
 | M4.4 | Cross-platform CI/CD for binary distribution (GitHub releases + Homebrew tap candidate + Windows PowerShell + Linux package candidates) | 2-3 | M4.3 | **paused** (operator-pivot 2026-05-25T~19:50Z; resumes with M4.2+M4.3) |
 
 **Phase exit gate**: `curl install.lattice.dev | sh` works end-to-end across macOS Intel + Apple Silicon + Windows + Linux; LatticeTerminal partner signs off via coord memo.

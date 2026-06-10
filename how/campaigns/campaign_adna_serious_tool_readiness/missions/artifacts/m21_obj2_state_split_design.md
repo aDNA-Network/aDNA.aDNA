@@ -137,7 +137,7 @@ Existing files in `aDNA.aDNA/` reference STATE.md via three patterns:
 **At any S2 phase failure or operator abort**:
 
 ```bash
-cd ~/lattice/aDNA.aDNA
+cd ~/aDNA/aDNA.aDNA
 git log --oneline -10                                    # find pre-split SHA
 git reset --hard <pre-split-sha>                         # restores pre-split STATE.md
 rm STATE_archive.md                                      # remove orphan archive (if created)

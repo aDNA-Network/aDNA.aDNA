@@ -30,7 +30,7 @@ The two sessions both passed the `node.aDNA` Startup Checklist step 3 (`how/sess
 
 **The credential + inventory + doctrine surface is a small-fan-in shared resource** (one broker per node; one inventory; one doctrine) where concurrent writes don't naturally merge. The same dynamic applies to **any** node-local inventory entity type (`inventory_vaults`, `inventory_system`, `inventory_memberships`, `inventory_credentials`) and identity entity type (`identity_node`, `identity_lattice_protocol`). The standard treats `how/sessions/active/` scan as a "polite suggestion" Startup Checklist item rather than a load-bearing requirement; M05 proved it must be the latter for the inventory-edit surface.
 
-M06 of `campaign_node_credentials` codifies the rule **locally** at `/Users/stanley/lattice/doctrine_credential_handling.md §8` (2026-05-26). This backlog proposes lifting the rule into the `.adna/` template so every aDNA vault inherits the discipline — not just `node.aDNA/` consumers of credential-broker work.
+M06 of `campaign_node_credentials` codifies the rule **locally** at `/Users/stanley/aDNA/doctrine_credential_handling.md §8` (2026-05-26). This backlog proposes lifting the rule into the `.adna/` template so every aDNA vault inherits the discipline — not just `node.aDNA/` consumers of credential-broker work.
 
 ## Proposed solution
 
@@ -91,7 +91,7 @@ The three changes work together:
 - `node.aDNA/who/coordination/coord_2026_05_25_m05_dual_session_handoff.md` — M05 root-cause incident report
 - `node.aDNA/how/campaigns/campaign_node_credentials/missions/mission_node_creds_m05_second_vault_pilot.md` AAR — Finding documents the dual-session learning
 - `node.aDNA/how/campaigns/campaign_node_credentials/aar_campaign.md` — campaign-level rollup citing this rule as load-bearing
-- `/Users/stanley/lattice/doctrine_credential_handling.md` §8 — local codification (2026-05-26)
+- `/Users/stanley/aDNA/doctrine_credential_handling.md` §8 — local codification (2026-05-26)
 - `idea_upstream_credential_broker_template_inheritance.md` — sibling M06 carry-forward (filed same date)
 - `idea_upstream_planning_light_substrate_recon.md` — sibling M06 carry-forward (filed same date)
 - `idea_upstream_inventory_entity_type.md` — structural addition this rule operationalizes

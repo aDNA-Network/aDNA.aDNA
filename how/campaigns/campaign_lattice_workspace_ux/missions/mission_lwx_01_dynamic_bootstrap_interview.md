@@ -26,7 +26,7 @@ prerequisite_adrs:
   - "node.aDNA/what/decisions/adr_001_node_vault_role_expansion.md"  # node-scope ADR documenting why role expansion is additive (template upstream version may want a parallel standard-scope ADR; decide at M-LWX-01 S1)
 ships_to: mission_lwx_03_integration_test_and_closeout
 parallel_eligible_with: mission_lwx_02_lattice_obsidian_vault  # independent — M-LWX-01 upstream, M-LWX-02 local; no shared files. M-LWX-02 is CLOSED as of 2026-05-12T22:35Z+; this prerequisite is satisfied.
-d5_disposition: upstream  # skill_node_bootstrap_interview.md → .adna/how/skills/; HOME.md template → .adna/HOME.md (NEW per scope amendment); .adna/.obsidian/workspace.default.json update (NEW per scope amendment); 1-line workspace-router prompt update at ~/lattice/CLAUDE.md (technically local but trivial)
+d5_disposition: upstream  # skill_node_bootstrap_interview.md → .adna/how/skills/; HOME.md template → .adna/HOME.md (NEW per scope amendment); .adna/.obsidian/workspace.default.json update (NEW per scope amendment); 1-line workspace-router prompt update at ~/aDNA/CLAUDE.md (technically local but trivial)
 scope_amendment_2026_05_12:
   rationale: "M-LWX-02 close architectural review (operator-led at session_stanley_20260512_221833_mlwx02_s1) identified gap: M-LWX-02 outputs (HOME.md + workspace.default.json HOME.md ref + role-expansion pattern) landed only in this node's vault. For future node.aDNA forks on other machines (or other operators on this machine) to inherit the role-expanded UX, the template parts need to be upstreamed. M-LWX-01 is the natural carrier — it's already the upstream-bound mission of this mini-campaign and its single-commit additive pattern (ADR-008 + e3b3bcc precedent) accommodates the additional template files cleanly."
   added_scope:
@@ -59,7 +59,7 @@ The interview skill closes the 7 strict gaps + 2 overlay gaps surfaced by v2 M04
 Obj 1's gap analysis ([[../../campaign_adna_v2_infrastructure/missions/artifacts/m04b_obj1_dynamic_ux_gap_analysis.md|gap analysis]]),
 turning the M04 static bootstrap UX into the **hybrid interview-driven UX** the M04
 AAR noted was the intended target. After M-LWX-01 ships, a fresh operator running
-`claude` for the first time in `~/lattice/` — with `.adna/` template at v7.0+
+`claude` for the first time in `~/aDNA/` — with `.adna/` template at v7.0+
 HEAD — gets the workspace router Step 0.3 prompt; if they accept bootstrap,
 `skill_node_bootstrap_interview.md` runs and elicits 19 operator-specific values
 across purpose / user-info / stack / hardware / connections.
@@ -70,11 +70,11 @@ across purpose / user-info / stack / hardware / connections.
 
 - **Spec-faithful implementation**: M-LWX-01 implements [[../../campaign_adna_v2_infrastructure/missions/artifacts/m04b_obj2_skill_node_bootstrap_interview_spec.md|Obj 2 spec]] verbatim — 19 questions across 5 topics + composition contract + output schema + Hestia voice register. No new questions, no removed questions without explicit operator approval.
 - **Single upstream commit** to `LatticeProtocol/adna` adding `.adna/how/skills/skill_node_bootstrap_interview.md` + 1 entry in `.adna/how/skills/AGENTS.md` skill index. Pattern: ADR-008 + `e3b3bcc` precedent.
-- **One-line workspace router update**: `~/lattice/CLAUDE.md` Step 0.3 prompt — replace static "Would you like me to bootstrap one now via `skill_project_fork`?" with interview-aware "Would you like me to bootstrap one now? I'll ask 19 quick questions (4-7 min)…". No other workspace-router edits.
+- **One-line workspace router update**: `~/aDNA/CLAUDE.md` Step 0.3 prompt — replace static "Would you like me to bootstrap one now via `skill_project_fork`?" with interview-aware "Would you like me to bootstrap one now? I'll ask 19 quick questions (4-7 min)…". No other workspace-router edits.
 - **No M04 output mutation**: `node.aDNA/` at git HEAD `411660e` stays untouched; M04 AAR + audit + spec unchanged. The interview skill does not re-bootstrap; it operates on *future* forks (or operator-discretionary re-runs).
 - **No partner-vault touches**.
 - **No M04b output mutation** (gap analysis + interview spec + Obsidian spec are read-only references).
-- **D5 = upstream** (explicit per artifact): `skill_node_bootstrap_interview.md` lands in `.adna/how/skills/` (upstream); workspace router prompt update lands at `~/lattice/CLAUDE.md` (workspace-local, trivial 1-line change).
+- **D5 = upstream** (explicit per artifact): `skill_node_bootstrap_interview.md` lands in `.adna/how/skills/` (upstream); workspace router prompt update lands at `~/aDNA/CLAUDE.md` (workspace-local, trivial 1-line change).
 
 ---
 
@@ -118,13 +118,13 @@ across purpose / user-info / stack / hardware / connections.
 
 ### Obj 3 — Update workspace router Step 0.3 prompt (1-line) ✅ S1
 
-**Read**: `~/lattice/CLAUDE.md` Step 0.3 §"If `node.aDNA/` is missing" block (line 24).
+**Read**: `~/aDNA/CLAUDE.md` Step 0.3 §"If `node.aDNA/` is missing" block (line 24).
 
 **Produce**: 1-line surgical change replacing the trailing question + parenthetical: "Would you like me to bootstrap one now via `skill_project_fork`? (It takes about 30 seconds and won't affect your existing projects.)" → "Would you like me to bootstrap one now? I'll ask 19 quick questions (4-7 min) to fill in operator-specific fields, then auto-detect the rest." **No other workspace-router edits** per mission constraint.
 
-**Done**: ✅ S1; workspace-local edit (not in any git repo — `~/lattice/` itself is not a repo). Verified via `grep -A 2 "Step 0.3"`.
+**Done**: ✅ S1; workspace-local edit (not in any git repo — `~/aDNA/` itself is not a repo). Verified via `grep -A 2 "Step 0.3"`.
 
-**Finding (deferred to M-LWX-03)**: the Step 0.3 procedural list (lines 28-33 of `~/lattice/CLAUDE.md`) routes through `skill_project_fork → skill_inventory_refresh → persona → STATE.md → git init` without invoking `skill_node_bootstrap_interview.md`. The new prompt mentions the interview, but the procedural list does not yet invoke it. M-LWX-03 sandbox re-fork smoke will catch this; resolution becomes a small procedural-list amendment (3-line addition between current Step 2 and Step 3).
+**Finding (deferred to M-LWX-03)**: the Step 0.3 procedural list (lines 28-33 of `~/aDNA/CLAUDE.md`) routes through `skill_project_fork → skill_inventory_refresh → persona → STATE.md → git init` without invoking `skill_node_bootstrap_interview.md`. The new prompt mentions the interview, but the procedural list does not yet invoke it. M-LWX-03 sandbox re-fork smoke will catch this; resolution becomes a small procedural-list amendment (3-line addition between current Step 2 and Step 3).
 
 ### Obj 4 — Single upstream commit to LatticeProtocol/adna ✅ S1
 
@@ -136,7 +136,7 @@ across purpose / user-info / stack / hardware / connections.
 
 ### Obj 5 — Integration smoke: sandbox re-fork test (S2)
 
-**Read** (at S2 open): `~/lattice/.adna/` HEAD (`8673383`); the new skill + HOME.md template + workspace.default.json updates.
+**Read** (at S2 open): `~/aDNA/.adna/` HEAD (`8673383`); the new skill + HOME.md template + workspace.default.json updates.
 
 **Produce** (at S2):
 - Clean sandbox path `/tmp/sandbox_lwx_01/`
@@ -144,7 +144,7 @@ across purpose / user-info / stack / hardware / connections.
 - Verify HOME.md `{{VARS}}` substitution: 8 primary vars + 4 table generators
 - Verify `workspace.default.json` opens `HOME.md` on Obsidian launch (operator-side check OK if skipped)
 - Produce `missions/artifacts/mlwx_01_obj5_smoke_results.md` with PASS/FAIL per check
-- **Do NOT** re-run on `~/lattice/node.aDNA/` (would mutate M04 audit baseline)
+- **Do NOT** re-run on `~/aDNA/node.aDNA/` (would mutate M04 audit baseline)
 
 ### Obj 6 — Lightweight 5-line AAR + mission close (S2 or S3)
 
@@ -158,11 +158,11 @@ across purpose / user-info / stack / hardware / connections.
 
 | # | Deliverable | Path | Session | Origin |
 |---|---|---|---|---|
-| 1 | `skill_node_bootstrap_interview.md` (new skill) | `~/lattice/.adna/how/skills/skill_node_bootstrap_interview.md` | S1 | original M04b Obj 2 |
-| 2 | `.adna/how/skills/AGENTS.md` skill-index update | `~/lattice/.adna/how/skills/AGENTS.md` | S1 | original M04b Obj 2 |
-| 3 | **`HOME.md` template (NEW per 2026-05-12 scope amendment)** | `~/lattice/.adna/HOME.md` | S1 | from M-LWX-02 working example (template-extract; replace specific values with `{{VARS}}`) |
-| 4 | **`.adna/.obsidian/workspace.default.json` update (NEW per amendment)** | `~/lattice/.adna/.obsidian/workspace.default.json` | S1 | from M-LWX-02 working example (file ref `Home.md` → `HOME.md`; addresses M-LWX-02 AAR Items deferred #4) |
-| 5 | Workspace router Step 0.3 prompt update (1 line) | `~/lattice/CLAUDE.md` | S1 | original M04b Obj 2 |
+| 1 | `skill_node_bootstrap_interview.md` (new skill) | `~/aDNA/.adna/how/skills/skill_node_bootstrap_interview.md` | S1 | original M04b Obj 2 |
+| 2 | `.adna/how/skills/AGENTS.md` skill-index update | `~/aDNA/.adna/how/skills/AGENTS.md` | S1 | original M04b Obj 2 |
+| 3 | **`HOME.md` template (NEW per 2026-05-12 scope amendment)** | `~/aDNA/.adna/HOME.md` | S1 | from M-LWX-02 working example (template-extract; replace specific values with `{{VARS}}`) |
+| 4 | **`.adna/.obsidian/workspace.default.json` update (NEW per amendment)** | `~/aDNA/.adna/.obsidian/workspace.default.json` | S1 | from M-LWX-02 working example (file ref `Home.md` → `HOME.md`; addresses M-LWX-02 AAR Items deferred #4) |
+| 5 | Workspace router Step 0.3 prompt update (1 line) | `~/aDNA/CLAUDE.md` | S1 | original M04b Obj 2 |
 | 6 | Upstream commit to `LatticeProtocol/adna` (now covers 4 files: skill + AGENTS + HOME.md + workspace.default.json) | git commit hash recorded in M-LWX-01 AAR | S1 or S2 | original + amendment |
 | 7 | Integration smoke results | `missions/artifacts/mlwx_01_obj5_smoke_results.md` | S2 | original |
 | 8 | M-LWX-01 AAR | `missions/artifacts/aar_mlwx_01_dynamic_bootstrap_interview.md` | S2 or S3 | original |
@@ -200,7 +200,7 @@ across purpose / user-info / stack / hardware / connections.
 | 2 | `.adna/how/skills/AGENTS.md` skill-index update | ✅ S1 | commit `8673383` |
 | 3 | `.adna/HOME.md` template (165 lines; 8 primary `{{VARS}}` + 4 table generators) | ✅ S1 | commit `8673383` |
 | 4 | `.adna/.obsidian/workspace.default.json` fix (3 refs: file/title/lastOpenFiles) | ✅ S1 | commit `8673383` |
-| 5 | Workspace router Step 0.3 prompt update (1-line) | ✅ S1 | `~/lattice/CLAUDE.md` (workspace-local; not in any repo) |
+| 5 | Workspace router Step 0.3 prompt update (1-line) | ✅ S1 | `~/aDNA/CLAUDE.md` (workspace-local; not in any repo) |
 | 6 | Single upstream commit to `LatticeProtocol/adna` | ✅ S1 | commit `8673383` pushed to origin/main 2026-05-12T23:23:27Z |
 | 7 | Integration smoke results | ✅ S2 | `missions/artifacts/mlwx_01_obj5_smoke_results.md` (9/9 gates PASS; 5 findings) |
 | 8 | M-LWX-01 AAR (lightweight 5-line + extended findings appendix) | ✅ S2 | `missions/artifacts/aar_mlwx_01_dynamic_bootstrap_interview.md` |
@@ -218,12 +218,12 @@ across purpose / user-info / stack / hardware / connections.
 - ✅ M-LWX-01 AAR landed (lightweight 5-line + 4-category extended findings appendix: 4 patterns + 3 surprises + 3 conceptual + 5 items deferred)
 - ✅ Mission file `status: in_progress → completed`
 - ✅ Campaign master M-LWX-01 row flipped to `completed` (this session — Phase C)
-- ✅ No mutation of M04 / M04b / M-LWX-02 outputs / partner vaults / non-target `.adna/` files / existing `node.aDNA/` (hard-constraint guard verified pre+post smoke: `~/lattice/node.aDNA/` HEAD `1032d8d` unchanged; `~/lattice/.adna/` HEAD `c32930e` unchanged)
+- ✅ No mutation of M04 / M04b / M-LWX-02 outputs / partner vaults / non-target `.adna/` files / existing `node.aDNA/` (hard-constraint guard verified pre+post smoke: `~/aDNA/node.aDNA/` HEAD `1032d8d` unchanged; `~/aDNA/.adna/` HEAD `c32930e` unchanged)
 
 **Findings carried forward to M-LWX-03 (or `.adna/` follow-up patch)**:
 
 1. **NEW (S2 smoke): Substitution-into-HTML-comments source-bloat** — naive `string.replace()` mirrors expanded `{{TOKEN}}` references inside inline HTML comments in `.adna/HOME.md` (lines 40, 54, 65). Render-invisible; source-bloat ~4.9KB on a ~8KB file. Fix: rephrase inline comments to plain prose references (preferred, ~10min upstream patch) OR amend skill Step 9 to skip HTML-comment regions (heavier, defensive). Would be 4th instance of single-commit additive upstream pattern.
-2. **Workspace router procedural list gap** (S1): Step 0.3 prompt mentions interview but procedural list at `~/lattice/CLAUDE.md` lines 28-33 doesn't yet invoke it. Resolution: 3-line procedural-list amendment between Step 2 (inventory_refresh) and Step 3 (persona). Routes to M-LWX-03 or separate follow-up commit.
+2. **Workspace router procedural list gap** (S1): Step 0.3 prompt mentions interview but procedural list at `~/aDNA/CLAUDE.md` lines 28-33 doesn't yet invoke it. Resolution: 3-line procedural-list amendment between Step 2 (inventory_refresh) and Step 3 (persona). Routes to M-LWX-03 or separate follow-up commit.
 3. **`hostname` substitution semantics** (S1): `hostname -s` may return long-form while convention uses friendly short form (e.g., `Mac`). Operator U1 override pattern handles this; documentation note for interview-skill comments. Non-blocking.
 4. **Identity-file create-vs-pre-exist asymmetry** (S2 smoke): `who/identity/identity_node.yaml` + `who/identity/identity_lattice_protocol.yaml` are interview-created (not in fresh fork), while `what/inventory/*.yaml` are pre-populated by inventory_refresh. Asymmetry by-spec but worth documenting. Low priority for M-LWX-03 notes.
 5. **Node-skills + `what/inventory/` not in `.adna/` upstream** (S2 smoke; out of M-LWX-01 scope): bootstrap chain documented in skill Steps 1-4 can't complete on a vanilla `.adna/` fork (node-specific skills + inventory entity-type live only in `node.aDNA/`). Flag to v2 main campaign for M05 consideration or future M-LWX-style mission.

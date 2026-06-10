@@ -40,18 +40,18 @@ LIP-0006 ratifies Network.aDNA as the 6th canonical aDNA pattern category (joini
 
 | Site | Path | Edit |
 |---|---|---|
-| **Workspace router** | `/Users/stanley/lattice/.adna/CLAUDE.md` (post-M03 flatten direct repo at `LatticeProtocol/aDNA`) | Mirror the `aDNA.aDNA/CLAUDE.md` Network Ecosystem section (currently provisional; ratified post-M1.5 — but `.adna/` is v7.0 frozen at `27e6395` until v8 P6) |
+| **Workspace router** | `/Users/stanley/aDNA/.adna/CLAUDE.md` (post-M03 flatten direct repo at `LatticeProtocol/aDNA`) | Mirror the `aDNA.aDNA/CLAUDE.md` Network Ecosystem section (currently provisional; ratified post-M1.5 — but `.adna/` is v7.0 frozen at `27e6395` until v8 P6) |
 | **Base-ontology table** | `aDNA.aDNA/what/docs/adna_standard.md` (also mirrored to `.adna/what/docs/adna_standard.md` at v8 P6 batch) | Add Network.aDNA row alongside Forge/Platform/Framework/Org-Vault/Org-Graph; reference LIP-0006 + ADR-017 |
 | **Pattern categories doctrine** (if exists at standard) | `aDNA.aDNA/what/docs/` (any doctrine file enumerating canonical categories — check at v8 P6 prep) | Add Network.aDNA |
 | **CHANGELOG entry** | `aDNA.aDNA/CHANGELOG.md` (at v8 P6 batch — M6.1 prep) | Add v8.0 entry mentioning Network.aDNA category addition + ADR-017 link + LIP-0006 link |
 | **Workspace ontology.md** | (already updated at M1.5 deliverable 3) | NO further action at v8 P6; current `aDNA.aDNA/what/ontology.md` §Network.aDNA Extensions subsection is canonical post-M1.5 |
-| **Workspace router (this vault)** | `/Users/stanley/lattice/CLAUDE.md` | Already mentions Network.aDNA Ecosystem post-LatticeNetwork.aDNA rename 2026-05-18; verify section heading is still in place at v8 P6 |
+| **Workspace router (this vault)** | `/Users/stanley/aDNA/CLAUDE.md` | Already mentions Network.aDNA Ecosystem post-LatticeNetwork.aDNA rename 2026-05-18; verify section heading is still in place at v8 P6 |
 
 ## Lifecycle binding
 
 - **Source ratification**: ADR-017 §Clause A (this vault; M1.5 2026-05-20) — establishes the standard-owner-side category ratification.
 - **LIP source**: `lattice-labs/how/governance/lips/lip_0006_network_adna_pattern_category.md` — LIP-0006 itself; stays `accepted` at lattice-labs; aDNA.aDNA references via ADR-017 Clause A.
-- **Workspace router**: `/Users/stanley/lattice/CLAUDE.md` — already categorizes LatticeNetwork.aDNA as Network.aDNA (provisional pre-M1.5; ratified post-M1.5 via ADR-017).
+- **Workspace router**: `/Users/stanley/aDNA/CLAUDE.md` — already categorizes LatticeNetwork.aDNA as Network.aDNA (provisional pre-M1.5; ratified post-M1.5 via ADR-017).
 - **Upstream template propagation** (this placeholder): waits for v8 P6 batch.
 
 This placeholder is **category-scope** (single canonical addition to the pattern-category enumeration); the 2 sibling entity-type placeholders are **entity-type-scope** (per-entity-type extensions added to the ontology table). All 3 placeholders ratify at the same v8 P6 batch.
@@ -82,5 +82,5 @@ This placeholder is **category-scope** (single canonical addition to the pattern
   - [[idea_upstream_network_node_mirror_entity_type.md|`idea_upstream_network_node_mirror_entity_type.md`]] — `network_` namespace first-claim entity-type (peer ADR-002)
 - **M1.5 mission spec**: [[../campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p1_m15_coord_network.md|`mission_adna_str_p1_m15_coord_network.md`]]
 - **Response memo to Venus**: [[../../who/coordination/coord_2026_05_19_v8_m15_latticenetwork_ratification_response.md|`coord_2026_05_19_v8_m15_latticenetwork_ratification_response.md`]] §2
-- **Workspace router** (post-rename 2026-05-18): `/Users/stanley/lattice/CLAUDE.md` §Network Ecosystem
+- **Workspace router** (post-rename 2026-05-18): `/Users/stanley/aDNA/CLAUDE.md` §Network Ecosystem
 - **v3-EC follow-up campaign** (planned successor; opens at v8 P6 close): [[../campaigns/campaign_adna_v3_ecosystem_compliance/campaign_adna_v3_ecosystem_compliance.md|campaign_adna_v3_ecosystem_compliance.md]]

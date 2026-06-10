@@ -19,7 +19,7 @@ Same 1408x792 16:9 frame as the other heroes. No baked text (the H1 is live text
 Interpreter: python3.13 (google.genai lives in the 3.13 user site, NOT homebrew 3.14).
 
 Usage:
-  cd /Users/stanley/lattice/aDNA.aDNA
+  cd /Users/stanley/aDNA/aDNA.aDNA
   python3.13 how/campaigns/campaign_adna_serious_tool_readiness/runners/e5_commons_hero_gen.py \
       --round r1 --direction all --variants 2
   # Ultra is the default; pass --model imagen-4.0-fast-generate-001 if Ultra 429s.
@@ -42,11 +42,11 @@ from pathlib import Path
 
 from PIL import Image
 
-RUNNERS = "/Users/stanley/lattice/aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/runners"
+RUNNERS = "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/runners"
 sys.path.insert(0, RUNNERS)
 from e1_hero_adna_network_gen import GHIBLI_TAIL, load_api_key  # noqa: E402
 
-VAULT_ROOT = Path("/Users/stanley/lattice/aDNA.aDNA")
+VAULT_ROOT = Path("/Users/stanley/aDNA/aDNA.aDNA")
 OUT_DIR = VAULT_ROOT / "site/src/assets/heroes/candidates"
 LOG_DIR = VAULT_ROOT / "what/measurement/iii_results/2026-06"
 

@@ -45,7 +45,7 @@ The README continues to be the **human-facing entry point** (Quick Start, FAQ, W
 **Pre-tag verification** (M06 runs before the v7.0 release announcement):
 
 ```bash
-cd ~/lattice/.adna
+cd ~/aDNA/.adna
 grep -c "Agentic-DNA" README.md    # expect: 0 post-fix (was 5)
 grep -c "agentic-dna" README.md    # expect: 0 (case-insensitive — covers any lowercase variant)
 grep -c "\\.adna" README.md         # expect: ≥3 (the new directory pattern appears multiple times post-flatten)
@@ -94,8 +94,8 @@ Per ADR-006 + ADR-007 (repo rename + flatten). Edits at §"1. Get the vault" sub
 
 | Line | Section | Before | After |
 |---|---|---|---|
-| ~270 | "Option A — Clone into `~/lattice/` (recommended)" code block | `git clone https://github.com/LatticeProtocol/Agentic-DNA.git adna` | `git clone https://github.com/LatticeProtocol/adna.git .adna` |
-| ~270 (preceding context line) | (the line `cd ~/lattice` is unchanged) | — | — |
+| ~270 | "Option A — Clone into `~/aDNA/` (recommended)" code block | `git clone https://github.com/LatticeProtocol/Agentic-DNA.git adna` | `git clone https://github.com/LatticeProtocol/adna.git .adna` |
+| ~270 (preceding context line) | (the line `cd ~/aDNA` is unchanged) | — | — |
 | ~270 (succeeding context line) | `cd adna` | `cd .adna` |
 | ~273 | Prose after the code block | "The `adna/` directory is the base template — you'll fork it into project directories, keeping the template clean for updates." | "The `.adna/` directory is the base template — you'll fork it into project directories, keeping the template clean for updates." |
 | ~277 | "Option B — Use as GitHub template" link | `[Use this template](https://github.com/LatticeProtocol/Agentic-DNA/generate)` | `[Use this template](https://github.com/LatticeProtocol/adna/generate)` |
@@ -114,7 +114,7 @@ At §"Multi-Project Workspaces" subsection (line ~363-373):
 The full code-block context after the edit:
 
 ```
-~/lattice/
+~/aDNA/
 ├── CLAUDE.md              # Workspace governance (auto-created on first run)
 ├── .adna/                 # Base template (never modified — role: template, no .aDNA suffix; flattened in v7.0)
 ├── my_research_lab.aDNA/  # Project A (forked, customized)

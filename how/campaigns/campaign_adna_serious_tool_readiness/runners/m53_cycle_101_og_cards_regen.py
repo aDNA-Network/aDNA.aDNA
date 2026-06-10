@@ -13,7 +13,7 @@ Auth: SS_GEMINI_API_KEY from macOS Keychain via
   security find-generic-password -a "$USER" -s SS_GEMINI_API_KEY -w
 
 Usage:
-  cd /Users/stanley/lattice/aDNA.aDNA
+  cd /Users/stanley/aDNA/aDNA.aDNA
   /opt/homebrew/bin/python3 how/campaigns/campaign_adna_serious_tool_readiness/runners/m53_cycle_101_og_cards_regen.py
 
 Outputs:
@@ -37,7 +37,7 @@ from PIL import Image, ImageDraw, ImageFont
 # Config
 # ---------------------------------------------------------------------------
 
-VAULT_ROOT = Path("/Users/stanley/lattice/aDNA.aDNA")
+VAULT_ROOT = Path("/Users/stanley/aDNA/aDNA.aDNA")
 OUT_DIR = VAULT_ROOT / "site/public/images"
 LOG_PATH = (
     VAULT_ROOT

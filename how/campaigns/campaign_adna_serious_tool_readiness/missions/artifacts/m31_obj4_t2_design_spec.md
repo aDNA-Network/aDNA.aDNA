@@ -24,7 +24,7 @@ tags: [design_spec, proposed_patch, m3_1, obj_4, t2, workspace_idempotency, rese
 >
 > **Cross-cut hook**: this spec defines the `--reset-layout` flag as a substrate primitive that the future `skill_obsidian_canonicalize.md` (T4 / M3.2 scope) will consume as one step of a broader "rehydrate vault to canonical state" workflow. T2 lands the primitive; T4 builds the canonicalization skill atop it.
 >
-> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/lattice/.adna/`. All patch text is literal diff content for v8 P6 to apply.
+> **Hard constraint**: this spec does NOT mutate any file under `/Users/stanley/aDNA/.adna/`. All patch text is literal diff content for v8 P6 to apply.
 
 ## 1. Finding statement + root cause (F-S2-4)
 
@@ -70,7 +70,7 @@ tags: [design_spec, proposed_patch, m3_1, obj_4, t2, workspace_idempotency, rese
 
 ```bash
 # Scenario A: fresh fork + run setup.sh + verify layout
-cd ~/lattice/<test_project>.aDNA/
+cd ~/aDNA/<test_project>.aDNA/
 ./setup.sh
 grep -c "notebook-navigator" .obsidian/workspace.json  # expect ≥ 1
 

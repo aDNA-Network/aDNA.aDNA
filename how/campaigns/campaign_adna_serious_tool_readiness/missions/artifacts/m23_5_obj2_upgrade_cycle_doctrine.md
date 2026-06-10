@@ -11,14 +11,14 @@ status: complete
 last_edited_by: agent_stanley
 purpose: "Codify operational doctrine for aDNA upgrade cycles. Answers the operator's specific question 'where does it run from?' explicitly with a 5-anchor topology. Back-fills the v8 P6 propagation mechanism under-specification identified by the Explore-agent inventory."
 sources:
-  - "/Users/stanley/lattice/.adna/how/docs/upgrade_v6_to_v7.md (canonical v6→v7 reference; 422 lines)"
+  - "/Users/stanley/aDNA/.adna/how/docs/upgrade_v6_to_v7.md (canonical v6→v7 reference; 422 lines)"
   - aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj6_version_bump_checklist.md  # §0 preconditions + §7 verification harness
   - aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj0_ecosystem_matrix.md         # per-change blast-radius pattern
   - aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj2_migration_runbook.md         # flat/in-place migration + 13-step rollback
   - aDNA.aDNA/what/decisions/adr_005_three_way_vault_boundary.md    # vault-scope reasoning anchor
   - aDNA.aDNA/what/decisions/adr_011_aDNA_semver_discipline.md      # two-track semver policy
-  - "/Users/stanley/lattice/CLAUDE.md (workspace router; cross-vault topology)"
-  - "/Users/stanley/lattice/lattice-labs/who/coordination/coord_2026_05_08_publish_rewrite.md (Daedalus coord memo prototype)"
+  - "/Users/stanley/aDNA/CLAUDE.md (workspace router; cross-vault topology)"
+  - "/Users/stanley/aDNA/lattice-labs/who/coordination/coord_2026_05_08_publish_rewrite.md (Daedalus coord memo prototype)"
   - "skills: skill_l1_upgrade.md + skill_workspace_upgrade.md + skill_vault_publish.md + skill_git_remote_setup.md + skill_deploy.md"
 tags: [artifact, m23_5, doctrine_memo, upgrade_cycle_doctrine, 5_anchor_topology, 5_phase_model, where_does_it_run_from, v8_p6_back_fill, skill_graduation_deferred, doctrine_as_design_memo, standing_order_14, future_skill_adna_upgrade_cycle]
 related_artifacts:
@@ -225,7 +225,7 @@ The cycle has 5 phases. Each phase has an initiator, an actor, an artifact moved
 
 ### 4.1 Coord memo pattern (Daedalus prototype)
 
-Reference: `/Users/stanley/lattice/lattice-labs/who/coordination/coord_2026_05_08_publish_rewrite.md` (Daedalus co-sign memo for v7.0 publish-skill rewrite; M01 Obj 8 template basis).
+Reference: `/Users/stanley/aDNA/lattice-labs/who/coordination/coord_2026_05_08_publish_rewrite.md` (Daedalus co-sign memo for v7.0 publish-skill rewrite; M01 Obj 8 template basis).
 
 **Format template** (adapted; future v8 P6 receipts use this):
 
@@ -288,24 +288,24 @@ Embargo memos stay `status: draft` during a campaign; dispatch fires at v8.0 tag
 
 | Skill | File | Use |
 |---|---|---|
-| `skill_vault_publish.md` | `~/lattice/.adna/how/skills/skill_vault_publish.md` | Push vault to GitHub remote (M05 v7.0 deliverable; LIVE) |
-| `skill_git_remote_setup.md` | `~/lattice/.adna/how/skills/skill_git_remote_setup.md` | Configure GitHub origin + naming convention lint (M05 v7.0 deliverable) |
-| `skill_deploy.md` | `~/lattice/.adna/how/skills/skill_deploy.md` | Pre-push sanitization hook installer (M05 v7.0 deliverable) |
+| `skill_vault_publish.md` | `~/aDNA/.adna/how/skills/skill_vault_publish.md` | Push vault to GitHub remote (M05 v7.0 deliverable; LIVE) |
+| `skill_git_remote_setup.md` | `~/aDNA/.adna/how/skills/skill_git_remote_setup.md` | Configure GitHub origin + naming convention lint (M05 v7.0 deliverable) |
+| `skill_deploy.md` | `~/aDNA/.adna/how/skills/skill_deploy.md` | Pre-push sanitization hook installer (M05 v7.0 deliverable) |
 | **`m23_5_obj3_push_readiness_checklist.md`** (THIS mission) | sibling artifact | Pre-push gate (M06 post-tag adapted; M2.3.5 = first instance) |
 
 ### Phase C — Propagate
 
 | Skill | File | Use |
 |---|---|---|
-| `skill_workspace_upgrade.md` | `~/lattice/.adna/how/skills/skill_workspace_upgrade.md` | Re-pull `.adna/` template at consumer vaults |
-| `skill_upstream_contribution.md` | `~/lattice/.adna/how/skills/skill_upstream_contribution.md` | Template-level contributor workflow |
+| `skill_workspace_upgrade.md` | `~/aDNA/.adna/how/skills/skill_workspace_upgrade.md` | Re-pull `.adna/` template at consumer vaults |
+| `skill_upstream_contribution.md` | `~/aDNA/.adna/how/skills/skill_upstream_contribution.md` | Template-level contributor workflow |
 | (v8 P6 mission specs; not yet authored) | M6.1-M6.4 forthcoming | aDNA.aDNA → `.adna/` lift mechanism |
 
 ### Phase D — Consume
 
 | Skill | File | Use |
 |---|---|---|
-| `skill_l1_upgrade.md` | `~/lattice/.adna/how/skills/skill_l1_upgrade.md` | L0 → L1 path; node.aDNA refresh |
+| `skill_l1_upgrade.md` | `~/aDNA/.adna/how/skills/skill_l1_upgrade.md` | L0 → L1 path; node.aDNA refresh |
 | `skill_workspace_upgrade.md` | (above) | Per-vault template refresh |
 
 ### Phase E — Verify
@@ -335,7 +335,7 @@ Embargo memos stay `status: draft` during a campaign; dispatch fires at v8.0 tag
 - [[../../campaign_adna_v2_infrastructure/missions/artifacts/m01_obj6_version_bump_checklist.md|m01_obj6_version_bump_checklist.md]] — executable v7.0 tag runbook (M06 ran this; obj3 adapts §7 to pre-push gate)
 - [[../../campaign_adna_v2_infrastructure/missions/artifacts/m01_obj0_ecosystem_matrix.md|m01_obj0_ecosystem_matrix.md]] — per-change blast-radius template (obj1 §3 adapts)
 - [[../../campaign_adna_v2_infrastructure/missions/artifacts/m01_obj2_migration_runbook.md|m01_obj2_migration_runbook.md]] — flat/in-place migration + 13-step rollback (Phase D + E reference)
-- `~/lattice/.adna/how/docs/upgrade_v6_to_v7.md` — canonical v6→v7 reference (Phase A + Phase B precedent; published path)
+- `~/aDNA/.adna/how/docs/upgrade_v6_to_v7.md` — canonical v6→v7 reference (Phase A + Phase B precedent; published path)
 
 ### Decisional anchors
 
@@ -346,22 +346,22 @@ Embargo memos stay `status: draft` during a campaign; dispatch fires at v8.0 tag
 
 ### Skill inventory
 
-- `~/lattice/.adna/how/skills/skill_l1_upgrade.md` — Phase D (consume; L0→L1)
-- `~/lattice/.adna/how/skills/skill_workspace_upgrade.md` — Phase C + D (propagate + consume; `.adna/` template refresh)
-- `~/lattice/.adna/how/skills/skill_vault_publish.md` — Phase B (push)
-- `~/lattice/.adna/how/skills/skill_git_remote_setup.md` — Phase B (push; first-time remote config)
-- `~/lattice/.adna/how/skills/skill_deploy.md` — Phase B (push; pre-push hook)
-- `~/lattice/.adna/how/skills/skill_upstream_contribution.md` — Phase C (template-level contributor workflow)
+- `~/aDNA/.adna/how/skills/skill_l1_upgrade.md` — Phase D (consume; L0→L1)
+- `~/aDNA/.adna/how/skills/skill_workspace_upgrade.md` — Phase C + D (propagate + consume; `.adna/` template refresh)
+- `~/aDNA/.adna/how/skills/skill_vault_publish.md` — Phase B (push)
+- `~/aDNA/.adna/how/skills/skill_git_remote_setup.md` — Phase B (push; first-time remote config)
+- `~/aDNA/.adna/how/skills/skill_deploy.md` — Phase B (push; pre-push hook)
+- `~/aDNA/.adna/how/skills/skill_upstream_contribution.md` — Phase C (template-level contributor workflow)
 
 ### Coordination prototypes
 
-- `~/lattice/lattice-labs/who/coordination/coord_2026_05_08_publish_rewrite.md` — Daedalus co-sign memo (§4.1 coord memo template basis)
-- `~/lattice/aDNA.aDNA/who/coordination/coord_2026_05_19_v8_m15_latticenetwork_ratification_response.md` — Venus response memo (M1.5 cross-vault dispatch example)
+- `~/aDNA/lattice-labs/who/coordination/coord_2026_05_08_publish_rewrite.md` — Daedalus co-sign memo (§4.1 coord memo template basis)
+- `~/aDNA/aDNA.aDNA/who/coordination/coord_2026_05_19_v8_m15_latticenetwork_ratification_response.md` — Venus response memo (M1.5 cross-vault dispatch example)
 
 ### Workspace topology
 
-- `~/lattice/CLAUDE.md` — workspace router (24-project enumeration; Standing Rule #4 node.aDNA local-only)
-- `~/lattice/node.aDNA/what/inventory/inventory_vaults.yaml` — 36-vault canonical inventory (post-M2.3 fold-in)
+- `~/aDNA/CLAUDE.md` — workspace router (24-project enumeration; Standing Rule #4 node.aDNA local-only)
+- `~/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml` — 36-vault canonical inventory (post-M2.3 fold-in)
 
 ### Sibling artifacts at M2.3.5
 

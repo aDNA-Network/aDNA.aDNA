@@ -86,8 +86,8 @@ The aDNA standard was designed for simple interactive decisions. As campaigns gr
 
 ## Critical Files
 
-- `/Users/stanley/lattice/MoleculeForge.aDNA/how/missions/artifacts/gate_decision_p3.html` — live reference implementation (Franklin persona; 6-card P3 gate; localStorage + Markdown generator)
-- `/Users/stanley/lattice/aDNA.aDNA/how/backlog/idea_campaign_operator_interaction_patterns_unification.md` — parent OIP finding (B-aDNA-2026-05-20-OIP; status: planned)
+- `/Users/stanley/aDNA/MoleculeForge.aDNA/how/missions/artifacts/gate_decision_p3.html` — live reference implementation (Franklin persona; 6-card P3 gate; localStorage + Markdown generator)
+- `/Users/stanley/aDNA/aDNA.aDNA/how/backlog/idea_campaign_operator_interaction_patterns_unification.md` — parent OIP finding (B-aDNA-2026-05-20-OIP; status: planned)
 - `.adna/how/skills/` — target directory for new `skill_operator_gate_ui.md`
 - `aDNA.aDNA/CLAUDE.md` — base persona + governance (upstream scope gate)
 

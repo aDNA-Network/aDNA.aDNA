@@ -44,7 +44,7 @@ Each item: **command** (run live) → **expected** → **outcome (live)** → **
 
 ### Item 1: `.adna/` upstream clean (zero touches end-to-end at v8 P2)
 
-- **Command**: `git -C /Users/stanley/lattice/.adna status -s`
+- **Command**: `git -C /Users/stanley/aDNA/.adna status -s`
 - **Expected**: Empty output (clean working tree)
 - **Outcome (live)**: *populated at §2 Execution log*
 - **Remediation if FAIL**: Identify unintended `.adna/` modification; revert before push (per Campaign S.O. #14 hard constraint)
@@ -100,7 +100,7 @@ Each item: **command** (run live) → **expected** → **outcome (live)** → **
 
 ### Item 9: `node.aDNA/what/context/token_baselines.md` v0.1.2 committed separately
 
-- **Command**: `cd /Users/stanley/lattice/node.aDNA && git log --oneline -3`
+- **Command**: `cd /Users/stanley/aDNA/node.aDNA && git log --oneline -3`
 - **Expected**: Most-recent commit references `token_baselines: v0.1.1 → v0.1.2 — M2.3 cross-campaign retrospective ratification fold-in` (HEAD `71f8283`)
 - **Outcome (live)**: *populated at §2 Execution log*
 - **Remediation if FAIL**: Verify node.aDNA commit landed; ensure local-only per Standing Rule #4 (no remote push)
@@ -180,7 +180,7 @@ Updated sequencing (per S1 close timing reality):
 
 ```bash
 # Pre-flight: confirm HEAD + remote state
-cd /Users/stanley/lattice/aDNA.aDNA
+cd /Users/stanley/aDNA/aDNA.aDNA
 git log --oneline origin/main..HEAD       # expect 1 commit (M2.3 S3) OR 2 if M2.3.5 close lands first
 git diff origin/main..HEAD --stat | tail  # confirm change inventory matches obj1 §1.2
 git remote -v                              # confirm origin = https://github.com/LatticeProtocol/aDNA.aDNA.git
@@ -222,4 +222,4 @@ Pattern: the gate gates its own push. Same recursive structure as ADR-016 ratify
 - [[m23_5_obj1_push_readiness_review.md|m23_5_obj1_push_readiness_review.md]] §7 — push timing recommendation
 - [[m23_5_obj2_upgrade_cycle_doctrine.md|m23_5_obj2_upgrade_cycle_doctrine.md]] §3 — 5-phase model (this checklist instantiates Phase B + Phase E partial)
 - [[../../campaign_adna_v2_infrastructure/missions/artifacts/m01_obj6_version_bump_checklist.md|m01_obj6_version_bump_checklist.md]] §7 — 10-check post-tag verification harness (source pattern adapted to pre-push)
-- `~/lattice/.adna/how/skills/skill_vault_publish.md` — Phase B push tool support
+- `~/aDNA/.adna/how/skills/skill_vault_publish.md` — Phase B push tool support

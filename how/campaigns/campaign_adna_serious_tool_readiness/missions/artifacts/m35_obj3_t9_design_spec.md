@@ -326,9 +326,9 @@ M3.7 (modular III for Obsidian) runs III cycles against the Bases-driven gallery
 - [[../../../../what/decisions/adr_014_verification_handoff_topology.md|ADR-014]] — Clause C consumer-mission obligation (M3.5 declares `verification_surface: operator`)
 - [[../../../../what/decisions/adr_023_registry_data_projection_contract.md|ADR-023]] — sibling (data-projection contract; T11 + T9 are co-equal renders of the same projection)
 - [[../../../../STATE.md|STATE router]] — M3.5 S1 OPENED bullet
-- `/Users/stanley/lattice/node.aDNA/HOME.md` — live mutation target (line 42)
-- `/Users/stanley/lattice/node.aDNA/what/inventory/inventory_vaults.yaml` — canonical source-of-truth (vault_count: 31)
-- `/Users/stanley/lattice/node.aDNA/.obsidian/core-plugins.json` — Bases enabled verification (`"bases": true`)
+- `/Users/stanley/aDNA/node.aDNA/HOME.md` — live mutation target (line 42)
+- `/Users/stanley/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml` — canonical source-of-truth (vault_count: 31)
+- `/Users/stanley/aDNA/node.aDNA/.obsidian/core-plugins.json` — Bases enabled verification (`"bases": true`)
 
 ## Notes
 

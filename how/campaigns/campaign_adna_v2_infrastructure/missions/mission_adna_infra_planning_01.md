@@ -56,7 +56,7 @@ The mission has **two hard constraints**:
 other objective.
 
 **Read:**
-1. `ls /Users/stanley/lattice/` — full directory listing; identify all `.aDNA` vaults
+1. `ls /Users/stanley/aDNA/` — full directory listing; identify all `.aDNA` vaults
 2. For each active vault: check if it contains `how/skills/skill_lattice_publish.md` (or any
    template skill copies) — note which vaults carry the publish skill
 3. Check which vaults have a configured `git remote` vs. not (spot-check 3-4 vaults)
@@ -557,7 +557,7 @@ Validation: run skill_health_check after migration to verify vault is clean
 A short memo (< 1 page) drafted per-vault explaining what to do. M08a fills in the vault name
 and delivers (drops a file in the vault's `who/coordination/` dir).
 
-**External users question:** If any vault operators are external to Stanley's `~/lattice/`,
+**External users question:** If any vault operators are external to Stanley's `~/aDNA/`,
 the upgrade guide goes into the aDNA.aDNA docs site (adna-docs.vercel.app) as a new page.
 M01 Obj 0 should establish whether external operators exist. If yes, escalate this to an
 announcement (GitHub release notes + possible community post). **Resolved Stage 2 Session 1

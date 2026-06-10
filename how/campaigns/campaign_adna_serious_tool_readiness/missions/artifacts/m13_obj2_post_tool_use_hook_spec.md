@@ -205,7 +205,7 @@ Self-test setup creates a 42-line `/tmp/synthetic.md` file so `file_loc=42` is v
 
 ### 6.1 Project-local (D2 default)
 
-`.claude/settings.local.json` at workspace root (`~/lattice/.claude/settings.local.json`):
+`.claude/settings.local.json` at workspace root (`~/aDNA/.claude/settings.local.json`):
 
 ```jsonc
 {
@@ -237,7 +237,7 @@ Self-test setup creates a 42-line `/tmp/synthetic.md` file so `file_loc=42` is v
 }
 ```
 
-Differences: workspace-wide instruments every Claude Code session across all directories; project-local instruments only sessions starting in `~/lattice/` and its descendants.
+Differences: workspace-wide instruments every Claude Code session across all directories; project-local instruments only sessions starting in `~/aDNA/` and its descendants.
 
 ### 6.3 Tool selection rationale
 

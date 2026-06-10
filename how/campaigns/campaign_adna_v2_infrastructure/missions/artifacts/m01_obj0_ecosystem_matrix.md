@@ -33,7 +33,7 @@ related_decisions:
 | Carry `how/skills/skill_lattice_publish.md` copy | **18** of 19 | `wga.aDNA` has no `how/skills/` directory at all |
 | Have GitHub `origin` remote properly configured | **11** of 19 | LatticeProtocol × 9, Wilhelm-Foundation × 2 (external), ScienceStanley user × 0 (no — see la_startup row) |
 | Have **NO** git remote configured | **7** of 19 | Spacemacs (campaign trigger), VideoForge, III, VAASLattice, zeta, RareHarness, strategic_interface_protocol |
-| Have non-standard remote | **1** of 19 | LPWhitepaper: `origin-whitepaper` → local path `/Users/stanley/lattice/whitepaper` |
+| Have non-standard remote | **1** of 19 | LPWhitepaper: `origin-whitepaper` → local path `/Users/stanley/aDNA/whitepaper` |
 | Currently using `.publish-clone/` rsync workaround | **1** of 19 | Spacemacs.aDNA only — confirmed via filesystem scan + `.gitignore` entry |
 | Vaults under external GitHub orgs | **2** | Wilhelm-Foundation: RareArchive + WilhelmAI |
 | Vaults under non-LatticeProtocol personal GitHub | **1** | la_startup → `ScienceStanley/LAStartupLattice.git` |
@@ -57,7 +57,7 @@ Columns: vault · persona · category (per workspace router taxonomy) · adna-te
 | `ComfyForge.aDNA` | Vulcan | Forge | v6.0 | Y | `LatticeProtocol/ComfyForge.aDNA.git` | LatticeProtocol | Phase 1 (~60%) |
 | `CanvasForge.aDNA` | Hermes | Forge | v6.0 | Y | `LatticeProtocol/CanvasForge.aDNA.git` | LatticeProtocol | Production v1.0 |
 | `SuperLeague.aDNA` | Janus | **Engagement** (not yet routed) | v6.0 (provisional v0.1 vault) | Y | **(none)** | Mixed: Smarter With Science LLC (vehicle) × Super League Enterprise (partner) | Genesis planning |
-| `LPWhitepaper.aDNA` | — | Whitepaper-vault | v6.0 | Y | **`origin-whitepaper` → `/Users/stanley/lattice/whitepaper` (local path)** | LatticeProtocol | Active (LaTeX + III review) |
+| `LPWhitepaper.aDNA` | — | Whitepaper-vault | v6.0 | Y | **`origin-whitepaper` → `/Users/stanley/aDNA/whitepaper` (local path)** | LatticeProtocol | Active (LaTeX + III review) |
 | `RareHarness.aDNA` | Asclepius | Platform | v6.0 | Y | **(none)** | LatticeProtocol (anchor: Wilhelm Foundation) | Genesis planning (P0) |
 | `RareArchive.aDNA` | Mnemosyne | Org-Vault | v6.0 | Y | `Wilhelm-Foundation/rare-archive-vault.git` | **External: Wilhelm Foundation** | Genesis planning |
 | `WilhelmAI.aDNA` | Hygieia | Org-Vault (umbrella) | v6.0 | Y | `Wilhelm-Foundation/WilhelmAI.git` | **External: Wilhelm Foundation** | P0 active (website-first pivot) |
@@ -82,7 +82,7 @@ Columns: vault · persona · category (per workspace router taxonomy) · adna-te
 
 Per [[mission_adna_infra_planning_01.md|mission_adna_infra_planning_01]] §Obj 0 §Produce — one row per change, columns per affected vault category.
 
-| Change | New users (fresh `.adna/` clone) | Existing vaults (local, on disk) | Vaults with publish skill copy (18 of 19 active) | Workspace root (`~/lattice/`) |
+| Change | New users (fresh `.adna/` clone) | Existing vaults (local, on disk) | Vaults with publish skill copy (18 of 19 active) | Workspace root (`~/aDNA/`) |
 |---|---|---|---|---|
 | **Repo flatten** (`adna/.adna/` → `.adna/` direct clone) — M03 | Clone command becomes `git clone https://github.com/LatticeProtocol/adna.git .adna` (single step; no symlink) | **No impact** to vault contents. One-time workspace-root migration: `rm lattice/.adna && mv lattice/adna lattice/.adna && git -C lattice/.adna remote set-url origin <new-url>` (or re-clone) | **No impact** — vaults sit alongside `.adna/`, not inside it | Symlink `lattice/.adna -> adna/.adna` removed; `adna/` directory removed; `.adna/` IS the git repo |
 | **`skill_lattice_publish` rewrite + `skill_git_remote_setup` (NEW) + pre-push hook + `skill_deploy` (NEW)** — M05 | Get the new flow as the default install (no migration needed) | **18 vaults** must run `skill_git_remote_setup` once per vault to set origin if missing (7 unset + 1 non-standard = 8 vaults need first-time configuration; remaining 10 already have proper origins, just adopt the rewritten skill). All 18 must reinstall pre-push hook via `skill_deploy`. | **18 of 19** affected directly; `wga.aDNA` (no skills dir) is unaffected by skill rewrite per se but becomes a data point for "does the skill-copy convention need a backstop?" | **No impact** |
@@ -99,7 +99,7 @@ Per [[mission_adna_infra_planning_01.md|mission_adna_infra_planning_01]] §Obj 0
 
 ## §3 External-operators answer
 
-> **Question (per [[mission_adna_infra_planning_01.md|mission_adna_infra_planning_01]] §Obj 0 Key question + §Obj 8 External users question)**: *Are any vault operators external to Stanley's `~/lattice/`?*
+> **Question (per [[mission_adna_infra_planning_01.md|mission_adna_infra_planning_01]] §Obj 0 Key question + §Obj 8 External users question)**: *Are any vault operators external to Stanley's `~/aDNA/`?*
 
 ### Answer: **Yes** — confirmed externally operated, with three distinct externality classes.
 
@@ -131,7 +131,7 @@ For executing missions, plain-language descriptions of who is affected by each c
 
 ### Repo flatten (M03)
 
-The flatten removes the awkward `adna/.adna/` two-level structure. **The flatten affects exactly one location**: the workspace root (`~/lattice/`). Vault contents are not touched. New operators get a one-step clone (`git clone … .adna`); existing operators run a one-time three-command migration. The migration runbook M03 produces is the artifact every operator needs (whether they're Stanley locally or an external partner running their own workspace).
+The flatten removes the awkward `adna/.adna/` two-level structure. **The flatten affects exactly one location**: the workspace root (`~/aDNA/`). Vault contents are not touched. New operators get a one-step clone (`git clone … .adna`); existing operators run a one-time three-command migration. The migration runbook M03 produces is the artifact every operator needs (whether they're Stanley locally or an external partner running their own workspace).
 
 **Who is affected**: every operator who has ever cloned the aDNA template. **How**: their workspace root structure changes (cleaner; one less symlink). **Risk**: if an operator's existing scripts or Obsidian vault references hard-code `adna/.adna/` paths, those break — M03 migration runbook documents the find-and-replace pattern.
 
@@ -220,8 +220,8 @@ origin	https://github.com/LatticeProtocol/context-commons-adna.git (push)
 (empty)
 
 === LPWhitepaper.aDNA ===                       [non-standard local-path remote]
-origin-whitepaper	/Users/stanley/lattice/whitepaper (fetch)
-origin-whitepaper	/Users/stanley/lattice/whitepaper (push)
+origin-whitepaper	/Users/stanley/aDNA/whitepaper (fetch)
+origin-whitepaper	/Users/stanley/aDNA/whitepaper (push)
 
 === ComfyForge.aDNA ===
 origin	https://github.com/LatticeProtocol/ComfyForge.aDNA.git (fetch)

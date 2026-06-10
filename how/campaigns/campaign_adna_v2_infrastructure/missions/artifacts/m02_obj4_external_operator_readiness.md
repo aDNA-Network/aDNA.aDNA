@@ -40,7 +40,7 @@ related_decisions:
 
 Per the M02 Obj 4 spec § (and [[../mission_adna_infra_p1_02_ecosystem_matrix.md|hard constraint #2]]): this is a desk audit using only files already present in the local workspace. **No outbound contact**, no new memos drafted, no partner-vault content modified.
 
-For each of the 4 affected vaults: ran `ls -lt /Users/stanley/lattice/<vault>.aDNA/who/coordination/` and read the most-recent file (or noted "no coord memos exist" when only `AGENTS.md` is present). Cross-referenced the read against [[m01_obj0_ecosystem_matrix.md|M01 Obj 0 §3 external-operators answer]] to surface any operator-class change.
+For each of the 4 affected vaults: ran `ls -lt /Users/stanley/aDNA/<vault>.aDNA/who/coordination/` and read the most-recent file (or noted "no coord memos exist" when only `AGENTS.md` is present). Cross-referenced the read against [[m01_obj0_ecosystem_matrix.md|M01 Obj 0 §3 external-operators answer]] to surface any operator-class change.
 
 The audit operates at the level of "is the M01 framing still accurate?" — it does not produce new partner intelligence; that's M08a's job. M02's job is to confirm M01 Obj 0 §3 is a valid input to M08a.
 

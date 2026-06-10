@@ -38,14 +38,14 @@ prerequisite_artifacts:
   # M3.3-ratified substrate (verbatim inheritance via M3.4 + M3.5)
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m33_obj4_t6_design_spec.md  # 6-section design-spec structure precedent
   # M3.6 substrate sources (cross-vault read-only — SYNTHESIZED via Explore subagent at S1 entry; report becomes citation source for AAR + design spec without re-reading)
-  - "/Users/stanley/lattice/III.aDNA/what/artifacts/iii_airlock_standard_spec.md"           # v0.3.0 spec (5 entry paths + cross-vault requests + Ed25519 + federation-substrate awareness)
-  - "/Users/stanley/lattice/III.aDNA/what/artifacts/iii_airlock_substrate_implementation.md" # v0.3.0 implementation guidance
-  - "/Users/stanley/lattice/III.aDNA/what/artifacts/iii_airlock_request_schema.yaml"        # v0.3.0 machine-readable schema
-  - "/Users/stanley/lattice/III.aDNA/how/skills/skill_airlock_activation.md"                # consumer activation skill v0.0→v0.3
-  - "/Users/stanley/lattice/III.aDNA/what/artifacts/md_a5_federation_integration_validation.md" # Track D1 close documentation-grade validation (2026-05-24)
-  - "/Users/stanley/lattice/lattice-labs/how/campaigns/campaign_comic_pipeline_canvas/missions/mission_cpc_0_charter_spec.md"  # M0 charter (airlock-touchpoint findings)
-  - "/Users/stanley/lattice/lattice-labs/how/campaigns/campaign_comic_pipeline_canvas/missions/mission_cpc_1_build_v01.md"     # M1 deterministic build
-  - "/Users/stanley/lattice/lattice-labs/how/campaigns/campaign_comic_pipeline_canvas/artifacts/iii_cycle_1_report.md"          # III-cycle-1 analysis (cross-vault critic federation surfaced as airlock §4 worked example)
+  - "/Users/stanley/aDNA/III.aDNA/what/artifacts/iii_airlock_standard_spec.md"           # v0.3.0 spec (5 entry paths + cross-vault requests + Ed25519 + federation-substrate awareness)
+  - "/Users/stanley/aDNA/III.aDNA/what/artifacts/iii_airlock_substrate_implementation.md" # v0.3.0 implementation guidance
+  - "/Users/stanley/aDNA/III.aDNA/what/artifacts/iii_airlock_request_schema.yaml"        # v0.3.0 machine-readable schema
+  - "/Users/stanley/aDNA/III.aDNA/how/skills/skill_airlock_activation.md"                # consumer activation skill v0.0→v0.3
+  - "/Users/stanley/aDNA/III.aDNA/what/artifacts/md_a5_federation_integration_validation.md" # Track D1 close documentation-grade validation (2026-05-24)
+  - "/Users/stanley/aDNA/lattice-labs/how/campaigns/campaign_comic_pipeline_canvas/missions/mission_cpc_0_charter_spec.md"  # M0 charter (airlock-touchpoint findings)
+  - "/Users/stanley/aDNA/lattice-labs/how/campaigns/campaign_comic_pipeline_canvas/missions/mission_cpc_1_build_v01.md"     # M1 deterministic build
+  - "/Users/stanley/aDNA/lattice-labs/how/campaigns/campaign_comic_pipeline_canvas/artifacts/iii_cycle_1_report.md"          # III-cycle-1 analysis (cross-vault critic federation surfaced as airlock §4 worked example)
   - aDNA.aDNA/what/decisions/adr_008_airlock_template_stub.md  # template-stub doctrine (pins v0.2.0; M3.6 design spec may propose v0.3 re-pin for v8 P6 propagation)
   - aDNA.aDNA/who/coordination/coord_2026_05_19_v8_cross_vault_disruption_assessment.md  # line 46 posture: forge-vault-side design + aDNA.aDNA receives backlog placeholders for v8 P6
   # v8 P2 doctrinal carries (same as M3.1+M3.2+M3.3+M3.4+M3.5)

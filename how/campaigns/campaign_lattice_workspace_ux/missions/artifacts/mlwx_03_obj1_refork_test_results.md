@@ -28,7 +28,7 @@ tags: [integration_test, mlwx_03, obj1, refork, sandbox, mirror_this_node, schem
 
 **Structural prerequisites for `skill_node_health_check.md`**: 10 of 10 PASS (with node-skills copied to simulate the gap-fix; Finding 3 from M-LWX-01 reaffirmed — node-skills not in `.adna/` upstream).
 
-**Hard-constraint guards**: 4 of 4 PASS — `~/lattice/node.aDNA/` HEAD `1032d8d` unchanged; `~/lattice/.adna/` HEAD `c32930e` unchanged; clean working trees throughout.
+**Hard-constraint guards**: 4 of 4 PASS — `~/aDNA/node.aDNA/` HEAD `1032d8d` unchanged; `~/aDNA/.adna/` HEAD `c32930e` unchanged; clean working trees throughout.
 
 ---
 
@@ -36,14 +36,14 @@ tags: [integration_test, mlwx_03, obj1, refork, sandbox, mirror_this_node, schem
 
 Per Obj 1 spec ("trigger workspace router Step 0.3 → `skill_project_fork.md` → `skill_inventory_refresh.md` → `skill_node_bootstrap_interview.md`. Verify 19 answers land in correct target files; exit code 0; vault healthy per `skill_node_health_check.md`"):
 
-1. **Fresh fork**: `cp -r ~/lattice/.adna /tmp/sandbox_lwx_03_refork/node.aDNA` + `skill_project_fork.md` cleanups (`rm -rf .git .github`; `rm -f README.md LICENSE setup.sh`; remove `.obsidian/plugins/` + `.obsidian/themes/` + per-device `workspace.json` + `graph.json`).
+1. **Fresh fork**: `cp -r ~/aDNA/.adna /tmp/sandbox_lwx_03_refork/node.aDNA` + `skill_project_fork.md` cleanups (`rm -rf .git .github`; `rm -f README.md LICENSE setup.sh`; remove `.obsidian/plugins/` + `.obsidian/themes/` + per-device `workspace.json` + `graph.json`).
 2. **Simulate `skill_inventory_refresh` (Step 2 of chain)**: copy this node's `what/inventory/` (7 files: 3 yaml + 3 md + AGENTS.md).
 3. **Simulate `skill_node_bootstrap_interview` Steps 4+7**: copy this node's `who/identity/` (5 files: 2 yaml + 2 md + AGENTS.md). Mirror this node's MANIFEST + STATE + CLAUDE + CHANGELOG (interview Steps 3, 4, 8 update these).
 4. **Simulate Step 9 HOME.md substitution**: overlay this node's HOME.md (already substituted; `0/0` `{{VARS}}` remaining — post-state-verified).
 5. **22-check schema landing verification**: for each of 19 interview questions + 3 sub-checks, regex-search the target file specified in `skill_node_bootstrap_interview.md` `##Produce` table for the expected field. Mark PASS/FAIL.
 6. **Health-check Pass 1** (bare sandbox): document expected exit 5 (Step 5 — 4 node-skills presence — fails because `.adna/` upstream doesn't ship node-skills). Evidence for Finding 3 (M-LWX-01).
 7. **Health-check Pass 2** (with node-skills copied): verify structural prerequisites for all 10 health-check steps.
-8. **Hard-constraint guards**: pre/post `git status` + HEAD compare on `~/lattice/node.aDNA/` + `~/lattice/.adna/`.
+8. **Hard-constraint guards**: pre/post `git status` + HEAD compare on `~/aDNA/node.aDNA/` + `~/aDNA/.adna/`.
 
 ---
 
@@ -67,7 +67,7 @@ Per Obj 1 spec ("trigger workspace router Step 0.3 → `skill_project_fork.md` �
 | 11 | **S4** | `what/inventory/inventory_system.yaml` | `services_connected:` / `env_var_names:` | ✅ `env_var_names: []` present | PASS |
 | 12 | **H1** | `who/identity/identity_node.yaml` | `machine_class:` | ✅ `machine_class: apple_silicon_mac` | PASS |
 | 13 | **H2** | `who/identity/identity_node.yaml` | `gpu:` | ✅ `arch: arm64` present (gpu field omittable) | PASS (via `arch:`) |
-| 14 | **H3** | `who/identity/identity_node.yaml` | `peripherals:` | ✅ `workspace_root: /Users/stanley/lattice/` present (peripherals optional) | PASS (via `workspace_root:`) |
+| 14 | **H3** | `who/identity/identity_node.yaml` | `peripherals:` | ✅ `workspace_root: /Users/stanley/aDNA/` present (peripherals optional) | PASS (via `workspace_root:`) |
 | 15 | **C1** | `what/inventory/inventory_memberships.yaml` | `subscribed_lattices:` | ✅ `lattice_protocol:` block present | PASS (via `lattice_protocol:`) |
 | 16 | **C2** | `what/inventory/inventory_memberships.yaml` | `federation:` | ✅ 8-key federation block present (`shareable: false`, etc.) | PASS |
 | 17 | **C3** | `who/identity/identity_lattice_protocol.yaml` | `peer_id:` / `signing_key_path:` | ✅ both fields present (set to null) | PASS |
@@ -108,7 +108,7 @@ Per `skill_node_health_check.md` Steps 1-11.
 | 2 | Scaffold dirs present (what/AGENTS, who/AGENTS, how/AGENTS) | filesystem | ✅ PASS |
 | 3 | Inventory scaffolds (3 yaml + 3 md + AGENTS in what/inventory/) | filesystem | ✅ PASS |
 | 4 | Identity scaffolds (2 yaml + 2 md + AGENTS in who/identity/) | filesystem | ✅ PASS |
-| 5 | 4 node-skills present (health_check / inventory_refresh / update_all_vaults / credentials_audit) | filesystem | **Pass 1: ❌ FAIL — `.adna/` doesn't ship node-skills** (Finding 3 reaffirmed); **Pass 2: ✅ PASS** after copying from `~/lattice/node.aDNA/how/skills/` |
+| 5 | 4 node-skills present (health_check / inventory_refresh / update_all_vaults / credentials_audit) | filesystem | **Pass 1: ❌ FAIL — `.adna/` doesn't ship node-skills** (Finding 3 reaffirmed); **Pass 2: ✅ PASS** after copying from `~/aDNA/node.aDNA/how/skills/` |
 | 6 | Frontmatter validity (`yaml.safe_load` on all `.md` files) | sampled MANIFEST.md `---` prefix | ✅ PASS |
 | 7 | YAML companion validity | sampled non-empty inventory_system.yaml | ✅ PASS |
 | 8 | Federation block (8 keys in inventory_memberships.yaml) | grep `federation:` | ✅ PASS |
@@ -126,9 +126,9 @@ Per `skill_node_health_check.md` Steps 1-11.
 
 | Path | Pre-test HEAD | Post-test HEAD | Working tree | Status |
 |------|---------------|----------------|--------------|--------|
-| `~/lattice/node.aDNA/` | `1032d8d` | `1032d8d` (unchanged) | clean | ✅ PASS |
-| `~/lattice/.adna/` (upstream) | `c32930e` | `c32930e` (unchanged) | clean | ✅ PASS |
-| `~/lattice/CLAUDE.md` | (not under test in Obj 1) | unchanged | n/a | ✅ PASS |
+| `~/aDNA/node.aDNA/` | `1032d8d` | `1032d8d` (unchanged) | clean | ✅ PASS |
+| `~/aDNA/.adna/` (upstream) | `c32930e` | `c32930e` (unchanged) | clean | ✅ PASS |
+| `~/aDNA/CLAUDE.md` | (not under test in Obj 1) | unchanged | n/a | ✅ PASS |
 | `/tmp/sandbox_lwx_03_refork/` | empty | populated (ephemeral) | n/a (not git-tracked) | ✅ PASS (sandbox-isolated) |
 
 ---

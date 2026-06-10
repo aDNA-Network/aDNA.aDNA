@@ -23,10 +23,10 @@ from pathlib import Path
 from PIL import Image
 
 # Reuse Keychain auth + restraint discipline from cycle 101 runner
-sys.path.insert(0, str(Path("/Users/stanley/lattice/aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/runners")))
+sys.path.insert(0, str(Path("/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/runners")))
 from m53_cycle_101_og_cards_regen import load_api_key  # noqa: E402
 
-VAULT_ROOT = Path("/Users/stanley/lattice/aDNA.aDNA")
+VAULT_ROOT = Path("/Users/stanley/aDNA/aDNA.aDNA")
 OUT_DIR = VAULT_ROOT / "site/src/assets/heroes"
 LOG_PATH = VAULT_ROOT / "what/measurement/iii_results/2026-06/cycle_102_d11_hero_variants.image_gen_log.json"
 

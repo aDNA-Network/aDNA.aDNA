@@ -38,7 +38,7 @@ tags: [plan, mission, dns, cutover, vercel, squarespace, p_t_24, p_d, p_d_mon, p
   "canonical_form": "apex",
   "dev_subdomain_enabled": true,
   "dev_branch_name": "dev",
-  "consumer_vault_path": "/Users/stanley/lattice/<your_vault>",
+  "consumer_vault_path": "/Users/stanley/aDNA/<your_vault>",
   "cutover_window_iso": "<TBD at P-T-24 close>",
   "existing_email_provider": "<google_workspace|microsoft_365|proton|none>"
 }

@@ -31,11 +31,11 @@ tags: [smoke_test, integration, mlwx_01, obj5, sandbox, mirror_this_node]
 
 Per Obj 5 Read/Produce block + D-Smoke (mirror-this-node values):
 
-1. **Fork**: `cp -r ~/lattice/.adna /tmp/sandbox_lwx_01/node.aDNA` + skill_project_fork cleanups (rm `.git`, `.github`, `README.md`, `LICENSE`, `setup.sh`, `.obsidian/plugins`, `.obsidian/themes`, `.obsidian/workspace.json`, `.obsidian/graph.json`).
-2. **Simulate `skill_inventory_refresh`**: pre-populate `what/inventory/inventory_{vaults,system,memberships}.yaml` by copying from `~/lattice/node.aDNA/what/inventory/` (mirror-this-node baseline; production-comparison fidelity).
+1. **Fork**: `cp -r ~/aDNA/.adna /tmp/sandbox_lwx_01/node.aDNA` + skill_project_fork cleanups (rm `.git`, `.github`, `README.md`, `LICENSE`, `setup.sh`, `.obsidian/plugins`, `.obsidian/themes`, `.obsidian/workspace.json`, `.obsidian/graph.json`).
+2. **Simulate `skill_inventory_refresh`**: pre-populate `what/inventory/inventory_{vaults,system,memberships}.yaml` by copying from `~/aDNA/node.aDNA/what/inventory/` (mirror-this-node baseline; production-comparison fidelity).
 3. **Simulate interview Step 9 (HOME.md substitution)**: Python substitution with mirror-this-node values for 12 vars (8 primary + 4 auxiliary) + 4 table generators (vaults_table from inventory_vaults.yaml grouped by aDNA class; named_projects_table; drift_table; empty next_steps_section since inventory has > 0 vaults). Strip trailing `<!-- TEMPLATE NOTES ... -->` block per skill Step 9.
 4. **Inspect** sandbox `HOME.md` + `.obsidian/workspace.default.json` against verification matrix.
-5. **Hard-constraint guard**: `git status` on `~/lattice/node.aDNA/` + `~/lattice/.adna/` pre + post smoke.
+5. **Hard-constraint guard**: `git status` on `~/aDNA/node.aDNA/` + `~/aDNA/.adna/` pre + post smoke.
 
 ## Verification matrix
 
@@ -48,8 +48,8 @@ Per Obj 5 Read/Produce block + D-Smoke (mirror-this-node values):
 | 5 | workspace.default.json HOME.md refs | `grep -n 'HOME' .obsidian/workspace.default.json` | 3 (file + title + lastOpenFiles) | 3 (line 17 `"file": "HOME.md"` + line 23 `"title": "HOME"` + line 158 `"HOME.md"`) | ✅ PASS |
 | 6 | workspace.default.json dangling `Home.md` (lowercase) | `grep` for `Home\.md\|"Home\b` | 0 | 0 | ✅ PASS |
 | 7 | Visible section structure (HTML-comment-stripped) matches this node's HOME.md | Python regex strip `<!-- -->` then `^#{1,6} ` headers | 16 headers, identical | 16 headers, identical | ✅ PASS |
-| 8 | Hard constraint: `~/lattice/node.aDNA/` untouched | pre/post `git status` + HEAD compare | clean; HEAD `1032d8d` unchanged | clean; HEAD `1032d8d` | ✅ PASS |
-| 9 | Hard constraint: `~/lattice/.adna/` upstream untouched | pre/post `git status` + HEAD compare | clean; HEAD `c32930e` | clean; HEAD `c32930e` | ✅ PASS |
+| 8 | Hard constraint: `~/aDNA/node.aDNA/` untouched | pre/post `git status` + HEAD compare | clean; HEAD `1032d8d` unchanged | clean; HEAD `1032d8d` | ✅ PASS |
+| 9 | Hard constraint: `~/aDNA/.adna/` upstream untouched | pre/post `git status` + HEAD compare | clean; HEAD `c32930e` | clean; HEAD `c32930e` | ✅ PASS |
 
 **Score**: 9/9 gates PASS.
 
@@ -100,7 +100,7 @@ For this smoke I bypassed the gap by pre-populating `what/inventory/*.yaml` from
 
 ### Finding 4 — Workspace router Step 0.3 procedural list still doesn't invoke interview skill (carried from S1)
 
-Carried over from S1's surfacing: `~/lattice/CLAUDE.md` Step 0.3 prompt now mentions the interview (S1's 1-line edit), but the procedural list at lines 28-33 still routes through `skill_project_fork → skill_inventory_refresh → persona → STATE.md → git init` without invoking `skill_node_bootstrap_interview.md` between auto-detect and persona installation. M-LWX-01 mission spec was explicit: 1-line prompt edit only at S1; procedural-list amendment deferred. Smoke confirms the gap remains.
+Carried over from S1's surfacing: `~/aDNA/CLAUDE.md` Step 0.3 prompt now mentions the interview (S1's 1-line edit), but the procedural list at lines 28-33 still routes through `skill_project_fork → skill_inventory_refresh → persona → STATE.md → git init` without invoking `skill_node_bootstrap_interview.md` between auto-detect and persona installation. M-LWX-01 mission spec was explicit: 1-line prompt edit only at S1; procedural-list amendment deferred. Smoke confirms the gap remains.
 
 **Route**: M-LWX-03 cross-graph findings memo OR a small follow-up upstream patch (3-line procedural-list addition between current Step 2 and Step 3). Single-commit additive pattern (4th instance after ADR-008 + `e3b3bcc` + `8673383`).
 
@@ -120,7 +120,7 @@ rm -rf /tmp/sandbox_lwx_01
 
 # 2. Fork .adna → sandbox node.aDNA
 mkdir -p /tmp/sandbox_lwx_01
-cp -r ~/lattice/.adna /tmp/sandbox_lwx_01/node.aDNA
+cp -r ~/aDNA/.adna /tmp/sandbox_lwx_01/node.aDNA
 cd /tmp/sandbox_lwx_01/node.aDNA
 
 # 3. Apply skill_project_fork cleanups
@@ -131,7 +131,7 @@ rm -f .obsidian/workspace.json .obsidian/graph.json
 
 # 4. Simulate inventory_refresh (mirror this node's values)
 mkdir -p what/inventory
-cp ~/lattice/node.aDNA/what/inventory/*.yaml what/inventory/
+cp ~/aDNA/node.aDNA/what/inventory/*.yaml what/inventory/
 
 # 5. Substitute HOME.md per skill Step 9 (use Python script from the smoke session, or
 #    rewrite using the skill's actual implementation once it lands)
@@ -140,8 +140,8 @@ cp ~/lattice/node.aDNA/what/inventory/*.yaml what/inventory/
 # 6. Verify
 grep -c '{{' HOME.md   # expect 0 post-substitution
 grep -nE '^#{1,6} ' HOME.md   # expect 16 visible headers (HTML-comment-stripped equivalent)
-git -C ~/lattice/node.aDNA status   # expect clean (hard constraint)
-git -C ~/lattice/.adna status       # expect clean (hard constraint)
+git -C ~/aDNA/node.aDNA status   # expect clean (hard constraint)
+git -C ~/aDNA/.adna status       # expect clean (hard constraint)
 ```
 
 The sandbox is ephemeral and not committed anywhere. Re-runs from a clean sandbox should reproduce identical results (mod template changes if upstream patches land).
@@ -149,9 +149,9 @@ The sandbox is ephemeral and not committed anywhere. Re-runs from a clean sandbo
 ## Cross-references
 
 - Mission spec: `aDNA.aDNA/how/campaigns/campaign_lattice_workspace_ux/missions/mission_lwx_01_dynamic_bootstrap_interview.md` Obj 5
-- Upstream skill under test: `~/lattice/.adna/how/skills/skill_node_bootstrap_interview.md` at `LatticeProtocol/adna` HEAD `c32930e` (skill content unchanged since `8673383`)
-- Template under test: `~/lattice/.adna/HOME.md`
-- Config under test: `~/lattice/.adna/.obsidian/workspace.default.json`
-- Working-example baseline: `~/lattice/node.aDNA/HOME.md` (M-LWX-02 output)
+- Upstream skill under test: `~/aDNA/.adna/how/skills/skill_node_bootstrap_interview.md` at `LatticeProtocol/adna` HEAD `c32930e` (skill content unchanged since `8673383`)
+- Template under test: `~/aDNA/.adna/HOME.md`
+- Config under test: `~/aDNA/.adna/.obsidian/workspace.default.json`
+- Working-example baseline: `~/aDNA/node.aDNA/HOME.md` (M-LWX-02 output)
 - Source spec: `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m04b_obj2_skill_node_bootstrap_interview_spec.md`
 - Plan: `/Users/stanley/.claude/plans/please-read-the-claude-md-crystalline-quail.md`

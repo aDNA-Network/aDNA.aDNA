@@ -758,10 +758,10 @@ M3.7 runs III cycles against the Astro registry surface. T12 names 5 ranker dime
 - [[../../../../what/decisions/adr_023_registry_data_projection_contract.md|ADR-023]] — data-projection contract (drafted M3.5 Obj 9; ratifies S3 close)
 - [[../../../../what/decisions/adr_014_verification_handoff_topology.md|ADR-014]] — Clause C verification surface
 - [[../../../../site/src/components/islands/MermaidDiagram.astro|MermaidDiagram.astro]] — reused for `/vaults/graph`
-- `/Users/stanley/lattice/aDNA.aDNA/site/` — Astro 6.1.3 root
-- `/Users/stanley/lattice/aDNA.aDNA/scripts/` — project-root scripts directory (NEW for build_vaults_data.mjs)
-- `/Users/stanley/lattice/node.aDNA/what/inventory/inventory_vaults.yaml` — canonical source
-- `/Users/stanley/lattice/node.aDNA/what/vault_cards/` — frontmatter overlay source
+- `/Users/stanley/aDNA/aDNA.aDNA/site/` — Astro 6.1.3 root
+- `/Users/stanley/aDNA/aDNA.aDNA/scripts/` — project-root scripts directory (NEW for build_vaults_data.mjs)
+- `/Users/stanley/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml` — canonical source
+- `/Users/stanley/aDNA/node.aDNA/what/vault_cards/` — frontmatter overlay source
 
 ## Notes
 

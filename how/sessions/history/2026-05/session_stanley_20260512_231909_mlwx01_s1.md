@@ -36,14 +36,14 @@ Obj 5 (integration smoke on sandbox) + Obj 6 (AAR) deferred to S2.
 
 Files this session will modify:
 
-**Upstream (`~/lattice/.adna/`, single commit)**:
+**Upstream (`~/aDNA/.adna/`, single commit)**:
 - `.adna/how/skills/skill_node_bootstrap_interview.md` (NEW)
 - `.adna/how/skills/AGENTS.md` (EDIT — add skill to examples list)
 - `.adna/HOME.md` (NEW)
 - `.adna/.obsidian/workspace.default.json` (EDIT — file ref fix)
 
 **Workspace-local**:
-- `~/lattice/CLAUDE.md` Step 0.3 prompt (EDIT — 1-line surgical)
+- `~/aDNA/CLAUDE.md` Step 0.3 prompt (EDIT — 1-line surgical)
 
 **Vault-local governance**:
 - `aDNA.aDNA/how/campaigns/campaign_lattice_workspace_ux/missions/mission_lwx_01_dynamic_bootstrap_interview.md` (EDIT — status flip + full Read/Produce blocks)
@@ -57,13 +57,13 @@ Files this session will modify:
 - M04b outputs (read-only references)
 - M-LWX-02 outputs (template-extraction sources, not edit targets)
 - Partner vaults (SiteForge, ComfyForge, CanvasForge, RareHarness, etc.)
-- `.adna/CLAUDE.md` (workspace router routes via `~/lattice/CLAUDE.md`; template router is separate)
+- `.adna/CLAUDE.md` (workspace router routes via `~/aDNA/CLAUDE.md`; template router is separate)
 
 ## Conflict scan
 
 - `aDNA.aDNA/how/sessions/active/` — empty before this session opens (verified at pre-flight)
 - No in-flight session touching `.adna/` upstream
-- No in-flight session touching `~/lattice/CLAUDE.md`
+- No in-flight session touching `~/aDNA/CLAUDE.md`
 - Both `aDNA.aDNA/` and `.adna/` git working trees clean at session open (verified)
 
 ## Heartbeat
@@ -78,7 +78,7 @@ S1 open: 2026-05-12T23:19:09Z. Next heartbeat at Obj 1 completion (skill authore
 - ✅ `node.aDNA/.obsidian/workspace.default.json` (template-extraction source for fix)
 - ✅ `aar_mlwx_02_node_vault_role_expansion.md` (scope-based naming finding + Items deferred #4)
 - ✅ `.adna/how/skills/AGENTS.md` (insertion target — Examples list in §Naming Convention)
-- ✅ `~/lattice/CLAUDE.md` Step 0.3 (insertion target — line 24)
+- ✅ `~/aDNA/CLAUDE.md` Step 0.3 (insertion target — line 24)
 - ✅ `adr_009_aDNA_naming_convention` (naming constraint — skill name `skill_node_bootstrap_interview` matches snake_case rule)
 - ✅ `node.aDNA/what/decisions/adr_001_node_vault_role_expansion.md` (rationale for HOME.md substitution + role expansion)
 
@@ -99,7 +99,7 @@ S1 open: 2026-05-12T23:19:09Z. Next heartbeat at Obj 1 completion (skill authore
 - [x] Obj 2: `.adna/how/skills/AGENTS.md` skill-index row appended
 - [x] Scope-amend: `.adna/HOME.md` template authored (NEW, 165 lines; 8 primary `{{VARS}}` + 4 table generators + auxiliary)
 - [x] Scope-amend: `.adna/.obsidian/workspace.default.json` 3 refs fixed (file + title + lastOpenFiles all `Home.md → HOME.md`)
-- [x] Obj 3: workspace router Step 0.3 prompt updated (1-line surgical change at `~/lattice/CLAUDE.md`)
+- [x] Obj 3: workspace router Step 0.3 prompt updated (1-line surgical change at `~/aDNA/CLAUDE.md`)
 - [x] Obj 4: single upstream commit `8673383` to `LatticeProtocol/adna` origin/main (4 files; 366 insertions, 3 deletions; remote redirect from `adna` → `aDNA` handled gracefully)
 - [x] Mission file `§Status` block populated with deliverable status + acceptance criteria + findings
 - [x] Campaign master M-LWX-01 row flipped `planned → in_progress`
@@ -120,7 +120,7 @@ S1 open: 2026-05-12T23:19:09Z. Next heartbeat at Obj 1 completion (skill authore
 
 ### Findings (for M-LWX-03 or follow-up)
 
-1. **Workspace router procedural list gap**: Step 0.3 prompt now mentions the interview, but the 5-step procedural list at `~/lattice/CLAUDE.md` lines 28-33 routes through `skill_project_fork → skill_inventory_refresh → persona → STATE.md → git init` without invoking `skill_node_bootstrap_interview.md`. Mission spec's "1-line, no other edits" constraint honored at S1. 3-line procedural-list amendment lands at M-LWX-03 cross-graph findings or follow-up commit.
+1. **Workspace router procedural list gap**: Step 0.3 prompt now mentions the interview, but the 5-step procedural list at `~/aDNA/CLAUDE.md` lines 28-33 routes through `skill_project_fork → skill_inventory_refresh → persona → STATE.md → git init` without invoking `skill_node_bootstrap_interview.md`. Mission spec's "1-line, no other edits" constraint honored at S1. 3-line procedural-list amendment lands at M-LWX-03 cross-graph findings or follow-up commit.
 2. **`{{node_hostname}}` substitution semantics**: HOME.md template uses `hostname -s` as the substitution source. On some Macs that returns `MacBook-Pro.local` rather than the canonical `Mac`. Consider operator-override pattern at S2 Obj 5 smoke design.
 3. **Optional parallel standard-scope ADR**: deferred per scope-amendment §"Optional" — node-scope ADR-001 + upstream commit message capture role-expansion rationale. Revisit at M-LWX-03 or M07.
 4. **`aDNA.aDNA/CLAUDE.md` Skills inventory table** does NOT list `skill_node_bootstrap_interview` (skill lives at `.adna/how/skills/`, not `aDNA.aDNA/how/skills/` — by design since the skill is template-scope). Verify at S2 whether any vault-scope file should cross-reference it.
@@ -134,7 +134,7 @@ S1 open: 2026-05-12T23:19:09Z. Next heartbeat at Obj 1 completion (skill authore
 - `.adna/.obsidian/workspace.default.json` (EDIT — 3 refs fix)
 
 **Workspace-local (1 file; not in any repo)**:
-- `~/lattice/CLAUDE.md` (EDIT — Step 0.3 prompt 1-line surgical)
+- `~/aDNA/CLAUDE.md` (EDIT — Step 0.3 prompt 1-line surgical)
 
 **Vault-local (aDNA.aDNA; commit pending session close)**:
 - `how/campaigns/campaign_lattice_workspace_ux/missions/mission_lwx_01_dynamic_bootstrap_interview.md` (EDIT — frontmatter + full Read/Produce + status)
@@ -144,4 +144,4 @@ S1 open: 2026-05-12T23:19:09Z. Next heartbeat at Obj 1 completion (skill authore
 
 ## Next Session Prompt
 
-> Resume `campaign_adna_v2_infrastructure` → mini-campaign `campaign_lattice_workspace_ux/` → M-LWX-01 S2 in `aDNA.aDNA/`. **M-LWX-01 S1 closed at first-execution-session 2026-05-12T23:19Z+ → ~23:30Z+**; 6 of 8 deliverables landed; upstream commit `8673383` pushed to `LatticeProtocol/adna` origin/main covering 4 files (`skill_node_bootstrap_interview.md` NEW + `how/skills/AGENTS.md` skill-row append + `.adna/HOME.md` template NEW + `.adna/.obsidian/workspace.default.json` 3 refs fix); workspace-local 1-line Step 0.3 prompt edit at `~/lattice/CLAUDE.md`; mission file `status: planned → in_progress` + `spec_completeness: stub → full` + full Read/Produce blocks populated. **S2 walk** per mission spec: (Phase A) prepare clean sandbox `/tmp/sandbox_lwx_01/` (rm -rf then mkdir); (Phase B) simulate fresh `claude` invocation in sandbox — trigger Step 0.3 manually (procedural-list integration deferred); fork (skill_project_fork project_name=node) → inventory_refresh → run new `skill_node_bootstrap_interview.md` against empty fork; verify all 19 answers land in correct target files per output schema (8 surfaces); verify HOME.md `{{VARS}}` substitution (8 primary vars + 4 table generators + empty-inventory `{{next_steps_section}}`); verify `workspace.default.json` opens HOME.md on Obsidian launch (operator-side OK if skipped); (Phase C) author `missions/artifacts/mlwx_01_obj5_smoke_results.md` (PASS/FAIL per check, 19+ acceptance items); (Phase D) lightweight 5-line AAR at `missions/artifacts/aar_mlwx_01_dynamic_bootstrap_interview.md` per `template_aar_lightweight.md`; load-bearing finding candidate: "3rd instance of single-commit additive upstream pattern confirms it as the canonical mechanism for template additions"; (Phase E) status flips (mission `in_progress → completed`; campaign master M-LWX-01 row `in_progress → completed`); STATE.md Next Session Prompt names M-LWX-03; (Phase F) SITREP + session close + commit + push. **Critical reminders**: hard constraints stay honored (no node.aDNA/M04/M04b/M-LWX-02 mutations; no partner-vault touches; upstream `.adna/` HEAD now at `8673383`); M-LWX-01-S1-surfaced items deferred to M-LWX-03 — (1) procedural-list amendment at `~/lattice/CLAUDE.md` lines 28-33 (3-line addition; or land as follow-up commit), (2) `{{node_hostname}}` substitution semantics, (3) optional parallel standard-scope ADR. **Three paths forward**: **(A) Open M-LWX-01 S2** (smoke + AAR + mission close; estimated single session); **(B) Pause to review S1 upstream commit `8673383`** (`git -C ~/lattice/.adna log -1 --stat`; inspect skill + HOME.md template + workspace.default.json diff + Step 0.3 prompt diff); **(C) Skip M-LWX-01 S2 + M-LWX-03 + override soft gate to open v2 M05 directly** — interview skill + HOME.md template already upstream-shipped, so template work is durably preserved; sandbox smoke + AAR + procedural-list amendment can land later in v3-EC or follow-up. **Greet operator, confirm M-LWX-01 S1 outputs landed (4 upstream files in commit `8673383` + 1 workspace-local 1-line edit + mission file populated + campaign master row flipped + STATE.md updated), then ask: "Authorize M-LWX-01 S2 (integration smoke + AAR + mission close; estimated single session), pause to review S1 upstream commit first, or skip ahead and override the soft gate to open v2 M05 directly?"**
+> Resume `campaign_adna_v2_infrastructure` → mini-campaign `campaign_lattice_workspace_ux/` → M-LWX-01 S2 in `aDNA.aDNA/`. **M-LWX-01 S1 closed at first-execution-session 2026-05-12T23:19Z+ → ~23:30Z+**; 6 of 8 deliverables landed; upstream commit `8673383` pushed to `LatticeProtocol/adna` origin/main covering 4 files (`skill_node_bootstrap_interview.md` NEW + `how/skills/AGENTS.md` skill-row append + `.adna/HOME.md` template NEW + `.adna/.obsidian/workspace.default.json` 3 refs fix); workspace-local 1-line Step 0.3 prompt edit at `~/aDNA/CLAUDE.md`; mission file `status: planned → in_progress` + `spec_completeness: stub → full` + full Read/Produce blocks populated. **S2 walk** per mission spec: (Phase A) prepare clean sandbox `/tmp/sandbox_lwx_01/` (rm -rf then mkdir); (Phase B) simulate fresh `claude` invocation in sandbox — trigger Step 0.3 manually (procedural-list integration deferred); fork (skill_project_fork project_name=node) → inventory_refresh → run new `skill_node_bootstrap_interview.md` against empty fork; verify all 19 answers land in correct target files per output schema (8 surfaces); verify HOME.md `{{VARS}}` substitution (8 primary vars + 4 table generators + empty-inventory `{{next_steps_section}}`); verify `workspace.default.json` opens HOME.md on Obsidian launch (operator-side OK if skipped); (Phase C) author `missions/artifacts/mlwx_01_obj5_smoke_results.md` (PASS/FAIL per check, 19+ acceptance items); (Phase D) lightweight 5-line AAR at `missions/artifacts/aar_mlwx_01_dynamic_bootstrap_interview.md` per `template_aar_lightweight.md`; load-bearing finding candidate: "3rd instance of single-commit additive upstream pattern confirms it as the canonical mechanism for template additions"; (Phase E) status flips (mission `in_progress → completed`; campaign master M-LWX-01 row `in_progress → completed`); STATE.md Next Session Prompt names M-LWX-03; (Phase F) SITREP + session close + commit + push. **Critical reminders**: hard constraints stay honored (no node.aDNA/M04/M04b/M-LWX-02 mutations; no partner-vault touches; upstream `.adna/` HEAD now at `8673383`); M-LWX-01-S1-surfaced items deferred to M-LWX-03 — (1) procedural-list amendment at `~/aDNA/CLAUDE.md` lines 28-33 (3-line addition; or land as follow-up commit), (2) `{{node_hostname}}` substitution semantics, (3) optional parallel standard-scope ADR. **Three paths forward**: **(A) Open M-LWX-01 S2** (smoke + AAR + mission close; estimated single session); **(B) Pause to review S1 upstream commit `8673383`** (`git -C ~/aDNA/.adna log -1 --stat`; inspect skill + HOME.md template + workspace.default.json diff + Step 0.3 prompt diff); **(C) Skip M-LWX-01 S2 + M-LWX-03 + override soft gate to open v2 M05 directly** — interview skill + HOME.md template already upstream-shipped, so template work is durably preserved; sandbox smoke + AAR + procedural-list amendment can land later in v3-EC or follow-up. **Greet operator, confirm M-LWX-01 S1 outputs landed (4 upstream files in commit `8673383` + 1 workspace-local 1-line edit + mission file populated + campaign master row flipped + STATE.md updated), then ask: "Authorize M-LWX-01 S2 (integration smoke + AAR + mission close; estimated single session), pause to review S1 upstream commit first, or skip ahead and override the soft gate to open v2 M05 directly?"**

@@ -16,7 +16,7 @@ requirements:
   tools: [bash 3.2+ portable, python3 (json module), diff]
   context:
     - <vault>/.obsidian/  # target vault's Obsidian config (the vault containing this skill OR specified via --vault)
-    - .adna/.obsidian/    # upstream canonical config at ~/lattice/.adna/.obsidian/
+    - .adna/.obsidian/    # upstream canonical config at ~/aDNA/.adna/.obsidian/
     - <vault>/.obsidian/.local-overrides.json  # opt-in operator-local override layer (optional)
   permissions:
     - read upstream .adna/.obsidian/* recursively
@@ -58,7 +58,7 @@ Invoked when:
 |---|---|---|---|
 | Mode flag | CLI: one of `--canonicalize`, `--reset-layout`, `--verify` | Yes (exactly one) | N/A |
 | `--vault <path>` | CLI | No | Vault containing this skill file |
-| `--upstream <path>` | CLI | No | `~/lattice/.adna/.obsidian/` (auto-discover) |
+| `--upstream <path>` | CLI | No | `~/aDNA/.adna/.obsidian/` (auto-discover) |
 | `--report-only` | CLI flag | No | false (canonicalize mode: report deltas without applying) |
 | `--force` | CLI flag | No | false (canonicalize mode: skip operator-confirm gate) |
 | `--local-overrides <path>` | CLI | No | `<vault>/.obsidian/.local-overrides.json` |
@@ -81,7 +81,7 @@ Invoked when:
 ### Permissions
 
 - Read all files under target `<vault>/.obsidian/` recursively
-- Read all files under `~/lattice/.adna/.obsidian/` recursively
+- Read all files under `~/aDNA/.adna/.obsidian/` recursively
 - Write to `<vault>/.obsidian/*.json` files (canonicalize + reset-layout modes)
 - Spawn `./setup.sh` as subprocess
 
@@ -92,7 +92,7 @@ Verified before any mode runs:
 1. **No Obsidian process running on target vault.** File-lock contention risk: Obsidian writes config on shutdown; concurrent writes would corrupt. Check: `pgrep -f "Obsidian.*<vault>"` returns empty.
 2. **Vault is a recognized aDNA vault.** Required markers: `<vault>/.obsidian/` exists AND (`<vault>/CLAUDE.md` exists OR `<vault>/MANIFEST.md` exists).
 3. **Git working tree state** (canonicalize + reset-layout modes only): `<vault>/.obsidian/` is either (a) clean OR (b) operator explicitly opts in to canonicalize-with-dirty-tree via `--force`. Reason: canonicalize WILL overwrite operator-edited files; pre-canonicalize commit gives a clean rollback point.
-4. **Upstream path resolvable** (canonicalize mode only): `~/lattice/.adna/.obsidian/` is a directory AND readable. Failure: fail fast with a clear "upstream not found at <path>; use --upstream to specify" message.
+4. **Upstream path resolvable** (canonicalize mode only): `~/aDNA/.adna/.obsidian/` is a directory AND readable. Failure: fail fast with a clear "upstream not found at <path>; use --upstream to specify" message.
 
 ## Implementation
 
@@ -101,7 +101,7 @@ Verified before any mode runs:
 ```bash
 MODE=""
 VAULT_DIR="$(cd "$(dirname "$0")/../.." && pwd)"  # default: vault containing this skill
-UPSTREAM_DIR="$HOME/lattice/.adna/.obsidian"
+UPSTREAM_DIR="$HOME/aDNA/.adna/.obsidian"
 REPORT_ONLY=0
 FORCE=0
 LOCAL_OVERRIDES=""
@@ -290,9 +290,9 @@ Exit code passes through from setup.sh (0 = all installed; 1 = mismatch).
 
 ```
 === Obsidian canonicalize ===
-Target: /Users/stanley/lattice/<vault>.aDNA/.obsidian/
-Upstream: /Users/stanley/lattice/.adna/.obsidian/
-Local overrides: /Users/stanley/lattice/<vault>.aDNA/.obsidian/.local-overrides.json (3 keys)
+Target: /Users/stanley/aDNA/<vault>.aDNA/.obsidian/
+Upstream: /Users/stanley/aDNA/.adna/.obsidian/
+Local overrides: /Users/stanley/aDNA/<vault>.aDNA/.obsidian/.local-overrides.json (3 keys)
 
 Per-file deltas:
   app.json                   3 canonicalized, 1 preserved-from-local, 2 vault-only, 12 no-change
@@ -336,7 +336,7 @@ Exit 0.
 | 1 | Mode-specific failure (verify mismatch; canonicalize unable to write; reset-layout copy failed) | Inspect per-mode error message; commonly missing upstream OR file permissions |
 | 2 | Preflight failure (Obsidian process running on target vault; vault not aDNA-recognized; setup.sh missing) | Stop Obsidian; verify vault path; ensure T1 fix landed (preserves setup.sh in forked vault) |
 | 3 | Git working tree dirty + `--force` not passed (canonicalize / reset-layout modes) | Commit or stash existing changes; OR pass `--force` to proceed |
-| 4 | Upstream not found at default path (canonicalize mode) | Pass `--upstream <path>` OR clone `.adna/` into `~/lattice/.adna/` |
+| 4 | Upstream not found at default path (canonicalize mode) | Pass `--upstream <path>` OR clone `.adna/` into `~/aDNA/.adna/` |
 | 5 | JSON parse failure on upstream or vault file | Inspect failing file; fix syntax; re-run |
 
 ## Rollback
@@ -353,7 +353,7 @@ Exit 0.
 
 ```bash
 # Operator just forked a new vault + ran setup.sh
-cd ~/lattice/my-new-vault.aDNA/
+cd ~/aDNA/my-new-vault.aDNA/
 
 # Open in Obsidian; first-open clobbers workspace layout
 open -a Obsidian .
@@ -369,7 +369,7 @@ open -a Obsidian .
 
 ```bash
 # Operator pulled latest .adna/ template (which now ships NN data.json triad colors)
-cd ~/lattice/my-existing-vault.aDNA/
+cd ~/aDNA/my-existing-vault.aDNA/
 git status .obsidian/  # clean
 
 # Dry-run first to see what would change
@@ -399,10 +399,10 @@ EOF
 ### Example 4: Cross-vault audit (operator iterates over all aDNA vaults)
 
 ```bash
-cd ~/lattice/
+cd ~/aDNA/
 for vault in *.aDNA/; do
     echo "=== $vault ==="
-    ~/lattice/aDNA.aDNA/how/skills/skill_obsidian_canonicalize --vault "$PWD/$vault" --verify
+    ~/aDNA/aDNA.aDNA/how/skills/skill_obsidian_canonicalize --vault "$PWD/$vault" --verify
 done
 ```
 

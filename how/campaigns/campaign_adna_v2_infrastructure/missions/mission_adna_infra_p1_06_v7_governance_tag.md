@@ -110,7 +110,7 @@ Execute ADR-006 [[../../../../what/decisions/adr_006_github_repo_rename_to_adna.
 
 1. Operator UI action: `LatticeProtocol/Agentic-DNA` → `<D1 resolved slug>` (Settings → General → Repository name → Save)
 2. Verify GitHub URL forwarding (301 on legacy URL via `curl -sI`)
-3. Operator-optional remote URL update: `git -C ~/lattice/.adna remote set-url origin https://github.com/<D1 resolved slug>.git`
+3. Operator-optional remote URL update: `git -C ~/aDNA/.adna remote set-url origin https://github.com/<D1 resolved slug>.git`
 4. Documentation grep+update sweep (M03 already covered most; verify residual references)
 5. Reservation: do NOT create a new repository at `LatticeProtocol/Agentic-DNA` post-rename (would invalidate the redirect)
 
@@ -125,7 +125,7 @@ Pre-tag prep (single commit; lands in `.adna` HEAD pre-tag):
 
 Tag command (M01 Obj 6 §5 verbatim):
 ```bash
-git -C ~/lattice/.adna tag -a v7.0 -m "aDNA v7.0 (Governance) — flat repo, node.aDNA, publish-skill rewrite, LatticeScope.aDNA seed.
+git -C ~/aDNA/.adna tag -a v7.0 -m "aDNA v7.0 (Governance) — flat repo, node.aDNA, publish-skill rewrite, LatticeScope.aDNA seed.
 
 Major Governance bump. Standard track unchanged (stays at v2.2).
 
@@ -134,7 +134,7 @@ ADRs ratified at this tag: 006 (repo rename), 007 (outer wrapper → template), 
 Migration: see how/docs/upgrade_v6_to_v7.md (M08a).
 
 Coordinated rollout: per-vault memos delivered to ~17 vaults; external partners notified (Wilhelm Foundation, TAPP, Super League)."
-git -C ~/lattice/.adna push origin v7.0
+git -C ~/aDNA/.adna push origin v7.0
 ```
 
 D2 (S2 entry) decides any wording amendments to the annotation message. Rosetta recommendation: use M01 Obj 6 §5 baseline verbatim + append 2026-05-18 close-date footer.
@@ -222,11 +222,11 @@ S3 deliverables:
 | # | Check | Command | Expected | Action if failed |
 |---|---|---|---|---|
 | P-1 | All M01 ADRs `accepted` (006-011) | `for n in 006 007 008 009 010 011; do grep -l "status: accepted" .adna/what/decisions/adr_${n}_*.md; done` | All 6 paths printed | Resolve open ADRs (ADR-011 at M06 phase gate; others should already be `accepted`) |
-| P-2 | M03 flatten shipped | `test -d ~/lattice/.adna && test -f ~/lattice/.adna/.gitignore && ! test -d ~/lattice/adna` | All pass | M03 already complete (2026-05-11); reverify only |
-| P-3 | M05 publish-skill family shipped | `ls ~/lattice/.adna/how/skills/skill_{vault_publish,git_remote_setup,deploy}.md` | All three exist | M05 already complete (2026-05-18 S3); reverify only |
-| P-4 | M08a upgrade guide shipped | `test -f ~/lattice/.adna/how/docs/upgrade_v6_to_v7.md` | Exists | M08a already complete (2026-05-11); reverify only |
-| P-5 | Working tree clean on `main` | `cd ~/lattice/.adna && git status --short && git rev-parse --abbrev-ref HEAD` | Empty + `main` | Commit/stash/checkout as needed; HEAD should be `dfced67` (M05 S2) or later M06 prep |
-| P-6 | No pending v7.0 RC tags | `cd ~/lattice/.adna && git tag --list "v7.0*"` | Empty | Investigate provenance with operator if stale tag exists |
+| P-2 | M03 flatten shipped | `test -d ~/aDNA/.adna && test -f ~/aDNA/.adna/.gitignore && ! test -d ~/aDNA/adna` | All pass | M03 already complete (2026-05-11); reverify only |
+| P-3 | M05 publish-skill family shipped | `ls ~/aDNA/.adna/how/skills/skill_{vault_publish,git_remote_setup,deploy}.md` | All three exist | M05 already complete (2026-05-18 S3); reverify only |
+| P-4 | M08a upgrade guide shipped | `test -f ~/aDNA/.adna/how/docs/upgrade_v6_to_v7.md` | Exists | M08a already complete (2026-05-11); reverify only |
+| P-5 | Working tree clean on `main` | `cd ~/aDNA/.adna && git status --short && git rev-parse --abbrev-ref HEAD` | Empty + `main` | Commit/stash/checkout as needed; HEAD should be `dfced67` (M05 S2) or later M06 prep |
+| P-6 | No pending v7.0 RC tags | `cd ~/aDNA/.adna && git tag --list "v7.0*"` | Empty | Investigate provenance with operator if stale tag exists |
 
 ## §6 Risk mitigations
 

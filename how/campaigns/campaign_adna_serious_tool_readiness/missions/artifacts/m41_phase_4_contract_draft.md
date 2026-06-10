@@ -48,7 +48,7 @@ The canonical installer is hosted at **`aDNA.aDNA/how/skills/install/`** (single
 
 1. **Base layer** (Ghostty + tmux + Claude Code v1-default + telemetry per `adna.telemetry.v1`) — **logic precedent** is `LatticeTerminal.aDNA/what/latticeterminal/.claude/skills/skill_install/SKILL.md` (M1.1 close 2026-05-18; Spacemacs-style bash-in-markdown). M4.3 absorbs the M1.1 logic into the aDNA-side skill (default-recommend = lift verbatim per Q6 in coord memo §6).
 
-2. **Workspace-bootstrap layer** (`~/lattice/` directory creation + `.adna/` template clone + workspace router `~/lattice/CLAUDE.md` + node.aDNA fork via `.adna/how/skills/skill_node_bootstrap_interview.md` + first-run skill triggering) — net-new at M4.3.
+2. **Workspace-bootstrap layer** (`~/aDNA/` directory creation + `.adna/` template clone + workspace router `~/aDNA/CLAUDE.md` + node.aDNA fork via `.adna/how/skills/skill_node_bootstrap_interview.md` + first-run skill triggering) — net-new at M4.3.
 
 3. **Launcher binary** at `LatticeTerminal.aDNA/what/latticeterminal/launcher/` (standalone-deployable per ADR-005) — consumed as a **build artifact** by the unified installer; not re-authored at aDNA side.
 
@@ -74,13 +74,13 @@ The unified installer at Clause A invokes Claude Code installation via `npm i -g
 
 The unified installer at Clause A produces:
 
-1. **`~/lattice/CLAUDE.md`** (workspace router) — created from `.adna/CLAUDE.md` template via standard fork process; operator-customizable post-install for site-specific routing (mirrors current `~/lattice/CLAUDE.md` shipping in this workspace as governance authority for routing).
+1. **`~/aDNA/CLAUDE.md`** (workspace router) — created from `.adna/CLAUDE.md` template via standard fork process; operator-customizable post-install for site-specific routing (mirrors current `~/aDNA/CLAUDE.md` shipping in this workspace as governance authority for routing).
 
-2. **`~/lattice/.adna/`** — `git clone https://github.com/LatticeProtocol/adna ~/lattice/.adna` per existing standalone-clone discipline (post-M03 flatten); operator manual update via `git -C ~/lattice/.adna pull`.
+2. **`~/aDNA/.adna/`** — `git clone https://github.com/LatticeProtocol/adna ~/aDNA/.adna` per existing standalone-clone discipline (post-M03 flatten); operator manual update via `git -C ~/aDNA/.adna pull`.
 
-3. **`~/lattice/node.aDNA/`** — fork via `.adna/how/skills/skill_node_bootstrap_interview.md` (19-question interview, ~4-7 min); operator-confirmable.
+3. **`~/aDNA/node.aDNA/`** — fork via `.adna/how/skills/skill_node_bootstrap_interview.md` (19-question interview, ~4-7 min); operator-confirmable.
 
-4. **First-run skill triggering** — workspace fresh-bootstrap path (post-flatten clone of `.adna/` → first `claude` invocation) per `~/lattice/CLAUDE.md` Project Discovery routing.
+4. **First-run skill triggering** — workspace fresh-bootstrap path (post-flatten clone of `.adna/` → first `claude` invocation) per `~/aDNA/CLAUDE.md` Project Discovery routing.
 
 M4.3 co-design finalizes the orchestration sequence (base layer first → workspace-bootstrap layer second; or interleaved; or operator-choose). Default-recommend = sequential (base layer → workspace bootstrap → first-run triggering) per simplest dependency chain.
 

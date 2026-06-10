@@ -89,7 +89,7 @@ M06 Obj 2 walks every drift candidate, decides Add / Edit / Drop disposition, an
 
 ### Line 53 — Repo rename target (mixed-case canonical per D1 amendment)
 - **From**: `**GitHub repo rename**: `LatticeProtocol/Agentic-DNA` → `LatticeProtocol/adna` (per ADR-006). GitHub URL forwarding preserves existing clones; new clones use the canonical short-name URL.`
-- **To**: `**GitHub repo rename**: `LatticeProtocol/Agentic-DNA` → `LatticeProtocol/aDNA` (per ADR-006, amended 2026-05-18 to canonicalize mixed-case form matching realized GitHub state). GitHub URL forwarding preserves existing clones; new clones use the canonical short-name URL. Operators with lowercase remotes may update at their own cadence via `git -C ~/lattice/.adna remote set-url origin https://github.com/LatticeProtocol/aDNA.git`.`
+- **To**: `**GitHub repo rename**: `LatticeProtocol/Agentic-DNA` → `LatticeProtocol/aDNA` (per ADR-006, amended 2026-05-18 to canonicalize mixed-case form matching realized GitHub state). GitHub URL forwarding preserves existing clones; new clones use the canonical short-name URL. Operators with lowercase remotes may update at their own cadence via `git -C ~/aDNA/.adna remote set-url origin https://github.com/LatticeProtocol/aDNA.git`.`
 
 ### Line 68 — ADR-009 attribution
 - **From**: `(M07)`

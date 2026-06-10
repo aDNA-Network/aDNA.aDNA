@@ -4,14 +4,14 @@ artifact_type: design_spec
 campaign: campaign_adna_v2_infrastructure
 mission: mission_adna_infra_p1_04b_workspace_ux_planning
 session: session_stanley_20260512_200414_adna_v2_m04b_s1
-spec_target: ~/lattice/ as an Obsidian vault
+spec_target: ~/aDNA/ as an Obsidian vault
 spec_scope:
   - .obsidian/ minimal config (4 files + snippets/)
   - HOME.md home page (Bases gallery reading from node.aDNA inventory)
   - .obsidianignore (excludes all *.aDNA/ subfolders)
   - LP registry/marketplace link
   - sub-vault opening pattern
-d5_resolution: local  # all M-LWX-02 outputs land at ~/lattice/; nothing upstreamed to .adna/ template
+d5_resolution: local  # all M-LWX-02 outputs land at ~/aDNA/; nothing upstreamed to .adna/ template
 operator_decisions_resolved:
   D2: b (Obsidian +Bases)
   D3: a (exclude *.aDNA/ via .obsidianignore)
@@ -32,20 +32,20 @@ external_references:
   - "node.aDNA/what/inventory/inventory_vaults.yaml (data source for HOME.md gallery; 21 vaults + 11 named projects + 3 drift entries)"
 ---
 
-# M04b Obj 3 — Design Spec: `~/lattice/` as Obsidian Vault
+# M04b Obj 3 — Design Spec: `~/aDNA/` as Obsidian Vault
 
-> **Mission deliverable** for M04b Obj 3 per [[../mission_adna_infra_p1_04b_workspace_ux_planning.md|M04b spec §Objectives]]. Designs the workspace-root Obsidian vault setup so the operator can open `~/lattice/` itself as a vault, browse a context-graph gallery (reading from `node.aDNA/what/inventory/inventory_vaults.yaml`), link to the LP marketplace, and open individual `.aDNA/` vaults as nested sessions. **D5 resolution**: all M-LWX-02 outputs land **local** at `~/lattice/`; nothing upstreamed to `.adna/` template (workspace-scope, not template-scope).
+> **Mission deliverable** for M04b Obj 3 per [[../mission_adna_infra_p1_04b_workspace_ux_planning.md|M04b spec §Objectives]]. Designs the workspace-root Obsidian vault setup so the operator can open `~/aDNA/` itself as a vault, browse a context-graph gallery (reading from `node.aDNA/what/inventory/inventory_vaults.yaml`), link to the LP marketplace, and open individual `.aDNA/` vaults as nested sessions. **D5 resolution**: all M-LWX-02 outputs land **local** at `~/aDNA/`; nothing upstreamed to `.adna/` template (workspace-scope, not template-scope).
 
 ---
 
 ## Design intent
 
-The operator currently has 21 `.aDNA/` vaults + 11 named projects under `~/lattice/`, each opened individually in Obsidian when needed. The workspace root (`~/lattice/`) is *not* an Obsidian vault — there's no `.obsidian/` directory at the root, so the operator has no single pane-of-glass for the full lattice. M-LWX-02 closes this loop by adding a **minimal Obsidian vault at `~/lattice/`** that:
+The operator currently has 21 `.aDNA/` vaults + 11 named projects under `~/aDNA/`, each opened individually in Obsidian when needed. The workspace root (`~/aDNA/`) is *not* an Obsidian vault — there's no `.obsidian/` directory at the root, so the operator has no single pane-of-glass for the full lattice. M-LWX-02 closes this loop by adding a **minimal Obsidian vault at `~/aDNA/`** that:
 
 1. Renders a **HOME.md gallery** of all context graphs (vaults + named projects) on this node, reading from `node.aDNA/what/inventory/inventory_vaults.yaml` as the source of truth — keeping data ownership in `node.aDNA/` (Hestia's domain) and view in the outer vault.
 2. Surfaces a **marketplace link** to `lattice-protocol.com/marketplace` (web destination; placeholder URL until M-LWX-02 confirms actual).
 3. **Excludes inner `.aDNA/` vaults** from the outer vault's indexer via `.obsidianignore` (so the outer vault doesn't try to index 21 nested Obsidian vaults, which would conflict).
-4. Documents the **sub-vault opening pattern** — operator opens `~/lattice/` for "control plane" navigation; opens specific `.aDNA/` separately when working inside that project.
+4. Documents the **sub-vault opening pattern** — operator opens `~/aDNA/` for "control plane" navigation; opens specific `.aDNA/` separately when working inside that project.
 
 The setup is **minimal** (4 config files + snippets/) and **opinionated** (Bases for the gallery, per D2=b; the operator may extend with community plugins later).
 
@@ -58,7 +58,7 @@ The setup is **minimal** (4 config files + snippets/) and **opinionated** (Bases
 | **D2 — Obsidian vault depth** | **(b) markdown + canvas + Bases** | Bases is built into modern Obsidian (no plugin install); renders `inventory_vaults.yaml` as a queryable, sortable, groupable table without external dependencies. Operator can extend with community plugins later. |
 | **D3 — Vault-in-vault handling** | **(a) exclude `.aDNA/` via `.obsidianignore`** | Zero-conflict path. Each `.aDNA/` retains its own `.obsidian/`. Outer vault focuses on "control plane" usage. Inner vaults opened separately as needed. |
 | **D4 — Marketplace integration** | **(a) web link only** | Zero-effort. Obsidian extension is future work (potentially v8.0+ or a separate LP project). M-LWX-02 ships a markdown link. |
-| **D5 — Upstream template changes for Obj 3** | **local** | `~/lattice/.obsidian/` + `~/lattice/HOME.md` + `~/lattice/.obsidianignore` are workspace-scope (this operator's machine); not template-scope (future forks make their own Obsidian-vault choices). |
+| **D5 — Upstream template changes for Obj 3** | **local** | `~/aDNA/.obsidian/` + `~/aDNA/HOME.md` + `~/aDNA/.obsidianignore` are workspace-scope (this operator's machine); not template-scope (future forks make their own Obsidian-vault choices). |
 
 ---
 
@@ -66,14 +66,14 @@ The setup is **minimal** (4 config files + snippets/) and **opinionated** (Bases
 
 | # | File | Path | Source |
 |---|---|---|---|
-| 1 | `app.json` | `~/lattice/.obsidian/app.json` | Authored per §1 below |
-| 2 | `appearance.json` | `~/lattice/.obsidian/appearance.json` | Authored per §1 below |
-| 3 | `core-plugins.json` | `~/lattice/.obsidian/core-plugins.json` | Authored per §1 below |
-| 4 | `workspace.json` | `~/lattice/.obsidian/workspace.json` | Authored per §1 below (initial layout opens HOME.md) |
-| 5 | `community-plugins.json` | `~/lattice/.obsidian/community-plugins.json` | Authored per §1 below (empty `[]`) |
-| 6 | `HOME.md` | `~/lattice/HOME.md` | Authored per §2 below (Bases gallery + marketplace link + nav) |
-| 7 | `.obsidianignore` | `~/lattice/.obsidianignore` | Authored per §3 below (excludes `*.aDNA/` + all named-project dirs + build artifacts + system files) |
-| 8 | Workspace router update | `~/lattice/CLAUDE.md` | New Step 0.4 or addendum to Step 0.3 — offers Obsidian-vault setup after `node.aDNA/` bootstrap (per §4 below) |
+| 1 | `app.json` | `~/aDNA/.obsidian/app.json` | Authored per §1 below |
+| 2 | `appearance.json` | `~/aDNA/.obsidian/appearance.json` | Authored per §1 below |
+| 3 | `core-plugins.json` | `~/aDNA/.obsidian/core-plugins.json` | Authored per §1 below |
+| 4 | `workspace.json` | `~/aDNA/.obsidian/workspace.json` | Authored per §1 below (initial layout opens HOME.md) |
+| 5 | `community-plugins.json` | `~/aDNA/.obsidian/community-plugins.json` | Authored per §1 below (empty `[]`) |
+| 6 | `HOME.md` | `~/aDNA/HOME.md` | Authored per §2 below (Bases gallery + marketplace link + nav) |
+| 7 | `.obsidianignore` | `~/aDNA/.obsidianignore` | Authored per §3 below (excludes `*.aDNA/` + all named-project dirs + build artifacts + system files) |
+| 8 | Workspace router update | `~/aDNA/CLAUDE.md` | New Step 0.4 or addendum to Step 0.3 — offers Obsidian-vault setup after `node.aDNA/` bootstrap (per §4 below) |
 
 **8 deliverables** for M-LWX-02 (5 Obsidian config files + HOME.md + .obsidianignore + 1 workspace router update). Estimated 2 sessions per M04b spec (config authoring + home-page authoring + integration test).
 
@@ -174,7 +174,7 @@ The outer vault config is intentionally lean. Each file's purpose + content sket
 }
 ```
 
-**Purpose**: on first open of `~/lattice/` as a vault, Obsidian shows HOME.md in preview mode (reading view, not edit) — the operator sees the gallery immediately.
+**Purpose**: on first open of `~/aDNA/` as a vault, Obsidian shows HOME.md in preview mode (reading view, not edit) — the operator sees the gallery immediately.
 
 ---
 
@@ -295,7 +295,7 @@ The outer vault MUST NOT index inner `.aDNA/` Obsidian vaults — each has its o
 ### 3.1 Pattern (full file content)
 
 ```
-# .obsidianignore — Excluded from Obsidian's file watcher and indexer at ~/lattice/.
+# .obsidianignore — Excluded from Obsidian's file watcher and indexer at ~/aDNA/.
 # These paths are completely invisible to the outer-vault Obsidian (no FSEvents, no indexing).
 # Separate from app.json userIgnoreFilters which only affect search/links/graph.
 #
@@ -371,11 +371,11 @@ Operator workflows + the protocol HOME.md teaches:
 ### 4.1 Working inside a specific vault (e.g., `aDNA.aDNA/`)
 
 ```
-1. From outer ~/lattice/ Obsidian: navigate to HOME.md gallery, click `aDNA.aDNA` (or use Cmd+P → "Open vault folder")
+1. From outer ~/aDNA/ Obsidian: navigate to HOME.md gallery, click `aDNA.aDNA` (or use Cmd+P → "Open vault folder")
 2. Operator gets system file-manager pop-up; they "Open with Obsidian" on the `aDNA.aDNA/` directory
 3. Obsidian opens `aDNA.aDNA/` as a separate vault (separate window); the inner `aDNA.aDNA/.obsidian/` config takes effect
 4. Operator works inside that vault — Rosetta (the aDNA.aDNA persona) is in scope; node.aDNA is NOT in scope from the inner vault
-5. When done, close the inner-vault window — the outer ~/lattice/ vault stays open in its own window
+5. When done, close the inner-vault window — the outer ~/aDNA/ vault stays open in its own window
 ```
 
 ### 4.2 Cross-vault navigation
@@ -390,7 +390,7 @@ For operators with multi-monitor setups (H3 from the interview): outer vault on 
 
 ---
 
-## §5 — Workspace router update (`~/lattice/CLAUDE.md`)
+## §5 — Workspace router update (`~/aDNA/CLAUDE.md`)
 
 The workspace router currently has Step 0 for node.aDNA detection (4 sub-steps: 0.1 detect / 0.2 PRESENT / 0.3 MISSING-offer-bootstrap / 0.4 FRESH-INSTALL-skip). M-LWX-02 adds a **new Step 0.5** (or amends Step 0.2 PRESENT branch) for Obsidian-vault setup:
 
@@ -402,25 +402,25 @@ The workspace router currently has Step 0 for node.aDNA detection (4 sub-steps: 
 Run: `test -d .obsidian && echo PRESENT || echo MISSING`
 
 #### Step 0.5.1 (PRESENT)
-`~/lattice/.obsidian/` exists — workspace is already an Obsidian vault. Continue.
+`~/aDNA/.obsidian/` exists — workspace is already an Obsidian vault. Continue.
 
 #### Step 0.5.2 (MISSING) — offer to set up
 
-If `~/lattice/.obsidian/` is missing AND `node.aDNA/` is present (from Step 0):
+If `~/aDNA/.obsidian/` is missing AND `node.aDNA/` is present (from Step 0):
 
-> "I notice you have `node.aDNA/` (N vaults registered) but `~/lattice/` itself is not an Obsidian vault. The Obsidian vault layer adds a HOME.md gallery of all your context graphs, a marketplace link, and `.obsidianignore` to keep inner vaults from conflicting. This is opt-in. Set up now? (~30 seconds; nothing destructive — adds `.obsidian/` config + `HOME.md` + `.obsidianignore` at workspace root.)"
+> "I notice you have `node.aDNA/` (N vaults registered) but `~/aDNA/` itself is not an Obsidian vault. The Obsidian vault layer adds a HOME.md gallery of all your context graphs, a marketplace link, and `.obsidianignore` to keep inner vaults from conflicting. This is opt-in. Set up now? (~30 seconds; nothing destructive — adds `.obsidian/` config + `HOME.md` + `.obsidianignore` at workspace root.)"
 
 If the operator declines, proceed; do not re-ask in subsequent sessions unless the operator triggers a workspace UX session.
 
 If the operator accepts:
 1. Run `M-LWX-02 setup` skill (or inline: write the 5 `.obsidian/` config files + HOME.md + .obsidianignore from M04b Obj 3 spec)
-2. Confirm: "Workspace Obsidian vault ready. You can open `~/lattice/` in Obsidian now to see the gallery."
+2. Confirm: "Workspace Obsidian vault ready. You can open `~/aDNA/` in Obsidian now to see the gallery."
 3. Continue to Step 1 (project routing).
 ```
 
 ### 5.2 D5 disposition
 
-The Step 0.5 addition is **local** (workspace-router scope; `~/lattice/CLAUDE.md`). Not upstreamed to `.adna/CLAUDE.md`. Rationale: Obsidian-vault preference is operator-discretionary; not every future fork's operator wants Obsidian. The choice stays local; future operators discover it via the workspace router prompt if they want.
+The Step 0.5 addition is **local** (workspace-router scope; `~/aDNA/CLAUDE.md`). Not upstreamed to `.adna/CLAUDE.md`. Rationale: Obsidian-vault preference is operator-discretionary; not every future fork's operator wants Obsidian. The choice stays local; future operators discover it via the workspace router prompt if they want.
 
 ---
 
@@ -430,14 +430,14 @@ End-to-end UX validation requirements:
 
 | Test | Method | Pass criterion |
 |---|---|---|
-| Outer vault opens cleanly | Operator opens `~/lattice/` in Obsidian | No errors; HOME.md visible in preview mode |
+| Outer vault opens cleanly | Operator opens `~/aDNA/` in Obsidian | No errors; HOME.md visible in preview mode |
 | Inner `.aDNA/` excluded | Check Obsidian file explorer doesn't list any `.aDNA/` subfolder | No `.aDNA/` directories visible in outer vault's file pane |
 | Bases gallery renders | Open HOME.md preview | Bases blocks render as queryable tables (or markdown fallback if Bases schema mismatch); 21 vaults + 11 named projects listed |
 | Marketplace link clickable | Click marketplace link in HOME.md preview | Opens browser to `lattice-protocol.com/marketplace` (or placeholder destination) |
 | Sub-vault opening | From HOME.md, "Show in file manager" on `aDNA.aDNA/` → "Open with Obsidian" | `aDNA.aDNA/` opens in a separate Obsidian window with its inner config active |
 | `.obsidianignore` enforces | Trigger a file event inside `aDNA.aDNA/` (e.g., touch a file via terminal) | Outer vault's indexer doesn't pick it up (verify via outer vault's "Files" pane unchanged) |
 | HOME.md regenerates on inventory_refresh | Run `node.aDNA/how/skills/skill_inventory_refresh.md` | If markdown-fallback gallery: HOME.md re-rendered with current vault list; if Bases gallery: re-renders on next HOME.md open (no re-write needed) |
-| Workspace router Step 0.5 fires | Move `.obsidian/` away temporarily; start a fresh `claude` session at `~/lattice/`; check Step 0.5 prompt fires | Operator gets the Step 0.5.2 MISSING offer; declining + accepting both behave per spec |
+| Workspace router Step 0.5 fires | Move `.obsidian/` away temporarily; start a fresh `claude` session at `~/aDNA/`; check Step 0.5 prompt fires | Operator gets the Step 0.5.2 MISSING offer; declining + accepting both behave per spec |
 
 8 integration tests. M-LWX-03 runs them on Stanley's Mac (this node) as the canonical reference; capture results in `cross_graph_findings_to_v2.md` per the mini-campaign's verification strategy.
 
@@ -445,13 +445,13 @@ End-to-end UX validation requirements:
 
 ## §7 — D5 resolution: local
 
-**Decision**: all M-LWX-02 outputs land **local** at `~/lattice/`; nothing upstreamed to `.adna/` template.
+**Decision**: all M-LWX-02 outputs land **local** at `~/aDNA/`; nothing upstreamed to `.adna/` template.
 
 **Per-artifact rationale**:
-- `~/lattice/.obsidian/` — workspace-scope. Future forks of `.adna/` template don't all want Obsidian; making the workspace-vault setup a template default would impose a UX choice on operators who prefer plain terminal or non-Obsidian editors.
-- `~/lattice/HOME.md` — reads from `node.aDNA/what/inventory/inventory_vaults.yaml`, which is operator-specific (different nodes have different vault lists). Templating HOME.md upstream would just produce a placeholder that the operator re-writes; the local-only path is simpler.
-- `~/lattice/.obsidianignore` — encodes this operator's workspace layout (which named projects exist, which working directories exist). Future operators have different layouts; the file is per-machine by nature.
-- `~/lattice/CLAUDE.md` Step 0.5 — the workspace router itself is operator-customizable per ADR-007 (it's not a symlink). The Step 0.5 addition stays in the local workspace router.
+- `~/aDNA/.obsidian/` — workspace-scope. Future forks of `.adna/` template don't all want Obsidian; making the workspace-vault setup a template default would impose a UX choice on operators who prefer plain terminal or non-Obsidian editors.
+- `~/aDNA/HOME.md` — reads from `node.aDNA/what/inventory/inventory_vaults.yaml`, which is operator-specific (different nodes have different vault lists). Templating HOME.md upstream would just produce a placeholder that the operator re-writes; the local-only path is simpler.
+- `~/aDNA/.obsidianignore` — encodes this operator's workspace layout (which named projects exist, which working directories exist). Future operators have different layouts; the file is per-machine by nature.
+- `~/aDNA/CLAUDE.md` Step 0.5 — the workspace router itself is operator-customizable per ADR-007 (it's not a symlink). The Step 0.5 addition stays in the local workspace router.
 
 **Contrast with Obj 2's upstream decision**: `skill_node_bootstrap_interview.md` is upstream because it operates *on* a fresh fork (the skill itself doesn't care about the operator's workspace UX preferences). The Obsidian vault setup is *for* the operator's workspace — fundamentally local.
 
@@ -461,7 +461,7 @@ End-to-end UX validation requirements:
 
 ## Self-reference (Standing Order #2)
 
-This spec demonstrates the vault-in-vault discipline by *enacting* it: the outer-vault design refers to inner `node.aDNA/what/inventory/inventory_vaults.yaml` as a data source (not as a Bases-indexable file the outer indexer scans), and the `.obsidianignore` pattern enforces the boundary at the indexer level. The discipline matches ADR-005 (three-way vault boundary): `node.aDNA/` owns the inventory data; `aDNA.aDNA/` owns the design that consumes that data into a viewable artifact; `~/lattice/` (the workspace-vault layer) hosts the resulting view. Three distinct scopes; one coherent data flow.
+This spec demonstrates the vault-in-vault discipline by *enacting* it: the outer-vault design refers to inner `node.aDNA/what/inventory/inventory_vaults.yaml` as a data source (not as a Bases-indexable file the outer indexer scans), and the `.obsidianignore` pattern enforces the boundary at the indexer level. The discipline matches ADR-005 (three-way vault boundary): `node.aDNA/` owns the inventory data; `aDNA.aDNA/` owns the design that consumes that data into a viewable artifact; `~/aDNA/` (the workspace-vault layer) hosts the resulting view. Three distinct scopes; one coherent data flow.
 
 If the same design were applied to a different node (a fresh Mac, a Linux workstation, a remote server), the *structure* would be identical — `.obsidian/` config + HOME.md + `.obsidianignore` + Step 0.5 in the workspace router — but the *content* would differ (the inventory_vaults.yaml on that node lists different vaults). The framework generalizes.
 

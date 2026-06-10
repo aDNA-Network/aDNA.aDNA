@@ -310,7 +310,7 @@ fi
 
 **What it tests**: relative markdown links in the home page (e.g., `[CanvasForge.aDNA](../CanvasForge.aDNA/)`) resolve to existing directories.
 
-**Source from M-LWX-03**: "Click `[CanvasForge.aDNA](../CanvasForge.aDNA/)` → opens file manager at `~/lattice/CanvasForge.aDNA/` → right-click 'Open with Obsidian'."
+**Source from M-LWX-03**: "Click `[CanvasForge.aDNA](../CanvasForge.aDNA/)` → opens file manager at `~/aDNA/CanvasForge.aDNA/` → right-click 'Open with Obsidian'."
 
 **Vault-agnostic shape**:
 
@@ -507,7 +507,7 @@ A per-vault profile for `node.aDNA/` that asserts the 21-vault home page state f
 }
 ```
 
-Invocation: `./how/skills/skill_obsidian_integration_test --vault ~/lattice/node.aDNA/ --profile node-canonical`.
+Invocation: `./how/skills/skill_obsidian_integration_test --vault ~/aDNA/node.aDNA/ --profile node-canonical`.
 
 ## Output
 
@@ -515,7 +515,7 @@ Invocation: `./how/skills/skill_obsidian_integration_test --vault ~/lattice/node
 
 ```
 === Obsidian integration test ===
-Target vault: /Users/stanley/lattice/node.aDNA/
+Target vault: /Users/stanley/aDNA/node.aDNA/
 Profile: default (built-in)
 Cross-skill delegations: skill_obsidian_canonicalize.md --verify (O4)
 
@@ -536,7 +536,7 @@ Exit 0.
 
 ```
 === Obsidian integration test ===
-Target vault: /Users/stanley/lattice/aDNA.aDNA/
+Target vault: /Users/stanley/aDNA/aDNA.aDNA/
 Profile: aDNA-canonical (loaded from .obsidian/integration-test-profile.json)
 Cross-skill delegations: skill_obsidian_canonicalize.md --verify (O4)
 
@@ -557,15 +557,15 @@ Exit 0.
 
 ```
 === Obsidian integration test ===
-Target vault: /Users/stanley/lattice/fresh-fork.aDNA/
+Target vault: /Users/stanley/aDNA/fresh-fork.aDNA/
 Profile: default (built-in)
 Cross-skill delegations: skill_obsidian_canonicalize.md --verify (O4)
 
 Per-check results:
-  O1  Vault not in Obsidian registry                                       FAIL  FIX: open Obsidian → File → Open Vault → select /Users/stanley/lattice/fresh-fork.aDNA/ once to register.
+  O1  Vault not in Obsidian registry                                       FAIL  FIX: open Obsidian → File → Open Vault → select /Users/stanley/aDNA/fresh-fork.aDNA/ once to register.
   O2  Home page present (CLAUDE.md; 87 lines)                              PASS
   O3  Structured content tables (0 assertions in default profile)         PASS
-  O4  Plugin binary-presence MISMATCH (DELEGATE → canonicalize --verify exit 1)  FAIL  Enabled plugins: 15  Installed: 0  Missing binaries: 15  FIX: run ./setup.sh from /Users/stanley/lattice/fresh-fork.aDNA/
+  O4  Plugin binary-presence MISMATCH (DELEGATE → canonicalize --verify exit 1)  FAIL  Enabled plugins: 15  Installed: 0  Missing binaries: 15  FIX: run ./setup.sh from /Users/stanley/aDNA/fresh-fork.aDNA/
   O5  Cross-vault markdown links (0 found)                                 PASS
   O6  External links (0 found)                                             PASS
   O7  Theme + accent (Tokyo Night + #663399)                               PASS
@@ -612,7 +612,7 @@ The profile field is forecast-scoped; M3.3 ships only `operator_side` semantics.
 
 ```bash
 # Operator just forked a new vault + ran ./setup.sh per T5's first-open runbook
-cd ~/lattice/my-new-vault.aDNA/
+cd ~/aDNA/my-new-vault.aDNA/
 
 # After setup completes, verify integration health
 ./how/skills/skill_obsidian_integration_test --vault . --profile default
@@ -623,10 +623,10 @@ cd ~/lattice/my-new-vault.aDNA/
 ### Example 2: Cross-vault audit (operator iterates over all aDNA vaults)
 
 ```bash
-cd ~/lattice/
+cd ~/aDNA/
 for vault in *.aDNA/; do
     echo "=== $vault ==="
-    ~/lattice/aDNA.aDNA/how/skills/skill_obsidian_integration_test --vault "$PWD/$vault" --profile default
+    ~/aDNA/aDNA.aDNA/how/skills/skill_obsidian_integration_test --vault "$PWD/$vault" --profile default
 done
 ```
 

@@ -28,18 +28,18 @@ tags: [artifact, mission_deliverable, m03, obj5, verification_harness, v1_v13, h
 
 | # | Check | Command | Expected | Actual | Verdict |
 |---|---|---|---|---|---|
-| V1 | `.adna/` is real directory, not symlink | `test -d ~/lattice/.adna -a ! -L ~/lattice/.adna && echo OK` | `OK` | OK | **PASS** |
-| V2 | `.adna/MANIFEST.md` has `role: template` | `grep '^role: template' ~/lattice/.adna/MANIFEST.md` | `role: template` | `role: template` | **PASS** |
-| V3 | `adna/` (old top-level wrapper) does not exist | `! test -d ~/lattice/adna && echo OK` | `OK` | OK | **PASS** |
-| V4 | `.adna/` git repo clean + on `main` + tracking origin | `git -C ~/lattice/.adna status` | clean, main, up to date | clean working tree; branch `main`; tracking `origin/main` | **PASS** |
-| V5 | `.adna/CLAUDE.md` exists at flat location (not nested `.adna/.adna/`) | `test -f ~/lattice/.adna/CLAUDE.md && ! test -f ~/lattice/.adna/.adna/CLAUDE.md && echo OK` | `OK` | OK | **PASS** |
-| V6 | `.adna/CHANGELOG.md` shows v7.0 entry | `head -50 ~/lattice/.adna/CHANGELOG.md \| grep -F '[v7.0]'` | returns v7.0 heading line | `## [v7.0] — YYYY-MM-DD` (M06 fills date) | **PASS** |
-| V7 | `.github/deploy_manifest.yaml` in new location | `test -f ~/lattice/.adna/.github/deploy_manifest.yaml && ! test -f ~/lattice/.adna/deploy_manifest.yaml && echo OK` | `OK` | OK | **PASS** |
-| V8 | `template_workspace_claude.md` exists | `test -f ~/lattice/.adna/how/templates/template_workspace_claude.md && echo OK` | `OK` | OK | **PASS** |
-| V9 | `skill_workspace_init.md` is formally retired | `grep '^status:' ~/lattice/.adna/how/skills/skill_workspace_init.md` | `status: retired` | `status: retired  # formally retired in aDNA v7.0...` | **PASS** |
-| V10 | `skill_workspace_upgrade.md` no longer creates symlink | `! grep -F 'ln -s' ~/lattice/.adna/how/skills/skill_workspace_upgrade.md` | empty (grep finds nothing) | 0 hits | **PASS** |
-| V11 | Project vaults intact and operable | `ls ~/lattice/*.aDNA/CLAUDE.md \| wc -l` | matches project count | 20 (Stanley's 20 active `.aDNA/` projects) | **PASS** |
-| V12 | Workspace router loads correctly | Open `claude` from `~/lattice/`, observe greeting | Berthier (workspace) greets + lists projects | **Frontmatter syntax PASS** (per Risk 3 mitigation); actual interactive greeting test requires fresh agent session (operator-verifies) | **PASS (syntax)** |
+| V1 | `.adna/` is real directory, not symlink | `test -d ~/aDNA/.adna -a ! -L ~/aDNA/.adna && echo OK` | `OK` | OK | **PASS** |
+| V2 | `.adna/MANIFEST.md` has `role: template` | `grep '^role: template' ~/aDNA/.adna/MANIFEST.md` | `role: template` | `role: template` | **PASS** |
+| V3 | `adna/` (old top-level wrapper) does not exist | `! test -d ~/aDNA/adna && echo OK` | `OK` | OK | **PASS** |
+| V4 | `.adna/` git repo clean + on `main` + tracking origin | `git -C ~/aDNA/.adna status` | clean, main, up to date | clean working tree; branch `main`; tracking `origin/main` | **PASS** |
+| V5 | `.adna/CLAUDE.md` exists at flat location (not nested `.adna/.adna/`) | `test -f ~/aDNA/.adna/CLAUDE.md && ! test -f ~/aDNA/.adna/.adna/CLAUDE.md && echo OK` | `OK` | OK | **PASS** |
+| V6 | `.adna/CHANGELOG.md` shows v7.0 entry | `head -50 ~/aDNA/.adna/CHANGELOG.md \| grep -F '[v7.0]'` | returns v7.0 heading line | `## [v7.0] — YYYY-MM-DD` (M06 fills date) | **PASS** |
+| V7 | `.github/deploy_manifest.yaml` in new location | `test -f ~/aDNA/.adna/.github/deploy_manifest.yaml && ! test -f ~/aDNA/.adna/deploy_manifest.yaml && echo OK` | `OK` | OK | **PASS** |
+| V8 | `template_workspace_claude.md` exists | `test -f ~/aDNA/.adna/how/templates/template_workspace_claude.md && echo OK` | `OK` | OK | **PASS** |
+| V9 | `skill_workspace_init.md` is formally retired | `grep '^status:' ~/aDNA/.adna/how/skills/skill_workspace_init.md` | `status: retired` | `status: retired  # formally retired in aDNA v7.0...` | **PASS** |
+| V10 | `skill_workspace_upgrade.md` no longer creates symlink | `! grep -F 'ln -s' ~/aDNA/.adna/how/skills/skill_workspace_upgrade.md` | empty (grep finds nothing) | 0 hits | **PASS** |
+| V11 | Project vaults intact and operable | `ls ~/aDNA/*.aDNA/CLAUDE.md \| wc -l` | matches project count | 20 (Stanley's 20 active `.aDNA/` projects) | **PASS** |
+| V12 | Workspace router loads correctly | Open `claude` from `~/aDNA/`, observe greeting | Berthier (workspace) greets + lists projects | **Frontmatter syntax PASS** (per Risk 3 mitigation); actual interactive greeting test requires fresh agent session (operator-verifies) | **PASS (syntax)** |
 | V13 | Project router loads correctly | Open `claude` from any `.aDNA/`, observe greeting | Project persona greets correctly | **Frontmatter syntax PASS** (`.adna/CLAUDE.md` YAML parses cleanly via python3 yaml.safe_load); actual interactive greeting test requires fresh agent session (operator-verifies) | **PASS (syntax)** |
 
 ## V12/V13 special handling (per Risk 3 mitigation in M03 spec refinement)
@@ -54,11 +54,11 @@ V12/V13 by launching a new agent. Per M03 spec Obj 5 failure-handling clause:
 > roll back the structural flatten.
 
 Applied: validated frontmatter syntax via `python3 -c "import yaml; yaml.safe_load(...)"`
-on `/Users/stanley/lattice/.adna/CLAUDE.md` and `/Users/stanley/lattice/CLAUDE.md`.
+on `/Users/stanley/aDNA/.adna/CLAUDE.md` and `/Users/stanley/aDNA/CLAUDE.md`.
 Both parse cleanly. No syntax-level rollback indication.
 
 **Operator verification (optional)**: at Stanley's next fresh `claude` session
-launched from `~/lattice/` and from any `.aDNA/` subdirectory, confirm the
+launched from `~/aDNA/` and from any `.aDNA/` subdirectory, confirm the
 respective Berthier-workspace-router and project-persona greetings appear as
 expected. If either fails interactively (with valid syntax), it's a content-level
 diagnostic issue (CLAUDE.md body change needed) rather than a flatten rollback.

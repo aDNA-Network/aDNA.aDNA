@@ -1,7 +1,7 @@
 ---
 type: campaign
 campaign_id: campaign_lattice_workspace_ux
-title: "Lattice Workspace UX — Dynamic node.aDNA Bootstrap + ~/lattice/ as Obsidian Vault"
+title: "Lattice Workspace UX — Dynamic node.aDNA Bootstrap + ~/aDNA/ as Obsidian Vault"
 owner: stanley
 status: completed
 phase: completed  # was phase: 1; flipped at M-LWX-03 S2 Phase K (2026-05-13T07:00Z+); 3/3 missions closed, mini-campaign close ratified
@@ -27,7 +27,7 @@ opens_session: session_stanley_20260512_221833_mlwx02_s1
 scope_reframe:
   date: 2026-05-12
   session: session_stanley_20260512_221833_mlwx02_s1
-  summary: "M-LWX-02 reframed under Option C (no rename) per operator architectural review during plan-mode. M-LWX-02 deliverables are now additive expansion of node.aDNA/ (HOME.md + workspace.json + ADR-001 + README section). The original M04b Obj 3 outer-workspace-vault spec is preserved as the input spec; M-LWX-02 implements its intent without standing up ~/lattice/.obsidian/. See plan at /Users/stanley/.claude/plans/please-read-the-claude-md-composed-wigderson.md."
+  summary: "M-LWX-02 reframed under Option C (no rename) per operator architectural review during plan-mode. M-LWX-02 deliverables are now additive expansion of node.aDNA/ (HOME.md + workspace.json + ADR-001 + README section). The original M04b Obj 3 outer-workspace-vault spec is preserved as the input spec; M-LWX-02 implements its intent without standing up ~/aDNA/.obsidian/. See plan at /Users/stanley/.claude/plans/please-read-the-claude-md-composed-wigderson.md."
 amendments:
   - date: 2026-05-12T22:40Z+
     session: session_stanley_20260512_221833_mlwx02_s1
@@ -38,12 +38,12 @@ amendments:
     session: session_stanley_20260513_005300_mlwx01_s2
     target: mission_lwx_01_dynamic_bootstrap_interview
     type: mission_close
-    summary: "M-LWX-01 closed at S2 (2 actual sessions vs 2-3 estimated). Obj 5 sandbox smoke at `/tmp/sandbox_lwx_01/` with mirror-this-node values (per D-Smoke) confirmed 9/9 verification-matrix gates PASS; HOME.md `{{VARS}}` substitution clean (0 residual); workspace.default.json HOME.md refs intact (3 of 3); structural section diff matches gold (16 visible headers). Obj 6 lightweight AAR + extended findings appendix landed (4 patterns + 3 surprises + 3 conceptual contributions + 5 items deferred). 5 findings route to M-LWX-03 cross-graph findings memo or follow-up upstream patches: (1) NEW substitution-into-HTML-comments source-bloat (4.9KB on 8KB file; render-invisible; fix candidate: rephrase inline comments to plain prose — would be 4th instance of additive-upstream pattern); (2) workspace router procedural list gap carried from S1; (3) hostname substitution semantics carried from S1; (4) identity-file create-vs-pre-exist asymmetry surfaced by smoke; (5) node-skills + what/inventory/ not in .adna/ upstream — out of M-LWX-01 scope, flag to v2 M05. Conceptual contribution: 3rd instance of single-commit additive upstream pattern (after ADR-008 + e3b3bcc); pattern now settled. Production-comparison smoke (mirror-this-node + structural diff vs working example) generalizes as canonical smoke pattern for template-extraction missions. Hard constraints honored: zero ~/lattice/node.aDNA/ mutation (HEAD `1032d8d` unchanged); zero ~/lattice/.adna/ upstream mutation (HEAD `c32930e` unchanged); sandbox content lives only in /tmp/. Phase 1 progress: 2/2 missions closed (M-LWX-01 + M-LWX-02); M-LWX-03 unblocked, awaits operator authorization per Standing Order #1."
+    summary: "M-LWX-01 closed at S2 (2 actual sessions vs 2-3 estimated). Obj 5 sandbox smoke at `/tmp/sandbox_lwx_01/` with mirror-this-node values (per D-Smoke) confirmed 9/9 verification-matrix gates PASS; HOME.md `{{VARS}}` substitution clean (0 residual); workspace.default.json HOME.md refs intact (3 of 3); structural section diff matches gold (16 visible headers). Obj 6 lightweight AAR + extended findings appendix landed (4 patterns + 3 surprises + 3 conceptual contributions + 5 items deferred). 5 findings route to M-LWX-03 cross-graph findings memo or follow-up upstream patches: (1) NEW substitution-into-HTML-comments source-bloat (4.9KB on 8KB file; render-invisible; fix candidate: rephrase inline comments to plain prose — would be 4th instance of additive-upstream pattern); (2) workspace router procedural list gap carried from S1; (3) hostname substitution semantics carried from S1; (4) identity-file create-vs-pre-exist asymmetry surfaced by smoke; (5) node-skills + what/inventory/ not in .adna/ upstream — out of M-LWX-01 scope, flag to v2 M05. Conceptual contribution: 3rd instance of single-commit additive upstream pattern (after ADR-008 + e3b3bcc); pattern now settled. Production-comparison smoke (mirror-this-node + structural diff vs working example) generalizes as canonical smoke pattern for template-extraction missions. Hard constraints honored: zero ~/aDNA/node.aDNA/ mutation (HEAD `1032d8d` unchanged); zero ~/aDNA/.adna/ upstream mutation (HEAD `c32930e` unchanged); sandbox content lives only in /tmp/. Phase 1 progress: 2/2 missions closed (M-LWX-01 + M-LWX-02); M-LWX-03 unblocked, awaits operator authorization per Standing Order #1."
 seeded_by:
   campaign: campaign_adna_v2_infrastructure
   mission: mission_adna_infra_p1_04b_workspace_ux_planning
   session: session_stanley_20260512_185037_adna_v2_m04b_amendment
-  rationale: "Campaign Amendment Session — operator surfaced two follow-on threads from M04 close (dynamic node.aDNA bootstrap UX + ~/lattice/ as Obsidian vault) that should be addressed before v2 M05 opens. M04b (planning mission in v2) was added to plan this mini-campaign; this stub is seeded at the amendment session for the mini-campaign's master + mission tree to be finalized at M04b's Obj 4."
+  rationale: "Campaign Amendment Session — operator surfaced two follow-on threads from M04 close (dynamic node.aDNA bootstrap UX + ~/aDNA/ as Obsidian vault) that should be addressed before v2 M05 opens. M04b (planning mission in v2) was added to plan this mini-campaign; this stub is seeded at the amendment session for the mini-campaign's master + mission tree to be finalized at M04b's Obj 4."
 opens_at: "campaign_adna_v2_infrastructure M04b close (mini-campaign mission tree finalized; operator authorizes M-LWX-01 opening per Standing Order #1)"
 blocks_in_parent: [mission_adna_infra_p2_05_publish_skill_rewrite]  # M05 of v2 deferred until this mini-campaign closes (soft gate — operator may override)
 tags: [campaign, planned, adna, workspace_ux, dynamic_bootstrap, obsidian_vault, side_campaign, mini_campaign, lattice_workspace, ux, node_adna_extension, p1_5]
@@ -78,18 +78,18 @@ This mini-campaign:
    stack details (beyond what auto-detection captures), hardware specifics, and
    desired lattice connections. Outputs land in the new vault's MANIFEST, STATE,
    inventory, and identity files.
-2. **`~/lattice/` as Obsidian vault** — adds a minimal `.obsidian/` config + home-page
+2. **`~/aDNA/` as Obsidian vault** — adds a minimal `.obsidian/` config + home-page
    gallery + LP marketplace link at the workspace root, so the operator can open
-   `~/lattice/` itself as a vault and use the Obsidian UI + integrated terminal to
+   `~/aDNA/` itself as a vault and use the Obsidian UI + integrated terminal to
    navigate / manage the full context lattice. Inner `.aDNA/` vaults are excluded
    via `.obsidianignore` to avoid index conflicts.
 
 When this campaign closes, an operator running `claude` for the first time in
-`~/lattice/` (or migrating an existing setup) should see:
+`~/aDNA/` (or migrating an existing setup) should see:
 - An interview-driven bootstrap that produces a richer `node.aDNA/` than M04's static
   fork (with their actual purpose, stack details, and chosen lattice connections written
   in, not the M01 Obj 3 design's example values)
-- An Obsidian-openable `~/lattice/` vault with a home page that gallery-displays the
+- An Obsidian-openable `~/aDNA/` vault with a home page that gallery-displays the
   catalog of context graphs on the node and links to the LP marketplace
 
 ## Context
@@ -99,7 +99,7 @@ design's static bootstrap + auto-detect inventory. M04's audit revealed that the
 itself defaulted operator-specific fields (purpose, connections, persona tone
 preferences) rather than calling for an interview — and the operator confirmed at M04
 close that the intended UX is the interview-driven variant. Separately, the operator
-wants `~/lattice/` itself to be an Obsidian vault, which is a workspace-scope concern
+wants `~/aDNA/` itself to be an Obsidian vault, which is a workspace-scope concern
 M04 didn't touch.
 
 Both threads consume M04's outputs:
@@ -123,9 +123,9 @@ skill rewrite).
 - Author `skill_node_bootstrap_interview.md` (interview-driven bootstrap)
 - Update workspace router Step 0.3 to invoke the interview skill on first-run-with-projects
 - Optionally upstream `skill_node_bootstrap_interview.md` to `.adna/how/skills/` per D5
-- Create `~/lattice/.obsidian/` minimal config (4-5 config files)
-- Create `~/lattice/HOME.md` (or `README.md`) home-page gallery reading from `node.aDNA/what/inventory/inventory_vaults.yaml`
-- Create `~/lattice/.obsidianignore` excluding all `*.aDNA/` subfolders
+- Create `~/aDNA/.obsidian/` minimal config (4-5 config files)
+- Create `~/aDNA/HOME.md` (or `README.md`) home-page gallery reading from `node.aDNA/what/inventory/inventory_vaults.yaml`
+- Create `~/aDNA/.obsidianignore` excluding all `*.aDNA/` subfolders
 - Link to LP context-graph registry/marketplace (web page per D4 default)
 - Integration test: re-run bootstrap + Obsidian setup on clean slate (snapshot/restore OR test machine)
 - Cross-graph findings → v2 main campaign + `.adna/` template upstream contributions (where D5 resolves "upstream")
@@ -134,7 +134,7 @@ skill rewrite).
 ### Out of Scope
 
 - Obsidian extension for LP marketplace (deferred — D4 default A = web link only)
-- Curated community-plugin pre-installation in `~/lattice/.obsidian/` (operator opt-in later)
+- Curated community-plugin pre-installation in `~/aDNA/.obsidian/` (operator opt-in later)
 - Changes to existing `.aDNA/` vault Obsidian configurations (they retain their own `.obsidian/`)
 - Changes to M04's node.aDNA outputs (the audit baseline is preserved; this mini-campaign
   EXTENDS M04 without re-running it)
@@ -150,7 +150,7 @@ skill rewrite).
 | M04 AAR §Items deferred #2 (rebuild_procedure.md not produced) | open | Evaluated at M04b Obj 1; may resolve via interview-skill spec including rebuild handling |
 | M04 AAR §Items deferred #4 (README.md frontmatter convention exception) | open | Carried forward to M07; not absorbed |
 | Workspace router Step 0.3 dynamic-interview gap | open | M-LWX-01 |
-| `~/lattice/` Obsidian vault setup | not yet open | M-LWX-02 |
+| `~/aDNA/` Obsidian vault setup | not yet open | M-LWX-02 |
 
 ## Phases & Missions (finalized 2026-05-12 by v2 M04b S1)
 
@@ -170,10 +170,10 @@ stubs land in `missions/` (this session); operator-discretionary mini-campaign o
 | Mission | Title | Sessions | D5 disposition | Dependencies | Status |
 |---------|-------|----------|---|-------------|--------|
 | **M-LWX-01** | Dynamic `node.aDNA/` bootstrap interview implementation + `.adna/HOME.md` template + `.adna/.obsidian/workspace.default.json` HOME.md ref fix | 2 (actual) | **upstream** (`.adna/how/skills/skill_node_bootstrap_interview.md` + `.adna/HOME.md` template + `.adna/.obsidian/workspace.default.json` update + 1-line workspace router Step 0.3 prompt) | v2 M04b close (Obj 2 spec); M-LWX-02 close (working example for template-extraction) | **completed** (S1 2026-05-12T23:19Z + S2 close 2026-05-13T01:05Z+ at `session_stanley_20260513_005300_mlwx01_s2`; 8/8 deliverables; 9/9 sandbox smoke gates PASS; 5 findings → M-LWX-03 cross-graph; AAR at `missions/artifacts/aar_mlwx_01_dynamic_bootstrap_interview.md`; smoke results at `missions/artifacts/mlwx_01_obj5_smoke_results.md`; 3rd instance of single-commit additive upstream pattern after ADR-008 + `e3b3bcc`) |
-| **M-LWX-02** | `node.aDNA/` role expansion as integrated lattice-home Obsidian vault (Option C, no rename) | 1 | **local** to `node.aDNA/` (HOME.md + workspace.json + ADR-001 + README section + CHANGELOG v0.2) | v2 M04b close (Obj 3 spec — reframed under Option C); no `~/lattice/` mutations | **completed** (single-session 2026-05-12T22:18Z → 22:35Z+ at `session_stanley_20260512_221833_mlwx02_s1`; 8/8 deliverables; 25/25 agent-side smoke PASS; 7 operator-side smoke checks deferred; AAR at `missions/artifacts/aar_mlwx_02_node_vault_role_expansion.md`; ADR-001 ratified `accepted`) |
+| **M-LWX-02** | `node.aDNA/` role expansion as integrated lattice-home Obsidian vault (Option C, no rename) | 1 | **local** to `node.aDNA/` (HOME.md + workspace.json + ADR-001 + README section + CHANGELOG v0.2) | v2 M04b close (Obj 3 spec — reframed under Option C); no `~/aDNA/` mutations | **completed** (single-session 2026-05-12T22:18Z → 22:35Z+ at `session_stanley_20260512_221833_mlwx02_s1`; 8/8 deliverables; 25/25 agent-side smoke PASS; 7 operator-side smoke checks deferred; AAR at `missions/artifacts/aar_mlwx_02_node_vault_role_expansion.md`; ADR-001 ratified `accepted`) |
 
 **Phase exit gate**: dynamic bootstrap implemented + Obsidian vault config live at
-`~/lattice/.obsidian/` + HOME.md gallery rendering from `inventory_vaults.yaml`.
+`~/aDNA/.obsidian/` + HOME.md gallery rendering from `inventory_vaults.yaml`.
 M-LWX-01 + M-LWX-02 are independent (Obj 2 ships upstream, Obj 3 stays local) — they
 may run in any order or in parallel.
 
@@ -222,15 +222,15 @@ warranted; mini-campaign AAR; v2 resumes at M05 (publish-skill rewrite).
 | Check | Method | Gate? |
 |-------|--------|-------|
 | Phase 1: bootstrap interview runs end-to-end on test machine OR snapshot | M-LWX-03 integration test | Yes |
-| Phase 1: Obsidian vault opens at `~/lattice/` without index conflicts | M-LWX-03 integration test | Yes |
+| Phase 1: Obsidian vault opens at `~/aDNA/` without index conflicts | M-LWX-03 integration test | Yes |
 | Phase 2: cross-graph findings memo authored | M-LWX-03 produces `cross_graph_findings_to_v2.md` | Yes |
 
 ### Campaign Validation
 
 | Check | Method |
 |-------|--------|
-| Operator can run `claude` from `~/lattice/` and trigger interview-driven bootstrap | M-LWX-03 integration test (manual operator walk) |
-| Operator can open `~/lattice/` as Obsidian vault and see context-graph gallery | M-LWX-03 integration test |
+| Operator can run `claude` from `~/aDNA/` and trigger interview-driven bootstrap | M-LWX-03 integration test (manual operator walk) |
+| Operator can open `~/aDNA/` as Obsidian vault and see context-graph gallery | M-LWX-03 integration test |
 | Findings integrated back to v2 main campaign as amendment entry | M-LWX-03 produces v2 amendment text; M04b S2 (or v2 M07) lands it |
 
 ## Persona

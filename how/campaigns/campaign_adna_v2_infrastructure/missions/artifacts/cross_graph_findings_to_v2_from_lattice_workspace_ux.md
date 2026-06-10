@@ -55,9 +55,9 @@ The 4-instance lineage settles the pattern as workspace-canonical: small additiv
 
 ### §1.2 — M-LWX-01 Finding 4 (carried from S1): Workspace router Step 0.3 procedural-list amendment → RESOLVED via D-RouterFix
 
-**Source**: M-LWX-01 S1 + S2 surfaced that `~/lattice/CLAUDE.md` Step 0.3's "If the operator accepts" 5-step procedural list (lines 28-33) skipped from `skill_inventory_refresh.md` (Step 2) directly to "Set the persona to Hestia" (Step 3) — the new `skill_node_bootstrap_interview.md` (commit `8673383`) was never invoked. The 19 interview questions never ran on a fresh fork.
+**Source**: M-LWX-01 S1 + S2 surfaced that `~/aDNA/CLAUDE.md` Step 0.3's "If the operator accepts" 5-step procedural list (lines 28-33) skipped from `skill_inventory_refresh.md` (Step 2) directly to "Set the persona to Hestia" (Step 3) — the new `skill_node_bootstrap_interview.md` (commit `8673383`) was never invoked. The 19 interview questions never ran on a fresh fork.
 
-**Resolution**: Local edit to `~/lattice/CLAUDE.md` Step 0.3: inserted a new Step 3 invoking `skill_node_bootstrap_interview.md` (19-question interview; ~4-7 min); subsequent steps renumbered (Step 3 → 4, Step 4 → 5, Step 5 → 6).
+**Resolution**: Local edit to `~/aDNA/CLAUDE.md` Step 0.3: inserted a new Step 3 invoking `skill_node_bootstrap_interview.md` (19-question interview; ~4-7 min); subsequent steps renumbered (Step 3 → 4, Step 4 → 5, Step 5 → 6).
 
 **Scope discipline**: local-only edit (workspace router is not in `.adna/` template — per ADR-007 it's operator-customizable). No upstream propagation needed. Other operators' workspace routers stay at whatever state they're at; this fix benefits this node only. Future workspace router amendments may propagate via `skill_workspace_upgrade.md` (v2 M07 cleanup item).
 
@@ -152,7 +152,7 @@ Both M-LWX-01 S2 and M-LWX-03 Obj 1 used "mirror-this-node" sandbox methodology 
 | `mlwx_03_obj1_refork_test_results.md` | F-Obj1-1 / F-Obj1-2 / F-Obj1-3 source |
 | `mlwx_03_obj2_outer_vault_test_results.md` | F-Obj2-1 / F-Obj2-2 / F-Obj2-3 source |
 | `LatticeProtocol/adna` `202c9ec` | 4th additive-upstream pattern instance — D-F1Fix resolution |
-| `~/lattice/CLAUDE.md` Step 0.3 (lines 28-34 post-D-RouterFix) | Local workspace router amendment — D-RouterFix resolution |
+| `~/aDNA/CLAUDE.md` Step 0.3 (lines 28-34 post-D-RouterFix) | Local workspace router amendment — D-RouterFix resolution |
 | `aDNA.aDNA/how/campaigns/campaign_adna_v3_ecosystem_compliance/campaign_adna_v3_ecosystem_compliance.md` | v3-EC successor — consumes F-4 + F-8 |
 | `/Users/stanley/.claude/plans/please-read-the-claude-md-shiny-cherny.md` | M-LWX-03 plan with D-StdADR / D-F1Fix / D-RouterFix / D-S1Scope resolutions |
 

@@ -89,7 +89,7 @@ tags: [session, m06, s2, destructive_execution, campaign_adna_v2_infrastructure,
 - **Created (aDNA.aDNA)**: `what/decisions/adr_011_aDNA_semver_discipline.md` + `how/campaigns/.../artifacts/m06_obj2_changelog_drift_reconciliation.md` + `how/campaigns/.../artifacts/aar_m06_v7_governance_tag.md` + this session file
 - **Modified (aDNA.aDNA)**: STATE.md + campaign master v2 (close + 19th amendment) + M06 mission spec (frontmatter close) + 4 M08a artifact frontmatter flips + Daedalus coord memo frontmatter flip + ADR-006 amendment edits + v8 campaign master (M1.2 amendments append)
 - **Upstream `.adna` (LatticeProtocol/aDNA)**: pre-tag commit `27e6395` (10 files); annotated `v7.0` tag SHA `3681f76` pushed; GitHub release published
-- **Untouched**: `node.aDNA/` (HEAD `411660e`); workspace router `/Users/stanley/lattice/CLAUDE.md`; 4 partner-affiliated embargo memos (Wilhelm × 2 + SuperLeague + SIP all stay `status: draft` per D5); all other partner vaults
+- **Untouched**: `node.aDNA/` (HEAD `411660e`); workspace router `/Users/stanley/aDNA/CLAUDE.md`; 4 partner-affiliated embargo memos (Wilhelm × 2 + SuperLeague + SIP all stay `status: draft` per D5); all other partner vaults
 - **At session close**: this session file `active/ → history/2026-05/`
 
 ---

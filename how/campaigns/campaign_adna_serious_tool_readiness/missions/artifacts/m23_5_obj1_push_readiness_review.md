@@ -14,9 +14,9 @@ sources:
   - "git log --oneline origin/main..HEAD (1 commit unpushed: 12b2f4a M2.3 S3)"
   - "git log origin/main 5e1cd45^..origin/main (5 v8 P2 commits already on origin: 5e1cd45 M2.1 S3 / 262ec39 M2.2 / c6669ff M1.5 / cd54d3c M2.3 S1 / 469800e M2.3 S2)"
   - aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj0_ecosystem_matrix.md   # 19-vault per-change blast-radius template adapted to 36-vault inventory
-  - "/Users/stanley/lattice/node.aDNA/what/inventory/inventory_vaults.yaml (36 vault entries post-M2.3 fold-in)"
-  - "/Users/stanley/lattice/CLAUDE.md (workspace router; cross-vault topology)"
-  - "/Users/stanley/lattice/.adna/how/docs/upgrade_v6_to_v7.md (canonical v6→v7 reference for context-graph interaction patterns)"
+  - "/Users/stanley/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml (36 vault entries post-M2.3 fold-in)"
+  - "/Users/stanley/aDNA/CLAUDE.md (workspace router; cross-vault topology)"
+  - "/Users/stanley/aDNA/.adna/how/docs/upgrade_v6_to_v7.md (canonical v6→v7 reference for context-graph interaction patterns)"
 tags: [artifact, m23_5, push_readiness_review, v8_p2_delta, 6_commit_cumulative, change_classification, per_vault_blast_radius, 36_vault_ecosystem, backward_compatibility_audit, context_graph_interaction, go_no_go_recommendation]
 related_artifacts:
   - ../mission_adna_str_p2_m23_5_push_readiness_review.md
@@ -295,9 +295,9 @@ The `aDNA.aDNA` vault is a *consumer* of the `.adna/` template at the topology l
 - [[m23_5_obj3_push_readiness_checklist.md|m23_5_obj3_push_readiness_checklist.md]] (sibling; concrete GO/NO-GO gate)
 - [[../../campaign_adna_v2_infrastructure/missions/artifacts/m01_obj0_ecosystem_matrix.md|m01_obj0_ecosystem_matrix.md]] (template for §2-§3)
 - [[../../campaign_adna_v2_infrastructure/missions/artifacts/m01_obj6_version_bump_checklist.md|m01_obj6_version_bump_checklist.md]] (§0 + §7 reference)
-- `~/lattice/.adna/how/docs/upgrade_v6_to_v7.md` (canonical v6→v7 reference)
-- `~/lattice/CLAUDE.md` (workspace router; 24-project topology)
-- `~/lattice/node.aDNA/what/inventory/inventory_vaults.yaml` (36-vault canonical inventory)
+- `~/aDNA/.adna/how/docs/upgrade_v6_to_v7.md` (canonical v6→v7 reference)
+- `~/aDNA/CLAUDE.md` (workspace router; 24-project topology)
+- `~/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml` (36-vault canonical inventory)
 - [[../../../what/decisions/adr_005_three_way_vault_boundary.md|ADR-005]] (three-way vault boundary; vault-scope reasoning)
 - [[../../../what/decisions/adr_011_aDNA_semver_discipline.md|ADR-011]] (two-track semver policy)
 - [[../../../what/decisions/adr_016_per_mission_context_budget.md|ADR-016 amended at M2.3 S2]] (governance change at C-1)

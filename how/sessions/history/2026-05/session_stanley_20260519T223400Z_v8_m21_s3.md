@@ -18,9 +18,9 @@ files_created:
   - how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_m21_context_audit_split.md
   - how/sessions/active/session_stanley_20260519T223400Z_v8_m21_s3.md  # this file (moves to history at close)
 external_files_modified:
-  - /Users/stanley/lattice/node.aDNA/what/context/token_baselines.md  # v0.1.1 + split-as-pattern addendum
-  - /Users/stanley/lattice/node.aDNA/what/context/token_baselines.yaml  # revision history v0.1.1+addendum row
-  - /Users/stanley/lattice/node.aDNA/what/inventory/inventory_vaults.yaml  # token_baselines row note refresh
+  - /Users/stanley/aDNA/node.aDNA/what/context/token_baselines.md  # v0.1.1 + split-as-pattern addendum
+  - /Users/stanley/aDNA/node.aDNA/what/context/token_baselines.yaml  # revision history v0.1.1+addendum row
+  - /Users/stanley/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml  # token_baselines row note refresh
 plan: /Users/stanley/.claude/plans/please-read-the-claude-md-fizzy-alpaca.md
 completed: 2026-05-19T23:30Z
 ---

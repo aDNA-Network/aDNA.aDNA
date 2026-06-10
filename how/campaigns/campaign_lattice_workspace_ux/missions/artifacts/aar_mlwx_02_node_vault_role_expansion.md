@@ -74,7 +74,7 @@ Mission closed in **single-session execution** at `session_stanley_20260512_2218
 | 8 | ADR-001 captures rename rejection + outer-vault rejection rationale | ✅ |
 | 9 | `node.aDNA/README.md` has new "Opening this vault in Obsidian" section | ✅ |
 | 10 | Obsidian opens `node.aDNA/` cleanly (manual smoke) | ⏳ DEFERRED (operator-side; 7 manual checks pending) |
-| 11 | No `~/lattice/` workspace-root mutations | ✅ |
+| 11 | No `~/aDNA/` workspace-root mutations | ✅ |
 | 12 | No upstream `.adna/` mutations | ✅ (HEAD `e3b3bcc` stands) |
 | 13 | No partner-vault touches | ✅ |
 | 14 | No M04 audit output mutation | ✅ |

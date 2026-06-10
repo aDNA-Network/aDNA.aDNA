@@ -93,12 +93,12 @@ Three live worked examples ratified at P4.M1 (2026-05-25):
 
 ### ST-4: Workspace Standing Rule slot reservation
 
-A workspace-level Standing Rule will land at `~/lattice/CLAUDE.md` at P5.M3 declaring ISS as the workspace-canonical operator-decision-gate authoring pattern + pointer to the canonical skill at `aDNA.aDNA/how/skills/skill_create_iss.md`. This ADR **pre-authorizes the rule's existence at the workspace router** (so future ADRs need not re-litigate whether ISS belongs there); the **wording itself is deferred to P5.M3** per dependency chain (P5.M3 has the latitude to refine based on P5.M1 + this ADR's evidence).
+A workspace-level Standing Rule will land at `~/aDNA/CLAUDE.md` at P5.M3 declaring ISS as the workspace-canonical operator-decision-gate authoring pattern + pointer to the canonical skill at `aDNA.aDNA/how/skills/skill_create_iss.md`. This ADR **pre-authorizes the rule's existence at the workspace router** (so future ADRs need not re-litigate whether ISS belongs there); the **wording itself is deferred to P5.M3** per dependency chain (P5.M3 has the latitude to refine based on P5.M1 + this ADR's evidence).
 
 Constraints the P5.M3 wording must honor:
 - Workspace router row discipline (Workspace Standing Rule 7): each row ≈ 1 line; operational state lives in project STATE.md, not the router.
 - Pointer-not-content: the Standing Rule cites canonical homes, never restates them.
-- Discoverability primary: agents reading `~/lattice/CLAUDE.md` for the first time should be able to find ISS in one read.
+- Discoverability primary: agents reading `~/aDNA/CLAUDE.md` for the first time should be able to find ISS in one read.
 
 ### ST-5: Forge ecosystem integration slot
 

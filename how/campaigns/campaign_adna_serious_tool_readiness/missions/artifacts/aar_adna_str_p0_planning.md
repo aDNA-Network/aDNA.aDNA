@@ -81,7 +81,7 @@ Per Standing Order #11 (campaign-level) and D6 (per-phase decadal + planning-ses
   - That `who/reviewers/` exists or why the 5 personas matter
   - That mini-campaign `campaign_lattice_workspace_ux` is what produced the 21 findings the master refers to
   - The relationship between v2 (predecessor) + v8 (this) + v3-EC (successor)
-  - That `LatticeTerminal.aDNA` lives at `/Users/stanley/lattice/LatticeTerminal.aDNA/` (no vault-relative path)
+  - That `LatticeTerminal.aDNA` lives at `/Users/stanley/aDNA/LatticeTerminal.aDNA/` (no vault-relative path)
 - **Amendment proposed**: M2.4 AGENTS.md hardening pass should produce a Newcomer-Friendly campaign-overview file at `how/campaigns/campaign_adna_serious_tool_readiness/README.md` (or `OVERVIEW.md`) that's flat prose + answers the 5 newcomer-stress questions. Defer to Tier 2 (Phase 2).
 
 ### 5-Persona Aggregate

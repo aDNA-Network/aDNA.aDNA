@@ -49,7 +49,7 @@ prerequisite_artifacts:
   - aDNA.aDNA/what/decisions/adr_016_per_mission_context_budget.md                                                  # Clause A two-metric budget + Clause B Heavy-File + Clause C empirical
   - aDNA.aDNA/what/decisions/adr_022_tool_use_logging.md                                                            # PostToolUse hook contract
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m245_obj3_measurement_contract.md # M3.x re-measurement trigger conditions (≥ 20-session corpus)
-  - "/Users/stanley/lattice/node.aDNA/what/context/token_baselines.md v0.1.3 Appendix B"                              # AGENTS.md invariants spec
+  - "/Users/stanley/aDNA/node.aDNA/what/context/token_baselines.md v0.1.3 Appendix B"                              # AGENTS.md invariants spec
   # ADR-014 substrate
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/campaign_adna_serious_tool_readiness.md             # ADR roadmap line 310 (ADR-014 forecast = P3/M3.4)
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/CLAUDE.md                                           # Campaign SO #14 in-phase exception clause + #16 verification-handoff mandate

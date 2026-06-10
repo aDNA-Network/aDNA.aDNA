@@ -434,8 +434,8 @@ M3.7 (modular III for Obsidian) runs III cycles against per-vault info pages. T1
 - [[../../../../what/specs/spec_platform_ecosystem.md|spec_platform_ecosystem.md]] — Platform default_partners pattern
 - [[../../../../what/decisions/adr_014_verification_handoff_topology.md|ADR-014]] — verification handoff
 - [[../../../../what/decisions/adr_023_registry_data_projection_contract.md|ADR-023]] — sibling (T11 projection script consumes T10 vault_card frontmatter)
-- `/Users/stanley/lattice/node.aDNA/what/vault_cards/` — live mutation target directory
-- `/Users/stanley/lattice/node.aDNA/what/inventory/inventory_vaults.yaml` — canonical source
+- `/Users/stanley/aDNA/node.aDNA/what/vault_cards/` — live mutation target directory
+- `/Users/stanley/aDNA/node.aDNA/what/inventory/inventory_vaults.yaml` — canonical source
 
 ## Notes
 

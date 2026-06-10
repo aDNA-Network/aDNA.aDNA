@@ -32,7 +32,7 @@ You're an agent. You need a structured operator decision. Minimum path:
 
 ```python
 import sys
-sys.path.insert(0, "/Users/stanley/lattice/SiteForge.aDNA/what/lib/iss/runtime")
+sys.path.insert(0, "/Users/stanley/aDNA/SiteForge.aDNA/what/lib/iss/runtime")
 import generator
 
 # 1. Compose the gate data (one dict).
@@ -48,7 +48,7 @@ data = {
 html = generator.generate("decision_gate_3option", "franklin", "system", data)
 
 # 3. Write it to the canonical landing path; tell the operator to open it.
-open("/Users/stanley/lattice/MoleculeForge.aDNA/how/gates/" + data["gate_id"] + ".html", "w").write(html)
+open("/Users/stanley/aDNA/MoleculeForge.aDNA/how/gates/" + data["gate_id"] + ".html", "w").write(html)
 ```
 
 That's the whole inner loop. The rest of this exemplar is the full trace, the partner variant, and what to do when something doesn't go to plan.
@@ -68,7 +68,7 @@ You're mid-mission and you reach a point only the operator can resolve (a phase-
 The canonical skill is the T3 anchor — load it only now, not always:
 
 ```
-~/lattice/aDNA.aDNA/how/skills/skill_create_iss.md
+~/aDNA/aDNA.aDNA/how/skills/skill_create_iss.md
 ```
 
 T1 (Workspace Standing Rule 8) told you ISS exists; your vault's `iss/CLAUDE.md` (T2) told you the persona/skin/preset defaults; the skill (T3) tells you the authoring call. Total context ≤ 12 kT (per ADR-029 ST-2 / `discovery_contract.md`).
@@ -115,9 +115,9 @@ Write the result to the **canonical landing path** (ADR-028 §AD-6):
 The operator opens the HTML in a browser and submits. The default `web` tier (T1A) POSTs the answer to a local `gate_receiver`:
 
 ```bash
-PYTHONPATH=/Users/stanley/lattice/SiteForge.aDNA python \
-  /Users/stanley/lattice/SiteForge.aDNA/what/lib/iss/runtime/gate_receiver.py \
-  --port 8766 --gates-root /Users/stanley/lattice/MoleculeForge.aDNA/how/gates
+PYTHONPATH=/Users/stanley/aDNA/SiteForge.aDNA python \
+  /Users/stanley/aDNA/SiteForge.aDNA/what/lib/iss/runtime/gate_receiver.py \
+  --port 8766 --gates-root /Users/stanley/aDNA/MoleculeForge.aDNA/how/gates
 ```
 
 The receiver writes `<gate_id>.output.json` next to the HTML and clears the `.pending` sentinel. If the receiver is unreachable, the gate's **inner fallback chain** (T1B `<a download>` → T2 File-System-Access API → T3 clipboard) takes over with no agent intervention (ADR-028 §AD-5).
@@ -130,7 +130,7 @@ On your next turn, poll for the output file (poll `.output.json` *presence*, not
 
 ```python
 import json
-out = f"/Users/stanley/lattice/MoleculeForge.aDNA/how/gates/{data['gate_id']}.output.json"
+out = f"/Users/stanley/aDNA/MoleculeForge.aDNA/how/gates/{data['gate_id']}.output.json"
 result = json.loads(open(out).read())
 assert result["schema_version"] == "1.0"          # ADR-028 §AD-7
 decision = result["responses"]                     # per-template response shape
@@ -195,7 +195,7 @@ Once the wrapper exists at `<vault>/iss/CLAUDE.md` (with its `federation_ref` bl
 
 - **Canonical skill (T3)** — `aDNA.aDNA/how/skills/skill_create_iss.md` (`status: active`; open/watch siblings `skill_open_iss.md` + `skill_watch_iss.md`)
 - **ADRs** — `aDNA.aDNA/what/decisions/adr_028_iss_architecture.md` · `adr_029_iss_standard_touch.md` · `adr_030_iss_skin_family_default_copy.md`
-- **Workspace discovery (T1)** — `~/lattice/CLAUDE.md` Standing Rule 8
+- **Workspace discovery (T1)** — `~/aDNA/CLAUDE.md` Standing Rule 8
 - **Onboarding exemplar (vault setup)** — `exemplar_consumer_vault_iss_integration.md` (P5.M5)
 - **Protocols** — `SiteForge.aDNA/what/lib/iss/protocols/`: `discovery_contract.md` · `context_passing_protocol.md` · `output_routing_protocol.md` · `t2_wrapper_template.md`
 - **Adaptation guides** — `SiteForge.aDNA/what/lib/iss/adaptation_guides/` (all 8 aDNA pattern categories)

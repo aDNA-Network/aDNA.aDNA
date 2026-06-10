@@ -53,7 +53,7 @@ ADR count is **3, not the 2 anticipated at P1.3** — ADR-030 was added at P6.M4
    - `adr_028_iss_architecture.md` — architecture (AD-1..AD-10) + fallback chain + RLHF JSON output schema v1.0 (adr_005-compatible).
    - `adr_029_iss_standard_touch.md` — canonical skill location + T1/T2/T3 context-load model + Workspace Standing Rule text + consumer-wrapper pattern.
    - `adr_030_iss_skin_family_default_copy.md` — `persona_family` resolution + partner-clean default-copy layer + `provenance_vault_display` + `post_submit_reversibility_text` + `binding`/`constitutional` significance.
-3. **T1 discovery** — Workspace `~/lattice/CLAUDE.md` **Standing Rule 8** (≤ 200-char always-loaded pointer to the skill + the SiteForge pattern path).
+3. **T1 discovery** — Workspace `~/aDNA/CLAUDE.md` **Standing Rule 8** (≤ 200-char always-loaded pointer to the skill + the SiteForge pattern path).
 4. **Four P5.5 cross-vault protocols** at `SiteForge.aDNA/what/lib/iss/protocols/`:
    - `discovery_contract.md` (T1/T2/T3 tier model + token-cost ledger + failure semantics)
    - `context_passing_protocol.md` (4-field authoring-call signature; no-out-of-context-reads doctrine)

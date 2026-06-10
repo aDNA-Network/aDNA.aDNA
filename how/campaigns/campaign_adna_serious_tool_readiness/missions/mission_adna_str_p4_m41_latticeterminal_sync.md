@@ -40,9 +40,9 @@ prerequisite_artifacts:
   # v8 P0 outputs (Phase 4 charter origin)
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/aar_adna_str_p0_planning.md  # P0 AAR; v8 campaign charter
   # LatticeTerminal substrate (read-only)
-  - "/Users/stanley/lattice/LatticeTerminal.aDNA/STATE.md"  # current Phase 3 OPEN; M08 panel-topology-bottom-bar-pivot in flight
-  - "/Users/stanley/lattice/LatticeTerminal.aDNA/CLAUDE.md"  # Spock persona; single-repo Platform.aDNA; ADR-005
-  - "/Users/stanley/lattice/LatticeTerminal.aDNA/what/latticeterminal/install/README.md"  # M1.1 install scaffold; skill_install at .claude/skills/; macOS-first per ADR-019
+  - "/Users/stanley/aDNA/LatticeTerminal.aDNA/STATE.md"  # current Phase 3 OPEN; M08 panel-topology-bottom-bar-pivot in flight
+  - "/Users/stanley/aDNA/LatticeTerminal.aDNA/CLAUDE.md"  # Spock persona; single-repo Platform.aDNA; ADR-005
+  - "/Users/stanley/aDNA/LatticeTerminal.aDNA/what/latticeterminal/install/README.md"  # M1.1 install scaffold; skill_install at .claude/skills/; macOS-first per ADR-019
   # v2 absorbed P4 stub
   - aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/mission_adna_infra_p3_08c_standalone_installer.md  # v2 M08c absorbed by v8 P4
   # v8 P2 doctrinal carries (same as M3.1-M3.7)
