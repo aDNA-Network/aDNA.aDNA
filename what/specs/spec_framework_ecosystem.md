@@ -3,7 +3,7 @@ type: spec
 kind: ecosystem_spec
 name: framework_ecosystem
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-06-10
 version: "0.1"
 status: active
 last_edited_by: agent_stanley
@@ -30,7 +30,7 @@ For III specifically, run `III.aDNA/how/skills/skill_iii_setup.md` (also publish
 
 | Framework | Persona | Methodology | Vault | Consumers | Maturity |
 |-----------|---------|-------------|-------|-----------|----------|
-| `III.aDNA` | Argus Panoptes | Inspect / Introspect / Improve — modular quality improvement loop for text, code, visual, data artifacts; 8 composable modules, 7 domain packs, graduated learning store | `III.aDNA/` | lattice-labs, SiteForge, VideoForge, CanvasForge, wga, LPWhitepaper (all 6 live via `iii/`) | **Production** (Campaign A DG-A closed 9/9 2026-05-08; v0.1.0 + v0.2.0 tags shipped; Campaign B P2 ✅ 2026-05-11 — 5 wrappers live; P3 ✅ 2026-05-12 — MB-6 ✅ skill_iii_setup.md published, MB-7 ✅ vault hygiene, MB-8 ✅ LPWhitepaper wrapper (first 6/7-pack wrapper; first wrapper-managed consumer of `whitepaper_communication`); **DG-B ✅ CLOSED 9/9 2026-05-12** — Campaign B Federation complete end-to-end; 6 consumer wrappers live; airlock-spec consumers register live at MANIFEST.md (5 downstream airlock adopters: aDNA.aDNA ADR-008 + VideoForge + CanvasForge + M08a + node.aDNA). Campaign C P2 partial — MC-3 ✅ AIRLOCK.md v0.2.0; MC-4 next) |
+| `III.aDNA` | Argus Panoptes | Inspect / Introspect / Improve — modular quality improvement loop for text, code, visual, data artifacts; 8 composable modules, 7 domain packs, graduated learning store | `III.aDNA/` | lattice-labs, SiteForge, Videos (was VideoForge; renamed 2026-06-10), CanvasForge, wga, LPWhitepaper (all 6 live via `iii/`) | **Production** (Campaign A DG-A closed 9/9 2026-05-08; v0.1.0 + v0.2.0 tags shipped; Campaign B P2 ✅ 2026-05-11 — 5 wrappers live; P3 ✅ 2026-05-12 — MB-6 ✅ skill_iii_setup.md published, MB-7 ✅ vault hygiene, MB-8 ✅ LPWhitepaper wrapper (first 6/7-pack wrapper; first wrapper-managed consumer of `whitepaper_communication`); **DG-B ✅ CLOSED 9/9 2026-05-12** — Campaign B Federation complete end-to-end; 6 consumer wrappers live; airlock-spec consumers register live at MANIFEST.md (5 downstream airlock adopters: aDNA.aDNA ADR-008 + VideoForge + CanvasForge + M08a + node.aDNA). Campaign C P2 partial — MC-3 ✅ AIRLOCK.md v0.2.0; MC-4 next) |
 
 ## Category Promotion Criterion
 
