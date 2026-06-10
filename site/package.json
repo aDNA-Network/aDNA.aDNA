@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "prebuild": "node ../scripts/build_vaults_data.mjs",
+    "prebuild": "node ../scripts/build_vaults_data.mjs && node ../scripts/build_install_truth.mjs",
     "sync:vaults": "node ../scripts/build_vaults_data.mjs",
+    "sync:install": "node ../scripts/build_install_truth.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "test:gates": "playwright test --grep-invert @audit",

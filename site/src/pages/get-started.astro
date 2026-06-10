@@ -1,53 +1,126 @@
 ---
 import DocumentationLayout from '../layouts/DocumentationLayout.astro';
 import Callout from '../components/sections/Callout.astro';
+import TryInClaudeCode from '../components/sections/TryInClaudeCode.astro';
 import { buildWebPageJsonLD } from '../utils/seo';
+import installTruth from '../data/install_truth.json';
+import heroGetStarted from '../assets/heroes/hero_get_started.png';
+
+// Every command on this page renders from the install-truth fixture (single source;
+// gate-12-install-truth asserts the page matches it and the fixture matches the
+// template checkout). Never hardcode an install command here.
+const { commands, workspace_root, canonical_repo_https } = installTruth;
 
 const jsonLD = buildWebPageJsonLD({
   title: 'Get Started with aDNA',
-  description: 'Set up your first aDNA project in three steps: clone the template, open in your editor, and run your first agent session with Claude Code.',
+  description:
+    'Set up your own local aDNA workspace in four commands: create the workspace, clone the template from GitHub, bootstrap the workspace router, and let your first agent session scaffold your first project.',
   url: Astro.url.href,
 });
 ---
 
 <DocumentationLayout
   title="Get Started"
-  description="Set up your first aDNA project in three steps: clone the template, open in your editor, and run your first agent session with Claude Code."
+  description="Set up your own local aDNA workspace in four commands: create the workspace, clone the template from GitHub, bootstrap the workspace router, and let your first agent session scaffold your first project."
   jsonLD={jsonLD}
+  heroImage={{
+    src: heroGetStarted,
+    alt: 'Cozy pixel-art scene of a desk and computer with a glowing cyan DNA helix rising from the screen — a new aDNA workspace coming alive',
+  }}
 >
-  <p>Get your first aDNA project running in about 5 minutes.</p>
+  <p>
+    Set up your own aDNA workspace — a local, agent-readable home for every project's context — in
+    about 5 minutes. Everything lives on your machine; nothing is sent anywhere.
+  </p>
 
   <Callout variant="info" title="Prerequisites">
-    <p>Git, and <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">Claude Code</a> installed via <code>npm install -g @anthropic-ai/claude-code</code>.</p>
+    <p>
+      Git, and <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">Claude Code</a>
+      installed via <code>npm install -g @anthropic-ai/claude-code</code>. Obsidian is optional — vaults are
+      plain Markdown, so any editor works.
+    </p>
   </Callout>
 
   <Callout variant="tip" title="What you'll have when you're done">
-    <p>A working aDNA project with <code>CLAUDE.md</code> + the <code>what/</code> / <code>how/</code> / <code>who/</code> triad. Run <code>claude</code> inside the folder and your agent reads the governance files automatically.</p>
+    <p>
+      A <code>{workspace_root}/</code> workspace with three things in it: a hidden <code>.adna/</code> folder
+      (the standard itself, cloned from GitHub — your agent reads it, never edits it, and you update it with
+      <code>git pull</code>); a workspace <code>CLAUDE.md</code> router that tells your agent how to navigate
+      between projects; and your first <code>&lt;name&gt;.aDNA/</code> project, scaffolded for you by the
+      onboarding interview.
+    </p>
   </Callout>
 
-  <h2 id="step-1">1. Clone the template</h2>
-  <pre><code>git clone https://github.com/LatticeProtocol/aDNA.git my-project
-cd my-project</code></pre>
+  <h2 id="step-1">1. Create your workspace and clone the template</h2>
+  <p>
+    The template clones into a hidden <code>.adna/</code> folder inside your workspace — it is the standard
+    your projects are forked from, not a project itself.
+  </p>
+  <pre><code>{commands.workspace}
+{commands.clone}</code></pre>
+  <p class="step-note">Add <code>--depth 1</code> to the clone for a faster download.</p>
 
-  <h2 id="step-2">2. Open in your editor</h2>
-  <p>Open in Obsidian, VS Code, or any Markdown editor. <code>CLAUDE.md</code> at the root is your agent's entry point.</p>
+  <h2 id="step-2">2. Bootstrap the workspace router</h2>
+  <p>
+    The router is the <code>CLAUDE.md</code> at your workspace root: it routes your agent between projects
+    and governs workspace-level operations — each project keeps its own governance inside its own folder.
+  </p>
+  <pre><code>{commands.router}</code></pre>
 
-  <h2 id="step-3">3. Run your first session</h2>
-  <p>Start Claude Code. It reads <code>CLAUDE.md</code>, detects a fresh project, and walks you through onboarding:</p>
-  <pre><code>$ claude
-✓  Loaded CLAUDE.md (project instructions)
+  <h2 id="step-3">3. Start Claude Code</h2>
+  <p>
+    Run <code>{commands.launch}</code> in the workspace. The agent reads the router, sees a fresh workspace
+    with no projects yet, and walks you through creating your first one:
+  </p>
+  <pre><code>$ {commands.launch}
+✓  Loaded CLAUDE.md (workspace router)
 
-I can see this is a fresh aDNA project. Let's set your project
-identity and create your first session file.
+This is a fresh aDNA workspace — the template is in place and
+there are no projects yet. Let's create your first one.
 
 What is this project called, and what problem does it solve?
 &gt; _</code></pre>
+  <p>
+    The interview scaffolds <code>&lt;your_project&gt;.aDNA/</code> — its triad of
+    <code>what/</code>&thinsp;·&thinsp;<code>how/</code>&thinsp;·&thinsp;<code>who/</code>, its governance
+    files, and its own git history. When it finishes, your workspace looks like this:
+  </p>
+  <pre><code>{workspace_root}/
+├── CLAUDE.md            # workspace router (your agent's map)
+├── .adna/               # the standard (hidden; updated via git pull, never edited)
+└── my_project.aDNA/     # your first project — a working context graph
+    ├── CLAUDE.md        # the project's own governance
+    ├── what/            # knowledge: context, decisions, artifacts
+    ├── how/             # operations: sessions, missions, skills
+    └── who/             # people: roles, coordination</code></pre>
+  <p>
+    From here, work happens <em>inside</em> projects: <code>cd my_project.aDNA &amp;&amp; {commands.launch}</code>
+    and the agent picks up that project's governance automatically.
+  </p>
+
+  <Callout variant="info" title="Prefer one command?">
+    <p>
+      The same four steps, chained — auditable inline, nothing executed from the network:
+    </p>
+    <p><code>{installTruth.one_liner}</code></p>
+  </Callout>
+
+  <TryInClaudeCode />
 
   <h2 id="next-steps">Next steps</h2>
   <ul>
+    <li><a href="/learn/what-is-adna">What is aDNA?</a> — the five-minute conceptual tour</li>
+    <li><a href="/learn/concepts/triad">The Triad</a> — why every project splits into what / how / who</li>
     <li><a href="/learn/tutorials/first-claude-md">Tutorial: Create Your First CLAUDE.md</a></li>
-    <li><a href="/learn/what-is-adna">What is aDNA?</a></li>
-    <li><a href="/learn/concepts/triad">Learn about the Triad</a></li>
-    <li>See it live: the <a href="https://github.com/LatticeProtocol/aDNA" target="_blank" rel="noopener">aDNA repository</a> is a working aDNA project — every concept demonstrated in a real vault.</li>
+    <li><a href="/learn/tutorials/navigate-a-vault">Tutorial: Navigate a Vault</a> — reading a context graph like an agent does</li>
+    <li><a href="/learn/concepts/knowledge-graph">Knowledge graphs</a> — what your workspace grows into</li>
+    <li>See it live: the <a href={canonical_repo_https} target="_blank" rel="noopener">aDNA repository</a> is a working aDNA project — every concept demonstrated in a real vault.</li>
   </ul>
 </DocumentationLayout>
+
+<style>
+  .step-note {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+</style>

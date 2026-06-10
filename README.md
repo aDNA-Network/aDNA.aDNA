@@ -115,25 +115,22 @@ Agents read `CLAUDE.md` → `STATE.md` → directory-level `AGENTS.md` files. Hu
 
 ## Quick Start
 
-Clone the template, run setup, then start an agent. ~5 minutes.
+Create the workspace, clone the template into a hidden `.adna/` folder, bootstrap the workspace router, then start the agent. ~5 minutes.
 
 ```bash
 mkdir -p ~/aDNA && cd ~/aDNA
-git clone https://github.com/LatticeProtocol/Agentic-DNA.git adna
-cd adna && ./setup.sh
+git clone https://github.com/LatticeProtocol/aDNA.git .adna
+cp .adna/how/templates/template_workspace_claude.md CLAUDE.md
+claude
 ```
 
 > `~/aDNA/` is the recommended workspace root; any path works — `<workspace_root>` is detected, never hardcoded. Operators on the legacy `~/lattice/` root migrate via `skill_workspace_path_migration` (a turnkey agentic transition) plus a `~/lattice → ~/aDNA` symlink shim that keeps every existing reference valid mid-migration.
 
-`setup.sh` ships 15 community plugins, the Tokyo Night theme, and a curated workspace layout (Git Bash or WSL on Windows). Open `adna/` in Obsidian and enable community plugins when prompted. Then, from the vault root:
+On first run the agent reads the workspace router, detects a fresh workspace, and walks you through creating your first project — forking the template into e.g. `~/aDNA/my_research_lab.aDNA/` with its own governance and git history. The hidden `.adna/` template stays clean for updates (`git -C .adna pull`).
 
-```bash
-claude
-```
+**Optional — Obsidian:** vaults are plain Markdown, so any editor works. For the curated Obsidian experience (15 community plugins + the Tokyo Night theme), run `.adna/setup.sh` and open the workspace in Obsidian (Git Bash or WSL on Windows).
 
-**Berthier** — the vault's built-in agent — detects the base template, walks you through workspace setup, and forks your first project (e.g., `~/aDNA/my_research_lab.aDNA/`). The base `adna/` stays clean for updates.
-
-Persona-specific paths, a terminal-first walkthrough, and manual setup (no AI agent) are documented in [`get-started`](./site/src/pages/get-started.astro), [`agent_first_guide.md`](what/docs/agent_first_guide.md), and [`migration_guide.md`](what/docs/migration_guide.md).
+The same flow is published at [adna.network/get-started](https://adna.network/get-started/); a terminal-first walkthrough and manual setup (no AI agent) are documented in [`agent_first_guide.md`](what/docs/agent_first_guide.md) and [`migration_guide.md`](what/docs/migration_guide.md).
 
 ---
 
@@ -158,17 +155,17 @@ Full walkthrough: [`what/docs/migration_guide.md`](what/docs/migration_guide.md)
 
 ## Multi-Project Workspaces
 
-The `~/aDNA/` workspace supports multiple projects. Each project is a fork of the Agentic-DNA template with its own governance, git history, and domain customization. Forked projects use the `.aDNA` suffix.
+The `~/aDNA/` workspace supports multiple projects. Each project is a fork of the `.adna` template with its own governance, git history, and domain customization. Forked projects use the `.aDNA` suffix.
 
 ```
 ~/aDNA/
-├── CLAUDE.md              # Workspace governance (auto-created on first run)
-├── Agentic-DNA/           # Base template (never modified)
+├── CLAUDE.md              # Workspace router (bootstrapped from the template)
+├── .adna/                 # Base template (hidden; never modified — updated via git pull)
 ├── my_research_lab.aDNA/  # Project A (forked, customized)
 └── client_acme.aDNA/      # Project B (forked)
 ```
 
-Open Claude Code in `adna/` or at the workspace root, say "create a new project," and the agent forks the template and runs a 5-question onboarding interview to scaffold a fully configured project.
+Open Claude Code at the workspace root, say "create a new project," and the agent forks the template and runs a 5-question onboarding interview to scaffold a fully configured project.
 
 **Pattern**: [`what/docs/projects_folder_pattern.md`](what/docs/projects_folder_pattern.md).
 

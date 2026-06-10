@@ -4,6 +4,8 @@ import HomeHero from '../components/sections/HomeHero.astro';
 import NetworkDiagram from '../components/sections/NetworkDiagram.astro';
 import { buildWebPageJsonLD } from '../utils/seo';
 import vaultsData from '../data/vaults.json';
+// Install commands render from the install-truth fixture (single source; gate-12).
+import installTruth from '../data/install_truth.json';
 import heroNetwork from '../assets/heroes/hero_network.png';
 
 // E4 cycles 151–153 — the `/network` narrative surface (design spec Stage 2/3, bands 1–5).
@@ -158,15 +160,17 @@ const edgeTypes = [
           <div class="run-step-body">
             <h3>Bootstrap your node</h3>
             <p>
-              Clone the template and start the agent. It detects a fresh workspace and walks you through
-              the <code>Home.aDNA</code> node interview — the vault that governs your machine.
+              Create the workspace, clone the standard into a hidden <code>.adna/</code> template, bootstrap
+              the workspace router, and start the agent — it detects a fresh workspace, scaffolds your first
+              project, and can bootstrap <code>Home.aDNA</code>, the vault that governs your machine.
             </p>
-            <pre class="run-code"><code>git clone https://github.com/LatticeProtocol/aDNA.git my-node
-cd my-node
-claude</code></pre>
+            <pre class="run-code"><code>{installTruth.commands.workspace}
+{installTruth.commands.clone}
+{installTruth.commands.router}
+{installTruth.commands.launch}</code></pre>
             <p class="run-note">
-              See <a href="/get-started/" data-astro-prefetch>Get started</a> for the one-time setup —
-              installing <code>git</code> and the Claude Code CLI.
+              See <a href="/get-started/" data-astro-prefetch>Get started</a> for the full walkthrough —
+              installing <code>git</code> and the Claude Code CLI, and what each step does.
             </p>
           </div>
         </li>
