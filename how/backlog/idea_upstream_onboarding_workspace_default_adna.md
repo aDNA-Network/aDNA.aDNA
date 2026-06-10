@@ -31,7 +31,7 @@ A new user following the canonical Getting-Started flow lands in `~/aDNA/`. Noth
 
 ## Disposition (2026-06-10 — audit P2)
 
-**PR staged + filed.** Authoritative staging: `how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m513_upstream_pr_staging/` (PR body + per-file replacement content + throwaway-clone mechanics); follow-through owned by **E6 / M5.13 O4**. Site-side install truth shipped the same day (`install_truth.json` + gate-12 + `/get-started`/`/network`/README fixes).
+**PR staged + FILED: <https://github.com/LatticeProtocol/aDNA/pull/8>** (branch `docs/install-root-flip`; 5 files, 33+/31−; throwaway clone removed after filing). Authoritative staging: `how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m513_upstream_pr_staging/` (PR body + throwaway-clone mechanics); review/merge follow-through owned by **E6 / M5.13 O4**. Site-side install truth shipped the same day (`install_truth.json` + gate-12 + `/get-started`/`/network`/README fixes). Gotcha for the record: `gh pr create` 401'd with the keyring token in this non-TTY context — `GH_TOKEN="$(gh auth token)"` env passthrough fixed it.
 
 > ⚠️ **The diff table below is sweep-mangled — do not PR from it.** The WS-5 Session-C `/lattice→/aDNA` path sweep
 > rewrote this file's own left-hand "before" strings (they now read `~/aDNA → ~/aDNA`). The *upstream* files still
