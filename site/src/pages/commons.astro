@@ -2,15 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HomeHero from '../components/sections/HomeHero.astro';
 import SubnetworkCard from '../components/sections/SubnetworkCard.astro';
+import ClosingCTA from '../components/sections/ClosingCTA.astro';
 import heroCommons from '../assets/heroes/hero_commons.png';
 import { buildWebPageJsonLD } from '../utils/seo';
 import subnetworksData from '../data/subnetworks.json';
 
-// E5 / M5.12 cycle 160 — the Public-Good Commons SCAFFOLD (data foundation proven by a
-// rendering surface). Hero copy = Stage-0-ratified Direction B ("A commons, not a catalog").
-// Cycle 161 elevates the hero (image-led) + extracts a SubnetworkCard component + hi-fi craft;
-// 162 wires the real "connect to a subnetwork" affordance; 163 the first social surface;
-// 164 the homepage §5 hand-off + nav entry. Commit-only through the decadal (E4 rhythm) — the
+// E5 / M5.12 — the Public-Good Commons. Hero copy = Stage-0-ratified Direction B ("A commons,
+// not a catalog"). Cycle history (per-cycle plan REALIGNED at the audit P2, 2026-06-10):
+// c160 data foundation + scaffold; c161 image-led hero + SubnetworkCard; c163 the "connect to a
+// subnetwork" affordance (#connect band + closing CTA, audit C4); c164 the first social surface;
+// c165 homepage §5 hand-off + nav entry. Commit-only through the decadal (E4 rhythm) — the
 // whole /commons surface, including the operator-cleared Wilhelm-Foundation pair, deploys only
 // at the E5 close green-light (honors the ADR-010-window override terms; see subnetworks.yaml).
 
@@ -30,15 +31,16 @@ const subnetworks = (subnetworksData as any).subnetworks ?? [];
   <!-- Hero (image-led; cycle 161) · Stage-0-ratified Direction B.
        The bespoke "communal garden commons" hero (winner sec_commons_r3_C2R2_v3, 3 gen rounds +
        blind 4-lens persona panel) carries the warmth; the live H1 composites over its calm dark
-       upper band (no baked text). Primary CTA scrolls to the real cited grid (the Movement-Skeptic
-       guard: the claim is backed immediately by real work); the true "Connect" affordance lands c162. -->
+       upper band (no baked text). Primary CTA = the ratified "[Connect a subnetwork]", restored at
+       c163 now that the #connect band exists; the Movement-Skeptic guard still holds — the real
+       cited grid is the first thing under the hero, so the claim is backed before the jump lands. -->
   <HomeHero
     heroImage={heroCommons}
     heroAlt="A warm pixel-art bird's-eye view of a communal night garden: one great tree at the centre with several distinct, individually-tended plots — a vegetable bed, a flowering terrace, an orchard, and a glasshouse — each lit by its own amber lantern and joined only by the tree's roots and branches. The shared commons that mission-aligned subnetworks tend together."
     title="A commons, not a catalog."
     lead="Mission-aligned subnetworks build, share, and govern shared context in the open — so the abundance AI creates belongs to everyone. See them, trust them, connect to them."
-    primaryHref="#featured"
-    primaryLabel="Meet the subnetworks"
+    primaryHref="#connect"
+    primaryLabel="Connect a subnetwork"
     secondaryHref="/reference/specification"
     secondaryLabel="Read the standard"
   />
@@ -60,6 +62,65 @@ const subnetworks = (subnetworksData as any).subnetworks ?? [];
         Language and DNA are our shared heritage. So is context &mdash; held in common, and put to work
         for the good of all.
       </p>
+    </div>
+  </section>
+
+  <!-- Band 2 · Connect to a subnetwork (c163; audit C4 "deferred Connect affordance").
+       Three REAL paths in increasing depth — every link resolves today; no invented routes,
+       no sign-up flow implied. The local-by-default boundary carries over from /network (E4),
+       and the honest-MVP line names the social-layer horizon instead of pretending it shipped. -->
+  <section id="connect" class="commons-connect">
+    <div class="section-inner">
+      <h2 class="section-title">Connect to a subnetwork</h2>
+      <p class="section-subtitle">
+        Three paths, in increasing depth. Each one works today &mdash; no account, no waitlist.
+      </p>
+
+      <ol class="connect-paths" role="list">
+        <li class="connect-path">
+          <h3>Follow the work</h3>
+          <p>
+            Every card above links a subnetwork's public face and its governance vault. Read what it
+            publishes and watch it move &mdash; the open record is the front door.
+          </p>
+        </li>
+        <li class="connect-path">
+          <h3>Federate a wrapper</h3>
+          <p>
+            Consume a subnetwork's shared context from your own vault: a wrapper directory with a
+            <code>federation_ref</code> block, the same pattern every forge consumer uses.
+            <a href="/patterns/federation-readiness/">Federation readiness</a> covers what to check
+            before you share back.
+          </p>
+        </li>
+        <li class="connect-path">
+          <h3>Contribute</h3>
+          <p>
+            Join the work itself. The <a href="/community/">community ladder</a> runs from vault user
+            to standard steward, and the
+            <a href="/community/community-contribution-standards/">contribution standards</a> spell out
+            what a good contribution carries.
+          </p>
+        </li>
+      </ol>
+
+      <p class="connect-boundary">
+        The boundary from <a href="/network/">the network</a> holds here too: everything stays local by
+        default. Connecting is opt-in per vault &mdash; each node decides what it shares with a
+        subnetwork, and what never leaves the machine.
+      </p>
+      <p class="connect-horizon">
+        This is the whole connect surface today: the three paths above. The fuller social layer
+        &mdash; profiles, follows, feeds &mdash; is a horizon the network is building toward, not
+        something that exists yet.
+      </p>
+
+      <ClosingCTA
+        primaryLabel="Add your subnetwork"
+        primaryHref="https://github.com/LatticeProtocol/aDNA"
+        secondaryLabel="How federation works"
+        secondaryHref="/patterns/federation-readiness/"
+      />
     </div>
   </section>
 </BaseLayout>
@@ -113,15 +174,65 @@ const subnetworks = (subnetworksData as any).subnetworks ?? [];
     line-height: 1.7;
   }
 
+  /* ——— Band 2 · connect (c163) — plain bg alternates against the featured band's bg-alt ——— */
+  .commons-connect {
+    padding: var(--space-16) 0 var(--space-20);
+    /* anchor-jump target: keep the heading clear of the sticky header */
+    scroll-margin-top: var(--space-20);
+  }
+
+  .connect-paths {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    max-width: 60rem;
+    margin: 0 auto var(--space-12);
+  }
+
+  .connect-path h3 {
+    font-size: var(--text-lg);
+    color: var(--color-text-heading);
+    margin: 0 0 var(--space-2);
+  }
+
+  .connect-path p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+    font-size: var(--text-sm);
+  }
+
+  /* In-text links: underlined, cyan — distinguishable without color alone (link-in-text-block,
+     both modes; the E4/E5 register). */
+  .connect-path a,
+  .connect-boundary a {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+
+  .connect-boundary,
+  .connect-horizon {
+    text-align: center;
+    color: var(--color-text-muted);
+    max-width: 42rem;
+    margin: 0 auto var(--space-4);
+    line-height: 1.7;
+    font-size: var(--text-base);
+  }
+
   /* ——— Responsive ——— */
   @media (max-width: 760px) {
-    .subnet-grid {
+    .subnet-grid,
+    .connect-paths {
       grid-template-columns: 1fr;
     }
   }
 
   @media (max-width: 480px) {
-    .commons-featured {
+    .commons-featured,
+    .commons-connect {
       padding: var(--space-12) 0;
     }
 

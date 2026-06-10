@@ -1,6 +1,7 @@
 ---
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
+import ClosingCTA from '../../components/sections/ClosingCTA.astro';
 import { getDocsBySection } from '../../utils/collections';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
 
@@ -25,4 +26,15 @@ const jsonLD = buildCollectionPageJsonLD({
 >
   <p>The aDNA community is organized around a participation ladder — from individual vault users to standard stewards. Explore the roles, processes, and shared knowledge commons.</p>
   <CardGrid cards={cards} columns={2} />
+
+  <!-- Closing CTA (E5 c163; audit C4) — the contributor-recruitment page gets a real on-ramp:
+       the audit found its ctas[] held only the dark-mode toggle and the mobile menu. -->
+  <ClosingCTA
+    title="Contribute"
+    lead="The standard is built in the open — issues, discussions, and contributions all run through the public repository."
+    primaryLabel="Contribute on GitHub"
+    primaryHref="https://github.com/LatticeProtocol/aDNA"
+    secondaryLabel="Read the contribution standards"
+    secondaryHref="/community/community-contribution-standards/"
+  />
 </DocumentationLayout>

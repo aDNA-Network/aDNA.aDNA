@@ -1,0 +1,77 @@
+---
+/**
+ * ClosingCTA.astro — the shared closing-CTA band (E5 / M5.12 c163; audit roadmap C4).
+ *
+ * The 2026-06 site audit found the site "navigation-rich but action-poor": the six audience
+ * pages, /community, and every vault-detail page ended with zero styled actions — a reader
+ * persuaded by the page had to scroll-hunt the footer's muted text link. This one partial is
+ * the audit's "one template change fixes all six pages", generalized: each surface closes on
+ * one primary action plus one segment-relevant secondary.
+ *
+ * Composition contract:
+ *   - primary/secondary use the global `.btn` utilities (global.css) — AA-safe in both modes,
+ *     focus-visible ring included; nothing color-related is declared here.
+ *   - `title` is optional: doc pages pass a short heading (rendered as h2, matching `.prose`
+ *     rhythm); bands that already carry their own heading (e.g. /commons #connect) omit it.
+ *   - External hrefs (https://…) get target="_blank" rel="noopener" automatically, matching
+ *     the Header/Footer GitHub-link treatment.
+ *   - Copy discipline: writing-guidelines LIFT register — name the action, no adjectives.
+ */
+interface Props {
+  title?: string;
+  lead?: string;
+  primaryLabel: string;
+  primaryHref: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}
+
+const { title, lead, primaryLabel, primaryHref, secondaryLabel, secondaryHref } = Astro.props;
+
+const isExternal = (href: string) => /^https?:\/\//.test(href);
+const linkAttrs = (href: string) =>
+  isExternal(href) ? { target: '_blank', rel: 'noopener' } : { 'data-astro-prefetch': true };
+---
+
+<section class="closing-cta" aria-label={title ?? 'Next steps'}>
+  {title && <h2 class="closing-cta-title">{title}</h2>}
+  {lead && <p class="closing-cta-lead">{lead}</p>}
+  <p class="closing-cta-actions">
+    <a href={primaryHref} class="btn btn-primary" {...linkAttrs(primaryHref)}>{primaryLabel}</a>
+    {secondaryLabel && secondaryHref && (
+      <a href={secondaryHref} class="btn btn-secondary" {...linkAttrs(secondaryHref)}>{secondaryLabel}</a>
+    )}
+  </p>
+</section>
+
+<style>
+  /* A quiet close: hairline rule + centered actions. Tokens only — the .btn utilities own
+     all color; this band owns only rhythm, so it sits correctly on any surface. */
+  .closing-cta {
+    margin-top: var(--space-12);
+    padding-top: var(--space-10);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+  }
+
+  .closing-cta-title {
+    font-size: var(--text-2xl);
+    color: var(--color-text-heading);
+    margin: 0 0 var(--space-3);
+  }
+
+  .closing-cta-lead {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    max-width: 38rem;
+    margin: 0 auto var(--space-6);
+  }
+
+  .closing-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+    margin: 0;
+  }
+</style>

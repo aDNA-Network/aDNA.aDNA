@@ -1,6 +1,7 @@
 ---
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
+import ClosingCTA from '../../components/sections/ClosingCTA.astro';
 import { getDocsBySection } from '../../utils/collections';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
 
@@ -53,4 +54,13 @@ const jsonLD = buildCollectionPageJsonLD({
   <h2 id="persona-cards">Persona reference cards</h2>
   <p>Structured profiles for each audience — pain points, typical ontology extensions, and adoption narrative. The use case pages tell the full story; these cards give you the quick reference.</p>
   <CardGrid cards={cards} columns={2} />
+
+  <!-- Closing CTA (E5 c163; audit C4) — the persona hub closes on an action, not a footer hunt. -->
+  <ClosingCTA
+    title="Set up your workspace"
+    primaryLabel="Get Started"
+    primaryHref="/get-started/"
+    secondaryLabel="Browse use cases"
+    secondaryHref="/use-cases/"
+  />
 </DocumentationLayout>

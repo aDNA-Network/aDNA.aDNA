@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import VaultRelationshipBlock from '../../components/sections/VaultRelationshipBlock.astro';
+import ClosingCTA from '../../components/sections/ClosingCTA.astro';
 import vaultsData from '../../data/vaults.json';
 import { buildWebPageJsonLD } from '../../utils/seo';
 
@@ -92,6 +93,16 @@ const jsonLD = buildWebPageJsonLD({
         <p>{vault.note}</p>
       </section>
     )}
+
+    <!-- Closing CTA (E5 c163; audit C4) — every generated vault page closes on an action.
+         "Start your own vault", not "use this vault": most vaults are not public installs,
+         so the honest primary is the reader's own workspace. -->
+    <ClosingCTA
+      primaryLabel="Start your own vault"
+      primaryHref="/get-started/"
+      secondaryLabel="Explore the graph"
+      secondaryHref="/vaults/graph/"
+    />
   </main>
 </BaseLayout>
 

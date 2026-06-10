@@ -28,6 +28,7 @@
  * fill the `lede` + default slots, and add only what is genuinely page-specific.
  */
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import ClosingCTA from './ClosingCTA.astro';
 import { buildTechArticleJsonLD } from '../../utils/seo';
 
 interface Props {
@@ -39,9 +40,26 @@ interface Props {
   jsonLDDescription?: string;
   prev?: { label: string; href: string };
   next?: { label: string; href: string };
+  /**
+   * Closing-CTA secondary (E5 c163; audit C4 — "audience routing finally lands on an action").
+   * When set, the page closes on the shared ClosingCTA band: btn-primary "Get Started" →
+   * /get-started/ plus this segment-relevant secondary. One template change covers all five
+   * role pages — the same consolidation lesson PersonaPage itself teaches.
+   */
+  ctaSecondaryLabel?: string;
+  ctaSecondaryHref?: string;
 }
 
-const { title, description, jsonLDTitle, jsonLDDescription, prev, next } = Astro.props;
+const {
+  title,
+  description,
+  jsonLDTitle,
+  jsonLDDescription,
+  prev,
+  next,
+  ctaSecondaryLabel,
+  ctaSecondaryHref,
+} = Astro.props;
 
 const jsonLD = buildTechArticleJsonLD({
   title: jsonLDTitle ?? title,
@@ -59,6 +77,15 @@ const jsonLD = buildTechArticleJsonLD({
 >
   <p class="lede"><slot name="lede" /></p>
   <slot />
+  {ctaSecondaryLabel && ctaSecondaryHref && (
+    <ClosingCTA
+      title="Set up your workspace"
+      primaryLabel="Get Started"
+      primaryHref="/get-started/"
+      secondaryLabel={ctaSecondaryLabel}
+      secondaryHref={ctaSecondaryHref}
+    />
+  )}
 </DocumentationLayout>
 
 <style>

@@ -61,11 +61,14 @@ const members = s.members ?? [];
   )}
 
   <div class="subnet-foot">
-    {s.public_url && (
-      <a class="subnet-ext" href={s.public_url} target="_blank" rel="noopener">
-        Visit &nearr;
-      </a>
-    )}
+    <p class="subnet-actions">
+      {s.public_url && (
+        <a class="subnet-ext" href={s.public_url} target="_blank" rel="noopener">
+          Visit &nearr;
+        </a>
+      )}
+      <a class="subnet-ext" href="#connect">Connect &darr;</a>
+    </p>
     {s.attribution && (
       <p class="subnet-provenance">
         {s.attribution}{s.license ? ` · ${s.license}` : ''}
@@ -184,9 +187,18 @@ const members = s.members ?? [];
     color: var(--color-text-muted);
   }
 
-  /* Card foot — outbound connect path + provenance, pushed to the bottom so cards align on a row. */
+  /* Card foot — outbound connect path + provenance, pushed to the bottom so cards align on a row.
+     c163 completes the Stage-2 card spec ("… outbound public link · connect"): "Connect ↓" jumps
+     to the page's #connect band — an in-page affordance, not a fake per-subnetwork flow. */
   .subnet-foot {
     margin: auto 0 0;
+  }
+
+  .subnet-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-5);
+    margin: 0;
   }
 
   /* Link signal (cyan) — AA-safe small text on the elevated card surface, where purple
