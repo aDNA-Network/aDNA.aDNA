@@ -2,7 +2,7 @@
 type: backlog_idea
 created: 2026-06-04
 updated: 2026-06-10
-status: in_progress   # upstream PR staged + filed 2026-06-10 (audit P2 / E6-O4 vehicle); see Disposition
+status: resolved   # 2026-06-10 — PR #7 merged (carried the flip); PR #8 CLOSED-AS-SUPERSEDED; repo archived → adna-legacy; see Disposition addendum + ADR-034
 last_edited_by: agent_stanley
 author: rosetta (aDNA.aDNA)
 trigger: operator question 2026-06-04 (during the E4 aDNANetwork session) — "if/when will new-user onboarding set up the right /aDNA/ directory structure instead of /lattice/?"
@@ -38,6 +38,20 @@ A new user following the canonical Getting-Started flow lands in `~/aDNA/`. Noth
 > carry `~/lattice` (verified against the live `.adna` checkout 2026-06-10) — the file/line TARGETS below remain
 > correct; reconstruct each "before" from the actual upstream content. (Sweep-blind-spot instance: a diff that
 > *quotes* the old path as data was swept as if it were a live ref — flagged to aDNALabs in the session SITREP.)
+
+## Disposition addendum (2026-06-10, same day — RESOLVED)
+
+**The flip LANDED, by a different vehicle: PR #7** (`LatticeProtocol/flip-workspace-default-adna`, merged
+2026-06-10 morning — the same 5-surface `~/lattice → ~/aDNA` doc-flip + legacy migration tooling).
+**PR #8 was CLOSED-AS-SUPERSEDED** (its doc-flip duplicated #7; its residual stale-slug fixes were folded
+into this vault's same-day docs pass — `what/docs/projects_folder_pattern.md` + the sitewide canonical-slug
+flip, `session_stanley_20260610T205755Z_public_face_repo`). Hours later the operator restructured the
+public face entirely: the template repo was archived as **`aDNA-Network/adna-legacy`** (frozen `74cb761`)
+and **`aDNA-Network/aDNA`** stood up as the canonical clone-and-run workspace image (tag `v7.1`) — the
+new-user flow is now 1 command and lands in `~/aDNA` *by construction*, fully subsuming this idea's goal.
+Record of architecture: `what/decisions/adr_034_public_face_repo_release_architecture.md`. E6/M5.13 O4's
+"verify/merge PR #8" external is resolved by this closure; the upstream channel for future standard
+changes is the gate-fired release skill (`how/skills/skill_template_release.md`), not PRs to the archive.
 
 ## Suggested change — ready-to-PR diff (against `.adna/`, i.e. `LatticeProtocol/aDNA`)
 

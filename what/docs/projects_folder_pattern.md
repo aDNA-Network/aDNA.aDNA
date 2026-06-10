@@ -2,9 +2,9 @@
 type: context
 title: "aDNA Projects Folder Pattern"
 created: 2026-03-19
-updated: 2026-04-03
+updated: 2026-06-10
 status: active
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [adna, projects, scaffolding, workspace, pattern, lattice]
 token_estimate: 2500
 ---
@@ -46,7 +46,7 @@ The repo root **is** `~/aDNA/`. Clone it once, and the root CLAUDE.md handles pr
 
 ### How it works
 
-1. **Clone directly**: `git clone https://github.com/LatticeProtocol/Agentic-DNA.git ~/aDNA`
+1. **Clone directly**: `git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA`
 2. **Run Claude Code** from `~/aDNA/` — the root CLAUDE.md detects `.adna/` and offers to create your first project
 3. **Create projects** — the agent copies `.adna/`, strips `.obsidian/plugins/` and `.obsidian/themes/`, removes the `role: template` marker, runs `git init`, then triggers the 5-question onboarding interview inside the new project
 4. **Work inside projects** — each project is self-contained. Open it directly in Claude Code or Obsidian.

@@ -1,8 +1,8 @@
 ---
 type: manifest
 created: 2026-04-13
-updated: 2026-04-22
-last_edited_by: agent_rosetta
+updated: 2026-06-10
+last_edited_by: agent_stanley
 tags: [manifest, governance]
 ---
 
@@ -14,7 +14,7 @@ tags: [manifest, governance]
 
 This project serves two audiences simultaneously: **developers** building with aDNA get spec-precise technical depth, integration patterns, and lattice composition guidance. **Non-developers** exploring aDNA get plain-language explanations, visual metaphors, and a clear on-ramp to agentic literacy. Both audiences navigate the same vault — progressive disclosure handles the rest.
 
-**Upstream source of truth**: [github.com/LatticeProtocol/Agentic-DNA](https://github.com/LatticeProtocol/Agentic-DNA) (MIT license). This vault demonstrates and explains aDNA; the upstream repo defines it.
+**Public face**: [github.com/aDNA-Network/aDNA](https://github.com/aDNA-Network/aDNA) (MIT license) — the released clone-and-run workspace image of the standard (ADR-034; predecessor `LatticeProtocol/aDNA` archived as [`aDNA-Network/adna-legacy`](https://github.com/aDNA-Network/adna-legacy)). This vault is the standard's **dev graph**: it develops, demonstrates, and explains aDNA; manual gate-fired releases publish it (`how/skills/skill_template_release.md`).
 
 ## Architecture
 

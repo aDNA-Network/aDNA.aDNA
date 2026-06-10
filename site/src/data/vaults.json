@@ -66,11 +66,6 @@
       "type": "federation"
     },
     {
-      "source": "Harness.aDNA",
-      "target": "RareHarnessOld.aDNA",
-      "type": "supersedes"
-    },
-    {
       "source": "RemoteControl.aDNA",
       "target": "terminal",
       "type": "companion"
@@ -93,8 +88,8 @@
   ],
   "generated_at": "2026-06-10",
   "schema_version": "0.2",
-  "source_inventory_sha": "44e7d634e2d92bef",
-  "vault_count": 41,
+  "source_inventory_sha": "b356ca59d6a5bf46",
+  "vault_count": 40,
   "vaults": [
     {
       "canonical_governance": "TaskForge.aDNA/AGENTS.md",
@@ -1139,37 +1134,6 @@
       "umbrella_pillar": null,
       "vault": "Obsidian.aDNA",
       "vault_slug": "Obsidian.aDNA"
-    },
-    {
-      "canonical_governance": "RareHarnessOld.aDNA/CLAUDE.md",
-      "card_present": true,
-      "class": "platform",
-      "companion_vaults": [],
-      "current_phase": null,
-      "default_partners": [],
-      "display_name": "RareHarnessOld",
-      "docs_site_url": null,
-      "federation_refs": [],
-      "full_name": null,
-      "github_url": null,
-      "headline_adrs": [],
-      "headline_mission": null,
-      "headline_mission_state": null,
-      "last_synced": "2026-05-25",
-      "lifecycle_stage": null,
-      "note": "Legacy rare-disease clinician runtime (Qwen2.5/custom-MLX). Formerly RareHarness.aDNA; renamed.",
-      "persona": "Asclepius",
-      "persona_archetype": "asclepius",
-      "recent_closed": [],
-      "schema_version": "0.2",
-      "status": "active",
-      "subclass": null,
-      "superseded_by": "Harness.aDNA",
-      "supersedes": null,
-      "tagline": null,
-      "umbrella_pillar": null,
-      "vault": "RareHarnessOld.aDNA",
-      "vault_slug": "RareHarnessOld.aDNA"
     },
     {
       "canonical_governance": "RemoteControl.aDNA/CLAUDE.md",

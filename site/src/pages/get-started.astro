@@ -8,20 +8,21 @@ import heroGetStarted from '../assets/heroes/hero_get_started.png';
 
 // Every command on this page renders from the install-truth fixture (single source;
 // gate-12-install-truth asserts the page matches it and the fixture matches the
-// template checkout). Never hardcode an install command here.
-const { commands, workspace_root, canonical_repo_https } = installTruth;
+// template checkout). Never hardcode an install command here. (ADR-034: canonical
+// face = aDNA-Network/aDNA, a clone-and-run workspace image; 1-command flow.)
+const { commands, workspace_root, canonical_repo_https, legacy_repo_https } = installTruth;
 
 const jsonLD = buildWebPageJsonLD({
   title: 'Get Started with aDNA',
   description:
-    'Set up your own local aDNA workspace in four commands: create the workspace, clone the template from GitHub, bootstrap the workspace router, and let your first agent session scaffold your first project.',
+    'Set up your own local aDNA workspace in one command: clone the workspace image from GitHub — router pre-instantiated, standard embedded — and let your first agent session scaffold your first project.',
   url: Astro.url.href,
 });
 ---
 
 <DocumentationLayout
   title="Get Started"
-  description="Set up your own local aDNA workspace in four commands: create the workspace, clone the template from GitHub, bootstrap the workspace router, and let your first agent session scaffold your first project."
+  description="Set up your own local aDNA workspace in one command: clone the workspace image from GitHub — router pre-instantiated, standard embedded — and let your first agent session scaffold your first project."
   jsonLD={jsonLD}
   heroImage={{
     src: heroGetStarted,
@@ -43,39 +44,32 @@ const jsonLD = buildWebPageJsonLD({
 
   <Callout variant="tip" title="What you'll have when you're done">
     <p>
-      A <code>{workspace_root}/</code> workspace with three things in it: a hidden <code>.adna/</code> folder
-      (the standard itself, cloned from GitHub — your agent reads it, never edits it, and you update it with
-      <code>git pull</code>); a workspace <code>CLAUDE.md</code> router that tells your agent how to navigate
-      between projects; and your first <code>&lt;name&gt;.aDNA/</code> project, scaffolded for you by the
-      onboarding interview.
+      A <code>{workspace_root}/</code> workspace that ships ready: the workspace <code>CLAUDE.md</code> router
+      (your agent's map between projects) pre-instantiated at the root; the standard itself embedded in a hidden
+      <code>.adna/</code> folder (your agent reads it, never edits it — updates arrive with <code>git pull</code>
+      at the workspace root); and your first <code>&lt;name&gt;.aDNA/</code> project, scaffolded for you by the
+      onboarding interview, with its own git history — kept out of the workspace image's history by design.
     </p>
   </Callout>
 
-  <h2 id="step-1">1. Create your workspace and clone the template</h2>
+  <h2 id="step-1">1. Clone the workspace</h2>
   <p>
-    The template clones into a hidden <code>.adna/</code> folder inside your workspace — it is the standard
-    your projects are forked from, not a project itself.
+    The clone <em>is</em> your workspace — not a template you copy from. The router comes pre-instantiated
+    and the standard comes embedded; there is nothing to bootstrap by hand.
   </p>
-  <pre><code>{commands.workspace}
-{commands.clone}</code></pre>
-  <p class="step-note">Add <code>--depth 1</code> to the clone for a faster download.</p>
+  <pre><code>{commands.clone}</code></pre>
 
-  <h2 id="step-2">2. Bootstrap the workspace router</h2>
-  <p>
-    The router is the <code>CLAUDE.md</code> at your workspace root: it routes your agent between projects
-    and governs workspace-level operations — each project keeps its own governance inside its own folder.
-  </p>
-  <pre><code>{commands.router}</code></pre>
-
-  <h2 id="step-3">3. Start Claude Code</h2>
+  <h2 id="step-2">2. Start Claude Code</h2>
   <p>
     Run <code>{commands.launch}</code> in the workspace. The agent reads the router, sees a fresh workspace
     with no projects yet, and walks you through creating your first one:
   </p>
+  <pre><code>{commands.enter}
+{commands.launch}</code></pre>
   <pre><code>$ {commands.launch}
 ✓  Loaded CLAUDE.md (workspace router)
 
-This is a fresh aDNA workspace — the template is in place and
+This is a fresh aDNA workspace — the standard is in place and
 there are no projects yet. Let's create your first one.
 
 What is this project called, and what problem does it solve?
@@ -86,8 +80,8 @@ What is this project called, and what problem does it solve?
     files, and its own git history. When it finishes, your workspace looks like this:
   </p>
   <pre><code>{workspace_root}/
-├── CLAUDE.md            # workspace router (your agent's map)
-├── .adna/               # the standard (hidden; updated via git pull, never edited)
+├── CLAUDE.md            # workspace router (ships with the clone)
+├── .adna/               # the standard (embedded; read-only — releases update it)
 └── my_project.aDNA/     # your first project — a working context graph
     ├── CLAUDE.md        # the project's own governance
     ├── what/            # knowledge: context, decisions, artifacts
@@ -98,11 +92,21 @@ What is this project called, and what problem does it solve?
     and the agent picks up that project's governance automatically.
   </p>
 
-  <Callout variant="info" title="Prefer one command?">
+  <Callout variant="info" title="The whole flow, one command">
     <p>
-      The same four steps, chained — auditable inline, nothing executed from the network:
+      Both steps, chained — auditable inline, nothing executed from the network:
     </p>
     <p><code>{installTruth.one_liner}</code></p>
+  </Callout>
+
+  <Callout variant="info" title="Existing installs (pre-June-2026 layout)">
+    <p>
+      Installed earlier, with a cloned hidden <code>.adna/</code> plus a copied router? It keeps working:
+      the previous template repository is preserved read-only at
+      <a href={legacy_repo_https} target="_blank" rel="noopener">adna-legacy</a>, and your clone's old URLs
+      redirect there — frozen, so nothing underneath you changes. To move to the current layout, run the
+      standard's <code>skill_workspace_upgrade</code> from your workspace.
+    </p>
   </Callout>
 
   <TryInClaudeCode />
@@ -114,13 +118,6 @@ What is this project called, and what problem does it solve?
     <li><a href="/learn/tutorials/first-claude-md">Tutorial: Create Your First CLAUDE.md</a></li>
     <li><a href="/learn/tutorials/navigate-a-vault">Tutorial: Navigate a Vault</a> — reading a context graph like an agent does</li>
     <li><a href="/learn/concepts/knowledge-graph">Knowledge graphs</a> — what your workspace grows into</li>
-    <li>See it live: the <a href={canonical_repo_https} target="_blank" rel="noopener">aDNA repository</a> is a working aDNA project — every concept demonstrated in a real vault.</li>
+    <li>See it live: the <a href={canonical_repo_https} target="_blank" rel="noopener">aDNA repository</a> is the workspace image itself — clone it and you are holding everything this page described.</li>
   </ul>
 </DocumentationLayout>
-
-<style>
-  .step-note {
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
-  }
-</style>

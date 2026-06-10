@@ -14,7 +14,6 @@ flowchart LR
   zenzachary["ZenZachary.aDNA<br><sub>pygmalion</sub>"]:::classorgvault
   adnascope["aDNAScope.aDNA<br><sub>prometheus</sub>"]:::classplatform
   Harness_aDNA["Harness.aDNA<br><sub>Panacea</sub>"]:::classplatform
-  RareHarnessOld_aDNA["RareHarnessOld.aDNA<br><sub>Asclepius</sub>"]:::classplatform
   RemoteControl_aDNA["RemoteControl.aDNA<br><sub>Talos</sub>"]:::classplatform
   TappInterface_aDNA["TappInterface.aDNA<br><sub>Mentor</sub>"]:::classplatform
   terminal["Terminal.aDNA<br><sub>berthier</sub>"]:::classplatform
@@ -58,12 +57,11 @@ flowchart LR
   adnascope -.-> ContextCompass_aDNA
   Harness_aDNA --> SiteForge_aDNA
   Harness_aDNA --> III_aDNA
-  Harness_aDNA -.->|s| RareHarnessOld_aDNA
   RemoteControl_aDNA -.-> terminal
   TappInterface_aDNA -.-> MoleculeForge_aDNA
   TappInterface_aDNA -.-> VAASLattice_aDNA
   aDNA_aDNA --> III_aDNA
-  linkStyle 1,13 stroke-width:2.5px,stroke-dasharray:10 6
+  linkStyle 1 stroke-width:2.5px,stroke-dasharray:10 6
 
   classDef classforge fill:#e07798,stroke:#333,color:#000
   classDef classframework fill:#16a766,stroke:#333,color:#000

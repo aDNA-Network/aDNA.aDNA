@@ -1,18 +1,19 @@
 {
-  "canonical_repo_git": "https://github.com/LatticeProtocol/aDNA.git",
-  "canonical_repo_https": "https://github.com/LatticeProtocol/aDNA",
-  "clone_target": ".adna",
+  "canonical_repo_git": "https://github.com/aDNA-Network/aDNA.git",
+  "canonical_repo_https": "https://github.com/aDNA-Network/aDNA",
+  "clone_target": "~/aDNA",
   "commands": {
-    "clone": "git clone https://github.com/LatticeProtocol/aDNA.git .adna",
-    "launch": "claude",
-    "router": "cp .adna/how/templates/template_workspace_claude.md CLAUDE.md",
-    "workspace": "mkdir -p ~/aDNA && cd ~/aDNA"
+    "clone": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA",
+    "enter": "cd ~/aDNA",
+    "launch": "claude"
   },
+  "embedded_standard": ".adna",
   "generated": "2026-06-10",
-  "one_liner": "mkdir -p ~/aDNA && cd ~/aDNA && git clone --depth 1 https://github.com/LatticeProtocol/aDNA.git .adna && cp .adna/how/templates/template_workspace_claude.md CLAUDE.md && claude",
+  "legacy_repo_https": "https://github.com/aDNA-Network/adna-legacy",
+  "one_liner": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
   "router_template": "how/templates/template_workspace_claude.md",
-  "schema_version": "0.1",
-  "template_sha": "2a66f2f",
+  "schema_version": "0.2",
+  "template_sha": "74cb761",
   "verified_paths": {
     "CLAUDE.md": true,
     "how/skills/skill_onboarding.md": true,

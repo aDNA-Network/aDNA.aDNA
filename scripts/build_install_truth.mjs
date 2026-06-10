@@ -2,15 +2,22 @@
 /**
  * build_install_truth.mjs — prebuild install-truth projection script
  *
+ * Canonical face (ADR-034, 2026-06-10): github.com/aDNA-Network/aDNA — a clone-and-run WORKSPACE
+ * IMAGE (pre-instantiated router CLAUDE.md at root + the full standard tree embedded at .adna/).
+ * Install = 1 command: clone to ~/aDNA, cd, claude. The predecessor template repo
+ * (LatticeProtocol/aDNA) is ARCHIVED as aDNA-Network/adna-legacy; old URLs redirect there.
+ *
  * Reads:
- *   - ../../.adna/ (the local checkout of the upstream template, github.com/LatticeProtocol/aDNA)
- *     READ-ONLY — verifies the files the public install instructions reference actually exist
+ *   - ../../.adna/ (the local node's standard-tree checkout; frozen legacy clone at content parity
+ *     with the released embed — maintained post-release by skill_template_release step e)
+ *     READ-ONLY — verifies the standard-tree files the install/onboarding story depends on exist
  *     (Workspace Standing Rule 1: .adna/ is never modified; this script only stats paths).
  *
  * Writes:
  *   - site/src/data/install_truth.json (the single source for every install command the site
  *     renders; committed). Pages import it; gate-12-install-truth asserts surfaces match it
- *     and reject the legacy forms (~/lattice, Agentic-DNA.git, clone-as-my-project).
+ *     and reject the legacy forms (~/lattice, Agentic-DNA.git, clone-as-my-project, the old
+ *     LatticeProtocol/aDNA clone, the dead cp-router step).
  *
  * CI/Vercel fallback: if ../../.adna/ absent, log warning + skip overwrite (uses last-committed) —
  * same Clause-A semantics as build_vaults_data.mjs (ADR-023).
@@ -36,9 +43,10 @@ if (!fs.existsSync(TEMPLATE_ROOT)) {
   process.exit(0);
 }
 
-// The paths the public instructions depend on — verified against the live template checkout.
+// The standard-tree paths the install/onboarding story depends on — verified against the local
+// .adna checkout (content parity with the image's embedded .adna/ per ADR-034).
 const REQUIRED_PATHS = [
-  'how/templates/template_workspace_claude.md', // the workspace-router bootstrap source
+  'how/templates/template_workspace_claude.md', // release-source of the image's pre-instantiated root router (no longer a user-facing cp step)
   'how/skills/skill_project_fork.md',           // first-project scaffolding
   'how/skills/skill_onboarding.md',             // first-run interview
   'CLAUDE.md',                                  // template governance (role: template detection)
@@ -66,23 +74,25 @@ try {
   console.warn('[build_install_truth] WARN: could not read template git SHA.');
 }
 
-const CANONICAL_REPO = 'https://github.com/LatticeProtocol/aDNA';
+const CANONICAL_REPO = 'https://github.com/aDNA-Network/aDNA';
+const LEGACY_REPO = 'https://github.com/aDNA-Network/adna-legacy'; // archived; old LatticeProtocol/aDNA URLs redirect here (repo-id semantics, ADR-034 §2)
 
 const installTruth = {
   canonical_repo_git: `${CANONICAL_REPO}.git`,
   canonical_repo_https: CANONICAL_REPO,
-  clone_target: '.adna',
+  clone_target: '~/aDNA',
   commands: {
-    // Step order matters; pages render these verbatim.
-    workspace: 'mkdir -p ~/aDNA && cd ~/aDNA',
-    clone: `git clone ${CANONICAL_REPO}.git .adna`,
-    router: 'cp .adna/how/templates/template_workspace_claude.md CLAUDE.md',
+    // Step order: clone → enter → launch. Pages render these verbatim (gate-12).
+    clone: `git clone ${CANONICAL_REPO}.git ~/aDNA`,
+    enter: 'cd ~/aDNA',
     launch: 'claude',
   },
+  embedded_standard: '.adna',
   generated: new Date().toISOString().slice(0, 10),
-  one_liner: `mkdir -p ~/aDNA && cd ~/aDNA && git clone --depth 1 ${CANONICAL_REPO}.git .adna && cp .adna/how/templates/template_workspace_claude.md CLAUDE.md && claude`,
+  legacy_repo_https: LEGACY_REPO,
+  one_liner: `git clone ${CANONICAL_REPO}.git ~/aDNA && cd ~/aDNA && claude`,
   router_template: 'how/templates/template_workspace_claude.md',
-  schema_version: '0.1',
+  schema_version: '0.2',
   template_sha,
   verified_paths,
   workspace_root: '~/aDNA',

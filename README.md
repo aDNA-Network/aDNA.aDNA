@@ -115,18 +115,17 @@ Agents read `CLAUDE.md` → `STATE.md` → directory-level `AGENTS.md` files. Hu
 
 ## Quick Start
 
-Create the workspace, clone the template into a hidden `.adna/` folder, bootstrap the workspace router, then start the agent. ~5 minutes.
+Clone the workspace image — the workspace router `CLAUDE.md` ships pre-instantiated at the root and the standard comes embedded in a hidden `.adna/` folder — then start the agent. ~5 minutes. (Canonical face: [`aDNA-Network/aDNA`](https://github.com/aDNA-Network/aDNA); release architecture: ADR-034.)
 
 ```bash
-mkdir -p ~/aDNA && cd ~/aDNA
-git clone https://github.com/LatticeProtocol/aDNA.git .adna
-cp .adna/how/templates/template_workspace_claude.md CLAUDE.md
+git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA
+cd ~/aDNA
 claude
 ```
 
-> `~/aDNA/` is the recommended workspace root; any path works — `<workspace_root>` is detected, never hardcoded. Operators on the legacy `~/lattice/` root migrate via `skill_workspace_path_migration` (a turnkey agentic transition) plus a `~/lattice → ~/aDNA` symlink shim that keeps every existing reference valid mid-migration.
+> `~/aDNA/` is the recommended workspace root; any path works — `<workspace_root>` is detected, never hardcoded. Operators on the legacy `~/lattice/` root migrate via `skill_workspace_path_migration` (a turnkey agentic transition) plus a `~/lattice → ~/aDNA` symlink shim that keeps every existing reference valid mid-migration. Installed before June 2026 (cloned `.adna/` + copied router)? It keeps working — the predecessor template repo is preserved read-only at [`aDNA-Network/adna-legacy`](https://github.com/aDNA-Network/adna-legacy) and old URLs redirect there; upgrade via `skill_workspace_upgrade`.
 
-On first run the agent reads the workspace router, detects a fresh workspace, and walks you through creating your first project — forking the template into e.g. `~/aDNA/my_research_lab.aDNA/` with its own governance and git history. The hidden `.adna/` template stays clean for updates (`git -C .adna pull`).
+On first run the agent reads the workspace router, detects a fresh workspace, and walks you through creating your first project — forking the embedded standard into e.g. `~/aDNA/my_research_lab.aDNA/` with its own governance and git history (your projects stay untracked by the image's git history by design). The embedded `.adna/` stays clean; updates arrive with `git pull` at the workspace root.
 
 **Optional — Obsidian:** vaults are plain Markdown, so any editor works. For the curated Obsidian experience (15 community plugins + the Tokyo Night theme), run `.adna/setup.sh` and open the workspace in Obsidian (Git Bash or WSL on Windows).
 

@@ -2,7 +2,7 @@
 type: governance
 version: "6.0"
 token_estimate: ~4500
-updated: 2026-04-13
+updated: 2026-06-10
 last_edited_by: agent_stanley
 ---
 
@@ -20,7 +20,7 @@ This vault IS the aDNA (Agentic DNA) knowledge architecture, and it IS about the
 - **The structure IS the lesson.** Every directory you navigate, every AGENTS.md you load, every governance file you read — point out how it demonstrates the concept it contains. The vault is the textbook.
 - **Dual audience, always.** Every explanation has two layers: technically precise for developers building with aDNA, genuinely clear for newcomers understanding what aDNA is. Never sacrifice one for the other.
 - **Teach by showing, not telling.** When explaining an aDNA concept, reference the file you are in or the directory you are navigating. Concrete before abstract.
-- **Cite the spec.** Technical claims reference the upstream aDNA Standard (`github.com/LatticeProtocol/Agentic-DNA`, `what/docs/adna_standard.md`) with section numbers. This vault demonstrates aDNA; the spec defines it.
+- **Cite the spec.** Technical claims reference the upstream aDNA Standard (`github.com/aDNA-Network/aDNA`, `what/docs/adna_standard.md`) with section numbers. This vault demonstrates aDNA; the spec defines it.
 - **Warm and precise, anti-jargon-first.** Channel the Feynman principle: if you can't explain it to a beginner, the context file isn't done. Technical depth is always available — but never required to get the core insight.
 
 ---
@@ -146,7 +146,7 @@ These rules apply to every session, mission, and campaign.
 6. **Archive, never delete.** Campaign docs, mission files, session records — permanent audit trail. Set `status: abandoned` or `status: completed`, never remove.
 7. **Dual audience test.** Every content file must be legible to both a developer reading for technical integration guidance and a non-developer reading to understand what aDNA is. If a file fails either audience, it is not finished. Use `how/skills/skill_dual_audience_review.md` to verify.
 8. **Self-reference is mandatory.** When explaining an aDNA concept, the explanation must reference the vault structure itself as a working example. The reader should be able to look at the file's own directory, frontmatter, or governance chain and see the concept in action.
-9. **Upstream spec is source of truth.** For any normative claim about aDNA, cite the upstream `adna_standard.md` (github.com/LatticeProtocol/Agentic-DNA). This vault demonstrates and explains; the spec defines. Never contradict the spec.
+9. **Upstream spec is source of truth.** For any normative claim about aDNA, cite the upstream `adna_standard.md` (github.com/aDNA-Network/aDNA). This vault demonstrates and explains; the spec defines. Never contradict the spec.
 10. **Cross-link aggressively.** Every content file must link to at least 2 related files in the vault via wikilinks. The graph view should be a connected web, not isolated islands. Orphan files are incomplete files.
 11. **Per-mission context budget is mandatory.** Every mission spec declares `token_budget_estimated` per the content-load formula (`session_cost ≈ transition_tax + Σ per_objective_work`; thresholds < 50 / 50-80 / 80-200 / ≥ 200 kT). Sessions log `token_budget_actual` (rough is fine). AARs report estimate-vs-actual delta in content-load units; **API-billing companion units may be reported alongside per ADR-016 Clause C** (ratified at M2.3 S2 2026-05-20: `session_cost_api_billing ≈ (328 K + turns × 1 K cache_creation) + (4.1 M + turns × 126 K cache_read)`; 49-session corpus regression fit). Drift > 2× on either metric triggers a retrospective. ADR-016 governs.
 

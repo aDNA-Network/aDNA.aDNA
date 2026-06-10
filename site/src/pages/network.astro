@@ -160,13 +160,13 @@ const edgeTypes = [
           <div class="run-step-body">
             <h3>Bootstrap your node</h3>
             <p>
-              Create the workspace, clone the standard into a hidden <code>.adna/</code> template, bootstrap
-              the workspace router, and start the agent — it detects a fresh workspace, scaffolds your first
-              project, and can bootstrap <code>Home.aDNA</code>, the vault that governs your machine.
+              Clone the workspace image — the agent router ships pre-instantiated at the root and the
+              standard comes embedded in a hidden <code>.adna/</code> folder — then start the agent: it
+              detects a fresh workspace, scaffolds your first project, and can bootstrap
+              <code>Home.aDNA</code>, the vault that governs your machine.
             </p>
-            <pre class="run-code"><code>{installTruth.commands.workspace}
-{installTruth.commands.clone}
-{installTruth.commands.router}
+            <pre class="run-code"><code>{installTruth.commands.clone}
+{installTruth.commands.enter}
 {installTruth.commands.launch}</code></pre>
             <p class="run-note">
               See <a href="/get-started/" data-astro-prefetch>Get started</a> for the full walkthrough —
