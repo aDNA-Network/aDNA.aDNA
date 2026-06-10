@@ -3,8 +3,9 @@ type: backlog_idea
 status: proposed
 priority: medium
 created: 2026-06-01
+updated: 2026-06-05
 last_edited_by: agent_hestia
-tags: [backlog, idea, upstream, template, exemplar, node_adna, home, hestia_origin, m25_origin]
+tags: [backlog, idea, upstream, template, exemplar, node_adna, home, hestia_origin, m25_origin, prytaneion_m3_4]
 ---
 
 # Idea — Upstream the Node Exemplar HOME Template (`template_node_adna_exemplar/`)
@@ -47,3 +48,32 @@ var set (`{{accent_*_hex}}`, `{{banner_image}}`, `{{persona_greeting}}`).
 - Mission: `Home.aDNA/how/campaigns/campaign_lattice_compliance_upgrade/missions/mission_lattice_comp_m25_template_node_adna_exemplar.md`.
 - Base template extracted at M-LWX-02; this is its themed successor.
 - Related: `idea_upstream_latticehome_rename_pattern.md`, `idea_upstream_node_vault_bare_role_rename.md`.
+
+## M3.4 update (2026-06-05, Operation Prytaneion P3)
+
+The bundle's `HOME.md` shape was **elevated and round-tripped** since this idea was filed (M25). What
+upstream now inherits is the Prytaneion-grade home, not the M15–M24 one:
+
+- **Landing layer** — a node-agnostic landing strip (aDNA-network intro + `adna.network` **Meta Bind**
+  CTA + marketplace link) the base/old-exemplar lacked.
+- **Dashboard band** — one glanceable 5-second status line (one dominant number) replacing the
+  Node-Status table + timeline HUD. Adds two derived band vars: **`{{healthy_count}}` + `{{blocked_count}}`**
+  (inventory-sourced, like `{{drift_count}}`) — fold these into the interview's count derivation.
+- **§Gallery engine = Bases** (not DataviewJS) — ships a node-agnostic `what/inventory/curation_gallery.base`
+  cards view; **no JavaScript** (DataviewJS retired node-wide at M3.2 for security posture). The dormant
+  `.curation-card` DataviewJS CSS remains for nodes that opt back in.
+- **§Topology** de-weighted to a link (no inline canvas embed).
+- **Progressive-disclosure callout folds** carry all audit-grade detail (resting view ≈1.5 viewports).
+
+**New plugin prerequisite:** **Meta Bind** (the landing CTA), alongside Bases (core) + Advanced Canvas.
+
+**Load-bearing wiring requirement (the interview half):** the all-vaults / non-vault-project indices live
+inside `> [!abstract]-` / `> [!note]-` folds, so `{{vaults_table}}` / `{{named_projects_table}}` must
+render as **`>`-prefixed callout-body bullets** (not `.vault-grid` divs / a markdown table — either breaks
+the callout open). The bundle pins this "callout-fold profile" in `HOME.md.template` + `SUBSTITUTIONS.md`,
+but `skill_node_bootstrap_interview.md` Step 9 (do-not-edit `.adna/`) has no `>`-prefix logic. Upstream
+adoption must teach the renderer this profile — track jointly with the skill-wiring sibling
+`idea_upstream_project_fork_exemplar_invocation.md`.
+
+A reproducible, dependency-free smoke test now ships in-bundle (`smoke_render.py`; PASS 2026-06-05).
+
