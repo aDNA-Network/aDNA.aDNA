@@ -2,7 +2,7 @@
 type: artifact
 artifact_class: design_spec
 created: 2026-06-07
-updated: 2026-06-10   # P2 realign: c162 context-graph insertion + carry-in fold (audit campaign close)
+updated: 2026-06-10   # P2 realign: c162 context-graph insertion + carry-in fold (audit campaign close); c164 build spec prepared (wound down to artifact at operator direction)
 mission: mission_adna_str_p5_m512_e5_public_good_commons
 campaign: campaign_adna_serious_tool_readiness
 phase: 5
@@ -152,7 +152,7 @@ wilhelm_ai:
 | 161 | 2 | ✅ `/commons` bands 1–2 — ethos hero (chosen direction) + featured-subnetwork grid (`SubnetworkCard`, real cited cards) | 2026-06-08 (pre-pause) |
 | **162** | 3 | **Context-graph experience** (inserted at realign; audit gap #17 + operator directive) — image-led `HomeHero` on `/vaults` (the freed `hero_adna_network.png` — the original home glyph) + a `hero-stage` band on `/vaults/graph`; context-democracy framing + concept cross-links (knowledge-graph · triad · lattice-composition · convergence); gate-9 + gate-11 coverage extension. Hard non-goals: no new routes, no Mermaid-engine rework, no graph-data changes | **2026-06-10 (this session)** |
 | 163 | 4 | ✅ **Connect-to-a-subnetwork** affordance (`#connect` band: follow/federate/contribute + E4 local-by-default boundary + honest horizon line; hero primary restored to ratified "Connect a subnetwork"; per-card connect jump) + **C4** closing-CTA partials (NEW shared `ClosingCTA.astro` on 6 audience pages / `/community` / all vault-detail; every href dist-verified). Gates 120/120; commit `90c2395`; ledger `cycle_163_E5_connect_c4_ctas.json` | 2026-06-10 |
-| 164 | 5 | First social surface — contributors/attribution/activity over the registry (honest MVP) + the **horizon note** (Venus-gated) | later |
+| 164 | 5 | First social surface — contributors/attribution/activity over the registry (honest MVP) + the **horizon note** (Venus-gated). 📋 **Build spec PREPARED 2026-06-10** — operator-approved plan wound down to [[m512_e5_c164_first_social_surface_build_spec]] (`ready_to_execute`; data recon + verification + close protocol inside); the executing session follows it directly | later |
 | 165 | 6 | Homepage **§5** hand-off (tease → live `/commons`) + **C3** nav/orphan surfacing (`/commons` nav entry + audience pages + unify secondary nav + mobile SidebarNav disclosure) + cross-links + breadcrumbs (seams) | later |
 | 166–168 | 7–9 | **MAX-III** deep per-page/section measure+iterate — **C1** home-hero concrete-then-ethos (surface `/learn/what-is-adna`; How-it-Works promotion) + **C2** terminology/object-model spine (node/aDNA-computer/vault/network) across home/network/vaults; Trust/Provenance + Participation-Scent passes; responsive/mobile (carry **E4 Gap #1**); copy tightening (AVOID register) | later |
 | 169 | 10 | **E5 decadal close** — 11-section AAR + **full 30-persona Reviewer Lens Pass + Movement Skeptic** + Lighthouse/Playwright + STATE/STR cascade; ADR-034 → phase gate; **C5 coordinated close-deploy** | later |
