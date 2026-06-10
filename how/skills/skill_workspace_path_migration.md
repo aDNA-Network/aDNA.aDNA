@@ -2,7 +2,7 @@
 type: skill
 skill_type: agent
 created: 2026-06-09
-updated: 2026-06-09
+updated: 2026-06-10
 status: active
 category: migration
 trigger: "Operator on a legacy workspace root (default ~/lattice) wants to migrate to the recommended ~/aDNA root — or any OLD_ROOT → NEW_ROOT workspace-root move"
@@ -32,6 +32,8 @@ The move is **not** cosmetic. A bare symlink alias does **not** achieve a worksp
 This generalizes the Stanley-node runbook (`aDNALabs.aDNA` Operation Homecoming) into a reusable, any-user, any-root procedure. It is a **candidate upstream** skill → `.adna/how/skills/` (per `skill_upstream_contribution.md`); file the idea, never push to `.adna/` directly.
 
 > **Worked example (canonical):** `aDNALabs.aDNA/how/campaigns/campaign_adnalabs_genesis/missions/mission_path_migration_l1.md` is the canonical Stanley-node instance (`~/lattice → ~/aDNA`, L1-first, reversible, harness re-key R5 as the crux). **Mechanism reference:** `aDNALabs.aDNA/what/migration/path_migration_execution_playbook.md` (7 system anchors, sequencing, rollback). **Risks:** `aDNALabs.aDNA/what/migration/migration_risk_register.md` R5 (harness context-key loss) + R7 (names-before-path).
+
+> **Standalone shell companion:** `how/skills/migrate_workspace_root.sh` (this directory) performs the mechanical preflight/move/sweep/proofs for operators outside an agent session; this skill remains the canonical agentic path and uniquely owns the harness re-key (Step 5).
 
 ## Trigger
 
