@@ -2,7 +2,7 @@
 type: artifact
 artifact_class: decadal_theme_set
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-06-10   # E6 Onboarding & Install Portal inserted (operator-ratified); capstone renumbered E6→E7; D16 carry-ins block added (audit P2 realign)
 mission: mission_adna_str_p5_m57_adnalabs_expansion_planning_stub
 campaign: campaign_adna_serious_tool_readiness
 phase: 5
@@ -11,7 +11,7 @@ persona: rosetta
 last_edited_by: agent_stanley
 status: draft   # operator-ratified at the M5.7 gate
 supersedes_disposition: extends_m50_decadal_theme_set   # D11-D20 preserved (archive-never-delete); D16-D20 re-scoped in place; E1-E5 added
-naming_continuity: extends_rosetta_d1_d10_and_str_d11_d20   # Rosetta D1-D10, STR D11-D20, ecosystem E1-E5
+naming_continuity: extends_rosetta_d1_d10_and_str_d11_d20   # Rosetta D1-D10, STR D11-D20, ecosystem E1-E7 (E6 inserted 2026-06-10; capstone renumbered E6→E7 per the Track-G insertion precedent)
 total_personas_in_bench: 30   # 21 existing + 9 new (see m57_persona_bench_expansion_v2.md)
 total_dimensions: 13   # 10 existing + 3 new (Trust/Provenance, Participation_Scent, Network_Legibility), phased in
 tags: [decadal_theme_set, eseries, ecosystem_site, m5_7, v8, p5, rescope, amended_exit_gate, adna_network, agentic_context_democracy]
@@ -32,14 +32,15 @@ tags: [decadal_theme_set, eseries, ecosystem_site, m5_7, v8, p5, rescope, amende
 | **C** | Community / labs / org | ⚠️ thin | **E3** | gated — needs aDLabs org/community structure |
 | **D** | aDNANetwork / "aDNA computers" / node onboarding | ⚠️ seed | **E4** | **least-gated — FIRST build mover** (vaults.json + federation_refs seeded) |
 | **E** | aDNALabs positioning / about / vision / blog / homepage re-frame | ❌ | **E1** (+ D18 brand system) | design do-now; final org-brand assets gated |
-| **F** | Domain → aDNA.network | ✅ **DONE** (live, Cloudflare→Vercel, ADR-031) | — (launch-verify in E6) | n/a — collapses from "cutover" to "verify" |
+| **F** | Domain → aDNA.network | ✅ **DONE** (live, Cloudflare→Vercel, ADR-031) | — (launch-verify in **E7**, the renumbered capstone) | n/a — collapses from "cutover" to "verify" |
+| **H** | **Onboarding / Install funnel** — the GitHub↔site install path (template README → `/get-started` portal → first `claude` session → first vault) | ⚠️ page exists, flow was **invalid** (taught a clone that lands in the template's refused state; audit gap #16 install-truth drift) | **E6** (inserted 2026-06-10) | do-now (template + site are live substrates; truth fixes pre-staged at the audit P2) |
 | **G** | **Public-Good Commons / Subnetwork Federation** — featured aligned subnetworks; "connect to a subnetwork"; the first social surface ([[narrative_ethos_public_good|ethos]]) | ❌ NEW (operator-added at ratification 2026-06-03) | **E5** | showcase do-now (real vaults); full social layer co-designed w/ aDNANetwork/Venus (horizon) |
 
 ## Decadal index (re-scoped D16–D20 + new E1–E5)
 
 | Decadal | Track | Theme | Disposition | Reviewer Lens Pass? | Build gate |
 |---|---|---|---|---|---|
-| **D16** | A | Reference & Glossary Streamline | **KEEP + expand glossary** (aDNANetwork, marketplace, registry, federation, "aDNA computer") | NO | do-now |
+| **D16** | A | Reference & Glossary Streamline — **+ docs-III carry-ins (audit P2, 2026-06-10):** ~96-content-doc freshness sweep · version/count alignment via `standard.ts` · print/PDF stylesheet decision for the normative spec · **gate-14 docs-freshness/consistency** (incl. "token-coupled constants move with the token" + stale-slug checks) · full internal link-graph crawl · post-E5 terminology-spine conformance | **KEEP + expand glossary** (aDNANetwork, marketplace, registry, federation, "aDNA computer") | NO | do-now (opens c180, after E6) |
 | **D17** | A/cross | Cross-Page Narrative Coherence | **EXPAND** — new journeys (publisher / consumer / lab-org visitor / node operator), not just 5 doc personas | **YES** | partial (doc journeys now; ecosystem journeys after their surfaces land) |
 | **D18** | E/A | Visual Hierarchy & Typography v2 | **FOLD into E1 brand system** (aDNA-forward; aDNA-vs-Lattice visual distinction) | (with E1) | design do-now |
 | **D19** | cross | Mobile & Responsive v2 | **KEEP** — test new surfaces + new personas | NO | trails each surface |
@@ -48,9 +49,10 @@ tags: [decadal_theme_set, eseries, ecosystem_site, m5_7, v8, p5, rescope, amende
 | **E3** | C | **Community / Labs / Org** — org directory (org_vault/org_graph classes) + showcase + contribution funnel; who-not-how-many | NEW | **YES** | **gated** (aDLabs org structure) |
 | **E4** | D | **aDNANetwork & Node Onboarding** — federation/topology viz + "aDNA computers" surface + node onboarding over `vaults.json` | NEW | NO | **least-gated — FIRST build mover** |
 | **E5** | G | **Public-Good Commons & Subnetwork Federation** — featured mission-aligned subnetworks (WGA · Context Commons · WilhelmAI · Rare Archive) + "connect to a subnetwork" + the first social surface (contributors/attribution/activity); the [[narrative_ethos_public_good|ethos]] made concrete | NEW (operator-added 2026-06-03) | **YES** | showcase do-now; full social layer horizon (Venus-gated) |
-| **E6** | cross | **Integration, Hardening & Adversarial Capstone** — cross-surface coherence + perf/a11y/motion-budget hardening + adversarial review (skeptic + external-validator + Movement Skeptic) + launch-verify (F) + Phase-5 exit | NEW (absorbs D20 intent) | **YES (final)** | trails all built surfaces |
+| **E6** | H (cross A·D) | **Onboarding & Install Portal** — the GitHub↔site install funnel made true + delightful: install-truth data layer (`install_truth.json` fixture + gate-12) · `/get-started` portal deep treatment · upstream template-README follow-through (PR filed 2026-06-10) · on-site search + newsletter/contact decision (audit gap #13 routing) · funnel III (every audience page routes to the portal; Participation-Scent pass) | **NEW (operator-ratified 2026-06-10** at the audit-campaign P2 gate bundle; seeded by audit gaps #16/#13; insertion follows the Track-G precedent) | **YES** | do-now (c170–179; truth fixes + gate-12 pre-staged at the audit P2 as E6-O2 carry-down) |
+| **E7** | cross | **Integration, Hardening & Adversarial Capstone** — cross-surface coherence + perf/a11y/motion-budget hardening + adversarial review (skeptic + external-validator + Movement Skeptic) + launch-verify (F) + Phase-5 exit | NEW (absorbs D20 intent; **renumbered E6→E7 2026-06-10** at the E6 insertion — annotate-in-place, archive-never-delete) | **YES (final)** | trails all built surfaces |
 
-**Reviewer Lens Pass cadence:** D17 · E1 · E3 · E5 · E6 (the ethos-bearing public-good surface E5 + the final capstone E6 both get full passes — richer than the STR 4-pass rhythm, per the MAX-III directive below). New reviewers mandatory on their owning tracks (see persona-bench design).
+**Reviewer Lens Pass cadence:** D17 · E1 · E3 · E5 · **E6** · **E7 (final)** *(amended 2026-06-10: the inserted onboarding portal E6 takes a full pass — it is the conversion surface; the capstone keeps the final pass as E7)*. New reviewers mandatory on their owning tracks (see persona-bench design).
 
 ## Per-decadal cycle structure + AAR cadence
 
@@ -66,6 +68,7 @@ DO-NOW (design/research/brand-independent build — proceeds at ratification)
   brand-independent shell: design-system CSS, dark-mode, meaningful-motion impl, component scaffolding
   D17 doc-journey coherence (doc personas now)
   E5 public-good showcase (feature real aligned subnetworks — WGA/Context Commons/WilhelmAI/Rare Archive — over the registry; the ethos made concrete)
+  E6 onboarding & install portal (inserted 2026-06-10; c170–179 — template + site are live substrates; truth fixes pre-staged)
 
 GATED-BUILD (holds until Operation Homecoming Steps 2–5 substantially land)
   E2 Marketplace UI        ← aDLabs marketplace data shape
@@ -73,7 +76,7 @@ GATED-BUILD (holds until Operation Homecoming Steps 2–5 substantially land)
   E1 final org-brand assets ← upstream brand decisions
   E5 full social layer     ← profiles/follows/feeds/governance — co-designed w/ aDNANetwork (Venus-gated); the showcase ships now, the social layer is horizon
   D17 ecosystem-journey coherence (after those surfaces exist)
-  E6 capstone + launch      ← trails all built surfaces + operator go-signal + aDLabs brand-launch coordination
+  E7 capstone + launch      ← (renumbered from E6 2026-06-10) trails all built surfaces + operator go-signal + aDLabs brand-launch coordination
 
 RECONCILIATION SEAM: E2/E3/E4 build against STABLE SEEDS (lattice schema, vaults.json, federation_refs)
   + LOCKED names only, behind a thin adaptation layer → when aDLabs finalizes the surfaces, rebind not rebuild.
@@ -86,7 +89,7 @@ RECONCILIATION SEAM: E2/E3/E4 build against STABLE SEEDS (lattice schema, vaults
 | **Per-track ranker** (mean of dims, full ~30-persona bench) | **≥ 4.95 on EACH of A / B / C / D / E** | each track scored at its capstone E-decadal AAR — a strong docs track cannot mask a weak marketplace track |
 | **No-weak-dimension floor** | **no single dimension < 4.80 on any track** | prevents a 4.95 mean hiding a 4.2 Trust on marketplace provenance |
 | **REPO** (README + repo metadata) | ≥ 4.95 | full bench (inherited from STR) |
-| **Reviewer Lens Pass clean** | no P1 unresolved at D17 / E1 / E3 / E5 | manual review of the 4 AARs |
+| **Reviewer Lens Pass clean** | no P1 unresolved at D17 / E1 / E3 / E5 / **E6** | manual review of the 5 AARs *(amended 2026-06-10 at the E6 insertion)* |
 | **Ecosystem-readiness journeys** | publish-a-lattice · discover/compose · run-a-node · join-community + value-prop all green | operator review (extends STR's community-readiness checklist) |
 | **Perf / a11y / motion** | Lighthouse 100; `prefers-reduced-motion` honored; WCAG 2.1 AA | Lighthouse + Playwright gates (existing) |
 | **Image-gen budget** | cumulative ≤ explicit operator cap | ComfyForge/CanvasForge ledger (STR ran D11–D20 at $1.72 of $50) |
@@ -112,8 +115,8 @@ Because this is a **Phase-5 continuation** (operator decision), the amended exit
 
 ## Notes
 
-- **Naming continuity:** Rosetta D1–D10 (cycles 1–100) → STR D11–D20 (cycles 101–200) → ecosystem E1–E5 (cycles 201+). D16–D20 keep their D-numbers (re-scoped in place); E1–E5 are net-new.
-- **Decadal granularity:** ~10 cycles each; brand-independent + Track D decadals (D16, D18→E1, E4) are immediately runnable post-ratification; gated decadals (E2, E3) sequence behind Homecoming Steps 2–5.
+- **Naming continuity:** Rosetta D1–D10 (cycles 1–100) → STR D11–D20 (cycles 101–200) → ecosystem E1–E5 (cycles 201+). D16–D20 keep their D-numbers (re-scoped in place); E1–E5 are net-new. **Amendment 2026-06-10:** **E6 = Onboarding & Install Portal** inserted at the audit-campaign P2 (operator-ratified at the plan gate bundle); the capstone **renumbered E6→E7** — same annotate-in-place mechanics as the Track-G/E5 insertion (which renumbered the capstone E5→E6 on 2026-06-03).
+- **Decadal granularity:** ~10 cycles each; brand-independent + Track D decadals (D16, D18→E1, E4) are immediately runnable post-ratification; gated decadals (E2, E3) sequence behind Homecoming Steps 2–5. **Cycle ledger (2026-06-10):** E4 = c150–159 · E5 = c160–169 (realigned; c162 context-graph inserted) · **E6 = c170–179** · D16 = c180–189 · E7 trails.
 - **Self-reference:** E1's homepage re-frame IS the [[front_page_doctrine]] §8 worked example — the vault building its own forward face by its own doctrine.
 
 ## Related

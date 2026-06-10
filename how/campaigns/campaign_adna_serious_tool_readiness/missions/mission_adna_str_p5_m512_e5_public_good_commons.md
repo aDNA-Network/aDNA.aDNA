@@ -7,7 +7,7 @@ mission_number: 5.12
 decadal: E5
 slug: e5_public_good_commons
 created: 2026-06-07
-updated: 2026-06-08
+updated: 2026-06-10
 opens_at: 2026-06-07
 opened_session: session_stanley_20260608T042346Z_v8_m512_e5_open
 status: in_progress
@@ -36,7 +36,7 @@ tags: [mission, m5_12, e5, v8, p5, implementation, public_good_commons, subnetwo
 
 # Mission M5.12 / E5 — Public-Good Commons & Subnetwork Federation
 
-> ⏸️ **PAUSED 2026-06-08 at cycle 161** (last commit `2c27518`) for the side campaign **`campaign_adna_network_audit`** — a comprehensive 9-axis audit of adna.network whose findings re-align the remaining E5 cycles (162-169). **Resume E5 at cycle 162 after that campaign's P2 closeout** (`how/campaigns/campaign_adna_network_audit/`; resume handoff = `mission_ana_p2_closeout_realign`). E5 cycles 160-161 (data foundation + `/commons` hi-fi hero + `SubnetworkCard`) are DONE, commit-only.
+> ▶️ **RESUMED 2026-06-10 at cycle 162** — the side campaign **`campaign_adna_network_audit`** closed (P0–P2 complete; final AAR `aar_audit_p0_p1s1.md`). Its campaign-tier findings are folded into the realigned per-cycle plan (design spec §Per-cycle plan): **c162 = context-graph experience** (inserted; audit gap #17 + operator directive — home-page glyph art + framing onto `/vaults` + `/vaults/graph`), c163 = Connect + C4 CTAs, c164 = first social surface, c165 = §5 hand-off + C3 nav, c166–168 = MAX-III + C1/C2 spine, c169 = close + C5 coordinated deploy. *(Pause history: paused 2026-06-08 at c161, last pre-pause commit `2c27518`; cycles 160–161 done commit-only.)* **New downstream decadal:** the audit also seeded **E6 / M5.13 Onboarding & Install Portal** (operator-ratified 2026-06-10; capstone renumbered E6→E7) — opens at c170 after this decadal closes; its install-truth data layer + `/get-started` truth fixes were pre-staged at the audit P2 (E6-O2 carry-down).
 
 > The **ethos-bearing** E-series build mover (per the [[m57_eseries_ecosystem_theme_set|M5.7 charter]], Track G): the surface that makes the [[narrative_ethos_public_good|public-good ethos]] *concrete* — not by asserting the abundance thesis but by **pointing at real public-good work and letting it speak**. It features four real, mission-aligned subnetworks already in this workspace (WGA · Context Commons · WilhelmAI · Rare Archive), gives the site a **"connect to a subnetwork"** surface, and stands up the **first social surface** (contributors / attribution / activity over the living registry). Per the charter this is **showcase do-now** (buildable on `vaults.json` + federation refs); the **full social layer** (profiles / follows / feeds / governance) stays an explicit **Venus-gated horizon** — the campaign builds *toward* it, it does not pretend to ship it. Runs [[skill_site_design_pipeline]]: **Stages 0–4 design → operator Stage-0 sign-off → Stage 5 build III cycles (160–~169) → Stage 6 measure → Stage 8 iterate → Stage 7 Reviewer Lens Pass at the close**. E5 **is** an RLP decadal (the RLP cadence is D17·E1·E3·E5·E6) **and** gets the *extra* Reviewer Lens Pass per the MAX-III directive; the owning new dimensions are **Trust/Provenance** + **Participation Scent**.
 

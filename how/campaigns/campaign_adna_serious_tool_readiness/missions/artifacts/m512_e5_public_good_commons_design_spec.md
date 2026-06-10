@@ -2,7 +2,7 @@
 type: artifact
 artifact_class: design_spec
 created: 2026-06-07
-updated: 2026-06-07
+updated: 2026-06-10   # P2 realign: c162 context-graph insertion + carry-in fold (audit campaign close)
 mission: mission_adna_str_p5_m512_e5_public_good_commons
 campaign: campaign_adna_serious_tool_readiness
 phase: 5
@@ -137,27 +137,36 @@ wilhelm_ai:
 
 > Authoring discipline: a subnetwork is featured only if its member vault(s) exist in `vaults.json` (no dangling cards); claims cite a governance source; **no fabricated metrics**. The registry-stub gap (status:pending, empty headline_mission) is exactly what this overlay fills — honestly.
 
-## Per-cycle plan — E5 decadal (cycles 160–~169)
+## Per-cycle plan — E5 decadal (cycles 160–169) — **REALIGNED at the audit P2 (2026-06-10)**
+
+> Realign executed per `mission_ana_p2_closeout_realign` + the operator-ratified plan gate (2026-06-09/10):
+> the **context-graph experience** cycle (audit gap #17 + operator directive: bring the home-page glyph
+> art + conceptual framing onto `/vaults` + `/vaults/graph`) is inserted at **c162**; the original
+> c162–164 objectives shift one cycle right; MAX-III compresses 4→3 cycles (honest: the audit's
+> **P1-S3 sweep pre-closed** much of the original 165–168 sweep scope — light-mode parity, generated-detail
+> axe, mobile-qual — see audit report §9). No objective dropped; decadal still closes at **c169**.
 
 | Cycle | E5 # | Theme | Session |
 |---|---|---|---|
-| 160 | 1 | **Data foundation** — `subnetworks.yaml` (4 cited subnetworks) + generator merge/projection + regen; `/commons` route scaffold | post-Stage-0 |
-| 161 | 2 | `/commons` bands 1–2 — ethos hero (chosen direction) + featured-subnetwork grid (`SubnetworkCard`, real cited cards) | later |
-| 162 | 3 | **Connect-to-a-subnetwork** affordance + subnetwork→`/vaults/[slug]` link-out + local/shared boundary carried from E4 | later |
-| 163 | 4 | First social surface — contributors/attribution/activity over the registry (honest MVP) + the **horizon note** (Venus-gated) | later |
-| 164 | 5 | Homepage **§5** hand-off (tease → live `/commons`) + nav entry + cross-links + breadcrumbs (seams) | later |
-| 165–168 | 6–9 | **MAX-III** deep per-page/section measure+iterate — Trust/Provenance + Participation-Scent passes; responsive/mobile (carry **E4 Gap #1**); copy tightening (AVOID register); axe both-modes; reference-inspection feed | later |
-| 169 | 10 | **E5 decadal close** — 11-section AAR + **full 30-persona Reviewer Lens Pass + Movement Skeptic** + Lighthouse/Playwright + STATE/STR cascade; ADR-034 → phase gate | later |
+| 160 | 1 | ✅ **Data foundation** — `subnetworks.yaml` (4 cited subnetworks) + generator merge/projection + regen; `/commons` route scaffold | 2026-06-07 |
+| 161 | 2 | ✅ `/commons` bands 1–2 — ethos hero (chosen direction) + featured-subnetwork grid (`SubnetworkCard`, real cited cards) | 2026-06-08 (pre-pause) |
+| **162** | 3 | **Context-graph experience** (inserted at realign; audit gap #17 + operator directive) — image-led `HomeHero` on `/vaults` (the freed `hero_adna_network.png` — the original home glyph) + a `hero-stage` band on `/vaults/graph`; context-democracy framing + concept cross-links (knowledge-graph · triad · lattice-composition · convergence); gate-9 + gate-11 coverage extension. Hard non-goals: no new routes, no Mermaid-engine rework, no graph-data changes | **2026-06-10 (this session)** |
+| 163 | 4 | **Connect-to-a-subnetwork** affordance + subnetwork→`/vaults/[slug]` link-out + local/shared boundary carried from E4 + **C4** closing-CTA partials (audience/community/vault-detail) | later |
+| 164 | 5 | First social surface — contributors/attribution/activity over the registry (honest MVP) + the **horizon note** (Venus-gated) | later |
+| 165 | 6 | Homepage **§5** hand-off (tease → live `/commons`) + **C3** nav/orphan surfacing (`/commons` nav entry + audience pages + unify secondary nav + mobile SidebarNav disclosure) + cross-links + breadcrumbs (seams) | later |
+| 166–168 | 7–9 | **MAX-III** deep per-page/section measure+iterate — **C1** home-hero concrete-then-ethos (surface `/learn/what-is-adna`; How-it-Works promotion) + **C2** terminology/object-model spine (node/aDNA-computer/vault/network) across home/network/vaults; Trust/Provenance + Participation-Scent passes; responsive/mobile (carry **E4 Gap #1**); copy tightening (AVOID register) | later |
+| 169 | 10 | **E5 decadal close** — 11-section AAR + **full 30-persona Reviewer Lens Pass + Movement Skeptic** + Lighthouse/Playwright + STATE/STR cascade; ADR-034 → phase gate; **C5 coordinated close-deploy** | later |
 
-## Audit carry-ins (from `campaign_adna_network_audit`, folded at its P2)
+## Audit carry-ins (from `campaign_adna_network_audit` — **FOLDED at its P2, 2026-06-10**)
 
-The adna.network audit side campaign (paused E5 at c161; see `aar_audit_p0_p1s1.md` gap register) routes its **campaign-tier** findings into these cycles — pre-staged here so they're visible when E5 resumes; the full per-cycle objective edits execute at the audit's P2 (`mission_ana_p2_closeout_realign`):
+> The pre-staged routing below executed at P2 into the realigned table above. Disposition record:
 
-- **c162** — **C4** closing-CTA partials (audience/community/vault-detail) land alongside the **Connect affordance**.
-- **c164** — **C3** surface the orphaned funnels in nav: `/commons` nav entry + audience pages (researchers/educators/enterprise/compliance/startup-first-hour) + unify the BaseLayout/DocumentationLayout secondary-nav split + mobile SidebarNav disclosure.
-- **c164–168** — **C1** home-hero **concrete-then-ethos** (add a plain-language functional definition before the ethos; surface the existing `/learn/what-is-adna`; promote How-it-Works above the registry) + **C2** a single **terminology/object-model spine** (node/aDNA-computer/vault/network) across home/network/vaults.
-- **c169 (close deploy)** — **C5** once the ADR-010 Wilhelm co-sign clears, the **coordinated HEAD deploy** publishes `/commons` + the accumulated P1 fixes together; establish a **deploy cadence** (`idea_deploy_cadence`) so live stops drifting behind HEAD.
-- **MAX-III (165–168)** also absorbs the audit's Phase-1b residue (light-mode parity, generated-detail axe sample, mobile-qual) if not already closed in P1-S3.
+- **#17 context-graph experience** → **c162** (inserted; executed this session).
+- **C4** closing-CTA partials → **c163** (with the Connect affordance).
+- **C3** nav/orphan surfacing → **c165** (with the homepage §5 hand-off).
+- **C1** concrete-then-ethos + **C2** terminology spine → **c166–168** MAX-III pass.
+- **C5** ADR-010 co-sign clear → **coordinated close-deploy at c169**; deploy cadence resolved (`idea_deploy_cadence`: deploy at every decadal close + operator-flagged credibility hotfix path — the audit P1-S1 + the 2026-06-10 install-truth deploy are the hotfix-path instances).
+- Phase-1b residue (light-mode parity, generated-detail axe, mobile-qual) — **already closed in P1-S3** (audit report §9; sweep 115/115); c166–168 verify only the *new* surfaces.
 
 > Cross-cutting credibility/a11y/SEO fixes already shipped live in the audit's **P1-S1** (GitHub links, `The Lattice`→`Vaults`, vault-meta/CakeHealth scrub, robots, version, `/vaults` contrast). Housekeeping (version-constant, vault-count reconciliation, Harness display, SidebarNav scoping, spec banner + JSON-LD) is the audit's **P1-S4** — not E5's job.
 

@@ -4,15 +4,17 @@ type: campaign
 title: "adna.network Comprehensive Audit & Improvement"
 owner: stanley
 persona: rosetta
-status: active
+status: completed
 phase_count: 3
 mission_count: 3
 estimated_sessions: "4-7"
 calibrated_sessions: "4-7"
+actual_sessions: 5
 estimation_class: content-novel
 priority: high
 created: 2026-06-08
-updated: 2026-06-08
+updated: 2026-06-10
+closed_at: 2026-06-10
 last_edited_by: agent_stanley
 tags: [campaign, audit, adna_network, side_campaign]
 ---
@@ -61,16 +63,16 @@ Complementary to — not a duplicate of — the main campaign's per-cycle III + 
 ### Phase 1: Execution
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| P1.M1 | Apply agreed fixes — S1 ✅ (credibility/privacy/naming/a11y/SEO Criticals, **deployed live**) · S2 (Get Started CTA) · S3 (Phase-1b sweep) · S4 (housekeeping) | 2-4 | P0 + gate | **in_progress** (S1 done; S2/S3/S4 pending) |
+| P1.M1 | Apply agreed fixes — S1 ✅ (Criticals, **deployed live**, `c0b41a6`) · S2 ✅ (Get Started CTA, `a80c4b6`) · S4 ✅ (housekeeping, `017a2e7`) · S3 ✅ (Phase-1b sweep, run last, `1a97dbe`; 115/115; 3 findings fixed at root) | 2-4 | P0 + gate | ✅ **completed 2026-06-10** |
 
-**Phase exit gate**: agreed fixes shipped (committed; build + gates + axe + Lighthouse green); roadmap items closed or explicitly deferred. Mid-campaign AAR + gap register: `missions/artifacts/aar_audit_p0_p1s1.md`.
+**Phase exit gate** ✅ **PASSED 2026-06-10**: all roadmap items shipped or explicitly deferred (Obj-11 → Hestia memo); sweep complete (audit report §9); gates 97/97. Gate pre-approved at the operator plan-gate bundle (2026-06-09/10), conditional on S3 green — condition met; logged in the P1 mission + session record.
 
 ### Phase 2: Wind-down / Realign
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| P2.M1 | Campaign AAR + realign main campaign → resume E5 | 1 | P1 | planning |
+| P2.M1 | Campaign AAR + realign main campaign → resume E5 (**expanded** per the operator portal directives: + E6/M5.13 authoring · c162 re-map · install-truth foundation · upstream PR · D16 carry-ins) | 1 | P1 | ✅ **completed 2026-06-10** |
 
-**Phase exit gate**: AAR filed; main-campaign E5 cycles (162-169) + design spec + STATE + doctrine + memory updated to absorb audit findings; main campaign resumed.
+**Phase exit gate** ✅ **PASSED 2026-06-10**: final AAR filed (`aar_audit_p0_p1s1.md`, 13/13 + 18-row register, zero orphans); E5 design spec re-mapped + pause lifted (resume c162); theme set amended (E6 inserted, capstone→E7); STATE + doctrine (§9) + memory updated; main campaign resumed.
 
 ## Decision Points
 | # | When | Decision | Status |
@@ -78,7 +80,7 @@ Complementary to — not a duplicate of — the main campaign's per-cycle III + 
 | 1 | Before P0 | Audit target (Both, local-primary) · scope (full site) · orchestration (Workflow-max) | ✅ ratified 2026-06-08 (operator) |
 | 2 | P0 → P1 gate | Which roadmap tiers/items to execute; any ship-now fixes; deploy posture | ✅ ratified 2026-06-09 (operator): **Full P1 + ship-now the live Criticals**; targeted deploy excluding embargoed `/commons` |
 | 2b | P1 integration | How to integrate campaign-tier findings | ✅ ratified 2026-06-09: **fold into E5** (no new standalone missions; gap register routes all findings) |
-| 3 | P1 → P2 gate | Confirm fixes complete; what folds into E5 vs future | pending |
+| 3 | P1 → P2 gate | Confirm fixes complete; what folds into E5 vs future | ✅ ratified 2026-06-10 (operator plan-gate bundle): gate pre-approved conditional on S3 green (met); **E6/M5.13 insertion + capstone E6→E7**; **c162 context-graph cycle** into E5; **ship-now install-truth deploy**; **upstream PR filed** |
 
 ## Risk Register
 | Risk | Severity | Mitigation |
@@ -127,28 +129,33 @@ Complementary to — not a duplicate of — the main campaign's per-cycle III + 
 - **Deliverable format** follows `template_aar.md` (11-section) + an `rlp_e1_30persona_results.json`-style results JSON.
 
 ## Completion Summary
-*Fill out when setting `status: completed`.*
+**Campaign completed 2026-06-10** (5 sessions, 2026-06-08 → 2026-06-10; estimated 4-7).
 
 ### Deliverables
-- [audit report + results JSON + shipped fixes + main-campaign realignment]
+- **Audit of record**: `audit_adna_network_2026_06.md` (now 9 sections incl. the §9 Phase-1b results) + results JSON — 15C/20H/26M/20L findings, all dispositioned.
+- **Shipped fixes**: P1-S1 Criticals (deployed live 2026-06-09) · S2 Get Started CTA · S4 housekeeping (version/count single-sourcing, SidebarNav scoping, spec banner+JSON-LD) · S3 sweep fixes (code-`<pre>` focusability, light success-token + 2 coupled greens) · install-truth foundation (fixture + gate-12 + 3-surface rewrite; hotfix-deployed 2026-06-10).
+- **Main-campaign realignment**: E5 resumed at c162 (re-mapped per-cycle plan); **new decadal E6/M5.13 Onboarding & Install Portal** authored (capstone→E7); D16 docs-III carry-ins; doctrine §9 Credibility Hygiene; deploy cadence resolved.
+- **Cross-vault/upstream**: Hestia memo (vault-card public fields); upstream README-flip PR staged + filed (`LatticeProtocol/aDNA`); 3 new + 1 updated backlog ideas.
 
 ### Descoped
-- [...]
+- Harness display split (Obj 11) — registry-of-record fields, Hestia's domain (memo open; regen handshake defined).
+- Reduced-motion emulation tests + full internal link-graph crawl → D16. RSS feed → backlog (E6/E7 opportunistic).
 
 ### Key Findings
-- [...]
+- **Credibility leakage, not performance, is the failure mode for a young standard** — private state in public meta, a named client, 404/301 canonical links, and an *install flow that didn't work* (gap #16) all sat behind green perf scores.
+- The live `/get-started` taught a flow landing in the template's own refused state — install-truth must be **single-sourced + gated** (fixture + gate-12), not hand-written per surface.
+- Token-coupled hardcoded colors are a recurring latent class (3 instances) — gate-14 material.
 
 ### Scope Changes
-- [...]
+- P2 expanded under the operator plan-gate bundle (2026-06-09/10): E6/M5.13 authoring + c162 insertion + install-truth carry-down + upstream PR (see `mission_ana_p2_closeout_realign` §Scope expansion).
 
 ### Follow-Up Campaigns
-- [...]
+- None standalone — everything folds into `campaign_adna_serious_tool_readiness` (E5 c163+ · E6 c170-179 · D16 c180-189 · E7 capstone).
 
 ## Campaign AAR
-*Mandatory before `status: completed`. See `how/templates/template_aar_lightweight.md`.*
 
-- **Worked**: [...]
-- **Didn't**: [...]
-- **Finding**: [...]
-- **Change**: [...]
-- **Follow-up**: [...]
+- **Worked**: The side-campaign pause pattern held — paused mid-decadal, audited cross-cutting, folded back via the gap register with zero orphans; ship-now hotfix path twice-used and now codified as cadence.
+- **Didn't**: The audit initially scored 12/37 routes dark-only — the completeness critic had to force Phase-1b; coverage discipline should be Step-A, not a follow-up.
+- **Finding**: An operator directive ("perfect portal for new users") and an audit Critical (install-truth drift) converged on the same object — the install funnel — which is what justified a new decadal rather than scattered fixes.
+- **Change**: Full-route × both-modes × generated-detail-sample is the new audit floor (the `@audit` sweep harness is reusable); install-truth class facts get fixtures + gates, never prose.
+- **Follow-up**: E5 c163 next session; Hestia memo ack → regen; PR review/merge → E6 O4; D16 mission authors at c180.

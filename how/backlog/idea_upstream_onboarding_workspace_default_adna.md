@@ -1,13 +1,13 @@
 ---
 type: backlog_idea
 created: 2026-06-04
-updated: 2026-06-04
-status: idea
+updated: 2026-06-10
+status: in_progress   # upstream PR staged + filed 2026-06-10 (audit P2 / E6-O4 vehicle); see Disposition
 last_edited_by: agent_stanley
 author: rosetta (aDNA.aDNA)
 trigger: operator question 2026-06-04 (during the E4 aDNANetwork session) — "if/when will new-user onboarding set up the right /aDNA/ directory structure instead of /lattice/?"
 informational: false
-upstream_target: LatticeProtocol/Agentic-DNA   # the .adna base template
+upstream_target: LatticeProtocol/aDNA   # the .adna base template (canonical repo name; was Agentic-DNA pre-rename)
 tags: [backlog, upstream, onboarding, workspace_default, lattice_to_adna, brand_pivot, v8_candidate]
 ---
 
@@ -29,7 +29,17 @@ A new user following the canonical Getting-Started flow lands in `~/aDNA/`. Noth
 - This is the **new-user-facing complement** to aDNALabs.aDNA / Operation Homecoming's `mission_path_migration_l1` (campaign `campaign_adnalabs_genesis`, migration sequence step 4 / WS-5 capstone). That mission moves the **operator's own** existing `~/aDNA/ → ~/aDNA/` (operator-path, L1-first, gated behind the Home cascade, reversible via a `~/aDNA → ~/aDNA` symlink, ~220 refs swept). It does **not** touch the `.adna/` template's new-user default — and per workspace **Standing Rule 1** (never modify `.adna/` locally) it shouldn't; that flows upstream to `LatticeProtocol/Agentic-DNA`.
 - The Rosetta Stone rebrand brief (`aDNALabs.aDNA/what/rebrand/rosetta_deliverable_brief.md` §6) already classifies the workspace-root rename as **operator-path** (distinct from the `<Role>.aDNA` vault-rename doctrine) and locks `~/aDNA/` as the target — so this idea inherits that locked target, it does not re-decide it.
 
-## Suggested change — ready-to-PR diff (against `.adna/`, i.e. `LatticeProtocol/Agentic-DNA`)
+## Disposition (2026-06-10 — audit P2)
+
+**PR staged + filed.** Authoritative staging: `how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m513_upstream_pr_staging/` (PR body + per-file replacement content + throwaway-clone mechanics); follow-through owned by **E6 / M5.13 O4**. Site-side install truth shipped the same day (`install_truth.json` + gate-12 + `/get-started`/`/network`/README fixes).
+
+> ⚠️ **The diff table below is sweep-mangled — do not PR from it.** The WS-5 Session-C `/lattice→/aDNA` path sweep
+> rewrote this file's own left-hand "before" strings (they now read `~/aDNA → ~/aDNA`). The *upstream* files still
+> carry `~/lattice` (verified against the live `.adna` checkout 2026-06-10) — the file/line TARGETS below remain
+> correct; reconstruct each "before" from the actual upstream content. (Sweep-blind-spot instance: a diff that
+> *quotes* the old path as data was swept as if it were a live ref — flagged to aDNALabs in the session SITREP.)
+
+## Suggested change — ready-to-PR diff (against `.adna/`, i.e. `LatticeProtocol/aDNA`)
 
 Change the **active onboarding instructions** to default to `~/aDNA/`; add a back-compat note; **preserve historical narrative** unchanged (per the `node.aDNA → LatticeHome.aDNA` R07 discipline — see precedent below).
 

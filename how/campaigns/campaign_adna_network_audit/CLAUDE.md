@@ -2,14 +2,14 @@
 type: governance
 subtype: campaign_claude
 created: 2026-06-08
-updated: 2026-06-08
+updated: 2026-06-10
 last_edited_by: agent_stanley
 tags: [governance, campaign, audit]
 ---
 
 # CLAUDE.md — Campaign: adna.network Comprehensive Audit & Improvement
 
-> Auto-loaded when working within `how/campaigns/campaign_adna_network_audit/`. Supplements `aDNA.aDNA/CLAUDE.md` (project-level). **Side campaign** — it pauses the main campaign (`campaign_adna_serious_tool_readiness`, mid-E5 at c161) and hands back at P2.
+> Auto-loaded when working within `how/campaigns/campaign_adna_network_audit/`. Supplements `aDNA.aDNA/CLAUDE.md` (project-level). **Side campaign** — paused the main campaign (`campaign_adna_serious_tool_readiness`, mid-E5 at c161) 2026-06-08 and **handed back at P2, 2026-06-10**.
 
 ## Campaign Identity
 
@@ -18,9 +18,9 @@ tags: [governance, campaign, audit]
 | Campaign | `campaign_adna_network_audit` |
 | Owner | stanley |
 | Persona | Rosetta |
-| Status | planning (P0 open) |
-| Current Phase | Phase 0: Planning & Audit |
-| Relationship | **side campaign** — pauses `campaign_adna_serious_tool_readiness` (E5 c161); resumes it at P2 |
+| Status | ✅ **completed 2026-06-10** (P0–P2 closed; final AAR `missions/artifacts/aar_audit_p0_p1s1.md`; gap register rows 1–18 all dispositioned) |
+| Current Phase | — (closed; control returned to the main campaign at **E5 c162**, realigned; new decadal **E6/M5.13** seeded, capstone→E7) |
+| Relationship | **side campaign** — paused `campaign_adna_serious_tool_readiness` (E5 c161); resumed it at P2 (2026-06-10) |
 
 ## Quick Start
 1. Read this file (auto-loaded)

@@ -120,6 +120,15 @@ A synthesis of **Hermes-sparse-manifesto + HF-registry-as-proof** at the ~55/45 
 
 **Deliberately avoids:** 7-section sprawl, ≤2 fighting colors, custom SVG over emoji, no "blazingly fast" adjectives, motion only where it means something. Every number above instantiates §§1–6.
 
+## 9. Credibility Hygiene (public-surface law)
+
+*(Added 2026-06-10 at the audit-campaign P2 — operator-ratified at the plan gate; provenance: `campaign_adna_network_audit` P0 findings + P1 fixes. The audit's core lesson: for a young standard, the failure mode is not performance — it is internal state leaking into public surfaces.)*
+
+1. **No internal/private state on public surfaces.** Campaign jargon, mission IDs, client/partner names, embargoed work, and operational notes never render into public pages or `<meta>`/OG tags. Projection from private registries goes through a **sanitizer at the source** (the ADR-023 `publicNote()` pattern), never per-template patches.
+2. **Operational truths are single-sourced.** Version (`standard.ts`), counts (`vault_count`), the canonical repo URL and **install commands** (`install_truth.json`, gate-12) render from one fixture each — pages never hardcode a fact that can drift. A public surface teaching a wrong install path is a Critical, not a docs nit.
+3. **Canonical-link discipline.** One canonical GitHub org/repo form everywhere (`LatticeProtocol/aDNA`); no 301/404 links on credibility surfaces; `robots.txt`/sitemap point only at the live domain.
+4. **Live tracks HEAD.** The deploy cadence (decadal-close + operator-flagged credibility hotfix path; `idea_deploy_cadence` resolution) bounds how long any public defect can sit live.
+
 ## Change discipline
 
 Mirrors the companions' change rule: doctrine changes go through a design-adjacent decadal Q&A (the Reviewer Lens Pass) + operator ratification + a same-commit update to the provenance. This is a *governed* reference, not a loose note.
