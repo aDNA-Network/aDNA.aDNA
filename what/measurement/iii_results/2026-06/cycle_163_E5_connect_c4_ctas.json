@@ -1,0 +1,45 @@
+{
+  "cycle": 163,
+  "decadal": "E5",
+  "decadal_cycle": 4,
+  "mission": "mission_adna_str_p5_m512_e5_public_good_commons",
+  "slug": "e5_connect_c4_ctas",
+  "date": "2026-06-10",
+  "session": "session_stanley_20260610T173006Z_v8_m512_e5_c163",
+  "commit": "90c2395",
+  "theme": "Connect-to-a-subnetwork affordance + C4 closing-CTA partials (the realigned per-cycle plan row 163; audit roadmap C4 folded at the audit P2). /commons gets the #connect band — the hero's Stage-0-ratified '[Connect a subnetwork]' promise finally has a destination — and the audit's 'navigation-rich but action-poor' finding is closed with ONE shared ClosingCTA partial integrated across the six audience pages, /community, and every generated vault-detail page.",
+  "register": "Tokyo Night dark-first; reuse-over-invention (global .btn utilities own all CTA color — the new partial owns only rhythm; PersonaPage consolidation extended rather than bypassed); writing-guidelines LIFT register on all new copy (actor/verb/artifact, zero marketing adjectives); in-text links underlined cyan (link-in-text-block, both modes); no invented routes — every CTA href verified resolving in dist.",
+  "operator_scope": "Plan-gate (2026-06-10): c163 only this session; c164 (first social surface) gets its own session. Commit-only through the decadal (deploy = c169 close or operator-flagged hotfix; /commons stays excluded per ADR-010 pending co-sign). Session-start externals: PR LatticeProtocol/aDNA#8 still OPEN (no fixture bump); Hestia vault-card memo unacked (no sync:vaults regen).",
+  "iii_7step": {
+    "measure": "Baseline: /commons ended at the featured grid — the hero primary jumped to #featured as an interim because no connect surface existed (the Stage-0 Direction B '[Connect a subnetwork]' copy was parked); audit evidence: researchers/educators/enterprise/compliance/startup-first-hour/adopters each carried 127-131 links with ZERO styled CTAs, /community ctas[] held only the dark-mode toggle + mobile-menu button, vault-detail pages ended at 'On the lattice' with no action.",
+    "orient": "The audit's C4 fix text and the E5 design-spec Stage-2 IA converge on the same move: make connecting concrete (three real paths, not a fake sign-up flow) and close every persuasion surface on an action. One shared partial beats per-page bands — the same consolidation lesson PersonaPage itself teaches (five role pages, one primitive).",
+    "select_iterate": "(1) NEW ClosingCTA.astro — title?/lead?/primary/secondary props, global .btn classes, auto target+rel on external hrefs, aria-label'd section. (2) /commons #connect band: follow -> federate -> contribute ladder (increasing depth), each path linking real surfaces (/patterns/federation-readiness, /community/, /community/community-contribution-standards/); E4 local-by-default boundary line; honest-MVP horizon line (profiles/follows/feeds named as horizon, not implied); ClosingCTA 'Add your subnetwork' -> canonical repo + 'How federation works'. (3) Hero primary restored to ratified 'Connect a subnetwork' -> #connect (Movement-Skeptic guard intact — the cited grid is still the first thing under the hero). (4) SubnetworkCard foot: per-card 'Connect ↓' -> #connect (completes the Stage-2 card spec '… outbound public link · connect'). (5) PersonaPage ctaSecondaryLabel/Href prop pair -> segment secondaries: researchers->/use-cases/research-lab, educators->/use-cases/educator, enterprise->/use-cases/enterprise-team, startup->/use-cases/startup, compliance->/reference/governance-model. (6) adopters hub + /community + vaults/[slug] get ClosingCTA directly ('Start your own vault', not 'use this vault' — most vaults are not public installs; honest primary).",
+    "implement": "site/src/components/sections/ClosingCTA.astro (NEW); commons.astro (#connect band + hero CTA restore + stale pre-realign cycle comment fixed); SubnetworkCard.astro (subnet-actions row); PersonaPage.astro (cta prop pair + render after slot); researchers/educators/enterprise/startup-first-hour/compliance/adopters/community index pages; vaults/[slug].astro. Commit 90c2395.",
+    "re_measure": "npm run build 163pp/0err (no new routes). Gates 120/120 first run — gate-4 axe AA both modes green incl. /commons with the new band; gate-9 responsive green incl. commons + vault detail at 5 viewports; gate-11 unaffected (hero labels not asserted, verified pre-edit).",
+    "validate": "dist checks: all 10 CTA-target routes resolve (use-cases x4 + hub, governance-model, contribution-standards, federation-readiness, get-started, vaults/graph); #connect anchor present once with 5 inbound links (hero + 4 cards). Dark-mode 1440px evidence shots eyeballed (local evidence/c163_screens/, gitignored): commons hero->grid->connect band composes; community 'Contribute' band centered with both buttons; vault-detail closes on actions.",
+    "record": "this JSON + design-spec per-cycle row c163 ✅ + mission O3 progress note + session SITREP + STATE refresh at session close."
+  },
+  "change_summary": [
+    "site/src/components/sections/ClosingCTA.astro NEW — shared closing-CTA band (audit C4 'one template change', generalized); .btn utilities own color, partial owns rhythm; external hrefs get target=_blank rel=noopener automatically.",
+    "site/src/pages/commons.astro — #connect band (follow/federate/contribute ladder + E4 local-by-default boundary + honest social-layer horizon line + 'Add your subnetwork'/'How federation works' CTA); hero primary #featured/'Meet the subnetworks' -> #connect/'Connect a subnetwork' (Stage-0 Direction B restored); scroll-margin-top on the anchor target.",
+    "site/src/components/sections/SubnetworkCard.astro — card foot 'Connect ↓' -> #connect beside 'Visit ↗' (subnet-actions flex row).",
+    "site/src/components/sections/PersonaPage.astro — optional ctaSecondaryLabel/ctaSecondaryHref; renders ClosingCTA ('Set up your workspace' / Get Started -> /get-started/) after the default slot.",
+    "researchers + educators + enterprise + startup-first-hour + compliance index pages — segment-relevant secondary CTAs (all verified existing routes).",
+    "adopters/index.astro — ClosingCTA (Get Started + 'Browse use cases' -> /use-cases/).",
+    "community/index.astro — ClosingCTA ('Contribute on GitHub' -> canonical repo + 'Read the contribution standards').",
+    "vaults/[slug].astro — ClosingCTA on all ~40 generated pages ('Start your own vault' -> /get-started/ + 'Explore the graph' -> /vaults/graph/)."
+  ],
+  "doctrine_compliance": {
+    "reuse_over_invention": "PASS — one new partial built on the global .btn utilities; PersonaPage consolidation extended; zero new color/typography declarations.",
+    "two_fighting_colors": "PASS — purple primary + cyan link signal only; band links cyan underlined.",
+    "dark_first": "PASS — gate-4 both modes green; .btn dark-mode variants already AA (global.css).",
+    "no_invented_routes": "PASS — all 10 CTA targets verified in dist; per-card connect is an in-page jump, not a fake per-subnetwork flow.",
+    "honest_showcase": "PASS — connect = three real paths, no sign-up implied; horizon line names profiles/follows/feeds as not-yet-existing; vault-detail primary reworded 'Start your own vault' (most vaults are not public installs).",
+    "avoid_register": "PASS — LIFT register throughout ('Set up your workspace', 'Contribute on GitHub'); zero marketing adjectives.",
+    "engine_untouched": "PASS — skills/gates/data unedited; nav untouched (C3 = c165).",
+    "hard_cap": "PASS — one cycle; operator scope (c163 only) honored."
+  },
+  "gates": {"build_pages": 163, "build_errors": 0, "playwright": "120/120", "axe_aa_both_modes": 0},
+  "deploy": "NONE — commit-only per the resolved deploy cadence (decadal-close + operator-flagged hotfix path); /commons remains excluded from production until the c169 coordinated close-deploy (ADR-010 co-sign pending).",
+  "next": "cycle 164 — first social surface: contributors/attribution/activity over the registry (honest MVP, who-not-how-many) + the full Venus-gated horizon note (per the realigned per-cycle plan)."
+}
