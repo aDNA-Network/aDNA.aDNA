@@ -4,9 +4,10 @@ import HomeHero from '../components/sections/HomeHero.astro';
 import NetworkDiagram from '../components/sections/NetworkDiagram.astro';
 import RegistryCard from '../components/sections/RegistryCard.astro';
 import { buildWebSiteJsonLD } from '../utils/seo';
-import { steps, stats } from '../data/home';
+import { steps, stats, audiences } from '../data/home';
 import { STANDARD_VERSION, ENTITY_TYPE_COUNT } from '../data/standard';
 import vaultsData from '../data/vaults.json';
+import subnetworksData from '../data/subnetworks.json';
 import heroImage from '../assets/heroes/hero_adna_helix.png';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.network';
@@ -24,6 +25,15 @@ const bySlug: Record<string, any> = Object.fromEntries(
 );
 const registryVaults = REGISTRY_SLUGS.map((s) => bySlug[s]).filter(Boolean);
 const vaultCount = vaultsData.vault_count;
+
+// Section 5 — the featured public-good subnetworks, teased data-driven from the
+// subnetworks.json fixture (names/taglines single-sourced, never hardcoded — the
+// E1-deferred §5 tease now hands off to the live /commons surface; E5 c165).
+const subnetworks = subnetworksData.subnetworks as Array<{
+  id: string;
+  display_name: string;
+  tagline: string;
+}>;
 
 const CLASS_LABELS: Record<string, string> = {
   standard_dev: 'the standard',
@@ -144,6 +154,38 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
         <a href="/reference/specification" class="btn btn-primary" data-astro-prefetch>Read the Specification</a>
         <a href="https://github.com/aDNA-Network/aDNA" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
       </div>
+    </div>
+  </section>
+
+  <!-- 5 · Join the network -->
+  <section class="join-network">
+    <div class="section-inner">
+      <h2 class="section-title">Join the network</h2>
+      <p class="section-subtitle">
+        The network is open — run a node, share a vault, and help
+        <a href="/reference/governance-model/">govern the standard</a>.
+        Mission-aligned subnetworks already steward real public-good work here, in the open.
+      </p>
+      <ul class="subnetwork-tease">
+        {subnetworks.map((s) => (
+          <li class="tease-item">
+            <a href="/commons/#featured" class="tease-name">{s.display_name}</a>
+            <span class="tease-tagline">{s.tagline}</span>
+          </li>
+        ))}
+      </ul>
+      <div class="join-cta">
+        <a href="/commons/" class="btn btn-primary" data-astro-prefetch>See the commons</a>
+        <a href="/community/" class="btn btn-secondary" data-astro-prefetch>Join the community</a>
+      </div>
+      <p class="audience-pathways">
+        <span class="pathways-label">aDNA for</span>
+        {audiences.map((a, i) => (
+          <Fragment>
+            <a href={a.href}>{a.label}</a>{i < audiences.length - 1 && <span class="sep" aria-hidden="true">·</span>}
+          </Fragment>
+        ))}
+      </p>
     </div>
   </section>
 </BaseLayout>
@@ -368,7 +410,8 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
 
   /* ——— The Standard ——— */
   .the-standard {
-    padding: var(--space-24) 0 var(--space-32);
+    /* §5 (.join-network) closes the page now — the --space-32 tail moved there (c165). */
+    padding: var(--space-24) 0;
     background: var(--color-bg-alt);
   }
 
@@ -400,6 +443,86 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
     flex-wrap: wrap;
   }
 
+  /* ——— 5 · Join the network ——— */
+  .join-network {
+    padding: var(--space-24) 0 var(--space-32);
+  }
+
+  /* In-text link inside the subtitle — underlined (link-in-text-block, c155 lesson). */
+  .join-network .section-subtitle a {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+
+  .subnetwork-tease {
+    list-style: none;
+    margin: 0 auto var(--space-10);
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-4);
+    max-width: 60rem;
+  }
+
+  .tease-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-4) var(--space-5);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .tease-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    /* Cyan — AA both modes for small/medium brand-colored text. */
+    color: var(--color-link);
+    text-decoration: none;
+  }
+
+  .tease-name:hover {
+    text-decoration: underline;
+  }
+
+  .tease-tagline {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .join-cta {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .audience-pathways {
+    margin-top: var(--space-10);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /* Underlined — the row mixes muted label text with links (link-in-text-block guard). */
+  .audience-pathways a {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+
+  .audience-pathways .sep {
+    color: var(--color-border);
+  }
+
   /* ——— Responsive ——— */
   @media (max-width: 480px) {
     .section-title {
@@ -424,6 +547,10 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
     }
 
     .the-standard {
+      padding: var(--space-12) 0;
+    }
+
+    .join-network {
       padding: var(--space-12) 0 var(--space-16);
     }
 

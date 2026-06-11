@@ -35,26 +35,44 @@ const routes: Route[] = [
   { prefix: '/how/lattice-examples/', leg: 'HOW', sectionLabel: 'Lattice Examples', sectionHref: '/how/lattice-examples/', icon: iconHow },
 ];
 
+// Single-page audience landings (E5 c165 — audit C3 breadcrumb seams). These pages ARE
+// their own section, so the prefix rule above (which hides breadcrumbs on section indexes)
+// can never match them. They crumb as WHO › For you › <page>, anchored at the adopters hub
+// (the de-facto audience index; matches the "For you" sidebar group). No back-link — a
+// one-page section has no index to go back to.
+const terminalRoutes: Route[] = [
+  { prefix: '/researchers', leg: 'WHO', sectionLabel: 'For you', sectionHref: '/adopters/', icon: iconUseCases },
+  { prefix: '/educators', leg: 'WHO', sectionLabel: 'For you', sectionHref: '/adopters/', icon: iconUseCases },
+  { prefix: '/enterprise', leg: 'WHO', sectionLabel: 'For you', sectionHref: '/adopters/', icon: iconUseCases },
+  { prefix: '/compliance', leg: 'WHO', sectionLabel: 'For you', sectionHref: '/adopters/', icon: iconUseCases },
+  { prefix: '/startup-first-hour', leg: 'WHO', sectionLabel: 'For you', sectionHref: '/adopters/', icon: iconUseCases },
+];
+
 const path = Astro.url.pathname;
 
 const match = routes.find((r) => {
   const trimmed = r.prefix.replace(/\/$/, '');
   return (path === r.prefix || path.startsWith(r.prefix)) && path !== trimmed && path !== r.prefix;
 });
+
+const terminal = match ? undefined : terminalRoutes.find((r) => path.replace(/\/$/, '') === r.prefix);
+const crumb = match ?? terminal;
 ---
 
-{match && (
+{crumb && (
   <>
-    <a href={match.sectionHref} class="back-to-index">
-      <span aria-hidden="true">←</span> Back to {match.sectionLabel.toLowerCase()}
-    </a>
+    {match && (
+      <a href={match.sectionHref} class="back-to-index">
+        <span aria-hidden="true">←</span> Back to {match.sectionLabel.toLowerCase()}
+      </a>
+    )}
     <nav aria-label="Breadcrumb" class="breadcrumb">
       <ol>
-        <li class="leg">{match.leg}</li>
+        <li class="leg">{crumb.leg}</li>
         <li class="sep" aria-hidden="true">›</li>
         <li class="section-cell">
-          <span class="section-icon" aria-hidden="true" set:html={match.icon} />
-          <a href={match.sectionHref}>{match.sectionLabel}</a>
+          <span class="section-icon" aria-hidden="true" set:html={crumb.icon} />
+          <a href={crumb.sectionHref}>{crumb.sectionLabel}</a>
         </li>
         <li class="sep" aria-hidden="true">›</li>
         <li aria-current="page" class="current">{pageTitle}</li>

@@ -4,6 +4,7 @@ import DarkModeToggle from '../islands/DarkModeToggle.astro';
 const navLinks = [
   { label: 'Network', href: '/network' },
   { label: 'Vaults', href: '/vaults' },
+  { label: 'Commons', href: '/commons' },
   { label: 'Learn', href: '/learn' },
   { label: 'Patterns', href: '/patterns' },
   { label: 'Use Cases', href: '/use-cases' },
@@ -118,7 +119,9 @@ const currentPath = Astro.url.pathname;
   .header-inner {
     display: flex;
     align-items: center;
-    gap: var(--space-6);
+    /* space-6 → space-4 at c165: part of the ~100px the 8th nav item (Commons) needed
+       to fit the inline row at the 1024px switch-on. */
+    gap: var(--space-4);
     max-width: var(--content-width);
     margin: 0 auto;
     padding: var(--space-3) var(--space-6);
@@ -144,23 +147,30 @@ const currentPath = Astro.url.pathname;
 
   .nav-desktop {
     display: none;
-    gap: var(--space-1);
+    gap: 2px;
   }
 
-  /* Inline nav appears at >=900px. The 7th item ("Vaults", renamed from "The Lattice" in the network audit; E4 c158) overflowed the row at the
-     prior 768px switch-on; tablets <900px now get the hamburger (which holds all 7 with no overflow),
-     and >=1024 (the responsive gate's desktop preset) shows the full inline nav comfortably. */
-  @media (min-width: 900px) {
+  /* Inline nav appears at >=1024px (E5 c165 — the c158 overflow class, third instance).
+     The 8th item ("Commons") pushed the measured row minimum to ~1112px at the old paddings;
+     even compressed (nav-link 12→8px, nav gap 4→2px, header gap 24→16px) the row needs
+     ~1010px, so the prior 900px switch-on overflowed. Sub-1024 viewports get the hamburger
+     (which holds all 8 with no overflow); 1024 = the responsive gate's desktop preset, and
+     gate-13 asserts the fit at exactly this width. */
+  @media (min-width: 1024px) {
     .nav-desktop {
       display: flex;
     }
-    .mobile-menu-btn {
+    /* Descendant selector on purpose: the .mobile-menu-btn base rule below this media
+       query sets display:flex at equal specificity, and later source order wins — the
+       burger rendered on EVERY desktop width (pre-existing at HEAD; caught at the c165
+       eyeball). The extra class out-specifies it order-independently. */
+    .header-actions .mobile-menu-btn {
       display: none;
     }
   }
 
   .nav-link {
-    padding: var(--space-2) var(--space-3);
+    padding: var(--space-2);
     border-radius: var(--radius-md);
     color: var(--color-text-muted);
     text-decoration: none;

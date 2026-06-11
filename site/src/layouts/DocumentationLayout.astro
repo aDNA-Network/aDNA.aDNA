@@ -24,6 +24,17 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
 
 <BaseLayout title={title} description={description} jsonLD={jsonLD}>
   <div class="doc-layout">
+    <!-- Mobile section nav (audit C3: the sidebar was display:none below 768px, leaving
+         doc pages with no section navigation on phones). Native disclosure, zero JS; the
+         desktop <aside> below is display:none'd on mobile so only one copy is ever in
+         the accessibility tree. -->
+    <details class="doc-mobile-nav">
+      <summary>In this section</summary>
+      <div class="doc-mobile-nav-inner">
+        <SidebarNav />
+      </div>
+    </details>
+
     <aside class="doc-sidebar" aria-label="Documentation navigation">
       <SidebarNav />
     </aside>
@@ -113,6 +124,50 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
     border-right: 1px solid var(--color-border);
   }
 
+  /* ——— Mobile section-nav disclosure (<768px only) ——— */
+  .doc-mobile-nav {
+    margin: var(--space-4) var(--space-6) 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    /* Page ground, NOT --color-surface: the switcher's purple .active link is AA on the
+       page bg (matching the desktop sidebar) but only 3.9:1 on the elevated card surface
+       (the E5 c160 purple-on-surface class — axe-caught here at the c165 probe). */
+  }
+
+  .doc-mobile-nav > summary {
+    list-style: none;
+    cursor: pointer;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-4);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--color-text);
+  }
+
+  .doc-mobile-nav > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .doc-mobile-nav > summary::before {
+    content: '▸ ';
+    display: inline-block;
+    transition: transform var(--transition-fast);
+    font-size: 0.7em;
+    margin-right: var(--space-2);
+  }
+
+  .doc-mobile-nav[open] > summary::before {
+    transform: rotate(90deg);
+  }
+
+  .doc-mobile-nav-inner {
+    padding: var(--space-2) var(--space-4) var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+
   .doc-content {
     padding: var(--space-8) var(--space-6);
     min-width: 0;
@@ -139,7 +194,7 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
     padding: var(--space-6) var(--space-4);
   }
 
-  /* Tablet: show sidebar */
+  /* Tablet: show sidebar, hide the mobile disclosure */
   @media (min-width: 768px) {
     .doc-layout {
       grid-template-columns: var(--sidebar-width) 1fr;
@@ -147,6 +202,10 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
 
     .doc-sidebar {
       display: block;
+    }
+
+    .doc-mobile-nav {
+      display: none;
     }
   }
 

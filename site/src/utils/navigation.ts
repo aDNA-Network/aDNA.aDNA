@@ -1,6 +1,16 @@
 /**
- * Sidebar navigation data structure matching M09 site IA.
- * 4 top-level groups with ordered pages.
+ * Sidebar navigation data structure matching the site IA.
+ *
+ * Group order mirrors the header nav for the shared sections
+ * (Learn · Patterns · Use Cases · Community · Reference) with the
+ * doc-only groups (Glossary · Guides · For you) appended — one
+ * top-level model across BaseLayout and DocumentationLayout
+ * (network-audit C3 secondary-nav unification, E5 c165).
+ *
+ * Ordering constraint: "For you" must stay AFTER "Community" — its
+ * `/adopters` hub entry prefix-matches the Community group's
+ * `/adopters/adopter-*` persona pages, and SidebarNav scopes to the
+ * FIRST matching group.
  */
 
 export interface NavItem {
@@ -74,6 +84,19 @@ export const navigation: NavGroup[] = [
     ],
   },
   {
+    label: 'Patterns',
+    items: [
+      { label: 'The Question Test', href: '/patterns/question-test', order: 1 },
+      { label: 'AGENTS.md Routing', href: '/patterns/agents-md', order: 2 },
+      { label: 'Dual-Audience Writing', href: '/patterns/dual-audience', order: 3 },
+      { label: 'Base/Extension', href: '/patterns/base-extension', order: 4 },
+      { label: 'Context Recipe', href: '/patterns/context-recipe', order: 5 },
+      { label: 'FAIR Envelope', href: '/patterns/fair-envelope', order: 6 },
+      { label: 'Mission Decomposition', href: '/patterns/mission-decomposition', order: 7 },
+      { label: 'Federation Readiness', href: '/patterns/federation-readiness', order: 8 },
+    ],
+  },
+  {
     label: 'Use Cases',
     items: [
       { label: 'Solo Developer', href: '/use-cases/solo-developer', order: 1 },
@@ -85,16 +108,35 @@ export const navigation: NavGroup[] = [
     ],
   },
   {
-    label: 'Patterns',
+    label: 'Community',
     items: [
-      { label: 'The Question Test', href: '/patterns/question-test', order: 1 },
-      { label: 'AGENTS.md Routing', href: '/patterns/agents-md', order: 2 },
-      { label: 'Dual-Audience Writing', href: '/patterns/dual-audience', order: 3 },
-      { label: 'Base/Extension', href: '/patterns/base-extension', order: 4 },
-      { label: 'Context Recipe', href: '/patterns/context-recipe', order: 5 },
-      { label: 'FAIR Envelope', href: '/patterns/fair-envelope', order: 6 },
-      { label: 'Mission Decomposition', href: '/patterns/mission-decomposition', order: 7 },
-      { label: 'Federation Readiness', href: '/patterns/federation-readiness', order: 8 },
+      { label: 'Roles & Progression', href: '/community/community-roles', order: 1 },
+      { label: 'Processes', href: '/community/community-processes', order: 2 },
+      { label: 'Context Commons', href: '/community/community-context-commons', order: 3 },
+      { label: 'Contribution Standards', href: '/community/community-contribution-standards', order: 4 },
+      {
+        label: 'Adopter Personas',
+        items: [
+          { label: 'Solo Developer', href: '/adopters/adopter-solo-developer', order: 5 },
+          { label: 'Enterprise Team', href: '/adopters/adopter-enterprise-team', order: 6 },
+          { label: 'Educator', href: '/adopters/adopter-educator', order: 7 },
+          { label: 'Startup', href: '/adopters/adopter-startup', order: 8 },
+          { label: 'Researcher', href: '/adopters/adopter-researcher', order: 9 },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Reference',
+    items: [
+      { label: 'Specification', href: '/reference/specification', order: 1 },
+      { label: 'Design Rationale', href: '/reference/design-rationale', order: 2 },
+      { label: 'Reading Guide', href: '/reference/reading-guide', order: 3 },
+      { label: 'Agent-First Guide', href: '/reference/agent-first-guide', order: 4 },
+      { label: 'Migration Guide', href: '/reference/migration-guide', order: 5 },
+      { label: 'Tool Setup', href: '/reference/tool-setup', order: 6 },
+      { label: 'Governance Model', href: '/reference/governance-model', order: 7 },
+      { label: 'Quality Rubric', href: '/reference/quality-rubric', order: 8 },
     ],
   },
   {
@@ -148,25 +190,6 @@ export const navigation: NavGroup[] = [
     ],
   },
   {
-    label: 'Community',
-    items: [
-      { label: 'Roles & Progression', href: '/community/community-roles', order: 1 },
-      { label: 'Processes', href: '/community/community-processes', order: 2 },
-      { label: 'Context Commons', href: '/community/community-context-commons', order: 3 },
-      { label: 'Contribution Standards', href: '/community/community-contribution-standards', order: 4 },
-      {
-        label: 'Adopter Personas',
-        items: [
-          { label: 'Solo Developer', href: '/adopters/adopter-solo-developer', order: 5 },
-          { label: 'Enterprise Team', href: '/adopters/adopter-enterprise-team', order: 6 },
-          { label: 'Educator', href: '/adopters/adopter-educator', order: 7 },
-          { label: 'Startup', href: '/adopters/adopter-startup', order: 8 },
-          { label: 'Researcher', href: '/adopters/adopter-researcher', order: 9 },
-        ],
-      },
-    ],
-  },
-  {
     label: 'Guides',
     items: [
       {
@@ -198,16 +221,16 @@ export const navigation: NavGroup[] = [
     ],
   },
   {
-    label: 'Reference',
+    // Audience landing pages — orphan-surfaced at E5 c165 (network-audit C3: these
+    // were single-threaded off /adopters with no nav presence anywhere).
+    label: 'For you',
     items: [
-      { label: 'Specification', href: '/reference/specification', order: 1 },
-      { label: 'Design Rationale', href: '/reference/design-rationale', order: 2 },
-      { label: 'Reading Guide', href: '/reference/reading-guide', order: 3 },
-      { label: 'Agent-First Guide', href: '/reference/agent-first-guide', order: 4 },
-      { label: 'Migration Guide', href: '/reference/migration-guide', order: 5 },
-      { label: 'Tool Setup', href: '/reference/tool-setup', order: 6 },
-      { label: 'Governance Model', href: '/reference/governance-model', order: 7 },
-      { label: 'Quality Rubric', href: '/reference/quality-rubric', order: 8 },
+      { label: 'Researchers', href: '/researchers', order: 1 },
+      { label: 'Educators', href: '/educators', order: 2 },
+      { label: 'Enterprise', href: '/enterprise', order: 3 },
+      { label: 'Compliance', href: '/compliance', order: 4 },
+      { label: 'Startups', href: '/startup-first-hour', order: 5 },
+      { label: 'Adopters Hub', href: '/adopters', order: 6 },
     ],
   },
 ];

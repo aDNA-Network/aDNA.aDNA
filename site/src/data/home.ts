@@ -29,6 +29,11 @@ export interface HomeStat {
   label: string;
 }
 
+export interface HomeAudience {
+  label: string;
+  href: string;
+}
+
 export const steps: HomeStep[] = [
   {
     number: '01',
@@ -119,6 +124,18 @@ export const personas: HomePersona[] = [
     summary: 'Labs and research groups tracking protocols, datasets, and experiments.',
     href: '/use-cases/research-lab',
   },
+];
+
+// §5 "Join the network" audience pathways (E5 c165; audit C3 orphan surfacing).
+// These link the role landing pages (PersonaPage surfaces), not the /use-cases/*
+// narratives the `personas` array above points at — two different surfaces.
+export const audiences: HomeAudience[] = [
+  { label: 'Researchers', href: '/researchers/' },
+  { label: 'Educators', href: '/educators/' },
+  { label: 'Enterprise', href: '/enterprise/' },
+  { label: 'Compliance', href: '/compliance/' },
+  { label: 'Startups', href: '/startup-first-hour/' },
+  { label: 'Adopters', href: '/adopters/' },
 ];
 
 export const stats: HomeStat[] = [

@@ -213,8 +213,9 @@ const edgeTypes = [
     <div class="section-inner">
       <h2 class="section-title">Governed in the open</h2>
       <p class="section-subtitle">
-        The network is a commons, not a silo. The standard that holds it is openly specified and openly
-        governed &mdash; a named steward, a public process for proposing change, and every decision on the record.
+        The network is <a href="/commons/" class="commons-seam" data-astro-prefetch>a commons</a>, not a silo.
+        The standard that holds it is openly specified and openly governed &mdash; a named steward, a public
+        process for proposing change, and every decision on the record.
       </p>
       <ul class="gov-signals" aria-label="How the aDNA standard is governed">
         <li class="gov-tag">Founding-Architect stewardship</li>
@@ -271,6 +272,13 @@ const edgeTypes = [
   .net-node,
   .net-run {
     background: var(--color-bg-alt);
+  }
+
+  /* In-text seam to the public-good commons (E5 c165) — underlined per the
+     link-in-text-block discipline (c155 lesson). */
+  .net-govern .commons-seam {
+    color: var(--color-link);
+    text-decoration: underline;
   }
 
   .diagram-caption {
