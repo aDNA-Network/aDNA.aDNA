@@ -3,7 +3,7 @@ type: skill
 skill_type: agent
 category: infrastructure
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-06-11
 status: active
 skill_version: 2   # v2 at campaign_lattice_home_pattern M3: vault-identity-class conditional + 5th substitution row + 3 NEW SEEDs from M2 close
 last_edited_by: agent_stanley
@@ -24,7 +24,7 @@ tags: [skill, agent, infrastructure, lattice_home, splash, install, vault_portab
 
 Install the [[pattern_lattice_home]] terminal cold-start splash in any aDNA vault. Lifts the CMux.aDNA canonical implementation (`how/configs/bin/lattice` `cmd_home()`), parameterizes it for the target vault, and wires the activation hook + idempotent install/uninstall scripts. Pure bash + awk; no runtime dependencies. Sub-second render; dual-gated (env var + graph-root walk).
 
-The skill is **vault-agnostic** — it works for `aDNA.aDNA`, `LatticeHome.aDNA`, `LatticeAgent.aDNA`, forges, frameworks, org-vaults, or any future vault that inherits from the upstream `LatticeProtocol/Agentic-DNA` base.
+The skill is **vault-agnostic** — it works for `aDNA.aDNA`, `Home.aDNA`, `LatticeAgent.aDNA`, forges, frameworks, org-vaults, or any future vault that inherits from the upstream `LatticeProtocol/Agentic-DNA` base.
 
 ## When NOT to use
 
@@ -53,10 +53,10 @@ Apply 4 parameter substitutions to the lifted substrate before writing into the 
 
 | Parameter | CMux value | Vault-agnostic placeholder | Example target value |
 |---|---|---|---|
-| Env var gate | `CMUX_LATTICE` | `<VAULT_PREFIX>_LATTICE` | `ADNA_LATTICE` (aDNA.aDNA), `LATTICEHOME_LATTICE` (LatticeHome.aDNA) |
-| Graph-root stub | `what/cmux/graph/node.adna.yaml` | `<IDENTITY_STUB>` | `MANIFEST.md` (aDNA.aDNA), `LatticeHome.aDNA/MANIFEST.md` (LatticeHome) |
+| Env var gate | `CMUX_LATTICE` | `<VAULT_PREFIX>_LATTICE` | `ADNA_LATTICE` (aDNA.aDNA), `HOME_LATTICE` (Home.aDNA) |
+| Graph-root stub | `what/cmux/graph/node.adna.yaml` | `<IDENTITY_STUB>` | `MANIFEST.md` (aDNA.aDNA), `Home.aDNA/MANIFEST.md` (Home.aDNA) |
 | Mission grep glob | `how/campaigns/*/missions/*.md` | `<MISSION_GLOB>` | same (aDNA.aDNA; pattern stable across vaults) |
-| Vault badge | `🧬 aDNA node` | `<VAULT_BADGE>` | `🧬 aDNA / Rosetta` (aDNA.aDNA), `🌙 LatticeHome / Hestia` (LatticeHome) |
+| Vault badge | `🧬 aDNA node` | `<VAULT_BADGE>` | `🧬 aDNA / Rosetta` (aDNA.aDNA), `🌙 Home / Hestia` (Home.aDNA) |
 | Identity probe *(v2)* | (read from `node.adna.yaml`) | `<IDENTITY_PROBE>` | `basename "$vault"` for NODE_ID + `git config user.name` for OPERATOR (aDNA-class) |
 
 The parameterization protocol is the **single non-trivial step** in the skill. Use the [[template_lattice_home_render]] canonical template as the substitution starter — do NOT verbatim-copy the CMux template (drifts diverge if both are touched).
@@ -183,16 +183,16 @@ Mission `mission_lhp_m2_adna_vault_install` (planned). Parameter substitutions:
 
 Mode: passive (operator invokes `lattice home` manually). Smoke chain 10/10 expected.
 
-### Example 2 — Hypothetical LatticeHome install
+### Example 2 — Hypothetical Home.aDNA install
 
 Parameter substitutions:
 
-- Env gate: `LATTICEHOME_LATTICE`
-- Identity stub: `LatticeHome.aDNA/MANIFEST.md` (or `who/identity/identity_node.yaml`)
+- Env gate: `HOME_LATTICE`
+- Identity stub: `Home.aDNA/MANIFEST.md` (or `who/identity/identity_node.yaml`)
 - Mission glob: `how/campaigns/*/missions/*.md`
-- Badge: `🌙 LatticeHome / Hestia`
+- Badge: `🌙 Home / Hestia`
 
-Operator runs install per vault adoption choice. Splash renders Hestia-flavored header on cmd zsh start at LatticeHome graph root.
+Operator runs install per vault adoption choice. Splash renders Hestia-flavored header on cmd zsh start at the Home.aDNA graph root.
 
 ## Anti-pattern
 

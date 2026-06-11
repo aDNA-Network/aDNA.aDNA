@@ -5,7 +5,7 @@ scope: standard
 title: "Scope-vs-role naming as design test for `.aDNA/` vault rename proposals"
 status: amended
 created: 2026-05-13
-updated: 2026-05-26
+updated: 2026-06-11
 last_edited_by: agent_stanley
 ratified_session: session_stanley_20260513_030626_mlwx03_s1
 ratification_phase: campaign_lattice_workspace_ux M-LWX-03 close
@@ -14,6 +14,9 @@ campaign: campaign_lattice_workspace_ux
 amended_at: 2026-05-26
 amendment_reference: campaign_lattice_compliance_upgrade.R02
 amendment_summary: "§Exception subsection added documenting node.aDNA → LatticeHome.aDNA as one deliberate exception to R1–R4; rule remains active for all other rename proposals"
+amendment_2_at: 2026-06-11
+amendment_2_reference: "coord_2026_06_11_outbound_to_adna_template_home_naming_fix_adr013_amendment (aDNALabs/Berthier) + session_stanley_20260611T235006Z_v72_release_home_naming_fix (v7.2 release)"
+amendment_2_summary: "§Exception.5 added — the rename chain completed node.aDNA → LatticeHome.aDNA (2026-05-28, transient) → Home.aDNA (2026-05-30, canonical per generic-canonical doctrine); §Exception.2 no longer reads as end-state; R1–R4 unchanged for future proposals"
 companion_adrs:
   - aDNA.aDNA/what/decisions/adr_009_aDNA_naming_convention.md  # naming convention; ADR-013 sits inside the rules ADR-009 codifies
   - node.aDNA/what/decisions/adr_001_node_vault_role_expansion.md  # node-scope counterpart; this ADR generalizes the design test surfaced there
@@ -151,6 +154,8 @@ Within Option C, the operator chose the **4-sub-rule formulation** (R1 scope che
 
 ## Exception — `node.aDNA/` → `LatticeHome.aDNA/` (2026-05-26)
 
+> **⚑ Amendment 2 (2026-06-11) — the chain did not stop here.** The rename continued past `LatticeHome.aDNA/`: the canonical per-node vault name is **`Home.aDNA/`** (since 2026-05-30, generic-canonical doctrine). §Exception.1–.4 below are preserved verbatim as the historical record of the FIRST hop; read them as a transient state, not an end-state. The completed chain and its governance are documented forward at **§Exception.5**.
+
 This ADR is `status: amended` to document one deliberate exception to the R1–R4 design test for the rename `node.aDNA/` → `LatticeHome.aDNA/`. The §Decision and the worked precedent in §Application notes remain authoritative for all OTHER future rename proposals.
 
 ### §Exception.1 — Trigger
@@ -184,6 +189,38 @@ R1–R4 **continue to apply** to all future `.aDNA/` rename proposals. This subs
 - **ADR-009 orthography unchanged**: `<name>.aDNA/` ↔ `<name>.aDNA.git` isomorphism and snake_case / PascalCase grandfathered exceptions remain governed by ADR-009.
 - **Node-scope predecessor `adr_001_node_vault_role_expansion`** (the M-LWX-02 rejection) gains a §Supersession-by-§Exception note pointing here; its role-expansion finding for the broader Org-Vault.aDNA-as-control-plane pattern remains valid.
 - **M-LWX-02 AAR** carries a forward-pointer to this §Exception for discoverability; the scope-vs-role finding itself (a load-bearing conceptual contribution) remains active and re-applies to future rename proposals.
+
+### §Exception.5 — Amendment 2 (2026-06-11): chain completed `… → Home.aDNA/` (canonical)
+
+The rename documented in §Exception.2 proved **transient**. The completed chain:
+
+| Hop | Name | Date | Standing |
+|---|---|---|---|
+| 0 | `node.aDNA/` | (origin) | superseded |
+| 1 | `LatticeHome.aDNA/` | 2026-05-28 (R03 close) | **transient** — superseded after 2 days |
+| 2 | **`Home.aDNA/`** | 2026-05-30 | **canonical** — current end-state |
+
+- **Why the second hop**: Operation Rosetta Stone's **generic-canonical doctrine** (the 2026-05-30
+  rebrand wave that also produced `Network.aDNA`, `Terminal.aDNA`, etc.) — the network's canonical
+  instance of a role takes the bare generic name; brand-prefixed variants (`Lattice*`) become
+  history/aliases. The §Exception.2 motivation ("namespace-explicit alignment with the `Lattice*`
+  family") was itself superseded when the `Lattice*` family ceased to be the naming substrate.
+  Governance: `Home.aDNA` ADR-009 lineage + the aDNALabs rebrand record; upstream ask filed at
+  `how/backlog/idea_upstream_node_vault_bare_role_rename.md` (executed by this amendment's release).
+- **What this amendment changes**: §Exception.2's wording ("Exactly one rename: `node.aDNA/` →
+  `LatticeHome.aDNA/`") must no longer be read as naming the canonical end-state. The exception
+  precedent it ratified (a deliberate, operator-gated departure from the R1–R4 verdict for the
+  per-node vault) **carries forward to `Home.aDNA/`** — hop 2 is a continuation of the same
+  exception, not a second exception requiring its own §Exception subsection (same vault, same scope,
+  same persona, same operator gate class; only the identifier moved again).
+- **Operational defect this closes**: the transient `LatticeHome` value shipped as the Step 0.3 fork
+  parameter (`project_name = LatticeHome`) in the public `aDNA-Network/aDNA` v7.1 image and the
+  template chain, mis-forking `LatticeHome.aDNA/` on fresh nodes (observed live on a partner
+  onboarding 2026-06-11, pre-bootstrap catch). Fixed at template release **v7.2** (2026-06-11):
+  `project_name = Home` + live-prose `LatticeHome.aDNA` → `Home.aDNA` sweep across the standard tree
+  (lineage pins `graduated_from: …@411660e` + historical records preserved, SO-7).
+- **Forward governance unchanged**: R1–R4 continue to apply to all future `.aDNA/` rename proposals
+  (§Exception.4 stands). Protocol-layer "node" terms remain preserved per operator D3-surgical.
 
 ## Self-reference (Standing Order #2)
 

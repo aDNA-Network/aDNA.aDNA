@@ -4,7 +4,7 @@ template_class: lattice_home_render
 status: active
 persona: rosetta   # vault-agnostic; instances re-persona per host vault
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-06-11
 last_edited_by: agent_stanley
 substrate_pin: "CMux.aDNA HEAD = 7747a15a; canonical template lifted from CMux.aDNA/how/configs/home/home_template.md and parameterized to vault-agnostic placeholders"
 tags: [template, lattice_home, splash, ascii_render, fence_pair_extract, vault_agnostic, placeholder_spec, fallback_discipline, semantic_role_styling]
@@ -59,7 +59,7 @@ The bottom line is an **idle command-tree-ready prompt** — ornamental at splas
 |---|---|
 | Mission state | `▶ open · ✓ closed · ⏸ deferred · ⚠ blocked · ⊘ rejected` |
 | Run state | `● running · ◌ pending · ✓ done · ✗ failed · ◐ partial` |
-| Vault badge | per host vault (e.g., `🧬 aDNA / Rosetta`, `🌙 LatticeHome / Hestia`) |
+| Vault badge | per host vault (e.g., `🧬 aDNA / Rosetta`, `🌙 Home / Hestia`) |
 
 **Font fallback**: if the operator's terminal lacks Unicode coverage, glyphs degrade to `[*]/[ ]/[X]`. Render emits the primary glyph by default.
 

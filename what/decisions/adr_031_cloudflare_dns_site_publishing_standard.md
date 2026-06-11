@@ -46,7 +46,7 @@ The Squarespace UI-scripting harness (graduated skill `skill_vercel_squarespace_
 
 - **Hosting stays on Vercel** for now — Cloudflare DNS points at Vercel (apex via **CNAME flattening**, `www`/`dev` via CNAME, all DNS-only / un-proxied so Vercel terminates TLS). Cloudflare Pages as a hosting target is a **separate, later** decision, not part of this ADR.
 - **Registrar**: keep current registrations where they are initially; only the **nameservers** move to Cloudflare (one manual change per domain at the current registrar). Transferring registrations to Cloudflare Registrar is optional follow-on.
-- **Credential**: a Cloudflare API token (Zone:Edit + DNS:Edit) is brokered via `LatticeHome.aDNA` (Keychain + 1Password) per Standing Rule 6.
+- **Credential**: a Cloudflare API token (Zone:Edit + DNS:Edit) is brokered via `Home.aDNA` (Keychain + 1Password; vault renamed `LatticeHome.aDNA` → `Home.aDNA` 2026-05-30, ref corrected 2026-06-11) per Standing Rule 6.
 - **Skill**: `skill_vercel_squarespace_domain_cutover.md` is marked **legacy**; the successor **`skill_cloudflare_dns_cutover.md` is owned by `SiteForge.aDNA`** (`how/skills/`) as part of its build+deploy mandate — graduated **v1.0.0 from the `adna.network` migration** (the first executed instance, 2026-05-31). Consumer site-vaults invoke it via a `federation_ref_dns` block in their `siteforge/` wrapper. *(Originally scoped to graduate into aDNA.aDNA from worldgeno.me; relocated to SiteForge per operator directive 2026-05-31 — DNS go-live is a build+deploy concern.)*
 
 ## Consequences

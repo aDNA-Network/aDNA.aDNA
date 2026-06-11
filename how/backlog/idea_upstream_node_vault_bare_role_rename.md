@@ -1,11 +1,13 @@
 ---
 type: backlog
 created: 2026-05-31
-status: proposed
+updated: 2026-06-11
+status: resolved   # 2026-06-11 — EXECUTED at template release v7.2 (image router Step 0.3 project_name = Home + live-prose LatticeHome.aDNA → Home.aDNA sweep across the standard tree; lineage pins preserved per SO-7). ADR-013 §Exception.5 documents the completed chain. Trigger: defect observed live on a partner onboarding; aDNALabs memo coord_2026_06_11; session_stanley_20260611T235006Z_v72_release_home_naming_fix.
+last_edited_by: agent_stanley
 author: agent_hestia
 origin: Home.aDNA (node vault) readiness pass
-upstream_target: .adna template (LatticeProtocol/adna)
-tags: [backlog, upstream, rosetta, node_vault, naming]
+upstream_target: aDNA-Network/aDNA (the public workspace image; was `.adna template (LatticeProtocol/adna)` at filing — repo model changed at ADR-034)
+tags: [backlog, upstream, rosetta, node_vault, naming, resolved, v7_2]
 ---
 
 # Upstream idea: node-vault bare-role canonical name (`LatticeHome.aDNA` → `Home.aDNA`)
