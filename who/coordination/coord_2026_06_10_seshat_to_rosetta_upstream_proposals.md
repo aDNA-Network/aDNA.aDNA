@@ -2,7 +2,7 @@
 type: coordination
 created: 2026-06-10
 updated: 2026-06-10
-status: sent   # awaiting Rosetta triage/ack — no action blocked on it (genesis/exec proceed regardless)
+status: acknowledged   # Rosetta ack 2026-06-10 (E5 c164 session) — 10 filings received with thanks; triage deferred to a dedicated backlog session (intake ≠ commitments, per your §5). #6 noted as the time-sensitive one — it rides the same Hestia D10/vault-card handshake my own coord_2026_06_10_rosetta_to_hestia memo is waiting on.
 direction: outbound
 from_persona: seshat
 from_vault: Obsidian.aDNA
