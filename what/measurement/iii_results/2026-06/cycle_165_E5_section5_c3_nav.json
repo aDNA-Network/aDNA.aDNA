@@ -1,0 +1,64 @@
+{
+ "cycle": 165,
+ "decadal": "E5",
+ "decadal_cycle": 6,
+ "mission": "mission_adna_str_p5_m512_e5_public_good_commons",
+ "slug": "e5_section5_c3_nav",
+ "date": "2026-06-10",
+ "session": "session_stanley_20260611T033219Z_v8_m512_e5_c165",
+ "commit": "e9d0b43",
+ "theme": "Homepage §5 hand-off + audit C3 nav/orphan surfacing (realigned per-cycle plan row 165). §5 'Join the network' — doctrine-planned (front_page_doctrine §8.5 line 117) but never built (E1 deferred the public-good tease to E5) — now built pointing at the LIVE /commons: lede with the governance-model in-text link, a 4-subnetwork tease rendered data-driven from subnetworks.json (display_name + tagline verbatim — single-source, credibility-hygiene §2), See-the-commons / Join-the-community CTAs, and the 'aDNA for…' audience-pathways row (the doctrine's Ethereum-role-pathways citation realized — folding the audit's home 'aDNA for…' affordance INTO §5 keeps the homepage at 5 sections per the 5±1 rule). C3: /commons enters the header (8th item, after Vaults — the network-tier cluster) + the footer top-level model (Network · Vaults · Commons · Community prepended); the 5 orphaned audience pages + the adopters hub gain a 'For you' sidebar nav group; the section-switcher order is unified to the header model (Learn · Patterns · Use Cases · Community · Reference + doc-only Glossary · Guides · For you appended — one top-level model, not two); SidebarNav is exposed below 768px via a native <details> 'In this section' disclosure (zero JS); audience pages gain terminal breadcrumbs (WHO › For you › page — a new terminal-route branch in Breadcrumb.astro, since the prefix rule deliberately hides crumbs on section indexes and these pages ARE their sections); /network band-5 'The network is a commons, not a silo' gains the one-word in-text seam to /commons. /commons orphan finding discharged: inbound from home §5 + header + footer + the network seam.",
+ "register": "Tokyo Night dark-first; §5 Sparse per the wireframe (words-as-focus, no banner); tease cards reuse the --color-surface + --color-border card treatment with cyan names (never purple small text); all in-text links underlined (c155 link-in-text-block discipline; subtitle governance link + pathways row + network seam); AVOID register held — zero marketing adjectives; who-not-how-many (names + taglines, no metrics).",
+ "operator_scope": "c165 only this session (plan-mode approved 2026-06-10). Commit-only, NO deploy (deploy = c169 close or operator-flagged hotfix; /commons excluded per ADR-010 pending co-sign). Externals re-checked at open: Hestia vault-card memo still open (no sync:vaults regen); ADR-010 co-sign pending (deploy-only concern).",
+ "verification": {
+  "build": "163 pages / 0 errors (astro build, Vercel adapter)",
+  "gates": "140/140 — baseline 121 + 10 (gate-9 tablet_wide 900px row × 10 pages) + 9 (NEW gate-13 nav-surfacing: header Commons · 8-item fit at the 1024px switch-on · footer model · §5 hand-off CTAs · §5 fixture-verbatim subnetworks · §5 pathways · mobile disclosure @375 · disclosure hidden @1024 · For-you scoping + terminal breadcrumb on /researchers)",
+  "axe": "0 WCAG-AA violations both modes — gate-4 suite (home §5 included) + ad-hoc c165 probe (c155 throwaway pattern, removed after run): open mobile disclosure @375px dark+light, /researchers dark+light",
+  "lighthouse_desktop": "home 100/96/100/100 (= baseline; A11y 96 is the pre-existing E1 target-size item) · /network 100/100/100/100 — §5 + nav changes perf-neutral (LCP 0.5s, CLS 0, TBT 0)",
+  "eyeball": "dark+light §5 @1440 · header @1024 (8 items inline) + @1000 (hamburger) · disclosure open @375 · /researchers (For-you group + WHO›For-you crumb) · /network seam · /commons #today — all on-register"
+ },
+ "findings": [
+  {
+   "id": "c165-F1",
+   "class": "token-coupled-constants (audit #18 / gate-14 family)",
+   "finding": "THREE spacing tokens used sitewide were never defined: --space-5 / --space-10 / --space-20 (the scale jumped 4→6, 8→12, 16→24). ~25 declarations across the NEWEST surfaces (network.astro, commons.astro, SubnetworkCard, ClosingCTA, home, glossary.css, global.css) referenced them — an undefined var() invalidates the whole declaration at computed-value time, so those margins/paddings/gaps silently computed to 0/initial. The home §5 build surfaced it (the tease grid's 40px margin collapsed to 8px visual). Fixed at the ROOT: tokens.css gains the three steps (1.25/2.5/5rem), healing every latent usage at once — /commons band padding, SubnetworkCard internals, ClosingCTA margins, home section-subtitle centering all restored to design intent.",
+   "carry": "D16 freshness sweep should add the planned gate-14 a static check that every var(--*) reference in site/src resolves against tokens.css — this class is invisible to build, axe, AND Lighthouse (nothing errors; the page just quietly loses its rhythm)."
+  },
+  {
+   "id": "c165-F2",
+   "class": "css-specificity-order (pre-existing at HEAD)",
+   "finding": "The mobile hamburger button has been visible at EVERY viewport width on the live site: the @media (min-width) block's .mobile-menu-btn{display:none} is defeated by the LATER .mobile-menu-btn{display:flex} base rule (equal specificity, later source order wins; media queries add no specificity). Pre-existing — same structure at HEAD and in production. Caught only by the c165 eyeball (gates/axe never asserted the burger's absence; clicking it on desktop opened the mobile nav). Fixed order-independently via the .header-actions descendant selector.",
+   "carry": "none — gate-13's disclosure-hidden assertions now pin the desktop states."
+  },
+  {
+   "id": "c165-F3",
+   "class": "purple-on-elevated-surface (E5 c160 AA class, 2nd instance)",
+   "finding": "The mobile disclosure card first used background: var(--color-surface); the switcher's purple .active link computes 3.9:1 on that elevated ground (vs AA-passing on the page bg where the desktop sidebar sits). Caught by the ad-hoc axe probe — gate-4 could never see it (the disclosure exists in the a11y tree only when OPEN below 768px). Fixed by keeping the card on page ground (border-only).",
+   "carry": "the open-disclosure axe state is now pinned by the c165 probe pattern; consider folding an open-disclosure row into gate-4 at c166-168 if cheap."
+  },
+  {
+   "id": "c165-F4",
+   "class": "registry-inventory-drift (churn-guard gap, c164 family)",
+   "finding": "The prebuild regen pulled MORE than the known date-only churn: Home.aDNA's inventory moved underneath us (source_inventory_sha changed; the CakeHealth card note grew internal-operational phrasing — 'Local-only repo (GitHub promotion at Stanley's call). Refreshed.' — which passes the ADR-023 publicNote() guard patterns but violates credibility-hygiene §1 in spirit). Restored both fixtures (vaults.json + subnetworks.json) — the data layer stays byte-identical this cycle.",
+   "carry": "route to the Hestia vault-card memo handshake (the designated regen moment): re-review the CakeHealth note wording at sync, and consider extending the publicNote() guard for operational-phrasing classes ('at <name>'s call', trailing 'Refreshed.')."
+  },
+  {
+   "id": "c165-F5",
+   "class": "nav-overflow (c158 class, 3rd instance)",
+   "finding": "The 8th nav item pushed the measured inline-row minimum to ~1112px at the old paddings — overflowing BOTH the 900px switch-on AND the gate's 1024px desktop preset (the old 7-item row was itself only ~1014px — the c158 'comfortable at 1024' was ~10px of margin). Compressed nav-link padding 12→8px, nav gap 4→2px, header gap 24→16px (row min ~1010px) and moved the switch-on to 1024px (sub-1024 gets the hamburger, c158 precedent). gate-9 gains the 900px tablet_wide row; gate-13 pins the fit at exactly 1024.",
+   "carry": "a 9th nav item does NOT fit — the next surface that wants a header entry must displace or nest (the E6 install portal is the likely claimant; route the call to its design spec)."
+  }
+ ],
+ "self_score": {
+  "participation_scent": "4.5 — the §5 pathways + commons CTAs give every homepage visitor a role-shaped next step (was: no §5 at all); the connect path is one click from the fold-end. Held below 5 pending the c166-168 C1 concrete-then-ethos pass (the hero still hands off cold).",
+  "navigability": "4.5 — /commons + 6 audience pages enter the global model (header/footer/sidebar/breadcrumbs); the two-nav contradiction is unified; mobile doc pages gain section nav for the first time. The deep-page PrevNextNav chains stay un-audited (c166-168).",
+  "trust_provenance": "4.5 — §5 names/taglines render verbatim from the cited fixture; gate-13 pins the no-hardcoding contract; the network seam routes 'commons' claims to the surface that cites them.",
+  "rubric_note": "no item below 4; both owned dims lifted by structural (not copy) moves — the MAX-III c166-168 passes own the climb to the close."
+ },
+ "files": {
+  "implementation": ["site/src/data/home.ts", "site/src/pages/index.astro", "site/src/components/common/Header.astro", "site/src/components/common/Footer.astro", "site/src/utils/navigation.ts", "site/src/components/sections/SidebarNav.astro", "site/src/layouts/DocumentationLayout.astro", "site/src/components/sections/Breadcrumb.astro", "site/src/pages/commons.astro", "site/src/pages/network.astro", "site/src/styles/tokens.css"],
+  "gates": ["site/tests/gates/gate-9-responsive.spec.ts", "site/tests/gates/gate-13-nav-surfacing.spec.ts"],
+  "restored_not_committed": ["site/src/data/vaults.json", "site/src/data/subnetworks.json"]
+ },
+ "next": "c166-168 MAX-III deep per-page/section measure+iterate — C1 home-hero concrete-then-ethos (surface /learn/what-is-adna; How-it-Works promotion) + C2 terminology/object-model spine + Trust/Provenance + Participation-Scent passes + E4 Gap #1 mobile-graph carry + AVOID-register copy tightening; then c169 decadal close (30-persona RLP + Movement Skeptic; ADR for the subnetworks overlay at the phase gate; C5 coordinated close-deploy on ADR-010 co-sign)."
+}

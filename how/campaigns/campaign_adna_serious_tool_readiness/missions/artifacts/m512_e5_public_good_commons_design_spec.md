@@ -2,7 +2,7 @@
 type: artifact
 artifact_class: design_spec
 created: 2026-06-07
-updated: 2026-06-10   # c164 EXECUTED (first social surface; build spec ready_to_execute -> executed; row-162 stale session-cell + row-169 ADR-number fix-ups). Prior: P2 realign + c164 build spec prepared
+updated: 2026-06-10   # c165 DONE (homepage §5 hand-off + C3 nav/orphan surfacing; gates 121->140). Prior: c164 EXECUTED (first social surface; build spec ready_to_execute -> executed; row-162 stale session-cell + row-169 ADR-number fix-ups)
 mission: mission_adna_str_p5_m512_e5_public_good_commons
 campaign: campaign_adna_serious_tool_readiness
 phase: 5
@@ -61,7 +61,7 @@ tags: [design_spec, e5, public_good_commons, subnetwork_federation, reviewer_len
    - **Sparse — join & steward** — the participation CTA (band together via agentic context literacy) + the govern/trust anchor + the ethos close.
    *(cycles 161–164)*
 2. **Subnetwork detail treatment (POPULATE/light)** — *Stage-0 decision:* a dedicated `/commons/[slug]` route **or** an expanded card / link-out to the existing `/vaults/[slug]`. Recommended MVP: **link the card to the subnetwork's `/vaults/[slug]`** (already built in E4) + its outbound public URL, and reserve a dedicated detail route for a later cycle if the RLP demands it (avoid building a thin second detail surface). *(cycle 162)*
-3. **Homepage §5 hand-off (UPDATE)** — `front_page_doctrine` line 117: the homepage "Join the network" §5 already *teases* the commons; E5 makes that tease point at the live `/commons` surface (`site/src/data/home.ts` + `index.astro`). *(cycle 164)*
+3. **Homepage §5 hand-off (UPDATE)** — `front_page_doctrine` line 117: the homepage "Join the network" §5 — doctrine-planned but E1-deferred (never built) — is built at E5 pointing at the live `/commons` surface (`site/src/data/home.ts` + `index.astro`). *(✅ cycle 165 — moved one right at the P2 realign)*
 
 **Nav:** add `/commons` to the header nav (placement TBD at build — adjacent to `Community`/`The Lattice`; mind the E4 c158 lesson that a 7th nav item overflowed the desktop row at 768px → gate-9 guards it).
 
@@ -90,7 +90,7 @@ tags: [design_spec, e5, public_good_commons, subnetwork_federation, reviewer_len
 ├──────────────────────────────────────────────┤
 │  Join & steward   (CTA + govern anchor + ethos)│  Sparse · participation scent
 └──────────────────────────────────────────────┘
-   homepage §5 "Join the network" → now links /commons (cycle 164)
+   homepage §5 "Join the network" → now links /commons (✅ cycle 165)
 ```
 
 ## Stage 4 — Hi-fi deltas
@@ -153,7 +153,7 @@ wilhelm_ai:
 | 162 | 3 | ✅ **Context-graph experience** (inserted at realign; audit gap #17 + operator directive) — image-led `HomeHero` on `/vaults` (the freed `hero_adna_network.png` — the original home glyph) + a `hero-stage` band on `/vaults/graph`; context-democracy framing + concept cross-links (knowledge-graph · triad · lattice-composition · convergence); gate-9 + gate-11 coverage extension. Hard non-goals held: no new routes, no Mermaid-engine rework, no graph-data changes. *(Session cell was left "this session" at the c162 close — fixed at c164.)* | 2026-06-10 |
 | 163 | 4 | ✅ **Connect-to-a-subnetwork** affordance (`#connect` band: follow/federate/contribute + E4 local-by-default boundary + honest horizon line; hero primary restored to ratified "Connect a subnetwork"; per-card connect jump) + **C4** closing-CTA partials (NEW shared `ClosingCTA.astro` on 6 audience pages / `/community` / all vault-detail; every href dist-verified). Gates 120/120; commit `90c2395`; ledger `cycle_163_E5_connect_c4_ctas.json` | 2026-06-10 |
 | 164 | 5 | ✅ **First social surface** — "The commons, today" `#today` Dense band (stewardship ledger computed only from the registry: steward/persona · attribution + license where recorded · governance anchors · declared edges, wga/CC honestly bare; registry-wide freshness + anti-vanity lines; full horizon note via `Callout`, no internal codenames) + `#join` "Join & steward" Stage-3 close (ClosingCTA moved out of `#connect`; ethos relocated to the close) + connect-horizon hand-off retouch. Executed from [[m512_e5_c164_first_social_surface_build_spec]] (`executed`; §1 externals re-checked — install-truth flip discharged by the public-face session `4b419d3`, not c164). Gates 121/121 (baseline 120→121 via that session); commit `06873fc`; ledger `cycle_164_E5_first_social_surface.json` | 2026-06-10 |
-| 165 | 6 | Homepage **§5** hand-off (tease → live `/commons`) + **C3** nav/orphan surfacing (`/commons` nav entry + audience pages + unify secondary nav + mobile SidebarNav disclosure) + cross-links + breadcrumbs (seams) | later |
+| 165 | 6 | ✅ **Homepage §5 hand-off + C3 nav/orphan surfacing** — §5 "Join the network" BUILT (E1-deferred; doctrine §8.5): governance-linked lede + 4-subnetwork tease verbatim from `subnetworks.json` + commons/community CTAs + "aDNA for…" pathways (role-pathways folded into §5 — home stays at 5 sections). C3: Commons 8th header item (switch-on 900→1024px — measured ~1112px row min, c158 class 3rd instance) + footer top-level model + "For you" sidebar group + switcher unified to header order + mobile `<details>` disclosure + audience terminal breadcrumbs (WHO › For you) + `/network` band-5 "a commons" seam. `/commons` orphan discharged (4 inbound classes). Root-cause finds: tokens.css missing `--space-5/10/20` (~25 latent zero-computing declarations healed) + pre-existing desktop hamburger specificity bug + purple-on-surface AA (disclosure card). Gates **121→140** (gate-9 +tablet_wide; NEW gate-13 nav-surfacing); axe 0 both modes incl. open-disclosure probe; Lighthouse home/network = baseline. Commit `e9d0b43`; ledger `cycle_165_E5_section5_c3_nav.json` | 2026-06-10 |
 | 166–168 | 7–9 | **MAX-III** deep per-page/section measure+iterate — **C1** home-hero concrete-then-ethos (surface `/learn/what-is-adna`; How-it-Works promotion) + **C2** terminology/object-model spine (node/aDNA-computer/vault/network) across home/network/vaults; Trust/Provenance + Participation-Scent passes; responsive/mobile (carry **E4 Gap #1**); copy tightening (AVOID register) | later |
 | 169 | 10 | **E5 decadal close** — 11-section AAR + **full 30-persona Reviewer Lens Pass + Movement Skeptic** + Lighthouse/Playwright + STATE/STR cascade; subnetworks-overlay ADR → phase gate *(number TBD at ratification — 034 was taken by the public-face release-architecture ADR, 2026-06-10)*; **C5 coordinated close-deploy** | later |
 
@@ -163,7 +163,7 @@ wilhelm_ai:
 
 - **#17 context-graph experience** → **c162** (inserted; executed this session).
 - **C4** closing-CTA partials → **c163** (with the Connect affordance).
-- **C3** nav/orphan surfacing → **c165** (with the homepage §5 hand-off).
+- **C3** nav/orphan surfacing → **c165** (with the homepage §5 hand-off). ✅ **executed 2026-06-10** (commit `e9d0b43`).
 - **C1** concrete-then-ethos + **C2** terminology spine → **c166–168** MAX-III pass.
 - **C5** ADR-010 co-sign clear → **coordinated close-deploy at c169**; deploy cadence resolved (`idea_deploy_cadence`: deploy at every decadal close + operator-flagged credibility hotfix path — the audit P1-S1 + the 2026-06-10 install-truth deploy are the hotfix-path instances).
 - Phase-1b residue (light-mode parity, generated-detail axe, mobile-qual) — **already closed in P1-S3** (audit report §9; sweep 115/115); c166–168 verify only the *new* surfaces.
