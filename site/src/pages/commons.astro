@@ -3,9 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HomeHero from '../components/sections/HomeHero.astro';
 import SubnetworkCard from '../components/sections/SubnetworkCard.astro';
 import ClosingCTA from '../components/sections/ClosingCTA.astro';
+import Callout from '../components/sections/Callout.astro';
 import heroCommons from '../assets/heroes/hero_commons.png';
 import { buildWebPageJsonLD } from '../utils/seo';
 import subnetworksData from '../data/subnetworks.json';
+import vaultsData from '../data/vaults.json';
 
 // E5 / M5.12 — the Public-Good Commons. Hero copy = Stage-0-ratified Direction B ("A commons,
 // not a catalog"). Cycle history (per-cycle plan REALIGNED at the audit P2, 2026-06-10):
@@ -25,6 +27,63 @@ const jsonLD = buildWebPageJsonLD({
 });
 
 const subnetworks = (subnetworksData as any).subnetworks ?? [];
+
+// ——— c164 · "The commons, today" — the first social surface, computed only from what the
+// registry truly records (who-not-how-many; zero fabricated metrics). Joins the curated
+// subnetworks overlay to the generated vault registry: members[].vault_slug → vault record;
+// declared edges → named relationships. E4 gotcha honored: edge endpoints are mixed
+// full-name/slug ids, so display names resolve through the registry index with the raw id
+// as the honest fallback.
+const registry = vaultsData as any;
+const vaultsBySlug = new Map<string, any>(
+  (registry.vaults ?? []).map((v: any) => [v.vault_slug, v] as [string, any])
+);
+const edgeName = (id: string) => vaultsBySlug.get(id)?.display_name ?? id;
+
+// Declared relationships for one member vault, phrased per edge type. Only edges the
+// registry actually carries — members without edges render nothing, not a placeholder.
+function declaredRelationships(slug: string): string[] {
+  const lines: string[] = [];
+  const federates: string[] = [];
+  for (const e of registry.edges ?? []) {
+    if (e.source === slug) {
+      if (e.type === 'federation') federates.push(edgeName(e.target));
+      else if (e.type === 'umbrella') lines.push(`umbrellas ${edgeName(e.target)}`);
+      else lines.push(`${e.type}: ${edgeName(e.target)}`);
+    } else if (e.target === slug) {
+      if (e.type === 'umbrella') lines.push(`under the ${edgeName(e.source)} umbrella`);
+      else lines.push(`${e.type} from ${edgeName(e.source)}`);
+    }
+  }
+  if (federates.length > 0) lines.push(`federates ${federates.join(', ')}`);
+  return lines;
+}
+
+const ledger = subnetworks.map((s: any) => {
+  const member = (s.members ?? [])[0] ?? {};
+  const vault = vaultsBySlug.get(member.vault_slug);
+  // The Wilhelm-pair steward strings already name the resident persona; append it only
+  // when it adds information the row doesn't already carry (no duplication, no invention).
+  const persona = member.persona ?? vault?.persona ?? null;
+  const steward =
+    persona && !String(s.steward ?? '').includes(persona)
+      ? `${s.steward} · agent persona ${persona}`
+      : s.steward;
+  return {
+    name: s.display_name,
+    slug: member.vault_slug,
+    steward,
+    attribution: s.attribution, // non-null on 2 of 4 — rendered only where the record exists
+    license: s.license,
+    governance: member.canonical_governance,
+    relationships: member.vault_slug ? declaredRelationships(member.vault_slug) : [],
+    lastSynced: vault?.last_synced ?? null,
+  };
+});
+
+// The registry-wide freshness facts — the honest "activity" signal (dates, not counts).
+const registryGeneratedAt = registry.generated_at;
+const memberSyncDates = [...new Set(ledger.map((r: any) => r.lastSynced).filter(Boolean))].sort();
 ---
 
 <BaseLayout title="The Public-Good Commons" description={description} jsonLD={jsonLD}>
@@ -57,11 +116,6 @@ const subnetworks = (subnetworksData as any).subnetworks ?? [];
       <ul class="subnet-grid" role="list">
         {subnetworks.map((s: any) => <SubnetworkCard subnetwork={s} />)}
       </ul>
-
-      <p class="commons-ethos">
-        Language and DNA are our shared heritage. So is context &mdash; held in common, and put to work
-        for the good of all.
-      </p>
     </div>
   </section>
 
@@ -110,12 +164,99 @@ const subnetworks = (subnetworksData as any).subnetworks ?? [];
         subnetwork, and what never leaves the machine.
       </p>
       <p class="connect-horizon">
-        This is the whole connect surface today: the three paths above. The fuller social layer
-        &mdash; profiles, follows, feeds &mdash; is a horizon the network is building toward, not
-        something that exists yet.
+        This is the whole connect surface today: the three paths above. What the commons already
+        knows about itself &mdash; and the horizon past it &mdash; is laid out plainly in
+        <a href="#today">the band below</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Band 3 · The commons, today (c164; the first social surface). Dense — drawn ONLY from
+       what the registry records (subnetworks overlay + generated vault registry): stewards,
+       attribution, license terms, governance anchors, declared edges, sync dates. No contributor
+       counts, no stars, no feeds — the registry doesn't record them, so the page doesn't show
+       them (who-not-how-many; the Movement-Skeptic stance made visible). The full social horizon
+       is named once, honestly, in the callout — no internal codenames on the public surface. -->
+  <section id="today" class="commons-today">
+    <div class="section-inner">
+      <h2 class="section-title">The commons, today</h2>
+      <p class="section-subtitle">
+        There is no activity feed here yet &mdash; the open governance record is the social surface.
+        This is what the network's registry knows about who tends each subnetwork, shown plainly,
+        with nothing it doesn't.
       </p>
 
+      <ul class="today-ledger" role="list">
+        {ledger.map((row: any) => (
+          <li class="today-row">
+            <h3 class="today-name">
+              <a href={`/vaults/${row.slug}/`} data-astro-prefetch>{row.name}</a>
+            </h3>
+            <dl class="today-facts">
+              <div class="today-fact">
+                <dt>Stewarded by</dt>
+                <dd>{row.steward}</dd>
+              </div>
+              {row.attribution && (
+                <div class="today-fact">
+                  <dt>Carries the work of</dt>
+                  <dd>{row.attribution}</dd>
+                </div>
+              )}
+              {row.license && (
+                <div class="today-fact">
+                  <dt>Shared under</dt>
+                  <dd>{row.license}</dd>
+                </div>
+              )}
+              <div class="today-fact">
+                <dt>Governance record</dt>
+                <dd><code>{row.governance}</code></dd>
+              </div>
+              {row.relationships.length > 0 && (
+                <div class="today-fact">
+                  <dt>Declared relationships</dt>
+                  <dd>{row.relationships.join(' · ')}</dd>
+                </div>
+              )}
+            </dl>
+          </li>
+        ))}
+      </ul>
+
+      <p class="today-freshness">
+        Registry regenerated {registryGeneratedAt} from the node inventory &middot; member records
+        last synced {memberSyncDates.join(', ')}. Honest activity, today, is exactly this: the dates
+        above and the relationships each vault declares.
+      </p>
+      <p class="today-honesty">
+        What you won't find here: contributor counts, stars, or follower numbers. The registry
+        doesn't record them, so this page doesn't display them.
+      </p>
+
+      <div class="today-horizon">
+        <Callout variant="info" title="The horizon">
+          <p>
+            Profiles, follows, feeds, and shared governance surfaces are <strong>not built yet</strong>.
+            They're being designed on the network's membership and federation substrate &mdash; the
+            same opt-in, local-by-default machinery the boundary above describes. Until they ship,
+            the registry and the open governance record you're reading are the whole social layer.
+            The network builds toward that horizon rather than implying it arrived.
+          </p>
+        </Callout>
+      </div>
+    </div>
+  </section>
+
+  <!-- Band 4 · Join & steward (c164; completes the ratified Stage-3 wireframe close). The
+       ClosingCTA moved out of #connect so the page closes on participation after the full honest
+       record — and it carries the ethos line band 1 held in the interim (stated once, at the
+       close, where the wireframe puts it). -->
+  <section id="join" class="commons-join">
+    <div class="section-inner">
       <ClosingCTA
+        title="Join & steward"
+        lead="Language and DNA are our shared heritage. So is context — held in common, stewarded in the open, and put to work for the good of all. Bring a subnetwork, or connect to one that's already here."
         primaryLabel="Add your subnetwork"
         primaryHref="https://github.com/aDNA-Network/aDNA"
         secondaryLabel="How federation works"
@@ -165,15 +306,6 @@ const subnetworks = (subnetworksData as any).subnetworks ?? [];
     margin: 0 auto;
   }
 
-  .commons-ethos {
-    text-align: center;
-    color: var(--color-text-muted);
-    font-size: var(--text-base);
-    max-width: 40rem;
-    margin: var(--space-16) auto 0;
-    line-height: 1.7;
-  }
-
   /* ——— Band 2 · connect (c163) — plain bg alternates against the featured band's bg-alt ——— */
   .commons-connect {
     padding: var(--space-16) 0 var(--space-20);
@@ -207,7 +339,8 @@ const subnetworks = (subnetworksData as any).subnetworks ?? [];
   /* In-text links: underlined, cyan — distinguishable without color alone (link-in-text-block,
      both modes; the E4/E5 register). */
   .connect-path a,
-  .connect-boundary a {
+  .connect-boundary a,
+  .connect-horizon a {
     color: var(--color-link);
     text-decoration: underline;
   }
@@ -222,17 +355,111 @@ const subnetworks = (subnetworksData as any).subnetworks ?? [];
     font-size: var(--text-base);
   }
 
+  /* ——— Band 3 · the commons, today (c164) — dense; bg-alt alternation against #connect ——— */
+  .commons-today {
+    padding: var(--space-16) 0 var(--space-20);
+    background: var(--color-bg-alt);
+    /* anchor-jump target (linked from .connect-horizon): clear of the sticky header */
+    scroll-margin-top: var(--space-20);
+  }
+
+  .today-ledger {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-4);
+    max-width: 60rem;
+    margin: 0 auto var(--space-8);
+  }
+
+  /* Card surface matches the SubnetworkCard treatment one band up (proven AA both modes),
+     at ledger density: tighter radius, no hover affordance — rows are records, not teasers. */
+  .today-row {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .today-name {
+    font-size: var(--text-lg);
+    margin: 0 0 var(--space-3);
+  }
+
+  .today-name a {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+
+  .today-facts {
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: var(--space-1) var(--space-6);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+  }
+
+  .today-fact {
+    display: contents;
+  }
+
+  .today-fact dt {
+    color: var(--color-text-muted);
+  }
+
+  .today-fact dd {
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .today-fact code {
+    font-size: var(--text-xs);
+  }
+
+  .today-freshness,
+  .today-honesty {
+    text-align: center;
+    color: var(--color-text-muted);
+    max-width: 46rem;
+    margin: 0 auto var(--space-3);
+    line-height: 1.7;
+    font-size: var(--text-sm);
+  }
+
+  .today-horizon {
+    max-width: 46rem;
+    margin: var(--space-8) auto 0;
+  }
+
+  /* ——— Band 4 · join & steward (c164) — sparse close; plain bg alternates back.
+     ClosingCTA brings its own hairline rule + rhythm; this band owns only the page-end air. ——— */
+  .commons-join {
+    padding: 0 0 var(--space-20);
+  }
+
   /* ——— Responsive ——— */
   @media (max-width: 760px) {
     .subnet-grid,
     .connect-paths {
       grid-template-columns: 1fr;
     }
+
+    /* ledger rows stack label-over-value at narrow widths */
+    .today-facts {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .today-fact dt {
+      margin-top: var(--space-2);
+    }
   }
 
   @media (max-width: 480px) {
     .commons-featured,
-    .commons-connect {
+    .commons-connect,
+    .commons-today {
       padding: var(--space-12) 0;
     }
 
