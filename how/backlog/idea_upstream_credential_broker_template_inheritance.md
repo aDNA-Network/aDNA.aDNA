@@ -21,7 +21,7 @@ tags: [backlog, upstream, doctrine, claude_md, template_inheritance, credentials
 
 ## Problem
 
-`campaign_node_credentials` (M00–M06, closed 2026-05-26 on this node) established `node.aDNA/` (Hestia) as the canonical credential broker on Keychain-primary + 1P-backup substrate. The cross-vault routing rule that consumer vaults need lives in `/Users/stanley/aDNA/doctrine_credential_handling.md §7` — a 15-line `### Credential routing (broker = node.aDNA)` snippet that names discovery / access / discipline / rotation pointers.
+`campaign_node_credentials` (M00–M06, closed 2026-05-26 on this node) established `node.aDNA/` (Hestia) as the canonical credential broker on Keychain-primary + 1P-backup substrate. The cross-vault routing rule that consumer vaults need lives in `/Users/stanley/aDNA/aDNA.aDNA/what/doctrine/doctrine_credential_handling.md §7` — a 15-line `### Credential routing (broker = node.aDNA)` snippet that names discovery / access / discipline / rotation pointers.
 
 M06 manually swept the snippet into two day-1 vaults' `CLAUDE.md`:
 
@@ -54,7 +54,7 @@ This vault's credentials are brokered by `node.aDNA/` (Hestia). When you need a 
 
 1. **Discovery** — read `node.aDNA/what/inventory/inventory_credentials.md` to find the credential by name and resolve its env-var name + canonical 1P URI (`op://...`) or file path.
 2. **Access** — read the credential's **env-var** (exported at shell init by a `~/.zshrc` Keychain-export block, per the inventory `env_var` field; Keychain entry carries a `/usr/bin/security` ACL grant — no biometric prompt, no TTY requirement). If the env-var is unset and you are in a real terminal, fall back to `op read "<uri>"` (this surfaces a biometric prompt — TTY only).
-3. **Discipline** — NEVER write a credential value into this vault's files (SO D4=A NAMES ONLY). Vault references use the URI or env-var name only. Apply `~/aDNA/doctrine_credential_handling.md` §6 in full (URI-not-value · `head -c N` ≤ 6 · Keychain-export preference · backup-exclusion).
+3. **Discipline** — NEVER write a credential value into this vault's files (SO D4=A NAMES ONLY). Vault references use the URI or env-var name only. Apply `~/aDNA/aDNA.aDNA/what/doctrine/doctrine_credential_handling.md` §6 in full (URI-not-value · `head -c N` ≤ 6 · Keychain-export preference · backup-exclusion).
 4. **Rotation / onboarding** — direct any rotation request or new-credential provisioning to the broker pattern: open a coord memo to `node.aDNA/who/coordination/` and/or invoke `node.aDNA/how/skills/skill_credential_provision_via_op.md` (first-time onboarding uses the ISS paste surface; rotation uses Pattern A §4.3 — touch both Keychain + 1P).
 
 Broker docs:
@@ -62,7 +62,7 @@ Broker docs:
 - Pattern ADR: `node.aDNA/what/decisions/adr_002_credential_broker_pattern.md` (§G2.1 = Keychain-primary + 1P-backup)
 - Onboarding-surface ADR: `node.aDNA/what/decisions/adr_003_credential_onboarding_surfaces.md`
 - Provisioning skill: `node.aDNA/how/skills/skill_credential_provision_via_op.md`
-- Workspace doctrine: `/Users/stanley/aDNA/doctrine_credential_handling.md`
+- Workspace doctrine: `/Users/stanley/aDNA/aDNA.aDNA/what/doctrine/doctrine_credential_handling.md`
 ```
 
 The forking skill should NOT add an `Adoption coord` pointer line — that's a per-vault customization the operator adds when the vault actually starts brokering specific credentials (LL pattern, SS pattern; both filed manually).

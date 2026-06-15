@@ -336,7 +336,7 @@ If `"link": null`, project has no integration. Fix:
 
 ### Q2. Never pass `--token=$SECRET` as a CLI flag
 
-`ps -ef` exposes the value for the lifetime of the command. **ALWAYS** use `VERCEL_TOKEN=...` env-var form. Doctrine: `/Users/stanley/aDNA/doctrine_credential_handling.md` §2.4.
+`ps -ef` exposes the value for the lifetime of the command. **ALWAYS** use `VERCEL_TOKEN=...` env-var form. Doctrine: `/Users/stanley/aDNA/aDNA.aDNA/what/doctrine/doctrine_credential_handling.md` §2.4.
 
 ### Q3. Hobby private-repo author-email mismatch BLOCKS deploys
 
@@ -410,7 +410,7 @@ After P-E close:
 - **Audit scripts** (Path A invocation target): `ScienceStanley.aDNA/audit/scripts/07-17_*.ts`
 - **Selector library** (Squarespace UI): `ScienceStanley.aDNA/audit/lib/squarespace_dns_selectors.ts`
 - **Vercel API client**: `ScienceStanley.aDNA/audit/lib/vercel_api.ts`
-- **Credential doctrine**: `/Users/stanley/aDNA/doctrine_credential_handling.md`
+- **Credential doctrine**: `/Users/stanley/aDNA/aDNA.aDNA/what/doctrine/doctrine_credential_handling.md`
 - **ISS gate skill**: `aDNA.aDNA/how/skills/skill_create_iss.md`
 - **Skill templates**: see `skill_vercel_squarespace_domain_cutover/templates/` (sibling directory)
 
