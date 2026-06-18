@@ -6,9 +6,10 @@ campaign_id: campaign_website_adna
 phase: 0
 mission_number: 0
 slug: recon_reconcile
-status: planned
+status: in_progress
+opened_session: session_stanley_20260618T232510Z_wadna_activate_p0
 created: 2026-06-17
-updated: 2026-06-17
+updated: 2026-06-18
 last_edited_by: agent_stanley
 owner: stanley
 persona: rosetta             # resident executor; campaign planned by Berthier; P0 led by Standard Archivist + Performance Engineer lenses
@@ -78,13 +79,15 @@ Establish **what exists and what is true** before any judgment or change. Produc
 Anthropic (research-citation-forward restraint → A, E, I) · Stripe (editorial type + density discipline → C, B) · Linear (motion-proves-speed → A, C) · Vercel (demonstrate-don't-claim hero → A, D) · NVIDIA (technical gravity → A, E) · a strong open-science site (e.g., a FAIR/data-commons portal → E, J).
 
 ## Exit Gate (P0 → P1)
-- [ ] Step-A coverage complete: every in-scope route, **local AND live**, Lighthouse (all cats incl. Agentic Browsing) + axe (both modes) + screenshot matrix + link-check log. Coverage is Step-A, not a follow-up.
-- [ ] Ground-truth model authored; verified against `adna_standard.md` (v2.2) + recent ADRs (032/033/034) + CHANGELOG.
-- [ ] `RECONCILIATION.aDNA.md` authored — every row cites location + stale claim + canonical truth + disposition + owner tag (`website-owned` | `pt19-owned`); partner-honesty and embargo checks complete; no `vaults.json` edits / no `sync:vaults` run (pt19-owned currency flagged, not fixed).
-- [ ] `SITEMAP.aDNA.md` authored — every page/image/component a scorecard row; flagships flagged.
-- [ ] Frozen baseline bundled in `site/evidence/wadna_baseline_2026_06/`; benchmark set named.
-- [ ] **Zero code/content changes** (planning-class).
-- [ ] Operator reviews `RECONCILIATION.aDNA.md` dispositions + `SITEMAP.aDNA.md` unit list and approves (Decision 2). **(human gate)**
+- [~] **PARTIAL** — Step-A coverage: ✅ `test:gates` 140/140 + axe 0 AA both modes (flagships) + the full-route `@audit` sweep **local** both-modes (114/115; 1 real sidebar-375px failure) + Lighthouse on the **7 flagships local**. ⏳ **Remaining (bounded):** full-route LOCAL Lighthouse (163) + the entire LIVE `adna.network` capture (Lighthouse + axe + screenshot matrix + link-check), tagged `local`|`live`. Note: Lighthouse 13.4.0 has **no Agentic Browsing category** — axis-G agentic measured manually (P2 tooling). Run via `audit:p1s3` + a Lighthouse loop before P1 scoring.
+- [x] Ground-truth model authored; verified against `adna_standard.md` (v2.2) + ADR-032/033/034 + root CLAUDE.md (`RECONCILIATION.aDNA.md` §Ground-truth model).
+- [x] `RECONCILIATION.aDNA.md` authored — owner-tagged (`website-owned` 6 / `pt19-owned` 5); partner + embargo checks **clean** (REFUTED pre-seed); **no `vaults.json` edits / no `sync:vaults`** (pt19 currency flagged-not-fixed). ✅
+- [x] `SITEMAP.aDNA.md` authored — 163 pages (7 flagships + 17 groups) + 27 components + 70 assets as scorecard units; flagships flagged; benchmark set named. ✅
+- [~] Frozen baseline bundled in `site/evidence/wadna_baseline_2026_06/` (+ `evidence/p1s3/`, `evidence/audit_2026_06/`); benchmark set named ✅. Coverage partial per Step-A remainder above.
+- [x] **Zero code/content changes** (planning-class) — `git status` clean except gitignored evidence. ✅
+- [ ] Operator reviews `RECONCILIATION.aDNA.md` dispositions (incl. the W4/W5 brand-entity call + the LH-Agentic tooling correction) + `SITEMAP.aDNA.md` unit list and approves (**Decision 2**). **(human gate — pending)**
+
+> **Mission status: `planned` → in-progress (session 1, 2026-06-18).** Authoring deliverables done; mission closes after the bounded Step-A completion + operator Decision 2. No mission AAR yet (filed at mission close per SO 5).
 
 ## Campaign Context
 - **Previous mission outputs:** none (campaign opens here). Resolved baseline = `campaign_adna_network_audit/missions/artifacts/audit_adna_network_2026_06.md` (load; do not redo).
