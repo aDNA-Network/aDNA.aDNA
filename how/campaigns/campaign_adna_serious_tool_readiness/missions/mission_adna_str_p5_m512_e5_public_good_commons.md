@@ -7,10 +7,11 @@ mission_number: 5.12
 decadal: E5
 slug: e5_public_good_commons
 created: 2026-06-07
-updated: 2026-06-10   # c165 done — O3 Stage-5 build complete; next c166-168 MAX-III
+updated: 2026-06-18   # SUBSUMED into campaign_website_adna (Phase 3 decadals) 2026-06-18; prior: c165 done — O3 Stage-5 build complete
 opens_at: 2026-06-07
 opened_session: session_stanley_20260608T042346Z_v8_m512_e5_open
-status: in_progress
+status: subsumed
+subsumed_by: campaign_website_adna   # Operator Decision 1, 2026-06-18 — E5 commons work continues as WEBSITE.aDNA Phase 3 decadals; build state (through c165) carried as resolved input
 estimated_sessions: 3-4   # E5 decadal: design (Stages 0-4) + data foundation + build III cycles (160-~169) + AAR/RLP (E4 actual ran to 10)
 persona: rosetta
 last_edited_by: agent_stanley
