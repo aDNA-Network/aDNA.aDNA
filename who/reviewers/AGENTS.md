@@ -1,20 +1,20 @@
 ---
 type: directory_index
 created: 2026-04-23
-updated: 2026-06-03   # M5.9 ecosystem expansion: 10 → 14 reviewers (+4 ecosystem_focused: Brand Strategist, Motion Designer, Conversion/Growth Specialist, Movement Skeptic; full bench 21 → 30). Prior: M5.2 expansion 5 → 10 (5 existing_specialist + 5 visual_focused per M5.0 §4)
+updated: 2026-06-18   # WEBSITE.aDNA P1: 14 → 16 reviewers (+2 campaign_focused: Standard Archivist [axis J], Performance Engineer [axis F] — genuinely new lenses). Prior: M5.9 ecosystem expansion 10 → 14 (+4 ecosystem_focused; full bench 21 → 30); M5.2 expansion 5 → 10 (5 existing_specialist + 5 visual_focused per M5.0 §4)
 last_edited_by: agent_stanley
-tags: [directory_index, reviewer, m5_2_bench_expansion, m5_9_ecosystem_expansion]
+tags: [directory_index, reviewer, m5_2_bench_expansion, m5_9_ecosystem_expansion, wadna_p1_expansion]
 ---
 
 # who/reviewers/ — Agent Guide
 
 ## What's Here
 
-Reviewer personas — **14 total** at M5.9 close (5 existing_specialist + 5 visual_focused [M5.2] + 4 NEW ecosystem_focused [M5.9]). Archetypal specialist UX/design critics invoked during decadal AAR cycles to supplement the 5-adopter + 6 P5-planned-adopter ranker with an *expert lens*. Adopters represent **audience** ("does this work for my persona?"); reviewers represent **expertise** ("is this well-made, and would a stranger feel welcomed?"). One file per reviewer.
+Reviewer personas — **16 total** at WEBSITE.aDNA P1 (5 existing_specialist + 5 visual_focused [M5.2] + 4 ecosystem_focused [M5.9] + 2 NEW campaign_focused [WADNA P1]). Archetypal specialist UX/design critics invoked during decadal AAR cycles to supplement the 5-adopter + 6 P5-planned-adopter ranker with an *expert lens*. Adopters represent **audience** ("does this work for my persona?"); reviewers represent **expertise** ("is this well-made, and would a stranger feel welcomed?"). One file per reviewer.
 
 Reviewers are the answer to a gap surfaced in the 2026-04-23 UX heuristic audit (see [[ux_audit_2026_04_23]]): Lighthouse saturates at 100/100/100/100 and the persona ranker moved 4.0 → 4.70 across D1 + D2, yet Delight stayed flat at 4.0 — both automated gates and audience self-assessment miss the "is this well-made?" question that a trained reviewer would catch on first scan. The M5.2 bench expansion adds 5 visual_focused reviewers to address operator priorities at v8 P5 pivot (visual + clarity + conciseness + anti-bloat + explanation-quality push; per `m50_persona_bench_expansion.md`).
 
-## Bench Inventory (14 total — 10 at M5.2 + 4 NEW ecosystem_focused at M5.9)
+## Bench Inventory (16 total — 14 at M5.9 + 2 NEW campaign_focused at WADNA P1)
 
 | Category | Reviewer | Primary Lens | File |
 |---|---|---|---|
@@ -32,8 +32,14 @@ Reviewers are the answer to a gap surfaced in the 2026-04-23 UX heuristic audit 
 | **ecosystem_focused (NEW M5.9)** | Motion Designer | delight + visual_clarity | [[reviewer_motion_designer]] |
 | **ecosystem_focused (NEW M5.9)** | Conversion/Growth Specialist | actionability + relevance | [[reviewer_conversion_growth_specialist]] |
 | **ecosystem_focused (NEW M5.9)** | Movement Skeptic | trust + comprehension | [[reviewer_movement_skeptic]] |
+| **campaign_focused (NEW WADNA P1)** | Standard Archivist | trust + findability | [[reviewer_standard_archivist]] |
+| **campaign_focused (NEW WADNA P1)** | Performance Engineer | trust + actionability | [[reviewer_performance_engineer]] |
+
+> **P1 extensions, not new files (WADNA):** the WEBSITE.aDNA campaign's [[../../how/campaigns/campaign_website_adna/CLAUDE.md|persona roster]] names two further lenses — the **Skeptical Frontier Engineer** (3-sec trust verdict; axes A/D) and the **Funder / Program Officer** (FAIR/governance/adopters; axes E/K). These are **sharpened briefs over existing lenses** ([[reviewer_movement_skeptic|Movement Skeptic]] + [[reviewer_brand_strategist|Brand Strategist]] + an adopter), reconciled in the Phase-1 persona sweep — **not authored as bench files.** Only the Standard Archivist (axis J) and Performance Engineer (axis F) were genuinely uncovered and added above.
 
 > **Shape note (M5.9):** the 4 ecosystem_focused files follow the pre-M5.2 `reviewer_design_critic` shape (8-key frontmatter + Background → What They Evaluate → Critique Prompts → Primary Ranker Lens → Example Audit Finding → Related), explicitly permitted by the Working Rules below; a future pass may upgrade them to the M5.0 §4 13-key template. They ground their Example Audit Findings in the M5.8 reference set ([[../../what/exemplars/sites/_reference_set]]) + the [[../../what/design/front_page_doctrine|front-page doctrine]] rather than the 2026-04-23 audit.
+
+> **Shape note (WADNA P1):** the 2 campaign_focused files (Standard Archivist, Performance Engineer) follow the same pre-M5.2 8-key shape, explicitly permitted below. As campaign-scoped reviewers they ground their Example Audit Findings in the WEBSITE.aDNA Phase-0 artifacts — [[../../how/campaigns/campaign_website_adna/missions/artifacts/RECONCILIATION.aDNA|RECONCILIATION.aDNA]] (axis J) and [[../../how/campaigns/campaign_website_adna/missions/artifacts/SITEMAP.aDNA|SITEMAP.aDNA]] §5 baseline (axis F) — and score against the axis-J/F dossiers in [[../../how/campaigns/campaign_website_adna/missions/artifacts/rubrics_a_k|rubrics_a_k]], rather than the M5.8 reference set.
 
 ## Working Rules
 
@@ -77,7 +83,7 @@ Reviewer files name any of these dimensions in `primary_lens` or `secondary_lens
 - Operational work (missions, sessions, skill edits)
 - Audience-targeting work (use [[who/adopters/|adopters]] instead)
 
-**Token cost**: ~400 tokens (this AGENTS.md after M5.2 expansion). Individual reviewer files are ~600-1,500 tokens each. Full 10-reviewer bench loaded: ~10 KB.
+**Token cost**: ~450 tokens (this AGENTS.md after the WADNA P1 expansion). Individual reviewer files are ~600-1,500 tokens each. Full 16-reviewer bench loaded: ~16 KB.
 
 ## Invocation Cadence (M5.0-updated for v8 P5 100-cycle program)
 
