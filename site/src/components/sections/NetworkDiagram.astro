@@ -11,17 +11,33 @@
  * IntersectionObserver-played, so it is fully visible with no JS and instant under
  * prefers-reduced-motion (global tokens.css rule).
  */
+import vaultsData from '../../data/vaults.json';
+
 const hub = { cx: 320, cy: 190, r: 46 };
 
-// One representative real vault per category — breadth + (subtly) the public-good thread.
+// C-4 (D1 credibility) — the marquee's grounding names are driven from
+// data/vaults.json so the diagram is *genuinely* data-driven (the docstring claim
+// above is now true) and inherits pt19's corrected vault names automatically
+// (H-10 = verify-after-pt19; never hand-edit labels). Six fixed geometry slots,
+// each a curated representative across categories (breadth + the public-good
+// thread); the LABEL is resolved from the registry by vault_slug, never hardcoded.
+// Remove a vault from vaults.json and its slot drops out — the data-driven proof.
+const vaultBySlug = new Map(vaultsData.vaults.map((v) => [v.vault_slug, v] as const));
+type Geo = { cx: number; cy: number; lx: number; ly: number; anchor: 'start' | 'middle' | 'end' };
+const slot = (slug: string, geo: Geo) => {
+  const v = vaultBySlug.get(slug);
+  return v ? { id: slug, label: v.display_name, ...geo } : null;
+};
 const nodes = [
-  { id: 'siteforge', label: 'SiteForge',    cx: 320, cy: 54,  lx: 320, ly: 36,  anchor: 'middle' },
-  { id: 'iii',       label: 'III',          cx: 452, cy: 122, lx: 470, ly: 126, anchor: 'start'  },
-  { id: 'harness',   label: 'RareHarness',  cx: 452, cy: 258, lx: 470, ly: 262, anchor: 'start'  },
-  { id: 'wga',       label: 'WGA',          cx: 320, cy: 326, lx: 320, ly: 348, anchor: 'middle' },
-  { id: 'rare',      label: 'Rare Archive', cx: 188, cy: 258, lx: 170, ly: 262, anchor: 'end'    },
-  { id: 'home',      label: 'Home',         cx: 188, cy: 122, lx: 170, ly: 126, anchor: 'end'    },
-];
+  slot('SiteForge.aDNA',   { cx: 320, cy: 54,  lx: 320, ly: 36,  anchor: 'middle' }), // forge
+  slot('III.aDNA',         { cx: 452, cy: 122, lx: 470, ly: 126, anchor: 'start'  }), // framework
+  slot('Harness.aDNA',     { cx: 452, cy: 258, lx: 470, ly: 262, anchor: 'start'  }), // platform
+  slot('wga.aDNA',         { cx: 320, cy: 326, lx: 320, ly: 348, anchor: 'middle' }), // org-vault · public good
+  slot('RareArchive.aDNA', { cx: 188, cy: 258, lx: 170, ly: 262, anchor: 'end'    }), // org-vault · public good
+  slot('Home.aDNA',        { cx: 188, cy: 122, lx: 170, ly: 126, anchor: 'end'    }), // a node's Home
+].filter((n): n is NonNullable<typeof n> => n !== null);
+
+const descNames = nodes.map((n) => n.label).join(', ');
 
 // Hub-and-spoke only: vaults federate AROUND the aDNA core. (E1 Gap #6 — the prior
 // hexagonal ring between satellites implied a false peer-to-peer topology the network
@@ -33,8 +49,7 @@ const allEdges = nodes.map((n) => ({ x1: hub.cx, y1: hub.cy, x2: n.cx, y2: n.cy 
   <svg viewBox="0 0 640 384" role="img" aria-labelledby="nd-title nd-desc" class="netdiagram-svg">
     <title id="nd-title">The aDNA network</title>
     <desc id="nd-desc">
-      Real aDNA vaults — SiteForge, III, RareHarness, WGA, Rare Archive, and a node's Home —
-      federating around the aDNA core on the Lattice Protocol.
+      Real aDNA vaults — {descNames} — federating around the aDNA core on the Lattice Protocol.
     </desc>
 
     <g class="nd-edge-halos" aria-hidden="true">

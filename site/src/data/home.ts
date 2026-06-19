@@ -42,16 +42,19 @@ export const steps: HomeStep[] = [
     demo: `<div class="step-demo">
   <div class="step-demo-bar">
     <span class="demo-dots"><span></span><span></span><span></span></span>
-    <span class="demo-filename">project/</span>
+    <span class="demo-filename">aDNA.aDNA/</span>
   </div>
-  <pre class="step-demo-pre">my-project/
-├── CLAUDE.md       ← agent master context
+  <pre class="step-demo-pre">aDNA.aDNA/
+├── CLAUDE.md       ← agent operating protocol
+├── STATE.md        ← current phase, blockers
 ├── what/           ← what the project knows
-│   └── context/      typed context files
+│   ├── context/      typed context library
+│   └── decisions/    architecture records
 ├── how/            ← how it operates
-│   └── missions/     decomposed work plans
+│   ├── campaigns/    strategic initiatives
+│   └── missions/     decomposed work
 └── who/            ← who&#39;s involved
-    └── governance/   roles &amp; rules</pre>
+    └── governance/   roles &amp; policy</pre>
 </div>`,
   },
   {
@@ -61,18 +64,19 @@ export const steps: HomeStep[] = [
     demo: `<div class="step-demo">
   <div class="step-demo-bar">
     <span class="demo-dots"><span></span><span></span><span></span></span>
-    <span class="demo-filename">CLAUDE.md</span>
+    <span class="demo-filename">aDNA.aDNA/CLAUDE.md</span>
   </div>
-  <pre class="step-demo-pre"># CLAUDE.md — climate-pipeline
+  <pre class="step-demo-pre"># CLAUDE.md — aDNA.aDNA
 
-You are working on climate-pipeline.
-A data pipeline for surface temperature
-records (1990–present).
+## Identity &amp; Personality
+You are Rosetta — named after the Rosetta
+Stone. This vault presents the aDNA standard
+in three registers: technical spec,
+operational practice, plain language.
 
-## Priority Rules
-1. Never overwrite raw sensor data
-2. All outputs need uncertainty ranges
-3. Ingestion changes need peer review</pre>
+## Standing Orders
+1. Phase gates are human gates.
+2. Destructive actions require confirmation.</pre>
 </div>`,
   },
   {
@@ -82,18 +86,17 @@ records (1990–present).
     demo: `<div class="step-demo">
   <div class="step-demo-bar">
     <span class="demo-dots"><span></span><span></span><span></span></span>
-    <span class="demo-filename">mission_schema_v2.md</span>
+    <span class="demo-filename">mission_wadna_p3_iterate.md</span>
   </div>
-  <pre class="step-demo-pre">plan_id: mission_schema_v2
-status: active
+  <pre class="step-demo-pre">mission_id: mission_wadna_p3_iterate
+phase: 3
+status: in_progress
 
-## Objective 1 — Migrate schema
-- Status: ✓ complete
-- Files: data/schema.py
-
-## Objective 2 — Backfill validation
-- Status: in_progress
-- Depends on: [1]</pre>
+## Decades
+D1 Credibility-integrity → active
+D2 Navigation &amp; docs → queued
+D3 Agentic + community → queued
+D4 Visual craft → queued</pre>
 </div>`,
   },
 ];

@@ -1,12 +1,29 @@
 ---
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import { buildTechArticleJsonLD } from '../../utils/seo';
+import { REPO_HTTPS } from '../../data/canonical';
 
 const jsonLD = buildTechArticleJsonLD({
   title: 'What is aDNA?',
   description: 'aDNA (Agentic DNA) is an open standard for organizing project knowledge so that both humans and AI agents can navigate it.',
   url: Astro.url.href,
 });
+
+// C-1 (D1 credibility) — proof-links resolve to real, browsable files in the public
+// clone-and-run image. Decision 4 (2026-06-19): repoint-to-public-image; every href
+// returns 200 to an unauthenticated client (gate G6). At the keystone these upgrade
+// to point at Hearthstone's polished, published Home base (stage-2). Built from the
+// single canonical REPO_HTTPS (SP-1; gate G5) so the org/repo can't re-drift.
+// The clone-and-run image carries the standard embedded at `.adna/`; the workspace
+// router CLAUDE.md sits at the repo root. Every path below was live-verified 200
+// (unauthenticated) against the public image this session.
+const proofLinks = [
+  { path: 'CLAUDE.md', href: `${REPO_HTTPS}/blob/main/CLAUDE.md`, note: 'the workspace operating protocol an agent loads first' },
+  { path: '.adna/', href: `${REPO_HTTPS}/tree/main/.adna`, note: 'the full aDNA standard, embedded and ready to clone' },
+  { path: '.adna/how/skills/skill_onboarding.md', href: `${REPO_HTTPS}/blob/main/.adna/how/skills/skill_onboarding.md`, note: 'the first-run recipe that orients a new project' },
+  { path: '.adna/how/skills/skill_project_fork.md', href: `${REPO_HTTPS}/blob/main/.adna/how/skills/skill_project_fork.md`, note: 'how a new .aDNA project is created' },
+  { path: '.adna/how/templates/template_workspace_claude.md', href: `${REPO_HTTPS}/blob/main/.adna/how/templates/template_workspace_claude.md`, note: 'the router template every workspace starts from' },
+];
 ---
 
 <DocumentationLayout
@@ -69,7 +86,7 @@ const jsonLD = buildTechArticleJsonLD({
   </table>
 
   <h3 id="claude-md-example">What a CLAUDE.md looks like</h3>
-  <p>The <code>CLAUDE.md</code> is not a README — it is the agent's operating protocol. The opening of the real one from this documentation vault (<a href="https://github.com/aDNA-Network/aDNA.aDNA/blob/main/CLAUDE.md"><code>aDNA.aDNA/CLAUDE.md</code></a>):</p>
+  <p>The <code>CLAUDE.md</code> is not a README — it is the agent's operating protocol. Here is the opening of a real one — every aDNA project carries its own (you can browse a full <code>CLAUDE.md</code> in the public image, linked below):</p>
   <pre><code># CLAUDE.md — aDNA.aDNA
 
 You are Rosetta — named after the Rosetta Stone, the artifact that decoded
@@ -97,15 +114,14 @@ aDNA.aDNA/
   <p><strong>Without aDNA:</strong> a research lab has 200 files across Notion, Drive, and Git. Every new agent session pastes an outdated summary into the prompt. Decisions from last month get re-litigated. A new collaborator takes three days to orient.</p>
   <p><strong>With aDNA:</strong> the same project has a <code>what/context/</code> library, a <code>STATE.md</code> showing current priorities and blockers, and a <code>how/missions/</code> directory with active work decomposed into claimable objectives. A new agent loads <code>CLAUDE.md</code>, reads the relevant context, and starts working in the right direction — in the same session.</p>
 
-  <h2 id="self-reference">This site is a live aDNA vault</h2>
-  <p><strong>This documentation site IS an aDNA vault.</strong> The pages you are reading are generated from files inside <a href="https://github.com/aDNA-Network/aDNA.aDNA"><code>github.com/aDNA-Network/aDNA.aDNA</code></a> — a real, actively maintained aDNA project that teaches the standard by using the standard. Every concept here has a corresponding file in the vault that demonstrates it:</p>
+  <h2 id="self-reference">aDNA is real — and inspectable</h2>
+  <p><strong>aDNA is not a concept deck; it is a standard you can clone and read today.</strong> The public clone-and-run image at <a href={REPO_HTTPS}><code>github.com/aDNA-Network/aDNA</code></a> is a real aDNA workspace — one command gives you the standard, the skills, and the templates, ready for an agent. Inspect the actual files:</p>
   <ul>
-    <li><a href="https://github.com/aDNA-Network/aDNA.aDNA/blob/main/STATE.md"><code>aDNA.aDNA/STATE.md</code></a> — live operational snapshot</li>
-    <li><a href="https://github.com/aDNA-Network/aDNA.aDNA/tree/main/what/context"><code>aDNA.aDNA/what/context/</code></a> — curated knowledge library agents load before working</li>
-    <li><a href="https://github.com/aDNA-Network/aDNA.aDNA/tree/main/how/campaigns/campaign_rosetta"><code>aDNA.aDNA/how/campaigns/campaign_rosetta/</code></a> — the campaign that built this site</li>
-    <li><a href="https://github.com/aDNA-Network/aDNA.aDNA/blob/main/CLAUDE.md"><code>aDNA.aDNA/CLAUDE.md</code></a> — the exact CLAUDE.md snippet shown above, in full</li>
+    {proofLinks.map(({ path, href, note }) => (
+      <li><a href={href}><code>{path}</code></a> — {note}</li>
+    ))}
   </ul>
-  <p>Navigate the vault in Obsidian, VS Code, or GitHub. Every directory and frontmatter field is an aDNA concept in action.</p>
+  <p>This very documentation site is itself authored as an aDNA vault — the structure you are reading about is the structure that produced it. Clone the image and open it in Obsidian, VS Code, or on GitHub: every directory and frontmatter field is an aDNA concept in action.</p>
 
   <h2 id="three-questions">The three-question test</h2>
   <p>A well-structured aDNA project should let any agent answer three questions immediately, without asking:</p>

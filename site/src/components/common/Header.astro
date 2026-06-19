@@ -1,5 +1,6 @@
 ---
 import DarkModeToggle from '../islands/DarkModeToggle.astro';
+import { REPO_HTTPS } from '../../data/canonical';
 
 const navLinks = [
   { label: 'Network', href: '/network' },
@@ -36,7 +37,7 @@ const currentPath = Astro.url.pathname;
     <div class="header-actions">
       <a href="/get-started" class="btn btn-primary header-cta" data-astro-prefetch>Get Started</a>
       <a
-        href="https://github.com/aDNA-Network/aDNA"
+        href={REPO_HTTPS}
         class="github-link"
         aria-label="GitHub repository"
         target="_blank"

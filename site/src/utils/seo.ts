@@ -2,6 +2,14 @@
  * JSON-LD structured data builders for SEO.
  * Documentation archetype: TechArticle, WebSite, WebPage, CollectionPage.
  */
+import { PUBLISHER, PUBLISHER_URL } from '../data/canonical';
+
+/** Canonical publisher organization for every JSON-LD builder (SP-1 single-source; gate G5/G4). */
+const PUBLISHER_ORG = {
+  '@type': 'Organization' as const,
+  name: PUBLISHER,
+  url: PUBLISHER_URL,
+};
 
 interface WebPageParams {
   title: string;
@@ -42,11 +50,7 @@ export function buildTechArticleJsonLD({
     ...(datePublished && { datePublished }),
     ...(dateModified && { dateModified }),
     ...(author && { author: { '@type': 'Person', name: author } }),
-    publisher: {
-      '@type': 'Organization',
-      name: 'Lattice Protocol',
-      url: 'https://github.com/LatticeProtocol',
-    },
+    publisher: PUBLISHER_ORG,
   };
 }
 
@@ -57,10 +61,7 @@ export function buildWebSiteJsonLD(siteUrl: string): Record<string, unknown> {
     name: 'aDNA — Agentic DNA Knowledge Architecture',
     url: siteUrl,
     description: 'Give your project a knowledge architecture that both humans and AI agents can navigate.',
-    publisher: {
-      '@type': 'Organization',
-      name: 'Lattice Protocol',
-    },
+    publisher: PUBLISHER_ORG,
   };
 }
 
@@ -94,11 +95,7 @@ export function buildHowToJsonLD({ title, description, url, totalTime }: HowToPa
     description,
     url,
     ...(totalTime && { totalTime }),
-    publisher: {
-      '@type': 'Organization',
-      name: 'Lattice Protocol',
-      url: 'https://github.com/LatticeProtocol',
-    },
+    publisher: PUBLISHER_ORG,
   };
 }
 
