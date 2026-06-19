@@ -6,7 +6,8 @@ campaign_id: campaign_website_adna
 phase: 1
 mission_number: 1
 slug: critique
-status: in_progress
+status: completed
+closed: 2026-06-18
 opened_session: session_stanley_20260619T004400Z_wadna_p0close_p1
 created: 2026-06-17
 updated: 2026-06-18
@@ -52,9 +53,9 @@ Score the baseline and produce the master defect-and-opportunity register. For e
 - [x] Flagships scored by ≥3 lenses (4 sweep cells + pre-supplied J/F); findings synthesized. *(17 group-reps sampled; full per-group scoring rolls into P3 unit work.)*
 - [x] `FINDINGS.aDNA.md` complete, sorted by severity × reach; credibility/naming = auto-Critical (4 Criticals).
 - [x] Systemic-pattern list produced (10 patterns; credibility-integrity = the headline).
-- [x] **Zero changes** (planning-class; `git status` clean except gitignored evidence). — [ ] **Operator approves FINDINGS prioritization + the new personas (Decision 3).** *(human gate — pending)*
+- [x] **Zero changes** (planning-class; `git status` clean except gitignored evidence). — [x] **Operator approved FINDINGS prioritization + the new personas (Decision 3) — 2026-06-18.**
 
-> **Mission status: in_progress — deliverables complete, awaiting Decision 3** (2026-06-18). On approval → `status: completed` + P2 opens. AAR below (filed now; substantive work done).
+> **Mission status: completed 2026-06-18.** Decision 3 approved (FINDINGS prioritization + the new personas); P2 opens with the credibility-integrity-first direction. AAR below.
 
 ## Campaign Context
 - **Inputs:** P0 `SITEMAP.aDNA.md`, `RECONCILIATION.aDNA.md`, frozen baseline, benchmark set.

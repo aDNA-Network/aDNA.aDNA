@@ -3,10 +3,10 @@ type: decision
 adr_id: adr_035
 adr_number: 035
 title: "Promote `inventory` (WHAT) + `identity` (WHO) from node-local extensions to base aDNA entity types (14 → 16); standard v2.2 → v2.3"
-status: proposed
+status: accepted
 created: 2026-06-18
 updated: 2026-06-18
-ratified: null
+ratified: 2026-06-18
 last_edited_by: agent_rosetta
 supersedes: none
 superseded_by: none
@@ -25,7 +25,7 @@ tags: [adr, decision, ontology, base_entity_types, inventory, identity, standard
 
 ## Status
 
-**proposed** — drafted 2026-06-18 (Rosetta) for the **Operation Hearthstone Phase 0** gate. This ADR changes the **aDNA standard** (the base ontology defined in `adna_standard.md`), so it is a standard change requiring **operator sign-off**: per Project Standing Order #1 (phase gates are human gates) and Standing Order #9 (upstream spec is source of truth — this vault demonstrates and explains; the spec defines). The operator **ratifies at the Hearthstone P0 exit gate** (campaign Decision Point #2). Do not treat the entity-type promotion as in force until that ratification; the **materialization** (template edits in `.adna/`) is separately gated at Hearthstone **P5** (see §Ship Path).
+**accepted** — drafted 2026-06-18 (Rosetta); **ratified 2026-06-18 at the Operation Hearthstone Phase 0 gate** (operator approval). All three positions confirmed: promote `inventory`+`identity` (D1) · standard **v2.3** (D2 — kept distinct from the STR/Hearthstone "v8.0" release milestone) · **defer** `network_node_mirror`+`permission_edge` to a successor ADR (D3). This ADR changes the **aDNA standard** (the base ontology defined in `adna_standard.md`), so it is a standard change requiring **operator sign-off**: per Project Standing Order #1 (phase gates are human gates) and Standing Order #9 (upstream spec is source of truth — this vault demonstrates and explains; the spec defines). The operator **ratified at the Hearthstone P0 exit gate** (campaign Decision Point #2) on **2026-06-18**. Do not treat the entity-type promotion as in force until that ratification; the **materialization** (template edits in `.adna/`) is separately gated at Hearthstone **P5** (see §Ship Path).
 
 This ADR is self-referential by design (Standing Order #8): `aDNA.aDNA` itself is an aDNA instance whose `what/decisions/` directory is the canonical home for exactly this kind of standard-evolution record — the file you are reading is a working example of the `decisions` base entity type deciding the addition of two new base entity types.
 

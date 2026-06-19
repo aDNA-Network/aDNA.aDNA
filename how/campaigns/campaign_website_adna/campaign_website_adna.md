@@ -118,7 +118,7 @@ The improvement **engine already exists and is battle-tested** — `skill_iii_cy
 |---|------|----------|--------|
 | 1 | Activation (before P0) | Approve scope/phases; approve **subsumption** of STR E5/E6 (sets their status `subsumed`); approve the persona-cell + the additive tooling-promotion | **✅ approved 2026-06-18** (plan `please-read-the-claude-md-wise-riddle.md`) |
 | 2 | P0 → P1 | Approve `RECONCILIATION.aDNA.md` dispositions (esp. partner-claim removals + terminology sweep) and the `SITEMAP.aDNA.md` unit list | pending |
-| 3 | P1 → P2 | Approve `FINDINGS.aDNA.md` prioritization and the reconciled/new reviewer lenses (only uncovered ones authored) | pending |
+| 3 | P1 → P2 | Approve `FINDINGS.aDNA.md` prioritization and the reconciled/new reviewer lenses (only uncovered ones authored) | **✅ approved 2026-06-18** — credibility-integrity-first P2 sequence; two-stage C-1/C-2 (real aDNA.aDNA artifacts now → Hearthstone base at keystone) |
 | 4 | P2 → P3 | Approve improvement specs + decadal session plan + per-unit done-definition + deploy posture | pending |
 | 5 | P3 → P4 | Confirm all units cleared the bar; flagship benchmark side-by-side passed | pending |
 | 6 | P4 close | Sign-off verdict; standing-watch wired; `STATE.md` updated; STR resume/realign | pending |

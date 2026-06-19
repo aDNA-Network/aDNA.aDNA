@@ -3,7 +3,8 @@ plan_id: mission_hearthstone_p0_charter
 type: plan
 title: "P0 — Charter ratification, v8.0 ontology ADR, and release source-map"
 owner: stanley
-status: in_progress
+status: completed
+closed: 2026-06-18
 campaign_id: campaign_hearthstone
 campaign_phase: 0
 campaign_mission_number: 0
@@ -22,7 +23,7 @@ tags: [plan, campaign, hearthstone, p0, ontology_v8, adr, source_map]
 
 > **Stub authored by Hestia at charter (was status: planning).** This was the first thing a Rosetta session executed to activate the campaign. It makes the gated decisions Hestia deliberately did **not** make.
 >
-> **Activated 2026-06-18 (Rosetta).** Operator approved campaign scope/activation (Decision 1 — "activate Hearthstone P0"); campaign flipped `planning → active`. Mechanical deliverables landed this session (6 ideas ratified ✅; the v8.0 ontology-promotion ADR authored as `adr_035` — status `proposed`, parallel worker ✅; release source-map pinned ✅). **`status: in_progress` (not `completed`)** — mirrors how the WEBSITE P0/P1 missions held their gate: the exit gate's **ADR-ratification leg (Decision 2) remains an operator checkpoint**, so the mission stays open until the operator ratifies `adr_035`. On ratification → run the AAR and set `completed`.
+> **Activated 2026-06-18 (Rosetta).** Operator approved campaign scope/activation (Decision 1 — "activate Hearthstone P0"); campaign flipped `planning → active`. Mechanical deliverables landed this session (6 ideas ratified ✅; the v8.0 ontology-promotion ADR authored as `adr_035` — status `proposed`, parallel worker ✅; release source-map pinned ✅). **`status: completed` (2026-06-18)** — the exit gate's ADR-ratification leg (Decision 2) cleared when the operator **ratified `adr_035`** (→ `accepted`: promote `inventory`+`identity` 14→16, standard **v2.3**, defer `network_node_mirror`/`permission_edge`). AAR filed below. Materialization stays gated to **P5** (`skill_template_release`); **P1 (entity-type foundations) is the next gated arc.**
 
 ## Goal
 
@@ -31,7 +32,7 @@ Convert Operation Hearthstone from a planning landing-pad into an executable cam
 ## Exit Gate
 
 - ✅ Operator has approved campaign scope/phases/mission-sequence (Decision Point 1) → campaign `status: active` (2026-06-18).
-- ⏳ An ADR **exists** promoting `inventory` (WHAT) + `identity` (WHO) to **base** entity types at standard **v8.0**, un-namespaced, `merge: invariant`, with the batching decision vs `network_node_mirror`/`permission_edge` recorded — authored as [[adr_035_inventory_identity_base_entity_types]] (status `proposed`, parallel worker). **Ratification (Decision Point 2) is still an operator checkpoint** — this leg is the one keeping the mission `in_progress`.
+- ✅ An ADR promoting `inventory` (WHAT) + `identity` (WHO) to **base** entity types — [[adr_035_inventory_identity_base_entity_types]] — is authored **and ratified 2026-06-18** (`status: accepted`): standard **v2.3** (distinct from the "v8.0" release milestone), un-namespaced, `merge: invariant`; batch = promote 2, **defer** `network_node_mirror`/`permission_edge` to a successor ADR. **Decision Point 2 cleared.**
 - ✅ The six ideas are `accepted` (2026-06-18 — see Objective 1).
 - ✅ The release source-map is recorded (below, §Release Source-Map; dev-graph path → `.adna/` path for each artifact class).
 
@@ -44,8 +45,8 @@ Convert Operation Hearthstone from a planning landing-pad into an executable cam
 - **Files**: `how/backlog/idea_upstream_{inventory_entity_type,identity_entity_type,node_exemplar_template,project_fork_exemplar_invocation,home_claude_template,router_node_vault_detection}.md`
 - **Depends on**: none
 
-### 2. Author the v8.0 ontology-promotion ADR ✅ (authored; ratification pending)
-- **Status**: authored — `adr_035` exists at `status: proposed` (parallel worker, this session); **operator ratification (Decision Point 2) pending**.
+### 2. Author + ratify the v8.0 ontology-promotion ADR ✅
+- **Status**: done — `adr_035` authored + **ratified 2026-06-18** (`status: accepted`). Promote `inventory`+`identity` (14→16); standard **v2.3**; defer `network_node_mirror`/`permission_edge` (successor ADR).
 - **Description**: Promote `inventory`/`identity` to base entity types; decide whether v8.0 batches the two already-proposed `ontology.md` promotions (`network_node_mirror`, `permission_edge`) into one clean major. Un-namespaced (base types are not namespaced), `merge: invariant`, directory convention `what/inventory/` + `who/identity/`.
 - **Outcome**: ADR authored as `adr_035_inventory_identity_base_entity_types` (proposed). The 6 ideas reference it by wikilink. Ratification is an operator checkpoint distinct from Decision 1 (activation) — the mission stays `in_progress` until ratified.
 - **Files**: `what/decisions/adr_035_inventory_identity_base_entity_types.md` (new); ref `what/ontology.md`
@@ -101,23 +102,31 @@ Reference artifacts to genericize across P1–P4 live in `Home.aDNA/` (see campa
 ### Decision status (2026-06-18)
 
 - **Decision 1 (scope / activation) — APPROVED 2026-06-18.** Operator: "activate Hearthstone P0." Campaign flipped `planning → active`; this mission `planning → in_progress`.
-- **Decision 2 (v8.0 ontology-promotion ADR ratification) — PENDING (distinct operator checkpoint).** `adr_035` is authored at `status: proposed`; operator ratification is a separate gate and is the open leg of this mission's exit gate. Do **not** treat Decision 1 (activation) as ratifying the ADR.
+- **Decision 2 (ontology-promotion ADR ratification) — APPROVED 2026-06-18.** Operator ratified `adr_035` (→ `status: accepted`): promote `inventory`+`identity` (14→16), standard **v2.3**, defer `network_node_mirror`/`permission_edge`. Materialization gated to P5 (`skill_template_release`).
 
-## Completion Summary
-
-*Fill out when setting `status: completed`.*
+## Completion Summary (closed 2026-06-18)
 
 ### Deliverables
+- 6 feeding ideas ratified `proposed → accepted` (2 entity-type ideas point at `adr_035`).
+- `adr_035` authored **and ratified** (`accepted`): inventory+identity → base entity types 14→16; standard **v2.3**; defer the other two.
+- Release source-map pinned (§Release Source-Map, 9 rows: dev → `.adna/` per artifact, by phase).
+- Lab ADR-006 bootstrap-offer folded into the Step-0 plan; CanvasForge→Canvas exemplar repoint flagged for P3.
+
 ### Descoped
+- `network_node_mirror` + `permission_edge` → successor ADR (deferred per D3).
+
 ### Key Findings
+- The "v8.0" version hazard was the real trap; `adr_035` defuses it by separating the **standard** track (v2.3) from the **governance** version and the STR/Hearthstone **"v8.0" release milestone**.
+
 ### Scope Changes
+- None. P0 executed as chartered (under [[campaign_operation_adna]] Track B).
 
 ## AAR
 
-*Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
+*5-line AAR (`template_aar_lightweight.md`).*
 
-- **Worked**:
-- **Didn't**:
-- **Finding**:
-- **Change**:
-- **Follow-up**:
+- **Worked**: P0 ran as 3 parallel subagent workstreams (program umbrella + ADR + idea-ratification/source-map); the ADR's three-version-track disentanglement (standard v2.3 ≠ governance ≠ "v8.0" milestone) cleanly resolved the charter's "v8.0" shorthand ambiguity.
+- **Didn't**: the Galileo/Lab ADR-006 bootstrap-offer memo isn't present locally yet (expected Home-side; tracked as a P2 inbound dependency); the CanvasForge→Canvas exemplar repoint is a flagged P3 watch item, not resolved here.
+- **Finding**: promoting node-local types to base is a *decision* (cheap + reversible until P5 materialization), so ratifying at P0 is low-risk while unblocking P1 — the version-track hazard, not the promotion, was the trap.
+- **Change**: batch discipline — promote only D9+D7-verified types (inventory+identity); under-baked candidates get a successor ADR, never a default base-type promotion.
+- **Follow-up**: **P1** authors the inventory+identity scaffolds + templates + ontology rows in the dev graph (no `.adna/` writes; source-map says where each lands); repoint CanvasForge→Canvas before P3; surface the Galileo memo before P2 deliverable #7.

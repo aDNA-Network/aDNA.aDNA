@@ -16,7 +16,7 @@ mission_class: planning      # plan only; ZERO site changes
 spec_completeness: stub      # finalized at P1 close
 estimated_sessions: "1"
 token_budget_estimated: "TBD at P1 close (~100-180 kT)"
-hard_dependency_satisfied: "no — depends on P1 (FINDINGS + systemic-pattern list)"
+hard_dependency_satisfied: "yes — P1 closed 2026-06-18 (FINDINGS + systemic-pattern list filed); Decision 3 approved with the credibility-first direction below"
 unblocks_missions: [mission_wadna_p3_iterate]
 deliverables_count: 4
 tags: [mission, campaign_website_adna, phase2, planning, design]
@@ -24,7 +24,17 @@ tags: [mission, campaign_website_adna, phase2, planning, design]
 
 # P2 — Improvement Design
 
-> **Stub spec.** Plan the work; decide before building. No changes yet.
+> **Stub spec.** Plan the work; decide before building. No changes yet. *(Unblocked at Decision 3, 2026-06-18 — finalize when P2 opens as a working arc.)*
+
+## Approved direction (Decision 3, 2026-06-18)
+
+The operator approved the `FINDINGS.aDNA.md` prioritization + the new personas with this **P2 sequencing direction**:
+
+1. **Credibility-integrity FIRST** (systemic pattern #1): the link/citation/JSON-LD gates (Objective 3a–c) + the 4 Criticals (C-1 dead `aDNA-Network/aDNA.aDNA` proof-links · C-2 fabricated homepage code · C-3 `seo.ts` JSON-LD publisher · C-4 false "data-driven" diagram). **Credibility before craft.**
+2. **Then the single nav-serialization DOM fix** (H-1/H-2: `<article>` before `<aside>` + non-heading group labels) — one structural change clears the class **and** the `@audit` 375px failure **and** the heading-hierarchy issue. Highest leverage on the board.
+3. **Then** the rest (visual craft, agentic gaps `llms.txt`/graph-JSON-LD, the systemic-fix package).
+4. **C-1/C-2 are two-stage** (the program-thesis payoff): **now** — fix with **real artifacts from this vault** (aDNA.aDNA is itself a real, inspectable vault; don't wait on Hearthstone); **at the keystone launch** — upgrade the "clone and inspect" demonstration to point at **Hearthstone's polished base** ([[campaign_operation_adna]] Track B). Credibility goes *fixed → exemplary*.
+5. **`pt19`-owned** findings (H-10 stale vault names/count) = spec as **verify-after-pt19** (no hand-fix, no `sync:vaults`). **Deploy-gap** items (`/commons` 404, live BP 92) = coordinate at the **keystone**.
 
 ## Goal
 Convert `FINDINGS.aDNA.md` into an executable plan: an improvement spec for every Critical/High finding, the systemic-fix package that lifts every page at once, and the dependency-ordered decadal session plan with a crisp per-unit done-definition.
