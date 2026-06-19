@@ -4,9 +4,9 @@ artifact_class: coordination_ledger
 campaign_id: campaign_operation_adna
 title: "Operation aDNA — cross-vault seam ledger"
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-06-19
 status: active
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [coordination_ledger, program, cross_vault, seams, keystone, pt19]
 ---
 
@@ -29,6 +29,7 @@ tags: [coordination_ledger, program, cross_vault, seams, keystone, pt19]
 | **Network / W-NET federation** | Venus / `Network.aDNA` | Track D's full social/federation layer (profiles, follows, cross-node feeds, membership/federation model); the site **builds toward** it, does not ship it before the substrate exists | **deferred** (Venus-gated; gated at PT P5.5 / Network P6) | Track-D MVP (public-good showcase + "connect to a subnetwork" affordances + the registry as first social surface) ships on `vaults.json` + federation_refs *now*; the full layer is co-designed with Venus when the membership substrate lands. See [[narrative_ethos_public_good]] §5. |
 | **doctrine-relocation** | Hestia / `Home.aDNA` | The 4 workspace doctrines now home at `aDNA.aDNA/what/doctrine/` — cross-vault sweep done (19 pointers / 13 vaults; ref-sweep 0 broken) | **acked; one carve-out pending** ([[coord_2026_06_14_hestia_to_rosetta_doctrine_relocation]]) | Doctrines' new home **acked**. Carve-out: `Context.aDNA` was mid-session at sweep time — repoint its `adr_010` → `aDNA.aDNA/what/doctrine/doctrine_credential_handling.md` **when Context.aDNA (Prometheus) next quiesces**. Deferred-pending-Context-quiesce; non-blocking. |
 | **vault-card public-fields** | Rosetta → Hestia / `Home.aDNA` | The public projection of vault cards (Harness display split → "Harness" with RareHarness as flagship; per-vault public `tagline`); ties to pt19 (both are Home vault-card edits the site regen consumes) | **open; awaiting Hestia ack** ([[coord_2026_06_10_rosetta_to_hestia_vault_card_public_fields]]) | On Hestia's edits landing in `inventory_vaults.yaml` / cards: ping Rosetta → site regen + commit → rides the next deploy. **Reconcile with pt19** — both are Home-side vault-card edits; fold the regen into the single pt19 handshake rather than a separate `sync:vaults`. |
+| **★ aDNA.aDNA public inspectability (C-1)** | operator · Berthier / `aDNALabs.aDNA` | WEBSITE **C-1** — the site's "real, inspectable vault" proof-links have **no public URL to resolve to**: `aDNA-Network/aDNA.aDNA` → 404 (private), the public image `aDNA-Network/aDNA` → 200 but gitignores `*.aDNA/` (subtree → 404). A keystone precondition — proof-links must resolve the day the site launches (keystone condition #1). | **candidate — pending operator Decision 4** (surfaced at WEBSITE P2, verified live 2026-06-19; [[IMPROVEMENT-SPECS.aDNA]] C-1) | Operator decides: make `aDNA-Network/aDNA.aDNA` **public** (+ push) so the proofs resolve, **or** point proofs at resolving public-image paths. **Stage-2 (keystone):** proofs point at Hearthstone's published base ([[campaign_hearthstone]]). NB: pushing to the private remote does **not** resolve this — the repo stays private until an explicit visibility change. |
 
 ★ = keystone precondition (DP2).
 
