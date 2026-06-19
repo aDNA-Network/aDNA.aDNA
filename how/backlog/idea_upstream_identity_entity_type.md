@@ -3,19 +3,21 @@ type: backlog_idea
 idea_id: idea_upstream_identity_entity_type
 title: "Add `identity` entity type to v8.0+ aDNA standard ontology (under WHO)"
 category: governance
-status: proposed
+status: accepted
 priority: medium
 effort: plan
 proposed_by: agent_stanley
 proposed_date: 2026-05-11
-updated: 2026-05-11
+updated: 2026-06-18
 upstream: true
 target_version: "v8.0"
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [backlog, upstream, ontology, identity, node_adna]
 ---
 
 # Idea: Add `identity` entity type to v8.0+ aDNA standard ontology
+
+> **Ratified 2026-06-18** — accepted at Operation Hearthstone P0 (Operator Decision 1); the inventory+identity promotion to base entity types is decided in [[adr_035_inventory_identity_base_entity_types]]; lands in `.adna/` at Hearthstone P5 via skill_template_release.
 
 ## Problem / Opportunity
 

@@ -1,10 +1,10 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: high
 created: 2026-06-18
 updated: 2026-06-18
-last_edited_by: agent_hestia
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA planning session (Operation Hearthstone — plan does-the-home-dir-adaptive-fern)
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
@@ -13,6 +13,8 @@ tags: [backlog, upstream, home_adna, hestia, claude_md, governance_template, nod
 ---
 
 # Idea: Ship a `template_home_claude.md` so a fresh node's `Home.aDNA/` gets the Hestia governance CLAUDE.md (not generic Berthier)
+
+> **Ratified 2026-06-18** — accepted at Operation Hearthstone P0 (Operator Decision 1); the inventory+identity promotion is decided in [[adr_035_inventory_identity_base_entity_types]]; lands in `.adna/` at Hearthstone P2/P5 via skill_template_release.
 
 ## Problem
 

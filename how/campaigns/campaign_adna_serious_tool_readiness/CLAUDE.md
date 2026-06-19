@@ -10,6 +10,8 @@ tags: [governance, campaign, v8, serious_tool_readiness]
 # CLAUDE.md — Campaign: aDNA Serious-Tool Readiness
 
 > Auto-loaded at session entry when working within `how/campaigns/campaign_adna_serious_tool_readiness/`. Supplements `aDNA.aDNA/CLAUDE.md` (project-level) and the campaign master file.
+>
+> **Track C — "the engine" — under [[campaign_operation_adna]]** (Operation aDNA program umbrella, 2026-06-18): STR carries the standard/governance v8.0 work the program references; it is **not absorbed or restructured** by the program (children keep their own dirs + gates). Its website decadals (E5/E6) were already subsumed into [[campaign_website_adna]] (Track A); Hearthstone is Track B.
 
 ## Campaign Identity
 

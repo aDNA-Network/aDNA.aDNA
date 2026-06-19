@@ -1,13 +1,16 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: medium
 created: 2026-06-01
-last_edited_by: agent_hestia
+updated: 2026-06-18
+last_edited_by: agent_rosetta
 tags: [backlog, idea, upstream, skill, project_fork, bootstrap_interview, exemplar, node_adna, hestia_origin, m25_origin]
 ---
 
 # Idea — Wire Exemplar-HOME Invocation into the `.adna/` Bootstrap Skills
+
+> **Ratified 2026-06-18** — accepted at Operation Hearthstone P0 (Operator Decision 1); the inventory+identity promotion is decided in [[adr_035_inventory_identity_base_entity_types]]; lands in `.adna/` at Hearthstone P4/P5 via skill_template_release.
 
 ## Problem / Opportunity
 

@@ -1,10 +1,10 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: high
 created: 2026-06-18
 updated: 2026-06-18
-last_edited_by: agent_hestia
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA planning session (Operation Hearthstone — plan does-the-home-dir-adaptive-fern)
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
@@ -13,6 +13,8 @@ tags: [backlog, upstream, workspace_router, home_adna, node_vault_detection, col
 ---
 
 # Idea: Add a "Node Vault Detection / offer to bootstrap Home" step to the workspace-router template
+
+> **Ratified 2026-06-18** — accepted at Operation Hearthstone P0 (Operator Decision 1); the inventory+identity promotion is decided in [[adr_035_inventory_identity_base_entity_types]]; lands in `.adna/` at Hearthstone P2/P5 via skill_template_release.
 
 ## Problem
 

@@ -26,6 +26,8 @@ tags: [campaign, website, adna_network, frontier_grade, side_campaign]
 # Campaign: WEBSITE.aDNA — Frontier-Grade Site Quality
 
 > Governance: `CLAUDE.md` (this directory) is the promoter and scoring doctrine. This file is the operational plan.
+>
+> **Track A — "prove it real" — under [[campaign_operation_adna]]** (Operation aDNA program umbrella, stood up 2026-06-18). WEBSITE.aDNA proves aDNA is real; [[campaign_hearthstone]] (Track B) makes it real. Credibility-integrity (FINDINGS systemic pattern #1) is the program quality bar.
 
 ## Goal
 

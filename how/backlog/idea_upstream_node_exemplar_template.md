@@ -1,14 +1,16 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: medium
 created: 2026-06-01
-updated: 2026-06-05
-last_edited_by: agent_hestia
+updated: 2026-06-18
+last_edited_by: agent_rosetta
 tags: [backlog, idea, upstream, template, exemplar, node_adna, home, hestia_origin, m25_origin, prytaneion_m3_4]
 ---
 
 # Idea — Upstream the Node Exemplar HOME Template (`template_node_adna_exemplar/`)
+
+> **Ratified 2026-06-18** — accepted at Operation Hearthstone P0 (Operator Decision 1); the inventory+identity promotion is decided in [[adr_035_inventory_identity_base_entity_types]]; lands in `.adna/` at Hearthstone P3/P5 via skill_template_release.
 
 ## Problem / Opportunity
 

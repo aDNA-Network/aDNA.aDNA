@@ -3,7 +3,7 @@ campaign_id: campaign_hearthstone
 type: campaign
 title: "Operation Hearthstone — ship a complete, polished base Home.aDNA into the public template"
 owner: stanley
-status: planning
+status: active
 phase_count: 6
 mission_count: 12
 estimated_sessions: "8-14"
@@ -11,14 +11,19 @@ calibrated_sessions: "8-14"
 estimation_class: "governance-broad"
 priority: high
 created: 2026-06-18
+activated: 2026-06-18
 updated: 2026-06-18
-last_edited_by: agent_hestia
-tags: [campaign, hearthstone, home_adna, base_template, node_bootstrap, ontology_v8, upstream, cross_vault_authored]
+last_edited_by: agent_rosetta
+parent_program: campaign_operation_adna
+program_track: B
+tags: [campaign, hearthstone, home_adna, base_template, node_bootstrap, ontology_v8, upstream, cross_vault_authored, operation_adna_track_b]
 ---
 
 # Campaign: Operation Hearthstone — ship a complete, polished base Home.aDNA into the public template
 
-> **Cross-vault genesis (2026-06-18, status: planning).** Chartered by **Hestia** from a `Home.aDNA` session after the operator chose **"full polished base"** in response to *"does `Home.aDNA/` have a public base on GitHub usable to seed new nodes, or can the base system bootstrap its own home graph?"* Authored here as a **landing pad** — **Rosetta + operator own activation and every gated decision** (idea ratification, the v8.0 ADR, the public release). Handoff memo: [[who/coordination/coord_2026_06_18_hestia_to_rosetta_hearthstone_charter_handoff]]. Origin plan: `~/.claude/plans/does-the-home-dir-adaptive-fern.md`. Home-side record: `Home.aDNA/how/sessions/history/2026-06/session_2026_06_18_hearthstone_upstream_prep.md`.
+> **Track B under [[campaign_operation_adna]] — ACTIVE (P0 activated 2026-06-18, Operator Decision 1).** Operation aDNA is the program umbrella; Hearthstone is its base-template / node-bootstrap track. Activated by Rosetta after the operator approved scope/activation; campaign flipped `planning → active`. The v8.0 ontology-promotion ADR (`adr_035`) is authored but its **ratification is a still-pending operator checkpoint (Decision 2)** — distinct from this activation.
+>
+> **Cross-vault genesis (2026-06-18).** Chartered by **Hestia** from a `Home.aDNA` session after the operator chose **"full polished base"** in response to *"does `Home.aDNA/` have a public base on GitHub usable to seed new nodes, or can the base system bootstrap its own home graph?"* Authored as a **landing pad** — **Rosetta + operator own activation and every gated decision** (idea ratification, the v8.0 ADR, the public release). Handoff memo: [[who/coordination/coord_2026_06_18_hestia_to_rosetta_hearthstone_charter_handoff]]. Origin plan: `~/.claude/plans/does-the-home-dir-adaptive-fern.md`. Home-side record: `Home.aDNA/how/sessions/history/2026-06/session_2026_06_18_hearthstone_upstream_prep.md`.
 
 ## Goal
 
@@ -50,14 +55,14 @@ This is standard-evolution work → it runs here (Rosetta), authored in the dev 
 
 ### Subsumes
 
-| Backlog idea | Status at charter | Lands in |
+| Backlog idea | Status | Lands in |
 |---|---|---|
-| [[idea_upstream_inventory_entity_type]] | proposed | P1 |
-| [[idea_upstream_identity_entity_type]] | proposed | P1 |
-| [[idea_upstream_home_claude_template]] | proposed | P2 |
-| [[idea_upstream_router_node_vault_detection]] | proposed | P2 |
-| [[idea_upstream_node_exemplar_template]] | proposed | P3 |
-| [[idea_upstream_project_fork_exemplar_invocation]] | proposed | P4 |
+| [[idea_upstream_inventory_entity_type]] | accepted (2026-06-18, P0) | P1 |
+| [[idea_upstream_identity_entity_type]] | accepted (2026-06-18, P0) | P1 |
+| [[idea_upstream_home_claude_template]] | accepted (2026-06-18, P0) | P2 |
+| [[idea_upstream_router_node_vault_detection]] | accepted (2026-06-18, P0) | P2 |
+| [[idea_upstream_node_exemplar_template]] | accepted (2026-06-18, P0) | P3 |
+| [[idea_upstream_project_fork_exemplar_invocation]] | accepted (2026-06-18, P0) | P4 |
 
 ## Phases & Missions
 
@@ -66,9 +71,9 @@ This is standard-evolution work → it runs here (Rosetta), authored in the dev 
 ### Phase 0: Charter, ratify, source-map
 | Mission | Title | Sessions | Dependencies | Status |
 |---|---|---|---|---|
-| 0 | Ratify the 6 ideas (`proposed→accepted`) · draft the inventory+identity→base-v8.0 ADR · establish the `skill_template_release` source-map · confirm router source-of-truth path | 1-2 | — | planned |
+| 0 | Ratify the 6 ideas (`proposed→accepted`) · draft the inventory+identity→base-v8.0 ADR · establish the `skill_template_release` source-map · confirm router source-of-truth path | 1-2 | — | in_progress (deliverables done 2026-06-18; held open on Decision 2 ADR ratification) |
 
-**Phase exit gate**: operator approves scope/phases/mission-sequence; the v8.0 ADR is ratified; the source-map (dev path → `.adna/` path) is recorded.
+**Phase exit gate**: operator approves scope/phases/mission-sequence ✅ (Decision 1, 2026-06-18); the v8.0 ADR is ratified ⏳ (`adr_035` authored `proposed`; Decision 2 pending); the source-map (dev path → `.adna/` path) is recorded ✅.
 
 ### Phase 1: Entity-type foundations (inventory + identity)
 | Mission | Title | Sessions | Dependencies | Status |
@@ -110,8 +115,8 @@ This is standard-evolution work → it runs here (Rosetta), authored in the dev 
 
 | # | When | Decision | Status |
 |---|---|---|---|
-| 1 | P0 | Approve campaign scope/phases/mission-sequence; activate (`planning→active`) | pending |
-| 2 | P0/P1 | Ratify the inventory+identity→base **v8.0** ADR (+ batching with `network_node_mirror`/`permission_edge`) | pending |
+| 1 | P0 | Approve campaign scope/phases/mission-sequence; activate (`planning→active`) | **approved 2026-06-18** (operator "activate Hearthstone P0") |
+| 2 | P0/P1 | Ratify the inventory+identity→base **v8.0** ADR ([[adr_035_inventory_identity_base_entity_types]]; + batching with `network_node_mirror`/`permission_edge`) | pending (ADR authored `proposed`; distinct operator checkpoint) |
 | 3 | P3 | CanvasForge→Canvas exemplar dependency: ship-with-dep vs optional-degrade | pending |
 | 4 | each phase | Phase exit gate (human gate — never auto-advance) | pending |
 | 5 | P5 | **Approve the public push** to `aDNA-Network/aDNA` (outward release) | pending |
