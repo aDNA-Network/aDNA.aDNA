@@ -1,7 +1,7 @@
 ---
 type: directory_index
 created: 2026-02-19
-updated: 2026-06-18
+updated: 2026-06-19
 last_edited_by: agent_rosetta
 tags: [directory_index, templates]
 ---
@@ -33,7 +33,7 @@ These templates are applied by Templater when creating a new file in the mapped 
 | `template_session.md` | Session tracking file | `how/sessions/active/` | `session` |
 | `template_skill.md` | Skill recipe or procedure | `how/skills/` | `skill` |
 
-### Manual-Apply Templates (12)
+### Manual-Apply Templates (13)
 
 These templates have no Templater auto-trigger. Copy their structure manually or use `Templater: Insert template` command:
 
@@ -43,6 +43,7 @@ These templates have no Templater auto-trigger. Copy their structure manually or
 | `template_aar_lightweight.md` | Lightweight 5-line AAR | any mission/campaign | `template` | Appended to existing files, not standalone |
 | `template_campaign_mission.md` | Campaign-linked mission | `how/campaigns/campaign_*/missions/` | `plan` | Campaign missions have campaign-specific fields |
 | `template_campaign_claude.md` | Per-campaign CLAUDE.md | `how/campaigns/campaign_*/` | `governance` | Glob patterns not supported by Templater |
+| `template_home_claude.md` | Home-class node governance CLAUDE.md ({{persona}}/{{node_hostname}}/{{operator}}/{{workspace_root}}) | `Home.aDNA/` (fork-install) | `governance` | Home-class fork install, not a new-file trigger |
 | `template_data_record.md` | Generic data record | varies | varies | Generic — no single target directory |
 | `template_folder_note.md` | Folder index note | any directory | `folder_note` | Used everywhere, can't map to one folder |
 | `template_governance.md` | Governance document | `who/governance/` | `governance` | Governance dir has AGENTS.md + mixed policy docs |

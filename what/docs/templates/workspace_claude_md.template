@@ -25,6 +25,52 @@ You are operating at the **workspace level** — one level above individual proj
 
 ---
 
+## Step 0: Node Vault Detection (before project routing)
+
+Before discovering projects (below), check for the per-node operational vault — `Home.aDNA/`, the hearth that tracks installed vaults, machine state, lattice memberships, and credentials for THIS node. This is **opt-in** and **no-nag**: offer once, respect a decline, do not re-ask unless a later session needs node-scope context.
+
+### Step 0.1: Check if `Home.aDNA/` exists
+
+Run: `test -d Home.aDNA && echo PRESENT || echo MISSING`
+
+### Step 0.2 (PRESENT): Load node state
+
+If `Home.aDNA/` exists:
+1. Read `Home.aDNA/STATE.md` — the operational snapshot for this node (vault inventory, open campaigns, last-updated). Hold this as cross-project context.
+2. Note the node's identity (`Home.aDNA/MANIFEST.md` `hostname` + `operator`) for any session that touches multi-vault state.
+3. Continue to Project Discovery.
+
+### Step 0.3 (MISSING): Offer to bootstrap
+
+If `Home.aDNA/` is missing AND this is not a brand-new fresh-install workspace (i.e., other `*.aDNA/` projects exist):
+
+> "I notice you have N projects but no `Home.aDNA/` — the per-node operational vault that tracks installed vaults, machine state, and lattice memberships. This is opt-in. Would you like me to bootstrap one now? It's a short interview (≈19 questions, ~4-7 min) for operator-specific fields; the rest is auto-detected."
+
+If the operator declines, proceed to Project Discovery; do not re-ask in subsequent sessions unless the operator opens a session that needs node-scope context (cross-vault inventory, drift detection, etc.).
+
+If the operator accepts, run the canonical bootstrap chain:
+1. **`{{adna_folder}}/how/skills/skill_project_fork.md`** with `project_name = Home` — the Home-class fork installs the **Hestia** node governance `CLAUDE.md` (from `template_home_claude.md`) instead of the generic base, and scaffolds `what/inventory/` + `who/identity/`.
+2. **`Home.aDNA/how/skills/skill_inventory_refresh.md`** — populate `inventory_*.{md,yaml}` from current node state.
+3. **`{{adna_folder}}/how/skills/skill_node_bootstrap_interview.md`** — the short interview (purpose / operator / stack / hardware / connections) that writes operator-specific fields to `MANIFEST.md` + `who/identity/identity_node.yaml` + `what/inventory/*` and enriches the persona/pairings in `CLAUDE.md`.
+4. **`Home.aDNA/how/skills/skill_node_health_check.md`** — verify the new vault (exit 0 = healthy).
+5. Initialize `Home.aDNA/STATE.md` (vault count + health snapshot), then `git -C Home.aDNA init && git add . && git commit -m "Home.aDNA bootstrap"` — local-only by default (`Home.aDNA/` is not pushed unless the operator configures a remote).
+
+The Home-class fork defaults the node persona to **Hestia** (goddess of the hearth); a node may choose another hearth-keeper at the interview.
+
+### Step 0.4 (FRESH-INSTALL): Skip
+
+If the workspace has no `*.aDNA/` projects yet, the operator is on the fresh-bootstrap path (first `claude` invocation after cloning). Project creation takes priority; the node vault can be bootstrapped later once the operator has at least one project. Do not offer Home bootstrap yet.
+
+### Step 0.5 (optional): Per-node Platform offers
+
+Once `Home.aDNA/` is present, the node may also be offered per-node-default Platforms — **opt-in, never auto-installed, no-nag** (a decline is first-class and not re-prompted):
+
+- **aDNA Lab** (`Lab.aDNA`) — agentic Jupyter on this machine; the per-node compute/notebook surface and a collaboration point for context engineering. Offer to set it up *after* the Home offer (per Lab `ADR-006` per-node-default positioning).
+
+> Whether other per-node-surface Platforms (e.g. `Obsidian.aDNA` knowledge-vault surface, `Terminal.aDNA` terminal surface) should be bootstrap-offered defaults **by doctrine** is an open standard-level question, deferred to a future ADR. Offer only what the node opts into.
+
+---
+
 ## Project Discovery
 
 To find existing projects in this workspace, list all directories that contain a `CLAUDE.md` file. Each is an independent aDNA project with its own governance, triad structure, and session history.

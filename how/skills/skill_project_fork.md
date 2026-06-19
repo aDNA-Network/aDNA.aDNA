@@ -2,11 +2,11 @@
 type: skill
 skill_type: agent
 created: 2026-03-23
-updated: 2026-04-03
+updated: 2026-06-19
 status: active
 category: onboarding
 trigger: "Root CLAUDE.md project creation flow — user wants to create a new project"
-last_edited_by: agent_init
+last_edited_by: agent_rosetta
 tags: [skill, project, fork, onboarding, lattice]
 
 requirements:
@@ -65,6 +65,8 @@ Validate the project name:
 - Must not be `.adna` (that's the base template)
 - Must not be `latlab` or `lattice-protocol` (infrastructure repos)
 
+**Home-class fork**: `project_name = Home` (or a `--home` flag) is a recognized special class — it creates the per-node operational vault `Home.aDNA/` and triggers the Hestia governance install in **Step 3.5**. It is normally invoked by the workspace router's Step 0.3 "offer to bootstrap Home" chain (followed by `skill_inventory_refresh` → `skill_node_bootstrap_interview` → `skill_node_health_check`).
+
 ### Step 2: Confirm Target Location
 
 The target directory is `<workspace_root>/<project_name>.aDNA/` (the `.aDNA` suffix marks it as an aDNA project — see Standard §3.5).
@@ -97,6 +99,25 @@ This gives the new project:
 - A fresh git repository with no history
 - Portable Obsidian config (app settings, appearance, CSS snippets, hotkeys, plugin list)
 - Run `./setup.sh` to download plugins and theme (~15MB, requires network)
+
+### Step 3.5: Home-class governance install (only when `project_name = Home`)
+
+A Home fork is the per-node operational vault, and the generic base `.adna/CLAUDE.md` (the **Berthier** workspace-router persona) is the wrong governance file for it. For a Home-class fork only, replace the inherited `CLAUDE.md` with the **Hestia** node-operational template:
+
+1. Copy `.adna/how/templates/template_home_claude.md` over the forked `Home.aDNA/CLAUDE.md`.
+2. Substitute the bootstrap variables in the new `CLAUDE.md`:
+   - `{{persona}}` → `Hestia` (the default Home-class hearth-keeper; the interview may swap it)
+   - `{{node_hostname}}` → machine hostname (`scutil --get LocalHostName` on macOS, else `hostname`)
+   - `{{operator}}` → operator username (`whoami`)
+   - `{{workspace_root}}` → the workspace root path (the directory containing `.adna/`, e.g. `~/aDNA/`)
+   - `{{created_date}}` → today's date (`YYYY-MM-DD`)
+3. Leave the persona-accent prose at its Hestia default. `skill_node_bootstrap_interview.md` later enriches the persona grounding, greeting accent, and node-local pairings — and swaps the `<!-- persona-accent -->` blocks if a non-Hestia persona is chosen.
+
+The base `.adna/` template already ships the `what/inventory/` + `who/identity/` base-type scaffolds (`AGENTS.md`), so the Home fork inherits them automatically; `skill_inventory_refresh.md` then populates the entries.
+
+> **Home-class onboarding** is the node bootstrap interview (`skill_node_bootstrap_interview.md`), invoked by the router's Step 0.3 chain — not the generic `skill_onboarding.md` of Step 5. The `agent_init` markers set in Step 4 still trigger first-run detection.
+
+Result: a Home fork is governed by Hestia (not the generic Berthier base) from first open.
 
 ### Step 4: Prepare for Onboarding
 
