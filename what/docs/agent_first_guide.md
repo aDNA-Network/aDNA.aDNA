@@ -42,7 +42,7 @@ aDNA is a directory convention — Markdown files with YAML frontmatter in a `wh
 | Feature group | How it works |
 |---|---|
 | Governance files (`CLAUDE.md` / `AGENTS.md` / `MANIFEST.md` / `STATE.md`) | Plain Markdown; Claude Code auto-loads `CLAUDE.md` on startup. |
-| Triad structure (`who/`/`what/`/`how/`) + 14 base entity types | Directory + naming conventions. Filesystem-native. |
+| Triad structure (`who/`/`what/`/`how/`) + 16 base entity types | Directory + naming conventions. Filesystem-native. |
 | YAML frontmatter | Standard YAML. Agent-parsed, editor-readable. |
 | Session tracking | Files in `how/sessions/active/`, moved to `history/` on close. |
 | Execution hierarchy (Campaign → Mission → Objective) | Plain Markdown with `status` tracking. |

@@ -314,7 +314,7 @@ updated: YYYY-MM-DD
 ## 7. Common Pitfalls
 
 - **CLAUDE.md inside `.agentic/`**: AI agents auto-load from project root. If it's nested, they lose orientation. **Always at project root**, regardless of triad form.
-- **Over-engineering Day 1**: 14 entity types + custom templates + campaign hierarchies + context library = paralysis. Start with the minimum (5 files + 3 dirs); add structure when you need it.
+- **Over-engineering Day 1**: 16 entity types + custom templates + campaign hierarchies + context library = paralysis. Start with the minimum (5 files + 3 dirs); add structure when you need it.
 - **Frontmatter perfectionism**: start with `type`, `created`, `tags`. Add `updated`, `status`, `last_edited_by` when you have collaborators. Add domain fields when you repeatedly include the same info. Don't design the perfect schema upfront.
 - **Forgetting AGENTS.md**: every triad directory needs one. Without it, agents have no routing and either skip the directory or read everything (wasting tokens). Even a 3-line AGENTS.md beats none.
 - **Migrating everything at once**: don't dump all existing docs into the triad in one session. Move 2-3 files to prove the pattern. Let structure grow with new knowledge. Forced migrations create filing confusion and don't stick.

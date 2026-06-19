@@ -27,7 +27,7 @@ A single-page lookup table for all aDNA terms. Each entry links to its full defi
 | **Bare Triad** | Triad folders at project root | [[what/glossary/glossary_bare_triad|glossary_bare_triad]] |
 | **Embedded Triad** | Triad folders inside `.agentic/` | [[what/glossary/glossary_embedded_triad|glossary_embedded_triad]] |
 | **Deployment Form** | How the triad is physically instantiated (bare or embedded) | [[what/glossary/glossary_deployment_form|glossary_deployment_form]] |
-| **Ontology Extension** | Adding domain-specific entity types beyond the base 14 | [[what/glossary/glossary_ontology_extension|glossary_ontology_extension]] |
+| **Ontology Extension** | Adding domain-specific entity types beyond the base 16 | [[what/glossary/glossary_ontology_extension|glossary_ontology_extension]] |
 
 ## Governance & Metadata
 

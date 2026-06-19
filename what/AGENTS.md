@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-17
-updated: 2026-05-20
-last_edited_by: agent_stanley
+updated: 2026-06-18
+last_edited_by: agent_rosetta
 tags: [directory_index, what]
 ---
 
@@ -16,7 +16,7 @@ tags: [directory_index, what]
 
 | File | Purpose |
 |------|---------|
-| `ontology.md` | Base ontology artifact — 14 entity types, Mermaid ER diagrams, convergence + unification annotations |
+| `ontology.md` | Base ontology artifact — 16 entity types, Mermaid ER diagrams, convergence + unification annotations |
 
 ## Subdirectories
 
@@ -63,7 +63,7 @@ All files follow `type_descriptive_name.md` (underscores only, never hyphens).
 
 ## Cross-References
 
-- [ontology.md](ontology.md) — Base ontology (14 entity types, 5 Mermaid diagrams)
+- [ontology.md](ontology.md) — Base ontology (16 entity types, 5 Mermaid diagrams)
 - [what/context/AGENTS](context/AGENTS.md) — Context library protocol and topic index
 - [what/decisions/AGENTS](decisions/AGENTS.md) — Architecture Decision Records
 - [what/docs/AGENTS](docs/AGENTS.md) — aDNA specification documents

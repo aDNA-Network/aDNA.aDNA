@@ -41,7 +41,7 @@ Tiago Forte's organizational system from *Building a Second Brain*. Organizes pe
 
 - **Agent collaboration**: PARA has no concept of AI agents navigating knowledge. aDNA's governance files, AGENTS.md routing, and session tracking were built for agent-first operation.
 - **Team scale**: PARA is personal. aDNA handles multi-agent coordination, conflict detection, and handoff continuity.
-- **Typed knowledge**: aDNA's 14 base entity types and frontmatter conventions make knowledge machine-queryable. PARA notes are freeform.
+- **Typed knowledge**: aDNA's 16 base entity types and frontmatter conventions make knowledge machine-queryable. PARA notes are freeform.
 - **Federation**: aDNA lattices can be shared across instances. PARA has no cross-system sharing protocol.
 
 ## Where PARA Excels

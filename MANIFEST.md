@@ -1,8 +1,8 @@
 ---
 type: manifest
 created: 2026-04-13
-updated: 2026-06-10
-last_edited_by: agent_stanley
+updated: 2026-06-18
+last_edited_by: agent_rosetta
 tags: [manifest, governance]
 ---
 
@@ -51,9 +51,9 @@ aDNA.aDNA/
 │   └── governance/     Roles, policies, VISION.md
 ```
 
-### Base Ontology (14 types)
+### Base Ontology (16 types)
 
-WHO (3: governance, team, coordination), WHAT (4: context, decisions, modules, lattices), HOW (7: campaigns, missions, sessions, templates, skills, pipelines, backlog). Full table: CLAUDE.md § Domain Knowledge.
+WHO (4: governance, team, coordination, identity), WHAT (5: context, decisions, modules, lattices, inventory), HOW (7: campaigns, missions, sessions, templates, skills, pipelines, backlog). Full table: CLAUDE.md § Domain Knowledge. *(`inventory` + `identity` promoted to base per ADR-035, standard v2.3; dev-graph authored at Hearthstone P1, materialized to `.adna/` at P5.)*
 
 ### Extended Ontology (10 Rosetta types)
 

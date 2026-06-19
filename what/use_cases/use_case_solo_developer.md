@@ -24,7 +24,7 @@ The real cost isn't typing — it's inconsistency. Monday's agent session uses o
 
 ## How aDNA Helps
 
-Sam creates a lightweight aDNA vault for each client project. Not the full 14-entity-type treatment — a minimal setup that solves the context problem.
+Sam creates a lightweight aDNA vault for each client project. Not the full 16-entity-type treatment — a minimal setup that solves the context problem.
 
 **The CLAUDE.md solves 80% of the problem**: One file that captures the project's identity, tech stack, conventions, and current state. Every agent session starts with this context auto-loaded. No more wall-of-text preambles.
 

@@ -172,12 +172,12 @@ Open Claude Code at the workspace root, say "create a new project," and the agen
 
 ## The Ontology
 
-Base aDNA ships **14 entity types** across the triad — the minimal operational ontology:
+Base aDNA ships **16 entity types** across the triad — the minimal operational ontology:
 
 | Triad leg | Entities | Purpose |
 |---|---|---|
-| **WHO** (3) | `governance`, `team`, `coordination` | Who decides, who works, how they sync |
-| **WHAT** (4) | `context`, `decisions`, `modules`, `lattices` | What you know, what you've decided, what you build, how you compose |
+| **WHO** (4) | `governance`, `team`, `coordination`, `identity` | Who decides, who works, how they sync, who/where this node is |
+| **WHAT** (5) | `context`, `decisions`, `modules`, `lattices`, `inventory` | What you know, what you've decided, what you build, how you compose, what's installed |
 | **HOW** (7) | `campaigns`, `missions`, `sessions`, `templates`, `skills`, `pipelines`, `backlog` | Plan → decompose → execute → track → automate → ideate |
 
 **You extend by adding domain-specific entities under the appropriate triad leg.** The base gives you operational infrastructure that works from day one. Your extensions add the domain knowledge.

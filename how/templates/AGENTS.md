@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-19
-updated: 2026-04-23
-last_edited_by: agent_stanley
+updated: 2026-06-18
+last_edited_by: agent_rosetta
 tags: [directory_index, templates]
 ---
 
@@ -14,7 +14,7 @@ Templates for all content types in the vault. Each template defines the frontmat
 
 ## Template Index
 
-### Auto-Triggered Templates (10)
+### Auto-Triggered Templates (12)
 
 These templates are applied by Templater when creating a new file in the mapped directory:
 
@@ -25,6 +25,8 @@ These templates are applied by Templater when creating a new file in the mapped 
 | `template_campaign.md` | Campaign master document | `how/campaigns/` | `campaign` |
 | `template_context.md` | Context library file | `what/context/` | `context_research` / `context_guide` / `context_core` |
 | `template_coordination.md` | Coordination note | `who/coordination/` | `coordination` |
+| `template_inventory_entry.md` | Inventory record (base type) | `what/inventory/` | `inventory` |
+| `template_identity_entry.md` | Identity record (base type) | `who/identity/` | `identity` |
 | `template_mission.md` | Mission / plan | `how/missions/` | `mission` |
 | `template_prd.md` | Product Requirements Document | `how/pipelines/prd_rfc/02_requirements` | `prd` |
 | `template_rfc.md` | Request for Comments | `how/pipelines/prd_rfc/03_design` | `rfc` |

@@ -42,12 +42,12 @@ The spec defines the rules. The template makes them easy to adopt. The instance 
 
 ### Base/Extension Architecture
 
-The standard defines 14 base entity types organized across the triad (§5). These are the shared vocabulary — every aDNA project speaks this language:
+The standard defines 16 base entity types organized across the triad (§5). These are the shared vocabulary — every aDNA project speaks this language:
 
 | Triad Leg | Base Entities | Count |
 |-----------|--------------|-------|
-| WHO | `governance`, `team`, `coordination` | 3 |
-| WHAT | `context`, `decisions`, `modules`, `lattices` | 4 |
+| WHO | `governance`, `team`, `coordination`, `identity` | 4 |
+| WHAT | `context`, `decisions`, `modules`, `lattices`, `inventory` | 5 |
 | HOW | `campaigns`, `missions`, `sessions`, `templates`, `skills`, `pipelines`, `backlog` | 7 |
 
 Projects extend by adding domain-specific entity types under the appropriate triad leg. Extensions MUST NOT modify base types — they add alongside them:
@@ -89,7 +89,7 @@ This vault is a living demonstration of the open standard in practice:
 
 **The base template**: The directory `adna/` (one level up from this project in the workspace) contains the upstream template. It's symlinked as `.adna/` at the workspace root. This vault was forked from it — you can compare this project's structure against the template to see what's base and what's extension.
 
-**Extensions**: This vault adds 10 entity types to the base 14 (see `what/concepts/AGENTS.md`, `what/tutorials/AGENTS.md`, `who/community/AGENTS.md`, etc.). Each extension follows the same patterns as the base — AGENTS.md, templates, frontmatter conventions — because the standard defines how to extend, not just what the base contains.
+**Extensions**: This vault adds 10 entity types to the base 16 (see `what/concepts/AGENTS.md`, `what/tutorials/AGENTS.md`, `who/community/AGENTS.md`, etc.). Each extension follows the same patterns as the base — AGENTS.md, templates, frontmatter conventions — because the standard defines how to extend, not just what the base contains.
 
 **Spec citations**: Throughout this vault, normative claims reference the upstream spec with section numbers (§3, §5, §10). This file you're reading cites §1, §3, §5, and §11. The vault demonstrates; the spec defines. This separation is the standard in action.
 

@@ -1,12 +1,12 @@
 ---
 type: concept
 created: 2026-04-13
-updated: 2026-04-13
+updated: 2026-06-18
 status: active
 difficulty: foundational
 spec_section: "§5 Directory Structure, §7 Frontmatter System"
 dual_audience: true
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [concept, ontology, entity_types, extensibility, foundational]
 related_concepts: [concept_triad, concept_knowledge_graph, concept_governance_files]
 related_patterns: [pattern_ontology_extension]
@@ -16,31 +16,32 @@ related_patterns: [pattern_ontology_extension]
 
 ## Overview
 
-The aDNA ontology is a typed vocabulary of 14 base entity types — organized across the triad — that defines what kinds of things a project can contain. Projects extend the ontology by adding domain-specific types without modifying the base.
+The aDNA ontology is a typed vocabulary of 16 base entity types — organized across the triad — that defines what kinds of things a project can contain. Projects extend the ontology by adding domain-specific types without modifying the base.
 
 ## Why This Matters
 
 Think of a library. Every book has a category — fiction, biography, science, history. Librarians don't invent a new system for every library; they use a shared classification that everyone understands. When you walk into any library in the world, you already know roughly where to look.
 
-aDNA's ontology works the same way. It defines 14 "categories" — called entity types — that cover the operational needs of any project: things like `context` (research notes), `missions` (plans), `sessions` (work logs), and `governance` (rules). Every file in the vault has a `type` field in its metadata that says what kind of thing it is.
+aDNA's ontology works the same way. It defines 16 "categories" — called entity types — that cover the operational needs of any project: things like `context` (research notes), `missions` (plans), `sessions` (work logs), and `governance` (rules). Every file in the vault has a `type` field in its metadata that says what kind of thing it is.
 
-The real power is extensibility. The 14 base types handle operations, but your project probably has domain-specific things too — patients, experiments, customers, models. You add those as extensions under the appropriate triad leg, and they inherit the same conventions: typed frontmatter, AGENTS.md guides, templates. The base vocabulary is shared; the extensions are yours.
+The real power is extensibility. The 16 base types handle operations, but your project probably has domain-specific things too — patients, experiments, customers, models. You add those as extensions under the appropriate triad leg, and they inherit the same conventions: typed frontmatter, AGENTS.md guides, templates. The base vocabulary is shared; the extensions are yours.
 
 ## How It Works
 
-### The 14 Base Entity Types
+### The 16 Base Entity Types
 
-The aDNA Standard defines 14 base types distributed across the triad (§5.1–5.3). Every type has a home directory, required frontmatter fields, and an AGENTS.md guide.
+The aDNA Standard defines 16 base types distributed across the triad (§5.1–5.3). Every type has a home directory, required frontmatter fields, and an AGENTS.md guide.
 
-**WHO leg** (3 types):
+**WHO leg** (4 types):
 
 | Type | Directory | Purpose |
 |------|-----------|---------|
 | `governance` | `who/governance/` | Decision rights, policies, organizational charter |
 | `team` | `who/team/` | People, roles, agent identities |
 | `coordination` | `who/coordination/` | Ephemeral cross-agent sync notes |
+| `identity` | `who/identity/` | Stable node identity — hostname, operator, peer-id (promoted to base, ADR-035) |
 
-**WHAT leg** (4 types):
+**WHAT leg** (5 types):
 
 | Type | Directory | Purpose |
 |------|-----------|---------|
@@ -48,6 +49,7 @@ The aDNA Standard defines 14 base types distributed across the triad (§5.1–5.
 | `decisions` | `what/decisions/` | Architecture Decision Records (ADRs) |
 | `modules` | `what/modules/` | Atomic computation units (tools, models) |
 | `lattices` | `what/lattices/` | Composition graphs connecting modules and datasets |
+| `inventory` | `what/inventory/` | Installed/configured state — vaults, system, memberships (promoted to base, ADR-035) |
 
 **HOW leg** (7 types):
 
@@ -91,7 +93,7 @@ The `type` field enables filtering, validation, and template matching. Combined 
 
 ## See It In Action
 
-This vault demonstrates both the base ontology and the extension mechanism. The 14 base types power the operational infrastructure you see in `how/` — campaigns, missions, sessions, templates, skills. But this project also added 10 custom types to teach aDNA:
+This vault demonstrates both the base ontology and the extension mechanism. The 16 base types power the operational infrastructure you see in `how/` — campaigns, missions, sessions, templates, skills. But this project also added 10 custom types to teach aDNA:
 
 | Extension | Leg | Directory | Purpose |
 |-----------|-----|-----------|---------|

@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-04-13
-updated: 2026-05-20
-last_edited_by: agent_stanley
+updated: 2026-06-18
+last_edited_by: agent_rosetta
 tags: [directory_index, root]
 ---
 
@@ -17,7 +17,7 @@ This is the root agent reference for **aDNA.aDNA** — a self-referential knowle
 | Document | What You'll Find |
 |----------|-----------------|
 | **CLAUDE.md** | Agent operating context — Rosetta persona, safety rules, 10 standing orders, extended ontology |
-| **MANIFEST.md** | Project overview — architecture (14 base + 10 extension entity types), entry points, active builds |
+| **MANIFEST.md** | Project overview — architecture (16 base + 10 extension entity types), entry points, active builds |
 | **STATE.md** | Current operational state — campaign_rosetta progress, next mission |
 | **README.md** | Human-readable getting-started guide |
 

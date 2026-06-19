@@ -254,15 +254,15 @@ Reusable agent recipes and documented procedures in `how/skills/`. Skills have t
 
 ## Domain Knowledge
 
-### Base Ontology (14 Entity Types)
+### Base Ontology (16 Entity Types)
 
 | Triad Leg | Entities | Purpose |
 |-----------|----------|---------|
-| **WHO** (3) | `governance`, `team`, `coordination` | Who decides, who works, how they sync |
-| **WHAT** (4) | `context`, `decisions`, `modules`, `lattices` | What you know, what you've decided, what you build, how you compose |
+| **WHO** (4) | `governance`, `team`, `coordination`, `identity` | Who decides, who works, how they sync, who/where this node is |
+| **WHAT** (5) | `context`, `decisions`, `modules`, `lattices`, `inventory` | What you know, what you've decided, what you build, how you compose, what's installed |
 | **HOW** (7) | `campaigns`, `missions`, `sessions`, `templates`, `skills`, `pipelines`, `backlog` | Plan → decompose → execute → track → automate → ideate |
 
-Extend by adding domain-specific entities under the appropriate triad leg. The base gives operational infrastructure; extensions add domain knowledge.
+Extend by adding domain-specific entities under the appropriate triad leg. The base gives operational infrastructure; extensions add domain knowledge. *(`inventory` + `identity` promoted from node-local extensions per [ADR-035](what/decisions/adr_035_inventory_identity_base_entity_types.md), aDNA standard v2.3; materialized to the public template at Hearthstone P5.)*
 
 ### Extended Ontology (11 Rosetta Entity Types)
 

@@ -21,7 +21,7 @@ tags: [campaign, hearthstone, home_adna, base_template, node_bootstrap, ontology
 
 # Campaign: Operation Hearthstone — ship a complete, polished base Home.aDNA into the public template
 
-> **Track B under [[campaign_operation_adna]] — ACTIVE; P0 CLOSED 2026-06-18 → P1 next.** Operation aDNA is the program umbrella; Hearthstone is its base-template / node-bootstrap track. P0 activated + closed 2026-06-18: the operator approved scope/activation (Decision 1) **and ratified the v8.0 ontology-promotion ADR** (`adr_035` → `accepted`: `inventory`+`identity` → base entity types 14→16, standard **v2.3**, defer `network_node_mirror`/`permission_edge`). **P1 (entity-type foundations) is the next gated arc** — authored in the dev graph; `.adna/` materialization stays gated to **P5** (`skill_template_release`).
+> **Track B under [[campaign_operation_adna]] — ACTIVE; P0 CLOSED + P1 deliverables complete 2026-06-18 → awaiting P1 exit gate.** Operation aDNA is the program umbrella; Hearthstone is its base-template / node-bootstrap track. P0 activated + closed 2026-06-18: the operator approved scope/activation (Decision 1) **and ratified the v8.0 ontology-promotion ADR** (`adr_035` → `accepted`: `inventory`+`identity` → base entity types 14→16, standard **v2.3**, defer `network_node_mirror`/`permission_edge`). **P1 (entity-type foundations) is the next gated arc** — authored in the dev graph; `.adna/` materialization stays gated to **P5** (`skill_template_release`).
 >
 > **Cross-vault genesis (2026-06-18).** Chartered by **Hestia** from a `Home.aDNA` session after the operator chose **"full polished base"** in response to *"does `Home.aDNA/` have a public base on GitHub usable to seed new nodes, or can the base system bootstrap its own home graph?"* Authored as a **landing pad** — **Rosetta + operator own activation and every gated decision** (idea ratification, the v8.0 ADR, the public release). Handoff memo: [[who/coordination/coord_2026_06_18_hestia_to_rosetta_hearthstone_charter_handoff]]. Origin plan: `~/.claude/plans/does-the-home-dir-adaptive-fern.md`. Home-side record: `Home.aDNA/how/sessions/history/2026-06/session_2026_06_18_hearthstone_upstream_prep.md`.
 
@@ -78,9 +78,9 @@ This is standard-evolution work → it runs here (Rosetta), authored in the dev 
 ### Phase 1: Entity-type foundations (inventory + identity)
 | Mission | Title | Sessions | Dependencies | Status |
 |---|---|---|---|---|
-| 1 | Promote `inventory` + `identity` to base types — genericized scaffold `AGENTS.md`, `template_inventory_entry.md`/`template_identity_entry.md`, `ontology.md` rows 15/16, `.adna/CLAUDE.md` table + `MANIFEST.md` | 1-2 | P0 | planned |
+| 1 | Promote `inventory` + `identity` to base types — genericized scaffold `AGENTS.md`, `template_inventory_entry.md`/`template_identity_entry.md`, `ontology.md` rows 15/16, dev-graph `CLAUDE.md` table + `MANIFEST.md` (`.adna/` ships at P5) | 1-2 | P0 | **deliverables ✅ 2026-06-18 (`mission_hearthstone_p1_entity_foundations`); awaiting exit gate** |
 
-**Phase exit gate**: both entity types declared canonical (un-namespaced, invariant); D9 companion + D7 federation patterns verified; ADR ratified.
+**Phase exit gate**: both entity types declared canonical (un-namespaced, invariant); D9 companion + D7 federation patterns verified; ADR ratified. **— Criteria met + verified 2026-06-18; awaiting operator phase-exit approval (Decision 4) to flip the mission `completed` + open P2.**
 
 ### Phase 2: Base Home self-sufficiency (minimal-correct core)
 | Mission | Title | Sessions | Dependencies | Status |
