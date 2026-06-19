@@ -6,9 +6,10 @@ campaign_id: campaign_website_adna
 phase: 2
 mission_number: 2
 slug: design
-status: in_progress
+status: completed
 created: 2026-06-17
 updated: 2026-06-19
+completed: 2026-06-19
 last_edited_by: agent_rosetta
 owner: stanley
 persona: rosetta             # resident executor; campaign planned by Berthier
@@ -24,7 +25,7 @@ tags: [mission, campaign_website_adna, phase2, planning, design]
 
 # P2 — Improvement Design
 
-> **Working spec (finalized 2026-06-19).** P2 opened as a working arc at the Operation aDNA next-arc gate (operator chose WEBSITE P2 over Hearthstone P2, 2026-06-19). Deliverables authored + verified (Completion Summary below); **status held `in_progress` pending operator Decision 4** (Standing Order #8 — phase gates are human gates). No site changes (planning-class).
+> **Working spec (finalized 2026-06-19).** P2 opened as a working arc at the Operation aDNA next-arc gate (operator chose WEBSITE P2 over Hearthstone P2, 2026-06-19). Deliverables authored + verified (Completion Summary below). **CLOSED 2026-06-19 — operator Decision 4 approved** (open P3, D1 credibility first; C-1 = repoint-to-public-image): all 5 Decision-4 flags resolved (below); `mission_wadna_p3_iterate` opened. No site changes (planning-class).
 
 ## Approved direction (Decision 3, 2026-06-18)
 
@@ -50,7 +51,7 @@ Convert `FINDINGS.aDNA.md` into an executable plan: an improvement spec for ever
 - [x] Systemic-fix package designed as coordinated changes. — [[IMPROVEMENT-SPECS.aDNA]] Part 1 (SP-1…SP-10).
 - [x] Tooling-promotion spec (Lighthouse gate · `@audit` regression gate · visual-regression · single-source lint · public-meta sanitizer · link-graph/canonical · no-JS reachability · `llms.txt`). — [[TOOLING-PROMOTION.aDNA]] (8/8 required: G1/G2/G3/G5/G6/G7/G10/G11; + G4/G8/G9 additional).
 - [x] Dependency-ordered decadal session plan; per-unit done-definition fixed. — [[DECADAL-PLAN.aDNA]] (4 decades + verify-after-pt19 + keystone; done-definition fixed).
-- [ ] Operator approves specs + plan + done-definition + deploy posture (**Decision 4**). ⏳ pending — do not open P3 until approved.
+- [x] Operator approves specs + plan + done-definition + deploy posture (**Decision 4**). ✅ approved 2026-06-19 — open P3 (D1 credibility first); C-1 = repoint-to-public-image. Flag resolutions below.
 
 ## Campaign Context
 - **Inputs:** P1 `FINDINGS.aDNA.md` + systemic-pattern list; P0 baseline + benchmark set.
@@ -65,7 +66,11 @@ Convert `FINDINGS.aDNA.md` into an executable plan: an improvement spec for ever
 - **[[DECADAL-PLAN.aDNA]]** — 4-decade dependency-ordered P3 sequence (D1 credibility → D2 nav → D3 agentic/community → D4 craft) + verify-after-pt19 + keystone deploy; per-unit done-definition fixed (≥4 all A–K · 0 Crit/High · CWV Good · axe both modes · manual a11y · Standard Fidelity).
 - **Bookkeeping:** this mission (status/spec_completeness/exit-gate); session; STATE; campaign-master P2 row; Hearthstone P1 closed (same session, operator gate).
 
-### Decision-4 flags (operator — surface before opening P3)
+### Decision-4 flags — RESOLVED (operator, 2026-06-19)
+> **Resolutions:** (1) C-1 → **repoint-to-public-image** (point proofs at resolving `aDNA-Network/aDNA` paths via `install_truth.json.verified_paths`; do **not** publish `aDNA.aDNA` — no exposure of internal state; stage-2 = Hearthstone base at keystone). Coordination-ledger C-1 seam updated to this disposition. (2) Publisher entity → **"aDNA Network"** (matches the `aDNA-Network` repo org + brand pivot). (3) Deploy posture → **commit-only through P3**; joined deploy at the keystone (DP2). (4) pt19 → **verify-after** (no hand-fix, no `sync:vaults`; C-4 *code* ships in D1, name correctness waits for pt19). (5) G5 single-source lint = load-bearing — wired in D1.
+
+#### Original flags (for the record)
+
 1. **C-1 is deeper than a repoint (verified live 2026-06-19).** No public URL currently inspects the aDNA.aDNA vault: `github.com/aDNA-Network/aDNA.aDNA` → **404**; the public image `aDNA-Network/aDNA` → 200 but gitignores `*.aDNA/` (subtree → **404**). Closing C-1 "now" needs a **publish/visibility decision** (make `aDNA-Network/aDNA.aDNA` public + push, or point proofs at resolving `.adna/` paths); stage-2 points at Hearthstone's base at the keystone. **Candidate new cross-vault seam** (operator/Berthier·aDNALabs).
 2. **Brand/publisher entity (C-3/M-9; RECONCILIATION W4/W5):** confirm the JSON-LD/footer publisher name ("aDNA" / "aDNA Network") or **drop** the publisher org.
 3. **Deploy posture:** commit-only through P3; the joined deploy is the program keystone (DP2). Confirm.

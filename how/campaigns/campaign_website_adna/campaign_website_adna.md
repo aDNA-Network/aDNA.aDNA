@@ -92,14 +92,14 @@ The improvement **engine already exists and is battle-tested** — `skill_iii_cy
 ### Phase 2 — Improvement Design *(plan only)*
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| P2 | [[mission_wadna_p2_design]] — improvement specs (Crit/High) · systemic-fix package · dependency-ordered decadal plan · per-unit done-definition · tooling-promotion spec | 1 | P1 | **in_progress 2026-06-19** (deliverables filed: [[IMPROVEMENT-SPECS.aDNA]] · [[TOOLING-PROMOTION.aDNA]] · [[DECADAL-PLAN.aDNA]]; awaiting Decision 4) |
+| P2 | [[mission_wadna_p2_design]] — improvement specs (Crit/High) · systemic-fix package · dependency-ordered decadal plan · per-unit done-definition · tooling-promotion spec | 1 | P1 | **completed 2026-06-19** (Decision 4; deliverables filed: [[IMPROVEMENT-SPECS.aDNA]] · [[TOOLING-PROMOTION.aDNA]] · [[DECADAL-PLAN.aDNA]]) |
 
 **Phase exit gate** *(human)*: an improvement spec for every Critical/High finding (the change, the axis it moves, the target score, the verification that proves it); the systemic-fix package (tokens/spacing/accent/type + banned-vocab + stale-terminology, as single coordinated changes); the dependency-ordered session plan (systemic before local; content-truth before visual craft; severity × reach first); the per-unit done-definition; specs for the Lighthouse gate, `@audit` regression gate, and visual-regression baseline.
 
 ### Phase 3 — Iterative Improvement & Verification *(the bulk)*
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| P3 | [[mission_wadna_p3_iterate]] — decadal improvement loops (VIEW → INTROSPECT → PLAN → IMPROVE → VERIFY → GATE); systemic-first, then flagship pages, then deep pages | 6-15 | P2 | planned |
+| P3 | [[mission_wadna_p3_iterate]] — decadal improvement loops (VIEW → INTROSPECT → PLAN → IMPROVE → VERIFY → GATE); systemic-first, then flagship pages, then deep pages | 6-15 | P2 | **active 2026-06-19** (D1 credibility-integrity in flight; D2–D4 queued) |
 
 > P3 expands into N decadal sub-missions at activation; count set at Phase 2 close. Sequence: **systemic fixes → flagship pages** (landing, `/network`, `/learn/what-is-adna`, `/get-started`, `/vaults` + `/vaults/graph`, **`/community`**) **→ deep pages.**
 
@@ -119,7 +119,7 @@ The improvement **engine already exists and is battle-tested** — `skill_iii_cy
 | 1 | Activation (before P0) | Approve scope/phases; approve **subsumption** of STR E5/E6 (sets their status `subsumed`); approve the persona-cell + the additive tooling-promotion | **✅ approved 2026-06-18** (plan `please-read-the-claude-md-wise-riddle.md`) |
 | 2 | P0 → P1 | Approve `RECONCILIATION.aDNA.md` dispositions (esp. partner-claim removals + terminology sweep) and the `SITEMAP.aDNA.md` unit list | **✅ approved 2026-06-18** |
 | 3 | P1 → P2 | Approve `FINDINGS.aDNA.md` prioritization and the reconciled/new reviewer lenses (only uncovered ones authored) | **✅ approved 2026-06-18** — credibility-integrity-first P2 sequence; two-stage C-1/C-2 (real aDNA.aDNA artifacts now → Hearthstone base at keystone) |
-| 4 | P2 → P3 | Approve improvement specs + decadal session plan + per-unit done-definition + deploy posture | pending |
+| 4 | P2 → P3 | Approve improvement specs + decadal session plan + per-unit done-definition + deploy posture | **✅ approved 2026-06-19** — open P3 (D1 credibility first); C-1 = repoint-to-public-image; publisher = "aDNA Network"; commit-only through P3; pt19 = verify-after |
 | 5 | P3 → P4 | Confirm all units cleared the bar; flagship benchmark side-by-side passed | pending |
 | 6 | P4 close | Sign-off verdict; standing-watch wired; `STATE.md` updated; STR resume/realign | pending |
 
