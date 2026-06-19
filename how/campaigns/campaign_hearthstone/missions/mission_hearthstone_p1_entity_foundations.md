@@ -3,13 +3,13 @@ plan_id: mission_hearthstone_p1_entity_foundations
 type: plan
 title: "P1 — Entity-type foundations: genericize inventory + identity base scaffolds + templates; promote ontology 14→16 (dev graph)"
 owner: stanley
-status: in_progress
+status: completed
 campaign_id: campaign_hearthstone
 campaign_phase: 1
 campaign_mission_number: 1
 mission_class: implementation
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-06-19
 last_edited_by: agent_rosetta
 token_budget_estimated: "~70 kT content-load (50–80 class — governance authoring: 4 new files genericized from verified Home.aDNA refs + multi-doc ontology consistency sweep)"
 tags: [plan, campaign, hearthstone, p1, ontology, inventory, identity, base_entity_types, operation_adna_track_b]
@@ -23,7 +23,7 @@ tags: [plan, campaign, hearthstone, p1, ontology, inventory, identity, base_enti
 
 > **The next gated arc after P0.** P0 ratified [[adr_035_inventory_identity_base_entity_types|ADR-035]] (`inventory`+`identity` → base entity types 14→16, standard **v2.3**, defer `network_node_mirror`/`permission_edge`). P1 authors the genericized foundations **in the dev graph only** — `.adna/` materialization + the public version bump are gated to **P5** (`skill_template_release`). Selected by the operator over WEBSITE P2 at the Operation aDNA next-arc gate (2026-06-18).
 >
-> **Update (2026-06-18) — all four objectives complete + verified.** Completion Summary + AAR below. Status held **`in_progress`** pending the operator's P1 phase-exit approval (Standing Order #1 — phase gates are human gates); flip to `completed` + open P2 on that nod.
+> **Update (2026-06-19) — CLOSED.** All four objectives complete + verified (Completion Summary + AAR below); **operator approved the P1 phase-exit 2026-06-19** (Standing Order #1 gate cleared) → mission `completed`. Track B P2 (`template_home_claude.md` + Step-0 router) is the next *ready* arc but was **not** activated this session — the operator ran **WEBSITE P2** (Track A) instead.
 
 ## Goal
 
@@ -35,7 +35,7 @@ Copied from the campaign master (Phase 1 exit gate):
 - [x] Both entity types **declared canonical** — un-namespaced (`inventory`/`identity`, not namespaced extensions), `merge: invariant`. *(ontology.md rows 15/16 + all scaffolds/templates.)*
 - [x] **D9 companion** pattern (paired `.yaml`) and **D7 federation** pattern (network-facing records carry a `federation` block) verified — represented faithfully in the genericized scaffolds + templates against the `Home.aDNA` reference.
 - [x] ADR ratified — **already true** (ADR-035 `accepted` 2026-06-18 at P0).
-- [ ] **Operator approves the P1 exit (human gate — never auto-advance to P2).** ⏳ pending.
+- [x] **Operator approves the P1 exit (human gate — never auto-advance to P2).** ✅ approved 2026-06-19.
 
 ## Guardrails (hard constraints)
 
@@ -87,7 +87,7 @@ Copied from the campaign master (Phase 1 exit gate):
 
 ## Completion Summary
 
-*Deliverables complete + verified 2026-06-18; flip `status: completed` on operator phase-exit approval.*
+*Deliverables complete + verified 2026-06-18; mission `completed` on operator phase-exit approval 2026-06-19.*
 
 ### Deliverables
 - **2 genericized base-type scaffold `AGENTS.md`**: `what/inventory/AGENTS.md` + `who/identity/AGENTS.md` — un-namespaced, `merge: invariant`, D9 companion + D7 federation patterns; `identity` adds drift-discipline + privacy; cite ADR-035 + standard §3.1; name `Home.aDNA/{what/inventory,who/identity}` as the canonical reference implementation.

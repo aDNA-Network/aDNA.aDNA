@@ -18,8 +18,8 @@ predecessor_campaigns:
   - campaign_adna_serious_tool_readiness    # active; website decadals E5/E6 subsumed here at activation
 activated: 2026-06-18                        # Operator Decision 1 approved (plan: please-read-the-claude-md-wise-riddle.md)
 created: 2026-06-17
-updated: 2026-06-18
-last_edited_by: agent_stanley
+updated: 2026-06-19
+last_edited_by: agent_rosetta
 tags: [campaign, website, adna_network, frontier_grade, side_campaign]
 ---
 
@@ -78,21 +78,21 @@ The improvement **engine already exists and is battle-tested** — `skill_iii_cy
 ### Phase 0 — Reconnaissance & Ground Truth *(read-only; no changes)*
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| P0 | [[mission_wadna_p0_recon_reconcile]] — ground-truth model · `RECONCILIATION.aDNA.md` · `SITEMAP.aDNA.md` · frozen baseline · benchmark set | 1-2 | — | planned |
+| P0 | [[mission_wadna_p0_recon_reconcile]] — ground-truth model · `RECONCILIATION.aDNA.md` · `SITEMAP.aDNA.md` · frozen baseline · benchmark set | 1-2 | — | **completed 2026-06-18** (Decision 2) |
 
 **Phase exit gate** *(human)*: current-state model of the standard; `RECONCILIATION.aDNA.md` (diff between what the standard now is and what the site says, with dispositions); `SITEMAP.aDNA.md` (complete unit inventory, each unit a scorecard); frozen baseline (Lighthouse all-categories incl. Agentic Browsing + axe + full screenshot matrix, every page); benchmark reference set. **Nothing changed.**
 
 ### Phase 1 — Research-Grounded Critique *(read-only; no changes)*
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| P1 | [[mission_wadna_p1_critique]] — rubric dossiers (A–K) · baseline persona sweep · `FINDINGS.aDNA.md` · systemic-pattern list · reconcile personas vs the 14-reviewer + 16-adopter benches (author only uncovered lenses) · author the **K**-axis dossier | 1-2 | P0 | planned |
+| P1 | [[mission_wadna_p1_critique]] — rubric dossiers (A–K) · baseline persona sweep · `FINDINGS.aDNA.md` · systemic-pattern list · reconcile personas vs the 14-reviewer + 16-adopter benches (author only uncovered lenses) · author the **K**-axis dossier | 1-2 | P0 | **completed 2026-06-18** (Decision 3) |
 
 **Phase exit gate** *(human)*: a rubric dossier per A–K axis (what "frontier-grade" means for a federated rare-disease platform, with benchmark examples); `FINDINGS.aDNA.md` (every finding tagged dimension × severity × unit, sorted by severity × reach); systemic-pattern list; the prompt's seven personas reconciled against the 14-reviewer + 16-adopter benches, with only the uncovered lenses (Standard Archivist, Performance Engineer + any genuine extensions) authored in `who/reviewers/`. **Nothing changed.**
 
 ### Phase 2 — Improvement Design *(plan only)*
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| P2 | [[mission_wadna_p2_design]] — improvement specs (Crit/High) · systemic-fix package · dependency-ordered decadal plan · per-unit done-definition · tooling-promotion spec | 1 | P1 | planned |
+| P2 | [[mission_wadna_p2_design]] — improvement specs (Crit/High) · systemic-fix package · dependency-ordered decadal plan · per-unit done-definition · tooling-promotion spec | 1 | P1 | **in_progress 2026-06-19** (deliverables filed: [[IMPROVEMENT-SPECS.aDNA]] · [[TOOLING-PROMOTION.aDNA]] · [[DECADAL-PLAN.aDNA]]; awaiting Decision 4) |
 
 **Phase exit gate** *(human)*: an improvement spec for every Critical/High finding (the change, the axis it moves, the target score, the verification that proves it); the systemic-fix package (tokens/spacing/accent/type + banned-vocab + stale-terminology, as single coordinated changes); the dependency-ordered session plan (systemic before local; content-truth before visual craft; severity × reach first); the per-unit done-definition; specs for the Lighthouse gate, `@audit` regression gate, and visual-regression baseline.
 
@@ -117,7 +117,7 @@ The improvement **engine already exists and is battle-tested** — `skill_iii_cy
 | # | When | Decision | Status |
 |---|------|----------|--------|
 | 1 | Activation (before P0) | Approve scope/phases; approve **subsumption** of STR E5/E6 (sets their status `subsumed`); approve the persona-cell + the additive tooling-promotion | **✅ approved 2026-06-18** (plan `please-read-the-claude-md-wise-riddle.md`) |
-| 2 | P0 → P1 | Approve `RECONCILIATION.aDNA.md` dispositions (esp. partner-claim removals + terminology sweep) and the `SITEMAP.aDNA.md` unit list | pending |
+| 2 | P0 → P1 | Approve `RECONCILIATION.aDNA.md` dispositions (esp. partner-claim removals + terminology sweep) and the `SITEMAP.aDNA.md` unit list | **✅ approved 2026-06-18** |
 | 3 | P1 → P2 | Approve `FINDINGS.aDNA.md` prioritization and the reconciled/new reviewer lenses (only uncovered ones authored) | **✅ approved 2026-06-18** — credibility-integrity-first P2 sequence; two-stage C-1/C-2 (real aDNA.aDNA artifacts now → Hearthstone base at keystone) |
 | 4 | P2 → P3 | Approve improvement specs + decadal session plan + per-unit done-definition + deploy posture | pending |
 | 5 | P3 → P4 | Confirm all units cleared the bar; flagship benchmark side-by-side passed | pending |

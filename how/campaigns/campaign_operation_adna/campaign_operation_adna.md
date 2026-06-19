@@ -9,11 +9,11 @@ status: active
 phase_count: 0          # the program holds no phases of its own; children carry phases + gates
 mission_count: 0        # the program authors no missions; children own their mission trees
 created: 2026-06-18
-updated: 2026-06-18
-last_edited_by: agent_stanley
+updated: 2026-06-19
+last_edited_by: agent_rosetta
 orchestrates:
-  - campaign_website_adna                  # Track A — Prove it real (P0✅/P1✅ → P2/P3)
-  - campaign_hearthstone                   # Track B — Make it real (P0 activating → P5 release)
+  - campaign_website_adna                  # Track A — Prove it real (P0✅/P1✅ → P2 design active)
+  - campaign_hearthstone                   # Track B — Make it real (P0✅/P1✅ → P2 ready → P5 release)
   - campaign_adna_serious_tool_readiness   # Track C — The engine (STR v8.0; referenced, NOT absorbed)
 tags: [campaign, program, umbrella, operation_adna, orchestration, north_star, public_good, credibility_integrity]
 ---
@@ -95,7 +95,7 @@ each artifact is canonical in its own campaign; this is the program-level read.)
 ### Track B — Hearthstone: the charter + what feeds it
 - Cross-vault genesis: **chartered by Hestia from `Home.aDNA`** after the operator chose *"full polished
   base"*, handed to Rosetta for the substantive build ([[coord_2026_06_18_hestia_to_rosetta_hearthstone_charter_handoff]]).
-- **6 feeding ideas** (all `proposed`, `how/backlog/`): `idea_upstream_inventory_entity_type`,
+- **6 feeding ideas** (all `accepted` 2026-06-18 at P0, `how/backlog/`): `idea_upstream_inventory_entity_type`,
   `idea_upstream_identity_entity_type`, `idea_upstream_node_exemplar_template`,
   `idea_upstream_project_fork_exemplar_invocation`, `idea_upstream_home_claude_template`,
   `idea_upstream_router_node_vault_detection`.
@@ -121,8 +121,8 @@ gates.** The program adds no phases; it synchronizes the tracks toward the keyst
 
 | Track | Campaign | Owner | Current state | What it delivers to the north-star |
 |-------|----------|-------|---------------|------------------------------------|
-| **A — Prove it real** | [[campaign_website_adna]] | Berthier (plan) · Rosetta (resident site agent) | **P0 ✅ / P1 ✅** ([[RECONCILIATION.aDNA]] + [[FINDINGS.aDNA]] filed) → P2 design / P3 iterate | The site that *demonstrates* — frontier-grade, credibly real; resolves the credibility-integrity gap on the surface a newcomer meets first. |
-| **B — Make it real** | [[campaign_hearthstone]] | Hestia (chartered) · Rosetta (build) | **P0 activating** (6 ideas `proposed`; v8.0 ADR pending) → P5 release | The clone-and-run **base image** — the real, inspectable thing the site links to and the easy/fluid first-touch of the UX goal. |
+| **A — Prove it real** | [[campaign_website_adna]] | Berthier (plan) · Rosetta (resident site agent) | **P0 ✅ / P1 ✅** ([[RECONCILIATION.aDNA]] + [[FINDINGS.aDNA]] filed) → **P2 design active 2026-06-19** (credibility-first; → Decision 4 gate) → P3 iterate | The site that *demonstrates* — frontier-grade, credibly real; resolves the credibility-integrity gap on the surface a newcomer meets first. |
+| **B — Make it real** | [[campaign_hearthstone]] | Hestia (chartered) · Rosetta (build) | **P0 ✅ / P1 ✅ 2026-06-19** (`adr_035` accepted; `inventory`+`identity` → base, ontology 14→16 in dev graph) → **P2 ready** (not activated) → P5 release | The clone-and-run **base image** — the real, inspectable thing the site links to and the easy/fluid first-touch of the UX goal. |
 | **C — The engine** | STR ([[campaign_adna_serious_tool_readiness]]) | Rosetta | **active** (v8.0 target; P0 open; successor `campaign_adna_v3_ecosystem_compliance` opens at P6 close) | The standard + governance **v8.0** and per-vault ecosystem compliance — the ground truth Tracks A/B render and ship. *Referenced, not absorbed.* |
 | **D — The commons** | *(axis-K + `/commons` + subnetwork showcase; no separate campaign)* | Rosetta · coordinates with Venus (Network) | **in-flight inside Track A** (WEBSITE axis-K; `/commons` strongest K/E surface; subnetwork showcase live) | The public-good soul *shown* — real attribution, visible governance, honest federation, mission-aligned subnetworks (WGA · Context Commons · WilhelmAI · Rare Archive). The "Facebook, for good" MVP layer. |
 

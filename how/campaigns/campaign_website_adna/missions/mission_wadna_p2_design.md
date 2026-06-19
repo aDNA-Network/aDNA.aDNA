@@ -6,16 +6,16 @@ campaign_id: campaign_website_adna
 phase: 2
 mission_number: 2
 slug: design
-status: planned
+status: in_progress
 created: 2026-06-17
-updated: 2026-06-17
-last_edited_by: agent_stanley
+updated: 2026-06-19
+last_edited_by: agent_rosetta
 owner: stanley
 persona: rosetta             # resident executor; campaign planned by Berthier
 mission_class: planning      # plan only; ZERO site changes
-spec_completeness: stub      # finalized at P1 close
+spec_completeness: final     # authored 2026-06-19 (P2 working arc)
 estimated_sessions: "1"
-token_budget_estimated: "TBD at P1 close (~100-180 kT)"
+token_budget_estimated: "~120 kT content-load (50–80+ class — planning/spec authoring: FINDINGS + P2 spec + live-verify ~8 site sources + author 3 artifacts + close HS P1)"
 hard_dependency_satisfied: "yes — P1 closed 2026-06-18 (FINDINGS + systemic-pattern list filed); Decision 3 approved with the credibility-first direction below"
 unblocks_missions: [mission_wadna_p3_iterate]
 deliverables_count: 4
@@ -24,7 +24,7 @@ tags: [mission, campaign_website_adna, phase2, planning, design]
 
 # P2 — Improvement Design
 
-> **Stub spec.** Plan the work; decide before building. No changes yet. *(Unblocked at Decision 3, 2026-06-18 — finalize when P2 opens as a working arc.)*
+> **Working spec (finalized 2026-06-19).** P2 opened as a working arc at the Operation aDNA next-arc gate (operator chose WEBSITE P2 over Hearthstone P2, 2026-06-19). Deliverables authored + verified (Completion Summary below); **status held `in_progress` pending operator Decision 4** (Standing Order #8 — phase gates are human gates). No site changes (planning-class).
 
 ## Approved direction (Decision 3, 2026-06-18)
 
@@ -46,15 +46,37 @@ Convert `FINDINGS.aDNA.md` into an executable plan: an improvement spec for ever
 4. **Sequence + done-definition.** Dependency-ordered decadal plan (systemic before local; content-truth before visual craft; highest severity × reach first). Define **per-unit done**: ≥4 on every A–K axis · zero open Critical/High · CWV in the Good band · axe clean both modes · manual a11y pass clean · Standard Fidelity verified.
 
 ## Exit Gate (P2 → P3) — human
-- [ ] Improvement spec for every Critical/High finding.
-- [ ] Systemic-fix package designed as coordinated changes.
-- [ ] Tooling-promotion spec (Lighthouse gate · `@audit` regression gate · visual-regression · single-source lint · public-meta sanitizer · link-graph/canonical · no-JS reachability · `llms.txt`).
-- [ ] Dependency-ordered decadal session plan; per-unit done-definition fixed.
-- [ ] Operator approves specs + plan + done-definition + deploy posture (Decision 4).
+- [x] Improvement spec for every Critical/High finding. — [[IMPROVEMENT-SPECS.aDNA]] Part 2 (C-1–C-4, H-1–H-11) + coverage matrix (15/15).
+- [x] Systemic-fix package designed as coordinated changes. — [[IMPROVEMENT-SPECS.aDNA]] Part 1 (SP-1…SP-10).
+- [x] Tooling-promotion spec (Lighthouse gate · `@audit` regression gate · visual-regression · single-source lint · public-meta sanitizer · link-graph/canonical · no-JS reachability · `llms.txt`). — [[TOOLING-PROMOTION.aDNA]] (8/8 required: G1/G2/G3/G5/G6/G7/G10/G11; + G4/G8/G9 additional).
+- [x] Dependency-ordered decadal session plan; per-unit done-definition fixed. — [[DECADAL-PLAN.aDNA]] (4 decades + verify-after-pt19 + keystone; done-definition fixed).
+- [ ] Operator approves specs + plan + done-definition + deploy posture (**Decision 4**). ⏳ pending — do not open P3 until approved.
 
 ## Campaign Context
 - **Inputs:** P1 `FINDINGS.aDNA.md` + systemic-pattern list; P0 baseline + benchmark set.
-- **Outputs → P3:** the spec set + decadal plan; P3 expands into N decadal sub-missions.
+- **Outputs → P3 (filed 2026-06-19):** [[IMPROVEMENT-SPECS.aDNA]] · [[TOOLING-PROMOTION.aDNA]] · [[DECADAL-PLAN.aDNA]]. P3 (`mission_wadna_p3_iterate`) expands the 4 decades into sub-arcs (D1 credibility first), on Decision 4.
+
+## Completion Summary
+*Deliverables complete + verified 2026-06-19; flip `status: completed` + open P3 on operator Decision 4.*
+
+### Deliverables
+- **[[IMPROVEMENT-SPECS.aDNA]]** — systemic-fix package (SP-1…SP-10) + per-finding specs for all **15 Critical/High** (C-1–C-4, H-1–H-11), credibility-first; each spec = change · axis · baseline→target · verification · owner · files; Medium folded into parent patterns; coverage matrix (15/15).
+- **[[TOOLING-PROMOTION.aDNA]]** — **11 gates** (G1–G11): the 8 exit-gate-required (3 promoted + 5 new) + 3 additional (G4 JSON-LD, G8 contrast, G9 color-count); each = checks · location · pass/fail · finding-class guarded; wired per-decade.
+- **[[DECADAL-PLAN.aDNA]]** — 4-decade dependency-ordered P3 sequence (D1 credibility → D2 nav → D3 agentic/community → D4 craft) + verify-after-pt19 + keystone deploy; per-unit done-definition fixed (≥4 all A–K · 0 Crit/High · CWV Good · axe both modes · manual a11y · Standard Fidelity).
+- **Bookkeeping:** this mission (status/spec_completeness/exit-gate); session; STATE; campaign-master P2 row; Hearthstone P1 closed (same session, operator gate).
+
+### Decision-4 flags (operator — surface before opening P3)
+1. **C-1 is deeper than a repoint (verified live 2026-06-19).** No public URL currently inspects the aDNA.aDNA vault: `github.com/aDNA-Network/aDNA.aDNA` → **404**; the public image `aDNA-Network/aDNA` → 200 but gitignores `*.aDNA/` (subtree → **404**). Closing C-1 "now" needs a **publish/visibility decision** (make `aDNA-Network/aDNA.aDNA` public + push, or point proofs at resolving `.adna/` paths); stage-2 points at Hearthstone's base at the keystone. **Candidate new cross-vault seam** (operator/Berthier·aDNALabs).
+2. **Brand/publisher entity (C-3/M-9; RECONCILIATION W4/W5):** confirm the JSON-LD/footer publisher name ("aDNA" / "aDNA Network") or **drop** the publisher org.
+3. **Deploy posture:** commit-only through P3; the joined deploy is the program keystone (DP2). Confirm.
+4. **pt19 items (H-10; C-4 names):** spec'd **verify-after-pt19** (no hand-fix, no `sync:vaults`). Confirm.
+5. **Repo-URL drift is broader than C-3 recorded** — `branding.json:26` (`LatticeProtocol/Agentic-DNA`) + 3 `seo.ts` JSON-LD builders + 7 sitewide `aDNA.aDNA` 404 links; the single-source lint (G5) is the load-bearing fix that keeps SP-1 from re-rotting.
 
 ## AAR
-*5-line AAR mandatory at close.* — *(pending)*
+*5-line AAR (`template_aar_lightweight.md`).*
+
+- **Worked:** FINDINGS' owner-class tags + the Decision-3 sequencing made the spec ordering fall out cleanly; **live-verifying the cited sources before locking specs** caught C-1's real root cause (no public inspect home — a string-only repoint would have shipped another 404) and the broader repo-URL drift.
+- **Didn't:** gate IDs drifted while writing the per-finding specs *before* the tooling artifact existed — had to reconcile G1–G11 after the fact.
+- **Finding:** the credibility-integrity headline is **structural, not cosmetic** — C-1 needs a publish decision and the drift spans `branding.json` + 3 JSON-LD builders, which is exactly why the single-source lint (G5) is load-bearing.
+- **Change:** for spec missions that reference gates, **author the gate inventory first**, then reference its IDs from the per-finding specs.
+- **Follow-up:** operator **Decision 4** → open P3 (D1 first); resolve the C-1 publish/visibility decision early; confirm brand entity + deploy posture; pt19 stays verify-after.
