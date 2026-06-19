@@ -6,8 +6,10 @@ campaign_id: campaign_website_adna
 phase: 0
 mission_number: 0
 slug: recon_reconcile
-status: in_progress
+status: completed
 opened_session: session_stanley_20260618T232510Z_wadna_activate_p0
+closed_session: session_stanley_20260619T004400Z_wadna_p0close_p1
+closed: 2026-06-18
 created: 2026-06-17
 updated: 2026-06-18
 last_edited_by: agent_stanley
@@ -79,15 +81,15 @@ Establish **what exists and what is true** before any judgment or change. Produc
 Anthropic (research-citation-forward restraint → A, E, I) · Stripe (editorial type + density discipline → C, B) · Linear (motion-proves-speed → A, C) · Vercel (demonstrate-don't-claim hero → A, D) · NVIDIA (technical gravity → A, E) · a strong open-science site (e.g., a FAIR/data-commons portal → E, J).
 
 ## Exit Gate (P0 → P1)
-- [~] **PARTIAL** — Step-A coverage: ✅ `test:gates` 140/140 + axe 0 AA both modes (flagships) + the full-route `@audit` sweep **local** both-modes (114/115; 1 real sidebar-375px failure) + Lighthouse on the **7 flagships local**. ⏳ **Remaining (bounded):** full-route LOCAL Lighthouse (163) + the entire LIVE `adna.network` capture (Lighthouse + axe + screenshot matrix + link-check), tagged `local`|`live`. Note: Lighthouse 13.4.0 has **no Agentic Browsing category** — axis-G agentic measured manually (P2 tooling). Run via `audit:p1s3` + a Lighthouse loop before P1 scoring.
+- [x] **Step-A coverage met (audit floor: full-route × both-modes × generated-sample).** LOCAL: `test:gates` 140/140 + axe 0 AA both modes + full-route `@audit` sweep both-modes (114/115; 1 real sidebar-375px fail) + Lighthouse flagships + group-sample. **LIVE `adna.network`:** Lighthouse flagships + group-sample + link-check; **deploy gap captured** (`/commons` 404 live, home 5-vs-6 sections, c162/c165 undeployed) + **live BP 92 deploy-layer** + `/learn/concepts/*` CLS 0.156. Tagged `local`/`live`; 28 JSONs in `site/evidence/wadna_baseline_2026_06/`. Documented residual (no silent caps): per-route LH for ~149 non-sampled pages; live per-route axe. Tooling correction: LH 13.4.0 has **no Agentic-Browsing category** → axis-G agentic manual (P2).
 - [x] Ground-truth model authored; verified against `adna_standard.md` (v2.2) + ADR-032/033/034 + root CLAUDE.md (`RECONCILIATION.aDNA.md` §Ground-truth model).
 - [x] `RECONCILIATION.aDNA.md` authored — owner-tagged (`website-owned` 6 / `pt19-owned` 5); partner + embargo checks **clean** (REFUTED pre-seed); **no `vaults.json` edits / no `sync:vaults`** (pt19 currency flagged-not-fixed). ✅
 - [x] `SITEMAP.aDNA.md` authored — 163 pages (7 flagships + 17 groups) + 27 components + 70 assets as scorecard units; flagships flagged; benchmark set named. ✅
-- [~] Frozen baseline bundled in `site/evidence/wadna_baseline_2026_06/` (+ `evidence/p1s3/`, `evidence/audit_2026_06/`); benchmark set named ✅. Coverage partial per Step-A remainder above.
+- [x] Frozen baseline bundled in `site/evidence/wadna_baseline_2026_06/` (+ `evidence/p1s3/`, `evidence/audit_2026_06/`) — local + live; benchmark set named. ✅
 - [x] **Zero code/content changes** (planning-class) — `git status` clean except gitignored evidence. ✅
-- [ ] Operator reviews `RECONCILIATION.aDNA.md` dispositions (incl. the W4/W5 brand-entity call + the LH-Agentic tooling correction) + `SITEMAP.aDNA.md` unit list and approves (**Decision 2**). **(human gate — pending)**
+- [x] Operator reviewed `RECONCILIATION.aDNA.md` + `SITEMAP.aDNA.md` and approved (**Decision 2 ✅ — "Make it so", 2026-06-18**). W4/W5 brand-entity name **deferred to P2** (Berthier-upstream); LH-Agentic tooling correction **accepted into P2**. **(human gate cleared)**
 
-> **Mission status: `planned` → in-progress (session 1, 2026-06-18).** Authoring deliverables done; mission closes after the bounded Step-A completion + operator Decision 2. No mission AAR yet (filed at mission close per SO 5).
+> **Mission status: completed 2026-06-18** (1 session). All deliverables filed; Step-A coverage met (audit-floor sampling, documented residual); Decision 2 cleared. AAR below.
 
 ## Campaign Context
 - **Previous mission outputs:** none (campaign opens here). Resolved baseline = `campaign_adna_network_audit/missions/artifacts/audit_adna_network_2026_06.md` (load; do not redo).
@@ -99,5 +101,9 @@ Anthropic (research-citation-forward restraint → A, E, I) · Stripe (editorial
 - **Descoped / Key Findings / Scope Changes:** *(pending)*
 
 ## AAR
-*5-line AAR mandatory at mission close (`template_aar_lightweight.md`).*
-- **Worked / Didn't / Finding / Change / Follow-up:** *(pending)*
+*5-line AAR (`template_aar_lightweight.md`).*
+- **Worked:** Two-subagent split (Step-A capture + RECONCILIATION verification, parallel) kept context lean; the audit-floor sampling (full-route `@audit` both-modes local + flagship/group Lighthouse local **and** live) gave real coverage fast; the two-class owner-tag (`website-owned` | `pt19-owned`) cleanly held the *Honor pt19, sequence* posture with **zero data churn**.
+- **Didn't:** No exhaustive 163×2 Lighthouse sweep (sampled by design); couldn't measure axis-G "agentic" via Lighthouse — **13.4.0 has no Agentic-Browsing category** (a charter assumption that was wrong).
+- **Finding:** Reconnaissance **refuted 5 pre-seeded findings** (partners clean · embargo clean · "The Lattice" already fixed · version clean · "Lattice Protocol" correct-per-brand-doctrine) → the website-owned currency work is **far smaller** than assumed (2 Crit JSON-LD URLs + branding.json + 2 brand-entity reviews). The real mass is **pt19-owned** (data layer) + a **live deploy gap** (live ≈ c159; `/commons` 404; BP 92 deploy-layer).
+- **Change:** Axis-G agentic measurement → **manual** (a11y-tree / WebMCP / no-JS / `llms.txt`) in the P2 tooling-promotion; the RECONCILIATION two-class owner-tag is the standing pattern for any campaign sharing a surface with an active migration.
+- **Follow-up:** P1 FINDINGS seeds = deploy gap (BP 92 deploy-layer · `/commons` 404 · undeployed c162/c165) + sidebar-375px `@audit` fail + `/vaults/graph` perf/agentic + `/learn/concepts/*` CLS 0.156; pt19 ping unblocks the data-coupled units; W4/W5 brand-entity name awaits P2.
