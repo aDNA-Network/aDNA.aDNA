@@ -30,15 +30,15 @@ tags: [mission, campaign_website_adna, phase3, implementation, iii, decadal]
 
 | Decade | Theme | Units | Specs | Gates | Status |
 |--------|-------|-------|-------|-------|--------|
-| **D1** | **Credibility-integrity** (longest; ships first) | `/` · `/learn/what-is-adna` · sitewide `<head>` · `/network` | SP-1 → C-1, C-2, C-3, C-4 (+ M-1/M-2/M-9) | G4, G5, G6, G7 | **active 2026-06-19** |
+| **D1** | **Credibility-integrity** (longest; ships first) | `/` · `/learn/what-is-adna` · sitewide `<head>` · `/network` | SP-1 → C-1, C-2, C-3, C-4 (+ M-1/M-2/M-9) | G4, G5, G6, G7 | **deliverables complete 2026-06-19 — GO ([[aar_decadal_d1_credibility_integrity]]); pending operator decade-gate before D2** |
 | D2 | Nav-serialization / docs structure (highest-leverage single fix) | all docs-layout pages | SP-2 → H-1, H-2 | G2 → blocking | queued |
 | D3 | Agentic-readiness + community legibility | sitewide · `/vaults/graph` · `/community` · `/get-started` | SP-6 → H-3, M-3 · H-4 · H-8 | G10, G11 | queued |
 | D4 | Visual craft · composition · responsive · perf | `/vaults/graph` · `/vaults/[slug]` · `/` diagram · header | SP-3/4/5/7 → H-5/6/7/9/11 (+ M-4/5/7) | G1, G3, G8, G9 | queued |
 
 > **Event-triggered (not ordered):** verify-after-pt19 (H-10/SP-8 — when Production Tidy pings); keystone coordinated deploy (SP-9 + C-1 stage-2 — when all 3 keystone conditions are green). **Decision-4 dispositions:** C-1 = repoint-to-public-image; publisher = "aDNA Network"; commit-only through P3; pt19 = verify-after.
 
-### D1 work order (this active decade)
-SP-1 canonical source (root) → C-3 publisher → C-1 proof-link repoint+prose → C-2 real excerpts → C-4 data-driven diagram → wire G4/G5/G6/G7 → per-unit done-definition on the 4 units → D1 decadal AAR (rotated ranker) → **human gate** before D2. Spec detail: [[IMPROVEMENT-SPECS.aDNA]]; done-definition: [[DECADAL-PLAN.aDNA]] §Per-unit; gates: [[TOOLING-PROMOTION.aDNA]].
+### D1 work order (DONE 2026-06-19 — GO, pending operator decade-gate)
+SP-1 canonical source (root) → C-3 publisher → C-1 proof-link repoint+prose → C-2 real excerpts → C-4 data-driven diagram → wire G4/G5/G6/G7 → independent 3-persona panel (A4/D5 · E4 · J5; 0 open Crit/High on the 4 units) → D1 decadal AAR. **Result:** 4 Criticals cleared + SP-1 + gate baseline 140→159; build 163pp clean; 5/5 proof-links live-200; commit-only (`045d661`·`21789cb`·`6009003`·`4704af3`). AAR: [[aar_decadal_d1_credibility_integrity]]. **Next = operator decade-gate GO → open D2** (nav-serialization, SP-2 → H-1/H-2, gate G2). Spec detail: [[IMPROVEMENT-SPECS.aDNA]]; done-definition: [[DECADAL-PLAN.aDNA]] §Per-unit; gates: [[TOOLING-PROMOTION.aDNA]].
 
 ## Goal
 Run the improvement loop on assigned units until the whole site clears the bar. Inherit the engine; do not rebuild it. Pursue **structural and frontier moves** (axes D/E/J + agentic-browsing), not another lap of D1–D10 incremental polish — Rosetta's ranker already maxed at 5.00 on that surface.
