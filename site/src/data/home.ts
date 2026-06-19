@@ -92,11 +92,11 @@ operational practice, plain language.
 phase: 3
 status: in_progress
 
-## Decades
-D1 Credibility-integrity → active
-D2 Navigation &amp; docs → queued
-D3 Agentic + community → queued
-D4 Visual craft → queued</pre>
+## Decade backbone
+D1 Credibility-integrity — active
+D2 Navigation &amp; docs — queued
+D3 Agentic + community — queued
+D4 Visual craft — queued</pre>
 </div>`,
   },
 ];
