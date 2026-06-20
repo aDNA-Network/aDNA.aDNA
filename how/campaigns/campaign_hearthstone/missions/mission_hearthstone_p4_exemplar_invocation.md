@@ -19,7 +19,7 @@ tags: [mission, hearthstone, p4, exemplar_invocation, interview, project_fork, c
 
 # Mission 5 (P4) — Exemplar Invocation Wiring
 
-> **Deliverables COMPLETE + VERIFIED 2026-06-19** (dev graph; `.adna/` ships at P5). **The P4 phase-exit is an operator gate (Decision 4) — pending.** Cross-lane Hestia session per the P2/P3 pattern.
+> **Deliverables COMPLETE + VERIFIED 2026-06-19** (dev graph; `.adna/` ships at P5). **P4 phase-exit APPROVED by operator (Decision 4) 2026-06-19 → mission CLOSED.** Cross-lane Hestia session per the P2/P3 pattern.
 
 ## Objective
 
@@ -74,4 +74,4 @@ Committed surgically at `266e046` (3 files; not pushed — live WEBSITE co-write
 - **Didn't**: nothing blocked; the one-session estimate beat the 2-session plan because the spec was pre-ratified and the worked Home-demo Step 4.5 existed to port.
 - **Finding**: the load-bearing risk (callout-fold `>`-prefix) was de-risked by the harness already asserting that exact shape — the skill just had to instruct it (F-P4-A).
 - **Change**: interview is now two-profile (base 19 unchanged; optional Topic 6 in exemplar mode); the canonical fork skill gained `--exemplar-home`.
-- **Follow-up**: P5 release + the all-node-skills mirror reconcile; present the P4 exit-gate evidence to the operator (Decision 4).
+- **Follow-up**: P5 release + the all-node-skills mirror reconcile. *(P4 exit-gate evidence presented; operator approved Decision 4 2026-06-19 → P5 active.)*
