@@ -57,14 +57,14 @@ const jsonLD = buildWebPageJsonLD({
     The clone <em>is</em> your workspace — not a template you copy from. The router comes pre-instantiated
     and the standard comes embedded; there is nothing to bootstrap by hand.
   </p>
-  <pre><code>{commands.clone}</code></pre>
+  <pre class="cmd"><code>{commands.clone}</code></pre>
 
   <h2 id="step-2">2. Start Claude Code</h2>
   <p>
     Run <code>{commands.launch}</code> in the workspace. The agent reads the router, sees a fresh workspace
     with no projects yet, and walks you through creating your first one:
   </p>
-  <pre><code>{commands.enter}
+  <pre class="cmd"><code>{commands.enter}
 {commands.launch}</code></pre>
   <pre><code>$ {commands.launch}
 ✓  Loaded CLAUDE.md (workspace router)
@@ -96,7 +96,7 @@ What is this project called, and what problem does it solve?
     <p>
       Both steps, chained — auditable inline, nothing executed from the network:
     </p>
-    <p><code>{installTruth.one_liner}</code></p>
+    <p class="cmd-oneliner"><code>{installTruth.one_liner}</code></p>
   </Callout>
 
   <Callout variant="info" title="Existing installs (pre-June-2026 layout)">
@@ -121,3 +121,18 @@ What is this project called, and what problem does it solve?
     <li>See it live: the <a href={canonical_repo_https} target="_blank" rel="noopener">aDNA repository</a> is the workspace image itself — clone it and you are holding everything this page described.</li>
   </ul>
 </DocumentationLayout>
+
+<style>
+  /* H-8: copy-critical install commands must be fully readable at 320–390px — soft-wrap them
+     (the long clone URL + the one-liner) rather than hide them behind horizontal scroll. Scoped
+     to the command blocks only; the illustrative ASCII tree + interview output keep the default
+     overflow-x:auto so their alignment is preserved. */
+  pre.cmd {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .cmd-oneliner code {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+</style>

@@ -1,0 +1,17 @@
+{
+  "_note": "H-4 (D3 axis-K): real, public-appropriate community facts surfaced on /community. Sourced from who/community/community_roles.md (the participation ladder) + the standard's governance model. Honesty line: only real practices — no fabricated member counts, no internal campaign jargon, planned != shipped. Ladder summaries are faithful one-line condensations of the real role docs.",
+  "ladder": [
+    { "level": "Level 0", "name": "User", "summary": "Clone the standard and use it for your own projects. No community interaction required — you get the full value locally." },
+    { "level": "Level 1", "name": "Contributor", "summary": "Approve the improvements your agents surface and send them upstream through the public repository." },
+    { "level": "Level 2", "name": "Quest Runner", "summary": "Run structured community experiments and submit results that turn standard questions into evidence, not opinion." },
+    { "level": "Level 3", "name": "Steward", "summary": "Shape the standard's direction — design quests, review contributions, write migrations. Recognized by maintainers, never self-appointed." }
+  ],
+  "governance": [
+    { "label": "Chartered", "value": "Operator-chartered — decisions are explicit and gated, never silent." },
+    { "label": "Open standard", "value": "MIT-licensed and versioned in public; the spec is the source of truth." },
+    { "label": "Change process", "value": "Public — improvements run through the repository as upstream contributions, reviewable by anyone." },
+    { "label": "Attribution", "value": "Every file records who last edited it — humans and agents alike." },
+    { "label": "Accountability", "value": "Every unit of work closes with a written after-action report." }
+  ],
+  "horizon": "Member profiles, follows, activity feeds, and shared governance-voting surfaces are not built yet. They are being designed on the network's opt-in, local-first membership substrate — the same machinery the network page describes. Until they ship, the participation ladder and the open governance record on this page are the whole community layer. The network builds toward that horizon rather than implying it arrived."
+}

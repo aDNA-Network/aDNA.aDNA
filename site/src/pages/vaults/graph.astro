@@ -11,6 +11,7 @@ import heroVaultsGraph from '../../assets/heroes/hero_vaults_graph.png';
 // missed the file (in the built bundle import.meta.url points at the chunk, not the source) → the graph
 // silently fell back to "(no data)". (E4 cycle 154 fix.)
 import graphChart from '../../data/vaults_graph.mmd?raw';
+import { buildCollectionPageJsonLD } from '../../utils/seo';
 
 const chart = (graphChart && graphChart.trim()) ? graphChart : 'flowchart LR\n  empty["(no data)"]';
 
@@ -74,9 +75,18 @@ const nodeLegend = Object.keys(classCensus)
 const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
   slug: v.vault_slug, name: v.display_name, label: v.vault,
 }));
+
+// M-3 (D3 agentic-readiness): the topology page emits structured data so agents/crawlers can
+// read the network as a described collection, not just a decorative SVG. CollectionPage (reused
+// seo.ts builder) — valid JSON-LD; counts derive from vaults.json (read-only; Honor pt19).
+const jsonLD = buildCollectionPageJsonLD({
+  title: 'The aDNA network — relationship graph',
+  description: `The federation topology of the aDNA network: ${vaultCount} vaults, ${edgeCount} real directed relationships (umbrella, federation, partner, companion, supersedes).`,
+  url: Astro.url.href,
+});
 ---
 
-<BaseLayout title="The aDNA network — relationship graph" description="The federation topology of the aDNA network: every edge is a real, directed relationship drawn from vault governance — umbrella, federation, partner, companion, supersedes.">
+<BaseLayout title="The aDNA network — relationship graph" description="The federation topology of the aDNA network: every edge is a real, directed relationship drawn from vault governance — umbrella, federation, partner, companion, supersedes." jsonLD={jsonLD}>
   <main class="vaults-graph">
     <section class="vaults-graph-hero">
       <p class="vault-breadcrumb">

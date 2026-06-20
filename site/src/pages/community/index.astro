@@ -2,8 +2,10 @@
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
 import ClosingCTA from '../../components/sections/ClosingCTA.astro';
+import Callout from '../../components/sections/Callout.astro';
 import { getDocsBySection } from '../../utils/collections';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
+import community from '../../data/community.json';
 
 const communityDocs = await getDocsBySection('community');
 const cards = communityDocs.map((doc) => ({
@@ -11,6 +13,11 @@ const cards = communityDocs.map((doc) => ({
   description: doc.data.description,
   href: `/community/${doc.id}`,
 }));
+
+// H-4 (D3 axis-K): real, public-appropriate community facts (src/data/community.json) — the
+// participation ladder + the governance record + the honest horizon. Shown, not asserted; only
+// real practices; no fabricated counts; planned != shipped.
+const { ladder, governance, horizon } = community;
 
 const jsonLD = buildCollectionPageJsonLD({
   title: 'Community',
@@ -24,7 +31,37 @@ const jsonLD = buildCollectionPageJsonLD({
   description="Roles, processes, and contribution paths for the aDNA community."
   jsonLD={jsonLD}
 >
-  <p>The aDNA community is organized around a participation ladder — from individual vault users to standard stewards. Explore the roles, processes, and shared knowledge commons.</p>
+  <p>aDNA is built by humans and agents together, in the open. The community is organized around a participation ladder — from individual vault users to standard stewards — and governed as a public record, not a claim. Here is how it actually works today.</p>
+
+  <h2 id="ladder">The participation ladder</h2>
+  <p>Each level is self-contained: you get the full value at Level 0 without ever engaging the community, and each step up adds a new kind of contribution and influence.</p>
+  <ol class="ladder" role="list">
+    {ladder.map((rung) => (
+      <li class="ladder-rung">
+        <p class="ladder-head"><span class="ladder-level">{rung.level}</span> <span class="ladder-name">{rung.name}</span></p>
+        <p class="ladder-summary">{rung.summary}</p>
+      </li>
+    ))}
+  </ol>
+
+  <h2 id="governance">How the commons is governed</h2>
+  <p>The community isn't asserted here; it's a record. This is how the standard is actually run, today:</p>
+  <dl class="gov-record">
+    {governance.map((fact) => (
+      <div class="gov-fact">
+        <dt>{fact.label}</dt>
+        <dd>{fact.value}</dd>
+      </div>
+    ))}
+  </dl>
+  <p class="gov-honesty">What you won't find here: member counts, follower numbers, or activity feeds. The record doesn't track them, so this page doesn't show them.</p>
+
+  <Callout variant="info" title="The horizon">
+    <p>{horizon}</p>
+  </Callout>
+
+  <h2 id="explore">Explore further</h2>
+  <p>The roles, processes, and shared-knowledge commons in depth:</p>
   <CardGrid cards={cards} columns={2} />
 
   <!-- Closing CTA (E5 c163; audit C4) — the contributor-recruitment page gets a real on-ramp:
@@ -38,3 +75,87 @@ const jsonLD = buildCollectionPageJsonLD({
     secondaryHref="/community/community-contribution-standards/"
   />
 </DocumentationLayout>
+
+<style>
+  /* H-4 axis-K bands — sit inside .doc-content .prose; tokens only (AA in both modes). */
+  .ladder {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-8);
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .ladder-rung {
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-bg-alt);
+  }
+
+  .ladder-head {
+    margin: 0 0 var(--space-1);
+  }
+
+  .ladder-level {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+  }
+
+  .ladder-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--color-text-heading);
+  }
+
+  .ladder-summary {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    font-size: var(--text-sm);
+  }
+
+  .gov-record {
+    margin: 0 0 var(--space-4);
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: var(--space-2) var(--space-6);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+  }
+
+  .gov-fact {
+    display: contents;
+  }
+
+  .gov-fact dt {
+    color: var(--color-text-heading);
+    font-weight: 600;
+  }
+
+  .gov-fact dd {
+    margin: 0;
+    color: var(--color-text-muted);
+  }
+
+  .gov-honesty {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 560px) {
+    .gov-record {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .gov-fact dt {
+      margin-top: var(--space-2);
+    }
+  }
+</style>

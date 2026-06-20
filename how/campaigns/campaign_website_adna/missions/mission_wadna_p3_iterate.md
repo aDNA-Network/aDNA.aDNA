@@ -32,7 +32,7 @@ tags: [mission, campaign_website_adna, phase3, implementation, iii, decadal]
 |--------|-------|-------|-------|-------|--------|
 | **D1** | **Credibility-integrity** (longest; ships first) | `/` · `/learn/what-is-adna` · sitewide `<head>` · `/network` | SP-1 → C-1, C-2, C-3, C-4 (+ M-1/M-2/M-9) | G4, G5, G6, G7 | **CLOSED 2026-06-19 — GO approved + DEPLOYED to adna.network (hotfix; leak stopped). [[aar_decadal_d1_credibility_integrity]]** |
 | D2 | Nav-serialization / docs structure (highest-leverage single fix) | all docs-layout pages | SP-2 → H-1, H-2 | G2 → blocking | **CLOSED 2026-06-19 — GO (a11y panel G5/5); commit-only `faa7a73`. [[aar_decadal_d2_nav_serialization]]** — pending operator decade-gate before D3 |
-| D3 | Agentic-readiness + community legibility | sitewide · `/vaults/graph` · `/community` · `/get-started` | SP-6 → H-3, M-3 · H-4 · H-8 | G10, G11 | queued |
+| D3 | Agentic-readiness + community legibility | sitewide · `/vaults/graph` · `/community` · `/get-started` | SP-6 → H-3, M-3 · H-4 · H-8 | G10, G11 | **active 2026-06-19** (operator GO on D2) |
 | D4 | Visual craft · composition · responsive · perf | `/vaults/graph` · `/vaults/[slug]` · `/` diagram · header | SP-3/4/5/7 → H-5/6/7/9/11 (+ M-4/5/7) | G1, G3, G8, G9 | queued |
 
 > **Event-triggered (not ordered):** verify-after-pt19 (H-10/SP-8 — when Production Tidy pings); keystone coordinated deploy (SP-9 + C-1 stage-2 — when all 3 keystone conditions are green). **Decision-4 dispositions:** C-1 = repoint-to-public-image; publisher = "aDNA Network"; commit-only through P3; pt19 = verify-after.

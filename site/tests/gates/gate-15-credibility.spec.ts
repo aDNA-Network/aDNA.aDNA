@@ -17,7 +17,7 @@ const CANONICAL_REPO = 'https://github.com/aDNA-Network/aDNA';
 const DEAD_PATTERNS = ['aDNA-Network/aDNA.aDNA', 'github.com/LatticeProtocol', 'LatticeProtocol/Agentic-DNA'];
 
 // Pages whose JSON-LD must carry a canonical publisher (sample across archetypes).
-const jsonLdPages = ['/', '/learn/what-is-adna', '/network', '/get-started', '/reference/specification'];
+const jsonLdPages = ['/', '/learn/what-is-adna', '/network', '/get-started', '/reference/specification', '/vaults/graph'];
 
 // The credibility surfaces that stake the "real, inspectable vault" claim.
 const proofPages = ['/', '/learn/what-is-adna', '/network'];
