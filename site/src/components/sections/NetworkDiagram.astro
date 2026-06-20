@@ -102,21 +102,23 @@ const allEdges = nodes.map((n) => ({ x1: hub.cx, y1: hub.cy, x2: n.cx, y2: n.cy 
     overflow: visible;
   }
 
-  /* ——— Edges (E1 Gap #6: raised opacity + contrast halo against the dark section bg) ——— */
+  /* ——— Edges (E1 Gap #6 + D4 H-6: spokes were whispering. Opacity/width raised so each clears
+     ≥3:1 non-text vs the theme-aware section bg in BOTH modes — --color-primary is mode-aware
+     (#6d4bb8 on light, #9d7cd8 on dark); at 0.8 that computes to ≈4:1 in each mode. ——— */
   .nd-edge {
     fill: none;
     stroke: var(--color-primary);
-    stroke-width: 1.75;
-    stroke-opacity: 0.5;
+    stroke-width: 2;
+    stroke-opacity: 0.8;
     stroke-linecap: round;
   }
 
-  /* A wider, faint same-hue halo behind each spoke separates it from the dark ground. */
+  /* A wider, faint same-hue halo behind each spoke separates it from the ground. */
   .nd-edge-halo {
     fill: none;
     stroke: var(--color-primary);
-    stroke-width: 4;
-    stroke-opacity: 0.12;
+    stroke-width: 5;
+    stroke-opacity: 0.18;
     stroke-linecap: round;
   }
 
