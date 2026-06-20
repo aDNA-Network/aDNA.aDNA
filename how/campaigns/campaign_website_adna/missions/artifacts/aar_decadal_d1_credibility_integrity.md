@@ -72,7 +72,8 @@ Run as 3 independent subagents (separate context; adversarial "find the tell" st
 - Build: `npx astro build` → **163 pages, clean** (no `vaults.json`/`install_truth.json` regen — Honor pt19 held).
 - Gates: **159/159** (`test:gates`), incl. axe both-modes + responsive + the 4 new credibility gates.
 - Live link-check: 5/5 proof targets **200** unauthenticated; control (dead repo) 404.
-- Commits (commit-only, no deploy): `045d661` (open P3) · `21789cb` (SP-1 + 4 Criticals) · `6009003` (gates) · `4704af3` (AAR fix).
+- Commits: `045d661` (open P3) · `21789cb` (SP-1 + 4 Criticals) · `6009003` (gates) · `4704af3` (AAR fix) · `67dcdae` (decade close); pushed to origin.
+- **Deploy — operator-flagged hotfix (2026-06-19):** `npx astro build` (no data regen) → `vercel deploy --prebuilt --prod`. **adna.network live-verified D1:** 0 dead `aDNA.aDNA` proof-links (real `.adna/` paths resolve), 0 fabricated `climate-pipeline` code, JSON-LD publisher `aDNA Network`. All 4 Criticals had been **leaking on production**; the leak is now STOPPED. This is the sanctioned pre-keystone interim — the *joined/exemplary* upgrade (C-1 stage-2 → Hearthstone base + pt19-correct names) still lands at the keystone (DP2).
 
 ## 8. Decade-exit criteria ([[DECADAL-PLAN.aDNA]] D1 row)
 

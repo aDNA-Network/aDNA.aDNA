@@ -30,8 +30,8 @@ tags: [mission, campaign_website_adna, phase3, implementation, iii, decadal]
 
 | Decade | Theme | Units | Specs | Gates | Status |
 |--------|-------|-------|-------|-------|--------|
-| **D1** | **Credibility-integrity** (longest; ships first) | `/` · `/learn/what-is-adna` · sitewide `<head>` · `/network` | SP-1 → C-1, C-2, C-3, C-4 (+ M-1/M-2/M-9) | G4, G5, G6, G7 | **deliverables complete 2026-06-19 — GO ([[aar_decadal_d1_credibility_integrity]]); pending operator decade-gate before D2** |
-| D2 | Nav-serialization / docs structure (highest-leverage single fix) | all docs-layout pages | SP-2 → H-1, H-2 | G2 → blocking | queued |
+| **D1** | **Credibility-integrity** (longest; ships first) | `/` · `/learn/what-is-adna` · sitewide `<head>` · `/network` | SP-1 → C-1, C-2, C-3, C-4 (+ M-1/M-2/M-9) | G4, G5, G6, G7 | **CLOSED 2026-06-19 — GO approved + DEPLOYED to adna.network (hotfix; leak stopped). [[aar_decadal_d1_credibility_integrity]]** |
+| D2 | Nav-serialization / docs structure (highest-leverage single fix) | all docs-layout pages | SP-2 → H-1, H-2 | G2 → blocking | **active 2026-06-19** (operator GO on D1) |
 | D3 | Agentic-readiness + community legibility | sitewide · `/vaults/graph` · `/community` · `/get-started` | SP-6 → H-3, M-3 · H-4 · H-8 | G10, G11 | queued |
 | D4 | Visual craft · composition · responsive · perf | `/vaults/graph` · `/vaults/[slug]` · `/` diagram · header | SP-3/4/5/7 → H-5/6/7/9/11 (+ M-4/5/7) | G1, G3, G8, G9 | queued |
 
