@@ -51,6 +51,14 @@ These templates have no Templater auto-trigger. Copy their structure manually or
 | `template_registry.md` | Registry publication metadata | varies | `template` | Used for publishing, not regular file creation |
 | `template_strategic_compass.md` | Strategic compass | `who/governance/` | `governance` | Rare — governance dir already mapped for other use |
 
+### Fork-Skeleton Bundles (1)
+
+Multi-file fork skeletons (not single-file templates; not Templater-triggered). Rendered via the bundle's own `smoke_render.py --materialize DIR`, or installed by a fork skill:
+
+| Bundle | Target Type | Typical Location | Invoked By |
+|--------|------------|-----------------|------------|
+| `template_node_adna_exemplar/` | Polished node-vault home skeleton (HOME.md + §Gallery/§Topology Bases + persona CSS + canvas generators + Canvas.aDNA `canvasforge/` wrapper) | `<Node>.aDNA/` (fork overlay) | `skill_project_fork --exemplar-home` (P4 wiring); `smoke_render.py --materialize` (upstreamed Hearthstone P3, 2026-06-19) |
+
 ### Extension Templates — Rosetta (11)
 
 Manual-apply templates for the 11 ontology extensions added by this project:

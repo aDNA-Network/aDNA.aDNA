@@ -21,7 +21,7 @@ tags: [campaign, hearthstone, home_adna, base_template, node_bootstrap, ontology
 
 # Campaign: Operation Hearthstone — ship a complete, polished base Home.aDNA into the public template
 
-> **Track B under [[campaign_operation_adna]] — ACTIVE; P0 + P1 + P2 CLOSED (P0 2026-06-18; P1 + P2 2026-06-19).** Operation aDNA is the program umbrella; Hearthstone is its base-template / node-bootstrap track. P0 activated + closed 2026-06-18: the operator approved scope/activation (Decision 1) **and ratified the v8.0 ontology-promotion ADR** (`adr_035` → `accepted`: `inventory`+`identity` → base entity types 14→16, standard **v2.3**, defer `network_node_mirror`/`permission_edge`). **P1 (entity-type foundations) closed 2026-06-19** (operator P1 exit gate, Decision 4) — authored in the dev graph; `.adna/` materialization stays gated to **P5** (`skill_template_release`). **P2 (`template_home_claude.md` + Step-0 router) CLOSED 2026-06-19** (operator approved the phase-exit, Decision 4; dev graph — `.adna/` ships at P5). The operator returned to Hearthstone for P2 after running WEBSITE P2 (Track A) earlier the same day. **P3 (exemplar bundle) is the next ready arc** — gated on CanvasForge→Canvas + PT P5.
+> **Track B under [[campaign_operation_adna]] — ACTIVE; P0 + P1 + P2 CLOSED (P0 2026-06-18; P1 + P2 2026-06-19).** Operation aDNA is the program umbrella; Hearthstone is its base-template / node-bootstrap track. P0 activated + closed 2026-06-18: the operator approved scope/activation (Decision 1) **and ratified the v8.0 ontology-promotion ADR** (`adr_035` → `accepted`: `inventory`+`identity` → base entity types 14→16, standard **v2.3**, defer `network_node_mirror`/`permission_edge`). **P1 (entity-type foundations) closed 2026-06-19** (operator P1 exit gate, Decision 4) — authored in the dev graph; `.adna/` materialization stays gated to **P5** (`skill_template_release`). **P2 (`template_home_claude.md` + Step-0 router) CLOSED 2026-06-19** (operator approved the phase-exit, Decision 4; dev graph — `.adna/` ships at P5). The operator returned to Hearthstone for P2 after running WEBSITE P2 (Track A) earlier the same day. **P3 (exemplar bundle) DELIVERABLES COMPLETE 2026-06-19** — both entry gates (CanvasForge→Canvas + PT P5) cleared; bundle upstreamed to the dev graph (`smoke_render.py` + `--parity` green). **Pending the operator P3 exit gate (Decision 4).** See [[mission_hearthstone_p3_exemplar_bundle]].
 >
 > **Cross-vault genesis (2026-06-18).** Chartered by **Hestia** from a `Home.aDNA` session after the operator chose **"full polished base"** in response to *"does `Home.aDNA/` have a public base on GitHub usable to seed new nodes, or can the base system bootstrap its own home graph?"* Authored as a **landing pad** — **Rosetta + operator own activation and every gated decision** (idea ratification, the v8.0 ADR, the public release). Handoff memo: [[who/coordination/coord_2026_06_18_hestia_to_rosetta_hearthstone_charter_handoff]]. Origin plan: `~/.claude/plans/does-the-home-dir-adaptive-fern.md`. Home-side record: `Home.aDNA/how/sessions/history/2026-06/session_2026_06_18_hearthstone_upstream_prep.md`.
 
@@ -95,9 +95,11 @@ This is standard-evolution work → it runs here (Rosetta), authored in the dev 
 ### Phase 3: Exemplar template bundle
 | Mission | Title | Sessions | Dependencies | Status |
 |---|---|---|---|---|
-| 4 | Upstream `template_node_adna_exemplar/`; **fix CanvasForge→Canvas.aDNA drift**; decide ship-with-dep vs optional-degrade; document plugin prereqs | 2 | P1 | planned |
+| 4 | Upstream `template_node_adna_exemplar/`; **fix CanvasForge→Canvas.aDNA drift**; decide ship-with-dep vs optional-degrade; document plugin prereqs | 2 | P1 | **deliverables complete ✅ 2026-06-19** ([[mission_hearthstone_p3_exemplar_bundle]]; pending P3 exit gate) |
 
 **Phase exit gate**: `smoke_render.py --parity` passes; no leftover `{{`; topology dependency resolves to Canvas.aDNA (or degrades cleanly).
+
+**— DELIVERABLES COMPLETE 2026-06-19** ([[mission_hearthstone_p3_exemplar_bundle]]; cross-lane Hestia session per operator "Full M4"): LIVE Home generator repointed `canvasforge→Canvas.aDNA` (Home `2ccda9f`; resolver already staged at `4592eab`/Mondrian ADR-004); bundle copied → `aDNA.aDNA/how/templates/template_node_adna_exemplar/` **byte-identical** to the reference. Source `smoke_render.py` ✅ (0 leftover `{{`) + `--parity` ✅; copy default-smoke ✅; `canvas_std` prereq documented (ADR-004 §4 silent-render trap); all CanvasForge refs read as interim-archive (owner Canvas.aDNA). **M4 scope = CanvasForge→Canvas only**; the other wrapper renames (SiteForge→Astro, etc.) stay for the **pt19** refresh. **— Pending operator P3 exit gate (Decision 4).**
 
 ### Phase 4: Exemplar invocation wiring
 | Mission | Title | Sessions | Dependencies | Status |
@@ -119,15 +121,15 @@ This is standard-evolution work → it runs here (Rosetta), authored in the dev 
 |---|---|---|---|
 | 1 | P0 | Approve campaign scope/phases/mission-sequence; activate (`planning→active`) | **approved 2026-06-18** (operator "activate Hearthstone P0") |
 | 2 | P0/P1 | Ratify the inventory+identity→base **v8.0** ADR ([[adr_035_inventory_identity_base_entity_types]]; + batching with `network_node_mirror`/`permission_edge`) | **approved 2026-06-18** (`adr_035` → `accepted`; batched 2-now / defer-2) |
-| 3 | P3 | CanvasForge→Canvas exemplar dependency: ship-with-dep vs optional-degrade | pending |
-| 4 | each phase | Phase exit gate (human gate — never auto-advance) | P0 exit ✅ 2026-06-18 · P1 exit ✅ 2026-06-19 · **P2 exit ✅ 2026-06-19**; P3–P5 pending |
+| 3 | P3 | CanvasForge→Canvas exemplar dependency: ship-with-dep vs optional-degrade | **recommended: optional-degrade** (the topology resolver already degrades cleanly — falls through path candidates, the `ImportError` guard skips the *optional* canvas; a fresh public clone has neither Canvas.aDNA nor the archive → topology skipped, rest of the home renders) — pending operator confirmation at the P3 exit |
+| 4 | each phase | Phase exit gate (human gate — never auto-advance) | P0 exit ✅ 2026-06-18 · P1 exit ✅ 2026-06-19 · P2 exit ✅ 2026-06-19; **P3 deliverables complete — exit gate pending operator**; P4–P5 pending |
 | 5 | P5 | **Approve the public push** to `aDNA-Network/aDNA` (outward release) | pending |
 
 ## Risk Register
 
 | Risk | Severity | Mitigation |
 |---|---|---|
-| Exemplar bundle references merged-away **CanvasForge** (pt09, 2026-06-17) | High | Repoint `CANVASFORGE_CODE` / `what/canvasforge/CLAUDE.md.template` / topology generator to Canvas.aDNA before release (P3) |
+| Exemplar bundle references merged-away **CanvasForge** (pt09, 2026-06-17) | High | Repoint `CANVASFORGE_CODE` / `what/canvasforge/CLAUDE.md.template` / topology generator to Canvas.aDNA before release (P3) — **RESOLVED 2026-06-19 (M4)**: bundle + LIVE generator name Canvas.aDNA as owner; CanvasForge retained only as the interim archive shim + the (P5-repointed) wrapper-dir name |
 | **Callout-fold `>`-prefix profile** not taught to interview Step 9 (load-bearing) | High | Joint P3↔P4 requirement; `SUBSTITUTIONS.md` parity test gates it |
 | v8.0 ontology cut not coordinated with the other proposed base promotions | Medium | Batch inventory/identity with `network_node_mirror`/`permission_edge` into one clean major (P0 ADR) |
 | Template parity drift vs the evolving `Home.aDNA` reference | Medium | Skeleton-parity invariant + check (the bundle's `SUBSTITUTIONS.md` discipline) |
