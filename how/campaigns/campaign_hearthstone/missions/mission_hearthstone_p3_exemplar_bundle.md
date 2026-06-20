@@ -3,12 +3,12 @@ plan_id: mission_hearthstone_p3_exemplar_bundle
 type: plan
 title: "P3 M4 — Upstream template_node_adna_exemplar/ into the dev graph; finalize CanvasForge→Canvas; canvas_std prereq + Decision 3"
 owner: stanley
-status: in_progress
+status: completed
 campaign_id: campaign_hearthstone
 campaign_phase: 3
 campaign_mission_number: 4
 mission_class: implementation
-status_note: "deliverables complete + verified 2026-06-19 (cross-lane Hestia session, operator-authorized 'Full M4'); status flips → completed on operator P3 exit gate (Decision 4)"
+status_note: "completed 2026-06-19 on operator P3 exit (Decision 4); Decision 3 ratified = optional-degrade (cross-lane Hestia session, operator-authorized 'Full M4')"
 created: 2026-06-19
 updated: 2026-06-19
 last_edited_by: agent_rosetta
@@ -83,7 +83,7 @@ Run both smoke modes from the dev-graph copy; capture output for the SITREP.
 
 ## Completion Summary
 
-*Deliverables complete + verified 2026-06-19; mission `status` flips → `completed` on the operator P3 exit gate (Decision 4).*
+*Completed 2026-06-19 — operator approved the P3 exit gate (Decision 4); Decision 3 ratified = optional-degrade.*
 
 ### Deliverables
 - LIVE `Home.aDNA/what/code/build_topology_canvas.py` — `canvasforge→Canvas.aDNA` repoint (+ NB pt19 comment + 2 docstring substrate renames `CanvasForge`→`canvas_core`); resolver + `canvas_std` sys.path already staged at `4592eab`. **Home commit `2ccda9f`.**
