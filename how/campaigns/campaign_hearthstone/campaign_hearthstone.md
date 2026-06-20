@@ -117,6 +117,8 @@ This is standard-evolution work → it runs here (Rosetta), authored in the dev 
 
 **Phase exit gate**: 7-gate fresh-clone smoke + end-to-end bootstrap dry-run pass; `skill_node_health_check` exits 0; operator approves the public push.
 
+**— P5 SESSION-1 DRY-RUN ✅ 2026-06-19** (cross-lane Hestia; `skill_template_release` dry_run — fresh clone of `aDNA-Network/aDNA`, assemble, diff; NO push). **Hearthstone deliverables verify GREEN**: 7/7 smoke gates (incl. gitignore case-sensitivity + old-URL redirect) · bootstrap a–d (router offers Home · inventory/identity scaffolds · Hestia home CLAUDE · `smoke_render.py` 0 leftover `{{`) · `--parity` ✓ at the reference node. **⚠ KEY FINDING — release-scope decision required before the push:** the public image (`.adna/` @ v7.2) is **~40 ratified files behind** the dev graph (of 215 shipping files: 158 identical · 17 Hearthstone · **40 out-of-batch** ratified-but-unreleased — `/lattice→/aDNA` path sweep [⚠ public-image correctness], AGENTS top-12 edits, doc streamlines, v7.0 publish-skill family, ADR-034 public-face). A wholesale `cp` smuggles the drift; 6 "Hearthstone" files commingle a tiny HS delta with large out-of-batch drift. **Operator must rule SCOPE before session-2: (A) surgical Hearthstone-only v8.0** (per-file delta-extract the 6 contaminated; leave 40 stale) **vs (B) catch-up v8.0** (ship HS + the 40 ratified after confirm-each; fixes the `/lattice` staleness). Record + drift table: `Home.aDNA/how/sessions/history/2026-06/session_2026_06_19_hearthstone_p5_release_dryrun.md`. **Did NOT touch** `aDNA.aDNA/STATE.md`, `site/`, or the live `~/aDNA/.adna/`.
+
 ## Decision Points
 
 | # | When | Decision | Status |
@@ -125,7 +127,8 @@ This is standard-evolution work → it runs here (Rosetta), authored in the dev 
 | 2 | P0/P1 | Ratify the inventory+identity→base **v8.0** ADR ([[adr_035_inventory_identity_base_entity_types]]; + batching with `network_node_mirror`/`permission_edge`) | **approved 2026-06-18** (`adr_035` → `accepted`; batched 2-now / defer-2) |
 | 3 | P3 | CanvasForge→Canvas exemplar dependency: ship-with-dep vs optional-degrade | **recommended: optional-degrade** (the topology resolver already degrades cleanly — falls through path candidates, the `ImportError` guard skips the *optional* canvas; a fresh public clone has neither Canvas.aDNA nor the archive → topology skipped, rest of the home renders) — **ratified optional-degrade 2026-06-19** (operator, at the P3 exit) |
 | 4 | each phase | Phase exit gate (human gate — never auto-advance) | P0 exit ✅ 2026-06-18 · P1 exit ✅ 2026-06-19 · P2 exit ✅ 2026-06-19 · P3 exit ✅ 2026-06-19 · **P4 exit ✅ 2026-06-19**; P5 exit pending (Decision 5) |
-| 5 | P5 | **Approve the public push** to `aDNA-Network/aDNA` (outward release) | pending |
+| 5 | P5 | **Approve the public push** to `aDNA-Network/aDNA` (outward release) | **pending** — dry-run ✅ GREEN 2026-06-19; **now gated on the release-SCOPE ruling** (A surgical Hearthstone-only vs B catch-up of the 40 out-of-batch ratified files) + version confirm (v8.0 vs v7.3) |
+| 6 | P5 | **Release SCOPE** (surfaced by the P5 dry-run): A = surgical Hearthstone-only v8.0 · B = catch-up (HS + 40 ratified out-of-batch, incl. the `/lattice→/aDNA` correctness sweep) | **pending operator** (2026-06-19) |
 
 ## Risk Register
 
@@ -137,6 +140,7 @@ This is standard-evolution work → it runs here (Rosetta), authored in the dev 
 | Template parity drift vs the evolving `Home.aDNA` reference | Medium | Skeleton-parity invariant + check (the bundle's `SUBSTITUTIONS.md` discipline) |
 | Persona hard-coding (Hestia) in the CLAUDE template | Medium | Parametrize `{{persona}}`; persona-accent/greeting lookup |
 | Public push is irreversible/outward | High | Explicit operator gate at P5; gate-fired `skill_template_release` only |
+| **Public image ~40 ratified files behind dev** (surfaced P5 dry-run 2026-06-19) — a `cp`-style assemble smuggles unratified out-of-batch drift; a Hearthstone-only release leaves the image stale (incl. `/lattice` paths) | High | **Operator SCOPE ruling (Decision 6)** before the push: A surgical (per-file Hearthstone-delta extraction for the 6 contaminated files) vs B catch-up (confirm-each of the 40, ship current). Drift table in the P5 dry-run session record |
 
 ## Verification Strategy
 
