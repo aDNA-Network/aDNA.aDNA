@@ -3,7 +3,7 @@ campaign_id: campaign_hearthstone
 type: campaign
 title: "Operation Hearthstone — ship a complete, polished base Home.aDNA into the public template"
 owner: stanley
-status: active
+status: completed
 phase_count: 6
 mission_count: 12
 estimated_sessions: "8-14"
@@ -21,7 +21,7 @@ tags: [campaign, hearthstone, home_adna, base_template, node_bootstrap, ontology
 
 # Campaign: Operation Hearthstone — ship a complete, polished base Home.aDNA into the public template
 
-> **Track B under [[campaign_operation_adna]] — ACTIVE; P0–P4 CLOSED (P0 2026-06-18; P1–P4 2026-06-19); P5 (release & verify) ACTIVE.** Operation aDNA is the program umbrella; Hearthstone is its base-template / node-bootstrap track. P0 activated + closed 2026-06-18: the operator approved scope/activation (Decision 1) **and ratified the v8.0 ontology-promotion ADR** (`adr_035` → `accepted`: `inventory`+`identity` → base entity types 14→16, standard **v2.3**, defer `network_node_mirror`/`permission_edge`). **P1 (entity-type foundations) closed 2026-06-19** (operator P1 exit gate, Decision 4) — authored in the dev graph; `.adna/` materialization stays gated to **P5** (`skill_template_release`). **P2 (`template_home_claude.md` + Step-0 router) CLOSED 2026-06-19** (operator approved the phase-exit, Decision 4; dev graph — `.adna/` ships at P5). The operator returned to Hearthstone for P2 after running WEBSITE P2 (Track A) earlier the same day. **P3 (exemplar bundle) CLOSED 2026-06-19** (operator Decision 4; Decision 3 ratified = optional-degrade) — both entry gates (CanvasForge→Canvas + PT P5) cleared; bundle upstreamed byte-identical to the dev graph (`smoke_render.py` + `--parity` green). **P4 (exemplar invocation wiring) DELIVERABLES COMPLETE + VERIFIED 2026-06-19** (dev graph `266e046`; `.adna/` ships at P5) — interview Topic 6 + Step-9 `>`-prefix callout-fold branch (on a newly-established dev mirror) + fork `--exemplar-home`/Step 4.5; smoke + `--parity` + Athena-profile materialize all green. **— P4 CLOSED 2026-06-19 (operator approved the phase-exit, Decision 4). P5 (release & verify) ACTIVE — executing the `skill_template_release` dry-run + local verification up to the public-push gate (Decision 5).** See [[mission_hearthstone_p5_release_verify]] · [[mission_hearthstone_p4_exemplar_invocation]] · [[mission_hearthstone_p3_exemplar_bundle]].
+> **Track B under [[campaign_operation_adna]] — COMPLETED 2026-06-19; P0–P5 ALL CLOSED. The polished base `Home.aDNA/` shipped to the public `aDNA-Network/aDNA` image as v8.0 (tag `v8.0` @ `adae20c`; SCOPE C — operator Decision 5/6); post-push 13/13 smoke GREEN.** Operation aDNA is the program umbrella; Hearthstone is its base-template / node-bootstrap track. P0 activated + closed 2026-06-18: the operator approved scope/activation (Decision 1) **and ratified the v8.0 ontology-promotion ADR** (`adr_035` → `accepted`: `inventory`+`identity` → base entity types 14→16, standard **v2.3**, defer `network_node_mirror`/`permission_edge`). **P1 (entity-type foundations) closed 2026-06-19** (operator P1 exit gate, Decision 4) — authored in the dev graph; `.adna/` materialization stays gated to **P5** (`skill_template_release`). **P2 (`template_home_claude.md` + Step-0 router) CLOSED 2026-06-19** (operator approved the phase-exit, Decision 4; dev graph — `.adna/` ships at P5). The operator returned to Hearthstone for P2 after running WEBSITE P2 (Track A) earlier the same day. **P3 (exemplar bundle) CLOSED 2026-06-19** (operator Decision 4; Decision 3 ratified = optional-degrade) — both entry gates (CanvasForge→Canvas + PT P5) cleared; bundle upstreamed byte-identical to the dev graph (`smoke_render.py` + `--parity` green). **P4 (exemplar invocation wiring) DELIVERABLES COMPLETE + VERIFIED 2026-06-19** (dev graph `266e046`; `.adna/` ships at P5) — interview Topic 6 + Step-9 `>`-prefix callout-fold branch (on a newly-established dev mirror) + fork `--exemplar-home`/Step 4.5; smoke + `--parity` + Athena-profile materialize all green. **— P4 CLOSED 2026-06-19 (operator Decision 4). P5 CLOSED 2026-06-19 — S1 dry-run surfaced the public-image drift; S2 shipped the SCOPE C real release (operator Decision 5/6) → pushed `v8.0` @ `adae20c`; 13/13 post-push smoke GREEN. CAMPAIGN COMPLETE.** See [[mission_hearthstone_p5_release_verify]] · [[mission_hearthstone_p4_exemplar_invocation]] · [[mission_hearthstone_p3_exemplar_bundle]].
 >
 > **Cross-vault genesis (2026-06-18).** Chartered by **Hestia** from a `Home.aDNA` session after the operator chose **"full polished base"** in response to *"does `Home.aDNA/` have a public base on GitHub usable to seed new nodes, or can the base system bootstrap its own home graph?"* Authored as a **landing pad** — **Rosetta + operator own activation and every gated decision** (idea ratification, the v8.0 ADR, the public release). Handoff memo: [[who/coordination/coord_2026_06_18_hestia_to_rosetta_hearthstone_charter_handoff]]. Origin plan: `~/.claude/plans/does-the-home-dir-adaptive-fern.md`. Home-side record: `Home.aDNA/how/sessions/history/2026-06/session_2026_06_18_hearthstone_upstream_prep.md`.
 
@@ -113,11 +113,13 @@ This is standard-evolution work → it runs here (Rosetta), authored in the dev 
 ### Phase 5: Release & verify (outward publish)
 | Mission | Title | Sessions | Dependencies | Status |
 |---|---|---|---|---|
-| 6 | `skill_template_release` (assemble · embed-note · v8.0 two-track bump · tag · **push**) + fresh-clone smoke + real bootstrap dry-run | 1-2 | P2,P4 | **active 2026-06-19** ([[mission_hearthstone_p5_release_verify]]; session 1 = dry-run + local verify, stops at the public-push gate Decision 5) |
+| 6 | `skill_template_release` (assemble · embed-note · v8.0 two-track bump · tag · **push**) + fresh-clone smoke + real bootstrap dry-run | 1-2 | P2,P4 | **completed ✅ 2026-06-19** ([[mission_hearthstone_p5_release_verify]]; S1 = dry-run; S2 = SCOPE C real release pushed `v8.0` @ `adae20c`) |
 
 **Phase exit gate**: 7-gate fresh-clone smoke + end-to-end bootstrap dry-run pass; `skill_node_health_check` exits 0; operator approves the public push.
 
 **— P5 SESSION-1 DRY-RUN ✅ 2026-06-19** (cross-lane Hestia; `skill_template_release` dry_run — fresh clone of `aDNA-Network/aDNA`, assemble, diff; NO push). **Hearthstone deliverables verify GREEN**: 7/7 smoke gates (incl. gitignore case-sensitivity + old-URL redirect) · bootstrap a–d (router offers Home · inventory/identity scaffolds · Hestia home CLAUDE · `smoke_render.py` 0 leftover `{{`) · `--parity` ✓ at the reference node. **⚠ KEY FINDING — release-scope decision required before the push:** the public image (`.adna/` @ v7.2) is **~40 ratified files behind** the dev graph (of 215 shipping files: 158 identical · 17 Hearthstone · **40 out-of-batch** ratified-but-unreleased — `/lattice→/aDNA` path sweep [⚠ public-image correctness], AGENTS top-12 edits, doc streamlines, v7.0 publish-skill family, ADR-034 public-face). A wholesale `cp` smuggles the drift; 6 "Hearthstone" files commingle a tiny HS delta with large out-of-batch drift. **Operator must rule SCOPE before session-2: (A) surgical Hearthstone-only v8.0** (per-file delta-extract the 6 contaminated; leave 40 stale) **vs (B) catch-up v8.0** (ship HS + the 40 ratified after confirm-each; fixes the `/lattice` staleness). Record + drift table: `Home.aDNA/how/sessions/history/2026-06/session_2026_06_19_hearthstone_p5_release_dryrun.md`. **Did NOT touch** `aDNA.aDNA/STATE.md`, `site/`, or the live `~/aDNA/.adna/`.
+
+**— P5 SESSION-2 REAL RELEASE ✅ 2026-06-19 → PHASE 5 + CAMPAIGN COMPLETE** (cross-lane Hestia; operator Decision 5 "Push v8.0 now" + Decision 6 = SCOPE C). Assembled **selectively** (baseline = fresh public clone + apply only the ratified delta; per-file delta-extract the 6 contaminated — `skill_project_fork`/`templates/AGENTS.md` additive HS · `agent_first_guide`/`migration_guide`/`what/AGENTS.md` 14→16 · router gained the Home offer additively + the root `CLAUDE.md` re-instantiated). **25 changes (6 new + 19 modified); drift-leak check ✓ none.** **`/lattice` sweep reduced to 1 line** (the image's `~/lattice` refs are intentional; the Cluster-1 "drift" is doc streamlines → deferred). Pushed `main` `f06454c..adae20c` + annotated tag `v8.0`; local `~/aDNA/.adna` synced to v8.0 (`ad72979`) + install_truth no-op (version-agnostic clone). **Pre- AND post-push smoke 13/13 GREEN.** Improved on the S1 dry-run (its wholesale router `cp` would have regressed the Berthier content + never re-instantiated the root). **Deferred → catch-up release:** the ~40 out-of-batch (AGENTS top-12, doc streamlines, v7.0 publish-family, ADR-034 public-face docs) + pre-existing broken `adr_009` links / stale fork mechanics. Record: `Home.aDNA/how/sessions/history/2026-06/session_2026_06_19_hearthstone_p5_session2_release.md`.
 
 ## Decision Points
 
@@ -127,7 +129,7 @@ This is standard-evolution work → it runs here (Rosetta), authored in the dev 
 | 2 | P0/P1 | Ratify the inventory+identity→base **v8.0** ADR ([[adr_035_inventory_identity_base_entity_types]]; + batching with `network_node_mirror`/`permission_edge`) | **approved 2026-06-18** (`adr_035` → `accepted`; batched 2-now / defer-2) |
 | 3 | P3 | CanvasForge→Canvas exemplar dependency: ship-with-dep vs optional-degrade | **recommended: optional-degrade** (the topology resolver already degrades cleanly — falls through path candidates, the `ImportError` guard skips the *optional* canvas; a fresh public clone has neither Canvas.aDNA nor the archive → topology skipped, rest of the home renders) — **ratified optional-degrade 2026-06-19** (operator, at the P3 exit) |
 | 4 | each phase | Phase exit gate (human gate — never auto-advance) | P0 exit ✅ 2026-06-18 · P1 exit ✅ 2026-06-19 · P2 exit ✅ 2026-06-19 · P3 exit ✅ 2026-06-19 · **P4 exit ✅ 2026-06-19**; P5 exit pending (Decision 5) |
-| 5 | P5 | **Approve the public push** to `aDNA-Network/aDNA` (outward release) | **pending** — dry-run ✅ GREEN 2026-06-19; scope ruled (Decision 6 = C); now gated on **session-2** producing the scope-C release + operator push confirm + version confirm (v8.0 vs v7.3) |
+| 5 | P5 | **Approve the public push** to `aDNA-Network/aDNA` (outward release) | **approved 2026-06-19** (operator "Push v8.0 now") — SCOPE C release pushed: `main` `f06454c..adae20c` + annotated tag `v8.0`; governance **8.0** / standard **v2.3** (operator confirmed v8.0 over the ADR-011 v7.3 minor reading); post-push 13/13 smoke GREEN |
 | 6 | P5 | **Release SCOPE** (surfaced by the P5 dry-run): A = surgical Hearthstone-only · B = full catch-up (40 out-of-batch) · C = Hearthstone + user-facing correctness sweep | **operator chose C 2026-06-19** — ship HS + new artifacts + the `/lattice→/aDNA` correctness fixes; per-file delta-extract the 6 contaminated; defer cosmetic drift (AGENTS top-12 / doc streamlines / v7.0 publish-family). **Nuance (verified):** the released image has **~56 `~/lattice` refs**, but **some are intentional** (migration tooling references the old path on purpose) — session-2 scopes the sweep **per-file from the `776d724` canonical sweep**, NOT a blind replace |
 
 ## Risk Register
@@ -169,20 +171,62 @@ Per-mission / per-phase / campaign checks per `template_campaign.md` defaults (S
 
 ## Completion Summary
 
-*Fill out when setting `status: completed`.*
+**COMPLETED 2026-06-19** — shipped v8.0 to `aDNA-Network/aDNA` (tag `v8.0` @ `adae20c`). A fresh
+`git clone … && claude` now detects no node vault, **offers to bootstrap `Home.aDNA/`**, and produces a
+polished Hestia home out of the box. All 6 phases closed at operator gates.
 
 ### Deliverables
+- **`inventory` + `identity` → base entity types** (standard v2.2→**v2.3**, ADR-035; 16 base): genericized
+  `what/inventory/` + `who/identity/` scaffolds, `template_inventory_entry.md` + `template_identity_entry.md`,
+  `ontology.md` rows 15/16, `.adna/CLAUDE.md` + `MANIFEST.md` tables, `adna_core/*`.
+- **`template_home_claude.md`** (Hestia/persona-portable governance) + Home-class fork install
+  (`skill_project_fork` Step 3.5).
+- **Workspace-router Step-2.5 "offer to bootstrap `Home.aDNA/`"** (opt-in, no-nag) in both the
+  `template_workspace_claude.md` and the re-instantiated public root `CLAUDE.md`.
+- **`template_node_adna_exemplar/`** premium themed HOME bundle + invocation wiring (interview Topic 6 +
+  Step-9 `>`-prefix callout-fold profile; `skill_project_fork --exemplar-home`/Step 4.5).
+- **Released v8.0** (governance 7.2→8.0, standard v2.2→v2.3) via `skill_template_release` at SCOPE C.
+
 ### Descoped
+Non-Home CLAUDE templates · terminal cold-start splash (`idea_upstream_lattice_home_pattern`) · retroactive
+re-bootstrap of existing nodes · multi-node/partner rollout (Network/Venus). *(All chartered out of scope.)*
+
 ### Key Findings
+- The public image was **~40 ratified files behind** dev (215 shipping = 158 identical / 17 HS / 40 out-of-batch).
+  The S1 dry-run surfaced it; a wholesale `cp` would have smuggled unratified drift. → SCOPE C.
+- The **`/lattice` correctness sweep was nearly empty** — the image's `~/lattice` refs are intentional
+  (historical records + migration tooling); the "Cluster-1" out-of-batch delta is **doc streamlines**, not path
+  bugs. The real fix was **1 line**. Validated the operator's "per-file from 776d724, NOT blind replace."
+- **"Contaminated" is scope-relative**: under SCOPE C, `skill_project_fork` + the router still needed surgical
+  extraction, but for different reasons than the S1 dry-run's label implied — hunk-level verification (not the
+  X/Y count) is the ground truth.
+- The S1 dry-run's router approach (wholesale dev-`File X` → public-`File Y` `cp`) was a **latent defect**:
+  it would have regressed the Berthier router content, injected `{{vars}}`, and never re-instantiated the root
+  `CLAUDE.md`. S2 fixed it additively.
+- `adr_009`/`adr_035` **don't ship to `.adna/`** → cite by name, never as markdown links (avoid dangling links).
+
 ### Scope Changes
+**Decision 6 = SCOPE C** (operator, 2026-06-19): ship Hearthstone + the user-facing `/lattice→/aDNA` correctness
+fix; per-file delta-extract the 6 contaminated; **defer** the broader out-of-batch drift to a catch-up release.
+
 ### Follow-Up Campaigns
+- **Catch-up release** for the deferred out-of-batch drift (AGENTS top-12 · doc streamlines · v7.0 publish-skill
+  family · ADR-034 public-face docs · the pre-existing broken `adr_009` links + stale fork mechanics in
+  `skill_project_fork`).
+- **Operation Prytaneion** resumes as Home prime (PT P8) — Home page/topology/Obsidian exemplar arc.
 
 ## Campaign AAR
 
-*Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
-
-- **Worked**:
-- **Didn't**:
-- **Finding**:
-- **Change**:
-- **Follow-up**:
+- **Worked**: the **selective-assembly + per-file delta-extraction** kept the public release surgically clean —
+  drift-leak check ✓ none, verified 13/13 pre- AND post-push. The S1 dry-run's drift finding is what prevented a
+  wholesale-`cp` accident. Six operator gates kept every irreversible step human-ratified.
+- **Didn't**: the S1 dry-run shipped a router shortcut (wholesale `cp`) that looked green on its narrow smoke but
+  was regressive + skipped root re-instantiation — only hunk-level verification in S2 caught it.
+- **Finding**: a release "contamination" list is **scope-dependent** — the same file is clean or contaminated
+  depending on whether the lattice/streamline deltas are in-scope; always classify hunks against the actual diff,
+  not the dry-run's label or the commit history (dev and the public image are different lineages).
+- **Change**: codified the **SCOPE-C selective-release recipe** (baseline = fresh public clone + apply only the
+  ratified delta; per-file extract the contaminated; drift-leak grep before commit) as the reusable pattern when
+  the public image lags dev — reusable for the catch-up release.
+- **Follow-up**: the catch-up release (deferred drift + pre-existing broken `adr_009`/fork-mechanics debts); file
+  an upstream note that `build_install_truth` install commands are version-agnostic (no per-release fixture bump).

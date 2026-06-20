@@ -5,7 +5,7 @@ campaign: campaign_hearthstone
 phase: P5
 mission_number: 6
 title: "Release & verify — skill_template_release (assemble · v8.0 two-track bump · push) + fresh-clone smoke + bootstrap dry-run"
-status: active
+status: completed
 class: release
 created: 2026-06-19
 updated: 2026-06-19
@@ -17,10 +17,11 @@ tags: [mission, hearthstone, p5, release, template_release, dry_run, public_face
 
 # Mission 6 (P5) — Release & Verify (outward publish)
 
-> **ACTIVE 2026-06-19.** Session 1 scope (operator-chosen) = **dry-run + local verification, STOP at the
-> public-push gate (Decision 5)**. The real push + tag + local `.adna` sync + post-push smoke + campaign
-> close are **deferred to a follow-up session on Decision 5 approval** (Step 7 of the plan). Cross-lane
-> Hestia per the P2/P3/P4 pattern. Plan: `~/.claude/plans/please-read-the-claude-md-tingly-pelican.md`.
+> **COMPLETED 2026-06-19.** S1 = dry-run (surfaced the public-image drift → operator SCOPE C ruling). S2 =
+> the real release: assembled SCOPE C selectively (per-file delta-extract the 6 contaminated), pushed `v8.0`
+> @ `adae20c` (operator Decision 5 "Push v8.0 now"), synced local `~/aDNA/.adna`, post-push smoke 13/13 GREEN,
+> closed P5 + campaign. Cross-lane Hestia per P2/P3/P4. Plans: S1 `please-read-the-claude-md-tingly-pelican.md`
+> · S2 `please-read-the-claude-md-melodic-volcano.md`.
 
 ## Objective
 
@@ -69,11 +70,11 @@ the push gate. Image tag `v8.0` continues the line v7.0 → v7.1 → v8.0.
 
 | # | Deliverable | Done |
 |---|---|---|
-| 1 | Pre-flight: clean-tree + ratified-trace re-confirm; assembly source-map recorded (above) + `root_surfaces_changed` determined | ⏳ |
-| 2 | `skill_template_release` **dry_run**: fresh clone → assemble v8.0 deltas into throwaway `.adna/` → embed-note transform → stage version bumps → **diff** (the "what would ship" preview). NO commit/tag/push; live `~/aDNA/.adna/` untouched | ⏳ |
-| 3 | 7-gate fresh-clone smoke (skill Step (f), pre-push variant) against the assembled tree | ⏳ |
-| 4 | Hestia bootstrap dry-run: (a) router offers Home · (b) fork yields `Home.aDNA/{what/inventory,who/identity}`+`AGENTS.md` · (c) CLAUDE.md is Hestia · (d) exemplar HOME renders 0 leftover `{{` (`smoke_render.py --materialize`) · (e) `skill_node_health_check` exit 0 | ⏳ |
-| 5 | Release session record (source-map · diff summary · smoke results · bootstrap results · version note) + Decision-5 gate presented | ⏳ |
+| 1 | Pre-flight: clean-tree + ratified-trace re-confirm; assembly source-map recorded (above) + `root_surfaces_changed` determined | ✅ |
+| 2 | `skill_template_release` **dry_run**: fresh clone → assemble v8.0 deltas into throwaway `.adna/` → embed-note transform → stage version bumps → **diff** (the "what would ship" preview). NO commit/tag/push; live `~/aDNA/.adna/` untouched | ✅ |
+| 3 | 7-gate fresh-clone smoke (skill Step (f), pre-push variant) against the assembled tree | ✅ |
+| 4 | Hestia bootstrap dry-run: (a) router offers Home · (b) fork yields `Home.aDNA/{what/inventory,who/identity}`+`AGENTS.md` · (c) CLAUDE.md is Hestia · (d) exemplar HOME renders 0 leftover `{{` (`smoke_render.py --materialize`) · (e) `skill_node_health_check` exit 0 | ✅ |
+| 5 | Release session record (source-map · diff summary · smoke results · bootstrap results · version note) + Decision-5 gate presented | ✅ |
 
 ## Deferred — session 2 (on Decision 5 approval) — the real release
 
@@ -91,4 +92,14 @@ bootstrap (a)–(e) pass with health-check exit 0 and zero leftover `{{`.
 
 ## AAR
 
-*Filled at mission close (after the real release, session 2). Session-1 dry-run AAR recorded in the session file.*
+- **Worked**: the S1 dry-run's drift finding drove the SCOPE-C selective assembly (baseline = fresh public clone
+  + ratified delta only); per-file delta-extraction shipped exactly 25 changes with a verified ✓-none drift leak,
+  13/13 smoke both pre- and post-push.
+- **Didn't**: the S1 dry-run's wholesale router `cp` was a latent defect (regressed Berthier content, injected
+  `{{vars}}`, skipped root re-instantiation) — caught only by S2 hunk-level verification, not by the S1 smoke.
+- **Finding**: "contaminated" is scope-relative + the dev/public lineages differ — classify hunks against the
+  live diff, not the X/Y label or the commit graph. The `/lattice` sweep collapsed to **1 line** (rest intentional).
+- **Change**: codified the SCOPE-C selective-release recipe (`assemble_scope_c.sh` + `smoke_scope_c.sh` persisted
+  in the session scratch) as the reusable pattern for releasing when the public image lags dev.
+- **Follow-up**: catch-up release for the ~40 deferred out-of-batch files + the pre-existing broken `adr_009`
+  links / stale fork mechanics in `skill_project_fork`.
