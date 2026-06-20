@@ -35,10 +35,11 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
       </div>
     </details>
 
-    <aside class="doc-sidebar" aria-label="Documentation navigation">
-      <SidebarNav />
-    </aside>
-
+    <!-- SP-2 (H-1/H-2): the <article> (with its <h1>) comes BEFORE the <aside> sidebars in
+         DOM so a screen reader / agent reads breadcrumb → h1 → content before the ~100 nav
+         links. The visual column order (sidebar | content | toc) is restored via
+         grid-template-areas below, so there is no visual change. The skip-link (#main-content)
+         now lands on the content, not the sidebar. -->
     <article class="doc-content prose">
       <Breadcrumb pageTitle={title} />
       {heroImage && (
@@ -55,6 +56,10 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
       <slot />
       {(prev || next) && <PrevNextNav prev={prev} next={next} />}
     </article>
+
+    <aside class="doc-sidebar" aria-label="Documentation navigation">
+      <SidebarNav />
+    </aside>
 
     <aside class="doc-toc" aria-label="Table of contents">
       {headings.length > 0 && <TOCPanel headings={headings} />}
@@ -116,6 +121,7 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
 
   .doc-sidebar {
     display: none;
+    grid-area: sidebar;
     position: sticky;
     top: 3.5rem;
     height: calc(100vh - 3.5rem);
@@ -169,6 +175,7 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
   }
 
   .doc-content {
+    grid-area: content;
     padding: var(--space-8) var(--space-6);
     min-width: 0;
     overflow-x: hidden;
@@ -187,6 +194,7 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
 
   .doc-toc {
     display: none;
+    grid-area: toc;
     position: sticky;
     top: 3.5rem;
     height: calc(100vh - 3.5rem);
@@ -198,6 +206,7 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
   @media (min-width: 768px) {
     .doc-layout {
       grid-template-columns: var(--sidebar-width) 1fr;
+      grid-template-areas: "sidebar content";
     }
 
     .doc-sidebar {
@@ -213,6 +222,7 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
   @media (min-width: 1280px) {
     .doc-layout {
       grid-template-columns: var(--sidebar-width) 1fr var(--toc-width);
+      grid-template-areas: "sidebar content toc";
     }
 
     .doc-toc {

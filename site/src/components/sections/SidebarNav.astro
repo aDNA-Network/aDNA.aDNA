@@ -21,8 +21,8 @@ const groupIcons: Record<string, string> = {
   'For you': iconCommunity,
 };
 
-// Network-audit H4: every doc page rendered all 7 groups (~100 links). Scope the open tree to the
-// section the reader is in; keep every section one click away via a compact switcher at the top.
+// Network-audit H4 + SP-2: every doc page rendered all 7 groups (~100 links). Scope the open tree to
+// the section the reader is in; keep every section one click away via a compact switcher at the top.
 const under = (href: string) => {
   const h = href.replace(/\/$/, '');
   return currentPath === h || currentPath.startsWith(h + '/');
@@ -40,8 +40,10 @@ function entryHref(group: NavGroup): string {
 }
 
 const activeGroup = navigation.find(inGroup) ?? null;
-// Fall back to the full tree only when the page isn't in the nav (no active section to scope to).
-const shownGroups: NavGroup[] = activeGroup ? [activeGroup] : navigation;
+// SP-2: when the page isn't in any nav section, show NO expanded group rather than dumping the full
+// ~100-link tree (the reading-order / nav-serialization defect). The switcher above still puts every
+// section one click away.
+const shownGroups: NavGroup[] = activeGroup ? [activeGroup] : [];
 ---
 
 <nav class="sidebar-nav" aria-label="Documentation sections">
@@ -64,12 +66,12 @@ const shownGroups: NavGroup[] = activeGroup ? [activeGroup] : navigation;
 
   {shownGroups.map((group: NavGroup) => (
     <div class="nav-group">
-      <h3 class="group-label">
+      <p class="group-label">
         {groupIcons[group.label] && (
           <span class="group-icon" aria-hidden="true" set:html={groupIcons[group.label]} />
         )}
         <span>{group.label}</span>
-      </h3>
+      </p>
       <ul class="group-list">
         {group.items.map((item) => {
           if (isSubgroup(item)) {

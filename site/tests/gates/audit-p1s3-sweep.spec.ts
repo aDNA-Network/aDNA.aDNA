@@ -124,13 +124,17 @@ for (const { name, path: route } of routes) {
 test('P1S3 probe: sidebar section-switcher present + scoped at 375px (doc page) @audit', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto('/learn/concepts/triad/', { waitUntil: 'networkidle' });
-  // S4 scoping contract: exactly one active section group + the 7-section switcher.
-  const groups = page.locator('.nav-group');
+  // S4 scoping contract: the VISIBLE mobile nav at 375px renders exactly the active section group
+  // (not the full 7-group tree) + the section switcher. The doc layout renders SidebarNav twice —
+  // the .doc-mobile-nav disclosure (shown <768px) and the .doc-sidebar aside (shown >=768px,
+  // CSS-hidden here) — so scope the scoping assertion to the visible mobile nav. (SP-2; the
+  // content-first DOM reorder + h3->p group label + capped fallback land in the same decade.)
+  const groups = page.locator('.doc-mobile-nav .nav-group');
   const groupCount = await groups.count();
   const switcherLinks = await page.locator('nav a, aside a').count();
   record('probe', 'sidebar_switcher_375', { groupCount, anyNavLinks: switcherLinks });
   await page.screenshot({ path: path.join(EVIDENCE, 'shots', 'sidebar_switcher_375.png'), fullPage: false });
-  expect(groupCount, 'sidebar renders exactly the active section group').toBeLessThanOrEqual(1 + 0); // 1 scoped group
+  expect(groupCount, 'mobile sidebar renders exactly the active section group (scoped, not the full tree)').toBeLessThanOrEqual(1);
   expect(switcherLinks).toBeGreaterThan(0);
 });
 
