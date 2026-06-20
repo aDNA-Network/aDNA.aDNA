@@ -3,11 +3,12 @@ plan_id: mission_hearthstone_p2_step0_router_fork_wiring
 type: plan
 title: "P2 M3 — Step-0 Node Vault Detection router block + skill_project_fork Home-class branch (dev graph)"
 owner: stanley
-status: active
+status: completed
 campaign_id: campaign_hearthstone
 campaign_phase: 2
 campaign_mission_number: 3
 mission_class: implementation
+status_note: completed 2026-06-19 on operator P2 phase-exit (Decision 4)
 created: 2026-06-19
 updated: 2026-06-19
 last_edited_by: agent_rosetta
@@ -21,7 +22,7 @@ tags: [plan, campaign, hearthstone, p2, step0_router, node_vault_detection, proj
 **Campaign**: [[how/campaigns/campaign_hearthstone/campaign_hearthstone|campaign_hearthstone]] (Track B under [[how/campaigns/campaign_operation_adna/campaign_operation_adna|campaign_operation_adna]])
 **Phase**: 2 — Base Home self-sufficiency · **Mission**: 3 of ~7
 
-> **⏳ DELIVERABLES COMPLETE + VERIFIED 2026-06-19 — awaiting operator P2 phase-exit (Decision 4).** Authored in the dev graph only; `.adna/` materialization is gated to **P5** (`skill_template_release`). Flip to `completed` on operator phase-exit approval (Standing Order #1).
+> **✅ CLOSED 2026-06-19 — operator approved the P2 phase-exit (Decision 4).** Deliverables complete + verified in the dev graph; `.adna/` materialization is gated to **P5** (`skill_template_release`).
 
 ## Goal
 

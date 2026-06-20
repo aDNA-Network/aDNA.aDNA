@@ -21,7 +21,7 @@ tags: [campaign, hearthstone, home_adna, base_template, node_bootstrap, ontology
 
 # Campaign: Operation Hearthstone — ship a complete, polished base Home.aDNA into the public template
 
-> **Track B under [[campaign_operation_adna]] — ACTIVE; P0 + P1 CLOSED 2026-06-19.** Operation aDNA is the program umbrella; Hearthstone is its base-template / node-bootstrap track. P0 activated + closed 2026-06-18: the operator approved scope/activation (Decision 1) **and ratified the v8.0 ontology-promotion ADR** (`adr_035` → `accepted`: `inventory`+`identity` → base entity types 14→16, standard **v2.3**, defer `network_node_mirror`/`permission_edge`). **P1 (entity-type foundations) closed 2026-06-19** (operator P1 exit gate, Decision 4) — authored in the dev graph; `.adna/` materialization stays gated to **P5** (`skill_template_release`). **P2 (`template_home_claude.md` + Step-0 router) deliverables COMPLETE + VERIFIED 2026-06-19** (dev graph; awaiting operator P2 phase-exit, Decision 4) — the operator returned to Hearthstone for P2 after running WEBSITE P2 (Track A) earlier the same day.
+> **Track B under [[campaign_operation_adna]] — ACTIVE; P0 + P1 + P2 CLOSED (P0 2026-06-18; P1 + P2 2026-06-19).** Operation aDNA is the program umbrella; Hearthstone is its base-template / node-bootstrap track. P0 activated + closed 2026-06-18: the operator approved scope/activation (Decision 1) **and ratified the v8.0 ontology-promotion ADR** (`adr_035` → `accepted`: `inventory`+`identity` → base entity types 14→16, standard **v2.3**, defer `network_node_mirror`/`permission_edge`). **P1 (entity-type foundations) closed 2026-06-19** (operator P1 exit gate, Decision 4) — authored in the dev graph; `.adna/` materialization stays gated to **P5** (`skill_template_release`). **P2 (`template_home_claude.md` + Step-0 router) CLOSED 2026-06-19** (operator approved the phase-exit, Decision 4; dev graph — `.adna/` ships at P5). The operator returned to Hearthstone for P2 after running WEBSITE P2 (Track A) earlier the same day. **P3 (exemplar bundle) is the next ready arc** — gated on CanvasForge→Canvas + PT P5.
 >
 > **Cross-vault genesis (2026-06-18).** Chartered by **Hestia** from a `Home.aDNA` session after the operator chose **"full polished base"** in response to *"does `Home.aDNA/` have a public base on GitHub usable to seed new nodes, or can the base system bootstrap its own home graph?"* Authored as a **landing pad** — **Rosetta + operator own activation and every gated decision** (idea ratification, the v8.0 ADR, the public release). Handoff memo: [[who/coordination/coord_2026_06_18_hestia_to_rosetta_hearthstone_charter_handoff]]. Origin plan: `~/.claude/plans/does-the-home-dir-adaptive-fern.md`. Home-side record: `Home.aDNA/how/sessions/history/2026-06/session_2026_06_18_hearthstone_upstream_prep.md`.
 
@@ -85,12 +85,12 @@ This is standard-evolution work → it runs here (Rosetta), authored in the dev 
 ### Phase 2: Base Home self-sufficiency (minimal-correct core)
 | Mission | Title | Sessions | Dependencies | Status |
 |---|---|---|---|---|
-| 2 | `template_home_claude.md` (genericized Hestia CLAUDE.md) | 1-2 | P1 | **deliverables ✅ 2026-06-19** (awaiting P2 exit) |
-| 3 | Step-0 router "offer to bootstrap Home" + wire `skill_project_fork.md` Home-class install | 1 | P1 | **deliverables ✅ 2026-06-19** (awaiting P2 exit) |
+| 2 | `template_home_claude.md` (genericized Hestia CLAUDE.md) | 1-2 | P1 | **completed ✅ 2026-06-19** ([[mission_hearthstone_p2_home_claude_template]]) |
+| 3 | Step-0 router "offer to bootstrap Home" + wire `skill_project_fork.md` Home-class install | 1 | P1 | **completed ✅ 2026-06-19** ([[mission_hearthstone_p2_step0_router_fork_wiring]]) |
 
 **Phase exit gate**: a fresh Home-class fork yields a complete, correct (plain) Hestia Home, and the router *offers* it unprompted.
 
-**— DELIVERABLES COMPLETE + VERIFIED 2026-06-19** ([[mission_hearthstone_p2_home_claude_template]] + [[mission_hearthstone_p2_step0_router_fork_wiring]]; dev-graph only, `.adna/` ships at P5). Scratch-fork sim: 0 leftover `{{` · Hestia present / Berthier absent · `what/inventory`+`who/identity` resolve · skeleton-parity vs reference = 3 intentional genericizations. Router Step 0.1–0.5 (+ Lab opt-in offer per Lab ADR-006 D2) with 0 site-leakage; fork Step 3.5 installs the template. **Awaiting operator P2 phase-exit (Decision 4) — never auto-advance.**
+**— DELIVERABLES COMPLETE + VERIFIED 2026-06-19** ([[mission_hearthstone_p2_home_claude_template]] + [[mission_hearthstone_p2_step0_router_fork_wiring]]; dev-graph only, `.adna/` ships at P5). Scratch-fork sim: 0 leftover `{{` · Hestia present / Berthier absent · `what/inventory`+`who/identity` resolve · skeleton-parity vs reference = 3 intentional genericizations. Router Step 0.1–0.5 (+ Lab opt-in offer per Lab ADR-006 D2) with 0 site-leakage; fork Step 3.5 installs the template. **— P2 CLOSED 2026-06-19: operator approved the phase-exit (Decision 4). Next ready arc = P3 (exemplar bundle; gated on CanvasForge→Canvas + PT P5).**
 
 ### Phase 3: Exemplar template bundle
 | Mission | Title | Sessions | Dependencies | Status |
@@ -120,7 +120,7 @@ This is standard-evolution work → it runs here (Rosetta), authored in the dev 
 | 1 | P0 | Approve campaign scope/phases/mission-sequence; activate (`planning→active`) | **approved 2026-06-18** (operator "activate Hearthstone P0") |
 | 2 | P0/P1 | Ratify the inventory+identity→base **v8.0** ADR ([[adr_035_inventory_identity_base_entity_types]]; + batching with `network_node_mirror`/`permission_edge`) | **approved 2026-06-18** (`adr_035` → `accepted`; batched 2-now / defer-2) |
 | 3 | P3 | CanvasForge→Canvas exemplar dependency: ship-with-dep vs optional-degrade | pending |
-| 4 | each phase | Phase exit gate (human gate — never auto-advance) | P0 exit ✅ 2026-06-18 · P1 exit ✅ 2026-06-19 · **P2 deliverables ✅ 2026-06-19 (exit pending)**; P3–P5 pending |
+| 4 | each phase | Phase exit gate (human gate — never auto-advance) | P0 exit ✅ 2026-06-18 · P1 exit ✅ 2026-06-19 · **P2 exit ✅ 2026-06-19**; P3–P5 pending |
 | 5 | P5 | **Approve the public push** to `aDNA-Network/aDNA` (outward release) | pending |
 
 ## Risk Register
