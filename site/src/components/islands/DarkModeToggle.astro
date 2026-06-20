@@ -38,6 +38,10 @@
     color: var(--color-text-muted);
     cursor: pointer;
     padding: var(--space-1);
+    /* SP-7 / M-5 (D4 C3): 44px min touch target — match the .mobile-menu-btn pattern (the icon
+       stays 18px and is centred in the 44px box; no visual-weight change). */
+    min-height: 44px;
+    min-width: 44px;
     border-radius: var(--radius-md);
     transition: color var(--transition-fast), background var(--transition-fast);
   }

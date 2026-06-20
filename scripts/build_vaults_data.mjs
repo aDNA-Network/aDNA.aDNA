@@ -249,22 +249,32 @@ fs.writeFileSync(OUTPUT_JSON, jsonOutput);
 console.log(`[build_vaults_data] wrote ${OUTPUT_JSON} (${projectedVaults.length} vaults; ${edges.length} edges; sha ${inventorySha})`);
 
 // Build Mermaid DSL output (vaults_graph.mmd)
+// SP-5/H-5 (D4 C3, Option A — operator decision 2026-06-19): the 15-hue categorical palette was an
+// "undecoded rainbow" (c158 finding) that broke the restraint doctrine and failed gate G9 (≤2 accent
+// hues). Collapse to ONE neutral chip for every class; reserve a single brand-cyan accent for the
+// standard this network documents (aDNA.aDNA) and a muted grey for retired/superseded vaults. Class is
+// now read from each node's label + the /vaults/graph census, not from hue — so the edges (the real,
+// directed relationships) become the figure. Fills stay light-with-black-text (the chip is its own
+// ground), legible on both the light and dark canvas; gate-18 lints the ≤2-hue budget.
+const NODE_NEUTRAL = '#d3d5db';   // light slate — every vault, uniform
+const NODE_STANDARD = '#7dcfff';  // Tokyo-Night cyan — the one accent: the standard (aDNA.aDNA)
+const NODE_RETIRED = '#9ea3ad';   // muted grey — superseded/retired (desaturated; not a hue)
 const classColors = {
-  forge: '#e07798',
-  framework: '#16a766',
-  framework_candidate: '#a0eac9',
-  platform: '#4a86e8',
-  org_vault: '#ffad47',
-  standard_dev: '#fad165',
-  org_graph: '#a479e2',
-  network: '#fb4c2f',
-  node_operational: '#43d692',
-  coordination: '#0d3b44',
-  document: '#cccccc',
-  knowledge_graph: '#98d7e4',
-  tooling: '#b694e8',
-  workspace: '#efefef',
-  superseded: '#666666',
+  forge: NODE_NEUTRAL,
+  framework: NODE_NEUTRAL,
+  framework_candidate: NODE_NEUTRAL,
+  platform: NODE_NEUTRAL,
+  org_vault: NODE_NEUTRAL,
+  standard_dev: NODE_STANDARD,
+  org_graph: NODE_NEUTRAL,
+  network: NODE_NEUTRAL,
+  node_operational: NODE_NEUTRAL,
+  coordination: NODE_NEUTRAL,
+  document: NODE_NEUTRAL,
+  knowledge_graph: NODE_NEUTRAL,
+  tooling: NODE_NEUTRAL,
+  workspace: NODE_NEUTRAL,
+  superseded: NODE_RETIRED,
 };
 
 const edgeStyles = {
@@ -323,6 +333,17 @@ if (supersedesIdx.length) {
 mmdLines.push('');
 for (const [cls, color] of Object.entries(classColors)) {
   mmdLines.push(`  classDef class${cls.replace(/_/g, '')} fill:${color},stroke:#333,color:#000`);
+}
+// Any class that appears on a node but isn't in the palette above (e.g. the genesis-stub `tbd_at_p0`)
+// falls back to NEUTRAL — so no node drops to Mermaid's default (dark) style and the legend's universal
+// "every box shares one fill" claim stays true. (D4 C3 follow-through: the rainbow collapse made the lone
+// unmapped box salient and made that legend claim load-bearing.)
+const mappedClasses = new Set(Object.keys(classColors));
+const unmappedClasses = [...new Set(projectedVaults.map((v) => v.class))]
+  .filter((cls) => !mappedClasses.has(cls))
+  .sort();
+for (const cls of unmappedClasses) {
+  mmdLines.push(`  classDef class${cls.replace(/_/g, '')} fill:${NODE_NEUTRAL},stroke:#333,color:#000`);
 }
 
 const mmdOutput = mmdLines.join('\n') + '\n';

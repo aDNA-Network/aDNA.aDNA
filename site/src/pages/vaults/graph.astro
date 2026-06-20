@@ -56,6 +56,7 @@ const classLabels: Record<string, string> = {
   platform: 'Platform', org_vault: 'Org-Vault', org_graph: 'Org-Graph', standard_dev: 'Standard',
   network: 'Network', node_operational: 'Node (operational)', coordination: 'Coordination',
   document: 'Document', knowledge_graph: 'Knowledge-graph', tooling: 'Tooling', workspace: 'Workspace',
+  tbd_at_p0: 'Genesis stub',
 };
 const classCensus: Record<string, number> = ((vaultsData as any).vaults ?? []).reduce(
   (m: Record<string, number>, v: any) => { m[v.class] = (m[v.class] ?? 0) + 1; return m; },
@@ -69,6 +70,17 @@ const nodeLegend = Object.keys(classCensus)
     count: classCensus[cls],
     color: classDefColors['class' + cls.replace(/_/g, '')] ?? '#888888',
   }));
+
+// Node-colour KEY (SP-5/H-5 D4 C3 — Option A restraint, operator decision 2026-06-19): colour no longer
+// encodes class — every vault shares one neutral chip — so the old 15-swatch per-class key read as a
+// misleading rainbow. The key now explains the ≤2-accent treatment (neutral = a vault · cyan = the
+// standard · muted = retired) and class is surfaced as a plain text census below. Swatch colours are
+// still parsed from the .mmd classDefs (drift-free) — if the palette changes, this key follows it.
+const keyNeutral = classDefColors['classplatform'] ?? '#d3d5db';
+const keyStandard = classDefColors['classstandarddev'] ?? '#7dcfff';
+const keyRetired = classDefColors['classsuperseded'] ?? '#9ea3ad';
+const hasStandard = (classCensus['standard_dev'] ?? 0) > 0;
+const hasRetired = (classCensus['superseded'] ?? 0) > 0;
 
 // Client round-trip map (E4 cycle 154): `label` is the Mermaid node text (the vault name, as the .mmd
 // renders it), `name` is the friendly display name for the back-link, `slug` routes to /vaults/<slug>/.
@@ -104,7 +116,7 @@ const jsonLD = buildCollectionPageJsonLD({
       </p>
       <p class="lede lede-node">
         Each box is a <strong>vault</strong>; an aDNA computer — a <em>node</em> — is a <code>Home.aDNA</code>
-        plus the vaults that live on it, coloured below by vault class.
+        plus the vaults that live on it, with each box naming its class.
         <a href="/network/">New here? Start with what the network is &rarr;</a>
       </p>
       <div class="graph-stage">
@@ -137,13 +149,29 @@ const jsonLD = buildCollectionPageJsonLD({
           </li>
         ))}
       </ul>
-      <h3 class="legend-sub">Box colour = the vault&rsquo;s class</h3>
-      <ul class="node-legend">
-        {nodeLegend.map((n) => (
+      <h3 class="legend-sub">Box colour</h3>
+      <ul class="node-key">
+        <li>
+          <span class="ne-swatch" style={`background:${keyNeutral}`} aria-hidden="true"></span>
+          <span class="ne-text">A <strong>vault</strong> — every box shares one fill; its class is named on the box and listed below. The <strong>lines</strong> carry the story.</span>
+        </li>
+        {hasStandard && (
           <li>
-            <span class="ne-swatch" style={`background:${n.color}`} aria-hidden="true"></span>
-            <span class="ne-text">{n.label} <span class="le-count">&middot; {n.count}</span></span>
+            <span class="ne-swatch" style={`background:${keyStandard}`} aria-hidden="true"></span>
+            <span class="ne-text"><code>aDNA.aDNA</code> — <strong>the standard</strong> this network documents.</span>
           </li>
+        )}
+        {hasRetired && (
+          <li>
+            <span class="ne-swatch" style={`background:${keyRetired}`} aria-hidden="true"></span>
+            <span class="ne-text"><strong>Superseded</strong> — a retired vault, kept for audit.</span>
+          </li>
+        )}
+      </ul>
+      <h3 class="legend-sub">Vault classes in view</h3>
+      <ul class="class-census">
+        {nodeLegend.map((n) => (
+          <li class="ne-text">{n.label} <span class="le-count">&middot; {n.count}</span></li>
         ))}
       </ul>
     </section>
@@ -304,10 +332,16 @@ const jsonLD = buildCollectionPageJsonLD({
   .legend-sub { font-size: var(--text-xs, 0.78rem); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; color: var(--color-text-muted); margin: var(--space-4, 1rem) 0 var(--space-2, 0.5rem); }
   .legend-sub:first-of-type { margin-top: 0; }
   .legend-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
-  /* Node-colour key — a compact wrap grid; each swatch fill is the exact .mmd classDef colour,
-     so the key matches the rendered boxes 1:1 (parsed from the chart, drift-free). */
-  .node-legend { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; }
-  .node-legend li { display: flex; align-items: center; gap: 0.5rem; line-height: 1.4; }
+  /* Node-colour KEY (SP-5/H-5 D4 C3) — a short vertical key explaining the ≤2-accent treatment
+     (neutral = a vault · cyan = the standard · muted = retired); swatch fills are parsed from the
+     .mmd classDefs so the key can never drift from the rendered boxes. */
+  .node-key { list-style: none; margin: 0 0 var(--space-3, 0.75rem); padding: 0; display: grid; gap: 0.5rem; }
+  .node-key li { display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.45; }
+  .node-key .ne-swatch { margin-top: 0.2rem; }
+  .node-key code { font-family: var(--font-mono); color: var(--color-link); }
+  /* Class census — class is read as TEXT now (not colour): a compact wrap of label · count. */
+  .class-census { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; }
+  .class-census li { line-height: 1.4; }
   .ne-swatch { flex: 0 0 auto; width: 0.85rem; height: 0.85rem; border-radius: 3px; border: 1px solid var(--color-border); }
   .ne-text { color: var(--color-text); font-size: var(--text-sm, 0.9rem); }
   .legend-list li { display: flex; align-items: center; gap: 0.75rem; line-height: 1.4; }

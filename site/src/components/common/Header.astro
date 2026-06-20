@@ -207,6 +207,13 @@ const currentPath = Astro.url.pathname;
   .github-link {
     color: var(--color-text-muted);
     transition: color var(--transition-fast);
+    /* SP-7 / M-5 (D4 C3): 44px min touch target — the 20px glyph is centred in the box, matching
+       the .mobile-menu-btn / dark-mode-toggle pattern. No visual-weight change. */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
   }
 
   .github-link:hover {
@@ -242,5 +249,23 @@ const currentPath = Astro.url.pathname;
 
   .nav-mobile[hidden] {
     display: none;
+  }
+
+  /* SP-7 (D4 C3): the two new 44px header targets (github + toggle) widened the actions row by ~42px;
+     reclaim it at small-phone widths so the row clears 320px without horizontal overflow (gate-9) —
+     tighter side padding + gaps only, no element dropped, desktop (≥1024px) untouched. */
+  @media (max-width: 480px) {
+    .header-inner {
+      gap: var(--space-2);
+      padding-left: var(--space-3);
+      padding-right: var(--space-3);
+    }
+    .header-actions {
+      gap: var(--space-2);
+    }
+    .header-cta {
+      padding-left: var(--space-3);
+      padding-right: var(--space-3);
+    }
   }
 </style>
