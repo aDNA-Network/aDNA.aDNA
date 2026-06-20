@@ -10,7 +10,7 @@
     { "label": "Chartered", "value": "Operator-chartered — decisions are explicit and gated, never silent." },
     { "label": "Open standard", "value": "MIT-licensed and versioned in public; the spec is the source of truth." },
     { "label": "Change process", "value": "Public — improvements run through the repository as upstream contributions, reviewable by anyone." },
-    { "label": "Attribution", "value": "Every file records who last edited it — humans and agents alike." },
+    { "label": "Attribution", "value": "By convention, content files record who last edited them — humans and agents alike." },
     { "label": "Accountability", "value": "Every unit of work closes with a written after-action report." }
   ],
   "horizon": "Member profiles, follows, activity feeds, and shared governance-voting surfaces are not built yet. They are being designed on the network's opt-in, local-first membership substrate — the same machinery the network page describes. Until they ship, the participation ladder and the open governance record on this page are the whole community layer. The network builds toward that horizon rather than implying it arrived."
