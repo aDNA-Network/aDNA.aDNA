@@ -3,14 +3,16 @@ type: backlog_idea
 status: accepted
 priority: medium
 created: 2026-06-01
-updated: 2026-06-18
-last_edited_by: agent_rosetta
+updated: 2026-06-19
+last_edited_by: agent_hestia
 tags: [backlog, idea, upstream, skill, project_fork, bootstrap_interview, exemplar, node_adna, hestia_origin, m25_origin]
 ---
 
 # Idea — Wire Exemplar-HOME Invocation into the `.adna/` Bootstrap Skills
 
 > **Ratified 2026-06-18** — accepted at Operation Hearthstone P0 (Operator Decision 1); the inventory+identity promotion is decided in [[adr_035_inventory_identity_base_entity_types]]; lands in `.adna/` at Hearthstone P4/P5 via skill_template_release.
+>
+> **P4 wiring landed in the dev graph 2026-06-19** — interview **Topic 6** (theming, T1-T5) + the **Step-9 exemplar branch** with the `>`-prefix callout-fold profile authored in `aDNA.aDNA/how/skills/skill_node_bootstrap_interview.md` (dev mirror established this phase — the skill was previously `.adna/`-only); `--exemplar-home` + **Step 4.5** overlay added to `aDNA.aDNA/how/skills/skill_project_fork.md`. Ships to `.adna/` at **P5** via `skill_template_release`. Proposal (1)+(2) below = implemented.
 
 ## Problem / Opportunity
 
@@ -43,7 +45,8 @@ all nodes.
 - The overlay is **post-fork** (the base structure + base HOME must exist first), then the themed HOME
   replaces the base HOME; sequencing matters (don't substitute before the fork creates the dir).
 - New interview vars to standardize: `{{accent_primary_hex}}`/`secondary`/`tertiary`, `{{persona_greeting}}`,
-  `{{banner_image}}`, `{{banner_title}}` — plus the generator runtime params `CANVASFORGE_CODE` +
+  `{{banner_image}}`, `{{banner_title}}` — plus the generator runtime params `CANVAS_CORE_HOME`
+  (canonical post-P3 CanvasForge→Canvas repoint; deprecated alias `CANVASFORGE_CODE`) +
   `TOPOLOGY_GENERATED_DATE`.
 
 ## References

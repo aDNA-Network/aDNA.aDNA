@@ -6,8 +6,8 @@ updated: 2026-06-19
 status: active
 category: onboarding
 trigger: "Root CLAUDE.md project creation flow — user wants to create a new project"
-last_edited_by: agent_rosetta
-tags: [skill, project, fork, onboarding, lattice]
+last_edited_by: agent_hestia
+tags: [skill, project, fork, onboarding, lattice, exemplar_home, hearthstone_p4]
 
 requirements:
   tools: []
@@ -32,8 +32,11 @@ Invoked by the root CLAUDE.md project creation flow. Not triggered automatically
 | Parameter | Source | Required |
 |-----------|--------|----------|
 | `carry_forward_answers` | Any project name/description already collected from the calling flow | No |
+| `--exemplar-home` | Flag — overlay the premium exemplar HOME bundle (`template_node_adna_exemplar/`) after the base fork (auto-implied when the fork is a `Home.aDNA`-class node vault). See Step 4.5. | No |
 
 The workspace root is always the directory containing this `.adna/` template (detected automatically). The template source is always `.adna/`.
+
+> **Exemplar overlay (Hearthstone P4).** The themed HOME is normally materialized by `skill_node_bootstrap_interview.md` Step 9 during the Step-0.3 bootstrap chain; the `--exemplar-home` flag (Step 4.5) lets the fork trigger the same overlay directly, in one pass, without waiting for the interview. Both are opt-in and idempotent — a fork that declines keeps the plain base `.adna/HOME.md`.
 
 ## Requirements
 
@@ -77,6 +80,8 @@ Report to the user:
 If the user explicitly requests no suffix, respect their preference.
 
 Ask for confirmation before proceeding.
+
+**Exemplar-mode detection**: if `--exemplar-home` was passed, or the fork is a `Home.aDNA`-class node vault (per-node operational vault — Hestia or another node persona), set `exemplar_mode = true` and tell the user the fork will additionally receive the premium exemplar HOME (banner + §Gallery + §Topology + persona CSS). The overlay runs at Step 4.5, after the base structure is in place. Exemplar mode is always opt-in: a non-Home fork without the flag stays `exemplar_mode = false` and keeps the plain base HOME.
 
 ### Step 3: Fork the Template
 
@@ -138,6 +143,20 @@ Edit the forked project's governance files to set up first-run detection:
 - Set `updated: <today's date>` in frontmatter
 
 These markers ensure the project's CLAUDE.md first-run detection will trigger `skill_onboarding.md` on next open.
+
+### Step 4.5: Exemplar HOME overlay (exemplar mode only)
+
+Run only when `exemplar_mode == true` (Step 2). The base fork already laid down `.adna/HOME.md` (the plain inventory HOME); this step overlays the **premium themed superset** from the exemplar bundle the fork carries at `how/templates/template_node_adna_exemplar/` (copied in from `.adna/` at Step 3). Its `README.md` documents the flow; `SUBSTITUTIONS.md` is the authoritative `{{var}}` catalog. In brief:
+
+1. **Collect/confirm theming inputs** beyond the base identity (hostname/operator/persona): the `{{persona}}` accent triple (`{{accent_primary_hex}}` / `secondary` / `tertiary`), the canvas text pair (`{{canvas_text_strong_hex}}` / `{{canvas_text_em_hex}}`), `{{persona_greeting}}`, and a `{{banner_image}}` (the placeholder ships until the operator supplies a real banner). `SUBSTITUTIONS.md` §2 has a per-persona default lookup for all five hexes — accept-all-in-one-keypress. (When the Step-0.3 chain runs the interview instead, these are its **Topic 6**; this flag collects the same set inline.)
+2. **Materialize each `*.template`**: substitute every `{{var}}` per `SUBSTITUTIONS.md`, then drop the `.template` suffix. The two `{{persona_lower}}_*.css.template` files are renamed with the persona too (e.g. `hestia_accent.css` + `hestia_canvas.css` — the canvas-chrome snippet is **required** for the topology canvas). `HOME.md.template` → `HOME.md` (replaces the base `.adna/HOME.md`). **Callout-fold rule (load-bearing):** each `{{vaults_table}}` / `{{named_projects_table}}` body line must be `>`-prefixed so it renders INSIDE the `> [!abstract]-` / `> [!note]-` disclosure folds — never a `<div>` or a blank-line-bearing markdown table (see `skill_node_bootstrap_interview.md` Step 9(b) + `SUBSTITUTIONS.md`).
+   *(Dry-run/skeleton tool: `python smoke_render.py --materialize DIR` renders the whole bundle with a fabricated profile — useful for smoke-testing the overlay, not for production values.)*
+3. **Copy the generators verbatim** (`what/code/build_*.py` — they carry no `{{vars}}`; they read env + inventory at runtime) and rename `topology_relationships.yaml.template` → `topology_relationships.yaml`.
+4. **Lay down the skeleton** (`who/assets/` subdirs incl. the icon classes + `who/curation/curation_schema.yaml` + the `canvasforge/` wrapper) and enable **both** CSS snippets under Appearance → CSS snippets.
+5. **Copy `ONBOARDING.md` to the fork root** — the first-run walkthrough the operator reads before anything else; it covers steps 4–6 from the fork's side and is deleted after setup.
+6. **First regen** (after `skill_inventory_refresh` populates inventory): `CANVAS_CORE_HOME=… TOPOLOGY_GENERATED_DATE=$(date +%F) python what/code/build_topology_canvas.py` and `python what/code/build_curation_cards.py` — these fill §Topology and §Gallery. (`CANVAS_CORE_HOME` locates the `canvas_core` producer in `Canvas.aDNA`, ADR-004; the generator degrades with a clear message if absent — `SUBSTITUTIONS.md` §3. Deprecated alias: `CANVASFORGE_CODE`.)
+
+Leave the canvas/gallery aesthetic to an operator Obsidian sign-off (operator gates — Standing Rule). On the reference node this overlay is normally performed by `skill_node_bootstrap_interview.md` Step 9; this step exists so a node-class fork can produce the exemplar shape in one pass. Point the operator at the fork's `ONBOARDING.md` as their first read.
 
 ### Step 5: Offer Immediate Onboarding
 
