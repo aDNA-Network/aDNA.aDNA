@@ -8,12 +8,12 @@ campaign_id: campaign_hearthstone
 campaign_phase: 3
 campaign_mission_number: 4
 mission_class: implementation
-status_note: "deliverables in progress 2026-06-19 — cross-lane session (Hestia, operator-authorized 'Full M4'); P3 exit gate pending operator (Decision 4)"
+status_note: "deliverables complete + verified 2026-06-19 (cross-lane Hestia session, operator-authorized 'Full M4'); status flips → completed on operator P3 exit gate (Decision 4)"
 created: 2026-06-19
 updated: 2026-06-19
 last_edited_by: agent_rosetta
 token_budget_estimated: "~40 kT (copy-in of an already-staged bundle + genericization verify + smoke render + record updates)"
-token_budget_actual: "TBD"
+token_budget_actual: "~60 kT (recon-heavy entry: 5 exploration agents + git-HEAD reconciliation; the build itself was light — a 3-edit repoint + a verified byte-identical copy-in)"
 tags: [plan, campaign, hearthstone, p3, exemplar_bundle, canvasforge_canvas_repoint, canvas_std_prereq, operation_adna_track_b]
 ---
 
@@ -37,12 +37,12 @@ P3 was charter-gated on **CanvasForge→Canvas** + **PT P5**. Both are satisfied
 
 ## Exit Gate (mission-level)
 
-- [ ] Bundle copied into `aDNA.aDNA/how/templates/template_node_adna_exemplar/` (fresh copy-in; did not previously exist in the dev graph).
-- [ ] `python smoke_render.py` → **0 leftover `{{`**, every var catalogued in `SUBSTITUTIONS.md`.
-- [ ] `python smoke_render.py --parity` → skeleton parity vs the reference `HOME.md` passes.
-- [ ] All `canvasforge` references in the bundle read as **interim-archive** (owner = Canvas.aDNA, ADR-004), none as live owner.
-- [ ] `canvas_std` / `adna-canvas-std` importability prereq documented (ADR-004 §4 silent-render trap) in `README.md` + `SUBSTITUTIONS.md`.
-- [ ] Decision 3 framed (recommendation recorded; final ratification = operator at P3 exit).
+- [x] Bundle copied into `aDNA.aDNA/how/templates/template_node_adna_exemplar/` (fresh copy-in; `diff -r` byte-identical to the Home reference; 32 files).
+- [x] `python smoke_render.py` → **0 leftover `{{`**, every var catalogued (source + copy, exit 0).
+- [x] `python smoke_render.py --parity` → skeleton parity vs the reference `HOME.md` passes (run from the Home reference; parity is reference-node-only by design).
+- [x] All `canvasforge` references read as **interim-archive** (owner = Canvas.aDNA, ADR-004); the only retained `canvasforge` literals are the interim shim + the (P5-repointed) wrapper-dir name.
+- [x] `canvas_std` / `adna-canvas-std` prereq documented (ADR-004 §4 silent-render trap) — README / ONBOARDING / SUBSTITUTIONS / `canvasforge/CLAUDE.md.template`.
+- [x] Decision 3 framed — recommended **optional-degrade**; final ratification = operator at P3 exit.
 
 ## Guardrails
 
@@ -83,18 +83,26 @@ Run both smoke modes from the dev-graph copy; capture output for the SITREP.
 
 ## Completion Summary
 
-*Fill out when setting `status: completed`.*
+*Deliverables complete + verified 2026-06-19; mission `status` flips → `completed` on the operator P3 exit gate (Decision 4).*
 
 ### Deliverables
+- LIVE `Home.aDNA/what/code/build_topology_canvas.py` — `canvasforge→Canvas.aDNA` repoint (+ NB pt19 comment + 2 docstring substrate renames `CanvasForge`→`canvas_core`); resolver + `canvas_std` sys.path already staged at `4592eab`. **Home commit `2ccda9f`.**
+- `aDNA.aDNA/how/templates/template_node_adna_exemplar/` — fresh copy-in (32 files), **byte-identical** to the Home reference (`diff -r` clean).
+- `mission_hearthstone_p3_exemplar_bundle.md` (this mission) · `campaign_hearthstone.md` (P3 row + banner + Decision 3 = recommended optional-degrade + Risk Register CanvasForge = resolved) · `how/templates/AGENTS.md` (new "Fork-Skeleton Bundles (1)" subsection). **aDNA commit `3d0c3f9`.**
+
 ### Descoped
+- No `.adna/` writes (P5). Other wrapper renames (SiteForge→Astro · ComfyForge→ComfyUI · SpeechForge→Oration · MoleculeForge→Molecules · ContextCompass→Context) = the **pt19** coordinated refresh, deliberately out of M4.
+- LIVE `Home.aDNA/what/canvas/topology.canvas` regen deferred (dirty from concurrent work; a regen after that commits will pick up both the reformat and the `canvasforge→Canvas.aDNA` edge).
+
 ### Key Findings
+- **Bundle was ~75% pre-staged**: the resolver + the bundle's own generator repoint landed in prior Home substrate-staging (Mondrian ADR-004, `4592eab`). The genuine LIVE-generator delta was **3 small edits**, not the ~17 the entry recon implied (that read a pre-`4592eab` state).
+- **Both P3 gates were already cleared** before this session (CanvasForge→Canvas merge pt09 + PT P5 pt12–16) — the "still gated" note in node memory/STATE was stale; corrected in the campaign record.
+- **`canvas_std` prereq already crisply documented** (ADR-004 §4) — so Objective 4 was confirm-present, **no edit**, keeping the copy byte-identical to the reference (parity preserved).
 
 ## AAR
 
-*Mandatory before `status: completed`. See `how/templates/template_aar_lightweight.md`.*
-
-- **Worked**:
-- **Didn't**:
-- **Finding**:
-- **Change**:
-- **Follow-up**:
+- **Worked**: diffing the LIVE generator against the already-staged bundle copy gave the exact minimal repoint scope (avoided re-doing `4592eab`'s resolver work); `smoke_render.py` + `diff -r` were objective copy-fidelity + brace gates.
+- **Didn't**: the entry recon over-stated the remaining work ("LIVE generator lacks the staged resolver", ~17 refs) — it read a pre-`4592eab` snapshot; git HEAD corrected it.
+- **Finding**: for a partially-staged artifact, a direct `diff` against the canonical reference beats trusting a prose recon of "what's left."
+- **Change**: when a recon says "X is missing," verify against git HEAD + a direct diff before scoping edits — doubly so across concurrent sessions on this node.
+- **Follow-up**: (1) operator P3 exit gate (Decision 4) + Decision 3 ratification; (2) LIVE `topology.canvas` regen once the concurrent reformat commits; (3) P4 wires `--exemplar-home` + interview theming; (4) **pt19** wrapper-rename refresh (SiteForge→Astro et al.) in both generators.
