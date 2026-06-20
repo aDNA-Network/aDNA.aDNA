@@ -20,6 +20,26 @@ const jsonLD = buildWebPageJsonLD({
   description: vault.tagline || vault.note || `aDNA vault: ${vault.display_name}`,
   url: Astro.url.href,
 });
+
+// H-7 / SP-4 (D4 C4): the page was a single 80ch column of flat <section>/<h2> blocks that "read as raw
+// markdown" with >40% empty viewport on the (common) sparse vaults. Reorganized into a spec-sheet + reading
+// composition: identity metadata is pulled OUT of the prose into a bordered <dl> "spec sheet" (the
+// SubnetworkCard `.subnet-meta` idiom), the relationship block is given primacy, and the prose (note) reads
+// as a lede. Graph-traceable `vaults.json` fields only — the layout stays intentional from zeta.aDNA (4
+// fields) to a rich vault. Two columns ≥900px (reading column · spec-sheet aside), one column below.
+const showCanonical = vault.vault && vault.vault !== vault.display_name;
+const hasLinks = !!(vault.github_url || vault.docs_site_url);
+
+// Sparse vaults (many are early/pending with no note) get an honest templated lede built from real fields,
+// so "what is this?" is always answered and the page never reads as unfinished — no invented facts, just a
+// restatement of class + status. Status also carries a plain-language gloss (newcomers don't know "genesis").
+const classPretty = String(vault.class || 'vault').replace(/_/g, ' ');
+const ledeText = vault.note || `A ${classPretty} vault — ${vault.status}.`;
+const STATUS_GLOSS: Record<string, string> = {
+  genesis: 'early — just getting started', pending: 'not yet started', active: 'active and in use',
+  planning: 'in planning', completed: 'complete', archived: 'archived', superseded: 'superseded by a successor',
+};
+const statusTitle = STATUS_GLOSS[vault.status] ? `${vault.status} — ${STATUS_GLOSS[vault.status]}` : vault.status;
 ---
 
 <BaseLayout
@@ -28,75 +48,78 @@ const jsonLD = buildWebPageJsonLD({
   jsonLD={jsonLD}
 >
   <main class="vault-detail">
-    <section class="vault-hero">
+    <header class="vd-head">
       <p class="vault-breadcrumb">
         <a href="/vaults/">&larr; Vaults</a>
         <span class="crumb-sep" aria-hidden="true">·</span>
         <a class="crumb-network" href="/network/">Network</a>
       </p>
       <h1>{vault.display_name}</h1>
-      {vault.tagline && <p class="vault-tagline">{vault.tagline}</p>}
-      <p class="vault-meta">
-        <strong>Persona</strong> {vault.persona || '—'} ·
-        <strong>Class</strong> {vault.class} ·
-        <strong>Status</strong> {vault.status}
-        {vault.current_phase && <> · <strong>Phase</strong> {vault.current_phase}</>}
-      </p>
-    </section>
+      {showCanonical && <p class="vd-canonical"><code>{vault.vault}</code></p>}
+      {vault.tagline && <p class="vd-tagline">{vault.tagline}</p>}
+      <p class="vd-lede">{ledeText}</p>
+    </header>
 
-    {vault.persona_archetype && (
-      <section class="vault-persona">
-        <h2>Persona</h2>
-        <p>{vault.persona_archetype}</p>
-      </section>
-    )}
+    <div class="vd-grid">
+      <aside class="vd-aside" aria-label="Vault details">
+        <dl class="vd-spec">
+          <div class="vd-spec-row"><dt>Class</dt><dd>{vault.class}</dd></div>
+          <div class="vd-spec-row"><dt>Status</dt><dd><span class="vd-status" title={statusTitle}>{vault.status}</span></dd></div>
+          {vault.persona && <div class="vd-spec-row"><dt>Persona</dt><dd>{vault.persona}</dd></div>}
+          {vault.current_phase && <div class="vd-spec-row"><dt>Phase</dt><dd>{vault.current_phase}</dd></div>}
+          {vault.canonical_governance && (
+            <div class="vd-spec-row"><dt>Governance</dt><dd><code>{vault.canonical_governance}</code></dd></div>
+          )}
+          {vault.last_synced && <div class="vd-spec-row"><dt>Last synced</dt><dd>{vault.last_synced}</dd></div>}
+        </dl>
+        {hasLinks && (
+          <nav class="vd-links" aria-label="External links">
+            <p class="vd-aside-h">Links</p>
+            <ul>
+              {vault.github_url && <li><a href={vault.github_url}>GitHub &rarr;</a></li>}
+              {vault.docs_site_url && <li><a href={vault.docs_site_url}>Docs site &rarr;</a></li>}
+            </ul>
+          </nav>
+        )}
+      </aside>
 
-    {vault.headline_mission && (
-      <section class="vault-focus">
-        <h2>Current focus</h2>
-        <p>{vault.headline_mission} <span class={`mission-state state-${vault.headline_mission_state}`}>{vault.headline_mission_state}</span></p>
-      </section>
-    )}
+      <div class="vd-main">
+        <VaultRelationshipBlock vault={vault} allEdges={allEdges} allVaults={allVaults} />
 
-    <VaultRelationshipBlock vault={vault} allEdges={allEdges} allVaults={allVaults} />
+        {vault.headline_mission && (
+          <section class="vd-section">
+            <h2>Current focus</h2>
+            <p>
+              {vault.headline_mission}
+              {vault.headline_mission_state && (
+                <span class={`mission-state state-${vault.headline_mission_state}`}>{vault.headline_mission_state}</span>
+              )}
+            </p>
+          </section>
+        )}
 
-    {vault.headline_adrs && vault.headline_adrs.length > 0 && (
-      <section class="vault-adrs">
-        <h2>Headline ADRs</h2>
-        <ul>
-          {vault.headline_adrs.map((adr: string) => <li><code>{adr}</code></li>)}
-        </ul>
-      </section>
-    )}
+        {vault.headline_adrs && vault.headline_adrs.length > 0 && (
+          <section class="vd-section">
+            <h2>Headline ADRs</h2>
+            <ul class="vd-chiplist">
+              {vault.headline_adrs.map((adr: string) => <li><code>{adr}</code></li>)}
+            </ul>
+          </section>
+        )}
 
-    {vault.recent_closed && vault.recent_closed.length > 0 && (
-      <section class="vault-missions">
-        <h2>Recent missions</h2>
-        <ul>
-          {vault.recent_closed.map((m: string) => <li>{m}</li>)}
-        </ul>
-      </section>
-    )}
-
-    <section class="vault-links">
-      <h2>Quick links</h2>
-      <ul>
-        {vault.github_url && <li><a href={vault.github_url}>GitHub &rarr;</a></li>}
-        {vault.docs_site_url && <li><a href={vault.docs_site_url}>Docs site &rarr;</a></li>}
-        {vault.canonical_governance && <li>Governance: <code>{vault.canonical_governance}</code></li>}
-      </ul>
-    </section>
-
-    {vault.note && (
-      <section class="vault-note">
-        <h2>On the lattice</h2>
-        <p>{vault.note}</p>
-      </section>
-    )}
+        {vault.recent_closed && vault.recent_closed.length > 0 && (
+          <section class="vd-section">
+            <h2>Recent missions</h2>
+            <ul class="vd-list">
+              {vault.recent_closed.map((m: string) => <li>{m}</li>)}
+            </ul>
+          </section>
+        )}
+      </div>
+    </div>
 
     <!-- Closing CTA (E5 c163; audit C4) — every generated vault page closes on an action.
-         "Start your own vault", not "use this vault": most vaults are not public installs,
-         so the honest primary is the reader's own workspace. -->
+         "Start your own vault", not "use this vault": most vaults are not public installs. -->
     <ClosingCTA
       primaryLabel="Start your own vault"
       primaryHref="/get-started/"
@@ -107,20 +130,69 @@ const jsonLD = buildWebPageJsonLD({
 </BaseLayout>
 
 <style>
-  /* Tokens, not hardcoded greys — the prior #444/#555/#666 failed AA on the dark-first
-     Tokyo-Night background (E4 cycle 150; same bug class as the E1 c148 a11y fixes). */
-  .vault-detail { max-width: 80ch; margin: 0 auto; padding: 2rem 1rem; }
-  .vault-breadcrumb { color: var(--color-text-muted); }
-  /* Two parents: the registry (The Lattice → /vaults) and the narrative (→ /network), so the
-     deep vault page is not a one-way cul-de-sac back to the explainer (E4 c158 — IA + Newcomer). */
+  /* H-7/SP-4 (D4 C4): spec-sheet + reading composition. Tokens only — the prior #444/#555 greys failed
+     AA on the dark-first Tokyo-Night canvas (E4 c150). No new accent hue; the status chip is neutral. */
+  .vault-detail { max-width: var(--content-width); margin: 0 auto; padding: var(--space-8) var(--space-4); }
+
+  /* Header — breadcrumb keeps the two co-equal parents (registry · narrative), separated, NOT a two-arrow
+     chain that mis-reads as one hierarchy (E4 c158/c159 — IA + Newcomer). Note becomes the lede. */
+  .vd-head { max-width: var(--prose-width); margin-bottom: var(--space-8); }
+  .vault-breadcrumb { color: var(--color-text-muted); margin-bottom: var(--space-4); }
   .vault-breadcrumb a { color: var(--color-link); }
-  /* Two co-equal parents (registry · narrative), separated — not a two-arrow chain that mis-reads as
-     one hierarchy (E4 c159 — IA + Newcomer). One "←" on the registry; Network is a parallel link. */
   .vault-breadcrumb .crumb-sep { margin: 0 0.6rem; color: var(--color-text-muted); }
-  .vault-tagline { font-size: 1.2rem; font-style: italic; color: var(--color-text-muted); }
-  .vault-meta { padding: 0.5rem 0; color: var(--color-text-muted); }
-  /* Badges carry light pastel backgrounds in both modes → pin dark text for AA contrast. */
-  .mission-state { padding: 0.1rem 0.5rem; border-radius: 0.25rem; font-size: 0.85em; color: var(--color-badge-text); }
+  /* The page focal point — the base h1 rule sets no font-size (only .prose h1 does), so name it
+     explicitly so the vault title dominates the spec card, not the reverse (Design Critic D4 C4). */
+  .vd-head h1 { margin: 0; font-size: var(--text-3xl); line-height: 1.1; }
+  .vd-canonical { margin: var(--space-2) 0 0; }
+  .vd-canonical code { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .vd-tagline { font-size: var(--text-lg); font-style: italic; color: var(--color-text-muted); margin: var(--space-3) 0 0; }
+  .vd-lede { font-size: var(--text-base); line-height: 1.65; color: var(--color-text); margin: var(--space-4) 0 0; }
+
+  /* Composition — reading column + spec-sheet aside at ≥900px; single column below, with the spec-sheet
+     FIRST in source so mobile reads identity → relationships → detail. align-items:start hugs the card. */
+  .vd-grid { display: grid; gap: var(--space-8); }
+  @media (min-width: 900px) {
+    .vd-grid { grid-template-columns: minmax(0, 1fr) 17rem; align-items: start; }
+    .vd-main { grid-column: 1; grid-row: 1; }
+    .vd-aside { grid-column: 2; grid-row: 1; }
+  }
+
+  /* Spec sheet — metadata pulled OUT of the prose into a bordered card (the SubnetworkCard `.subnet-meta`
+     idiom: fixed label column + flexible value). Surface+border defines the card on both canvases. */
+  .vd-aside { display: grid; gap: var(--space-6); align-self: start; }
+  .vd-spec {
+    margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr);
+    gap: var(--space-2) var(--space-4);
+    padding: var(--space-5);
+    background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+    font-size: var(--text-sm); line-height: 1.5;
+  }
+  /* Each row drops into the shared 2-col grid (display:contents) so labels align AND the label column
+     sizes to the widest label — no mid-word wrap ("GOVERNANC / E"), Design Critic D4 C4. */
+  .vd-spec-row { display: contents; }
+  .vd-spec dt { color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.04em; font-size: var(--text-xs); white-space: nowrap; padding-top: 0.15em; }
+  .vd-spec dd { margin: 0; color: var(--color-text); min-width: 0; }
+  .vd-spec dd code { font-family: var(--font-mono); font-size: 0.9em; overflow-wrap: anywhere; }
+  .vd-status {
+    display: inline-block; padding: 0.05rem 0.55rem; border-radius: var(--radius-full);
+    background: var(--color-bg-alt); border: 1px solid var(--color-border);
+    font-size: var(--text-xs); color: var(--color-text);
+  }
+  .vd-links .vd-aside-h { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-muted); margin: 0 0 var(--space-2); }
+  .vd-links ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+  .vd-links a { color: var(--color-link); }
+
+  /* Main reading column — the relationship block leads (primacy); optional sections only when present. */
+  .vd-main { display: grid; gap: var(--space-6); min-width: 0; }
+  .vd-main :global(.vault-relationships) { margin: 0; }
+  .vd-main :global(h2) { font-size: var(--text-lg); line-height: 1.3; margin: 0 0 var(--space-3); }
+  .vd-section p { color: var(--color-text); line-height: 1.6; max-width: var(--prose-width); }
+  .vd-list { color: var(--color-text); line-height: 1.6; padding-left: var(--space-5); margin: 0; }
+  .vd-chiplist { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0; padding: 0; }
+  .vd-chiplist code { font-family: var(--font-mono); font-size: var(--text-sm); background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 0.1rem 0.4rem; }
+
+  /* Mission-state badges — pale pills with pinned dark text for AA in both modes (C1 SP-3/M-4 tokens). */
+  .mission-state { margin-left: var(--space-2); padding: 0.1rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.85em; color: var(--color-badge-text); }
   .state-in_progress { background: var(--color-badge-in-progress); }
   .state-completed { background: var(--color-badge-completed); }
   .state-planned { background: var(--color-badge-planned); }
