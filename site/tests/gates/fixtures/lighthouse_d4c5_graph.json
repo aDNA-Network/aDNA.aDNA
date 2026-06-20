@@ -1,0 +1,18 @@
+{
+  "_provenance": "Lighthouse 13.4.0 desktop on /vaults/graph — WEBSITE D4 C5 (2026-06-20). The full raw run is archived local-only at site/evidence/lighthouse_d4c5_graph.json (evidence/ is gitignored); this committed slim fixture is what gate-19 (G1) asserts. Regenerate both when the graph page changes (npm run preview -> lighthouse desktop /vaults/graph).",
+  "lighthouseVersion": "13.4.0",
+  "finalUrl": "http://localhost:4321/vaults/graph",
+  "categories": {
+    "performance": {
+      "score": 1
+    }
+  },
+  "audits": {
+    "largest-contentful-paint": {
+      "numericValue": 445.9954
+    },
+    "cumulative-layout-shift": {
+      "numericValue": 0.000092
+    }
+  }
+}

@@ -88,6 +88,22 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
   slug: v.vault_slug, name: v.display_name, label: v.vault,
 }));
 
+// H-9 (D4 C5): on phones the wide 40-node SVG scales to ~310px and is illegible, so the keyboard
+// node-twin below is promoted to the PRIMARY mobile view. Group the vaults by class (nodeLegend order)
+// with the unlinked set last — a structured, legible index of the same vaults + links. ONE DOM list
+// serves both the keyboard-twin (desktop) and the mobile-primary roles (no duplicate list for SR users).
+const isOrphan = (v: any) => !linkedSlugs.has(v.vault_slug) && !linkedSlugs.has(v.vault);
+const toListItem = (v: any) => ({ slug: v.vault_slug, name: v.display_name });
+const byName = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name);
+const allVaultsForList = ((vaultsData as any).vaults ?? []);
+const nodeGroups = [
+  ...nodeLegend.map((n) => ({
+    label: n.label,
+    items: allVaultsForList.filter((v: any) => v.class === n.cls && !isOrphan(v)).map(toListItem).sort(byName),
+  })),
+  { label: 'Not yet linked', items: allVaultsForList.filter(isOrphan).map(toListItem).sort(byName) },
+].filter((g) => g.items.length > 0);
+
 // M-3 (D3 agentic-readiness): the topology page emits structured data so agents/crawlers can
 // read the network as a described collection, not just a decorative SVG. CollectionPage (reused
 // seo.ts builder) — valid JSON-LD; counts derive from vaults.json (read-only; Honor pt19).
@@ -176,7 +192,7 @@ const jsonLD = buildCollectionPageJsonLD({
       </ul>
     </section>
 
-    <p class="graph-tip">Select any node to open its vault — or browse them all on the <a href="/vaults/">vault index</a>. Each vault page links back to this graph.</p>
+    <p class="graph-tip">Open any vault below — or browse them all on the <a href="/vaults/">vault index</a>. Each vault page links back to this graph.</p>
 
     <MermaidDiagram chart={chart} caption="The aDNA network — cross-vault federation topology" />
 
@@ -185,11 +201,17 @@ const jsonLD = buildCollectionPageJsonLD({
         node, in the same order the .mmd defines them. Visually hidden; revealed on keyboard focus. */}
     <nav class="graph-node-list visually-hidden" aria-label="Open a vault from the network graph">
       <h2>Vaults in the graph</h2>
-      <ul>
-        {vaultNameMap.map((v) => (
-          <li><a href={`/vaults/${v.slug}/`}>{v.label}</a></li>
-        ))}
-      </ul>
+      <p class="nodelist-intro">Tap a vault to open it.</p>
+      {nodeGroups.map((g) => (
+        <div class="nodelist-group">
+          <p class="nodelist-group-label">{g.label}</p>
+          <ul>
+            {g.items.map((v) => (
+              <li><a href={`/vaults/${v.slug}/`} data-slug={v.slug}>{v.name}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </nav>
   </main>
 
@@ -218,6 +240,22 @@ const jsonLD = buildCollectionPageJsonLD({
           nameSpan.textContent = focusName;
           back.hidden = false;
         }
+      }
+
+      // H-9 (D4 C5): on phones (≤640px) the SVG graph is hidden and the node-list is the primary view —
+      // there are no svg <g.node> to wire, so highlight + scroll to the focused vault's LIST row instead
+      // and skip the (otherwise 300-try) node poll.
+      if (matchMedia('(max-width: 640px)').matches) {
+        if (focus) {
+          const row = document.querySelector(`.graph-node-list a[data-slug="${focus}"]`);
+          if (row) {
+            row.classList.add('nodelist-focus');
+            row.setAttribute('aria-current', 'true');
+            const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+            row.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
+          }
+        }
+        return;
       }
 
       let tries = 0;
@@ -426,4 +464,36 @@ const jsonLD = buildCollectionPageJsonLD({
   .graph-node-list h2 { font-size: var(--text-sm, 0.9rem); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin: 0 0 var(--space-3, 0.75rem); }
   .graph-node-list ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; }
   .graph-node-list a { color: var(--color-link); text-decoration: underline; }
+
+  /* H-9 (D4 C5): grouped node-twin — a class-grouped index of the network. Group labels are <p>
+     (not <h3>) so the heading outline stays stable + width-independent; colour still does not encode
+     class (Option-A restraint). The focus ring reuses cyan --color-link (no new accent). */
+  .nodelist-intro { color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); margin: 0 0 var(--space-3, 0.75rem); }
+  .nodelist-group { margin: 0 0 var(--space-4, 1rem); }
+  .nodelist-group:last-child { margin-bottom: 0; }
+  .nodelist-group-label { font-size: var(--text-xs, 0.78rem); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; color: var(--color-text-muted); margin: 0 0 var(--space-2, 0.5rem); }
+  .nodelist-focus { outline: 2px solid var(--color-link); outline-offset: 2px; border-radius: 3px; }
+
+  /* H-9 (D4 C5): on phones the 40-node flowchart scales to ~310px and is illegible, so swap the visual
+     graph for the (already-present, already-in-the-a11y-tree) node-list as the PRIMARY mobile view.
+     Page-scoped :global so other Mermaid figures site-wide are untouched. display:none from first paint
+     → no CLS, and it removes the widest element (gate-9 320px only gets safer). Desktop (≥641px) is
+     unchanged: the SVG renders and the list stays the keyboard-only :focus-within twin. */
+  @media (max-width: 640px) {
+    .vaults-graph :global(.mermaid-figure) { display: none; }
+    .graph-node-list.visually-hidden {
+      position: static;
+      width: auto; height: auto;
+      margin: 0 auto var(--space-6, 1.5rem);
+      padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+      max-width: 72ch;
+      overflow: visible;
+      clip: auto;
+      clip-path: none;
+      white-space: normal;
+      background: var(--color-bg-alt, var(--color-surface));
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md, 0.5rem);
+    }
+  }
 </style>
