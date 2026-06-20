@@ -99,7 +99,7 @@ The improvement **engine already exists and is battle-tested** — `skill_iii_cy
 ### Phase 3 — Iterative Improvement & Verification *(the bulk)*
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| P3 | [[mission_wadna_p3_iterate]] — decadal improvement loops (VIEW → INTROSPECT → PLAN → IMPROVE → VERIFY → GATE); systemic-first, then flagship pages, then deep pages | 6-15 | P2 | **active** — D1 (CLOSED + deployed-live) · D2 (CLOSED) · D3 (CLOSED), all GO 2026-06-19/20; **D4 queued** (last decade before P4). Gate baseline 278. |
+| P3 | [[mission_wadna_p3_iterate]] — decadal improvement loops (VIEW → INTROSPECT → PLAN → IMPROVE → VERIFY → GATE); systemic-first, then flagship pages, then deep pages | 6-15 | P2 | **active** — D1 (CLOSED + deployed-live) · D2 (CLOSED) · D3 (CLOSED), all GO 2026-06-19/20; **D4 active** (opened 2026-06-19 — C1 partial: SP-3/M-4 `[slug]` badge tokens; SP-5 decision-gated) (last decade before P4). Gate baseline 278. |
 
 > P3 expands into N decadal sub-missions at activation; count set at Phase 2 close. Sequence: **systemic fixes → flagship pages** (landing, `/network`, `/learn/what-is-adna`, `/get-started`, `/vaults` + `/vaults/graph`, **`/community`**) **→ deep pages.**
 

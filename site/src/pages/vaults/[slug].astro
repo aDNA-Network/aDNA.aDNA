@@ -120,8 +120,8 @@ const jsonLD = buildWebPageJsonLD({
   .vault-tagline { font-size: 1.2rem; font-style: italic; color: var(--color-text-muted); }
   .vault-meta { padding: 0.5rem 0; color: var(--color-text-muted); }
   /* Badges carry light pastel backgrounds in both modes → pin dark text for AA contrast. */
-  .mission-state { padding: 0.1rem 0.5rem; border-radius: 0.25rem; font-size: 0.85em; color: #1a1b26; }
-  .state-in_progress { background: #fef1d1; }
-  .state-completed { background: #b9e4d0; }
-  .state-planned { background: #e7e7e7; }
+  .mission-state { padding: 0.1rem 0.5rem; border-radius: 0.25rem; font-size: 0.85em; color: var(--color-badge-text); }
+  .state-in_progress { background: var(--color-badge-in-progress); }
+  .state-completed { background: var(--color-badge-completed); }
+  .state-planned { background: var(--color-badge-planned); }
 </style>

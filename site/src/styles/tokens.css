@@ -70,6 +70,13 @@
   --color-warning: hsl(38 92% 50%);
   --color-info: hsl(199 89% 48%);
 
+  /* Status badges — intentionally mode-independent pale pills with pinned dark text
+     for AA in both themes (SP-3/M-4 D4: tokenize the prior hardcoded [slug] badge hex). */
+  --color-badge-text: #1a1b26;
+  --color-badge-in-progress: #fef1d1;
+  --color-badge-completed: #b9e4d0;
+  --color-badge-planned: #e7e7e7;
+
   /* Shadows */
   --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.05);
   --shadow-md: 0 4px 6px hsl(0 0% 0% / 0.07);

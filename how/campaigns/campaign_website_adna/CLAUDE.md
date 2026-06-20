@@ -22,7 +22,7 @@ tags: [governance, campaign, website, frontier_grade]
 | Planned by | Berthier (chief of staff; holds the ecosystem-site charter, coord 2026-06-03) |
 | Executed by | Rotating persona cell; **Rosetta** is resident site agent for `aDNA.aDNA/site/` |
 | Status | active (activated 2026-06-18 — Operator Decision 1) |
-| Current Phase | Phase 3: Iterative Improvement (P0/P1/P2 ✅; D1 deployed-live + D2 + D3 CLOSED, all GO; **D4 queued** — last decade before P3→P4) |
+| Current Phase | Phase 3: Iterative Improvement (P0/P1/P2 ✅; D1 deployed-live + D2 + D3 CLOSED, all GO; **D4 active** (opened 2026-06-19) — last decade before P3→P4) |
 | Target | `https://aDNA.network` — source `aDNA.aDNA/site/` (Astro SSG → Vercel, direct deploy) |
 
 ## Mission (WHAT)
