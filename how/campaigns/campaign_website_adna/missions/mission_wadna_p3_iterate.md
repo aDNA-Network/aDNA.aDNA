@@ -6,7 +6,7 @@ campaign_id: campaign_website_adna
 phase: 3
 mission_number: 3
 slug: iterate
-status: in_progress
+status: completed
 created: 2026-06-17
 updated: 2026-06-21
 last_edited_by: agent_rosetta
@@ -71,6 +71,8 @@ GATE       → meets per-unit done? advance. Else → loop again on this unit.
 
 ## Phase Exit (P3 → P4)
 Every unit ≥4 on every A–K axis; zero open Critical/High site-wide; CWV in the Good band; all decadal AARs GO (Decision 5).
+
+**CLOSED 2026-06-21 — operator GO at the D4 decade-gate (Decision 5).** All 4 decades CLOSED GO (D1 deployed-live · D2 · D3 · D4); 4 decadal AARs filed ([[aar_decadal_d1_credibility_integrity]] · [[aar_decadal_d2_nav_serialization]] · [[aar_decadal_d3_agentic_community]] · [[aar_decadal_d4_visual_craft]]); gate baseline 281/281; commit-only. → P4 (`mission_wadna_p4_signoff`) opened.
 
 ## Campaign Context
 - **Inputs:** P2 improvement specs + decadal plan + done-definition; P0 baseline + `SITEMAP.aDNA.md`; P1 rubric dossiers + personas.

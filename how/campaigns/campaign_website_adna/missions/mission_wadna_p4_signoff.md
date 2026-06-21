@@ -6,17 +6,17 @@ campaign_id: campaign_website_adna
 phase: 4
 mission_number: 4
 slug: signoff
-status: planned
+status: in_progress
 created: 2026-06-17
-updated: 2026-06-17
+updated: 2026-06-21
 last_edited_by: agent_stanley
 owner: stanley
 persona: rosetta             # resident executor; campaign planned by Berthier
 mission_class: planning      # verification + reporting; final improvements only if a coherence defect surfaces
-spec_completeness: stub      # finalized at P3 close
+spec_completeness: active    # finalized at P3 close (2026-06-21, Decision 5 GO)
 estimated_sessions: "1"
-token_budget_estimated: "TBD at P3 close (~100-150 kT; full-site traversal + final sweep)"
-hard_dependency_satisfied: "no — depends on P3 (all units cleared the bar)"
+token_budget_estimated: "~100-150 kT; full-site traversal + final sweep + report"
+hard_dependency_satisfied: "yes — P3 closed 2026-06-21 (Decision 5 GO; all 4 decades CLOSED GO)"
 unblocks_missions: []
 deliverables_count: 2
 tags: [mission, campaign_website_adna, phase4, signoff, coherence]
