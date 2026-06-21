@@ -99,7 +99,7 @@ The improvement **engine already exists and is battle-tested** — `skill_iii_cy
 ### Phase 3 — Iterative Improvement & Verification *(the bulk)*
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| P3 | [[mission_wadna_p3_iterate]] — decadal improvement loops (VIEW → INTROSPECT → PLAN → IMPROVE → VERIFY → GATE); systemic-first, then flagship pages, then deep pages | 6-15 | P2 | **active** — D1 (CLOSED + deployed-live) · D2 (CLOSED) · D3 (CLOSED), all GO 2026-06-19/20; **D4 active** (opened 2026-06-19 — C1 partial: SP-3/M-4 `[slug]` badge tokens; SP-5 decision-gated) (last decade before P4). Gate baseline 278. |
+| P3 | [[mission_wadna_p3_iterate]] — decadal improvement loops (VIEW → INTROSPECT → PLAN → IMPROVE → VERIFY → GATE); systemic-first, then flagship pages, then deep pages | 6-15 | P2 | **active** — D1 (CLOSED + deployed-live) · D2 · D3 · **D4 all CLOSED GO** (D4 2026-06-21, panel C4·F5·G5·H4.5; C1–C6 commit-only `9bb3ea8`…`c881dbd`; H-11 no-SSR + M-7 no-rebuild; [[aar_decadal_d4_visual_craft]]); **awaiting operator P3→P4 decade-gate (Decision 5)**. Gate baseline 281. |
 
 > P3 expands into N decadal sub-missions at activation; count set at Phase 2 close. Sequence: **systemic fixes → flagship pages** (landing, `/network`, `/learn/what-is-adna`, `/get-started`, `/vaults` + `/vaults/graph`, **`/community`**) **→ deep pages.**
 
@@ -120,7 +120,7 @@ The improvement **engine already exists and is battle-tested** — `skill_iii_cy
 | 2 | P0 → P1 | Approve `RECONCILIATION.aDNA.md` dispositions (esp. partner-claim removals + terminology sweep) and the `SITEMAP.aDNA.md` unit list | **✅ approved 2026-06-18** |
 | 3 | P1 → P2 | Approve `FINDINGS.aDNA.md` prioritization and the reconciled/new reviewer lenses (only uncovered ones authored) | **✅ approved 2026-06-18** — credibility-integrity-first P2 sequence; two-stage C-1/C-2 (real aDNA.aDNA artifacts now → Hearthstone base at keystone) |
 | 4 | P2 → P3 | Approve improvement specs + decadal session plan + per-unit done-definition + deploy posture | **✅ approved 2026-06-19** — open P3 (D1 credibility first); C-1 = repoint-to-public-image; publisher = "aDNA Network"; commit-only through P3; pt19 = verify-after |
-| 5 | P3 → P4 | Confirm all units cleared the bar; flagship benchmark side-by-side passed | pending |
+| 5 | P3 → P4 | Confirm all units cleared the bar; flagship benchmark side-by-side passed | **pending — READY**: all 4 decades CLOSED GO (D4 2026-06-21); awaiting operator GO at the D4 decade-gate |
 | 6 | P4 close | Sign-off verdict; standing-watch wired; `STATE.md` updated; STR resume/realign | pending |
 
 ## Risk Register
