@@ -3,7 +3,7 @@ type: governance
 subtype: campaign_claude
 created: 2026-06-17
 updated: 2026-06-21
-last_edited_by: agent_rosetta
+last_edited_by: agent_stanley
 tags: [governance, campaign, website, frontier_grade]
 ---
 
@@ -21,8 +21,8 @@ tags: [governance, campaign, website, frontier_grade]
 | Chartered by | Operator, 2026-06-17 |
 | Planned by | Berthier (chief of staff; holds the ecosystem-site charter, coord 2026-06-03) |
 | Executed by | Rotating persona cell; **Rosetta** is resident site agent for `aDNA.aDNA/site/` |
-| Status | active (activated 2026-06-18 — Operator Decision 1) |
-| Current Phase | **Phase 4: Whole-Site Coherence & Sign-Off** (P0–P3 ✅; all 4 decades CLOSED GO; Decision 5 approved 2026-06-21 → P4 active — cohesion pass · cold-3sec + Skeptical Frontier Engineer verdict · final sweep vs frozen baseline · `CAMPAIGN-REPORT` · standing-watch · Decision 6 close) |
+| Status | **completed 2026-06-21** (Operator Decision 6 = CLOSE GO; activated 2026-06-18) |
+| Current Phase | **CLOSED — P4 sign-off complete (build-verified GO).** P0–P3 ✅; all 4 decades CLOSED GO; P4 delivered (cohesion pass · cold-3sec + Skeptical Frontier Engineer GO on the build · final sweep vs frozen baseline · `CAMPAIGN-REPORT` filed · standing-watch wired) → **Decision 6 CLOSE GO 2026-06-21.** Live launch + on-live verdict = **keystone follow-up** (Hearthstone v8.0 + pt19 + coordinated deploy; tracked at [[campaign_operation_adna]]). |
 | Target | `https://aDNA.network` — source `aDNA.aDNA/site/` (Astro SSG → Vercel, direct deploy) |
 
 ## Mission (WHAT)

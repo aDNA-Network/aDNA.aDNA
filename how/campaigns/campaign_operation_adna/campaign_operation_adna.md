@@ -9,10 +9,10 @@ status: active
 phase_count: 0          # the program holds no phases of its own; children carry phases + gates
 mission_count: 0        # the program authors no missions; children own their mission trees
 created: 2026-06-18
-updated: 2026-06-19
-last_edited_by: agent_rosetta
+updated: 2026-06-21
+last_edited_by: agent_stanley
 orchestrates:
-  - campaign_website_adna                  # Track A — Prove it real (P0✅/P1✅ → P2 design active)
+  - campaign_website_adna                  # Track A — Prove it real (CLOSED 2026-06-21; campaign completed, Decision 6 CLOSE GO)
   - campaign_hearthstone                   # Track B — Make it real (P0✅/P1✅ → P2 ready → P5 release)
   - campaign_adna_serious_tool_readiness   # Track C — The engine (STR v8.0; referenced, NOT absorbed)
 tags: [campaign, program, umbrella, operation_adna, orchestration, north_star, public_good, credibility_integrity]
@@ -121,7 +121,7 @@ gates.** The program adds no phases; it synchronizes the tracks toward the keyst
 
 | Track | Campaign | Owner | Current state | What it delivers to the north-star |
 |-------|----------|-------|---------------|------------------------------------|
-| **A — Prove it real** | [[campaign_website_adna]] | Berthier (plan) · Rosetta (resident site agent) | **P0 ✅ / P1 ✅** ([[RECONCILIATION.aDNA]] + [[FINDINGS.aDNA]] filed) → **P2 design active 2026-06-19** (credibility-first; → Decision 4 gate) → P3 iterate | The site that *demonstrates* — frontier-grade, credibly real; resolves the credibility-integrity gap on the surface a newcomer meets first. |
+| **A — Prove it real** | [[campaign_website_adna]] | Berthier (plan) · Rosetta (resident site agent) | **CLOSED 2026-06-21 — campaign completed** (Decision 6 CLOSE GO; P0–P4 all closed; all 4 decades GO; build-verified frontier-grade — 281/281 gates · A11y/SEO 100 site-wide · Skeptical-Frontier GO on the build; [[RECONCILIATION.aDNA]] + [[FINDINGS.aDNA]] + [[CAMPAIGN-REPORT]] filed). **Terminal gate reached.** | The site that *demonstrates* — frontier-grade, credibly real; resolves the credibility-integrity gap on the surface a newcomer meets first. |
 | **B — Make it real** | [[campaign_hearthstone]] | Hestia (chartered) · Rosetta (build) | **P0 ✅ / P1 ✅ 2026-06-19** (`adr_035` accepted; `inventory`+`identity` → base, ontology 14→16 in dev graph) → **P2 ready** (not activated) → P5 release | The clone-and-run **base image** — the real, inspectable thing the site links to and the easy/fluid first-touch of the UX goal. |
 | **C — The engine** | STR ([[campaign_adna_serious_tool_readiness]]) | Rosetta | **active** (v8.0 target; P0 open; successor `campaign_adna_v3_ecosystem_compliance` opens at P6 close) | The standard + governance **v8.0** and per-vault ecosystem compliance — the ground truth Tracks A/B render and ship. *Referenced, not absorbed.* |
 | **D — The commons** | *(axis-K + `/commons` + subnetwork showcase; no separate campaign)* | Rosetta · coordinates with Venus (Network) | **in-flight inside Track A** (WEBSITE axis-K; `/commons` strongest K/E surface; subnetwork showcase live) | The public-good soul *shown* — real attribution, visible governance, honest federation, mission-aligned subnetworks (WGA · Context Commons · WilhelmAI · Rare Archive). The "Facebook, for good" MVP layer. |
@@ -154,7 +154,7 @@ a human gate inside its child campaign. The program's single synchronization poi
 | # | When | Decision | Status |
 |---|------|----------|--------|
 | DP1 | Program charter (now) | Approve the program name **"Operation aDNA"**, the umbrella `subtype: program` posture, the four-track map, and the orchestrate-don't-reimplement contract | **✅ approved 2026-06-18** — name blessed; posture + 4-track map + orchestrate-don't-reimplement contract approved. *(Same gate: ADR-035 ratified → Track B P0 closed; WEBSITE Decision 3 approved → Track A P1 closed.)* |
-| DP2 | Keystone readiness | Confirm all three keystone conditions green (WEBSITE Criticals shipped + Hearthstone v8.0 released + pt19 landed) and approve the **coordinated public launch** | pending |
+| DP2 | Keystone readiness | Confirm all three keystone conditions green (WEBSITE Criticals shipped + Hearthstone v8.0 released + pt19 landed) and approve the **coordinated public launch** | **pending — Track A terminal gate reached 2026-06-21** (WEBSITE.aDNA closed, Decision 6). Condition #1 (WEBSITE Criticals shipped) = **green** (D1 credibility-integrity deployed-live to adna.network 2026-06-19/20); the full improved-site deploy (D2–D4 + residuals) is the keystone joined-launch payload. Conditions #2 (Hearthstone v8.0) + #3 (pt19) tracked in [[coordination_ledger]]. |
 | DP3 | Cross-vault seam disputes | When a seam in [[coordination_ledger]] blocks a child (e.g. pt19 slips, `skill_template_release` contract changes), the program surfaces it to the operator rather than a child resolving cross-vault unilaterally | as-needed |
 | DP4 | Program close | When all tracks reach their terminal gates, AAR the program and set `status: completed` (children persist as their own records) | pending |
 

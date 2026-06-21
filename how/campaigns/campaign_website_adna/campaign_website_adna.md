@@ -4,7 +4,7 @@ type: campaign
 title: "WEBSITE.aDNA — Frontier-Grade Site Quality"
 owner: stanley
 persona: berthier
-status: active
+status: completed
 phase_count: 5
 mission_count: 5
 estimated_sessions: "12-24"
@@ -17,9 +17,10 @@ predecessor_campaigns:
   - campaign_rosetta                        # P0-P7 complete; Phase 8 → absorbed into STR P5 → carried here
   - campaign_adna_serious_tool_readiness    # active; website decadals E5/E6 subsumed here at activation
 activated: 2026-06-18                        # Operator Decision 1 approved (plan: please-read-the-claude-md-wise-riddle.md)
+closed: 2026-06-21                           # Operator Decision 6 = CLOSE GO; P4 sign-off complete (build-verified). Live launch = keystone follow-up.
 created: 2026-06-17
-updated: 2026-06-19
-last_edited_by: agent_rosetta
+updated: 2026-06-21
+last_edited_by: agent_stanley
 tags: [campaign, website, adna_network, frontier_grade, side_campaign]
 ---
 
@@ -108,7 +109,7 @@ The improvement **engine already exists and is battle-tested** — `skill_iii_cy
 ### Phase 4 — Whole-Site Coherence & Sign-Off
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| P4 | [[mission_wadna_p4_signoff]] — cohesion pass · cold 3-sec test · final metric sweep vs frozen baseline · `CAMPAIGN-REPORT.aDNA.md` · standing-watch automation | 1 | P3 | **active (opened 2026-06-21, Decision 5 GO)** |
+| P4 | [[mission_wadna_p4_signoff]] — cohesion pass · cold 3-sec test · final metric sweep vs frozen baseline · `CAMPAIGN-REPORT.aDNA.md` · standing-watch automation | 1 | P3 | **completed 2026-06-21** (Decision 6 CLOSE GO; build-verified sign-off; [[CAMPAIGN-REPORT]] filed; 281/281; standing-watch wired) |
 
 **Phase exit gate** *(human)*: one coherent voice end-to-end (type, spacing, accent, motion, voice); cold 3-second test passed by every persona on the live improved site; final Lighthouse / axe / CWV / screenshot sweep vs the frozen baseline (before/after delta); `CAMPAIGN-REPORT.aDNA.md` filed; standing-watch (always-on automated floor) wired to catch future drift. **The Skeptical Frontier Engineer delivers the final verdict.**
 
@@ -121,7 +122,7 @@ The improvement **engine already exists and is battle-tested** — `skill_iii_cy
 | 3 | P1 → P2 | Approve `FINDINGS.aDNA.md` prioritization and the reconciled/new reviewer lenses (only uncovered ones authored) | **✅ approved 2026-06-18** — credibility-integrity-first P2 sequence; two-stage C-1/C-2 (real aDNA.aDNA artifacts now → Hearthstone base at keystone) |
 | 4 | P2 → P3 | Approve improvement specs + decadal session plan + per-unit done-definition + deploy posture | **✅ approved 2026-06-19** — open P3 (D1 credibility first); C-1 = repoint-to-public-image; publisher = "aDNA Network"; commit-only through P3; pt19 = verify-after |
 | 5 | P3 → P4 | Confirm all units cleared the bar; flagship benchmark side-by-side passed | **✅ approved 2026-06-21** — all 4 decades CLOSED GO; P3 → completed, P4 (sign-off) opened |
-| 6 | P4 close | Sign-off verdict; standing-watch wired; `STATE.md` updated; STR resume/realign | **pending — READY (2026-06-21)**: P4 sign-off complete build-verified — [[CAMPAIGN-REPORT]] filed, 281/281, standing-watch wired, Skeptical-Frontier GO on the build; awaiting operator close + STR realign (live launch = keystone follow-up) |
+| 6 | P4 close | Sign-off verdict; standing-watch wired; `STATE.md` updated; STR resume/realign | **✅ approved 2026-06-21 — CLOSE GO** (+ PUSH): campaign `completed`; P4 mission closed; STATE updated; STR realigned (E5/E6 delivered-via-WEBSITE); Operation aDNA ledger marks Track A terminal-gate-reached; standing-watch activated on push. Live launch + on-live verdict = **keystone follow-up** (Hearthstone v8.0 + pt19 + coordinated deploy). [session `...033028Z_wadna_p4_close_decision6`] |
 
 ## Risk Register
 

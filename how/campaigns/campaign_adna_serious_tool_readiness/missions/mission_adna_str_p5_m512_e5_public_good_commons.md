@@ -11,7 +11,7 @@ updated: 2026-06-18   # SUBSUMED into campaign_website_adna (Phase 3 decadals) 2
 opens_at: 2026-06-07
 opened_session: session_stanley_20260608T042346Z_v8_m512_e5_open
 status: subsumed
-subsumed_by: campaign_website_adna   # Operator Decision 1, 2026-06-18 — E5 commons work continues as WEBSITE.aDNA Phase 3 decadals; build state (through c165) carried as resolved input
+subsumed_by: campaign_website_adna   # Operator Decision 1, 2026-06-18 — E5 commons work continues as WEBSITE.aDNA Phase 3 decadals; build state (through c165) carried as resolved input; WEBSITE closed GO 2026-06-21 (Decision 6) — E5 DELIVERED-via-WEBSITE (D3 /commons + /community axis-K)
 estimated_sessions: 3-4   # E5 decadal: design (Stages 0-4) + data foundation + build III cycles (160-~169) + AAR/RLP (E4 actual ran to 10)
 persona: rosetta
 last_edited_by: agent_stanley

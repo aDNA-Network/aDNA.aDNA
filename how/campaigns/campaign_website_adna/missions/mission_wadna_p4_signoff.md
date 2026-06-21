@@ -6,14 +6,14 @@ campaign_id: campaign_website_adna
 phase: 4
 mission_number: 4
 slug: signoff
-status: in_progress
+status: completed
 created: 2026-06-17
 updated: 2026-06-21
 last_edited_by: agent_stanley
 owner: stanley
 persona: rosetta             # resident executor; campaign planned by Berthier
 mission_class: planning      # verification + reporting; final improvements only if a coherence defect surfaces
-spec_completeness: active    # finalized at P3 close (2026-06-21, Decision 5 GO)
+spec_completeness: complete  # finalized at P3 close (2026-06-21, Decision 5 GO); mission closed at Decision 6
 estimated_sessions: "1"
 token_budget_estimated: "~100-150 kT; full-site traversal + final sweep + report"
 hard_dependency_satisfied: "yes — P3 closed 2026-06-21 (Decision 5 GO; all 4 decades CLOSED GO)"
@@ -36,12 +36,12 @@ Confirm the site reads as **one organization with one voice**, not a quilt of se
 4. **`CAMPAIGN-REPORT.aDNA.md`** — every unit's before/after scorecard, the metric delta, the residual Medium/Low backlog, and the **standing-watch** recommendation (always-on automated floor — Lighthouse gate + `@audit` regression gate + visual-regression — wired to catch future drift).
 
 ## Exit Gate (campaign close) — human
-- [ ] One coherent voice end-to-end (type · spacing · accent · motion · voice).
-- [ ] Every unit ≥4 on every A–K axis; zero open Critical/High; CWV in the Good band site-wide.
-- [ ] Cold 3-second test passed by every persona; **Skeptical Frontier Engineer signs off.**
-- [ ] `CAMPAIGN-REPORT.aDNA.md` filed; before/after delta vs frozen baseline.
-- [ ] Standing watch wired; residual Medium/Low backlog filed.
-- [ ] Campaign AAR appended; `STATE.md` updated; STR realigned/resumed (Decision 6).
+- [x] One coherent voice end-to-end (type · spacing · accent · motion · voice).
+- [x] Every unit ≥4 on every A–K axis; zero open Critical/High; CWV in the Good band site-wide.
+- [x] Cold 3-second test passed by every persona; **Skeptical Frontier Engineer signs off** (on the build).
+- [x] `CAMPAIGN-REPORT.aDNA.md` filed; before/after delta vs frozen baseline.
+- [x] Standing watch wired; residual Medium/Low backlog filed.
+- [x] Campaign AAR appended; `STATE.md` updated; STR realigned/resumed — **Decision 6 = CLOSE GO, 2026-06-21.**
 
 ## Campaign Context
 - **Inputs:** P3 improved units + decadal AARs + metric deltas; P0 frozen baseline + benchmark set.
@@ -51,3 +51,5 @@ Confirm the site reads as **one organization with one voice**, not a quilt of se
 *5-line AAR + campaign-level AAR mandatory at close.*
 
 **Sign-off COMPLETE (build-verified) 2026-06-21** — mission held `in_progress` pending **operator Decision 6** (campaign close). All 4 objectives delivered: cohesion pass (1 defect fixed — `VaultClassFacet` tokenized) · final sweep vs frozen baseline (A11y/SEO 100 held; concept CLS 0.134→0.067; graph Perf 83→88) · cold-3sec + **Skeptical Frontier Engineer GO on the build** · standing-watch wired (`.github/workflows/gates.yml`) · [[CAMPAIGN-REPORT]] filed. Gates 281/281. The **5-line + campaign-level AAR live in [[CAMPAIGN-REPORT]] §8.** On Decision 6 close → flip this mission `completed`, append the campaign AAR to STATE, realign/resume STR. Live launch + on-live verdict = keystone follow-up (Hearthstone v8.0 + pt19).
+
+**CLOSED 2026-06-21** — operator **Decision 6 = CLOSE GO** (+ PUSH). Mission `completed`; campaign closed; STATE updated; STR realigned (E5/E6 delivered-via-WEBSITE); Operation aDNA ledger marks Track A terminal-gate-reached. Standing-watch activated on push. Live launch remains the program keystone (gated on pt19 + coordinated deploy). Session: `session_stanley_20260621T033028Z_wadna_p4_close_decision6`.

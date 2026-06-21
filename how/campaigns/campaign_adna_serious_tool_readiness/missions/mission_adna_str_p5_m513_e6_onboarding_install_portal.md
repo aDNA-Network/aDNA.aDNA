@@ -10,7 +10,7 @@ created: 2026-06-10
 updated: 2026-06-18   # SUBSUMED into campaign_website_adna (Phase 3 decadals) 2026-06-18; was planning (BUILD was to open at c170)
 opens_at: 2026-06-10   # authored at the audit P2; BUILD opens at c170 (E5 close); O2 install-truth foundation pre-staged 2026-06-10 as the audit-P2 carry-down
 status: subsumed
-subsumed_by: campaign_website_adna   # Operator Decision 1, 2026-06-18 — E6 onboarding/install-portal work continues as WEBSITE.aDNA Phase 3 decadals; install_truth.json fixture carried as resolved input
+subsumed_by: campaign_website_adna   # Operator Decision 1, 2026-06-18 — E6 onboarding/install-portal work continues as WEBSITE.aDNA Phase 3 decadals; install_truth.json fixture carried as resolved input; WEBSITE closed GO 2026-06-21 (Decision 6) — E6 DELIVERED-via-WEBSITE (install-truth + /get-started)
 estimated_sessions: 3-4
 persona: rosetta
 last_edited_by: agent_stanley
