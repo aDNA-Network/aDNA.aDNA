@@ -121,7 +121,7 @@ The improvement **engine already exists and is battle-tested** — `skill_iii_cy
 | 3 | P1 → P2 | Approve `FINDINGS.aDNA.md` prioritization and the reconciled/new reviewer lenses (only uncovered ones authored) | **✅ approved 2026-06-18** — credibility-integrity-first P2 sequence; two-stage C-1/C-2 (real aDNA.aDNA artifacts now → Hearthstone base at keystone) |
 | 4 | P2 → P3 | Approve improvement specs + decadal session plan + per-unit done-definition + deploy posture | **✅ approved 2026-06-19** — open P3 (D1 credibility first); C-1 = repoint-to-public-image; publisher = "aDNA Network"; commit-only through P3; pt19 = verify-after |
 | 5 | P3 → P4 | Confirm all units cleared the bar; flagship benchmark side-by-side passed | **✅ approved 2026-06-21** — all 4 decades CLOSED GO; P3 → completed, P4 (sign-off) opened |
-| 6 | P4 close | Sign-off verdict; standing-watch wired; `STATE.md` updated; STR resume/realign | pending |
+| 6 | P4 close | Sign-off verdict; standing-watch wired; `STATE.md` updated; STR resume/realign | **pending — READY (2026-06-21)**: P4 sign-off complete build-verified — [[CAMPAIGN-REPORT]] filed, 281/281, standing-watch wired, Skeptical-Frontier GO on the build; awaiting operator close + STR realign (live launch = keystone follow-up) |
 
 ## Risk Register
 

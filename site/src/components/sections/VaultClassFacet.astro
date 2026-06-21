@@ -8,7 +8,20 @@ const { vaultClass, count } = Astro.props;
 </a>
 
 <style>
-  .facet-chip { display: inline-block; padding: 0.4rem 0.8rem; border-radius: 1rem; background: #f0f0f0; text-decoration: none; color: #333; font-size: 0.9em; }
-  .facet-chip:hover { background: #4a86e8; color: white; }
+  /* P4 cohesion fix: was hardcoded #f0f0f0/#333 (light-only — broke the dark-first default) plus a
+     rogue #4a86e8 blue hover (a third accent). Tokenized to the theme-aware brand surface + the cyan
+     --color-link accent (no new hue), matching the site's bordered-pill convention. */
+  .facet-chip {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 1rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 0.9em;
+    transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  }
+  .facet-chip:hover { background: var(--color-surface); border-color: var(--color-link); color: var(--color-link); }
   .facet-count { opacity: 0.7; margin-left: 0.25rem; }
 </style>

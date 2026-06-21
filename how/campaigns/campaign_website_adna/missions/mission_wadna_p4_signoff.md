@@ -48,4 +48,6 @@ Confirm the site reads as **one organization with one voice**, not a quilt of se
 - **Outputs:** `CAMPAIGN-REPORT.aDNA.md`; standing-watch automation; campaign close → STR realign.
 
 ## AAR
-*5-line AAR + campaign-level AAR mandatory at close.* — *(pending)*
+*5-line AAR + campaign-level AAR mandatory at close.*
+
+**Sign-off COMPLETE (build-verified) 2026-06-21** — mission held `in_progress` pending **operator Decision 6** (campaign close). All 4 objectives delivered: cohesion pass (1 defect fixed — `VaultClassFacet` tokenized) · final sweep vs frozen baseline (A11y/SEO 100 held; concept CLS 0.134→0.067; graph Perf 83→88) · cold-3sec + **Skeptical Frontier Engineer GO on the build** · standing-watch wired (`.github/workflows/gates.yml`) · [[CAMPAIGN-REPORT]] filed. Gates 281/281. The **5-line + campaign-level AAR live in [[CAMPAIGN-REPORT]] §8.** On Decision 6 close → flip this mission `completed`, append the campaign AAR to STATE, realign/resume STR. Live launch + on-live verdict = keystone follow-up (Hearthstone v8.0 + pt19).

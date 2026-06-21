@@ -1,0 +1,53 @@
+name: gates
+
+# Standing watch — the always-on automated floor (WEBSITE.aDNA campaign, P4 sign-off).
+# Runs the full Playwright gate suite on every push to main and every PR so credibility /
+# craft / perf / a11y drift fails loudly instead of shipping silently. The suite (site/tests/gates/)
+# includes G1 (Lighthouse-budget fixture), G2 (@audit full-route × both-modes sweep), gate-4 axe
+# in BOTH light and dark modes, single-source/public-meta/link-graph/no-JS/llms.txt/colour gates.
+#
+# CI-safe build: this repo is the aDNA.aDNA vault; the prebuild data-projection
+# (scripts/build_vaults_data.mjs, build_install_truth.mjs) reads sibling vaults (Home.aDNA, .adna)
+# that are NOT in this checkout. We therefore build with `npx astro build` (skips the npm prebuild
+# entirely) so the gates run against the committed src/data/* — the same posture-safe build the
+# campaign uses locally (never `npm run build` in CI; that would attempt a vault-data regen).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gates-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Build (posture-safe — committed data, no prebuild regen)
+        run: npx astro build
+
+      - name: Run quality gates (G1 budget · G2 @audit · axe both-modes · all)
+        run: npm run test:gates
