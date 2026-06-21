@@ -3,8 +3,8 @@ type: spec
 kind: ecosystem_spec
 name: platform_ecosystem
 created: 2026-05-20
-updated: 2026-05-20
-version: "0.1"
+updated: 2026-06-20
+version: "0.2"
 status: active
 last_edited_by: agent_stanley
 tags: [spec, ecosystem, platform, aDNA_pattern]
@@ -26,11 +26,28 @@ Each platform pairs a governance vault (`<Name>.aDNA/`) with a sibling code repo
 
 **Variant**: VideoForge Amendment 1 (2026-05-12) introduces the **single-repo per VideoForge Amendment 1** pattern — code lives inside the vault as a `what/<platform>/` directory (code-as-WHAT-object), standalone-deployable. Adopted by `LatticeTerminal.aDNA` + `LatticeAgent.aDNA` + `Cmux.aDNA`.
 
+## Software / Deployment-Graph Platforms (subtype)
+
+*(Added v0.2, 2026-06-20 — Operation Keystone P0. Co-signed [[../decisions/adr_037_software_deployment_graph_subtype|ADR-037]].)*
+
+A **software/deployment-graph** is a Platform.aDNA carrying `platform_subtype: software_deployment_graph` — **one piece of software per graph**, owning that software's **install · operate · configure · update · interoperate**, and **federating** four cross-cutting wrappers rather than duplicating them:
+
+| Wrapper | Owner | Binds |
+|---------|-------|-------|
+| `git/` | Git.aDNA (Hopper) | git-ops / forge / CI-CD |
+| `feedback/` | aDNA.aDNA (Rosetta) — [[spec_telemetry_feedback_ecosystem]] | opt-in deploy-signal loop (default-OFF) |
+| `iii/` | III.aDNA (Argus) | inspect / introspect / improve |
+| Home.aDNA credential routing | Home.aDNA (Hestia) | names-only secret brokering (Standing Rule 6) |
+
+A deployment graph is **composed, not free-standing** — a role graph such as `Lighthouse.aDNA` assembles a chosen set into a deployable node. This is a **designation within Platform.aDNA, not a new aDNA category**; `Warp.aDNA`, `Obsidian.aDNA`, and `Lab.aDNA` are pre-existing instances. Pattern: [[pattern_software_deployment_graph]]. Conformance test + the `Network.aDNA` recipe-quarry reconciliation (recipes = source-quarry, graph = canonical home): [[../decisions/adr_037_software_deployment_graph_subtype|ADR-037]]. Tier roster + dispositions: Operation Keystone (`how/campaigns/campaign_keystone/`).
+
 ## Terminal ↔ Harness Contract
 
 Terminal platforms (`LatticeTerminal`, `Cmux`) and harness platforms (`LatticeAgent`, `RareHarnessNeo`, plus `Claude Code`/`OpenCode` as co-providers) compose across a canonical boundary contract: [[spec_terminal_harness_contract]] (co-signed by `adr_027`). It lets any conforming harness run as a **terminal-driven agent** under any conforming terminal. The contract references LatticeTerminal's `PROVIDER-CONTRACT.md` + `HARNESS-CONTRACT.md` as the normative clause source and adds the multi-terminal generalization + arms-length process-isolation clause (which keeps mixed-license integration — e.g. a GPL-3.0 Cmux fork driving an Apache-2.0 harness — clean by construction).
 
 ## Active Platforms
+
+> ⚠️ **STALE (pre-2026-06 rename/merge wave).** This table predates the identity cascade (RareHarness→Harness, Cmux→Terminal, LatticeTerminal/LatticeAgent archived, RareHarnessNeo folded). Refresh tracked separately as `idea_upstream_platform_spec_refresh`; not refactored here to respect the Operation Production Tidy freeze. Authoritative platform routing lives in the workspace router + each vault's `STATE.md`.
 
 | Platform | Persona | Runtime focus | Vault | Code repo | Maturity | Partners |
 |----------|---------|---------------|-------|-----------|----------|----------|

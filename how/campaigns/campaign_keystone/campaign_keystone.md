@@ -1,0 +1,163 @@
+---
+campaign_id: campaign_keystone
+type: campaign
+title: "Operation Keystone — Software-Deployment-Graph Tier"
+owner: stanley
+status: active
+phase_count: 5
+mission_count: 5
+estimated_sessions: "8-14"
+calibrated_sessions: "8-14"
+estimation_class: governance-broad
+priority: high
+created: 2026-06-20
+updated: 2026-06-20
+last_edited_by: agent_stanley
+strategic_compass: who/governance/VISION.md
+depends_on: campaign_feedback_loop
+tags: [campaign, keystone, deployment_graph, platform, federation]
+---
+
+# Campaign: Operation Keystone
+
+## Goal
+
+Stand up the **software-deployment-graph tier**: context-graph-native forked deployment graphs — one per piece of software — each installing / operating / configuring / updating / interoperating a single piece of software so it integrates into the aDNA network lattice. These are the reusable units `Lighthouse.aDNA` **composes** into a node and that `Network.aDNA` / `Git.aDNA` reference. When complete, an operator adds (e.g.) `Nebula.aDNA` to a node and an agent sets it up and operates it — for the operator and for every other agent on that node — from then on. The paradigm is authored **before** any graph is seeded.
+
+## Context
+
+The operator's framing (verbatim intent): *all the software we use on and to build the aDNA network gets a `<Name>.aDNA` "stack-component" graph carrying the install / context / documentation / processes / aDNA-integration to make operating that software fully seamless and agentic.* Composable node stacks are then built by **sharing context graphs**, and agents are empowered to operate software for their users.
+
+This campaign defines the tier and seeds its first members. It depends on [[how/campaigns/campaign_feedback_loop/campaign_feedback_loop|Operation Feedback Loop]] (WS-A) for the `feedback/` wrapper each graph carries. Cohort scope is **wide** (operator ratification, 2026-06-20) — the full implied network-stack, not only the originally-named set. Reconciliation with the pre-existing `Network.aDNA` deployment-recipe library is settled: **recipes = source-quarry, graph = canonical home** (operator ratification; recorded in [[what/decisions/adr_037_software_deployment_graph_subtype|ADR-037]]).
+
+## Scope
+
+### In Scope
+
+- The `pattern_software_deployment_graph` aDNA pattern (enshrines "context-graph-native forked deployment graph").
+- The `spec_platform_ecosystem` **software/deployment-graph subtype** extension (NOT a new category — operator-ratified category ruling).
+- `template_software_graph_stub` — the uniform cohort skeleton (four wrappers: `git/`, `feedback/`, `iii/`, Home.aDNA credential routing; deployment-gated standing orders).
+- [[how/campaigns/campaign_keystone/artifacts/keystone_deconfliction_ledger|The de-confliction ledger / implied-stack roster]] — every candidate graph with its disposition + seam.
+- Genesis-planning stubs (no build/deploy/infra) for the clean net-new graphs; staged coord memos for overlapping + existing graphs.
+- P4 cohort manifest + interlock into the Lighthouse composition-manifest stub.
+
+### Out of Scope
+
+- Any actual install, deploy, service start, or infra action (these are genesis-planning stubs; live work is per-graph P-gated).
+- Forking any graph an owning persona already governs (Jupyter → Lab/Galileo; Forgejo provider contract → Git/Hopper; Nebula substrate → Network/Venus) — these are SCOPED or ROUTED, never duplicated.
+- Editing the `Network.aDNA` recipe library (coord memo to Venus proposes the quarry reframe; we do not write into her tree).
+
+### Subsumes
+
+| Plan/Mission | Status at Subsumption | Tasks Absorbed By |
+|-------------|----------------------|-------------------|
+| — (net-new campaign) | — | — |
+
+## Phases & Missions
+
+### Phase 0: Author the Paradigm
+
+| Mission | Title | Sessions | Dependencies | Status |
+|---------|-------|----------|-------------|--------|
+| 0 | Pattern + spec subtype + template + roster (+ ADR-037 accepted) | 1-2 | campaign_feedback_loop P1 | completed |
+
+**Phase exit gate**: ✅ **CLEARED 2026-06-20** — operator ratified the `template_software_graph_stub` shape + the campaign name (Operation Keystone) + the ledger. AAR: [[how/missions/artifacts/campaign_keystone_m00_aar|campaign_keystone_m00_aar]].
+
+### Phase 1: De-confliction Ledger
+
+| Mission | Title | Sessions | Dependencies | Status |
+|---------|-------|----------|-------------|--------|
+| 1 | De-confliction ledger from ground truth (Network/Lab/Git/Lighthouse) | 1 | M0 | ratified |
+
+**Phase exit gate**: ✅ **CLEARED 2026-06-20** — operator ratified the ledger, incl. the **Store.aDNA / Groupware.aDNA verify result** (both verified ABSENT → seed-net-new).
+
+### Phase 2: Seed Net-New + Enrich Existing (proving instances)
+
+| Mission | Title | Sessions | Dependencies | Status |
+|---------|-------|----------|-------------|--------|
+| 2 | Seed clean net-new FIRST; then Store/Groupware; enrich Lab as reference impl | 2-3 | M1 | in_progress |
+
+**First wave seeded 2026-06-20** (genesis-planning stubs; local git, no remote): `Nextcloud.aDNA` (Atlas, `142c113`), `Caddy.aDNA` (Portunus, `04817c5`, default reverse-proxy), `Bitwarden.aDNA` (Cerberus, `09ca97c`, Operation Keyring / WS-B). Remaining: Store, Groupware, FastAPI-or-defer, Container/Podman, Inference; enrich Lab as reference impl.
+
+**Phase exit gate**: clean net-new stubs prove the template before any overlapping graph; each carries the four wrappers + deployment-gated SOs; router rows STAGED `#needs-human`; local `git init`, no remote.
+
+### Phase 3: Overlapping Graphs (seam-gated)
+
+| Mission | Title | Sessions | Dependencies | Status |
+|---------|-------|----------|-------------|--------|
+| 3 | Forgejo → Hopper/Lighthouse seam; Nebula → Venus seam — coord memos, then seed only on ratified seam | 1-2 | M2 | memos_staged |
+
+**Seam memos staged 2026-06-20** (aDNA.aDNA/who/coordination/, ack-pending — Rule 10): `coord_2026_06_20_keystone_forgejo_to_hopper`, `coord_2026_06_20_keystone_nebula_to_venus`, + the recipe-quarry reconciliation `coord_2026_06_20_keystone_recipe_quarry_to_venus`.
+
+**Phase exit gate**: stub seeded only after the owning persona ratifies the atomic-software-graph scope (operator-gated). Coord memos, never silent writes.
+
+### Phase 4: Register Cohort + Wire Composition
+
+| Mission | Title | Sessions | Dependencies | Status |
+|---------|-------|----------|-------------|--------|
+| 4 | Cohort manifest in aDNA.aDNA + populate Lighthouse composition-manifest stub (WS-C interlock) | 1 | M2, M3 | planned |
+
+**Phase exit gate**: cohort AAR; `skill_context_graduation` before close; STATE.md updated; Lighthouse build gate NOT lifted.
+
+## Decision Points
+
+| # | When | Decision | Status |
+|---|------|----------|--------|
+| 1 | End of M0 (P0 gate) | Template shape + Operation Keystone name | **resolved 2026-06-20** — ratified as written |
+| 2 | End of M1 (P1 gate) | De-confliction ledger, esp. Store/Groupware verify | **resolved 2026-06-20** — ratified; both ABSENT → seed |
+| 3 | M3 | Forgejo seam (Hopper/Lighthouse/Venus) + Nebula seam (Venus) ratification | pending |
+| 4 | M2 | Container runtime: Podman-as-default vs Docker (fleet standard = rootless Podman) | pending |
+| 5 | M2 | Reverse proxy: nginx vs Caddy (Lighthouse vision specifies Caddy; order named nginx) | pending |
+
+## Risk Register
+
+| Risk | Severity | Mitigation |
+|------|----------|------------|
+| Cohort graphs collide with the Network.aDNA recipe library (parallel truth) | High | ADR-037 ratifies recipes=quarry, graph=home; coord memo to Venus; recipes reframed as source-quarry |
+| Data-bearing member deployed on the control-plane lighthouse host | Critical | ADR-016 §8 carried by every data-bearing stub; placement co-designed with Venus |
+| Forking a graph an owning persona already governs | High | P1 ledger rules SCOPE/ROUTE vs CREATE from ground truth; overlap graphs seam-gated (P3) |
+| Template drift → bespoke forks instead of a fleet | Medium | `template_software_graph_stub` is the single skeleton; conformance = the four wrappers |
+| Premature build/deploy | High | All P2/P3 outputs are genesis-planning stubs; live work is per-graph P-gated |
+
+## Verification Strategy
+
+### Per-Mission
+
+| Check | Method | Gate? |
+|-------|--------|-------|
+| SITREP filed | Session closure | Yes |
+| AAR produced | 5-step scorecard → `how/missions/artifacts/` | Yes |
+| Ground-truth-before-fork | Re-read owning vault STATE/CLAUDE; never from memory | Yes (P1) |
+| Dual-audience + self-reference | SO#7 / SO#8 skills | Yes |
+
+### Campaign Validation
+
+| Check | Method |
+|-------|--------|
+| Cohort manifest coherent | Every seeded stub listed; every disposition traceable to the ledger |
+| Context graduation | `skill_context_graduation` before close |
+| STATE.md updated | `aDNA.aDNA/STATE.md` reflects status |
+
+## Timeline
+
+| Phase | Missions | Sessions |
+|-------|----------|----------|
+| Phase 0 | M0 | 1-2 |
+| Phase 1 | M1 | 1 |
+| Phase 2 | M2 | 2-3 |
+| Phase 3 | M3 | 1-2 |
+| Phase 4 | M4 | 1 |
+| **Total** | **5 missions** | **8-14 sessions** |
+
+## Notes
+
+- Interlock: **WS-A P1 → this campaign** (the `feedback/` wrapper); **this campaign P4 → the Lighthouse composition-manifest stub** (WS-C §Step 3). Lighthouse composes the cohort; it does not duplicate it.
+- The category ruling is settled by the order and recorded in [[what/decisions/adr_037_software_deployment_graph_subtype|ADR-037]]: deployment graphs are **Platform.aDNA with a software/deployment-graph designation**, not a new category (Warp / Obsidian / Lab are already software-surface Platforms).
+
+## Completion Summary
+
+*Fill out when setting `status: completed`.*
+
+## Campaign AAR
+
+*Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
