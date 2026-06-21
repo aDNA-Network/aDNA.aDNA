@@ -3,7 +3,7 @@ campaign_id: campaign_feedback_loop
 type: campaign
 title: "Operation Feedback Loop — Software-Graph Telemetry & AAR-Feedback Pattern"
 owner: stanley
-status: planning
+status: active
 phase_count: 5
 mission_count: 5
 estimated_sessions: "5-8"
@@ -59,7 +59,7 @@ Triggered by Operation Feedback Loop (rev. 3) under the network-stack-tier expan
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 0 | Charter, Naming & Boundary (+ ADR-036 proposed) | 1 | — | active |
+| 0 | Charter, Naming & Boundary (+ ADR-036 accepted) | 1 | — | completed |
 
 **Phase exit gate**: Operator ratifies wrapper name (`feedback/` vs `telemetry/`), the four signal classes, and the Context.aDNA boundary recorded in ADR-036. **Human gate — Standing Order #1.**
 
@@ -67,7 +67,7 @@ Triggered by Operation Feedback Loop (rev. 3) under the network-stack-tier expan
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 1 | Pattern + Spec + `federation_ref` contract + AAR sub-pattern | 1-2 | M0 | planned |
+| 1 | Pattern + Spec + `federation_ref` contract + AAR sub-pattern | 1-2 | M0 | completed |
 
 **Phase exit gate**: `pattern_*` and `spec_*` exist, pass dual-audience ([[how/skills/skill_dual_audience_review|review]]) + self-reference checks, cite the standard, carry ≥2 wikilinks. These are the artifacts WS-B / WS-D consume.
 
@@ -99,9 +99,9 @@ Triggered by Operation Feedback Loop (rev. 3) under the network-stack-tier expan
 
 | # | When | Decision | Status |
 |---|------|----------|--------|
-| 1 | End of M0 (P0→P1 gate) | Wrapper name `feedback/` vs `telemetry/`; four signal classes; Context.aDNA boundary | pending |
+| 1 | End of M0 (P0→P1 gate) | Wrapper name `feedback/` vs `telemetry/`; four signal classes; Context.aDNA boundary | **resolved 2026-06-20** — `feedback/`, four classes + boundary ratified as written |
 | 2 | During M3 | Warp coord-memo placement (Warp mid-genesis P3b — operator clears the staged draft first) | pending |
-| 3 | M1 | Redaction-profile name + field set (`software_graph_default`) | pending |
+| 3 | M1 | Redaction-profile name + field set (`software_graph_default`) | **resolved 2026-06-20** — `software_graph_default` field set defined in the spec §AAR sanitization pass |
 
 ## Risk Register
 

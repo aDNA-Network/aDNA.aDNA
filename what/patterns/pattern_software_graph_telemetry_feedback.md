@@ -2,7 +2,7 @@
 type: pattern
 created: 2026-06-20
 updated: 2026-06-20
-status: draft
+status: active
 pattern_category: federation
 applies_to: [platform_software_deployment_graph, framework]
 campaign_id: campaign_feedback_loop

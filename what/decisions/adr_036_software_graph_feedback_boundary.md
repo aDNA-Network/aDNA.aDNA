@@ -2,7 +2,7 @@
 type: adr
 adr_number: "036"
 title: "Software-Graph Feedback Loop — boundary, privacy, and wrapper-federation choice"
-status: proposed
+status: accepted
 created: 2026-06-20
 updated: 2026-06-20
 last_edited_by: agent_stanley
@@ -16,7 +16,7 @@ tags: [adr, decision, feedback_loop, telemetry, federation, privacy]
 
 ## Status
 
-Proposed — 2026-06-20 (awaiting operator ratification at the campaign P0→P1 gate, Standing Order #1).
+Accepted — 2026-06-20. Operator ratified all three gate items at the campaign P0→P1 human gate (Standing Order #1): wrapper directory name **`feedback/`**, the four signal classes (`deploy_outcome` · `config_drift` · `install_friction` · `shared_aar`), and the Context.aDNA consume-by-reference boundary (§3). *(Proposed → Accepted; no clauses changed at ratification.)*
 
 ## Context
 
@@ -77,3 +77,4 @@ The pattern federates via a consumer `feedback/` wrapper (a `federation_ref` blo
 | Date | Mission | Amendment summary |
 |------|---------|-------------------|
 | 2026-06-20 | M0 | ADR created (proposed) — boundary, privacy spine, wrapper name, wrapper-federation choice. |
+| 2026-06-20 | M0 | **Accepted** at the P0→P1 operator gate — `feedback/` wrapper name, four signal classes, and Context.aDNA boundary ratified as written. No clause changes. |

@@ -3,7 +3,7 @@ plan_id: mission_charter_boundary_m00
 type: plan
 title: "Charter, Naming & Boundary"
 owner: stanley
-status: active
+status: completed
 campaign_id: campaign_feedback_loop
 campaign_phase: 0
 campaign_mission_number: 0
@@ -56,8 +56,9 @@ Operator ratifies, at the P0→P1 human gate (Standing Order #1):
 - **Depends on**: 2
 
 ### 4. Operator gate
-- **Status**: blocked (human gate)
-- **Description**: Present the three ratification items above. Do not advance to M1 until cleared (Standing Order #1).
+- **Status**: completed
+- **Session**: session_2026_06_20_feedback_loop_p0 (cleared by a follow-on session same day)
+- **Description**: Presented the three ratification items; operator ratified all three at the P0→P1 human gate 2026-06-20 — wrapper name **`feedback/`**, the four signal classes, and the Context.aDNA consume-by-reference boundary, all as written. ADR-036 flipped `proposed → accepted`; pattern + spec flipped `draft → active`.
 - **Depends on**: 2, 3
 
 ## Campaign Context
@@ -74,14 +75,14 @@ Authored ahead of the gate per the order's allowance that P0 scaffold + the prop
 
 ## Completion Summary
 
-*Fill out when setting `status: completed`.*
+All four objectives completed. The campaign scaffold (master + CLAUDE.md + this mission), ADR-036 (now **accepted**), and the staged Prometheus boundary memo were authored in the M0 session; the P1 pattern + spec were drafted ahead of the gate as dependency-unblockers (now **active**). The operator cleared the P0→P1 gate on 2026-06-20, ratifying `feedback/` + the four signal classes + the Context.aDNA boundary with no clause changes. Campaign advances to P1-closed / P2.
 
 ## AAR
 
 *Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
 
-- **Worked**: [tbd]
-- **Didn't**: [tbd]
-- **Finding**: [tbd]
-- **Change**: [tbd]
-- **Follow-up**: [tbd]
+- **Worked**: Drafting the gated P1 pattern+spec ahead of the human gate (clearly marked "draft pending ratification") let the operator clear the gate in one pass with zero rework — `feedback/` ratified exactly as authored.
+- **Didn't**: The authoring session was `/clear`-ed after `git add`+commit but before the gate cleared; a follow-on session had to reconstruct true state against a stale git snapshot (system-prompt showed the files untracked when they were already committed in `b973461`).
+- **Finding**: Drafting gated artifacts ahead of a gate is safe+efficient when the gate is a genuine either/or (a name choice), not an open design question — and when every draft carries an explicit ratification-pending mark.
+- **Change**: On `/clear` mid-mission, keep the active session's Heartbeat current so the next agent rebuilds state from the session file, not just from git (which a stale harness snapshot can misreport).
+- **Follow-up**: M1 close (`mission_pattern_spec_m01` + AAR) and M2 (`skill_telemetry_wrapper_integration` + documented self-demo exemption) — both proceeding this session.

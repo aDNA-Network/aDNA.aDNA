@@ -6,7 +6,7 @@ created: 2026-06-20
 updated: 2026-06-20
 version: "0.1.0"
 version_policy: minor
-status: draft
+status: active
 campaign_id: campaign_feedback_loop
 co_signed_adr: aDNA.aDNA/what/decisions/adr_036_software_graph_feedback_boundary.md
 consent_state: opt_in_default_off
@@ -161,4 +161,4 @@ Promotion of a candidate to an actual default change requires the owning graph's
 
 ## Provenance
 
-Authored at `campaign_feedback_loop` M1 (2026-06-20), Operation Feedback Loop WS-A. Co-signed: [[what/decisions/adr_036_software_graph_feedback_boundary|ADR-036]]. Mirrors the ecosystem-spec shape of [[what/specs/spec_framework_ecosystem|spec_framework_ecosystem]] and the consumer contract of III [[../../III.aDNA/what/decisions/adr_002_consumer_federation_contract|ADR-002]]. Normative conventions cite the upstream `adna_standard.md` (github.com/aDNA-Network/aDNA). **Draft** pending operator ratification of the wrapper name + signal taxonomy + boundary at the campaign P0→P1 gate.
+Authored at `campaign_feedback_loop` M1 (2026-06-20), Operation Feedback Loop WS-A. Co-signed: [[what/decisions/adr_036_software_graph_feedback_boundary|ADR-036]]. Mirrors the ecosystem-spec shape of [[what/specs/spec_framework_ecosystem|spec_framework_ecosystem]] and the consumer contract of III [[../../III.aDNA/what/decisions/adr_002_consumer_federation_contract|ADR-002]]. Normative conventions cite the upstream `adna_standard.md` (github.com/aDNA-Network/aDNA). **Ratified** at the campaign P0→P1 operator gate (2026-06-20): wrapper name `feedback/`, the four signal classes, and the Context.aDNA consume-by-reference boundary — status `active`.

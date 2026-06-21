@@ -15,8 +15,8 @@ tags: [governance, campaign, feedback_loop]
 |-------|-------|
 | Campaign | `campaign_feedback_loop` |
 | Owner | stanley |
-| Status | planning |
-| Current Phase | Phase 0: Charter, Naming & Boundary |
+| Status | active |
+| Current Phase | Phase 2: Integration Skill + Self-Demonstration (P0 + P1 closed 2026-06-20) |
 | Persona | Rosetta (this vault) |
 
 ## Quick Start
@@ -58,4 +58,4 @@ tags: [governance, campaign, feedback_loop]
 
 ## Delegation Notes
 
-P0 authored 2026-06-20 (session `session_2026_06_20_feedback_loop_p0`). The wrapper directory name was chosen `feedback/` (not `telemetry/`) to align with the VISION compass; the order's compound filenames (`*_telemetry_feedback_*`) are retained for findability. **This name is an operator ratification item at the P0→P1 gate — if overridden to `telemetry/`, sweep the wrapper dir name across the pattern + spec (a cheap rename; the federation_ref `source_*` file paths do not change).** Boundary, persona (Cerberus for Bitwarden), cohort scope (wide), and recipe seam (quarry→home) were operator-ratified 2026-06-20.
+P0 authored 2026-06-20 (session `session_2026_06_20_feedback_loop_p0`). The wrapper directory name was chosen `feedback/` (not `telemetry/`) to align with the VISION compass; the order's compound filenames (`*_telemetry_feedback_*`) are retained for findability. **The `feedback/` name was ratified at the P0→P1 gate 2026-06-20 — no override, no rename needed; ADR-036 is `accepted` and the pattern + spec are `active`.** Boundary, persona (Cerberus for Bitwarden), cohort scope (wide), and recipe seam (quarry→home) were operator-ratified 2026-06-20.

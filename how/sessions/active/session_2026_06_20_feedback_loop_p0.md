@@ -4,7 +4,7 @@ session_id: session_2026_06_20_feedback_loop_p0
 intent: "Operation Feedback Loop WS-A — charter campaign_feedback_loop (P0) + author P1 pattern/spec"
 campaign_id: campaign_feedback_loop
 tier: 2
-status: active
+status: completed
 created: 2026-06-20
 updated: 2026-06-20
 last_edited_by: agent_stanley
@@ -44,4 +44,33 @@ Stand up the Telemetry & AAR-Feedback pattern campaign in `aDNA.aDNA` (Rosetta) 
 
 ## SITREP
 
-*Filled at session close.*
+**Completed**
+- P0 scaffold: `campaign_feedback_loop.md` + campaign `CLAUDE.md` + `mission_charter_boundary_m00.md`.
+- `adr_036_software_graph_feedback_boundary.md` (proposed) — boundary, privacy spine, `feedback/` name, wrapper-federation choice.
+- Prometheus boundary coord memo (`coord_2026_06_20_feedback_loop_to_prometheus.md`) — staged, ack-pending (Standing Rule 10).
+- P1 deliverables drafted ahead of the gate as dependency-unblockers: `pattern_software_graph_telemetry_feedback.md` + `spec_telemetry_feedback_ecosystem.md` (marked draft-pending-ratification).
+- Staged + committed all eight files as `b973461`.
+
+**In progress / handoff**
+- The P0→P1 operator gate was NOT cleared in this session (`/clear`-ed before ratification). Pattern + spec sit `draft`; ADR-036 sits `proposed`. Handed to a follow-on (`session_2026_06_20_feedback_loop_gate_p2`) to clear the gate + run P2.
+
+**Next up**
+- Clear the P0→P1 gate; flip ADR-036 → accepted + pattern/spec → active; close M0; P1 close + P2.
+
+**Blockers**
+- None (gate is a human decision, not a blocker).
+
+**Files touched**
+- Created the eight files in `b973461` (campaign dir ×3, adr_036, pattern, spec, this session file, Prometheus memo).
+
+## Next Session Prompt
+
+Operation Feedback Loop is at the P0→P1 human gate. P0 (charter + ADR-036 + Prometheus memo) and the P1
+pattern+spec are authored and committed (`b973461`) but the gate is uncleared and the pattern/spec/ADR
+carry draft/proposed status. Read `how/campaigns/campaign_feedback_loop/CLAUDE.md` + `campaign_feedback_loop.md`
++ `adr_036`. Present the three ratification items (wrapper name `feedback/` vs `telemetry/`; the four signal
+classes; the Context.aDNA boundary). On ratification, flip ADR-036 proposed→accepted and pattern+spec
+draft→active, close M0, then proceed to P1 close + P2 (`skill_telemetry_wrapper_integration` + self-demo or
+documented exemption). NOTE: a concurrent agent may be active on the sibling Operation Keystone campaign —
+verify active sessions and use explicit-path git staging (never `git add -A`).
+
