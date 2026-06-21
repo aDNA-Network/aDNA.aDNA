@@ -4,7 +4,7 @@ session_id: session_2026_06_20_feedback_loop_gate_p2
 intent: "Operation Feedback Loop — clear the P0→P1 operator gate, close P1 (M1 record+AAR), author P2 (skill_telemetry_wrapper_integration + documented self-demo exemption)"
 campaign_id: campaign_feedback_loop
 tier: 2
-status: active
+status: completed
 created: 2026-06-20
 updated: 2026-06-20
 last_edited_by: agent_stanley
@@ -55,4 +55,29 @@ fetch + ff-check before each push; the Keystone agent's uncommitted work is left
 
 ## SITREP
 
-*Filled at session close (Step 5).*
+**Completed**
+- Cleared the P0→P1 operator gate: ADR-036 `proposed → accepted`; pattern + spec `draft → active`; campaign Decision Points #1/#3 resolved; M0 objective 4 + AAR + `completed`.
+- Committed + pushed the gate-clear (`2410467`). En route, cleared **3 stale git locks** (`index.lock`, `HEAD.lock`, `objects/maintenance.lock`) orphaned by a crashed concurrent commit at 22:17 — each removed only under a verified no-live-git-process guard.
+- Closed P1: `mission_pattern_spec_m01` + 5-line AAR.
+- P2: authored [[how/skills/skill_telemetry_wrapper_integration|skill_telemetry_wrapper_integration]] (8-step, modeled on `skill_iii_setup`, instantiates the spec's `federation_ref` verbatim); recorded the self-demo **exemption**; registered the skill in `CLAUDE.md`; `mission_skill_selfdemo_m02` + AAR.
+
+**In progress / Next up**
+- Parked at the **P2→P3 human gate**. P3 = structure cross-vault consumer missions (Bitwarden + Keystone native · Warp staged memo · Lighthouse · `idea_telemetry_wrapper_rollout`) — structure only, zero writes into other vaults (Standing Rule 10).
+
+**Blockers**
+- None for feedback_loop. Context: a sibling agent is building **Operation Keystone** in this same vault (uncommitted work in the shared tree) — left untouched throughout; its crashed commit's stale locks were cleared.
+
+**Files touched**
+- `2410467` (gate-clear): adr_036 · pattern · spec · campaign master · campaign CLAUDE · M00 · both session files.
+- P2 commit (this): `skill_telemetry_wrapper_integration` · `mission_pattern_spec_m01` · `mission_skill_selfdemo_m02` · campaign master (P2 row) · campaign CLAUDE (current phase) · root `CLAUDE.md` (skills row) · both sessions → `history/2026-06/`.
+
+## Next Session Prompt
+
+Operation Feedback Loop is parked at the **P2→P3 human gate**. P0–P2 are closed and pushed: the gate is cleared
+(`feedback/` ratified), ADR-036 accepted, pattern + spec `active`, and `skill_telemetry_wrapper_integration` shipped +
+registered. To continue: read `how/campaigns/campaign_feedback_loop/CLAUDE.md` + `campaign_feedback_loop.md`, present
+the P2→P3 gate, then structure P3's cross-vault consumer missions — Bitwarden.aDNA (Cerberus) + the Keystone cohort
+wired native at genesis, a Warp staged coord-memo (Warp mid-genesis P3b — operator clears the draft first), a
+Lighthouse stub, and one `idea_telemetry_wrapper_rollout` backlog — **all as staged memos/stubs, ZERO writes into other
+vaults' trees** (Standing Rule 10). NOTE: a sibling agent is building Operation Keystone in this same vault — verify
+active sessions, use explicit-path git staging (never `git add -A`), and watch for stale `.git/*.lock` files.
