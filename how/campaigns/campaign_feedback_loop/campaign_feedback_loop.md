@@ -75,7 +75,7 @@ Triggered by Operation Feedback Loop (rev. 3) under the network-stack-tier expan
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 2 | `skill_telemetry_wrapper_integration` + self-demo on aDNA.aDNA (or documented exemption) | 1 | M1 | planned |
+| 2 | `skill_telemetry_wrapper_integration` + self-demo on aDNA.aDNA (or documented exemption) | 1 | M1 | completed |
 
 **Phase exit gate**: skill exists in the image of `skill_iii_setup`; Standing Order #8 self-demonstration satisfied or exemption recorded.
 

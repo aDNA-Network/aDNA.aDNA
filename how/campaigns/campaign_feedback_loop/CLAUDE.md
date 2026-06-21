@@ -16,7 +16,7 @@ tags: [governance, campaign, feedback_loop]
 | Campaign | `campaign_feedback_loop` |
 | Owner | stanley |
 | Status | active |
-| Current Phase | Phase 2: Integration Skill + Self-Demonstration (P0 + P1 closed 2026-06-20) |
+| Current Phase | Parked at the P2→P3 gate — P0 / P1 / P2 closed 2026-06-20; P3 (cross-vault structuring) awaits the operator gate |
 | Persona | Rosetta (this vault) |
 
 ## Quick Start

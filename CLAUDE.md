@@ -249,6 +249,7 @@ Reusable agent recipes and documented procedures in `how/skills/`. Skills have t
 | `skill_self_reference_check` | agent | Verify content file cites concrete vault examples as self-referential demonstration |
 | `skill_iii_cycle` | agent | Single III improvement cycle — 7-step: measure, orient, select, implement, re-measure, validate, record |
 | `skill_decadal_aar` | agent | Decadal AAR with 5-persona ranker review — every 10th III cycle in Phase 7 |
+| `skill_telemetry_wrapper_integration` | agent | A `<Software>.aDNA` deployment-graph vault adopts the opt-in deploy-feedback loop — add a `feedback/` consumer wrapper (federation_ref to `spec_telemetry_feedback_ecosystem`; default-OFF, names-only) |
 
 ---
 
