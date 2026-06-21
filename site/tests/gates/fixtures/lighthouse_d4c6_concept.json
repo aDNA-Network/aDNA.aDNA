@@ -1,0 +1,18 @@
+{
+  "_provenance": "Lighthouse 13.4.0 desktop on /learn/concepts/knowledge-graph (the most code-fence-dense concept page — 2 bare fences) — WEBSITE D4 C6 (2026-06-21). M-7 RECONCILIATION: the P1-audit finding 'concept-template CLS 0.156' does NOT reproduce. BaseLayout already preloads Space Grotesk 400/700 (BaseLayout.astro:48-51), which collapsed the heading-FOUT shift to ~0.03 (measured desktop 0.0299, mobile 0.031-0.036 — both far inside the 0.1 Good band), so no template rebuild was warranted (restraint; cf. C5 H-11 no-SSR call). This gate completes G1's specified coverage (TOOLING-PROMOTION G1 guards H-11 AND M-7) and LOCKS the concept template's CWV so CLS can't silently regress past 0.1. Full raw run archived local-only at site/evidence/lighthouse_d4c6_concept_knowledge-graph.json (evidence/ is gitignored). Regenerate when the doc template changes (npm run preview -> lighthouse desktop /learn/concepts/knowledge-graph).",
+  "lighthouseVersion": "13.4.0",
+  "finalUrl": "http://localhost:4321/learn/concepts/knowledge-graph",
+  "categories": {
+    "performance": {
+      "score": 0.99
+    }
+  },
+  "audits": {
+    "largest-contentful-paint": {
+      "numericValue": 851.7077
+    },
+    "cumulative-layout-shift": {
+      "numericValue": 0.029885
+    }
+  }
+}
