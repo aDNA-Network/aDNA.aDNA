@@ -55,12 +55,13 @@ Clean net-new stubs prove the template (four wrappers present + federating, neve
 - **Files**: `~/aDNA/Groupware.aDNA/` (local-only, commit `85b4531`, no remote)
 
 ### 5. Remaining net-new (decision-gated)
-- **Status**: pending (later M2 session)
-- **Description**: `Container.aDNA` (decision #4: Podman-default vs Docker), `Inference.aDNA` (consolidate llama.cpp+MLX+vLLM+Ollama — recommend one graph), FastAPI (decision #1: rule defer-to-library / future `Python.aDNA` parent vs seed). Each gates on an explicit operator decision before forking.
+- **Status**: completed (2026-06-21, third wave)
+- **Description**: Operator resolved all three decision gates (GO) and the graphs were seeded as genesis-planning stubs (local git, no remote, router rows staged `#needs-human`, four wrappers verified, 15 files each, structure verified vs Store/Nextcloud reference): `Container.aDNA` (persona **Pandora**, `5b248db`) — OCI container runtime, control-plane/foundational; **settles decision #4 → rootless Podman fleet-default** (Docker documented-compat; OCI envelope); workload-storage seam → Store.aDNA. `Inference.aDNA` (persona **Pythia**, `fcf747d`) — local LLM inference serving, control-plane/compute; **consolidation ruling → one graph**, backends llama.cpp/MLX/vLLM/Ollama (selectable; `llama.cpp` consumed-not-vendored); model-weight storage flagged → Store.aDNA (P0 seam). `FastAPI.aDNA` (persona **Atalanta**, `79bb176`) — FastAPI Python API-service surface, control-plane; **settles decision #1 → seed FastAPI directly**; framework-vs-platform category provisional (first-class P0 decision); future `Python.aDNA` parent noted-not-seeded. Ledger §A updated (3 rows → ✅ SEEDED; open decisions #1/#2/#4 marked resolved).
+- **Files**: `~/aDNA/{Container,Inference,FastAPI}.aDNA/` (local-only, no remote); `artifacts/keystone_deconfliction_ledger.md`
 
 ### 6. Enrich Lab.aDNA as reference implementation
 - **Status**: pending (gated)
-- **Description**: Retrofit `Lab.aDNA` (Galileo) with `git/` + `feedback/` + `iii/` (it already has Home.aDNA credential routing → ¾ conformant). Sequence **after** Lab's in-flight M-L13.5/13.6 merge.
+- **Description**: Retrofit `Lab.aDNA` (Galileo) with `git/` + `feedback/` + `iii/` (it already has Home.aDNA credential routing → ¾ conformant). Sequence **after** Lab's merge lands. **Status 2026-06-21: M-L13.5 round-3 QA-CLOSED, but M-L13.6 (live merge+deploy) is still operator-gated** — Lab's v1 code is pushed-but-unmerged; the live node still runs `main@e5ca5b5`. **Remains gated until M-L13.6 fires.** This is a retrofit of an existing mature vault (touches the Lab tree) — schedule its own focused session, not folded into a seed session.
 
 ## Campaign Context
 

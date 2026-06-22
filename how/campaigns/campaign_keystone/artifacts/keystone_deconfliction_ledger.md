@@ -2,7 +2,7 @@
 type: artifact
 artifact_class: deconfliction_ledger
 created: 2026-06-20
-updated: 2026-06-20
+updated: 2026-06-21
 status: drafted
 campaign_id: campaign_keystone
 campaign_phase: 1
@@ -21,12 +21,12 @@ The full implied network-stack with a ruled disposition for each piece of softwa
 |----------|-------|----------------------------|--------------|------|
 | Nextcloud | `Nextcloud.aDNA` | **Yes** → data-plane, Venus placement | Clean net-new (verified absent). File-sync/collab. | P2 (first wave) |
 | nginx reverse-proxy | `Nginx.aDNA` *(or `ReverseProxy.aDNA`)* | **Yes** (fronts data) | Clean net-new. **Decision #5: nginx vs Caddy** — Lighthouse vision specifies Caddy; recommend graph supports both, **Caddy fleet-default**. Co-design ingress/termination with Venus + Lighthouse. | P2 (first wave) |
-| FastAPI | `FastAPI.aDNA` | No (service surface) | **Category ruling needed at its P0** — exists in latlab as library/framework, not a deployed service. Recommend **DEFER to library-treatment / future `Python.aDNA` parent** rather than a standalone deployment graph. | P2 (rule first) |
+| FastAPI | `FastAPI.aDNA` | No (control-plane / service surface) | Operator ruled **SEED** (over defer-to-library). Persona **Atalanta**. Framework-vs-platform category **provisional → first-class P0 decision**; future `Python.aDNA` parent noted-not-seeded. | **P2 ✅ SEEDED 2026-06-21** (`79bb176`, third wave; settles open-decision #1) |
 | Store (MinIO/AIStor) | `Store.aDNA` | **Yes** → data-plane, Venus placement | **VERIFIED ABSENT** (MinIO exists only as latlab L3 infra; no vault, no remote). Lattice Storage Federation. Seed net-new. Persona-pin **Plutus**. | **P2 ✅ SEEDED 2026-06-21** (`77d2e88`, second wave) |
 | Groupware (Stalwart JMAP) | `Groupware.aDNA` | **Yes** → data-plane, Venus placement | **VERIFIED ABSENT** (no Stalwart/JMAP anywhere). Unified messaging. Seed net-new. Persona-pin **Pheme**. | **P2 ✅ SEEDED 2026-06-21** (`85b4531`, second wave) |
 | Bitwarden/Vaultwarden | `Bitwarden.aDNA` | Yes (secret store) → §8 | **In flight (WS-B, Operation Keyring, persona Cerberus).** Secret-ACCESS engine federating Home.aDNA — never a second broker. | WS-B P0 |
-| Container runtime | `Container.aDNA` *(or `Podman.aDNA`)* | No (substrate) | **Decision #4: Podman-default vs Docker** — fleet standardized on **rootless Podman** (L2 recipe). Cross-cutting: every cohort member deploys as a container. High-value shared substrate. | P2/P3 |
-| Inference runtimes | `Inference.aDNA` | No (model server) | Consolidate **llama.cpp + MLX + vLLM + Ollama** (multi-consumer: Harness, Terminal, Warp, Lab). `llama.cpp` is a root multi-consumer dep — the signature of a shared graph. Recommend **one** Inference.aDNA over four tiny ones. | P3 |
+| Container runtime | `Container.aDNA` | No (control-plane / foundational substrate) | **Decision #4 RESOLVED → rootless Podman fleet-default** (Docker documented-compat; OCI envelope). Persona **Pandora**. Cross-cutting: every cohort member deploys as a container (high blast-radius execution gate). Workload storage seam → Store.aDNA. | **P2 ✅ SEEDED 2026-06-21** (`5b248db`, third wave; settles decision #4) |
+| Inference runtimes | `Inference.aDNA` | No (control-plane / compute) | **Consolidation RESOLVED → one graph**, backends **llama.cpp + MLX + vLLM + Ollama** (selectable; OpenAI-compat envelope). Persona **Pythia**. `llama.cpp` (root, MIT) consumed-not-vendored. Model-weight artifacts → Store.aDNA (size-driven P0 seam). | **P2 ✅ SEEDED 2026-06-21** (`fcf747d`, third wave; settles open-decision #4) |
 
 ## §B — SCOPE, don't duplicate (overlap; seam-gated, P3)
 
@@ -73,8 +73,8 @@ Prove the paradigm on the **clean net-new** members (Nextcloud, nginx; rule Fast
 
 ## Open decisions surfaced to the operator
 
-1. **FastAPI** — seed a graph, or treat as library / future `Python.aDNA` parent? (recommend: library/defer)
-2. **Container runtime** — `Container.aDNA` Podman-default (fleet standard) vs Docker?
-3. **Reverse proxy** — nginx vs **Caddy** (Lighthouse vision); recommend both-with-Caddy-default.
-4. **Inference** — one consolidated `Inference.aDNA` vs per-runtime graphs? (recommend: one)
-5. **AWSBootstrap ↔ Lighthouse ↔ cohort** — author the reconciliation ADR before the cohort proliferates?
+1. **FastAPI** — seed a graph, or treat as library / future `Python.aDNA` parent? — **RESOLVED 2026-06-21: SEED `FastAPI.aDNA`** (`79bb176`); framework-vs-platform category deferred to its P0; `Python.aDNA` parent noted-not-seeded.
+2. **Container runtime** — `Container.aDNA` Podman-default vs Docker? — **RESOLVED 2026-06-21: SEED `Container.aDNA`, rootless Podman fleet-default** (`5b248db`).
+3. **Reverse proxy** — nginx vs **Caddy** (Lighthouse vision); recommend both-with-Caddy-default. — **RESOLVED (first wave): `Caddy.aDNA` seeded Caddy-fleet-default** (`04817c5`).
+4. **Inference** — one consolidated `Inference.aDNA` vs per-runtime graphs? — **RESOLVED 2026-06-21: one consolidated `Inference.aDNA`** (`fcf747d`); backends llama.cpp/MLX/vLLM/Ollama.
+5. **AWSBootstrap ↔ Lighthouse ↔ cohort** — author the reconciliation ADR before the cohort proliferates? — **OPEN** (backlog `idea_awsbootstrap_lighthouse_cohort_reconciliation`).
