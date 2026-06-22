@@ -3,7 +3,7 @@ campaign_id: campaign_keystone
 type: campaign
 title: "Operation Keystone — Software-Deployment-Graph Tier"
 owner: stanley
-status: active
+status: completed
 phase_count: 5
 mission_count: 5
 estimated_sessions: "8-14"
@@ -95,9 +95,11 @@ This campaign defines the tier and seeds its first members. It depends on [[how/
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 4 | Cohort manifest in aDNA.aDNA + populate Lighthouse composition-manifest stub (WS-C interlock) | 1 | M2, M3 | planned |
+| 4 | Cohort manifest in aDNA.aDNA + populate Lighthouse composition-manifest stub (WS-C interlock) | 1 | M2, M3 | completed |
 
-**Phase exit gate**: cohort AAR; `skill_context_graduation` before close; STATE.md updated; Lighthouse build gate NOT lifted.
+**M4 ✅ COMPLETED 2026-06-22** ([[how/campaigns/campaign_keystone/missions/mission_register_cohort_m04|mission_register_cohort_m04]]). [[how/campaigns/campaign_keystone/artifacts/keystone_cohort_manifest|Cohort manifest]] authored — all **10** seeded stubs registered (8 §A + 2 §B), every disposition traceable to the ledger; **four-wrapper conformance audited 10/10 PASS** (the Caddy/Bitwarden file-count divergence documented, not reworked — conformance = the wrappers); 6 data-bearing (§8) / 4 control-plane split; seam summary; proposed `core/collab/inference/ops` node-stack profile mapping. **Lighthouse composition handoff staged** in `Lighthouse.aDNA/who/coordination/coord_2026_06_22_keystone_cohort_to_lighthouse.md` (`3d840e8`) — references the manifest (does not duplicate), proposes the profile mapping for ratification at Lighthouse's own P0, surfaces Decision #5; **Lighthouse build gate NOT lifted** (CLAUDE/STATE/MANIFEST untouched). Context graduation run (report in the M4 AAR — no new context files: durable knowledge front-loaded at P0). AAR: [[how/missions/artifacts/campaign_keystone_m04_aar|campaign_keystone_m04_aar]].
+
+**Phase exit gate**: ✅ **CLEARED 2026-06-22** — cohort AAR filed; `skill_context_graduation` run before close; STATE.md updated; Lighthouse build gate NOT lifted (interlock = a staged inbox handoff only). **Operation Keystone `completed`.**
 
 ## Decision Points
 
@@ -156,8 +158,32 @@ This campaign defines the tier and seeds its first members. It depends on [[how/
 
 ## Completion Summary
 
-*Fill out when setting `status: completed`.*
+**Completed 2026-06-22** (5 phases / 5 missions; within the 8-14 session calibration). Operation Keystone stood up the **software-deployment-graph tier** end to end: the paradigm was authored *before* any graph was seeded, then 10 conformant genesis-planning stubs were seeded, registered, and handed to Lighthouse for composition.
+
+### Deliverables
+- **Paradigm (P0):** [[what/patterns/pattern_software_deployment_graph|pattern_software_deployment_graph]] + [[what/decisions/adr_037_software_deployment_graph_subtype|ADR-037]] (Platform.aDNA software/deployment-graph subtype; recipes=quarry/graph=home) + [[how/templates/template_software_graph_stub|template_software_graph_stub]] (four-wrapper conformance).
+- **Ledger (P1):** [[how/campaigns/campaign_keystone/artifacts/keystone_deconfliction_ledger|de-confliction ledger]] — full implied-stack roster, ratified; Store/Groupware verified ABSENT→seed.
+- **Cohort (P2+P3): 10 seeded `<Software>.aDNA` stubs** — §A net-new (8): Nextcloud · Caddy · Bitwarden · Store · Groupware · Container · Inference · FastAPI; §B overlap (2, seam-ratified): Forgejo · Nebula. All local-git/no-remote, router rows STAGED `#needs-human`, four wrappers each.
+- **Register + interlock (P4):** [[how/campaigns/campaign_keystone/artifacts/keystone_cohort_manifest|cohort manifest]] (10/10 conformance audited) + the Lighthouse composition handoff (staged in its inbox, gate intact).
+
+### Descoped
+- **Objective 6 (enrich Lab as reference impl)** → §C enrichment wave / [[how/backlog/idea_keystone_existing_graph_retrofit|idea_keystone_existing_graph_retrofit]] (gated on Lab M-L13.6).
+- **Decision #5 (AWSBootstrap ↔ Lighthouse ↔ cohort ADR)** → surfaced, not resolved; [[how/backlog/idea_awsbootstrap_lighthouse_cohort_reconciliation|own ADR session]].
+
+### Key Findings
+- Authoring the paradigm before seeding (M0) turned every fork into substitution + spine-population, and made close-time context graduation a no-op (durable knowledge was never trapped in ephemeral artifacts).
+- Defining conformance as a **contract** (the four wrappers), not a **shape** (file count), let richer forks (Caddy/Bitwarden) coexist in the fleet without rework.
+- The §B seam memo *is* the conformance contract for an overlap graph — promoting "what this graph does NOT author" to a first-class CLAUDE.md section keeps overlap stubs as clean as net-new ones.
+
+### Scope Changes
+- Cohort scope ruled **wide** at P1 (operator) — the full implied stack, not just the originally-named set. Inference consolidated to one graph (not per-runtime). Reverse-proxy → Caddy fleet-default; container runtime → rootless Podman fleet-default.
 
 ## Campaign AAR
 
-*Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
+Campaign-level AAR (patterns across all 5 missions; see `how/templates/template_aar_lightweight.md`).
+
+- **Worked**: front-loading the paradigm (pattern + ADR + template) before any seed — every subsequent mission (8 net-new, 2 overlap, 1 register) reduced to mechanical application of a settled contract; the operator's "wide cohort" ruling at P1 prevented a second pass.
+- **Didn't**: two graphs (Caddy/Bitwarden) were full-`skill_project_fork`ed off-stream before the lean stub existed — a harmless divergence, but it took until P4 to formally reconcile; seeding the template first would have avoided the asymmetry.
+- **Finding**: a deployment-graph tier is governable as a *fleet* only if conformance is a contract you can audit (four wrappers) rather than a shape you must enforce — this single decision (M0) carried the whole campaign.
+- **Change**: for future tier campaigns, seed the lean template as instance #1 *before* any parallel work-stream forks members, so the whole cohort shares one skeleton from day one.
+- **Follow-up**: Decision #5 ADR (AWSBootstrap overlap); §C enrichment wave (Lab M-L13.6 gate); Lighthouse consumes the handoff at its own P0; per-graph router-row insertion + first-remotes stay operator-gated under the PT freeze.

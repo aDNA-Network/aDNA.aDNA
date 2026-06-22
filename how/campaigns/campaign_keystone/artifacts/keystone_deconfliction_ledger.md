@@ -6,7 +6,7 @@ updated: 2026-06-22
 status: drafted
 campaign_id: campaign_keystone
 campaign_phase: 1
-status_note: ratified at P1 gate 2026-06-20; §B seeded + recipe-quarry annotated at P3 (M3) 2026-06-22
+status_note: ratified at P1 gate 2026-06-20; §B seeded + recipe-quarry annotated at P3 (M3) 2026-06-22; cohort registered at P4 (M4) cohort manifest 2026-06-22 (campaign completed)
 last_edited_by: agent_stanley
 tags: [keystone, deployment_graph, ledger, roster, deconfliction]
 ---
@@ -89,7 +89,7 @@ Per the ratified quarry→home reframe ([[who/coordination/coord_2026_06_20_keys
 
 ## Sequencing (operator-ratified order discipline)
 
-Prove the paradigm on the **clean net-new** members (Nextcloud, nginx; rule FastAPI) **before** the overlapping ones (Forgejo, Nebula) and before enriching Store/Groupware. Every fork: local `git init` only, router row STAGED `#needs-human`, genesis-planning stub (no build). **Status: §A done (P2 — 8 graphs); §B done (P3 / M3 — Forgejo + Nebula, 2026-06-22). Sequencing discipline satisfied; §C enrichment + the P4 cohort manifest remain.**
+Prove the paradigm on the **clean net-new** members (Nextcloud, nginx; rule FastAPI) **before** the overlapping ones (Forgejo, Nebula) and before enriching Store/Groupware. Every fork: local `git init` only, router row STAGED `#needs-human`, genesis-planning stub (no build). **Status: §A done (P2 — 8 graphs); §B done (P3 / M3 — Forgejo + Nebula, 2026-06-22); cohort registered (P4 / M4 — [[how/campaigns/campaign_keystone/artifacts/keystone_cohort_manifest|cohort manifest]], 10/10 conformance audited, 2026-06-22). Sequencing discipline satisfied. Campaign `completed`; §C enrichment wave remains (out of campaign → [[how/backlog/idea_keystone_existing_graph_retrofit|idea_keystone_existing_graph_retrofit]], gated on Lab M-L13.6).**
 
 ## Open decisions surfaced to the operator
 
