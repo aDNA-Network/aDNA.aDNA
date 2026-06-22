@@ -85,11 +85,11 @@ This campaign defines the tier and seeds its first members. It depends on [[how/
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 3 | Forgejo → Hopper/Lighthouse seam; Nebula → Venus seam — coord memos, then seed only on ratified seam | 1-2 | M2 | blocked |
+| 3 | Forgejo → Hopper/Lighthouse seam; Nebula → Venus seam — coord memos, then seed only on ratified seam | 1-2 | M2 | completed |
 
-**M3 mission authored 2026-06-22** ([[how/campaigns/campaign_keystone/missions/mission_overlap_graphs_m03|mission_overlap_graphs_m03]], `blocked` — pre-scoped, turnkey on ack). **Seam memos staged 2026-06-20** (aDNA.aDNA/who/coordination/, ack-pending — Rule 10): `coord_2026_06_20_keystone_forgejo_to_hopper`, `coord_2026_06_20_keystone_nebula_to_venus`, + the recipe-quarry reconciliation `coord_2026_06_20_keystone_recipe_quarry_to_venus`. Seeds gated on these 3 acks (expire 2026-09-20).
+**M3 ✅ COMPLETED 2026-06-22** ([[how/campaigns/campaign_keystone/missions/mission_overlap_graphs_m03|mission_overlap_graphs_m03]]). The 3 staged seam memos were **ratified** (operator GO, as-asserted; ground-truth re-read of Git.aDNA/Lighthouse/Network/Home confirmed each seam unchanged): `coord_2026_06_20_keystone_forgejo_to_hopper`, `coord_2026_06_20_keystone_nebula_to_venus`, `coord_2026_06_20_keystone_recipe_quarry_to_venus` → all flipped `ratified`. **2 §B overlap stubs seeded** (lean 15-file, local git/no remote, router rows STAGED `#needs-human`, four wrappers): **Forgejo.aDNA** (Ilmarinen, `c45046f`, data-bearing §8; co-sequences Git.aDNA P7b) · **Nebula.aDNA** (Heimdall, `e457135`, control-plane; Tailscale folds in ADR-015; documents-not-disturbs live `_nebula_pilot_10_43`). Ledger §B → ✅ SEEDED + §B.1 recipe-quarry annotation (Obj 3). **Cohort 8→10.** AAR: [[how/missions/artifacts/campaign_keystone_m03_aar|campaign_keystone_m03_aar]].
 
-**Phase exit gate**: stub seeded only after the owning persona ratifies the atomic-software-graph scope (operator-gated). Coord memos, never silent writes.
+**Phase exit gate**: ✅ **CLEARED 2026-06-22** — each stub seeded only after its seam was ratified (operator GO, as-asserted); coord memos flipped `ratified`, no silent writes; ground-truth re-read before fork.
 
 ### Phase 4: Register Cohort + Wire Composition
 
@@ -105,7 +105,7 @@ This campaign defines the tier and seeds its first members. It depends on [[how/
 |---|------|----------|--------|
 | 1 | End of M0 (P0 gate) | Template shape + Operation Keystone name | **resolved 2026-06-20** — ratified as written |
 | 2 | End of M1 (P1 gate) | De-confliction ledger, esp. Store/Groupware verify | **resolved 2026-06-20** — ratified; both ABSENT → seed |
-| 3 | M3 | Forgejo seam (Hopper/Lighthouse/Venus) + Nebula seam (Venus) ratification | pending |
+| 3 | M3 | Forgejo seam (Hopper/Lighthouse/Venus) + Nebula seam (Venus) ratification | **resolved 2026-06-22** — all 3 seams ratified (operator GO, as-asserted); `Forgejo.aDNA` `c45046f` + `Nebula.aDNA` `e457135` seeded |
 | 4 | M2 | Container runtime: Podman-as-default vs Docker (fleet standard = rootless Podman) | **resolved 2026-06-21** — rootless Podman fleet-default (`Container.aDNA`, `5b248db`); Docker documented-compat |
 | 5 | M2 | Reverse proxy: nginx vs Caddy (Lighthouse vision specifies Caddy; order named nginx) | **resolved 2026-06-20** — Caddy fleet-default (`Caddy.aDNA`, `04817c5`) |
 

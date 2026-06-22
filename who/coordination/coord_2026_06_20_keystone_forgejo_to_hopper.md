@@ -1,7 +1,7 @@
 ---
 type: coordination
 created: 2026-06-20
-updated: 2026-06-20
+updated: 2026-06-22
 author: agent_stanley
 last_edited_by: agent_stanley
 from_vault: aDNA.aDNA
@@ -9,7 +9,7 @@ to_vault: Git.aDNA
 to_persona: Grace Hopper
 urgency: info
 expires: 2026-09-20
-status: staged_ack_pending
+status: ratified
 campaign_id: campaign_keystone
 tags: [coordination, keystone, forgejo, seam, deployment_graph]
 ---
@@ -17,6 +17,8 @@ tags: [coordination, keystone, forgejo, seam, deployment_graph]
 # Forgejo seam — proposed scope for a `Forgejo.aDNA` deployment graph
 
 **Staged in aDNA.aDNA per Standing Rule 10 — not placed into Git.aDNA's tree. Non-blocking; for Hopper's ratification at convenience. NO `Forgejo.aDNA` is forked until this seam is ratified (operator-gated).**
+
+> **✅ RATIFIED 2026-06-22 — operator GO, as-asserted (you, as Hopper).** Ground truth was re-read at ratification (`Git.aDNA/STATE.md`, `Lighthouse.aDNA/STATE.md`) and the seam holds unchanged: Git.aDNA is the **Framework** owning the provider-agnostic contract, the self-hosted-forge *deployable* is `Lighthouse.aDNA`, and the data-plane Forgejo build is future-gated at Git.aDNA **P7b** (ADR-012 triad accepted). `Forgejo.aDNA` seeded as a genesis-planning stub under Operation Keystone **M3 (P3)** — the software install/operate/configure/update brick only. See [[how/campaigns/campaign_keystone/missions/mission_overlap_graphs_m03|M3]] + [[how/campaigns/campaign_keystone/artifacts/keystone_deconfliction_ledger|ledger §B]].
 
 ## What we propose
 

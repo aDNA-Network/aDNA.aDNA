@@ -6,7 +6,7 @@ updated: 2026-06-22
 status: drafted
 campaign_id: campaign_keystone
 campaign_phase: 1
-status_note: ratified at P1 gate 2026-06-20
+status_note: ratified at P1 gate 2026-06-20; §B seeded + recipe-quarry annotated at P3 (M3) 2026-06-22
 last_edited_by: agent_stanley
 tags: [keystone, deployment_graph, ledger, roster, deconfliction]
 ---
@@ -30,12 +30,30 @@ The full implied network-stack with a ruled disposition for each piece of softwa
 
 > **Cohort conformance (noted at M2 close 2026-06-22).** 6 of the 8 §A stubs are lean 15-file `template_software_graph_stub` forks (Nextcloud · Store · Groupware · Container · Inference · FastAPI). **`Caddy.aDNA` (346 files) and `Bitwarden.aDNA` (358 files) were forked via the full `skill_project_fork` scaffold** (Caddy carries a `campaign_adna_workspace_upgrade`; Bitwarden was built out under WS-B / Operation Keyring) rather than the lean stub. First flagged at M00 (AAR Technical Debt #2 — "Nextcloud built lean vs Caddy/Bitwarden full"), now confirmed cohort-wide. **Disposition: acceptable — document & reconcile at the P4 cohort manifest, not rework** (both are legitimately further along / a different work-stream). Conformance = the four wrappers + deployment-gated SOs (present in all 8), not file count.
 
-## §B — SCOPE, don't duplicate (overlap; seam-gated, P3)
+## §B — SCOPE, don't duplicate (overlap; seam-gated, P3) — ✅ BOTH SEEDED 2026-06-22 (seams ratified)
 
-| Software | Graph (scoped) | Owner keeps | Seam to ratify |
+| Software | Graph (scoped) | Owner keeps | Seam / status |
 |----------|----------------|-------------|----------------|
-| Forgejo | `Forgejo.aDNA` (software install/config only) | **Git.aDNA / Hopper** = provider contract; **Lighthouse** = deployment topology; **Venus** = data-plane placement (§8) | Coord memo to Hopper + Lighthouse; seed only on ratified seam |
-| Nebula | `Nebula.aDNA` (node-side daemon install/config only) | **Network.aDNA / Venus** = substrate, topology, membership, ledger events (`substrate_kind: nebula`, `SUBSTRATE_JOINED/LEFT/CERT_ISSUED/REVOKED`); **Home.aDNA / Hestia** = node-local cert/config | Coord memo to Venus; reconcile vs `_nebula_pilot_10_43` (= `lattice_lab_pi` 10.43.0.4, live); seed only on ratified seam |
+| Forgejo | `Forgejo.aDNA` (software install/config only) | **Git.aDNA / Hopper** = provider contract; **Lighthouse** = deployment topology; **Venus** = data-plane placement (§8) | Seam **ratified 2026-06-22** (operator GO, as-asserted; ground-truth re-read Git.aDNA + Lighthouse). **✅ SEEDED 2026-06-22** (`c45046f`) — lean 15-file stub, persona **Ilmarinen** (working-pin), data-bearing §8; co-sequences Git.aDNA P7b. |
+| Nebula | `Nebula.aDNA` (node-side daemon install/config only) | **Network.aDNA / Venus** = substrate, topology, membership, ledger events (`substrate_kind: nebula`, `SUBSTRATE_JOINED/LEFT/CERT_ISSUED/REVOKED`); **Home.aDNA / Hestia** = node-local cert/config | Seam **ratified 2026-06-22** (operator GO, as-asserted; ground-truth re-read Network substrate + Home `inventory_connectivity`). **✅ SEEDED 2026-06-22** (`e457135`) — lean 15-file stub, persona **Heimdall** (working-pin), control-plane; Tailscale folds in (ADR-015); documents-not-disturbs the live `_nebula_pilot_10_43`. |
+
+> **§B status (M3 / P3 close, 2026-06-22):** both overlap graphs forked on ratified seams (memos `coord_2026_06_20_keystone_forgejo_to_hopper` + `coord_2026_06_20_keystone_nebula_to_venus`, flipped `ratified`). **Cohort now 10** (8 §A + 2 §B). Owners' boundaries unchanged — these graphs own the software brick only.
+
+## §B.1 — Recipe-quarry annotation (M3 Obj 3 · ADR-037 §3 · OUR ledger only)
+
+Per the ratified quarry→home reframe ([[who/coordination/coord_2026_06_20_keystone_recipe_quarry_to_venus|recipe-quarry memo]], operator GO 2026-06-22): `Network.aDNA`'s `what/profiles/deployment_recipes/` is a **source-quarry**; the **install/operate/configure knowledge** for a software now has a **canonical home** in its `<Software>.aDNA` graph. **Substrate, topology, membership, and the ledger stay Network.aDNA's** (Venus) — only the software-deployment knowledge routes home. Annotated **here, never in her tree**; Venus places the README banner at her discretion.
+
+| Network.aDNA recipe | Canonical home (software knowledge) | Stays Venus's |
+|---|---|---|
+| `recipe_sovereign_nebula_subnet.md` | `Nebula.aDNA` (node-side daemon install/operate) | subnet topology / sovereignty design |
+| `recipe_nebula_public_lighthouse.md` | `Nebula.aDNA` (daemon + lighthouse-role operate) | lighthouse topology / placement |
+| `recipe_edge_wireguard_pi.md` | folds under the mesh graph (`Nebula.aDNA`; WireGuard as a bootstrap-substrate section, cf. Tailscale ADR-015) | edge substrate topology |
+| `recipe_l2_podman_ray_jupyterhub.md` | `Container.aDNA` (podman runtime) **+** `Lab.aDNA` (Ray/Jupyter) — already carries `canonical_home: "Lab.aDNA"` | L2 placement |
+| `recipe_l1_macos_jupyterhub.md` | `Lab.aDNA` — already carries `canonical_home: "Lab.aDNA"` | L1 placement |
+| `recipe_edge_substrate_only.md` · `recipe_edge_pi_reset.md` · `recipe_windows_l2_substrate.md` | *(pure substrate recipes — no software-graph home)* | **stay Venus's** |
+
+**Proposed one-line banner for Venus to place** in `deployment_recipes/README.md` (her edit, her tree — we propose, she places):
+> *Source-quarry (Operation Keystone, ADR-037 §3): these recipes are a quarry; the install/operate/configure knowledge for a given software has a canonical home in its `<Software>.aDNA` graph (nebula→`Nebula.aDNA`, podman→`Container.aDNA`, ray/jupyter→`Lab.aDNA`, …). Substrate, topology, membership, and the ledger remain `Network.aDNA`'s. Recipes route to the owning graph as graphs adopt them.*
 
 ## §C — ENRICH existing (retrofit the four wrappers; do NOT fork)
 
@@ -71,7 +89,7 @@ The full implied network-stack with a ruled disposition for each piece of softwa
 
 ## Sequencing (operator-ratified order discipline)
 
-Prove the paradigm on the **clean net-new** members (Nextcloud, nginx; rule FastAPI) **before** the overlapping ones (Forgejo, Nebula) and before enriching Store/Groupware. Every fork: local `git init` only, router row STAGED `#needs-human`, genesis-planning stub (no build).
+Prove the paradigm on the **clean net-new** members (Nextcloud, nginx; rule FastAPI) **before** the overlapping ones (Forgejo, Nebula) and before enriching Store/Groupware. Every fork: local `git init` only, router row STAGED `#needs-human`, genesis-planning stub (no build). **Status: §A done (P2 — 8 graphs); §B done (P3 / M3 — Forgejo + Nebula, 2026-06-22). Sequencing discipline satisfied; §C enrichment + the P4 cohort manifest remain.**
 
 ## Open decisions surfaced to the operator
 

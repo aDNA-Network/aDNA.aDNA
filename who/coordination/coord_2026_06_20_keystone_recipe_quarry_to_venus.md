@@ -1,7 +1,7 @@
 ---
 type: coordination
 created: 2026-06-20
-updated: 2026-06-20
+updated: 2026-06-22
 author: agent_stanley
 last_edited_by: agent_stanley
 from_vault: aDNA.aDNA
@@ -9,7 +9,7 @@ to_vault: Network.aDNA
 to_persona: Venus
 urgency: info
 expires: 2026-09-20
-status: staged_ack_pending
+status: ratified
 campaign_id: campaign_keystone
 tags: [coordination, keystone, recipes, quarry, reconciliation, deployment_graph]
 ---
@@ -17,6 +17,8 @@ tags: [coordination, keystone, recipes, quarry, reconciliation, deployment_graph
 # Deployment-recipe reconciliation — recipes = source-quarry, graph = canonical home
 
 **Staged in aDNA.aDNA per Standing Rule 10 — not placed into Network.aDNA's tree. Non-blocking; for Venus's ratification. This memo proposes a doctrine reframe; it writes nothing into your `what/profiles/deployment_recipes/`.**
+
+> **✅ RATIFIED 2026-06-22 — operator GO, as-asserted (you, as Venus).** The quarry→home reframe (recipes = source-quarry; `<Software>.aDNA` = canonical home, ADR-037 §3) is ratified. Ground truth confirms it is consistent with your own existing annotations — `recipe_l2_podman_ray_jupyterhub.md` and `recipe_l1_macos_jupyterhub.md` already carry `canonical_home: "Lab.aDNA"`. The adopted-recipe→home map is recorded in the Keystone de-confliction ledger §B (**our tree only**); the optional one-line `deployment_recipes/README.md` banner is drafted for you to place at your discretion (we propose, you place — nothing is written into your tree from here). See [[how/campaigns/campaign_keystone/missions/mission_overlap_graphs_m03|M3 Obj 3]] + [[how/campaigns/campaign_keystone/artifacts/keystone_deconfliction_ledger|ledger §B]].
 
 ## The situation
 

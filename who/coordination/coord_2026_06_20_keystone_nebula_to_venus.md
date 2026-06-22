@@ -1,7 +1,7 @@
 ---
 type: coordination
 created: 2026-06-20
-updated: 2026-06-20
+updated: 2026-06-22
 author: agent_stanley
 last_edited_by: agent_stanley
 from_vault: aDNA.aDNA
@@ -9,7 +9,7 @@ to_vault: Network.aDNA
 to_persona: Venus
 urgency: info
 expires: 2026-09-20
-status: staged_ack_pending
+status: ratified
 campaign_id: campaign_keystone
 tags: [coordination, keystone, nebula, substrate, seam, deployment_graph]
 ---
@@ -17,6 +17,8 @@ tags: [coordination, keystone, nebula, substrate, seam, deployment_graph]
 # Nebula seam — proposed scope for a `Nebula.aDNA` deployment graph
 
 **Staged in aDNA.aDNA per Standing Rule 10 — not placed into Network.aDNA's tree. Non-blocking; for Venus's ratification at convenience. NO `Nebula.aDNA` is forked until this seam is ratified (operator-gated).**
+
+> **✅ RATIFIED 2026-06-22 — operator GO, as-asserted (you, as Venus; Hestia node-config seam acknowledged).** Ground truth was re-read at ratification (`Network.aDNA` substrate facts + `Home.aDNA/what/inventory/inventory_connectivity.md`) and the three-way split holds: **Venus** owns the live dual-substrate (legacy 10.42 + sovereign 10.43, the "Lattice Mesh" CA, membership, ledger events); **Home/Hestia** owns the node-local config-of-record (the `/opt/homebrew/etc/nebula*` configs, LaunchDaemons, listen ports, and cert fingerprints are literally recorded in `inventory_connectivity`); **`Nebula.aDNA`** owns the node-side daemon install/operate/recover brick (the live F-20260620-01 sovereign-lighthouse-down incident is exactly its diagnose/restore class). Tailscale folds in as a section (your call, accepted). `Nebula.aDNA` seeded under Operation Keystone **M3 (P3)**; it documents-not-disturbs the live `_nebula_pilot_10_43`. See [[how/campaigns/campaign_keystone/missions/mission_overlap_graphs_m03|M3]] + [[how/campaigns/campaign_keystone/artifacts/keystone_deconfliction_ledger|ledger §B]].
 
 ## What we propose
 
