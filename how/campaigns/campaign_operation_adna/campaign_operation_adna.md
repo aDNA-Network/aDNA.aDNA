@@ -152,16 +152,16 @@ a human gate inside its child campaign. The program's single synchronization poi
 **Readiness (2026-06-22, keystone C-1 stage-2 session):** **#2 Hearthstone v8.0 ✅ shipped** (`adae20c`). **#1
 WEBSITE** — D1 credibility live; **C-1 stage-2 (proofs fixed→exemplary, pointing at the shipped polished base) +
 the `14→16` / v2.3 entity-count currency reconciliation staged commit-only** (build 163 / gates **281/281**;
-record: [[keystone_credibility_traceability_20260622]]); remaining = the **Tier-2 standard-currency / spec-mirror
-v2.3 port** (★ in [[coordination_ledger]]) + the full improved-site deploy. **#3 pt19 ⏳ pending** (Production-Tidy/Hestia)
-— the headline remaining gate. The joined launch waits on **pt19 + the Tier-2 currency port + the operator's DP2 GO**.
+record: [[keystone_credibility_traceability_20260622]]); the **Tier-2 standard-currency / spec-mirror
+v2.3 port** is now ✅ **DONE** (`d9b1dfe`) → the full staged payload is **re-verified green & parked 2026-06-22** (build 163 / gates **281/281**). **#3 pt19 ⏳ pending** (Production-Tidy/Hestia)
+— the headline remaining gate; **verified NOT landed** (~1wk out, behind pt17/Network P6). The joined launch now waits on just **pt19 + the operator's DP2 GO**.
 
 ## Decision Points (program-level)
 
 | # | When | Decision | Status |
 |---|------|----------|--------|
 | DP1 | Program charter (now) | Approve the program name **"Operation aDNA"**, the umbrella `subtype: program` posture, the four-track map, and the orchestrate-don't-reimplement contract | **✅ approved 2026-06-18** — name blessed; posture + 4-track map + orchestrate-don't-reimplement contract approved. *(Same gate: ADR-035 ratified → Track B P0 closed; WEBSITE Decision 3 approved → Track A P1 closed.)* |
-| DP2 | Keystone readiness | Confirm all three keystone conditions green (WEBSITE Criticals shipped + Hearthstone v8.0 released + pt19 landed) and approve the **coordinated public launch** | **pending — 2026-06-22.** **#2 Hearthstone v8.0 = ✅ GREEN** (shipped `adae20c`). **#1 WEBSITE = mostly green** — D1 credibility live; **C-1 stage-2 + the 14→16 / v2.3 entity-count currency staged commit-only this session** (gates 281/281; [[keystone_credibility_traceability_20260622]]); remaining = the **Tier-2 standard-currency / spec-mirror v2.3 port** (★) + the full improved-site deploy. **#3 pt19 = ⏳ pending** (Production-Tidy/Hestia) — headline remaining gate. → Joined launch waits on **pt19 + the Tier-2 currency port + operator DP2 GO**. Seams: [[coordination_ledger]]. |
+| DP2 | Keystone readiness | Confirm all three keystone conditions green (WEBSITE Criticals shipped + Hearthstone v8.0 released + pt19 landed) and approve the **coordinated public launch** | **pending (verified & parked) — 2026-06-22.** **#2 Hearthstone v8.0 = ✅ GREEN** (shipped `adae20c`). **#1 WEBSITE = mostly green** — D1 credibility live; **C-1 stage-2 + the 14→16 / v2.3 entity-count currency staged commit-only this session** (gates 281/281; [[keystone_credibility_traceability_20260622]]); the **Tier-2 spec-mirror v2.3 port** is now ✅ **DONE** (`d9b1dfe`) → staged payload **re-verified green & parked 2026-06-22** (gates **281/281**). **#3 pt19 = ⏳ pending** (Production-Tidy/Hestia) — headline remaining gate; **verified NOT landed (~1wk out, behind pt17/Network P6)**. → Joined launch now waits on just **pt19 + operator DP2 GO**. Seams: [[coordination_ledger]]. |
 | DP3 | Cross-vault seam disputes | When a seam in [[coordination_ledger]] blocks a child (e.g. pt19 slips, `skill_template_release` contract changes), the program surfaces it to the operator rather than a child resolving cross-vault unilaterally | as-needed |
 | DP4 | Program close | When all tracks reach their terminal gates, AAR the program and set `status: completed` (children persist as their own records) | pending |
 
