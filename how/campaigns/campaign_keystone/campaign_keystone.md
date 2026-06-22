@@ -11,7 +11,7 @@ calibrated_sessions: "8-14"
 estimation_class: governance-broad
 priority: high
 created: 2026-06-20
-updated: 2026-06-20
+updated: 2026-06-22
 last_edited_by: agent_stanley
 strategic_compass: who/governance/VISION.md
 depends_on: campaign_feedback_loop
@@ -75,9 +75,9 @@ This campaign defines the tier and seeds its first members. It depends on [[how/
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 2 | Seed clean net-new FIRST; then Store/Groupware; enrich Lab as reference impl | 2-3 | M1 | in_progress |
+| 2 | Seed clean net-new FIRST; then Store/Groupware; enrich Lab as reference impl | 2-3 | M1 | completed |
 
-**First wave seeded 2026-06-20** (genesis-planning stubs; local git, no remote): `Nextcloud.aDNA` (Atlas, `142c113`), `Caddy.aDNA` (Portunus, `04817c5`, default reverse-proxy), `Bitwarden.aDNA` (Cerberus, `09ca97c`, Operation Keyring / WS-B). Remaining: Store, Groupware, FastAPI-or-defer, Container/Podman, Inference; enrich Lab as reference impl.
+**Seeded 2026-06-20→21 — 8 genesis-planning stubs** (local git, no remote): Nextcloud (Atlas, `142c113`) · Caddy (Portunus, `04817c5`) · Bitwarden (Cerberus, `09ca97c`) · Store (Plutus, `77d2e88`) · Groupware (Pheme, `85b4531`) · Container (Pandora, `5b248db`) · Inference (Pythia, `fcf747d`) · FastAPI (Atalanta, `79bb176`). **M2 closed 2026-06-22** — Objective 6 (enrich Lab as reference impl) **scoped out** → §C enrichment wave / [[how/backlog/idea_keystone_existing_graph_retrofit|idea_keystone_existing_graph_retrofit]] (gated on Lab M-L13.6). AAR: [[how/missions/artifacts/campaign_keystone_m02_aar|campaign_keystone_m02_aar]].
 
 **Phase exit gate**: clean net-new stubs prove the template before any overlapping graph; each carries the four wrappers + deployment-gated SOs; router rows STAGED `#needs-human`; local `git init`, no remote.
 
@@ -85,9 +85,9 @@ This campaign defines the tier and seeds its first members. It depends on [[how/
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 3 | Forgejo → Hopper/Lighthouse seam; Nebula → Venus seam — coord memos, then seed only on ratified seam | 1-2 | M2 | memos_staged |
+| 3 | Forgejo → Hopper/Lighthouse seam; Nebula → Venus seam — coord memos, then seed only on ratified seam | 1-2 | M2 | blocked |
 
-**Seam memos staged 2026-06-20** (aDNA.aDNA/who/coordination/, ack-pending — Rule 10): `coord_2026_06_20_keystone_forgejo_to_hopper`, `coord_2026_06_20_keystone_nebula_to_venus`, + the recipe-quarry reconciliation `coord_2026_06_20_keystone_recipe_quarry_to_venus`.
+**M3 mission authored 2026-06-22** ([[how/campaigns/campaign_keystone/missions/mission_overlap_graphs_m03|mission_overlap_graphs_m03]], `blocked` — pre-scoped, turnkey on ack). **Seam memos staged 2026-06-20** (aDNA.aDNA/who/coordination/, ack-pending — Rule 10): `coord_2026_06_20_keystone_forgejo_to_hopper`, `coord_2026_06_20_keystone_nebula_to_venus`, + the recipe-quarry reconciliation `coord_2026_06_20_keystone_recipe_quarry_to_venus`. Seeds gated on these 3 acks (expire 2026-09-20).
 
 **Phase exit gate**: stub seeded only after the owning persona ratifies the atomic-software-graph scope (operator-gated). Coord memos, never silent writes.
 
@@ -106,8 +106,8 @@ This campaign defines the tier and seeds its first members. It depends on [[how/
 | 1 | End of M0 (P0 gate) | Template shape + Operation Keystone name | **resolved 2026-06-20** — ratified as written |
 | 2 | End of M1 (P1 gate) | De-confliction ledger, esp. Store/Groupware verify | **resolved 2026-06-20** — ratified; both ABSENT → seed |
 | 3 | M3 | Forgejo seam (Hopper/Lighthouse/Venus) + Nebula seam (Venus) ratification | pending |
-| 4 | M2 | Container runtime: Podman-as-default vs Docker (fleet standard = rootless Podman) | pending |
-| 5 | M2 | Reverse proxy: nginx vs Caddy (Lighthouse vision specifies Caddy; order named nginx) | pending |
+| 4 | M2 | Container runtime: Podman-as-default vs Docker (fleet standard = rootless Podman) | **resolved 2026-06-21** — rootless Podman fleet-default (`Container.aDNA`, `5b248db`); Docker documented-compat |
+| 5 | M2 | Reverse proxy: nginx vs Caddy (Lighthouse vision specifies Caddy; order named nginx) | **resolved 2026-06-20** — Caddy fleet-default (`Caddy.aDNA`, `04817c5`) |
 
 ## Risk Register
 

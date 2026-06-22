@@ -2,7 +2,7 @@
 type: idea
 status: proposed
 created: 2026-06-20
-updated: 2026-06-20
+updated: 2026-06-22
 last_edited_by: agent_stanley
 campaign_id: campaign_keystone
 tags: [idea, keystone, retrofit, deployment_graph, four_wrappers]
@@ -18,7 +18,7 @@ Several existing vaults are already **software-surface Platforms** (they install
 
 | Vault | Current state | Retrofit / mission | Coord-memo target |
 |-------|---------------|--------------------|-------------------|
-| **Lab.aDNA** (Galileo) | ¾ conformant — has Home.aDNA credential routing + Git-ops doctrine | **Reference implementation.** Add `feedback/` + `iii/`. Sequence AFTER the in-flight M-L13.5/13.6 merge. | Galileo |
+| **Lab.aDNA** (Galileo) | ¾ conformant — has Home.aDNA credential routing + Git-ops doctrine | **Reference implementation — now formally carries M2's scoped-out Objective 6** ([[how/campaigns/campaign_keystone/missions/mission_seed_cohort_m02\|mission_seed_cohort_m02]] close 2026-06-22). Add `feedback/` + `iii/` (+ formalize the `git/` wrapper). **Gated on Lab M-L13.6 live deploy** — spin up a dedicated mission when it fires (touches the Lab tree; not a seed session). | Galileo |
 | **Harness.aDNA** (Panacea/Stanley) | Full deploy ladder; `iss/` present | Add `feedback/` (clinical AAR loop fits the argus_loop) + `git/` + credential-routing | Harness persona |
 | **ComfyUI.aDNA** (Vulcan) | Mid-re-genesis (M03) | Inject the paradigm + four wrappers **during M03**, before it hardens | Vulcan |
 | **Obsidian.aDNA** | Deployment graph by intent (install/config/operate/update Obsidian) | Add the four wrappers; align to the subtype | persona-TBD@P0 |

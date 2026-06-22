@@ -2,7 +2,7 @@
 type: artifact
 artifact_class: deconfliction_ledger
 created: 2026-06-20
-updated: 2026-06-21
+updated: 2026-06-22
 status: drafted
 campaign_id: campaign_keystone
 campaign_phase: 1
@@ -27,6 +27,8 @@ The full implied network-stack with a ruled disposition for each piece of softwa
 | Bitwarden/Vaultwarden | `Bitwarden.aDNA` | Yes (secret store) → §8 | **In flight (WS-B, Operation Keyring, persona Cerberus).** Secret-ACCESS engine federating Home.aDNA — never a second broker. | WS-B P0 |
 | Container runtime | `Container.aDNA` | No (control-plane / foundational substrate) | **Decision #4 RESOLVED → rootless Podman fleet-default** (Docker documented-compat; OCI envelope). Persona **Pandora**. Cross-cutting: every cohort member deploys as a container (high blast-radius execution gate). Workload storage seam → Store.aDNA. | **P2 ✅ SEEDED 2026-06-21** (`5b248db`, third wave; settles decision #4) |
 | Inference runtimes | `Inference.aDNA` | No (control-plane / compute) | **Consolidation RESOLVED → one graph**, backends **llama.cpp + MLX + vLLM + Ollama** (selectable; OpenAI-compat envelope). Persona **Pythia**. `llama.cpp` (root, MIT) consumed-not-vendored. Model-weight artifacts → Store.aDNA (size-driven P0 seam). | **P2 ✅ SEEDED 2026-06-21** (`fcf747d`, third wave; settles open-decision #4) |
+
+> **Cohort conformance (noted at M2 close 2026-06-22).** 6 of the 8 §A stubs are lean 15-file `template_software_graph_stub` forks (Nextcloud · Store · Groupware · Container · Inference · FastAPI). **`Caddy.aDNA` (346 files) and `Bitwarden.aDNA` (358 files) were forked via the full `skill_project_fork` scaffold** (Caddy carries a `campaign_adna_workspace_upgrade`; Bitwarden was built out under WS-B / Operation Keyring) rather than the lean stub. First flagged at M00 (AAR Technical Debt #2 — "Nextcloud built lean vs Caddy/Bitwarden full"), now confirmed cohort-wide. **Disposition: acceptable — document & reconcile at the P4 cohort manifest, not rework** (both are legitimately further along / a different work-stream). Conformance = the four wrappers + deployment-gated SOs (present in all 8), not file count.
 
 ## §B — SCOPE, don't duplicate (overlap; seam-gated, P3)
 

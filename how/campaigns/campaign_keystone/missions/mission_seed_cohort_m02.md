@@ -3,15 +3,15 @@ plan_id: mission_seed_cohort_m02
 type: plan
 title: "Seed the Software-Deployment-Graph Cohort (net-new, proving instances)"
 owner: stanley
-status: in_progress
+status: completed
 campaign_id: campaign_keystone
 campaign_phase: 2
 campaign_mission_number: 2
 mission_class: implementation
 token_budget_estimated: 80
-token_budget_actual:
+token_budget_actual: 38
 created: 2026-06-21
-updated: 2026-06-21
+updated: 2026-06-22
 last_edited_by: agent_stanley
 tags: [plan, campaign, keystone, seed, deployment_graph, cohort]
 ---
@@ -60,8 +60,9 @@ Clean net-new stubs prove the template (four wrappers present + federating, neve
 - **Files**: `~/aDNA/{Container,Inference,FastAPI}.aDNA/` (local-only, no remote); `artifacts/keystone_deconfliction_ledger.md`
 
 ### 6. Enrich Lab.aDNA as reference implementation
-- **Status**: pending (gated)
-- **Description**: Retrofit `Lab.aDNA` (Galileo) with `git/` + `feedback/` + `iii/` (it already has Home.aDNA credential routing → ¾ conformant). Sequence **after** Lab's merge lands. **Status 2026-06-21: M-L13.5 round-3 QA-CLOSED, but M-L13.6 (live merge+deploy) is still operator-gated** — Lab's v1 code is pushed-but-unmerged; the live node still runs `main@e5ca5b5`. **Remains gated until M-L13.6 fires.** This is a retrofit of an existing mature vault (touches the Lab tree) — schedule its own focused session, not folded into a seed session.
+- **Status**: deferred — **scoped out of M2** per operator 2026-06-22 (checkpoint decision).
+- **Description**: Retrofit `Lab.aDNA` (Galileo) with `git/` + `feedback/` + `iii/` (it already has Home.aDNA credential routing → ¾ conformant). **Status 2026-06-21: M-L13.5 round-3 QA-CLOSED, but M-L13.6 (live merge+deploy) is still operator-gated** — Lab's v1 code is pushed-but-unmerged; the live node still runs `main@e5ca5b5`. This is a retrofit of an existing mature vault (touches the Lab tree), gated indefinitely on a *different* campaign's operator gate — so holding M2 open for it is poor hygiene.
+- **Re-homed (SO#6 archive-never-delete — re-homed, not dropped)**: this objective is the toe-in-the-water of the separate four-wrapper **enrichment wave**. It now lives in the §C enrichment roster (ledger) + backlog [[how/backlog/idea_keystone_existing_graph_retrofit|idea_keystone_existing_graph_retrofit]], where **Lab.aDNA is the reference-implementation (first) item**. When Lab **M-L13.6** fires, spin up a dedicated mission for it (do not fold into a seed session).
 
 ## Campaign Context
 
@@ -80,8 +81,27 @@ Clean net-new stubs prove the template (four wrappers present + federating, neve
 
 ## Completion Summary
 
-*Fill out when setting `status: completed` (after the remaining waves + Lab enrichment, or when the operator scopes M2 closed).*
+**Closed 2026-06-22 — operator scoped M2 to its net-new-seeding result (Objective 6 deferred → re-homed).** M2 delivered the **§A SEED-net-new cohort: 8 software-deployment-graph stubs**, proving `template_software_graph_stub` end-to-end:
+
+| Graph | Persona | Class | Commit | Decision settled |
+|-------|---------|-------|--------|------------------|
+| Nextcloud.aDNA | Atlas | data-bearing | `142c113` | — (first proof) |
+| Caddy.aDNA | Portunus | data-bearing | `04817c5` | #3 reverse-proxy → Caddy-default |
+| Bitwarden.aDNA | Cerberus | secret store | `09ca97c` | — (WS-B/Operation Keyring) |
+| Store.aDNA | Plutus | data-bearing | `77d2e88` | — (verified-absent → seed) |
+| Groupware.aDNA | Pheme | data-bearing | `85b4531` | — (verified-absent → seed) |
+| Container.aDNA | Pandora | control-plane | `5b248db` | #2 runtime → rootless Podman |
+| Inference.aDNA | Pythia | control-plane | `fcf747d` | #4 inference → one consolidated graph |
+| FastAPI.aDNA | Atalanta | control-plane | `79bb176` | #1 FastAPI → seed directly |
+
+Every graph: genesis-planning stub, four wrappers (`git/`·`feedback/`·`iii/`+credential-routing), deployment-gated SOs, **local `git init` / no remote**, router row STAGED `#needs-human` (PT freeze), `data_bearing` carrying ADR-016 §8 where applicable. Ledger §A all-SEEDED; open decisions #1–#4 resolved (#5 AWSBootstrap open). **Objective 6 (Lab enrichment) deferred** → §C enrichment wave / `idea_keystone_existing_graph_retrofit`, gated on Lab M-L13.6. Net of the deferral, **5/5 net-new-seeding objectives complete**.
+
+**Cohort-conformance note**: 6 of 8 are lean 15-file stubs; **Caddy + Bitwarden were forked via the full `skill_project_fork` scaffold** (Caddy carries a `campaign_adna_workspace_upgrade`; Bitwarden was built out under WS-B), not the lean `template_software_graph_stub`. First flagged at M00 (AAR Technical Debt #2) and now confirmed cohort-wide — **document & reconcile at P4 cohort manifest; not rework** (both are legitimately further along / a different work-stream). Recorded in the ledger §A.
 
 ## AAR
 
-*Mandatory before `status: completed` (SO#5). Not yet — mission remains `in_progress` (objectives 5–6 pending).*
+- **Worked**: `template_software_graph_stub` proved clean and uniform across 6 lean net-new stubs; the decision-gated trio (Container/Inference/FastAPI) cleared in a single operator GO, keeping the cohort a fleet not a set of bespoke forks.
+- **Didn't**: M2's "enrich Lab" leg (Obj 6) was never actionable — gated on a *different* campaign's operator gate (Lab M-L13.6) — and held the mission artificially open; resolved by scoping it out to the enrichment wave.
+- **Finding**: cohort fork-method divergence — Caddy (346 files) + Bitwarden (358) were full-`skill_project_fork`ed vs the lean-6's `template_software_graph_stub` (confirms M00 AAR TD#2); benign, reconcile at P4.
+- **Change**: scope a cross-campaign-gated objective OUT of a mission rather than holding the mission open; enrichment of existing vaults is its own wave (backlog `idea_keystone_existing_graph_retrofit`), not a tail objective on a seeding mission.
+- **Follow-up**: M3 (`mission_overlap_graphs_m03`) authored this session (Forgejo/Nebula, seam-gated); Lab-enrichment → `idea_keystone_existing_graph_retrofit` (gated M-L13.6); P4 cohort manifest reconciles the fork-method divergence. Full artifact: [[how/missions/artifacts/campaign_keystone_m02_aar|campaign_keystone_m02_aar]].
