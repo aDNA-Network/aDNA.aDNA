@@ -294,7 +294,16 @@ None.
 
 ## Next Steps
 
-**As of 2026-06-10 (audit campaign closed; STR primary; E5 at **c164 ✅** — next c165; gate baseline 121):**
+**As of 2026-06-22 (Operation aDNA — keystone joined launch / DP2 hold; primary track = the program umbrella `campaign_operation_adna`).** All **in-vault** build work is DONE — Hearthstone v8.0 shipped (`adae20c`); WEBSITE (Track A) closed 2026-06-21 (Decision 6); C-1 stage-2 + the 14→16/v2.3 entity-count currency + the Tier-2 spec-mirror v2.3 port all staged commit-only; site builds **163 pages / gates 281/281** (re-verified 2026-06-22, `session_stanley_20260622T215808Z_dp2_launch_runbook`). The keystone is gated on two things **outside this vault's unilateral control**:
+
+1. **pt19** vault-data regen — Hestia/`Home.aDNA` (Production Tidy P7); **PENDING**, behind pt17 (W-NET) / Network.aDNA Phase 6 (~1wk out). On its landing ping: re-run `build_vaults_data.mjs`, verify axis-J keeper-set names; **never** hand-edit `vaults.json` / run `sync:vaults` before then (Honor pt19).
+2. **Operator DP2 GO** → the coordinated `vercel --prebuilt --prod` launch.
+
+**Resume-Here:** the turnkey launch procedure is now `how/campaigns/campaign_operation_adna/dp2_keystone_launch_runbook.md` (§1 preconditions + §2 13-step sequence + rollback + gotchas). Post-keystone follow-ups: the **Hearthstone "catch-up release"** (public `aDNA-Network/aDNA` `adna_standard.md` §5 still reads 14 types until the next gated `skill_template_release` — F1) and the deferred **STATE.md hygiene pass** (Current-Phase bullets predate the Keystone P4/M4 close + C-1 stage-2 — F2, Hestia lane). This node carries **unpushed commit-only work on `main`**; confirm with the operator before any push.
+
+> **The STR-era queue below (E5 c165–c169, E6/M5.13, D16, M5.1–M5.5, M3.x, …) is SUPERSEDED.** Track C's E5/E6 cycles were delivered-via-WEBSITE (Track A, CLOSED 2026-06-21); STR is referenced-not-absorbed by the program. Retained below verbatim as historical reference + still-deferred carry-forward items (archive-never-delete) — **not the current frontier.**
+
+**PRIOR — As of 2026-06-10 (audit campaign closed; STR primary; E5 at **c164 ✅** — next c165; gate baseline 121):**
 
 1. **E5 c165 — homepage §5 hand-off + C3 nav/orphans** (`/commons` nav entry; mind the E4 c158 7th-nav-item overflow lesson — gate-9 guards it; audience-page secondary-nav unify + breadcrumb/cross-link seams). *(c164 ✅ executed 2026-06-10 from the prepared spec: commit `06873fc`, gates 121/121, ledger `cycle_164_E5_first_social_surface.json`.)*
 2. **E5 c166–c169** — MAX-III + C1/C2 terminology spine (c166-168) → **c169 decadal close**: 30-persona RLP + AAR + **C5 coordinated close-deploy** (re-verify ADR-010 co-sign; fall back to targeted-exclude if pending).
