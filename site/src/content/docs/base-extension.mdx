@@ -12,14 +12,14 @@ A shared standard has to be stable enough that teams can build on it, but flexib
 
 ## Solution
 
-aDNA separates entity types into a **base layer** (14 types defined by the spec) and an **extension layer** (domain-specific types added by projects). The rule (§5): extensions MUST NOT modify base types — they add alongside them.
+aDNA separates entity types into a **base layer** (16 types defined by the spec) and an **extension layer** (domain-specific types added by projects). The rule (§5): extensions MUST NOT modify base types — they add alongside them.
 
 **Base layer** (shared across all aDNA instances):
 
 | Triad | Base Entities |
 |-------|--------------|
-| WHO | `governance`, `team`, `coordination` |
-| WHAT | `context`, `decisions`, `modules`, `lattices` |
+| WHO | `governance`, `team`, `coordination`, `identity` |
+| WHAT | `context`, `decisions`, `modules`, `lattices`, `inventory` |
 | HOW | `campaigns`, `missions`, `sessions`, `templates`, `skills`, `pipelines`, `backlog` |
 
 **Extension rules**:
@@ -40,7 +40,7 @@ This gives projects full freedom to represent their domain while preserving the 
 
 ## Example: This Vault
 
-This vault (`aDNA.aDNA/`) extends the base 14 types with 10 project-specific types:
+This vault (`aDNA.aDNA/`) extends the base 16 types with 10 project-specific types:
 
 | Extension | Triad | Directory | Purpose |
 |-----------|-------|-----------|---------|

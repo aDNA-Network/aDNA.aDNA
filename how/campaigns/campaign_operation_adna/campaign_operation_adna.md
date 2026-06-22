@@ -9,11 +9,11 @@ status: active
 phase_count: 0          # the program holds no phases of its own; children carry phases + gates
 mission_count: 0        # the program authors no missions; children own their mission trees
 created: 2026-06-18
-updated: 2026-06-21
-last_edited_by: agent_stanley
+updated: 2026-06-22
+last_edited_by: agent_rosetta
 orchestrates:
   - campaign_website_adna                  # Track A — Prove it real (CLOSED 2026-06-21; campaign completed, Decision 6 CLOSE GO)
-  - campaign_hearthstone                   # Track B — Make it real (P0✅/P1✅ → P2 ready → P5 release)
+  - campaign_hearthstone                   # Track B — Make it real (COMPLETED 2026-06-19; v8.0 shipped @ adae20c)
   - campaign_adna_serious_tool_readiness   # Track C — The engine (STR v8.0; referenced, NOT absorbed)
 tags: [campaign, program, umbrella, operation_adna, orchestration, north_star, public_good, credibility_integrity]
 ---
@@ -122,7 +122,7 @@ gates.** The program adds no phases; it synchronizes the tracks toward the keyst
 | Track | Campaign | Owner | Current state | What it delivers to the north-star |
 |-------|----------|-------|---------------|------------------------------------|
 | **A — Prove it real** | [[campaign_website_adna]] | Berthier (plan) · Rosetta (resident site agent) | **CLOSED 2026-06-21 — campaign completed** (Decision 6 CLOSE GO; P0–P4 all closed; all 4 decades GO; build-verified frontier-grade — 281/281 gates · A11y/SEO 100 site-wide · Skeptical-Frontier GO on the build; [[RECONCILIATION.aDNA]] + [[FINDINGS.aDNA]] + [[CAMPAIGN-REPORT]] filed). **Terminal gate reached.** | The site that *demonstrates* — frontier-grade, credibly real; resolves the credibility-integrity gap on the surface a newcomer meets first. |
-| **B — Make it real** | [[campaign_hearthstone]] | Hestia (chartered) · Rosetta (build) | **P0 ✅ / P1 ✅ 2026-06-19** (`adr_035` accepted; `inventory`+`identity` → base, ontology 14→16 in dev graph) → **P2 ready** (not activated) → P5 release | The clone-and-run **base image** — the real, inspectable thing the site links to and the easy/fluid first-touch of the UX goal. |
+| **B — Make it real** | [[campaign_hearthstone]] | Hestia (chartered) · Rosetta (build) | **✅ COMPLETED 2026-06-19 — P0–P5 all closed** (`adr_035` accepted; `inventory`+`identity` → base, ontology **14→16** / standard **v2.3**; v8.0 shipped to `aDNA-Network/aDNA` @ `adae20c`, 13/13 smoke GREEN). **Keystone condition #2 = GREEN.** | The clone-and-run **base image** — the real, inspectable thing the site links to and the easy/fluid first-touch of the UX goal. |
 | **C — The engine** | STR ([[campaign_adna_serious_tool_readiness]]) | Rosetta | **active** (v8.0 target; P0 open; successor `campaign_adna_v3_ecosystem_compliance` opens at P6 close) | The standard + governance **v8.0** and per-vault ecosystem compliance — the ground truth Tracks A/B render and ship. *Referenced, not absorbed.* |
 | **D — The commons** | *(axis-K + `/commons` + subnetwork showcase; no separate campaign)* | Rosetta · coordinates with Venus (Network) | **in-flight inside Track A** (WEBSITE axis-K; `/commons` strongest K/E surface; subnetwork showcase live) | The public-good soul *shown* — real attribution, visible governance, honest federation, mission-aligned subnetworks (WGA · Context Commons · WilhelmAI · Rare Archive). The "Facebook, for good" MVP layer. |
 
@@ -149,12 +149,19 @@ a human gate inside its child campaign. The program's single synchronization poi
 > its own deploy gates before then (commit-only default); the **keystone is the joined-up moment**,
 > not a blocker on independent progress.
 
+**Readiness (2026-06-22, keystone C-1 stage-2 session):** **#2 Hearthstone v8.0 ✅ shipped** (`adae20c`). **#1
+WEBSITE** — D1 credibility live; **C-1 stage-2 (proofs fixed→exemplary, pointing at the shipped polished base) +
+the `14→16` / v2.3 entity-count currency reconciliation staged commit-only** (build 163 / gates **281/281**;
+record: [[keystone_credibility_traceability_20260622]]); remaining = the **Tier-2 standard-currency / spec-mirror
+v2.3 port** (★ in [[coordination_ledger]]) + the full improved-site deploy. **#3 pt19 ⏳ pending** (Production-Tidy/Hestia)
+— the headline remaining gate. The joined launch waits on **pt19 + the Tier-2 currency port + the operator's DP2 GO**.
+
 ## Decision Points (program-level)
 
 | # | When | Decision | Status |
 |---|------|----------|--------|
 | DP1 | Program charter (now) | Approve the program name **"Operation aDNA"**, the umbrella `subtype: program` posture, the four-track map, and the orchestrate-don't-reimplement contract | **✅ approved 2026-06-18** — name blessed; posture + 4-track map + orchestrate-don't-reimplement contract approved. *(Same gate: ADR-035 ratified → Track B P0 closed; WEBSITE Decision 3 approved → Track A P1 closed.)* |
-| DP2 | Keystone readiness | Confirm all three keystone conditions green (WEBSITE Criticals shipped + Hearthstone v8.0 released + pt19 landed) and approve the **coordinated public launch** | **pending — Track A terminal gate reached 2026-06-21** (WEBSITE.aDNA closed, Decision 6). Condition #1 (WEBSITE Criticals shipped) = **green** (D1 credibility-integrity deployed-live to adna.network 2026-06-19/20); the full improved-site deploy (D2–D4 + residuals) is the keystone joined-launch payload. Conditions #2 (Hearthstone v8.0) + #3 (pt19) tracked in [[coordination_ledger]]. |
+| DP2 | Keystone readiness | Confirm all three keystone conditions green (WEBSITE Criticals shipped + Hearthstone v8.0 released + pt19 landed) and approve the **coordinated public launch** | **pending — 2026-06-22.** **#2 Hearthstone v8.0 = ✅ GREEN** (shipped `adae20c`). **#1 WEBSITE = mostly green** — D1 credibility live; **C-1 stage-2 + the 14→16 / v2.3 entity-count currency staged commit-only this session** (gates 281/281; [[keystone_credibility_traceability_20260622]]); remaining = the **Tier-2 standard-currency / spec-mirror v2.3 port** (★) + the full improved-site deploy. **#3 pt19 = ⏳ pending** (Production-Tidy/Hestia) — headline remaining gate. → Joined launch waits on **pt19 + the Tier-2 currency port + operator DP2 GO**. Seams: [[coordination_ledger]]. |
 | DP3 | Cross-vault seam disputes | When a seam in [[coordination_ledger]] blocks a child (e.g. pt19 slips, `skill_template_release` contract changes), the program surfaces it to the operator rather than a child resolving cross-vault unilaterally | as-needed |
 | DP4 | Program close | When all tracks reach their terminal gates, AAR the program and set `status: completed` (children persist as their own records) | pending |
 

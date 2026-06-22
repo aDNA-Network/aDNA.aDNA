@@ -17,7 +17,7 @@ export const stageCards: StartupFirstHourCard[] = [
   {
     title: 'Minutes 0–10 · Clone and install',
     href: '/learn/tutorials/navigate-a-vault',
-    description: 'Fork the base template into your repo root. You get the triad (what/, how/, who/), the 14-entity base ontology, and a working CLAUDE.md scaffold.',
+    description: 'Fork the base template into your repo root. You get the triad (what/, how/, who/), the 16-entity base ontology, and a working CLAUDE.md scaffold.',
   },
   {
     title: 'Minutes 10–25 · CLAUDE.md',

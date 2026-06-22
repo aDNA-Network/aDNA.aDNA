@@ -76,7 +76,7 @@ export const integrationCards: EnterpriseCard[] = [
   {
     title: 'Base + Extension',
     href: '/patterns/base-extension',
-    description: 'Keep the 14-entity base ontology; add domain-specific entity types (compliance_check, team_policy, shared_pipeline) per team without forking the standard.',
+    description: 'Keep the 16-entity base ontology; add domain-specific entity types (compliance_check, team_policy, shared_pipeline) per team without forking the standard.',
   },
   {
     title: 'Open Standard',

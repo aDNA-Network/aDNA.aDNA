@@ -9,20 +9,23 @@ const jsonLD = buildTechArticleJsonLD({
   url: Astro.url.href,
 });
 
-// C-1 (D1 credibility) — proof-links resolve to real, browsable files in the public
-// clone-and-run image. Decision 4 (2026-06-19): repoint-to-public-image; every href
-// returns 200 to an unauthenticated client (gate G6). At the keystone these upgrade
-// to point at Hearthstone's polished, published Home base (stage-2). Built from the
-// single canonical REPO_HTTPS (SP-1; gate G5) so the org/repo can't re-drift.
-// The clone-and-run image carries the standard embedded at `.adna/`; the workspace
-// router CLAUDE.md sits at the repo root. Every path below was live-verified 200
-// (unauthenticated) against the public image this session.
+// C-1 (credibility) — proof-links resolve to real, browsable files in the public
+// clone-and-run image. Stage-1 (D1, 2026-06-19): repoint-to-public-image; every href
+// returns 200 to an unauthenticated client (gate G6). Stage-2 (keystone, 2026-06-22):
+// upgraded fixed → exemplary — the proofs now include Hearthstone's polished, published
+// v8.0 base (the Home governance template + the exemplar Home bundle a fresh clone offers
+// to bootstrap). Built from the single canonical REPO_HTTPS (SP-1; gate G5) so the
+// org/repo can't re-drift. The clone-and-run image carries the standard embedded at
+// `.adna/`; the workspace router CLAUDE.md sits at the repo root. Every path below was
+// live-verified 200 (unauthenticated) against the public image.
 const proofLinks = [
   { path: 'CLAUDE.md', href: `${REPO_HTTPS}/blob/main/CLAUDE.md`, note: 'the workspace operating protocol an agent loads first' },
   { path: '.adna/', href: `${REPO_HTTPS}/tree/main/.adna`, note: 'the full aDNA standard, embedded and ready to clone' },
   { path: '.adna/how/skills/skill_onboarding.md', href: `${REPO_HTTPS}/blob/main/.adna/how/skills/skill_onboarding.md`, note: 'the first-run recipe that orients a new project' },
   { path: '.adna/how/skills/skill_project_fork.md', href: `${REPO_HTTPS}/blob/main/.adna/how/skills/skill_project_fork.md`, note: 'how a new .aDNA project is created' },
   { path: '.adna/how/templates/template_workspace_claude.md', href: `${REPO_HTTPS}/blob/main/.adna/how/templates/template_workspace_claude.md`, note: 'the router template every workspace starts from' },
+  { path: '.adna/how/templates/template_home_claude.md', href: `${REPO_HTTPS}/blob/main/.adna/how/templates/template_home_claude.md`, note: 'the governance template a fresh clone uses to bootstrap a polished Home (shipped at v8.0)' },
+  { path: '.adna/how/templates/template_node_adna_exemplar/', href: `${REPO_HTTPS}/tree/main/.adna/how/templates/template_node_adna_exemplar`, note: 'the themed exemplar Home the bootstrap offers out of the box (shipped at v8.0)' },
 ];
 ---
 
@@ -45,7 +48,7 @@ const proofLinks = [
   <ul>
     <li><strong>The Triad</strong> — every project is organized into <a href="/learn/concepts/triad">three directories</a>: <code>who/</code> (people and governance), <code>what/</code> (knowledge and decisions), and <code>how/</code> (operations and workflows). An agent that has seen one aDNA project knows where to look in any other.</li>
     <li><strong>Governance files</strong> — <code>CLAUDE.md</code>, <code>AGENTS.md</code>, <code>MANIFEST.md</code>, <code>STATE.md</code>, and <code>README.md</code> orient agents at every level. The root <code>CLAUDE.md</code> is the agent's entry point: purpose, structure, rules, where to start.</li>
-    <li><strong>Typed entities</strong> — 14 base entity types (concepts, missions, sessions, lattices, and more) with consistent frontmatter and naming. An agent that knows what a <code>mission</code> file looks like can load any mission file in any aDNA project and understand it immediately.</li>
+    <li><strong>Typed entities</strong> — 16 base entity types (missions, sessions, lattices, inventory, and more) with consistent frontmatter and naming. An agent that knows what a <code>mission</code> file looks like can load any mission file in any aDNA project and understand it immediately.</li>
   </ul>
 
   <h3 id="directory-structure">What the structure looks like</h3>
@@ -63,7 +66,7 @@ const proofLinks = [
     └── sessions/      # Per-session tracking and handoff notes</code></pre>
   <p>An agent that has seen one aDNA project recognises this in any other — before reading a single word of content.</p>
 
-  <h3 id="entity-types">The 14 entity types</h3>
+  <h3 id="entity-types">The 16 entity types</h3>
   <p>Every file has a declared type. Predictability is what makes cross-project navigation possible without custom configuration:</p>
   <table>
     <thead><tr><th>Triad</th><th>Entity</th><th>Purpose</th></tr></thead>
@@ -71,10 +74,12 @@ const proofLinks = [
       <tr><td>WHO</td><td><code>governance</code></td><td>Roles, policies, decision authority</td></tr>
       <tr><td>WHO</td><td><code>team</code></td><td>Who works on the project</td></tr>
       <tr><td>WHO</td><td><code>coordination</code></td><td>Cross-agent ephemeral notes</td></tr>
+      <tr><td>WHO</td><td><code>identity</code></td><td>Who and where this node is — hostname, operator, peer id</td></tr>
       <tr><td>WHAT</td><td><code>context</code></td><td>Curated knowledge files agents load at session start</td></tr>
       <tr><td>WHAT</td><td><code>decisions</code></td><td>Architecture Decision Records (ADRs)</td></tr>
       <tr><td>WHAT</td><td><code>modules</code></td><td>Atomic capability units with typed I/O</td></tr>
       <tr><td>WHAT</td><td><code>lattices</code></td><td>Connected workflows of modules</td></tr>
+      <tr><td>WHAT</td><td><code>inventory</code></td><td>What's installed — vaults, system state, memberships</td></tr>
       <tr><td>HOW</td><td><code>campaigns</code></td><td>Multi-mission strategic initiatives</td></tr>
       <tr><td>HOW</td><td><code>missions</code></td><td>Multi-session work decomposed into objectives</td></tr>
       <tr><td>HOW</td><td><code>sessions</code></td><td>Single-session tracking and handoff notes</td></tr>
@@ -86,7 +91,7 @@ const proofLinks = [
   </table>
 
   <h3 id="claude-md-example">What a CLAUDE.md looks like</h3>
-  <p>The <code>CLAUDE.md</code> is not a README — it is the agent's operating protocol. Below is the opening of this site's own vault <code>CLAUDE.md</code> — every aDNA project carries one. (The public clone-and-run image ships its own <code>CLAUDE.md</code> plus the full skill set; browse those in the links below.)</p>
+  <p>The <code>CLAUDE.md</code> is not a README — it is the agent's operating protocol. Below is the opening of this site's own vault <code>CLAUDE.md</code> — every aDNA project carries one. (The public clone-and-run image ships its own <code>CLAUDE.md</code>, the full skill set, and a polished Home it offers to bootstrap; browse those in the links below.)</p>
   <pre><code># CLAUDE.md — aDNA.aDNA
 
 You are Rosetta — named after the Rosetta Stone, the artifact that decoded
@@ -115,7 +120,7 @@ aDNA.aDNA/
   <p><strong>With aDNA:</strong> the same project has a <code>what/context/</code> library, a <code>STATE.md</code> showing current priorities and blockers, and a <code>how/missions/</code> directory with active work decomposed into claimable objectives. A new agent loads <code>CLAUDE.md</code>, reads the relevant context, and starts working in the right direction — in the same session.</p>
 
   <h2 id="self-reference">aDNA is real — and inspectable</h2>
-  <p><strong>aDNA is not a concept deck; it is a standard you can clone and read today.</strong> The public clone-and-run image at <a href={REPO_HTTPS}><code>github.com/aDNA-Network/aDNA</code></a> is a real aDNA workspace — one command gives you the standard, the skills, and the templates, ready for an agent. Inspect the actual files:</p>
+  <p><strong>aDNA is not a concept deck; it is a standard you can clone and read today.</strong> The public clone-and-run image at <a href={REPO_HTTPS}><code>github.com/aDNA-Network/aDNA</code></a> is a real aDNA workspace — one command gives you the standard, the skills, and the templates, and a fresh clone even offers to bootstrap a complete, polished Home out of the box, ready for an agent. Inspect the actual files:</p>
   <ul>
     {proofLinks.map(({ path, href, note }) => (
       <li><a href={href}><code>{path}</code></a> — {note}</li>
