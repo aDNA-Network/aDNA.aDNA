@@ -83,7 +83,7 @@ Triggered by Operation Feedback Loop (rev. 3) under the network-stack-tier expan
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 3 | Structure consumer missions: Warp staged-draft · Bitwarden + Keystone native · Lighthouse · rollout backlog | 1 | M1 | planned |
+| 3 | Structure consumer missions: Warp staged-draft · Bitwarden + Keystone native · Lighthouse · rollout backlog | 1 | M1 | completed |
 
 **Phase exit gate**: every cross-vault touch is a staged coord memo or one enumerated backlog (`idea_telemetry_wrapper_rollout`); zero writes into other vaults' trees. Ack-pending, non-blocking.
 
@@ -100,7 +100,7 @@ Triggered by Operation Feedback Loop (rev. 3) under the network-stack-tier expan
 | # | When | Decision | Status |
 |---|------|----------|--------|
 | 1 | End of M0 (P0→P1 gate) | Wrapper name `feedback/` vs `telemetry/`; four signal classes; Context.aDNA boundary | **resolved 2026-06-20** — `feedback/`, four classes + boundary ratified as written |
-| 2 | During M3 | Warp coord-memo placement (Warp mid-genesis P3b — operator clears the staged draft first) | pending |
+| 2 | During M3 | Warp coord-memo placement (Warp mid-genesis P3b — operator clears the staged draft first) | **staged 2026-06-21** — draft authored (`coord_2026_06_20_feedback_loop_to_escoffier`, `staged_ack_pending`); awaiting operator clearance to place |
 | 3 | M1 | Redaction-profile name + field set (`software_graph_default`) | **resolved 2026-06-20** — `software_graph_default` field set defined in the spec §AAR sanitization pass |
 
 ## Risk Register

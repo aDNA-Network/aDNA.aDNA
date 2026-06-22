@@ -16,7 +16,7 @@ tags: [governance, campaign, feedback_loop]
 | Campaign | `campaign_feedback_loop` |
 | Owner | stanley |
 | Status | active |
-| Current Phase | Parked at the P2→P3 gate — P0 / P1 / P2 closed 2026-06-20; P3 (cross-vault structuring) awaits the operator gate |
+| Current Phase | P3 closed 2026-06-21 (cross-vault structuring) — P4 (close) in progress |
 | Persona | Rosetta (this vault) |
 
 ## Quick Start
