@@ -7,7 +7,7 @@ routes_to_phase: 5_or_6_or_v3_ec_successor
 finding_id: B-aDNA-2026-05-21-CoordStewardship
 source_session: session_stanley_20260521T135258Z_v8_m32_s1
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-06-20
 last_edited_by: agent_stanley
 tags: [backlog, cross_vault_coord, stewardship, ack_debt, campaign_so_13, m3_2_s1_wind_down_discovery, who_coordination, adna_aDNA, north_star_easy_fluid_context_graphs]
 related_backlog:
@@ -103,7 +103,7 @@ Cross-vault coord memos may also be addressed to a persona that lives in a DIFFE
 4. **OIP absorption candidacy**: does this absorb into / inherit from existing `idea_campaign_operator_interaction_patterns_unification.md` OIP scope ("Operation Concord")? OIP covers Canvas substrate + LatticeTerminal sidebar + LatticeAgent provider-contract + AskUserQuestion + osascript + custom HTML; cross-vault coord stewardship is a DIFFERENT axis (vault-to-vault) but shares the "what's the cleanest UX for cross-domain handoffs?" theme. **Default**: keep separate (different axis); cross-link both as related-pattern.
 5. **Transit-copy convention**: should transit-copies (memos addressed to another vault's persona but filed here for awareness) be **ack'd informationally** at aDNA.aDNA OR **NOT touched** (let the recipient persona ack at their own vault, then transit-copy stays `status: sent` here permanently)? Default = NOT touched (current Campaign SO #13 reading); but may want an explicit `status: transit_copy` field to disambiguate from genuine unack'd local memos.
 6. **Cross-vault federation precedent**: should this proposal coordinate with `LatticeAgent.aDNA` (provider-contract harness) and `LatticeNetwork.aDNA` (Alpha Lattice substrate) before authoring the skill / ADR? Default = yes; the routing-protocol Option 3 depends on federation primitives, so coord memo to Spock (LatticeAgent) + Venus (LatticeNetwork) at skill / ADR authoring window.
-7. **Pattern-graduation timing**: per `m21_obj4` rubric, ≥ 3 instances required before skill graduates. Current instances: 1 (this discovery). Forecast: pattern likely to recur at every cross-vault campaign close where multiple outbound memos fire (SiteForge.aDNA P2/P3/P5 closes; III.aDNA Campaign D milestones; LatticeNetwork.aDNA federation rollout; etc.). Graduation likely at 3rd-instance window = v8 P5 horizon.
+7. **Pattern-graduation timing**: per `m21_obj4` rubric, ≥ 3 instances required before skill graduates. **Current instances: 2.** (1) this discovery [2026-05-21, aDNA.aDNA — 4 SiteForge memos unack'd 6h]; **(2) 2026-06-20, Home.aDNA — Venus's 2026-06-10 reply (`ack_required:false`) sat UN-INTAKEN for 10 days / 8 sessions, driving a false "Venus query unanswered → pt17 blocked" premise in `Home.aDNA/STATE`; found only via a manual cross-vault check. Home shipped a node-local interim detector — `skill_node_health_check` S14 ("Inbound Coordination Intake Scan") + Startup-Checklist step 4b; see `Home.aDNA/how/backlog/idea_coordination_intake_health_check.md`.** Forecast: recurs at every cross-vault campaign close where multiple outbound memos fire. **One more instance → graduate** the skill/ADR (v8 P5 horizon).
 8. **Coord-memo arrival logging**: should aDNA.aDNA opt into a centralized coord-memo arrival log (e.g., `who/coordination/_arrivals.jsonl` append-only log) for audit / analytics? Default = no (over-engineering); revisit if ack-debt issues recur.
 
 ## Critical files (forecast)

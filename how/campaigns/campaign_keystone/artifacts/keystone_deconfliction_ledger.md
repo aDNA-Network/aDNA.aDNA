@@ -6,13 +6,14 @@ updated: 2026-06-20
 status: drafted
 campaign_id: campaign_keystone
 campaign_phase: 1
+status_note: ratified at P1 gate 2026-06-20
 last_edited_by: agent_stanley
 tags: [keystone, deployment_graph, ledger, roster, deconfliction]
 ---
 
 # Operation Keystone — De-confliction Ledger & Implied-Stack Roster
 
-The full implied network-stack with a ruled disposition for each piece of software, from reconnaissance ground truth (Network / Lab / Git / Lighthouse / Home STATE+CLAUDE, 2026-06-20). **Drafted; ratify at the P1 gate before any fork.** Cohort scope = **wide** (operator ratification). Disposition vocabulary: **SEED** (net-new graph) · **SCOPE** (overlap; seed only after the owner ratifies the seam) · **ENRICH** (existing vault retrofits the four wrappers) · **DEFER** (reasoned, not now) · **DO-NOT-CREATE** (out of paradigm).
+The full implied network-stack with a ruled disposition for each piece of software, from reconnaissance ground truth (Network / Lab / Git / Lighthouse / Home STATE+CLAUDE, 2026-06-20). **Ratified at the P1 gate 2026-06-20.** Paradigm: [[what/patterns/pattern_software_deployment_graph|pattern_software_deployment_graph]]; category ruling: [[what/decisions/adr_037_software_deployment_graph_subtype|ADR-037]]. Cohort scope = **wide** (operator ratification). Disposition vocabulary: **SEED** (net-new graph) · **SCOPE** (overlap; seed only after the owner ratifies the seam) · **ENRICH** (existing vault retrofits the four wrappers) · **DEFER** (reasoned, not now) · **DO-NOT-CREATE** (out of paradigm).
 
 ## §A — SEED net-new (proving instances; clean ones FIRST)
 
