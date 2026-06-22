@@ -46,13 +46,13 @@ Clean net-new stubs prove the template (four wrappers present + federating, neve
 
 ### 3. Second wave — Store.aDNA (object storage)
 - **Status**: completed (2026-06-21)
-- **Description**: `Store.aDNA` (persona-pin **Plutus**) — object storage (MinIO/AIStor), Lattice Storage Federation. Ledger §A VERIFIED-ABSENT → SEED; **data-bearing** (ADR-016 §8, Venus placement). Genesis-planning stub, four wrappers, local `git init`, router row staged.
-- **Files**: `~/aDNA/Store.aDNA/` (local-only)
+- **Description**: `Store.aDNA` (persona-pin **Plutus**) — object storage (MinIO/AIStor), Lattice Storage Federation. Ledger §A VERIFIED-ABSENT → SEED; **data-bearing** (ADR-016 §8, Venus placement). Genesis-planning stub, four wrappers, local `git init`, router row staged. 15 files, structure verified vs Nextcloud reference.
+- **Files**: `~/aDNA/Store.aDNA/` (local-only, commit `77d2e88`, no remote)
 
 ### 4. Second wave — Groupware.aDNA (unified messaging)
 - **Status**: completed (2026-06-21)
-- **Description**: `Groupware.aDNA` (persona-pin **Pheme**) — unified groupware (Stalwart JMAP: mail/calendar/contacts). Ledger §A VERIFIED-ABSENT → SEED; **data-bearing** (ADR-016 §8, Venus placement). Genesis-planning stub, four wrappers, local `git init`, router row staged.
-- **Files**: `~/aDNA/Groupware.aDNA/` (local-only)
+- **Description**: `Groupware.aDNA` (persona-pin **Pheme**) — unified groupware (Stalwart JMAP: mail/calendar/contacts). Ledger §A VERIFIED-ABSENT → SEED; **data-bearing** (ADR-016 §8, Venus placement; may back blobs against Store.aDNA). Genesis-planning stub, four wrappers, local `git init`, router row staged. 15 files, structure verified vs Nextcloud reference.
+- **Files**: `~/aDNA/Groupware.aDNA/` (local-only, commit `85b4531`, no remote)
 
 ### 5. Remaining net-new (decision-gated)
 - **Status**: pending (later M2 session)
