@@ -8,9 +8,11 @@
  *
  * 2026-06-22 (keystone C-1 stage-2): v2.2→v2.3 and 14→16 — `inventory` (WHAT) and
  * `identity` (WHO) were promoted to base entity types per ADR-035, shipped in the
- * public aDNA-Network/aDNA image at Hearthstone v8.0. The hardcoded "v2.2" strings in
- * the MDX prose + the normative spec mirror (/reference/specification) port to v2.3 in
- * the follow-up standard-currency sweep (keystone precondition; see traceability artifact).
+ * public aDNA-Network/aDNA image at Hearthstone v8.0. The hardcoded "v2.2" strings in the
+ * MDX prose + the normative spec mirror (/reference/specification) were ported to v2.3 in
+ * the Tier-2 standard-currency sweep (2026-06-22), which also brought the dev standard doc
+ * (what/docs/adna_standard.md) to v2.3 + authored its §5.1 inventory / §5.2 identity rows;
+ * the public image's spec body closes at the next gated template release.
  */
 export const STANDARD_VERSION = 'v2.3';
 export const ENTITY_TYPE_COUNT = 16;
