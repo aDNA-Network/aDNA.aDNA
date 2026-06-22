@@ -2,7 +2,7 @@
 type: governance
 version: "6.0"
 token_estimate: ~4500
-updated: 2026-06-10
+updated: 2026-06-22
 last_edited_by: agent_stanley
 ---
 
@@ -159,6 +159,18 @@ Git is the coordination bus for multi-user and multi-agent projects.
 - **Push after committing.** Run `git push` after each explicit commit. This closes the revert window.
 - **Check git log for context.** Before starting work, run `git log --oneline -10` to see recent activity from other agents or users.
 - **Truth hierarchy**: git HEAD > cached file read > memory > assumption. If your memory says a mission is "in_progress" but git shows it "completed", trust git.
+
+## Git-Ops (federates Git.aDNA via `git/`)
+
+This graph federates **Git.aDNA** (Grace Hopper) for platform-agnostic git/forge/CI-CD ops; declaration in `git/CLAUDE.md`. Git.aDNA **P6 Wave 2** (2026-06-22, DP5-gated) flipped this dev-graph repo `aDNA-Network/aDNA.aDNA` **GitHub-public, class P-released** (the standard's docs face; distinct from the separately-released MIT image `aDNA-Network/aDNA` in MANIFEST "Public face").
+
+1. **Remotes** follow Git.aDNA ADR-006 — `origin` (canonical home) · `mirror` (outbound release/discovery) · `upstream` (external, never pushed) · `rollback` (temporary, during a host move). Host & visibility per the `git/` declaration (ADR-013 host-role inversion: **released-FOSS → GitHub-public** · **FOSS-in-dev → Codeberg-private** (opens to GitHub at release) · **private/proprietary → GitHub-private-interim → self-hosted**; **Codeberg is FOSS-only**).
+2. **Local-first; HEAD is truth; commit after significant edits.** Read before write; never batch a phase into one mega-commit.
+3. **Outward actions are gated** — creating remotes, pushing, cutting releases, configuring mirrors, and migrating hosts require operator confirmation. Never improvised.
+4. **Credentials via the Home.aDNA broker; never inlined** — host→env-var (`GITHUB_TOKEN`/`CODEBERG_TOKEN`/`FORGEJO_TOKEN`); tokens never transit the conversation (ADR-007).
+5. **CI is portable-first** — author workflows in `.github/workflows/` syntax (Forgejo falls back to it); add a `.forgejo/workflows/` variant only where a delta requires it (ADR-008).
+6. **Cross-graph writes are staged as coord memos** — never silently write into another vault (workspace Rule 10).
+7. **Secret hygiene** — `gitleaks` pre-push hook on every push; a **full-history scan is a hard gate before any host move** (ADR-011); a finding blocks the move until purged + the credential is rotated.
 
 ---
 

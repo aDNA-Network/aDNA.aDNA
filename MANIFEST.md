@@ -1,8 +1,8 @@
 ---
 type: manifest
 created: 2026-04-13
-updated: 2026-06-18
-last_edited_by: agent_rosetta
+updated: 2026-06-22
+last_edited_by: agent_stanley
 tags: [manifest, governance]
 ---
 
@@ -15,6 +15,8 @@ tags: [manifest, governance]
 This project serves two audiences simultaneously: **developers** building with aDNA get spec-precise technical depth, integration patterns, and lattice composition guidance. **Non-developers** exploring aDNA get plain-language explanations, visual metaphors, and a clear on-ramp to agentic literacy. Both audiences navigate the same vault — progressive disclosure handles the rest.
 
 **Public face**: [github.com/aDNA-Network/aDNA](https://github.com/aDNA-Network/aDNA) (MIT license) — the released clone-and-run workspace image of the standard (ADR-034; predecessor `LatticeProtocol/aDNA` archived as [`aDNA-Network/adna-legacy`](https://github.com/aDNA-Network/adna-legacy)). This vault is the standard's **dev graph**: it develops, demonstrates, and explains aDNA; manual gate-fired releases publish it (`how/skills/skill_template_release.md`).
+
+> **Dev-graph repo visibility** (Git.aDNA P6 Wave 2 canary, 2026-06-22): this vault's *own* repo `github.com/aDNA-Network/aDNA.aDNA` is now **GitHub-public**, class **P-released**, under Git.aDNA governance — visibility-flipped private→public via the agnostic `gitops_set_visibility` verb (the standard's docs face is public-by-intent). Distinct from the separately-released MIT image above. Git-ops declaration: `git/CLAUDE.md`; doctrine: `CLAUDE.md` → `## Git-Ops`. *(STATE.md host-fact deferred to avoid churning the active Operation-aDNA state — fold at next aDNA session.)*
 
 ## Architecture
 
