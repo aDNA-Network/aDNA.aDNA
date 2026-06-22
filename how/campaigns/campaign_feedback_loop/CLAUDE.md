@@ -2,7 +2,7 @@
 type: governance
 subtype: campaign_claude
 created: 2026-06-20
-updated: 2026-06-20
+updated: 2026-06-21
 last_edited_by: agent_stanley
 tags: [governance, campaign, feedback_loop]
 ---
@@ -15,8 +15,8 @@ tags: [governance, campaign, feedback_loop]
 |-------|-------|
 | Campaign | `campaign_feedback_loop` |
 | Owner | stanley |
-| Status | active |
-| Current Phase | P3 closed 2026-06-21 (cross-vault structuring) — P4 (close) in progress |
+| Status | completed |
+| Current Phase | **CLOSED 2026-06-21** — all 5 phases complete (P0–P4) |
 | Persona | Rosetta (this vault) |
 
 ## Quick Start

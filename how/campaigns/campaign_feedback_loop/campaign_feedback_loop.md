@@ -3,7 +3,7 @@ campaign_id: campaign_feedback_loop
 type: campaign
 title: "Operation Feedback Loop — Software-Graph Telemetry & AAR-Feedback Pattern"
 owner: stanley
-status: active
+status: completed
 phase_count: 5
 mission_count: 5
 estimated_sessions: "5-8"
@@ -11,7 +11,7 @@ calibrated_sessions: "5-8"
 estimation_class: governance-broad
 priority: high
 created: 2026-06-20
-updated: 2026-06-20
+updated: 2026-06-21
 last_edited_by: agent_stanley
 strategic_compass: who/governance/VISION.md
 tags: [campaign, feedback_loop, telemetry, federation, pattern]
@@ -91,7 +91,7 @@ Triggered by Operation Feedback Loop (rev. 3) under the network-stack-tier expan
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 4 | Completion summary → 5-line AAR → `skill_context_graduation` → STATE.md update | 1 | M2, M3 | planned |
+| 4 | Completion summary → 5-line AAR → `skill_context_graduation` → STATE.md update | 1 | M2, M3 | completed |
 
 **Phase exit gate**: `skill_context_graduation` run **before** `status: completed`; framework gaps filed as `idea_upstream_*`.
 
@@ -157,8 +157,27 @@ Triggered by Operation Feedback Loop (rev. 3) under the network-stack-tier expan
 
 ## Completion Summary
 
-*Fill out when setting `status: completed`.*
+All five phases closed (P0–P4). Operation Feedback Loop delivered the opt-in, **default-OFF, names-only** `feedback/`
+consumer-wrapper pattern: [[what/decisions/adr_036_software_graph_feedback_boundary|ADR-036]] (accepted),
+[[what/patterns/pattern_software_graph_telemetry_feedback|the pattern]] + [[what/specs/spec_telemetry_feedback_ecosystem|the spec]]
+(active; `federation_ref` + first-class §AAR sub-pattern + `software_graph_default` redaction), and
+[[how/skills/skill_telemetry_wrapper_integration|skill_telemetry_wrapper_integration]]. P3 structured the cross-vault
+rollout — the Keystone interlock (the cohort adopts `feedback/` via `template_software_graph_stub`), staged Warp (DP#2)
++ Lighthouse memos, and [[how/backlog/idea_telemetry_wrapper_rollout|idea_telemetry_wrapper_rollout]].
+Context-graduation = documented no-op (deliverables already first-class). Framework gap
+`idea_upstream_self_reference_exemption` filed. **Non-blocking open**: operator placement of the staged Warp memo.
+`status: completed` 2026-06-21.
 
 ## Campaign AAR
 
-*Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
+- **Worked**: Drafting the gated P1 artifacts ahead of the P0→P1 gate (clearly marked "draft pending ratification") let
+  the whole campaign move fast — the operator cleared the gate in one pass and every later phase built on settled artifacts.
+- **Didn't**: The campaign ran its whole life alongside a concurrent sibling (Operation Keystone) in one working tree,
+  which repeatedly orphaned git locks + left uncommitted work — most session friction was multi-agent git hygiene, not content.
+- **Finding**: A consumer-wrapper campaign that pins to a proven sibling contract (III ADR-002) **and** gets baked into a
+  sibling's template (Keystone's `template_software_graph_stub`) collapses its cross-vault work to an interlock note +
+  special-case memos — federation compounds.
+- **Change**: Multi-agent work in one vault needs explicit-path git staging + stale-lock hygiene as standing practice
+  (recorded in node memory); cross-campaign wrapper seams get an explicit interlock memo.
+- **Follow-up**: `idea_upstream_self_reference_exemption`; operator placement of the staged Warp/Lighthouse memos; cohort
+  `feedback/` adoption sequenced in `idea_telemetry_wrapper_rollout`.
