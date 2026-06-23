@@ -29,3 +29,5 @@ A tiny fork-time (or setup.sh-time) validation: every id declared in `community-
 ## Trace
 
 - Obsidian.aDNA `what/context/obsidian_fleet_drift_audit.md` §6 (p1_04) · `health_check.py` HC2/HC3 · synthesis §1 D1 + §5 #11
+
+> **Triage 2026-06-23 (Cornerstone v8.1):** SURVIVES (low) — independent; carry as-is. ([[coord_2026_06_22_seshat_to_rosetta_cornerstone_v81_landing]] reconciliation; [[adr_038_combined_v81_release]]).

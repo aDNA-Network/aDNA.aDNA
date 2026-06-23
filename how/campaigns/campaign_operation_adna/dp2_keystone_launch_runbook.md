@@ -141,11 +141,11 @@ GH_TOKEN="$(gh auth token)" gh run watch    # standing-watch .github/workflows/g
 This is the one authorized push; it carries the accumulated commit-only work on `main` (the keystone
 payload **plus** any peer-track staged commits riding the branch — confirm with the operator what ships).
 
-**12. Schedule the Hearthstone "catch-up release" (F1).** The public `aDNA-Network/aDNA` image's
+**12. Hearthstone "catch-up release" (F1) — FOLDED INTO THE COMBINED v8.1 (ASSEMBLED + HELD; ships decoupled, [[adr_038_combined_v81_release]]).** The public `aDNA-Network/aDNA` image's
 `adna_standard.md` §5 body still reads **14 types**; the v2.3 §5 `inventory`/`identity` prose was authored
 in the dev standard ([[keystone_credibility_traceability_20260622]] §Tier-2) and is **staged for the next
 gated `skill_template_release`**. Coordinate with Hestia / aDNALabs (Berthier) to fire that catch-up
-release so the public image's spec body matches the site. *(Not a launch blocker — the site reads v2.3/16 standalone.)* **PREPPED 2026-06-22 — one-authorization-ready:** turnkey package [[f1_catchup_release_prep]] (verified 4-line §5 delta · image tag v8.1 · `skill_template_release` params, `dry_run` first · 8-row smoke · rollback), handed to Berthier ([[coord_2026_06_22_rosetta_to_berthier_f1_catchup_release]]). **Operator timing decision (DP3):** post-keystone as sequenced here, **or (recommended) launch-coupled** — fire just before step 8 so the published standard reads 16/v2.3 the moment the site goes live (credibility-complete day one; quality bar #5). Default unchanged pending the operator's call.
+release so the public image's spec body matches the site. *(Not a launch blocker — the site reads v2.3/16 standalone.)* **PREPPED 2026-06-22 — one-authorization-ready:** turnkey package [[f1_catchup_release_prep]] (verified 4-line §5 delta · image tag v8.1 · `skill_template_release` params, `dry_run` first · 8-row smoke · rollback), handed to Berthier ([[coord_2026_06_22_rosetta_to_berthier_f1_catchup_release]]). **Timing RESOLVED (ADR-038 D5):** the operator combined F1 with the Cornerstone Obsidian parity into one **v8.1** and chose **ship-now, decoupled** — so this is **no longer a keystone step**. v8.1 is **assembled + tagged (`32b3793` / `v8.1`) and HELD** at `/tmp/adna_v81_release` (verified green — HC 0-warn · F1 4/4 · clone+fork smoke); it fires on its own operator push, independent of this launch. The keystone proceeds without scheduling F1.
 
 **13. Close DP2 in the records.**
 - [[coordination_ledger]] — flip the ★ rows (C-1, improved-site deploy, Tier-2) → **shipped**; close pt19.

@@ -1,6 +1,6 @@
 ---
 type: backlog_idea
-status: open
+status: resolved
 priority: low   # smallest change; could fold into the seed-canonicalization move
 finding_id: OBS-UP-9   # Obsidian.aDNA P1 synthesis §5 #9 · drift D6
 source_vault: Obsidian.aDNA (Seshat)
@@ -29,3 +29,5 @@ The M05 fleet audit found **Sync-on as undeclared drift on 6/8 rolled-out vaults
 ## Trace
 
 - Obsidian.aDNA `what/context/obsidian_config_baseline.md` §4/§7 · `obsidian_template_delta.md` §5/§7/§8.4 (p1_03) · M05 audit S-row (Sync) · synthesis §1 D6 + §5 #9
+
+> **Triage 2026-06-23 (Cornerstone v8.1):** RESOLVED — core-plugins.json sync-neutral applied. Shipped in the combined v8.1 release (held at push gate; [[adr_038_combined_v81_release]]). See [[coord_2026_06_23_rosetta_to_seshat_cornerstone_v81_landed]].

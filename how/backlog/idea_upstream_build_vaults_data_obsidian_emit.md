@@ -43,3 +43,5 @@ Obsidian.aDNA M06 exit-gate 2 ("cross-vault-graph homepage") consumes this artif
 
 - Obsidian.aDNA `what/decisions/adr_004_cross_vault_graph_architecture.md` (ratified Option A+C) · `what/context/obsidian_graph_aggregation.md` §4.2/§5.2 (p1_05)
 - aDNA.aDNA: `adr_023_registry_generator.md` · `adr_033_network_edge_overlay_adaptation_seam.md` · `scripts/build_vaults_data.mjs`
+
+> **Triage 2026-06-23 (Cornerstone v8.1):** DEFERRED → Hestia/Hearthstone lane (v8.0 topology-canvas + ontology likely moved this). ([[coord_2026_06_22_seshat_to_rosetta_cornerstone_v81_landing]] reconciliation; [[adr_038_combined_v81_release]]).

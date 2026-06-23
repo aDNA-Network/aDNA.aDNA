@@ -1,6 +1,6 @@
 ---
 type: backlog_idea
-status: open
+status: resolved
 priority: low
 finding_id: OBS-UP-8   # Obsidian.aDNA P1 synthesis §5 #8 · drift D9
 source_vault: Obsidian.aDNA (Seshat)
@@ -30,3 +30,5 @@ Where a vault (or a donor vault) already **commits** plugin binaries, `setup.sh`
 ## Trace
 
 - Obsidian.aDNA `what/context/obsidian_template_delta.md` §8.3 (p1_03) · `reseed_runner.py` (donor-copy materialize) · synthesis §1 D9 + §5 #8
+
+> **Triage 2026-06-23 (Cornerstone v8.1):** RESOLVED — folded into the bundle (binary materialization + retained installer). Shipped in the combined v8.1 release (held at push gate; [[adr_038_combined_v81_release]]). See [[coord_2026_06_23_rosetta_to_seshat_cornerstone_v81_landed]].

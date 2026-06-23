@@ -44,3 +44,5 @@ At P1 (2026-05-29) the generator emitted `edges:[]` because **no card declared r
 
 - Obsidian.aDNA `what/context/obsidian_graph_aggregation.md` §1.3/§5.3 (p1_05) · `adr_004_cross_vault_graph_architecture.md` (D10 gate) · synthesis §1 D10 + §5 #6
 - aDNA.aDNA `adr_033_network_edge_overlay_adaptation_seam.md` · `site/src/data/network_edges.yaml` (header: the upstream plan) · `scripts/build_vaults_data.mjs` (merge precedence)
+
+> **Triage 2026-06-23 (Cornerstone v8.1):** DEFERRED → Hestia/Hearthstone lane. ([[coord_2026_06_22_seshat_to_rosetta_cornerstone_v81_landing]] reconciliation; [[adr_038_combined_v81_release]]).

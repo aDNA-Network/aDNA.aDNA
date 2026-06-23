@@ -1,6 +1,6 @@
 ---
 type: backlog_idea
-status: open
+status: resolved
 priority: high
 finding_id: OBS-UP-1   # Obsidian.aDNA P1 synthesis §5 #1 · drift D8
 source_vault: Obsidian.aDNA (Seshat)
@@ -37,3 +37,5 @@ Obsidian.aDNA has since built + fleet-proven the consuming-side pattern the temp
 
 - Obsidian.aDNA `what/context/obsidian_auto_populate.md` §1–2 (p1_02) · `obsidian_p1_discovery_synthesis.md` §1 D8 + §5 #1
 - Ratified: `adr_003_auto_populate_mechanism` (Option C = upstream fork-gap fix is one leg of the composite)
+
+> **Triage 2026-06-23 (Cornerstone v8.1):** RESOLVED — skill_project_fork now keeps setup.sh (fork-reseed fix). Shipped in the combined v8.1 release (held at push gate; [[adr_038_combined_v81_release]]). See [[coord_2026_06_23_rosetta_to_seshat_cornerstone_v81_landed]].

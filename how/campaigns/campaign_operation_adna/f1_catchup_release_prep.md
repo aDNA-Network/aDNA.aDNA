@@ -12,6 +12,8 @@ tags: [release_prep, f1, catch_up_release, skill_template_release, keystone, dp2
 
 # F1 — Hearthstone "catch-up release" prep package
 
+> **STATUS 2026-06-23 — EXECUTED as part of the combined v8.1 (held at push gate).** The operator combined this F1 §5 body-completion with the Cornerstone Obsidian parity + fork-reseed fix into one **v8.1** release ([[adr_038_combined_v81_release]]); it is **assembled + tagged (`32b3793` / `v8.1`) and HELD** at the operator push gate (`/tmp/adna_v81_release`; verified green), shipping **decoupled, ship-now** from the keystone (ADR-038 D5 — supersedes the §10 DP3 launch-coupling question). The §2 delta applied exactly as specified (diff-verified at fire time: only the 4+3 lines moved). This package remains the canonical F1 spec; the combined run is recorded in [[adr_038_combined_v81_release]] §Ship Path + [[coord_2026_06_23_rosetta_to_seshat_cornerstone_v81_landed]].
+
 > **What this is.** A turnkey, **one-authorization-ready** package for the F1 catch-up release: it
 > materializes the v2.3 §5 *body* of the aDNA standard into the public `aDNA-Network/aDNA` image so the
 > image stops contradicting its own v2.3 title (and the launched site). The delta is verified, the version

@@ -29,3 +29,5 @@ A template-side context doc + override-manifest example (`obsidian_adna_override
 ## Trace
 
 - Obsidian.aDNA `adr_011_autonomy_tiers.md` (T0–T3; REST/MCP opt-in) · `what/context/obsidian_rest_api_opt_in.md` (M05 gate 2) · `obsidian_operation_playbooks.md` §9.4 (p1_07) · synthesis §5 #10
+
+> **Triage 2026-06-23 (Cornerstone v8.1):** SURVIVES (low) — independent; carry as-is. ([[coord_2026_06_22_seshat_to_rosetta_cornerstone_v81_landing]] reconciliation; [[adr_038_combined_v81_release]]).

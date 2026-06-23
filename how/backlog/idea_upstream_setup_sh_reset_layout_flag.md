@@ -1,6 +1,6 @@
 ---
 type: backlog_idea
-status: open
+status: resolved
 priority: medium
 finding_id: OBS-UP-7   # Obsidian.aDNA P1 synthesis §5 #7
 source_vault: Obsidian.aDNA (Seshat)
@@ -29,3 +29,5 @@ Obsidian.aDNA's reseed discipline treats `workspace.json` as **never-clobber dev
 ## Trace
 
 - Obsidian.aDNA `what/context/obsidian_operation_playbooks.md` §9.3 (p1_07) · `seed/seed.md` never-clobber invariant · synthesis §5 #7
+
+> **Triage 2026-06-23 (Cornerstone v8.1):** RESOLVED — folded into the bundle + setup.sh delta. Shipped in the combined v8.1 release (held at push gate; [[adr_038_combined_v81_release]]). See [[coord_2026_06_23_rosetta_to_seshat_cornerstone_v81_landed]].

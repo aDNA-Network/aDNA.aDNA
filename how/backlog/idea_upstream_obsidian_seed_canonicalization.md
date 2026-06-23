@@ -1,6 +1,6 @@
 ---
 type: backlog_idea
-status: open
+status: resolved
 priority: high
 finding_id: OBS-UP-3   # Obsidian.aDNA P1 synthesis §5 #3
 source_vault: Obsidian.aDNA (Seshat)
@@ -42,3 +42,5 @@ Fold-in (copy the payload into `.adna/.obsidian/`) vs **federation-reference** (
 
 - Obsidian.aDNA `what/context/obsidian_template_delta.md` §8.2 (p1_03) · synthesis §5 #3 · `seed/seed.md` (payload manifest)
 - Fleet proof: Operation Open Stacks M02–M05 (8/8 healthy, `health_check.py --fleet`)
+
+> **Triage 2026-06-23 (Cornerstone v8.1):** RESOLVED — fold-in bundle resolves the open design choice (ADR-034 standalone image). Shipped in the combined v8.1 release (held at push gate; [[adr_038_combined_v81_release]]). See [[coord_2026_06_23_rosetta_to_seshat_cornerstone_v81_landed]].

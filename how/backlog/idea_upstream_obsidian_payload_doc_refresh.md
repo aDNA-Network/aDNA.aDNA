@@ -36,3 +36,5 @@ The P1-era text said "add `settings-search`; count→15." **Do not add `settings
 
 - Obsidian.aDNA `what/context/obsidian_template_delta.md` §6 (p1_03 §8.1) · `obsidian_operation_playbooks.md` drift #1–2 (p1_07 §9.1–2) · synthesis §1 D2/D3 + §5 #2
 - Roster state: `spec_plugin_tier_roster` Amendments 1–2 · `adr_006_plugin_tier_policy` Amendments 1–2
+
+> **Triage 2026-06-23 (Cornerstone v8.1):** REFRAMED — follow-up: refresh .obsidian/README.md + OBSIDIAN_CLAUDE.md to the canonical 14 (do NOT re-add settings-search). Not in v8.1. ([[coord_2026_06_22_seshat_to_rosetta_cornerstone_v81_landing]] reconciliation; [[adr_038_combined_v81_release]]).
