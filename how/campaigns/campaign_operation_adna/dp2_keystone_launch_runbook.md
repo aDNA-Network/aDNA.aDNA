@@ -56,6 +56,19 @@ further in-vault work.
 > stays staged and ready to fire §2. *(Also this session: the 2 inbound Canvas Salon-P3 memos committed as
 > receipt — non-program-relevant, not a keystone seam.)*
 
+> **Readiness snapshot (2026-06-23 — post-v8.1 verify-and-hold).** First re-verify since the combined
+> **v8.1** catch-up release **SHIPPED LIVE** (decoupled; [[adr_038_combined_v81_release]]). The v8.1 ship
+> touched only `~/aDNA/.adna/` + `aDNA.aDNA/setup.sh` (both outside `site/`), so the staged payload is
+> undisturbed — **re-confirmed green**: `npx astro build` → 163 pages / 0 err; `npm run test:gates` →
+> **281/281** incl. @audit. pt19 **re-verified `pending`** at source (`Home.aDNA/.../campaign_production_tidy.md`
+> P7 row). Operator DP2 GO not given. **No go/no-go change** — rows #3 + operator-GO remain the only
+> blockers. *(New launch-time gotcha + guard, folded into §4: a foreign **ScienceStanley `astro dev`**
+> server was squatting on `:4321`; the config's `reuseExistingServer:true` latched onto it → a false
+> **160/281**. Re-ran isolated on `:4388` (throwaway config) → clean **281/281**. Before §2 step 5,
+> ensure nothing foreign holds `:4321`: `lsof -nP -iTCP:4321 -sTCP:LISTEN`.)* *(Also observed, non-keystone:
+> pre-existing uncommitted `campaign_keystone` software-element-graph work in the shared tree — left for its
+> owner; committed only this session's own files by explicit path, push held.)*
+
 The deploy **payload** (what ships at step 8): the full improved site (D2–D4 + cycles c162–c165) + clears
 `/commons` 404 + live Best-Practices 92→100 + MENU-1 + **C-1 stage-2** (proofs fixed→exemplary) + the
 **14→16 / v2.3 entity-count currency** reconciliation + the **Tier-2 spec-mirror v2.3 port**. Residual
@@ -177,6 +190,12 @@ release so the public image's spec body matches the site. *(Not a launch blocker
   for rotation (operator de-prioritized).
 - **`llms.txt` is an Astro endpoint** (`src/pages/llms.txt.ts`) — verify emitted output, not a static file.
 - **Don't co-run Lighthouse with the gate preview server** — port contention → spurious gate failures.
+- **Foreign server squatting on `:4321`** — `playwright.config.ts` uses `port: 4321` + `reuseExistingServer: true`,
+  so any other process already on `:4321` (e.g. a sibling vault's `astro dev` — *observed 2026-06-23:
+  ScienceStanley's*) gets **reused**, and the whole gate suite runs against the **wrong site** (a false
+  ~160/281, broad diverse failures). Before `test:gates`, probe `lsof -nP -iTCP:4321 -sTCP:LISTEN`; if a
+  foreign server holds it, run **isolated** on a free port (throwaway config copy with `port:`/`baseURL`
+  → e.g. 4388) rather than killing another vault's server.
 - **`git fetch` + verify fast-forward before any push**; commit only your own files by explicit path
   (shared `main` takes concurrent peer commits mid-session).
 - **`gh` in non-TTY** needs `GH_TOKEN="$(gh auth token)"` (keyring 401 otherwise).
