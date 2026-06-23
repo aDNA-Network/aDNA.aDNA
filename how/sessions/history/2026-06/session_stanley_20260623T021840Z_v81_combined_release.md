@@ -7,7 +7,7 @@ tags: [session, release, skill_template_release, v8_1, cornerstone, f1_catchup, 
 session_id: session_stanley_20260623T021840Z_v81_combined_release
 user: stanley
 started: 2026-06-23T02:18:40Z
-status: active
+status: completed
 intent: "Execute a COMBINED v8.1 public-image release — Operation Cornerstone Obsidian parity bundle + fork-reseed fix (Obsidian.aDNA M07) AND the F1 §5 body-completion (ADR-035 materialization) — via skill_template_release. Assemble + verify in a throwaway clone, ratify (adr_038), hold at the operator push gate (the push IS the release)."
 machine: l1_local
 tier: 2
