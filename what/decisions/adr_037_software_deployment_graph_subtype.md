@@ -2,7 +2,7 @@
 type: adr
 adr_number: "037"
 title: "Software/Deployment-Graph subtype of Platform.aDNA — four-wrapper conformance + recipe-quarry reconciliation"
-status: proposed
+status: accepted
 created: 2026-06-20
 updated: 2026-06-20
 last_edited_by: agent_stanley
@@ -16,7 +16,7 @@ tags: [adr, decision, keystone, platform, deployment_graph, federation]
 
 ## Status
 
-Proposed — 2026-06-20 (awaiting operator ratification at the Operation Keystone P0 gate, Standing Order #1). The category ruling itself is settled by the governing order; this ADR records it and the two contracts that ride with it.
+Accepted — 2026-06-22 (operator-ratified alongside [[adr_039_software_element_context_graph_umbrella|ADR-039]] at the software-element-graph unification; Standing Order #1 GO via the operator's "integrate the Keystone graphs" directive). Proposed 2026-06-20 at Keystone M0; the category ruling itself was settled by the governing order — this ADR records it and the two contracts that ride with it.
 
 ## Context
 
@@ -72,3 +72,4 @@ Any graph governing **data-bearing** software (Store, Groupware, Nextcloud, Forg
 | Date | Mission | Amendment summary |
 |------|---------|-------------------|
 | 2026-06-20 | Keystone M0 | ADR created (proposed) — subtype, four-wrapper conformance, recipe-quarry reconciliation, ADR-016 §8 carry. |
+| 2026-06-22 | Keystone software-element-graph unification | Ratified `proposed → accepted` (operator GO). Placed under the [[adr_039_software_element_context_graph_umbrella|ADR-039]] umbrella as the deploy-and-run face; four-wrapper conformance scoped to the deploy face (not retro-imposed on Forge/Framework). |

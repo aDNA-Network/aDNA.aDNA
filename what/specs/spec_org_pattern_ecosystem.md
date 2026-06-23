@@ -17,6 +17,8 @@ covers_categories: [Org-Vault.aDNA, Org-Graph.aDNA, Network.aDNA]
 
 Authoritative reference for three related aDNA pattern categories that all model organizational structure: **Org-Vault** (Inside-Out: org governs itself via the vault), **Org-Graph** (Outside-In: WE model an outside org), **Network** (live aggregate of nodes transmitting their own `node.aDNA` into this vault).
 
+> **Boundary — not software-element categories.** These three model *organizations and node-aggregates*, not software, so they sit **outside** the [[pattern_software_element_context_graph|software-element context graph]] lens ([[../decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]) — which covers Forge / Framework / Platform-deployment graphs only. Noted here to mark the boundary.
+
 ## Org-Vault Ecosystem
 
 **Org-Vaults** are governance vaults that serve as the operational home of a project or organization. Unlike Forges (artifact producers) or Platforms (runtime producers), an org-vault owns **everything the project does**: strategy, governance, research, partner relations, publishing coordination, daily operations. Code — when it exists — lives in a separate partner-org repo or sibling code repo; the vault governs, the code executes.

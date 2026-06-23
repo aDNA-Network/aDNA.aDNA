@@ -39,7 +39,7 @@ Each graph **federates rather than duplicates** the cross-cutting concerns, thro
 
 And each graph is **composed, not free-standing**: a *role graph* like [[../../Lighthouse.aDNA/CLAUDE.md|Lighthouse.aDNA]] assembles a chosen set of `<Software>.aDNA` graphs into a deployable node. The deployment graph is the brick; the lighthouse is the wall.
 
-**Category**: this is **Platform.aDNA with a software/deployment-graph designation** — not a new aDNA category. Warp, Obsidian, and Lab are already software-surface Platforms; this names the sub-pattern they share.
+**Category**: this is **Platform.aDNA with a software/deployment-graph designation** — not a new aDNA category. Warp, Obsidian, and Lab are already software-surface Platforms; this names the sub-pattern they share. It is the **deploy-and-run face** of the broader [[what/patterns/pattern_software_element_context_graph|software-element context graph]] umbrella ([[what/decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]); Forges and Frameworks are the build-with faces of the same lens.
 
 ## When to Use
 

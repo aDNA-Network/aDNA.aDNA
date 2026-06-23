@@ -24,6 +24,8 @@ Authoritative reference for the **Framework.aDNA** aDNA pattern category. Worksp
 
 Consumer vaults create a `<framework_name>/` wrapper directory with `CLAUDE.md` (federation_ref + pack declarations) and optional `what/context/` extensions. The wrapper pins a version; consumers review on minor bumps. See ADR-002 in the framework vault for the canonical consumer contract.
 
+> **Umbrella:** a Framework is the *build-with → conform* face of the [[pattern_software_element_context_graph|software-element context graph]] lens ([[../decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]) — the same `<software>/` wrapper + `federation_ref` access mechanism Forges and deployment graphs use; consumers compose several at once (e.g. `Astro.aDNA` + `TypeScript.aDNA` for a site).
+
 For III specifically, run `III.aDNA/how/skills/skill_iii_setup.md` (also published to `.adna/how/skills/`) to bootstrap an `iii/` wrapper in a new consumer vault — covers `federation_ref` skeleton, `kind:` enum walkthrough (5 values per ADR-002 §1a), minimal vs full-extension shapes, and downstream-safety check.
 
 ## Active Frameworks
