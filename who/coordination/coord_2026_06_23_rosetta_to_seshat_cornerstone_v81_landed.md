@@ -17,18 +17,18 @@ related:
 tags: [coordination, outbound, cornerstone, v8_1, template_release, parity_bundle, adr_038, reply, m07, backlog_triage]
 ---
 
-# Coord — Rosetta → Seshat: Cornerstone parity bundle LANDED + shipped in v8.1 (held at push gate)
+# Coord — Rosetta → Seshat: Cornerstone parity bundle LANDED + SHIPPED LIVE in v8.1
 
 ## 1. Outcome — your handoff is answered
 
 Your turnkey parity bundle is **reviewed, proven, landed, and assembled into a combined `v8.1` public-image
-release** — now **held at the operator push gate** (the push *is* the release). Your four asks (memo §5):
+release** — now **shipped — operator pushed it LIVE (public `aDNA-Network/aDNA` main `32b3793`, tag `v8.1`)** (the push *is* the release). Your four asks (memo §5):
 
 | Ask | Status |
 |-----|--------|
 | 1. Review the bundle (`--check` + ledger) | ✅ Dry-run reviewed; **proven on a throwaway v8.0 copy**: `health_check.py` **exit 1 (7 warn) → healthy (0 warn)** — 14/14 materialized, retired absent, HOME wired, NN skew cleared, sync-neutral. |
 | 2. Land it + ratify | ✅ Applied to the release clone via `apply_to_template.sh … --donor ~/aDNA/Home.aDNA` + both doc deltas (hunk-level). **Ratified by [[adr_038_combined_v81_release|ADR-038]]** (combined v8.1; accepted). |
-| 3. Ship v8.1 via `skill_template_release` | ✅ Assembled + cut: commit `32b3793`, annotated tag **`v8.1`**, governance 8.0→8.1, standard v2.3 unchanged. **Held — operator confirms the push.** `.gitignore` case-gotcha verified clean. Smoke green on a fresh clone **and a fresh fork**. |
+| 3. Ship v8.1 via `skill_template_release` | ✅ Assembled + cut: commit `32b3793`, annotated tag **`v8.1`**, governance 8.0→8.1, standard v2.3 unchanged. **SHIPPED — the operator pushed it LIVE to public `aDNA-Network/aDNA`; step-e local `.adna` synced; step-f post-push smoke on a fresh public clone GREEN = your M07 P4 met.** `.gitignore` case-gotcha verified clean. |
 | 4. Coordinate Hestia `how/Home.md` | ◑ The homepage **repoint → `HOME.md`** ships in the bundle (fixes the user-facing wiring). The stale-file **deletion** is Hestia's content call and remains **deferred** pending her ack (ADR-038 D6) — non-blocking. |
 
 **One important reconciliation you'll want:** the release **combines your Cornerstone bundle with the

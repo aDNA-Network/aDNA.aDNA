@@ -27,7 +27,7 @@ files_modified:
 files_created:
   - aDNA.aDNA/what/decisions/adr_038_combined_v81_release.md
 completed:
-  - "v8.1 ASSEMBLED + TAGGED in throwaway clone /tmp/adna_v81_release (HEAD 32b3793, annotated tag v8.1), HELD at operator push gate — verified green (HC 0-warn, F1 4/4 greps, gitignore-safe, clone+fork smoke)"
+  - "v8.1 ASSEMBLED + TAGGED (32b3793 / v8.1), then PUSHED LIVE by the operator to public aDNA-Network/aDNA; step-e local .adna synced (0a18b50); step-f post-push smoke GREEN = M07 P4 met — verified green pre+post (HC 0-warn, F1 4/4 greps, gitignore-safe, clone+fork smoke)"
 ---
 
 ## Activity Log
@@ -41,13 +41,13 @@ completed:
 - **Bundle proven** (throwaway copy of v8.0 `.adna`): `health_check.py` exit 1 (7 warn) → healthy (0 warn), 14/14, terminal materialized, HOME wired, sync-neutral.
 - **Assembled v8.1** in `/tmp/adna_v81_release` (fresh clone of `aDNA-Network/aDNA`): `apply_to_template.sh <clone>/.adna --donor ~/aDNA/Home.aDNA` → 14/14; hand-applied the two doc deltas **hunk-level** (setup.sh 15→14 via verified roster-only `cp`; `skill_project_fork.md` precise line-101 `rm -f setup.sh` deletion — **M03 fork-cleanup block preserved**, no regression per the P5 lesson); `cp` dev `what/docs/adna_standard.md` → clone after diff-verifying **only the 4+3 F1 lines move**; embed-note already present (skip); governance `8.0→8.1` (frontmatter + header comment); CHANGELOG `[v8.1]` entry.
 - **Verified GREEN**: HC1–HC9 0-warn · F1 four greps → 1/1/1/1 · `.gitignore` case-safe (`.adna` tracked, dummy `*.aDNA/` ignored) · `role: template` intact · assemble-diff = **26 paths all under `.adna/`, zero root-surface touches** (`root_surfaces_changed:false`).
-- **Cut + HELD**: `git add -- .adna/` (path-scoped) → commit `32b3793` → annotated tag `v8.1`. **No push** (operator gate). Ahead of `origin/main` by 1; working tree clean.
+- **Cut + tagged**: `git add -- .adna/` (path-scoped) → commit `32b3793` → annotated tag `v8.1`. **Then PUSHED LIVE by the operator** (public `aDNA-Network/aDNA` main `32b3793`, tag `v8.1`); step-e local `.adna` synced (`0a18b50`); step-f post-push smoke GREEN = M07 P4 met.
 - **Smoke green** (pre-push): clone rows 1/3/6(redirect 200)/7 + fork-reseed — **a fresh fork now retains `setup.sh` (14-roster, `bash -n` clean) and terminal is in-roster**.
 
 ## SITREP
 
 **Completed**:
-- Pre-flight + ADR-038 (prior session). **Take-over + full v8.1 assembly + tag `v8.1` + green verify + clone/fork smoke** (this session). Release **HELD** in `/tmp/adna_v81_release`. Dev-graph `setup.sh` hygiene-landed (14-roster).
+- Pre-flight + ADR-038 (prior session). **Take-over + full v8.1 assembly + tag `v8.1` + green verify + clone/fork smoke** (this session). Release **SHIPPED (operator pushed v8.1 LIVE; step-e synced `0a18b50`; step-f smoke GREEN = M07 P4 met)** in `/tmp/adna_v81_release`. Dev-graph `setup.sh` hygiene-landed (14-roster).
 
 **In progress**:
 - Dev-graph closeout (commit-only): coordination_ledger combined-v8.1 seam · STATE Current-Phase · Seshat→Rosetta reply (+ 10-idea triage) · backlog flips · dp2 runbook §12 · f1_prep status note.
@@ -61,8 +61,8 @@ completed:
 **Files touched**:
 - Created: `what/decisions/adr_038_combined_v81_release.md` (prior session) + this file.
 - Modified (dev-graph, commit-only): `setup.sh` + the closeout records (ledger / STATE / runbook / f1_prep / 5 backlog flips) + a new Seshat reply memo.
-- Release artifact (held, **un-pushed**): `/tmp/adna_v81_release` @ `32b3793`, tag `v8.1`.
+- Release artifact (**SHIPPED, live**): `/tmp/adna_v81_release` @ `32b3793`, tag `v8.1`.
 
 ## Next Session Prompt
 
-The combined **v8.1** public-image release is **ASSEMBLED, TAGGED, and HELD** at `/tmp/adna_v81_release` (HEAD `32b3793`, annotated tag `v8.1`), verified green (HC 0-warn · F1 4/4 · gitignore-safe · clone+fork smoke). It carries the Operation Cornerstone Obsidian parity bundle + fork-reseed fix (`Obsidian.aDNA` M07) **and** the F1 §5 body-completion (ADR-035), per **ADR-038**. **Only the operator push remains** (the push IS the release): `git -C /tmp/adna_v81_release push origin main && git -C /tmp/adna_v81_release push origin v8.1`; then step-(e) `rsync -a --delete --exclude .git /tmp/adna_v81_release/.adna/ ~/aDNA/.adna/` + local sync commit + `cd site && npm run sync:install` if the install-truth sha moved; then step-(f) post-push smoke on a fresh clone AND fork = **M07 P4 close**. If `/tmp` is cleared, re-assemble per ADR-038 Ship Path (turnkey). Keystone DP2 (site launch) remains separately gated on pt19 + operator DP2 GO; v8.1 is decoupled and ships independently (ADR-038 D5). Defer the Hestia `how/Home.md` deletion (pending her ack).
+The combined **v8.1** public-image release is **ASSEMBLED, TAGGED, and SHIPPED (now public)** — was assembled at `/tmp/adna_v81_release` (HEAD `32b3793`, annotated tag `v8.1`), verified green (HC 0-warn · F1 4/4 · gitignore-safe · clone+fork smoke). It carries the Operation Cornerstone Obsidian parity bundle + fork-reseed fix (`Obsidian.aDNA` M07) **and** the F1 §5 body-completion (ADR-035), per **ADR-038**. **Only the operator push remains** (the push IS the release): `git -C /tmp/adna_v81_release push origin main && git -C /tmp/adna_v81_release push origin v8.1`; then step-(e) `rsync -a --delete --exclude .git /tmp/adna_v81_release/.adna/ ~/aDNA/.adna/` + local sync commit + `cd site && npm run sync:install` if the install-truth sha moved; then step-(f) post-push smoke on a fresh clone AND fork = **M07 P4 close**. If `/tmp` is cleared, re-assemble per ADR-038 Ship Path (turnkey). Keystone DP2 (site launch) remains separately gated on pt19 + operator DP2 GO; v8.1 is decoupled and ships independently (ADR-038 D5). Defer the Hestia `how/Home.md` deletion (pending her ack).
