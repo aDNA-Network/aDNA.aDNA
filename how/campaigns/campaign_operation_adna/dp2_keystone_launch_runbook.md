@@ -47,6 +47,15 @@ together** so the site's "clone and inspect" pitch is true the day it ships. Cur
 **Launch is blocked until rows #3 and operator-GO flip green.** Rows #1, #2, and build-green require no
 further in-vault work.
 
+> **Readiness snapshot (2026-06-22b — verify-and-hold + tidy session).** Re-confirmed in a standalone hold
+> session: payload **re-verified green** (`npx astro build` → 163 pages / 0 err; `npm run test:gates` →
+> **281/281** incl. @audit; `site/src/data/` untouched — pt19 honored). pt19 **re-verified `pending`** at
+> source (`Home.aDNA/.../campaign_production_tidy.md` P7 row; the day's `inventory_vaults.yaml` touches are
+> Free Harbor origin-recordings, not the pt19 derived-projection regen). Operator DP2 GO not yet given.
+> **No change to go/no-go since 2026-06-22a** — rows #3 + operator-GO remain the only blockers; the payload
+> stays staged and ready to fire §2. *(Also this session: the 2 inbound Canvas Salon-P3 memos committed as
+> receipt — non-program-relevant, not a keystone seam.)*
+
 The deploy **payload** (what ships at step 8): the full improved site (D2–D4 + cycles c162–c165) + clears
 `/commons` 404 + live Best-Practices 92→100 + MENU-1 + **C-1 stage-2** (proofs fixed→exemplary) + the
 **14→16 / v2.3 entity-count currency** reconciliation + the **Tier-2 spec-mirror v2.3 port**. Residual
