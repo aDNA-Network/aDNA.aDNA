@@ -145,7 +145,7 @@ payload **plus** any peer-track staged commits riding the branch — confirm wit
 `adna_standard.md` §5 body still reads **14 types**; the v2.3 §5 `inventory`/`identity` prose was authored
 in the dev standard ([[keystone_credibility_traceability_20260622]] §Tier-2) and is **staged for the next
 gated `skill_template_release`**. Coordinate with Hestia / aDNALabs (Berthier) to fire that catch-up
-release so the public image's spec body matches the site. *(This is post-keystone; not a launch blocker.)*
+release so the public image's spec body matches the site. *(Not a launch blocker — the site reads v2.3/16 standalone.)* **PREPPED 2026-06-22 — one-authorization-ready:** turnkey package [[f1_catchup_release_prep]] (verified 4-line §5 delta · image tag v8.1 · `skill_template_release` params, `dry_run` first · 8-row smoke · rollback), handed to Berthier ([[coord_2026_06_22_rosetta_to_berthier_f1_catchup_release]]). **Operator timing decision (DP3):** post-keystone as sequenced here, **or (recommended) launch-coupled** — fire just before step 8 so the published standard reads 16/v2.3 the moment the site goes live (credibility-complete day one; quality bar #5). Default unchanged pending the operator's call.
 
 **13. Close DP2 in the records.**
 - [[coordination_ledger]] — flip the ★ rows (C-1, improved-site deploy, Tier-2) → **shipped**; close pt19.
