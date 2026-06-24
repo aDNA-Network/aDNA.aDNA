@@ -1,67 +1,77 @@
 flowchart LR
-  MoleculeForge_aDNA["MoleculeForge.aDNA<br><sub>Franklin</sub>"]:::classforge
-  SiteForge_aDNA["SiteForge.aDNA<br><sub>—</sub>"]:::classforge
-  SpeechForge_aDNA["SpeechForge.aDNA<br><sub>Robert Kennedy</sub>"]:::classforge
-  ContextCompass_aDNA["ContextCompass.aDNA<br><sub>Ariadne</sub>"]:::classframework
+  Astro_aDNA["Astro.aDNA<br><sub>—</sub>"]:::classforge
+  Molecules_aDNA["Molecules.aDNA<br><sub>Franklin</sub>"]:::classforge
+  Oration_aDNA["Oration.aDNA<br><sub>Robert Kennedy</sub>"]:::classforge
   III_aDNA["III.aDNA<br><sub>Argus</sub>"]:::classframework
   visualdna["VisualDNA.aDNA<br><sub>pygmalion</sub>"]:::classframework
-  VAASLattice_aDNA["VAASLattice.aDNA"]:::classframeworkcandidate
-  adnalabs["aDNALabs.aDNA<br><sub>berthier</sub>"]:::classorgvault
-  LatticeLabs_aDNA["LatticeLabs.aDNA<br><sub>Berthier</sub>"]:::classorgvault
+  VAAS_aDNA["VAAS.aDNA"]:::classframeworkcandidate
   RareArchive_aDNA["RareArchive.aDNA<br><sub>Mnemosyne</sub>"]:::classorgvault
   sciencestanley["ScienceStanley.aDNA"]:::classorgvault
   WilhelmAI_aDNA["WilhelmAI.aDNA<br><sub>Hygieia</sub>"]:::classorgvault
   zenzachary["ZenZachary.aDNA<br><sub>pygmalion</sub>"]:::classorgvault
-  adnascope["aDNAScope.aDNA<br><sub>prometheus</sub>"]:::classplatform
   Harness_aDNA["Harness.aDNA<br><sub>Panacea</sub>"]:::classplatform
   RemoteControl_aDNA["RemoteControl.aDNA<br><sub>Talos</sub>"]:::classplatform
-  TappInterface_aDNA["TappInterface.aDNA<br><sub>Mentor</sub>"]:::classplatform
+  TappProtocol_aDNA["TappProtocol.aDNA<br><sub>Mentor</sub>"]:::classplatform
   terminal["Terminal.aDNA<br><sub>berthier</sub>"]:::classplatform
   aDNA_aDNA["aDNA.aDNA<br><sub>Rosetta</sub>"]:::classstandarddev
 
-  subgraph orphans["Not yet linked: 21 vaults with no cited relationship"]
+  subgraph orphans["Not yet linked: 39 vaults with no cited relationship"]
     direction TB
-    TaskForge_aDNA["TaskForge.aDNA<br><sub>Berthier</sub>"]:::classcoordination
-    LPWhitepaper_aDNA["LPWhitepaper.aDNA"]:::classdocument
-    CanvasForge_aDNA["CanvasForge.aDNA<br><sub>Hermes</sub>"]:::classforge
-    ComfyForge_aDNA["ComfyForge.aDNA"]:::classforge
+    Operations_aDNA["Operations.aDNA<br><sub>Berthier</sub>"]:::classcoordination
+    ComfyUI_aDNA["ComfyUI.aDNA"]:::classforge
     Videos_aDNA["Videos.aDNA<br><sub>Iris</sub>"]:::classforge
+    typescript["TypeScript.aDNA<br><sub>milner</sub>"]:::classframework
     LAVentureGraph_aDNA["LAVentureGraph.aDNA<br><sub>Cartographer</sub>"]:::classknowledgegraph
     Network_aDNA["Network.aDNA<br><sub>Venus</sub>"]:::classnetwork
     Home_aDNA["Home.aDNA<br><sub>Hestia</sub>"]:::classnodeoperational
     CakeHealth_aDNA["CakeHealth.aDNA<br><sub>Berthier</sub>"]:::classorggraph
     percysleep["PercySleep.aDNA<br><sub>hypnos</sub>"]:::classorggraph
     SuperLeague_aDNA["SuperLeague.aDNA"]:::classorggraph
+    adnalabs["aDNALabs.aDNA<br><sub>berthier</sub>"]:::classorgvault
     ContextCommons_aDNA["ContextCommons.aDNA"]:::classorgvault
     wga_aDNA["wga.aDNA"]:::classorgvault
     awsbootstrap["AWSBootstrap.aDNA<br><sub>hestia</sub>"]:::classplatform
+    bitwarden["Bitwarden.aDNA<br><sub>cerberus</sub>"]:::classplatform
+    caddy["Caddy.aDNA<br><sub>portunus</sub>"]:::classplatform
+    cakeprotocol["CakeProtocol.aDNA<br><sub>chiron</sub>"]:::classplatform
     canvas["Canvas.aDNA<br><sub>mondrian</sub>"]:::classplatform
+    container["Container.aDNA<br><sub>pandora</sub>"]:::classplatform
+    context["Context.aDNA<br><sub>prometheus</sub>"]:::classplatform
+    fastapi["FastAPI.aDNA<br><sub>atalanta</sub>"]:::classplatform
+    forgejo["Forgejo.aDNA<br><sub>ilmarinen</sub>"]:::classplatform
     git["Git.aDNA<br><sub>tbd_at_p0</sub>"]:::classplatform
+    groupware["Groupware.aDNA<br><sub>pheme</sub>"]:::classplatform
+    inference["Inference.aDNA<br><sub>pythia</sub>"]:::classplatform
+    lab["Lab.aDNA<br><sub>galileo</sub>"]:::classplatform
     latticeprotocol["LatticeProtocol.aDNA<br><sub>tbd_at_p0</sub>"]:::classplatform
+    lighthouse["Lighthouse.aDNA<br><sub>tbd_at_p0</sub>"]:::classplatform
+    nebula["Nebula.aDNA<br><sub>heimdall</sub>"]:::classplatform
+    nextcloud["Nextcloud.aDNA<br><sub>atlas</sub>"]:::classplatform
     Obsidian_aDNA["Obsidian.aDNA<br><sub>TBD</sub>"]:::classplatform
+    store["Store.aDNA<br><sub>plutus</sub>"]:::classplatform
+    warp["Warp.aDNA<br><sub>escoffier</sub>"]:::classplatform
+    dataroom["DataRoom.aDNA<br><sub>tbd_at_p0</sub>"]:::classtbdatp0
+    datasets["Datasets.aDNA<br><sub>tbd_at_p0</sub>"]:::classtbdatp0
+    magnapetra["MagnaPetra.aDNA<br><sub>tbd_at_p0</sub>"]:::classtbdatp0
     worldgenome["WorldGenome.aDNA<br><sub>tbd_at_p0</sub>"]:::classtbdatp0
     Spacemacs_aDNA["Spacemacs.aDNA<br><sub>Daedalus</sub>"]:::classtooling
     zeta_aDNA["zeta.aDNA"]:::classworkspace
   end
 
-  MoleculeForge_aDNA --> SiteForge_aDNA
-  adnalabs -.->|s| LatticeLabs_aDNA
-  LatticeLabs_aDNA --> ContextCompass_aDNA
-  sciencestanley --> SpeechForge_aDNA
+  Molecules_aDNA --> Astro_aDNA
+  sciencestanley --> Oration_aDNA
   sciencestanley --> visualdna
-  WilhelmAI_aDNA --> SiteForge_aDNA
+  WilhelmAI_aDNA --> Astro_aDNA
   WilhelmAI_aDNA --> III_aDNA
   WilhelmAI_aDNA ==> RareArchive_aDNA
   zenzachary -.-> sciencestanley
   zenzachary --> visualdna
-  adnascope -.-> ContextCompass_aDNA
-  Harness_aDNA --> SiteForge_aDNA
+  Harness_aDNA --> Astro_aDNA
   Harness_aDNA --> III_aDNA
   RemoteControl_aDNA -.-> terminal
-  TappInterface_aDNA -.-> MoleculeForge_aDNA
-  TappInterface_aDNA -.-> VAASLattice_aDNA
+  TappProtocol_aDNA -.-> Molecules_aDNA
+  TappProtocol_aDNA -.-> VAAS_aDNA
   aDNA_aDNA --> III_aDNA
-  linkStyle 1 stroke-width:2.5px,stroke-dasharray:10 6
 
   classDef classforge fill:#d3d5db,stroke:#333,color:#000
   classDef classframework fill:#d3d5db,stroke:#333,color:#000

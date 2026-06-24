@@ -69,6 +69,26 @@ further in-vault work.
 > pre-existing uncommitted `campaign_keystone` software-element-graph work in the shared tree — left for its
 > owner; committed only this session's own files by explicit path, push held.)*
 
+> **Readiness snapshot (2026-06-23 — keystone DP2 LAUNCH PREP; pt19 LANDED).** First execution past
+> verify-and-hold. A fresh source read found **pt19 had LANDED** (concurrent Hestia session;
+> `campaign_production_tidy.md` P7 + Home STATE both ✅ DONE 2026-06-23, commits `d00c401`→`6d584c2`),
+> clearing the headline keystone blocker — **only operator DP2 GO remains.** Operator chose **launch prep,
+> hold at GO**; ran §2 steps 1-6 (all reversible; no deploy, no push):
+> • **Step 3** `sync:vaults` initially **failed** — Home `inventory_vaults.yaml` had a duplicate `note:`
+>   key on the `Molecules.aDNA` entry (PyYAML masks it; the site's strict JS parser rejects it). Fixed at
+>   source under operator authorization (dropped the redundant rename note, kept the descriptive; provenance
+>   bumped; committed in `Home.aDNA`'s repo; [[coord_2026_06_23_rosetta_to_hestia_inventory_dupkey_fix]]).
+>   Regen clean → **54 vaults**.
+> • **Step 4** keeper-set names CLEAN (no pre-rename slugs on any surface). Found + fixed a **17→8 edge
+>   regression**: the `network_edges.yaml` overlay still used pre-rename names (SiteForge/MoleculeForge/
+>   SpeechForge/aDNAScope/VAASLattice/TappInterface) → silent `resolveSlug` drops. Propagated the PT rename
+>   cascade through the overlay (honesty discipline preserved; archived targets dropped) → edges restored
+>   **8→14**, all resolve. Repointed 2 hardcoded homepage slugs (`index.astro` CanvasForge/TaskForge →
+>   canvas/Operations). `/llms.txt` + `/llms-full.txt` + graph no-JS verified CLEAN.
+> • **Step 6** build **177 pages / 0 err** — **NEW baseline** (was 163; +14 vault-detail pages from the
+>   40→54 expansion). • **Step 5** gates **281/281** incl @audit (`:4321` free; no isolation needed).
+> **HELD at step 7** — site data regen'd + committed commit-only; awaiting operator DP2 GO to run steps 7-13.
+
 The deploy **payload** (what ships at step 8): the full improved site (D2–D4 + cycles c162–c165) + clears
 `/commons` 404 + live Best-Practices 92→100 + MENU-1 + **C-1 stage-2** (proofs fixed→exemplary) + the
 **14→16 / v2.3 entity-count currency** reconciliation + the **Tier-2 spec-mirror v2.3 port**. Residual
@@ -123,7 +143,7 @@ with the gate preview server (known port-contention flake — 10 spurious fails 
 ```bash
 npx astro build          # NOT `npm run build` — that triggers the prebuild regen (steps 3) again
 ```
-Expect **163 pages, 0 errors**.
+Expect **177 pages, 0 errors** (post-pt19 baseline — was 163; +14 vault-detail pages from the 40→54 vault expansion, confirmed at the 2026-06-23 launch prep).
 
 **7. ⛔ Operator DP2 GO.** Confirm the operator's explicit go for the coordinated public launch
 ([[campaign_operation_adna]] DP2). Do not proceed without it.
@@ -211,7 +231,7 @@ release so the public image's spec body matches the site. *(Not a launch blocker
 npm run sync:vaults && npm run sync:install     # 3 — regen data (post-pt19 only)
 # 4 — manually verify vault-name correctness on /vaults, /network, /vaults/graph, llms.txt, graph no-JS
 npm run test:gates                               # 5 — 281/281 (incl. @audit)
-npx astro build                                  # 6 — 163 pages
+npx astro build                                  # 6 — 177 pages (post-pt19 baseline)
 # 7 — operator DP2 GO
 VERCEL_TOKEN="$SS_VERCEL_TOKEN" vercel --prebuilt --prod   # 8 — deploy (redact token)
 # 9 — Lighthouse cold-3sec on live (isolated); 10 — live verify

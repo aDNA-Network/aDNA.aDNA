@@ -2,7 +2,7 @@
 #
 # WHY THIS FILE EXISTS (the adaptation seam): the site carries the full 5-edge rendering
 # machinery, but the canonical source (Home.aDNA vault cards) does not yet carry relationship
-# data — so the network renders as 40 disconnected nodes. This file is the "stable seed behind
+# data — so the network renders as disconnected nodes. This file is the "stable seed behind
 # a thin adaptation layer" (m57 theme set): it is curated HERE to unblock E4 now, merged by
 # scripts/build_vaults_data.mjs (the ADR-023 generator), and UPSTREAMS to
 # Home.aDNA/what/inventory/inventory_vaults.yaml + vault_cards later (Hestia coord). When it
@@ -22,50 +22,52 @@
 #   federation_refs            : [<forge/framework>]    (consumer wrapper -> the thing it consumes)
 #   default_partners           : [<partner>]            (platform -> its default partner)
 #   companion_vaults           : [<sibling>]            (sibling persona-pair / thematic family)
+#
+# UPDATED 2026-06-23 (Rosetta, keystone DP2 launch prep): propagated the Production-Tidy rename
+# cascade through this overlay after the pt19 inventory regen. The overlay was authored against the
+# pre-rename registry, so its old names no longer resolved (resolveSlug -> null) and 9 real edges had
+# silently dropped (17 -> 8). Renames applied: SiteForge->Astro · MoleculeForge->Molecules ·
+# SpeechForge->Oration · aDNAScope->Context · VAASLattice->VAAS · TappInterface->TappProtocol
+# (Cmux->Terminal already reflected). Archived/merged targets DROPPED per the honesty discipline
+# (target not in the live registry): LatticeLabs (merged -> aDNALabs) · ContextCompass (archived ->
+# Context) · RareHarnessOld (archived). Lineage for the dropped ones is preserved in the archive
+# banners + workspace CLAUDE.md (SO-7). The forge ISS standard is now owned by Astro.aDNA (was SiteForge).
 
 # ── supersedes (lifecycle) ─────────────────────────────────────────────────────────────────
-Harness.aDNA:
-  # supersedes: LatticeAgent.aDNA — PRUNED 2026-06-08 (Window-A registry-drop). LatticeAgent.aDNA
-  # left the active registry (archived -> Archive.aDNA/; Home source 0ba3f09), so this edge target
-  # is no longer in vaults.json. Per this overlay's honesty discipline ("relationships whose target
-  # vault is NOT in vaults.json are OMITTED to avoid dangling edges") it is removed here. The
-  # supersession lineage is preserved permanently in Archive.aDNA/LatticeAgent.aDNA's banner +
-  # workspace CLAUDE.md (SO-7); it does not belong in the LIVE registry of active vaults.
-  # "RareHarnessOld ... supersession trajectory by Harness.aDNA" (also on the RareHarnessOld card)
-  # federation: RareHarness clinical vertical consumes SiteForge ISS + III
-  federation_refs: [SiteForge.aDNA, III.aDNA]
-
-RareHarnessOld.aDNA:
-  superseded_by: Harness.aDNA   # mirrors the card; deduped at build
-
-aDNALabs.aDNA:
-  # "aDNALabs — unified successor to LatticeLabs.aDNA + lattice-labs"; LatticeLabs = "immediate predecessor"
-  supersedes: LatticeLabs.aDNA
+# aDNALabs.aDNA: supersedes LatticeLabs.aDNA — OMITTED. LatticeLabs.aDNA merged INTO aDNALabs.aDNA
+#   2026-06-17 (PT pt11), archived -> Archive.aDNA/LatticeLabs.aDNA; target no longer in the live
+#   registry. Per the honesty discipline (no edge to a vault absent from vaults.json); the succession
+#   is preserved in the archive banner + workspace CLAUDE.md (SO-7).
+# RareHarnessOld.aDNA: superseded_by Harness.aDNA — OMITTED. RareHarnessOld archived 2026-06-10 ->
+#   Archive.aDNA/; no longer a live node. Lineage preserved in the archive banner (SO-7).
 
 # ── umbrella (org-vault -> children) ───────────────────────────────────────────────────────
 WilhelmAI.aDNA:
   # "AI4U umbrella over Rare-AI Archive + Odyssey Stories + Family Compass + Hackathon Forge"
   # only RareArchive is in vaults.json; the other three OMITTED (upstream to Home.aDNA)
   umbrella_pillar: [RareArchive.aDNA]
-  # WilhelmAI runs an iii/ wrapper + a SiteForge ISS wrapper (one of the 3 live ISS consumers)
-  federation_refs: [SiteForge.aDNA, III.aDNA]
+  # WilhelmAI runs an iii/ wrapper + an Astro ISS wrapper (one of the 3 live ISS consumers)
+  federation_refs: [Astro.aDNA, III.aDNA]
 
 # ── federation (consumer -> forge/framework) ───────────────────────────────────────────────
-LatticeLabs.aDNA:
-  # "ContextCompass ... 1 consumer wrapper — LatticeLabs.aDNA"
-  federation_refs: [ContextCompass.aDNA]
+Harness.aDNA:
+  # supersedes: LatticeAgent.aDNA — PRUNED 2026-06-08 (archived -> Archive.aDNA/; no edge to a vault
+  # absent from the registry; lineage in the archive banner + workspace CLAUDE.md, SO-7).
+  # federation: the RareHarness clinical vertical consumes the Astro ISS + III
+  federation_refs: [Astro.aDNA, III.aDNA]
 
-MoleculeForge.aDNA:
-  # ISS: "3 live: MoleculeForge / RareHarness / WilhelmAI" (federation_ref to SiteForge.aDNA)
-  federation_refs: [SiteForge.aDNA]
+Molecules.aDNA:
+  # ISS: "3 live: Molecules / RareHarness / WilhelmAI" (federation_ref to the Astro ISS standard)
+  federation_refs: [Astro.aDNA]
 
 aDNA.aDNA:
   # this vault runs an iii/ consumer wrapper (campaign uses III airlock standard + iii wrapper)
   federation_refs: [III.aDNA]
 
 ScienceStanley.aDNA:
-  # "SS speechforge/ consumer wrapper" (SpeechForge); SS brand content uses the VisualDNA standard
-  federation_refs: [SpeechForge.aDNA, VisualDNA.aDNA]
+  # "SS oration/ consumer wrapper" (was speechforge/, repoints at Oration P5); SS brand content
+  # uses the VisualDNA standard
+  federation_refs: [Oration.aDNA, VisualDNA.aDNA]
 
 ZenZachary.aDNA:
   # "first campaign = VDP-03 (visual DNA pilot)" -> consumes the VisualDNA standard
@@ -73,27 +75,21 @@ ZenZachary.aDNA:
   # "Sibling to ScienceStanley.aDNA"
   companion_vaults: [ScienceStanley.aDNA]
 
-aDNAScope.aDNA:
-  # "fuses ContextCompass optimization (map->compact->restructure) with telemetry"
-  companion_vaults: [ContextCompass.aDNA]
-
 # ── partner (platform -> default partner) ──────────────────────────────────────────────────
-# LatticeTerminal.aDNA: { default_partners: [LatticeAgent.aDNA], companion_vaults: [RemoteControl.aDNA] }
-#   ENTIRE KEY REMOVED 2026-06-08 (Window-A registry-drop). LatticeTerminal.aDNA itself left the
-#   active registry (archived -> Archive.aDNA/; Home source 0ba3f09), as did its partner
-#   LatticeAgent.aDNA. The terminal role rehomes to Cmux.aDNA (-> Terminal.aDNA at WS-3/M4); the
-#   PROVIDER/HARNESS provider relationship rehomes to Harness.aDNA. No overlay edge is authored for
-#   an archived vault. (Triad lineage preserved in the archived banners + workspace CLAUDE.md, SO-7.)
+# (none currently — the LatticeTerminal/LatticeAgent partner edges were removed 2026-06-08 on archive;
+#  the terminal role rehomed to Terminal.aDNA, the provider relationship to Harness.aDNA.)
 
 # ── companion (sibling persona-pair / thematic family) ─────────────────────────────────────
+# Context.aDNA: companion ContextCompass.aDNA — OMITTED. ContextCompass superseded by Context.aDNA
+#   2026-06-13 (archived); Context absorbed its role, so there is no live sibling to link. (This entry
+#   was keyed aDNAScope.aDNA in the overlay, renamed -> Context.aDNA 2026-06-11/12.)
+
 RemoteControl.aDNA:
   # "triad with LatticeAgent (brain) + LatticeTerminal (senses)". Both original triad siblings were
-  # PRUNED 2026-06-08 (Window-A registry-drop): LatticeAgent.aDNA + LatticeTerminal.aDNA left the
-  # active registry (archived -> Archive.aDNA/; Home source 0ba3f09). The terminal/senses role rehomed
-  # to Cmux.aDNA, RENAMED Terminal.aDNA at WS-3/M4 (2026-06-08; Home source 95647c4). The companion
-  # edge — retained empty at v0.1.47 specifically to re-point here — is now RE-ATTACHED to Terminal.aDNA.
+  # PRUNED 2026-06-08 (archived -> Archive.aDNA/). The terminal/senses role rehomed to Cmux.aDNA,
+  # RENAMED Terminal.aDNA at WS-3/M4 (2026-06-08). The companion edge is RE-ATTACHED to Terminal.aDNA.
   companion_vaults: [Terminal.aDNA]
 
-TappInterface.aDNA:
-  # "thematic family w/ MoleculeForge + VAASLattice"
-  companion_vaults: [MoleculeForge.aDNA, VAASLattice.aDNA]
+TappProtocol.aDNA:
+  # "thematic family w/ Molecules + VAAS" (was TappInterface.aDNA, renamed -> TappProtocol 2026-06-15)
+  companion_vaults: [Molecules.aDNA, VAAS.aDNA]
