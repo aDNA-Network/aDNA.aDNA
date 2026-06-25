@@ -6,6 +6,14 @@ name: gates
 # includes G1 (Lighthouse-budget fixture), G2 (@audit full-route × both-modes sweep), gate-4 axe
 # in BOTH light and dark modes, single-source/public-meta/link-graph/no-JS/llms.txt/colour gates.
 #
+# SHARDED (2026-06-24 — Operation aDNA post-launch consolidation): the combined suite exceeded the
+# single 20-min job budget and every run was cancelled-on-timeout (never green). It is split into two
+# parallel matrix shards — `fast` (test:gates:fast = everything except @audit) and `audit`
+# (test:gates:audit = the @audit axe both-modes sweep + the Lighthouse perf budget). Each shard does
+# its own setup+build and runs serially (playwright fullyParallel:false → Lighthouse never competes
+# with another worker). Both shards are required (fail-fast:false → both always report); a failure in
+# either fails the workflow, so coverage is unchanged — only the wall-clock and per-job budget move.
+#
 # CI-safe build: this repo is the aDNA.aDNA vault; the prebuild data-projection
 # (scripts/build_vaults_data.mjs, build_install_truth.mjs) reads sibling vaults (Home.aDNA, .adna)
 # that are NOT in this checkout. We therefore build with `npx astro build` (skips the npm prebuild
@@ -26,8 +34,17 @@ concurrency:
 
 jobs:
   gates:
+    name: gates (${{ matrix.shard }})
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - shard: fast
+            script: test:gates:fast
+          - shard: audit
+            script: test:gates:audit
     defaults:
       run:
         working-directory: site
@@ -49,5 +66,5 @@ jobs:
       - name: Build (posture-safe — committed data, no prebuild regen)
         run: npx astro build
 
-      - name: Run quality gates (G1 budget · G2 @audit · axe both-modes · all)
-        run: npm run test:gates
+      - name: Run quality gates — ${{ matrix.shard }} shard
+        run: npm run ${{ matrix.script }}

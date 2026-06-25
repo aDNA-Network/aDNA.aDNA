@@ -13,6 +13,7 @@
     "check": "astro check",
     "test:gates": "playwright test",
     "test:gates:fast": "playwright test --grep-invert @audit",
+    "test:gates:audit": "playwright test --grep @audit",
     "audit:p1s3": "playwright test --grep @audit"
   },
   "dependencies": {
