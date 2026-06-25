@@ -4,7 +4,7 @@ artifact_class: runbook
 campaign_id: campaign_operation_adna
 title: "DP2 keystone launch runbook — the coordinated public launch"
 created: 2026-06-22
-updated: 2026-06-22
+updated: 2026-06-24
 status: active
 last_edited_by: agent_rosetta
 tags: [runbook, keystone, dp2, launch, deploy, pt19, operation_adna, cross_vault]
@@ -88,6 +88,19 @@ further in-vault work.
 > • **Step 6** build **177 pages / 0 err** — **NEW baseline** (was 163; +14 vault-detail pages from the
 >   40→54 expansion). • **Step 5** gates **281/281** incl @audit (`:4321` free; no isolation needed).
 > **HELD at step 7** — site data regen'd + committed commit-only; awaiting operator DP2 GO to run steps 7-13.
+
+> **Readiness snapshot (2026-06-24 — DP2 LAUNCHED ✅ — `adna.network` LIVE).** The operator gave **DP2 GO**;
+> ran §2 steps 7-13 (`session_stanley_20260625T004147Z_keystone_dp2_launch`). Pre-flight re-verified green
+> in the fresh session (fetch FF-OK, origin == local `a63fcda`; `:4321` free; `npm run test:gates`
+> **281/281** incl. @audit; `npx astro build` **177 pages / 0 err**; `src/data` clean — pt19 regen honored,
+> **not** re-synced). **Step 8** deployed `VERCEL_TOKEN=… vercel --prebuilt --prod` → `dpl_AYKPbywF` READY,
+> **aliased `https://adna.network`**. **Steps 9-10** on-live verify ALL GREEN: core routes 200 incl.
+> **`/commons` (was 404)**; **all 7 C-1 proof-links 200-unauth** against `aDNA-Network/aDNA`; **0/12
+> pre-rename slugs** on the live site (keeper-set correct); `/llms.txt` + `/llms-full.txt` serve; **Lighthouse
+> live Perf 98 · A11y 100 · BP 100 · SEO 100** (BP 92→100 confirmed). **Step 11** pushed `origin/main` +
+> standing-watch `.github/workflows/gates.yml`. **Step 12** F1 already shipped decoupled as v8.1 (2026-06-23).
+> **Step 13** DP2 closed in the records ([[coordination_ledger]] ★ rows → shipped + pt19 closed;
+> [[campaign_operation_adna]] DP2 → done; STATE.md). **Keystone landed joined-up.** DP4 (program AAR) is separate/pending.
 
 The deploy **payload** (what ships at step 8): the full improved site (D2–D4 + cycles c162–c165) + clears
 `/commons` 404 + live Best-Practices 92→100 + MENU-1 + **C-1 stage-2** (proofs fixed→exemplary) + the

@@ -9,7 +9,7 @@ status: active
 phase_count: 0          # the program holds no phases of its own; children carry phases + gates
 mission_count: 0        # the program authors no missions; children own their mission trees
 created: 2026-06-18
-updated: 2026-06-22
+updated: 2026-06-24
 last_edited_by: agent_rosetta
 orchestrates:
   - campaign_website_adna                  # Track A — Prove it real (CLOSED 2026-06-21; campaign completed, Decision 6 CLOSE GO)
@@ -149,7 +149,7 @@ a human gate inside its child campaign. The program's single synchronization poi
 > its own deploy gates before then (commit-only default); the **keystone is the joined-up moment**,
 > not a blocker on independent progress.
 
-**Readiness (2026-06-22, keystone C-1 stage-2 session):** **#2 Hearthstone v8.0 ✅ shipped** (`adae20c`). **#1
+**LAUNCHED 2026-06-24 ✅** — the keystone fired; `adna.network` is **live** with the full improved site, landed joined-up with the shipped Hearthstone base. DP2 done (see §Decision Points); seams closed in [[coordination_ledger]]. On-live verify all green (`/commons` 200, 7/7 C-1 proof-links 200-unauth, Lighthouse BP 92→100). *Prior readiness (2026-06-22, keystone C-1 stage-2 session):* **#2 Hearthstone v8.0 ✅ shipped** (`adae20c`). **#1
 WEBSITE** — D1 credibility live; **C-1 stage-2 (proofs fixed→exemplary, pointing at the shipped polished base) +
 the `14→16` / v2.3 entity-count currency reconciliation staged commit-only** (build 163 / gates **281/281**;
 record: [[keystone_credibility_traceability_20260622]]); the **Tier-2 standard-currency / spec-mirror
@@ -161,7 +161,7 @@ v2.3 port** is now ✅ **DONE** (`d9b1dfe`) → the full staged payload is **re-
 | # | When | Decision | Status |
 |---|------|----------|--------|
 | DP1 | Program charter (now) | Approve the program name **"Operation aDNA"**, the umbrella `subtype: program` posture, the four-track map, and the orchestrate-don't-reimplement contract | **✅ approved 2026-06-18** — name blessed; posture + 4-track map + orchestrate-don't-reimplement contract approved. *(Same gate: ADR-035 ratified → Track B P0 closed; WEBSITE Decision 3 approved → Track A P1 closed.)* |
-| DP2 | Keystone readiness | Confirm all three keystone conditions green (WEBSITE Criticals shipped + Hearthstone v8.0 released + pt19 landed) and approve the **coordinated public launch** | **pending (verified & parked) — 2026-06-22.** **#2 Hearthstone v8.0 = ✅ GREEN** (shipped `adae20c`). **#1 WEBSITE = mostly green** — D1 credibility live; **C-1 stage-2 + the 14→16 / v2.3 entity-count currency staged commit-only this session** (gates 281/281; [[keystone_credibility_traceability_20260622]]); the **Tier-2 spec-mirror v2.3 port** is now ✅ **DONE** (`d9b1dfe`) → staged payload **re-verified green & parked 2026-06-22** (gates **281/281**). **#3 pt19 = ⏳ pending** (Production-Tidy/Hestia) — headline remaining gate; **verified NOT landed (~1wk out, behind pt17/Network P6)**. → Joined launch now waits on just **pt19 + operator DP2 GO**. Seams: [[coordination_ledger]]. |
+| DP2 | Keystone readiness | Confirm all three keystone conditions green (WEBSITE Criticals shipped + Hearthstone v8.0 released + pt19 landed) and approve the **coordinated public launch** | **✅ DONE — LAUNCHED 2026-06-24.** All three keystone conditions landed joined-up; operator gave **DP2 GO** → ran runbook §2 steps 7-13 (`session_stanley_20260625T004147Z_keystone_dp2_launch`). **#1 WEBSITE** credibility-fixes SHIPPED — C-1 stage-2 + 14→16/v2.3 currency + Tier-2 spec-mirror all deployed; **all 7 proof-links live-200-unauth** against `aDNA-Network/aDNA`. **#2 Hearthstone v8.0** GREEN (`adae20c`; F1→v8.1 shipped 2026-06-23). **#3 pt19** ✅ LANDED 2026-06-23 — honored at launch (0/12 pre-rename slugs live). Deployed `vercel --prebuilt --prod` → `dpl_AYKPbywF`, **aliased `https://adna.network`**; `/commons` 200 (was 404); **Lighthouse live Perf 98 · A11y 100 · BP 100 · SEO 100**; `origin/main` pushed + standing-watch. Seams CLOSED → shipped: [[coordination_ledger]]. |
 | DP3 | Cross-vault seam disputes | When a seam in [[coordination_ledger]] blocks a child (e.g. pt19 slips, `skill_template_release` contract changes), the program surfaces it to the operator rather than a child resolving cross-vault unilaterally | as-needed |
 | DP4 | Program close | When all tracks reach their terminal gates, AAR the program and set `status: completed` (children persist as their own records) | pending |
 
