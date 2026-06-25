@@ -2,7 +2,7 @@
 type: adr
 adr_number: "040"
 title: "The Obsidian Node Exemplar Standard + the agentic visual-in-the-loop primitive"
-status: proposed
+status: accepted
 created: 2026-06-24
 updated: 2026-06-24
 last_edited_by: agent_hestia
@@ -16,7 +16,7 @@ tags: [adr, decision, exemplar, obsidian, home_adna, visual_in_the_loop, prytane
 
 ## Status
 
-**Proposed** (filed by Hestia at Operation Prytaneion M6.4 close; D10 of the campaign. Operator ratifies → `accepted`. Lives in Rosetta's standard vault; Rosetta may supersede as the standard evolves.)
+**Accepted** — ratified by the operator at the Operation Prytaneion M6.4 close gate, 2026-06-24 (D10 of the campaign). Lives in Rosetta's (`aDNA.aDNA`) standard vault; Rosetta may supersede with a successor ADR as the standard evolves.
 
 ## Context
 
