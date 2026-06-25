@@ -57,11 +57,12 @@ gates DP4 (which is gated on Track C/STR + Track D/commons terminalizing, not on
   `status: acknowledged`; the single open item is the Context.aDNA `adr_010` → `aDNA.aDNA/.../doctrine_credential_handling.md`
   repoint, to be done when Context.aDNA next quiesces). Unchanged; re-check at the next Context.aDNA quiesce.
 
-> **Standing-watch (in-vault, not a cross-vault seam — recorded here for the launch-readiness picture):** the
-> `.github/workflows/gates.yml` CI floor **times out at `timeout-minutes: 20` every run** (suite > 20 min →
-> `cancelled`, never green). Site is live-verified green + gates **281/281 locally**; CI-budget misconfig, not a
-> regression. **Fix pending operator decision** (raise the timeout / shard @audit). Tracked in `STATE.md` §Active
-> Campaigns + the Next Session Prompt.
+> **Standing-watch (in-vault, not a cross-vault seam — recorded here for the launch-readiness picture): FIXED 2026-06-24.**
+> The CI floor had **never run green** — every run hung ~30 min in `playwright install --with-deps` (apt phase) and was
+> killed before the build/tests ran. **Fixed** by running the job in the official Playwright container
+> `mcr.microsoft.com/playwright:v1.59.1-noble` (browsers + deps preinstalled; no install step) — **first green run 3m42s**
+> (`4a10458`). The initial fast/audit shard was a misdiagnosis (the whole suite runs in ~3.5 min once the browsers are
+> present), reverted to a single job. Site was live-green throughout. Tracked in `STATE.md` §Active Campaigns.
 
 ## Open memos — `who/coordination/` (program-relevant), with disposition
 

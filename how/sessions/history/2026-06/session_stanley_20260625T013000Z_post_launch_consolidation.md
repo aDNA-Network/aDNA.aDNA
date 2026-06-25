@@ -86,3 +86,30 @@ live-green and gates pass 281/281 locally, so it's a CI-budget misconfig, not a 
 timeout bump (~40 min) or sharding @audit into its own job. If the operator wants it fixed, do that first (it's the
 only thing making the standing-watch hollow). Honor pt19 (never `sync:vaults` / hand-edit `vaults.json`); program
 posture is commit-only/records, no deploy of its own. Plan: `~/.claude/plans/please-read-the-claude-md-clever-quilt.md`.
+
+## Post-session addendum (2026-06-24) — CI standing-watch FIXED
+
+> Supersedes the "Next up" / Next-Session-Prompt CI-timeout guidance above (which assumed the bottleneck was
+> test duration — it was not). Kept above unrewritten for the audit trail.
+
+The operator chose to **fix** the standing-watch (not defer). The thread:
+
+1. **First fix — shard (`714e63e`): WRONG LAYER.** I split the suite into parallel `fast` + `audit` matrix jobs
+   (partition verified exact, 166 + 115 = 281). Both shards still hit the (raised, 30-min) ceiling and were
+   cancelled. **My misdiagnosis** — I'd read "exceeded max execution time" as test-slowness without checking
+   step-level timing.
+2. **Root cause (proven by step logs):** every run hung ~30 min in **`npx playwright install --with-deps chromium`**
+   (the apt/OS-deps phase — kill-time orphan was that exact process); `npm ci` was 11 s and the build + tests
+   **never ran**. The standing-watch had been hollow since inception for an *environment* reason, not a test one.
+3. **Real fix (`4a10458`, operator-approved = "Playwright container"):** run the job in
+   `mcr.microsoft.com/playwright:v1.59.1-noble` (browsers + deps preinstalled → no install step); shard reverted to
+   a single job; `test:gates:audit` script removed. **First green run: 3m42s** (run `28142727004`, conclusion
+   `success`) — the *entire* suite (build + 281 gates incl @audit + Lighthouse) runs in ~3.5 min, confirming the
+   tests were never the bottleneck. Records (STATE §Active Campaigns + Next Session Prompt + line-4 head;
+   coordination_ledger) updated finding→fixed.
+
+**AAR (this CI thread):** *Worked* — step-level CI logs gave the definitive root cause; the container is the clean
+standard fix. *Didn't* — I shaped + shipped a fix (the shard) on an unverified diagnosis, costing a wrong push +
+~60 wasted runner-min. *Finding* — for a CI "timeout/cancelled," **read step-level timing before shaping a fix**;
+"exceeded max execution time" names the symptom, not the slow step. *Change* — diagnose the failing *step* first.
+*Follow-up* — none open; the deprecation warning (checkout/setup-node on Node 20) is cosmetic.
