@@ -6,13 +6,13 @@ name: gates
 # includes G1 (Lighthouse-budget fixture), G2 (@audit full-route × both-modes sweep), gate-4 axe
 # in BOTH light and dark modes, single-source/public-meta/link-graph/no-JS/llms.txt/colour gates.
 #
-# SHARDED (2026-06-24 — Operation aDNA post-launch consolidation): the combined suite exceeded the
-# single 20-min job budget and every run was cancelled-on-timeout (never green). It is split into two
-# parallel matrix shards — `fast` (test:gates:fast = everything except @audit) and `audit`
-# (test:gates:audit = the @audit axe both-modes sweep + the Lighthouse perf budget). Each shard does
-# its own setup+build and runs serially (playwright fullyParallel:false → Lighthouse never competes
-# with another worker). Both shards are required (fail-fast:false → both always report); a failure in
-# either fails the workflow, so coverage is unchanged — only the wall-clock and per-job budget move.
+# RUNS IN THE PLAYWRIGHT CONTAINER (2026-06-24 — Operation aDNA post-launch consolidation).
+# Root cause of the prior "never green" standing-watch: `npx playwright install --with-deps chromium`
+# hung ~30 min in its apt/OS-deps phase every run and was killed on timeout — the build + tests never
+# ran. The fix is the official Playwright CI image (browsers + OS deps preinstalled, version-matched to
+# @playwright/test 1.59.1), so there is no browser-install step at all. (A short-lived fast/audit matrix
+# shard tried earlier addressed the wrong layer — the tests were never the bottleneck — and is reverted
+# back to this single job.)
 #
 # CI-safe build: this repo is the aDNA.aDNA vault; the prebuild data-projection
 # (scripts/build_vaults_data.mjs, build_install_truth.mjs) reads sibling vaults (Home.aDNA, .adna)
@@ -34,17 +34,10 @@ concurrency:
 
 jobs:
   gates:
-    name: gates (${{ matrix.shard }})
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.59.1-noble
     timeout-minutes: 30
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - shard: fast
-            script: test:gates:fast
-          - shard: audit
-            script: test:gates:audit
     defaults:
       run:
         working-directory: site
@@ -54,17 +47,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: npm
-          cache-dependency-path: site/package-lock.json
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
-
       - name: Build (posture-safe — committed data, no prebuild regen)
         run: npx astro build
 
-      - name: Run quality gates — ${{ matrix.shard }} shard
-        run: npm run ${{ matrix.script }}
+      - name: Run quality gates (G1 budget · G2 @audit · axe both-modes · all)
+        run: npm run test:gates
