@@ -1,0 +1,25 @@
+{
+  "colorGroups": [
+    {
+      "query": "path:\"who/\"",
+      "color": {
+        "a": 1,
+        "rgb": 10321112
+      }
+    },
+    {
+      "query": "path:\"what/\"",
+      "color": {
+        "a": 1,
+        "rgb": 8245247
+      }
+    },
+    {
+      "query": "path:\"how/\"",
+      "color": {
+        "a": 1,
+        "rgb": 10407530
+      }
+    }
+  ]
+}
