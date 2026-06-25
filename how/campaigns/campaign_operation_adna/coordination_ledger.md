@@ -40,6 +40,29 @@ tags: [coordination_ledger, program, cross_vault, seams, keystone, pt19]
 
 ★ = keystone precondition (DP2).
 
+## Post-launch seam triage (2026-06-24)
+
+With the keystone shipped, the **two remaining non-keystone seams** were re-triaged
+(`session_stanley_20260625T013000Z_post_launch_consolidation`). Both stay **open + non-blocking** — neither
+gates DP4 (which is gated on Track C/STR + Track D/commons terminalizing, not on these):
+
+- **vault-card public-fields** — re-confirmed **open, awaiting Hestia ack** (memo still `status: open`, no ack
+  on record). The pt19-sequencing constraint that previously bound this ("fold into the single pt19 handshake;
+  no `sync:vaults` before pt19") is now **lifted** — pt19 landed 2026-06-23 and the launch shipped — so when
+  Hestia lands the public-field edits (Harness display split → "Harness" / RareHarness-flagship; per-vault public
+  `tagline`) and pings Rosetta, the regen is a **clean standalone future deploy**, no longer entangled with pt19.
+  *(Live `/vaults` already shows keeper-set "Harness" / "RareHarness" from the pt19 regen; the per-vault public
+  taglines remain the un-acked delta.)*
+- **doctrine-relocation carve-out** — re-confirmed **deferred-pending-Prometheus-quiesce, non-blocking** (memo
+  `status: acknowledged`; the single open item is the Context.aDNA `adr_010` → `aDNA.aDNA/.../doctrine_credential_handling.md`
+  repoint, to be done when Context.aDNA next quiesces). Unchanged; re-check at the next Context.aDNA quiesce.
+
+> **Standing-watch (in-vault, not a cross-vault seam — recorded here for the launch-readiness picture):** the
+> `.github/workflows/gates.yml` CI floor **times out at `timeout-minutes: 20` every run** (suite > 20 min →
+> `cancelled`, never green). Site is live-verified green + gates **281/281 locally**; CI-budget misconfig, not a
+> regression. **Fix pending operator decision** (raise the timeout / shard @audit). Tracked in `STATE.md` §Active
+> Campaigns + the Next Session Prompt.
+
 ## Open memos — `who/coordination/` (program-relevant), with disposition
 
 | Memo | Disposition |
