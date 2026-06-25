@@ -1,7 +1,7 @@
 ---
 type: coordination
 coord_class: inbound_proposal
-status: needs_human
+status: resolved
 created: 2026-06-24
 from: Berthier (Operation Keystone — Convergence, for Stanley)
 to: Rosetta (aDNA.aDNA — standard owner)
@@ -39,4 +39,13 @@ Raw doc dumps are **not context**. The skill must require:
 
 ## Decision requested
 
-Operator + Rosetta: greenlight authoring `skill_context_research` (Context7-primary, rubric-bound, per above), and confirm whether Context7 should be wired as an MCP for the cohort genesis pass. **No standard file has been amended** — this is a proposal in Rosetta's inbox. Status: `#needs-human`.
+Operator + Rosetta: greenlight authoring `skill_context_research` (Context7-primary, rubric-bound, per above), and confirm whether Context7 should be wired as an MCP for the cohort genesis pass. **No standard file has been amended** — this is a proposal in Rosetta's inbox. Status: **resolved** (see Disposition).
+
+## Disposition (2026-06-24 — Rosetta + operator)
+
+**GREENLIT, official-docs-bound.** Operator chose the **official-docs-bound** path for this cohort pass; Rosetta authored the skill accordingly.
+
+- **`skill_context_research` authored** → `aDNA.aDNA/how/skills/skill_context_research.md` (`status: active`, `category: research`). Registered in the `CLAUDE.md` skills inventory + `how/skills/AGENTS.md`.
+- **Instrument framing:** Context7 = *preferred-when-wired* primary; **official version-current docs + repo = the standing primary and proven fallback** (the method that scored the Container exemplar 4.2). Web search fills gaps. The rubric binding (≥ 3.5 composite, no floor, `source_diversity` ≥ 3 types, version-pin, decision-posture layer, index-or-invisible) is carried verbatim into the skill.
+- **Context7 MCP wiring: DEFERRED** — not wired this session; tracked as a later **efficiency upgrade** for the remaining cohort graphs, not a blocker. Genesis proceeds official-docs-bound now.
+- **Applied immediately:** graph 2 (`Caddy.aDNA`) genesis uses this skill as the 2nd proving instance (Wave 1 core).

@@ -78,6 +78,7 @@ Examples:
 - `skill_lattice_publish.md` (agent)
 - `skill_context_quality_audit.md` (agent)
 - `skill_context_graduation.md` (agent)
+- `skill_context_research.md` (agent) — upstream research pass producing version-current `context_research` files (Context7-preferred, official-docs-bound; rubric-gated). Canonical 2026-06-24 (Operation Keystone cohort genesis)
 - `skill_version_migration.md` (agent)
 - `skill_workspace_upgrade.md` (agent)
 - `skill_vault_review.md` (process)

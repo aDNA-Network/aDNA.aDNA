@@ -66,3 +66,15 @@ Wave 1 **core**: Container (done) → **Caddy → Bitwarden → Nebula**; Wave 2
 | Every cohort install/deploy | per-graph execution gate | genesis-planning stubs only — nothing runs |
 
 **No new campaign opened.** This convergence executed within the completed Operation Keystone's artifact set; no gap warranted a fresh campaign.
+
+---
+
+## Update 2026-06-24 — graph 2 (`Caddy`) populated → cohort **2/10**
+
+Operator authorized replication and scoped the next graph to **`Caddy`** (Wave-1 core). Executed the genesis pass as the **2nd proving instance**, sequentially (method now twice-proven):
+
+- **Skill canonicalized:** `aDNA.aDNA/how/skills/skill_context_research.md` authored + registered (the upstream research-pass skill the cohort inherits — official-docs-bound, Context7-preferred-when-wired, rubric-bound). The Context7 proposal (`coord_2026_06_24_context7_research_instrument`) is **dispositioned `resolved`** (greenlit official-docs-bound; MCP wiring deferred).
+- **`Caddy.aDNA/what/context/reverse_proxy/`** populated: `context_research_caddy_operations.md` (five verbs + Decision Posture; **Caddy 2.11.4**, volatile) + `context_research_caddy_interop.md` (composition seams + **ADR-016 §8** data-bearing anchor, stable) + topic `AGENTS.md`; library `what/context/AGENTS.md` row added.
+- **Quality gate — independent adversarial audit: both files PASS.** Operations composite **4.2**; interop axes **4/4/4/4/5** (composite 4.2); no floor; `source_diversity` 4–5 types; every version/technical claim fact-checked current (**Caddy 2.11.4 confirmed latest stable, no-LTS support model**); cross-topic seam with the `Container` exemplar verified reciprocal. *(Auditor's one suggested change — bump interop `quality_score` to 4.4 — declined: (4+4+4+4+5)/5 = 4.2, an auditor arithmetic slip; the frontmatter is internally consistent at 4.2.)*
+
+**Substance now 2/10** (Container exemplar + Caddy). **Next = `Bitwarden` → `Nebula`** (finish Wave-1 core), one graph fully populated + quality-passed before the next. Naming freeze + the §C / AWSBootstrap / Astro-TS items remain operator-gated (`recommendations_for_review.md`). Caddy is **local-only (no push)**.

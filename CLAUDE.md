@@ -252,6 +252,7 @@ Reusable agent recipes and documented procedures in `how/skills/`. Skills have t
 | `skill_new_entity_type` | agent | User wants to extend the ontology |
 | `skill_context_quality_audit` | agent | Audit request for context files |
 | `skill_context_graduation` | process | Context promotion to higher quality tier |
+| `skill_context_research` | agent | Upstream research pass for a new software-graph / volatile-domain context topic (version-pinned, rubric-passed `context_research` files) |
 | `skill_vault_review` | agent | Governance audit of vault structure |
 | `skill_upstream_contribution` | process | Agent notices framework-level gap |
 | `skill_version_migration` | process | CLAUDE.md version upgrade |
