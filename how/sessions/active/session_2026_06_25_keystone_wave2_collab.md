@@ -41,7 +41,10 @@ Continue the campaign. Operator scope this session = **all of Wave-2 `collab`** 
 - Topic `mail_groupware/`; **Stalwart 0.16.11** (pre-1.0, AGPL/SELv2). Files: operations (5 verbs + deliverability + 0.15→0.16 migration runbook, volatile) + interop (4-wrapper + §8 + §C DKIM-keys-in-datastore backup + the **HTTPS-vs-mail-port** boundary [Caddy HTTPS-only; mail L4/direct], stable) + indexes.
 - **Audit: both PASS-WITH-FIXES composite 4.0** (auditor docked ops-actionability + interop-source_diversity; honored, not re-inflated). Caught+fixed a material error (**third-party OIDC is Community, not Enterprise** — 6 places) + bootstrap-pw wording. Version 0.16.11 verified to the day; reverse-proxy boundary correct + un-inflated; no false Caddy reciprocity; secrets clean.
 - Repo clean (no fork-bridge/locks); local-only commit. convergence_status → **6/10**.
-### ⏳ Graph 7/10 — `Forgejo.aDNA` (Ilmarinen) — pending
+### ✅ Graph 7/10 — `Forgejo.aDNA` (Ilmarinen) — DONE, audit PASS (§B overlap)
+- Topic `git_forge/`; **Forgejo 15.0.3 LTS** (latest stable AND current LTS). Files: operations (5 verbs + track-the-LTS-line + v15 breaking changes, volatile) + interop (4-wrapper [`git/` doubly load-bearing] + the **§B overlap boundary** [Git.aDNA=provider contract · Lighthouse=topology · Venus=§8 · this=brick] + HTTP-vs-git-over-SSH + repos-on-disk-vs-blobs-to-S3, stable) + indexes.
+- **Audit: both PASS composite 4.0** (auditor docked ops-actionability + interop-source_diversity; honored). Version 15.0.3 LTS verified to the day; v15 breaking changes verbatim; §B seam matches governance no-drift; **Caddy reciprocity confirmed real**; secrets clean. Fixed a rootless-path framing nit + added a practitioner source.
+- Research done in main loop (transient subagent 529). Repo clean; local-only commit. convergence_status → **7/10**.
 ### ⏳ Graph 8/10 — `Store.aDNA` (Plutus) — pending (+ mark Wave-2 COMPLETE)
 
 ## SITREP

@@ -125,3 +125,15 @@ Ran the genesis pass on **`Groupware`** (Wave-2 collab, graph 6 — backend **St
 - **Repo note:** `Groupware.aDNA/.git` clean (no fork-bridge `core.worktree`, no locks); initial commit `85b4531`. **Local-only (no push).**
 
 **Substance now 6/10** (Wave-1 core + Nextcloud + Groupware). **Next = `Forgejo` → `Store`** (finish Wave-2 collab). Operator-gated items untouched.
+
+---
+
+## Update 2026-06-26 — graph 7 (`Forgejo`) populated → cohort **7/10**
+
+Ran the genesis pass on **`Forgejo`** (Wave-2 collab, graph 7 — the **§B overlap** member, seam ratified 2026-06-22), depth-first after Groupware:
+
+- **`Forgejo.aDNA/what/context/git_forge/`** populated (lean stub had no `what/context/` → created tree + library `AGENTS.md`): operations (five verbs + Decision Posture; **Forgejo 15.0.3 LTS** — latest stable AND current LTS; **track the LTS line**; v15 breaking changes [cookie rename → mass re-login; rootless config-path back-compat removed; public-token authz]; volatile) + interop (four-wrapper [`git/` doubly load-bearing] + the **§B overlap boundary** [Git.aDNA = provider contract · Lighthouse = deployment topology · Venus = §8 placement · this graph = software brick only] + the **HTTP-vs-git-over-SSH** boundary + the **repos-on-disk vs blobs-to-S3** distinction; stable) + topic `AGENTS.md`. Official-docs-bound (Context7 not wired; researched in the main loop after a transient subagent 529).
+- **Quality gate — independent adversarial audit: both PASS, composite 4.0** (auditor re-scored 4.0/4.0 — docked ops `actionability` 5→4 + interop `source_diversity` 4→3; **honored, not re-inflated**). Version pin **15.0.3 LTS verified to the day** (endoflife.date + forgejo.org + the v15 release notes); all three v15 breaking changes verbatim; the **repos-stay-on-filesystem / blobs-to-S3** boundary confirmed (codeberg #2664); the **Caddy reciprocity confirmed genuinely real** (Caddy's interop names Forgejo + marks the git-over-SSH bypass — no Nebula-style fabrication); the **§B seam matches `CLAUDE.md` + ADR-000 verbatim with no re-authoring drift**; secret-hygiene clean. One framing nit fixed (rootless config path moved in v8.0.0; v15 removed the legacy back-compat) + a practitioner source added.
+- **Repo note:** `Forgejo.aDNA/.git` clean (no fork-bridge `core.worktree`, no locks); initial commit `c45046f`. **Local-only (no push).**
+
+**Substance now 7/10** (Wave-1 core + Nextcloud + Groupware + Forgejo). **Next = `Store`** (the final Wave-2 collab graph → Wave-2 COMPLETE). Operator-gated items untouched.
