@@ -137,3 +137,15 @@ Ran the genesis pass on **`Forgejo`** (Wave-2 collab, graph 7 — the **§B over
 - **Repo note:** `Forgejo.aDNA/.git` clean (no fork-bridge `core.worktree`, no locks); initial commit `c45046f`. **Local-only (no push).**
 
 **Substance now 7/10** (Wave-1 core + Nextcloud + Groupware + Forgejo). **Next = `Store`** (the final Wave-2 collab graph → Wave-2 COMPLETE). Operator-gated items untouched.
+
+---
+
+## Update 2026-06-26 — graph 8 (`Store`) populated → cohort **8/10**; **Wave-2 `collab` COMPLETE**
+
+Ran the genesis pass on **`Store`** (Wave-2 collab, graph 8 — the wave's final member; the object-storage substrate the other data-bearing members back against), depth-first after Forgejo:
+
+- **`Store.aDNA/what/context/object_store/`** populated (lean stub had no `what/context/` → created tree + library `AGENTS.md`): operations (five verbs + Decision Posture; **S3 API envelope** — generic-canonical, backend-swappable; the **decisive currency finding: community `minio/minio` ARCHIVED Apr 25 2026**, live options = **pgsty/minio "SILO"** [AGPL fork, `RELEASE.2026-06-18`, CVE-patched, console restored] / **AIStor** [proprietary; Free = single-node] / Garage / Ceph-RGW / RustFS; erasure coding ≥4 drives + the `mc` runbook; volatile) + interop (Store as the **shared backing substrate** — reciprocal seams to **Nextcloud** primary-storage, **Forgejo** LFS/packages [**not** git repos], **Groupware** blobs, **Inference** model-weights [Wave-3 cross-ref] + the per-app-policy-scoped-credential discipline + **ADR-016 §8** data-plane placement; stable) + topic `AGENTS.md`. Official-docs-bound (Context7 not wired).
+- **Quality gate — independent adversarial audit: both PASS, composite 4.0** (auditor re-scored 4.0/4.0 — docked ops + interop `source_diversity`; **honored, not re-inflated**). The auditor judged the **MinIO-archived / pgsty-SILO / AIStor-proprietary currency thesis "real, current, correctly sourced — impressive for a fast-moving 2026 landscape."** Three currency fixes folded in: **archive date Apr 25 2026** (not ~Feb); **pgsty pin bumped to `RELEASE.2026-06-18`** (a newer release existed); **Prometheus v2 = legacy-but-supported, not formally deprecated** (the older `/minio/prometheus/metrics` is the deprecated path). **Reciprocal backing seams verified real** against the Nextcloud / Forgejo / Caddy interop files (no fabrication); the Caddy seam reframed bidirectional (Caddy fronts the S3 API ↔ Caddy uses Store as a cert-storage backend). **Secret-hygiene clean** (per-app policy-scoped keys mandated; never the root credential).
+- **Repo note:** `Store.aDNA/.git` clean (no fork-bridge `core.worktree`, no locks); initial commit `77d2e88`. **Local-only (no push).**
+
+**Substance now 8/10 — Wave-2 `collab` COMPLETE** (Nextcloud + Groupware + Forgejo + Store, atop Wave-1 core). **Next = Wave 3 `inference` (`Inference`** — revisits `Container` + `Store`), then **Wave 4 `ops` (`FastAPI`** — revisits `Caddy`). One graph fully populated + quality-passed before the next. Operator-gated items (naming, §C retrofits, AWSBootstrap ADR, Astro-TS, each graph's own P0) untouched.

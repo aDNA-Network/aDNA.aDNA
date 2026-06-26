@@ -45,7 +45,10 @@ Continue the campaign. Operator scope this session = **all of Wave-2 `collab`** 
 - Topic `git_forge/`; **Forgejo 15.0.3 LTS** (latest stable AND current LTS). Files: operations (5 verbs + track-the-LTS-line + v15 breaking changes, volatile) + interop (4-wrapper [`git/` doubly load-bearing] + the **§B overlap boundary** [Git.aDNA=provider contract · Lighthouse=topology · Venus=§8 · this=brick] + HTTP-vs-git-over-SSH + repos-on-disk-vs-blobs-to-S3, stable) + indexes.
 - **Audit: both PASS composite 4.0** (auditor docked ops-actionability + interop-source_diversity; honored). Version 15.0.3 LTS verified to the day; v15 breaking changes verbatim; §B seam matches governance no-drift; **Caddy reciprocity confirmed real**; secrets clean. Fixed a rootless-path framing nit + added a practitioner source.
 - Research done in main loop (transient subagent 529). Repo clean; local-only commit. convergence_status → **7/10**.
-### ⏳ Graph 8/10 — `Store.aDNA` (Plutus) — pending (+ mark Wave-2 COMPLETE)
+### ✅ Graph 8/10 — `Store.aDNA` (Plutus) — DONE, audit PASS → **Wave-2 collab COMPLETE**
+- Topic `object_store/`; **S3 API envelope** (backend-swappable). Files: operations (5 verbs + the **MinIO-archived Apr 25 2026 / pgsty-SILO `RELEASE.2026-06-18` / AIStor-proprietary / Garage / Ceph** landscape + erasure-coding + `mc` runbook, volatile) + interop (Store as the **shared backing substrate** — reciprocal seams to Nextcloud/Forgejo[LFS-not-repos]/Groupware/Inference + per-app-scoped-creds + §8, stable) + indexes.
+- **Audit: both PASS composite 4.0** (auditor docked source_diversity on both; honored). MinIO-archived/pgsty-SILO currency thesis judged "real, current, correctly sourced." 3 currency fixes folded in (archive Apr 25; pgsty → 2026-06-18; Prom v2 legacy-not-deprecated); reciprocal backing seams verified; secrets clean.
+- Repo clean; local-only commit. convergence_status → **8/10 — Wave-2 COMPLETE**.
 
 ## SITREP
 
