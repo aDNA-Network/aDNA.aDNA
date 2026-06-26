@@ -113,3 +113,15 @@ Continued the campaign on operator instruction (scope = **all of Wave-2 collab**
 - **Repo note:** `Nextcloud.aDNA/.git/config` was **clean** (no fork-bridge `core.worktree`, unlike Bitwarden) but carried **two stale 0-byte locks** (`HEAD.lock` + `index.lock` from the 2026-06-20 fork) — cleared under a `pgrep -x git` guard before the first commit. Nextcloud on branch `master`; **local-only (no push)**.
 
 **Substance now 5/10** (Wave-1 core + Nextcloud). **Next = `Groupware` → `Forgejo` → `Store`** (finish Wave-2 collab), one graph fully populated + quality-passed before the next. Operator-gated items (naming, §C, AWSBootstrap ADR, Astro-TS, each graph's own P0) untouched.
+
+---
+
+## Update 2026-06-25 — graph 6 (`Groupware`) populated → cohort **6/10**
+
+Ran the genesis pass on **`Groupware`** (Wave-2 collab, graph 6 — backend **Stalwart**), depth-first after Nextcloud:
+
+- **`Groupware.aDNA/what/context/mail_groupware/`** populated (lean stub had no `what/context/` → created the tree + library `AGENTS.md`): operations (five verbs + Decision Posture; **Stalwart 0.16.11**, pre-1.0, AGPL/SELv2; **deliverability the dominant risk** — SPF/DKIM/DMARC/MTA-STS/PTR + port-25 egress; the **0.15→0.16 breaking-config migration** runbook; volatile) + interop (four-wrapper + neighbour seams + **ADR-016 §8** anchor + §C data-placement/backup [DKIM keys live in the datastore] + the **HTTPS-vs-mail-port reverse-proxy boundary** — Caddy fronts the HTTPS surface only; mail ports go L4/direct; stable) + topic `AGENTS.md`. Official-docs-bound (Context7 not wired).
+- **Quality gate — independent adversarial audit: both PASS-WITH-FIXES, composite 4.0.** The auditor independently re-scored **4.0/4.0** (docked ops `actionability` 5→4 and interop `source_diversity` 4→3) — **honored, not re-inflated** (Nebula discipline). It caught **one material recurring factual error: third-party OIDC was mis-gated as Enterprise — it is Community; only per-domain directory backends are Enterprise** — corrected in 6 places; plus a bootstrap-password wording fix (it IS in the service log, printed once per bootstrap), the migrate-flow intermediates named, and a practitioner source added to the interop. Version pin **0.16.11 verified to the day** (GitHub releases + stalw.art); the **reverse-proxy boundary verified correct and NOT overstated** (names `caddy-l4` as the L4 escape hatch); **no false Caddy reciprocity** (Caddy's interop confirmed not to mention Groupware — the asymmetry honestly marked as a NON-seam); **secret-hygiene clean** (DKIM/TLS/etc. names-only).
+- **Repo note:** `Groupware.aDNA/.git` clean (no fork-bridge `core.worktree`, no locks); initial commit `85b4531`. **Local-only (no push).**
+
+**Substance now 6/10** (Wave-1 core + Nextcloud + Groupware). **Next = `Forgejo` → `Store`** (finish Wave-2 collab). Operator-gated items untouched.

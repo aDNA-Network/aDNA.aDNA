@@ -37,7 +37,10 @@ Continue the campaign. Operator scope this session = **all of Wave-2 `collab`** 
 - **Audit: both PASS composite 4.2**, no floor, source ≥3 types, version verified ≥2 feeds, Caddy reciprocity confirmed real, secrets clean. 2 trivial non-gating nits folded in.
 - Repo: `.git/config` clean; cleared 2 stale 0-byte locks (`HEAD.lock`/`index.lock` from fork) under `pgrep` guard. Branch `master`; local-only commit. convergence_status → **5/10**.
 
-### ⏳ Graph 6/10 — `Groupware.aDNA` (Pheme) — pending
+### ✅ Graph 6/10 — `Groupware.aDNA` (Pheme) — DONE, audit PASS-WITH-FIXES
+- Topic `mail_groupware/`; **Stalwart 0.16.11** (pre-1.0, AGPL/SELv2). Files: operations (5 verbs + deliverability + 0.15→0.16 migration runbook, volatile) + interop (4-wrapper + §8 + §C DKIM-keys-in-datastore backup + the **HTTPS-vs-mail-port** boundary [Caddy HTTPS-only; mail L4/direct], stable) + indexes.
+- **Audit: both PASS-WITH-FIXES composite 4.0** (auditor docked ops-actionability + interop-source_diversity; honored, not re-inflated). Caught+fixed a material error (**third-party OIDC is Community, not Enterprise** — 6 places) + bootstrap-pw wording. Version 0.16.11 verified to the day; reverse-proxy boundary correct + un-inflated; no false Caddy reciprocity; secrets clean.
+- Repo clean (no fork-bridge/locks); local-only commit. convergence_status → **6/10**.
 ### ⏳ Graph 7/10 — `Forgejo.aDNA` (Ilmarinen) — pending
 ### ⏳ Graph 8/10 — `Store.aDNA` (Plutus) — pending (+ mark Wave-2 COMPLETE)
 
