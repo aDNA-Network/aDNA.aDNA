@@ -42,6 +42,17 @@ So an III campaign = **(build the III) → (run the III) → (improve from it)**
 
 [[how/campaigns/campaign_looking_glass/campaign_looking_glass|Operation Looking Glass]] is the **first instance** — applying an III campaign to make the aDNA website a faithful mirror of the aDNA context, while building + capturing the scaffolding. It is deliberately instrumented to extract this pattern.
 
+## Extraction (what the pilot captures)
+
+The pilot is instrumented so the terminal AAR can spec the pattern from evidence, not memory. Four logs, maintained across the campaign (charter §Pilot instrumentation):
+
+- **Scaffolding-needed log** — every time a pack/persona/measure was needed but absent (→ what the pattern must ship by default).
+- **Reusable-vs-bespoke ledger** — per scaffolding piece: reused as-is / adapted / net-new, with cost (→ what generalizes vs. what was Looking-Glass-specific).
+- **III-primitive-gaps log** — where the tactical primitives ([[how/skills/skill_iii_cycle|skill_iii_cycle]], [[how/skills/skill_decadal_aar|skill_decadal_aar]]) fell short at campaign scale (→ the delta a `skill_iii_campaign` must close).
+- **Measurement-model retro** — estimate-vs-actual on the metric tiers; what the gates missed that personas caught, and vice versa (→ how to compose the measurement model upfront).
+
+The net-new pieces (the `representation_coherence` pack + claim-tracer persona; see [[how/campaigns/campaign_looking_glass/artifacts/scaffolding_spec|scaffolding_spec]]) are authored campaign-local and graduate to III.aDNA via the handoff below — keeping "what the pilot invented" cleanly separable.
+
 ## Graduation path (where this becomes real)
 
 This is an **upstream-class idea targeting III.aDNA** (III owns the framework). It graduates via the pilot's **terminal AAR**, which authors a campaign-planning mission in `III.aDNA/how/missions/` to (a) review/improve III from pilot learnings and (b) spec/build/improve/test/deploy the III-campaign pattern — likely `III.aDNA/how/campaigns/campaign_h_iii_campaign_pattern/`. Precedent for charter-authoring missions: `III.aDNA/how/missions/plan_campaign_g_consolidation_charter.md`.

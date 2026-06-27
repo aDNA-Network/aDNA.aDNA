@@ -3,7 +3,7 @@ plan_id: mission_looking_glass_planning
 type: plan
 title: "Plan Operation Looking Glass — design the 3-part III-campaign pilot charter"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_looking_glass
 campaign_phase: 0
 campaign_mission_number: 0
@@ -11,6 +11,7 @@ created: 2026-06-27
 updated: 2026-06-27
 last_edited_by: agent_stanley
 token_budget_estimated: "~120 kT (80-200 tier): charter design across 2 subjects + III-scaffolding spec + measurement model; content-novel"
+token_budget_actual: "~125 kT (on-target, within tolerance): 3-agent recon + asset survey + 8 files authored (charter, scaffolding spec, 5 mission stubs, idea-note edit)"
 tags: [plan, campaign, iii_campaign_pilot, planning]
 ---
 
@@ -38,43 +39,43 @@ A complete, internally-consistent charter that:
 ## Objectives
 
 ### 1. Sharpen goal + success criteria
-- **Status**: planned
+- **Status**: completed
 - **Description**: Define "faithful mirror" operationally for Subject A (website) and Subject B (aDNA.aDNA context). What claims/structures/craft must hold; what counts as drift/fabrication/staleness; what "representation-ready context" means.
 - **Files**: campaign master (success-criteria section).
 - **Depends on**: none.
 
 ### 2. Design the 3-part structure (phases + gates)
-- **Status**: planned
+- **Status**: completed
 - **Description**: Flesh out Part 1 (Construct), Part 2 (Review/Inspect+Introspect), Part 3 (Improve) into phases with objectives, dependencies, and human exit gates.
 - **Files**: campaign master (phases section).
 - **Depends on**: 1.
 
 ### 3. Spec the Part-1 III scaffolding (the pattern's novelty)
-- **Status**: planned
+- **Status**: completed
 - **Description**: The **build-the-driving-context/processes/personas** step. Decide: which III domain packs apply (e.g. `web_design`, `vault_maintenance` — survey III.aDNA `what/context/core_domain_packs/`) + any net-new pack for "representation coherence"; which personas/reviewers (survey `who/reviewers/` + `who/adopters/`) + any net-new; the review process; and how this scaffolding is captured as a reusable artifact.
 - **Files**: a scaffolding-spec artifact under `how/campaigns/campaign_looking_glass/artifacts/`.
 - **Depends on**: 1, 2.
 
 ### 4. Define the measurement model
-- **Status**: planned
+- **Status**: completed
 - **Description**: Baselines (current site + context state), the metric tiers (machine-measurable / agent-assessable / persona-assessed — mirror `skill_iii_cycle`), thresholds, and regression detection. Respect the existing `site/` gate harness (281 gates) — extend, don't fight.
 - **Files**: measurement-model section/artifact.
 - **Depends on**: 1, 3.
 
 ### 5. Map pilot instrumentation (pattern extraction)
-- **Status**: planned
+- **Status**: completed
 - **Description**: Decide exactly what to capture during execution so the terminal AAR can spec the "III campaign" pattern: scaffolding-needed log, reusable-vs-bespoke ledger, III-primitive-gaps log, measurement-model retro.
 - **Files**: campaign master (instrumentation section) + [[how/backlog/idea_iii_campaign_pattern|idea_iii_campaign_pattern]] update.
 - **Depends on**: 3, 4.
 
 ### 6. Decompose into sized missions + update frontmatter
-- **Status**: planned
+- **Status**: completed
 - **Description**: Turn the phases into concrete missions with token budgets + AAR requirements; set campaign `mission_count` / `estimated_sessions` / `phase_count`.
 - **Files**: campaign master + mission stubs.
 - **Depends on**: 2, 3, 4.
 
 ### 7. Spec the terminal III.aDNA handoff
-- **Status**: planned
+- **Status**: completed
 - **Description**: Concretely scope the campaign-planning mission the terminal AAR will author in `III.aDNA/how/missions/` (review/improve III + spec/build/test/deploy the III-campaign pattern → likely `campaign_h_iii_campaign_pattern`). Precedent: `III.aDNA/how/missions/plan_campaign_g_consolidation_charter.md`.
 - **Files**: campaign master (terminal exit section).
 - **Depends on**: 5.
@@ -101,6 +102,29 @@ A complete, internally-consistent charter that:
 
 > **Next session:** Run `mission_looking_glass_planning` in `aDNA.aDNA` (persona Rosetta). Operation Keystone is closed and the SiteForge→Astro naming follow-on is ratified (ADR-041, 2026-06-27). Your job is to **design the charter** for *Operation Looking Glass* — the **pilot of a new "III campaign" pattern** (`how/campaigns/campaign_looking_glass/`): a strategic, instrumented application of III that (a) deeply reviews + improves the aDNA website (`aDNA.aDNA/site/`, live at adna.network) and (b) in parallel reviews the aDNA.aDNA context (`what/`) for consistency/correctness/quality-of-representation — making the site a faithful mirror of the vault. Structure it in **3 parts**: Part 1 Construct (research + design the process + **build the context/packs/personas/measurement that drive the III** — the pattern's novel step), Part 2 Review (run the built III: inspect + introspect → ranked improvement plan), Part 3 Improve (execute + re-measure + validate). It is a **pilot**, so instrument it to extract the pattern; its **terminal AAR must author a campaign-planning mission in `III.aDNA/`** to review/improve III and spec/build/test/deploy the III-campaign pattern. Read this mission's Objectives + Pre-reads, then produce a ratifiable charter and present it for operator GO (Decision Point 1). Guardrails: phase gates are human gates; honor pt19 + the in-flight Websites carve (never `sync:vaults`/hand-edit `vaults.json`); no cross-vault writes (coord memos only); every mission gets a token budget + AAR.
 
+## Completion Summary
+
+### Deliverables
+- Full charter `campaign_looking_glass.md` (seed → charter; all 7 exit-gate items satisfied).
+- `artifacts/scaffolding_spec.md` (Part-1 III scaffolding + measurement model, proposal altitude).
+- 5 sized mission stubs `mission_construct_scaffolding_m01` … `mission_closeout_handoff_m05` (each token_budget + AAR placeholder).
+- `idea_iii_campaign_pattern.md` updated with the Extraction section.
+- Operator ratified at DP1 (2026-06-27); campaign → `active`.
+
+### Descoped
+- Deep asset survey + net-new pack/persona authoring → deferred to Part-1 M1 (propose-don't-build).
+- Full `what/` audit → out of scope (operator: site-backing slice).
+
+### Key Findings
+- The genuine net-new is small + well-isolated: one pack (`representation_coherence`) + one persona (claim-tracer); everything else reuses existing III packs / the 16-reviewer roster / the 281-gate harness.
+
+### Scope Changes
+- Execution missions sized to 5 (M1–M5) in a lean Construct(1)/Review(2)/Improve(2) shape; `mission_count: 6` incl. this planning mission (M0).
+
 ## AAR
 
-*Mandatory before `status: completed`.*
+- **Worked**: Reuse-first asset survey turned the seed into a concrete, ratifiable charter fast — the existing 16-reviewer + 5-pack inventory grounded the scaffolding with minimal invention.
+- **Didn't**: The two load-bearing forks (Subject-B breadth, pilot ambition) weren't answerable from the seed — needed an operator question round before authoring could start.
+- **Finding**: An III campaign's net-new surface can be tiny (1 pack + 1 persona) — the pattern is mostly *composition* of existing III primitives, which is the key signal for the terminal handoff.
+- **Change**: For future III campaigns, settle scope + ambition with the operator *before* authoring the charter — it's the load-bearing fork.
+- **Follow-up**: Run M1 [[how/campaigns/campaign_looking_glass/missions/mission_construct_scaffolding_m01|mission_construct_scaffolding]]; [[how/backlog/idea_iii_campaign_pattern|idea_iii_campaign_pattern]] graduates at the terminal handoff.
