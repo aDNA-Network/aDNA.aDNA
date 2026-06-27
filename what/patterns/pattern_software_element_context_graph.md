@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-06-22
-updated: 2026-06-22
+updated: 2026-06-27
 status: draft
 pattern_category: structural
 applies_to: [forge, framework, platform]
@@ -50,6 +50,7 @@ The agent loads the referenced context **at session-start** — design-time, pul
 
 - **Build a thing** — a consumer pulls *several* software graphs to assemble a capability. A website consumer federates `Astro.aDNA` (build framework) **+** `TypeScript.aDNA` (language) **+** `III.aDNA` (quality) **+** `Git.aDNA` (CI). Precedent is already live: `wga.aDNA` wraps Astro + III + ISS; `Astro.aDNA` itself wraps III + Git + Canvas + ComfyUI.
 - **Assemble a node** — a *role graph* composes deployment-face graphs into a stack. `Lighthouse.aDNA` selects from the Keystone roster (`Forgejo` + `Caddy` + `Nebula` + …) to compose a deployable node. The deployment graph is the brick; the role graph is the wall (see [[what/patterns/pattern_software_deployment_graph|pattern_software_deployment_graph]]).
+- **Build-scale role-graphs** — just as a *node* role-graph (`Lighthouse.aDNA`) composes deployment-face graphs into a stack, a **build role-graph** composes build-face graphs into a built artifact. `Websites.aDNA` composes `Astro.aDNA` (framework) + `TypeScript.aDNA` (language) + `Tailwind.aDNA` (styling) + `III.aDNA` (quality), plus deploy orchestration, into a website / dashboard / ops-center. The framework graph is the brick; the **build role-graph is the wall** — the build-scale twin of the node-scale role-graph. Both are the same mechanism ([[what/decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]); only the composer differs (see [[what/decisions/adr_041_build_scale_role_graph_subtype|ADR-041]]).
 
 **This is a cross-category lens, NOT a new aDNA category.** Each graph keeps its category — Astro is a Forge, TypeScript a Framework, Forgejo a Platform-subtype. This pattern names what all three *share*: a software element, exposed as a context graph, reached via wrapper + `federation_ref`, composed by pulling many. ([[what/decisions/adr_039_software_element_context_graph_umbrella|ADR-039]] records the lens; [[what/decisions/adr_037_software_deployment_graph_subtype|ADR-037]] settles the deploy-face subtype.)
 
@@ -80,5 +81,5 @@ Both are the *same* pattern — a consumer reaching software through its context
 - [[what/patterns/pattern_software_deployment_graph|pattern_software_deployment_graph]] — the **deploy-and-run face** in full (install/operate/configure/update/interoperate; Lighthouse composition).
 - [[what/specs/spec_forge_ecosystem|spec_forge_ecosystem]] · [[what/specs/spec_framework_ecosystem|spec_framework_ecosystem]] · [[what/specs/spec_platform_ecosystem|spec_platform_ecosystem]] — the three category specs whose consumer-integration sections all instantiate this lens.
 - [[../artifacts/sf_forge_pattern_spec|sf_forge_pattern_spec]] (in `Astro.aDNA`) — the canonical `federation_ref` + wrapper schema reused by all faces.
-- [[what/decisions/adr_039_software_element_context_graph_umbrella|ADR-039]] (this lens) · [[what/decisions/adr_037_software_deployment_graph_subtype|ADR-037]] (deploy subtype).
+- [[what/decisions/adr_039_software_element_context_graph_umbrella|ADR-039]] (this lens) · [[what/decisions/adr_037_software_deployment_graph_subtype|ADR-037]] (deploy-scale role-graph subtype) · [[what/decisions/adr_041_build_scale_role_graph_subtype|ADR-041]] (build-scale role-graph subtype).
 - Upstream standard: `adna_standard.md` (github.com/aDNA-Network/aDNA) — vault fork + consumer-wrapper conventions.
