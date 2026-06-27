@@ -33,7 +33,7 @@ A complete, scored findings register exists: claim-level (traceable? current? st
 
 ### 1. Claim-trace audit (Tier 2)
 - **Status**: planned
-- **Description**: Enumerate site claims across the site-backing slice; trace each → `what/`; classify drift / fabrication / staleness.
+- **Description**: Enumerate site claims across the site-backing slice — **bounded to high-signal claim classes** (quantitative/counts · status/currency · structural/relational), not every sentence; trace each → `what/`; classify drift / fabrication / staleness.
 - **Files**: `artifacts/findings_register.md`.
 - **Depends on**: none.
 

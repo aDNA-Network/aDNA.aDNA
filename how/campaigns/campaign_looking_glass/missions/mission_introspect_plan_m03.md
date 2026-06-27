@@ -45,7 +45,7 @@ A ranked improvement plan exists, each item with evidence + a chosen fix-side (s
 
 ### 3. Decide fix-side per finding
 - **Status**: planned
-- **Description**: For each item, decide: correct the site (Subject A), or fix the source `what/` the site faithfully-but-wrongly mirrors (Subject B). The decision is itself recorded.
+- **Description**: For each item, decide the fix-side: (a) correct the site (Subject A); (b) fix the source `what/` the site faithfully-but-wrongly mirrors (Subject B); or (c) **neither — escalate to the owning vault via coord memo** when the true source is another vault's data (e.g. `vaults.json` ← Home.aDNA/pt19; not ours to fix directly). The decision is itself recorded.
 - **Files**: improvement_plan.md.
 - **Depends on**: 2.
 

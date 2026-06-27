@@ -67,6 +67,18 @@ The scaffolding (packs · persona roster · process · measurement model) is bui
 - **Files**: `artifacts/baseline_snapshot.md`.
 - **Depends on**: 3, 4, 5.
 
+### 7. Coordination heads-up (deconflict the Websites carve)
+- **Status**: planned
+- **Description**: Stage a courtesy coord memo to `Websites.aDNA` / Hestia that Operation Looking Glass is `active` and will touch the live site at M4 — so the in-flight Websites carve (B→C→A) and this pilot deconflict early. Confirm who owns the deploy pipeline post-[[what/decisions/adr_041_build_scale_role_graph_subtype|ADR-041]].
+- **Files**: `who/coordination/coord_<date>_rosetta_to_vitruvius_looking_glass_active.md`.
+- **Depends on**: none.
+
+### 8. Instrumentation ledger
+- **Status**: planned
+- **Description**: Create the pilot's instrumentation ledger — the 4 logs (scaffolding-needed · reusable-vs-bespoke · III-primitive-gaps · measurement-model retro) the terminal AAR extracts the pattern from. Append through M2–M5.
+- **Files**: `artifacts/instrumentation_log.md`.
+- **Depends on**: none.
+
 ## Campaign Context
 
 ### Previous Mission Outputs
@@ -78,7 +90,8 @@ The scaffolding (packs · persona roster · process · measurement model) is bui
 ## Notes
 
 - **pt19 / Websites carve**: read-only on `vaults.json`/`install_truth.json`; coordinate any `site/` touch by memo.
-- **Instrument**: log every reuse-vs-bespoke decision + any scaffolding gap (charter §Pilot instrumentation).
+- **Instrument**: log every reuse-vs-bespoke decision + any scaffolding gap (charter §Pilot instrumentation; ledger = Objective 8).
+- **Graceful degradation (lean)**: if the full `representation_coherence` pack proves heavy, fall back to a minimal-viable claim-fidelity checklist — DP2 still gates "good enough to drive the review," not "complete."
 
 ## AAR
 

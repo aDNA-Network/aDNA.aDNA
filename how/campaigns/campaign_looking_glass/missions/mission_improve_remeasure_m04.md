@@ -55,6 +55,12 @@ Improvements committed + validated (gate harness ≥ baseline, claim-trace clean
 - **Files**: deploy staging notes; coord memo to Websites/Hestia if needed.
 - **Depends on**: 3.
 
+### 5. Live-verify (post-deploy, read-only)
+- **Status**: planned
+- **Description**: Once the gated deploy lands, confirm **read-only** that live adna.network reflects the improvements (claims corrected; no regressions); respect pt19 (never `sync:vaults`). If deploy is deferred past this mission, carry the live-verify to M5.
+- **Files**: `artifacts/remeasure_snapshot.md` (live-verify section).
+- **Depends on**: 4.
+
 ## Campaign Context
 
 ### Previous Mission Outputs
