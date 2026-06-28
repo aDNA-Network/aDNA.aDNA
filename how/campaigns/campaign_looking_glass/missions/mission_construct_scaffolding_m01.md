@@ -98,6 +98,8 @@ The scaffolding (packs · persona roster · process · measurement model) is bui
 
 *M1 Construct — completed 2026-06-27 (session `…T223140Z_looking_glass_m01_construct`). ~145 kT actual vs ~140 est (on-target).*
 
+> **Full AAR artifact:** [[how/campaigns/campaign_looking_glass/missions/artifacts/aar_m01_construct|aar_m01_construct]] — 8/8 scorecard · gap register · readiness **GO for M2** · pattern-extraction lessons. The 5-line below is its summary.
+
 - **Worked**: Reuse-first held — the 5 packs + 4 core reviewers confirmed as-is. Delegating the two read-heavy surveys (Obj 1 pack/persona, Obj 5 slice) to **parallel Explore subagents** kept main-context lean for authoring. Both new gates green **first try**; full suite **302** (was 281), **zero regression**, no flake.
 - **Didn't**: `compliance_checker.py` couldn't score the slice — it covers only the 7 *base* object types, not the extension-typed prose (concept/glossary/pattern/comparison) the site surfaces; and the default `python3` lacked `yaml` (python3.13 has it). B3 re-specced to frontmatter + dual-audience + self-reference + cross-link (pass/fail).
 - **Finding**: the **Standard Archivist already owns currency** (axis J) → re-scoped claim-tracer as the **fidelity** complement, with A2 split three ways (persona / machine gate / semantic source-currency). And Tier-2/3 baselines are *structurally* the M2 Inspect opening pass — not a Construct deliverable.
