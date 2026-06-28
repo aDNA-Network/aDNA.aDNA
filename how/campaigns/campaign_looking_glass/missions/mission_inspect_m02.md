@@ -3,7 +3,7 @@ plan_id: mission_inspect
 type: plan
 title: "Inspect — run the III across Subject A + B → scored findings register"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_looking_glass
 campaign_phase: 2
 campaign_mission_number: 2
@@ -76,4 +76,4 @@ A complete, scored findings register exists: claim-level (traceable? current? st
 
 ## AAR
 
-*Mandatory before `status: completed`. See `how/templates/template_aar_lightweight.md`.*
+**Filed 2026-06-27** → [[how/campaigns/campaign_looking_glass/missions/artifacts/aar_m02_inspect|aar_m02_inspect]]. **GO** for M3 — exit gate (complete scored findings register) MET; 5/5 objectives validated; 302/302 gates held; full 15-lens ranker core mean 4.50/4.40. Deliverable: [[how/campaigns/campaign_looking_glass/artifacts/findings_register|findings_register]] (25 findings · 0 Crit / 6 High; marquee finding = Subject B staler than Subject A). All 5 objective statuses → done.

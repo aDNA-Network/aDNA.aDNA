@@ -11,11 +11,11 @@ tags: [campaign, governance, iii_campaign_pilot]
 
 **What this is:** the pilot of the **"III campaign"** pattern — a strategic, instrumented application of III to make the aDNA website a faithful mirror of the aDNA context, while building (and capturing) the context/processes/personas that drive the III. Master: [[campaign_looking_glass]].
 
-**Status:** `active` — Phase 2 (Review) unblocked. **DP1 + DP2 both ratified (operator GO, 2026-06-27)**; M1 Construct ✅ — scaffolding built + baselines captured + committed to `main`.
+**Status:** `active` — Phase 2 (Review) mid-flight. **DP1 + DP2 ratified (operator GO, 2026-06-27)**; M1 Construct ✅ + **M2 Inspect ✅** — scaffolding built, baselines captured, the III run across both subjects → scored findings register. Committed to `main`.
 
 ## The one thing to do next
 
-**DP2 is ratified — run [[missions/mission_inspect_m02|mission_inspect_m02]] (M2, Phase 2 — Review) in a fresh session.** The scaffolding is built: [[missions/mission_construct_scaffolding_m01|M1]] · [[artifacts/baseline_snapshot|baseline_snapshot]] · [[artifacts/packs/pack_representation_coherence|representation_coherence pack]] · [[artifacts/personas/reviewer_claim_tracer|claim-tracer persona]] · the 2 new gates (302 green) · [[artifacts/site_backing_slice|site-backing slice]]. M2 runs the III across Subject A + B → scored findings register (the first agent/persona baseline) → M3 Introspect+plan → DP3. Honor pt19 + the Websites carve; no cross-vault writes; keep appending [[artifacts/instrumentation_log|the instrumentation ledger]].
+**M2 is complete — run [[missions/mission_introspect_plan_m03|mission_introspect_plan_m03]] (M3, Phase 2 — Review) in a fresh session.** The [[artifacts/findings_register|findings register]] is filed (25 findings · 0 Crit / 6 High / 11 Med / 8 Low; marquee = **Subject B staler than Subject A** — site at v2.3/`aDNA-Network`, vault prose still v2.1–v2.2/`LatticeProtocol`). M3 **introspects** (calibrate real-vs-trade-off — chiefly the home-hero ethos dial A-11/A-12, deliberate by ADR; confirm the A2 machine/persona split held) and **ranks** the register into the evidence-backed improvement plan → **DP3**. The bounded M4 set is already legible: Subject-B v2.3 sweep (highest ROI) · A-15 security contact · A-01 proof-links + G20 manifest · A-06 `/vaults/graph` SSR. Honor pt19 + the Websites carve; no cross-vault writes; A-04 install-SHA → Hestia; keep appending [[artifacts/instrumentation_log|the instrumentation ledger]]. **Resolve the Vitruvius Q1/Q2 asks before any M4 deploy.**
 
 ## Standing orders (this campaign)
 
