@@ -11,11 +11,11 @@ tags: [campaign, governance, iii_campaign_pilot]
 
 **What this is:** the pilot of the **"III campaign"** pattern — a strategic, instrumented application of III to make the aDNA website a faithful mirror of the aDNA context, while building (and capturing) the context/processes/personas that drive the III. Master: [[campaign_looking_glass]].
 
-**Status:** `planning` (SEED). Nothing is chartered yet.
+**Status:** `active` — Phase 2 (Review) unblocked. **DP1 + DP2 both ratified (operator GO, 2026-06-27)**; M1 Construct ✅ — scaffolding built + baselines captured + committed to `main`.
 
 ## The one thing to do next
 
-Run [[missions/mission_looking_glass_planning|mission_looking_glass_planning]] — it authors the full charter (objectives, phases, gates, the Part-1 III-scaffolding spec, the measurement model). Do this in a **fresh session** (the operator will `/clear` first). Until the operator ratifies that charter (Decision Point 1), **do not begin Part 1 execution.**
+**DP2 is ratified — run [[missions/mission_inspect_m02|mission_inspect_m02]] (M2, Phase 2 — Review) in a fresh session.** The scaffolding is built: [[missions/mission_construct_scaffolding_m01|M1]] · [[artifacts/baseline_snapshot|baseline_snapshot]] · [[artifacts/packs/pack_representation_coherence|representation_coherence pack]] · [[artifacts/personas/reviewer_claim_tracer|claim-tracer persona]] · the 2 new gates (302 green) · [[artifacts/site_backing_slice|site-backing slice]]. M2 runs the III across Subject A + B → scored findings register (the first agent/persona baseline) → M3 Introspect+plan → DP3. Honor pt19 + the Websites carve; no cross-vault writes; keep appending [[artifacts/instrumentation_log|the instrumentation ledger]].
 
 ## Standing orders (this campaign)
 

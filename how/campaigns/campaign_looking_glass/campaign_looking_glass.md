@@ -38,7 +38,7 @@ The exit test for the campaign. Each criterion gets a concrete measure in the [[
 | A1 | **Correctness / no fabrication** | Every factual or quantitative claim on the site traces to a true statement in the vault (claim-trace audit) | 0 untraceable or contradicted claims |
 | A2 | **Currency / no drift** | No claim is stale vs. current vault ground-truth — counts, names, statuses, version pins (currency diff; respects pt19-derived data) | 0 stale claims |
 | A3 | **Structural fidelity** | The site's information architecture faithfully represents the vault's actual shape — categories, ecosystems, relationships; no invented hierarchy (structure-map vs. vault map) | 0 misrepresentations |
-| A4 | **Craft does it justice** | Clear, accessible, compelling to its audiences (existing `site/tests/gates/` harness + persona review) | Gate harness green (≥ baseline 281) + persona score ≥ threshold |
+| A4 | **Craft does it justice** | Clear, accessible, compelling to its audiences (existing `site/tests/gates/` harness + persona review) | Gate harness green (≥ baseline **302**; M1 raised it from 281 with the 2 new representation-coherence gates) + persona score ≥ 4.30 |
 
 ### Subject B — the site-backing context slice (`what/`)
 
@@ -100,7 +100,7 @@ The operator's three parts map onto III at strategic scale. Lean shape: Construc
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 1 | Build the III scaffolding + capture baselines | 1-2 | charter (DP1) | planned |
+| 1 | Build the III scaffolding + capture baselines | 1-2 | charter (DP1) | **completed 2026-06-27** |
 
 **Phase exit gate (= Decision Point 2)**: the scaffolding (packs · persona roster · process · measurement model) is built and good enough to drive the review, and baselines for both subjects are captured.
 
@@ -133,7 +133,7 @@ The operator's three parts map onto III at strategic scale. Lean shape: Construc
 | # | When | Decision | Status |
 |---|------|----------|--------|
 | 1 | End of the planning mission (this charter) | Operator ratifies the full charter (success criteria, phases, gates, scaffolding spec, measurement model, sized missions) before Part 1 executes | **ratified 2026-06-27** |
-| 2 | Part 1 → Part 2 | Scaffolding (packs/personas/measurement) is built + good enough to drive the review; baselines captured | pending |
+| 2 | Part 1 → Part 2 | Scaffolding (packs/personas/measurement) is built + good enough to drive the review; baselines captured | **ratified (operator GO) 2026-06-27** |
 | 3 | Part 2 → Part 3 | The ranked improvement plan is approved | pending |
 
 ## The III scaffolding (Part-1 deliverable)

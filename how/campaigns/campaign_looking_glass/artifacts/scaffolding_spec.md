@@ -6,7 +6,7 @@ title: "Operation Looking Glass — Part-1 III scaffolding spec + measurement mo
 created: 2026-06-27
 updated: 2026-06-27
 last_edited_by: agent_stanley
-status: proposed
+status: active
 tags: [campaign, iii, scaffolding, measurement_model, looking_glass]
 ---
 
@@ -121,3 +121,14 @@ Everything above is authored so it can **graduate to III.aDNA** at the terminal 
 2. Author `representation_coherence` + `reviewer_claim_tracer` (net-new).
 3. Implement the 2 representation-coherence gates; wire into `site/tests/gates/`.
 4. Capture baselines; set the A4 persona threshold + the B3 compliance threshold numerically.
+
+## M1 confirmation (resolved 2026-06-27, Obj 1)
+
+All five reuse packs read in full and confirmed at their cited paths — `web_design` (`III.aDNA/what/context/core_domain_packs/context_iii_domain_packs_web_design.md`), `vault_maintenance`, `inspect_procedures`, `introspect_checks`, `whitepaper_communication` (the last is `status: draft`, campaign-scoped — reuse its *trap structure* as a template, not its whitepaper-specific traps). The four named core reviewers all exist in `aDNA.aDNA/who/reviewers/` with the house persona format. **Roster confirmed — proceed with the proposed selection.** Two findings adjust how the net-new pieces slot in:
+
+- **Gap confirmed (claim-tracer is genuinely net-new).** Of the 16 `who/reviewers/`, none is a source-fidelity / fact-checker. Nearest neighbours and why they fall short: **Content Strategist** owns claim↔*evidence* pairing (is there an example near the claim?) but not source *verification*; **Standard Archivist** owns reference *currency* (is the cited repo/standard/name the current one?) but not whether a claim faithfully represents what its source says. The fidelity lens (`source_fidelity`) is unrepresented → build `reviewer_claim_tracer`.
+
+- **Currency division of labour (refines the A1/A2→measure mapping).** The §2 table assigned Claim-Tracer to both A1 and A2, but the **Standard Archivist already owns currency** as axis J — including the load-bearing **`website-owned` vs `pt19-owned`** split (flag pt19 drift, never hand-fix). To avoid overlap, currency is split three ways and the campaign honours it:
+  - **A1 (correctness / no fabrication)** → **Claim-Tracer** (primary `source_fidelity`): does each claim trace to a real source that actually says it, qualifiers preserved.
+  - **A2 (currency / no drift)** → split: **Standard Archivist** owns *standard/repo/brand/name* currency (mechanical, the two-class owner split); the **Tier-1 currency gate** owns *vault-state* currency (counts · names · statuses, read-only diff vs ground-truth); **Claim-Tracer**'s secondary `claim_currency` lens owns *semantic source* currency (is a cited source superseded/archived?).
+  - Net: Claim-Tracer and Standard Archivist are **complements** (fidelity ⟷ currency), cross-linked in both persona files; the currency gate is the machine floor under both.

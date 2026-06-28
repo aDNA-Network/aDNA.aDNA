@@ -1,0 +1,96 @@
+{
+  "_doc": "Operation Looking Glass claim-trace seed manifest (M1 Construct). Each entry is a high-signal site claim flagged for source-fidelity. gate-20-claim-trace asserts every source_ref RESOLVES and, where a machine accessor is given, the source YIELDS the expected value. Paths are relative to the site/ dir (use ../ for vault files). M2 (Inspect) extends this manifest with the enumerated claims. Source-of-truth + owner-class detail: how/campaigns/campaign_looking_glass/artifacts/site_backing_slice.md. Ring-A (pt19) entries are READ-ONLY — flag drift, never hand-fix.",
+  "_classes": ["quantitative", "status", "structural", "source_fidelity"],
+  "claims": [
+    {
+      "id": "vault-count",
+      "class": "quantitative",
+      "claim": "the registry holds 54 vaults",
+      "rendered_on": ["/", "/vaults", "/network"],
+      "source_ref": "src/data/vaults.json",
+      "owner": "pt19",
+      "check": { "kind": "json_field", "accessor": "vault_count" },
+      "expected": "54"
+    },
+    {
+      "id": "relationship-count",
+      "class": "structural",
+      "claim": "the network has 14 cited relationships (edges)",
+      "rendered_on": ["/network", "/vaults/graph"],
+      "source_ref": "src/data/vaults.json",
+      "owner": "pt19",
+      "check": { "kind": "json_len", "accessor": "edges" },
+      "expected": "14"
+    },
+    {
+      "id": "standard-version",
+      "class": "status",
+      "claim": "the aDNA standard is at v2.3",
+      "rendered_on": ["/", "/llms.txt", "/reference/specification"],
+      "source_ref": "src/data/standard.ts",
+      "owner": "website",
+      "check": { "kind": "ts_const", "accessor": "STANDARD_VERSION" },
+      "expected": "v2.3"
+    },
+    {
+      "id": "entity-type-count",
+      "class": "quantitative",
+      "claim": "the standard defines 16 base entity types",
+      "rendered_on": ["/", "/learn/what-is-adna"],
+      "source_ref": "src/data/standard.ts",
+      "owner": "website",
+      "check": { "kind": "ts_const", "accessor": "ENTITY_TYPE_COUNT" },
+      "expected": "16"
+    },
+    {
+      "id": "conformance-levels",
+      "class": "quantitative",
+      "claim": "the standard has 3 conformance levels",
+      "rendered_on": ["/", "/reference/specification"],
+      "source_ref": "src/data/standard.ts",
+      "owner": "website",
+      "check": { "kind": "ts_const", "accessor": "CONFORMANCE_LEVELS" },
+      "expected": "3"
+    },
+    {
+      "id": "standard-license",
+      "class": "status",
+      "claim": "the standard is MIT-licensed",
+      "rendered_on": ["/", "/get-started"],
+      "source_ref": "src/data/standard.ts",
+      "owner": "website",
+      "check": { "kind": "ts_const", "accessor": "STANDARD_LICENSE" },
+      "expected": "MIT"
+    },
+    {
+      "id": "entity-types-spec-source",
+      "class": "source_fidelity",
+      "claim": "the 16 entity types trace to the normative spec",
+      "rendered_on": ["/learn/what-is-adna"],
+      "source_ref": "../what/docs/adna_standard.md",
+      "owner": "standard",
+      "check": { "kind": "exists" },
+      "expected": null
+    },
+    {
+      "id": "canonical-repo",
+      "class": "source_fidelity",
+      "claim": "the clone-and-run image lives at the canonical repo",
+      "rendered_on": ["/", "/network", "/get-started"],
+      "source_ref": "src/data/canonical.ts",
+      "owner": "website",
+      "check": { "kind": "exists" },
+      "expected": null
+    },
+    {
+      "id": "subnetworks-count",
+      "class": "structural",
+      "claim": "four public-good subnetworks are featured",
+      "rendered_on": ["/commons"],
+      "source_ref": "src/data/subnetworks.json",
+      "owner": "website",
+      "check": { "kind": "exists" },
+      "expected": null
+    }
+  ]
+}
