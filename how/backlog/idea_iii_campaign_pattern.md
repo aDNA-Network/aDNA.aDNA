@@ -2,11 +2,11 @@
 type: idea
 idea_id: idea_iii_campaign_pattern
 title: "The 'III campaign' — strategic-scale III that builds its own driving context/processes/personas"
-status: proposed
+status: graduating
 priority: medium
 effort: plan
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-28
 last_edited_by: agent_stanley
 campaign_id: campaign_looking_glass
 upstream_target: III.aDNA
@@ -14,6 +14,8 @@ tags: [idea, iii, iii_campaign, pattern, upstream_candidate, looking_glass]
 ---
 
 # The "III campaign" pattern
+
+> **Graduation status (2026-06-28): `graduating`.** The pilot — [[how/campaigns/campaign_looking_glass/campaign_looking_glass|Operation Looking Glass]] — **completed** (M0–M5, all success criteria PASS). The pattern is extracted into [[how/campaigns/campaign_looking_glass/artifacts/pattern_packet|pattern_packet.md]] and handed to III.aDNA via [[who/coordination/coord_2026_06_28_rosetta_to_argus_iii_campaign_handoff|the Rosetta→Argus handoff memo]] (asks Argus to author `campaign_h_iii_campaign_pattern` → a `skill_iii_campaign` + graduate the `representation_coherence` pack + `claim_tracer` persona). This idea closes when III.aDNA opens that campaign.
 
 ## The gap
 

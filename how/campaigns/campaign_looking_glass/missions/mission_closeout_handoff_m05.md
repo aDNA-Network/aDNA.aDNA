@@ -3,14 +3,14 @@ plan_id: mission_closeout_handoff
 type: plan
 title: "Closeout — campaign AAR + terminal III.aDNA handoff + pattern packet"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_looking_glass
 campaign_phase: 3
 campaign_mission_number: 5
 mission_class: closeout
 token_budget_estimated: "~70 kT (50-80 tier): campaign AAR + pattern packet + III.aDNA handoff memo"
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-28
 last_edited_by: agent_stanley
 tags: [plan, campaign, iii_campaign_pilot, closeout, handoff, looking_glass]
 ---
@@ -32,25 +32,25 @@ Campaign AAR filed (criteria A1–A4 / B1–B3 verified ≥ threshold vs. baseli
 ## Objectives
 
 ### 1. Campaign AAR + criteria verification
-- **Status**: planned
+- **Status**: done
 - **Description**: 5-line AAR + cross-mission scorecard; verify each success criterion met vs. baseline; log descoped / follow-on items.
 - **Files**: campaign master (Completion Summary + Campaign AAR); `how/missions/artifacts/campaign_looking_glass_aar.md`.
 - **Depends on**: none.
 
 ### 2. Finalize the pattern packet
-- **Status**: planned
+- **Status**: done
 - **Description**: Assemble the reusable scaffolding (the `representation_coherence` pack + claim-tracer persona + process recipe + measurement model) + the instrumentation logs + the reusable-vs-bespoke ledger.
 - **Files**: `artifacts/pattern_packet.md` (index over the scaffolding + logs).
 - **Depends on**: 1.
 
 ### 3. Author the III.aDNA handoff (coord memo)
-- **Status**: planned
+- **Status**: done
 - **Description**: Spec the `III.aDNA/how/missions/` campaign-planning mission (→ `campaign_h_iii_campaign_pattern`) to (a) review/improve III from pilot learnings and (b) spec/build/test/deploy the pattern (likely `skill_iii_campaign`). Stage as a coord memo (Standing Order 3); **do not write into III.aDNA**.
 - **Files**: `who/coordination/coord_<date>_rosetta_to_argus_iii_campaign_handoff.md`.
 - **Depends on**: 2.
 
 ### 4. Operational close
-- **Status**: planned
+- **Status**: done
 - **Description**: Update STATE.md; set campaign `status: completed`; update [[how/backlog/idea_iii_campaign_pattern|idea_iii_campaign_pattern]] → graduating.
 - **Files**: STATE.md; campaign master; idea note.
 - **Depends on**: 1, 2, 3.
@@ -70,4 +70,4 @@ Campaign AAR filed (criteria A1–A4 / B1–B3 verified ≥ threshold vs. baseli
 
 ## AAR
 
-*Mandatory before `status: completed`. See `how/templates/template_aar_lightweight.md`.*
+**Filed 2026-06-28** → [[how/campaigns/campaign_looking_glass/missions/artifacts/campaign_looking_glass_aar|campaign_looking_glass_aar]] (this campaign-closeout mission's AAR *is* the campaign AAR, per the `campaign_rosetta` precedent; GO, 4/4 objectives). Deliverables: [[how/campaigns/campaign_looking_glass/artifacts/pattern_packet|pattern_packet.md]] + the [[who/coordination/coord_2026_06_28_rosetta_to_argus_iii_campaign_handoff|III.aDNA/Argus handoff memo]] + the campaign master §Completion Summary/§Campaign AAR + `idea_iii_campaign_pattern` → `graduating`. **Campaign `completed`.**

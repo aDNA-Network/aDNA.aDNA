@@ -92,4 +92,4 @@ The four logs map to the four questions the pattern must answer:
 
 ---
 
-*Next append: M5 (Closeout) — verify A1–A4 / B1–B3 vs. baseline; finalize the pattern packet; author the III.aDNA campaign-planning handoff (coord memo). This ledger is the terminal AAR's primary source.*
+*Ledger **CLOSED** at campaign completion (M5, 2026-06-28). Consumed by [[how/campaigns/campaign_looking_glass/artifacts/pattern_packet|pattern_packet]] + the [[who/coordination/coord_2026_06_28_rosetta_to_argus_iii_campaign_handoff|III.aDNA/Argus handoff]]. The four logs are the III-campaign pattern's extraction record — III.aDNA's `campaign_h` mines them to graduate `skill_iii_campaign`.*

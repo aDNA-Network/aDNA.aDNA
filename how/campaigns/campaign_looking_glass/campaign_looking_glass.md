@@ -3,7 +3,7 @@ campaign_id: campaign_looking_glass
 type: campaign
 title: "Operation Looking Glass — III-Campaign Pilot (aDNA website ⇄ context coherence)"
 owner: stanley
-status: active
+status: completed
 phase_count: 3
 mission_count: 6
 estimated_sessions: "6-9"
@@ -244,29 +244,32 @@ Precedent for "a mission that authors a campaign charter": `III.aDNA/how/mission
 
 ## Completion Summary
 
-*Fill out when setting `status: completed`.*
+*Completed 2026-06-28. Full record: [[how/campaigns/campaign_looking_glass/missions/artifacts/campaign_looking_glass_aar|campaign_looking_glass_aar]].*
 
 ### Deliverables
-- [Charter + scaffolding + findings register + improvement plan + improved site/context + pattern packet + III.aDNA handoff memo]
+- **Charter** (M0, DP1) · **scaffolding** (M1: `representation_coherence` pack + `claim_tracer` persona + gates G20/G21 → 302 + `site_backing_slice` + baselines) · **scored findings register** (M2: 25 findings) · **introspection + ranked improvement plan** (M3, DP3) · **improved site + context** (M4: bounded set; marquee A/B inversion resolved, B1/B2 FAIL→PASS, re-measure 304/304) · **pattern packet** + **III.aDNA/Argus handoff memo** + this campaign AAR (M5).
 
 ### Descoped
-- [Out-of-slice context findings; long-tail polish — with justification]
+- **Out-of-slice vault-wide currency drift** — the same staleness class extends beyond the chartered site-backing slice (context library, docs guides, ecosystem specs, the spec doc); flagged-not-fixed per the Subject-B bound → [[how/backlog/idea_vault_wide_currency_sweep|idea_vault_wide_currency_sweep]].
+- **A-06 `/vaults/graph` SSR** (L-effort craft) — DP3-deferred → [[how/backlog/idea_vaults_graph_ssr|idea_vaults_graph_ssr]].
+- **Long-tail P3 site polish** (A-02/A-05/A-08/A-10/A-13/A-14/A-17/A-18/A-19) — deferred to STR / follow-on.
 
 ### Key Findings
-- [Insights from the pilot — esp. pattern-extraction learnings]
+- "Build the III" (Construct) is the real, novel step the tactical primitives don't model · Tier-1 = regression floor (0/25 discovery) · paired-subject review is load-bearing (surfaced the marquee inversion) · a third owner-class (`what-ground-truth`) + four graduating doctrines emerged · calibration-vs-ratified-ADR is required before ranking · Improve adds instrument coverage (302→304). Full list: campaign AAR §Key Findings.
 
 ### Scope Changes
-- [Missions merged/added/removed during execution, and why]
+- None structural — phases/gates/criteria held as chartered. M4 closed with deploy *staged* (charter exit) rather than live; go-live carried as a Vitruvius-gated follow-up. A-11 took the operator-approved additive lift (DP3).
 
 ### Follow-Up Campaigns
-- [III.aDNA `campaign_h_iii_campaign_pattern`; any out-of-slice context-quality follow-on]
+- **III.aDNA `campaign_h_iii_campaign_pattern`** (Argus) — graduate the pattern + the `representation_coherence` pack + `claim_tracer` persona, on the [[who/coordination/coord_2026_06_28_rosetta_to_argus_iii_campaign_handoff|staged handoff memo]].
+- Vault-wide currency sweep (`vault_maintenance`) · A-06 graph SSR · deploy go-live (Vitruvius Q1/Q2) · install_truth.json regen (Hestia, [[who/coordination/coord_2026_06_28_rosetta_to_hestia_install_sha|staged memo]]).
 
 ## Campaign AAR
 
-*Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`. Must additionally discharge the Terminal exit / AAR charge above (author the III.aDNA campaign-planning mission).*
+*Filed 2026-06-28. Full campaign AAR (identity · mission arc · criteria verification · pattern-extraction): [[how/campaigns/campaign_looking_glass/missions/artifacts/campaign_looking_glass_aar|campaign_looking_glass_aar]]. Terminal charge discharged: [[who/coordination/coord_2026_06_28_rosetta_to_argus_iii_campaign_handoff|the III.aDNA/Argus handoff memo]] (staged).*
 
-- **Worked**: [one line]
-- **Didn't**: [one line]
-- **Finding**: [one line]
-- **Change**: [one line, or "none"]
-- **Follow-up**: [link, or "none"]
+- **Worked**: proved the III-campaign pattern end-to-end in a lean 6-mission / ~2-day arc — built the scaffolding, ran the paired-subject III, resolved the marquee A/B inversion (B1/B2 FAIL→PASS), grew the harness 302→304, extracted a reusable pattern packet + the terminal handoff; every phase gate operator-ratified.
+- **Didn't**: the staleness drift proved vault-wide (bigger than the chartered slice) — flagged-not-fixed; deploy staged, not live at close (Vitruvius-gated); A-01 partial-by-design (frozen-legacy local `.adna/`).
+- **Finding**: *build the III before you run it* is the real novel step the tactical primitives don't model — plus four graduating doctrines + the paired-subject design that surfaced the marquee inversion.
+- **Change**: pattern + scaffolding handed to III.aDNA (Argus) to graduate as `skill_iii_campaign` + the `representation_coherence` pack + `claim_tracer` persona; `idea_iii_campaign_pattern` → `graduating`.
+- **Follow-up**: III.aDNA `campaign_h` (Argus); deploy go-live (Vitruvius Q1/Q2); A-06 graph SSR; vault-wide currency sweep.
