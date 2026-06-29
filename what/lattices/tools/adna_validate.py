@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""aDNA Instance Validator — checks conformance per §5.5 of the aDNA Universal Standard v2.2.
+"""aDNA Instance Validator — checks conformance per §5.5 of the aDNA Universal Standard v2.3.
 
 Usage:
     python adna_validate.py <path>                     # Validate instance at path

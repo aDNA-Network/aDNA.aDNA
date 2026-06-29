@@ -3,9 +3,9 @@ type: specification
 title: "aDNA Ontology Unification Protocol"
 version: "1.0.0"
 created: 2026-02-19
-updated: 2026-02-19
+updated: 2026-06-29
 status: active
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 token_estimate: ~8000
 tags: [specification, ontology, unification, federation, merge-algorithm, namespace]
 banner: "who/assets/banners/banner_what.jpg"
@@ -42,7 +42,7 @@ This document defines the formal protocol for merging ontologies when aDNA insta
 | **Target instance** | The aDNA instance receiving the import (the parent vault) |
 | **Conflict** | Any incompatibility between two ontologies that prevents automatic merge |
 | **Discriminator** | A field that distinguishes sub-types within a merged entity type (e.g., `module_type: tool\|model`) |
-| **Base version** | The version of the base aDNA ontology (e.g., v3.0), determining base entity compatibility |
+| **Base version** | The version of the base aDNA ontology (e.g., v3.1), determining base entity compatibility |
 
 ### 1.4 Design Principles
 
@@ -499,6 +499,8 @@ function detect_collisions(source, target):
 
 ## 6. Worked Example: org_formation Merge
 
+> **Currency note.** This is a **dated worked example** (`merge_date: 2026-02-19`) using the **v3.0 base ontology (14 types)** as it stood then. The base is now **v3.1 (16 types)** — `identity` + `inventory` were promoted to base by [ADR-035](../decisions/adr_035_inventory_identity_base_entity_types.md) (aDNA standard v2.3; current list in Appendix A). The merge **algorithm is unchanged** — only the base count grew — so the example below is preserved as-is for internal consistency.
+
 ### 6.1 Scenario
 
 **Source instance**: `org_formation` sub-lattice — 12 entity types, deployed as a bare triad within the Lattice Labs vault at `what/lattices/org_formation/`.
@@ -765,7 +767,7 @@ This protocol is designed for **manual execution** in the current phase. Future 
 
 ### A. Base Entity Reference
 
-Complete list of base aDNA entity types (v3.0):
+Complete list of base aDNA entity types (v3.1):
 
 | # | Entity | Triad | Directory | Purpose |
 |---|--------|-------|-----------|---------|
@@ -783,6 +785,10 @@ Complete list of base aDNA entity types (v3.0):
 | 12 | skills | HOW | `how/skills/` | Reusable agent recipes + procedures |
 | 13 | pipelines | HOW | `how/pipelines/` | Folder-based content-as-code workflows |
 | 14 | backlog | HOW | `how/backlog/` | Ideas and improvement tracking |
+| 15 | identity | WHO | `who/identity/` | Stable identity records — node/network/deployment (hostname, operator, UUID, peer-id) |
+| 16 | inventory | WHAT | `what/inventory/` | Installed/configured state — vaults, system, memberships |
+
+> `identity` (WHO) + `inventory` (WHAT) were promoted from node-local extensions to base entity types by [ADR-035](../decisions/adr_035_inventory_identity_base_entity_types.md) (aDNA standard v2.3), taking the base ontology from 14 (v3.0) → 16 (v3.1).
 
 ### B. Keet (2021) Conflict Type Mapping
 
@@ -803,7 +809,7 @@ How this protocol's 10 conflict types map to Keet's original taxonomy:
 
 ### C. Cross-References
 
-- [[what/docs/adna_standard|aDNA Standard v2.1]] — Normative specification
+- [[what/docs/adna_standard|aDNA Standard v2.3]] — Normative specification
 - [[what/docs/adna_design|aDNA Design Rationale]] — Design decisions and deployment forms
 - [[what/docs/adna_bridge_patterns|Bridge Patterns]] — Multi-vault composition patterns
 - [Lattice Federation & Sharing Protocol](lattice_federation.md) — Federation lifecycle, import triggers this merge algorithm

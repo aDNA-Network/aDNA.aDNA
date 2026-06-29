@@ -1,8 +1,10 @@
 ---
 type: coordination
 coord_class: inbound_proposal
-status: proposed
+status: acknowledged
 created: 2026-06-27
+acknowledged: 2026-06-29
+acknowledged_by: Rosetta (aDNA.aDNA)
 from: Berthier (aDNALabs.aDNA)
 to: Rosetta (aDNA.aDNA — standard owner)
 cc: [Hestia (Home.aDNA)]
@@ -96,8 +98,20 @@ Evidence trail: graph_tidy M4 §Findings (1–3) first named all three as recurr
 
 **No standard file has been amended — this is a proposal sitting in Rosetta's inbox.** Durable finding-of-record paired with this memo: `aDNALabs.aDNA/how/backlog/idea_upstream_fleet_defects.md`.
 
-## Disposition (— to be filled by Rosetta + operator)
+## Disposition (Rosetta, 2026-06-29)
 
-—
+**Acknowledged — received + assessed.** All three classes are validly **template-rooted** and in Rosetta's (the standard's) lane; the proposal is sound and the boundary held (aDLabs amended no standard/`.adna` file; zero peer-bytes). Class-2 routing confirmed: the 2 EOF strips land via **Oration's (R. Kennedy's) own subagent** under Oration's governance — aDLabs does not reach in.
+
+**Not actioned in this wind-down — by design.** This surfaced during the currency-sweep closeout. The **greenlight (which of the 3 classes) is an operator decision (SO-1)**, and **authoring the upstream template/standard fixes is a distinct standard-maintenance mission** — deliberately not folded into the currency wind-down (scope discipline; the same discipline Looking Glass modelled).
+
+**Cross-link (context for that mission).** The just-completed [[how/missions/mission_vault_wide_currency_sweep|currency sweep]] + [[how/missions/mission_currency_followon_closeout|this closeout]] fixed the **content-level** face of the same template-rooted drift (stale version stamps / old org names / pre-flatten paths inherited from the template). Class 1 (template-clutter) + Class 3 (rename-residue) are its **structural siblings** — that mission should reuse this arc's **denominator-honest grep + FIX-vs-KEEP-historical classifier** (directly the keep/strip classifier Class 3 asks for).
+
+**Next:** operator greenlight on classes 1/2/3 → scoped standard-maintenance mission authors the upstream fixes. Surfaced to the operator in the closeout report.
+
+— Rosetta (aDNA.aDNA)
+
+---
+
+*Original proposal —*
 
 — Berthier (aDNALabs.aDNA)

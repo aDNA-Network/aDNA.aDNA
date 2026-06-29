@@ -5,7 +5,8 @@ title: "Flagged follow-ons from the vault-wide currency sweep (broader-than-curr
 created: 2026-06-29
 updated: 2026-06-29
 last_edited_by: agent_stanley
-status: open
+status: completed
+resolved_by: mission_currency_followon_closeout (2026-06-29)
 source: mission_vault_wide_currency_sweep (REVIEW-set + denominator-honest residual grep)
 tags: [backlog, follow_on, currency, structural_drift, what_ground_truth, spec_owner, tooling]
 ---
@@ -24,3 +25,18 @@ The [[how/missions/mission_vault_wide_currency_sweep|vault-wide currency sweep]]
 | 6 | **Tool + schema currency** | `what/lattices/tools/{adna_validate.py,compliance_checker.py}` docstrings; `frontmatter_schema.json` `$id`+`description` | Docstrings claim conformance to "Standard **v2.2**"; standard is v2.3. **Tooling has behavior** — bumping the stamp without verifying the validator/schema implements v2.3 (16 base types, inventory/identity entities) would be a false RC-CURR-01 claim. Also: `frontmatter_schema.json` `$id` uses the **abandoned `adna.dev`** domain (now `adna.network`); changing a schema `$id` has compatibility implications. | Verify-then-update: confirm v2.3 rule coverage; decide `$id` domain/version migration |
 
 **Pattern note (for III / the III-campaign learning store).** Items 1 + 6 are the **"mirror more current than its source"** pattern (Looking Glass marquee) recurring at the **spec-convention** and **tooling** layers: the live site/standard advanced to v2.3 while the normative §3.5 convention and the validator/schema docstrings still describe the pre-v2.3 world. Worth feeding to Argus's `campaign_h` as evidence that the fidelity-drift pattern is layer-recurrent, not site-specific.
+
+## Resolution (2026-06-29)
+
+**CLOSED** by [[how/missions/mission_currency_followon_closeout|mission_currency_followon_closeout]]. All 6 items dispositioned (gates held 304/304):
+
+| # | Item | Outcome |
+|---|------|---------|
+| 1 | adna_standard §3.5 convention | **CLOSED** — reconciled to ADR-006 + ADR-008 (`aDNA` repo at `.adna/`); line-13 errata; no version bump (operator-approved). |
+| 2 | spec_forge_ecosystem rename | **CLOSED** — display names → Astro/ComfyUI/Molecules/Oration; remote URLs preserved; rename-wave note added. |
+| 3 | spec_org_pattern remotes | **VERIFY-KEEP** — SuperLeague/CakeHealth `LatticeProtocol/` remotes confirmed correct (private/partner). |
+| 4 | ontology_unification 14→16 | **CLOSED** — Appendix-A reference → v3.1 (+identity/inventory); dated §6 worked example KEEP-with-note (not re-authored). |
+| 5 | ontology_workshop "14 base" | **KEEP-historical** — accurate past-vault example. |
+| 6 | tools v2.2 + adna.dev | **CLOSED** — docstrings/`$id` → v2.3/adna.network (logic version-agnostic; schema has no internal consumers). |
+
+Refinement-of-record: #4 turned out to be a **dated worked example** (provenance), so the honest fix was the reference list + a currency note, not a wholesale re-author. Structural siblings (template-clutter, rename-residue) live in the **Berthier fleet-defects** inbound (operator-gated; separate standard-maintenance mission).

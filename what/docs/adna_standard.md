@@ -2,15 +2,16 @@
 type: context
 title: "aDNA Universal Standard v2.3"
 created: 2026-02-11
-updated: 2026-06-22
+updated: 2026-06-29
 status: approved
-last_edited_by: agent_rosetta
+last_edited_by: agent_stanley
 tags: [adna, standard, spec, normative]
 ---
 
 # aDNA Universal Standard
 
 <!-- v2.3 | 2026-06-22 | inventory+identity promoted to base (ADR-035) -->
+<!-- v2.3 errata | 2026-06-29 | §3.5 reconciled to ADR-006 (repo rename Agentic-DNA→aDNA) + ADR-008 (airlock embedding at .adna/): base template is the `aDNA` repo embedded at `.adna/`, not a visible `Agentic-DNA/` dir. No normative change. -->
 
 **Agentic DNA (aDNA)** — A knowledge architecture standard for AI-native projects.
 
@@ -182,7 +183,7 @@ An aDNA project directory SHOULD use the `.aDNA` suffix to indicate it follows t
 
 **Naming rules:**
 
-- The base template repository (`Agentic-DNA/`) MUST NOT use the `.aDNA` suffix — it is the source, not an instance.
+- The base template (the `aDNA` repository, embedded in a workspace at `.adna/`) MUST NOT use the `.aDNA` suffix — it is the source, not an instance. *(Per ADR-006 repo rename `Agentic-DNA`→`aDNA` + ADR-008 airlock embedding at `.adna/`.)*
 - Forked projects SHOULD use the pattern `ProjectName.aDNA/` (e.g., `zeta.aDNA/`, `my_research.aDNA/`).
 - The project name portion MUST match `[a-z][a-z0-9_]{0,63}` — lowercase letters, digits, and underscores only, starting with a letter, maximum 64 characters.
 - The suffix `.aDNA` uses mixed case (capital D, N, A) matching the abbreviation branding.
@@ -203,7 +204,7 @@ find . -maxdepth 1 -name "*.aDNA" -type d
 
 ```
 ~/aDNA/
-├── Agentic-DNA/           # Base template (source repo, no suffix)
+├── .adna/                 # Base template — the aDNA standard tree (hidden; source, not an instance)
 ├── my_research.aDNA/      # Forked project (aDNA instance)
 ├── zeta.aDNA/             # Another project
 └── CLAUDE.md              # Workspace-level governance
