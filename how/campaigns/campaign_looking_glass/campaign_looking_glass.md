@@ -11,7 +11,7 @@ calibrated_sessions: "6-8"
 estimation_class: "content-novel"
 priority: medium
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-28
 last_edited_by: agent_stanley
 tags: [campaign, iii, iii_campaign_pilot, website, context_coherence, looking_glass]
 strategic_compass: "[[how/backlog/idea_iii_campaign_pattern|idea_iii_campaign_pattern]]"
@@ -111,7 +111,7 @@ The operator's three parts map onto III at strategic scale. Lean shape: Construc
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
 | 2 | Inspect — run the III across Subject A + B → scored findings register | 1-2 | M1 | planned |
-| 3 | Introspect + plan — calibrate the III; produce the ranked improvement plan | 1 | M2 | planned |
+| 3 | Introspect + plan — calibrate the III; produce the ranked improvement plan | 1 | M2 | **completed 2026-06-28** |
 
 **Phase exit gate (= Decision Point 3)**: a ranked, evidence-backed improvement plan exists and is approved by the operator.
 
@@ -134,7 +134,7 @@ The operator's three parts map onto III at strategic scale. Lean shape: Construc
 |---|------|----------|--------|
 | 1 | End of the planning mission (this charter) | Operator ratifies the full charter (success criteria, phases, gates, scaffolding spec, measurement model, sized missions) before Part 1 executes | **ratified 2026-06-27** |
 | 2 | Part 1 → Part 2 | Scaffolding (packs/personas/measurement) is built + good enough to drive the review; baselines captured | **ratified (operator GO) 2026-06-27** |
-| 3 | Part 2 → Part 3 | The ranked improvement plan is approved | pending |
+| 3 | Part 2 → Part 3 | The ranked improvement plan is approved | **presented (awaiting operator ruling) 2026-06-28** |
 
 ## The III scaffolding (Part-1 deliverable)
 
