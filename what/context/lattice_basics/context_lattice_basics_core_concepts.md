@@ -3,11 +3,11 @@ type: context_core
 topic: lattice_basics
 subtopic: core_concepts
 created: 2026-03-05
-updated: 2026-03-18
-sources: ["aDNA Standard v2.1 (what/docs/adna_standard.md)", "aDNA Design Document (what/docs/adna_design.md)", "adna_core lattice_design context", "hello_world.lattice.yaml example", "type_vocabulary context"]
+updated: 2026-06-29
+sources: ["aDNA Standard v2.3 (what/docs/adna_standard.md)", "aDNA Design Document (what/docs/adna_design.md)", "adna_core lattice_design context", "hello_world.lattice.yaml example", "type_vocabulary context"]
 context_version: "2.0"
 token_estimate: ~1000
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [context, lattice_basics]
 quality_score: 4.0
 signal_density: 4
@@ -146,7 +146,7 @@ All deployed objects carry FAIR (Findable, Accessible, Interoperable, Reusable) 
 
 ## Sources
 
-- aDNA Standard v2.1 (`what/docs/adna_standard.md`) — normative specification
+- aDNA Standard v2.3 (`what/docs/adna_standard.md`) — normative specification
 - aDNA Design Document (`what/docs/adna_design.md`) — architecture rationale
 - Lattice design context (`what/context/adna_core/context_adna_core_lattice_design.md`) — YAML schema reference
 - Hello World example (`what/lattices/examples/hello_world.lattice.yaml`) — minimal valid lattice

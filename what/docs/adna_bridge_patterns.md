@@ -2,15 +2,15 @@
 type: context
 title: "aDNA Bridge Patterns — Cross-Instance Composition"
 created: 2026-02-13
-updated: 2026-02-19
+updated: 2026-06-29
 status: approved
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [adna, bridge_patterns, cross_instance, composition, spec]
 ---
 
 # aDNA Bridge Patterns
 
-<!-- Companion to the aDNA Universal Standard v2.1 and Design Document -->
+<!-- Companion to the aDNA Universal Standard v2.3 and Design Document -->
 
 ## 1. Introduction
 

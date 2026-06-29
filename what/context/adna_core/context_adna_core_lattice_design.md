@@ -3,11 +3,11 @@ type: context_guide
 topic: adna_core
 subtopic: lattice_design
 created: 2026-02-20
-updated: 2026-03-18
-sources: ["lattice_yaml_schema.json (draft-2020-12)", "aDNA Standard v2.1 (§5.1)", "Example lattices (6): deep_research, protein_binder_design, org_formation, hello_world, knowledge_base, docking_assessment"]
+updated: 2026-06-29
+sources: ["lattice_yaml_schema.json (draft-2020-12)", "aDNA Standard v2.3 (§5.1)", "Example lattices (6): deep_research, protein_binder_design, org_formation, hello_world, knowledge_base, docking_assessment"]
 context_version: "1.0"
 token_estimate: ~1000
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [context, adna_core, lattice, yaml, schema, federation]
 quality_score: 4.4
 signal_density: 5
@@ -180,5 +180,5 @@ federation:
 ## Sources
 
 1. `lattice_yaml_schema.json` — JSON Schema (draft-2020-12), authoritative structure definition
-2. aDNA Standard v2.1 — §5.1 (what/ registry pattern, ontology artifact)
+2. aDNA Standard v2.3 — §5.1 (what/ registry pattern, ontology artifact)
 3. Example lattices — 6 validated examples covering all types and federation patterns

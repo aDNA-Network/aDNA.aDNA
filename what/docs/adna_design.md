@@ -2,15 +2,15 @@
 type: context
 title: "aDNA Design Document — Architecture Rationale"
 created: 2026-02-13
-updated: 2026-02-19
+updated: 2026-06-29
 status: approved
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [adna, design, rationale, architecture, spec]
 ---
 
 # aDNA Design Document
 
-<!-- Companion to the aDNA Universal Standard v2.1 -->
+<!-- Companion to the aDNA Universal Standard v2.3 -->
 
 ## 1. Preamble
 

@@ -2,13 +2,13 @@
 
 ## Overview
 
-Standards, templates, and FAIR metadata requirements for the three core aDNA object types: modules, datasets, and lattices. References the normative aDNA Standard v2.1.
+Standards, templates, and FAIR metadata requirements for the three core aDNA object types: modules, datasets, and lattices. References the normative aDNA Standard v2.3.
 
 ## Subtopics
 
 | # | Subtopic | File | ~Tokens | Quality | Sources |
 |---|----------|------|---------|---------|---------|
-| 1 | Standards Overview | `context_object_standards_overview.md` | ~1,000 | 3.8 | 6 sources (Standard v2.1, lattice schema, dataset schema, 13 examples, type_vocabulary, fair_mapping) |
+| 1 | Standards Overview | `context_object_standards_overview.md` | ~1,000 | 3.8 | 6 sources (Standard v2.3, lattice schema, dataset schema, 13 examples, type_vocabulary, fair_mapping) |
 
 ## Total Token Budget
 

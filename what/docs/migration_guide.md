@@ -2,7 +2,7 @@
 type: context
 title: "aDNA Migration Guide — Adding aDNA to an Existing Project"
 created: 2026-03-18
-updated: 2026-05-29
+updated: 2026-06-29
 status: approved
 last_edited_by: agent_stanley
 tags: [adna, migration, adoption, guide, getting-started]
@@ -330,7 +330,7 @@ Once the core is working, enhance progressively:
 - **Week 2: Templates**. Create `how/templates/` for file types you create repeatedly. A template is a Markdown file with pre-filled frontmatter copied at creation.
 - **Week 3: Your first campaign**. For multi-session initiatives (feature build, research project, migration), create `how/campaigns/`. Campaigns → missions → objectives gives agents structured context about what you're working toward.
 - **When needed: Context library**. As domain knowledge accumulates, organize into `what/context/` with topic-based files. Agents load on demand instead of re-discovering each session.
-- **When collaborating: Obsidian config**. Add `.obsidian/` with theme + plugin config. See the [Agentic-DNA repo](https://github.com/LatticeProtocol/Agentic-DNA) for 15-plugin Tokyo Night setup.
+- **When collaborating: Obsidian config**. Add `.obsidian/` with theme + plugin config. See the [aDNA repo](https://github.com/aDNA-Network/aDNA) for 15-plugin Tokyo Night setup.
 - **When connecting: Bridge patterns**. To reference or compose with other aDNA instances, see [`adna_bridge_patterns.md`](adna_bridge_patterns.md) for nesting, sibling, and monorepo composition.
 
 ---

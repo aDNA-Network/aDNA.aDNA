@@ -3,11 +3,11 @@ type: context_core
 topic: lattice_basics
 subtopic: vault_architecture
 created: 2026-03-05
-updated: 2026-03-18
-sources: ["aDNA Standard v2.1 (what/docs/adna_standard.md)", "aDNA Design Document (what/docs/adna_design.md)", "adna CLAUDE.md", "adna MANIFEST.md", "template library (how/templates/AGENTS.md)"]
+updated: 2026-06-29
+sources: ["aDNA Standard v2.3 (what/docs/adna_standard.md)", "aDNA Design Document (what/docs/adna_design.md)", "adna CLAUDE.md", "adna MANIFEST.md", "template library (how/templates/AGENTS.md)"]
 context_version: "2.0"
 token_estimate: ~1000
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [context, lattice_basics]
 quality_score: 4.0
 signal_density: 4
@@ -146,7 +146,7 @@ Obsidian configuration lives in `.obsidian/`:
 
 ## Sources
 
-- aDNA Standard v2.1 (`what/docs/adna_standard.md`) — normative specification
+- aDNA Standard v2.3 (`what/docs/adna_standard.md`) — normative specification
 - aDNA Design Document (`what/docs/adna_design.md`) — architecture rationale
 - `CLAUDE.md` — governance file reference
 - `MANIFEST.md` — project identity template

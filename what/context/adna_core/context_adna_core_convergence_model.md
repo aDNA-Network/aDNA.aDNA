@@ -3,11 +3,11 @@ type: context_core
 topic: adna_core
 subtopic: convergence_model
 created: 2026-02-20
-updated: 2026-03-18
-sources: ["aDNA Standard v2.1 (§8.7, §10)", "aDNA Design Document (§3, §6)", "campaign_adna_review operational data (126+ sessions)"]
+updated: 2026-06-29
+sources: ["aDNA Standard v2.3 (§8.7, §10)", "aDNA Design Document (§3, §6)", "campaign_adna_review operational data (126+ sessions)"]
 context_version: "1.0"
 token_estimate: ~500
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [context, adna_core, convergence, token_budget, narrowing]
 quality_score: 4.0
 signal_density: 4
@@ -84,6 +84,6 @@ From the org_formation merge (M9 worked example):
 
 ## Sources
 
-1. aDNA Standard v2.1 — §8.7 (75% Rule), §10 (Context Library token budgets)
+1. aDNA Standard v2.3 — §8.7 (75% Rule), §10 (Context Library token budgets)
 2. aDNA Design Document — §3 (triad question test), §6 (session model)
 3. Operational data — 126+ sessions across 5 campaigns demonstrating convergent narrowing

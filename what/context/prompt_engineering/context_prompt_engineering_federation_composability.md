@@ -3,11 +3,11 @@ type: context_research
 topic: prompt_engineering
 subtopic: federation_composability
 created: 2026-02-19
-updated: 2026-03-18
+updated: 2026-06-29
 sources: ["aDNA Bridge Patterns v1.0", "W3C — SPARQL 1.1 Federation Extensions", "Keet (2021) — Conflict Resolution Framework for Ontologies", "MOMo — Modular Ontology Modeling", "SHACL — W3C Shapes Constraint Language", "FAIR Guiding Principles"]
 context_version: "1.0"
 token_estimate: ~2000
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [context, prompt_engineering]
 quality_score: 4.4
 signal_density: 4
@@ -166,7 +166,7 @@ SHACL (W3C Shapes Constraint Language) provides formal shape definitions for RDF
 
 ## Sources
 
-- [aDNA Bridge Patterns](https://github.com/LatticeProtocol/Agentic-DNA) — Companion to aDNA Standard v2.0. Composition patterns (nesting, sibling, monorepo), discovery protocol, scope boundaries, cross-referencing conventions.
+- [aDNA Bridge Patterns](https://github.com/aDNA-Network/aDNA) — Companion to aDNA Standard v2.3. Composition patterns (nesting, sibling, monorepo), discovery protocol, scope boundaries, cross-referencing conventions.
 - [SPARQL 1.1 Federation Extensions](https://www.w3.org/TR/sparql11-federated-query/) — W3C (2013). SERVICE keyword for cross-endpoint queries.
 - [Toward a Systematic Conflict Resolution Framework for Ontologies](https://pmc.ncbi.nlm.nih.gov/articles/PMC8352153/) — Keet (2021). 10 conflict types in 4 groups with fixed resolution strategies.
 - [Modular Ontology Modeling (MOMo)](https://journals.sagepub.com/doi/10.3233/SW-222886) — Shimizu et al. Pattern-based modules, OPLa annotations, shared border concepts.

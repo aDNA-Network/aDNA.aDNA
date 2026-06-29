@@ -3,11 +3,11 @@ type: context_core
 topic: object_standards
 subtopic: overview
 created: 2026-03-05
-updated: 2026-04-03
-sources: ["aDNA Standard v2.1 (what/docs/adna_standard.md)", "lattice_yaml_schema.json", "dataset_yaml_schema.json"]
+updated: 2026-06-29
+sources: ["aDNA Standard v2.3 (what/docs/adna_standard.md)", "lattice_yaml_schema.json", "dataset_yaml_schema.json"]
 context_version: "2.1"
 token_estimate: ~600
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [context, object_standards]
 quality_score: 4.1
 signal_density: 5
@@ -27,9 +27,9 @@ Quick reference for the three core aDNA object types. Normative specification: `
 
 | Object | Directory | Schema | Spec Section | Key Concept |
 |--------|-----------|--------|-------------|-------------|
-| **Module** | `what/modules/` | -- | v2.1 ss4.1 | Atomic capability: one function, one model, one tool. Typed I/O from 19-type vocabulary. |
-| **Dataset** | `what/datasets/` | `dataset_yaml_schema.json` | v2.1 ss4.2 | Data layer: 7 storage providers, lineage tracking, federation metadata. Subtype: `target` (`dataset_class: target`). |
-| **Lattice** | `what/lattices/` | `lattice_yaml_schema.json` | v2.1 ss4.3 | Directed graph of modules + datasets. Types: `pipeline`, `agent`, `context_graph`, `workflow`. 13 examples in `what/lattices/examples/`. |
+| **Module** | `what/modules/` | -- | v2.3 ss4.1 | Atomic capability: one function, one model, one tool. Typed I/O from 19-type vocabulary. |
+| **Dataset** | `what/datasets/` | `dataset_yaml_schema.json` | v2.3 ss4.2 | Data layer: 7 storage providers, lineage tracking, federation metadata. Subtype: `target` (`dataset_class: target`). |
+| **Lattice** | `what/lattices/` | `lattice_yaml_schema.json` | v2.3 ss4.3 | Directed graph of modules + datasets. Types: `pipeline`, `agent`, `context_graph`, `workflow`. 13 examples in `what/lattices/examples/`. |
 
 ## Required Frontmatter (All Objects)
 
@@ -73,7 +73,7 @@ Full reference: `what/context/adna_core/context_adna_core_type_vocabulary.md`.
 
 ## Sources
 
-- aDNA Standard v2.1 (`what/docs/adna_standard.md`) -- normative specification
+- aDNA Standard v2.3 (`what/docs/adna_standard.md`) -- normative specification
 - Lattice YAML schema (`what/lattices/lattice_yaml_schema.json`)
 - Dataset YAML schema (`what/datasets/dataset_yaml_schema.json`)
 - Type vocabulary context (`what/context/adna_core/context_adna_core_type_vocabulary.md`)

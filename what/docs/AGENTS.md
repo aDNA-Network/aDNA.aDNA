@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-19
-updated: 2026-03-19
-last_edited_by: agent_init
+updated: 2026-06-29
+last_edited_by: agent_stanley
 tags: [directory_index, docs]
 token_estimate: ~350
 ---
@@ -17,7 +17,7 @@ Core specification documents that define the aDNA (Agentic DNA) knowledge archit
 
 | Document | Token Estimate | Purpose |
 |----------|---------------|---------|
-| `adna_standard.md` | ~8,000 | Normative aDNA specification v2.1 — triad structure, entity types, governance, pipelines, FAIR metadata. 9 Mermaid diagrams. |
+| `adna_standard.md` | ~8,000 | Normative aDNA specification v2.3 — triad structure, entity types, governance, pipelines, FAIR metadata. 9 Mermaid diagrams. |
 | `adna_design.md` | ~5,000 | Design rationale and deployment patterns — standalone, nested, federated forms. 5 Mermaid diagrams. |
 | `adna_bridge_patterns.md` | ~4,000 | Composition patterns for multi-vault architectures — nesting, federation, discovery. 5 Mermaid diagrams. |
 | `migration_guide.md` | ~3,500 | Adding aDNA to existing projects — decision tree (bare vs. embedded), step-by-step walkthroughs, starter templates, common pitfalls. |

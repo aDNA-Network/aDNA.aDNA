@@ -8,8 +8,8 @@ reviewers: []
 approved_by: FA
 approved_date: 2026-03-19
 created: 2026-03-19
-updated: 2026-03-19
-last_edited_by: agent_init
+updated: 2026-06-29
+last_edited_by: agent_stanley
 tags: [prd, start-kit, onboarding, adoption, cli]
 ---
 
@@ -376,7 +376,7 @@ $ cd my-existing-repo && adna init
 
 | Dependency | Type | Status | Risk |
 |-----------|------|--------|------|
-| `adna_standard.md` §5.4 (skeleton definitions) | Internal | Available (v2.1) | Low — stable specification |
+| `adna_standard.md` §5.4 (skeleton definitions) | Internal | Available (v2.3) | Low — stable specification |
 | `skill_onboarding.md` (interview flow, domain extensions) | Internal | Available | Low — established patterns |
 | `migration_guide.md` (init flow, embedded triad patterns) | Internal | Available (v1.0) | Low — just published |
 | `agent_first_guide.md` (terminal-only patterns, substitution table) | Internal | Available (v1.0) | Low — just published |

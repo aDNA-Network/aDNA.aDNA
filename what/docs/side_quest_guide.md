@@ -2,9 +2,9 @@
 type: doc
 title: "Side-Quest Participation Guide"
 created: 2026-03-20
-updated: 2026-03-20
+updated: 2026-06-29
 status: active
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [doc, community, side-quests, validation, participation]
 ---
 
@@ -48,7 +48,7 @@ Start with **easy** quests to get familiar with the workflow.
 
 ## How to Submit Results
 
-1. **Fork** the [Agentic-DNA repo](https://github.com/LatticeProtocol/Agentic-DNA) (or use your existing fork)
+1. **Fork** the [aDNA repo](https://github.com/aDNA-Network/aDNA) (or use your existing fork)
 2. **Create a result file** in `how/quests/results/`:
    - Filename: `result_<quest_id>_<YYYYMMDD>_<your_name>.md`
    - Use the [quest result template](../../how/templates/template_quest_result.md)
@@ -101,6 +101,6 @@ Your individual result is one data point. The value comes from aggregation acros
 
 ## Questions?
 
-- Open a [discussion](https://github.com/LatticeProtocol/Agentic-DNA/discussions) for questions about quests or the submission process
+- Open a [discussion](https://github.com/aDNA-Network/aDNA/discussions) for questions about quests or the submission process
 - Check [`CONTRIBUTING.md`](../../CONTRIBUTING.md) for the general contribution guide
 - Read [`how/quests/AGENTS.md`](../../how/quests/AGENTS.md) for agent-specific guidance

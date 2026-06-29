@@ -3,11 +3,11 @@ type: context_guide
 topic: adna_core
 subtopic: context_engineering
 created: 2026-02-20
-updated: 2026-03-18
-sources: ["aDNA Standard v2.1 (§10)", "Context Quality Rubric v1.0", "Context library AGENTS.md", "prompt_engineering/signal_to_token operational patterns"]
+updated: 2026-06-29
+sources: ["aDNA Standard v2.3 (§10)", "Context Quality Rubric v1.0", "Context library AGENTS.md", "prompt_engineering/signal_to_token operational patterns"]
 context_version: "1.0"
 token_estimate: ~1000
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [context, adna_core, context_engineering, quality, token_budget]
 quality_score: 4.4
 signal_density: 5
@@ -148,7 +148,7 @@ Recipe index: `what/context/context_recipes.md`. Load it when starting a task th
 
 ## Sources
 
-1. aDNA Standard v2.1 — §10 (Context Library structure, subtypes, token budgets)
+1. aDNA Standard v2.3 — §10 (Context Library structure, subtypes, token budgets)
 2. Context Quality Rubric v1.0 — 6-axis evaluation framework with calibration
 3. Context library AGENTS.md — library protocol and quality standards
 4. Operational patterns from prompt_engineering/signal_to_token — format selection, token efficiency

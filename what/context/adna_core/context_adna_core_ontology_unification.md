@@ -3,11 +3,11 @@ type: context_guide
 topic: adna_core
 subtopic: ontology_unification
 created: 2026-02-20
-updated: 2026-03-18
-sources: ["Ontology Unification Protocol v1.0 (ontology_unification.md)", "aDNA Standard v2.1 (§5.1 ontology artifact)", "Keet (2021) conflict resolution framework"]
+updated: 2026-06-29
+sources: ["Ontology Unification Protocol v1.0 (ontology_unification.md)", "aDNA Standard v2.3 (§5.1 ontology artifact)", "Keet (2021) conflict resolution framework"]
 context_version: "1.0"
 token_estimate: ~1000
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [context, adna_core, ontology, unification, merge, conflict_resolution]
 quality_score: 4.4
 signal_density: 5
@@ -139,5 +139,5 @@ For each extension present in both instances, check:
 ## Sources
 
 1. Ontology Unification Protocol v1.0 — full 4-step algorithm, 10-type taxonomy, worked example
-2. aDNA Standard v2.1 — §5.1 (ontology artifact, registry pattern)
+2. aDNA Standard v2.3 — §5.1 (ontology artifact, registry pattern)
 3. Keet, C.M. (2021). "Toward a Systematic Conflict Resolution Framework for Ontologies." *Applied Sciences*, 11(15), 6903.

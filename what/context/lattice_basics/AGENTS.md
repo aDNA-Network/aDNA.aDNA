@@ -1,9 +1,9 @@
 ---
 type: directory_index
 created: 2026-03-18
-updated: 2026-04-03
+updated: 2026-06-29
 token_estimate: 200
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [directory_index, context, lattice_basics]
 ---
 
@@ -17,8 +17,8 @@ Orienting new users and agents to the aDNA framework: vault structure, `.lattice
 
 | # | Subtopic | File | ~Tokens | Quality | Sources |
 |---|----------|------|---------|---------|---------|
-| 1 | Core Concepts | `context_lattice_basics_core_concepts.md` | ~1,000 | 4.0 | 5 sources (Standard v2.1, Design Doc, lattice_design context, hello_world example, type_vocabulary) |
-| 2 | Vault Architecture | `context_lattice_basics_vault_architecture.md` | ~1,000 | 4.0 | 5 sources (Standard v2.1, Design Doc, CLAUDE.md, MANIFEST.md, template library) |
+| 1 | Core Concepts | `context_lattice_basics_core_concepts.md` | ~1,000 | 4.0 | 5 sources (Standard v2.3, Design Doc, lattice_design context, hello_world example, type_vocabulary) |
+| 2 | Vault Architecture | `context_lattice_basics_vault_architecture.md` | ~1,000 | 4.0 | 5 sources (Standard v2.3, Design Doc, CLAUDE.md, MANIFEST.md, template library) |
 
 ## Total Token Budget
 

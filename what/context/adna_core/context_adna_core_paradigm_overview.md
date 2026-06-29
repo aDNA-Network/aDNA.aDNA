@@ -3,11 +3,11 @@ type: context_core
 topic: adna_core
 subtopic: paradigm_overview
 created: 2026-02-20
-updated: 2026-03-18
-sources: ["aDNA Standard v2.1", "aDNA Design Document", "CLAUDE.md reference implementation"]
+updated: 2026-06-29
+sources: ["aDNA Standard v2.3", "aDNA Design Document", "CLAUDE.md reference implementation"]
 context_version: "1.0"
 token_estimate: ~1000
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [context, adna_core, paradigm, triad, governance]
 quality_score: 4.2
 signal_density: 4
@@ -87,6 +87,6 @@ Three categories are sufficient because they map to the three dimensions of any 
 
 ## Sources
 
-1. aDNA Universal Standard v2.1 — normative specification (§3 Triad, §4 Governance, §8 Sessions, §13 Collision Prevention)
+1. aDNA Universal Standard v2.3 — normative specification (§3 Triad, §4 Governance, §8 Sessions, §13 Collision Prevention)
 2. aDNA Design Document — design rationale and trade-offs
 3. CLAUDE.md reference implementation — Lattice Labs vault, operational since 2026-02

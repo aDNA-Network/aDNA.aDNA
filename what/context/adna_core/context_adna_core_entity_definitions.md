@@ -3,11 +3,11 @@ type: context_core
 topic: adna_core
 subtopic: entity_definitions
 created: 2026-03-01
-updated: 2026-06-18
-sources: ["aDNA Standard v2.1 (§5, §7)", "Per-entity AGENTS.md protocol files", "ADR-035 (inventory + identity base-type promotion)"]
+updated: 2026-06-29
+sources: ["aDNA Standard v2.3 (§5, §7)", "Per-entity AGENTS.md protocol files", "ADR-035 (inventory + identity base-type promotion)"]
 context_version: "1.0"
 token_estimate: ~1600
-last_edited_by: agent_rosetta
+last_edited_by: agent_stanley
 tags: [context, adna_core, ontology, entity_types, definitions]
 quality_score: 3.8
 signal_density: 4
@@ -260,5 +260,5 @@ Domain-specific extensions follow the `{namespace}_{type}` pattern (e.g., `crm_c
 
 ## Sources
 
-1. aDNA Standard v2.1 — §5 (ontology), §7 (extensions)
+1. aDNA Standard v2.3 — §5 (ontology), §7 (extensions)
 2. Per-entity AGENTS.md protocol files

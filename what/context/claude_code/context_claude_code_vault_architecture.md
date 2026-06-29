@@ -3,11 +3,11 @@ type: context_guide
 topic: claude_code
 subtopic: vault_architecture
 created: 2026-03-27
-updated: 2026-04-03
-sources: ["aDNA Standard v2.2", "Claude Code project scoping"]
+updated: 2026-06-29
+sources: ["aDNA Standard v2.3", "Claude Code project scoping"]
 context_version: "1.1"
 token_estimate: ~1100
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 runtime: claude_code
 tags: [context, claude_code, vault_architecture, multi_vault, organization]
 quality_score: 4.2
@@ -97,5 +97,5 @@ New vault if: fundamentally different file types, agents need narrower context, 
 
 ## Sources
 
-- **aDNA Standard v2.2** — triad structure, governance files, entity types
+- **aDNA Standard v2.3** — triad structure, governance files, entity types
 - **Claude Code project scoping** — `.claude/` scope chain, global-to-project inheritance

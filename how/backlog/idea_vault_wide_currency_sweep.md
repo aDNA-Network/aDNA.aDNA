@@ -3,9 +3,10 @@ type: backlog
 idea_class: follow_on
 title: "Vault-wide currency sweep (out-of-slice drift beyond Looking Glass)"
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-06-29
 last_edited_by: agent_stanley
-status: open
+status: completed
+resolved_by: mission_vault_wide_currency_sweep (2026-06-29)
 source: campaign_looking_glass (M4 discovery; out of the chartered site-backing slice)
 tags: [backlog, follow_on, currency, vault_maintenance, what_ground_truth, looking_glass]
 ---
@@ -32,3 +33,9 @@ tags: [backlog, follow_on, currency, vault_maintenance, what_ground_truth, looki
 ## Why a follow-on (not M4)
 
 The Looking Glass charter bounds Subject B to the site-backing slice (operator decision); expanding M4 into a full-vault audit is the explicit scope-creep risk the pilot tests its discipline against. **Pilot signal (→ instrumentation):** the bounded-subject decision worked — it prevented scope-creep — *and* a follow-on full-currency sweep is warranted as separate, scoped work. Best run as a `vault_maintenance` III cycle with a denominator-honest grep + the same do-not-touch guardrails.
+
+## Resolution (2026-06-29)
+
+**CLOSED** by [[how/missions/mission_vault_wide_currency_sweep|mission_vault_wide_currency_sweep]] (single `vault_maintenance` III cycle). The clean currency class — standard version stamps (`v2.1`/`v2.2`→`v2.3`) + canonical public-repo URLs (`LatticeProtocol/Agentic-DNA`→`aDNA-Network/aDNA`) — was swept across **29 out-of-slice content files** (FIX-set residual 0; build 179 pages/0 err; gates **304/304**, zero regression). The same do-not-touch guardrails held (ADRs / iii_results / coord / VISION / semver-examples / Archivist audit-examples untouched).
+
+The bounded set in the inventory above was honored; six items surfaced as **broader-than-currency drift** (a normative §3.5 convention, ecosystem-spec vault-renames, private-remote verification, an ontology-doc 14→16 refresh, historical-KEEP, and tool/schema currency) and were **flagged-not-fixed** → [[how/backlog/idea_currency_sweep_flagged_followons|idea_currency_sweep_flagged_followons]].

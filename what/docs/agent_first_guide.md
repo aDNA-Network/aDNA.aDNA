@@ -2,7 +2,7 @@
 type: context
 title: "Agent-First Guide — Using aDNA Without Obsidian"
 created: 2026-03-19
-updated: 2026-05-29
+updated: 2026-06-29
 status: approved
 last_edited_by: agent_stanley
 tags: [adna, agent-first, claude-code, terminal, guide]
@@ -82,7 +82,7 @@ aDNA is a directory convention — Markdown files with YAML frontmatter in a `wh
 ### Step 1: Clone the repo
 
 ```bash
-git clone https://github.com/LatticeProtocol/Agentic-DNA.git adna
+git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA
 cd adna
 ```
 

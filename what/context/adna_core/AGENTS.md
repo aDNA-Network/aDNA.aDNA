@@ -1,9 +1,9 @@
 ---
 type: directory_index
 created: 2026-02-20
-updated: 2026-03-18
+updated: 2026-06-29
 token_estimate: 13100
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [directory_index, context, adna_core]
 ---
 
@@ -11,7 +11,7 @@ tags: [directory_index, context, adna_core]
 
 ## Overview
 
-Foundational knowledge for the aDNA paradigm — enough base context for an agent to bootstrap into the standard and begin designing ontologies, lattices, and campaigns. Distilled from the aDNA Standard v2.1, Design Document, and Phase 4 protocol deliverables (ontology unification, federation, interop).
+Foundational knowledge for the aDNA paradigm — enough base context for an agent to bootstrap into the standard and begin designing ontologies, lattices, and campaigns. Distilled from the aDNA Standard v2.3, Design Document, and Phase 4 protocol deliverables (ontology unification, federation, interop).
 
 ## Subtopics
 

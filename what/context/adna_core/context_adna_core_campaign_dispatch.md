@@ -3,11 +3,11 @@ type: context_guide
 topic: adna_core
 subtopic: campaign_dispatch
 created: 2026-02-20
-updated: 2026-03-18
-sources: ["aDNA Standard v2.1 (§9 Mission System)", "Campaign AGENTS.md protocol", "campaign_adna_review — worked example (18 missions, 7 phases)"]
+updated: 2026-06-29
+sources: ["aDNA Standard v2.3 (§9 Mission System)", "Campaign AGENTS.md protocol", "campaign_adna_review — worked example (18 missions, 7 phases)"]
 context_version: "1.0"
 token_estimate: ~1500
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [context, adna_core, campaign, mission, execution_hierarchy, dispatch]
 quality_score: 4.0
 signal_density: 4
@@ -197,6 +197,6 @@ The compass is optional. Simple projects with 1-2 campaigns don't need one. Add 
 
 ## Sources
 
-1. aDNA Standard v2.1 — §9 (Mission System), §8 (Session Model)
+1. aDNA Standard v2.3 — §9 (Mission System), §8 (Session Model)
 2. Campaign AGENTS.md — campaign protocol, phase gates, mission claiming
 3. campaign_adna_review — 18-mission, 7-phase worked example with 6 decision points

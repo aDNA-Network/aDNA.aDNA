@@ -3,11 +3,11 @@ type: context_guide
 topic: adna_core
 subtopic: ontology_design
 created: 2026-02-20
-updated: 2026-03-18
-sources: ["aDNA Standard v2.1 (§5, §7)", "Ontology Unification Protocol v1.0", "aDNA Design Document (§3, §9)"]
+updated: 2026-06-29
+sources: ["aDNA Standard v2.3 (§5, §7)", "Ontology Unification Protocol v1.0", "aDNA Design Document (§3, §9)"]
 context_version: "1.0"
 token_estimate: ~1000
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 tags: [context, adna_core, ontology, entity_types, base_extension]
 quality_score: 4.4
 signal_density: 5
@@ -142,6 +142,6 @@ For designing a coherent multi-entity domain from scratch (3+ entity types, rela
 
 ## Sources
 
-1. aDNA Standard v2.1 — §5 (Directory Structure), §7 (Frontmatter System)
+1. aDNA Standard v2.3 — §5 (Directory Structure), §7 (Frontmatter System)
 2. Ontology Unification Protocol v1.0 — §2 (Base Invariance), §5 (Namespace Specification)
 3. aDNA Design Document — §3 (Triad Rationale), §9 (Frontmatter as Integration Layer)

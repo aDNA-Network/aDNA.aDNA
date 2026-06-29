@@ -3,11 +3,11 @@ type: context_core
 topic: claude_code
 subtopic: config_cascade
 created: 2026-03-27
-updated: 2026-04-03
-sources: ["Claude Code documentation", "aDNA Standard v2.2", "Claude Code settings hierarchy"]
+updated: 2026-06-29
+sources: ["Claude Code documentation", "aDNA Standard v2.3", "Claude Code settings hierarchy"]
 context_version: "1.0"
 token_estimate: ~2000
-last_edited_by: agent_init
+last_edited_by: agent_stanley
 runtime: claude_code
 tags: [context, claude_code, config_cascade, claude_md, inheritance]
 quality_score: 4.0
@@ -239,5 +239,5 @@ Does it apply to ALL projects on this machine?
 ## Sources
 
 - **Claude Code documentation** -- CLAUDE.md loading behavior, settings hierarchy, auto-memory system, hooks API
-- **aDNA Standard v2.2** -- governance file conventions, _meta routing, session protocol
+- **aDNA Standard v2.3** -- governance file conventions, _meta routing, session protocol
 - **Claude Code settings hierarchy** -- permissions model, environment variable layering, local vs shared config
