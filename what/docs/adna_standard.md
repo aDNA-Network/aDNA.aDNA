@@ -1,6 +1,6 @@
 ---
 type: context
-title: "aDNA Universal Standard v2.3"
+title: "aDNA Universal Standard v2.4"
 created: 2026-02-11
 updated: 2026-06-29
 status: approved
@@ -12,6 +12,7 @@ tags: [adna, standard, spec, normative]
 
 <!-- v2.3 | 2026-06-22 | inventory+identity promoted to base (ADR-035) -->
 <!-- v2.3 errata | 2026-06-29 | §3.5 reconciled to ADR-006 (repo rename Agentic-DNA→aDNA) + ADR-008 (airlock embedding at .adna/): base template is the `aDNA` repo embedded at `.adna/`, not a visible `Agentic-DNA/` dir. No normative change. -->
+<!-- v2.4 | 2026-06-29 | §6.5 Rename Protocol (rename-time self-routing sweep) + §13.2 Tier-1 harness-injection safeguard (ADR-042, Drydock M03 fork-template hygiene & rename protocol). -->
 
 **Agentic DNA (aDNA)** — A knowledge architecture standard for AI-native projects.
 
@@ -612,6 +613,14 @@ The `type_` prefix pattern is RECOMMENDED for aDNA content files. It enables sor
 | `idea_` | Backlog ideas |
 | `skill_` | Skill procedures |
 
+### 6.5 Rename Protocol
+
+When a vault, project, or persona is **renamed**, the rename MUST, at rename-time, sweep the vault's own **live-routing governance files** (`CLAUDE.md`, `STATE.md`, `AGENTS.md`) of self-references to the **old** name. A vault whose routing files still point at its prior identity is out-by-event (OBE) residue — masked when a back-compat shim keeps the stale references resolving, which is exactly why the sweep is mandatory rather than incidental.
+
+**Scope discipline** (the load-bearing rule): the sweep targets the **live-routing self-reference subset ONLY** — a file's own governance/routing prose that names the vault. It MUST NOT rewrite legitimate **historical** cross-references: provenance prose, session history, ADR lineage, and changelog entries are retained verbatim (archive-don't-delete, §15). A naive whole-vault grep over-counts the defect by sweeping this history; the rename recipe carries a **keep/strip classifier** to separate the two.
+
+Recipe: `how/skills/skill_project_rename.md`. Decision: ADR-042.
+
 ---
 
 ## 7. Frontmatter System
@@ -968,6 +977,7 @@ flowchart TB
     T1 --> A1["Frontmatter attribution"]
     T1 --> A2["Read-before-write"]
     T1 --> A3["New-file safety"]
+    T1 --> A4["No harness-injected context"]
 
     T2 --> B1["File safety tiers"]
     T2 --> B2["Archive-don't-rename"]
@@ -992,6 +1002,7 @@ Every aDNA instance MUST implement Tier 1:
 1. **Frontmatter attribution**: Every file modification MUST update `last_edited_by` and `updated` in frontmatter.
 2. **Read-before-write**: Agents MUST read current file content immediately before writing. Never rely on cached reads.
 3. **New-file safety**: Creating a new file has no collision risk. New files are always safe.
+4. **No harness-injected context**: Governance files (`CLAUDE.md`/`STATE.md`/`AGENTS.md`) MUST NOT carry committed **harness context boundaries** — the `# userEmail` and `# currentDate (Today's date is …)` lines an agent harness injects into a running session. They are session context, not governance: once committed they are stale and information-free (the email lives in the credential broker; the date is a frozen snapshot). Strip them before committing; a session that commits a governance file MUST drop any injected tail. (ADR-042.)
 
 ### 13.3 Tier 2 — Sync Environments
 

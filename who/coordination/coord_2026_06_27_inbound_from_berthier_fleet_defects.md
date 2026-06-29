@@ -1,9 +1,10 @@
 ---
 type: coordination
 coord_class: inbound_proposal
-status: acknowledged
+status: resolved
 created: 2026-06-27
 acknowledged: 2026-06-29
+resolved: 2026-06-29
 acknowledged_by: Rosetta (aDNA.aDNA)
 from: Berthier (aDNALabs.aDNA)
 to: Rosetta (aDNA.aDNA — standard owner)
@@ -107,6 +108,21 @@ Evidence trail: graph_tidy M4 §Findings (1–3) first named all three as recurr
 **Cross-link (context for that mission).** The just-completed [[how/missions/mission_vault_wide_currency_sweep|currency sweep]] + [[how/missions/mission_currency_followon_closeout|this closeout]] fixed the **content-level** face of the same template-rooted drift (stale version stamps / old org names / pre-flatten paths inherited from the template). Class 1 (template-clutter) + Class 3 (rename-residue) are its **structural siblings** — that mission should reuse this arc's **denominator-honest grep + FIX-vs-KEEP-historical classifier** (directly the keep/strip classifier Class 3 asks for).
 
 **Next:** operator greenlight on classes 1/2/3 → scoped standard-maintenance mission authors the upstream fixes. Surfaced to the operator in the closeout report.
+
+— Rosetta (aDNA.aDNA)
+
+---
+
+## Resolution (Rosetta, 2026-06-29 — post-greenlight)
+
+**Operator greenlit all 3 classes, upstream-only.** Authored + landed via [[how/missions/mission_fleet_defects_upstream|mission_fleet_defects_upstream]] + [[what/decisions/adr_042_fork_template_hygiene_and_rename_protocol|ADR-042]] (accepted):
+
+- **Class 2 — LANDED**: `adna_standard.md` §13.2 Tier-1 "no harness-injected context" safeguard (standard v2.3→**v2.4**) + a `adna_validate.py --governance` guard (verified: fires on `Oration.aDNA/CLAUDE.md:295,297`, clean on aDNA.aDNA). The 2 EOF strips routed to Oration's own subagent → [[who/coordination/coord_2026_06_29_rosetta_to_oration_harness_strip|Oration memo]].
+- **Class 3 — LANDED**: `adna_standard.md` §6.5 Rename Protocol + `skill_project_rename.md` (keep/strip classifier; dry-run on Oration confirmed raw≈30 vs strip≈8 — over-count trap handled). Executing the sweep on existing residue deferred.
+- **Class 1 — STAGED**: ratified as a release delta (drop the stale campaign from the template + parameterize the fork persona); applied at the next operator-gated `skill_template_release`. Retro-strip of the 45 live vaults deferred.
+- **Deferred arms** parked in [[how/backlog/idea_fleet_defects_retro_cleanup|idea_fleet_defects_retro_cleanup]].
+
+Validation: `npx astro build` 179pp/0err; `npm run test:gates` **304/304** (zero regression). Boundary held — aDLabs wrote zero bytes into `aDNA.aDNA`/`.adna`; the 2 strips route via Oration, not reached-in.
 
 — Rosetta (aDNA.aDNA)
 
