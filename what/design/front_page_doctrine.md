@@ -126,7 +126,7 @@ A synthesis of **Hermes-sparse-manifesto + HF-registry-as-proof** at the ~55/45 
 
 1. **No internal/private state on public surfaces.** Campaign jargon, mission IDs, client/partner names, embargoed work, and operational notes never render into public pages or `<meta>`/OG tags. Projection from private registries goes through a **sanitizer at the source** (the ADR-023 `publicNote()` pattern), never per-template patches.
 2. **Operational truths are single-sourced.** Version (`standard.ts`), counts (`vault_count`), the canonical repo URL and **install commands** (`install_truth.json`, gate-12) render from one fixture each — pages never hardcode a fact that can drift. A public surface teaching a wrong install path is a Critical, not a docs nit.
-3. **Canonical-link discipline.** One canonical GitHub org/repo form everywhere (`LatticeProtocol/aDNA`); no 301/404 links on credibility surfaces; `robots.txt`/sitemap point only at the live domain.
+3. **Canonical-link discipline.** One canonical GitHub org/repo form everywhere (`aDNA-Network/aDNA`); no 301/404 links on credibility surfaces; `robots.txt`/sitemap point only at the live domain.
 4. **Live tracks HEAD.** The deploy cadence (decadal-close + operator-flagged credibility hotfix path; `idea_deploy_cadence` resolution) bounds how long any public defect can sit live.
 
 ## Change discipline

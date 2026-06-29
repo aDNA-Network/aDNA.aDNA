@@ -165,25 +165,25 @@ Full reasoning + evidence-both-ways in [[how/campaigns/campaign_looking_glass/ar
 
 ## ⛔ DP3 decision block — operator sign-off (M4 does not start until signed)
 
-> Standing Order 1 — phase gates are human gates. Mark the rulings; M3 leaves these blank.
+> Standing Order 1 — phase gates are human gates. **RATIFIED by the operator 2026-06-28.**
 
-**1. Bounded set (BS-1…BS-4):**  ☐ approve as-is  ·  ☐ approve with changes: ____________
+**1. Bounded set (BS-1…BS-4):**  ☑ **approve as-is**  ·  ☐ approve with changes
 
-**2. A-06 swing (graph SSR, L-effort):**  ☐ include in M4  ·  ☐ defer to follow-on
+**2. A-06 swing (graph SSR, L-effort):**  ☐ include in M4  ·  ☑ **defer to follow-on**
 
-**3. A-12 stretch (term gloss):**  ☐ include  ·  ☐ defer
+**3. A-12 stretch (term gloss):**  ☑ **include**  ·  ☐ defer
 
-**4. A-11 calibration ruling:**  ☐ accept trade-off (record as deliberate)  ·  ☐ approve the additive lift  ·  ☐ defer
+**4. A-11 calibration ruling:**  ☐ accept trade-off (no change)  ·  ☑ **approve the additive lift** (keep the values opener; add one functional sentence beside it)  ·  ☐ defer
 
-**5. A-03 (`what-ground-truth` exemplar) in the sweep:**  ☐ include (proof case)  ·  ☐ defer to keep minimal
+**5. A-03 (`what-ground-truth` exemplar) in the sweep:**  ☑ **include (proof case)**  ·  ☐ defer to keep minimal
 
-**6. Structural option S1 — deploy as its own gated step/DP?**  ☐ keep in M4 + live-verify (recommended)  ·  ☐ make it a separate gate
+**6. Structural option S1 — deploy as its own gated step/DP?**  ☑ **keep in M4 + live-verify**  ·  ☐ make it a separate gate
 
-**7. Structural option S2 — merge M4↔M5?**  ☐ keep separate (recommended; 4-stream set)  ·  ☐ merge
+**7. Structural option S2 — merge M4↔M5?**  ☑ **keep separate**  ·  ☐ merge
 
-**Operator:** ____________   **Date:** ____________   **Ruling / notes:** ____________
+**Operator:** Stanley   **Date:** 2026-06-28   **Ruling / notes:** Ratified as recommended — A-06 deferred to a follow-on; A-11 takes the additive functional line (ethos dial preserved); deploy stays gated in M4; M5 separate.
 
-*On sign-off: set the campaign-master DP3 row to `ratified`, then open M4 (`mission_improve_remeasure_m04`).*
+*DP3 ratified → campaign-master DP3 row set to `ratified`; M4 (`mission_improve_remeasure_m04`) opened.*
 
 ---
 

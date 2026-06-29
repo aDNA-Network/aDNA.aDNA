@@ -59,6 +59,13 @@ import { complianceCards, auditCards, federationCards, integrationCards, followU
     <li><strong>Version policy is explicit:</strong> locked / patch / minor / latest — downstream teams choose their own change tolerance.</li>
     <li><strong>Provenance travels with the artifact:</strong> FAIR envelope (license, creators, keywords, provenance, identifier) is part of the file, not a side document.</li>
   </ul>
+  <p>
+    <strong>Scope today:</strong> lattice publish / pull / compose works now within a shared
+    registry — the right primitive for teams inside one organization. Federation <em>across
+    separate organizations and nodes</em> runs on the network's opt-in, local-first membership
+    substrate, which is still being built; the standard builds toward that horizon rather than
+    implying it has already arrived.
+  </p>
   <CardGrid cards={federationCards} columns={2} />
 
   <h2 id="integration-surface">4 · Integration with existing practice</h2>

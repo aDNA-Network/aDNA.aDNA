@@ -61,7 +61,7 @@ Follow `how/skills/skill_upstream_contribution.md`:
 1. Agent notices a framework-level gap during normal work
 2. Agent mentions the finding at a natural pause point
 3. If the user approves, create `how/backlog/idea_upstream_{slug}.md`
-4. Optionally open a GitHub issue on `LatticeProtocol/Agentic-DNA`
+4. Optionally open a GitHub issue on `aDNA-Network/aDNA`
 
 ### For Side-Quest Results
 

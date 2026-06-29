@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { REPO_HTTPS } from '../../data/canonical';
+
+const advisoryUrl = `${REPO_HTTPS}/security/advisories/new`;
+const securityMd = `${REPO_HTTPS}/blob/main/SECURITY.md`;
+---
+
+<BaseLayout
+  title="Security & Disclosure — aDNA"
+  description="How to report a security vulnerability in the aDNA standard, templates, or site tooling — and what to expect from coordinated disclosure."
+>
+  <article class="policy">
+    <header class="policy-head">
+      <h1>Security &amp; Disclosure</h1>
+      <p class="policy-lead">
+        aDNA is an open standard and a set of plain-Markdown, local-first knowledge vaults.
+        The project ships no runtime service by default. Even so, we take coordinated
+        disclosure seriously — here is how to report a vulnerability and what to expect.
+      </p>
+    </header>
+
+    <h2 id="reporting">Reporting a vulnerability</h2>
+    <p>
+      <strong>Please report privately — do not open a public issue for a security problem.</strong>
+      Open a private report through GitHub Security Advisories on the canonical repository:
+    </p>
+    <p><a class="policy-cta" href={advisoryUrl} target="_blank" rel="noopener">Report a vulnerability privately &rarr;</a></p>
+    <p>
+      If you cannot use GitHub Security Advisories, open a minimal public issue saying only
+      "security report — please open a private channel" (with no details), and a maintainer
+      will follow up privately. Where you can, include the affected file, route, or script,
+      steps to reproduce, and the impact you foresee.
+    </p>
+
+    <h2 id="scope">Scope</h2>
+    <p>
+      <strong>In scope:</strong> the published standard and templates (the <code>.adna/</code>
+      tree, skills, governance templates); the website tooling and build scripts in the
+      repository (<code>site/</code>, <code>scripts/</code>); and any workflow the repository
+      executes (CI, the gate harness).
+    </p>
+    <p>
+      <strong>Out of scope:</strong> third-party tools the standard composes with (Obsidian,
+      Claude Code, git hosts) — report those to their own maintainers; and self-managed
+      deployments or private vaults you run on your own infrastructure.
+    </p>
+
+    <h2 id="what-to-expect">What to expect</h2>
+    <ul>
+      <li><strong>Acknowledgement</strong> — we aim to acknowledge a report within a few business days.</li>
+      <li><strong>Assessment</strong> — we confirm the issue, determine severity and affected versions, and keep you updated.</li>
+      <li><strong>Coordinated disclosure</strong> — we agree a disclosure timeline with you and credit you in the advisory unless you prefer to remain anonymous.</li>
+    </ul>
+
+    <h2 id="your-own-vault">Securing your own vault</h2>
+    <p>
+      aDNA vaults are local-first by design and are not pushed to a remote unless you configure
+      one. Treat your vault's inventory, credentials index, and node identity as sensitive, and
+      never commit real secrets — the standard's credential-handling doctrine keeps secret
+      <em>names</em>, never secret <em>values</em>, in the vault.
+    </p>
+
+    <p class="policy-foot">
+      The machine-readable policy also lives at
+      <a href={securityMd} target="_blank" rel="noopener"><code>SECURITY.md</code></a>
+      in the repository.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .policy {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: var(--space-16) var(--space-6) var(--space-24);
+  }
+  .policy-head {
+    margin-bottom: var(--space-10);
+  }
+  .policy h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+  .policy-lead {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    line-height: 1.6;
+  }
+  .policy h2 {
+    font-size: var(--text-xl);
+    margin: var(--space-10) 0 var(--space-3);
+  }
+  .policy p {
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  .policy ul {
+    line-height: 1.7;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-4);
+  }
+  .policy li {
+    margin-bottom: var(--space-2);
+  }
+  .policy code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--color-surface);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+  }
+  .policy a {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+  .policy-cta {
+    display: inline-block;
+    font-weight: 600;
+    margin: var(--space-2) 0;
+  }
+  .policy-foot {
+    margin-top: var(--space-10);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+</style>

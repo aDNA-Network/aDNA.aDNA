@@ -91,6 +91,16 @@
       "owner": "website",
       "check": { "kind": "exists" },
       "expected": null
+    },
+    {
+      "id": "proof-links-canonical-repo",
+      "class": "source_fidelity",
+      "claim": "the /learn/what-is-adna proof-links all derive from the single canonical repo (no org/repo drift)",
+      "rendered_on": ["/learn/what-is-adna"],
+      "source_ref": "src/data/install_truth.json",
+      "owner": "website",
+      "check": { "kind": "json_field", "accessor": "canonical_repo_https" },
+      "expected": "https://github.com/aDNA-Network/aDNA"
     }
   ]
 }

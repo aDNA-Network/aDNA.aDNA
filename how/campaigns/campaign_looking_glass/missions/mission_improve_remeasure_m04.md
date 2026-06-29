@@ -3,14 +3,15 @@ plan_id: mission_improve_remeasure
 type: plan
 title: "Improve + re-measure — execute the bounded set; validate; stage deploy"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_looking_glass
 campaign_phase: 3
 campaign_mission_number: 4
 mission_class: implementation
 token_budget_estimated: "~130 kT (80-200 tier): execute bounded fixes both sides + re-measure + stage deploy"
+dp3_ratified: 2026-06-28  # bounded set approved; A-06 deferred; A-11 additive lift; deploy-in-M4; M5 separate
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-28
 last_edited_by: agent_stanley
 tags: [plan, campaign, iii_campaign_pilot, improve, looking_glass]
 ---
@@ -32,31 +33,31 @@ Improvements committed + validated (gate harness ≥ baseline, claim-trace clean
 ## Objectives
 
 ### 1. Site-side fixes (Subject A)
-- **Status**: planned
+- **Status**: done
 - **Description**: Execute the approved site corrections. Respect the Websites carve; coordinate `site/` touches by memo; never `sync:vaults`.
 - **Files**: `site/` (per plan).
 - **Depends on**: none.
 
 ### 2. Source-side fixes (Subject B)
-- **Status**: planned
+- **Status**: done
 - **Description**: Fix drift at the source — the `what/` files the site mirrors. Honor Standing Orders 7/8/9/10 (dual-audience, self-reference, cite spec, cross-link).
 - **Files**: `what/` (per plan).
 - **Depends on**: none.
 
 ### 3. Re-measure + validate
-- **Status**: planned
+- **Status**: done
 - **Description**: Re-run Tier 1 + the claim-trace audit; confirm thresholds met (A1–A4, B1–B3) vs. baseline; catch regressions.
 - **Files**: `artifacts/remeasure_snapshot.md`.
 - **Depends on**: 1, 2.
 
 ### 4. Stage deploy (gated)
-- **Status**: planned
+- **Status**: done
 - **Description**: Stage the site deploy via the pt19-respecting path; operator-approved; sequenced (B→C→A). Do not deploy out of sequence.
 - **Files**: deploy staging notes; coord memo to Websites/Hestia if needed.
 - **Depends on**: 3.
 
 ### 5. Live-verify (post-deploy, read-only)
-- **Status**: planned
+- **Status**: deferred (deploy held on Vitruvius Q1/Q2 → carries to go-live / M5)
 - **Description**: Once the gated deploy lands, confirm **read-only** that live adna.network reflects the improvements (claims corrected; no regressions); respect pt19 (never `sync:vaults`). If deploy is deferred past this mission, carry the live-verify to M5.
 - **Files**: `artifacts/remeasure_snapshot.md` (live-verify section).
 - **Depends on**: 4.
@@ -76,4 +77,4 @@ Improvements committed + validated (gate harness ≥ baseline, claim-trace clean
 
 ## AAR
 
-*Mandatory before `status: completed`. See `how/templates/template_aar_lightweight.md`.*
+**Filed 2026-06-28** → [[how/campaigns/campaign_looking_glass/missions/artifacts/aar_m04_improve_remeasure|aar_m04_improve_remeasure]] (GO; 4/5 objectives validated, Obj 5 deferred-by-design). Bounded set landed both subjects: 15-file source sweep (marquee A/B inversion resolved; **B1/B2 FAIL→PASS**) + A-15/A-16/A-11/A-12/A-01/A-03; **re-measure 304/304** (was 302, +2 from the A-01 G20-manifest claim; zero regression) → [[how/campaigns/campaign_looking_glass/artifacts/remeasure_snapshot|remeasure_snapshot]]. Deploy **staged-held** (Vitruvius Q1/Q2 gate). Deferred: A-06 + the out-of-slice vault-wide drift (flagged follow-ons); A-04 + A-01 `verified_paths` → staged Hestia memo.

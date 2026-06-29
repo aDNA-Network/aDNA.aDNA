@@ -399,7 +399,7 @@ For the full merge algorithm, conflict taxonomy, and worked examples, see [Ontol
 ## Cross-References
 
 - [CLAUDE.md](../CLAUDE.md) — Vault structure map and agent protocol
-- [aDNA Standard v2.1](docs/adna_standard.md) — Normative specification (§5.1 ontology artifact, §3 triad architecture)
+- [aDNA Standard v2.3](docs/adna_standard.md) — Normative specification (§5.1 ontology artifact, §3 triad architecture)
 - [Ontology Unification Protocol](docs/ontology_unification.md) — Formal merge algorithm, conflict taxonomy, namespace specification
 - [Lattice Federation & Sharing Protocol](docs/lattice_federation.md) — Federation lifecycle, import triggers merge
 - [aDNA Design Rationale](docs/adna_design.md) — Design decisions and deployment forms

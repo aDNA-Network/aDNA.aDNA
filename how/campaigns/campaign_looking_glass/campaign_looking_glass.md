@@ -121,7 +121,7 @@ The operator's three parts map onto III at strategic scale. Lean shape: Construc
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 4 | Improve + re-measure — execute the bounded set; validate; stage deploy (gated) | 1-2 | M3 | planned |
+| 4 | Improve + re-measure — execute the bounded set; validate; stage deploy (gated) | 1-2 | M3 | **completed 2026-06-28** (marquee resolved; 304/304; deploy staged-held) |
 | 5 | Closeout — campaign AAR + terminal III.aDNA handoff + pattern packet | 1 | M4 | planned |
 
 **Phase exit gate**: improvements committed + validated (gates green vs. baseline, regressions caught), site deploy staged through the gated pt19-respecting path; campaign AAR filed and the III.aDNA handoff authored.
@@ -134,7 +134,7 @@ The operator's three parts map onto III at strategic scale. Lean shape: Construc
 |---|------|----------|--------|
 | 1 | End of the planning mission (this charter) | Operator ratifies the full charter (success criteria, phases, gates, scaffolding spec, measurement model, sized missions) before Part 1 executes | **ratified 2026-06-27** |
 | 2 | Part 1 → Part 2 | Scaffolding (packs/personas/measurement) is built + good enough to drive the review; baselines captured | **ratified (operator GO) 2026-06-27** |
-| 3 | Part 2 → Part 3 | The ranked improvement plan is approved | **presented (awaiting operator ruling) 2026-06-28** |
+| 3 | Part 2 → Part 3 | The ranked improvement plan is approved | **ratified 2026-06-28** (A-06 deferred · A-11 additive lift · deploy-in-M4 · M5 separate) |
 
 ## The III scaffolding (Part-1 deliverable)
 

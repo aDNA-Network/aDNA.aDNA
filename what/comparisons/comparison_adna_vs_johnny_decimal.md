@@ -72,7 +72,7 @@ These serve genuinely different purposes. Johnny.Decimal organizes files; aDNA o
 
 - johnnydecimal.com — Johnny.Decimal system documentation
 - Johnny Noble, "A system to organise your life" — method introduction
-- aDNA Standard v2.1, §3 (Triad Architecture), §4.5 (AGENTS.md) — aDNA specification
+- aDNA Standard v2.3, §3 (Triad Architecture), §4.5 (AGENTS.md) — aDNA specification
 
 ## Related
 

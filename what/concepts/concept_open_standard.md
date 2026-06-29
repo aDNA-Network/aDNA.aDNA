@@ -16,7 +16,7 @@ related_patterns: [pattern_base_extension, pattern_fork_customize]
 
 ## Overview
 
-aDNA is an open standard — a publicly documented specification that anyone can implement, extend, and build upon without permission or payment. The upstream spec (aDNA Standard v2.1, published at `github.com/LatticeProtocol/Agentic-DNA`) defines the normative rules. Individual projects implement the standard, extending it for their domain while maintaining compatibility with the shared core.
+aDNA is an open standard — a publicly documented specification that anyone can implement, extend, and build upon without permission or payment. The upstream spec (aDNA Standard v2.3, published at `github.com/aDNA-Network/aDNA`) defines the normative rules. Individual projects implement the standard, extending it for their domain while maintaining compatibility with the shared core.
 
 ## Why This Matters
 
@@ -34,7 +34,7 @@ aDNA maintains a clear separation between the standard (what's normative) and im
 
 | Layer | What It Is | Who Controls It | Example |
 |-------|-----------|----------------|---------|
-| **Upstream spec** | aDNA Standard v2.1 — normative rules using RFC 2119 keywords (MUST, SHOULD, MAY) | Open governance (github.com/LatticeProtocol/Agentic-DNA) | "Every instance MUST use the what/how/who triad" |
+| **Upstream spec** | aDNA Standard v2.3 — normative rules using RFC 2119 keywords (MUST, SHOULD, MAY) | Open governance (github.com/aDNA-Network/aDNA) | "Every instance MUST use the what/how/who triad" |
 | **Base template** | `.adna/` — ready-to-fork implementation of the spec | Upstream maintainers | Governance files, triad directories, templates, skills |
 | **Project instance** | A forked and customized aDNA project | Project owner | This vault (`aDNA.aDNA/`), any `.aDNA/` project |
 
@@ -87,13 +87,13 @@ The fork creates a new instance that's immediately compatible with the standard.
 
 This vault is a living demonstration of the open standard in practice:
 
-**The base template**: The directory `adna/` (one level up from this project in the workspace) contains the upstream template. It's symlinked as `.adna/` at the workspace root. This vault was forked from it — you can compare this project's structure against the template to see what's base and what's extension.
+**The base template**: The `.adna/` directory at the workspace root is the upstream base template, ready to fork. This vault was forked from it — you can compare this project's structure against the template to see what's base and what's extension.
 
 **Extensions**: This vault adds 10 entity types to the base 16 (see `what/concepts/AGENTS.md`, `what/tutorials/AGENTS.md`, `who/community/AGENTS.md`, etc.). Each extension follows the same patterns as the base — AGENTS.md, templates, frontmatter conventions — because the standard defines how to extend, not just what the base contains.
 
 **Spec citations**: Throughout this vault, normative claims reference the upstream spec with section numbers (§3, §5, §10). This file you're reading cites §1, §3, §5, and §11. The vault demonstrates; the spec defines. This separation is the standard in action.
 
-**The standing rule**: This vault's CLAUDE.md contains the rule "Never modify `.adna/` or `adna/`" — enforcing the spec/implementation boundary. The template is read-only. The instance is writable. That's the architecture of an open standard: shared core, local freedom.
+**The standing rule**: This vault's CLAUDE.md contains the rule "Never modify `.adna/`" — enforcing the spec/implementation boundary. The template is read-only. The instance is writable. That's the architecture of an open standard: shared core, local freedom.
 
 ## Related
 

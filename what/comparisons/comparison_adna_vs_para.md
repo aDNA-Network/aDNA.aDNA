@@ -30,7 +30,7 @@ Tiago Forte's organizational system from *Building a Second Brain*. Organizes pe
 | **Organizing principle** | 3 categories by question type (what/how/who) | 4 categories by actionability (projects/areas/resources/archives) |
 | **Primary audience** | Teams + AI agents | Individual humans |
 | **Agent support** | Native: CLAUDE.md, AGENTS.md, session tracking, convergence model | None: no agent orientation, no routing, no governance files |
-| **Knowledge types** | 14+ entity types with typed frontmatter | Untyped: any note can go anywhere within the 4 buckets |
+| **Knowledge types** | 16 base entity types with typed frontmatter | Untyped: any note can go anywhere within the 4 buckets |
 | **Scalability** | Multi-agent, multi-project, federated | Single-person, cross-tool |
 | **Learning curve** | Moderate: spec, templates, governance files | Low: 4 simple categories, minimal rules |
 | **Extensibility** | [[what/patterns/pattern_base_extension|Base/extension]] architecture with domain types | Flexible but informal: no extension framework |
@@ -70,7 +70,7 @@ They're not mutually exclusive. A developer might use PARA for personal notes an
 
 - Tiago Forte, *Building a Second Brain* (2022) — PARA method definition
 - Forte Labs: fortelabs.com/blog/para — PARA overview
-- aDNA Standard v2.1, §1 (Introduction), §3 (Triad Architecture) — aDNA specification
+- aDNA Standard v2.3, §1 (Introduction), §3 (Triad Architecture) — aDNA specification
 
 ## Related
 

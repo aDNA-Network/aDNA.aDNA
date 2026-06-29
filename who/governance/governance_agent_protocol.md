@@ -224,4 +224,4 @@ These are violations of this policy. Their presence indicates a broken protocol.
 |--------|-------------|
 | **Claude Code documentation** | Agent tool capabilities, permission model, execution constraints |
 | **ARIA protocol pattern** | Reference implementation of bilateral partnership with challenge-first design |
-| **aDNA Standard v2.2** | Governance framework, session protocol, escalation cascade |
+| **aDNA Standard v2.3** | Governance framework, session protocol, escalation cascade |

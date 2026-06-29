@@ -42,7 +42,7 @@ This structure is documented in [[who/governance/VISION|VISION.md]] as part of t
 - Everything from Level 0
 - Review agent-surfaced improvement findings at natural pause points
 - Approve backlog items for promising improvements (`how/backlog/idea_upstream_*.md`)
-- Optionally open GitHub issues on `LatticeProtocol/Agentic-DNA`
+- Optionally open GitHub issues on `aDNA-Network/aDNA`
 
 **How to get here**: It happens organically. Your agent notices a missing template field or an undocumented pattern during normal work, mentions it at a session close, and you say "yes, file that." Follow [[who/governance/governance_contribution_standards|Contribution Standards]] and `how/skills/skill_upstream_contribution.md`.
 
