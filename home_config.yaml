@@ -1,0 +1,19 @@
+# aDNA.aDNA homepage descriptor — Operation Hearthlight P4 Wave-2 Tier A (2026-06-30).
+# Schema = build_home.py DESCRIPTOR_KEYS only. class standard_dev → org_vault alias → document profile. rosetta → (standard) house.
+# Rosetta's vault — persona-review recommended at the eye-gate.
+persona: rosetta
+display_name: "aDNA"
+tagline: "the self-referential aDNA standard — teaches the standard by using it (Operation Rosetta)"
+greeting: "Rosetta keeps the stone — the standard teaches itself here; the ecosystem-compliance and release boards are below"
+
+banner:
+  path: who/assets/banners/banner_rosetta.png
+  alt: "aDNA — Rosetta"
+
+key_systems:
+  - {title: "v3 ecosystem compliance", sub: "the standard's current compliance campaign", href: "how/campaigns/campaign_adna_v3_ecosystem_compliance/campaign_adna_v3_ecosystem_compliance.md"}
+  - {title: "Operation Hearthstone", sub: "the public clone-and-run release (v8.0)", href: "how/campaigns/campaign_hearthstone/campaign_hearthstone.md"}
+  - {title: "Create ISS", sub: "author operator decision gates", href: "how/skills/skill_create_iss.md"}
+  - {title: "Context research", sub: "the deep-research skill", href: "how/skills/skill_context_research.md"}
+
+updated: 2026-06-30
