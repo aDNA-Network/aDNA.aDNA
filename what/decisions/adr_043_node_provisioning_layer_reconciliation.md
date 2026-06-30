@@ -2,9 +2,9 @@
 type: adr
 adr_number: "043"
 title: "Node-provisioning layer reconciliation — substrate/composition/brick split (AWSBootstrap ↔ Lighthouse ↔ cohort)"
-status: proposed
+status: accepted
 created: 2026-06-29
-updated: 2026-06-29
+updated: 2026-06-30
 last_edited_by: agent_stanley
 campaign_id: campaign_keystone
 supersedes:
@@ -16,7 +16,7 @@ tags: [adr, decision, keystone, awsbootstrap, lighthouse, node_provisioning, sub
 
 ## Status
 
-Proposed — 2026-06-29 (authored by Rosetta / `aDNA.aDNA` at the Operation Keystone post-completion frontier; **Decision #5**, the named survivor of the campaign close — [[how/campaigns/campaign_keystone/campaign_keystone|Operation Keystone]] §Follow-up). **Co-signed by three personas, not yet ratified:** Hestia (`AWSBootstrap.aDNA` + `Home.aDNA`), the Lighthouse persona-at-P0 (`Lighthouse.aDNA` is a `genesis_planning_stub` — its co-sign is consumed at its own P0), and Rosetta (Keystone / standard owner). Awaiting operator ratification + the co-signers' acknowledgement (co-sign request staged → [[who/coordination/coord_2026_06_29_rosetta_to_hestia_lighthouse_adr043_cosign|coord_2026_06_29_rosetta_to_hestia_lighthouse_adr043_cosign]]). Extends [[what/decisions/adr_037_software_deployment_graph_subtype|ADR-037]] (the brick + the wall) under the [[what/decisions/adr_039_software_element_context_graph_umbrella|ADR-039]] umbrella; symmetric in spirit to [[what/decisions/adr_041_build_scale_role_graph_subtype|ADR-041]] (which added the build-scale twin of the wall). Source: [[how/backlog/idea_awsbootstrap_lighthouse_cohort_reconciliation|idea_awsbootstrap_lighthouse_cohort_reconciliation]].
+**Accepted — 2026-06-30** (ratified by the operator). Authored 2026-06-29 by Rosetta / `aDNA.aDNA` at the Operation Keystone post-completion frontier — **Decision #5**, the named survivor of the campaign close ([[how/campaigns/campaign_keystone/campaign_keystone|Operation Keystone]] §Follow-up). **Co-sign state at ratification (the operator's decision binds the ruling; the co-signs remain open):** Hestia (`AWSBootstrap.aDNA` + `Home.aDNA`) — acknowledgement still **pending** via the staged memo [[who/coordination/coord_2026_06_29_rosetta_to_hestia_lighthouse_adr043_cosign|coord_2026_06_29_rosetta_to_hestia_lighthouse_adr043_cosign]] (a boundary she would redraw requires an amendment); the Lighthouse persona-at-P0 (`Lighthouse.aDNA` is a `genesis_planning_stub`) — co-sign **consumed at its own P0**, not now; Rosetta (Keystone / standard owner) — co-signed. The decision is binding, but **the two handoff seams remain doctrine (non-operative)** until those co-signs land and Lighthouse reaches P0 (see Consequences). Extends [[what/decisions/adr_037_software_deployment_graph_subtype|ADR-037]] (the brick + the wall) under the [[what/decisions/adr_039_software_element_context_graph_umbrella|ADR-039]] umbrella; symmetric in spirit to [[what/decisions/adr_041_build_scale_role_graph_subtype|ADR-041]] (which added the build-scale twin of the wall). Source: [[how/backlog/idea_awsbootstrap_lighthouse_cohort_reconciliation|idea_awsbootstrap_lighthouse_cohort_reconciliation]].
 
 ## Context
 
@@ -81,3 +81,4 @@ This ADR is **standard material, homed in `aDNA.aDNA`**, co-signed by Hestia (AW
 | Date | Mission | Amendment summary |
 |------|---------|-------------------|
 | 2026-06-29 | Keystone post-completion frontier (Decision #5) | ADR created (proposed) — three-layer node-provisioning split (substrate / composition / brick), two handoff seams, route-not-reauthor (§3), credential-routing seam (§4). Co-sign requested (Hestia + Lighthouse-P0 + Rosetta); awaiting operator ratification. |
+| 2026-06-30 | `session_stanley_20260630T215340Z_adr_ratification` | **Operator ratification — `status: proposed → accepted`.** The decision binds; Hestia's ack (coord memo still open) + Lighthouse-P0's co-sign (consumed at its own P0) remain pending, so the two handoff seams stay **non-operative** until they land + Lighthouse reaches P0. A boundary redraw from Hestia would require a further amendment. |

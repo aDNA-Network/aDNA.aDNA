@@ -2,7 +2,7 @@
 type: adr
 adr_number: "044"
 title: "Per-class frontmatter profiles — `status` optional for directory_index + coordination; nested-instance walk exclusion"
-status: proposed
+status: accepted
 created: 2026-06-30
 updated: 2026-06-30
 last_edited_by: agent_stanley
@@ -16,7 +16,7 @@ tags: [adr, decision, conformance, frontmatter, validator, directory_index, coor
 
 ## Status
 
-Proposed — 2026-06-30 (authored by Rosetta / `aDNA.aDNA` during [[how/missions/mission_frontmatter_conformance|mission_frontmatter_conformance]], the frontmatter leg of the `adna_validate` governance-hygiene thread). Reference implementation landed in this vault's validator; awaiting operator ratification + upstream adoption via [[how/backlog/idea_upstream_per_class_frontmatter_profiles|idea_upstream_per_class_frontmatter_profiles]]. Touches the aDNA Universal Standard §7.2 (Frontmatter) and §5.5 (Conformance) — normative, hence the upstream proposal rather than a unilateral local edit (Standing Order 9).
+**Accepted — 2026-06-30** (ratified by the operator; authored by Rosetta / `aDNA.aDNA` during [[how/missions/mission_frontmatter_conformance|mission_frontmatter_conformance]], the frontmatter leg of the `adna_validate` governance-hygiene thread). The reference implementation already landed in this vault's validator. **Upstream adoption remains pending** — the refinement folds into the public image (`aDNA-Network/aDNA`, §7.2/§5.5) at the next `skill_template_release` via [[how/backlog/idea_upstream_per_class_frontmatter_profiles|idea_upstream_per_class_frontmatter_profiles]]. Touches the aDNA Universal Standard §7.2 (Frontmatter) and §5.5 (Conformance) — normative, hence the upstream proposal rather than a unilateral local edit (Standing Order 9); until that folds, the reference instance leads the written standard on these two refinements (as designed).
 
 ## Context
 
