@@ -291,6 +291,26 @@ def check_governance_sync(root, result):
                         f"Governance drift: {gf} says {documented} templates, actual count is {actual}"
                     )
 
+    # Skill count (mirrors template count; §19.3). Skills are not auto-counted
+    # anywhere else, so this guard is what makes skills-count drift catchable.
+    skills_dir = os.path.join(root, "how", "skills")
+    if os.path.isdir(skills_dir):
+        actual_skills = len([f for f in os.listdir(skills_dir)
+                             if f.endswith(".md") and f.startswith("skill_")])
+        for gf in ["MANIFEST.md", "CLAUDE.md", "README.md", "AGENTS.md"]:
+            gf_path = os.path.join(root, gf)
+            if not os.path.isfile(gf_path):
+                continue
+            with open(gf_path, "r") as f:
+                content = f.read()
+            # Look for patterns like "45 skills" or "Skills (45)"
+            for m in re.finditer(r"(\d+)\s*skills|Skills?\s*\((\d+)\)", content):
+                documented = int(m.group(1) or m.group(2))
+                if documented != actual_skills:
+                    result.errors.append(
+                        f"Governance drift: {gf} says {documented} skills, actual count is {actual_skills}"
+                    )
+
     # Version string consistency
     versions_found = {}
     claude_path = os.path.join(root, "CLAUDE.md")

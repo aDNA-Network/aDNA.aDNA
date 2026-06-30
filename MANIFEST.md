@@ -40,7 +40,7 @@ aDNA.aDNA/
 │   ├── publishing/     [EXT] Vault-to-web pipeline
 │   ├── campaigns/      Strategic initiatives (campaign_rosetta active)
 │   ├── templates/      41 templates (25 base + 11 extension + 5 operational)
-│   ├── skills/         15 skills (13 base + 2 project-specific)
+│   ├── skills/         45 skills (21 base + 24 project-specific)
 │   ├── sessions/       Session tracking
 │   ├── missions/       Multi-session task decomposition
 │   ├── pipelines/      Content-as-code workflows
@@ -130,9 +130,9 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | `template_lattice_home_render.md` | operational | `Home.aDNA/` render |
 | `template_software_graph_stub.md` | operational | new `<Software>.aDNA/` genesis |
 
-### Skills (17)
+### Skills (45)
 
-13 base skills (inherited) + 4 project-specific:
+21 base skills (inherited from the `.adna/` template) + 24 project-specific. Full inventory in [`CLAUDE.md`](CLAUDE.md) §Skills; representative project-specific examples:
 
 | Skill | Type | Purpose |
 |-------|------|---------|
@@ -163,7 +163,7 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | Context library | Inherited | 5 topics, 27 subtopics, ~75K tokens |
 | Lattice YAML tools | Inherited | Validate, convert (YAML↔canvas), JSON Schema, 19 examples |
 | 25 base templates | Inherited | Full operational set (12 auto-triggered + 13 manual-apply) |
-| 13 base skills | Inherited | Onboarding, fork, entity type, quality audit, etc. |
+| 21 base skills | Inherited | Onboarding, fork, entity type, quality audit, etc. |
 | Execution hierarchy v2 | Inherited | OODA cascade, AAR protocol, escalation cascade |
 | Quality framework | Inherited | 10-dimension compliance rubric |
 

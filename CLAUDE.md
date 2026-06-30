@@ -240,30 +240,62 @@ Cross-topic context assemblies for multi-disciplinary tasks. Recipe index: `what
 
 Reusable agent recipes and documented procedures in `how/skills/`. Skills have two types: `agent` (automated recipes) and `process` (human/hybrid procedures). Protocol: `how/skills/AGENTS.md`
 
-**Skills inventory**:
+**Skills inventory** — every skill in `how/skills/`, grouped by origin so the count is auditable by counting rows (base = inherited from the `.adna/` template; project-specific = authored for this vault). `Type` mirrors each skill's `skill_type:` frontmatter; non-active status is noted inline. The headline count + base/project split live in `MANIFEST.md` / `AGENTS.md` / `glossary_skill.md`.
+
+**Base skills** (inherited from the `.adna/` template):
 
 | Skill | Type | Trigger |
 |-------|------|---------|
 | `skill_onboarding` | agent | First-run detection in forked project (uncustomized, no `role: template`) |
 | `skill_project_fork` | agent | User wants to create a new project (called from root CLAUDE.md) |
 | `skill_workspace_init` | agent | *Deprecated* — root CLAUDE.md now ships pre-authored |
+| `skill_workspace_upgrade` | agent | Upgrade an existing workspace to aDNA compliance (project discovery, root governance, stale-file cleanup) |
+| `skill_workspace_path_migration` | agent | Migrate the workspace root path (e.g. `~/lattice` → `~/aDNA`); reversible via back-compat symlink |
+| `skill_project_rename` | agent | A vault/project/persona is renamed — sweep the vault's own live-routing self-references (Standard §6.5; keep/strip classifier separating live-routing from historical provenance) |
 | `skill_l1_upgrade` | agent | User asks about L1/compute/JupyterHub |
-| `skill_lattice_publish` | agent | User wants to publish a lattice to registry |
 | `skill_new_entity_type` | agent | User wants to extend the ontology |
 | `skill_context_quality_audit` | agent | Audit request for context files |
-| `skill_context_graduation` | process | Context promotion to higher quality tier |
-| `skill_context_research` | agent | Upstream research pass for a new software-graph / volatile-domain context topic (version-pinned, rubric-passed `context_research` files) |
-| `skill_vault_review` | agent | Governance audit of vault structure |
-| `skill_upstream_contribution` | process | Agent notices framework-level gap |
-| `skill_version_migration` | process | CLAUDE.md version upgrade |
-| `skill_sqlite_persistence` | process | Multiple agents, sessions hard to query, learnings accumulating without validation signal |
+| `skill_context_graduation` | agent | Context promotion to higher quality tier (campaign completion / reusable mission deliverables) |
+| `skill_vault_review` | process | Governance audit of vault structure |
+| `skill_version_migration` | agent | CLAUDE.md version upgrade |
+| `skill_upstream_contribution` | agent | Agent notices a framework-level gap to contribute upstream |
 | `skill_orchestration_tiers` | process | Multi-file tasks, tier classification, agent spawning, model routing decisions |
+| `skill_sqlite_persistence` | process | Multiple agents, sessions hard to query, learnings accumulating without validation signal *(proposed)* |
+| `skill_lattice_publish` | agent | User wants to publish a lattice to the registry |
+| `skill_vault_publish` | agent | Publish a vault to its GitHub remote (pre-push sanitization runs automatically) |
+| `skill_git_remote_setup` | agent | First-time GitHub remote configuration (`gh repo create` + `git remote add` + initial push) |
+| `skill_deploy` | agent | Install the pre-push sanitization hook at vault init (idempotent) |
+| `skill_publish_tarball` | agent | Generate a reproducible offline tarball for non-GitHub distribution *(sketch)* |
+| `skill_node_bootstrap_interview` | agent | 19-question operator-specific node-vault bootstrap interview (~4–7 min) |
+
+**Project-specific skills** (authored for this vault):
+
+| Skill | Type | Trigger |
+|-------|------|---------|
 | `skill_dual_audience_review` | agent | Review content file against dual-audience test (developer + non-developer legibility) |
 | `skill_self_reference_check` | agent | Verify content file cites concrete vault examples as self-referential demonstration |
 | `skill_iii_cycle` | agent | Single III improvement cycle — 7-step: measure, orient, select, implement, re-measure, validate, record |
 | `skill_decadal_aar` | agent | Decadal AAR with 5-persona ranker review — every 10th III cycle in Phase 7 |
-| `skill_telemetry_wrapper_integration` | agent | A `<Software>.aDNA` deployment-graph vault adopts the opt-in deploy-feedback loop — add a `feedback/` consumer wrapper (federation_ref to `spec_telemetry_feedback_ecosystem`; default-OFF, names-only) |
-| `skill_project_rename` | agent | A vault/project/persona is renamed — sweep the vault's own live-routing self-references to the old name (Standard §6.5; keep/strip classifier separating live-routing from historical provenance) |
+| `skill_context_research` | agent | Upstream research pass for a new software-graph / volatile-domain context topic (version-pinned, rubric-passed `context_research` files) |
+| `skill_telemetry_wrapper_integration` | agent | A `<Software>.aDNA` deployment-graph vault adopts the opt-in deploy-feedback loop — add a `feedback/` consumer wrapper (default-OFF, names-only) |
+| `skill_reference_inspection` | agent | Ground a site-design decision in real exemplars — curate a reference set, inspect to a fixed rubric, synthesize design guidance |
+| `skill_site_design_pipeline` | process | Designing/rebuilding a site surface — 8-stage vision→ship pipeline wrapping the III cycle |
+| `skill_template_release` | process | Operator opens a template-release gate — ship ratified dev-graph changes to the public face `aDNA-Network/aDNA` |
+| `skill_create_iss` | agent | Agent needs an operator decision/input richer than AskUserQuestion can carry |
+| `skill_open_iss` | process | Open an authored ISS gate in the browser, positioned for operator review *(eventual home: RemoteControl.aDNA)* |
+| `skill_watch_iss` | process | Auto-resume on operator ISS submission within the same session *(eventual home: RemoteControl.aDNA)* |
+| `skill_agentic_sudo` | agent | Agent needs to run `sudo` where the Bash tool's no-TTY path fails (Stanley-local or SSH-remote macOS) |
+| `skill_campaign_sitrep_splash` | agent | Render a 5-block ASCII operator recap surface at campaign open/close |
+| `skill_lattice_home_install` | agent | Install a terminal cold-start splash (5-block ASCII status surface) at a vault root |
+| `skill_home_polish` | agent | Generate/refresh a node vault's `HOME.md` against the 3-tier render fallback |
+| `skill_obsidian_integration_test` | agent | Run the vault-agnostic Obsidian deployment integration test (O1–O7) |
+| `skill_obsidian_canonicalize` | agent | Rehydrate vault Obsidian state to canonical aDNA defaults (canonicalize / reset-layout / verify) |
+| `skill_obsidian_agent_inspect` | agent | Agent-driven Obsidian inspection via Local REST API + MCP (O1–O5 + O7 subset) |
+| `skill_verification_handoff` | agent | Decide the verification surface for an implementation mission (PASS/FAIL/DISPATCHED/PREFLIGHT_FAIL) |
+| `skill_vault_card_authoring` | agent | Author/audit per-vault info-pages (vault_cards) against the v0.2 schema |
+| `skill_upstream_drift_review` | agent | Impact-assess an upstream change → auto-author an adaptation campaign at `status: proposed` *(draft)* |
+| `skill_upstream_drift_watch` | process | Deterministic unattended upstream-drift detection → severity-classified report *(draft)* |
+| `skill_vercel_squarespace_domain_cutover` | process | First-time DNS cutover of a Squarespace domain → a Vercel-hosted Astro site *(legacy)* |
 
 ---
 
