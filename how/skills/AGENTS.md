@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-18
-updated: 2026-05-26
-last_edited_by: agent_siteforge_native
+updated: 2026-06-30
+last_edited_by: agent_stanley
 tags: [directory_index, skill]
 ---
 
@@ -39,6 +39,10 @@ Skills can serve as operational runbooks — not just automated recipes, but doc
 
 ## Skill Categories
 
+`category` is **descriptive organizational metadata — an open vocabulary**, not a closed enum. Pick the common category that fits; introduce a precise domain label (e.g. `quality`, `ontology`, `release`, `obsidian_operations`) when none does. The field favors specificity over forcing a poor fit.
+
+**Common categories:**
+
 | Category | Description |
 |----------|-------------|
 | `setup` | Machine setup, environment configuration |
@@ -50,6 +54,11 @@ Skills can serve as operational runbooks — not just automated recipes, but doc
 | `onboarding` | Customer, partner, or team onboarding |
 | `review` | Model review, code review, audit |
 | `emergency` | Incident response and emergency procedures |
+| `quality` | Quality gates, III cycles, dual-audience / self-reference checks |
+| `design` | Site / visual / reference-design work |
+| `infrastructure` | Node, compute, and deployment infrastructure |
+
+> Additional precise domain labels in deliberate use across this vault's skill set (each ≥1 skill): `ontology`, `release`, `migration`, `vault_maintenance`, `vault_card_authoring`, `verification_dispatch`, `home_generation`, `obsidian_operations`, `deployment`. All valid under the open-vocabulary rule.
 
 ## Directory Structure
 
@@ -96,13 +105,15 @@ type: skill
 skill_type: agent|process
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
-status: active|draft|deprecated
-category: setup|research|development|operations|communication|data|onboarding|review|emergency
+status: active|proposed|draft|deprecated|legacy
+category: <common category or precise domain label — see "Skill Categories">
 trigger: <when to invoke>
 last_edited_by: agent_<username>
 tags: []
 ---
 ```
+
+**Status values:** `active` (in use) · `proposed` (designed, not yet adopted) · `draft` (being authored, pending ratification) · `deprecated` (superseded — do not use) · `legacy` (older pattern, retained for reference).
 
 ## Load/Skip Decision
 

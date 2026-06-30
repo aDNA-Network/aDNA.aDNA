@@ -296,6 +296,9 @@ Reusable agent recipes and documented procedures in `how/skills/`. Skills have t
 | `skill_upstream_drift_review` | agent | Impact-assess an upstream change → auto-author an adaptation campaign at `status: proposed` *(draft)* |
 | `skill_upstream_drift_watch` | process | Deterministic unattended upstream-drift detection → severity-classified report *(draft)* |
 | `skill_vercel_squarespace_domain_cutover` | process | First-time DNS cutover of a Squarespace domain → a Vercel-hosted Astro site *(legacy)* |
+| `skill_cross_skill_primitive_composition` | agent | Authoring a skill/spec that needs an existing skill's primitive — delegate (don't reimplement) + document the chain & degradation cascade *(graduated M3.4)* |
+| `skill_forward_reference_stub_design` | agent | Authoring a spec/skill a later mission consumes — add a `## Forward integration` stub naming WHO+WHAT, deferring WHEN+HOW+WHY *(graduated M3.4)* |
+| `skill_substrate_inversion_with_adr` | agent | Implementation-class mission whose S2 surfaces a load-bearing decision — draft an ADR alongside the spec+skill, ratify in the close cascade *(graduated M3.7)* |
 
 ---
 

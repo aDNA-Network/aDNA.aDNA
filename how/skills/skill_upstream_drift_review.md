@@ -3,8 +3,9 @@ type: skill
 skill_type: agent
 category: operations
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-06-30
 status: draft
+trigger: "A non-empty drift_queue.md stub (severity != none) from the deterministic watcher — research the release, load the affected graph context, impact-assess against the integration-tier ladder, and auto-author a planning-mission + adapt-campaign at status: proposed (never auto-applied; escalate anything breaking)."
 last_edited_by: agent_stanley
 token_estimate: ~1200
 tags: [skill, agent, upstream_drift, reviewer, impact_assessment, severity_importance, iss_escalation, auto_author_campaign, draft]

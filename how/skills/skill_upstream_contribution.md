@@ -3,9 +3,10 @@ type: skill
 skill_type: agent
 category: development
 created: 2026-03-20
-updated: 2026-03-20
+updated: 2026-06-30
 status: active
-last_edited_by: agent_init
+trigger: "During any task, you notice a framework-level improvement to the aDNA standard itself (missing template field, undocumented pattern, naming inconsistency) — surface it at a natural pause point for optional upstream submission."
+last_edited_by: agent_stanley
 token_estimate: ~800
 tags: [skill, agent, contributing, upstream, community]
 ---

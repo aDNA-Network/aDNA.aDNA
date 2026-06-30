@@ -1,8 +1,8 @@
 ---
 type: backlog_idea
 created: 2026-05-24
-updated: 2026-05-24
-status: active
+updated: 2026-06-30
+status: completed
 last_edited_by: agent_stanley
 tags: [backlog, idea, pattern_graduation, skill_authoring_deferred, cross_skill_primitive_composition, t8_forward_reference_stub_discipline, m3_4_close_carry, d_grad_ratify_as_finding_defer_skill_authoring, follow_up_session_pickup, rosetta]
 source_mission: mission_adna_str_p3_m34_verification_handoff_and_agent_inspection
@@ -13,6 +13,18 @@ estimated_sessions: 1-2
 ---
 
 # Pattern graduation — skill file authoring deferred (combined memo)
+
+## Resolution (2026-06-30 — `session_stanley_20260630T190840Z_skills_m07_quality_pass`)
+
+**The deferred authoring is DONE.** The 3 graduation-ready patterns (3/3 per `m21_obj4`) were authored as skill files during the Skills M07 quality pass, reversing D-GRAD's deferral (operator-approved at plan ratification):
+
+- [[how/skills/skill_cross_skill_primitive_composition|skill_cross_skill_primitive_composition]] (graduated M3.4; reinforced 5/5)
+- [[how/skills/skill_forward_reference_stub_design|skill_forward_reference_stub_design]] (graduated M3.4; reinforced 11/3+)
+- [[how/skills/skill_substrate_inversion_with_adr|skill_substrate_inversion_with_adr]] (graduated M3.7)
+
+Inventory grew 45→48 (project-specific 24→27), synced across CLAUDE.md / MANIFEST.md / AGENTS.md / glossary_skill.md; `adna_validate --governance` zero-drift at 48.
+
+**Carry-forward (not resolved here):** the 2 SEEDS — `skill_twin_adr_ratification` + `skill_modular_iii_consumer_interface_design` — remain at **1/3 instances** and are NOT yet graduated; they author when a future mission brings each to its 3rd canonical instance (tracked via the AAR graduation tracker, not this closed idea).
 
 ## Context
 

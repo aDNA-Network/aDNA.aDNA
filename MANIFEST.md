@@ -40,7 +40,7 @@ aDNA.aDNA/
 │   ├── publishing/     [EXT] Vault-to-web pipeline
 │   ├── campaigns/      Strategic initiatives (campaign_rosetta active)
 │   ├── templates/      41 templates (25 base + 11 extension + 5 operational)
-│   ├── skills/         45 skills (21 base + 24 project-specific)
+│   ├── skills/         48 skills (21 base + 27 project-specific)
 │   ├── sessions/       Session tracking
 │   ├── missions/       Multi-session task decomposition
 │   ├── pipelines/      Content-as-code workflows
@@ -130,9 +130,9 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | `template_lattice_home_render.md` | operational | `Home.aDNA/` render |
 | `template_software_graph_stub.md` | operational | new `<Software>.aDNA/` genesis |
 
-### Skills (45)
+### Skills (48)
 
-21 base skills (inherited from the `.adna/` template) + 24 project-specific. Full inventory in [`CLAUDE.md`](CLAUDE.md) §Skills; representative project-specific examples:
+21 base skills (inherited from the `.adna/` template) + 27 project-specific. Full inventory in [`CLAUDE.md`](CLAUDE.md) §Skills; representative project-specific examples:
 
 | Skill | Type | Purpose |
 |-------|------|---------|

@@ -3,8 +3,9 @@ type: skill
 skill_type: process
 category: operations
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-06-30
 status: draft
+trigger: "Scheduled (daily) or manual run for a pinned-dependency vault — deterministically diff upstream release state against the recorded pin + fingerprints, emit a severity-classified drift report, and enqueue a reviewer stub on material drift. No AI; detects and reports, never acts."
 last_edited_by: agent_stanley
 token_estimate: ~900
 tags: [skill, process, upstream_drift, watcher, deterministic, shell, no_ai, severity, idempotency, spec_upstream_pin, draft]
