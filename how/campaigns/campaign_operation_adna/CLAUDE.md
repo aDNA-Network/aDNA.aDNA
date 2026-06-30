@@ -1,3 +1,12 @@
+---
+type: governance
+created: 2026-06-18
+updated: 2026-06-18
+status: active
+last_edited_by: agent_stanley
+tags: [governance, campaign_operation_adna]
+---
+
 # CLAUDE.md — Operation aDNA (program umbrella)
 
 > **Promoter file for the program layer.** This governs how the umbrella behaves — not how its children

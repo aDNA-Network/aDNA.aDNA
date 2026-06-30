@@ -5,6 +5,7 @@ priority: medium
 created: 2026-05-24
 last_edited_by: agent_stanley
 tags: [backlog, idea, upstream, doctrine, agent_protocol, askuserquestion, contextcompass_origin]
+updated: 2026-05-24
 ---
 
 # Idea — Upstream Doctrinal Pattern: AskUserQuestion as Operator-Resolution Discipline

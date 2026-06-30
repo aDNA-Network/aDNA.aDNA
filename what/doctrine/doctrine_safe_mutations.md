@@ -1,3 +1,12 @@
+---
+type: doctrine
+created: 2026-06-14
+updated: 2026-06-14
+status: active
+last_edited_by: agent_stanley
+tags: [doctrine, safe]
+---
+
 # Doctrine — Safe Mutations (workspace-canonical)
 
 > **Status:** active · ratified at `aDNALabs.aDNA/who/governance/adr_011_safe_mutations.md` (2026-06-12). Sibling to `doctrine_credential_handling.md` · `doctrine_key_rotation.md` · `doctrine_secret_scanning.md`. Inherited by reference across all vaults. **Motivating case:** `aDNALabs.aDNA/what/incidents/aar_authorized_keys_selflockout_20260612.md`.

@@ -5,6 +5,7 @@ created: YYYY-MM-DD
 updated: YYYY-MM-DD
 last_edited_by: agent_{username}
 tags: [governance, strategic_compass]
+status: active
 ---
 
 # Strategic Compass: {Project Name}

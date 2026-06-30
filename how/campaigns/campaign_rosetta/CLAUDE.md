@@ -6,6 +6,7 @@ created: 2026-04-13
 updated: 2026-04-13
 last_edited_by: agent_stanley
 tags: [governance, campaign, rosetta]
+status: active
 ---
 
 # Campaign CLAUDE.md — Operation Rosetta

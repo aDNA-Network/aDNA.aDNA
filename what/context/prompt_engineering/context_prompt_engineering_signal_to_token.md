@@ -17,6 +17,7 @@ source_diversity: 4
 cross_topic_coherence: 5
 freshness_category: stable
 last_evaluated: 2026-02-19
+status: active
 ---
 
 # Prompt Engineering: Signal-to-Token Optimization

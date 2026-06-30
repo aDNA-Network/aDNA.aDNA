@@ -16,6 +16,7 @@ created: 2026-05-13
 updated: 2026-05-13
 last_edited_by: agent_stanley
 tags: [smoke_test, integration, mlwx_01, obj5, sandbox, mirror_this_node]
+status: completed
 ---
 
 # M-LWX-01 Obj 5 — Sandbox Integration Smoke Results

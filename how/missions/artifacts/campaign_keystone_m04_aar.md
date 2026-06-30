@@ -7,6 +7,7 @@ created: 2026-06-22
 updated: 2026-06-22
 last_edited_by: agent_stanley
 tags: [aar, artifact, keystone, cohort, manifest, lighthouse, closeout]
+status: completed
 ---
 
 # AAR: Register the Cohort + Wire Lighthouse Composition (campaign close)

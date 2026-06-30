@@ -10,6 +10,7 @@ token_estimate: ~800
 last_edited_by: agent_init
 tags: [context, market_intelligence, competitive_analysis]
 gaps: ["APAC market data incomplete", "pricing comparison needs Q1 2026 update"]
+status: active
 ---
 
 # Market Intelligence: Competitive Landscape

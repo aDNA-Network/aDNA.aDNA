@@ -15,7 +15,7 @@ section_count: 7
 above_fold_focus: headline + credibility stat
 nav_model: mega / hub-and-spoke (role self-ID)
 density_band: medium-sparse
-demo_as_proof: "10 years, 100% uptime" + 311M holders
+demo_as_proof: '"10 years, 100% uptime" + 311M holders'
 needs_operator_capture: [illustration_style, palette]
 tags: [exemplar_site, ethereum, protocol, network, movement, closest_twin]
 ---

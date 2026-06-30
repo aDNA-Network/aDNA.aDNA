@@ -6,6 +6,8 @@ operation: "Operation Keystone — Convergence, Close-out & Cohort Genesis"
 from: Berthier (for Stanley)
 status: needs_human
 tags: [keystone, convergence, recommendations, gates, decisions, siteforge, role_graph]
+updated: 2026-06-29
+last_edited_by: agent_stanley
 ---
 
 # Recommendations for review — Operation Keystone convergence

@@ -7,6 +7,7 @@ created: 2026-04-14
 updated: 2026-04-14
 last_edited_by: agent_stanley
 tags: [artifact, ia, website, sitemap, navigation]
+status: completed
 ---
 
 # Site Information Architecture

@@ -5,6 +5,7 @@ priority: medium
 created: 2026-05-24
 last_edited_by: agent_stanley
 tags: [backlog, idea, upstream, templates, ratification_ceremony, contextcompass_origin]
+updated: 2026-05-24
 ---
 
 # Idea — Upstream `template_ratification_record.md` to aDNA Standard Templates

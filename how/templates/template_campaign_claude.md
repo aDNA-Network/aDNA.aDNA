@@ -5,6 +5,7 @@ created: YYYY-MM-DD
 updated: YYYY-MM-DD
 last_edited_by: agent_{username}
 tags: [governance, campaign]
+status: active
 ---
 
 # CLAUDE.md — Campaign: {campaign_name}

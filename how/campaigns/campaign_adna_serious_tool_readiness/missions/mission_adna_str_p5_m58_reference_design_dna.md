@@ -24,6 +24,7 @@ prerequisite_missions:
   - mission_adna_str_p5_m51_research_oss_visual   # research-class precedent (8 OSS dossiers + cross-target synthesis)
 sibling_mission: mission_adna_str_p5_m57_adnalabs_expansion_planning_stub   # M5.8 feeds M5.7's O3 IA + O4 exit gate
 tags: [mission, m5_8, v8, p5, research, reference_inspection, design_dna, front_page_doctrine, ecosystem_site, design_foundation]
+status: active
 ---
 
 # Mission M5.8 — Reference Inspection & Design-DNA Doctrine

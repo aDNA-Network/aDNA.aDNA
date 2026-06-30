@@ -17,6 +17,7 @@ source_diversity: 3
 cross_topic_coherence: 4
 freshness_category: durable
 last_evaluated: 2026-03-17
+status: active
 ---
 
 # aDNA Core: Entity Definitions — 16 Base Types

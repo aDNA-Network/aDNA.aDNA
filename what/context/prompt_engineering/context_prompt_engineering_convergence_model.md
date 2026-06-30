@@ -17,6 +17,7 @@ source_diversity: 2
 cross_topic_coherence: 5
 freshness_category: durable
 last_evaluated: 2026-02-19
+status: active
 ---
 
 # Prompt Engineering: The Convergent Narrowing Model

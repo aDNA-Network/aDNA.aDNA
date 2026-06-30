@@ -5,6 +5,7 @@ created: 2026-05-08
 updated: 2026-05-08
 last_edited_by: agent_stanley
 tags: [governance, campaign, planned, adna, v3, ecosystem_compliance, per_vault]
+status: active
 ---
 
 # CLAUDE.md — Campaign: aDNA v3 Ecosystem Compliance

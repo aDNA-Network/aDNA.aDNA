@@ -11,6 +11,7 @@ created: 2026-03-19
 updated: 2026-06-29
 last_edited_by: agent_stanley
 tags: [prd, start-kit, onboarding, adoption, cli]
+status: active
 ---
 
 # PRD: Lattice Start Kit

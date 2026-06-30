@@ -5,6 +5,7 @@ priority: high
 created: 2026-04-04
 last_edited_by: agent_init
 tags: [backlog, visual, readme, onboarding]
+updated: 2026-06-09
 ---
 
 # Idea: Demo GIF for README

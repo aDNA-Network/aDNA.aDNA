@@ -6,6 +6,7 @@ status: open
 priority: high
 source: campaign_adna_network_audit (P1-S1 fix → pattern)
 tags: [backlog, idea, upstream, adr_023, registry_generator, privacy, sanitizer]
+last_edited_by: agent_stanley
 ---
 
 # Idea (upstream) — public-projection sanitizer in the ADR-023 registry generator

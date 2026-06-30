@@ -1,3 +1,12 @@
+---
+type: report
+created: 2026-04-13
+updated: 2026-04-13
+status: completed
+last_edited_by: agent_stanley
+tags: [report, compliance]
+---
+
 # aDNA Compliance Report
 
 **Generated**: 2026-03-21 07:45 UTC

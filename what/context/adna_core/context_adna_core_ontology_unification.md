@@ -17,6 +17,7 @@ source_diversity: 4
 cross_topic_coherence: 4
 freshness_category: durable
 last_evaluated: 2026-02-20
+status: active
 ---
 
 # aDNA Core: Ontology Unification Guide

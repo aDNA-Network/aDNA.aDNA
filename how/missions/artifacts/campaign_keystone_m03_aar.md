@@ -7,6 +7,7 @@ created: 2026-06-22
 updated: 2026-06-22
 last_edited_by: agent_stanley
 tags: [aar, artifact, keystone, seed, overlap, seam_gated, deployment_graph]
+status: completed
 ---
 
 # AAR: Seed the Overlapping Graphs (seam-gated) — Forgejo + Nebula

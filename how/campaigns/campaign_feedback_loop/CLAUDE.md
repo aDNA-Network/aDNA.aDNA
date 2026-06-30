@@ -5,6 +5,7 @@ created: 2026-06-20
 updated: 2026-06-21
 last_edited_by: agent_stanley
 tags: [governance, campaign, feedback_loop]
+status: active
 ---
 
 # CLAUDE.md — Campaign: Operation Feedback Loop

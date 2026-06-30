@@ -15,6 +15,7 @@ filed_from: node.aDNA/how/campaigns/campaign_node_credentials/missions/mission_n
 filing_authorization: skill_upstream_contribution
 last_edited_by: agent_stanley
 tags: [backlog, upstream, doctrine, planning_light, meta_planning, substrate_recon, charter_template, m00_protocol, stub_session_estimates, load_bearing_assertions]
+created: 2026-05-26
 ---
 
 # Upstream Contribution — Pre-flight substrate recon for planning-light campaigns (v8.0+)

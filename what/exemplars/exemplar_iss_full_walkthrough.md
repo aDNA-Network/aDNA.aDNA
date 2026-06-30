@@ -14,6 +14,7 @@ authority_ratified_by:
   - adr_029_iss_standard_touch
   - adr_030_iss_skin_family_default_copy
 tags: [exemplar, iss, full_walkthrough, agent_usage, end_to_end, session_trace, troubleshooting, p7_1, adr_030, partner_clean_copy]
+updated: 2026-06-09
 ---
 
 # Exemplar — ISS Full Walkthrough (agent usage, end-to-end)

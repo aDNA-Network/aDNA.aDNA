@@ -5,6 +5,7 @@ priority: low
 created: 2026-05-28
 last_edited_by: agent_stanley
 tags: [backlog, idea, upstream, jupyterlab_theme, multi_tenant_branding, latlab_extensions, hub_branding, lighthouse_polish_origin]
+updated: 2026-05-28
 ---
 
 # Idea — Upstream: `@latlab/theme-latlab-dark` JupyterLab extension should read `~/.latlab/branding.json` at install-time

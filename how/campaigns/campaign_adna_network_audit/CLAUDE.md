@@ -5,6 +5,7 @@ created: 2026-06-08
 updated: 2026-06-10
 last_edited_by: agent_stanley
 tags: [governance, campaign, audit]
+status: active
 ---
 
 # CLAUDE.md — Campaign: adna.network Comprehensive Audit & Improvement

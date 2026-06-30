@@ -7,6 +7,7 @@ updated: 2026-06-20
 last_edited_by: agent_stanley
 campaign_id: campaign_keystone
 tags: [template, keystone, deployment_graph, platform]
+status: active
 ---
 
 # template_software_graph_stub

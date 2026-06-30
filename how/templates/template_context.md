@@ -10,6 +10,7 @@ token_estimate: ~0
 last_edited_by: agent_{username}
 tags: [context, {topic}]
 gaps: []
+status: active
 ---
 
 # {Topic}: {Subtopic}

@@ -8,6 +8,7 @@ trigger: campaign_lattice_compliance_upgrade R07 close 2026-05-28
 informational: true
 upstream_target: .adna template (v8.0+)
 tags: [backlog, upstream, latticehome_rename, adr_013_exception, naming_governance, v8_0_candidate]
+updated: 2026-06-09
 ---
 
 # Upstream Idea — Node-vault naming exception pattern (LatticeHome.aDNA)

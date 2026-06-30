@@ -1,3 +1,11 @@
+---
+type: directory_index
+created: 2026-06-14
+updated: 2026-06-14
+last_edited_by: agent_stanley
+tags: [directory_index, doctrine]
+---
+
 # AGENTS.md — what/doctrine/
 
 **Workspace-canonical doctrines.** These four operational doctrines bind **by reference** across every `.aDNA` vault on the node (consumer vaults cite them, they carry no copy). Relocated here from the workspace root on 2026-06-14 (Operation Production Tidy P2, ledger §A — clean-root: no loose governance files at `~/aDNA/`).

@@ -17,6 +17,7 @@ source_diversity: 3
 cross_topic_coherence: 5
 freshness_category: durable
 last_evaluated: 2026-02-20
+status: active
 ---
 
 # aDNA Core: Paradigm Overview

@@ -8,6 +8,7 @@ last_edited_by: agent_init
 tags: [reference, quality, context-engineering, rubric]
 banner: "who/assets/banners/banner_mission.jpg"
 icon: clipboard-list
+status: active
 ---
 
 # Context Quality Evaluation Rubric

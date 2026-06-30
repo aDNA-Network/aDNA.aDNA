@@ -5,6 +5,7 @@ created: 2026-06-27
 updated: 2026-06-28
 last_edited_by: agent_stanley
 tags: [campaign, governance, iii_campaign_pilot]
+status: active
 ---
 
 # Campaign Standing Orders — Operation Looking Glass

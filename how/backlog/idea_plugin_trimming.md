@@ -5,6 +5,7 @@ priority: high
 created: 2026-04-04
 last_edited_by: agent_init
 tags: [backlog, obsidian, performance, clone-size]
+updated: 2026-04-13
 ---
 
 # Idea: Obsidian Plugin Trimming

@@ -5,6 +5,7 @@ status: active
 created: 2026-05-28
 updated: 2026-05-28
 tags: [skill, scripts, harness, path_a, path_b, path_c]
+last_edited_by: agent_stanley
 ---
 
 # Cutover Scripts — Harness Guidance

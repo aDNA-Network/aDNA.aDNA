@@ -16,6 +16,7 @@ created: 2026-05-13
 updated: 2026-05-13
 last_edited_by: agent_stanley
 tags: [integration_test, mlwx_03, obj1, refork, sandbox, mirror_this_node, schema_landing_verification, finding_3_reaffirmed]
+status: completed
 ---
 
 # M-LWX-03 Obj 1 — Re-fork Integration Test Results

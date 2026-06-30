@@ -5,6 +5,7 @@ priority: medium
 created: 2026-04-04
 last_edited_by: agent_init
 tags: [backlog, visual, branding]
+updated: 2026-04-13
 ---
 
 # Idea: Custom Logo & Favicon

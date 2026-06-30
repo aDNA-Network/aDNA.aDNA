@@ -13,6 +13,7 @@ upstream: true
 target_version: "v8.0"
 last_edited_by: agent_stanley
 tags: [backlog, upstream, doctrine, agents_md, heavy_file_read, offset_limit_convention, context_budget]
+created: 2026-05-19
 ---
 
 # Upstream Contribution — Heavy-File Read Convention in `.adna/AGENTS.md`

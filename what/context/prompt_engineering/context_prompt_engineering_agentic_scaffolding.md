@@ -17,6 +17,7 @@ source_diversity: 4
 cross_topic_coherence: 4
 freshness_category: mixed
 last_evaluated: 2026-03-17
+status: active
 ---
 
 # Prompt Engineering: Agentic Project Scaffolding

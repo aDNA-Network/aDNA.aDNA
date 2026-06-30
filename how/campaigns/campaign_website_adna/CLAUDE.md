@@ -5,6 +5,7 @@ created: 2026-06-17
 updated: 2026-06-21
 last_edited_by: agent_stanley
 tags: [governance, campaign, website, frontier_grade]
+status: active
 ---
 
 # CLAUDE.md — Campaign: WEBSITE.aDNA

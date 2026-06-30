@@ -5,6 +5,7 @@ created: 2026-05-12
 updated: 2026-05-12
 last_edited_by: agent_stanley
 tags: [governance, campaign, planned, adna, workspace_ux, dynamic_bootstrap, obsidian_vault, mini_campaign]
+status: active
 ---
 
 # CLAUDE.md — Campaign: Lattice Workspace UX (mini-campaign)

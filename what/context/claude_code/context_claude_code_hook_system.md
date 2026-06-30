@@ -18,6 +18,7 @@ source_diversity: 2
 cross_topic_coherence: 5
 freshness_category: stable
 last_evaluated: 2026-04-03
+status: active
 ---
 
 # System Configuration: Hook System

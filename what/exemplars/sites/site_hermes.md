@@ -15,7 +15,7 @@ section_count: 5
 above_fold_focus: headline (words-as-focus)
 nav_model: flat (Docs / Portal / Desktop App)
 density_band: sparse
-demo_as_proof: "See It in Action" video
+demo_as_proof: '"See It in Action" video'
 needs_operator_capture: [palette_exact, dark_mode_contrast, motion_feel]
 tags: [exemplar_site, hermes, movement, manifesto, tonal_north_star]
 ---

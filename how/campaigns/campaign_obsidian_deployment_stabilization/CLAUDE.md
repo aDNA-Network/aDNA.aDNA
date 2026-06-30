@@ -1,3 +1,12 @@
+---
+type: governance
+created: 2026-05-13
+updated: 2026-06-09
+status: active
+last_edited_by: agent_stanley
+tags: [governance, campaign_obsidian_deployment_stabilization]
+---
+
 # CLAUDE.md — Campaign: Obsidian Deployment Stabilization
 
 > **Status: planned.** Mission tree TBD at the campaign's own planning mission. Campaign opens at operator authorization per Standing Order #1. Predecessor `campaign_lattice_workspace_ux` mini-campaign closed 2026-05-13T07:00Z+.

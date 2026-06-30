@@ -14,6 +14,7 @@ parallel_with:
   - idea_upstream_permission_edge_entity_type.md      # ratified at M1.5; same v8 P6 batch
   - idea_upstream_network_node_mirror_entity_type.md  # ratified at M1.5; same v8 P6 batch
 tags: [backlog, upstream_proposal, v8_p6_batch, lip_0006, network_adna, pattern_category, batch_promotion, additive_not_breaking, base_ontology_destination, m15_consumer, adr_017_consumer]
+updated: 2026-06-09
 ---
 
 # Upstream proposal — LIP-0006 Network.aDNA pattern category addition to `.adna/` template (v8 P6 batch)

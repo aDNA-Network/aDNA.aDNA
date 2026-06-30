@@ -11,6 +11,7 @@ created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
 last_edited_by: agent_<username>
 tags: [prd, <project_slug>]
+status: active
 ---
 
 # PRD: <% tp.file.title %>

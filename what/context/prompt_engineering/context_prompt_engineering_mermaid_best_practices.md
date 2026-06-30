@@ -17,6 +17,7 @@ source_diversity: 3
 cross_topic_coherence: 4
 freshness_category: stable
 last_evaluated: 2026-04-03
+status: active
 ---
 
 # Prompt Engineering: Mermaid Diagram Best Practices

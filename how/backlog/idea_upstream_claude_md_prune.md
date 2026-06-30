@@ -7,6 +7,7 @@ last_edited_by: agent_stanley
 filed_from: node.aDNA/how/campaigns/campaign_lattice_compliance_upgrade/missions/mission_lattice_comp_m00_charter_and_recon.md (Obj 8)
 filing_authorization: skill_upstream_contribution
 tags: [backlog, upstream, claude_md, token_prune, adna_template, conservative, aggressive]
+updated: 2026-06-09
 ---
 
 # Idea: `.adna/CLAUDE.md` Token Prune (Upstream PR to `LatticeProtocol/adna`)

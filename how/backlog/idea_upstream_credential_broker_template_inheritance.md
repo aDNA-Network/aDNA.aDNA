@@ -15,6 +15,7 @@ filed_from: node.aDNA/how/campaigns/campaign_node_credentials/missions/mission_n
 filing_authorization: skill_upstream_contribution
 last_edited_by: agent_stanley
 tags: [backlog, upstream, doctrine, claude_md, template_inheritance, credentials, credential_broker, node_adna, hestia, cross_vault_routing, latlab_lp_genesis_dependency]
+created: 2026-05-26
 ---
 
 # Upstream Contribution — Credential-broker snippet in `.adna/CLAUDE.md` (v8.0+)

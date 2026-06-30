@@ -5,6 +5,7 @@ created: 2026-04-03
 updated: 2026-04-03
 last_edited_by: agent_init
 tags: [template, aar, governance]
+status: completed
 ---
 
 # Lightweight AAR Template

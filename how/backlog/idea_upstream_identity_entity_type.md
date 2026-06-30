@@ -13,6 +13,7 @@ upstream: true
 target_version: "v8.0"
 last_edited_by: agent_rosetta
 tags: [backlog, upstream, ontology, identity, node_adna]
+created: 2026-05-11
 ---
 
 # Idea: Add `identity` entity type to v8.0+ aDNA standard ontology

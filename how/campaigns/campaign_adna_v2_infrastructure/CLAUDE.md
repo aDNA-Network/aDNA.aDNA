@@ -1,3 +1,12 @@
+---
+type: governance
+created: 2026-05-07
+updated: 2026-05-07
+status: active
+last_edited_by: agent_stanley
+tags: [governance, campaign_adna_v2_infrastructure]
+---
+
 # Campaign CLAUDE.md — aDNA v2 Infrastructure
 
 This file governs agent behavior within `campaign_adna_v2_infrastructure`. The vault's

@@ -15,6 +15,7 @@ filed_from: node.aDNA/how/campaigns/campaign_node_credentials/missions/mission_n
 filing_authorization: skill_upstream_contribution
 last_edited_by: agent_stanley
 tags: [backlog, upstream, doctrine, claude_md, single_writer_lease, concurrency, inventory_entity_type, credentials, node_adna, hestia, dual_session_handoff, collision_prevention]
+created: 2026-05-26
 ---
 
 # Upstream Contribution — Single-writer-lease for inventory + credential edits (v8.0+)

@@ -7,6 +7,7 @@ created: 2026-06-20
 updated: 2026-06-20
 last_edited_by: agent_stanley
 tags: [aar, artifact, keystone, paradigm]
+status: completed
 ---
 
 # AAR: Author the Software-Deployment-Graph Paradigm

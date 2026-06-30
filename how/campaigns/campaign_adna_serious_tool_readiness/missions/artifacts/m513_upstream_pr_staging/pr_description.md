@@ -1,3 +1,12 @@
+---
+type: artifact
+created: 2026-06-10
+updated: 2026-06-10
+status: completed
+last_edited_by: agent_stanley
+tags: [artifact, pr]
+---
+
 # PR — docs: flip the new-user workspace default `~/lattice` → `~/aDNA` (+ canonical repo slug)
 
 > Staged 2026-06-10 at the aDNA.aDNA audit-campaign P2 (operator-authorized at the plan gate);

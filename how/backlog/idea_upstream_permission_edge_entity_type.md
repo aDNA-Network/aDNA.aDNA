@@ -4,7 +4,7 @@ status: ratified_local  # flipped from pending_upstream_review at M1.5 S1 close 
 created: 2026-05-18
 updated: 2026-05-20
 last_edited_by: agent_stanley
-originating_vault: LatticeNetwork.aDNA (display: Alpha Lattice)
+originating_vault: "LatticeNetwork.aDNA (display: Alpha Lattice)"
 originating_session: session_stanley_20260518_165918_arch_03_spec_body
 originating_commit: <to be filled at session close>
 ratification_target_version: "v8.0+"

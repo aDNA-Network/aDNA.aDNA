@@ -1,3 +1,12 @@
+---
+type: artifact
+created: 2026-06-10
+updated: 2026-06-10
+status: completed
+last_edited_by: agent_stanley
+tags: [artifact, pr]
+---
+
 # PR mechanics — throwaway-clone procedure (never touches `~/aDNA/.adna`)
 
 > The vault-side "ready-to-PR diff" in the backlog idea was **sweep-mangled** (WS-5 rewrote its quoted

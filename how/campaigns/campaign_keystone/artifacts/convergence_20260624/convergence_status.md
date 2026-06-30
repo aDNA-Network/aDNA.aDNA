@@ -7,6 +7,8 @@ executor: agent (Cowork / Berthier for Stanley)
 campaign_id: campaign_keystone
 status: complete
 tags: [keystone, convergence, status, cohort, genesis, exemplar, decision]
+updated: 2026-06-26
+last_edited_by: agent_stanley
 ---
 
 # Convergence Status — Software-Element Context Graph tier (one page)

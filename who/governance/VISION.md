@@ -1,3 +1,12 @@
+---
+type: governance
+created: 2026-04-13
+updated: 2026-04-13
+status: active
+last_edited_by: agent_stanley
+tags: [governance, vision]
+---
+
 # Vision: The Decentralized Frontier Lab
 
 How a knowledge architecture becomes a living, community-driven system.

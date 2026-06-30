@@ -1,3 +1,11 @@
+---
+type: directory_index
+created: 2026-04-13
+updated: 2026-06-29
+last_edited_by: agent_stanley
+tags: [directory_index, object_standards]
+---
+
 # Object Standards — Context Index
 
 ## Overview

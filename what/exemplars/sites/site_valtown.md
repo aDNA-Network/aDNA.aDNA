@@ -13,7 +13,7 @@ last_edited_by: agent_stanley
 hero_word_count: ~25
 section_count: 6
 above_fold_focus: headline + low-activation CTA
-nav_model: dual-layer (three modes: builders/browsers/deciders)
+nav_model: "dual-layer (three modes: builders/browsers/deciders)"
 density_band: condensed
 demo_as_proof: named testimonials + branded template cards
 needs_operator_capture: [palette]

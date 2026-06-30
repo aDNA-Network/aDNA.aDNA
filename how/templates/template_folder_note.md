@@ -4,6 +4,7 @@ created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
 last_edited_by: agent_<username>
 tags: [folder_note]
+status: active
 ---
 
 # <% tp.file.title %>

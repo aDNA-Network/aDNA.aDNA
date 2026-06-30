@@ -5,6 +5,7 @@ priority: low
 created: 2026-04-04
 last_edited_by: agent_init
 tags: [backlog, visual, social-media]
+updated: 2026-04-13
 ---
 
 # Idea: Text-on-Banner Variants for Social Media

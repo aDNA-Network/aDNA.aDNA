@@ -14,6 +14,9 @@ references_pilot: CanvasForge.aDNA/how/campaigns/campaign_canvasforge_v1_2/missi
 references_pilot_consumer: ScienceStanley.aDNA/what/visual_dna/  (created during pilot)
 re_merge_rationale: lattice-labs/who/coordination/coord_2026_04_16_forge_split.md
 tags: [backlog, campaign_seed, framework_adna, visual_dna, character_dna, location_dna, object_dna, scene_template, cross_vault_pattern, canvas_as_cartoon, hermes_kin]
+created: 2026-05-23
+updated: 2026-06-09
+last_edited_by: agent_stanley
 ---
 
 # Backlog campaign seed: VisualDNA.aDNA Framework.aDNA project

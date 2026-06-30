@@ -7,6 +7,7 @@ created: YYYY-MM-DD
 updated: YYYY-MM-DD
 last_edited_by: agent_{username}
 tags: [aar, artifact]
+status: completed
 ---
 
 # AAR: {Mission Title}

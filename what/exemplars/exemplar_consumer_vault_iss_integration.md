@@ -14,6 +14,7 @@ authority_ratified_by:
   - adr_029_iss_standard_touch
   - workspace_standing_rule_8
 tags: [exemplar, onboarding, consumer_vault, iss_integration, 30min_budget, t1_t2_t3, p5_m5, i3]
+updated: 2026-06-09
 ---
 
 # Exemplar — Consumer-Vault ISS Integration (≤ 30 min)

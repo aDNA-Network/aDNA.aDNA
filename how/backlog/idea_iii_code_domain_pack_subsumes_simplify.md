@@ -5,6 +5,7 @@ priority: low
 created: 2026-05-24
 last_edited_by: agent_stanley
 tags: [backlog, idea, cross_framework, iii, code_domain_pack, advisory, contextcompass_origin]
+updated: 2026-05-24
 ---
 
 # Idea — III Code-Domain Pack Subsumes `/simplify`-Like Behavior (Advisory to III)

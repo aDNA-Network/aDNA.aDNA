@@ -6,6 +6,7 @@ status: resolved   # cadence ratified at the audit P2 (2026-06-10); see Resoluti
 priority: high
 source: campaign_adna_network_audit (P0 audit + P1-S1)
 tags: [backlog, idea, deploy, process, adna_network, credibility]
+last_edited_by: agent_stanley
 ---
 
 # Idea — establish an adna.network deploy cadence

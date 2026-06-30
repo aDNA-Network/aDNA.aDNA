@@ -5,6 +5,7 @@ created: 2026-05-17
 updated: 2026-05-17
 last_edited_by: agent_stanley
 tags: [governance, campaign, v8, serious_tool_readiness]
+status: active
 ---
 
 # CLAUDE.md — Campaign: aDNA Serious-Tool Readiness

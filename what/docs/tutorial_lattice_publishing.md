@@ -1,3 +1,12 @@
+---
+type: documentation
+created: 2026-04-13
+updated: 2026-06-29
+status: active
+last_edited_by: agent_stanley
+tags: [documentation, tutorial]
+---
+
 # Tutorial: Lattice Publishing Lifecycle
 
 A step-by-step walkthrough of creating, validating, publishing, pulling, and composing a lattice — using the BrandDoctor marketing strategy lattice as the running example.

@@ -17,6 +17,7 @@ source_diversity: 5
 cross_topic_coherence: 4
 freshness_category: durable
 last_evaluated: 2026-03-17
+status: active
 ---
 
 # Prompt Engineering: Ontology Design for LLM Agents

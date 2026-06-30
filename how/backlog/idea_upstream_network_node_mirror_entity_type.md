@@ -5,7 +5,7 @@ created: 2026-05-18
 filed_retroactively: 2026-05-19
 updated: 2026-05-20
 last_edited_by: agent_stanley
-originating_vault: LatticeNetwork.aDNA (display: Alpha Lattice)
+originating_vault: "LatticeNetwork.aDNA (display: Alpha Lattice)"
 originating_session: session_stanley_20260518_143528_arch_01_spec_body
 originating_commit: b6e510d
 retroactive_filing_session: session_stanley_20260519_arch_04_spec_body

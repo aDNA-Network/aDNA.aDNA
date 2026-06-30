@@ -11,6 +11,7 @@ updated: 2026-05-17
 last_edited_by: agent_stanley
 operator: stanley
 tags: [aar, mission_aar, p0, planning, v8, campaign_open, lightweight_plus_5_persona]
+status: completed
 ---
 
 # AAR — P0 Planning, `campaign_adna_serious_tool_readiness`
