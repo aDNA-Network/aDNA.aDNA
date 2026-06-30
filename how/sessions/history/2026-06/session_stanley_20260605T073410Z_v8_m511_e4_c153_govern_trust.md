@@ -12,6 +12,7 @@ status: completed
 completed: 2026-06-05T08:05Z
 last_edited_by: agent_stanley
 tags: [session, v8, p5, m5_11, e4, adnanetwork, network_page, govern_trust, trust_anchor, ethos_close, rlp_gap_4, cycle_153]
+updated: 2026-06-05
 ---
 
 # Session — M5.11 / E4 cycle 153: the "Govern & trust" band (closes `/network`)

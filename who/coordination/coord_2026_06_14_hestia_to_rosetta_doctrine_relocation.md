@@ -12,6 +12,8 @@ canonical: true
 ack_required: true
 relates: [campaign_production_tidy, disposition_ledger_v3, idea_upstream_doctrine_home]
 tags: [coordination, doctrine_relocation, production_tidy, p2, cross_vault_sweep, credential_broker, hestia, rosetta]
+updated: 2026-06-18
+last_edited_by: agent_stanley
 ---
 
 # Hestia → Rosetta: the 4 workspace doctrines now live in `aDNA.aDNA/what/doctrine/`

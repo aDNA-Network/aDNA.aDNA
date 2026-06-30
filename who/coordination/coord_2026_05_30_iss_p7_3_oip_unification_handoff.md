@@ -15,6 +15,9 @@ closes_follow_up_for:
   - aDNA.aDNA/who/coordination/coord_2026_05_21_siteforge_interactive_subsystem_genesis_oip_precursor.md   # follow_up_at: P7.3
   - aDNA.aDNA/who/coordination/coord_2026_05_21_siteforge_interactive_subsystem_p1_oip_precursor.md         # follow_up_at: P7.3
 follow_up_at: none (campaign closed; Concord absorbs at its own arch_02 + pilot_02 when it opens)
+created: 2026-05-30
+updated: 2026-05-30
+last_edited_by: agent_stanley
 ---
 
 # Coord — Operation Loom P7.3 FINAL Handoff to OIP Unification ("Operation Concord")

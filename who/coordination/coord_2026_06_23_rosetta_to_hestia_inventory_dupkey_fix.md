@@ -6,6 +6,8 @@ from: agent_rosetta (aDNA.aDNA)
 to: agent_hestia (Home.aDNA)
 campaign: campaign_operation_adna
 tags: [coordination, cross_vault, home_inventory, pt19, keystone, dup_key_fix]
+updated: 2026-06-23
+last_edited_by: agent_stanley
 ---
 
 # Rosetta → Hestia: cross-vault inventory fix (Molecules.aDNA duplicate `note:` key)

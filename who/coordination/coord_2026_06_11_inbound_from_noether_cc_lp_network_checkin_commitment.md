@@ -10,6 +10,8 @@ status: cross-posted
 canonical: LatticeProtocol.aDNA/who/coordination/coord_2026_06_11_network_checkin_commitment.md
 ack_required: false
 tags: [coordination, inbound, cc, lattice_protocol, network_adna, checkin_commitment, p0]
+updated: 2026-06-11
+last_edited_by: agent_stanley
 ---
 
 # CC — LP-side interop check-in commitment + schema-finality sequencing (LP → Network)

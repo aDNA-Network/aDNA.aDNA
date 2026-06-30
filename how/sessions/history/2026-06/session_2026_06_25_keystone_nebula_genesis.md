@@ -8,6 +8,7 @@ campaign: campaign_keystone
 persona: rosetta
 last_edited_by: agent_stanley
 tags: [session, keystone, cohort_genesis, nebula, context_research]
+updated: 2026-06-25
 ---
 
 # Session — Operation Keystone cohort genesis: graph 4 (Nebula)

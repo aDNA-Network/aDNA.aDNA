@@ -25,6 +25,7 @@ files_touched_planned:
   - aDNA.aDNA/STATE.md  # Op 3 21st canonical instance refresh
   - aDNA.aDNA/how/sessions/history/2026-05/  # M3.7 S1 + S2 session moves
 tags: [session, v8, p3, m37, s2, rosetta, modular_iii_for_obsidian, concern_6_of_6, p3_capstone, p3_phase_exit_brick_4_of_4_modular_iii_operational_prong, design_spec_authoring, adr_025_iii_decadal_coordination, adr_026_ledger_observation_shared_primitive, aar_finalization, mission_close, campaign_master_close, op_3_21st_canonical_instance, push_after_s2, canonical_2_session_implementation_class_shape_2nd_instance, skill_two_session_close_cascade_graduation_candidate_advance_to_2, substrate_inversion_with_adr_variant_graduation_at_3rd_canonical_instance, campaign_so_14_in_phase_exception_4th_invocation, six_section_design_spec_structure_13th_canonical_instance, t8_forward_reference_stub_post_graduation_11th_instance, design_at_p3_propagation_at_p6_pattern_6th_survival_test, standing_order_8_23rd_tactical_invocation, p3_to_p4_phase_exit_gate_unblocked, substrate_pure_separation_9th_canonical_instance_pre_s2, zero_iii_adna_touches, zero_node_adna_touches, zero_forge_vault_wrapper_touches, zero_lattice_labs_touches, zero_obsidian_mutations, zero_adna_dot_touches, zero_aDNA_dot_site_touches]
+last_edited_by: agent_stanley
 ---
 
 # Session — M3.7 S2 — Modular III for Obsidian close cascade (final P3 brick)

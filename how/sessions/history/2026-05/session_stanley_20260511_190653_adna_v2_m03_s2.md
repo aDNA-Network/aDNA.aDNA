@@ -32,6 +32,9 @@ external_repo_commits:
   pushed: true
   push_response_note: "Remote returned 'This repository moved. Please use the new location: https://github.com/LatticeProtocol/aDNA.git' — GitHub canonical case is aDNA (mixed case per .aDNA suffix convention); local remote URL LatticeProtocol/adna.git still functions via case-insensitive routing. Flagged for operator review (ADR-006 specified lowercase adna; current GitHub state is mixed-case aDNA — divergence is functionally inert but worth a corrective note in M07 or ADR-006 amendment)."
 tags: [session, completed, adna, infrastructure, p1, m03, v7_0, repo_flatten, destructive, verification_harness, session_2]
+created: 2026-05-11
+updated: 2026-05-11
+last_edited_by: agent_stanley
 ---
 
 ## Plan reference

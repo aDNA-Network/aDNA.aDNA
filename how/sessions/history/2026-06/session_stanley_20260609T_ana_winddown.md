@@ -10,6 +10,7 @@ persona: rosetta
 mission: campaign_adna_network_audit (AAR + integration + wind-down)
 campaign: campaign_adna_network_audit
 tags: [session, audit, adna_network, aar, wind_down, integration]
+last_edited_by: agent_stanley
 ---
 
 # Session — audit AAR + integrate findings + wind-down

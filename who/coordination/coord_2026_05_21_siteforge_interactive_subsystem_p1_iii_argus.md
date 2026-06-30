@@ -12,6 +12,9 @@ related_iii_campaign: campaign_d_federation_adaptive_loop   # III Campaign D cur
 related_coord_family: operation_loom_p1_3_arch_lock
 supersedes_predecessor: aDNA.aDNA/who/coordination/coord_2026_05_21_siteforge_interactive_subsystem_genesis_iii_argus.md
 follow_up_at: P3.1 (domain pack authoring) + P3 decadal AARs + post-Phase-3 upstream contribution review
+created: 2026-05-21
+updated: 2026-05-21
+last_edited_by: agent_stanley
 ---
 
 # Coord — Operation Loom P1.3 Architecture-Lock Notice to III.aDNA (Argus Panoptes)

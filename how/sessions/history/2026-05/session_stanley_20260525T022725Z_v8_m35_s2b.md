@@ -36,6 +36,7 @@ files_touched_planned:
   - /Users/stanley/aDNA/node.aDNA/who/assets/vault_cards/_pre_m35_s2b/                # D7d 7 archived
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p3_m35_home_polish_and_per_vault_info_pages.md  # EDIT Obj 6+7+8 pending → landed at close
 tags: [session, v8, p3, m35, s2b, rosetta, split_continuation, two_new_skills, skill_home_polish_new, skill_vault_card_authoring_new, populate_apply_pass, node_adna_home_line_42_rewrite, vault_gallery_base_new, sixteen_elaborations, fifteen_new_vault_cards, astro_vaults_routes_three, build_vaults_data_mjs_new, vaults_json_committed, mermaid_relationship_graph, adr_023_registry_data_projection_contract_draft, imagen_4_image_regen_31_cards, vertex_ai_direct_api, consistent_prompt_template, substrate_inversion_with_apply_pass_3rd_sub_pattern_candidate, cross_skill_primitive_composition_post_graduation_4th_5th_reinforcement, t8_forward_reference_stub_first_consumer_post_graduation_5th_and_6th, standing_order_8_18th_19th_tactical_invocations, scope_expansion_d7d_image_regen, no_push_at_s2b]
+last_edited_by: agent_stanley
 ---
 
 # Session — M3.5 S2b — Skills + Populate-Apply + Imagen 4 Image Regen + ADR-023 Draft

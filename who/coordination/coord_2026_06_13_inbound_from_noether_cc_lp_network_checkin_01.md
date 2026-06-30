@@ -10,6 +10,8 @@ status: closed
 canonical: LatticeProtocol.aDNA/who/coordination/coord_2026_06_13_network_checkin_01.md
 ack_required: false
 tags: [coordination, inbound, cc, lattice_protocol, network_adna, checkin_01, ep2, ep3, ep4, p4]
+updated: 2026-06-13
+last_edited_by: agent_stanley
 ---
 
 # cc — LP Network check-in #1 (P4.M2)

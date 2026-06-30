@@ -12,6 +12,7 @@ status: completed
 completed: 2026-06-05T09:20Z
 last_edited_by: agent_stanley
 tags: [session, v8, p5, m5_11, e4, adnanetwork, vault_detail, relationship_block, graph_roundtrip, navigability, mermaid_render_fix, scope_expansion, cycle_154]
+updated: 2026-06-05
 ---
 
 # Session — M5.11 / E4 cycle 154: `/vaults` relationship-block render + graph round-trip cross-links

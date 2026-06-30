@@ -14,6 +14,8 @@ source_refs:
   - "AWSBootstrap.aDNA/who/coordination/coord_2026_06_24_keystone_awsbootstrap_lighthouse_cohort_adr_scope.md"
   - what/decisions/adr_037_software_deployment_graph_subtype.md
 tags: [coordination, outbound_proposal, keystone, adr_043, awsbootstrap, lighthouse, cohort, reconciliation, cosign]
+updated: 2026-06-29
+last_edited_by: agent_stanley
 ---
 
 # Outbound proposal — co-sign + ratify ADR-043 (node-provisioning reconciliation)

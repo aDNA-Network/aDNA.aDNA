@@ -18,6 +18,9 @@ related_artifacts:
   - campaign_adna_serious_tool_readiness.md
   - coord_2026_05_18_publish_rewrite_shipped_daedalus.md
   - STATE.md
+created: 2026-05-18
+updated: 2026-05-18
+last_edited_by: agent_stanley
 ---
 
 # Session — M05 S3: Publish-Skill Family Mission Close

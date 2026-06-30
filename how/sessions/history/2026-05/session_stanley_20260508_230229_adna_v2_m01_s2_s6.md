@@ -30,6 +30,10 @@ files_created:
   - how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj10_prometheus_persona.md
   - how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m01_obj10_latticescope_sub_campaign.md
   - how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/aar_m01_planning.md
+created: 2026-05-08
+updated: 2026-05-08
+last_edited_by: agent_stanley
+tags: [session, campaign]
 ---
 
 ## Activity Log

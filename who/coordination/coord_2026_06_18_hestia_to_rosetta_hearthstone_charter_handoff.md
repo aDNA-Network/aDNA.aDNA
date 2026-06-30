@@ -7,6 +7,7 @@ created: 2026-06-18
 status: open
 last_edited_by: agent_hestia
 tags: [coordination, handoff, hearthstone, campaign, home_adna, base_template, p0]
+updated: 2026-06-18
 ---
 
 # Handoff: Operation Hearthstone — chartered (planning), ready for Rosetta to execute from P0

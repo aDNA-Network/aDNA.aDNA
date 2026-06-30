@@ -27,6 +27,9 @@ files_created:
   - what/decisions/adr_008_airlock_template_stub.md
   - how/sessions/active/session_stanley_20260511_165755_adna_v2_m03_s1.md
 tags: [session, active, adna, infrastructure, p1, m03, v7_0, repo_flatten, adr_008, airlock_template_stub, mission_open, non_destructive, session_1]
+created: 2026-05-11
+updated: 2026-05-11
+last_edited_by: agent_stanley
 ---
 
 ## Plan reference

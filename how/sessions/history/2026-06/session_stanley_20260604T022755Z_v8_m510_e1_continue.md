@@ -12,6 +12,7 @@ status: completed
 completed: 2026-06-04T06:32Z
 last_edited_by: agent_stanley
 tags: [session, v8, p5, m5_10, e1, homepage, build, deploy, cycles_2plus, wind_down, ss_ghibli_pivot]
+updated: 2026-06-04
 ---
 
 # Session — M5.10 / E1 continuation (cycles 2+) + per-cycle deploy

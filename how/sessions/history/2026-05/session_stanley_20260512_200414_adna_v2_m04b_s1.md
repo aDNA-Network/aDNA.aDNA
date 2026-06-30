@@ -39,6 +39,9 @@ files_created:
   - how/campaigns/campaign_lattice_workspace_ux/missions/mission_lwx_03_integration_test_and_closeout.md
   - how/sessions/active/session_stanley_20260512_200414_adna_v2_m04b_s1.md
 tags: [session, active, adna, infrastructure, p1, m04b, v7_0, mission_open, workspace_ux, planning_class, side_campaign_seed, lattice_workspace_ux, non_destructive, design_only, session_1]
+created: 2026-05-12
+updated: 2026-05-12
+last_edited_by: agent_stanley
 ---
 
 ## Plan reference

@@ -24,6 +24,9 @@ scope:
     - /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/mission_adna_infra_p1_04_node_adna_bootstrap.md
 heartbeat: 2026-05-11T23:57:45Z
 tags: [session, active, adna, infrastructure, p1, m04, v7_0, node_adna, hestia, destructive_bootstrap, workspace_router, template_upstream_commit, inventory_entity_type, identity_entity_type, session_2]
+created: 2026-05-11
+updated: 2026-05-11
+last_edited_by: agent_stanley
 ---
 
 ## Plan reference

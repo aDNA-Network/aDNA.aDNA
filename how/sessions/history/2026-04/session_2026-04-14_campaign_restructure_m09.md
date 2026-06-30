@@ -9,6 +9,7 @@ campaign: campaign_rosetta
 intent: "Restructure campaign (website-first), begin M09 Website Architecture & Branding"
 last_edited_by: agent_stanley
 tags: [session, campaign-restructure, website, branding]
+updated: 2026-04-14
 ---
 
 # Session: Campaign Restructure + M09 Start

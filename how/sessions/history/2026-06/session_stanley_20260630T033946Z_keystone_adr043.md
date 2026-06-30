@@ -16,6 +16,9 @@ related:
   - "AWSBootstrap.aDNA/who/coordination/coord_2026_06_24_keystone_awsbootstrap_lighthouse_cohort_adr_scope.md"
 token_budget_estimated: "< 50 kT (one ADR + small record edits + one coord memo; transition_tax + ~4 light objectives)"
 tags: [session, keystone, adr_043, awsbootstrap, lighthouse, cohort, reconciliation, node_provisioning]
+created: 2026-06-29
+updated: 2026-06-29
+last_edited_by: agent_stanley
 ---
 
 # Session — Operation Keystone: ADR-043 node-provisioning layer reconciliation (Decision #5)

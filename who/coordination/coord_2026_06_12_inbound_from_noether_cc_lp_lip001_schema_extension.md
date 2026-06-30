@@ -9,6 +9,8 @@ status: cross-posted
 canonical: LatticeProtocol.aDNA/who/coordination/coord_2026_06_12_lip001_schema_extension_p3m2.md
 ack_required: false
 tags: [coordination, inbound, cc, lattice_protocol, lip_001, schema_extension, p3m2]
+updated: 2026-06-12
+last_edited_by: agent_stanley
 ---
 
 # cc — LP LIP-001 implemented: schema 39 → 45 + DLT recorder real (P3.M2)

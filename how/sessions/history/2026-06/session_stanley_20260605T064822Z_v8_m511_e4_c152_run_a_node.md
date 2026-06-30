@@ -12,6 +12,7 @@ status: completed
 completed: 2026-06-05T07:04Z
 last_edited_by: agent_stanley
 tags: [session, v8, p5, m5_11, e4, adnanetwork, network_page, node_onboarding, participation_cta, rlp_gap_1, cycle_152]
+updated: 2026-06-05
 ---
 
 # Session — M5.11 / E4 cycle 152: run-a-node onboarding + participation CTA

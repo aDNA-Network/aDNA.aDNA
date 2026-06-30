@@ -5,6 +5,10 @@ to: Berthier (aDNALabs.aDNA) — skill_template_release owner
 cc: Hestia (Home.aDNA) — release validation; operator (DP3 decision)
 urgency: info
 expires: 2026-08-31   # real trigger = the F1 catch-up release fires (re-confirm then)
+type: coordination
+updated: 2026-06-22
+last_edited_by: agent_stanley
+tags: [coordination]
 ---
 
 # F1 Hearthstone catch-up release — prepped & handed off (one-authorization-ready)

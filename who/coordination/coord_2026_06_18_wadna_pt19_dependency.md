@@ -5,6 +5,10 @@ to: Hestia (Home.aDNA) — Operation Production Tidy
 cc: any concurrent aDNA.aDNA/site agent
 urgency: info
 expires: 2026-08-31   # real trigger = Production Tidy pt19 close (re-confirm then)
+type: coordination
+updated: 2026-06-18
+last_edited_by: agent_stanley
+tags: [coordination]
 ---
 
 # WEBSITE.aDNA registers as a pt19 (vault-data regen) consumer

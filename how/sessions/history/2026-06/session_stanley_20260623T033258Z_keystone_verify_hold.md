@@ -11,6 +11,8 @@ token_budget_estimated: "50-80 kT (content-load; recon Explore passes already su
 token_budget_actual: "~mid band of 50-80 kT (build/gates re-verify incl. an isolated re-run + foreign-server diagnosis + 2 surgical record edits + concurrency reconciliation + closeout)"
 plan_ref: "~/.claude/plans/please-read-the-claude-md-tidy-candle.md"
 tags: [session, operation_adna, keystone, dp2, verify, hold, tidy, v8_1, session_hygiene, concurrency]
+updated: 2026-06-23
+last_edited_by: agent_stanley
 ---
 
 # Session — Operation aDNA: keystone DP2 post-v8.1 verify-and-hold + tidy

@@ -17,6 +17,7 @@ session_class: implementation_destructive
 plan_file: /Users/stanley/.claude/plans/please-read-the-claude-md-lexical-scott.md
 token_budget_estimated_kT: "100-180 per mission spec"
 tags: [session, v8, m2_1, s2, destructive, state_md_split, agents_md_hint, router_archive_pattern]
+last_edited_by: agent_stanley
 ---
 
 # Session — M2.1 S2 destructive execution

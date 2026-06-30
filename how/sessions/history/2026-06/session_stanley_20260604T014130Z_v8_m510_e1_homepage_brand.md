@@ -11,6 +11,7 @@ missions:
 status: active
 last_edited_by: agent_stanley
 tags: [session, v8, p5, m5_10, e1, homepage, brand, positioning, design_pipeline, design_spec]
+updated: 2026-06-03
 ---
 
 # Session — M5.10 / E1 Brand & Positioning (homepage re-frame)

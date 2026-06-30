@@ -23,6 +23,7 @@ files_touched_planned:
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m36_streamline_design_spec.md  # NEW 6-section streamline design spec
   - aDNA.aDNA/what/decisions/adr_024_airlock_streamline_contract.md  # CONDITIONAL: if ADR path A; ~250-350 lines following ADR-014/ADR-023 shape
 tags: [session, v8, p3, m36, s1, rosetta, mission_spec_authoring, governance_bundle, op_3_18th_canonical_instance, airlock_aar, airlock_streamline, concern_3_of_6, cross_ecosystem_aar, substrate_gathering_read_only, iii_v0_3_0_substrate, lattice_labs_canvas_pipeline_substrate, adr_008_template_stub_precedent, design_at_p3_propagation_at_p6_pattern_5th_survival_test, six_section_design_spec_structure_12th_to_13th_canonical_instances, p3_phase_exit_brick_3_of_4_airlock_streamlined_prong, substrate_pure_separation_pre_open_6th_canonical_instance, canonical_2_session_implementation_class_shape_candidate, s1_compression_eligibility, adr_024_airlock_streamline_contract_candidate, campaign_so_14_in_phase_exception_3rd_invocation_candidate, skill_in_phase_adr_ratification_graduation_candidate_advance_2_to_3, skill_implementation_mission_close_graduation_candidate_advance_2_to_3, skill_airlock_aar_synthesis_new_graduation_candidate_seed]
+last_edited_by: agent_stanley
 ---
 
 # Session — M3.6 S1 OPEN — Airlock AAR + streamline (concern #3 of 6)

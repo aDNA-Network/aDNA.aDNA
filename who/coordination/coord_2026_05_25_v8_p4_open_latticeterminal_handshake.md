@@ -13,7 +13,7 @@ pause_annotation: "2026-05-25T~20:55Z — M4.x PAUSED at M5.0 close per operator
 expires: 2026-08-25   # 3-month soft expiry; renew at M4.2 ADR-015 ratification
 extends: aDNA.aDNA/who/coordination/coord_2026_05_17_v8_campaign_open_latticeterminal.md
 last_edited_by: agent_stanley
-predecessor_status: filed (delivery_held_until: operator-acknowledgment)   # preserved by reference per Campaign SO #13; M4.1 D2 does NOT overwrite
+predecessor_status: "filed (delivery_held_until: operator-acknowledgment)"   # preserved by reference per Campaign SO #13; M4.1 D2 does NOT overwrite
 related_mission: aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p4_m41_latticeterminal_sync.md
 related_synthesis: aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m41_latticeterminal_state_synthesis.md
 related_contract_draft: aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/artifacts/m41_phase_4_contract_draft.md

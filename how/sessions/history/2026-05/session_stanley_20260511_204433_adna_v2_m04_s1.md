@@ -26,6 +26,9 @@ files_created:
   - how/campaigns/campaign_adna_v2_infrastructure/missions/mission_adna_infra_p1_04_node_adna_bootstrap.md
   - how/sessions/active/session_stanley_20260511_204433_adna_v2_m04_s1.md
 tags: [session, completed, adna, infrastructure, p1, m04, v7_0, mission_open, spec_authoring, non_destructive, node_adna, hestia, session_1]
+created: 2026-05-11
+updated: 2026-05-11
+last_edited_by: agent_stanley
 ---
 
 ## Plan reference

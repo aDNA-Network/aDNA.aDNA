@@ -9,6 +9,8 @@ status: cross-posted
 canonical: LatticeProtocol.aDNA/who/coordination/coord_2026_06_13_canvas_seam_memo.md
 ack_required: false
 tags: [coordination, inbound, cc, lattice_protocol, canvas_adna, canvasforge, seam, g4, ip_provenance, p4]
+updated: 2026-06-13
+last_edited_by: agent_stanley
 ---
 
 # cc — LP↔Canvas seam memo, two-sided (P4.M2)

@@ -16,6 +16,10 @@ files_created:
   - aDNA.aDNA/how/campaigns/campaign_adna_v3_ecosystem_compliance/missions/.gitkeep
   - aDNA.aDNA/how/sessions/history/2026-05/session_stanley_20260508_193509_adna_v2_m01_amendment.md
 completed: 2026-05-08T19:48:47Z
+created: 2026-05-08
+updated: 2026-05-08
+last_edited_by: agent_stanley
+tags: [session]
 ---
 
 ## Activity Log

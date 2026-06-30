@@ -6,6 +6,7 @@ status: completed
 tier: 2
 last_edited_by: agent_rosetta
 tags: [session, governance, drift-sync, skills]
+updated: 2026-06-29
 ---
 
 # Session — Skills-inventory governance sync

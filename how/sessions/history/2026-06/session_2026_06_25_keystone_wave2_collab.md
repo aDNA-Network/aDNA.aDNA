@@ -8,6 +8,7 @@ campaign: campaign_keystone
 persona: rosetta
 last_edited_by: agent_stanley
 tags: [session, keystone, cohort_genesis, wave2, collab, nextcloud, groupware, forgejo, store, context_research]
+updated: 2026-06-26
 ---
 
 # Session — Operation Keystone cohort genesis: Wave-2 `collab` (graphs 5–8)

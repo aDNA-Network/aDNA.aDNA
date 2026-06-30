@@ -17,6 +17,9 @@ related_artifacts:
   - skill_vault_publish.md
   - pre-push-sanitize.sh
   - pre_push_hook_spec.md
+created: 2026-05-18
+updated: 2026-05-18
+last_edited_by: agent_stanley
 ---
 
 # Session — M05 S2: Publish-Skill Verification + Self-Test Fixtures

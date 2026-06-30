@@ -11,6 +11,8 @@ token_budget_estimated: "50-80 kT (content-load; recon Explore passes + build/ga
 token_budget_actual: "~60-70 kT (within band — 4 Explore recon passes summarized, build/gates verify, surgical edits to STATE + 2 campaign docs, closeout)"
 plan_ref: "~/.claude/plans/please-read-the-claude-md-synthetic-llama.md"
 tags: [session, operation_adna, keystone, dp2, verify, park, state_hygiene]
+updated: 2026-06-22
+last_edited_by: agent_stanley
 ---
 
 # Session — Operation aDNA: keystone DP2 verify-and-park

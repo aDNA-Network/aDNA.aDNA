@@ -15,6 +15,8 @@ source_refs:
   - aDNALabs.aDNA/who/coordination/coord_2026_06_27_outbound_to_rosetta_fleet_defects.md
   - aDNALabs.aDNA/how/backlog/idea_upstream_fleet_defects.md
 tags: [fleet_defect, template_clutter, harness_injection, obe_rename_residue, drydock, m03, standard_touch, coordination, inbound_proposal, rosetta, berthier]
+updated: 2026-06-29
+last_edited_by: agent_stanley
 ---
 
 # Inbound proposal — 3 fleet-defect classes for the standard (Operation Drydock M03)

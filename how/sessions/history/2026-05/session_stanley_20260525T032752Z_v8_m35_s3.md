@@ -27,6 +27,7 @@ files_touched_planned:
   - aDNA.aDNA/how/sessions/active/session_stanley_20260525T022725Z_v8_m35_s2b.md                                                     # frontmatter status: active → completed; git mv to history/2026-05/
   - aDNA.aDNA/how/backlog/idea_pattern_graduation_substrate_inversion_apply_pass.md                                                  # OPTIONAL NEW — fires only if substrate-inversion-with-apply-pass ratifies as 3rd canonical sub-pattern per D-GRAD discipline
 tags: [session, v8, p3, m35, s3, rosetta, close_session, d7d_image_regen_resolved, imagen_4_ultra, paid_key_unblocker, aar, adr_023_ratify, campaign_master_close, mission_spec_close, state_op3_17th_canonical_instance, four_session_moves, push_after_s3, d_grad_ratify_as_finding_defer_skill_authoring, four_session_canonical_with_midcheckpoint_split_1st_instance, substrate_inversion_apply_pass_3rd_sub_pattern_candidate, in_phase_adr_under_so14_exception_clause_2nd_invocation_v8, plan_time_defer_trigger_covers_multiple_blocker_classes_1st_instance, post_graduation_reinforcement_cross_skill_5_of_5_t8_forward_ref_6_of_6, two_of_four_p3_phase_exit_bricks_complete]
+last_edited_by: agent_stanley
 ---
 
 # Session — M3.5 S3 — MISSION CLOSE (D7d image regen + close cascade)

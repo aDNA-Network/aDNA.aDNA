@@ -24,6 +24,7 @@ files_touched_planned:
   - aDNA.aDNA/STATE.md  # P4/M4.1 + Op 3 22nd canonical instance refresh (D4)
   - aDNA.aDNA/how/sessions/history/2026-05/  # session move at close
 tags: [session, v8, p4, m41, s1, rosetta, latticeterminal_sync, cross_vault_coord_handshake, phase_4_entry, installer_binary_distribution, phase_4_contract_draft, d10_ratification, reconnaissance_class, planning_hybrid, op_3_22nd_canonical_instance, coord_memo_to_spock, latticeterminal_state_synthesis, single_session_target, push_after_s1, p3_to_p4_phase_exit_gate_ratified_by_operator, project_so_1_phase_gates_are_human_gates, campaign_so_19_phase_exit_gate_human_gate, campaign_so_13_coord_memo_preservation, campaign_so_14_no_in_phase_adr, campaign_so_17_mission_class_discipline, standing_order_8_25th_tactical_invocation, standing_order_8_26th_tactical_invocation, m3_7_close_self_reference, m3_6_cross_vault_coord_pattern_2nd_instance, zero_adna_dot_touches, zero_latticeterminal_writes, zero_node_adna_touches, zero_iii_adna_touches, zero_forge_vault_wrapper_touches, zero_lattice_labs_writes, zero_installer_code_at_m41, zero_adr_authoring_at_m41, zero_obsidian_mutations, zero_aDNA_dot_site_touches]
+last_edited_by: agent_stanley
 ---
 
 # Session — M4.1 S1 — Phase 4 entry (Cross-vault audit + LatticeTerminal.aDNA sync)

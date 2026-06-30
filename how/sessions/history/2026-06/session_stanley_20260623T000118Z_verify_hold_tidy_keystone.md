@@ -11,6 +11,8 @@ token_budget_estimated: "50-80 kT (content-load; recon Explore passes already su
 token_budget_actual: "~lower band of 50-80 kT (recon pre-done in plan phase; this session = build/gates re-verify + read-only pt19 re-check + memo commit + 3 surgical record edits + closeout)"
 plan_ref: "~/.claude/plans/please-read-the-claude-md-glimmering-sunrise.md"
 tags: [session, operation_adna, keystone, dp2, verify, hold, tidy, canvas_memos]
+updated: 2026-06-22
+last_edited_by: agent_stanley
 ---
 
 # Session — Operation aDNA: keystone DP2 verify-and-hold + tidy

@@ -15,6 +15,9 @@ related_campaign: campaign_siteforge_interactive_subsystem
 related_coord_family: operation_loom_p2_dogfood
 follow_up_at: "RemoteControl.aDNA M0.3 (GUI/input synthesis research) close + P3 GUI pillar entry-gate"
 context_node_inbound: RemoteControl.aDNA/what/context/remotecontrol/context_consumer_graph_window_config_requirement.md
+created: 2026-05-21
+updated: 2026-05-21
+last_edited_by: agent_stanley
 ---
 
 # Coord — Operation Loom P2 → RemoteControl.aDNA: Short-term Window-Positioning Solution + Integration Asks

@@ -9,6 +9,8 @@ status: filed
 canonical: LatticeProtocol.aDNA/who/coordination/coord_2026_06_11_schema_lock_p1m1.md
 ack_required: false
 tags: [coordination, inbound_cc, lattice_protocol, ledger_schema, schema_lock, p1m1]
+updated: 2026-06-11
+last_edited_by: agent_stanley
 ---
 
 # CC — LP ledger event schema locked (canonical 39 on `lattice-protocol` `main`, P1.M1)

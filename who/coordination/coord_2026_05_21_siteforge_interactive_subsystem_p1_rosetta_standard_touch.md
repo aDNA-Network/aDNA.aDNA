@@ -7,13 +7,16 @@ status: acknowledged
 fired_at: 2026-05-21
 acknowledged_at: 2026-05-21T13:55:00Z
 acknowledged_session: session_stanley_20260521T135258Z_v8_m32_s1
-acknowledged_by: agent_stanley (persona: Rosetta)
+acknowledged_by: "agent_stanley (persona: Rosetta)"
 subject: "Operation Loom P1.3 coord — architecture locked (AD-1..AD-10); 2 ADR slot requests; standard-touch plan confirmed"
 tags: [coordination, outbound, siteforge, operation_loom, rosetta, standard_touch, adna_standard, p1_architecture_lock, adr_slot_request, oip_web_substrate]
 related_campaign: campaign_siteforge_interactive_subsystem
 related_coord_family: operation_loom_p1_3_arch_lock
 supersedes_predecessor: aDNA.aDNA/who/coordination/coord_2026_05_21_siteforge_interactive_subsystem_genesis_rosetta.md
 follow_up_at: P5.1 (canonical skill promotion) + P5.2 (ADR canonical promotion) + P5.3 (workspace CLAUDE.md standing-rule addition) + P7.1 (exemplar walkthrough)
+created: 2026-05-21
+updated: 2026-05-21
+last_edited_by: agent_stanley
 ---
 
 # Coord — Operation Loom P1.3 Architecture-Lock Notice to Rosetta (aDNA.aDNA)

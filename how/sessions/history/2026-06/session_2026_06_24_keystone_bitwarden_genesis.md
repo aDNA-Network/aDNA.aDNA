@@ -8,6 +8,7 @@ campaign: campaign_keystone
 persona: rosetta
 last_edited_by: agent_stanley
 tags: [session, keystone, cohort_genesis, bitwarden, context_research]
+updated: 2026-06-24
 ---
 
 # Session — Operation Keystone cohort genesis: graph 3 (Bitwarden)

@@ -12,6 +12,7 @@ missions:
 status: active
 last_edited_by: agent_stanley
 tags: [session, v8, p5, m5_7, m5_8, ecosystem_site, design_dna, reference_inspection, charter, foundation, planning, research]
+updated: 2026-06-03
 ---
 
 # Session — M5.7 Ecosystem Re-Scope & Charter + M5.8 Reference Inspection / Design-DNA Doctrine

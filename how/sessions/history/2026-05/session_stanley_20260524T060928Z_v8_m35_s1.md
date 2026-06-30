@@ -19,6 +19,7 @@ files_touched_planned:
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/campaign_adna_serious_tool_readiness.md  # M3.5 row flip + amendments entry + ADR-023 roadmap row + (potentially) ADR-015 P4 row clarification
   - aDNA.aDNA/STATE.md  # Op 3 archive-on-close 16th canonical instance refresh
 tags: [session, v8, p3, m35, s1, rosetta, mission_spec_authoring, governance_bundle, op_3_16th_canonical_instance, bases_driven_home, per_vault_info_pages, context_graph_inventory_registry, batteries_included, hybrid_scope, centralized_vault_cards, astro_registry_surface_full, mermaid_relationship_graph, iii_target_persona_growth_research_context_generation_forward_stub, adr_023_registry_data_projection_contract, canonical_3_session_implementation_shape_10th_instance_candidate, substrate_inversion_with_apply_pass_3rd_sub_pattern_candidate, standing_order_8_18th_and_19th_tactical_invocations_candidate, design_at_p3_propagation_at_p6_pattern_4th_survival_test, six_section_design_spec_structure_8th_to_11th_canonical_instances, t9_bases_home, t10_vault_card_schema, t11_astro_registry, t12_iii_target_forward_stub, skill_home_polish_new, skill_vault_card_authoring_new, p3_phase_exit_brick_2_of_4_home_polished_prong]
+last_edited_by: agent_stanley
 ---
 
 # Session — M3.5 S1 OPEN — Bases-driven HOME.md + per-vault info pages — context-graph inventory/registry surface batteries-included

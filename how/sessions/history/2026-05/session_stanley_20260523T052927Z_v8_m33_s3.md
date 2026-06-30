@@ -18,6 +18,7 @@ plan_file: /Users/stanley/.claude/plans/please-read-the-claude-md-wild-volcano.m
 predecessor_session: session_stanley_20260523T044555Z_v8_m33_s2
 token_budget_estimated: "~75-110 kT content-load + ~10-14 M cache_read (per ADR-016 Clause C empirical: 4.1 M + ~6-7 turns × 126 K). Within M3.1+M3.2 vanilla-S3-close historical band; D-CARRY=no-carry keeps it at lower-actual band; +pre-S3 S2 substrate-pure commit at HEAD 6d3e5b4 reuses S2 session context."
 tags: [session, m3_3, s3, closeout, canonical_3_session_implementation_shape_8th_instance_ratification, op_3_archive_on_close_13th_canonical_instance, standing_order_8_self_reference_15th_tactical_invocation, cross_skill_primitive_composition_pattern_primary, t8_forward_reference_stub_convention_strong_extended, three_of_four_p3_phase_exit_bricks_complete, no_carry_vanilla_close, push_to_origin_post_close, rosetta]
+last_edited_by: agent_stanley
 ---
 
 # Session S3 — M3.3 Obsidian Stabilization UX-and-Tests Close Cascade

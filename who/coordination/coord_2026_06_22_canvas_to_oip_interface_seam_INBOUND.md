@@ -10,6 +10,8 @@ delivery_state: staged_uncommitted (delivered to inbox by Canvas at Salon P3 ope
 seam: Canvas ↔ OIP
 operator_authorized: true
 tags: [coordination, inbound, salon, p3, interface, surface, leg3, oip, seam, canvas_adna]
+updated: 2026-06-22
+last_edited_by: agent_stanley
 ---
 
 # [INBOUND from Canvas.aDNA] Heads-up — leg-3 interface-surface spec authored (`seam: Canvas ↔ OIP`)

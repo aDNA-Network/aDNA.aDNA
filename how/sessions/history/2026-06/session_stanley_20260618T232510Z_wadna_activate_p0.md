@@ -31,6 +31,10 @@ files_created:
   - how/campaigns/campaign_website_adna/missions/artifacts/SITEMAP.aDNA.md
   - site/evidence/wadna_baseline_2026_06/   # frozen baseline bundle (gitignored)
 completed: 2026-06-18T23:58:00Z
+created: 2026-06-18
+updated: 2026-06-18
+last_edited_by: agent_stanley
+tags: [session]
 ---
 
 ## Activity Log

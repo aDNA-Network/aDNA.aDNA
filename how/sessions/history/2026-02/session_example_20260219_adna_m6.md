@@ -37,6 +37,10 @@ files_created:
   - how/templates/AGENTS.md
   - how/sessions/active/session_example_20260219_adna_m6.md
 completed: 2026-02-19T15:00:00-08:00
+created: 2026-02-19
+updated: 2026-02-19
+last_edited_by: agent_init
+tags: [session, campaign]
 ---
 
 ## Activity Log

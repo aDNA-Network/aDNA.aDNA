@@ -25,6 +25,9 @@ files_created:
   - how/campaigns/campaign_adna_v2_infrastructure/missions/mission_adna_infra_p3_08c_standalone_installer.md
   - how/sessions/active/session_stanley_20260511_064447_adna_v2_m08c_amendment.md
 tags: [session, completed, adna, infrastructure, p3, m08c, v2_0, installer, campaign_amendment, governance]
+created: 2026-05-11
+updated: 2026-05-11
+last_edited_by: agent_stanley
 ---
 
 ## Plan reference

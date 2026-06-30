@@ -19,6 +19,10 @@ files_created:
   - how/backlog/idea_iii_campaign_pattern.md
   - "Websites.aDNA/who/coordination/coord_2026_06_27_rosetta_to_vitruvius_standard_touch_ratified.md (cross-graph coord)"
 completed: 2026-06-27T18:41:25Z
+created: 2026-06-27
+updated: 2026-06-27
+last_edited_by: agent_stanley
+tags: [session]
 ---
 
 # Session — Naming ratification + III-campaign pilot seed

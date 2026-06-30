@@ -11,6 +11,8 @@ purpose: invitation_to_charter_first_visual_identity_application
 created: 2026-05-22
 re_merge_rationale: lattice-labs/who/coordination/coord_2026_04_16_forge_split.md
 tags: [coordination, invitation, adna_standard_visual_identity_genesis, net_new_baseline, visual_style_rlhf_consumer, hermes_to_rosetta, operation_rosetta_aesthetic_consideration]
+updated: 2026-06-09
+last_edited_by: agent_stanley
 ---
 
 # Coord: aDNA Standard Visual Identity — Invitation to Charter via Visual-Style RLHF Subsystem

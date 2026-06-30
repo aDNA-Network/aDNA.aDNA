@@ -12,6 +12,9 @@ related_campaign_parent: idea_campaign_operator_interaction_patterns_unification
 related_coord_family: operation_loom_genesis_p0
 follow_up_at: resolved 2026-05-30 (P7.3 final handoff fired — see closure block)
 resolved_by: aDNA.aDNA/who/coordination/coord_2026_05_30_iss_p7_3_oip_unification_handoff.md
+created: 2026-05-21
+updated: 2026-05-21
+last_edited_by: agent_stanley
 ---
 
 # Coord — Operation Loom Genesis Notice to OIP Unification Owner

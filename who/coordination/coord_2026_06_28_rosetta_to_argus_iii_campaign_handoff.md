@@ -12,6 +12,7 @@ cc: operator
 ack_required: true
 campaign: campaign_looking_glass
 tags: [coordination, cross_vault, looking_glass, iii_campaign_pattern, graduation, handoff, argus]
+last_edited_by: agent_stanley
 ---
 
 # Rosetta → Argus: graduate the "III campaign" pattern (terminal handoff from Operation Looking Glass)

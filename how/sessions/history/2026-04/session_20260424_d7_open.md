@@ -8,6 +8,8 @@ last_edited_by: agent_rosetta
 campaign: campaign_rosetta
 mission: M31
 decadal: D7
+updated: 2026-04-24
+tags: [session, campaign]
 ---
 
 # Session — D7 Open: SEO & Discoverability

@@ -11,6 +11,9 @@ related_campaign: campaign_siteforge_interactive_subsystem
 related_iii_campaign: campaign_d_federation_adaptive_loop   # III Campaign D is current; domain pack extension is a III upstream contribution
 related_coord_family: operation_loom_genesis_p0
 follow_up_at: P1.3 (architecture-level III coord; ADR reservation confirmation) + P3.1 (domain pack authoring)
+created: 2026-05-21
+updated: 2026-05-21
+last_edited_by: agent_stanley
 ---
 
 # Coord — Operation Loom Genesis Notice to III.aDNA (Argus Panoptes)

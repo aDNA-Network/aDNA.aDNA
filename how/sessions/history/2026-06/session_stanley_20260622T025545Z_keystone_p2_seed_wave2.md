@@ -12,6 +12,7 @@ status: completed
 last_edited_by: agent_stanley
 token_budget_actual: ~70
 tags: [session, keystone, deployment_graph, p2, seed, store, groupware, ws-d]
+updated: 2026-06-21
 ---
 
 # Session — Operation Keystone WS-D P2: commit P1-close + seed second wave (Store / Groupware)

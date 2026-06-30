@@ -8,6 +8,7 @@ tier: 2
 mission: mission_fleet_defects_upstream
 last_edited_by: agent_stanley
 tags: [session, fleet_defects, drydock, m03, standard_maintenance, upstream, adr_042]
+updated: 2026-06-29
 ---
 
 # Session — Fleet-defects upstream standard-maintenance (Drydock M03)

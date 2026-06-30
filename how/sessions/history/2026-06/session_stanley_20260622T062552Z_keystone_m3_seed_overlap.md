@@ -7,6 +7,7 @@ last_edited_by: agent_stanley
 campaign_id: campaign_keystone
 tier: 2
 tags: [session, keystone, m3, overlap, seam_gated, seed, deployment_graph]
+status: completed
 ---
 
 # Session — Operation Keystone WS-D · P3/M3 close (seed the overlap graphs)

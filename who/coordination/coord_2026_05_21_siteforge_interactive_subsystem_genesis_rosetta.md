@@ -10,6 +10,9 @@ tags: [coordination, outbound, siteforge, operation_loom, rosetta, standard_touc
 related_campaign: campaign_siteforge_interactive_subsystem
 related_coord_family: operation_loom_genesis_p0
 follow_up_at: P1.3 (architecture-level coord memo after P1.2 architecture spec locked)
+created: 2026-05-21
+updated: 2026-05-21
+last_edited_by: agent_stanley
 ---
 
 # Coord — Operation Loom Genesis Notice to Rosetta (aDNA.aDNA)

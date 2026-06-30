@@ -13,6 +13,7 @@ status: completed
 completed: 2026-06-07T22:15Z
 last_edited_by: agent_stanley
 tags: [session, v8, p5, m5_12, e5, public_good_commons, subnetwork_federation, mission_open, design_spec, stage_0_gate]
+updated: 2026-06-07
 ---
 
 # Session — M5.12 / E5 OPEN: Public-Good Commons & Subnetwork Federation (Stages 0–4 design)

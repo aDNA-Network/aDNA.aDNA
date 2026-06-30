@@ -16,6 +16,10 @@ files_created:
   - how/sessions/active/session_stanley_20260627T_looking_glass_m02_inspect.md
   - how/campaigns/campaign_looking_glass/artifacts/findings_register.md
   - how/campaigns/campaign_looking_glass/missions/artifacts/aar_m02_inspect.md
+created: 2026-06-27
+updated: 2026-06-27
+last_edited_by: agent_stanley
+tags: [session]
 ---
 
 # Session — Operation Looking Glass M2 Inspect (run the III → scored findings register)

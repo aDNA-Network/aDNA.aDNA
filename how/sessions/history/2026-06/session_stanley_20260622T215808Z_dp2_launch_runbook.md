@@ -11,6 +11,8 @@ token_budget_estimated: "50-80 kT (content-load; source-doc reads + 1 new runboo
 token_budget_actual: "(log at close)"
 plan_ref: "~/.claude/plans/please-read-the-claude-md-jazzy-popcorn.md"
 tags: [session, operation_adna, keystone, dp2, runbook, launch, verify]
+updated: 2026-06-22
+last_edited_by: agent_stanley
 ---
 
 # Session — Operation aDNA: DP2 keystone launch runbook + payload verify

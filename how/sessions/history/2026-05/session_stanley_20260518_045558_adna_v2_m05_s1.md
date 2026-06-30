@@ -16,6 +16,9 @@ related_artifacts:
   - skill_git_remote_setup_spec.md
   - pre_push_hook_spec.md
   - coord_2026_05_08_publish_rewrite.md
+created: 2026-05-18
+updated: 2026-05-18
+last_edited_by: agent_stanley
 ---
 
 # Session — M05 S1: Publish-Skill Family Rewrite (First Execution Session)

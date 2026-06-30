@@ -11,6 +11,7 @@ token_budget_estimated: ~90kT
 token_budget_actual: ~95kT (incl. 3 web-research/audit subagents ~257kT subagent)
 last_edited_by: agent_stanley
 tags: [session, keystone, genesis, caddy, skill_context_research, context_research]
+updated: 2026-06-24
 ---
 
 # Session — Operation Keystone cohort genesis · graph 2 (Caddy)

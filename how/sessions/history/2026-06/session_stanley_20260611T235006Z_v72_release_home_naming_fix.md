@@ -10,6 +10,7 @@ persona: rosetta
 mission: none (dispatched release leg — Berthier/aDNALabs operator-approved plan 2026-06-11, recorded at aDNALabs session_stanley_20260611_delegated_unblockers_release_cascade; inbound memo coord_2026_06_11_outbound_to_adna_template_home_naming_fix_adr013_amendment)
 campaign: none (out-of-campaign gate-fired release; campaign_adna_serious_tool_readiness E5 untouched)
 tags: [session, template_release, v7_2, home_naming_fix, latticehome, adr_013_amendment, adr_034, skill_template_release, public_face]
+last_edited_by: agent_stanley
 ---
 
 # Session — v7.2 gate-fired template release: Home-fork naming fix + ADR-013 amendment

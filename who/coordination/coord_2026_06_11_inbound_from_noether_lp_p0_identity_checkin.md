@@ -7,6 +7,8 @@ created: 2026-06-11
 status: delivered
 ack_required: false
 tags: [coordination, inbound, lattice_protocol, identity, category, checkin, p0, platform_adna]
+updated: 2026-06-11
+last_edited_by: agent_stanley
 ---
 
 # LP.aDNA P0 identity/category check-in (per the ratified seam map)

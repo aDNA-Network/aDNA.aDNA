@@ -14,6 +14,9 @@ related:
   - how/skills/skill_template_release.md
   - how/backlog/idea_fleet_defects_retro_cleanup.md
 tags: [session, release, template, public_face, adna_network, v8_2, adr_042, drydock, m03]
+created: 2026-06-29
+updated: 2026-06-29
+last_edited_by: agent_stanley
 ---
 
 # Session — Template Release v8.2 (Drydock M03 propagation gate)

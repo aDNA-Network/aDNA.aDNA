@@ -12,6 +12,8 @@ source_refs:
   - who/coordination/coord_2026_06_27_inbound_from_berthier_fleet_defects.md
   - what/decisions/adr_042_fork_template_hygiene_and_rename_protocol.md
 tags: [coordination, outbound_proposal, harness_injection, fleet_defect, drydock, m03, adr_042, oration]
+updated: 2026-06-29
+last_edited_by: agent_stanley
 ---
 
 # Outbound proposal — strip 2 harness-injected boundaries from Oration.aDNA/CLAUDE.md

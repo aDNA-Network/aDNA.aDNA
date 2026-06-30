@@ -13,6 +13,9 @@ related_coord_family: operation_loom_p1_3_arch_lock
 supersedes_predecessor: aDNA.aDNA/who/coordination/coord_2026_05_21_siteforge_interactive_subsystem_genesis_oip_precursor.md
 follow_up_at: resolved 2026-05-30 (P7.3 final handoff fired — see closure block)
 resolved_by: aDNA.aDNA/who/coordination/coord_2026_05_30_iss_p7_3_oip_unification_handoff.md
+created: 2026-05-21
+updated: 2026-05-21
+last_edited_by: agent_stanley
 ---
 
 # Coord — Operation Loom P1.3 Architecture-Lock Notice to OIP Unification Owner

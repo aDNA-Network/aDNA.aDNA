@@ -9,6 +9,8 @@ campaign: campaign_operation_adna
 tier: 1
 intent: "Prep the F1 Hearthstone catch-up release (public-image standard §5 14→16 body-completion) into a one-authorization-ready package + Berthier handoff memo, while the keystone (DP2) is parked on pt19 + operator GO."
 tags: [operation_adna, keystone, dp2, f1, catch_up_release, skill_template_release, credibility_integrity]
+updated: 2026-06-22
+last_edited_by: agent_stanley
 ---
 
 # Session — F1 catch-up release prep

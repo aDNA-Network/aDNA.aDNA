@@ -10,6 +10,7 @@ persona: rosetta
 mission: none (dispatched infrastructure leg — Berthier/aDNALabs, operator-approved plan 2026-06-10, session_stanley_20260610_public_face_repo)
 campaign: none (out-of-campaign; campaign_adna_serious_tool_readiness E5 untouched — paused at c163, c164 prepared-not-built)
 tags: [session, public_face_repo, adna_network, release_architecture, install_truth, adr_034, skill_template_release, deploy]
+last_edited_by: agent_stanley
 ---
 
 # Session — Public face repo + release architecture (Rosetta leg of the 2026-06-10 operator decision)

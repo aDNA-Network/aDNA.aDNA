@@ -27,6 +27,9 @@ files_created:
   - how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m08a_readme_badge_spec.md
   - how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/m08a_social_comms_post_draft.md
 tags: [session, active, adna, infrastructure, p1, m08a, s2, authoring, upgrade_guide_finalization, public_announcement]
+created: 2026-05-11
+updated: 2026-05-11
+last_edited_by: agent_stanley
 ---
 
 ## Plan reference

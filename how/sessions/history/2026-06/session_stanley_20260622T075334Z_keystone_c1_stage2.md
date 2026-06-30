@@ -10,6 +10,8 @@ mission: "(program-level keystone-readiness — program authors no child mission
 token_budget_estimated: "50-80 kT (content-load; site edits + verification + program artifacts)"
 plan_ref: "~/.claude/plans/please-read-the-claude-md-snug-forest.md"
 tags: [session, operation_adna, keystone, dp2, credibility_integrity, c1_stage2]
+updated: 2026-06-22
+last_edited_by: agent_stanley
 ---
 
 # Session — Operation aDNA: Keystone Launch Readiness (C-1 stage-2 + cross-surface credibility pass)

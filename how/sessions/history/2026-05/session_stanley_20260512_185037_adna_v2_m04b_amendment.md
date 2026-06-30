@@ -30,6 +30,9 @@ files_created:
   - how/campaigns/campaign_lattice_workspace_ux/missions/.gitkeep
   - how/sessions/active/session_stanley_20260512_185037_adna_v2_m04b_amendment.md
 tags: [session, active, adna, infrastructure, p1, m04b, v7_0, workspace_ux, dynamic_bootstrap, obsidian_vault, side_campaign_seed, lattice_workspace_ux, campaign_amendment, governance]
+created: 2026-05-12
+updated: 2026-05-12
+last_edited_by: agent_stanley
 ---
 
 ## Plan reference

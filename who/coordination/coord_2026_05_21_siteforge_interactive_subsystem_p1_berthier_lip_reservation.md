@@ -11,6 +11,9 @@ related_campaign: campaign_siteforge_interactive_subsystem
 related_coord_family: operation_loom_p1_3_arch_lock
 related_vault_succession: lattice-labs → LatticeLabs.aDNA (Phase-6 cutover pending)
 follow_up_at: P7.2 (LIP authoring + ratification at lattice-labs)
+created: 2026-05-21
+updated: 2026-05-21
+last_edited_by: agent_stanley
 ---
 
 # Coord — Operation Loom P1.3 LIP Slot Reservation Request to Berthier (lattice-labs)

@@ -11,6 +11,8 @@ token_budget_estimated: "50-80 kT (content-load)"
 token_budget_actual: "~upper band of 50-80 kT — extra spend on the duplicate-key root-cause + operator-authorized cross-vault source fix, the 17→8 edge-regression diagnosis + overlay rename-cascade rebuild, and the build/gates re-verify"
 plan_ref: "~/.claude/plans/please-read-the-claude-md-tranquil-seahorse.md"
 tags: [session, operation_adna, keystone, dp2, launch_prep, pt19, sync_vaults, network_edges, gates, hold, cross_vault]
+updated: 2026-06-23
+last_edited_by: agent_stanley
 ---
 
 # Session — Operation aDNA: keystone DP2 launch prep (pt19 landed → steps 1-6, held at GO)

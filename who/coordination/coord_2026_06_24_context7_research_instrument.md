@@ -12,6 +12,8 @@ source_refs:
   - aDNA.aDNA/how/skills/skill_context_quality_audit.md
   - aDNA.aDNA/what/docs/context_quality_rubric.md
 tags: [context7, research, skill_proposal, context_graduation, rubric, keystone, coordination]
+updated: 2026-06-24
+last_edited_by: agent_stanley
 ---
 
 # Coord — adopt Context7 as the genesis-research instrument (propose `skill_context_research`)

@@ -24,6 +24,10 @@ files_created:
   - site/tests/gates/gate-20-claim-trace.spec.ts
   - site/tests/gates/gate-21-currency.spec.ts
   - site/tests/gates/fixtures/claim_trace_manifest.json
+created: 2026-06-27
+updated: 2026-06-28
+last_edited_by: agent_stanley
+tags: [session]
 ---
 
 # Session — Operation Looking Glass M1 Construct (build the III scaffolding)

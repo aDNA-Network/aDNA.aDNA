@@ -14,6 +14,9 @@ related:
   - how/missions/mission_currency_followon_closeout.md
   - .adna/how/skills/skill_project_rename.md
 tags: [session, release, template, public_face, adna_network, v8_3, currency_sweep, org_name]
+created: 2026-06-29
+updated: 2026-06-29
+last_edited_by: agent_stanley
 ---
 
 # Session — Template Release v8.3 (org-name currency sweep)

@@ -38,6 +38,7 @@ files_touched_planned:
   - aDNA.aDNA/what/decisions/adr_023_registry_data_projection_contract.md                                           # NEW ADR draft (status: draft at S2; accepted at S3)
   - aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p3_m35_home_polish_and_per_vault_info_pages.md  # EDIT Objective status pending→landed for Obj 3-9
 tags: [session, v8, p3, m35, s2, rosetta, substrate_landing, four_design_specs, t9_bases_home, t10_vault_card_schema_v0_2, t11_astro_vaults_registry, t12_iii_target_forward_stub, skill_home_polish_new, skill_vault_card_authoring_new, populate_apply_pass, node_adna_home_line_42_rewrite, vault_gallery_base_new, sixteen_elaborations, fifteen_new_vault_cards, astro_vaults_routes_three, build_vaults_data_mjs_new, vaults_json_committed, mermaid_relationship_graph, adr_023_registry_data_projection_contract_draft, substrate_inversion_with_apply_pass_3rd_sub_pattern_candidate, six_section_design_spec_structure_8th_to_11th_canonical_instances, cross_skill_primitive_composition_post_graduation_reinforcement_4th_5th, t8_forward_reference_stub_discipline_post_graduation_first_consumer, standing_order_8_18th_19th_tactical_invocations, single_s2_with_midcheckpoint_trigger, t9_t10_t11_t12_sequential_order]
+last_edited_by: agent_stanley
 ---
 
 # Session — M3.5 S2 — Substrate landing (4 design specs + 2 new skills + populate-apply + ADR-023 draft)

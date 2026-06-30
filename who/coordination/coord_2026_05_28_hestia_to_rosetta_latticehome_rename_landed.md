@@ -9,6 +9,7 @@ ack_required: false
 trigger: campaign_lattice_compliance_upgrade R06 close 2026-05-28
 informational: true
 tags: [coordination, hestia_to_rosetta, latticehome_rename, r06_close]
+updated: 2026-06-09
 ---
 
 # Coord — Hestia → Rosetta: LatticeHome.aDNA rename landed (informational)

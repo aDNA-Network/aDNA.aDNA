@@ -16,6 +16,10 @@ files_created:
   - how/sessions/active/session_stanley_20260627T193130Z_looking_glass_charter.md
   - how/campaigns/campaign_looking_glass/artifacts/scaffolding_spec.md
   - "how/campaigns/campaign_looking_glass/missions/ (M1–M5 sized mission stubs: mission_construct_scaffolding_m01 … mission_closeout_handoff_m05)"
+created: 2026-06-27
+updated: 2026-06-27
+last_edited_by: agent_stanley
+tags: [session]
 ---
 
 # Session — Operation Looking Glass charter (III-campaign pilot)

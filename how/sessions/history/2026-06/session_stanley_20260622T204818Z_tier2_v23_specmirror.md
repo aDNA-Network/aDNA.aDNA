@@ -11,6 +11,8 @@ token_budget_estimated: "50-80 kT (content-load; standard-doc + site spec-mirror
 token_budget_actual: "~60-70 kT (content-load; within band — 9 content files + standard doc + build/gates + 2 program artifacts + STATE)"
 plan_ref: "~/.claude/plans/please-read-the-claude-md-squishy-goose.md"
 tags: [session, operation_adna, keystone, dp2, tier2, spec_mirror, v2_3, adr_035]
+updated: 2026-06-22
+last_edited_by: agent_stanley
 ---
 
 # Session — Operation aDNA: Tier-2 standard-currency / spec-mirror v2.3 port

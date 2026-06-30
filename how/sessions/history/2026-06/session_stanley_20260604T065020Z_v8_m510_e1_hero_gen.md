@@ -12,6 +12,7 @@ status: completed
 completed: 2026-06-04T07:20Z
 last_edited_by: agent_stanley
 tags: [session, v8, p5, m5_10, e1, ss_ghibli_pivot, hero_image, image_gen, imagen, adr_032, brand_register, cycle_146]
+updated: 2026-06-04
 ---
 
 # Session — M5.10 / E1 cycle 146: "The aDNA Network" hero-gen + `adr_032` brand-register pivot draft
