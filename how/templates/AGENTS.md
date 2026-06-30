@@ -1,7 +1,7 @@
 ---
 type: directory_index
 created: 2026-02-19
-updated: 2026-06-19
+updated: 2026-06-29
 last_edited_by: agent_rosetta
 tags: [directory_index, templates]
 ---
@@ -13,6 +13,8 @@ tags: [directory_index, templates]
 Templates for all content types in the vault. Each template defines the frontmatter schema, body structure, and naming convention for its target entity type. Templates ensure consistency across files created by different agents and users.
 
 ## Template Index
+
+> **41 `template_*.md` total** = 12 auto-triggered + 13 manual-apply + 5 operational + 11 extension. (The Fork-Skeleton Bundle is a directory, not a `template_*.md`, so it sits outside the 41.) Provenance split: 25 base (inherited from `.adna`) + 11 extension + 5 operational.
 
 ### Auto-Triggered Templates (12)
 
@@ -50,6 +52,20 @@ These templates have no Templater auto-trigger. Copy their structure manually or
 | `template_migration.md` | Version migration prompt | `how/migrations/` | `migration` | Migrations are created per-version, not on new-file trigger |
 | `template_registry.md` | Registry publication metadata | varies | `template` | Used for publishing, not regular file creation |
 | `template_strategic_compass.md` | Strategic compass | `who/governance/` | `governance` | Rare — governance dir already mapped for other use |
+| `template_quest_result.md` | Side-quest result record | `how/quests/` | `quest_result` | Quest dir mixes definitions + results |
+| `template_side_quest.md` | Side-quest definition | `how/quests/` | `side_quest` | Quest dir mixes definitions + results |
+
+### Operational / Lifecycle Templates (5)
+
+Vault-agnostic operational templates (manual-apply; not entity-type templates). Added since the original index was written:
+
+| Template | Target Type | Typical Location | Frontmatter `type` |
+|----------|------------|-----------------|-------------------|
+| `template_campaign_open_splash.md` | Campaign-open splash | `how/campaigns/campaign_*/` | `template` |
+| `template_campaign_close_splash.md` | Campaign-close splash | `how/campaigns/campaign_*/` | `template` |
+| `template_drift_report.md` | Upstream drift-watch report | varies | `template` |
+| `template_lattice_home_render.md` | Lattice-home render (vault-agnostic) | `Home.aDNA/` | `template` |
+| `template_software_graph_stub.md` | Software-graph genesis stub (`<Software>.aDNA` CLAUDE.md) | new `<Software>.aDNA/` | `governance` |
 
 ### Fork-Skeleton Bundles (1)
 

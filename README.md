@@ -255,7 +255,7 @@ Agentic-DNA/
 │   ├── docs/              #   aDNA specification documents
 │   └── lattices/          #   Lattice definitions + tools + 15 examples
 ├── how/                   # Operations
-│   ├── templates/         #   22 templates (10 auto-triggering)
+│   ├── templates/         #   26 base templates (12 auto-triggering)
 │   ├── pipelines/prd_rfc/ #   R&D → PRD → RFC pipeline
 │   ├── sessions/          #   Session tracking
 │   ├── campaigns/         #   Multi-mission initiatives

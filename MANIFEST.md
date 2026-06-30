@@ -1,8 +1,8 @@
 ---
 type: manifest
 created: 2026-04-13
-updated: 2026-06-22
-last_edited_by: agent_stanley
+updated: 2026-06-29
+last_edited_by: agent_rosetta
 tags: [manifest, governance]
 ---
 
@@ -20,7 +20,7 @@ This project serves two audiences simultaneously: **developers** building with a
 
 ## Architecture
 
-This project uses the **aDNA** knowledge architecture — a bare triad deployment with 10 domain-specific ontology extensions.
+This project uses the **aDNA** knowledge architecture — a bare triad deployment with 11 domain-specific ontology extensions.
 
 ```
 aDNA.aDNA/
@@ -39,16 +39,17 @@ aDNA.aDNA/
 │   ├── workshops/      [EXT] Workshop kits + facilitation
 │   ├── publishing/     [EXT] Vault-to-web pipeline
 │   ├── campaigns/      Strategic initiatives (campaign_rosetta active)
-│   ├── templates/      32 templates (22 base + 10 extensions)
+│   ├── templates/      41 templates (25 base + 11 extension + 5 operational)
 │   ├── skills/         15 skills (13 base + 2 project-specific)
 │   ├── sessions/       Session tracking
 │   ├── missions/       Multi-session task decomposition
 │   ├── pipelines/      Content-as-code workflows
 │   ├── backlog/        Ideation
 │   └── quests/         Community validation experiments
-├── who/            # WHO — Community, adopters, governance
+├── who/            # WHO — Community, adopters, reviewers, governance
 │   ├── community/      [EXT] Community roles + contribution paths
 │   ├── adopters/       [EXT] Adopter personas + profiles
+│   ├── reviewers/      [EXT] Reviewer personas (decadal AAR lens)
 │   ├── coordination/   Cross-agent sync notes
 │   └── governance/     Roles, policies, VISION.md
 ```
@@ -57,7 +58,7 @@ aDNA.aDNA/
 
 WHO (4: governance, team, coordination, identity), WHAT (5: context, decisions, modules, lattices, inventory), HOW (7: campaigns, missions, sessions, templates, skills, pipelines, backlog). Full table: CLAUDE.md § Domain Knowledge. *(`inventory` + `identity` promoted to base per ADR-035, standard v2.3; dev-graph authored at Hearthstone P1, materialized to `.adna/` at P5.)*
 
-### Extended Ontology (10 Rosetta types)
+### Extended Ontology (11 Rosetta types)
 
 | Triad | Entity | Directory | Purpose |
 |-------|--------|-----------|---------|
@@ -69,6 +70,7 @@ WHO (4: governance, team, coordination, identity), WHAT (5: context, decisions, 
 | WHAT | `comparison` | `what/comparisons/` | aDNA vs. other knowledge architectures |
 | WHO | `community` | `who/community/` | Community roles, contribution paths, governance |
 | WHO | `adopter` | `who/adopters/` | Adopter personas and deployment profiles |
+| WHO | `reviewer` | `who/reviewers/` | Specialist UX/design reviewer personas (decadal AAR lens) |
 | HOW | `workshop` | `how/workshops/` | Workshop kits and facilitation guides |
 | HOW | `publishing` | `how/publishing/` | Vault-to-web content publishing pipeline |
 
@@ -105,22 +107,28 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | `canvas2lattice.py` | `what/lattices/tools/` | Convert Obsidian canvas → lattice YAML |
 | `lattice_yaml_schema.json` | `what/lattices/` | JSON Schema for lattice definitions |
 
-### Templates (32)
+### Templates (41)
 
-22 base templates (inherited) + 10 extension templates:
+**25 base** (inherited from `.adna` — 12 auto-triggered + 13 manual-apply; full index: `how/templates/AGENTS.md`) + **11 extension** + **5 operational** = the 16 Rosetta-local templates below:
 
-| Extension Template | Target Directory |
-|-------------------|-----------------|
-| `template_concept.md` | `what/concepts/` |
-| `template_tutorial.md` | `what/tutorials/` |
-| `template_pattern.md` | `what/patterns/` |
-| `template_glossary_entry.md` | `what/glossary/` |
-| `template_use_case.md` | `what/use_cases/` |
-| `template_comparison.md` | `what/comparisons/` |
-| `template_community_role.md` | `who/community/` |
-| `template_adopter.md` | `who/adopters/` |
-| `template_workshop.md` | `how/workshops/` |
-| `template_publishing_task.md` | `how/publishing/` |
+| Local Template | Class | Target Directory |
+|----------------|-------|-----------------|
+| `template_concept.md` | extension | `what/concepts/` |
+| `template_tutorial.md` | extension | `what/tutorials/` |
+| `template_pattern.md` | extension | `what/patterns/` |
+| `template_glossary_entry.md` | extension | `what/glossary/` |
+| `template_use_case.md` | extension | `what/use_cases/` |
+| `template_comparison.md` | extension | `what/comparisons/` |
+| `template_community_role.md` | extension | `who/community/` |
+| `template_adopter.md` | extension | `who/adopters/` |
+| `template_reviewer.md` | extension | `who/reviewers/` |
+| `template_workshop.md` | extension | `how/workshops/` |
+| `template_publishing_task.md` | extension | `how/publishing/` |
+| `template_campaign_open_splash.md` | operational | `how/campaigns/campaign_*/` |
+| `template_campaign_close_splash.md` | operational | `how/campaigns/campaign_*/` |
+| `template_drift_report.md` | operational | upstream drift-watch reports |
+| `template_lattice_home_render.md` | operational | `Home.aDNA/` render |
+| `template_software_graph_stub.md` | operational | new `<Software>.aDNA/` genesis |
 
 ### Skills (17)
 
@@ -154,7 +162,7 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | aDNA Standard v2.2 | Inherited | Core specification — triad, ontology, sessions, missions, campaigns |
 | Context library | Inherited | 5 topics, 27 subtopics, ~75K tokens |
 | Lattice YAML tools | Inherited | Validate, convert (YAML↔canvas), JSON Schema, 19 examples |
-| 22 base templates | Inherited | Full operational template set |
+| 25 base templates | Inherited | Full operational set (12 auto-triggered + 13 manual-apply) |
 | 13 base skills | Inherited | Onboarding, fork, entity type, quality audit, etc. |
 | Execution hierarchy v2 | Inherited | OODA cascade, AAR protocol, escalation cascade |
 | Quality framework | Inherited | 10-dimension compliance rubric |

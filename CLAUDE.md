@@ -2,8 +2,8 @@
 type: governance
 version: "6.0"
 token_estimate: ~4500
-updated: 2026-06-22
-last_edited_by: agent_stanley
+updated: 2026-06-29
+last_edited_by: agent_rosetta
 ---
 
 # CLAUDE.md — aDNA.aDNA
@@ -63,7 +63,7 @@ aDNA.aDNA/
 │       ├── tools/               # Python validation and conversion tools
 │       └── examples/            # Example .lattice.yaml files
 ├── how/                         # HOW — Operations, sessions, templates
-│   ├── templates/               # 32 reusable templates (22 base + 10 extensions)
+│   ├── templates/               # 41 reusable templates (25 base + 11 extension + 5 operational)
 │   ├── sessions/                # Session tracking (active/ + history/)
 │   ├── missions/                # Multi-session plans (standalone)
 │   ├── backlog/                 # Ideation and improvement tracking
