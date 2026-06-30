@@ -33,11 +33,11 @@ ISS is adopted differently depending on the aDNA pattern category of the consume
 
 | Guide | Covers | When to read |
 |---|---|---|
-| `forge_platform_guide.md` | Forge.aDNA · Platform.aDNA | Adopting ISS in a forge (e.g. MoleculeForge, RareHarness, VideoForge) — IM-D Configure+Launch composite + ST2 multi-field input + Platform safety presets like `clinician_evaluation`. Canonical wrappers: MoleculeForge.aDNA/iss/ (Forge), RareHarness.aDNA/iss/ (Platform). |
-| `framework_orgvault_orggraph_guide.md` | Framework.aDNA · Org-Vault · Org-Graph | Adopting ISS in a framework (III, ContextCompass), org-vault (LatticeLabs, WilhelmAI, ScienceStanley), or org-graph (CakeHealth, SuperLeague) — audience-respect doctrine + `partner_onboarding` preset + ADR ratification gates. Canonical wrapper: WilhelmAI.aDNA/iss/ (Org-Vault). Framework + Org-Graph remain hypothetical until first pilot wrapper deploys. |
+| `forge_platform_guide.md` | Forge.aDNA · Platform.aDNA | Adopting ISS in a forge (e.g. MoleculeForge, RareHarness, VideoForge) — IM-D Configure+Launch composite + ST2 multi-field input + Platform safety presets like `clinician_evaluation`. Canonical wrappers: MoleculeForge.aDNA/how/federation/iss/ (Forge), RareHarness.aDNA/how/federation/iss/ (Platform). |
+| `framework_orgvault_orggraph_guide.md` | Framework.aDNA · Org-Vault · Org-Graph | Adopting ISS in a framework (III, ContextCompass), org-vault (LatticeLabs, WilhelmAI, ScienceStanley), or org-graph (CakeHealth, SuperLeague) — audience-respect doctrine + `partner_onboarding` preset + ADR ratification gates. Canonical wrapper: WilhelmAI.aDNA/how/federation/iss/ (Org-Vault). Framework + Org-Graph remain hypothetical until first pilot wrapper deploys. |
 | `network_node_coordination_guide.md` | Network.aDNA · Node · Coordination | Adopting ISS in a network (LatticeNetwork), node (node.aDNA), or coordination (TaskForge) — federation gates + local-by-default provenance per Workspace Standing Rule 4 + multi-stakeholder limitations (v2-scope) + gate-id ↔ lease-id linkage. All three remain hypothetical until first pilot wrappers deploy. |
 
-Each guide includes a worked example, a 6-decision design extraction, and a per-category decision tree. Cross-vault wrappers deploy at `<vault>/iss/CLAUDE.md` with a `federation_ref:` block pinning the SiteForge ISS substrate version.
+Each guide includes a worked example, a 6-decision design extraction, and a per-category decision tree. Cross-vault wrappers deploy at `<vault>/how/federation/iss/CLAUDE.md` (placement per ADR-045) with a `federation_ref:` block pinning the SiteForge ISS substrate version.
 
 ## Authoring workflow (the 7-step happy path)
 
