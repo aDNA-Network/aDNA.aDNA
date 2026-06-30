@@ -1,12 +1,15 @@
 ---
 type: idea
-status: proposed
+status: graduating
 created: 2026-06-20
-updated: 2026-06-20
+updated: 2026-06-29
 last_edited_by: agent_stanley
 campaign_id: campaign_keystone
+graduated_to: what/decisions/adr_043_node_provisioning_layer_reconciliation.md
 tags: [idea, keystone, awsbootstrap, lighthouse, reconciliation, adr_candidate]
 ---
+
+> **GRADUATING (2026-06-29):** authored as **[[what/decisions/adr_043_node_provisioning_layer_reconciliation|ADR-043]]** (`status: proposed`) at the Keystone post-completion frontier (Decision #5). Three-layer split + two seams + route-not-reauthor + credential seam ruled per the scope memo. Co-sign requested → [[who/coordination/coord_2026_06_29_rosetta_to_hestia_lighthouse_adr043_cosign|Hestia + Lighthouse-P0 memo]]; awaiting operator ratification. This idea closes when ADR-043 is `accepted`.
 
 # Reconcile AWSBootstrap ↔ Lighthouse ↔ the `<Software>.aDNA` cohort (ADR candidate)
 

@@ -51,3 +51,14 @@ No reconciliation ADR has landed (verified absent both trees). Decision #5 OPEN.
 ## 3.4 — Astro↔TypeScript boundary (escalated)
 
 §0 expected a forward gate; disk shows population already begun (TS P0+P1 ratified, 34 ctx md, `astro_web/` live), so this flipped to a **live duplication risk**. The PT ledger had independently flagged the name-collision at pt07. Proposed boundary rule (Astro owns Astro-specific build context; TS owns language/cross-framework; the seam is `federation_ref`, not copy — ADR-039) staged → `TypeScript.aDNA/who/coordination/coord_2026_06_24_keystone_astro_ts_web_boundary.md`. **Forcing function:** settle before TS P2/M2 populates `ts_web_frameworks`. **No edit made to either graph's context.**
+
+---
+
+## Reconciliation note (2026-06-29) — dispositions resolved by events
+
+This Phase-2 disposition (2026-06-24, `staged_no_execution`) has been overtaken. Current ground truth (see [[how/campaigns/campaign_keystone/campaign_keystone|campaign_keystone]] §Post-completion frontier reconciliation):
+
+- **3.1 SiteForge↔Astro naming** → **RULED 2026-06-25** ("C evolved" → new **`Websites.aDNA`** role-graph; Astro = framework brick; SiteForge retired). Formalized in **[[what/decisions/adr_041_build_scale_role_graph_subtype|ADR-041]]** + the pattern amendment.
+- **3.2 §C retrofit wave** → **Lab LANDED** (`git/`+`feedback/`+`iii/` present); other six staged per-gate (cross-vault).
+- **3.3 AWSBootstrap reconciliation ADR** → **authored as [[what/decisions/adr_043_node_provisioning_layer_reconciliation|ADR-043]] (proposed) 2026-06-29** (Decision #5 discharged from Rosetta's side; co-sign + ratification pending).
+- **3.4 Astro↔TS boundary** → subsumed by the 2026-06-25 ruling (Websites owns site assembly; Astro = framework; TS = language).

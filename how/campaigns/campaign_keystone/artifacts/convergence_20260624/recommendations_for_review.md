@@ -58,3 +58,15 @@ Your idea — SiteForge as something that works with **both Astro and TypeScript
 5. Other retrofits (7) follow their own gates.
 
 **All gated. Awaiting your word on each — the naming choice first.**
+
+---
+
+## Reconciliation note (2026-06-29) — this artifact is SUPERSEDED by events
+
+Authored 2026-06-24, before the rulings + the cohort completion. Current ground truth (see [[how/campaigns/campaign_keystone/campaign_keystone|campaign_keystone]] §Post-completion frontier reconciliation):
+
+- **#1/#2 Naming + Astro/TS boundary** → **RULED 2026-06-25** (operator): not A/B/C-as-written but **"C evolved"** — Astro stays the framework brick; a new **`Websites.aDNA`** is the build-scale role-graph (SiteForge retired). The boundary folded in. Standard-touches landed: **[[what/decisions/adr_041_build_scale_role_graph_subtype|ADR-041]]** + the `pattern_software_element_context_graph` amendment.
+- **#3/#4/#5 Exemplar + cohort + Context7/skill** → **DONE** (cohort **10/10 complete 2026-06-26**; `skill_context_research` authored + registered).
+- **#6 Lab retrofit** → **LANDED** (`git/`+`feedback/`+`iii/` present in `Lab.aDNA`).
+- **#7 Other six retrofits** → staged per-gate (cross-vault; each target persona's lane).
+- **#8 AWSBootstrap reconciliation ADR** → **authored as [[what/decisions/adr_043_node_provisioning_layer_reconciliation|ADR-043]] (proposed) 2026-06-29.**

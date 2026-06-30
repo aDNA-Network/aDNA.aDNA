@@ -168,7 +168,7 @@ This campaign defines the tier and seeds its first members. It depends on [[how/
 
 ### Descoped
 - **Objective 6 (enrich Lab as reference impl)** → §C enrichment wave / [[how/backlog/idea_keystone_existing_graph_retrofit|idea_keystone_existing_graph_retrofit]] (gated on Lab M-L13.6).
-- **Decision #5 (AWSBootstrap ↔ Lighthouse ↔ cohort ADR)** → surfaced, not resolved; [[how/backlog/idea_awsbootstrap_lighthouse_cohort_reconciliation|own ADR session]].
+- **Decision #5 (AWSBootstrap ↔ Lighthouse ↔ cohort ADR)** → **authored as [[what/decisions/adr_043_node_provisioning_layer_reconciliation|ADR-043]] (proposed) 2026-06-29** at the post-completion frontier ([[how/backlog/idea_awsbootstrap_lighthouse_cohort_reconciliation|source idea]] graduating; co-sign + operator ratification pending).
 
 ### Key Findings
 - Authoring the paradigm before seeding (M0) turned every fork into substitution + spine-population, and made close-time context graduation a no-op (durable knowledge was never trapped in ephemeral artifacts).
@@ -186,4 +186,19 @@ Campaign-level AAR (patterns across all 5 missions; see `how/templates/template_
 - **Didn't**: two graphs (Caddy/Bitwarden) were full-`skill_project_fork`ed off-stream before the lean stub existed — a harmless divergence, but it took until P4 to formally reconcile; seeding the template first would have avoided the asymmetry.
 - **Finding**: a deployment-graph tier is governable as a *fleet* only if conformance is a contract you can audit (four wrappers) rather than a shape you must enforce — this single decision (M0) carried the whole campaign.
 - **Change**: for future tier campaigns, seed the lean template as instance #1 *before* any parallel work-stream forks members, so the whole cohort shares one skeleton from day one.
-- **Follow-up**: Decision #5 ADR (AWSBootstrap overlap); §C enrichment wave (Lab M-L13.6 gate); Lighthouse consumes the handoff at its own P0; per-graph router-row insertion + first-remotes stay operator-gated under the PT freeze.
+- **Follow-up**: Decision #5 ADR (AWSBootstrap overlap) → **authored ADR-043 (proposed) 2026-06-29; co-sign/ratify pending**; §C enrichment wave (Lab M-L13.6 gate) → **Lab reference retrofit LANDED** (`git/`+`feedback/`+`iii/` present), other six staged per-gate; Lighthouse consumes the handoff at its own P0; per-graph router-row insertion + first-remotes stay operator-gated under the PT freeze.
+
+## Post-completion frontier reconciliation (2026-06-29)
+
+Ground-truth status of the post-close frontier (the 2026-06-24 `convergence_20260624/` artifacts predate these events — see their appended reconciliation notes):
+
+| Frontier item | Status |
+|---------------|--------|
+| Naming (SiteForge↔Astro, convergence Decision #1) | **RULED 2026-06-25** (operator) → Astro stays the framework brick; new **`Websites.aDNA`** is the build-scale role-graph (Vitruvius). "SiteForge" retired. |
+| Build-scale role-graph standard-touches | **DONE** — [[what/decisions/adr_041_build_scale_role_graph_subtype|ADR-041]] ratified + `pattern_software_element_context_graph` amendment landed (`995c6a9`). |
+| Container exemplar + Context7/`skill_context_research` | **DONE** (exemplar approved; skill authored + registered). |
+| Cohort genesis (10 graphs) | **10/10 COMPLETE 2026-06-26** (Wave-1 core · Wave-2 collab · Wave-3 inference · Wave-4 ops). |
+| Lab §C four-wrapper retrofit | **LANDED** (`git/`+`feedback/`+`iii/` present in `Lab.aDNA`). |
+| **Decision #5 — AWSBootstrap reconciliation ADR** | **authored ADR-043 (proposed) 2026-06-29** (this note). |
+
+**Genuinely-open survivors (all cross-vault or operator-gated — not Rosetta-executable):** the six remaining §C retrofits (Terminal/Harness/ComfyUI/Obsidian/Warp/Spacemacs — each a staged memo to its persona); Lighthouse consumes the cohort handoff at its own P0; per-graph router-row insertion + first-remotes under the PT freeze; ADR-043 co-sign + ratification. The campaign's **Rosetta-owned frontier is discharged** with ADR-043 authored.
