@@ -3,7 +3,7 @@ type: spec
 kind: ecosystem_spec
 name: platform_ecosystem
 created: 2026-05-20
-updated: 2026-06-27
+updated: 2026-06-30
 version: "0.3"
 status: active
 last_edited_by: agent_stanley
@@ -34,10 +34,12 @@ A **software/deployment-graph** is a Platform.aDNA carrying `platform_subtype: s
 
 | Wrapper | Owner | Binds |
 |---------|-------|-------|
-| `git/` | Git.aDNA (Hopper) | git-ops / forge / CI-CD |
-| `feedback/` | aDNA.aDNA (Rosetta) — [[spec_telemetry_feedback_ecosystem]] | opt-in deploy-signal loop (default-OFF) |
-| `iii/` | III.aDNA (Argus) | inspect / introspect / improve |
+| `how/federation/git/` | Git.aDNA (Hopper) | git-ops / forge / CI-CD |
+| `how/federation/feedback/` | aDNA.aDNA (Rosetta) — [[spec_telemetry_feedback_ecosystem]] | opt-in deploy-signal loop (default-OFF) |
+| `how/federation/iii/` | III.aDNA (Argus) | inspect / introspect / improve |
 | Home.aDNA credential routing | Home.aDNA (Hestia) | names-only secret brokering (Standing Rule 6) |
+
+> **Wrapper location (pinned — [[../decisions/adr_045_wrapper_placement_in_triad|ADR-045]]):** these wrappers live under `<graph>/how/federation/{git,feedback,iii}/`, not at graph root — they are operations the graph *invokes*, so they belong under `how/`. ("Federation" here = the `federation_ref` consumer-wrapper layer; distinct from network/node federation, owned by `Network.aDNA` / Venus.)
 
 A deployment graph is **composed, not free-standing** — a role graph such as `Lighthouse.aDNA` assembles a chosen set into a deployable node. This is a **designation within Platform.aDNA, not a new aDNA category**; `Warp.aDNA`, `Obsidian.aDNA`, and `Lab.aDNA` are pre-existing instances. Pattern: [[pattern_software_deployment_graph]]. Conformance test + the `Network.aDNA` recipe-quarry reconciliation (recipes = source-quarry, graph = canonical home): [[../decisions/adr_037_software_deployment_graph_subtype|ADR-037]]. Tier roster + dispositions: Operation Keystone (`how/campaigns/campaign_keystone/`). A deployment graph is the *deploy-and-run → operate* face of the [[pattern_software_element_context_graph|software-element context graph]] umbrella ([[../decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]) — the same wrapper + `federation_ref` access mechanism Forges and Frameworks use, composed by a role-graph (`Lighthouse.aDNA`) into a node.
 
@@ -45,7 +47,7 @@ A deployment graph is **composed, not free-standing** — a role graph such as `
 
 *(Added v0.3, 2026-06-27 — operator naming ruling 2026-06-25. Co-signed [[../decisions/adr_041_build_scale_role_graph_subtype|ADR-041]].)*
 
-The **build-scale twin** of the deployment role-graph. A Platform.aDNA carrying `platform_subtype: build_scale_role_graph` composes **build-face** software-element graphs (Forge = produce-with; Framework = conform-with) into a built artifact — website / dashboard / ops-center — and owns the role-shared assets no brick can home (archetypes, build lattices, content / voice / token / anti-slop doctrine, the site-quality gate framework, deploy orchestration). `Websites.aDNA` (Vitruvius) is the reference instance; it composes `Astro.aDNA` + `TypeScript.aDNA` + `Tailwind.aDNA` + `III.aDNA` (+ deploy). Build-face contract (mirrors the deploy face): **three wrappers** (`git/` · `iii/` · `feedback/` with build-face signal classes) + a names-only credential note; **five verbs** author · compose · validate · version · interoperate; seam memos for overlapping bricks. Conformance + relationship to the deploy-scale twin: [[../decisions/adr_041_build_scale_role_graph_subtype|ADR-041]]. It is the *build-with → compose* face of the [[pattern_software_element_context_graph|software-element context graph]] umbrella ([[../decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]).
+The **build-scale twin** of the deployment role-graph. A Platform.aDNA carrying `platform_subtype: build_scale_role_graph` composes **build-face** software-element graphs (Forge = produce-with; Framework = conform-with) into a built artifact — website / dashboard / ops-center — and owns the role-shared assets no brick can home (archetypes, build lattices, content / voice / token / anti-slop doctrine, the site-quality gate framework, deploy orchestration). `Websites.aDNA` (Vitruvius) is the reference instance; it composes `Astro.aDNA` + `TypeScript.aDNA` + `Tailwind.aDNA` + `III.aDNA` (+ deploy). Build-face contract (mirrors the deploy face): **three wrappers** (`how/federation/git/` · `how/federation/iii/` · `how/federation/feedback/` with build-face signal classes) + a names-only credential note; **five verbs** author · compose · validate · version · interoperate; seam memos for overlapping bricks. Conformance + relationship to the deploy-scale twin: [[../decisions/adr_041_build_scale_role_graph_subtype|ADR-041]]. It is the *build-with → compose* face of the [[pattern_software_element_context_graph|software-element context graph]] umbrella ([[../decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]).
 
 ## Terminal ↔ Harness Contract
 

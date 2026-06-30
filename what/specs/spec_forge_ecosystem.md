@@ -3,7 +3,7 @@ type: spec
 kind: ecosystem_spec
 name: forge_ecosystem
 created: 2026-05-20
-updated: 2026-06-29
+updated: 2026-06-30
 version: "0.1"
 status: active
 last_edited_by: agent_stanley
@@ -18,9 +18,11 @@ Authoritative reference for the **Forge.aDNA** aDNA pattern category. Workspace 
 
 ## Definition
 
-**Forges** are standalone aDNA projects that produce artifacts for other vaults. They follow a shared consumption pattern: consumer vaults create lightweight wrapper directories (`<forge_name>/`) with `federation_ref:` blocks pinning forge lattice versions, voice mappings, and optionally adapted reviewers. Forges are never embedded or merged into consumer vaults.
+**Forges** are standalone aDNA projects that produce artifacts for other vaults. They follow a shared consumption pattern: consumer vaults create lightweight wrapper directories (`how/federation/<forge_name>/`) with `federation_ref:` blocks pinning forge lattice versions, voice mappings, and optionally adapted reviewers. Forges are never embedded or merged into consumer vaults.
 
-> **Umbrella:** a Forge is the *build-with → produce* face of the [[pattern_software_element_context_graph|software-element context graph]] lens ([[../decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]) — software exposed as a context graph that consumers reach via a `<forge>/` wrapper + `federation_ref`, composed alongside other software graphs (a site pulls a Forge *and* a Framework).
+> **Wrapper location (pinned — [[../decisions/adr_045_wrapper_placement_in_triad|ADR-045]]):** a consumer's forge wrapper lives at `<consumer>.aDNA/how/federation/<forge_name>/`, not at graph root — it is an operation the consumer *invokes*, so it belongs under `how/`. ("Federation" here = the `federation_ref` consumer-wrapper layer; distinct from network/node federation, owned by `Network.aDNA` / Venus.)
+
+> **Umbrella:** a Forge is the *build-with → produce* face of the [[pattern_software_element_context_graph|software-element context graph]] lens ([[../decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]) — software exposed as a context graph that consumers reach via a `how/federation/<forge>/` wrapper + `federation_ref`, composed alongside other software graphs (a site pulls a Forge *and* a Framework).
 
 ## Active Forges
 

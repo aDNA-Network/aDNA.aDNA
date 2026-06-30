@@ -3,7 +3,7 @@ type: spec
 kind: ecosystem_spec
 name: framework_ecosystem
 created: 2026-05-20
-updated: 2026-06-10
+updated: 2026-06-30
 version: "0.1"
 status: active
 last_edited_by: agent_stanley
@@ -18,15 +18,17 @@ Authoritative reference for the **Framework.aDNA** aDNA pattern category. Worksp
 
 ## Definition
 
-**Frameworks** are a new aDNA category (new as of 2026-05-07 per `III.aDNA/what/decisions/adr_000_project_identity.md`). A Framework.aDNA project defines a **protocol, methodology, or operational standard** that other vaults federate against. Unlike Forges (artifact producers) or Platforms (runtime producers), frameworks produce no primary artifact and deploy no runtime — they provide a consumable methodology that any agent session can invoke. Consumers create lightweight `<framework>/` wrapper directories with `federation_ref` blocks.
+**Frameworks** are a new aDNA category (new as of 2026-05-07 per `III.aDNA/what/decisions/adr_000_project_identity.md`). A Framework.aDNA project defines a **protocol, methodology, or operational standard** that other vaults federate against. Unlike Forges (artifact producers) or Platforms (runtime producers), frameworks produce no primary artifact and deploy no runtime — they provide a consumable methodology that any agent session can invoke. Consumers create lightweight `how/federation/<framework>/` wrapper directories with `federation_ref` blocks.
 
 ## Consumer Integration Pattern
 
-Consumer vaults create a `<framework_name>/` wrapper directory with `CLAUDE.md` (federation_ref + pack declarations) and optional `what/context/` extensions. The wrapper pins a version; consumers review on minor bumps. See ADR-002 in the framework vault for the canonical consumer contract.
+Consumer vaults create a `how/federation/<framework_name>/` wrapper directory with `CLAUDE.md` (federation_ref + pack declarations) and optional `what/context/` extensions. The wrapper pins a version; consumers review on minor bumps. See ADR-002 in the framework vault for the canonical consumer contract.
 
-> **Umbrella:** a Framework is the *build-with → conform* face of the [[pattern_software_element_context_graph|software-element context graph]] lens ([[../decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]) — the same `<software>/` wrapper + `federation_ref` access mechanism Forges and deployment graphs use; consumers compose several at once (e.g. `Astro.aDNA` + `TypeScript.aDNA` for a site).
+> **Wrapper location (pinned — [[../decisions/adr_045_wrapper_placement_in_triad|ADR-045]]):** the wrapper lives at `<consumer>.aDNA/how/federation/<framework_name>/`, not at graph root — it is an operation the consumer *invokes*, so it belongs under `how/`. ("Federation" here = the `federation_ref` consumer-wrapper layer; distinct from network/node federation, owned by `Network.aDNA` / Venus.)
 
-For III specifically, run `III.aDNA/how/skills/skill_iii_setup.md` (also published to `.adna/how/skills/`) to bootstrap an `iii/` wrapper in a new consumer vault — covers `federation_ref` skeleton, `kind:` enum walkthrough (5 values per ADR-002 §1a), minimal vs full-extension shapes, and downstream-safety check.
+> **Umbrella:** a Framework is the *build-with → conform* face of the [[pattern_software_element_context_graph|software-element context graph]] lens ([[../decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]) — the same `how/federation/<software>/` wrapper + `federation_ref` access mechanism Forges and deployment graphs use; consumers compose several at once (e.g. `Astro.aDNA` + `TypeScript.aDNA` for a site).
+
+For III specifically, run `III.aDNA/how/skills/skill_iii_setup.md` (also published to `.adna/how/skills/`) to bootstrap a `how/federation/iii/` wrapper in a new consumer vault — covers `federation_ref` skeleton, `kind:` enum walkthrough (5 values per ADR-002 §1a), minimal vs full-extension shapes, and downstream-safety check.
 
 ## Active Frameworks
 

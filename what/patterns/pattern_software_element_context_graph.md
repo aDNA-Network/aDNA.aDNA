@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-06-22
-updated: 2026-06-27
+updated: 2026-06-30
 status: draft
 pattern_category: structural
 applies_to: [forge, framework, platform]
@@ -35,7 +35,7 @@ A software-element graph wears one of **three faces** — the same idea, differe
 **The universal access mechanism is the same for all three** — a consumer adds a wrapper directory + a pinned pointer (canonical schema: [[../artifacts/sf_forge_pattern_spec|sf_forge_pattern_spec]], reference impl in `Astro.aDNA`):
 
 ```yaml
-# <consumer>.aDNA/<software>/CLAUDE.md
+# <consumer>.aDNA/how/federation/<software>/CLAUDE.md
 federation_ref:
   source_vault: TypeScript.aDNA          # the software-element graph
   source_topic: ts_web_frameworks        # or source_lattice / source_skill / source_pattern
@@ -43,6 +43,8 @@ federation_ref:
   version_policy: minor                   # minor (auto patch/minor) | locked
   description: "TS patterns + validation gate for the Astro build"
 ```
+
+> **Wrapper location (pinned — [[../decisions/adr_045_wrapper_placement_in_triad|ADR-045]]):** the wrapper directory lives at `<consumer>.aDNA/how/federation/<software>/`, not at graph root — it is an operation the consumer *invokes*, so it belongs under `how/`. ("Federation" here = the `federation_ref` consumer-wrapper layer; distinct from network/node federation, owned by `Network.aDNA` / Venus.)
 
 The agent loads the referenced context **at session-start** — design-time, pull-based composition; no runtime linking, no copied implementation. The consumer supplies only configuration/overrides; the software's context stays canonical in its own graph.
 
@@ -65,7 +67,7 @@ Do **not** use it for: a one-off script with no reusable using-context; a piece 
 ## Example: build-then-run, one mechanism
 
 - **Build** — `ScienceStanley.aDNA` builds its site by pulling `Astro.aDNA` (scaffold + content lattices) **and** `TypeScript.aDNA` (`ts_web_frameworks` patterns + validation gate): two software-element graphs, two `federation_ref` blocks in two wrapper dirs, composed at agent-session-start. Neither framework's context is copied; both are pinned.
-- **Run** — `Lighthouse.aDNA` stands up a node by composing `Forgejo.aDNA` + `Caddy.aDNA` + `Nebula.aDNA` + `Store.aDNA`: deployment-face graphs, each federating the same four cross-cutting wrappers (`git/` + `feedback/` + `iii/` + Home credential-routing), composed into a stack profile.
+- **Run** — `Lighthouse.aDNA` stands up a node by composing `Forgejo.aDNA` + `Caddy.aDNA` + `Nebula.aDNA` + `Store.aDNA`: deployment-face graphs, each federating the same four cross-cutting wrappers (`how/federation/git/` + `how/federation/feedback/` + `how/federation/iii/` + Home credential-routing), composed into a stack profile.
 
 Both are the *same* pattern — a consumer reaching software through its context graph and pulling several together.
 
