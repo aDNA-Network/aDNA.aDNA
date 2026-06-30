@@ -15,8 +15,8 @@ tags: [idea, fleet_defects, retro_cleanup, deferred, drydock, m03, adr_042]
 
 ## Deferred arms
 
-### A. Class-1 staged release delta (operator-gated release)
-The template-tree change — drop `campaign_adna_workspace_upgrade` from the shipped `.adna/` + parameterize the fork persona token — is **ratified (ADR-042 §1) and staged** as a release delta in the mission §"Staged release delta". It lands when the operator opens the next `skill_template_release` gate (carries the v2.4 standard batch too). Until then, new forks still inherit the clutter.
+### A. Class-1 staged release delta (operator-gated release) — ✅ LANDED in v8.2 (2026-06-29)
+The template-tree change — drop `campaign_adna_workspace_upgrade` from the shipped `.adna/` + parameterize the fork persona token — was **ratified (ADR-042 §1) and staged** as a release delta in the mission §"Staged release delta". **Shipped at the `skill_template_release` gate as image tag `v8.2` (`366fbc9`, 2026-06-29)** — base `.adna/CLAUDE.md` persona → `{{persona}}` (resolved at fork/onboarding via `skill_project_fork` Step 4 + `skill_onboarding` Step 8; root workspace-router stays Berthier — smoke-verified) + stale `campaign_adna_workspace_upgrade` dropped; carried the v2.4 standard batch + tooling v2.3 too. Local `~/aDNA/.adna` synced (`125ac3b`). *New forks no longer inherit the clutter or the Berthier persona.* Session: `session_stanley_20260630T000420Z_template_release_v8_2`.
 
 ### B. Class-1 retro-strip of the 45 live vaults
 The 45 vaults that already carry the completed `campaign_adna_workspace_upgrade` (incl. **aDNA.aDNA's own** inherited copy) are not touched by the upstream fix. Retro-strip is a separate operator decision — the campaign is `completed`/historical (SO-7-keep-historical), so this is a judgment call per vault, not an automatic sweep. Reuse the currency sweep's denominator-honest FIX/KEEP discipline.
