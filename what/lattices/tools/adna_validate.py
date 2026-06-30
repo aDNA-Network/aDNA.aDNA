@@ -43,6 +43,20 @@ STANDARD_RECOMMENDED_DIRS = [
 REQUIRED_FRONTMATTER = ["type", "created", "updated", "status", "last_edited_by", "tags"]
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
+# Entity classes whose canonical templates omit the lifecycle `status` field by
+# design — a directory index / correspondence record has no lifecycle state.
+# (`.adna/**/AGENTS.md` and `how/templates/template_coordination.md` omit it.)
+# `status` stays REQUIRED for content + session entities. See ADR-044.
+STATUS_OPTIONAL_TYPES = ("directory_index", "coordination")
+
+# Nested example/template INSTANCE trees are documentation sub-vaults — each is a
+# standalone instance, validated on its own, NOT part of THIS instance's
+# conformance. Pruned from the triad walk. See ADR-044.
+NESTED_INSTANCE_DIRS = (
+    os.path.join("what", "docs", "examples"),
+    os.path.join("how", "templates", "template_node_adna_exemplar"),
+)
+
 # Governance files that MUST NOT carry committed harness-injected context boundaries (§13.2)
 GOVERNANCE_FILES_FOR_HYGIENE = ("CLAUDE.md", "STATE.md", "AGENTS.md")
 # Harness boundaries the agent runtime injects: `# userEmail`, `# currentDate (Today's date is ...)`
@@ -78,12 +92,19 @@ def _parse_frontmatter(filepath):
 
 
 def _find_md_files(root, triad_prefix):
-    """Yield all .md files inside the triad directories."""
+    """Yield all .md files inside the triad directories, pruning nested
+    example/template instance trees (validated standalone — see ADR-044)."""
+    base = os.path.join(root, triad_prefix) if triad_prefix else root
+    excludes = tuple(os.path.normpath(os.path.join(base, d)) for d in NESTED_INSTANCE_DIRS)
     for leg in TRIAD_DIRS:
-        leg_path = os.path.join(root, triad_prefix, leg) if triad_prefix else os.path.join(root, leg)
+        leg_path = os.path.join(base, leg)
         if not os.path.isdir(leg_path):
             continue
-        for dirpath, _, filenames in os.walk(leg_path):
+        for dirpath, dirnames, filenames in os.walk(leg_path):
+            ndp = os.path.normpath(dirpath)
+            if any(ndp == ex or ndp.startswith(ex + os.sep) for ex in excludes):
+                dirnames[:] = []  # don't descend into a nested instance
+                continue
             for fn in filenames:
                 if fn.endswith(".md"):
                     yield os.path.join(dirpath, fn)
@@ -144,7 +165,10 @@ def check_starter(root, prefix, result):
             fm_errors += 1
             result.errors.append(f"Frontmatter: missing or unparseable in '{rel}'")
             continue
-        for field in REQUIRED_FRONTMATTER:
+        required = REQUIRED_FRONTMATTER
+        if fm.get("type") in STATUS_OPTIONAL_TYPES:
+            required = [f for f in REQUIRED_FRONTMATTER if f != "status"]
+        for field in required:
             if field not in fm:
                 fm_errors += 1
                 result.errors.append(f"Frontmatter: missing required field '{field}' in '{rel}'")
