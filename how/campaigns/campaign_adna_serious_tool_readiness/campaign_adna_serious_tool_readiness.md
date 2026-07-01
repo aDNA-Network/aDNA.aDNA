@@ -4,7 +4,7 @@ type: campaign
 title: "aDNA Serious-Tool Readiness — comprehensive upgrade cycle (v8.0 target)"
 owner: stanley
 persona: Rosetta
-status: active  # P0 open; this campaign-master file is the P0 deliverable
+status: active  # REOPENED 2026-06-30 (re-orient-first, operator-approved) — real state: P0-P3 done, P4 PAUSED (contract on archived LatticeTerminal/LatticeAgent), P5 near-complete (M5.8 dangling-done), P6 pending. NOT "P0 open". Resume-reconciliation in flight: mission_adna_str_resume_reconciliation + missions/artifacts/str_resume_reconciliation_ledger.md
 phase_count: 7  # P0 Planning + P1-P6 execution
 mission_count: 29  # ~20-30 estimated; finalized at P0 close
 estimated_sessions: "43-100"  # 43 lower-bound; 100 upper-bound per merry-dewdrop FBP-C27 comparison
