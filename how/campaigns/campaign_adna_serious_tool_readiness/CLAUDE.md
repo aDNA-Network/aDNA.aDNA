@@ -2,10 +2,10 @@
 type: governance
 subtype: campaign_claude
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-07-01
 last_edited_by: agent_stanley
 tags: [governance, campaign, v8, serious_tool_readiness]
-status: active
+status: completed
 ---
 
 # CLAUDE.md — Campaign: aDNA Serious-Tool Readiness
@@ -21,8 +21,8 @@ status: active
 | Campaign | `campaign_adna_serious_tool_readiness` |
 | Owner | stanley |
 | Persona | Rosetta |
-| Status | active (P0 open) |
-| Current Phase | Phase 0: Planning |
+| Status | **completed** (closed 2026-07-01 — Track C terminal) |
+| Current Phase | Closed — P0–P3 done · P4 spun out (→ Lighthouse/Terminal/Harness) · P5/P6 closed on delivered evidence (v8.0-via-sibling) |
 | Tag target | v8.0 (Major Governance bump) |
 | Predecessors | v2 (ships M05+M06 before P1 entry) + LWX (closed 2026-05-13) + Rosetta (Phase 8 + D9+D10 absorbed) |
 

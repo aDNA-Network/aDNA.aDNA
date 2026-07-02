@@ -4,7 +4,7 @@ type: campaign
 title: "aDNA Serious-Tool Readiness — comprehensive upgrade cycle (v8.0 target)"
 owner: stanley
 persona: Rosetta
-status: active  # REOPENED 2026-06-30 (re-orient-first, operator-approved) — real state: P0-P3 done, P4 PAUSED (contract on archived LatticeTerminal/LatticeAgent), P5 near-complete (M5.8 dangling-done), P6 pending. NOT "P0 open". Resume-reconciliation in flight: mission_adna_str_resume_reconciliation + missions/artifacts/str_resume_reconciliation_ledger.md
+status: completed  # CLOSED 2026-07-01 (Track C terminal, operator-ratified at the reopen-reconciliation gate). v8.0 achieved-via-sibling (Hearthstone 2026-06-19 image → v8.3 via skill_template_release); P4 installer spun out → Lighthouse/Terminal/Harness; P5 closed on delivered evidence; P6 = v8.0-via-sibling. Reconciliation record: missions/artifacts/str_resume_reconciliation_ledger.md
 phase_count: 7  # P0 Planning + P1-P6 execution
 mission_count: 29  # ~20-30 estimated; finalized at P0 close
 estimated_sessions: "43-100"  # 43 lower-bound; 100 upper-bound per merry-dewdrop FBP-C27 comparison
@@ -21,7 +21,7 @@ absorbed_campaigns:
   - campaign_obsidian_deployment_stabilization  # 8 tracks T1-T8 ABSORBED into v8 Phase 3
 tag_target_at_close: v8.0  # Major Governance bump per ADR-011 semver
 created: 2026-05-17
-updated: 2026-05-20  # M1.5 S1 + MISSION CLOSED at session_stanley_20260520T031453Z_v8_m15_s1 — 9/9 deliverables landed; planning-class single-session shape (2nd instance of single-session shape after M2.2); ADR-017 LIVE (3 clauses A LIP-0006 countersign + B `network_` namespace reservation + C entity-types parallel-discharge per peer ADR-005 rule 6); Network.aDNA category ratified at standard; 3 inbound carries discharged (C1 + C2 + P2-close); Standing Order #14 operator-override 2nd invocation + Standing Order #8 self-reference 2nd invocation; HIGH-risk row closes in cross-vault disruption matrix; M2.3/M2.4 + M2.1.5 interstitial stay operator-discretionary
+updated: 2026-07-01  # CLOSED (Track C terminal; campaign completed). Prior: M1.5 S1 + MISSION CLOSED at session_stanley_20260520T031453Z_v8_m15_s1 — 9/9 deliverables landed; planning-class single-session shape (2nd instance of single-session shape after M2.2); ADR-017 LIVE (3 clauses A LIP-0006 countersign + B `network_` namespace reservation + C entity-types parallel-discharge per peer ADR-005 rule 6); Network.aDNA category ratified at standard; 3 inbound carries discharged (C1 + C2 + P2-close); Standing Order #14 operator-override 2nd invocation + Standing Order #8 self-reference 2nd invocation; HIGH-risk row closes in cross-vault disruption matrix; M2.3/M2.4 + M2.1.5 interstitial stay operator-discretionary
 last_edited_by: agent_stanley
 amendments:
   - 2026-05-25: '**M3.7 S2 + MISSION CLOSED + 4 of 4 P3 phase-exit bricks complete + P3 → P4 phase-exit gate UNBLOCKED** — plan ratified at `/Users/stanley/.claude/plans/please-read-the-claude-md-zany-panda.md` per Project SO #1 + Campaign SO #19. Canonical 2-session implementation-class shape **2nd instance RATIFIED** (M3.6 1st + M3.7 2nd; `skill_two_session_close_cascade.md` graduation candidate ADVANCES 1 → 2 of 3). **6/6 cumulative deliverables LIVE** across S1+S2: M3.7 mission spec + governance bundle + ADR-025 (III-Decadal Coordination across Vaults; 3 clauses A=cycle-location-shape-distributed-but-coordinated + B=dimension-definition-ownership-iii.aDNA-canonical + C=ack-debt-protocol-coord-memo-cycle) + ADR-026 (Ledger-Observation-as-Shared-Primitive; 3 clauses A=canonical-poller-location-iii.aDNA + B=consumer-fallback-pattern-m36-p3-skeleton + C=federation-transport-airlock-or-direct-file-read) + design spec (6 sections; 13th canonical instance; 6 streamline integration primitives P1-P6 mapping T9-T12 + M3.6 §6 to M3.7 runtime consumer surfaces; 30-cell zero-break invariant; 6 integration-shape decisions all resolved) + AAR (10 sections; 14-row scorecard + 18-row Standing-Order discharge + 12 extended findings + 12-candidate pattern graduation block). **PRIMARY load-bearing findings**: (1) **Substrate-inversion-with-ADR variant GRADUATES at 3rd canonical instance** per ≥ 3 instances rubric (M3.4 ADR-014 1st + M3.6 ADR-024 2nd + M3.7 ADR-025+ADR-026 twin 3rd; `skill_substrate_inversion_with_adr.md` 2 → 3 of 3 = GRADUATES; skill file authoring deferred per D-GRAD precedent). (2) **Twin-ADR ratification within single mission close ratifies as 1st canonical instance** of dual-ADR-at-same-mission-close pattern (eligibility = two ADRs share tightly-coupled load-bearing decision surface within single mission close; `skill_twin_adr_ratification.md` NEW SEED at 1 of 3 instances; graduates at 3rd if M3.8 or later applies). (3) **Campaign SO #14 in-phase exception clause 4th + 5th invocations in v8** (after M3.4 ADR-014 + M3.5 ADR-023 + M3.6 ADR-024 graduation at 3rd); `skill_in_phase_adr_ratification.md` post-graduation reinforcement at 5/3+. **Substrate-pure separation discipline 8th + 9th canonical instances**: pre-S1 `173516e` (SiteForge C-D6-1 Mobile + Responsive discipline carry-forward to skill_create_iss) + pre-S2 `f390a0b` (SiteForge D7 error-recovery contract carry-forward to skill_create_iss); both absorbed as separate substrate-pure commits BEFORE M3.7 structural batches per graduated discipline. **D-PUSH=push-after-S2 fired at G3** authorized at S2-entry plan. **`skill_design_spec_authoring.md`** post-graduation reinforcement at 14/3+ (4.7× margin). **`skill_campaign_close_archive.md`** post-graduation reinforcement at 21/3+ (7× margin; Op 3 archive-on-close 20th canonical instance at M3.7 S1 STATE refresh + 21st at this S2 close). **`skill_forward_reference_stub_design.md`** post-graduation reinforcement at 11/3+ (T8 forward-reference-stub discipline; design spec §6 names v8 P5 + III.aDNA Campaign E as next consumers). **`skill_implementation_mission_close.md`** post-graduation reinforcement at 4/3+. **`skill_modular_iii_consumer_interface_design.md`** NEW SEED at 1 of 3 (cross-vault modular III consumer-interface design pattern). **`skill_substrate_gathering_subagent_dispatch.md`** post-graduation reinforcement at 2/3. **`skill_cross_skill_primitive_composition.md`** HOLD at 5/5 (M3.7 produced no new operational skill at S2; path A scope). **`skill_substrate_pure_separation.md`** post-graduation reinforcement at 9/3 = 3× margin sustains. **6 integration-shape decisions resolved + threaded through specific design spec §2 primitive bindings**: D1 III-target schema authoring authority → III.aDNA author-responsible (per ADR-025 Clause B); D2 `aDNA.aDNA/iii/` wrapper directory creation timing → defer to v8 P6 (composite backlog extended); D3 III-decadal cycle location → distributed but coordinated (per ADR-025 Clause A); D4 Ledger-observation primitive location → hybrid (per ADR-026 Clause A + B; triggers ADR-026 firing within Path A); D5 *Modular III for Obsidian* runtime + UI shape → CLI-first with optional UI enhancement (per design spec §2 P3 + P6); D6 P9 audit event authoring authority → per-wrapper with M3.7 as federated reader (per design spec §2 P5). **6 streamline integration primitives**: P1 HOME.md Bases-gallery measurement contract (3 new gallery columns persona_growth + research_ctx_gen + freshness) + P2 vault_card per-dimension scoring (5-dimension iii_target schema {score, last_measured, notes}) + P3 III-decadal cycle orchestration skill + coord-memo protocol (deferred authoring) + P4 ledger-observation consumer contract (primary canonical at III.aDNA per ADR-026 Clause A + fallback M3.6 P3 skeleton per Clause B + dual-mode transport per Clause C) + P5 wrapper airlock-activation audit aggregation (federated reader; per-wrapper opt-in via inventory_vaults.yaml `iii_aggregation_opt_in: true`) + P6 III result persistence (`aDNA.aDNA/what/measurement/iii_results/<YYYY-MM>/` canonical layout + per-cycle JSONL + digest + rolling aggregations). **v8 P6 propagation queue grows ~27-31 → ~32-37 at M3.7 close**; composite backlog placeholder extended with M3.7 row covering 5 wrappers × 6 primitives = 30 new migration-matrix cells (75 cells total cumulative M3.6 45 + M3.7 30). **M3.7 close = 4 of 4 P3 phase-exit bricks** = **P3 → P4 phase-exit gate UNBLOCKED** (all 4 prongs satisfied: agent-autonomy + HOME-polished + airlock workflow streamlined + modular III operational). Gate stays operator-decisioned per Campaign SO #19. **Hard constraints honored end-to-end** at both sessions: zero `.adna/` + III.aDNA + node.aDNA + lattice-labs + 5 forge-vault wrappers + aDNA.aDNA/site/ + .obsidian + settings.json + measurement.sqlite + hook + ADR-019 split touches. **Standing Order #8 self-reference 22nd + 23rd + 24th tactical invocations in v8 P3** (22nd at S1 mission spec frontmatter referencing M3.6 §6 forward-integration stub authorizing M3.7''s scope; 23rd at S2 design spec §2 P3 III-decadal cycle orchestration self-reference; 24th at S2 ADR-026 ratification operationalizing twin-ADR pattern this AAR §4 PRIMARY finding names as 1st canonical instance). Sessions: S1 `session_stanley_20260525T151300Z_v8_m37_s1` (closed 2026-05-25T15:35:00Z; 2/6 deliverables) → S2 `session_stanley_20260525T163023Z_v8_m37_s2` (this session; cumulative 6/6 deliverables; MISSION CLOSED 2026-05-25T16:30:00Z).'
@@ -219,6 +219,8 @@ Stanley's pivot at 2026-05-17 reframes the work: instead of executing v2's queue
 
 **Phase exit gate**: v8.0 shipped; receipts in from ecosystem operators; v3-EC mission tree ready to open; community can clone + setup + contribute.
 
+> **Phases 5 & 6 — CLOSED 2026-07-01 (STR closeout).** **P5:** closed on delivered evidence — the SITE-ranker half of the exit gate is delegated to the (closed) **WEBSITE.aDNA** campaign (281/281 gates, all decades GO, adna.network live), the REPO half via M5.5 D14 (RLP 4.75); D11–D15 delivered, **D16–D20 superseded**. **P6:** **v8.0 achieved-via-sibling** — M6.1/M6.2 satisfied by the Hearthstone image ship (2026-06-19 → v8.3 via `skill_template_release`); M6.3 ecosystem receipts moot (fleet already on v8.x via Hearthstone + currency sweeps); M6.4 = the Completion Summary + Campaign AAR below. See [[str_resume_reconciliation_ledger]].
+
 ## Decision Points
 
 | # | When | Decision | Status |
@@ -237,6 +239,8 @@ Stanley's pivot at 2026-05-17 reframes the work: instead of executing v2's queue
 | D12 | Before P6 entry | v8.0 tag location — `LatticeProtocol/adna` (template repo) only, or also `LatticeProtocol/aDNA.aDNA` (this vault)? | pending |
 | D13 | Before P6 close | Announcement timing — coordinate with lattice-labs FBP completion OR independent? | pending |
 | D14 | At P5 entry (M5.0) | Phase 5 mission tree restructure — keep M5.x numbering with scope amendment, OR full restructure with new mission numbers? | **ratified at M5.0 S1 G2 2026-05-25T~19:50Z (operator-pivot AskUserQuestion)** — Light restructure: preserve M5.x numbering; amend scope. M5.0 NEW (P5 entry planning); M5.1 EXPANDED (OSS-pattern + visual + diagram + infographic + page-bloat research); M5.2 EXPANDED (6 P5-planned + 5 visual = 11 NEW personas → 21-persona bench); M5.3 REPURPOSED (D11 Visual Identity v2 + Image Regen; was Rosetta D9 absorption); M5.4 REPURPOSED (D12 Clarity & Conciseness; was Rosetta D10 absorption); M5.5 EXPANDED (80 cycles across D13-D20 covering 8 NEW decadals). Original Rosetta D9+D10 records preserved at `how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d{9,10}.md` per Standing Order #6 archive-not-delete. See `missions/artifacts/m50_decadal_theme_set.md` for D11-D20 detailed table + per-cycle structure + AAR cadence. |
+
+> **Decision-points close disposition (2026-07-01, STR closeout):** the pending points are resolved-or-moot — **D8** (convergence paper) → *deferred* (not a v8.0 deliverable); **D9** (Obsidian-stab sub-campaign vs absorbed) → *resolved* (absorbed + delivered in P3, tracks T1–T8); **D11** (research/persona pairing) → *resolved* (M5.1 research + M5.2 persona authoring both shipped); **D12** (v8.0 tag location) → *moot* (v8.0 shipped via the `aDNA-Network/aDNA` image, Hearthstone→v8.3; the LatticeProtocol/adna-vs-aDNA.aDNA question was overtaken by the repo moves + image release); **D13** (announcement timing) → *moot* (folded into the Operation aDNA program + adna.network launch).
 
 ## Risk Register
 
@@ -365,48 +369,47 @@ See campaign-level `CLAUDE.md` (peer to this file). Key additions to project-lev
 
 ## Completion Summary
 
-*To be filled at M6.4 close (status: completed).*
+**COMPLETED 2026-07-01** — closed at the STR reopen-reconciliation gate (Track C terminal). STR's terminal target **v8.0 shipped via a sibling** (Hearthstone 2026-06-19 image `adae20c` → **v8.3** via `skill_template_release`); 5 of 6 operator concerns delivered directly or via sibling tracks; the one open unit (P4 installer) was spun out. Authoritative reconciliation: [[str_resume_reconciliation_ledger]].
 
-### Deliverables (anticipated)
+### Deliverables (shipped)
 
-- v8.0 tag at `LatticeProtocol/adna`
-- 100 III loops completed (D9+D10 Rosetta + 80 new on github readme)
-- Cross-platform installer (`curl install.lattice.dev | sh` working)
-- Obsidian agent-driven operability (Local REST API + MCP)
-- Bases-driven node.aDNA HOME.md + per-vault info pages
-- Airlock workflow streamlined (`skill_airlock_*` family)
-- LatticeScope.aDNA v0.1 schema operational
-- Per-mission context budget Standing Order ratified
-- ~5-7 new ADRs (ADR-014 verification-handoff + ADR-015 installer + ADR-016+ context budget)
-- 19+ ecosystem coord memos (v8.0 propagation receipts)
-- v3-EC mission tree ready to open
+- **P1 Foundation** — v7.0 dependency chain + measurement infra (M1.3 token audit · M1.4 LatticeScope v0.1.1 schema · M1.5 network-arch coord / ADR-017).
+- **P2 Context optimization** — per-mission context-budget Standing Order (ADR-016) · convergence-model validation · AGENTS.md per-directory hardening + heat map.
+- **P3 Forge hardening** — Obsidian deployment stabilization (8 tracks T1–T8) · Bases-driven HOME + per-vault info pages · airlock AAR + streamline (ADR-014 verification-handoff) · modular III for Obsidian (ADR-025/026).
+- **P5 Public readiness (delivered slice)** — D11 Visual Identity v2 + image regen · D12 Clarity/Conciseness (46.7% line reduction) · D14 README/first-contact (RLP 4.75) · D15 PersonaPage consolidation · 21-persona bench · reference-inspection + design-DNA doctrine (M5.8).
+- **v8.0 itself** — **shipped via Hearthstone (Track B) 2026-06-19 → v8.3** (`skill_template_release`); STR's governance/context work fed it.
+- **~20 graduated skills** across the run (subagent-dispatch, decadal-cycle authoring, thin-wrapper extraction, …).
 
-### Descoped
+### Descoped / Spun-out
 
-- TBD at close
+- **P4 installer + binary distribution → SPUN OUT** to the node-provisioning triad (Lighthouse.aDNA + Terminal.aDNA + Harness.aDNA) per ADR-043; M4.2/4.3/4.4 `superseded`; hand-off `coord_2026_07_01_rosetta_to_lighthouse_terminal_harness_p4_installer_spinout`. The Phase-4 contract was built on LatticeTerminal.aDNA + LatticeAgent.aDNA, **both archived 2026-06-07**. *(v8.0 shipped without an installer — never a blocker.)*
+- **P5 site decadals D16–D20 → superseded** — delivered via WEBSITE.aDNA (D1–D4 + standing-watch) + the aDNALabs forward-face rebrand.
+- **The literal "100 III loops on the github readme"** → subsumed by WEBSITE.aDNA + Operation Looking Glass (the strategic "III campaign").
 
 ### Key Findings
 
-- TBD at close
+- **A campaign's terminal milestone can ship under a sibling's banner.** STR was chartered to produce v8.0; while paused, Hearthstone shipped it and `skill_template_release` carried the image to v8.3 — the finish line was crossed outside the campaign.
+- **Re-orient-first beat blind-resume.** The reopen reconciliation (2026-06-30) prevented executing a stale installer contract against two archived vaults and revealed STR was already terminal — turning a nominal 60–80-session resume into a ~2-session closeout.
+- **Frontmatter ≠ truth for a dormant campaign.** The master read "P0 open" for ~6 weeks after the campaign reached P5; the mission files + sibling closures + `.adna/CHANGELOG.md` were the real state.
+- **Superseded-by-sibling is the dominant closure mode in a busy fleet.** 5/6 scope areas closed via STR's own phases + WEBSITE/Hearthstone/Keystone/Looking Glass/Feedback Loop.
 
 ### Scope Changes
 
-- TBD at close (each amendment session logs here)
+- **2026-05-25 (operator pivot):** P4 installer PAUSED + P5 pivoted to a public-readiness decadal loop (Gemini image regen).
+- **2026-07-01 (operator, closeout):** Close STR out; spin P4 out; record v8.0 achieved-via-sibling; close P5 on delivered evidence (SITE ranker delegated to the closed WEBSITE.aDNA; REPO via M5.5 D14) and P6 as satisfied.
 
 ### Follow-Up Campaigns
 
-- `campaign_adna_v3_ecosystem_compliance` opens at v8 P6 close (per-vault application of v8.0)
-- TBD others surfaced during execution
+- **`campaign_adna_v3_ecosystem_compliance`** — the declared successor (per-vault application of the standard across the ecosystem). Exists as a `planned` stub but **targets the stale v7.0** (seeded 2026-05-08); **needs a v8.x refresh** before it opens.
+- **P4 installer** — now owned by Lighthouse.aDNA (+ Terminal/Harness) per the spin-out memo; not a v8.x-STR follow-up.
 
 ## Campaign AAR
 
-*Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
-
-- **Worked**: TBD
-- **Didn't**: TBD
-- **Finding**: TBD
-- **Change**: TBD
-- **Follow-up**: TBD
+- **Worked**: The re-orient-first reopen (diff the stale plan against what actually shipped) converted an intimidating paused campaign into a clean, honest 2-session closeout.
+- **Didn't**: STR ran as "primary" for a month, was superseded by the Operation aDNA umbrella, then sat dormant + mislabeled ("P0 open") for ~6 weeks — the status drift went uncorrected until the reopen.
+- **Finding**: In a fast-moving multi-campaign fleet, a big campaign's deliverables arrive piecemeal via sibling tracks; a campaign's *terminal target* should be checked against the release CHANGELOG before assuming work remains.
+- **Change**: When reopening any dormant campaign, first diff its terminal target vs. the release CHANGELOG + sibling closures — captured as `how/backlog/idea_campaign_reopen_reconciliation_protocol.md`.
+- **Follow-up**: `campaign_adna_v3_ecosystem_compliance` (needs v8.x refresh at open); Track C reported terminal to `campaign_operation_adna` (DP4 then gated only on Track D / commons).
 
 ## Amendments
 
