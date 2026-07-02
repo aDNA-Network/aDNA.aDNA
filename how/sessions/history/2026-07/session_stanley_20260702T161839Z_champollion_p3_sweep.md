@@ -8,8 +8,8 @@ campaign_phase: 3
 mission_id: "m3_1 + m3_2 + m3_3 (phase sweep; per-mission status tracked in mission files)"
 executor_tier: fable   # orchestrator main loop (bookends); builds dispatch to opus subagents (Agent-tool model override) — pattern §8 R0 Mode B, ruled default this session
 token_budget_estimated: "~130 kT (M3.1 40 + M3.2 40 + M3.3 35 per briefs + orchestration/bookends ~15)"
-token_budget_actual: "TBD at close (per-mission actuals in mission AARs)"
-status: active
+token_budget_actual: "~150 kT (missions ~136 [44+56+36] + ruling record ~5 + G3 render/close ~9) vs ~130 est — the +18% mission overage is bookend-side (censuses + review amendments); G2 class-split calibration held (M3.3 +3%)"
+status: completed
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -51,3 +51,16 @@ Dispatch-shape ruling record → M3.1 (harvest I: codepin · OoB · QUEUED banne
 - 18:0xZ — **M3.2 fable review PASSED with 3 amendments**: splash re-counted (1 adoption) · **census: ISS = 10 vault adoptions** (9 live wrappers vs "3 live" claimed — Rule 8 stale) · **broker = 3** (BusinessIntelligence snippet). NAMES-ONLY independently verified (broad grep clean). **4 graduation flags → G3** (2 seeds + 2 patterns). Mission `completed` + AAR; validate FULL PASS; commit (incl. charter sibling-note edit from the ruling record, uncommitted since M3.1 — builder correctly flagged it untouched).
 - 18:2xZ — **M3.3 verify-before-dispatch**: brief + v2.5 live (footer/§7.7 confirmed) + checker CLI verified; baseline both validators green; census rule + fix-classing (a/b/c) baked into dispatch; **opus subagent dispatched** (background).
 - 18:4xZ — **M3.3 returned + fable review PASSED with 3 amendments**: **baseline 45/50 → post-fix 46/50**, honesty criterion MET (5 named unflattering findings incl. the vault's own checker lagging v2.5). Class-(a) adr_index note verified on filesystem (F-CHM-206 → FIXED); **class-(b) RULED: checker version bump DEFERRED, coupled to F-CHM-209** (new ledger row — checker v2.5-divergence bundle); 3 class-(c) → G3 (skills-FAIR policy · ADR-045 dual-home · registration exercise). Amendments: adr_index sentence repair · artifact ruling annotation · pycache churn restored. Both validators re-run green. Mission `completed` + AAR; commit. **Budget note: the G2 class-split calibration held (+3% vs the old class's 2–2.8× misses).**
+- 19:0xZ — **P3 close + G3 render**: `how/gates/champollion_p3_gate.md` authored (6 decisions, all rec'd: GO+KEEP · graduation batch · PUSH · datapoint #3 · skills-metadata policy · housekeeping); campaign phase row + GATES splash → G3 PENDING; STATE QUEUED banner overwritten (shed, not stacked) + newest Current-Phase bullet; session → history. **STOP at the gate — no push, no auto-advance (SO-1).**
+
+## SITREP (close)
+
+- **Completed**: dispatch-shape ruling recorded (charter Inviolable §2 + pattern §2.5, Carnot divergence honest) · **M3.1 + M3.2 + M3.3 all DONE with AARs** (8 patterns harvested, 14→22; first v2.5 self-score 45→46/50 honest; seeds re-derived 3/3 + backlog filed; F-CHM-206 FIXED · F-CHM-208 filed+FIXED · F-CHM-209 filed) · fable-review censuses (ISS 10 adoptions · broker 3) · **G3 rendered** with 6 recommended decisions · campaign/STATE/session cascade complete.
+- **In progress**: nothing mid-flight.
+- **Next up**: **operator ratifies G3** (`how/gates/champollion_p3_gate.md` — inline reply fine; answer any subset). On ratification: P3 ✅ / P4 ◐, P4 briefs materialize (Mode B), graduations execute, push fires (D3).
+- **Blockers**: none. P-3 memo (Berthier naming clause) still not in tree — carried to G4 per D6.3.
+- **Files touched**: see the 4 P3 commits + this close commit (explicit-path staged throughout; `.adna/` untouched; Carnot tree read-only; NAMES-ONLY held).
+
+## Next Session Prompt
+
+Champollion P3 is WORK-COMPLETE with **G3 (the ring cut) rendered and PENDING** at [[../../gates/champollion_p3_gate|champollion_p3_gate]] (this vault = aDNA.aDNA, Rosetta; standard v2.5; patterns dir 22 files). If the operator has ratified G3 in-chat, execute the ratification cascade per the gate's "On ratification" block: gate → `resolved` + output record → P3 ✅ / P4 ◐ + splash → **materialize P4 briefs at fable tier (Mode B dispatch shape assumed — fable orchestrates, opus subagents build)** → execute D2 graduations (pattern status flips + patterns-AGENTS.md counting line + seed riders into M4.2/M4.3 briefs) → D4 telemetry artifact `telemetry_corpus_p3.md` + Prometheus annotation + TaskNote refresh → D5 policy record + F-CHM-209 rider onto M6.1 → D6 items (Rule 8 truing now; sweep/dual-home/gitignore → M4.4; registry exercise → OoB defer row) → STATE QUEUED banner → P4/M4.1 → **D3 PUSH LAST** (git fetch + ls-remote truth-check + gitleaks). If G3 is NOT yet ratified, surface the gate brief and stop — operator gate, do NOT auto-advance.
