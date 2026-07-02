@@ -1,10 +1,10 @@
 ---
 type: community
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 community_type: role
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [community, roles, participation]
 ---
 
@@ -32,7 +32,7 @@ This structure is documented in [[who/governance/VISION|VISION.md]] as part of t
 
 **Value**: Structured knowledge architecture that both you and your agents can navigate. Faster agent orientation, better session continuity, organized project knowledge.
 
-**Self-reference**: This vault (`aDNA.aDNA/`) started at Level 0 — a fork of the base template, customized with 10 ontology extensions for documentation. The `last_edited_by: agent_stanley` field on every file is a Level 0 artifact: local attribution, no community interaction required.
+**Self-reference**: This vault (`aDNA.aDNA/`) started at Level 0 — a fork of the base template, customized with 10 (now 11) ontology extensions for documentation. The `last_edited_by: agent_stanley` field on every file is a Level 0 artifact: local attribution, no community interaction required.
 
 ### Level 1: Contributor
 

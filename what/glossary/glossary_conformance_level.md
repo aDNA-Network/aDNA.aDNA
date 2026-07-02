@@ -1,12 +1,12 @@
 ---
 type: glossary_entry
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 term: "Conformance Level"
 spec_section: "§5.5"
-see_also: [conformant instance, aDNA, governance file]
-last_edited_by: agent_stanley
+see_also: [conformant instance, aDNA, governance file, standard registers]
+last_edited_by: agent_rosetta
 tags: [glossary, architecture, conformance]
 ---
 
@@ -18,7 +18,7 @@ Conformance levels are three tiers — Starter, Standard, and Full — that defi
 
 ## Technical Definition
 
-A graduated tier (Starter, Standard, Full) defining the minimum requirements an aDNA instance MUST meet to claim conformance at that level. Starter requires governance files + triad directories + required subdirectories + base frontmatter. Standard adds STATE.md, per-directory AGENTS.md, session lifecycle compliance. Full adds context library with token estimates, FAIR metadata, ontology artifact, and template compliance. Projects declare their level via `adna_conformance` in MANIFEST.md frontmatter. (aDNA Standard §5.5)
+A graduated tier (Starter, Standard, Full) defining the minimum requirements an aDNA instance MUST meet to claim conformance at that level. Starter requires governance files + triad directories + required subdirectories + base frontmatter. Standard adds STATE.md, per-directory AGENTS.md, session lifecycle compliance. Full adds context library with token estimates, FAIR metadata, ontology artifact, and template compliance. Projects declare their level via `adna_conformance` in MANIFEST.md frontmatter. (aDNA Standard §5.5) As of ADR-044 (accepted 2026-06-30), the base-frontmatter check treats `status` as optional on `type: directory_index` and `type: coordination` files, and the conformance walk excludes embedded instance trees — a refinement live in the reference instance that folds into the written doc at the *proposed* v2.5 cut (ADR-046, pending the G2 operator gate; see [[what/glossary/glossary_standard_registers|Standard Registers]]).
 
 ## Usage Examples
 
@@ -29,4 +29,5 @@ A graduated tier (Starter, Standard, Full) defining the minimum requirements an 
 
 - [[what/glossary/glossary_conformant_instance|Conformant Instance]]
 - [[what/glossary/glossary_governance_file|Governance File]]
+- [[what/glossary/glossary_standard_registers|Standard Registers]]
 - [[what/concepts/concept_open_standard|Open Standard (concept)]]

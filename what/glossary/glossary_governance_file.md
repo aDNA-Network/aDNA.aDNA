@@ -1,12 +1,12 @@
 ---
 type: glossary_entry
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 term: "Governance File"
 spec_section: "§4.1"
-see_also: [agents_md, readme_md, aDNA]
-last_edited_by: agent_stanley
+see_also: [agents_md, readme_md, aDNA, ratification record, derived index]
+last_edited_by: agent_rosetta
 tags: [glossary, governance]
 ---
 
@@ -30,3 +30,4 @@ Root-level ALLCAPS markdown files that govern an aDNA instance. The governance l
 - [[what/concepts/concept_governance_files|Governance Files (concept)]]
 - [[what/glossary/glossary_agents_md|AGENTS.md]] | [[what/glossary/glossary_readme_md|README.md]]
 - [[what/glossary/glossary_conformance_level|Conformance Level]]
+- [[what/glossary/glossary_ratification_record|Ratification Record]] | [[what/glossary/glossary_derived_index|Derived Index]]

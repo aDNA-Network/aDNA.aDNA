@@ -1,7 +1,7 @@
 ---
 type: concept
 created: 2026-04-13
-updated: 2026-06-18
+updated: 2026-07-02
 status: active
 difficulty: foundational
 spec_section: "§5 Directory Structure, §7 Frontmatter System"
@@ -93,7 +93,7 @@ The `type` field enables filtering, validation, and template matching. Combined 
 
 ## See It In Action
 
-This vault demonstrates both the base ontology and the extension mechanism. The 16 base types power the operational infrastructure you see in `how/` — campaigns, missions, sessions, templates, skills. But this project also added 10 custom types to teach aDNA:
+This vault demonstrates both the base ontology and the extension mechanism. The 16 base types power the operational infrastructure you see in `how/` — campaigns, missions, sessions, templates, skills. But this project also added 11 custom types to teach aDNA:
 
 | Extension | Leg | Directory | Purpose |
 |-----------|-----|-----------|---------|
@@ -105,6 +105,7 @@ This vault demonstrates both the base ontology and the extension mechanism. The 
 | `comparison` | WHAT | `what/comparisons/` | aDNA vs. other architectures |
 | `community` | WHO | `who/community/` | Community roles and contribution paths |
 | `adopter` | WHO | `who/adopters/` | Adopter personas and deployment profiles |
+| `reviewer` | WHO | `who/reviewers/` | Specialist UX/design reviewer personas |
 | `workshop` | HOW | `how/workshops/` | Workshop kits and facilitation guides |
 | `publishing` | HOW | `how/publishing/` | Vault-to-web publishing pipeline |
 

@@ -1,12 +1,12 @@
 ---
 type: glossary_entry
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 term: "Frontmatter"
 spec_section: "§7.1-§7.2"
-see_also: [collision prevention, governance file, template]
-last_edited_by: agent_stanley
+see_also: [collision prevention, governance file, template, standard registers]
+last_edited_by: agent_rosetta
 tags: [glossary, metadata]
 ---
 
@@ -18,7 +18,7 @@ Frontmatter is the structured metadata block at the top of every aDNA file, wrap
 
 ## Technical Definition
 
-YAML metadata required at the top of every content file inside the triad. Base fields (MUST on all files): `type`, `status`, `created`, `updated`, `last_edited_by`, `tags`. Extended fields (type-specific): vary by content type and are defined in [[what/glossary/glossary_template|templates]]. The `last_edited_by` and `updated` fields MUST be updated on every modification as part of [[what/glossary/glossary_collision_prevention|collision prevention]] (Tier 1). (aDNA Standard §7.1-§7.2)
+YAML metadata required at the top of every content file inside the triad. Base fields (MUST on all files): `type`, `status`, `created`, `updated`, `last_edited_by`, `tags`. **Ratified refinement (ADR-044, accepted 2026-06-30):** `status` is OPTIONAL on `type: directory_index` and `type: coordination` files, and the conformance walk excludes embedded instance trees — here the reference instance leads the written standard (v2.4's text still reads status-on-all), folding into the doc at the *proposed* v2.5 cut (ADR-046, pending the G2 operator gate; see [[what/glossary/glossary_standard_registers|Standard Registers]] on the two-track version). Extended fields (type-specific): vary by content type and are defined in [[what/glossary/glossary_template|templates]]. The `last_edited_by` and `updated` fields MUST be updated on every modification as part of [[what/glossary/glossary_collision_prevention|collision prevention]] (Tier 1). (aDNA Standard §7.1-§7.2)
 
 ## Usage Examples
 
@@ -29,4 +29,5 @@ YAML metadata required at the top of every content file inside the triad. Base f
 
 - [[what/glossary/glossary_collision_prevention|Collision Prevention]]
 - [[what/glossary/glossary_template|Template]]
+- [[what/glossary/glossary_standard_registers|Standard Registers]]
 - [[what/concepts/concept_governance_files|Governance Files (concept)]]

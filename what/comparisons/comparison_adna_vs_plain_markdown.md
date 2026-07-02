@@ -1,11 +1,11 @@
 ---
 type: comparison
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 compared_to: "Plain Markdown (unstructured)"
 categories: [structure, agent_support, scalability, overhead, collaboration]
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [comparison, markdown, unstructured, docs_as_code]
 ---
 
@@ -84,7 +84,7 @@ The migration path is straightforward: start with plain markdown, adopt aDNA whe
 ## Sources
 
 - commonmark.org — CommonMark markdown specification
-- aDNA Standard v2.3, §1 (Introduction), §3 (Triad), §4 (Governance) — aDNA specification
+- aDNA Standard v2.4, §1 (Introduction), §3 (Triad), §4 (Governance) — aDNA specification
 
 ## Related
 

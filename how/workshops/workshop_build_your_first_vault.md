@@ -1,7 +1,7 @@
 ---
 type: workshop
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-07-02
 status: active
 duration: "90 minutes"
 audience: "Developers and technical team leads building agentic systems"
@@ -11,7 +11,7 @@ prerequisites:
   - Git installed
   - Claude Code or another AI coding assistant available
   - Obsidian installed
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [workshop, intermediate, vault-building, fork, ontology]
 ---
 
@@ -49,7 +49,7 @@ Complete before arriving (45 minutes total):
 
 ## Facilitator Notes
 
-- **Use aDNA.aDNA as the worked example.** When explaining each step, show how this vault did it. The CLAUDE.md participants are writing mirrors the one in `aDNA.aDNA/CLAUDE.md`. The ontology extension mirrors the 10 extensions in `MANIFEST.md`. This is the [[concept_dual_audience|Dual Audience]] principle in action: teach by showing, not telling.
+- **Use aDNA.aDNA as the worked example.** When explaining each step, show how this vault did it. The CLAUDE.md participants are writing mirrors the one in `aDNA.aDNA/CLAUDE.md`. The ontology extension mirrors the 11 extensions in `MANIFEST.md`. This is the [[concept_dual_audience|Dual Audience]] principle in action: teach by showing, not telling.
 - **CLAUDE.md is the hardest exercise.** Participants struggle with what to include. Suggest they start with three questions: What is this project? What rules must agents follow? What does the domain look like? The rest fills itself in.
 - **Domain diversity is an asset.** Participants will have wildly different projects — a biotech lab, a marketing team, a solo developer. This is a feature, not a bug. Different domains produce different ontology extensions, which demonstrates that aDNA adapts rather than prescribes.
 - **Timebox exercise 2.** CLAUDE.md can absorb unlimited time. Set a hard 20-minute limit and tell participants they can refine later.

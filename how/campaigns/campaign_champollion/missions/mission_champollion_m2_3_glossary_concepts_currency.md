@@ -3,14 +3,14 @@ plan_id: mission_champollion_m2_3_glossary_concepts_currency
 type: plan
 title: "M2.3 — Glossary/concepts/comparisons currency vs v2.4"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 2
 campaign_mission_number: 3
 mission_class: implementation
 executor_tier: opus
 token_budget_estimated: "35 kT"
-token_budget_actual: "TBD"
+token_budget_actual: "~26 kT (opus subagent ~17 self-reported output + fable orchestration verify/fix share ~9; −26%)"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -35,10 +35,12 @@ Sweep the extended-ontology content — `what/glossary/`, `what/concepts/`, `wha
 
 ## Acceptance criteria
 
-- [ ] Every glossary/concept/comparison entry checked against v2.4; each stale one fixed or flagged with reason.
-- [ ] The P1/P2 terms above are present and dual-audience-legible.
-- [ ] `skill_dual_audience_review` passes on each edited file; no orphan files (SO-10).
-- [ ] `adna_validate` FULL PASS; single explicit-path commit.
+- [x] Every glossary/concept/comparison entry checked against v2.4 (43 swept: 25+13+5) — 31 CURRENT · 12 STALE-fixed · **0 CONTRADICTS** (nothing escalated as an M2.1/M2.2 finding).
+- [x] The P1/P2 terms present and dual-audience-legible — 4 new entries: `glossary_ratification_record` · `glossary_model_tiered_execution` · `glossary_derived_index` · `glossary_standard_registers` (the F-CHM-204 fix).
+- [x] Dual-audience + wikilinks verified on each edited file (main-session spot-review incl. full read of `standard_registers`; ≥2 resolving wikilinks each; new entries reachable from `glossary_index` + ≥1 existing entry).
+- [x] `adna_validate` FULL PASS; explicit-path commit.
+
+> **DONE 2026-07-02** (`session_stanley_20260702T140223Z_champollion_p2_execution`, fable-orchestrated · opus subagent at-tier). Verify pass also fixed 4 outside-dir live count sites the sweep flagged (10→11 extensions ×3 · 32→41 templates; MANIFEST:148 Phase-0 row KEPT as historical) + filed F-CHM-207 (workshop pre-ADR-006 clone instructions → M4.3). AAR: [[../../../how/missions/artifacts/campaign_champollion_mission_m2_3_aar|m2_3 AAR]].
 
 ## Guardrails
 

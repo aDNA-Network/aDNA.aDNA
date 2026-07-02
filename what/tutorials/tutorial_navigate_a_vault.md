@@ -1,13 +1,13 @@
 ---
 type: tutorial
 created: 2026-04-14
-updated: 2026-05-29
+updated: 2026-07-02
 status: active
 level: beginner
 prerequisites: []
 estimated_time: "15 minutes"
 dual_audience: true
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [tutorial, beginner, navigation, vault, triad]
 ---
 
@@ -66,7 +66,7 @@ how/
 ├── campaigns/     ← Strategic initiatives (Operation Rosetta lives here)
 ├── missions/      ← Standalone task decompositions
 ├── sessions/      ← Session audit trail (active/ + history/)
-├── templates/     ← Reusable file templates (32 templates)
+├── templates/     ← Reusable file templates (41 templates)
 ├── skills/        ← Agent recipes and procedures
 ├── pipelines/     ← Content-as-code workflows
 ├── backlog/       ← Ideas and improvements

@@ -1,11 +1,11 @@
 ---
 type: comparison
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 compared_to: "Zettelkasten"
 categories: [organizing_principle, linking, agent_support, knowledge_model, scalability]
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [comparison, zettelkasten, luhmann, note_taking, knowledge_graph]
 ---
 
@@ -71,7 +71,7 @@ Both use Obsidian well. A practitioner might maintain a personal Zettelkasten al
 - Sönke Ahrens, *How to Take Smart Notes* (2017) — Zettelkasten method for knowledge work
 - zettelkasten.de — community hub and method documentation
 - Niklas Luhmann, "Communicating with Slip Boxes" (1981) — original articulation
-- aDNA Standard v2.3, §3 (Triad), §10 (Context Library) — aDNA specification
+- aDNA Standard v2.4, §3 (Triad), §10 (Context Library) — aDNA specification
 
 ## Related
 

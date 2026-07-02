@@ -1,12 +1,12 @@
 ---
 type: glossary_entry
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 term: "Glossary Index"
 spec_section: ""
 see_also: []
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [glossary, index]
 ---
 
@@ -39,6 +39,9 @@ A single-page lookup table for all aDNA terms. Each entry links to its full defi
 | **Frontmatter** | YAML metadata block at the top of every content file | [[what/glossary/glossary_frontmatter|glossary_frontmatter]] |
 | **Conformance Level** | Starter/Standard/Full tiers of aDNA compliance | [[what/glossary/glossary_conformance_level|glossary_conformance_level]] |
 | **Conformant Instance** | A directory tree meeting at least Starter requirements | [[what/glossary/glossary_conformant_instance|glossary_conformant_instance]] |
+| **Standard Registers** | The five different things called "the standard" — and how each is versioned | [[what/glossary/glossary_standard_registers|glossary_standard_registers]] |
+| **Ratification Record** | The signed/dated block a human adds to accept an ADR (agents never self-ratify) | [[what/glossary/glossary_ratification_record|glossary_ratification_record]] |
+| **Derived Index** | An index generated from source files — regenerate, never hand-edit | [[what/glossary/glossary_derived_index|glossary_derived_index]] |
 
 ## Operations
 
@@ -50,6 +53,7 @@ A single-page lookup table for all aDNA terms. Each entry links to its full defi
 | **Template** | Reusable file blueprint in `how/templates/` | [[what/glossary/glossary_template|glossary_template]] |
 | **Skill** | Reusable agent procedure in `how/skills/` | [[what/glossary/glossary_skill|glossary_skill]] |
 | **Content-as-Code** | Folder-based workflow where location = processing state | [[what/glossary/glossary_content_as_code|glossary_content_as_code]] |
+| **Model-Tiered Execution** | Planning each mission's model tier (fable/opus/sonnet) up front to save budget | [[what/glossary/glossary_model_tiered_execution|glossary_model_tiered_execution]] |
 
 ## Knowledge & Coordination
 

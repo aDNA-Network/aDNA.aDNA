@@ -1,12 +1,12 @@
 ---
 type: glossary_entry
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 term: "Mission"
 spec_section: "§9.1"
-see_also: [session, SITREP, template]
-last_edited_by: agent_stanley
+see_also: [session, SITREP, template, model-tiered execution]
+last_edited_by: agent_rosetta
 tags: [glossary, operations]
 ---
 
@@ -29,4 +29,5 @@ A multi-session work decomposition unit that lives in `how/missions/`. A mission
 
 - [[what/glossary/glossary_session|Session]]
 - [[what/glossary/glossary_sitrep|SITREP]]
+- [[what/glossary/glossary_model_tiered_execution|Model-Tiered Execution]]
 - [[what/concepts/concept_convergence|Convergence (concept)]]

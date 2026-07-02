@@ -1,12 +1,12 @@
 ---
 type: glossary_entry
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 term: "Ontology Extension"
 spec_section: "§5.1"
 see_also: [triad, what, how, who]
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [glossary, architecture]
 ---
 
@@ -22,7 +22,7 @@ A domain-specific entity type added to the base aDNA ontology (16 types across 3
 
 ## Usage Examples
 
-- This vault adds 10 ontology extensions: `concept`, `tutorial`, `pattern`, `glossary_entry`, `use_case`, `comparison` (all under `what/`), `community`, `adopter` (under `who/`), and `workshop`, `publishing` (under `how/`). Each has its own AGENTS.md and template.
+- This vault adds 11 ontology extensions: `concept`, `tutorial`, `pattern`, `glossary_entry`, `use_case`, `comparison` (all under `what/`), `community`, `adopter`, `reviewer` (under `who/`), and `workshop`, `publishing` (under `how/`). Each has its own AGENTS.md and template.
 - The extension process itself is documented as a skill: `how/skills/skill_new_entity_type.md`.
 
 ## See Also

@@ -1,10 +1,10 @@
 ---
 type: community
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 community_type: process
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [community, processes, contributions, workflows]
 ---
 
@@ -33,7 +33,7 @@ An AI agent working in any aDNA vault notices a gap during normal work — a mis
 
 **Full protocol**: `how/skills/skill_upstream_contribution.md`
 
-**Self-reference**: This vault itself has surfaced upstream improvements during its build — the 10 ontology extensions added here (concepts, tutorials, patterns, etc.) informed extensions to the base template.
+**Self-reference**: This vault itself has surfaced upstream improvements during its build — the 11 ontology extensions added here (concepts, tutorials, patterns, etc.) informed extensions to the base template.
 
 ## Process 2: Side-Quests (Level 2+)
 

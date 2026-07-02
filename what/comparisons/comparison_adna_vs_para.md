@@ -1,11 +1,11 @@
 ---
 type: comparison
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 compared_to: "PARA (Projects, Areas, Resources, Archives)"
 categories: [organizing_principle, audience, agent_support, scalability, learning_curve]
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [comparison, para, forte, personal_knowledge]
 ---
 
@@ -70,7 +70,7 @@ They're not mutually exclusive. A developer might use PARA for personal notes an
 
 - Tiago Forte, *Building a Second Brain* (2022) — PARA method definition
 - Forte Labs: fortelabs.com/blog/para — PARA overview
-- aDNA Standard v2.3, §1 (Introduction), §3 (Triad Architecture) — aDNA specification
+- aDNA Standard v2.4, §1 (Introduction), §3 (Triad Architecture) — aDNA specification
 
 ## Related
 

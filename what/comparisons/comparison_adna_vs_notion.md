@@ -1,11 +1,11 @@
 ---
 type: comparison
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 compared_to: "Notion"
 categories: [architecture, agent_support, collaboration, extensibility, data_ownership]
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [comparison, notion, saas, wiki, database]
 ---
 
@@ -74,7 +74,7 @@ Some teams use both: Notion for real-time collaboration and project management, 
 
 - notion.so/product — Notion platform documentation
 - Notion AI documentation — notion.so/product/ai
-- aDNA Standard v2.3, §1 (Introduction), §3 (Triad), §11 (Federation) — aDNA specification
+- aDNA Standard v2.4, §1 (Introduction), §3 (Triad), §11 (Federation) — aDNA specification
 
 ## Related
 

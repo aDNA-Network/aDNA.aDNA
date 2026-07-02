@@ -1,7 +1,7 @@
 ---
 type: concept
 created: 2026-04-13
-updated: 2026-04-13
+updated: 2026-07-02
 status: active
 difficulty: intermediate
 spec_section: "§1 Introduction, §3 Triad Architecture, §11 Federation Protocol"
@@ -10,13 +10,14 @@ last_edited_by: agent_stanley
 tags: [concept, open_standard, extensibility, federation, governance, intermediate]
 related_concepts: [concept_triad, concept_governance_files, concept_fair_metadata, concept_ontology]
 related_patterns: [pattern_base_extension, pattern_fork_customize]
+last_edited_by: agent_rosetta
 ---
 
 # Open Standard — Why aDNA Is a Standard, Not a Product
 
 ## Overview
 
-aDNA is an open standard — a publicly documented specification that anyone can implement, extend, and build upon without permission or payment. The upstream spec (aDNA Standard v2.3, published at `github.com/aDNA-Network/aDNA`) defines the normative rules. Individual projects implement the standard, extending it for their domain while maintaining compatibility with the shared core.
+aDNA is an open standard — a publicly documented specification that anyone can implement, extend, and build upon without permission or payment. The upstream spec (aDNA Standard v2.4, published at `github.com/aDNA-Network/aDNA`) defines the normative rules. Individual projects implement the standard, extending it for their domain while maintaining compatibility with the shared core.
 
 ## Why This Matters
 
@@ -34,7 +35,7 @@ aDNA maintains a clear separation between the standard (what's normative) and im
 
 | Layer | What It Is | Who Controls It | Example |
 |-------|-----------|----------------|---------|
-| **Upstream spec** | aDNA Standard v2.3 — normative rules using RFC 2119 keywords (MUST, SHOULD, MAY) | Open governance (github.com/aDNA-Network/aDNA) | "Every instance MUST use the what/how/who triad" |
+| **Upstream spec** | aDNA Standard v2.4 — normative rules using RFC 2119 keywords (MUST, SHOULD, MAY) | Open governance (github.com/aDNA-Network/aDNA) | "Every instance MUST use the what/how/who triad" |
 | **Base template** | `.adna/` — ready-to-fork implementation of the spec | Upstream maintainers | Governance files, triad directories, templates, skills |
 | **Project instance** | A forked and customized aDNA project | Project owner | This vault (`aDNA.aDNA/`), any `.aDNA/` project |
 
@@ -54,8 +55,8 @@ Projects extend by adding domain-specific entity types under the appropriate tri
 
 | Extension | Triad | Added By |
 |-----------|-------|----------|
-| `concept`, `tutorial`, `pattern`, `glossary_entry` | WHAT | This vault (aDNA.aDNA) |
-| `community`, `adopter` | WHO | This vault |
+| `concept`, `tutorial`, `pattern`, `glossary_entry`, `use_case`, `comparison` | WHAT | This vault (aDNA.aDNA) |
+| `community`, `adopter`, `reviewer` | WHO | This vault |
 | `workshop`, `publishing` | HOW | This vault |
 
 This base/extension architecture means any aDNA-aware tool can understand the base layer of any project, even if it doesn't know the extensions. Interoperability by default.
@@ -89,7 +90,7 @@ This vault is a living demonstration of the open standard in practice:
 
 **The base template**: The `.adna/` directory at the workspace root is the upstream base template, ready to fork. This vault was forked from it — you can compare this project's structure against the template to see what's base and what's extension.
 
-**Extensions**: This vault adds 10 entity types to the base 16 (see `what/concepts/AGENTS.md`, `what/tutorials/AGENTS.md`, `who/community/AGENTS.md`, etc.). Each extension follows the same patterns as the base — AGENTS.md, templates, frontmatter conventions — because the standard defines how to extend, not just what the base contains.
+**Extensions**: This vault adds 11 entity types to the base 16 (see `what/concepts/AGENTS.md`, `what/tutorials/AGENTS.md`, `who/community/AGENTS.md`, etc.). Each extension follows the same patterns as the base — AGENTS.md, templates, frontmatter conventions — because the standard defines how to extend, not just what the base contains.
 
 **Spec citations**: Throughout this vault, normative claims reference the upstream spec with section numbers (§3, §5, §10). This file you're reading cites §1, §3, §5, and §11. The vault demonstrates; the spec defines. This separation is the standard in action.
 

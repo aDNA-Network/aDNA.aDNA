@@ -1,12 +1,12 @@
 ---
 type: glossary_entry
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 term: "Template"
 spec_section: "§12.1"
-see_also: [how, frontmatter, conformance level]
-last_edited_by: agent_stanley
+see_also: [how, frontmatter, conformance level, derived index]
+last_edited_by: agent_rosetta
 tags: [glossary, operations]
 ---
 
@@ -22,7 +22,7 @@ Reusable file structures stored in `how/templates/`, following the naming patter
 
 ## Usage Examples
 
-- This vault has 32 templates (22 base + 10 extensions). The glossary entries you are reading were created from `how/templates/template_glossary_entry.md`, which pre-defines the frontmatter fields (`term`, `spec_section`, `see_also`) and section structure (Plain-Language Definition, Technical Definition, Usage Examples, See Also).
+- This vault has 41 templates (25 base + 11 extension + 5 operational). The glossary entries you are reading were created from `how/templates/template_glossary_entry.md`, which pre-defines the frontmatter fields (`term`, `spec_section`, `see_also`) and section structure (Plain-Language Definition, Technical Definition, Usage Examples, See Also).
 - Every content type used in the vault has a matching template — this is a Full [[what/glossary/glossary_conformance_level|conformance]] requirement.
 
 ## See Also
@@ -30,3 +30,4 @@ Reusable file structures stored in `how/templates/`, following the naming patter
 - [[what/glossary/glossary_frontmatter|Frontmatter]]
 - [[what/glossary/glossary_how|how/]]
 - [[what/glossary/glossary_conformance_level|Conformance Level]]
+- [[what/glossary/glossary_derived_index|Derived Index]]

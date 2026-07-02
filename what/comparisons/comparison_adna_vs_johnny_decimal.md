@@ -1,11 +1,11 @@
 ---
 type: comparison
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 compared_to: "Johnny.Decimal"
 categories: [organizing_principle, numbering, agent_support, scalability, simplicity]
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [comparison, johnny_decimal, numbering, file_organization]
 ---
 
@@ -72,7 +72,7 @@ These serve genuinely different purposes. Johnny.Decimal organizes files; aDNA o
 
 - johnnydecimal.com — Johnny.Decimal system documentation
 - Johnny Noble, "A system to organise your life" — method introduction
-- aDNA Standard v2.3, §3 (Triad Architecture), §4.5 (AGENTS.md) — aDNA specification
+- aDNA Standard v2.4, §3 (Triad Architecture), §4.5 (AGENTS.md) — aDNA specification
 
 ## Related
 
