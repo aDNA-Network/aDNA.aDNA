@@ -12,6 +12,8 @@ One row per ADR in `what/decisions/`, derived from each file's frontmatter + H1.
 
 **Tally:** 41 ADRs — accepted: 40 · amended: 1
 
+> **Numbering note** (F-CHM-206): numbers **015** and **018–021** are unassigned — reserved/withdrawn during drafting, never materialized as files. The highest number in use (**046**) exceeds the 41-file count by exactly these 5 gaps; the tally counts actual files and is internally correct. ADR-012 records a 009→012 renumber. Do **not** renumber existing ADRs to close the gaps (stable IDs are load-bearing across cross-references). Preserve this note on regeneration.
+
 | # | Title | Status | Created | Updated | Subject |
 |---|-------|--------|---------|---------|---------|
 | [001](adr_001_obsidian_as_knowledge_platform.md) | Choice of Obsidian as Knowledge Platform | accepted | 2026-03-18 | 2026-03-18 | Use Obsidian as the primary knowledge platform for aDNA vaults. Obsidian operates on a local folder of Markdown files, supports community pl… |

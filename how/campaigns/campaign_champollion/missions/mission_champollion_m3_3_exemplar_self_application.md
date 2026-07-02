@@ -3,14 +3,14 @@ plan_id: mission_champollion_m3_3_exemplar_self_application
 type: plan
 title: "M3.3 — Exemplar self-application (10-dimension compliance self-score → exemplary)"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 3
 campaign_mission_number: 3
 mission_class: verification
 executor_tier: opus
 token_budget_estimated: "35 kT (down from the charter's 45 — G2 D4 class-split calibration: verification budgets the judgment surface [10 dimensions × evidence], not the vault corpus; the fix-execution half keeps implementation-class weight)"
-token_budget_actual: "TBD"
+token_budget_actual: "~36 kT (opus subagent ~30 self-reported + fable bookends ~6 verify/review/ruling; +3% — the D4 calibration held)"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -20,6 +20,8 @@ tags: [plan, campaign, champollion, p3, exemplar, self_score, compliance, dimens
 # Mission M3.3 — Exemplar self-application
 
 **Campaign**: [[../campaign_champollion|campaign_champollion]] · **Executor: opus (build) with fable bookends** (G2 role model — fable reviews both the *honesty of the scoring* and the fixes) · **Ring 1**. The base graph must exemplify what it exports (charter north-star: *the standard must deserve the copying*).
+
+> **DONE 2026-07-02** (`session_stanley_20260702T161839Z_champollion_p3_sweep`, fable-orchestrated · opus subagent at-tier, Mode B). **Baseline 45/50 → post-fix 46/50** — honesty criterion met (5 named unflattering findings; no perfect-50). Artifact: [[../artifacts/exemplar_self_score|exemplar_self_score]]. Class-(a): adr_index numbering note (F-CHM-206 defer→FIXED). Class-(b) ruled at review: checker version bump **DEFERRED**, coupled to **F-CHM-209** (checker v2.5-divergence bundle, new ledger row). Class-(c) → G3: skills-FAIR/federation policy · ADR-045 git-wrapper dual-home · registration-exercise question. Both validators green. AAR: [[../../../how/missions/artifacts/campaign_champollion_mission_m3_3_aar|m3_3 AAR]].
 
 ## Objective
 
