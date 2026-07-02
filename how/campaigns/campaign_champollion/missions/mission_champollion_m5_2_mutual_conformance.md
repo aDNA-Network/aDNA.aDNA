@@ -3,14 +3,14 @@ plan_id: mission_champollion_m5_2_mutual_conformance
 type: plan
 title: "M5.2 — Mutual conformance: LP vault vs the v2.5 standard ↔ this vault's lattice/module/dataset teaching vs the LP spec @ codepin 47935b6"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 5
 campaign_mission_number: 2
 mission_class: verification
 executor_tier: opus
 token_budget_estimated: "45 kT (charter) — G2 class-split calibration applies: verification budgets the judgment surface net of orchestrator pre-resolution (prior class rows ran −44…−64% before calibration; M3.3's calibrated row landed +3%). Verify-before-dispatch may trim this estimate; do not inflate work to fill it."
-token_budget_actual: "TBD"
+token_budget_actual: "~87 kT (opus builder ~78 self-reported + fable bookends ~9) vs 45 — +93%, 1.93× (INSIDE the ADR-016 2× band by a hair; no retrospective triggered). First verification-class OVER-run after the calibration held twice — the judgment surface stayed lean (characterize-by-class, no 149-line enumeration) but the FOREIGN-corpus read surface dominated (LP validator census + LP ledger spec). Same cost-center as M5.1: cross-graph missions price the evidence/read surface. Builder passed its ~60 halt line without halting (flagged honestly at completion; subagent token introspection is weak mid-flight). → G5-D3 calibration note."
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -35,10 +35,10 @@ Run the bilateral conformance check the seam owes both ways: **(a)** the LP vaul
 
 ## Acceptance criteria
 
-- [ ] Both directions censused with file-path evidence; artifact complete; every finding dispositioned (fixed / staged-memo / ledger row).
-- [ ] Zero writes outside this vault; LP reads at the pin (drift noted if any).
-- [ ] Our-side fixes re-pass dual-audience; `npx astro build` green IF any site-mirrored teaching surface changed.
-- [ ] Fable review passed (independent re-census of at least the two highest-severity findings, different method); `adna_validate` FULL PASS + `--governance` zero drift; explicit-path commit (no push — batches at G5).
+- [x] Both directions censused with file-path evidence; artifact complete; every finding dispositioned (fixed / staged-memo / ledger row). *(Dir-a: 7 LP-side [2 med/5 low] → staged offering memo + 1 OURS [A-6 validator gap → F-CHM-215/GI-1] + A-9 clean-check; dir-b: 0 spec contradictions [layer-attribution analysis], 5 stale-count fixes B-1..B-5, B-11 → F-CHM-214; sample sizes stated, not claimed exhaustive.)*
+- [x] Zero writes outside this vault; LP reads at the pin (drift noted if any). *(Read-only proof: only pre-existing Carnot artifacts in LP status — the 16:04 LP-tree changes were a CONCURRENT Carnot R1 session, verified not-ours. Spec drift `47935b6..8cb6e1e` = EMPTY → pin-follow FOLLOWED, ratified at review; pattern + M5.1-memo §2/§5 back-filled.)*
+- [x] Our-side fixes re-pass dual-audience; `npx astro build` green IF any site-mirrored teaching surface changed. *(180pp green ×2 incl. independent fable-side run.)*
+- [x] Fable review passed (independent re-census of at least the two highest-severity findings, different method); `adna_validate` FULL PASS + `--governance` zero drift; explicit-path commit (no push — batches at G5). *(A-2 re-verified by direct ls [all 3 per-leg AGENTS.md absent] + A-6 by direct code read [`NESTED_INSTANCE_DIRS:55` hardcoded] + example count by semantic ls [19]; review completions: F-CHM-214/215 ledger rows FILED [builder referenced, never filed — manifest-vs-filesystem again] + pin-follow executed.)*
 
 ## Guardrails
 

@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-04-13
-updated: 2026-06-29
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [directory_index, object_standards]
 ---
 
@@ -16,7 +16,7 @@ Standards, templates, and FAIR metadata requirements for the three core aDNA obj
 
 | # | Subtopic | File | ~Tokens | Quality | Sources |
 |---|----------|------|---------|---------|---------|
-| 1 | Standards Overview | `context_object_standards_overview.md` | ~1,000 | 3.8 | 6 sources (Standard v2.3, lattice schema, dataset schema, 13 examples, type_vocabulary, fair_mapping) |
+| 1 | Standards Overview | `context_object_standards_overview.md` | ~1,000 | 3.8 | 6 sources (Standard v2.3, lattice schema, dataset schema, 19 examples, type_vocabulary, fair_mapping) |
 
 ## Total Token Budget
 

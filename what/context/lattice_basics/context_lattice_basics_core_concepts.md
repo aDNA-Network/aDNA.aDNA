@@ -3,11 +3,11 @@ type: context_core
 topic: lattice_basics
 subtopic: core_concepts
 created: 2026-03-05
-updated: 2026-06-29
+updated: 2026-07-02
 sources: ["aDNA Standard v2.3 (what/docs/adna_standard.md)", "aDNA Design Document (what/docs/adna_design.md)", "adna_core lattice_design context", "hello_world.lattice.yaml example", "type_vocabulary context"]
 context_version: "2.0"
 token_estimate: ~1000
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [context, lattice_basics]
 quality_score: 4.0
 signal_density: 4
@@ -116,7 +116,7 @@ lattice:
     keywords: ["hello world", "onboarding"]
 ```
 
-**Start here**: Copy `what/lattices/examples/hello_world.lattice.yaml` and customize. 13 examples ship across business, research, creative, and biotech domains. See `what/docs/adna_standard.md` §4.3 for the full lattice spec.
+**Start here**: Copy `what/lattices/examples/hello_world.lattice.yaml` and customize. 19 example `.lattice.yaml` files ship across business, research, creative, and biotech domains. See `what/docs/adna_standard.md` §4.3 for the full lattice spec.
 
 ## Type Vocabulary
 
