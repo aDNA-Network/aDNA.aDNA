@@ -3,7 +3,7 @@ plan_id: mission_champollion_m1_1_backlog_disposition_execution
 type: plan
 title: "M1.1 — Execute the G0-ratified backlog dispositions (91 items)"
 owner: stanley
-status: active
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 1
 campaign_mission_number: 1
@@ -13,6 +13,7 @@ token_budget_estimated: "40 kT"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
+token_budget_actual: "~30 kT"
 tags: [plan, campaign, champollion, p1, backlog, dispositions, m1_1]
 ---
 
@@ -58,3 +59,19 @@ No `.adna/` writes · no cross-vault writes (items needing other vaults → the 
 - A disposition would require deleting content or touching another vault.
 - An "already-discharged" claim's evidence pointer does not resolve.
 - Budget > 60 kT (1.5× estimate) → checkpoint commit + hand off remainder.
+
+## Completion summary (2026-07-02, `session_stanley_20260702T045807Z_champollion_m1_1`)
+
+**Deliverables** — all 91 ratified items dispositioned in `how/backlog/` (commit `6145c16`):
+**28 ALREADY-DISCHARGED** (status → `resolved`/`completed` + evidence close-note) · **31 ACCEPT→template-fold** (`fold_batch: champollion_m6_1_rc`) · **13 ACCEPT→fix/mission** (`champollion_mission:` pointer) · **17 DEFER** (`deferred_owner`/`deferred_trigger`) · **2 DECLINE-stale** (declined + banner, retained per SO-6).
+
+**Acceptance criteria** — all met: file count unchanged (93, no deletions); `fold_batch`==31, `status: deferred`==17, `status: declined`==2; `adna_validate` full conformance + `--governance` zero drift; single commit, explicit paths, no push. Named status-lies (VisualDNA / interactive_decision_surface / operator_web_gate / identity+inventory / awsbootstrap) verified truthful.
+
+**Scope notes / escalations** — the applied split is 28/13 vs the ledger's drafted 27/14: the +1 discharged / −1 fix-mission is `idea_upstream_node_vault_bare_role_rename` (already `resolved`, acknowledged RESOLVED inline in the ledger), classified truthfully as discharged. **2 items escalated** ([[../artifacts/findings_ledger|F-CHM-013]]): `idea_campaign_execution_automation` + `idea_upstream_model_tier_mission_fields` were filed after the ledger's read (post-`4e26b18`), outside the ratified 91 — left untouched per operator decision. The 3 stale ADRs (adr_003/012/027) are **M1.2's**, not touched here.
+
+## AAR
+- **Worked**: opus authored a per-file disposition map from the ratified ledger, then an idempotent script applied it batch-by-class — hit the exact 31/17/2 hard-counts on the first real run, validator green both modes.
+- **Didn't**: dir held 93 not 91 (2 files filed after the ledger read) — caught at planning recon, not mid-execution; a naive per-file sweep would have silently over-run scope.
+- **Finding**: "execute exactly N" missions must reconcile the live directory against the ledger's N *before* editing — concurrent movement is the norm on a shared tree, not the exception.
+- **Change**: for count-bound sweeps, encode the acceptance grep-counts as the hybrid-disambiguation guide (the counts told us which way each hybrid had to resolve).
+- **Follow-up**: F-CHM-013 (2 escalated files → operator/gate); adr_003/012/027 → M1.2; ~30 kT actual vs 40 kT est (−25%, well within ADR-016 threshold; script-batch beat the per-file estimate).
