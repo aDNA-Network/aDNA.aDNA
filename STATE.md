@@ -22,7 +22,7 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 >
 > **NEXT = P3 (PATTERN HARVEST & exemplar self-application) → M3.1.** Briefs live (fable-authored, downtier-safe): `campaign_champollion/missions/` — **M3.1 pattern harvest I** (codepin · Order-of-Battle · STATE-QUEUED banner; opus·R1·40kT) → **M3.2 pattern harvest II** (credential-broker/shim-registry · coord/countersign · ISS gates · splash + graduation-seed checks; opus·**R2**·40kT) → **M3.3 exemplar self-application** (10-dim self-score vs **v2.5** → exemplary; opus·R1·**35kT** calibrated). Sequence flexible (M3.1 first preferred; M3.3 last so it scores the harvested state). **Next gate = G3 = THE RING CUT** (launch-window re-score; Ring-2 missions convert to accepted-carry if compressed) — **operator gate; do NOT auto-advance.**
 > Per-session: `adna_validate` both modes (verify-don't-inherit); commit-only (pushes batch at gates); `.adna/` untouched; credential content NAMES-ONLY (M3.2).
-> **Deferred threads**: R1 campaign-runner (G1 D4) `how/backlog/idea_campaign_execution_automation.md` · C6 model-tier template fields (G2 D2c — 3rd-instance trigger) · F-CHM-206 (index gap annotation; cheap M3.3 companion) · F-CHM-207 (workshop clone flow → M4.3).
+> **Deferred threads**: R1 campaign-runner (G1 D4) `how/backlog/idea_campaign_execution_automation.md` · **C6 model-tier template fields — 3rd-instance trigger FIRED 2026-07-02** (C03-ETAT-MAJOR adopted the pattern, Berthier ack memo; D2c pointed at exactly this → **ratify fold at G3**, ship via M6.1 RC) · F-CHM-206 (index gap annotation; cheap M3.3 companion) · F-CHM-207 (workshop clone flow → M4.3).
 
 ## 🌐 adna.network — LIVE on Cloudflare (2026-05-31)
 

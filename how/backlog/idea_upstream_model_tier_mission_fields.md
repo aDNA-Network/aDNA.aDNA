@@ -39,3 +39,5 @@ Fold into the standard's template set (ships **only** through the operator-gated
 ## Trigger / Gate
 
 Pattern graduation discipline: **2 instances live (Carnot, Champollion); fold ratifies at the 3rd instance** or earlier by operator decision at a Champollion gate. Staged for the next `skill_template_release` batch either way.
+
+> **TRIGGER FIRED — 2026-07-02.** The 3rd instance landed: **C03-ETAT-MAJOR** (Operations.aDNA) adopted the pattern operator-ruled at their S41 gate, dogfooding these exact fields pre-schema-v2 ([[../../who/coordination/coord_2026_07_02_berthier_to_rosetta_executor_tier_ack|Berthier instance report]]). Sequencing: ADR-046's **C6 rider was DEFERRED at Champollion G2 (D2c) to precisely this trigger**, hours before it fired — so the fold now queues as a **G3 ratification item** (Option A recommended as written) and ships via **M6.1's RC** through `skill_template_release`. Operations' M37 schema-v2 thread carries the task-entity side (additive, semantics-by-reference). Agents do not fold ahead of the gate.

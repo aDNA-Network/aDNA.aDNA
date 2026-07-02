@@ -6,8 +6,8 @@ status: draft
 pattern_category: operational
 applies_to: [campaign, mission, session, all_categories]
 campaign_id: campaign_champollion
-instances: [campaign_carnot (LatticeProtocol.aDNA), campaign_champollion (aDNA.aDNA)]
-graduation: "2 instances live; graduates to template/standard fold at 3rd instance (pattern-graduation discipline)"
+instances: [campaign_carnot (LatticeProtocol.aDNA), campaign_champollion (aDNA.aDNA), C03-ETAT-MAJOR (Operations.aDNA — 3rd instance, operator-ruled at their S41 gate 2026-07-02)]
+graduation: "3 instances live — GRADUATION TRIGGER FIRED 2026-07-02 (Berthier ack memo); template-fold ratification queued at Champollion G3, ships via M6.1 RC (skill_template_release). C6/D2c deferral at G2 pointed at exactly this trigger."
 last_edited_by: agent_rosetta
 tags: [pattern, model_tiering, executor_tier, campaign, token_budget, adr_016, context_intelligence, contextscope, carnot, champollion]
 ---
@@ -72,7 +72,7 @@ When the **main session itself runs at the judgment tier** (Champollion P2 ran u
 
 ## 3. Why this is measurable (the Context.aDNA seam)
 
-Context.aDNA (Prometheus) already has the machinery to judge routing empirically: its telemetry model carries per-record model identity and cost with `provenance ∈ {measured, estimated}` (its ADR-001), its optimization-exhaust contract ranks operands into tiers with a **mechanical band** defined by output size (its ADR-011, O4), and its synthetic A/B probe has already *capability-validated* a mechanical offload tier by experiment (15/15 bands, 100% tool-call parity, 2026-06-29). The fields in §2.4 are deliberately the join keys that corpus needs: **tier planned × model actual × budget estimated × budget actual**, per mission, per campaign. Two live campaigns (Carnot, Champollion) emit the corpus; Prometheus's engine can then answer, with measurements instead of assertions: *was the mid-judgment tier good enough for mission class X? What did the routing actually save?* That closes the loop: **design routes → telemetry measures → the next campaign's routing table is evidence-based.**
+Context.aDNA (Prometheus) already has the machinery to judge routing empirically: its telemetry model carries per-record model identity and cost with `provenance ∈ {measured, estimated}` (its ADR-001), its optimization-exhaust contract ranks operands into tiers with a **mechanical band** defined by output size (its ADR-011, O4), and its synthetic A/B probe has already *capability-validated* a mechanical offload tier by experiment (15/15 bands, 100% tool-call parity, 2026-06-29). The fields in §2.4 are deliberately the join keys that corpus needs: **tier planned × model actual × budget estimated × budget actual**, per mission, per campaign. Three live campaigns (Carnot, Champollion, and Operations' C03-ETAT-MAJOR since 2026-07-02) emit the corpus; Prometheus's engine can then answer, with measurements instead of assertions: *was the mid-judgment tier good enough for mission class X? What did the routing actually save?* That closes the loop: **design routes → telemetry measures → the next campaign's routing table is evidence-based.**
 
 ## 4. When NOT to downtier
 
@@ -96,7 +96,7 @@ Context.aDNA (Prometheus) already has the machinery to judge routing empirically
 
 ## 7. Provenance & graduation
 
-Extracted from Operation Carnot's charter (2026-07-01, Noether/LatticeProtocol.aDNA) and first self-applied by Operation Champollion P0 (2026-07-02, Rosetta/this vault). **Instances: 2.** Per the pattern-graduation discipline this file stays `status: draft` until a third independent campaign adopts it, at which point the template/standard fold graduates from proposal to ratification candidate. Related: [[pattern_mission_decomposition]] (what a mission is), [[../../how/skills/skill_orchestration_tiers|skill_orchestration_tiers]] (intra-session agent fan-out — the *within-session* sibling of this *across-mission* pattern).
+Extracted from Operation Carnot's charter (2026-07-01, Noether/LatticeProtocol.aDNA) and first self-applied by Operation Champollion P0 (2026-07-02, Rosetta/this vault). **Instances: 3** — the third arrived 2026-07-02 when Operations.aDNA's **C03-ETAT-MAJOR** adopted the pattern (operator-ruled at their S41 gate; binding honored as-is, per-mission fields dogfooded pre-schema-v2 — [[../../who/coordination/coord_2026_07_02_berthier_to_rosetta_executor_tier_ack|Berthier's instance report]]). **The graduation clause has therefore FIRED**: the template/standard fold ([[../../how/backlog/idea_upstream_model_tier_mission_fields|idea_upstream_model_tier_mission_fields]]) is now a ratification candidate — queued at Champollion **G3** (the C6/D2c deferral at G2 pointed at exactly this trigger), shipping via M6.1's release candidate through `skill_template_release`. This file may graduate from `status: draft` at that same gate. Related: [[pattern_mission_decomposition]] (what a mission is), [[../../how/skills/skill_orchestration_tiers|skill_orchestration_tiers]] (intra-session agent fan-out — the *within-session* sibling of this *across-mission* pattern).
 
 ## 8. Automation ladder (how routed campaigns become *runnable* campaigns)
 
