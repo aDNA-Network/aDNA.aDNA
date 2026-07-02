@@ -119,3 +119,16 @@ A perfect 50 would be a lie; the vault was not perfect this morning. Explicit un
 - `adna_validate .` → **Full conformance, all checks pass** (re-run post-fix).
 - `adna_validate . --governance` → **Zero drift** (re-run post-fix; the adr_index note added no rows/counts).
 - Standing sweep (grep for changed counts): the adr_index edit changed no counts or names — nothing to sweep out-of-scope. Out-of-scope hits: none.
+
+## 10. Addendum — G3 D5 ruling (2026-07-02, post-ratification)
+
+The operator ratified **EXEMPT-AS-POLICY** at G3 (record: [[../../gates/champollion_p3_gate.output|champollion_p3_gate.output]]): HOW-layer skills are exempt from d04/d07/d08 (FAIR · federation · registry-readiness) as **vault policy** — consistent with the checker's existing skill exemptions (d05/d06/d09/d10); skills that federate may carry the blocks voluntarily. Consequences for this scorecard:
+
+| Dim | Post-fix | Under policy | Note |
+|---|:---:|:---:|---|
+| D4 FAIR | 4 | **5** | the skills gap was the sole residual; lattices already complete |
+| D7 Federation | 4 | **5** | skills gap resolved by policy; the ADR-045 dual-home seam is scheduled (M4.4 batch, G3 D6.4) — a migration in progress, not a conformance defect |
+| D8 Registration | 4 | **4** | promotion stays optional-by-design; the registry-exercise residual is deferred with an owner + trigger (OoB §2, G3 D6.5) — honest 4 until exercised |
+| D9 Companions | 4 | **4** | rides the F-CHM-209 checker review (lattice-companion semantics) at M6.1 prep |
+
+**Score-under-policy: 48/50** (baseline 45 → post-fix 46 → policy-resolved 48; the remaining two 4s each carry a scheduled owner). The checker NA_MAP alignment + version bump ship together via the **F-CHM-209 review, ratified as an M6.1 rider** (G3 D5). No dimension is silently sub-5; the honesty attestation (§7) stands unmodified.

@@ -7,7 +7,7 @@ campaign: [[campaign_champollion]]
 vaults: [[aDNA.aDNA]]
 workspace_cwd: /Users/stanley/aDNA/aDNA.aDNA
 status: running               # campaign lifecycle: planned | running | blocked | done
-phase: "P3 OPEN (G2 RATIFIED 2026-07-02: ADR-046 accepted → standard v2.5 cut executed; role re-tier adopted) — next M3.1; next gate G3 (ring cut)"
+phase: "P4 OPEN (G3 RATIFIED 2026-07-02: ring cut = KEEP; graduation batch executed [C6 fold accepted · 3 patterns active · 2 seed skills → M4.2 riders]; P3 ran as one Mode-B session) — next M4.1; next gate G4. NOTE for Berthier: the P-3 naming-clause memo (pattern_software_element_context_graph) has still not arrived in our tree — the P-3/P-4 pair carries to G4; nudge welcome."
 assignee_class: hybrid
 priority: high
 canonical: how/campaigns/campaign_champollion/campaign_champollion.md   # charter stays source of truth; this is a board projection
@@ -26,11 +26,11 @@ missions:
   - {id: M2.1, phase: P2, status: done}     # standard currency audit (F-CHM-201..206 + E1)
   - {id: M2.2, phase: P2, status: done}     # ADR-046 version cut authored (proposed; ratifies at G2)
   - {id: M2.3, phase: P2, status: done}     # glossary/concepts/comparisons currency (+4 entries)
-  - {id: M3.1, phase: P3, status: planned}  # pattern harvest I
-  - {id: M3.2, phase: P3, status: planned}  # pattern harvest II
-  - {id: M3.3, phase: P3, status: planned}  # exemplar self-application (10-dim self-score)
+  - {id: M3.1, phase: P3, status: done}     # pattern harvest I (codepin · OoB · QUEUED banner) — G3 ratified 2026-07-02
+  - {id: M3.2, phase: P3, status: done}     # pattern harvest II (broker/shim · countersign · ISS · splash + seeds 3/3)
+  - {id: M3.3, phase: P3, status: done}     # exemplar self-score vs v2.5 (45→46/50 honest; 48/50 under G3-D5 policy)
   - {id: M4.1, phase: P4, status: planned}  # newcomer stress-test (real first hour)
-  - {id: M4.2, phase: P4, status: planned}  # site UX pass
+  - {id: M4.2, phase: P4, status: planned}  # site UX pass + D2c seed-skill riders
   - {id: M4.3, phase: P4, status: planned}  # README first-contact + learning path
   - {id: M4.4, phase: P4, status: planned}  # site content currency + product story
   - {id: M5.1, phase: P5, status: planned}  # joint base-layer alignment memo (Noether countersign)
@@ -48,4 +48,4 @@ tags: [task, campaign_index, champollion, adna_adna, registry, p2]
 
 > Campaign-index TaskNote per the Operations A3 pattern (`kind: campaign_index`) — published on Berthier's C03 M28 ask ([[../../who/coordination/coord_2026_07_02_berthier_to_rosetta_champollion_index_ask|memo + disposition]]). **The charter ([[../campaigns/campaign_champollion/campaign_champollion|campaign_champollion]]) remains canonical**; this file is a board projection, refreshed at gate closes (G-cadence).
 
-**Rollup (2026-07-02, refreshed at G2 close — the promised G-cadence):** pre-launch comprehensive review/improve campaign for the aDNA base layer (sibling to Operation Carnot / LatticeProtocol). 8 phases · 24 missions · two rings (cut at G3). Chartered + **G0 + G1 + G2 all ratified 2026-07-02**; **P1 complete** (5/5, −25%); **P2 complete** (standard audit F-CHM-201..206 · **ADR-046 RATIFIED → standard v2.5 cut executed** in `what/docs/adna_standard.md` · glossary +4 entries); **role model formalized at G2**: fable = strategy/planner/reviewer (bookends every mission), opus = builder/executor — remaining missions re-tiered accordingly. **Next = M3.1** (P3 pattern harvest); **next gate G3 = ring cut** (operator). Pushes batch at gates (G2 stack pushed at cascade close).
+**Rollup (2026-07-02, refreshed at G3 close — the promised G-cadence):** pre-launch comprehensive review/improve campaign for the aDNA base layer (sibling to Operation Carnot / LatticeProtocol). 8 phases · 24 missions · two rings. Chartered + **G0 + G1 + G2 + G3 all ratified 2026-07-02**; **P1 complete** (5/5, −25%) · **P2 complete** (ADR-046 → **standard v2.5 cut**) · **P3 complete in one Mode-B session** (8 patterns harvested [dir 14→22] · first v2.5 self-score 45→46/50 honest, 48/50 under the G3-D5 skills-metadata policy · both graduation seeds re-derived 3/3). **G3 = the ring cut: KEEP full corpus** (no compression; campaign ahead of budget) + **graduation batch** (C6 template fold `accepted` → M6.1 RC · `pattern_model_tiered_campaign_execution` + `pattern_iss_operator_gate` + `pattern_credential_broker` → `active` · 2 seed skills → M4.2 authoring riders). **Next = M4.1** (newcomer stress-test; P4 docs/site/first-contact UX; P5 parallel-eligible); **next gate G4** (operator). Pushes batch at gates (G3 stack pushed at cascade close).
