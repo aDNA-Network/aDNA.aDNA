@@ -33,13 +33,13 @@ tags: [campaign, champollion, launch, base_layer, standard, template, site, gove
 │    ✅ P2  standard & spec consolidation       (M2.1–M2.3 · G2 · v2.5 CUT)      │
 │    ✅ P3  pattern harvest & self-application  (M3.1–M3.3 · G3 · 8 patterns)    │
 │    ✅ P4  docs, site & first-contact UX      (M4.1–M4.4 · G4 · 1st-hour green)  │
-│    ◐ P5   LP seam & Exchange story           (M5.1–M5.3 briefed)              │
+│    ◐ P5   LP seam & Exchange story           (M5.1–M5.3 done; G5 pending)     │
 │    🔲 P6  release candidate & readiness       (M6.1–M6.3)                      │
 │    🔲 P7  ship & handoff                      (M7.1–M7.2)                      │
 │                                                                                │
 │  PLAN     phase 0 · 14–24 sessions · ≈700–850 kT · 7 hard constraints          │
 ├────────────────────────────────────────────────────────────────────────────────┤
-│  GATES    G4 RATIFIED 2026-07-02 (P4 closed · P5 open · pushed) · next G5      │
+│  GATES    G5 RENDERED 2026-07-02 (P5 work complete M5.1–M5.3) — operator gate  │
 ╰────────────────────────────────────────────────────────────────────────────────╯
 ```
 
@@ -81,7 +81,7 @@ P4 FIRST-CONTACT ──G4──▶ P5 LP SEAM ──G5──▶ P6 RC & READINES
 | **P2 ✅** | Standard & spec consolidation — **CLOSED; G2 RATIFIED 2026-07-02** (all four as rec + role re-tier directive; record: `how/gates/champollion_p2_gate.output.md`) | G1 | Standard audited v2.4↔v8.3↔ADR corpus (M2.1: F-CHM-201..206 + E1); **ADR-046 RATIFIED (v2.5 · Arm A · C6 defer) → the v2.5 cut EXECUTED** in `what/docs/adna_standard.md` (§7.2 profile · §5.5 walk scope · new §7.7 ratification discipline · §5.3 `federation/` row · §15.4 version-cut checklist); glossary/concepts current (12 fixed + 4 new entries, F-CHM-204 closed). Per-tier: 115→64 kT (−44%), 3/3 at tier; datapoint #2 emitted. **First post-ratification act**: P3 briefs materialized under the G2 role model (fable bookends · opus builds) |
 | **P3 ✅** | Pattern harvest & exemplar self-application — **CLOSED; G3 RATIFIED 2026-07-02** (all six as rec: GO+ring-KEEP · graduation batch · PUSH · datapoint #3 · EXEMPT-AS-POLICY · housekeeping; record: `how/gates/champollion_p3_gate.output.md`) | G2 ✅ | 8 patterns harvested in one Mode-B session (dir 14→22; 3 graduated to `active` at G3) · first v2.5 self-score **45→46/50 honest, 48/50 under the D5 policy** · seeds re-derived 3/3 + ratified (authoring → M4.2) · F-CHM-206/208 FIXED, 209 → M6.1 rider · telemetry #3 (calibration HELD) |
 | **P4 ✅** | Docs, site & first-contact UX — **CLOSED; G4 RATIFIED 2026-07-02** (all four as rec: GO+P5-open · PUSH · datapoint #4 · housekeeping; record: `how/gates/champollion_p4_gate.output.md`) | G3 ✅ | All four missions in **one Mode-B sweep**: first-hour stress-test **green** (0 blockers) · site learn-onramp + `/rss.xml` + 2 seed skills (census 48→50) · 13 teaching surfaces 0-failing + **F-CHM-207 FIXED** + first tutorial designated · content trued to **v2.5** (site was two versions stale) + **13th concept landed** + product story PASS + hygiene batch (WebForge · dual-home drift healed + Hopper memo · pycache). 189→~203 kT (+7%), 4/4 at tier; F-CHM-210..213; twin-builder event contained |
-| **P5 ◐** | LP seam & Exchange story — **OPEN (briefs live: M5.1–M5.3)** | G4 ✅ | Joint base-layer memo countersigned (or pending-with-owner); mutual conformance both directions (LP codepin `47935b6`); Exchange/Lighthouse story teachable end-to-end. **G5 = P5 exit** |
+| **P5 ◐** | LP seam & Exchange story — **WORK COMPLETE 2026-07-02; G5 RENDERED, pending** (gate: `how/gates/champollion_p5_gate.md`) | G4 ✅ | All three missions in **one Mode-B sweep**: **joint base-layer memo v1 COMPLETE** (5 rows + back-fills; countersign pending-with-owner) + **T1 cleared-FORMAL** · bilateral conformance (LP = genuine Standard-tier; offering memo leads with OUR defect; zero spec contradictions; **pin-FOLLOWED → `8cb6e1e`**; GI-1/GI-2 → G5-D4) · adoption story teachable (6 PASS/3 TAUGHT; real validator verdict). 126→~191 kT (+52% — cross-graph reads; M5.3 countermeasure −9%); cumulative ≈+1%; F-CHM-214/215. **G5 = operator gate, pending** |
 | **P6** | Release candidate & launch readiness | G4+G5 | Template RC assembled + dry-run, **held at G6**; DP4 dossier + Track D terminal assessment delivered; adversarial pass 2 + security re-verify clean. G6 = operator fires `skill_template_release` + push/deploy decisions |
 | **P7** | Ship & handoff | G6 fired | Release shipped; `.adna/` sync verified; campaign AAR + splash + handoff packet; telemetry corpus exported; DP4 readiness reported (operator fires DP4). G7 = campaign close |
 
