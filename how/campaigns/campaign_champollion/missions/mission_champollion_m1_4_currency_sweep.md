@@ -3,13 +3,14 @@ plan_id: mission_champollion_m1_4_currency_sweep
 type: plan
 title: "M1.4 — Currency sweep: version cites, CHANGELOG headings, count claims, Track-D row"
 owner: stanley
-status: active
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 1
 campaign_mission_number: 4
 mission_class: implementation
 executor_tier: sonnet
 token_budget_estimated: "30 kT"
+token_budget_actual: "~14 kT (sonnet executor; + opus orchestration + planning-tier pre-resolution)"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -53,3 +54,13 @@ Historical/archived narrative is NEVER edited (currency applies to live claims o
 - A claim site turns out load-bearing beyond text (e.g. a count consumed by code) → halt that item.
 - The governance regex fails after an edit → revert that edit, report the exact string the regex wants.
 - Budget > 45 kT → checkpoint + hand off.
+
+## AAR
+
+**Session**: `session_stanley_20260702T060714Z_champollion_m1_3_m1_4` · **Commit**: `8df393a` (unpushed) · **Executor: sonnet** (via sonnet subagent, opus-verified; keep/strip + CHANGELOG judgment pre-resolved at planning tier + operator gate). AAR artifact: [[../../../missions/artifacts/campaign_champollion_mission_m1_4_aar|campaign_champollion_mission_m1_4_aar]].
+
+- **Worked**: pre-resolving the 2 judgment calls (version keep/strip + CHANGELOG track) at planning tier let sonnet run a pure mechanical fix-list — 10 edits, zero `.py` logic touched, governance regex green after count edits, first pass.
+- **Didn't**: 2 of 5 items didn't execute as drafted — item 2 (CHANGELOG) had a governance-vs-template version-track conflation; item 4 (base-skills) was already resolved (21/27/48). Both caught pre-dispatch, not mid-run.
+- **Finding**: sonnet-safe ≠ brief-correct — a gate-authored mechanical brief can still carry a stale premise or category error; downtiering is only safe *behind* a fresh planning-tier verify.
+- **Change**: for currency missions, re-derive every count/version claim from the live tree at planning time and diff against the brief's fix-list before dispatch; hand the executor the reconciled list.
+- **Follow-up**: F-CHM-008 → RECLASSIFIED (CHANGELOG current on governance track v6.0; bump operator-reserved). Item 2 outcome operator-gated. ~14 kT vs 30 est (−53%; pre-resolution + 2 no-op items shifted spend to planning tier).

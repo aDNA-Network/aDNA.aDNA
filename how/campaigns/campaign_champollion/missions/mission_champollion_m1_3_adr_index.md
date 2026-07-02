@@ -3,13 +3,14 @@ plan_id: mission_champollion_m1_3_adr_index
 type: plan
 title: "M1.3 — Generate what/decisions/adr_index.md + AGENTS.md upgrade"
 owner: stanley
-status: active
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 1
 campaign_mission_number: 3
 mission_class: implementation
 executor_tier: sonnet
 token_budget_estimated: "15 kT"
+token_budget_actual: "~14 kT (sonnet executor; + opus orchestration)"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -51,3 +52,13 @@ Do not edit any ADR file (index only + AGENTS.md pointer) · no `.adna/` writes 
 
 - Any ADR file lacks parseable frontmatter `status:` → list them in the SITREP as F-CHM candidates; do not invent a value (cell = `⚠ missing`).
 - Budget > 25 kT → something is wrong with scope; halt and report.
+
+## AAR
+
+**Session**: `session_stanley_20260702T060714Z_champollion_m1_3_m1_4` · **Commit**: `6883ba3` (unpushed) · **Executor: sonnet** (via sonnet subagent, opus-verified). AAR artifact: [[../../../missions/artifacts/campaign_champollion_mission_m1_3_aar|campaign_champollion_mission_m1_3_aar]].
+
+- **Worked**: sonnet subagent mechanically built 40 rows with verbatim statuses; tally (39 accepted · 1 amended · 0 proposed) + 5 spot-checks + 7-pipe table integrity all green first pass; validator clean.
+- **Didn't**: nothing failed; the subagent's session-limit message fired *while writing its return manifest*, but the file writes had landed — work complete, verified independently (not inherited).
+- **Finding**: a derived index named `adr_index.md` self-matches the `adr_*.md` glob → count checks must exclude it (40 rows == 41 glob − 1 index).
+- **Change**: for derived-index missions, acceptance = `rows == files − index`, and the regen recipe carries a `grep -v adr_index` exclusion.
+- **Follow-up**: optional subject-quality pass (some subjects are Status-block text, not the Decision gist) — low value, regenerates on any status change. ~14 kT vs 15 est.
