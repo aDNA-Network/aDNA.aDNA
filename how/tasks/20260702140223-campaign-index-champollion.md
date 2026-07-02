@@ -7,7 +7,7 @@ campaign: [[campaign_champollion]]
 vaults: [[aDNA.aDNA]]
 workspace_cwd: /Users/stanley/aDNA/aDNA.aDNA
 status: running               # campaign lifecycle: planned | running | blocked | done
-phase: "P4 OPEN (G3 RATIFIED 2026-07-02: ring cut = KEEP; graduation batch executed [C6 fold accepted · 3 patterns active · 2 seed skills → M4.2 riders]; P3 ran as one Mode-B session) — next M4.1; next gate G4. NOTE for Berthier: the P-3 naming-clause memo (pattern_software_element_context_graph) has still not arrived in our tree — the P-3/P-4 pair carries to G4; nudge welcome."
+phase: "P5 OPEN (G4 RATIFIED 2026-07-02: P4 closed — all four missions in one Mode-B sweep, first-hour green, content→v2.5, 13th concept, hygiene batch; stack pushed) — next M5.1 (joint base-layer memo, Noether countersign); next gate G5. SECOND NUDGE for Berthier: the P-3 naming-clause memo (pattern_software_element_context_graph) has STILL not arrived in our tree (first carry G3-D6.3, second carry G4-D4.4) — the P-3/P-4 pair now carries to G5; a copy or a pointer would unblock the pattern-governance fold."
 assignee_class: hybrid
 priority: high
 canonical: how/campaigns/campaign_champollion/campaign_champollion.md   # charter stays source of truth; this is a board projection
@@ -29,10 +29,10 @@ missions:
   - {id: M3.1, phase: P3, status: done}     # pattern harvest I (codepin · OoB · QUEUED banner) — G3 ratified 2026-07-02
   - {id: M3.2, phase: P3, status: done}     # pattern harvest II (broker/shim · countersign · ISS · splash + seeds 3/3)
   - {id: M3.3, phase: P3, status: done}     # exemplar self-score vs v2.5 (45→46/50 honest; 48/50 under G3-D5 policy)
-  - {id: M4.1, phase: P4, status: planned}  # newcomer stress-test (real first hour)
-  - {id: M4.2, phase: P4, status: planned}  # site UX pass + D2c seed-skill riders
-  - {id: M4.3, phase: P4, status: planned}  # README first-contact + learning path
-  - {id: M4.4, phase: P4, status: planned}  # site content currency + product story
+  - {id: M4.1, phase: P4, status: done}     # newcomer stress-test — first hour GREEN (0 blockers) — G4 ratified 2026-07-02
+  - {id: M4.2, phase: P4, status: done}     # site UX pass + learn-onramp + /rss.xml + 2 seed skills (census 48→50)
+  - {id: M4.3, phase: P4, status: done}     # README first-contact + 13 surfaces 0-failing + F-CHM-207 FIXED
+  - {id: M4.4, phase: P4, status: done}     # content→v2.5 (site was 2 versions stale) + 13th concept + product story PASS + hygiene
   - {id: M5.1, phase: P5, status: planned}  # joint base-layer alignment memo (Noether countersign)
   - {id: M5.2, phase: P5, status: planned}  # mutual conformance w/ LP
   - {id: M5.3, phase: P5, status: planned}  # Exchange/Lighthouse adoption story
@@ -48,4 +48,4 @@ tags: [task, campaign_index, champollion, adna_adna, registry, p2]
 
 > Campaign-index TaskNote per the Operations A3 pattern (`kind: campaign_index`) — published on Berthier's C03 M28 ask ([[../../who/coordination/coord_2026_07_02_berthier_to_rosetta_champollion_index_ask|memo + disposition]]). **The charter ([[../campaigns/campaign_champollion/campaign_champollion|campaign_champollion]]) remains canonical**; this file is a board projection, refreshed at gate closes (G-cadence).
 
-**Rollup (2026-07-02, refreshed at G3 close — the promised G-cadence):** pre-launch comprehensive review/improve campaign for the aDNA base layer (sibling to Operation Carnot / LatticeProtocol). 8 phases · 24 missions · two rings. Chartered + **G0 + G1 + G2 + G3 all ratified 2026-07-02**; **P1 complete** (5/5, −25%) · **P2 complete** (ADR-046 → **standard v2.5 cut**) · **P3 complete in one Mode-B session** (8 patterns harvested [dir 14→22] · first v2.5 self-score 45→46/50 honest, 48/50 under the G3-D5 skills-metadata policy · both graduation seeds re-derived 3/3). **G3 = the ring cut: KEEP full corpus** (no compression; campaign ahead of budget) + **graduation batch** (C6 template fold `accepted` → M6.1 RC · `pattern_model_tiered_campaign_execution` + `pattern_iss_operator_gate` + `pattern_credential_broker` → `active` · 2 seed skills → M4.2 authoring riders). **Next = M4.1** (newcomer stress-test; P4 docs/site/first-contact UX; P5 parallel-eligible); **next gate G4** (operator). Pushes batch at gates (G3 stack pushed at cascade close).
+**Rollup (2026-07-02, refreshed at G4 close — the promised G-cadence):** pre-launch comprehensive review/improve campaign for the aDNA base layer (sibling to Operation Carnot / LatticeProtocol). 8 phases · 24 missions · two rings. Chartered + **G0 + G1 + G2 + G3 + G4 all ratified 2026-07-02**; **P1 complete** (5/5, −25%) · **P2 complete** (ADR-046 → **standard v2.5 cut**) · **P3 complete in one Mode-B session** (8 patterns [dir 14→22] · self-score 46/50 honest, 48/50 under policy) · **P4 complete in one Mode-B sweep** (first-hour stress-test **green, 0 blockers** · site learn-onramp + `/rss.xml` + 2 seed skills [census 48→50] · 13 teaching surfaces 0-failing + F-CHM-207 FIXED · content trued to v2.5 [the site was two versions stale] + 13th concept landed + product story PASS + hygiene batch; 189→~203 kT +7%, 4/4 at tier; campaign cumulative **−10%** through four gates). **Next = M5.1** (joint base-layer memo — fill the skeleton, Noether countersign [pending-with-owner legitimate]; then M5.2 mutual conformance @ LP codepin `47935b6` · M5.3 Exchange/Lighthouse adoption story); **next gate G5** (operator). Pushes batch at gates (G4 stack pushed at cascade close).

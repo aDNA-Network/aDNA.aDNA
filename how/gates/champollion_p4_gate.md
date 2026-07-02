@@ -6,13 +6,15 @@ campaign_id: campaign_champollion
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
-status: pending   # operator gate (SO-1) — do NOT auto-advance
+status: resolved   # RATIFIED 2026-07-02 — operator: "Approved" (all four as recommended: GO+P5-open · PUSH · ACCEPT · EXECUTE-ALL); record → champollion_p4_gate.output.md
 outer_tier: copy_paste   # inline-markdown surface per G0–G3 precedent (record homogeneity); ISS web tier available if preferred
 persona: rosetta
 tags: [gate, champollion, p4, phase_exit, operator_decision, first_contact, site_ux, content_currency, telemetry]
 ---
 
 # ⛩ G4 — Operation Champollion P4 exit gate (docs, site & first-contact UX)
+
+> ✅ **RESOLVED 2026-07-02** — operator ratified **as recommended, all four decisions** ("Approved", in-chat): **D1 GO (P4 closed · P5 opened) · D2 PUSH · D3 ACCEPT datapoint #4 · D4 housekeeping EXECUTE-ALL**. Ratification record: [[champollion_p4_gate.output|champollion_p4_gate.output.md]]. P5 briefs M5.1–M5.3 materialized; stack pushed. The decision text below is preserved as-asked (SO-6).
 
 > **P4 work is complete** — all four missions closed with AARs filed, the whole phase executed as **one Mode-B fable-orchestrator sweep session** (M4.1 → M4.2 → M4.3 → M4.4, resumed once across a context reset). This gate: reviews per-tier telemetry (datapoint #4 — the phase that stress-tested the real first hour and then fixed what it found), rules the housekeeping batch P4 surfaced, and — on ratification — closes P4 and opens P5 (LP seam). **Operator gate (SO-1): answer any subset; unanswered = held.**
 
