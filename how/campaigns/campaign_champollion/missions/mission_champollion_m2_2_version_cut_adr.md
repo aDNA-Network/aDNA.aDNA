@@ -3,14 +3,14 @@ plan_id: mission_champollion_m2_2_version_cut_adr
 type: plan
 title: "M2.2 — Version-cut ADR (v2.4 → v2.5/v3.0; ratifies at G2)"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 2
 campaign_mission_number: 2
 mission_class: integration
 executor_tier: fable
 token_budget_estimated: "30 kT"
-token_budget_actual: "TBD"
+token_budget_actual: "~20 kT (fable at-tier in the main session — first fable-main-session mission; −33%)"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -35,10 +35,12 @@ Author **ADR-046** (next after ADR-045) proposing the standard version cut **v2.
 
 ## Acceptance criteria
 
-- [ ] ADR-046 authored; `status: proposed`; clear **v2.5-vs-v3.0 recommendation + rationale**; both arms stated for G2.
-- [ ] Every scope item (ADR-044 fold · ratification-record · placement/ADR-045 · model-tier fields) addressed or explicitly deferred with reason.
-- [ ] `adr_index.md` reflects ADR-046; tally correct.
-- [ ] `adna_validate` FULL PASS + `--governance` zero drift; single explicit-path commit.
+- [x] ADR-046 authored; `status: proposed`; clear **v2.5-vs-v3.0 recommendation + rationale** — v2.5 recommended (item-by-item §15.4 instance-invalidation table); v3.0 arm honestly stated (retroactive-MUST ratification blocks would be the only breaking trigger).
+- [x] Every scope item addressed or explicitly deferred with reason — ADR-044 fold = C1/C2 · ratification-record = C3 (forward-MUST/retro-SHOULD split keeps it minor) · placement/ADR-045 = C4 (E1 two arms, Arm A recommended) · model-tier fields = C6 (default-out rider: not graduated at 2/3 instances → defer, with the idea's own early-ratify-at-gate arm preserved for G2).
+- [x] `adr_index.md` reflects ADR-046; tally correct (41 ADRs — 39 accepted · 1 amended · 1 proposed; 41 rows = 42 files − index).
+- [x] `adna_validate` FULL PASS + `--governance` zero drift; single explicit-path commit.
+
+> **DONE 2026-07-02** (`session_stanley_20260702T140223Z_champollion_p2_execution`, fable at-tier in the main session). ADR: [[../../../what/decisions/adr_046_standard_version_cut_v2_5|ADR-046]] (`proposed`; ratifies at G2 with two open arms — version + C4/E1). AAR: [[../../../how/missions/artifacts/campaign_champollion_mission_m2_2_aar|m2_2 AAR]].
 
 ## Guardrails
 

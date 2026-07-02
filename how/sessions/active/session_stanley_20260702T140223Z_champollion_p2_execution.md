@@ -40,3 +40,4 @@ M2.1 audit-only (artifacts ledger; **no standard/ADR edits**) → M2.2 authors A
 ## Log
 - 14:02Z — session open; baseline `adna_validate` full + `--governance` green.
 - 14:2xZ — **M2.1 DONE** (opus subagent at-tier, ~18 kT vs 50 est): ledger `standard_currency_audit.md` (F-CHM-201..206; walk 8 STD-TOUCH = 6 FOLDED/1 PENDING/1 UNFOLDED; escalation E1 → G2); findings registered; mission closed + AAR; verify pass confirmed all load-bearing claims (202 strictness delta, 203 zero-"federation" grep, 206 gaps).
+- 14:4xZ — **M2.2 DONE** (fable at-tier, main session, ~20 kT vs 30 est): **ADR-046 authored `proposed`** — change-set C1–C5 + C6 rider; **v2.5 recommended** (per-item §15.4 invalidation table) w/ honest v3.0 arm; **C4 = E1 two arms** (Arm A absorb recommended); Ratification block scaffolded empty for G2. adr_index → 41 rows / tally +proposed:1 (=42 files − index). Validate full + governance zero drift.
