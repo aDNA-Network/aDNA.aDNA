@@ -3,14 +3,14 @@ plan_id: mission_champollion_m4_2_site_ux_pass
 type: plan
 title: "M4.2 — Site UX pass (design pipeline + reviewer personas) + Ring-1 site backlog + graduated seed-skill riders"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 4
 campaign_mission_number: 2
 mission_class: implementation
 executor_tier: opus
 token_budget_estimated: "58 kT (charter 50 + Mode-B bookend allowance ~+15% per G3 D4 — implementation-class rows carry the review-amendment overhead observed in P3; incl. ~10 kT for the two D2c seed-skill riders)"
-token_budget_actual: "TBD"
+token_budget_actual: "~50 kT (opus builder ~41 + fable bookends ~9) vs 58 est — −14%; the G3 D4 +15% bookend allowance went unused (mature site, findings clustered; seed idea files carried complete instance tables)"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -36,10 +36,10 @@ Run a focused UX pass over the live site source (`site/`, deploys to adna.networ
 
 ## Acceptance criteria
 
-- [ ] Persona findings ledgered + Ring-1 site items executed (or explicitly re-routed with reason); `npx astro build` green with zero new warnings.
-- [ ] Both seed skills live in `how/skills/` (house format, instance-cited); idea files closed; skills-count surfaces re-censused (CLAUDE.md/MANIFEST/AGENTS counts — census rule, never inherit).
-- [ ] No deploy attempted; site changes are source-only, build-verified.
-- [ ] Fable review passed; `adna_validate` FULL PASS; explicit-path commit.
+- [x] Persona findings ledgered + Ring-1 site items executed (or explicitly re-routed with reason); `npx astro build` green with zero new warnings. *(6 persona findings: 3 fixed / 2 routed / 1 declined-deliberate; Ring-1: 2 executed [RSS · banner both-sides] / 4 rerouted-with-reason; 3 green builds incl. the fable's independent third.)*
+- [x] Both seed skills live in `how/skills/` (house format, instance-cited); idea files closed; skills-count surfaces re-censused (CLAUDE.md/MANIFEST/AGENTS counts — census rule, never inherit). *(48 → 50 = 21 base + 29 project; 4 surfaces + CLAUDE.md table; `--governance` zero drift.)*
+- [x] No deploy attempted; site changes are source-only, build-verified.
+- [x] Fable review passed; `adna_validate` FULL PASS; explicit-path commit. *(Review PASS + 2 review findings: missing `concept_dual_audience` site page → M4.4 rider; banner mirror ruled + archived. Artifact §Fable review record.)*
 
 ## Guardrails
 

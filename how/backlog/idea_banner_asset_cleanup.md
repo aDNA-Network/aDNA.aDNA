@@ -3,7 +3,7 @@ type: backlog
 backlog_id: B-aDNA-2026-05-22-BannerCleanup
 created: 2026-05-22
 updated: 2026-07-02
-status: accepted
+status: completed
 last_edited_by: agent_rosetta
 tags: [backlog, idea, banner, asset_cleanup, m3_3_plus_scope, site, what_assets, revert_fallback_retired]
 routes_to: campaign_adna_serious_tool_readiness OR low-stakes-operational-session
@@ -53,10 +53,21 @@ Archival should NOT happen in the M3.2 close session — it would violate the S3
 ## Open questions
 
 1. Does any non-Astro context still reference `banner.jpg`? (e.g., a separate publishing pipeline, OG image generator, downstream consumer)
-2. Should `what/assets/banner.jpg` be archived alongside `site/src/assets/banner.jpg`, or do they have independent lifecycles (canonical mirror vs Astro source-of-truth)?
+2. Should `what/assets/banner.jpg` be archived alongside `site/src/assets/banner.jpg`, or do they have independent lifecycles (canonical mirror vs Astro source-of-truth)? **RESOLVED at M4.2 fable review (2026-07-02): archived alongside** → `what/assets/_retired/banner.jpg` (+ README). No independent lifecycle — zero live refs on either side; superseded by `aDNABanner.png` (vault) + the c157 helix hero (site). Historical path refs in STATE_archive/session records kept as-is (phase-record precedent).
 3. Is there a smaller cleanup window than "1 full release cycle"? (e.g., 1 week if Vercel + Playwright stay green)
 
 
 ## Champollion G0 disposition — M (M1.1, 2026-07-02)
 
 **ACCEPT → fix/mission.** Owning mission: `M4.2` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).
+
+## Champollion M4.2 disposition — EXECUTED (site-half) + orchestrator flag (mirror-half), 2026-07-02
+
+**Site-tree half DONE (in-window); canonical-mirror half flagged (out-of-window write scope).**
+
+Cleanup-window criteria met: (1) zero active references to `banner.jpg` in `site/src` verified at archival; (2) the replacement `aDNABanner.png` has been in production since M3.2 S3 (2026-05-22) — well past the "≥ 1 full release cycle" gate. Archive-shift (SO #6 archive-never-delete), NOT `rm`:
+
+- **`site/src/assets/banner.jpg`** → **`site/src/assets/_retired/banner.jpg`** (in-window; done this mission). Self-documenting `_retired/README.md` added.
+- **`what/assets/banner.jpg`** (the canonical mirror) — **outside M4.2's `site/`-only write scope; FLAGGED to the orchestrator** to archive in the same commit (recommended: `git mv what/assets/banner.jpg` → an archive path, e.g. `Archive.aDNA/_archive/banner_jpg_retired/`). Open-question #2 of this idea (independent lifecycles) resolves as: same lifecycle, archive both.
+
+Build-verified green (unimported `_retired/` assets are not processed into `dist/`). Record: `how/campaigns/campaign_champollion/artifacts/site_ux_review.md`.

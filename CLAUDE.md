@@ -299,6 +299,8 @@ Reusable agent recipes and documented procedures in `how/skills/`. Skills have t
 | `skill_cross_skill_primitive_composition` | agent | Authoring a skill/spec that needs an existing skill's primitive — delegate (don't reimplement) + document the chain & degradation cascade *(graduated M3.4)* |
 | `skill_forward_reference_stub_design` | agent | Authoring a spec/skill a later mission consumes — add a `## Forward integration` stub naming WHO+WHAT, deferring WHEN+HOW+WHY *(graduated M3.4)* |
 | `skill_substrate_inversion_with_adr` | agent | Implementation-class mission whose S2 surfaces a load-bearing decision — draft an ADR alongside the spec+skill, ratify in the close cascade *(graduated M3.7)* |
+| `skill_documentation_layout_props_additive_extension` | agent | A shared Astro layout needs new optional content across many pages — extend via one purely-additive optional Props field (zero-diff for non-opting consumers), never fork *(graduated STR M5.3 cycle 107, 3/3; ratified Champollion G3 D2c)* |
+| `skill_inline_svg_raw_import_currentcolor_inheritance` | agent | Ship theme-inheriting zero-runtime-JS icons/diagrams in Astro — inline the SVG (`?raw` import for static, inline-template for dynamic) + `currentColor`, not `<img>` or runtime JS *(graduated STR M5.3 cycle 108, 3/3; ratified Champollion G3 D2c)* |
 
 ---
 

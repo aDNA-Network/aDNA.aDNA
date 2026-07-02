@@ -22,7 +22,7 @@ A reusable agent procedure stored at `how/skills/skill_{name}.md`. Sections: pur
 
 ## Usage Examples
 
-- This vault has 48 skills (21 base + 27 project-specific). `skill_dual_audience_review` is a quality gate skill: it walks the agent through checking whether a content file is legible to both developers and non-developers.
+- This vault has 50 skills (21 base + 29 project-specific). `skill_dual_audience_review` is a quality gate skill: it walks the agent through checking whether a content file is legible to both developers and non-developers.
 - `skill_onboarding` fires automatically on first-run detection — when the vault has no session history and MANIFEST.md still shows `last_edited_by: agent_init`.
 
 ## See Also

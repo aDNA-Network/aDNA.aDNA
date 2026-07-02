@@ -54,3 +54,7 @@ Recommend Option 3 (both) — small upstream change to template files + small `.
 ## Champollion G0 disposition — M (M1.1, 2026-07-02)
 
 **ACCEPT → fix/mission.** Owning mission: `M4.2` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).
+
+## Champollion M4.2 disposition — REROUTE (out of site-UX window, 2026-07-02)
+
+**REROUTE → `campaign_obsidian_deployment_stabilization` T4 / image-side RC (`fold_batch: champollion_m6_1_rc`).** M4.2 is a site-source-only UX mission. This finding is **not site-surface**: its critical files are `.adna/how/templates/template_prd.md` + `.adna/how/templates/template_rfc.md` + `.adna/.obsidianignore` — all under `.adna/`, which M4.2 is hard-guardrailed against touching (Standing Rule 1 + the mission's "no `.adna/` writes"). The fix is an Obsidian-config / template-content edit that belongs to the Obsidian-stabilization track (Option 3 of this idea) and, for the released image, rides the M6.1 template-release RC. Status held `accepted` (executable, just not here). Owning-mission field left `M4.2` for audit; effective venue = T4 / M6.1 RC per this note.

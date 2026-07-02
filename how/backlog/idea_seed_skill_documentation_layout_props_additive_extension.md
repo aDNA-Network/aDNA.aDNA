@@ -1,6 +1,6 @@
 ---
 type: backlog_idea
-status: accepted   # graduation RATIFIED at Champollion G3 (2026-07-02, D2c; record: how/gates/champollion_p3_gate.output.md); skill authoring rides M4.2 (site-UX window) as an in-window rider
+status: completed   # graduation RATIFIED at Champollion G3 (2026-07-02, D2c); SKILL AUTHORED at M4.2 (2026-07-02) → how/skills/skill_documentation_layout_props_additive_extension.md
 priority: medium
 created: 2026-07-02
 updated: 2026-07-02
@@ -39,6 +39,10 @@ When a shared Astro layout component (`DocumentationLayout`) needs to carry new 
 ## Graduation ratification — flagged for Champollion G3
 
 Graduation *ratification* (promoting a met-threshold seed to an authored skill, and folding it upstream if it's framework-level) is **gate work**, not build work. Per the M3.2 escalation trigger, this seed's 3/3 status **implies graduation NOW** → **flagged for Champollion G3** (alongside the sibling `skill_inline_svg_raw_import_currentColor_inheritance` seed). G3 decides whether to author the skill and whether it is an upstream-promotion candidate (the D11 AAR marked it "Promotion candidate for v8 P6 upstream").
+
+## Skill authored — M4.2 (2026-07-02)
+
+Graduation ratified at G3 (D2c); the skill was authored as an in-window M4.2 rider (the site-UX mission whose own component-craft is the skill's evidence): **[[../skills/skill_documentation_layout_props_additive_extension|skill_documentation_layout_props_additive_extension]]** (house format, 3/3 instance-cited). Skills census advanced 48 → 50 in the same work unit (this skill + the sibling SVG skill). This backlog file is now `completed`.
 
 ## Related
 

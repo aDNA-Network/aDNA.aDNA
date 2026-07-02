@@ -44,6 +44,9 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Subscribable feed (idea_site_rss_feed / Champollion M4.2) — a cheap
+         "actively maintained" signal + the standard watch-mechanism for evaluators. -->
+    <link rel="alternate" type="application/rss+xml" title="aDNA — Changelog" href="/rss.xml" />
 
     <!-- Preload critical above-fold fonts (latin subsets only) -->
     <link rel="preload" href={interLatinFont} as="font" type="font/woff2" crossorigin />

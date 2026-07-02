@@ -24,3 +24,7 @@ campaign_adna_polish pre-merge efficiency audit. 85% potential size reduction.
 ## Champollion G0 disposition — M (M1.1, 2026-07-02)
 
 **ACCEPT → fix/mission.** Owning mission: `M4.2` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).
+
+## Champollion M4.2 disposition — REROUTE (Obsidian/image config, out of site-UX window, 2026-07-02)
+
+**REROUTE → `campaign_obsidian_deployment_stabilization` + image-side RC (`fold_batch: champollion_m6_1_rc`).** M4.2 is site-source-only. This is **Obsidian plugin bundling + `.adna/setup.sh`** work (the `.obsidian/` plugin set + setup script live in the released image, not the `site/` tree), and its Proposed Solution requires an interactive **"co-executor must test Obsidian UX after trimming"** step out of scope for an unattended site build. Belongs to the Obsidian-stabilization track; the image-side plugin/setup.sh delta rides the M6.1 template-release RC. Status held `accepted`; effective venue = Obsidian-stabilization / M6.1 RC.
