@@ -3,7 +3,7 @@ campaign_id: campaign_champollion
 type: campaign
 title: "Operation Champollion — pre-launch comprehensive review/improve of the aDNA base layer"
 owner: stanley
-status: active   # G0 RATIFIED 2026-07-02 — operator: "Ratify as Recommended." (all nine decisions; record: how/gates/champollion_p0_gate.output.md)
+status: active   # G0 RATIFIED 2026-07-02 — operator: "Ratify as Recommended." (all nine decisions; record: how/gates/champollion_p0_gate.output.md) · G1 RATIFIED 2026-07-02 — "Your recs sound good. make it so." (all four: GO/ACCEPT/PUSH/DEFER; record: how/gates/champollion_p1_gate.output.md) → P1 CLOSED, P2 OPEN
 phase_count: 8
 mission_count: 24
 estimated_sessions: "15-24 (Ring-1 ≈ 15-18 with declared pairings; Ring-2 adds ≤ 6; ring cut at G3)"
@@ -28,9 +28,9 @@ tags: [campaign, champollion, launch, base_layer, standard, template, site, gove
 │           ↳ north-star: the standard must deserve the copying                  │
 │                                                                                │
 │  MISSION TREE                                                                  │
-│    ◐ M0.1 P0 orient/verify/charter/gate      (this session)                    │
-│    🔲 P1  adjudication & governance           (M1.1–M1.5)                      │
-│    🔲 P2  standard & spec consolidation       (M2.1–M2.3)                      │
+│    ✅ M0.1 P0 orient/verify/charter/gate     (this session)                    │
+│    ✅ P1  adjudication & governance           (M1.1–M1.5)                      │
+│    ◐ P2   standard & spec consolidation       (M2.1–M2.3)                      │
 │    🔲 P3  pattern harvest & self-application  (M3.1–M3.3)                      │
 │    🔲 P4  docs, site & first-contact UX       (M4.1–M4.4)                      │
 │    🔲 P5  LP seam & Exchange story            (M5.1–M5.3)                      │
@@ -39,7 +39,7 @@ tags: [campaign, champollion, launch, base_layer, standard, template, site, gove
 │                                                                                │
 │  PLAN     phase 0 · 14–24 sessions · ≈700–850 kT · 7 hard constraints          │
 ├────────────────────────────────────────────────────────────────────────────────┤
-│  GATES    G0 RATIFIED 2026-07-02 (all nine, as rec) · P1 OPEN · next gate G1   │
+│  GATES    G1 RATIFIED 2026-07-02 (all four, as rec) · P2 OPEN · next gate G2   │
 ╰────────────────────────────────────────────────────────────────────────────────╯
 ```
 
@@ -77,7 +77,7 @@ P4 FIRST-CONTACT ──G4──▶ P5 LP SEAM ──G5──▶ P6 RC & READINES
 | Phase | Focus | Entry | Exit (gate carries) |
 |-------|-------|-------|---------------------|
 | **P0 ✅** | Orient · verify · charter — **CLOSED; G0 RATIFIED 2026-07-02** (all nine as recommended; record: `how/gates/champollion_p0_gate.output.md`) | directive issued | OoB + ledgers + charter + retro package + this gate (**G0 decisions**: ratify charter · adjudicate backlog dispositions · ADR-045 disposition · v3-EC reconciliation · push decision · release staged memos (Noether/Prometheus) · token-rotation posture · codename). **First post-ratification act**: P1 mission briefs materialized at judgment tier |
-| **P1** | Adjudication & governance integrity | G0 ratified | Backlog at zero un-dispositioned; ADR-045 record repaired per G0; ratification discipline live; adr_index live; currency sweep done; STATE dieted. G1 = per-tier AAR review (first routing-quality checkpoint) |
+| **P1 ✅** | Adjudication & governance integrity — **CLOSED; G1 RATIFIED 2026-07-02** (all four as rec; record: `how/gates/champollion_p1_gate.output.md`) | G0 ratified | Backlog at zero un-dispositioned; ADR-045 record repaired per G0; ratification discipline live; adr_index live (40 rows); currency sweep done; STATE dieted (554 KB → 46.6 KB). **G1 per-tier AAR review PASS**: 5/5 at planned tier · 0 tier-changing escalations · −25% total (160→120 kT) · datapoint #1 emitted. **First post-ratification act**: P2 mission briefs materialized at judgment tier |
 | **P2** | Standard & spec consolidation | G1 | Standard audited v2.4↔v8.3↔ADR corpus; **version-cut ADR ratified at G2**; glossary/concepts current |
 | **P3** | Pattern harvest & exemplar self-application | G2 | Fleet patterns landed in `what/patterns/`+templates; 10-dimension self-score **exemplary**; graduation seeds checked. **G3 = ring cut** (launch-window re-score) |
 | **P4** | Docs, site & first-contact UX | G3 | Newcomer Stress-Test of the real first hour **green**; site UX pass done; Ring-1 site backlog executed; learning path walks end-to-end |

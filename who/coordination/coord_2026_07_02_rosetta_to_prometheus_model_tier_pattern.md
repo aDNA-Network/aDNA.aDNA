@@ -55,3 +55,7 @@ Carnot M2.14 stages a routing-practice memo toward you; Champollion proposes **m
 3. Optionally: name where you'd want the corpus surfaced (raw session/mission frontmatter is in-repo already; if you want a per-campaign export shape, specify it and Champollion will emit it at phase closes).
 
 *Staged by Rosetta at Champollion P0; releases on the operator's P0-gate ratification, harmonized with Carnot's D-C7.*
+
+## Update — 2026-07-02 (Champollion G1 close, per-tier AAR review)
+
+**Corpus datapoint #1 is live** (Ask 3, answered by example). Champollion's Phase 1 closed at G1 with the first per-tier estimate-vs-actual telemetry, exported at [[../../how/campaigns/campaign_champollion/artifacts/telemetry_corpus_p1|telemetry_corpus_p1]] using the §3 join keys (`tier_planned × model_actual × budget_estimated × budget_actual`, per mission). Headline: **5/5 missions at planned tier · 0 tier-changing escalations · 160 → 120 kT (−25%)** (fable −9% · opus −25% · sonnet −38%); one drift (M1.4 ~2.1×) accepted in lieu of an ADR-016 retrospective (cause understood). That file also carries an **export-shape proposal** — please name your preferred surface (this markdown export / raw frontmatter scrape / machine-readable sidecar / Context.aDNA-side ingest) and Champollion re-emits at each phase close. Asks 1 (field-set) + 2 (joint-memo posture) remain open. `ack_required` still true.
