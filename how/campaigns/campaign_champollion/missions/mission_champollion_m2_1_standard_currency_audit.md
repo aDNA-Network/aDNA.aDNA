@@ -3,14 +3,14 @@ plan_id: mission_champollion_m2_1_standard_currency_audit
 type: plan
 title: "M2.1 — Standard currency audit (v2.4 ↔ template v8.3 ↔ ratified ADR corpus)"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 2
 campaign_mission_number: 1
 mission_class: verification
 executor_tier: opus
 token_budget_estimated: "50 kT"
-token_budget_actual: "TBD"
+token_budget_actual: "~18 kT (opus subagent ~10 self-reported output + fable orchestration verify/write ~8; −64%, calibration item → G2)"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -35,10 +35,12 @@ Audit the aDNA **Standard (v2.4)** for currency across three references — its 
 
 ## Acceptance criteria
 
-- [ ] Every `accepted` ADR touching the standard is checked-off as folded-or-flagged (cross-referenced to `adr_index.md`).
-- [ ] Each divergence carries severity + normative/demonstrative class + owner + target mission (M2.2 / M2.3 / defer).
-- [ ] Version confirmed v2.4 live (all three references reconciled or divergence-logged).
-- [ ] `adna_validate` FULL PASS; single explicit-path commit.
+- [x] Every `accepted` ADR touching the standard is checked-off as folded-or-flagged (cross-referenced to `adr_index.md`) — all-40 walk: 8 STD-TOUCH (6 FOLDED · 1 PENDING-FOLD ADR-044 · 1 UNFOLDED ADR-045) · 32 N/A.
+- [x] Each divergence carries severity + normative/demonstrative class + owner + target mission (M2.2 / M2.3 / defer) — F-CHM-201..206 in [[../artifacts/standard_currency_audit|standard_currency_audit]].
+- [x] Version confirmed v2.4 live (title/frontmatter/changelog agree; sole metadata defect = the `:1499` end-line, F-CHM-201; dev↔image byte-identical).
+- [x] `adna_validate` FULL PASS; single explicit-path commit.
+
+> **DONE 2026-07-02** (`session_stanley_20260702T140223Z_champollion_p2_execution`, fable-orchestrated · opus subagent at-tier). Ledger: [[../artifacts/standard_currency_audit|standard_currency_audit]] (6 findings + escalation E1 → G2). AAR: [[../../../how/missions/artifacts/campaign_champollion_mission_m2_1_aar|m2_1 AAR]].
 
 ## Guardrails
 
