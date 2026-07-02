@@ -2,7 +2,7 @@
 type: pattern
 created: 2026-07-02
 updated: 2026-07-02
-status: draft
+status: active   # GRADUATED at Champollion G3 (2026-07-02, D2b — 3 vault adoptions; operator-ratified)
 pattern_category: operational
 applies_to: [governance, inventory, identity, all_categories]
 campaign_id: campaign_champollion
@@ -10,7 +10,7 @@ instances:
   - "Home.aDNA (Hestia) — the node's canonical broker: Keychain-primary + 1P-backup substrate, per-credential `/usr/bin/security` ACL grant, names-only inventory (ADR-002 + ADR-003; 49-credential index)"
   - "aDNA.aDNA (this vault) — consumer-side: workspace-canonical doctrine at `what/doctrine/doctrine_credential_handling.md` + workspace Rule 6 routing rule; the `### Credential routing (broker = Home.aDNA)` CLAUDE.md snippet is the adoption unit"
   - "BusinessIntelligence.aDNA (Metis) — a third-vault snippet-carrier found at the M3.2 fable-review census: its CLAUDE.md lands the routing snippet verbatim-in-shape (names-only, scoped read-only role by NAME, broker + doctrine pointers)"
-graduation: "3 vault-level adoptions live (broker: Home.aDNA · doctrine + routing rule: this vault · snippet-carrier: BusinessIntelligence.aDNA) — GRADUATION THRESHOLD MET; ratification = gate work → flagged for Champollion G3 (this file stays draft until the gate rules). Split from shim-registry because credential-non-egress + names-only is a distinct lesson from register-at-creation retirement (see Provenance)."
+graduation: "GRADUATED — ratified at Champollion G3 (2026-07-02, D2b; record: how/gates/champollion_p3_gate.output.md) on 3 vault-level adoptions (broker: Home.aDNA · doctrine + routing rule: this vault · snippet-carrier: BusinessIntelligence.aDNA). Split from shim-registry because credential-non-egress + names-only is a distinct lesson from register-at-creation retirement (see Provenance)."
 last_edited_by: agent_rosetta
 tags: [pattern, credentials, broker, names_only, keychain, one_password, node_local, non_egress, hestia, one_time_unlock, containment, champollion]
 ---

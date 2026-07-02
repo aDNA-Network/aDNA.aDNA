@@ -1,6 +1,7 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted   # RATIFIED at Champollion G3 (2026-07-02, D2a — pattern at 5 instances, graduation trigger fired + operator-ratified; record: how/gates/champollion_p3_gate.output.md); discharges this item's F-CHM-013 open disposition
+fold_batch: champollion_m6_1_rc
 priority: high
 created: 2026-07-02
 updated: 2026-07-02

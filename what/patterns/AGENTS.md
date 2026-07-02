@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-04-13
-updated: 2026-04-13
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [directory_index, pattern]
 ---
 
@@ -18,6 +18,7 @@ One file per pattern.
 
 - **Naming**: `pattern_{name}.md` (underscores, lowercase)
 - **Required frontmatter**: `type: pattern`, `created`, `updated`, `status`, `pattern_category` (structural | operational | content | federation), `applies_to` (list of entity types this pattern involves), `last_edited_by`, `tags`
+- **Instance counting** (ratified Champollion G3, 2026-07-02): `instances:` counts **vault/campaign-level adoptions** — multiple records of one seam in one vault are ONE adoption (records ≠ adoptions) — verified by a fresh filesystem census, never inherited from governance prose. `status: draft` below 3 adoptions; graduation past 3 ratifies at an operator gate.
 - **Structure**: Problem → Solution → When to Use → Example (from THIS vault) → Anti-Pattern
 - **Self-reference mandatory**: The "Example" section must cite a concrete instance of this pattern in the aDNA.aDNA vault
 - **Cross-linking**: Link to related concepts and other patterns

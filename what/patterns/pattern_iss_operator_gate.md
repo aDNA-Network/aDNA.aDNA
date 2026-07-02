@@ -2,14 +2,14 @@
 type: pattern
 created: 2026-07-02
 updated: 2026-07-02
-status: draft
+status: active   # GRADUATED at Champollion G3 (2026-07-02, D2b — 10 vault adoptions, census-verified; operator-ratified)
 pattern_category: operational
 applies_to: [decisions, campaigns, coordination, all_categories]
 campaign_id: campaign_champollion
 instances:
   - "aDNA.aDNA (this vault) — the canonical authoring skill `how/skills/skill_create_iss.md` (status active) + ADR-028 (architecture) + ADR-029 (standard-touch) + workspace Rule 8 routing; and the live counter-evidence: Champollion G0/G1/G2 all ran INLINE by choice while ISS receiver :8765 was UP"
   - "9 live consumer vaults with `iss/` wrappers (fable-review filesystem census 2026-07-02, shim-deduped): Molecules · Harness (RareHarness) · WilhelmAI · Network · CakeHealth · Obsidian · PercySleep · Warp · ZenZachary — each declaring federation_ref + persona (+ optional default_preset); RareHarnessOld carries an archived old-style wrapper (not counted live)"
-graduation: "10 vault-level adoptions live (1 producer + 9 consumer vaults) — GRADUATION THRESHOLD LONG MET; ratification = gate work → flagged for Champollion G3 (this file stays draft until the gate rules). Note: workspace Rule 8's '3 live' consumer count is stale by 6 — out-of-scope finding, router owned at workspace level."
+graduation: "GRADUATED — ratified at Champollion G3 (2026-07-02, D2b; record: how/gates/champollion_p3_gate.output.md) on 10 vault-level adoptions (1 producer + 9 consumer vaults, census-verified). Workspace Rule 8's consumer count trued 3→10 the same gate (D6.1)."
 last_edited_by: agent_rosetta
 tags: [pattern, iss, operator_gate, decision_gate, askuserquestion, inline_vs_web, fallback_chain, rlhf, consumer_wrapper, champollion]
 ---

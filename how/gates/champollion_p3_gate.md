@@ -6,13 +6,15 @@ campaign_id: campaign_champollion
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
-status: pending   # operator gate — do NOT auto-advance; unanswered decisions = held open, P3 stays complete-but-ungated
+status: resolved   # RATIFIED 2026-07-02 — operator: "Your reccomendations are awesome and approved." (all six as recommended: GO+KEEP · GRADUATION BATCH · PUSH · ACCEPT · EXEMPT-AS-POLICY · EXECUTE-ALL); record → champollion_p3_gate.output.md
 outer_tier: copy_paste   # inline-markdown surface per G0/G1/G2 precedent (record homogeneity); ISS web tier available if preferred
 persona: rosetta
 tags: [gate, champollion, p3, phase_exit, ring_cut, operator_decision, graduation, pattern_harvest, self_score]
 ---
 
 # ⛩ G3 — Operation Champollion P3 exit gate (THE RING CUT + graduation batch)
+
+> ✅ **RESOLVED 2026-07-02** — operator ratified **as recommended, all six decisions** ("Your reccomendations are awesome and approved.", in-chat): **D1 GO + ring KEEP · D2 GRADUATION BATCH (C6 fold · ISS+broker → active · 2 seed skills → M4.2 riders · counting line) · D3 PUSH · D4 ACCEPT datapoint #3 · D5 EXEMPT-AS-POLICY + F-CHM-209 → M6.1 rider · D6 EXECUTE-ALL**. Ratification record: [[champollion_p3_gate.output|champollion_p3_gate.output.md]]. P3 CLOSED; ring = full corpus; P4 OPEN (M4.1–M4.4 briefs live); stack pushed. The decision text below is preserved as-asked (SO-6).
 
 > **The ring cut.** P3 (PATTERN HARVEST & exemplar self-application) work is complete — all three missions closed with AARs filed, **the whole phase executed in one fable-orchestrator session under the Mode-B dispatch ruling** (first full-phase instance). This gate: re-scores the launch window (Ring-2 disposition), ratifies the **graduation batch** the harvest surfaced (1 template fold + 2 patterns + 2 seed skills), rules the M3.3 policy inputs, reviews per-tier telemetry (datapoint #3 — the first over-estimate phase), and — on ratification — closes P3 and opens P4. **Operator gate (SO-1): answer any subset; unanswered = held.**
 

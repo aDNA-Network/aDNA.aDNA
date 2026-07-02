@@ -2,12 +2,12 @@
 type: pattern
 created: 2026-07-02
 updated: 2026-07-02   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor); §2.5 dispatch-shape note added at P3 open (operator ruling: Mode B same-session subagent dispatch = default)
-status: draft
+status: active   # GRADUATED at Champollion G3 (2026-07-02, D2a — 5 instances; operator-ratified)
 pattern_category: operational
 applies_to: [campaign, mission, session, all_categories]
 campaign_id: campaign_champollion
 instances: [campaign_carnot (LatticeProtocol.aDNA), campaign_champollion (aDNA.aDNA), C03-ETAT-MAJOR (Operations.aDNA — operator-ruled S41 gate 2026-07-02), campaign_operation_corps (aDNALabs.aDNA — operator-ruled plan gate 2026-07-02; strict two-tier variant), vauban_charter_d5 (Terminal.aDNA — operator-ruled sitting 2026-07-02; class→tier default table, folded into §2.5)]
-graduation: "5 instances live — GRADUATION TRIGGER FIRED 2026-07-02 (C03 + Corps + Vauban adopted same-day, each unaware of the others); template-fold ratification queued at Champollion G3, ships via M6.1 RC (skill_template_release). C6/D2c deferral at G2 pointed at exactly this trigger."
+graduation: "GRADUATED — ratified at Champollion G3 (2026-07-02, D2a; record: how/gates/champollion_p3_gate.output.md) on 5 instances. The C6 template fold (idea_upstream_model_tier_mission_fields, accepted) ships via M6.1 RC (skill_template_release, G6-gated)."
 last_edited_by: agent_rosetta
 tags: [pattern, model_tiering, executor_tier, campaign, token_budget, adr_016, context_intelligence, contextscope, carnot, champollion]
 ---

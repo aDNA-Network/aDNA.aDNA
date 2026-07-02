@@ -1,6 +1,6 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted   # graduation RATIFIED at Champollion G3 (2026-07-02, D2c; record: how/gates/champollion_p3_gate.output.md); skill authoring rides M4.2 (site-UX window) as an in-window rider
 priority: medium
 created: 2026-07-02
 updated: 2026-07-02
