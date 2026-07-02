@@ -1,14 +1,15 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: high
 created: 2026-06-23
-updated: 2026-06-23
-last_edited_by: agent_hestia
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/campaigns/campaign_production_tidy/campaign_production_tidy.md (Guardrail-11; P8 close)
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
 tags: [backlog, upstream, discipline, recon, planning, charter, ground_truth, production_tidy]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: **recon-beats-the-charter** — a recon-at-execution discipline for campaigns
@@ -37,3 +38,8 @@ Before each destructive/structural op, the executor:
 ## Why upstream
 
 This generalizes the per-playbook "estimates lie" rules (rename/merge/code-relocation) into one standing discipline every campaign should carry. Natural home: a doctrine/skill note referenced by the planning pipeline and the fork/rename/merge/archive skills — "the charter is a hypothesis; recon is the test."
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

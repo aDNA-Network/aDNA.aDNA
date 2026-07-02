@@ -1,8 +1,8 @@
 ---
 type: backlog
-status: pending_v8_p6_batch
+status: accepted
 created: 2026-05-20
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 originating_vault: aDNA.aDNA  # this placeholder is filed at the standard-owner side; tracks v8 P6 propagation of an aDNA.aDNA-owned ratification (ADR-017 Clause A) to the `.adna/` upstream template
 originating_session: session_stanley_20260520T031453Z_v8_m15_s1
 ratification_target_version: "v8.0"  # v8.0 batch propagation per ADR-017 §Decisions D5 + D8
@@ -14,7 +14,8 @@ parallel_with:
   - idea_upstream_permission_edge_entity_type.md      # ratified at M1.5; same v8 P6 batch
   - idea_upstream_network_node_mirror_entity_type.md  # ratified at M1.5; same v8 P6 batch
 tags: [backlog, upstream_proposal, v8_p6_batch, lip_0006, network_adna, pattern_category, batch_promotion, additive_not_breaking, base_ontology_destination, m15_consumer, adr_017_consumer]
-updated: 2026-06-09
+updated: 2026-07-02
+fold_batch: champollion_m6_1_rc
 ---
 
 # Upstream proposal — LIP-0006 Network.aDNA pattern category addition to `.adna/` template (v8 P6 batch)
@@ -85,3 +86,8 @@ This placeholder is **category-scope** (single canonical addition to the pattern
 - **Response memo to Venus**: [[../../who/coordination/coord_2026_05_19_v8_m15_latticenetwork_ratification_response.md|`coord_2026_05_19_v8_m15_latticenetwork_ratification_response.md`]] §2
 - **Workspace router** (post-rename 2026-05-18): `/Users/stanley/aDNA/CLAUDE.md` §Network Ecosystem
 - **v3-EC follow-up campaign** (planned successor; opens at v8 P6 close): [[../campaigns/campaign_adna_v3_ecosystem_compliance/campaign_adna_v3_ecosystem_compliance.md|campaign_adna_v3_ecosystem_compliance.md]]
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

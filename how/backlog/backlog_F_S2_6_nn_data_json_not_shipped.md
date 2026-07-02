@@ -1,14 +1,14 @@
 ---
 type: backlog_idea
-status: open
+status: resolved
 priority: low  # cosmetic
 routes_to_campaign: campaign_obsidian_deployment_stabilization
 routes_to_track: T4  # canonicalization extends to plugin-data layer
 finding_id: F-S2-6
 source_session: session_stanley_20260513_043947_mlwx03_s2
 created: 2026-05-13
-updated: 2026-05-13
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, f_s2_6, notebook_navigator, plugin_data_json, triad_colors, cosmetic, lwx_s2_surfaced]
 ---
 
@@ -47,3 +47,8 @@ Recommend Option 1 (cleanest; small template addition); Option 2 layered on as t
 - M-LWX-03 S2 cross-graph memo §7 F-S2-6
 - Operator screenshot 2026-05-13T05:55Z+ — folders rendered in default white instead of triad palette
 - `node.aDNA/.obsidian/OBSIDIAN_CLAUDE.md:170-174` declares triad colors as the intended UX
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: full-schema Notebook-Navigator data.json now in the v8.1 seed bundle. Status set to `resolved`; ratified at Champollion G0 (D2).

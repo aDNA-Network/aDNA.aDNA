@@ -1,9 +1,9 @@
 ---
 type: idea
 created: 2026-05-25
-updated: 2026-05-25
-status: active
-last_edited_by: agent_stanley
+updated: 2026-07-02
+status: declined
+last_edited_by: agent_rosetta
 campaign: campaign_adna_serious_tool_readiness
 phase_target: v8_p6_ecosystem_propagation
 source_mission: mission_adna_str_p3_m36_airlock_aar_and_streamline
@@ -159,3 +159,8 @@ At v8 P6 cycle open, each wrapper sweep batch lands a single commit covering opt
 - [[../../what/decisions/adr_024_airlock_streamline_contract.md|ADR-024 Airlock Streamline Contract]] (canonical doctrine; 3 clauses A/B/C)
 - [[../../what/decisions/adr_008_airlock_template_stub.md|ADR-008 Airlock Template Stub]] (v0.3 re-pin candidate at v8 P6)
 - [[../../who/coordination/coord_2026_05_19_v8_cross_vault_disruption_assessment.md|cross-vault disruption assessment]] (forge-vault-side posture)
+
+
+## Champollion G0 disposition — N (M1.1, 2026-07-02)
+
+**DECLINE — stale.** STR is closed and v8 shipped via Hearthstone; the target cycle is superseded and the wrapper matrix names renamed/merged vaults (SiteForge->Astro, VideoForge->Videos, CanvasForge->merged-Canvas, LPWhitepaper->merged-LatticeProtocol). If the airlock primitives still warrant propagation, re-derive against current names via skill_template_release — do not execute this matrix. Flag to III.aDNA/Argus if airlock is still live. File retained per SO-6 (archive-never-delete). Ratified at Champollion G0 (D2).

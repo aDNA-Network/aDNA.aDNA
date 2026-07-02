@@ -1,9 +1,9 @@
 ---
 type: backlog_idea
 created: 2026-05-20
-updated: 2026-05-20
-last_edited_by: agent_stanley
-status: planned   # planned → in_design → in_progress → resolved
+updated: 2026-07-02
+last_edited_by: agent_rosetta
+status: deferred
 priority: P1   # strategic doctrine reach across aDNA standard
 finding_id: B-aDNA-2026-05-20-OIP
 discovered_in_session: session_stanley_20260520_124817_s24_pc01_b1_pluralism   # at the LatticeNetwork.aDNA side; cross-vault scope here
@@ -22,6 +22,8 @@ related_findings:
   - D-S23-01-canonical-tailnet-swap                              # sister-decision; agentic admin doctrine
 campaign_scope_proposed: campaign_aDNA_operator_interaction_patterns_v1_unification
 tags: [backlog, campaign_planning_mission, operator_interaction_patterns, oip, agentic_admin, sudo_elevation, gui_dialog, askuserquestion, canvas_substrate, latticeterminal_integration, latticeagent_integration, cross_graph, standard_evolution, p1_strategic]
+deferred_owner: "Rosetta / operator (high bar)"
+deferred_trigger: "post-launch (needs full re-scope; web-gate leg already shipped as ISS; entry-trigger vaults archived/renamed)"
 ---
 
 # Campaign-Planning-Mission Idea — Operator-Interaction-Patterns (OIP) v1 Unification across the aDNA Standard
@@ -158,3 +160,8 @@ The v0.1 `skill_agentic_sudo.md` (now canonical) serves as the **first OIP primi
 - `LatticeTerminal.aDNA/CLAUDE.md` (Spock; terminal substrate + sidebar + splash + MC-LAUNCH home-agent — campaign Phase-2 arch_03 integration target)
 - `LatticeAgent.aDNA/CLAUDE.md` (Stanley the agent; provider-contract + telemetry — campaign Phase-2 arch_04 integration target)
 - `aDNA.aDNA/how/skills/skill_orchestration_tiers.md` (campaign-planning-mission shape; multi-session phase-gated pattern this campaign uses)
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: Rosetta / operator (high bar). Trigger: post-launch (needs full re-scope; web-gate leg already shipped as ISS; entry-trigger vaults archived/renamed). Ratified at Champollion G0 (D2).

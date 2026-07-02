@@ -3,9 +3,10 @@ type: backlog_idea
 status: accepted
 priority: medium
 created: 2026-06-01
-updated: 2026-06-19
-last_edited_by: agent_hestia
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, idea, upstream, skill, project_fork, bootstrap_interview, exemplar, node_adna, hestia_origin, m25_origin]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea — Wire Exemplar-HOME Invocation into the `.adna/` Bootstrap Skills
@@ -54,3 +55,8 @@ all nodes.
 - Local demo hook: `Home.aDNA/how/skills/skill_project_fork.md` Step 4.5 (M25 D1).
 - Bundle + var catalog: `Home.aDNA/how/templates/template_node_adna_exemplar/{README,SUBSTITUTIONS}.md`.
 - Mission: `mission_lattice_comp_m25_template_node_adna_exemplar.md`.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

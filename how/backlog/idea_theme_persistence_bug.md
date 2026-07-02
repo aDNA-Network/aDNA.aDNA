@@ -3,7 +3,7 @@ type: backlog_idea
 status: resolved
 priority: high
 created: 2026-04-22
-updated: 2026-04-22
+updated: 2026-07-02
 last_edited_by: agent_rosetta
 tags: [backlog, site, dark-mode, theme, fouc, ux-bug, d3-carry-forward, resolved]
 ---
@@ -62,3 +62,8 @@ Flagged by user (stanley) during cycle-25 close review, 2026-04-22. Carry-forwar
 - `site/src/layouts/BaseLayout.astro:52-76` — theme script placement + ClientRouter wiring
 - `site/src/components/islands/DarkModeToggle.astro:23-29` — toggle click handler (writes localStorage correctly; no change needed)
 - `site/src/components/common/Header.astro:46` — where the toggle mounts (no change needed)
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: shipped Phase-7 D3 cycle 26 (gates 30/30, Lighthouse 100). Status set to `resolved`; ratified at Champollion G0 (D2).

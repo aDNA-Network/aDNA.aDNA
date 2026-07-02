@@ -7,8 +7,8 @@ source_vault: Obsidian.aDNA (Seshat)
 source_session: session_stanley_20260610_m06_s1_foundations
 routes_to: .adna template (skill_project_fork.md + setup.sh)
 created: 2026-06-10
-updated: 2026-06-10
-last_edited_by: agent_seshat
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, idea_upstream, obsidian, skill_project_fork, setup_sh, reseed, adr_007_posture, m06]
 related_backlog:
   - aDNA.aDNA/how/backlog/backlog_F_S2_1_setup_sh_fork_propagation.md   # the same defect, finding-level (setup.sh not propagated)
@@ -39,3 +39,8 @@ Obsidian.aDNA has since built + fleet-proven the consuming-side pattern the temp
 - Ratified: `adr_003_auto_populate_mechanism` (Option C = upstream fork-gap fix is one leg of the composite)
 
 > **Triage 2026-06-23 (Cornerstone v8.1):** RESOLVED — skill_project_fork now keeps setup.sh (fork-reseed fix). Shipped in the combined v8.1 release (held at push gate; [[adr_038_combined_v81_release]]). See [[coord_2026_06_23_rosetta_to_seshat_cornerstone_v81_landed]].
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: skill_project_fork keeps setup.sh; shipped v8.1 / adr_038 (resolves F-S2-1). Status set to `resolved`; ratified at Champollion G0 (D2).

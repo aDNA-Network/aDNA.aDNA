@@ -1,14 +1,15 @@
 ---
 type: backlog_idea
 created: 2026-06-10
-updated: 2026-06-10
-status: idea
+updated: 2026-07-02
+status: accepted
 priority: low
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 author: rosetta (aDNA.aDNA)
 trigger: audit P1-S3 feature-gap decision (gap register #13; completeness critic)
 informational: false
 tags: [backlog, site, rss, feed, changelog, contributor_recruitment]
+champollion_mission: M4.2
 ---
 
 # Idea — RSS/Atom feed for adna.network
@@ -29,3 +30,8 @@ is **not** E6-blocking (decided at P1-S3: routed to backlog, not a decadal).
 
 Pick up opportunistically at **E6 O5** (funnel cycles) if cheap in-flight, else **E7 capstone** hardening. Related:
 audit report §9 feature-gap decisions; `idea_deploy_cadence` (resolved — the cadence gives the feed real entries).
+
+
+## Champollion G0 disposition — M (M1.1, 2026-07-02)
+
+**ACCEPT → fix/mission.** Owning mission: `M4.2` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).

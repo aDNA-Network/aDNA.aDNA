@@ -1,15 +1,16 @@
 ---
 type: backlog_idea
-status: open
+status: accepted
 priority: low  # cosmetic
 routes_to_campaign: campaign_obsidian_deployment_stabilization
 routes_to_track: T4  # also touches T5 first-open UX hardening
 finding_id: F-S2-7
 source_session: session_stanley_20260513_043947_mlwx03_s2
 created: 2026-05-13
-updated: 2026-05-13
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, f_s2_7, template_placeholder_tags, obsidianignore, templater_syntax, cosmetic, lwx_s2_surfaced]
+champollion_mission: M4.2
 ---
 
 # F-S2-7 — Template placeholder tags leak into vault tag index
@@ -48,3 +49,8 @@ Recommend Option 3 (both) — small upstream change to template files + small `.
 - M-LWX-03 S2 cross-graph memo §7 F-S2-7
 - Operator screenshot 2026-05-13T05:55Z+ — tag pane shows literal `<project_slug>` tag with count 2
 - Grep verification: `<project_slug>` literal exists in 4 files (2 templates + 2 docstring references in `how/pipelines/prd_rfc/{01_research,04_review}/AGENTS.md`)
+
+
+## Champollion G0 disposition — M (M1.1, 2026-07-02)
+
+**ACCEPT → fix/mission.** Owning mission: `M4.2` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).

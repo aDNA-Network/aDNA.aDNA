@@ -1,14 +1,15 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: high
 created: 2026-06-10
-updated: 2026-06-10
-last_edited_by: agent_hestia
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/campaigns/campaign_workspace_houseclean/disposition_ledger_v2.md (§H; Operation Spring Clean SC-8)
 filing_authorization: skill_upstream_contribution
 upstream_target: LatticeProtocol/aDNA
 tags: [backlog, upstream, skill_project_archive, archive, supersession, shim, registry_drop, so7, workspace]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: `skill_project_archive` — a canonical archive flow for superseded/wound-down vaults
@@ -54,3 +55,8 @@ Any multi-vault workspace accumulates superseded vaults; without a canonical flo
 The five-event convergence on this node suggests the pattern is stable enough to template. Natural home:
 `how/skills/skill_project_archive.md` in the template, cross-referenced from `skill_project_fork`
 (birth ↔ death symmetry) and from `skill_second_genesis` P1.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

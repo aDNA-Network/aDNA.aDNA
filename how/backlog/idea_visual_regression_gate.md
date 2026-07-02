@@ -2,12 +2,14 @@
 type: backlog
 idea_class: tooling
 created: 2026-06-21
-updated: 2026-06-21
-status: open
+updated: 2026-07-02
+status: deferred
 priority: low
 campaign: campaign_website_adna
 last_edited_by: agent_rosetta
 tags: [backlog, idea, website, tooling, gate, visual_regression, deferred, g3]
+deferred_owner: "Rosetta / Astro.aDNA / III.aDNA"
+deferred_trigger: "a craft regression slips past wired gates 4/9/18/19, or container-pinned infra reaches standing-watch"
 ---
 
 # Idea — semantic visual-regression gate (G3, deferred at D4)
@@ -25,3 +27,8 @@ tags: [backlog, idea, website, tooling, gate, visual_regression, deferred, g3]
 
 ## Acceptance (if pursued)
 Platform-stable baselines (no OS-font flake), intentional-change baseline-update flow in the same PR, and a documented escape hatch — wired into `test:gates` without false-positive churn.
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: Rosetta / Astro.aDNA / III.aDNA. Trigger: a craft regression slips past wired gates 4/9/18/19, or container-pinned infra reaches standing-watch. Ratified at Champollion G0 (D2).

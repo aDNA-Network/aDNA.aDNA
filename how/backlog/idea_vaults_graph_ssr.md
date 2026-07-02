@@ -3,11 +3,13 @@ type: backlog
 idea_class: follow_on
 title: "SSR-prerender /vaults/graph to static SVG (A-06)"
 created: 2026-06-28
-updated: 2026-06-28
-last_edited_by: agent_stanley
-status: open
+updated: 2026-07-02
+last_edited_by: agent_rosetta
+status: deferred
 source: campaign_looking_glass (M2 finding A-06; DP3-deferred 2026-06-28)
 tags: [backlog, follow_on, website, craft, performance, a11y, looking_glass, a-06]
+deferred_owner: "Rosetta + Websites.aDNA"
+deferred_trigger: "dedicated craft cycle / Websites build pass (operator DP3-deferred; honor pt19 + Websites carve)"
 ---
 
 # Follow-on: SSR-prerender `/vaults/graph` to static SVG (A-06)
@@ -33,3 +35,8 @@ tags: [backlog, follow_on, website, craft, performance, a11y, looking_glass, a-0
 ## Disposition
 
 A dedicated craft cycle (or route via STR / a `Websites.aDNA` build pass). Self-contained, well-isolated SSR work. Pairs naturally with the deferred concept-route CLS item (A-07) as a "graph + concept craft" cycle. Honor pt19 + the Websites carve; coordinate deploy by memo.
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: Rosetta + Websites.aDNA. Trigger: dedicated craft cycle / Websites build pass (operator DP3-deferred; honor pt19 + Websites carve). Ratified at Champollion G0 (D2).

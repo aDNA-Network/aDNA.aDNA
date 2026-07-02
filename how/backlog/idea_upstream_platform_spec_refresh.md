@@ -1,10 +1,11 @@
 ---
 type: idea
-status: proposed
+status: accepted
 created: 2026-06-20
-updated: 2026-06-20
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [idea, upstream, spec, platform_ecosystem, hygiene]
+champollion_mission: M2.1
 ---
 
 # Refresh `spec_platform_ecosystem.md` Active-Platforms table (stale)
@@ -20,3 +21,8 @@ Refactoring the table touches routing-of-record for many vaults; it belongs to a
 ## Next step
 
 A focused refresh mission: rebuild the Active-Platforms table from current `STATE.md` ground truth; add the new software/deployment-graph cohort members (Bitwarden, Nextcloud, Caddy, …) with their `platform_subtype`. Coordinate with Production Tidy (Hestia) so the refresh and the router stay consistent. Companion: the `spec_framework_ecosystem.md` III consumer-wrapper count is likewise stale (claims 6; ~15 live) — same pass.
+
+
+## Champollion G0 disposition — M (M1.1, 2026-07-02)
+
+**ACCEPT → fix/mission.** Owning mission: `M2.1` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).

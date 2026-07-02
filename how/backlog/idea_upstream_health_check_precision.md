@@ -1,14 +1,15 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: high
 created: 2026-06-23
-updated: 2026-06-23
-last_edited_by: agent_hestia
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/missions/mission_clean_root_audit.md (S15; PT P8 close)
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
 tags: [backlog, upstream, health_check, clean_root, allowlist, census, drift, production_tidy]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: health-check census must be **allowlist-based** (flag the unknown), not pattern-based
@@ -28,3 +29,8 @@ Wired into `skill_node_health_check`: `ls -A` the root, classify every entry aga
 ## Why upstream
 
 Every node's root accumulates strays; a pattern-based census will miss them on every node, forever. The principle — *a census flags the unrecognized, it does not bless the recognized* — belongs in the template's health-check skill so the allowlist check ships by default. Companion to `idea_upstream_archive_category` (the holder is the documented exception) + `idea_upstream_shim_window_discipline` (shims are an allowlist input).
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

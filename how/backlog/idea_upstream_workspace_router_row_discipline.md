@@ -1,15 +1,16 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: medium
 created: 2026-05-25
-updated: 2026-05-25
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 filed_from: node.aDNA/how/campaigns/campaign_lattice_compliance_upgrade/missions/aar_claude_md_recompaction_20260525.md
 filing_authorization: skill_upstream_contribution
 upstream_target: LatticeProtocol/aDNA
 github_issue: https://github.com/LatticeProtocol/aDNA/issues/4
 tags: [backlog, upstream, claude_md, workspace_router, row_discipline, template, skill_workspace_upgrade, bloat_prevention, governance_vs_state]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: Bake a "router rows = routing identity only / `CLAUDE.md` = governance, `STATE.md` = state" discipline into the aDNA standard
@@ -105,3 +106,8 @@ already exceed the rule are addressable by a separate compaction pass (this node
 ## GitHub issue
 
 Filed 2026-05-25: **https://github.com/LatticeProtocol/aDNA/issues/4** — "Workspace router row discipline: keep CLAUDE.md routing-only; campaign state belongs in STATE.md".
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

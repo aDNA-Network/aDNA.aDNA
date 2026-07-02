@@ -1,14 +1,15 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: high
 created: 2026-06-10
-updated: 2026-06-10
-last_edited_by: agent_hestia
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/skills/skill_second_genesis.md (v0.1.0, installed Spring Clean SC-8; designed at SC-2)
 filing_authorization: skill_upstream_contribution
 upstream_target: LatticeProtocol/aDNA
 tags: [backlog, upstream, skill_second_genesis, stale_vault, re_genesis, fork, dossier, operator_brief, hestia]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: `skill_second_genesis` — re-genesize a stale vault to the current standard (reference implementation installed)
@@ -50,3 +51,8 @@ Stale-vault re-genesis is universal across nodes; the dossier/brief/flow shape i
 Natural home: `how/skills/skill_second_genesis.md` in the template + the dossier schema as a
 `how/templates/template_second_genesis_dossier.md`. Depends on `skill_project_archive` (P1) — filed in
 the same batch.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

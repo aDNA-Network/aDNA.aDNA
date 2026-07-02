@@ -3,13 +3,14 @@ type: backlog_idea
 status: accepted
 priority: high
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-07-02
 last_edited_by: agent_rosetta
 filed_from: Home.aDNA planning session (Operation Hearthstone — plan does-the-home-dir-adaptive-fern)
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
 github_issue: TBD
 tags: [backlog, upstream, home_adna, hestia, claude_md, governance_template, node_bootstrap, operation_hearthstone, v8]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: Ship a `template_home_claude.md` so a fresh node's `Home.aDNA/` gets the Hestia governance CLAUDE.md (not generic Berthier)
@@ -46,3 +47,8 @@ Result: a fresh node's `Home.aDNA/` runs under a Berthier governance file mismat
 1. **Persona hard-coding** — must parametrize `{{persona}}`, not bake Hestia, or non-Hestia nodes inherit a mislabeled file. Mitigation: persona-accent/greeting lookup mirrors the exemplar bundle's `SUBSTITUTIONS.md` §2.
 2. **Parity drift** — the template can fall behind the evolving `Home.aDNA/CLAUDE.md` reference. Mitigation: adopt a skeleton-parity invariant + check, the same discipline `template_node_adna_exemplar/SUBSTITUTIONS.md` uses for `HOME.md`.
 3. **Token budget** — `Home.aDNA/CLAUDE.md` is large; the template should ship the genericized core and let node-specifics accrete, not freeze a fat fleet snapshot (cf. Standing Rule 7 router-row discipline).
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

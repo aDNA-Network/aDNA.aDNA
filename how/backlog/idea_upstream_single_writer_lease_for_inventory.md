@@ -3,19 +3,20 @@ type: backlog_idea
 idea_id: idea_upstream_single_writer_lease_for_inventory
 title: "Codify single-writer-lease as an inventory-edit discipline in the `.adna/` template (v8.0+)"
 category: doctrine
-status: proposed
+status: accepted
 priority: medium
 effort: small  # ~0.5 session — one section in CLAUDE.md template + 1 short skill update + 1 AGENTS.md hint
 proposed_by: agent_stanley
 proposed_date: 2026-05-26
-updated: 2026-05-26
+updated: 2026-07-02
 upstream: true
 target_version: "v8.0"
 filed_from: node.aDNA/how/campaigns/campaign_node_credentials/missions/mission_node_creds_m06_documentation_sweep.md
 filing_authorization: skill_upstream_contribution
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [backlog, upstream, doctrine, claude_md, single_writer_lease, concurrency, inventory_entity_type, credentials, node_adna, hestia, dual_session_handoff, collision_prevention]
 created: 2026-05-26
+fold_batch: champollion_m6_1_rc
 ---
 
 # Upstream Contribution — Single-writer-lease for inventory + credential edits (v8.0+)
@@ -98,3 +99,8 @@ The three changes work together:
 - `idea_upstream_inventory_entity_type.md` — structural addition this rule operationalizes
 - `idea_upstream_identity_entity_type.md` — same entity-family that the rule covers
 - `.adna/how/skills/skill_agentic_sudo.md` — analogous load-bearing template-level discipline
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

@@ -1,12 +1,14 @@
 ---
 type: idea
-status: open
+status: deferred
 created: 2026-06-29
-updated: 2026-06-29
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 priority: medium
 source: operation_drydock_m03 (ADR-042)
 tags: [idea, fleet_defects, retro_cleanup, deferred, drydock, m03, adr_042]
+deferred_owner: "operator (per-vault)"
+deferred_trigger: "post-launch standard-maintenance mission (arms B/C; each an SO-7-weighted call; touches 45 vaults)"
 ---
 
 # Idea — Fleet-defects retro-cleanup (deferred arms of Drydock M03)
@@ -27,3 +29,8 @@ Run [[how/skills/skill_project_rename|skill_project_rename.md]]'s keep/strip cla
 ## Not here
 - The **2 Oration/SpeechForge harness strips** are tracked separately in [[who/coordination/coord_2026_06_29_rosetta_to_oration_harness_strip|the Oration memo]] (route via Oration's own subagent).
 - The **content-level** sibling of this drift (stale version stamps / old org names) was already swept by [[how/missions/mission_vault_wide_currency_sweep|the currency sweep]] — Classes 1 & 3 here are its *structural* siblings.
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: operator (per-vault). Trigger: post-launch standard-maintenance mission (arms B/C; each an SO-7-weighted call; touches 45 vaults). Ratified at Champollion G0 (D2).

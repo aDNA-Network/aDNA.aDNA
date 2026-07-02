@@ -1,10 +1,10 @@
 ---
 type: backlog
-status: ratified_local  # flipped from pending_upstream_review at M1.5 S1 close 2026-05-20 via ADR-017 §Decision Clause C parallel-discharge per peer ADR-005 rule 6 + ADR-008 §f
+status: accepted
 created: 2026-05-18
 filed_retroactively: 2026-05-19
-updated: 2026-05-20
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 originating_vault: "LatticeNetwork.aDNA (display: Alpha Lattice)"
 originating_session: session_stanley_20260518_143528_arch_01_spec_body
 originating_commit: b6e510d
@@ -25,6 +25,7 @@ ratification_log:
     parallel_discharge_sibling_status: ratified_local  # idea_upstream_permission_edge_entity_type.md flipped together per ADR-005 rule 6
     v8_p6_promotion_target: base_ontology  # per ADR-017 §Decisions D8=A
 tags: [backlog, upstream_proposal, vault_local_extension, network_, network_node_mirror, network_adna, latticenetwork, alphalattice, ratified_local, adr_017, parallel_discharge_complete]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Upstream proposal — `network_node_mirror` entity-type (namespace `network_`)
@@ -139,3 +140,8 @@ Per ADR-005 rule 6 + ADR-008 §f, partial discharge (one entity-type but not the
 - **Path β waiver**: `LatticeNetwork.aDNA/who/coordination/coord_2026_05_18_phase1_close_with_carry_waiver.md §4`
 - **Genesis prototype exemplar**: `LatticeNetwork.aDNA/what/network/nodes/percy_l1.aDNA/dossier.md` (recon_03 pre-transmission dossier; SO-8 disclaimer)
 - **Retroactive-filing finding**: F-S13-02 (Session 13 process finding — placeholder omission at Session 11 / arch_01 close; surfaced at Session 13 / arch_03 close; discharged at Session 15 / arch_04 pre-flight)
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

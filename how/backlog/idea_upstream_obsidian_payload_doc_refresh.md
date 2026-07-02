@@ -1,17 +1,18 @@
 ---
 type: backlog_idea
-status: open
+status: accepted
 priority: high
 finding_id: OBS-UP-2   # Obsidian.aDNA P1 synthesis §5 #2 · drifts D2 + D3
 source_vault: Obsidian.aDNA (Seshat)
 source_session: session_stanley_20260610_m06_s1_foundations
 routes_to: .adna template (.obsidian/README.md + OBSIDIAN_CLAUDE.md + adr_001_obsidian_as_knowledge_platform.md)
 created: 2026-06-10
-updated: 2026-06-10
-last_edited_by: agent_seshat
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, idea_upstream, obsidian, doc_drift, readme, obsidian_claude_md, adr_007_posture, m06]
 related_backlog:
   - aDNA.aDNA/how/backlog/idea_upstream_obsidian_seed_canonicalization.md  # if the template adopts the rich seed, this sweep rides that change
+fold_batch: champollion_m6_1_rc
 ---
 
 # idea_upstream — one doc-sweep over the `.adna` Obsidian payload docs (the only real upstream config drift)
@@ -38,3 +39,8 @@ The P1-era text said "add `settings-search`; count→15." **Do not add `settings
 - Roster state: `spec_plugin_tier_roster` Amendments 1–2 · `adr_006_plugin_tier_policy` Amendments 1–2
 
 > **Triage 2026-06-23 (Cornerstone v8.1):** REFRAMED — follow-up: refresh .obsidian/README.md + OBSIDIAN_CLAUDE.md to the canonical 14 (do NOT re-add settings-search). Not in v8.1. ([[coord_2026_06_22_seshat_to_rosetta_cornerstone_v81_landing]] reconciliation; [[adr_038_combined_v81_release]]).
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

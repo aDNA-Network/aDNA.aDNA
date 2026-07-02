@@ -1,14 +1,14 @@
 ---
 type: backlog_idea
-status: open
+status: deferred
 priority: medium
 routes_to_campaign: campaign_adna_serious_tool_readiness
 routes_to_phase: 5_or_6_or_v3_ec_successor
 finding_id: B-aDNA-2026-05-21-CoordStewardship
 source_session: session_stanley_20260521T135258Z_v8_m32_s1
 created: 2026-05-21
-updated: 2026-06-20
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, cross_vault_coord, stewardship, ack_debt, campaign_so_13, m3_2_s1_wind_down_discovery, who_coordination, adna_aDNA, north_star_easy_fluid_context_graphs]
 related_backlog:
   - aDNA.aDNA/how/backlog/idea_interactive_decision_surface.md   # decision-surface M3.0.5 forecast (sibling pattern: aDNA-core skill + optional SiteForge skin)
@@ -21,6 +21,8 @@ related_skills_forecast:
   - skill_coord_memo_triage.md   # candidate at v8 P5 or P6 OR v3-EC successor
 related_adr_slot_forecast:
   - adr_NNN_cross_vault_coord_stewardship_discipline.md   # placeholder; number assigned at promotion time per forward-only doctrine
+deferred_owner: "Rosetta + Home.aDNA (Hestia)"
+deferred_trigger: "3rd instance / process review (Home shipped a node-local interim detector, health_check S14)"
 ---
 
 # B-aDNA-2026-05-21-CoordStewardship — Cross-vault coord-memo stewardship pattern (ack-debt risk)
@@ -135,3 +137,8 @@ Cross-vault coord memos may also be addressed to a persona that lives in a DIFFE
 - [[idea_interactive_decision_surface.md|idea_interactive_decision_surface]] — sibling pattern (UX of cross-domain handoff axis)
 - [[idea_campaign_operator_interaction_patterns_unification.md|idea_campaign_operator_interaction_patterns_unification]] — possible parent/absorber (OIP)
 - [[../../who/coordination/coord_2026_05_21_siteforge_interactive_subsystem_p1_rosetta_standard_touch.md|rosetta_standard_touch P1.3 memo]] — 1st-instance ack discharge (Campaign SO #13 reference example)
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: Rosetta + Home.aDNA (Hestia). Trigger: 3rd instance / process review (Home shipped a node-local interim detector, health_check S14). Ratified at Champollion G0 (D2).

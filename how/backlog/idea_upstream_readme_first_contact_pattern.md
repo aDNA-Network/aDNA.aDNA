@@ -1,15 +1,16 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: medium
 created: 2026-05-29
-updated: 2026-05-29
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 filed_from: aDNA.aDNA/how/campaigns/campaign_adna_serious_tool_readiness/missions/mission_adna_str_p5_m55_d14_readme_first_contact_polish.md
 filing_authorization: skill_upstream_contribution
 upstream_target: LatticeProtocol/Agentic-DNA
 github_issue: TBD
 tags: [backlog, upstream, readme, first_contact, content_class_taxonomy, persona_led_structural_pattern, scan_affordance_toc, m54_aar_finding, m55_codification, ecosystem_propagation, phase_6_candidate]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: Promote the README first-contact discipline (content-class taxonomy + persona-led structural pattern + scan-affordance ToC) into the upstream aDNA standard
@@ -68,3 +69,8 @@ Each propagation cycle: cycle 121 anchor pass (canonical-content) + cycle 127 To
 ## Adoption discipline
 
 Adopt at next upstream version bump (post-v2.2 minor release). Existing vault READMEs are not retroactively reformatted; new vault forks inherit the pattern via the template. Phase-6 propagation is operator-discretionary per vault.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

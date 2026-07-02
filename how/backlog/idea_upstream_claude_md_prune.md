@@ -1,13 +1,14 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: medium
 created: 2026-05-20
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 filed_from: node.aDNA/how/campaigns/campaign_lattice_compliance_upgrade/missions/mission_lattice_comp_m00_charter_and_recon.md (Obj 8)
 filing_authorization: skill_upstream_contribution
 tags: [backlog, upstream, claude_md, token_prune, adna_template, conservative, aggressive]
-updated: 2026-06-09
+updated: 2026-07-02
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: `.adna/CLAUDE.md` Token Prune (Upstream PR to `LatticeProtocol/adna`)
@@ -87,3 +88,8 @@ Per M01 Exit-Gate criterion 7. These observations are the actual-vs-projected fe
 ### Sequencing implication
 
 M01 closed 2026-05-20; lessons-learned now landed. The upstream PR can be drafted at any time. Suggested next step: standalone mission inside `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/` or as a new sub-campaign. **Not on the compliance campaign's critical path** — file as backlog idea here, graduate to mission when convenient.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

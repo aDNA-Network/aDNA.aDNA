@@ -2,13 +2,14 @@
 type: backlog
 backlog_id: B-aDNA-2026-05-22-BannerCleanup
 created: 2026-05-22
-updated: 2026-05-22
-status: open
-last_edited_by: agent_stanley
+updated: 2026-07-02
+status: accepted
+last_edited_by: agent_rosetta
 tags: [backlog, idea, banner, asset_cleanup, m3_3_plus_scope, site, what_assets, revert_fallback_retired]
 routes_to: campaign_adna_serious_tool_readiness OR low-stakes-operational-session
 priority: low
 estimated_sessions: 0.25
+champollion_mission: M4.2
 ---
 
 # Backlog idea — Old `banner.jpg` archival cleanup
@@ -54,3 +55,8 @@ Archival should NOT happen in the M3.2 close session — it would violate the S3
 1. Does any non-Astro context still reference `banner.jpg`? (e.g., a separate publishing pipeline, OG image generator, downstream consumer)
 2. Should `what/assets/banner.jpg` be archived alongside `site/src/assets/banner.jpg`, or do they have independent lifecycles (canonical mirror vs Astro source-of-truth)?
 3. Is there a smaller cleanup window than "1 full release cycle"? (e.g., 1 week if Vercel + Playwright stay green)
+
+
+## Champollion G0 disposition — M (M1.1, 2026-07-02)
+
+**ACCEPT → fix/mission.** Owning mission: `M4.2` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).

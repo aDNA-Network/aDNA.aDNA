@@ -1,17 +1,18 @@
 ---
 type: backlog_idea
-status: open
+status: accepted
 priority: low   # IF-gated — only if the template ships agent-driven Obsidian infrastructure
 finding_id: OBS-UP-10   # Obsidian.aDNA P1 synthesis §5 #10 · D17
 source_vault: Obsidian.aDNA (Seshat)
 source_session: session_stanley_20260610_m06_s1_foundations
 routes_to: .adna template (agentic-Obsidian posture)
 created: 2026-06-10
-updated: 2026-06-10
-last_edited_by: agent_seshat
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, idea_upstream, obsidian, local_rest_api, opt_in, security_contract, adr_007_posture, adr_011, m06]
 related_backlog:
   - aDNA.aDNA/how/backlog/backlog_F_S2_8_agent_driven_obsidian_inspection.md   # the agent-driven-Obsidian direction this serves
+fold_batch: champollion_m6_1_rc
 ---
 
 # idea_upstream — adopt the `obsidian-local-rest-api` **opt-in pattern** (plugin + per-vault security contract), never default-seeded
@@ -31,3 +32,8 @@ A template-side context doc + override-manifest example (`obsidian_adna_override
 - Obsidian.aDNA `adr_011_autonomy_tiers.md` (T0–T3; REST/MCP opt-in) · `what/context/obsidian_rest_api_opt_in.md` (M05 gate 2) · `obsidian_operation_playbooks.md` §9.4 (p1_07) · synthesis §5 #10
 
 > **Triage 2026-06-23 (Cornerstone v8.1):** SURVIVES (low) — independent; carry as-is. ([[coord_2026_06_22_seshat_to_rosetta_cornerstone_v81_landing]] reconciliation; [[adr_038_combined_v81_release]]).
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

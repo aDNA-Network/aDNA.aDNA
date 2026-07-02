@@ -1,9 +1,9 @@
 ---
 type: backlog_idea
 created: 2026-06-04
-updated: 2026-06-10
+updated: 2026-07-02
 status: resolved   # 2026-06-10 — PR #7 merged (carried the flip); PR #8 CLOSED-AS-SUPERSEDED; repo archived → adna-legacy; see Disposition addendum + ADR-034
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 author: rosetta (aDNA.aDNA)
 trigger: operator question 2026-06-04 (during the E4 aDNANetwork session) — "if/when will new-user onboarding set up the right /aDNA/ directory structure instead of /lattice/?"
 informational: false
@@ -82,3 +82,8 @@ Recommend the upstream PR lands **in the same brand wave as aDNALabs WS-5** (`mi
 - Mechanism: [[../skills/skill_upstream_contribution]] (file `idea_upstream_*` → optional `gh issue` on `LatticeProtocol/Agentic-DNA`; never push to `.adna/` directly).
 - Ownership/sequencing facts: `aDNALabs.aDNA/how/campaigns/campaign_adnalabs_genesis/missions/mission_path_migration_l1.md` (WS-5) + `aDNALabs.aDNA/what/rebrand/rosetta_deliverable_brief.md` §6 (path-trigger decision; `~/aDNA/` locked) + `path_surface_inventory.md` (operator-side ~220-ref sweep).
 - Coord: `who/coordination/coord_2026_06_04_rosetta_to_berthier_onboarding_workspace_default.md`.
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: PR #7 merged; subsumed by the clone-and-run image / ADR-034 (body disposition confirms). Status set to `resolved`; ratified at Champollion G0 (D2).

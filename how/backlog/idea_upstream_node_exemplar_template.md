@@ -3,9 +3,10 @@ type: backlog_idea
 status: accepted
 priority: medium
 created: 2026-06-01
-updated: 2026-06-18
+updated: 2026-07-02
 last_edited_by: agent_rosetta
 tags: [backlog, idea, upstream, template, exemplar, node_adna, home, hestia_origin, m25_origin, prytaneion_m3_4]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea — Upstream the Node Exemplar HOME Template (`template_node_adna_exemplar/`)
@@ -79,3 +80,8 @@ adoption must teach the renderer this profile — track jointly with the skill-w
 
 A reproducible, dependency-free smoke test now ships in-bundle (`smoke_render.py`; PASS 2026-06-05).
 
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

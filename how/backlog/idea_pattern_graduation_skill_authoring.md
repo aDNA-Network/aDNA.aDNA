@@ -1,9 +1,9 @@
 ---
 type: backlog_idea
 created: 2026-05-24
-updated: 2026-06-30
+updated: 2026-07-02
 status: completed
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [backlog, idea, pattern_graduation, skill_authoring_deferred, cross_skill_primitive_composition, t8_forward_reference_stub_discipline, m3_4_close_carry, d_grad_ratify_as_finding_defer_skill_authoring, follow_up_session_pickup, rosetta]
 source_mission: mission_adna_str_p3_m34_verification_handoff_and_agent_inspection
 source_aar: aar_m34_verification_handoff_and_agent_inspection
@@ -126,3 +126,8 @@ M3.7 S2 close ratifies 1 additional graduation + seeds 2 new candidates + reinfo
 - [[../skills/skill_obsidian_integration_test.md|skill_obsidian_integration_test.md]] — M3.3 T6 skill; 1st cross-skill DELEGATION instance
 - [[../skills/skill_verification_handoff.md|skill_verification_handoff.md]] — M3.4 T7 skill; 2nd cross-skill DELEGATION instance + 2nd T8-forward-reference-stub instance
 - [[../skills/skill_obsidian_agent_inspect.md|skill_obsidian_agent_inspect.md]] — M3.4 T8d skill; 3rd cross-skill DELEGATION instance (TRIPLE DELEGATION; branching graph) + 3rd T8-forward-reference-stub instance + degradation cascade contract
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: RESOLVED 2026-06-30 — all 3 graduation skills authored; skills inventory 45->48; validator zero-drift. Status set to `completed`; ratified at Champollion G0 (D2).

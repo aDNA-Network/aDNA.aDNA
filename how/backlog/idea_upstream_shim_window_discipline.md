@@ -1,15 +1,16 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: high
 created: 2026-06-10
-updated: 2026-06-10
-last_edited_by: agent_hestia
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/campaigns/campaign_workspace_houseclean/disposition_ledger_v2.md (§C standing registry; Operation Spring Clean SC-7/SC-8)
 filing_authorization: skill_upstream_contribution
 upstream_target: LatticeProtocol/aDNA
 forward_cited_by: "~/aDNA/CLAUDE.md Standing Rule 9 (installed 2026-06-10 at SC-7 — cites this filing's path)"
 tags: [backlog, upstream, shim, symlink, window_discipline, standing_rule_9, registry, retirement, health_check, hestia]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: Shim-window discipline — register-at-creation, conjunctive retirement, pre-authorized waves
@@ -61,3 +62,8 @@ fallout-remediation leg) without coordination — the discipline composes.
 Every node that renames or archives vaults grows shims; the registry schema + conjunctive retirement +
 wave pattern are node-agnostic. Natural home: a Standing Rule in `template_workspace_claude.md` + a
 registry-section template + a health-check step in the node-skill set.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

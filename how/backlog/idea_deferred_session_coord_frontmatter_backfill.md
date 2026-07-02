@@ -8,8 +8,8 @@ priority: low
 effort: small  # mechanical, but ~150 closed/correspondence files — schedule deliberately
 proposed_by: agent_stanley
 proposed_date: 2026-06-30
-updated: 2026-06-30
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, governance, conformance, frontmatter, sessions, coordination, deferred]
 created: 2026-06-30
 ---
@@ -39,3 +39,8 @@ These are **drift from their own templates**, not a spec question — so the fix
 ## Why low priority
 
 Pure metadata hygiene on closed records; no functional impact. The live/unambiguous content is already conformant (in-scope residual = 0 as of 2026-06-30).
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: RESOLVED 2026-06-30 — 148 records backfilled; adna_validate 293->0 (exit 0). Status set to `completed`; ratified at Champollion G0 (D2).

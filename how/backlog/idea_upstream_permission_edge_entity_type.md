@@ -1,9 +1,9 @@
 ---
 type: backlog
-status: ratified_local  # flipped from pending_upstream_review at M1.5 S1 close 2026-05-20 via ADR-017 §Decision Clause C parallel-discharge per peer ADR-005 rule 6 + ADR-008 §f
+status: accepted
 created: 2026-05-18
-updated: 2026-05-20
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 originating_vault: "LatticeNetwork.aDNA (display: Alpha Lattice)"
 originating_session: session_stanley_20260518_165918_arch_03_spec_body
 originating_commit: <to be filled at session close>
@@ -22,6 +22,7 @@ ratification_log:
     parallel_discharge_sibling_status: ratified_local  # idea_upstream_network_node_mirror_entity_type.md flipped together per ADR-005 rule 6
     v8_p6_promotion_target: base_ontology  # per ADR-017 §Decisions D8=A
 tags: [backlog, upstream_proposal, vault_local_extension, network_, permission_edge, network_adna, latticenetwork, alphalattice, ratified_local, adr_017, parallel_discharge_complete]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Upstream proposal — `permission_edge` entity-type (namespace `network_`)
@@ -129,3 +130,8 @@ Per ADR-005 rule 6 + ADR-008 §f, partial discharge (one entity-type but not the
 - **Carry 2 PRIMARY memo**: `LatticeNetwork.aDNA/who/coordination/coord_2026_05_18_adna_standard_interop.md`
 - **Path β waiver**: `LatticeNetwork.aDNA/who/coordination/coord_2026_05_18_phase1_close_with_carry_waiver.md §4`
 - **Operator-blessed schema source**: `lattice-labs/who/coordination/coord_2026_05_17_partner_node_pubkey_sharing_and_memorialization.md §4 Layer-2`
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

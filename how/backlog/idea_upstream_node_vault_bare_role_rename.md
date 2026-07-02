@@ -1,9 +1,9 @@
 ---
 type: backlog
 created: 2026-05-31
-updated: 2026-06-11
+updated: 2026-07-02
 status: resolved   # 2026-06-11 — EXECUTED at template release v7.2 (image router Step 0.3 project_name = Home + live-prose LatticeHome.aDNA → Home.aDNA sweep across the standard tree; lineage pins preserved per SO-7). ADR-013 §Exception.5 documents the completed chain. Trigger: defect observed live on a partner onboarding; aDNALabs memo coord_2026_06_11; session_stanley_20260611T235006Z_v72_release_home_naming_fix.
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 author: agent_hestia
 origin: Home.aDNA (node vault) readiness pass
 upstream_target: aDNA-Network/aDNA (the public workspace image; was `.adna template (LatticeProtocol/adna)` at filing — repo model changed at ADR-034)
@@ -22,3 +22,8 @@ tags: [backlog, upstream, rosetta, node_vault, naming, resolved, v7_2]
 **Why bare-role.** Consistency with the Rosetta rebrand (Lattice → aDNA brand; Lattice Protocol = substrate). The canonical home instance is `Home.aDNA`; namespace-prefixed variants (`LatticeHome`) become history/aliases. Protocol-layer "node" term + `node_*`/`skill_node_*`/`mission_node_*`/`campaign_node_*` filenames are **preserved** per ADR-013 §Exception.
 
 **Note.** Coordinate with the Rosetta master sequence (Berthier/aDNALabs) — this is one tile in the larger cross-vault rename. Home.aDNA's local + router refs are already done; ~282 cross-vault refs across 24 vaults remain, deferred to the Rosetta sweep (operator decision 2026-05-31).
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: EXECUTED at template release v7.2 (image router Step 0.3 project_name = Home + live-prose LatticeHome.aDNA -> Home.aDNA sweep); ADR-013 §Exception.5 documents the completed chain. Acknowledged RESOLVED in the ledger. Status set to `resolved`; ratified at Champollion G0 (D2).

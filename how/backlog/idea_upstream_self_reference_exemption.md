@@ -2,10 +2,11 @@
 type: backlog
 idea_type: upstream
 created: 2026-06-21
-updated: 2026-06-21
-status: open
-last_edited_by: agent_stanley
+updated: 2026-07-02
+status: accepted
+last_edited_by: agent_rosetta
 tags: [backlog, upstream, self_reference, standing_order, governance]
+champollion_mission: M3.3
 ---
 
 # idea (upstream): Standing Order #8 should admit a documented self-reference exemption
@@ -39,3 +40,8 @@ edge case.
 ## Provenance
 
 `campaign_feedback_loop` M02 AAR (2026-06-21).
+
+
+## Champollion G0 disposition — M (M1.1, 2026-07-02)
+
+**ACCEPT → fix/mission.** Owning mission: `M3.3` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).

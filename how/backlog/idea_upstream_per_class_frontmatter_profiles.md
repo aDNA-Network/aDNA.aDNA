@@ -3,17 +3,18 @@ type: backlog_idea
 idea_id: idea_upstream_per_class_frontmatter_profiles
 title: "Per-class frontmatter profiles in §7.2 + nested-instance walk exclusion in the validator"
 category: standard
-status: proposed
+status: accepted
 priority: medium
 effort: small  # ~0.5–1 session — §7.2/§5.5 wording + validator parity in the public image
 proposed_by: agent_stanley
 proposed_date: 2026-06-30
-updated: 2026-06-30
+updated: 2026-07-02
 upstream: true
 target_version: "next standard release"
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [backlog, upstream, standard, frontmatter, conformance, validator, directory_index, coordination]
 created: 2026-06-30
+fold_batch: champollion_m6_1_rc
 ---
 
 # Upstream Contribution — Per-class frontmatter profiles + nested-instance exclusion
@@ -48,3 +49,8 @@ Two refinements (full rationale + the brick/wall/ground framing in [[what/decisi
 ## Out of scope
 
 The non-`status` drift of historical session records + coord memos (missing `created/updated/last_edited_by/tags` that their templates DO specify) is genuine drift-from-template, tracked separately as a deferred backfill — not part of this proposal.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

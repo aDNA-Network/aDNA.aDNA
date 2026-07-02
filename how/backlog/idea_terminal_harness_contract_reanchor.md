@@ -2,14 +2,15 @@
 type: backlog
 idea_id: idea_terminal_harness_contract_reanchor
 title: "Re-anchor spec_terminal_harness_contract.md — clause sources → rehomed Harness.aDNA paths; refresh the §7 adoption table to post-consolidation names; ratify ADR-027"
-status: proposed
+status: accepted
 proposed_by: agent_berthier (Terminal.aDNA, Operation Gateway gw_p0)
 created: 2026-06-11
-updated: 2026-06-11
-last_edited_by: agent_berthier
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 coord_ref: who/coordination/coord_2026_06_11_inbound_from_berthier_terminal_harness_contract_reanchor.md
 source_review: Terminal.aDNA/what/context/review_ecosystem_positioning_20260611.md (E3d)
 tags: [backlog, idea, ecosystem_spec, terminal_harness_contract, adr_027, reanchor, sha_pin, archive_pointers, proposed, cross_vault_proposal]
+champollion_mission: M2.1
 ---
 
 # Idea — Re-anchor the terminal↔harness canonical (proposal; your standard, your gate)
@@ -41,3 +42,8 @@ aDNA.aDNA owns the edit + the gate (this is your standard; we propose, never aut
 ## Why now
 
 Terminal × Harness co-development was operator-directed 2026-06-11 (Operation Gateway); the contract this spec canonicalizes is about to be live-proven (Terminal `ex_24` first-light + the Harness P6 `general_harness` co-sign offer). The proof work cites the canonical; the canonical should not cite archived vaults while that happens.
+
+
+## Champollion G0 disposition — M (M1.1, 2026-07-02)
+
+**ACCEPT → fix/mission.** Owning mission: `M2.1` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).

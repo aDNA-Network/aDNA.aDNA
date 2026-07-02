@@ -1,14 +1,14 @@
 ---
 type: backlog_idea
 created: 2026-05-28
-status: filed
-last_edited_by: agent_stanley
+status: declined
+last_edited_by: agent_rosetta
 author: hestia (LatticeHome.aDNA)
 trigger: campaign_lattice_compliance_upgrade R07 close 2026-05-28
 informational: true
 upstream_target: .adna template (v8.0+)
 tags: [backlog, upstream, latticehome_rename, adr_013_exception, naming_governance, v8_0_candidate]
-updated: 2026-06-09
+updated: 2026-07-02
 ---
 
 # Upstream Idea — Node-vault naming exception pattern (LatticeHome.aDNA)
@@ -69,3 +69,8 @@ CHANGED (vault directory name only):
 - ADR-013 §Exception ratification (R02): `LatticeHome.aDNA/what/decisions/adr_013_naming_governance.md`
 - Workspace router (R04): `~/aDNA/CLAUDE.md`
 - Plan: `~/.claude/plans/please-read-the-claude-md-silly-octopus.md` (D5-Revised 2026-05-28)
+
+
+## Champollion G0 disposition — N (M1.1, 2026-07-02)
+
+**DECLINE — stale.** OBE — recommends project_name = 'LatticeHome', but that name was reverted to 'Home' on 2026-06-11 (a stale value that forked a misnamed LatticeHome.aDNA on fresh nodes). The recommendation is now actively wrong; the general rename-doctrine value is captured by idea_upstream_graph_rename_recipe + idea_upstream_node_vault_bare_role_rename (RESOLVED). File retained per SO-6 (archive-never-delete). Ratified at Champollion G0 (D2).

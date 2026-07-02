@@ -1,6 +1,6 @@
 ---
 type: backlog_idea
-status: open
+status: resolved
 priority: high  # architectural-load-bearing finding
 routes_to_campaign: campaign_obsidian_deployment_stabilization
 routes_to_track: T7  # verification handoff documentation
@@ -8,8 +8,8 @@ finding_id: F-S2-3
 also_routes_to: campaign_validation_node_adna_lwx_outputs  # dispatch model is the first instance of the handoff
 source_session: session_stanley_20260513_043947_mlwx03_s2
 created: 2026-05-13
-updated: 2026-05-13
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, f_s2_3, verification_handoff_topology, agent_side_smoke, operator_side_smoke, dispatch_model, architectural_load_bearing, lwx_s2_surfaced]
 ---
 
@@ -45,3 +45,8 @@ This is the **load-bearing architectural finding of the LWX mini-campaign**. It 
 - M-LWX-03 S2 cross-graph memo §7 F-S2-3 + §8 dispatch model
 - LWX campaign AAR §"Successful patterns" + §"Conceptual contributions"
 - Operator strategic UX goal memory: `~/.claude/projects/-Users-stanley-lattice-aDNA-aDNA/memory/project_adna_lattice_ux_goal.md`
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: skill_verification_handoff exists in the skills inventory (the ADR-014 slot was its forecast). Status set to `resolved`; ratified at Champollion G0 (D2).

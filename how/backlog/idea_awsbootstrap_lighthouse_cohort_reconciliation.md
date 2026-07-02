@@ -1,9 +1,9 @@
 ---
 type: idea
-status: graduating
+status: resolved
 created: 2026-06-20
-updated: 2026-06-29
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 campaign_id: campaign_keystone
 graduated_to: what/decisions/adr_043_node_provisioning_layer_reconciliation.md
 tags: [idea, keystone, awsbootstrap, lighthouse, reconciliation, adr_candidate]
@@ -34,3 +34,8 @@ A clean three-layer split, to be co-signed by the three personas:
 ## Next step
 
 When greenlit, author the reconciliation ADR (likely homed in `aDNA.aDNA` as standard material, co-signed by Hestia + Lighthouse-persona-at-P0 + Keystone). Gate: do not let the cohort proliferate overlapping install logic before this lands. Non-blocking for the current clean net-new wave (Nextcloud/Caddy/Bitwarden carry no AWSBootstrap overlap).
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: authored as ADR-043; ADR-043 accepted 2026-06-30 (co-sign from Hestia + Lighthouse-P0 pending -> seams non-operative, but the idea closes). Status set to `resolved`; ratified at Champollion G0 (D2).

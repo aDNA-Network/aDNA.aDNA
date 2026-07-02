@@ -1,14 +1,14 @@
 ---
 type: backlog_idea
-status: open
+status: resolved
 priority: medium-high  # closes verification-handoff topology to agent-driven half
 routes_to_campaign: campaign_obsidian_deployment_stabilization
 routes_to_track: T8  # NEW track — agent-driven Obsidian inspection
 finding_id: F-S2-8
 source_session: session_stanley_20260513_043947_mlwx03_s2
 created: 2026-05-13
-updated: 2026-05-13
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, f_s2_8, agent_driven_obsidian, local_rest_api, mcp_server, sixth_additive_upstream_candidate, easy_fluid_context_graphs, lwx_s2_surfaced]
 ---
 
@@ -72,3 +72,8 @@ Directly serves the saved north-star UX metric: *"easy and fluid way to build/op
 - M-LWX-03 S2 strategic-question section in plan file: `/Users/stanley/.claude/plans/please-read-the-claude-md-merry-dewdrop.md`
 - M-LWX-03 S2 cross-graph memo §7 F-S2-8 + §8 dispatch model
 - Operator's framing: "Is there any way we can set you up to be able to run/inspect/navigate Obsidian yourself for these confirmation / validation passes?" (2026-05-13T06:05Z+)
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: skill_obsidian_agent_inspect shipped; opt-in REST/MCP tracked by obsidian_local_rest_api_seed. Status set to `resolved`; ratified at Champollion G0 (D2).

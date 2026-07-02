@@ -1,11 +1,12 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: medium
 created: 2026-05-24
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [backlog, idea, upstream, templates, ratification_ceremony, contextcompass_origin]
-updated: 2026-05-24
+updated: 2026-07-02
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea — Upstream `template_ratification_record.md` to aDNA Standard Templates
@@ -46,3 +47,8 @@ ContextCompass post-planning strategic-review S16 ceremony 2026-05-24 — R10(a)
 ## When to integrate
 
 Operator-discretionary; no execution-campaign dependency. Earliest natural opportunity: when an aDNA template review pass is scheduled; or when III's Campaign DG-* artifacts are mined for template patterns; or when a third Framework.aDNA / Platform.aDNA approaches its first ratification ceremony.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

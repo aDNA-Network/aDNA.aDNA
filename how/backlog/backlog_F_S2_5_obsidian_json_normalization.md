@@ -1,14 +1,14 @@
 ---
 type: backlog_idea
-status: open
+status: resolved
 priority: low-medium
 routes_to_campaign: campaign_obsidian_deployment_stabilization
 routes_to_track: T4  # Obsidian config canonicalization
 finding_id: F-S2-5
 source_session: session_stanley_20260513_043947_mlwx03_s2
 created: 2026-05-13
-updated: 2026-05-13
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, f_s2_5, obsidian_json_normalization, canonicalization, drift, lwx_s2_surfaced]
 ---
 
@@ -49,3 +49,8 @@ Recommend Option 2 (T4 skill) as primary; defer Option 4 unless T4 surfaces unex
 
 - M-LWX-03 S2 NEW FINDING F-S2-5 in plan file
 - Diff observed at 2026-05-13T05:35Z+ via `git diff` after operator's first Obsidian open of node.aDNA
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: skill_obsidian_canonicalize exists (the T4 canonicalization skill this forecast); drift documented-and-manageable. Status set to `resolved`; ratified at Champollion G0 (D2).

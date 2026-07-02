@@ -1,14 +1,15 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: medium
 created: 2026-06-23
-updated: 2026-06-23
-last_edited_by: agent_hestia
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/campaigns/campaign_production_tidy/ (P8 close)
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
 tags: [backlog, upstream, archive, archive_holder, so7, workspace_layout, production_tidy]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: name the **Archive holder** as a first-class workspace concept
@@ -31,3 +32,8 @@ tags: [backlog, upstream, archive, archive_holder, so7, workspace_layout, produc
 ## Why upstream
 
 Any workspace that lives long enough accumulates dead vaults; the holder is where they go. Naming it (and its non-vault status + census exception) prevents the per-node re-derivation and the recurring "is Archive.aDNA a vault?" drift. Companion to `idea_upstream_skill_project_archive` (the flow) and `idea_upstream_archive_ledger_schema` (the registry).
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

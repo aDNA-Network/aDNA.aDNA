@@ -1,14 +1,15 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: medium
 created: 2026-06-23
-updated: 2026-06-23
-last_edited_by: agent_hestia
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/campaigns/campaign_workspace_houseclean/disposition_ledger_v2.md (§C; promoted at PT P8 close)
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
 tags: [backlog, upstream, shim, registry, ledger, schema, archive, shim_class_taxonomy, production_tidy]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: a canonical **shim / archive ledger schema** + shim-class taxonomy
@@ -28,3 +29,8 @@ Registry row fields: **id · subject (from→to) · class** (from the taxonomy a
 ## Why upstream
 
 The shim-window discipline is only enforceable if the row schema + class taxonomy are shared — otherwise each node's health-check re-learns which shims it can even *see*. Natural home: the template's shim-ledger schema doc, referenced by `skill_node_health_check` and `idea_upstream_shim_window_discipline`. Companion to `idea_upstream_archive_category` + `idea_upstream_skill_project_archive`.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

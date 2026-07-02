@@ -1,11 +1,12 @@
 ---
 type: backlog_idea
-status: planned
+status: accepted
 priority: medium
 created: 2026-04-04
-last_edited_by: agent_init
+last_edited_by: agent_rosetta
 tags: [backlog, documentation, quality]
-updated: 2026-04-13
+updated: 2026-07-02
+champollion_mission: M4.3
 ---
 
 # Idea: Inner README III Review
@@ -18,3 +19,8 @@ updated: 2026-04-13
 
 ## Origin
 campaign_adna_polish pre-merge audit — inner README scored well on links/counts but content quality was not evaluated.
+
+
+## Champollion G0 disposition — M (M1.1, 2026-07-02)
+
+**ACCEPT → fix/mission.** Owning mission: `M4.3` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).

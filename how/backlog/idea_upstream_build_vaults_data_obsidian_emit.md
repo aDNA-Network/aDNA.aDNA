@@ -1,17 +1,19 @@
 ---
 type: backlog_idea
-status: open
+status: deferred
 priority: medium-high
 finding_id: OBS-UP-5   # Obsidian.aDNA P1 synthesis §5 #5 · ADR-004 Tier-0 build
 source_vault: Obsidian.aDNA (Seshat)
 source_session: session_stanley_20260610_m06_s1_foundations
 routes_to: aDNA.aDNA scripts/build_vaults_data.mjs (ADR-023 generator)
 created: 2026-06-10
-updated: 2026-06-10
-last_edited_by: agent_seshat
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, idea_upstream, obsidian, cross_vault_graph, canvas, mermaid, adr_004, adr_023, adr_033, m06]
 related_backlog:
   - aDNA.aDNA/how/backlog/idea_upstream_vault_card_edge_population.md   # the durable edge source (ADR-033 retirement path)
+deferred_owner: "Hestia / Home.aDNA"
+deferred_trigger: "reconcile against the v8.0 topology-canvas (Hearthstone lane; may be partly superseded)"
 ---
 
 # idea_upstream — add an **Obsidian-artifact emit** (graph note + `.canvas`) to the ADR-023 generator, opt-in flag
@@ -45,3 +47,8 @@ Obsidian.aDNA M06 exit-gate 2 ("cross-vault-graph homepage") consumes this artif
 - aDNA.aDNA: `adr_023_registry_generator.md` · `adr_033_network_edge_overlay_adaptation_seam.md` · `scripts/build_vaults_data.mjs`
 
 > **Triage 2026-06-23 (Cornerstone v8.1):** DEFERRED → Hestia/Hearthstone lane (v8.0 topology-canvas + ontology likely moved this). ([[coord_2026_06_22_seshat_to_rosetta_cornerstone_v81_landing]] reconciliation; [[adr_038_combined_v81_release]]).
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: Hestia / Home.aDNA. Trigger: reconcile against the v8.0 topology-canvas (Hearthstone lane; may be partly superseded). Ratified at Champollion G0 (D2).

@@ -3,14 +3,14 @@ idea_id: idea_interactive_decision_surface
 type: backlog
 title: "Interactive Decision-Surface — agent-authored web forms for heavy operator-gate interactions"
 category: tooling
-status: proposed
+status: resolved
 priority: medium-high
 effort: plan
 proposed_by: agent_stanley
 proposed_date: 2026-05-21
 created: 2026-05-21
-updated: 2026-05-21
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 routes_to_campaign: campaign_adna_serious_tool_readiness
 routes_to_mission_forecast: M3.0.5
 north_star_metric: "easy and fluid way to build/operate/utilize context graphs"
@@ -233,3 +233,8 @@ This backlog idea opens the door. Future M3.0.5 mission (forecast row added at v
 - Predecessor pattern (chat-text + `AskUserQuestion`): `aDNA.aDNA/CLAUDE.md` Standing Orders + `aDNA.aDNA/how/skills/` (no current decision-surface skill — this is the gap)
 - LatticeAgent context-harness: `LatticeAgent.aDNA/CLAUDE.md` — agent-side authoring substrate; LatticeAgent + decision-surface may co-evolve at P4 / P5
 - Obsidian webviewer core plugin: ENABLED per M3.1 S1 recon — provides one of the in-vault rendering paths for the HTML file
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: shipped as the ISS system (skill_create_iss + ADR-028/029, workspace Standing Rule 8; iss wrappers live). Status set to `resolved`; ratified at Champollion G0 (D2).

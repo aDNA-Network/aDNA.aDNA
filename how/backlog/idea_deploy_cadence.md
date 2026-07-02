@@ -1,12 +1,12 @@
 ---
 type: backlog_idea
 created: 2026-06-09
-updated: 2026-06-10
+updated: 2026-07-02
 status: resolved   # cadence ratified at the audit P2 (2026-06-10); see Resolution
 priority: high
 source: campaign_adna_network_audit (P0 audit + P1-S1)
 tags: [backlog, idea, deploy, process, adna_network, credibility]
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 ---
 
 # Idea — establish an adna.network deploy cadence
@@ -36,3 +36,8 @@ Resolve at the audit campaign's **P2** (`mission_ana_p2_closeout_realign`) — f
 4. **Drift guard** (the live-matches-HEAD check on vault count + version) → routed to the **E7 capstone** launch-verify scope (with gate-14's consistency checks as the build-side half).
 
 Candidate **Campaign Standing Order #21** (alongside the MAX-III candidate SO #20) — ratify at the Phase-5 exit gate per campaign SO #14. Status set `resolved`; file retained per archive-never-delete.
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: cadence + hotfix + embargo ratified at audit P2; drift-guard sub-item verified at launch (M6.x). Status set to `resolved`; ratified at Champollion G0 (D2).

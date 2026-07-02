@@ -1,13 +1,15 @@
 ---
 type: backlog
 idea_id: idea_diagram_missions_herb
-status: proposed
+status: deferred
 priority: high
 created: 2026-04-24
-updated: 2026-04-24
+updated: 2026-07-02
 last_edited_by: agent_rosetta
 tags: [backlog, visual, diagrams, herb, canvasforge, dual-method]
 target_phase: Phase 7 D8 (Interaction Depth, cycles 71-80) + Phase 8 seed
+deferred_owner: "Rosetta + Canvas.aDNA (Mondrian)"
+deferred_trigger: "post-launch visual-layer push (reroute Herb/CanvasForge refs; concept pages already work with prose+mermaid)"
 ---
 
 # Idea: Herb-Commissioned Diagram Missions for aDNA Key Concepts
@@ -106,3 +108,8 @@ Create a mission M36 that runs in parallel with D5-D7, with Herb as the external
 - [[../../what/concepts/concept_convergence|concept_convergence]] — prime candidate for Concept 2 figure
 - [[../../how/campaigns/campaign_rosetta/missions/artifacts/aar_phase7_d4|aar_phase7_d4]] — D4 AAR notes media placeholders as biggest remaining Delight gap
 - [[../../how/skills/skill_dual_audience_review|skill_dual_audience_review]] — review gate for every delivered figure
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: Rosetta + Canvas.aDNA (Mondrian). Trigger: post-launch visual-layer push (reroute Herb/CanvasForge refs; concept pages already work with prose+mermaid). Ratified at Champollion G0 (D2).

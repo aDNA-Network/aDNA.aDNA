@@ -2,15 +2,16 @@
 type: idea
 idea_id: idea_campaign_reopen_reconciliation_protocol
 title: "Reopen-reconciliation protocol — diff a dormant campaign's terminal target vs the release CHANGELOG before resuming"
-status: proposed
+status: accepted
 priority: medium
 effort: plan
 created: 2026-07-01
-updated: 2026-07-01
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 campaign_id: campaign_adna_serious_tool_readiness
 upstream_target: aDNA.aDNA how/campaigns/AGENTS.md (candidate standard touch — a reopen step, sibling to §5 Completion)
 tags: [idea, campaign, reopen, reconciliation, dormant_campaign, changelog, upstream_candidate, str]
+champollion_mission: M3.2
 ---
 
 # Idea — Reopen-reconciliation protocol for dormant campaigns
@@ -35,3 +36,8 @@ tags: [idea, campaign, reopen, reconciliation, dormant_campaign, changelog, upst
 ## Graduation target
 
 Candidate standard touch: a **reopen** clause in `how/campaigns/AGENTS.md` (sibling to the §5 close protocol), or a small `skill_campaign_reopen_reconciliation`. Related: [[idea_iii_campaign_pattern]] (review→improve at scale). Decide at the next campaign-methodology review.
+
+
+## Champollion G0 disposition — M (M1.1, 2026-07-02)
+
+**ACCEPT → fix/mission.** Owning mission: `M3.2` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).

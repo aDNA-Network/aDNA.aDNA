@@ -1,10 +1,10 @@
 ---
 type: backlog_idea
 created: 2026-06-10
-updated: 2026-06-10
-status: idea
+updated: 2026-07-02
+status: resolved
 priority: medium
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 author: rosetta (aDNA.aDNA)
 trigger: audit P2 / E6 seeding (2026-06-10) — operator directive "users can easily install/setup their own local adna system directly from the GitHub"
 informational: false
@@ -30,3 +30,8 @@ mkdir -p ~/aDNA && cd ~/aDNA && git clone --depth 1 https://github.com/LatticePr
 - Companion precedent: `how/skills/migrate_workspace_root.sh` (aDNALabs Session D, 2026-06-10, commit `9653713`) — the *migration* shell companion for legacy operators; this idea is the *fresh-install* analog. If upstream ever does want a script, it should follow that one's KEEP-PROSE/auditable discipline.
 - Carried by **E6 / M5.13 O4** (upstream follow-through, c174); files per `skill_upstream_contribution` (operator approval per filing).
 - Related: [[idea_upstream_onboarding_workspace_default_adna]] (the README flip PR this rides behind) · [[idea_upstream_skill_workspace_path_migration]].
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: superseded by the clone-and-run image aDNA-Network/aDNA (install_truth.json + gate-12 + 4-command flow); launch README<->adna.network verify rides M4.1/M4.3. Status set to `resolved`; ratified at Champollion G0 (D2).

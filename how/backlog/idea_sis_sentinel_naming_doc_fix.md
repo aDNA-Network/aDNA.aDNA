@@ -1,15 +1,17 @@
 ---
 type: backlog
-status: open
+status: deferred
 created: 2026-05-24
-updated: 2026-05-24
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 priority: low
 scope: docs
 target_vault: SiteForge.aDNA
 source_vault: node.aDNA
 source_mission: campaign_lattice_compliance_upgrade M20 (S1 Phase X)
 tags: [backlog, siteforge, sis, sentinel, docs, doc_fix, finding_e_sibling]
+deferred_owner: "Astro.aDNA + Home.aDNA siteforge wrapper"
+deferred_trigger: "opportunistic (1-line doc fix in another vault; not aDNA.aDNA-owned)"
 ---
 
 # SIS sentinel filename — docs say `<gate>.html.pending`, runtime writes `<gate>.pending`
@@ -40,3 +42,8 @@ Recommendation: **option 1 (update the docs)**. The runtime behavior is the de-f
 - `node.aDNA/how/gates/m20_round_*.pending` (concrete artifacts from M20 S1)
 - M20 S1 close — session file `session_stanley_20260523_205241_m20_s1_vault_cards.md`
 - Coord-memo on the Finding E sibling: `node.aDNA/who/coordination/coord_2026_05_23_sis_t1a_probe_path_root_cause.md`
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: Astro.aDNA + Home.aDNA siteforge wrapper. Trigger: opportunistic (1-line doc fix in another vault; not aDNA.aDNA-owned). Ratified at Champollion G0 (D2).

@@ -1,14 +1,15 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: high
 created: 2026-06-23
-updated: 2026-06-23
-last_edited_by: agent_hestia
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/campaigns/campaign_production_tidy/pt04b_rename_ref_sweep_playbook.md (promoted at P8 close)
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
 tags: [backlog, upstream, rename, ref_sweep, wrapper_refederation, shim, recipe, production_tidy]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: `skill_graph_rename` — a canonical rename + ref-sweep recipe for `<Name>.aDNA` graphs
@@ -34,3 +35,8 @@ TappInterface→TappProtocol · SpeechForge→Oration · VAASLattice→VAAS · C
 ## Why upstream
 
 Renames are inevitable in any maturing multi-vault workspace (brand/role realignment, bare-role-canonical doctrine). The 7-event convergence makes the flow template-ready. Natural home: `how/skills/skill_graph_rename.md`, cross-referenced from `skill_project_fork` and the merge recipe (`idea_upstream_graph_merge_recipe`). Pairs with the shim-window + recon-at-execution disciplines.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

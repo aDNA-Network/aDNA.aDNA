@@ -1,14 +1,14 @@
 ---
 type: backlog_idea
-status: open
+status: resolved
 priority: medium-high
 routes_to_campaign: campaign_obsidian_deployment_stabilization
 routes_to_track: T2  # workspace layout idempotency
 finding_id: F-S2-4
 source_session: session_stanley_20260513_043947_mlwx03_s2
 created: 2026-05-13
-updated: 2026-05-13
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, f_s2_4, obsidian_first_open, workspace_json_clobber, setup_sh_reset_layout, lwx_s2_surfaced]
 ---
 
@@ -46,3 +46,8 @@ Recommend Option 1 (add `--reset-layout` flag as distinct mode; keeps `--force` 
 - M-LWX-03 S2 NEW FINDING F-S2-4 section in plan file
 - M-LWX-03 S2 architectural discovery: operator's first Obsidian open clobbered workspace.json (verified by `grep -c notebook-navigator workspace.json` returning 0 vs workspace.default.json returning 3)
 - Path α workspace.json restoration mid-S2 was the operator-facing fix; T2 generalizes it
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: --reset-layout flag + first-open runbook folded into v8.1 (setup_sh_reset_layout_flag). Status set to `resolved`; ratified at Champollion G0 (D2).

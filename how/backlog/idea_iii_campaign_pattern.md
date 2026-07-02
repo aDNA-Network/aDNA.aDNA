@@ -2,15 +2,17 @@
 type: idea
 idea_id: idea_iii_campaign_pattern
 title: "The 'III campaign' — strategic-scale III that builds its own driving context/processes/personas"
-status: graduating
+status: deferred
 priority: medium
 effort: plan
 created: 2026-06-27
-updated: 2026-06-28
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 campaign_id: campaign_looking_glass
 upstream_target: III.aDNA
 tags: [idea, iii, iii_campaign, pattern, upstream_candidate, looking_glass]
+deferred_owner: "III.aDNA (Argus)"
+deferred_trigger: "Argus opens campaign_h (handed off via coord memo; Looking Glass pilot + pattern packet done)"
 ---
 
 # The "III campaign" pattern
@@ -62,3 +64,8 @@ This is an **upstream-class idea targeting III.aDNA** (III owns the framework). 
 ## Related
 
 - [[how/campaigns/campaign_looking_glass/campaign_looking_glass|campaign_looking_glass]] (the pilot) · [[how/skills/skill_iii_cycle|skill_iii_cycle]] · [[how/skills/skill_decadal_aar|skill_decadal_aar]] · [[how/campaigns/campaign_rosetta/campaign_rosetta|campaign_rosetta]] (Phase-7 tactical III loop precedent).
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: III.aDNA (Argus). Trigger: Argus opens campaign_h (handed off via coord memo; Looking Glass pilot + pattern packet done). Ratified at Champollion G0 (D2).

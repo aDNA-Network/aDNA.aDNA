@@ -3,13 +3,14 @@ type: backlog_idea
 status: accepted
 priority: high
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-07-02
 last_edited_by: agent_rosetta
 filed_from: Home.aDNA planning session (Operation Hearthstone — plan does-the-home-dir-adaptive-fern)
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
 github_issue: TBD
 tags: [backlog, upstream, workspace_router, home_adna, node_vault_detection, cold_start, node_bootstrap, operation_hearthstone, v8]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: Add a "Node Vault Detection / offer to bootstrap Home" step to the workspace-router template
@@ -48,3 +49,8 @@ Net effect: out of the box, the base system never *offers* to create `Home.aDNA/
 1. **Template genericity** — the router template must not leak this fleet's vault list / Operations / campaign banner. Mitigation: lift only the Step 0.1–0.4 skeleton; everything else is node-local.
 2. **Fresh-install false-positive** — must correctly distinguish "node with vaults but no Home" (offer) from "brand-new empty clone" (skip, per Step 0.4) so a first-run user isn't pushed into node bootstrap before they have any project.
 3. **Router-source duplication** — confirm the canonical router source-of-truth (`what/docs/templates/workspace_claude_md.template` vs the released `.adna/how/templates/template_workspace_claude.md`) and edit one, per `skill_template_release` + ADR-034.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

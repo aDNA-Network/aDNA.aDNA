@@ -1,14 +1,16 @@
 ---
 type: idea
 created: 2026-05-22
-updated: 2026-05-22
-status: open
+updated: 2026-07-02
+status: deferred
 priority: low
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 source_mission: node.aDNA campaign_lattice_compliance_upgrade M19 (Finding D)
 target_vault: SiteForge.aDNA
 target_subsystem: what/lib/iss/tokens/
 tags: [backlog, iss, persona_token, hestia, node_adna, cross_vault, upstream_contribution]
+deferred_owner: "Astro.aDNA persona"
+deferred_trigger: "operator greenlight / when Home needs a native hestia ISS (currently uses the tokyo fallback)"
 ---
 
 # ISS persona-token addition: hestia
@@ -57,3 +59,8 @@ Cross-vault. PR upstream from node.aDNA → SiteForge.aDNA. Federation disciplin
 ## Notes for the implementer
 
 The other 6 personas-per-token files are themed around specific reviewer / authoring contexts. Hestia is a **vault-host persona** (governs the per-node operational vault). When designing the token: think "warm dev-lab hearth tending the inventory + memberships of one node" not "reviewer adjudicating an artifact". This is a slight shift in tone vs. the existing 6.
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: Astro.aDNA persona. Trigger: operator greenlight / when Home needs a native hestia ISS (currently uses the tokyo fallback). Ratified at Champollion G0 (D2).

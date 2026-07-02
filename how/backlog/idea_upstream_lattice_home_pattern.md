@@ -1,15 +1,16 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: medium
 created: 2026-05-29
-updated: 2026-05-29
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 filed_from: aDNA.aDNA/how/campaigns/campaign_lattice_home_pattern/missions/mission_lhp_m1_pattern_lift.md
 filing_authorization: skill_upstream_contribution
 upstream_target: LatticeProtocol/Agentic-DNA
 github_issue: TBD
 tags: [backlog, upstream, lattice_home, splash, terminal_ux, vault_portable, cold_start, four_tier_pipeline, dual_gated_activation, cmux_canonical_implementation, adna_canonical_implementation, phase_6_propagation, ecosystem_pattern]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: Promote the Lattice Home splash pattern (terminal cold-start 5-block ASCII surface) into the upstream aDNA standard
@@ -76,3 +77,8 @@ The 4 ideas form a coherent **vault-portable UX layer** for the standard: README
 1. **Setup.sh prompt fatigue** — adding a 5th opt-in prompt at fork-time may push beyond operator patience. Mitigation: combine with sibling upstream-promotion prompts (README style guide + workspace router + credentials) into a single 3-question "post-fork polish" block.
 2. **Cross-vault drift** — each adopting vault may diverge from the upstream template. Mitigation: SO-LH-1 drift audit gate; CMux + aDNA.aDNA serve as anchor implementations.
 3. **Shell-portability gap** — current skill is zsh-default; bash/fish/nu adaptations are documented but not first-class. Mitigation: skill includes "Cross-shell adaptations" section; bash/fish first-class support deferred to a follow-up upstream issue.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

@@ -3,8 +3,8 @@ type: backlog
 idea_class: follow_on
 title: "Flagged follow-ons from the vault-wide currency sweep (broader-than-currency drift)"
 created: 2026-06-29
-updated: 2026-06-29
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 status: completed
 resolved_by: mission_currency_followon_closeout (2026-06-29)
 source: mission_vault_wide_currency_sweep (REVIEW-set + denominator-honest residual grep)
@@ -40,3 +40,8 @@ The [[how/missions/mission_vault_wide_currency_sweep|vault-wide currency sweep]]
 | 6 | tools v2.2 + adna.dev | **CLOSED** — docstrings/`$id` → v2.3/adna.network (logic version-agnostic; schema has no internal consumers). |
 
 Refinement-of-record: #4 turned out to be a **dated worked example** (provenance), so the honest fix was the reference list + a currency note, not a wholesale re-author. Structural siblings (template-clutter, rename-residue) live in the **Berthier fleet-defects** inbound (operator-gated; separate standard-maintenance mission).
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: CLOSED by mission_currency_followon_closeout (all 6 dispositioned, gates 304/304). Status set to `completed`; ratified at Champollion G0 (D2).

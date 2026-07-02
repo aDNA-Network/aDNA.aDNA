@@ -3,8 +3,8 @@ type: backlog
 idea_class: follow_on
 title: "Vault-wide currency sweep (out-of-slice drift beyond Looking Glass)"
 created: 2026-06-28
-updated: 2026-06-29
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 status: completed
 resolved_by: mission_vault_wide_currency_sweep (2026-06-29)
 source: campaign_looking_glass (M4 discovery; out of the chartered site-backing slice)
@@ -39,3 +39,8 @@ The Looking Glass charter bounds Subject B to the site-backing slice (operator d
 **CLOSED** by [[how/missions/mission_vault_wide_currency_sweep|mission_vault_wide_currency_sweep]] (single `vault_maintenance` III cycle). The clean currency class — standard version stamps (`v2.1`/`v2.2`→`v2.3`) + canonical public-repo URLs (`LatticeProtocol/Agentic-DNA`→`aDNA-Network/aDNA`) — was swept across **29 out-of-slice content files** (FIX-set residual 0; build 179 pages/0 err; gates **304/304**, zero regression). The same do-not-touch guardrails held (ADRs / iii_results / coord / VISION / semver-examples / Archivist audit-examples untouched).
 
 The bounded set in the inventory above was honored; six items surfaced as **broader-than-currency drift** (a normative §3.5 convention, ecosystem-spec vault-renames, private-remote verification, an ontology-doc 14→16 refresh, historical-KEEP, and tool/schema currency) and were **flagged-not-fixed** → [[how/backlog/idea_currency_sweep_flagged_followons|idea_currency_sweep_flagged_followons]].
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: CLOSED (29 files swept, gates 304/304; 6 items spun to flagged-followons, also closed). Status set to `completed`; ratified at Champollion G0 (D2).

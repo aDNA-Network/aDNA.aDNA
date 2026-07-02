@@ -1,11 +1,12 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: medium
 created: 2026-05-24
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [backlog, idea, upstream, doctrine, agent_protocol, askuserquestion, contextcompass_origin]
-updated: 2026-05-24
+updated: 2026-07-02
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea — Upstream Doctrinal Pattern: AskUserQuestion as Operator-Resolution Discipline
@@ -59,3 +60,8 @@ ContextCompass post-planning strategic-review S16 ceremony 2026-05-24 — R10(b)
 ## When to integrate
 
 Operator-discretionary; no execution-campaign dependency. Earliest natural opportunity: at the next aDNA-standard governance-doctrine review pass. Pairs well with R10(a) `idea_upstream_template_ratification_record.md` — both upstream items emerged from the same strategic-review §1.2 gap-call-out analysis and reflect doctrinal patterns the aDNA standard could absorb.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

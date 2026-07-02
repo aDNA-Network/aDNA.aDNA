@@ -3,12 +3,12 @@ type: backlog_idea
 idea_id: idea_upstream_inventory_entity_type
 title: "Add `inventory` entity type to v8.0+ aDNA standard ontology (under WHAT)"
 category: governance
-status: accepted
+status: resolved
 priority: medium
 effort: plan
 proposed_by: agent_stanley
 proposed_date: 2026-05-11
-updated: 2026-06-18
+updated: 2026-07-02
 upstream: true
 target_version: "v8.0"
 last_edited_by: agent_rosetta
@@ -75,3 +75,8 @@ Companion idea: `idea_upstream_identity_entity_type.md` (proposes the parallel W
 - `aDNA.aDNA/how/skills/skill_upstream_contribution.md` — the upstream-contribution skill protocol
 - `node.aDNA/what/inventory/` — the canonical reference implementation (on host Mac)
 - `node.aDNA/what/inventory/AGENTS.md` — entity-type protocol document
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: ADR-035 accepted; inventory (WHAT) materialized to the public template at Hearthstone P5. Status set to `resolved`; ratified at Champollion G0 (D2).

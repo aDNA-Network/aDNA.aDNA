@@ -1,14 +1,15 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: medium
 created: 2026-06-10
-updated: 2026-06-10
-last_edited_by: agent_hestia
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/campaigns/campaign_workspace_houseclean/ (charter v2.0 + disposition_ledger_v2.md; Operation Spring Clean SC-8)
 filing_authorization: skill_upstream_contribution
 upstream_target: LatticeProtocol/aDNA
 tags: [backlog, upstream, skill_workspace_spring_clean, houseclean, disposition_ledger, operator_gate, tiered_execution, audit_first, hestia]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: `skill_workspace_spring_clean` — audit-first workspace houseclean with ONE operator gate and tiered execution
@@ -63,3 +64,8 @@ The shape (audit → ledger → one gate → tiered waves → close) is workspac
 Natural home: `how/skills/skill_workspace_spring_clean.md` + a disposition-ledger template in
 `how/templates/`. Pairs with `skill_project_archive` + `skill_second_genesis` + the shim-window
 discipline (all filed this batch).
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

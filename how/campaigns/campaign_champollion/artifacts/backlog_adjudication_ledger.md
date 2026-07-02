@@ -8,11 +8,14 @@ updated: 2026-07-02
 last_edited_by: agent_rosetta
 status: active   # RATIFIED at G0 2026-07-02 (D2, as drafted); M1.1 executes exactly this set
 ratified: "G0 2026-07-02 — D2 RATIFIED AS DRAFTED; record: how/gates/champollion_p0_gate.output.md"
+executed: "2026-07-02 — M1.1 applied all 91 dispositions (28 discharged · 31 fold · 13 mission · 17 defer · 2 decline); session_stanley_20260702T045807Z_champollion_m1_1"
 executor_tier: opus
 tags: [artifact, champollion, backlog, adjudication, ledger, dispositions, lane_report]
 ---
 
 > ✅ **RATIFIED AT G0 (2026-07-02, as drafted — now decided law; record: `how/gates/champollion_p0_gate.output.md` D2). [[../campaign_champollion|M1.1]] executes exactly this set; deviations require a new gate.** Prepared by evidence Lane 1 (opus tier) from a full read of all 91 `how/backlog/*.md` + the 3 stale-`proposed` ADRs; reviewed at fable tier. Counts: **27 ALREADY-DISCHARGED · 31 ACCEPT→template-fold · 14 ACCEPT→immediate-fix/mission · 17 DEFER · 2 DECLINE-stale**; rings: **9 Ring-1 · 34 Ring-2 · 48 post-launch**. Cross-refs: [[order_of_battle|Order of Battle]] §6 · [[findings_ledger|F-CHM-012]].
+
+> ✔ **EXECUTED — M1.1, 2026-07-02** (`session_stanley_20260702T045807Z_champollion_m1_1`, opus). All 91 ratified items dispositioned in `how/backlog/`: **28 ALREADY-DISCHARGED · 31 ACCEPT→template-fold (`fold_batch: champollion_m6_1_rc`) · 13 ACCEPT→fix/mission (`champollion_mission:`) · 17 DEFER (`deferred_owner`/`deferred_trigger`) · 2 DECLINE-stale**. Validator: full conformance + zero governance drift; file count unchanged (no deletions, SO-6). The applied split reads 28/13 vs this ledger's drafted 27/14 soft split — the +1 discharged / −1 fix-mission is `idea_upstream_node_vault_bare_role_rename` (already `resolved`, acknowledged RESOLVED inline here rather than in its own row), classified truthfully as discharged. **Out of scope (escalated, [[findings_ledger|F-CHM-013]]):** `idea_campaign_execution_automation` + `idea_upstream_model_tier_mission_fields` were filed after this ledger's read and are not in the ratified 91 — left untouched. The 3 stale ADRs (adr_003/012/027) are M1.2's, not M1.1's.
 
 # Lane 1 — Backlog Adjudication Prep (Operation Champollion Phase 0)
 

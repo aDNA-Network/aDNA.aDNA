@@ -1,12 +1,13 @@
 ---
 type: backlog_idea
 created: 2026-06-09
-updated: 2026-06-09
-status: open
+updated: 2026-07-02
+status: accepted
 priority: high
 source: campaign_adna_network_audit (P1-S1 fix → pattern)
 tags: [backlog, idea, upstream, adr_023, registry_generator, privacy, sanitizer]
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
+champollion_mission: M1.2
 ---
 
 # Idea (upstream) — public-projection sanitizer in the ADR-023 registry generator
@@ -25,3 +26,8 @@ This is a **framework-level** gap, not just an aDNA.aDNA one: any vault running 
 
 ## Disposition
 File via `how/skills/skill_upstream_contribution.md` at the audit campaign's **P2** (or sooner if the operator approves). Pattern owner: the ADR-023 registry generator. Related: [[project_adnalabs_brand_pivot]] (aDNA.aDNA = the ADR-023 generator), Home.aDNA local-by-default (Rule 4).
+
+
+## Champollion G0 disposition — M (M1.1, 2026-07-02)
+
+**ACCEPT → fix/mission.** Owning mission: `M1.2` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).

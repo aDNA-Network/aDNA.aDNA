@@ -3,17 +3,18 @@ type: backlog_idea
 idea_id: idea_upstream_state_md_read_hint
 title: "Add Heavy-File Read Convention to v8.0+ AGENTS.md template"
 category: doctrine
-status: proposed
+status: accepted
 priority: medium
 effort: tiny  # < 0.5 session — single-section insert in upstream AGENTS.md template
 proposed_by: agent_stanley
 proposed_date: 2026-05-19
-updated: 2026-05-19
+updated: 2026-07-02
 upstream: true
 target_version: "v8.0"
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [backlog, upstream, doctrine, agents_md, heavy_file_read, offset_limit_convention, context_budget]
 created: 2026-05-19
+fold_batch: champollion_m6_1_rc
 ---
 
 # Upstream Contribution — Heavy-File Read Convention in `.adna/AGENTS.md`
@@ -71,3 +72,8 @@ After merge:
 - **At v8 P6 (campaign close + v8.0 tag)**: this backlog placeholder is consumed by a v8 P6 mission that lands the hint in `.adna/AGENTS.md` upstream. Single-commit additive change pattern (4th instance after ADR-008 + `e3b3bcc` + `8673383`).
 - **Promotion criteria**: at v8 P6, confirm (a) the hint at `aDNA.aDNA/AGENTS.md` survived ≥ 3 sessions of cold-start use without negative feedback; (b) the M2.1 S3 AAR didn't surface contraindications; (c) no operator override requested. If all (a)(b)(c) pass, the v8 P6 mission lands the upstream commit.
 - **Anti-promotion gate**: if M2.1 S3 surfaces a contraindication (e.g., the hint causes agents to skip Reads they should make, or the offset+limit defaults are too aggressive), defer to v8.1+ or revise the hint text before upstream propagation.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

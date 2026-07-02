@@ -1,20 +1,22 @@
 ---
 type: backlog_idea
-status: open
+status: deferred
 priority: high   # the load-bearing D10 prerequisite — and the ratified ADR-033 retirement path
 finding_id: OBS-UP-6   # Obsidian.aDNA P1 synthesis §5 #6 · drift D10
 source_vault: Obsidian.aDNA (Seshat)
 source_session: session_stanley_20260610_m06_s1_foundations
 routes_to: Home.aDNA vault cards (Hestia executes; schema/process owned upstream) + aDNA.aDNA network_edges.yaml retirement
 created: 2026-06-10
-updated: 2026-06-10
-last_edited_by: agent_seshat
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, idea_upstream, vault_cards, edge_population, d10, adr_004, adr_033, federation_topology, m06]
 related_backlog:
   - aDNA.aDNA/how/backlog/idea_upstream_build_vaults_data_obsidian_emit.md   # the consumer that wants durable edges
 related_coordination:
   - Home.aDNA/who/coordination/coord_2026_06_10_obsidian_to_hestia_d10_edge_population.md   # the Seshat→Hestia ask (filed same day)
   - aDNA.aDNA/who/coordination/coord_2026_06_10_rosetta_to_hestia_vault_card_public_fields.md  # sibling card-field ask (display/taglines) — same edit surface, batchable
+deferred_owner: "Hestia / Home.aDNA + Rosetta"
+deferred_trigger: "Hearthstone lane (execute ADR-033 retirement path; overlay renders 18 edges today)"
 ---
 
 # idea_upstream — populate the vault-card **relationship fields** (D10) and retire the `network_edges.yaml` overlay
@@ -46,3 +48,8 @@ At P1 (2026-05-29) the generator emitted `edges:[]` because **no card declared r
 - aDNA.aDNA `adr_033_network_edge_overlay_adaptation_seam.md` · `site/src/data/network_edges.yaml` (header: the upstream plan) · `scripts/build_vaults_data.mjs` (merge precedence)
 
 > **Triage 2026-06-23 (Cornerstone v8.1):** DEFERRED → Hestia/Hearthstone lane. ([[coord_2026_06_22_seshat_to_rosetta_cornerstone_v81_landing]] reconciliation; [[adr_038_combined_v81_release]]).
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: Hestia / Home.aDNA + Rosetta. Trigger: Hearthstone lane (execute ADR-033 retirement path; overlay renders 18 edges today). Ratified at Champollion G0 (D2).

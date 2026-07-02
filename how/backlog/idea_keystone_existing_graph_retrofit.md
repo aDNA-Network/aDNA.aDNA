@@ -1,11 +1,13 @@
 ---
 type: idea
-status: proposed
+status: deferred
 created: 2026-06-20
-updated: 2026-06-22
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 campaign_id: campaign_keystone
 tags: [idea, keystone, retrofit, deployment_graph, four_wrappers]
+deferred_owner: "operator + per-vault personas"
+deferred_trigger: "operator greenlight per vault (Lab arm gated on Lab M-L13.6 deploy); Keystone core complete, this is follow-on"
 ---
 
 # Existing software-surface Platforms — adopt the deployment-graph paradigm (four-wrapper retrofit)
@@ -33,3 +35,8 @@ The paradigm is fresh ([[how/campaigns/campaign_keystone/campaign_keystone|Opera
 ## Next step
 
 When the operator greenlights, structure each retrofit as a mission in the target vault's campaign via a staged coord memo. Do not batch-write across vaults.
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: operator + per-vault personas. Trigger: operator greenlight per vault (Lab arm gated on Lab M-L13.6 deploy); Keystone core complete, this is follow-on. Ratified at Champollion G0 (D2).

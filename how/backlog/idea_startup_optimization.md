@@ -1,11 +1,13 @@
 ---
 type: backlog_idea
-status: proposed
+status: deferred
 priority: low
 created: 2026-04-04
-last_edited_by: agent_init
+last_edited_by: agent_rosetta
 tags: [backlog, performance, agent-efficiency]
-updated: 2026-04-13
+updated: 2026-07-02
+deferred_owner: "Rosetta"
+deferred_trigger: "post-launch efficiency pass (fold into a broader token pass; STATE.md cold-start cost now acute)"
 ---
 
 # Idea: Startup Sequence Optimization
@@ -18,3 +20,8 @@ Consolidate CLAUDE.md/MANIFEST.md overlap. Merge first-run detection into CLAUDE
 
 ## Origin
 campaign_adna_polish pre-merge efficiency audit — startup sequence redundancy analysis.
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: Rosetta. Trigger: post-launch efficiency pass (fold into a broader token pass; STATE.md cold-start cost now acute). Ratified at Champollion G0 (D2).

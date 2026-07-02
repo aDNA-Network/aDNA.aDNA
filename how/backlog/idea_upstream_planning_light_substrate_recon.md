@@ -3,19 +3,20 @@ type: backlog_idea
 idea_id: idea_upstream_planning_light_substrate_recon
 title: "Add a 'pre-flight substrate recon' step to planning-light campaign meta-planning (v8.0+)"
 category: doctrine
-status: proposed
+status: accepted
 priority: medium
 effort: tiny  # < 0.5 session — single-section insert in upstream charter template + 1 short skill note
 proposed_by: agent_stanley
 proposed_date: 2026-05-26
-updated: 2026-05-26
+updated: 2026-07-02
 upstream: true
 target_version: "v8.0"
 filed_from: node.aDNA/how/campaigns/campaign_node_credentials/missions/mission_node_creds_m06_documentation_sweep.md
 filing_authorization: skill_upstream_contribution
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [backlog, upstream, doctrine, planning_light, meta_planning, substrate_recon, charter_template, m00_protocol, stub_session_estimates, load_bearing_assertions]
 created: 2026-05-26
+fold_batch: champollion_m6_1_rc
 ---
 
 # Upstream Contribution — Pre-flight substrate recon for planning-light campaigns (v8.0+)
@@ -92,3 +93,8 @@ The skill `.adna/how/skills/skill_campaign_planning_light_meta_planning.md` (if 
 - `idea_upstream_credential_broker_template_inheritance.md` — sibling M06 carry-forward (filed same date)
 - `idea_upstream_single_writer_lease_for_inventory.md` — sibling M06 carry-forward (filed same date)
 - `node.aDNA/what/decisions/adr_002_credential_broker_pattern.md` §G2.1 — the amended ADR that documents the M02 pivot
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

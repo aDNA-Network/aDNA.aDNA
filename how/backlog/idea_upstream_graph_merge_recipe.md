@@ -1,14 +1,15 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted
 priority: high
 created: 2026-06-23
-updated: 2026-06-23
-last_edited_by: agent_hestia
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/campaigns/campaign_production_tidy/pt08b_merge_playbook.md (promoted at P8 close)
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
 tags: [backlog, upstream, merge, absorb, supersession, federation, merge_archive, recipe, production_tidy]
+fold_batch: champollion_m6_1_rc
 ---
 
 # Idea: `skill_graph_merge` — a canonical recipe for merging one `<Name>.aDNA` graph into another
@@ -34,3 +35,8 @@ LPWhitepaper→LatticeProtocol (the clean **proof** merge: 0 wrappers, 0 code) �
 ## Why upstream
 
 Merges follow naturally from category churn (split-then-recombine, predecessor→successor consolidation). The 3-event convergence — opened by a deliberate *proof* merge before the risky ones — is a reusable safety pattern. Natural home: `how/skills/skill_graph_merge.md`, sibling to `skill_graph_rename` + `skill_project_archive`.
+
+
+## Champollion G0 disposition — F (M1.1, 2026-07-02)
+
+**ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).

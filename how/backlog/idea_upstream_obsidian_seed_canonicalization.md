@@ -7,8 +7,8 @@ source_vault: Obsidian.aDNA (Seshat)
 source_session: session_stanley_20260610_m06_s1_foundations
 routes_to: .adna template (.obsidian/ payload + fork-time materialization)
 created: 2026-06-10
-updated: 2026-06-10
-last_edited_by: agent_seshat
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, idea_upstream, obsidian, seed, canonicalization, batteries_included, rich_canonical, adr_007_posture, m06]
 related_backlog:
   - aDNA.aDNA/how/backlog/backlog_F_S2_6_nn_data_json_not_shipped.md       # NN data.json gap this seed closes
@@ -44,3 +44,8 @@ Fold-in (copy the payload into `.adna/.obsidian/`) vs **federation-reference** (
 - Fleet proof: Operation Open Stacks M02–M05 (8/8 healthy, `health_check.py --fleet`)
 
 > **Triage 2026-06-23 (Cornerstone v8.1):** RESOLVED — fold-in bundle resolves the open design choice (ADR-034 standalone image). Shipped in the combined v8.1 release (held at push gate; [[adr_038_combined_v81_release]]). See [[coord_2026_06_23_rosetta_to_seshat_cornerstone_v81_landed]].
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: the rich-canonical fold-in bundle shipped v8.1 / ADR-034 standalone image (resolves F-S2-2/6). Status set to `resolved`; ratified at Champollion G0 (D2).

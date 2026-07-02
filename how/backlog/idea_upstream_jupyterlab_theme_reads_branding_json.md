@@ -1,11 +1,13 @@
 ---
 type: backlog_idea
-status: proposed
+status: deferred
 priority: low
 created: 2026-05-28
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [backlog, idea, upstream, jupyterlab_theme, multi_tenant_branding, latlab_extensions, hub_branding, lighthouse_polish_origin]
-updated: 2026-05-28
+updated: 2026-07-02
+deferred_owner: "Lab.aDNA (Galileo) + latlab"
+deferred_trigger: "first non-purple partner Lab deployment"
 ---
 
 # Idea — Upstream: `@latlab/theme-latlab-dark` JupyterLab extension should read `~/.latlab/branding.json` at install-time
@@ -69,3 +71,8 @@ Stanley_l1 is the canonical-Lattice purple deployment — the current hardcoded 
 - **Investigation**: 1 session (read theme.py + install_theme_extension.py + branding.json schema; design substitution path).
 - **Implementation**: 1–2 sessions (refactor theme.py + add fallback + add CLI refresh command + tests).
 - **Rollout**: opportunistic; canonical-Lattice purple unchanged, so no migration risk for stanley_l1.
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: Lab.aDNA (Galileo) + latlab. Trigger: first non-purple partner Lab deployment. Ratified at Champollion G0 (D2).

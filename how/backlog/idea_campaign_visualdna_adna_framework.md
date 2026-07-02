@@ -4,7 +4,7 @@ backlog_id: idea_campaign_visualdna_adna_framework
 title: "VisualDNA.aDNA — Framework.aDNA for visual-DNA-per-entity standard ('any context graph becomes its own cartoon show')"
 proposed_by: stanley
 proposed_at: 2026-05-23
-status: stub_vault_bootstrapped_awaiting_pilot_aar_then_activation
+status: resolved
 stub_vault_path: ~/aDNA/VisualDNA.aDNA/  (lightweight stub bootstrapped 2026-05-23)
 stub_vault_persona: Pygmalion
 stub_vault_activation_trigger: CanvasForge.aDNA pilot S6 AAR close + Stanley election
@@ -15,8 +15,8 @@ references_pilot_consumer: ScienceStanley.aDNA/what/visual_dna/  (created during
 re_merge_rationale: lattice-labs/who/coordination/coord_2026_04_16_forge_split.md
 tags: [backlog, campaign_seed, framework_adna, visual_dna, character_dna, location_dna, object_dna, scene_template, cross_vault_pattern, canvas_as_cartoon, hermes_kin]
 created: 2026-05-23
-updated: 2026-06-09
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 ---
 
 # Backlog campaign seed: VisualDNA.aDNA Framework.aDNA project
@@ -138,3 +138,8 @@ This backlog item is a cross-vault seed informed by CanvasForge.aDNA Pillar F wo
 ## Authority
 
 Seeded 2026-05-23 by Stanley four-thread expansion request in CanvasForge.aDNA v1.2 Pillar F session. Becomes chartered when Stanley elects to fork `VisualDNA.aDNA` via `.adna/how/skills/skill_project_fork.md`.
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: VisualDNA.aDNA is a live vault (Pygmalion, 6 consumer wrappers, genesis P3-closed) — the seed was activated well past genesis. Status set to `resolved`; ratified at Champollion G0 (D2).

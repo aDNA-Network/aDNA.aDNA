@@ -7,8 +7,8 @@ source_vault: Obsidian.aDNA (Seshat)
 source_session: session_stanley_20260610_m06_s1_foundations
 routes_to: .adna template (setup.sh)
 created: 2026-06-10
-updated: 2026-06-10
-last_edited_by: agent_seshat
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, idea_upstream, obsidian, setup_sh, reset_layout, workspace_json, adr_007_posture, m06]
 related_backlog:
   - aDNA.aDNA/how/backlog/backlog_F_S2_4_obsidian_workspace_clobber.md   # the first-open clobber finding this mitigates
@@ -31,3 +31,8 @@ Obsidian.aDNA's reseed discipline treats `workspace.json` as **never-clobber dev
 - Obsidian.aDNA `what/context/obsidian_operation_playbooks.md` §9.3 (p1_07) · `seed/seed.md` never-clobber invariant · synthesis §5 #7
 
 > **Triage 2026-06-23 (Cornerstone v8.1):** RESOLVED — folded into the bundle + setup.sh delta. Shipped in the combined v8.1 release (held at push gate; [[adr_038_combined_v81_release]]). See [[coord_2026_06_23_rosetta_to_seshat_cornerstone_v81_landed]].
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: --reset-layout flag + runbook folded into v8.1 + setup.sh delta (resolves F-S2-4). Status set to `resolved`; ratified at Champollion G0 (D2).

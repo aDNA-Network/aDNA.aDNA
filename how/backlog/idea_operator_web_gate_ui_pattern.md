@@ -1,10 +1,10 @@
 ---
 type: backlog_idea
-status: proposed
+status: resolved
 priority: medium
 created: 2026-05-20
-updated: 2026-05-20
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 finding_id: B-aDNA-2026-05-20-WebGate
 source_session: session_stanley_2026_05_20_p3b_context_closure
 discovered_in_session: session_stanley_2026_05_20_p3b_context_closure
@@ -96,3 +96,8 @@ The aDNA standard was designed for simple interactive decisions. As campaigns gr
 - Discovery session: `session_stanley_2026_05_20_p3b_context_closure` (MoleculeForge P3b Stage F + gate recommendation)
 - Live HTML reference: `MoleculeForge.aDNA/how/missions/artifacts/gate_decision_p3.html` (2026-05-20)
 - OIP parent idea: `B-aDNA-2026-05-20-OIP` (planned; campaign scope proposed)
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: same ISS system (skill_create_iss + ADR-028/029) — the standardized web decision-gate. Status set to `resolved`; ratified at Champollion G0 (D2).

@@ -1,10 +1,10 @@
 ---
 type: backlog_idea
 created: 2026-06-10
-updated: 2026-06-10
-status: idea
+updated: 2026-07-02
+status: resolved
 priority: medium
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 author: rosetta (aDNA.aDNA)
 trigger: audit P2 (2026-06-10) — the skill + shell companion now exist vault-side and are named "candidate upstream" in their own frontmatter
 informational: false
@@ -34,3 +34,8 @@ moves you there reversibly.
 Second PR, **after** the README-flip PR merges (don't bundle — separate concerns, per the staging mechanics note).
 Carried by **E6 / M5.13 O4** (c174); files per `skill_upstream_contribution` (operator approval per filing).
 Precedent: R07 `node.aDNA → LatticeHome.aDNA` template upstreaming (active-vs-historical sweep rule).
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: skill_workspace_path_migration is a base skill in the current CLAUDE.md inventory — already upstreamed to the template. Status set to `resolved`; ratified at Champollion G0 (D2).

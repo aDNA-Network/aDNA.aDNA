@@ -7,8 +7,8 @@ source_vault: Obsidian.aDNA (Seshat)
 source_session: session_stanley_20260610_m06_s1_foundations
 routes_to: .adna template (.obsidian/core-plugins.json)
 created: 2026-06-10
-updated: 2026-06-10
-last_edited_by: agent_seshat
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, idea_upstream, obsidian, core_plugins, sync, neutral_seed, adr_007_posture, m06]
 related_backlog:
   - aDNA.aDNA/how/backlog/idea_upstream_obsidian_seed_canonicalization.md   # natural carrier
@@ -31,3 +31,8 @@ The M05 fleet audit found **Sync-on as undeclared drift on 6/8 rolled-out vaults
 - Obsidian.aDNA `what/context/obsidian_config_baseline.md` §4/§7 · `obsidian_template_delta.md` §5/§7/§8.4 (p1_03) · M05 audit S-row (Sync) · synthesis §1 D6 + §5 #9
 
 > **Triage 2026-06-23 (Cornerstone v8.1):** RESOLVED — core-plugins.json sync-neutral applied. Shipped in the combined v8.1 release (held at push gate; [[adr_038_combined_v81_release]]). See [[coord_2026_06_23_rosetta_to_seshat_cornerstone_v81_landed]].
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: sync-neutral applied, shipped v8.1 (fixed the Sync-on clinical-data drift). Status set to `resolved`; ratified at Champollion G0 (D2).

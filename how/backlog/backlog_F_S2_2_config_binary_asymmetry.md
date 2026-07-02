@@ -1,14 +1,14 @@
 ---
 type: backlog_idea
-status: open
+status: resolved
 priority: high
 routes_to_campaign: campaign_obsidian_deployment_stabilization
 routes_to_track: T3
 finding_id: F-S2-2
 source_session: session_stanley_20260513_043947_mlwx03_s2
 created: 2026-05-13
-updated: 2026-05-13
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, f_s2_2, config_binary_asymmetry, silent_failure, plugin_install_verify, lwx_s2_surfaced]
 ---
 
@@ -44,3 +44,8 @@ Recommend implementing all 3 — they layer (verify primitive → health check i
 
 - M-LWX-03 S2 cross-graph memo §7 F-S2-2
 - M-LWX-03 S2 architectural discovery: operator's first-open reported "doesn't seem to have Notebook Navigator installed" with no error toast — F-S2-2's symptom precisely
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: batteries-included seed + donor-copy materialization shipped v8.1 (obsidian_seed_canonicalization + reseed_from_committed_binaries). Status set to `resolved`; ratified at Champollion G0 (D2).

@@ -1,11 +1,13 @@
 ---
 type: backlog_idea
-status: proposed
+status: deferred
 priority: low
 created: 2026-05-24
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [backlog, idea, cross_framework, iii, code_domain_pack, advisory, contextcompass_origin]
-updated: 2026-05-24
+updated: 2026-07-02
+deferred_owner: "III.aDNA (Argus)"
+deferred_trigger: "III roadmap discretion (advisory only; relocatable to III.aDNA/how/backlog/)"
 ---
 
 # Idea — III Code-Domain Pack Subsumes `/simplify`-Like Behavior (Advisory to III)
@@ -50,3 +52,8 @@ ContextCompass post-planning strategic-review S16 ceremony 2026-05-24 — R9 pro
 ## When to integrate
 
 Operator-discretionary on III's side. CC consumes nothing from this; CC's v0.1.0 release does NOT depend on III adopting this advisory. If III adopts, the future CC composition memo (per CC R4 `idea_simplify_composition_memo.md`) can be updated to point the code-quality scope at III's new pack instead of at `/simplify`.
+
+
+## Champollion G0 disposition — X (M1.1, 2026-07-02)
+
+**DEFER.** Owner: III.aDNA (Argus). Trigger: III roadmap discretion (advisory only; relocatable to III.aDNA/how/backlog/). Ratified at Champollion G0 (D2).

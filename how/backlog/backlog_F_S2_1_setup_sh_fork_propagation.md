@@ -1,14 +1,14 @@
 ---
 type: backlog_idea
-status: open
+status: resolved
 priority: high
 routes_to_campaign: campaign_obsidian_deployment_stabilization
 routes_to_track: T1
 finding_id: F-S2-1
 source_session: session_stanley_20260513_043947_mlwx03_s2
 created: 2026-05-13
-updated: 2026-05-13
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [backlog, f_s2_1, setup_sh, fork_propagation, skill_project_fork, fifth_additive_upstream_candidate, lwx_s2_surfaced]
 ---
 
@@ -45,3 +45,8 @@ Recommend Option 1 for the 5th-instance pattern (minimal commit, additive); Opti
 - M-LWX-03 S2 cross-graph memo §7: `aDNA.aDNA/how/campaigns/campaign_adna_v2_infrastructure/missions/artifacts/cross_graph_findings_to_v2_from_lattice_workspace_ux.md`
 - M-LWX-03 mission AAR §F-S2-1: `aDNA.aDNA/how/campaigns/campaign_lattice_workspace_ux/missions/artifacts/aar_mlwx_03_integration_test_and_closeout.md`
 - Plan file (S2 path-α discovery): `/Users/stanley/.claude/plans/please-read-the-claude-md-merry-dewdrop.md`
+
+
+## Champollion G0 disposition — D (M1.1, 2026-07-02)
+
+**ALREADY-DISCHARGED.** Evidence: skill_project_fork now keeps setup.sh (idea_upstream_fork_obsidian_reseed); shipped Cornerstone v8.1 / adr_038. Status set to `resolved`; ratified at Champollion G0 (D2).

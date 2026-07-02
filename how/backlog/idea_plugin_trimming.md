@@ -1,11 +1,12 @@
 ---
 type: backlog_idea
-status: planned
+status: accepted
 priority: high
 created: 2026-04-04
-last_edited_by: agent_init
+last_edited_by: agent_rosetta
 tags: [backlog, obsidian, performance, clone-size]
-updated: 2026-04-13
+updated: 2026-07-02
+champollion_mission: M4.2
 ---
 
 # Idea: Obsidian Plugin Trimming
@@ -18,3 +19,8 @@ Ship only essential plugins (~1.5MB): obsidian-advanced-canvas + templater-obsid
 
 ## Origin
 campaign_adna_polish pre-merge efficiency audit. 85% potential size reduction.
+
+
+## Champollion G0 disposition — M (M1.1, 2026-07-02)
+
+**ACCEPT → fix/mission.** Owning mission: `M4.2` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).
