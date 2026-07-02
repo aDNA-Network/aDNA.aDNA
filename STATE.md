@@ -31,6 +31,10 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 > (`pattern_model_tiered_campaign_execution`). Per-session: `adna_validate` both modes; commit-only
 > (pushes batch at phase gates); `.adna/` untouched (folds ride M6.1 RC). Evidence + decided law:
 > ratified adjudication ledger + governance retro (both header-stamped) under `campaign_champollion/artifacts/`.
+> **Parallel thread (2026-07-02, operator-directed)**: campaign-execution **automation** designed — 4-layer/4-rung
+> ladder at `how/backlog/idea_campaign_execution_automation.md` + pattern §8; **Operation Dispatch chartered in
+> Terminal.aDNA** (`campaign_terminal_dispatch`, ratify_state pending — Berthier's DP0 gate); 2 Berthier memos filed
+> (Dispatch announce · Operations task-schema-v2 ask). R1 runner charters post-G1 on idea acceptance.
 
 ## 🌐 adna.network — LIVE on Cloudflare (2026-05-31)
 
