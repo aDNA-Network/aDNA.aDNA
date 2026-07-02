@@ -1,10 +1,10 @@
 ---
 type: community
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 community_type: structure
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [community, context-commons, federation, sharing]
 ---
 
@@ -28,7 +28,7 @@ Create → Publish → Discover → Consume → Create (improved)
 
 All knowledge starts as project-local content. You write context files, design patterns, build lattice definitions — all for your own project's needs. No community awareness required.
 
-**Self-reference**: This vault created 13 [[what/glossary/glossary_ontology_extension|ontology extensions]], 26 content files, and 25 glossary entries during Operation Rosetta. All of it started as project-local knowledge for teaching aDNA.
+**Self-reference**: This vault created 11 [[what/glossary/glossary_ontology_extension|ontology extensions]], 55+ content files (13 concepts, 9 tutorials, 22 patterns, 5 comparisons, 6 use cases), and 30 glossary entries during Operation Rosetta and the campaigns that followed. All of it started as project-local knowledge for teaching aDNA.
 
 ### 2. Publish (To the Commons)
 
@@ -70,7 +70,7 @@ See [[who/community/community_roles|Community Roles]] for full role definitions.
 
 ## Connection to Context Commons Program
 
-The `context_commons.aDNA/` project in the Lattice workspace is the operational home for the Context Commons program. It maintains:
+The `ContextCommons.aDNA/` project in the aDNA workspace is the operational home for the Context Commons program. It maintains:
 
 - Community governance (council charter, partner agreements)
 - Curriculum for [[what/concepts/concept_agentic_literacy|agentic literacy]] education

@@ -1,7 +1,7 @@
 ---
 type: workshop
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-07-02
 status: active
 duration: "120 minutes"
 audience: "Developers building composable workflows with aDNA lattices"
@@ -10,7 +10,7 @@ prerequisites:
   - Completed workshop_build_your_first_vault or equivalent
   - Python 3.9+ installed (for validation tools)
   - Familiarity with YAML syntax
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [workshop, advanced, lattice, yaml, composition, fair]
 ---
 
@@ -41,7 +41,7 @@ Complete before arriving (30 minutes):
 | 0:00 | Welcome & Orientation | What are lattices? Show `what/lattices/examples/hello_world.lattice.yaml` as the minimal example. |
 | 0:10 | Lattice Anatomy | Walk through a real lattice: metadata, nodes, edges, FAIR block. Show each field's purpose. |
 | 0:25 | Exercise 1: Sketch | Whiteboard a workflow from your domain. Identify nodes (steps) and edges (data flows). Mark decision points. |
-| 0:40 | Types & Modes | 6 lattice types (pipeline, agent, context_graph, workflow, infrastructure, skill) and 3 execution modes (workflow, reasoning, hybrid). When to use each. |
+| 0:40 | Types & Modes | 7 lattice types (pipeline, agent, context_graph, workflow, infrastructure, context_set, skill) and 3 execution modes (workflow, reasoning, hybrid). When to use each. |
 | 0:50 | Exercise 2: Build | Translate your whiteboard sketch into YAML. Choose type and execution mode. Define nodes and edges. |
 | 1:10 | FAIR Metadata | Why FAIR matters for lattice sharing. Required fields: license, creators, keywords. Optional: identifier (DOI), provenance. |
 | 1:20 | Exercise 3: Validate | Install dependencies (`pip install pyyaml`). Run `lattice_validate.py` on your lattice. Fix any schema errors. |
@@ -62,7 +62,7 @@ Complete before arriving (30 minutes):
 - **Required**: Code editor, Python 3.9+, `pyyaml` package, the `what/lattices/` directory from aDNA.aDNA
 - **Optional**: Whiteboard or paper for exercise 1, projector for facilitator
 - **Reference**: `what/lattices/lattice_yaml_schema.json` (the authoritative schema)
-- **Example set**: 15 lattice examples in `what/lattices/examples/` covering pipeline, agent, context_graph, workflow, and infrastructure types
+- **Example set**: 19 lattice examples in `what/lattices/examples/` covering pipeline, agent, context_graph, workflow, and infrastructure types
 
 ## Exercises
 
@@ -118,7 +118,7 @@ python lattice_validate.py ../my_workflow.lattice.yaml
 
 If validation fails, read the error message. Common fixes:
 - Missing required field → add it
-- Unknown lattice_type → check the 6 valid types
+- Unknown lattice_type → check the 7 valid types
 - Edge references non-existent node → fix the node ID
 
 Add a FAIR block:
@@ -158,7 +158,7 @@ Reference: `what/lattices/examples/composed_therapeutics.lattice.yaml` shows a r
 
 ## Self-Reference
 
-The [[concept_lattice_composition|Lattice Composition]] concept and the 15 examples in `what/lattices/examples/` were built during earlier phases of Operation Rosetta. This workshop uses them as exercise materials — participants study `hello_world.lattice.yaml` and `composed_therapeutics.lattice.yaml` to learn the same patterns the vault itself implements. The validation tool (`lattice_validate.py`) that participants run is the same tool this project uses to check its own lattice examples.
+The [[concept_lattice_composition|Lattice Composition]] concept and the 19 examples in `what/lattices/examples/` were built during earlier phases of Operation Rosetta. This workshop uses them as exercise materials — participants study `hello_world.lattice.yaml` and `composed_therapeutics.lattice.yaml` to learn the same patterns the vault itself implements. The validation tool (`lattice_validate.py`) that participants run is the same tool this project uses to check its own lattice examples.
 
 ## Related
 

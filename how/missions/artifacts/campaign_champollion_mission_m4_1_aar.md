@@ -30,6 +30,10 @@ tags: [aar, champollion, p4, m4_1, newcomer, stress_test, first_contact, mode_b]
 
 45 est → ~46 actual (+2%). The G2 class-split calibration **HELD again** (second consecutive phase): the brief's note that "the walk itself is the work, not a re-derivable judgment" priced the execution surface correctly; the builder came in −7 kT under lane and the bookends consumed the difference (re-verification + routing + rider authoring across 4 files). No retrospective trigger.
 
+## Correction (2026-07-02, M4.3 review — same day)
+
+**N-02 RETRACTED; row count effectively 9.** The builder counted *files-in-dir* where the router's sentence names *semantic units* — the router's "15 example lattice definitions" was CORRECT (15 `*.lattice.yaml`; the "20" included AGENTS.md + 4 `.canvas`). The fable verify replicated the same counting method, so it confirmed rather than caught the error; the collision surfaced only when M4.3's builder censused the same claims a different way. N-03/N-04 stand with corrected true-counts (26 templates / 26 skills). Cascaded: artifact + fold stub + F-CHM-211; meta-finding **F-CHM-212**; semantic-census corollary → patterns/AGENTS.md counting standard. The "Didn't" line above gains its real content: *the review's independence was methodological, not just organizational — and method-replication isn't independence.*
+
 ## Evidence chain
 
 [[../../campaigns/campaign_champollion/artifacts/newcomer_stress_test|newcomer_stress_test]] (artifact: evidence block + as-lived hour + friction log + finalized routing) · [[../../campaigns/campaign_champollion/artifacts/findings_ledger|findings_ledger]] F-CHM-207 (annotated) / F-CHM-210 / F-CHM-211 · [[../../backlog/idea_image_newcomer_currency_fixes|fold stub]] · rider blocks in the three P4 briefs.

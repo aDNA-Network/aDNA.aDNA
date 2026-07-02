@@ -16,7 +16,7 @@ Clone this repo to get a ready-to-use vault with templates, tools, and examples.
 
 ## Contents
 
-**Start here** — [60 Seconds](#adna-in-60-seconds) · [The Problem](#the-problem) · [Who Is This For?](#who-is-this-for) · [Quick Start](#quick-start)
+**Start here** — [60 Seconds](#adna-in-60-seconds) · [Your First 10 Minutes](#your-first-10-minutes) · [The Problem](#the-problem) · [Who Is This For?](#who-is-this-for) · [Quick Start](#quick-start)
 
 **Architecture** — [The Triad](#the-triad) · [The Ontology](#the-ontology) · [Extending the Ontology](#extending-the-ontology) · [What's Inside](#whats-inside)
 
@@ -35,6 +35,38 @@ Project knowledge has three kinds: **people** (contacts, teams, partners), **thi
 Inside each folder, a small `AGENTS.md` config tells AI agents what's here and how to work with it. When an agent opens your project, it reads the top-level config, then only the folder-level configs relevant to its task. Instead of reading everything, it reads just what it needs. Every new folder you add automatically narrows the search space.
 
 No special tooling required. Folders, Markdown files, and a handful of conventions — works with any editor, any AI agent, any version control.
+
+---
+
+## Your First 10 Minutes
+
+New here? Do these three things in order — you'll go from "what is this?" to a working vault of your own.
+
+| Minutes | Do this | You get |
+|---|---|---|
+| **0–2** | Run the three [Quick Start](#quick-start) commands (`git clone … && cd ~/aDNA && claude`). | A ready workspace; the agent greets you and offers to create your first project. |
+| **2–5** | Read [aDNA in 60 Seconds](#adna-in-60-seconds) and skim [The Triad](#the-triad). | The whole idea: three folders — `who/`, `what/`, `how/` — and why three. |
+| **5–10** | Follow the guided learning path (below) — start with **Navigate an aDNA Vault**. | You can find any piece of knowledge in a vault and know where new content goes. |
+
+**The guided learning path.** The full learning path lives at **[adna.network/learn](https://adna.network/learn/)** — start there if you're brand new. It runs beginner → advanced:
+
+1. **[Navigate an aDNA Vault](what/tutorials/tutorial_navigate_a_vault.md)** — the designated first tutorial (15 min, no prerequisites). A guided tour: learn to read a vault.
+2. **[Create Your First CLAUDE.md](what/tutorials/tutorial_first_claude_md.md)** — write the file that orients an AI agent (20 min).
+3. **[Apply the Question Test](what/tutorials/tutorial_question_test.md)** — sort any content into the right triad leg (15 min).
+
+Then continue with the intermediate and advanced tutorials in [`what/tutorials/`](what/tutorials/), or browse them by difficulty at [adna.network/learn/tutorials](https://adna.network/learn/tutorials/). Prefer a live class? See the workshop kits in [`how/workshops/`](how/workshops/).
+
+> **Reading, not cloning?** This repo is the self-referential documentation vault — it teaches aDNA *by being* an aDNA vault. Everything the tutorials point at is real and present here. If you cloned the workspace image instead (`aDNA-Network/aDNA`), your tree is smaller (the standard lives in a hidden `.adna/`); the tutorials still apply — follow along at [adna.network/learn](https://adna.network/learn/) or in this repo.
+
+**Where to go by reader type:**
+
+| You are… | Start here |
+|---|---|
+| **Brand new** — want the idea and a working vault | [Your First 10 Minutes](#your-first-10-minutes) → [Quick Start](#quick-start) → [Navigate an aDNA Vault](what/tutorials/tutorial_navigate_a_vault.md) |
+| **A developer** — integrating aDNA into a project | [Adding aDNA to an Existing Project](#adding-adna-to-an-existing-project) → [`adna_standard.md`](what/docs/adna_standard.md) (normative rules) |
+| **Adding AI agents** — want the agent contract | [Working with AI Agents](#working-with-ai-agents) → [`CLAUDE.md`](CLAUDE.md) → per-directory [`AGENTS.md`](how/sessions/AGENTS.md) |
+| **Evaluating** — is this right for us? | [The Problem](#the-problem) · [Who Is This For?](#who-is-this-for) · [comparisons](what/comparisons/) |
+| **Contributing** — improve the standard | [Contributing](#contributing) → [`CONTRIBUTING.md`](CONTRIBUTING.md) · [community roles](who/community/community_roles.md) |
 
 ---
 
@@ -260,7 +292,7 @@ Agentic-DNA/
 │   ├── sessions/          #   Session tracking
 │   ├── campaigns/         #   Multi-mission initiatives
 │   ├── missions/          #   Task decomposition
-│   ├── skills/            #   13 agent recipes & procedures
+│   ├── skills/            #   26 agent recipes & procedures
 │   └── backlog/           #   Ideas & improvements
 ├── who/                   # Organization
 │   ├── coordination/      #   Cross-agent notes
@@ -355,7 +387,7 @@ Read [`VISION.md`](who/governance/VISION.md) for the decentralized frontier lab 
 
 | Document | What it covers |
 |---|---|
-| [`what/docs/adna_standard.md`](what/docs/adna_standard.md) | Full normative specification (v2.4) — all MUST/SHOULD/MAY rules |
+| [`what/docs/adna_standard.md`](what/docs/adna_standard.md) | Full normative specification (v2.5) — all MUST/SHOULD/MAY rules |
 | [`what/docs/standard_reading_guide.md`](what/docs/standard_reading_guide.md) | Three persona-based paths through the standard |
 | [`what/docs/adna_design.md`](what/docs/adna_design.md) | Architecture rationale — why three legs, design tradeoffs |
 | [`what/docs/adna_bridge_patterns.md`](what/docs/adna_bridge_patterns.md) | Multi-instance composition — nesting, sibling, monorepo |

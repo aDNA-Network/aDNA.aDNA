@@ -1,13 +1,13 @@
 ---
 type: tutorial
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-07-02
 status: active
 level: intermediate
 prerequisites: [concept_ontology, concept_triad, pattern_base_extension, pattern_question_test]
 estimated_time: "25 minutes"
 dual_audience: true
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [tutorial, intermediate, ontology, extension, entity_type]
 ---
 
@@ -28,7 +28,7 @@ A new entity type for your project — complete with a directory, AGENTS.md, tem
 
 ### Step 1: Identify the Need
 
-You need a new entity type when existing types can't represent your domain knowledge. Ask: "Does `context`, `decisions`, `modules`, `lattices`, `campaigns`, `missions`, `sessions`, `templates`, `skills`, `pipelines`, `backlog`, `governance`, `team`, or `coordination` cover what I need to represent?"
+You need a new entity type when existing types can't represent your domain knowledge. Ask: "Does one of the 16 base types — `context`, `decisions`, `modules`, `lattices`, `inventory`, `campaigns`, `missions`, `sessions`, `templates`, `skills`, `pipelines`, `backlog`, `governance`, `team`, `coordination`, or `identity` — cover what I need to represent?"
 
 If no — you need an extension.
 
@@ -136,7 +136,7 @@ Check your extension against the [[what/patterns/pattern_base_extension|base/ext
 
 ## What You Learned
 
-- Extensions add alongside base types — never modify the core 14
+- Extensions add alongside base types — never modify the core 16
 - The [[what/patterns/pattern_question_test|question test]] determines which triad leg gets the extension
 - Three artifacts per extension: directory, AGENTS.md, template
 - The pattern is the same for any domain: biotech protocols, legal documents, customer personas

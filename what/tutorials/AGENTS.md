@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-04-13
-updated: 2026-04-13
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [directory_index, tutorial]
 ---
 
@@ -13,6 +13,16 @@ tags: [directory_index, tutorial]
 Step-by-step learning paths for building with aDNA. Tutorials are executable — the reader produces something concrete by the end. Three difficulty tiers: beginner (navigate and create), intermediate (extend and customize), advanced (optimize and compose).
 
 One file per tutorial.
+
+## Designated First Tutorial
+
+**Start newcomers at [[tutorial_navigate_a_vault|Navigate an aDNA Vault]].** Of the three `level: beginner` tutorials, it is the designated entry point because it is the only one with **no prerequisites** (a read-only guided tour), where the other two teach *producing* a file after the reader can already *read* a vault. Recommended beginner order: **navigate_a_vault → first_claude_md → question_test**. This mirrors the site learning path at `adna.network/learn/tutorials` and the "Your First 10 Minutes" on-ramp in the root `README.md`.
+
+| Order | Tutorial | Level | Prerequisites |
+|-------|----------|-------|---------------|
+| 1 (entry) | `tutorial_navigate_a_vault` | beginner | none |
+| 2 | `tutorial_first_claude_md` | beginner | concept_triad, concept_governance_files |
+| 3 | `tutorial_question_test` | beginner | concept_triad, concept_ontology |
 
 ## Working Rules
 

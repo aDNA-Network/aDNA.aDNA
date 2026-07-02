@@ -3,14 +3,14 @@ plan_id: mission_champollion_m4_3_first_contact_learning_path
 type: plan
 title: "M4.3 — README first-contact pattern + learning path walked beginner→advanced + community launch readiness"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 4
 campaign_mission_number: 3
 mission_class: implementation
 executor_tier: opus
 token_budget_estimated: "46 kT (charter 40 + Mode-B bookend allowance ~+15% per G3 D4)"
-token_budget_actual: "TBD"
+token_budget_actual: "~50 kT (opus builder ~40 + fable bookends ~10, incl. the N-02 retraction cascade the review triggered) vs 46 est — +9%, inside band"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -41,10 +41,10 @@ Make the vault's **first-contact reading path** launch-ready: (1) the README app
 
 ## Acceptance criteria
 
-- [ ] README passes the first-contact pattern + dual-audience test; all stated facts census-verified.
-- [ ] Learning path walked end-to-end with a walk log in the mission artifact; zero steps that fail as written (fixed or explicitly routed).
-- [ ] F-CHM-207 → FIXED in the findings ledger (workshop re-anchored + re-walked).
-- [ ] `who/community/` current; fable review passed; `adna_validate` FULL PASS; explicit-path commit.
+- [x] README passes the first-contact pattern + dual-audience test; all stated facts census-verified. *(First-10-minutes table + reader-type router; 10 facts censused, 2 corrected [skills 13→26 · v2.4→v2.5].)*
+- [x] Learning path walked end-to-end with a walk log in the mission artifact; zero steps that fail as written (fixed or explicitly routed). *(13 surfaces: 9 tutorials + 4 workshops; 4 files fixed-then-pass, 0 left failing; first tutorial designated = `tutorial_navigate_a_vault` [no prerequisites].)*
+- [x] F-CHM-207 → FIXED in the findings ledger (workshop re-anchored + re-walked). *(Canonical flow + NAMED silent-301 warning; scratch re-walk PASS.)*
+- [x] `who/community/` current; fable review passed; `adna_validate` FULL PASS; explicit-path commit. *(Review PASS; marquee = the N-02 retraction: M4.3's different-method census collided with M4.1's file-counts → F-CHM-212 + semantic-census corollary in the counting standard.)*
 
 ## Guardrails
 

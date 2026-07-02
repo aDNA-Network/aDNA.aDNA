@@ -17,7 +17,11 @@ tags: [tutorial, beginner, navigation, vault, triad]
 
 Nothing — this is a guided tour. By the end, you'll understand how an aDNA vault is organized and be able to find any piece of knowledge in it. You'll navigate the vault you're reading right now.
 
-**Prerequisites**: none. This is the starting point.
+**Prerequisites**: none. This is the starting point — **the designated first tutorial** for anyone new to aDNA.
+
+> **Which vault does this tour walk?** This is the `aDNA.aDNA` **documentation vault** — the self-referential vault that teaches aDNA *by being* a fully built-out aDNA vault. It carries every extension leg (concepts, tutorials, patterns, comparisons) so the tour has real examples to point at.
+>
+> **Cloned the workspace image instead?** If you ran the [Quick Start](../docs/agent_first_guide.md) (`git clone aDNA-Network/aDNA`), your fresh workspace is smaller and shaped differently: the standard lives in a hidden `.adna/` folder, and the extension legs below (`concepts/`, `patterns/`, `comparisons/`, `tutorials/`) are Rosetta additions you won't see yet in a plain fork. The *structure* is identical — same triad, same governance files, same `AGENTS.md` routing — just fewer directories. Follow this tour at [adna.network/learn](https://adna.network/learn/) or by browsing this repo, and everything transfers to your own vault.
 
 ## Steps
 
@@ -48,7 +52,7 @@ what/
 ├── context/       ← Curated knowledge for AI agents (~75K tokens)
 ├── concepts/      ← Core aDNA concepts (13 files)
 ├── tutorials/     ← You are here
-├── patterns/      ← Reusable architectural patterns (8 files)
+├── patterns/      ← Reusable architectural patterns (22 files)
 ├── comparisons/   ← aDNA vs. other systems (5 files)
 ├── decisions/     ← Architecture Decision Records
 ├── docs/          ← Specification documents

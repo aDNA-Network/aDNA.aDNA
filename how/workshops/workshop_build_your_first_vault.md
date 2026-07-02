@@ -56,7 +56,7 @@ Complete before arriving (45 minutes total):
 
 ## Materials / Prerequisites
 
-- **Required**: Git, Obsidian, a code editor, the aDNA template repo cloned (`github.com/LatticeProtocol/Agentic-DNA`)
+- **Required**: Git, Obsidian, a code editor, and Claude Code (the workshop forks via the agent). The aDNA workspace image is cloned live in Exercise 1 from the canonical repo `github.com/aDNA-Network/aDNA` (`git clone …/aDNA.git ~/aDNA`). *(Do not use the pre-2026-06 `LatticeProtocol/Agentic-DNA` URL — it 301-redirects to the frozen `adna-legacy` archive and silently hands you a stale pre-v8 vault.)*
 - **Optional**: Claude Code for live agent testing during exercise 2
 - **Handout**: One-page CLAUDE.md template with section prompts (Identity, Safety, Standing Orders, Domain Knowledge)
 
@@ -64,17 +64,27 @@ Complete before arriving (45 minutes total):
 
 ### Exercise 1: Fork the Template
 
-**Instructions**: Clone the aDNA template and create your project:
+**Instructions**: aDNA ships as a clone-and-run workspace image — the standard comes embedded in a hidden `.adna/` folder and an AI agent forks it into your project. Clone the image and start the agent:
 
 ```bash
-git clone https://github.com/LatticeProtocol/Agentic-DNA.git
-cp -r Agentic-DNA/.adna/ my_project.aDNA/
-cd my_project.aDNA
+git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA
+cd ~/aDNA
+claude
 ```
 
-Open in Obsidian. Verify you see `who/`, `what/`, `how/` directories.
+At the prompt, tell the agent: **"Create a new project called `my_project`."** The agent runs `skill_project_fork.md`, which:
 
-**Expected outcome**: A fresh vault with the base triad structure, governance files, and templates ready for customization.
+1. Copies the embedded standard: `cp -r .adna/ my_project.aDNA/`
+2. Strips template-only files (`.git`, `.github`, `README`, `LICENSE`) so your project starts clean
+3. Removes the `role: template` marker and sets `agent_init` markers on `MANIFEST.md` / `STATE.md` / `CLAUDE.md`
+4. Runs `git init` — a fresh repo with no template history
+5. Offers to run the onboarding interview to customize the vault for your domain
+
+Open `my_project.aDNA/` in Obsidian. Verify you see `who/`, `what/`, `how/` directories.
+
+> **Why not clone `.adna/` by hand?** The old two-step `cp -r` recipe skipped the marker-stripping, fresh `git init`, and onboarding trigger — and the pre-2026-06 URL now silently redirects to a frozen pre-v8 vault. Letting the fork skill run gives you a correctly-initialized, onboarding-ready project.
+
+**Expected outcome**: A fresh vault at `~/aDNA/my_project.aDNA/` with the base triad structure, governance files, templates, and a clean git history — ready for customization (onboarding triggers automatically on first `claude` inside it).
 
 ### Exercise 2: Write Your CLAUDE.md
 
@@ -123,7 +133,7 @@ Open in Obsidian. Verify you see `who/`, `what/`, `how/` directories.
 
 ## Self-Reference
 
-This workshop follows the exact process that created aDNA.aDNA itself. Phase 0 (M00) of [[campaign_rosetta|Operation Rosetta]] forked the template, customized governance, and extended the ontology with 10 new entity types — the same steps participants complete in exercises 1-3. The mission file participants write in exercise 4 mirrors the 24 mission files in `how/campaigns/campaign_rosetta/missions/`.
+This workshop follows the exact process that created aDNA.aDNA itself. Phase 0 (M00) of [[campaign_rosetta|Operation Rosetta]] forked the template, customized governance, and extended the ontology with 10 new entity types (now 11) — the same steps participants complete in exercises 1-3. The mission file participants write in exercise 4 mirrors the 34 mission files in `how/campaigns/campaign_rosetta/missions/`.
 
 ## Related
 

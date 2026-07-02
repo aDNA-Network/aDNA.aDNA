@@ -11,14 +11,14 @@ tags: [backlog, idea, upstream, template_image, newcomer, currency, first_contac
 
 # Idea — v8.3 image newcomer-facing currency fixes (M4.1 fold batch)
 
-> **Provenance**: the six items below were found by the Champollion **M4.1 newcomer stress-test** (2026-07-02) — a live scratch-clone walk of the public image `aDNA-Network/aDNA` @ `e4372a6` (v8.3). Full evidence: [[../campaigns/campaign_champollion/artifacts/newcomer_stress_test|newcomer_stress_test]] (friction rows cited per item). Ledger row: [[../campaigns/campaign_champollion/artifacts/findings_ledger|F-CHM-211]]. All are **image-side** content — per campaign guardrail they ship ONLY through the operator-gated `skill_template_release` at **M6.1's RC** (`fold_batch: champollion_m6_1_rc`); no dev-vault edit fixes them.
+> **Provenance**: the six items below (item 2 since RETRACTED at M4.3 review — five live) were found by the Champollion **M4.1 newcomer stress-test** (2026-07-02) — a live scratch-clone walk of the public image `aDNA-Network/aDNA` @ `e4372a6` (v8.3). Full evidence: [[../campaigns/campaign_champollion/artifacts/newcomer_stress_test|newcomer_stress_test]] (friction rows cited per item). Ledger row: [[../campaigns/campaign_champollion/artifacts/findings_ledger|F-CHM-211]]. All are **image-side** content — per campaign guardrail they ship ONLY through the operator-gated `skill_template_release` at **M6.1's RC** (`fold_batch: champollion_m6_1_rc`); no dev-vault edit fixes them.
 
 ## The batch (one RC "image currency sweep" line item)
 
 1. **N-01 — README badges two minors stale**: `image:README.md:7` says `governance v7.2` / `standard v2.2`; the image's own files say `version: "8.3"` (`.adna/CLAUDE.md`) and `v2.4` (→ v2.5 by RC time — set from the live files at cut, don't hardcode). Front-door credibility ding.
-2. **N-02 — router example count**: `image:CLAUDE.md:137` "15 example lattice definitions" → census 20 (`.adna/what/lattices/examples/`).
-3. **N-03 — router template count**: `image:CLAUDE.md:138` "22 reusable templates" → census 27 (`.adna/how/templates/`).
-4. **N-04 — router skills count**: `image:CLAUDE.md:139` "14 agent recipes" → census 26 (`.adna/how/skills/`, excl. AGENTS.md).
+2. ~~**N-02 — router example count**~~ **RETRACTED (M4.3 review, 2026-07-02)**: the router's "15 example lattice definitions" is semantically CORRECT (15 `*.lattice.yaml`; the earlier "census 20" was a file count including AGENTS.md + 4 `.canvas` templates). No RC fix. Kept for audit; see F-CHM-212.
+3. **N-03 — router template count**: `image:CLAUDE.md:138` "22 reusable templates" → **semantic census 26** (`template_*.md`; corrected from the file-count 27 at M4.3 review — AGENTS.md is not a template).
+4. **N-04 — router skills count**: `image:CLAUDE.md:139` "14 agent recipes" → **semantic census 26** `skill_*.md` (24 `skill_type: agent` + 2 process; RC wording may prefer "26 skills (24 agent recipes + 2 process)").
 5. **N-08 — onboarding persona contradiction**: `image:.adna/how/skills/skill_onboarding.md:59` flatly says "Introduce yourself as Berthier", contradicting the ADR-042 `{{persona}}` parameterization and the fork skill's own Step 4 (`skill_project_fork.md:157` — "ensures a fresh fork never inherits the base `Berthier` name"). Recast line 59 as the *default-when-unresolved*, mirroring lines 187/194/202.
 6. **N-07 image-pointer half — no "learn more" line in the image**: the image ships no tutorials/workshops (by design) but README/`aDNA_overview.md`/`adna.md` also carry **zero** "start here / learn more" pointer beyond the 47K spec + bare site link. Add one explicit learning-path pointer line (→ adna.network learning path once M4.2/M4.3 land it) to the image README. (The site/vault halves of N-07 are M4.2/M4.3 work, not this fold.)
 
