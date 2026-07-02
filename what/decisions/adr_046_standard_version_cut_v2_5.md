@@ -2,7 +2,7 @@
 type: adr
 adr_number: "046"
 title: "Standard version cut v2.4 → v2.5 — ADR-044 fold, ratification-record discipline, federation-wrapper scope decision, version-metadata hygiene"
-status: proposed
+status: accepted
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -16,16 +16,14 @@ tags: [adr, decision, standard, version_cut, v2_5, semver, conformance, ratifica
 
 ## Status
 
-**Proposed** — authored at Champollion **M2.2** ([[../../how/campaigns/campaign_champollion/missions/mission_champollion_m2_2_version_cut_adr|brief]], fable tier) from the M2.1 divergence ledger ([[../../how/campaigns/campaign_champollion/artifacts/standard_currency_audit|standard_currency_audit]], F-CHM-201..206). **Ratifies at G2** (`how/gates/champollion_p2_gate.md`) — this ADR *proposes*; the operator *ratifies*, including the two open arms (§Decision C4 / E1 scope boundary, and the v2.5-vs-v3.0 version arm). Per the ratification-record discipline this ADR itself folds (§Decision C3): the agent sets `proposed` only; no standard text changes until the gate.
+**Accepted** — ratified at Champollion **G2** with all arms resolved: **D2a = v2.5** · **D2b = Arm A** (absorb — §5.3 gains the `federation/` row) · **D2c = C6 deferred** (model-tier fields wait for the pattern's 3rd-instance trigger). Authored at Champollion M2.2 ([[../../how/campaigns/campaign_champollion/missions/mission_champollion_m2_2_version_cut_adr|brief]], fable tier) from the M2.1 divergence ledger ([[../../how/campaigns/campaign_champollion/artifacts/standard_currency_audit|standard_currency_audit]], F-CHM-201..206); held at `proposed` until the gate per the ratification-record discipline this ADR itself folds (§Decision C3) — making it the **first ADR ratified under its own discipline**. The cut executed 2026-07-02 in `what/docs/adna_standard.md` (C1–C5 + Arm A, §Consequences order); the public image picks it up at M6.1's release candidate via `skill_template_release` (separately operator-gated).
 
 ## Ratification
 
-*To be completed at G2 — intentionally empty until the operator gate (agents set `proposed` only; the four fields below are the §4.1 schema this ADR folds into the standard).*
-
-- **Ratifier:** —
-- **Gate / reference:** — *(expected: Champollion G2, `how/gates/champollion_p2_gate.md` + output record)*
-- **Ratification date:** —
-- **Scope:** — *(expected: the v2.5 change-set C1–C5 as arm-resolved at G2; C6 disposition; execution order per §Consequences)*
+- **Ratifier:** Stanley, Founding Architect (operator). Personas (Rosetta — author/steward of this record) are author/steward only, never ratifier.
+- **Gate / reference:** Champollion **G2** — `how/gates/champollion_p2_gate.md` + record `how/gates/champollion_p2_gate.output.md` (operator in-chat: "Your reccomendations are good! Let's move forward.", 2026-07-02; decision D2, arms D2a/D2b/D2c); ratifying session `session_stanley_20260702T154214Z_champollion_g2_ratification`.
+- **Ratification date:** 2026-07-02 (same day as authoring — G2 followed M2.2 within the P2 execution day; the discrete gate event is the reference above).
+- **Scope:** the **v2.5 cut, change-set C1–C5 with D2b = Arm A**, executed in this vault's `what/docs/adna_standard.md`; **C6 deferred** (not part of the cut; re-arises at the pattern's 3rd instance or a later gate); the image-side fold is **not** authorized here — it rides M6.1's RC through `skill_template_release` at its own operator gate. No pending co-signs.
 
 ## Context
 

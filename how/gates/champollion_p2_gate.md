@@ -6,13 +6,15 @@ campaign_id: campaign_champollion
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
-status: pending
+status: resolved   # RATIFIED 2026-07-02 — operator: "Your reccomendations are good! Let's move forward." (all four as recommended: GO · RATIFY[v2.5 · Arm A · defer] · PUSH · ACCEPT) + role re-tier directive; record → champollion_p2_gate.output.md
 outer_tier: copy_paste   # inline-markdown surface per G0/G1 precedent (record homogeneity); ISS web tier available (receiver :8765 up) if preferred
 persona: rosetta
 tags: [gate, champollion, p2, phase_exit, operator_decision, adr_046, version_cut, per_tier_review]
 ---
 
 # ⛩ G2 — Operation Champollion P2 exit gate (version-cut ratification + per-tier review)
+
+> ✅ **RESOLVED 2026-07-02** — operator ratified **as recommended, all four decisions** ("Your reccomendations are good! Let's move forward.", in-chat): **D1 GO · D2 RATIFY (v2.5 · Arm A · C6 defer) · D3 PUSH · D4 ACCEPT** — plus the **role re-tier directive** (fable = strategy/planner/reviewer · opus = builder/executor; remaining missions re-tiered). Ratification record: [[champollion_p2_gate.output|champollion_p2_gate.output.md]]. P2 CLOSED; **v2.5 cut executed**; P3 OPEN (M3.1 next); held stack pushed. The decision text below is preserved as-asked (SO-6).
 
 > **The standard's version gate.** P2 (STANDARD & spec consolidation) work is complete — all three missions closed with AARs filed. This gate ratifies **ADR-046** (the v2.4 → v2.5 cut, with its two open arms), reviews estimate-vs-actual per tier (second datapoint for the Prometheus corpus), and — on ratification — closes P2 and opens P3. **Operator gate (SO-1): answer any subset; unanswered = held open, P2 stays complete-but-ungated.**
 

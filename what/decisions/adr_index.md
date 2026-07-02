@@ -10,7 +10,7 @@ tags: [directory_index, decisions, adr_index]
 
 One row per ADR in `what/decisions/`, derived from each file's frontmatter + H1. Auto-generated — see Regeneration below.
 
-**Tally:** 41 ADRs — accepted: 39 · amended: 1 · proposed: 1 *(ADR-046 awaits Champollion G2)*
+**Tally:** 41 ADRs — accepted: 40 · amended: 1
 
 | # | Title | Status | Created | Updated | Subject |
 |---|-------|--------|---------|---------|---------|
@@ -54,7 +54,7 @@ One row per ADR in `what/decisions/`, derived from each file's frontmatter + H1.
 | [043](adr_043_node_provisioning_layer_reconciliation.md) | Node-provisioning layer reconciliation — substrate/composition/brick split (AWSBootstrap ↔ Lighthouse ↔ cohort) | accepted | 2026-06-29 | 2026-06-30 | Accepted — 2026-06-30 (ratified by the operator). Authored 2026-06-29 by Rosetta / `aDNA.aDNA` at the Operation Keystone post-completion fro… |
 | [044](adr_044_per_class_frontmatter_profiles.md) | Per-class frontmatter profiles — `status` optional for directory_index + coordination; nested-instance walk exclusion | accepted | 2026-06-30 | 2026-06-30 | Accepted — 2026-06-30 (ratified by the operator; authored by Rosetta / `aDNA.aDNA` during how/missions/mission_frontmatter_conformance, the … |
 | [045](adr_045_wrapper_placement_in_triad.md) | Wrapper placement in the triad — consumer federation wrappers live under how/federation/<wrapper>/ | accepted | 2026-06-30 | 2026-07-02 | Accepted. This pins a structural convention of the aDNA Universal Standard (where a consumer's federation wrappers sit relative to the triad). |
-| [046](adr_046_standard_version_cut_v2_5.md) | Standard version cut v2.4 → v2.5 — ADR-044 fold, ratification-record discipline, federation-wrapper scope decision, version-metadata hygiene | proposed | 2026-07-02 | 2026-07-02 | Proposed — authored at Champollion M2.2 from the M2.1 divergence ledger; ratifies at G2 (change-set C1–C5 + C6 rider; v2.5 recommended, v3.0 … |
+| [046](adr_046_standard_version_cut_v2_5.md) | Standard version cut v2.4 → v2.5 — ADR-044 fold, ratification-record discipline, federation-wrapper scope decision, version-metadata hygiene | accepted | 2026-07-02 | 2026-07-02 | Accepted — ratified at Champollion G2 with all arms resolved: D2a = v2.5 · D2b = Arm A (absorb — §5.3 gains the federation/ row) · D2c = C6 d… |
 
 ## Regeneration
 
