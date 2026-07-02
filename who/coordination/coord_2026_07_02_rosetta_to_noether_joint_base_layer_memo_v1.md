@@ -62,7 +62,7 @@ Structure = the skeleton's five rows, each a section carrying (a) **our filled c
 
 **Scheduled-with-pointer.** The canonical **pull → build-to-spec → memorialize** story lands at **Champollion M5.3** THIS phase: a tutorial + a use_case that walk the Exchange/adoption arc end-to-end, **roadmap-honest** — matching the M4.4 product-story posture that teaches cross-node Exchange as *the horizon on the network's opt-in membership substrate (still being built), not a shipped feature* (`content_currency_sweep.md` §4). aDNA.aDNA **narrates** the story so it is teachable end-to-end; LP **verifies** it is executable per the protocol spec.
 
-> **Pointer (back-fills before this memo releases at G5):** `how/campaigns/campaign_champollion/artifacts/<M5.3 exchange story artifact>` — link inserted here by the orchestrator once M5.3 lands.
+> **Pointer (back-filled at M5.3 close, 2026-07-02):** the story is now teachable end-to-end — `aDNA.aDNA/what/tutorials/tutorial_exchange_adoption_path.md` (the runnable arc; 6 steps PASS with a real validator verdict, 3 TAUGHT-AS-DESIGN with the boundary named) + `what/use_cases/use_case_exchange_lighthouse_adoption.md` (the same arc as a node operator's story via the Lighthouse path) + walk log at `how/campaigns/campaign_champollion/artifacts/adoption_story_record.md` (shipped-vs-horizon boundary table pinned to your/Exchange/Lighthouse live states). Your §3 ask stands: confirm the *pull → build-to-spec → memorialize* arc is the canonical story, and flag any step whose spec status our boundary table mislabels.
 
 **Truth owner: joint** (aDNA.aDNA narrates, LP verifies executability).
 

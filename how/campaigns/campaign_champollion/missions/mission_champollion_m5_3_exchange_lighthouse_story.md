@@ -3,14 +3,14 @@ plan_id: mission_champollion_m5_3_exchange_lighthouse_story
 type: plan
 title: "M5.3 — The Exchange/Lighthouse adoption story, teachable end-to-end (tutorial + use_case: pull → build-to-spec → memorialize)"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 5
 campaign_mission_number: 3
 mission_class: implementation
 executor_tier: opus
 token_budget_estimated: "40 kT + Mode-B bookend allowance (~46; G3 D4)"
-token_budget_actual: "TBD"
+token_budget_actual: "~42 kT (opus builder ~36 self-reported + fable bookends ~6) vs ~46 — −9%, the FIRST P5 mission under estimate. The pre-pinned-boundary-facts dispatch (the countermeasure to M5.1/M5.2's foreign-corpus overruns) worked: the builder's corpus stayed in-vault and it cited the pins instead of re-deriving them."
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -35,10 +35,10 @@ Make the adoption story **teachable end-to-end**: a newcomer can follow *pull �
 
 ## Acceptance criteria
 
-- [ ] Tutorial + use_case exist, pass dual-audience (SO-7) + self-reference (SO-8) + cross-links (SO-10); tutorial's executable steps **walked honest** (per-step PASS/TAUGHT-AS-DESIGN log — zero steps narrated-as-working that don't).
-- [ ] Every Exchange/Lighthouse/LP claim cite-at-pin against the live STATEs; zero roadmap forward-promises.
-- [ ] `npx astro build` green if the site was touched; `adna_validate` FULL PASS + `--governance` zero drift.
-- [ ] Fable review passed; explicit-path commit (no push — batches at G5).
+- [x] Tutorial + use_case exist, pass dual-audience (SO-7) + self-reference (SO-8) + cross-links (SO-10); tutorial's executable steps **walked honest** (per-step PASS/TAUGHT-AS-DESIGN log — zero steps narrated-as-working that don't). *(6 PASS / 3 TAUGHT; tutorial 19 links/8 targets · use_case 7/6, 0 broken, mutually linked; the fable review RE-RAN the validate step verbatim — output matched exactly: `valid=True errors=0 warnings=2` + `ready=True`.)*
+- [x] Every Exchange/Lighthouse/LP claim cite-at-pin against the live STATEs; zero roadmap forward-promises. *(Boundary table pinned: Exchange `hardening_phase2` · Lighthouse `p0_closed` + Git-P7-unchartered · LP pin `8cb6e1e`/pre-public; use_case explicitly refuses to schedule around undelivered deploys — "a plan she can defend".)*
+- [x] `npx astro build` green if the site was touched; `adna_validate` FULL PASS + `--governance` zero drift. *(Site UNTOUCHED — mirror investigated, genuinely not a straight-add [site collections need .mdx + seoSchema + section + route conversion] → M6.1 site-currency rider; validators green.)*
+- [x] Fable review passed; explicit-path commit (no push — batches at G5). *(PASS zero completions — second clean-first-review; F-CHM-214 third-source addendum + M5.1 memo §3 back-fill executed at review; latlab-CLI-broken environment note kept out of newcomer text, correctly.)*
 
 ## Guardrails
 
