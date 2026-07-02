@@ -44,7 +44,7 @@ export const checkpointCards: StartupFirstHourCard[] = [
   },
   {
     title: 'Decisions stop evaporating',
-    href: '/patterns/dual-audience',
+    href: '/patterns/dual-audience-writing',
     description: 'One ADR seeds a decision log. Within a month the founding-engineer bus factor starts breaking down — the "why" lives on disk.',
   },
   {

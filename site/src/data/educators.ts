@@ -80,7 +80,7 @@ export const followUpCards: EducatorCard[] = [
   },
   {
     title: 'Dual-Audience Writing',
-    href: '/patterns/dual-audience',
+    href: '/patterns/dual-audience-writing',
     description: 'The assessment rubric turned into a writing discipline: can a non-expert navigate this vault?',
   },
 ];

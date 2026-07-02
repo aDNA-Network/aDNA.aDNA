@@ -21,12 +21,12 @@ export const complianceCards: EnterpriseCard[] = [
   },
   {
     title: 'Architecture Decisions',
-    href: '/patterns/dual-audience',
+    href: '/patterns/dual-audience-writing',
     description: 'ADR files under what/decisions/ pair each technical choice with its rationale, trade-offs, and legal/compliance context — designed to satisfy both engineering and non-engineering reviewers.',
   },
   {
     title: 'Dual-Audience Review',
-    href: '/patterns/dual-audience',
+    href: '/patterns/dual-audience-writing',
     description: 'Every governance artifact is legible to a platform engineer and to a compliance officer without translation — the pattern that keeps audit prep from becoming a separate workstream.',
   },
 ];

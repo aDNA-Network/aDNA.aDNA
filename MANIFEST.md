@@ -1,7 +1,7 @@
 ---
 type: manifest
 created: 2026-04-13
-updated: 2026-06-29
+updated: 2026-07-02
 last_edited_by: agent_rosetta
 tags: [manifest, governance]
 ---
@@ -159,7 +159,7 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 
 | Component | Status | Description |
 |-----------|--------|-------------|
-| aDNA Standard v2.4 | Inherited | Core specification — triad, ontology, sessions, missions, campaigns |
+| aDNA Standard v2.5 | Inherited | Core specification — triad, ontology, sessions, missions, campaigns |
 | Context library | Inherited | 5 topics, 27 subtopics, ~75K tokens |
 | Lattice YAML tools | Inherited | Validate, convert (YAML↔canvas), JSON Schema, 19 examples |
 | 25 base templates | Inherited | Full operational set (12 auto-triggered + 13 manual-apply) |

@@ -162,7 +162,7 @@ Git is the coordination bus for multi-user and multi-agent projects.
 
 ## Git-Ops (federates Git.aDNA via `git/`)
 
-This graph federates **Git.aDNA** (Grace Hopper) for platform-agnostic git/forge/CI-CD ops; declaration in `git/CLAUDE.md`. Git.aDNA **P6 Wave 2** (2026-06-22, DP5-gated) flipped this dev-graph repo `aDNA-Network/aDNA.aDNA` **GitHub-public, class P-released** (the standard's docs face; distinct from the separately-released MIT image `aDNA-Network/aDNA` in MANIFEST "Public face").
+This graph federates **Git.aDNA** (Grace Hopper) for platform-agnostic git/forge/CI-CD ops; declaration in `how/federation/git/CLAUDE.md` (canonical placement per ADR-045; root `git/` = back-compat symlink, landed `14e3031`). Git.aDNA **P6 Wave 2** (2026-06-22, DP5-gated) flipped this dev-graph repo `aDNA-Network/aDNA.aDNA` **GitHub-public, class P-released** (the standard's docs face; distinct from the separately-released MIT image `aDNA-Network/aDNA` in MANIFEST "Public face").
 
 1. **Remotes** follow Git.aDNA ADR-006 — `origin` (canonical home) · `mirror` (outbound release/discovery) · `upstream` (external, never pushed) · `rollback` (temporary, during a host move). Host & visibility per the `how/federation/git/` declaration (ADR-013 host-role inversion: **released-FOSS → GitHub-public** · **FOSS-in-dev → Codeberg-private** (opens to GitHub at release) · **private/proprietary → GitHub-private-interim → self-hosted**; **Codeberg is FOSS-only**).
 2. **Local-first; HEAD is truth; commit after significant edits.** Read before write; never batch a phase into one mega-commit.

@@ -84,7 +84,7 @@ The migration path is straightforward: start with plain markdown, adopt aDNA whe
 ## Sources
 
 - commonmark.org — CommonMark markdown specification
-- aDNA Standard v2.4, §1 (Introduction), §3 (Triad), §4 (Governance) — aDNA specification
+- aDNA Standard v2.5, §1 (Introduction), §3 (Triad), §4 (Governance) — aDNA specification
 
 ## Related
 

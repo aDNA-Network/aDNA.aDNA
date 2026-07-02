@@ -3,10 +3,10 @@ type: spec
 kind: ecosystem_spec
 name: platform_ecosystem
 created: 2026-05-20
-updated: 2026-06-30
+updated: 2026-07-02
 version: "0.3"
 status: active
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [spec, ecosystem, platform, aDNA_pattern]
 extraction_source: ~/aDNA/CLAUDE.md lines 178-190 (extracted at compliance campaign M01)
 co_signed_adr: aDNA.aDNA/what/decisions/adr_012_ecosystem_spec_extraction.md
@@ -47,7 +47,7 @@ A deployment graph is **composed, not free-standing** — a role graph such as `
 
 *(Added v0.3, 2026-06-27 — operator naming ruling 2026-06-25. Co-signed [[../decisions/adr_041_build_scale_role_graph_subtype|ADR-041]].)*
 
-The **build-scale twin** of the deployment role-graph. A Platform.aDNA carrying `platform_subtype: build_scale_role_graph` composes **build-face** software-element graphs (Forge = produce-with; Framework = conform-with) into a built artifact — website / dashboard / ops-center — and owns the role-shared assets no brick can home (archetypes, build lattices, content / voice / token / anti-slop doctrine, the site-quality gate framework, deploy orchestration). `Websites.aDNA` (Vitruvius) is the reference instance; it composes `Astro.aDNA` + `TypeScript.aDNA` + `Tailwind.aDNA` + `III.aDNA` (+ deploy). Build-face contract (mirrors the deploy face): **three wrappers** (`how/federation/git/` · `how/federation/iii/` · `how/federation/feedback/` with build-face signal classes) + a names-only credential note; **five verbs** author · compose · validate · version · interoperate; seam memos for overlapping bricks. Conformance + relationship to the deploy-scale twin: [[../decisions/adr_041_build_scale_role_graph_subtype|ADR-041]]. It is the *build-with → compose* face of the [[pattern_software_element_context_graph|software-element context graph]] umbrella ([[../decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]).
+The **build-scale twin** of the deployment role-graph. A Platform.aDNA carrying `platform_subtype: build_scale_role_graph` composes **build-face** software-element graphs (Forge = produce-with; Framework = conform-with) into a built artifact — website / dashboard / ops-center — and owns the role-shared assets no brick can home (archetypes, build lattices, content / voice / token / anti-slop doctrine, the site-quality gate framework, deploy orchestration). `WebForge.aDNA` (was `Websites.aDNA`, renamed 2026-07-02; Vitruvius) is the reference instance; it composes `Astro.aDNA` + `TypeScript.aDNA` + `Tailwind.aDNA` + `III.aDNA` (+ deploy). Build-face contract (mirrors the deploy face): **three wrappers** (`how/federation/git/` · `how/federation/iii/` · `how/federation/feedback/` with build-face signal classes) + a names-only credential note; **five verbs** author · compose · validate · version · interoperate; seam memos for overlapping bricks. Conformance + relationship to the deploy-scale twin: [[../decisions/adr_041_build_scale_role_graph_subtype|ADR-041]]. It is the *build-with → compose* face of the [[pattern_software_element_context_graph|software-element context graph]] umbrella ([[../decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]).
 
 ## Terminal ↔ Harness Contract
 

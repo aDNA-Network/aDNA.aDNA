@@ -18,7 +18,7 @@ A conformant instance is any project directory that meets the requirements for a
 
 ## Technical Definition
 
-A directory tree that satisfies all MUST requirements for at least the Starter [[what/glossary/glossary_conformance_level|conformance level]] defined in §5.5. At minimum: CLAUDE.md, MANIFEST.md, and README.md at root; `what/`, `how/`, `who/` triad directories; required subdirectories (`what/context/`, `how/missions/`, `how/sessions/`, `how/templates/`, `who/coordination/`, `who/governance/`); and base frontmatter fields on all content files. (aDNA Standard §5.5) Per ADR-044 (accepted 2026-06-30), `status` is optional on `type: directory_index` and `type: coordination` files, and the conformance walk excludes embedded instance trees — the reference instance leads the written v2.4 text here, which folds at the *proposed* v2.5 cut ([[what/glossary/glossary_standard_registers|Standard Registers]]).
+A directory tree that satisfies all MUST requirements for at least the Starter [[what/glossary/glossary_conformance_level|conformance level]] defined in §5.5. At minimum: CLAUDE.md, MANIFEST.md, and README.md at root; `what/`, `how/`, `who/` triad directories; required subdirectories (`what/context/`, `how/missions/`, `how/sessions/`, `how/templates/`, `who/coordination/`, `who/governance/`); and base frontmatter fields on all content files. (aDNA Standard §5.5) Per ADR-044 (accepted 2026-06-30), `status` is optional on `type: directory_index` and `type: coordination` files, and the conformance walk excludes embedded instance trees — the reference instance led the written text here, which caught up at the v2.5 cut (ADR-046, accepted at Champollion G2, 2026-07-02; [[what/glossary/glossary_standard_registers|Standard Registers]]).
 
 ## Usage Examples
 

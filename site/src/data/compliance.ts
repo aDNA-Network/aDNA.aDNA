@@ -39,7 +39,7 @@ export const governanceCards: ComplianceCard[] = [
   },
   {
     title: 'Architecture Decisions',
-    href: '/patterns/dual-audience',
+    href: '/patterns/dual-audience-writing',
     description: 'ADR files under what/decisions/ pair each technical choice with rationale, trade-offs, and reviewer attribution — designed for both engineering and compliance readers.',
   },
   {

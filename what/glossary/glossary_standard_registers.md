@@ -22,13 +22,13 @@ Five distinct referents of "standard" in the aDNA workspace:
 
 | Register | Lives at | Versioned by |
 |----------|----------|--------------|
-| **Universal Standard doc** | `what/docs/adna_standard.md` | semver `v2.x` track (currently v2.4) |
+| **Universal Standard doc** | `what/docs/adna_standard.md` | semver `v2.x` track (currently v2.5) |
 | **Ecosystem spec corpus** | `what/specs/spec_*_ecosystem.md` | per-spec, prose-dated |
 | **Workspace Standing Rules** | root `CLAUDE.md` (router) | governance-version + git history |
 | **Governance version track** | `CLAUDE.md` `version:` + `CHANGELOG.md` | governance semver (currently 6.0) |
 | **Scoped rubrics / exemplar standards** | e.g. ADR-040 "Obsidian Node Exemplar Standard" | their own ADR/rubric scope |
 
-**Two-track versioning** (`adna_standard.md` §15.4, ADR-011): the *written standard* (the doc's semver, v2.4) and the *reference instance* (this vault) advance on separate tracks — the instance may lead the written text, which catches up at a version cut. That is exactly why a ratified refinement like ADR-044 can be live in the instance while v2.4's prose is still stricter, folding in only at the *proposed* v2.5 cut (ADR-046, pending the G2 operator gate).
+**Two-track versioning** (`adna_standard.md` §15.4, ADR-011): the *written standard* (the doc's semver, v2.5) and the *reference instance* (this vault) advance on separate tracks — the instance may lead the written text, which catches up at a version cut. That is exactly what happened with ADR-044: the ratified refinement went live in the instance while v2.4's prose was still stricter, then folded into the written text at the v2.5 cut (ADR-046, accepted at Champollion G2, 2026-07-02).
 
 **Rule of thumb:** when an ADR or memo says it "touches the standard," check which register — a spec-doc change bumps the `v2.x` semver, a house-rule change is governance-versioned, and a rubric change touches only its own scope.
 

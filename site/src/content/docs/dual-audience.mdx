@@ -1,67 +1,91 @@
 ---
-title: "Dual-Audience Writing — aDNA Patterns"
-description: "aDNA documentation must serve two audiences with different needs: developers seeking technical precision for implementation, and newcomers seeking plain..."
-doc_title: "Dual-Audience Writing"
-section: "patterns"
-order: 3
+title: "Dual Audience — aDNA Concepts"
+description: "aDNA's communication discipline: every content file stays technically precise for developers and genuinely clear for newcomers — neither audience sacrificed."
+doc_title: "Dual Audience"
+section: "concepts"
+order: 7
 ---
 
-## Problem
+## Overview
 
-aDNA documentation must serve two audiences with different needs: developers seeking technical precision for implementation, and newcomers seeking plain-language understanding of what aDNA is and why it matters. Writing only for developers excludes newcomers. Writing only for newcomers frustrates developers who need spec references, field names, and decision tables.
+Dual-audience writing is aDNA's communication discipline: every content file must be technically precise for developers building with the standard AND genuinely clear for newcomers understanding what it is. Neither audience is sacrificed for the other.
 
-Most documentation systems solve this by creating separate documents — a "Getting Started" guide and an "API Reference." This doubles maintenance cost and creates drift between the two versions.
+## Why This Matters
 
-## Solution
+Most technical documentation picks a side. Developer docs assume you already know the domain — they're precise but impenetrable to outsiders. User guides explain things simply — but strip out the technical depth that developers actually need. The result is two parallel documents that drift apart over time, or one document that serves neither audience well.
 
-Write every content file with **layered depth** — both audiences served in one document, in a specific order (Campaign CLAUDE.md, Quality Gate 1):
+aDNA refuses this trade-off. A single concept file — like the one you're reading right now — must work for both audiences simultaneously. A developer should be able to find spec section numbers, implementation details, and structural rules. A product manager, educator, or curious newcomer should be able to understand the core idea without hitting a wall of jargon.
+
+Why insist on this? Because aDNA is a knowledge architecture that both humans and AI agents navigate. If a concept file is only legible to developers, then a non-technical project lead can't understand what their agents are doing. If it's only legible to beginners, agents miss the precision they need to implement correctly. The architecture serves a mixed audience by nature — the documentation must match.
+
+This is the Feynman principle applied to documentation: if you can't explain it simply, you don't understand it well enough to document it. And if you can't document it precisely, nobody can build with it reliably.
+
+## How It Works
+
+### The Structure: Layered Depth
+
+Dual-audience writing in aDNA follows a consistent structural pattern. Every concept, pattern, and tutorial file moves through layers of increasing depth:
 
 | Section | Audience | Purpose |
 |---------|----------|---------|
-| **Opening** (1-3 sentences) | Everyone | Plain-language summary a 14-year-old could follow |
-| **Why This Matters** | Newcomers first, developers second | Metaphor-driven motivation, no jargon, then bridge to technical impact |
-| **How It Works** | Both | Technical substance with tables, spec citations, and decision frameworks |
-| **See It In Action** | Both | Self-referential example from this vault |
-| **Related** | Both | Cross-links for further exploration |
+| **Overview** | Both | 1-2 sentence summary — plain language, no prerequisites |
+| **Why This Matters** | Newcomers first | Metaphor-driven explanation, no jargon, builds intuition |
+| **How It Works** | Developers first | Technical detail, spec references, tables, implementation rules |
+| **See It In Action** | Both | Self-referential example — the vault demonstrates the concept |
+| **Related** | Both | Links to connected concepts, patterns, tutorials |
 
-**Key principles**:
+The key insight is *layering*, not *simplifying*. The "Why This Matters" section doesn't dumb things down — it provides a different kind of understanding. The mental model and metaphor give a newcomer the intuition they need to then read the technical section productively. For developers, the plain-language section is a sanity check: if the metaphor doesn't align with the technical spec, something is wrong with one of them.
 
-1. **Plain-language opening is mandatory.** The first sentences must be jargon-free. If a concept can't be explained simply, the file isn't ready.
-2. **Metaphor before mechanism.** Give the reader a mental model ("think of it like a funnel") before introducing technical terms.
-3. **Tables over prose for technical content.** Developers scan tables; newcomers read the surrounding prose. Tables serve both.
-4. **Spec citations for precision, not authority.** "§3.1" tells a developer exactly where to look. A newcomer skips it without losing understanding.
-5. **One file, two reads.** A newcomer reads the opening and motivation, gets the gist, and moves on. A developer reads the tables and spec citations, gets the implementation details. Neither needs a separate document.
+### The Opening Rule
 
-## When to Use
+aDNA enforces a concrete quality gate: every concept and pattern file MUST begin with 1-3 sentences that a 14-year-old could follow. This is the **plain-language opening** gate.
 
-- Every concept, pattern, tutorial, and comparison file in an aDNA documentation vault
-- Governance files that may be read by non-technical stakeholders
-- README files and entry-point documentation
-- Any content intended for a mixed-expertise audience
+The 14-year-old test isn't about targeting 14-year-olds. It's a forcing function. If you can't express the core idea without assumed domain knowledge, you haven't distilled the concept down to its essence. The opening is the hook that invites the non-technical reader in, and it's the summary that the technical reader uses to verify they're reading the right file.
 
-## Example: This Vault
+### Spec Citations and Plain Language
 
-Every concept file in `what/concepts/` demonstrates dual-audience writing. Open `concept_convergence.md`:
+aDNA requires that normative claims reference the upstream standard with section numbers (e.g., "§4.2 CLAUDE.md", "§4.5 AGENTS.md", "§4.6 README.md" — the governance-file sections this concept leans on). This serves both audiences:
 
-- **Opening**: "The convergence model is aDNA's structural principle for managing complexity..." — one sentence, no jargon, immediately clear.
-- **Why This Matters**: "Picture a funnel..." — starts with a spatial metaphor any reader can follow, then bridges to the technical problem (token limits, context windows).
-- **How It Works**: Decision tables, token budgets, spec references (§8.7, §9, §10) — a developer's reference material.
-- **See It In Action**: Points to actual files and token counts in this vault — concrete, verifiable.
+- **For developers**: Spec references are traceable. They can verify claims, check for updates, and find related normative requirements.
+- **For newcomers**: Seeing "(§4.2)" signals "this isn't just one person's opinion — it's a defined standard." The reference builds credibility without requiring the reader to look it up.
 
-The same layering appears in this file you're reading now. The Problem section is plain-language. The Solution section has tables for developers. Both audiences are served without duplication.
+The balance is: plain-language claim first, then spec citation. Never lead with the section number.
 
-## Anti-Pattern
+### The Self-Reference Discipline
 
-**Jargon-first writing**: "The convergence model implements monotone-decreasing token bounds across the execution hierarchy DAG." Technically accurate. Newcomers leave immediately.
+Every content file must cite at least one concrete example from the vault itself. This is the **self-reference check** quality gate. Self-reference serves both audiences:
 
-**Dumbing down**: Removing all technical depth to be "accessible." Developers can't find the spec references, field names, or decision criteria they need. Accessibility doesn't mean simplification — it means layered depth.
+- **For newcomers**: Abstract concepts become tangible. "Open this file and you'll see the pattern in action" is far more effective than "here is a theoretical description of the pattern."
+- **For developers**: Self-referential examples are verifiable. The reader can navigate to the referenced file and confirm the claim. If the claim is wrong, the vault has a bug — and bugs are fixable.
 
-**Separate documents**: Writing a "Simple Guide" and a "Technical Reference" for the same concept. Maintenance doubles, versions drift, and there's no single source of truth.
+### Quality Gates as Enforcement
 
-**Apologetic jargon**: "This might sound complicated, but..." Don't apologize. Give the metaphor first, then give the technical term. Confidence, not condescension.
+Dual-audience writing is enforced through campaign quality gates, not just guidelines. In this vault, every content file must pass:
+
+1. **Dual audience test** — reviewed via `skill_dual_audience_review.md`
+2. **Self-reference check** — reviewed via `skill_self_reference_check.md`
+3. **Spec citation** — normative claims reference `adna_standard.md` sections
+4. **Plain-language opening** — first 1-3 sentences pass the 14-year-old test
+5. **Cross-linking** — 2+ links to related content
+6. **Frontmatter complete** — all required metadata fields populated
+
+Gates 1, 2, and 4 directly enforce dual-audience quality. Without enforcement, dual-audience writing degrades to "developer docs with a one-line summary" — technically compliant but practically single-audience.
+
+## See It In Action
+
+This file is itself a dual-audience demonstration. Examine how it's structured:
+
+- **The opening sentence** uses no jargon: "every content file must be technically precise for developers AND genuinely clear for newcomers." A 14-year-old could follow that.
+- **"Why This Matters"** uses a concrete comparison (developer docs vs. user guides) rather than abstract principles. No spec references, no aDNA terminology beyond what's been introduced.
+- **"How It Works"** introduces spec sections (§4.2, §4.5, §4.6), quality gates, and structural patterns. A developer can reference these directly.
+- **This section** points you to the actual vault structure so you can verify the claims yourself.
+
+Now look at the foundational concepts for comparison. Open [The Triad](/learn/concepts/triad) — it opens with "Imagine you're moving into a new house with hundreds of boxes." That's the 14-year-old opening. Then it moves to the question test table, spec references (§3.1), and deployment form details. Same pattern: metaphor → mechanism → self-reference.
+
+The campaign voice guide codifies this: "Warm and precise, anti-jargon-first. Channel the Feynman principle." The voice applies to every file, and the quality gates ensure it's not just aspirational. For the reusable form of this discipline, see the [Dual-Audience Writing](/patterns/dual-audience-writing) pattern.
 
 ## Related
 
-- [Dual-Audience Writing](/learn/concepts/dual-audience) — the concept that explains why this pattern exists
-- [Agentic Literacy](/learn/concepts/agentic-literacy) — the literacy movement that dual-audience writing makes inclusive
-- [Question Test](/patterns/question-test) — another pattern where simplicity serves dual audiences
+- [Governance Files](/learn/concepts/governance-files) — where CLAUDE.md and README.md demonstrate the agent/human audience split
+- [The Triad](/learn/concepts/triad) — a foundational concept that models the dual-audience pattern in its own content
+- [The Knowledge Graph](/learn/concepts/knowledge-graph) — the connected structure that dual-audience files navigate through links

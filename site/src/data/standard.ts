@@ -13,8 +13,15 @@
  * the Tier-2 standard-currency sweep (2026-06-22), which also brought the dev standard doc
  * (what/docs/adna_standard.md) to v2.3 + authored its §5.1 inventory / §5.2 identity rows;
  * the public image's spec body closes at the next gated template release.
+ *
+ * 2026-07-02 (Champollion M4.4): v2.3→v2.5. ADR-046 (accepted, ratified at Champollion G2)
+ * cut the dev standard doc (what/docs/adna_standard.md) v2.4→v2.5 — §7.2 per-class frontmatter
+ * profile + §5.5 walk scope (ADR-044 fold) + new §7.7 ratification discipline. This constant and
+ * the generic "aDNA Standard vX" prose pointers move now; the pinned spec mirror
+ * (/reference/specification) stays a v2.3-body snapshot until a deliberate re-mirror. The public
+ * aDNA-Network/aDNA image picks up v2.5 at Champollion M6.1's gated release candidate.
  */
-export const STANDARD_VERSION = 'v2.3';
+export const STANDARD_VERSION = 'v2.5';
 export const ENTITY_TYPE_COUNT = 16;
 export const CONFORMANCE_LEVELS = 3;
 export const STANDARD_LICENSE = 'MIT';

@@ -88,7 +88,7 @@ export const navigation: NavGroup[] = [
     items: [
       { label: 'The Question Test', href: '/patterns/question-test', order: 1 },
       { label: 'AGENTS.md Routing', href: '/patterns/agents-md', order: 2 },
-      { label: 'Dual-Audience Writing', href: '/patterns/dual-audience', order: 3 },
+      { label: 'Dual-Audience Writing', href: '/patterns/dual-audience-writing', order: 3 },
       { label: 'Base/Extension', href: '/patterns/base-extension', order: 4 },
       { label: 'Context Recipe', href: '/patterns/context-recipe', order: 5 },
       { label: 'FAIR Envelope', href: '/patterns/fair-envelope', order: 6 },

@@ -6,18 +6,17 @@ status: active
 difficulty: intermediate
 spec_section: "§1 Introduction, §3 Triad Architecture, §11 Federation Protocol"
 dual_audience: true
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [concept, open_standard, extensibility, federation, governance, intermediate]
 related_concepts: [concept_triad, concept_governance_files, concept_fair_metadata, concept_ontology]
 related_patterns: [pattern_base_extension, pattern_fork_customize]
-last_edited_by: agent_rosetta
 ---
 
 # Open Standard — Why aDNA Is a Standard, Not a Product
 
 ## Overview
 
-aDNA is an open standard — a publicly documented specification that anyone can implement, extend, and build upon without permission or payment. The upstream spec (aDNA Standard v2.4, published at `github.com/aDNA-Network/aDNA`) defines the normative rules. Individual projects implement the standard, extending it for their domain while maintaining compatibility with the shared core.
+aDNA is an open standard — a publicly documented specification that anyone can implement, extend, and build upon without permission or payment. The upstream spec (aDNA Standard v2.5, published at `github.com/aDNA-Network/aDNA`) defines the normative rules. Individual projects implement the standard, extending it for their domain while maintaining compatibility with the shared core.
 
 ## Why This Matters
 
@@ -35,7 +34,7 @@ aDNA maintains a clear separation between the standard (what's normative) and im
 
 | Layer | What It Is | Who Controls It | Example |
 |-------|-----------|----------------|---------|
-| **Upstream spec** | aDNA Standard v2.4 — normative rules using RFC 2119 keywords (MUST, SHOULD, MAY) | Open governance (github.com/aDNA-Network/aDNA) | "Every instance MUST use the what/how/who triad" |
+| **Upstream spec** | aDNA Standard v2.5 — normative rules using RFC 2119 keywords (MUST, SHOULD, MAY) | Open governance (github.com/aDNA-Network/aDNA) | "Every instance MUST use the what/how/who triad" |
 | **Base template** | `.adna/` — ready-to-fork implementation of the spec | Upstream maintainers | Governance files, triad directories, templates, skills |
 | **Project instance** | A forked and customized aDNA project | Project owner | This vault (`aDNA.aDNA/`), any `.aDNA/` project |
 

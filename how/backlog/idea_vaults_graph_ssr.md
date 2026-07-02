@@ -8,7 +8,7 @@ last_edited_by: agent_rosetta
 status: deferred
 source: campaign_looking_glass (M2 finding A-06; DP3-deferred 2026-06-28)
 tags: [backlog, follow_on, website, craft, performance, a11y, looking_glass, a-06]
-deferred_owner: "Rosetta + Websites.aDNA"
+deferred_owner: "Rosetta + WebForge.aDNA"
 deferred_trigger: "dedicated craft cycle / Websites build pass (operator DP3-deferred; honor pt19 + Websites carve)"
 ---
 
@@ -34,9 +34,9 @@ deferred_trigger: "dedicated craft cycle / Websites build pass (operator DP3-def
 
 ## Disposition
 
-A dedicated craft cycle (or route via STR / a `Websites.aDNA` build pass). Self-contained, well-isolated SSR work. Pairs naturally with the deferred concept-route CLS item (A-07) as a "graph + concept craft" cycle. Honor pt19 + the Websites carve; coordinate deploy by memo.
+A dedicated craft cycle (or route via STR / a `WebForge.aDNA` (was Websites.aDNA, renamed 2026-07-02) build pass). Self-contained, well-isolated SSR work. Pairs naturally with the deferred concept-route CLS item (A-07) as a "graph + concept craft" cycle. Honor pt19 + the WebForge carve; coordinate deploy by memo.
 
 
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
-**DEFER.** Owner: Rosetta + Websites.aDNA. Trigger: dedicated craft cycle / Websites build pass (operator DP3-deferred; honor pt19 + Websites carve). Ratified at Champollion G0 (D2).
+**DEFER.** Owner: Rosetta + WebForge.aDNA. Trigger: dedicated craft cycle / WebForge build pass (operator DP3-deferred; honor pt19 + WebForge carve). Ratified at Champollion G0 (D2).

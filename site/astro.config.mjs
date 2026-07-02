@@ -8,6 +8,11 @@ export default defineConfig({
   site: process.env.SITE_URL || 'https://adna.network',
   output: 'static',
   adapter: vercel(),
+  // Deliberate rename redirect (Champollion M4.4): the pattern page moved to free the
+  // concept's natural slug. Named here per the F-CHM-207 no-silent-redirects lesson.
+  redirects: {
+    '/patterns/dual-audience': '/patterns/dual-audience-writing',
+  },
   integrations: [mdx(), sitemap()],
   prefetch: {
     prefetchAll: false,

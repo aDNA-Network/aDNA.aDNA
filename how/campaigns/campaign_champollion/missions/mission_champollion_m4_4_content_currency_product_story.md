@@ -3,14 +3,14 @@ plan_id: mission_champollion_m4_4_content_currency_product_story
 type: plan
 title: "M4.4 — Site content currency vs v2.5 + product story + the G3-D6 hygiene batch"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 4
 campaign_mission_number: 4
 mission_class: implementation
 executor_tier: opus
 token_budget_estimated: "40 kT (charter 35 + Mode-B bookend allowance ~+15% per G3 D4; hygiene batch is mechanical, sweep-shaped)"
-token_budget_actual: "TBD"
+token_budget_actual: "~57 kT (opus builder ~44 self-reported + fable bookends ~13 incl. verify-before-dispatch + 8 review completions) vs 40 est — +43%, worst P4 delta; drivers = the dual-audience slug-collision investigation/Option-A completion + the two-layer version discovery (site v2.3 ⟵ vault v2.4 ⟵ live v2.5). Ring-2 55 kT threshold reached at completion (review-side), builder lane 44 < halt; P4 net through four missions ≈ +7%"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -39,10 +39,10 @@ True the site's content to the **now-live v2.5** standard + current fleet realit
 
 ## Acceptance criteria
 
-- [ ] Zero stale LIVE v2.4-era cites on teaching/site surfaces (historical cites preserved + qualified); counts census-true; `npx astro build` green.
-- [ ] Product story coherent + brand-locked; LP claims cite-at-pin.
-- [ ] Hygiene: WebForge sweep done (LIVE→new, HISTORICAL kept, tally reported); git dual-home memo staged (+ local reconcile if ruled); pycache untracked + ignored.
-- [ ] Fable review passed; `adna_validate` FULL PASS + `--governance` zero drift; explicit-path commit.
+- [x] Zero stale LIVE v2.4-era cites on teaching/site surfaces (historical cites preserved + qualified); counts census-true; `npx astro build` green. *(19 cites trued — 8 site + 11 vault; the site was TWO versions stale [standard.ts v2.3]; 7 count fixes incl. skills 15→50, templates 32→41; 12 residual site-v2.3 = mirror/provenance verified; build 180pp exit 0.)*
+- [x] Product story coherent + brand-locked; LP claims cite-at-pin. *(PASS with zero edits — brand-lock clean, Exchange roadmap-honest, zero Lighthouse claims; LP pin `LatticeProtocol.aDNA/STATE.md` §QUEUED verified 2026-07-02.)*
+- [x] Hygiene: WebForge sweep done (LIVE→new, HISTORICAL kept, tally reported); git dual-home memo staged (+ local reconcile if ruled); pycache untracked + ignored. *(3 files/5 occ → WebForge.aDNA · 23/49 KEPT + adr_041 dated Naming-note annotation, tally artifact §5/§10; dual-home: index-side pre-existed at `14e3031` 2026-06-30 [stale hygiene row] + worktree drift HEALED [symlink had materialized into a copy dir — restored]; memo notify-not-propose w/ drift datum + CLAUDE.md pointer trued; pycache 10→0 in index, .gitignore already covered.)*
+- [x] Fable review passed; `adna_validate` FULL PASS + `--governance` zero drift; explicit-path commit. *(PASS-with-completions: Option A ACCEPTED + 6 code-side link repoints [F-CHM-213] + named redirect + orphan removed + concept-page self-reference trued; validators green.)*
 
 ## Guardrails
 

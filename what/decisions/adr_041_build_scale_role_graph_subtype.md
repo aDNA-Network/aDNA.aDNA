@@ -4,8 +4,8 @@ adr_number: "041"
 title: "Build-scale role-graph subtype of Platform.aDNA — the build-face twin of the software-deployment role-graph"
 status: accepted
 created: 2026-06-27
-updated: 2026-06-27
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 campaign_id: campaign_websites_genesis
 supersedes:
 superseded_by:
@@ -17,6 +17,8 @@ tags: [adr, decision, platform, build_role_graph, role_graph, websites, federati
 ## Status
 
 Accepted — 2026-06-27 (operator-directed ratification: the operator selected **"ratify the standard-touches"**, landing the two standard-touches Vitruvius staged for Rosetta on 2026-06-25). This ADR records and formalizes the operator's **2026-06-25 SiteForge↔Astro ruling** ("Option C evolved" → create `Websites.aDNA`, retire SiteForge, slim `Astro.aDNA` to the framework brick). Proposed 2026-06-25 by Vitruvius (`Websites.aDNA`) via `proposal_adr_build_scale_role_graph.md`. Symmetric to [[adr_037_software_deployment_graph_subtype|ADR-037]] (the deploy-scale subtype) under the [[adr_039_software_element_context_graph_umbrella|ADR-039]] umbrella.
+
+> **Naming note (2026-07-02, Champollion M4.4 hygiene sweep):** `Websites.aDNA` was renamed **`WebForge.aDNA`** fleet-side on 2026-07-02 (Corps M-C8, D-W0; ~30-day back-compat shim). This ADR preserves the original name throughout as the ratified 2026-06-27 record (phase-record precedent — ratified text is annotated, not rewritten); the live reference instance is now **`WebForge.aDNA`**.
 
 ## Context
 
