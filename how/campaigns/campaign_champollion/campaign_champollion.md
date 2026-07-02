@@ -32,14 +32,14 @@ tags: [campaign, champollion, launch, base_layer, standard, template, site, gove
 │    ✅ P1  adjudication & governance           (M1.1–M1.5)                      │
 │    ✅ P2  standard & spec consolidation       (M2.1–M2.3 · G2 · v2.5 CUT)      │
 │    ✅ P3  pattern harvest & self-application  (M3.1–M3.3 · G3 · 8 patterns)    │
-│    ◐ P4   docs, site & first-contact UX       (M4.1–M4.4 briefed)              │
+│    ◐ P4   docs, site & first-contact UX       (M4.1–M4.4 done; G4 pending)     │
 │    🔲 P5  LP seam & Exchange story            (M5.1–M5.3)                      │
 │    🔲 P6  release candidate & readiness       (M6.1–M6.3)                      │
 │    🔲 P7  ship & handoff                      (M7.1–M7.2)                      │
 │                                                                                │
 │  PLAN     phase 0 · 14–24 sessions · ≈700–850 kT · 7 hard constraints          │
 ├────────────────────────────────────────────────────────────────────────────────┤
-│  GATES    G3 RATIFIED 2026-07-02 (ring KEEP · graduations) · P4 OPEN · next G4 │
+│  GATES    G4 RENDERED 2026-07-02 (P4 work complete M4.1–M4.4) — operator gate  │
 ╰────────────────────────────────────────────────────────────────────────────────╯
 ```
 
@@ -80,7 +80,7 @@ P4 FIRST-CONTACT ──G4──▶ P5 LP SEAM ──G5──▶ P6 RC & READINES
 | **P1 ✅** | Adjudication & governance integrity — **CLOSED; G1 RATIFIED 2026-07-02** (all four as rec; record: `how/gates/champollion_p1_gate.output.md`) | G0 ratified | Backlog at zero un-dispositioned; ADR-045 record repaired per G0; ratification discipline live; adr_index live (40 rows); currency sweep done; STATE dieted (554 KB → 46.6 KB). **G1 per-tier AAR review PASS**: 5/5 at planned tier · 0 tier-changing escalations · −25% total (160→120 kT) · datapoint #1 emitted. **First post-ratification act**: P2 mission briefs materialized at judgment tier |
 | **P2 ✅** | Standard & spec consolidation — **CLOSED; G2 RATIFIED 2026-07-02** (all four as rec + role re-tier directive; record: `how/gates/champollion_p2_gate.output.md`) | G1 | Standard audited v2.4↔v8.3↔ADR corpus (M2.1: F-CHM-201..206 + E1); **ADR-046 RATIFIED (v2.5 · Arm A · C6 defer) → the v2.5 cut EXECUTED** in `what/docs/adna_standard.md` (§7.2 profile · §5.5 walk scope · new §7.7 ratification discipline · §5.3 `federation/` row · §15.4 version-cut checklist); glossary/concepts current (12 fixed + 4 new entries, F-CHM-204 closed). Per-tier: 115→64 kT (−44%), 3/3 at tier; datapoint #2 emitted. **First post-ratification act**: P3 briefs materialized under the G2 role model (fable bookends · opus builds) |
 | **P3 ✅** | Pattern harvest & exemplar self-application — **CLOSED; G3 RATIFIED 2026-07-02** (all six as rec: GO+ring-KEEP · graduation batch · PUSH · datapoint #3 · EXEMPT-AS-POLICY · housekeeping; record: `how/gates/champollion_p3_gate.output.md`) | G2 ✅ | 8 patterns harvested in one Mode-B session (dir 14→22; 3 graduated to `active` at G3) · first v2.5 self-score **45→46/50 honest, 48/50 under the D5 policy** · seeds re-derived 3/3 + ratified (authoring → M4.2) · F-CHM-206/208 FIXED, 209 → M6.1 rider · telemetry #3 (calibration HELD) |
-| **P4 ◐** | Docs, site & first-contact UX — **OPEN (briefs live: M4.1–M4.4)** | G3 ✅ | Newcomer Stress-Test of the real first hour **green**; site UX pass done (+ 2 seed-skill riders); Ring-1 site backlog executed; learning path walks end-to-end (F-CHM-207); content current vs v2.5 + product story + hygiene batch. **G4 = P4 exit** (P5 parallel-eligible) |
+| **P4 ◐** | Docs, site & first-contact UX — **WORK COMPLETE 2026-07-02; G4 RENDERED, pending** (gate: `how/gates/champollion_p4_gate.md`) | G3 ✅ | All four missions closed w/ AARs in **one Mode-B sweep session**: stress-test of the real first hour **green** (0 blockers; F-CHM-210/211 filed+routed) · site learn-onramp + `/rss.xml` + 2 seed skills (census 48→50) · 13 teaching surfaces walked, 0 failing + **F-CHM-207 FIXED** + first tutorial designated · content trued to **v2.5** (site was two versions stale) + **13th concept landed** + product story PASS + hygiene batch (WebForge sweep · dual-home drift healed + Hopper memo staged · pycache). Per-tier 189→~203 kT (**+7%**), 4/4 at tier; F-CHM-212/213 corollaries recorded; twin-builder concurrency event contained. **G4 = operator gate, pending** (P5 parallel-eligible) |
 | **P5** | LP seam & Exchange story | G3 (parallel-eligible with P4) | Joint base-layer memo countersigned (or pending-with-owner); mutual conformance both directions; Exchange/Lighthouse story teachable end-to-end |
 | **P6** | Release candidate & launch readiness | G4+G5 | Template RC assembled + dry-run, **held at G6**; DP4 dossier + Track D terminal assessment delivered; adversarial pass 2 + security re-verify clean. G6 = operator fires `skill_template_release` + push/deploy decisions |
 | **P7** | Ship & handoff | G6 fired | Release shipped; `.adna/` sync verified; campaign AAR + splash + handoff packet; telemetry corpus exported; DP4 readiness reported (operator fires DP4). G7 = campaign close |
