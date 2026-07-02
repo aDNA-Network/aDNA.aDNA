@@ -3,14 +3,14 @@ plan_id: mission_champollion_m3_2_pattern_harvest_ii
 type: plan
 title: "M3.2 — Pattern harvest II (credential-broker · shim-registry · coord/countersign · ISS gates · campaign-splash) + graduation-seed checks"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 3
 campaign_mission_number: 2
 mission_class: implementation
 executor_tier: opus
 token_budget_estimated: "40 kT"
-token_budget_actual: "TBD"
+token_budget_actual: "~56 kT (opus subagent build ~46 self-reported + fable bookends ~10 verify/census/amendments; +40% over est — census-driven review amendments, see AAR)"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -20,6 +20,8 @@ tags: [plan, campaign, champollion, p3, pattern_harvest, credential_broker, shim
 # Mission M3.2 — Pattern harvest II
 
 **Campaign**: [[../campaign_champollion|campaign_champollion]] · **Executor: opus (build) with fable bookends** (G2 role model) · **Ring 2** (compressible — converts to accepted-carry at the **G3 ring cut** if the launch window tightens; if compression hits mid-mission, finish started files cleanly and halt).
+
+> **DONE 2026-07-02** (`session_stanley_20260702T161839Z_champollion_p3_sweep`, fable-orchestrated · opus subagent at-tier, Mode B). Five patterns live (broker/shim split into two): [[../../../what/patterns/pattern_credential_broker|credential_broker]] · [[../../../what/patterns/pattern_shim_registry|shim_registry]] · [[../../../what/patterns/pattern_coordination_countersign|coordination_countersign]] · [[../../../what/patterns/pattern_iss_operator_gate|iss_operator_gate]] · [[../../../what/patterns/pattern_campaign_splash|campaign_splash]] — all `draft`, NAMES-ONLY verified (independent grep). Graduation seeds re-derived from primary evidence: **both already 3/3 (graduated 2026-05-27; OoB counts were stale)** — backlog filed + OoB §2 annotated → **G3 ratification flags**. Fable-review census found adoption outran documentation: **ISS = 10 vault adoptions** (not "3 live"; Rule 8 row stale) + **broker = 3** (BusinessIntelligence carries the snippet) → both patterns **threshold-met, G3 flags**. AAR: [[../../../how/missions/artifacts/campaign_champollion_mission_m3_2_aar|m3_2 AAR]].
 
 ## Objective
 
