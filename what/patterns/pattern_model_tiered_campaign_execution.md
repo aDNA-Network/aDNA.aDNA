@@ -6,8 +6,8 @@ status: draft
 pattern_category: operational
 applies_to: [campaign, mission, session, all_categories]
 campaign_id: campaign_champollion
-instances: [campaign_carnot (LatticeProtocol.aDNA), campaign_champollion (aDNA.aDNA), C03-ETAT-MAJOR (Operations.aDNA — operator-ruled at their S41 gate 2026-07-02), campaign_operation_corps (aDNALabs.aDNA — operator-ruled at the Corps plan gate 2026-07-02; strict two-tier binding variant)]
-graduation: "4 instances live — GRADUATION TRIGGER FIRED 2026-07-02 (C03 + Corps adopted same-day, each independently claiming '3rd'); template-fold ratification queued at Champollion G3, ships via M6.1 RC (skill_template_release). C6/D2c deferral at G2 pointed at exactly this trigger."
+instances: [campaign_carnot (LatticeProtocol.aDNA), campaign_champollion (aDNA.aDNA), C03-ETAT-MAJOR (Operations.aDNA — operator-ruled S41 gate 2026-07-02), campaign_operation_corps (aDNALabs.aDNA — operator-ruled plan gate 2026-07-02; strict two-tier variant), vauban_charter_d5 (Terminal.aDNA — operator-ruled sitting 2026-07-02; class→tier default table, folded into §2.5)]
+graduation: "5 instances live — GRADUATION TRIGGER FIRED 2026-07-02 (C03 + Corps + Vauban adopted same-day, each unaware of the others); template-fold ratification queued at Champollion G3, ships via M6.1 RC (skill_template_release). C6/D2c deferral at G2 pointed at exactly this trigger."
 last_edited_by: agent_rosetta
 tags: [pattern, model_tiering, executor_tier, campaign, token_budget, adr_016, context_intelligence, contextscope, carnot, champollion]
 ---
@@ -69,6 +69,16 @@ Estimate-vs-actual lands in every mission AAR (SO-11); >2× drift triggers the A
 ### 2.5 Orchestrator-bookend refinement (instance evidence — Champollion P2/G2, 2026-07-02)
 
 When the **main session itself runs at the judgment tier** (Champollion P2 ran under an operator-set fable main loop), the roles sharpen into a two-role operating model, formalized by operator directive at Champollion's G2 gate: **the judgment tier plans, brainstorms, and reviews; the build tier executes.** Concretely, every mission gets **judgment-tier bookends** — brief authoring at the gate → verify-before-dispatch (re-derive the brief's claims against the live tree) → build at `executor_tier` (subagent or session) → **independent output review** before anything is committed. Under this shape, `executor_tier` on a mission card denotes the **build** tier; missions whose *substance* is review, adversarial attack, or closeout synthesis remain judgment-tier-led (review is not "execution" to be delegated). A tier-match subtlety this refinement resolves: when the main session's tier equals a mission's planned tier, running it **at-tier direct** is equivalent to the subagent shape (`model_actual == tier_planned` either way) — first exercised at Champollion M1.5 (opus-in-opus), confirmed at M2.2 (fable-in-fable). Instance telemetry: P2 ran 3/3 at planned tier, −44% under budget, 0 escalations ([[../../how/campaigns/campaign_champollion/artifacts/telemetry_corpus_p2|datapoint #2]]); the refinement is recorded here as instance evidence — the §2.1 three-class vocabulary and the Carnot-shared binding table are unchanged.
+
+**Class→tier default table** (amendment 2026-07-02 — the same operator role ruling issued independently three times the same day: Champollion G2 ("fable = strategy/planner/brainstormer/reviewer · opus = builder/executor"), the Corps plan gate (strict two-tier binding), and the Terminal/Vauban sitting (whose proposed table this folds — [[../../who/coordination/coord_2026_07_02_berthier_to_rosetta_class_tier_default_rule|memo]]); three convergent rulings = decided operator doctrine, recorded here in the SSOT):
+
+| `mission_class` | default `executor_tier` | note |
+|---|---|---|
+| planning · design · census · **review** · ceremony / gate sittings · adversarial passes · closeout synthesis | **fable** | the strategy/planner/brainstormer/**reviewer** role; safety invariant unchanged — operator-summon only, never auto-spawned |
+| build · implementation · integration · verification-execution · hotfix · ceremony-prep | **opus** | the builder/executor role; raises the execution floor over the prior sonnet-default-for-mechanical stance; runs under **fable bookends** (brief → verify-before-dispatch → build → independent review) |
+| *(any)* | sonnet | **reserved** — only by explicit per-card operator ruling for provably-mechanical sweeps (an opt-down, no longer a default lane) |
+
+Campaigns MAY declare a local variant table in their charter (Vauban-style); absent one, this table is the default. Budget fields + the §2.2 downtier-safe brief contract are unaffected — a brief written downtier-safe stays cheaper to write and safer to run at any tier.
 
 ## 3. Why this is measurable (the Context.aDNA seam)
 
