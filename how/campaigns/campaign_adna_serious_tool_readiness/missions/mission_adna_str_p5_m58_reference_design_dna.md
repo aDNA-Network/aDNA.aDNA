@@ -24,7 +24,8 @@ prerequisite_missions:
   - mission_adna_str_p5_m51_research_oss_visual   # research-class precedent (8 OSS dossiers + cross-target synthesis)
 sibling_mission: mission_adna_str_p5_m57_adnalabs_expansion_planning_stub   # M5.8 feeds M5.7's O3 IA + O4 exit gate
 tags: [mission, m5_8, v8, p5, research, reference_inspection, design_dna, front_page_doctrine, ecosystem_site, design_foundation]
-status: active
+status: completed   # was 'active' (dangling); flipped 2026-07-01 at the STR resume-reconciliation gate — mission was functionally closed 2026-06-03 (closed_at + O1-O4 all ✅ + Lightweight AAR present), the status field just never flipped
+closeout_note: "Dangling-done cleanup — status correction only (no new work). All objectives ✅ and closed_at:2026-06-03 predate this flip. Ref: missions/artifacts/str_resume_reconciliation_ledger.md"
 ---
 
 # Mission M5.8 — Reference Inspection & Design-DNA Doctrine

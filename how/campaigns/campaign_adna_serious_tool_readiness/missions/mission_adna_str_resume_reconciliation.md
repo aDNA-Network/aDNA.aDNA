@@ -11,8 +11,10 @@ opens_at: 2026-06-30
 opened_session: session_stanley_20260701T020808Z_str_resume_reconciliation
 persona: rosetta
 last_edited_by: agent_stanley
-status: active
+status: completed
 mission_class: reconnaissance   # diff/analysis + re-planning; governance artifacts only; NO executable code, NO downstream execution
+closed_at: 2026-07-01
+closed_session: session_stanley_20260701T020808Z_str_resume_reconciliation
 verification_surface: agent
 spec_completeness: full
 estimated_sessions: 1
@@ -64,14 +66,18 @@ tags: [mission, resume, reconciliation, reopen, str, v8, p4, p5, p6, terminal_la
 
 ## Mission Close Notes
 
-*(filled at close)*
+Reopened STR 2026-06-30 (operator: re-orient first); built the reconciliation ledger; ran the operator gate 2026-07-01.
+
+**Gate decisions:** (1) **Close STR out** — v8.0 confirmed achieved-via-sibling (Hearthstone 2026-06-19 → v8.3 via `skill_template_release`); (2) **Spin P4 installer out** → Lighthouse/Terminal/Harness.
+
+**Applied this session:** master reopen note + P4 spin-out banner; **M4.2/4.3/4.4 → `superseded`**; **M5.8 `active`→`completed`** (dangling-done since 2026-06-03); **D16-D20 → superseded**; staged hand-off memo `coord_2026_07_01_rosetta_to_lighthouse_terminal_harness_p4_installer_spinout`; STATE Current-Phase + STR-section updated; committed local (no push).
+
+**Deferred to next session (campaign-terminal close):** record P6 v8.0-achieved-via-sibling; close P5 on delivered evidence (WEBSITE.aDNA SITE-ranker; M5.5 D14 REPO); write the **Campaign AAR** + flip campaign `status: completed`; seed successor `campaign_adna_v3_ecosystem_compliance` (`proposed`); report **Track C terminal → unblocks Operation aDNA DP4**.
 
 ## AAR
 
-*Mandatory before `status: completed` (SO#5).*
-
-- **Worked**: [one line]
-- **Didn't**: [one line]
-- **Finding**: [one line]
-- **Change**: [one line, or "none"]
-- **Follow-up**: [link, or "none"]
+- **Worked**: Re-orient-first (vs. blind resume) revealed STR's v8.0 target already shipped via a sibling and its one open unit (P4) was built on two archived vaults — turning a nominal "60–80 session" resume into a ~2-session closeout.
+- **Didn't**: The 527KB long-line campaign master refused whole-file reads and one Edit anchor missed a frontmatter `---`; had to navigate by grep + small offset reads.
+- **Finding**: A paused campaign's frontmatter is not its truth — the mission files + sibling closures + the `.adna/CHANGELOG.md` (v8.0→v8.3) were the real state.
+- **Change**: When reopening any dormant campaign, diff its terminal target against the release CHANGELOG *first* — the milestone may already be met outside the campaign.
+- **Follow-up**: next-session campaign-terminal close (Campaign AAR + v3-EC seed + DP4 unblock); `missions/artifacts/str_resume_reconciliation_ledger.md` is the authoritative disposition record.
