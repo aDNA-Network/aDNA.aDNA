@@ -3,13 +3,14 @@ plan_id: mission_champollion_m1_2_adr045_record_repair
 type: plan
 title: "M1.2 — ADR-045 amend-then-ratify + ratification-record discipline + stale-ADR adjudication"
 owner: stanley
-status: active
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 1
 campaign_mission_number: 2
 mission_class: implementation
 executor_tier: fable
 token_budget_estimated: "35 kT"
+token_budget_actual: "~32 kT (fable executor; + opus orchestration)"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -51,3 +52,13 @@ Never soften the provenance note — the honest history IS the exemplar (SO-8) �
 - Wrapper-count investigation surfaces evidence the *decision itself* (not just the record) is defective → halt, render a new gate (do not repair-and-sign a broken decision).
 - Any ADR edit would contradict a ratified decision elsewhere → halt that ADR, log F-CHM.
 - Budget > 55 kT → checkpoint + hand off.
+
+## AAR
+
+**Session**: `session_stanley_20260702T053035Z_champollion_m1_2` · **Commit**: `23fd294` (work; unpushed, P1 commit-only) · **Executor: fable** (governance-judgment edits via fable subagent, orchestrated + verified by opus). AAR artifact: [[../../../missions/artifacts/campaign_champollion_mission_m1_2_aar|campaign_champollion_mission_m1_2_aar]].
+
+- **Worked**: the fable subagent — tier-matched to the "does-NOT-downtier" brief — authored all four judgment edits in one pass: the unsoftened ADR-045 provenance note (SO-8), full 4-field ratification blocks on all four ADRs (`Ratifier` present ×4), and the wrapper count attributed to a reported range ~208–216. Opus verified independently (rg proposed==0 · Ratifier==4 · `adna_validate` full + `--governance` zero drift) before the single explicit-path commit. All four acceptance criteria met.
+- **Didn't**: nothing failed, no escalation triggered. The one judgment ambiguity — "strike" vs "annotate" the two STATE `#needs-human` incident flags — was resolved by annotate-in-place (append "→ RESOLVED at G0"), preserving history and consistent with STATE's other historical `needs-human` strings; the QUEUED banner (the live open-items oracle) was already clean.
+- **Finding**: a fable-marked "does-not-downtier" mission runs cleanly as a fable *subagent under opus orchestration* — the judgment stays at tier (`model_actual = fable` matches `tier_planned`) while opus handles scaffolding/verify/commit, and the opus verify pass is a genuine independent second read on governance text. New execution shape vs M1.1's direct-opus run.
+- **Change**: for orchestrated-tier missions, record the tier-matched executor spend separately from orchestration overhead so the Prometheus corpus reads the judgment-work budget cleanly (`token_budget_actual` notes both).
+- **Follow-up**: NEXT = M1.3 (sonnet, adr_index — now reflects the repaired statuses) + M1.4 pairable; M1.5 (STATE diet) LAST. The `adna_validate` ratification-block check + `template_adr` fold ride M2.2/M6.1 (spec-only landed here). ~32 kT fable executor vs 35 kT est (−9%, within ADR-016).
