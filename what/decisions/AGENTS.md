@@ -1,12 +1,14 @@
 ---
 type: directory_index
 created: 2026-02-19
-updated: 2026-05-30
-last_edited_by: agent_siteforge_native
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 tags: [directory_index, decisions]
 ---
 
 # what/decisions/ — Architecture Decision Records
+
+> **Index:** [`adr_index.md`](adr_index.md) — one row per ADR (number · title · status · dates · subject), derived from frontmatter. Regenerate after any status change.
 
 ## Purpose
 
