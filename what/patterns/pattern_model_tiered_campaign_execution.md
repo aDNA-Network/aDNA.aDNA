@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-07-02
-updated: 2026-07-02   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor)
+updated: 2026-07-02   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor); §2.5 dispatch-shape note added at P3 open (operator ruling: Mode B same-session subagent dispatch = default)
 status: draft
 pattern_category: operational
 applies_to: [campaign, mission, session, all_categories]
@@ -79,6 +79,8 @@ When the **main session itself runs at the judgment tier** (Champollion P2 ran u
 | *(any)* | sonnet | **reserved** — only by explicit per-card operator ruling for provably-mechanical sweeps (an opt-down, no longer a default lane) |
 
 Campaigns MAY declare a local variant table in their charter (Vauban-style); absent one, this table is the default. Budget fields + the §2.2 downtier-safe brief contract are unaffected — a brief written downtier-safe stays cheaper to write and safer to run at any tier.
+
+**Dispatch-shape note (amendment 2026-07-02, operator ruling at the Champollion P3 open — same-day sibling of the table above)**: when the main loop already runs at the judgment tier, the **§8 R0 Mode B shape is the default dispatch shape** — bookends inline, each build dispatched to an `executor_tier` **subagent** (Agent-tool `model:` override) rather than a separate session. This makes a full phase one orchestrator session: verify-brief → dispatch → independent review, mission by mission, halting at the operator gate; Mode A (session-per-mission) remains the fallback for builds that outgrow a subagent context, and gate-time brief authoring assumes Mode B from ruling date forward. First full-phase instance: the Champollion P3 sweep (M3.1–M3.3, 2026-07-02).
 
 ## 3. Why this is measurable (the Context.aDNA seam)
 
