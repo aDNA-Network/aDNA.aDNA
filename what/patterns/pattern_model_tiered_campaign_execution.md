@@ -43,7 +43,7 @@ This is the same vocabulary Operation Carnot ratified for [[../../STATE|LatticeP
 3. **Guardrails** — the inviolables (what must not be touched, pushed, deleted, or decided), stated in the brief rather than assumed from ambient context.
 4. **Verification surface** — the command/check that proves completion (validator run, build, diff shape).
 5. **Escalation triggers** — the *named* conditions under which the executor halts and flags (`#needs-human` or back to the judgment tier) instead of improvising. An executor that meets an un-briefed decision **escalates; it never improvises upward.**
-6. **Budget** — `token_budget_estimated` per [[../decisions/adr_016_context_budget_doctrine|ADR-016]], so drift is detectable.
+6. **Budget** — `token_budget_estimated` per [[../decisions/adr_016_per_mission_context_budget|ADR-016]], so drift is detectable.
 
 ### 2.3 Gate co-location (where the judgment tier re-enters)
 
@@ -80,7 +80,7 @@ When the **main session itself runs at the judgment tier** (Champollion P2 ran u
 
 Campaigns MAY declare a local variant table in their charter (Vauban-style); absent one, this table is the default. Budget fields + the §2.2 downtier-safe brief contract are unaffected — a brief written downtier-safe stays cheaper to write and safer to run at any tier.
 
-**Dispatch-shape note (amendment 2026-07-02, operator ruling at the Champollion P3 open — same-day sibling of the table above)**: when the main loop already runs at the judgment tier, the **§8 R0 Mode B shape is the default dispatch shape** — bookends inline, each build dispatched to an `executor_tier` **subagent** (Agent-tool `model:` override) rather than a separate session. This makes a full phase one orchestrator session: verify-brief → dispatch → independent review, mission by mission, halting at the operator gate; Mode A (session-per-mission) remains the fallback for builds that outgrow a subagent context, and gate-time brief authoring assumes Mode B from ruling date forward. First full-phase instance: the Champollion P3 sweep (M3.1–M3.3, 2026-07-02).
+**Dispatch-shape note (amendment 2026-07-02, operator ruling at the Champollion P3 open — same-day sibling of the table above)**: dispatch shape is a **charter-level choice**, and the two live judgment-tier campaigns ruled it opposite ways the same day — an honest divergence, recorded per this pattern's own divergence rule rather than canonized. **Champollion** ruled §8 R0 **Mode B** the default: one fable orchestrator session runs the bookends inline and dispatches each build to an `executor_tier` **subagent** (Agent-tool `model:` override), so a full phase becomes one session — verify-brief → dispatch → independent review, mission by mission, halting at the operator gate — with Mode A the fallback for builds that outgrow a subagent context. **Carnot** (D-C8, same day) retired Mode B for their campaign: session-per-mission at `/model opus`, fable reviews co-located with gates R0–R4. The shared core is unmoved — the class→tier table, the §2.2 brief contract, judgment-tier bookends/review; what varies per charter is only whether the build runs in a subagent or its own session. First full-phase Mode-B instance: the Champollion P3 sweep (M3.1–M3.3, 2026-07-02).
 
 ## 3. Why this is measurable (the Context.aDNA seam)
 

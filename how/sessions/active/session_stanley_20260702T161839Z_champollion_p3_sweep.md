@@ -42,3 +42,7 @@ Dispatch-shape ruling record → M3.1 (harvest I: codepin · OoB · QUEUED banne
 
 ## Log
 - 16:18Z — session open; baseline clean; dispatch-shape ruling integration begins.
+- 16:2xZ — dispatch-shape ruling recorded (charter Inviolable §2 + pattern §2.5, incl. honest Carnot D-C8 divergence — they retired Mode B same-day; charter-level choice) + committed.
+- 16:3xZ — **M3.1 verify-before-dispatch**: all input paths confirmed except `idea_state_prompt_shed_on_close` — DOES NOT EXIST (promised by M1.5 AAR, cited by 5 files) → F-CHM-208; live fact surfaced: LP pin advanced `47935b6→8cb6e1e` today (Carnot M1.5) — pin-lag briefed to builder as the-mechanism-working.
+- 16:4xZ — **M3.1 opus subagent dispatched** (Mode B, first mission under the ruling); returned manifest: 3 files, validator PASS, ~34 kT, 2 out-of-scope findings.
+- 17:0xZ — **M3.1 fable review PASSED with 2 amendments**: codepin graduation re-counted (records≠adoptions, 3→2) · ADR-016 broken wikilink fixed in `pattern_model_tiered_campaign_execution` (builder-flagged). F-CHM-208 ledgered + FIXED (idea filed). Mission `completed` + AAR; validate FULL PASS; commit.

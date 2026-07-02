@@ -3,14 +3,14 @@ plan_id: mission_champollion_m3_1_pattern_harvest_i
 type: plan
 title: "M3.1 — Pattern harvest I (LP codepin · Order-of-Battle · STATE ⏭ QUEUED banner)"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 3
 campaign_mission_number: 1
 mission_class: implementation
 executor_tier: opus
 token_budget_estimated: "40 kT"
-token_budget_actual: "TBD"
+token_budget_actual: "~44 kT (opus subagent build ~34 self-reported + fable bookends ~10 verify/review/amendments; +10% over est)"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -20,6 +20,8 @@ tags: [plan, campaign, champollion, p3, pattern_harvest, codepin, order_of_battl
 # Mission M3.1 — Pattern harvest I
 
 **Campaign**: [[../campaign_champollion|campaign_champollion]] · **Executor: opus (build) with fable bookends** (G2 role model — fable authored this brief, verifies it against the live tree before dispatch, and independently reviews the harvested patterns before commit) · **Ring 1** (pattern harvest is the campaign's heart, directive §6.D).
+
+> **DONE 2026-07-02** (`session_stanley_20260702T161839Z_champollion_p3_sweep`, fable-orchestrated · opus subagent at-tier — first mission under the Mode-B dispatch-shape ruling). Three patterns live: [[../../../what/patterns/pattern_cross_graph_codepin|codepin]] · [[../../../what/patterns/pattern_order_of_battle|order_of_battle]] · [[../../../what/patterns/pattern_state_queued_banner|state_queued_banner]] — all `draft`, instance-cited, fold-stubs marked `fold_batch: champollion_m6_1_rc`. Fable review: 2 amendments (codepin graduation re-counted records→adoptions; ADR-016 broken wikilink fixed in the sibling pattern) + F-CHM-208 ledgered & FIXED (phantom `idea_state_prompt_shed_on_close` filed). AAR: [[../../../how/missions/artifacts/campaign_champollion_mission_m3_1_aar|m3_1 AAR]].
 
 ## Objective
 
