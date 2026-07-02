@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-07-02
-updated: 2026-07-02   # §8 Automation ladder added same-day (operator-directed, post-G0)
+updated: 2026-07-02   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor)
 status: draft
 pattern_category: operational
 applies_to: [campaign, mission, session, all_categories]
@@ -65,6 +65,10 @@ token_budget_actual: "<kT, rough is fine>"
 ```
 
 Estimate-vs-actual lands in every mission AAR (SO-11); >2× drift triggers the ADR-016 retrospective — now *per tier*, which is the interesting cut.
+
+### 2.5 Orchestrator-bookend refinement (instance evidence — Champollion P2/G2, 2026-07-02)
+
+When the **main session itself runs at the judgment tier** (Champollion P2 ran under an operator-set fable main loop), the roles sharpen into a two-role operating model, formalized by operator directive at Champollion's G2 gate: **the judgment tier plans, brainstorms, and reviews; the build tier executes.** Concretely, every mission gets **judgment-tier bookends** — brief authoring at the gate → verify-before-dispatch (re-derive the brief's claims against the live tree) → build at `executor_tier` (subagent or session) → **independent output review** before anything is committed. Under this shape, `executor_tier` on a mission card denotes the **build** tier; missions whose *substance* is review, adversarial attack, or closeout synthesis remain judgment-tier-led (review is not "execution" to be delegated). A tier-match subtlety this refinement resolves: when the main session's tier equals a mission's planned tier, running it **at-tier direct** is equivalent to the subagent shape (`model_actual == tier_planned` either way) — first exercised at Champollion M1.5 (opus-in-opus), confirmed at M2.2 (fable-in-fable). Instance telemetry: P2 ran 3/3 at planned tier, −44% under budget, 0 escalations ([[../../how/campaigns/campaign_champollion/artifacts/telemetry_corpus_p2|datapoint #2]]); the refinement is recorded here as instance evidence — the §2.1 three-class vocabulary and the Carnot-shared binding table are unchanged.
 
 ## 3. Why this is measurable (the Context.aDNA seam)
 

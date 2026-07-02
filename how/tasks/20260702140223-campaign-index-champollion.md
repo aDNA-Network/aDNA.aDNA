@@ -7,7 +7,7 @@ campaign: [[campaign_champollion]]
 vaults: [[aDNA.aDNA]]
 workspace_cwd: /Users/stanley/aDNA/aDNA.aDNA
 status: running               # campaign lifecycle: planned | running | blocked | done
-phase: "P2 work complete (M2.1–M2.3 done) — G2 operator gate PENDING (version-cut ADR-046 ratification)"
+phase: "P3 OPEN (G2 RATIFIED 2026-07-02: ADR-046 accepted → standard v2.5 cut executed; role re-tier adopted) — next M3.1; next gate G3 (ring cut)"
 assignee_class: hybrid
 priority: high
 canonical: how/campaigns/campaign_champollion/campaign_champollion.md   # charter stays source of truth; this is a board projection
@@ -48,4 +48,4 @@ tags: [task, campaign_index, champollion, adna_adna, registry, p2]
 
 > Campaign-index TaskNote per the Operations A3 pattern (`kind: campaign_index`) — published on Berthier's C03 M28 ask ([[../../who/coordination/coord_2026_07_02_berthier_to_rosetta_champollion_index_ask|memo + disposition]]). **The charter ([[../campaigns/campaign_champollion/campaign_champollion|campaign_champollion]]) remains canonical**; this file is a board projection, refreshed at gate closes (G-cadence).
 
-**Rollup (2026-07-02):** pre-launch comprehensive review/improve campaign for the aDNA base layer (sibling to Operation Carnot / LatticeProtocol). 8 phases · 24 missions · two rings (cut at G3) · **model-tiered execution** (fable/opus/sonnet per mission; telemetry to the Prometheus corpus). Chartered + G0 + G1 ratified same day (2026-07-02); **P1 complete** (5/5 missions, −25% under budget); **P2 work complete** (standard audit F-CHM-201..206 · **ADR-046 v2.4→v2.5 cut authored `proposed`** · glossary/concepts currency +4 entries); **next = G2 operator gate** (ratifies ADR-046 incl. the E1 federation-scope arm + C6 rider; do-not-auto-advance). Pushes batch at gates (G1 pushed `76669d6`; P2 stack local pending G2 D3).
+**Rollup (2026-07-02, refreshed at G2 close — the promised G-cadence):** pre-launch comprehensive review/improve campaign for the aDNA base layer (sibling to Operation Carnot / LatticeProtocol). 8 phases · 24 missions · two rings (cut at G3). Chartered + **G0 + G1 + G2 all ratified 2026-07-02**; **P1 complete** (5/5, −25%); **P2 complete** (standard audit F-CHM-201..206 · **ADR-046 RATIFIED → standard v2.5 cut executed** in `what/docs/adna_standard.md` · glossary +4 entries); **role model formalized at G2**: fable = strategy/planner/reviewer (bookends every mission), opus = builder/executor — remaining missions re-tiered accordingly. **Next = M3.1** (P3 pattern harvest); **next gate G3 = ring cut** (operator). Pushes batch at gates (G2 stack pushed at cascade close).

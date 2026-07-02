@@ -3,7 +3,7 @@ campaign_id: campaign_champollion
 type: campaign
 title: "Operation Champollion — pre-launch comprehensive review/improve of the aDNA base layer"
 owner: stanley
-status: active   # G0 RATIFIED 2026-07-02 — operator: "Ratify as Recommended." (all nine decisions; record: how/gates/champollion_p0_gate.output.md) · G1 RATIFIED 2026-07-02 — "Your recs sound good. make it so." (all four: GO/ACCEPT/PUSH/DEFER; record: how/gates/champollion_p1_gate.output.md) → P1 CLOSED, P2 OPEN
+status: active   # G0 RATIFIED 2026-07-02 (all nine; champollion_p0_gate.output.md) · G1 RATIFIED 2026-07-02 (all four; champollion_p1_gate.output.md) · G2 RATIFIED 2026-07-02 — "Your reccomendations are good! Let's move forward." (GO · RATIFY[v2.5·ArmA·defer] · PUSH · ACCEPT + role re-tier; champollion_p2_gate.output.md) → P2 CLOSED, standard v2.5 CUT, P3 OPEN
 phase_count: 8
 mission_count: 24
 estimated_sessions: "15-24 (Ring-1 ≈ 15-18 with declared pairings; Ring-2 adds ≤ 6; ring cut at G3)"
@@ -30,8 +30,8 @@ tags: [campaign, champollion, launch, base_layer, standard, template, site, gove
 │  MISSION TREE                                                                  │
 │    ✅ M0.1 P0 orient/verify/charter/gate     (this session)                    │
 │    ✅ P1  adjudication & governance           (M1.1–M1.5)                      │
-│    ◐ P2   standard & spec consolidation       (M2.1–M2.3 ✅ · G2 PENDING)      │
-│    🔲 P3  pattern harvest & self-application  (M3.1–M3.3)                      │
+│    ✅ P2  standard & spec consolidation       (M2.1–M2.3 · G2 · v2.5 CUT)      │
+│    ◐ P3   pattern harvest & self-application  (M3.1–M3.3 briefed)              │
 │    🔲 P4  docs, site & first-contact UX       (M4.1–M4.4)                      │
 │    🔲 P5  LP seam & Exchange story            (M5.1–M5.3)                      │
 │    🔲 P6  release candidate & readiness       (M6.1–M6.3)                      │
@@ -39,7 +39,7 @@ tags: [campaign, champollion, launch, base_layer, standard, template, site, gove
 │                                                                                │
 │  PLAN     phase 0 · 14–24 sessions · ≈700–850 kT · 7 hard constraints          │
 ├────────────────────────────────────────────────────────────────────────────────┤
-│  GATES    G1 RATIFIED · P2 WORK COMPLETE · G2 RENDERED 2026-07-02 (PENDING)    │
+│  GATES    G2 RATIFIED 2026-07-02 (v2.5 cut + re-tier) · P3 OPEN · next G3 cut  │
 ╰────────────────────────────────────────────────────────────────────────────────╯
 ```
 
@@ -60,7 +60,7 @@ Full evidence: [[artifacts/order_of_battle|Order of Battle]] · [[artifacts/find
 ## 1. Operating doctrine
 
 1. **Phase gates are operator gates** (SO-1) — G0…G7 below; ISS surfaces for rich decisions, AskUserQuestion for binary. Never auto-advance.
-2. **Model-tiered execution** per [[../../../what/patterns/pattern_model_tiered_campaign_execution|pattern_model_tiered_campaign_execution]] (self-applied; this charter is a judgment-tier artifact): *fable = strategy/judgment · opus = mid-judgment · sonnet = mechanical*. Mission files materialized at each phase-open carry the full 6-part downtier-safe brief (objective · acceptance criteria · guardrails · verification surface · escalation triggers · budget), authored/reviewed at judgment tier **at the gate**. Executors escalate, never improvise upward.
+2. **Model-tiered execution** per [[../../../what/patterns/pattern_model_tiered_campaign_execution|pattern_model_tiered_campaign_execution]] (self-applied; this charter is a judgment-tier artifact): *fable = strategy/judgment · opus = mid-judgment · sonnet = mechanical*. Mission files materialized at each phase-open carry the full 6-part downtier-safe brief (objective · acceptance criteria · guardrails · verification surface · escalation triggers · budget), authored/reviewed at judgment tier **at the gate**. Executors escalate, never improvise upward. **G2 refinement (operator directive, 2026-07-02 — the operative role model from P3 on)**: **fable = strategy / planner / brainstormer / reviewer** — gate-time brief authoring, verify-before-dispatch, independent output review, gate renders; **opus = builder / executor** — all mission execution (opus subagents or opus sessions). Every mission runs with **fable bookends** (fable brief → fable verify-before-dispatch → opus build → fable independent review); `executor_tier` on mission cards denotes the **build** tier. Missions whose substance IS review/strategy (M6.3 adversarial pass, M7.2 closeout) stay fable-led. Sonnet had no remaining rows (M1.3/M1.4 closed that tier's work); the pattern's 3-class vocabulary is unchanged (shared with Carnot). Record: [[../../gates/champollion_p2_gate.output|G2 output §role re-tier]]; pattern instance note §2.5.
 3. **Two rings** (Carnot mirror): **Ring-1** = launch-critical spine; **Ring-2** = compressible — converts to accepted-carry at the **ring cut (G3)** if the launch window compresses.
 4. **Telemetry contract**: every mission card carries `executor_tier` + `token_budget_estimated`; every session records actuals; every AAR reports estimate-vs-actual **per tier** (>2× drift → ADR-016 retrospective). The corpus is offered to Context.aDNA ([[../../../who/coordination/coord_2026_07_02_rosetta_to_prometheus_model_tier_pattern|staged memo]]).
 5. **Rosetta's law**: every mechanism improved, the lesson teaching it improves too (SO-8); every changed content file re-passes dual-audience (SO-7). A fix that isn't teachable isn't finished.
@@ -78,8 +78,8 @@ P4 FIRST-CONTACT ──G4──▶ P5 LP SEAM ──G5──▶ P6 RC & READINES
 |-------|-------|-------|---------------------|
 | **P0 ✅** | Orient · verify · charter — **CLOSED; G0 RATIFIED 2026-07-02** (all nine as recommended; record: `how/gates/champollion_p0_gate.output.md`) | directive issued | OoB + ledgers + charter + retro package + this gate (**G0 decisions**: ratify charter · adjudicate backlog dispositions · ADR-045 disposition · v3-EC reconciliation · push decision · release staged memos (Noether/Prometheus) · token-rotation posture · codename). **First post-ratification act**: P1 mission briefs materialized at judgment tier |
 | **P1 ✅** | Adjudication & governance integrity — **CLOSED; G1 RATIFIED 2026-07-02** (all four as rec; record: `how/gates/champollion_p1_gate.output.md`) | G0 ratified | Backlog at zero un-dispositioned; ADR-045 record repaired per G0; ratification discipline live; adr_index live (40 rows); currency sweep done; STATE dieted (554 KB → 46.6 KB). **G1 per-tier AAR review PASS**: 5/5 at planned tier · 0 tier-changing escalations · −25% total (160→120 kT) · datapoint #1 emitted. **First post-ratification act**: P2 mission briefs materialized at judgment tier |
-| **P2** | Standard & spec consolidation — **work complete 2026-07-02; G2 RENDERED, awaiting operator** (`how/gates/champollion_p2_gate.md`) | G1 | Standard audited v2.4↔v8.3↔ADR corpus (M2.1: F-CHM-201..206 + E1; walk 8 STD-TOUCH = 6 folded/1 pending/1 unfolded); **version-cut ADR-046 authored `proposed` — ratifies at G2** (v2.5 rec + v3.0 arm · C4/E1 two arms · C6 rider); glossary/concepts current (M2.3: 12 fixed + 4 new entries, F-CHM-204 closed). Per-tier: 115→64 kT (−44%), 3/3 at tier |
-| **P3** | Pattern harvest & exemplar self-application | G2 | Fleet patterns landed in `what/patterns/`+templates; 10-dimension self-score **exemplary**; graduation seeds checked. **G3 = ring cut** (launch-window re-score) |
+| **P2 ✅** | Standard & spec consolidation — **CLOSED; G2 RATIFIED 2026-07-02** (all four as rec + role re-tier directive; record: `how/gates/champollion_p2_gate.output.md`) | G1 | Standard audited v2.4↔v8.3↔ADR corpus (M2.1: F-CHM-201..206 + E1); **ADR-046 RATIFIED (v2.5 · Arm A · C6 defer) → the v2.5 cut EXECUTED** in `what/docs/adna_standard.md` (§7.2 profile · §5.5 walk scope · new §7.7 ratification discipline · §5.3 `federation/` row · §15.4 version-cut checklist); glossary/concepts current (12 fixed + 4 new entries, F-CHM-204 closed). Per-tier: 115→64 kT (−44%), 3/3 at tier; datapoint #2 emitted. **First post-ratification act**: P3 briefs materialized under the G2 role model (fable bookends · opus builds) |
+| **P3 ◐** | Pattern harvest & exemplar self-application — **OPEN (briefs live: M3.1–M3.3)** | G2 ✅ | Fleet patterns landed in `what/patterns/`+templates; 10-dimension self-score **exemplary** (first score against v2.5); graduation seeds checked. **G3 = ring cut** (launch-window re-score) |
 | **P4** | Docs, site & first-contact UX | G3 | Newcomer Stress-Test of the real first hour **green**; site UX pass done; Ring-1 site backlog executed; learning path walks end-to-end |
 | **P5** | LP seam & Exchange story | G3 (parallel-eligible with P4) | Joint base-layer memo countersigned (or pending-with-owner); mutual conformance both directions; Exchange/Lighthouse story teachable end-to-end |
 | **P6** | Release candidate & launch readiness | G4+G5 | Template RC assembled + dry-run, **held at G6**; DP4 dossier + Track D terminal assessment delivered; adversarial pass 2 + security re-verify clean. G6 = operator fires `skill_template_release` + push/deploy decisions |
@@ -101,20 +101,22 @@ P4 FIRST-CONTACT ──G4──▶ P5 LP SEAM ──G5──▶ P6 RC & READINES
 | M3.1 | Pattern harvest I: LP codepin · Order-of-Battle · STATE-QUEUED banner → patterns + template folds, each with a dual-audience lesson | implementation | opus | 1 | 40 |
 | M3.2 | Pattern harvest II: Home credential-broker + shim-registry · Network coord/countersign · ISS gates · campaign-splash; graduation-seed checks (2 skills at 2/3, 1/3) | implementation | opus | 2 | 40 |
 | M3.3 | **Exemplar self-application**: 10-dimension compliance self-score → fix to exemplary (the base graph must exemplify what it exports) | verification | opus | 1 | 45 |
-| M4.1 | **Newcomer Stress-Test**: the real `git clone aDNA-Network/aDNA && claude` first hour, run honestly end-to-end → fix-list | verification | fable | 1 | 45 |
+| M4.1 | **Newcomer Stress-Test**: the real `git clone aDNA-Network/aDNA && claude` first hour, run honestly end-to-end → fix-list | verification | opus *(fable-bookends; re-tiered at G2 — fable designs the protocol + reviews the friction log into the fix-list)* | 1 | 45 |
 | M4.2 | Site UX pass (`skill_site_design_pipeline` + reviewer personas incl. Newcomer/Design-Critic/IA/A11y) + Ring-1 site backlog items per ledger | implementation | opus | 1 | 50 |
 | M4.3 | README first-contact pattern + learning path walked beginner→advanced + `who/community/` launch readiness | implementation | opus | 1 | 40 |
 | M4.4 | Site content currency vs v2.4/v8.3 + product story (context democracy · Exchange · Lighthouse adoption) | implementation | opus | 2 | 35 |
-| M5.1 | Joint base-layer alignment memo: fill skeleton, Noether countersign, formal "context democracy" T1 clearance | integration | fable | 1 | 30 |
+| M5.1 | Joint base-layer alignment memo: fill skeleton, Noether countersign, formal "context democracy" T1 clearance | integration | opus *(fable-bookends; re-tiered at G2 — fable sets positions/asks + reviews before staging; cross-graph = outward-facing)* | 1 | 30 |
 | M5.2 | Mutual conformance: LP vault vs standard (their close-out ask) ↔ this vault's lattice/module/dataset teaching vs LP spec @ codepin `47935b6` | verification | opus | 1 | 45 |
 | M5.3 | Exchange/Lighthouse adoption story teachable end-to-end (tutorial + use_case: *pull → build-to-spec → memorialize*) | implementation | opus | 2 | 40 |
-| M6.1 | Template **release candidate**: batch gate-ratified folds → `skill_template_release` dry-run → RC **held at G6** | integration | fable+opus | 1 | 45 |
+| M6.1 | Template **release candidate**: batch gate-ratified folds → `skill_template_release` dry-run → RC **held at G6** | integration | opus *(fable-bookends; re-tiered at G2 — fable decides RC composition; opus assembles + dry-runs)* | 1 | 45 |
 | M6.2 | **DP4 dossier + Track D terminal assessment** (Rosetta-owned; Venus check-in memo; dossier at `campaign_operation_adna/dp4_dossier.md`) | verification | opus | 1 | 35 |
-| M6.3 | Adversarial pass 2 (newcomer/forker/standards-lawyer vs released surfaces) + security re-verify (gitleaks · sanitizer posture · token-rotation confirmation) | verification | fable | 1 | 35 |
+| M6.3 | Adversarial pass 2 (newcomer/forker/standards-lawyer vs released surfaces) + security re-verify (gitleaks · sanitizer posture · token-rotation confirmation) | verification | fable *(stays fable-led at G2 — its substance IS adversarial review, the operator's "reviewer" role)* | 1 | 35 |
 | M7.1 | Ship: operator-fired release + `.adna/` sync verify + site deploy if needed | implementation | opus | 1 | 30 |
-| M7.2 | Campaign close: AAR + splash + handoff packet (watch items · deferred ledger · next-release triggers) + telemetry corpus export + DP4 readiness report | closeout | fable | 1 | 30 |
+| M7.2 | Campaign close: AAR + splash + handoff packet (watch items · deferred ledger · next-release triggers) + telemetry corpus export + DP4 readiness report | closeout | fable *(stays fable-led at G2 — closeout synthesis/AAR = review/strategy)* | 1 | 30 |
 
 *24 missions total. **Declared session pairings** (one session may run both): M1.3+M1.4 (sonnet mechanical pair) · M1.1+M1.3 fallback · M7.1+M7.2 — hence Ring-1 ≈ 15–18 sessions for 20 Ring-1 missions. Pairings dissolve if either member's budget runs hot (ADR-016).*
+
+*Tier column after the **G2 re-tier** (operator role directive, 2026-07-02): `executor_tier` = the **build** tier; every mission additionally carries **fable bookends** (fable brief → fable verify-before-dispatch → build → fable independent review), so an "opus" row means opus builds under fable review, and the two fable rows (M6.3, M7.2) are review/closeout-substance missions where fable IS the executor. Estimates for verification-class rows are subject to the G2 D4 class-split calibration (budget the judgment surface, not the corpus).*
 
 ## 4. Coverage matrix (directive §6.A–J → missions)
 
