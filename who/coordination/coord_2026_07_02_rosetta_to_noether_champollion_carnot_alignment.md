@@ -7,7 +7,7 @@ to:
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
-status: staged   # staged at Champollion P0; releases when the operator ratifies the P0 gate
+status: filed   # RELEASED at G0 (decision D7, 2026-07-02, operator-ratified) — live countersign ask
 ack_required: true
 countersign_requested: true
 tags: [coordination, champollion, carnot, base_layer_alignment, model_tiering, seam, countersign]

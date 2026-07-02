@@ -9,7 +9,7 @@ cc:
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
-status: staged   # staged at Champollion P0; releases when the operator ratifies the P0 gate (and harmonized with Carnot D-C7)
+status: filed   # RELEASED at G0 (decision D7, 2026-07-02, operator-ratified); Carnot-side release still rides D-C7
 ack_required: true
 tags: [coordination, champollion, model_tiering, executor_tier, telemetry, contextscope, adr_016, corpus_offer]
 related:

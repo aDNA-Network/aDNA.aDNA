@@ -3,7 +3,7 @@ campaign_id: campaign_champollion
 type: campaign
 title: "Operation Champollion — pre-launch comprehensive review/improve of the aDNA base layer"
 owner: stanley
-status: planning   # → active on operator P0-gate ratification (SO-1)
+status: active   # G0 RATIFIED 2026-07-02 — operator: "Ratify as Recommended." (all nine decisions; record: how/gates/champollion_p0_gate.output.md)
 phase_count: 8
 mission_count: 24
 estimated_sessions: "15-24 (Ring-1 ≈ 15-18 with declared pairings; Ring-2 adds ≤ 6; ring cut at G3)"
@@ -39,7 +39,7 @@ tags: [campaign, champollion, launch, base_layer, standard, template, site, gove
 │                                                                                │
 │  PLAN     phase 0 · 14–24 sessions · ≈700–850 kT · 7 hard constraints          │
 ├────────────────────────────────────────────────────────────────────────────────┤
-│  GATES    phase gates are human gates · begin at G0 (P0 ratification, PENDING) │
+│  GATES    G0 RATIFIED 2026-07-02 (all nine, as rec) · P1 OPEN · next gate G1   │
 ╰────────────────────────────────────────────────────────────────────────────────╯
 ```
 
@@ -76,7 +76,7 @@ P4 FIRST-CONTACT ──G4──▶ P5 LP SEAM ──G5──▶ P6 RC & READINES
 
 | Phase | Focus | Entry | Exit (gate carries) |
 |-------|-------|-------|---------------------|
-| **P0** | Orient · verify · charter | directive issued | OoB + ledgers + charter + retro package + this gate (**G0 decisions**: ratify charter · adjudicate backlog dispositions · ADR-045 disposition · v3-EC reconciliation · push decision · release staged memos (Noether/Prometheus) · token-rotation posture · codename). **First post-ratification act**: P1 mission briefs materialized at judgment tier |
+| **P0 ✅** | Orient · verify · charter — **CLOSED; G0 RATIFIED 2026-07-02** (all nine as recommended; record: `how/gates/champollion_p0_gate.output.md`) | directive issued | OoB + ledgers + charter + retro package + this gate (**G0 decisions**: ratify charter · adjudicate backlog dispositions · ADR-045 disposition · v3-EC reconciliation · push decision · release staged memos (Noether/Prometheus) · token-rotation posture · codename). **First post-ratification act**: P1 mission briefs materialized at judgment tier |
 | **P1** | Adjudication & governance integrity | G0 ratified | Backlog at zero un-dispositioned; ADR-045 record repaired per G0; ratification discipline live; adr_index live; currency sweep done; STATE dieted. G1 = per-tier AAR review (first routing-quality checkpoint) |
 | **P2** | Standard & spec consolidation | G1 | Standard audited v2.4↔v8.3↔ADR corpus; **version-cut ADR ratified at G2**; glossary/concepts current |
 | **P3** | Pattern harvest & exemplar self-application | G2 | Fleet patterns landed in `what/patterns/`+templates; 10-dimension self-score **exemplary**; graduation seeds checked. **G3 = ring cut** (launch-window re-score) |

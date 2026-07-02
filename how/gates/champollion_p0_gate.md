@@ -6,13 +6,15 @@ campaign_id: campaign_champollion
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
-status: pending   # → resolved when the operator's decisions are transcribed to the output block
+status: resolved   # RATIFIED 2026-07-02 — operator: "Ratify as Recommended." (all nine, as recommended); record → champollion_p0_gate.output.md
 outer_tier: copy_paste   # ISS web tier unavailable (receiver :8765 down) — skill_create_iss fallback chain honored
 persona: rosetta
 tags: [gate, champollion, p0, phase_exit, operator_decision, irreversible]
 ---
 
 # ⛩ G0 — Operation Champollion P0 ratification gate
+
+> ✅ **RESOLVED 2026-07-02** — operator ratified **as recommended, all nine decisions** ("Ratify as Recommended.", in-chat). Ratification record: [[champollion_p0_gate.output|champollion_p0_gate.output.md]]. Sentinel cleared; campaign `active`; P1 open (M1.1 next). The decision text below is preserved as-asked (SO-6).
 
 ```yaml
 sitrep:

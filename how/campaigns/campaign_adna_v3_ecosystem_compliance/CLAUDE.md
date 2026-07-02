@@ -5,12 +5,19 @@ created: 2026-05-08
 updated: 2026-05-08
 last_edited_by: agent_stanley
 tags: [governance, campaign, planned, adna, v3, ecosystem_compliance, per_vault]
-status: active
+status: superseded   # SUPERSEDED by campaign_champollion 2026-07-02 (G0 decision D5)
 ---
 
 # CLAUDE.md — Campaign: aDNA v3 Ecosystem Compliance
 
-> **Status: planned. This campaign is queued.** It opens at the P3 phase gate of the
+> ⛔ **SUPERSEDED 2026-07-02 — do NOT open any mission here.** Superseded by
+> **Operation Champollion** (`how/campaigns/campaign_champollion/`) per its G0 decision **D5**
+> (operator-ratified; record `how/gates/champollion_p0_gate.output.md`). Absorbed slices →
+> Champollion M3.3 (compliance self-score) + M6.1 (RC batch); the 19-vault fleet pass
+> **re-seeds post-launch** on the v2.5/v8.4+ baseline (owner Rosetta + Hestia, trigger =
+> Champollion P7 close). Everything below is preserved as-seeded for the re-seed's benefit (SO-6).
+
+> **Status: planned. This campaign is queued.** *(historical — superseded, see banner above)* It opens at the P3 phase gate of the
 > predecessor campaign `campaign_adna_v2_infrastructure` (post-M03 flatten + M08a/M08b
 > shipped). Do **not** open M01-EC until that gate is met.
 

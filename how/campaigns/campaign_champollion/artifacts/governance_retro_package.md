@@ -7,6 +7,7 @@ created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
 status: active
+ratified: "G0 2026-07-02 — D3 = (b) amend-then-ratify (M1.2 executes) · D4 = 98bb488 exposure CONFIRMED-ACCEPTED (low); record: how/gates/champollion_p0_gate.output.md"
 executor_tier: opus
 tags: [artifact, champollion, governance, retro, adr_045, ratification_record, lane_report]
 ---

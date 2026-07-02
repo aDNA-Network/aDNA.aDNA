@@ -6,12 +6,13 @@ campaign_id: campaign_champollion
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
-status: active   # dispositions are DRAFT until the operator ratifies at G0; M1.1 executes the ratified set
+status: active   # RATIFIED at G0 2026-07-02 (D2, as drafted); M1.1 executes exactly this set
+ratified: "G0 2026-07-02 — D2 RATIFIED AS DRAFTED; record: how/gates/champollion_p0_gate.output.md"
 executor_tier: opus
 tags: [artifact, champollion, backlog, adjudication, ledger, dispositions, lane_report]
 ---
 
-> **DRAFT dispositions — operator ratifies at G0; [[../campaign_champollion|M1.1]] executes the ratified set.** Prepared by evidence Lane 1 (opus tier) from a full read of all 91 `how/backlog/*.md` + the 3 stale-`proposed` ADRs; reviewed at fable tier. Counts: **27 ALREADY-DISCHARGED · 31 ACCEPT→template-fold · 14 ACCEPT→immediate-fix/mission · 17 DEFER · 2 DECLINE-stale**; rings: **9 Ring-1 · 34 Ring-2 · 48 post-launch**. Cross-refs: [[order_of_battle|Order of Battle]] §6 · [[findings_ledger|F-CHM-012]].
+> ✅ **RATIFIED AT G0 (2026-07-02, as drafted — now decided law; record: `how/gates/champollion_p0_gate.output.md` D2). [[../campaign_champollion|M1.1]] executes exactly this set; deviations require a new gate.** Prepared by evidence Lane 1 (opus tier) from a full read of all 91 `how/backlog/*.md` + the 3 stale-`proposed` ADRs; reviewed at fable tier. Counts: **27 ALREADY-DISCHARGED · 31 ACCEPT→template-fold · 14 ACCEPT→immediate-fix/mission · 17 DEFER · 2 DECLINE-stale**; rings: **9 Ring-1 · 34 Ring-2 · 48 post-launch**. Cross-refs: [[order_of_battle|Order of Battle]] §6 · [[findings_ledger|F-CHM-012]].
 
 # Lane 1 — Backlog Adjudication Prep (Operation Champollion Phase 0)
 

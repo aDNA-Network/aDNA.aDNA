@@ -3,8 +3,8 @@ type: campaign
 campaign_id: campaign_adna_v3_ecosystem_compliance
 title: "aDNA v3 Ecosystem Compliance — apply v7.0 changes per-vault across the 19 active aDNA vaults"
 owner: stanley
-status: planned
-phase: -1  # not yet open; awaits campaign_adna_v2_infrastructure P3 phase gate
+status: superseded   # SUPERSEDED BY campaign_champollion 2026-07-02 (Champollion G0 decision D5, supersede-and-absorb; ratification record how/gates/champollion_p0_gate.output.md)
+phase: -1  # never opened; was awaiting campaign_adna_v2_infrastructure P3 phase gate
 predecessor: campaign_adna_v2_infrastructure
 phase_count: 6  # P0 planning + P1 audit + P2 skills + P3 remotes + P4 airlock + P5 final
 mission_count: 7  # M01-EC through M07-EC (preliminary; finalized at M11 of v2)
@@ -25,6 +25,8 @@ tags: [campaign, planned, adna, v3, ecosystem, compliance, per_vault, airlock, n
 ---
 
 # Campaign — aDNA v3 Ecosystem Compliance (planned successor)
+
+> ⛔ **SUPERSEDED 2026-07-02 — by [[../campaign_champollion/campaign_champollion|Operation Champollion]]** (G0 decision **D5 supersede-and-absorb**, operator-ratified; record: `how/gates/champollion_p0_gate.output.md`). This stub's scope was two template generations stale (v7.0-era; the standard is v2.4 / template v8.3). **Absorbed slices** → Champollion **M3.3** (this-vault 10-dimension compliance self-score) + **M6.1** (template-readiness/RC batch). **The 19-vault fleet compliance pass re-seeds post-launch** on the v2.5/v8.4+ baseline — owner Rosetta + Hestia, trigger = Champollion P7 close. File preserved as-seeded below (SO-6 archive-never-delete); do not open M01-EC.
 
 > **Status: planned. This is a stub.** Seeded 2026-05-08 by the Campaign Amendment Session
 > of `campaign_adna_v2_infrastructure` (M01 S2 S2.5). The mission tree below is
