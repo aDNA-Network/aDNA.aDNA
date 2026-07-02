@@ -3,10 +3,10 @@ type: adr
 adr_id: adr_027
 adr_class: terminal_harness_contract_canonicalization
 title: "ADR-027: Canonicalize the terminal ↔ harness provider contract as an ecosystem spec"
-status: proposed
+status: accepted
 created: 2026-05-25
-updated: 2026-05-25
-last_edited_by: agent_stanley
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 co_signs: aDNA.aDNA/what/specs/spec_terminal_harness_contract.md
 tags: [adr, ecosystem_spec, terminal_harness_contract, multi_terminal, provider_contract, cross_vault, gpl_isolation]
 ---
@@ -15,7 +15,18 @@ tags: [adr, ecosystem_spec, terminal_harness_contract, multi_terminal, provider_
 
 ## Status
 
-`proposed` — authored 2026-05-25 from a cross-vault execution session. Co-signs `what/specs/spec_terminal_harness_contract.md`. The operator may ratify directly or fold into a native aDNA.aDNA standard-evolution mission for full ceremony.
+Accepted. Authored 2026-05-25 from a cross-vault execution session; co-signs `what/specs/spec_terminal_harness_contract.md`. (The authored-time note — "the operator may ratify directly or fold into a native aDNA.aDNA standard-evolution mission for full ceremony" — resolved as: ratified directly at the Champollion G0 gate.)
+
+## Ratification
+
+- **Ratifier:** Stanley, Founding Architect (operator). Personas (Rosetta — steward of this record) are author/steward only, never ratifier.
+- **Gate / reference:** Champollion G0 — `how/gates/champollion_p0_gate.md` + record `how/gates/champollion_p0_gate.output.md` (operator "Ratify as Recommended," 2026-07-02; decision D2 — ratify-with-refresh per the ratified backlog ledger).
+- **Ratification date:** 2026-07-02 (distinct from the created/authored date, 2026-05-25).
+- **Scope:** the terminal ↔ harness provider-contract canonicalization-by-reference — `what/specs/spec_terminal_harness_contract.md` as the 5th ecosystem spec, referencing (never restating) the normative clause source and owning only the generalization / federation-adoption layer.
+
+### Refresh note (2026-07-02, at ratification)
+
+The vaults this ADR cites have changed since authoring: **`LatticeTerminal.aDNA` and `LatticeAgent.aDNA` are archived** (→ `Archive.aDNA/`, 2026-06-07 — the PROVIDER/HARNESS contracts rehomed to `Harness.aDNA`, the terminal role to `Terminal.aDNA`), and **`Cmux.aDNA` was renamed `Terminal.aDNA`** (2026-06-08). The contract's substance is unaffected — canonicalization-by-reference, the multi-terminal generalization, and the process-isolation/license stance all stand. Re-anchoring the citations in this ADR + the co-signed spec to the successor vaults is tracked as the **`idea_terminal_harness_contract_reanchor`** backlog item (Champollion Ring-1 / Top-12 #6); the body text below is preserved as authored until that re-anchor executes.
 
 ## Context
 

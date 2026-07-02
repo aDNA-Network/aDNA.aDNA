@@ -78,6 +78,8 @@ ADR-045 is `status: accepted` and **public** on `origin/main` (`ce04260` = HEAD 
 
 ## §2 — Incident B: the `98bb488` "no-push" override (record + exposure)
 
+> **DISPOSITION — `CONFIRMED-ACCEPTED (low)` at G0** (2026-07-02, decision D4; record: `how/gates/champollion_p0_gate.output.md`). *[Annotation added at M1.2; the reconstruction below is unchanged.]* Incident B is **closed as accepted-risk**: the operator's D4 ruling confirms the low exposure read and supplies the operator confirmation this section requested. The systemic fix is the §4 ratification-record discipline (landed via M1.2 in `how/backlog/idea_upstream_template_ratification_record.md`); no further remediation on the incident itself.
+
 **What the marker said.** Base commit `98bb488` (2026-06-29 20:33 PT) — "site: generalize /org-context-graphs proof to fully-aggregate (**Option 2 — publish without client sign-off**)" — carried an explicit operator **"Local, no push"** hold. Because git cannot partially push a stack, that hold pinned **every** commit built on top of it (the stack grew to 17: governance/frontmatter hygiene, skills M07, ADR-043/044 ratification, and the ADR-045 thread).
 
 **What happened.** A **concurrent session pushed the full 17-commit stack `98bb488..ce04260` to public `origin/main`** (reflog `bb7773a → ce04260`, "update by push") at ~00:00Z 2026-07-01 — **before** the operator's "ship the held stack" approval was in hand (that approval came ~12+ min later, at the `001232Z` session). The approval **retroactively blessed** the publish, but the override itself occurred without approval in hand. The clone that was *asked* to ship pushed **nothing** (no-op); it only *discovered* the stack was already public.

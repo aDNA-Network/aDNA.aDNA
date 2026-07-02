@@ -2,20 +2,31 @@
 adr_id: adr_012
 type: decision
 title: "Workspace-router ecosystem detail extracted to aDNA.aDNA/what/specs/"
-status: proposed
+status: accepted
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-07-02
 co_signers: [agent_stanley (node.aDNA Hestia), agent_stanley (aDNA.aDNA Rosetta), agent_berthier (lattice-labs)]
 campaign_id: campaign_lattice_compliance_upgrade
 mission_id: mission_lattice_comp_m01_claude_md_prune
 supersedes: []
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [adr, ecosystem, spec, claude_md_prune, router_token_budget]
 ---
 
 # ADR 012 — Workspace-Router Ecosystem Detail Extracted to `aDNA.aDNA/what/specs/`
 
 > Renumbered from ADR-009 to ADR-012 at apply time (compliance M01 Obj 6) — ADR-009 was concurrently claimed by `adr_009_aDNA_naming_convention.md` (committed `dfb5d2c` 2026-05 at P0→P1 gate of campaign_adna_v2_infrastructure). 012 was the lowest unused slot at apply time.
+
+## Status
+
+Accepted.
+
+## Ratification
+
+- **Ratifier:** Stanley, Founding Architect (operator). Personas are author/steward only, never ratifier — the co-signers on record (Hestia / Rosetta / Berthier, below) co-signed as stewards of their vaults, not as ratifiers.
+- **Gate / reference:** Champollion G0 — `how/gates/champollion_p0_gate.md` + record `how/gates/champollion_p0_gate.output.md` (operator "Ratify as Recommended," 2026-07-02; decision D2 — stale-ADR adjudication per the ratified backlog ledger).
+- **Ratification date:** 2026-07-02 (distinct from the created/authored date, 2026-05-20).
+- **Scope:** the workspace-router → `aDNA.aDNA/what/specs/` ecosystem-detail extraction (the four spec files + the router pointer replacement), as documented and long-implemented. Co-signers already on record: Hestia (`node.aDNA`), Rosetta (`aDNA.aDNA`), Berthier (`lattice-labs`).
 
 ## Context
 

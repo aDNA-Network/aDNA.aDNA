@@ -3,10 +3,10 @@ type: decision
 adr_id: adr_003
 adr_number: 3
 title: "Claude Code Runtime as Cross-Triad Context Topic"
-status: proposed
+status: accepted
 created: 2026-03-27
-updated: 2026-03-28
-last_edited_by: agent_aria
+updated: 2026-07-02
+last_edited_by: agent_rosetta
 supersedes:
 superseded_by:
 tags: [adr, decision, claude_code, context, triad, runtime]
@@ -16,7 +16,14 @@ tags: [adr, decision, claude_code, context, triad, runtime]
 
 ## Status
 
-Proposed
+Accepted.
+
+## Ratification
+
+- **Ratifier:** Stanley, Founding Architect (operator). Personas (agent_aria — original author; Rosetta — steward of this record) are author/steward only, never ratifier.
+- **Gate / reference:** Champollion G0 — `how/gates/champollion_p0_gate.md` + record `how/gates/champollion_p0_gate.output.md` (operator "Ratify as Recommended," 2026-07-02; decision D2 — stale-ADR adjudication per the ratified backlog ledger).
+- **Ratification date:** 2026-07-02 (distinct from the created/authored date, 2026-03-27).
+- **Scope:** the cross-triad Claude Code runtime context-topic decision as documented — distribute the runtime domain across the triad per the question test, plus a `context_graph` lattice as the unifying navigation layer. Long-implemented (~15 months in operation at ratification); this ratification regularizes the record of a decision the vault already runs on — it authorizes no new work.
 
 ## Context
 
