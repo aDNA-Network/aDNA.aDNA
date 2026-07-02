@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-02   # §8 Automation ladder added same-day (operator-directed, post-G0)
 status: draft
 pattern_category: operational
 applies_to: [campaign, mission, session, all_categories]
@@ -93,3 +93,16 @@ Context.aDNA (Prometheus) already has the machinery to judge routing empirically
 ## 7. Provenance & graduation
 
 Extracted from Operation Carnot's charter (2026-07-01, Noether/LatticeProtocol.aDNA) and first self-applied by Operation Champollion P0 (2026-07-02, Rosetta/this vault). **Instances: 2.** Per the pattern-graduation discipline this file stays `status: draft` until a third independent campaign adopts it, at which point the template/standard fold graduates from proposal to ratification candidate. Related: [[pattern_mission_decomposition]] (what a mission is), [[../../how/skills/skill_orchestration_tiers|skill_orchestration_tiers]] (intra-session agent fan-out — the *within-session* sibling of this *across-mission* pattern).
+
+## 8. Automation ladder (how routed campaigns become *runnable* campaigns)
+
+Because every mission declares its tier, budget, and a cold-runnable brief, execution becomes schedulable — **between the gates, never across them**. Four rungs, each independently useful (full design + reuse inventory: [[../../how/backlog/idea_campaign_execution_automation|idea_campaign_execution_automation]]):
+
+| Rung | What runs missions | Exists? |
+|------|--------------------|---------|
+| **R0 — manual, tiered** | Mode A: operator session-per-mission (`/model <tier>`). Mode B: a judgment-tier session spawns tiered subagents (Agent-tool `model:` override). | **Today** — Champollion P0's evidence lanes (opus ×2 + sonnet ×1, actuals recorded) are the live R0 instance |
+| **R1 — runner script** | `skill_campaign_run`: spawn headless tier-bound sessions (`claude -p --model <binding>`) per ready mission, worktree-isolated, sequential; halt on gate / escalation trigger / budget kill-line (est × 1.5) / validator failure; emit a run report | Chartered post-G1 on idea acceptance |
+| **R2 — Operation Dispatch** | Terminal.aDNA's cmux chief-of-staff runner: pane-per-mission, 6-state provider observability, ISS gate surfaces (composes their ADR-007 orchestrator + the `harness.adna.provider.v1` contract) | Charter drafted 2026-07-02 (operator-directed); ratifies at Terminal's own P0 gate |
+| **R3 — fleet scale** | Missions as claimable tasks (Operations.aDNA claim-lease + fencing; task schema v2 `+executor_tier` — memo-staged); Prefect cross-node flows | Gated on Operations schema v2 + their Prefect C2 |
+
+**Invariants that never relax with automation**: phase gates stay human (a runner *stops* at gates); **fable-class missions are operator-summon only — never auto-spawned**; escalation triggers park the mission `awaiting_human_review`; single-writer-per-repo (worktrees/lease fencing); push is never automated; budget kill-lines enforce ADR-016. The self-referential proof point stands: the more a campaign automates, the more its safety derives from the *design-time* quality of its briefs — which is this pattern's §2.2 contract doing exactly the job it was written for.
