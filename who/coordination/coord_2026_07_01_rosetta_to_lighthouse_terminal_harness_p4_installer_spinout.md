@@ -7,6 +7,7 @@ to:
   - Terminal.aDNA (Berthier)              # terminal substrate / launcher
   - Harness.aDNA (Stanley)                # agent-harness / provider contract
 created: 2026-07-01
+updated: 2026-07-01
 last_edited_by: agent_stanley
 status: filed
 ack_required: true

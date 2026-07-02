@@ -1,0 +1,33 @@
+---
+type: artifact
+artifact_id: champollion_findings_ledger
+title: "Operation Champollion — campaign-wide findings ledger (F-CHM-*)"
+campaign_id: campaign_champollion
+created: 2026-07-02
+updated: 2026-07-02
+last_edited_by: agent_rosetta
+status: active
+tags: [artifact, champollion, findings, ledger]
+---
+
+# Findings Ledger — Operation Champollion (F-CHM-*)
+
+> Campaign-wide findings register per the Champollion directive §9. One row per finding; findings are **never buried** (escalation cascade — CLAUDE.md §Safety). Disposition column tracks each finding to its landing place (fix commit, mission, backlog idea, or operator gate item). Sibling convention: Operation Carnot's `F-*` ledger in [[../../../STATE|LatticeProtocol.aDNA]].
+
+| ID | Found | Finding | Severity | Disposition |
+|----|-------|---------|----------|-------------|
+| F-CHM-001 | 2026-07-02 P0 | `coord_2026_07_01_rosetta_to_lighthouse_terminal_harness_p4_installer_spinout.md` missing required `updated:` frontmatter — filed at STR close, broke the 2026-06-30 "Full conformance" state. Meta-lesson: **full-pass claims decay; run the validator per-session, never inherit the pass.** | low | **FIXED** this session (field added; `adna_validate` full pass restored) |
+| F-CHM-002 | 2026-07-02 P0 | `how/templates/template_mission.md` contains the *plan* template (`plan_id`, `type: plan`, generic task list) — there is no true mission-card template; and **no template carries `token_budget_estimated`** despite SO-11/ADR-016 mandating per-mission budget declaration. Live missions (e.g. Hearthstone P0–P5) also omit budgets → doctrine-vs-practice drift is systemic, not cosmetic. | medium | Template fold staged via [[../../../how/backlog/idea_upstream_model_tier_mission_fields|idea_upstream_model_tier_mission_fields]] (P0 gate item; ships only through `skill_template_release`) |
+| F-CHM-003 | 2026-07-02 P0 | No `adr_index` exists in `what/decisions/` (AGENTS.md documents format only). 41 ADRs unindexed; **3 stale at `status: proposed`** (adr_003, adr_012, adr_027) with no trigger recorded. The Champollion directive assumed an index exists. | low | Index generation + stale-ADR adjudication → P1 mission (drafts in [[backlog_adjudication_ledger|backlog adjudication ledger]] §stale-ADRs) |
+| F-CHM-004 | 2026-07-02 P0 | `STATE.md` router = **545 KB / 696 lines** — violates the cold-start doctrine it itself records (router-split precedent M2.1 2026-05-19; heavy-file Read convention required to read one's own router). Also independently flagged by Context.aDNA's 2026-06-22 optimization dispatch (#2 worst always-loaded file). | high | STATE-diet mission → P-hygiene lane of the charter (§6.G) |
+| F-CHM-005 | 2026-07-02 P0 | `STATE.md` frontmatter `updated: 2026-06-30` while its newest Current-Phase bullet is 2026-07-01 — the router's own metadata is stale. | low | Fixed with the P0-gate STATE rewrite (this session, Step 9) |
+| F-CHM-006 | 2026-07-02 P0 | Directive-vs-reality: the standard is already **v2.4** (2026-06-29), not v2.3 as the Champollion directive assumed; `compliance_checker.py` header still cites v2.3. Stale version citations likely broader (Lane 3 sweep confirms scope). | medium | Version-citation sweep → P2 mission (standard consolidation); directive divergence recorded in [[order_of_battle|Order of Battle]] |
+| F-CHM-007 | 2026-07-02 P0 | Reviewer-persona count drift: CLAUDE.md narrates "5-persona ranker review"; `who/reviewers/` actually holds **16 personas**. **Lane 3 CONFIRMED** (claim sites: CLAUDE.md reviewer rows + who/reviewers/AGENTS.md). | low | Currency fix → M1.4; also a live example for the [[../../../what/patterns/pattern_model_tiered_campaign_execution|pattern]]'s "verify, don't inherit" clause |
+| F-CHM-008 | 2026-07-02 P0 (Lane 3) | **CHANGELOG.md stalled at v6.0 (2026-04-03)** while the vault/template is at v8.3 — releases v6.1→v8.3 never recorded ([Unreleased] section idle). The vault that teaches versioning discipline hasn't kept its own changelog. | high | Backfill from git history → M1.4 |
+| F-CHM-009 | 2026-07-02 P0 (Lane 3) | **Track D row stale + ownership clarified**: `campaign_operation_adna.md` Track D reads "in-flight inside Track A" but Track A closed 2026-06-21; owner is **Rosetta · coordinates with Venus** — i.e. DP4's last gate is substantially this vault's to assess terminal (auto-memory's "gated on external Track D" was imprecise). | medium | Row de-stale → M1.4; terminal assessment → M6.2 (DP4 dossier) |
+| F-CHM-010 | 2026-07-02 P0 (Lane 3) | Base-skills split discrepancy: MANIFEST.md + AGENTS.md claim 21 base skills; CLAUDE.md table lists 19 (total 48 consistent everywhere). | low | Reconcile → M1.4 |
+
+> Lane 3 also verified: **security clean** (gitleaks pre-push hook present; all `SS_VERCEL_TOKEN` occurrences names-only) · **Berthier fleet-defects memo already RESOLVED** (embedded disposition 2026-06-29 — auto-memory's "OPEN" is stale) · ADR-044 upstream fold + 2 graduation seeds (2/3 and 1/3 instances) tracked in [[order_of_battle|Order of Battle]] §2. New findings append as F-CHM-012+.
+
+| F-CHM-011 | 2026-07-02 P0 | **Adversarial pass 1** (newcomer · hostile forker · standards lawyer vs the drafted charter): (a) mission_count claimed 20 vs 24 actual with a mushy justification; (b) session estimate didn't reconcile with 20 Ring-1 missions absent explicit pairings; (c) G0 exit row omitted staged-memo release + P1-brief materialization; (d) new P0 files were unvalidated at drafting. | low | **ALL FIXED** same session (charter amended ×3; validator re-run full pass). Pass 2 scheduled pre-RC (M6.3) |
+| F-CHM-012 | 2026-07-02 P0 (Lane 1) | **Backlog status currency**: 27 of 91 items are effectively DONE but carry stale statuses (notable status-lies: VisualDNA seed "awaiting activation" → live 6-wrapper vault; interactive_decision_surface + operator_web_gate "proposed" → shipped as the ISS system/Rule 8; identity/inventory "accepted" → materialized at Hearthstone P5; awsbootstrap "graduating" → ADR-043 accepted). All 8 `backlog_F_S2_*` findings discharged by the v8.1 seed bundle + obsidian/verification skills (only F-S2-7 cosmetic possibly live). 2 items **actively wrong**: `latticehome_rename_pattern` (recommends a name reverted 2026-06-11) · `v8_p6_propagation_airlock_streamlined` (targets superseded STR cycle). | medium | Status-flip sweep + declines → **M1.1** (per ratified [[backlog_adjudication_ledger|ledger]]) |
