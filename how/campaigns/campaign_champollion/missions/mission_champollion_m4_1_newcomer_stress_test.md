@@ -3,14 +3,14 @@ plan_id: mission_champollion_m4_1_newcomer_stress_test
 type: plan
 title: "M4.1 — Newcomer Stress-Test (the real first hour, run honestly)"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 4
 campaign_mission_number: 1
 mission_class: verification
 executor_tier: opus
 token_budget_estimated: "45 kT (verification-class but with real execution surface — the walk itself is the work, not a re-derivable judgment; G2 class-split note: the fix-list synthesis half is the judgment surface)"
-token_budget_actual: "TBD"
+token_budget_actual: "~46 kT (opus builder ~33 + fable bookends ~13) vs 45 est — +2%, inside band (Mode-B bookend allowance, G3 D4). Note: first dispatch died at spawn (account session limit, 0 tokens); retry clean — no work lost."
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -35,10 +35,10 @@ Run the **real newcomer first hour honestly, end to end**: `git clone https://gi
 
 ## Acceptance criteria
 
-- [ ] The clone-and-walk actually executed against the live public image (evidence: clone log + walked-path listing in the artifact), not simulated from memory of the repo.
-- [ ] Friction log + fix-list at `how/campaigns/campaign_champollion/artifacts/newcomer_stress_test.md`, severity-ranked, every row routed (a)/(b)/(c)/(d) — no silent drops.
-- [ ] Class-(a) fixes executed; (b)-routes annotated into the M4.2/M4.3/M4.4 briefs; (c) stubs marked for M6.1.
-- [ ] Fable review passed (the log reads like a newcomer's hour, not a checklist); `adna_validate` FULL PASS; explicit-path commit.
+- [x] The clone-and-walk actually executed against the live public image (evidence: clone log + walked-path listing in the artifact), not simulated from memory of the repo. *(1.45s clone, 35M, 404 files, HEAD `e4372a6` verified.)*
+- [x] Friction log + fix-list at `how/campaigns/campaign_champollion/artifacts/newcomer_stress_test.md`, severity-ranked, every row routed (a)/(b)/(c)/(d) — no silent drops. *(10 rows: 0 blocker / 3 major / 7 paper-cut; routes finalized at fable review.)*
+- [x] Class-(a) fixes executed; (b)-routes annotated into the M4.2/M4.3/M4.4 briefs; (c) stubs marked for M6.1. *(Class-(a) = NONE after review — N-10 re-ruled to M4.3; riders live in all three briefs; (c) = one consolidated stub `idea_image_newcomer_currency_fixes`, `fold_batch: champollion_m6_1_rc`, F-CHM-211.)*
+- [x] Fable review passed (the log reads like a newcomer's hour, not a checklist); `adna_validate` FULL PASS; explicit-path commit. *(Review verdict PASS — every load-bearing claim independently re-verified; one census correction 2→3.)*
 
 ## Guardrails
 

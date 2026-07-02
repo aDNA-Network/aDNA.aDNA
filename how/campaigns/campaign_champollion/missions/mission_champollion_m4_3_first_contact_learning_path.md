@@ -28,6 +28,11 @@ Make the vault's **first-contact reading path** launch-ready: (1) the README app
 ## Work
 
 1. Ingest M4.1's (b)-routes marked M4.3 (the newcomer walk's doc findings — run M4.1 first if possible).
+   > **M4.1 riders (landed 2026-07-02, fable-finalized; evidence [[../artifacts/newcomer_stress_test|newcomer_stress_test]])**:
+   > - **N-05 / F-CHM-207 upgraded**: the old workshop URL does **not 404** — it **301-redirects to frozen `adna-legacy` @ `74cb761`**, so the taught clone *silently succeeds* with a stale pre-v8 vault. The work-item-4 fix stands, but the re-walk MUST verify the new flow end-to-end (silent-success is the failure mode to kill).
+   > - **N-06**: `tutorial_navigate_a_vault.md:44-56` narrates the DEV vault (concepts/13 · patterns/8 · comparisons · 41 templates) — none in the newcomer's image (27 templates, no such dirs). Reframe: state which vault it walks, or provide an image-shaped variant/branch.
+   > - **N-07 vault-half / F-CHM-210**: this vault's docs face (README pass, work item 2 + tutorials index) must carry explicit "start here" pointers a newcomer can actually reach from the image; image-side pointer line rides [[../../../backlog/idea_image_newcomer_currency_fixes|the M6.1 fold batch]], NOT this mission.
+   > - **N-10 (fable-ruled here from (a))**: designate the FIRST tutorial in `what/tutorials/AGENTS.md` — three files carry `level: beginner` (navigate_a_vault · first_claude_md · question_test); the learning-path walk (work item 3) decides which leads and marks it.
 2. **README pass**: restructure to the first-contact pattern; verify every command/path/count it states (census rule — never inherit); keep it dual-audience.
 3. **Learning-path walk**: execute each tutorial/workshop step in order (beginner → advanced) against a scratch copy where steps mutate state; log every step that fails, lies, or drifts; fix in place (content fixes) or route (template-image → `fold_batch: champollion_m6_1_rc` stub; site → M4.2/M4.4).
 4. **F-CHM-207 fix**: workshop Materials + Exercise 1 → `git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude` flow; re-walk the exercise; update the findings ledger row → FIXED.
