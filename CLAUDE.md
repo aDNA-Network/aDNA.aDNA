@@ -275,7 +275,7 @@ Reusable agent recipes and documented procedures in `how/skills/`. Skills have t
 | `skill_dual_audience_review` | agent | Review content file against dual-audience test (developer + non-developer legibility) |
 | `skill_self_reference_check` | agent | Verify content file cites concrete vault examples as self-referential demonstration |
 | `skill_iii_cycle` | agent | Single III improvement cycle — 7-step: measure, orient, select, implement, re-measure, validate, record |
-| `skill_decadal_aar` | agent | Decadal AAR with 5-persona ranker review — every 10th III cycle in Phase 7 |
+| `skill_decadal_aar` | agent | Decadal AAR with 16-persona ranker review — every 10th III cycle in Phase 7 |
 | `skill_context_research` | agent | Upstream research pass for a new software-graph / volatile-domain context topic (version-pinned, rubric-passed `context_research` files) |
 | `skill_telemetry_wrapper_integration` | agent | A `<Software>.aDNA` deployment-graph vault adopts the opt-in deploy-feedback loop — add a `feedback/` consumer wrapper (default-OFF, names-only) |
 | `skill_reference_inspection` | agent | Ground a site-design decision in real exemplars — curate a reference set, inspect to a fixed rubric, synthesize design guidance |
@@ -326,7 +326,7 @@ Extend by adding domain-specific entities under the appropriate triad leg. The b
 | **WHAT** | `comparison` | `what/comparisons/` | aDNA vs. other knowledge architectures (honest positioning) |
 | **WHO** | `community` | `who/community/` | Community roles, contribution paths, governance |
 | **WHO** | `adopter` | `who/adopters/` | Adopter personas and deployment profiles |
-| **WHO** | `reviewer` | `who/reviewers/` | Specialist UX/design reviewer personas (Design Critic, Accessibility Auditor, Content Strategist, Information Architect, Newcomer Stress-Tester) — invoked during decadal AAR Step 4b |
+| **WHO** | `reviewer` | `who/reviewers/` | Specialist UX/design reviewer personas (Design Critic, Accessibility Auditor, Content Strategist, Information Architect, Newcomer Stress-Tester, and 11 further specialists (16 total; roster: `who/reviewers/AGENTS.md`)) — invoked during decadal AAR Step 4b |
 | **HOW** | `workshop` | `how/workshops/` | Workshop kits and facilitation guides |
 | **HOW** | `publishing` | `how/publishing/` | Vault-to-web content publishing pipeline |
 

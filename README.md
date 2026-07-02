@@ -355,7 +355,7 @@ Read [`VISION.md`](who/governance/VISION.md) for the decentralized frontier lab 
 
 | Document | What it covers |
 |---|---|
-| [`what/docs/adna_standard.md`](what/docs/adna_standard.md) | Full normative specification (v2.2) — all MUST/SHOULD/MAY rules |
+| [`what/docs/adna_standard.md`](what/docs/adna_standard.md) | Full normative specification (v2.4) — all MUST/SHOULD/MAY rules |
 | [`what/docs/standard_reading_guide.md`](what/docs/standard_reading_guide.md) | Three persona-based paths through the standard |
 | [`what/docs/adna_design.md`](what/docs/adna_design.md) | Architecture rationale — why three legs, design tradeoffs |
 | [`what/docs/adna_bridge_patterns.md`](what/docs/adna_bridge_patterns.md) | Multi-instance composition — nesting, sibling, monorepo |
