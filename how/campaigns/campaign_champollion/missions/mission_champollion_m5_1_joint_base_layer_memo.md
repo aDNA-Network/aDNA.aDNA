@@ -3,14 +3,14 @@ plan_id: mission_champollion_m5_1_joint_base_layer_memo
 type: plan
 title: "M5.1 — Joint base-layer alignment memo: fill the skeleton, refresh the Noether countersign, T1 'context democracy' clearance"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 5
 campaign_mission_number: 1
 mission_class: integration
 executor_tier: opus
 token_budget_estimated: "30 kT + Mode-B bookend allowance (~35; G3 D4 — integration is outward-facing, fable sets positions/asks per the G2 re-tier)"
-token_budget_actual: "TBD"
+token_budget_actual: "~62 kT (opus builder ~55 self-reported + fable bookends ~7) vs ~35 — +77%, worst integration delta of the campaign (inside the ADR-016 2× band at 1.77×). Driver: citation-grade evidence reads — the memo releases publicly at G5, so every claim needed receipts (17K sweep artifact + campaign records + the M5.7 primary-record hunt). Calibration note → datapoint #5: outward-facing integration memos price like verification — the cost center is the evidence corpus, not the prose."
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -37,10 +37,10 @@ Fill the **joint base-layer alignment memo skeleton** — proposed to Noether in
 
 ## Acceptance criteria
 
-- [ ] Skeleton filled our-side, staged in OUR tree, `countersign_requested: true`, releases with the next push batch.
-- [ ] Countersign state honestly recorded: COUNTERSIGNED (if Noether answered) or **PENDING-WITH-OWNER** (legitimate close per charter P5 row).
-- [ ] T1 clearance block recorded with evidence trail; every LP claim cite-at-pin.
-- [ ] Fable review passed; `adna_validate` FULL PASS + `--governance` zero drift; explicit-path commit (no push — batches at G5).
+- [x] Skeleton filled our-side, staged in OUR tree, `countersign_requested: true`, releases with the next push batch. *(`coord_2026_07_02_rosetta_to_noether_joint_base_layer_memo_v1.md` — 5 rows filled w/ truth-owner + `LP side:` markers; §3/§5 = scheduled-with-pointer, back-fill at M5.2/M5.3 closes pre-release.)*
+- [x] Countersign state honestly recorded: COUNTERSIGNED (if Noether answered) or **PENDING-WITH-OWNER** (legitimate close per charter P5 row). *(PENDING-WITH-OWNER — zero 2026-07 inbound at 22:47Z re-check; memo refreshes the ask, does not block.)*
+- [x] T1 clearance block recorded with evidence trail; every LP claim cite-at-pin. *(cleared-FORMAL: M5.7 gate 2026-06-03 primary record found at `campaign_adna_serious_tool_readiness.md:455` + live landing L70–77 + M4.4 re-verify; standalone artifact `artifacts/t1_context_democracy_clearance.md`; fable independently re-verified all three citations. Bonus honesty: the LP-pin-advanced note [47935b6→8cb6e1e] renders the codepin gap as mechanism-working, not defect.)*
+- [x] Fable review passed; `adna_validate` FULL PASS + `--governance` zero drift; explicit-path commit (no push — batches at G5). *(PASS, zero completions needed — first clean-on-first-review builder output of the campaign; quiescence check confirmed agent dead pre-review.)*
 
 ## Guardrails
 
