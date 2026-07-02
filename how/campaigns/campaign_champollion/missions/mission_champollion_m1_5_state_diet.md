@@ -3,13 +3,14 @@ plan_id: mission_champollion_m1_5_state_diet
 type: plan
 title: "M1.5 — STATE router diet: restore the true cold-start read"
 owner: stanley
-status: active
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 1
 campaign_mission_number: 5
 mission_class: implementation
 executor_tier: opus
 token_budget_estimated: "40 kT"
+token_budget_actual: "~30 kT"
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
@@ -52,3 +53,13 @@ tags: [plan, campaign, champollion, p1, state_diet, token_economy, m1_5]
 - Any block whose liveness cannot be determined from its own text + the campaign roster → keep + flag (this trigger fires often on first pass; that is expected and fine).
 - A shift would break a link cited by an OPEN gate/mission/memo → keep that block live.
 - Budget > 60 kT → checkpoint (the mission is safely resumable at any block boundary).
+
+## AAR
+
+**Session**: `session_stanley_20260702T064009Z_champollion_m1_5` · **Commit**: `4e493ce` (unpushed) · **Executor: opus** (ran directly at-tier; scripted transform). AAR artifact: [[../../../missions/artifacts/campaign_champollion_mission_m1_5_aar|campaign_champollion_mission_m1_5_aar]]. **Measurement: STATE.md 554,697 → 47,695 B (−91.4%); combined 751,736 → 753,889 B (never-delete: +2,153).**
+
+- **Worked**: a scripted section-split against an explicit KEEP/ARCHIVE manifest with a hard byte-conservation assertion + per-block verbatim-in-archive check made a 554 KB never-delete surgery safe + provable in one pass; validators green; ≤100 KB stretch met.
+- **Didn't**: nothing failed; the `.new`-then-verify-then-mv dry-run caught one cosmetic frontmatter double-`#` before the live write.
+- **Finding**: STATE bloat concentrates in **self-superseded handoff prose** — the biggest single block (~130 KB / 24%) was the accumulated `## Next Session Prompt` stack; the 40 `## Last Session` blocks (162 KB) were all long-marked PRIOR. The QUEUED banner had already superseded all of it.
+- **Change**: shed each predecessor's Last-Session/Next-Session-Prompt into the archive **at close** rather than letting it accrete for a quarterly diet → file `idea_state_prompt_shed_on_close`.
+- **Follow-up**: G1 (P1 exit, per-tier AAR review, operator gate). Active Campaigns + Pending Manual Actions kept-and-flagged → optional follow-up compaction. ~30 kT vs 40 est (−25%).
