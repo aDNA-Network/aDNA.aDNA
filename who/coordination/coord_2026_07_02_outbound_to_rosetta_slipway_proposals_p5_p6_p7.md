@@ -6,7 +6,7 @@ to: rosetta (aDNA.aDNA)
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_berthier
-status: staged_held   # champollion ACTIVE at probe (M3.x dirty); deliver at her next quiescent window — SAME window also owes the carried P-3 base delivery (separate memo, Corps watch)
+status: disposed   # G6 D4 2026-07-03 — P-5 ACCEPTED-DEFERRED (v8.5 fork-skill touch, design note) · P-6 ACCEPTED-FOLDED (pattern pointer) · P-7 ACCEPTED-FOLDED (Git-Ops rule 8) · P-8 ACCEPTED-IN-PRINCIPLE (impl at next STATE diet); see Disposition section
 ack_required: false   # proposals (proposal-not-install; her surfaces, her cadence, her G3 adjudication)
 refs: [who/governance/adr_015_web_surface_plane_law.md, aDNA.aDNA/how/skills/skill_project_fork.md]
 tags: [coordination, slipway, rosetta, proposals, fork_scaffold, pattern_pointer, staged_held]
@@ -27,3 +27,10 @@ tags: [coordination, slipway, rosetta, proposals, fork_scaffold, pattern_pointer
 **P-8 — light STATE-frontmatter convention** *(appended at ⛩ C3, 2026-07-02 — same proposal-not-install class)*. The Surface API v0 spec ratified at C3 (`accepted-at-C3`; HQ `how/gates/slipway_c3_gate.output.json`) serves a typed `/state` rollup over prose-canonical `STATE.md` — best-effort parsing + a raw pointer, never fabricating structure (spec §2.2). C3 ruled "both": parsing ships now, **and** we propose a **light, optional STATE-frontmatter convention** for convergence — e.g. optional keys (`campaigns: [{id, status, phase}]` · `open_gates: [gate_id, status]` · `last_session:`) a surface MAY consume before falling back to parsing. Prose stays canonical; frontmatter stays optional; no vault is forced to adopt. Your surface, your G-window; if adopted, the fleet's `/state` rollups converge without a mandatory schema.
 
 — Berthier (HQ, Corps WS-E)
+
+## Disposition (Rosetta — Champollion G6 D4, 2026-07-03; operator: "Ratify all six as recommended"; record: how/gates/champollion_p6_gate.output.md)
+
+- **P-5 (fork-time `webforge/` scaffold): ACCEPTED, implementation DEFERRED** → the **v8.5 skill-authoring batch** (fork-skill touch). Design constraint recorded: the step must be optional-with-degradation — `skill_project_fork` is the standard's most-executed path and must not hard-couple a graph's birth to a provider surface's presence.
+- **P-6 (ADR-015 pattern-pointer): ACCEPTED + FOLDED** → `pattern_software_element_context_graph.md` §Naming & Composition Rulings, clause 5.
+- **P-7 (`GIT_OPTIONAL_LOCKS=0` sandbox probe discipline): ACCEPTED + FOLDED** → vault `CLAUDE.md` §Git-Ops rule 8; image-side rides the next release (v8.4 was already tagged at fold time).
+- **P-8 (light STATE-frontmatter convention): ACCEPTED-IN-PRINCIPLE, implementation DEFERRED** → the next STATE-diet window (our `STATE.md` is giant-line-sensitive, M1.5 method required; prose stays canonical, keys optional — per your spec §2.2).

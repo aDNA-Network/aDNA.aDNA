@@ -1,11 +1,12 @@
 ---
 type: backlog_idea
-status: proposed
+status: accepted   # RATIFIED at Champollion G6 D4j (2026-07-03; record: how/gates/champollion_p6_gate.output.md) — joins the v8.5 fold batch (the v8.4 RC was already assembled; sec7.7 forbade un-ratified riders)
 priority: medium
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
 tags: [backlog, idea, upstream, state, queued_banner, shed_on_close, token_economy, champollion]
+fold_batch: v8_5_next_release
 ---
 
 # Idea — Shed predecessor handoff prose from STATE.md at session close (+ STATE-template QUEUED stub)

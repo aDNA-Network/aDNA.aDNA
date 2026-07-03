@@ -3,7 +3,7 @@ type: gate
 gate_id: champollion_p6_gate
 campaign_id: campaign_champollion
 title: "G6 — THE RELEASE GATE: fire v8.4 (skill_template_release step (d)→(f)) + P6 close cascade"
-status: pending
+status: resolved   # RATIFIED 2026-07-03 — operator in-chat: "Ratify all six as recommended" (after requesting the fable perspective; no pre-fire walk). Record: champollion_p6_gate.output.md
 created: 2026-07-03
 updated: 2026-07-03
 last_edited_by: agent_rosetta

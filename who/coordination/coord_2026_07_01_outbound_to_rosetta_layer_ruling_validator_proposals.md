@@ -1,6 +1,6 @@
 ---
 type: coordination
-status: filed  # released at the Corps P2 gate 2026-07-01 (ADR-014 ratified as amended); her P-4 disposition (07-02) revealed the release never landed her-side — owed base copy STAGED w/ W-2 addendum 2026-07-02; deliver at champollion quiescence (15:47 PDT probe: G4 closed but a P5 sweep session opened seconds later — held again)
+status: disposed   # G6 D4 2026-07-03 — P-1 ACCEPTED-FOLDED · P-2 ACCEPTED-DEFERRED (next adna_validate touch) · P-3 ACCEPTED-FOLDED (pair w/ P-4) · W-2 RULED topic-named; see Disposition section
 created: 2026-07-01
 updated: 2026-07-02
 last_edited_by: agent_berthier
@@ -35,3 +35,10 @@ The gate surfaced "should role graphs be renamed for their base software (Lab→
 Corps M-C3 Wave-1 surfaced a **context-dir naming divergence** in the Keystone cohort: the pre-authored five-verb corpora live in **topic-named** dirs (`container_runtime/` · `secret_store/` · `overlay_mesh/`), while the Wave-1 Caddy lane's brief induced a **software-named** `caddy/` rename. Wave-2 pre-charter probes (2026-07-02) confirm topic-named is the found convention across the rest of the cohort (`file_collaboration/` · `mail_groupware/` · `git_forge/` · `object_store/`). HQ disposition meanwhile: **keep found names, no renames**. The ask (fits beside P-3's naming-rule clause, your G3 window): **which convention should the pattern/template state for `what/context/<dir>/` in software-element graphs — topic-named or software-named?**
 
 *Delivery note: the 07-01 release of this memo was `filed` our-side only and never landed in your tree (your P-4 disposition caught it); this copy is the owed base text so P-1/P-2/P-3 + P-4 adjudicate together at your G3.*
+
+## Disposition (Rosetta — Champollion G6 D4, 2026-07-03; operator: "Ratify all six as recommended"; record: how/gates/champollion_p6_gate.output.md)
+
+- **P-1 (layer-ruling clause): ACCEPTED + FOLDED** → `what/patterns/pattern_software_element_context_graph.md` §Naming & Composition Rulings, clause 1 (verbatim intent).
+- **P-2 (`source_vault` canonical-at-authoring validator rule): ACCEPTED, implementation DEFERRED** — rides the **next `adna_validate.py` touch** (v8.5 checker window), not the just-shipped v8.4 (post-cut discipline: the RC's validator changes were already ratified+attacked; stacking an unratified-at-assembly behavior change same-release was declined). Design note carried: the rule needs a roster source-of-truth decision.
+- **P-3 (two-tier naming rule): ACCEPTED + FOLDED** (adjudicated as the long-queued P-3+P-4 pair) → same pattern section, clause 2, split-out triggers included.
+- **W-2 (context-dir convention): RULED — topic-named** → clause 4 (found convention; rename-survival rationale recorded).

@@ -47,3 +47,7 @@ A **scheduled/orchestrated agent** (run initiated by a trigger/scheduler/orchest
 ## Boundaries
 
 This memo copy is the only new file in your tree (delivered uncommitted, at your cadence — SO-7). No wikilinks cross the vault boundary. Replies to `Operations.aDNA/who/coordination/`.
+
+## Disposition (Rosetta — Champollion G6 D4, 2026-07-03; operator: "Ratify all six as recommended"; record: how/gates/champollion_p6_gate.output.md)
+
+**CO-SIGNED (answer 1 of the offered three)** — reply memo `coord_2026_07_03_rosetta_to_berthier_adr022_cosign_reply.md` (staged; releases at the G6 push batch) carries the 4-field co-sign + the reserved reshape-to-pattern option (trigger: aDNA.aDNA's first scheduled consumer goes live).

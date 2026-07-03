@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-06-22
-updated: 2026-07-02
+updated: 2026-07-03
 status: draft
 pattern_category: structural
 applies_to: [forge, framework, platform]
@@ -55,6 +55,20 @@ The agent loads the referenced context **at session-start** — design-time, pul
 - **Build-scale role-graphs** — just as a *node* role-graph (`Lighthouse.aDNA`) composes deployment-face graphs into a stack, a **build role-graph** composes build-face graphs into a built artifact. `WebForge.aDNA` (was `Websites.aDNA`, renamed 2026-07-02) composes `Astro.aDNA` (framework) + `TypeScript.aDNA` (language) + `Tailwind.aDNA` (styling) + `III.aDNA` (quality), plus deploy orchestration, into a website / dashboard / ops-center. The framework graph is the brick; the **build role-graph is the wall** — the build-scale twin of the node-scale role-graph. Both are the same mechanism ([[what/decisions/adr_039_software_element_context_graph_umbrella|ADR-039]]); only the composer differs (see [[what/decisions/adr_041_build_scale_role_graph_subtype|ADR-041]]).
 
 **This is a cross-category lens, NOT a new aDNA category.** Each graph keeps its category — Astro is a Forge, TypeScript a Framework, Forgejo a Platform-subtype. This pattern names what all three *share*: a software element, exposed as a context graph, reached via wrapper + `federation_ref`, composed by pulling many. ([[what/decisions/adr_039_software_element_context_graph_umbrella|ADR-039]] records the lens; [[what/decisions/adr_037_software_deployment_graph_subtype|ADR-037]] settles the deploy-face subtype.)
+
+## Naming & Composition Rulings (adjudicated at Champollion G6, 2026-07-03)
+
+Five clauses ruled into this pattern from the Corps/Slipway proposal batch (Berthier memos, `who/coordination/coord_2026_07_01_outbound_to_rosetta_layer_ruling_validator_proposals.md` + `coord_2026_07_02_berthier_to_rosetta_p4_provider_forge_webforge_rename.md` + `coord_2026_07_02_outbound_to_rosetta_slipway_proposals_p5_p6_p7.md`; HQ-side law since ADR-014 §4/§7 + Amendment A1 — this fold makes them the pattern's law):
+
+1. **Layer ruling (P-1)** — *Layers are composition profiles, not graphs.* Deployment layers (L1/L2/L3) and stack profiles (core/collab/inference/ops) live **inside a role graph's composition manifest** as named profiles. A layer graduates to its own graph only when it becomes a distinct deployable **role** — its own lifecycle, its own operator base, its own composition of bricks (precedent: Lighthouse-for-L1). Corollary: a surface role with layer variants (e.g. Lab's L1/L2/L3) stays **one unified graph** with layer profiles.
+
+2. **Two-tier naming rule (P-3)** — what to name a new graph, all three cases: **software-named brick** (one software IS the identity: Forgejo · Caddy · Nebula) · **role-named brick with swappable backend + pinned fleet-default** (Container[Podman] · Inference[multi] · Store · Groupware) · **role-named composer** (Lighthouse · Lab · Terminal). **Standing split-out triggers**: the embedded software splits out software-named only when an independent consumer needs it without the role (named: Jupyter-out-of-Lab · Cmux-out-of-Terminal; neither fired).
+
+3. **Provider-forge suffix (P-4)** — the **`-Forge.aDNA` maker-suffix marks provider/producer graphs** whose identity is *producing artifacts on demand for other graphs* (the `spec_forge_ecosystem` category), **including a Tier-2 composer that is itself an on-demand producer** (reference instance: WebForge). Reference graphs (Frameworks) keep plain-noun names. The clause adds a name-class only — it renames nothing; the 2026-06 moves AWAY from `-Forge` (Oration · Molecules · ComfyUI · Videos · Astro) stand: those identities are their role/software, not their producer-ness.
+
+4. **Context-dir convention (W-2)** — `what/context/<dir>/` in software-element graphs is **topic-named** (`container_runtime/` · `secret_store/` · `overlay_mesh/`), not software-named: it is the found convention across the Keystone cohort, and topic names survive graph renames (the pt-series lesson) — the context tree should not couple to the brand name the two-tier rule lets vary.
+
+5. **Web-surface plane (P-6)** — the reference ruling for how a software-element graph grows web surfaces (third default browse surface; hub-as-tenant/provider; seams S1–S3; shapes 0–3) is HQ's **ADR-015** (`aDNALabs.aDNA/who/governance/adr_015_web_surface_plane_law.md`, ratified ⛩C2 2026-07-02). Consult it before adding a `webforge/` wrapper or graph-card surface.
 
 ## When to Use
 

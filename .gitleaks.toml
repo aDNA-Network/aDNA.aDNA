@@ -1,0 +1,28 @@
+# gitleaks config — aDNA.aDNA (dev graph)
+# Installed at Champollion G6 D6.1 (2026-07-03; record: how/gates/champollion_p6_gate.output.md).
+#
+# Purpose: ONE narrow allowlist for a triaged false-positive class — nothing else is
+# suppressed; every other finding still fires. Full triage record:
+# how/campaigns/campaign_champollion/artifacts/adversarial_pass_2.md §5.
+#
+# The class: vendored third-party Obsidian plugin bundles (minified main.js). The
+# M6.3 full-history scan (563 commits) flagged 9 `generic-api-key` hits, all in
+# .obsidian/plugins/terminal/main.js @ be28334 — they are xterm.js keyboard-sequence
+# lookup tables (`FourKeyMap` / `SequencerByKey` assignments), i.e. vendor code
+# constants with key-like entropy, not credentials. Values were never echoed during
+# triage (metadata-only handling).
+#
+# Scope discipline: path-scoped to plugin bundles only. Do NOT widen this to docs,
+# configs, or first-party code. If a real secret ever lands in a vendored bundle,
+# the pre-push increment scan on the INTRODUCING commit is the catch point — review
+# plugin-reseed commits accordingly (this allowlist trades that narrow window for
+# clean full-history scans; accepted at G6).
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Vendored third-party Obsidian plugin bundles (minified JS; xterm.js key-map tables misread as generic-api-key — Champollion M6.3 triage, 9/9 FP)"
+paths = [
+    '''\.obsidian/plugins/[^/]+/main\.js$''',
+]

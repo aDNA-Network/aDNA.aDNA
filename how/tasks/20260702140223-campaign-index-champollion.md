@@ -36,17 +36,19 @@ missions:
   - {id: M5.1, phase: P5, status: done}     # joint memo v1 COMPLETE + T1 cleared-formal (countersign pending-with-owner) — G5 ratified 2026-07-03
   - {id: M5.2, phase: P5, status: done}     # bilateral conformance; zero spec contradictions; pin-FOLLOWED -> 8cb6e1e; F-CHM-214/215
   - {id: M5.3, phase: P5, status: done}     # adoption story teachable (6 PASS / 3 TAUGHT-AS-DESIGN; real validator verdict)
-  - {id: M6.1, phase: P6, status: planned}  # template release candidate (held at G6)
-  - {id: M6.2, phase: P6, status: planned}  # DP4 dossier + Track D terminal assessment
-  - {id: M6.3, phase: P6, status: planned}  # adversarial pass 2 + security re-verify
-  - {id: M7.1, phase: P7, status: planned}  # ship (operator-fired release)
-  - {id: M7.2, phase: P7, status: planned}  # campaign close + AAR + handoff
+  - {id: M6.1, phase: P6, status: done}     # v8.4 RC curated 27/10/0 + assembled + dry-run held — G6 ratified+FIRED 2026-07-03
+  - {id: M6.2, phase: P6, status: done}     # Track D READY; DP4 dossier one-paste-ready (operator fires DP4)
+  - {id: M6.3, phase: P6, status: done}     # 3 found→fixed via curation amendment; full-history gitleaks 9/9 FP; nothing blocking
+  - {id: M7.1, phase: P7, status: planned}  # ship-verify in the wild (post-release backstop walk) + handoff packet
+  - {id: M7.2, phase: P7, status: planned}  # campaign close + ops-retro + corpus export + G7 render
 tags: [task, campaign_index, champollion, adna_adna, registry, p2]
 ---
 
 # Campaign index — Operation Champollion (`campaign_champollion`)
 
 > Campaign-index TaskNote per the Operations A3 pattern (`kind: campaign_index`) — published on Berthier's C03 M28 ask ([[../../who/coordination/coord_2026_07_02_berthier_to_rosetta_champollion_index_ask|memo + disposition]]). **The charter ([[../campaigns/campaign_champollion/campaign_champollion|campaign_champollion]]) remains canonical**; this file is a board projection, refreshed at gate closes (G-cadence).
+
+**Rollup (2026-07-03, refreshed at G6 close — the promised G-cadence; supersedes the G5 rollup below):** **G0–G6 all ratified — G6 FIRED: v8.4 SHIPPED** (`aDNA-Network/aDNA` @ `4e3bf38` + tag `v8.4`; standard v2.5 folded to the image; smoke 7/7 PASS; local `.adna` synced `9bd4051`). P6 (one Mode-B sweep): RC curated 27 IN/10 DEFER/0 DROP → assembled → adversarially attacked (3 found→fixed via recorded amendment) → released at the operator's in-chat ratification ("Ratify all six as recommended"). Track D READY; DP4 dossier awaits the operator's fire. **The long-carried P-3 memo ARRIVED** (`1e3e422`) — the full 10-item inbound batch adjudicated at G6-D4 (P-1/P-3+P-4/W-2/P-6/P-7 folded · ADR-022 co-signed-by-memo · P-2/P-5/P-8/state-prompt-shed deferred w/ named triggers). Cumulative ≈+4% (~2% over the 700–850 band ceiling; lightest phase left). **Next: P7 (M7.1 ship-verify → M7.2 close + retro) → G7 = campaign close.**
 
 **Rollup (2026-07-03, refreshed at G5 close — the promised G-cadence; supersedes the G4 rollup below):** **G0–G5 all ratified**; P1–P5 complete. P5 (one Mode-B sweep): the **joint base-layer memo v1** is complete and RELEASED to Noether with the G5 push (countersign requested; pending-with-owner accepted) · bilateral conformance ran both directions (LP = genuine Standard-tier; zero spec contradictions our side; **teaching pin followed → `8cb6e1e`**) · the Exchange/Lighthouse adoption story is teachable end-to-end with honest shipped-vs-horizon boundaries. Telemetry: P5 +52% (cross-graph evidence reads; the pre-pinning countermeasure validated at −9% and **adopted as standing**); **cumulative ≈ +1%, on budget**. **Next = M6.1** (release candidate w/ the full accumulated rider batch → `skill_template_release` dry-run, **RC HELD at G6**) → M6.2 (DP4 dossier + Track D terminal) → M6.3 (adversarial pass 2, fable-led); **G6 = THE RELEASE GATE** (operator fires the release + deploy decisions).
 
