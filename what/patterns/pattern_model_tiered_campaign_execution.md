@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-07-02
-updated: 2026-07-02   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor); §2.5 dispatch-shape note added at P3 open (operator ruling: Mode B same-session subagent dispatch = default)
+updated: 2026-07-03   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor); §2.5 dispatch-shape note added at P3 open (operator ruling: Mode B same-session subagent dispatch = default); **§2.6 Mode-B operational discipline folded at Champollion M7.2 close (2026-07-03) — 7 sweep-surfaced hazards + the review-bookend checklist**
 status: active   # GRADUATED at Champollion G3 (2026-07-02, D2a — 5 instances; operator-ratified)
 pattern_category: operational
 applies_to: [campaign, mission, session, all_categories]
@@ -81,6 +81,31 @@ When the **main session itself runs at the judgment tier** (Champollion P2 ran u
 Campaigns MAY declare a local variant table in their charter (Vauban-style); absent one, this table is the default. Budget fields + the §2.2 downtier-safe brief contract are unaffected — a brief written downtier-safe stays cheaper to write and safer to run at any tier.
 
 **Dispatch-shape note (amendment 2026-07-02, operator ruling at the Champollion P3 open — same-day sibling of the table above)**: dispatch shape is a **charter-level choice**, and the two live judgment-tier campaigns ruled it opposite ways the same day — an honest divergence, recorded per this pattern's own divergence rule rather than canonized. **Champollion** ruled §8 R0 **Mode B** the default: one fable orchestrator session runs the bookends inline and dispatches each build to an `executor_tier` **subagent** (Agent-tool `model:` override), so a full phase becomes one session — verify-brief → dispatch → independent review, mission by mission, halting at the operator gate — with Mode A the fallback for builds that outgrow a subagent context. **Carnot** (D-C8, same day) retired Mode B for their campaign: session-per-mission at `/model opus`, fable reviews co-located with gates R0–R4. The shared core is unmoved — the class→tier table, the §2.2 brief contract, judgment-tier bookends/review; what varies per charter is only whether the build runs in a subagent or its own session. First full-phase Mode-B instance: the Champollion P3 sweep (M3.1–M3.3, 2026-07-02).
+
+### 2.6 Mode-B operational discipline (hazards the Champollion sweeps surfaced)
+
+Running full phases as single Mode-B sweeps (Champollion P3–P7, 2026-07-02/03) surfaced a recurring set of orchestration hazards. They are **folded here as durable rules** (not merely narrated in the campaign's retro — [[../../how/campaigns/campaign_champollion/artifacts/ops_retro_champollion|ops_retro_champollion]] is the provenance record), each with its incident lineage:
+
+1. **Twin-builder → TaskStop + quiescence** (P4). One Agent-tool dispatch can yield **two live builder instances** — the dispatch returns id A while completion notifies from id B, and the original keeps editing after the twin reports. **Rule**: after a builder's completion notification, **TaskStop the dispatch's agent-id and verify tree quiescence** (`git status` clean of unexpected edits) *before* any review-fix.
+
+2. **Aggregate-halt accounting is the orchestrator's job** (M6.1, recurred M7.1). Two dispatches each individually in-band can **sum past the mission halt line** — nothing watches the SUM mid-mission. **Rule**: the orchestrator tracks a **running mission total at each bookend** and checks it against the halt line; per-dispatch sizing (the P5 lesson) is necessary but not sufficient. Now **standing, not a candidate** — M6.1 (~85 across two in-band dispatches crossed halt-70) + M7.1 (~45 across walk+review crossed halt-40) = 2 instances.
+
+3. **Finding-side verification** (M6.3 F1). A fold row sourced from a finding is verified against the **finding's cited surface**, not the builder's changed files — two clean file-level reviews missed a wrong-surface fold; the route-walk from the finding side caught it. **Corollary (M7.1)**: verify **both** surfaces of a claimed contradiction.
+
+4. **Silent halt-lines live in dispatch sizing** (M5.2). A subagent cannot introspect its own token use, so a "halt at N kT" instruction inside a builder brief is unenforceable. **Rule**: express halt discipline as **dispatch sizing** (scope the brief to fit), not as an in-subagent limit.
+
+5. **Per-unit-cost pricing** (M6.1 rows + P5 cross-graph). Missions with a per-unit cost structure — an N-row fold batch, a foreign-corpus read surface — must be priced **per unit** (~2.5–3 kT/row for RC/fold batches; the read-surface size for cross-graph), never by a single mission-shaped integration estimate. P5 (+52%), P6/M6.1 (+63%), and P7 (both missions ~+50%) were all this estimator class.
+
+6. **Stranger-walks use a campaign-blind instrument** (M4.1, M7.1). A "verify as a stranger meets it" walk runs in a **fresh, campaign-blind subagent**, not the campaign-saturated orchestrator (which knows what changed — the wrong mindset for a stress-test). Pair with **method variation** (F-CHM-212): a second verifier must vary the method, or it replicates rather than checks.
+
+7. **Judgment-tier substitution under rate-limit** (M7.1/M7.2). When the judgment tier (fable) is **rate-limited**, a review or closeout bookend MAY run as an **operator-authorized substitute at the build tier (opus)** — recorded honestly (`model_actual ≠ tier_planned`, noted in the AAR). A **fresh independent subagent** preserves independence even at the substitute tier. The safety invariant is unaffected: fable is never *auto*-spawned; the substitution is an operator decision, not an automated downgrade.
+
+**Mode-B review-bookend checklist** (run before any commit):
+- [ ] **Quiescence** — TaskStop the dispatch agent-id; `git status` shows only expected edits.
+- [ ] **Finding-side** — every finding-sourced change verified against its cited surface (both sides of a contradiction).
+- [ ] **Aggregate budget** — running mission total checked vs the halt line (sum, not per-dispatch).
+- [ ] **Independence** — the review varied its method from the builder's (not a re-run).
+- [ ] **Validators** — `adna_validate` full + `--governance` green; explicit-path commit; no push unless the gate fires.
 
 ## 3. Why this is measurable (the Context.aDNA seam)
 

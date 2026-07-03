@@ -3,14 +3,14 @@ plan_id: mission_champollion_m7_2_campaign_close_retro
 type: plan
 title: "M7.2 — Campaign close + ops-retro (the M7.x bundle) + telemetry corpus export + G7 render"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 7
 campaign_mission_number: 2
 mission_class: closeout
 executor_tier: fable
 token_budget_estimated: "35 kT (fable-led at-tier — the retro judges our own orchestration; runs AFTER M7.1; cumulative campaign tracking ≈+4% over the 700–850 band ceiling — this mission sizes tight and reports the final number honestly)"
-token_budget_actual: "TBD"
+token_budget_actual: "~45 kT (+29% vs 35 est — the P7 closeout-underpriced pattern continues: 6 synthesis writes [pattern §2.6 fold · ops-retro · telemetry export · campaign AAR · charter §Completion · G7 render]; ran as an operator-authorized opus substitute, fable rate-limited)"
 created: 2026-07-03
 updated: 2026-07-03
 last_edited_by: agent_rosetta
@@ -47,3 +47,11 @@ Fable-led, no builder dispatch · SO-6 archive-never-delete on all campaign reco
 
 - A retro finding that implies a standing-rule change beyond the pattern's scope → G7 input, not unilateral doctrine edits.
 - Budget > 45 kT → halt and report.
+
+## AAR (M7.2 — 2026-07-03)
+
+- **Worked**: closed Champollion cleanly — DoD audited **MET** ([[../artifacts/aar_champollion|campaign AAR]] §3); the durable Mode-B rules **FOLDED into [[../../../what/patterns/pattern_model_tiered_campaign_execution|pattern §2.6]]** (7 hazards + the review-bookend checklist — folded, not just narrated); telemetry corpus #1–7 consolidated with the load-bearing finding (drift was **SIZING, not routing** — 24/24 at-tier, 0 escalations all campaign); G7 rendered pending.
+- **Didn't**: ran as an operator-authorized **opus substitute** (fable rate-limited) — the first live exercise of the very substitution rule it was folding (§2.6 rule 7); ~45/35 (+29%, the P7 closeout-underpriced pattern).
+- **Finding**: the honest final number is **+7% (~957/897 kT), ~13% over the 700–850 band** — but concentrated in ONE **estimator class** (per-unit costs hidden inside mission-shaped estimates: cross-graph reads · N-row batches · multi-dispatch verification), fixable by the §2.6 rule-5 per-unit pricing, **not** a re-tiering. Routing was sound end to end.
+- **Change**: pattern §2.6 is now the durable Mode-B doctrine + checklist; the estimator-class pricing is the corpus's headline for Prometheus.
+- **Follow-up**: **G7 is the operator gate** (campaign → completed + push + residual routing — do NOT auto-advance); DP4 operator-fires; post-launch fleet re-seed (G0-D5, Rosetta+Hestia); v8.5 queue owner = Rosetta.
