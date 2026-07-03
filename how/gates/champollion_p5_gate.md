@@ -6,13 +6,15 @@ campaign_id: campaign_champollion
 created: 2026-07-02
 updated: 2026-07-02
 last_edited_by: agent_rosetta
-status: pending   # operator gate (SO-1) — do NOT auto-advance
+status: resolved   # RATIFIED 2026-07-03 — operator approved the in-chat recommendations + cascade plan (all five as recommended: GO+P6-open · PUSH · ACCEPT+ADOPT · seam rulings AS-REC · EXECUTE-ALL); record → champollion_p5_gate.output.md
 outer_tier: copy_paste   # inline-markdown surface per G0–G4 precedent
 persona: rosetta
 tags: [gate, champollion, p5, phase_exit, operator_decision, lp_seam, noether, conformance, adoption_story, telemetry]
 ---
 
 # ⛩ G5 — Operation Champollion P5 exit gate (LP seam & Exchange story)
+
+> ✅ **RESOLVED 2026-07-03** — operator ratified **as recommended, all five decisions** (approved the in-chat recommendation summary + the cascade plan; per the G0–G4 unqualified-approval convention): **D1 GO (P5 closed · P6 opened) · D2 PUSH (the Noether memos released) · D3 ACCEPT #5 + ADOPT the pre-pinning calibration · D4 seam rulings AS-REC (pending-with-owner · GI-1 tool-generalizes · GI-2 seam note) · D5 housekeeping EXECUTE-ALL**. Ratification record: [[champollion_p5_gate.output|champollion_p5_gate.output.md]]. P6 briefs M6.1–M6.3 materialized; stack pushed. The decision text below is preserved as-asked (SO-6).
 
 > **P5 work is complete** — all three missions closed with AARs in **one Mode-B fable-orchestrator sweep session** (M5.1 → M5.2 → M5.3; the session absorbed an operator wind-down request mid-M5.3 whose race clause resolved back to normal close when the builder finished). This gate: reviews datapoint #5 (the cross-graph calibration phase), rules the seam-state items M5.2 surfaced (GI-1/GI-2), and — on ratification — closes P5 and opens P6 (release candidate & readiness; P6 was gated on G4✅+G5, so ratification unlocks it). **Operator gate (SO-1): answer any subset; unanswered = held.**
 

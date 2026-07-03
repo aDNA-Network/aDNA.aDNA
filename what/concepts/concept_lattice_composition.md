@@ -1,12 +1,12 @@
 ---
 type: concept
 created: 2026-04-13
-updated: 2026-04-17
+updated: 2026-07-03
 status: active
 difficulty: intermediate
 spec_section: "§5.1 Lattice Objects, §11 Federation Protocol"
 dual_audience: true
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [concept, lattice, composition, federation, modules, intermediate]
 related_concepts: [concept_ontology, concept_knowledge_graph, concept_fair_metadata, concept_open_standard]
 related_patterns: [pattern_lattice_extraction, pattern_seam_edge]
@@ -27,6 +27,8 @@ Lattices work the same way. A protein drug discovery pipeline might involve stru
 This is powerful for three reasons. First, each piece can be developed, tested, and improved independently. Second, pieces can be shared across projects — a structure prediction lattice is useful in many pipelines, not just one. Third, composition makes complexity manageable — you can understand a 50-node workflow as 5 composed lattices of 10 nodes each, not as one flat graph.
 
 ## How It Works
+
+> **Vocabulary seam (two layers, one DAG idea):** the Lattice Protocol's *marketplace* layer calls the packaged, registry-ready form of a multi-module workflow a **Topology**; the aDNA *authoring* layer — this file's subject — calls the graph itself a **Lattice** (`.lattice.yaml`). If you read the LP spec and this vault side by side, those are the same DAG concept at two layers, not two competing things. *(Seam note added at Champollion G5-D4c, 2026-07-03.)*
 
 ### The Lattice YAML Structure
 
