@@ -3,7 +3,7 @@ campaign_id: campaign_champollion
 type: campaign
 title: "Operation Champollion — pre-launch comprehensive review/improve of the aDNA base layer"
 owner: stanley
-status: active   # G0 RATIFIED 2026-07-02 (all nine; champollion_p0_gate.output.md) · G1 RATIFIED 2026-07-02 (all four; champollion_p1_gate.output.md) · G2 RATIFIED 2026-07-02 — "Your reccomendations are good! Let's move forward." (GO · RATIFY[v2.5·ArmA·defer] · PUSH · ACCEPT + role re-tier; champollion_p2_gate.output.md) → P2 CLOSED, standard v2.5 CUT, P3 OPEN
+status: completed   # CLOSED 2026-07-03 at G7 (operator: "Ratify all 3 + push"; record how/gates/champollion_p7_gate.output.md) — 8 phases / 24 missions, base layer shipped v8.4/v2.5, DoD MET, P7 stack pushed. Prior: G0 RATIFIED 2026-07-02 (all nine; champollion_p0_gate.output.md) · G1 RATIFIED 2026-07-02 (all four; champollion_p1_gate.output.md) · G2 RATIFIED 2026-07-02 — "Your reccomendations are good! Let's move forward." (GO · RATIFY[v2.5·ArmA·defer] · PUSH · ACCEPT + role re-tier; champollion_p2_gate.output.md) → P2 CLOSED, standard v2.5 CUT, P3 OPEN
 phase_count: 8
 mission_count: 24
 estimated_sessions: "15-24 (Ring-1 ≈ 15-18 with declared pairings; Ring-2 adds ≤ 6; ring cut at G3)"
