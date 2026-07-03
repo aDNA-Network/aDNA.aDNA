@@ -5,11 +5,11 @@ subtype: program        # umbrella — orchestrates child campaigns; re-implemen
 title: "Operation aDNA — make aDNA real, adoptable, and credible to the public"
 owner: stanley
 persona: rosetta        # program steward; Berthier-coordinated (chief-of-staff)
-status: active
+status: completed
 phase_count: 0          # the program holds no phases of its own; children carry phases + gates
 mission_count: 0        # the program authors no missions; children own their mission trees
 created: 2026-06-18
-updated: 2026-06-24
+updated: 2026-07-03
 last_edited_by: agent_rosetta
 orchestrates:
   - campaign_website_adna                  # Track A — Prove it real (CLOSED 2026-06-21; campaign completed, Decision 6 CLOSE GO)
@@ -165,7 +165,7 @@ v2.3 port** is now ✅ **DONE** (`d9b1dfe`) → the full staged payload is **re-
 | DP1 | Program charter (now) | Approve the program name **"Operation aDNA"**, the umbrella `subtype: program` posture, the four-track map, and the orchestrate-don't-reimplement contract | **✅ approved 2026-06-18** — name blessed; posture + 4-track map + orchestrate-don't-reimplement contract approved. *(Same gate: ADR-035 ratified → Track B P0 closed; WEBSITE Decision 3 approved → Track A P1 closed.)* |
 | DP2 | Keystone readiness | Confirm all three keystone conditions green (WEBSITE Criticals shipped + Hearthstone v8.0 released + pt19 landed) and approve the **coordinated public launch** | **✅ DONE — LAUNCHED 2026-06-24.** All three keystone conditions landed joined-up; operator gave **DP2 GO** → ran runbook §2 steps 7-13 (`session_stanley_20260625T004147Z_keystone_dp2_launch`). **#1 WEBSITE** credibility-fixes SHIPPED — C-1 stage-2 + 14→16/v2.3 currency + Tier-2 spec-mirror all deployed; **all 7 proof-links live-200-unauth** against `aDNA-Network/aDNA`. **#2 Hearthstone v8.0** GREEN (`adae20c`; F1→v8.1 shipped 2026-06-23). **#3 pt19** ✅ LANDED 2026-06-23 — honored at launch (0/12 pre-rename slugs live). Deployed `vercel --prebuilt --prod` → `dpl_AYKPbywF`, **aliased `https://adna.network`**; `/commons` 200 (was 404); **Lighthouse live Perf 98 · A11y 100 · BP 100 · SEO 100**; `origin/main` pushed + standing-watch. Seams CLOSED → shipped: [[coordination_ledger]]. |
 | DP3 | Cross-vault seam disputes | When a seam in [[coordination_ledger]] blocks a child (e.g. pt19 slips, `skill_template_release` contract changes), the program surfaces it to the operator rather than a child resolving cross-vault unilaterally | as-needed |
-| DP4 | Program close | When all tracks reach their terminal gates, AAR the program and set `status: completed` (children persist as their own records) | pending |
+| DP4 | Program close | When all tracks reach their terminal gates, AAR the program and set `status: completed` (children persist as their own records) | **✅ FIRED 2026-07-03** — operator "Fire DP4 → close program"; all four tracks terminal (A CLOSED · B COMPLETED · C TERMINAL · D TERMINAL per [[dp4_dossier]] §2); §6 fill applied to §Completion Summary + §Program AAR below; `status: completed` set. |
 
 > Phase gates *inside* children remain that child's Decision Points (WEBSITE Decisions 2–6; Hearthstone
 > Decisions 1–5; STR's own gates). The program never substitutes for a child's gate.
@@ -224,18 +224,48 @@ Seam detail, owners, status, and the handshake each one needs: **[[coordination_
   [[coord_2026_06_18_wadna_pt19_dependency]].
 
 ## Completion Summary
-*Fill out when setting `status: completed` (after DP4).*
+*Filled at DP4 firing (2026-07-03). Source fill: [[dp4_dossier]] §6. Program-honest, not celebratory.*
 
 ### Deliverables
-- *(pending)* — the coordinated public launch (keystone); cross-track AAR; the seams closed in [[coordination_ledger]].
+- **The coordinated public launch (keystone) — LAUNCHED 2026-06-24.** `adna.network` live with the full
+  improved site landed joined-up with the shipped Hearthstone v8.0 base; the site's "real, inspectable
+  vault" claim is backed by a real published base (the credibility seam held). On-live green:
+  `/commons` 200, 7/7 C-1 proof-links live-200-unauth, Lighthouse Perf 98 · A11y 100 · BP 100 · SEO 100.
+- **All keystone-precondition seams closed** in [[coordination_ledger]]: pt19 · skill_template_release ·
+  Lab ADR-006 bootstrap-offer · CanvasForge→Canvas repoint · C-1 public inspectability ·
+  improved-site-deploy · standard-currency/spec-mirror v2.3.
+- **Cross-track AAR** (below) — the program-level read of the track *interactions*.
+- **Track D terminal assessment** ([[dp4_dossier]] §2) — the public-good commons *shown* and live:
+  `/commons` (4 bands, registry-driven, honest-MVP), the 4-subnetwork showcase (Wilhelm pair
+  operator-cleared 2026-06-07), and the formalized ethos/axis-K layer (M5.7 dial + T1 context-democracy).
 
 ### Key Findings / Scope Changes / Follow-Up
-- *(pending)*
+- **Finding:** the program reduced to a single question — *"is the thing the site points at actually
+  real?"* Credibility-integrity (claims verified against the real graph), not aesthetics, was the
+  load-bearing bar; Hearthstone's real base is what made the site's claim true rather than asserted.
+- **Scope change:** Track D's owner row drifted (mis-marked as in-flight-inside-closed-Track-A);
+  **corrected 2026-07-02** to *Rosetta · coordinates with Venus*, and its residual discharged at
+  Champollion M6.2 rather than as a separate campaign.
+- **Follow-up:** the full social/federation layer is a **Venus-gated horizon** (Network First Light) —
+  the site honestly builds toward it. Two Hestia currency seams (doctrine carve-out, vault-card fields)
+  stay open + non-blocking. **Operation Champollion CLOSED at G7 2026-07-03 (base layer v8.4/v2.5
+  shipped) — the standard's release cadence continues via the routed v8.5 queue (owner Rosetta;
+  trigger = next `skill_template_release`).** Children persist as their own records.
 
 ## Program AAR
-*Mandatory before `status: completed`. See `how/templates/template_aar_lightweight.md`.*
-- **Worked**: *(pending)*
-- **Didn't**: *(pending)*
-- **Finding**: *(pending)*
-- **Change**: *(pending)*
-- **Follow-up**: *(pending)*
+*Filled at DP4 firing (2026-07-03). AAR is across-tracks (the interactions), not within a child.*
+- **Worked**: thin orchestration held — the program held only the track map, keystone, seams, and
+  cross-track AAR, never re-implementing a child. The **keystone landed joined-up** (2026-06-24) and
+  the credibility seam closed exactly as the integration thesis predicted (7/7 proof-links live).
+- **Didn't**: **pt19** was the headline gate and slipped ~1 week behind pt17/Network P6, forcing the
+  keystone payload to be verified-and-parked **twice** (2026-06-22 ×2) before it landed 2026-06-23.
+  The Track-D owner row also drifted until corrected 2026-07-02.
+- **Finding**: the **honest-MVP discipline** (commons shows who-not-how-many; names the un-built
+  horizon on its own face) is what made the public-good surface defensible — overclaiming would have
+  spent the realness the whole program was built to earn.
+- **Change**: make the **two-class owner tag** standing program doctrine — *flag cross-vault currency
+  (pt19-class), verify-after, never hand-fix*; it kept Track A honest against a moving substrate.
+- **Follow-up**: hand the social/federation horizon to **Venus/Network First Light**; the standard's
+  release cadence continues via the **v8.5 queue** (Rosetta, next `skill_template_release`) now that
+  **Champollion has closed (G7 2026-07-03)**; Hestia's two currency seams close on her cadence,
+  non-blocking.

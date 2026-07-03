@@ -7,7 +7,7 @@ mission_id: mission_champollion_m6_2_dp4_dossier
 created: 2026-07-03
 updated: 2026-07-03
 last_edited_by: agent_rosetta_builder
-status: active
+status: completed        # FIRED 2026-07-03 — DP4 fired, program CLOSED. Evidence body left as-authored (historical; §4 pre-dates Champollion's own G7 close — reconciled in the program doc §6 paste).
 tags: [artifact, operation_adna, program, dp4, track_d, commons, terminal_assessment, champollion, m6_2, keystone]
 ---
 
