@@ -3,14 +3,14 @@ plan_id: mission_champollion_m6_2_dp4_dossier
 type: plan
 title: "M6.2 — DP4 dossier + Track D terminal assessment (Operation aDNA program close readiness)"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 6
 campaign_mission_number: 2
 mission_class: verification
 executor_tier: opus
 token_budget_estimated: "35 kT (verification class — the G2 class-split rule applies; the corpus is IN-vault [campaign_operation_adna records] + read-only STATE pins, pre-pinned at dispatch per the G5-D3 standing calibration)"
-token_budget_actual: "TBD"
+token_budget_actual: "~38 kT vs 35 est (+9%, in-band): builder ~28 (under its 30 aim — the pre-pinned dispatch pattern holding for the 2nd consecutive mission) + fable bookends ~10 (pre-pins done in the M6.1 dispatch gap + review incl. embargo-field + live-check independent re-verification)."
 created: 2026-07-03
 updated: 2026-07-03
 last_edited_by: agent_rosetta

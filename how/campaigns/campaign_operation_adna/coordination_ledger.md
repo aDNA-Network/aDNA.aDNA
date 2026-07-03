@@ -44,7 +44,7 @@ tags: [coordination_ledger, program, cross_vault, seams, keystone, pt19]
 
 With the keystone shipped, the **two remaining non-keystone seams** were re-triaged
 (`session_stanley_20260625T013000Z_post_launch_consolidation`). Both stay **open + non-blocking** — neither
-gates DP4 (which is gated on Track C/STR + Track D/commons terminalizing, not on these):
+gates DP4 (which is gated on Track C/STR + Track D/commons terminalizing, not on these): *[Annotation 2026-07-03, Champollion M6.2: superseded-by-events — Track C reached terminal 2026-07-01 (reopen-reconciliation closeout) and the program doc's DP4-readiness note (2026-07-01) gates DP4 only on Track D; Track D discharged READY by [[dp4_dossier]] §2. Line kept as historical record.]*
 
 - **vault-card public-fields** — re-confirmed **open, awaiting Hestia ack** (memo still `status: open`, no ack
   on record). The pt19-sequencing constraint that previously bound this ("fold into the single pt19 handshake;
