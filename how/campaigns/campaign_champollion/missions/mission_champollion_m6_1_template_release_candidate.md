@@ -3,14 +3,14 @@ plan_id: mission_champollion_m6_1_template_release_candidate
 type: plan
 title: "M6.1 — Template release candidate: batch ALL gate-ratified folds → skill_template_release dry-run → RC HELD at G6"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 6
 campaign_mission_number: 1
 mission_class: integration
 executor_tier: opus
 token_budget_estimated: "45 kT + Mode-B allowance (~52; G3 D4) — integration-class; the fold corpus is IN-vault (pre-pinning n/a) but LARGE: fable's verify-before-dispatch curates the RC composition before any assembly token is spent"
-token_budget_actual: "TBD"
+token_budget_actual: "~85 kT vs ~52 est (+63%, 1.63×): Dispatch A ~30 (vault-side V1–V5) + Dispatch B ~35 (image-side I1–I20 + dry-run) + fable bookends ~20 (curation + 2 reviews). The halt-70 line was crossed in AGGREGATE across two clean dispatches (neither crossed its own sizing) discovered at close — reported, not halted (M5.2 precedent). Calibration → datapoint #6: RC-class missions price per curation-row (~2.5–3 kT/row incl. verify), not as one integration mission."
 created: 2026-07-03
 updated: 2026-07-03
 last_edited_by: agent_rosetta

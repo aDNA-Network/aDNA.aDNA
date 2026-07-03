@@ -1,0 +1,1308 @@
+diff --git a/.adna/.obsidian/OBSIDIAN_CLAUDE.md b/.adna/.obsidian/OBSIDIAN_CLAUDE.md
+index 4947c47..ddc4201 100644
+--- a/.adna/.obsidian/OBSIDIAN_CLAUDE.md
++++ b/.adna/.obsidian/OBSIDIAN_CLAUDE.md
+@@ -64,8 +64,8 @@ These files are excluded from git (`.gitignore`) because they contain machine-sp
+ | Homepage | `homepage` | Set start page on vault open | Configured in plugin data.json |
+ | Style Settings | `obsidian-style-settings` | GUI controls for CSS snippet options | Required for @settings blocks |
+ | Icon Folder | `obsidian-icon-folder` | Custom folder/file icons | Triad folder icons |
+-| Advanced Canvas | `advanced-canvas` | Extended canvas features | Groups, portals, styles |
+-| BRAT | `obsidian42-brat` | Beta plugin manager | Auto-installs/updates Termy |
++| Advanced Canvas | `obsidian-advanced-canvas` | Extended canvas features | Groups, portals, styles |
++| BRAT | `obsidian42-brat` | Beta plugin manager | Tracks/updates pre-release plugins |
+ 
+ ### Optional (nice-to-have)
+ 
+@@ -73,7 +73,7 @@ These files are excluded from git (`.gitignore`) because they contain machine-sp
+ |--------|----|---------|-------------|
+ | Tasks | `obsidian-tasks-plugin` | Task tracking with queries | Global task search |
+ | Table Editor | `table-editor-obsidian` | Better markdown table editing | Tab-based navigation |
+-| Termy | `termy` | Terminal with preset scripts | 3 agent CLI presets (Claude Code, Codex, Gemini) |
++| Terminal | `terminal` | Terminal access from Obsidian | Run shell/agent CLIs in-vault (supersedes retired `termy`) |
+ | Pretty Properties | `pretty-properties` | Polished property display | Renders frontmatter |
+ | Fold Properties | `fold-properties-by-default` | Auto-fold frontmatter | Cleaner reading view |
+ 
+diff --git a/.adna/.obsidian/README.md b/.adna/.obsidian/README.md
+index 92f9df2..5806993 100644
+--- a/.adna/.obsidian/README.md
++++ b/.adna/.obsidian/README.md
+@@ -4,25 +4,26 @@ This directory contains Obsidian vault configuration. Most files are checked int
+ 
+ > **Quick setup**: Run `./setup.sh` from the repo root to download all plugins and the theme automatically.
+ 
+-## Plugins (15 community plugins)
++## Plugins (14 community plugins)
++
++Roster of record: `.obsidian/community-plugins.json` (this table is documentation; the JSON is authoritative). Retired ids never re-seeded: `settings-search` (superseded by Obsidian ≥1.13 native settings search), `termy`, and the orphan `advanced-canvas` (a stale duplicate of `obsidian-advanced-canvas`).
+ 
+ | Plugin | ID | Purpose |
+ |--------|----|---------|
+ | Dataview | `dataview` | Query and display structured data from frontmatter |
+ | Templater | `templater-obsidian` | Template engine with folder-based auto-triggers |
+ | Meta Bind | `obsidian-meta-bind-plugin` | Inline metadata editing |
++| Notebook Navigator | `notebook-navigator` | Folder-based notebook navigation with icons |
++| Advanced Canvas | `obsidian-advanced-canvas` | Extended canvas features (groups, portals) |
++| Style Settings | `obsidian-style-settings` | Customize CSS snippet options via GUI |
++| BRAT | `obsidian42-brat` | Beta-plugin reviewer/installer (tracks pre-release plugins) |
++| Icon Folder | `obsidian-icon-folder` | Custom folder/file icons (triad colors) |
+ | Homepage | `homepage` | Set a start page on vault open |
+ | Tasks | `obsidian-tasks-plugin` | Task tracking with queries |
+-| Style Settings | `obsidian-style-settings` | Customize CSS snippet options via GUI |
+ | Table Editor | `table-editor-obsidian` | Better markdown table editing |
+-| Omnisearch | `omnisearch` | Vault-wide fuzzy search |
+-| Terminal | `terminal` | Terminal access from Obsidian |
+-| Folder Notes | `folder-notes` | Index files for folder navigation |
+-| Notebook Navigator | `notebook-navigator` | Folder-based notebook navigation with icons |
+-| Icon Folder | `obsidian-icon-folder` | Custom folder/file icons (triad colors) |
+-| Advanced Canvas | `obsidian-advanced-canvas` | Extended canvas features (groups, portals) |
+ | Pretty Properties | `pretty-properties` | Polished frontmatter property display |
+ | Fold Properties | `fold-properties-by-default` | Auto-fold frontmatter in reading view |
++| Terminal | `terminal` | Terminal access from Obsidian |
+ 
+ ## Theme
+ 
+diff --git a/.adna/.obsidianignore b/.adna/.obsidianignore
+index 9a69a34..16bdf1d 100644
+--- a/.adna/.obsidianignore
++++ b/.adna/.obsidianignore
+@@ -18,6 +18,10 @@ node_modules/
+ # System files
+ .DS_Store
+ 
++# Template files — placeholder frontmatter (e.g. tags with <project_slug> /
++# Templater directives) is not real content; keep it out of the tag index.
++how/templates/
++
+ # Large binary directories (add project-specific exclusions below)
+ # If you symlink git repos into this vault, add them here to prevent
+ # Obsidian from watching thousands of files it doesn't need to index.
+diff --git a/.adna/AGENTS.md b/.adna/AGENTS.md
+index df2d47f..aca2626 100644
+--- a/.adna/AGENTS.md
++++ b/.adna/AGENTS.md
+@@ -62,6 +62,16 @@ When you discover framework-level improvements during normal work (missing templ
+ - **Set `last_edited_by` and `updated`** — on every modification
+ - **New files are safe** — creating new files has no collision risk
+ 
++### Single-writer lease for inventory + identity entity types
++
++Before editing **any** file in `what/inventory/*` or `what/identity/*`, scan `how/sessions/active/`. If a concurrent session is in flight on the same entity type, abort and surface to the operator. Reason: these files are small-fan-in shared resources where concurrent writes don't naturally merge — the cost of pausing to confirm is low; the cost of an unwanted speculative revert is high. Single-writer lease is **mandatory, not advisory**, for these entity types.
++
++## Heavy-File Read Convention
++
++For any file ≥ ~ 50 kT content-load OR ≥ 200 KB byte size, default to `offset` + `limit` parameters on Read. Typical heavy files: vault-level `STATE.md`, campaign masters, mission files at S3 close, large AAR aggregates. The router-vs-archive pattern (split heavy files into a live router + an audit archive) is the canonical mitigation; even the router benefits from partial Reads when only the top bullet is needed.
++
++**Rule of thumb**: if Read returns `File content exceeds maximum`, that's a router-vs-archive split candidate — flag for backlog if not already split.
++
+ ## Priority Hierarchy
+ 
+ 1. **Data integrity** — never corrupt or lose existing data
+diff --git a/.adna/CLAUDE.md b/.adna/CLAUDE.md
+index b1c27dd..440dec9 100644
+--- a/.adna/CLAUDE.md
++++ b/.adna/CLAUDE.md
+@@ -85,6 +85,7 @@ project_name.aDNA/
+ |------|------|
+ | Low (content files) | Check `updated` before overwriting. Set `last_edited_by` and `updated`. |
+ | Medium (shared configs) | Read before write. One config at a time. |
++| Critical (inventory / credentials / identity entity types) | Pre-flight scan `how/sessions/active/` for ANY concurrent session whose `mission_id` touches the same entity type. If present → abort + escalate to operator. **Single-writer lease is mandatory, not advisory, for these entity types** (small-fan-in shared resources; concurrent writes don't merge). |
+ | None (new files) | Creating new files has no collision risk. |
+ 
+ ### Collision Prevention Rules
+@@ -174,6 +175,17 @@ If a `Home.aDNA/` exists at the workspace root **and** the current session invol
+ 
+ Forward-reference: aDNA-standard development campaigns live in `aDNA.aDNA/how/campaigns/` per ADR-004 of campaign_adna_v2_infrastructure (in aDNA.aDNA), not in `Home.aDNA/`. If a session is about evolving the standard (skills, ontology, frontmatter schema, CLAUDE.md format, version policy), route to `aDNA.aDNA/` instead.
+ 
++### Credential routing (broker = `Home.aDNA`)
++
++New forks inherit this snippet so credential questions route to the node broker. It is **NAMES ONLY** — a credential *value* is never referenced in any consumer vault. (If no `Home.aDNA/` peer exists on this node, the pointers below are forward-aspiration and no agent will action them — degrades gracefully.)
++
++1. **Discover** — `Home.aDNA/what/inventory/inventory_credentials.md` (name → env-var + `op://` URI/path).
++2. **Access** — read the **env-var** (hot path — no biometric/TTY); else the cold path (TTY-only). **Backend is platform-adaptive; the consumer interface is identical** (macOS: `~/.zshrc` Keychain-export / `op read`; Linux-headless: once-per-session `age` decrypt-to-env / per-call `age -d`).
++3. **Discipline** — never write a value; URI/env-var name only. Apply the workspace credential-handling doctrine §6 (URI-not-value · `head -c N` ≤ 6 · backup-exclusion).
++4. **Rotate / onboard** — route to the broker: a coord memo to `Home.aDNA/who/coordination/` or `Home.aDNA/how/skills/skill_credential_provision_via_op.md`.
++
++Broker docs (all under `Home.aDNA/`): inventory · credential-broker ADR (Keychain + 1P) · onboarding-surfaces ADR · cross-platform-backends ADR · `skill_credential_provision_via_op`.
++
+ ### Session Greeting
+ 
+ - **Planning or exploration sessions** (no specific task given): Greet the user as {{persona}}. Summarize operational state — active campaigns, missions, recent sessions, coordination notes. Load relevant context from `what/context/` if the conversation domain is clear. Ask for direction.
+@@ -203,6 +215,15 @@ Every session MUST include a **Next Session Prompt** — a self-contained paragr
+ 
+ **Mission completion**: When the final objective of a mission is completed in a session, run the 5-step AAR protocol (see `how/campaigns/AGENTS.md` §4). Produce an AAR artifact at `how/missions/artifacts/` using `template_aar.md`.
+ 
++### Operator-Decision-Surfacing Discipline (AskUserQuestion)
++
++Load-bearing decisions are surfaced to the operator, not resolved unilaterally — **even when the agent holds a confident default**. Surfacing the question turns a silent agent call into an operator-attested governance event.
++
++1. **When to surface** — decisions whose subtle resolution would otherwise be a silent unilateral call; gate ceremonies (phase-exit, ADR ratification); any decision whose record needs an operator-attestation timestamp. **Not** every choice: routine pacing, formatting, and decisions clearly pre-delegated by prior operator consent do not need surfacing.
++2. **Default-with-escape** — every question carries a recommended default (the agent's confident position) **plus** an escape (the operator's authority to override or defer). Recommend; do not decide.
++3. **Record the resolution** — operator answers land in the relevant mission file or STATE.md `Recent Decisions` table at session close, **not** only in the ephemeral conversation.
++4. **Batch** — multiple decisions at one gate → 1–2 calls (≤ 4 questions each); split only if it improves operator review ergonomics.
++
+ ### Execution Hierarchy
+ 
+ ```
+diff --git a/.adna/HOME.md b/.adna/HOME.md
+index 3bb2b4a..b77c6b3 100644
+--- a/.adna/HOME.md
++++ b/.adna/HOME.md
+@@ -120,6 +120,8 @@ The gallery is intentionally a **static markdown view** of inventory state so it
+ ---
+ 
+ > _This is the lattice-home gallery for this node. The role expansion pattern is documented at the standard level (see `aDNA.aDNA/what/decisions/`); see [[MANIFEST]] and [[STATE]] for vault identity + operational state._
++>
++> _Terminal companion: the **Lattice Home cold-start splash** ([[pattern_lattice_home]]) renders a 5-block ASCII state summary at terminal open — install it per [[skill_lattice_home_install]]. HOME.md is the browse/gallery surface; the splash is its terminal counterpart._
+ 
+ <!--
+   TEMPLATE NOTES (this comment block stays in `.adna/HOME.md` but skill_node_bootstrap_interview.md
+diff --git a/.adna/MANIFEST.md b/.adna/MANIFEST.md
+index 86d4de9..e889e4a 100644
+--- a/.adna/MANIFEST.md
++++ b/.adna/MANIFEST.md
+@@ -35,7 +35,7 @@ aDNA/
+ | Layer | Question | Contains |
+ |-------|----------|----------|
+ | **what/** | WHAT does this project know? | Context library (5 topics, 27 subtopics), decisions, aDNA docs, lattice YAML tools + schema + examples |
+-| **how/** | HOW does this project work? | Missions, sessions, 26 templates, 14 skills, backlog, campaigns, PRD/RFC pipeline |
++| **how/** | HOW does this project work? | Missions, sessions, 28 templates, 27 skills, backlog, campaigns, PRD/RFC pipeline |
+ | **who/** | WHO is involved? | People, teams, coordination, governance |
+ 
+ ### Base Ontology
+@@ -84,7 +84,7 @@ how/pipelines/prd_rfc/
+ └── 04_review/        → Final approval (human gate)
+ ```
+ 
+-### Templates (26)
++### Templates (28)
+ 
+ | Template | Auto-triggers in |
+ |----------|-----------------|
+@@ -114,17 +114,19 @@ how/pipelines/prd_rfc/
+ | `template_home_claude.md` | `Home.aDNA/` (Home-class fork) |
+ | `template_inventory_entry.md` | `what/inventory/` |
+ | `template_identity_entry.md` | `who/identity/` |
++| `template_ratification_record.md` | — (N-ADRs-at-once ratification ceremony) |
++| `template_lattice_home_render.md` | — (terminal cold-start splash render) |
+ 
+ ## Active Builds
+ 
+ | Component | Status | Description |
+ |-----------|--------|-------------|
+-| aDNA Standard v2.4 | Shipped | Core specification — triad, ontology (16 base + 8 extension), sessions, missions, campaigns |
++| aDNA Standard v2.5 | Shipped | Core specification — triad, ontology (16 base + 8 extension), sessions, missions, campaigns |
+ | Context library | Shipped | 5 topics, 27 subtopics, ~75K tokens. Cross-topic recipe system with 6 recipes |
+ | Lattice YAML tools | Shipped | Validate, convert (YAML↔canvas), JSON Schema, 15 example lattices + 3 canvas templates |
+ | Mermaid-enhanced spec docs | Shipped | 19 diagrams across 3 aDNA specification documents |
+ | PRD/RFC pipeline | Shipped | 4-stage planning pipeline (research → requirements → design → review) |
+-| 26 templates | Shipped | Session, mission, campaign, campaign mission, context, ADR, backlog, coordination, PRD, RFC, skill, AAR, lightweight AAR, strategic compass, campaign CLAUDE.md, registry, data record, folder note, governance, migration, side quest, quest result, workspace CLAUDE.md, home CLAUDE.md, inventory entry, identity entry |
++| 28 templates | Shipped | Session, mission, campaign, campaign mission, context, ADR, backlog, coordination, PRD, RFC, skill, AAR, lightweight AAR, strategic compass, campaign CLAUDE.md, registry, data record, folder note, governance, migration, side quest, quest result, workspace CLAUDE.md, home CLAUDE.md, inventory entry, identity entry, ratification record, lattice-home render |
+ | Execution hierarchy v2 | Shipped | OODA cascade (3-level evaluation loops), AAR protocol, mission classes, escalation cascade |
+ | Quality framework | Shipped | 10-dimension compliance rubric, quality audit skill, context graduation pipeline |
+ 
+diff --git a/.adna/README.md b/.adna/README.md
+index 02e4e69..a0b1422 100644
+--- a/.adna/README.md
++++ b/.adna/README.md
+@@ -7,7 +7,7 @@
+ 
+ # aDNA — Agentic DNA
+ 
+-[![Governance v7.2](https://img.shields.io/badge/governance-v7.2-663399.svg)](https://github.com/aDNA-Network/aDNA/releases/tag/v7.2) [![Standard v2.2](https://img.shields.io/badge/standard-v2.2-blue.svg)](https://github.com/aDNA-Network/aDNA/blob/main/.adna/what/docs/adna_standard.md) [![Docs](https://img.shields.io/badge/docs-adna--docs.vercel.app-44cc11.svg)](https://adna-docs.vercel.app/)
++[![Governance v8.4](https://img.shields.io/badge/governance-v8.4-663399.svg)](https://github.com/aDNA-Network/aDNA/releases/tag/v8.4) [![Standard v2.5](https://img.shields.io/badge/standard-v2.5-blue.svg)](https://github.com/aDNA-Network/aDNA/blob/main/.adna/what/docs/adna_standard.md) [![Docs](https://img.shields.io/badge/docs-adna--docs.vercel.app-44cc11.svg)](https://adna-docs.vercel.app/)
+ 
+ [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+ [![Obsidian](https://img.shields.io/badge/Obsidian-Compatible-7C3AED)](https://obsidian.md)
+@@ -26,6 +26,10 @@ Most knowledge systems weren't designed with AI agents in mind. aDNA is.
+ 
+ *A lattice is a graph of graphs — every project you create becomes a node in a growing graph of structured knowledge. This repo is the seed.*
+ 
++**On this page:** [Getting Started](#getting-started) · [What Is aDNA?](#what-is-adna) · [How It Works](#how-it-works) · [What's Inside .adna/?](#whats-inside-adna) · [Who Is This For?](#who-is-this-for) · [How aDNA Compares](#how-adna-compares) · [Learn More](#learn-more) · [License](#license)
++
++*New here? Read top-to-bottom — the page runs orient → get started → understand → compare → go deeper. Just want to run it? Jump to [Getting Started](#getting-started).*
++
+ ---
+ 
+ ## Getting Started
+@@ -143,6 +147,8 @@ aDNA isn't a replacement for these systems — it's what happens when you need y
+ 
+ ## Learn More
+ 
++**Start here → the [adna.network](https://adna.network) learning path** — the guided, dual-audience walkthrough (concepts → tutorials → patterns) for newcomers. This image ships the standard and the toolkit, not the tutorials; the learning path is on the web.
++
+ The full technical documentation lives inside `.adna/`:
+ 
+ - **[aDNA Standard](what/docs/adna_standard.md)** — formal specification
+diff --git a/.adna/how/campaigns/AGENTS.md b/.adna/how/campaigns/AGENTS.md
+index f84f5f9..8787a5c 100644
+--- a/.adna/how/campaigns/AGENTS.md
++++ b/.adna/how/campaigns/AGENTS.md
+@@ -174,6 +174,7 @@ For campaigns that will be executed by multiple agents or span many sessions, cr
+ - **Campaign scope is mutable** — add, reorder, or remove missions as needed, but document scope changes
+ - **Subsumption** — when a campaign absorbs an existing mission, set the original mission's status to `subsumed`
+ - **Archive, don't delete** — campaign documents are permanent records even after completion
++- **Recon beats the charter** — a campaign/plan charter carries counts, named items, and assumed governance that read as facts but are **planning estimates**. Before each destructive/structural op, the executor: (1) re-derives ground truth over the live-ref + consumer surface (estimates run ~3× low); (2) re-verifies each target/absorber's own ratified governance (CLAUDE.md + ADRs + active campaigns) — the charter may predate or contradict it; (3) surfaces material deltas at the entry gate (> ~20% count divergence · governance conflict · surprise live work) **before** proceeding; (4) records the delta so the next op inherits truth, not the stale estimate. The charter is a hypothesis; recon is the test.
+ 
+ ## Load/Skip Decision
+ 
+diff --git a/.adna/how/skills/skill_inventory_refresh.md b/.adna/how/skills/skill_inventory_refresh.md
+index e443844..0934ce2 100644
+--- a/.adna/how/skills/skill_inventory_refresh.md
++++ b/.adna/how/skills/skill_inventory_refresh.md
+@@ -70,6 +70,16 @@ Invoked when:
+ 
+ ## Implementation
+ 
++### Step 0: Pre-flight — single-writer lease
++
++Before touching any `what/inventory/*` file, scan for a concurrent writer:
++
++```bash
++ls how/sessions/active/ | grep -v '^\.gitkeep$'
++```
++
++If a concurrent session is in flight on the same entity type (inventory / identity), **abort and surface to the operator** — do not proceed. These files are small-fan-in shared resources where concurrent writes don't naturally merge; the cost of pausing is ~1ms, the cost of an unwanted speculative revert is high. Single-writer lease is mandatory here (see `CLAUDE.md` Safety Rules · `AGENTS.md`).
++
+ ### Step 1: Enumerate Workspace Directories
+ 
+ ```bash
+diff --git a/.adna/how/skills/skill_lattice_home_install.md b/.adna/how/skills/skill_lattice_home_install.md
+new file mode 100644
+index 0000000..3c645b5
+--- /dev/null
++++ b/.adna/how/skills/skill_lattice_home_install.md
+@@ -0,0 +1,213 @@
++---
++type: skill
++skill_type: agent
++category: infrastructure
++created: 2026-05-29
++updated: 2026-06-11
++status: active
++skill_version: 2   # v2 at campaign_lattice_home_pattern M3: vault-identity-class conditional + 5th substitution row + 3 NEW SEEDs from M2 close
++last_edited_by: agent_stanley
++token_estimate: ~2100
++trigger: "User wants their aDNA vault to ship a terminal cold-start splash — a 5-block ASCII status surface rendered when an interactive shell opens inside the vault graph root. Also triggers when migrating from a bespoke shell startup script to the canonical [[pattern_lattice_home]] pipeline."
++requirements:
++  tools: [bash, awk, git, ln, sed]
++  context: [target vault root, vault identity stub (MANIFEST.md or node.adna.yaml analog), how/campaigns/*/missions/ structure, how/configs/ directory writable]
++  permissions: [write to vault how/configs/, optional symlink into operator user-scope (~/.zsh/conf.d/, ~/Library/Application Support/, or XDG ~/.config/)]
++graduated_from: lattice-home pattern (>=3 canonical instances rubric)
++tags: [skill, agent, infrastructure, lattice_home, splash, install, vault_portable, dual_gated, cmux_lift, parameterization_protocol, drift_audit, four_tier_pipeline]
++---
++
++# Skill: Lattice Home Install (vault-portable splash)
++
++## Overview
++
++Install the [[pattern_lattice_home]] terminal cold-start splash in any aDNA vault. Lifts a canonical `lattice`/`cmd_home` implementation (`how/configs/bin/lattice` `cmd_home()`), parameterizes it for the target vault, and wires the activation hook + idempotent install/uninstall scripts. Pure bash + awk; no runtime dependencies. Sub-second render; dual-gated (env var + graph-root walk).
++
++The skill is **vault-agnostic** — it works for `aDNA.aDNA`, `Home.aDNA`, `LatticeAgent.aDNA`, forges, frameworks, org-vaults, or any future vault that inherits from the upstream `LatticeProtocol/Agentic-DNA` base.
++
++## When NOT to use
++
++- The target is **not a vault** (no `MANIFEST.md` or `node.adna.yaml` analog at root → fails graph-root gate)
++- The operator does **not want shell hook activation** (skip step 4 below; ship substrate only)
++- The vault already has a bespoke splash → run drift-audit gate (step 6) first; migrate only if divergence > 20%
++- The target shell is **fish / nu / non-interactive** → adapt step 4 to the target shell startup convention (see "Cross-shell adaptations" below)
++
++## 6-step recipe
++
++### Step 1 — Lift (read-only probe of a canonical instance)
++
++Read the substrate files of a canonical instance (a vault that already ships `how/configs/bin/lattice` + its render template):
++
++1. `bin/lattice` lines 165-290 (`cmd_home()` function — the splash render core)
++2. `home/home_template.md` (fence-pair ASCII + 9 placeholders)
++3. `conf.d/55-cmux-home.zsh` (activation hook + graph-root walk)
++4. `bin/install.sh` (idempotent symlink installer; relevant rows: home template + conf.d hook)
++5. `bin/uninstall.sh` (symmetric teardown)
++
++Read-only — never modify the source instance. The lift IS the host vault's authoring, not a cross-vault edit. Substrate pin: capture the source instance's current `latticex.aDNA` HEAD SHA for drift-audit (step 6 below).
++
++### Step 2 — Parameterize
++
++Apply 4 parameter substitutions to the lifted substrate before writing into the target vault:
++
++| Parameter | Source-instance value | Vault-agnostic placeholder | Example target value |
++|---|---|---|---|
++| Env var gate | `<SRC>_LATTICE` | `<VAULT_PREFIX>_LATTICE` | e.g. `HOME_LATTICE` (Home.aDNA) |
++| Graph-root stub | `<src>/graph/node.adna.yaml` | `<IDENTITY_STUB>` | `MANIFEST.md`, or `Home.aDNA/MANIFEST.md` (Home.aDNA) |
++| Mission grep glob | `how/campaigns/*/missions/*.md` | `<MISSION_GLOB>` | same (pattern stable across vaults) |
++| Vault badge | `<src badge>` | `<VAULT_BADGE>` | `{{VAULT_BADGE}} <Vault> / {{persona}}`, `🌙 Home / Hestia` (Home.aDNA) |
++| Identity probe *(v2)* | (read from `node.adna.yaml`) | `<IDENTITY_PROBE>` | `basename "$vault"` for NODE_ID + `git config user.name` for OPERATOR (aDNA-class) |
++
++The parameterization protocol is the **single non-trivial step** in the skill. Use the [[template_lattice_home_render]] canonical template as the substitution starter — do NOT verbatim-copy the CMux template (drifts diverge if both are touched).
++
++#### Step 2a — Vault-identity class (v2; added at campaign_lattice_home_pattern M3 from the M2 install findings)
++
++Before substituting, classify the target vault by **how its root identity is encoded** — this determines whether the 4 substitutions above suffice or whether 3 additional adaptations apply:
++
++| Identity class | Test | Substitutions |
++|---|---|---|
++| **unique-stub-class** | Vault carries a *unique* identity stub at a known path (e.g. `what/<code>/graph/node.adna.yaml`) that exists in this vault and no other (the graph-root gate keys on it) | The 4 base substitutions apply as-is; identity probe reads named fields from the stub |
++| **shared-router-class** | Vault root identity is the *bare* `MANIFEST.md` — present in **every** aDNA vault (including `.adna/` + siblings) and carrying no `node_id`/`operator` fields | The 4 base substitutions **plus** the 3 adaptations below + the 5th `<IDENTITY_PROBE>` row |
++
++For a **shared-router-class** vault, apply these 3 adaptations (surfaced when the host vault shares a workspace router):
++
++1. **Per-vault PWD binding** — gate the graph-root walk to the binary's *own* vault root, not "any ancestor with a `MANIFEST.md`":
++   ```bash
++   case "$pwd_canon" in "$vault"|"$vault"/*) ;; *) return 1 ;; esac
++   ```
++   Without this, a vault whose `lattice` is on `PATH` (active mode) would render its badge over a *sibling* vault's mission data, because `MANIFEST.md` is universal. (Not needed for CMux-class — the unique stub is the binding.)
++
++2. **PWD canonicalization via `realpath`** — substitute `realpath` for `cd "$PWD" && pwd -P`:
++   ```bash
++   pwd_canon="$(realpath "$PWD" 2>/dev/null || echo "$PWD")"
++   ```
++   On BSD/macOS, `cd "$PWD" && pwd -P` follows a lowercase symlink target (e.g. `adna.adna` → `aDNA.aDNA`) and masks the vault-root match. `realpath` canonicalizes both sides consistently.
++
++3. **dirname + git-config identity probe** — derive identity without a stub:
++   ```bash
++   NODE_ID="$(basename "$vault")"
++   OPERATOR="$(git -C "$vault" config user.name 2>/dev/null || echo '?')"
++   ```
++   `MANIFEST.md` carries no `node_id`/`operator` frontmatter, so do not parse it for identity; use the directory name + git config with a `?` fallback. This is the `<IDENTITY_PROBE>` 5th substitution row above.
++
++> These 3 adaptations are the M2 NEW SEEDs. They are **conditional on shared-router-class** — a unique-stub-class vault with a unique identity stub does not need them. Record which class the target is in the vault's `STATE.md` drift notes so a future drift audit (step 6) compares like-for-like.
++
++### Step 3 — Substrate
++
++Create the directory tree in the target vault:
++
++```
++how/configs/
++  bin/
++    lattice            # main CLI; cmd_home subcommand (lifted + parameterized from the source instance)
++    install.sh         # idempotent symlink installer
++    uninstall.sh       # symmetric teardown
++  home/
++    home_template.md   # parameterized 5-block ASCII template (lifted from the source instance + per-vault badge)
++  conf.d/
++    55-lattice-home.zsh   # zsh interactive-shell hook; dual-gated
++  runbooks/
++    runbook_lattice_home_install.md   # smoke-verify + rollback procedure
++```
++
++5-6 NEW files per vault. No existing-file modifications (zero touches to `MANIFEST.md`, `CLAUDE.md`, `STATE.md`).
++
++### Step 4 — Wire conf.d hook (operator-discretionary)
++
++Two install modes:
++
++- **Mode A (active)**: install symlinks both graph-local AND user-scope; `~/.zsh/conf.d/55-lattice-home.zsh` activation hook fires on every interactive zsh start; splash renders whenever cwd is inside vault graph root with `<VAULT_PREFIX>_LATTICE!=0`.
++- **Mode B (passive)**: install symlinks graph-local ONLY; operator invokes `lattice home` manually; no shell hook installed.
++
++Mode is selected at `install.sh` invocation: `install.sh --active` or `install.sh --passive` (default = passive per principle of least surprise).
++
++### Step 5 — Smoke-verify (mandatory before commit)
++
++10-row verify chain:
++
++| # | Check | Expected |
++|---|---|---|
++| 1 | `bash -n bin/lattice && bash -n bin/install.sh && bash -n bin/uninstall.sh` | exit 0 |
++| 2 | `bin/install.sh --dry-run` | symlink table populates; zero side-effects |
++| 3 | `bin/install.sh --passive` (real install) | N symlinks created; idempotent re-run returns `ok` not `link` |
++| 4 | `lattice home` from vault graph root | renders splash with substituted data |
++| 5 | `<VAULT_PREFIX>_LATTICE=0 lattice home` | suppresses (rc=1; no output) |
++| 6 | `cd /tmp && lattice home` | suppresses (rc=1; out-of-graph gate) |
++| 7 | Live data check | OPEN MISSIONS row has at least one in_progress entry (if vault has active campaigns) OR `(none)` fallback |
++| 8 | Capability probe | `claude-code ✓` or `claude-code ◌` (depending on `command -v claude`) |
++| 9 | `bin/uninstall.sh --keep-runtime` | symlinks removed; substrate files preserved |
++| 10 | Round-trip | `bin/install.sh --passive` after uninstall re-creates symlinks cleanly |
++
++Failure on any row → fix before commit. Verify chain is the canonical exit gate for any install-class mission (per the source instance's graph-local install ADR (ADR-015 + ex_03+ex_04 precedent).
++
++### Step 6 — Drift audit (SO-LH-1 from campaign_lattice_home_pattern)
++
++Annually OR on operator request, run a `git diff` comparison:
++
++```bash
++diff <(awk '/^cmd_home\(\)/,/^}/' "$SRC_INSTANCE"/how/configs/bin/lattice) \
++     <(awk '/^cmd_home\(\)/,/^}/' <target_vault>/how/configs/bin/lattice)
++```
++
++Divergence audit table:
++
++| Divergence | Severity | Action |
++|---|---|---|
++| < 5% (only parameter substitutions) | OK | No action; pin SHA in skill frontmatter |
++| 5-20% (template/glyph adjustments) | Acceptable | Document in vault's `STATE.md` "Pattern drift notes" |
++| 20-40% (logic adjustments) | Flag | File operator decision: re-converge OR fork the pattern locally |
++| > 40% (structural divergence) | Critical | Halt new-vault inheritance; re-evaluate whether the pattern still applies |
++
++Drift audit prevents the splash from becoming a stale copy. The source-of-record instance carries forward improvements via this gate.
++
++## Cross-shell adaptations
++
++Step 4 conf.d hook is zsh-specific by default. Adapt the hook file + the install.sh user-scope symlink row for the target shell:
++
++- **bash**: hook at `~/.bashrc.d/55-lattice-home.bash` (or append to `~/.bashrc` if no .bashrc.d convention)
++- **fish**: hook at `~/.config/fish/conf.d/55-lattice-home.fish`
++- **nu**: append to `~/.config/nushell/config.nu`
++- **non-interactive only**: skip step 4; ship Mode B (manual `lattice home` invocation only)
++
++## Examples
++
++### Example 1 — worked install (shared-router-class vault)
++
++Mission `mission_lhp_m2_adna_vault_install` (planned). Parameter substitutions:
++
++- Env gate: `<VAULT_PREFIX>_LATTICE`
++- Identity stub: `MANIFEST.md`
++- Mission glob: `how/campaigns/*/missions/*.md`
++- Badge: `{{VAULT_BADGE}} <Vault> / {{persona}}`
++
++Mode: passive (operator invokes `lattice home` manually). Smoke chain 10/10 expected.
++
++### Example 2 — Hypothetical Home.aDNA install
++
++Parameter substitutions:
++
++- Env gate: `HOME_LATTICE`
++- Identity stub: `Home.aDNA/MANIFEST.md` (or `who/identity/identity_node.yaml`)
++- Mission glob: `how/campaigns/*/missions/*.md`
++- Badge: `🌙 Home / Hestia`
++
++Operator runs install per vault adoption choice. Splash renders Hestia-flavored header on cmd zsh start at the Home.aDNA graph root.
++
++## Anti-pattern
++
++| What | Why it breaks |
++|---|---|
++| Copy the source substrate verbatim without parameterization | Drift accumulates across vaults; SO-LH-1 audit fails at first run |
++| Skip step 5 verify chain | Install lands with broken bash syntax or non-idempotent symlinks; corrupts user-scope shell state |
++| Force Mode A (active) without operator consent | Surprises operator with unwanted shell hook; principle of least surprise broken |
++| Add features beyond the 5-block schema | Pattern drift; the [[pattern_lattice_home|pattern]] caps richness at 5 blocks |
++
++## Cross-references
++
++- [[pattern_lattice_home]] — the pattern this skill installs
++- [[template_lattice_home_render]] — the canonical template for the parameterization in step 2
++- [[idea_upstream_lattice_home_pattern]] — upstream-promotion candidate for the skill itself
++- [[skill_campaign_sitrep_splash]] — sibling skill for lifecycle-variant splash render (Mission 3; LIVE)
++- [[template_campaign_open_splash]] — campaign-open lifecycle template (Mission 3 D2)
++- [[template_campaign_close_splash]] — campaign-close lifecycle template (Mission 3 D3)
++- [[skill_upstream_contribution]] — parent workflow for filing upstream-promotion ideas
+diff --git a/.adna/how/skills/skill_node_health_check.md b/.adna/how/skills/skill_node_health_check.md
+index 98c21ae..ceed1f4 100644
+--- a/.adna/how/skills/skill_node_health_check.md
++++ b/.adna/how/skills/skill_node_health_check.md
+@@ -136,6 +136,8 @@ For each vault in `inventory_vaults.yaml` `vaults:` list, verify the path exists
+ 
+ Drift is logged in the report; exit code 9 ONLY if a vault is listed-and-missing (the inventory is incorrect about ground truth). Disk-extras-not-in-inventory are warnings (exit 0) because they may be in-progress new vaults.
+ 
++**Census discipline — allowlist, not pattern (a census flags the unrecognized; it does not bless the recognized):** enumerate the workspace root with `ls -A` (catches dot/underscore-prefixed names a bare `ls` and a `*.aDNA`-only glob both miss) and classify **every** entry against an allowlist = {registered `*.aDNA` graphs · registered shims (shim ledger) · grandfathered infra (`.adna`, and any operator-documented root repos) · the `Archive.aDNA/` holder · documented exceptions}. **Anything not on the allowlist → CLEAN-ROOT DRIFT warning.** A pattern-based census (match `*.aDNA`, ignore the rest) certifies "everything I recognize is fine" while silently ignoring everything it does not — exactly backwards for a drift detector (aborted-fork `.git` stores, stray tarballs, unhomed sites all evade it).
++
+ ### Step 10: Last-Update Freshness
+ 
+ For each `inventory_*.md` file, check the `updated` frontmatter field. If older than 7 days, log a warning (exit 0 still).
+diff --git a/.adna/how/skills/skill_onboarding.md b/.adna/how/skills/skill_onboarding.md
+index 952bc73..64944f1 100644
+--- a/.adna/how/skills/skill_onboarding.md
++++ b/.adna/how/skills/skill_onboarding.md
+@@ -56,7 +56,7 @@ None. This skill is self-guided through conversation with the user.
+ 
+ ### Step 1: Welcome, Introduce aDNA, and Collect Identity
+ 
+-Greet the user warmly but directly. Introduce yourself as Berthier — the vault's built-in agent chief of staff.
++Greet the user warmly but directly. Introduce yourself under the vault's current persona — the default-when-unresolved is **Berthier**, the built-in agent chief of staff (the `{{persona}}` placeholder resolved at Step 8; a fresh fork never silently inherits the base name — it is offered, and kept or replaced there).
+ 
+ Ask the user what they'd like to be called: "Before we dive in — what should I call you?" Store their answer as `{username}` (lowercase, underscores). This will be used throughout the project for session tracking (`session_{username}_...`), file attribution (`last_edited_by: agent_{username}`), and session metadata (`operator: {username}`).
+ 
+diff --git a/.adna/how/skills/skill_project_fork.md b/.adna/how/skills/skill_project_fork.md
+index 39575f0..4f6d915 100644
+--- a/.adna/how/skills/skill_project_fork.md
++++ b/.adna/how/skills/skill_project_fork.md
+@@ -118,6 +118,17 @@ This gives the new project:
+ - Portable Obsidian config (app settings, appearance, CSS snippets, hotkeys, plugin list)
+ - Run `./setup.sh` to download plugins and theme (~15MB, requires network)
+ 
++**Orphan-id lint (fork/authoring-time):** the preserved `.obsidian/community-plugins.json` declares the plugin roster `setup.sh` will install. Verify **every declared id has a matching `.obsidian/plugins/<id>/` folder in the source `.adna/` payload** (or is explicitly marked install-pending) — a declared-but-unbacked id (e.g. an `advanced-canvas` duplicate of `obsidian-advanced-canvas`) ships a "missing plugin" error to every fork. This is the born-at-authoring version of the post-hoc roster check; run it whenever the shipped `.obsidian/` payload changes.
++
++```bash
++python3 - <<'PY'
++import json, os
++decl = json.load(open('.obsidian/community-plugins.json'))
++missing = [p for p in decl if not os.path.isdir(f'.obsidian/plugins/{p}')]
++print('ORPHAN plugin ids (declared, no plugins/<id>/):', missing or 'none')
++PY
++```
++
+ ### Step 3.5: Home-class governance install (only when `project_name = Home`)
+ 
+ A Home fork is the per-node operational vault, and the generic base `.adna/CLAUDE.md` (the **Berthier** workspace-router persona) is the wrong governance file for it. For a Home-class fork only, replace the inherited `CLAUDE.md` with the **Hestia** node-operational template:
+diff --git a/.adna/how/templates/template_lattice_home_render.md b/.adna/how/templates/template_lattice_home_render.md
+new file mode 100644
+index 0000000..ce4983e
+--- /dev/null
++++ b/.adna/how/templates/template_lattice_home_render.md
+@@ -0,0 +1,106 @@
++---
++type: template
++template_class: lattice_home_render
++status: active
++persona: rosetta   # vault-agnostic; instances re-persona per host vault
++created: 2026-05-29
++updated: 2026-06-11
++last_edited_by: agent_stanley
++provenance: "Lattice Home render template — canonical ASCII fence-pair with {{PLACEHOLDER}} markers; lift-and-parameterize per skill_lattice_home_install."
++tags: [template, lattice_home, splash, ascii_render, fence_pair_extract, vault_agnostic, placeholder_spec, fallback_discipline, semantic_role_styling]
++---
++
++# Lattice Home Render Template (vault-agnostic)
++
++> Drop-in substrate for the [[skill_lattice_home_install]] install recipe. Verbatim 5-block ASCII fence-pair below; bash `cmd_home` extracts the block via `awk '/^```$/{flag=!flag; next} flag'`, substitutes `{{PLACEHOLDER}}` markers via parameter expansion, prints to stdout. No runtime dependencies beyond bash + awk.
++
++## Render (template — placeholders `{{LIKE_THIS}}`)
++
++```
++╭─ {{NODE_ID}} · {{OPERATOR}} ─────────────────────── {{VAULT_BADGE}} ─╮
++│  {{BRANCH}}    {{UPSTREAM_STATUS}}    {{VAULT_STATUS}}
++├──────────────────────────────────────────────────────────────────────┤
++│  OPEN MISSIONS
++{{OPEN_MISSIONS}}
++│
++│  RECENT
++{{RECENT}}
++│
++│  CAPABILITY
++│    providers: {{PROVIDERS}}    mcp: {{MCP_STATUS}}
++│    theme tier: {{THEME_TIER}}    graphics: {{GRAPHICS_STATUS}}
++├──────────────────────────────────────────────────────────────────────┤
++│  SPC   g graph · m mission · t theme · p promote · b browser · ?
++╰──────────────────────────────────────────────────────────────────────╯
++```
++
++The bottom line is an **idle command-tree-ready prompt** — ornamental at splash time; wired to actual keystrokes by a per-vault TUI (out of scope for the splash itself; CMux ships it at ex_05).
++
++## Placeholder spec
++
++| Placeholder | Source | Fallback when missing |
++|---|---|---|
++| `{{NODE_ID}}` | vault identity stub (`MANIFEST.md` / `node.adna.yaml` / equivalent) | `?` |
++| `{{OPERATOR}}` | vault identity stub | `?` |
++| `{{VAULT_BADGE}}` | vault-specific per [[skill_lattice_home_install]] step 2 parameter substitution | `🧬 lattice` (generic) |
++| `{{BRANCH}}` | `git branch --show-current` (cwd-relative) | `(detached or no repo)` |
++| `{{UPSTREAM_STATUS}}` | `git rev-list --left-right --count @{u}...HEAD` | `local-only` (no remote) |
++| `{{VAULT_STATUS}}` | `git status --porcelain` count | `✓ vault clean` or `⚠ N uncommitted` |
++| `{{OPEN_MISSIONS}}` | `grep -lE "^status: (planned\|in_progress\|active)$"` on vault's mission glob | `│    (none)` |
++| `{{RECENT}}` | `grep -lE "^status: completed$"` on vault's mission glob; mtime-sort last 3 | `│    (none)` |
++| `{{PROVIDERS}}` | `command -v <agent-cli>` per vault's agent stack | `claude-code ◌` |
++| `{{MCP_STATUS}}` | cheap probe or literal placeholder | `(probe → TBD)` |
++| `{{THEME_TIER}}` | cheap probe or literal placeholder | `(probe → TBD)` |
++| `{{GRAPHICS_STATUS}}` | cheap probe or literal placeholder | `(probe → TBD)` |
++
++## Glyph vocabulary
++
++| Class | Glyphs |
++|---|---|
++| Mission state | `▶ open · ✓ closed · ⏸ deferred · ⚠ blocked · ⊘ rejected` |
++| Run state | `● running · ◌ pending · ✓ done · ✗ failed · ◐ partial` |
++| Vault badge | per host vault (e.g., `{{VAULT_BADGE}} <Vault> / {{persona}}`, `🌙 Home / Hestia`) |
++
++**Font fallback**: if the operator's terminal lacks Unicode coverage, glyphs degrade to `[*]/[ ]/[X]`. Render emits the primary glyph by default.
++
++## Styling — semantic roles only (zero hex literals)
++
++Reference roles from the host vault's `what/inventory/inventory_palette.md` (or equivalent). The template contains **zero hex literals**.
++
++| Role | Element |
++|---|---|
++| `bg_window` | base / box outer fill |
++| `bg_raised` | hero block + section separators |
++| `fg_primary` | text body |
++| `fg_muted` | dates, log entries |
++| `accent_primary` | nav headings (`OPEN MISSIONS` · `RECENT` · `CAPABILITY` · `SPC`) |
++| `accent_amber` | `⚠` blocked / uncommitted |
++| `accent_coral` | `✗` failed |
++| `accent_needs_you` | reserved per vault's "single red light" invariant |
++
++The role-to-hex resolution happens at the host vault's `conf.d/30-<vault>-env.zsh` (single source-of-record per vault).
++
++## OPEN MISSIONS / RECENT row form
++
++Each row inside `{{OPEN_MISSIONS}}` and `{{RECENT}}` blocks follows the indented form:
++
++```
++│    ▶ <mission_slug>          # OPEN MISSIONS (open glyph)
++│    ✓ <mission_slug>    <date>   # RECENT (closed glyph + date)
++```
++
++Bash substitution produces the multi-line block (handled by `cmd_home` per the bash-substitution discipline; see [[skill_lattice_home_install]] step 2).
++
++## Activation gate
++
++Splash renders **only** when both gates pass (per [[pattern_lattice_home]] §Dual-gated activation):
++
++1. `<VAULT_PREFIX>_LATTICE` env var unset or non-zero (default ON)
++2. Graph-root walk resolves vault identity stub up CWD chain
++
++Out-of-graph cwd + explicit env=0 both suppress (non-zero exit; silent stdout).
++
++## Cross-references
++
++- [[pattern_lattice_home]] — the pattern this template implements
++- [[skill_lattice_home_install]] — the install skill that consumes this template + applies parameter substitution
+diff --git a/.adna/how/templates/template_mission.md b/.adna/how/templates/template_mission.md
+index f54353f..c27262d 100644
+--- a/.adna/how/templates/template_mission.md
++++ b/.adna/how/templates/template_mission.md
+@@ -5,6 +5,9 @@ title: "{Human-readable plan title}"
+ owner: {username}
+ status: active
+ mission_class: reconnaissance | implementation | verification | integration | closeout
++executor_tier: fable | opus | sonnet   # planned model-routing class (see pattern_model_tiered_campaign_execution)
++token_budget_estimated: "<kT, per ADR-016>"   # per-mission budget declaration (SO-11 / ADR-016)
++token_budget_actual: "<kT, filled at close>"   # actuals side of the contract; rough is fine
+ created: YYYY-MM-DD
+ updated: YYYY-MM-DD
+ last_edited_by: agent_{username}
+diff --git a/.adna/how/templates/template_prd.md b/.adna/how/templates/template_prd.md
+index e608bee..e09f43b 100644
+--- a/.adna/how/templates/template_prd.md
++++ b/.adna/how/templates/template_prd.md
+@@ -10,7 +10,7 @@ approved_date:
+ created: <% tp.date.now("YYYY-MM-DD") %>
+ updated: <% tp.date.now("YYYY-MM-DD") %>
+ last_edited_by: agent_<username>
+-tags: [prd, <project_slug>]
++tags: [prd, "<% tp.frontmatter.project_slug %>"]
+ ---
+ 
+ # PRD: <% tp.file.title %>
+diff --git a/.adna/how/templates/template_ratification_record.md b/.adna/how/templates/template_ratification_record.md
+new file mode 100644
+index 0000000..3723c0b
+--- /dev/null
++++ b/.adna/how/templates/template_ratification_record.md
+@@ -0,0 +1,78 @@
++---
++type: ratification_record
++title: "Ratification Ceremony — {gate, e.g. P4 → P5}"
++status: active
++gate: "{P4 → P5}"
++ratifier: "{Named human operator/authority — e.g. Stanley, Founding Architect}"
++ratified_date: <% tp.date.now("YYYY-MM-DD") %>
++ratifying_session: session_{username}_...
++ratifying_commit: "{SHA}"
++created: <% tp.date.now("YYYY-MM-DD") %>
++updated: <% tp.date.now("YYYY-MM-DD") %>
++last_edited_by: agent_<username>
++tags: [ratification_record, decision, ceremony]
++---
++
++# Ratification Ceremony — {gate}
++
++> The instrument of the standard's **§7.7 Decision-Record Ratification Discipline**. Use this record for an
++> **N-ADRs-at-once ceremony** (a phase gate that ratifies several decisions in one motion); a single ADR's
++> ratification lives in that ADR's own `## Ratification` block (`template_adr.md`). One schema, two entry
++> points — the ceremony record below is the N-at-once variant of the per-ADR block.
++>
++> **Agents author; operators ratify** (§7.7 rule 1). An agent MAY fully draft this record with every ADR
++> pre-filled at `status: proposed`; only the *named operator* may advance status to `accepted`/`ratified`
++> at the gate. The four ratification fields (ratifier · gate/reference · date · scope) are structure the
++> agent fills; their *truth* is the operator's, attested at the gate.
++
++## 1. Ceremony header
++
++| Field | Value |
++|-------|-------|
++| **Gate** | {e.g. P4 → P5} |
++| **Ratifier** (named operator/authority) | {e.g. Stanley, Founding Architect} — an agent/persona may appear only as **author/steward**, never as ratifier |
++| **Gate / reference** | {verifiable pointer to the discrete event: AskUserQuestion lane and/or approved-plan file id · ratifying `session_id` · ratifying commit SHA} |
++| **Ratification date** | {YYYY-MM-DD — distinct from authored/created dates} |
++| **Scope of authority** | {exactly what this ceremony authorizes: these ADRs only, or a named downstream program} |
++
++## 2. ADR roster (dependency order)
++
++Every decision this ceremony ratifies, listed in dependency order. Each row's status advances
++`proposed → accepted` only here, at the gate.
++
++| # | ADR | Prior status | Ratified status | Signed by | Notes / pending co-signs |
++|---|-----|--------------|-----------------|-----------|--------------------------|
++| 1 | adr_NNN_short_title | proposed | accepted | {operator} | {none · or: seams stay doctrine until co-sign from `<persona>` lands} |
++| 2 | adr_NNN_short_title | proposed | accepted | {operator} | |
++
++> **Pending co-signs keep seams non-operative** (the ADR-043 precedent): the decision binds at ratification,
++> but any seam it opens stays *doctrine* until the named co-signs land. Record every such pending co-sign in
++> the Notes column so the seam's operative status is auditable.
++
++## 3. No-contradiction invariants discovered
++
++Cross-phase invariants that surfaced *at* ratification (the "late constitutional invariants" class — a
++decision that only became visible once several ADRs were read together). List each, with the ADRs it spans.
++
++- {invariant} — spans ADR-NNN + ADR-NNN.
++
++## 4. Constitutional carry-forward
++
++Explicit language for how the ratified set propagates into subsequent phases / campaigns — what downstream
++work now MUST assume, and what remains open.
++
++- {carry-forward clause}
++
++## 5. Persona ratification status
++
++Confirms the campaign's persona survived all falsification tests through ratification (or records the
++correction if it did not).
++
++- {persona} — {survives / adjusted at gate: …}
++
++## Self-reference (Standing Order #8)
++
++This record is itself the discipline it enforces: the standard teaches that decisions are operator-ratified
++governance events (§7.7), and the ceremony that ratifies a batch of them is recorded in exactly this
++operator-attested instrument. An agent authored the draft; the operator's signature at the gate is what
++makes it binding.
+diff --git a/.adna/how/templates/template_rfc.md b/.adna/how/templates/template_rfc.md
+index dcb02d5..4dcd377 100644
+--- a/.adna/how/templates/template_rfc.md
++++ b/.adna/how/templates/template_rfc.md
+@@ -10,7 +10,7 @@ approved_date:
+ created: <% tp.date.now("YYYY-MM-DD") %>
+ updated: <% tp.date.now("YYYY-MM-DD") %>
+ last_edited_by: agent_<username>
+-tags: [rfc, <project_slug>]
++tags: [rfc, "<% tp.frontmatter.project_slug %>"]
+ ---
+ 
+ # RFC: <% tp.file.title %>
+diff --git a/.adna/how/templates/template_workspace_claude.md b/.adna/how/templates/template_workspace_claude.md
+index 760d2fe..3cdba90 100644
+--- a/.adna/how/templates/template_workspace_claude.md
++++ b/.adna/how/templates/template_workspace_claude.md
+@@ -120,6 +120,9 @@ On first run, verify the user's environment:
+ 2. **Each project is self-contained** — own CLAUDE.md, own git repo, own triad structure. Projects can be moved out of this directory and still function independently.
+ 3. **This CLAUDE.md governs workspace operations only** — project creation, discovery, and environment setup. Inside a project, that project's CLAUDE.md is authoritative.
+ 4. **Lattice as concept** — when introducing the system to users, frame lattice as a mathematical structure they're building, not a product they're installing.
++5. **Router rows carry routing identity only.** Each Project Discovery / Workspace Layout entry is ≈1 line: directory · type · persona · one-line purpose · `CLAUDE.md` + `STATE.md` pointers. Operational/campaign state — phases, mission IDs, commits, version pins, dated changelogs — lives in each project's `STATE.md`, **never in this router**. On a campaign/phase close, update the project's `STATE.md`, not this file. (This router re-bloats when state is narrated into rows; keep it lean.)
++6. **`Archive.aDNA/` is the archive holder** (bare-role-canonical, like `Home`/`Network`/`Terminal`). It is a **root object, not a vault** — no governance of its own beyond a holder banner; excluded from `vault_count` and from health-check vault enumeration. Two sub-areas: `Archive.aDNA/<Name>.aDNA/` (whole archived graphs, history + banner + back-compat shim intact) and `Archive.aDNA/_archive/` (flat file/tarball archive; gitignored — bytes never tracked). It is the documented exception every workspace census allowlists.
++7. **Shim-window discipline.** Every back-compat shim (symlink or otherwise) is **registered at creation** in the node's shim ledger with: **id · subject (from→to) · class · window** (default 30d) **· retire-condition** (ref-sweep-zero + owner-ack) **· owner** (persona) **· registered-date · retired-date/marker**. "Shim" spans more than a filesystem symlink (merge-archive · dual-home code-relocation · git-remote-rollback · redirect-based · env-var alias · in-code re-export · flat file-archive); several classes are not filesystem-visible, so the ledger — not a symlink scan — is the source of truth. Retirement requires window-lapse **plus** verified ref-sweep-zero (excluding archives + session history) **plus** owner-ack; a lapsed window alone never auto-retires.
+ 
+ ---
+ 
+@@ -140,7 +143,7 @@ To upgrade from L0 to L1, read `.adna/how/skills/skill_l1_upgrade.md`.
+ - **aDNA specification**: `.adna/what/docs/adna_standard.md`
+ - **Context library**: `.adna/what/context/` (5 topics, 27 subtopics, ~75K tokens)
+ - **Lattice examples**: `.adna/what/lattices/examples/` (15 example lattice definitions)
+-- **All templates**: `.adna/how/templates/` (22 reusable templates)
+-- **All skills**: `.adna/how/skills/` (14 agent recipes)
++- **All templates**: `.adna/how/templates/` (28 reusable templates)
++- **All skills**: `.adna/how/skills/` (27 skills — 24 agent recipes + 3 process)
+ - **Detailed overview**: `.adna/what/docs/aDNA_overview.md` (canonical 47K aDNA spec + tutorial; was inner README pre-v7.0)
+ - **Repo landing**: `.adna/README.md` (5.9K GitHub landing page)
+diff --git a/.adna/what/docs/adna_standard.md b/.adna/what/docs/adna_standard.md
+index 4a0924c..7bf7c43 100644
+--- a/.adna/what/docs/adna_standard.md
++++ b/.adna/what/docs/adna_standard.md
+@@ -1,10 +1,10 @@
+ ---
+ type: context
+-title: "aDNA Universal Standard v2.4"
++title: "aDNA Universal Standard v2.5"
+ created: 2026-02-11
+-updated: 2026-06-29
++updated: 2026-07-02
+ status: approved
+-last_edited_by: agent_stanley
++last_edited_by: agent_rosetta
+ tags: [adna, standard, spec, normative]
+ ---
+ 
+@@ -13,6 +13,7 @@ tags: [adna, standard, spec, normative]
+ <!-- v2.3 | 2026-06-22 | inventory+identity promoted to base (ADR-035) -->
+ <!-- v2.3 errata | 2026-06-29 | §3.5 reconciled to ADR-006 (repo rename Agentic-DNA→aDNA) + ADR-008 (airlock embedding at .adna/): base template is the `aDNA` repo embedded at `.adna/`, not a visible `Agentic-DNA/` dir. No normative change. -->
+ <!-- v2.4 | 2026-06-29 | §6.5 Rename Protocol (rename-time self-routing sweep) + §13.2 Tier-1 harness-injection safeguard (ADR-042, Drydock M03 fork-template hygiene & rename protocol). -->
++<!-- v2.5 | 2026-07-02 | §7.2 per-class frontmatter profile + §5.5 walk scope (ADR-044 fold) · new §7.7 decision-record ratification discipline · §5.3 federation/ optional row (ADR-045) · §15.4 version-cut checklist. ADR-046, ratified at Champollion G2. -->
+ 
+ **Agentic DNA (aDNA)** — A knowledge architecture standard for AI-native projects.
+ 
+@@ -453,6 +454,7 @@ how/ contains everything about HOW the project works.
+ | `skills/` | Reusable agent procedures (see §19.3) |
+ | `processes/` | Human-readable workflow documentation |
+ | `deliverables/` | Output artifacts |
++| `federation/` | Consumer federation wrappers — one `<wrapper>/` per federated software-element/service graph (v2.5, ADR-045) |
+ 
+ ### 5.4 Universal Skeleton
+ 
+@@ -521,10 +523,12 @@ An aDNA instance at Starter conformance MUST have:
+ 1. **Governance files**: `CLAUDE.md`, `MANIFEST.md`, `README.md` at the root (bare) or repository root (embedded)
+ 2. **Triad directories**: `what/`, `how/`, `who/` (bare) or `.agentic/what/`, `.agentic/how/`, `.agentic/who/` (embedded)
+ 3. **Required subdirectories**: `what/context/`, `how/missions/`, `how/sessions/`, `how/templates/`, `who/coordination/`, `who/governance/`
+-4. **Frontmatter**: All content files inside the triad MUST include the base fields defined in §7.2 (`type`, `status`, `created`, `updated`, `last_edited_by`, `tags`)
++4. **Frontmatter**: All content files inside the triad MUST include the base fields defined in §7.2, per its per-class profile (`type`, `status`, `created`, `updated`, `last_edited_by`, `tags`; `status` optional for `directory_index` + `coordination` — v2.5, ADR-044)
+ 
+ Starter conformance represents the minimum viable aDNA instance — sufficient for a single-agent project with basic session tracking.
+ 
++**Conformance-walk scope** (v2.5, ADR-044): a conformance run validates the instance rooted at the directory being checked; it does NOT recurse into embedded standalone instances (in the reference vault: `what/docs/examples/` and `how/templates/template_node_adna_exemplar/`). Each embedded instance is validated standalone if desired.
++
+ #### Level 2: Standard Conformance
+ 
+ An aDNA instance at Standard conformance MUST satisfy all Starter requirements AND:
+@@ -659,6 +663,8 @@ tags: []
+ | `last_edited_by` | Attribution — who or what last modified this file |
+ | `tags` | Categorization array for filtering and discovery |
+ 
++**Per-class profile** (v2.5, ADR-044): the six base fields are required for content and session entities. **`status` is optional for `type: directory_index` and `type: coordination`** — an index or correspondence record has no lifecycle state, and their canonical templates omit it. The other five base fields remain required for all classes.
++
+ ### 7.3 Tag Conventions
+ 
+ Tags MUST use lowercase with underscores (e.g., `mission`, `context_research`).
+@@ -689,6 +695,21 @@ Instance-specific frontmatter fields MAY be added to any entity type. The follow
+ 4. Migration tools MUST preserve custom fields — standard version upgrades MUST NOT strip unrecognized frontmatter fields
+ 5. Projects SHOULD document their custom fields in the relevant `AGENTS.md` or template files
+ 
++### 7.7 Decision-Record Ratification Discipline
++
++Decision records (ADRs, `what/decisions/`) carry a lifecycle `status` whose advancement beyond `proposed` is a **human** act. Effective v2.5 (ADR-046, folding the discipline installed after an agent thread self-marked an ADR `accepted` without an operator gate):
++
++1. **Agents author; operators ratify.** An agent MAY fully author an ADR — context, decision, consequences, alternatives, references — and MAY set or keep `status: proposed` (or `draft`). An agent MUST NOT set `accepted`, `ratified`, or `rejected`; those transitions require an operator gate.
++2. **Ratification record.** Any ADR moving beyond `proposed` MUST carry a structured ratification block with all four fields present and non-empty:
++   - **Ratifier** — the named human operator/authority. An agent or persona may be named only as author/steward, never as ratifier.
++   - **Gate / reference** — a verifiable pointer to the discrete ratification event: the gate file and/or its output record, the ratifying session id, and/or the ratifying commit.
++   - **Ratification date** — distinct from the authored/created date.
++   - **Scope of authority** — exactly what the ratification authorizes, plus any pending co-signs that keep seams non-operative.
++3. **Retroactivity.** ADRs accepted before v2.5 SHOULD be backfilled with ratification blocks; a pre-v2.5 accepted ADR without one is NOT thereby non-conformant. *(This clause is what keeps the v2.5 cut a minor version under §15.4.)*
++4. **Batch ceremonies.** An N-ADRs-at-once ratification ceremony MAY substitute a single ceremony record for per-ADR gate references, provided each covered ADR's block points to it.
++5. **Validation.** Conformance tooling SHOULD check structure only — the four fields present and non-empty — never the truth of the gate; truth is the operator's, at the gate. Recommended rollout: warn first, promote to fail after a backfill pass.
++6. **Exemption.** Lifecycle-neutral back-references (e.g., adding `superseded_by` once the superseding ADR is itself ratified) are exempt from rule 1.
++
+ ---
+ 
+ ## 8. Session Model
+@@ -1120,6 +1141,8 @@ The aDNA standard uses two versioning tracks:
+ - Standard **major** versions (e.g., v2.x → v3.0) MAY introduce breaking changes. When they do, migration guidance MUST be provided.
+ - Governance version changes are operational and do not affect standard conformance.
+ 
++**Version-cut checklist** (v2.5, ADR-046 — the footer-lag anti-recurrence rule): on every version bump, the document's four version-bearing surfaces MUST agree before the cut commits — (1) the frontmatter `title`, (2) the frontmatter `updated` date, (3) a new changelog comment line in the header block, and (4) the *End of …* footer line. A cut that leaves any of the four stale is incomplete. *(This rule exists because the footer lagged the title across multiple historical bumps — most recently shipping "v2.3" inside the published v2.4 document.)*
++
+ ---
+ 
+ ## 16. Tool Integration Tiers
+@@ -1496,4 +1519,4 @@ This appendix maps every design decision to its location in the standard, ensuri
+ 
+ ---
+ 
+-*End of aDNA Universal Standard v2.3*
++*End of aDNA Universal Standard v2.5*
+diff --git a/.adna/what/lattices/tools/adna_validate.py b/.adna/what/lattices/tools/adna_validate.py
+index 8e33cf3..72e2937 100644
+--- a/.adna/what/lattices/tools/adna_validate.py
++++ b/.adna/what/lattices/tools/adna_validate.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""aDNA Instance Validator — checks conformance per §5.5 of the aDNA Universal Standard v2.4.
++"""aDNA Instance Validator — checks conformance per §5.5 of the aDNA Universal Standard v2.5.
+ 
+ Usage:
+     python adna_validate.py <path>                     # Validate instance at path
+@@ -43,6 +43,46 @@ STANDARD_RECOMMENDED_DIRS = [
+ REQUIRED_FRONTMATTER = ["type", "created", "updated", "status", "last_edited_by", "tags"]
+ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+ 
++# Entity classes whose canonical templates omit the lifecycle `status` field by
++# design — a directory index / correspondence record has no lifecycle state.
++# (`.adna/**/AGENTS.md` and `how/templates/template_coordination.md` omit it.)
++# `status` stays REQUIRED for content + session entities. See ADR-044.
++STATUS_OPTIONAL_TYPES = ("directory_index", "coordination")
++
++# Nested example/template INSTANCE trees are documentation sub-vaults — each is a
++# standalone instance, validated on its own, NOT part of THIS instance's
++# conformance. Pruned from the triad walk. See ADR-044.
++#
++# These two hardcoded paths are the FALLBACK: they name doc sub-vaults that carry
++# neither their own `.git` nor governance files (so the general detector below
++# cannot see them). The general detector (see `_is_nested_instance`) auto-excludes
++# any embedded standalone instance — a subtree carrying its own `.git` AND its own
++# governance file (CLAUDE.md or MANIFEST.md), e.g. a code-as-WHAT relocation such
++# as LatticeProtocol.aDNA/what/latticeprotocol/. §5.5's rule is general; this
++# fallback preserves the two known documentation-tree cases. See ADR-044, F-CHM-215.
++NESTED_INSTANCE_DIRS = (
++    os.path.join("what", "docs", "examples"),
++    os.path.join("how", "templates", "template_node_adna_exemplar"),
++)
++
++# Governance files whose presence (with a sibling `.git`) marks a subtree as its
++# own standalone aDNA/code instance — matching what the blessed code-as-WHAT
++# nested instance actually carries (e.g. a relocated repo's own CLAUDE.md).
++NESTED_INSTANCE_GOV_FILES = ("CLAUDE.md", "MANIFEST.md")
++
++
++def _is_nested_instance(dirpath):
++    """True if `dirpath` is an embedded standalone instance: it carries its own
++    `.git` (a nested repo — dir OR file, covering submodules/worktrees) AND at
++    least one of its own governance files. Such a subtree is validated on its
++    own, not as part of THIS instance's conformance (§5.5, ADR-044). General
++    detector added for F-CHM-215 (was: two hardcoded reference paths only)."""
++    if not os.path.exists(os.path.join(dirpath, ".git")):
++        return False
++    return any(
++        os.path.isfile(os.path.join(dirpath, gf)) for gf in NESTED_INSTANCE_GOV_FILES
++    )
++
+ # Governance files that MUST NOT carry committed harness-injected context boundaries (§13.2)
+ GOVERNANCE_FILES_FOR_HYGIENE = ("CLAUDE.md", "STATE.md", "AGENTS.md")
+ # Harness boundaries the agent runtime injects: `# userEmail`, `# currentDate (Today's date is ...)`
+@@ -78,12 +118,26 @@ def _parse_frontmatter(filepath):
+ 
+ 
+ def _find_md_files(root, triad_prefix):
+-    """Yield all .md files inside the triad directories."""
++    """Yield all .md files inside the triad directories, pruning nested
++    example/template instance trees (validated standalone — see ADR-044)."""
++    base = os.path.join(root, triad_prefix) if triad_prefix else root
++    excludes = tuple(os.path.normpath(os.path.join(base, d)) for d in NESTED_INSTANCE_DIRS)
+     for leg in TRIAD_DIRS:
+-        leg_path = os.path.join(root, triad_prefix, leg) if triad_prefix else os.path.join(root, leg)
++        leg_path = os.path.join(base, leg)
+         if not os.path.isdir(leg_path):
+             continue
+-        for dirpath, _, filenames in os.walk(leg_path):
++        for dirpath, dirnames, filenames in os.walk(leg_path):
++            ndp = os.path.normpath(dirpath)
++            # Hardcoded fallback paths (doc sub-vaults with no own .git/governance)
++            if any(ndp == ex or ndp.startswith(ex + os.sep) for ex in excludes):
++                dirnames[:] = []  # don't descend into a nested instance
++                continue
++            # General detector: an embedded standalone instance (own .git +
++            # governance) is validated on its own — prune it and its subtree.
++            # The leg root itself is never treated as a nested instance.
++            if ndp != os.path.normpath(leg_path) and _is_nested_instance(dirpath):
++                dirnames[:] = []
++                continue
+             for fn in filenames:
+                 if fn.endswith(".md"):
+                     yield os.path.join(dirpath, fn)
+@@ -144,7 +198,10 @@ def check_starter(root, prefix, result):
+             fm_errors += 1
+             result.errors.append(f"Frontmatter: missing or unparseable in '{rel}'")
+             continue
+-        for field in REQUIRED_FRONTMATTER:
++        required = REQUIRED_FRONTMATTER
++        if fm.get("type") in STATUS_OPTIONAL_TYPES:
++            required = [f for f in REQUIRED_FRONTMATTER if f != "status"]
++        for field in required:
+             if field not in fm:
+                 fm_errors += 1
+                 result.errors.append(f"Frontmatter: missing required field '{field}' in '{rel}'")
+@@ -291,6 +348,26 @@ def check_governance_sync(root, result):
+                         f"Governance drift: {gf} says {documented} templates, actual count is {actual}"
+                     )
+ 
++    # Skill count (mirrors template count; §19.3). Skills are not auto-counted
++    # anywhere else, so this guard is what makes skills-count drift catchable.
++    skills_dir = os.path.join(root, "how", "skills")
++    if os.path.isdir(skills_dir):
++        actual_skills = len([f for f in os.listdir(skills_dir)
++                             if f.endswith(".md") and f.startswith("skill_")])
++        for gf in ["MANIFEST.md", "CLAUDE.md", "README.md", "AGENTS.md"]:
++            gf_path = os.path.join(root, gf)
++            if not os.path.isfile(gf_path):
++                continue
++            with open(gf_path, "r") as f:
++                content = f.read()
++            # Look for patterns like "45 skills" or "Skills (45)"
++            for m in re.finditer(r"(\d+)\s*skills|Skills?\s*\((\d+)\)", content):
++                documented = int(m.group(1) or m.group(2))
++                if documented != actual_skills:
++                    result.errors.append(
++                        f"Governance drift: {gf} says {documented} skills, actual count is {actual_skills}"
++                    )
++
+     # Version string consistency
+     versions_found = {}
+     claude_path = os.path.join(root, "CLAUDE.md")
+diff --git a/.adna/what/lattices/tools/compliance_checker.py b/.adna/what/lattices/tools/compliance_checker.py
+index 4fd59ec..e2c4f65 100644
+--- a/.adna/what/lattices/tools/compliance_checker.py
++++ b/.adna/what/lattices/tools/compliance_checker.py
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env python3
+ """aDNA Compliance Checker — scores vault objects across 10 compliance dimensions.
+ 
+-Validates objects against the aDNA Universal Standard v2.3 and produces
++Validates objects against the aDNA Universal Standard v2.5 and produces
+ YAML scorecards and Markdown reports.
+ 
+ Usage:
+@@ -55,14 +55,26 @@ SKIP_SUBDIRS: dict[str, set[str]] = {
+     "lattice": {"skills"},  # companion lattice defs, counted under skills
+ }
+ 
++# Canonical context subtype vocabulary (aDNA Universal Standard v2.5 §7 content
++# subtypes). A context file's frontmatter `type` is one of these; the bare
++# `context` type stays valid alongside the subtypes.
++CONTEXT_TYPES = frozenset(
++    {
++        "context",
++        "context_research",
++        "context_guide",
++        "context_core",
++    }
++)
++
+ # Valid frontmatter type values per discovery category.
+-# None = accept any type starting with the key string.
++# None = accept any type starting with the key string (see context handling).
+ VALID_FM_TYPES: dict[str, set[str] | None] = {
+     "module": {"module"},
+     "dataset": {"dataset"},
+     "lattice": {"lattice"},
+     "skill": {"skill"},
+-    "context": None,  # accepts type starting with "context"
++    "context": None,  # accepts any type starting with "context" (see CONTEXT_TYPES)
+     "hardware": {"hardware"},
+     "manifest": None,  # YAML files, no frontmatter type check
+ }
+@@ -109,11 +121,15 @@ DIM_NAMES = {
+ }
+ 
+ # N/A dimensions per type (scored as 3 in totals)
++# Skills: HOW-layer skills are EXEMPT-AS-POLICY from d04/d07/d08 (FAIR ·
++# federation · registry-readiness) per Champollion G3-D5 (2026-07-02) — the same
++# posture as the pre-existing d05/d06/d09/d10 exemptions. A skill that federates
++# MAY still carry those blocks voluntarily; they are not scored as mandatory.
+ NA_MAP: dict[str, list[str]] = {
+     "module": [],
+     "dataset": ["d02", "d08"],
+     "lattice": ["d02", "d08"],
+-    "skill": ["d05", "d06", "d09", "d10"],
++    "skill": ["d04", "d05", "d06", "d07", "d08", "d09", "d10"],
+     "context": ["d04", "d05", "d06", "d07", "d08", "d09", "d10"],
+     "hardware": ["d02", "d04", "d05", "d08", "d09"],
+     "manifest": ["d02", "d04", "d05", "d06", "d07", "d08", "d09", "d10"],
+@@ -277,15 +293,22 @@ def identify_gaps(
+       G-009 — Module missing version field (D6=0)
+       G-010 — Module missing companion YAML
+       G-011 — Context missing status field
+-      G-012 — Skill missing FAIR metadata (D4=0)
++      G-012 — Skill missing FAIR metadata (D4=0) — DORMANT for skills: d04 is
++              N/A per EXEMPT-AS-POLICY (G3-D5), so d04 is never 0 for a skill.
+       G-013 — Federation-critical object missing federation metadata (D7=0)
+       G-014 — (reserved for hardware migration gaps)
++
++    Note (EXEMPT-AS-POLICY, Champollion G3-D5): skill→lattice promotion is
++    optional-by-design (d08 is N/A for skills). G-003 therefore fires only when
++    registration is NOT exempt for the object type — dormant for skills.
+     """
+     gaps: list[str] = []
+ 
++    na_dims = set(NA_MAP.get(object_type, []))
++
+     if object_type == "lattice" and scores.get("d09", 3) < 3:
+         gaps.append("G-002")
+-    if object_type == "skill" and not fm.get("lattice_type"):
++    if object_type == "skill" and "d08" not in na_dims and not fm.get("lattice_type"):
+         gaps.append("G-003")
+     if object_type == "dataset" and scores.get("d09", 3) < 3:
+         gaps.append("G-004")
+@@ -583,9 +606,11 @@ def _score_companion(path: Path, object_type: str) -> int:
+             if not cp.exists():
+                 return 0
+             return 3 if _validate_companion_yaml(cp, "lattice") else 2
+-        # YAML lattice — .md wrapper optional, score 2 if missing
+-        md_name = path.name.replace(".lattice.yaml", ".md")
+-        return 3 if (parent / md_name).exists() else 2
++        # YAML lattice — the `.lattice.yaml` IS the self-describing object; a
++        # `.md` wrapper is a pure convenience, not a companion the object needs.
++        # Self-describing → full companion score whether or not `.md` exists.
++        # Clears the spurious G-002 on all self-describing lattices. F-CHM-209(d).
++        return 3
+     return 0
+ 
+ 
+@@ -789,9 +814,19 @@ def handle_skill(
+ def handle_context(
+     path: Path, fm: dict[str, Any], body: str, vault_path: Path
+ ) -> dict[str, int]:
+-    """Score a context file on applicable dimensions."""
++    """Score a context file on applicable dimensions.
++
++    D1 accepts any canonical context subtype (v2.5 §7: `context`,
++    `context_research`, `context_guide`, `context_core`) — a valid subtype is
++    correct placement, not a triad defect. Fixes F-CHM-209(b).
++    """
++    fm_type = str(fm.get("type", ""))
+     return {
+-        "d01": 3 if fm.get("type") == "context" else (2 if fm.get("type") else 0),
++        "d01": (
++            3
++            if (fm_type in CONTEXT_TYPES or fm_type.startswith("context"))
++            else (2 if fm_type else 0)
++        ),
+         "d02": _check_agents_md(path),
+         "d03": _score_frontmatter(fm),
+     }
+@@ -866,7 +901,7 @@ def format_scorecard_yaml(
+         "meta": {
+             "generated": datetime.now(timezone.utc).isoformat(),
+             "vault": vault_path.name,
+-            "standard_version": "2.3",
++            "standard_version": "2.5",
+             "schema_version": "1.0",
+             "object_count": summary["object_count"],
+         },
+diff --git a/.adna/what/lattices/tools/lattice_validate.py b/.adna/what/lattices/tools/lattice_validate.py
+index e7c334f..2b3c39e 100644
+--- a/.adna/what/lattices/tools/lattice_validate.py
++++ b/.adna/what/lattices/tools/lattice_validate.py
+@@ -348,9 +348,10 @@ def _validate_federation(
+ 
+ def check_federation_readiness(data: dict[str, Any]) -> LatticeValidationResult:
+     """
+-    Check if a lattice is ready for federation (sharing/export).
++    Check if a lattice's FEDERATION BLOCK is ready for sharing/export.
+ 
+-    Implements the 6 federation readiness checks from lattice_federation.md §4.1:
++    Implements the 6 federation-block readiness checks from lattice_federation.md
++    §2.3 / §4.1 (this function validates the federation block itself):
+     1. Schema validation passes (basic structure check)
+     2. federation.shareable is true
+     3. federation.source_instance is set
+@@ -358,6 +359,13 @@ def check_federation_readiness(data: dict[str, Any]) -> LatticeValidationResult:
+     5. fair.keywords has >= 1 entry
+     6. All ref fields resolve or use lattice:// URIs
+ 
++    Note (F-CHM-214 harmonization): this is a DISTINCT gate from the registry
++    *publish-readiness* checklist, whose authoritative list lives in
++    `how/skills/skill_lattice_publish.md` (shareable · source_instance ·
++    version_policy · license · keywords · valid lattice_type). The two overlap
++    but are not identical; the publish skill governs publish-readiness, while this
++    function checks the federation block per lattice_federation.md §2.3.
++
+     Args:
+         data: Parsed lattice YAML dictionary (with root 'lattice' key).
+ 
+diff --git a/.adna/what/patterns/pattern_lattice_home.md b/.adna/what/patterns/pattern_lattice_home.md
+new file mode 100644
+index 0000000..fde7948
+--- /dev/null
++++ b/.adna/what/patterns/pattern_lattice_home.md
+@@ -0,0 +1,101 @@
++---
++type: pattern
++created: 2026-05-29
++updated: 2026-07-03
++status: active
++pattern_category: structural   # 5-block layout is structural; activation discipline is operational; primary register is structural per first-contact UX framing
++applies_to: [campaigns, missions, sessions, governance, team]
++last_edited_by: agent_stanley
++tags: [pattern, lattice_home, splash, terminal, cold_start, ascii_render, four_tier_pipeline, dual_gated_activation, vault_portable]
++---
++
++# Lattice Home — Terminal Cold-Start Splash Pattern
++
++## Problem
++
++Every aDNA vault opens to an empty terminal. An agent or operator dropping in pays a **discovery tax** to learn what is open, what is recent, what capabilities are wired, and what keybindings exist. The tax compounds across sessions — the same `ls` + `git status` + `grep "status: in_progress"` is re-paid every cold-start.
++
++Worse, the cold-start is silent in a way that fails the dual-audience test: agents see nothing structured to orient against; humans see no welcome, no breadcrumbs, no "where am I." First-contact UX is one of the weakest surfaces in a bare vault.
++
++The pattern generalizes across vaults: any aDNA vault can ship the same surface with bash + awk and zero runtime dependencies.
++
++## Solution
++
++Render a **5-block ASCII splash** at terminal cold-start through a **4-tier single-source pipeline**, **dual-gated** for safety:
++
++### 5-block layout schema
++
++| Block | Content | Width |
++|---|---|---|
++| **Header** | `{{NODE_ID}} · {{OPERATOR}}` left + `{{VAULT_BADGE}} {{VAULT_NAME}}` right; `{{BRANCH}} ↑N ↓N upstream / ⚠ N uncommitted` git status line | full row |
++| **OPEN MISSIONS** | grep-stub list of `status: planned\|in_progress\|active` missions; capped at 5 entries | full row |
++| **RECENT** | mtime-sorted last 3 `status: completed` missions with date column | full row |
++| **CAPABILITY** | provider probe (`command -v <agent-cli>`) + MCP / theme / graphics probes; cheap stubs with `(probe → …)` markers for unfinished | full row |
++| **Keybinding hint** | `SPC g graph · m mission · t theme · p promote · b browser · ?` (ornamental at splash time; wired to TUI later) | full row |
++
++### 4-tier single-source pipeline
++
++```
++dossier (design intent + placeholder spec)
++   ↓
++template (canonical ASCII fence-pair with {{PLACEHOLDER}} markers)
++   ↓
++graph-local state symlink (vault → user XDG / Application Support)
++   ↓
++`lattice <verb>` CLI (bash + awk extractor; placeholder substitution)
++```
++
++Each tier has exactly one source-of-record; downstream tiers reference upstream via symlink or grep. Edits at one tier propagate to all consumers without per-consumer maintenance.
++
++### Dual-gated activation
++
++The splash fires automatically on **interactive shell start**, but only if **both** gates pass:
++
++1. **Environment gate** — a `<VAULT>_LATTICE` env var defaults to ON; explicit `<VAULT>_LATTICE=0` suppresses (operator escape hatch).
++2. **Graph-root gate** — PWD walks up looking for the vault's identity stub (`node.adna.yaml`, `MANIFEST.md`, or equivalent); if absent, splash silently no-ops.
++
++Both gates are silent on miss (`return 1`, not error). The splash never blocks terminal-open and never speaks unless invited.
++
++### Fallback discipline
++
++Every placeholder has a documented fallback for missing data:
++
++| Placeholder | Fallback | Trigger |
++|---|---|---|
++| `NODE_ID` / `OPERATOR` | `?` | YAML stub missing or unreadable |
++| `BRANCH` | `(detached or no repo)` | git rev-parse fails |
++| `UPSTREAM_STATUS` | `local-only` | no upstream set |
++| `OPEN_MISSIONS` / `RECENT` | `(none)` | grep returns empty |
++| `PROVIDERS` | `claude-code ◌` (pending glyph) | `command -v` returns non-zero |
++
++## When to Use
++
++- **Any aDNA vault** where the operator wants an at-a-glance state summary at terminal open
++- **Standalone Lattice terminals** opening in a vault's graph root
++- **Multi-vault workspaces** where each vault should self-identify on cold-start (avoids the "which graph am I in?" tax)
++- **NOT** for sub-directories of a vault (the graph-root gate intentionally prevents pollution)
++- **NOT** for non-interactive shells / CI runners (the interactive-shell gate prevents accidental splash in scripts)
++
++## Example
++
++A canonical instance lives at `<Vault>.aDNA/how/configs/bin/lattice` (`cmd_home()`): ~75 LoC of pure bash + awk, sub-second render, idempotent install. It activates via a `<VAULT>_LATTICE` env gate + a graph-root walk for the vault's identity stub, and renders a persona-flavored header (`{{VAULT_BADGE}} <Vault> / {{persona}}`), a mission grep over `how/campaigns/*/missions/*.md`, and vault-specific capability stubs. To adopt, run the install skill (below) — it lifts and parameterizes the recipe rather than copying it verbatim.
++
++**Self-reference**: this pattern doc lives under the `pattern` ontology extension in `what/patterns/`; the surface where the pattern is documented is the same surface where it is installed. The vault is the textbook — the pattern is demonstrated in the graph that ships it.
++
++## Anti-Pattern
++
++| What | Why it breaks |
++|---|---|
++| **Global shell hook with no graph-root gate** | Pollutes every terminal regardless of cwd; operator sees splash in `/tmp` and `$HOME`; gate-of-last-resort fails |
++| **Runtime dependency beyond bash + awk** | Node / Python / Go requirements break the portability promise; pure-bash discipline keeps the pattern viable across nodes |
++| **Inline ANSI color codes** | Color choices drift from the vault's semantic-role tokens; reference the palette by role, never embed hex |
++| **Blocking probe** | Splash that calls a remote LLM or slow MCP probe blocks terminal-open; cheap `command -v` + `git rev-parse` discipline keeps render sub-second |
++| **Verbose multi-screen render** | 5 blocks × full-width is the cap; anything more violates the "at-a-glance state summary" promise; richer data belongs in `lattice <other-verb>` subcommands |
++| **Per-vault code copy without parameterization** | Splashes drift across vaults if each copies the bash verbatim; the install skill enforces lift + parameterize, not copy |
++| **Splash as canonical AAR substitute** | The splash is a recap surface; it does NOT discharge Standing Order #5 (every mission gets an AAR). The splash augments an AAR, never replaces it |
++
++## Cross-references
++
++- [[skill_lattice_home_install]] — the install recipe
++- [[template_lattice_home_render]] — the canonical ASCII template
++- [[pattern_dual_audience]] — sibling pattern the splash satisfies (humans see welcome; agents see structured state)
+diff --git a/CLAUDE.md b/CLAUDE.md
+index b1f5e6c..3d9ffe6 100644
+--- a/CLAUDE.md
++++ b/CLAUDE.md
+@@ -115,6 +115,9 @@ On first run, verify the user's environment:
+ 2. **Each project is self-contained** — own CLAUDE.md, own git repo, own triad structure. Projects can be moved out of this directory and still function independently.
+ 3. **This CLAUDE.md governs workspace operations only** — project creation, discovery, and environment setup. Inside a project, that project's CLAUDE.md is authoritative.
+ 4. **Lattice as concept** — when introducing the system to users, frame lattice as a mathematical structure they're building, not a product they're installing.
++5. **Router rows carry routing identity only.** Each Project Discovery / Workspace Layout entry is ≈1 line: directory · type · persona · one-line purpose · `CLAUDE.md` + `STATE.md` pointers. Operational/campaign state — phases, mission IDs, commits, version pins, dated changelogs — lives in each project's `STATE.md`, **never in this router**. On a campaign/phase close, update the project's `STATE.md`, not this file. (This router re-bloats when state is narrated into rows; keep it lean.)
++6. **`Archive.aDNA/` is the archive holder** (bare-role-canonical, like `Home`/`Network`/`Terminal`). It is a **root object, not a vault** — no governance of its own beyond a holder banner; excluded from `vault_count` and from health-check vault enumeration. Two sub-areas: `Archive.aDNA/<Name>.aDNA/` (whole archived graphs, history + banner + back-compat shim intact) and `Archive.aDNA/_archive/` (flat file/tarball archive; gitignored — bytes never tracked). It is the documented exception every workspace census allowlists.
++7. **Shim-window discipline.** Every back-compat shim (symlink or otherwise) is **registered at creation** in the node's shim ledger with: **id · subject (from→to) · class · window** (default 30d) **· retire-condition** (ref-sweep-zero + owner-ack) **· owner** (persona) **· registered-date · retired-date/marker**. "Shim" spans more than a filesystem symlink (merge-archive · dual-home code-relocation · git-remote-rollback · redirect-based · env-var alias · in-code re-export · flat file-archive); several classes are not filesystem-visible, so the ledger — not a symlink scan — is the source of truth. Retirement requires window-lapse **plus** verified ref-sweep-zero (excluding archives + session history) **plus** owner-ack; a lapsed window alone never auto-retires.
+ 
+ ---
+ 
+@@ -135,7 +138,7 @@ To upgrade from L0 to L1, read `.adna/how/skills/skill_l1_upgrade.md`.
+ - **aDNA specification**: `.adna/what/docs/adna_standard.md`
+ - **Context library**: `.adna/what/context/` (5 topics, 27 subtopics, ~75K tokens)
+ - **Lattice examples**: `.adna/what/lattices/examples/` (15 example lattice definitions)
+-- **All templates**: `.adna/how/templates/` (22 reusable templates)
+-- **All skills**: `.adna/how/skills/` (14 agent recipes)
++- **All templates**: `.adna/how/templates/` (28 reusable templates)
++- **All skills**: `.adna/how/skills/` (27 skills — 24 agent recipes + 3 process)
+ - **Detailed overview**: `.adna/what/docs/aDNA_overview.md` (canonical 47K aDNA spec + tutorial)
+ - **Docs site**: [adna.network](https://adna.network)

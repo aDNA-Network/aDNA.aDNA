@@ -19,7 +19,7 @@ tags: [artifact, champollion, m6_1, release_candidate, v8_4, curation, dry_run]
 
 **Corpus reconciliation (recon-at-execution, M1.1 lesson)**: the live tree holds **34 frontmatter carriers** of `fold_batch: champollion_m6_1_rc` + **2 prose-rerouted members** (`backlog_F_S2_7_template_placeholder_tags`, `idea_plugin_trimming` — both `accepted`, rerouted to the RC by M4.2-era disposition notes) + **1 prose-mention non-member** (`idea_state_prompt_shed_on_close` — `status: proposed`, see §1.4). Brief's "~31" = the M1.1 ledger count before the P3/P4-era additions. ⚠ Node gotcha re-confirmed: `grep -r` silently returned 0 on this corpus; **python enumeration is authoritative** (37 files matched).
 
-**Image-gap verification (pre-dispatch, against local `.adna/` v8.3 sync)**: `template_ratification_record.md` MISSING · `AGENTS.md` Heavy-File section ABSENT · `CLAUDE.md` Step-0 node-vault detection ABSENT · credential-broker snippet ABSENT · image `adna_standard.md` has **no §7.7 and zero `federation/` mentions** (pre-v2.5 confirmed) · Hearthstone trio (`HOME.md` · `template_home_claude.md` · `template_node_adna_exemplar/`) **already shipped** → verify-delta only.
+**Image-gap verification (pre-dispatch, against local `.adna/` v8.3 sync)**: `template_ratification_record.md` MISSING · `AGENTS.md` Heavy-File section ABSENT · `CLAUDE.md` Step-0 node-vault detection ABSENT *(correction at assembly: the probe grepped the literal "Node Vault Detection"; the image carries the SAME mechanism genericized as "Step 2.5 node-vault detection" → I5 re-ruled ALREADY-SHIPPED at §2.2 — a probe-phrasing false-gap, the F-CHM-212 vary-the-method lesson pointed the other way)* · credential-broker snippet ABSENT · image `adna_standard.md` has **no §7.7 and zero `federation/` mentions** (pre-v2.5 confirmed) · Hearthstone trio (`HOME.md` · `template_home_claude.md` · `template_node_adna_exemplar/`) **already shipped** → verify-delta only.
 
 ### 1.1 IN — vault-side unit (Dispatch A; these land as normal vault commits AND become RC sources)
 
@@ -98,18 +98,81 @@ The post-G5 Berthier bundle (`1e3e422`): **P-1** layer-ruling clause · **P-2** 
 
 **Review (fable)**: quiescence clean (TaskStop → already terminated; porcelain == manifest exactly); validate FULL + zero drift re-run; LP collapse re-verified by line-count method (162 lines, 0 `what/latticeprotocol` hits); build re-run green. Review-fixes: validator module docstring v2.4→v2.5 (builder-flagged, in-unit currency) + findings-ledger resolution annotations F-CHM-209/214/215 (builder executed but didn't record — ledger-recording now in Dispatch-B's brief explicitly). **Concurrent-intake event**: `coord_2026_07_02_berthier_to_rosetta_adr022_cosign.md` (ADR-022 authority-envelope co-sign ask) arrived mid-build sans 2 frontmatter fields — builder repaired mechanically (F-CHM-001 class, content untouched) → **routes to G6-D4** with the P-batch.
 
-### 2.2 Dispatch B — image-side RC unit
+### 2.2 Dispatch B — image-side RC unit (opus builder; DONE 2026-07-03; dry-run HELD before skill step (d))
 
-*(pending)*
+**Working area**: `scratchpad/rc_v8_4/aDNA` (fresh clone of `aDNA-Network/aDNA` @ `e4372a6` = v8.3). Held diff → `release_candidate_v8_4.patch` (82 KB, 26 files, 767+/47−). `~/aDNA/.adna/` **untouched**; nothing committed/tagged/pushed in the clone.
+
+**Recon-at-execution note (M1.1 lesson, re-confirmed twice):** the node's `grep -r` / `find` **silently returned empty** on real matches (I18's three source files; the `terminal/` plugin folder). Python enumeration was authoritative for every count and every file-existence check. A pre-I18 census read 27 templates / 26 skills; I18's two file-copies moved the truth to **28 templates / 27 skills** — the governance lint (not memory) caught the stale numbers and forced the re-true.
+
+| Row | Files | Outcome |
+|-----|-------|---------|
+| I1 | `.adna/what/docs/adna_standard.md` + tools ×3 (`compliance_checker.py`·`adna_validate.py`·`lattice_validate.py`) | **DONE** (copy). Standard diff = the ratified v2.4→v2.5 delta only (28+/5−: title→v2.5 · **new §7.7** ratification discipline · §5.5 conformance-walk scope · §7.2 per-class profile · §5.3 `federation/` row · §15.4 version-cut checklist). Subsumes `per_class_frontmatter_profiles` (§7.2/§5.5) + `lip_0006_network` (category list current in the cut). Tools = Dispatch-A A-fixed sources verbatim. |
+| I2 | `.adna/how/templates/template_mission.md` | **DONE** (copy). Diff = exactly the 3-field C6 add (`executor_tier` + `token_budget_estimated` + `token_budget_actual`). |
+| I3 | `.adna/how/templates/template_ratification_record.md` (NEW) | **DONE** (author). 4-field ceremony header (ratifier/gate-ref/date/scope) + ADR roster (dependency order, proposed→accepted) + pending-co-sign column (ADR-043 precedent) + late-invariants + carry-forward + persona status + agents-author/operators-ratify note + self-reference. The N-at-once instrument of §7.7. |
+| I4 | `.adna/AGENTS.md` | **DONE**. New `## Heavy-File Read Convention` section (verbatim idea text) between Safety Rules and Priority Hierarchy. |
+| I5 | `template_workspace_claude.md` + root `CLAUDE.md` | **ALREADY-SHIPPED** (verify-only). Both already carry a genericized Step 2.5 "Node vault detection — offer to bootstrap `Home.aDNA/`" (landed at a prior release per the idea's Hearthstone P2/P5 plan). No edit; the Operations Step-0a block was correctly NOT folded (node-specific). |
+| I6 | `.adna/CLAUDE.md` | **DONE**. `### Credential routing (broker = Home.aDNA)` snippet after the Cross-project routing hook; genericized (NAMES-ONLY; platform-adaptive backend; node-absolute doctrine path replaced with a generic pointer; **0 Berthier literals introduced**). |
+| I7 | `template_workspace_claude.md` + root `CLAUDE.md` (Standing Rules) | **DONE**. Rules 5 (router-row discipline) · 6 (Archive-holder concept + non-vault + census-exception) · 7 (shim-window discipline, incl. the ledger row-schema: id·subject·class·window·retire-condition·owner·dates + the "shim ≠ symlink-only" taxonomy). Folded into template FIRST, then patched into the root router — **verified byte-identical (rules 5–7 AGREE)**. |
+| I8 | `README.md` badges · root `CLAUDE.md` + template counts · `skill_onboarding.md` · README learn-pointer | **DONE** (5 live; item 2 was pre-RETRACTED). N-01 badges → **v8.4 / v2.5** (target values; ship only if G6 fires). N-03/N-04 router counts **semantic-censused → 28 templates / 27 skills (24 agent + 3 process)** in both root router + template. N-08 onboarding L59 recast as *default-when-unresolved* (`{{persona}}`, Berthier as the named default). N-07 image learn-pointer → the [adna.network](https://adna.network) learning path added to README "Learn More". |
+| I9 | `.adna/README.md` | **DONE** (bounded). Top-of-doc ToC + "read top-to-bottom / jump-to-Getting-Started" first-contact framing; content-class order was already correct → no wholesale rewrite (that is DEFER D2). |
+| I10 | `.adna/how/campaigns/AGENTS.md` | **DONE (recon half)** + **DEFER-flip (planning-light half)**. Recon-beats-the-charter clause added to campaigns `## Rules`. Planning-light half **DEFER-flipped**: `skill_campaign_planning_light_meta_planning.md` **does not exist image-side** (confirmed via ls) → its half cannot land; recorded per the row's conditional. |
+| I11 | `.adna/CLAUDE.md` (Agent Protocol) | **DONE**. `### Operator-Decision-Surfacing Discipline (AskUserQuestion)` block after Session Closure: when-to-surface · default-with-escape · record-the-resolution · batch. |
+| I12 | `.adna/how/skills/skill_node_health_check.md` | **DONE** (adapted). The image skill is per-vault (no root-census step); the allowlist-not-pattern rule ("a census flags the unrecognized, it does not bless the recognized"; `ls -A` + allowlist classify → CLEAN-ROOT DRIFT) folded into **Step 9 (Inventory-vs-Disk)**, the closest structural analog. |
+| I13 | `.adna/CLAUDE.md` (Safety table row) + `.adna/AGENTS.md` (section) + `skill_inventory_refresh.md` (Step 0 Pre-flight) | **DONE** (all three loci). Single-writer-lease: mandatory pre-flight `how/sessions/active/` scan for `what/inventory/*` + `what/identity/*` edits. |
+| I14 | `.adna/how/skills/skill_project_fork.md` | **DONE**. Orphan-id lint step in Step 3 (every `community-plugins.json` id must have `plugins/<id>/` or be install-pending) + a runnable python snippet. |
+| I15 | `.adna/.obsidian/README.md` + `OBSIDIAN_CLAUDE.md` | **DONE**. Roster censused → **14 declared = 14 folders, 0 orphans** (canonical 14). README: header 15→14, removed phantom `omnisearch` + `folder-notes`, added real `obsidian42-brat`, retired-ids note. OBSIDIAN_CLAUDE.md: orphan `advanced-canvas`→`obsidian-advanced-canvas`, `Termy/termy`→`Terminal/terminal`, BRAT note de-Termy'd. `setup.sh:3` already correct at 14 (no edit). |
+| I16 | (Obsidian plugin trimming) | **DEFER-flipped**. Reason: (a) the idea's own M4.2 disposition rerouted it to `campaign_obsidian_deployment_stabilization` (a separate campaign); (b) its Proposed Solution requires an interactive **"co-executor must test Obsidian UX after trimming"** step — unsatisfiable in an unattended dry-run; (c) trimming = destructive binary-folder removal. Keeping the untrimmed 14-id roster keeps I15's docs truthful. Trigger: the Obsidian-stabilization track (with UX validation). |
+| I17 | `template_prd.md` + `template_rfc.md` + `.obsidianignore` | **DONE** (Option 3). `tags: [prd/rfc, <project_slug>]` → `[prd/rfc, "<% tp.frontmatter.project_slug %>"]` (Templater directive, not a literal tag); `how/templates/` added to `.obsidianignore` (a DIFFERENT file from `.gitignore` — untouched). |
+| I18 | `.adna/what/patterns/pattern_lattice_home.md` (NEW) + `template_lattice_home_render.md` (NEW) + `skill_lattice_home_install.md` (NEW) + `HOME.md` pointer | **DONE** (copy-adapt). All three copied from vault sources + **genericized** (Rosetta/CMux/aDNA.aDNA specifics → generic `<Vault>`/`{{persona}}`/"canonical instance"/"source instance"; Hestia kept as the standard Home-default; benign `aDNA.aDNA`/`adna.adna→aDNA.aDNA` examples kept as legitimate illustrations). Vault-class labels reframed CMux-class→unique-stub-class, aDNA-class→shared-router-class. HOME.md gained a terminal-splash companion pointer. |
+| I19 | (F-CHM-214 image mirror) | **ALREADY-SHIPPED** (verify-only). Image `CLAUDE.md §Registry Awareness` publish-readiness list ("6 readiness checks: shareable, source_instance, version_policy, license, keywords, valid lattice_type") is **byte-identical to the vault's V2-harmonized authoritative text**. No edit (matches Dispatch-A's "CLAUDE.md verify-only, already correct" finding). |
+| I20 | `template_home_claude.md` · `template_node_adna_exemplar/` · fork exemplar-invocation wiring | **ALREADY-SHIPPED** (verify-delta, all three). `template_node_adna_exemplar/`: **32 files byte-identical** vault vs image (md5). `template_home_claude.md`: only a cosmetic YAML-quoting difference (`"{{x}}"` vs `{{x}}`) — **not ratified content-currency** → no fold. Fork exemplar-invocation wiring identical (Step 4.5 present + 18 exemplar mentions both sides). Discharged. |
+
+**Rows summary**: 14 DONE folds · 3 ALREADY-SHIPPED (I5·I19·I20) · 2 DEFER-flipped (I16 full · I10 planning-light half) · I1/I2 = ratified-source copies · I3/I18 = 4 NEW files.
 
 ## 3. Dry-run report (`skill_template_release` (a)→(c), STOPPED before (d))
 
-*(pending — the gate-fire point is step (d) version-bump+commit+tag+push; nothing executes past (c))*
+**Stop point**: end of skill step (c). Nothing past it executed — **no version-field bump, no CHANGELOG entry, no `git add`/commit, no annotated tag, no push, no `~/aDNA/.adna` sync (step e)**. The gate-fire point (step d) is operator-only at G6.
+
+**Diffstat**: 26 files, **767 insertions / 47 deletions**. 22 modified + **4 new** (`skill_lattice_home_install.md` · `template_lattice_home_render.md` · `template_ratification_record.md` · `pattern_lattice_home.md` [+ its new `what/patterns/` dir]). Root surfaces changed = **root `CLAUDE.md` only** (`root_surfaces_changed=true`); `.gitignore` + `LICENSE` correctly **untouched**. Held diff = `release_candidate_v8_4.patch` (82 KB — under the 400 KB flag).
+
+**Named checks (all 6 PASS)**:
+| Check | Result |
+|-------|--------|
+| Embed-note present in `.adna/README.md` | ✅ PRESENT ("…standard tree, embedded in…"); README badge edit did not clobber it |
+| Berthier count on `.adna/CLAUDE.md` | ✅ **0** (persona-parameterization preserved; folds introduced no persona literal) |
+| `git check-ignore -v .adna/CLAUDE.md` | ✅ exit 1 (not ignored) — no `*.aDNA/` match; `.gitignore` untouched |
+| Root-router vs template agreement | ✅ Standing Rules 5–7 **byte-identical** (folded into template first, then patched to root) |
+| `role: template` in `.adna/MANIFEST.md` | ✅ PRESENT |
+| Governance lint on assembled tree | ✅ **Zero drift** (`adna_validate.py --governance`, python3.13; after count re-true to 28 templates / 27 skills) |
+
+**Version-bump sites flagged for step (d)** (operator work — deliberately NOT touched):
+1. `.adna/CLAUDE.md` frontmatter `version: "8.3"` → **`"8.4"`** (governance track).
+2. `.adna/CLAUDE.md` changelog comment block (currently top line `<!-- v8.3 … -->`) → prepend a `<!-- v8.4 | 2026-07-… | standard v2.5 fold (ADR-046) + RC batch: ratification-record template · router rules 5–7 · credential-broker snippet · Obsidian payload refresh · lattice-home promote · currency (28 templates/27 skills, badges v8.4/v2.5) -->` line.
+3. Annotated git tag **`v8.4`** on `aDNA-Network/aDNA`.
+4. `CHANGELOG.md` release entry (two-track policy; standard track already reads v2.5 in `adna_standard.md` title — the standard-track bump is *already in the copied file*, so step (d) records it in CHANGELOG rather than re-editing the standard).
+5. README badge hrefs already point at `releases/tag/v8.4` (written as target values; live only once the tag exists).
+
+Note: the README badges + all narrated counts were written to the **target** release values per RC discipline (rule 7) — they are inert until G6 fires and the tag/version land.
 
 ## 4. Release-notes draft (v8.4)
 
-*(pending)*
+> Operator-readable; grouped by theme; honest about DEFERs. Ship-conditional on G6.
+
+**aDNA workspace image v8.4 — standard v2.5** *(governance v8.3 → v8.4; standard v2.4 → v2.5)*
+
+*The v2.5 standard cut + a batch of ratified doctrine folds and currency fixes from Operation Champollion.*
+
+- **Standard v2.5** — new **§7.7 Decision-Record Ratification Discipline** (agents author, operators ratify; a four-field ratification block on any ADR past `proposed`); §7.2 per-class frontmatter profile + §5.5 conformance-walk scope (ADR-044); §5.3 optional `federation/` wrapper row (ADR-045); §15.4 version-cut checklist.
+- **New template — `template_ratification_record.md`** — the N-ADRs-at-once ratification-ceremony instrument of §7.7 (companion to `template_adr.md`'s per-ADR block).
+- **Governance doctrine folds** — router-row discipline, Archive-holder concept (a root object, not a vault), and shim-window discipline + shim-ledger row-schema (Standing Rules 5–7); the AskUserQuestion operator-decision-surfacing discipline; single-writer-lease for inventory/identity edits (CLAUDE.md + AGENTS.md + `skill_inventory_refresh`); recon-beats-the-charter for campaigns; allowlist-not-pattern health-check census; a Heavy-File Read convention; a fork-time orphan-plugin-id lint; a fork-time credential-broker routing snippet.
+- **Lattice Home splash** — the terminal cold-start 5-block ASCII pattern promoted to the standard (`pattern_lattice_home` + `template_lattice_home_render` + `skill_lattice_home_install`), with a HOME.md companion pointer.
+- **Updated validators** — `compliance_checker.py` (v2.5, context type-set, skill EXEMPT-AS-POLICY, self-describing lattice companion) + `adna_validate.py` (generalized nested-instance detection) + `lattice_validate.py`.
+- **Currency & first-contact** — README badges → v8.4 / v2.5; router counts re-censused (28 templates · 27 skills · 15 example lattices); README top-of-doc ToC + an adna.network learning-path pointer; onboarding persona line recast to the `{{persona}}` default-when-unresolved; Obsidian payload docs reconciled to the shipped 14-plugin roster (phantom plugins removed, orphan `advanced-canvas` id + retired `termy` corrected); PRD/RFC template placeholder tags stop leaking into the tag index.
+- **Deferred (honest):** a full inner-README redesign and a governance-surface prune (v8.5 / post-launch III batch); five new workspace-lifecycle skills (graph merge/rename, project archive, second genesis, spring clean — a v8.5 skill-authoring batch, each its own reviewable deliverable); two new network entity types (next standard-version window — would re-open the v2.5 cut); Obsidian plugin trimming (needs interactive UX validation, routed to the Obsidian-stabilization track); the Obsidian Local REST API seed (IF-gated by its filer). All zero-DROP — each carries a named next-release trigger (§1.3).
 
 ## 5. Out-of-scope hits (standing sweep clause)
 
-*(pending)*
+- **`aDNA_overview.md` currency** (I8 idea's RC-audit candidate, NOT a live item): the image ships `what/docs/aDNA_overview.md` (~47K, self-labeled pre-v7.0) still narrating "22 templates / 15 examples" in several spots. It is an **RC-scale content decision** (refresh / trim / re-stamp-as-archival) — deliberately left for a dedicated pass, not folded here. Flag for v8.5 or a doc-currency mission.
+- **`STATE.md` / `how/migrations/migrate_v5.2_to_v6.0.md` narrated "22 templates"**: internal/historical narration (not newcomer-facing router surfaces). Migrations are historical records (should not be re-currencied); STATE.md is `.adna/`-internal. Left untouched — outside the I8 newcomer-currency scope. Noted for audit.
+- **Context "27 subtopics" vs actual 28** (`context_*.md` census = 28): the root router + template + MANIFEST all narrate "27 subtopics"; the true count is 28. This was **not** in I8's five live items (I8 enumerated badges/templates/skills/persona/learn-pointer only) and is a soft descriptor, not a hard governance-linted count. Flag as a cheap follow-on currency fix (same narrated-count defect class).
+- **`.adna/CLAUDE.md` frontmatter `updated: 2026-06-29`** unchanged by the RC folds (the folds edited body, not the date field) — step (d) refreshes it alongside the version bump.
