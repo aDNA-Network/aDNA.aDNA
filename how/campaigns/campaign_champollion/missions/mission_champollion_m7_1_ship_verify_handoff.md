@@ -3,17 +3,18 @@ plan_id: mission_champollion_m7_1_ship_verify_handoff
 type: plan
 title: "M7.1 — Ship-verify in the wild + handoff packet (post-release backstop walk)"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 7
 campaign_mission_number: 1
 mission_class: verification
 executor_tier: opus
 token_budget_estimated: "30 kT (verification class; corpus = the SHIPPED v8.4 clone + in-vault records, fully pre-pinnable; the G6-perspective backstop walk is the core unit)"
-token_budget_actual: "TBD"
+token_budget_actual: "~45 kT (+50% vs 30 est — two heavy subagent dispatches [newcomer walk + independent review] + finding-side re-verification reads summed past the 40-kT halt: the M6.1 aggregate-halt pattern recurring; datapoint #7 for M7.2's corpus)"
 created: 2026-07-03
 updated: 2026-07-03
 last_edited_by: agent_rosetta
+status: completed
 tags: [plan, campaign, champollion, p7, ship_verify, handoff, m7_1]
 ---
 
@@ -46,3 +47,11 @@ The shipped tag is IMMUTABLE (findings route to v8.5 or a new gate, never a tag 
 
 - Blocker-class walk finding → immediate operator flag (release-quality class).
 - Budget > 40 kT → halt and report.
+
+## AAR (M7.1 — 2026-07-03)
+
+- **Worked**: a campaign-blind fresh newcomer subagent surfaced 2 real majors a builder-mind wouldn't (F-CHM-216/217); finding-side verification (both README surfaces + `template_home_claude.md:267`) confirmed every major against its **cited** surface; the independent review bookend caught a real v8.5-queue omission (the validator-docstring class the G6 record delegates to the handoff) + a paper-cut double-count. Result: **0 blocker / 2 major / 6 paper-cut**, all v8.5-routable, tag immutable.
+- **Didn't**: fable was rate-limited → the review bookend ran as an independent **opus** substitute (recorded honestly, not fable-tier); actual ~45 vs 30 est (+50%) — two heavy dispatches + finding-side reads summed past the 40-kT halt (the M6.1 aggregate-halt pattern recurring).
+- **Finding**: the shipped v8.4 image is newcomer-clean on the primary path (0 blockers) but carries a coherent **release-cut-leakage** class (inner-README dead install flow · unshipped-ADR links · a private `aDNA.aDNA/` path) — pre-existing (not a v8.4 regression), surfaced only by varying the method (F-CHM-212).
+- **Change**: a handoff packet must carry the release-runner gotchas the walk pays to discover (the `install_truth.json` frozen-SHA / different-frame trap); when a gate record delegates "the handoff enumerates all," cross-check that enumeration at authoring (the validator-docstring miss slipped until review).
+- **Follow-up**: **M7.2 (fable-led closeout) is blocked by the fable rate-limit** — operator needs fable credits or an opus-substitute decision before the campaign can close; F-CHM-216/217 → v8.5 queue ([[../artifacts/handoff_packet_v8_4|handoff]] §3).
