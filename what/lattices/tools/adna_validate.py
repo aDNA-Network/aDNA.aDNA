@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""aDNA Instance Validator — checks conformance per §5.5 of the aDNA Universal Standard v2.4.
+"""aDNA Instance Validator — checks conformance per §5.5 of the aDNA Universal Standard v2.5.
 
 Usage:
     python adna_validate.py <path>                     # Validate instance at path
@@ -52,10 +52,36 @@ STATUS_OPTIONAL_TYPES = ("directory_index", "coordination")
 # Nested example/template INSTANCE trees are documentation sub-vaults — each is a
 # standalone instance, validated on its own, NOT part of THIS instance's
 # conformance. Pruned from the triad walk. See ADR-044.
+#
+# These two hardcoded paths are the FALLBACK: they name doc sub-vaults that carry
+# neither their own `.git` nor governance files (so the general detector below
+# cannot see them). The general detector (see `_is_nested_instance`) auto-excludes
+# any embedded standalone instance — a subtree carrying its own `.git` AND its own
+# governance file (CLAUDE.md or MANIFEST.md), e.g. a code-as-WHAT relocation such
+# as LatticeProtocol.aDNA/what/latticeprotocol/. §5.5's rule is general; this
+# fallback preserves the two known documentation-tree cases. See ADR-044, F-CHM-215.
 NESTED_INSTANCE_DIRS = (
     os.path.join("what", "docs", "examples"),
     os.path.join("how", "templates", "template_node_adna_exemplar"),
 )
+
+# Governance files whose presence (with a sibling `.git`) marks a subtree as its
+# own standalone aDNA/code instance — matching what the blessed code-as-WHAT
+# nested instance actually carries (e.g. a relocated repo's own CLAUDE.md).
+NESTED_INSTANCE_GOV_FILES = ("CLAUDE.md", "MANIFEST.md")
+
+
+def _is_nested_instance(dirpath):
+    """True if `dirpath` is an embedded standalone instance: it carries its own
+    `.git` (a nested repo — dir OR file, covering submodules/worktrees) AND at
+    least one of its own governance files. Such a subtree is validated on its
+    own, not as part of THIS instance's conformance (§5.5, ADR-044). General
+    detector added for F-CHM-215 (was: two hardcoded reference paths only)."""
+    if not os.path.exists(os.path.join(dirpath, ".git")):
+        return False
+    return any(
+        os.path.isfile(os.path.join(dirpath, gf)) for gf in NESTED_INSTANCE_GOV_FILES
+    )
 
 # Governance files that MUST NOT carry committed harness-injected context boundaries (§13.2)
 GOVERNANCE_FILES_FOR_HYGIENE = ("CLAUDE.md", "STATE.md", "AGENTS.md")
@@ -102,8 +128,15 @@ def _find_md_files(root, triad_prefix):
             continue
         for dirpath, dirnames, filenames in os.walk(leg_path):
             ndp = os.path.normpath(dirpath)
+            # Hardcoded fallback paths (doc sub-vaults with no own .git/governance)
             if any(ndp == ex or ndp.startswith(ex + os.sep) for ex in excludes):
                 dirnames[:] = []  # don't descend into a nested instance
+                continue
+            # General detector: an embedded standalone instance (own .git +
+            # governance) is validated on its own — prune it and its subtree.
+            # The leg root itself is never treated as a nested instance.
+            if ndp != os.path.normpath(leg_path) and _is_nested_instance(dirpath):
+                dirnames[:] = []
                 continue
             for fn in filenames:
                 if fn.endswith(".md"):

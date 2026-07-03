@@ -29,7 +29,7 @@ const slot = (slug: string, geo: Geo) => {
   return v ? { id: slug, label: v.display_name, ...geo } : null;
 };
 const nodes = [
-  slot('SiteForge.aDNA',   { cx: 320, cy: 54,  lx: 320, ly: 36,  anchor: 'middle' }), // forge
+  slot('Astro.aDNA',       { cx: 320, cy: 54,  lx: 320, ly: 36,  anchor: 'middle' }), // forge (renamed from SiteForge.aDNA 2026-06-15)
   slot('III.aDNA',         { cx: 452, cy: 122, lx: 470, ly: 126, anchor: 'start'  }), // framework
   slot('Harness.aDNA',     { cx: 452, cy: 258, lx: 470, ly: 262, anchor: 'start'  }), // platform
   slot('wga.aDNA',         { cx: 320, cy: 326, lx: 320, ly: 348, anchor: 'middle' }), // org-vault · public good

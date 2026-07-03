@@ -100,16 +100,18 @@ Rules: at least one edge into the child's entry and one out of its exit. Every s
 
 ### Federation Readiness
 
-For a lattice to be composable across aDNA instances (not just within one project), it must pass six readiness checks (§11):
+For a lattice to be publishable and composable across aDNA instances (not just within one project), it must pass six readiness checks. The **authoritative list is `how/skills/skill_lattice_publish.md`** (the publish/pull/compose recipe) — cite it, don't re-mint the list:
 
 | Check | Requirement |
 |-------|------------|
-| Schema valid | Passes `lattice_validate.py` |
 | Opt-in | `federation.shareable: true` |
 | Provenance | `federation.source_instance` set |
+| Version policy | `federation.version_policy` set |
 | License | `fair.license` declared |
 | Findable | `fair.keywords` has at least 1 entry |
-| References resolve | All `ref` fields are valid paths or URIs |
+| Valid type | `lattice_type` is a valid discriminator |
+
+> **One authoritative list.** These six are the registry publish-readiness gate per [[how/skills/skill_lattice_publish|skill_lattice_publish]]. A related but *distinct* check — `check_federation_readiness()` in `lattice_validate.py`, specified by `lattice_federation.md §2.3` — validates the *federation block itself* (schema-valid · shareable · source_instance · license · keywords · refs-resolve). The two overlap but are not the same gate; when in doubt, the publish skill governs. *(Harmonized at Champollion M6.1 / F-CHM-214.)*
 
 ## See It In Action
 
