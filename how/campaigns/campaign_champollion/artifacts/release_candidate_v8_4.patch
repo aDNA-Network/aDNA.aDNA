@@ -201,7 +201,7 @@ index 86d4de9..e889e4a 100644
  | Quality framework | Shipped | 10-dimension compliance rubric, quality audit skill, context graduation pipeline |
  
 diff --git a/.adna/README.md b/.adna/README.md
-index 02e4e69..a0b1422 100644
+index 02e4e69..e5235ba 100644
 --- a/.adna/README.md
 +++ b/.adna/README.md
 @@ -7,7 +7,7 @@
@@ -209,7 +209,7 @@ index 02e4e69..a0b1422 100644
  # aDNA — Agentic DNA
  
 -[![Governance v7.2](https://img.shields.io/badge/governance-v7.2-663399.svg)](https://github.com/aDNA-Network/aDNA/releases/tag/v7.2) [![Standard v2.2](https://img.shields.io/badge/standard-v2.2-blue.svg)](https://github.com/aDNA-Network/aDNA/blob/main/.adna/what/docs/adna_standard.md) [![Docs](https://img.shields.io/badge/docs-adna--docs.vercel.app-44cc11.svg)](https://adna-docs.vercel.app/)
-+[![Governance v8.4](https://img.shields.io/badge/governance-v8.4-663399.svg)](https://github.com/aDNA-Network/aDNA/releases/tag/v8.4) [![Standard v2.5](https://img.shields.io/badge/standard-v2.5-blue.svg)](https://github.com/aDNA-Network/aDNA/blob/main/.adna/what/docs/adna_standard.md) [![Docs](https://img.shields.io/badge/docs-adna--docs.vercel.app-44cc11.svg)](https://adna-docs.vercel.app/)
++[![Governance v8.4](https://img.shields.io/badge/governance-v8.4-663399.svg)](https://github.com/aDNA-Network/aDNA/releases/tag/v8.4) [![Standard v2.5](https://img.shields.io/badge/standard-v2.5-blue.svg)](https://github.com/aDNA-Network/aDNA/blob/main/.adna/what/docs/adna_standard.md) [![Docs](https://img.shields.io/badge/docs-adna.network-44cc11.svg)](https://adna.network)
  
  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
  [![Obsidian](https://img.shields.io/badge/Obsidian-Compatible-7C3AED)](https://obsidian.md)
@@ -268,7 +268,7 @@ index e443844..0934ce2 100644
  ```bash
 diff --git a/.adna/how/skills/skill_lattice_home_install.md b/.adna/how/skills/skill_lattice_home_install.md
 new file mode 100644
-index 0000000..3c645b5
+index 0000000..62442b2
 --- /dev/null
 +++ b/.adna/how/skills/skill_lattice_home_install.md
 @@ -0,0 +1,213 @@
@@ -297,7 +297,7 @@ index 0000000..3c645b5
 +
 +Install the [[pattern_lattice_home]] terminal cold-start splash in any aDNA vault. Lifts a canonical `lattice`/`cmd_home` implementation (`how/configs/bin/lattice` `cmd_home()`), parameterizes it for the target vault, and wires the activation hook + idempotent install/uninstall scripts. Pure bash + awk; no runtime dependencies. Sub-second render; dual-gated (env var + graph-root walk).
 +
-+The skill is **vault-agnostic** — it works for `aDNA.aDNA`, `Home.aDNA`, `LatticeAgent.aDNA`, forges, frameworks, org-vaults, or any future vault that inherits from the upstream `LatticeProtocol/Agentic-DNA` base.
++The skill is **vault-agnostic** — it works for `aDNA.aDNA`, `Home.aDNA`, `Harness.aDNA`, forges, frameworks, org-vaults, or any future vault that inherits from the upstream `aDNA-Network/aDNA` base.
 +
 +## When NOT to use
 +
@@ -1306,3 +1306,25 @@ index b1f5e6c..3d9ffe6 100644
 +- **All skills**: `.adna/how/skills/` (27 skills — 24 agent recipes + 3 process)
  - **Detailed overview**: `.adna/what/docs/aDNA_overview.md` (canonical 47K aDNA spec + tutorial)
  - **Docs site**: [adna.network](https://adna.network)
+diff --git a/README.md b/README.md
+index 82ec7d2..b319a93 100644
+--- a/README.md
++++ b/README.md
+@@ -4,7 +4,7 @@
+ 
+ # aDNA — Agentic DNA
+ 
+-[![Governance v7.2](https://img.shields.io/badge/governance-v7.2-663399.svg)](https://github.com/aDNA-Network/aDNA/releases) [![Standard v2.2](https://img.shields.io/badge/standard-v2.2-blue.svg)](https://github.com/aDNA-Network/aDNA/blob/main/.adna/what/docs/adna_standard.md) [![Docs](https://img.shields.io/badge/docs-adna.network-44cc11.svg)](https://adna.network)
++[![Governance v8.4](https://img.shields.io/badge/governance-v8.4-663399.svg)](https://github.com/aDNA-Network/aDNA/releases/tag/v8.4) [![Standard v2.5](https://img.shields.io/badge/standard-v2.5-blue.svg)](https://github.com/aDNA-Network/aDNA/blob/main/.adna/what/docs/adna_standard.md) [![Docs](https://img.shields.io/badge/docs-adna.network-44cc11.svg)](https://adna.network)
+ 
+ [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+ [![Obsidian](https://img.shields.io/badge/Obsidian-Compatible-7C3AED)](https://obsidian.md)
+@@ -22,6 +22,8 @@ Most knowledge systems weren't designed with AI agents in mind. aDNA is.
+ 
+ *A lattice is a graph of graphs — every project you create becomes a node in a growing graph of structured knowledge. This repo is the seed.*
+ 
++**New to aDNA?** Start with the guided learning path at [adna.network/learn](https://adna.network/learn) — concepts, tutorials, and a first-hour walkthrough.
++
+ ---
+ 
+ ## Getting Started

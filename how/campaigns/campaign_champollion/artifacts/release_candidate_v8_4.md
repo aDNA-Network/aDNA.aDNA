@@ -129,11 +129,20 @@ The post-G5 Berthier bundle (`1e3e422`): **P-1** layer-ruling clause · **P-2** 
 
 **Rows summary**: 14 DONE folds · 3 ALREADY-SHIPPED (I5·I19·I20) · 2 DEFER-flipped (I16 full · I10 planning-light half) · I1/I2 = ratified-source copies · I3/I18 = 4 NEW files.
 
+### 2.3 M6.3-driven curation AMENDMENT (2026-07-03; applied to the clone, patch regenerated, checks re-run)
+
+| Row | Finding | Amendment |
+|-----|---------|-----------|
+| **I8-AMEND** | M6.3 F1: I8/I9's README fixes had landed inner-only; **root `README.md`** (N-01's cited surface `image:README.md:7` + N-07's pointer surface) was not in the patch — root badges still v7.2/v2.2, no learn-pointer. F2: the inner README Docs badge (on an RC-edited line) pointed at pre-cutover `adna-docs.vercel.app`. | Root badges → v8.4/v2.5 (tag-href form matching inner) + ONE learning-path line after the seed paragraph (`adna.network/learn`, live-checked 200) · inner Docs badge → `adna.network`. Trace: `idea_image_newcomer_currency_fixes` N-01 + N-07 (completing already-ratified scope on its named surfaces; no new ratification). |
+| **I18-AMEND** | M6.3 F3: the NEW `skill_lattice_home_install.md` carried a live-routing `LatticeProtocol/Agentic-DNA` URL + an archived-vault example (`LatticeAgent.aDNA`) — copy-adapt genericization miss; v8.3-sweep-class regression. | URL → `aDNA-Network/aDNA`; example → `Harness.aDNA`. Trace: I18's own genericization discipline + the v8.3 currency-sweep KEEP/strip rules. |
+
+**Post-amendment re-verification**: patch regenerated → **27 files, 770+/48−, 4 NEW** (was 26/767+/47−); Berthier on `.adna/CLAUDE.md` = 0 · embed-note intact · governance lint on the assembled tree = **Zero drift** · live-routing stale-org sweep = 0 hits. Full adversarial record: `artifacts/adversarial_pass_2.md`.
+
 ## 3. Dry-run report (`skill_template_release` (a)→(c), STOPPED before (d))
 
 **Stop point**: end of skill step (c). Nothing past it executed — **no version-field bump, no CHANGELOG entry, no `git add`/commit, no annotated tag, no push, no `~/aDNA/.adna` sync (step e)**. The gate-fire point (step d) is operator-only at G6.
 
-**Diffstat**: 26 files, **767 insertions / 47 deletions**. 22 modified + **4 new** (`skill_lattice_home_install.md` · `template_lattice_home_render.md` · `template_ratification_record.md` · `pattern_lattice_home.md` [+ its new `what/patterns/` dir]). Root surfaces changed = **root `CLAUDE.md` only** (`root_surfaces_changed=true`); `.gitignore` + `LICENSE` correctly **untouched**. Held diff = `release_candidate_v8_4.patch` (82 KB — under the 400 KB flag).
+**Diffstat (post-M6.3-amendment, §2.3)**: 27 files, **770 insertions / 48 deletions**. 23 modified + **4 new** (`skill_lattice_home_install.md` · `template_lattice_home_render.md` · `template_ratification_record.md` · `pattern_lattice_home.md` [+ its new `what/patterns/` dir]). Root surfaces changed = **root `CLAUDE.md` + root `README.md`** (the latter via §2.3 I8-AMEND) (`root_surfaces_changed=true`); `.gitignore` + `LICENSE` correctly **untouched**. Held diff = `release_candidate_v8_4.patch` (~83 KB — under the 400 KB flag; regenerated at the §2.3 amendment).
 
 **Named checks (all 6 PASS)**:
 | Check | Result |

@@ -3,14 +3,14 @@ plan_id: mission_champollion_m6_3_adversarial_pass_2
 type: plan
 title: "M6.3 — Adversarial pass 2 + security re-verify (pre-release skeptics vs the RC)"
 owner: stanley
-status: planned
+status: completed
 campaign_id: campaign_champollion
 campaign_phase: 6
 campaign_mission_number: 3
 mission_class: review
 executor_tier: fable
 token_budget_estimated: "40 kT (fable-led at-tier — review substance stays fable per the G2 re-tier; runs AFTER M6.1 so the RC exists to attack)"
-token_budget_actual: "TBD"
+token_budget_actual: "~30 kT vs 40 est (−25%, at-tier direct): 3 lenses (route-walk · census · decision-trace) + gitleaks full-history triage (9/9 FP, metadata-only) + NAMES-ONLY batch sweep + the F1/F2/F3 amendment loop (route-through-curation → clone re-edit → patch regen → re-verify). Fable-direct probes stayed surgical (python extracts, never full-file reads)."
 created: 2026-07-03
 updated: 2026-07-03
 last_edited_by: agent_rosetta
