@@ -8,8 +8,8 @@ campaign_phase: 6
 mission_id: mission_champollion_m6_1_template_release_candidate   # first unit; updated as the sweep advances
 executor_tier: fable   # orchestrator session — opus subagents build M6.1/M6.2; M6.3 fable at-tier (Mode B, charter Inviolable §2)
 token_budget_estimated: "~150–180 kT if all three run (M6.1 ~52 [Mode-B allowance] + M6.2 ~35 + M6.3 ~40 + gate render/close ~20); adaptive — session may close at any mission boundary"
-token_budget_actual: "TBD"
-status: active
+token_budget_actual: "~168 kT vs ~150–180 est (in band): M6.1 ~85 (+63% — the 27-row RC; per-row pricing calibration → datapoint #6) + M6.2 ~38 (+9%) + M6.3 ~30 (−25%) + gate render/close ~15. Phase vs briefs: ~153/127 (+20%)."
+status: completed
 created: 2026-07-03
 updated: 2026-07-03
 scope:
@@ -51,4 +51,12 @@ Conflict scan at open: `how/sessions/active/` empty · tree clean at `1e3e422` (
 
 ## SITREP (session close)
 
-(pending)
+- **Completed**: all three P6 missions in one Mode-B sweep, AARs filed — M6.1 (`3d372c5`+`4395543`: v8.4 RC curated 27/10/0, assembled as a 27-file held patch, dry-run stopped before step (d), checker unit landed vault-side w/ the LP false-positive collapse) · M6.2 (`0cbdca4`: Track D READY, DP4 dossier w/ one-paste close text, Venus memo staged) · M6.3 (`f153a23`: fable at-tier — 3 findings found→fixed via recorded curation amendment, 1 dissolved by census, first full-history gitleaks 9/9 FP-triaged, batch sweep clean, nothing release-blocking). **G6 RENDERED** (`how/gates/champollion_p6_gate.md`, 6 decisions all with recs) + campaign splash/table + STATE banner advanced. Two concurrent Berthier intakes handled (P-3 memo bundle pre-committed `1e3e422`; ADR-022 ask mid-M6.1, frontmatter-repaired) — 10-item G6-D4 adjudication queue with recs.
+- **In progress**: nothing — phase complete-but-ungated by design. The RC is HELD: `.adna/` untouched, nothing pushed, nothing released.
+- **Next up**: **G6 ratification (operator)** — D1 FIRE v8.4 · D2 PUSH · D3 datapoint #6 · D4 adjudications ×10 · D5 DP4 handoff · D6 flags + P7 briefs. Cascade order in the gate §final, push LAST.
+- **Blockers**: none. (Noether countersign remains pending-with-owner; P-3 arrived — nudge resolves at D3.)
+- **Files touched**: the four mission commits + this close commit (gate file · campaign doc · STATE.md · session move · memory outside-repo).
+
+## Next Session Prompt
+
+Operation Champollion is at **G6 pending — THE RELEASE GATE** (P6 work complete: all three missions closed with AARs in this Mode-B sweep; 5 commits local on `1e3e422`'s base, nothing pushed; the **v8.4 RC is a held patch** at `how/campaigns/campaign_champollion/artifacts/release_candidate_v8_4.patch` with its record beside it). Read `STATE.md` ⏭ QUEUED, then `how/gates/champollion_p6_gate.md`. If the operator has ratified (any subset of D1–D6), execute the cascade exactly as the gate's final section prescribes — **D1 = the release itself** (`skill_template_release` steps (d)→(f): fresh clone + `git apply` the held patch + the 5 flagged version-bump sites + annotated tag `v8.4` + push branch+tag [tags-only] + local `.adna` sync + install-truth regen + the 7-row smoke test; a red smoke row HALTS back to the operator) · then splash/P7-briefs · D3 telemetry · D4 folds (P-1/P-3+P-4/W-2/P-6/P-7 pattern+doctrine edits, ADR-022 co-sign reply memo, deferred-trigger ledger rows for P-2/P-5/P-8/state-prompt-shed) · D6 .gitleaks.toml · D5 if "fire DP4" (paste dossier §6 + status flip) · **D2 push LAST** (fetch + ls-remote truth-check + gitleaks; releases the Venus memo). If not ratified, HOLD — do NOT auto-advance; the RC keeps. Per-session: validate both modes; `.adna/` untouched until step (e); NAMES-ONLY; python-not-grep; quiescence-check after any builder notification.
