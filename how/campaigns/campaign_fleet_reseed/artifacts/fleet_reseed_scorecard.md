@@ -1,0 +1,103 @@
+---
+type: artifact
+artifact_class: scorecard
+campaign: campaign_fleet_reseed
+mission: mission_fleet_reseed_p0_audit
+created: 2026-07-03
+updated: 2026-07-03
+status: active
+last_edited_by: agent_rosetta
+tags: [artifact, scorecard, fleet_reseed, p0_audit, compliance, read_only]
+---
+
+# Fleet Re-Seed — P0 Compliance/Version Scorecard
+
+**Read-only audit, 2026-07-03.** Ground truth from disk (`~/aDNA/*.aDNA`), cross-referenced with
+`Home.aDNA/what/inventory/inventory_vaults.yaml`. **No vault was modified.** Raw 8-column table:
+`…/scratchpad/fleet_audit_raw.txt`.
+
+## Coverage
+- **85** top-level `*.aDNA` entries → **15 symlinks** (aliases) + **1** archive-holder + **69 real vault dirs**.
+- **Inventory drift (F6):** Home inventory (2026-06-30) records **66**; disk shows **69** → +3 since last refresh (concurrent forks). `skill_inventory_refresh` (Hestia) reconciles.
+- **Baseline target:** the **v8.4** consumer-facing governance set (v8.5 is template-only — nothing for consumers to adopt). Standard v2.5.
+
+## Tiering (proposed — operator confirms at gate)
+
+### Tier A — mature-active · re-seed candidates (~39)
+| Vault | gov ver | remote | router | dirty | unpushed | notable |
+|---|---|---|---|---|---|---|
+| aDNA.aDNA | **6.0** | GH | yes | – | 7 | **self-drift: ships v8.5, own gov at v6.0 (F7)** |
+| aDNALabs | 0.1 | GH | yes | 1 | **55** | org HQ; huge unpushed backlog |
+| Astro | 1.0 | GH | yes | 3 | – | stale wrappers: canvasforge, comfyforge |
+| CakeHealth | 6.0 | GH(ssh) | yes | 4 | 1 | stale wrapper: tappinterface |
+| Canvas | 7.0 | GH | yes | 4 | 1 | |
+| ComfyUI | 7.0 | **no-remote** | yes | 4 | – | Free Harbor gap |
+| Context | 0.0.1-genesis | GH | yes | 4 | 10 | active genesis |
+| ContextCommons | 7.1 | GH | yes | 3 | – | stale: moleculeforge, presentationforge, videoforge, websites |
+| Exchange | none | Codeberg | yes | 1 | 1 | |
+| Git | 0.17 | GH | yes | – | – | |
+| Harness | none | GH | yes | 3 | 1 | |
+| Home | 0.1 | **no-remote** | yes | 3 | – | **correct (local-by-default, Rule 4)**; stale: canvasforge, siteforge |
+| III | 1.0 | GH | yes | **14** | **23** | production framework; big dirty+unpushed |
+| LAVentureGraph | 1.1 | GH | yes | – | – | |
+| Lab | none | GH | yes | – | 7 | |
+| LatticeProtocol | none | GH | yes | – | **54** | huge unpushed backlog |
+| Molecules | 1.6 | Codeberg | yes | 8 | 1 | |
+| Network | 6.0 | GH | yes | 4 | 16 | |
+| Obsidian | 7.0 | GH | yes | 9 | 3 | |
+| Operations | none | GH | yes | 10 | **52** | huge unpushed; AGENTS.md-governed |
+| Oration | 1.0 | Codeberg | yes | 3 | – | |
+| PercySleep | 7.0 | GH | yes | 3 | 1 | stale: tappinterface, taskforge |
+| RareArchive | 1.0 | **Wilhelm-Foundation** | yes | – | 1 | external-org (rename veto) |
+| RemoteControl | none | GH | yes | – | – | |
+| ScienceStanley | 7.0 | GH | yes | – | 2 | 6 stale wrappers (graphicnovelforge, literatureforge, moleculeforge, presentationforge, speechforge, videoforge) |
+| Spacemacs | 6.0 | Codeberg | yes | **21** | – | big dirty tree |
+| SuperLeague | 1.3 | GH | yes | – | – | external-org (rename veto) |
+| TappProtocol | none | GH | yes | – | 2 | |
+| Terminal | 1.6-ep3 | GH | yes | – | – | Tier-1 (no iii wrapper needed) |
+| TypeScript | 1.0-genesis | Codeberg | yes | 5 | 1 | active genesis |
+| VAAS | 6.0 | GH | yes | 3 | – | |
+| Videos | 1.0 | Codeberg | yes | 3 | – | stale: presentationforge |
+| VisualDNA | none | Codeberg | yes | – | – | |
+| Warp | 0.4 | GH | yes | 3 | 3 | |
+| WebForge | none | **no-remote** | yes | 1 | – | 13 federation wrappers (composer-forge) |
+| wga | 1.1 | GH | yes | – | 1 | |
+| WilhelmAI | 1.0 | **Wilhelm-Foundation** | yes | **42** | – | external-org; largest dirty tree |
+| ZenZachary | 7.0 | GH | yes | – | 1 | 7 stale wrappers |
+| AWSBootstrap | 7.0 | GH | yes | – | – | airlock present |
+
+### Tier B — genesis-stub / early · defer or light-touch (~29)
+- **Keystone cohort (10, no-remote):** Forgejo, Caddy, Nebula, Nextcloud, Bitwarden, Container, Inference, FastAPI, Store, Groupware — all `gov=none`, no remote; **6 not in router** (Bitwarden, Container, FastAPI, Groupware, Nextcloud, Store).
+- **Web-stack cohort (7, no-remote, not in router):** D3, React, Tailwind, ThreeJS, Vercel, APScheduler, Prefect.
+- **Aegis cohort (3):** Dashboards (**router lists old name "BusinessIntelligence"** — rename residue), Neo4j, Organization.
+- **Genesis stubs (9):** CakeProtocol, LlamaCppForge, MagnaPetra, Datasets, DataRoom, WorldGenome, Lighthouse (Codeberg, 7 unpushed), Regenesis (not in router), zeta (**gov v5.7** — oldest; 5 dirty, 6 unpushed).
+
+### Tier C — skip (17)
+15 back-compat symlinks (aDNANetwork, LatticeNetwork, BusinessIntelligence, Websites, SiteForge, VideoForge, SpeechForge, Cmux, MoleculeForge, TaskForge → active targets; CanvasForge, LatticeAgent, LatticeLabs, LiteratureForge, RareHarnessOld → Archive) · `Archive.aDNA` holder · `WGS.aDNA` (quarry, not-a-repo).
+
+## Cross-cutting findings
+- **F1 — governance-version fragmentation + tooling gap.** **No vault is at v8.x.** Highest real gov versions: v7.0/v7.1 (8) · v6.0 (5) · v5.7 (1) · ~19 project-local (0.1–1.6) · ~30 `none`. **Migration scripts exist only v5→v6 — no v6→v7→v8 path.** So governance-version adoption needs new scripts OR a guided/checklist upgrade, AND a decision on whether project-local-versioned vaults adopt aDNA gov-versioning at all.
+- **F2 — no-remote (Free Harbor gap).** ~25 vaults no-remote — mostly Tier-B genesis cohorts, but **3 Tier-A** (ComfyUI, WebForge, Home). Home is **correct** (local-by-default). ComfyUI + WebForge are real gaps.
+- **F3 — router gaps.** ~15 vaults absent from root `~/aDNA/CLAUDE.md` Project Discovery (web-stack + several Keystone + Regenesis) + **rename residue** (router "BusinessIntelligence" vs disk "Dashboards").
+- **F4 — stale-named federation wrappers (= Berthier "OBE rename-residue" defect).** ≥10 vaults carry `how/federation/<oldname>/` dirs for renamed sources: canvasforge→Canvas, comfyforge→ComfyUI, moleculeforge→Molecules, videoforge→Videos, speechforge→Oration, siteforge→Astro, websites→WebForge, tappinterface→TappProtocol, taskforge→Operations, presentationforge/graphicnovelforge/literatureforge. Worst: ScienceStanley (6), ZenZachary (7). Masked by Archive shims; a real currency defect.
+- **F5 — dirty trees + unpushed backlogs.** Dirty: WilhelmAI 42 · Spacemacs 21 · III 14 · Operations 10 · Obsidian 9 · Molecules 8 · (+ ~8 at 3-5). Unpushed: aDNALabs 55 · LatticeProtocol 54 · Operations 52 · III 23 · Network 16 · Context 10. Some are operator-gated holds; needs a per-vault commit/push-or-document pass before any touch.
+- **F6 — inventory drift** (66→69) — `skill_inventory_refresh` (Hestia).
+- **F7 — aDNA.aDNA self-drift** — the standard's own dev vault is gov v6.0 while shipping v8.5 (dogfooding gap).
+- **F8 — Berthier fleet-defect classes** (input, `coord_2026_06_27_inbound_from_berthier_fleet_defects.md`): template-clutter (stale inherited `campaign_adna_workspace_upgrade`), harness-injection leak (`# userEmail`/`# currentDate` in governance files), rename-residue (=F4). Route to Rosetta's upstream lane + the re-seed waves.
+
+> **Not run this pass:** the full `skill_node_health_check` (D10) 23k procedure — the disk-truth audit above covers its core dimensions; the incremental checks (federation_ref *resolution*, orphaned-commit deep scan) are queued as the **P1-entry independent cross-check** (Hestia). The cheap orphaned-commit signal (unpushed counts) IS captured above.
+
+## Recommended remediation shape (for the P0 gate)
+Split **compliance-conformance** (cheap, high-value, low-risk) from **governance-version adoption** (expensive, judgment-heavy):
+- **W1 — router resync + inventory refresh** (Hestia; closes F3/F6). ~1 session, mechanical.
+- **W2 — federation-wrapper rename-residue sweep** (F4/F8; the real defect). ~2–3 sessions.
+- **W3 — git-remote setup for Tier-A no-remote (ComfyUI, WebForge) + a commit/push-or-document hygiene pass** (F2/F5). ~2 sessions.
+- **W4 — governance-doctrine adoption** (F1/F7): a **separate decision** — adopt the v8.4 consumer-facing *doctrine* via a checklist (§7.7 ratification, Standing Rules 5–7, credential-broker snippet, AskUserQuestion discipline, single-writer-lease, executor_tier fields) rather than a version-number migration; scope to Tier-A first; aDNA.aDNA self-drift fixed first (dogfood).
+- **Tier B (genesis stubs):** light-touch only (router + inventory registration); full compliance **deferred until graduation**.
+
+## Gate decisions needed (P0 → P1)
+1. **Tier boundaries** — confirm A/B/C classification (esp. borderline Context/TypeScript/zeta).
+2. **Depth** — compliance-conformance-only (W1–W3) now, with governance-doctrine (W4) as a later separate gate? Or fold W4 in?
+3. **Wave order** — recommend W1 → W2 → W3, W4 separate.
+4. **Genesis-stub posture** — confirm defer-until-graduation for Tier B.
+5. **External-org vaults** (RareArchive, WilhelmAI, SuperLeague) — light-touch + rename-veto honored (carry v3 Standing Order 2).
