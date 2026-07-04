@@ -1,0 +1,11 @@
+{
+  "content_hash": "sha256:5b7faa88621991206550a97b7ca288de5ca843946f2b6a98134b565885c579fa",
+  "delivery": "outbox_staged",
+  "dispatched_at": "2026-07-03T19:40:18.362235+00:00",
+  "envelope_version": "1.0",
+  "kind": "coord_memo",
+  "memo_id": "coord_2026_07_03_berthier_to_rosetta_propagation_spec_c6_ontology",
+  "signature": "937802c6bd62b7fee316eadd5ec1e1f539c4f0702b20ed481d6ce4737c3e9dfc6f8e27d91a67d029ab67e1b84421b5fbe5b267265a42db4b9aa61337341f9808",
+  "source_node_pubkey": "d544941518b0b55a2029439fe50cd8cd87f2a9c78c85303d1c461e10ae2b86e8",
+  "target_vault": "aDNA.aDNA"
+}

@@ -37,6 +37,8 @@ Authoritative reference for the **Forge.aDNA** aDNA pattern category. Workspace 
 
 > **Rename wave (2026-06-15, PT pt05–pt07; `VideoForge→Videos` landed 2026-06-10):** display names updated above — `SiteForge→Astro`, `ComfyForge→ComfyUI`, `MoleculeForge→Molecules`, `SpeechForge→Oration`. Back-compat symlinks active; **GitHub remotes unchanged** (e.g. `LatticeProtocol/SiteForge.aDNA`). Per-vault maturity/persona/consumer detail lives in each vault's own `STATE.md`.
 
+> **ComfyUI category ruling (Corps ⛩ M-C6 gate, 2026-07-02; adopted here 2026-07-03):** `ComfyUI.aDNA` was **ruled Platform.aDNA · `software_deployment_graph`** (was Forge.aDNA) — the category names its deploy/run face. Its **forge-pattern participation is unchanged** (ADR-039 multi-lens: consumers still reach it via a `comfyui/` consumer-wrapper + `federation_ref`), so it **stays listed here** for that consumption seam. Category home + detail: [[spec_platform_ecosystem]] §SDG + `ComfyUI.aDNA/STATE.md`.
+
 ## Canonical Spec
 
 `Astro.aDNA/what/artifacts/sf_forge_pattern_spec.md` — the reference implementation of the standalone forge pattern. All forges follow this spec for consumer wrappers, federation, context grafting, and version policy.

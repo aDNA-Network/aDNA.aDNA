@@ -54,8 +54,8 @@ the P-2 validator rule / P-5 fork scaffold. Each is its own reviewable deliverab
 | 4 | **F-CHM-217(c)** | `.adna/what/docs/AGENTS.md:20` (`v2.1`) + dev `what/docs/AGENTS.md:20` (`v2.3`) | both → **`v2.5`** + refresh `updated:`/`last_edited_by` on the shipped index | paper-cut | SRC (dev) + SHIP-DELTA (diverged copy) |
 | 5 | **F-CHM-217(d)** | `.adna/what/docs/agent_first_guide.md:18` (+ dev copy) | `[Quick Start](../../README.md#quick-start)` → `[Getting Started](../../README.md#getting-started)` (README heading is "Getting Started") | paper-cut | SRC + SHIP-DELTA |
 | 6 | **F-CHM-217(e)** | `.adna/how/skills/skill_iii_setup.md:165,211,256,268,375` | dev-vault examples (`lattice-labs`, `LPWhitepaper`, KINN) → generic placeholders (e.g. `<consumer-vault>`, `<brand-voice pack>`) | paper-cut | SHIP-DELTA (`.adna/`-only file, no dev source) |
-| 7 | **doc-currency** | `.adna/what/docs/aDNA_overview.md` (~47 KB, self-labels pre-v7.0; "22 templates / 15 examples") | RC-scale decision: **refresh** vs **trim** vs **re-stamp as archival**. Recommend **re-stamp archival** for v8.5 (cheapest, honest); full refresh = its own mission | low | DECISION (deferred; see §3 note) |
-| 8 | **doc-currency** | "27 subtopics" narrated (dev `CLAUDE.md:53`, `AGENTS.md:35`, `MANIFEST.md:34,163`) | **VERIFY census first**, then update all 4 sites to the true count | paper-cut | SRC (verify-then-fix) |
+| 7 | **doc-currency** | `.adna/what/docs/aDNA_overview.md` (~47 KB, self-labels pre-v7.0; "22 templates / 15 examples") | **CONFIRMED 2026-07-03: re-stamp archival** for v8.5 — add an "archival snapshot; see the live docs" banner + version stamp; do NOT full-refresh (that's its own mission) | low | SHIP-DELTA (archival banner) |
+| 8 | **doc-currency** | "27 subtopics" narrated (dev `CLAUDE.md:53`, `AGENTS.md:35`, `MANIFEST.md:34,163`) | **VERIFIED 2026-07-03 — 27 is CORRECT** (27 `context_*.md` inside the 5 topic dirs; the finding's "28" wrongly counted the root-level index `context_recipes.md`, not a subtopic). **No change; finding withdrawn.** | — | none (false positive) |
 
 ## §3 — Decision D-1 (the ship-cut ADR links) — **operator resolves at fire**
 
@@ -67,7 +67,7 @@ The 6 links in row 3 point at ADRs **005 · 007 · 009 · 035**. They render cor
   `.adna/what/decisions/`. Keeps every link live in **both** dev and image, gives the newcomer the
   actual "why," and all four are foundational **standard-architecture** ADRs already cited on shipped
   surfaces (nothing sensitive). Cost: shipped ADR set 3→7; **must check those 4 ADRs for onward links to
-  other unshipped ADRs** (cascade) and de-link/ship as needed.
+  other unshipped ADRs** (cascade) and de-link/ship as needed. **Cascade CHECKED 2026-07-03 (wind-down):** adr_007 + adr_009 link onward to **adr_006**; adr_006 links only back to adr_007 (in-set) → the closure is **5 ADRs {005·006·007·009·035}**, terminating cleanly with **no residual 404s**. All 5 are foundational-safe standard-architecture ADRs. So Option A = ship **5** (not 4) — a bounded, de-risked set; this **strengthens** the recommendation over the de-link alternative.
 - **Option B — de-link on ship.** A release-time transform strips the `[…]()` on shipped copies only,
   leaving the dev-graph links intact. No new public ADRs, but a new release mechanic and the newcomer
   loses the "why" citation.
@@ -130,3 +130,25 @@ clone; nothing is staged in this vault beyond the §8 source de-link (itself ind
 **PREP COMPLETE — HELD for the operator to fire `skill_template_release` (version v8.5).** No push, no
 release. Resolve **D-1** at fire. The package has no decay — every delta is pinned to a specific
 surface + line, re-verifiable with the §6 greps. Owner: Rosetta (v8.5 queue, standing).
+
+## §10 — Release-session execution prompt (self-contained; for the next cleared-context session)
+
+**You are Rosetta. The v8.5 "release-cut hygiene" patch is prepped + held in THIS file — fire it via
+`skill_template_release`.** The vault is quiescent (Champollion + Operation aDNA closed); the v8.4 tag is
+immutable, so this ships as **v8.5**. One source de-link is already applied + committed (§8). Sequence:
+**this release → then fleet re-seed** (Rosetta+Hestia; the operator-chosen back-on-track).
+
+**Version (two-track, ADR-011):** governance **8.4 → 8.5** (image root `CLAUDE.md` frontmatter + a
+`CHANGELOG.md` entry at step (d)); **standard stays v2.5** (no normative change — hygiene/currency only).
+`root_surfaces_changed: false` (F-CHM-216 fixes `.adna/README.md`, not the image ROOT README).
+
+**Execution order:**
+1. **Preconditions** (skill §a): release gate = explicit operator GO for THIS release; working tree clean; batch committed.
+2. **Resolve D-1** (§3): ship the verified **5-ADR closure** `{005,006,007,009,035}` (cascade-terminal, no residual 404s — *recommended*) **or** de-link-on-ship. Operator picks.
+3. **Dry-run** (`dry_run: true`): assemble the standard tree (§b) → sync a fresh clone (§c) applying the §2 delta table + the D-1 choice + the mandatory embed-note transform; **STOP before commit**; inspect the diff against §2/§5/§6.
+4. **Fire** (`dry_run: false`, §d–e): version bump + CHANGELOG + commit + annotated tag `v8.5` + **operator-confirmed push**; sync local `~/aDNA/.adna` + regenerate install-truth if the template sha moved.
+5. **Smoke** (skill §f 7 rows + §6 H1–H6): a red row **reverts the decision to the operator** (never auto-remediate a pushed tag).
+
+**Deltas to apply = §2 table** (F-CHM-216 README one-step + the L55 note · F-CHM-217 leak sweep · AGENTS.md→v2.5 · the dead anchor · skill_iii_setup examples · aDNA_overview archival banner). **Row 8 (census) = WITHDRAWN** (27 is correct). **NOT in this release:** the M-C6 ecosystem-spec edits (ride the next `what/specs/` release) and anything Berthier-propagation/feedback (their own cadence) — see `who/coordination/coord_2026_07_03_rosetta_to_berthier_dispositions_mc6_propagation_feedback.md`.
+
+**After fire:** update STATE + memory (v8.5 SHIPPED), then open the **fleet re-seed** (apply the v8.4/v8.5 baseline across the ~19 ecosystem vaults; Rosetta + Hestia).
