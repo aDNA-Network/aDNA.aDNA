@@ -6,7 +6,7 @@ owner: stanley
 persona: rosetta   # co-owned with Hestia (Home.aDNA); per-vault touches adopt the host vault's persona
 co_owner: hestia
 status: active
-phase: 2   # P2 (W2) OPEN 2026-07-03 — Objective 1 triage complete; sub-gate pending (execution model + rulings B/C — do not auto-advance to the sweep). W1 (F3+F6) closed + PUSHED (857f083).
+phase: 2   # P2 (W2) SUBSTANTIALLY DONE 2026-07-04 (mission completed) — swept 5/8 F4 vaults + Astro=Atelier; 3 documented-exception tails routed → idea_fleet_reseed_w2_residual_tail. P3 (W3) = next gate, gate-pending (SO#1). W1 closed+pushed; W2 sweeps pushed.
 predecessor: campaign_adna_v3_ecosystem_compliance   # superseded stub (v7.0-era); this is its post-launch re-seed successor
 baseline: "v8.4 governance / v2.5 standard (v8.5 = template-only hygiene)"
 created: 2026-07-03
@@ -54,7 +54,7 @@ dirty trees + large unpushed backlogs (F5; aDNALabs 55 / LatticeProtocol 54 / Op
 |---|---|---|---|
 | **P0** | Charter + read-only fleet audit → compliance/version scorecard | Rosetta + Hestia | **✅ complete (this session)** |
 | **P1** | Router resync + Home-inventory refresh (W1) — cheap, mechanical | Hestia | **✅ WORK COMPLETE 2026-07-03** — F3+F6 closed (`mission_fleet_reseed_p1_router_inventory`); **P2 gate-pending** |
-| **P2** | Federation-wrapper rename-residue sweep (W2) — the F4/F8 defect | Rosetta + host personas | **OPEN — triage ✅ 2026-07-03 (25 wrappers / 8 vaults; WebForge false-pos; residue = dir-name); sub-gate pending** |
+| **P2** | Federation-wrapper rename-residue sweep (W2) — the F4/F8 defect | Rosetta + host personas | **✅ SUBSTANTIALLY DONE 2026-07-04** — swept 5/8 (Home·CC·Videos·PercySleep·ZenZachary) + Astro=Atelier; 3 documented-exception tails (SS·CakeHealth·Home-topology) → [[idea_fleet_reseed_w2_residual_tail]]. Mission `completed`. |
 | **P3** | Git-remote setup (Tier-A no-remote) + commit/push-or-document hygiene (W3) | Hestia + host personas | ratified (after P2) |
 | **P4** | Governance-doctrine adoption (W4) — v8.4 consumer-facing set; aDNA.aDNA self-drift first | Rosetta | **deferred to its own separate gate** |
 | **P5** | Final audit + AAR; scorecard at 100% or all exceptions documented | Rosetta + Hestia | after P3 |

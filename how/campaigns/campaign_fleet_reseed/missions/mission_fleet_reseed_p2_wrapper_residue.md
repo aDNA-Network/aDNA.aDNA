@@ -4,8 +4,8 @@ mission_id: mission_fleet_reseed_p2_wrapper_residue
 campaign: campaign_fleet_reseed
 title: "P2 (W2) — federation-wrapper rename-residue sweep (closes F4)"
 created: 2026-07-03
-updated: 2026-07-03
-status: active   # Objective 1 (triage) COMPLETE 2026-07-03; sub-gate pending (execution model + 2 design rulings) — do not auto-advance to the sweep
+updated: 2026-07-04
+status: completed   # W2 SUBSTANTIALLY COMPLETE 2026-07-04 — swept 5/8 F4 vaults + Astro=Atelier; 3 documented-exception tails (SS/CakeHealth/Home-topology) routed → idea_fleet_reseed_w2_residual_tail (SO#4). AAR below (SO#5).
 last_edited_by: agent_rosetta
 persona: rosetta   # owner lead (standard/federation-currency leg); per-vault sweeps adopt the host vault's persona (guest visits)
 co_persona: hestia   # node/inventory leg + Home-side topology close
@@ -149,5 +149,25 @@ ZenZachary) + literatureforge deleted (ZenZachary; SS's pending); Astro = Operat
 + phase P2→P3 fire when the tail lands.
 
 ## AAR (Worked / Didn't / Finding / Change / Follow-up)
-*Fill at `status: completed` (mandatory AAR per Standing Order #5) — after the SS/CakeHealth/Home-topology tail.
-Token budget: est. ≈180–250 kT · actual TBD (W2 spans sessions).*
+- **Worked:** **Triage-first** reshaped F4 before any write — 25 stale dirs / 8 vaults (not ≥10), WebForge a false
+  positive, and the residue was **dir-name-not-content** (22/25 already re-federated), so most sweeps were
+  near-mechanical `git mv` + anchored `sed`. **Per-vault SO1 patience caught two would-be disasters:** Astro's
+  `FROZEN.md` (Operation-Atelier carve-outs → defer, don't rename) and ScienceStanley's **diverged + actively-worked
+  `dev`** (pre-collision skip). **keep/strip §6.5** preserved historical/provenance/daemon-names (`taskforge-bridge`,
+  `campaign_siteforge_iss`, upstream code paths) across 5 swept vaults + a clean literatureforge delete.
+- **Didn't:** Fully close W2 — 3 items genuinely blocked → **deferred as documented exceptions (SO#4)**: SS
+  (concurrent-work), CakeHealth (Berthier ack), Home-topology (best run last). Descriptive-prose currency
+  (CC/ZenZachary sibling-lists, PercySleep producer-name) left as non-breaking follow-on.
+- **Finding:** The Explore **pre-flight was unreliable on filesystem mechanics** (claimed 6 root symlinks that didn't
+  exist; missed `FROZEN.md`) and recon **flaked repeatedly on symlink greps** → **direct per-vault `ls -ld`/`grep`
+  verification is load-bearing**, agent-summarized mechanics are not. A parallel fleet **"C1 one-hop re-point"**
+  effort is already touching some vaults' wrappers (SS/ZenZachary `siteforge→webforge`) — F4 must coordinate, not collide.
+- **Change:** New standing wrapper-sweep step = **verify mechanics on disk per-vault (symlinks · FROZEN · divergence)
+  before any `git mv`**; a diverged/actively-worked branch is a **hard skip → defer to owner**. Codify **B2
+  `canvas_<capability>/`** as the merged-producer wrapper convention (→ Rosetta upstream + Mondrian).
+- **Follow-up:** W2 tail → [[idea_fleet_reseed_w2_residual_tail]]: **SS** (after `dev` reconcile, owner-coordinated) ·
+  **CakeHealth** (Berthier ack) · **Home-topology close** (`build_topology_canvas.py` dict + `topology_relationships.yaml`
+  prune + regen). Then scorecard F4 fully closed + **P3 (W3) gate**. Optional descriptive-prose currency pass.
+
+**Token budget:** est. ≈180–250 kT across ~3 sessions · **actual ≈ upper-band** (triage + 2 sed-mechanical sweep
+sessions; heavy per-vault recon/verification dominated over the edits). Within band (Rule 11; no >2× drift).
