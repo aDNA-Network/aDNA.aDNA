@@ -89,6 +89,19 @@ requires a co-signed memo for the persona/partner vaults regardless of direct-vs
 
 Sequence the Canvas-convention (B) renames alongside Class-A per vault; the ruling sets the target names.
 
+## Sweep session-1 corrections (2026-07-04)
+- **Astro = FROZEN, not a rename target.** Both Astro wrappers (`canvasforge`, `comfyforge`) carry `FROZEN.md`
+  ("Do not edit") — **Operation Atelier** carve-outs (canonical already at `WebForge.aDNA/{canvas,comfyui}/`;
+  deletion-scheduled at that campaign's "Campaign A"; ledger `Astro.aDNA/how/migrations/freeze_ledger_websites_carve.md`).
+  **Reclassify: F4 residue here is owned by Operation Atelier → defer, do not rename/delete.** Astro's rows above are
+  superseded — the effective sweep scope is **7 vaults, not 8** (Astro drops out).
+- **No root symlinks anywhere.** The pre-flight claimed 6 root symlinks (Astro 2, CC 4) + a CC `siteforge→websites`
+  alias; **direct verification found ZERO** across all three direct vaults. No symlink repointing was needed. Treat
+  the pre-flight's symlink/FROZEN claims as unreliable — **verify on disk per vault**.
+- **Persona-vault sweeps must FROZEN-check each wrapper first** (the Astro lesson) before renaming.
+- **Done:** Home ✅ (`a5c2dab`, local-only) · ContextCommons ✅ (`d8538a3`, local). **Deferred:** the 5 persona vaults +
+  literatureforge deletes + Home topology close.
+
 ## Execution notes (for Objectives 3–5)
 - Each rename may have a **paired root-level back-compat symlink** (`<vault>/<old> → how/federation/<old>`, ADR-045) —
   update or remove it in the same commit; the wrapper convention keeps the symlink only during a shim window.

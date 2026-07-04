@@ -86,5 +86,37 @@ External-org veto: none of the 8 are external-org (RareArchive/WilhelmAI/SuperLe
 - Per-vault rename commits (Objectives 3–4, post-sub-gate); Home-side topology regen (Objective 5, local-only).
 - Mission AAR + SITREP; scorecard F4 row closed; campaign phase row P2→done.
 
+## Execution log — W2 sweep session 1 (2026-07-04)
+**Push:** aDNA.aDNA W2 commits (`d25ce20`+`1473a5a`) pushed `857f083..1473a5a` → origin (gitleaks clean). A concurrent
+Berthier memo `2893834` (Jupyter elevation, "Local, no push") had landed on top → **excluded** from the push (pushed
+`1473a5a:main`, not HEAD); stays local per its annotation.
+
+**Hybrid-direct sweep:**
+- **Home.aDNA ✅** (`a5c2dab`, local-only per Rule 4): `siteforge→astro` · `canvasforge→canvas`. No root symlinks.
+  Live-routing self-refs + the 3 CLAUDE.md ISS-skill rows updated; historical (`campaign_siteforge_iss`, ADR-004
+  placement, CanvasForge merge narration) KEPT per §6.5.
+- **Astro.aDNA — SKIPPED (disposition correction).** Both wrappers carry `FROZEN.md` ("Do not edit") — **Operation
+  Atelier** carve-outs (2026-06-25): canonical already at `WebForge.aDNA/{canvas,comfyui}/`, these frozen duplicates
+  scheduled for deletion at that campaign's "Campaign A" (ledger `Astro.aDNA/how/migrations/freeze_ledger_websites_carve.md`).
+  **F4 residue here is already owned by Operation Atelier → defer; do not rename/delete.** (Astro also has NO root
+  symlinks — pre-flight was wrong.)
+- **ContextCommons.aDNA ✅** (`d8538a3`, local, unpushed): `moleculeforge→molecules` · `videoforge→videos` ·
+  `websites→webforge` (+content fix `source_vault: Websites.aDNA→WebForge.aDNA` ×2) · `presentationforge→canvas_deck`
+  (B2; lattice internal paths repointed to `canvas_deck/what/context/`). No root symlinks / no `siteforge` alias
+  (pre-flight was wrong on both). Not frozen. Self-ID + functional refs fixed; historical/upstream KEPT
+  (`MoleculeForge.aDNA`, `moleculeforge_siteforge_p4` adapter, `Videos.aDNA/videoforge/` upstream code path, other
+  vaults' not-yet-renamed `moleculeforge/` wrappers). **Follow-on (non-breaking): descriptive sibling-list prose +
+  footer cross-refs currency in `molecules/CLAUDE.md`.**
+
+**Process learning:** the Explore pre-flight was **unreliable on mechanics** — it claimed 6 root symlinks (Astro 2 +
+CC 4) + a CC `siteforge→websites` alias (actual = 0 across the board) and **missed Astro's FROZEN.md**. Direct
+per-vault verification (SO1 patience) caught both. Trust filesystem probes over agent-summarized mechanics.
+
+**Deferred to W2-close (next session):** persona-vault dispatch memos (ScienceStanley/Videos/ZenZachary/PercySleep;
+CakeHealth already memo'd) — **each must FROZEN-check its wrappers first** (Astro lesson) · literatureforge deletes ·
+Home-side topology close (`build_topology_canvas.py` dict + `topology_relationships.yaml` + regen) · CC descriptive
+follow-on · mission AAR. Sweep commits (Home `a5c2dab`, CC `d8538a3`) + this session's aDNA.aDNA doc commit + Berthier
+`2893834` all UNPUSHED.
+
 ## AAR (Worked / Didn't / Finding / Change / Follow-up)
-*Fill at `status: completed` (mandatory AAR per Standing Order #5). Token budget: est. ≈180–250 kT · actual TBD.*
+*Fill at `status: completed` (mandatory AAR per Standing Order #5). Token budget: est. ≈180–250 kT · actual TBD (W2 spans sessions).*
