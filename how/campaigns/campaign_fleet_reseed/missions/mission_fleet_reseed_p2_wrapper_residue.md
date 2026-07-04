@@ -26,9 +26,9 @@ tags: [mission, fleet_reseed, p2, w2, federation, wrapper, rename_residue, f4, f
    `how/federation/*` wrapper across the F4-flagged vaults; grep `source_vault:` to separate dir-name residue from
    content residue; classify **keep / rename / delete**; resolve the unconfirmed counts + producer mappings. Output:
    `artifacts/fleet_reseed_w2_wrapper_disposition.md` (the disposition table). **Findings summarized in §Triage below.**
-2. **[SUB-GATE] Ratify the execution model + 2 design rulings** (operator). Execution model: direct central sweep /
-   coord-memo dispatch / hybrid. Design ruling B: the Canvas N→1 naming convention. Design ruling C: literatureforge
-   delete-vs-repoint. **The sweep (Objectives 3–5) does not start until this gate clears.**
+2. **[SUB-GATE] Ratify the execution model + 2 design rulings** (operator). — ✅ **RATIFIED 2026-07-03:**
+   (A) execution model = **HYBRID** · (B) Canvas convention = **B2 `canvas_<capability>/`** · (C) literatureforge =
+   **DELETE both**. The sweep (Objectives 3–5) is now unblocked (CakeHealth still pending Berthier's co-sign).
 3. **Sweep Class-A wrappers (1:1 rename).** Per host vault, one vault at a time: `git mv how/federation/<old> <new>`,
    fix the paired root back-compat symlink (ADR-045), fix any content self-references to the old dir name, **one
    per-vault commit**. Class-A names (unambiguous): `comfyforge→comfyui · moleculeforge→molecules · videoforge→videos
@@ -59,21 +59,19 @@ Ground truth from disk (`how/federation/*` across the flagged vaults) + `source_
   `presentationforge` all now federate **Canvas.aDNA** (via different lattices — canvas/comic/presentation). Renaming
   all to `canvas/` collides within ZenZachary (3→1) and ScienceStanley (2→1). Needs a convention ruling.
 
-## Decisions pending (surfaced at the sub-gate)
-- **A — execution model.** Recommend **hybrid**: Rosetta+Hestia sweep the infra/co-owned vaults directly (Home
-  [Hestia, local-only], Astro, ContextCommons); persona-brand/org vaults (ScienceStanley, ZenZachary, Videos,
-  PercySleep, CakeHealth) get a co-signed direct sweep or a coord-memo dispatch per the host persona (Rule 10 /
-  Standing Order 3). CakeHealth (Berthier, partner-clinical) + PercySleep (Hypnos, Org-Graph) are the most
-  Rule-10-sensitive.
-- **B — Canvas N→1 naming convention.** Options: **(B1)** consolidate to a single `canvas/` wrapper per vault with
-  multi-lattice refs (cleanest per ADR-045 `<producer>` convention; but merges distinct capability governance —
-  comic vs deck standing orders); **(B2)** capability-scoped `canvas_comic/` · `canvas_deck/` (preserves scoping,
-  non-standard); **(B3)** leave as documented exception (works today; contradicts F4). This is a Rosetta (standard) +
-  Mondrian (Canvas producer) ruling. *Rosetta lean: B2 — preserves the rich per-capability governance, current
-  content already points to Canvas.aDNA; codify `canvas_<capability>/` as the merged-producer wrapper convention.*
-- **C — literatureforge disposition.** Recommend **delete** (both wrappers never went live; producer wound down; the
-  writing capability is a Canvas *scavenge quarry*, not a live producer). Repoint-to-Canvas only if SS/ZenZachary
-  declare an active writing-composition need — a consumer decision, deferrable.
+## Decisions — RATIFIED at the sub-gate (2026-07-03)
+- **A — execution model = HYBRID.** Rosetta+Hestia directly sweep the 3 low-sensitivity infra/co-owned vaults
+  (Home [Hestia, local-only], Astro, ContextCommons); the 5 persona/brand/org vaults (ScienceStanley, Videos,
+  ZenZachary, PercySleep, CakeHealth) land via co-signed memo/dispatch (Standing Order 3 / Rule 10). CakeHealth
+  (Berthier) + PercySleep (Hypnos) are the most Rule-10-sensitive; the CakeHealth co-sign memo is already sent.
+- **B — Canvas N→1 convention = B2 `canvas_<capability>/`.** Rename the 9 Canvas-federating wrappers to
+  capability-scoped names under the merged producer, confirming each capability from its `source_lattice` at sweep
+  time: **`canvasforge → canvas`** (generic/base) · **`graphicnovelforge → canvas_comic`** (lattice_comic_canvas) ·
+  **`presentationforge → canvas_deck`** (lattice_presentation_canvas). No collisions (ZenZachary: canvas +
+  canvas_comic + canvas_deck; ScienceStanley: canvas_comic + canvas_deck). Codifies the merged-producer wrapper
+  convention — flag to Rosetta's upstream lane + Mondrian (worth an ADR/spec note in `spec_forge_ecosystem`).
+- **C — literatureforge = DELETE both** (ScienceStanley, ZenZachary). Dead producer (LiteratureForge wound down →
+  Archive 2026-06-08), never went live; the writing capability is a Canvas *scavenge quarry*, not a live producer.
 
 ## Method / Guardrails (campaign Standing Orders)
 Per-vault `git pull` + read host CLAUDE.md/STATE.md/coordination before any touch. **Never cross-vault bulk-commit**

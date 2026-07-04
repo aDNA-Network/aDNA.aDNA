@@ -78,11 +78,16 @@ grep across every flagged wrapper. **No vault was modified.** Closes Objective 1
 *None of the 8 are external-org veto vaults (RareArchive/WilhelmAI/SuperLeague absent from F4). Standing Order 3
 requires a co-signed memo for the persona/partner vaults regardless of direct-vs-dispatch.*
 
-## Execution-model recommendation (sub-gate)
-**Hybrid.** Rosetta+Hestia sweep the three low-sensitivity infra/co-owned vaults directly (Home · Astro ·
-ContextCommons); the five persona/brand/org vaults land via a co-signed memo (Standing Order 3) — either a direct
-sweep after ack, or dispatched to the host persona. Sequence the **Canvas-convention ruling (B) BEFORE** any
-Canvas-wrapper sweep, since it sets the target names.
+## Sub-gate rulings — RATIFIED 2026-07-03
+- **Execution model = HYBRID** — Rosetta+Hestia sweep Home · Astro · ContextCommons directly; the 5 persona vaults
+  (ScienceStanley, Videos, ZenZachary, PercySleep, CakeHealth) via co-signed memo/dispatch (CakeHealth co-sign
+  already sent to Berthier).
+- **Canvas convention = B2 `canvas_<capability>/`** — `canvasforge→canvas` · `graphicnovelforge→canvas_comic` ·
+  `presentationforge→canvas_deck` (capability confirmed per-wrapper from `source_lattice` at sweep). No collisions.
+  Codify the merged-producer convention upstream (`spec_forge_ecosystem` note; Rosetta+Mondrian).
+- **literatureforge = DELETE both** (ScienceStanley, ZenZachary) — dead producer, never went live.
+
+Sequence the Canvas-convention (B) renames alongside Class-A per vault; the ruling sets the target names.
 
 ## Execution notes (for Objectives 3–5)
 - Each rename may have a **paired root-level back-compat symlink** (`<vault>/<old> → how/federation/<old>`, ADR-045) —
