@@ -118,5 +118,36 @@ Home-side topology close (`build_topology_canvas.py` dict + `topology_relationsh
 follow-on · mission AAR. Sweep commits (Home `a5c2dab`, CC `d8538a3`) + this session's aDNA.aDNA doc commit + Berthier
 `2893834` all UNPUSHED.
 
+## Execution log — W2 sweep session 2 (2026-07-04) — direct persona sweeps
+Operator ratified **direct-sweep** of the persona vaults (override of Hybrid memo-dispatch).
+
+**Swept + PUSHED (3):**
+- **Videos.aDNA** ✅ `d634a96` → Codeberg: `presentationforge→canvas_deck` (B2); root symlink repointed.
+- **PercySleep.aDNA** ✅ `c33c693` → GitHub (master): `tappinterface→tappprotocol` · `taskforge→operations`. KEPT the
+  `taskforge-bridge` / `skill_taskforge_setup.md` / `taskforge-deploy.md` names (stay until Operations Layer 2) +
+  MANIFEST Oneiros narrative; descriptive `TaskForge.aDNA` producer-prose = follow-on.
+- **ZenZachary.aDNA** ✅ `97840a4` → GitHub: 6 renames (`canvasforge→canvas`, `comfyforge→comfyui`,
+  `graphicnovelforge→canvas_comic`, `presentationforge→canvas_deck`, `speechforge→oration`, `videoforge→videos`) +
+  **`literatureforge` DELETED**; in-vault sibling cross-refs = follow-on. Complements the vault's own C1
+  `siteforge→webforge` (`38c91b4`).
+- (ContextCommons `d8538a3` from session 1 also pushed to GitHub.)
+
+**Deferred (3 tails — W2 NOT fully closed):**
+- **ScienceStanley — SKIPPED (SO1 concurrent-work).** Its `dev` branch is **diverged + actively worked**: local
+  `36b6cfa` already renamed its own `siteforge→webforge` (SS is self-handling F4) + `55241b2` web-canon (Slipway A2);
+  13 unpushed / 4 behind. Sweeping would collide + can't FF-push. **Defer to SS's own session/owner.**
+- **CakeHealth — DEFERRED** (Berthier ack; `tappinterface→tappprotocol`; heads-up memo already sent).
+- **Home-side topology close — DEFERRED** (budget; cleanest run once, after SS + CakeHealth land): update
+  `build_topology_canvas.py` dirname→vault dict + prune `topology_relationships.yaml` + regen `topology.canvas` (local-only).
+
+**Process learning (reinforced):** verify per-vault on disk — recon flaked repeatedly on symlinks (Videos symlink grep
+returned empty, then confirmed present); the SO1 divergence-check caught SS's active concurrent work **before** a collision.
+
+**W2 status: SUBSTANTIALLY COMPLETE** — swept 5/8 real F4 vaults (Home · ContextCommons · Videos · PercySleep ·
+ZenZachary) + literatureforge deleted (ZenZachary; SS's pending); Astro = Operation-Atelier-owned (defer). Tail = SS
+(concurrent-work) + CakeHealth (Berthier) + Home-topology. **Mission stays `active`** — final AAR + scorecard F4 close
++ phase P2→P3 fire when the tail lands.
+
 ## AAR (Worked / Didn't / Finding / Change / Follow-up)
-*Fill at `status: completed` (mandatory AAR per Standing Order #5). Token budget: est. ≈180–250 kT · actual TBD (W2 spans sessions).*
+*Fill at `status: completed` (mandatory AAR per Standing Order #5) — after the SS/CakeHealth/Home-topology tail.
+Token budget: est. ≈180–250 kT · actual TBD (W2 spans sessions).*
