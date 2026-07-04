@@ -6,7 +6,7 @@ owner: stanley
 persona: rosetta   # co-owned with Hestia (Home.aDNA); per-vault touches adopt the host vault's persona
 co_owner: hestia
 status: active
-phase: 0   # P0 audit complete this session; P1 opens at the P0 gate
+phase: 1   # P1 (W1) work complete 2026-07-03 (F3+F6 closed); P2 gate-pending (human gate — do not auto-advance)
 predecessor: campaign_adna_v3_ecosystem_compliance   # superseded stub (v7.0-era); this is its post-launch re-seed successor
 baseline: "v8.4 governance / v2.5 standard (v8.5 = template-only hygiene)"
 created: 2026-07-03
@@ -24,7 +24,7 @@ tags: [campaign, fleet_reseed, ecosystem, compliance, per_vault, rosetta, hestia
 > never run), routed at Champollion **G0-D5** (supersede-and-absorb) and **fired at G7-D2** (2026-07-03).
 > Joint-owned **Rosetta** (aDNA.aDNA — baseline/standard side) + **Hestia** (Home.aDNA — node/inventory side).
 > **P0 audit complete** → `artifacts/fleet_reseed_scorecard.md`. **P0 gate RATIFIED 2026-07-03** (see §P0 Gate below):
-> split-depth (conformance W1–W3 now · governance-doctrine W4 = its own separate later gate) · **HOLD** — W1 opens next session. No vault modified.
+> split-depth (conformance W1–W3 now · governance-doctrine W4 = its own separate later gate). **W1 ✅ WORK COMPLETE 2026-07-03** — F3 (router) + F6 (inventory) closed; Home.aDNA committed local-only (`93310e1`); **P2 gate-pending** (federation-wrapper rename-residue sweep — operator gate before it opens).
 
 ## Goal
 Bring the ecosystem vaults into a uniform **v8.4/v8.5 compliance posture** — or documented exceptions — now that
@@ -53,7 +53,7 @@ dirty trees + large unpushed backlogs (F5; aDNALabs 55 / LatticeProtocol 54 / Op
 | Phase | Focus | Owner lead | Status |
 |---|---|---|---|
 | **P0** | Charter + read-only fleet audit → compliance/version scorecard | Rosetta + Hestia | **✅ complete (this session)** |
-| **P1** | Router resync + Home-inventory refresh (W1) — cheap, mechanical | Hestia | **RATIFIED — opens next session** |
+| **P1** | Router resync + Home-inventory refresh (W1) — cheap, mechanical | Hestia | **✅ WORK COMPLETE 2026-07-03** — F3+F6 closed (`mission_fleet_reseed_p1_router_inventory`); **P2 gate-pending** |
 | **P2** | Federation-wrapper rename-residue sweep (W2) — the F4/F8 defect | Rosetta + host personas | ratified (after P1) |
 | **P3** | Git-remote setup (Tier-A no-remote) + commit/push-or-document hygiene (W3) | Hestia + host personas | ratified (after P2) |
 | **P4** | Governance-doctrine adoption (W4) — v8.4 consumer-facing set; aDNA.aDNA self-drift first | Rosetta | **deferred to its own separate gate** |
