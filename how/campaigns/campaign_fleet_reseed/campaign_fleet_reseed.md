@@ -23,8 +23,8 @@ tags: [campaign, fleet_reseed, ecosystem, compliance, per_vault, rosetta, hestia
 > **OPENED 2026-07-03.** Successor to the superseded `campaign_adna_v3_ecosystem_compliance` (a v7.0-era stub,
 > never run), routed at Champollion **G0-D5** (supersede-and-absorb) and **fired at G7-D2** (2026-07-03).
 > Joint-owned **Rosetta** (aDNA.aDNA — baseline/standard side) + **Hestia** (Home.aDNA — node/inventory side).
-> **P0 audit complete this session** → `artifacts/fleet_reseed_scorecard.md`. Awaiting the **P0 gate** (operator
-> confirms tiers + depth + wave order) before any vault is touched.
+> **P0 audit complete** → `artifacts/fleet_reseed_scorecard.md`. **P0 gate RATIFIED 2026-07-03** (see §P0 Gate below):
+> split-depth (conformance W1–W3 now · governance-doctrine W4 = its own separate later gate) · **HOLD** — W1 opens next session. No vault modified.
 
 ## Goal
 Bring the ecosystem vaults into a uniform **v8.4/v8.5 compliance posture** — or documented exceptions — now that
@@ -53,13 +53,23 @@ dirty trees + large unpushed backlogs (F5; aDNALabs 55 / LatticeProtocol 54 / Op
 | Phase | Focus | Owner lead | Status |
 |---|---|---|---|
 | **P0** | Charter + read-only fleet audit → compliance/version scorecard | Rosetta + Hestia | **✅ complete (this session)** |
-| **P1** | Router resync + Home-inventory refresh (W1) — cheap, mechanical | Hestia | gate-pending |
-| **P2** | Federation-wrapper rename-residue sweep (W2) — the F4/F8 defect | Rosetta + host personas | gate-pending |
-| **P3** | Git-remote setup (Tier-A no-remote) + commit/push-or-document hygiene (W3) | Hestia + host personas | gate-pending |
-| **P4** | Governance-doctrine adoption (W4) — **separate decision**; the v8.4 consumer-facing set; aDNA.aDNA self-drift first | Rosetta | gate-pending (may split to its own gate) |
-| **P5** | Final audit + AAR; scorecard at 100% or all exceptions documented | Rosetta + Hestia | gate-pending |
+| **P1** | Router resync + Home-inventory refresh (W1) — cheap, mechanical | Hestia | **RATIFIED — opens next session** |
+| **P2** | Federation-wrapper rename-residue sweep (W2) — the F4/F8 defect | Rosetta + host personas | ratified (after P1) |
+| **P3** | Git-remote setup (Tier-A no-remote) + commit/push-or-document hygiene (W3) | Hestia + host personas | ratified (after P2) |
+| **P4** | Governance-doctrine adoption (W4) — v8.4 consumer-facing set; aDNA.aDNA self-drift first | Rosetta | **deferred to its own separate gate** |
+| **P5** | Final audit + AAR; scorecard at 100% or all exceptions documented | Rosetta + Hestia | after P3 |
 
-Each phase is a **human gate** (Standing Order #1). The P0 gate finalizes this skeleton (depth, wave order, whether P4 folds in or splits out).
+Each phase is a **human gate** (Standing Order #1). The P0 gate finalized this skeleton — see §P0 Gate.
+
+## P0 Gate — RATIFIED 2026-07-03
+Operator decisions this session:
+1. **Tiers** — A/B/C as proposed in the scorecard (confirmed; borderline Context/TypeScript stay Tier-A active-genesis; zeta Tier-B).
+2. **Depth = SPLIT** — compliance-conformance (W1–W3) is this campaign's near-term work; **governance-doctrine adoption (W4) is deferred to its own separate gate** (needs migration tooling + per-vault judgment; fix aDNA.aDNA self-drift there, dogfood-first).
+3. **Wave order** — W1 → W2 → W3; W4 separate.
+4. **Genesis-stub posture** — Tier-B = light-touch (router + inventory registration) only; full compliance defers to graduation.
+5. **External-org** — RareArchive / WilhelmAI / SuperLeague: light-touch, rename-veto honored (Standing Order 2).
+
+**Pacing = HOLD.** W1 was **not** started this session; it opens next session. **Next action:** author `mission_fleet_reseed_p1_router_inventory` and run W1 (Hestia-led — router resync + `skill_inventory_refresh`; refresh ground truth first, state drifts between sessions).
 
 ## Standing Orders (carried from the v3 predecessor + re-seed additions)
 1. **Per-vault patience.** Every per-vault touch begins with `git pull` + read that vault's CLAUDE.md + STATE.md + `who/coordination/`. Never start a change on stale state (other operators/sessions commit concurrently).

@@ -95,9 +95,11 @@ Split **compliance-conformance** (cheap, high-value, low-risk) from **governance
 - **W4 — governance-doctrine adoption** (F1/F7): a **separate decision** — adopt the v8.4 consumer-facing *doctrine* via a checklist (§7.7 ratification, Standing Rules 5–7, credential-broker snippet, AskUserQuestion discipline, single-writer-lease, executor_tier fields) rather than a version-number migration; scope to Tier-A first; aDNA.aDNA self-drift fixed first (dogfood).
 - **Tier B (genesis stubs):** light-touch only (router + inventory registration); full compliance **deferred until graduation**.
 
-## Gate decisions needed (P0 → P1)
-1. **Tier boundaries** — confirm A/B/C classification (esp. borderline Context/TypeScript/zeta).
-2. **Depth** — compliance-conformance-only (W1–W3) now, with governance-doctrine (W4) as a later separate gate? Or fold W4 in?
-3. **Wave order** — recommend W1 → W2 → W3, W4 separate.
-4. **Genesis-stub posture** — confirm defer-until-graduation for Tier B.
-5. **External-org vaults** (RareArchive, WilhelmAI, SuperLeague) — light-touch + rename-veto honored (carry v3 Standing Order 2).
+## Gate decisions — RATIFIED 2026-07-03
+1. **Tier boundaries** ✅ — A/B/C as proposed (Context/TypeScript stay Tier-A active-genesis; zeta Tier-B).
+2. **Depth = SPLIT** ✅ — compliance-conformance (W1–W3) is near-term; **governance-doctrine (W4) deferred to its own separate gate**.
+3. **Wave order** ✅ — W1 → W2 → W3; W4 separate.
+4. **Genesis-stub posture** ✅ — Tier-B light-touch (router + inventory) only; full compliance defers to graduation.
+5. **External-org** ✅ — RareArchive / WilhelmAI / SuperLeague light-touch, rename-veto honored (Standing Order 2).
+
+**Pacing = HELD** — W1 not started this session; opens next session via `mission_fleet_reseed_p1_router_inventory` (Hestia: router resync + `skill_inventory_refresh`).
