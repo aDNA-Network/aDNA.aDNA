@@ -5,7 +5,7 @@ title: "v8.5 release-cut hygiene — held release-prep package (F-CHM-216 + F-CH
 created: 2026-07-03
 updated: 2026-07-03
 last_edited_by: agent_rosetta
-status: active   # PREP COMPLETE + HELD — the release is the operator's gate (Standing Order #1 / skill_template_release)
+status: completed   # SHIPPED v8.5 2026-07-03 (commit 05be58e / annotated tag v8.5, aDNA-Network/aDNA); see §11 AAR
 owner: stanley
 persona: rosetta
 tags: [mission, v8_5, release_cut_hygiene, skill_template_release, champollion_residual, f_chm_216, f_chm_217]
@@ -152,3 +152,18 @@ immutable, so this ships as **v8.5**. One source de-link is already applied + co
 **Deltas to apply = §2 table** (F-CHM-216 README one-step + the L55 note · F-CHM-217 leak sweep · AGENTS.md→v2.5 · the dead anchor · skill_iii_setup examples · aDNA_overview archival banner). **Row 8 (census) = WITHDRAWN** (27 is correct). **NOT in this release:** the M-C6 ecosystem-spec edits (ride the next `what/specs/` release) and anything Berthier-propagation/feedback (their own cadence) — see `who/coordination/coord_2026_07_03_rosetta_to_berthier_dispositions_mc6_propagation_feedback.md`.
 
 **After fire:** update STATE + memory (v8.5 SHIPPED), then open the **fleet re-seed** (apply the v8.4/v8.5 baseline across the ~19 ecosystem vaults; Rosetta + Hestia).
+
+## §11 — SHIPPED (v8.5, 2026-07-03) + AAR
+
+**Released.** `skill_template_release` v8.5 fired at the operator gate: commit `05be58e` + annotated tag `v8.5` pushed to public `aDNA-Network/aDNA` (fast-forward `4e3bf38..05be58e`; **v8.4 tag untouched**). Governance 8.4→8.5; **standard stays v2.5**. Local `~/aDNA/.adna` synced (`e38a8f0`); `install_truth.json` unchanged (4 install-flow paths verified). Full smoke **GREEN** — skill §f rows 1–7 + §6 H1–H5 re-verified on a fresh clone of the pushed tag; old-URL redirect 200.
+
+**D-1 resolved = de-link** (reversed the prep's ship-5 recommendation at the gate). A recon sweep found the 5 candidate ADRs would drag **21 private dev-graph wikilinks** (campaign / mission / coord / idea-backlog paths) into the public image — a *fresh* F-CHM-217 leak, not a fix. De-linking the 6 clickable citations (→ plain "ADR-NNN"; the ADRs remain readable in the now-public dev graph `aDNA-Network/aDNA.aDNA`) cleared H3 with **zero new files, zero dev/ship divergence**.
+
+**Shipped (13 files):** README one-step install ×2 (F-CHM-216) · governance badge v8.4→v8.5 ×2 · 6 de-linked ADR citations + 1 private-path strip + 1 III-ADR disambiguation (F-CHM-217) · AGENTS spec label →v2.5 · dead anchor · `aDNA_overview` archival banner · `.adna/CLAUDE.md`/CHANGELOG version. Census row 8 "27" withdrawn (correct — no change). Dev copies curried post-fire (`what/docs/AGENTS.md` v2.3→v2.5, `agent_first_guide.md` anchor).
+
+**AAR (Worked / Didn't / Finding / Change / Follow-up):**
+- **Worked:** dry-run-first in a throwaway clone + exact-string, per-edit-asserted edits + empirical H1–H6 greps caught every issue *before* the push; clean fast-forward, all smoke green.
+- **Didn't:** the prep's specifics carried 4 gaps that only live verification caught — D-1's cascade check missed non-ADR wikilink leakage (21), row-6's line-list was incomplete (the file has ~15 dev-vault names + a census table), the root-README badge bump was un-noted, and D-1's own ship-recommendation was unsafe.
+- **Finding:** "cascade-terminal" for shipping a dev artifact must check **all** outbound links (wikilinks + non-ADR targets), not just ADR→ADR; prep line-lists decay against the live file — verify empirically at fire.
+- **Change:** prefer **de-link over ship** for dangling cross-refs when the target is entangled with private content and the dev graph is already public; **defer** a paper-cut (row 6) rather than ship it half-done.
+- **Follow-up (v8.5 queue):** (1) full consistent genericization of `skill_iii_setup.md` incl. the wrapper census table; (2) broader dev-vault-name sweep across other shipped surfaces (`skill_git_remote_setup.md`, `upgrade_v6_to_v7.md`, `example_session_customer_research.md`; historical CHANGELOG/STATE stay). Then: **fleet re-seed** (Rosetta+Hestia).

@@ -15,7 +15,7 @@ token_estimate: ~2500
 
 ## 1. Introduction
 
-For developers using aDNA with Claude Code (or another AI coding agent) from the terminal, without Obsidian. If you already use Obsidian, the [Quick Start](../../README.md#quick-start) covers everything.
+For developers using aDNA with Claude Code (or another AI coding agent) from the terminal, without Obsidian. If you already use Obsidian, the [Getting Started](../../README.md#getting-started) covers everything.
 
 **You'll end with**: a working aDNA vault Claude Code can navigate — session tracking, templates, full execution hierarchy — all from the terminal.
 
