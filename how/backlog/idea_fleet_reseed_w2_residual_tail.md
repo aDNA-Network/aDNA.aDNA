@@ -2,8 +2,8 @@
 type: backlog
 created: 2026-07-04
 updated: 2026-07-04
-status: open
-last_edited_by: agent_rosetta
+status: completed
+last_edited_by: agent_stanley
 campaign: campaign_fleet_reseed
 tags: [backlog, fleet_reseed, w2, f4, residual, deferred, follow_on]
 ---
@@ -36,7 +36,19 @@ mission close. Disposition detail: `how/campaigns/campaign_fleet_reseed/artifact
   `topology.canvas` (`python`).
 - **Trigger:** cleanest run **once**, after items 1 + 2 land (so one clean regen reflects the whole fleet). Home commit local-only.
 
-## On completion of all 3
-Scorecard **F4 → fully closed**; then **P3 (W3)** git-remote + commit/push-hygiene = the next campaign phase-gate
-(gate-pending, SO#1). Optional: fold the non-breaking descriptive-prose currency follow-ons (CC/ZenZachary
-sibling-lists · PercySleep `TaskForge.aDNA` producer-name).
+## ✅ RESOLVED 2026-07-04 — all 3 landed (operator-authorized override)
+The operator authorized overriding the 3 deferral blocks this session; each was re-verified on disk pre-touch.
+1. **ScienceStanley** — `cc62f1d` (→origin/dev, FF). `dev` had reconciled on its own (synced+clean, fast-lane session
+   closed ~2h prior → mechanically safe). Swept the 5 producer forges (canvas_comic/molecules/canvas_deck/oration/videos)
+   + deleted `literatureforge` + updated live-routing rows (CLAUDE.md/MANIFEST.md/HOME.md). **Site-wrapper cluster LEFT for
+   SS** (active `webforge` re-architecture; SO#1) → SS coord note `who/coordination/coord_2026_07_04_rosetta_to_ss_fleet_reseed_f4_sweep.md`.
+2. **CakeHealth** — `30712a9` (→origin/main, FF). `tappinterface→tappprotocol` (dir + root symlink + one active-campaign-doc
+   ref); operator override **superseded the pending Berthier co-sign**; path-scoped (`.obsidian` churn + inbound memo left).
+   The push also cleared Cake's pre-existing ahead-1 Corps fix.
+3. **Home-topology** — `3c59016` (local-only, Rule 4). Ran the deferred pt19 producer-name refresh
+   (SiteForge→Astro · ComfyForge→ComfyUI · SpeechForge→Oration · MoleculeForge→Molecules · ContextCompass→Context)
+   + added canonical wrapper-dir keys so W2-swept consumers' edges aren't dropped. Regen: 108 nodes, **edges 56→64, 0 dangling**.
+
+Scorecard **F4 → FULLY CLOSED**. **P3 (W3)** git-remote + commit/push-hygiene now open (`mission_fleet_reseed_p3_git_remote_hygiene`).
+Follow-ups (non-blocking): SS site-wrapper cluster (SS-owned) · ZenZachary's identical dangling-`siteforge` symlink residue ·
+optional descriptive-prose currency (CC/ZenZachary sibling-lists · PercySleep `TaskForge.aDNA` producer-name).

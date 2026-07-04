@@ -54,8 +54,8 @@ dirty trees + large unpushed backlogs (F5; aDNALabs 55 / LatticeProtocol 54 / Op
 |---|---|---|---|
 | **P0** | Charter + read-only fleet audit → compliance/version scorecard | Rosetta + Hestia | **✅ complete (this session)** |
 | **P1** | Router resync + Home-inventory refresh (W1) — cheap, mechanical | Hestia | **✅ WORK COMPLETE 2026-07-03** — F3+F6 closed (`mission_fleet_reseed_p1_router_inventory`); **P2 gate-pending** |
-| **P2** | Federation-wrapper rename-residue sweep (W2) — the F4/F8 defect | Rosetta + host personas | **✅ SUBSTANTIALLY DONE 2026-07-04** — swept 5/8 (Home·CC·Videos·PercySleep·ZenZachary) + Astro=Atelier; 3 documented-exception tails (SS·CakeHealth·Home-topology) → [[idea_fleet_reseed_w2_residual_tail]]. Mission `completed`. |
-| **P3** | Git-remote setup (Tier-A no-remote) + commit/push-or-document hygiene (W3) | Hestia + host personas | ratified (after P2) |
+| **P2** | Federation-wrapper rename-residue sweep (W2) — the F4/F8 defect | Rosetta + host personas | **✅ COMPLETE 2026-07-04** — swept 5/8 (Home·CC·Videos·PercySleep·ZenZachary) + Astro=Atelier; 3 tails **ALL CLOSED 2026-07-04** (operator override; SS `cc62f1d` · CakeHealth `30712a9` · Home-topology `3c59016`) → [[idea_fleet_reseed_w2_residual_tail]]. **F4 FULLY CLOSED.** |
+| **P3** | Git-remote setup (Tier-A no-remote) + commit/push-or-document hygiene (W3) | Hestia + host personas | **🔓 OPEN 2026-07-04** — P2 tail closed → gate fired; `mission_fleet_reseed_p3_git_remote_hygiene` authored (ComfyUI + WebForge remotes [F2] · fleet F5 push-hygiene). **Outward git actions operator-gated per-vault** (host + visibility, Git.aDNA ADR-013). |
 | **P4** | Governance-doctrine adoption (W4) — v8.4 consumer-facing set; aDNA.aDNA self-drift first | Rosetta | **deferred to its own separate gate** |
 | **P5** | Final audit + AAR; scorecard at 100% or all exceptions documented | Rosetta + Hestia | after P3 |
 
