@@ -42,3 +42,32 @@ The per-vault adoption is: insert a `## Governance Doctrine (v8.4)` consumer sec
 ## Finding → re-scope recommendation
 
 Template-**alignment** (not category) determines recipe-fit — only ~3/14 "Platforms" were cleanly recipe-ready. Recommend re-scoping P2 from category cohorts to: **(a) adopt** template-aligned versioned vaults roster-wide (the surgical recipe above); **(b) tailor** the divergent set (ComfyUI/Terminal/WebForge/Harness/LatticeProtocol/Exchange + peers) as a distinct pass; **(c) defer** genesis vaults to graduation (SO#6). Carried to [[campaign_w4_governance_doctrine]] as the P2 shape decision.
+
+## Re-scope RATIFIED + push status (operator, 2026-07-05)
+
+- **P2 re-scoped: category cohorts → ALIGNMENT.** Sweep template-aligned versioned vaults roster-wide (the validated surgical recipe); tailor the divergent set as a separate pass; defer genesis (SO#6). Supersedes the Cohort-2/Cohort-3 category plan.
+- **Push status (operator "push all"):** aDNA.aDNA `47be7fc` ✅ origin (public) · AWSBootstrap `5413f73` ✅ origin · VAAS `fcb0d0c` ✅ origin (both + a benign inbound-intake commit) · **Canvas `3e95533` ⚠ BLOCKED** — mesh-only remote `wga-mesh` (10.43.0.8) unreachable; stays LOCAL, syncs when the mesh host is up (or when Canvas gains a GitHub remote). Documented exception, not a failure.
+
+## Roster-wide alignment sweep — supersedes Cohort 2/3 (2026-07-05)
+
+Pre-flight (21 remaining Tier-A, excl. the 3 done · memo-set RareArchive/WilhelmAI · diverged ScienceStanley): **6 template-aligned** (all 3 standard sections + a `version`) — the other 15 carry product-versioning + custom structure (tailor) or are genesis/named-project.
+
+**ADOPTED (5 project-vault; surgical CLAUDE.md-only; LOCAL, push operator-gated):**
+
+| Vault | Commit | ver | note |
+|-------|--------|-----|------|
+| ContextCommons | `ce79d59` | 7.1 | |
+| Network | `d457650` | 6.0 | Local-no-push (SO-9, First-Light integrity) |
+| Oration | `63e214e` | 1.0 | |
+| Spacemacs | `f456624` | 6.0 | `adna_validate` Zero-drift (no pre-existing drift) |
+| ZenZachary | `30f01d4` | 7.0 | |
+
+**Home** (node vault, aligned) → **DEFER to a node-vault-specific pass** — it *is* the credential broker, so it takes the broker-home variant + node applicability, not the project subset.
+
+**TAILOR/DEFER (15, not template-aligned — product-versioned + custom structure):** aDNALabs · Astro · CakeHealth · Git · III · LAVentureGraph · Molecules · Operations · PercySleep · SuperLeague · TappProtocol · TypeScript · Videos · VisualDNA · wga.
+
+**NOTICED (out of P2 scope → vault-hygiene follow-up):** 4 adopted vaults (ContextCommons / Network / Oration / ZenZachary) carry **pre-existing template/skills count drift** in their own MANIFEST/README (e.g. "says 22 templates, actual 34") — orthogonal to the doctrine edit (Spacemacs, drift-free, validated Zero-drift). Flag for each vault's own `adna_validate`-hygiene pass; **NOT fixed here**.
+
+## P2 running total (2026-07-05)
+
+**9 vaults carry the v8.4 doctrine:** aDNA.aDNA (dogfood, pushed) + **8 consumers** — AWSBootstrap · VAAS (pushed) · Canvas (local, mesh-blocked) · ContextCommons · Network · Oration · Spacemacs · ZenZachary (local). **Remaining:** the tailor set (~21, incl. Cohort-1 divergent) + genesis defers + Home (node-pass) + the 2 Wilhelm memos + ScienceStanley (diverged). Alignment sweep of template-aligned vaults is **complete** — what's left needs tailoring, memos, or genesis-graduation.

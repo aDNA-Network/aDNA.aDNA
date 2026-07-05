@@ -21,6 +21,8 @@ until the operator green-lights the rollout's **first cross-vault writes** (Coho
 are settled; the memo set is **2** (RareArchive, WilhelmAI). Rolls the proven instrument [[v8_4_adoption_checklist]] —
 validated on aDNA.aDNA at P1 — across the **38 remaining Tier-A vaults**.
 
+> **RE-SCOPED to alignment 2026-07-05** (operator) + **alignment sweep COMPLETE** — **8 consumers adopted** (Cohort-1: AWSBootstrap·Canvas·VAAS; roster-sweep: ContextCommons·Network·Oration·Spacemacs·ZenZachary). Template-aligned vaults are done; remainder = tailor set + genesis defers + Home node-pass + 2 Wilhelm memos + ScienceStanley. Full record: [[p2_adoption_ledger]].
+
 ## Goal
 
 Every Tier-A vault carries the project-vault subset of the v8.4 consumer-facing doctrine (or a documented exception).

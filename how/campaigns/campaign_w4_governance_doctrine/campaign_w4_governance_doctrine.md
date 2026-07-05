@@ -97,7 +97,7 @@ scorecard. **Operator gate before P2.**
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 2 | [[mission_w4_p2_tier_a_rollout]] — Tier-A cohort adoption (batched, ~3 cohorts) | 2-3 | M1, DP1 | open (DP1 ratified 2026-07-05); rollout = next gate |
+| 2 | [[mission_w4_p2_tier_a_rollout]] — Tier-A rollout (**re-scoped to alignment** 2026-07-05) | 2-3 | M1, DP1 | ◐ in-progress — Cohort-1 pilot: 3 adopted+pushed ([[p2_adoption_ledger]]); now sweeping template-aligned vaults roster-wide |
 
 **Phase exit gate**: every Tier-A vault has the checklist applied or a documented exception; per-vault commits local
 (pushes operator-gated, SO-9). **Operator gate before P3.** Cross-vault execution model decided at the P1→P2 gate (DP1).
