@@ -97,7 +97,7 @@ scorecard. **Operator gate before P2.**
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 2 | [[mission_w4_p2_tier_a_rollout]] — Tier-A cohort adoption (batched, ~3 cohorts) | 2-3 | M1, DP1 | proposed (teed up; DP1 pending) |
+| 2 | [[mission_w4_p2_tier_a_rollout]] — Tier-A cohort adoption (batched, ~3 cohorts) | 2-3 | M1, DP1 | open (DP1 ratified 2026-07-05); rollout = next gate |
 
 **Phase exit gate**: every Tier-A vault has the checklist applied or a documented exception; per-vault commits local
 (pushes operator-gated, SO-9). **Operator gate before P3.** Cross-vault execution model decided at the P1→P2 gate (DP1).
@@ -115,7 +115,7 @@ scorecard. **Operator gate before P2.**
 
 | # | When | Decision | Status |
 |---|------|----------|--------|
-| 1 | P1→P2 gate | Approve the dogfood proof **and** choose the P2 cross-vault execution model: (a) guest-visit, (b) coord-memo, (c) hybrid. **Framed + recommended in [[dp1_execution_model]] — rec: (c) hybrid, direct-by-default** (per-vault classification + cohorts ready). | pending (teed up) |
+| 1 | P1→P2 gate | Approve the dogfood proof **and** choose the P2 cross-vault execution model: (a) guest-visit, (b) coord-memo, (c) hybrid. **[[dp1_execution_model]] — rec (c) hybrid, direct-by-default.** | ✅ RATIFIED 2026-07-05 (Option C) |
 | 2 | P2→P3 gate | Approve Tier-A rollout complete (all applied or documented-exception). | pending |
 | 3 | During P3 | Rule on F1: build v6→v8 migration tooling, or checklist-only. Rule on gov-versioning for project-local-versioned vaults. | pending |
 

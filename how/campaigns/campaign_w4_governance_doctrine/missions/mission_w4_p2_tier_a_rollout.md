@@ -16,9 +16,10 @@ tags: [mission, w4, concord, p2, tier_a, rollout, proposed, gated]
 
 # Mission — W4 P2: Tier-A rollout (adopt the v8.4 doctrine across the fleet)
 
-**GATED — `status: proposed`.** Does not open until the operator ratifies **[[dp1_execution_model]]** (the cross-vault
-execution model; recommended: Option C — hybrid, direct-by-default). Rolls the proven instrument
-[[v8_4_adoption_checklist]] — validated on aDNA.aDNA at P1 — across the **38 remaining Tier-A vaults**.
+**DP1 RATIFIED 2026-07-05 — Option C (hybrid, direct-by-default)** ([[dp1_execution_model]]). Stays `status: proposed`
+until the operator green-lights the rollout's **first cross-vault writes** (Cohort 1). The model + per-vault classification
+are settled; the memo set is **2** (RareArchive, WilhelmAI). Rolls the proven instrument [[v8_4_adoption_checklist]] —
+validated on aDNA.aDNA at P1 — across the **38 remaining Tier-A vaults**.
 
 ## Goal
 
