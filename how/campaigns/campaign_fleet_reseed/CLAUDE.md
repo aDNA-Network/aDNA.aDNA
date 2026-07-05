@@ -2,14 +2,14 @@
 
 > **OPENED 2026-07-03.** Post-launch fleet-compliance re-seed; successor to the superseded
 > `campaign_adna_v3_ecosystem_compliance`. Joint **Rosetta** (aDNA.aDNA) + **Hestia** (Home.aDNA).
-> **P0 audit complete** (`artifacts/fleet_reseed_scorecard.md`); awaiting the P0 gate before P1.
+> **✅ CLOSED 2026-07-05 at P5** — W1–W3 conformance delivered (F2–F6 closed; F1/F7/F8 documented → W4/upstream); AAR `artifacts/aar_fleet_reseed.md`. **P4/W4 governance-doctrine deferred to its own gate** (readiness: `how/backlog/idea_fleet_reseed_w4_governance_doctrine.md`).
 
 ## Campaign Identity
 | Field | Value |
 |---|---|
 | Campaign | `campaign_fleet_reseed` |
 | Owners | Rosetta (baseline/standard) + Hestia (node/inventory) |
-| Status | **active** — P0 done, P1 gate-pending |
+| Status | **completed** 2026-07-05 — W1–W3 conformance arc delivered; P5 closed the campaign (AAR `artifacts/aar_fleet_reseed.md`); P4/W4 deferred to its own gate |
 | Baseline | v8.4 governance / v2.5 standard (v8.5 = template-only) |
 | Predecessor | `campaign_adna_v3_ecosystem_compliance` (superseded stub) |
 

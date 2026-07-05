@@ -5,12 +5,12 @@ title: "Fleet Re-Seed — bring the ecosystem vaults to a uniform v8.4/v8.5 comp
 owner: stanley
 persona: rosetta   # co-owned with Hestia (Home.aDNA); per-vault touches adopt the host vault's persona
 co_owner: hestia
-status: active
-phase: 2   # P2 (W2) SUBSTANTIALLY DONE 2026-07-04 (mission completed) — swept 5/8 F4 vaults + Astro=Atelier; 3 documented-exception tails routed → idea_fleet_reseed_w2_residual_tail. P3 (W3) = next gate, gate-pending (SO#1). W1 closed+pushed; W2 sweeps pushed.
+status: completed
+phase: 5   # ✅ COMPLETE 2026-07-05 — P5 final audit + AAR closed the campaign. W1–W3 conformance arc delivered (F2–F6 closed; F1/F7/F8 documented exceptions → W4/upstream). P4/W4 governance-doctrine DEFERRED to its own separate gate (documented, not skipped). AAR: artifacts/aar_fleet_reseed.md.
 predecessor: campaign_adna_v3_ecosystem_compliance   # superseded stub (v7.0-era); this is its post-launch re-seed successor
 baseline: "v8.4 governance / v2.5 standard (v8.5 = template-only hygiene)"
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 last_edited_by: agent_rosetta
 routed_by:
   - how/gates/champollion_p0_gate.output.md   # D5 supersede-and-absorb
@@ -56,8 +56,8 @@ dirty trees + large unpushed backlogs (F5; aDNALabs 55 / LatticeProtocol 54 / Op
 | **P1** | Router resync + Home-inventory refresh (W1) — cheap, mechanical | Hestia | **✅ WORK COMPLETE 2026-07-03** — F3+F6 closed (`mission_fleet_reseed_p1_router_inventory`); **P2 gate-pending** |
 | **P2** | Federation-wrapper rename-residue sweep (W2) — the F4/F8 defect | Rosetta + host personas | **✅ COMPLETE 2026-07-04** — swept 5/8 (Home·CC·Videos·PercySleep·ZenZachary) + Astro=Atelier; 3 tails **ALL CLOSED 2026-07-04** (operator override; SS `cc62f1d` · CakeHealth `30712a9` · Home-topology `3c59016`) → [[idea_fleet_reseed_w2_residual_tail]]. **F4 FULLY CLOSED.** |
 | **P3** | Git-remote setup (Tier-A no-remote) + commit/push-or-document hygiene (W3) | Hestia + host personas | **✅ COMPLETE 2026-07-05** — F2: WebForge→Codeberg-private (`codeberg.org/aDNA-Network/WebForge.aDNA`; gitleaks gate caught+allowlisted 2 synthetic fixtures) · ComfyUI reclassified **Class-L exception** (not a gap). F5: pushed 1 (Molecules `51ad306`) · held 6 (SO-9 / explicit-no-push) · synced 3. **F2 + F5 CLOSED** (ledger [[fleet_reseed_w3_hygiene_ledger]]). Mission [[mission_fleet_reseed_p3_git_remote_hygiene]] `completed` w/ AAR. |
-| **P4** | Governance-doctrine adoption (W4) — v8.4 consumer-facing set; aDNA.aDNA self-drift first | Rosetta | **deferred to its own separate gate** |
-| **P5** | Final audit + AAR; scorecard at 100% or all exceptions documented | Rosetta + Hestia | **gate-pending (P3 done 2026-07-05)** — the W1–W3 conformance arc is complete (F3/F6 · F4 · F2/F5 all closed); next = P5 final audit **or** the separate **W4** governance-doctrine gate (operator picks) |
+| **P4** | Governance-doctrine adoption (W4) — v8.4 consumer-facing set; aDNA.aDNA self-drift first | Rosetta | **deferred to its own separate gate** — carries F1 + F7 + the aDNA.aDNA-self-drift dogfood prerequisite; readiness stub [[idea_fleet_reseed_w4_governance_doctrine]] (a separate operator-gated future initiative, **not** reopenable Fleet-Re-Seed work) |
+| **P5** | Final audit + AAR; scorecard at 100% or all exceptions documented | Rosetta + Hestia | **✅ COMPLETE 2026-07-05** — operator picked P5 at the P3-close gate. F6 verified-closed (inventory 68=68); node health cross-check GREEN (S1/S6-S7/S9); scorecard finalized (F2–F6 closed · F1/F7/F8 documented → W4/upstream); campaign AAR [[aar_fleet_reseed]]. **Campaign `completed`.** |
 
 Each phase is a **human gate** (Standing Order #1). The P0 gate finalized this skeleton — see §P0 Gate.
 
@@ -89,4 +89,17 @@ Operator decisions this session:
 **Rosetta** (aDNA.aDNA) — baseline definition + per-vault adoption guidance + the standard-side sweeps (federation-wrapper currency, doctrine checklist). **Hestia** (Home.aDNA) — vault discovery + `inventory_vaults.yaml` currency + `skill_node_health_check` + per-vault adoption tracking + router resync. Per-vault sessions are guest visits governed by the host vault's CLAUDE.md + persona.
 
 ## Completion Summary / AAR
-*Fill at `status: completed` (mandatory AAR per Standing Order #5).*
+
+**✅ CLOSED 2026-07-05 (P5).** Delivered the **W1–W3 conformance arc**: F3 (router) · F6 (inventory) · F4 (wrapper
+rename-residue) · F2 (git-remote) · F5 (push-hygiene) — **5 of 8 findings CLOSED**. F1/F7/F8 are documented
+carried-forward exceptions, each routed under an owner (F1+F7 → the separate **W4** gate; F8's template classes →
+Rosetta's release lane). **DoD "100% or all exceptions documented" — MET.** Node health cross-check GREEN (S1 6/6 ·
+YAML `safe_load` clean · S9 inventory-vs-disk 68=68, set-difference empty). **P4/W4 governance-doctrine remains deferred
+to its own separate gate** (documented, not skipped — the P0 split-depth ratification).
+
+**Full campaign AAR:** [[aar_fleet_reseed]] (P0→P5 arc · findings scorecard · worked/didn't · lessons · follow-ups).
+**Successor:** W4 governance-doctrine — a separate operator-gated initiative; readiness in
+[[idea_fleet_reseed_w4_governance_doctrine]].
+
+**Marquee lesson:** the P0 scorecard aged between every phase (3 instances) — *re-verify live STATE at execution; the
+audit is a starting map, not ground truth.*
