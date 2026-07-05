@@ -37,7 +37,7 @@ Governance *posture* coherent across the fleet; per-vault commits local; pushes 
 
 | # | Objective | Method | Status |
 |---|-----------|--------|--------|
-| 1 | **Cohort 1 — Platforms** (~14) | Direct guest-visit: per vault `git pull` + read host CLAUDE.md/STATE (SO#1) → apply project-vault 5-item subset per [[v8_4_adoption_checklist]] → per-vault local commit (SO#5). | proposed |
+| 1 | **Cohort 1 — Platforms** (~14) | Direct guest-visit: per vault `git pull` + read host CLAUDE.md/STATE (SO#1) → apply project-vault 5-item subset per [[v8_4_adoption_checklist]] → per-vault local commit (SO#5). | ◐ pilot done 2026-07-05 — **3 adopted** (AWSBootstrap·Canvas·VAAS) / **11 deferred** (6 tailor·3 genesis·2 WIP) → [[p2_adoption_ledger]] |
 | 2 | **Cohort 2 — Forges + Frameworks** (~8) | Direct guest-visit (as C1). | proposed |
 | 3 | **Cohort 3 — Node/Org/infra** (~10) | Direct; **Home = node-vault applicability** (broader subset; it *is* the broker); **ScienceStanley/PercySleep = verify-first** (divergence check → memo/defer if diverged). | proposed |
 | 4 | **Coord-memo set** (5) | Stage co-signed adoption memos (SO#3) to **RareArchive · WilhelmAI · TappProtocol · SuperLeague · CakeHealth** — owner applies. | proposed |
