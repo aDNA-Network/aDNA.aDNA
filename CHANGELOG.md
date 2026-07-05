@@ -56,6 +56,28 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ---
 
+## [v8.4] — 2026-07-05
+
+Governance **6.0 → 8.4** — adopted the **v8.4 consumer-facing doctrine** in this vault's own `CLAUDE.md` as the dogfood
+prerequisite of **Operation Concord** (`campaign_w4_governance_doctrine` P1), closing Fleet Re-Seed self-drift finding
+**F7** (the standard's own dev vault had lagged at 6.0 while shipping v8.5). This is a **doctrine-checklist adoption, not a
+sequential 6→7→8 migration** — no v6→v8 migration tooling exists (finding F1); the jump reflects carrying the v8.4 doctrine
+set, not stepping through intermediate versions. Standard track unchanged (stays v2.5).
+
+### Added
+- `## Governance Doctrine (v8.4)` section in `CLAUDE.md` — §7.7 decision-ratification discipline · credential-routing
+  (broker = Home.aDNA) · AskUserQuestion operator-decision-surfacing · single-writer-lease · model-tiered `executor_tier`.
+- Standing Order 11 extended with the `executor_tier` field (planned model class alongside the token budget).
+- Applicability ruling recorded: at a project vault, adopt those five items, *reference* node-level agentic-sudo, and drop
+  workspace-router-only router-row discipline (the reusable finding for the Tier-A rollout).
+- Reusable instrument `how/campaigns/campaign_w4_governance_doctrine/artifacts/v8_4_adoption_checklist.md` (per-vault
+  checklist + applicability model), consumed by Concord P2.
+
+### Known follow-up
+- A local `template_ratification_record` (shipped in the v8.4 set in `.adna/`) is not yet mirrored into this vault — tracked in the Concord P1 AAR.
+
+---
+
 ## [v6.0] — 2026-04-03
 
 ### Changed

@@ -1,13 +1,13 @@
 ---
 type: governance
-version: "6.0"
-token_estimate: ~4500
-updated: 2026-06-29
+version: "8.4"
+token_estimate: ~5200
+updated: 2026-07-05
 last_edited_by: agent_rosetta
 ---
 
 # CLAUDE.md — aDNA.aDNA
-<!-- v6.0 | 2026-04-13 | Operation Rosetta -->
+<!-- v8.4 | 2026-07-05 | Operation Rosetta · v8.4 consumer-facing doctrine adopted at W4 Concord P1 (was v6.0) -->
 
 ## Identity & Personality
 
@@ -148,7 +148,58 @@ These rules apply to every session, mission, and campaign.
 8. **Self-reference is mandatory.** When explaining an aDNA concept, the explanation must reference the vault structure itself as a working example. The reader should be able to look at the file's own directory, frontmatter, or governance chain and see the concept in action.
 9. **Upstream spec is source of truth.** For any normative claim about aDNA, cite the upstream `adna_standard.md` (github.com/aDNA-Network/aDNA). This vault demonstrates and explains; the spec defines. Never contradict the spec.
 10. **Cross-link aggressively.** Every content file must link to at least 2 related files in the vault via wikilinks. The graph view should be a connected web, not isolated islands. Orphan files are incomplete files.
-11. **Per-mission context budget is mandatory.** Every mission spec declares `token_budget_estimated` per the content-load formula (`session_cost ≈ transition_tax + Σ per_objective_work`; thresholds < 50 / 50-80 / 80-200 / ≥ 200 kT). Sessions log `token_budget_actual` (rough is fine). AARs report estimate-vs-actual delta in content-load units; **API-billing companion units may be reported alongside per ADR-016 Clause C** (ratified at M2.3 S2 2026-05-20: `session_cost_api_billing ≈ (328 K + turns × 1 K cache_creation) + (4.1 M + turns × 126 K cache_read)`; 49-session corpus regression fit). Drift > 2× on either metric triggers a retrospective. ADR-016 governs.
+11. **Per-mission context budget is mandatory.** Every mission spec declares `token_budget_estimated` per the content-load formula (`session_cost ≈ transition_tax + Σ per_objective_work`; thresholds < 50 / 50-80 / 80-200 / ≥ 200 kT). Sessions log `token_budget_actual` (rough is fine). AARs report estimate-vs-actual delta in content-load units; **API-billing companion units may be reported alongside per ADR-016 Clause C** (ratified at M2.3 S2 2026-05-20: `session_cost_api_billing ≈ (328 K + turns × 1 K cache_creation) + (4.1 M + turns × 126 K cache_read)`; 49-session corpus regression fit). Drift > 2× on either metric triggers a retrospective. ADR-016 governs. Each mission also declares an **`executor_tier`** (`fable | opus | sonnet`) — the planned model class alongside the token budget — per the **Governance Doctrine (v8.4)** section below.
+
+## Governance Doctrine (v8.4)
+
+> **Adopted at W4 Operation Concord P1, 2026-07-05** ([[campaign_w4_governance_doctrine]]) — this vault (the standard's own
+> dev vault) now runs the **v8.4 consumer-facing doctrine** it ships, closing the self-drift gap it had while still shipping
+> v8.5 (Fleet Re-Seed finding **F7**). The canonical per-vault instrument is
+> [[v8_4_adoption_checklist]]. **Applicability ruling** (the finding the dogfood surfaced): at a *project vault* like this
+> one, adopt the five items below; *reference* node-level **agentic sudo** (`how/skills/skill_agentic_sudo.md`); and **drop
+> router-row discipline** — it is workspace-router-only and governs `~/aDNA/CLAUDE.md`, not a project vault. Plain version:
+> not every rule in the standard belongs at every altitude, so we adopt the ones that fit a project vault and point at the rest.
+
+### Decision Ratification (§7.7)
+
+Agents **author** decisions; operators **ratify** them. No ADR or load-bearing decision is `accepted` on an agent's say-so —
+it stays `proposed` until the operator signs, and carries a 4-field ratification block (**decision · ratified-by · date ·
+status**). ADRs live in `what/decisions/`. *(Why it matters: this standard is authored by agents but owned by humans;
+ratification is where that ownership is exercised — the governance echo of Standing Order 1, "phase gates are human gates."
+The v8.4 set ships a `template_ratification_record` instrument upstream in `.adna/`; a local copy is a tracked follow-up.)*
+
+### Credential Routing (broker = Home.aDNA)
+
+Credentials are brokered by **Home.aDNA** (Hestia) on a Keychain-primary + 1Password-backup substrate — **never inlined**.
+Reach a secret by **name → environment variable** (`GITHUB_TOKEN`, `CODEBERG_TOKEN`, `VERCEL_TOKEN`, …); the token value
+**never transits the conversation** (ADR-007). This vault records credential **names only**; the broker holds the secrets.
+Index: `Home.aDNA/what/inventory/inventory_credentials.md`; this is the consumer side of the workspace-root **Standing Rule 6**.
+
+### Operator Decision Surfacing (AskUserQuestion)
+
+When a decision is genuinely the operator's — one you cannot settle from the request, the vault, or a sensible default —
+**surface it; don't guess, and don't bury it.** Use `AskUserQuestion` for a bounded choice (offer a default, allow escape,
+record the resolution in the session/mission). For a decision richer than that tool can carry (multi-field input, a
+phase-exit or ratification gate), render a standalone operator gate via `how/skills/skill_create_iss.md`. Decisions that a
+convention *does* settle — just proceed and note the choice; surfacing everything is its own failure mode.
+
+### Single-Writer Lease
+
+One writer at a time for any **shared config or high-collision entity**. Read the current content and check `updated`
+immediately before writing; stamp `updated` + `last_edited_by` on write (see File Safety, above). This is **mandatory, not
+advisory**, for the `inventory`, `identity`, and credential entity types, where two concurrent writers silently corrupt node
+state. Concurrent agents coordinate through the session lock in `how/sessions/active/` — a non-empty peer session means *do
+not co-write its declared files*.
+
+### Model-Tiered Execution (`executor_tier`)
+
+Every mission/plan declares a planned **`executor_tier: fable | opus | sonnet`** — the model class the work is routed to —
+alongside its `token_budget_estimated` (Standing Order 11). Governance-authoring and judgment-heavy work runs `opus`;
+mechanical sweeps drop to `sonnet`/`fable`. Doctrine: `what/patterns/pattern_model_tiered_campaign_execution.md` (term:
+[[glossary_model_tiered_execution]]). *(Self-reference, Standing Order 8: this campaign's own P1 mission,
+[[mission_w4_p1_dogfood_self_drift]], is the first vault mission to actually carry the field.)*
+
+---
 
 ## Git Coordination
 
@@ -475,4 +526,4 @@ When you notice one, mention it to the user at a **natural pause point** (end of
 The `how/quests/` directory contains structured validation experiments ("side-quests") that community members can run with spare agent tokens. At natural session-end points, if the user has spare context budget, you may briefly mention available quests. Never interrupt active work for this. See `what/docs/side_quest_guide.md` for the full participation guide and `how/quests/AGENTS.md` for directory structure.
 
 ---
-<!-- v6.0 | 2026-04-13 | aDNA.aDNA — Operation Rosetta -->
+<!-- v8.4 | 2026-07-05 | aDNA.aDNA — Operation Rosetta · v8.4 adopted at W4 Concord P1 -->

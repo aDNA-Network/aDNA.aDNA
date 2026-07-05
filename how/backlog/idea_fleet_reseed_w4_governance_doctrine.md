@@ -2,12 +2,17 @@
 type: idea
 created: 2026-07-05
 updated: 2026-07-05
-status: proposed
+status: promoted
 last_edited_by: agent_rosetta
-tags: [idea, fleet_reseed, w4, governance_doctrine, successor, deferred_gate, f1, f7]
+tags: [idea, fleet_reseed, w4, governance_doctrine, successor, deferred_gate, f1, f7, promoted]
 ---
 
 # Idea — Fleet Re-Seed W4: governance-doctrine adoption (the deferred gate)
+
+> **PROMOTED 2026-07-05 → `campaign_w4_governance_doctrine` (Operation Concord).** Opened at full scope by operator
+> decision (AskUserQuestion); P0 (charter) + P1 (dogfood — aDNA.aDNA gov v6.0→8.4, **F7 CLOSED**) executed the same day.
+> This stub is retained as the readiness record (Standing Order 6 — archive, never delete). Live campaign:
+> [[campaign_w4_governance_doctrine]].
 
 **Successor to `campaign_fleet_reseed`** (closed at P5 2026-07-05). The P0 gate split the fleet-compliance work
 **split-depth**: cheap conformance (W1–W3, delivered) vs. **W4 governance-doctrine adoption** — deferred to *its own
