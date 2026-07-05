@@ -1,13 +1,14 @@
 ---
 type: mission
 created: 2026-07-04
-updated: 2026-07-04
-status: active
+updated: 2026-07-05
+status: completed
 last_edited_by: agent_stanley
 campaign: campaign_fleet_reseed
 phase: P3
 wave: W3
 token_budget_estimated: 150   # kT; ~2 sessions (80–200 band, Standing Rule 11)
+token_budget_actual: 95        # kT (rough) — single session; scope shrank (1 remote + 1 push, not 2 + 6)
 tags: [mission, fleet_reseed, p3, w3, f2, f5, git-remote, push-hygiene]
 ---
 
@@ -58,3 +59,23 @@ Campaign SO#1–7 + workspace Rules. Outward = confirm. One path-scoped commit p
 - An F5 hygiene ledger: per-hotspot **pushed** / **held-with-reason**.
 - Mission AAR (SO#5) + scorecard **F2/F5** rows closed + charter phase **P3 → done** → then **P5** (final audit / AAR)
   or the separate **W4** governance-doctrine gate.
+
+## AAR (2026-07-05, SO#5)
+- **Worked:** Grounding the two outward decisions in each vault's *own* posture (not the scorecard) before recommending
+  paid off twice — ComfyUI's STATE reclassified it out of the "gap" set (Class-L), and WebForge's CLAUDE.md + the fleet
+  norm (Videos/Molecules) made Codeberg-private the obvious, self-consistent call. The ADR-011 full-history gate did
+  exactly its job: it caught 2 `github-pat` findings on WebForge's first push. The `useDefault=true` allowlist + the
+  *proof test* (a private key outside the corpus still trips) turned a scary finding into a clean, non-bypassing fix.
+- **Didn't:** Push Network/Context — live pre-flight exposed an SO-9 "operator-gated / local" posture the P0 scorecard
+  (and the recon agent's keyword scan) had missed, so the "3 pushes" became **1**. Also deferred the Home remote-registry
+  registration + the ComfyUI mesh-drift (both routed, non-blocking).
+- **Finding:** **The scorecard aged.** By W3, F2's "2 gaps" was really **1** (ComfyUI already Class-L) and F5's "6
+  unpushed" was **1 pushable + 6 held/synced** (III had drained to 0; Network/Context were SO-9-held). *Re-verify each
+  target's live STATE at execution — the audit is a starting map, not ground truth.* And a keyword scan ("do not push")
+  misses real holds phrased "push operator-gated" — read the STATE, don't just grep it.
+- **Change:** Two standing habits reinforced: (1) run the ADR-011 **full-history** gitleaks scan *before* proposing a
+  first-push host, so fixture-vs-secret triage happens up front; (2) for any cross-vault push, **read the owner's STATE
+  push-posture line** as the gate of record, over any prior classification.
+- **Follow-up:** WebForge `origin` → Home remote registry (Hestia); ComfyUI mesh-drift → Hopper/Venus; the 6 F5 holds
+  unblock on their own campaigns' gates. **Next campaign step = P5 final audit / AAR** (or the separate **W4**
+  governance-doctrine gate) — both operator-gated. Budget: est 150 kT / actual ~95 kT (−37%; scope shrank, within Rule 11).
