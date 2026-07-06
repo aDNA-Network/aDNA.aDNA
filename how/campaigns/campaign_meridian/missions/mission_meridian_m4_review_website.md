@@ -2,7 +2,7 @@
 type: mission
 mission_id: mission_meridian_m4_review_website
 campaign: campaign_meridian
-status: active
+status: completed
 executor_tier: opus
 token_budget_estimated: 90
 created: 2026-07-06
@@ -31,4 +31,10 @@ Bounded-comprehensive review of `site/` (adna.network source) ahead of the P3 im
 
 ## AAR
 
-*(fill at close)*
+- **Worked**: git-log + python3 enumeration cross-checked source truth vs rendered claims across all 6 areas; the full A-11/A-12 approved-wording chain (LG DP3 → M4 remeasure → live source) reconstructed — both verdicts: IMPLEMENTED-but-undeployed.
+- **Didn't**: Exact post-regen vault count (54→~68) not determinable without running `sync:vaults` — correctly left to M7 rather than breaking read-only.
+- **Finding (marquee)**: A latent RED gate sits in the tree — G20's manifest expects v2.3 while `standard.ts` is v2.5; the 304/304 green predates the bump (F-MER-B1). Gates cannot certify the deploy until M7 fixes the fixture.
+- **Change**: Treat claim-trace fixtures as currency surfaces — any version bump must touch the manifest in the same commit (M9 adds this to the gate-extension notes).
+- **Follow-up**: 10 findings (F-MER-B1..B10) + long-tail re-triage (re-enter A-02/A-14) + undeployed-delta inventory → [[../artifacts/findings_ledger|findings ledger]] Lane B; one consolidated Hestia/pt19 memo covers all three stale-data escalations (M7).
+
+**Delivered 2026-07-06**: Lane B findings + bounded site set + DP2 evidence-pack input. Read-only held.

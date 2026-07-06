@@ -2,7 +2,7 @@
 type: mission
 mission_id: mission_meridian_m3_review_vault
 campaign: campaign_meridian
-status: active
+status: completed
 executor_tier: opus
 token_budget_estimated: 90
 created: 2026-07-06
@@ -32,4 +32,10 @@ against the live tree; never trust the docs' own summaries.
 
 ## AAR
 
-*(fill at close)*
+- **Worked**: Verify-don't-inherit + method variation dissolved two would-be false findings on live re-check ("28 subtopics" — the 28th was the recipes index, 27 is correct; "compliance_checker broken" — wrong invocation).
+- **Didn't**: `compliance_checker.py` silently wrote 2 report files into the vault root mid-review (caught via post-run `git status`, reverted with `rm`) — a genuine read-only trap.
+- **Finding**: The only material vault defect is STATE.md re-bloat (47.7→115.9 KB in 5 days, F-MER-A1); everything else clean or historical — strong governance health 3 days post-Champollion.
+- **Change**: Future sweeps run object-scoring tools with a scratch `--outdir` and check `git status` immediately after each tool run.
+- **Follow-up**: F-MER-A1/A2/A7 → M6 (DP1); A3 → tool-hardening idea (M6 files it); A4/A5/A6 → watch.
+
+**Delivered 2026-07-06**: 7 findings (F-MER-A1..A7) + verified-clean coverage → [[../artifacts/findings_ledger|findings ledger]] Lane A. Read-only held (one tool-write reverted).
