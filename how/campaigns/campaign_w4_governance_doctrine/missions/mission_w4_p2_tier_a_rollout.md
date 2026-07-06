@@ -2,7 +2,7 @@
 type: mission
 created: 2026-07-05
 updated: 2026-07-05
-status: proposed
+status: active
 last_edited_by: agent_rosetta
 campaign: campaign_w4_governance_doctrine
 phase: P2
@@ -11,17 +11,17 @@ mission_class: implementation
 executor_tier: opus   # per-vault judgment (divergence checks + applicability); clean internal cohorts may drop to sonnet
 token_budget_estimated: "~60/session × ~3 cohorts (~180 total)"
 token_budget_actual: "<filled at close>"
-tags: [mission, w4, concord, p2, tier_a, rollout, proposed, gated]
+tags: [mission, w4, concord, p2, tier_a, rollout, active]
 ---
 
 # Mission — W4 P2: Tier-A rollout (adopt the v8.4 doctrine across the fleet)
 
-**DP1 RATIFIED 2026-07-05 — Option C (hybrid, direct-by-default)** ([[dp1_execution_model]]). Stays `status: proposed`
-until the operator green-lights the rollout's **first cross-vault writes** (Cohort 1). The model + per-vault classification
+**DP1 RATIFIED 2026-07-05 — Option C (hybrid, direct-by-default)** ([[dp1_execution_model]]). **`status: active`** — the
+operator green-lit cross-vault writes; the alignment sweep + tailor Batch-1 are done. The model + per-vault classification
 are settled; the memo set is **2** (RareArchive, WilhelmAI). Rolls the proven instrument [[v8_4_adoption_checklist]] —
 validated on aDNA.aDNA at P1 — across the **38 remaining Tier-A vaults**.
 
-> **RE-SCOPED to alignment 2026-07-05** (operator) + **alignment sweep COMPLETE** — **8 consumers adopted** (Cohort-1: AWSBootstrap·Canvas·VAAS; roster-sweep: ContextCommons·Network·Oration·Spacemacs·ZenZachary). Template-aligned vaults are done; remainder = tailor set + genesis defers + Home node-pass + 2 Wilhelm memos + ScienceStanley. Full record: [[p2_adoption_ledger]].
+> **RE-SCOPED to alignment 2026-07-05** (operator) + **alignment sweep COMPLETE** — **8 consumers adopted** (Cohort-1: AWSBootstrap·Canvas·VAAS; roster-sweep: ContextCommons·Network·Oration·Spacemacs·ZenZachary). **Tailor Pass Batch-1 COMPLETE 2026-07-05 — 7 adopted** (Astro·aDNALabs·Molecules·LAVentureGraph·wga·III·VisualDNA; all local, push-gated). **16 vaults now carry the doctrine.** Template-aligned + tailor-Batch-1 are done; remainder = Batch-2/verify-first (~7: Harness·TappProtocol·CakeHealth·Git·PercySleep·Videos·SuperLeague) + deferred (~7: ComfyUI·Terminal·LatticeProtocol·Exchange·WebForge·TypeScript·Operations) + Home node-pass + 2 Wilhelm memos + ScienceStanley. Full record: [[p2_adoption_ledger]].
 
 ## Goal
 

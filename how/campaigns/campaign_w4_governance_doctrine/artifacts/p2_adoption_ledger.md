@@ -68,6 +68,22 @@ Pre-flight (21 remaining Tier-A, excl. the 3 done · memo-set RareArchive/Wilhel
 
 **NOTICED (out of P2 scope → vault-hygiene follow-up):** 4 adopted vaults (ContextCommons / Network / Oration / ZenZachary) carry **pre-existing template/skills count drift** in their own MANIFEST/README (e.g. "says 22 templates, actual 34") — orthogonal to the doctrine edit (Spacemacs, drift-free, validated Zero-drift). Flag for each vault's own `adna_validate`-hygiene pass; **NOT fixed here**.
 
+## Tailor Pass — Batch 1 (2026-07-05)
+
+First batch of the divergent-vault tailor pass (per-vault-adapted recipe; DP1 Option C, direct-by-default — all 7 internally-owned, direct-eligible). Surgical **CLAUDE.md-only local commits** (SO-9, unpushed). Verify-first gate passed for all 7 (no fresh session lanes; dirty state was `.obsidian`/auto-churn only, kept unstaged by an explicit-path `git add CLAUDE.md` + a `STAGED == CLAUDE.md` guard). `adna_validate --governance` showed **zero NEW drift** on every vault (pre-existing MANIFEST/README count drift + `version`-vs-CHANGELOG two-track notes are orthogonal — NOTICED, not fixed here).
+
+| Vault | Commit | ver | items written | note |
+|-------|--------|-----|---------------|------|
+| Astro | `923ccd4` | 1.0 | §7.7 · AskUQ · Lease · executor_tier | skip Credential (present); pre-existing count+version drift |
+| aDNALabs | `5bc16f9` | 0.1 | §7.7 · AskUQ · Lease | skip Credential + Model-tier (both under `## Agent Protocol`); **Zero-drift**; untracked task-memo left unstaged |
+| Molecules | `0c04807` | 1.6 | all 5 | pre-existing count+version drift; modified `HOME.md` left unstaged |
+| LAVentureGraph | `bd8dd06` | 1.1 | all 5 | no Standing-Orders section → inserted before terminal `## Git-Ops`; **Zero-drift** |
+| wga | `d8955ca` | 1.1 | §7.7 · AskUQ · Lease · executor_tier | skip Credential (present); **Zero-drift**; **mesh remote — local only, never push** |
+| III | `2d398f5` | 1.0 | all 5 | pre-existing count+version drift |
+| VisualDNA | `e2390c9` | (none) | all 5 | **no YAML frontmatter block** → body-only (blockquote is the adoption record); `governance_doctrine` field deferred to DP3; branch `master` |
+
+**Batch-1 result: 7/7 adopted** (all local, push operator-gated, SO-9). Structural findings folded back into the tailor methodology: (a) the recipe's nominal "before `## Git Coordination`" anchor exists in almost no divergent vault → insert **after the Standing-Orders analog** / before the next `##` (or, absent one, before the terminal `## Git-Ops`); (b) **skip-don't-duplicate** where a `## Credential routing` (and/or model-tier) section already exists — reference it from the blockquote; (c) **no-frontmatter vaults take the body-only variant** (VisualDNA proved it — no synthesized `---` block, field deferred to DP3).
+
 ## P2 running total (2026-07-05)
 
-**9 vaults carry the v8.4 doctrine:** aDNA.aDNA (dogfood, pushed) + **8 consumers** — AWSBootstrap · VAAS (pushed) · Canvas (local, mesh-blocked) · ContextCommons · Network · Oration · Spacemacs · ZenZachary (local). **Remaining:** the tailor set (~21, incl. Cohort-1 divergent) + genesis defers + Home (node-pass) + the 2 Wilhelm memos + ScienceStanley (diverged). Alignment sweep of template-aligned vaults is **complete** — what's left needs tailoring, memos, or genesis-graduation.
+**16 vaults carry the v8.4 doctrine:** aDNA.aDNA (dogfood, pushed) + **8 alignment-sweep consumers** (AWSBootstrap · VAAS [pushed] · Canvas [local, mesh-blocked] · ContextCommons · Network · Oration · Spacemacs · ZenZachary [local]) + **7 tailor-pass Batch-1** (Astro · aDNALabs · Molecules · LAVentureGraph · wga · III · VisualDNA [local]). **Remaining:** the tailor set's Batch-2 / verify-first (~7: Harness · TappProtocol · CakeHealth · Git · PercySleep · Videos · SuperLeague) + the deferred set (~7: ComfyUI · Terminal · LatticeProtocol · Exchange · WebForge · TypeScript · Operations) + Home (node-pass) + the 2 Wilhelm memos + ScienceStanley (diverged). Template-aligned + tailor-Batch-1 are **complete**; what's left needs Batch-2 tailoring, quiescence, memos, or genesis-graduation.
