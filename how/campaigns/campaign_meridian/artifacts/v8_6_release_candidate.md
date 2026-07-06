@@ -232,3 +232,17 @@ systemic close-out that never ran). Representative list (all `fold_batch: champo
 - [[../../../missions/mission_v8_5_release_cut_hygiene|mission_v8_5_release_cut_hygiene]] §11 — the v8.5 ship record
 - [[../../campaign_w4_governance_doctrine/campaign_w4_governance_doctrine|Operation Concord]] §Completion Summary — the fork-base / F8 follow-ups
 - [[../campaign_meridian|Operation Meridian]] — this campaign (M5)
+
+---
+
+## Addendum (2026-07-06, post-census) — 2 inbound candidates from Hestia (Hearthfire P1)
+
+Filed cross-vault into `how/backlog/` by Home.aDNA (Hestia) the same day as the census, discovered at
+Meridian M6 commit-reconciliation (unreported-diff check caught them — the verify-staged-vs-expected
+guard working as designed). Both are release-train items → v8.6 RC candidates, Rosetta triage:
+
+| Item | Target | Effort | Disposition |
+|------|--------|--------|-------------|
+| `idea_upstream_node_manifest_interview_emission` — bootstrap interview additionally emits machine-readable `node_manifest.{yaml,md}` (ADR-015 Tier-3 config-of-record; shape = Home ADR-006) | `skill_node_bootstrap_interview.md` + release train | M | **QUEUED-v8.6 candidate** (batch A adjacency — skill change; consumers: Lighthouse installer, WebForge node_home, Venus transmit) |
+| `idea_upstream_state_frontmatter_phase_campaign_keys` — fleet convention: machine-readable `phase:` + `campaigns:` STATE frontmatter keys (derive-where-honest; feeds Home inventory v2 → graph_card) | STATE template (.adna base) | S | **QUEUED-v8.6 candidate** (batch E/F adjacency — template convention; two optional keys, no schema break) |
+
