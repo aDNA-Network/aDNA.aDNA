@@ -36,6 +36,17 @@ Subagents do NOT run git in this vault; orchestrator commits.
 
 - Session opened at M0; git fetch clean (ahead 1 = `f0d3363`, behind 0); `adna_validate --governance`
   baseline: **Zero drift** → [[../../campaigns/campaign_meridian/artifacts/baseline_governance_validate_20260706|baseline artifact]].
+- **M0 DONE** `24e7d85` — charter + scaffold + baseline + STATE banner; stale Concord session archived.
+- **P1 sweep dispatched Mode-B** — 5 concurrent subagents (M1 sonnet · M2/M3/M4/M5 opus).
+- **M1 DONE** `d6e9179` + register `3e9e66a` — 2 Wilhelm memos staged (`ack_required`) + `template_ratification_record`
+  local mirror (templates 41→42, index synced, idea → completed); Concord exceptions 2/4 addressed.
+- **M3+M4+M5 DONE** `eb82e57` — findings ledger populated (Lane A ×7 + Lane B ×10) + v8.6 RC (29 items:
+  3 shipped / 16 queued / 5 blocked / 2 dropped / 9 new). Marquee findings: latent RED G20 gate (manifest
+  v2.3 vs standard.ts v2.5) · STATE.md re-bloat 47.7→115.9 KB · A-11/A-12 already implemented-but-undeployed.
+- **M2 DONE** — count-drift fixed in all 4 sibling vaults (CC `37f0ae5` · Network `92cb7bf` · Oration `e0e6293` ·
+  ZZ `78f7190`; local, pushes HELD); flags: Oration harness-injection PII (F-MER-A8) · CC boilerplate README
+  (F-MER-A9) · 2 version-mismatch warnings (F-MER-A10). Ledger rows A8–A10 added; DP1 add-on item 14 staged.
+- **P1 COMPLETE → DP1 gate rendered** (bounded set: 14 items + M8 spike + watches).
 
 ## SITREP
 

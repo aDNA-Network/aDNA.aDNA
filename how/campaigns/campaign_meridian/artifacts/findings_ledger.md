@@ -29,6 +29,9 @@ Effort: S / M / L. L items require explicit DP1 call-out.
 | F-MER-A5 | ~14 coordination memos `ack_required: true` unanswered (Argus 8d · Hestia install_sha 8d · 6 Champollion-propagation 4d · Hestia lighthouse-cosign 7d; +2 Wilhelm 0d = expected M1 output) | who/coordination/ scan | — | **watch** (owner-driven, cross-vault) |
 | F-MER-A6 | Terminal-campaign status residue — `campaign_rosetta` top-doc `status: active` (may be intentional); 12 STR design-spec artifacts `proposed`; ~40 artifacts in completed campaigns `active` (artifacts aren't lifecycle-closed by convention) | frontmatter scan | S | **watch** (convention question, not per-file defect) |
 | F-MER-A7 | ~24 backlog ideas shipped in v8.4 still `status: accepted` (no post-ship close-out ran) + 4 individual stale statuses (from M5's census) | [[v8_6_release_candidate]] §stale-statuses | S | **fix-here-M6** (batch flip accepted→resolved with ship evidence) |
+| F-MER-A8 | **Oration.aDNA CLAUDE.md carries a committed harness-injection incl. the operator's email (PII)** at L338–341 (`# userEmail` + `# currentDate`, genesis-time paste, ADR-042 §13.2 class); in git history; Oration was pushed at Concord → likely on the remote | M2 recon + `adna_validate` (2 residual errors post-M2, correctly pre-existing) | S (tip-strip) | **fix-tip via DP1 add-on** (DP0 direct-by-default covers it); **history-scrub = operator ruling at DP1** |
+| F-MER-A9 | ContextCommons.aDNA README is uncustomized base-template boilerplate (title "Agentic-DNA", tree labeled "Agentic-DNA/", customize-markers); + its templates trigger-table documents only the 22 base (12 CC templates missing) | M2 recon | M | **defer** → CC-hygiene backlog flag (structural, beyond count scope) |
+| F-MER-A10 | Pre-existing CLAUDE↔CHANGELOG governance-version mismatches: ContextCommons (7.1 vs 6.0) + Network (6.0 vs 7.0) — validate warnings | `adna_validate` warnings (both vaults) | S | **watch** (each vault's own next hygiene pass) |
 
 **Verified-clean (M3)**: Concord close-out real (4/4 sampled adoption commits exist; roster traceable) · all other campaigns/missions terminal · governance validator **Zero drift** · counts agree on 5/6 surfaces (41 templates [pre-M1] / 50 skills / 16 reviewers / **27 subtopics correct** — Champollion's "28" had counted the recipes index; DROPPED) · 0% real broken wikilinks (3/120 = intentional template placeholders) · sessions/active clean · no stale git locks · README repo refs current.
 
@@ -75,6 +78,9 @@ All S/M effort; no L items beyond the pre-chartered M8 spike. Numbered for DP1 r
 11. New gate: hero asserts A-11 functional-def phrase + A-12 LP gloss. *(F-MER-B4/B5)*
 12. New gate: NetworkDiagram SSR renders ≥6 labels, no-JS visible. *(F-MER-B5)*
 13. Add `/security` to the `@audit` a11y sweep. *(F-MER-B10)*
+
+**M2-lane add-on — 1 item**
+14. Oration CLAUDE.md harness-injection tip-strip (remove L338–341 `# userEmail`/`# currentDate` paste; surgical commit on `master`; push still held). *(F-MER-A8; DP0 direct-by-default; the deeper history-scrub is a separate DP1 operator ruling)*
 
 **M8 (pre-chartered, boxed)**: A-06 graph pre-render spike — unchanged.
 
