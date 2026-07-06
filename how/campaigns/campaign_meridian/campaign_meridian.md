@@ -3,7 +3,7 @@ campaign_id: campaign_meridian
 type: campaign
 title: "Operation Meridian — Concord follow-up drain + tri-surface review→improve + adna.network go-live"
 owner: stanley
-status: active
+status: completed
 phase_count: 5
 mission_count: 12
 estimated_sessions: "12-16"
@@ -81,7 +81,7 @@ against the v8.5 ship record. Plan of record: `~/.claude/plans/please-read-the-c
 
 | Mission | Title | Tier | Budget (kT) | Sessions | Dependencies | Status |
 |---------|-------|------|-------------|----------|-------------|--------|
-| M0 | Charter + scaffold + hygiene quickies (stale-session archive, `adna_validate --governance` baseline, DP0 record) | fable | 35 | 1 | — | active |
+| M0 | Charter + scaffold + hygiene quickies (stale-session archive, `adna_validate --governance` baseline, DP0 record) | fable | 35 | 1 | — | completed |
 
 **Phase exit gate**: charter committed; baseline recorded; DP0 resolved. *(Satisfied by plan approval 2026-07-06 — plan approval = charter authorization.)*
 
@@ -89,11 +89,11 @@ against the v8.5 ship record. Plan of record: `~/.claude/plans/please-read-the-c
 
 | Mission | Title | Tier | Budget (kT) | Sessions | Dependencies | Status |
 |---------|-------|------|-------------|----------|-------------|--------|
-| M1 | Concord residue: 2 Wilhelm coord memos + `template_ratification_record` mirror + watch entries | sonnet | 45 | 1 | M0 | planned |
-| M2 | Count-drift hygiene ×4 sibling vaults (ContextCommons · Network · Oration · ZenZachary) | opus | 70 | 1–2 | M0, DP0 | planned |
-| M3 | Review sweep A — campaign residue + vault/graph/repo | opus | 90 | 1 | M0 | planned |
-| M4 | Review sweep B — website lane | opus | 90 | 1 | M0 | planned |
-| M5 | v8.6 queue reconciliation + RC doc (DP1-independent; early-start permitted) | opus | 110 | 1–2 | M0 | planned |
+| M1 | Concord residue: 2 Wilhelm coord memos + `template_ratification_record` mirror + watch entries | sonnet | 45 | 1 | M0 | completed |
+| M2 | Count-drift hygiene ×4 sibling vaults (ContextCommons · Network · Oration · ZenZachary) | opus | 70 | 1–2 | M0, DP0 | completed |
+| M3 | Review sweep A — campaign residue + vault/graph/repo | opus | 90 | 1 | M0 | completed |
+| M4 | Review sweep B — website lane | opus | 90 | 1 | M0 | completed |
+| M5 | v8.6 queue reconciliation + RC doc (DP1-independent; early-start permitted) | opus | 110 | 1–2 | M0 | completed |
 
 **Phase exit gate**: drain complete + findings ledger populated → **DP1** (operator ratifies bounded improvement set).
 
@@ -101,7 +101,7 @@ against the v8.5 ship record. Plan of record: `~/.claude/plans/please-read-the-c
 
 | Mission | Title | Tier | Budget (kT) | Sessions | Dependencies | Status |
 |---------|-------|------|-------------|----------|-------------|--------|
-| M6 | Vault currency fixes — DP1-ratified bounded set | opus | 70 | 1–2 | M3, DP1 | planned |
+| M6 | Vault currency fixes — DP1-ratified bounded set | opus | 70 | 1–2 | M3, DP1 | completed |
 
 **Phase exit gate**: `adna_validate --governance` zero NEW drift vs M0 baseline; v8.6 RC doc complete.
 
@@ -109,10 +109,10 @@ against the v8.5 ship record. Plan of record: `~/.claude/plans/please-read-the-c
 
 | Mission | Title | Tier | Budget (kT) | Sessions | Dependencies | Status |
 |---------|-------|------|-------------|----------|-------------|--------|
-| M7 | Data regen (`.adna` v8.5-parity check → `sync:install` + `sync:vaults`) + A-11 + A-12 + ratified small site items | opus | 60 | 1 | M4, DP1 | planned |
-| M8 | A-06 graph pre-render spike (**boxed 70 kT, severable**) — authoring-time static SVG, Clause-A fallback | opus | 70 box | 1–2 | M7 | planned |
-| M9 | Gates re-verify (`test:gates:fast` → `audit:p1s3` separate) + gate extensions + **live-prod baseline capture** + production build + artifact spot-check | opus | 60 | 1 | M7, M8 (or severed) | planned |
-| M10 | **DP2 GO** → `vercel --prebuilt --prod` (token env-only, redacted) → live smoke + A-07 CLS ≤ baseline + A-09 ≥ 92 | opus | 50 | 1 | M9, DP2 | planned |
+| M7 | Data regen (`.adna` v8.5-parity check → `sync:install` + `sync:vaults`) + A-11 + A-12 + ratified small site items | opus | 60 | 1 | M4, DP1 | completed |
+| M8 | A-06 graph pre-render spike (**boxed 70 kT, severable**) — authoring-time static SVG, Clause-A fallback | opus | 70 box | 1–2 | M7 | completed |
+| M9 | Gates re-verify (`test:gates:fast` → `audit:p1s3` separate) + gate extensions + **live-prod baseline capture** + production build + artifact spot-check | opus | 60 | 1 | M7, M8 (or severed) | completed |
+| M10 | **DP2 GO** → `vercel --prebuilt --prod` (token env-only, redacted) → live smoke + A-07 CLS ≤ baseline + A-09 ≥ 92 | opus | 50 | 1 | M9, DP2 | completed |
 
 **Phase exit gate**: deployed + post-deploy verifies logged (or DP2 = hold, with evidence pack filed).
 
@@ -120,7 +120,7 @@ against the v8.5 ship record. Plan of record: `~/.claude/plans/please-read-the-c
 
 | Mission | Title | Tier | Budget (kT) | Sessions | Dependencies | Status |
 |---------|-------|------|-------------|----------|-------------|--------|
-| M11 | Campaign AAR + SITREP splash + STATE/memory updates + `skill_verification_handoff` + **DP3** push authorization | fable | 45 | 1 | all | planned |
+| M11 | Campaign AAR + SITREP splash + STATE/memory updates + `skill_verification_handoff` + **DP3** push authorization | fable | 45 | 1 | all | completed |
 
 **Phase exit gate**: campaign `completed`; DP3 record; final clean tree.
 
@@ -130,8 +130,8 @@ against the v8.5 ship record. Plan of record: `~/.claude/plans/please-read-the-c
 |---|------|----------|--------|
 | DP0 | Charter | Cross-vault fix mode for the 4 count-drift vaults | **RESOLVED 2026-07-06** — operator (AskUserQuestion): **direct-by-default, memo fallback if target mid-edit** (Concord DP1 Option C precedent); pushes held for DP3 |
 | DP1 | Phase 1 exit | Ratify bounded improvement set (vault set → M6, site set → M7, long-tail A-item re-entries); cap S/M effort, L items called out explicitly (A-06 pre-called as M8) | **RESOLVED 2026-07-06** — full 14-item set ratified; Oration PII (F-MER-A8) = tip-strip now, history-scrub deferred to Oration's lane ([[artifacts/findings_ledger|ledger]] §DP1) |
-| DP2 | Pre-M10 | Deploy go-live + content: (a) deploy incl. A-06 if green · (b) deploy without A-06, re-defer · (c) hold (gates regression only) | pending |
-| DP3 | Close | Pushes: aDNA.aDNA origin (recommended yes) · 4 count-drift vault commits (per-vault) · held backlogs aDNALabs 66 / Network 37 / WebForge 15 / Operations 84 (default **hold**) | pending |
+| DP2 | Pre-M10 | Deploy go-live + content: (a) deploy incl. A-06 if green · (b) deploy without A-06, re-defer · (c) hold (gates regression only) | **RESOLVED 2026-07-06 — GO (option a)**: deploy the certified frozen build incl. A-06 (operator, AskUserQuestion; evidence pack = [[missions/mission_meridian_m9_certification|M9]] 195+118 green + [[artifacts/live_baseline_20260706|baseline]]) |
+| DP3 | Close | Pushes: aDNA.aDNA origin (recommended yes) · 4 count-drift vault commits (per-vault) · held backlogs aDNALabs 66 / Network 37 / WebForge 15 / Operations 84 (default **hold**) | **RESOLVED 2026-07-06 — Push set A** (operator): push aDNA.aDNA + ContextCommons + Oration (incl. PII strip) + ZenZachary; **HOLD** Network (SO-9, rides its held backlog) + all long-held backlogs |
 
 Also pre-resolved at charter (operator, 2026-07-06, AskUserQuestion): **deploy go-live IN SCOPE** (DP2-gated) · **review depth = bounded-comprehensive sweep** (not a fresh III decade).
 
@@ -198,8 +198,38 @@ Also pre-resolved at charter (operator, 2026-07-06, AskUserQuestion): **deploy g
 
 ## Completion Summary
 
-*Fill out when setting `status: completed`.*
+**CLOSED 2026-07-06** — chartered, reviewed, fixed, and deployed within a single operator session (calibrated 10–13 sessions; Mode-B fan-out: 9 subagent missions under one fable orchestration).
+
+### Deliverables
+- **Concord register drained**: 2 Wilhelm co-sign memos staged (`ack_required`; watch) · `template_ratification_record` local mirror (idea closed) · count-drift fixed in 4 sibling vaults (17 tool-flagged + 4 tool-missed claims; all validate 0 count errors) · Oration PII tip-strip (`714037c`) · watches recorded (ScienceStanley · genesis trio).
+- **Tri-surface review**: 17 findings (A1–A10, B1–B10 net of overlaps) + verified-clean coverage → [[artifacts/findings_ledger|findings ledger]]; marquee = latent RED G20 gate + 15-day certified-but-undeployed delta.
+- **v8.6 RC**: 29 items dispositioned + cut-line + 2 inbound Hestia candidates → [[artifacts/v8_6_release_candidate|RC doc]] (release fires post-campaign at the operator's `skill_template_release` gate).
+- **Vault**: counts trued 42/50 across 6 surfaces · STATE.md re-diet 116→76 KB (archive-shifted, SO-6) · 26 backlog statuses trued · compliance-checker hardening idea filed.
+- **Site**: G20 manifest v2.5 · registry regen 54→68 · A-02 re-anchor · A-14 truncation root-cause · comment currency · **A-06 pre-rendered no-JS `/vaults/graph` SVG** + `sync:graph` · gates 22/23 + `/security` audit coverage · vault-count fixture 54→68 (attributed override).
+- **DEPLOYED**: adna.network live on the certified build (195 gates + 118 audit green) — first production deploy since 2026-06-21; **A-07 CLS ≤ baseline · A-09 best-practices 0.92→1.00** ([[missions/mission_meridian_m10_deploy|M10 verification table]]).
+- **Inbound processed** (concurrent Hestia/Metis drops): ADR-043 co-sign roster COMPLETE (back-reference + memo ack) · 2 Hearthfire upstream ideas → RC candidates · Metis `surface_composition_graph` ADR idea accepted.
+
+### Descoped
+- STATE.md ≤60 KB target honestly missed (landed 76 KB) — the remaining lever (29 KB `## Current Phase` section) named for a follow-on, not silently scope-crept.
+- Long-tail A-05/08/10/13/17/18/19 stay deferred (re-triage justified each).
+
+### Key Findings
+- **Latent-red-gate class**: claim-trace fixtures are currency surfaces — a version bump must touch the manifest in the same commit.
+- **Mirror-lags-source recurrence** (Looking Glass's inversion, 2nd instance): improvements certify green then sit undeployed; deploy cadence is the systemic gap.
+- **Drift isn't just numeric**: the count sweep surfaced committed PII (Oration) + an uncustomized boilerplate README (ContextCommons).
+- `fold_batch` frontmatter is unreliable as a shipped-signal; disk beats narrative (M5).
+
+### Scope Changes
+- A-11/A-12 found already-implemented at M4 review → M7 pivoted from "implement" to the ratified fix set.
+- M2-lane add-on: Oration PII tip-strip (DP1 item 14).
+
+### Follow-Up Campaigns
+- None chartered. Routed residuals: v8.6 release (operator gate) · Wilhelm acks (watch) · Network/backlog pushes (per-vault windows) · Oration history-scrub decision (its lane) · CC README customization (its lane) · `surface_composition_graph` ADR minting (Rosetta governance lane) · Current-Phase STATE diet (next hygiene pass).
 
 ## Campaign AAR
 
-*Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
+- **Worked**: Mode-B parallel fan-out (5 concurrent P1 missions) + verify-don't-inherit reviews + the M9 freeze→prebuilt-promotion discipline — charter→review→fix→deploy in one operator session against a 10–13 calibration; the pre-captured live baseline made post-deploy verification a table that wrote itself.
+- **Didn't**: One subagent died at the session rate-limit mid-report (M8 — work was complete on disk and verified directly); two concurrent cross-vault drops (Hestia/Metis) appeared mid-campaign and had to be reconciled out of mission commits.
+- **Finding**: Both marquee catches were latency-class — a latent RED gate and a 15-day undeployed delta; the site can be green, certified, and still stale on live. Deploy cadence needs a standing rule, not a campaign.
+- **Change**: The staged-vs-expected commit guard caught foreign files twice — promote it to doctrine: session scope declarations should name the expected-new-file set, and every commit diffs staged against it.
+- **Follow-up**: v8.6 RC → `skill_template_release` gate · Wilhelm + Hestia-memo acks (watch) · deploy-cadence standing-rule idea → backlog · remaining routed residuals per Completion Summary.

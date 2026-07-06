@@ -2,7 +2,7 @@
 type: session
 session_id: "2026-07-06_meridian_p0_p1_sweep"
 created: 2026-07-06
-status: active
+status: completed
 tier: 1
 mission: mission_meridian_m0_charter → P1 sweep (M1–M5)
 campaign: campaign_meridian
@@ -50,4 +50,22 @@ Subagents do NOT run git in this vault; orchestrator commits.
 
 ## SITREP
 
-*(fill at close)*
+- **Completed:** the ENTIRE campaign, M0–M11 same-day (Mode-B; 9 subagent missions): charter `24e7d85` ·
+  P1 drain+survey (M1 `d6e9179`+`3e9e66a` · M2 four sibling commits · M3/M4/M5 `eb82e57`, close `c0c57ea`) ·
+  DP1 full-set ratified `0bf84ef` + Oration PII strip `714037c` · M6 vault fixes + M7 site fixes/regen +
+  M8 A-06 SVG + M9 certification (195+118 green, baseline captured) · **DP2 GO → adna.network DEPLOYED**
+  (`dpl_EpKhyfuJQFacQdG6kKvUw1rht41B`) + verified (A-07 CLS ≤ baseline; A-09 0.92→1.00) · M11 close.
+  Inbound processed mid-campaign: ADR-043 Hestia co-sign (roster complete) + 3 Hestia/Metis files accepted.
+- **In progress:** none.
+- **Next up:** v8.6 release at the operator's `skill_template_release` gate (RC doc ready) · watch Wilhelm
+  + Hestia-memo acks · routed residuals per charter §Completion Summary.
+- **Blockers:** none.
+- **Files touched:** ~120 across aDNA.aDNA (14 commits) + ContextCommons/Network/Oration/ZenZachary
+  (5 commits) + the production deploy; full map = [[../../campaigns/campaign_meridian/artifacts/meridian_commit_ledger|commit ledger]].
+- **Next Session Prompt:** Operation Meridian is **CLOSED** (2026-07-06; 12/12 missions; adna.network
+  deployed+verified; DP0–DP3 resolved — do NOT re-open). "Continue the campaign" next yields: (a) fire
+  `skill_template_release` v8.6 from [[../../campaigns/campaign_meridian/artifacts/v8_6_release_candidate|the RC]]
+  (operator gate); (b) check acks — 2 Wilhelm co-sign memos + the Hestia pt19 registry memo (all
+  `ack_required`); (c) per-vault push windows for Network `92cb7bf` + the long-held backlogs; (d) routed
+  residuals: Oration history-scrub ruling · CC README customization · `surface_composition_graph` ADR
+  minting · Current-Phase STATE diet. The vault carries NO active campaign.
