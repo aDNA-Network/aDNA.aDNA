@@ -153,3 +153,9 @@ The 7 previously-deferred vaults, **force-adopted** (operator override of defer-
 Frontmatter marker `governance_doctrine: v8.4` added; **`version` stays `"0.1"`** (DP3 / ADR-047 — items-not-number). `adna_validate --governance` = **no new drift** (the pre-existing `0.1`-vs-CHANGELOG-`0.4` version note is unchanged, orthogonal). Section anchored between `## Standing Orders` and `## Git Coordination`; surgical CLAUDE.md-only commit (the 4 untracked coord memos left unstaged).
 
 **Documented exceptions: 1/4 cleared.** Remaining: the **2 Wilhelm memos** (RareArchive/WilhelmAI, SO#3 co-sign) + **ScienceStanley** (v7.0 diverged). Tier-B genesis stubs (Context · Warp · RemoteControl) stay out-of-scope (SO#6 graduation). **Fleet total incl. the node altitude: 33** (32 Concord + Home node-pass).
+
+## Post-campaign follow-up (2026-07-06, later) — Wilhelm memos STAGED (Meridian M1)
+
+The **2 Wilhelm memos are WRITTEN + STAGED** (Operation Meridian M1, `campaign_meridian` — the follow-up-register drain campaign): [[../../../../who/coordination/coord_2026_07_06_rosetta_to_mnemosyne_rarearchive_v8_4_adoption|→ Mnemosyne/RareArchive]] + [[../../../../who/coordination/coord_2026_07_06_rosetta_to_hygieia_wilhelmai_v8_4_adoption|→ Hygieia/WilhelmAI]], both `ack_required: true` per SO#3 co-sign (external Wilhelm-Foundation repos; operator delivers). Also closed the register's `template_ratification_record` local-mirror item (`how/templates/template_ratification_record.md`, idea → `completed`).
+
+**Documented exceptions: 2/4 addressed** (Home DONE · Wilhelm memos STAGED-awaiting-ack). Remaining: **ScienceStanley** (v7.0 diverged, owner-gated) + the Wilhelm **acks** (watch). Genesis stubs unchanged (SO#6). Count-drift hygiene (ContextCommons/Network/Oration/ZenZachary, §NOTICED above) executing at Meridian M2.
