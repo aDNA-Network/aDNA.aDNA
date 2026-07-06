@@ -2,7 +2,7 @@
 type: mission
 mission_id: mission_meridian_m1_wilhelm_memos
 campaign: campaign_meridian
-status: active
+status: completed
 executor_tier: sonnet
 token_budget_estimated: 45
 created: 2026-07-06
@@ -32,4 +32,10 @@ Memos carry `ack_required: true` + checklist reference + co-sign ask; pass `skil
 
 ## AAR
 
-*(fill at close — 5-line, template_aar_lightweight)*
+- **Worked**: All prep reads resolved; the upstream `.adna` ratification-record template was found and *adapted* (per-ADR Entry Point A added) rather than duplicated; memo format matched July coord conventions; ADR-047 + Concord DP2 facts verified from source before citing.
+- **Didn't**: The backlog idea's §4.2–4.3 normative content needed a template-vs-spec boundary judgment (spec noted, not re-specified in the template body).
+- **Finding**: Upstream ships the ceremony variant only — the per-ADR block exists only in this local mirror → clean v8.6 upstream-fold candidate.
+- **Change**: External-org SO#3 memos now carry an explicit "operator delivers" status note — standardize the pattern.
+- **Follow-up**: Entry-Point-A upstream fold → v8.6 RC (M5); template-count surface sync (41→42) → M6; memos await Mnemosyne/Hygieia acks (watch).
+
+**Delivered 2026-07-06**: `coord_2026_07_06_rosetta_to_mnemosyne_rarearchive_v8_4_adoption.md` + `coord_2026_07_06_rosetta_to_hygieia_wilhelmai_v8_4_adoption.md` (both `ack_required: true`, `status: staged`) + `template_ratification_record.md` (index row added, counts 41→42; closes `idea_upstream_template_ratification_record`).

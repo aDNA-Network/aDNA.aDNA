@@ -1,7 +1,7 @@
 ---
 type: directory_index
 created: 2026-02-19
-updated: 2026-06-29
+updated: 2026-07-06
 last_edited_by: agent_rosetta
 tags: [directory_index, templates]
 ---
@@ -14,7 +14,7 @@ Templates for all content types in the vault. Each template defines the frontmat
 
 ## Template Index
 
-> **41 `template_*.md` total** = 12 auto-triggered + 13 manual-apply + 5 operational + 11 extension. (The Fork-Skeleton Bundle is a directory, not a `template_*.md`, so it sits outside the 41.) Provenance split: 25 base (inherited from `.adna`) + 11 extension + 5 operational.
+> **42 `template_*.md` total** = 12 auto-triggered + 13 manual-apply + 6 operational + 11 extension. (The Fork-Skeleton Bundle is a directory, not a `template_*.md`, so it sits outside the 42.) Provenance split: 25 base (inherited from `.adna`) + 11 extension + 6 operational.
 
 ### Auto-Triggered Templates (12)
 
@@ -55,7 +55,7 @@ These templates have no Templater auto-trigger. Copy their structure manually or
 | `template_quest_result.md` | Side-quest result record | `how/quests/` | `quest_result` | Quest dir mixes definitions + results |
 | `template_side_quest.md` | Side-quest definition | `how/quests/` | `side_quest` | Quest dir mixes definitions + results |
 
-### Operational / Lifecycle Templates (5)
+### Operational / Lifecycle Templates (6)
 
 Vault-agnostic operational templates (manual-apply; not entity-type templates). Added since the original index was written:
 
@@ -66,6 +66,7 @@ Vault-agnostic operational templates (manual-apply; not entity-type templates). 
 | `template_drift_report.md` | Upstream drift-watch report | varies | `template` |
 | `template_lattice_home_render.md` | Lattice-home render (vault-agnostic) | `Home.aDNA/` | `template` |
 | `template_software_graph_stub.md` | Software-graph genesis stub (`<Software>.aDNA` CLAUDE.md) | new `<Software>.aDNA/` | `governance` |
+| `template_ratification_record.md` | Ratification record (ceremony + per-ADR block; local mirror of the upstream v8.5 instrument) | `what/decisions/` · `how/gates/` | `template` |
 
 ### Fork-Skeleton Bundles (1)
 

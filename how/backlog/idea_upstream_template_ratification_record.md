@@ -1,11 +1,11 @@
 ---
 type: backlog_idea
-status: accepted
+status: completed
 priority: medium
 created: 2026-05-24
 last_edited_by: agent_rosetta
 tags: [backlog, idea, upstream, templates, ratification_ceremony, contextcompass_origin]
-updated: 2026-07-02
+updated: 2026-07-06
 fold_batch: champollion_m6_1_rc
 ---
 
@@ -88,3 +88,7 @@ Operator-discretionary; no execution-campaign dependency. Earliest natural oppor
 ## Champollion G0 disposition — F (M1.1, 2026-07-02)
 
 **ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).
+
+## Closure (2026-07-06)
+
+**COMPLETED** — both halves discharged: (1) upstream template shipped in the v8.5 image (`aDNA-Network/aDNA`, `.adna/how/templates/template_ratification_record.md`); (2) local project-vault mirror authored at Meridian M1 ([[../templates/template_ratification_record|how/templates/template_ratification_record.md]]) with the per-ADR Entry Point A block (§4.1) added. Residual: Entry-Point-A *upstream* fold → v8.6 RC ([[../campaigns/campaign_meridian/artifacts/v8_6_release_candidate|Meridian M5]]).
