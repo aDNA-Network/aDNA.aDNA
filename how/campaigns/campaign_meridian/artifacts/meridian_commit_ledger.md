@@ -31,5 +31,6 @@ rule 3). Pre-campaign carry-over: `f0d3363` (Concord Home node-pass record) — 
 | Network.aDNA | `92cb7bf` | MANIFEST only | templates 22→23 (×2); skills 13→38; validate 3→0; README absent | HELD (DP3; SO-9 vault) |
 | Oration.aDNA (branch `master`) | `e0e6293` | MANIFEST + CLAUDE | templates 25→23 (×3); skills 26→24 (×3); validate 5→0 count errors (2 pre-existing non-count errors remain = harness-injection, F-MER-A8) | HELD (DP3) |
 | ZenZachary.aDNA | `78f7190` | MANIFEST + CLAUDE | templates 22→23 (×4 incl. table row + list entry added); skills 13→25; validate 4→0, no warnings | HELD (DP3) |
+| Oration.aDNA (`master`) | `714037c` | CLAUDE.md tip-strip (DP1 item 14, F-MER-A8) | harness-injection block (userEmail/currentDate) removed from tail; validate → **Zero drift** (the 2 residual errors cleared); history-scrub deferred per DP1 | HELD (DP3) |
 
 **M2 verdicts**: 4/4 proceeded (no concurrent lanes found); no vault was drift-free; 17 tool-flagged + 4 tool-missed-but-genuine claims fixed; explicit-path staging held (zero noise leakage); `adna_validate --governance` after-pass = authority (a manual 200-char-truncated scan missed one claim; the tool caught it).

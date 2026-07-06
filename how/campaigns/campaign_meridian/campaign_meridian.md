@@ -129,7 +129,7 @@ against the v8.5 ship record. Plan of record: `~/.claude/plans/please-read-the-c
 | # | When | Decision | Status |
 |---|------|----------|--------|
 | DP0 | Charter | Cross-vault fix mode for the 4 count-drift vaults | **RESOLVED 2026-07-06** — operator (AskUserQuestion): **direct-by-default, memo fallback if target mid-edit** (Concord DP1 Option C precedent); pushes held for DP3 |
-| DP1 | Phase 1 exit | Ratify bounded improvement set (vault set → M6, site set → M7, long-tail A-item re-entries); cap S/M effort, L items called out explicitly (A-06 pre-called as M8) | pending |
+| DP1 | Phase 1 exit | Ratify bounded improvement set (vault set → M6, site set → M7, long-tail A-item re-entries); cap S/M effort, L items called out explicitly (A-06 pre-called as M8) | **RESOLVED 2026-07-06** — full 14-item set ratified; Oration PII (F-MER-A8) = tip-strip now, history-scrub deferred to Oration's lane ([[artifacts/findings_ledger|ledger]] §DP1) |
 | DP2 | Pre-M10 | Deploy go-live + content: (a) deploy incl. A-06 if green · (b) deploy without A-06, re-defer · (c) hold (gates regression only) | pending |
 | DP3 | Close | Pushes: aDNA.aDNA origin (recommended yes) · 4 count-drift vault commits (per-vault) · held backlogs aDNALabs 66 / Network 37 / WebForge 15 / Operations 84 (default **hold**) | pending |
 

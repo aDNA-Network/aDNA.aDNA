@@ -88,4 +88,8 @@ All S/M effort; no L items beyond the pre-chartered M8 spike. Numbered for DP1 r
 
 ### DP1 ruling
 
-*(recorded at the gate)*
+**RESOLVED 2026-07-06** (operator, AskUserQuestion at the P1 exit gate):
+- **Fix set: FULL 14-item set ratified** (4 vault + 6 site + 3 gates + Oration tip-strip). A-06 spike stays boxed/severable at DP2.
+- **Oration PII (F-MER-A8): tip-strip now, history-scrub DEFERRED** to Oration's own lane (backlog flag filed there or watch-listed here); proportionate given the address is a public brand email.
+
+Ratification record (4-field): decision = DP1 fix-set + PII handling · ratified-by = operator (stanley) · date = 2026-07-06 · status = accepted.
