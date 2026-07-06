@@ -84,6 +84,36 @@ First batch of the divergent-vault tailor pass (per-vault-adapted recipe; DP1 Op
 
 **Batch-1 result: 7/7 adopted** (all local, push operator-gated, SO-9). Structural findings folded back into the tailor methodology: (a) the recipe's nominal "before `## Git Coordination`" anchor exists in almost no divergent vault → insert **after the Standing-Orders analog** / before the next `##` (or, absent one, before the terminal `## Git-Ops`); (b) **skip-don't-duplicate** where a `## Credential routing` (and/or model-tier) section already exists — reference it from the blockquote; (c) **no-frontmatter vaults take the body-only variant** (VisualDNA proved it — no synthesized `---` block, field deferred to DP3).
 
+## Tailor Pass — Batch 2 (2026-07-05)
+
+Second tailor batch (verify-first; DP1 Option C direct-by-default; all internally-owned). Same surgical CLAUDE.md-only recipe, **all pushed** this session (operator "push and roll"). All 7 clean-tree at verify-first (Harness/Videos `active/` = stale May; TappProtocol/PercySleep untracked = inbound memos, left; SuperLeague's 06-30 session sits on a clean tree, left). `adna_validate --governance` zero NEW drift on every vault.
+
+| Vault | Commit | ver | items written | note |
+|-------|--------|-----|---------------|------|
+| Harness | `b220fb7` | (none) | all 5 | **no frontmatter → body-only** (field deferred DP3); `master`; **Zero-drift** |
+| TappProtocol | `e834ac0` | (none) | all 5 | **no frontmatter → body-only**; genesis; `master`; **Zero-drift** |
+| CakeHealth | `dadfb9a` | 6.0 | all 5 | **+ SO#3 courtesy memo to Ami/Berthier** (`who/coordination/coord_2026_07_05_rosetta_to_ami_berthier_cakehealth_v8_4_adoption.md`); pre-existing template-count drift |
+| Git | `0b719ee` | 0.17 | all 5 | `master`; **Zero-drift** (0.17-vs-0.31 note pre-existing) |
+| PercySleep | `408545b` | 7.0 | §7.7·AskUQ·Lease·executor_tier | skip Credential (present); `master`; **Zero-drift** |
+| Videos | `4f84afb` | 1.0 | §7.7·AskUQ·Lease·executor_tier | skip Credential (present); **Zero-drift** |
+| SuperLeague | `da7c5e7` | 1.3 | all 5 | `master`; pre-existing count+version drift |
+
+**Batch-2 result: 7/7 adopted + pushed.**
+
+## Push status (2026-07-05, operator "push and roll")
+
+**Pushed — 19 vaults → origins (all rc=0; gitleaks clean; Codeberg auth confirmed working):**
+- Batch-1 (6): Astro · Molecules · LAVentureGraph · wga · III · VisualDNA.
+- Alignment-sweep (5): ContextCommons · Oration · Spacemacs · ZenZachary · **Canvas** (mesh-block **RESOLVED** — it gained a GitHub origin, the documented unblock condition; `3e95533` synced).
+- Batch-2 (7): Harness · TappProtocol · CakeHealth · Git · PercySleep · Videos · SuperLeague.
+- Standard home: aDNA.aDNA (campaign-doc commits).
+
+**HELD — not pushed (operator-flagged; SO-9 / unrelated backlog):**
+- **aDNALabs** — its Concord commit `5bc16f9` sits atop **66 unrelated Vitruvian-Man commits** (several marked "local, unpushed"); the vault runs a deliberate SO-9 local-first posture. `git push` would dump all 67 to the public repo → held pending explicit operator go.
+- **Network** — Concord commit `d457650` is #1 of **37** (Luke onboarding, roster S243…); deliberately **local-no-push** (SO-9 / First-Light integrity). Held.
+
+(AWSBootstrap + VAAS were pushed in the prior session; Canvas's earlier "mesh-blocked" note is now superseded.)
+
 ## P2 running total (2026-07-05)
 
-**16 vaults carry the v8.4 doctrine:** aDNA.aDNA (dogfood, pushed) + **8 alignment-sweep consumers** (AWSBootstrap · VAAS [pushed] · Canvas [local, mesh-blocked] · ContextCommons · Network · Oration · Spacemacs · ZenZachary [local]) + **7 tailor-pass Batch-1** (Astro · aDNALabs · Molecules · LAVentureGraph · wga · III · VisualDNA [local]). **Remaining:** the tailor set's Batch-2 / verify-first (~7: Harness · TappProtocol · CakeHealth · Git · PercySleep · Videos · SuperLeague) + the deferred set (~7: ComfyUI · Terminal · LatticeProtocol · Exchange · WebForge · TypeScript · Operations) + Home (node-pass) + the 2 Wilhelm memos + ScienceStanley (diverged). Template-aligned + tailor-Batch-1 are **complete**; what's left needs Batch-2 tailoring, quiescence, memos, or genesis-graduation.
+**23 vaults carry the v8.4 doctrine:** aDNA.aDNA (dogfood) + **8 alignment-sweep consumers** (AWSBootstrap · VAAS · Canvas · ContextCommons · Network · Oration · Spacemacs · ZenZachary) + **7 tailor Batch-1** (Astro · aDNALabs · Molecules · LAVentureGraph · wga · III · VisualDNA) + **7 tailor Batch-2** (Harness · TappProtocol · CakeHealth · Git · PercySleep · Videos · SuperLeague). All pushed except **aDNALabs + Network** (held, above). **Remaining Tier-A:** the deferred set (~7: ComfyUI · Terminal · LatticeProtocol · Exchange · WebForge · TypeScript · Operations — quiescence / genesis-graduation / the Operations `AGENTS.md`-scope ruling) + Home (node-pass, Hestia) + the 2 Wilhelm memos (RareArchive/WilhelmAI) + ScienceStanley (diverged). The two tailor batches are **complete**; what's left needs quiescence, memos, or genesis-graduation.
