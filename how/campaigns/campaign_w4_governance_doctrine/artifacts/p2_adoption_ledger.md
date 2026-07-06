@@ -114,6 +114,22 @@ Second tailor batch (verify-first; DP1 Option C direct-by-default; all internall
 
 (AWSBootstrap + VAAS were pushed in the prior session; Canvas's earlier "mesh-blocked" note is now superseded.)
 
+## Deferred-set force-adopt (2026-07-05, operator "keep going" → force-adopt all 7)
+
+The 7 previously-deferred vaults, **force-adopted** (operator override of defer-on-active-work) with a dirty-file guardrail (skip a vault only if its *target file* is mid-edit — none were). Same surgical recipe; `adna_validate` zero **new** drift on all 7 (5 Zero-drift). **Operations adopted into `AGENTS.md`** (its CLAUDE.md is a pointer). LatticeProtocol's design-noted "+74 backlog" was **stale** — 0-unpushed (Carnot closed + pushed today).
+
+| Vault | Commit | ver | items | push |
+|-------|--------|-----|-------|------|
+| ComfyUI | `d0d4dfc` | 7.0 | §7.7·AskUQ·Lease·executor_tier (skip Cred) | **LOCAL only** — sole remote is `luke-mesh` (no origin); unpushable |
+| Terminal | `97ec07e` | 1.6 | all 5 | ✅ pushed |
+| LatticeProtocol | `b95fb94` | none→body | §7.7·AskUQ·Lease·executor_tier (skip Cred) | ✅ pushed; **Zero-drift** |
+| Exchange | `5b42ca0` | none→body | all 5 | ✅ pushed; **Zero-drift** |
+| WebForge | `d49365b5` | no-ver | §7.7·AskUQ·Lease·executor_tier (skip Cred) | **HELD** — 15-commit own genesis backlog mid-B3.9-deploy; **Zero-drift** |
+| TypeScript | `acaa243` | 1.0 | §7.7·AskUQ·Lease·executor_tier (skip Cred → refs `## Routing & credentials`) | ✅ pushed; **Zero-drift** |
+| Operations | `39937ae` | AGENTS.md→body | all 5 (§7.7→`what/adrs/`; Lease ties the §5 claim-lease) | **HELD** — 84-commit backlog, mid-C05; **Zero-drift** |
+
+**Deferred-set result: 7/7 adopted.** Pushed 4 (Terminal · LatticeProtocol · Exchange · TypeScript); held 2 (WebForge 15 · Operations 84); ComfyUI local-only (mesh, no origin).
+
 ## P2 running total (2026-07-05)
 
-**23 vaults carry the v8.4 doctrine:** aDNA.aDNA (dogfood) + **8 alignment-sweep consumers** (AWSBootstrap · VAAS · Canvas · ContextCommons · Network · Oration · Spacemacs · ZenZachary) + **7 tailor Batch-1** (Astro · aDNALabs · Molecules · LAVentureGraph · wga · III · VisualDNA) + **7 tailor Batch-2** (Harness · TappProtocol · CakeHealth · Git · PercySleep · Videos · SuperLeague). All pushed except **aDNALabs + Network** (held, above). **Remaining Tier-A:** the deferred set (~7: ComfyUI · Terminal · LatticeProtocol · Exchange · WebForge · TypeScript · Operations — quiescence / genesis-graduation / the Operations `AGENTS.md`-scope ruling) + Home (node-pass, Hestia) + the 2 Wilhelm memos (RareArchive/WilhelmAI) + ScienceStanley (diverged). The two tailor batches are **complete**; what's left needs quiescence, memos, or genesis-graduation.
+**30 vaults carry the v8.4 doctrine:** aDNA.aDNA (dogfood) + **8 alignment-sweep** (AWSBootstrap · VAAS · Canvas · ContextCommons · Network · Oration · Spacemacs · ZenZachary) + **7 tailor Batch-1** (Astro · aDNALabs · Molecules · LAVentureGraph · wga · III · VisualDNA) + **7 tailor Batch-2** (Harness · TappProtocol · CakeHealth · Git · PercySleep · Videos · SuperLeague) + **7 deferred-set** (ComfyUI · Terminal · LatticeProtocol · Exchange · WebForge · TypeScript · Operations). **Push-holds:** aDNALabs (66) · Network (37, SO-9) · WebForge (15, mid-deploy) · Operations (84) — plus ComfyUI local-only (mesh). **Remaining Tier-A:** the pure-genesis stubs (Context · Warp · RemoteControl — SO#6 graduation) + WIP (Obsidian · Lab) + Home (node-pass, Hestia) + the 2 Wilhelm memos (RareArchive/WilhelmAI) + ScienceStanley (diverged). **The full template-and-tailor Tier-A body is DONE** — what's left is genesis-graduation, node/partner-scope, or the diverged ScienceStanley.
