@@ -25,12 +25,12 @@
     {
       "id": "standard-version",
       "class": "status",
-      "claim": "the aDNA standard is at v2.3",
+      "claim": "the aDNA standard is at v2.5",
       "rendered_on": ["/", "/llms.txt", "/reference/specification"],
       "source_ref": "src/data/standard.ts",
       "owner": "website",
       "check": { "kind": "ts_const", "accessor": "STANDARD_VERSION" },
-      "expected": "v2.3"
+      "expected": "v2.5"
     },
     {
       "id": "entity-type-count",

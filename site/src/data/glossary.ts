@@ -23,8 +23,16 @@ export const categoryConfig: GlossaryCategoryConfig[] = [
   { label: 'Knowledge & Coordination', orderMin: 23, orderMax: 25 },
 ];
 
-/** Truncate description to first sentence for the summary preview. */
+/** Truncate the description to its first sentence for the summary preview. */
 export function firstSentence(text: string): string {
-  const match = text.match(/^[^.!?]+[.!?]/);
-  return match ? match[0] : text.slice(0, 80) + '…';
+  // First sentence: up to a . ! or ? that isn't part of an ellipsis ("..." / "…"),
+  // so a "…"-truncated meta description doesn't resolve to a mid-word fragment.
+  const match = text.match(/^[^.!?…]+[.!?](?!\.)/);
+  if (match) return match[0];
+  // No clean sentence terminator — cut at the last word boundary before the cap
+  // so the preview never ends mid-word.
+  const capped = text.slice(0, 80);
+  const lastSpace = capped.lastIndexOf(' ');
+  const clean = lastSpace > 0 ? capped.slice(0, lastSpace) : capped;
+  return clean.replace(/[\s.…—–-]+$/, '') + '…';
 }

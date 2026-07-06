@@ -1,11 +1,11 @@
 ---
 title: "Reading Guide — aDNA Reference"
-description: "The aDNA Universal Standard is 1,336 lines. You don't need all of them. This guide maps three reading paths by what you're trying to do, provides a sect..."
+description: "The aDNA Universal Standard is ~1,500 lines. You don't need all of them. This guide maps three reading paths by what you're trying to do, provides a sect..."
 ref_title: "Reading Guide"
 stability: "stable"
 ---
 
-The [aDNA Universal Standard](adna_standard.md) is 1,336 lines. You don't need all of them. This guide maps three reading paths by what you're trying to do, provides a section-by-section table of contents, and disambiguates the skill/lattice dual identity.
+The [aDNA Universal Standard](adna_standard.md) is ~1,500 lines. You don't need all of them. This guide maps three reading paths by what you're trying to do, provides a section-by-section table of contents, and disambiguates the skill/lattice dual identity.
 
 ---
 
@@ -15,9 +15,9 @@ Three personas, three curated paths through the standard:
 
 | Persona | Goal | Sections to read | ~Lines | Time |
 |---------|------|-------------------|--------|------|
-| **New adopter** | Get a working vault | §1 (Intro), §2 (Terms), §3 (Triad), §4 (Governance), §5 (Directory Structure), §7 (Frontmatter) | ~350 | 10-15 min |
-| **Extension builder** | Add entity types, templates, pipelines | New adopter path + §6 (Naming), §12 (Templates), §14 (Pipelines), §19 (Extensions) | ~550 | 20-25 min |
-| **Standard contributor** | Understand the full spec | Everything | 1,336 | 45-60 min |
+| **New adopter** | Get a working vault | §1 (Intro), §2 (Terms), §3 (Triad), §4 (Governance), §5 (Directory Structure), §7 (Frontmatter) | ~630 | 10-15 min |
+| **Extension builder** | Add entity types, templates, pipelines | New adopter path + §6 (Naming), §12 (Templates), §14 (Pipelines), §19 (Extensions) | ~870 | 20-25 min |
+| **Standard contributor** | Understand the full spec | Everything | ~1,500 | 45-60 min |
 
 ### New Adopter Path
 
@@ -55,26 +55,26 @@ All 20 numbered sections of the standard with one-line summaries, persona tags, 
 
 | § | Section | Summary | Personas | Lines |
 |---|---------|---------|----------|-------|
-| 1 | Introduction & Scope | What aDNA is, who it's for, RFC 2119 keywords | All | 19-52 |
-| 2 | Terminology | 12 key terms: triad, governance file, bare/embedded, session, SITREP, content-as-code | All | 54-73 |
-| 3 | Triad Architecture | `who/what/how` ontology, bare vs. embedded deployment forms, classification question test | All | 75-171 |
-| 4 | Governance Files | Five ALLCAPS files (CLAUDE, MANIFEST, STATE, AGENTS, README) — purpose, contents, quickstart | All | 173-294 |
-| 5 | Directory Structure | Required/recommended/optional subdirectories for each triad leg, starter/standard/full skeletons | All | 296-462 |
-| 6 | Naming Conventions | Underscores not hyphens, `type_descriptive_name.md`, ALLCAPS governance list, `type_` prefixes | Extension+ | 464-516 |
-| 7 | Frontmatter System | Required base fields (`type`, `created`, `updated`, `last_edited_by`, `tags`), tag conventions | All | 518-570 |
-| 8 | Session Model | Bounded units of agent work — lifecycle (create → execute → close → archive), tiers, SITREP, next-session prompt, 75% rule | Operations | 572-664 |
-| 9 | Mission System | Multi-session work decomposition — objectives, acceptance criteria, stages, handoff protocol | Operations | 666-713 |
-| 10 | Context Library | `what/context/` — topic organization, context subtypes (research, guide, core), token budget awareness | Operations | 715-759 |
-| 11 | Coordination Protocol | `who/coordination/` — cross-agent notes, urgency levels (urgent/info/fyi), ephemeral by design | Multi-agent | 761-789 |
-| 12 | Template System | Graduated template sets (starter/standard/full), template naming and conventions | Extension+ | 791-827 |
-| 13 | Collision Prevention | Three tiers: universal (frontmatter attribution), sync (file safety tiers), multi-agent (coordination + scope declarations) | Operations | 829-887 |
-| 14 | Content-as-Code Pipelines | Folder-based workflows — file location IS processing state, pipeline structure, stage AGENTS.md | Extension+ | 889-939 |
-| 15 | Archive & Versioning | Archive patterns for sync vs. git environments, retention, CLAUDE.md version tracking | Reference | 941-970 |
-| 16 | Tool Integration Tiers | Three tiers: core standard (Tier 1, universal), frontmatter querying (Tier 2), environment-specific (Tier 3) | Reference | 972-1028 |
-| 17 | Error & Recovery Protocol | Three-tier response: data integrity (STOP), state inconsistency (fix + log), process issues (workaround + backlog) | Operations | 1030-1064 |
-| 18 | Success Criteria | Minimum viable (cold start, handoff, integrity), recommended (fork, scale, consistency), aspirational (network, collision safety, dual-audience) | Contributor | 1066-1116 |
-| 19 | Optional Extensions | Machine registry, backlog, skill files, testing/CI awareness, reference code, ADRs | Extension+ | 1118-1198 |
-| 20 | Appendices | Persona framework (App A), aggregation points (App B), deferred topics (App C), decision traceability matrix (App D — 40 decisions) | Contributor | 1200-1336 |
+| 1 | Introduction & Scope | What aDNA is, who it's for, RFC 2119 keywords | All | 15-51 |
+| 2 | Terminology | 12 key terms: triad, governance file, bare/embedded, session, SITREP, content-as-code | All | 52-76 |
+| 3 | Triad Architecture | `who/what/how` ontology, bare vs. embedded deployment forms, classification question test | All | 77-209 |
+| 4 | Governance Files | Five ALLCAPS files (CLAUDE, MANIFEST, STATE, AGENTS, README) — purpose, contents, quickstart | All | 210-334 |
+| 5 | Directory Structure | Required/recommended/optional subdirectories for each triad leg, starter/standard/full skeletons | All | 335-558 |
+| 6 | Naming Conventions | Underscores not hyphens, `type_descriptive_name.md`, ALLCAPS governance list, `type_` prefixes | Extension+ | 559-622 |
+| 7 | Frontmatter System | Required base fields (`type`, `created`, `updated`, `last_edited_by`, `tags`), tag conventions | All | 623-707 |
+| 8 | Session Model | Bounded units of agent work — lifecycle (create → execute → close → archive), tiers, SITREP, next-session prompt, 75% rule | Operations | 708-803 |
+| 9 | Mission System | Multi-session work decomposition — objectives, acceptance criteria, stages, handoff protocol | Operations | 804-854 |
+| 10 | Context Library | `what/context/` — topic organization, context subtypes (research, guide, core), token budget awareness | Operations | 855-902 |
+| 11 | Coordination Protocol | `who/coordination/` — cross-agent notes, urgency levels (urgent/info/fyi), ephemeral by design | Multi-agent | 903-934 |
+| 12 | Template System | Graduated template sets (starter/standard/full), template naming and conventions | Extension+ | 935-974 |
+| 13 | Collision Prevention | Three tiers: universal (frontmatter attribution), sync (file safety tiers), multi-agent (coordination + scope declarations) | Operations | 975-1038 |
+| 14 | Content-as-Code Pipelines | Folder-based workflows — file location IS processing state, pipeline structure, stage AGENTS.md | Extension+ | 1039-1092 |
+| 15 | Archive & Versioning | Archive patterns for sync vs. git environments, retention, CLAUDE.md version tracking | Reference | 1093-1140 |
+| 16 | Tool Integration Tiers | Three tiers: core standard (Tier 1, universal), frontmatter querying (Tier 2), environment-specific (Tier 3) | Reference | 1141-1200 |
+| 17 | Error & Recovery Protocol | Three-tier response: data integrity (STOP), state inconsistency (fix + log), process issues (workaround + backlog) | Operations | 1201-1238 |
+| 18 | Success Criteria | Minimum viable (cold start, handoff, integrity), recommended (fork, scale, consistency), aspirational (network, collision safety, dual-audience) | Contributor | 1239-1292 |
+| 19 | Optional Extensions | Machine registry, backlog, skill files, testing/CI awareness, reference code, ADRs | Extension+ | 1293-1376 |
+| 20 | Appendices | Persona framework (App A), aggregation points (App B), deferred topics (App C), decision traceability matrix (App D — 40 decisions) | Contributor | 1377-1515 |
 
 **Persona key**: All = everyone reads this. Extension+ = extension builders and contributors. Operations = anyone running sessions/missions. Multi-agent = concurrent agent environments. Reference = consult when needed. Contributor = standard contributors.
 
