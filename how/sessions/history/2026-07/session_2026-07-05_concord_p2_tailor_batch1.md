@@ -2,7 +2,7 @@
 type: session
 session_id: "2026-07-05_concord_p2_tailor_batch1"
 created: 2026-07-05
-status: active
+status: completed
 tier: 1
 mission: mission_w4_p2_tier_a_rollout
 campaign: campaign_w4_governance_doctrine
