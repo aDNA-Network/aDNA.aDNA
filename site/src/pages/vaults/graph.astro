@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Picture } from 'astro:assets';
-import MermaidDiagram from '../../components/islands/MermaidDiagram.astro';
 import vaultsData from '../../data/vaults.json';
 // E5 c162 (context-graph experience): the deep graph surface gets the network glyph art —
 // the same visual language as home/network — so the topology page reads as part of the
@@ -11,6 +10,13 @@ import heroVaultsGraph from '../../assets/heroes/hero_vaults_graph.png';
 // missed the file (in the built bundle import.meta.url points at the chunk, not the source) → the graph
 // silently fell back to "(no data)". (E4 cycle 154 fix.)
 import graphChart from '../../data/vaults_graph.mmd?raw';
+// A-06 (Operation Meridian M8): the topology is PRE-RENDERED to a committed static SVG at authoring
+// time (scripts/build_graph_svg.mjs → `npm run sync:graph`) and inlined here via Vite `?raw` — zero
+// runtime JS, visible with JavaScript disabled, theme-adaptive (edges inherit currentColor; node
+// chips keep their self-grounding fills). Replaces the former client-side <MermaidDiagram> island
+// render for THIS route only (the island still serves the docs pages). The .mmd is still imported
+// above, but only to parse the legend swatch palette (classDefColors) — not to render at runtime.
+import graphSvg from '../../assets/vaults_graph.svg?raw';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
 
 const chart = (graphChart && graphChart.trim()) ? graphChart : 'flowchart LR\n  empty["(no data)"]';
@@ -194,7 +200,14 @@ const jsonLD = buildCollectionPageJsonLD({
 
     <p class="graph-tip">Open any vault below — or browse them all on the <a href="/vaults/">vault index</a>. Each vault page links back to this graph.</p>
 
-    <MermaidDiagram chart={chart} caption="The aDNA network — cross-vault federation topology" />
+    {/* A-06 pre-rendered topology (M8): the committed SVG carries its own role="img" + <title>/<desc>,
+        so the container is a plain styled box (no role/aria-label — the SVG is the labelled image).
+        The keyboard/AT navigation twin is the node-list <nav> below; node click-to-open is a pointer
+        enhancement wired by the round-trip <script>. No runtime mermaid — renders with JS disabled. */}
+    <figure class="mermaid-figure">
+      <div class="mermaid-container" set:html={graphSvg}></div>
+      <figcaption class="mermaid-caption">The aDNA network — cross-vault federation topology</figcaption>
+    </figure>
 
     {/* Keyboard node-twin (E4 c156): the SVG is decorative (aria-hidden) and its nodes are wired for
         pointer only, so this is the focusable/AT-navigable mirror of the graph — one real anchor per
@@ -306,6 +319,29 @@ const jsonLD = buildCollectionPageJsonLD({
   .graph-tip { max-width: 72ch; margin: 0 auto var(--space-4, 1rem); color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }
   /* In-text link → underlined (not colour-only) for WCAG link-in-text-block, both modes. */
   .graph-tip a { color: var(--color-link); text-decoration: underline; }
+
+  /* Pre-rendered-SVG figure (A-06 / M8) — these were the MermaidDiagram island's scoped styles;
+     brought inline here now that this route inlines the committed SVG instead of the island.
+     `color: var(--color-text)` seeds the SVG's edge/cluster `currentColor` (theme-adaptive). */
+  .mermaid-figure { margin: var(--space-6) 0; }
+  .mermaid-container {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-4);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    overflow-x: auto;
+    color: var(--color-text);
+  }
+  .mermaid-container :global(svg) { max-width: 100%; height: auto; }
+  .mermaid-caption {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-align: center;
+    margin-top: var(--space-2);
+    font-style: italic;
+  }
 
   /* Focus highlight when arriving via ?focus=<slug>. A single cyan stroke competed with the cyan
      focus EDGE and lost against Mermaid's per-node inline stroke (E4 c155 — IA: the focused node was
