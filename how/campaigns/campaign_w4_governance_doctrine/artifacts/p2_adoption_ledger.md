@@ -4,7 +4,7 @@ artifact_class: adoption_ledger
 title: "P2 Adoption Ledger — Operation Concord"
 campaign: campaign_w4_governance_doctrine
 created: 2026-07-05
-updated: 2026-07-05
+updated: 2026-07-06
 status: active
 last_edited_by: agent_rosetta
 tags: [reference, ledger, w4, concord, p2, tier_a, rollout]
@@ -133,3 +133,23 @@ The 7 previously-deferred vaults, **force-adopted** (operator override of defer-
 ## P2 running total (2026-07-05)
 
 **32 vaults carry the v8.4 doctrine:** aDNA.aDNA (dogfood) + **8 alignment-sweep** (AWSBootstrap · VAAS · Canvas · ContextCommons · Network · Oration · Spacemacs · ZenZachary) + **7 tailor Batch-1** (Astro · aDNALabs · Molecules · LAVentureGraph · wga · III · VisualDNA) + **7 tailor Batch-2** (Harness · TappProtocol · CakeHealth · Git · PercySleep · Videos · SuperLeague) + **7 deferred-set** (ComfyUI · Terminal · LatticeProtocol · Exchange · WebForge · TypeScript · Operations) + **2 DP2 sweep** (Obsidian · Lab). **Push-holds:** aDNALabs (66) · Network (37, SO-9) · WebForge (15, mid-deploy) · Operations (84) — plus ComfyUI local-only (mesh). **Remaining Tier-A (documented exceptions, [[dp2_tier_a_rollout_complete]]):** Home (node-pass, Hestia) + the 2 Wilhelm memos (RareArchive/WilhelmAI) + ScienceStanley (diverged); Tier-B genesis stubs (Context · Warp · RemoteControl) are out-of-scope (SO#6 graduation). **Tier-A rollout RATIFIED COMPLETE 2026-07-06 (DP2); Operation Concord CLOSED** — F1 = checklist-only + the items-not-number versioning ruling ratified ([[adr_047_governance_doctrine_checklist_ruling]]).
+
+## Post-campaign follow-up (2026-07-06) — Home node-pass DONE
+
+> Recorded **after** close. **Operation Concord stays `completed`** — this is the follow-up register (owned, post-campaign), not re-opened campaign work. The running total above is the campaign-close snapshot (32); this section tracks the documented-exception tail draining afterward.
+
+**Home.aDNA — node-pass ADOPTED** (`c27b867`; **local-only** per Standing Order #7 / workspace Rule 4 — Home has no remote, not pushed). The node-vault variant of the checklist (guest-visited as Hestia):
+
+| Item | Treatment |
+|------|-----------|
+| §7.7 ratification | adopted |
+| Credential brokerage | **broker-HOME** framing — *Home IS the broker* (Keychain-primary + 1P-backup); consumers carry the routing snippet, Home holds the secrets (`what/inventory/inventory_credentials.md`) |
+| AskUserQuestion | adopted |
+| Single-writer lease | adopted — ties the existing `### Collision Prevention Rules`; mandatory for `inventory`/`identity`/`credentials` |
+| Model-tiered `executor_tier` | adopted |
+| Agentic sudo (item 2) | **referenced** the existing `### Sudo Elevation (canonical primitive)` — node owns it |
+| Router-row discipline (item 5) | **dropped** — router-only |
+
+Frontmatter marker `governance_doctrine: v8.4` added; **`version` stays `"0.1"`** (DP3 / ADR-047 — items-not-number). `adna_validate --governance` = **no new drift** (the pre-existing `0.1`-vs-CHANGELOG-`0.4` version note is unchanged, orthogonal). Section anchored between `## Standing Orders` and `## Git Coordination`; surgical CLAUDE.md-only commit (the 4 untracked coord memos left unstaged).
+
+**Documented exceptions: 1/4 cleared.** Remaining: the **2 Wilhelm memos** (RareArchive/WilhelmAI, SO#3 co-sign) + **ScienceStanley** (v7.0 diverged). Tier-B genesis stubs (Context · Warp · RemoteControl) stay out-of-scope (SO#6 graduation). **Fleet total incl. the node altitude: 33** (32 Concord + Home node-pass).
