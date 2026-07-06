@@ -3,7 +3,7 @@ campaign_id: campaign_w4_governance_doctrine
 type: campaign
 title: "W4 — Governance-Doctrine Adoption (Operation Concord)"
 owner: rosetta
-status: active
+status: completed
 phase_count: 4
 mission_count: 4
 estimated_sessions: "3-5"
@@ -11,9 +11,9 @@ calibrated_sessions: "3-5"
 estimation_class: governance-broad
 priority: high
 created: 2026-07-05
-updated: 2026-07-05
+updated: 2026-07-06
 last_edited_by: agent_rosetta
-tags: [campaign, w4, governance_doctrine, fleet_reseed_successor, f1, f7, concord]
+tags: [campaign, w4, governance_doctrine, fleet_reseed_successor, f1, f7, concord, completed]
 ---
 
 # Campaign: W4 — Governance-Doctrine Adoption (Operation Concord)
@@ -97,7 +97,7 @@ scorecard. **Operator gate before P2.**
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 2 | [[mission_w4_p2_tier_a_rollout]] — Tier-A rollout (**re-scoped to alignment** 2026-07-05) | 2-3 | M1, DP1 | ◐ in-progress — Cohort-1 pilot: 3 adopted+pushed ([[p2_adoption_ledger]]); now sweeping template-aligned vaults roster-wide |
+| 2 | [[mission_w4_p2_tier_a_rollout]] — Tier-A rollout (**re-scoped to alignment** 2026-07-05) | 2-3 | M1, DP1 | ✅ completed — **32 vaults adopted** (alignment sweep + tailor Batch-1/2 + deferred-set force-adopt + DP2 Obsidian/Lab sweep); DP2 ratified 2026-07-06 ([[dp2_tier_a_rollout_complete]]) |
 
 **Phase exit gate**: every Tier-A vault has the checklist applied or a documented exception; per-vault commits local
 (pushes operator-gated, SO-9). **Operator gate before P3.** Cross-vault execution model decided at the P1→P2 gate (DP1).
@@ -106,7 +106,7 @@ scorecard. **Operator gate before P2.**
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| 3 | v6→v8 tooling ruling (F1) + final audit + campaign AAR | 0.5-1 | M2 | planned |
+| 3 | v6→v8 tooling ruling (F1) + final audit + campaign AAR | 0.5-1 | M2 | ✅ completed — F1 = checklist-only + DP3 versioning ratified ([[../../what/decisions/adr_047_governance_doctrine_checklist_ruling]]); scorecard F1+F7 closed; AAR below |
 
 **Phase exit gate**: F1 ruled (tooling built or checklist-only decided + recorded as an ADR/decision); scorecard shows F1
 + F7 closed; campaign AAR filed; `status: completed`.
@@ -116,8 +116,8 @@ scorecard. **Operator gate before P2.**
 | # | When | Decision | Status |
 |---|------|----------|--------|
 | 1 | P1→P2 gate | Approve the dogfood proof **and** choose the P2 cross-vault execution model: (a) guest-visit, (b) coord-memo, (c) hybrid. **[[dp1_execution_model]] — rec (c) hybrid, direct-by-default.** | ✅ RATIFIED 2026-07-05 (Option C) |
-| 2 | P2→P3 gate | Approve Tier-A rollout complete (all applied or documented-exception). | pending |
-| 3 | During P3 | Rule on F1: build v6→v8 migration tooling, or checklist-only. Rule on gov-versioning for project-local-versioned vaults. | pending |
+| 2 | P2→P3 gate | Approve Tier-A rollout complete (all applied or documented-exception). | ✅ RATIFIED 2026-07-06 — 32 adopted + documented-exception register ([[dp2_tier_a_rollout_complete]]); operator directed the Obsidian+Lab sweep first |
+| 3 | During P3 | Rule on F1: build v6→v8 migration tooling, or checklist-only. Rule on gov-versioning for project-local-versioned vaults. | ✅ RATIFIED 2026-07-06 — checklist-only + items-not-number ([[../../what/decisions/adr_047_governance_doctrine_checklist_ruling]]) |
 
 ## Risk Register
 
@@ -180,8 +180,36 @@ scorecard. **Operator gate before P2.**
 
 ## Completion Summary
 
-*Fill out when setting `status: completed`.*
+**Closed 2026-07-06.** Operation Concord delivered fleet governance-posture coherence: **32 vaults** carry the v8.4
+consumer-facing doctrine (aDNA.aDNA dogfood + 8 alignment-sweep + 7 tailor Batch-1 + 7 tailor Batch-2 + 7 deferred-set
+force-adopt + 2 DP2 Obsidian/Lab sweep). The five-item checklist (`artifacts/v8_4_adoption_checklist.md`) is proven
+across every structural case (standard / product-local / genesis / no-frontmatter / `AGENTS.md`-pointer / mesh-only);
+`adna_validate --governance` zero **new** drift throughout. Findings closed: **F7** (aDNA.aDNA self-drift, P1) + **F1**
+(checklist-only, no v6→v8 tooling — [[../../what/decisions/adr_047_governance_doctrine_checklist_ruling]]). Gates: DP1
+(Option C hybrid, 2026-07-05), DP2 (rollout complete, 2026-07-06), DP3 (F1 + versioning, 2026-07-06) — all
+operator-ratified. 25 vaults pushed to origins; push-holds (aDNALabs / Network / WebForge / Operations local, ComfyUI
+mesh-only) documented in [[dp2_tier_a_rollout_complete]]. **Follow-up register (post-campaign, owned — NOT reopenable
+Concord work):** Home node-pass (Hestia) · 2 Wilhelm memos (Rosetta, coord-memo) · genesis-graduation adopters
+Context/Warp/RemoteControl (at each graduation, SO#6) · ScienceStanley (when its branch settles) · the pre-existing
+MANIFEST/README count-drift vault-hygiene sweep · a local `template_ratification_record` mirror · optional held-backlog
+pushes (operator-gated) · upstreaming the checklist into `.adna/` fork-base (release lane).
 
 ## Campaign AAR
 
-*Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
+- **Worked:** Dogfood-first (close F7 before touching any consumer) gave the recipe authority *and* surfaced the
+  applicability model. The per-vault **checklist** (not a version bump) generalized cleanly across 32 heterogeneous
+  vaults; the **surgical CLAUDE.md-only + `STAGED==<file>` guard** never once buried a peer's WIP or `.obsidian` noise;
+  `adna_validate --governance` was a reliable zero-new-drift gate.
+- **Didn't:** Scope ballooned past the charter's "cohorts" framing — the real driver was **template-alignment, not
+  category** (only ~3/14 "Platforms" were recipe-ready), forcing a mid-campaign re-scope to alignment + a tailor pass.
+  Design-pass intel **aged** (LatticeProtocol's noted "+74 backlog" was actually 0; WebForge/aDNALabs/Network backlogs
+  grew mid-session) — live re-verification per vault was mandatory. Node `git`/fs flake + no `timeout` binary slowed recon.
+- **Finding:** Governance *posture* is orthogonal to version *number* — "adopt the items, not the number" is the
+  load-bearing insight (ADR-047). Structural variants have clean handling: **skip-don't-duplicate** where an item exists;
+  **body-only** for no-frontmatter named-projects (marker = the section itself); **`AGENTS.md`** for pointer-CLAUDE.md
+  vaults (Operations); **local-only** for mesh-only vaults (ComfyUI). `git push` moves the whole branch → **check the
+  unpushed count first**; a large unrelated backlog = HOLD + flag, never dump public as a 1-commit side effect.
+- **Change:** The checklist is the canonical **fork-time** instrument; future vaults inherit the doctrine at fork, not
+  via migration tooling. Consumer CLAUDE.mds carry a `## Governance Doctrine (v8.4)` section as the standing pattern.
+- **Follow-up:** the register in the Completion Summary (owners named). "Continue the campaign" now yields those
+  follow-ups, **not** reopenable Concord work — Concord is **CLOSED**.

@@ -1,8 +1,8 @@
 ---
 type: mission
 created: 2026-07-05
-updated: 2026-07-05
-status: active
+updated: 2026-07-06
+status: completed
 last_edited_by: agent_rosetta
 campaign: campaign_w4_governance_doctrine
 phase: P2
@@ -67,7 +67,15 @@ Governance *posture* coherent across the fleet; per-vault commits local; pushes 
 - No cross-vault write occurred without the DP1-sanctioned model (guest-visit or memo).
 
 ## Completion Summary
-*Filled at close.*
+**Closed 2026-07-06.** Tier-A rollout complete — **32 vaults** carry the v8.4 doctrine across five waves (alignment
+sweep 8 · tailor Batch-1 7 · Batch-2 7 · deferred-set force-adopt 7 · DP2 Obsidian/Lab sweep 2, + the aDNA.aDNA
+dogfood). DP2 ratified 2026-07-06 ([[../artifacts/dp2_tier_a_rollout_complete]]); 25 pushed, holds documented. The only
+un-adopted Tier-A vaults are documented exceptions (Home node-pass · 2 Wilhelm memos · ScienceStanley); Tier-B genesis
+stubs out-of-scope. Per-vault record: [[../artifacts/p2_adoption_ledger]].
 
 ## AAR
-*Mandatory before `status: completed`.*
+- **Worked:** the surgical per-vault checklist generalized across 32 heterogeneous vaults; the `STAGED==<file>` guard + `adna_validate --governance` zero-new-drift kept every commit clean.
+- **Didn't:** template-alignment (not category) drove recipe-fit → a mid-flight re-scope + tailor pass; design-pass backlog intel aged (re-verify live before each push).
+- **Finding:** adopt the items, not the number (ADR-047); body-only / `AGENTS.md` / local-only variants each have clean handling.
+- **Change:** the checklist is the fork-time instrument; `## Governance Doctrine (v8.4)` is the standing consumer pattern.
+- **Follow-up:** Home node-pass (Hestia) · Wilhelm memos (Rosetta) · genesis-graduation · ScienceStanley — owned post-campaign, not reopenable. Full campaign AAR in the charter.
