@@ -287,12 +287,12 @@ Agentic-DNA/
 │   ├── docs/              #   aDNA specification documents
 │   └── lattices/          #   Lattice definitions + tools + 15 examples
 ├── how/                   # Operations
-│   ├── templates/         #   26 base templates (12 auto-triggering)
+│   ├── templates/         #   42 templates (25 base + 11 extension + 6 operational)
 │   ├── pipelines/prd_rfc/ #   R&D → PRD → RFC pipeline
 │   ├── sessions/          #   Session tracking
 │   ├── campaigns/         #   Multi-mission initiatives
 │   ├── missions/          #   Task decomposition
-│   ├── skills/            #   26 agent recipes & procedures
+│   ├── skills/            #   50 agent recipes & procedures
 │   └── backlog/           #   Ideas & improvements
 ├── who/                   # Organization
 │   ├── coordination/      #   Cross-agent notes

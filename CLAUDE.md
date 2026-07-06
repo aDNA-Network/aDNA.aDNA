@@ -2,7 +2,7 @@
 type: governance
 version: "8.4"
 token_estimate: ~5200
-updated: 2026-07-05
+updated: 2026-07-06
 last_edited_by: agent_rosetta
 ---
 
@@ -63,7 +63,7 @@ aDNA.aDNA/
 │       ├── tools/               # Python validation and conversion tools
 │       └── examples/            # Example .lattice.yaml files
 ├── how/                         # HOW — Operations, sessions, templates
-│   ├── templates/               # 41 reusable templates (25 base + 11 extension + 5 operational)
+│   ├── templates/               # 42 reusable templates (25 base + 11 extension + 6 operational)
 │   ├── sessions/                # Session tracking (active/ + history/)
 │   ├── missions/                # Multi-session plans (standalone)
 │   ├── backlog/                 # Ideation and improvement tracking

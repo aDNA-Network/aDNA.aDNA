@@ -1,13 +1,13 @@
 ---
 type: backlog_idea
-status: accepted
+status: resolved
 priority: low  # cosmetic
 routes_to_campaign: campaign_obsidian_deployment_stabilization
 routes_to_track: T4  # also touches T5 first-open UX hardening
 finding_id: F-S2-7
 source_session: session_stanley_20260513_043947_mlwx03_s2
 created: 2026-05-13
-updated: 2026-07-02
+updated: 2026-07-06
 last_edited_by: agent_rosetta
 tags: [backlog, f_s2_7, template_placeholder_tags, obsidianignore, templater_syntax, cosmetic, lwx_s2_surfaced]
 champollion_mission: M4.2
@@ -58,3 +58,5 @@ Recommend Option 3 (both) — small upstream change to template files + small `.
 ## Champollion M4.2 disposition — REROUTE (out of site-UX window, 2026-07-02)
 
 **REROUTE → `campaign_obsidian_deployment_stabilization` T4 / image-side RC (`fold_batch: champollion_m6_1_rc`).** M4.2 is a site-source-only UX mission. This finding is **not site-surface**: its critical files are `.adna/how/templates/template_prd.md` + `.adna/how/templates/template_rfc.md` + `.adna/.obsidianignore` — all under `.adna/`, which M4.2 is hard-guardrailed against touching (Standing Rule 1 + the mission's "no `.adna/` writes"). The fix is an Obsidian-config / template-content edit that belongs to the Obsidian-stabilization track (Option 3 of this idea) and, for the released image, rides the M6.1 template-release RC. Status held `accepted` (executable, just not here). Owning-mission field left `M4.2` for audit; effective venue = T4 / M6.1 RC per this note.
+
+**Resolved 2026-07-06 (Meridian M6):** shipped in the v8.4 image (Champollion RC IN-set); status-flip was the missing post-ship close-out.

@@ -3,10 +3,10 @@ type: backlog_idea
 status: accepted   # RATIFIED at Champollion G6 D4j (2026-07-03; record: how/gates/champollion_p6_gate.output.md) — joins the v8.5 fold batch (the v8.4 RC was already assembled; sec7.7 forbade un-ratified riders)
 priority: medium
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-06
 last_edited_by: agent_rosetta
 tags: [backlog, idea, upstream, state, queued_banner, shed_on_close, token_economy, champollion]
-fold_batch: v8_5_next_release
+fold_batch: v8_6
 ---
 
 # Idea — Shed predecessor handoff prose from STATE.md at session close (+ STATE-template QUEUED stub)
@@ -31,3 +31,5 @@ Mechanism, live instances (this vault + LatticeProtocol.aDNA), adoption steps, a
 - [[../campaigns/campaign_champollion/missions/mission_champollion_m1_5_state_diet|M1.5 STATE router diet]] — 554,697 → 47,695 B (−91%), byte-conservation proven.
 - [[../missions/artifacts/campaign_champollion_mission_m1_5_aar|M1.5 AAR]] — names self-superseded handoff prose as the bloat source; prescribes this Change.
 - `how/gates/champollion_p1_gate.md` — G1 cascade installs shed-on-close as standing close discipline.
+
+**Meridian M6 note (2026-07-06):** `fold_batch` corrected `v8_5_next_release` → `v8_6` — v8.5 shipped only its narrow release-cut-hygiene slice without this item, so it belongs to the v8.6 queue (RC v8.6 §5 Class-2). Status stays `accepted` (a ratified v8.6 rider, Champollion G6-D4).

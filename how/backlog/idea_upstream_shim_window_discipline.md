@@ -1,9 +1,9 @@
 ---
 type: backlog_idea
-status: accepted
+status: resolved
 priority: high
 created: 2026-06-10
-updated: 2026-07-02
+updated: 2026-07-06
 last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/campaigns/campaign_workspace_houseclean/disposition_ledger_v2.md (§C standing registry; Operation Spring Clean SC-7/SC-8)
 filing_authorization: skill_upstream_contribution
@@ -67,3 +67,5 @@ registry-section template + a health-check step in the node-skill set.
 ## Champollion G0 disposition — F (M1.1, 2026-07-02)
 
 **ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).
+
+**Resolved 2026-07-06 (Meridian M6):** shipped in the v8.4 image (Champollion RC IN-set); status-flip was the missing post-ship close-out.

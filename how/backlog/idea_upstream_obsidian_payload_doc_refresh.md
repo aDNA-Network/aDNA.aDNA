@@ -1,13 +1,13 @@
 ---
 type: backlog_idea
-status: accepted
+status: resolved
 priority: high
 finding_id: OBS-UP-2   # Obsidian.aDNA P1 synthesis §5 #2 · drifts D2 + D3
 source_vault: Obsidian.aDNA (Seshat)
 source_session: session_stanley_20260610_m06_s1_foundations
 routes_to: .adna template (.obsidian/README.md + OBSIDIAN_CLAUDE.md + adr_001_obsidian_as_knowledge_platform.md)
 created: 2026-06-10
-updated: 2026-07-02
+updated: 2026-07-06
 last_edited_by: agent_rosetta
 tags: [backlog, idea_upstream, obsidian, doc_drift, readme, obsidian_claude_md, adr_007_posture, m06]
 related_backlog:
@@ -44,3 +44,5 @@ The P1-era text said "add `settings-search`; count→15." **Do not add `settings
 ## Champollion G0 disposition — F (M1.1, 2026-07-02)
 
 **ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).
+
+**Resolved 2026-07-06 (Meridian M6):** shipped in the v8.4 image (Champollion RC IN-set); status-flip was the missing post-ship close-out.

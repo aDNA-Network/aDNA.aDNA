@@ -3,12 +3,12 @@ type: backlog_idea
 idea_id: idea_upstream_credential_broker_template_inheritance
 title: "Fold the `### Credential routing (broker = node.aDNA)` snippet into `.adna/CLAUDE.md` for new-vault forward-inheritance"
 category: doctrine
-status: accepted
+status: resolved
 priority: medium
 effort: small  # ~0.5 session — single-section insert in upstream template + 1 ADR-touch
 proposed_by: agent_stanley
 proposed_date: 2026-05-26
-updated: 2026-07-02
+updated: 2026-07-06
 upstream: true
 target_version: "v8.0"
 filed_from: node.aDNA/how/campaigns/campaign_node_credentials/missions/mission_node_creds_m06_documentation_sweep.md
@@ -109,3 +109,5 @@ The forking skill should NOT add an `Adoption coord` pointer line — that's a p
 ## Champollion G0 disposition — F (M1.1, 2026-07-02)
 
 **ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).
+
+**Resolved 2026-07-06 (Meridian M6):** shipped in the v8.4 image (Champollion RC IN-set); status-flip was the missing post-ship close-out.

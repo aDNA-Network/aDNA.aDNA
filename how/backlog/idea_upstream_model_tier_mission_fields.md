@@ -1,10 +1,10 @@
 ---
 type: backlog_idea
-status: accepted   # RATIFIED at Champollion G3 (2026-07-02, D2a — pattern at 5 instances, graduation trigger fired + operator-ratified; record: how/gates/champollion_p3_gate.output.md); discharges this item's F-CHM-013 open disposition
+status: resolved   # RATIFIED at Champollion G3 (2026-07-02, D2a — pattern at 5 instances, graduation trigger fired + operator-ratified; record: how/gates/champollion_p3_gate.output.md); discharges this item's F-CHM-013 open disposition
 fold_batch: champollion_m6_1_rc
 priority: high
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-06
 last_edited_by: agent_rosetta
 tags: [backlog, idea, upstream, templates, model_tiering, executor_tier, token_budget, adr_016, champollion]
 ---
@@ -42,3 +42,5 @@ Fold into the standard's template set (ships **only** through the operator-gated
 Pattern graduation discipline: **2 instances live (Carnot, Champollion); fold ratifies at the 3rd instance** or earlier by operator decision at a Champollion gate. Staged for the next `skill_template_release` batch either way.
 
 > **TRIGGER FIRED — 2026-07-02.** The 3rd instance landed: **C03-ETAT-MAJOR** (Operations.aDNA) adopted the pattern operator-ruled at their S41 gate, dogfooding these exact fields pre-schema-v2 ([[../../who/coordination/coord_2026_07_02_berthier_to_rosetta_executor_tier_ack|Berthier instance report]]). Sequencing: ADR-046's **C6 rider was DEFERRED at Champollion G2 (D2c) to precisely this trigger**, hours before it fired — so the fold now queues as a **G3 ratification item** (Option A recommended as written) and ships via **M6.1's RC** through `skill_template_release`. Operations' M37 schema-v2 thread carries the task-entity side (additive, semantics-by-reference). Agents do not fold ahead of the gate.
+
+**Resolved 2026-07-06 (Meridian M6):** shipped in the v8.4 image (Champollion RC IN-set); status-flip was the missing post-ship close-out.

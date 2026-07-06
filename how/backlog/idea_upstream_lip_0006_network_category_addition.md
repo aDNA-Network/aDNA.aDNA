@@ -1,6 +1,6 @@
 ---
 type: backlog
-status: accepted
+status: resolved
 created: 2026-05-20
 last_edited_by: agent_rosetta
 originating_vault: aDNA.aDNA  # this placeholder is filed at the standard-owner side; tracks v8 P6 propagation of an aDNA.aDNA-owned ratification (ADR-017 Clause A) to the `.adna/` upstream template
@@ -14,7 +14,7 @@ parallel_with:
   - idea_upstream_permission_edge_entity_type.md      # ratified at M1.5; same v8 P6 batch
   - idea_upstream_network_node_mirror_entity_type.md  # ratified at M1.5; same v8 P6 batch
 tags: [backlog, upstream_proposal, v8_p6_batch, lip_0006, network_adna, pattern_category, batch_promotion, additive_not_breaking, base_ontology_destination, m15_consumer, adr_017_consumer]
-updated: 2026-07-02
+updated: 2026-07-06
 fold_batch: champollion_m6_1_rc
 ---
 
@@ -91,3 +91,5 @@ This placeholder is **category-scope** (single canonical addition to the pattern
 ## Champollion G0 disposition — F (M1.1, 2026-07-02)
 
 **ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).
+
+**Resolved 2026-07-06 (Meridian M6):** shipped in the v8.4 image (Champollion RC IN-set); status-flip was the missing post-ship close-out.

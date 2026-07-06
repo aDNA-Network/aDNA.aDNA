@@ -1,10 +1,10 @@
 ---
 type: backlog_idea
-status: accepted
+status: resolved
 priority: medium
 fold_batch: champollion_m6_1_rc
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-06
 last_edited_by: agent_rosetta
 tags: [backlog, idea, upstream, template_image, newcomer, currency, first_contact, champollion, m6_1_rc]
 ---
@@ -32,3 +32,5 @@ Counts and versions above are the 2026-07-02 census — **re-census at RC time**
 
 - [[../campaigns/campaign_champollion/artifacts/newcomer_stress_test|M4.1 artifact]] §1 (census), §3 rows N-01..04/N-08/N-07, §2 legs 1–3 (as-lived narrative).
 - Orchestrator re-verification 2026-07-02: badges line, router lines 137–139, onboarding:59 + fork:157 all independently re-read; counts re-run against the clone.
+
+**Resolved 2026-07-06 (Meridian M6):** shipped in the v8.4 image (Champollion RC IN-set); status-flip was the missing post-ship close-out.

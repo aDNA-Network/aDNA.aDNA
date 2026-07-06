@@ -8,7 +8,7 @@ priority: medium
 effort: tiny  # < 0.5 session — single-section insert in upstream charter template + 1 short skill note
 proposed_by: agent_stanley
 proposed_date: 2026-05-26
-updated: 2026-07-02
+updated: 2026-07-06
 upstream: true
 target_version: "v8.0"
 filed_from: node.aDNA/how/campaigns/campaign_node_credentials/missions/mission_node_creds_m06_documentation_sweep.md
@@ -98,3 +98,5 @@ The skill `.adna/how/skills/skill_campaign_planning_light_meta_planning.md` (if 
 ## Champollion G0 disposition — F (M1.1, 2026-07-02)
 
 **ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).
+
+**Meridian M6 note (2026-07-06) — PARTIAL:** the recon-discipline half shipped in the v8.4 image (RC IN-set I10, `idea_upstream_recon_at_execution_discipline`); the planning-light meta-planning half was DEFER-flipped at v8.4 assembly (target `skill_campaign_planning_light_meta_planning.md` did not exist image-side) and remains a latent v8.6 candidate iff that skill lands image-side (RC v8.6 §5 Class-2). Status left `accepted` — not clean-shipped.

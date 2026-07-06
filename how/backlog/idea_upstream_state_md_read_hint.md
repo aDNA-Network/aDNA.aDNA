@@ -3,12 +3,12 @@ type: backlog_idea
 idea_id: idea_upstream_state_md_read_hint
 title: "Add Heavy-File Read Convention to v8.0+ AGENTS.md template"
 category: doctrine
-status: accepted
+status: resolved
 priority: medium
 effort: tiny  # < 0.5 session — single-section insert in upstream AGENTS.md template
 proposed_by: agent_stanley
 proposed_date: 2026-05-19
-updated: 2026-07-02
+updated: 2026-07-06
 upstream: true
 target_version: "v8.0"
 last_edited_by: agent_rosetta
@@ -77,3 +77,5 @@ After merge:
 ## Champollion G0 disposition — F (M1.1, 2026-07-02)
 
 **ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).
+
+**Resolved 2026-07-06 (Meridian M6):** shipped in the v8.4 image (Champollion RC IN-set); status-flip was the missing post-ship close-out.

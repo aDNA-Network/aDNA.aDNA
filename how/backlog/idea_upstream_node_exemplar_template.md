@@ -1,9 +1,9 @@
 ---
 type: backlog_idea
-status: accepted
+status: resolved
 priority: medium
 created: 2026-06-01
-updated: 2026-07-02
+updated: 2026-07-06
 last_edited_by: agent_rosetta
 tags: [backlog, idea, upstream, template, exemplar, node_adna, home, hestia_origin, m25_origin, prytaneion_m3_4]
 fold_batch: champollion_m6_1_rc
@@ -85,3 +85,5 @@ A reproducible, dependency-free smoke test now ships in-bundle (`smoke_render.py
 ## Champollion G0 disposition — F (M1.1, 2026-07-02)
 
 **ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).
+
+**Resolved 2026-07-06 (Meridian M6):** shipped in the v8.4 image (Champollion RC IN-set); status-flip was the missing post-ship close-out.

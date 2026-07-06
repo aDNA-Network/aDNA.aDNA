@@ -1,13 +1,13 @@
 ---
 type: backlog_idea
-status: accepted
+status: resolved
 priority: low
 finding_id: OBS-UP-11   # Obsidian.aDNA P1 synthesis §5 #11 · drift D1
 source_vault: Obsidian.aDNA (Seshat)
 source_session: session_stanley_20260610_m06_s1_foundations
 routes_to: .adna template (skill_project_fork / fork-time validation)
 created: 2026-06-10
-updated: 2026-07-02
+updated: 2026-07-06
 last_edited_by: agent_rosetta
 tags: [backlog, idea_upstream, obsidian, lint, orphan_plugin_id, fork_time, adr_007_posture, m06]
 related_backlog:
@@ -37,3 +37,5 @@ A tiny fork-time (or setup.sh-time) validation: every id declared in `community-
 ## Champollion G0 disposition — F (M1.1, 2026-07-02)
 
 **ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).
+
+**Resolved 2026-07-06 (Meridian M6):** shipped in the v8.4 image (Champollion RC IN-set); status-flip was the missing post-ship close-out.

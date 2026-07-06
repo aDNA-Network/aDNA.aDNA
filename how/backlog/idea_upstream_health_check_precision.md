@@ -1,9 +1,9 @@
 ---
 type: backlog_idea
-status: accepted
+status: resolved
 priority: high
 created: 2026-06-23
-updated: 2026-07-02
+updated: 2026-07-06
 last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/missions/mission_clean_root_audit.md (S15; PT P8 close)
 filing_authorization: skill_upstream_contribution
@@ -34,3 +34,5 @@ Every node's root accumulates strays; a pattern-based census will miss them on e
 ## Champollion G0 disposition — F (M1.1, 2026-07-02)
 
 **ACCEPT → template-fold.** Marked `fold_batch: champollion_m6_1_rc` — M6.1 assembles the release candidate from this marker (nothing ships to `.adna/` here). Ratified at Champollion G0 (D2).
+
+**Resolved 2026-07-06 (Meridian M6):** shipped in the v8.4 image (Champollion RC IN-set); status-flip was the missing post-ship close-out.

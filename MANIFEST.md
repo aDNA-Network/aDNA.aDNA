@@ -1,7 +1,7 @@
 ---
 type: manifest
 created: 2026-04-13
-updated: 2026-07-02
+updated: 2026-07-06
 last_edited_by: agent_rosetta
 tags: [manifest, governance]
 ---
@@ -39,7 +39,7 @@ aDNA.aDNA/
 │   ├── workshops/      [EXT] Workshop kits + facilitation
 │   ├── publishing/     [EXT] Vault-to-web pipeline
 │   ├── campaigns/      Strategic initiatives (campaign_rosetta active)
-│   ├── templates/      41 templates (25 base + 11 extension + 5 operational)
+│   ├── templates/      42 templates (25 base + 11 extension + 6 operational)
 │   ├── skills/         50 skills (21 base + 29 project-specific)
 │   ├── sessions/       Session tracking
 │   ├── missions/       Multi-session task decomposition
@@ -107,9 +107,9 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | `canvas2lattice.py` | `what/lattices/tools/` | Convert Obsidian canvas → lattice YAML |
 | `lattice_yaml_schema.json` | `what/lattices/` | JSON Schema for lattice definitions |
 
-### Templates (41)
+### Templates (42)
 
-**25 base** (inherited from `.adna` — 12 auto-triggered + 13 manual-apply; full index: `how/templates/AGENTS.md`) + **11 extension** + **5 operational** = the 16 Rosetta-local templates below:
+**25 base** (inherited from `.adna` — 12 auto-triggered + 13 manual-apply; full index: `how/templates/AGENTS.md`) + **11 extension** + **6 operational** = the 17 Rosetta-local templates below:
 
 | Local Template | Class | Target Directory |
 |----------------|-------|-----------------|
@@ -129,6 +129,7 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | `template_drift_report.md` | operational | upstream drift-watch reports |
 | `template_lattice_home_render.md` | operational | `Home.aDNA/` render |
 | `template_software_graph_stub.md` | operational | new `<Software>.aDNA/` genesis |
+| `template_ratification_record.md` | operational | `what/decisions/` · `how/gates/` |
 
 ### Skills (50)
 
