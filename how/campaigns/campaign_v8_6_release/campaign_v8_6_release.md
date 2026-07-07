@@ -117,11 +117,11 @@ campaign close + AAR. **Phase exit gate**: tag `v8.6` live on `aDNA-Network/aDNA
 |---|------|----------|--------|
 | DP0 | (pre-campaign) | Ship v8.6? | ✅ resolved — yes (operator, this session) |
 | DP1 | (pre-campaign) | Full spine-in vs lean currency-only? | ✅ resolved — Full spine-in (operator) |
-| DP2 | P1 close | Accept/hold the 3 `proposed`-source items (name-leak sweep; 2 Hestia addenda) | pending — P2 gate |
-| DP3 | P1 (authoring) | reopen-reconciliation: `§reopen` clause vs standalone skill | pending — default clause (idea's first option) |
-| DP4 | P1 (Batch G) | `skill_iii_setup.md` census-table disposition (delete vs generic note); ship-at-all? | pending |
-| DP5 | P2 | Ratify the authored batch (§7.7) + freeze the ship-set | pending — **OPERATOR** |
-| DP6 | P3 | Fire the release (post dry-run) | pending — **OPERATOR** |
+| DP2 | P1 close | Accept/hold the 3 `proposed`-source items (name-leak sweep; 2 Hestia addenda) | ✅ resolved 2026-07-06 (P2) — accept Batch G (D-2); defer both Hestia addenda → v8.7 (D-4) |
+| DP3 | P1 (authoring) | reopen-reconciliation: `§reopen` clause vs standalone skill | ✅ resolved — `§6 Reopen` clause authored (P1) |
+| DP4 | P1 (Batch G) | `skill_iii_setup.md` census-table disposition (delete vs generic note); ship-at-all? | ✅ resolved 2026-07-06 (P2) — census → generic note (D-3); ship Batch G = yes (D-2) |
+| DP5 | P2 | Ratify the authored batch (§7.7) + freeze the ship-set | ✅ **resolved 2026-07-06** — ratified: Recommended cut (`artifacts/p2_ratification_record.md`) |
+| DP6 | P3 | Fire the release (post dry-run) | pending — **OPERATOR** (P3 assembly done; awaits 2nd go on the assembled diff — dry-run-then-pause) |
 
 ## Risk Register
 

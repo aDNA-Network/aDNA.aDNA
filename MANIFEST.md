@@ -109,7 +109,7 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 
 ### Templates (44)
 
-**25 base** (inherited from `.adna` — 12 auto-triggered + 13 manual-apply; full index: `how/templates/AGENTS.md`) + **11 extension** + **6 operational** = the 17 Rosetta-local templates below:
+**25 base** (inherited from `.adna` — 12 auto-triggered + 13 manual-apply; full index: `how/templates/AGENTS.md`) + **11 extension** + **8 operational** = the 19 Rosetta-local templates below:
 
 | Local Template | Class | Target Directory |
 |----------------|-------|-----------------|
@@ -130,6 +130,8 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | `template_lattice_home_render.md` | operational | `Home.aDNA/` render |
 | `template_software_graph_stub.md` | operational | new `<Software>.aDNA/` genesis |
 | `template_ratification_record.md` | operational | `what/decisions/` · `how/gates/` |
+| `template_second_genesis_dossier.md` | operational | new `<Name>.aDNA/` re-genesis intake |
+| `template_disposition_ledger.md` | operational | fleet spring-clean (`skill_workspace_spring_clean`) |
 
 ### Skills (55)
 
