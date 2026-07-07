@@ -64,8 +64,9 @@ Performance · Credibility & trust · SEO/meta/agent-discovery · Technical & de
    the WEBSITE.aDNA **axes A–K** rubric, via `skill_decadal_aar` Step 4b + the disagreement ladder (adopter wins the
    gate; reviewer flags feed the priority queue; doctrine tie-breaks; silence → operator → new doctrine rule). *(Run as
    parallel subagents per surface/persona cluster to stay in budget.)*
-4. **Live walkthrough (Chrome MCP)** — experience every surface as each persona; capture screenshots + the real render;
-   run the 60-second-newcomer read.
+4. **Live walkthrough (headless Playwright — Tier 0/1 per [[doctrine_visual_inspection]]; Chrome MCP only if a visible
+   browser is truly needed)** — experience every surface as each persona; capture screenshots + the real render; run the
+   60-second-newcomer read.
 5. **Storytelling deep-dive** — a dedicated narrative / message-architecture audit against the north-star: does the site
    land the network / context-democracy / federated-collaborative-context-graph thesis? Where's the arc weak, buried,
    abstract, or missing a surface?
@@ -77,18 +78,20 @@ Performance · Credibility & trust · SEO/meta/agent-discovery · Technical & de
 
 The review MUST **render + screenshot** every key surface (never source-only); the build phases (in the campaign this
 mission charters) MUST ground design moves in real design guidance + prototypes, not ad-hoc CSS. **Every visual finding
-cites a captured screenshot** (both themes, incl. mobile). These are the concrete instruments behind the "live
+cites a captured screenshot** (both themes, incl. mobile). Tooling follows **[[doctrine_visual_inspection]]** (headless-first;
+**never assume Chrome** — Storyweave Run 1 is its motivating case). These are the concrete instruments behind the "live
 walkthrough" (Method #4) + `skill_site_design_pipeline` Stages 1/4/6/7.
 
-**Inspect (the review):**
-- **Claude-in-Chrome (MCP)** — navigate every surface; screenshot at multiple viewports (desktop · tablet · **320–390px
-  mobile**) in **both light + dark**; GIF the key flows (hero · nav · get-started); read console + network (errors /
-  asset weight); `resize_window` for responsive checks. *(Load the core `mcp__claude-in-chrome__*` tools via ToolSearch
-  first; `tabs_context_mcp` before creating tabs.)*
-- **Playwright** — the site's existing `site/tests/gates/` harness does multi-viewport + both-theme runs; use it for
-  programmatic screenshot capture across surfaces + to stand up the deferred **visual-regression baseline (G3)**; it
-  already wires **axe** (a11y) + **Lighthouse** (perf/BP/SEO) per surface.
-- **Lighthouse + axe-core** — quantified perf / a11y / BP / SEO per surface (CWV: LCP/CLS/TBT).
+**Inspect (the review) — headless-first per the doctrine's tier ladder:**
+- **Tier 0 (DEFAULT) — `scripts/visual_capture.mjs`** (headless Playwright) — render + screenshot every surface across the
+  canonical viewports (incl. **320–390px mobile**) in **both light + dark** + a compact report (title/desc/h1/console/
+  height); the standing default for the walkthrough. `node scripts/visual_capture.mjs --base <url> --routes … --axe`.
+- **Tier 1 (interactive) — `@playwright/mcp`** (already configured) — navigate/click/resize for anything that needs live
+  interaction; **no extension, no login**.
+- **Tier 2 (escalation ONLY) — Claude-in-Chrome** — *only* if a visible/authenticated browser is genuinely needed (e.g. a
+  live GIF of real interaction to share); state the headless fallback + degrade to Tier-0 if unavailable. **Not the default.**
+- **Lighthouse + axe-core** — quantified perf / a11y / BP / SEO per surface (CWV: LCP/CLS/TBT); wired into Tier-0 (`--axe`) +
+  the `site/tests/gates/` harness (multi-viewport, both-theme; stands up the deferred visual-regression baseline G3).
 - **WebFetch** — pull best-in-class reference sites for `skill_reference_inspection` (competitive/story benchmarking).
 
 **Design + prototype (the charter's build phases):**

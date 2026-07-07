@@ -11,7 +11,7 @@ tags: [skill, quality, iii, lighthouse, improvement, rosetta]
 
 requirements:
   tools: [lighthouse, playwright, astro]
-  context: ["Cycle tracker", "Current decadal theme", "Persona ranker scores from last decadal AAR"]
+  context: ["Cycle tracker", "Current decadal theme", "Persona ranker scores from last decadal AAR", "what/doctrine/doctrine_visual_inspection.md (Tier-0 headless capture for Tier-1 measures)"]
   permissions: ["read files", "write files", "run commands"]
 ---
 

@@ -1,0 +1,9 @@
+{
+  "_comment": "Canonical aDNA visual-inspection viewports (widths in px). See what/doctrine/doctrine_visual_inspection.md §3.",
+  "mobile":    { "width": 320,  "height": 720 },
+  "mobile-lg": { "width": 375,  "height": 812 },
+  "tablet":    { "width": 768,  "height": 1024 },
+  "laptop-sm": { "width": 900,  "height": 700 },
+  "laptop":    { "width": 1024, "height": 768 },
+  "desktop":   { "width": 1440, "height": 900 }
+}

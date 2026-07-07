@@ -28,7 +28,7 @@ The repeatable wrapper that gets a site surface from idea to shipped-and-perfect
 | Stage | Inputs | Activities | Output | Personas / tools / forges | Gate to advance |
 |-------|--------|-----------|--------|---------------------------|-----------------|
 | **0 Vision** | operator brief; VISION.md | lock the positioning + audiences for the surface | `vision_brief` | Content Strategist; operator | operator ratifies positioning + audience list |
-| **1 Reference / Design-DNA** | vision brief | run [[skill_reference_inspection]]; synthesize | `site_*` artifacts + [[front_page_doctrine]] update | WebFetch + operator screenshots; Design Critic / Anti-Bloat / IA lenses; **VisualDNA** (capture clusters as a bundle) | doctrine emitted with provenance for every rule |
+| **1 Reference / Design-DNA** | vision brief | run [[skill_reference_inspection]]; synthesize | `site_*` artifacts + [[front_page_doctrine]] update | WebFetch + headless capture (`visual_capture.mjs`, [[doctrine_visual_inspection]]); Design Critic / Anti-Bloat / IA lenses; **VisualDNA** (capture clusters as a bundle) | doctrine emitted with provenance for every rule |
 | **2 IA / Content Architecture** | doctrine; current sitemap | define surfaces + nav model + section sequence; **data-contract specs** for registry/community/network | `ia_map` + `content_inventory` | Information Architect, Content Strategist, Newcomer; **SiteForge** archetype select | per-click scent test passes; section budget ≤ doctrine |
 | **3 Wireframe / lo-fi** | IA map; density bands | zero-fidelity block-out; above-fold + section order | annotated lo-fi (Astro stub pages OK) | Newcomer Stress-Tester (60-sec What/Why/How), IA; **CanvasForge** flow diagrams | above-fold law satisfied (one focus); Newcomer states What/Why/How in 60s |
 | **4 Visual / hi-fi** | wireframe; `visual-identity-v2` tokens | apply tokens/type/palette; design registry-card + activity components; generate abstract imagery | hi-fi comps / styled components | Design Critic, Visual Designer, Infographic Specialist; **ComfyForge/Imagen 4** (abstract-only guardrails); **VisualDNA** bundle | Design Critic "made on purpose?"; palette ≤ doctrine; imagery passes guardrails |
@@ -43,11 +43,12 @@ Keeps the 10-dimension ranker + the decadal-AAR preservation clause (adopter ran
 
 ## Design-tools inventory (where each plugs in)
 
-WebFetch + operator screenshots (1) · SiteForge archetypes + quality gates (2,5) · VisualDNA bundles (1,4) · CanvasForge diagrams (2,3,4) · ComfyForge/Imagen 4 abstract-only imagery (4) · existing component library (4,5) · Astro content collections (5) · Lighthouse/Playwright (6) · persona bench (7) · III cycle tracker (6,8).
+WebFetch + headless capture (`visual_capture.mjs`, [[doctrine_visual_inspection]]) (1) · SiteForge archetypes + quality gates (2,5) · VisualDNA bundles (1,4) · CanvasForge diagrams (2,3,4) · ComfyForge/Imagen 4 abstract-only imagery (4) · existing component library (4,5) · Astro content collections (5) · Lighthouse/Playwright (6) · persona bench (7) · III cycle tracker (6,8).
 
 ## Related
 
 - [[skill_iii_cycle]] · [[skill_decadal_aar]] — Stages 5–8 ARE these (extended, not forked)
 - [[skill_reference_inspection]] — Stage 1
 - [[front_page_doctrine]] — the ruleset Stages 2–4 conform to
+- [[doctrine_visual_inspection]] — the visual-inspection tier ladder (Tier-0 headless harness = the default for Stages 1/4/6/7)
 - `site/src/content/reference/visual-identity-v2.mdx` · `writing-guidelines.mdx` — companion references

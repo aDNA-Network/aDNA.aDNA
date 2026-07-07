@@ -518,6 +518,10 @@ Reference: `what/lattices/tools/compliance_checker.py` for automated checking.
 
 Use bidirectional wikilinks when adding relationships between entities.
 
+### Visual inspection (headless-first)
+
+When you need to render + screenshot + inspect a visual surface (site, dashboard, review), follow **[[doctrine_visual_inspection]]** — the tier ladder is **T0 `scripts/visual_capture.mjs`** (headless Playwright, the default) → **T1 `@playwright/mcp`** (interactive, no extension) → **T2 Chrome MCP** (escalation only). **Never assume a visible/logged-in Chrome is available.**
+
 ### Upstream Contribution Awareness
 
 While working in any aDNA vault, stay alert for **framework-level** improvement opportunities — missing template fields, undocumented patterns, naming inconsistencies, or gaps you had to work around. These are improvements that would help *all* aDNA users, not just the current project.

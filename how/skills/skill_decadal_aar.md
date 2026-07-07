@@ -11,7 +11,7 @@ tags: [skill, quality, iii, aar, persona-ranker, rosetta]
 
 requirements:
   tools: [lighthouse, playwright, astro]
-  context: ["Cycle tracker", "5 adopter persona files", "Previous decadal AAR (if any)"]
+  context: ["Cycle tracker", "5 adopter persona files", "Previous decadal AAR (if any)", "what/doctrine/doctrine_visual_inspection.md (Tier-0 headless capture for Step 2/3 visual gates)"]
   permissions: ["read files", "write files", "run commands"]
 ---
 

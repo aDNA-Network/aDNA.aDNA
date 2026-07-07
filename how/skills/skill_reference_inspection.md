@@ -11,7 +11,7 @@ tags: [skill, design, reference_inspection, exemplar, design_dna, m5_8]
 
 requirements:
   tools: [webfetch, websearch]
-  context: ["what/exemplars/sites/_reference_set.md", "what/design/front_page_doctrine.md", "operator screenshots (for dark-mode/motion/interactive fields)"]
+  context: ["what/exemplars/sites/_reference_set.md", "what/design/front_page_doctrine.md", "what/doctrine/doctrine_visual_inspection.md (Tier-0 headless capture for dark-mode/motion/interactive fields)"]
   permissions: ["read files", "write files", "fetch URLs"]
 ---
 
@@ -38,8 +38,8 @@ WebFetch each site with a rubric prompt. Capture to `site_<name>.md`:
 - **Tier B — qualitative:** density_band (sparse/medium/dense) · palette + type · motion_budget · tonal_score (0–100).
 - **Tier C — reviewer reads:** one Design-Critic ("made on purpose?"), one Anti-Bloat-Editor ("what would you cut?"), one Information-Architect ("does nav scent predict content?") read, reusing the existing `who/reviewers/` Critique Prompts.
 
-### 3. Handle the screenshot seam
-WebFetch sees **static markdown only**. Dark-mode-default, motion, and live-registry interactivity degrade. Mark those fields `needs_operator_capture: true` in the artifact and **emit a structured screenshot request list** to the operator (don't silently guess). This is a first-class handoff, not an ad-hoc ask.
+### 3. Handle the screenshot seam (headless-first)
+WebFetch sees **static markdown only** — dark-mode-default, responsive, and motion states are invisible to it. **Default: run the Tier-0 headless harness** (`scripts/visual_capture.mjs --base <exemplar-url> --themes dark,light`, per [[doctrine_visual_inspection]]) to capture those states across the canonical viewports with **zero setup** — no operator screenshots needed for static render. Reserve `needs_operator_capture: true` + a structured request only for signals a headless browser genuinely can't reach (auth-walled pages; a specific live interaction/GIF). This closes the old operator-capture seam.
 
 ### 4. Write the per-site artifact
 `type: exemplar_site` frontmatter with the Tier-A/B fields + `inspected:` date. Body: Captured (rubric) · **Lift for aDNA** · **Avoid** (explicit for AVOID-list sites — separate liftable technique from refused pattern, citing `writing-guidelines` §2) · Related. ~250–400 words. ≥2 wikilinks.
