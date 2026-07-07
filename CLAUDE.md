@@ -63,7 +63,7 @@ aDNA.aDNA/
 │       ├── tools/               # Python validation and conversion tools
 │       └── examples/            # Example .lattice.yaml files
 ├── how/                         # HOW — Operations, sessions, templates
-│   ├── templates/               # 43 reusable templates (25 base + 11 extension + 7 operational)
+│   ├── templates/               # 44 reusable templates (25 base + 11 extension + 8 operational)
 │   ├── sessions/                # Session tracking (active/ + history/)
 │   ├── missions/                # Multi-session plans (standalone)
 │   ├── backlog/                 # Ideation and improvement tracking
@@ -321,6 +321,9 @@ Reusable agent recipes and documented procedures in `how/skills/`. Skills have t
 | `skill_node_bootstrap_interview` | agent | 19-question operator-specific node-vault bootstrap interview (~4–7 min) |
 | `skill_project_archive` | agent | A vault is superseded / wound-down / merged — archive it intact under the Archive holder (SO-6/7), never delete |
 | `skill_second_genesis` | process | Re-found a vault that drifted far from the standard — archive-old → re-fork → migrate selectively (dossier + operator brief) |
+| `skill_graph_merge` | agent | One vault is absorbed into another — drain the source, fold its content, repoint every live reference, then archive the drained shell (ends by calling `skill_project_archive`) |
+| `skill_graph_rename` | agent | A fleet-referenced vault is renamed — mv + back-compat shim + cross-fleet live-ref sweep + wrapper refederation (delegates the self-routing sweep to `skill_project_rename`) |
+| `skill_workspace_spring_clean` | process | Fleet-wide houseclean — classify every disposition into one ledger, ratify at a single operator gate, execute in waves (orchestrates archive / merge / rename / second-genesis) |
 
 **Project-specific skills** (authored for this vault):
 

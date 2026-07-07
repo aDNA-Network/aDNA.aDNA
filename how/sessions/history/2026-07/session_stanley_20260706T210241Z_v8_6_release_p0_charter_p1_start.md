@@ -7,7 +7,7 @@ tags: [session, v8_6_release, ouroboros, p0, p1, skill_authoring]
 session_id: session_stanley_20260706T210241Z_v8_6_release_p0_charter_p1_start
 user: stanley
 started: 2026-07-06T21:02:41Z
-status: active
+status: completed
 intent: "Charter campaign_v8_6_release (Operation Ouroboros) P0 + begin P1 authoring the Batch A lifecycle skills (skill_project_archive leaf primitive, then skill_second_genesis)"
 files_modified: []
 files_created: []
