@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260707T024529Z_v8_6_p2_ratify_p3_assemble
 created: 2026-07-06
 updated: 2026-07-06
-status: active
+status: completed
 tier: 2
 agent: agent_rosetta
 operator: stanley
@@ -37,7 +37,11 @@ No peer sessions in `how/sessions/active/` (only `.gitkeep`). Working tree clean
 - **FINDING**: D-5 already satisfied (Meridian M1 `d6e9179` mirrored `template_ratification_record`; the dev version is richer than the `.adna` stub). No count change (stays 44). Reverted an erroneous `cp` that had clobbered the richer dev version.
 - Corrected a separate **P1-miss** template-count drift (glossary:25 + MANIFEST:112: 42→44 / 6→8 operational).
 
-## SITREP (at the dry-run-then-pause boundary)
+## SITREP
+
+**✅ Stage 3 (Fire) COMPLETE — v8.6 SHIPPED 2026-07-06.** Operator "Go" → fired via `skill_template_release`: fresh-cloned `aDNA-Network/aDNA`, applied the exact 15-file delta (verified diff = 15, all `.adna/`; gitleaks clean; `adna_validate` Zero drift), committed `32d4dd5` + annotated tag **`v8.6`**, pushed `main` (`05be58e..32d4dd5`) + tag, synced local `~/aDNA/.adna` (`916ca5d`), **7/7 fresh-clone smoke green**. Campaign `campaign_v8_6_release` → `completed` (Completion Summary + AAR filed). Dev-vault stack pushed to `aDNA-Network/aDNA.aDNA`. **The pre-fire pause record follows.**
+
+### Pre-fire pause record (at the dry-run-then-pause boundary)
 
 **Completed — Stage 1 (P2 Ratify):** committed `f574b51`. Ratification ceremony recorded (`artifacts/p2_ratification_record.md`); DP2/DP4/DP5 resolved; campaign → P3. **Finding: D-5 already satisfied at Meridian M1 (`d6e9179`)** — the dev vault already carried the richer `template_ratification_record`; count stays **44** (not 45); reverted an erroneous cp. Corrected a separate P1-miss count drift (glossary:25 + MANIFEST:112, 42→44 / 6→8 operational). `adna_validate --governance` Zero drift.
 

@@ -3,7 +3,7 @@ campaign_id: campaign_v8_6_release
 type: campaign
 title: "Operation Ouroboros — the v8.6 template release (graph-lifecycle skills + doc-currency)"
 owner: stanley
-status: active
+status: completed
 phase_count: 4
 mission_count: 3
 estimated_sessions: "4-6"
@@ -121,7 +121,7 @@ campaign close + AAR. **Phase exit gate**: tag `v8.6` live on `aDNA-Network/aDNA
 | DP3 | P1 (authoring) | reopen-reconciliation: `§reopen` clause vs standalone skill | ✅ resolved — `§6 Reopen` clause authored (P1) |
 | DP4 | P1 (Batch G) | `skill_iii_setup.md` census-table disposition (delete vs generic note); ship-at-all? | ✅ resolved 2026-07-06 (P2) — census → generic note (D-3); ship Batch G = yes (D-2) |
 | DP5 | P2 | Ratify the authored batch (§7.7) + freeze the ship-set | ✅ **resolved 2026-07-06** — ratified: Recommended cut (`artifacts/p2_ratification_record.md`) |
-| DP6 | P3 | Fire the release (post dry-run) | pending — **OPERATOR** (P3 assembly done; awaits 2nd go on the assembled diff — dry-run-then-pause) |
+| DP6 | P3 | Fire the release (post dry-run) | ✅ **resolved 2026-07-06** — operator go; v8.6 pushed (`32d4dd5` + tag `v8.6`) → `aDNA-Network/aDNA`; 7/7 smoke green |
 
 ## Risk Register
 
@@ -167,20 +167,35 @@ pushed tag).
 
 ## Completion Summary
 
-*Fill out when setting `status: completed`.*
+**Shipped 2026-07-06** — v8.6 live on `aDNA-Network/aDNA` (`32d4dd5` + annotated tag `v8.6`); local `~/aDNA/.adna` synced (`916ca5d`); 7/7 fresh-clone smoke green; `adna_validate --governance` Zero drift on the pushed image. Executed in 1 session (P2 ratify + P3 assemble/fire); dry-run-then-pause boundary honored.
 
 ### Deliverables
-### Descoped
+- **5 graph-lifecycle base skills** — `skill_project_archive` · `skill_second_genesis` · `skill_graph_merge` · `skill_graph_rename` · `skill_workspace_spring_clean`. The standard now teaches vault **death + rebirth**, closing the loop (fork→rename→merge→archive→second-genesis).
+- **2 operational templates** — `template_second_genesis_dossier` · `template_disposition_ledger`.
+- **Governance-doctrine adoption checklist** (`.adna/what/docs/governance_doctrine_adoption_checklist.md`, D-1) + a fork-time reference from `skill_project_fork`.
+- **§B deltas** — §6 Reopen clause (`how/campaigns/AGENTS.md`, Abandonment→§7) + optional webforge fork scaffold.
+- **Batch G doc-currency** — `skill_iii_setup` census→generic wrapper-shape table (D-3); `skill_git_remote_setup` genericized.
+- Governance **8.5→8.6**; standard stays **v2.5**; image counts re-trued to **30 templates / 32 skills**.
+
+### Descoped (→ v8.7)
+- Both Hestia addenda (D-4): node_manifest interview emission (M-effort, ADR-015 Tier-3 gated) + STATE `phase:`/`campaigns:` frontmatter keys.
+
 ### Key Findings
+- **D-5 was already satisfied** — the ratification-record mirror happened at Meridian M1 (`d6e9179`); the ledger's "+1→45" premise was stale (dev count stays **44**). A ratification-time live-tree check caught it before a wrong edit.
+- **Dev sources diverge from `.adna` in unratified ways** (dev's `skill_project_fork` was *older* than the image in several sections) → wholesale-copy would regress; the diff-based, delta-only fold is mandatory.
+- **`.adna` uses flat wrapper placement** (no ADR-045 `how/federation/`) → webforge folded flat for image consistency.
+- 2 dangling wikilinks (`skill_create_iss`, `adr_042`) de-linked (v8.5 precedent); leak scan otherwise clean (0 private tokens across +1255 lines).
+
 ### Scope Changes
+- Corrected a pre-existing P1-miss count drift in the dev vault (glossary:25 + MANIFEST:112, 42→44) while re-truing — honest-accounting, out-of-band from the release.
+
 ### Follow-Up Campaigns
+- v8.7 queue (routed, not campaign work): the 2 Hestia addenda; image `how/templates/AGENTS.md` pre-existing incompleteness; a pre-existing non-conformant-repo-names example in `skill_git_remote_setup`.
 
 ## Campaign AAR
 
-*Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
-
-- **Worked**:
-- **Didn't**:
-- **Finding**:
-- **Change**:
-- **Follow-up**:
+- **Worked**: dry-run-then-pause in a throwaway clone produced a real reviewable diff + full validation (leak scan, `adna_validate`, persona test) *before* any outward action; the diff-based delta-only fold kept the image exactly the 15-file ratified delta (0 leaks, Zero drift, 7/7 smoke).
+- **Didn't**: the staging ledger's D-5 premise + the "44→45" count were stale — cost a reverted cp + a re-scope; zsh word-splitting silently no-op'd the first delta-copy loop (0 files) before a `while read` fix.
+- **Finding**: ratification-time is a live-tree checkpoint — verify each ledger claim against disk before acting; base-image counts are a separate surface from dev counts, re-trued at assembly (image 32/30 ≠ dev 55/44).
+- **Change**: `skill_iii_setup` census → a generic *wrapper-shape* table (organized by shape) — more useful than the row-by-row genericize DP4 rejected.
+- **Follow-up**: v8.7 queue above; the dev-vault-name-leak-sweep learnings continue upstream (`idea_upstream_dev_vault_name_leak_sweep`).

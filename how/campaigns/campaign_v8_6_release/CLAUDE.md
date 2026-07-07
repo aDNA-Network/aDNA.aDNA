@@ -16,8 +16,8 @@ status: active
 |-------|-------|
 | Campaign | `campaign_v8_6_release` |
 | Owner | stanley |
-| Status | active |
-| Current Phase | **P2 Ratify COMPLETE** (ship-set ratified 2026-07-06 — Recommended cut; `artifacts/p2_ratification_record.md`) → **P3 Fire** (assembling ratified delta into `.adna/`; dry-run-then-pause — public push/`v8.6` tag gated on a 2nd operator go) |
+| Status | **completed** — v8.6 shipped 2026-07-06 (`32d4dd5` + tag `v8.6`) |
+| Current Phase | **✅ CLOSED 2026-07-06 — v8.6 SHIPPED** (`32d4dd5` + tag `v8.6` → `aDNA-Network/aDNA`; local `.adna` synced `916ca5d`; 7/7 smoke green; gov 8.5→8.6, standard stays v2.5). All 4 phases + 2 operator gates done; see §Completion Summary + Campaign AAR. |
 | Executor tier | opus (authoring); sonnet for the mechanical count-surface sweep |
 
 ## Quick Start
