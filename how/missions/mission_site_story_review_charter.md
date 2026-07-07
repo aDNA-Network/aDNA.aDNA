@@ -73,6 +73,33 @@ Performance · Credibility & trust · SEO/meta/agent-discovery · Technical & de
    deferred long-tail, the design-system craft debt (seeded in the dossier).
 7. **Completeness-critic** — a final adversarial "what dimension / surface / claim did we not review?" pass.
 
+## Visual design + inspection tooling (MANDATORY)
+
+The review MUST **render + screenshot** every key surface (never source-only); the build phases (in the campaign this
+mission charters) MUST ground design moves in real design guidance + prototypes, not ad-hoc CSS. **Every visual finding
+cites a captured screenshot** (both themes, incl. mobile). These are the concrete instruments behind the "live
+walkthrough" (Method #4) + `skill_site_design_pipeline` Stages 1/4/6/7.
+
+**Inspect (the review):**
+- **Claude-in-Chrome (MCP)** — navigate every surface; screenshot at multiple viewports (desktop · tablet · **320–390px
+  mobile**) in **both light + dark**; GIF the key flows (hero · nav · get-started); read console + network (errors /
+  asset weight); `resize_window` for responsive checks. *(Load the core `mcp__claude-in-chrome__*` tools via ToolSearch
+  first; `tabs_context_mcp` before creating tabs.)*
+- **Playwright** — the site's existing `site/tests/gates/` harness does multi-viewport + both-theme runs; use it for
+  programmatic screenshot capture across surfaces + to stand up the deferred **visual-regression baseline (G3)**; it
+  already wires **axe** (a11y) + **Lighthouse** (perf/BP/SEO) per surface.
+- **Lighthouse + axe-core** — quantified perf / a11y / BP / SEO per surface (CWV: LCP/CLS/TBT).
+- **WebFetch** — pull best-in-class reference sites for `skill_reference_inspection` (competitive/story benchmarking).
+
+**Design + prototype (the charter's build phases):**
+- **`frontend-design` skill** — Claude's guidance for distinctive, intentional visual direction (typography, aesthetic,
+  no templated defaults) when reshaping the UI.
+- **`artifact-design` skill + the Artifact tool** — render self-contained HTML **comps / mockups** to prototype design
+  directions and present the review findings + the charter visually (shareable, no build).
+- **`skill_reference_inspection` → `front_page_doctrine`** deltas · **VisualDNA** bundles (`VisualDNA.aDNA`) to capture
+  reference + target visual DNA · **ComfyUI.aDNA / Imagen 4** for imagery (hero / OG) under the abstract-only guardrails.
+  *(Optional: Canva / Gamma MCP for a polished charter deck.)*
+
 ## Deliverable — the ratified side-campaign charter
 
 A campaign charter (`how/campaigns/campaign_<name>/…`, authored at O7) containing:

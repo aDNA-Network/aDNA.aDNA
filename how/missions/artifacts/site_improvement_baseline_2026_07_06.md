@@ -104,6 +104,7 @@ Mobile/responsive · Motion & delight · Brand & voice coherence · **Completene
 - **Skills:** `skill_site_design_pipeline` (8-stage vision→ship) · `skill_reference_inspection` (Stage 1) ·
   `skill_decadal_aar` (Step 4b Reviewer Lens Pass) · `skill_iii_cycle`. **Rubric:** WEBSITE.aDNA axes A–K
   (`campaign_website_adna/.../rubrics_a_k`). **Doctrine:** `what/design/front_page_doctrine` + `_reference_set`.
+- **Visual design + inspection tooling** (mandatory per the mission's §Visual design + inspection tooling): **Claude-in-Chrome** (live navigate/screenshot/GIF/console, both themes + mobile) · **Playwright** (`site/tests/gates/` — multi-viewport screenshots + axe + Lighthouse; the deferred visual-regression G3 baseline) · **`frontend-design`** skill (visual direction) · **`artifact-design`** skill + the Artifact tool (HTML comps/mockups) · **WebFetch** (reference sites) · **VisualDNA** / **ComfyUI·Imagen 4** (imagery). Rule: render+screenshot every surface; every visual finding cites a screenshot.
 - **Precedent campaigns:** `campaign_website_adna` (decades D1–D4 + E-series) · `campaign_looking_glass` · `campaign_meridian`
   · `campaign_adna_network_audit` — read their findings/AARs as prior art.
 
