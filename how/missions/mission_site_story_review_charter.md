@@ -3,14 +3,14 @@ plan_id: mission_site_story_review_charter
 type: plan
 title: "Operation Storyweave — comprehensive adna.network review → multi-session side-campaign charter"
 owner: stanley
-status: proposed
+status: in_progress
 mission_class: planning
 mission_kind: site_review_and_charter
 executor_tier: opus
 token_budget_estimated: "~200–400 kT across 2–4 sessions (≥200 tier): reference/benchmark inspection + a 16-reviewer × N-surface adversarial red-team (+ 16 adopters + skeptic briefs) + a live Chrome walkthrough of every surface + a storytelling deep-dive + de-dup/prioritize synthesis + charter authoring. Front-load the baseline dossier + the 3 prior campaigns' findings; the red-team is the token sink."
 priority: high
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-07
 last_edited_by: agent_rosetta
 tags: [plan, planning_mission, site, adna_network, storyweave, review, charter, red_team, storytelling, deferred]
 ---

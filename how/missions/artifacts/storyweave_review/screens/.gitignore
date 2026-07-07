@@ -1,0 +1,4 @@
+# Operation Storyweave O3 evidence — 66 full-page PNGs (~36M), 11 surfaces × 3 viewports × 2 themes.
+# Reproducible any time via ../capture_screens.mjs (copy into site/, `node`, delete). Kept LOCAL to
+# avoid binary weight in the docs repo. A curated subset of *cited* shots may be committed at O6/O7.
+*.png
