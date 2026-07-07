@@ -88,7 +88,7 @@ charter, CLAUDE.md, and `mission_v8_6_p1_batch_a_authoring.md` exist and STATE r
 
 | Mission | Title | Sessions | Dependencies | Status |
 |---------|-------|----------|-------------|--------|
-| P1 | Batch A authoring (5 skills + reopen clause + P-5 scaffold) + checklist fold + Batch G sweep | 3-4 | — | active |
+| P1 | Batch A authoring (5 skills + reopen clause + P-5 scaffold) + checklist fold + Batch G sweep | 3-4 (actual: 2) | — | ✅ **COMPLETE** (P2-ready; Completion Summary + AAR filed) |
 
 **Author order** (the composition graph dictates it): `skill_project_archive` (leaf) → `skill_graph_merge` →
 `skill_graph_rename` → `skill_second_genesis` → `skill_workspace_spring_clean` → non-skill deltas → checklist

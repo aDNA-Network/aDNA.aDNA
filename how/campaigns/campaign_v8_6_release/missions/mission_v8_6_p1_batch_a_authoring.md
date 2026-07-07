@@ -3,12 +3,13 @@ plan_id: mission_v8_6_p1_batch_a_authoring
 type: plan
 title: "v8.6 P1 — Batch A authoring (lifecycle skills + reopen clause + folds + Batch G)"
 owner: stanley
-status: active
+status: completed
 campaign_id: campaign_v8_6_release
 campaign_phase: 1
 campaign_mission_number: 1
 mission_class: implementation
 token_budget_estimated: 120
+token_budget_actual: 170   # rough (ADR-016 §C) — 2 sessions: P0+2 skills; then 3 skills+template+deltas+Batch G+triage+close
 executor_tier: opus
 created: 2026-07-06
 updated: 2026-07-06
@@ -62,14 +63,14 @@ surfaces bumped 50→55 with `adna_validate --governance` zero-drift; a P1 AAR f
 - **Depends on**: 1
 
 ### 3. skill_graph_merge
-- **Status**: planned
+- **Status**: ✅ completed (session 2, 2026-07-06)
 - **Description**: Codify `pt08b_merge_playbook.md` (drain→absorb→re-anchor→archive) into
   `how/skills/skill_graph_merge.md` (`skill_type: agent`). Ends by calling `skill_project_archive`. Self-review.
 - **Files**: `how/skills/skill_graph_merge.md`
 - **Depends on**: 1
 
 ### 4. skill_graph_rename
-- **Status**: planned
+- **Status**: ✅ completed (session 2, 2026-07-06)
 - **Description**: Codify `pt04b_rename_ref_sweep_playbook.md` (dir move + shim + router row + wrapper
   refederation) into `how/skills/skill_graph_rename.md` (`skill_type: agent`); **delegate the self-reference
   sweep to the existing `skill_project_rename`**; carry the ~3× wrapper-undercount clause. Self-review.
@@ -77,7 +78,7 @@ surfaces bumped 50→55 with `adna_validate --governance` zero-drift; a P1 AAR f
 - **Depends on**: none (references skill_project_rename)
 
 ### 5. skill_workspace_spring_clean
-- **Status**: planned
+- **Status**: ✅ completed (session 2, 2026-07-06)
 - **Description**: Codify the houseclean campaign (`campaign_workspace_houseclean/` + `disposition_ledger_v2.md`
   §A–G + Standing Rule 9) into `how/skills/skill_workspace_spring_clean.md` (`skill_type: process`) —
   audit-first → ONE operator gate → tiered waves. Orchestrates 1–4 + shim-window discipline; ships a
@@ -86,28 +87,28 @@ surfaces bumped 50→55 with `adna_validate --governance` zero-drift; a P1 AAR f
 - **Depends on**: 1, 2, 3, 4
 
 ### 6. Non-skill Batch A deltas
-- **Status**: planned
+- **Status**: ✅ completed (session 2, 2026-07-06)
 - **Description**: reopen-reconciliation `§reopen` clause in `how/campaigns/AGENTS.md` (DP3 default:
   clause-not-skill); P-5 optional-with-degradation `webforge/` scaffold note riding `skill_project_fork`.
 - **Files**: `how/campaigns/AGENTS.md`, `how/skills/skill_project_fork.md`
 - **Depends on**: none
 
 ### 7. Checklist fork-base fold
-- **Status**: planned
+- **Status**: ✅ completed (session 2, 2026-07-06)
 - **Description**: Stage the fold of `campaign_w4_governance_doctrine/artifacts/v8_4_adoption_checklist.md`
   into the `.adna/` fork path (author the integration point; the physical fold rides P3 assembly).
 - **Files**: (release-delta; staged in artifacts)
 - **Depends on**: none
 
 ### 8. Batch G doc-currency + name-leak sweep
-- **Status**: planned
+- **Status**: ✅ completed (session 2, 2026-07-06)
 - **Description**: Validator-docstring currency; the `skill_iii_setup.md` genericize + dev-vault-name sweep
   (DP4 census-table disposition). The name-leak idea is `proposed` → triage for P2 (DP2).
 - **Files**: (release-delta; `.adna/`-side, staged in artifacts)
 - **Depends on**: none
 
 ### 9. Count surfaces + triage close
-- **Status**: planned
+- **Status**: ✅ completed (session 2, 2026-07-06)
 - **Description**: Per session, bump the 4 count surfaces to match authored skills + `adna_validate
   --governance` zero-drift. At mission close: triage the 3 `proposed` items (DP2) + file the P1 AAR.
 - **Files**: `CLAUDE.md`, `MANIFEST.md`, `AGENTS.md`, `what/glossary/glossary_skill.md`
@@ -131,19 +132,52 @@ surfaces bumped 50→55 with `adna_validate --governance` zero-drift; a P1 AAR f
 
 ## Completion Summary
 
-*Fill out when setting `status: completed`.*
+Completed across 2 sessions (P0+2 skills, then 3 skills + deltas + Batch G + triage + close). P1 exit gate met;
+the batch sits **P2-ready**.
 
 ### Deliverables
-### Descoped
+- **5 Batch A lifecycle skills** (all base): `skill_project_archive` · `skill_second_genesis` (S1);
+  `skill_graph_merge` · `skill_graph_rename` (delegates to `skill_project_rename`) ·
+  `skill_workspace_spring_clean` (orchestrator) (S2). Each self-reviewed (dual-audience + self-reference), generic.
+- **2 templates**: `template_second_genesis_dossier` (S1) · `template_disposition_ledger` (§A–H, S2).
+- **Non-skill deltas**: `§6 Reopen` clause in `how/campaigns/AGENTS.md` (Abandonment → §7); optional
+  `how/federation/webforge/` scaffold in `skill_project_fork.md` Step 4.5(4).
+- **`release_staging_ledger.md`** — the P3 assembly manifest + P2 gate packet (records the checklist fork-base
+  fold decision, Batch G staging, gov 8.5→8.6 / std stays v2.5, the fire sequence).
+- **`triage_proposed_items.md`** — DP2 recommendations for the 3 `proposed` items.
+- **Batch G**: validator docstrings **verified current** (v2.5); `skill_iii_setup` name-leak **staged**
+  (`.adna/`-side, P3/P2-gated).
+- **Counts** trued 52→55 skills (23→26 base) / 43→44 templates (7→8 operational) across 7 surfaces;
+  `adna_validate --governance` **Zero drift**.
+
+### Descoped *(deferred, not dropped)*
+- `skill_iii_setup` name-leak **execution** → P3 assembly (`.adna/`-side, Standing Rule 1) + P2-gated (§D-2/D-3).
+- `node_manifest` interview emission → Hestia mission / v8.7 (M-effort, cross-persona).
+- STATE `phase:`/`campaigns:` keys → v8.7 (operator timing call; cheap rider).
+
 ### Key Findings
+- The composition graph held: authoring leaf→composers kept cross-refs coherent; `skill_graph_rename`
+  cleanly **delegates** the self-routing sweep to `skill_project_rename` (no duplication).
+- `skill_iii_setup` is **`.adna/`-only** (no dev source) → its sweep is a P3-assembly task, not a P1 edit (SR1).
+- Surfaced **D-5**: `template_ratification_record` self-drift (dev vault ships it in `.adna/` but lacks a local
+  copy; its own §7.7 doctrine + the adoption checklist both cite it) — recommend mirror.
+
 ### Scope Changes
+- DP3 confirmed = reopen **clause** (not a standalone skill).
+- The "P-5 webforge scaffold" landed as an addition to `skill_project_fork` Step 4.5(4), not a separate step.
+- Checklist fork-base fold recorded as an **integration decision** (ledger §B/§D-1); the physical `.adna/` fold
+  rides P3 assembly.
 
 ## AAR
 
-*Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
-
-- **Worked**:
-- **Didn't**:
-- **Finding**:
-- **Change**:
-- **Follow-up**:
+- **Worked**: composition-order authoring (leaf→composers) kept cross-references coherent; batching the 3-skill
+  count-bump into one green commit avoided intra-commit drift; the staging ledger doubles as the P2 packet + P3
+  manifest.
+- **Didn't**: `token_budget_actual` is a rough estimate (no precise per-session meter); the checklist's exact
+  `.adna/` target + filename is left to the operator (D-1).
+- **Finding**: a Batch-A item that exists only in `.adna/` (`skill_iii_setup`) can't be swept at P1 under
+  Standing Rule 1 — the fix is a P3-assembly instruction, which the staging ledger now carries.
+- **Change**: authored a reusable `release_staging_ledger` pattern (dev-source → `.adna/`-target manifest +
+  open-decisions) — a clean P2/P3 gate surface for every future template release.
+- **Follow-up**: **P2 ratify** (DP2 — 5 decisions incl. D-5 mirror) → **P3 fire** (`skill_template_release`);
+  `node_manifest` + STATE-keys routed per the triage.

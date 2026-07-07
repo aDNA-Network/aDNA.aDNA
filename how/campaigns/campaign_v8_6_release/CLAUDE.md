@@ -17,7 +17,7 @@ status: active
 | Campaign | `campaign_v8_6_release` |
 | Owner | stanley |
 | Status | active |
-| Current Phase | Phase 1: Author (P0 charter done) |
+| Current Phase | **P1 Author COMPLETE** (Batch A 5/5 skills + 2 templates + deltas + Batch G staged + DP2 triage) → **P2 Ratify (operator gate)** |
 | Executor tier | opus (authoring); sonnet for the mechanical count-surface sweep |
 
 ## Quick Start
