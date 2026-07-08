@@ -15,6 +15,8 @@ tags: [review, synthesis, backlog, completeness_critic, storyweave, o6]
 
 ## Part 1 — Completeness-critic disposition (what the review MISSED → new work)
 
+> **⚡ EXECUTED 2026-07-08** — the read-only evidence pass completed this disposition: see **[[evidence_completion]]** (12 surfaces opened + axe-measured; 2 DD walks — technical repo-walk + persona-hub evaluator; **EV1–EV8**; **T2 improved** → cautiously-positive-on-the-standard). The items below are now evidence-grounded; the EV-series folds into the charter phases.
+
 The static, 11-surface review left real gaps. The campaign **must** address these before its strategic verdict is final:
 
 - **T8 (NEW) — Un-reviewed conversion surfaces + a live orphan.** The **6 persona hubs** (`/enterprise` · `/security` · `/compliance` · `/researchers` · `/educators` · `/startup-first-hour`) + the **825-line `/org-context-graphs`** landing page were **never opened** — yet they are the exact surfaces that carry the T2 "convince an outsider" verdict. **`/org-context-graphs` is a TRUE ORPHAN** (0 inbound links — invisible to every visitor). `/how/*` (publishing · workshops · lattice-examples) + ~40 `/vaults/[slug]` detail pages also unreviewed. → **the T2 verdict rests on unreviewed evidence; a surface-audit + link-graph crawl is P0.**
