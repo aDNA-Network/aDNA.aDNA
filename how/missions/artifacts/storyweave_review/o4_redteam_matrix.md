@@ -39,7 +39,7 @@ tags: [review, redteam, ranker_matrix, storyweave, o4, personas]
 **They converge, independently, on the site's deepest gaps** — these outrank any surface polish:
 
 1. **"Network of one" / no real humans.** Every vault is "tended by" an AI-persona code-name (Rosetta, Argus, Hestia, Hygieia…); a diligence-minded outsider finds **no accountable named person, team, or leadership**. To a funder it reads "beautiful manifesto by anonymous agents"; to an engineer, "one laptop cosplaying as a network" (all 68 vaults trace to one workspace, zero external adopters).
-2. **"Democracy" contradicted by "Founding Architect stewardship."** The home manifesto ("self-governed context democracy… for the good of all") directly contradicts the `reference` Governance card's single-BDFL model. The central claim is *declared, not earned*.
+2. **"Democracy" contradicted by "Founding Architect stewardship."** The home manifesto ("self-governed context democracy… for the good of all") directly contradicts the `reference` Governance card's single-BDFL model. The central claim was *declared, not earned*. **→ RESOLVED 2026-07-07 (operator):** progressive-decentralization roadmap (FA → trusted stewards → steward-led/public) — see `governance_and_mission_resolution.md`.
 3. **Load-bearing claims asserted, not shown.** "Lattice Protocol (the open coordination protocol underneath)" is a tagline with **no linked spec/code**; "public good" has **no impact case / outcomes**; the "open standard" **hard-depends on one proprietary CLI** (`@anthropic-ai/claude-code`).
 4. **Illustration persuades; the real artifact is broken/absent** (see Theme T1) — "the AI illustration does the persuading while the real graph is illegible."
 
@@ -71,3 +71,5 @@ tags: [review, redteam, ranker_matrix, storyweave, o4, personas]
 | 8 | **Reference/learn IA** (lead-with-spec + version stamp · reconcile navs · group by genre · mobile reflow) | T4·T5 | ★★ | L–M | reference · learn |
 
 **Note for O8 (operator decisions):** items **1** (graph vs illustration register — reconcile ADR-032) and **2** (real-humans vs persona-as-public-face — a deliberate identity choice) are **not** unilateral fixes; they're strategic calls for the operator at ratification. Everything else is conventional refinement.
+
+**Update 2026-07-07 (operator):** priority item #2's **governance-roadmap** half is now in hand — **progressive decentralization** (FA → trusted stewards → steward-led/public) resolves the democracy-vs-FA contradiction (`governance_and_mission_resolution.md`), and a new **core mission area — biodiversity protection** — joins rare-disease + undiagnosed-disease for steward recruitment. Still an O8 call: item #2's *other* half, **personas-vs-real-humans-forward**.
