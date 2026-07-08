@@ -21,7 +21,8 @@ spec-driven UI · genericity by projection · compose-don't-rebuild).
 coordination corpus 139/163) on one engine with zero per-domain code (Noctua M-D2…M-E2b, gates
 61/61–62/62, Momus GO, III PASS); productized as a compose path (provider contract @ 0.1.0 + consumer
 wrapper template + skill + register in `Dashboards.aDNA/what/artifacts/`). Any vault with a foldable
-context graph is a candidate consumer; two are live, one adopted.
+context graph is a candidate consumer; two are wired (SuperLeague · Operations), and the fold engine is
+additionally adopted by LAVentureGraph (Operation Atlas L2b).
 
 **Asks (Rosetta lane, own tempo).** ① Rule fleet-pattern status (mint
 `what/patterns/pattern_agentic_dashboard_surface.md` as a pointer-or-adaptation of the graduated doc —
