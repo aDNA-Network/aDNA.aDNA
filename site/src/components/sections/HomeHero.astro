@@ -12,6 +12,13 @@ interface Props {
   heroAlt?: string;
   title?: string;
   lead?: string;
+  /**
+   * Optional second manifesto beat — the "you already do X" reframe (Storyweave J1 / S2).
+   * Rendered as a distinct line under the lead; the lead keeps the gate-23 hero phrases
+   * verbatim, so the reframe sits AROUND them, never replaces them. Home-only today;
+   * omitted by /commons + /network (zero-diff — additive-optional-prop pattern).
+   */
+  reframe?: string;
   primaryHref?: string;
   primaryLabel?: string;
   secondaryHref?: string;
@@ -21,6 +28,16 @@ interface Props {
   showGetStarted?: boolean;
   githubHref?: string;
   stats?: Stat[];
+  /**
+   * Optional proof-of-life beat (Storyweave J3): a calm borrowed-trust line naming the
+   * real public-good subnetworks, placed hero-adjacent under the stat strip. `proofNames`
+   * come from subnetworks.json (single-source — never hardcoded). `proofHref` +
+   * `proofLinkLabel` add one subtle "who's behind this" link to the credibility surface.
+   */
+  proofLead?: string;
+  proofNames?: string[];
+  proofHref?: string;
+  proofLinkLabel?: string;
 }
 
 const {
@@ -28,6 +45,7 @@ const {
   heroAlt = "A bird's-eye pixel-art map of cozy vault-buildings linked by glowing cyan and purple conduits — the aDNA network sharing context, AI, and DNA",
   title = 'The aDNA Network',
   lead = 'Language and DNA were co-created by everyone before us. The context that powers AI should be too — built, shared, and governed in the open, for the good of all. aDNA is an open standard for organizing project knowledge so both humans and AI agents can navigate it — and the open network where that shared context lives, built on the Lattice Protocol (the open coordination protocol underneath).',
+  reframe,
   primaryHref = '/vaults',
   primaryLabel = 'Explore the network',
   secondaryHref = '/reference/specification',
@@ -37,6 +55,10 @@ const {
   showGetStarted = false,
   githubHref = 'https://github.com/aDNA-Network/aDNA',
   stats = [],
+  proofLead,
+  proofNames = [],
+  proofHref,
+  proofLinkLabel,
 } = Astro.props;
 ---
 
@@ -65,10 +87,15 @@ const {
 
   <p class="hero-lead">{lead}</p>
 
-  {/* Network audit D4: the home hero had no "build" CTA — both actions routed to reading/
-     browsing. When showGetStarted is set (home only) Get Started leads as the single
-     btn-primary and the other two demote to secondary; other HomeHero consumers (e.g.
-     /commons) keep their own primary. Fuller hero rework → E5 C1 (concrete-then-ethos). */}
+  {/* Storyweave J1 (S2): the "you already do X" reframe — the manifesto's second beat.
+      A separate element so the lead keeps the gate-23 verbatim phrases intact. */}
+  {reframe && <p class="hero-reframe">{reframe}</p>}
+
+  {/* Storyweave: the hero carries exactly 1 primary + 1 secondary (tightened from 1+2). Home
+     now passes explicit CTAs (primary "Explore the network" → the proof; secondary "Get Started"
+     → the build path, also persistent in the header, honoring the network-audit D4 concern), so
+     it no longer sets showGetStarted. The showGetStarted 3-button mode is retained for any
+     consumer that wants Get-Started-leads; /commons + /network pass their own primary/secondary. */}
   <div class="hero-actions">
     {showGetStarted && (
       <a href={getStartedHref} class="btn btn-primary" data-astro-prefetch>{getStartedLabel}</a>
@@ -80,7 +107,13 @@ const {
   <div class="hero-trust-links">
     <a href={githubHref} target="_blank" rel="noopener" class="trust-link">Open source on GitHub</a>
     <span class="trust-sep" aria-hidden="true">·</span>
-    <span class="trust-link trust-static">MIT · built on the Lattice Protocol</span>
+    <span class="trust-link trust-static">MIT-licensed</span>
+    <span class="trust-sep" aria-hidden="true">·</span>
+    {/* EV1 (Storyweave): the Lattice Protocol implementation repo is private (404) — never link it,
+        and gate-14 forbids the legacy LatticeProtocol-org GitHub literal. Honest fix: link the PUBLIC
+        spec/reference and frame the substrate as opening progressively (ties to progressive
+        decentralization), rather than a dead-end static tagline. */}
+    <a href="/reference/specification" class="trust-link" data-astro-prefetch>built on the Lattice Protocol — the coordination layer, opening progressively</a>
   </div>
 
   {stats.length > 0 && (
@@ -91,6 +124,20 @@ const {
           <span class="trust-label">{stat.label}</span>
         </div>
       ))}
+    </div>
+  )}
+
+  {/* Storyweave J3 — proof-of-life, hero-adjacent: name the real public-good work as
+      borrowed trust (subnetwork names from subnetworks.json, single-source), then offer
+      one calm link to the credibility surface. Home-only; zero-diff for other consumers. */}
+  {proofNames.length > 0 && (
+    <div class="hero-proof">
+      <p class="hero-proof-names">
+        {proofLead}{proofLead ? ' ' : ''}<span class="hero-proof-list">{proofNames.join(' · ')}</span>
+      </p>
+      {proofHref && proofLinkLabel && (
+        <a href={proofHref} class="hero-proof-link" data-astro-prefetch>{proofLinkLabel}</a>
+      )}
     </div>
   )}
 </section>
@@ -183,6 +230,18 @@ const {
     line-height: 1.6;
   }
 
+  /* The reframe beat (J1): a touch brighter + medium weight than the muted manifesto lead,
+     so it reads as the plain-language "here's what that means for you" line — calm, not loud. */
+  .hero-reframe {
+    font-size: var(--text-lg);
+    color: var(--color-text);
+    font-weight: 500;
+    max-width: 42rem;
+    margin: calc(-1 * var(--space-2)) auto var(--space-6);
+    line-height: 1.6;
+    text-wrap: balance;
+  }
+
   .trust-static {
     cursor: default;
   }
@@ -226,7 +285,9 @@ const {
     padding-top: var(--space-6);
     border-top: 1px solid var(--color-border);
     width: 100%;
-    max-width: 36rem;
+    /* 48rem (was 36rem): "68 Vaults" now leads a 5-stat strip; the extra room keeps the
+       five on one row on desktop and lets them wrap cleanly narrower (J3 reweight). */
+    max-width: 48rem;
   }
 
   .trust-stat {
@@ -248,6 +309,43 @@ const {
     color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+  }
+
+  /* Proof-of-life beat (J3) — the borrowed-trust line naming real public-good subnetworks,
+     plus one calm link to the "who's behind this" credibility surface. */
+  .hero-proof {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-6);
+    max-width: 46rem;
+  }
+
+  .hero-proof-names {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* The subnetwork names read a shade brighter than the framing text — they are the proof. */
+  .hero-proof-list {
+    color: var(--color-text);
+  }
+
+  /* Cyan link (AA both modes for small text; the site's link signal). */
+  .hero-proof-link {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--text-sm);
+    color: var(--color-link);
+    text-decoration: none;
+  }
+
+  .hero-proof-link:hover {
+    text-decoration: underline;
   }
 
   @media (max-width: 768px) {

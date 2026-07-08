@@ -10,6 +10,10 @@
  */
 
 import { STANDARD_VERSION, ENTITY_TYPE_COUNT, CONFORMANCE_LEVELS, STANDARD_LICENSE } from './standard';
+// Proof-of-life leads the hero stat strip (Storyweave J3): the registry size is
+// the site's most compelling number, so it sits first — sourced from vaults.json
+// (never hardcoded; gate-20 claim-trace: vault-count → vaults.json vault_count).
+import vaultsData from './vaults.json' with { type: 'json' };
 
 export interface HomeStep {
   number: string;
@@ -141,7 +145,11 @@ export const audiences: HomeAudience[] = [
   { label: 'Adopters', href: '/adopters/' },
 ];
 
+// Storyweave J3 (proof-of-life placement): "68 Vaults" leads — the real, growing
+// registry size is the number a stranger can check — and the insider standard facts
+// (entity types, conformance levels, version, license) follow it, not the reverse.
 export const stats: HomeStat[] = [
+  { value: String(vaultsData.vault_count), label: 'Vaults' },
   { value: String(ENTITY_TYPE_COUNT), label: 'Entity Types' },
   { value: String(CONFORMANCE_LEVELS), label: 'Conformance Levels' },
   { value: STANDARD_VERSION, label: 'Current Version' },

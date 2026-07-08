@@ -1,0 +1,506 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ClosingCTA from '../components/sections/ClosingCTA.astro';
+import Callout from '../components/sections/Callout.astro';
+import { buildWebPageJsonLD } from '../utils/seo';
+import subnetworksData from '../data/subnetworks.json';
+
+// Storyweave P1 — the "who's behind this" credibility surface. Answers the O4 skeptic gap
+// (network-of-one / no real humans / democracy-vs-Founding-Architect) with the operator-
+// resolved honesty: show the real Founding Architect + the anchor Wilhelm Foundation, frame
+// the agent-personas truthfully, and state the progressive-decentralization + progressive-
+// humanization roadmap. Register guardrail (warm/calm/honest, never hype) holds throughout —
+// the remedy is MORE honesty, never invented people or inflated community.
+// Source: how/missions/artifacts/storyweave_review/{governance_and_mission_resolution.md §7, o5_story_audit.md §4b}.
+
+const description =
+  "Who's behind aDNA: the Founding Architect, the anchor Wilhelm Foundation partnership, the agent-stewards that tend the network today, and the progressive-decentralization roadmap toward steward-led, public governance.";
+
+const jsonLD = buildWebPageJsonLD({
+  title: "Who's behind aDNA",
+  description,
+  url: Astro.url.href,
+});
+
+// Public-good band — single-sourced from the same fixture /commons uses (no hardcoded names).
+const subnetworks = (subnetworksData as any).subnetworks ?? [];
+// The Wilhelm-anchored open project we can point at today (operator-cleared public URL).
+const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? null;
+---
+
+<BaseLayout title="Who's behind aDNA" description={description} jsonLD={jsonLD}>
+  <!-- Text-led hero (no image band): a credibility surface leads with the honest current state,
+       not a scene. -->
+  <section class="about-hero">
+    <div class="section-inner">
+      <h1 class="about-title">Who's behind aDNA</h1>
+      <p class="about-lead">
+        aDNA is early &mdash; and honest about it. Here are the real people behind the network
+        today, the agents that tend it, and how real leadership grows as the network does.
+      </p>
+    </div>
+  </section>
+
+  <!-- Band 1 · The people today -->
+  <section class="about-people">
+    <div class="section-inner">
+      <h2 class="section-title">The people today</h2>
+      <p class="section-subtitle">
+        A small, real founding core &mdash; named plainly, with nothing claimed we don't yet have.
+      </p>
+
+      <div class="people-grid">
+        <article class="person-card">
+          <h3 class="person-name">Stanley</h3>
+          <p class="person-role">Founding Architect</p>
+          <p class="person-bio">
+            aDNA is stewarded today by one person, who holds decision authority over the standard
+            while the network is young. That's the honest current state &mdash; not a council we
+            haven't formed. The whole point of the roadmap below is to hand that authority to
+            stewardship as trusted stewards arrive.
+          </p>
+        </article>
+
+        <article class="person-card">
+          <h3 class="person-name">The Wilhelm Foundation</h3>
+          <p class="person-role">Anchor partner &middot; Helene &amp; Mikk Cederroth</p>
+          <p class="person-bio">
+            The network's anchor partner carries a real rare- and undiagnosed-disease mission. Their
+            work grounds two of the public-good subnetworks already on aDNA &mdash; Wilhelm AI for
+            the Undiagnosed and the open Rare Archive.
+          </p>
+          {rareArchive?.public_url && (
+            <p class="person-link">
+              <a href={rareArchive.public_url} target="_blank" rel="noopener">
+                See the open Rare Archive &nearr;
+              </a>
+            </p>
+          )}
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Band 2 · The agent-stewards, framed honestly -->
+  <section class="about-agents">
+    <div class="section-inner">
+      <h2 class="section-title">The agent-stewards, honestly</h2>
+      <p class="section-subtitle">
+        Every vault is &ldquo;tended by&rdquo; a named agent &mdash; and we name them as exactly that.
+      </p>
+      <div class="agents-body">
+        <p>
+          Rosetta tends this documentation. Argus tends the quality framework. Hestia tends the node
+          itself. These are <strong>AI personas</strong> &mdash; the agent-stewards of the current
+          build. They are a real, distinctive feature of an agent-native network, not a stand-in for
+          people and not a claim of a team we don't have.
+        </p>
+        <p>
+          They hold the seat. As real stewards join, they take the roles the agents keep &mdash;
+          which is the same trajectory as the governance roadmap below: <strong>humanization and
+          decentralization are the same curve.</strong>
+        </p>
+        <Callout variant="info" title="Why name the agents at all?">
+          <p>
+            Because it's true, and because it's how the work actually gets done here. Hiding it would
+            be less honest, not more credible. What you should <em>not</em> read into the personas is a
+            larger organization than the founding core above &mdash; there isn't one yet, and this page
+            says so plainly.
+          </p>
+        </Callout>
+      </div>
+    </div>
+  </section>
+
+  <!-- Band 3 · Where leadership is going (progressive decentralization + humanization) -->
+  <section class="about-roadmap">
+    <div class="section-inner">
+      <h2 class="section-title">Where leadership is going</h2>
+      <p class="section-subtitle">
+        aDNA is committed to <strong>progressive decentralization</strong>. Governance and real
+        leadership grow along the same curve &mdash; earned as stewards arrive, not asserted before.
+      </p>
+
+      <ol class="roadmap-steps" role="list">
+        <li class="roadmap-step">
+          <span class="roadmap-no" aria-hidden="true">1</span>
+          <div>
+            <h3>Founding Architect today</h3>
+            <p>A single steward holds decision authority while the network is young.</p>
+          </div>
+        </li>
+        <li class="roadmap-step">
+          <span class="roadmap-no" aria-hidden="true">2</span>
+          <div>
+            <h3>Increasing trusted stewards</h3>
+            <p>
+              Mission-aligned stewards take on real decisions &mdash; as far as is helpful and
+              positive, at the Founding Architect's discretion.
+            </p>
+          </div>
+        </li>
+        <li class="roadmap-step">
+          <span class="roadmap-no" aria-hidden="true">3</span>
+          <div>
+            <h3>Discretion turned over to stewardship</h3>
+            <p>The authority itself passes to the stewards, not held back by any one architect.</p>
+          </div>
+        </li>
+        <li class="roadmap-step">
+          <span class="roadmap-no" aria-hidden="true">4</span>
+          <div>
+            <h3>Steward-led, democratic, public</h3>
+            <p>The destination: a protocol and network governed by the communities closest to it.</p>
+          </div>
+        </li>
+      </ol>
+
+      <p class="roadmap-missions">
+        We look for stewards among the people closest to the network's core missions &mdash;
+        <strong>rare disease</strong>, <strong>undiagnosed disease</strong>, and
+        <strong>biodiversity protection</strong> (via conservation genomics, coherent with the
+        genome/DNA framing).
+      </p>
+      <p class="roadmap-cta">
+        <a href="/reference/governance-model/" data-astro-prefetch>Read the full governance roadmap &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Band 4 · The public-good work already here (single-sourced from subnetworks.json) -->
+  <section class="about-proof">
+    <div class="section-inner">
+      <h2 class="section-title">The proof: public-good work already here</h2>
+      <p class="section-subtitle">
+        The network isn't a promise about the future &mdash; real mission-aligned subnetworks
+        already build in the open on aDNA today.
+      </p>
+
+      <ul class="proof-grid" role="list">
+        {subnetworks.map((s: any) => (
+          <li class="proof-item">
+            <h3 class="proof-name">{s.display_name}</h3>
+            {s.serves && <p class="proof-serves">{s.serves}</p>}
+            {s.attribution && <p class="proof-attr">{s.attribution}</p>}
+          </li>
+        ))}
+      </ul>
+
+      <p class="roadmap-cta">
+        <a href="/commons/" data-astro-prefetch>See the public-good commons &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Close · participation -->
+  <section class="about-close">
+    <div class="section-inner">
+      <ClosingCTA
+        title="Grow the network with us"
+        lead="This is the honest starting point: a real Founding Architect, a real anchor partner, real public-good work, and a roadmap that hands leadership to the communities closest to the mission. Real stewards grow the network — and become its leaders as it grows."
+        primaryLabel="See the commons"
+        primaryHref="/commons/"
+        secondaryLabel="Read the governance model"
+        secondaryHref="/reference/governance-model/"
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ——— Shared section scaffold (mirrors network.astro / commons.astro / index.astro) ——— */
+  .section-inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+  }
+
+  .section-title {
+    font-size: var(--text-3xl);
+    text-align: center;
+    margin-bottom: var(--space-3);
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    max-width: 42rem;
+    margin: 0 auto var(--space-10);
+    line-height: 1.6;
+  }
+
+  /* In-text links inside muted subtitles/prose — underlined + cyan (link-in-text-block, both modes). */
+  .section-subtitle a,
+  .agents-body a,
+  .roadmap-missions a {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+
+  /* ——— Text-led hero ——— */
+  .about-hero {
+    padding: var(--space-24) 0 var(--space-16);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+  }
+
+  .about-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 6vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 auto var(--space-5);
+    max-width: 20ch;
+    text-wrap: balance;
+  }
+
+  .about-lead {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    max-width: 44rem;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ——— Band 1 · people today ——— */
+  .about-people {
+    padding: var(--space-24) 0;
+  }
+
+  .people-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  .person-card {
+    padding: var(--space-8) var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    /* purple = brand/identity signal (the people are the identity beat); ≤2 fighting colours */
+    border-top: 3px solid var(--color-primary);
+    border-radius: var(--radius-xl);
+  }
+
+  .person-name {
+    font-size: var(--text-xl);
+    color: var(--color-text-heading);
+    margin: 0 0 var(--space-1);
+  }
+
+  .person-role {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-link);
+    margin: 0 0 var(--space-4);
+  }
+
+  .person-bio {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .person-link {
+    margin: var(--space-4) 0 0;
+  }
+
+  .person-link a {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--text-sm);
+    color: var(--color-link);
+    text-decoration: none;
+  }
+
+  .person-link a:hover {
+    text-decoration: underline;
+  }
+
+  /* ——— Band 2 · agent-stewards (bg-alt alternation) ——— */
+  .about-agents {
+    padding: var(--space-24) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .agents-body {
+    max-width: 44rem;
+    margin: 0 auto;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .agents-body p {
+    margin: 0 0 var(--space-5);
+  }
+
+  .agents-body strong {
+    color: var(--color-text);
+  }
+
+  /* ——— Band 3 · roadmap ——— */
+  .about-roadmap {
+    padding: var(--space-24) 0;
+  }
+
+  .roadmap-steps {
+    list-style: none;
+    margin: 0 auto var(--space-10);
+    padding: 0;
+    max-width: 46rem;
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  .roadmap-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-5);
+    align-items: start;
+  }
+
+  /* Numbered marker — cyan signal (the same pattern network.astro's run-steps use). */
+  .roadmap-no {
+    flex: 0 0 auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 2px solid var(--color-link);
+    color: var(--color-link);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-lg);
+    line-height: 1;
+  }
+
+  .roadmap-step h3 {
+    font-size: var(--text-lg);
+    color: var(--color-text-heading);
+    margin: 0.3rem 0 var(--space-2);
+  }
+
+  .roadmap-step p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .roadmap-missions {
+    max-width: 44rem;
+    margin: 0 auto var(--space-6);
+    text-align: center;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .roadmap-missions strong {
+    color: var(--color-text);
+  }
+
+  .roadmap-cta {
+    text-align: center;
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--text-sm);
+  }
+
+  .roadmap-cta a {
+    color: var(--color-link);
+    text-decoration: none;
+  }
+
+  .roadmap-cta a:hover {
+    text-decoration: underline;
+  }
+
+  /* ——— Band 4 · public-good proof (bg-alt alternation) ——— */
+  .about-proof {
+    padding: var(--space-24) 0;
+    background: var(--color-bg-alt);
+  }
+
+  .proof-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto var(--space-10);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    max-width: 56rem;
+  }
+
+  .proof-item {
+    padding: var(--space-5) var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-link);
+    border-radius: var(--radius-md);
+  }
+
+  .proof-name {
+    font-size: var(--text-lg);
+    color: var(--color-text-heading);
+    margin: 0 0 var(--space-1);
+  }
+
+  .proof-serves {
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    margin: 0 0 var(--space-1);
+    line-height: 1.5;
+  }
+
+  .proof-attr {
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ——— Close ——— */
+  .about-close {
+    padding: 0 0 var(--space-32);
+  }
+
+  /* ——— Responsive ——— */
+  @media (max-width: 700px) {
+    .people-grid,
+    .proof-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-hero {
+      padding: var(--space-16) 0 var(--space-12);
+    }
+
+    .about-people,
+    .about-agents,
+    .about-roadmap,
+    .about-proof {
+      padding: var(--space-12) 0;
+    }
+
+    .about-close {
+      padding: 0 0 var(--space-16);
+    }
+
+    .section-title {
+      font-size: var(--text-2xl);
+    }
+
+    .section-subtitle {
+      font-size: var(--text-base);
+      margin-bottom: var(--space-6);
+    }
+  }
+</style>

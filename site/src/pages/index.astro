@@ -62,8 +62,16 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
   <HomeHero
     heroImage={heroImage}
     heroAlt="A pixel-art hero in the Tokyo Night palette: a glowing cyan DNA double-helix rising from a row of small computers and branching at the top into a network of connected nodes — shared inheritance resolving into the aDNA network."
+    reframe="Your context is just the notes, docs, and decisions you already keep — now shaped into a graph your agents can navigate, and shared in the open."
+    primaryHref="/vaults"
+    primaryLabel="Explore the network"
+    secondaryHref="/get-started"
+    secondaryLabel="Get Started"
+    proofLead="Real public-good work already lives here —"
+    proofNames={subnetworks.map((s) => s.display_name)}
+    proofHref="/about"
+    proofLinkLabel="Who's behind aDNA →"
     stats={stats}
-    showGetStarted
   />
 
   <!-- 1 · What a context democracy is -->
