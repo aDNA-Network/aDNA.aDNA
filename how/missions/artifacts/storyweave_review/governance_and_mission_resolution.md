@@ -54,6 +54,16 @@ Featured public-good subnetworks today: **WGA** (genomics education) · **Contex
 
 ## 6. Still open for O8 (operator calls)
 
-- **`personas-vs-real-humans-forward`** — the *other* skeptic strategic call (real named people vs. the AI-persona public face); still the operator's to make. *(This governance resolution partially addresses "no accountable governance," but the "no real humans" surface is a separate identity decision.)*
+- **`personas-vs-real-humans-forward`** — **RESOLVED 2026-07-07 (operator): progressive humanization** — see §7 below.
 - **Biodiversity featuring** — feature a biodiversity subnetwork/partner, or state it as a mission direction pending one?
 - **"Democracy" wording** — keep the manifesto's "context democracy" + add the roadmap (recommended), vs. soften to an explicitly-future framing.
+
+## 7. Progressive humanization (personas → real faces/stewards/communities)
+
+The paired skeptic gap ("no real humans / personas-as-public-face") resolves the **same way** as governance — progressively and honestly. **The operator (2026-07-07):** *"we will eventually have real faces/stewards/communities… grow that and our leaders as we grow the network."*
+
+- **Honest current state (show it NOW):** the network has a **real Founding Architect** (Stanley) and a **real anchor partner** (the **Wilhelm Foundation** — Helene & Mikk Cederroth, real licenses + canonical GitHub). Real faces that exist today — surface them (the "who's behind this" beat).
+- **The personas, framed honestly:** the AI-persona stewards (Rosetta, Argus, Hestia…) are the **agent-stewards of the current build** — a distinctive, *true* feature of an agent-native network, not a deception. Frame them as what they are (agents tending vaults), not as a substitute for people.
+- **The trajectory:** **real faces, stewards, communities, and leaders grow *with* the network** — recruited from the core mission areas (rare disease · undiagnosed disease · biodiversity protection), gaining real roles as decentralization advances (§1). **Humanization and decentralization are the same curve.**
+
+**Resolves** `o4_redteam_matrix.md` §B gap #1 (no real humans / network-of-one) into an honest growth story: *we're early; here are the real people we have; here's how real leadership grows as the network does.* → feeds O4 **priority item #2** (now fully buildable). **Register guardrail holds:** the remedy is honesty (show the real FA + partner, frame the agents truthfully, state the growth trajectory), **never** invented people or inflated community.
