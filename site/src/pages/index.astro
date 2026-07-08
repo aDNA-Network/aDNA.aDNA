@@ -9,6 +9,11 @@ import { STANDARD_VERSION, ENTITY_TYPE_COUNT } from '../data/standard';
 import vaultsData from '../data/vaults.json';
 import subnetworksData from '../data/subnetworks.json';
 import heroImage from '../assets/heroes/hero_adna_helix.png';
+// Storyweave direction A — the "living network" hero graph: the compact connected-component radial
+// pre-rendered by scripts/build_graph_svg.mjs (npm run sync:graph) → committed static SVG, imported
+// raw and inlined by HomeHero as the graph-led hero. HOME-ONLY (the additive-optional `heroGraph`
+// prop; /network + /commons don't pass it → they keep the image-led hero, zero-diff).
+import heroGraph from '../assets/hero_graph.svg?raw';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.network';
 const jsonLD = buildWebSiteJsonLD(siteUrl);
@@ -72,6 +77,8 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
     proofHref="/about"
     proofLinkLabel="Who's behind aDNA →"
     stats={stats}
+    heroGraph={heroGraph}
+    heroGraphCaption="15 connected vaults · 14 relationships"
   />
 
   <!-- 1 · What a context democracy is -->
