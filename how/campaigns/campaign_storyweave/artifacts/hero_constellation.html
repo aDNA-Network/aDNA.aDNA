@@ -1,0 +1,223 @@
+<title>aDNA hero graph — the living network (Storyweave)</title>
+<style>
+  :root{
+    --bg:#0f0f16;--bg2:#16161e;--panel:#14141d;--line:#262a40;
+    --ink:#c8d0f0;--muted:#8b93b8;--faint:#565f89;
+    --cyan:#7dcfff;--cyan2:#a9e0ff;--purple:#9d7cd8;--purple2:#bb9af7;
+    --disp:"Space Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:ui-monospace,"JetBrains Mono","SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#08080c;color:var(--ink);font-family:var(--disp);-webkit-font-smoothing:antialiased}
+  .wrap{min-height:100vh;display:flex;flex-direction:column}
+  header{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.2rem;padding:.9rem 1.3rem;border-bottom:1px solid var(--line);background:#0a0a10}
+  .eyebrow{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+  .title{font-weight:700;font-size:1rem;letter-spacing:-.01em}
+  .title b{color:var(--cyan)}
+  .controls{margin-left:auto;display:flex;flex-wrap:wrap;gap:.5rem}
+  .seg{display:inline-flex;background:#12121b;border:1px solid var(--line);border-radius:9px;padding:2px}
+  .seg .lbl{font-family:var(--mono);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);align-self:center;padding:0 .5rem}
+  .seg button{appearance:none;background:none;border:0;color:var(--muted);font-family:var(--disp);font-weight:600;font-size:.74rem;padding:.32rem .66rem;border-radius:7px;cursor:pointer;transition:.15s}
+  .seg button[aria-pressed=true]{background:#22243a;color:var(--ink)}
+  .seg button:focus-visible{outline:2px solid var(--cyan);outline-offset:1px}
+
+  main{flex:1;display:flex;align-items:center;justify-content:center;padding:clamp(1rem,3vw,2.4rem)}
+  /* the panel — as it sits in the hero, right column */
+  .panel{position:relative;width:min(760px,94vw);aspect-ratio:1/0.82;border-radius:20px;overflow:hidden;
+    border:1px solid #23273f;background:radial-gradient(120% 90% at 50% 30%,#15161f,#0c0c13);
+    box-shadow:0 30px 90px #7dcfff14, inset 0 1px 0 #ffffff08}
+  .panel canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .cap{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-family:var(--mono);font-size:.62rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--faint);pointer-events:none}
+  .cap b{color:var(--cyan)}
+  .badge{position:absolute;top:14px;left:16px;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--faint)}
+  .badge .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#9ece6a;margin-right:.4rem;
+    box-shadow:0 0 8px #9ece6a;vertical-align:middle;animation:live 2.4s ease-in-out infinite}
+  @keyframes live{0%,100%{opacity:.5}50%{opacity:1}}
+
+  .note{padding:.5rem 1.3rem 1.4rem;text-align:center;font-family:var(--mono);font-size:.66rem;color:var(--faint);line-height:1.6}
+  .note b{color:var(--muted)}
+  @media (prefers-reduced-motion:reduce){.badge .dot{animation:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Storyweave · hero graph craft</div>
+      <div class="title">The <b>living network</b> — the graph as the hero</div>
+    </div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Labels">
+        <span class="lbl">Labels</span>
+        <button data-labels="hubs" aria-pressed="true">Hubs</button>
+        <button data-labels="all" aria-pressed="false">All</button>
+      </div>
+      <div class="seg" role="group" aria-label="Motion">
+        <span class="lbl">Motion</span>
+        <button data-motion="calm" aria-pressed="true">Calm</button>
+        <button data-motion="lively" aria-pressed="false">Lively</button>
+        <button data-motion="off" aria-pressed="false">Still</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="panel">
+      <span class="badge"><span class="dot"></span>live network</span>
+      <canvas id="c" role="img" aria-label="A constellation of 15 connected aDNA vaults linked by 14 relationships around the aDNA standard core, with more vaults forming at the edges."></canvas>
+      <div class="cap"><b>15</b> connected · <b>14</b> relationships · <b>+53</b> forming · <b>your vault?</b></div>
+    </div>
+  </main>
+  <p class="note">The <b>still frame is the no-JS baseline</b> (what the static SVG ships as) · motion is the JS-on enhancement, off under reduced-motion. Real graph data (15 connected vaults). Production keeps real &lt;text&gt; labels + AA contrast.</p>
+</div>
+
+<script>
+(() => {
+  "use strict";
+  const reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+  const cv = document.getElementById("c"), ctx = cv.getContext("2d");
+  let W=0,H=0,dpr=1, S=1, CX=0, CY=0;
+
+  // ---- real connected graph: [name, x, y, degree, role] (x,y normalized around core) ----
+  const N = [
+    ["aDNA.aDNA", 0.00, 0.06, 6, "core"],
+    ["III.aDNA", -0.40,-0.30, 5, "hub"],
+    ["Astro.aDNA", 0.42,-0.24, 5, "hub"],
+    ["WilhelmAI", 0.04,-0.60, 5, "org"],
+    ["RareArchive",-0.22,-0.92, 3, "org"],
+    ["RareHarness", 0.60,-0.58, 4, "plat"],
+    ["Molecules", 0.84,-0.04, 4, "forge"],
+    ["TappProtocol",0.96, 0.40, 4, "plat"],
+    ["VAAS", 0.78, 0.80, 3, "fw"],
+    ["Science Stanley",-0.56,0.40, 5, "org"],
+    ["Oration",-0.90, 0.18, 3, "forge"],
+    ["VisualDNA",-0.30, 0.66, 4, "fw"],
+    ["Zen Zachary",-0.74, 0.82, 4, "org"],
+    ["RemoteControl",0.30,0.88, 3, "plat"],
+    ["Terminal", 0.56, 1.04, 3, "plat"],
+  ].map(([name,x,y,deg,role],i)=>({name,x,y,deg,role,i,
+    r: role==="core"?15: deg>=5?10.5: deg>=4?8.5:7,
+    tw: 0.6+ (i%5)*0.13, ph:(i*1.7)%6.283}));
+  const idx = Object.fromEntries(N.map(n=>[n.name,n.i]));
+  const E = [
+    ["aDNA.aDNA","III.aDNA"],["WilhelmAI","Astro.aDNA"],["WilhelmAI","III.aDNA"],["WilhelmAI","RareArchive"],
+    ["RareHarness","Astro.aDNA"],["RareHarness","III.aDNA"],["Molecules","Astro.aDNA"],["TappProtocol","Molecules"],
+    ["TappProtocol","VAAS"],["Science Stanley","Oration"],["Science Stanley","VisualDNA"],["Zen Zachary","Science Stanley"],
+    ["Zen Zachary","VisualDNA"],["RemoteControl","Terminal"],
+  ].map(([a,b])=>({a:idx[a],b:idx[b]}));
+
+  // forming seeds (the "growing" ethos) — dim points beyond the ring, fading in/out
+  let seed=1234; const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+  const SEEDS = Array.from({length:22},(_,i)=>{const a=rnd()*6.283, rr=1.28+rnd()*0.5;
+    return {x:Math.cos(a)*rr, y:Math.sin(a)*rr*0.86, ph:rnd()*6.283, sp:0.3+rnd()*0.5, r:1+rnd()*1.6};});
+  // static starfield
+  const STARS = Array.from({length:70},()=>({x:rnd(),y:rnd(),a:0.05+rnd()*0.35,r:rnd()*1.2}));
+
+  let LABELS="hubs", MOTION="calm";
+  document.querySelectorAll("[data-labels]").forEach(b=>b.onclick=()=>{LABELS=b.dataset.labels;
+    document.querySelectorAll("[data-labels]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));});
+  document.querySelectorAll("[data-motion]").forEach(b=>b.onclick=()=>{MOTION=b.dataset.motion;
+    document.querySelectorAll("[data-motion]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));});
+
+  function resize(){
+    dpr=Math.min(devicePixelRatio||1,2); const b=cv.getBoundingClientRect();
+    W=b.width;H=b.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    S=Math.min(W,H)/2.9; CX=W*0.5; CY=H*0.46;
+  }
+  addEventListener("resize",resize);
+  const px=n=>CX+n.x*S, py=n=>CY+n.y*S;
+
+  function frame(t){
+    const m = MOTION==="off"||reduce ? 0 : (MOTION==="lively"?1:0.55);
+    ctx.clearRect(0,0,W,H);
+
+    // ground glow
+    let g=ctx.createRadialGradient(CX,CY,0,CX,CY,S*2.2);
+    g.addColorStop(0,"#1b2740"); g.addColorStop(.35,"#141a2b"); g.addColorStop(1,"#0b0b12");
+    ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+    // core aura
+    g=ctx.createRadialGradient(CX,CY,0,CX,CY,S*1.35);
+    g.addColorStop(0,"rgba(125,207,255,0.16)"); g.addColorStop(.5,"rgba(157,124,216,0.06)"); g.addColorStop(1,"transparent");
+    ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+
+    // starfield
+    for(const s of STARS){const a=s.a*(m?(0.6+0.4*Math.sin(t*0.001+s.x*20)):1);
+      ctx.fillStyle=`rgba(200,215,255,${a})`; ctx.fillRect(s.x*W,s.y*H,s.r,s.r);}
+
+    // faint orbit rings
+    ctx.strokeStyle="rgba(125,207,255,0.06)"; ctx.lineWidth=1; ctx.setLineDash([2,7]);
+    for(const rr of [0.62,1.02]){ctx.beginPath();ctx.ellipse(CX,CY,S*rr,S*rr*0.9,0,0,6.283);ctx.stroke();}
+    ctx.setLineDash([]);
+
+    // forming seeds
+    for(const s of SEEDS){const pulse=0.28+0.32*(0.5+0.5*Math.sin(t*0.0006*s.sp+s.ph));
+      const a = m? pulse : 0.3;
+      ctx.fillStyle=`rgba(169,200,255,${a})`;
+      ctx.beginPath();ctx.arc(CX+s.x*S,CY+s.y*S,s.r,0,6.283);ctx.fill();}
+
+    // edges — curved gradient arcs
+    for(const e of E){const A=N[e.a],B=N[e.b],ax=px(A),ay=py(A),bx=px(B),by=py(B);
+      const mx=(ax+bx)/2,my=(ay+by)/2,dx=bx-ax,dy=by-ay,d=Math.hypot(dx,dy)||1;
+      const cx=mx-dy/d*d*0.14, cy=my+dx/d*d*0.14;
+      const grd=ctx.createLinearGradient(ax,ay,bx,by);
+      grd.addColorStop(0,"rgba(125,207,255,0.42)"); grd.addColorStop(1,"rgba(157,124,216,0.40)");
+      ctx.strokeStyle=grd; ctx.lineWidth=1.5; ctx.lineCap="round";
+      ctx.shadowColor="rgba(125,207,255,0.5)"; ctx.shadowBlur=m?6:3;
+      ctx.beginPath();ctx.moveTo(ax,ay);ctx.quadraticCurveTo(cx,cy,bx,by);ctx.stroke();
+      ctx.shadowBlur=0;
+      // travelling light particle
+      if(m){const speed=MOTION==="lively"?0.00028:0.00016;
+        const prog=((t*speed + e.a*0.13 + e.b*0.07)%1);
+        const u=prog, iu=1-u, qx=iu*iu*ax+2*iu*u*cx+u*u*bx, qy=iu*iu*ay+2*iu*u*cy+u*u*by;
+        ctx.fillStyle="rgba(210,235,255,0.95)"; ctx.shadowColor="#7dcfff"; ctx.shadowBlur=10;
+        ctx.beginPath();ctx.arc(qx,qy,2.1,0,6.283);ctx.fill();ctx.shadowBlur=0;}
+    }
+
+    // core pulse rings
+    if(m){const period=MOTION==="lively"?2600:3800;
+      for(let k=0;k<2;k++){const pr=((t + k*period/2)%period)/period;
+        const rad=pr*S*1.15, al=(1-pr)*0.22*(MOTION==="lively"?1.3:1);
+        ctx.strokeStyle=`rgba(125,207,255,${al})`; ctx.lineWidth=1.4;
+        ctx.beginPath();ctx.arc(CX,CY,rad,0,6.283);ctx.stroke();}}
+
+    // nodes
+    for(const n of N){let x=px(n),y=py(n);
+      if(m){const br=Math.sin(t*0.0009*n.tw+n.ph); x+=br*1.6*m; y+=Math.cos(t*0.0008*n.tw+n.ph)*1.6*m;}
+      const isCore=n.role==="core", isHub=n.role==="hub";
+      const tw = m? (0.85+0.15*Math.sin(t*0.002*n.tw+n.ph)) : 1;
+      const rimHue = isCore||isHub ? "125,207,255" : (n.i%2? "169,200,255":"187,154,247");
+      // halo
+      const hg=ctx.createRadialGradient(x,y,0,x,y,n.r*3.4);
+      hg.addColorStop(0,`rgba(${rimHue},${(isCore?0.5:0.32)*tw})`); hg.addColorStop(1,"transparent");
+      ctx.fillStyle=hg; ctx.beginPath();ctx.arc(x,y,n.r*3.4,0,6.283);ctx.fill();
+      // orb
+      ctx.shadowColor=`rgba(${rimHue},0.9)`; ctx.shadowBlur=isCore?22:isHub?14:8;
+      const og=ctx.createRadialGradient(x-n.r*0.3,y-n.r*0.3,n.r*0.1,x,y,n.r);
+      og.addColorStop(0, isCore?"#eaf7ff":"#dfeaff"); og.addColorStop(0.6, isCore?"#7dcfff":`rgba(${rimHue},0.95)`);
+      og.addColorStop(1, isCore?"#4aa8e6":`rgba(${rimHue},0.7)`);
+      ctx.fillStyle=og; ctx.beginPath();ctx.arc(x,y,n.r,0,6.283);ctx.fill();
+      ctx.shadowBlur=0;
+      // rim
+      ctx.strokeStyle=`rgba(${rimHue},0.9)`; ctx.lineWidth=1; ctx.beginPath();ctx.arc(x,y,n.r,0,6.283);ctx.stroke();
+      n._x=x; n._y=y;
+    }
+    // labels
+    ctx.textAlign="center";
+    for(const n of N){const show = LABELS==="all" || n.role==="core" || n.role==="hub";
+      if(!show) continue;
+      const prom=n.role==="core"||n.role==="hub";
+      ctx.font=`${prom?"600 ":""}${prom?13:11}px ${getComputedStyle(document.body).fontFamily}`;
+      const label=n.name.replace(".aDNA","");
+      const ty=n._y+n.r+ (prom?16:13);
+      ctx.fillStyle="rgba(10,12,20,0.55)"; ctx.fillText(label,n._x,ty+0.5); // faux shadow
+      ctx.fillStyle=prom?"#e6f0ff":"rgba(180,190,220,0.82)";
+      ctx.fillText(label,n._x,ty);
+    }
+    raf=requestAnimationFrame(frame);
+  }
+  let raf=0;
+  function boot(){resize(); cancelAnimationFrame(raf); raf=requestAnimationFrame(frame);}
+  boot();
+})();
+</script>
