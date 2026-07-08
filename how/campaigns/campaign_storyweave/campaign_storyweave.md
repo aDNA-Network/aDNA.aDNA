@@ -3,7 +3,7 @@ campaign_id: campaign_storyweave
 type: campaign
 title: "Operation Storyweave — adna.network best-in-class refresh"
 owner: stanley
-status: proposed          # awaits O8 operator ratification → active (§7.7: agents author, operator ratifies)
+status: active            # RATIFIED 2026-07-08 by operator (stanley / Founding Architect) at the O8 gate (§7.7)
 phase_count: 7
 mission_count: 12
 estimated_sessions: "13-20"
@@ -14,10 +14,12 @@ priority: high
 created: 2026-07-07
 updated: 2026-07-08
 last_edited_by: agent_rosetta
-tags: [campaign, storyweave, site, adna_network, refresh, storytelling, proposed]
+tags: [campaign, storyweave, site, adna_network, refresh, storytelling, active]
 ---
 
 # Campaign: Operation Storyweave — adna.network best-in-class refresh
+
+> **Ratification (§7.7).** **Decision:** charter Operation Storyweave (adna.network best-in-class refresh) as an active build campaign. · **Ratified-by:** stanley (Founding Architect). · **Date:** 2026-07-08. · **Status:** accepted. *(Authored by agent_rosetta; ratified by the operator at the O8 gate of [[mission_site_story_review_charter]], after a read-only evidence pass + 4 folded adjustments.)*
 
 ## Goal
 
@@ -115,7 +117,7 @@ Chartered from the **Operation Storyweave planning mission** ([[mission_site_sto
 ## Decision Points
 | # | When | Decision | Status |
 |---|---|---|---|
-| 0 | **Now (O8)** | Ratify this charter → `active` | **pending (operator)** |
+| 0 | O8 (2026-07-08) | Ratify this charter → `active` | **RATIFIED — operator (stanley / FA), 2026-07-08** |
 | — | pre-campaign | Governance framing (democracy vs FA) | **RESOLVED — progressive decentralization** |
 | — | pre-campaign | Personas vs real-humans | **RESOLVED — progressive humanization** |
 | 1 | P0 exit | `/org-context-graphs` orphan: link into IA vs retire | **RESOLVED-default → RETIRE** (EV5: orphan + no-JS-render-broken; override at P0) |

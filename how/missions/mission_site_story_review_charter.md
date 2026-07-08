@@ -3,14 +3,14 @@ plan_id: mission_site_story_review_charter
 type: plan
 title: "Operation Storyweave — comprehensive adna.network review → multi-session side-campaign charter"
 owner: stanley
-status: in_progress
+status: completed
 mission_class: planning
 mission_kind: site_review_and_charter
 executor_tier: opus
 token_budget_estimated: "~200–400 kT across 2–4 sessions (≥200 tier): reference/benchmark inspection + a 16-reviewer × N-surface adversarial red-team (+ 16 adopters + skeptic briefs) + a live Chrome walkthrough of every surface + a storytelling deep-dive + de-dup/prioritize synthesis + charter authoring. Front-load the baseline dossier + the 3 prior campaigns' findings; the red-team is the token sink."
 priority: high
 created: 2026-07-06
-updated: 2026-07-07
+updated: 2026-07-08
 last_edited_by: agent_rosetta
 tags: [plan, planning_mission, site, adna_network, storyweave, review, charter, red_team, storytelling, deferred]
 ---
@@ -149,3 +149,13 @@ A campaign charter (`how/campaigns/campaign_<name>/…`, authored at O7) contain
 - **Machinery:** `who/reviewers/` + `who/adopters/` · `how/skills/{skill_site_design_pipeline,skill_reference_inspection,skill_decadal_aar,skill_iii_cycle}.md` · `what/design/front_page_doctrine` + `what/exemplars/sites/_reference_set` · `what/decisions/adr_032_brand_register_pivot.md`.
 - **Prior art:** `how/campaigns/{campaign_website_adna,campaign_looking_glass,campaign_meridian,campaign_adna_network_audit}/` (findings registers, rubrics A–K, AARs).
 - **Target:** the `site/` tree (Astro 6; `src/pages`, `src/components`, `src/styles`, `src/data`, `tests/gates`).
+
+## AAR — mission complete (2026-07-08; deliverable = the ratified [[campaign_storyweave]])
+
+- **Worked:** the headless-first pivot ([[doctrine_visual_inspection]] + the `scripts/visual_capture.mjs` harness) unblocked the entire review **Chrome-free**; the evidence-first discipline + the **completeness-critic** caught the top strategic verdict (T2) resting on *unopened* conversion surfaces *before* ratification; the 16×16 red-team + 2 skeptics surfaced the real strategic questions, which the operator resolved cleanly (progressive **decentralization** + **humanization**).
+- **Didn't:** the first 11-surface pass reached the T2 verdict **without opening** the 6 persona hubs or the `/org-context-graphs` orphan — a completeness gap only the adversarial critic caught (closed pre-ratification via the read-only evidence pass).
+- **Finding:** the credibility gap was **narrower** than feared — the *standard* is genuinely credible (MIT · CI · semver v7→v8.6 · a real `Canvas` code lib); the gap is the *network/protocol* claims outrunning **public** evidence (+ a broken Lattice-Protocol link, EV1). Separately: the site's gorgeous illustrations carry the emotional load while the real data-viz (the graph) is the weakest visual (**A-06 generalized site-wide → T1**).
+- **Change:** built the visual-inspection doctrine + reusable harness **into the standard** (shipped fleet-wide) so every future site review is headless + evidence-complete by default; "open the conversion surfaces + run the real measured (axe/Lighthouse) pass" is now a standing completeness step.
+- **Follow-up:** the ratified **`campaign_storyweave`** (Decade 1: P0.5 graph-spike → P1 → P2); the operator-strategic **EV1 unlock** (make `lattice-protocol` + whitepaper public); the routed propagation at build (`governance-model.mdx` · ethos brief · staged aDNALabs governance memo).
+
+**Token budget (SO#11 / ADR-016):** est **~200–400 kT / 2–4 sessions**; actual **≈ 4–5 sessions** (O1–O3 · O4–O5 · O6–O7 · evidence+revise, + the visual-inspection-doctrine side-quest). The **sink** was the parallel subagent fan-out (13 red-team + 4 evidence + 3 reference + 3 recon subagents, ~85–115 kT each, off the main context); main-loop content stayed lean via delegation + the capture-report "view-a-curated-subset" pattern. **Within-to-slightly-over on sessions; the fan-out was the designed spend** (the mission spec named the red-team the sink) — no >2× main-loop drift.

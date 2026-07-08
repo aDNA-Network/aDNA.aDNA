@@ -2,16 +2,16 @@
 type: campaign_governance
 campaign_id: campaign_storyweave
 persona: rosetta
-status: proposed
+status: active
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-07-08
 last_edited_by: agent_rosetta
 tags: [campaign, storyweave, governance]
 ---
 
 # Campaign governance — Operation Storyweave
 
-**Charter:** [[campaign_storyweave]] (`status: proposed` — awaits **O8 operator ratification** → `active`; do not begin build missions until ratified). **Persona:** Rosetta.
+**Charter:** [[campaign_storyweave]] (`status: active` — **RATIFIED 2026-07-08** by the operator/FA at the O8 gate; build missions may begin at **P0.5**). **Persona:** Rosetta.
 
 **What this is.** The build campaign that executes the adna.network best-in-class refresh, chartered by the planning mission [[mission_site_story_review_charter]]. Goal: raise the site to a best-in-class visual/professional/credible bar + tell the aDNA story so a stranger *gets it and wants it* — **without breaking the SS-Ghibli identity or the radical-honesty voice.**
 
