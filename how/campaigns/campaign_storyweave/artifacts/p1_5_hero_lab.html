@@ -1,0 +1,374 @@
+<title>aDNA home hero — direction lab (Storyweave P1.5)</title>
+<style>
+  :root{
+    --bg:#16161e;--bg2:#1a1b26;--panel:#1f2130;--panel2:#24283b;--line:#2b2f45;
+    --ink:#c0caf5;--ink2:#a9b1d6;--muted:#8b93b8;--faint:#565f89;
+    --cyan:#7dcfff;--purple:#9d7cd8;--amber:#e0a84c;--rose:#f7768e;--green:#9ece6a;
+    --disp:"Space Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    --body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:ui-monospace,"JetBrains Mono","SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0e0e14;color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased}
+  .lab{min-height:100vh;display:flex;flex-direction:column}
+
+  /* ---- toolbar (the lab control, not the site) ---- */
+  .toolbar{position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;align-items:center;gap:.7rem 1.1rem;
+    padding:.7rem 1.1rem;background:#0b0b11ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .toolbar .brand{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+  .seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:3px}
+  .seg button{appearance:none;background:none;border:0;color:var(--muted);font-family:var(--disp);font-weight:600;font-size:.8rem;
+    padding:.4rem .8rem;border-radius:7px;cursor:pointer;transition:.15s}
+  .seg button[aria-pressed=true]{background:var(--panel2);color:var(--ink);box-shadow:0 1px 0 #0006}
+  .seg button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+  .thesis{font-size:.82rem;color:var(--ink2)}
+  .thesis b{color:var(--cyan);font-family:var(--disp)}
+
+  /* ---- evoked browser + site chrome ---- */
+  .browser{margin:1rem auto;width:min(1180px,96vw);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    background:var(--bg);box-shadow:0 24px 80px #0009}
+  .urlbar{display:flex;align-items:center;gap:.7rem;padding:.5rem .8rem;background:#101017;border-bottom:1px solid var(--line)}
+  .dots{display:flex;gap:6px}.dots i{width:11px;height:11px;border-radius:50%;display:block}
+  .dots i:nth-child(1){background:#f7768e}.dots i:nth-child(2){background:#e0af68}.dots i:nth-child(3){background:#9ece6a}
+  .url{font-family:var(--mono);font-size:.72rem;color:var(--muted);background:#0b0b11;border:1px solid var(--line);
+    border-radius:7px;padding:.28rem .7rem;flex:1;max-width:340px}
+  .url b{color:var(--ink2);font-weight:400}
+  .tag{margin-left:auto;font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  nav.site{display:flex;align-items:center;gap:1.15rem;padding:.85rem 1.4rem;border-bottom:1px solid var(--line);font-size:.82rem}
+  nav.site .logo{font-family:var(--disp);font-weight:700;font-size:1.05rem}
+  nav.site .logo b{color:var(--cyan)}
+  nav.site .nlink{color:var(--muted);white-space:nowrap}
+  nav.site .nlink.dim{color:var(--faint)}
+  nav.site .cta{margin-left:auto;background:var(--purple);color:#12101a;font-family:var(--disp);font-weight:700;
+    font-size:.78rem;padding:.42rem .9rem;border-radius:9px;white-space:nowrap}
+  nav.site .ico{color:var(--faint)}
+  @media(max-width:820px){nav.site .nlink,nav.site .ico{display:none}nav.site .cta{margin-left:auto}}
+
+  /* ---- stage ---- */
+  .stage{position:relative;background:var(--bg)}
+  .hero{display:none}
+  .lab[data-mode="current"] .hero-current{display:flex}
+  .lab[data-mode="a"] .hero-a{display:grid}
+  .lab[data-mode="b"] .hero-b{display:flex}
+  .lab[data-mode="c"] .hero-c{display:grid}
+
+  /* shared bits */
+  .eyebrow{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+  .h-title{font-family:var(--disp);font-weight:700;letter-spacing:-.02em;line-height:1.02;color:#f7f7fb;text-wrap:balance}
+  .reframe{color:var(--ink);font-weight:500;line-height:1.5;text-wrap:balance}
+  .lead{color:var(--muted);line-height:1.6}
+  .lead .k{color:var(--ink2)}
+  .btns{display:flex;gap:.7rem;flex-wrap:wrap}
+  .btn{font-family:var(--disp);font-weight:700;font-size:.9rem;padding:.6rem 1.15rem;border-radius:10px;text-decoration:none;white-space:nowrap;display:inline-block}
+  .btn-p{background:var(--cyan);color:#0c1420}
+  .btn-s{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .proof{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .5rem;font-size:.78rem;color:var(--muted)}
+  .proof .names{color:var(--ink2)}
+  .proof .lk{color:var(--cyan);font-family:var(--disp);font-weight:500}
+  .stats{display:flex;flex-wrap:wrap;gap:1.6rem}
+  .stat{display:flex;flex-direction:column;gap:.15rem}
+  .stat .v{font-family:var(--disp);font-weight:700;font-size:1.35rem;color:var(--cyan)}
+  .stat.lead-stat .v{font-size:1.9rem}
+  .stat .l{font-family:var(--mono);font-size:.56rem;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+  .trust{display:flex;flex-wrap:wrap;gap:.4rem .7rem;font-size:.74rem;color:var(--muted)}
+  .trust a,.trust .lk{color:var(--muted)}.trust .sep{color:var(--line)}
+
+  /* ===== CURRENT — image-led (the before) ===== */
+  .hero-current{padding:2.2rem 1.6rem 2.6rem;text-align:center;flex-direction:column;align-items:center}
+  .stage-card{position:relative;width:100%;max-width:60rem;aspect-ratio:16/9;border-radius:16px;overflow:hidden;
+    border:1px solid var(--line);box-shadow:0 12px 48px #7dcfff22;margin:0 auto 1.6rem}
+  .stage-card canvas{width:100%;height:100%;display:block}
+  .stage-card .band{position:absolute;inset:0 0 auto 0;padding:1.4rem 1rem 3rem;
+    background:linear-gradient(to bottom,#1a1b26c8,#1a1b2666 55%,transparent)}
+  .hero-current .h-title{font-size:clamp(2.1rem,6vw,4.4rem);text-shadow:0 2px 0 #0009,0 0 30px #7dcfff55}
+  .hero-current .lead{max-width:44rem;margin:0 auto 1.2rem;font-size:1.02rem}
+  .hero-current .reframe{max-width:42rem;margin:0 auto 1.4rem;font-size:1.02rem}
+  .hero-current .btns{justify-content:center}
+  .hero-current .trust{justify-content:center;margin-top:1rem}
+  .hero-current .stats{justify-content:center;gap:2rem;margin-top:1.7rem;padding-top:1.3rem;border-top:1px solid var(--line);width:100%;max-width:48rem}
+  .hero-current .stat{align-items:center}.hero-current .stat .v{font-size:1.25rem}
+  .hero-current .proof{justify-content:center;margin-top:1.3rem}
+  .fold{position:relative}
+  .foldline{position:absolute;left:0;right:0;border-top:1px dashed #f7768e66;pointer-events:none;z-index:6}
+  .foldtag{position:absolute;right:8px;transform:translateY(-50%);font-family:var(--mono);font-size:.54rem;
+    letter-spacing:.12em;text-transform:uppercase;color:#f7768e99;background:#16161e;padding:0 .4rem}
+
+  /* ===== A — living network ===== */
+  .hero-a{grid-template-columns:1.05fr .95fr;min-height:74vh}
+  .hero-a .copy{padding:clamp(2rem,4vw,3.4rem);display:flex;flex-direction:column;justify-content:center;gap:1.15rem}
+  .hero-a .h-title{font-size:clamp(2.2rem,4.4vw,3.7rem)}
+  .hero-a .h-title .net{color:var(--cyan)}
+  .hero-a .reframe{font-size:clamp(1.05rem,1.7vw,1.32rem);max-width:30rem}
+  .hero-a .btns{margin-top:.3rem}
+  .hero-a .viz{position:relative;border-left:1px solid var(--line);background:
+     radial-gradient(70% 60% at 60% 45%,#7dcfff14,transparent 70%),linear-gradient(#15161f,#101017)}
+  .hero-a .viz canvas{position:absolute;inset:0;width:100%;height:100%}
+  .hero-a .viz .cap{position:absolute;left:14px;bottom:12px;font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--faint)}
+  @media(max-width:820px){.hero-a{grid-template-columns:1fr}.hero-a .viz{min-height:300px;border-left:0;border-top:1px solid var(--line)}}
+
+  /* ===== B — composed village (ADR-032) ===== */
+  .hero-b{position:relative;min-height:76vh;flex-direction:column;justify-content:flex-end;overflow:hidden}
+  .hero-b canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+  .hero-b .scrim{position:absolute;inset:0;z-index:1;background:
+     linear-gradient(to top,#0c0b13 2%,#0c0b1366 34%,transparent 62%),
+     radial-gradient(90% 60% at 50% 108%,#1a1b2688,transparent 70%)}
+  .hero-b .inner{position:relative;z-index:2;padding:clamp(1.8rem,4vw,3.4rem);max-width:44rem;display:flex;flex-direction:column;gap:1rem}
+  .hero-b .eyebrow{color:#e7c78a}
+  .hero-b .h-title{font-size:clamp(2.2rem,5vw,4rem);text-shadow:0 2px 12px #000a}
+  .hero-b .reframe{font-size:clamp(1.05rem,1.8vw,1.3rem);max-width:34rem;text-shadow:0 1px 8px #000c}
+  .hero-b .proof{text-shadow:0 1px 6px #000}
+  .hero-b .btns{margin-top:.4rem}
+  .hero-b .stats{gap:1.4rem;margin-top:.3rem}
+  .hero-b .stat .v{font-size:1.4rem}
+
+  /* ===== C — editorial / proof-first ===== */
+  .hero-c{padding:clamp(2.4rem,5vw,4rem) clamp(1.6rem,5vw,4rem);min-height:72vh;
+    grid-template-columns:1.25fr .75fr;gap:clamp(1.6rem,4vw,3.2rem);align-items:center}
+  .hero-c .copy{display:flex;flex-direction:column;gap:1.15rem}
+  .hero-c .kicker{font-family:var(--disp);font-weight:700;font-size:.82rem;color:var(--cyan);letter-spacing:.01em}
+  .hero-c .h-title{font-size:clamp(2.3rem,5vw,4.2rem);max-width:16ch}
+  .hero-c .h-title em{font-style:normal;color:var(--cyan)}
+  .hero-c .reframe{font-size:clamp(1.05rem,1.7vw,1.3rem);max-width:32rem;color:var(--ink2)}
+  .hero-c .lead{font-size:.92rem;max-width:34rem}
+  .hero-c .btns{margin-top:.2rem}
+  .hero-c .proofcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.3rem 1.1rem;display:flex;flex-direction:column;gap:1rem}
+  .hero-c .proofcard .eyebrow{color:var(--faint)}
+  .hero-c .proofcard .stats{gap:1.1rem 1.4rem}
+  .hero-c .subnets{display:flex;flex-direction:column;gap:.5rem;border-top:1px solid var(--line);padding-top:.9rem}
+  .hero-c .subnets .sn{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--ink2)}
+  .hero-c .subnets .sn .d{width:7px;height:7px;border-radius:50%;flex:none}
+  .hero-c .mini{margin-top:.2rem;height:74px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+  .hero-c .mini canvas{width:100%;height:100%;display:block}
+  @media(max-width:820px){.hero-c{grid-template-columns:1fr}}
+
+  /* ---- caption under the stage ---- */
+  .caption{width:min(1180px,96vw);margin:0 auto 2rem;display:grid;grid-template-columns:auto 1fr;gap:.8rem 1.1rem;
+    align-items:start;padding:0 .2rem}
+  .caption .lbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);padding-top:.15rem}
+  .caption p{font-size:.86rem;color:var(--muted);line-height:1.55;max-width:70ch}
+  .caption p b{color:var(--ink2);font-weight:600}
+  .note{width:min(1180px,96vw);margin:0 auto 2.4rem;font-size:.72rem;color:var(--faint);font-family:var(--mono);padding:0 .2rem;line-height:1.5}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="lab" data-mode="current">
+  <header class="toolbar">
+    <span class="brand">Storyweave · P1.5 hero lab</span>
+    <div class="seg" role="group" aria-label="Hero direction">
+      <button data-m="current" aria-pressed="true">Current</button>
+      <button data-m="a" aria-pressed="false">A · Living network</button>
+      <button data-m="b" aria-pressed="false">B · Village</button>
+      <button data-m="c" aria-pressed="false">C · Editorial</button>
+    </div>
+    <span class="thesis" id="thesis"></span>
+  </header>
+
+  <div class="browser">
+    <div class="urlbar"><span class="dots"><i></i><i></i><i></i></span>
+      <span class="url">🔒 <b>adna.network</b></span><span class="tag">design comp · not the live site</span></div>
+    <nav class="site">
+      <span class="logo"><b>a</b>DNA</span>
+      <span class="nlink">Network</span><span class="nlink">Vaults</span><span class="nlink">Commons</span>
+      <span class="nlink">Learn</span><span class="nlink dim">Patterns</span><span class="nlink dim">Use Cases</span>
+      <span class="nlink dim">Community</span><span class="nlink dim">Reference</span>
+      <span class="cta">Get Started</span><span class="ico">◐</span>
+    </nav>
+
+    <div class="stage">
+      <!-- ============ CURRENT ============ -->
+      <section class="hero hero-current" aria-label="Current hero">
+        <div class="stage-card"><canvas data-village></canvas>
+          <div class="band"><h1 class="h-title">The aDNA Network</h1></div></div>
+        <div class="fold">
+          <p class="lead"><span class="k">Language and DNA were co-created by everyone before us.</span> The context that powers AI should be too — built, shared, and governed in the open, for the good of all. aDNA is an <span class="k">open standard for organizing project knowledge</span> so both humans and AI agents can navigate it — and the open network where that shared context lives, built on the Lattice Protocol (<span class="k">the open coordination protocol underneath</span>).</p>
+          <p class="reframe">Your context is just the notes, docs, and decisions you already keep — now shaped into a graph your agents can navigate, and shared in the open.</p>
+          <div class="btns"><a class="btn btn-p">Explore the network</a><a class="btn btn-s">Get Started</a></div>
+          <div class="trust"><a>Open source on GitHub</a><span class="sep">·</span><span class="lk">MIT-licensed</span><span class="sep">·</span><span class="lk">built on the Lattice Protocol — opening progressively</span></div>
+          <div class="foldline" style="top:0"><span class="foldtag">≈ laptop fold</span></div>
+          <div class="stats">
+            <div class="stat"><span class="v">68</span><span class="l">Vaults</span></div>
+            <div class="stat"><span class="v">16</span><span class="l">Entity Types</span></div>
+            <div class="stat"><span class="v">3</span><span class="l">Conformance</span></div>
+            <div class="stat"><span class="v">v2.5</span><span class="l">Version</span></div>
+            <div class="stat"><span class="v">MIT</span><span class="l">Licensed</span></div>
+          </div>
+          <div class="proof">Real public-good work already lives here — <span class="names">World Genome Academy · Context Commons · Wilhelm AI for the Undiagnosed · Rare Archive</span> <a class="lk">Who's behind aDNA →</a></div>
+        </div>
+      </section>
+
+      <!-- ============ A — living network ============ -->
+      <section class="hero hero-a" aria-label="Direction A — living network">
+        <div class="copy">
+          <span class="eyebrow">Open agentic-context network · MIT</span>
+          <h1 class="h-title">The aDNA <span class="net">Network</span></h1>
+          <p class="reframe">Your context — the notes, docs, and decisions you already keep — shaped into a graph your agents can navigate, and shared in the open. This is that network, live.</p>
+          <p class="lead" style="max-width:31rem;font-size:.9rem">An <span class="k">open standard for organizing project knowledge</span> — and the open network where that shared context lives, built on the Lattice Protocol (<span class="k">the open coordination protocol underneath</span>).</p>
+          <div class="btns"><a class="btn btn-p">Explore the network</a><a class="btn btn-s">Get Started</a></div>
+          <div class="stats" style="margin-top:.4rem">
+            <div class="stat lead-stat"><span class="v">68</span><span class="l">Vaults, in the open</span></div>
+            <div class="stat"><span class="v">v2.5</span><span class="l">Standard</span></div>
+            <div class="stat"><span class="v">MIT</span><span class="l">Licensed</span></div>
+          </div>
+          <div class="proof">Public-good work already here — <span class="names">WGA · Context Commons · Wilhelm AI · Rare Archive</span></div>
+        </div>
+        <div class="viz"><canvas data-graph></canvas><span class="cap">15 connected vaults · 14 relationships · live</span></div>
+      </section>
+
+      <!-- ============ B — composed village ============ -->
+      <section class="hero hero-b" aria-label="Direction B — composed village">
+        <canvas data-village-full></canvas><div class="scrim"></div>
+        <div class="inner">
+          <span class="eyebrow">Context as a public good</span>
+          <h1 class="h-title">The aDNA Network</h1>
+          <p class="reframe">Every project a home; every home its own context graph — built, shared, and governed in the open, for the good of all. Your context is the notes and decisions you already keep, now navigable by your agents. It's an <span style="color:#fff">open standard for organizing project knowledge</span>, and the network where that context lives (<span style="color:#fff">the open coordination protocol underneath</span>).</p>
+          <div class="stats">
+            <div class="stat"><span class="v">68</span><span class="l">Vaults</span></div>
+            <div class="stat"><span class="v">4</span><span class="l">Public-good subnetworks</span></div>
+            <div class="stat"><span class="v">MIT</span><span class="l">Open</span></div>
+          </div>
+          <div class="btns"><a class="btn btn-p">Explore the network</a><a class="btn btn-s">Who's behind aDNA</a></div>
+          <div class="proof" style="color:#c7cdf0">World Genome Academy · Context Commons · Wilhelm AI for the Undiagnosed · Rare Archive</div>
+        </div>
+      </section>
+
+      <!-- ============ C — editorial / proof-first ============ -->
+      <section class="hero hero-c" aria-label="Direction C — editorial">
+        <div class="copy">
+          <span class="kicker">aDNA — the open context standard</span>
+          <h1 class="h-title">Give your project a memory your <em>agents can navigate.</em></h1>
+          <p class="reframe">Your context is just the notes, docs, and decisions you already keep — shaped into a graph, and shared in the open.</p>
+          <p class="lead">An <span class="k">open standard for organizing project knowledge</span> so both humans and AI agents can navigate it — and the open network where that shared context lives, built on the Lattice Protocol (<span class="k">the open coordination protocol underneath</span>).</p>
+          <div class="btns"><a class="btn btn-p">Explore the network</a><a class="btn btn-s">Read the standard</a></div>
+          <div class="trust"><a>Open source on GitHub</a><span class="sep">·</span><span class="lk">MIT-licensed</span><span class="sep">·</span><span class="lk">built on the Lattice Protocol</span></div>
+        </div>
+        <div class="proofcard">
+          <span class="eyebrow">Proof, not promise</span>
+          <div class="stats">
+            <div class="stat lead-stat"><span class="v">68</span><span class="l">Vaults in the open</span></div>
+            <div class="stat"><span class="v">16</span><span class="l">Entity types</span></div>
+            <div class="stat"><span class="v">3</span><span class="l">Conformance levels</span></div>
+          </div>
+          <div class="subnets">
+            <div class="sn"><span class="d" style="background:var(--green)"></span>World Genome Academy</div>
+            <div class="sn"><span class="d" style="background:var(--cyan)"></span>Context Commons</div>
+            <div class="sn"><span class="d" style="background:var(--rose)"></span>Wilhelm AI for the Undiagnosed</div>
+            <div class="sn"><span class="d" style="background:var(--amber)"></span>Rare Archive</div>
+          </div>
+          <div class="mini"><canvas data-village></canvas></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="caption">
+    <span class="lbl" id="capLbl">Current</span>
+    <p id="capText"></p>
+  </div>
+  <p class="note">Design comps — real copy + real proof numbers, on-brand tokens. The pixel-art is <b style="color:var(--muted)">evoked in canvas</b>; the real SS-Ghibli hero art + Space Grotesk drop in at build. gate-11 (a 16:9 pixel-art &lt;Picture&gt;) + gate-23 (the two verbatim lead phrases) are reconciled per-direction in the feasibility note.</p>
+</div>
+
+<script>
+(() => {
+  "use strict";
+  const reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+  const lab = document.querySelector(".lab");
+  const THESIS = {
+    current:'<b>Current.</b> Image leads the fold — the message sits below it.',
+    a:'<b>A — Living network.</b> The real graph is the hero; message + proof beside it.',
+    b:'<b>B — Village.</b> The SS-Ghibli scene as ground, the story composited in.',
+    c:'<b>C — Editorial.</b> Plain-language headline + a hard proof card, image supporting.'
+  };
+  const CAP = {
+    current:["Current","The <b>16:9 pixel-art image + title fill the whole fold</b>; the manifesto, reframe, 68-stats, and subnetwork proof all live BELOW it (past the dashed line) — which is why the deployed refresh reads as “the old site” at a glance. It is live; it just doesn’t announce itself above the fold."],
+    a:["A · Living network","The <b>real connected graph is the hero</b> (aDNA + the III/Astro hubs, gently alive), with the reframe, 68-in-the-open, and CTAs beside it. The fold says “this is a real, running network” instantly. gate-11 note: the pixel-art &lt;Picture&gt; moves to a supporting band (or gate-11 amends to accept the graph as the hero visual)."],
+    b:["B · Village (ADR-032)","The <b>SS-Ghibli village becomes an immersive ground</b> and the headline + reframe + proof are composited into one warm scene. Most identity-forward + emotional; the ADR-032 “composed focal unit.” gate-11 note: the pixel-art IS the full-bleed &lt;Picture&gt; here — cleanest gate fit; contrast handled by the scrim (gate-4)."],
+    c:["C · Editorial","A <b>confident plain-language headline</b> leads, the reframe is the sub-head, and a <b>hard proof card</b> (68 · the 4 real subnetworks · conformance) sits beside it — credibility-first, most legible, lightest build. The pixel-art shrinks to a supporting strip (gate-11 kept as a compliant &lt;Picture&gt;)."]
+  };
+  const thesisEl=document.getElementById("thesis"),capLbl=document.getElementById("capLbl"),capText=document.getElementById("capText");
+  function setMode(m){
+    lab.dataset.mode=m;
+    document.querySelectorAll(".seg button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.m===m)));
+    thesisEl.innerHTML=THESIS[m];capLbl.textContent=CAP[m][0];capText.innerHTML=CAP[m][1];
+    requestAnimationFrame(sizeCanvases);
+  }
+  document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.m)));
+
+  // ---------- pixel-art village (Current card + B full-bleed + C mini) ----------
+  function village(cv,full){
+    const ctx=cv.getContext("2d");const dpr=Math.min(devicePixelRatio||1,2);
+    const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;cv.width=w*dpr;cv.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    // dusk sky
+    const sky=ctx.createLinearGradient(0,0,0,h);
+    if(full){sky.addColorStop(0,"#1a1633");sky.addColorStop(.4,"#2a2044");sky.addColorStop(.72,"#5a3a5c");sky.addColorStop(1,"#c9814e");}
+    else{sky.addColorStop(0,"#141626");sky.addColorStop(.55,"#1f2138");sky.addColorStop(1,"#3a2f4e");}
+    ctx.fillStyle=sky;ctx.fillRect(0,0,w,h);
+    // soft stars
+    let s=99;const rnd=()=>(s=(s*16807)%2147483647)/2147483647;
+    ctx.fillStyle="#ffffff";for(let i=0;i<40;i++){const x=rnd()*w,y=rnd()*h*.5;ctx.globalAlpha=.15+rnd()*.4;ctx.fillRect(x,y,1.4,1.4);}
+    ctx.globalAlpha=1;
+    // central DNA helix
+    const cx=w*.5,base=h*(full?.94:.9),top=h*(full?.16:.12),amp=Math.min(w,h)*.06;
+    for(let k=0;k<2;k++){ctx.strokeStyle=k?"#9d7cd8":"#7dcfff";ctx.lineWidth=full?3:2;ctx.globalAlpha=.85;ctx.beginPath();
+      for(let y=top;y<=base;y+=4){const ph=(y/40)+(k?Math.PI:0);const x=cx+Math.sin(ph)*amp;y===top?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.stroke();}
+    ctx.globalAlpha=.5;ctx.strokeStyle="#7dcfff";ctx.lineWidth=1;
+    for(let y=top;y<=base;y+=16){const ph=y/40;ctx.beginPath();ctx.moveTo(cx+Math.sin(ph)*amp,y);ctx.lineTo(cx+Math.sin(ph+Math.PI)*amp,y);ctx.stroke();}
+    ctx.globalAlpha=1;
+    // row of vault-homes (pixel terminals) with warm windows + conduits
+    const n=full?7:6,gap=w/(n+1),gy=base-8;
+    for(let i=1;i<=n;i++){const x=gap*i,bw=Math.min(gap*.62,full?58:40),bh=bw*.72,bx=x-bw/2,by=gy-bh;
+      // conduit to helix
+      ctx.strokeStyle=i%2?"#7dcfff":"#9d7cd8";ctx.globalAlpha=.4;ctx.lineWidth=2;ctx.beginPath();
+      ctx.moveTo(x,by+bh*.4);ctx.quadraticCurveTo((x+cx)/2,by-18,cx,base*.6);ctx.stroke();ctx.globalAlpha=1;
+      // body
+      ctx.fillStyle="#b5764a";ctx.fillRect(bx,by,bw,bh);
+      ctx.fillStyle="#8f5a38";ctx.fillRect(bx,by,bw,bh*.22);
+      // screen
+      ctx.fillStyle="#0e2230";ctx.fillRect(bx+bw*.16,by+bh*.32,bw*.68,bh*.44);
+      ctx.fillStyle=i%2?"#7dcfff":"#e0a84c";ctx.globalAlpha=.9;
+      for(let r=0;r<3;r++)ctx.fillRect(bx+bw*.22,by+bh*.4+r*bh*.11,bw*(.3+.28*rnd()),2);
+      ctx.globalAlpha=1;
+    }
+    // ground line
+    ctx.strokeStyle="#00000055";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,gy+2);ctx.lineTo(w,gy+2);ctx.stroke();
+  }
+
+  // ---------- graph (A) ----------
+  const NODES=[["aDNA",0,0,"#7dcfff",13],["III",-1.1,-.2,"#9d7cd8",11],["Astro",1.0,-.1,"#e0a84c",11],
+    ["WilhelmAI",.2,-1.15,"#f7768e",9],["RareArchive",-.5,-1.7,"#f7768e",7],["Harness",1.4,-1.0,"#73daca",8],
+    ["Molecules",1.9,.3,"#e0a84c",7],["TappProto",1.6,1.2,"#73daca",7],["VAAS",2.2,1.5,"#9d7cd8",6],
+    ["Oration",-1.9,.5,"#e0a84c",6],["SciStanley",-1.5,1.2,"#f7768e",7],["VisualDNA",-.6,.9,"#9d7cd8",7],
+    ["ZenZach",-1.6,1.9,"#f7768e",6],["RemoteCtl",1.0,1.9,"#73daca",6],["Terminal",1.7,2.2,"#73daca",6]];
+  const EDGES=[[0,1],[3,2],[3,1],[3,4],[5,2],[5,1],[6,2],[7,6],[7,8],[10,9],[10,11],[12,11],[12,10],[13,14]];
+  let graphT=0,raf=null;
+  function graph(cv){
+    const ctx=cv.getContext("2d");const dpr=Math.min(devicePixelRatio||1,2);
+    const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;cv.width=w*dpr;cv.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,w,h);
+    const sc=Math.min(w,h)/6.2,cx=w*.52,cy=h*.5;
+    const P=NODES.map((nd,i)=>{const dx=reduce?0:Math.sin(graphT*.6+i)*4;const dy=reduce?0:Math.cos(graphT*.5+i*1.3)*4;
+      return [cx+nd[1]*sc+dx,cy+nd[2]*sc+dy];});
+    ctx.lineCap="round";
+    EDGES.forEach(([a,b])=>{ctx.strokeStyle="#3b4066";ctx.lineWidth=1.4;ctx.globalAlpha=.9;
+      ctx.beginPath();ctx.moveTo(P[a][0],P[a][1]);ctx.lineTo(P[b][0],P[b][1]);ctx.stroke();});
+    ctx.globalAlpha=1;
+    NODES.forEach((nd,i)=>{const r=4+nd[4]*.5;
+      if(i===0){ctx.shadowColor="#7dcfff";ctx.shadowBlur=16;}else ctx.shadowBlur=0;
+      ctx.fillStyle=nd[3];ctx.beginPath();ctx.arc(P[i][0],P[i][1],r,0,7);ctx.fill();ctx.shadowBlur=0;
+      ctx.fillStyle="#c0caf5";ctx.font=(i<3?"600 11px ":"10px ")+"ui-sans-serif,system-ui";ctx.textAlign="center";
+      ctx.fillText(nd[0],P[i][0],P[i][1]+r+11);});
+  }
+  function tick(){graphT+=.02;const g=document.querySelector('.lab[data-mode="a"] [data-graph]');if(g)graph(g);raf=requestAnimationFrame(tick);}
+
+  function sizeCanvases(){
+    document.querySelectorAll("[data-village]").forEach(c=>village(c,false));
+    document.querySelectorAll("[data-village-full]").forEach(c=>village(c,true));
+    const g=document.querySelector('.lab[data-mode="a"] [data-graph]');if(g)graph(g);
+  }
+  addEventListener("resize",()=>{clearTimeout(window.__rz);window.__rz=setTimeout(sizeCanvases,120);});
+  const hm=(location.hash||"").replace("#","");
+  setMode(["current","a","b","c"].includes(hm)?hm:"current");
+  addEventListener("hashchange",()=>{const m=location.hash.replace("#","");if(["current","a","b","c"].includes(m))setMode(m);});
+  requestAnimationFrame(()=>{sizeCanvases();if(!reduce)tick();});
+})();
+</script>
