@@ -1,0 +1,301 @@
+<title>aDNA Network — Graph Direction Lab (Storyweave P0.5)</title>
+<style>
+  :root{
+    --bg:#16161e; --bg2:#1a1b26; --panel:#1f2130; --panel2:#242739;
+    --ink:#c0caf5; --ink-dim:#8b93b8; --ink-faint:#565f89; --line:#2c3048;
+    --standard:#7dcfff; --framework:#9d7cd8; --forge:#e0a84c; --platform:#73daca; --org:#f7768e; --infra:#7aa2f7;
+    --edge:#3b4066; --edge-hi:#7dcfff;
+    --sans:"Space Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"JetBrains Mono","SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  .wrap{min-height:100vh;display:flex;flex-direction:column}
+  header{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1.4rem;padding:1.1rem 1.4rem .9rem;border-bottom:1px solid var(--line)}
+  .brand{font-weight:700;font-size:1.02rem;letter-spacing:-.01em}
+  .brand b{color:var(--standard)}
+  .eyebrow{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+  .count{font-family:var(--mono);font-size:.75rem;color:var(--ink-dim)}
+  .count b{color:var(--ink)}
+  .controls{margin-left:auto;display:flex;flex-wrap:wrap;gap:.5rem}
+  .seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:2px}
+  .seg button{appearance:none;background:none;border:0;color:var(--ink-dim);font-family:var(--sans);font-size:.76rem;font-weight:600;padding:.34rem .7rem;border-radius:7px;cursor:pointer;transition:background .15s,color .15s}
+  .seg button[aria-pressed=true]{background:var(--panel2);color:var(--ink);box-shadow:0 1px 0 #0004}
+  .seg button:focus-visible{outline:2px solid var(--standard);outline-offset:1px}
+  .seg .lbl{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);align-self:center;padding:0 .5rem 0 .2rem}
+  main{flex:1;position:relative;overflow:hidden}
+  #stage{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+  #stage.drag{cursor:grabbing}
+  .glow{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s;background:
+     radial-gradient(60% 45% at 50% 42%, #e0a84c22, transparent 70%),
+     radial-gradient(40% 40% at 30% 70%, #7dcfff1f, transparent 70%),
+     radial-gradient(46% 40% at 74% 66%, #9d7cd81c, transparent 72%);}
+  .glow.on{opacity:1}
+  .isles{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s}
+  .isles.on{opacity:.5}
+  /* edges */
+  .edge{stroke:var(--edge);fill:none;transition:stroke .15s,opacity .15s;stroke-linecap:round}
+  .edge.federation{stroke-width:1.6}
+  .edge.umbrella{stroke-width:3.4}
+  .edge.companion{stroke-width:1.5;stroke-dasharray:5 5}
+  .edge.hot{stroke:var(--edge-hi);opacity:1 !important}
+  .edge.dim{opacity:.12}
+  .elabel{font-family:var(--mono);font-size:8.5px;fill:var(--ink-faint);text-anchor:middle;pointer-events:none;opacity:0;transition:opacity .15s}
+  .elabel.hot{opacity:1;fill:var(--edge-hi)}
+  /* nodes */
+  .node{cursor:pointer}
+  .node circle{stroke:var(--bg);stroke-width:2;transition:opacity .15s,r .2s}
+  .node .ring{fill:none;stroke-width:2;opacity:0;transition:opacity .2s}
+  .node text{font-family:var(--sans);font-weight:600;fill:var(--ink);paint-order:stroke;stroke:var(--bg2);stroke-width:3px;stroke-linejoin:round;pointer-events:none;transition:opacity .15s}
+  .node.core circle{stroke:var(--standard);stroke-width:2.5}
+  .node.dim{opacity:.2}
+  .node.hot .ring{opacity:1}
+  .node:focus-visible{outline:none}
+  .node:focus-visible .ring{opacity:1;stroke-dasharray:3 3}
+  /* not-yet-linked strip */
+  .strip{border-top:1px solid var(--line);background:linear-gradient(180deg,#181925,#14141c);padding:.7rem 1.4rem 1rem;max-height:31vh;overflow:auto}
+  .strip h2{margin:.1rem 0 .55rem;font-size:.8rem;font-weight:600;color:var(--ink-dim);display:flex;align-items:center;gap:.5rem}
+  .strip h2 .n{font-family:var(--mono);color:var(--org)}
+  .strip .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:5px}
+  .chip{display:flex;align-items:center;gap:.4rem;background:#1b1c28;border:1px solid #262a40;border-radius:7px;padding:.34rem .5rem;font-size:.7rem;color:var(--ink-dim);min-width:0}
+  .chip .dot{width:7px;height:7px;border-radius:50%;flex:none}
+  .chip span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* legend */
+  .legend{position:absolute;left:14px;bottom:14px;background:#12131bdd;backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:11px;padding:.7rem .8rem;font-size:.68rem;max-width:min(84vw,300px);z-index:5}
+  .legend h3{margin:0 0 .5rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+  .legend .row{display:flex;flex-wrap:wrap;gap:.3rem .8rem;margin-bottom:.5rem}
+  .legend .k{display:flex;align-items:center;gap:.36rem;color:var(--ink-dim)}
+  .legend .k .dot{width:9px;height:9px;border-radius:50%}
+  .legend .k svg{display:block}
+  .legend .hint{color:var(--ink-faint);font-family:var(--mono);font-size:.6rem;border-top:1px solid var(--line);padding-top:.45rem}
+  /* detail */
+  .detail{position:absolute;right:14px;top:14px;width:min(84vw,258px);background:#12131bee;backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:12px;padding:.85rem .95rem;z-index:6;opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .18s,transform .18s}
+  .detail.on{opacity:1;transform:none;pointer-events:auto}
+  .detail .cls{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase}
+  .detail h4{margin:.15rem 0 .1rem;font-size:1.15rem;letter-spacing:-.02em}
+  .detail .slug{font-family:var(--mono);font-size:.72rem;color:var(--ink-dim);margin-bottom:.6rem;word-break:break-all}
+  .detail ul{list-style:none;margin:.2rem 0 0;padding:0;display:flex;flex-direction:column;gap:.3rem}
+  .detail li{font-size:.74rem;color:var(--ink-dim);display:flex;gap:.45rem;align-items:baseline}
+  .detail li b{color:var(--ink);font-weight:600}
+  .detail .rel{font-family:var(--mono);font-size:.64rem;color:var(--edge-hi)}
+  .detail .x{position:absolute;top:.5rem;right:.6rem;color:var(--ink-faint);background:none;border:0;font-size:1rem;cursor:pointer;line-height:1}
+  @media (max-width:640px){
+    header{padding:.8rem 1rem .7rem}.controls{margin-left:0;width:100%}.legend{display:none}
+    .strip{max-height:26vh}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Storyweave · P0.5 direction lab</div>
+      <div class="brand"><b>aDNA</b> network — the relationships, drawn</div>
+    </div>
+    <div class="count" id="count"></div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Layout">
+        <span class="lbl">Layout</span>
+        <button id="bForce" aria-pressed="true">Force</button>
+        <button id="bRadial" aria-pressed="false">Radial</button>
+      </div>
+      <div class="seg" role="group" aria-label="Ground">
+        <span class="lbl">ADR-032</span>
+        <button id="bGraph" aria-pressed="true">Graph</button>
+        <button id="bComposed" aria-pressed="false">Composed</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="glow" id="glow"></div>
+    <svg class="isles" id="isles" preserveAspectRatio="xMidYMid slice"></svg>
+    <svg id="stage" role="img" aria-label="Interactive graph of 15 connected aDNA vaults and 14 relationships"></svg>
+    <div class="legend">
+      <h3>How to read it</h3>
+      <div class="row" id="famLegend"></div>
+      <div class="row">
+        <span class="k"><svg width="26" height="8"><line x1="1" y1="4" x2="25" y2="4" stroke="#8b93b8" stroke-width="1.6"/></svg>federation ·9</span>
+        <span class="k"><svg width="26" height="8"><line x1="1" y1="4" x2="25" y2="4" stroke="#8b93b8" stroke-width="3.4"/></svg>umbrella ·1</span>
+        <span class="k"><svg width="26" height="8"><line x1="1" y1="4" x2="25" y2="4" stroke="#8b93b8" stroke-width="1.5" stroke-dasharray="5 5"/></svg>companion ·4</span>
+      </div>
+      <div class="hint">drag to pan · scroll to zoom · hover a node</div>
+    </div>
+    <div class="detail" id="detail" role="dialog" aria-label="Vault detail">
+      <button class="x" id="detailX" aria-label="Close">✕</button>
+      <div class="cls" id="dCls"></div>
+      <h4 id="dName"></h4>
+      <div class="slug" id="dSlug"></div>
+      <ul id="dRels"></ul>
+    </div>
+  </main>
+  <div class="strip">
+    <h2><span class="n" id="ulCount">53</span> vaults carry no cited relationship yet — <span style="color:var(--ink-faint)">honest topology, not missing data</span></h2>
+    <div class="grid" id="unlinked"></div>
+  </div>
+</div>
+
+<script>
+(() => {
+  "use strict";
+  // ---- real data (site/src/data/vaults.json: 14 edges, 15 connected, 53 unlinked) ----
+  const FAM = {
+    standard_dev:["standard","var(--standard)"], framework:["framework","var(--framework)"],
+    framework_candidate:["framework","var(--framework)"], forge:["forge","var(--forge)"],
+    platform:["platform","var(--platform)"], org_vault:["org","var(--org)"], org_graph:["org","var(--org)"],
+    coordination:["infra","var(--infra)"], network:["infra","var(--infra)"], node_operational:["infra","var(--infra)"],
+    knowledge_graph:["infra","var(--infra)"], tooling:["infra","var(--infra)"], workspace:["infra","var(--infra)"], tbd_at_p0:["infra","var(--infra)"]
+  };
+  const famColor = c => (FAM[c]||["infra","var(--infra)"])[1];
+  const famName  = c => (FAM[c]||["infra","infra"])[0];
+  const CONNECTED = [
+    ["aDNA.aDNA","aDNA","standard_dev"],["III.aDNA","III","framework"],["Astro.aDNA","Astro","forge"],
+    ["Harness.aDNA","RareHarness","platform"],["WilhelmAI.aDNA","WilhelmAI","org_vault"],["RareArchive.aDNA","RareArchive","org_vault"],
+    ["Molecules.aDNA","Molecules","forge"],["TappProtocol.aDNA","TappProtocol","platform"],["VAAS.aDNA","VAAS","framework_candidate"],
+    ["Oration.aDNA","Oration","forge"],["sciencestanley","Science Stanley","org_vault"],["visualdna","VisualDNA","framework"],
+    ["zenzachary","Zen Zachary","org_vault"],["RemoteControl.aDNA","RemoteControl","platform"],["terminal","Terminal","platform"]
+  ].map(([s,n,c])=>({s,n,c}));
+  const EDGES = [
+    ["Molecules.aDNA","Astro.aDNA","federation"],["sciencestanley","Oration.aDNA","federation"],["sciencestanley","visualdna","federation"],
+    ["WilhelmAI.aDNA","Astro.aDNA","federation"],["WilhelmAI.aDNA","III.aDNA","federation"],["WilhelmAI.aDNA","RareArchive.aDNA","umbrella"],
+    ["zenzachary","sciencestanley","companion"],["zenzachary","visualdna","federation"],["Harness.aDNA","Astro.aDNA","federation"],
+    ["Harness.aDNA","III.aDNA","federation"],["RemoteControl.aDNA","terminal","companion"],["TappProtocol.aDNA","Molecules.aDNA","companion"],
+    ["TappProtocol.aDNA","VAAS.aDNA","companion"],["aDNA.aDNA","III.aDNA","federation"]
+  ].map(([s,t,k])=>({s,t,k}));
+  const REL = {federation:"depends on / consumes",umbrella:"contains (org-vault → child)",companion:"sibling / thematic pair"};
+  const UNLINKED = [["Operations","coordination"],["ComfyUI","forge"],["D3","forge"],["LlamaCppForge","forge"],["Regenesis","forge"],["Three.js","forge"],["Videos","forge"],["Git","framework"],["Organization","framework"],["React","framework"],["Tailwind","framework"],["TypeScript","framework"],["LA Venture Graph","knowledge_graph"],["Alpha Lattice","network"],["Home","node_operational"],["CakeHealth","org_graph"],["Percy Sleep","org_graph"],["SuperLeague","org_graph"],["aDNA Labs","org_vault"],["ContextCommons","org_vault"],["wga","org_vault"],["APScheduler","platform"],["AWSBootstrap","platform"],["Bitwarden","platform"],["Caddy","platform"],["Cake Protocol","platform"],["Canvas","platform"],["Container","platform"],["Context","platform"],["Dashboards","platform"],["Exchange","platform"],["FastAPI","platform"],["Forgejo","platform"],["Groupware","platform"],["Inference","platform"],["aDNA Lab","platform"],["LatticeProtocol","platform"],["Lighthouse","platform"],["Nebula","platform"],["Neo4j","platform"],["Nextcloud","platform"],["Obsidian","platform"],["Prefect","platform"],["Store","platform"],["Vercel","platform"],["Warp","platform"],["WebForge","platform"],["DataRoom","tbd_at_p0"],["Datasets","tbd_at_p0"],["MagnaPetra","tbd_at_p0"],["World Genome","tbd_at_p0"],["Spacemacs","tooling"],["zeta","workspace"]];
+
+  const SVGNS="http://www.w3.org/2000/svg";
+  const el=(t,a={})=>{const e=document.createElementNS(SVGNS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+  const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  const stage=document.getElementById("stage");
+  const N=CONNECTED.map(d=>({...d,x:0,y:0,vx:0,vy:0,deg:0}));
+  const idx=Object.fromEntries(N.map((n,i)=>[n.s,i]));
+  const L=EDGES.map(e=>({...e,a:idx[e.s],b:idx[e.t]}));
+  L.forEach(e=>{N[e.a].deg++;N[e.b].deg++;});
+  const rOf=n=>7+Math.min(n.deg,5)*2.1 + (n.c==="standard_dev"?3:0);
+
+  // ---------- layouts ----------
+  function seedForce(){N.forEach((n,i)=>{const a=i/N.length*6.283;n.x=Math.cos(a)*140+(i%3-1)*20;n.y=Math.sin(a)*140+(i%2?18:-18);n.vx=n.vy=0;});}
+  function stepForce(){
+    for(let i=0;i<N.length;i++)for(let j=i+1;j<N.length;j++){
+      const a=N[i],b=N[j];let dx=a.x-b.x,dy=a.y-b.y,d2=dx*dx+dy*dy||0.01;const d=Math.sqrt(d2);
+      const f=2600/d2;const ux=dx/d,uy=dy/d;a.vx+=ux*f;a.vy+=uy*f;b.vx-=ux*f;b.vy-=uy*f;}
+    L.forEach(e=>{const a=N[e.a],b=N[e.b];let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||.01;const f=(d-96)*0.045;const ux=dx/d,uy=dy/d;a.vx+=ux*f;a.vy+=uy*f;b.vx-=ux*f;b.vy-=uy*f;});
+    N.forEach(n=>{n.vx+=-n.x*0.012;n.vy+=-n.y*0.012;n.x+=n.vx*=0.86;n.y+=n.vy*=0.86;});
+  }
+  function layoutRadial(){
+    // aDNA core center; hubs (III, Astro) inner ring; others by BFS-ish distance & family angle
+    const core="aDNA.aDNA"; N.forEach(n=>{n.vx=n.vy=0;});
+    const ring1=new Set(["III.aDNA","Astro.aDNA"]);
+    const groups={};N.forEach(n=>{(groups[famName(n.c)]??=[]).push(n);});
+    let ai=0;const fams=Object.keys(groups);
+    N.forEach(n=>{n.x=n.y=0;});
+    N.find(n=>n.s===core).x=0;N.find(n=>n.s===core).y=0;
+    // ring1
+    [...ring1].forEach((s,k)=>{const n=N[idx[s]];const a=-Math.PI/2+k*Math.PI;n.x=Math.cos(a)*95;n.y=Math.sin(a)*95;});
+    // outer: everything else, ordered by family then degree, on a ring
+    const outer=N.filter(n=>n.s!==core&&!ring1.has(n.s)).sort((p,q)=>famName(p.c).localeCompare(famName(q.c))||q.deg-p.deg);
+    outer.forEach((n,k)=>{const a=k/outer.length*6.283 - Math.PI/2;const rr=205;n.x=Math.cos(a)*rr;n.y=Math.sin(a)*rr;});
+  }
+
+  // ---------- render ----------
+  const gRoot=el("g"); stage.appendChild(gRoot);
+  const gEdge=el("g"); const gNode=el("g"); gRoot.append(gEdge,gNode);
+  const edgeEls=L.map(e=>{const p=el("path",{class:"edge "+e.k});const t=el("text",{class:"elabel"});t.textContent=e.k;gEdge.append(p);gEdge.append(t);return{p,t,e};});
+  const nodeEls=N.map((n,i)=>{
+    const g=el("g",{class:"node"+(n.c==="standard_dev"?" core":""),tabindex:"0","data-i":i,"aria-label":n.n});
+    const ring=el("circle",{class:"ring",r:rOf(n)+5,stroke:famColor(n.c)});
+    const c=el("circle",{r:rOf(n),fill:famColor(n.c)});
+    const tx=el("text",{"font-size":n.deg>=3?"12":"10.5",x:0,y:rOf(n)+12,"text-anchor":"middle"});tx.textContent=n.n;
+    g.append(ring,c,tx);gNode.append(g);return g;
+  });
+
+  let view={x:0,y:0,k:1},W=1,H=1;
+  function fit(){const b=stage.getBoundingClientRect();W=b.width;H=b.height;
+    let minX=1e9,minY=1e9,maxX=-1e9,maxY=-1e9;N.forEach(n=>{minX=Math.min(minX,n.x);minY=Math.min(minY,n.y);maxX=Math.max(maxX,n.x);maxY=Math.max(maxY,n.y);});
+    const gw=maxX-minX||1,gh=maxY-minY||1,pad=88;
+    const k=Math.min((W-pad*2)/gw,(H-pad*2)/gh,1.5);
+    view.k=k;view.x=W/2-(minX+gw/2)*k;view.y=H/2-(minY+gh/2)*k;apply();}
+  function apply(){gRoot.setAttribute("transform",`translate(${view.x} ${view.y}) scale(${view.k})`);}
+  function draw(){
+    edgeEls.forEach(({p,t,e})=>{const a=N[e.a],b=N[e.b];
+      const mx=(a.x+b.x)/2,my=(a.y+b.y)/2,dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||1;
+      const cx=mx-dy/d*d*0.12,cy=my+dx/d*d*0.12; // gentle arc
+      p.setAttribute("d",`M${a.x} ${a.y} Q${cx} ${cy} ${b.x} ${b.y}`);
+      t.setAttribute("x",cx);t.setAttribute("y",cy);});
+    nodeEls.forEach((g,i)=>g.setAttribute("transform",`translate(${N[i].x} ${N[i].y})`));
+  }
+
+  // ---------- interaction ----------
+  function hover(i){
+    const near=new Set([i]);const hotE=new Set();
+    L.forEach((e,k)=>{if(e.a===i||e.b===i){near.add(e.a);near.add(e.b);hotE.add(k);}});
+    nodeEls.forEach((g,k)=>{g.classList.toggle("dim",!near.has(k));g.classList.toggle("hot",k===i);});
+    edgeEls.forEach(({p,t},k)=>{const on=hotE.has(k);p.classList.toggle("hot",on);p.classList.toggle("dim",!on);t.classList.toggle("hot",on);});
+  }
+  function clearHover(){nodeEls.forEach(g=>g.classList.remove("dim","hot"));edgeEls.forEach(({p,t})=>{p.classList.remove("hot","dim");t.classList.remove("hot");});}
+  const detail=document.getElementById("detail");
+  function showDetail(i){
+    const n=N[i];document.getElementById("dCls").textContent=famName(n.c)+" · "+n.c.replace(/_/g," ");
+    document.getElementById("dCls").style.color=famColor(n.c);
+    document.getElementById("dName").textContent=n.n;document.getElementById("dSlug").textContent=n.s;
+    const rels=L.filter(e=>e.a===i||e.b===i).map(e=>{const other=N[e.a===i?e.b:e.a];const dir=e.a===i?"→":"←";return `<li><span class="rel">${e.k}</span> <span>${dir} <b>${other.n}</b></span></li>`;});
+    document.getElementById("dRels").innerHTML=rels.length?rels.join(""):'<li>No cited relationship.</li>';
+    detail.classList.add("on");
+  }
+  document.getElementById("detailX").onclick=()=>{detail.classList.remove("on");clearHover();};
+  nodeEls.forEach((g,i)=>{
+    g.addEventListener("pointerenter",()=>hover(i));
+    g.addEventListener("pointerleave",()=>{if(!detail.classList.contains("on"))clearHover();});
+    g.addEventListener("click",e=>{e.stopPropagation();hover(i);showDetail(i);});
+    g.addEventListener("focus",()=>hover(i));
+    g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();showDetail(i);}});
+  });
+  stage.addEventListener("click",()=>{detail.classList.remove("on");clearHover();});
+
+  // pan + zoom
+  let drag=null;
+  stage.addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY,vx:view.x,vy:view.y};stage.classList.add("drag");stage.setPointerCapture(e.pointerId);});
+  stage.addEventListener("pointermove",e=>{if(!drag)return;view.x=drag.vx+(e.clientX-drag.x);view.y=drag.vy+(e.clientY-drag.y);apply();});
+  stage.addEventListener("pointerup",e=>{drag=null;stage.classList.remove("drag");});
+  stage.addEventListener("wheel",e=>{e.preventDefault();const b=stage.getBoundingClientRect();const mx=e.clientX-b.left,my=e.clientY-b.top;const f=Math.exp(-e.deltaY*0.0015);const nk=Math.max(0.4,Math.min(3,view.k*f));view.x=mx-(mx-view.x)*(nk/view.k);view.y=my-(my-view.y)*(nk/view.k);view.k=nk;apply();},{passive:false});
+
+  // ---------- modes ----------
+  let mode="force",anim=null;
+  function run(){
+    cancelAnimationFrame(anim);
+    if(mode==="force"){seedForce();
+      if(reduce){for(let i=0;i<260;i++)stepForce();draw();fit();}
+      else{let t=0;const tick=()=>{for(let s=0;s<2;s++)stepForce();draw();if(t++<150){if(t===40)fit();anim=requestAnimationFrame(tick);}else fit();};tick();}
+    }else{layoutRadial();draw();fit();}
+  }
+  function setLayout(m){mode=m;bForce.setAttribute("aria-pressed",m==="force");bRadial.setAttribute("aria-pressed",m==="radial");run();}
+  const bForce=document.getElementById("bForce"),bRadial=document.getElementById("bRadial");
+  bForce.onclick=()=>setLayout("force");bRadial.onclick=()=>setLayout("radial");
+  const glow=document.getElementById("glow"),isles=document.getElementById("isles");
+  const bGraph=document.getElementById("bGraph"),bComposed=document.getElementById("bComposed");
+  function setGround(g){const on=g==="composed";bComposed.setAttribute("aria-pressed",on);bGraph.setAttribute("aria-pressed",!on);glow.classList.toggle("on",on);isles.classList.toggle("on",on);}
+  bGraph.onclick=()=>setGround("graph");bComposed.onclick=()=>setGround("composed");
+
+  // ambient "islands" for the composed ground (evokes the SS-Ghibli hero without the PNG)
+  function paintIsles(){const b=stage.getBoundingClientRect();isles.setAttribute("viewBox",`0 0 ${b.width} ${b.height}`);isles.innerHTML="";
+    let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+    for(let i=0;i<26;i++){const x=rnd()*b.width,y=b.height*0.25+rnd()*b.height*0.7,s=6+rnd()*13;
+      const g=el("g",{opacity:0.35+rnd()*0.4});
+      g.append(el("ellipse",{cx:x,cy:y+s*0.7,rx:s*1.5,ry:s*0.5,fill:"#0c0d14"}));
+      g.append(el("path",{d:`M${x-s} ${y+s*0.6} Q${x} ${y-s} ${x+s} ${y+s*0.6} Z`,fill:"#20233a"}));
+      g.append(el("circle",{cx:x,cy:y,r:1.5,fill:"#e0a84c"}));
+      isles.append(g);}
+  }
+
+  // ---------- build the "not yet linked" grid + family legend + counts ----------
+  const uni=[...new Set(N.map(n=>famName(n.c)))];
+  document.getElementById("famLegend").innerHTML=[["standard","var(--standard)"],["framework","var(--framework)"],["forge","var(--forge)"],["platform","var(--platform)"],["org","var(--org)"],["infra","var(--infra)"]].map(([k,c])=>`<span class="k"><span class="dot" style="background:${c}"></span>${k}</span>`).join("");
+  document.getElementById("unlinked").innerHTML=UNLINKED.map(([n,c])=>`<div class="chip"><span class="dot" style="background:${famColor(c)}"></span><span title="${n}">${n}</span></div>`).join("");
+  document.getElementById("ulCount").textContent=UNLINKED.length;
+  document.getElementById("count").innerHTML=`<b>15</b> vaults · <b>14</b> relationships · <b>${UNLINKED.length}</b> not yet linked`;
+
+  addEventListener("resize",()=>{fit();if(isles.classList.contains("on"))paintIsles();});
+  paintIsles();run();
+})();
+</script>
