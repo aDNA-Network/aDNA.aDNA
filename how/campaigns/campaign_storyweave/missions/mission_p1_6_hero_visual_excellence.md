@@ -5,7 +5,7 @@ title: "P1.6 — hero network visual: best-in-class"
 campaign: campaign_storyweave
 phase: P1.6
 owner: stanley
-status: in_progress   # authored 2026-07-08; Session 1 (O0→O4) begun 2026-07-08 by agent_rosetta
+status: completed   # SHIPPED + LIVE on adna.network 2026-07-08 (T2 constellation); AAR at end
 mission_class: design_excellence
 executor_tier: opus
 token_budget_estimated: "~250–450 kT across 2–3 sessions: reference-gather + options-eval + 2–3 interactive comps (incl. one WebGL) + operator pick + SSR/enhancement build + perf-fixture + gates + ship. Multi-session by design — gate at each phase."
@@ -85,3 +85,10 @@ Network/graph/constellation heroes worth dissecting: **Linear** (calm gradient +
 
 ## Definition of done
 The live home hero carries a **best-in-class living-network visual** that reads as *the brand* — evocative, premium, and honestly "a growing network you can join" — with an **honest no-JS baseline**, **full `test:gates` green**, **perf/CWV in budget (gate-10/19)**, a11y-complete, `/network`+`/commons` still zero-diff, and the operator's sign-off at O4 + O7.
+
+## AAR (2026-07-08 — SHIPPED + LIVE)
+- **Worked:** the whole O0→O7 arc across 2 sessions — reference → 3 comps (T1/T2/T3, headless-verified, published as Artifacts) → ISS pick gate → operator picked **T2** → built the constellation as a **Canvas progressive-enhancement over the SSR SVG** → **313 gates green**, real **Lighthouse `/` Perf 1.00 · LCP 489ms · CLS 0.000** → deployed to adna.network (verified live). Every DoD item met.
+- **Didn't (caught pre-ship):** first pass read the theme from page-`body` luminance → on a *light* page it picked the light palette and drew a **white constellation inside the always-dark hero**. Headless light-mode capture caught it before ship.
+- **Finding:** the hero `<section>` is **always `.dark`** (dark-first) regardless of the site theme; and **gate-19/gate-22 guard `/vaults/graph` + a concept page, NOT `/`** — so a home-only hero change is low-risk and needs no Lighthouse-fixture regen. The SSR SVG (the "diagram") as no-JS/a11y floor + the Canvas constellation as the JS enhancement is the mission's prescribed hybrid, cleanly realized.
+- **Change:** detect theme via `fig.closest('.dark')` (hero-scoped), not the page body; keep the SSR SVG **in flow** (opacity-dim, never `display:none`) so it sizes the frame (zero CLS) + stays in the a11y tree; `aria-hidden` the canvas; init on `requestIdleCallback` (off the LCP path).
+- **Follow-up:** per-vault deep-links on node-click (currently → `/vaults`); optional cross-surface cohesion — apply the orb+arc graph language to `/network` + the home `NetworkDiagram` (Decade-2, Axis 4); the T1/T3 comps remain as the tier-decision record.
