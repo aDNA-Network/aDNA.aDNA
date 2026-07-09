@@ -1,0 +1,282 @@
+<meta charset="utf-8">
+<title>aDNA hero comp — T3 Deep Field (WebGL)</title>
+<style>
+  /* ============ P1.6 hero comp · T3 "Deep Field" (WebGL) — the ceiling — Storyweave ============
+     Hand-rolled WebGL (NO three.js: CSP-safe + honest about bundle). Additive glow point-sprites for
+     node cores/halos, glowing edge-arc beads + flowing travelers, a living forming-particle field
+     (all 68 vaults implied), and pointer depth-parallax. The galaxy keeps a deep-space backdrop in BOTH
+     themes (additive glow reads best on dark); the page chrome respects the theme. No-JS/a11y floor =
+     the same SSR SVG the other tiers ship (shown as a fallback note). Self-contained. ==================== */
+  #comp{
+    --bg:#0e0e15; --bg2:#08080c; --panel:#0a0e1a; --line:#242a40; --line2:#23273f;
+    --ink:#c8d0f0; --head:#f7f7fb; --muted:#8b93b8; --faint:#565f89;
+    --cyan:#7dcfff; --cyan2:#a9e0ff; --purple:#9d7cd8; --purple2:#bb9af7; --green:#9ece6a;
+    --disp:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+    font-family:var(--disp); color:var(--ink); background:var(--bg);
+    min-height:100vh; width:100%; -webkit-font-smoothing:antialiased; line-height:1.5;
+  }
+  #comp[data-theme="light"]{
+    --bg:#f5f6fb; --bg2:#e9ecf7; --line:#dde1f0; --line2:#e4e7f4;
+    --ink:#3a4066; --head:#171826; --muted:#5c6288; --faint:#8b90b0;
+    --cyan:#1f83c9; --cyan2:#3ba7e6; --purple:#7a5bc0; --purple2:#9878d6;
+  }
+  #comp *{box-sizing:border-box} #comp a{color:inherit}
+  .evalbar{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;padding:.6rem 1rem;background:var(--bg2);border-bottom:1px solid var(--line)}
+  .badge-tier{font-family:var(--mono);font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+  .badge-tier b{color:var(--cyan)}
+  .segs{margin-left:auto;display:flex;flex-wrap:wrap;gap:.5rem}
+  .seg{display:inline-flex;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:2px}
+  #comp[data-theme="light"] .seg{background:#fff}
+  .seg .lbl{font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding:0 .45rem}
+  .seg button{appearance:none;background:none;border:0;color:var(--muted);font-family:var(--disp);font-weight:600;font-size:.72rem;padding:.28rem .6rem;border-radius:7px;cursor:pointer;transition:.15s}
+  .seg button[aria-pressed=true]{background:color-mix(in srgb,var(--cyan) 22%,transparent);color:var(--head)}
+  .seg button:focus-visible{outline:2px solid var(--cyan);outline-offset:1px}
+  .hero{position:relative;isolation:isolate;overflow:hidden;padding:clamp(2rem,5vw,4.5rem) clamp(1rem,4vw,3rem)}
+  .ground{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+    background:radial-gradient(60% 55% at 72% 26%,color-mix(in srgb,var(--cyan) 12%,transparent),transparent 70%),radial-gradient(48% 44% at 20% 84%,color-mix(in srgb,var(--purple) 12%,transparent),transparent 70%)}
+  .grid{width:100%;max-width:75rem;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:clamp(1.5rem,4vw,3rem)}
+  .eyebrow{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 .8rem}
+  h1{font-size:clamp(2.3rem,4.8vw,3.9rem);line-height:1.03;letter-spacing:-.02em;margin:0 0 1.1rem;color:var(--head);font-weight:700}
+  h1 .accent{color:var(--cyan);text-shadow:0 0 26px color-mix(in srgb,var(--cyan) 34%,transparent)}
+  .lead{font-size:clamp(1rem,1.3vw,1.12rem);color:var(--muted);max-width:40rem;margin:0 0 1rem}
+  .reframe{font-size:1.02rem;color:var(--ink);font-weight:500;max-width:38rem;margin:0 0 1.4rem}
+  .actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1rem}
+  .btn{font-family:var(--disp);font-weight:600;font-size:.92rem;padding:.6rem 1.1rem;border-radius:10px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+  .btn-primary{background:var(--cyan);color:#081018;box-shadow:0 8px 26px color-mix(in srgb,var(--cyan) 30%,transparent)}
+  .btn-secondary{background:transparent;color:var(--ink);border-color:var(--line)}
+  .trust{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;font-size:.78rem;color:var(--muted);margin-bottom:1.3rem}
+  .trust a{color:var(--muted);text-decoration:none;font-weight:500}.trust a:hover{color:var(--cyan)}
+  .sep{color:var(--line2)}
+  .stats{display:flex;flex-wrap:wrap;gap:1.6rem;padding-top:1.1rem;border-top:1px solid var(--line);margin-bottom:1rem}
+  .stat{display:flex;flex-direction:column;gap:.1rem}
+  .stat b{font-size:1.3rem;color:var(--cyan);font-weight:700;line-height:1}
+  .stat span{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .proof{font-size:.8rem;color:var(--muted);max-width:38rem}.proof b{color:var(--ink);font-weight:600}
+  .visual{margin:0;min-width:0}
+  .panel{position:relative;width:100%;aspect-ratio:1/0.86;border-radius:20px;overflow:hidden;border:1px solid #23273f;
+    background:radial-gradient(120% 95% at 50% 32%,#141a2e,#0a0d18 55%,#05060c);box-shadow:0 30px 90px rgba(125,207,255,0.14),inset 0 1px 0 #ffffff10}
+  .panel canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:default}
+  .nolbl{position:absolute;inset:0;pointer-events:none;z-index:2}
+  .nlab{position:absolute;transform:translate(-50%,0);font-size:12px;font-weight:600;color:#e6f0ff;
+    text-shadow:0 1px 6px rgba(0,0,0,.7);white-space:nowrap;letter-spacing:.01em}
+  .nlab.sub{font-weight:500;color:rgba(190,200,230,.85);font-size:11px}
+  .live{position:absolute;top:13px;left:15px;z-index:2;font-family:var(--mono);font-size:.56rem;letter-spacing:.11em;text-transform:uppercase;color:#7f88ad}
+  .live .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#9ece6a;margin-right:.4rem;box-shadow:0 0 8px #9ece6a;vertical-align:middle;animation:live 2.6s ease-in-out infinite}
+  @keyframes live{0%,100%{opacity:.45}50%{opacity:1}}
+  .cap{position:absolute;left:0;right:0;bottom:13px;z-index:2;text-align:center;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#7f88ad;pointer-events:none}
+  .cap b{color:var(--cyan2)}.cap a{color:#bb9af7;pointer-events:auto;text-decoration:none;border-bottom:1px dotted currentColor}
+  .glfail{position:absolute;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:2rem;color:#8b93b8;font-size:.85rem}
+  .foot{padding:1rem clamp(1rem,4vw,3rem) 2rem;text-align:center;font-family:var(--mono);font-size:.64rem;color:var(--faint);line-height:1.7;max-width:60rem;margin:0 auto}
+  .foot b{color:var(--muted)}
+  @media (max-width:860px){.grid{grid-template-columns:1fr;gap:2rem}.visual{order:-1}.lead,.reframe,.proof{max-width:none}}
+</style>
+
+<div id="comp" data-theme="dark">
+  <div class="evalbar">
+    <span class="badge-tier">Comp <b>T3</b> · Deep Field · WebGL · the ceiling (perf-gated at O6)</span>
+    <div class="segs">
+      <div class="seg" role="group" aria-label="Theme"><span class="lbl">Theme</span>
+        <button data-theme-btn="dark" aria-pressed="true">Dark</button>
+        <button data-theme-btn="light" aria-pressed="false">Light</button></div>
+      <div class="seg" role="group" aria-label="Motion"><span class="lbl">Motion</span>
+        <button data-motion="calm" aria-pressed="true">Calm</button>
+        <button data-motion="lively" aria-pressed="false">Lively</button>
+        <button data-motion="off" aria-pressed="false">Still</button></div>
+    </div>
+  </div>
+  <section class="hero">
+    <div class="ground" aria-hidden="true"></div>
+    <div class="grid">
+      <div class="copy">
+        <p class="eyebrow">Storyweave · hero comp T3</p>
+        <h1>The aDNA <span class="accent">Network</span></h1>
+        <p class="lead">Language and DNA were co-created by everyone before us. The context that powers AI should be too — built, shared, and governed in the open, for the good of all. aDNA is an open standard for organizing project knowledge so both humans and AI agents can navigate it — and the open network where that shared context lives.</p>
+        <p class="reframe">Your context is just the notes, docs, and decisions you already keep — now shaped into a graph your agents can navigate, and shared in the open.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#">Explore the network</a>
+          <a class="btn btn-secondary" href="#">Read the standard</a>
+        </div>
+        <div class="trust">
+          <a href="#">Open source on GitHub</a><span class="sep">·</span><span>MIT-licensed</span><span class="sep">·</span>
+          <a href="#">built on the Lattice Protocol — opening progressively</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>68</b><span>Vaults</span></div><div class="stat"><b>15</b><span>Connected</span></div>
+          <div class="stat"><b>14</b><span>Relationships</span></div><div class="stat"><b>MIT</b><span>Open source</span></div>
+        </div>
+        <p class="proof">Powering real public-good work: <b>World Genome Academy · Context Commons · WilhelmAI · Rare Archive</b></p>
+      </div>
+      <figure class="visual">
+        <div class="panel" id="panel">
+          <span class="live"><span class="dot"></span>68 vaults · live network</span>
+          <canvas id="gl" role="img" aria-label="A deep-field constellation of 15 connected aDNA vaults linked by 14 relationships around the aDNA standard core, set in a living field of dozens more vaults forming."></canvas>
+          <div class="nolbl" id="nolbl"></div>
+          <div class="glfail" id="glfail">WebGL unavailable — production falls back to the T1/T2 SSR graph (the no-JS baseline).</div>
+          <div class="cap"><b>15</b> connected · <b>14</b> relationships · <b>+53</b> forming · <a href="#">your vault?</a></div>
+        </div>
+      </figure>
+    </div>
+  </section>
+  <p class="foot">The ceiling: GPU additive bloom + depth-parallax (move your pointer over the field) + a living particle field implying all <b>68</b> vaults. <b>Bundle + Core-Web-Vitals are the risk</b> — measured with a real Lighthouse run at O6 before this could ship. No-JS/a11y floor = the same SSR SVG (T1). Move pointer to feel the depth.</p>
+</div>
+
+<script>
+(() => {
+  "use strict";
+  const comp=document.getElementById("comp");
+  const mqL=matchMedia("(prefers-color-scheme: light)");
+  let locked=false;
+  const setTheme=t=>{comp.dataset.theme=t;document.querySelectorAll("[data-theme-btn]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.themeBtn===t)));};
+  setTheme(mqL.matches?"light":"dark");
+  mqL.addEventListener("change",e=>{if(!locked)setTheme(e.matches?"light":"dark");});
+  document.querySelectorAll("[data-theme-btn]").forEach(b=>b.onclick=()=>{locked=true;setTheme(b.dataset.themeBtn);});
+  let MOTION="calm";
+  document.querySelectorAll("[data-motion]").forEach(b=>b.onclick=()=>{MOTION=b.dataset.motion;
+    document.querySelectorAll("[data-motion]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));});
+  const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+  const cv=document.getElementById("gl");
+  const gl=cv.getContext("webgl",{alpha:true,premultipliedAlpha:false,antialias:true});
+  if(!gl){document.getElementById("glfail").style.display="flex";return;}
+
+  // ---- graph data (north-star layout) ----
+  const NODES=[
+    ["aDNA.aDNA",0,0.06,"core"],["III.aDNA",-0.40,-0.30,"hub"],["Astro.aDNA",0.42,-0.24,"hub"],
+    ["WilhelmAI",0.04,-0.60,"org"],["RareArchive",-0.22,-0.92,"n3"],["RareHarness",0.60,-0.58,"n4"],
+    ["Molecules",0.84,-0.04,"n4"],["TappProtocol",0.96,0.40,"n4"],["VAAS",0.78,0.80,"n3"],
+    ["Science Stanley",-0.56,0.40,"org"],["Oration",-0.90,0.18,"n3"],["VisualDNA",-0.30,0.66,"n4"],
+    ["Zen Zachary",-0.74,0.82,"n4"],["RemoteControl",0.30,0.88,"n3"],["Terminal",0.56,1.04,"n3"],
+  ].map(([name,x,y,k],i)=>({name,x,y,k,i,z:0.25+((i*37)%100)/100*0.7,
+    r:k==="core"?1.0:k==="hub"?0.8:k==="org"?0.72:k==="n4"?0.62:0.52}));
+  const NI=Object.fromEntries(NODES.map(n=>[n.name,n.i]));
+  const EDGES=[["aDNA.aDNA","III.aDNA"],["WilhelmAI","Astro.aDNA"],["WilhelmAI","III.aDNA"],["WilhelmAI","RareArchive"],
+    ["RareHarness","Astro.aDNA"],["RareHarness","III.aDNA"],["Molecules","Astro.aDNA"],["TappProtocol","Molecules"],
+    ["TappProtocol","VAAS"],["Science Stanley","Oration"],["Science Stanley","VisualDNA"],["Zen Zachary","Science Stanley"],
+    ["Zen Zachary","VisualDNA"],["RemoteControl","Terminal"]].map(([a,b])=>[NI[a],NI[b]]);
+  let sd=7; const rnd=()=>(sd=(sd*16807)%2147483647)/2147483647;
+  const CYAN=[0.49,0.81,1.0],CYBRT=[0.92,0.97,1.0],PURP=[0.73,0.60,0.97],BLUE=[0.66,0.78,1.0];
+
+  // ---- build interleaved point buffer: x,y,size,r,g,b,alpha,z,seed,type (10 floats) ----
+  const pts=[];
+  const push=(x,y,size,c,a,z,seed,type)=>pts.push(x,y,size,c[0],c[1],c[2],a,z,seed,type);
+  // stars (type 0)
+  for(let i=0;i<300;i++)push((rnd()*2-1)*1.5,(rnd()*2-1)*1.35,rnd()*2+0.6,[0.8,0.85,1.0],0.05+rnd()*0.4,rnd(),rnd(),0);
+  // forming particles / field (type 1) — all 68 implied
+  for(let i=0;i<230;i++){const a=rnd()*6.283,rr=1.15+rnd()*0.6;
+    push(Math.cos(a)*rr,Math.sin(a)*rr*0.86,rnd()*3+1.8,rnd()<0.5?CYAN:PURP,0.2+rnd()*0.4,0.2+rnd()*0.8,rnd(),1);}
+  // edge arc beads (type 4)
+  for(const[a,b]of EDGES){const A=NODES[a],B=NODES[b];const mx=(A.x+B.x)/2,my=(A.y+B.y)/2,dx=B.x-A.x,dy=B.y-A.y,d=Math.hypot(dx,dy)||1;
+    const cxu=mx-dy/d*d*0.14,cyu=my+dx/d*d*0.14;const BE=18;
+    for(let s=0;s<=BE;s++){const u=s/BE,iu=1-u;const px=iu*iu*A.x+2*iu*u*cxu+u*u*B.x,py=iu*iu*A.y+2*iu*u*cyu+u*u*B.y;
+      const c=[CYAN[0]*(1-u)+PURP[0]*u,CYAN[1]*(1-u)+PURP[1]*u,CYAN[2]*(1-u)+PURP[2]*u];
+      push(px,py,3.6,c,0.8,(A.z+B.z)/2,u,4);}}
+  // node halos (type 2) then cores (type 3)
+  for(const n of NODES){const isC=n.k==="core",isH=n.k==="hub";const col=isC||isH?CYAN:(n.i%2?BLUE:PURP);
+    push(n.x,n.y,n.r*30,col,isC?0.75:0.5,n.z,n.i/15,2);}
+  for(const n of NODES){const isC=n.k==="core";const col=isC?CYBRT:(n.k==="hub"?CYBRT:(n.i%2?[0.85,0.9,1.0]:[0.86,0.78,0.99]));
+    push(n.x,n.y,n.r*16+7,col,1.0,n.z,n.i/15,3);}
+  const STATIC=new Float32Array(pts);
+  const STATIC_COUNT=pts.length/10;
+
+  // travelers (type 5) — updated on CPU each frame along edges
+  const TRAV=new Float32Array(EDGES.length*10);
+  const travBase=EDGES.map(([a,b])=>{const A=NODES[a],B=NODES[b];const mx=(A.x+B.x)/2,my=(A.y+B.y)/2,dx=B.x-A.x,dy=B.y-A.y,d=Math.hypot(dx,dy)||1;
+    return {A,B,cx:mx-dy/d*d*0.14,cy:my+dx/d*d*0.14,ph:rnd()};});
+
+  // ---- GL program ----
+  const vsrc=`attribute vec2 a_pos;attribute float a_size;attribute vec3 a_rgb;attribute float a_alpha;
+    attribute float a_z;attribute float a_seed;attribute float a_type;
+    uniform vec2 u_res;uniform float u_time;uniform float u_motion;uniform float u_dpr;
+    uniform vec2 u_center;uniform float u_scale;uniform vec2 u_parallax;uniform vec2 u_hover;uniform float u_hoverOn;
+    varying vec3 v_rgb;varying float v_alpha;
+    void main(){
+      vec2 p=a_pos;
+      vec2 par=u_parallax*(0.15+a_z*1.5);
+      vec2 pxpos=u_center+p*u_scale+par;
+      float tw=1.0;
+      if(a_type<0.5){tw=0.45+0.55*(0.5+0.5*sin(u_time*0.0012+a_seed*24.0));}
+      else if(a_type<1.5){tw=0.35+0.65*(0.5+0.5*sin(u_time*0.0007*(0.6+a_seed)+a_seed*6.28));}
+      float sz=a_size;
+      if(a_type>2.5&&a_type<3.5){sz*=0.9+0.14*sin(u_time*0.0022+a_seed*6.28);} // core breathe
+      float al=a_alpha;
+      if(u_hoverOn>0.5&&a_type>=2.0){float dd=distance(a_pos,u_hover);
+        if(dd<0.16){al*=1.7;sz*=1.18;}else{al*=0.38;}}
+      float m=u_motion;
+      al*=(a_type<0.5?tw:(a_type<1.5?(0.35+m*tw):1.0));
+      gl_Position=vec4((pxpos/u_res)*2.0-1.0,0.0,1.0);
+      gl_Position.y*=-1.0;
+      gl_PointSize=min(sz*u_dpr,60.0);
+      v_rgb=a_rgb;v_alpha=al;
+    }`;
+  const fsrc=`precision mediump float;varying vec3 v_rgb;varying float v_alpha;
+    void main(){vec2 d=gl_PointCoord-vec2(0.5);float r=length(d)*2.0;
+      float a=v_alpha*(0.9*exp(-r*r*7.0)+0.4*exp(-r*r*1.5));
+      if(a<0.004)discard;gl_FragColor=vec4(v_rgb*(1.0+0.5*a),a);}`;
+  const sh=(t,s)=>{const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);
+    if(!gl.getShaderParameter(o,gl.COMPILE_STATUS))console.warn(gl.getShaderInfoLog(o));return o;};
+  const prog=gl.createProgram();gl.attachShader(prog,sh(gl.VERTEX_SHADER,vsrc));gl.attachShader(prog,sh(gl.FRAGMENT_SHADER,fsrc));
+  gl.linkProgram(prog);gl.useProgram(prog);
+  const A=n=>gl.getAttribLocation(prog,n),U=n=>gl.getUniformLocation(prog,n);
+  const al={pos:A("a_pos"),size:A("a_size"),rgb:A("a_rgb"),alpha:A("a_alpha"),z:A("a_z"),seed:A("a_seed"),type:A("a_type")};
+  const ul={res:U("u_res"),time:U("u_time"),motion:U("u_motion"),dpr:U("u_dpr"),center:U("u_center"),scale:U("u_scale"),parallax:U("u_parallax"),hover:U("u_hover"),hoverOn:U("u_hoverOn")};
+  const staticBuf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,staticBuf);gl.bufferData(gl.ARRAY_BUFFER,STATIC,gl.STATIC_DRAW);
+  const travBuf=gl.createBuffer();
+  gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE);gl.clearColor(0,0,0,0);
+  const bindAttribs=()=>{const S=40;
+    gl.vertexAttribPointer(al.pos,2,gl.FLOAT,false,S,0);gl.enableVertexAttribArray(al.pos);
+    gl.vertexAttribPointer(al.size,1,gl.FLOAT,false,S,8);gl.enableVertexAttribArray(al.size);
+    gl.vertexAttribPointer(al.rgb,3,gl.FLOAT,false,S,12);gl.enableVertexAttribArray(al.rgb);
+    gl.vertexAttribPointer(al.alpha,1,gl.FLOAT,false,S,24);gl.enableVertexAttribArray(al.alpha);
+    gl.vertexAttribPointer(al.z,1,gl.FLOAT,false,S,28);gl.enableVertexAttribArray(al.z);
+    gl.vertexAttribPointer(al.seed,1,gl.FLOAT,false,S,32);gl.enableVertexAttribArray(al.seed);
+    gl.vertexAttribPointer(al.type,1,gl.FLOAT,false,S,36);gl.enableVertexAttribArray(al.type);};
+
+  // ---- geometry / layout (shared by GL + HTML labels) ----
+  let W=0,H=0,dpr=1,center=[0,0],scale=1;
+  const panel=document.getElementById("panel");
+  function resize(){dpr=Math.min(devicePixelRatio||1,2);const b=cv.getBoundingClientRect();
+    W=b.width;H=b.height;cv.width=Math.max(1,W*dpr);cv.height=Math.max(1,H*dpr);gl.viewport(0,0,cv.width,cv.height);
+    center=[W*0.5,H*0.46];scale=Math.min(W,H)/2.55;layoutLabels();}
+  const ro=new ResizeObserver(resize);ro.observe(panel);
+
+  // HTML labels for core + hubs (+ hover)
+  const nolbl=document.getElementById("nolbl");
+  const labels={};["aDNA.aDNA","III.aDNA","Astro.aDNA"].forEach(nm=>{const n=NODES[NI[nm]];
+    const d=document.createElement("div");d.className="nlab";d.textContent=nm.replace(".aDNA","");nolbl.appendChild(d);labels[nm]=d;});
+  const hoverLab=document.createElement("div");hoverLab.className="nlab sub";hoverLab.style.display="none";nolbl.appendChild(hoverLab);
+  function labelPos(n){return [center[0]+n.x*scale, center[1]+n.y*scale + n.r*14 + 10];}
+  function layoutLabels(){for(const nm in labels){const n=NODES[NI[nm]];const[px,py]=labelPos(n);labels[nm].style.left=px+"px";labels[nm].style.top=py+"px";}}
+
+  // pointer: parallax + hover pick
+  let parTarget=[0,0],par=[0,0],hoverOn=0,hoverPos=[0,0];
+  cv.addEventListener("pointermove",ev=>{const b=cv.getBoundingClientRect();const mx=ev.clientX-b.left,my=ev.clientY-b.top;
+    parTarget=[(mx-center[0])/W*40,(my-center[1])/H*40];
+    // pick nearest node (screen space)
+    let best=-1,bd=1e9;for(const n of NODES){const nx=center[0]+n.x*scale,ny=center[1]+n.y*scale;const d=Math.hypot(mx-nx,my-ny);if(d<bd&&d<28){bd=d;best=n.i;}}
+    if(best>=0){const n=NODES[best];hoverOn=1;hoverPos=[n.x,n.y];cv.style.cursor="pointer";
+      const[px,py]=labelPos(n);hoverLab.textContent=n.name.replace(".aDNA","");hoverLab.style.left=px+"px";hoverLab.style.top=py+"px";hoverLab.style.display=labels[n.name]?"none":"block";}
+    else{hoverOn=0;cv.style.cursor="default";hoverLab.style.display="none";}});
+  cv.addEventListener("pointerleave",()=>{parTarget=[0,0];hoverOn=0;cv.style.cursor="default";hoverLab.style.display="none";});
+
+  resize();
+  function frame(t){
+    const m=MOTION==="off"||reduce?0:(MOTION==="lively"?1:0.5);
+    par[0]+=(parTarget[0]-par[0])*0.06;par[1]+=(parTarget[1]-par[1])*0.06;
+    // travelers along edges
+    const spd=MOTION==="lively"?0.00028:0.00016;
+    travBase.forEach((tb,k)=>{const u=m?((t*spd+tb.ph)%1):tb.ph;const iu=1-u;
+      const px=iu*iu*tb.A.x+2*iu*u*tb.cx+u*u*tb.B.x,py=iu*iu*tb.A.y+2*iu*u*tb.cy+u*u*tb.B.y;
+      const o=k*10;TRAV[o]=px;TRAV[o+1]=py;TRAV[o+2]=3.2;TRAV[o+3]=CYBRT[0];TRAV[o+4]=CYBRT[1];TRAV[o+5]=CYBRT[2];
+      TRAV[o+6]=m?0.95:0.0;TRAV[o+7]=(tb.A.z+tb.B.z)/2;TRAV[o+8]=tb.ph;TRAV[o+9]=5;});
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.uniform2f(ul.res,cv.width,cv.height);gl.uniform1f(ul.time,t);gl.uniform1f(ul.motion,m);gl.uniform1f(ul.dpr,dpr);
+    gl.uniform2f(ul.center,center[0]*dpr,center[1]*dpr);gl.uniform1f(ul.scale,scale*dpr);
+    gl.uniform2f(ul.parallax,par[0]*dpr,par[1]*dpr);gl.uniform2f(ul.hover,hoverPos[0],hoverPos[1]);gl.uniform1f(ul.hoverOn,hoverOn);
+    gl.bindBuffer(gl.ARRAY_BUFFER,staticBuf);bindAttribs();gl.drawArrays(gl.POINTS,0,STATIC_COUNT);
+    gl.bindBuffer(gl.ARRAY_BUFFER,travBuf);gl.bufferData(gl.ARRAY_BUFFER,TRAV,gl.DYNAMIC_DRAW);bindAttribs();gl.drawArrays(gl.POINTS,0,EDGES.length);
+    raf=requestAnimationFrame(frame);
+  }
+  let raf=0;cancelAnimationFrame(raf);raf=requestAnimationFrame(frame);
+})();
+</script>

@@ -1,0 +1,239 @@
+<meta charset="utf-8">
+<title>aDNA hero comp — T1 Refined SVG</title>
+<style>
+  /* ============ P1.6 hero comp · T1 "Refined SVG" — Storyweave ============
+     The guaranteed-safe baseline (and the no-JS floor every tier ships on). Pure SVG + CSS: the
+     breathing + drift + pulse are CSS animations, the hover-doorway is CSS :hover — so once the SVG is
+     present, NO JS runs. (Production pre-renders this SVG at build time via build_graph_svg.mjs — here
+     it's generated once on load so the comp stays a single file; the shipped SVG is byte-static + no-JS,
+     already proven by the live hero_graph.svg.) Self-contained; no external fonts/images/scripts. ====== */
+  #comp{
+    --bg:#0e0e15; --bg2:#08080c; --panel:#13131c; --line:#242a40; --line2:#23273f;
+    --ink:#c8d0f0; --head:#f7f7fb; --muted:#8b93b8; --faint:#565f89;
+    --cyan:#7dcfff; --cyan2:#a9e0ff; --purple:#9d7cd8; --purple2:#bb9af7; --green:#9ece6a;
+    --disp:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+    font-family:var(--disp); color:var(--ink); background:var(--bg);
+    min-height:100vh; width:100%; -webkit-font-smoothing:antialiased; line-height:1.5;
+  }
+  #comp[data-theme="light"]{
+    --bg:#f5f6fb; --bg2:#e9ecf7; --panel:#ffffff; --line:#dde1f0; --line2:#e4e7f4;
+    --ink:#3a4066; --head:#171826; --muted:#5c6288; --faint:#8b90b0;
+    --cyan:#1f83c9; --cyan2:#3ba7e6; --purple:#7a5bc0; --purple2:#9878d6;
+  }
+  #comp *{box-sizing:border-box} #comp a{color:inherit}
+  .evalbar{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;padding:.6rem 1rem;background:var(--bg2);border-bottom:1px solid var(--line)}
+  .badge-tier{font-family:var(--mono);font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+  .badge-tier b{color:var(--cyan)}
+  .segs{margin-left:auto;display:flex;flex-wrap:wrap;gap:.5rem}
+  .seg{display:inline-flex;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:2px}
+  .seg .lbl{font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding:0 .45rem}
+  .seg button{appearance:none;background:none;border:0;color:var(--muted);font-family:var(--disp);font-weight:600;font-size:.72rem;padding:.28rem .6rem;border-radius:7px;cursor:pointer;transition:.15s}
+  .seg button[aria-pressed=true]{background:color-mix(in srgb,var(--cyan) 22%,transparent);color:var(--head)}
+  .seg button:focus-visible{outline:2px solid var(--cyan);outline-offset:1px}
+  .hero{position:relative;isolation:isolate;overflow:hidden;padding:clamp(2rem,5vw,4.5rem) clamp(1rem,4vw,3rem)}
+  .ground{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+    background:radial-gradient(60% 55% at 72% 26%,color-mix(in srgb,var(--cyan) 12%,transparent),transparent 70%),radial-gradient(48% 44% at 20% 84%,color-mix(in srgb,var(--purple) 12%,transparent),transparent 70%)}
+  .ground::after{content:"";position:absolute;inset:0;opacity:.05;background-image:linear-gradient(color-mix(in srgb,var(--cyan) 40%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--cyan) 40%,transparent) 1px,transparent 1px);background-size:22px 22px}
+  .grid{width:100%;max-width:75rem;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:clamp(1.5rem,4vw,3rem)}
+  .eyebrow{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 .8rem}
+  h1{font-size:clamp(2.3rem,4.8vw,3.9rem);line-height:1.03;letter-spacing:-.02em;margin:0 0 1.1rem;color:var(--head);font-weight:700}
+  h1 .accent{color:var(--cyan);text-shadow:0 0 26px color-mix(in srgb,var(--cyan) 34%,transparent)}
+  .lead{font-size:clamp(1rem,1.3vw,1.12rem);color:var(--muted);max-width:40rem;margin:0 0 1rem}
+  .reframe{font-size:1.02rem;color:var(--ink);font-weight:500;max-width:38rem;margin:0 0 1.4rem}
+  .actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1rem}
+  .btn{font-family:var(--disp);font-weight:600;font-size:.92rem;padding:.6rem 1.1rem;border-radius:10px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+  .btn-primary{background:var(--cyan);color:#081018;box-shadow:0 8px 26px color-mix(in srgb,var(--cyan) 30%,transparent)}
+  .btn-secondary{background:transparent;color:var(--ink);border-color:var(--line)}
+  .trust{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;font-size:.78rem;color:var(--muted);margin-bottom:1.3rem}
+  .trust a{color:var(--muted);text-decoration:none;font-weight:500}.trust a:hover{color:var(--cyan)}
+  .sep{color:var(--line2)}
+  .stats{display:flex;flex-wrap:wrap;gap:1.6rem;padding-top:1.1rem;border-top:1px solid var(--line);margin-bottom:1rem}
+  .stat{display:flex;flex-direction:column;gap:.1rem}
+  .stat b{font-size:1.3rem;color:var(--cyan);font-weight:700;line-height:1}
+  .stat span{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .proof{font-size:.8rem;color:var(--muted);max-width:38rem}.proof b{color:var(--ink);font-weight:600}
+  .visual{margin:0;min-width:0}
+  .panel{position:relative;width:100%;aspect-ratio:1/0.86;border-radius:20px;overflow:hidden;border:1px solid var(--line2);
+    background:radial-gradient(120% 90% at 50% 30%,var(--panel),var(--bg2));box-shadow:0 26px 80px color-mix(in srgb,var(--cyan) 12%,transparent),inset 0 1px 0 #ffffff0c}
+  #comp[data-theme="light"] .panel{box-shadow:0 20px 60px color-mix(in srgb,var(--cyan) 16%,transparent),inset 0 1px 0 #00000008}
+  .panel svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .cap{position:absolute;left:0;right:0;bottom:13px;z-index:2;text-align:center;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);pointer-events:none}
+  .cap b{color:var(--cyan)}.cap a{color:var(--purple2);pointer-events:auto;text-decoration:none;border-bottom:1px dotted currentColor}
+  .foot{padding:1rem clamp(1rem,4vw,3rem) 2rem;text-align:center;font-family:var(--mono);font-size:.64rem;color:var(--faint);line-height:1.7;max-width:60rem;margin:0 auto}
+  .foot b{color:var(--muted)}
+  @media (max-width:860px){.grid{grid-template-columns:1fr;gap:2rem}.visual{order:-1}.lead,.reframe,.proof{max-width:none}}
+
+  /* ---- SVG graph styling + CSS motion (no JS) ---- */
+  .gr{color:var(--ink)}
+  .gr .edge{fill:none;stroke:url(#eg);stroke-linecap:round;stroke-opacity:.72}
+  .gr .edge-soft{fill:none;stroke:url(#eg);stroke-linecap:round;stroke-opacity:.16;stroke-width:5}
+  .gr .halo{opacity:.5}
+  .gr .lbl{font-size:12px;fill:var(--muted);text-anchor:middle;paint-order:stroke;stroke:var(--bg);stroke-width:3px;opacity:0;transition:opacity .2s}
+  .gr .node.core .lbl,.gr .node.hub .lbl{opacity:1;fill:var(--head);font-weight:600}
+  .gr .node .orb{transition:transform .2s}
+  .seed{fill:var(--cyan);opacity:.3}
+  .star{fill:var(--muted)}
+  .pulse{fill:none;stroke:var(--cyan);stroke-opacity:.18}
+  /* CSS breathing / drift / pulse — the "living" quality, pure CSS */
+  @keyframes breathe{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.62;transform:scale(1.06)}}
+  @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(var(--dx,1.4px),var(--dy,-1.2px))}}
+  @keyframes seedpulse{0%,100%{opacity:.18}50%{opacity:.5}}
+  @keyframes ring{0%{r:6px;opacity:.28}100%{r:150px;opacity:0}}
+  .gr .node.core .halo{transform-box:fill-box;transform-origin:center;animation:breathe 3.8s ease-in-out infinite}
+  .gr .node{transform-box:fill-box;transform-origin:center;animation:drift var(--dur,7s) ease-in-out infinite;animation-delay:var(--del,0s)}
+  .seed{animation:seedpulse var(--dur,4s) ease-in-out infinite;animation-delay:var(--del,0s)}
+  .pulse{animation:ring 3.8s ease-out infinite}.pulse.p2{animation-delay:1.9s}
+  /* hover-doorway (CSS only): dim the field, light the hovered node + its label */
+  .gr .nodes:hover .node{opacity:.4;transition:opacity .2s}
+  .gr .node:hover{opacity:1}
+  .gr .node:hover .lbl{opacity:1}
+  .gr .node:hover .orb{transform:scale(1.16)}
+  .gr .node{cursor:pointer}
+  /* motion off + reduced motion */
+  #comp.motion-off .gr *{animation:none!important}
+  @media (prefers-reduced-motion:reduce){.gr *{animation:none!important}}
+  #comp.labels-all .gr .lbl{opacity:1}
+</style>
+
+<div id="comp" data-theme="dark">
+  <div class="evalbar">
+    <span class="badge-tier">Comp <b>T1</b> · Refined SVG · the no-JS baseline every tier ships on</span>
+    <div class="segs">
+      <div class="seg" role="group" aria-label="Theme"><span class="lbl">Theme</span>
+        <button data-theme-btn="dark" aria-pressed="true">Dark</button>
+        <button data-theme-btn="light" aria-pressed="false">Light</button></div>
+      <div class="seg" role="group" aria-label="Motion"><span class="lbl">Motion</span>
+        <button data-motion="on" aria-pressed="true">Breathe</button>
+        <button data-motion="off" aria-pressed="false">Still</button></div>
+      <div class="seg" role="group" aria-label="Labels"><span class="lbl">Labels</span>
+        <button data-labels="hubs" aria-pressed="true">Hubs</button>
+        <button data-labels="all" aria-pressed="false">All</button></div>
+    </div>
+  </div>
+  <section class="hero">
+    <div class="ground" aria-hidden="true"></div>
+    <div class="grid">
+      <div class="copy">
+        <p class="eyebrow">Storyweave · hero comp T1</p>
+        <h1>The aDNA <span class="accent">Network</span></h1>
+        <p class="lead">Language and DNA were co-created by everyone before us. The context that powers AI should be too — built, shared, and governed in the open, for the good of all. aDNA is an open standard for organizing project knowledge so both humans and AI agents can navigate it — and the open network where that shared context lives.</p>
+        <p class="reframe">Your context is just the notes, docs, and decisions you already keep — now shaped into a graph your agents can navigate, and shared in the open.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#">Explore the network</a>
+          <a class="btn btn-secondary" href="#">Read the standard</a>
+        </div>
+        <div class="trust">
+          <a href="#">Open source on GitHub</a><span class="sep">·</span><span>MIT-licensed</span><span class="sep">·</span>
+          <a href="#">built on the Lattice Protocol — opening progressively</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>68</b><span>Vaults</span></div><div class="stat"><b>15</b><span>Connected</span></div>
+          <div class="stat"><b>14</b><span>Relationships</span></div><div class="stat"><b>MIT</b><span>Open source</span></div>
+        </div>
+        <p class="proof">Powering real public-good work: <b>World Genome Academy · Context Commons · WilhelmAI · Rare Archive</b></p>
+      </div>
+      <figure class="visual">
+        <div class="panel">
+          <div id="svgmount" role="img" aria-label="A radial map of 15 connected aDNA vaults linked by 14 relationships around the aDNA standard core, with more vaults forming at the edges."></div>
+          <div class="cap"><b>15</b> connected · <b>14</b> relationships · <b>+53</b> forming · <a href="#">your vault?</a></div>
+        </div>
+      </figure>
+    </div>
+  </section>
+  <p class="foot">This tier is <b>pure SVG + CSS</b> — the breathing, drift, pulse + hover-doorway need no JS. Production pre-renders the SVG at build time (byte-static, no-JS, a11y <b>role=img</b> + &lt;title&gt;/&lt;desc&gt;). The still frame is complete on its own; motion is enhancement.</p>
+</div>
+
+<script>
+(() => {
+  "use strict";
+  const comp = document.getElementById("comp");
+  const mqL = matchMedia("(prefers-color-scheme: light)");
+  let locked=false;
+  const setTheme=t=>{comp.dataset.theme=t;document.querySelectorAll("[data-theme-btn]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.themeBtn===t)));};
+  setTheme(mqL.matches?"light":"dark");
+  mqL.addEventListener("change",e=>{if(!locked)setTheme(e.matches?"light":"dark");});
+  document.querySelectorAll("[data-theme-btn]").forEach(b=>b.onclick=()=>{locked=true;setTheme(b.dataset.themeBtn);});
+  document.querySelectorAll("[data-motion]").forEach(b=>b.onclick=()=>{comp.classList.toggle("motion-off",b.dataset.motion==="off");
+    document.querySelectorAll("[data-motion]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));});
+  document.querySelectorAll("[data-labels]").forEach(b=>b.onclick=()=>{comp.classList.toggle("labels-all",b.dataset.labels==="all");
+    document.querySelectorAll("[data-labels]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));});
+
+  // build the SVG once (mirrors build_graph_svg.mjs; shipped version is pre-rendered + static)
+  const CX=310,CY=285,SC=140;
+  const N=[
+    ["aDNA.aDNA",0,0.06,"core"],["III.aDNA",-0.40,-0.30,"hub"],["Astro.aDNA",0.42,-0.24,"hub"],
+    ["WilhelmAI",0.04,-0.60,"org5"],["RareArchive",-0.22,-0.92,"n3"],["RareHarness",0.60,-0.58,"n4"],
+    ["Molecules",0.84,-0.04,"n4"],["TappProtocol",0.96,0.40,"n4"],["VAAS",0.78,0.80,"n3"],
+    ["Science Stanley",-0.56,0.40,"org5"],["Oration",-0.90,0.18,"n3"],["VisualDNA",-0.30,0.66,"n4"],
+    ["Zen Zachary",-0.74,0.82,"n4"],["RemoteControl",0.30,0.88,"n3"],["Terminal",0.56,1.04,"n3"],
+  ].map(([name,x,y,k],i)=>({name,x:CX+x*SC,y:CY+y*SC,k,i,
+    r:k==="core"?15:(k==="hub"||k==="org5")?10.5:k==="n4"?8.5:7}));
+  const idx=Object.fromEntries(N.map(n=>[n.name,n.i]));
+  const E=[["aDNA.aDNA","III.aDNA"],["WilhelmAI","Astro.aDNA"],["WilhelmAI","III.aDNA"],["WilhelmAI","RareArchive"],
+    ["RareHarness","Astro.aDNA"],["RareHarness","III.aDNA"],["Molecules","Astro.aDNA"],["TappProtocol","Molecules"],
+    ["TappProtocol","VAAS"],["Science Stanley","Oration"],["Science Stanley","VisualDNA"],["Zen Zachary","Science Stanley"],
+    ["Zen Zachary","VisualDNA"],["RemoteControl","Terminal"]].map(([a,b])=>[idx[a],idx[b]]);
+  let sd=99; const rnd=()=>(sd=(sd*16807)%2147483647)/2147483647;
+
+  const NS="http://www.w3.org/2000/svg";
+  const el=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+  const svg=el("svg",{class:"gr",viewBox:"0 0 620 600",preserveAspectRatio:"xMidYMid meet"});
+  svg.setAttribute("role","img");
+  svg.appendChild(el("title",{})).textContent="The connected aDNA network — 15 vaults joined by 14 relationships";
+  svg.appendChild(el("desc",{})).textContent="A radial map of the live aDNA network: 15 vaults joined by 14 cited relationships around the most-federated hubs (III and Astro), with the standard, aDNA, at the core; more vaults are forming at the edges.";
+  // defs: edge gradient + orb gradients
+  const defs=el("defs",{});
+  const eg=el("linearGradient",{id:"eg",x1:"0",y1:"0",x2:"1",y2:"1"});
+  eg.appendChild(el("stop",{offset:"0","stop-color":"#7dcfff"}));eg.appendChild(el("stop",{offset:"1","stop-color":"#9d7cd8"}));
+  defs.appendChild(eg);
+  const orbGrad=(id,c0,c1,c2)=>{const g=el("radialGradient",{id,cx:"0.4",cy:"0.35",r:"0.7"});
+    g.appendChild(el("stop",{offset:"0","stop-color":c0}));g.appendChild(el("stop",{offset:"0.6","stop-color":c1}));
+    g.appendChild(el("stop",{offset:"1","stop-color":c2}));defs.appendChild(g);};
+  orbGrad("oCore","#eaf7ff","#7dcfff","#4aa8e6");orbGrad("oCyan","#dfeaff","#7dcfff","#4f9fd6");
+  orbGrad("oBlue","#e6ecff","#a9c8ff","#6f86c8");orbGrad("oPurple","#efe8ff","#bb9af7","#8a6bd0");
+  const haloGrad=(id,rgb,a)=>{const g=el("radialGradient",{id,cx:"0.5",cy:"0.5",r:"0.5"});
+    g.appendChild(el("stop",{offset:"0","stop-color":`rgba(${rgb},${a})`}));g.appendChild(el("stop",{offset:"1","stop-color":`rgba(${rgb},0)`}));defs.appendChild(g);};
+  haloGrad("hCore","125,207,255",0.5);haloGrad("hCyan","125,207,255",0.32);haloGrad("hBlue","169,200,255",0.3);haloGrad("hPurple","187,154,247",0.3);
+  svg.appendChild(defs);
+
+  // ground aura
+  const aura=el("radialGradient",{id:"aura",cx:"0.5",cy:"0.48",r:"0.55"});
+  aura.appendChild(el("stop",{offset:"0","stop-color":"rgba(125,207,255,0.14)"}));
+  aura.appendChild(el("stop",{offset:"0.55","stop-color":"rgba(157,124,216,0.05)"}));
+  aura.appendChild(el("stop",{offset:"1","stop-color":"transparent"}));defs.appendChild(aura);
+  svg.appendChild(el("rect",{x:"0",y:"0",width:"620",height:"600",fill:"url(#aura)"}));
+  // starfield
+  const stars=el("g",{});for(let i=0;i<70;i++){const s=el("rect",{class:"star",x:(rnd()*620).toFixed(1),y:(rnd()*600).toFixed(1),width:(rnd()*1.4).toFixed(1),height:(rnd()*1.4).toFixed(1),opacity:(0.05+rnd()*0.3).toFixed(2)});stars.appendChild(s);}svg.appendChild(stars);
+  // orbit rings
+  for(const rr of[0.62,1.02]){svg.appendChild(el("ellipse",{cx:CX,cy:CY,rx:(SC*1.3*rr).toFixed(1),ry:(SC*1.3*rr*0.9).toFixed(1),fill:"none",stroke:"rgba(125,207,255,0.07)","stroke-width":"1","stroke-dasharray":"2 7"}));}
+  // pulse rings (CSS animated)
+  const pg=el("g",{transform:`translate(${CX} ${CY})`});pg.appendChild(el("circle",{class:"pulse",cx:0,cy:0,r:6}));pg.appendChild(el("circle",{class:"pulse p2",cx:0,cy:0,r:6}));svg.appendChild(pg);
+  // forming seeds
+  const seeds=el("g",{});for(let i=0;i<16;i++){const a=rnd()*6.283,rr=1.28+rnd()*0.34;
+    const sx=CX+Math.cos(a)*SC*rr,sy=CY+Math.sin(a)*SC*rr*0.86;
+    const c=el("circle",{class:"seed",cx:sx.toFixed(1),cy:sy.toFixed(1),r:(1+rnd()*1.6).toFixed(1)});
+    c.style.setProperty("--dur",(3+rnd()*3).toFixed(1)+"s");c.style.setProperty("--del",(rnd()*3).toFixed(1)+"s");seeds.appendChild(c);}
+  svg.appendChild(seeds);
+  // edges (curved, gradient) — soft under-stroke + main
+  const eG=el("g",{});
+  for(const [a,b] of E){const A=N[a],B=N[b];const mx=(A.x+B.x)/2,my=(A.y+B.y)/2,dx=B.x-A.x,dy=B.y-A.y,d=Math.hypot(dx,dy)||1;
+    const cx=mx-dy/d*d*0.13,cy=my+dx/d*d*0.13;const dpth=`M${A.x.toFixed(1)} ${A.y.toFixed(1)} Q ${cx.toFixed(1)} ${cy.toFixed(1)} ${B.x.toFixed(1)} ${B.y.toFixed(1)}`;
+    eG.appendChild(el("path",{class:"edge-soft",d:dpth}));eG.appendChild(el("path",{class:"edge",d:dpth,"stroke-width":"1.5"}));}
+  svg.appendChild(eG);
+  // nodes
+  const nodesG=el("g",{class:"nodes"});
+  const orbId=n=>n.k==="core"?"oCore":(n.k==="hub"?"oCyan":n.i%2?"oBlue":"oPurple");
+  const haloId=n=>n.k==="core"?"hCore":(n.k==="hub"?"hCyan":n.i%2?"hBlue":"hPurple");
+  const rimC=n=>n.k==="core"||n.k==="hub"?"rgba(125,207,255,0.9)":(n.i%2?"rgba(169,200,255,0.9)":"rgba(187,154,247,0.9)");
+  N.forEach(n=>{const g=el("g",{class:"node "+(n.k==="core"?"core":n.k==="hub"?"hub":"")});
+    g.style.setProperty("--dur",(6+ (n.i%5))+"s");g.style.setProperty("--del",(-(n.i%7)*0.6).toFixed(1)+"s");
+    g.style.setProperty("--dx",(1.2+(n.i%4)*0.4).toFixed(1)+"px");g.style.setProperty("--dy",(-1-(n.i%3)*0.4).toFixed(1)+"px");
+    g.appendChild(el("circle",{class:"halo",cx:n.x.toFixed(1),cy:n.y.toFixed(1),r:(n.r*3.2).toFixed(1),fill:`url(#${haloId(n)})`}));
+    g.appendChild(el("circle",{class:"orb",cx:n.x.toFixed(1),cy:n.y.toFixed(1),r:n.r,fill:`url(#${orbId(n)})`,stroke:rimC(n),"stroke-width":"1"}));
+    const tx=el("text",{class:"lbl",x:n.x.toFixed(1),y:(n.y+n.r+15).toFixed(1)});tx.textContent=n.name.replace(".aDNA","");
+    g.appendChild(tx);nodesG.appendChild(g);});
+  svg.appendChild(nodesG);
+  document.getElementById("svgmount").appendChild(svg);
+})();
+</script>

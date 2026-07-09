@@ -1,0 +1,308 @@
+<meta charset="utf-8">
+<title>aDNA hero comp — T2 Constellation (Canvas-2D)</title>
+<style>
+  /* ============ P1.6 hero comp · T2 "Constellation" (Canvas-2D) — Storyweave ============
+     Self-contained: no external fonts / images / scripts (Artifact-CSP safe). Body-content only
+     (the browser + the Artifact skeleton supply html/head/body). Theme follows prefers-color-scheme
+     (so the headless T0 harness's --themes flips it) + a manual override toggle. ==================== */
+  #comp{
+    --bg:#0e0e15; --bg2:#08080c; --panel:#13131c; --line:#242a40; --line2:#23273f;
+    --ink:#c8d0f0; --head:#f7f7fb; --muted:#8b93b8; --faint:#565f89;
+    --cyan:#7dcfff; --cyan2:#a9e0ff; --purple:#9d7cd8; --purple2:#bb9af7; --green:#9ece6a;
+    --disp:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+    font-family:var(--disp); color:var(--ink); background:var(--bg);
+    min-height:100vh; width:100%; -webkit-font-smoothing:antialiased; line-height:1.5;
+  }
+  #comp[data-theme="light"]{
+    --bg:#f5f6fb; --bg2:#e9ecf7; --panel:#ffffff; --line:#dde1f0; --line2:#e4e7f4;
+    --ink:#3a4066; --head:#171826; --muted:#5c6288; --faint:#8b90b0;
+    --cyan:#1f83c9; --cyan2:#3ba7e6; --purple:#7a5bc0; --purple2:#9878d6;
+  }
+  #comp *{box-sizing:border-box}
+  #comp a{color:inherit}
+
+  /* --- evaluation bar (comp chrome; not part of the hero) --- */
+  .evalbar{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;
+    padding:.6rem 1rem;background:var(--bg2);border-bottom:1px solid var(--line)}
+  .badge-tier{font-family:var(--mono);font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--faint)}
+  .badge-tier b{color:var(--cyan)}
+  .segs{margin-left:auto;display:flex;flex-wrap:wrap;gap:.5rem}
+  .seg{display:inline-flex;align-items:center;background:var(--panel);border:1px solid var(--line);
+    border-radius:9px;padding:2px}
+  .seg .lbl{font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--faint);padding:0 .45rem}
+  .seg button{appearance:none;background:none;border:0;color:var(--muted);font-family:var(--disp);
+    font-weight:600;font-size:.72rem;padding:.28rem .6rem;border-radius:7px;cursor:pointer;transition:.15s}
+  .seg button[aria-pressed=true]{background:color-mix(in srgb,var(--cyan) 22%,transparent);color:var(--head)}
+  .seg button:focus-visible{outline:2px solid var(--cyan);outline-offset:1px}
+
+  /* --- the hero fold (mirrors HomeHero graph-led variant) --- */
+  .hero{position:relative;isolation:isolate;overflow:hidden;
+    padding:clamp(2rem,5vw,4.5rem) clamp(1rem,4vw,3rem)}
+  .ground{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+    background:
+      radial-gradient(60% 55% at 72% 26%,color-mix(in srgb,var(--cyan) 12%,transparent),transparent 70%),
+      radial-gradient(48% 44% at 20% 84%,color-mix(in srgb,var(--purple) 12%,transparent),transparent 70%);
+  }
+  .ground::after{content:"";position:absolute;inset:0;opacity:.05;
+    background-image:linear-gradient(color-mix(in srgb,var(--cyan) 40%,transparent) 1px,transparent 1px),
+      linear-gradient(90deg,color-mix(in srgb,var(--cyan) 40%,transparent) 1px,transparent 1px);
+    background-size:22px 22px} /* pixel-art ground stand-in (production keeps the dimmed <Picture>) */
+  .grid{width:100%;max-width:75rem;margin:0 auto;display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;
+    gap:clamp(1.5rem,4vw,3rem)}
+
+  .eyebrow{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--faint);margin:0 0 .8rem}
+  h1{font-size:clamp(2.3rem,4.8vw,3.9rem);line-height:1.03;letter-spacing:-.02em;margin:0 0 1.1rem;
+    color:var(--head);font-weight:700}
+  h1 .accent{color:var(--cyan);text-shadow:0 0 26px color-mix(in srgb,var(--cyan) 34%,transparent)}
+  .lead{font-size:clamp(1rem,1.3vw,1.12rem);color:var(--muted);max-width:40rem;margin:0 0 1rem}
+  .reframe{font-size:1.02rem;color:var(--ink);font-weight:500;max-width:38rem;margin:0 0 1.4rem}
+  .actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1rem}
+  .btn{font-family:var(--disp);font-weight:600;font-size:.92rem;padding:.6rem 1.1rem;border-radius:10px;
+    text-decoration:none;border:1px solid transparent;cursor:pointer}
+  .btn-primary{background:var(--cyan);color:#081018;box-shadow:0 8px 26px color-mix(in srgb,var(--cyan) 30%,transparent)}
+  .btn-secondary{background:transparent;color:var(--ink);border-color:var(--line)}
+  .trust{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;font-size:.78rem;color:var(--muted);margin-bottom:1.3rem}
+  .trust a{color:var(--muted);text-decoration:none;font-weight:500}
+  .trust a:hover{color:var(--cyan)}
+  .sep{color:var(--line2)}
+  .stats{display:flex;flex-wrap:wrap;gap:1.6rem;padding-top:1.1rem;border-top:1px solid var(--line);margin-bottom:1rem}
+  .stat{display:flex;flex-direction:column;gap:.1rem}
+  .stat b{font-size:1.3rem;color:var(--cyan);font-weight:700;line-height:1}
+  .stat span{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .proof{font-size:.8rem;color:var(--muted);max-width:38rem}
+  .proof b{color:var(--ink);font-weight:600}
+
+  /* --- the visual panel (the graph) --- */
+  .visual{margin:0;min-width:0}
+  .panel{position:relative;width:100%;aspect-ratio:1/0.86;border-radius:20px;overflow:hidden;
+    border:1px solid var(--line2);background:radial-gradient(120% 90% at 50% 30%,var(--panel),var(--bg2));
+    box-shadow:0 26px 80px color-mix(in srgb,var(--cyan) 12%,transparent),inset 0 1px 0 #ffffff0c}
+  #comp[data-theme="light"] .panel{box-shadow:0 20px 60px color-mix(in srgb,var(--cyan) 16%,transparent),inset 0 1px 0 #00000008}
+  .panel canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:default}
+  .live{position:absolute;top:13px;left:15px;z-index:2;font-family:var(--mono);font-size:.56rem;
+    letter-spacing:.11em;text-transform:uppercase;color:var(--faint)}
+  .live .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);
+    margin-right:.4rem;box-shadow:0 0 8px var(--green);vertical-align:middle;animation:live 2.6s ease-in-out infinite}
+  @keyframes live{0%,100%{opacity:.45}50%{opacity:1}}
+  .cap{position:absolute;left:0;right:0;bottom:13px;z-index:2;text-align:center;font-family:var(--mono);
+    font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);pointer-events:none}
+  .cap b{color:var(--cyan)}
+  .cap a{color:var(--purple2);pointer-events:auto;text-decoration:none;border-bottom:1px dotted currentColor}
+  .foot{padding:1rem clamp(1rem,4vw,3rem) 2rem;text-align:center;font-family:var(--mono);
+    font-size:.64rem;color:var(--faint);line-height:1.7;max-width:60rem;margin:0 auto}
+  .foot b{color:var(--muted)}
+
+  @media (max-width:860px){
+    .grid{grid-template-columns:1fr;gap:2rem}
+    .visual{order:-1}
+    .lead,.reframe,.proof{max-width:none}
+  }
+  @media (prefers-reduced-motion:reduce){.live .dot{animation:none}}
+</style>
+
+<div id="comp" data-theme="dark">
+  <div class="evalbar">
+    <span class="badge-tier">Comp <b>T2</b> · Constellation · Canvas-2D · recommended production tier</span>
+    <div class="segs">
+      <div class="seg" role="group" aria-label="Theme"><span class="lbl">Theme</span>
+        <button data-theme-btn="dark" aria-pressed="true">Dark</button>
+        <button data-theme-btn="light" aria-pressed="false">Light</button></div>
+      <div class="seg" role="group" aria-label="Motion"><span class="lbl">Motion</span>
+        <button data-motion="calm" aria-pressed="true">Calm</button>
+        <button data-motion="lively" aria-pressed="false">Lively</button>
+        <button data-motion="off" aria-pressed="false">Still</button></div>
+      <div class="seg" role="group" aria-label="Labels"><span class="lbl">Labels</span>
+        <button data-labels="hubs" aria-pressed="true">Hubs</button>
+        <button data-labels="all" aria-pressed="false">All</button></div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="ground" aria-hidden="true"></div>
+    <div class="grid">
+      <div class="copy">
+        <p class="eyebrow">Storyweave · hero comp T2</p>
+        <h1>The aDNA <span class="accent">Network</span></h1>
+        <p class="lead">Language and DNA were co-created by everyone before us. The context that powers AI should be too — built, shared, and governed in the open, for the good of all. aDNA is an open standard for organizing project knowledge so both humans and AI agents can navigate it — and the open network where that shared context lives.</p>
+        <p class="reframe">Your context is just the notes, docs, and decisions you already keep — now shaped into a graph your agents can navigate, and shared in the open.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#">Explore the network</a>
+          <a class="btn btn-secondary" href="#">Read the standard</a>
+        </div>
+        <div class="trust">
+          <a href="#">Open source on GitHub</a><span class="sep">·</span>
+          <span>MIT-licensed</span><span class="sep">·</span>
+          <a href="#">built on the Lattice Protocol — opening progressively</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>68</b><span>Vaults</span></div>
+          <div class="stat"><b>15</b><span>Connected</span></div>
+          <div class="stat"><b>14</b><span>Relationships</span></div>
+          <div class="stat"><b>MIT</b><span>Open source</span></div>
+        </div>
+        <p class="proof">Powering real public-good work: <b>World Genome Academy · Context Commons · WilhelmAI · Rare Archive</b></p>
+      </div>
+
+      <figure class="visual">
+        <div class="panel">
+          <span class="live"><span class="dot"></span>68 vaults · live network</span>
+          <canvas id="cv" role="img" aria-label="A constellation of 15 connected aDNA vaults linked by 14 relationships around the aDNA standard core, with more vaults forming at the edges."></canvas>
+          <div class="cap"><b>15</b> connected · <b>14</b> relationships · <b>+53</b> forming · <a href="#">your vault?</a></div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <p class="foot">The <b>still frame is the no-JS baseline</b> (what the static SVG ships as) · motion is the JS-on enhancement, off under reduced-motion · hover a node to open its vault (the doorway). Real graph data — 15 connected vaults, 14 cited relationships. Production keeps real &lt;text&gt; labels + AA contrast + the dimmed pixel-art ground.</p>
+</div>
+
+<script>
+(() => {
+  "use strict";
+  const comp = document.getElementById("comp");
+
+  // ---- theme: follow prefers-color-scheme (headless harness flips this) + manual override ----
+  const mqL = matchMedia("(prefers-color-scheme: light)");
+  let locked = false;
+  const setTheme = (t) => { comp.dataset.theme = t;
+    document.querySelectorAll("[data-theme-btn]").forEach(b =>
+      b.setAttribute("aria-pressed", String(b.dataset.themeBtn === t))); };
+  setTheme(mqL.matches ? "light" : "dark");
+  mqL.addEventListener("change", e => { if (!locked) setTheme(e.matches ? "light" : "dark"); });
+  document.querySelectorAll("[data-theme-btn]").forEach(b =>
+    b.onclick = () => { locked = true; setTheme(b.dataset.themeBtn); });
+
+  const reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+  const cv = document.getElementById("cv"), ctx = cv.getContext("2d");
+  let W=0,H=0,dpr=1,S=1,CX=0,CY=0;
+
+  // ---- real connected graph (from vaults.json → the operator-approved north-star layout) ----
+  const N = [
+    ["aDNA.aDNA",0.00,0.06,6,"core"],["III.aDNA",-0.40,-0.30,5,"hub"],["Astro.aDNA",0.42,-0.24,5,"hub"],
+    ["WilhelmAI",0.04,-0.60,5,"org"],["RareArchive",-0.22,-0.92,3,"org"],["RareHarness",0.60,-0.58,4,"plat"],
+    ["Molecules",0.84,-0.04,4,"forge"],["TappProtocol",0.96,0.40,4,"plat"],["VAAS",0.78,0.80,3,"fw"],
+    ["Science Stanley",-0.56,0.40,5,"org"],["Oration",-0.90,0.18,3,"forge"],["VisualDNA",-0.30,0.66,4,"fw"],
+    ["Zen Zachary",-0.74,0.82,4,"org"],["RemoteControl",0.30,0.88,3,"plat"],["Terminal",0.56,1.04,3,"plat"],
+  ].map(([name,x,y,deg,role],i)=>({name,x,y,deg,role,i,
+    r: role==="core"?15:deg>=5?10.5:deg>=4?8.5:7, tw:0.6+(i%5)*0.13, ph:(i*1.7)%6.283}));
+  const idx = Object.fromEntries(N.map(n=>[n.name,n.i]));
+  const E = [
+    ["aDNA.aDNA","III.aDNA"],["WilhelmAI","Astro.aDNA"],["WilhelmAI","III.aDNA"],["WilhelmAI","RareArchive"],
+    ["RareHarness","Astro.aDNA"],["RareHarness","III.aDNA"],["Molecules","Astro.aDNA"],["TappProtocol","Molecules"],
+    ["TappProtocol","VAAS"],["Science Stanley","Oration"],["Science Stanley","VisualDNA"],["Zen Zachary","Science Stanley"],
+    ["Zen Zachary","VisualDNA"],["RemoteControl","Terminal"],
+  ].map(([a,b])=>({a:idx[a],b:idx[b]}));
+
+  let seed=1234; const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+  const SEEDS = Array.from({length:24},()=>{const a=rnd()*6.283,rr=1.3+rnd()*0.5;
+    return {x:Math.cos(a)*rr,y:Math.sin(a)*rr*0.86,ph:rnd()*6.283,sp:0.3+rnd()*0.5,r:1+rnd()*1.7};});
+  const STARS = Array.from({length:76},()=>({x:rnd(),y:rnd(),a:0.05+rnd()*0.35,r:rnd()*1.2}));
+
+  // palettes per theme
+  const PAL = {
+    dark:{g0:"#1b2740",g1:"#141a2b",g2:"#0b0b12",aura0:"rgba(125,207,255,0.16)",aura1:"rgba(157,124,216,0.06)",
+      star:"200,215,255",ring:"rgba(125,207,255,0.06)",seed:"169,200,255",
+      e0:"rgba(125,207,255,0.42)",e1:"rgba(157,124,216,0.40)",eShadow:"rgba(125,207,255,0.5)",
+      part:"rgba(210,235,255,0.95)",lab:"#e6f0ff",labDim:"rgba(180,190,220,0.82)",labSh:"rgba(10,12,20,0.55)"},
+    light:{g0:"#dfe8fb",g1:"#eef2fd",g2:"#f6f8fe",aura0:"rgba(31,131,201,0.12)",aura1:"rgba(122,91,192,0.06)",
+      star:"90,110,160",ring:"rgba(31,131,201,0.10)",seed:"90,120,190",
+      e0:"rgba(31,131,201,0.5)",e1:"rgba(122,91,192,0.48)",eShadow:"rgba(31,131,201,0.35)",
+      part:"rgba(31,131,201,0.95)",lab:"#1a1b26",labDim:"rgba(70,80,120,0.85)",labSh:"rgba(255,255,255,0.6)"},
+  };
+
+  let LABELS="hubs", MOTION="calm", hover=-1;
+  document.querySelectorAll("[data-labels]").forEach(b=>b.onclick=()=>{LABELS=b.dataset.labels;
+    document.querySelectorAll("[data-labels]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));});
+  document.querySelectorAll("[data-motion]").forEach(b=>b.onclick=()=>{MOTION=b.dataset.motion;
+    document.querySelectorAll("[data-motion]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));});
+
+  function resize(){dpr=Math.min(devicePixelRatio||1,2);const b=cv.getBoundingClientRect();
+    W=b.width;H=b.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    S=Math.min(W,H)/2.95;CX=W*0.5;CY=H*0.46;}
+  addEventListener("resize",resize);
+  const px=n=>CX+n.x*S, py=n=>CY+n.y*S;
+
+  // hover-doorway (R8): brighten nearest node, dim rest, pointer cursor, click → vault
+  cv.addEventListener("pointermove",ev=>{const b=cv.getBoundingClientRect();
+    const mx=ev.clientX-b.left,my=ev.clientY-b.top;let best=-1,bd=1e9;
+    for(const n of N){const d=Math.hypot(mx-(n._x||px(n)),my-(n._y||py(n)));if(d<bd&&d<26){bd=d;best=n.i;}}
+    hover=best;cv.style.cursor=best>=0?"pointer":"default";});
+  cv.addEventListener("pointerleave",()=>{hover=-1;cv.style.cursor="default";});
+  cv.addEventListener("click",()=>{ if(hover>=0){ /* production: navigate to N[hover] vault page */ } });
+
+  function frame(t){
+    const P=PAL[comp.dataset.theme==="light"?"light":"dark"];
+    const m = MOTION==="off"||reduce ? 0 : (MOTION==="lively"?1:0.55);
+    ctx.clearRect(0,0,W,H);
+    let g=ctx.createRadialGradient(CX,CY,0,CX,CY,S*2.2);
+    g.addColorStop(0,P.g0);g.addColorStop(.35,P.g1);g.addColorStop(1,P.g2);
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    g=ctx.createRadialGradient(CX,CY,0,CX,CY,S*1.35);
+    g.addColorStop(0,P.aura0);g.addColorStop(.5,P.aura1);g.addColorStop(1,"transparent");
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    for(const s of STARS){const a=s.a*(m?(0.6+0.4*Math.sin(t*0.001+s.x*20)):1);
+      ctx.fillStyle=`rgba(${P.star},${a})`;ctx.fillRect(s.x*W,s.y*H,s.r,s.r);}
+    ctx.strokeStyle=P.ring;ctx.lineWidth=1;ctx.setLineDash([2,7]);
+    for(const rr of[0.62,1.02]){ctx.beginPath();ctx.ellipse(CX,CY,S*rr,S*rr*0.9,0,0,6.283);ctx.stroke();}
+    ctx.setLineDash([]);
+    for(const s of SEEDS){const pulse=0.26+0.32*(0.5+0.5*Math.sin(t*0.0006*s.sp+s.ph));
+      ctx.fillStyle=`rgba(${P.seed},${m?pulse:0.3})`;
+      ctx.beginPath();ctx.arc(CX+s.x*S,CY+s.y*S,s.r,0,6.283);ctx.fill();}
+    // edges
+    for(const e of E){const A=N[e.a],B=N[e.b],ax=px(A),ay=py(A),bx=px(B),by=py(B);
+      const mx=(ax+bx)/2,my=(ay+by)/2,dx=bx-ax,dy=by-ay,d=Math.hypot(dx,dy)||1;
+      const cx=mx-dy/d*d*0.14,cy=my+dx/d*d*0.14;
+      const lit = hover>=0 && (e.a===hover||e.b===hover);
+      const dim = hover>=0 && !lit;
+      const grd=ctx.createLinearGradient(ax,ay,bx,by);
+      grd.addColorStop(0,P.e0);grd.addColorStop(1,P.e1);
+      ctx.strokeStyle=grd;ctx.globalAlpha=dim?0.18:1;ctx.lineWidth=lit?2.4:1.5;ctx.lineCap="round";
+      ctx.shadowColor=P.eShadow;ctx.shadowBlur=(m?6:3)*(lit?2:1);
+      ctx.beginPath();ctx.moveTo(ax,ay);ctx.quadraticCurveTo(cx,cy,bx,by);ctx.stroke();
+      ctx.shadowBlur=0;ctx.globalAlpha=1;
+      if(m){const speed=MOTION==="lively"?0.00028:0.00016;const prog=((t*speed+e.a*0.13+e.b*0.07)%1);
+        const u=prog,iu=1-u,qx=iu*iu*ax+2*iu*u*cx+u*u*bx,qy=iu*iu*ay+2*iu*u*cy+u*u*by;
+        ctx.fillStyle=P.part;ctx.globalAlpha=dim?0.2:1;ctx.shadowColor=P.e0;ctx.shadowBlur=10;
+        ctx.beginPath();ctx.arc(qx,qy,2.1,0,6.283);ctx.fill();ctx.shadowBlur=0;ctx.globalAlpha=1;}}
+    if(m){const period=MOTION==="lively"?2600:3800;
+      for(let k=0;k<2;k++){const pr=((t+k*period/2)%period)/period,rad=pr*S*1.15,al=(1-pr)*0.22*(MOTION==="lively"?1.3:1);
+        ctx.strokeStyle=`rgba(125,207,255,${al})`;ctx.lineWidth=1.4;
+        ctx.beginPath();ctx.arc(CX,CY,rad,0,6.283);ctx.stroke();}}
+    // nodes
+    for(const n of N){let x=px(n),y=py(n);
+      if(m){x+=Math.sin(t*0.0009*n.tw+n.ph)*1.6*m;y+=Math.cos(t*0.0008*n.tw+n.ph)*1.6*m;}
+      const isCore=n.role==="core",isHub=n.role==="hub",lit=hover===n.i,dim=hover>=0&&!lit;
+      const tw=m?(0.85+0.15*Math.sin(t*0.002*n.tw+n.ph)):1;
+      const rimHue=isCore||isHub?"125,207,255":(n.i%2?"169,200,255":"187,154,247");
+      ctx.globalAlpha=dim?0.4:1;
+      const hg=ctx.createRadialGradient(x,y,0,x,y,n.r*3.4);
+      hg.addColorStop(0,`rgba(${rimHue},${(isCore?0.5:0.32)*tw*(lit?1.5:1)})`);hg.addColorStop(1,"transparent");
+      ctx.fillStyle=hg;ctx.beginPath();ctx.arc(x,y,n.r*(lit?4:3.4),0,6.283);ctx.fill();
+      ctx.shadowColor=`rgba(${rimHue},0.9)`;ctx.shadowBlur=(isCore?22:isHub?14:8)*(lit?1.6:1);
+      const og=ctx.createRadialGradient(x-n.r*0.3,y-n.r*0.3,n.r*0.1,x,y,n.r);
+      og.addColorStop(0,isCore?"#eaf7ff":"#dfeaff");og.addColorStop(0.6,isCore?"#7dcfff":`rgba(${rimHue},0.95)`);
+      og.addColorStop(1,isCore?"#4aa8e6":`rgba(${rimHue},0.7)`);
+      ctx.fillStyle=og;ctx.beginPath();ctx.arc(x,y,n.r*(lit?1.15:1),0,6.283);ctx.fill();ctx.shadowBlur=0;
+      ctx.strokeStyle=`rgba(${rimHue},0.9)`;ctx.lineWidth=1;ctx.beginPath();ctx.arc(x,y,n.r,0,6.283);ctx.stroke();
+      ctx.globalAlpha=1;n._x=x;n._y=y;}
+    // labels
+    ctx.textAlign="center";
+    for(const n of N){const show=LABELS==="all"||n.role==="core"||n.role==="hub"||hover===n.i;
+      if(!show)continue;const prom=n.role==="core"||n.role==="hub"||hover===n.i;
+      ctx.font=`${prom?"600 ":""}${prom?13:11}px ${getComputedStyle(comp).fontFamily}`;
+      const label=n.name.replace(".aDNA","");const ty=n._y+n.r+(prom?16:13);
+      ctx.fillStyle=P.labSh;ctx.fillText(label,n._x,ty+0.6);
+      ctx.fillStyle=prom?P.lab:P.labDim;ctx.fillText(label,n._x,ty);}
+    raf=requestAnimationFrame(frame);
+  }
+  let raf=0;
+  const ro=new ResizeObserver(()=>{resize();});ro.observe(cv.parentElement);
+  function boot(){resize();cancelAnimationFrame(raf);raf=requestAnimationFrame(frame);}
+  boot();
+})();
+</script>

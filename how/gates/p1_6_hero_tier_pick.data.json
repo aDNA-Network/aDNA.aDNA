@@ -1,0 +1,60 @@
+{
+  "gate_id": "p1_6_hero_tier_pick",
+  "vault": "aDNA.aDNA",
+  "operator": "stanley",
+  "title": "P1.6 — Hero visual: pick the tier",
+  "title_main": "The hero visual —",
+  "title_em": "pick the tier",
+  "wordmark": "STORYWEAVE · P1.6 · HERO VISUAL EXCELLENCE",
+  "footer_text": "Storyweave P1.6 · the three comps are throwaway Artifacts; your pick gets built into the live home hero at O5 and ships at O7 after a real Lighthouse/perf gate. Axis defaults are listed in the recommendation — note any change in the comment.",
+  "sitrep": {
+    "campaign": "campaign_storyweave · Operation Storyweave",
+    "phase": "Phase 1.6 — hero visual excellence",
+    "mission": "mission_p1_6_hero_visual_excellence — O4 operator pick",
+    "gate_purpose": "Pick the rendering tier for the home hero network visual — approve the T2 recommendation, or amend to T1 or T3.",
+    "importance": "load-bearing",
+    "importance_reason": "sets what gets built into the live home hero (O5) and deployed (O7)",
+    "output_destination": "how/gates/p1_6_hero_tier_pick.output.json"
+  },
+  "decision_title": "Approve T2 (Constellation) as the production hero visual",
+  "question": "Recommend shipping T2 — the Canvas-2D constellation — as the home hero network visual: it reads best-in-class (glowing orbs, flowing relationship arcs, breathing core, forming seeds), needs no heavy dependency, and stays in the perf budget. Open the three live comps side-by-side, then APPROVE to build T2 into the site (O5), or AMEND to ship T1 or T3 instead — name which, plus any axis changes, in the comment.  ·  LIVE COMPS (open each; T3's WebGL bloom needs your real GPU):  T1 Refined-SVG → https://claude.ai/code/artifact/12a5007a-b75e-4b33-aab4-283a76099d07   ·   T2 Constellation (recommended) → https://claude.ai/code/artifact/40c27fc0-34cb-46f2-9fee-bd46eeb58526   ·   T3 Deep-Field-WebGL → https://claude.ai/code/artifact/792784da-f4aa-46a0-b073-fb78bfa97983",
+  "swot": {
+    "strengths": [
+      "Reads best-in-class — a living network, not a diagram",
+      "Stays in the perf budget (no heavy bundle)",
+      "No dependency — hand-rolled Canvas, evolves the north star",
+      "Ships on the SSR-SVG no-JS + a11y floor (T1)"
+    ],
+    "weaknesses": [
+      "Hand-rolled canvas is more to maintain than SVG",
+      "Needs an a11y text-twin + SSR baseline behind it"
+    ],
+    "opportunities": [
+      "Hover-doorway turns the hero into an entry to /vaults",
+      "One shared graph language across /vaults/graph + /network"
+    ],
+    "threats": [
+      "Motion could outrun the honest register (Movement-Skeptic)",
+      "Canvas cost on low-end mobile — cap DPR/particles"
+    ]
+  },
+  "recommendation": {
+    "rationale": "T2 is the sweet spot: the operator-approved constellation feeling, best-in-class, with no heavy dependency and headroom against gate-10/19. T1 is the guaranteed-safe baseline and doubles as the no-JS/a11y floor every tier ships on; T3 (WebGL) raises the ceiling with GPU bloom + depth but carries real bundle/perf risk to be measured at O6. Build one, keep T1 as the floor.",
+    "key_factors": [
+      "T2 hits the 10 design rules; T1 = floor, T3 = ceiling-check",
+      "Perf is the load-bearing risk and it bites only for T3",
+      "All tiers keep the SSR-SVG no-JS + a11y twin (honest floor)",
+      "Axis defaults: ambient + hover-doorway · honest forming-seeds · shared graph language · keep the dimmed pixel-art ground"
+    ],
+    "risks": [
+      "T3-if-picked: WebGL bundle can blow gate-10/19 — measured at O6 with a real Lighthouse run before ship",
+      "Any tier: the a11y text-twin + no-JS baseline are non-negotiable"
+    ],
+    "confidence": 4,
+    "next_actions": [
+      "APPROVE → build T2 into HomeHero.astro at O5 (SSR baseline + Canvas enhancement + a11y twin)",
+      "AMEND → say T1 or T3 (and any axis change) in the comment; I rebuild the O5 plan to match",
+      "Either way → O6 gates + real Lighthouse, then the O7 ship-gate before deploy"
+    ]
+  }
+}

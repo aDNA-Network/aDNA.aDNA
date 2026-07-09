@@ -5,7 +5,7 @@ title: "P1.6 — hero network visual: best-in-class"
 campaign: campaign_storyweave
 phase: P1.6
 owner: stanley
-status: proposed   # authored 2026-07-08 as a fresh-context mission; begin at Objective O0
+status: in_progress   # authored 2026-07-08; Session 1 (O0→O4) begun 2026-07-08 by agent_rosetta
 mission_class: design_excellence
 executor_tier: opus
 token_budget_estimated: "~250–450 kT across 2–3 sessions: reference-gather + options-eval + 2–3 interactive comps (incl. one WebGL) + operator pick + SSR/enhancement build + perf-fixture + gates + ship. Multi-session by design — gate at each phase."
