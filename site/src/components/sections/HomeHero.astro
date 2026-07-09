@@ -156,9 +156,16 @@ const graphLed = Boolean(heroGraph);
           )}
         </div>
 
-        {/* The rebuilt connected graph — the "living network" proof, inlined (no-JS baseline). */}
+        {/* The rebuilt connected graph — the "living network" proof, inlined (no-JS baseline).
+            The SSR SVG is the accessible + no-JS floor (role="img" + <title>/<desc>); a decorative
+            Canvas "constellation" (aria-hidden) cross-fades in over it when JS is present — the
+            Storyweave P1.6 / T2 progressive enhancement. `set:html` needs its own wrapper so it does
+            not wipe the sibling <canvas>. */}
         <figure class="hero-graph" data-hero-graph>
-          <div class="hero-graph-frame" set:html={heroGraph} />
+          <div class="hero-graph-frame">
+            <div class="hero-graph-svg-wrap" set:html={heroGraph} />
+            <canvas class="hero-graph-canvas" aria-hidden="true"></canvas>
+          </div>
           <figcaption class="hero-graph-caption">{heroGraphCaption}</figcaption>
         </figure>
       </div>
@@ -246,49 +253,176 @@ const graphLed = Boolean(heroGraph);
   )}
 </section>
 
-{/* Progressive enhancement (graph-led variant only): a gentle idle drift of the graph nodes when JS
-    is on AND the visitor has not asked to reduce motion. The static committed SVG is the baseline and
-    is fully legible with JS off — this script only nudges, and adds NO data-chart hook (gate-22). */}
+{/* Progressive enhancement (graph-led, home only) — the Storyweave P1.6 / T2 "living network":
+    a Canvas constellation drawn OVER the SSR SVG (which stays the no-JS + a11y baseline; the <canvas>
+    is aria-hidden decorative). Honors reduced-motion (renders one static frame), only animates while
+    on-screen, adapts to the live theme, and adds NO data-chart hook (gate-22). Astro bundles this as a
+    deferred module script — non-render-blocking (gate-10), and it inits off the LCP path (idle). */}
 {graphLed && (
   <script>
     (() => {
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-      if (prefersReduced.matches) return;
       const fig = document.querySelector('[data-hero-graph]');
-      const svg = fig?.querySelector('svg');
-      if (!svg) return;
-      const nodes = Array.from(svg.querySelectorAll('g.node')) as SVGGElement[];
-      if (!nodes.length) return;
-      // Per-node drift params — tiny amplitude, long period, phase-shifted so the burst breathes.
-      const seeds = nodes.map((_, i) => ({
-        ax: 1.4 + (i % 4) * 0.5,
-        ay: 1.2 + (i % 3) * 0.5,
-        px: (i * 1.7) % (Math.PI * 2),
-        py: (i * 2.3) % (Math.PI * 2),
-        sx: 0.00021 + (i % 5) * 0.00003,
-        sy: 0.00025 + (i % 4) * 0.00003,
+      if (!fig) return;
+      const frame = fig.querySelector('.hero-graph-frame') as HTMLElement | null;
+      const cv = fig.querySelector('canvas.hero-graph-canvas') as HTMLCanvasElement | null;
+      const ctx = cv?.getContext('2d');
+      if (!frame || !cv || !ctx) return;
+
+      const reduceMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      // Real connected graph — 15 vaults / 14 relationships (the operator-approved T2 layout).
+      const N: any[] = [
+        ['aDNA.aDNA', 0.00, 0.06, 6, 'core'], ['III.aDNA', -0.40, -0.30, 5, 'hub'], ['Astro.aDNA', 0.42, -0.24, 5, 'hub'],
+        ['WilhelmAI', 0.04, -0.60, 5, 'org'], ['RareArchive', -0.22, -0.92, 3, 'org'], ['RareHarness', 0.60, -0.58, 4, 'plat'],
+        ['Molecules', 0.84, -0.04, 4, 'forge'], ['TappProtocol', 0.96, 0.40, 4, 'plat'], ['VAAS', 0.78, 0.80, 3, 'fw'],
+        ['Science Stanley', -0.56, 0.40, 5, 'org'], ['Oration', -0.90, 0.18, 3, 'forge'], ['VisualDNA', -0.30, 0.66, 4, 'fw'],
+        ['Zen Zachary', -0.74, 0.82, 4, 'org'], ['RemoteControl', 0.30, 0.88, 3, 'plat'], ['Terminal', 0.56, 1.04, 3, 'plat'],
+      ].map(([name, x, y, deg, role]: any, i: number) => ({
+        name, x, y, deg, role, i,
+        r: role === 'core' ? 15 : deg >= 5 ? 10.5 : deg >= 4 ? 8.5 : 7,
+        tw: 0.6 + (i % 5) * 0.13, ph: (i * 1.7) % 6.283, _x: 0, _y: 0,
       }));
-      let raf = 0;
-      let running = false;
-      const tick = (t: number) => {
-        for (let i = 0; i < nodes.length; i++) {
-          const s = seeds[i];
-          const dx = Math.sin(t * s.sx + s.px) * s.ax;
-          const dy = Math.cos(t * s.sy + s.py) * s.ay;
-          nodes[i].style.transform = `translate(${dx.toFixed(2)}px, ${dy.toFixed(2)}px)`;
-        }
-        raf = requestAnimationFrame(tick);
+      const idx: any = Object.fromEntries(N.map((n: any) => [n.name, n.i]));
+      const E: any[] = [
+        ['aDNA.aDNA', 'III.aDNA'], ['WilhelmAI', 'Astro.aDNA'], ['WilhelmAI', 'III.aDNA'], ['WilhelmAI', 'RareArchive'],
+        ['RareHarness', 'Astro.aDNA'], ['RareHarness', 'III.aDNA'], ['Molecules', 'Astro.aDNA'], ['TappProtocol', 'Molecules'],
+        ['TappProtocol', 'VAAS'], ['Science Stanley', 'Oration'], ['Science Stanley', 'VisualDNA'], ['Zen Zachary', 'Science Stanley'],
+        ['Zen Zachary', 'VisualDNA'], ['RemoteControl', 'Terminal'],
+      ].map(([a, b]: any) => ({ a: idx[a], b: idx[b] }));
+      let seed = 1234; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+      const SEEDS = Array.from({ length: 24 }, () => { const a = rnd() * 6.283, rr = 1.3 + rnd() * 0.5;
+        return { x: Math.cos(a) * rr, y: Math.sin(a) * rr * 0.86, ph: rnd() * 6.283, sp: 0.3 + rnd() * 0.5, r: 1 + rnd() * 1.7 }; });
+      const STARS = Array.from({ length: 70 }, () => ({ x: rnd(), y: rnd(), a: 0.05 + rnd() * 0.35, r: rnd() * 1.2 }));
+
+      const PAL: any = {
+        dark: { g0: '#1b2740', g1: '#141a2b', g2: '#0b0b12', aura0: 'rgba(125,207,255,0.16)', aura1: 'rgba(157,124,216,0.06)',
+          star: '200,215,255', ring: 'rgba(125,207,255,0.06)', seed: '169,200,255',
+          e0: 'rgba(125,207,255,0.42)', e1: 'rgba(157,124,216,0.40)', eShadow: 'rgba(125,207,255,0.5)',
+          part: 'rgba(210,235,255,0.95)', lab: '#e6f0ff', labSh: 'rgba(10,12,20,0.55)' },
+        light: { g0: '#dfe8fb', g1: '#eef2fd', g2: '#f6f8fe', aura0: 'rgba(31,131,201,0.12)', aura1: 'rgba(122,91,192,0.06)',
+          star: '90,110,160', ring: 'rgba(31,131,201,0.10)', seed: '90,120,190',
+          e0: 'rgba(31,131,201,0.5)', e1: 'rgba(122,91,192,0.48)', eShadow: 'rgba(31,131,201,0.35)',
+          part: 'rgba(31,131,201,0.95)', lab: '#1a1b26', labSh: 'rgba(255,255,255,0.6)' },
       };
-      const start = () => { if (!running) { running = true; raf = requestAnimationFrame(tick); } };
-      const stop = () => { running = false; cancelAnimationFrame(raf); };
-      // Only animate while the hero is on-screen; respect a live reduced-motion toggle.
-      const io = new IntersectionObserver((entries) => {
-        entries[0].isIntersecting ? start() : stop();
-      }, { threshold: 0.05 });
-      io.observe(fig!);
-      prefersReduced.addEventListener('change', (e) => {
-        if (e.matches) { stop(); nodes.forEach((n) => (n.style.transform = '')); }
+      // The home hero is dark-first — its <section> always carries `.dark`, so its panel + tokens stay
+      // dark regardless of the site's light/dark page theme. The constellation must match the dark panel
+      // it sits in, so it always uses the dark palette (reading the page/body theme would mismatch on a
+      // light page → a white constellation inside the dark hero). Future light-hero variant → PAL.light.
+      const P = (fig as Element).closest('.dark') ? PAL.dark : PAL.light;
+
+      let W = 0, H = 0, dpr = 1, S = 1, CX = 0, CY = 0, hover = -1, staticShown = false;
+      const fontFamily = getComputedStyle(fig as Element).fontFamily || 'system-ui, sans-serif';
+      const c2 = ctx as CanvasRenderingContext2D;
+      const canvas = cv as HTMLCanvasElement;
+      const frameEl = frame as HTMLElement;
+
+      function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const b = frameEl.getBoundingClientRect();
+        W = b.width; H = b.height;
+        canvas.width = Math.max(1, Math.round(W * dpr));
+        canvas.height = Math.max(1, Math.round(H * dpr));
+        c2.setTransform(dpr, 0, 0, dpr, 0, 0);
+        S = Math.min(W, H) / 2.85; CX = W * 0.5; CY = H * 0.47;
+      }
+      const px = (n: any) => CX + n.x * S, py = (n: any) => CY + n.y * S;
+
+      canvas.addEventListener('pointermove', (ev) => {
+        const b = canvas.getBoundingClientRect();
+        const mx = ev.clientX - b.left, my = ev.clientY - b.top;
+        let best = -1, bd = 1e9;
+        for (const n of N) { const d = Math.hypot(mx - n._x, my - n._y); if (d < bd && d < 26) { bd = d; best = n.i; } }
+        hover = best; canvas.style.cursor = best >= 0 ? 'pointer' : 'default';
       });
+      canvas.addEventListener('pointerleave', () => { hover = -1; canvas.style.cursor = 'default'; });
+      canvas.addEventListener('click', () => { if (hover >= 0) window.location.href = '/vaults'; });
+
+      function draw(t: number, moving: boolean) {
+        const m = moving ? 0.55 : 0;
+        c2.clearRect(0, 0, W, H);
+        let g = c2.createRadialGradient(CX, CY, 0, CX, CY, S * 2.2);
+        g.addColorStop(0, P.g0); g.addColorStop(.35, P.g1); g.addColorStop(1, P.g2);
+        c2.fillStyle = g; c2.fillRect(0, 0, W, H);
+        g = c2.createRadialGradient(CX, CY, 0, CX, CY, S * 1.35);
+        g.addColorStop(0, P.aura0); g.addColorStop(.5, P.aura1); g.addColorStop(1, 'transparent');
+        c2.fillStyle = g; c2.fillRect(0, 0, W, H);
+        for (const s of STARS) { const a = s.a * (m ? (0.6 + 0.4 * Math.sin(t * 0.001 + s.x * 20)) : 1);
+          c2.fillStyle = `rgba(${P.star},${a})`; c2.fillRect(s.x * W, s.y * H, s.r, s.r); }
+        c2.strokeStyle = P.ring; c2.lineWidth = 1; c2.setLineDash([2, 7]);
+        for (const rr of [0.62, 1.02]) { c2.beginPath(); c2.ellipse(CX, CY, S * rr, S * rr * 0.9, 0, 0, 6.283); c2.stroke(); }
+        c2.setLineDash([]);
+        for (const s of SEEDS) { const pulse = 0.26 + 0.32 * (0.5 + 0.5 * Math.sin(t * 0.0006 * s.sp + s.ph));
+          c2.fillStyle = `rgba(${P.seed},${m ? pulse : 0.3})`;
+          c2.beginPath(); c2.arc(CX + s.x * S, CY + s.y * S, s.r, 0, 6.283); c2.fill(); }
+        for (const e of E) { const A = N[e.a], B = N[e.b], ax = px(A), ay = py(A), bx = px(B), by = py(B);
+          const mx = (ax + bx) / 2, my = (ay + by) / 2, dx = bx - ax, dy = by - ay, d = Math.hypot(dx, dy) || 1;
+          const cx = mx - dy / d * d * 0.14, cy = my + dx / d * d * 0.14;
+          const lit = hover >= 0 && (e.a === hover || e.b === hover); const dim = hover >= 0 && !lit;
+          const grd = c2.createLinearGradient(ax, ay, bx, by);
+          grd.addColorStop(0, P.e0); grd.addColorStop(1, P.e1);
+          c2.strokeStyle = grd; c2.globalAlpha = dim ? 0.18 : 1; c2.lineWidth = lit ? 2.4 : 1.5; c2.lineCap = 'round';
+          c2.shadowColor = P.eShadow; c2.shadowBlur = (m ? 6 : 3) * (lit ? 2 : 1);
+          c2.beginPath(); c2.moveTo(ax, ay); c2.quadraticCurveTo(cx, cy, bx, by); c2.stroke();
+          c2.shadowBlur = 0; c2.globalAlpha = 1;
+          if (m) { const prog = ((t * 0.00016 + e.a * 0.13 + e.b * 0.07) % 1);
+            const u = prog, iu = 1 - u, qx = iu * iu * ax + 2 * iu * u * cx + u * u * bx, qy = iu * iu * ay + 2 * iu * u * cy + u * u * by;
+            c2.fillStyle = P.part; c2.globalAlpha = dim ? 0.2 : 1; c2.shadowColor = P.e0; c2.shadowBlur = 10;
+            c2.beginPath(); c2.arc(qx, qy, 2.1, 0, 6.283); c2.fill(); c2.shadowBlur = 0; c2.globalAlpha = 1; } }
+        if (m) { const period = 3800;
+          for (let k = 0; k < 2; k++) { const pr = ((t + k * period / 2) % period) / period, rad = pr * S * 1.15, al = (1 - pr) * 0.22;
+            c2.strokeStyle = `rgba(125,207,255,${al})`; c2.lineWidth = 1.4;
+            c2.beginPath(); c2.arc(CX, CY, rad, 0, 6.283); c2.stroke(); } }
+        for (const n of N) { let x = px(n), y = py(n);
+          if (m) { x += Math.sin(t * 0.0009 * n.tw + n.ph) * 1.6 * m; y += Math.cos(t * 0.0008 * n.tw + n.ph) * 1.6 * m; }
+          const isCore = n.role === 'core', isHub = n.role === 'hub', lit = hover === n.i, dim = hover >= 0 && !lit;
+          const tw = m ? (0.85 + 0.15 * Math.sin(t * 0.002 * n.tw + n.ph)) : 1;
+          const rimHue = isCore || isHub ? '125,207,255' : (n.i % 2 ? '169,200,255' : '187,154,247');
+          c2.globalAlpha = dim ? 0.4 : 1;
+          const hg = c2.createRadialGradient(x, y, 0, x, y, n.r * 3.4);
+          hg.addColorStop(0, `rgba(${rimHue},${(isCore ? 0.5 : 0.32) * tw * (lit ? 1.5 : 1)})`); hg.addColorStop(1, 'transparent');
+          c2.fillStyle = hg; c2.beginPath(); c2.arc(x, y, n.r * (lit ? 4 : 3.4), 0, 6.283); c2.fill();
+          c2.shadowColor = `rgba(${rimHue},0.9)`; c2.shadowBlur = (isCore ? 22 : isHub ? 14 : 8) * (lit ? 1.6 : 1);
+          const og = c2.createRadialGradient(x - n.r * 0.3, y - n.r * 0.3, n.r * 0.1, x, y, n.r);
+          og.addColorStop(0, isCore ? '#eaf7ff' : '#dfeaff'); og.addColorStop(0.6, isCore ? '#7dcfff' : `rgba(${rimHue},0.95)`);
+          og.addColorStop(1, isCore ? '#4aa8e6' : `rgba(${rimHue},0.7)`);
+          c2.fillStyle = og; c2.beginPath(); c2.arc(x, y, n.r * (lit ? 1.15 : 1), 0, 6.283); c2.fill(); c2.shadowBlur = 0;
+          c2.strokeStyle = `rgba(${rimHue},0.9)`; c2.lineWidth = 1; c2.beginPath(); c2.arc(x, y, n.r, 0, 6.283); c2.stroke();
+          c2.globalAlpha = 1; n._x = x; n._y = y; }
+        c2.textAlign = 'center';
+        for (const n of N) { const show = n.role === 'core' || n.role === 'hub' || hover === n.i;
+          if (!show) continue;
+          c2.font = `600 13px ${fontFamily}`;
+          const label = n.name.replace('.aDNA', ''); const ty = n._y + n.r + 16;
+          c2.fillStyle = P.labSh; c2.fillText(label, n._x, ty + 0.6);
+          c2.fillStyle = P.lab; c2.fillText(label, n._x, ty); }
+      }
+
+      let raf = 0, visible = false;
+      const loop = (t: number) => { draw(t, true); raf = window.requestAnimationFrame(loop); };
+      const start = () => { if (!raf && !reduceMQ.matches) { staticShown = false; raf = window.requestAnimationFrame(loop); } };
+      const stop = () => { if (raf) { window.cancelAnimationFrame(raf); raf = 0; } };
+      const staticFrame = () => { stop(); resize(); draw(0, false); staticShown = true; };
+
+      function activate() {
+        resize();
+        canvas.classList.add('is-active');
+        frameEl.classList.add('is-enhanced');
+        if (reduceMQ.matches || !visible) staticFrame(); else start();
+      }
+
+      const io = new IntersectionObserver((entries) => {
+        visible = entries[0].isIntersecting;
+        if (reduceMQ.matches) { if (visible && !staticShown) staticFrame(); return; }
+        visible ? start() : stop();
+      }, { threshold: 0.05 });
+
+      const ro = new ResizeObserver(() => { if (raf) resize(); else staticFrame(); });
+
+      reduceMQ.addEventListener('change', (e) => { if (e.matches) staticFrame(); else if (visible) start(); });
+
+      const boot = () => { io.observe(fig as Element); ro.observe(frameEl); activate(); };
+      if ('requestIdleCallback' in window) { (window as any).requestIdleCallback(boot, { timeout: 600 }); }
+      else { window.setTimeout(boot, 200); }
     })();
   </script>
 )}
@@ -638,12 +772,50 @@ const graphLed = Boolean(heroGraph);
   }
 
   .hero-graph-frame {
+    position: relative;
+    overflow: hidden;
     border-radius: var(--radius-xl);
     border: 1px solid var(--color-border);
     background: color-mix(in srgb, var(--color-surface) 82%, transparent);
     padding: clamp(var(--space-4), 2vw, var(--space-6));
     box-shadow: 0 16px 54px color-mix(in srgb, var(--brand-primary) 15%, transparent);
     backdrop-filter: blur(2px);
+  }
+
+  /* The SSR SVG keeps normal flow (it sizes the frame → zero CLS) + stays in the a11y tree; when the
+     Canvas enhancement is active it cross-fades to near-invisible (opacity only — never display:none). */
+  .hero-graph-svg-wrap {
+    position: relative;
+    z-index: 0;
+    transition: opacity 0.7s ease;
+  }
+  .hero-graph-frame.is-enhanced .hero-graph-svg-wrap {
+    opacity: 0.05;
+  }
+
+  /* The Canvas "living network" enhancement — decorative (aria-hidden); the SVG is the a11y twin.
+     Absolutely fills the frame box (over the SVG) + fades in on init. */
+  .hero-graph-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+    pointer-events: none;
+  }
+  .hero-graph-canvas.is-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-graph-svg-wrap,
+    .hero-graph-canvas {
+      transition: none;
+    }
   }
 
   /* The inlined SVG fills its frame + scales via its own viewBox (no overflow). */
