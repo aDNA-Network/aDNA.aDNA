@@ -85,7 +85,7 @@ The §B graphs own **only the software brick**; the owning persona keeps everyth
 | `Forgejo.aDNA` | Forgejo install/version-pin/config/backup/upgrade | **Git.aDNA / Hopper** = provider contract · **Lighthouse** = deployment topology · **Venus** = data-plane placement (§8) | [[who/coordination/coord_2026_06_20_keystone_forgejo_to_hopper|forgejo_to_hopper]] ✅ |
 | `Nebula.aDNA` | Nebula node-side daemon install/config/operate (Tailscale folds in, ADR-015) | **Venus** = substrate/topology/membership/CA/ledger · **Home / Hestia** = node-local cert/config (§9) | [[who/coordination/coord_2026_06_20_keystone_nebula_to_venus|nebula_to_venus]] ✅ |
 
-**Recipe-quarry reframe (§B.1, ADR-037 §3):** `Network.aDNA`'s `deployment_recipes/` is a **source-quarry**; the install/operate/configure knowledge for a software now has a **canonical home** in its `<Software>.aDNA` graph (nebula → `Nebula.aDNA`; podman → `Container.aDNA`; ray/jupyter → `Lab.aDNA`). Substrate/topology/membership/ledger stay Venus's. Annotated in the ledger §B.1 (our tree only); Venus places the README banner at her discretion.
+**Recipe-quarry reframe (§B.1, ADR-037 §3):** `Network.aDNA`'s `deployment_recipes/` is a **source-quarry**; the install/operate/configure knowledge for a software now has a **canonical home** in its `<Software>.aDNA` graph (nebula → `Nebula.aDNA`; podman → `Container.aDNA`; ray/jupyter → `Jupyter.aDNA`). Substrate/topology/membership/ledger stay Venus's. Annotated in the ledger §B.1 (our tree only); Venus places the README banner at her discretion.
 
 ## Lighthouse composition — proposed node-stack profile mapping
 
