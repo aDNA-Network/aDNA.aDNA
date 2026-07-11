@@ -6,7 +6,7 @@ campaign: campaign_storyweave
 phase: P3
 decade: 2
 owner: stanley
-status: planned           # ⛩ RATIFIED 2026-07-09 — operator (stanley / FA) at mission_decade2_replan O5; P3 build authorized
+status: completed         # ⛩ RATIFIED 2026-07-09; BUILT + SHIPPED LIVE 2026-07-11 — M3.1+M3.2 both increments on adna.network (313/313 gates, live axe-0 both themes)
 mission_class: build
 executor_tier: opus       # registry UX + the honesty/reconcile decisions = opus; card-render + overflow sweeps drop to sonnet
 token_budget_estimated: "~150–300 kT across 3–4 sessions: M3.1 registry actionability (2 sessions) + M3.2 onboarding + on-ramps (1–2). Ship-per-phase; gate each deployable increment."
@@ -78,6 +78,12 @@ The measured focused review ([[measure_and_review]], 2026-07-09) confirmed the T
 
 The conversion surfaces are **actionable**: the registry has a purpose line per card + working search/filter + an adopt/publish rail + a reconciled `/adopters`; the ~40 vault pages are axe-0; the hero deep-links into vaults; `/get-started` + the on-ramps (`/community` · `/use-cases` · `/commons` · home §1) all lead somewhere real. **Marketplace + Conversion personas pass; no browse-only dead-ends; ranker ≥ 4.0**; both shipped increments live on adna.network with gates green + perf budget held; operator sign-off at O0 (honesty call) + O2 + O4.
 
-## AAR
+## AAR (2026-07-11 — both increments shipped in one session)
 
-*(Mandatory before `status: completed` — `template_aar_lightweight`.)*
+- **Worked:** Both increments built + shipped live in a single session — M3.1 (registry actionability) then M3.2 (on-ramps). **313/313 test:gates green** at each ship; **live axe-0 both themes** on every touched surface. The nested-`<main>` fix cleared ~40 vault pages + `/vaults` + `/graph` with three one-line edits. `/vaults` went from name+persona+status to purpose-per-card + working search/filter + adopt/publish rail; every on-ramp now lands somewhere real (no browse-only dead-ends).
+- **Didn't (as planned):** The mission's central premise — "the purpose data already exists in `vaults.json` (`headline_mission`)" — was **false: 0/68 populated** (and `tagline` 0/68). Pivoted to `headline_mission || note` (`note` 67/68); operator ruled keep-the-fallback. The nested-`<main>` was in **3** pages, not the stated 2. A dark-mode AA miss (`filter-count` 4.35:1 on the active chip) surfaced only at gate-4 — fixed by dropping the opacity dim.
+- **Finding:** The registry **silently dropped 4 `tbd_at_p0` genesis vaults** while the strip claimed 68 (a hardcoded `classOrder` that both ordered *and* filtered) — a latent completeness + honesty bug caught by counting rendered cards (64) vs `vault_count` (68). Fixed by appending leftover classes so no vault ever vanishes. Underlying data-currency (empty `headline_mission`; 27/68 vault_cards) is a real Home.aDNA gap → memo routed to Hestia.
+- **Change (for next time):** **Verify the data a "render existing field" task assumes actually exists** before scoping it as trivial — the charter's single-highest-value fix rested on an unpopulated field. And **count rendered-vs-declared** to catch silent drops.
+- **Follow-up:** P4/P5 stay **provisional** — re-plan only after P3 is *measured* live (same measure-before-re-plan gate; do NOT auto-advance). Non-blocking: Hestia `headline_mission` enrichment ([[coord_2026_07_11_rosetta_to_hestia_headline_mission]]). Deferred to P5: B9 craft (the `/use-cases` mid-word `CardGrid` truncation, still present) + B11 (VaultCard/RegistryCard tier harmonization) + the sighted-keyboard-focus polish on the hero nav twin.
+
+**Token budget:** estimated ~150–300 kT across 3–4 sessions; **actual ≈ one session** (both increments) — well under the per-session envelope, no >2× drift. **Executor tier:** `opus` as planned (registry UX + honesty/reconcile decisions).
