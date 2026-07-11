@@ -1,6 +1,7 @@
 ---
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
+import Callout from '../../components/sections/Callout.astro';
 import { getDocsBySection } from '../../utils/collections';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
 
@@ -13,16 +14,19 @@ const cards = useCases.map((doc) => ({
 
 const jsonLD = buildCollectionPageJsonLD({
   title: 'Use Cases',
-  description: 'Real-world aDNA adoption stories across solo developers, startups, research labs, and enterprises.',
+  description: 'Illustrative aDNA adoption scenarios across solo developers, startups, research labs, and enterprises.',
   url: Astro.url.href,
 });
 ---
 
 <DocumentationLayout
   title="Use Cases"
-  description="Real-world aDNA adoption stories across solo developers, startups, research labs, and enterprises."
+  description="Illustrative aDNA adoption scenarios across solo developers, startups, research labs, and enterprises."
   jsonLD={jsonLD}
 >
-  <p>See how different teams and individuals use aDNA to organize their projects. Each use case follows a named persona through a concrete deployment.</p>
+  <p>See how different kinds of teams and individuals could use aDNA to organize their work. Each scenario follows an <strong>illustrative</strong> persona through a concrete deployment.</p>
+  <Callout variant="info" title="Illustrative scenarios">
+    <p>These personas are composite archetypes, not real named adopters — they show the shape of a deployment, not a case study. For real, cited subnetworks running on aDNA today, see <a href="/commons/">the commons</a>.</p>
+  </Callout>
   <CardGrid cards={cards} columns={2} />
 </DocumentationLayout>

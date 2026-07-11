@@ -121,7 +121,7 @@ const jsonLD = buildCollectionPageJsonLD({
 ---
 
 <BaseLayout title="The aDNA network — relationship graph" description="The federation topology of the aDNA network: every edge is a real, directed relationship drawn from vault governance — umbrella, federation, partner, companion, supersedes." jsonLD={jsonLD}>
-  <main class="vaults-graph">
+  <div class="vaults-graph">
     <section class="vaults-graph-hero">
       <p class="vault-breadcrumb">
         <a href="/vaults/">&larr; Vaults</a>
@@ -226,7 +226,7 @@ const jsonLD = buildCollectionPageJsonLD({
         </div>
       ))}
     </nav>
-  </main>
+  </div>
 
   <script type="application/json" id="vault-name-map" set:html={JSON.stringify(vaultNameMap)} is:inline></script>
   <script>

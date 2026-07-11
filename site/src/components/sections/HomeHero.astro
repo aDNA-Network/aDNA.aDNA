@@ -81,6 +81,15 @@ const {
 
 // Home-only graph-led variant is active iff a hero graph was passed (additive-optional prop).
 const graphLed = Boolean(heroGraph);
+
+// Storyweave P3 / M3.1 — accessible deep-link twin for the hero graph (mirrors /vaults/graph's
+// node-list <nav>): parse the connected vaults' slug + name straight from the SSR SVG string
+// (single source of truth) so keyboard/AT/no-JS users can open any hero vault. The SVG (role="img")
+// and the decorative canvas (aria-hidden) stay non-interactive to AT; this <nav> is their twin.
+const heroNodes = graphLed
+  ? [...(heroGraph as string).matchAll(/<g class="node" data-slug="([^"]+)">.*?<text[^>]*>([^<]*)<\/text>/g)]
+      .map((m) => ({ slug: m[1], name: m[2].replace(/\.aDNA$/, '') }))
+  : [];
 ---
 
 <section class:list={['hero', 'dark', { 'hero--graph-led': graphLed }]}>
@@ -168,6 +177,17 @@ const graphLed = Boolean(heroGraph);
           </div>
           <figcaption class="hero-graph-caption">{heroGraphCaption}</figcaption>
         </figure>
+        {/* Storyweave P3 / M3.1 — the hero graph's keyboard/AT/no-JS deep-link twin. Visually hidden;
+            revealed on keyboard focus. Each connected vault opens its own /vaults/[slug] page. */}
+        {heroNodes.length > 0 && (
+          <nav class="hero-graph-nodelist" aria-label="Open a vault from the network graph">
+            <ul>
+              {heroNodes.map((n) => (
+                <li><a href={`/vaults/${n.slug}/`}>{n.name}</a></li>
+              ))}
+            </ul>
+          </nav>
+        )}
       </div>
     </Fragment>
   ) : (
@@ -271,14 +291,16 @@ const graphLed = Boolean(heroGraph);
       const reduceMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
 
       // Real connected graph — 15 vaults / 14 relationships (the operator-approved T2 layout).
+      // 6th field = the vault_slug for the node's /vaults/[slug] deep-link (Storyweave P3 / M3.1).
+      // Slugs are the canonical route ids from vaults.json (some lower-case: sciencestanley/zenzachary/…).
       const N: any[] = [
-        ['aDNA.aDNA', 0.00, 0.06, 6, 'core'], ['III.aDNA', -0.40, -0.30, 5, 'hub'], ['Astro.aDNA', 0.42, -0.24, 5, 'hub'],
-        ['WilhelmAI', 0.04, -0.60, 5, 'org'], ['RareArchive', -0.22, -0.92, 3, 'org'], ['RareHarness', 0.60, -0.58, 4, 'plat'],
-        ['Molecules', 0.84, -0.04, 4, 'forge'], ['TappProtocol', 0.96, 0.40, 4, 'plat'], ['VAAS', 0.78, 0.80, 3, 'fw'],
-        ['Science Stanley', -0.56, 0.40, 5, 'org'], ['Oration', -0.90, 0.18, 3, 'forge'], ['VisualDNA', -0.30, 0.66, 4, 'fw'],
-        ['Zen Zachary', -0.74, 0.82, 4, 'org'], ['RemoteControl', 0.30, 0.88, 3, 'plat'], ['Terminal', 0.56, 1.04, 3, 'plat'],
-      ].map(([name, x, y, deg, role]: any, i: number) => ({
-        name, x, y, deg, role, i,
+        ['aDNA.aDNA', 0.00, 0.06, 6, 'core', 'aDNA.aDNA'], ['III.aDNA', -0.40, -0.30, 5, 'hub', 'III.aDNA'], ['Astro.aDNA', 0.42, -0.24, 5, 'hub', 'Astro.aDNA'],
+        ['WilhelmAI', 0.04, -0.60, 5, 'org', 'WilhelmAI.aDNA'], ['RareArchive', -0.22, -0.92, 3, 'org', 'RareArchive.aDNA'], ['RareHarness', 0.60, -0.58, 4, 'plat', 'Harness.aDNA'],
+        ['Molecules', 0.84, -0.04, 4, 'forge', 'Molecules.aDNA'], ['TappProtocol', 0.96, 0.40, 4, 'plat', 'TappProtocol.aDNA'], ['VAAS', 0.78, 0.80, 3, 'fw', 'VAAS.aDNA'],
+        ['Science Stanley', -0.56, 0.40, 5, 'org', 'sciencestanley'], ['Oration', -0.90, 0.18, 3, 'forge', 'Oration.aDNA'], ['VisualDNA', -0.30, 0.66, 4, 'fw', 'visualdna'],
+        ['Zen Zachary', -0.74, 0.82, 4, 'org', 'zenzachary'], ['RemoteControl', 0.30, 0.88, 3, 'plat', 'RemoteControl.aDNA'], ['Terminal', 0.56, 1.04, 3, 'plat', 'terminal'],
+      ].map(([name, x, y, deg, role, slug]: any, i: number) => ({
+        name, x, y, deg, role, slug, i,
         r: role === 'core' ? 15 : deg >= 5 ? 10.5 : deg >= 4 ? 8.5 : 7,
         tw: 0.6 + (i % 5) * 0.13, ph: (i * 1.7) % 6.283, _x: 0, _y: 0,
       }));
@@ -335,7 +357,13 @@ const graphLed = Boolean(heroGraph);
         hover = best; canvas.style.cursor = best >= 0 ? 'pointer' : 'default';
       });
       canvas.addEventListener('pointerleave', () => { hover = -1; canvas.style.cursor = 'default'; });
-      canvas.addEventListener('click', () => { if (hover >= 0) window.location.href = '/vaults'; });
+      // Storyweave P3 / M3.1 — deep-link the hovered constellation node to its own vault page
+      // (was: every node → the generic /vaults). Falls back to /vaults if a slug is ever missing.
+      canvas.addEventListener('click', () => {
+        if (hover < 0) return;
+        const slug = N[hover] && N[hover].slug;
+        window.location.href = slug ? `/vaults/${slug}/` : '/vaults';
+      });
 
       function draw(t: number, moving: boolean) {
         const m = moving ? 0.55 : 0;
@@ -823,6 +851,37 @@ const graphLed = Boolean(heroGraph);
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  /* Storyweave P3 / M3.1 — the hero graph's deep-link twin: visually hidden, revealed on keyboard
+     focus (mirrors /vaults/graph). SR + keyboard reach every hero vault; on focus it drops in-flow
+     as a small link panel (position:static → no positioned ancestor needed). Tokened (gate-14). */
+  .hero-graph-nodelist {
+    position: absolute;
+    width: 1px; height: 1px;
+    margin: -1px; padding: 0; border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .hero-graph-nodelist:focus-within {
+    position: static;
+    width: auto; height: auto;
+    margin: var(--space-2, 0.5rem) 0 0; padding: 0.75rem;
+    clip: auto; clip-path: none;
+    white-space: normal;
+    background: var(--color-bg);
+    border: 1px solid var(--color-link);
+    border-radius: var(--radius-md);
+  }
+  .hero-graph-nodelist ul {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 0.85rem;
+  }
+  .hero-graph-nodelist a {
+    color: var(--color-link);
+    text-decoration: underline;
+    font-size: var(--text-sm, 0.9rem);
   }
 
   /* Node drift (progressive enhancement) transitions in gently; transform-box keeps the

@@ -1,6 +1,7 @@
 ---
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
+import Callout from '../../components/sections/Callout.astro';
 import ClosingCTA from '../../components/sections/ClosingCTA.astro';
 import { getDocsBySection } from '../../utils/collections';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
@@ -52,6 +53,9 @@ const jsonLD = buildCollectionPageJsonLD({
   <CardGrid cards={pathCards} columns={2} />
 
   <h2 id="persona-cards">Persona reference cards</h2>
+  <Callout variant="info" title="Illustrative personas">
+    <p>These are composite archetypes — not real named adopters — written to help you find the closest fit. For real, cited subnetworks running on aDNA today, see <a href="/commons/">the commons</a>.</p>
+  </Callout>
   <p>Structured profiles for each audience — pain points, typical ontology extensions, and adoption narrative. The use case pages tell the full story; these cards give you the quick reference.</p>
   <CardGrid cards={cards} columns={2} />
 

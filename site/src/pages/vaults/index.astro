@@ -18,8 +18,17 @@ const classGroups: Record<string, any[]> = vaults.reduce((acc: Record<string, an
   return acc;
 }, {});
 
-const classOrder = ['standard_dev', 'framework', 'framework_candidate', 'forge', 'platform', 'org_vault', 'org_graph', 'network', 'node_operational', 'coordination', 'document', 'knowledge_graph', 'tooling', 'workspace', 'superseded'];
-const orderedClasses = classOrder.filter(c => c in classGroups);
+const classOrder = ['standard_dev', 'framework', 'framework_candidate', 'forge', 'platform', 'org_vault', 'org_graph', 'network', 'node_operational', 'coordination', 'document', 'knowledge_graph', 'tooling', 'workspace', 'tbd_at_p0', 'superseded'];
+// Storyweave P3 / M3.1 — never silently drop a vault whose class isn't in the manual order:
+// append any leftover classes so the registry always renders all vault_count vaults. (Was dropping
+// the 4 `tbd_at_p0` genesis stubs → the grid showed 64 while the stat strip claimed 68.)
+const orderedClasses = [
+  ...classOrder.filter(c => c in classGroups),
+  ...Object.keys(classGroups).filter(c => !classOrder.includes(c)).sort(),
+];
+// Readable section/filter labels for non-obvious class slugs (default = underscores→spaces).
+const classLabels: Record<string, string> = { tbd_at_p0: 'genesis-planning' };
+const labelFor = (cls: string) => classLabels[cls] || cls.replace(/_/g, ' ');
 
 const jsonLD = buildCollectionPageJsonLD({
   title: 'Vaults — the aDNA registry',
@@ -54,14 +63,46 @@ const goDeeper = [
     ]}
   />
 
-  <main class="vaults-index">
+  <div class="vaults-index">
     <section class="vaults-facets">
-      <h2>Browse by class</h2>
-      <div class="facet-chips">
-        {orderedClasses.map(cls => (
-          <VaultClassFacet vaultClass={cls} count={classGroups[cls].length} />
-        ))}
+      {/* No-JS baseline: the class jump-chips. The script below hides this and reveals the
+          live search/filter toolbar; without JS these anchors still jump to each class section. */}
+      <div data-nojs-facets>
+        <h2>Browse by class</h2>
+        <div class="facet-chips">
+          {orderedClasses.map(cls => (
+            <VaultClassFacet vaultClass={cls} count={classGroups[cls].length} />
+          ))}
+        </div>
       </div>
+
+      {/* Storyweave P3 / M3.1 — client-side search + class filter (progressive enhancement).
+          `hidden` until the script reveals it; the SSR class-grouped list below is the no-JS fallback. */}
+      <div class="vaults-filter" data-vaults-filter hidden>
+        <div class="vaults-search-row">
+          <label for="vault-search" class="vaults-search-label">Search the registry</label>
+          <input
+            type="search"
+            id="vault-search"
+            class="vaults-search"
+            placeholder="Search by name, persona, class, or purpose…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+        <div class="vaults-filter-chips" role="group" aria-label="Filter vaults by class">
+          <button type="button" class="filter-chip is-active" data-filter-class="all" aria-pressed="true">
+            All <span class="filter-count">{vault_count}</span>
+          </button>
+          {orderedClasses.map(cls => (
+            <button type="button" class="filter-chip" data-filter-class={cls} aria-pressed="false">
+              {labelFor(cls)} <span class="filter-count">{classGroups[cls].length}</span>
+            </button>
+          ))}
+        </div>
+        <p class="vaults-result-count" role="status" aria-live="polite"></p>
+      </div>
+
       <p class="go-deeper">
         New to context graphs? Go deeper:
         {goDeeper.map((l, i) => (
@@ -72,9 +113,19 @@ const goDeeper = [
       </p>
     </section>
 
+    {/* Storyweave P3 / M3.1 — adopt/publish rail: no browse-only dead-end. Both CTAs land real
+        (get-started = create a vault; how/publishing = the open pipeline the 68 vaults use). */}
+    <div class="vaults-rail">
+      <p class="vaults-rail-text"><strong>This registry is open.</strong> Every vault here is a real, self-published context graph — the same open pipeline is yours to use.</p>
+      <div class="vaults-rail-actions">
+        <a class="btn btn-primary" href="/get-started/" data-astro-prefetch>Add your vault</a>
+        <a class="btn btn-secondary" href="/how/publishing/" data-astro-prefetch>Publish to the registry</a>
+      </div>
+    </div>
+
     {orderedClasses.map(cls => (
       <section class="vaults-class-section" id={`class-${cls}`}>
-        <h2>{cls.replace(/_/g, ' ')} <span class="class-count">({classGroups[cls].length})</span></h2>
+        <h2>{labelFor(cls)} <span class="class-count">({classGroups[cls].length})</span></h2>
         <div class="vaults-grid">
           {classGroups[cls].map((v: any) => (
             <VaultCard vault={v} />
@@ -82,7 +133,63 @@ const goDeeper = [
         </div>
       </section>
     ))}
-  </main>
+  </div>
+
+  <script>
+    // Storyweave P3 / M3.1 — registry search + class filter (progressive enhancement).
+    // No-JS keeps the SSR jump-facets + class-grouped list. Astro bundles/defers this (below-LCP).
+    (() => {
+      const filterEl = document.querySelector('[data-vaults-filter]');
+      if (!(filterEl instanceof HTMLElement)) return;
+      const nojs = document.querySelector('[data-nojs-facets]');
+      const input = filterEl.querySelector('#vault-search');
+      const chips = Array.from(filterEl.querySelectorAll('[data-filter-class]'));
+      const cards = Array.from(document.querySelectorAll('[data-vault-card]'));
+      const sections = Array.from(document.querySelectorAll('.vaults-class-section'));
+      const countEl = filterEl.querySelector('.vaults-result-count');
+      if (!(input instanceof HTMLInputElement) || !cards.length) return;
+
+      // Reveal the enhanced toolbar; retire the no-JS jump-facets.
+      filterEl.hidden = false;
+      if (nojs instanceof HTMLElement) nojs.hidden = true;
+
+      let activeClass = 'all';
+      const apply = () => {
+        const q = input.value.trim().toLowerCase();
+        let visible = 0;
+        for (const card of cards) {
+          const matchesClass = activeClass === 'all' || card.dataset.class === activeClass;
+          const matchesQuery = !q || (card.dataset.search || '').includes(q);
+          const show = matchesClass && matchesQuery;
+          card.hidden = !show;
+          if (show) visible++;
+        }
+        // Collapse any class section left with no visible cards.
+        for (const sec of sections) {
+          sec.hidden = !sec.querySelector('[data-vault-card]:not([hidden])');
+        }
+        if (countEl) {
+          countEl.textContent = visible === cards.length
+            ? `${visible} vaults`
+            : `${visible} of ${cards.length} vaults` + (visible === 0 ? ' — nothing matched' : '');
+        }
+      };
+
+      input.addEventListener('input', apply);
+      for (const chip of chips) {
+        chip.addEventListener('click', () => {
+          activeClass = chip.dataset.filterClass || 'all';
+          for (const c of chips) {
+            const on = c === chip;
+            c.classList.toggle('is-active', on);
+            c.setAttribute('aria-pressed', String(on));
+          }
+          apply();
+        });
+      }
+      apply();
+    })();
+  </script>
 </BaseLayout>
 
 <style>
@@ -96,4 +203,59 @@ const goDeeper = [
   .vaults-class-section { margin: 2rem 0; }
   .vaults-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
   .class-count { font-size: 0.85em; color: var(--color-text-muted); }
+
+  /* Storyweave P3 / M3.1 — search + filter toolbar (JS-revealed; hidden for no-JS).
+     Tokens only (gate-14); active chip uses the same AA-safe color-mix tint as the status pills. */
+  .vaults-filter { padding: 1.5rem 0 0.5rem; }
+  .vaults-search-row { margin-bottom: 1rem; }
+  .vaults-search-label { display: block; font-size: var(--text-sm, 0.9rem); color: var(--color-text-muted); margin-bottom: 0.35rem; }
+  .vaults-search {
+    width: 100%;
+    max-width: 30rem;
+    padding: 0.55rem 0.85rem;
+    font: inherit;
+    color: var(--color-text);
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+  .vaults-search:focus-visible { outline: 2px solid var(--color-link); outline-offset: 1px; border-color: var(--color-link); }
+  .vaults-filter-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.4rem 0.8rem;
+    font: inherit;
+    font-size: 0.9em;
+    cursor: pointer;
+    color: var(--color-text);
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full, 1rem);
+    transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  }
+  .filter-chip:hover { border-color: var(--color-link); color: var(--color-link); }
+  .filter-chip:focus-visible { outline: 2px solid var(--color-link); outline-offset: 1px; }
+  .filter-chip.is-active {
+    background: color-mix(in srgb, var(--color-link) 18%, transparent);
+    border-color: var(--color-link);
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  /* No opacity dim — at 0.7 the count failed AA (4.35:1) on the active chip's tinted bg (dark).
+     Inherit the chip's full --color-text; the smaller size already de-emphasizes it. */
+  .filter-count { font-variant-numeric: tabular-nums; }
+  .vaults-result-count { margin: 0.85rem 0 0; font-size: var(--text-sm, 0.9rem); color: var(--color-text-muted); }
+
+  /* Adopt/publish rail — container + layout only; buttons reuse the global .btn tokens. */
+  .vaults-rail {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 1rem; margin: 0.5rem 0 1.5rem; padding: 1rem 1.25rem;
+    background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+  }
+  .vaults-rail-text { margin: 0; color: var(--color-text); max-width: 48ch; }
+  .vaults-rail-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  /* Defensive: ensure filtered-out cards/sections collapse regardless of grid display. */
+  [data-vault-card][hidden] { display: none; }
 </style>

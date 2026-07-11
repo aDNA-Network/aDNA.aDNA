@@ -47,7 +47,7 @@ const statusTitle = STATUS_GLOSS[vault.status] ? `${vault.status} — ${STATUS_G
   description={vault.tagline || vault.note || `aDNA vault: ${vault.display_name}`}
   jsonLD={jsonLD}
 >
-  <main class="vault-detail">
+  <div class="vault-detail">
     <header class="vd-head">
       <p class="vault-breadcrumb">
         <a href="/vaults/">&larr; Vaults</a>
@@ -126,7 +126,7 @@ const statusTitle = STATUS_GLOSS[vault.status] ? `${vault.status} — ${STATUS_G
       secondaryLabel="Explore the graph"
       secondaryHref="/vaults/graph/"
     />
-  </main>
+  </div>
 </BaseLayout>
 
 <style>

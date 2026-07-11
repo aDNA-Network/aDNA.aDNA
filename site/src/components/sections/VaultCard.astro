@@ -1,14 +1,31 @@
 ---
 interface Props { vault: any; }
 const { vault } = Astro.props;
+
+// Storyweave P3 / M3.1: one-line purpose per card. Prefer the richer `headline_mission`
+// (schema field, Hestia-authored per vault_card overlay) and fall back to `note` (the
+// populated one-line description, 67/68 today) — so the purpose line renders NOW from
+// existing data and auto-upgrades if headline_mission is later enriched. No strings authored here.
+const purpose = vault.headline_mission || vault.note || null;
+// Suppress the "—" persona placeholder (data-currency artifact routed to Hestia) so the
+// card never shows a lone em-dash above the new purpose line.
+const persona = vault.persona && vault.persona !== '—' ? vault.persona : null;
+// Flat search haystack for the client-side registry filter (M3.1.3); no-JS ignores it.
+const searchBlob = [vault.display_name, persona, vault.class, purpose]
+  .filter(Boolean).join(' ').toLowerCase();
 ---
 
-<article class={`vault-card class-${vault.class}`}>
+<article
+  class={`vault-card class-${vault.class}`}
+  data-vault-card
+  data-class={vault.class}
+  data-search={searchBlob}
+>
   <h3>
     <a href={`/vaults/${vault.vault_slug}/`}>{vault.display_name}</a>
   </h3>
-  {vault.persona && <p class="vault-card-persona">{vault.persona}</p>}
-  {vault.tagline && <p class="vault-card-tagline">{vault.tagline}</p>}
+  {persona && <p class="vault-card-persona">{persona}</p>}
+  {purpose && <p class="vault-card-purpose">{purpose}</p>}
   <p class="vault-card-meta">
     <span class={`vault-status status-${vault.status}`}>{vault.status}</span>
     {vault.current_phase && <span class="vault-phase">{vault.current_phase}</span>}
@@ -25,6 +42,17 @@ const { vault } = Astro.props;
   .vault-card h3 a { text-decoration: none; color: var(--color-text-heading); }
   .vault-card-persona { color: var(--color-text-muted); font-size: 0.9em; margin: 0.25rem 0; }
   .vault-card-tagline { font-style: italic; color: var(--color-text-muted); margin: 0.5rem 0; }
+  /* Storyweave P3 / M3.1: the purpose line — one line, tail-truncated with a real ellipsis.
+     The full text stays in the DOM (screen readers read it in full); only the visual is clipped
+     at the card edge, so no word is ever hard-cut in the content. Token colour (gate-14). */
+  .vault-card-purpose {
+    color: var(--color-text);
+    font-size: 0.9em;
+    margin: 0.4rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .vault-card-meta { font-size: 0.8em; margin-top: 0.5rem; }
   .vault-status { padding: 0.1rem 0.4rem; border-radius: var(--radius-full); }
   .status-active { background: color-mix(in srgb, var(--color-success) 15%, transparent); color: color-mix(in srgb, var(--color-success) 55%, var(--color-text)); }
