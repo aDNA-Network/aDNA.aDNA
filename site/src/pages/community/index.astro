@@ -19,6 +19,15 @@ const cards = communityDocs.map((doc) => ({
 // real practices; no fabricated counts; planned != shipped.
 const { ladder, governance, horizon } = community;
 
+// Storyweave P3 / M3.2 — wire each ladder rung to a concrete action (was summary-only, browse-only).
+// Indexed by rung order (stable, 4 rungs); each lands on a real page.
+const ladderActions = [
+  { label: 'Get started', href: '/get-started/' },
+  { label: 'Contribution standards', href: '/community/community-contribution-standards/' },
+  { label: 'How the processes work', href: '/community/community-processes/' },
+  { label: 'The steward role', href: '/community/community-roles/' },
+];
+
 const jsonLD = buildCollectionPageJsonLD({
   title: 'Community',
   description: 'Roles, processes, and contribution paths for the aDNA community.',
@@ -36,10 +45,13 @@ const jsonLD = buildCollectionPageJsonLD({
   <h2 id="ladder">The participation ladder</h2>
   <p>Each level is self-contained: you get the full value at Level 0 without ever engaging the community, and each step up adds a new kind of contribution and influence.</p>
   <ol class="ladder" role="list">
-    {ladder.map((rung) => (
+    {ladder.map((rung, i) => (
       <li class="ladder-rung">
         <p class="ladder-head"><span class="ladder-level">{rung.level}</span> <span class="ladder-name">{rung.name}</span></p>
         <p class="ladder-summary">{rung.summary}</p>
+        {ladderActions[i] && (
+          <p class="ladder-action"><a href={ladderActions[i].href}>{ladderActions[i].label} &rarr;</a></p>
+        )}
       </li>
     ))}
   </ol>
@@ -117,6 +129,17 @@ const jsonLD = buildCollectionPageJsonLD({
     color: var(--color-text-muted);
     line-height: 1.6;
     font-size: var(--text-sm);
+  }
+
+  /* Storyweave P3 / M3.2 — per-rung action link (no browse-only dead-end). */
+  .ladder-action {
+    margin: var(--space-2) 0 0;
+  }
+  .ladder-action a {
+    color: var(--color-link);
+    text-decoration: underline;
+    font-size: var(--text-sm);
+    font-weight: 600;
   }
 
   .gov-record {

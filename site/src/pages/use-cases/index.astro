@@ -2,6 +2,7 @@
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
 import Callout from '../../components/sections/Callout.astro';
+import ClosingCTA from '../../components/sections/ClosingCTA.astro';
 import { getDocsBySection } from '../../utils/collections';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
 
@@ -29,4 +30,15 @@ const jsonLD = buildCollectionPageJsonLD({
     <p>These personas are composite archetypes, not real named adopters — they show the shape of a deployment, not a case study. For real, cited subnetworks running on aDNA today, see <a href="/commons/">the commons</a>.</p>
   </Callout>
   <CardGrid cards={cards} columns={2} />
+
+  {/* Storyweave P3 / M3.2 — wire the on-ramp: the scenarios are illustrative, but the path is real.
+      No browse-only dead-end — every reader can start their own vault or find their adopter lane. */}
+  <ClosingCTA
+    title="See yourself in one of these?"
+    lead="The scenarios are illustrative — the path is real. Start your own vault, or find the adopter lane that fits how you work."
+    primaryLabel="Get started"
+    primaryHref="/get-started/"
+    secondaryLabel="Find your adopter path"
+    secondaryHref="/adopters/"
+  />
 </DocumentationLayout>
