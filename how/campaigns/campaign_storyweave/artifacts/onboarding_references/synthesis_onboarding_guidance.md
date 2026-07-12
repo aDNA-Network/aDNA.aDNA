@@ -17,6 +17,14 @@ are candidate rules for the Storyweave P5 re-plan to weigh + ratify — not rati
 rule carries provenance + the guardrails it must respect. Priority order reflects what the operator
 surfaced (R1 + R2 lead).
 
+> **⛩ P5-gate outcome (2026-07-12, operator at [[mission_p5_replan]] O4).** These rules were weighed live against
+> the measured adna.network gap and folded into the ratified [[p5_replan]] capstone. **R2 + R3 are accepted for the
+> P5 build** (M5.1a — they only surface existing single-sourced data more prominently). **R1 is gated** behind a
+> lightweight **≥6-exemplar install-forward reference pass** (Val Town · Raycast · Bun · Vercel · Astro, via
+> `skill_reference_inspection`) — the operator's call — to de-risk the demo format and promote these candidate rules
+> into **durable front-page doctrine** before any hero-asset commitment. **Status stays `candidate`** until that pass
+> runs; this note records that R2/R3 may build on the current basis.
+
 ### R1 — Demo-as-proof: a real screencast of the agent working *(priority)*
 - **Provenance:** Hermes leads with a large "HERMES DESKTOP — BETA PREVIEW" panel showing the agent
   actually drafting release notes → committing → opening a PR (the operator's "video of usage";
