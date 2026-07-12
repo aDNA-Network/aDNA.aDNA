@@ -1,0 +1,17 @@
+[
+  {
+    "surface": "learn-what-is-adna",
+    "path": "/learn/what-is-adna",
+    "status": 200,
+    "loadMs": 538,
+    "title": "What is aDNA?",
+    "desc": "aDNA (Agentic DNA) is an open standard for organizing project knowledge so that both humans and AI agents can navigate it.",
+    "ogTitle": "What is aDNA?",
+    "h1": "What is aDNA?",
+    "h2count": 6,
+    "bodyLen": 6416,
+    "fullH": 4380,
+    "axeViolations": 0,
+    "consoleErrors": []
+  }
+]

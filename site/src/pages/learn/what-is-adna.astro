@@ -9,6 +9,22 @@ const jsonLD = buildTechArticleJsonLD({
   url: Astro.url.href,
 });
 
+// Storyweave P4 M4.1 — this page authors its content as inline HTML, so Astro can't
+// auto-extract a headings list. We build it by hand and pass it to DocumentationLayout
+// so the sticky "On this page" TOC (TOCPanel, ≥1280px) renders. Slugs MUST match the
+// id="" on the h2/h3 below.
+const headings = [
+  { depth: 2, slug: 'the-problem', text: 'The problem' },
+  { depth: 2, slug: 'the-approach', text: 'How aDNA works' },
+  { depth: 3, slug: 'directory-structure', text: 'What a project looks like' },
+  { depth: 3, slug: 'entity-types', text: 'The 16 entity types' },
+  { depth: 3, slug: 'claude-md-example', text: 'What a CLAUDE.md looks like' },
+  { depth: 2, slug: 'before-after', text: 'Before and after' },
+  { depth: 2, slug: 'see-for-yourself', text: 'See for yourself' },
+  { depth: 2, slug: 'three-questions', text: 'The three-question test' },
+  { depth: 2, slug: 'next-steps', text: 'Explore further' },
+];
+
 // C-1 (credibility) — proof-links resolve to real, browsable files in the public
 // clone-and-run image. Stage-1 (D1, 2026-06-19): repoint-to-public-image; every href
 // returns 200 to an unauthenticated client (gate G6). Stage-2 (keystone, 2026-06-22):
@@ -32,27 +48,26 @@ const proofLinks = [
 <DocumentationLayout
   title="What is aDNA?"
   description="aDNA (Agentic DNA) is an open standard for organizing project knowledge so that both humans and AI agents can navigate it."
+  headings={headings}
   jsonLD={jsonLD}
   next={{ label: 'The Triad', href: '/learn/concepts/triad' }}
 >
-  <p>aDNA (Agentic DNA) is an open standard for organizing project knowledge so both humans and AI agents can navigate it. Think of it as a genome for your project — a structured encoding of what your project knows, who is involved, and how work gets done.</p>
+  <p class="lede">aDNA (Agentic DNA) is an open standard for organizing project knowledge so both humans and AI agents can navigate it. The point is simple: make a project easy to <strong>build on, operate, and understand</strong> — without re-explaining it at the start of every session. Think of it as a genome for your project: a structured encoding of what it knows, who's involved, and how work gets done.</p>
 
   <h2 id="the-problem">The problem</h2>
-  <p>AI agents struggle with the same thing humans do: finding the right context in a sea of files. Without structure, agents waste tokens on irrelevant content or miss critical context. You re-explain your project at the start of every session; agents make decisions that contradict earlier ones; knowledge from weeks of work evaporates when the context window closes. This is a knowledge architecture problem, not an agent capability problem — the agent is capable; it has nowhere to look.</p>
+  <p>AI agents struggle with the same thing people do: finding the right context in a sea of files. Without structure, an agent burns tokens on the wrong content — or misses what matters. You re-explain the project every session. Agents contradict decisions they made last week. Weeks of work vanish when the context window closes.</p>
+  <p>It is a knowledge-architecture problem, not an agent-capability one — the agent is capable; it has nowhere to look. Until aDNA there was no shared answer: every team improvised with long READMEs and custom prompts, and none of it survived across sessions, agents, or teams. aDNA is one open answer any team can adopt, any tool can support, and any agent can read without custom setup.</p>
 
-  <h2 id="why">Why aDNA exists</h2>
-  <p>Before aDNA there was no shared standard for how a project should present itself to an agent. Every team improvised — long READMEs in the prompt, custom system instructions, agents left to figure it out. None scale across sessions, agents, or teams. aDNA is the attempt to solve this once, openly: a standard any team can adopt, any tool can support, and any agent can navigate without custom configuration.</p>
-
-  <h2 id="the-solution">The aDNA approach</h2>
-  <p>aDNA provides three things:</p>
+  <h2 id="the-approach">How aDNA works</h2>
+  <p>aDNA gives a project three things:</p>
   <ul>
-    <li><strong>The Triad</strong> — every project is organized into <a href="/learn/concepts/triad">three directories</a>: <code>who/</code> (people and governance), <code>what/</code> (knowledge and decisions), and <code>how/</code> (operations and workflows). An agent that has seen one aDNA project knows where to look in any other.</li>
-    <li><strong>Governance files</strong> — <code>CLAUDE.md</code>, <code>AGENTS.md</code>, <code>MANIFEST.md</code>, <code>STATE.md</code>, and <code>README.md</code> orient agents at every level. The root <code>CLAUDE.md</code> is the agent's entry point: purpose, structure, rules, where to start.</li>
-    <li><strong>Typed entities</strong> — 16 base entity types (missions, sessions, lattices, inventory, and more) with consistent frontmatter and naming. An agent that knows what a <code>mission</code> file looks like can load any mission file in any aDNA project and understand it immediately.</li>
+    <li><strong>The Triad</strong> — every project splits into <a href="/learn/concepts/triad">three directories</a>: <code>who/</code> (people and governance), <code>what/</code> (knowledge and decisions), and <code>how/</code> (operations and work). See one aDNA project and you know where to look in any other.</li>
+    <li><strong>Governance files</strong> — <a href="/learn/concepts/governance-files"><code>CLAUDE.md</code></a>, <code>AGENTS.md</code>, <code>MANIFEST.md</code>, <code>STATE.md</code>, and <code>README.md</code> orient an agent at every level. The root <code>CLAUDE.md</code> is the entry point: purpose, structure, rules, where to start.</li>
+    <li><strong>Typed entities</strong> — 16 base entity types (missions, sessions, lattices, inventory, and more), each with consistent frontmatter and naming. Know what one <code>mission</code> file looks like and you can read any mission file in any aDNA project.</li>
   </ul>
 
-  <h3 id="directory-structure">What the structure looks like</h3>
-  <p>A minimal aDNA project — three directories, five governance files, everything an agent needs to orient:</p>
+  <h3 id="directory-structure">What a project looks like</h3>
+  <p>A minimal aDNA project — three directories, five governance files:</p>
   <pre><code>your-project.aDNA/
 ├── CLAUDE.md          # Agent entry point: purpose, rules, where to start
 ├── STATE.md           # Live snapshot: blockers, active work, next steps
@@ -64,35 +79,43 @@ const proofLinks = [
 └── how/               # HOW — operations, plans, execution
     ├── missions/      # Work decomposed into claimable objectives
     └── sessions/      # Per-session tracking and handoff notes</code></pre>
-  <p>An agent that has seen one aDNA project recognises this in any other — before reading a single word of content.</p>
+  <p>An agent that has seen one aDNA project recognizes this in any other — before reading a single word of content.</p>
 
   <h3 id="entity-types">The 16 entity types</h3>
-  <p>Every file has a declared type. Predictability is what makes cross-project navigation possible without custom configuration:</p>
-  <table>
-    <thead><tr><th>Triad</th><th>Entity</th><th>Purpose</th></tr></thead>
-    <tbody>
-      <tr><td>WHO</td><td><code>governance</code></td><td>Roles, policies, decision authority</td></tr>
-      <tr><td>WHO</td><td><code>team</code></td><td>Who works on the project</td></tr>
-      <tr><td>WHO</td><td><code>coordination</code></td><td>Cross-agent ephemeral notes</td></tr>
-      <tr><td>WHO</td><td><code>identity</code></td><td>Who and where this node is — hostname, operator, peer id</td></tr>
-      <tr><td>WHAT</td><td><code>context</code></td><td>Curated knowledge files agents load at session start</td></tr>
-      <tr><td>WHAT</td><td><code>decisions</code></td><td>Architecture Decision Records (ADRs)</td></tr>
-      <tr><td>WHAT</td><td><code>modules</code></td><td>Atomic capability units with typed I/O</td></tr>
-      <tr><td>WHAT</td><td><code>lattices</code></td><td>Connected workflows of modules</td></tr>
-      <tr><td>WHAT</td><td><code>inventory</code></td><td>What's installed — vaults, system state, memberships</td></tr>
-      <tr><td>HOW</td><td><code>campaigns</code></td><td>Multi-mission strategic initiatives</td></tr>
-      <tr><td>HOW</td><td><code>missions</code></td><td>Multi-session work decomposed into objectives</td></tr>
-      <tr><td>HOW</td><td><code>sessions</code></td><td>Single-session tracking and handoff notes</td></tr>
-      <tr><td>HOW</td><td><code>templates</code></td><td>Reusable file patterns</td></tr>
-      <tr><td>HOW</td><td><code>skills</code></td><td>Agent recipes and documented procedures</td></tr>
-      <tr><td>HOW</td><td><code>pipelines</code></td><td>Content-as-code automated workflows</td></tr>
-      <tr><td>HOW</td><td><code>backlog</code></td><td>Ideation and improvement tracking</td></tr>
-    </tbody>
-  </table>
+  <p>Every file declares its type. That predictability is what lets an agent navigate an unfamiliar project without custom configuration. The 16 base types span the Triad — <strong>4 WHO, 5 WHAT, 7 HOW</strong>. The full set:</p>
+  <details class="disclose">
+    <summary>The 16 base entity types</summary>
+    <div class="disclose-body">
+      <table>
+        <thead><tr><th>Triad</th><th>Entity</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>WHO</td><td><code>governance</code></td><td>Roles, policies, decision authority</td></tr>
+          <tr><td>WHO</td><td><code>team</code></td><td>Who works on the project</td></tr>
+          <tr><td>WHO</td><td><code>coordination</code></td><td>Cross-agent ephemeral notes</td></tr>
+          <tr><td>WHO</td><td><code>identity</code></td><td>Who and where this node is — hostname, operator, peer id</td></tr>
+          <tr><td>WHAT</td><td><code>context</code></td><td>Curated knowledge files agents load at session start</td></tr>
+          <tr><td>WHAT</td><td><code>decisions</code></td><td>Architecture Decision Records (ADRs)</td></tr>
+          <tr><td>WHAT</td><td><code>modules</code></td><td>Atomic capability units with typed I/O</td></tr>
+          <tr><td>WHAT</td><td><code>lattices</code></td><td>Connected workflows of modules</td></tr>
+          <tr><td>WHAT</td><td><code>inventory</code></td><td>What's installed — vaults, system state, memberships</td></tr>
+          <tr><td>HOW</td><td><code>campaigns</code></td><td>Multi-mission strategic initiatives</td></tr>
+          <tr><td>HOW</td><td><code>missions</code></td><td>Multi-session work decomposed into objectives</td></tr>
+          <tr><td>HOW</td><td><code>sessions</code></td><td>Single-session tracking and handoff notes</td></tr>
+          <tr><td>HOW</td><td><code>templates</code></td><td>Reusable file patterns</td></tr>
+          <tr><td>HOW</td><td><code>skills</code></td><td>Agent recipes and documented procedures</td></tr>
+          <tr><td>HOW</td><td><code>pipelines</code></td><td>Content-as-code automated workflows</td></tr>
+          <tr><td>HOW</td><td><code>backlog</code></td><td>Ideation and improvement tracking</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
 
   <h3 id="claude-md-example">What a CLAUDE.md looks like</h3>
-  <p>The <code>CLAUDE.md</code> is not a README — it is the agent's operating protocol. Below is the opening of this site's own vault <code>CLAUDE.md</code> — every aDNA project carries one. (The public clone-and-run image ships its own <code>CLAUDE.md</code>, the full skill set, and a polished Home it offers to bootstrap; browse those in the links below.)</p>
-  <pre><code># CLAUDE.md — aDNA.aDNA
+  <p>A <code>CLAUDE.md</code> is not a README — it is the agent's operating protocol. The agent reads it first, every session; it replaces "figure it out from the README" with a contract between project and agent.</p>
+  <details class="disclose">
+    <summary>See the opening of a real CLAUDE.md</summary>
+    <div class="disclose-body">
+      <pre><code># CLAUDE.md — aDNA.aDNA
 
 You are Rosetta — named after the Rosetta Stone, the artifact that decoded
 Egyptian hieroglyphics by presenting the same text in three scripts. This
@@ -113,29 +136,30 @@ aDNA.aDNA/
 1. Phase gates are human gates — never auto-advance between phases.
 2. Every mission gets an AAR before marking it completed.
 3. Upstream spec is source of truth — cite adna_standard.md for normative claims.</code></pre>
-  <p>The agent reads this at the start of every session. It replaces "just figure it out from the README" with a structured contract between project and agent.</p>
+    </div>
+  </details>
 
   <h2 id="before-after">Before and after</h2>
-  <p><strong>Without aDNA:</strong> a research lab has 200 files across Notion, Drive, and Git. Every new agent session pastes an outdated summary into the prompt. Decisions from last month get re-litigated. A new collaborator takes three days to orient.</p>
-  <p><strong>With aDNA:</strong> the same project has a <code>what/context/</code> library, a <code>STATE.md</code> showing current priorities and blockers, and a <code>how/missions/</code> directory with active work decomposed into claimable objectives. A new agent loads <code>CLAUDE.md</code>, reads the relevant context, and starts working in the right direction — in the same session.</p>
+  <p><strong>Without aDNA:</strong> a lab's 200 files sprawl across Notion, Drive, and Git. Every session starts by pasting an outdated summary; last month's decisions get re-litigated; a new collaborator needs three days to orient.</p>
+  <p><strong>With aDNA:</strong> the same project has a <code>what/context/</code> library, a <code>STATE.md</code> of priorities and blockers, and a <code>how/missions/</code> directory of work broken into claimable objectives. An agent loads <code>CLAUDE.md</code>, reads the relevant context, and starts in the right direction — same session.</p>
 
-  <h2 id="self-reference">aDNA is real — and inspectable</h2>
-  <p><strong>aDNA is not a concept deck; it is a standard you can clone and read today.</strong> The public clone-and-run image at <a href={REPO_HTTPS}><code>github.com/aDNA-Network/aDNA</code></a> is a real aDNA workspace — one command gives you the standard, the skills, and the templates, and a fresh clone even offers to bootstrap a complete, polished Home out of the box, ready for an agent. Inspect the actual files:</p>
+  <h2 id="see-for-yourself">See for yourself</h2>
+  <p><strong>aDNA is not a concept deck — it is a standard you can clone and read today.</strong> The public image at <a href={REPO_HTTPS}><code>github.com/aDNA-Network/aDNA</code></a> is a real aDNA workspace: one command gives you the standard, the skills, and the templates, and a fresh clone even offers to bootstrap a complete, polished Home for an agent. Inspect the actual files:</p>
   <ul>
     {proofLinks.map(({ path, href, note }) => (
       <li><a href={href}><code>{path}</code></a> — {note}</li>
     ))}
   </ul>
-  <p>This very documentation site is itself authored as an aDNA vault — the structure you are reading about is the structure that produced it. Clone the image and open it in Obsidian, VS Code, or on GitHub: every directory and frontmatter field is an aDNA concept in action.</p>
+  <p>This documentation site is itself an aDNA vault — the structure you are reading about is the structure that produced it. Clone the image and open it in Obsidian, VS Code, or on GitHub: every directory and frontmatter field is an aDNA concept in action.</p>
 
   <h2 id="three-questions">The three-question test</h2>
-  <p>A well-structured aDNA project should let any agent answer three questions immediately, without asking:</p>
+  <p>A well-structured aDNA project lets any agent answer three questions immediately, without asking:</p>
   <ol>
-    <li><strong>What is this project?</strong> — answered by <code>CLAUDE.md</code> and <code>MANIFEST.md</code> at the root</li>
-    <li><strong>What is the current state?</strong> — answered by <code>STATE.md</code> (blockers, active work, next steps)</li>
-    <li><strong>Where do I start?</strong> — answered by the active mission file in <code>how/missions/</code> or the relevant <code>AGENTS.md</code></li>
+    <li><strong>What is this project?</strong> — <code>CLAUDE.md</code> and <code>MANIFEST.md</code> at the root.</li>
+    <li><strong>What is the current state?</strong> — <code>STATE.md</code>: blockers, active work, next steps.</li>
+    <li><strong>Where do I start?</strong> — the active mission in <code>how/missions/</code>, or the nearest <code>AGENTS.md</code>.</li>
   </ol>
-  <p>If your project answers all three in under 10 seconds of reading, it is aDNA-ready.</p>
+  <p>If your project answers all three in under ten seconds of reading, it is aDNA-ready.</p>
 
   <h2 id="next-steps">Explore further</h2>
   <ul>
@@ -146,3 +170,54 @@ aDNA.aDNA/
     <li><a href="/learn/concepts/convergence">The Convergence Model</a> — how aDNA narrows context at each level of the execution hierarchy</li>
   </ul>
 </DocumentationLayout>
+
+<style>
+  /* Storyweave P4 M4.1 — progressive-disclosure affordance for the 16-entity reference
+     table (keeps the concept in the reading flow, the full table one click away). Native
+     <details>, no JS → no-JS-safe. Design tokens only (no hardcoded hex — gate-14/18). */
+  .disclose {
+    margin: var(--space-4) 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .disclose > summary {
+    list-style: none;
+    cursor: pointer;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--color-text);
+  }
+
+  .disclose > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .disclose > summary::before {
+    content: '▸';
+    display: inline-block;
+    transition: transform var(--transition-fast);
+    font-size: 0.8em;
+  }
+
+  .disclose[open] > summary::before {
+    transform: rotate(90deg);
+  }
+
+  /* Contain a wide table on small screens — scroll inside the disclosure, never push the
+     page (gate-9 responsive, 320–1440). */
+  .disclose-body {
+    padding: 0 var(--space-4) var(--space-2);
+    overflow-x: auto;
+  }
+
+  .disclose-body table {
+    margin: var(--space-2) 0 0;
+  }
+</style>
