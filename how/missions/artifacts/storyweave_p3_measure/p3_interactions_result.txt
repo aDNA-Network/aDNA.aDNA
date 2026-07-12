@@ -1,0 +1,31 @@
+PASS R1 progressive-enhancement: filter toolbar revealed (true) + no-JS facets retired (true)
+INFO R2 registry: 68 cards rendered · All-chip declares 68 · 15 filter chips (All + classes)
+PASS R2 rendered-vs-declared: 68 rendered === 68 declared (no silent drop)
+PASS R2 completeness: 68 vaults present (64→68 fix holds)
+INFO R3 purpose lines: 67/68 — missing on: /vaults/zeta.aDNA/
+PASS R3 purpose line renders on ≥67/68 cards (note fallback; headline_mission still 0/68 → Hestia)
+PASS R5 search "molecul" → 1 visible, status="1 of 68 vaults"
+PASS R5 clear search → back to 68/68
+PASS R6 filter platform → 30 visible === 30 platform cards · aria-pressed=true
+INFO R7 rail links: /get-started/ , /how/publishing/
+INFO R7 GET /get-started/ → 200
+PASS R7 rail → /get-started/ present + resolves 200
+INFO R7 GET /how/publishing/ → 200
+PASS R7 rail → /how/publishing/ present + resolves 200
+PASS A(light) /vaults axe-0 (light theme) — 0 violations
+PASS A(light) /vaults/Operations.aDNA axe-0 (light theme) — 0 violations
+INFO H1 hero node-list twin: present=true, 15 deep-links
+PASS H1 hero a11y deep-link twin present with 15 /vaults/<slug>/ links
+PASS H1 first hero deep-link /vaults/aDNA.aDNA/ → 200
+INFO G1 graph node-list twin: present=true, 68 deep-links
+PASS G1 graph a11y deep-link twin present with 68 node links
+PASS G1 first graph deep-link /vaults/Harness.aDNA/ → 200
+PASS L1 /use-cases carries an "illustrative" label (ruling-A honesty)
+PASS L1 /use-cases points to /commons for real proof
+PASS O1 /use-cases has a real on-ramp (not browse-only)
+PASS L2 /adopters labelled illustrative or points to /commons
+PASS O2 /community ladder rungs wired to actions
+INFO O3 home §1 pillar words found: Federated, Co-owned, Open, agents
+PASS O3 home §1 4-pillar payoff present (4/4 pillar words)
+
+SUMMARY: 21 passed, 0 hard-failed, 0 soft-warned
