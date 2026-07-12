@@ -4,12 +4,12 @@ site: hermes-agent.nousresearch.com
 functional_role: movement/manifesto
 tonal_revolutionary: 65
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-07-11
 inspected: 2026-06-03
 mission: mission_adna_str_p5_m58_reference_design_dna
 persona: rosetta
 status: active
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 hero_word_count: ~40
 section_count: 5
 above_fold_focus: headline (words-as-focus)
@@ -44,6 +44,18 @@ tags: [exemplar_site, hermes, movement, manifesto, tonal_north_star]
 
 - Features-as-plain-text-cards can read undifferentiated — aDNA should pair each with a custom mark (per `visual-identity-v2`), not emoji.
 - Desktop-primary flat nav won't scale to aDNA's 6 surfaces (docs/marketplace/community/network/labs) — we need breadth-first nav (see [[site_huggingface]]).
+
+## Onboarding-UX lens (2026-07-11)
+
+Re-surfaced by the operator as an **onboarding / install-UX** reference (not just the tonal north
+star), and captured **headless** (`scripts/visual_capture.mjs`, 2026-07-11) to see the JS demo panel
+WebFetch can't. The new, actionable read: Hermes puts **install at hero level** (a "Install desktop
+app" button **+** an "Install via terminal" `curl … | bash` one-liner in the hero) and leads with a
+**large product-preview panel of the agent actually working** (drafting release notes → committing →
+opening a PR) — the "video of usage." For aDNA (a *clone-and-run workspace*, no download app) this
+maps to: **surface the one-liner install on the home hero** + **a real screencast of the agent
+navigating a vault** — operationalizing this file's own "one demo-as-proof" Lift. Full guidance +
+guardrails (CWV / no-JS / honesty): [[synthesis_onboarding_guidance]] · set: [[onboarding_references/_reference_set|_reference_set]]. Candidate input to the Storyweave **P5 re-plan**.
 
 ## Related
 
