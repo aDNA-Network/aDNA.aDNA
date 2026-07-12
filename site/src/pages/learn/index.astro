@@ -4,26 +4,79 @@ import CardGrid from '../../components/sections/CardGrid.astro';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
 import heroLearn from '../../assets/heroes/hero_learn.png';
 
-const sections = [
-  { title: 'What is aDNA?', description: 'Overview of the aDNA knowledge architecture.', href: '/learn/what-is-adna' },
-  { title: 'Concepts', description: '13 core concepts — Triad to FAIR Metadata.', href: '/learn/concepts' },
-  { title: 'Tutorials', description: '9 step-by-step guides, beginner to advanced.', href: '/learn/tutorials' },
-  { title: 'Comparisons', description: 'aDNA vs. PARA, Zettelkasten, Notion, and more.', href: '/learn/comparisons' },
+// Storyweave P4 M4.2 — /learn is an ordered path, not a flat 4-card hub. The page authors
+// inline HTML, so the headings array is built by hand and passed to DocumentationLayout for
+// the sticky "On this page" TOC (M4.1 pattern; slugs match the id="" on the h2s). The
+// numbered steps encode a real sequence (overview → ideas → practice → compare). No JS
+// island → the Lighthouse budget (gate-19) is held.
+const headings = [
+  { depth: 2, slug: 'start-here', text: 'Start here' },
+  { depth: 2, slug: 'concepts', text: '1 · Understand the ideas' },
+  { depth: 2, slug: 'tutorials', text: '2 · Practice with a tutorial' },
+  { depth: 2, slug: 'compare', text: '3 · Compare to what you know' },
+  { depth: 2, slug: 'next', text: 'Where to next' },
+];
+
+const startCards = [
+  { title: 'What is aDNA?', description: 'The 5-minute overview — the problem, the approach, and what a project looks like. Read this first.', href: '/learn/what-is-adna' },
+  { title: 'Get started', description: 'Ready to build one? Stand up your first vault in under an hour.', href: '/get-started' },
+];
+
+const conceptCards = [
+  { title: 'The Triad', description: 'what / how / who — the three-way split every aDNA vault is built on. Start here.', href: '/learn/concepts/triad' },
+  { title: 'Governance Files', description: 'CLAUDE.md, AGENTS.md, STATE.md — the fixed-path files an agent reads first.', href: '/learn/concepts/governance-files' },
+  { title: 'The Ontology', description: 'The 16 entity types that give every piece of knowledge a home.', href: '/learn/concepts/ontology' },
+  { title: 'All 13 concepts', description: 'The Triad through FAIR metadata — the full concept library.', href: '/learn/concepts' },
+];
+
+const compareCards = [
+  { title: 'aDNA vs. the alternatives', description: 'Honest comparisons with PARA, Zettelkasten, Notion, Johnny.Decimal, and plain markdown.', href: '/learn/comparisons' },
+  { title: 'aDNA vs. plain Markdown', description: 'The closest baseline — what the structure buys you over a folder of notes.', href: '/learn/comparisons/adna-vs-plain-markdown' },
+];
+
+const nextCards = [
+  { title: 'Patterns', description: 'Reusable moves — the Question Test, AGENTS.md routing, dual-audience writing.', href: '/patterns' },
+  { title: 'Reference', description: 'The normative spec, governance model, and quality rubric.', href: '/reference' },
+  { title: 'Use Cases', description: 'How solo devs, startups, labs, and enterprises put aDNA to work.', href: '/use-cases' },
+  { title: 'Community', description: 'Roles, contribution paths, and the Context Commons.', href: '/community' },
 ];
 
 const jsonLD = buildCollectionPageJsonLD({
   title: 'Learn aDNA',
-  description: 'Learn the aDNA knowledge architecture through concepts, tutorials, and comparisons.',
+  description: 'An ordered path into aDNA: start with the overview, understand the core ideas, practice with a tutorial, then compare to what you already know.',
   url: Astro.url.href,
 });
 ---
 
 <DocumentationLayout
   title="Learn aDNA"
-  description="Learn the aDNA knowledge architecture through concepts, tutorials, and comparisons."
+  description="An ordered path into aDNA: start with the overview, understand the core ideas, practice with a tutorial, then compare to what you already know."
+  headings={headings}
   jsonLD={jsonLD}
   heroImage={{ src: heroLearn, alt: 'Cozy pixel-art study desk with books, a notebook, and a glowing DNA helix rising from the page — learning aDNA' }}
 >
-  <p>Start with the overview, dive into concepts, follow hands-on tutorials, or compare aDNA to systems you already know.</p>
-  <CardGrid cards={sections} columns={2} />
+  <p class="lede">New to aDNA? Work through this path top to bottom, or jump straight to the step you need — each one links to the next.</p>
+
+  <h2 id="start-here">Start here</h2>
+  <p>Read the overview first. It explains what aDNA is and why it exists in about five minutes — the one page to read if you read nothing else.</p>
+  <CardGrid cards={startCards} columns={2} />
+
+  <h2 id="concepts">1 · Understand the ideas</h2>
+  <p>Once the overview clicks, these are the concepts everything else builds on. Start with the Triad, then branch out.</p>
+  <CardGrid cards={conceptCards} columns={2} />
+
+  <h2 id="tutorials">2 · Practice with a tutorial</h2>
+  <p>Learn by doing. The tutorials run from your first CLAUDE.md to federating a vault — beginner to advanced.</p>
+  <CardGrid cards={[
+    { title: 'Create your first CLAUDE.md', description: 'The best place to start building — a governed file in about ten minutes.', href: '/learn/tutorials/first-claude-md' },
+    { title: 'All 9 tutorials', description: 'Step-by-step, beginner to advanced.', href: '/learn/tutorials' },
+  ]} columns={2} />
+
+  <h2 id="compare">3 · Compare to what you know</h2>
+  <p>Already use PARA, Zettelkasten, or Notion? See where aDNA agrees, where it differs, and when to reach for it.</p>
+  <CardGrid cards={compareCards} columns={2} />
+
+  <h2 id="next">Where to next</h2>
+  <p>Past the basics? Branch by what you need.</p>
+  <CardGrid cards={nextCards} columns={2} />
 </DocumentationLayout>

@@ -2,15 +2,35 @@
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
 import { getSortedReference } from '../../utils/collections';
+import { referenceIA } from '../../data/reference-ia';
+import { STANDARD_VERSION } from '../../data/standard';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
 import heroReference from '../../assets/heroes/hero_reference.png';
 
+// Storyweave P4 M4.2 — lead with the spec + a version stamp, then group the docs by genre
+// from the single-source referenceIA (site/src/data/reference-ia.ts). The collection supplies
+// each doc's fuller ref_title + description, joined by id; referenceIA supplies genre + order,
+// which the sidebar (navigation.ts) shares so index and sidebar can't re-diverge.
 const refs = await getSortedReference();
-const cards = refs.map((doc) => ({
-  title: doc.data.ref_title,
-  description: doc.data.description,
-  href: `/reference/${doc.id}`,
+const byId = new Map(refs.map((doc) => [doc.id, doc]));
+
+const genres = referenceIA.map((g) => ({
+  genre: g.genre,
+  slug: g.slug,
+  blurb: g.blurb,
+  cards: g.items
+    .map((it) => byId.get(it.id))
+    .filter((d): d is NonNullable<typeof d> => Boolean(d))
+    .map((doc) => ({
+      title: doc.data.ref_title,
+      description: doc.data.description ?? '',
+      href: `/reference/${doc.id}`,
+    })),
 }));
+
+// The Specification genre leads as a prominent block; the rest render as per-genre grids.
+const [specGenre, ...restGenres] = genres;
+const specDoc = byId.get('specification');
 
 const resourceCards = [
   {
@@ -25,6 +45,13 @@ const resourceCards = [
   },
 ];
 
+// Sticky in-page TOC (M4.1 pattern): the page authors inline HTML, so build headings by hand.
+const headings = [
+  { depth: 2, slug: specGenre.slug, text: 'The specification' },
+  ...restGenres.map((g) => ({ depth: 2, slug: g.slug, text: g.genre })),
+  { depth: 2, slug: 'resources', text: 'Resources' },
+];
+
 const jsonLD = buildCollectionPageJsonLD({
   title: 'Reference',
   description: 'aDNA specification documents, design rationale, governance model, glossary, and operational guides.',
@@ -35,13 +62,76 @@ const jsonLD = buildCollectionPageJsonLD({
 <DocumentationLayout
   title="Reference"
   description="aDNA specification documents, design rationale, governance model, glossary, and operational guides."
+  headings={headings}
   jsonLD={jsonLD}
   heroImage={{ src: heroReference, alt: 'Cozy pixel-art archive library with warm-lit shelves of books and a brass reading lamp — the canonical aDNA reference' }}
 >
-  <p>Upstream specification documents for the aDNA standard. These are the normative references — when in doubt, the spec is authoritative.</p>
-  <CardGrid cards={cards} columns={2} />
+  <p>The normative references for the aDNA standard. Start with the specification — when in doubt, it is authoritative — then the rationale, governance, and craft docs that support it.</p>
 
-  <h2>Resources</h2>
+  <div class="spec-lead">
+    <div class="spec-lead-top">
+      <h2 id={specGenre.slug}>The specification</h2>
+      <span class="version-stamp">Standard {STANDARD_VERSION}</span>
+    </div>
+    <p>{specDoc?.data.description ?? specGenre.blurb}</p>
+    <a class="spec-lead-cta" href="/reference/specification">Read the specification &rarr;</a>
+  </div>
+
+  {restGenres.map((g) => (
+    <section class="ref-genre">
+      <h2 id={g.slug}>{g.genre}</h2>
+      <p>{g.blurb}</p>
+      <CardGrid cards={g.cards} columns={2} />
+    </section>
+  ))}
+
+  <h2 id="resources">Resources</h2>
   <p>Vocabulary and operational guides that support the specification.</p>
   <CardGrid cards={resourceCards} columns={2} />
 </DocumentationLayout>
+
+<style>
+  /* Lead-with-spec block (Storyweave P4 M4.2, EV6): the normative doc leads, carrying a
+     drift-proof version stamp built from STANDARD_VERSION (data/standard.ts). Left-accent
+     callout mirrors the .spec-orientation idiom on reference/[...slug].astro. Tokens only. */
+  .spec-lead {
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-primary);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-md);
+    padding: var(--space-4) var(--space-6);
+    margin: var(--space-6) 0;
+  }
+
+  .spec-lead-top {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+  }
+
+  /* The h2 arrives from .prose with its own top margin; zero it here so the stamp sits on
+     the heading's baseline row inside the callout. */
+  .spec-lead-top :global(h2) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .version-stamp {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .spec-lead-cta {
+    display: inline-block;
+    margin-top: var(--space-2);
+    color: var(--color-link);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .spec-lead-cta:hover {
+    text-decoration: underline;
+  }
+</style>

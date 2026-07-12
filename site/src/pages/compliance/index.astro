@@ -1,7 +1,7 @@
 ---
 import PersonaPage from '../../components/sections/PersonaPage.astro';
 import CardGrid from '../../components/sections/CardGrid.astro';
-import { sessionCards, governanceCards, federationCards, followUpCards } from '../../data/compliance';
+import { sessionCards, governanceCards, federationCards, followUpCards, regimeBridge } from '../../data/compliance';
 ---
 
 <PersonaPage
@@ -89,6 +89,36 @@ import { sessionCards, governanceCards, federationCards, followUpCards } from '.
   </ul>
   <CardGrid cards={federationCards} columns={2} />
 
+  <h2 id="named-regimes">How this maps to named regimes</h2>
+  <p class="regime-caveat">
+    <strong>Read this first.</strong> aDNA is an open documentation standard, not a certified
+    product — adopting it does not make you compliant with anything. What a vault gives you is
+    <em>working evidence</em>: dated, attributed records a reviewer can read. Certification is
+    granted by accredited assessors against your own controls, never by adopting a standard.
+  </p>
+  <p>
+    With that caveat, the same audit trail lines up cleanly with what the frameworks
+    procurement teams cite actually ask reviewers to demonstrate:
+  </p>
+  <table class="regime-table" tabindex="0" aria-label="How aDNA maps to named compliance regimes">
+    <thead>
+      <tr>
+        <th scope="col">Framework</th>
+        <th scope="col">What it asks for</th>
+        <th scope="col">What an aDNA vault supplies</th>
+      </tr>
+    </thead>
+    <tbody>
+      {regimeBridge.map((r) => (
+        <tr>
+          <th scope="row">{r.regime}</th>
+          <td>{r.asks}</td>
+          <td>{r.supplies}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
   <h2 id="self-reference">Self-reference: this vault is the worked example</h2>
   <p>
     The audit trail described here is the one this vault runs on — including the
@@ -99,3 +129,52 @@ import { sessionCards, governanceCards, federationCards, followUpCards } from '.
   <h2 id="next-steps">Next Steps</h2>
   <CardGrid cards={followUpCards} columns={2} />
 </PersonaPage>
+
+<style>
+  /* EV7 regime bridge (Storyweave P4 M4.2). Tokens only (gate-14/18); mirrors the enterprise
+     .eval-table idiom so contrast holds AA in both themes (gate-4 / audit-p1s3). */
+  .regime-caveat {
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-primary);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    margin: var(--space-6) 0 var(--space-4);
+  }
+
+  .regime-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-6) 0;
+    font-size: var(--text-sm);
+  }
+
+  /* The global .prose stylesheet makes wide tables horizontally scrollable, and a scrollable
+     region must be keyboard-reachable (axe scrollable-region-focusable) — the same fix
+     DocumentationLayout applies to <pre>. tabindex sits on the table (the scroll container
+     itself), with a visible focus ring; no role override, so table semantics are preserved. */
+  .regime-table:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .regime-table th,
+  .regime-table td {
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+  }
+
+  .regime-table thead th {
+    font-weight: 600;
+    color: var(--color-text-heading);
+    background: var(--color-bg-alt);
+  }
+
+  .regime-table th[scope='row'] {
+    font-weight: 600;
+    color: var(--color-text-heading);
+    white-space: nowrap;
+  }
+</style>

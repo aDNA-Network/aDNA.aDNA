@@ -89,3 +89,39 @@ export const followUpCards: ComplianceCard[] = [
     description: 'Canonical definition of the session record — the atomic unit of the audit trail.',
   },
 ];
+
+export interface RegimeBridge {
+  regime: string;
+  /** what the framework asks reviewers to demonstrate */
+  asks: string;
+  /** the working artifacts an aDNA vault already produces that support that evidence */
+  supplies: string;
+}
+
+/**
+ * EV7 (Storyweave P4 M4.2): a bridge from the vault's audit-trail model to the named
+ * regimes procurement teams actually cite.
+ *
+ * HONEST FRAMING (campaign register guardrail — the Movement-Skeptic gates every line):
+ * aDNA is an open documentation standard, NOT a certified product. These rows map how a
+ * vault *supplies evidence that supports* an audit; they never claim certification, which is
+ * granted by accredited assessors against your own controls — not by adopting aDNA. The
+ * caveat renders above the table on the page.
+ */
+export const regimeBridge: RegimeBridge[] = [
+  {
+    regime: 'SOC 2',
+    asks: 'Evidence that security and change-management controls operate over time — who changed what, when, and whether it was reviewed.',
+    supplies: 'Session records in how/sessions/ plus git history give a per-change, dated, attributed trail; the AAR-on-close rule is a recurring review control; STATE.md tracks open risks.',
+  },
+  {
+    regime: 'ISO/IEC 27001',
+    asks: 'A documented management system: policies, defined roles, risk treatment, and records showing the system is actually followed.',
+    supplies: 'CLAUDE.md carries the standing orders and priority hierarchy; who/governance/ defines roles; what/decisions/ (ADRs) record risk-bearing choices with rationale — documented-and-followed, in plain markdown.',
+  },
+  {
+    regime: 'EU AI Act',
+    asks: 'For higher-risk AI use: record-keeping, human oversight, and traceability of how an AI-assisted output was produced.',
+    supplies: 'Every agent-assisted change names its intent, inputs, and reviewer; phase and mission gates are explicit human-oversight points; the trail from output → session → context inputs is the traceability the Act asks for.',
+  },
+];

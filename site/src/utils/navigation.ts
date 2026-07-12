@@ -13,6 +13,8 @@
  * FIRST matching group.
  */
 
+import { referenceIA } from '../data/reference-ia';
+
 export interface NavItem {
   label: string;
   href: string;
@@ -34,6 +36,66 @@ function isSubgroup(item: NavItem | NavSubgroup): item is NavSubgroup {
 }
 
 export { isSubgroup };
+
+/**
+ * Persistent top-level (header) nav model — Storyweave P4 M4.2. The header previously
+ * hand-maintained its own array (Header.astro), which drifted from this file: Glossary,
+ * Guides, and the persona pages were absent from the header entirely. Header.astro now
+ * renders THIS model — seven flat entries + a "More" disclosure that surfaces the doc-only
+ * sections — so the two navs can't re-diverge. Marketing pages (Network / Vaults / Commons)
+ * live only here; the full doc-section tree lives in `navigation` below.
+ */
+export interface TopNavChild {
+  label: string;
+  href: string;
+}
+
+export interface TopNavEntry {
+  label: string;
+  /** flat entries carry an href; the "More" disclosure carries children instead */
+  href?: string;
+  children?: TopNavChild[];
+}
+
+export const topNav: TopNavEntry[] = [
+  { label: 'Network', href: '/network' },
+  { label: 'Vaults', href: '/vaults' },
+  { label: 'Commons', href: '/commons' },
+  { label: 'Learn', href: '/learn' },
+  { label: 'Patterns', href: '/patterns' },
+  { label: 'Use Cases', href: '/use-cases' },
+  { label: 'Community', href: '/community' },
+  {
+    label: 'More',
+    children: [
+      { label: 'Reference', href: '/reference' },
+      { label: 'Glossary', href: '/glossary' },
+      { label: 'Guides', href: '/how' },
+      { label: 'For you', href: '/adopters' },
+    ],
+  },
+];
+
+// Reference sidebar group — derived from the single-source referenceIA
+// (site/src/data/reference-ia.ts) so the sidebar's genre grouping + order match the /reference
+// index and can't re-diverge (the old flat list had drifted to 8 vs the collection's 10).
+// Mirrors the Learn group shape: a flat lead item (Specification) + one subgroup per genre.
+const [refSpecGenre, ...refOtherGenres] = referenceIA;
+const referenceGroupItems: (NavItem | NavSubgroup)[] = [
+  {
+    label: refSpecGenre.items[0].label,
+    href: `/reference/${refSpecGenre.items[0].id}`,
+    order: 1,
+  },
+  ...refOtherGenres.map((g): NavSubgroup => ({
+    label: g.genre,
+    items: g.items.map((it, i): NavItem => ({
+      label: it.label,
+      href: `/reference/${it.id}`,
+      order: i + 1,
+    })),
+  })),
+];
 
 export const navigation: NavGroup[] = [
   {
@@ -128,16 +190,7 @@ export const navigation: NavGroup[] = [
   },
   {
     label: 'Reference',
-    items: [
-      { label: 'Specification', href: '/reference/specification', order: 1 },
-      { label: 'Design Rationale', href: '/reference/design-rationale', order: 2 },
-      { label: 'Reading Guide', href: '/reference/reading-guide', order: 3 },
-      { label: 'Agent-First Guide', href: '/reference/agent-first-guide', order: 4 },
-      { label: 'Migration Guide', href: '/reference/migration-guide', order: 5 },
-      { label: 'Tool Setup', href: '/reference/tool-setup', order: 6 },
-      { label: 'Governance Model', href: '/reference/governance-model', order: 7 },
-      { label: 'Quality Rubric', href: '/reference/quality-rubric', order: 8 },
-    ],
+    items: referenceGroupItems,
   },
   {
     label: 'Glossary',
