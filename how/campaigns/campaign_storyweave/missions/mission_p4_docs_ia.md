@@ -6,7 +6,7 @@ campaign: campaign_storyweave
 phase: P4
 decade: 2
 owner: stanley
-status: planned          # ⛩ P4 authorized 2026-07-11 at the O4 gate of [[mission_p4p5_replan]]; this mission decomposes + builds it
+status: in_progress      # M4.1 SHIPPED + LIVE 2026-07-11 (8fe4eee; /learn/what-is-adna) — O0–O2 ✅. M4.2 (O3–O4) + close (O5) pending. P4 authorized at [[mission_p4p5_replan]] O4.
 mission_class: build
 executor_tier: opus       # IA/story + the comprehension-rewrite & de-jargon judgment = opus; any mechanical typo/hex sweep drops to sonnet
 token_budget_estimated: "~150–300 kT across 3–4 sessions: M4.1 what-is-adna reframe/trim/TOC/disclosure (~2 sessions) + M4.2 /reference + /learn IA + nav reconcile (~1–2). Ship-per-phase; gate each deployable increment."
@@ -54,6 +54,8 @@ Everything else is confirmed shipped (P3 registry actionability, on-ramps). The 
 | **O3** | **M4.2 build** — `/learn` ordered path · `/reference` lead-with-spec + version stamp · group-by-genre · reconcile the two navs · `/compliance` regime bridge | the docs IA | — |
 | **O4** | **M4.2 gate + ship** — gates green · ranker ≥ 4.0 · Educator + Framework-Docs + Newcomer pass · cognitive-a11y lifts from "C+" → operator ship-gate → deploy | M4.2 live | ⛩ operator |
 | **O5** | Phase AAR + STATE + hand P5 the provisional baton (re-plan P5 after P4 is measured) | P4 close | — |
+
+> **Progress (2026-07-11):** **O0–O2 ✅** — mission authored; **M4.1 built + shipped + live** on adna.network (`8fe4eee`, PUSHED); operator GO'd the O2 ship-gate. Measured: rendered density 8492→6416 (−24%), prose FKGL 12.9→10.5, passive 6.5%→0%, sticky TOC wired, 16-entity table + CLAUDE.md disclosed; **313/313 gates**, ranker 4.23. Evidence: `how/missions/artifacts/storyweave_p4_docs_ia/measure_m41.md`. **Next = O3 (M4.2 build)** in a fresh session.
 
 ## Constraints & gates (honor; renegotiate only with operator sign-off)
 
