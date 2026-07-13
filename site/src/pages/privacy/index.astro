@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { REPO_HTTPS, PUBLISHER } from '../../data/canonical';
+
+// Storyweave P5 M5.3 O5 — the site privacy notice. Every claim below is verified against the
+// codebase (M5.3 O5 recon): zero analytics/tracking/cookies (grep-empty), the only client storage
+// is a functional `theme` preference in localStorage, fonts are self-hosted (no Google Fonts), and
+// there are no third-party script/iframe/img hosts → the browser makes zero third-party requests.
+// If any of that changes (e.g. analytics is ever added), this page MUST be updated first.
+const discussionsUrl = `${REPO_HTTPS}/discussions`;
+const issuesUrl = `${REPO_HTTPS}/issues`;
+const vercelPrivacyUrl = 'https://vercel.com/legal/privacy-policy';
+const updated = '2026-07-13';
+---
+
+<BaseLayout
+  title="Privacy — aDNA"
+  description="What adna.network collects: nothing. No accounts, no analytics, no cookies, no tracking. A static, open-source site — here is the honest, verifiable detail."
+>
+  <article class="policy">
+    <header class="policy-head">
+      <h1>Privacy</h1>
+      <p class="policy-lead">
+        The short version: <strong>adna.network collects nothing about you.</strong> No accounts,
+        no analytics, no advertising, no cookies, no tracking. It is a static, open-source
+        website — and the longer version below is written so you can verify every word.
+      </p>
+    </header>
+
+    <h2 id="what-we-collect">What we collect</h2>
+    <p>
+      <strong>Nothing.</strong> There are no sign-ups, no forms, no comment boxes, and no login.
+      We run no analytics (no Google Analytics, no Plausible, no Fathom — none), set no cookies,
+      and load no advertising or tracking pixels. Your browser makes <strong>no third-party
+      requests</strong> when you read these pages: the fonts are served from adna.network itself,
+      and there are no embedded widgets, iframes, or remote scripts.
+    </p>
+
+    <h2 id="the-one-exception">The one thing stored in your browser</h2>
+    <p>
+      If you switch between light and dark mode, we save that single preference — the word
+      <code>theme</code> — in your browser's <code>localStorage</code> so the site remembers your
+      choice on your next visit. It never leaves your device, is never sent to us or anyone else,
+      and you can clear it any time through your browser. That is the only thing the site stores,
+      and it exists purely to serve you, not to identify you.
+    </p>
+
+    <h2 id="hosting">Hosting &amp; server logs</h2>
+    <p>
+      The site is a set of pre-built static files hosted on <strong>Vercel</strong>. Like every
+      web host, Vercel processes the standard technical metadata your browser sends with any
+      request — your IP address and user-agent — to actually deliver the pages and to keep the
+      service secure and available. We do not receive, store, or analyse that data ourselves, and
+      we do not combine it with anything else. Vercel's handling of it is governed by
+      <a href={vercelPrivacyUrl} target="_blank" rel="noopener">Vercel's privacy policy</a>.
+    </p>
+
+    <h2 id="your-vault">Your aDNA vault stays yours</h2>
+    <p>
+      aDNA is an open standard for plain-Markdown, <strong>local-first</strong> knowledge vaults.
+      A vault you build with aDNA lives on your own machine and is never pushed anywhere unless
+      you choose to configure a remote. Nothing about your vault — its contents, structure, or
+      the credential <em>names</em> it indexes — is transmitted to us by using this site or the
+      standard. This site is documentation; it is not a service that ingests your data.
+    </p>
+
+    <h2 id="links-out">Links to other sites</h2>
+    <p>
+      We link out to places like GitHub, the projects in the network, and the tools aDNA composes
+      with. Once you follow a link, you are on someone else's site under their own privacy terms —
+      we have no control over, and take no responsibility for, how they handle your data.
+    </p>
+
+    <h2 id="contact">Questions or corrections</h2>
+    <p>
+      This is a community, open-source project. If you have a privacy question — or you think
+      something on this page is inaccurate — open a
+      <a href={discussionsUrl} target="_blank" rel="noopener">discussion</a> or an
+      <a href={issuesUrl} target="_blank" rel="noopener">issue</a> on the canonical repository and
+      a maintainer will follow up in the open.
+    </p>
+
+    <p class="policy-foot">
+      Published by {PUBLISHER}. Last updated {updated}. If this posture ever changes — for
+      example, if aggregate, privacy-respecting analytics are ever added — we will update this page
+      before the change ships, and note it in the site changelog.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Mirrors the /security policy page — same tokenized `.policy` treatment for a consistent
+     legal-page voice (deliberate parallel, not a shared component; Astro scopes both). */
+  .policy {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: var(--space-16) var(--space-6) var(--space-24);
+  }
+  .policy-head {
+    margin-bottom: var(--space-10);
+  }
+  .policy h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+  .policy-lead {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    line-height: 1.6;
+  }
+  .policy h2 {
+    font-size: var(--text-xl);
+    margin: var(--space-10) 0 var(--space-3);
+  }
+  .policy p {
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  .policy code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--color-surface);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+  }
+  .policy a {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+  .policy-foot {
+    margin-top: var(--space-10);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+</style>

@@ -33,6 +33,8 @@ const pages = [
   // Storyweave P5 M5.2 / B11: the new design-system reference page (token-driven; gated
   // in both registers since every swatch/sample re-themes).
   { name: 'Design system', path: '/design-system' },
+  // Storyweave P5 M5.3 / O5: the new privacy notice (a required outward legal page — lock axe both modes).
+  { name: 'Privacy', path: '/privacy' },
 ];
 
 // Dark is the default render; light is reached by seeding the theme preference before the page loads.
