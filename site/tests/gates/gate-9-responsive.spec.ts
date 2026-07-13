@@ -35,6 +35,15 @@ const pages = [
   // strip; /get-started gained a doc-hero + the fixture-driven command blocks (E6-O2).
   { name: 'Vaults index', path: '/vaults' },
   { name: 'Get Started', path: '/get-started' },
+  // Storyweave P5 M5.2 / B9: the CardGrid cols-2 index surfaces where a 280px track
+  // clipped a card at 320px (the reflow-fix regression guard; paired with the per-card
+  // overflow check below, which catches the clip that .doc-content overflow-x:hidden
+  // hides from the documentElement scrollWidth test).
+  { name: 'Use Cases index', path: '/use-cases' },
+  { name: 'Reference index', path: '/reference' },
+  { name: 'Learn hub', path: '/learn' },
+  { name: 'Patterns index', path: '/patterns' },
+  { name: 'Community index', path: '/community' },
 ];
 
 for (const vp of viewports) {
@@ -48,6 +57,25 @@ for (const vp of viewports) {
       });
 
       expect(overflow, `Horizontal overflow at ${vp.width}px on ${pg.name}`).toBe(false);
+
+      // A clipped card is invisible to the documentElement check when its scroll
+      // container sets overflow-x:hidden (the B9 defect). Assert directly that no
+      // .card-grid child is wider than its grid. No-op on pages without a card grid.
+      const cardOverflow = await page.evaluate(() => {
+        for (const grid of document.querySelectorAll('.card-grid')) {
+          const gw = (grid as HTMLElement).clientWidth;
+          for (const card of Array.from(grid.children)) {
+            if ((card as HTMLElement).scrollWidth > gw + 1) {
+              return { card: (card as HTMLElement).scrollWidth, grid: gw };
+            }
+          }
+        }
+        return null;
+      });
+      expect(
+        cardOverflow,
+        `A card exceeds its grid at ${vp.width}px on ${pg.name}: ${JSON.stringify(cardOverflow)}`,
+      ).toBeNull();
     });
   }
 }

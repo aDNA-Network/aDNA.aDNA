@@ -1,4 +1,6 @@
 ---
+import { excerpt } from '../../utils/text';
+
 interface Card {
   title: string;
   description?: string;
@@ -23,7 +25,7 @@ const { cards, columns = 3 } = Astro.props;
         <p class="card-title">{card.title}</p>
         {card.badge && <span class:list={['card-badge', `badge-${card.badge}`]}>{card.badge}</span>}
       </div>
-      {card.description && <p class="card-description">{card.description}</p>}
+      {card.description && <p class="card-description">{excerpt(card.description)}</p>}
     </a>
   ))}
 </div>
@@ -35,12 +37,16 @@ const { cards, columns = 3 } = Astro.props;
     margin: var(--space-6) 0;
   }
 
+  /* min(track, 100%) clamps the column to the container so a 280/240px track can
+     never exceed the available width at ≤320px (was clipped by .doc-content
+     overflow-x:hidden). Identical layout at every width above the track min.
+     Storyweave P5 M5.2 / B9 card-grid mobile reflow. */
   .cols-2 {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   }
 
   .cols-3 {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
   }
 
   .card {
