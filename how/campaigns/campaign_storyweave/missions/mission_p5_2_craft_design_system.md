@@ -6,7 +6,7 @@ campaign: campaign_storyweave
 phase: P5
 decade: 2
 owner: stanley
-status: active        # O0 ✅ (mission authored); O1 (B9) → O2 (B11) → O3 (/design-system) → O4 (folded) → O5 (gate+ship ⛩) → O6 (close)
+status: active        # O0–O4 ✅ built + committed local (b3a396d·5b9d0c3·81d74dd·542a989); O4 folded→M5.3; O5 verification GREEN (359 gates, axe-0 both, home Perf 100/CLS0/TBT0) → AT THE OPERATOR SHIP-GATE; O6 (AAR+baton) follows the ship
 mission_class: build
 executor_tier: sonnet     # mechanical craft/typo/hex/reflow = sonnet-class; the /design-system page design + the canvas/Mermaid palette single-sourcing = opus judgment (run under opus)
 token_budget_estimated: "~60–90 kT (B9 sweep + B11 hardening + /design-system page + 2 new gates + folded items + gate/T0/home-Lighthouse + ship-gate) across ~1–2 sessions"
@@ -84,6 +84,22 @@ Axis-4 graph cohesion (`/network` + home `NetworkDiagram` shared token treatment
 
 The visible craft debt is cleared — no mid-word/ASCII-`...` excerpts, no raw-markdown artifacts in card text or meta, no clipped card at 320px, no letterboxed doc-hero — and the design system is hardened: CSS hex tokenized, canvas/Mermaid palettes single-sourced, the two card tiers harmonized, font-weights tokenized, and a `/design-system` reference page live. Both fixes are **locked behind new gates** (gate-24 copy-craft, gate-25 token-discipline) + the extended gate-9. All **axe-0 both themes**, **home Perf ≥99/CLS0/TBT0 held**, `/network`+`/commons` unchanged. Ships live behind the operator ship-gate; per-increment ranker ≥ 4.0 building to the **capstone ≥ 4.95**.
 
+## Progress (2026-07-12)
+
+**O0–O4 ✅ built + locally committed; O5 verification GREEN; at the operator ship-gate.**
+
+- **O0** (`b3a396d`) — mission authored.
+- **O1 — B9 craft sweep** (`5b9d0c3`): `excerpt()` util (word-boundary-only, idempotent on clean text — `AGENTS.md`/`3.8+` internal dots preserved) applied in `CardGrid` → all 11 index pages' card excerpts word-safe (Unicode `…`, never ASCII `...`; use-cases 6/6 + reference mid-word cuts cleaned, visually confirmed). `CardGrid` `minmax(min(track,100%),1fr)` → no 320px card clip. Copy: commons "share back" clause clarified; `tool-setup.mdx` list→prose; `design-rationale.mdx` truncation artifact removed. **gate-24-copy-craft** (11 index pages) + **gate-9 extended** (5 index pages + per-card overflow check catching the `overflow-x:hidden`-masked clip).
+- **O2 — B11 hardening** (`81d74dd`): `--font-weight-*` tokens (literal 700/600/500 → tokens, zero visual change). VaultCard harmonized (padding `1rem`→`var(--space-4)`; hover `--color-link`→`--color-primary`; density kept). `palette.ts` single-sources the Mermaid Tokyo-Night palette (both themes verified byte-identical via T0). **gate-25-token-discipline** inventories + locks every deliberate hardcoded hex behind a dated allowlist. *Finding: residual hex is all deliberate (terminal chrome, macOS traffic lights, AA-tuned status/btn, hero scrim, B1 orphan) — a non-regression fence, not a drift-cleanup.*
+- **O3 — /design-system page** (`542a989`): token-driven living reference (swatches · type scale · fonts + weights · spacing · radius/shadow · component samples); footer-linked; noindex; passes its own gate-25 + gate-4 both themes; self-referential (SO#8). **Latent AA bug FIXED**: CardGrid badges `updated/deprecated/experimental` used raw `--color-info/warning/accent` as text on a 15% tint → 1.9–2.45:1 in light mode (FAIL); the 2 index pages that wire `badge:` render these live → darkened toward `--color-text` via the proven status-pill pattern → AA both modes.
+- **O4 — folded items → DEFERRED to M5.3**: both (Axis-4 graph cohesion; hero keyboard-focus) touch home/hero surfaces; deferring keeps M5.2 a clean home-safe increment and lets M5.3 (the home-touching a11y/perf mission) carry them under its home-Lighthouse gate.
+
+**O5 verification (GREEN):** full `npm run test:gates` **359 passed** (315 M5.1a baseline + 44: gate-24, extended gate-9, gate-4 design-system ×2, gate-25). T0 headless both themes on `/use-cases · /reference · /vaults · /learn · /design-system · knowledge-graph` → **axe-0**. **Home Lighthouse Perf 100 / CLS 0 / TBT 0 / LCP 0.5s** (budget held; home structurally untouched — only +4 unused-on-home token lines + the global footer link). `/network` diff = the intended footer "Design system" link only.
+
+> **Note on "zero rendered-diff":** unlike M5.1a's additive-optional-prop pattern, M5.2 intentionally changes **global** surfaces (footer link + token defs on every page + the badge AA fix on the 2 badge-wiring index pages). The verification is "no *unintended* diff," not byte-identical `/network`+`/commons`.
+
+**Residuals (documented, non-blocking):** hero-letterbox PNG re-cut (asset work — baked-in bars on 4 doc-hero PNGs; needs the imagen pipeline / crop-rescale) · 51-file frontmatter meta regen (`scripts/transform-content.mjs` — cleans detail-page `<meta>` too) · HomeHero canvas/scrim palette single-source + stability-color token dedup (in the gate-25 allowlist) · image-palette build check (→ M5.3-adjacent).
+
 ## AAR (SO#5) — M5.2 close
 
-_(appended at O6)_
+_(appended at O6, after the operator ship-gate)_
