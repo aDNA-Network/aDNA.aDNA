@@ -331,6 +331,16 @@ const heroNodes = graphLed
       // Real connected graph — 15 vaults / 14 relationships (the operator-approved T2 layout).
       // 6th field = the vault_slug for the node's /vaults/[slug] deep-link (Storyweave P3 / M3.1).
       // Slugs are the canonical route ids from vaults.json (some lower-case: sciencestanley/zenzachary/…).
+      //
+      // ⚠ COHESION / DRIFT NOTE (Storyweave P5 / M5.3 O4b — "hold, don't fix"): this hardcoded N/E
+      // array is a DECORATIVE parallel to the DATA-DRIVEN `hero_graph.svg` (built from vaults.json by
+      // scripts/build_graph_svg.mjs `composeHeroGraph`, inlined above via `?raw`). `npm run sync:graph`
+      // regenerates the SVG + the keyboard/AT deep-link nodelist parsed from it — but NOT this array.
+      // Drift is intentionally LOW-severity: this <canvas> is aria-hidden decorative; the SSR SVG and the
+      // nodelist deep-links (the a11y/no-JS/routing floor) remain the authoritative data-driven layer.
+      // If vault relationships change, re-sync these 15 nodes / 14 edges by hand to match the SVG.
+      // Forward follow-up (post-capstone): single-source this constellation from the hero_graph data so
+      // one edit updates both. NOT done here — it touches LCP-critical hero init (out of M5.3's scope).
       const N: any[] = [
         ['aDNA.aDNA', 0.00, 0.06, 6, 'core', 'aDNA.aDNA'], ['III.aDNA', -0.40, -0.30, 5, 'hub', 'III.aDNA'], ['Astro.aDNA', 0.42, -0.24, 5, 'hub', 'Astro.aDNA'],
         ['WilhelmAI', 0.04, -0.60, 5, 'org', 'WilhelmAI.aDNA'], ['RareArchive', -0.22, -0.92, 3, 'org', 'RareArchive.aDNA'], ['RareHarness', 0.60, -0.58, 4, 'plat', 'Harness.aDNA'],
