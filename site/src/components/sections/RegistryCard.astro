@@ -102,7 +102,7 @@ const note = shortNote(vault.note);
   .reg-name {
     font-family: var(--font-display);
     font-size: var(--text-lg);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     color: var(--color-text-heading);
     margin: var(--space-1) 0 0;
   }
@@ -125,7 +125,7 @@ const note = shortNote(vault.note);
   .reg-open {
     font-family: var(--font-display);
     font-size: var(--text-sm);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     /* Affordance — cyan link token (AA both modes; purple --color-primary fails for sm text). */
     color: var(--color-link);
     margin-top: auto;

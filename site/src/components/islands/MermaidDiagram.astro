@@ -24,6 +24,11 @@ const diagramId = `mermaid-${Math.random().toString(36).slice(2, 9)}`;
 </figure>
 
 <script>
+  // Tokyo-Night (ADR-032) diagram theme — single-sourced from styles/palette.ts so the
+  // hex can't drift across components (Storyweave P5 M5.2 / B11). Dark = dark-surface node
+  // fills + light text + purple borders + cyan edges; light = brand purple/amber.
+  import { mermaidThemeVariables } from '../../styles/palette';
+
   async function renderMermaid() {
     const containers = document.querySelectorAll('.mermaid-container[data-chart]');
     if (containers.length === 0) return;
@@ -34,29 +39,7 @@ const diagramId = `mermaid-${Math.random().toString(36).slice(2, 9)}`;
     mermaid.initialize({
       startOnLoad: false,
       theme: isDark ? 'dark' : 'default',
-      themeVariables: isDark
-        ? {
-            // Tokyo Night (ADR-032): dark-surface node fills + light text (better contrast
-            // than vibrant fills), purple borders, cyan edges.
-            primaryColor: '#24283b',
-            primaryTextColor: '#c0caf5',
-            primaryBorderColor: '#9d7cd8',
-            lineColor: '#7dcfff',
-            secondaryColor: '#414868',
-            tertiaryColor: '#1a1b26',
-            // Edge-label text is light (#ccc); mermaid's default dark label background (#585858)
-            // gives only 4.43:1 (< AA 4.5). Pin a dark Tokyo-Night label background so edge labels
-            // (federation / supersedes / …) clear AA. (E4 cycle 154.)
-            edgeLabelBackground: '#1a1b26',
-          }
-        : {
-            primaryColor: '#6d4bb8',
-            primaryTextColor: '#ffffff',
-            primaryBorderColor: '#58399c',
-            lineColor: '#1f6f9e',
-            secondaryColor: '#e0a84c',
-            tertiaryColor: '#f5f5f5',
-          },
+      themeVariables: isDark ? mermaidThemeVariables.dark : mermaidThemeVariables.light,
       fontFamily: "'Space Grotesk', system-ui, sans-serif",
     });
 

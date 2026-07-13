@@ -15,6 +15,14 @@
   --text-3xl: clamp(1.875rem, 1.4rem + 2.5vw, 2.8rem);
   --text-4xl: clamp(2.25rem, 1.5rem + 3.75vw, 3.6rem);
 
+  /* Font-weight scale (Storyweave P5 M5.2 / B11 — font-weight discipline). Replaces
+     the scattered literal 400/500/600/700 across components with named tokens; same
+     numeric values, so zero rendered change. */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
   /* Spacing scale (4px base) */
   --space-1: 0.25rem;
   --space-2: 0.5rem;

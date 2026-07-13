@@ -37,8 +37,12 @@ const searchBlob = [vault.display_name, persona, vault.class, purpose]
      off-palette blue hover + pale-pastel status fills that inherited dark page text at 1.15:1 (78-node
      WCAG-AA failure on the Tokyo-Night register). Status pills mirror RegistryCard's AA-safe color-mix
      (text darkened toward --color-text so the label meets AA on its own pale tint, both modes). */
-  .vault-card { padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); transition: border-color var(--transition-fast); }
-  .vault-card:hover { border-color: var(--color-link); }
+  /* Storyweave P5 M5.2 / B11: harmonized with RegistryCard — tokenized padding
+     (1rem = --space-4) + the --color-primary hover the sibling card tiers share
+     (was the off-tier --color-link blue). Density stays denser than RegistryCard
+     by design (this is the /vaults listing card). */
+  .vault-card { padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-lg); transition: border-color var(--transition-fast); }
+  .vault-card:hover { border-color: var(--color-primary); }
   .vault-card h3 a { text-decoration: none; color: var(--color-text-heading); }
   .vault-card-persona { color: var(--color-text-muted); font-size: 0.9em; margin: 0.25rem 0; }
   .vault-card-tagline { font-style: italic; color: var(--color-text-muted); margin: 0.5rem 0; }
