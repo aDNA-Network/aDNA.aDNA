@@ -35,6 +35,13 @@ const pages = [
   { name: 'Design system', path: '/design-system' },
   // Storyweave P5 M5.3 / O5: the new privacy notice (a required outward legal page — lock axe both modes).
   { name: 'Privacy', path: '/privacy' },
+  // Storyweave P5 M5.3 / O6: representative index/landing archetypes — durably lock the long-tail
+  // both-mode axe that the one-off T0 sweep confirmed. CardGrid index pages were the M5.2 latent
+  // badge-AA locus; /about is a prose marketing page. (T0 confirmed all four axe-0 both themes.)
+  { name: 'Use-cases index', path: '/use-cases' },
+  { name: 'Guides index', path: '/how' },
+  { name: 'Glossary index', path: '/glossary' },
+  { name: 'About', path: '/about' },
 ];
 
 // Dark is the default render; light is reached by seeding the theme preference before the page loads.
