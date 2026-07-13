@@ -16,12 +16,17 @@
 import { test, expect } from '@playwright/test';
 import installTruth from '../../src/data/install_truth.json' with { type: 'json' };
 
-const SURFACES = ['/get-started/', '/network/'];
+// '/' (home) added Storyweave M5.1a — the hero surfaces the single-sourced one-liner as a copy-pill.
+// The pill renders the command in a <code> (not a <pre>), so the home check widens the locator to
+// `pre, code`; the other surfaces stay strict (`pre` only) so a stray inline <code> can't mask a
+// missing install block. The one-liner contains each step command verbatim (fixture-integrity below).
+const SURFACES = ['/', '/get-started/', '/network/'];
 
 for (const route of SURFACES) {
   test(`G12 Install truth: ${route} renders the canonical commands verbatim`, async ({ page }) => {
     await page.goto(route, { waitUntil: 'networkidle' });
-    const codeText = (await page.locator('pre').allTextContents()).join('\n').replace(/\s+/g, ' ');
+    const cmdSelector = route === '/' ? 'pre, code' : 'pre';
+    const codeText = (await page.locator(cmdSelector).allTextContents()).join('\n').replace(/\s+/g, ' ');
     for (const [step, cmd] of Object.entries(installTruth.commands)) {
       expect(codeText, `${route} must render the "${step}" command`).toContain(
         cmd.replace(/\s+/g, ' '),

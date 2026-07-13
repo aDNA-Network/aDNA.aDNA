@@ -1,6 +1,7 @@
 ---
 import { Picture } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import { STANDARD_LICENSE } from '../../data/standard';
 
 interface Stat {
   value: string;
@@ -54,6 +55,18 @@ interface Props {
   heroGraph?: string;
   /** Small caption under the hero-graph panel (graph-led variant only). */
   heroGraphCaption?: string;
+  /**
+   * Optional onboarding beats (Storyweave P5 / M5.1a — R2 hero-install + R3 license eyebrow).
+   * HOME-ONLY, additive-optional (the zero-diff pattern, same as `reframe` + `heroGraph`):
+   *   • installOneLiner → a copy-pill under the CTAs surfacing the clone-and-run command. Pass the
+   *     SINGLE SOURCE (install_truth.json `one_liner`) — never a literal; gate-12 covers `/`.
+   *   • showLicenseEyebrow → an "Open standard · <license>" eyebrow ABOVE the title, drawn from
+   *     standard.ts STANDARD_LICENSE (drift-proof). The `.hero-trust-links` badge is single-sourced
+   *     from the same const on every surface, so its render is unchanged.
+   * ABSENT (/network, /commons) → the hero renders exactly as before (pixel-identical).
+   */
+  installOneLiner?: string;
+  showLicenseEyebrow?: boolean;
 }
 
 const {
@@ -77,6 +90,8 @@ const {
   proofLinkLabel,
   heroGraph,
   heroGraphCaption = '15 connected vaults · 14 relationships',
+  installOneLiner,
+  showLicenseEyebrow = false,
 } = Astro.props;
 
 // Home-only graph-led variant is active iff a hero graph was passed (additive-optional prop).
@@ -116,6 +131,12 @@ const heroNodes = graphLed
 
       <div class="hero-grid">
         <div class="hero-copy">
+          {/* R3 license-forward trust (Storyweave M5.1a): a small eyebrow ABOVE the title. Sits
+              around `.hero-lead`, never touches it → the gate-23 hero phrases stay verbatim.
+              "MIT" is single-sourced from standard.ts STANDARD_LICENSE (drift-proof). */}
+          {showLicenseEyebrow && (
+            <p class="hero-eyebrow">Open standard · {STANDARD_LICENSE}</p>
+          )}
           <h1 class="hero-title hero-title--split">
             {/* Accent "Network" — the second word — while keeping the full accessible title. */}
             <span class="hero-title-lead">The aDNA</span>{' '}
@@ -134,10 +155,27 @@ const heroNodes = graphLed
             <a href={secondaryHref} class="btn btn-secondary" data-astro-prefetch>{secondaryLabel}</a>
           </div>
 
+          {/* R2 hero-level install (Storyweave M5.1a): the clone-and-run one-liner as a copy-pill,
+              a tertiary "or start now" affordance under the CTAs (Get Started stays the fuller CTA).
+              Command is the SINGLE SOURCE (install_truth.json one_liner) passed from index.astro —
+              never hardcoded; gate-12 verifies it verbatim on `/`. Static → CLS-safe. */}
+          {installOneLiner && (
+            <div class="hero-install">
+              <span class="hero-install-prompt" aria-hidden="true">$</span>
+              <code class="hero-install-cmd">{installOneLiner}</code>
+              <button class="hero-install-copy" type="button" aria-label="Copy install command">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                  <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                </svg>
+              </button>
+            </div>
+          )}
+
           <div class="hero-trust-links">
             <a href={githubHref} target="_blank" rel="noopener" class="trust-link">Open source on GitHub</a>
             <span class="trust-sep" aria-hidden="true">·</span>
-            <span class="trust-link trust-static">MIT-licensed</span>
+            <span class="trust-link trust-static">{STANDARD_LICENSE}-licensed</span>
             <span class="trust-sep" aria-hidden="true">·</span>
             <a href="/reference/specification" class="trust-link" data-astro-prefetch>built on the Lattice Protocol — the coordination layer, opening progressively</a>
           </div>
@@ -455,6 +493,25 @@ const heroNodes = graphLed
   </script>
 )}
 
+<script>
+  // R2 hero-install copy (Storyweave M5.1a) — mirrors TryInClaudeCode's copy pattern. No-op on
+  // surfaces without the pill (/network, /commons never render `.hero-install`). Astro-bundled
+  // deferred module script → not render-blocking (gate-10). Copies the exact one-liner from the
+  // `<code>` textContent (the decorative `$` prompt lives in a separate span, never copied).
+  document.querySelectorAll<HTMLButtonElement>('.hero-install-copy').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const cmd = btn.closest('.hero-install')?.querySelector('.hero-install-cmd')?.textContent ?? '';
+      try {
+        await navigator.clipboard.writeText(cmd);
+        btn.setAttribute('aria-label', 'Copied!');
+        setTimeout(() => btn.setAttribute('aria-label', 'Copy install command'), 2000);
+      } catch {
+        /* clipboard unavailable (insecure context) — the command stays visible + selectable */
+      }
+    });
+  });
+</script>
+
 <style>
   /* E1 c3 dark-mode-first hero band (scoped `.dark`) retained; c146 makes it image-led. */
   .hero {
@@ -553,6 +610,82 @@ const heroNodes = graphLed
     margin: calc(-1 * var(--space-2)) auto var(--space-6);
     line-height: 1.6;
     text-wrap: balance;
+  }
+
+  /* R3 license eyebrow (Storyweave M5.1a) — a small tracked label above the title. The hero is
+     always `.dark`, so the warm accent ink sits on the dark ground at AAA contrast (gate-4). */
+  .hero-eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin: 0 0 var(--space-3);
+  }
+
+  /* R2 hero install (Storyweave M5.1a) — the clone-and-run one-liner as a terminal-style copy-pill,
+     mirroring TryInClaudeCode's `.cta-install`. The command WRAPS (never ellipsis/scroll — the
+     newcomer must READ the whole thing, and wrapping avoids a scrollable-region-focusable axe flag);
+     the button copies the full one-liner. Static content → CLS-safe; contains its own width (gate-9). */
+  .hero-install {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    margin-top: var(--space-5);
+    max-width: min(38rem, 100%);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-3);
+  }
+
+  .hero-install-prompt {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: 1.7;
+    color: var(--color-accent);
+    user-select: none;
+  }
+
+  .hero-install-cmd {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: 1.7;
+    color: var(--color-text);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    /* Read left-to-right like a terminal even where the stacked mobile hero centers its copy. */
+    text-align: left;
+  }
+
+  .hero-install-copy {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    margin: calc(-1 * var(--space-2)) calc(-1 * var(--space-1)) calc(-1 * var(--space-2)) 0;
+    padding: var(--space-1);
+    background: none;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .hero-install-copy:hover {
+    color: var(--color-text);
+    background: var(--color-border);
+  }
+
+  .hero-install-copy:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
   }
 
   .trust-static {

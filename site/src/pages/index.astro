@@ -8,6 +8,10 @@ import { steps, stats, audiences } from '../data/home';
 import { STANDARD_VERSION, ENTITY_TYPE_COUNT } from '../data/standard';
 import vaultsData from '../data/vaults.json';
 import subnetworksData from '../data/subnetworks.json';
+// Storyweave P5 / M5.1a — the single-sourced clone-and-run one-liner for the hero install pill (R2).
+// Same fixture /get-started + /network consume (built by scripts/build_install_truth.mjs); never
+// hardcoded. HOME-ONLY additive-optional prop → /network + /commons stay zero-diff.
+import installTruth from '../data/install_truth.json';
 import heroImage from '../assets/heroes/hero_adna_helix.png';
 // Storyweave direction A — the "living network" hero graph: the compact connected-component radial
 // pre-rendered by scripts/build_graph_svg.mjs (npm run sync:graph) → committed static SVG, imported
@@ -79,6 +83,8 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
     stats={stats}
     heroGraph={heroGraph}
     heroGraphCaption="15 connected vaults · 14 relationships"
+    installOneLiner={installTruth.one_liner}
+    showLicenseEyebrow={true}
   />
 
   <!-- 1 · What a context democracy is -->
