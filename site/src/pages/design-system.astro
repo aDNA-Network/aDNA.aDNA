@@ -91,8 +91,8 @@ const badges = ['new', 'updated', 'deprecated', 'experimental'];
       <h1>Design system</h1>
       <p class="ds-lead">
         The tokens and components adna.network is built from — the SS-Ghibli / Tokyo-Night register
-        (ADR-032). Every swatch and sample below renders straight from the live tokens, so this page
-        can never drift from what the site ships. Toggle the theme to see both registers.
+        (ADR-032). Every swatch and sample below renders straight from the live tokens, so the colours
+        and sizes shown can't drift from what the site ships. Toggle the theme to see both registers.
       </p>
     </header>
 
@@ -330,6 +330,7 @@ const badges = ['new', 'updated', 'deprecated', 'experimental'];
   .ds-shadow-box {
     width: 4rem; height: 4rem;
     background: var(--color-surface);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
   }
 
