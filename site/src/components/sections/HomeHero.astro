@@ -1016,6 +1016,18 @@ const heroNodes = graphLed
     text-decoration: underline;
     font-size: var(--text-sm, 0.9rem);
   }
+  /* Storyweave P5 / M5.3 (O4a) — a dedicated, clearly-visible focus ring on each revealed
+     deep-link, matching the system focus treatment (global.css .btn:focus-visible) so a sighted
+     keyboard user sees exactly which vault is focused inside the panel. Additive CSS only — no
+     markup/DOM change (p3_interactions H1 present-count + gate suite unaffected); outline + shadow
+     only, so no layout shift (home CLS/TBT held). Ring hue = --color-primary, consistent with every
+     other focus ring in the app (a focus ring is a system affordance, not a per-component color). */
+  .hero-graph-nodelist a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
 
   /* Node drift (progressive enhancement) transitions in gently; transform-box keeps the
      translate relative to each node's own box. No effect with JS off. */
