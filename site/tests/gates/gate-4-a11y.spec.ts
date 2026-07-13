@@ -30,6 +30,9 @@ const pages = [
   { name: 'Vaults index', path: '/vaults' },
   { name: 'Get Started', path: '/get-started' },
   { name: 'Specification', path: '/reference/specification' },
+  // Storyweave P5 M5.2 / B11: the new design-system reference page (token-driven; gated
+  // in both registers since every swatch/sample re-themes).
+  { name: 'Design system', path: '/design-system' },
 ];
 
 // Dark is the default render; light is reached by seeding the theme preference before the page loads.

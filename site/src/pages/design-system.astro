@@ -1,0 +1,362 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Callout from '../components/sections/Callout.astro';
+
+// The living design-system reference (Storyweave P5 M5.2 / B11). Every swatch, size,
+// and sample below is driven from the actual design tokens (tokens.css + branding.css)
+// via live var() styles — the page reads its own token system, so it can never drift
+// from what the site ships. Token-pure (no hardcoded hex → passes gate-25).
+
+const colorGroups = [
+  {
+    label: 'Surfaces',
+    tokens: [
+      { name: '--color-bg', role: 'page background' },
+      { name: '--color-bg-alt', role: 'elevated / alt surface' },
+      { name: '--color-surface', role: 'cards / panels' },
+      { name: '--color-border', role: 'hairlines / dividers' },
+    ],
+  },
+  {
+    label: 'Text',
+    tokens: [
+      { name: '--color-text', role: 'body copy' },
+      { name: '--color-text-muted', role: 'secondary / metadata' },
+      { name: '--color-text-heading', role: 'headings' },
+    ],
+  },
+  {
+    label: 'Brand',
+    tokens: [
+      { name: '--color-primary', role: 'purple — primary / accents' },
+      { name: '--color-link', role: 'cyan — links / connections' },
+      { name: '--color-accent', role: 'amber — sparing highlight' },
+    ],
+  },
+  {
+    label: 'Status',
+    tokens: [
+      { name: '--color-success', role: 'success / active' },
+      { name: '--color-info', role: 'info' },
+      { name: '--color-warning', role: 'warning' },
+      { name: '--color-error', role: 'error / deprecated' },
+    ],
+  },
+];
+
+const typeScale = [
+  { name: '--text-4xl', use: 'hero display' },
+  { name: '--text-3xl', use: 'page title' },
+  { name: '--text-2xl', use: 'section heading' },
+  { name: '--text-xl', use: 'subsection' },
+  { name: '--text-lg', use: 'lead / card title' },
+  { name: '--text-base', use: 'body' },
+  { name: '--text-sm', use: 'secondary / captions' },
+  { name: '--text-xs', use: 'labels / metadata' },
+];
+
+const fonts = [
+  { name: '--font-display', label: 'Space Grotesk — display', sample: 'Give your project a knowledge architecture' },
+  { name: '--font-body', label: 'Inter — body', sample: 'Files are nodes, wikilinks are edges, AGENTS.md files are the navigation layer.' },
+  { name: '--font-mono', label: 'JetBrains Mono — code', sample: 'git clone …/aDNA.git ~/aDNA && cd ~/aDNA && claude' },
+];
+
+const weights = [
+  { name: '--font-weight-regular', label: 'Regular 400' },
+  { name: '--font-weight-medium', label: 'Medium 500' },
+  { name: '--font-weight-semibold', label: 'Semibold 600' },
+  { name: '--font-weight-bold', label: 'Bold 700' },
+];
+
+const spaces = ['--space-1', '--space-2', '--space-3', '--space-4', '--space-5', '--space-6', '--space-8', '--space-10', '--space-12', '--space-16'];
+const radii = [
+  { name: '--radius-sm', label: 'sm' },
+  { name: '--radius-md', label: 'md' },
+  { name: '--radius-lg', label: 'lg' },
+  { name: '--radius-xl', label: 'xl' },
+  { name: '--radius-full', label: 'full' },
+];
+const shadows = ['--shadow-sm', '--shadow-md', '--shadow-lg'];
+const badges = ['new', 'updated', 'deprecated', 'experimental'];
+---
+
+<BaseLayout
+  title="Design System"
+  description="The living design-token reference for adna.network — colour, type, spacing, radius, shadow, and component samples, driven straight from the site's own tokens."
+  noindex={true}
+>
+  <div class="ds">
+    <header class="ds-head">
+      <p class="ds-eyebrow">Reference</p>
+      <h1>Design system</h1>
+      <p class="ds-lead">
+        The tokens and components adna.network is built from — the SS-Ghibli / Tokyo-Night register
+        (ADR-032). Every swatch and sample below renders straight from the live tokens, so this page
+        can never drift from what the site ships. Toggle the theme to see both registers.
+      </p>
+    </header>
+
+    <section class="ds-section" aria-labelledby="color">
+      <h2 id="color">Colour</h2>
+      {colorGroups.map((group) => (
+        <>
+          <h3>{group.label}</h3>
+          <ul class="ds-swatches" role="list">
+            {group.tokens.map((t) => (
+              <li class="ds-swatch">
+                <span class="ds-swatch-chip" style={`background: var(${t.name});`}></span>
+                <code class="ds-swatch-name">{t.name}</code>
+                <span class="ds-swatch-role">{t.role}</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      ))}
+    </section>
+
+    <section class="ds-section" aria-labelledby="type">
+      <h2 id="type">Typography</h2>
+      <h3>Type scale</h3>
+      <ul class="ds-type" role="list">
+        {typeScale.map((t) => (
+          <li class="ds-type-row">
+            <span class="ds-type-sample" style={`font-size: var(${t.name});`}>Aa knowledge architecture</span>
+            <span class="ds-type-meta"><code>{t.name}</code> · {t.use}</span>
+          </li>
+        ))}
+      </ul>
+      <h3>Font families</h3>
+      <ul class="ds-fonts" role="list">
+        {fonts.map((f) => (
+          <li class="ds-font-row">
+            <span class="ds-font-label"><code>{f.name}</code> — {f.label}</span>
+            <span class="ds-font-sample" style={`font-family: var(${f.name});`}>{f.sample}</span>
+          </li>
+        ))}
+      </ul>
+      <h3>Font weights</h3>
+      <ul class="ds-weights" role="list">
+        {weights.map((w) => (
+          <li class="ds-weight-row" style={`font-weight: var(${w.name});`}>
+            {w.label} — <code>{w.name}</code>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="ds-section" aria-labelledby="space">
+      <h2 id="space">Spacing</h2>
+      <ul class="ds-spaces" role="list">
+        {spaces.map((s) => (
+          <li class="ds-space-row">
+            <span class="ds-space-bar" style={`width: var(${s});`}></span>
+            <code>{s}</code>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="ds-section" aria-labelledby="radius">
+      <h2 id="radius">Radius &amp; elevation</h2>
+      <div class="ds-two-col">
+        <div>
+          <h3>Radius</h3>
+          <ul class="ds-radii" role="list">
+            {radii.map((r) => (
+              <li class="ds-radius">
+                <span class="ds-radius-box" style={`border-radius: var(${r.name});`}></span>
+                <code>{r.name}</code>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3>Shadow</h3>
+          <ul class="ds-shadows" role="list">
+            {shadows.map((s) => (
+              <li class="ds-shadow">
+                <span class="ds-shadow-box" style={`box-shadow: var(${s});`}></span>
+                <code>{s}</code>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section" aria-labelledby="components">
+      <h2 id="components">Components</h2>
+
+      <h3>Buttons</h3>
+      <div class="ds-row">
+        <a class="btn btn-primary" href="#components">Primary action</a>
+        <a class="btn btn-secondary" href="#components">Secondary</a>
+      </div>
+
+      <h3>Badges</h3>
+      <div class="ds-row">
+        {badges.map((b) => (
+          <span class:list={['ds-badge', `badge-${b}`]}>{b}</span>
+        ))}
+      </div>
+
+      <h3>Status pills</h3>
+      <div class="ds-row">
+        <span class="ds-pill status-active">active</span>
+        <span class="ds-pill status-genesis">genesis</span>
+        <span class="ds-pill status-superseded">superseded</span>
+      </div>
+
+      <h3>Callouts</h3>
+      <Callout variant="info" title="Note">
+        <p>Callouts carry a left accent keyed to a status token; the body inherits <code>--color-text</code>.</p>
+      </Callout>
+      <Callout variant="tip" title="Tip">
+        <p>Every variant is token-driven, so it re-themes with the page.</p>
+      </Callout>
+      <Callout variant="self-reference" title="In this vault…">
+        <p>This page is itself a working example of the token system it documents.</p>
+      </Callout>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .ds {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-6) var(--space-20);
+  }
+
+  .ds-head { margin-bottom: var(--space-12); }
+  .ds-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-2);
+  }
+  .ds-head h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-heading);
+    margin: 0 0 var(--space-4);
+  }
+  .ds-lead {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    max-width: 60ch;
+    line-height: 1.6;
+  }
+
+  .ds-section {
+    margin: var(--space-16) 0 0;
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
+  }
+  .ds-section h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-heading);
+    margin: 0 0 var(--space-4);
+  }
+  .ds-section h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin: var(--space-8) 0 var(--space-4);
+  }
+
+  code { font-family: var(--font-mono); font-size: 0.9em; color: var(--color-text); }
+
+  /* Colour swatches */
+  .ds-swatches {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; gap: var(--space-4);
+    grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  }
+  .ds-swatch {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: var(--space-3);
+    align-items: center;
+  }
+  .ds-swatch-chip {
+    grid-row: 1 / 3;
+    width: 2.75rem; height: 2.75rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+  .ds-swatch-name { font-size: var(--text-sm); color: var(--color-text); align-self: end; }
+  .ds-swatch-role { font-size: var(--text-xs); color: var(--color-text-muted); align-self: start; }
+
+  /* Type scale */
+  .ds-type, .ds-fonts, .ds-weights, .ds-spaces, .ds-radii, .ds-shadows {
+    list-style: none; margin: 0; padding: 0;
+  }
+  .ds-type-row {
+    display: flex; align-items: baseline; flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .ds-type-sample { color: var(--color-text-heading); font-family: var(--font-display); line-height: 1.2; }
+  .ds-type-meta { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+  .ds-font-row { padding: var(--space-3) 0; border-bottom: 1px solid var(--color-border); }
+  .ds-font-label { display: block; font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-1); }
+  .ds-font-sample { display: block; font-size: var(--text-lg); color: var(--color-text); }
+
+  .ds-weight-row { padding: var(--space-2) 0; color: var(--color-text); font-size: var(--text-lg); }
+
+  /* Spacing bars */
+  .ds-space-row { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-1) 0; }
+  .ds-space-bar { height: 1rem; background: var(--color-primary); border-radius: var(--radius-sm); }
+
+  /* Radius + shadow */
+  .ds-two-col { display: grid; gap: var(--space-8); grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
+  .ds-radii, .ds-shadows { display: flex; flex-wrap: wrap; gap: var(--space-6); }
+  .ds-radius, .ds-shadow { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); }
+  .ds-radius-box {
+    width: 4rem; height: 4rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+  }
+  .ds-shadow-box {
+    width: 4rem; height: 4rem;
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+  }
+
+  /* Component samples */
+  .ds-row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; margin-bottom: var(--space-2); }
+
+  .ds-badge {
+    font-size: var(--text-xs);
+    padding: 0.1em 0.5em;
+    border-radius: var(--radius-full);
+    font-weight: var(--font-weight-medium);
+  }
+  /* AA-safe badge labels — identical to CardGrid (M5.2 B11). */
+  .badge-new { background: color-mix(in srgb, var(--color-success) 15%, transparent); color: var(--color-success); }
+  .badge-updated { background: color-mix(in srgb, var(--color-info) 15%, transparent); color: color-mix(in srgb, var(--color-info) 55%, var(--color-text)); }
+  .badge-deprecated { background: color-mix(in srgb, var(--color-warning) 15%, transparent); color: color-mix(in srgb, var(--color-warning) 55%, var(--color-text)); }
+  .badge-experimental { background: color-mix(in srgb, var(--color-accent) 15%, transparent); color: color-mix(in srgb, var(--color-accent) 45%, var(--color-text)); }
+
+  .ds-pill {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    padding: 0.1em 0.55em;
+    border-radius: var(--radius-full);
+    text-transform: lowercase;
+  }
+  /* Mirrors the AA-safe color-mix pills shared by VaultCard + RegistryCard. */
+  .status-active { background: color-mix(in srgb, var(--color-success) 15%, transparent); color: color-mix(in srgb, var(--color-success) 55%, var(--color-text)); }
+  .status-genesis { background: color-mix(in srgb, var(--color-accent) 18%, transparent); color: color-mix(in srgb, var(--color-accent) 45%, var(--color-text)); }
+  .status-superseded { background: color-mix(in srgb, var(--color-text-muted) 15%, transparent); color: var(--color-text-muted); }
+</style>

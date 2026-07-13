@@ -86,6 +86,11 @@ const { cards, columns = 3 } = Astro.props;
     font-weight: var(--font-weight-medium);
   }
 
+  /* Badge label colours darkened toward --color-text on the 15% tint so they clear
+     WCAG AA in BOTH modes (Storyweave P5 M5.2 / B11 — the raw --color-info/warning/accent
+     text failed AA on its own pale tint in light mode: 1.9–2.45:1). Mirrors the AA-safe
+     color-mix status-pill pattern (VaultCard/RegistryCard). --color-success is already
+     AA-tuned (26% L) so it stays raw. */
   .badge-new {
     background: color-mix(in srgb, var(--color-success) 15%, transparent);
     color: var(--color-success);
@@ -93,17 +98,17 @@ const { cards, columns = 3 } = Astro.props;
 
   .badge-updated {
     background: color-mix(in srgb, var(--color-info) 15%, transparent);
-    color: var(--color-info);
+    color: color-mix(in srgb, var(--color-info) 55%, var(--color-text));
   }
 
   .badge-deprecated {
     background: color-mix(in srgb, var(--color-warning) 15%, transparent);
-    color: var(--color-warning);
+    color: color-mix(in srgb, var(--color-warning) 55%, var(--color-text));
   }
 
   .badge-experimental {
     background: color-mix(in srgb, var(--color-accent) 15%, transparent);
-    color: var(--color-accent);
+    color: color-mix(in srgb, var(--color-accent) 45%, var(--color-text));
   }
 
   .card-icon {
