@@ -110,3 +110,8 @@ The two folded O4 items land under a held home-Lighthouse gate (a visible hero f
 **O1+O2 home-touching increment — verification GREEN (baseline held):**
 - **axe-0 both themes** on home + `/network` (fresh T0, `o1o2_axe/capture_report.json`: `axeViolations: 0`, zero console errors, loads ~0.54 s).
 - **home Lighthouse held Perf 100 / LCP 0.49 s / CLS 0 / TBT 0** — matches the M5.2 baseline exactly. ⚠ **Gotcha recorded: run home LH with `--preset=desktop`.** Default LH (mobile emulation + 4× CPU + slow-4G throttle) reproducibly gives Perf 97 / LCP 2.26 s — a **config artifact, not a regression** (3× stable). The campaign baseline + gate-19 fixtures are unthrottled/desktop (fixture perf score 1.0, LCP ~446 ms). Both O1/O2 changes are provably inert at initial paint (a `:focus-visible` rule never applies at load; a comment is stripped at build), consistent with the byte-identical desktop result.
+
+**O3 ✅ — perf hold: gate-19 kept hard + sweep extended.**
+- `gate-19` (G1) remains a **hard, standing gate** (not `@audit` — runs in both `test:gates` and `test:gates:fast`).
+- **Extended the sweep + fixtures to `/get-started` + `/learn/what-is-adna`** (the ratified scope). Ran desktop LH on both: `/get-started` **Perf 100 / LCP 448 ms / CLS 0.00009 / TBT 0**; `/learn/what-is-adna` **Perf 100 / LCP 445 ms / CLS 0.00009 / TBT 0** — both comfortably inside LCP<2500 / CLS<0.1 / Perf≥0.90. Full raw runs archived to gitignored `site/evidence/`; committed slim fixtures `lighthouse_get_started.json` + `lighthouse_what_is_adna.json` (existing-shape + provenance).
+- Added the two `{route, fixture}` entries to `gate-19`'s `GUARDED` array → **gate-19 now 4/4 pass**. Gate total **359 → 361**.

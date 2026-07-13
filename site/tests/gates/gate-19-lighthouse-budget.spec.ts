@@ -37,6 +37,8 @@ const FIXTURES_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 
 const GUARDED: { route: string; fixture: string }[] = [
   { route: '/vaults/graph', fixture: 'lighthouse_d4c5_graph.json' },                   // H-11 (D4 C5)
   { route: '/learn/concepts/knowledge-graph', fixture: 'lighthouse_d4c6_concept.json' }, // M-7 (D4 C6)
+  { route: '/get-started', fixture: 'lighthouse_get_started.json' },                   // Storyweave P5 M5.3 O3 — the onboarding entry surface
+  { route: '/learn/what-is-adna', fixture: 'lighthouse_what_is_adna.json' },           // Storyweave P5 M5.3 O3 — the flagship learn surface
 ];
 
 for (const { route, fixture } of GUARDED) {

@@ -1,0 +1,18 @@
+{
+  "_provenance": "Lighthouse 13.4.0 desktop on /learn/what-is-adna — Storyweave P5 M5.3 O3 (2026-07-13). Full raw run archived local-only at site/evidence/lighthouse_what-is-adna.json (evidence/ is gitignored); this committed slim fixture is what gate-19 (G1) asserts. Regenerate when the page changes (npm run preview -> lighthouse --preset=desktop /learn/what-is-adna/).",
+  "lighthouseVersion": "13.4.0",
+  "finalUrl": "http://localhost:4321/learn/what-is-adna/",
+  "categories": {
+    "performance": {
+      "score": 1
+    }
+  },
+  "audits": {
+    "largest-contentful-paint": {
+      "numericValue": 444.48095
+    },
+    "cumulative-layout-shift": {
+      "numericValue": 0.00008767653271087451
+    }
+  }
+}
