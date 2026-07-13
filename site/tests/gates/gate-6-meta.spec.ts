@@ -43,6 +43,19 @@ for (const { name, path } of pages) {
     const ogDesc = page.locator('meta[property="og:description"]');
     await expect(ogDesc, `${name}: missing og:description`).toHaveCount(1);
 
+    // OG image + card dimensions + alt (Storyweave P5 M5.3 O4 — share-card + a11y lock).
+    // og:image is an absolute URL to a 1200×630 card; og:image:alt gives AT a description.
+    const ogImage = page.locator('meta[property="og:image"]');
+    await expect(ogImage, `${name}: missing og:image`).toHaveCount(1);
+    const ogImageContent = await ogImage.getAttribute('content');
+    expect(ogImageContent, `${name}: og:image must be an absolute URL`).toMatch(/^https?:\/\/.+\.png$/);
+    await expect(page.locator('meta[property="og:image:width"]'), `${name}: missing og:image:width`).toHaveCount(1);
+    await expect(page.locator('meta[property="og:image:height"]'), `${name}: missing og:image:height`).toHaveCount(1);
+    const ogImageAlt = page.locator('meta[property="og:image:alt"]');
+    await expect(ogImageAlt, `${name}: missing og:image:alt`).toHaveCount(1);
+    expect(await ogImageAlt.getAttribute('content'), `${name}: empty og:image:alt`).toBeTruthy();
+    await expect(page.locator('meta[name="twitter:image"]'), `${name}: missing twitter:image`).toHaveCount(1);
+
     // JSON-LD structured data — may be single schema or @graph bundle
     const jsonLd = page.locator('script[type="application/ld+json"]');
     await expect(jsonLd, `${name}: missing JSON-LD`).toHaveCount(1);
