@@ -2,13 +2,14 @@
 type: design_doctrine
 artifact_class: front_page_doctrine
 created: 2026-06-03
-updated: 2026-06-04
+updated: 2026-07-12
 mission: mission_adna_str_p5_m58_reference_design_dna
 campaign: campaign_adna_serious_tool_readiness
 phase: 5
 persona: rosetta
 status: active   # dial value ratified at the M5.7/M5.8 operator gate; §1/§4 reconciled to the SHIPPED homepage at the E1 decadal close (ADR-032, 2026-06-04)
-last_edited_by: agent_stanley
+ratified_addenda: "§10 The Onboarding Fold (R1–R5) — RATIFIED durable at Storyweave P5 O3 (operator/stanley, 2026-07-12); grounded by the ≥6-exemplar install-forward pass in _reference_set.md §Install-forward synthesis"
+last_edited_by: agent_rosetta
 companions:
   - site/src/content/reference/visual-identity-v2.mdx   # what surfaces LOOK like (tokens, type, palette, image prompts)
   - site/src/content/reference/writing-guidelines.mdx   # how prose READS (clarity, conciseness contract, LIFT/AVOID)
@@ -128,6 +129,26 @@ A synthesis of **Hermes-sparse-manifesto + HF-registry-as-proof** at the ~55/45 
 2. **Operational truths are single-sourced.** Version (`standard.ts`), counts (`vault_count`), the canonical repo URL and **install commands** (`install_truth.json`, gate-12) render from one fixture each — pages never hardcode a fact that can drift. A public surface teaching a wrong install path is a Critical, not a docs nit.
 3. **Canonical-link discipline.** One canonical GitHub org/repo form everywhere (`aDNA-Network/aDNA`); no 301/404 links on credibility surfaces; `robots.txt`/sitemap point only at the live domain.
 4. **Live tracks HEAD.** The deploy cadence (decadal-close + operator-flagged credibility hotfix path; `idea_deploy_cadence` resolution) bounds how long any public defect can sit live.
+
+## 10. The Onboarding Fold — install-forward & demo-as-proof (R1–R5)
+
+> **✅ RATIFIED — durable doctrine.** *Decision:* promote the onboarding rules **R1–R5** to durable front-page doctrine, with the de-risked R1 demo-format rule. *Ratified-by:* operator (stanley). *Date:* 2026-07-12. *Status:* accepted (Storyweave P5 O3 ⛩ gate, §7.7). Grounded by the **≥6-exemplar install-forward pass** ([[_reference_set]] §Install-forward synthesis; set: [[site_hermes]] · [[site_valtown]] · [[site_raycast]] · [[site_vercel]] · [[site_bun]] · [[site_astro]]). **R2 + R3 shipped** M5.1a (2026-07-12); **R1 builds next** at M5.1b (O4) in the ratified format.
+
+§1 (the Above-the-Fold Law) governs the *focus*; this section governs the **onboarding job** a movement/tool home must do in its first screen: give a newcomer something to **run** and a reason to **believe**. Provenance is the install-forward cluster; each rule cites its sites.
+
+- **R1 — Demo-as-proof: one real, light, honest product-in-action.** A movement whose product *does work* earns conviction with a demo of it working, not a feature list. *Provenance:* Hermes heroes a "video of usage" (the agent drafting notes → committing → opening a PR) — the sole exemplar whose product is itself an agent, the exact precedent; but the CLI peers Bun/Astro hero **no video at all** (benchmark + code), and **none of the six autoplay video-with-sound.** *Rule:* if the product is genuinely demo-shaped, show **one** real demo in the **lightest honest format** — an `asciinema`-style terminal cast or an optimized `<video muted playsinline>`/GIF, **lazy-loaded below LCP, `poster` = the honest ASCII/no-JS fallback, no autoplay-with-sound** — never a cinematic hero. Bounded hard by the Motion Budget (§5) and Perf = 100. A **real** recording, never staged (Movement-Skeptic gate).
+- **R2 — The install path belongs in the hero.** For a clone-and-run / CLI tool, the getting-started command is a hero-level, copy-able, above-the-fold element — not a footer or a separate page. *Provenance:* Bun (`curl…\| bash`), Astro (`npm create astro@latest`), Hermes (`curl…\| bash`) — **3/3 of the open-source CLI peers**; counter-examples map to other product shapes (Raycast download cards = desktop app; Val Town sign-up gate = SaaS; Vercel install demoted = platform), which aDNA is not. *Rule:* surface the **single-sourced** one-liner (`install_truth.json`, gate-12) with a copy button in/near the hero; keep the fuller `Get Started` path secondary; **never hardcode** the command. *(Shipped M5.1a.)*
+- **R3 — License-forward trust, when you're a movement.** *Provenance:* only Hermes heroes openness ("OPEN SOURCE • MIT LICENSE"); Astro/Bun keep it in footer/nav; commercial sites omit it. aDNA is **both** an open standard and a movement, so the hero claim is earned. *Rule:* an "Open standard · MIT" eyebrow **single-sourced** from `STANDARD_LICENSE` (drift-proof); at minimum, openness is always *present* on the page. *(Shipped M5.1a.)*
+- **R4 — Keep the honest artifact; image only where it out-scans.** *Provenance:* Bun proves with runnable code, Astro with a benchmark, Hermes pairs duotone feature imagery — each uses the artifact that scans fastest for *its* claim. *Rule:* keep ASCII/code where a terminal *is* the honest surface; pair a real mark/screenshot (per `visual-identity-v2`) only where a visual genuinely out-scans prose. Don't over-image. *(M5.1c.)*
+- **R5 — Prereq clarity, not download cards.** *Provenance:* Raycast's Mac/Windows download cards fit a desktop app; Bun shows the honest CLI form — platform *tabs* on one command (macOS/Linux vs Windows). *Rule:* aDNA is clone-and-run → a one-line prereq note ("works on macOS/Linux/Windows with git + Claude Code") or at most command-platform tabs; **no download cards.** *(M5.1c, footnote.)*
+
+**Decision-table addenda** (extends §6):
+
+| Dimension | 🟢 | 🟡 | 🔴 | Source |
+|-----------|----|----|----|--------|
+| Install path reachability from home | one-liner + copy in hero | on a linked page | none / sign-up-gated | Bun·Astro·Hermes vs Val Town |
+| Hero demo weight | asciinema cast / muted-lazy clip w/ poster | short muted autoplay video | autoplay w/ sound · >1 demo | the 6-set (none autoplay-with-sound) |
+| Openness signal | single-sourced hero eyebrow (movement) | footer/nav only | absent | Hermes vs commercial sites |
 
 ## Change discipline
 

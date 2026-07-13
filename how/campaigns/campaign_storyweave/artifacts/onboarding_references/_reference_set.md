@@ -18,6 +18,13 @@ reference for adna.network's onboarding. This is a **focused candidate capture**
 Storyweave **P5 re-plan**, per [[skill_reference_inspection]] — *not* ratified doctrine (durable
 front-page doctrine needs the skill's ≥6-exemplar gate; see "Gate" below).
 
+> **✅ SUPERSEDED 2026-07-12 — the ≥6-exemplar gate is now met.** Storyweave P5 **O3** completed the install-forward
+> comparator set (added **Bun · Astro**; re-lensed Val Town · Raycast · Vercel through the install-forward lens; Hermes
+> already done). The **durable** record now lives at `what/exemplars/sites/_reference_set.md` §Install-forward synthesis —
+> per-site artifacts [[site_bun]] · [[site_astro]] + install-forward addenda on the four existing ones — and the promoted
+> ruleset at [[front_page_doctrine]] **§10** (RATIFIED durable 2026-07-12). This focused candidate manifest is kept as the campaign-local
+> provenance trail (the Hermes-only basis that motivated the pass).
+
 ## Method (honest per [[doctrine_visual_inspection]])
 Hermes was captured **headless** on 2026-07-11 — `scripts/visual_capture.mjs --base
 https://hermes-agent.nousresearch.com --routes / --viewports desktop,mobile-lg --themes dark`

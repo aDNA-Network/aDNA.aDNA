@@ -4,12 +4,13 @@ site: vercel.com
 functional_role: dev + exec dual-audience
 tonal_revolutionary: 35
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-07-12
 inspected: 2026-06-03
+reinspected: 2026-07-12   # install-forward lens (P5 O3) — AVOID resolution
 mission: mission_adna_str_p5_m58_reference_design_dna
 persona: rosetta
 status: active
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 hero_word_count: ~25
 section_count: 8+
 above_fold_focus: hero + case-study metric
@@ -44,7 +45,15 @@ tags: [exemplar_site, vercel, dual_audience, lift_and_avoid]
 - **Marketing-adjective bloat:** "fast, scalable, and reliable," "build, scale, and secure" — generic filler. The doctrine's AVOID table forbids these; restraint points come from *measured claims*, not adjectives.
 - **8+ sections** is over the homepage budget; aDNA holds 5 ±1.
 
+## Install-forward / onboarding lens (2026-07-12) — AVOID resolution
+
+Re-inspected for the P5 **R1 gate** (headless capture + WebFetch, 2026-07-12). **The homepage drifted hard since June** — the hero is now "**Agentic Infrastructure** / The autonomous stack for every app and agent," a manifesto-and-gradient fold with **no code block and no product UI**; the primary CTAs are **"Deploy Now" + "Talk to Sales" + "Get a Demo."** The install command is **demoted below the fold** (`npx plugins add vercel/vercel-plugin`, no copy button). Demo-as-proof = **four animated GIFs of scale *outcomes*** (Notion/Zapier/Mintlify metrics) + a CLI deploy-log animation — proof of *scale*, not a product walkthrough.
+
+**AVOID-list resolution** (`writing-guidelines` §2 — separate the liftable technique from the refused pattern):
+- **Refuse:** the hero marketing-adjective/abstraction bloat — "scale from zero to millions instantly," a bare "Agentic Infrastructure" abstraction with **nothing to *do***. This is exactly the fold aDNA's measure found *a newcomer can't act on*; the AVOID stands and hardens.
+- **Lift (narrowly):** **GIF-of-outcome as one honest proof unit** — but bounded to aDNA's perf budget and honesty register. Vercel animates a *deploy log*; aDNA's honest analog is **a terminal cast of the agent orienting itself and doing one real task** (**R1**) — a **real** recording, never a staged scale-metric. Vercel teaches by contradiction: **install-demoted + adjective-hero = a newcomer with nothing to start** — the anti-pattern the whole onboarding phase exists to refuse.
+
 ## Related
 
-- [[_reference_set]] · [[front_page_doctrine]] · `site/src/content/reference/writing-guidelines.mdx` (Vercel = AVOID register)
+- [[_reference_set]] · [[front_page_doctrine]] · [[synthesis_onboarding_guidance]] (R1–R5) · `site/src/content/reference/writing-guidelines.mdx` (Vercel = AVOID register)
 - [[../../who/reviewers/reviewer_anti_bloat_editor|Anti-Bloat Editor]] — owns the adjective-bloat call

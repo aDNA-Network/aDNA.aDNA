@@ -2,7 +2,7 @@
 type: design_guidance
 created: 2026-07-11
 updated: 2026-07-11
-status: candidate          # candidate input to the P5 re-plan — NOT ratified doctrine
+status: superseded         # R1–R5 promoted → durable front_page_doctrine §10 (RATIFIED 2026-07-12); kept as the provenance trail
 last_edited_by: agent_rosetta
 campaign: campaign_storyweave
 mission: tbd_p5_replan
@@ -24,6 +24,14 @@ surfaced (R1 + R2 lead).
 > `skill_reference_inspection`) — the operator's call — to de-risk the demo format and promote these candidate rules
 > into **durable front-page doctrine** before any hero-asset commitment. **Status stays `candidate`** until that pass
 > runs; this note records that R2/R3 may build on the current basis.
+
+> **✅ ≥6-EXEMPLAR PASS RAN — PROMOTED → DURABLE (RATIFIED) 2026-07-12.** Storyweave P5 **O3** ran the install-forward reference
+> pass (Val Town · Raycast · Bun · Vercel · Astro + Hermes = 6; via [[skill_reference_inspection]]). R1–R5 below are
+> **promoted to durable doctrine** at [[front_page_doctrine]] **§10 (RATIFIED durable, operator 2026-07-12)**, each rule
+> now carrying ≥6-exemplar provenance. The **R1 demo format is de-risked** → an `asciinema`-style cast or an optimized
+> muted-lazy clip (poster = the ASCII fallback), **never autoplay-with-sound** (evidence: `what/exemplars/sites/_reference_set.md`
+> §Install-forward synthesis). This candidate file is **superseded by that durable section** on ratification; it remains as the
+> provenance trail.
 
 ### R1 — Demo-as-proof: a real screencast of the agent working *(priority)*
 - **Provenance:** Hermes leads with a large "HERMES DESKTOP — BETA PREVIEW" panel showing the agent

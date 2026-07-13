@@ -4,12 +4,13 @@ site: raycast.com
 functional_role: consumer polish
 tonal_revolutionary: 50
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-07-12
 inspected: 2026-06-03
+reinspected: 2026-07-12   # install-forward lens (P5 O3)
 mission: mission_adna_str_p5_m58_reference_design_dna
 persona: rosetta
 status: active
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 hero_word_count: ~15
 section_count: 8
 above_fold_focus: CTA + animated keyboard
@@ -44,7 +45,11 @@ tags: [exemplar_site, raycast, delight, motion, consumer_polish]
 - Raycast's *high* motion density + glassmorphism would blow the motion budget and risk the generic-AI-aesthetic tell; aDNA takes the *principle* (meaningful motion) at a fraction of the volume.
 - 8 sections is over budget; the homepage stays at 5 ±1 (Raycast is a mature consumer product with more to sell).
 
+## Install-forward / onboarding lens (2026-07-12)
+
+Re-inspected for the P5 **R1 gate** (headless capture + WebFetch, 2026-07-12; hero stable since June — "Your shortcut to everything"). Install-forward read: Raycast is **download-first, not command-first** — the primary CTA is **"Download for Mac" / "Download for Windows (beta)"**, with "Install via homebrew or winget" as *secondary text below* (no inline command, no copy button). Its demo-as-proof is a **static screenshot + a subtle animated keyboard overlay** — product-UI-in-motion, lightweight, never an autoplay hero video. **For aDNA (a clone-and-run workspace, no installable app) the download-card model does NOT transfer** — direct evidence for **R5**'s adaptation (no download cards; a one-line prereq note instead). The transferable signal is the **restrained motion budget**: Raycast earns "delight" with one small looping overlay, not a heavy video — a data point for keeping **R1** light (a short, muted, honest clip, not a cinematic autoplay).
+
 ## Related
 
-- [[_reference_set]] · [[front_page_doctrine]] · [[site_linear]] (restraint counterweight)
+- [[_reference_set]] · [[front_page_doctrine]] · [[synthesis_onboarding_guidance]] (R1–R5) · [[site_linear]] (restraint counterweight)
 - [[../../who/reviewers/reviewer_design_critic|Design Critic]] — owns Delight; proposed Motion Designer persona owns the motion budget
