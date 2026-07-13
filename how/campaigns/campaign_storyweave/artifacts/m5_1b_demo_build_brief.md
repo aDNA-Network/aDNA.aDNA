@@ -104,11 +104,15 @@ The site already ships the exact **no-JS-floor + JS-enhancement + zero-CLS** pat
 - **Operator ship-gate** → deploy (`npx astro build` → `VERCEL_TOKEN=$SS_VERCEL_TOKEN vercel --prebuilt --prod`, **redact the token**) → live T0 re-capture.
 - Then **M5.1c** (R4/R5 adjacents) can ride; **M5.2** craft follows; campaign exit = **capstone ranker ≥ 4.95**.
 
-## 8. Open decisions for the in-person session
+## 8. Recommended decisions (confirm live)
 
-- **Format** — Path A (`asciinema`) vs Path B (muted `<video>`). *Rosetta's lean:* **asciinema** — lightest for the hard perf budget, terminal-native (R4-consistent), no `<video>` a11y risk; **but** muted-video shows the richer real TUI. Decide with the dev-rel contributors **after** the CSP worker preflight (§3).
-- **The exact task** the demo shows (§4 recommends the `STATE.md` orientation).
-- **Who records**, on what machine.
+Rosetta's recommendations for the three open calls — **recommendations the in-person session ratifies, not pre-commitments** (the format in particular gates on the §3 CSP-worker preflight):
+
+- **Format → `asciinema` cast (conditional).** Lightest for the hard home budget (CLS 0 / TBT 0 / Perf ≥99 — the campaign's hardest gate), terminal-native (R4-consistent), no `<video>` gate-4 caption risk, and a `.cast` is diffable + re-recordable. **Gate it on the CSP `blob:`-worker preflight (§3):** worker-free → asciinema; needs a worker → add a contained `worker-src 'self'` to `vercel.json`, or vendor a worker-free player; if neither is clean → **muted `<video>` (Path B) is the ready fallback.** Prefer muted-video outright only if the dev-rel contributors judge the interactive TUI (color / cursor / the Claude Code UI) sells "the agent working" materially better — accepting the heavier asset + the aria-hidden-decorative a11y handling.
+- **Task shown → the real first-run orientation.** `git clone …/aDNA.git ~/aDNA && cd ~/aDNA && claude` → the agent orients (the router greets, explains the workspace, offers the next step) — the true newcomer path (matches the hero install one-liner + the `/get-started` `$ claude` mock, now moving). **Have a genuine newcomer (a dev-rel contributor) run it cold so the recording doubles as a real onboarding test** (smooth = proof; a snag = a bug fixed pre-ship). **Keep the answer legible** — a clean/small workspace, **not** aDNA.aDNA's ~130 KB `STATE.md` (or the orientation answer is a wall of campaign jargon); the populated-vault "what's the state / what next?" is the alternative if you'd rather show value on a real project. Optional crisp second beat (one tiny real action after orienting) only if it stays under ~60 s.
+- **Who records → a dev-rel contributor, live in-person, on a clean machine + fresh clone.** Richest/most honest artifact (a human driving a real interactive session); the newcomer-runs-it angle makes the onboarding test real. Clean env (no prior state, no secrets, terminal theme aligned to Tokyo-Night); 2–3 takes, pick the crispest, **trim dead air only** (Movement-Skeptic — no misrepresenting cut). Rosetta pre-stages the exact script + a dry run, and produces a **fallback reference `asciinema` cast** (a real `claude -p` run) beforehand as a safety net + format proof-of-concept.
+
+> The only call that genuinely can't be pre-decided is the **format** — it hinges on the live asciinema CSP-worker preflight. Everything else above is locked pending the session's confirmation.
 
 ## Provenance & links
 
