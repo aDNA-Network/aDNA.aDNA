@@ -6,7 +6,7 @@ release: v8.7
 created: 2026-07-13
 updated: 2026-07-13
 last_edited_by: agent_rosetta
-status: ratified
+status: shipped
 tags: [release_staging_ledger, v8_7_release, cleanroom, p2_packet, p3_manifest]
 ---
 

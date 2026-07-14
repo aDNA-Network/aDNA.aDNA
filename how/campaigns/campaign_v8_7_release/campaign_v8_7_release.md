@@ -3,7 +3,7 @@ campaign_id: campaign_v8_7_release
 type: campaign
 title: "Operation Cleanroom — the v8.7 template release (currency + inheritable defaults)"
 owner: stanley
-status: active
+status: completed
 phase_count: 4
 mission_count: 1
 estimated_sessions: "2-3"
@@ -188,3 +188,52 @@ operator (never auto-remediate a pushed tag).
   item 3 = Ouroboros §Follow-Up + `p2_ratification_record.md`. Canonical dev doctrine for item 5:
   `what/doctrine/doctrine_visual_inspection.md` (landed at Storyweave; do NOT wholesale-copy — author a generic
   `.adna/` pointer).
+
+## Completion Summary
+
+**SHIPPED 2026-07-13** — **v8.7 live on `aDNA-Network/aDNA`**: commit `1c30f3b` + annotated tag **`v8.7`** (main
+`32d4dd5..1c30f3b`), tags-only. Governance **8.6 → 8.7**; standard **stays v2.5**; **no count bump**. Local
+`~/aDNA/.adna` synced (`14a1d43`); 7-row fresh-clone smoke green; `adna_validate --governance` Zero drift on the
+pushed image. Executed P0→P3 in 2 sessions (P0+P1 authoring; P2 ratify + P3 dry-run→fire).
+
+### Deliverables (the 4 riders)
+- **Item 4** — `skill_git_remote_setup.md` fully fleet-cleaned: 4 grandfathered repo names → 0 (`GRANDFATHERED`
+  empty-by-default + populate-guidance; mechanism + pedagogy preserved) + DP3 `M07`/`v7.0` milestone genericize.
+- **Item 3** — image `how/templates/AGENTS.md` index reconciled **23→30** (12 auto + 13 manual + 5 operational);
+  fixed a 7-template undercount (incl. the 2 v8.6-shipped operational templates); hand-verified 30/30.
+- **Item 2** — optional STATE `phase:`/`campaigns:` frontmatter convention added to the `.adna/STATE.md` seed
+  (permissive schema, no change; honest-absent).
+- **Item 5** — a generic, DE-LINKED visual-inspection doctrine folded as a `### Visual inspection` subsection in
+  `.adna/CLAUDE.md` (DP2 = subsection; headless-first policy, no harness code).
+- **Version surfaces** — `.adna/CLAUDE.md` version 8.6→8.7 + header comment · `.adna/CHANGELOG.md` v8.7 entry.
+- **Badge completion patch** (post-smoke finding) — governance badge `v8.5→v8.7` in BOTH image READMEs
+  (`30f6862`, follow-up commit, tag unmoved); local `.adna/README` synced (`cc6d51c`).
+
+### Key Findings
+- **Dev-copy-older-than-image** (v8.6 Batch G genericized `skill_git_remote_setup` image-side; the dev source
+  lagged). Fix = backport image→dev, THEN apply the delta → `diff .adna/ dev/` = clean. A naive dev-copy edit
+  would have re-leaked what v8.6 fixed. **`diff dev .adna/` FIRST** for any rider on a file v8.6 touched.
+- **3 of 4 riders are image-curated** (nested AGENTS.md · STATE seed · CLAUDE.md subsection — no clean dev
+  source) → authored as complete staged artifacts, applied at P3 assembly, not P1 dev edits.
+- **The dry-run caught a real bug**: item-5's fold-body extraction split on the heading text that also appears
+  (backticked) in the staged DP2 prose → duplicate heading + leaked prose. Fixed the anchor + guard asserts.
+- **The governance badge in BOTH READMEs is a version surface** the v8.6 *and* v8.7 enumerations missed
+  (stale at v8.5). Patched + added to the release-surface checklist (memory).
+
+### Follow-ups (not blocking; noted)
+- `.obsidian/plugins/*/main.js` gitleaks false positives (8, minified JS) → a `.gitleaks.toml` allowlist.
+- Item 1 (`node_manifest`, ADR-gated → Hestia mission) + Batch B (own sub-campaign) remain the v8.7-adjacent queue.
+
+## Campaign AAR
+
+- **Worked**: mirroring the Ouroboros 4-phase / 2-gate structure; the staging ledger doubling as P2 packet + P3
+  manifest; the backport-then-delta discipline keeping item 4's fold clean; the dry-run-then-pause catching the
+  item-5 bug + the stale badge *before* they became a bad release.
+- **Didn't**: my version-surface enumeration (3 surfaces) missed the README badges — caught only at the
+  post-fire smoke (a 4th/5th surface); the item-5 extraction bug slipped my P1 self-review (the staged
+  artifact's own prose contained the split anchor).
+- **Finding**: the "governance version surface" set is **5**, not 3 — CLAUDE.md frontmatter + header comment +
+  CHANGELOG + **root README badge + `.adna/README` badge**. Codify in the release checklist.
+- **Change**: staged the 3 image-curated riders as complete turnkey artifacts (not prose instructions) → a clean
+  `cp`-at-P3 assembly; added guard assertions to the item-5 extraction after the double-heading bug.
+- **Follow-up**: the gitleaks allowlist + the two held items (node_manifest, Batch B); next release = v8.8 queue.

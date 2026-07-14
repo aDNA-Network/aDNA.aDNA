@@ -6,8 +6,8 @@
 |-------|-------|
 | Campaign | `campaign_v8_7_release` |
 | Owner | stanley |
-| Status | **active** — chartered 2026-07-13; P0 + P1 done; **P2 RATIFIED** (all 4 riders · DP2 subsection · DP3 fold); P3-ready |
-| Current Phase | **P3 — Fire (OPERATOR GATE)**. P2 ratified 2026-07-13 (`artifacts/ratification_record.md`; DP3 folded). Next = `skill_template_release` v8.7 **dry-run** (assemble in a throwaway clone + validate) → **pause for the operator's second GO** before the outward tag `v8.7` + push (tags-only). |
+| Status | **✅ COMPLETED — v8.7 SHIPPED 2026-07-13** (`1c30f3b` + tag `v8.7` → `aDNA-Network/aDNA`; 7-row smoke green; local `.adna` synced). Do NOT re-open. |
+| Current Phase | **CLOSED — all 4 phases + 2 operator gates done.** Governance 8.6→8.7; standard stays v2.5; no count bump. Badge-completion follow-up (`30f6862`) landed. See `campaign_v8_7_release.md` §Completion Summary + Campaign AAR. Follow-ups: gitleaks `.obsidian` allowlist; held items 1 (node_manifest) + Batch B. |
 | Executor tier | opus (authoring); sonnet acceptable for the mechanical index/count reconciliation |
 
 ## Quick Start
