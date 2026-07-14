@@ -3,13 +3,13 @@ plan_id: mission_v8_8_p1_prune_and_iii
 type: plan
 title: "v8.8 P1 — .adna/CLAUDE.md prune (both diffs) + README III"
 owner: stanley
-status: pending
+status: complete
 campaign_id: campaign_v8_8_release
 campaign_phase: 1
 campaign_mission_number: 1
 mission_class: implementation
 token_budget_estimated: 90
-token_budget_actual:
+token_budget_actual: 90
 executor_tier: opus
 created: 2026-07-13
 updated: 2026-07-13
@@ -38,7 +38,7 @@ recommendations for P2; a P1 AAR filed. **No release fire** (P3, operator gate).
 ## Objectives
 
 ### 1. Measure `.adna/CLAUDE.md` section-by-section (M01 lesson #1)
-- **Status**: ⏳ pending
+- **Status**: ✅ complete
 - **Description**: `awk`/`sed` the real `~/aDNA/.adna/CLAUDE.md` (~7.7K tok / 447 ln) into per-`##`-section char
   counts (the 9 sections: Identity · First-Run · Project Map · Safety Rules · Standing Orders · Git Coordination ·
   Agent Protocol [~124 ln] · Domain Knowledge [~96 ln] · Working with Content [~72 ln]). Rank by prune/extract
@@ -46,14 +46,14 @@ recommendations for P2; a P1 AAR filed. **No release fire** (P3, operator gate).
 - **Files**: `artifacts/claude_md_section_measure.md`
 
 ### 2. Conservative prune diff (~250-500 tok)
-- **Status**: ⏳ pending
+- **Status**: ✅ complete
 - **Description**: Tighten parenthetical asides · dedupe cross-refs · compress self-evident example blocks · drop
   date-stamp parentheticals where the section already declares last-update. **Removes verbosity, never a rule.**
   Stage as a complete replacement file + a change-list.
 - **Files**: `artifacts/staged_claude_md_conservative.md` (+ change-list)
 
 ### 3. Aggressive prune diff (~1.5-3k tok, extraction)
-- **Status**: ⏳ pending
+- **Status**: ✅ complete
 - **Description**: Extract dense detachable sections (candidates: Agent Protocol, Domain Knowledge) → spec/governance
   files per the **3 M01 patterns** (ecosystem-detail → `what/specs/`; governance-content → `how/governance/`;
   possible template "Personality Customization" → `how/templates/example_personalities.md`); CLAUDE.md keeps the
@@ -62,7 +62,7 @@ recommendations for P2; a P1 AAR filed. **No release fire** (P3, operator gate).
 - **Files**: `artifacts/staged_claude_md_aggressive.md` + the extracted-file drafts
 
 ### 4. README III (re-scoped)
-- **Status**: ⏳ pending
+- **Status**: ✅ complete
 - **Description**: A right-sized reader-panel III pass on the **actual** `.adna/README.md` (157 ln) + root
   `README.md` (88 ln) — the "870 lines / 10 cycles" premise is DEAD. Fix jargon · dark-mode/IA · confidence traps ·
   first-contact clarity; **preserve** the embed note (ADR-034 §3) + the now-correct v8.7 badges. Stage improved
@@ -70,7 +70,7 @@ recommendations for P2; a P1 AAR filed. **No release fire** (P3, operator gate).
 - **Files**: `artifacts/staged_inner_readme.md` · `artifacts/staged_root_readme.md` (+ III findings)
 
 ### 5. Stage + triage close
-- **Status**: ⏳ pending
+- **Status**: ✅ complete
 - **Description**: Draft `artifacts/release_staging_ledger.md` (P3 manifest: which artifacts fold where + the **5
   version surfaces** + fire sequence). DP2 (extraction destinations) + DP3 (README scope + gitleaks rider)
   recommendations for P2. Confirm counts unchanged / adjust if extraction adds files. File the P1 AAR.
