@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-07-02
-updated: 2026-07-03   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor); §2.5 dispatch-shape note added at P3 open (operator ruling: Mode B same-session subagent dispatch = default); **§2.6 Mode-B operational discipline folded at Champollion M7.2 close (2026-07-03) — 7 sweep-surfaced hazards + the review-bookend checklist**
+updated: 2026-07-14   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor); §2.5 dispatch-shape note added at P3 open (operator ruling: Mode B same-session subagent dispatch = default); **§2.6 Mode-B operational discipline folded at Champollion M7.2 close (2026-07-03) — 7 sweep-surfaced hazards + the review-bookend checklist**; §2.7 next-mission handoff recommendation authored **proposed** (operator request 2026-07-14, awaiting ratification) + §2.1 mechanical binding refreshed (Sonnet 4.6→5, Haiku 4.5)
 status: active   # GRADUATED at Champollion G3 (2026-07-02, D2a — 5 instances; operator-ratified)
 pattern_category: operational
 applies_to: [campaign, mission, session, all_categories]
@@ -30,7 +30,7 @@ Classes are defined by **decision properties**, not model names. Model names go 
 |-------|--------------------|---------------------------|
 | **strategy/judgment** | Novel design, ambiguous requirements, irreversible or outward-facing consequences, cross-graph governance, adversarial review, "what should we even do?" | **Fable** (Claude Fable 5) |
 | **mid-judgment** | Well-briefed execution with local decisions inside stated guardrails; synthesis over provided evidence; drafting against acceptance criteria | **Opus** (Claude Opus 4.8) |
-| **mechanical** | Enumerable, verifiable, low-ambiguity transforms: sweeps, counts, extractions, format fixes, checklist verification | **Sonnet** (Claude Sonnet 4.6; Haiku for sub-mechanical bulk) |
+| **mechanical** | Enumerable, verifiable, low-ambiguity transforms: sweeps, counts, extractions, format fixes, checklist verification | **Sonnet** (Claude Sonnet 5; Haiku 4.5 for sub-mechanical bulk) |
 
 This is the same vocabulary Operation Carnot ratified for [[../../STATE|LatticeProtocol.aDNA]]: *fable = strategy/judgment · opus = mid-judgment · sonnet = mechanical* — two sibling campaigns, one binding table.
 
@@ -106,6 +106,24 @@ Running full phases as single Mode-B sweeps (Champollion P3–P7, 2026-07-02/03)
 - [ ] **Aggregate budget** — running mission total checked vs the halt line (sum, not per-dispatch).
 - [ ] **Independence** — the review varied its method from the builder's (not a re-run).
 - [ ] **Validators** — `adna_validate` full + `--governance` green; explicit-path commit; no push unless the gate fires.
+
+### 2.7 Next-mission handoff recommendation (operator-facing close-out line) — *proposed*
+
+> **Ratification block** — **decision**: adopt the mission-close next-tier handoff line as standing close-out practice · **ratified-by**: *pending* · **date**: 2026-07-14 (authored) · **status: proposed**. Authored under aDNA.aDNA Decision Ratification (§7.7); the rest of this graduated pattern is unaffected until the operator signs.
+
+§2.4 records the tier a mission was *planned* at (on its card) and the tier it *actually ran* at (in its AAR). Neither makes the **forward handoff** explicit: at the moment a mission closes, nobody states — to the operator, actionably — which model the *next* mission should run on. Under R0 Mode A (§8) the operator drives model choice by hand (`/model <tier>` before each session), so that statement is directly actionable and belongs in the close-out.
+
+**The practice**: every mission close (in the AAR and the SITREP "Next up") carries one operator-facing line:
+
+```
+▶ Next mission → executor_tier: <tier> → /model <tier> — <one-line why, from the §2.5 class→tier table>
+```
+
+**Derivation order** (a small judgment act, not a lookup): (1) the next mission's pre-declared `executor_tier` if its card exists; else (2) the §2.5 class→tier default for the nature of the next work; else (3) **adjusted by what the just-closed mission changed** — a gate that re-tiers, a surfaced ambiguity that lifts mechanical work back to judgment, or a brief now proven cold-runnable that permits a downtier. The line names the concrete `/model` command because the operator acts on it directly.
+
+**Safety invariant (unchanged)**: recommending **fable** is fine — but **fable is operator-summon only, never auto-spawned** (§8). A close-out line may *recommend* fable for the next (planning / review / gate) mission; the operator still summons it. Likewise `sonnet` stays an explicit opt-down (§2.5): a close-out recommendation of sonnet names *why the next work is provably mechanical*, not merely "cheaper".
+
+This is the across-mission complement of §2.4's estimate-vs-actual: §2.4 looks **backward** (what did this mission cost, at what tier), §2.7 looks **forward** (what should the next one run at). Both feed the Context.aDNA seam (§3) — the recommendation is itself a routing *prediction* the telemetry corpus can later score against the next mission's recorded actual.
 
 ## 3. Why this is measurable (the Context.aDNA seam)
 
