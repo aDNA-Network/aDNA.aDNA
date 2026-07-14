@@ -13,8 +13,13 @@ tags: [artifact, v8_8_release, distillery, staging_ledger, p3_manifest, version_
 
 # v8.8 Release Staging Ledger (P3 manifest)
 
+> **✅ P2 RATIFIED 2026-07-13** (see `ratification_record_v8_8_p2.md`): DP1 = **aggressive-minus-E3** (ship candidate =
+> `staged_claude_md_ratified.md`, ~5,335 tok / −31%); DP2 = existing `what/docs/`, no new ADR; DP3 = inner III + root
+> badge + gitleaks rider. **Frozen ship-set is in the ratification record.** E3 Visual-inspection kept inline →
+> `staged_extracted_doctrine_visual_inspection.md` is NOT shipped. P3 fire pending a separate operator GO.
+
 The turnkey manifest for P3 (`skill_template_release` v8.8). **Nothing here ships until the operator rules DP1
-per-section (P2) and fires (P3).** A ledger is a hypothesis — **P3 re-verifies every row against disk at fire-time.**
+per-section (P2 ✅) and fires (P3).** A ledger is a hypothesis — **P3 re-verifies every row against disk at fire-time.**
 
 ## Ship-set (staged artifacts → P3 destinations)
 
