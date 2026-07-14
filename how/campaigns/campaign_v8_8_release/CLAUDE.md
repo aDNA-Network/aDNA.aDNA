@@ -6,8 +6,8 @@
 |-------|-------|
 | Campaign | `campaign_v8_8_release` |
 | Owner | stanley |
-| Status | **active** — chartered 2026-07-13 (P0 done; P1 build pending — recommended fresh session) |
-| Current Phase | **P1 — Author** (Batch B: CLAUDE.md prune + README III). P2 (ratify — the per-section prune-depth ruling) + P3 (fire) are operator gates. |
+| Status | **completed** — v8.8 SHIPPED 2026-07-14 (commit `a32724b` + annotated tag `v8.8` on `aDNA-Network/aDNA`). DO NOT re-open. |
+| Current Phase | **CLOSED** — P0✅ · P1✅ · P2✅ (ratified aggressive-minus-E3) · P3✅ (fired; **E2 reverted at operator's fire-time ruling** → aggressive-minus-E3-minus-E2, −24%). Governance 8.7→8.8; standard v2.5; counts 30/32. AAR: `artifacts/aar_v8_8_p3_fire.md`. |
 | Executor tier | opus (prune + III are judgment-heavy) |
 
 ## Quick Start

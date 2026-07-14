@@ -66,3 +66,25 @@ zero-drift).
 5 version surfaces, dry-run leak-scan + `adna_validate --governance` zero-drift, **pause for operator GO**, then
 path-scoped commit + annotated tag `v8.8` + push (tags-only), Step (e) local sync, 7-row smoke, close+AAR. **The push
 is the release — it needs its own explicit operator GO.**
+
+---
+
+## P3 Fire — Supplementary Ruling (§7.7, 2026-07-14)
+
+At P3 fire-time re-verification (the ledger mandates re-checking every ship-set row against disk), one row failed:
+the **E2** extraction replaced the inline skills table with a pointer to `how/skills/AGENTS.md` asserting it was
+*"the full catalogue — every skill, its type, and its trigger."* That file is a `type: directory_index` **protocol
+guide** (it names ~18 illustrative skills, several of which don't exist as files) — **not** a catalogue. The claim
+was false, and the aggressive prune would have removed the real inline table to point at it.
+
+| Field | Value |
+|-------|-------|
+| **Decision** | Resolve the E2 defect before the irreversible push |
+| **Ratified-by** | stanley (operator), conversational P3 fire gate |
+| **Date** | 2026-07-14 |
+| **Ruling** | **Revert E2 — keep the 19-skill table inline** (parallels the E3 keep-inline decision; honest, lowest-risk, no fire-gate authoring) |
+| **Effect** | Final ship-set = **aggressive-minus-E3-minus-E2**. `.adna/CLAUDE.md` ~7,720 → ~5,820 tok (**−24%**; was −31% projected). E1/E4/E5 extractions shipped unchanged (`adna_reference.md` + `example_personalities.md`); E3 + Skills table + 16-entity triad kept inline. |
+
+E1/E4/E5 pointer targets were each verified to genuinely deliver their promised content (only E2 was dishonest).
+**Shipped** as `v8.8` — commit `a32724b` + annotated tag `v8.8` on `aDNA-Network/aDNA`; 7/7 smoke green;
+`adna_validate --governance` Zero drift. See `aar_v8_8_p3_fire.md`.
