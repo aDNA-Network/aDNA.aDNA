@@ -3,16 +3,16 @@ campaign_id: campaign_storyweave
 type: campaign
 title: "Operation Storyweave — adna.network best-in-class refresh"
 owner: stanley
-status: active            # RATIFIED 2026-07-08 by operator (stanley / Founding Architect) at the O8 gate (§7.7)
+status: completed         # GRADUATED 2026-07-13 at the M5.3 capstone (operator GO'd "ship + graduate now at 4.89"); capstone ranker 4.89, re-ranks ≥4.95 when the 2 deferred in-person items land (hero-letterbox re-cut + R1 demo). Was RATIFIED active 2026-07-08 (§7.7 O8 gate).
 phase_count: 7
-mission_count: 12
+mission_count: 12         # charter figure; P5 was re-planned into 3 missions (p5_replan.md) — see Completion Summary
 estimated_sessions: "13-20"
 calibrated_sessions: "11-16"
 estimation_class: content-novel
 executor_tier: opus       # strategy/story/graph = opus; mechanical craft sweeps drop to sonnet (model-tiered execution)
 priority: high
 created: 2026-07-07
-updated: 2026-07-08
+updated: 2026-07-13
 last_edited_by: agent_rosetta
 tags: [campaign, storyweave, site, adna_network, refresh, storytelling, active]
 ---
@@ -163,7 +163,24 @@ Per the template's per-mission / per-phase / campaign gates, plus:
 - **Operator-strategic (beyond the site):** making `lattice-protocol` + the whitepaper **public** is the single biggest external-credibility unlock (EV1) — a decision the FA owns, not this campaign.
 
 ## Completion Summary
-*Fill at `status: completed`.*
+
+**Operation Storyweave graduated 2026-07-13** at the M5.3 capstone — the adna.network best-in-class refresh shipped **live across all 7 phases**, holding the SS-Ghibli identity + radical-honesty voice throughout.
+
+**What shipped (all live on adna.network):**
+- **Decade 1** — **P0** evidence completion (T2 re-confirmed on real surfaces) · **P0.5** graph de-risk spike · **P1** storytelling core + the **P1.5/P1.6 Canvas "living network" hero** · **P2** the legible/interactive graph (SSR SVG, no-JS-safe, AA, the 15/14 connected split). The fleet-baseline **≈3.45 → per-surface ≥4.0** bar was cleared phase-by-phase.
+- **Decade 2** (re-planned + measured after Decade-1 shipped) — **P3** registry actionability (one-line purposes, search/filter, adopt/publish rail) · **P4** Docs IA (ordered `/learn` path, `what-is-adna` de-densified, `/reference` leads-with-spec + version stamp).
+- **P5 capstone** (re-planned into **3** missions — [[p5_replan]], superseding the charter's 2-mission P5 table): **M5.1** onboarding — **M5.1a** hero install one-liner + "Open standard · MIT" eyebrow (shipped) + **O3** ≥6-exemplar install-forward reference pass → durable [[front_page_doctrine]] §10 (shipped); **M5.1b** R1 demo screencast **deferred to the in-person dev-rel session** · **M5.2** craft + design-system hardening (word-safe excerpts, card harmonize, `palette.ts` single-source, the `/design-system` page, gate-24/gate-25; ranker **4.5**; shipped) · **M5.3** a11y/perf/reach — DE-RISKED "hold, don't fix" (the folded O4 hero-focus + graph-cohesion, gate-19 perf-hold + sweep-extension, OG-card hardening, the honest zero-tracking `/privacy` notice, the i18n/low-bandwidth plan, comprehensive both-theme axe-0; ranker **4.89**; shipped `dpl_HeNviXYNLo3EeX68HuAbnGop3FVo`).
+
+**Success-criteria scorecard (§North-star):** ✅ real axe pass (axe-0 both themes, ~33 routes, durable via gate-4) · ✅ Lighthouse budget held (home Perf 100/CLS 0/TBT 0; gate-19 hard on 4 surfaces) · ✅ legible real graph · ✅ registry actionable, zero browse-only dead-ends · ✅ Docs IA / cognitive-a11y lifted · ✅ honest voice preserved (the `/privacy` notice is the capstone honesty artifact) · ✅ zero orphan surfaces (`/org-context-graphs` retired). **⏳ Capstone ranker `4.89` (not yet ≥4.95)** — gated **entirely** by the two operator-deferred in-person items below; re-ranks to ≥4.95 when they land.
+
+**Graduation basis:** operator chose **"ship + graduate now at 4.89"** (M5.3 ship-gate, 2026-07-13) — the honest score was surfaced (not inflated); the ≥4.95 residual is deferred asset/demo work, not open solo work.
+
+**Post-graduation follow-ups (owner: in-person dev-rel session):** (1) **hero-letterbox full-bleed re-cut** (4 doc-heroes incl `/get-started`; imagen/design) · (2) **R1 demo screencast** (M5.1b) → landing both **re-ranks the capstone ≥4.95**. Optional: HomeHero canvas palette → `palette.ts`; durable long-tail axe. **Routed (never campaign work):** data-currency → Hestia; deploy-layer perf → Vitruvius; full i18n + the social layer → horizon (Venus). **Operator-strategic (FA-owned, beyond the site):** make `lattice-protocol` + the whitepaper public (the biggest external-credibility unlock, EV1).
 
 ## Campaign AAR
-*Mandatory before `status: completed` (template_aar_lightweight).*
+
+- **Worked.** The **decade / ship-and-measure** framing was the campaign's spine — Decade-1 shipped + was measured live before Decade-2 was re-planned, so every phase built on real evidence, not assumptions (P4's re-plan was grounded in a live measure; P5's re-plan folded the operator-surfaced onboarding lead). The **headless T0 harness** ([[doctrine_visual_inspection]]) made "every visual claim screenshot-cited" real with no Chrome dependency. The **register guardrail** (warm·calm·honest, Movement-Skeptic every phase) held the #1 trust asset intact — the capstone's `/privacy` notice and the "hold, don't fix" restraint are its purest expressions. **Gate-every-fix** discipline compounded: the suite grew 97→**371** durable gates across the campaign, each locking a specific win.
+- **Didn't.** The **≥4.95 capstone bar wasn't reached this campaign** (landed 4.89) — the two highest-craft items (a full-bleed hero re-cut + a real demo screencast) are genuinely in-person/imagen work, so the honest close is "graduated at 4.89, re-ranks ≥4.95 when they land." Recurring tooling friction cost time (Plan-agent flakiness → direct reads; the `visual_capture --axe` themes[0]-only quirk; home-LH default-throttle artifact; a repeated `${VAR:-…}` token-leak) — all now recorded as durable lessons.
+- **Finding.** For a **mature-site refresh** (not a rescue), the ranker's ceiling is set by *craft/proof assets* (real graph, real demo, full-bleed art), not by copy or structure — those saturate quickly (Adopter/Movement-Skeptic hit 4.95 on substance), while Design-Critic/Newcomer stay gated on the last visual/demonstrative 5%. Naming that honestly beats chasing a number.
+- **Change.** Bank the tooling lessons at the harness level (axe both-orders, LH `--preset=desktop`, `${VAR:+SET}`-only redaction) so future site campaigns don't re-pay them; when a capstone's residual is deferred asset work, **surface the honest score + let the operator choose graduation** rather than treating the bar as pass/fail.
+- **Follow-up.** The two in-person items (letterbox re-cut + R1 demo) → re-rank ≥4.95; then the campaign's north-star is fully met. All other threads are routed (Hestia/Vitruvius) or horizon (Venus/social layer).
