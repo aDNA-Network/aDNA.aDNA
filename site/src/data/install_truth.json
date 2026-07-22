@@ -8,16 +8,18 @@
     "launch": "claude"
   },
   "embedded_standard": ".adna",
-  "generated": "2026-06-10",
+  "generated": "2026-07-22",
   "legacy_repo_https": "https://github.com/aDNA-Network/adna-legacy",
   "one_liner": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
   "router_template": "how/templates/template_workspace_claude.md",
   "schema_version": "0.2",
-  "template_sha": "74cb761",
+  "template_sha": "3051a2d",
   "verified_paths": {
     "CLAUDE.md": true,
     "how/skills/skill_onboarding.md": true,
     "how/skills/skill_project_fork.md": true,
+    "how/templates/template_home_claude.md": true,
+    "how/templates/template_node_adna_exemplar": true,
     "how/templates/template_workspace_claude.md": true
   },
   "workspace_root": "~/aDNA"

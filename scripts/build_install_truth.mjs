@@ -50,6 +50,10 @@ const REQUIRED_PATHS = [
   'how/skills/skill_project_fork.md',           // first-project scaffolding
   'how/skills/skill_onboarding.md',             // first-run interview
   'CLAUDE.md',                                  // template governance (role: template detection)
+  // Refit M2 A4 (2026-07-21): the 2 v8.0 paths deferred since coord_2026_06_28 (generator refuses to emit
+  // against an .adna that lacks them; local .adna now v8.8-synced where both exist) — closes pt19 §3 Ask 2.
+  'how/templates/template_home_claude.md',      // Home.aDNA (node vault) governance seed — Hearthstone v8.0
+  'how/templates/template_node_adna_exemplar',  // fork-time node-vault exemplar dir — Hearthstone v8.0
 ];
 
 const verified_paths = {};

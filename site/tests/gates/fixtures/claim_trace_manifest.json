@@ -5,13 +5,13 @@
     {
       "id": "vault-count",
       "class": "quantitative",
-      "claim": "the registry holds 68 vaults",
+      "claim": "the registry holds 73 vaults",
       "rendered_on": ["/", "/vaults", "/network"],
       "source_ref": "src/data/vaults.json",
       "owner": "pt19",
       "check": { "kind": "json_field", "accessor": "vault_count" },
-      "expected": "68",
-      "_note": "Ring-A (pt19-owned) expected refreshed 54->68 at Meridian M9 from the data-owner's committed inventory (source_inventory_sha 9f4fd1d1a51e316d); this is a fixture-currency refresh to match the committed vaults.json, not a hand-edit of pt19 data. Drift flagged to Hestia/pt19 via coord_2026_07_06_rosetta_to_hestia_pt19_registry_regen. Owner field UNCHANGED."
+      "expected": "73",
+      "_note": "Ring-A (pt19-owned) expected refreshed 68->73 at Refit M2 (2026-07-21) from the data-owner's committed inventory (source_inventory_sha 59058a4ec1e65d3c; Home mission_inventory_refresh_2026_07: +GOTFN/Datarooms/aiLP-Dataroom, -DataRoom archived-absorbed); fixture-currency refresh to match the committed vaults.json, not a hand-edit of pt19 data (prior: 54->68 at Meridian M9). Driver: coord_2026_07_21_hestia_to_rosetta_inventory_refresh_and_tagline_finding. Owner field UNCHANGED."
     },
     {
       "id": "relationship-count",

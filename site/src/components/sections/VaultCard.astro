@@ -2,11 +2,11 @@
 interface Props { vault: any; }
 const { vault } = Astro.props;
 
-// Storyweave P3 / M3.1: one-line purpose per card. Prefer the richer `headline_mission`
-// (schema field, Hestia-authored per vault_card overlay) and fall back to `note` (the
-// populated one-line description, 67/68 today) — so the purpose line renders NOW from
-// existing data and auto-upgrades if headline_mission is later enriched. No strings authored here.
-const purpose = vault.headline_mission || vault.note || null;
+// Refit M2 / DP1 (2026-07-21, ratification_record_refit_g1): `tagline` is the canonical
+// per-vault purpose field (`headline_mission` retired — 0/73 populated, never authored);
+// fall back to `note` (the populated one-liner) so the purpose renders NOW from existing
+// data and auto-upgrades as Home backfills taglines. No strings authored here.
+const purpose = vault.tagline || vault.note || null;
 // Suppress the "—" persona placeholder (data-currency artifact routed to Hestia) so the
 // card never shows a lone em-dash above the new purpose line.
 const persona = vault.persona && vault.persona !== '—' ? vault.persona : null;
