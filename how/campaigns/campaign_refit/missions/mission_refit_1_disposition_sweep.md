@@ -3,7 +3,7 @@ plan_id: mission_refit_1_disposition_sweep
 type: plan
 title: "Refit M1 — Disposition sweep: settle the inbound docket (deadline-bound)"
 owner: stanley
-status: planned            # activates post-G1; if G1 slips past 07-24, the DP2 micro-ratification fires this mission's B1 objective standalone
+status: active             # G1 SIGNED 2026-07-21 → objective 1 (B1+B2 memo) EXECUTED same-session (deadline beaten); objectives 2–4 (D-DP2 execution · launch-acceptance pattern · park-notes) remain for the next session
 campaign_id: campaign_refit
 campaign_phase: 1
 campaign_mission_number: 1
@@ -35,7 +35,7 @@ B1 answer memo committed for delivery **≤07-24** (hard 07-31) + all four B-row
 ## Objectives
 
 ### 1. B1+B2 — Transmit the vNext task-slot answer + ADR-022 pointer
-- **Status**: planned
+- **Status**: completed (2026-07-21, chartering session — finalized as `coord_2026_07_21_rosetta_to_berthier_vnext_task_slot_and_adr022.md`, ratified text per G1 rows 1–2, committed for delivery 4 days ahead of the 07-25 tracker re-check)
 - **Description**: Finalize `artifacts/draft_coord_rosetta_to_berthier_vnext_task_slot_and_adr022.md` with the
   DP2-ratified one-liner ("candidate for the v2.6 standard window, evaluated in M5's G2-ratified roadmap; NOT in
   motion for v8.9 — re-card M44") + the DP3 pointer re-affirming the existing 2026-07-03 ADR-022 co-sign reply
