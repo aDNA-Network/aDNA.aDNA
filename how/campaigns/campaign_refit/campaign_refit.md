@@ -4,7 +4,7 @@ type: campaign
 title: "Operation Refit — post-launch consolidation: true the estate, settle the docket, chart vNext"
 owner: stanley
 persona: rosetta
-status: proposed          # → active only at G1 (§7.7 operator ratification; DP packet = artifacts/ratification_record_refit_g1.md)
+status: active            # G1 SIGNED 2026-07-21 (same-session; "Ratify + fire quick wins") — all 8 DPs accepted as recommended; record = artifacts/ratification_record_refit_g1.md (status: accepted)
 opens_at: 2026-07-21
 phase_count: 6
 mission_count: 6
@@ -225,5 +225,8 @@ coordination intake commit. Everything else waits for G1.
 
 ## Ratification
 
-Charter `status: proposed`. The G1 instrument is [[ratification_record_refit_g1]] (Entry Point B ceremony,
-DP1–DP8). Only the named operator advances it — and this charter — to `accepted`/`active` (§7.7).
+**G1 SIGNED 2026-07-21** — Stanley, Founding Architect; two AskUserQuestion lanes in
+`session_stanley_20260721_192321_refit_charter`; election "Ratify + fire quick wins"; **all 8 DPs accepted as
+recommended** (incl. the DP6 §2.7 rider). Instrument: [[ratification_record_refit_g1]] (`status: accepted`).
+Charter `proposed → active` same-session; the 07-24 transmission target and 07-31 deadline are both satisfied
+by the in-session B1 finalization (M1 objective 1).

@@ -6,8 +6,8 @@
 |-------|-------|
 | Campaign | `campaign_refit` |
 | Owner | stanley · Persona: Rosetta |
-| Status | **proposed** — chartered 2026-07-21; awaiting **G1 operator ratification** (§7.7; target ≤07-24). Flips `active` only at the signed gate. |
-| Current Phase | **P0 Charter ✅ → G1 pending.** Then P1 Settle (M1 dispositions [B1 DUE 07-31] · M2 data currency) → P2 True-up (M3 site · M4 evidence) → P3 Chart (M5 triage) → G2 → P4 Ready (M6) → P5 Close → G3. |
+| Status | **active** — G1 SIGNED 2026-07-21 (same-session as charter; all 8 DPs accepted as recommended; "Ratify + fire quick wins"). Record: `artifacts/ratification_record_refit_g1.md`. |
+| Current Phase | **P1 Settle** — M2 data currency + M1 objective 1 (B1 memo) fired in the chartering session; M1 objectives 2–4 next, then P2 True-up (M3 site · M4 evidence) → P3 Chart (M5 triage) → G2 → P4 Ready (M6) → P5 Close → G3. |
 | Executor tier | opus (campaign); M2 = sonnet (mechanical regen). Every mission carries SO-11 `token_budget_estimated`. |
 | Deadline | **2026-07-31** — the B1 vNext `task`-slot answer to Operations (tracker `20260521090500` re-checks 07-25). Hard constraint 8: if G1 slips past 07-24, fire the DP2 micro-ratification standalone. |
 
