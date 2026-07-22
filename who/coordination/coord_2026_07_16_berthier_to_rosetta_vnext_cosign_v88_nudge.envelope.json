@@ -1,0 +1,11 @@
+{
+  "content_hash": "sha256:f6efdd4a95e6c4f9e76375b0f575a584423187b285e57825068664f3040e2e79",
+  "delivery": "outbox_staged",
+  "dispatched_at": "2026-07-19T03:58:42.555615+00:00",
+  "envelope_version": "1.0",
+  "kind": "coord_memo",
+  "memo_id": "coord_2026_07_16_berthier_to_rosetta_vnext_cosign_v88_nudge",
+  "signature": "2a0631f37d501a8fe4d0dd9274ef2886ac85e6710fe6ae923cdd5d047bc74b427328518f1fae84d6dee7708e20a0cd1bbc945c3a2e54a60ac6c6eb6365a2b20f",
+  "source_node_pubkey": "d544941518b0b55a2029439fe50cd8cd87f2a9c78c85303d1c461e10ae2b86e8",
+  "target_vault": "aDNA.aDNA"
+}

@@ -1,0 +1,11 @@
+{
+  "content_hash": "sha256:0a871a479977801710a636d5d9d9a4d041ff81fd47f7f6ae054c6f2b0d32526b",
+  "delivery": "outbox_staged",
+  "dispatched_at": "2026-07-19T03:58:42.551434+00:00",
+  "envelope_version": "1.0",
+  "kind": "coord_memo",
+  "memo_id": "coord_2026_07_16_berthier_to_rosetta_ddp2_docs_propagation",
+  "signature": "e17c4aa321852e30dd94a9d5296a2d81f1602e2a1d071a86ca3c907e5e389753cf267a0169b4b930073e07b53b384c3b00d0d660f24b1afa1969e7872ae60e08",
+  "source_node_pubkey": "d544941518b0b55a2029439fe50cd8cd87f2a9c78c85303d1c461e10ae2b86e8",
+  "target_vault": "aDNA.aDNA"
+}
