@@ -3,7 +3,7 @@ campaign_id: campaign_v8_8_release
 type: campaign
 title: "Operation Distillery — the v8.8 template release (CLAUDE.md prune + inner-README III)"
 owner: stanley
-status: active
+status: completed   # flipped 2026-07-21 (Refit session-0 hygiene) — v8.8 SHIPPED 2026-07-14 (`a32724b` + tag `v8.8`); the campaign CLAUDE.md + STATE already carried completed; this frontmatter was the one surface never flipped
 phase_count: 4
 mission_count: 1
 estimated_sessions: "3-5"
@@ -12,7 +12,7 @@ estimation_class: "governance-broad"
 executor_tier: opus
 priority: medium
 created: 2026-07-13
-updated: 2026-07-13
+updated: 2026-07-21
 last_edited_by: agent_rosetta
 tags: [campaign, v8_8_release, distillery, batch_b, claude_md_prune, readme_iii, template_quality]
 ---

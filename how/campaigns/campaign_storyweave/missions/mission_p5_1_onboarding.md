@@ -6,7 +6,7 @@ campaign: campaign_storyweave
 phase: P5
 decade: 2
 owner: stanley
-status: active        # O0–O2 ✅ (M5.1a SHIPPED+LIVE 2026-07-12, deploy dpl_72iABbW); O3 ✅ DELIVERED + RATIFIED 2026-07-12 (≥6-exemplar install-forward pass → front_page_doctrine §10 durable, operator ⛩ O3 gate) → O4 (M5.1b R1 demo) unblocked; O5 (adjacents) / O6 (close) follow
+status: deferred      # trued 2026-07-21 (Refit session-0 hygiene): the campaign GRADUATED 2026-07-13 at 4.89 with O4 (M5.1b R1 demo) + adjacents operator-DEFERRED to in-person dev-rel (do NOT build solo; landing both re-ranks ≥4.95). Prior: O0–O2 ✅ (M5.1a SHIPPED+LIVE 2026-07-12, deploy dpl_72iABbW); O3 ✅ DELIVERED + RATIFIED 2026-07-12 (≥6-exemplar install-forward pass → front_page_doctrine §10 durable, operator ⛩ O3 gate)
 mission_class: build
 executor_tier: opus       # R1 art-direction/honesty + the ≥6-exemplar reference pass = judgment; M5.1a's R2/R3 are mechanical single-sourcing → sonnet-eligible if ever split out
 token_budget_estimated: "~80–120 kT for M5.1a (R2 hero-install + R3 eyebrow: build + gates + T0/T1 + home Lighthouse + ship-gate) in ~1 session; a SEPARATE pass for the R1 reference-inspection gate (O3) + the M5.1b demo build (O4) once ratified; M5.1c/close fold into the increments they ride with"

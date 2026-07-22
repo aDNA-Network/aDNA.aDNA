@@ -1,7 +1,7 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-07-14  # 2026-07-14 ✅ **v8.8 SHIPPED** — `campaign_v8_8_release` (Operation Distillery) CLOSED; v8.8 LIVE on aDNA-Network/aDNA (`a32724b` + tag `v8.8`). The accumulated inline PRIOR-chain this key carried (~29.7KB) is archive-shifted **verbatim** → [[STATE_archive]] §Shifted-2026-07-17 (Clear Hearth W-B slice 3; never deleted).
+updated: 2026-07-21  # 2026-07-21 Operation Refit chartered (P0; G1 ratification pending) + §Active-Campaigns Distillery banner trued to completed. Prior: 2026-07-14 ✅ **v8.8 SHIPPED** — `campaign_v8_8_release` (Operation Distillery) CLOSED; v8.8 LIVE on aDNA-Network/aDNA (`a32724b` + tag `v8.8`). The accumulated inline PRIOR-chain this key carried (~29.7KB) is archive-shifted **verbatim** → [[STATE_archive]] §Shifted-2026-07-17 (Clear Hearth W-B slice 3; never deleted).
 status: active
 last_edited_by: agent_rosetta
 _state_router_version: "1.0"
@@ -59,9 +59,13 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Active Campaigns
 
-### `campaign_v8_8_release` (Operation Distillery — **⏳ ACTIVE**; chartered 2026-07-13; **P1 ✅ + P2 ✅ ratified → awaiting P3 fire [operator GO]**)
+### `campaign_refit` (Operation Refit — 🟡 **PROPOSED**; chartered 2026-07-21; **awaiting G1 ratification [§7.7, target ≤07-24]**)
 
-`how/campaigns/campaign_v8_8_release/` — the **v8.8 template release** (governance `8.7 → 8.8`; **standard stays v2.5**): **Batch B** template-quality work deferred from v8.6+v8.7 — prune the base `.adna/CLAUDE.md` (~7.7K tok / 447 ln; P1 produces conservative + aggressive diffs, **operator rules depth per-section at P2 [DP1]**) + a re-scoped III pass on the real inner (157 ln) + root (88 ln) READMEs. 4 phases (P0 Charter ✅ · P1 Author ✅ · P2 Ratify ✅ [aggressive-minus-E3, 2026-07-13] · P3 Fire ⏳ [operator GO]) / 1 mission / 3-5 sessions; `executor_tier: opus`. **P1 staged the full evidence package** in `artifacts/`; **P2 ratified** (§7.7 `ratification_record_v8_8_p2.md`) → frozen ship candidate `staged_claude_md_ratified.md` (**~5,335 tok / −31%**; E3 Visual-inspection kept inline). Ship-set = ratified CLAUDE.md + `what/docs/adna_reference.md` + `how/templates/example_personalities.md` + inner-README III + root badge bump + gitleaks rider; counts 30/32 hold. `.adna/` untouched. OUT: node_manifest (→ Hestia). Ideas: `idea_upstream_claude_md_prune` (M01 lessons) + `idea_inner_readme_iii` (re-scoped premise). Plan: `please-read-teh-claude-md-playful-valiant.md`.
+`how/campaigns/campaign_refit/` — the **post-launch consolidation + charting campaign**: true every live surface (registry `vaults.json` 68→73 · G20 fixture 54→73 · site QA [org-context-graphs orphan · navigate-a-vault staleness] · evidence-artifact dangle policy), settle the inbound docket (Berthier vNext **`task`-slot answer DUE 2026-07-31** · ADR-022 co-sign re-delivery · D-DP2 six-item worklist · launch-acceptance-contract adoption · tagline/headline_mission schema ruling for Hestia), convert ~30 proposed upstream ideas into a **ratified vNext roadmap** (v8.9 governance batch vs v2.6 standard window) + a seeded successor release stub, and close contributor-readiness gaps. **6 phases** (P0 Charter · P1 Settle · P2 True-up · P3 Chart · P4 Ready · P5 Close) / **6 missions** / 6–9 sessions; **3 operator gates** (G1 ratify → G2 roadmap → G3 close+push election); `executor_tier: opus`; **NO normative change ships** (standard stays v2.5, governance stays 8.8 — Refit trues the estate and charters the next release). Charter: `campaign_refit.md` · SITREP/AAR: `artifacts/sitrep_2026_07_21_state_of_the_estate.md` · DP packet: `artifacts/ratification_record_refit_g1.md`.
+
+### `campaign_v8_8_release` (Operation Distillery — ✅ **COMPLETED 2026-07-14**; v8.8 SHIPPED, `a32724b` + tag `v8.8`)
+
+`how/campaigns/campaign_v8_8_release/` — the v8.8 template release, **CLOSED** (governance 8.7→8.8; standard v2.5; final = aggressive-minus-E3-minus-E2, CLAUDE.md −24%; counts 30/32). Detail: the ⏭ QUEUED banner above + `artifacts/aar_v8_8_p3_fire.md`. **Do NOT re-open.** *(This entry read "⏳ ACTIVE awaiting P3" until 2026-07-21 — label-lag from the 07-17 re-diet, trued at Refit session-0.)*
 
 > *(Completed-campaign entries — Cleanroom v8.7 · Meridian · operation_adna · feedback_loop · keystone · looking_glass · STR · network_audit · v2_infrastructure · Completed Mini-Campaigns — archive-shifted → [[STATE_archive]] §Shifted-2026-07-17; never deleted. Kept live: ACTIVE Distillery + Pending/seeded below.)*
 

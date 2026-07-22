@@ -2,11 +2,11 @@
 type: template
 title: "Ratification Record — Ceremony or Per-ADR Block"
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-21
 status: active
 last_edited_by: agent_rosetta
 tags: [template, governance, ratification, decision_record, ceremony, adr]
-fold_batch: champollion_m6_1_rc   # upstream-shipped at v8.4; this is the local project-vault mirror
+fold_batch: champollion_m6_1_rc   # upstream-shipped at v8.5 (harmonized 2026-07-21 — this comment mislabeled it v8.4 while the §footer + templates/AGENTS.md correctly say v8.5); this is the local project-vault mirror
 ---
 
 # Template — Ratification Record
