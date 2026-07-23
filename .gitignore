@@ -21,3 +21,16 @@ __pycache__/
 
 # Hero image-gen candidates (heavy intermediates; finals committed, provenance in image_gen_log JSONs)
 site/src/assets/heroes/candidates/
+
+# Evidence artifacts — heavy capture binaries + raw Lighthouse dumps (Refit M4 / DP5, 2026-07-23).
+# Reproducible via scripts/visual_capture.mjs / Lighthouse; capture_report.json provenance +
+# synthesis notes stay committed. Policy: how/campaigns/campaign_refit/artifacts/evidence_artifact_policy.md
+how/campaigns/campaign_storyweave/artifacts/onboarding_references/**/*.png
+how/missions/artifacts/storyweave_p3_measure/**/*.png
+how/missions/artifacts/storyweave_p4_docs_ia/**/*.png
+how/missions/artifacts/storyweave_p4_docs_ia/lighthouse/
+how/missions/artifacts/storyweave_p5_measure/**/*.png
+how/missions/artifacts/storyweave_p5_m5_3/**/*.png
+how/missions/artifacts/storyweave_p5_m5_3/lighthouse/
+# Scratch capture output (Class 3 — no citation)
+/visual_capture_out/

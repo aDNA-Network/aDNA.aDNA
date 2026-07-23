@@ -36,7 +36,7 @@ surfaced (R1 + R2 lead).
 ### R1 — Demo-as-proof: a real screencast of the agent working *(priority)*
 - **Provenance:** Hermes leads with a large "HERMES DESKTOP — BETA PREVIEW" panel showing the agent
   actually drafting release notes → committing → opening a PR (the operator's "video of usage";
-  headless capture `hermes_capture/home__desktop__dark.png`). [[front_page_doctrine]] "one demo."
+  headless capture `hermes_capture/home__desktop__dark.png` — local-only, reproducible; [[evidence_artifact_policy]]). [[front_page_doctrine]] "one demo."
 - **Gap:** adna.network has **zero** video/GIF — only static ASCII terminal mocks (`home.ts`).
 - **Build:** a **~30–60s screencast/GIF** — *clone → `claude` → the agent orients itself in a vault
   and does one real task* (e.g. answers "what's the state of this project?" from `STATE.md`). Home +

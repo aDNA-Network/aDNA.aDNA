@@ -1,0 +1,16 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 2674,
+    "title": "Raycast - Your shortcut to everything",
+    "desc": "A collection of powerful productivity tools all within an extendable launcher.",
+    "ogTitle": "Raycast - Your shortcut to everything",
+    "h1": "Your shortcut to everything.",
+    "h2count": 8,
+    "bodyLen": 7325,
+    "fullH": 15453,
+    "consoleErrors": []
+  }
+]

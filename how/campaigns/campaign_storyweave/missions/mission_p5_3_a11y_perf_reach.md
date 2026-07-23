@@ -18,6 +18,10 @@ tags: [plan, storyweave, decade2, p5, capstone, a11y, perf, reach, graph-cohesio
 
 # Mission: P5.3 — A11y + perf + reach (the capstone)
 
+> *Evidence note (Refit M4 / DP5, 2026-07-23):* the `o1_capture`/`o2_capture`/`o5_capture` PNG captures this
+> spec cites are **local-only, reproducible** via `scripts/visual_capture.mjs` — heavy binaries gitignored,
+> textual provenance committed. Convention: [[evidence_artifact_policy]]. (Annotation only; mission substance unchanged.)
+
 > **Read cold.** Persona **Rosetta**. Campaign governance: `how/campaigns/campaign_storyweave/CLAUDE.md`. Decade-2, phase 5 (the **capstone**) — **the final mission of the final phase**. **This is a BUILD mission** — `site/` edits happen here, shipped live behind an operator gate. **DE-RISKED — "hold, don't fix"**: the live measure ([[measure_summary]]) showed a11y already 100 and perf tight-green, so this is *hold-budget + reach + two folded home-touching follow-ups*, not axe-remediation. Start at **O0** (done — this spec). Grounding: [[p5_replan]] §M5.3 + the [[mission_p5_2_craft_design_system]] AAR follow-ups.
 
 ## Why this mission exists

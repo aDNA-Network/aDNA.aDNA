@@ -12,6 +12,9 @@ export default defineConfig({
   // concept's natural slug. Named here per the F-CHM-207 no-silent-redirects lesson.
   redirects: {
     '/patterns/dual-audience': '/patterns/dual-audience-writing',
+    // Refit M3 / DP4 (2026-07-23): /org-context-graphs was a true orphan (0 inbound links,
+    // "front end waiting to be built") — retired; its content lives on across the /vaults registry.
+    '/org-context-graphs': '/vaults',
   },
   integrations: [mdx(), sitemap()],
   prefetch: {

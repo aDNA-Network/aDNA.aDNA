@@ -1,0 +1,16 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 974,
+    "title": "Astro",
+    "desc": "Astro builds fast content sites, powerful web applications, dynamic server APIs, and everything in-between.",
+    "ogTitle": "Astro",
+    "h1": "The web framework for content-driven websites",
+    "h2count": 16,
+    "bodyLen": 5604,
+    "fullH": 12358,
+    "consoleErrors": []
+  }
+]

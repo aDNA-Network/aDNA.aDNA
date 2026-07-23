@@ -40,6 +40,10 @@ Persistent outputs from mission and campaign execution — AARs (After-Action Re
 
 Some artifacts — particularly campaign-closeout AARs and multi-objective consolidation reports (e.g., `aar_phase7_*.md`, `m24_obj4_agents_md_hardening_audit.md`, `m23_obj7_*.md`) — exceed the 50 kT Heavy-File threshold. Default to `offset` + `limit` Reads on artifacts whose filename suggests breadth (campaign AAR, multi-section consolidation, top-N list). See [[../../../what/decisions/adr_016_per_mission_context_budget.md|ADR-016 Clause B]] for the canonical convention.
 
+## Evidence-artifact tracking (Refit DP5)
+
+Capture sets (screenshots, Lighthouse JSON, headless PNGs) under `artifacts/*_capture/`, `*/lighthouse/`, and measure dirs follow the **three-class evidence policy** — commit cited slims + `capture_report.json` provenance; gitignore heavy regenerable PNGs (reproducible via `scripts/visual_capture.mjs`); ignore scratch. **Classify at authoring time** before committing a new capture set. Canonical rule: [[../campaigns/campaign_refit/artifacts/evidence_artifact_policy.md|evidence_artifact_policy]].
+
 ## Cross-References
 
 - [[../AGENTS.md|how/missions/AGENTS]] — Mission protocol (parent directory)

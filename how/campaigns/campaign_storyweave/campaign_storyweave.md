@@ -58,6 +58,11 @@ Chartered from the **Operation Storyweave planning mission** ([[mission_site_sto
 - **The real graph is legible** (readable labels, AA contrast, responsive, interactive) — the Diagram-Reviewer passes.
 - **Lighthouse**: Perf/BP/SEO budgets held; CLS measured & within budget.
 - **Zero orphan surfaces**; the T2 "outsider-credible" verdict re-confirmed on the *full* surface set.
+  > *Refit reconciliation (2026-07-23, DP4):* "zero orphan surfaces" held for **nav-reachability** — no
+  > *nav-linked* page dead-ended. One route, `/org-context-graphs`, remained a **true orphan** (built, indexable,
+  > 0 inbound links, "front end waiting to be built"); it was outside the nav graph this criterion measured.
+  > Refit M3 **retired** it (301 → `/vaults`), closing the gap. Storyweave's substance is unchanged — this note
+  > only records that the criterion measured nav-linking, not route-existence. Detail: [[campaign_refit]] M3 / DP4.
 - **Deploy cadence:** ship improvements **live per phase** (not at campaign end) + a credibility-hotfix path — value lands incrementally and earns real-world signal.
 - **Real-user truth-check:** ≥1 real-person **60-second / task test per Decade** — a truth-test on the *simulated* persona ranker (a proxy, not real users).
 - **Evidence-completed baseline (2026-07-08, [[evidence_completion]]):** persona hubs axe-clean + substantive (T2 → *cautiously-positive-on-the-standard*, still-unproven-on-the-network). Concrete T2 fixes are known: fix the broken Lattice-Protocol link · real adopters (not fictional use-cases) · a named human/contact · foreground the real public assets.

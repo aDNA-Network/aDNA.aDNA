@@ -1,0 +1,72 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 540,
+    "title": "aDNA — the open standard & network for shared context",
+    "desc": "The open standard and network to build, share, and govern the context that powers AI — in the open, for the good of all. Built on the Lattice Protocol.",
+    "ogTitle": "aDNA — the open standard & network for shared context",
+    "h1": "The aDNA Network",
+    "h2count": 5,
+    "bodyLen": 7134,
+    "fullH": 6482,
+    "consoleErrors": []
+  },
+  {
+    "surface": "get-started",
+    "path": "/get-started",
+    "status": 200,
+    "loadMs": 550,
+    "title": "Get Started — aDNA",
+    "desc": "Set up your own local aDNA workspace in one command: clone the workspace image from GitHub — router pre-instantiated, standard embedded — and let your first agent session scaffold your first project.",
+    "ogTitle": "Get Started — aDNA",
+    "h1": "Get Started",
+    "h2count": 3,
+    "bodyLen": 4213,
+    "fullH": 3845,
+    "consoleErrors": []
+  },
+  {
+    "surface": "network",
+    "path": "/network",
+    "status": 200,
+    "loadMs": 536,
+    "title": "The network of aDNA computers",
+    "desc": "An aDNA computer is one machine carrying many context vaults. See how nodes connect through real, directed relationships — and what stays local versus what you federate.",
+    "ogTitle": "The network of aDNA computers",
+    "h1": "The network of aDNA computers",
+    "h2count": 5,
+    "bodyLen": 4553,
+    "fullH": 5545,
+    "consoleErrors": []
+  },
+  {
+    "surface": "vaults",
+    "path": "/vaults",
+    "status": 200,
+    "loadMs": 528,
+    "title": "Vaults — the aDNA registry",
+    "desc": "Browse the 68-vault aDNA registry — personae, classes, cross-vault relationships",
+    "ogTitle": "Vaults — the aDNA registry",
+    "h1": "The vault registry",
+    "h2count": 15,
+    "bodyLen": 12670,
+    "fullH": 6996,
+    "consoleErrors": []
+  },
+  {
+    "surface": "commons",
+    "path": "/commons",
+    "status": 200,
+    "loadMs": 548,
+    "title": "The Public-Good Commons — aDNA",
+    "desc": "Mission-aligned subnetworks build, share, and govern shared context in the open. See the public-good work already happening on the aDNA network — and connect to it.",
+    "ogTitle": "The Public-Good Commons — aDNA",
+    "h1": "A commons, not a catalog.",
+    "h2count": 4,
+    "bodyLen": 5841,
+    "fullH": 5221,
+    "consoleErrors": []
+  }
+]

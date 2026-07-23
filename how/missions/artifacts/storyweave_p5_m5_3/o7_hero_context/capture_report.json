@@ -1,0 +1,30 @@
+[
+  {
+    "surface": "reference",
+    "path": "/reference",
+    "status": 200,
+    "loadMs": 535,
+    "title": "Reference — aDNA",
+    "desc": "aDNA specification documents, design rationale, governance model, glossary, and operational guides.",
+    "ogTitle": "Reference — aDNA",
+    "h1": "Reference",
+    "h2count": 5,
+    "bodyLen": 2857,
+    "fullH": 2902,
+    "consoleErrors": []
+  },
+  {
+    "surface": "learn",
+    "path": "/learn",
+    "status": 200,
+    "loadMs": 523,
+    "title": "Learn aDNA",
+    "desc": "An ordered path into aDNA: start with the overview, understand the core ideas, practice with a tutorial, then compare to what you already know.",
+    "ogTitle": "Learn aDNA",
+    "h1": "Learn aDNA",
+    "h2count": 5,
+    "bodyLen": 2548,
+    "fullH": 2854,
+    "consoleErrors": []
+  }
+]

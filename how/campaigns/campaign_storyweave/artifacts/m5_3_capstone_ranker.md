@@ -13,6 +13,10 @@ tags: [ranker, storyweave, p5, capstone, decadal-aar]
 
 # M5.3 capstone ranker — the campaign-graduation gate
 
+> *Evidence note (Refit M4 / DP5, 2026-07-23):* the `o1_capture`/`o2_capture`/`o5_capture`/`o7_*` PNG captures
+> cited below are **local-only, reproducible** via `scripts/visual_capture.mjs` — heavy binaries gitignored,
+> textual provenance committed. Convention: [[evidence_artifact_policy]]. (Annotation only; ranker substance unchanged.)
+
 > **Method.** `skill_decadal_aar` reviewer-lens-pass — the campaign's ratified persona gate (governance
 > CLAUDE.md §2). Four lenses score the **live post-M5.3 site** (not just the diff) 0–5; the **average is
 > the hard gate**, target **≥ 4.95** to graduate. Scores are grounded in captured evidence

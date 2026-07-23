@@ -1,0 +1,17 @@
+[
+  {
+    "surface": "privacy",
+    "path": "/privacy",
+    "status": 200,
+    "loadMs": 581,
+    "title": "Privacy — aDNA",
+    "desc": "What adna.network collects: nothing. No accounts, no analytics, no cookies, no tracking. A static, open-source site — here is the honest, verifiable detail.",
+    "ogTitle": "Privacy — aDNA",
+    "h1": "Privacy",
+    "h2count": 6,
+    "bodyLen": 3111,
+    "fullH": 3038,
+    "axeViolations": 0,
+    "consoleErrors": []
+  }
+]

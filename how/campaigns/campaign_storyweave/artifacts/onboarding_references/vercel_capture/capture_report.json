@@ -1,0 +1,19 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 2783,
+    "title": "Agentic Infrastructure - Vercel",
+    "desc": "The autonomous stack for every app and agent.",
+    "ogTitle": "Agentic Infrastructure - Vercel",
+    "h1": "Agentic Infrastructure",
+    "h2count": 17,
+    "bodyLen": 564,
+    "fullH": 4927,
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 403 ()",
+      "Failed to load resource: the server responded with a status of 429 ()"
+    ]
+  }
+]

@@ -67,10 +67,7 @@ const ALLOW: Record<string, string[]> = {
   // Shiki github-dark syntax-theme override (#6a737d comment color fails AA → #8b949e)
   // + AA-tuned btn hover + white. Tied to the specific highlight theme.
   'styles/global.css': ['#6a737d', '#8b949e', '#7c5cc4', '#ffffff'],
-  // The /org-context-graphs page is the flagged TRUE ORPHAN (B1, 0 inbound links).
-  // Allowlisted wholesale pending its B1 keep-or-retire disposition — do not invest
-  // in tokenizing a page that may be retired.
-  'pages/org-context-graphs.astro': ['#1a1b26', '#1f2335', '#c0caf5', '#9aa5ce', '#565f89', '#5fcf9e', '#fff', '#000', '#1a1206'],
+  // (org-context-graphs.astro allowlist retired with the page — Refit M3 / DP4, 2026-07-23.)
 };
 
 test('G25 token-discipline: no undocumented hardcoded hex in CSS', () => {

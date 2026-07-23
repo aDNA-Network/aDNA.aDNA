@@ -1,0 +1,32 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 540,
+    "title": "aDNA — the open standard & network for shared context",
+    "desc": "The open standard and network to build, share, and govern the context that powers AI — in the open, for the good of all. Built on the Lattice Protocol.",
+    "ogTitle": "aDNA — the open standard & network for shared context",
+    "h1": "The aDNA Network",
+    "h2count": 5,
+    "bodyLen": 7126,
+    "fullH": 6482,
+    "axeViolations": 0,
+    "consoleErrors": []
+  },
+  {
+    "surface": "network",
+    "path": "/network",
+    "status": 200,
+    "loadMs": 536,
+    "title": "The network of aDNA computers",
+    "desc": "An aDNA computer is one machine carrying many context vaults. See how nodes connect through real, directed relationships — and what stays local versus what you federate.",
+    "ogTitle": "The network of aDNA computers",
+    "h1": "The network of aDNA computers",
+    "h2count": 5,
+    "bodyLen": 4545,
+    "fullH": 5545,
+    "axeViolations": 0,
+    "consoleErrors": []
+  }
+]

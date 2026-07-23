@@ -1,0 +1,16 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 1181,
+    "title": "Hermes Agent | Nous Research",
+    "desc": "Hermes Agent — the open-source agent that grows with you. Native app for macOS, Windows, and Linux. By Nous Research.",
+    "ogTitle": "Hermes Agent — The Agent That Grows With You",
+    "h1": "THE AGENT\nTHAT GROWS\nWITH YOU",
+    "h2count": 10,
+    "bodyLen": 1468,
+    "fullH": 5317,
+    "consoleErrors": []
+  }
+]

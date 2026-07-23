@@ -1,0 +1,47 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 1218,
+    "title": "aDNA — the open standard & network for shared context",
+    "desc": "The open standard and network to build, share, and govern the context that powers AI — in the open, for the good of all. Built on the Lattice Protocol.",
+    "ogTitle": "aDNA — the open standard & network for shared context",
+    "h1": "The aDNA Network",
+    "h2count": 5,
+    "bodyLen": 7134,
+    "fullH": 6482,
+    "axeViolations": 0,
+    "consoleErrors": []
+  },
+  {
+    "surface": "privacy",
+    "path": "/privacy",
+    "status": 200,
+    "loadMs": 640,
+    "title": "Privacy — aDNA",
+    "desc": "What adna.network collects: nothing. No accounts, no analytics, no cookies, no tracking. A static, open-source site — here is the honest, verifiable detail.",
+    "ogTitle": "Privacy — aDNA",
+    "h1": "Privacy",
+    "h2count": 6,
+    "bodyLen": 3174,
+    "fullH": 2093,
+    "axeViolations": 0,
+    "consoleErrors": []
+  },
+  {
+    "surface": "get-started",
+    "path": "/get-started",
+    "status": 200,
+    "loadMs": 823,
+    "title": "Get Started — aDNA",
+    "desc": "Set up your own local aDNA workspace in one command: clone the workspace image from GitHub — router pre-instantiated, standard embedded — and let your first agent session scaffold your first project.",
+    "ogTitle": "Get Started — aDNA",
+    "h1": "Get Started",
+    "h2count": 3,
+    "bodyLen": 4213,
+    "fullH": 3845,
+    "axeViolations": 0,
+    "consoleErrors": []
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 3566,
+    "title": "Val Town",
+    "desc": "A nice place for JavaScript",
+    "ogTitle": "",
+    "h1": "The fastest way to ship apps",
+    "h2count": 1,
+    "bodyLen": 1227,
+    "fullH": 4350,
+    "consoleErrors": [
+      "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy."
+    ]
+  }
+]
