@@ -1,15 +1,15 @@
 ---
 type: concept
 created: 2026-04-13
-updated: 2026-04-13
+updated: 2026-07-22   # + "The Process Layer" section (D-DP2 item 3, Refit M1): file-layer ⇄ process-layer pairing made explicit
 status: active
 difficulty: intermediate
 spec_section: "§10 Context Library, §8.7 The 75% Rule"
 dual_audience: true
-last_edited_by: agent_stanley
-tags: [concept, context, optimization, token_efficiency, signal_density, intermediate]
+last_edited_by: agent_rosetta
+tags: [concept, context, optimization, token_efficiency, signal_density, process_layer, intermediate]
 related_concepts: [concept_convergence, concept_token_selection, concept_knowledge_graph]
-related_patterns: [pattern_agents_md, pattern_context_recipe]
+related_patterns: [pattern_agents_md, pattern_context_recipe, pattern_model_tiered_campaign_execution, pattern_decision_queue]
 ---
 
 # Context Optimization — Making Every Token Count
@@ -88,6 +88,10 @@ Individual file optimization isn't enough when tasks span multiple topics. The c
 | Full | All subtopics | Deep research or comprehensive review |
 
 Recipes prevent the common failure of loading "just in case" — pre-selecting which subtopics to combine for a given task type.
+
+### The Process Layer
+
+Everything above optimizes the *file* — the artifact an agent loads. There is a sibling discipline that optimizes the *process* — how the work itself is shaped so tokens are spent where judgment lives, not on avoidable re-reads and re-runs. The same "signal per token" instinct governs both, one layer up: [[what/patterns/pattern_model_tiered_campaign_execution|model-tiered execution]] routes each mission to the cheapest model that can run it safely; [[what/patterns/pattern_state_queued_banner|the state-queued banner]] keeps the cold-start read to one live handoff instead of a superseded stack; [[what/patterns/pattern_order_of_battle|the order of battle]] front-loads a campaign's obligations so no later phase re-derives them; and [[what/patterns/pattern_decision_queue|the decision queue]] holds inbound operator decisions in one durable surface instead of paying to reconstruct them each session. File-layer optimization makes each load cheaper; process-layer optimization makes fewer, better-targeted loads happen at all. (Operations.aDNA is the source-of-truth practitioner for the process layer; this vault teaches the file layer — the pairing is the point.)
 
 ## See It In Action
 

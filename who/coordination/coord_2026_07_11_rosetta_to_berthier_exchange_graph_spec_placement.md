@@ -6,6 +6,7 @@ updated: 2026-07-11
 last_edited_by: agent_rosetta
 acting_persona: rosetta
 status: draft            # ⛩ DRAFT for operator review — NOT sent, NOT committed; a §7.7 ruling ratifies before it goes outbound
+refit_disposition: "PARKED at Refit M1 (2026-07-22, B6) — operator-held §7.7 ruling; owner: operator (Stanley); resume trigger: Exchange conformance-spec-placement taken up at Refit M5 vNext triage OR a dedicated ruling sitting. Not delivered; not a Refit deliverable. No build."
 direction: outbound
 from_vault: aDNA.aDNA
 to_vaults: [Terminal.aDNA, Exchange.aDNA]

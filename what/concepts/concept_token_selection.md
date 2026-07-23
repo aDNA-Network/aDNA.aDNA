@@ -1,15 +1,15 @@
 ---
 type: concept
 created: 2026-04-13
-updated: 2026-04-13
+updated: 2026-07-22   # + "Selection at the Process Layer" section (D-DP2 item 3, Refit M1): the file-layer/process-layer pairing
 status: active
 difficulty: foundational
 spec_section: "§8.7 The 75% Rule, §10 Context Library"
 dual_audience: true
-last_edited_by: agent_stanley
-tags: [concept, token_selection, context_budget, context_engineering, foundational]
+last_edited_by: agent_rosetta
+tags: [concept, token_selection, context_budget, context_engineering, process_layer, foundational]
 related_concepts: [concept_convergence, concept_governance_files, concept_knowledge_graph]
-related_patterns: [pattern_agents_md, pattern_context_recipe]
+related_patterns: [pattern_agents_md, pattern_context_recipe, pattern_model_tiered_campaign_execution, pattern_decision_queue]
 ---
 
 # Token Selection — Loading What Matters
@@ -88,6 +88,10 @@ Not all tokens are equal. A well-written context file packs more decision-releva
 | 1 | Mostly filler |
 
 Token selection isn't just about *which* files to load — it's about ensuring the files themselves are worth loading. Tables over prose. Principles over preambles. Decisions over descriptions.
+
+### Selection at the Process Layer
+
+The mechanisms above select *within* a session — which files to load for the task at hand. A sibling discipline selects *across* sessions and missions, applying the same "load what matters, leave out the rest" instinct to the shape of the work itself: [[what/patterns/pattern_model_tiered_campaign_execution|model-tiered execution]] selects which *model* each mission needs (spend frontier judgment only where it pays); [[what/patterns/pattern_state_queued_banner|the state-queued banner]] selects the *one* handoff a cold-start actually reads; [[what/patterns/pattern_order_of_battle|the order of battle]] selects a campaign's live obligations once so later phases don't re-select them; and [[what/patterns/pattern_decision_queue|the decision queue]] selects which operator decisions are ready-now versus gated versus watch-only. Token selection is not only "which file?" but "which model, which handoff, which decision, now?" — the file-layer and process-layer questions are the same question at two scales.
 
 ## See It In Action
 

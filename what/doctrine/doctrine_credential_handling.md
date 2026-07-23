@@ -2,8 +2,8 @@
 type: governance
 scope: workspace
 created: 2026-05-25
-updated: 2026-06-12
-last_edited_by: agent_hestia
+updated: 2026-07-22   # + §8.1 single-writer general form promoted (D-DP2 item 5, Refit M1; Rosetta edit — authored_by unchanged)
+last_edited_by: agent_rosetta
 status: active
 canonical_at: /Users/stanley/aDNA/aDNA.aDNA/what/doctrine/doctrine_credential_handling.md
 authored_by: campaign_node_credentials M01 (Hestia / Home.aDNA)
@@ -427,6 +427,17 @@ If output is non-empty:
 The credential / inventory / doctrine surface is a small-fan-in shared resource (one broker, one inventory, one doctrine) where concurrent writes don't naturally merge. **Single-writer lease is the lightest enforceable discipline** that prevents the failure mode without requiring real locks.
 
 **Carry-forward at v8.0+**: this rule is proposed for the `.adna/` template at `aDNA.aDNA/how/backlog/idea_upstream_single_writer_lease_for_inventory.md` — applies to **any** node-local inventory entity type (not just credentials). Until upstream adoption, the rule binds at the workspace-doctrine level documented here.
+
+### §8.1 The general form (the discipline, not the schema) — Refit M1 promotion
+
+§8 binds the lease to the credential / inventory surface because that is where it was first drawn in blood (M05). The **discipline generalizes** to any high-collision, small-fan-in shared entity where concurrent writes do not naturally merge — inventory, identity, a registry, a `STATE.md`, a shared config. In its general form, four rules:
+
+1. **One writer per unit of work.** A "unit" is whatever two agents would corrupt by co-writing — a file, a campaign scope, an entity type. Exactly one session holds the write at a time.
+2. **Fencing token.** The lease-holder is named by its session id in `how/sessions/active/`; that id is the fence. A later writer that finds a live *overlapping* lease defers to the named holder, and a stale write from a superseded holder is rejected by re-reading `updated` immediately before write (File Safety).
+3. **Heartbeat / TTL.** A lease is only as live as its session. A session whose `heartbeat` has gone cold past its declared window is a **candidate-dead** lease, not a permanent block — surfaced to the operator for release, never silently stolen.
+4. **Stuck → human.** When two writers genuinely need the same unit, the tie does **not** resolve by "last write wins" — it escalates to the operator. (The M05 reconciliation was operator-routed; that is the pattern, not the exception.)
+
+This is the **discipline**, not a schema. The *federated wire-format* for a cross-node lease (lease records, lock tables, a claim-lease protocol) stays **D-DP1-gated** — the Coordination-category ontology lock — and is Operations.aDNA's to define. A standalone `pattern_single_writer_lease` lifting these four rules out of the credential doctrine into a general operational pattern is **filed for M5 vNext triage** ([[idea_upstream_single_writer_lease_for_inventory]]); this promotion teaches the general form here in the meantime, per the D-DP2 / DP6 ruling (Operation Refit M1, 2026-07-22).
 
 ## Related
 

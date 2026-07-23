@@ -3,12 +3,12 @@ type: context_guide
 topic: adna_core
 subtopic: ooda_cascade
 created: 2026-03-17
-updated: 2026-03-18
+updated: 2026-07-22   # + per-session Plan→Approve→Execute→AAR-before-done wrapper consolidated (D-DP2 item 4, Refit M1)
 sources: ["OODA loop (Boyd, 1987)", "aDNA Campaign AGENTS.md protocol", "aDNA Session protocol", "Lattice Protocol war ontology (adapted)"]
 context_version: "1.0"
 token_estimate: ~1000
-last_edited_by: agent_init
-tags: [context, adna_core, ooda, execution_hierarchy, evaluation]
+last_edited_by: agent_rosetta
+tags: [context, adna_core, ooda, execution_hierarchy, evaluation, plan_approve_execute]
 quality_score: 4.2
 signal_density: 4
 actionability: 5
@@ -48,6 +48,17 @@ status: active
 | **Act** | Execute. Create files. Run tests. Produce deliverables. |
 
 **Close-out**: SITREP feeds Mission OODA.
+
+### The per-session wrapper: Plan → Approve → Execute → AAR-before-done
+
+Session OODA is the *inner* loop (continuous observe-orient-decide-act). Around it sits a four-beat **operational wrapper** — the shape every attended session already runs, consolidated here so it is taught, not merely practised:
+
+1. **Plan.** Before touching project files, state the session's objective + the files it will touch (the plan artifact). For a large or multi-dimensional effort this is a full planning mission ratified before any build (§7.7); for a routine session it is the plan-mode summary.
+2. **Approve** — *the per-session gate.* The operator approves the plan before execution. This is **plan-approval-as-gate**: for an **attended** session the approval is the in-chat "go"; for an **away / unattended** session it is a rendered decision surface ([[skill_create_iss|ISS]]) or an [[pattern_iss_operator_gate|AskUserQuestion]] left for pickup — the gate still fires, the surface just fits the moment. Plan gates and phase gates are both **human gates** (Standing Order 1): an agent authors, the operator rules.
+3. **Execute.** Run the plan at the session's `executor_tier` ([[pattern_model_tiered_campaign_execution|model-tiered execution]]); an un-briefed decision *escalates* — it never improvises past the approved scope.
+4. **AAR-before-done.** No mission reaches `status: completed` without its 5-line AAR (Worked/Didn't/Finding/Change/Follow-up) landing *first* — the AAR is a precondition of closure, not a post-hoc note (Standing Order 5). The session SITREP + the AAR are the traceable artifacts that feed Mission OODA.
+
+This wrapper introduces nothing new — it names the loop that [[pattern_campaign_splash|the campaign splash]] (open/close surface), the AAR protocol, and the phase-gate standing orders already imply, so a session runs it deliberately instead of by habit.
 
 ### Mission OODA (Tactical)
 

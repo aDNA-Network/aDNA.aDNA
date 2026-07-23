@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-07-02
-updated: 2026-07-14   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor); §2.5 dispatch-shape note added at P3 open (operator ruling: Mode B same-session subagent dispatch = default); **§2.6 Mode-B operational discipline folded at Champollion M7.2 close (2026-07-03) — 7 sweep-surfaced hazards + the review-bookend checklist**; §2.7 next-mission handoff recommendation authored **proposed** (operator request 2026-07-14, awaiting ratification) + §2.1 mechanical binding refreshed (Sonnet 4.6→5, Haiku 4.5)
+updated: 2026-07-22   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor); §2.5 dispatch-shape note added at P3 open (operator ruling: Mode B same-session subagent dispatch = default); **§2.6 Mode-B operational discipline folded at Champollion M7.2 close (2026-07-03) — 7 sweep-surfaced hazards + the review-bookend checklist**; **§2.6 items 8–9 (adversary-born-PENDING · resume-not-respawn — Operations.aDNA co-evolution) folded + §2.7 RATIFIED accepted at Operation Refit G1 (DP6 rider; ratification_record_refit_g1.md), stamp landed 2026-07-22 (Refit M1)**; §2.7 next-mission handoff recommendation authored 2026-07-14 + §2.1 mechanical binding refreshed (Sonnet 4.6→5, Haiku 4.5)
 status: active   # GRADUATED at Champollion G3 (2026-07-02, D2a — 5 instances; operator-ratified)
 pattern_category: operational
 applies_to: [campaign, mission, session, all_categories]
@@ -84,7 +84,7 @@ Campaigns MAY declare a local variant table in their charter (Vauban-style); abs
 
 ### 2.6 Mode-B operational discipline (hazards the Champollion sweeps surfaced)
 
-Running full phases as single Mode-B sweeps (Champollion P3–P7, 2026-07-02/03) surfaced a recurring set of orchestration hazards. They are **folded here as durable rules** (not merely narrated in the campaign's retro — [[../../how/campaigns/campaign_champollion/artifacts/ops_retro_champollion|ops_retro_champollion]] is the provenance record), each with its incident lineage:
+Running full phases as single Mode-B sweeps (Champollion P3–P7, 2026-07-02/03) surfaced a recurring set of orchestration hazards (items 1–7). They are **folded here as durable rules** (not merely narrated in the campaign's retro — [[../../how/campaigns/campaign_champollion/artifacts/ops_retro_champollion|ops_retro_champollion]] is the provenance record), each with its incident lineage; **items 8–9 are Operations.aDNA's parallel-practice co-evolution, folded at Refit M1** (2026-07-22, per the D-DP2/DP6 ruling — Operations is the source-of-truth practitioner, this vault the SSOT that records the shared discipline):
 
 1. **Twin-builder → TaskStop + quiescence** (P4). One Agent-tool dispatch can yield **two live builder instances** — the dispatch returns id A while completion notifies from id B, and the original keeps editing after the twin reports. **Rule**: after a builder's completion notification, **TaskStop the dispatch's agent-id and verify tree quiescence** (`git status` clean of unexpected edits) *before* any review-fix.
 
@@ -100,16 +100,21 @@ Running full phases as single Mode-B sweeps (Champollion P3–P7, 2026-07-02/03)
 
 7. **Judgment-tier substitution under rate-limit** (M7.1/M7.2). When the judgment tier (fable) is **rate-limited**, a review or closeout bookend MAY run as an **operator-authorized substitute at the build tier (opus)** — recorded honestly (`model_actual ≠ tier_planned`, noted in the AAR). A **fresh independent subagent** preserves independence even at the substitute tier. The safety invariant is unaffected: fable is never *auto*-spawned; the substitution is an operator decision, not an automated downgrade.
 
+8. **Adversary cells are born PENDING** (Operations.aDNA co-evolution). Every adversary-verdict and outcome cell in a review scaffold is **born empty — literal `PENDING` — never pre-filled at drafting time.** A placeholder verdict written when the scaffold is authored biases the later read toward the guessed value and has silently carried a wrong verdict through to commit. **Rule**: draft verdict/outcome columns empty; a value lands *only* when the review actually runs. Incident lineage: Operations logged **3 self-caught pre-fill incidents** before the discipline became reflexive — the drafting-time sibling of hazard 3 (finding-side verification is the review-time member of the same family).
+
+9. **Resume the subagent, never respawn** (Operations.aDNA co-evolution). When a builder or reviewer subagent hits a **first-spawn model-limit** (context or rate ceiling) mid-lane, **resume the same subagent — do not respawn a fresh one.** Respawn discards the lane's accreted context and re-pays the whole read; resume preserves it. Incident lineage: **7+ clean lanes on the resume path** (Operations). Orthogonal to hazard 7: substitution changes the *tier* (fable→opus under rate-limit), resume preserves the *context* (same instance) — two independent levers for two independent limits.
+
 **Mode-B review-bookend checklist** (run before any commit):
 - [ ] **Quiescence** — TaskStop the dispatch agent-id; `git status` shows only expected edits.
 - [ ] **Finding-side** — every finding-sourced change verified against its cited surface (both sides of a contradiction).
 - [ ] **Aggregate budget** — running mission total checked vs the halt line (sum, not per-dispatch).
 - [ ] **Independence** — the review varied its method from the builder's (not a re-run).
+- [ ] **Born-PENDING** — verdict/outcome cells were empty at drafting; every filled value came from an actual review run.
 - [ ] **Validators** — `adna_validate` full + `--governance` green; explicit-path commit; no push unless the gate fires.
 
-### 2.7 Next-mission handoff recommendation (operator-facing close-out line) — *proposed*
+### 2.7 Next-mission handoff recommendation (operator-facing close-out line)
 
-> **Ratification block** — **decision**: adopt the mission-close next-tier handoff line as standing close-out practice · **ratified-by**: *pending* · **date**: 2026-07-14 (authored) · **status: proposed**. Authored under aDNA.aDNA Decision Ratification (§7.7); the rest of this graduated pattern is unaffected until the operator signs.
+> **Ratification block** — **decision**: adopt the mission-close next-tier handoff line as standing close-out practice · **ratified-by**: **Stanley (FA)** · **date**: **2026-07-21** · **status: accepted**. Ratified at **Operation Refit G1** as the DP6 rider (record: [[../../how/campaigns/campaign_refit/artifacts/ratification_record_refit_g1|ratification_record_refit_g1]]); authored 2026-07-14 under aDNA.aDNA Decision Ratification (§7.7), stamp landed at Refit M1 (2026-07-22).
 
 §2.4 records the tier a mission was *planned* at (on its card) and the tier it *actually ran* at (in its AAR). Neither makes the **forward handoff** explicit: at the moment a mission closes, nobody states — to the operator, actionably — which model the *next* mission should run on. Under R0 Mode A (§8) the operator drives model choice by hand (`/model <tier>` before each session), so that statement is directly actionable and belongs in the close-out.
 

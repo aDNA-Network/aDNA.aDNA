@@ -3,10 +3,10 @@ type: spec
 kind: ecosystem_spec
 name: org_pattern_ecosystem
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-07-22   # + RareAnthropic.aDNA row registered in §Active Org-Graphs (Refit M1 fold of the 2026-07-22 request; diagnostic "ours-modeling-them" passes; registration = data-currency, spec version unchanged)
 version: "0.1"
 status: active
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [spec, ecosystem, org_vault, org_graph, network, aDNA_pattern]
 extraction_source: ~/aDNA/CLAUDE.md lines 204-252 (extracted at compliance campaign M01)
 co_signed_adr: aDNA.aDNA/what/decisions/adr_012_ecosystem_spec_extraction.md
@@ -66,6 +66,7 @@ An org-vault may sit under an org-vault umbrella that holds program-level frame 
 | `SuperLeague.aDNA` | TBD | SuperLeague-the-company | TBD (Carly + Herb partner-clone work in progress; Stanley not yet cloned) | `LatticeProtocol/SuperLeague.aDNA` (partner-cloned by Carly + Herb 2026-05-13) | **Reclassified Org-Graph.aDNA 2026-05-15** (LIP-0005) |
 | `CakeHealth.aDNA` | Berthier | Dr. Ami Mac's clinical practice + the emerging CAKE Health vision (Operation CAKE) | Operation CAKE M00-M08 missions (M01 partial; M02-M08 planned) | `https://github.com/LatticeProtocol/CakeHealth.aDNA` (private; Stanley + Herb local clones) | **Reclassified Org-Graph.aDNA 2026-05-15** (LIP-0005) |
 | `PercySleep.aDNA` | Hypnos | Percy Sleep Inc — contactless 60GHz behavioral sleep-monitoring device + AI platform + clinician dashboard | TBD (no engagement scope defined; v1 OUR-confidential) | Stanley-local (genesis 2026-05-28; local-by-default) | **Genesis — "Operation Somnograph"; P0–P1 complete 2026-05-28, P2 (GitHub) + P3 (DuploCloud) gated** (LIP-0005) |
+| `RareAnthropic.aDNA` | Hygeia | The Anthropic ecosystem (products · data retention · HIPAA/BAA posture · Skills) — modeled outside-in for the AI Working Group for Rare Disease Leaders | Default-confidential; modeled org does NOT read the graph at v1; **NOT data-bearing** (no PHI/credentials by design); independent + cross-link to the `WilhelmAI.aDNA` umbrella (candidate pillar, recorded RareAnthropic-side only — WilhelmAI governance ratifies any formal coupling) | Stanley-local (genesis 2026-07-22, "Operation Portolan"; local-by-default) | **Genesis — "Operation Portolan" (single-GO genesis; chartered 2026-07-22)** (LIP-0005) |
 
 ### Cross-Vault Federation Posture
 

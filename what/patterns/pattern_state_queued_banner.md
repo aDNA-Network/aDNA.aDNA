@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-22   # §2.1 integrity-verified roll folded (Operations.aDNA co-evolution, Refit M1 / D-DP2 item 1)
 status: draft
 pattern_category: operational
 applies_to: [sessions, campaigns, coordination]
@@ -34,6 +34,17 @@ Replace the *append-a-prompt* discipline with a **single overwritten banner** pl
 
 The banner is also a **routing target**: a vault's `CLAUDE.md` can send every cold-start straight to it ("cold start per `STATE.md §QUEUED`"), making the handoff the literal entry point rather than a buried convention.
 
+### 2.1 The integrity-verified roll (Operations.aDNA co-evolution — Refit M1)
+
+Steps 3–4 above (*shed the predecessor*, *archive-shift never delete*) describe **what** moves at close. Operations.aDNA's five-campaign practice contributes the un-taught half: the **roll discipline that makes the move provably safe** on a long-lived STATE file — where a botched shift can silently truncate history that nobody notices until a cold-start reads into a hole. Four checks, cheapest-first:
+
+1. **Fixed newest-N blocks.** A roll shifts a *fixed* count of the oldest session blocks (the newest N stay live) — a deterministic boundary, not an eyeballed one. The count is the roll's contract; it does not drift mid-roll.
+2. **Per-block md5 + char-count on the source form.** Before the shift, hash and char-count each block *as it reads on disk*; after, the archived block must reproduce both. A move that changes a byte is a bug, not a roll.
+3. **Validate the method against ≥2 known prior hashes before trusting a new roll.** The first time a roll procedure runs (or after any change to it), replay it against **two rolls whose hashes are already known-good** and confirm it reproduces them. A method that cannot re-derive the past is not trusted with the present. Instance evidence: one such validation caught **nothing — precisely because it ran** (the value of a method check is the run, not the finding).
+4. **Round-trip re-read after.** Re-read the live `STATE.md` + `STATE_archive.md` *after* the write; the byte-conservation identity (§2 step 4, §4 step 5) must hold on the re-read, not merely on the pre-write plan.
+
+Instance evidence: **6 consecutive verified rolls (Operations.aDNA S74–S78)**, attested in the D-DP2 co-evolution memo ([[../../who/coordination/coord_2026_07_16_berthier_to_rosetta_ddp2_docs_propagation|coord 2026-07-16]]) — Operations is the source-of-truth practitioner, this vault the SSOT that teaches the discipline. *(Whether Operations' running banner is itself a third graduation-eligible adoption of this pattern is a census-and-gate question — see §Provenance — deliberately not settled here.)*
+
 ## 3. Live instances (the structure IS the lesson)
 
 **This vault (self-reference — you can look at it right now):**
@@ -56,7 +67,7 @@ The two banners share the **exact same section title** and the single-overwritte
 2. **Overwrite it at session close** with the new handoff — current ratified state, next action, next gate, per-session standing rules. One live block, always.
 3. **Adopt shed-on-close**: the closing session moves the *prior* session's Last-Session / Next-Session prose to `STATE_archive.md` under a dated banner, leaving a stub pointer. Don't wait for a quarterly diet.
 4. **Route cold-starts to it** from `CLAUDE.md` ("cold start per `STATE.md §QUEUED`") so the handoff is the entry point.
-5. **Prove byte-conservation** on any diet: `wc -c STATE.md STATE_archive.md` combined-after ≥ combined-before; validator FULL PASS; spot-check that stub-pointer wikilinks resolve.
+5. **Prove byte-conservation + run the integrity-verified roll (§2.1)** on any shift — not just a one-time diet: fixed newest-N blocks · per-block md5/char-count on the source form · method-validation vs ≥2 known prior hashes · round-trip re-read; then `wc -c STATE.md STATE_archive.md` combined-after ≥ combined-before; validator FULL PASS; spot-check that stub-pointer wikilinks resolve.
 
 ## 5. When NOT to use / anti-pattern
 
@@ -71,4 +82,4 @@ The two banners share the **exact same section title** and the single-overwritte
 
 ## Provenance & graduation
 
-Harvested at Operation Champollion **M3.1** (Pattern Harvest I, 2026-07-02, Rosetta/this vault). The discipline was *forced into existence* by mission **M1.5** (STATE router diet, 2026-07-02) — a 554 KB→46.6 KB reduction whose AAR named self-superseded handoff prose as the bloat source and prescribed shed-on-close — and installed as standing practice by the **G1 gate cascade**. The sibling instance in LatticeProtocol.aDNA runs the same banner as ongoing cold-start routing. **Instances: 2** (one per sibling campaign) — this file stays `status: draft` until a third vault adopts the banner; the associated STATE-template fold is queued at Champollion **G3** and ships via **M6.1**'s RC. **Provenance note for the reviewer**: the M1.5 AAR promised an upstream idea `idea_state_prompt_shed_on_close`; that file was never filed (it is referenced by five files but does not exist in `how/backlog/`) — this pattern cites the three live provenance refs above instead of the phantom idea, and flags the gap for the fable reviewer to ledger. Related patterns: [[pattern_order_of_battle]] (the QUEUED banner points the cold-start at the current gate and its obligation surface), [[pattern_cross_graph_codepin]] (a QUEUED banner routes cold-starts *to* the codepin — LP's does), [[pattern_model_tiered_campaign_execution]] (the diet that birthed this banner was a *measured* token-economy outcome, the kind that pattern's §3 hands to Context.aDNA).
+Harvested at Operation Champollion **M3.1** (Pattern Harvest I, 2026-07-02, Rosetta/this vault). The discipline was *forced into existence* by mission **M1.5** (STATE router diet, 2026-07-02) — a 554 KB→46.6 KB reduction whose AAR named self-superseded handoff prose as the bloat source and prescribed shed-on-close — and installed as standing practice by the **G1 gate cascade**. The sibling instance in LatticeProtocol.aDNA runs the same banner as ongoing cold-start routing. **Instances: 2** (one per sibling campaign) — this file stays `status: draft` until a third vault adopts the banner; **Operations.aDNA's attested banner+roll practice (S74–S78, the §2.1 co-evolution source) is a candidate third adoption** — to be confirmed by a fresh filesystem census and ratified at a future operator gate per the instance-counting rule, deliberately NOT self-counted here. The associated STATE-template fold is queued at Champollion **G3** and ships via **M6.1**'s RC. **Provenance note for the reviewer**: the M1.5 AAR promised an upstream idea `idea_state_prompt_shed_on_close`; that file was never filed (it is referenced by five files but does not exist in `how/backlog/`) — this pattern cites the three live provenance refs above instead of the phantom idea, and flags the gap for the fable reviewer to ledger. Related patterns: [[pattern_order_of_battle]] (the QUEUED banner points the cold-start at the current gate and its obligation surface), [[pattern_cross_graph_codepin]] (a QUEUED banner routes cold-starts *to* the codepin — LP's does), [[pattern_model_tiered_campaign_execution]] (the diet that birthed this banner was a *measured* token-economy outcome, the kind that pattern's §3 hands to Context.aDNA).
