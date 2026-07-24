@@ -1,10 +1,10 @@
 ---
 type: backlog_idea
-status: proposed
+status: resolved
 priority: medium
 created: 2026-07-17
-updated: 2026-07-17
-last_edited_by: agent_hestia
+updated: 2026-07-24
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/campaigns/campaign_context_health/ (Wave E)
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
@@ -53,3 +53,9 @@ not on policy. Wave E had to hand-backfill the 10 — exactly the work fork-time
 
 Pairs with [[idea_upstream_path_convention_doctrine]] (both touch the fork skeleton). Home offered the Wave E stub shape
 as the seed. No count bump (existing skill hardened). Roadmap: [[vnext_roadmap]] §v8.9.
+
+## Adopted — v8.9 M2 (Operation Palimpsest) · 2026-07-24 · resolved
+
+Authored dev-side as ship-set item 4 — `how/skills/skill_project_fork.md` hardened: AGENTS.md added to the Step 4
+`agent_init` stamping, a new **Step 4.6** 4-file governance-kit completion gate (with the genesis-stub carve-out +
+census hook), and the Outputs table updated. Existing skill hardened — no count bump. Ships to the image at P3.

@@ -3,11 +3,11 @@ type: backlog_idea
 idea_id: idea_tool_compliance_checker_hardening
 title: "Harden compliance_checker.py — scratch-default output, content-type scoring, documented python3.13 dep"
 category: tooling
-status: proposed
+status: resolved
 priority: medium
 effort: small  # ~0.5–1 session — argparse default + a type-vocab branch + a docstring/README line
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-24
 last_edited_by: agent_rosetta
 tags: [backlog, tooling, compliance_checker]
 ---
@@ -58,3 +58,11 @@ This idea is the vault grading its own grader: the aDNA standard teaches a 10-di
 ADOPT into v8.9 — bundle with the other tooling touches. `compliance_checker.py` (a base template tool at
 `what/lattices/tools/`) gets output hygiene + content-type scoring + a runtime-dep note. Small, self-contained, no
 schema change. Batches with the `adna_validate` lane if convenient. No count bump. Roadmap: [[vnext_roadmap]] §v8.9.
+
+## Adopted — v8.9 M2 (Operation Palimpsest) · 2026-07-24 · resolved
+
+Authored dev-side as ship-set item 7 — `what/lattices/tools/compliance_checker.py` hardened: `--outdir` defaults to the
+git-ignored `./.compliance_out` (+ `.gitignore` entries), a yaml-import runtime guard prints a clear "requires
+python3.13" message instead of an opaque traceback, and out-of-vocabulary types report `unsupported type — not scored`
+(excluded from the aggregate) rather than 0.0%. The idea's 3-point acceptance test is run at the mission verify gate. No
+count bump.

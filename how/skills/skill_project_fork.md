@@ -2,11 +2,11 @@
 type: skill
 skill_type: agent
 created: 2026-03-23
-updated: 2026-06-19
+updated: 2026-07-24
 status: active
 category: onboarding
 trigger: "Root CLAUDE.md project creation flow — user wants to create a new project"
-last_edited_by: agent_hestia
+last_edited_by: agent_rosetta
 tags: [skill, project, fork, onboarding, lattice, exemplar_home, hearthstone_p4]
 
 requirements:
@@ -142,6 +142,10 @@ Edit the forked project's governance files to set up first-run detection:
 - Set `last_edited_by: agent_init` in frontmatter
 - Set `updated: <today's date>` in frontmatter
 
+**AGENTS.md** (root agent-orientation file — inherited from `.adna/AGENTS.md` verbatim via the Step 3 `cp -r`):
+- Set `last_edited_by: agent_init` in frontmatter (keeps first-run detection valid; the file is the base root shape — Purpose / Quick Orientation / Project Structure / Agent Startup / Layer References)
+- Set `updated: <today's date>` in frontmatter
+
 These markers ensure the project's CLAUDE.md first-run detection will trigger `skill_onboarding.md` on next open.
 
 ### Step 4.5: Exemplar HOME overlay (exemplar mode only)
@@ -157,6 +161,29 @@ Run only when `exemplar_mode == true` (Step 2). The base fork already laid down 
 6. **First regen** (after `skill_inventory_refresh` populates inventory): `CANVAS_CORE_HOME=… TOPOLOGY_GENERATED_DATE=$(date +%F) python what/code/build_topology_canvas.py` and `python what/code/build_curation_cards.py` — these fill §Topology and §Gallery. (`CANVAS_CORE_HOME` locates the `canvas_core` producer in `Canvas.aDNA`, ADR-004; the generator degrades with a clear message if absent — `SUBSTITUTIONS.md` §3. Deprecated alias: `CANVASFORGE_CODE`.)
 
 Leave the canvas/gallery aesthetic to an operator Obsidian sign-off (operator gates — Standing Rule). On the reference node this overlay is normally performed by `skill_node_bootstrap_interview.md` Step 9; this step exists so a node-class fork can produce the exemplar shape in one pass. Point the operator at the fork's `ONBOARDING.md` as their first read.
+
+### Step 4.6: Governance-kit completion gate
+
+Before the fork is declared done, verify the **4-file root governance kit** is present and prepared. The fork is **not complete** with any kit file missing:
+
+| Kit file | Role | `agent_init` stamped? |
+|----------|------|-----------------------|
+| `CLAUDE.md` | master agent context + first-run detection | yes (Step 4) |
+| `AGENTS.md` | root agent-orientation ladder (root → layer → local) | yes (Step 4) |
+| `MANIFEST.md` | project overview, `role: template` stripped | yes (Step 4) |
+| `STATE.md` | operational snapshot | yes (Step 4) |
+
+```bash
+for f in CLAUDE.md AGENTS.md MANIFEST.md STATE.md; do
+  test -f "<project_name>.aDNA/$f" || echo "KIT-INCOMPLETE: missing $f"
+done
+```
+
+Any `KIT-INCOMPLETE` line is a fork failure — re-copy the missing file from `.adna/` and re-stamp it `agent_init` before proceeding. The Step 3 `cp -r .adna/` normally carries all four; this gate catches the historical class where a fork came through a non-standard path and silently shipped without a root `AGENTS.md` (Operation Clear Hearth found 10 active graphs that needed hand-backfill — the kit outcome had depended on which fork path a vault came through, not on policy).
+
+**Genesis-stub carve-out.** A `genesis_planning` fork (SO-1 — persona/identity deferred to its own P0) may defer the *content* of these files to P0, but still receives the kit *files*: a minimal `AGENTS.md` routing stub is orientation, not governance — it makes no identity/persona claim, so SO-1 is respected. The gate checks **presence**, not completeness, for genesis stubs.
+
+**Census hook.** Once every fork ships the complete kit, node health checks (`skill_node_health_check`) treat a missing kit file as **drift**, not ambiguity — a missing root `AGENTS.md` becomes a flaggable finding rather than an "is this intentional?" judgment call.
 
 ### Step 5: Offer Immediate Onboarding
 
@@ -188,6 +215,8 @@ Confirm to the user:
 | Prepared MANIFEST.md | File | `role: template` removed, `agent_init` marker set |
 | Prepared STATE.md | File | `agent_init` marker set |
 | Prepared CLAUDE.md | File | `agent_init` marker set |
+| Prepared AGENTS.md | File | inherited from `.adna/` root, `agent_init` marker set |
+| Complete 4-file governance kit | Gate | CLAUDE · AGENTS · MANIFEST · STATE presence-verified (Step 4.6) |
 | Fresh git repo | Git | `git init` with no history |
 
 ## Error Handling

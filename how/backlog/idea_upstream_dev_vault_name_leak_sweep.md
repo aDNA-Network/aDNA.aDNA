@@ -1,8 +1,8 @@
 ---
 type: backlog
 created: 2026-07-03
-updated: 2026-07-03
-status: proposed
+updated: 2026-07-24
+status: resolved
 last_edited_by: agent_rosetta
 priority: low
 origin: discovered at the v8.5 release-cut fire (mission_v8_5_release_cut_hygiene §11)
@@ -51,3 +51,10 @@ ADOPT into v8.9 — folds into `skill_template_release`'s DE-LINK discipline. Di
 (21 private wikilinks nearly shipped into the public image). Ships as a codified pre-assembly grep of the full outbound
 link/path set + a dev-vault-name scan of every folded artifact, added to the release skill. No count bump (existing
 skill hardened). Reinforces hard-constraint 5. Roadmap: [[vnext_roadmap]] §v8.9.
+
+## Adopted — v8.9 M2 (Operation Palimpsest) · 2026-07-24 · resolved
+
+Authored dev-side as ship-set item 6 — a codified DE-LINK + dev-vault-name leak sweep landed as a new **Step (b.1)**
+(hard gate) in `how/skills/skill_template_release.md`: full outbound link/path grep + dev-vault-name scan of the whole
+assembled tree + disposition-recording. Closes the loop before this campaign's own P3 fire runs the skill. Existing
+skill hardened — no count bump.

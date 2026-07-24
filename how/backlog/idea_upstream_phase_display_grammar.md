@@ -4,7 +4,7 @@ idea_class: upstream_contribution
 from_vault: Emacs.aDNA
 from_persona: archimedes
 created: 2026-07-22
-status: proposed
+status: resolved
 target: "Fleet display convention for STATE.md `phase:` / `current_phase:` values — the phase grammar `P<n>[/<count>]` (never a bare numeral on a rendered surface)"
 origin: "Emacs.aDNA Operation Camera Lucida ⛩ OQ-CL-8 ruling (2026-07-20) — the C-009 finding: two surfaces reading the same vault disagreed because one rendered upstream numeric `current_phase: 0/4` frontmatter verbatim; filed at the campaign's P4 memo lane (M-CL13) per the ruling's own commitment"
 tags: [backlog, upstream, phase_grammar, state_frontmatter, supervision_surfaces, honest_absent, camera_lucida, archimedes]
@@ -58,3 +58,10 @@ ADOPT into the v8.9 STATE-convention family (with [[idea_upstream_mission_frontm
 phase slot is a measured ambiguity (C-009); the `P<n>[/<count>]` grammar + authoring guidance + `+adna-normalize-phase`
 render convention is already live on Emacs.aDNA (Camera Lucida M-CL6) and completes the `phase:`/`campaigns:`/`mission:`
 trio. Ships as authoring guidance in the base CLAUDE.md/STATE guidance — no schema change, no count bump. Roadmap: [[vnext_roadmap]] §v8.9.
+
+## Adopted — v8.9 M2 (Operation Palimpsest) · 2026-07-24 · resolved
+
+Authored dev-side as ship-set item 2 (STATE-convention family, with [[idea_upstream_mission_frontmatter_key]]). The
+`P<n>[/<count>]` grammar (§2) + the `+adna-normalize-phase` render convention (§3) land in
+`what/doctrine/doctrine_state_conventions.md`; demonstrated on this vault's STATE.md (`phase: "P1/3"`). Ships to the
+image at P3. No count bump.

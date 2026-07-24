@@ -2,8 +2,8 @@
 type: idea
 idea_id: idea_upstream_path_convention_doctrine
 created: 2026-07-18
-updated: 2026-07-18
-status: proposed
+updated: 2026-07-24
+status: resolved
 origin: "Home.aDNA campaign_context_health (Operation Clear Hearth) Wave F / W6 — filed by Hestia per skill_upstream_contribution"
 persona_filed_by: hestia
 tags: [idea, upstream, path_convention, doctrine, clear_hearth_w6, hestia]
@@ -64,3 +64,9 @@ back-sweep cost.
    [[idea_upstream_fork_kit_agents_enforcement]] fork-skill hardening.
 
 No count bump. Governance-layer only. Roadmap: [[vnext_roadmap]] §v8.9.
+
+## Adopted — v8.9 M2 (Operation Palimpsest) · 2026-07-24 · resolved
+
+Authored dev-side as ship-set item 3 — the doctrine line landed in this vault's CLAUDE.md "Working with Content → Path
+references" (dev-side mirror of the `.adna/CLAUDE.md` target; folds at P3), with the optional S-series probe noted. No
+count bump.

@@ -2,11 +2,11 @@
 type: skill
 skill_type: process
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-07-24
 status: active
 category: release
 trigger: Operator opens a template-release gate — ratified dev-graph changes are ready to ship to the public face `aDNA-Network/aDNA`
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [skill, release, template, public_face, adna_network, workspace_image, v7_1, adr_034]
 
 requirements:
@@ -83,6 +83,24 @@ ASSEMBLY=$(mktemp -d)/standard_tree
 
 > The v7.1 baseline = `adna-legacy@74cb761` content. Subsequent releases start from the **current
 > released tree** (fresh clone, step c) and apply the ratified deltas — never reconstruct from scratch.
+
+### Step (b.1) — DE-LINK + dev-vault-name leak sweep (hard gate)
+
+Before any assembled artifact folds into the public image, sweep the release tree for **dev-graph leaks** — the v8.5 near-miss nearly shipped 21 private `[[wikilinks]]` a hand-curated line-list had missed (F-CHM-217). This is a **hard gate**: a hit blocks the fold until it is stripped, genericized, or explicitly allowed-with-reason. Grep the **whole assembled tree**, never a curated line-list — the line-list is exactly what leaked.
+
+1. **Full outbound link / path grep** — every wikilink, markdown link, and private workspace path in the assembled tree:
+   ```bash
+   grep -rnE '\[\[[^]]+\]\]|\]\([^)]+\)|/Users/[^ )]+|~/aDNA/[^ )]*\.aDNA' "$ASSEMBLY" || echo "clean"
+   ```
+   Every `[[…]]` must resolve **inside the released standard** or be stripped/inlined — a wikilink to a dev-only note (a mission, campaign, or ADR not shipped) is a leak; a markdown link to a vault-private path is a leak.
+2. **Dev-vault-name scan** — every folded artifact, for internal graph names / mission IDs / commit SHAs that must not read as one operator's private graph:
+   ```bash
+   grep -rniE 'lattice-labs|SiteForge|VideoForge|CanvasForge|LPWhitepaper|WilhelmAI|ScienceStanley|ZenZachary|aDNALabs|\b[MG][0-9]+(\.[0-9]+)?\b|\b[0-9a-f]{7,40}\b' "$ASSEMBLY" || echo "clean"
+   ```
+   This is a **candidate-surfacing** scan (it will hit false positives) — each hit gets a **keep-vs-genericize** call: legitimate historical precedent may stay; a live dev-vault name or a real mission ID / commit SHA in a shipped how-to genericizes. Historical `CHANGELOG.md` / `STATE.md` prose stays verbatim (the "keep historical" rule); live example prose genericizes.
+3. **Record the disposition** of every non-clean hit in the release session file (stripped / genericized / allowed + why). A silent skip is the failure mode this step exists to close.
+
+> **Why this lives here (self-reference, Standing Order #8).** This is the very step **P3 of Operation Palimpsest** runs when it fires this skill — hardening it *before* the fire closes the loop on the skill's own release, and keeps the public image reading as generic, never as a snapshot of this node's private graph.
 
 ### Step (c) — Sync a fresh clone of the release repo
 

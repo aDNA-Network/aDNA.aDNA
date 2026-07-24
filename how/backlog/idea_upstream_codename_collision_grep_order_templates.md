@@ -1,9 +1,9 @@
 ---
 type: backlog_idea
-status: proposed
+status: resolved
 priority: low
 created: 2026-07-22
-updated: 2026-07-22
+updated: 2026-07-24
 last_edited_by: agent_rosetta
 triage_target: refit_m5_vnext
 tags: [backlog, idea, upstream, order_template, codename, collision, naming_discipline, refit_m1, rareanthropic_origin]
@@ -38,3 +38,10 @@ Scope question for M5: is the natural home a **campaign charter template**, the 
 
 ADOPT into the v8.9 batch — small template touch. Add a "grep the codename before setting it" authoring note to the
 order/campaign templates (routed here by M1). Low-risk, no schema change, no count bump. Roadmap: [[vnext_roadmap]] §v8.9.
+
+## Adopted — v8.9 M2 (Operation Palimpsest) · 2026-07-24 · resolved
+
+Authored dev-side as ship-set item 5 — the "grep the codename before you set it" guardrail landed in
+`how/templates/template_campaign.md` at the `# Campaign:` heading (the charter template, where the codename is first
+set). **Landing sub-decision resolved:** charter template, not a standing rule — no standalone order template exists and
+the class (n=2) warrants only a small template touch. No count bump.

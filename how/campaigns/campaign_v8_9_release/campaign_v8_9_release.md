@@ -6,7 +6,7 @@ codename: "Operation Palimpsest"
 owner: stanley
 persona: rosetta
 status: active           # OPENED 2026-07-24 (P0 Charter, session_2026-07-24_palimpsest_p0_charter) — operator election "continue the campaign" post-Refit-close; codename Palimpsest chosen. Fires via skill_template_release at P3.
-phase: P1/3              # P1 Author (M1 ✅ done; M2 next) → P1 Author → P2 Ratify (operator) → P3 Fire
+phase: P1/3              # P1 Author COMPLETE (M1 ✅ + M2 ✅ done 2026-07-24) → awaiting P2 Ratify (OPERATOR GATE) → P3 Fire
 opened_when: "2026-07-24 — operator opened post-Operation-Refit-close; P0 charter session minted CLAUDE + P1 missions + codename Palimpsest"
 governance_bump: "8.8 → 8.9"
 standard_version: "v2.5 (held — no normative change)"
@@ -29,10 +29,12 @@ tags: [campaign, v8_9, palimpsest, release, template_release, governance, active
 > the v8.6/8.7/8.8 lineage — governance **8.8 → 8.9**, standard **v2.5 held**. Full ship-set + phase shape +
 > release mechanics: the roadmap `how/campaigns/campaign_refit/artifacts/vnext_roadmap.md` §v8.9 + the stub.
 >
-> **Phase pointer:** **P1 Author — M1 ANCHOR ✅ complete (2026-07-24).** P0 Charter done; M1 delivered the
-> STATE-graduation skill + template + doctrine dev-side (governance zero-drift). **⏭ Next = M2** convention +
-> machinery batch (`mission_v8_9_2_convention_machinery_batch`, items 2–7). Both missions are dev-side authoring;
-> **nothing ships to `.adna/` until P3**, and P2 ratification + the P3 dry-run GO are operator gates.
+> **Phase pointer:** **P1 Author COMPLETE — M1 anchor ✅ + M2 convention/machinery batch ✅ (both 2026-07-24).** M1
+> delivered the STATE-graduation skill + template + doctrine; M2 delivered items 2–7 (STATE-convention doctrine ·
+> path doctrine · fork-kit AGENTS gate · codename note · release DE-LINK hardening · `compliance_checker` hardening),
+> 7 source ideas → `resolved`, `adna_validate --governance` zero-drift, no count bump. All dev-side authoring;
+> **nothing ships to `.adna/` until P3**. **⏭ Next = P2 Ratify (OPERATOR GATE §7.7)** — packet
+> `artifacts/p2_ratification_summary.md` — then **P3 Fire** (operator GO). P2 ratification + the P3 dry-run GO are the two operator gates.
 
 ## Goal
 
@@ -75,13 +77,21 @@ version surfaces, DE-LINK grep, dry-run-then-pause, tags-only v8.9, fresh-clone 
 | # | Mission | Ship-set items | Tier · est | Status |
 |---|---------|----------------|-----------|--------|
 | M1 | [[mission_v8_9_1_anchor_state_graduation]] — **ANCHOR** | 1 (STATE.md graduation: skill + template + tripwire + doctrine) | opus · ~80 kT | ✅ **completed 2026-07-24** (~75 kT) |
-| M2 | [[mission_v8_9_2_convention_machinery_batch]] | 2–7 (STATE-convention family · path doctrine · fork-kit · codename note · leak-sweep · compliance_checker) | opus · ~90 kT | planned |
+| M2 | [[mission_v8_9_2_convention_machinery_batch]] | 2–7 (STATE-convention family · path doctrine · fork-kit · codename note · leak-sweep · compliance_checker) | opus · ~90 kT | ✅ **completed 2026-07-24** |
 
 **M1 delivered (dev-side):** [[skill_state_graduation]] (new base skill, 55→56) · [[template_STATE_history]] (new
 base template, 44→45) · the frontmatter-as-graduation-class doctrine + CHANGELOG variant (in the skill) · the
 >100 KB tripwire **staged image-side** (`artifacts/image_side_state_graduation_tripwire.md`, folds to `.adna`
 `skill_node_health_check` at P3). `adna_validate --governance` zero-drift; anchor idea flipped `resolved`. No
 `.adna/` edit; no image count change yet (32→33 lands at P3).
+
+**M2 delivered (dev-side):** items 2–7 authored, **no count bump** (`adna_validate --governance` zero-drift): new
+[[doctrine_state_conventions]] (`mission:` key + `P<n>[/<count>]` grammar + `+adna-normalize-phase`) + the
+`.adna/STATE.md` mission-key **P3 rider** (`artifacts/image_side_state_mission_key.md`) + the STATE-convention trio
+**self-adopted on this vault's STATE.md** (SO-8); path doctrine → `CLAUDE.md`; fork-kit AGENTS gate →
+`skill_project_fork` (Step 4.6); codename note → `template_campaign`; release DE-LINK/leak hardening →
+`skill_template_release` (Step b.1); `compliance_checker.py` hardening (**3-point acceptance test PASS**). All 7
+source ideas flipped `proposed → resolved`. Both P1 missions now closed → **P2 ratification gate (operator)**.
 
 **Sequencing:** M1 anchor first (it is load-bearing + realizes the 32 → 33 skill count); M2's convention touches
 co-land, machinery hardening (items 6–7) can trail. M2 may split at the convention/machinery seam. On both

@@ -4,7 +4,7 @@ idea_class: upstream_contribution
 from_vault: Emacs.aDNA
 from_persona: archimedes
 created: 2026-07-19
-status: proposed
+status: resolved
 target: "STATE.md template frontmatter (.adna base + template_state) — fleet convention"
 origin: "Emacs.aDNA AAR-M4(d) — the sidebar self-panel's mission field renders honest-absent ∅ because STATE.md frontmatter carries no mission: key; adopted locally at M22"
 tags: [backlog, upstream, state_frontmatter, mission, machine_readable, operation_luthier, archimedes]
@@ -44,3 +44,10 @@ liveness claim). No schema break (`additionalProperties: true`). Precedent is ex
 (Emacs `adna/sidebar`, Home `skill_inventory_refresh` v2, graph_card/node_home) read. Add the key to the `.adna/STATE.md`
 seed after `campaigns:`; document in the STATE template guidance. No count bump (frontmatter convention, no new skill/template).
 Roadmap: [[vnext_roadmap]] §v8.9 (STATE-convention family).
+
+## Adopted — v8.9 M2 (Operation Palimpsest) · 2026-07-24 · resolved
+
+Authored dev-side as ship-set item 2 (STATE-convention family). The `mission:` key semantics land in
+`what/doctrine/doctrine_state_conventions.md` §1; the `.adna/STATE.md` seed edit (add `mission:` after `campaigns:`) is
+staged as a P3 rider (`how/campaigns/campaign_v8_9_release/artifacts/image_side_state_mission_key.md`); demonstrated on
+this vault's own STATE.md frontmatter (SO-8). Ships to the image at P3. No count bump.

@@ -480,6 +480,10 @@ Context serving implements this as graph traversal: load only the subgraph reach
 
 **Always underscores, never hyphens.** Pattern: `type_descriptive_name.md`
 
+### Path references
+
+**Docs and prose use `~/aDNA/…`; execution contexts use the absolute path.** Any human- or agent-read reference — CLAUDE/AGENTS/README/MANIFEST/STATE prose, coordination memos, ADRs, context files — writes workspace paths in tilde form (`~/aDNA/…`), which survives being read from another node, a different operator account, or a transplanted clone. The absolute form (`/Users/<operator>/aDNA/…`) is reserved for contexts where `~` does not expand or must not be trusted to: **scripts, CI, launchd plists, cron, machine-consumed data fields** (e.g. `federation_envelope_path:`), and rows whose *content is the datum itself* (a MANIFEST "Workspace root" identity row defining where the workspace lives on this node). Absolute prose paths also *hide dangling refs* — nothing exercises an absolute pointer until it breaks, so a rehomed or renamed target sits unnoticed. *(Optional health probe: an S-series check can count non-annotated absolute workspace paths in a vault's root governance files and advisory-flag `>0`. Evidence — Operation Clear Hearth P0: ~18% of fleet doc paths were absolute; 6+ dead absolute pointers surfaced only when the W6 sweep normalized them.)*
+
 ### Metadata
 
 All content files require YAML frontmatter:

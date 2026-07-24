@@ -19,6 +19,12 @@ playwright-report/
 __pycache__/
 *.pyc
 
+# compliance_checker.py output — a read-only audit tool must not dirty the tree (F-MER-A3, v8.9).
+# Default outdir is ./.compliance_out; the two report names are ignored belt-and-suspenders in case --outdir . is used.
+.compliance_out/
+compliance_report.md
+compliance_scorecard.yaml
+
 # Hero image-gen candidates (heavy intermediates; finals committed, provenance in image_gen_log JSONs)
 site/src/assets/heroes/candidates/
 

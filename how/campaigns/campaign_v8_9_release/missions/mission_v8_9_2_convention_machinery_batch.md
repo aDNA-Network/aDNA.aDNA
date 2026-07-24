@@ -4,7 +4,7 @@ type: plan
 title: "v8.9 M2 (Palimpsest) — convention + machinery batch: ship-set items 2–7 (STATE-convention family · path doctrine · fork-kit · codename note · leak-sweep · compliance_checker)"
 owner: stanley
 persona: rosetta
-status: planned            # P1; opens after (or alongside) M1. Dev-side authoring only — nothing ships to .adna/ until P3.
+status: completed          # P1; completed 2026-07-24 (session_2026-07-24_palimpsest_p1_m2_convention_machinery). 6 items authored dev-side, 7 ideas resolved, gov zero-drift, AAR appended. Next = P2 ratify (operator gate).
 campaign_id: campaign_v8_9_release
 campaign_phase: 1
 campaign_mission_number: 2
@@ -100,3 +100,11 @@ dated `## Adopted — v8.9 M2` stamp + `adna_validate --governance` (python3.13)
 - **No count bump.** All six items are convention/doctrine/hardening; validator must stay zero-drift without a
   count change (the 33 lands in M1).
 - **Dev-side only; AAR (SO-5).** Nothing touches `.adna/`; append the 5-line AAR before `status: completed`.
+
+## AAR (M2 — lightweight)
+
+- **Worked:** the six items were pre-drafted in their source ideas → codify-not-invent; M1's rider pattern (stage image-only edits as P3 riders) transferred cleanly to the `.adna/STATE.md` mission-key seed; the yaml-import guard (not a bare version check) proved correct when recon showed python3.14 lacks yaml yet is `> 3.13`.
+- **Didn't:** obj 2 had no dev-side `template_state.md` to land in — resolved by authoring a new `what/doctrine/doctrine_state_conventions.md` (uncounted, no count-bump risk) + truing-up the doctrine `AGENTS.md` index (visual_inspection had been unindexed drift).
+- **Finding:** the vault shipped the v8.7 `phase:`/`campaigns:` STATE keys but never adopted them on its *own* STATE.md — a live self-drift the SO-8 self-adoption closed (added the trio, demonstrating the v8.9 `mission:` key on the doctrine's own register).
+- **Change:** authoring/workflow doctrines (state_conventions, visual_inspection) now get a dedicated "Authoring/rendering conventions" grouping in `what/doctrine/AGENTS.md`, distinct from the bind-by-reference safety quartet.
+- **Follow-up:** P2 ratify (operator gate) → P3 fire (folds M1+M2 + both riders into `.adna/`; image skill count 32→33). Clock discrepancy (system `2026-07-23` vs campaign-record `2026-07-24`) flagged for operator reconcile.
