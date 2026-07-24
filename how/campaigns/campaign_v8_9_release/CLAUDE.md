@@ -5,7 +5,7 @@
 | Campaign | `campaign_v8_9_release` |
 | Codename | **Operation Palimpsest** (operator-chosen 2026-07-24; renameable at this campaign's G1) |
 | Owner · persona | stanley · Rosetta |
-| Status | **active** — OPENED 2026-07-24 (P0 Charter); materialized at Refit G2/DP9. **Current phase: P0 COMPLETE → P1 Author.** |
+| Status | **active** — OPENED 2026-07-24. **Current phase: P1 Author — M1 anchor ✅ done (2026-07-24); M2 next.** |
 | Governance | 8.8 → 8.9 (standard v2.5 held; no normative change) |
 | Ships via | `skill_template_release` → `aDNA-Network/aDNA` (the v8.6/8.7/8.8 lineage) |
 

@@ -39,8 +39,8 @@ aDNA.aDNA/
 │   ├── workshops/      [EXT] Workshop kits + facilitation
 │   ├── publishing/     [EXT] Vault-to-web pipeline
 │   ├── campaigns/      Strategic initiatives (campaign_rosetta active)
-│   ├── templates/      44 templates (25 base + 11 extension + 8 operational)
-│   ├── skills/         55 skills (26 base + 29 project-specific)
+│   ├── templates/      45 templates (26 base + 11 extension + 8 operational)
+│   ├── skills/         56 skills (27 base + 29 project-specific)
 │   ├── sessions/       Session tracking
 │   ├── missions/       Multi-session task decomposition
 │   ├── pipelines/      Content-as-code workflows
@@ -107,9 +107,9 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | `canvas2lattice.py` | `what/lattices/tools/` | Convert Obsidian canvas → lattice YAML |
 | `lattice_yaml_schema.json` | `what/lattices/` | JSON Schema for lattice definitions |
 
-### Templates (44)
+### Templates (45)
 
-**25 base** (inherited from `.adna` — 12 auto-triggered + 13 manual-apply; full index: `how/templates/AGENTS.md`) + **11 extension** + **8 operational** = the 19 Rosetta-local templates below:
+**26 base** (inherited from `.adna` — 12 auto-triggered + 13 manual-apply; full index: `how/templates/AGENTS.md`) + **11 extension** + **8 operational** = the 19 Rosetta-local templates below:
 
 | Local Template | Class | Target Directory |
 |----------------|-------|-----------------|
@@ -133,9 +133,9 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | `template_second_genesis_dossier.md` | operational | new `<Name>.aDNA/` re-genesis intake |
 | `template_disposition_ledger.md` | operational | fleet spring-clean (`skill_workspace_spring_clean`) |
 
-### Skills (55)
+### Skills (56)
 
-26 base skills (inherited from the `.adna/` template) + 29 project-specific. Full inventory in [`CLAUDE.md`](CLAUDE.md) §Skills; representative project-specific examples:
+27 base skills (inherited from the `.adna/` template) + 29 project-specific. Full inventory in [`CLAUDE.md`](CLAUDE.md) §Skills; representative project-specific examples:
 
 | Skill | Type | Purpose |
 |-------|------|---------|
@@ -165,8 +165,8 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | aDNA Standard v2.5 | Inherited | Core specification — triad, ontology, sessions, missions, campaigns |
 | Context library | Inherited | 5 topics, 27 subtopics, ~75K tokens |
 | Lattice YAML tools | Inherited | Validate, convert (YAML↔canvas), JSON Schema, 19 examples |
-| 25 base templates | Inherited | Full operational set (12 auto-triggered + 13 manual-apply) |
-| 26 base skills | Inherited | Onboarding, fork, entity type, quality audit, lifecycle (archive / second-genesis / merge / rename / spring-clean), etc. |
+| 26 base templates | Inherited | Full operational set (12 auto-triggered + 13 manual-apply) |
+| 27 base skills | Inherited | Onboarding, fork, entity type, quality audit, lifecycle (archive / second-genesis / merge / rename / spring-clean), etc. |
 | Execution hierarchy v2 | Inherited | OODA cascade, AAR protocol, escalation cascade |
 | Quality framework | Inherited | 10-dimension compliance rubric |
 

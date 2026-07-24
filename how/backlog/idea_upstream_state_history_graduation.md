@@ -1,10 +1,10 @@
 ---
 type: backlog_idea
-status: proposed
+status: resolved
 priority: high
 created: 2026-07-17
-updated: 2026-07-17
-last_edited_by: agent_hestia
+updated: 2026-07-24
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA/how/campaigns/campaign_context_health/ (W2; filed during Wave E)
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
@@ -57,3 +57,21 @@ convention exists precisely because of this).
 The CHANGELOG variant (`CHANGELOG_archive.md`, recent-arc keep-window) is the same doctrine and rides the same filing.
 **Self-referential (SO-8):** this vault already runs the pattern — `STATE_archive.md` §Shifted spine + the heavy-file
 Read convention — so the skill codifies proven-here practice, not aspiration. Count impact: **+1 skill** (32→33). Roadmap: [[vnext_roadmap]] §v8.9.
+
+## Adopted — v8.9 M1 (Operation Palimpsest) · 2026-07-24 · `resolved`
+
+**AUTHORED dev-side** at [[mission_v8_9_1_anchor_state_graduation]] (campaign [[campaign_v8_9_release]], Operation
+Palimpsest — the anchor of the v8.9 governance batch). Deliverables landed in this vault:
+
+1. **[[skill_state_graduation]]** (new skill) — the graduation recipe (keep-set rule · era-boundary-outranks-
+   day-count · verbatim move · loss-gate · the two supremacy caveats · frontmatter-as-a-graduation-class [5 faces]
+   · CHANGELOG variant). *(+1 skill: this dev vault 55 → 56 base 26 → 27; the `.adna` image count is 32 → 33 at P3.)*
+2. **[[template_STATE_history]]** (new template seed) + the `state_history:` pointer convention. *(+1 template:
+   this dev vault 44 → 45 base 25 → 26.)*
+3. **The >100 KB size tripwire** — staged image-side as a P3 rider (`campaign_v8_9_release/artifacts/`
+   `image_side_state_graduation_tripwire.md`) because the base health-check skill (`skill_node_health_check`) lives
+   in `.adna`, not this vault; `.adna`'s copy verified at Steps 1–12 with no tripwire (Home runs a node-local S16).
+4. **Frontmatter-as-a-graduation-class + CHANGELOG variant** — documented inside the skill (rule 4 table + §CHANGELOG Variant).
+
+`adna_validate --governance` zero-drift confirmed at the new counts. **Image fold (→ `.adna`) is P3**
+(`skill_template_release`), gated by P2 ratification — nothing shipped to the public image yet.

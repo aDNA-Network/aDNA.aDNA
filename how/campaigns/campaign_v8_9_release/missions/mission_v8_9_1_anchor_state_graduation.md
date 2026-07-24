@@ -4,7 +4,8 @@ type: plan
 title: "v8.9 M1 (Palimpsest) — ANCHOR: author the STATE.md graduation doctrine (skill + template + tripwire + doctrine)"
 owner: stanley
 persona: rosetta
-status: planned            # P1; opens when M1 is claimed. Dev-side authoring only — nothing ships to .adna/ until P3.
+status: completed          # 2026-07-24 — all 5 objectives done; governance zero-drift @ 56 skills/45 templates; dev-side only, nothing shipped to .adna/. AAR appended.
+token_budget_actual: "~75 kT (single session; design-recon on count model + tripwire landing surface was the main cost)"
 campaign_id: campaign_v8_9_release
 campaign_phase: 1
 campaign_mission_number: 1
@@ -99,3 +100,21 @@ frontmatter-as-a-graduation-class doctrine written (with the CHANGELOG variant) 
 - **Count discipline.** The 32 → 33 bump touches every count-of-record surface; `adna_validate --governance`'s
   skills-count regex is the gate. Confirm the template-count line (obj 2) before claiming +1 template.
 - **AAR (SO-5).** Append the 5-line AAR before setting `status: completed`.
+
+## AAR — M1 (2026-07-24)
+
+- **Worked:** the source idea carried a fully-proven doctrine (Clear Hearth), so the skill codified practice, not
+  aspiration; the vault's own `STATE_archive.md` gave a ready self-reference; `adna_validate --governance`'s exact
+  regex (number-immediately-before-noun, compared to disk `skill_*`/`template_*` counts) made the count reconcile
+  deterministic.
+- **Didn't:** the "+1 skill (32→33)" in the roadmap is the **image** base count — it does **not** equal this dev
+  vault's count (55→56); assuming they were the same would have mis-set six count surfaces. The tripwire's landing
+  skill (`skill_node_health_check`) isn't carried in this vault at all.
+- **Finding:** dev-vault vs image counts genuinely diverge ("image≠dev counts"); and a ship-set item can be
+  **image-only** (no dev-vault file to edit) — the tripwire had to be *staged* as a P3 rider, not authored in place.
+- **Change:** classified `skill_state_graduation` + `template_STATE_history` as **base** (template-destined),
+  bumping this vault 55→56 skills / 44→45 templates across all surfaces incl. `how/templates/AGENTS.md`; staged the
+  tripwire as `artifacts/image_side_state_graduation_tripwire.md`.
+- **Follow-up:** M2 authors items 2–7 (no count bump); P2 ratification then P3 fold (skill + template + tripwire
+  → `.adna`, image count 32→33). The Refit-staged `stub_campaign_v8_9_release.md` frontmatter gap is a closed-
+  campaign artifact — left untouched (SO-6).

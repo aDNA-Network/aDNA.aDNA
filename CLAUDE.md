@@ -63,7 +63,7 @@ aDNA.aDNA/
 │       ├── tools/               # Python validation and conversion tools
 │       └── examples/            # Example .lattice.yaml files
 ├── how/                         # HOW — Operations, sessions, templates
-│   ├── templates/               # 44 reusable templates (25 base + 11 extension + 8 operational)
+│   ├── templates/               # 45 reusable templates (26 base + 11 extension + 8 operational)
 │   ├── sessions/                # Session tracking (active/ + history/)
 │   ├── missions/                # Multi-session plans (standalone)
 │   ├── backlog/                 # Ideation and improvement tracking
@@ -324,6 +324,7 @@ Reusable agent recipes and documented procedures in `how/skills/`. Skills have t
 | `skill_graph_merge` | agent | One vault is absorbed into another — drain the source, fold its content, repoint every live reference, then archive the drained shell (ends by calling `skill_project_archive`) |
 | `skill_graph_rename` | agent | A fleet-referenced vault is renamed — mv + back-compat shim + cross-fleet live-ref sweep + wrapper refederation (delegates the self-routing sweep to `skill_project_rename`) |
 | `skill_workspace_spring_clean` | process | Fleet-wide houseclean — classify every disposition into one ledger, ratify at a single operator gate, execute in waves (orchestrates archive / merge / rename / second-genesis) |
+| `skill_state_graduation` | agent | A `STATE.md` (or `CHANGELOG`) accreted past its keep-set — campaign/operation close, era boundary, or the >100 KB health-check tripwire — and aged content must graduate to a history file verbatim (archive, never delete) *(v8.9 addition)* |
 
 **Project-specific skills** (authored for this vault):
 

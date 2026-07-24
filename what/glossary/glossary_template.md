@@ -22,7 +22,7 @@ Reusable file structures stored in `how/templates/`, following the naming patter
 
 ## Usage Examples
 
-- This vault has 44 templates (25 base + 11 extension + 8 operational). The glossary entries you are reading were created from `how/templates/template_glossary_entry.md`, which pre-defines the frontmatter fields (`term`, `spec_section`, `see_also`) and section structure (Plain-Language Definition, Technical Definition, Usage Examples, See Also).
+- This vault has 45 templates (26 base + 11 extension + 8 operational). The glossary entries you are reading were created from `how/templates/template_glossary_entry.md`, which pre-defines the frontmatter fields (`term`, `spec_section`, `see_also`) and section structure (Plain-Language Definition, Technical Definition, Usage Examples, See Also).
 - Every content type used in the vault has a matching template — this is a Full [[what/glossary/glossary_conformance_level|conformance]] requirement.
 
 ## See Also

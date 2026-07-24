@@ -14,7 +14,7 @@ Templates for all content types in the vault. Each template defines the frontmat
 
 ## Template Index
 
-> **44 `template_*.md` total** = 12 auto-triggered + 13 manual-apply + 8 operational + 11 extension. (The Fork-Skeleton Bundle is a directory, not a `template_*.md`, so it sits outside the 44.) Provenance split: 25 base (inherited from `.adna`) + 11 extension + 8 operational.
+> **45 `template_*.md` total** = 12 auto-triggered + 14 manual-apply + 8 operational + 11 extension. (The Fork-Skeleton Bundle is a directory, not a `template_*.md`, so it sits outside the 44.) Provenance split: 26 base (inherited from `.adna`) + 11 extension + 8 operational.
 
 ### Auto-Triggered Templates (12)
 
@@ -47,6 +47,7 @@ These templates have no Templater auto-trigger. Copy their structure manually or
 | `template_campaign_claude.md` | Per-campaign CLAUDE.md | `how/campaigns/campaign_*/` | `governance` | Glob patterns not supported by Templater |
 | `template_home_claude.md` | Home-class node governance CLAUDE.md ({{persona}}/{{node_hostname}}/{{operator}}/{{workspace_root}}) | `Home.aDNA/` (fork-install) | `governance` | Home-class fork install, not a new-file trigger |
 | `template_data_record.md` | Generic data record | varies | varies | Generic — no single target directory |
+| `template_STATE_history.md` | STATE history / immortal-spine seed (append-only; produced by `skill_state_graduation`) | `<Vault>.aDNA/STATE_history.md` (fork-install) | `state_history` | Seed a vault forks when graduating STATE; if an archive file already exists, append to it instead *(v8.9)* |
 | `template_folder_note.md` | Folder index note | any directory | `folder_note` | Used everywhere, can't map to one folder |
 | `template_governance.md` | Governance document | `who/governance/` | `governance` | Governance dir has AGENTS.md + mixed policy docs |
 | `template_migration.md` | Version migration prompt | `how/migrations/` | `migration` | Migrations are created per-version, not on new-file trigger |
