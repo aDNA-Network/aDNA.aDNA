@@ -5,8 +5,8 @@ title: "v8.9 governance release (Operation Palimpsest) — ship the Refit-M5 vNe
 codename: "Operation Palimpsest"
 owner: stanley
 persona: rosetta
-status: active           # OPENED 2026-07-24 (P0 Charter, session_2026-07-24_palimpsest_p0_charter) — operator election "continue the campaign" post-Refit-close; codename Palimpsest chosen. Fires via skill_template_release at P3.
-phase: P2/3              # P0–P2 done; P2 Ratify ✅ operator-signed 2026-07-24 (batch accepted) → P3 Fire pending OPERATOR GO
+status: completed        # ✅ v8.9 SHIPPED 2026-07-24 — commit c8e5427 + tag v8.9 on aDNA-Network/aDNA (gov 8.8→8.9; standard v2.5; counts 30→31 templates / 32→33 skills). Full arc P0→P1→P2→P3. Campaign CLOSED — do NOT re-open.
+phase: P3/3              # ✅ P3 Fire complete — v8.9 SHIPPED 2026-07-24 (c8e5427 + tag v8.9; local .adna synced 0364d85; 6/6 fresh-clone smoke green)
 opened_when: "2026-07-24 — operator opened post-Operation-Refit-close; P0 charter session minted CLAUDE + P1 missions + codename Palimpsest"
 governance_bump: "8.8 → 8.9"
 standard_version: "v2.5 (held — no normative change)"
@@ -16,7 +16,7 @@ ratified_at: "Refit G2 / DP9 (2026-07-24) — how/campaigns/campaign_refit/artif
 created: 2026-07-24
 updated: 2026-07-24
 last_edited_by: agent_rosetta
-tags: [campaign, v8_9, palimpsest, release, template_release, governance, active, successor]
+tags: [campaign, v8_9, palimpsest, release, template_release, governance, completed, shipped]
 ---
 
 # Campaign: v8.9 governance release — Operation Palimpsest

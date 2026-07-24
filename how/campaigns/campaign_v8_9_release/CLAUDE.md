@@ -5,7 +5,7 @@
 | Campaign | `campaign_v8_9_release` |
 | Codename | **Operation Palimpsest** (operator-chosen 2026-07-24; renameable at this campaign's G1) |
 | Owner · persona | stanley · Rosetta |
-| Status | **active** — OPENED 2026-07-24. **P1 Author ✅ + P2 Ratify ✅ (operator-signed 2026-07-24; batch accepted) → P3 Fire pending OPERATOR GO.** |
+| Status | **completed** — ✅ **v8.9 SHIPPED 2026-07-24** (commit c8e5427 + tag v8.9 on aDNA-Network/aDNA; gov 8.8→8.9, standard v2.5, counts 30→31 templates / 32→33 skills). P0→P1→P2→P3 all done; local .adna synced 0364d85; 6/6 fresh-clone smoke green. **CLOSED — do NOT re-open.** |
 | Governance | 8.8 → 8.9 (standard v2.5 held; no normative change) |
 | Ships via | `skill_template_release` → `aDNA-Network/aDNA` (the v8.6/8.7/8.8 lineage) |
 
