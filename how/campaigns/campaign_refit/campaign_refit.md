@@ -4,7 +4,7 @@ type: campaign
 title: "Operation Refit — post-launch consolidation: true the estate, settle the docket, chart vNext"
 owner: stanley
 persona: rosetta
-status: active            # G1 SIGNED 2026-07-21 (same-session; "Ratify + fire quick wins") — all 8 DPs accepted as recommended; record = artifacts/ratification_record_refit_g1.md (status: accepted)
+status: completed         # G3 CLOSED 2026-07-24 (DP10 signed — "accept close + push all + deliver 5 memos"); all 6 missions M1–M6 done, 21/21 A–E rows disposed, no normative change. G1 accepted 07-21 · G2 accepted 07-24 · close AAR = artifacts/aar_campaign_refit_close.md (accepted)
 opens_at: 2026-07-21
 phase_count: 6
 mission_count: 6

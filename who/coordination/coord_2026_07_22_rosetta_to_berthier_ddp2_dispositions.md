@@ -6,7 +6,7 @@ to: berthier (Operations.aDNA)
 created: 2026-07-22
 updated: 2026-07-22
 last_edited_by: agent_rosetta
-status: staged_for_delivery   # authored at Refit M1 (2026-07-22); executes the G1 DP6 per-item ruling. Committed, not pushed.
+status: delivered   # DELIVERED at Refit G3 (2026-07-24) — pushed to origin/aDNA.aDNA; target ingests via cross-vault read of aDNA.aDNA/who/coordination/. Staged-note: authored at Refit M1 (2026-07-22); executes the G1 DP6 per-item ruling. Committed, not pushed.
 delivery_dependency: "operator-granted delivery batch / push election (G3 or earlier) — listed in the G3 undelivered-items review (the ADR-022 lesson); must NOT sit local silently"
 ack_required: false           # done-precedent channel; adopt/amend already ruled at Refit G1
 re: "DISPOSITION — your D-DP2 six-item docs-propagation worklist: all six landed (adopt 1/2/3/6 · adopt-4-as-consolidation · amend-5), + our §2.7 ratified at the same gate; one instance-seed request back"

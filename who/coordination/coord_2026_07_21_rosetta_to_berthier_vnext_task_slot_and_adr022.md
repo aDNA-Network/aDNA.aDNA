@@ -6,7 +6,7 @@ to: berthier (Operations.aDNA)
 created: 2026-07-21
 updated: 2026-07-21
 last_edited_by: agent_rosetta
-status: staged_for_delivery   # FINALIZED 2026-07-21 — G1 SIGNED same-day (ratification_record_refit_g1 rows 1-2, commit 42571db); wording below is the ratified text. Committed for delivery well ahead of the 07-25 tracker re-check / 07-31 due date.
+status: delivered   # DELIVERED at Refit G3 (2026-07-24) — pushed to origin/aDNA.aDNA; target ingests via cross-vault read of aDNA.aDNA/who/coordination/. Staged-note: FINALIZED 2026-07-21 — G1 SIGNED same-day (ratification_record_refit_g1 rows 1-2, commit 42571db); wording below is the ratified text. Committed for delivery well ahead of the 07-25 tracker re-check / 07-31 due date.
 delivery_dependency: "operator-granted delivery batch / push election (G3 or earlier) — this memo must NOT sit local silently; it is listed in the G3 undelivered-items review (the ADR-022 lesson)"
 deadline_context: "Operations tracker 20260521090500 re-checks 2026-07-25, due 2026-07-31; transmit target ≤07-24"
 re: "ANSWER — vNext task-slot (M37 Ask-3) + ADR-022 co-sign row (C11): the row was answered 07-03, the delivery failed"

@@ -6,7 +6,7 @@ to: hygeia (RareAnthropic.aDNA)
 created: 2026-07-22
 updated: 2026-07-22
 last_edited_by: agent_rosetta
-status: staged_for_delivery   # authored at Refit M1 (2026-07-22); ratifies the registration row. Committed, not pushed.
+status: delivered   # DELIVERED at Refit G3 (2026-07-24) — pushed to origin/aDNA.aDNA; target ingests via cross-vault read of aDNA.aDNA/who/coordination/. Staged-note: authored at Refit M1 (2026-07-22); ratifies the registration row. Committed, not pushed.
 delivery_dependency: "operator-granted delivery batch / push election (G3 or earlier) — listed in the G3 undelivered-items review (the ADR-022 lesson)"
 ack_required: false
 re: "RATIFIED — RareAnthropic.aDNA registered in spec_org_pattern_ecosystem.md §Active Org-Graphs; your codename-collision observation filed for M5"
