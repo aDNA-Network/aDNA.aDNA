@@ -3,7 +3,7 @@ type: roadmap
 title: "aDNA vNext roadmap — v8.9 governance batch vs v2.6 standard window"
 owner: stanley
 persona: rosetta
-status: proposed        # authored at Refit M5 (P3 Chart); RATIFIES at G2 / DP9 — nothing here is settled until the operator signs
+status: accepted        # RATIFIED at Refit G2 / DP9 (2026-07-24, Stanley) — v8.9 batch = successor release queue; surface_composition_graph = v2.6 candidate (charted, not built); stub materialized. Record: ratification_record_refit_g2.md
 campaign_id: campaign_refit
 campaign_phase: 3
 mission_id: mission_refit_5_vnext_triage
@@ -27,7 +27,12 @@ read and sorted into three buckets — *ship next as a governance release (v8.9)
 > vault must obey to *be* aDNA. This roadmap decides which improvements go in which kind. Most go in the governance
 > release; only two touch the standard itself, and neither is being built yet.
 
-> **Status discipline (self-reference, SO-8):** this document is `status: proposed`. It is a *chart*, not a ruling —
+> **✅ RATIFIED at Refit G2 / DP9 (2026-07-24, Stanley):** "Ratify all as recommended" — the v8.9 governance batch is
+> the accepted successor release queue; the `surface_composition_graph` subtype is slotted **v2.6-candidate (charted,
+> not built)**; the successor campaign is materialized at `how/campaigns/campaign_v8_9_release/` (`status: planned`).
+> Record: [[ratification_record_refit_g2]]. *(Original authoring note, preserved:)*
+>
+> **Status discipline (self-reference, SO-8):** this document was authored `status: proposed`. It is a *chart*, not a ruling —
 > exactly the pattern the vault's own [[ratification_record_refit_g1|G1 ceremony record]] models: agents author, the
 > operator ratifies (§7.7). Every disposition below ratifies at **G2 / DP9**; until then, no item here is committed,
 > and **no normative surface ships in Operation Refit** (standard stays v2.5, governance stays 8.8). The successor
