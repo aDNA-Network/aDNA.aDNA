@@ -6,7 +6,7 @@ codename: "Operation Palimpsest"
 owner: stanley
 persona: rosetta
 status: active           # OPENED 2026-07-24 (P0 Charter, session_2026-07-24_palimpsest_p0_charter) — operator election "continue the campaign" post-Refit-close; codename Palimpsest chosen. Fires via skill_template_release at P3.
-phase: P1/3              # P1 Author COMPLETE (M1 ✅ + M2 ✅ done 2026-07-24) → awaiting P2 Ratify (OPERATOR GATE) → P3 Fire
+phase: P2/3              # P0–P2 done; P2 Ratify ✅ operator-signed 2026-07-24 (batch accepted) → P3 Fire pending OPERATOR GO
 opened_when: "2026-07-24 — operator opened post-Operation-Refit-close; P0 charter session minted CLAUDE + P1 missions + codename Palimpsest"
 governance_bump: "8.8 → 8.9"
 standard_version: "v2.5 (held — no normative change)"
@@ -29,12 +29,13 @@ tags: [campaign, v8_9, palimpsest, release, template_release, governance, active
 > the v8.6/8.7/8.8 lineage — governance **8.8 → 8.9**, standard **v2.5 held**. Full ship-set + phase shape +
 > release mechanics: the roadmap `how/campaigns/campaign_refit/artifacts/vnext_roadmap.md` §v8.9 + the stub.
 >
-> **Phase pointer:** **P1 Author COMPLETE — M1 anchor ✅ + M2 convention/machinery batch ✅ (both 2026-07-24).** M1
-> delivered the STATE-graduation skill + template + doctrine; M2 delivered items 2–7 (STATE-convention doctrine ·
-> path doctrine · fork-kit AGENTS gate · codename note · release DE-LINK hardening · `compliance_checker` hardening),
-> 7 source ideas → `resolved`, `adna_validate --governance` zero-drift, no count bump. All dev-side authoring;
-> **nothing ships to `.adna/` until P3**. **⏭ Next = P2 Ratify (OPERATOR GATE §7.7)** — packet
-> `artifacts/p2_ratification_summary.md` — then **P3 Fire** (operator GO). P2 ratification + the P3 dry-run GO are the two operator gates.
+> **Phase pointer:** **P1 Author ✅ + P2 Ratify ✅ — operator ratified the v8.9 batch 2026-07-24 (§7.7).** P1
+> delivered items 1–7 dev-side (M1 anchor + M2 convention/machinery), `adna_validate --governance` zero-drift, no
+> count bump; the operator signed the P2 gate after a full packet walkthrough
+> (`artifacts/p2_ratification_summary.md` — Status: **accepted**). The batch is `accepted`. **⏭ Next = P3 Fire**
+> (`skill_template_release`: folds the M1+M2 deltas + both P3 riders into a fresh `aDNA-Network/aDNA` clone;
+> governance 8.8→8.9, standard v2.5 held, image skill 32→33) — **gated on a separate operator GO** (ratifying ≠
+> firing). **Nothing ships to `.adna/` until that GO.**
 
 ## Goal
 

@@ -5,13 +5,17 @@ title: "P2 Ratification packet — the v8.9 governance batch (Operation Palimpse
 created: 2026-07-24
 updated: 2026-07-24
 last_edited_by: agent_rosetta
-status: awaiting_operator_ratification
+status: ratified
+ratified_by: "Stanley (operator)"
+ratified_date: 2026-07-24
 gate: "P2 (§7.7 decision ratification — operator signs)"
 prepared_by: agent_rosetta
 tags: [ratification_record, v8_9, palimpsest, p2, operator_gate, governance]
 ---
 
 # P2 Ratification packet — v8.9 governance batch (Operation Palimpsest)
+
+> **✅ RATIFIED 2026-07-24 by Stanley (operator)** — walked through the packet, then ratified all 7 items at the P2 gate (§7.7). P1/P2 closed; the batch is **accepted**. **P3 Fire remains gated on a separate operator GO** (ratifying ≠ firing).
 
 > **For the operator.** P1 Author is complete: both P1 missions (M1 anchor + M2 convention/machinery) authored the
 > full v8.9 ship-set **dev-side in this vault**, verifications green, **nothing shipped to `.adna/`**. This packet is
@@ -58,9 +62,9 @@ surface ships.**
 | Field | Value |
 |-------|-------|
 | **Decision** | Ratify the authored v8.9 governance batch (items 1–7, dev-side) as ready to ship to `aDNA-Network/aDNA` at P3 |
-| **Ratified-by** | _(operator signature — pending)_ |
-| **Date** | _(pending)_ |
-| **Status** | **proposed** → awaiting operator ratification |
+| **Ratified-by** | **Stanley (operator)** |
+| **Date** | **2026-07-24** |
+| **Status** | **accepted** — ratified at the P2 gate after a full packet walkthrough (agents authored; operator ratified) |
 
 **On ratification:** P1 → closed; the batch is `accepted`; **P3 Fire** opens on a *separate* operator GO — the
 `skill_template_release` run (5 version surfaces, the new DE-LINK **Step (b.1)**, dry-run-then-pause, tags-only
