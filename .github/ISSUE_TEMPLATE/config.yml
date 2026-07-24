@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions & discussion
+    url: https://github.com/aDNA-Network/aDNA/discussions
+    about: Ask about aDNA architecture, get help, or discuss an idea before filing it.
+  - name: How contribution works (the ladder + processes)
+    url: https://adna.network/community/community-contribution-standards/
+    about: Read the contribution standards — participation levels, what gets accepted, and how the standard evolves.

@@ -57,3 +57,26 @@ At P1 (2026-05-29) the generator emitted `edges:[]` because **no card declared r
 ## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
 
 Reviewed in the light sweep; **stays `deferred`** — **feeds Refit M6 E2** (vault-graph edge enrichment from `federation_ref`); trigger: M6 E2 stretch objective. Owner: Rosetta + Hestia. See [[vnext_roadmap]] §Deferred-with-trigger.
+
+## Refit M6 update — E2 evaluated + routed HERE (2026-07-24)
+
+**Refit M6's E2 stretch objective was "enrich the vault graph from `federation_ref` blocks."** At M6 it was
+**evaluated and CUT** (operator ruling, per DP8 "stretch, first cut on overrun"), and routed to **this idea** as
+the clean home. Reasoning (audit: `how/campaigns/campaign_refit/artifacts/dev_readiness_audit.md` §E2):
+
+- The M6 candidate mechanism — a **fleet-walk** of `../*/how/federation/**/CLAUDE.md` inside
+  `scripts/build_vaults_data.mjs` — would derive **~150+ edges** (federation_ref target frequency: Git.aDNA 47 ·
+  III.aDNA 30 · WebForge 23 · Canvas/aDNA.aDNA 13 · Astro 11 · …), a **~10× density jump** from today's 14. That
+  produces a mechanical hairball, **bypasses the deliberate honesty-curated `network_edges.yaml` overlay** (every
+  edge maps to a governance statement — ADR-033), and **amplifies the existing slug-normalization inconsistency**
+  (`Molecules.aDNA` vs `sciencestanley` endpoints already coexist in `vaults.json`). It also **cannot run in
+  CI/Vercel** (the sibling vaults + Home are absent there — the build already exits-0-and-reuses-committed).
+- **This idea is the correct path**: move the curated relationships into their **durable home** (Home.aDNA
+  vault-card relationship fields), let the generator derive edges from real card data (card-wins precedence
+  already implemented), and **shrink the overlay to nothing** (ADR-033's stated end-state). Honesty discipline
+  preserved; no fleet-walk hack; the federation_ref corpus becomes the *evidence base* Hestia mines when
+  populating cards, not a parallel mechanism.
+
+**No status change** — stays `deferred`, owner Hestia/Home + Rosetta, trigger = the Hearthstone lane (execute the
+ADR-033 retirement). Refit M6 confirms the routing and records the fleet-walk-vs-curated-cards trade-off so the
+denser-graph option is a **documented, deliberate non-choice**, not an oversight.
