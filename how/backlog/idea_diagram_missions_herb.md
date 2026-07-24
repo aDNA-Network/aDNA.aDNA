@@ -113,3 +113,7 @@ Create a mission M36 that runs in parallel with D5-D7, with Herb as the external
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: Rosetta + Canvas.aDNA (Mondrian). Trigger: post-launch visual-layer push (reroute Herb/CanvasForge refs; concept pages already work with prose+mermaid). Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — trigger: Herb (external contributor) commissions the diagram missions. Owner: Herb + Rosetta. See [[vnext_roadmap]] §Deferred-with-trigger.

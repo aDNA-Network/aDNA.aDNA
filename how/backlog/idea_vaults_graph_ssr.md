@@ -40,3 +40,7 @@ A dedicated craft cycle (or route via STR / a `WebForge.aDNA` (was Websites.aDNA
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: Rosetta + WebForge.aDNA. Trigger: dedicated craft cycle / WebForge build pass (operator DP3-deferred; honor pt19 + WebForge carve). Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — A-06 site follow-on (SSR-prerender /vaults/graph to static SVG); trigger: a site-perf/no-JS pass. Owner: Rosetta + WebForge. See [[vnext_roadmap]] §Deferred-with-trigger.

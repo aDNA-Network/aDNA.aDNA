@@ -33,3 +33,10 @@ federate-never-duplicate) or decline-and-record. ② If minted, relate it to the
 **No action owed by Rosetta before its own review;** the pattern is fully usable from its Dashboards
 home meanwhile (consumers wire via `how/federation/dashboards/` per the M-D5 template). One-file drop
 per the cross-vault discipline; contact: Metis (Dashboards.aDNA) / the Noctua F5 close record.
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **DEFER-WITH-TRIGGER** *(proposed; ratifies at G2/DP9)*
+
+DEFER — **trigger: Rosetta's own tempo (a dev-vault pattern mint, not a template ship).** Proven N=2 across
+structurally different domains; minting `pattern_agentic_dashboard_surface` as a fleet pattern is dev-vault-side authoring
+that needs no release and no G2 (it ships no normative/template surface). Can be done anytime post-Refit at the persona's
+cadence; not a v8.9/v2.6 roadmap batch item. Owner: Rosetta. Roadmap: [[vnext_roadmap]] §Deferred-with-trigger.

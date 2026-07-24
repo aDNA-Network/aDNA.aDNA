@@ -25,3 +25,7 @@ campaign_adna_polish pre-merge efficiency audit — startup sequence redundancy 
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: Rosetta. Trigger: post-launch efficiency pass (fold into a broader token pass; STATE.md cold-start cost now acute). Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — session-startup sequence optimization for this vault; trigger: a context-budget pass on the startup ladder. Owner: Rosetta. See [[vnext_roadmap]] §Deferred-with-trigger.

@@ -3,15 +3,16 @@ plan_id: mission_refit_5_vnext_triage
 type: plan
 title: "Refit M5 — vNext triage: 30 ideas dispositioned → roadmap → seeded release stub"
 owner: stanley
-status: planned            # activates post-G1; its OUTPUT is ratified at G2 (DP9)
+status: completed          # 2026-07-24 — all 32 open ideas dispositioned; vnext_roadmap.md + stub staged; OUTPUT ratifies at G2 (DP9)
 campaign_id: campaign_refit
 campaign_phase: 3
 campaign_mission_number: 5
 mission_class: reconnaissance
 executor_tier: opus        # roadmap judgment; the 25-idea light sweep may drop to sonnet if split
 token_budget_estimated: "~120 kT (5 ideas deep + ~25 light + roadmap + stub; two-pass seam = sanctioned session split)"
+token_budget_actual: "~62 kT (single session; two-pass seam NOT needed — batch reads/stamps kept it under estimate)"
 created: 2026-07-21
-updated: 2026-07-21
+updated: 2026-07-24
 last_edited_by: agent_rosetta
 tags: [plan, campaign, refit, vnext, triage, backlog, roadmap, release_stub]
 ---
@@ -87,14 +88,40 @@ sweep may run `executor_tier: sonnet` if split out.
 
 ## Completion Summary
 
-*Fill out when setting `status: completed`.*
+**Completed 2026-07-24 (single session, opus).** All 32 open backlog ideas (14 `proposed` + 18 `deferred`)
+carry a dated `## Disposition — Refit M5` stamp (verified: 0/32 missing).
+
+- **Obj 1 (deep pass, 5 hot):** 1 close-as-shipped + 4 adopt-for-v8.9. Verify-first CONFIRMED
+  `phase:`/`campaigns:` shipped at v8.7 (live in `.adna/STATE.md`) → `state_frontmatter_phase_campaign_keys`
+  closed `proposed→resolved`; `mission:` verified ABSENT → its unshipped extension, adopted for v8.9.
+  `state_history_graduation` (HIGH), `mission_frontmatter_key`, `path_convention_doctrine`,
+  `fork_kit_agents_enforcement` all adopted → v8.9 (stamps stay `proposed`, ratify at G2).
+- **Obj 2 (light sweep):** 8 remaining `proposed` (4 adopt-v8.9 · 3 defer-with-trigger · 1 v2.6-candidate) +
+  `visual_inspection_doctrine` closed-as-shipped-at-v8.7 (2nd factual close) + 18 `deferred` confirmed with
+  trigger/owner.
+- **Obj 3:** `artifacts/vnext_roadmap.md` authored — v8.9 governance batch (7 items, +1 skill) vs v2.6 standard
+  window (2 candidates, charted-not-opened) + closed-as-shipped (2) + deferred-with-trigger (21) + explicit
+  "does-NOT-carry". SO-7 (plain-language block) · SO-8 (9 self-ref cites) · SO-10 (18 wikilinks) all pass.
+- **Obj 4:** `artifacts/stub_campaign_v8_9_release.md` staged (clearly marked STUB; dir NOT created — post-G2/DP9).
+- **Gates:** `adna_validate --governance` → **Zero drift**. No normative/template surface shipped (v2.5/8.8 hold).
 
 ## AAR
 
 *Mandatory before `status: completed` (SO-5). Include `token_budget_actual` (SO-11).*
 
-- **Worked**:
-- **Didn't**:
-- **Finding**:
-- **Change**:
-- **Follow-up**:
+- **Worked**: The two-pass seam (5-deep / 25-light) was budgeted as a possible split but **wasn't needed** —
+  batch heading-scans (bash grep over the file set) + batch heredoc stamp-appends kept the whole triage in one
+  session at **~62 kT vs ~120 kT est** (−48%). Verify-first paid off twice: both `phase/campaigns` and
+  `visual_inspection` were already shipped, so 2 of 14 `proposed` closed factually instead of being roadmapped.
+- **Didn't**: Nothing blocked. One judgment call deferred to the operator rather than forced: the
+  `surface_composition_graph` subtype's v2.6-candidate slotting (the single genuine escalation → DP9).
+- **Finding**: The backlog's `status:` field had drifted from reality — 2 `proposed` ideas were fully shipped
+  months ago (v8.7) and never marked. A "verify-before-roadmapping" pass is cheap insurance; without it, both
+  would have become phantom roadmap items. (Mirrors M3's nav-linking≠route-existence lesson — status labels lag
+  the truth.)
+- **Change**: The disposition-stamp discipline (adopt/decline/defer proposals stay `status: proposed`; only
+  factual closes flip to `resolved`) cleanly separates "agent proposes" from "operator ratifies" (§7.7) — worth
+  carrying to any future backlog-triage mission.
+- **Follow-up**: G2/DP9 (operator) — ratify the roadmap + rule the v2.6-candidate slotting + approve materializing
+  the stub. `idea_upstream_vault_card_edge_population` is flagged as feeding M6 E2 (edge enrichment). Token actual
+  ~62 kT (est ~120 kT; −48%, well within the SO-11 2× band).

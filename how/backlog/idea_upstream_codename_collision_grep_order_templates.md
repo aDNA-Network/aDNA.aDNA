@@ -33,3 +33,8 @@ Scope question for M5: is the natural home a **campaign charter template**, the 
 - **Class evidence**: n=2 (Fluxer AAR · RareAnthropic "Operation Cartography" ↔ closed Canvas campaign, 74 refs).
 - **Status**: `proposed` — **queued for Refit M5 vNext triage** (the phase that dispositions the ~30-idea upstream pool into the v8.9 / v2.6 roadmap). No build here; M5 decides adopt / amend / decline + landing surface.
 - Sibling naming-discipline idea already in the pool: [[idea_upstream_phase_display_grammar]] (phase-slot grammar) — both are cheap authoring-time guardrails against ambiguous fleet-wide references.
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **ADOPT → v8.9 governance** *(proposed; ratifies at G2/DP9)*
+
+ADOPT into the v8.9 batch — small template touch. Add a "grep the codename before setting it" authoring note to the
+order/campaign templates (routed here by M1). Low-risk, no schema change, no count bump. Roadmap: [[vnext_roadmap]] §v8.9.

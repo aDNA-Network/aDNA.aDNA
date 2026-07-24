@@ -69,3 +69,7 @@ This is an **upstream-class idea targeting III.aDNA** (III owns the framework). 
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: III.aDNA (Argus). Trigger: Argus opens campaign_h (handed off via coord memo; Looking Glass pilot + pattern packet done). Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — already handed to III.aDNA via the Looking Glass campaign; trigger: Argus schedules the III-campaign pattern write-up. Owner: Argus (III.aDNA). See [[vnext_roadmap]] §Deferred-with-trigger.

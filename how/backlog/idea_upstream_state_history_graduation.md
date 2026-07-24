@@ -35,3 +35,25 @@ Wave A + B/C slices 1–4 graduated **19 files across 17 vaults, ~5.2MB → ~968
 ## Disposition
 
 Rosetta's call — candidate for the `.adna` template as a `skill_state_graduation` + a template `STATE_history.md` + the S16-style tripwire in the base health check. The CHANGELOG variant (`CHANGELOG_archive.md`, recent-arc keep-window) is the same doctrine and can ride the same filing.
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **ADOPT → v8.9 governance** *(proposed; ratifies at G2/DP9)*
+
+**Proposed: ADOPT into the v8.9 governance batch — the roadmap's anchor item (priority HIGH).** Strongest evidence
+base of the whole triage: Operation Clear Hearth graduated **19 files / 17 vaults, ~5.2 MB → ~968 KB**, byte-exact
+loss-checked, across Platform/Forge/Framework/Org vaults and two file kinds (STATE + CHANGELOG). The failure mode is
+proven load-bearing: STATE.md is every session's first read, compaction-without-a-guard demonstrably re-bloats
+(Home 73 KB → 348 KB in a month), and this vault's own `STATE.md` refuses tooling Reads at ~60 KB (the heavy-file
+convention exists precisely because of this).
+
+**Ships as (v8.9 governance — no normative schema change, so NOT a v2.6 item):**
+1. `skill_state_graduation` (new skill; +1 to the base-skill count) — the graduation recipe (keep-set rule ·
+   era-boundary-outranks-day-count · verbatim move · loss-gate discipline · the two supremacy caveats:
+   own-convention-outranks-default + check-for-existing-archive-first).
+2. A template `STATE_history.md` seed + the `state_history:` frontmatter pointer convention.
+3. An S-series **>100 KB auto-graduate tripwire** in the base health check (remediation = graduate, never delete; SO-6).
+4. Frontmatter-as-a-graduation-class (the five faces: repeated-key chains · mega-`tags:` · frontmatter-as-changelog ·
+   inline PRIOR-chain comments · frozen mega-`status:`) — documented in the skill, not a schema change.
+
+The CHANGELOG variant (`CHANGELOG_archive.md`, recent-arc keep-window) is the same doctrine and rides the same filing.
+**Self-referential (SO-8):** this vault already runs the pattern — `STATE_archive.md` §Shifted spine + the heavy-file
+Read convention — so the skill codifies proven-here practice, not aspiration. Count impact: **+1 skill** (32→33). Roadmap: [[vnext_roadmap]] §v8.9.

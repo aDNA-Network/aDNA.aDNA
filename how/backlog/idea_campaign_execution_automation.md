@@ -63,3 +63,10 @@ Asked at Champollion G0+1: *"once a campaign exists with the right models select
 2. Berthier session ratifies **Operation Dispatch** DP0 at its own gate (memo filed).
 3. Operations.aDNA answers the **schema v2** memo on its own cadence (R3 gate).
 4. Pattern §8 (Automation ladder) travels with the pattern's graduation to the standard (3rd instance).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **DEFER-WITH-TRIGGER** *(proposed; ratifies at G2/DP9)*
+
+DEFER — **trigger: operator opens a dedicated campaign-execution-automation initiative.** Operator-directed (2026-07-02)
+and 4/5 built, but "compose the tier-routed campaign runner" is a substantial build across a maturity ladder — its own
+campaign, not a release-batch item. Too large to fold into v8.9/v2.6. Held until the operator elects to open it. Owner:
+operator + Rosetta. Roadmap: [[vnext_roadmap]] §Deferred-with-trigger.

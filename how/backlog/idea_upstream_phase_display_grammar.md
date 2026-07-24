@@ -51,3 +51,10 @@ fields (already prose by convention — e.g. "EP2 Surfaces" — and untouched by
 
 **Precedent:** the sibling key conventions upstreamed cleanly (`mission:` — Emacs M22, this lane;
 `executor_tier`/`token_budget_estimated` — shipped in governance v8.4).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **ADOPT → v8.9 governance** *(proposed; ratifies at G2/DP9)*
+
+ADOPT into the v8.9 STATE-convention family (with [[idea_upstream_mission_frontmatter_key]]). A bare numeral in a
+phase slot is a measured ambiguity (C-009); the `P<n>[/<count>]` grammar + authoring guidance + `+adna-normalize-phase`
+render convention is already live on Emacs.aDNA (Camera Lucida M-CL6) and completes the `phase:`/`campaigns:`/`mission:`
+trio. Ships as authoring guidance in the base CLAUDE.md/STATE guidance — no schema change, no count bump. Roadmap: [[vnext_roadmap]] §v8.9.

@@ -34,3 +34,7 @@ Run [[how/skills/skill_project_rename|skill_project_rename.md]]'s keep/strip cla
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: operator (per-vault). Trigger: post-launch standard-maintenance mission (arms B/C; each an SO-7-weighted call; touches 45 vaults). Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — the deferred arms of Drydock M03; trigger: a fleet-cleanup window opens. Owner: aDNALabs (Berthier). See [[vnext_roadmap]] §Deferred-with-trigger.

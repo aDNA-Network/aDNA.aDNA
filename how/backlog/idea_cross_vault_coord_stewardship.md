@@ -142,3 +142,7 @@ Cross-vault coord memos may also be addressed to a persona that lives in a DIFFE
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: Rosetta + Home.aDNA (Hestia). Trigger: 3rd instance / process review (Home shipped a node-local interim detector, health_check S14). Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — trigger: fleet coord-memo ack-debt becomes acute (the ADR-022 lesson Refit re-surfaces at G3). Owner: Berthier (fleet coordination). See [[vnext_roadmap]] §Deferred-with-trigger.

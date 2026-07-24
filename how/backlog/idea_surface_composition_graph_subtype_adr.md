@@ -37,3 +37,12 @@ Conformance sketch (to firm up in the ADR): the three build-face wrappers (git/i
 ## Decision
 
 *(pending — Rosetta lane / operator ratification)*
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **V2.6-CANDIDATE / DEFER** *(proposed; ratifies at G2/DP9)*
+
+Route to the **v2.6 standard window as a candidate** (escalated to G2). Minting a `surface_composition_graph` Platform
+subtype ADR is an **ecosystem-taxonomy touch** — the same normative class as `software_deployment_graph` (ADR-037) — so
+it belongs in the standard window, not the v8.9 governance batch. The ADR itself can be *authored* dev-side anytime (an
+aDNA.aDNA decision), but the subtype only becomes normative when the ecosystem taxonomy updates (v2.6). **Trigger for
+promotion candidate→committed:** Dashboards.aDNA reference instance matures enough to anchor the coinage. Operator rules
+the v2.6-candidate slotting at G2. Roadmap: [[vnext_roadmap]] §v2.6-standard-window.

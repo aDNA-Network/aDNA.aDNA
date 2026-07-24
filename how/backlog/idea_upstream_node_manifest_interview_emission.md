@@ -21,3 +21,10 @@ tags: [backlog, upstream, node_manifest, interview, bootstrap, adr_015, tier3, h
 **Consumers waiting on it:** the Lighthouse installer (ADR-015 §B3.2) reads it to compose profiles; WebForge's `node_home` weaves it (§A8); Venus transmits it at Network join (horizon). Until this ships, new nodes emit manually (Home ADR-006 D4 path 3 — kinn_l1 is the first portable case).
 
 **Sibling idea filed the same session:** `idea_upstream_state_frontmatter_phase_campaign_keys.md`.
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **DEFER-WITH-TRIGGER** *(proposed; ratifies at G2/DP9)*
+
+DEFER — **trigger: Home ratifies ADR-006 (node_manifest v0) + Hestia hands off the manifest shape.** Home rules the
+manifest's shape; aDNA.aDNA can only wire fork-time emission once that shape is ratified (this was the v8.7 "held item 1
+→ Hestia" thread). Not blocked on us; not a v8.9 blocker. When the trigger fires, it slots into a later governance batch
+as a `skill_node_bootstrap_interview` extension (emit `node_manifest.{yaml,md}`). Owner: Hestia (shape) → Rosetta (fork-emit). Roadmap: [[vnext_roadmap]] §Deferred-with-trigger.

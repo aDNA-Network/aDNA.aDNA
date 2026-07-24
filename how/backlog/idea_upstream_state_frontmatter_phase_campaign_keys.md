@@ -4,7 +4,8 @@ idea_class: upstream_contribution
 from_vault: Home.aDNA
 from_persona: hestia
 created: 2026-07-06
-status: proposed
+updated: 2026-07-24
+status: resolved   # SHIPPED at v8.7 (Operation Cleanroom, 2026-07-13, item 2) — verified live in .adna/STATE.md frontmatter (phase: + campaigns: seeded); closed at Refit M5 vNext triage 2026-07-24
 target: "STATE.md template frontmatter (.adna base + template_state) — fleet convention"
 origin: "Home ADR-007 (inventory_vaults row-schema v2, Hearthfire P1 2026-07-06) — the derive-where-honest population law for phase/campaigns"
 tags: [backlog, upstream, state_frontmatter, phase, campaigns, machine_readable, inventory_v2, graph_card, hearthfire, hestia]
@@ -26,3 +27,18 @@ campaigns: [campaign_fleet_home_pages, campaign_node_hub]   # active campaign id
 **Consumers:** `skill_inventory_refresh` v2 derivations (Home) → `inventory_vaults` rows → graph_card `phase`/`campaigns` fields + any future Surface API `/state` projection (which these keys also feed cleanly).
 
 **Sibling idea filed the same session:** `idea_upstream_node_manifest_interview_emission.md`.
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CLOSE-AS-SHIPPED**
+
+**Ruling: factual close (no G2 decision needed).** The two optional keys shipped at **v8.7** (Operation Cleanroom,
+2026-07-13, item 2) and are **live in `.adna/STATE.md`** frontmatter right now (verified 2026-07-24):
+
+```yaml
+phase: "production"        # optional · machine-readable one-line current phase (honest-absent if omitted)
+campaigns: []              # optional · active campaign ids (machine-readable list; honest-absent → [])
+```
+
+Every new fork inherits them; the schema is permissive (`additionalProperties: true`) so no schema break shipped.
+`status: proposed → resolved`. **The `mission:` key** ([[idea_upstream_mission_frontmatter_key]], Archimedes) is the
+natural **third sibling** and is NOT yet shipped → it carries forward as a v8.9 roadmap item, batched with the
+phase-display grammar. See [[vnext_roadmap]] §Closed-as-shipped + §v8.9 (STATE-convention family).

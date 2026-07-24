@@ -45,3 +45,22 @@ tags: [idea, upstream, path_convention, doctrine, clear_hearth_w6, hestia]
 Rosetta's call at intake; no urgency. The live-gov tier is already conforming as of W6; the docs-frame tail
 (~2,900 refs, mostly closed records which stay verbatim) needs no sweep — the doctrine only governs *new*
 writing plus live surfaces.
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **ADOPT → v8.9 governance** *(proposed; ratifies at G2/DP9)*
+
+**Proposed: ADOPT into the v8.9 governance batch — a doctrine line, low urgency.** The convention is proven and
+low-risk: Clear Hearth's P0 audit measured ~18% nonconforming (2,917 absolute vs 13,021 tilde refs), and the W6
+sweep showed absolute prose paths actively *hide dangling refs* (6+ dead absolute pointers sat unnoticed). It governs
+**new writing + live surfaces only** — the closed-record tail (~2,900 refs) stays verbatim (SO-6), so there is no
+back-sweep cost.
+
+**Ships as (v8.9 governance — doctrine/guidance, no normative schema change):**
+1. A doctrine line in the base template `.adna/CLAUDE.md` linking/naming section: *"Docs and prose use `~/aDNA/...`;
+   execution contexts (scripts, CI, launchd, cron, machine-consumed data fields, root-identity datum rows) use the
+   absolute path."*
+2. Optional S-series health probe: count non-annotated absolute workspace paths in a vault's root governance files;
+   `>0 = advisory flag`.
+3. `skill_project_fork` writes tilde-form in everything it generates (most already do) — pairs cleanly with the
+   [[idea_upstream_fork_kit_agents_enforcement]] fork-skill hardening.
+
+No count bump. Governance-layer only. Roadmap: [[vnext_roadmap]] §v8.9.

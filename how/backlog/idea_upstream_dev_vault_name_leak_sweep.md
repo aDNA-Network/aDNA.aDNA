@@ -44,3 +44,10 @@ doc-currency slice. Related: [[mission_v8_5_release_cut_hygiene]] §11 · the v8
 The census table's *existence* in a template skill is itself questionable (dev-internal reporting in a
 shipped how-to) — whether `skill_iii_setup.md` should ship at all, or ship trimmed, is a separate
 question for the III-framework wrapper doctrine.
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **ADOPT → v8.9 governance (release-process hardening)** *(proposed; ratifies at G2/DP9)*
+
+ADOPT into v8.9 — folds into `skill_template_release`'s DE-LINK discipline. Directly addresses the v8.5 near-miss
+(21 private wikilinks nearly shipped into the public image). Ships as a codified pre-assembly grep of the full outbound
+link/path set + a dev-vault-name scan of every folded artifact, added to the release skill. No count bump (existing
+skill hardened). Reinforces hard-constraint 5. Roadmap: [[vnext_roadmap]] §v8.9.

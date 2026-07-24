@@ -47,3 +47,7 @@ Recommendation: **option 1 (update the docs)**. The runtime behavior is the de-f
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: Astro.aDNA + Home.aDNA siteforge wrapper. Trigger: opportunistic (1-line doc fix in another vault; not aDNA.aDNA-owned). Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — doc-vs-runtime sentinel-filename mismatch; trigger: next ISS/RemoteControl touch (quick fix, bundle then). Owner: RemoteControl. See [[vnext_roadmap]] §Deferred-with-trigger.

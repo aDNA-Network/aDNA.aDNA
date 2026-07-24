@@ -52,3 +52,7 @@ Obsidian.aDNA M06 exit-gate 2 ("cross-vault-graph homepage") consumes this artif
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: Hestia / Home.aDNA. Trigger: reconcile against the v8.0 topology-canvas (Hearthstone lane; may be partly superseded). Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — opt-in Obsidian-artifact emit on the ADR-023 registry generator; trigger: an Obsidian-integration pass on the generator. Owner: Rosetta + Seshat. See [[vnext_roadmap]] §Deferred-with-trigger.

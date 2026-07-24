@@ -29,3 +29,18 @@ mission: M22        # mission-of-record for the register's current contents
 **Consumers:** Emacs.aDNA `adna/sidebar` self-panel + `adna/mcp` `read_vault_state` · Home `skill_inventory_refresh` v2 derivations (if adopted beside `phase:`/`campaigns:`) · graph_card/node_home mission field (currently honest-absent).
 
 **Precedent:** mission-frontmatter conventions upstream cleanly — `idea_upstream_model_tier_mission_fields.md` (executor_tier/token_budget_estimated) shipped in governance v8.4.
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **ADOPT → v8.9 governance** *(proposed; ratifies at G2/DP9)*
+
+**Proposed: ADOPT into the v8.9 governance batch, as the third sibling of the already-shipped `phase:`/`campaigns:`
+keys.** Verify-first result (2026-07-24): `phase:`/`campaigns:` shipped at v8.7 and are live in `.adna/STATE.md`;
+**`mission:` is confirmed ABSENT** — it is the genuine unshipped gap, not a duplicate. One optional, honest-absent-
+preserving key (`mission: M22` = mission-of-record for the register's current contents; mirrors `last_session:`, not a
+liveness claim). No schema break (`additionalProperties: true`). Precedent is exact: `executor_tier`/
+`token_budget_estimated` mission fields shipped in governance v8.4.
+
+**Batches with the STATE-convention family** in v8.9: this key + [[idea_upstream_phase_display_grammar]] (the
+`P<n>[/<count>]` render grammar) complete the `phase:`/`campaigns:`/`mission:` trio that supervision surfaces
+(Emacs `adna/sidebar`, Home `skill_inventory_refresh` v2, graph_card/node_home) read. Add the key to the `.adna/STATE.md`
+seed after `campaigns:`; document in the STATE template guidance. No count bump (frontmatter convention, no new skill/template).
+Roadmap: [[vnext_roadmap]] §v8.9 (STATE-convention family).

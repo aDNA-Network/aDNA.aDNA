@@ -52,3 +52,9 @@ tags: [backlog, tooling, compliance_checker]
 ## Self-reference (Standing Order #8)
 
 This idea is the vault grading its own grader: the aDNA standard teaches a 10-dimension compliance rubric, and the tool that measures it lives inside the very vault it measures. The failure mode (0.0% on `concept`/`pattern`/`glossary_entry`) is itself a demonstration of the extended-ontology gap between the *base* 16 entity types the checker was built for and the *11 Rosetta extensions* this vault added — the structure surfaced its own tooling debt.
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **ADOPT → v8.9 governance (tooling)** *(proposed; ratifies at G2/DP9)*
+
+ADOPT into v8.9 — bundle with the other tooling touches. `compliance_checker.py` (a base template tool at
+`what/lattices/tools/`) gets output hygiene + content-type scoring + a runtime-dep note. Small, self-contained, no
+schema change. Batches with the `adna_validate` lane if convenient. No count bump. Roadmap: [[vnext_roadmap]] §v8.9.

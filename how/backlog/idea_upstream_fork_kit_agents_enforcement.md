@@ -33,3 +33,23 @@ A freshly forked `<Name>.aDNA/` vault does not reliably receive a root `AGENTS.m
 ## Disposition
 
 Rosetta's call — fold into `skill_project_fork` + the fork-skeleton bundle at the next template release. Happy to supply the Wave E stub shape as the seed template.
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **ADOPT → v8.9 governance** *(proposed; ratifies at G2/DP9)*
+
+**Proposed: ADOPT into the v8.9 governance batch — `skill_project_fork` hardening.** The gap is measured and
+remediation-costly: Clear Hearth found **26 of 73 root vault dirs lacked `AGENTS.md`** (10 active/post-genesis graphs
+that simply never got the file; 16 correctly genesis-gated), and same-era forks diverged (`Emacs.aDNA` inherited the
+base AGENTS.md; `Fluxer`/`RealityScan` got none) — the kit outcome depended on which fork path a vault came through,
+not on policy. Wave E had to hand-backfill the 10 — exactly the work fork-time enforcement prevents.
+
+**Ships as (v8.9 governance — fork-skill + skeleton, no normative schema change):**
+1. A **kit manifest** in `skill_project_fork` naming the 4-file root governance kit (`CLAUDE.md` · `AGENTS.md` ·
+   `MANIFEST.md` · `STATE.md`) with presence verification as a completion gate (fork not "done" with a missing kit file).
+2. **AGENTS.md seed** — the fork always copies the base root `AGENTS.md`, stamped `last_edited_by: agent_init` so
+   first-run customization detection still works.
+3. **Genesis-stub carve-out** — a `genesis_planning` fork defers *content* to P0 but still receives the kit *files*
+   (a minimal routing stub is orientation, not governance — no identity/persona claim, so SO-1 is respected).
+4. Census hook — node health checks treat a missing kit file as drift, not ambiguity.
+
+Pairs with [[idea_upstream_path_convention_doctrine]] (both touch the fork skeleton). Home offered the Wave E stub shape
+as the seed. No count bump (existing skill hardened). Roadmap: [[vnext_roadmap]] §v8.9.

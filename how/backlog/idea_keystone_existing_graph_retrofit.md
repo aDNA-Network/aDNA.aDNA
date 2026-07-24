@@ -40,3 +40,7 @@ When the operator greenlights, structure each retrofit as a mission in the targe
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: operator + per-vault personas. Trigger: operator greenlight per vault (Lab arm gated on Lab M-L13.6 deploy); Keystone core complete, this is follow-on. Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — Keystone-cohort four-wrapper retrofit of existing software-surface Platforms; trigger: the cohort opens a retrofit wave. Owner: Lighthouse + cohort. See [[vnext_roadmap]] §Deferred-with-trigger.

@@ -57,3 +57,7 @@ Operator-discretionary on III's side. CC consumes nothing from this; CC's v0.1.0
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: III.aDNA (Argus). Trigger: III roadmap discretion (advisory only; relocatable to III.aDNA/how/backlog/). Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — advisory to III.aDNA; trigger: III opens its code-domain-pack work. Owner: Argus (III.aDNA). See [[vnext_roadmap]] §Deferred-with-trigger.

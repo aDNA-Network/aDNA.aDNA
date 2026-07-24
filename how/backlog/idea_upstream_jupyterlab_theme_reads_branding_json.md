@@ -76,3 +76,7 @@ Stanley_l1 is the canonical-Lattice purple deployment — the current hardcoded 
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: Lab.aDNA (Galileo) + latlab. Trigger: first non-purple partner Lab deployment. Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — Jupyter.aDNA-owned theme/branding behavior; trigger: Jupyter opens a theme-config pass. Owner: Galileo (Jupyter.aDNA). See [[vnext_roadmap]] §Deferred-with-trigger.

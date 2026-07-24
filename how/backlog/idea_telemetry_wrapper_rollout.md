@@ -55,3 +55,7 @@ No transport/backend (owned by Context.aDNA). No always-on collection. No write 
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: per-vault personas + Keystone. Trigger: per-graph genesis/enrich missions (prove on Lab first); campaign_feedback_loop is CLOSED. Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — `feedback/` wrapper rollout across the deployment-graph cohort; trigger: cohort adopts via the Keystone template (Feedback Loop follow-on). Owner: deployment-graph cohort. See [[vnext_roadmap]] §Deferred-with-trigger.

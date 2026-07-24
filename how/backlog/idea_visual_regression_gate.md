@@ -32,3 +32,7 @@ Platform-stable baselines (no OS-font flake), intentional-change baseline-update
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: Rosetta / Astro.aDNA / III.aDNA. Trigger: a craft regression slips past wired gates 4/9/18/19, or container-pinned infra reaches standing-watch. Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — semantic visual-regression gate (deferred at Storyweave D4); trigger: a gate-suite hardening pass. Owner: Rosetta. See [[vnext_roadmap]] §Deferred-with-trigger.

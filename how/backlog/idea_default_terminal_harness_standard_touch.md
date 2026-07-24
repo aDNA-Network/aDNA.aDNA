@@ -38,3 +38,7 @@ aDNA.aDNA rules on all three (your spec, your skill, your shelf). Terminal pre-c
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: Terminal.aDNA (Berthier) + Rosetta. Trigger: Terminal EP5 missions ex_20/ex_23 + the access-point threat-model mission (only the paper spec note can land pre-trigger). Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — trigger: operator elects the recommended-default terminal/harness standard-touch (explicitly operator-gated). Owner: operator + Terminal/Warp. See [[vnext_roadmap]] §Deferred-with-trigger.

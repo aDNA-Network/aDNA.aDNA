@@ -1,8 +1,8 @@
 ---
 type: idea
 created: 2026-07-07
-updated: 2026-07-07
-status: proposed
+updated: 2026-07-24
+status: resolved   # SHIPPED at v8.7 (Operation Cleanroom, 2026-07-13) — verified live in .adna/CLAUDE.md §"Visual inspection (headless-first)"; closed at Refit M5 vNext triage 2026-07-24
 last_edited_by: agent_rosetta
 upstream_target: ".adna template — next release (v8.7)"
 tags: [idea, upstream, visual_inspection, doctrine, playwright, v8_7, template_release]
@@ -23,3 +23,11 @@ tags: [idea, upstream, visual_inspection, doctrine, playwright, v8_7, template_r
 **How.** Folds into the next `skill_template_release` (v8.7 queue) alongside the other deferred v8.7 items (2 Hestia addenda · image `how/templates/AGENTS.md` incompleteness · stale repo-names example in `skill_git_remote_setup`). Governance bump 8.6→8.7; standard version unaffected (docs/tooling only).
 
 **Provenance.** Canonical doctrine + harness landed in `ad78d92` (this vault); fleet cross-links in III/Astro/WebForge/RemoteControl (+ Operations). Related: [[doctrine_visual_inspection]] · `scripts/visual_capture.mjs`.
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CLOSE-AS-SHIPPED**
+
+**Ruling: factual close (no G2 decision needed).** The visual-inspection doctrine shipped at **v8.7** (Operation
+Cleanroom, 2026-07-13, item 5 — "generic DE-LINKED visual-inspection doctrine") and is **live in `.adna/CLAUDE.md`
+§"Visual inspection (headless-first)"** (verified 2026-07-24: the T0/T1/T2 ladder + "never assume Chrome" are inline,
+kept through the v8.8 Distillery prune). Every new fork now inherits the default at fork time — the gap this idea
+named is closed. `status: proposed → resolved`. Not a roadmap item (already delivered). See [[vnext_roadmap]] §Closed-as-shipped.

@@ -64,3 +64,7 @@ The other 6 personas-per-token files are themed around specific reviewer / autho
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: Astro.aDNA persona. Trigger: operator greenlight / when Home needs a native hestia ISS (currently uses the tokyo fallback). Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — small ISS persona-token add; trigger: next ISS/RemoteControl surface touch. Owner: Home/Hestia + RemoteControl. See [[vnext_roadmap]] §Deferred-with-trigger.

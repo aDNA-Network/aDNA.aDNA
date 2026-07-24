@@ -53,3 +53,7 @@ At P1 (2026-05-29) the generator emitted `edges:[]` because **no card declared r
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: Hestia / Home.aDNA + Rosetta. Trigger: Hearthstone lane (execute ADR-033 retirement path; overlay renders 18 edges today). Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — **feeds Refit M6 E2** (vault-graph edge enrichment from `federation_ref`); trigger: M6 E2 stretch objective. Owner: Rosetta + Hestia. See [[vnext_roadmap]] §Deferred-with-trigger.

@@ -165,3 +165,7 @@ The v0.1 `skill_agentic_sudo.md` (now canonical) serves as the **first OIP primi
 ## Champollion G0 disposition — X (M1.1, 2026-07-02)
 
 **DEFER.** Owner: Rosetta / operator (high bar). Trigger: post-launch (needs full re-scope; web-gate leg already shipped as ISS; entry-trigger vaults archived/renamed). Ratified at Champollion G0 (D2).
+
+## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
+
+Reviewed in the light sweep; **stays `deferred`** — trigger: operator opens the OIP-unification campaign (Rule-5 doctrine, campaign-scale). Owner: operator + Rosetta. See [[vnext_roadmap]] §Deferred-with-trigger.
