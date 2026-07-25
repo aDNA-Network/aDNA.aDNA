@@ -71,10 +71,10 @@
       "type": "federation"
     }
   ],
-  "generated_at": "2026-07-22",
+  "generated_at": "2026-07-25",
   "schema_version": "0.2",
-  "source_inventory_sha": "59058a4ec1e65d3c",
-  "vault_count": 73,
+  "source_inventory_sha": "536e9d62be75c55b",
+  "vault_count": 74,
   "vaults": [
     {
       "canonical_governance": "Operations.aDNA/AGENTS.md",
@@ -790,6 +790,37 @@
       "umbrella_pillar": null,
       "vault": "PercySleep.aDNA",
       "vault_slug": "percysleep"
+    },
+    {
+      "canonical_governance": null,
+      "card_present": false,
+      "class": "org_graph",
+      "companion_vaults": [],
+      "current_phase": null,
+      "default_partners": [],
+      "display_name": "RareAnthropic",
+      "docs_site_url": null,
+      "federation_refs": [],
+      "full_name": null,
+      "github_url": null,
+      "headline_adrs": [],
+      "headline_mission": null,
+      "headline_mission_state": null,
+      "last_synced": null,
+      "lifecycle_stage": null,
+      "note": "Org-Graph.aDNA (LIP-0005) — outside-in map of the Anthropic ecosystem (products/retention/HIPAA-BAA/Skills) for the rare-disease working group. One 89-node provenance-disciplined graph, two surfaces: Hygeia query SKILL.md + static curriculum (WebForge documentation archetype.",
+      "persona": "hygeia",
+      "persona_archetype": null,
+      "recent_closed": [],
+      "schema_version": "0.1",
+      "status": "genesis",
+      "subclass": null,
+      "superseded_by": null,
+      "supersedes": null,
+      "tagline": null,
+      "umbrella_pillar": null,
+      "vault": "RareAnthropic.aDNA",
+      "vault_slug": "rareanthropic"
     },
     {
       "canonical_governance": "SuperLeague.aDNA/CLAUDE.md",
