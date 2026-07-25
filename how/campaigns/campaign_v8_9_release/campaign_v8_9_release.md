@@ -103,3 +103,35 @@ missions' close → **P2 ratification gate** (operator), then **P3 fire**.
 Seeded by [[mission_refit_5_vnext_triage]]; ratified at [[ratification_record_refit_g2]] (DP9). **Opened
 2026-07-24** (P0 Charter, `session_2026-07-24_palimpsest_p0_charter`) on the operator's post-Refit-close
 "continue the campaign" election; codename **Operation Palimpsest** chosen (AskUserQuestion).
+
+## Completion Summary
+
+**Shipped:** the full **v8.9 governance batch** to `aDNA-Network/aDNA` — commit `c8e5427` + annotated tag `v8.9`
+(`main a32724b..c8e5427`; remote tag `0fdd4cd`). **Governance 8.8 → 8.9; standard v2.5 held** (no normative change).
+Image counts **30 → 31 templates / 32 → 33 skills**. Local `~/aDNA/.adna` synced (`0364d85`); 6/6 fresh-clone smoke green.
+
+### Deliverables (7 ship-set items)
+1. **STATE-graduation doctrine** — new `skill_state_graduation` + `template_STATE_history` seed + `>100 KB` STATE/CHANGELOG health-check tripwire + frontmatter-as-graduation-class (the +1 skill / +1 template).
+2. **STATE-convention family** — `mission:` frontmatter key + `P<n>[/<count>]` phase-display grammar + `+adna-normalize-phase` (folded as `.adna/CLAUDE.md` § STATE conventions).
+3. **Path-convention doctrine** — `~/aDNA/…` in prose, absolute in execution (`.adna/CLAUDE.md` § Path references).
+4. **Fork-kit AGENTS enforcement** — `skill_project_fork` 4-file governance-kit completion gate + AGENTS `agent_init` seed + genesis carve-out.
+5. **Codename-collision note** — "grep the codename before you set it" in `template_campaign`.
+6. **Release-process leak hardening** — DE-LINK + dev-vault-name hard gate (Step (b.1)) in `skill_template_release` (dev-side only; hardened the very tool P3 ran).
+7. **`compliance_checker.py` hardening** — scratch-default output · python3.13 runtime guard · `unsupported type — not scored` marker.
+
+### Phase / gate record
+P0 Charter (2026-07-24) → P1 Author [M1 anchor `c3b4ec2` + M2 convention/machinery `44ace2a`] → **P2 Ratify** (operator-signed 2026-07-24, `a435093`; record `artifacts/p2_ratification_summary.md`) → **P3 Fire** (`96cd9e9`; AAR `artifacts/aar_v8_9_p3_fire.md`). Two hard operator gates honored (P2 §7.7 ratification + P3 dry-run-then-pause "cut & push v8.9"). Dev record pushed to `origin/aDNA.aDNA` at wind-down.
+
+### Descoped / not carried
+The v2.6 candidates (`task` entity · `surface_composition_graph` subtype — need a standard-version move), node-manifest fork-emission (Home-ADR-gated), Storyweave in-person items. Pre-existing dev-name leaks in shipped `.adna/how/docs/upgrade_v6_to_v7.md` + the exemplar bundle left for a future doc-currency pass (the v8.9 leak-sweep hardening governs *future* folds, not a retroactive clean).
+
+### Follow-ups
+Site install-truth fixture regen at next deploy · the doc-currency genericization pass above.
+
+## Campaign AAR
+
+- **Worked:** authoring the whole batch **dev-side first**, then folding via `skill_template_release` in a throwaway fresh clone with a full gate stack, kept the public push a mechanical last step after operator GO. The M1-anchor rider pattern (stage image-only edits) transferred cleanly to M2's STATE-seed key.
+- **Didn't:** the "no count bump" framing (true for M2 dev-side) obscured that the **combined P3 fire IS a count-change release** (M1's +1/+1 realized at the image) — surfaced at fire-time when the validator regex caught a stale historical header-comment count. A count-change release touches more surfaces than v8.7/v8.8 did.
+- **Finding:** **image ≠ dev** in both counts *and* structure — the image's `skill_project_fork` is richer than dev (→ 3-point delta, not a copy) and has no `what/doctrine/` (→ doctrine folds as a CLAUDE.md subsection). The two-agent fold-map recon that caught both paid for itself.
+- **Change:** the release skill now carries a codified **DE-LINK hard gate** (Step (b.1), shipped this batch) — the manual line-list that nearly leaked 21 wikilinks at v8.5 is replaced by a whole-tree grep.
+- **Follow-up:** dev-graph record pushed (this wind-down); site install-truth regen + the pre-existing-leak doc-currency pass remain optional/non-blocking. **Operation Palimpsest — do NOT re-open.**
