@@ -1,9 +1,9 @@
 ---
 type: doctrine
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-07-27   # + §2 T1 "already configured" claim CORRECTED (was false on this node) + §3.1 authenticated-surface T0 + §5 vault bindings (Hypnos / PercySleep B3 fallout)
 status: active
-last_edited_by: agent_rosetta
+last_edited_by: agent_hypnos
 tags: [doctrine, visual_inspection, browser_automation, playwright, headless, screenshots]
 ---
 
@@ -24,7 +24,7 @@ tags: [doctrine, visual_inspection, browser_automation, playwright, headless, sc
 | Tier | Tool | Use for | Setup |
 |------|------|---------|-------|
 | **T0 — batch capture (DEFAULT)** | `scripts/visual_capture.mjs` (headless Playwright) | Screenshot every surface × viewport × theme; produce a compact report; the standing default for review/inspection/evidence | none (node + Playwright, already present) |
-| **T1 — interactive headless** | `@playwright/mcp` (already configured) | Agentic navigate / click / type / resize / screenshot when you must *interact* or explore | none (MCP server pre-configured; **no extension, no login**) |
+| **T1 — interactive headless** | `@playwright/mcp` | Agentic navigate / click / type / resize / screenshot when you must *interact* or explore | **verify it is enabled** — see the T1 note below; **no extension, no login** |
 | **T2 — visible/authenticated (ESCALATION ONLY)** | `claude-in-chrome` (Chrome MCP) | *Only* when a real visible or logged-in browser is genuinely required — a live GIF of real interaction to share with the operator, an authenticated session | extension + claude.ai login (per-user) |
 
 **Rules:**
@@ -33,11 +33,46 @@ tags: [doctrine, visual_inspection, browser_automation, playwright, headless, sc
 3. **T2 is escalation, never the assumed default.** Naming Chrome MCP as *mandatory* or *primary* in a spec is a doctrine violation. When a task genuinely needs it, **state the headless fallback in the same breath** and degrade to T0/data-truth if it's unavailable.
 4. **Metrics are tool-agnostic.** `axe-core` (a11y) and Lighthouse (perf/BP/SEO/CWV) wire into T0.
 
+> **T1 note — verify, don't assume (corrected 2026-07-27).** This table previously read *"already
+> configured / MCP server pre-configured"*. That was **false on at least one node** and is a trap: a
+> reader who believes T1 is live, finds it isn't, and has no T0 for their surface will fall through to
+> T2 — and stall when T2 is also unavailable. That is precisely the failure this doctrine exists to
+> prevent, and it happened again on 2026-07-27 (PercySleep B3).
+> **Check before relying on it:** the `mcp__playwright__*` tools must resolve. If they don't, add to
+> `mcpServers` in `~/.claude.json`:
+> `"playwright": {"command": "npx", "args": ["-y", "@playwright/mcp@0.0.78"]}` — pin the version so the
+> inspection tier can't shift underfoot. **MCP servers connect at session start, so a newly-added
+> server is not live until the session restarts.** If you added it mid-session, say so plainly rather
+> than reporting the tier as available.
+
 ## §3 — The canonical harness + viewports
 
 - **`aDNA.aDNA/scripts/visual_capture.mjs`** — the reusable T0 harness. Args: `--base <url>` · `--routes </a,/b>` · `--viewports <names>` · `--themes dark,light` · `--out <dir>` · `--axe` · `--report <path>`. Resolves Playwright portably (checks `site/node_modules`) so any web vault runs it without a copy-into-`site/` hack. Output: full-page PNGs (`<surface>__<viewport>__<theme>.png`) + `capture_report.json` (title/desc/h1/h2count/bodyLen/height/console-errors/loadMs).
 - **Canonical viewports** (`aDNA.aDNA/scripts/viewports.json`): mobile **320** / mobile-lg **375** / tablet **768** / laptop **900**(h) / desktop **1024** / wide **1440**. Themes set via `localStorage.theme` + `colorScheme`.
 - **Target live or local:** point `--base` at the deployed URL (when live == committed) or a local `astro preview`. Both render identically for a static site.
+
+### §3.1 — Authenticated surfaces need a vault-local T0 *(added 2026-07-27)*
+
+`visual_capture.mjs` is deliberately login-free (*"Zero Chrome extension, zero login"* — its own header).
+It therefore **cannot reach a cookie-authenticated surface**: a clinician dashboard, an admin console, a
+running twin. Discovering that mid-review is how an agent ends up reaching for T2 and stalling.
+
+**Rule:** a vault owning an authenticated surface **ships its own T0 harness** that establishes a
+session first, then captures and asserts. It stays a T0 (headless, zero-setup, evidence-to-disk); only
+the auth step is vault-specific. Requirements:
+
+- Credentials from the vault's gitignored `.env` or env vars, **never** committed
+  (`doctrine_credential_handling.md`); a seeded dev-throwaway fallback is acceptable **only** where that
+  same pair is already committed in the vault's own bring-up scripts.
+- Emit the T0 output contract — `<surface>__<viewport>__<theme>.png` + `capture_report.json` — so
+  evidence reads uniformly across vaults.
+- **Read-only on the surface**: navigate, click, screenshot. Never mutate under inspection.
+- **Prove it can fail.** Ship a deliberate red path (e.g. `--expect-fail-demo`) and confirm it exits
+  non-zero. A green that cannot go red is not evidence.
+
+**Reference implementations:** `PercySleep.aDNA/what/percysleep_ops/local/inspect_twin.py` (authenticated
+SPA + assertions + red-check) · `Spacemacs.aDNA/how/standard/runbooks/visual_inspection.md` (vault-local
+localization of this doctrine).
 
 ## §4 — Relationship to III + RemoteControl
 
@@ -47,6 +82,12 @@ tags: [doctrine, visual_inspection, browser_automation, playwright, headless, sc
 ## §5 — Consumers (cite, don't re-specify)
 
 Design/review skills and mission specs **cite this doctrine** rather than hard-coding a tool: `skill_reference_inspection` · `skill_site_design_pipeline` · `skill_decadal_aar` · `skill_iii_cycle` · any `mission_*` doing a visual review. A future tool swap updates this one file + the harness, not every consumer.
+
+**Vault bindings** (a doctrine nobody inherits does not bind): `PercySleep.aDNA` SO#13 + its
+`### Visual inspection` block + campaign SO#11 (bound 2026-07-27) · `Astro.aDNA` SO#3 ·
+`Spacemacs.aDNA` runbook + `adr_075`. **If your vault renders or inspects a visual surface and its
+`CLAUDE.md` does not cite this file, that is the gap** — PercySleep's B3 session stalled on an
+unavailable Chrome extension precisely because the vault had never inherited this doctrine.
 
 ## Related
 - `scripts/visual_capture.mjs` · `scripts/viewports.json` — the T0 harness
