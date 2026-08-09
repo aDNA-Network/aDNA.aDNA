@@ -106,6 +106,12 @@ Members recur across profiles by design (`Container` underpins core + inference;
 2. **§C enrichment wave (out of this campaign).** Retrofit the four wrappers into existing deployment-grade graphs — **Lab.aDNA** (reference impl, gated on its M-L13.6 merge) · Harness · ComfyUI · Obsidian · Terminal · Warp · AWSBootstrap. Backlog: [[how/backlog/idea_keystone_existing_graph_retrofit|idea_keystone_existing_graph_retrofit]]. **LANDED 2026-07-02 (Corps ⛩ M-C6 retrofit gate; recorded here 2026-07-03):** Lab (reference impl, M-L13.6 SATISFIED) · Warp · ComfyUI four-wrapper-conformant; Obsidian **11/12** (its M06 authors the `iii` wrapper — operator-accepted standing condition); Terminal n/a (already Tier-1). **Harness + AWSBootstrap remain in the §C backlog** (un-chartered). ComfyUI additionally **category-ruled Platform·SDG** at this gate (see [[spec_platform_ecosystem]] §SDG).
 3. **Router rows + first remotes are per-graph operator gates.** All 10 rows STAGED `#needs-human` (PT freeze) and all 10 repos local-only; insertion + first-remote are operator/Hestia acts at each graph's own genesis (cf. Lighthouse's first remote via Git.aDNA R2/P6 Wave 1a).
 
+## First live instances (per-graph execution gates)
+
+| Date | Graph | Instance | Evidence |
+|------|-------|----------|----------|
+| 2026-08-08 | `Forgejo.aDNA` (Ilmarinen) | **aDNA-Labs R&D Node forge LIVE** — Forgejo 15.0.6 LTS compose on the R&D node (`jake_l1` membership row, Nebula `10.43.0.28`, mesh-only), §8-compliant per Venus's Shape-A scoped-R&D ruling; Git.aDNA **P7b spike instance**. Smoke: healthz + OIDC discovery over mesh, SSH+HTTP clone/push, restore drill PASSED, runner CI green. 8 graph replicas seeded to the `aDNA-Network` org (gitleaks-gated). | `Forgejo.aDNA/how/campaigns/campaign_forgejo_genesis/missions/mission_execute_rd_install_m05.md` (exit gate) — *registered here per that mission's exit-gate deliverable; edit by the Ilmarinen lane 2026-08-08* |
+
 ## Provenance
 
 Recon ground truth (Network / Lab / Git / Lighthouse / Home STATE+CLAUDE, 2026-06-20→22) → ledger §A/§B → seeded stubs (P2/P3) → this register (P4). Every disposition here traces to a [[how/campaigns/campaign_keystone/artifacts/keystone_deconfliction_ledger|de-confliction ledger]] row. Campaign master: [[how/campaigns/campaign_keystone/campaign_keystone|campaign_keystone]].
