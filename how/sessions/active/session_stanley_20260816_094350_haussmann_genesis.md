@@ -14,6 +14,7 @@ scope:
     - who/coordination/                   # staged outbound memos (Phase C; additions only)
     - what/context/                       # graduated assessment artifacts (Phase C; additions only)
     - what/decisions/                     # ADR stubs at status: proposed (Phase C; additions only)
+    - what/exemplars/sites/               # ADDITIVE ONLY — new reference-inspection artifacts (B11, skill_reference_inspection-conformant); scope amended 2026-08-16 10:1x
   files:
     - STATE.md                            # planning banner + campaign registration at ratification
   excluded:
@@ -58,4 +59,6 @@ tags: [session, haussmann, genesis, campaign_planning, vitruvius, site]
 - 09:43 — Session started. Git ff-only pull clean at `4cc56b5`; 17 pre-existing dirty entries recorded as not-mine.
 - 09:43 — Codename greps recorded (0/0). Proceeding to campaign scaffold + Phase A artifacts.
 - 09:47 — Phase 0 committed `dc1bb35` (session file + scaffold + directives MD5-verified + STATE banner).
+- 11:5x — **Phase B COMPLETE — Gate B reached.** Wave 1 (12 packets) committed `d58ea13`. Wave 3: two independent target scorers (A 51.6 / B 49.6; variance ≤1 on 12/12) → reconciled **51.6/100** vs MCP ≈83 / Mastra ≈65; H1–H15 resolved (`evidence/hypotheses_resolved.md`); Gate B dossier at `artifacts/gate_b_dossier.md`. S1 set: 8 FALSE claims · self-federation disclosure · docs-template mobile squeeze. Two mid-run session-limit interruptions (11:30 + 14:30 resets); scorer A's sheet survived its termination complete on disk. HALTING for operator Gate B confirmation.
+- 10:1x — **Phase B opened.** Deploy baseline recorded `[D]`: home `last-modified: 2026-08-11T13:35:25Z` (a deploy AFTER STATE's last recorded 07-24 deploy — unrecorded-deploy finding), etag `924751752990b06132a92f785f1d7f32`, `x-vercel-id: sfo1::4sr5k-1786899410280`. **Header drift CONFIRMED `[D]`**: live site serves only HSTS; `vercel.json`'s CSP/XFO/XCTO/Referrer-Policy absent from responses. Evidence tree created at `campaign_haussmann/evidence/` (captures_raw/ + sweep/raw/ gitignored). Wave-1 fan-out launching: B1 inventory · B2 captures · B3 sweep · B4 machine-eye · B5 claims · B7 flux · B8×2 cohort scorers · B10×3 synthetic cold-readers · B11 dossier.
 - 10:0x — **Phase A complete**: 4 orientation artifacts authored at `campaign_haussmann/artifacts/` — `WEBFORGE_ORIENTATION.md` (schema/conventions/8-gap ledger + Berthier reconciliation note), `webforge_pattern_register.md` (15 pattern families + 6 patterns-to-author + 5 intake accelerators; **halt-check: WebForge substantive, no halt; craft-floor graduation already offered to this vault**), `dependency_map.md` (9 vaults + 6-constraint set), `instrument_ingestion.md` (VITRUVIUS adopted + 6 recorded deltas + H1–H15 pre-evidence table). Gate A folded into plan approval per operator ruling → proceeding to Phase B.
