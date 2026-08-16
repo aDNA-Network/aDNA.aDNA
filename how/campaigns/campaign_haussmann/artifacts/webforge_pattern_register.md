@@ -1,0 +1,73 @@
+---
+type: artifact
+artifact_type: pattern_register
+campaign_id: campaign_haussmann
+title: "HAUSSMANN Phase A.2 — WebForge pattern register: every pattern family, maturity, adna.network adoption state, gap"
+created: 2026-08-16
+updated: 2026-08-16
+status: active
+last_edited_by: agent_rosetta
+agent_authored: true
+source_vault: WebForge.aDNA
+source_state: "STATE.md genesis_active, read 2026-08-16 (the freshest vault in the dependency sweep)"
+tags: [haussmann, orientation, phase_a, webforge, pattern_register, federation]
+---
+
+# WebForge pattern register — Phase A.2 (MANDATORY)
+
+> **Provenance**: all rows `[D]` — extracted by direct read of `~/aDNA/WebForge.aDNA` doctrine/artifact/lib
+> files, 2026-08-16. Directive rule ([[COWORK_DIRECTIVE_operation_haussmann_genesis|directive]] §A.2): *HAUSSMANN inherits from
+> WebForge. Where HAUSSMANN needs a pattern WebForge does not have, the campaign authors it back into
+> WebForge — the website is a consumer of the pattern library, never a fork of it.*
+> **Halt-condition check: WebForge is NOT empty — the opposite.** 12 buildable archetypes, 57-lock craft
+> floor (13 raise-rounds), DTCG token pipeline, measured+gating CWV bars, 7 registered consumers (3 live
+> domains). No halt.
+>
+> **Headline finding**: `doctrine_web_surface_craft_floor.md` frontmatter carries
+> **`graduation: offered_to_aDNA.aDNA (Tier 2)` — awaiting Rosetta's home decision.** The intake this
+> campaign needs has, in part, already been offered from the other side.
+
+## 1. Register — pattern families
+
+Adoption legend: **NONE** = site has nothing equivalent · **PARALLEL** = site built its own un-federated equivalent (the "straggler" class WebForge flags) · **ALIGNED** = de-facto compatible, formalization only.
+
+| # | Pattern family | Locus (WebForge path) | Maturity `[D]` | Applicability to HAUSSMANN | adna.network adoption today | Gap → campaign disposition |
+|---|---|---|---|---|---|---|
+| P1 | **Craft floor — 57 locks** (`A1..N3`; classes GA/GC/CS/AS; census 447 enforced · 351 na · 0 gap; append-only, ratchet-only) | `what/doctrine/doctrine_web_surface_craft_floor.md` + `what/lib/gates/lock_coverage.yaml` (57×14=798 cells, GATING since R5) | **PROVEN** (canonical; 13 rounds) | The campaign's craft law for P4; several locks directly hit known site defects (D4 reflow, J1 heading primacy, B5 measure, G3 no-codename-leak ≈ gate-16, N2 llms honesty line) | **NONE formally; PARALLEL in spirit** — the site's 371-gate suite covers overlapping ground with different IDs and no coverage matrix | **Accept the offered Tier-2 graduation** (P0 intake mission); map site gates ↔ locks; declare a `site` surface row… note `lock_coverage.yaml` already lists `site` as one of its 14 surfaces — reconcile whose "site" that row means at intake |
+| P2 | **Lock-coverage census discipline** (declared cell per lock×surface; `enforced` cells need grep-verifiable anchors; fabricated cells FAIL) | `what/lib/gates/check_lock_coverage.py`, Gate 4f ×14 | **PROVEN** | The anti-"self-certifying gate" mechanism the campaign's own measurement ADR should copy | NONE | P0 intake + measurement ADR stub cites it |
+| P3 | **CWV lab bars, class-keyed** (`content_static`: perf 95 / LCP 2500 / CLS 0.1 / TBT 200 · `ssr_app`: direct bars, no quantized perf floor; N=3 cold median; ratchet law; host+browser fingerprint; 27 per-route relative bars) | `what/lib/gates/lighthouse_profiles.json` + `run_lighthouse.mjs` | **PROVEN** (RATIFIED + GATING 2026-08-07) | Replaces/upgrades the site's 4 hand-rolled Lighthouse fixtures; KW-14 discipline = read bars from the JSON, never transcribe | PARALLEL (gate-19 fixtures, same LCP/CLS numbers, no ratchet/fingerprint law) | P4 CWV-CI mission adopts profiles; site's graph page (~4.06s LCP) will FAIL the bar — that is the point |
+| P4 | **DTCG token pipeline** (single source → compiled CSS; 10 named ceilings incl. `tokyo_night`; byte-identity Gate 4d; `--strict-leak` 0) | `what/lib/tokens/` (`compile_css.py`, `check_aa.py`, `ceiling_map.json`) | **PROVEN** (M-S10 v1 + MS10X DTCG 2025.10) | P4 token adoption; the site's ADR-032 Tokyo Night register is *already one of WebForge's ceiling seeds* — convergence is natural | PARALLEL (`site/src/styles/tokens.css` + `branding.css` hand-rolled; gate-25 blocks new hex but no DTCG source) | P4 mission: adopt pipeline or formally pin divergence; ADR-032 reconciliation |
+| P5 | **Art-direction register / ceiling engine** (consumer-side `art_direction.yaml`; `signature_element` load-bearing; `anti_signature`; D-AD-1 no-bare-named-ceilings; DCRIT `dc_06` refuses color-only distinction) | `what/doctrine/art_direction_register.md` | **PROPOSED — not built** (engine/AA-repair/builder are briefs; `ceilings/` empty) | Exactly the frame for the campaign's "systematise the Ghibli-pixel voice vs reduce to accent" question (VITRUVIUS B.7): the answer becomes aDNA's `art_direction.yaml` entry with `signature_element` = the pixel-art voice (or not) | NONE | P4 visual-voice mission authors aDNA's entry **and returns implementation pressure to WebForge** (patterns_to_author); do NOT block on the unbuilt engine — schema is usable now |
+| P6 | **Motion vocabulary** (T1/T2/T3 + one signature moment; named classes `u-entrance`/`u-stagger`/`u-disclose`/`u-reveal`/`u-hover-pop`; profiles enum; CSS-native only on statics; Gate 4g ×13) | `what/doctrine/motion_vocabulary.md` | **PROVEN classes; profiles honest-absent; narrative tier RESERVED** | P4 craft: any motion the redesign adds uses these classes; `prefers-reduced-motion` already in site tokens | NONE (site has minimal motion; transitions zeroed under reduced-motion) | P4 adopts classes as needed; no new motion grammar invented locally |
+| P7 | **Archetype: `documentation`** (Syncline reference; left nav + TOC + prev/next + Shiki dual-theme; zero-JS default; 20 gates; the FR-I sidebar-lock genesis) | `what/archetypes/documentation/` | **PROVEN** | The Diátaxis-restructure mission (P2) inherits its nav/TOC/paging patterns rather than inventing; RareAnthropic already demands this archetype (demand row D-13) | PARALLEL (site's DocumentationLayout.astro — sidebar+TOC+breadcrumb+prev/next, own implementation) | P2 docs mission: extend-never-fork — map site layout onto archetype patterns, deltas authored back |
+| P8 | **Archetype: `marketplace`** — reference instance is literally **"aDNA Registry"**: catalog + listing + conformance queue; money-path locks E2/F5/F7; consumer data-binding seam proven (M-S11 live-bind 2026-08-13) | `what/archetypes/marketplace/` | **PROVEN** (Tier B, SSR) | **The P2 registry-redesign mission's starting point** — WebForge already prototyped aDNA's registry as its reference tenant; facets/tiers/lifecycle land here | NONE (site registry = static `vaults/index.astro` + client filter toolbar) | P2 registry mission consumes it (static build-time variant per Tier-A needs — a delta to author back); data-honesty law (honest-absent affordances) fixes the H13 blank-field class |
+| P9 | **Archetype: `node_home`** incl. `/map/` **network map (round-2, 88 informative Béziers)** + graph_card shared set (Gate 4e byte-identity) + 26 gates | `what/archetypes/node_home/`, `what/lib/components/graph_card/` | **PROVEN** (richest archetype; WilhelmAI live) | **The P1 `/vaults/graph` flagship mission's pattern source** — a proven, legible, gate-covered network-map rendering; graph_card = the vault-detail-card pattern | NONE (site's `build_graph_svg.mjs` radial SVG — stale 68-era, "nearly illegible", worst LCP) | P1 graph mission consumes the map pattern (static-SVG variant authored back if needed); adopt graph_card data shape for `/vaults/[slug]` |
+| P10 | **Archetype: `organization_landing`** (8-page org template; 22 gates; FR-M novel-family proof) | `what/archetypes/organization_landing/` | **PROVEN** (2 live tenants: wga, WilhelmAI) | Reference for P2 IA rationalization (what an 8-page org IA looks like under the craft floor) — *not* a wholesale re-platform of the 202-page site | PARALLEL (site is its own bespoke Astro app) | Consult-only at P2; re-platforming is explicitly out of campaign scope unless Phase B evidence argues otherwise |
+| P11 | **Provider contract v1.2.0** — §3 intake (self-serve wrapper path / ask-memo path; §3-2a operator-live rider), §4 consumer-lane single-build + Momus-independence, §5 vault-manifest pin (`pinned_at_commit`), §8 pull-based re-pin + floor inheritance, §11 seven anti-patterns, data-honesty law | `what/artifacts/spec_webforge_provider_contract.md` | **PROVEN as protocol** (7 wrappers, 3 live domains) | **The P0 intake mission executes exactly this**: wrapper at `how/federation/webforge/` (ADR-045: never graph-root), vault-manifest pin, register row, branding.json + voice mapping | **NONE — this is gap G1**, the unregistered-straggler finding | P0 mission `m_p0_webforge_intake`; §3-2a rider applies (operator live) but the single-build collision check still runs |
+| P12 | **AX / node-shape serving (FR-N)**: `emit_llms.mjs` (llms.txt with build-time-snapshot honesty line, ×14 byte-identity), `check_ax.mjs`, `check_base_path.mjs` | `what/lib/gates/` | **PROVEN (young)** (normative 2026-08-06) | P3 machine-legibility: the fleet-canonical llms emission vs the site's bespoke `llms.txt.ts` endpoint; N2 lock requires the snapshot honesty line the site's llms.txt lacks | PARALLEL (site endpoint is good but un-federated; no honesty line; llms-full mislabeled) | P3 mission reconciles: either adopt emit_llms or author the endpoint pattern back; `.md` twins + MCP server = **patterns_to_author** (WebForge has neither — genuinely new, owed upstream) |
+| P13 | **Deploy orchestration** (`deploy_prebuilt.sh`, `inject_headers.mjs`, HSTS ladder, `redact_vercel.sh`) | `what/lib/deploy/` | **PROVEN** (B3.5 in-prod) — but the token wave is **PARKED at S9** (Bitwarden gate; `VERCEL_TOKEN_ADNA` = missing roster item 6) | The P0 deploy-hardening mission's implementation base — `inject_headers.mjs` directly addresses the live headers-drift finding (deployed site sends only HSTS vs `vercel.json` config) | NONE (site deploys by hand-typed CLI with leak history) | P0 mission consumes scripts + coordinates with Vitruvius on the parked token (memo); do not wait for Bitwarden to fix header injection |
+| P14 | **Known-weaknesses register** — 5 recurring meta-classes: self-certifying-gate-on-stale-inventory · lint-matcher blind spots · narrated-numbers-drift (KW-14) · literal-pinned live data (KW-8/FR-K) · bypass-that-exits-0 (KW-15) | `what/doctrine/known_weaknesses_register.md` | **CANONICAL** (11 open, 9 closed, never deleted) | **Prior learnings the directive forbids relitigating** — each meta-class becomes a standing constraint in the campaign CLAUDE.md; KW-8/FR-K directly governs how campaign tests treat `vaults.json` values; KW-14 governs every count the new site copy narrates | n/a (doctrine) | Campaign CLAUDE.md inherits the 5 meta-classes as standing conventions |
+| P15 | **Module registry discipline** (15 build-capability modules; maturity = Version/round + Last-validated; staleness rule: can't certify against a floor younger than your last green run; dev-port register 4321–4336) | `what/doctrine/module_registry.md` | **CANONICAL** | Port discipline matters immediately: the site's gate suite binds port 4321 = WebForge's `organization_landing` port — never co-run; campaign missions inherit the staleness rule | n/a | Recorded as constraint; site keeps 4332 (`site`) if it enters WebForge's port register at intake |
+
+## 2. Patterns HAUSSMANN needs that WebForge does not have (→ `patterns_to_author`, owed upstream)
+
+| # | Needed pattern | Nearest WebForge asset | Owed-back shape |
+|---|---|---|---|
+| A1 | **`.md` twins / content negotiation** for every doc route (MCP-style, with llms.txt pointer block atop each `.md`) | `emit_llms.mjs` (llms.txt only) | New FR-N-family lock + emitter (campaign P3 authors; Vitruvius ratifies) |
+| A2 | **Docs-MCP server pattern** (npx-runnable stdio server over docs+registry, Mastra-style) | none | New Tier-B-adjacent module (P3) |
+| A3 | **Registry JSON endpoint** (versioned, PEP-index-style, machine-stable) | marketplace data-binding seam | Static-JSON-emission pattern for Tier-A registries (P3) |
+| A4 | **Numbered proposal-process surface** (states, archive, immutable numbers) | none | New archetype extension or documentation-archetype section (P3) |
+| A5 | **Static/no-JS network-map variant** at 74+ nodes (if node_home's `/map/` proves JS-dependent for the site's needs) | node_home `/map/` (88 Béziers) | Variant authored back (P1) |
+| A6 | **Cold-reader / TTFS instrumentation kit** (panel protocol + friction-log format + synthetic pre-screen harness) | none | New verification module (P5 formalizes; genesis seeds) |
+
+## 3. Intake accelerators found `[D]`
+
+1. **The craft-floor graduation is already offered to this vault** (Tier 2) — the P0 intake mission's first move is accepting/ruling on it, not cold-calling.
+2. WebForge's `lock_coverage.yaml` **already carries a `site` surface row** among its 14 — establish at intake whether that row denotes WebForge's own self-site or reserves the aDNA site; either way the census mechanism is ready.
+3. The `marketplace` archetype's reference tenant is "aDNA Registry" — the registry redesign starts from a WebForge-built prototype of *this site's own registry*.
+4. §3-2a operator-live rider: with the operator present in campaign sessions, intake classification compresses to one confirmation (single-build collision check still HALTs).
+5. RareAnthropic's demand-ledger row (D-13, documentation archetype) shows the intake lane is actively serving sibling requests — HAUSSMANN's ask lands in a working queue.
+
+## Related
+
+[[WEBFORGE_ORIENTATION]] · [[dependency_map]] · [[instrument_ingestion]] · `directives/COWORK_DIRECTIVE_operation_haussmann_genesis.md` · [[doctrine_visual_inspection]]

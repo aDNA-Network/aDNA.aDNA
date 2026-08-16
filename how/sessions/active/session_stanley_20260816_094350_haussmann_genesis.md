@@ -57,3 +57,5 @@ tags: [session, haussmann, genesis, campaign_planning, vitruvius, site]
 
 - 09:43 — Session started. Git ff-only pull clean at `4cc56b5`; 17 pre-existing dirty entries recorded as not-mine.
 - 09:43 — Codename greps recorded (0/0). Proceeding to campaign scaffold + Phase A artifacts.
+- 09:47 — Phase 0 committed `dc1bb35` (session file + scaffold + directives MD5-verified + STATE banner).
+- 10:0x — **Phase A complete**: 4 orientation artifacts authored at `campaign_haussmann/artifacts/` — `WEBFORGE_ORIENTATION.md` (schema/conventions/8-gap ledger + Berthier reconciliation note), `webforge_pattern_register.md` (15 pattern families + 6 patterns-to-author + 5 intake accelerators; **halt-check: WebForge substantive, no halt; craft-floor graduation already offered to this vault**), `dependency_map.md` (9 vaults + 6-constraint set), `instrument_ingestion.md` (VITRUVIUS adopted + 6 recorded deltas + H1–H15 pre-evidence table). Gate A folded into plan approval per operator ruling → proceeding to Phase B.
