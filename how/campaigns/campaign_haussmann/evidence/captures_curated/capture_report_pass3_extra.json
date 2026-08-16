@@ -1,0 +1,49 @@
+[
+  {
+    "surface": "researchers",
+    "path": "/researchers",
+    "status": 200,
+    "loadMs": 711,
+    "title": "aDNA for Researchers",
+    "desc": "How research labs and science teams use aDNA to maintain knowledge provenance, reproducibility, and multi-agent context fidelity across long-running projects.",
+    "ogTitle": "aDNA for Researchers",
+    "h1": "aDNA for Researchers",
+    "h2count": 6,
+    "bodyLen": 4319,
+    "fullH": 3255,
+    "axeViolations": 0,
+    "consoleErrors": []
+  },
+  {
+    "surface": "startup-first-hour",
+    "path": "/startup-first-hour",
+    "status": 200,
+    "loadMs": 718,
+    "title": "aDNA Startup First Hour",
+    "desc": "A 60-minute timeboxed quickstart for startup CTOs: clone, point an agent at CLAUDE.md, seed STATE.md, and file the first ADR. Your AI agent is project-aware by the end of the hour.",
+    "ogTitle": "aDNA Startup First Hour",
+    "h1": "aDNA Startup First Hour",
+    "h2count": 10,
+    "bodyLen": 5516,
+    "fullH": 4388,
+    "axeViolations": 0,
+    "consoleErrors": []
+  },
+  {
+    "surface": "404",
+    "path": "/404",
+    "status": 404,
+    "loadMs": 738,
+    "title": "Page not found — aDNA",
+    "desc": "The page you're looking for doesn't exist.",
+    "ogTitle": "Page not found — aDNA",
+    "h1": "404",
+    "h2count": 0,
+    "bodyLen": 452,
+    "fullH": 900,
+    "axeViolations": 0,
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 ()"
+    ]
+  }
+]

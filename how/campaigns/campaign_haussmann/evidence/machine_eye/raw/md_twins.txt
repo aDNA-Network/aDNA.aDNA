@@ -1,0 +1,11 @@
+=== .md twin checks ===
+/learn/what-is-adna.md -> HTTP 404 | type=text/html; charset=utf-8 | size=13207
+/learn/what-is-adna/.md -> HTTP 404 | type=text/html; charset=utf-8 | size=13207
+/reference/specification.md -> HTTP 404 | type=text/html; charset=utf-8 | size=13207
+/reference/specification/.md -> HTTP 404 | type=text/html; charset=utf-8 | size=13207
+/get-started.md -> HTTP 404 | type=text/html; charset=utf-8 | size=13207
+/get-started/.md -> HTTP 404 | type=text/html; charset=utf-8 | size=13207
+/vaults.md -> HTTP 404 | type=text/html; charset=utf-8 | size=13207
+/network.md -> HTTP 404 | type=text/html; charset=utf-8 | size=13207
+/glossary.md -> HTTP 404 | type=text/html; charset=utf-8 | size=13207
+/glossary/.md -> HTTP 404 | type=text/html; charset=utf-8 | size=13207

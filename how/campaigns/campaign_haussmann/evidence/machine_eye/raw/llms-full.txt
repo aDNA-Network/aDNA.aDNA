@@ -1,0 +1,58 @@
+# aDNA — Agentic DNA Knowledge Architecture (full index)
+
+> An open standard for organizing project knowledge so both humans and AI agents can navigate it. Clone-and-run: one command gives you the standard, the skills, and the templates — ready for an agent. Local-first; federation is opt-in.
+
+## Install
+
+```
+git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude
+```
+
+## Standard
+
+- Version: v2.5 (16 base entity types, 3 conformance levels)
+- License: MIT
+- Repository: https://github.com/aDNA-Network/aDNA
+- Published by: aDNA Network
+
+## Routes
+
+- [Home](https://adna.network/)
+- [Get started](https://adna.network/get-started)
+- [Learn: What is aDNA?](https://adna.network/learn/what-is-adna) — and the Learn hub (concepts, tutorials, comparisons)
+- [How-to guides](https://adna.network/how) — publishing, workshops, lattice examples
+- [Patterns](https://adna.network/patterns)
+- [Use cases](https://adna.network/use-cases)
+- [Reference / specification](https://adna.network/reference/specification)
+- [Glossary](https://adna.network/glossary)
+- [The network](https://adna.network/network)
+- [Vaults registry](https://adna.network/vaults)
+- [Network graph](https://adna.network/vaults/graph)
+- [Commons](https://adna.network/commons)
+- [Community](https://adna.network/community)
+- [Adopters](https://adna.network/adopters)
+
+## Vault taxonomy (74 vaults)
+
+- Platform (36)
+- Forge (9)
+- Framework (7)
+- Org-Vault (7)
+- Org-Graph (4)
+- tbd_at_p0 (3)
+- Coordination (1)
+- Framework (candidate) (1)
+- Knowledge-graph (1)
+- Network (1)
+- Node (operational) (1)
+- Standard (1)
+- Tooling (1)
+- Workspace (1)
+
+## Edge types (14 cited relationships)
+
+- umbrella (1): an org-vault contains its org-graph / pillar children
+- federation (9): a consumer wrapper depends on the forge / framework it consumes
+- partner (0): a platform ships with its default partner
+- companion (4): a sibling persona-pair or thematic family
+- supersedes (0): a successor replaced its predecessor (lifecycle)

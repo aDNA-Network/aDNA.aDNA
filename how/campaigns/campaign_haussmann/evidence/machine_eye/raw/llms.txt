@@ -1,0 +1,32 @@
+# aDNA — Agentic DNA Knowledge Architecture
+
+> An open standard for organizing project knowledge so both humans and AI agents can navigate it. Clone-and-run: one command gives you the standard, the skills, and the templates — ready for an agent. Local-first; federation is opt-in.
+
+## Install
+
+```
+git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude
+```
+
+## Standard
+
+- Version: v2.5 (16 base entity types, 3 conformance levels)
+- License: MIT
+- Repository: https://github.com/aDNA-Network/aDNA
+- Published by: aDNA Network
+
+## Key pages
+
+- [What is aDNA?](https://adna.network/learn/what-is-adna): the five-minute conceptual tour
+- [Get started](https://adna.network/get-started): set up your own workspace in one command
+- [The network](https://adna.network/network): how aDNA nodes federate, local-first
+- [Vaults](https://adna.network/vaults): the registry of 74 vaults
+- [Network graph](https://adna.network/vaults/graph): the federation topology, drawn
+- [Reference](https://adna.network/reference/specification): the specification
+- [Glossary](https://adna.network/glossary): canonical terms
+- [Community](https://adna.network/community): how the commons is governed
+- [Full index](https://adna.network/llms-full.txt): every route, the vault taxonomy, and the edge legend
+
+## The network
+
+74 vaults, 14 cited relationships, federating on the Lattice Protocol. Every node is local-first; federation is opt-in and reviewable.

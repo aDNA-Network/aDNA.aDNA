@@ -1,0 +1,1742 @@
+{
+ "_doc": "HAUSSMANN B5 claim-register raw evidence. Fetched 2026-08-16 from https://adna.network (live) + local repo ground truth. Provenance: [D] directly observed, [I] inferred, [R] third-party reported, [A] assumption.",
+ "fetch_date": "2026-08-16",
+ "target": "https://adna.network",
+ "ground_truth": {
+  "vaults_json": {
+   "vault_count": 74,
+   "edges": 14,
+   "unique_nodes_in_edges": 15,
+   "generated_at": "2026-07-25",
+   "classes_distinct": 14,
+   "taglines": 0,
+   "notes": 73,
+   "persona_null": 7,
+   "persona_tbd_at_p0": 5,
+   "github_url_set": [
+    "Videos.aDNA -> https://github.com/aDNA-Network/Videos.aDNA (404 public)"
+   ],
+   "edge_types": {
+    "federation": 9,
+    "companion": 4,
+    "umbrella": 1,
+    "partner": 0,
+    "supersedes": 0
+   },
+   "statuses": {
+    "genesis": 56,
+    "pending": 10,
+    "active": 7,
+    "genesis_stub": 1
+   }
+  },
+  "standard_ts": {
+   "STANDARD_VERSION": "v2.5",
+   "ENTITY_TYPE_COUNT": 16,
+   "CONFORMANCE_LEVELS": 3,
+   "STANDARD_LICENSE": "MIT"
+  },
+  "install_truth": {
+   "canonical_repo_https": "https://github.com/aDNA-Network/aDNA",
+   "generated": "2026-07-22"
+  },
+  "live_vs_repo_drift": "ZERO drift: all 74 live /vaults/<slug> pages match local vaults.json fields exactly"
+ },
+ "external_evidence": {
+  "github_aDNA-Network/aDNA": {
+   "private": false,
+   "license": "MIT",
+   "stars": 2,
+   "forks": 0,
+   "contributors": [
+    "ScienceStanley",
+    "jakejjoyner"
+   ],
+   "has_discussions": false,
+   "discussions_url_status": 404,
+   "has_issues": true,
+   "open_issues": 1,
+   "dot_github_dir": "404 (no issue templates, no CONTRIBUTING/CoC in public repo)",
+   "root": [
+    ".adna",
+    ".gitignore",
+    ".gitleaks.toml",
+    "CLAUDE.md",
+    "LICENSE",
+    "README.md"
+   ],
+   "created": "2026-06-10",
+   "pushed": "2026-08-04"
+  },
+  "github_aDNA-Network_org_public_repos": 19,
+  "github_aDNA-Network/aDNA.aDNA": {
+   "private": false,
+   "license": null,
+   "note": "site source repo carries NO license file"
+  },
+  "github_aDNA-Network/Videos.aDNA": {
+   "status": "Not Found (404) — registry's only github_url is dead for public readers"
+  },
+  "github_Wilhelm-Foundation/rare-archive": {
+   "private": false,
+   "license": "Apache-2.0",
+   "stars": 5,
+   "contributors": [
+    "ScienceStanley"
+   ],
+   "council_in_public_docs": "not found (README/CONTRIBUTING grep)"
+  },
+  "worldgeno.me": {
+   "status": 200,
+   "council_on_homepage": "not found"
+  },
+  "wilhelm_foundation": {
+   "verified": true,
+   "sources": [
+    "https://wilhelmfoundation.org/about-us/helene-mikk-cederroth",
+    "https://chanzuckerberg.com/rao/wilhelm-foundation/"
+   ],
+   "founders": "Helene & Mikk Cederroth"
+  },
+  "latticeprotocol_state_header": "aDNA-Network/lattice-protocol PRIVATE; vault repo LatticeProtocol.aDNA PRIVATE; alpha counsel-gated (LatticeProtocol.aDNA/STATE.md, read header only)",
+  "commit_signing": "git log --show-signature on aDNA.aDNA: no GPG/SSH signatures present",
+  "first_commit_aDNA_aDNA": "65b6546 2026-04-13 Phase 0: scaffold aDNA.aDNA — Operation Rosetta"
+ },
+ "gate20_seed_manifest": [
+  {
+   "id": "vault-count",
+   "class": "quantitative",
+   "claim": "the registry holds 74 vaults",
+   "rendered_on": [
+    "/",
+    "/vaults",
+    "/network"
+   ],
+   "source_ref": "src/data/vaults.json",
+   "owner": "pt19",
+   "check": {
+    "kind": "json_field",
+    "accessor": "vault_count"
+   },
+   "expected": "74",
+   "_note": "Ring-A (pt19-owned) expected refreshed 73->74 at registry-regen (2026-07-25) from the data-owner's committed inventory (source_inventory_sha 536e9d62be75c55b; Home faf5eac: +RareAnthropic.aDNA org_graph, Operation Portolan GO 2026-07-22); fixture-currency refresh to match the committed vaults.json, not a hand-edit of pt19 data (prior: 68->73 at Refit M2 2026-07-21 sha 59058a4ec1e65d3c; 54->68 at Meridian M9). Driver: coord_2026_07_22_rareanthropic_to_hestia_inventory_registration. Owner field UNCHANGED."
+  },
+  {
+   "id": "relationship-count",
+   "class": "structural",
+   "claim": "the network has 14 cited relationships (edges)",
+   "rendered_on": [
+    "/network",
+    "/vaults/graph"
+   ],
+   "source_ref": "src/data/vaults.json",
+   "owner": "pt19",
+   "check": {
+    "kind": "json_len",
+    "accessor": "edges"
+   },
+   "expected": "14"
+  },
+  {
+   "id": "standard-version",
+   "class": "status",
+   "claim": "the aDNA standard is at v2.5",
+   "rendered_on": [
+    "/",
+    "/llms.txt",
+    "/reference/specification"
+   ],
+   "source_ref": "src/data/standard.ts",
+   "owner": "website",
+   "check": {
+    "kind": "ts_const",
+    "accessor": "STANDARD_VERSION"
+   },
+   "expected": "v2.5"
+  },
+  {
+   "id": "entity-type-count",
+   "class": "quantitative",
+   "claim": "the standard defines 16 base entity types",
+   "rendered_on": [
+    "/",
+    "/learn/what-is-adna"
+   ],
+   "source_ref": "src/data/standard.ts",
+   "owner": "website",
+   "check": {
+    "kind": "ts_const",
+    "accessor": "ENTITY_TYPE_COUNT"
+   },
+   "expected": "16"
+  },
+  {
+   "id": "conformance-levels",
+   "class": "quantitative",
+   "claim": "the standard has 3 conformance levels",
+   "rendered_on": [
+    "/",
+    "/reference/specification"
+   ],
+   "source_ref": "src/data/standard.ts",
+   "owner": "website",
+   "check": {
+    "kind": "ts_const",
+    "accessor": "CONFORMANCE_LEVELS"
+   },
+   "expected": "3"
+  },
+  {
+   "id": "standard-license",
+   "class": "status",
+   "claim": "the standard is MIT-licensed",
+   "rendered_on": [
+    "/",
+    "/get-started"
+   ],
+   "source_ref": "src/data/standard.ts",
+   "owner": "website",
+   "check": {
+    "kind": "ts_const",
+    "accessor": "STANDARD_LICENSE"
+   },
+   "expected": "MIT"
+  },
+  {
+   "id": "entity-types-spec-source",
+   "class": "source_fidelity",
+   "claim": "the 16 entity types trace to the normative spec",
+   "rendered_on": [
+    "/learn/what-is-adna"
+   ],
+   "source_ref": "../what/docs/adna_standard.md",
+   "owner": "standard",
+   "check": {
+    "kind": "exists"
+   },
+   "expected": null
+  },
+  {
+   "id": "canonical-repo",
+   "class": "source_fidelity",
+   "claim": "the clone-and-run image lives at the canonical repo",
+   "rendered_on": [
+    "/",
+    "/network",
+    "/get-started"
+   ],
+   "source_ref": "src/data/canonical.ts",
+   "owner": "website",
+   "check": {
+    "kind": "exists"
+   },
+   "expected": null
+  },
+  {
+   "id": "subnetworks-count",
+   "class": "structural",
+   "claim": "four public-good subnetworks are featured",
+   "rendered_on": [
+    "/commons"
+   ],
+   "source_ref": "src/data/subnetworks.json",
+   "owner": "website",
+   "check": {
+    "kind": "exists"
+   },
+   "expected": null
+  },
+  {
+   "id": "proof-links-canonical-repo",
+   "class": "source_fidelity",
+   "claim": "the /learn/what-is-adna proof-links all derive from the single canonical repo (no org/repo drift)",
+   "rendered_on": [
+    "/learn/what-is-adna"
+   ],
+   "source_ref": "src/data/install_truth.json",
+   "owner": "website",
+   "check": {
+    "kind": "json_field",
+    "accessor": "canonical_repo_https"
+   },
+   "expected": "https://github.com/aDNA-Network/aDNA"
+  }
+ ],
+ "h13_leak_summary": {
+  "vaults_swept": 74,
+  "vaults_with_leaks": 58,
+  "clean": 16,
+  "class_counts": {
+   "truncation_unclosed_paren": 27,
+   "raw_enum_spec": 23,
+   "internal_ops_jargon": 14,
+   "codename_jargon": 14,
+   "internal_path_lede": 10,
+   "raw_enum_lede_code_as_WHAT": 7,
+   "cut_mid_parenthetical": 5,
+   "rename_provenance": 3,
+   "templated_placeholder_lede": 1,
+   "governance_internal_path_rows": 24
+  },
+  "clean_vaults": [
+   "ComfyUI.aDNA",
+   "llamacppforge",
+   "Molecules.aDNA",
+   "Videos.aDNA",
+   "III.aDNA",
+   "visualdna",
+   "awsbootstrap",
+   "bitwarden",
+   "container",
+   "fastapi",
+   "inference",
+   "prefect",
+   "TappProtocol.aDNA",
+   "warp",
+   "webforge",
+   "Spacemacs.aDNA"
+  ],
+  "shipped_html_dev_comments": "every fetched page ships 2-46 HTML dev comments incl. layout rationale prose"
+ },
+ "h13_leak_table": [
+  {
+   "slug": "Operations.aDNA",
+   "lede": "Renamed from TaskForge.aDNA (Production Tidy pt08.",
+   "leak_classes": [
+    "codename_jargon",
+    "rename_provenance",
+    "truncation:cut_mid_parenthetical",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "rename_provenance",
+     "match": "Renamed from"
+    },
+    {
+     "class": "codename_jargon",
+     "match": "pt08"
+    },
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "Renamed from TaskForge.aDNA (Production Tidy pt08."
+    },
+    {
+     "class": "truncation:cut_mid_parenthetical",
+     "match": "Renamed from TaskForge.aDNA (Production Tidy pt08."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "coordination",
+    "Status": "active",
+    "Persona": "Berthier"
+   }
+  },
+  {
+   "slug": "Astro.aDNA",
+   "lede": "Astro 6 composable website builder; Production v1.0. Renamed from SiteForge.aDNA.",
+   "leak_classes": [
+    "rename_provenance"
+   ],
+   "matches": [
+    {
+     "class": "rename_provenance",
+     "match": "Renamed from"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "forge",
+    "Status": "active",
+    "Persona": "—"
+   }
+  },
+  {
+   "slug": "ComfyUI.aDNA",
+   "lede": "ComfyUI visual generation forge.",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "forge",
+    "Status": "pending"
+   }
+  },
+  {
+   "slug": "d3",
+   "lede": "Build-face software-element context graph. Web-stack cohort (.",
+   "leak_classes": [
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "ild-face software-element context graph. Web-stack cohort (."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "forge",
+    "Status": "genesis",
+    "Persona": "playfair"
+   }
+  },
+  {
+   "slug": "llamacppforge",
+   "lede": "Forge.aDNA software-element context graph for building/optimizing/generating with llama.cpp (build-with face; the root llama.cpp external dep is the upstream).",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "forge",
+    "Status": "genesis",
+    "Persona": "hephaestus"
+   }
+  },
+  {
+   "slug": "Molecules.aDNA",
+   "lede": "Modular open-source molecular-search forge (Rosalind Franklin persona; FAIR+provenance).",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "forge",
+    "Status": "genesis",
+    "Persona": "Franklin"
+   }
+  },
+  {
+   "slug": "Oration.aDNA",
+   "lede": "Greene-methodology speech-package pipeline (8-stage; 3 human gates). v0.2.0 post-C7 extraction. Phase-1+ awaits operator gate. Renamed SpeechForge.aDNA → Oration.aDNA.",
+   "leak_classes": [
+    "internal_ops_jargon"
+   ],
+   "matches": [
+    {
+     "class": "internal_ops_jargon",
+     "match": "operator"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "forge",
+    "Status": "genesis",
+    "Persona": "Robert Kennedy"
+   }
+  },
+  {
+   "slug": "regenesis",
+   "lede": "Genome-seeded Forge.aDNA graph (class ratified.",
+   "leak_classes": [
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "Genome-seeded Forge.aDNA graph (class ratified."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "forge",
+    "Status": "genesis",
+    "Persona": "persephone"
+   }
+  },
+  {
+   "slug": "threejs",
+   "lede": "Three.js 3D/WebGL build-material context graph. Web-stack cohort (.",
+   "leak_classes": [
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "s 3D/WebGL build-material context graph. Web-stack cohort (."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "forge",
+    "Status": "genesis",
+    "Persona": "brunelleschi"
+   }
+  },
+  {
+   "slug": "Videos.aDNA",
+   "lede": "Multi-platform video production forge.",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "forge",
+    "Status": "pending",
+    "Persona": "Iris"
+   }
+  },
+  {
+   "slug": "git",
+   "lede": "The aDNA network's canonical git + git-ops + CI/CD context graph (branches/commits/PRs/releases/CI-CD/cost). General-git-first with first-class GitHub/aDNA-Network context. Stood up by aDNALabs.aDNA (Berthier) as the substrate for the workspace-wide migration to the aDNA-Network GitHub org. Platform.aDNA PROVISIONAL; persona TBD-at.",
+   "leak_classes": [
+    "internal_ops_jargon"
+   ],
+   "matches": [
+    {
+     "class": "internal_ops_jargon",
+     "match": "persona TBD"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "framework",
+    "Status": "genesis",
+    "Persona": "grace_hopper"
+   }
+  },
+  {
+   "slug": "III.aDNA",
+   "lede": "Inspect/Introspect/Improve quality framework.",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "framework",
+    "Status": "active",
+    "Persona": "Argus"
+   }
+  },
+  {
+   "slug": "organization",
+   "lede": "Org-context-graph methodology (ORG-* ontology/entity-resolution/governance + the insight quartet); the source substrate BI projects into Neo4j; the standard Org-Graph vaults conform to. Operation Aegis BI cohort (.",
+   "leak_classes": [
+    "codename_jargon",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "codename_jargon",
+     "match": "Operation Aegis"
+    },
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "rd Org-Graph vaults conform to. Operation Aegis BI cohort (."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "framework",
+    "Status": "genesis",
+    "Persona": "mintzberg"
+   }
+  },
+  {
+   "slug": "react",
+   "lede": "Build-face software-element context graph. Web-stack cohort (.",
+   "leak_classes": [
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "ild-face software-element context graph. Web-stack cohort (."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "framework",
+    "Status": "genesis",
+    "Persona": "heraclitus"
+   }
+  },
+  {
+   "slug": "tailwind",
+   "lede": "Build-face software-element context graph for Tailwind CSS v4. Web-stack cohort (.",
+   "leak_classes": [
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "ement context graph for Tailwind CSS v4. Web-stack cohort (."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "framework",
+    "Status": "genesis",
+    "Persona": "josef_albers"
+   }
+  },
+  {
+   "slug": "typescript",
+   "lede": "Agent-facing context substrate for authoring/operating TypeScript (web/UI emphasized); consumed via a typescript/ wrapper + federation_ref. Persona Milner.",
+   "leak_classes": [
+    "internal_ops_jargon"
+   ],
+   "matches": [
+    {
+     "class": "internal_ops_jargon",
+     "match": "federation_ref"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "framework",
+    "Status": "genesis",
+    "Persona": "milner"
+   }
+  },
+  {
+   "slug": "visualdna",
+   "lede": "Framework standardizing the visual-DNA-per-entity pattern (canonical-look bundles: prompt + reference images + palette + composition templates + invariants + LoRA refs).",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "framework",
+    "Status": "genesis",
+    "Persona": "pygmalion"
+   }
+  },
+  {
+   "slug": "VAAS.aDNA",
+   "lede": "Verification-as-a-service — multi-layer hallucination reduction, cross-lattice verification federation. Renamed VAASLattice.aDNA → VAAS.aDNA.",
+   "leak_classes": [
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: framework_candidate"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "framework_candidate",
+    "Status": "pending"
+   }
+  },
+  {
+   "slug": "LAVentureGraph.aDNA",
+   "lede": "LA venture ecosystem knowledge graph (UCLA Anderson + Nerdstage/Demo Day LA). Renamed from la_startup.aDNA.",
+   "leak_classes": [
+    "rename_provenance"
+   ],
+   "matches": [
+    {
+     "class": "rename_provenance",
+     "match": "Renamed from"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "knowledge_graph",
+    "Status": "active",
+    "Persona": "Cartographer"
+   }
+  },
+  {
+   "slug": "Network.aDNA",
+   "lede": "Master/Einstein-node state/membership/operations graph of the Alpha Lattice. LIP-0006 provisional.",
+   "leak_classes": [
+    "codename_jargon"
+   ],
+   "matches": [
+    {
+     "class": "codename_jargon",
+     "match": "LIP-0006"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "network",
+    "Status": "genesis",
+    "Persona": "Venus"
+   }
+  },
+  {
+   "slug": "Home.aDNA",
+   "lede": "This vault — per-node operational governance for Mac/stanley; the operator's daily-driver. Renamed LatticeHome.aDNA -> Home.aDNA.",
+   "leak_classes": [
+    "internal_ops_jargon",
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: node_operational"
+    },
+    {
+     "class": "internal_ops_jargon",
+     "match": "operator"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "node_operational",
+    "Status": "active",
+    "Persona": "Hestia"
+   }
+  },
+  {
+   "slug": "CakeHealth.aDNA",
+   "lede": "Operation CAKE clinical health data context graph. Local-only repo (GitHub promotion at Stanley's call). Refreshed.",
+   "leak_classes": [
+    "codename_jargon",
+    "internal_ops_jargon",
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "codename_jargon",
+     "match": "Operation CAKE"
+    },
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: org_graph"
+    },
+    {
+     "class": "internal_ops_jargon",
+     "match": "Local-only"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "org_graph",
+    "Status": "genesis",
+    "Persona": "Berthier"
+   }
+  },
+  {
+   "slug": "percysleep",
+   "lede": "Outside-In model of Percy Sleep Inc (contactless 60GHz behavioral sleep-monitoring device + AI platform + clinician dashboard).",
+   "leak_classes": [
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: org_graph"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "org_graph",
+    "Status": "genesis",
+    "Persona": "hypnos"
+   }
+  },
+  {
+   "slug": "rareanthropic",
+   "lede": "Org-Graph.aDNA (LIP-0005) — outside-in map of the Anthropic ecosystem (products/retention/HIPAA-BAA/Skills) for the rare-disease working group. One 89-node provenance-disciplined graph, two surfaces: Hygeia query SKILL.md + static curriculum (WebForge documentation archetype.",
+   "leak_classes": [
+    "codename_jargon",
+    "raw_enum_spec",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "codename_jargon",
+     "match": "LIP-0005"
+    },
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "LL.md + static curriculum (WebForge documentation archetype."
+    },
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: org_graph"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "org_graph",
+    "Status": "genesis",
+    "Persona": "hygeia"
+   }
+  },
+  {
+   "slug": "SuperLeague.aDNA",
+   "lede": "Agentic-enablement work for SuperLeague company. Partner-cloned by Carly + Herb; Stanley not yet locally cloned.",
+   "leak_classes": [
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: org_graph"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "org_graph",
+    "Status": "pending"
+   }
+  },
+  {
+   "slug": "adnalabs",
+   "lede": "Unified successor to LatticeLabs.aDNA + lattice-labs; aDNA-network migration HQ.",
+   "leak_classes": [
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: org_vault"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "org_vault",
+    "Status": "genesis",
+    "Persona": "berthier"
+   }
+  },
+  {
+   "slug": "ContextCommons.aDNA",
+   "lede": "Context Commons — community-driven agentic literacy, enablement & support program.",
+   "leak_classes": [
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: org_vault"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "org_vault",
+    "Status": "pending"
+   }
+  },
+  {
+   "slug": "RareArchive.aDNA",
+   "lede": "Rare Archive OSS rare-disease AI project.",
+   "leak_classes": [
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: org_vault"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "org_vault",
+    "Status": "pending",
+    "Persona": "Mnemosyne"
+   }
+  },
+  {
+   "slug": "sciencestanley",
+   "lede": "Science Stanley brand vault — single source of truth for all SS content generation. Inventory name casing corrected science_stanley -> ScienceStanley.",
+   "leak_classes": [
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: org_vault"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "org_vault",
+    "Status": "pending"
+   }
+  },
+  {
+   "slug": "wga.aDNA",
+   "lede": "World Genome Academy — buildpack + symphony + site.",
+   "leak_classes": [
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: org_vault"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "org_vault",
+    "Status": "pending"
+   }
+  },
+  {
+   "slug": "WilhelmAI.aDNA",
+   "lede": "AI4U umbrella (Wilhelm AI Initiative for the Undiagnosed). Four PLWUD-impact initiatives.",
+   "leak_classes": [
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: org_vault"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "org_vault",
+    "Status": "pending",
+    "Persona": "Hygieia"
+   }
+  },
+  {
+   "slug": "zenzachary",
+   "lede": "Brand vault (Zach Sekar) within the SWS multiverse; first character bundle = Zen Zachary (techno-cyber-monk); first.",
+   "leak_classes": [
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: org_vault"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "org_vault",
+    "Status": "genesis",
+    "Persona": "pygmalion"
+   }
+  },
+  {
+   "slug": "ailp-dataroom",
+   "lede": "Dataroom INSTANCE generated by Datarooms.aDNA (its live dogfood target, Operation Vitrine) — a generated instance, not a first-class graph (classed platform for lack of a finer recognized class.",
+   "leak_classes": [
+    "codename_jargon",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "codename_jargon",
+     "match": "Operation Vitrine"
+    },
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "raph (classed platform for lack of a finer recognized class."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "harpocrates_provisional"
+   }
+  },
+  {
+   "slug": "apscheduler",
+   "lede": "In-process trigger/scheduling library element (cron/interval/date fired inside a host process); no independent install/health — runtime verbs delegate to host=operations-bridge (.",
+   "leak_classes": [
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "health — runtime verbs delegate to host=operations-bridge (."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "chronos"
+   }
+  },
+  {
+   "slug": "awsbootstrap",
+   "lede": "Portable AWS->aDNA node bootstrap 'wake-up kit' — drop onto an AWS instance -> agent acquaints + bootstraps it into an aDNA node. Repurposed from the Percy R&D node-home.",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "hestia"
+   }
+  },
+  {
+   "slug": "bitwarden",
+   "lede": "Keystone cohort — secret-access engine (Bitwarden/Vaultwarden); federates the Home.aDNA.",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "cerberus"
+   }
+  },
+  {
+   "slug": "caddy",
+   "lede": "Keystone cohort — reverse-proxy + TLS-termination + ingress (fleet-default). Data-bearing (fronts data). Lighthouse profile: core.",
+   "leak_classes": [
+    "internal_ops_jargon"
+   ],
+   "matches": [
+    {
+     "class": "internal_ops_jargon",
+     "match": "Data-bearing"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "portunus"
+   }
+  },
+  {
+   "slug": "cakeprotocol",
+   "lede": "Bakes CakeHealth.aDNA's clinical-data craft into an agentic on-demand generator of patient-specific data systems (hardware->data->schema->dashboard->analysis). Platform.aDNA, persona Chiron (provisional). Pillar of Operation Layer Cake (aDNALabs umbrella) with CakeHealth (craft source; canonicalization gated on Ami co-ratification) + PercySleep (first external consumer) + TappProtocol (broker).",
+   "leak_classes": [
+    "codename_jargon"
+   ],
+   "matches": [
+    {
+     "class": "codename_jargon",
+     "match": "Operation Layer"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "chiron"
+   }
+  },
+  {
+   "slug": "canvas",
+   "lede": "Standard-bearer Platform.aDNA owning the aDNA Canvas Standard (agentic-context-native fork of Obsidian Advanced Canvas / JSON Canvas) + its reference tooling (validators/converters/conformance at what/code/canvas_std/). Canvas-as-output-primitive; absorbs CanvasForge production (deck/comic/diagram) at PT pt09.",
+   "leak_classes": [
+    "codename_jargon",
+    "internal_path_lede"
+   ],
+   "matches": [
+    {
+     "class": "codename_jargon",
+     "match": "pt09"
+    },
+    {
+     "class": "internal_path_lede",
+     "match": "what/code/"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "mondrian"
+   }
+  },
+  {
+   "slug": "container",
+   "lede": "Keystone cohort — OCI container runtime (rootless Podman fleet-default; Docker-compat). Control-plane. Lighthouse profiles: core + inference.",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "pandora"
+   }
+  },
+  {
+   "slug": "context",
+   "lede": "Integrated observe->optimize context-intelligence platform (context/token telemetry + optimization + dashboard/API); code-as-WHAT engine at what/contextscope/ (RELOCATED from root sibling ~/aDNA/contextscope at PT pt12.",
+   "leak_classes": [
+    "codename_jargon",
+    "internal_path_lede",
+    "raw_enum_lede",
+    "truncation:cut_mid_parenthetical",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "codename_jargon",
+     "match": "pt12"
+    },
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "(RELOCATED from root sibling ~/aDNA/contextscope at PT pt12."
+    },
+    {
+     "class": "truncation:cut_mid_parenthetical",
+     "match": "(RELOCATED from root sibling ~/aDNA/contextscope at PT pt12."
+    },
+    {
+     "class": "raw_enum_lede",
+     "match": "code-as-WHAT"
+    },
+    {
+     "class": "internal_path_lede",
+     "match": "what/contextscope/"
+    },
+    {
+     "class": "internal_path_lede",
+     "match": "~/aDNA/"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "prometheus"
+   }
+  },
+  {
+   "slug": "dashboards",
+   "lede": "Agentic, graph-backed, conversational BI/dashboards surface over an org context graph (Visualize/Converse/Learn/Monitor/Operate); composes Neo4j + Organization substrate, built through WebForge. Operation Aegis (.",
+   "leak_classes": [
+    "codename_jargon",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "codename_jargon",
+     "match": "Operation Aegis"
+    },
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "zation substrate, built through WebForge. Operation Aegis (."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "metis"
+   }
+  },
+  {
+   "slug": "datarooms",
+   "lede": "Modular agentic-dataroom generator (purpose modules × audience lenses × trust/RBAC profiles over context graphs; code-as-WHAT what/datarooms_core/, product Datarooms v0.1). Platform.aDNA (class provisional, ratified R0.",
+   "leak_classes": [
+    "internal_path_lede",
+    "raw_enum_lede",
+    "truncation:cut_mid_parenthetical",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "arooms v0.1). Platform.aDNA (class provisional, ratified R0."
+    },
+    {
+     "class": "truncation:cut_mid_parenthetical",
+     "match": "arooms v0.1). Platform.aDNA (class provisional, ratified R0."
+    },
+    {
+     "class": "raw_enum_lede",
+     "match": "code-as-WHAT"
+    },
+    {
+     "class": "internal_path_lede",
+     "match": "what/datarooms_core/"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "harpocrates"
+   }
+  },
+  {
+   "slug": "emacs",
+   "lede": "The aDNA-native Emacs distribution built on Doom Emacs (:adna module category as a DOOMDIR-as-repo under a dedicated adna profile; code-as-WHAT what/emacs/). Successor-in-intent to Spacemacs.aDNA — supersession deliberate + dated (.",
+   "leak_classes": [
+    "internal_path_lede",
+    "raw_enum_lede",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "ntent to Spacemacs.aDNA — supersession deliberate + dated (."
+    },
+    {
+     "class": "raw_enum_lede",
+     "match": "code-as-WHAT"
+    },
+    {
+     "class": "internal_path_lede",
+     "match": "what/emacs/"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "archimedes"
+   }
+  },
+  {
+   "slug": "exchange",
+   "lede": "The aDNA Exchange — federated distribution substrate through which nodes discover/publish/version/exchange context graphs + agentic topologies under configurable smart-contract-mediable sharing conditions (Operation Agora).",
+   "leak_classes": [
+    "codename_jargon"
+   ],
+   "matches": [
+    {
+     "class": "codename_jargon",
+     "match": "Operation Agora"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "triad: mnemosyne (registry) / hermes (transport) / themis (settlement); Berthier coord"
+   }
+  },
+  {
+   "slug": "fastapi",
+   "lede": "Keystone cohort — Python API-service surface (ASGI). Control-plane (framework-vs-platform call at its own P0). Lighthouse profile: ops.",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "atalanta"
+   }
+  },
+  {
+   "slug": "fluxer",
+   "lede": "Agentic command of the Fluxer platform (OSS AGPLv3 Discord-mold messaging/VoIP; install/operate/configure/update/interoperate) + the Agora Loop harvest doctrine (consent+provenance). DATA-BEARING (§8 — data-plane placement co-designed w/ Venus at its.",
+   "leak_classes": [
+    "internal_ops_jargon",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "RING (§8 — data-plane placement co-designed w/ Venus at its."
+    },
+    {
+     "class": "internal_ops_jargon",
+     "match": "DATA-BEARING"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "aspasia"
+   }
+  },
+  {
+   "slug": "forgejo",
+   "lede": "Keystone cohort — self-hosted git forge (software install/config/backup/upgrade only; seam: Git.aDNA/Hopper keeps the provider contract). Data-bearing (.",
+   "leak_classes": [
+    "internal_ops_jargon",
+    "internal_path_lede",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "it.aDNA/Hopper keeps the provider contract). Data-bearing (."
+    },
+    {
+     "class": "internal_ops_jargon",
+     "match": "Data-bearing"
+    },
+    {
+     "class": "internal_path_lede",
+     "match": "Git.aDNA/Hopper"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "ilmarinen"
+   }
+  },
+  {
+   "slug": "gotfn",
+   "lede": "Agentic DM / world-engine / story-forge / interactive-canvas table for Gods of the Forbidden North (Pulp Hummock Press · OSE: Advanced Fantasy; 3 vols ~1,620pp). Platform.aDNA (non-SDG), persona Snorri (ratified ⛩ G0.",
+   "leak_classes": [
+    "truncation:cut_mid_parenthetical",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "pp). Platform.aDNA (non-SDG), persona Snorri (ratified ⛩ G0."
+    },
+    {
+     "class": "truncation:cut_mid_parenthetical",
+     "match": "pp). Platform.aDNA (non-SDG), persona Snorri (ratified ⛩ G0."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "snorri"
+   }
+  },
+  {
+   "slug": "groupware",
+   "lede": "Keystone cohort — unified messaging: mail/calendar/contacts (Stalwart JMAP). Data-bearing (.",
+   "leak_classes": [
+    "internal_ops_jargon",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "ing: mail/calendar/contacts (Stalwart JMAP). Data-bearing (."
+    },
+    {
+     "class": "internal_ops_jargon",
+     "match": "Data-bearing"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "pheme"
+   }
+  },
+  {
+   "slug": "Harness.aDNA",
+   "lede": "Generic, agentically-configurable aDNA harness (pkg rareharness; governance-intent harness_adna). RareHarness = flagship Wilhelm clinical vertical. Code-as-WHAT at what/harness/ (rareharnessneo relocated PT pt13.",
+   "leak_classes": [
+    "codename_jargon",
+    "internal_path_lede",
+    "truncation:cut_mid_parenthetical",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "codename_jargon",
+     "match": "pt13"
+    },
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "-as-WHAT at what/harness/ (rareharnessneo relocated PT pt13."
+    },
+    {
+     "class": "truncation:cut_mid_parenthetical",
+     "match": "-as-WHAT at what/harness/ (rareharnessneo relocated PT pt13."
+    },
+    {
+     "class": "internal_path_lede",
+     "match": "what/harness/"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "Panacea"
+   }
+  },
+  {
+   "slug": "inference",
+   "lede": "Keystone cohort — local LLM inference serving (one graph, selectable backends: llama.cpp/MLX/vLLM/Ollama). Control-plane. Lighthouse profile: inference.",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "pythia"
+   }
+  },
+  {
+   "slug": "jupyter",
+   "lede": "Agentic Jupyter on any machine (L1/L2/L3 + Hub; per-user IAM; extensions); code-as-WHAT at what/lab/ (the latlab repo). Persona Galileo (ratified.",
+   "leak_classes": [
+    "internal_path_lede",
+    "raw_enum_lede",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "T at what/lab/ (the latlab repo). Persona Galileo (ratified."
+    },
+    {
+     "class": "raw_enum_lede",
+     "match": "code-as-WHAT"
+    },
+    {
+     "class": "internal_path_lede",
+     "match": "what/lab/"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "galileo"
+   }
+  },
+  {
+   "slug": "latticeprotocol",
+   "lede": "The .aDNA context graph (code-as-WHAT-object) wrapping the lattice-protocol core library (canvas/federation/aDNA SDK/marketplace/ledger). Stood up under aDNALabs.aDNA's migration program (WS-1 pilot) — the first per-repo standup->compliance->aDNA-Network->CI instance; clears the LP-extraction Phase-2-exit CI gate. Platform.aDNA; persona TBD-at.",
+   "leak_classes": [
+    "internal_ops_jargon",
+    "raw_enum_lede",
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Persona: tbd_at_p0"
+    },
+    {
+     "class": "raw_enum_lede",
+     "match": "code-as-WHAT"
+    },
+    {
+     "class": "internal_ops_jargon",
+     "match": "persona TBD"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "tbd_at_p0"
+   }
+  },
+  {
+   "slug": "lighthouse",
+   "lede": "Deployable integrated-lighthouse node — self-hosted Forgejo as a subnet's core git + context-sync fabric + the node stack (identity/mesh/collab/inference/ops). The *deployable* of the triad: Git.aDNA (standard/Framework, Hopper) · Lighthouse.aDNA (deployable/Platform) · Network.aDNA (substrate, Venus). Persona TBD-at.",
+   "leak_classes": [
+    "internal_ops_jargon",
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Persona: tbd_at_p0"
+    },
+    {
+     "class": "internal_ops_jargon",
+     "match": "Persona TBD"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "tbd_at_p0"
+   }
+  },
+  {
+   "slug": "nebula",
+   "lede": "Keystone cohort — node-side mesh-overlay daemon install/config/operate (Tailscale folds in.",
+   "leak_classes": [
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "h-overlay daemon install/config/operate (Tailscale folds in."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "heimdall"
+   }
+  },
+  {
+   "slug": "neo4j",
+   "lede": "Property-graph substrate — modeling/query/ingestion/GDS/agent read-boundary (N4-*); a read-optimized projection of a source context graph. Operation Aegis (.",
+   "leak_classes": [
+    "codename_jargon",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "codename_jargon",
+     "match": "Operation Aegis"
+    },
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "zed projection of a source context graph. Operation Aegis (."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "arachne"
+   }
+  },
+  {
+   "slug": "nextcloud",
+   "lede": "Keystone cohort — self-hosted file-sync + collaboration. Data-bearing (.",
+   "leak_classes": [
+    "internal_ops_jargon",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "ort — self-hosted file-sync + collaboration. Data-bearing (."
+    },
+    {
+     "class": "internal_ops_jargon",
+     "match": "Data-bearing"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "atlas"
+   }
+  },
+  {
+   "slug": "Obsidian.aDNA",
+   "lede": "Default aDNA-native way to install/configure/operate/update Obsidian across a node (analog to Terminal.aDNA [ex-Cmux] for the terminal). Platform.aDNA (single-repo, code-as-WHAT at what/obsidian/); category + persona (Seshat) ratified at.",
+   "leak_classes": [
+    "internal_path_lede",
+    "raw_enum_lede"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_lede",
+     "match": "code-as-WHAT"
+    },
+    {
+     "class": "internal_path_lede",
+     "match": "what/obsidian/"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "TBD"
+   }
+  },
+  {
+   "slug": "prefect",
+   "lede": "Software/deployment-graph — install/operate/configure/update/interoperate as a node control-plane member; composed by Operations.aDNA via.",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "kairos"
+   }
+  },
+  {
+   "slug": "realityscan",
+   "lede": "Agentic command of RealityScan (Epic professional photogrammetry, ex-RealityCapture; closed-source; Win+Linux CLI; CUDA/HIP; install/operate/configure/update/interoperate) + the reconstruction operate-loop. DATA-BEARING (§8 — data-plane placement co-designed w/ Venus; heads-up memo landed at.",
+   "leak_classes": [
+    "internal_ops_jargon",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "ane placement co-designed w/ Venus; heads-up memo landed at."
+    },
+    {
+     "class": "internal_ops_jargon",
+     "match": "DATA-BEARING"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "muybridge"
+   }
+  },
+  {
+   "slug": "RemoteControl.aDNA",
+   "lede": "Agentic mouse/kbd/screen-vision control runtime + safety framework (Talos).",
+   "leak_classes": [
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Status: genesis_stub"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis_stub",
+    "Persona": "Talos"
+   }
+  },
+  {
+   "slug": "store",
+   "lede": "Keystone cohort — S3-compatible object storage (MinIO/AIStor; Lattice Storage Federation). Data-bearing (.",
+   "leak_classes": [
+    "internal_ops_jargon",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": " (MinIO/AIStor; Lattice Storage Federation). Data-bearing (."
+    },
+    {
+     "class": "internal_ops_jargon",
+     "match": "Data-bearing"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "plutus"
+   }
+  },
+  {
+   "slug": "TappProtocol.aDNA",
+   "lede": "Agent-to-agent strategic-advisor handoff broker with DLT-memorialized advisory ledger (Mentor).",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "Mentor"
+   }
+  },
+  {
+   "slug": "terminal",
+   "lede": "Chief-of-staff terminal for a Lattice node; soft-fork-with-upstream of manaflow-ai/cmux (GPL-3.0-or-later; single-repo, code-as-WHAT at what/cmux/).",
+   "leak_classes": [
+    "internal_path_lede",
+    "raw_enum_lede"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_lede",
+     "match": "code-as-WHAT"
+    },
+    {
+     "class": "internal_path_lede",
+     "match": "what/cmux/"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "berthier"
+   }
+  },
+  {
+   "slug": "vercel",
+   "lede": "Software/deployment-graph. Web-stack cohort (.",
+   "leak_classes": [
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "Software/deployment-graph. Web-stack cohort (."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "mercury"
+   }
+  },
+  {
+   "slug": "warp",
+   "lede": "Agentic Warp-terminal home base for the aDNA network; config-overlay + MCP (not a fork — Warp client is OSS MIT/AGPL, agent/Drive/cloud proprietary); sibling-peer of Terminal.aDNA.",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "escoffier"
+   }
+  },
+  {
+   "slug": "webforge",
+   "lede": "Build-scale role-graph / provider-forge composer (not a framework) — owns the role-shared assets no single framework brick homes (website archetypes, build lattices, quality gates); build-scale twin of Lighthouse.aDNA. Carved from Astro.aDNA.",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "platform",
+    "Status": "genesis",
+    "Persona": "vitruvius"
+   }
+  },
+  {
+   "slug": "aDNA.aDNA",
+   "lede": "Self-referential aDNA documentation — teaches the standard by using the standard (Operation Rosetta).",
+   "leak_classes": [
+    "codename_jargon",
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "codename_jargon",
+     "match": "Operation Rosetta"
+    },
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: standard_dev"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "standard_dev",
+    "Status": "active",
+    "Persona": "Rosetta"
+   }
+  },
+  {
+   "slug": "datasets",
+   "lede": "Working-dataset management graph; governs the results/ mount (PT.",
+   "leak_classes": [
+    "raw_enum_spec",
+    "truncation:unclosed_paren"
+   ],
+   "matches": [
+    {
+     "class": "truncation:unclosed_paren",
+     "match": "ng-dataset management graph; governs the results/ mount (PT."
+    },
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: tbd_at_p0"
+    },
+    {
+     "class": "raw_enum_spec",
+     "match": "Persona: tbd_at_p0"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "tbd_at_p0",
+    "Status": "genesis",
+    "Persona": "tbd_at_p0"
+   }
+  },
+  {
+   "slug": "magnapetra",
+   "lede": "Promoted from the lunarpro-build-kit (Magna-Petra Lunar Pro; He-3 extraction mission planning).",
+   "leak_classes": [
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: tbd_at_p0"
+    },
+    {
+     "class": "raw_enum_spec",
+     "match": "Persona: tbd_at_p0"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "tbd_at_p0",
+    "Status": "genesis",
+    "Persona": "tbd_at_p0"
+   }
+  },
+  {
+   "slug": "worldgenome",
+   "lede": "Unified World Genome context-graph system (Academy / Archive / Protocol / Project) — LIVE.",
+   "leak_classes": [
+    "raw_enum_spec"
+   ],
+   "matches": [
+    {
+     "class": "raw_enum_spec",
+     "match": "Class: tbd_at_p0"
+    },
+    {
+     "class": "raw_enum_spec",
+     "match": "Persona: tbd_at_p0"
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "tbd_at_p0",
+    "Status": "genesis",
+    "Persona": "tbd_at_p0"
+   }
+  },
+  {
+   "slug": "Spacemacs.aDNA",
+   "lede": "Context-native Spacemacs agentic IDE governance vault. v1.0.0.",
+   "leak_classes": [],
+   "matches": [],
+   "spec_enum_values": {
+    "Class": "tooling",
+    "Status": "active",
+    "Persona": "Daedalus"
+   }
+  },
+  {
+   "slug": "zeta.aDNA",
+   "lede": "A workspace vault — pending.",
+   "leak_classes": [
+    "templated_placeholder_lede"
+   ],
+   "matches": [
+    {
+     "class": "templated_placeholder_lede",
+     "match": "A workspace vault — pending."
+    }
+   ],
+   "spec_enum_values": {
+    "Class": "workspace",
+    "Status": "pending"
+   }
+  }
+ ]
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="en" class="no-js dark"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v6.1.6"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Subscribable feed (idea_site_rss_feed / Champollion M4.2) — a cheap
+         "actively maintained" signal + the standard watch-mechanism for evaluators. --><link rel="alternate" type="application/rss+xml" title="aDNA — Changelog" href="/rss.xml"><!-- Preload critical above-fold fonts (latin subsets only) --><link rel="preload" href="/_astro/inter-latin-400-normal.C38fXH4l.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/space-grotesk-latin-400-normal.CJ-V5oYT.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/space-grotesk-latin-700-normal.RjhwGPKo.woff2" as="font" type="font/woff2" crossorigin><title>aDNA Compliance Walkthrough</title><meta name="description" content="A procurement-style walkthrough of how how/sessions/ and who/governance/ answer the five questions every compliance reviewer asks about AI-assisted work."><!-- Canonical --><link rel="canonical" href="https://adna.network/compliance/"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:title" content="aDNA Compliance Walkthrough"><meta property="og:description" content="A procurement-style walkthrough of how how/sessions/ and who/governance/ answer the five questions every compliance reviewer asks about AI-assisted work."><meta property="og:url" content="https://adna.network/compliance/"><meta property="og:image" content="https://adna.network/images/og-default.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="aDNA Compliance Walkthrough"><meta property="og:site_name" content="aDNA"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="aDNA Compliance Walkthrough"><meta name="twitter:description" content="A procurement-style walkthrough of how how/sessions/ and who/governance/ answer the five questions every compliance reviewer asks about AI-assisted work."><meta name="twitter:image" content="https://adna.network/images/og-default.png"><meta name="twitter:image:alt" content="aDNA Compliance Walkthrough"><!-- JSON-LD: single schema or @graph bundle for multiple schemas --><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"aDNA Compliance Walkthrough","description":"A procurement-style walkthrough of how how/sessions/ and who/governance/ answer the five questions every compliance reviewer asks about AI-assisted work.","url":"https://adna.network/compliance/","publisher":{"@type":"Organization","name":"aDNA Network","url":"https://github.com/aDNA-Network/aDNA"}}</script><script>
+      document.documentElement.classList.remove('no-js');
+    </script><script>
+      (function () {
+        const applyTheme = () => {
+          // Dark-first (ADR-032): the Tokyo Night register is the default for every
+          // visitor; light is opt-in via the toggle. Dark unless the user chose light.
+          const theme = localStorage.getItem('theme');
+          const dark = theme !== 'light';
+          document.documentElement.classList.toggle('dark', dark);
+        };
+        applyTheme();
+        document.addEventListener('astro:page-load', applyTheme);
+        matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+      })();
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BR60VNPF.js"></script><style>.closing-cta[data-astro-cid-wd4g2dc5]{margin-top:var(--space-12);padding-top:var(--space-10);border-top:1px solid var(--color-border);text-align:center}.closing-cta-title[data-astro-cid-wd4g2dc5]{font-size:var(--text-2xl);color:var(--color-text-heading);margin:0 0 var(--space-3)}.closing-cta-lead[data-astro-cid-wd4g2dc5]{color:var(--color-text-muted);line-height:1.6;max-width:38rem;margin:0 auto var(--space-6)}.closing-cta-actions[data-astro-cid-wd4g2dc5]{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-4);margin:0}
+.card-grid[data-astro-cid-mozb6k5t]{display:grid;gap:var(--space-4);margin:var(--space-6) 0}.cols-2[data-astro-cid-mozb6k5t]{grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr))}.cols-3[data-astro-cid-mozb6k5t]{grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr))}.card[data-astro-cid-mozb6k5t]{display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-4);border:1px solid var(--color-border);border-radius:var(--radius-lg);text-decoration:none;transition:border-color var(--transition-fast),box-shadow var(--transition-fast)}.card[data-astro-cid-mozb6k5t]:hover{border-color:var(--color-primary);box-shadow:var(--shadow-md)}.card-header[data-astro-cid-mozb6k5t]{display:flex;align-items:center;gap:var(--space-2)}.card-title[data-astro-cid-mozb6k5t]{font-family:var(--font-display);font-size:var(--text-base);font-weight:var(--font-weight-semibold);color:var(--color-text-heading);margin:0}.card-badge[data-astro-cid-mozb6k5t]{font-size:var(--text-xs);padding:.1em .5em;border-radius:var(--radius-full);font-weight:var(--font-weight-medium)}.badge-new[data-astro-cid-mozb6k5t]{background:color-mix(in srgb,var(--color-success) 15%,transparent);color:var(--color-success)}.badge-updated[data-astro-cid-mozb6k5t]{background:color-mix(in srgb,var(--color-info) 15%,transparent);color:color-mix(in srgb,var(--color-info) 55%,var(--color-text))}.badge-deprecated[data-astro-cid-mozb6k5t]{background:color-mix(in srgb,var(--color-warning) 15%,transparent);color:color-mix(in srgb,var(--color-warning) 55%,var(--color-text))}.badge-experimental[data-astro-cid-mozb6k5t]{background:color-mix(in srgb,var(--color-accent) 15%,transparent);color:color-mix(in srgb,var(--color-accent) 45%,var(--color-text))}.card-icon[data-astro-cid-mozb6k5t]{font-size:1.75rem;line-height:1}.card-description[data-astro-cid-mozb6k5t]{font-size:var(--text-sm);color:var(--color-text-muted);margin:0;line-height:1.5}
+.regime-caveat[data-astro-cid-li4pmd5j]{border:1px solid var(--color-border);border-left:3px solid var(--color-primary);background:var(--color-bg-alt);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);margin:var(--space-6) 0 var(--space-4)}.regime-table[data-astro-cid-li4pmd5j]{width:100%;border-collapse:collapse;margin:var(--space-6) 0;font-size:var(--text-sm)}.regime-table[data-astro-cid-li4pmd5j]:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}.regime-table[data-astro-cid-li4pmd5j] th[data-astro-cid-li4pmd5j],.regime-table[data-astro-cid-li4pmd5j] td[data-astro-cid-li4pmd5j]{text-align:left;padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-border);vertical-align:top}.regime-table[data-astro-cid-li4pmd5j] thead[data-astro-cid-li4pmd5j] th[data-astro-cid-li4pmd5j]{font-weight:600;color:var(--color-text-heading);background:var(--color-bg-alt)}.regime-table[data-astro-cid-li4pmd5j] th[data-astro-cid-li4pmd5j][scope=row]{font-weight:600;color:var(--color-text-heading);white-space:nowrap}
+.lede[data-astro-cid-h6dpntfm]{font-size:var(--text-lg);line-height:1.6;color:var(--color-text);margin-bottom:var(--space-8)}
+</style>
+<link rel="stylesheet" href="/_astro/BaseLayout.BRcQ_MAb.css">
+<link rel="stylesheet" href="/_astro/DocumentationLayout.Dl3xw7td.css"><script type="module" src="/_astro/page.BrUNW4oj.js"></script></head> <body class="min-h-screen flex flex-col"> <a href="#main-content" class="skip-link">Skip to main content</a> <header class="header" data-astro-cid-qmpwvs2w> <div class="header-inner" data-astro-cid-qmpwvs2w> <a href="/" class="logo" aria-label="aDNA home" data-astro-cid-qmpwvs2w> <span class="logo-mark" data-astro-cid-qmpwvs2w>a</span><span class="logo-text" data-astro-cid-qmpwvs2w>DNA</span> </a> <nav class="nav-desktop-wrap" aria-label="Main navigation" data-astro-cid-qmpwvs2w> <div class="nav-desktop" data-astro-cid-qmpwvs2w> <a href="/network" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Network </a><a href="/vaults" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Vaults </a><a href="/commons" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Commons </a><a href="/learn" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Learn </a><a href="/patterns" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Patterns </a><a href="/use-cases" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Use Cases </a><a href="/community" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Community </a> </div> <details class="nav-more" data-astro-cid-qmpwvs2w> <summary class="nav-link nav-more-summary" data-astro-cid-qmpwvs2w> More </summary> <div class="nav-more-panel" data-astro-cid-qmpwvs2w> <a href="/reference" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Reference </a><a href="/glossary" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Glossary </a><a href="/how" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Guides </a><a href="/adopters" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> For you </a> </div> </details> </nav> <div class="header-actions" data-astro-cid-qmpwvs2w> <a href="/get-started" class="btn btn-primary header-cta" data-astro-prefetch data-astro-cid-qmpwvs2w>Get Started</a> <a href="https://github.com/aDNA-Network/aDNA" class="github-link" aria-label="GitHub repository" target="_blank" rel="noopener" data-astro-cid-qmpwvs2w> <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-astro-cid-qmpwvs2w> <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" data-astro-cid-qmpwvs2w></path> </svg> </a> <button class="dark-mode-toggle" aria-label="Toggle dark mode" type="button" data-astro-cid-twkxffgo> <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-twkxffgo> <circle cx="12" cy="12" r="5" data-astro-cid-twkxffgo></circle> <line x1="12" y1="1" x2="12" y2="3" data-astro-cid-twkxffgo></line> <line x1="12" y1="21" x2="12" y2="23" data-astro-cid-twkxffgo></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" data-astro-cid-twkxffgo></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" data-astro-cid-twkxffgo></line> <line x1="1" y1="12" x2="3" y2="12" data-astro-cid-twkxffgo></line> <line x1="21" y1="12" x2="23" y2="12" data-astro-cid-twkxffgo></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" data-astro-cid-twkxffgo></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" data-astro-cid-twkxffgo></line> </svg> <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-twkxffgo> <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" data-astro-cid-twkxffgo></path> </svg> </button> <script type="module">const t=document.querySelector(".dark-mode-toggle");t?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" data-astro-cid-qmpwvs2w> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-qmpwvs2w> <line x1="3" y1="6" x2="21" y2="6" data-astro-cid-qmpwvs2w></line> <line x1="3" y1="12" x2="21" y2="12" data-astro-cid-qmpwvs2w></line> <line x1="3" y1="18" x2="21" y2="18" data-astro-cid-qmpwvs2w></line> </svg> </button> </div> </div> <nav class="nav-mobile" aria-label="Mobile navigation" hidden data-astro-cid-qmpwvs2w> <a href="/network" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Network </a><a href="/vaults" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Vaults </a><a href="/commons" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Commons </a><a href="/learn" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Learn </a><a href="/patterns" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Patterns </a><a href="/use-cases" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Use Cases </a><a href="/community" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Community </a>  <p class="nav-mobile-label" data-astro-cid-qmpwvs2w>More</p> <a href="/reference" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Reference </a><a href="/glossary" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Glossary </a><a href="/how" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Guides </a><a href="/adopters" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> For you </a> </nav> </header> <script type="module">const e=document.querySelector(".mobile-menu-btn"),t=document.querySelector(".nav-mobile");function d(){e?.setAttribute("aria-expanded","true"),t?.removeAttribute("hidden"),t?.querySelector("a")?.focus()}function i(){e?.setAttribute("aria-expanded","false"),t?.setAttribute("hidden",""),e?.focus()}e?.addEventListener("click",()=>{e.getAttribute("aria-expanded")==="true"?i():d()});document.addEventListener("keydown",n=>{n.key==="Escape"&&e?.getAttribute("aria-expanded")==="true"&&i()});t?.addEventListener("focusout",n=>{setTimeout(()=>{t&&!t.contains(document.activeElement)&&e!==document.activeElement&&i()},0)});</script> <main id="main-content" class="flex-1" tabindex="-1">  <div class="doc-layout" data-astro-cid-kpcmd3d5> <!-- Mobile section nav (audit C3: the sidebar was display:none below 768px, leaving
+         doc pages with no section navigation on phones). Native disclosure, zero JS; the
+         desktop <aside> below is display:none'd on mobile so only one copy is ever in
+         the accessibility tree. --> <details class="doc-mobile-nav" data-astro-cid-kpcmd3d5> <summary data-astro-cid-kpcmd3d5>In this section</summary> <div class="doc-mobile-nav-inner" data-astro-cid-kpcmd3d5> <nav class="sidebar-nav" aria-label="Documentation sections" data-astro-cid-owrjt5ou> <ul class="section-switcher" aria-label="All sections" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/learn/what-is-adna" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- learn — abstract layered paths (M5.3 cycle 103 D11 motif vocabulary: stepped progression) -->
+  <rect x="2.5" y="4" width="11" height="3" rx="0.5"/>
+  <rect x="6.5" y="10.5" width="11" height="3" rx="0.5"/>
+  <rect x="10.5" y="17" width="11" height="3" rx="0.5"/>
+  <line x1="13.5" y1="7" x2="17.5" y2="10.5" stroke-dasharray="0.8 0.8"/>
+  <line x1="17.5" y1="13.5" x2="21.5" y2="17" stroke-dasharray="0.8 0.8"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Learn</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/patterns/question-test" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- patterns — tessellating hexagons (M5.3 cycle 103 D11 motif vocabulary: composability / repeating modules) -->
+  <!-- center hex + 6 surrounding -->
+  <polygon points="12,8.5 14.6,10 14.6,13 12,14.5 9.4,13 9.4,10"/>
+  <polygon points="12,2 14.6,3.5 14.6,6.5 12,8 9.4,6.5 9.4,3.5"/>
+  <polygon points="17.2,5 19.8,6.5 19.8,9.5 17.2,11 14.6,9.5 14.6,6.5"/>
+  <polygon points="17.2,11 19.8,12.5 19.8,15.5 17.2,17 14.6,15.5 14.6,12.5"/>
+  <polygon points="12,14 14.6,15.5 14.6,18.5 12,20 9.4,18.5 9.4,15.5"/>
+  <polygon points="6.8,11 9.4,12.5 9.4,15.5 6.8,17 4.2,15.5 4.2,12.5"/>
+  <polygon points="6.8,5 9.4,6.5 9.4,9.5 6.8,11 4.2,9.5 4.2,6.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Patterns</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/use-cases/solo-developer" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- use_cases — concentric layered rectangles (M5.3 cycle 103 D11 motif vocabulary: scenarios stacked from generic to specific) -->
+  <rect x="3" y="3" width="18" height="18" rx="1"/>
+  <rect x="6" y="6" width="12" height="12" rx="0.75" opacity="0.75"/>
+  <rect x="9" y="9" width="6" height="6" rx="0.5" opacity="0.6"/>
+  <circle cx="12" cy="12" r="0.9" fill="currentColor"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Use Cases</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/community/community-roles" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Community</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/specification" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Reference</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/glossary/glossary-adna" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Glossary</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/how/publishing/vault-to-site" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- how — workflow arrows between nodes (M5.3 cycle 103 D11 motif; refined at cycle 106 per design_finding_for_cycle_106: explicit chevron arrowheads + straight shafts for legibility at nav scale 16-20px) -->
+  <rect x="1.5" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="9.25" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="17" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <line x1="7" y1="12" x2="8.55" y2="12"/>
+  <polyline points="7.95 11.1 9.25 12 7.95 12.9"/>
+  <line x1="14.75" y1="12" x2="16.3" y2="12"/>
+  <polyline points="15.7 11.1 17 12 15.7 12.9"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Guides</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/researchers" class="switcher-link active" aria-current="true" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>For you</span> </a> </li> </ul> <div class="nav-group" data-astro-cid-owrjt5ou> <p class="group-label" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>For you</span> </p> <ul class="group-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/researchers" class="nav-item" data-astro-cid-owrjt5ou> Researchers </a> </li><li data-astro-cid-owrjt5ou> <a href="/educators" class="nav-item" data-astro-cid-owrjt5ou> Educators </a> </li><li data-astro-cid-owrjt5ou> <a href="/enterprise" class="nav-item" data-astro-cid-owrjt5ou> Enterprise </a> </li><li data-astro-cid-owrjt5ou> <a href="/compliance" class="nav-item active" aria-current="page" data-astro-cid-owrjt5ou> Compliance </a> </li><li data-astro-cid-owrjt5ou> <a href="/startup-first-hour" class="nav-item" data-astro-cid-owrjt5ou> Startups </a> </li><li data-astro-cid-owrjt5ou> <a href="/adopters" class="nav-item" data-astro-cid-owrjt5ou> Adopters Hub </a> </li> </ul> </div> </nav> </div> </details> <!-- SP-2 (H-1/H-2): the <article> (with its <h1>) comes BEFORE the <aside> sidebars in
+         DOM so a screen reader / agent reads breadcrumb → h1 → content before the ~100 nav
+         links. The visual column order (sidebar | content | toc) is restored via
+         grid-template-areas below, so there is no visual change. The skip-link (#main-content)
+         now lands on the content, not the sidebar. --> <article class="doc-content prose" data-astro-cid-kpcmd3d5> <nav aria-label="Breadcrumb" class="breadcrumb" data-astro-cid-y4oyvcup><ol data-astro-cid-y4oyvcup><li class="leg" data-astro-cid-y4oyvcup>WHO</li><li class="sep" aria-hidden="true" data-astro-cid-y4oyvcup>›</li><li class="section-cell" data-astro-cid-y4oyvcup><span class="section-icon" aria-hidden="true" data-astro-cid-y4oyvcup><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- use_cases — concentric layered rectangles (M5.3 cycle 103 D11 motif vocabulary: scenarios stacked from generic to specific) -->
+  <rect x="3" y="3" width="18" height="18" rx="1"/>
+  <rect x="6" y="6" width="12" height="12" rx="0.75" opacity="0.75"/>
+  <rect x="9" y="9" width="6" height="6" rx="0.5" opacity="0.6"/>
+  <circle cx="12" cy="12" r="0.9" fill="currentColor"/>
+</svg>
+</span><a href="/adopters/" data-astro-cid-y4oyvcup>For you</a></li><li class="sep" aria-hidden="true" data-astro-cid-y4oyvcup>›</li><li aria-current="page" class="current" data-astro-cid-y4oyvcup>aDNA Compliance Walkthrough</li></ol></nav>  <h1 data-astro-cid-kpcmd3d5>aDNA Compliance Walkthrough</h1>  <p class="lede" data-astro-cid-h6dpntfm>
+Auditors ask five questions about AI-assisted work. The vault answers all five
+    using the same files the team already edits — the audit trail is the working
+    artifact, not a parallel workstream. For compliance officers, security reviewers,
+    and procurement leads; the sibling <a href="/enterprise" data-astro-cid-li4pmd5j>Enterprise Adoption Checklist</a>
+organizes the same evidence by evaluation domain.
+</p>   <h2 id="q1-who-wrote-this" data-astro-cid-li4pmd5j>1 · Who wrote this artifact?</h2> <p data-astro-cid-li4pmd5j>
+Every governed file carries <code data-astro-cid-li4pmd5j>last_edited_by</code> and <code data-astro-cid-li4pmd5j>updated</code>
+in its frontmatter; the matching session file in <code data-astro-cid-li4pmd5j>how/sessions/</code>
+records intent and scope. Attribution scales from a single frontmatter line up
+    to a full session narrative.
+</p> <ul data-astro-cid-li4pmd5j> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Frontmatter attribution:</strong> <code data-astro-cid-li4pmd5j>last_edited_by: agent_&#123;username&#125;</code> on every content file.</li> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Session-level attribution:</strong> session file opens with ID, intent, and scope — a reviewable work-unit narrative, not just a file-level diff.</li> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Git as second witness:</strong> every commit is signed and dated; session records cross-reference the commit.</li> </ul> <div class="card-grid cols-2" data-astro-cid-mozb6k5t> <a href="/glossary/glossary-session" class="card" data-astro-cid-mozb6k5t>  <div class="card-header" data-astro-cid-mozb6k5t> <p class="card-title" data-astro-cid-mozb6k5t>Session Glossary</p>  </div> <p class="card-description" data-astro-cid-mozb6k5t>Every agent-assisted work unit produces a file in how/sessions/ with session ID, intent, scope, files touched, and a closing SITREP — the primitive audit…</p> </a><a href="/glossary/glossary-sitrep" class="card" data-astro-cid-mozb6k5t>  <div class="card-header" data-astro-cid-mozb6k5t> <p class="card-title" data-astro-cid-mozb6k5t>SITREP Glossary</p>  </div> <p class="card-description" data-astro-cid-mozb6k5t>Structured session closure (Completed / In progress / Next up / Blockers / Files touched) plus a Next Session Prompt — turns a session close into a reviewable…</p> </a><a href="/use-cases/enterprise-team" class="card" data-astro-cid-mozb6k5t>  <div class="card-header" data-astro-cid-mozb6k5t> <p class="card-title" data-astro-cid-mozb6k5t>Enterprise Team Use Case</p>  </div> <p class="card-description" data-astro-cid-mozb6k5t>Narrative walkthrough: a 50-person platform org replaces week-long compliance investigations with scripted queries over the session corpus.</p> </a> </div> <h2 id="q2-what-context" data-astro-cid-li4pmd5j>2 · What context did the agent have?</h2> <p data-astro-cid-li4pmd5j>
+Agent output is only as good as its inputs. The session file names the intent
+    and files consulted; the <a href="/learn/concepts/context-optimization" data-astro-cid-li4pmd5j>context
+    engineering</a> layer makes the context-assembly rules explicit. Reviewers
+    answer "what was the agent told to do, with what reference material" without
+    re-running the agent.
+</p> <ul data-astro-cid-li4pmd5j> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Session intent:</strong> every session file names the stated objective at the top.</li> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Context inputs:</strong> routing files (AGENTS.md) and context recipes name which knowledge objects the agent loaded — traceable, not opaque.</li> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Scope declaration:</strong> Tier-2 sessions declare scope and run a conflict scan before editing shared configuration; the declared scope is part of the audit record.</li> </ul> <h2 id="q3-reviewed" data-astro-cid-li4pmd5j>3 · Was the work reviewed?</h2> <p data-astro-cid-li4pmd5j>
+Review is structurally required: <code data-astro-cid-li4pmd5j>CLAUDE.md</code> names standing orders;
+<code data-astro-cid-li4pmd5j>who/governance/</code> holds role definitions; every multi-session
+    mission closes with an AAR under <code data-astro-cid-li4pmd5j>how/missions/artifacts/</code> before
+    it can be marked complete.
+</p> <ul data-astro-cid-li4pmd5j> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Standing orders:</strong> CLAUDE.md at the vault root names the rules that apply to every session — including the rule that every mission gets an AAR before closure.</li> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Review artifacts:</strong> the AAR template (Worked / Didn't / Finding / Change / Follow-up) is mandatory on mission close, producing a short, structured review record.</li> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Escalation cascade:</strong> anomalies propagate session → mission → campaign → STATE.md, so a reviewer can follow a flag from discovery to resolution.</li> </ul> <div class="card-grid cols-2" data-astro-cid-mozb6k5t> <a href="/learn/concepts/governance-files" class="card" data-astro-cid-mozb6k5t>  <div class="card-header" data-astro-cid-mozb6k5t> <p class="card-title" data-astro-cid-mozb6k5t>Governance Files</p>  </div> <p class="card-description" data-astro-cid-mozb6k5t>CLAUDE.md, MANIFEST.md, STATE.md, AGENTS.md at the vault root — the fixed-path governance layer auditors orient to once and reuse across every team vault.</p> </a><a href="/patterns/dual-audience-writing" class="card" data-astro-cid-mozb6k5t>  <div class="card-header" data-astro-cid-mozb6k5t> <p class="card-title" data-astro-cid-mozb6k5t>Architecture Decisions</p>  </div> <p class="card-description" data-astro-cid-mozb6k5t>ADR files under what/decisions/ pair each technical choice with rationale, trade-offs, and reviewer attribution — designed for both engineering and compliance…</p> </a><a href="/glossary/glossary-collision-prevention" class="card" data-astro-cid-mozb6k5t>  <div class="card-header" data-astro-cid-mozb6k5t> <p class="card-title" data-astro-cid-mozb6k5t>Collision Prevention</p>  </div> <p class="card-description" data-astro-cid-mozb6k5t>last_edited_by + updated + read-before-write contract prevents concurrent agents and humans from clobbering one another — the primitive that makes a shared…</p> </a> </div> <h2 id="q4-safe-concurrent" data-astro-cid-li4pmd5j>4 · What stops two agents from clobbering each other?</h2> <p data-astro-cid-li4pmd5j>
+The <a href="/glossary/glossary-collision-prevention" data-astro-cid-li4pmd5j>collision-prevention</a>
+contract is three frontmatter fields plus one procedural rule:
+<code data-astro-cid-li4pmd5j>last_edited_by</code>, <code data-astro-cid-li4pmd5j>updated</code>, and read-before-write.
+    Git closes the loop — the authoritative history is the HEAD commit, not any
+    agent's in-memory belief.
+</p> <ul data-astro-cid-li4pmd5j> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Read before write:</strong> no file is modified without reading current state first — catches stale-state edits.</li> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Updated-date check:</strong> if <code data-astro-cid-li4pmd5j>updated</code> is today and the current agent didn't make the last edit, the agent pauses and confirms — a lightweight merge-conflict substitute.</li> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Truth hierarchy:</strong> git HEAD outranks any agent's cached read or memory; authoritative state is what's committed.</li> </ul> <h2 id="q5-preserve-trail" data-astro-cid-li4pmd5j>5 · How is the audit trail preserved?</h2> <p data-astro-cid-li4pmd5j>
+A vault's history is append-only by convention. Sessions move from
+<code data-astro-cid-li4pmd5j>active/</code> to <code data-astro-cid-li4pmd5j>history/YYYY-MM/</code> on completion; missions
+    and campaigns are archived with <code data-astro-cid-li4pmd5j>status: completed</code> or
+<code data-astro-cid-li4pmd5j>abandoned</code>, never deleted. Standing order #6 ("archive, never
+    delete") applies to every governance artifact.
+</p> <ul data-astro-cid-li4pmd5j> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Archive, never delete:</strong> session records, mission files, and campaign documents are a permanent audit trail.</li> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Monthly partitioning:</strong> session history under <code data-astro-cid-li4pmd5j>how/sessions/history/YYYY-MM/</code> — scan by month, query by quarter, no ORM required.</li> <li data-astro-cid-li4pmd5j><strong data-astro-cid-li4pmd5j>Queryable with standard tools:</strong> sessions and ADRs are YAML-headed markdown — <code data-astro-cid-li4pmd5j>grep</code>, <code data-astro-cid-li4pmd5j>jq</code>, <code data-astro-cid-li4pmd5j>yq</code> read them.</li> </ul> <div class="card-grid cols-2" data-astro-cid-mozb6k5t> <a href="/patterns/federation-readiness" class="card" data-astro-cid-mozb6k5t>  <div class="card-header" data-astro-cid-mozb6k5t> <p class="card-title" data-astro-cid-mozb6k5t>Federation Readiness</p>  </div> <p class="card-description" data-astro-cid-mozb6k5t>Six-point readiness check (schema valid, opt-in, source instance, license, keywords, resolved references) gates every artifact that crosses a team boundary.</p> </a><a href="/patterns/fair-envelope" class="card" data-astro-cid-mozb6k5t>  <div class="card-header" data-astro-cid-mozb6k5t> <p class="card-title" data-astro-cid-mozb6k5t>FAIR Envelope</p>  </div> <p class="card-description" data-astro-cid-mozb6k5t>License, creators, keywords, provenance, and identifier travel with every federated artifact — legal provenance is a data field, not a separate document.</p> </a><a href="/learn/concepts/open-standard" class="card" data-astro-cid-mozb6k5t>  <div class="card-header" data-astro-cid-mozb6k5t> <p class="card-title" data-astro-cid-mozb6k5t>Open Standard</p>  </div> <p class="card-description" data-astro-cid-mozb6k5t>The specification is open and permissively licensed — no vendor lock-in, no platform dependency. Vault contents are plain markdown in git.</p> </a> </div> <h2 id="named-regimes" data-astro-cid-li4pmd5j>How this maps to named regimes</h2> <p class="regime-caveat" data-astro-cid-li4pmd5j> <strong data-astro-cid-li4pmd5j>Read this first.</strong> aDNA is an open documentation standard, not a certified
+    product — adopting it does not make you compliant with anything. What a vault gives you is
+<em data-astro-cid-li4pmd5j>working evidence</em>: dated, attributed records a reviewer can read. Certification is
+    granted by accredited assessors against your own controls, never by adopting a standard.
+</p> <p data-astro-cid-li4pmd5j>
+With that caveat, the same audit trail lines up cleanly with what the frameworks
+    procurement teams cite actually ask reviewers to demonstrate:
+</p> <table class="regime-table" tabindex="0" aria-label="How aDNA maps to named compliance regimes" data-astro-cid-li4pmd5j> <thead data-astro-cid-li4pmd5j> <tr data-astro-cid-li4pmd5j> <th scope="col" data-astro-cid-li4pmd5j>Framework</th> <th scope="col" data-astro-cid-li4pmd5j>What it asks for</th> <th scope="col" data-astro-cid-li4pmd5j>What an aDNA vault supplies</th> </tr> </thead> <tbody data-astro-cid-li4pmd5j> <tr data-astro-cid-li4pmd5j> <th scope="row" data-astro-cid-li4pmd5j>SOC 2</th> <td data-astro-cid-li4pmd5j>Evidence that security and change-management controls operate over time — who changed what, when, and whether it was reviewed.</td> <td data-astro-cid-li4pmd5j>Session records in how/sessions/ plus git history give a per-change, dated, attributed trail; the AAR-on-close rule is a recurring review control; STATE.md tracks open risks.</td> </tr><tr data-astro-cid-li4pmd5j> <th scope="row" data-astro-cid-li4pmd5j>ISO/IEC 27001</th> <td data-astro-cid-li4pmd5j>A documented management system: policies, defined roles, risk treatment, and records showing the system is actually followed.</td> <td data-astro-cid-li4pmd5j>CLAUDE.md carries the standing orders and priority hierarchy; who/governance/ defines roles; what/decisions/ (ADRs) record risk-bearing choices with rationale — documented-and-followed, in plain markdown.</td> </tr><tr data-astro-cid-li4pmd5j> <th scope="row" data-astro-cid-li4pmd5j>EU AI Act</th> <td data-astro-cid-li4pmd5j>For higher-risk AI use: record-keeping, human oversight, and traceability of how an AI-assisted output was produced.</td> <td data-astro-cid-li4pmd5j>Every agent-assisted change names its intent, inputs, and reviewer; phase and mission gates are explicit human-oversight points; the trail from output → session → context inputs is the traceability the Act asks for.</td> </tr> </tbody> </table> <h2 id="self-reference" data-astro-cid-li4pmd5j>Self-reference: this vault is the worked example</h2> <p data-astro-cid-li4pmd5j>
+The audit trail described here is the one this vault runs on — including the
+    session that produced this page. Browse <code data-astro-cid-li4pmd5j>how/sessions/history/</code>
+and read a few closed sessions end-to-end to evaluate the audit model directly.
+</p> <h2 id="next-steps" data-astro-cid-li4pmd5j>Next Steps</h2> <div class="card-grid cols-2" data-astro-cid-mozb6k5t> <a href="/enterprise" class="card" data-astro-cid-mozb6k5t>  <div class="card-header" data-astro-cid-mozb6k5t> <p class="card-title" data-astro-cid-mozb6k5t>Enterprise Adoption Checklist</p>  </div> <p class="card-description" data-astro-cid-mozb6k5t>The sibling page: a structured evaluation framework across compliance, session audit, federation, and integration. Scan section by section.</p> </a><a href="/adopters/adopter-enterprise-team" class="card" data-astro-cid-mozb6k5t>  <div class="card-header" data-astro-cid-mozb6k5t> <p class="card-title" data-astro-cid-mozb6k5t>Enterprise Team Persona</p>  </div> <p class="card-description" data-astro-cid-mozb6k5t>Quick-reference adopter profile: pain points, typical ontology extensions (compliance_check, team_policy, shared_pipeline), and deployment pattern.</p> </a><a href="/patterns/federation-readiness" class="card" data-astro-cid-mozb6k5t>  <div class="card-header" data-astro-cid-mozb6k5t> <p class="card-title" data-astro-cid-mozb6k5t>Federation Readiness Pattern</p>  </div> <p class="card-description" data-astro-cid-mozb6k5t>The readiness-gate pattern in full — what blocks publication, what travels with a shared artifact, how version policy works across teams.</p> </a><a href="/glossary/glossary-session" class="card" data-astro-cid-mozb6k5t>  <div class="card-header" data-astro-cid-mozb6k5t> <p class="card-title" data-astro-cid-mozb6k5t>Session Glossary</p>  </div> <p class="card-description" data-astro-cid-mozb6k5t>Canonical definition of the session record — the atomic unit of the audit trail.</p> </a> </div>  <section class="closing-cta" aria-label="Set up your workspace" data-astro-cid-wd4g2dc5> <h2 class="closing-cta-title" data-astro-cid-wd4g2dc5>Set up your workspace</h2>  <p class="closing-cta-actions" data-astro-cid-wd4g2dc5> <a href="/get-started/" class="btn btn-primary" data-astro-prefetch="true" data-astro-cid-wd4g2dc5>Get Started</a> <a href="/reference/governance-model/" class="btn btn-secondary" data-astro-prefetch="true" data-astro-cid-wd4g2dc5>Read the governance model</a> </p> </section>  </article> <aside class="doc-sidebar" aria-label="Documentation navigation" data-astro-cid-kpcmd3d5> <nav class="sidebar-nav" aria-label="Documentation sections" data-astro-cid-owrjt5ou> <ul class="section-switcher" aria-label="All sections" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/learn/what-is-adna" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- learn — abstract layered paths (M5.3 cycle 103 D11 motif vocabulary: stepped progression) -->
+  <rect x="2.5" y="4" width="11" height="3" rx="0.5"/>
+  <rect x="6.5" y="10.5" width="11" height="3" rx="0.5"/>
+  <rect x="10.5" y="17" width="11" height="3" rx="0.5"/>
+  <line x1="13.5" y1="7" x2="17.5" y2="10.5" stroke-dasharray="0.8 0.8"/>
+  <line x1="17.5" y1="13.5" x2="21.5" y2="17" stroke-dasharray="0.8 0.8"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Learn</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/patterns/question-test" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- patterns — tessellating hexagons (M5.3 cycle 103 D11 motif vocabulary: composability / repeating modules) -->
+  <!-- center hex + 6 surrounding -->
+  <polygon points="12,8.5 14.6,10 14.6,13 12,14.5 9.4,13 9.4,10"/>
+  <polygon points="12,2 14.6,3.5 14.6,6.5 12,8 9.4,6.5 9.4,3.5"/>
+  <polygon points="17.2,5 19.8,6.5 19.8,9.5 17.2,11 14.6,9.5 14.6,6.5"/>
+  <polygon points="17.2,11 19.8,12.5 19.8,15.5 17.2,17 14.6,15.5 14.6,12.5"/>
+  <polygon points="12,14 14.6,15.5 14.6,18.5 12,20 9.4,18.5 9.4,15.5"/>
+  <polygon points="6.8,11 9.4,12.5 9.4,15.5 6.8,17 4.2,15.5 4.2,12.5"/>
+  <polygon points="6.8,5 9.4,6.5 9.4,9.5 6.8,11 4.2,9.5 4.2,6.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Patterns</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/use-cases/solo-developer" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- use_cases — concentric layered rectangles (M5.3 cycle 103 D11 motif vocabulary: scenarios stacked from generic to specific) -->
+  <rect x="3" y="3" width="18" height="18" rx="1"/>
+  <rect x="6" y="6" width="12" height="12" rx="0.75" opacity="0.75"/>
+  <rect x="9" y="9" width="6" height="6" rx="0.5" opacity="0.6"/>
+  <circle cx="12" cy="12" r="0.9" fill="currentColor"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Use Cases</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/community/community-roles" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Community</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/specification" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Reference</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/glossary/glossary-adna" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Glossary</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/how/publishing/vault-to-site" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- how — workflow arrows between nodes (M5.3 cycle 103 D11 motif; refined at cycle 106 per design_finding_for_cycle_106: explicit chevron arrowheads + straight shafts for legibility at nav scale 16-20px) -->
+  <rect x="1.5" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="9.25" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="17" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <line x1="7" y1="12" x2="8.55" y2="12"/>
+  <polyline points="7.95 11.1 9.25 12 7.95 12.9"/>
+  <line x1="14.75" y1="12" x2="16.3" y2="12"/>
+  <polyline points="15.7 11.1 17 12 15.7 12.9"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Guides</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/researchers" class="switcher-link active" aria-current="true" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>For you</span> </a> </li> </ul> <div class="nav-group" data-astro-cid-owrjt5ou> <p class="group-label" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>For you</span> </p> <ul class="group-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/researchers" class="nav-item" data-astro-cid-owrjt5ou> Researchers </a> </li><li data-astro-cid-owrjt5ou> <a href="/educators" class="nav-item" data-astro-cid-owrjt5ou> Educators </a> </li><li data-astro-cid-owrjt5ou> <a href="/enterprise" class="nav-item" data-astro-cid-owrjt5ou> Enterprise </a> </li><li data-astro-cid-owrjt5ou> <a href="/compliance" class="nav-item active" aria-current="page" data-astro-cid-owrjt5ou> Compliance </a> </li><li data-astro-cid-owrjt5ou> <a href="/startup-first-hour" class="nav-item" data-astro-cid-owrjt5ou> Startups </a> </li><li data-astro-cid-owrjt5ou> <a href="/adopters" class="nav-item" data-astro-cid-owrjt5ou> Adopters Hub </a> </li> </ul> </div> </nav> </aside> <aside class="doc-toc" aria-label="Table of contents" data-astro-cid-kpcmd3d5>  </aside> </div>  </main> <footer class="footer" data-astro-cid-l3trhy4j> <div class="footer-inner" data-astro-cid-l3trhy4j> <div class="footer-brand" data-astro-cid-l3trhy4j> <span class="footer-logo" data-astro-cid-l3trhy4j>aDNA</span> <p class="footer-tagline" data-astro-cid-l3trhy4j>Give your project a knowledge architecture that both humans and AI agents can navigate.</p> </div> <nav class="footer-links" aria-label="Footer navigation" data-astro-cid-l3trhy4j> <a href="/network" data-astro-cid-l3trhy4j>Network</a> <a href="/vaults" data-astro-cid-l3trhy4j>Vaults</a> <a href="/commons" data-astro-cid-l3trhy4j>Commons</a> <a href="/community" data-astro-cid-l3trhy4j>Community</a> <a href="/about" data-astro-cid-l3trhy4j>About</a> <a href="/security" data-astro-cid-l3trhy4j>Security</a> <a href="/privacy" data-astro-cid-l3trhy4j>Privacy</a> <a href="/reference/specification" data-astro-cid-l3trhy4j>Specification</a> <a href="/glossary" data-astro-cid-l3trhy4j>Glossary</a> <a href="/how" data-astro-cid-l3trhy4j>Guides</a> <a href="/get-started" data-astro-cid-l3trhy4j>Get Started</a> <a href="/changelog" data-astro-cid-l3trhy4j>Changelog</a> <a href="/design-system" data-astro-cid-l3trhy4j>Design system</a> <a href="/rss.xml" data-astro-cid-l3trhy4j>RSS</a> <a href="https://github.com/aDNA-Network/aDNA" target="_blank" rel="noopener" data-astro-cid-l3trhy4j>GitHub</a> </nav> <p class="footer-copyright" data-astro-cid-l3trhy4j>&copy; 2026 aDNA Network. Released under the MIT License.</p> </div> </footer> </body></html> <script type="module">function a(){document.querySelectorAll(".doc-content pre:not(.code-block pre)").forEach(t=>{if(t.closest(".code-block"))return;const n=document.createElement("div");n.className="code-block";const o=document.createElement("div");o.className="code-content",t.parentNode.insertBefore(n,t),n.appendChild(o),o.appendChild(t),t.hasAttribute("tabindex")||t.setAttribute("tabindex","0");const e=document.createElement("button");e.className="copy-btn",e.type="button",e.setAttribute("aria-label","Copy code"),e.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>',n.appendChild(e),e.addEventListener("click",async()=>{const c=t.querySelector("code")?.textContent??t.textContent??"";await navigator.clipboard.writeText(c),e.setAttribute("aria-label","Copied!"),setTimeout(()=>e.setAttribute("aria-label","Copy code"),2e3)})})}a();document.addEventListener("astro:page-load",a);</script>

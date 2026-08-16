@@ -1,0 +1,2199 @@
+<!DOCTYPE html><html lang="en" class="no-js dark"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v6.1.6"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Subscribable feed (idea_site_rss_feed / Champollion M4.2) — a cheap
+         "actively maintained" signal + the standard watch-mechanism for evaluators. --><link rel="alternate" type="application/rss+xml" title="aDNA — Changelog" href="/rss.xml"><!-- Preload critical above-fold fonts (latin subsets only) --><link rel="preload" href="/_astro/inter-latin-400-normal.C38fXH4l.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/space-grotesk-latin-400-normal.CJ-V5oYT.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/space-grotesk-latin-700-normal.RjhwGPKo.woff2" as="font" type="font/woff2" crossorigin><title>aDNA Specification</title><meta name="description" content="Agentic DNA (aDNA) — A knowledge architecture standard for AI-native projects."><!-- Canonical --><link rel="canonical" href="https://adna.network/reference/specification/"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:title" content="aDNA Specification"><meta property="og:description" content="Agentic DNA (aDNA) — A knowledge architecture standard for AI-native projects."><meta property="og:url" content="https://adna.network/reference/specification/"><meta property="og:image" content="https://adna.network/images/og-reference.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="aDNA Specification"><meta property="og:site_name" content="aDNA"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="aDNA Specification"><meta name="twitter:description" content="Agentic DNA (aDNA) — A knowledge architecture standard for AI-native projects."><meta name="twitter:image" content="https://adna.network/images/og-reference.png"><meta name="twitter:image:alt" content="aDNA Specification"><!-- JSON-LD: single schema or @graph bundle for multiple schemas --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"aDNA Specification","description":"Agentic DNA (aDNA) — A knowledge architecture standard for AI-native projects.","url":"https://adna.network/reference/specification/","publisher":{"@type":"Organization","name":"aDNA Network","url":"https://github.com/aDNA-Network/aDNA"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://adna.network/"},{"@type":"ListItem","position":2,"name":"Reference","item":"https://adna.network/reference/"},{"@type":"ListItem","position":3,"name":"aDNA Specification"}]}]}</script><script>
+      document.documentElement.classList.remove('no-js');
+    </script><script>
+      (function () {
+        const applyTheme = () => {
+          // Dark-first (ADR-032): the Tokyo Night register is the default for every
+          // visitor; light is opt-in via the toggle. Dark unless the user chose light.
+          const theme = localStorage.getItem('theme');
+          const dark = theme !== 'light';
+          document.documentElement.classList.toggle('dark', dark);
+        };
+        applyTheme();
+        document.addEventListener('astro:page-load', applyTheme);
+        matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+      })();
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BR60VNPF.js"></script><style>.spec-orientation[data-astro-cid-i26alp5a]{border:1px solid var(--color-border);border-left:3px solid var(--color-primary);background:var(--color-bg-alt);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);margin-bottom:var(--space-6);font-size:var(--text-sm)}.spec-orientation[data-astro-cid-i26alp5a] p[data-astro-cid-i26alp5a]{margin:0}.spec-orientation[data-astro-cid-i26alp5a] p[data-astro-cid-i26alp5a]+p[data-astro-cid-i26alp5a]{margin-top:var(--space-1)}.spec-orientation[data-astro-cid-i26alp5a] a[data-astro-cid-i26alp5a]{color:var(--color-link);font-weight:500}.ref-meta[data-astro-cid-i26alp5a]{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-6);font-size:var(--text-sm)}.ref-version[data-astro-cid-i26alp5a]{font-family:var(--font-mono);color:var(--color-text-muted)}.ref-stability[data-astro-cid-i26alp5a]{padding:.15em .6em;border-radius:var(--radius-full);font-weight:500;text-transform:capitalize}.ref-stability[data-astro-cid-i26alp5a].stable{background:color-mix(in srgb,var(--color-success) 15%,transparent);color:#116931}.ref-stability[data-astro-cid-i26alp5a].beta{background:color-mix(in srgb,var(--color-info) 15%,transparent);color:#096c9a}.ref-stability[data-astro-cid-i26alp5a].experimental{background:color-mix(in srgb,var(--color-warning) 15%,transparent);color:#9d6607}.ref-stability[data-astro-cid-i26alp5a].deprecated{background:color-mix(in srgb,var(--color-error) 15%,transparent);color:#9a1919}.dark .ref-stability[data-astro-cid-i26alp5a].stable{color:#34c06e}.dark .ref-stability[data-astro-cid-i26alp5a].beta{color:#5cb8e8}.dark .ref-stability[data-astro-cid-i26alp5a].experimental{color:#e89545}.dark .ref-stability[data-astro-cid-i26alp5a].deprecated{color:#e87070}
+</style>
+<link rel="stylesheet" href="/_astro/BaseLayout.BRcQ_MAb.css">
+<link rel="stylesheet" href="/_astro/DocumentationLayout.Dl3xw7td.css"><script type="module" src="/_astro/page.BrUNW4oj.js"></script></head> <body class="min-h-screen flex flex-col"> <a href="#main-content" class="skip-link">Skip to main content</a> <header class="header" data-astro-cid-qmpwvs2w> <div class="header-inner" data-astro-cid-qmpwvs2w> <a href="/" class="logo" aria-label="aDNA home" data-astro-cid-qmpwvs2w> <span class="logo-mark" data-astro-cid-qmpwvs2w>a</span><span class="logo-text" data-astro-cid-qmpwvs2w>DNA</span> </a> <nav class="nav-desktop-wrap" aria-label="Main navigation" data-astro-cid-qmpwvs2w> <div class="nav-desktop" data-astro-cid-qmpwvs2w> <a href="/network" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Network </a><a href="/vaults" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Vaults </a><a href="/commons" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Commons </a><a href="/learn" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Learn </a><a href="/patterns" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Patterns </a><a href="/use-cases" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Use Cases </a><a href="/community" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Community </a> </div> <details class="nav-more" data-astro-cid-qmpwvs2w> <summary class="nav-link nav-more-summary active" data-astro-cid-qmpwvs2w> More </summary> <div class="nav-more-panel" data-astro-cid-qmpwvs2w> <a href="/reference" class="nav-link active" data-astro-prefetch data-astro-cid-qmpwvs2w> Reference </a><a href="/glossary" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Glossary </a><a href="/how" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Guides </a><a href="/adopters" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> For you </a> </div> </details> </nav> <div class="header-actions" data-astro-cid-qmpwvs2w> <a href="/get-started" class="btn btn-primary header-cta" data-astro-prefetch data-astro-cid-qmpwvs2w>Get Started</a> <a href="https://github.com/aDNA-Network/aDNA" class="github-link" aria-label="GitHub repository" target="_blank" rel="noopener" data-astro-cid-qmpwvs2w> <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-astro-cid-qmpwvs2w> <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" data-astro-cid-qmpwvs2w></path> </svg> </a> <button class="dark-mode-toggle" aria-label="Toggle dark mode" type="button" data-astro-cid-twkxffgo> <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-twkxffgo> <circle cx="12" cy="12" r="5" data-astro-cid-twkxffgo></circle> <line x1="12" y1="1" x2="12" y2="3" data-astro-cid-twkxffgo></line> <line x1="12" y1="21" x2="12" y2="23" data-astro-cid-twkxffgo></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" data-astro-cid-twkxffgo></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" data-astro-cid-twkxffgo></line> <line x1="1" y1="12" x2="3" y2="12" data-astro-cid-twkxffgo></line> <line x1="21" y1="12" x2="23" y2="12" data-astro-cid-twkxffgo></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" data-astro-cid-twkxffgo></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" data-astro-cid-twkxffgo></line> </svg> <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-twkxffgo> <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" data-astro-cid-twkxffgo></path> </svg> </button> <script type="module">const t=document.querySelector(".dark-mode-toggle");t?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" data-astro-cid-qmpwvs2w> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-qmpwvs2w> <line x1="3" y1="6" x2="21" y2="6" data-astro-cid-qmpwvs2w></line> <line x1="3" y1="12" x2="21" y2="12" data-astro-cid-qmpwvs2w></line> <line x1="3" y1="18" x2="21" y2="18" data-astro-cid-qmpwvs2w></line> </svg> </button> </div> </div> <nav class="nav-mobile" aria-label="Mobile navigation" hidden data-astro-cid-qmpwvs2w> <a href="/network" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Network </a><a href="/vaults" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Vaults </a><a href="/commons" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Commons </a><a href="/learn" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Learn </a><a href="/patterns" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Patterns </a><a href="/use-cases" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Use Cases </a><a href="/community" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Community </a>  <p class="nav-mobile-label" data-astro-cid-qmpwvs2w>More</p> <a href="/reference" class="nav-link active" data-astro-prefetch data-astro-cid-qmpwvs2w> Reference </a><a href="/glossary" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Glossary </a><a href="/how" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Guides </a><a href="/adopters" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> For you </a> </nav> </header> <script type="module">const e=document.querySelector(".mobile-menu-btn"),t=document.querySelector(".nav-mobile");function d(){e?.setAttribute("aria-expanded","true"),t?.removeAttribute("hidden"),t?.querySelector("a")?.focus()}function i(){e?.setAttribute("aria-expanded","false"),t?.setAttribute("hidden",""),e?.focus()}e?.addEventListener("click",()=>{e.getAttribute("aria-expanded")==="true"?i():d()});document.addEventListener("keydown",n=>{n.key==="Escape"&&e?.getAttribute("aria-expanded")==="true"&&i()});t?.addEventListener("focusout",n=>{setTimeout(()=>{t&&!t.contains(document.activeElement)&&e!==document.activeElement&&i()},0)});</script> <main id="main-content" class="flex-1" tabindex="-1">  <div class="doc-layout" data-astro-cid-kpcmd3d5> <!-- Mobile section nav (audit C3: the sidebar was display:none below 768px, leaving
+         doc pages with no section navigation on phones). Native disclosure, zero JS; the
+         desktop <aside> below is display:none'd on mobile so only one copy is ever in
+         the accessibility tree. --> <details class="doc-mobile-nav" data-astro-cid-kpcmd3d5> <summary data-astro-cid-kpcmd3d5>In this section</summary> <div class="doc-mobile-nav-inner" data-astro-cid-kpcmd3d5> <nav class="sidebar-nav" aria-label="Documentation sections" data-astro-cid-owrjt5ou> <ul class="section-switcher" aria-label="All sections" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/learn/what-is-adna" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- learn — abstract layered paths (M5.3 cycle 103 D11 motif vocabulary: stepped progression) -->
+  <rect x="2.5" y="4" width="11" height="3" rx="0.5"/>
+  <rect x="6.5" y="10.5" width="11" height="3" rx="0.5"/>
+  <rect x="10.5" y="17" width="11" height="3" rx="0.5"/>
+  <line x1="13.5" y1="7" x2="17.5" y2="10.5" stroke-dasharray="0.8 0.8"/>
+  <line x1="17.5" y1="13.5" x2="21.5" y2="17" stroke-dasharray="0.8 0.8"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Learn</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/patterns/question-test" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- patterns — tessellating hexagons (M5.3 cycle 103 D11 motif vocabulary: composability / repeating modules) -->
+  <!-- center hex + 6 surrounding -->
+  <polygon points="12,8.5 14.6,10 14.6,13 12,14.5 9.4,13 9.4,10"/>
+  <polygon points="12,2 14.6,3.5 14.6,6.5 12,8 9.4,6.5 9.4,3.5"/>
+  <polygon points="17.2,5 19.8,6.5 19.8,9.5 17.2,11 14.6,9.5 14.6,6.5"/>
+  <polygon points="17.2,11 19.8,12.5 19.8,15.5 17.2,17 14.6,15.5 14.6,12.5"/>
+  <polygon points="12,14 14.6,15.5 14.6,18.5 12,20 9.4,18.5 9.4,15.5"/>
+  <polygon points="6.8,11 9.4,12.5 9.4,15.5 6.8,17 4.2,15.5 4.2,12.5"/>
+  <polygon points="6.8,5 9.4,6.5 9.4,9.5 6.8,11 4.2,9.5 4.2,6.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Patterns</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/use-cases/solo-developer" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- use_cases — concentric layered rectangles (M5.3 cycle 103 D11 motif vocabulary: scenarios stacked from generic to specific) -->
+  <rect x="3" y="3" width="18" height="18" rx="1"/>
+  <rect x="6" y="6" width="12" height="12" rx="0.75" opacity="0.75"/>
+  <rect x="9" y="9" width="6" height="6" rx="0.5" opacity="0.6"/>
+  <circle cx="12" cy="12" r="0.9" fill="currentColor"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Use Cases</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/community/community-roles" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Community</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/specification" class="switcher-link active" aria-current="true" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Reference</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/glossary/glossary-adna" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Glossary</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/how/publishing/vault-to-site" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- how — workflow arrows between nodes (M5.3 cycle 103 D11 motif; refined at cycle 106 per design_finding_for_cycle_106: explicit chevron arrowheads + straight shafts for legibility at nav scale 16-20px) -->
+  <rect x="1.5" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="9.25" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="17" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <line x1="7" y1="12" x2="8.55" y2="12"/>
+  <polyline points="7.95 11.1 9.25 12 7.95 12.9"/>
+  <line x1="14.75" y1="12" x2="16.3" y2="12"/>
+  <polyline points="15.7 11.1 17 12 15.7 12.9"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Guides</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/researchers" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>For you</span> </a> </li> </ul> <div class="nav-group" data-astro-cid-owrjt5ou> <p class="group-label" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Reference</span> </p> <ul class="group-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/specification" class="nav-item active" aria-current="page" data-astro-cid-owrjt5ou> Specification </a> </li><li class="subgroup" data-astro-cid-owrjt5ou> <details data-astro-cid-owrjt5ou> <summary class="subgroup-label" data-astro-cid-owrjt5ou>Rationale &amp; guides</summary> <ul class="subgroup-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/design-rationale" class="nav-item" data-astro-cid-owrjt5ou> Design Rationale </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/reading-guide" class="nav-item" data-astro-cid-owrjt5ou> Reading Guide </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/agent-first-guide" class="nav-item" data-astro-cid-owrjt5ou> Agent-First Guide </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/migration-guide" class="nav-item" data-astro-cid-owrjt5ou> Migration Guide </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/tool-setup" class="nav-item" data-astro-cid-owrjt5ou> Tool Setup </a> </li> </ul> </details> </li><li class="subgroup" data-astro-cid-owrjt5ou> <details data-astro-cid-owrjt5ou> <summary class="subgroup-label" data-astro-cid-owrjt5ou>Governance &amp; quality</summary> <ul class="subgroup-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/governance-model" class="nav-item" data-astro-cid-owrjt5ou> Governance Model </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/quality-rubric" class="nav-item" data-astro-cid-owrjt5ou> Quality Rubric </a> </li> </ul> </details> </li><li class="subgroup" data-astro-cid-owrjt5ou> <details data-astro-cid-owrjt5ou> <summary class="subgroup-label" data-astro-cid-owrjt5ou>Craft</summary> <ul class="subgroup-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/writing-guidelines" class="nav-item" data-astro-cid-owrjt5ou> Writing Guidelines </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/visual-identity-v2" class="nav-item" data-astro-cid-owrjt5ou> Visual Identity v3 </a> </li> </ul> </details> </li> </ul> </div> </nav> </div> </details> <!-- SP-2 (H-1/H-2): the <article> (with its <h1>) comes BEFORE the <aside> sidebars in
+         DOM so a screen reader / agent reads breadcrumb → h1 → content before the ~100 nav
+         links. The visual column order (sidebar | content | toc) is restored via
+         grid-template-areas below, so there is no visual change. The skip-link (#main-content)
+         now lands on the content, not the sidebar. --> <article class="doc-content prose" data-astro-cid-kpcmd3d5> <a href="/reference/" class="back-to-index" data-astro-cid-y4oyvcup><span aria-hidden="true" data-astro-cid-y4oyvcup>←</span> Back to reference</a><nav aria-label="Breadcrumb" class="breadcrumb" data-astro-cid-y4oyvcup><ol data-astro-cid-y4oyvcup><li class="leg" data-astro-cid-y4oyvcup>WHAT</li><li class="sep" aria-hidden="true" data-astro-cid-y4oyvcup>›</li><li class="section-cell" data-astro-cid-y4oyvcup><span class="section-icon" aria-hidden="true" data-astro-cid-y4oyvcup><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span><a href="/reference/" data-astro-cid-y4oyvcup>Reference</a></li><li class="sep" aria-hidden="true" data-astro-cid-y4oyvcup>›</li><li aria-current="page" class="current" data-astro-cid-y4oyvcup>aDNA Specification</li></ol></nav>  <h1 data-astro-cid-kpcmd3d5>aDNA Specification</h1> <aside class="spec-orientation" aria-label="Orientation" data-astro-cid-i26alp5a> <p data-astro-cid-i26alp5a><strong data-astro-cid-i26alp5a>For implementers and evaluators.</strong> New to aDNA? Start with <a href="/learn/what-is-adna" data-astro-cid-i26alp5a>What is aDNA &rarr;</a></p> <p class="spec-orientation-build" data-astro-cid-i26alp5a>Ready to build one? <a href="/get-started" data-astro-cid-i26alp5a>Get started &rarr;</a></p> </aside><div class="ref-meta" data-astro-cid-i26alp5a> <span class="ref-version" data-astro-cid-i26alp5a>v2.5</span> <span class="ref-stability stable" data-astro-cid-i26alp5a>stable</span> </div>
+<p><strong>Agentic DNA (aDNA)</strong> — A knowledge architecture standard for AI-native projects.</p>
+<hr/>
+<h2 id="1-introduction--scope">1. Introduction &amp; Scope</h2>
+<blockquote>
+<p><strong>Scan</strong>: What aDNA is, who it’s for, and RFC 2119 normative keywords.</p>
+</blockquote>
+<h3 id="11-what-is-adna">1.1 What Is aDNA</h3>
+<p>aDNA (Agentic DNA) is a standard for organizing project knowledge so that AI agents can orient, operate, and coordinate within any project — alongside humans. It defines a directory structure, governance files, metadata conventions, and operational protocols that together form a project’s “knowledge genome.”</p>
+<p>An aDNA instance is the complete set of governance files, triad directories, and operational infrastructure that implements this standard within a project.</p>
+<h3 id="12-audience">1.2 Audience</h3>
+<p>This standard is written for:</p>
+<ul>
+<li><strong>Agents</strong> — AI assistants that read, write, and navigate project knowledge</li>
+<li><strong>Agent operators</strong> — humans who configure and manage agent-augmented projects</li>
+<li><strong>Project bootstrappers</strong> — anyone starting a new project that will use AI agents</li>
+</ul>
+<h3 id="13-scope">1.3 Scope</h3>
+<p><strong>In scope</strong>: Project knowledge architecture — how project information is organized, how agents orient and operate, how multiple agents coordinate, and how knowledge persists across sessions.</p>
+<p><strong>Out of scope</strong>: Application source code structure, CI/CD pipeline configuration, deployment infrastructure, and agent model internals. These belong to the project content layer, not to aDNA.</p>
+<h3 id="14-normative-language">1.4 Normative Language</h3>
+<p>This document uses RFC 2119 keywords:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Keyword</th><th>Meaning</th></tr></thead><tbody><tr><td><strong>MUST</strong></td><td>Absolute requirement</td></tr><tr><td><strong>MUST NOT</strong></td><td>Absolute prohibition</td></tr><tr><td><strong>SHOULD</strong></td><td>Recommended; may be omitted with good reason</td></tr><tr><td><strong>MAY</strong></td><td>Truly optional</td></tr></tbody></table>
+<hr/>
+<h2 id="2-terminology">2. Terminology</h2>
+<blockquote>
+<p><strong>Scan</strong>: 12 key terms — triad, governance file, bare/embedded deployment, session, SITREP, content-as-code.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Term</th><th>Definition</th></tr></thead><tbody><tr><td><strong>aDNA</strong></td><td>Agentic DNA — the knowledge architecture standard defined by this document</td></tr><tr><td><strong>Triad</strong></td><td>The <code>what/how/who</code> directory ontology that organizes all aDNA content</td></tr><tr><td><strong>what/</strong></td><td>Knowledge layer — WHAT the project knows (context, decisions, reference, domain objects)</td></tr><tr><td><strong>how/</strong></td><td>Operations layer — HOW the project works (missions, sessions, templates, pipelines)</td></tr><tr><td><strong>who/</strong></td><td>Organization layer — WHO is involved (people, teams, coordination, governance)</td></tr><tr><td><strong>Governance file</strong></td><td>A root-level ALLCAPS markdown file that governs the aDNA instance: CLAUDE.md, MANIFEST.md, STATE.md, AGENTS.md, README.md</td></tr><tr><td><strong>Bare triad</strong></td><td>Deployment form where <code>what/</code>, <code>how/</code>, <code>who/</code> sit directly at project root. Used for knowledge bases and standalone agent workspaces</td></tr><tr><td><strong>Embedded triad</strong></td><td>Deployment form where the triad is wrapped inside <code>.agentic/</code> (i.e., <code>.agentic/what/</code>, <code>.agentic/how/</code>, <code>.agentic/who/</code>). Used for git repositories</td></tr><tr><td><strong>Deployment form</strong></td><td>How the triad is physically instantiated — bare or embedded</td></tr><tr><td><strong>Session</strong></td><td>A bounded unit of agent work with a defined lifecycle: creation, execution, and close-out</td></tr><tr><td><strong>SITREP</strong></td><td>Structured status report at session close: Completed, In Progress, Next Up, Blockers, Files Touched</td></tr><tr><td><strong>Content-as-code</strong></td><td>A pipeline paradigm where a file’s directory location represents its processing state</td></tr><tr><td><strong>AGENTS.md</strong></td><td>Per-directory agent-facing guide — purpose, key files, patterns, conventions</td></tr><tr><td><strong>README.md</strong></td><td>Per-directory human-facing guide — navigation, context, useful links</td></tr><tr><td><strong>Conformance level</strong></td><td>A graduated tier (Starter, Standard, Full) defining the minimum requirements an aDNA instance MUST meet to claim conformance at that level</td></tr><tr><td><strong>Conformant instance</strong></td><td>A directory tree that satisfies all MUST requirements for at least the Starter conformance level defined in §5.5</td></tr></tbody></table>
+<hr/>
+<h2 id="3-triad-architecture">3. Triad Architecture</h2>
+<blockquote>
+<p><strong>Scan</strong>: The <code>who/what/how</code> ontology, bare vs. embedded deployment forms, classification question test.</p>
+</blockquote>
+<p><em>Decisions: C1, C8</em></p>
+<h3 id="31-the-whathowwho-ontology">3.1 The what/how/who Ontology</h3>
+<p>Every aDNA instance organizes knowledge into three categories:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Layer</th><th>Question</th><th>Contains</th></tr></thead><tbody><tr><td><strong>what/</strong></td><td>WHAT does this project know?</td><td>Knowledge objects, context library, decisions, reference material, domain entities</td></tr><tr><td><strong>how/</strong></td><td>HOW does this project work?</td><td>Missions, sessions, templates, pipelines, tasks, skills, processes</td></tr><tr><td><strong>who/</strong></td><td>WHO is involved?</td><td>People, teams, coordination notes, governance policies, communications</td></tr></tbody></table>
+<p>The triad is the universal ontology. Any piece of project knowledge belongs in exactly one of the three legs. When classifying content, apply the question test: “Is this about WHAT we know, HOW we work, or WHO is involved?”</p>
+<p><strong>Classification examples</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Content</th><th>Question</th><th>Triad Leg</th></tr></thead><tbody><tr><td>”How does ancient DNA extraction work?”</td><td>WHAT do we know?</td><td><code>what/context/</code></td></tr><tr><td>”Mission plan for Q2 deployment”</td><td>HOW do we work?</td><td><code>how/missions/</code></td></tr><tr><td>”Contact info for the partnership lead”</td><td>WHO is involved?</td><td><code>who/contacts/</code></td></tr></tbody></table>
+<p>The triad is deliberately minimal. Three categories are sufficient because they map to the three dimensions of any project: its knowledge, its operations, and its people. Additional categories create sorting ambiguity.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart TB</span></span>
+<span class="line"><span style="color:#E1E4E8">    Root[&quot;aDNA Instance&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    Root --&gt; W[&quot;what/&lt;br/&gt;Knowledge&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    Root --&gt; H[&quot;how/&lt;br/&gt;Operations&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    Root --&gt; O[&quot;who/&lt;br/&gt;Organization&quot;]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    W --&gt; ctx[&quot;context/&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    W --&gt; dec[&quot;decisions/&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    W --&gt; dom[&quot;domain entities&quot;]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    H --&gt; mis[&quot;missions/&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    H --&gt; ses[&quot;sessions/&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    H --&gt; tpl[&quot;templates/&quot;]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    O --&gt; coord[&quot;coordination/&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    O --&gt; gov[&quot;governance/&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    O --&gt; ppl[&quot;people &amp; teams&quot;]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    style W fill:#0d9488,color:#fff</span></span>
+<span class="line"><span style="color:#E1E4E8">    style H fill:#22c55e,color:#fff</span></span>
+<span class="line"><span style="color:#E1E4E8">    style O fill:#8b5cf6,color:#fff</span></span></code></pre>
+<h3 id="32-bare-triad">3.2 Bare Triad</h3>
+<p>In a bare triad deployment, <code>what/</code>, <code>how/</code>, and <code>who/</code> sit as top-level directories at the project root. Governance files sit alongside them at root level.</p>
+<p><strong>When to use</strong>: Knowledge bases, standalone agent workspaces, and any project where aDNA IS the primary content.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>{project_root}/</span></span>
+<span class="line"><span>├── CLAUDE.md</span></span>
+<span class="line"><span>├── MANIFEST.md</span></span>
+<span class="line"><span>├── STATE.md</span></span>
+<span class="line"><span>├── AGENTS.md</span></span>
+<span class="line"><span>├── README.md</span></span>
+<span class="line"><span>├── what/</span></span>
+<span class="line"><span>├── how/</span></span>
+<span class="line"><span>├── who/</span></span>
+<span class="line"><span>└── {project_content}/</span></span></code></pre>
+<h3 id="33-embedded-triad">3.3 Embedded Triad</h3>
+<p>In an embedded triad deployment, the triad is wrapped inside <code>.agentic/</code> at the repository root. Governance files remain at the repository root (not inside <code>.agentic/</code>).</p>
+<p><strong>When to use</strong>: Any git-tracked codebase adding agent support. The <code>.agentic/</code> prefix follows the convention of dot-prefixed directories for meta/config in git repositories (like <code>.github/</code>, <code>.vscode/</code>).</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>{repo_root}/</span></span>
+<span class="line"><span>├── CLAUDE.md</span></span>
+<span class="line"><span>├── MANIFEST.md</span></span>
+<span class="line"><span>├── STATE.md</span></span>
+<span class="line"><span>├── AGENTS.md</span></span>
+<span class="line"><span>├── README.md</span></span>
+<span class="line"><span>├── .agentic/</span></span>
+<span class="line"><span>│   ├── AGENTS.md</span></span>
+<span class="line"><span>│   ├── what/</span></span>
+<span class="line"><span>│   ├── how/</span></span>
+<span class="line"><span>│   └── who/</span></span>
+<span class="line"><span>└── {codebase}/</span></span></code></pre>
+<h3 id="34-deployment-form-selection">3.4 Deployment Form Selection</h3>
+<p>Both deployment forms are first-class. The triad ontology is identical in both — only the physical nesting differs. CLAUDE.md in each environment bridges any path differences.</p>
+<p>An aDNA instance MUST use exactly one deployment form. A project MUST NOT mix bare and embedded triads.</p>
+<h3 id="35-directory-convention">3.5 Directory Convention</h3>
+<p>An aDNA project directory SHOULD use the <code>.aDNA</code> suffix to indicate it follows the Agentic DNA knowledge architecture standard. This suffix serves as a visual type marker, analogous to <code>.app</code> bundles in macOS or <code>.git</code> directories in version control.</p>
+<p><strong>Naming rules:</strong></p>
+<ul>
+<li>The base template (the <code>aDNA</code> repository, embedded in a workspace at <code>.adna/</code>) MUST NOT use the <code>.aDNA</code> suffix — it is the source, not an instance. <em>(Per ADR-006 repo rename <code>Agentic-DNA</code>→<code>aDNA</code> + ADR-008 airlock embedding at <code>.adna/</code>.)</em></li>
+<li>Forked projects SHOULD use the pattern <code>ProjectName.aDNA/</code> (e.g., <code>zeta.aDNA/</code>, <code>my_research.aDNA/</code>).</li>
+<li>The project name portion MUST match <code>[a-z][a-z0-9_]{0,63}</code> — lowercase letters, digits, and underscores only, starting with a letter, maximum 64 characters.</li>
+<li>The suffix <code>.aDNA</code> uses mixed case (capital D, N, A) matching the abbreviation branding.</li>
+<li>Nesting <code>.aDNA</code> directories inside other <code>.aDNA</code> directories is NOT RECOMMENDED.</li>
+<li>Existing projects MAY adopt the convention by renaming their directory. This is optional.</li>
+</ul>
+<p><strong>Discovery:</strong></p>
+<p>Tools SHOULD discover aDNA projects via <code>*.aDNA</code> glob patterns:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># List aDNA projects in workspace</span></span>
+<span class="line"><span style="color:#B392F0">ls</span><span style="color:#79B8FF"> -d</span><span style="color:#79B8FF"> *</span><span style="color:#9ECBFF">.aDNA</span><span style="color:#F97583"> 2&gt;</span><span style="color:#9ECBFF">/dev/null</span></span>
+<span class="line"><span style="color:#B392F0">find</span><span style="color:#9ECBFF"> .</span><span style="color:#79B8FF"> -maxdepth</span><span style="color:#79B8FF"> 1</span><span style="color:#79B8FF"> -name</span><span style="color:#9ECBFF"> &quot;*.aDNA&quot;</span><span style="color:#79B8FF"> -type</span><span style="color:#9ECBFF"> d</span></span></code></pre>
+<p><strong>Workspace convention:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>~/aDNA/</span></span>
+<span class="line"><span>├── .adna/                 # Base template — the aDNA standard tree (hidden; source, not an instance)</span></span>
+<span class="line"><span>├── my_research.aDNA/      # Forked project (aDNA instance)</span></span>
+<span class="line"><span>├── zeta.aDNA/             # Another project</span></span>
+<span class="line"><span>└── CLAUDE.md              # Workspace-level governance</span></span></code></pre>
+<hr/>
+<h2 id="4-governance-files">4. Governance Files</h2>
+<blockquote>
+<p><strong>Scan</strong>: Five ALLCAPS files (CLAUDE, MANIFEST, STATE, AGENTS, README) — purpose, required contents, quickstart sequences, progressive enrichment.</p>
+</blockquote>
+<p><em>Decisions: C2, C3, D1, D2, D6, D19, D25</em></p>
+<p>Every aDNA instance MUST have governance files at the project root. These are the agent’s primary orientation documents.</p>
+<h3 id="41-governance-file-list">4.1 Governance File List</h3>
+<p>The following ALLCAPS files constitute the governance layer:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>File</th><th>Required</th><th>Purpose</th><th>Update Cadence</th></tr></thead><tbody><tr><td><strong>CLAUDE.md</strong></td><td>MUST</td><td>Agent root context — persona, project map, safety rules, startup protocol</td><td>When structure or protocols change</td></tr><tr><td><strong>MANIFEST.md</strong></td><td>MUST</td><td>Static project overview — what the project is, architecture, entry points</td><td>When project scope or architecture changes</td></tr><tr><td><strong>STATE.md</strong></td><td>SHOULD</td><td>Dynamic operational state — current phase, blockers, recent decisions, next steps</td><td>Every session close-out</td></tr><tr><td><strong>AGENTS.md</strong></td><td>MUST</td><td>Root-level agent guide — directory purpose, key files, patterns</td><td>When directory structure changes</td></tr><tr><td><strong>README.md</strong></td><td>MUST</td><td>Root-level human guide — navigation, setup, how to browse</td><td>When onboarding experience changes</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart LR</span></span>
+<span class="line"><span style="color:#E1E4E8">    CLAUDE[&quot;CLAUDE.md&lt;br/&gt;Agent root context&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    MANIFEST[&quot;MANIFEST.md&lt;br/&gt;Project overview&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    STATE[&quot;STATE.md&lt;br/&gt;Current state&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    AGENTS[&quot;AGENTS.md&lt;br/&gt;Directory guide&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    README[&quot;README.md&lt;br/&gt;Human guide&quot;]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    CLAUDE --&gt;|&quot;structure + rules&quot;| STATE</span></span>
+<span class="line"><span style="color:#E1E4E8">    CLAUDE --&gt;|&quot;references&quot;| MANIFEST</span></span>
+<span class="line"><span style="color:#E1E4E8">    STATE --&gt;|&quot;updated each session&quot;| CLAUDE</span></span>
+<span class="line"><span style="color:#E1E4E8">    AGENTS -.-&gt;|&quot;per-directory&quot;| CLAUDE</span></span>
+<span class="line"><span style="color:#E1E4E8">    README -.-&gt;|&quot;per-directory&quot;| CLAUDE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    style CLAUDE fill:#ef4444,color:#fff</span></span>
+<span class="line"><span style="color:#E1E4E8">    style STATE fill:#eab308,color:#000</span></span>
+<span class="line"><span style="color:#E1E4E8">    style MANIFEST fill:#3b82f6,color:#fff</span></span></code></pre>
+<h3 id="42-claudemd--agent-root-context">4.2 CLAUDE.md — Agent Root Context</h3>
+<p>CLAUDE.md is the primary agent orientation document. It MUST exist at the project root in both deployment forms. It is auto-loaded by Claude Code and serves as the agent’s first read on every session.</p>
+<p><strong>Required sections</strong>:</p>
+<ol>
+<li>
+<p><strong>Identity</strong>: Project name, agent persona (if defined — see Appendix A), mission statement. The agent MUST know what project it is operating in and what role it plays.</p>
+</li>
+<li>
+<p><strong>Project Map</strong>: Directory structure diagram, key files table. The agent MUST be able to navigate the project from this section alone.</p>
+</li>
+<li>
+<p><strong>Safety Rules</strong>: Collision prevention tier (see §13), escalation protocol, data integrity rules. The agent MUST know what it can and cannot do.</p>
+</li>
+<li>
+<p><strong>Agent Protocol</strong>: Startup checklist, session tracking rules, closure requirements. The agent MUST know how to begin and end work.</p>
+</li>
+<li>
+<p><strong>Quickstart</strong>: A concise startup sequence for cold-start orientation. MUST enable a fresh agent to begin useful work within one session. Include both agent and human quickstarts:</p>
+<p><strong>Agent Quickstart</strong> (5 steps):</p>
+<ol>
+<li>Read CLAUDE.md — understand project structure, safety rules, persona</li>
+<li>Read STATE.md — understand current phase, blockers, recent decisions</li>
+<li>Check <code>how/sessions/active/</code> — identify any conflicting sessions</li>
+<li>Check <code>who/coordination/</code> — read urgent cross-agent notes</li>
+<li>Create session file in <code>how/sessions/active/</code> and begin work</li>
+</ol>
+<p><strong>Human Quickstart</strong> (4 steps):</p>
+<ol>
+<li>Read README.md — understand what this project is and how to navigate</li>
+<li>Read MANIFEST.md — understand architecture and entry points</li>
+<li>Browse the triad (<code>what/</code>, <code>how/</code>, <code>who/</code>) — explore the knowledge structure</li>
+<li>Open STATE.md — see current operational status and next steps</li>
+</ol>
+</li>
+</ol>
+<p><strong>Optional sections</strong> (add when relevant):</p>
+<ul>
+<li>Domain Knowledge — project-specific context the agent needs</li>
+<li>Working with Content — naming, metadata, linking conventions</li>
+<li>Machine Setup — multi-machine path patterns and tool requirements</li>
+<li>Environment-Specific Rules — sync, IDE, CI/CD integration</li>
+</ul>
+<p><strong>Versioning</strong>: CLAUDE.md SHOULD include a version comment in its header: <code>&lt;!-- vX.Y | YYYY-MM-DD --&gt;</code>. Major version for structural changes, minor for significant updates. Session history serves as the detailed changelog.</p>
+<p><strong>Persona framework</strong>: When a persona is defined, it MUST include: identity (name, role metaphor, mission), operating style (3-5 behavioral principles), and communication norms (tone, greeting/close patterns). See Appendix A for the full framework and reference implementation.</p>
+<h3 id="43-manifestmd--project-overview">4.3 MANIFEST.md — Project Overview</h3>
+<p>MANIFEST.md describes what the project IS. It changes infrequently — only when project scope, architecture, or major workstreams change.</p>
+<p><strong>Contents</strong>:</p>
+<ul>
+<li>Project identity and purpose</li>
+<li>Architecture overview</li>
+<li>Key entry points and navigation</li>
+<li>Active missions / major workstreams (stable references, not dynamic status)</li>
+</ul>
+<h3 id="44-statemd--dynamic-operational-state">4.4 STATE.md — Dynamic Operational State</h3>
+<p>STATE.md captures where the project IS RIGHT NOW. It SHOULD be updated on every session close-out. It MUST be updated when phase, blockers, or priorities change.</p>
+<p><strong>Contents</strong>:</p>
+<ul>
+<li>Current phase / milestone</li>
+<li>Recent decisions (last 3-5)</li>
+<li>Active blockers</li>
+<li>What’s working well</li>
+<li>Next steps / recommended priorities</li>
+</ul>
+<p>STATE.md enables fast cold-start orientation: a fresh agent reads CLAUDE.md (structure and rules) then STATE.md (current situation) and is ready to work.</p>
+<h3 id="45-agentsmd--per-directory-agent-guide">4.5 AGENTS.md — Per-Directory Agent Guide</h3>
+<p>Every aDNA instance MUST have a root-level AGENTS.md (listed in §4.1). Beyond root, every directory where agents operate SHOULD have an AGENTS.md file. AGENTS.md is agent-facing: optimized for machine consumption with structured, scannable content.</p>
+<p><strong>Lightweight core</strong> (every AGENTS.md):</p>
+<ul>
+<li>Purpose — what this directory contains and why</li>
+<li>Key files — important files with brief descriptions</li>
+<li>Patterns — naming, structure, or workflow conventions specific to this directory</li>
+</ul>
+<p><strong>Enrichment layers</strong> (add as the directory matures):</p>
+<ul>
+<li>Quick reference table</li>
+<li>Modification guide — how to add or change content</li>
+<li>Dependencies — what this directory relies on</li>
+<li>Testing / validation notes</li>
+<li>Current state / recent changes</li>
+<li>Troubleshooting</li>
+</ul>
+<p>AGENTS.md files grow through progressive enrichment: start lightweight, add detail when agents or humans repeatedly need information that is not yet documented.</p>
+<h3 id="46-readmemd--per-directory-human-guide">4.6 README.md — Per-Directory Human Guide</h3>
+<p>README.md is human-facing: optimized for browsing in GitHub, an IDE, or a knowledge-base tool. It complements AGENTS.md by providing navigation context for humans.</p>
+<p>Every aDNA instance MUST have a root README.md. Subdirectory README.md files are OPTIONAL — create them when human navigation would benefit.</p>
+<hr/>
+<h2 id="5-directory-structure">5. Directory Structure</h2>
+<blockquote>
+<p><strong>Scan</strong>: Required/recommended/optional subdirectories for each triad leg, registry pattern, ontology artifact, starter/standard/full skeletons.</p>
+</blockquote>
+<p><em>Decisions: C5, C6, C7, C11, C12, C14, C15</em></p>
+<h3 id="51-what--knowledge-layer">5.1 what/ — Knowledge Layer</h3>
+<p>what/ contains everything the project KNOWS.</p>
+<p><strong>Required subdirectories</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Directory</th><th>Purpose</th></tr></thead><tbody><tr><td><code>context/</code></td><td>Agent context library — synthesized knowledge agents load before domain work</td></tr></tbody></table>
+<p><strong>Recommended subdirectories</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Directory</th><th>Purpose</th></tr></thead><tbody><tr><td><code>decisions/</code></td><td>Architecture Decision Records (ADRs) — significant decisions and their rationale</td></tr></tbody></table>
+<p><strong>Optional subdirectories</strong> (add based on project domain):</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Directory</th><th>Purpose</th></tr></thead><tbody><tr><td><code>reference/</code></td><td>Bounded exception for code-adjacent reference material (see §19.5)</td></tr><tr><td><code>inventory/</code></td><td>Installed/configured state — vaults, system, memberships. Base WHAT type since v2.3 (ADR-035); markdown + paired <code>.yaml</code> companion.</td></tr><tr><td><code>{domain}/</code></td><td>Project-specific knowledge: <code>models/</code>, <code>hardware/</code>, <code>datasets/</code>, <code>specs/</code>, etc.</td></tr></tbody></table>
+<p><strong>Registry pattern</strong>: what/ serves as a registry layer. Entries in what/ subfolders describe and link to objects — they do not duplicate source material. Example registry entry:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># what/models/model_llama_3.md</span></span>
+<span class="line"><span style="color:#B392F0">---</span></span>
+<span class="line"><span style="color:#85E89D">type</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">model</span></span>
+<span class="line"><span style="color:#85E89D">status</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">active</span></span>
+<span class="line"><span style="color:#85E89D">source</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;src/models/llama3/&quot;</span><span style="color:#6A737D">    # link to implementation</span></span>
+<span class="line"><span style="color:#85E89D">tags</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">model</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">llm</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">inference</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#B392F0">---</span></span>
+<span class="line"><span style="color:#9ECBFF">Brief description, capabilities, constraints. Links to source — does not duplicate code.</span></span></code></pre>
+<p><strong>Ontology artifact</strong>: An aDNA instance SHOULD include <code>what/ontology.md</code> with a Mermaid ER diagram mapping entity types, triad categories, and relationships. Minimal skeleton:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">erDiagram</span></span>
+<span class="line"><span style="color:#E1E4E8">    what ||--o{ context : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    what ||--o{ decisions : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    what ||--o{ inventory : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    what ||--o{ domain_entities : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    how ||--o{ missions : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    how ||--o{ sessions : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    how ||--o{ templates : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    how ||--o{ pipelines : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    how ||--o{ skills : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    how ||--o{ backlog : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    who ||--o{ coordination : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    who ||--o{ governance : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    who ||--o{ identity : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    who ||--o{ people : contains</span></span>
+<span class="line"><span style="color:#E1E4E8">    missions ||--o{ sessions : &quot;tracked by&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">    sessions ||--o{ coordination : &quot;may produce&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">    pipelines ||--o{ stages : &quot;flow through&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">    campaigns ||--o{ missions : &quot;decompose into&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">    missions ||--o{ objectives : &quot;decompose into&quot;</span></span></code></pre>
+<p>Projects extend this skeleton with domain-specific entities (e.g., <code>customers</code>, <code>models</code>, <code>hardware</code>). Knowledge-base environments MAY additionally maintain <code>what/ontology.canvas</code> for interactive exploration.</p>
+<h3 id="52-who--organization-layer">5.2 who/ — Organization Layer</h3>
+<p>who/ contains everything about WHO is involved and WHY.</p>
+<p><strong>Required subdirectories</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Directory</th><th>Purpose</th></tr></thead><tbody><tr><td><code>coordination/</code></td><td>Cross-agent notes — handoffs, urgency signals, ephemeral coordination</td></tr><tr><td><code>governance/</code></td><td>Team roles, decision authority, policies, escalation paths</td></tr></tbody></table>
+<p><strong>Optional subdirectories</strong> (add based on organizational needs):</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Directory</th><th>Purpose</th></tr></thead><tbody><tr><td><code>identity/</code></td><td>Stable identity records validated against external reality — node / network / deployment (hostname, operator, persistent UUID, peer-id). Base WHO type since v2.3 (ADR-035); markdown + paired <code>.yaml</code> companion.</td></tr><tr><td><code>{domain}/</code></td><td>Project-specific organization: <code>customers/</code>, <code>partners/</code>, <code>contacts/</code>, <code>communications/</code>, <code>roadmap/</code></td></tr></tbody></table>
+<h3 id="53-how--operations-layer">5.3 how/ — Operations Layer</h3>
+<p>how/ contains everything about HOW the project works.</p>
+<p><strong>Required subdirectories</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Directory</th><th>Purpose</th></tr></thead><tbody><tr><td><code>missions/</code></td><td>Missions — objective decomposition, dependencies, claiming protocol</td></tr><tr><td><code>sessions/</code></td><td>Session tracking — execution records with SITREP close-outs</td></tr><tr><td><code>templates/</code></td><td>Reusable templates for all aDNA file types</td></tr></tbody></table>
+<p><strong>Recommended subdirectories</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Directory</th><th>Purpose</th></tr></thead><tbody><tr><td><code>backlog/</code></td><td>Ideation and improvement tracking (see §19.2)</td></tr></tbody></table>
+<p><strong>Optional subdirectories</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Directory</th><th>Purpose</th></tr></thead><tbody><tr><td><code>pipelines/</code></td><td>Content-as-code workflows (see §14)</td></tr><tr><td><code>tasks/</code></td><td>Granular task tracking</td></tr><tr><td><code>skills/</code></td><td>Reusable agent procedures (see §19.3)</td></tr><tr><td><code>processes/</code></td><td>Human-readable workflow documentation</td></tr><tr><td><code>deliverables/</code></td><td>Output artifacts</td></tr><tr><td><code>federation/</code></td><td>Consumer federation wrappers — one <code>&lt;wrapper&gt;/</code> per federated software-element/service graph (v2.5, ADR-045)</td></tr></tbody></table>
+<h3 id="54-universal-skeleton">5.4 Universal Skeleton</h3>
+<p>The minimum viable aDNA instance. Graduated by project complexity:</p>
+<p><strong>Starter Skeleton</strong> (minimum for any aDNA project):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>{root}/</span></span>
+<span class="line"><span>├── CLAUDE.md</span></span>
+<span class="line"><span>├── MANIFEST.md</span></span>
+<span class="line"><span>├── README.md</span></span>
+<span class="line"><span>├── what/</span></span>
+<span class="line"><span>│   └── context/</span></span>
+<span class="line"><span>├── how/</span></span>
+<span class="line"><span>│   ├── missions/</span></span>
+<span class="line"><span>│   ├── sessions/</span></span>
+<span class="line"><span>│   └── templates/</span></span>
+<span class="line"><span>└── who/</span></span>
+<span class="line"><span>    ├── coordination/</span></span>
+<span class="line"><span>    └── governance/</span></span></code></pre>
+<p><strong>Standard Skeleton</strong> (active multi-agent projects — adds STATE.md, AGENTS.md, backlog):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>{root}/</span></span>
+<span class="line"><span>├── CLAUDE.md</span></span>
+<span class="line"><span>├── MANIFEST.md</span></span>
+<span class="line"><span>├── STATE.md</span></span>
+<span class="line"><span>├── AGENTS.md</span></span>
+<span class="line"><span>├── README.md</span></span>
+<span class="line"><span>├── what/</span></span>
+<span class="line"><span>│   ├── AGENTS.md</span></span>
+<span class="line"><span>│   ├── context/</span></span>
+<span class="line"><span>│   │   └── AGENTS.md</span></span>
+<span class="line"><span>│   └── decisions/</span></span>
+<span class="line"><span>├── how/</span></span>
+<span class="line"><span>│   ├── AGENTS.md</span></span>
+<span class="line"><span>│   ├── missions/</span></span>
+<span class="line"><span>│   ├── sessions/</span></span>
+<span class="line"><span>│   │   ├── active/</span></span>
+<span class="line"><span>│   │   └── history/</span></span>
+<span class="line"><span>│   ├── templates/</span></span>
+<span class="line"><span>│   └── backlog/</span></span>
+<span class="line"><span>└── who/</span></span>
+<span class="line"><span>    ├── AGENTS.md</span></span>
+<span class="line"><span>    ├── coordination/</span></span>
+<span class="line"><span>    └── governance/</span></span></code></pre>
+<p><strong>Full Skeleton</strong> (large projects — adds domain-specific directories):</p>
+<p>Extends the Standard Skeleton with project-specific subdirectories in each triad leg. Examples: <code>what/models/</code>, <code>what/hardware/</code>, <code>who/customers/</code>, <code>how/pipelines/</code>, <code>how/skills/</code>.</p>
+<p>For embedded triad deployments, the same skeletons apply inside <code>.agentic/</code>, with governance files remaining at the repository root.</p>
+<h3 id="55-conformance-levels">5.5 Conformance Levels</h3>
+<p>The skeletons defined in §5.4 establish three normative <strong>conformance levels</strong>. A project claiming aDNA conformance MUST satisfy all MUST requirements at its declared level.</p>
+<h4 id="level-1-starter-conformance">Level 1: Starter Conformance</h4>
+<p>An aDNA instance at Starter conformance MUST have:</p>
+<ol>
+<li><strong>Governance files</strong>: <code>CLAUDE.md</code>, <code>MANIFEST.md</code>, <code>README.md</code> at the root (bare) or repository root (embedded)</li>
+<li><strong>Triad directories</strong>: <code>what/</code>, <code>how/</code>, <code>who/</code> (bare) or <code>.agentic/what/</code>, <code>.agentic/how/</code>, <code>.agentic/who/</code> (embedded)</li>
+<li><strong>Required subdirectories</strong>: <code>what/context/</code>, <code>how/missions/</code>, <code>how/sessions/</code>, <code>how/templates/</code>, <code>who/coordination/</code>, <code>who/governance/</code></li>
+<li><strong>Frontmatter</strong>: All content files inside the triad MUST include the base fields defined in §7.2, per its per-class profile (<code>type</code>, <code>status</code>, <code>created</code>, <code>updated</code>, <code>last_edited_by</code>, <code>tags</code>; <code>status</code> optional for <code>directory_index</code> + <code>coordination</code> — v2.5, ADR-044)</li>
+</ol>
+<p>Starter conformance represents the minimum viable aDNA instance — sufficient for a single-agent project with basic session tracking.</p>
+<p><strong>Conformance-walk scope</strong> (v2.5, ADR-044): a conformance run validates the instance rooted at the directory being checked; it does NOT recurse into embedded standalone instances (in the reference vault: <code>what/docs/examples/</code> and <code>how/templates/template_node_adna_exemplar/</code>). Each embedded instance is validated standalone if desired.</p>
+<h4 id="level-2-standard-conformance">Level 2: Standard Conformance</h4>
+<p>An aDNA instance at Standard conformance MUST satisfy all Starter requirements AND:</p>
+<ol start="5">
+<li><strong>Additional governance files</strong>: <code>STATE.md</code> and a root <code>AGENTS.md</code></li>
+<li><strong>Per-directory AGENTS.md</strong>: Every triad leg (<code>what/</code>, <code>how/</code>, <code>who/</code>) MUST have an <code>AGENTS.md</code> file</li>
+<li><strong>Recommended directories</strong>: <code>what/decisions/</code>, <code>how/backlog/</code>, <code>how/sessions/active/</code>, <code>how/sessions/history/</code></li>
+<li><strong>Session lifecycle</strong>: Sessions MUST follow the lifecycle defined in §8 (creation → execution → close-out with SITREP)</li>
+</ol>
+<p>Standard conformance represents an active multi-agent project with operational discipline.</p>
+<h4 id="level-3-full-conformance">Level 3: Full Conformance</h4>
+<p>An aDNA instance at Full conformance MUST satisfy all Standard requirements AND:</p>
+<ol start="9">
+<li><strong>Context library</strong>: <code>what/context/</code> MUST contain at least one topic directory with its own <code>AGENTS.md</code> and at least one context file with <code>token_estimate</code> in frontmatter</li>
+<li><strong>FAIR metadata</strong>: Deployable objects (modules, datasets, lattices) MUST include a <code>fair:</code> frontmatter block with at minimum <code>keywords</code> and <code>license</code></li>
+<li><strong>Ontology artifact</strong>: <code>what/ontology.md</code> MUST exist with a Mermaid ER diagram (per §5.1)</li>
+<li><strong>Template compliance</strong>: All content types used in the project MUST have corresponding templates in <code>how/templates/</code></li>
+</ol>
+<p>Full conformance represents a mature, federatable aDNA instance ready for cross-instance interoperation.</p>
+<h4 id="conformance-declaration">Conformance Declaration</h4>
+<p>Projects MAY declare their conformance level in <code>MANIFEST.md</code> using the <code>adna_conformance</code> frontmatter field:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">adna_conformance</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">starter</span><span style="color:#6A737D">  # or: standard, full</span></span></code></pre>
+<p>An instance that does not declare a conformance level is assumed to be unverified. The <code>adna_validate.py</code> tool (see <code>what/lattices/tools/</code>) can determine conformance level programmatically.</p>
+<hr/>
+<h2 id="6-naming-conventions">6. Naming Conventions</h2>
+<blockquote>
+<p><strong>Scan</strong>: Underscores not hyphens, <code>type_descriptive_name.md</code> pattern, ALLCAPS governance list, directory naming, <code>type_</code> prefix convention.</p>
+</blockquote>
+<p><em>Decisions: C3</em></p>
+<h3 id="61-file-naming">6.1 File Naming</h3>
+<p>Content files MUST use <strong>underscores</strong> for word separation. Hyphens MUST NOT be used in aDNA content files.</p>
+<p><strong>Pattern</strong>: <code>type_descriptive_name.md</code></p>
+<p>Examples:</p>
+<ul>
+<li><code>mission_adna_standard.md</code></li>
+<li><code>session_{username}_20260211_120000_gap_analysis.md</code></li>
+<li><code>customer_acme_corp.md</code></li>
+<li><code>context_research_ancient_dna.md</code></li>
+</ul>
+<p><strong>Exception</strong>: Code-adjacent files in the project content layer (not inside the triad) MAY use hyphens to respect ecosystem conventions (npm, pip, etc.).</p>
+<p><strong>Exception</strong>: Tool-generated files (e.g., <code>how/tasks/</code> with plugin-generated names) MAY retain their generated naming format.</p>
+<h3 id="62-governance-file-naming">6.2 Governance File Naming</h3>
+<p>Governance files MUST use ALLCAPS names. The exhaustive list:</p>
+<ul>
+<li><code>CLAUDE.md</code></li>
+<li><code>MANIFEST.md</code></li>
+<li><code>STATE.md</code></li>
+<li><code>AGENTS.md</code></li>
+<li><code>README.md</code></li>
+</ul>
+<p>No other files SHOULD use ALLCAPS naming. This list MUST NOT be extended without a standard revision.</p>
+<h3 id="63-directory-naming">6.3 Directory Naming</h3>
+<p>Directories MUST use lowercase with underscores: <code>context_library/</code>, <code>missions/</code>.</p>
+<p><strong>Exception</strong>: <code>.agentic/</code> uses a dot prefix (embedded triad convention).</p>
+<h3 id="64-type-prefix-convention">6.4 Type Prefix Convention</h3>
+<p>The <code>type_</code> prefix pattern is RECOMMENDED for aDNA content files. It enables sorting, filtering, and at-a-glance identification. Common prefixes:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Prefix</th><th>Content</th></tr></thead><tbody><tr><td><code>mission_</code></td><td>Missions (legacy: <code>plan_</code>)</td></tr><tr><td><code>session_</code></td><td>Session files</td></tr><tr><td><code>template_</code></td><td>Templates</td></tr><tr><td><code>customer_</code></td><td>Customer records</td></tr><tr><td><code>context_</code></td><td>Context library files</td></tr><tr><td><code>idea_</code></td><td>Backlog ideas</td></tr><tr><td><code>skill_</code></td><td>Skill procedures</td></tr></tbody></table>
+<h3 id="65-rename-protocol">6.5 Rename Protocol</h3>
+<p>When a vault, project, or persona is <strong>renamed</strong>, the rename MUST, at rename-time, sweep the vault’s own <strong>live-routing governance files</strong> (<code>CLAUDE.md</code>, <code>STATE.md</code>, <code>AGENTS.md</code>) of self-references to the <strong>old</strong> name. A vault whose routing files still point at its prior identity is out-by-event (OBE) residue — masked when a back-compat shim keeps the stale references resolving, which is exactly why the sweep is mandatory rather than incidental.</p>
+<p><strong>Scope discipline</strong> (the load-bearing rule): the sweep targets the <strong>live-routing self-reference subset ONLY</strong> — a file’s own governance/routing prose that names the vault. It MUST NOT rewrite legitimate <strong>historical</strong> cross-references: provenance prose, session history, ADR lineage, and changelog entries are retained verbatim (archive-don’t-delete, §15). A naive whole-vault grep over-counts the defect by sweeping this history; the rename recipe carries a <strong>keep/strip classifier</strong> to separate the two.</p>
+<p>Recipe: <code>how/skills/skill_project_rename.md</code>. Decision: ADR-042.</p>
+<hr/>
+<h2 id="7-frontmatter-system">7. Frontmatter System</h2>
+<blockquote>
+<p><strong>Scan</strong>: Required base fields (<code>type</code>, <code>status</code>, <code>created</code>, <code>updated</code>, <code>last_edited_by</code>, <code>tags</code>), tag conventions, priority field, type-specific extensions.</p>
+</blockquote>
+<p><em>Decisions: C4, D18, D20</em></p>
+<h3 id="71-scope">7.1 Scope</h3>
+<p>YAML frontmatter MUST be present on all aDNA content files — files inside the triad (<code>what/</code>, <code>how/</code>, <code>who/</code> or <code>.agentic/what/</code>, etc.) and root governance files.</p>
+<p>Project content files (source code, external documentation) outside the triad are exempt from frontmatter requirements.</p>
+<h3 id="72-required-base-fields">7.2 Required Base Fields</h3>
+<p>Every aDNA content file MUST include these frontmatter fields:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#B392F0">---</span></span>
+<span class="line"><span style="color:#85E89D">type</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&lt;entity_type&gt;</span></span>
+<span class="line"><span style="color:#85E89D">status</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&lt;lifecycle_status&gt;</span></span>
+<span class="line"><span style="color:#85E89D">created</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">YYYY-MM-DD</span></span>
+<span class="line"><span style="color:#85E89D">updated</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">YYYY-MM-DD</span></span>
+<span class="line"><span style="color:#85E89D">last_edited_by</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">agent_&lt;username&gt; | &lt;username&gt;</span></span>
+<span class="line"><span style="color:#85E89D">tags</span><span style="color:#E1E4E8">: []</span></span>
+<span class="line"><span style="color:#B392F0">---</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Purpose</th></tr></thead><tbody><tr><td><code>type</code></td><td>Entity classification (e.g., <code>session</code>, <code>mission</code>, <code>customer</code>, <code>context_research</code>)</td></tr><tr><td><code>status</code></td><td>Lifecycle state (e.g., <code>active</code>, <code>completed</code>, <code>draft</code>, <code>abandoned</code>) — entity-specific values</td></tr><tr><td><code>created</code></td><td>Date of file creation</td></tr><tr><td><code>updated</code></td><td>Date of last modification — critical for collision prevention</td></tr><tr><td><code>last_edited_by</code></td><td>Attribution — who or what last modified this file</td></tr><tr><td><code>tags</code></td><td>Categorization array for filtering and discovery</td></tr></tbody></table>
+<p><strong>Per-class profile</strong> (v2.5, ADR-044): the six base fields are required for content and session entities. <strong><code>status</code> is optional for <code>type: directory_index</code> and <code>type: coordination</code></strong> — an index or correspondence record has no lifecycle state, and their canonical templates omit it. The other five base fields remain required for all classes.</p>
+<h3 id="73-tag-conventions">7.3 Tag Conventions</h3>
+<p>Tags MUST use lowercase with underscores (e.g., <code>mission</code>, <code>context_research</code>).</p>
+<p>Every aDNA content file MUST have at least one tag (the type tag is sufficient).</p>
+<p>No formal tag registry is prescribed. Projects SHOULD document their tag conventions in AGENTS.md files when the tag set exceeds a dozen unique tags.</p>
+<h3 id="74-priority-field">7.4 Priority Field</h3>
+<p>Content items that need prioritization (tasks, backlog ideas, customers) MAY include a <code>priority</code> field using a simple numeric scale: <code>0</code> (highest) through <code>N</code> (lowest).</p>
+<p>Rule/guardrail conflict resolution is a separate concern. Projects that need rule precedence SHOULD define their own mechanism in CLAUDE.md or governance files.</p>
+<h3 id="75-type-specific-fields">7.5 Type-Specific Fields</h3>
+<p>Templates (§12) define additional frontmatter fields per content type. For example, a session template adds <code>session_id</code>, <code>plan_id</code> (legacy field name), <code>tier</code>; a customer template adds <code>segment</code>, <code>deal_stage</code>, <code>contacts</code>.</p>
+<p>Frontmatter is the integration layer between human tools (Dataview queries, IDE search) and agent queries. Consistent frontmatter enables consistent querying across any tool.</p>
+<h3 id="76-frontmatter-extension-policy">7.6 Frontmatter Extension Policy</h3>
+<p>Instance-specific frontmatter fields MAY be added to any entity type. The following rules govern extensions:</p>
+<ol>
+<li><strong>Custom fields</strong> MAY be added freely to any content file’s frontmatter</li>
+<li>Custom fields SHOULD use a project-specific prefix (e.g., <code>bio_target_class</code>, <code>crm_deal_stage</code>) when the field name could conflict with future standard fields</li>
+<li>Standard fields (those defined in §7.2 and per-type templates) MUST NOT be repurposed to carry different semantics</li>
+<li>Migration tools MUST preserve custom fields — standard version upgrades MUST NOT strip unrecognized frontmatter fields</li>
+<li>Projects SHOULD document their custom fields in the relevant <code>AGENTS.md</code> or template files</li>
+</ol>
+<h3 id="77-decision-record-ratification-discipline">7.7 Decision-Record Ratification Discipline</h3>
+<p>Decision records (ADRs, <code>what/decisions/</code>) carry a lifecycle <code>status</code> whose advancement beyond <code>proposed</code> is a <strong>human</strong> act. Effective v2.5 (ADR-046, folding the discipline installed after an agent thread self-marked an ADR <code>accepted</code> without an operator gate):</p>
+<ol>
+<li><strong>Agents author; operators ratify.</strong> An agent MAY fully author an ADR — context, decision, consequences, alternatives, references — and MAY set or keep <code>status: proposed</code> (or <code>draft</code>). An agent MUST NOT set <code>accepted</code>, <code>ratified</code>, or <code>rejected</code>; those transitions require an operator gate.</li>
+<li><strong>Ratification record.</strong> Any ADR moving beyond <code>proposed</code> MUST carry a structured ratification block with all four fields present and non-empty:
+<ul>
+<li><strong>Ratifier</strong> — the named human operator/authority. An agent or persona may be named only as author/steward, never as ratifier.</li>
+<li><strong>Gate / reference</strong> — a verifiable pointer to the discrete ratification event: the gate file and/or its output record, the ratifying session id, and/or the ratifying commit.</li>
+<li><strong>Ratification date</strong> — distinct from the authored/created date.</li>
+<li><strong>Scope of authority</strong> — exactly what the ratification authorizes, plus any pending co-signs that keep seams non-operative.</li>
+</ul>
+</li>
+<li><strong>Retroactivity.</strong> ADRs accepted before v2.5 SHOULD be backfilled with ratification blocks; a pre-v2.5 accepted ADR without one is NOT thereby non-conformant. <em>(This clause is what keeps the v2.5 cut a minor version under §15.4.)</em></li>
+<li><strong>Batch ceremonies.</strong> An N-ADRs-at-once ratification ceremony MAY substitute a single ceremony record for per-ADR gate references, provided each covered ADR’s block points to it.</li>
+<li><strong>Validation.</strong> Conformance tooling SHOULD check structure only — the four fields present and non-empty — never the truth of the gate; truth is the operator’s, at the gate. Recommended rollout: warn first, promote to fail after a backfill pass.</li>
+<li><strong>Exemption.</strong> Lifecycle-neutral back-references (e.g., adding <code>superseded_by</code> once the superseding ADR is itself ratified) are exempt from rule 1.</li>
+</ol>
+<hr/>
+<h2 id="8-session-model">8. Session Model</h2>
+<blockquote>
+<p><strong>Scan</strong>: Bounded units of agent work — lifecycle (create → execute → close → archive), session tiers, SITREP close-out, next-session prompt, the 75% rule.</p>
+</blockquote>
+<p><em>Decisions: D3, D4, D5</em></p>
+<h3 id="81-session-lifecycle">8.1 Session Lifecycle</h3>
+<p>A session is a bounded unit of agent work. Every session follows this lifecycle:</p>
+<ol>
+<li><strong>Create</strong>: Write a session file in <code>how/sessions/active/</code></li>
+<li><strong>Execute</strong>: Perform work, logging activity</li>
+<li><strong>Close</strong>: Write SITREP + next-session prompt</li>
+<li><strong>Archive</strong>: Set <code>status: completed</code>, move to <code>how/sessions/history/YYYY-MM/</code></li>
+</ol>
+<p>A session file MUST be created before an agent modifies any other project files. This is the audit trail.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">stateDiagram-v2</span></span>
+<span class="line"><span style="color:#E1E4E8">    [*] --&gt; Create: Agent starts work</span></span>
+<span class="line"><span style="color:#E1E4E8">    Create --&gt; Active: Session file written</span></span>
+<span class="line"><span style="color:#E1E4E8">    Active --&gt; Active: Work + log activity</span></span>
+<span class="line"><span style="color:#E1E4E8">    Active --&gt; Close: SITREP written</span></span>
+<span class="line"><span style="color:#E1E4E8">    Close --&gt; Archive: Move to history/YYYY-MM/</span></span>
+<span class="line"><span style="color:#E1E4E8">    Archive --&gt; [*]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    state Active {</span></span>
+<span class="line"><span style="color:#E1E4E8">        [*] --&gt; Working</span></span>
+<span class="line"><span style="color:#E1E4E8">        Working --&gt; Working: Modify files&lt;br/&gt;Update frontmatter</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span></code></pre>
+<h3 id="82-session-id-format">8.2 Session ID Format</h3>
+<p>Session IDs MUST use the timestamped format:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>session_{user}_{YYYYMMDD}_{HHMMSS}_{descriptor}</span></span></code></pre>
+<p>Example: <code>session_{username}_20260211_120000_gap_analysis</code></p>
+<p>Timestamped IDs are machine-sortable, collision-free across agents, and self-documenting. The descriptor SHOULD be a brief lowercase-underscore slug describing the session’s purpose.</p>
+<h3 id="83-session-tiers">8.3 Session Tiers</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Tier</th><th>When</th><th>Requirements</th></tr></thead><tbody><tr><td><strong>Tier 1</strong> (default)</td><td>Normal content work</td><td>Session file with intent, activity log, SITREP close-out</td></tr><tr><td><strong>Tier 2</strong></td><td>Shared config edits (governance files, plugin configs)</td><td>Tier 1 requirements + scope declaration + conflict scan + heartbeat</td></tr></tbody></table>
+<p>Tier 1 is a lightweight audit trail. Tier 2 adds coordination safeguards for edits that affect shared infrastructure.</p>
+<p>Sessions MAY include a <strong>Technical Readiness Review (TRR)</strong> quality gate before close-out — a structured check that deliverables meet acceptance criteria. TRR is particularly useful for code-generation sessions or sessions producing artifacts that downstream tasks depend on.</p>
+<h3 id="84-sitrep-close-out">8.4 SITREP Close-Out</h3>
+<p>Every session MUST end with a SITREP:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold">## SITREP</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Completed**</span><span style="color:#E1E4E8">: [what was finished]</span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**In progress**</span><span style="color:#E1E4E8">: [what was started but not finished, with handoff notes]</span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Next up**</span><span style="color:#E1E4E8">: [recommended next actions]</span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Blockers**</span><span style="color:#E1E4E8">: [anything preventing progress]</span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Files touched**</span><span style="color:#E1E4E8">: [created, modified, moved]</span></span></code></pre>
+<h3 id="85-next-session-prompt">8.5 Next-Session Prompt</h3>
+<p>Every session MUST include a next-session prompt after the SITREP:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold">## Next Session Prompt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">[Self-contained paragraph that a fresh agent can read to continue this work.</span></span>
+<span class="line"><span style="color:#E1E4E8">Include: what was accomplished, what remains, key context, recommended approach.]</span></span></code></pre>
+<p>The next-session prompt ensures continuity. A fresh agent reading this prompt and STATE.md SHOULD be able to continue the work without needing to read the full session history.</p>
+<h3 id="86-statemd-update">8.6 STATE.md Update</h3>
+<p>STATE.md SHOULD be updated on every session close. It MUST be updated when the current phase, blockers, or priorities change.</p>
+<h3 id="87-the-75-rule">8.7 The 75% Rule</h3>
+<p>Agents MUST scope each session to use no more than approximately 75% of the context window. The remaining 25% is reserved for thinking, debugging, and course correction.</p>
+<p>If a task requires more than 75% of the context window, the agent MUST split the work across sessions, checkpointing progress in the session close-out.</p>
+<p>No other session sizing prescriptions are universal. Time, task count, and line-count guidelines are project-specific — different work paradigms (code generation, knowledge synthesis, CRM maintenance) have different natural session sizes.</p>
+<hr/>
+<h2 id="9-mission-system">9. Mission System</h2>
+<blockquote>
+<p><strong>Scan</strong>: Multi-session work decomposition — objectives, acceptance criteria, stages, claiming protocol, handoff between agents.</p>
+</blockquote>
+<p><em>Decisions: D12, D16, D17</em></p>
+<h3 id="91-mission-structure">9.1 Mission Structure</h3>
+<p>Missions live in <code>how/missions/</code>. A mission decomposes work that spans multiple sessions into trackable objectives.</p>
+<p><strong>Single-file missions</strong> (small scope):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>how/missions/mission_simple_task.md</span></span></code></pre>
+<p><strong>Subdirectory missions</strong> (large scope with deliverables):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>how/missions/mission_complex_project/</span></span>
+<span class="line"><span>├── mission_complex_project.md    # Master mission</span></span>
+<span class="line"><span>├── deliverable_a.md              # Phase/deliverable files</span></span>
+<span class="line"><span>└── deliverable_b.md</span></span></code></pre>
+<p>The mission file MUST include:</p>
+<ul>
+<li><strong>Objectives</strong>: What the mission achieves</li>
+<li><strong>Acceptance criteria</strong>: How you know it is done</li>
+<li><strong>Constraints</strong>: What limits apply (time, scope, dependencies)</li>
+<li><strong>Objective list</strong>: Individual objectives with dependencies and status</li>
+<li><strong>Status tracking</strong>: Per-objective status (pending, in_progress, completed, blocked)</li>
+</ul>
+<h3 id="92-mission-stages">9.2 Mission Stages</h3>
+<p>Missions MAY define stage-based subdirectories for multi-phase work:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>how/missions/{mission_slug}/</span></span>
+<span class="line"><span>├── mission_{slug}.md</span></span>
+<span class="line"><span>├── 00_research/</span></span>
+<span class="line"><span>├── 01_requirements/</span></span>
+<span class="line"><span>├── 02_design/</span></span>
+<span class="line"><span>└── 03_implementation/</span></span></code></pre>
+<p>Stage names and count are mission-specific. The convention is: numbered prefix for ordering, descriptive name for clarity.</p>
+<h3 id="93-mission-handoff">9.3 Mission Handoff</h3>
+<p>Agents claim mission objectives by session. A session file’s <code>plan_id</code> and <code>task</code> frontmatter fields (legacy names, retained for compatibility) link it to the mission. When an objective spans multiple sessions, each session’s SITREP provides the handoff. Agents MUST NOT claim objectives already in progress by another active session.</p>
+<hr/>
+<h2 id="10-context-library">10. Context Library</h2>
+<blockquote>
+<p><strong>Scan</strong>: <code>what/context/</code> organization — topic structure, context subtypes (research, guide, core), token budget awareness and the 75% rule.</p>
+</blockquote>
+<p><em>Decisions: D8</em></p>
+<h3 id="101-location-and-structure">10.1 Location and Structure</h3>
+<p>The context library lives in <code>what/context/</code>. It is the single location for all agent context — synthesized knowledge that agents load before domain work.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>what/context/</span></span>
+<span class="line"><span>├── AGENTS.md              # Library protocol, topic index, token budgets</span></span>
+<span class="line"><span>├── {topic}/</span></span>
+<span class="line"><span>│   ├── AGENTS.md          # Topic overview, subtopic index</span></span>
+<span class="line"><span>│   ├── subtopic_a.md</span></span>
+<span class="line"><span>│   └── subtopic_b.md</span></span>
+<span class="line"><span>└── {topic}/</span></span>
+<span class="line"><span>    └── ...</span></span></code></pre>
+<h3 id="102-context-subtypes">10.2 Context Subtypes</h3>
+<p>Context files use the <code>type</code> frontmatter field to distinguish content subtypes:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Subtype</th><th>Purpose</th><th>Pattern</th></tr></thead><tbody><tr><td><code>context_research</code></td><td>Synthesized domain knowledge from external sources</td><td>Dense, citational, comprehensive</td></tr><tr><td><code>context_guide</code></td><td>Prescriptive component or tool guides</td><td>Step-by-step, actionable, reference-oriented</td></tr><tr><td><code>context_core</code></td><td>Foundational project definitions (conventions, guardrails, stack)</td><td>Concise, authoritative, rarely changing</td></tr></tbody></table>
+<p>All subtypes coexist in <code>what/context/</code> organized by topic. The subtype informs how agents use the content, not where it lives.</p>
+<h3 id="103-token-budget-awareness">10.3 Token Budget Awareness</h3>
+<p>The context library AGENTS.md SHOULD include token estimates per topic in a scannable format:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#E1E4E8">| Topic | ~Tokens | Subtopics |</span></span>
+<span class="line"><span style="color:#E1E4E8">|-------|---------|-----------|</span></span>
+<span class="line"><span style="color:#E1E4E8">| ancient_dna | ~8,000 | extraction, sequencing, analysis |</span></span>
+<span class="line"><span style="color:#E1E4E8">| compute_infra | ~5,000 | gpu_clusters, edge_devices |</span></span></code></pre>
+<p>Agents MUST read the topic index first and load only the subtopics needed for the current task. Loading the entire context library into a single session is wasteful and violates the 75% rule (§8.7).</p>
+<hr/>
+<h2 id="11-coordination-protocol">11. Coordination Protocol</h2>
+<blockquote>
+<p><strong>Scan</strong>: <code>who/coordination/</code> for cross-agent communication — urgency levels (urgent/info/fyi), ephemeral notes, required contents.</p>
+</blockquote>
+<p><em>Decisions: D9</em></p>
+<h3 id="111-cross-agent-coordination">11.1 Cross-Agent Coordination</h3>
+<p>Cross-agent notes live in <code>who/coordination/</code>. This is the single location for agent-to-agent communication.</p>
+<p>Coordination notes are <strong>ephemeral by design</strong>: created when needed, consumed by the target agent, and archived when resolved.</p>
+<h3 id="112-urgency-levels">11.2 Urgency Levels</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Level</th><th>Meaning</th><th>When to Read</th></tr></thead><tbody><tr><td><code>urgent</code></td><td>Immediate action needed</td><td>Read before any other work</td></tr><tr><td><code>info</code></td><td>Important context</td><td>Read during startup checklist</td></tr><tr><td><code>fyi</code></td><td>Non-blocking background information</td><td>Read when convenient</td></tr></tbody></table>
+<h3 id="113-coordination-note-contents">11.3 Coordination Note Contents</h3>
+<p>A coordination note MUST include:</p>
+<ul>
+<li><strong>Who</strong> created it and who it targets</li>
+<li><strong>What</strong> the coordination concern is</li>
+<li><strong>When</strong> it was created and when it expires</li>
+<li><strong>Action needed</strong> — what the target agent should do</li>
+</ul>
+<p>Agents MUST check <code>who/coordination/</code> during every session startup.</p>
+<hr/>
+<h2 id="12-template-system">12. Template System</h2>
+<blockquote>
+<p><strong>Scan</strong>: Graduated template sets (starter/standard/full), <code>template_{type}.md</code> naming, template index recommendation.</p>
+</blockquote>
+<p><em>Decisions: D11</em></p>
+<h3 id="121-graduated-template-sets">12.1 Graduated Template Sets</h3>
+<p>Templates live in <code>how/templates/</code>. Projects grow their template sets:</p>
+<p><strong>Starter set</strong> (every aDNA instance MUST include):</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Template</th><th>Purpose</th></tr></thead><tbody><tr><td><code>template_session.md</code></td><td>Session file with SITREP and next-session prompt sections</td></tr><tr><td><code>template_mission.md</code></td><td>Mission with objectives, acceptance criteria, objective list</td></tr><tr><td><code>template_context.md</code></td><td>Context library file with topic structure and token estimate</td></tr></tbody></table>
+<p><strong>Standard set</strong> (SHOULD include for active multi-agent projects):</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Template</th><th>Purpose</th></tr></thead><tbody><tr><td><code>template_coordination.md</code></td><td>Cross-agent coordination note</td></tr><tr><td><code>template_backlog.md</code></td><td>Backlog idea with priority, effort, status</td></tr><tr><td><code>template_adr.md</code></td><td>Architecture Decision Record</td></tr></tbody></table>
+<p><strong>Full set</strong> (MAY include per project domain):</p>
+<p>Additional templates for domain-specific content types (customer, partner, model, dataset, etc.).</p>
+<h3 id="122-template-conventions">12.2 Template Conventions</h3>
+<p>Templates MUST follow the naming pattern <code>template_{type}.md</code>.</p>
+<p>Templates MUST include frontmatter with all required base fields (§7.2) plus type-specific fields pre-populated.</p>
+<p>A template index (e.g., <code>template_library.md</code> in <code>how/templates/</code>) is RECOMMENDED for projects with 5 or more templates.</p>
+<hr/>
+<h2 id="13-collision-prevention">13. Collision Prevention</h2>
+<blockquote>
+<p><strong>Scan</strong>: Three tiers — universal (frontmatter attribution, read-before-write), sync (file safety tiers, archive-don’t-rename), multi-agent (coordination notes, scope declarations).</p>
+</blockquote>
+<p><em>Decisions: D7</em></p>
+<h3 id="131-overview">13.1 Overview</h3>
+<p>Collision prevention protects against data loss when multiple agents or humans modify the same files. The system is tiered — projects adopt the tiers they need.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart TB</span></span>
+<span class="line"><span style="color:#E1E4E8">    T1[&quot;Tier 1 — Universal&lt;br/&gt;Every aDNA instance&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    T2[&quot;Tier 2 — Sync Environments&lt;br/&gt;Cloud storage, team sync&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    T3[&quot;Tier 3 — Multi-Agent&lt;br/&gt;Concurrent agents&quot;]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    T1 --&gt; A1[&quot;Frontmatter attribution&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    T1 --&gt; A2[&quot;Read-before-write&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    T1 --&gt; A3[&quot;New-file safety&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    T1 --&gt; A4[&quot;No harness-injected context&quot;]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    T2 --&gt; B1[&quot;File safety tiers&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    T2 --&gt; B2[&quot;Archive-don&#39;t-rename&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    T2 --&gt; B3[&quot;One config at a time&quot;]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    T3 --&gt; C1[&quot;Coordination notes&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    T3 --&gt; C2[&quot;Scope declarations&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    T3 --&gt; C3[&quot;Update-field check&quot;]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    T1 -.-&gt;|extends| T2</span></span>
+<span class="line"><span style="color:#E1E4E8">    T2 -.-&gt;|extends| T3</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    style T1 fill:#22c55e,color:#fff</span></span>
+<span class="line"><span style="color:#E1E4E8">    style T2 fill:#eab308,color:#000</span></span>
+<span class="line"><span style="color:#E1E4E8">    style T3 fill:#ef4444,color:#fff</span></span></code></pre>
+<h3 id="132-tier-1--universal">13.2 Tier 1 — Universal</h3>
+<p>Every aDNA instance MUST implement Tier 1:</p>
+<ol>
+<li><strong>Frontmatter attribution</strong>: Every file modification MUST update <code>last_edited_by</code> and <code>updated</code> in frontmatter.</li>
+<li><strong>Read-before-write</strong>: Agents MUST read current file content immediately before writing. Never rely on cached reads.</li>
+<li><strong>New-file safety</strong>: Creating a new file has no collision risk. New files are always safe.</li>
+<li><strong>No harness-injected context</strong>: Governance files (<code>CLAUDE.md</code>/<code>STATE.md</code>/<code>AGENTS.md</code>) MUST NOT carry committed <strong>harness context boundaries</strong> — the <code># userEmail</code> and <code># currentDate (Today&#39;s date is …)</code> lines an agent harness injects into a running session. They are session context, not governance: once committed they are stale and information-free (the email lives in the credential broker; the date is a frozen snapshot). Strip them before committing; a session that commits a governance file MUST drop any injected tail. (ADR-042.)</li>
+</ol>
+<h3 id="133-tier-2--sync-environments">13.3 Tier 2 — Sync Environments</h3>
+<p>Projects using file sync (cloud storage, team sync tools) SHOULD additionally implement:</p>
+<ol>
+<li><strong>Safety tiers</strong>: Classify files as Safe (content — low collision risk), Shared Config (governance, plugin configs — medium risk), or Volatile (auto-generated files like <code>workspace.json</code> — do not attempt to maintain).</li>
+<li><strong>Archive-don’t-rename</strong>: Move files to <code>archive/</code> instead of renaming. Sync systems handle renames poorly.</li>
+<li><strong>One config at a time</strong>: Edit one shared config file, verify the write, then move to the next.</li>
+</ol>
+<h3 id="134-tier-3--multi-agent">13.4 Tier 3 — Multi-Agent</h3>
+<p>Projects with multiple agents operating simultaneously SHOULD additionally implement:</p>
+<ol>
+<li><strong>Coordination notes</strong>: Use <code>who/coordination/</code> (§11) for strategic cross-agent communication.</li>
+<li><strong>Session scope declarations</strong>: Tier 2 sessions declare which files/directories they will modify.</li>
+<li><strong>Update-field check</strong>: Before modifying a file where <code>updated</code> is today and <code>last_edited_by</code> is not you, confirm with the user before overwriting.</li>
+</ol>
+<hr/>
+<h2 id="14-content-as-code-pipelines">14. Content-as-Code Pipelines</h2>
+<blockquote>
+<p><strong>Scan</strong>: Folder-based workflows where a file’s directory location IS its processing state — pipeline structure, stage AGENTS.md, pipeline index.</p>
+</blockquote>
+<p><em>Decisions: D14</em></p>
+<h3 id="141-paradigm">14.1 Paradigm</h3>
+<p>Content-as-code is a universal paradigm for folder-based workflows: a file’s directory location IS its processing state. Moving a file between stage directories advances it through the workflow.</p>
+<p>This paradigm applies wherever content flows through defined stages — research ingestion, document review, approval workflows, deployment pipelines.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">stateDiagram-v2</span></span>
+<span class="line"><span style="color:#E1E4E8">    direction LR</span></span>
+<span class="line"><span style="color:#E1E4E8">    [*] --&gt; inbox: New content</span></span>
+<span class="line"><span style="color:#E1E4E8">    inbox --&gt; processing: Agent picks up</span></span>
+<span class="line"><span style="color:#E1E4E8">    processing --&gt; review: Processing complete</span></span>
+<span class="line"><span style="color:#E1E4E8">    review --&gt; done: Approved</span></span>
+<span class="line"><span style="color:#E1E4E8">    review --&gt; processing: Revision needed</span></span>
+<span class="line"><span style="color:#E1E4E8">    done --&gt; [*]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    note right of inbox: AGENTS.md defines&lt;br/&gt;acceptance criteria</span></span>
+<span class="line"><span style="color:#E1E4E8">    note right of processing: AGENTS.md defines&lt;br/&gt;processing steps</span></span>
+<span class="line"><span style="color:#E1E4E8">    note right of review: AGENTS.md defines&lt;br/&gt;review checklist</span></span></code></pre>
+<h3 id="142-pipeline-structure">14.2 Pipeline Structure</h3>
+<p>Pipelines live in <code>how/pipelines/{pipeline_name}/</code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>how/pipelines/{pipeline_name}/</span></span>
+<span class="line"><span>├── AGENTS.md           # Pipeline overview, stage transitions</span></span>
+<span class="line"><span>├── inbox/              # Stage 1</span></span>
+<span class="line"><span>│   └── AGENTS.md       # Processing instructions for this stage</span></span>
+<span class="line"><span>├── processing/         # Stage 2</span></span>
+<span class="line"><span>│   └── AGENTS.md</span></span>
+<span class="line"><span>├── review/             # Stage 3</span></span>
+<span class="line"><span>│   └── AGENTS.md</span></span>
+<span class="line"><span>└── done/               # Stage 4</span></span>
+<span class="line"><span>    └── AGENTS.md</span></span></code></pre>
+<p>Each stage folder MUST have an AGENTS.md with processing instructions specific to that stage.</p>
+<p>Stage names and count are pipeline-specific. The file’s location is its state — no separate status tracking is needed.</p>
+<h3 id="143-pipeline-index">14.3 Pipeline Index</h3>
+<p>The <code>how/pipelines/</code> directory SHOULD have an AGENTS.md documenting all pipelines, their purposes, and their stage flows.</p>
+<hr/>
+<h2 id="15-archive--versioning">15. Archive &amp; Versioning</h2>
+<blockquote>
+<p><strong>Scan</strong>: Archive patterns for sync vs. git environments, retention policy, CLAUDE.md version tracking convention.</p>
+</blockquote>
+<p><em>Decisions: C9, C10</em></p>
+<h3 id="151-archive-pattern">15.1 Archive Pattern</h3>
+<p>The archive pattern varies by environment:</p>
+<p><strong>Sync environments</strong> (cloud storage, team sync tools):</p>
+<ul>
+<li>Archive directories within content folders (e.g., <code>how/backlog/archive/</code>)</li>
+<li>Session history uses <code>how/sessions/history/YYYY-MM/</code></li>
+<li>Archive-don’t-rename rule: move to <code>archive/</code> instead of renaming files</li>
+<li>Project-level <code>archive/</code> within the nearest triad directory for vault-level archival</li>
+</ul>
+<p><strong>Git repositories</strong>:</p>
+<ul>
+<li>Git history serves as the primary archive</li>
+<li><code>archive/</code> subdirectories for visibly-deprecated items (documents users should see are retired)</li>
+<li>Session history follows the same <code>YYYY-MM/</code> pattern regardless of environment</li>
+</ul>
+<h3 id="152-retention">15.2 Retention</h3>
+<p>Session history SHOULD NOT be auto-deleted. Manual cleanup after 6 months is acceptable if storage is a concern.</p>
+<h3 id="153-versioning">15.3 Versioning</h3>
+<p>aDNA instances track their own version via a comment in CLAUDE.md: <code>&lt;!-- vX.Y | YYYY-MM-DD --&gt;</code>.</p>
+<p>Major version increments indicate structural changes. Minor version increments indicate significant content updates. Session history serves as the detailed changelog — no formal CHANGELOG.md is required.</p>
+<h3 id="154-standard-versioning--backwards-compatibility">15.4 Standard Versioning &amp; Backwards Compatibility</h3>
+<p>The aDNA standard uses two versioning tracks:</p>
+<ul>
+<li><strong>Standard version</strong> (this document, <code>adna_standard.md</code>): Governs the normative specification — triad architecture, required files, conformance levels, naming conventions. Follows semantic versioning: <code>vMajor.Minor</code>.</li>
+<li><strong>Governance version</strong> (<code>CLAUDE.md</code> <code>version</code> field, <code>CHANGELOG.md</code>): Governs the operational implementation — protocols, templates, skills, tooling. Follows <code>Major.Minor</code> versioning.</li>
+</ul>
+<p><strong>Backwards compatibility promise</strong>:</p>
+<ul>
+<li>Standard <strong>minor</strong> versions (e.g., v2.0 → v2.1) MUST NOT invalidate conformant instances. An instance conformant to aDNA v2.0 MUST remain conformant to aDNA v2.1.</li>
+<li>Standard <strong>major</strong> versions (e.g., v2.x → v3.0) MAY introduce breaking changes. When they do, migration guidance MUST be provided.</li>
+<li>Governance version changes are operational and do not affect standard conformance.</li>
+</ul>
+<p><strong>Version-cut checklist</strong> (v2.5, ADR-046 — the footer-lag anti-recurrence rule): on every version bump, the document’s four version-bearing surfaces MUST agree before the cut commits — (1) the frontmatter <code>title</code>, (2) the frontmatter <code>updated</code> date, (3) a new changelog comment line in the header block, and (4) the <em>End of …</em> footer line. A cut that leaves any of the four stale is incomplete. <em>(This rule exists because the footer lagged the title across multiple historical bumps — most recently shipping “v2.3” inside the published v2.4 document.)</em></p>
+<hr/>
+<h2 id="16-tool-integration-tiers">16. Tool Integration Tiers</h2>
+<blockquote>
+<p><strong>Scan</strong>: Three tiers — core standard (Tier 1, universal), frontmatter querying (Tier 2, any YAML reader), environment-specific (Tier 3, IDE/plugin). Aggregation points.</p>
+</blockquote>
+<p><em>Decisions: C13, D22</em></p>
+<h3 id="161-three-tier-model">16.1 Three-Tier Model</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Tier</th><th>Scope</th><th>Examples</th><th>Universal?</th></tr></thead><tbody><tr><td><strong>Tier 1</strong></td><td>Core standard</td><td>YAML frontmatter, markdown, directory structure, naming conventions</td><td>Yes — works with any tool</td></tr><tr><td><strong>Tier 2</strong></td><td>Frontmatter querying</td><td>Dataview, custom scripts, CI/CD that reads frontmatter</td><td>Recommended — any tool that parses YAML</td></tr><tr><td><strong>Tier 3</strong></td><td>Environment-specific</td><td>IDE extensions, knowledge-base plugins, graph view, canvas</td><td>No — tool-specific</td></tr></tbody></table>
+<p>Everything in this standard is Tier 1 unless noted otherwise. Tier 1 features work with any tool that can read files and directories.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart TB</span></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph T1[&quot;Tier 1 — Core Standard (Universal)&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        F1[&quot;YAML frontmatter&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        F2[&quot;Markdown files&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        F3[&quot;Directory structure&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        F4[&quot;Naming conventions&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph T2[&quot;Tier 2 — Frontmatter Querying&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        F5[&quot;Dataview queries&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        F6[&quot;Shell scripts&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        F7[&quot;CI/CD pipelines&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph T3[&quot;Tier 3 — Environment-Specific&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        F8[&quot;Obsidian plugins&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        F9[&quot;IDE extensions&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        F10[&quot;Graph / canvas views&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    T1 --&gt;|&quot;any YAML reader&quot;| T2</span></span>
+<span class="line"><span style="color:#E1E4E8">    T2 --&gt;|&quot;specific tools&quot;| T3</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    style T1 fill:#22c55e,color:#fff</span></span>
+<span class="line"><span style="color:#E1E4E8">    style T2 fill:#3b82f6,color:#fff</span></span>
+<span class="line"><span style="color:#E1E4E8">    style T3 fill:#8b5cf6,color:#fff</span></span></code></pre>
+<h3 id="162-aggregation-points">16.2 Aggregation Points</h3>
+<p>The following cross-directory views are useful in any aDNA instance. Their implementation is Tier 2/3 (tool-specific):</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Aggregation Point</th><th>Aggregates</th><th>Purpose</th></tr></thead><tbody><tr><td>Active missions overview</td><td><code>how/missions/</code></td><td>All missions with current status</td></tr><tr><td>Context index</td><td><code>what/context/</code></td><td>All topics with token budgets</td></tr><tr><td>Session history</td><td><code>how/sessions/history/</code></td><td>Recent sessions with outcomes</td></tr><tr><td>Coordination status</td><td><code>who/coordination/</code></td><td>Active cross-agent notes</td></tr></tbody></table>
+<p>Implementation examples: Dataview queries, shell scripts that parse frontmatter, CI/CD dashboard panels. Any tool that can read YAML frontmatter can implement these views.</p>
+<hr/>
+<h2 id="17-error--recovery-protocol">17. Error &amp; Recovery Protocol</h2>
+<blockquote>
+<p><strong>Scan</strong>: Three-tier response — data integrity threat (STOP + escalate), state inconsistency (fix + log), process issue (workaround + backlog).</p>
+</blockquote>
+<p><em>Decisions: D24</em></p>
+<h3 id="171-tiered-response">17.1 Tiered Response</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Severity</th><th>Trigger</th><th>Response</th><th>Recovery</th></tr></thead><tbody><tr><td><strong>Tier 1 — Data integrity threat</strong></td><td>Corrupt file, data loss, conflicting writes destroying content</td><td>Stop all writes immediately. Document the issue. Do NOT attempt automated repair. Escalate to human with <code>#needs-human</code> tag.</td><td>Human-guided only</td></tr><tr><td><strong>Tier 2 — State inconsistency</strong></td><td>Stale STATE.md, broken cross-references, missing frontmatter</td><td>Attempt recovery: re-read files, reconcile state, add missing fields. Log the issue and recovery action in session file. Continue work.</td><td>Agent-recoverable with documentation</td></tr><tr><td><strong>Tier 3 — Process issue</strong></td><td>Template not found, naming violation, ambiguous pipeline stage</td><td>Note the issue in session file. Work around it. Create a backlog idea for improvement.</td><td>Work around, improve later</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart LR</span></span>
+<span class="line"><span style="color:#E1E4E8">    E[&quot;Error detected&quot;] --&gt; S1{&quot;Data at risk?&quot;}</span></span>
+<span class="line"><span style="color:#E1E4E8">    S1 --&gt;|Yes| T1[&quot;Tier 1: STOP&lt;br/&gt;Escalate to human&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    S1 --&gt;|No| S2{&quot;State inconsistent?&quot;}</span></span>
+<span class="line"><span style="color:#E1E4E8">    S2 --&gt;|Yes| T2[&quot;Tier 2: Fix + log&lt;br/&gt;Continue work&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    S2 --&gt;|No| T3[&quot;Tier 3: Note + workaround&lt;br/&gt;Backlog idea&quot;]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    style T1 fill:#ef4444,color:#fff</span></span>
+<span class="line"><span style="color:#E1E4E8">    style T2 fill:#eab308,color:#000</span></span>
+<span class="line"><span style="color:#E1E4E8">    style T3 fill:#22c55e,color:#fff</span></span></code></pre>
+<h3 id="172-escalation">17.2 Escalation</h3>
+<p>Agents MUST log blockers with the <code>#needs-human</code> tag when:</p>
+<ul>
+<li>Data integrity is at risk (Tier 1 errors)</li>
+<li>A decision exceeds the agent’s authority</li>
+<li>Ambiguous scope could lead to destructive actions</li>
+</ul>
+<p>Agents MUST NOT proceed with destructive or irreversible actions when uncertain. When in doubt, stop and ask.</p>
+<hr/>
+<h2 id="18-success-criteria">18. Success Criteria</h2>
+<blockquote>
+<p><strong>Scan</strong>: Three levels — minimum viable (cold start, handoff, integrity), recommended (fork, scale, consistency), aspirational (network, collision safety, dual-audience).</p>
+</blockquote>
+<p><em>Decisions: D21</em></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart TB</span></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph MIN[&quot;Minimum Viable (MUST)&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        M1[&quot;Cold Start&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        M2[&quot;Handoff&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        M3[&quot;Integrity&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph REC[&quot;Recommended (SHOULD)&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        R1[&quot;Fork&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        R2[&quot;Scale&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        R3[&quot;Consistency&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph ASP[&quot;Aspirational&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        A1[&quot;Network&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        A2[&quot;Collision Safety&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">        A3[&quot;Dual-Audience&quot;]</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    MIN --&gt;|mature| REC</span></span>
+<span class="line"><span style="color:#E1E4E8">    REC --&gt;|excellent| ASP</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    style MIN fill:#22c55e,color:#fff</span></span>
+<span class="line"><span style="color:#E1E4E8">    style REC fill:#3b82f6,color:#fff</span></span>
+<span class="line"><span style="color:#E1E4E8">    style ASP fill:#8b5cf6,color:#fff</span></span></code></pre>
+<h3 id="181-minimum-viable-every-adna-must-pass">18.1 Minimum Viable (every aDNA MUST pass)</h3>
+<ol>
+<li><strong>Cold Start</strong>: A fresh agent reads CLAUDE.md, then STATE.md (if present), and begins useful work within one session. No prior project knowledge is required.</li>
+<li><strong>Handoff</strong>: Agent A closes a session with SITREP + next-session prompt. Agent B reads the close-out and STATE.md and continues the work seamlessly.</li>
+<li><strong>Integrity</strong>: No data corruption or silent overwrites during multi-agent operation with collision prevention active.</li>
+</ol>
+<h3 id="182-recommended-mature-adna-should-pass">18.2 Recommended (mature aDNA SHOULD pass)</h3>
+<ol start="4">
+<li><strong>Fork</strong>: The aDNA structure can be copied to a new project and adapted with only CLAUDE.md and domain content changes.</li>
+<li><strong>Scale</strong>: The aDNA supports 10+ missions, 50+ sessions, and 100+ content files without navigational degradation.</li>
+<li><strong>Consistency</strong>: Both deployment forms (bare and embedded) feel like the same system to agents and humans.</li>
+</ol>
+<h3 id="183-aspirational-excellent-adna">18.3 Aspirational (excellent aDNA)</h3>
+<ol start="7">
+<li><strong>Network</strong>: Multiple aDNA instances can discover and reference each other via documented patterns.</li>
+<li><strong>Collision Safety</strong>: Multi-agent concurrent operation produces no data loss even under heavy write contention.</li>
+<li><strong>Dual-Audience</strong>: Both humans (IDE, GitHub, knowledge-base tools) and agents find the content navigable and useful.</li>
+</ol>
+<hr/>
+<h2 id="19-optional-extensions">19. Optional Extensions</h2>
+<blockquote>
+<p><strong>Scan</strong>: Six opt-in subsystems — machine registry, backlog, skill files, testing/CI awareness, reference code, ADRs. Adopt based on need.</p>
+</blockquote>
+<p>The following patterns are available but not required. Projects adopt them based on need.</p>
+<h3 id="191-machine-registry">19.1 Machine Registry</h3>
+<p><em>Decision: D10</em></p>
+<p>For projects running on multiple machines or sync environments where path patterns vary.</p>
+<p><strong>Location</strong>: <code>what/hardware/machines/</code> or a similar what/ subfolder.</p>
+<p><strong>Per-machine file contents</strong>: hostname, user, OS, path patterns, installed tools, capabilities.</p>
+<p>RECOMMENDED for sync-based environments (cloud storage, team sync tools) where file paths differ across machines. OPTIONAL for git repositories where environment variables handle path differences.</p>
+<h3 id="192-backlog-system">19.2 Backlog System</h3>
+<p><em>Decision: D13</em></p>
+<p>Durable ideation and improvement tracking.</p>
+<p><strong>Location</strong>: <code>how/backlog/</code></p>
+<p><strong>Lifecycle</strong>: idea → triage (priority/effort assessment) → graduation to <code>how/missions/</code> or archive.</p>
+<p><strong>Frontmatter</strong>: <code>type: idea</code>, <code>category</code>, <code>priority</code>, <code>effort</code>, <code>status</code>, <code>proposed_by</code>.</p>
+<p>Agents SHOULD scan <code>how/backlog/</code> during session startup for ideas relevant to the current work. New ideas discovered during work SHOULD be captured as backlog files.</p>
+<h3 id="193-skill-files">19.3 Skill Files</h3>
+<p><em>Decision: D15</em></p>
+<p>Reusable agent procedures — step-by-step instructions agents can follow autonomously.</p>
+<p><strong>Location</strong>: <code>how/skills/skill_{name}.md</code></p>
+<p><strong>Sections</strong>: purpose, prerequisites, steps, verification, rollback, notes.</p>
+<p>Skills are distinct from processes: skills are agent-executable (precise steps, verification checks); processes are human-readable (guidelines, decision trees).</p>
+<h3 id="194-testingci-awareness">19.4 Testing/CI Awareness</h3>
+<p><em>Decision: D23</em></p>
+<p>aDNA does not prescribe test frameworks or CI/CD configurations — these belong to the project content layer. However, agents SHOULD be aware of test status.</p>
+<p><strong>Awareness pattern</strong>:</p>
+<ul>
+<li>CLAUDE.md includes an optional section on testing: where to check, how to run, what signals mean</li>
+<li>AGENTS.md for code directories includes testing guidance as an enrichment layer</li>
+<li>STATE.md reports test status when relevant (pass/fail, coverage, regressions)</li>
+<li>CI/CD configuration lives in project content (<code>.github/</code>, <code>Makefile</code>, <code>pyproject.toml</code>, etc.)</li>
+</ul>
+<h3 id="195-reference-code">19.5 Reference Code</h3>
+<p><em>Decision: C11</em></p>
+<p>Bounded exception for code-adjacent reference material inside the aDNA structure.</p>
+<p><strong>Location</strong>: <code>what/reference/</code></p>
+<p><strong>Rules</strong>:</p>
+<ul>
+<li>Executable code MUST live in <code>what/reference/</code> or in the project content layer — nowhere else in the triad</li>
+<li>what/reference/ MUST be bounded — no unbounded growth</li>
+<li>Entries SHOULD link to source implementations rather than duplicating code</li>
+<li>Documentation-only projects skip this entirely</li>
+</ul>
+<h3 id="196-architecture-decision-records-adrs">19.6 Architecture Decision Records (ADRs)</h3>
+<p><em>Decision: C12</em></p>
+<p>Lightweight records of significant project decisions.</p>
+<p><strong>Location</strong>: <code>what/decisions/</code></p>
+<p><strong>Template sections</strong>: context, decision, consequences.</p>
+<p>ADRs are knowledge artifacts — decisions outlive the process that produced them. A 2-year-old ADR is reference knowledge, not an active operation. This is why they live in what/, not how/.</p>
+<hr/>
+<h2 id="20-appendices">20. Appendices</h2>
+<blockquote>
+<p><strong>Scan</strong>: Persona framework (App A), aggregation points (App B), deferred topics (App C), decision traceability matrix (App D — 40 decisions mapped to spec sections).</p>
+</blockquote>
+<h3 id="appendix-a-persona-framework">Appendix A: Persona Framework</h3>
+<p><em>Decision: D6</em></p>
+<p>A persona is OPTIONAL but structured when present. The persona framework defines what a persona includes and why it matters — consistency, predictability, and character continuity across sessions.</p>
+<h4 id="a1-framework-structure">A.1 Framework Structure</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Section</th><th>Contents</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Identity</strong></td><td>Name, role metaphor, mission statement</td><td>Establish who the agent is in this project</td></tr><tr><td><strong>Operating Style</strong></td><td>3-5 behavioral principles</td><td>Define predictable working patterns</td></tr><tr><td><strong>Communication Norms</strong></td><td>Tone, formatting, greeting/close patterns</td><td>Ensure consistent interaction style</td></tr><tr><td><strong>Domain Awareness</strong></td><td>What the persona should know about the project domain</td><td>Ground the agent in project context</td></tr></tbody></table>
+<h4 id="a2-reference-implementation">A.2 Reference Implementation</h4>
+<p>The following is a reference persona. Projects MAY adopt it directly or use the framework to create their own.</p>
+<p><strong>Identity</strong>: Chief of staff to the operation — a role inspired by the military chief of staff archetype, who turns strategic vision into operational reality.</p>
+<p><strong>Operating Style</strong>:</p>
+<ol>
+<li>Orient first, act second — assess the operational picture before diving into any task</li>
+<li>Think in lines of effort — maintain awareness across parallel workstreams</li>
+<li>Be direct and precise — clear status updates, early risk flags, recommendations with rationale</li>
+<li>Coordinate, don’t just execute — coherence across the full operation matters more than speed on any single task</li>
+</ol>
+<p><strong>Communication Norms</strong>: Direct, no filler. Structured updates (SITREP format). Greets with operational state summary on planning sessions. Proceeds directly on execution sessions.</p>
+<p><strong>Domain Awareness</strong>: Defined per project in CLAUDE.md.</p>
+<h3 id="appendix-b-aggregation-points">Appendix B: Aggregation Points</h3>
+<p><em>Decision: D22</em></p>
+<p>Standard aggregation points for cross-directory views. Implementation is tool-specific (Tier 2/3).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Point</th><th>Source</th><th>Query Pattern</th></tr></thead><tbody><tr><td><strong>Active missions</strong></td><td><code>how/missions/</code></td><td>All files where <code>type: mission</code> and <code>status: active</code></td></tr><tr><td><strong>Context index</strong></td><td><code>what/context/</code></td><td>All topic directories with their AGENTS.md token estimates</td></tr><tr><td><strong>Recent sessions</strong></td><td><code>how/sessions/history/</code></td><td>Last 10 session files, sorted by <code>updated</code> descending</td></tr><tr><td><strong>Open coordination</strong></td><td><code>who/coordination/</code></td><td>All files where <code>status: open</code> or <code>status: urgent</code></td></tr><tr><td><strong>Backlog overview</strong></td><td><code>how/backlog/</code></td><td>All files where <code>type: idea</code> and <code>status: active</code>, sorted by <code>priority</code></td></tr></tbody></table>
+<p><strong>Knowledge-base implementation</strong>: Dataview queries in bridge pages (e.g., <code>how/missions.md</code>, <code>how/context_library.md</code>).</p>
+<p><strong>Script implementation</strong>: Any tool that parses YAML frontmatter from markdown files can produce these views.</p>
+<h3 id="appendix-c-deferred-topics">Appendix C: Deferred Topics</h3>
+<p>The following topics were identified during the planning arc but deferred from v1.0. They are acknowledged here for future standard revisions. (Retained from v1.0; no new deferrals in v2.0.)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Gap</th><th>Topic</th><th>Disposition</th></tr></thead><tbody><tr><td>G2</td><td><strong>Multi-model / model-agnostic design</strong></td><td>”CLAUDE.md” is a convention name — projects using other models use the same structure. The persona framework (§ App A) is model-agnostic. A future revision MAY define model-neutral naming.</td></tr><tr><td>G3</td><td><strong>Documentation generation</strong></td><td>Projects that generate external-facing docs from aDNA content will develop project-specific patterns. No universal standard needed at this time.</td></tr><tr><td>G7</td><td><strong>Context staleness detection</strong></td><td>The <code>updated</code> field + session cycling naturally address staleness (fresh reads on each session start). Formal staleness detection is Tier 2/3 tooling, not a standard concern.</td></tr><tr><td>G8</td><td><strong>Cross-instance aDNA awareness</strong></td><td>Addressed by bridge patterns (informational companion, SHOULD-level guidance). Defines composition patterns (nesting, sibling, monorepo), discovery protocol, scope boundaries, cross-referencing conventions, and agent behavior rules. Addresses §18.3 #7 Network criterion.</td></tr><tr><td>G10</td><td><strong>Agent capability declaration</strong></td><td>Most aDNA instances target specific agent capabilities. CLAUDE.md can note capability assumptions. A formal capability schema is deferred pending broader agent ecosystem maturity.</td></tr></tbody></table>
+<h3 id="appendix-d-decision-traceability-matrix">Appendix D: Decision Traceability Matrix</h3>
+<p>This appendix maps every design decision to its location in the standard, ensuring complete coverage.</p>
+<h4 id="d1-structural-decisions-c1-c15">D.1 Structural Decisions (C1-C15)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ID</th><th>Decision</th><th>Spec Section(s)</th></tr></thead><tbody><tr><td>C1</td><td>Pattern-appropriate deployment (bare + embedded triad)</td><td>§3.2, §3.3, §3.4</td></tr><tr><td>C2</td><td>Dual-file: AGENTS.md + README.md everywhere</td><td>§4.5, §4.6</td></tr><tr><td>C3</td><td>Vault naming + repo exceptions, ALLCAPS governance list</td><td>§6.1, §6.2, §6.3, §6.4</td></tr><tr><td>C4</td><td>Frontmatter mandatory for aDNA content, optional for project</td><td>§7.1, §7.2</td></tr><tr><td>C5</td><td>what/ context/ mandatory, rest project-specific</td><td>§5.1</td></tr><tr><td>C6</td><td>who/ coordination/ + governance/ mandatory</td><td>§5.2</td></tr><tr><td>C7</td><td>how/ tiered: missions/sessions/templates required, backlog recommended</td><td>§5.3</td></tr><tr><td>C8</td><td>Seeding guidance via triad principle, not prescriptive table</td><td>§3.1 (triad question test)</td></tr><tr><td>C9</td><td>Git-supplemented archive</td><td>§15.1</td></tr><tr><td>C10</td><td>Lightweight versioning in CLAUDE.md, sessions as changelog</td><td>§15.3</td></tr><tr><td>C11</td><td>what/reference/ as bounded exception for code</td><td>§19.5</td></tr><tr><td>C12</td><td>ADRs in what/decisions/</td><td>§19.6</td></tr><tr><td>C13</td><td>Tiered tool integration (Tier 1/2/3)</td><td>§16.1</td></tr><tr><td>C14</td><td>Ontology artifact: Mermaid (Tier 1) + Canvas (Tier 3)</td><td>§5.1 (ontology artifact)</td></tr><tr><td>C15</td><td>what/ as registry layer</td><td>§5.1 (registry pattern)</td></tr></tbody></table>
+<h4 id="d2-process-decisions-d1-d25">D.2 Process Decisions (D1-D25)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ID</th><th>Decision</th><th>Spec Section(s)</th></tr></thead><tbody><tr><td>D1</td><td>Universal CLAUDE.md template, required + optional sections</td><td>§4.2</td></tr><tr><td>D2</td><td>Separate MANIFEST.md + STATE.md</td><td>§4.3, §4.4</td></tr><tr><td>D3</td><td>Session model with environment enrichments</td><td>§8.1, §8.2, §8.3</td></tr><tr><td>D4</td><td>SITREP + mandatory next-session prompt</td><td>§8.4, §8.5</td></tr><tr><td>D5</td><td>75% rule only, no sizing prescriptions</td><td>§8.7</td></tr><tr><td>D6</td><td>Persona framework with reference implementation</td><td>§4.2 (persona), App A</td></tr><tr><td>D7</td><td>Tiered collision prevention (universal/sync/multi-agent)</td><td>§13</td></tr><tr><td>D8</td><td>Flexible what/context/ with subtypes</td><td>§10</td></tr><tr><td>D9</td><td>who/coordination/ only</td><td>§11</td></tr><tr><td>D10</td><td>Machine registry as optional extension</td><td>§19.1</td></tr><tr><td>D11</td><td>Graduated template set (Starter/Standard/Full)</td><td>§12</td></tr><tr><td>D12</td><td>Separated missions + subdirectories</td><td>§9</td></tr><tr><td>D13</td><td>Backlog recommended, not required</td><td>§19.2</td></tr><tr><td>D14</td><td>Content-as-code paradigm universal, pipelines optional</td><td>§14</td></tr><tr><td>D15</td><td>Skill files optional in how/skills/</td><td>§19.3</td></tr><tr><td>D16</td><td>Generalized mission stages</td><td>§9.2</td></tr><tr><td>D17</td><td>Lightweight requirements in missions, full specs as extension</td><td>§9.1 (mission contents)</td></tr><tr><td>D18</td><td>Minimal tag rules, no formal taxonomy</td><td>§7.3</td></tr><tr><td>D19</td><td>Progressive enrichment for AGENTS.md</td><td>§4.5</td></tr><tr><td>D20</td><td>Separate content priority (0-N) from rule precedence</td><td>§7.4</td></tr><tr><td>D21</td><td>Tiered success criteria (minimum/recommended/aspirational)</td><td>§18</td></tr><tr><td>D22</td><td>Aggregation points identified, implementation tool-specific</td><td>§16.2, App B</td></tr><tr><td>D23</td><td>Testing/CI as project-specific with awareness pattern</td><td>§19.4</td></tr><tr><td>D24</td><td>Tiered error/recovery protocol</td><td>§17</td></tr><tr><td>D25</td><td>Quickstart in CLAUDE.md + README.md</td><td>§4.2 (quickstart section)</td></tr></tbody></table>
+<h4 id="d3-gap-dispositions-g1-g12">D.3 Gap Dispositions (G1-G12)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Gap</th><th>Topic</th><th>Disposition</th><th>Location</th></tr></thead><tbody><tr><td>G1</td><td>Testing/CI integration</td><td>Addressed by D23</td><td>§19.4</td></tr><tr><td>G2</td><td>Multi-model design</td><td>Deferred</td><td>App C</td></tr><tr><td>G3</td><td>Documentation generation</td><td>Deferred</td><td>App C</td></tr><tr><td>G4</td><td>Versioning/changelog</td><td>Addressed by C10</td><td>§15.3</td></tr><tr><td>G5</td><td>Team roles/governance</td><td>Subsumed into C6 (who/governance/)</td><td>§5.2</td></tr><tr><td>G6</td><td>Error/recovery protocol</td><td>Addressed by D24</td><td>§17</td></tr><tr><td>G7</td><td>Context staleness</td><td>Deferred (subsumed into D5/D7)</td><td>App C</td></tr><tr><td>G8</td><td>Cross-instance awareness</td><td>Addressed by bridge patterns (informational)</td><td>App C</td></tr><tr><td>G9</td><td>Onboarding/bootstrap</td><td>Addressed by D25</td><td>§4.2 (quickstart)</td></tr><tr><td>G10</td><td>Agent capability declaration</td><td>Deferred</td><td>App C</td></tr><tr><td>G11</td><td>Ontology schema artifact</td><td>Addressed by C14</td><td>§5.1 (ontology artifact)</td></tr><tr><td>G12</td><td>Object standard integration</td><td>Addressed by C15 + execution phase</td><td>§5.1 (registry pattern)</td></tr></tbody></table>
+<hr/>
+<p><em>End of aDNA Universal Standard v2.5</em></p>   </article> <aside class="doc-sidebar" aria-label="Documentation navigation" data-astro-cid-kpcmd3d5> <nav class="sidebar-nav" aria-label="Documentation sections" data-astro-cid-owrjt5ou> <ul class="section-switcher" aria-label="All sections" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/learn/what-is-adna" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- learn — abstract layered paths (M5.3 cycle 103 D11 motif vocabulary: stepped progression) -->
+  <rect x="2.5" y="4" width="11" height="3" rx="0.5"/>
+  <rect x="6.5" y="10.5" width="11" height="3" rx="0.5"/>
+  <rect x="10.5" y="17" width="11" height="3" rx="0.5"/>
+  <line x1="13.5" y1="7" x2="17.5" y2="10.5" stroke-dasharray="0.8 0.8"/>
+  <line x1="17.5" y1="13.5" x2="21.5" y2="17" stroke-dasharray="0.8 0.8"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Learn</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/patterns/question-test" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- patterns — tessellating hexagons (M5.3 cycle 103 D11 motif vocabulary: composability / repeating modules) -->
+  <!-- center hex + 6 surrounding -->
+  <polygon points="12,8.5 14.6,10 14.6,13 12,14.5 9.4,13 9.4,10"/>
+  <polygon points="12,2 14.6,3.5 14.6,6.5 12,8 9.4,6.5 9.4,3.5"/>
+  <polygon points="17.2,5 19.8,6.5 19.8,9.5 17.2,11 14.6,9.5 14.6,6.5"/>
+  <polygon points="17.2,11 19.8,12.5 19.8,15.5 17.2,17 14.6,15.5 14.6,12.5"/>
+  <polygon points="12,14 14.6,15.5 14.6,18.5 12,20 9.4,18.5 9.4,15.5"/>
+  <polygon points="6.8,11 9.4,12.5 9.4,15.5 6.8,17 4.2,15.5 4.2,12.5"/>
+  <polygon points="6.8,5 9.4,6.5 9.4,9.5 6.8,11 4.2,9.5 4.2,6.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Patterns</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/use-cases/solo-developer" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- use_cases — concentric layered rectangles (M5.3 cycle 103 D11 motif vocabulary: scenarios stacked from generic to specific) -->
+  <rect x="3" y="3" width="18" height="18" rx="1"/>
+  <rect x="6" y="6" width="12" height="12" rx="0.75" opacity="0.75"/>
+  <rect x="9" y="9" width="6" height="6" rx="0.5" opacity="0.6"/>
+  <circle cx="12" cy="12" r="0.9" fill="currentColor"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Use Cases</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/community/community-roles" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Community</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/specification" class="switcher-link active" aria-current="true" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Reference</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/glossary/glossary-adna" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Glossary</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/how/publishing/vault-to-site" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- how — workflow arrows between nodes (M5.3 cycle 103 D11 motif; refined at cycle 106 per design_finding_for_cycle_106: explicit chevron arrowheads + straight shafts for legibility at nav scale 16-20px) -->
+  <rect x="1.5" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="9.25" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="17" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <line x1="7" y1="12" x2="8.55" y2="12"/>
+  <polyline points="7.95 11.1 9.25 12 7.95 12.9"/>
+  <line x1="14.75" y1="12" x2="16.3" y2="12"/>
+  <polyline points="15.7 11.1 17 12 15.7 12.9"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Guides</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/researchers" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>For you</span> </a> </li> </ul> <div class="nav-group" data-astro-cid-owrjt5ou> <p class="group-label" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Reference</span> </p> <ul class="group-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/specification" class="nav-item active" aria-current="page" data-astro-cid-owrjt5ou> Specification </a> </li><li class="subgroup" data-astro-cid-owrjt5ou> <details data-astro-cid-owrjt5ou> <summary class="subgroup-label" data-astro-cid-owrjt5ou>Rationale &amp; guides</summary> <ul class="subgroup-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/design-rationale" class="nav-item" data-astro-cid-owrjt5ou> Design Rationale </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/reading-guide" class="nav-item" data-astro-cid-owrjt5ou> Reading Guide </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/agent-first-guide" class="nav-item" data-astro-cid-owrjt5ou> Agent-First Guide </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/migration-guide" class="nav-item" data-astro-cid-owrjt5ou> Migration Guide </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/tool-setup" class="nav-item" data-astro-cid-owrjt5ou> Tool Setup </a> </li> </ul> </details> </li><li class="subgroup" data-astro-cid-owrjt5ou> <details data-astro-cid-owrjt5ou> <summary class="subgroup-label" data-astro-cid-owrjt5ou>Governance &amp; quality</summary> <ul class="subgroup-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/governance-model" class="nav-item" data-astro-cid-owrjt5ou> Governance Model </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/quality-rubric" class="nav-item" data-astro-cid-owrjt5ou> Quality Rubric </a> </li> </ul> </details> </li><li class="subgroup" data-astro-cid-owrjt5ou> <details data-astro-cid-owrjt5ou> <summary class="subgroup-label" data-astro-cid-owrjt5ou>Craft</summary> <ul class="subgroup-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/writing-guidelines" class="nav-item" data-astro-cid-owrjt5ou> Writing Guidelines </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/visual-identity-v2" class="nav-item" data-astro-cid-owrjt5ou> Visual Identity v3 </a> </li> </ul> </details> </li> </ul> </div> </nav> </aside> <aside class="doc-toc" aria-label="Table of contents" data-astro-cid-kpcmd3d5> <div class="toc-panel" data-astro-cid-tjvdr77h><p class="toc-title" data-astro-cid-tjvdr77h>On this page</p><ul class="toc-list" data-astro-cid-tjvdr77h><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#1-introduction--scope" class="toc-link" data-slug="1-introduction--scope" data-astro-cid-tjvdr77h>1. Introduction &amp; Scope</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#11-what-is-adna" class="toc-link" data-slug="11-what-is-adna" data-astro-cid-tjvdr77h>1.1 What Is aDNA</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#12-audience" class="toc-link" data-slug="12-audience" data-astro-cid-tjvdr77h>1.2 Audience</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#13-scope" class="toc-link" data-slug="13-scope" data-astro-cid-tjvdr77h>1.3 Scope</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#14-normative-language" class="toc-link" data-slug="14-normative-language" data-astro-cid-tjvdr77h>1.4 Normative Language</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#2-terminology" class="toc-link" data-slug="2-terminology" data-astro-cid-tjvdr77h>2. Terminology</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#3-triad-architecture" class="toc-link" data-slug="3-triad-architecture" data-astro-cid-tjvdr77h>3. Triad Architecture</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#31-the-whathowwho-ontology" class="toc-link" data-slug="31-the-whathowwho-ontology" data-astro-cid-tjvdr77h>3.1 The what/how/who Ontology</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#32-bare-triad" class="toc-link" data-slug="32-bare-triad" data-astro-cid-tjvdr77h>3.2 Bare Triad</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#33-embedded-triad" class="toc-link" data-slug="33-embedded-triad" data-astro-cid-tjvdr77h>3.3 Embedded Triad</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#34-deployment-form-selection" class="toc-link" data-slug="34-deployment-form-selection" data-astro-cid-tjvdr77h>3.4 Deployment Form Selection</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#35-directory-convention" class="toc-link" data-slug="35-directory-convention" data-astro-cid-tjvdr77h>3.5 Directory Convention</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#4-governance-files" class="toc-link" data-slug="4-governance-files" data-astro-cid-tjvdr77h>4. Governance Files</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#41-governance-file-list" class="toc-link" data-slug="41-governance-file-list" data-astro-cid-tjvdr77h>4.1 Governance File List</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#42-claudemd--agent-root-context" class="toc-link" data-slug="42-claudemd--agent-root-context" data-astro-cid-tjvdr77h>4.2 CLAUDE.md — Agent Root Context</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#43-manifestmd--project-overview" class="toc-link" data-slug="43-manifestmd--project-overview" data-astro-cid-tjvdr77h>4.3 MANIFEST.md — Project Overview</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#44-statemd--dynamic-operational-state" class="toc-link" data-slug="44-statemd--dynamic-operational-state" data-astro-cid-tjvdr77h>4.4 STATE.md — Dynamic Operational State</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#45-agentsmd--per-directory-agent-guide" class="toc-link" data-slug="45-agentsmd--per-directory-agent-guide" data-astro-cid-tjvdr77h>4.5 AGENTS.md — Per-Directory Agent Guide</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#46-readmemd--per-directory-human-guide" class="toc-link" data-slug="46-readmemd--per-directory-human-guide" data-astro-cid-tjvdr77h>4.6 README.md — Per-Directory Human Guide</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#5-directory-structure" class="toc-link" data-slug="5-directory-structure" data-astro-cid-tjvdr77h>5. Directory Structure</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#51-what--knowledge-layer" class="toc-link" data-slug="51-what--knowledge-layer" data-astro-cid-tjvdr77h>5.1 what/ — Knowledge Layer</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#52-who--organization-layer" class="toc-link" data-slug="52-who--organization-layer" data-astro-cid-tjvdr77h>5.2 who/ — Organization Layer</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#53-how--operations-layer" class="toc-link" data-slug="53-how--operations-layer" data-astro-cid-tjvdr77h>5.3 how/ — Operations Layer</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#54-universal-skeleton" class="toc-link" data-slug="54-universal-skeleton" data-astro-cid-tjvdr77h>5.4 Universal Skeleton</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#55-conformance-levels" class="toc-link" data-slug="55-conformance-levels" data-astro-cid-tjvdr77h>5.5 Conformance Levels</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#6-naming-conventions" class="toc-link" data-slug="6-naming-conventions" data-astro-cid-tjvdr77h>6. Naming Conventions</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#61-file-naming" class="toc-link" data-slug="61-file-naming" data-astro-cid-tjvdr77h>6.1 File Naming</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#62-governance-file-naming" class="toc-link" data-slug="62-governance-file-naming" data-astro-cid-tjvdr77h>6.2 Governance File Naming</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#63-directory-naming" class="toc-link" data-slug="63-directory-naming" data-astro-cid-tjvdr77h>6.3 Directory Naming</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#64-type-prefix-convention" class="toc-link" data-slug="64-type-prefix-convention" data-astro-cid-tjvdr77h>6.4 Type Prefix Convention</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#65-rename-protocol" class="toc-link" data-slug="65-rename-protocol" data-astro-cid-tjvdr77h>6.5 Rename Protocol</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#7-frontmatter-system" class="toc-link" data-slug="7-frontmatter-system" data-astro-cid-tjvdr77h>7. Frontmatter System</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#71-scope" class="toc-link" data-slug="71-scope" data-astro-cid-tjvdr77h>7.1 Scope</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#72-required-base-fields" class="toc-link" data-slug="72-required-base-fields" data-astro-cid-tjvdr77h>7.2 Required Base Fields</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#73-tag-conventions" class="toc-link" data-slug="73-tag-conventions" data-astro-cid-tjvdr77h>7.3 Tag Conventions</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#74-priority-field" class="toc-link" data-slug="74-priority-field" data-astro-cid-tjvdr77h>7.4 Priority Field</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#75-type-specific-fields" class="toc-link" data-slug="75-type-specific-fields" data-astro-cid-tjvdr77h>7.5 Type-Specific Fields</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#76-frontmatter-extension-policy" class="toc-link" data-slug="76-frontmatter-extension-policy" data-astro-cid-tjvdr77h>7.6 Frontmatter Extension Policy</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#77-decision-record-ratification-discipline" class="toc-link" data-slug="77-decision-record-ratification-discipline" data-astro-cid-tjvdr77h>7.7 Decision-Record Ratification Discipline</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#8-session-model" class="toc-link" data-slug="8-session-model" data-astro-cid-tjvdr77h>8. Session Model</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#81-session-lifecycle" class="toc-link" data-slug="81-session-lifecycle" data-astro-cid-tjvdr77h>8.1 Session Lifecycle</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#82-session-id-format" class="toc-link" data-slug="82-session-id-format" data-astro-cid-tjvdr77h>8.2 Session ID Format</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#83-session-tiers" class="toc-link" data-slug="83-session-tiers" data-astro-cid-tjvdr77h>8.3 Session Tiers</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#84-sitrep-close-out" class="toc-link" data-slug="84-sitrep-close-out" data-astro-cid-tjvdr77h>8.4 SITREP Close-Out</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#85-next-session-prompt" class="toc-link" data-slug="85-next-session-prompt" data-astro-cid-tjvdr77h>8.5 Next-Session Prompt</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#86-statemd-update" class="toc-link" data-slug="86-statemd-update" data-astro-cid-tjvdr77h>8.6 STATE.md Update</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#87-the-75-rule" class="toc-link" data-slug="87-the-75-rule" data-astro-cid-tjvdr77h>8.7 The 75% Rule</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#9-mission-system" class="toc-link" data-slug="9-mission-system" data-astro-cid-tjvdr77h>9. Mission System</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#91-mission-structure" class="toc-link" data-slug="91-mission-structure" data-astro-cid-tjvdr77h>9.1 Mission Structure</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#92-mission-stages" class="toc-link" data-slug="92-mission-stages" data-astro-cid-tjvdr77h>9.2 Mission Stages</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#93-mission-handoff" class="toc-link" data-slug="93-mission-handoff" data-astro-cid-tjvdr77h>9.3 Mission Handoff</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#10-context-library" class="toc-link" data-slug="10-context-library" data-astro-cid-tjvdr77h>10. Context Library</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#101-location-and-structure" class="toc-link" data-slug="101-location-and-structure" data-astro-cid-tjvdr77h>10.1 Location and Structure</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#102-context-subtypes" class="toc-link" data-slug="102-context-subtypes" data-astro-cid-tjvdr77h>10.2 Context Subtypes</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#103-token-budget-awareness" class="toc-link" data-slug="103-token-budget-awareness" data-astro-cid-tjvdr77h>10.3 Token Budget Awareness</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#11-coordination-protocol" class="toc-link" data-slug="11-coordination-protocol" data-astro-cid-tjvdr77h>11. Coordination Protocol</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#111-cross-agent-coordination" class="toc-link" data-slug="111-cross-agent-coordination" data-astro-cid-tjvdr77h>11.1 Cross-Agent Coordination</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#112-urgency-levels" class="toc-link" data-slug="112-urgency-levels" data-astro-cid-tjvdr77h>11.2 Urgency Levels</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#113-coordination-note-contents" class="toc-link" data-slug="113-coordination-note-contents" data-astro-cid-tjvdr77h>11.3 Coordination Note Contents</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#12-template-system" class="toc-link" data-slug="12-template-system" data-astro-cid-tjvdr77h>12. Template System</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#121-graduated-template-sets" class="toc-link" data-slug="121-graduated-template-sets" data-astro-cid-tjvdr77h>12.1 Graduated Template Sets</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#122-template-conventions" class="toc-link" data-slug="122-template-conventions" data-astro-cid-tjvdr77h>12.2 Template Conventions</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#13-collision-prevention" class="toc-link" data-slug="13-collision-prevention" data-astro-cid-tjvdr77h>13. Collision Prevention</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#131-overview" class="toc-link" data-slug="131-overview" data-astro-cid-tjvdr77h>13.1 Overview</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#132-tier-1--universal" class="toc-link" data-slug="132-tier-1--universal" data-astro-cid-tjvdr77h>13.2 Tier 1 — Universal</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#133-tier-2--sync-environments" class="toc-link" data-slug="133-tier-2--sync-environments" data-astro-cid-tjvdr77h>13.3 Tier 2 — Sync Environments</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#134-tier-3--multi-agent" class="toc-link" data-slug="134-tier-3--multi-agent" data-astro-cid-tjvdr77h>13.4 Tier 3 — Multi-Agent</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#14-content-as-code-pipelines" class="toc-link" data-slug="14-content-as-code-pipelines" data-astro-cid-tjvdr77h>14. Content-as-Code Pipelines</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#141-paradigm" class="toc-link" data-slug="141-paradigm" data-astro-cid-tjvdr77h>14.1 Paradigm</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#142-pipeline-structure" class="toc-link" data-slug="142-pipeline-structure" data-astro-cid-tjvdr77h>14.2 Pipeline Structure</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#143-pipeline-index" class="toc-link" data-slug="143-pipeline-index" data-astro-cid-tjvdr77h>14.3 Pipeline Index</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#15-archive--versioning" class="toc-link" data-slug="15-archive--versioning" data-astro-cid-tjvdr77h>15. Archive &amp; Versioning</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#151-archive-pattern" class="toc-link" data-slug="151-archive-pattern" data-astro-cid-tjvdr77h>15.1 Archive Pattern</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#152-retention" class="toc-link" data-slug="152-retention" data-astro-cid-tjvdr77h>15.2 Retention</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#153-versioning" class="toc-link" data-slug="153-versioning" data-astro-cid-tjvdr77h>15.3 Versioning</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#154-standard-versioning--backwards-compatibility" class="toc-link" data-slug="154-standard-versioning--backwards-compatibility" data-astro-cid-tjvdr77h>15.4 Standard Versioning &amp; Backwards Compatibility</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#16-tool-integration-tiers" class="toc-link" data-slug="16-tool-integration-tiers" data-astro-cid-tjvdr77h>16. Tool Integration Tiers</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#161-three-tier-model" class="toc-link" data-slug="161-three-tier-model" data-astro-cid-tjvdr77h>16.1 Three-Tier Model</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#162-aggregation-points" class="toc-link" data-slug="162-aggregation-points" data-astro-cid-tjvdr77h>16.2 Aggregation Points</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#17-error--recovery-protocol" class="toc-link" data-slug="17-error--recovery-protocol" data-astro-cid-tjvdr77h>17. Error &amp; Recovery Protocol</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#171-tiered-response" class="toc-link" data-slug="171-tiered-response" data-astro-cid-tjvdr77h>17.1 Tiered Response</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#172-escalation" class="toc-link" data-slug="172-escalation" data-astro-cid-tjvdr77h>17.2 Escalation</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#18-success-criteria" class="toc-link" data-slug="18-success-criteria" data-astro-cid-tjvdr77h>18. Success Criteria</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#181-minimum-viable-every-adna-must-pass" class="toc-link" data-slug="181-minimum-viable-every-adna-must-pass" data-astro-cid-tjvdr77h>18.1 Minimum Viable (every aDNA MUST pass)</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#182-recommended-mature-adna-should-pass" class="toc-link" data-slug="182-recommended-mature-adna-should-pass" data-astro-cid-tjvdr77h>18.2 Recommended (mature aDNA SHOULD pass)</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#183-aspirational-excellent-adna" class="toc-link" data-slug="183-aspirational-excellent-adna" data-astro-cid-tjvdr77h>18.3 Aspirational (excellent aDNA)</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#19-optional-extensions" class="toc-link" data-slug="19-optional-extensions" data-astro-cid-tjvdr77h>19. Optional Extensions</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#191-machine-registry" class="toc-link" data-slug="191-machine-registry" data-astro-cid-tjvdr77h>19.1 Machine Registry</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#192-backlog-system" class="toc-link" data-slug="192-backlog-system" data-astro-cid-tjvdr77h>19.2 Backlog System</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#193-skill-files" class="toc-link" data-slug="193-skill-files" data-astro-cid-tjvdr77h>19.3 Skill Files</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#194-testingci-awareness" class="toc-link" data-slug="194-testingci-awareness" data-astro-cid-tjvdr77h>19.4 Testing/CI Awareness</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#195-reference-code" class="toc-link" data-slug="195-reference-code" data-astro-cid-tjvdr77h>19.5 Reference Code</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#196-architecture-decision-records-adrs" class="toc-link" data-slug="196-architecture-decision-records-adrs" data-astro-cid-tjvdr77h>19.6 Architecture Decision Records (ADRs)</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#20-appendices" class="toc-link" data-slug="20-appendices" data-astro-cid-tjvdr77h>20. Appendices</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#appendix-a-persona-framework" class="toc-link" data-slug="appendix-a-persona-framework" data-astro-cid-tjvdr77h>Appendix A: Persona Framework</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#appendix-b-aggregation-points" class="toc-link" data-slug="appendix-b-aggregation-points" data-astro-cid-tjvdr77h>Appendix B: Aggregation Points</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#appendix-c-deferred-topics" class="toc-link" data-slug="appendix-c-deferred-topics" data-astro-cid-tjvdr77h>Appendix C: Deferred Topics</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#appendix-d-decision-traceability-matrix" class="toc-link" data-slug="appendix-d-decision-traceability-matrix" data-astro-cid-tjvdr77h>Appendix D: Decision Traceability Matrix</a></li></ul></div><script type="module">const c=new IntersectionObserver(e=>{for(const t of e)t.isIntersecting&&(document.querySelectorAll(".toc-link").forEach(o=>o.classList.remove("active")),document.querySelector(`.toc-link[data-slug="${t.target.id}"]`)?.classList.add("active"))},{rootMargin:"-80px 0px -70% 0px",threshold:0});document.querySelectorAll(".doc-content h2[id], .doc-content h3[id]").forEach(e=>{c.observe(e)});</script> </aside> </div>  </main> <footer class="footer" data-astro-cid-l3trhy4j> <div class="footer-inner" data-astro-cid-l3trhy4j> <div class="footer-brand" data-astro-cid-l3trhy4j> <span class="footer-logo" data-astro-cid-l3trhy4j>aDNA</span> <p class="footer-tagline" data-astro-cid-l3trhy4j>Give your project a knowledge architecture that both humans and AI agents can navigate.</p> </div> <nav class="footer-links" aria-label="Footer navigation" data-astro-cid-l3trhy4j> <a href="/network" data-astro-cid-l3trhy4j>Network</a> <a href="/vaults" data-astro-cid-l3trhy4j>Vaults</a> <a href="/commons" data-astro-cid-l3trhy4j>Commons</a> <a href="/community" data-astro-cid-l3trhy4j>Community</a> <a href="/about" data-astro-cid-l3trhy4j>About</a> <a href="/security" data-astro-cid-l3trhy4j>Security</a> <a href="/privacy" data-astro-cid-l3trhy4j>Privacy</a> <a href="/reference/specification" data-astro-cid-l3trhy4j>Specification</a> <a href="/glossary" data-astro-cid-l3trhy4j>Glossary</a> <a href="/how" data-astro-cid-l3trhy4j>Guides</a> <a href="/get-started" data-astro-cid-l3trhy4j>Get Started</a> <a href="/changelog" data-astro-cid-l3trhy4j>Changelog</a> <a href="/design-system" data-astro-cid-l3trhy4j>Design system</a> <a href="/rss.xml" data-astro-cid-l3trhy4j>RSS</a> <a href="https://github.com/aDNA-Network/aDNA" target="_blank" rel="noopener" data-astro-cid-l3trhy4j>GitHub</a> </nav> <p class="footer-copyright" data-astro-cid-l3trhy4j>&copy; 2026 aDNA Network. Released under the MIT License.</p> </div> </footer> </body></html> <script type="module">function a(){document.querySelectorAll(".doc-content pre:not(.code-block pre)").forEach(t=>{if(t.closest(".code-block"))return;const n=document.createElement("div");n.className="code-block";const o=document.createElement("div");o.className="code-content",t.parentNode.insertBefore(n,t),n.appendChild(o),o.appendChild(t),t.hasAttribute("tabindex")||t.setAttribute("tabindex","0");const e=document.createElement("button");e.className="copy-btn",e.type="button",e.setAttribute("aria-label","Copy code"),e.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>',n.appendChild(e),e.addEventListener("click",async()=>{const c=t.querySelector("code")?.textContent??t.textContent??"";await navigator.clipboard.writeText(c),e.setAttribute("aria-label","Copied!"),setTimeout(()=>e.setAttribute("aria-label","Copy code"),2e3)})})}a();document.addEventListener("astro:page-load",a);</script>

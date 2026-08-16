@@ -1,0 +1,57 @@
+aDNA — the open standard & network for shared context
+Skip to main content a DNA Network Vaults Commons Learn Patterns Use Cases Community More Reference Glossary Guides For you Get Started [SVG] [SVG] [SVG] [SVG] Network Vaults Commons Learn Patterns Use Cases Community More Reference Glossary Guides For you Open standard · MIT The aDNA Network Language and DNA were co-created by everyone before us. The context that powers AI should be too — built, shared, and governed in the open, for the good of all. aDNA is an open standard for organizing project knowledge so both humans and AI agents can navigate it — and the open network where that shared context lives, built on the Lattice Protocol (the open coordination protocol underneath). Your context is just the notes, docs, and decisions you already keep — now shaped into a graph your agents can navigate, and shared in the open. Explore the network Get Started $ git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude [SVG] Open source on GitHub · MIT-licensed · built on the Lattice Protocol — the coordination layer, opening progressively 74 Vaults 16 Entity Types 3 Conformance Levels v2.5 Current Version MIT Licensed Real public-good work already lives here — World Genome Academy · Context Commons · Wilhelm AI for the Undiagnosed · Rare Archive Who's behind aDNA →
+[SVG]
+15 connected vaults · 14 relationships aDNA III WilhelmAI RareArchive Astro Molecules TappProtocol VAAS Harness Oration ScienceStanley ZenZachary VisualDNA RemoteControl Terminal What a context democracy is
+A self-governed network where people and their agents build, share, and govern
+context graphs in the open — each project its own graph, all of them federating
+into a shared commons.
+Open MIT-licensed — the spec, the tooling, and the vaults are all public. Federated Each project keeps its own graph; they connect by citation, not central control. Co-owned No vendor owns your context — you govern it, in the open. Agents & humans One graph, legible to your AI and to you at the same time. [SVG]
+Real aDNA vaults — forges, frameworks, platforms, and public-good archives —
+federating on the Lattice Protocol.
+The living registry
+Every vault is a real, governed context graph — its own persona, its own history,
+its own place in the network. Here's a slice across 74 of them.
+the standard active aDNA tended by Rosetta Self-referential aDNA documentation — teaches the standard by using the standard (Operation Rosetta) Open vault → framework active III tended by Argus Inspect/Introspect/Improve quality framework Open vault → platform genesis Canvas tended by mondrian Standard-bearer Platform.aDNA owning the aDNA Canvas Standard (agentic-context-native fork of Obsidi… Open vault → coordination active Operations tended by Berthier Renamed from TaskForge.aDNA (Production Tidy pt08 Open vault → knowledge graph active LA Venture Graph tended by Cartographer LA venture ecosystem knowledge graph (UCLA Anderson + Nerdstage/Demo Day LA)… Open vault → node active Home tended by Hestia This vault — per-node operational governance for Mac/stanley; the operator's daily-driver… Open vault → org vault pending wga World Genome Academy — buildpack + symphony + site Open vault → org vault pending RareArchive tended by Mnemosyne Rare Archive OSS rare-disease AI project Open vault → See all 74 vaults → · View the relationship graph → How it Works Three steps from scattered files to a project your agents can navigate — and keep navigating. Agent-native Governance files and typed context give agents orientation — no prompt re-engineering every session. Human-readable Every file is plain Markdown. Browse in Obsidian, VS Code, or GitHub. No proprietary formats, no lock-in. Composable Modules, datasets, and lattices compose into workflows. Start small, scale to multi-team campaigns with the same primitives. 01 Structure Every agent session starts from scratch — agents relearn your project by rummaging through files. aDNA ends that. Three directories (what you know, how you work, who's involved) give any agent instant orientation.
+aDNA.aDNA/
+aDNA.aDNA/
+├── CLAUDE.md ← agent operating protocol
+├── STATE.md ← current phase, blockers
+├── what/ ← what the project knows
+│ ├── context/ typed context library
+│ └── decisions/ architecture records
+├── how/ ← how it operates
+│ ├── campaigns/ strategic initiatives
+│ └── missions/ decomposed work
+└── who/ ← who's involved
+└── governance/ roles & policy
+02 Orient Without a map, agents blast through irrelevant files or ask you to re-explain the project. Agents read your CLAUDE.md and AGENTS.md first, then pull typed context at exactly the depth they need — not your entire repo, not a blank slate.
+aDNA.aDNA/CLAUDE.md
+# CLAUDE.md — aDNA.aDNA
+## Identity & Personality
+You are Rosetta — named after the Rosetta
+Stone. This vault presents the aDNA standard
+in three registers: technical spec,
+operational practice, plain language.
+## Standing Orders
+1. Phase gates are human gates.
+2. Destructive actions require confirmation.
+03 Execute Context windows close and wipe progress — the next agent starts over. aDNA decomposes work into sessions, missions, and campaigns — context-sized chunks that fit a single agent window. What one agent learns, the next inherits.
+mission_wadna_p3_iterate.md
+mission_id: mission_wadna_p3_iterate
+phase: 3
+status: in_progress
+## Decade backbone
+D1 Credibility-integrity — active
+D2 Navigation & docs — queued
+D3 Agentic + community — queued
+D4 Visual craft — queued
+New to aDNA? Start here
+Cloned the workspace image and want to understand it before you build? The standard
+embeds in .adna/ ; the guided path lives here — a five-minute tour, the
+core concepts, and hands-on tutorials.
+Learn aDNA What is aDNA? → Tutorials →
+Dive deeper: Convergence Model · Concepts & Tutorials · Reference Specification The Standard aDNA is an open specification — MIT licensed, community-driven, designed for extension. v2.5 MIT License Open Standard 16 Entity Types Read the Specification View on GitHub Join the network
+The network is open — run a node, share a vault, and help
+govern the standard .
+Mission-aligned subnetworks already steward real public-good work here, in the open.
+World Genome Academy Genomics knowledge as a shared commons Context Commons Agentic-context literacy, shared Wilhelm AI for the Undiagnosed AI for people living with undiagnosed disease Rare Archive Open-source rare-disease AI See the commons Join the community aDNA for Researchers · Educators · Enterprise · Compliance · Startups · Adopters aDNA Give your project a knowledge architecture that both humans and AI agents can navigate. Network Vaults Commons Community About Security Privacy Specification Glossary Guides Get Started Changelog Design system RSS GitHub © 2026 aDNA Network. Released under the MIT License.

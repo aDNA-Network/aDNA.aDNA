@@ -1,0 +1,498 @@
+<!DOCTYPE html><html lang="en" class="no-js dark"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v6.1.6"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- Subscribable feed (idea_site_rss_feed / Champollion M4.2) — a cheap
+         "actively maintained" signal + the standard watch-mechanism for evaluators. --><link rel="alternate" type="application/rss+xml" title="aDNA — Changelog" href="/rss.xml"><!-- Preload critical above-fold fonts (latin subsets only) --><link rel="preload" href="/_astro/inter-latin-400-normal.C38fXH4l.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/space-grotesk-latin-400-normal.CJ-V5oYT.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/space-grotesk-latin-700-normal.RjhwGPKo.woff2" as="font" type="font/woff2" crossorigin><title>Tool Setup — aDNA</title><meta name="description" content="Every aDNA setup needs three things: Git, a text editor that reads Markdown and YAML, and Python 3.8+ for the validation tooling."><!-- Canonical --><link rel="canonical" href="https://adna.network/reference/tool-setup/"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:title" content="Tool Setup — aDNA"><meta property="og:description" content="Every aDNA setup needs three things: Git, a text editor that reads Markdown and YAML, and Python 3.8+ for the validation tooling."><meta property="og:url" content="https://adna.network/reference/tool-setup/"><meta property="og:image" content="https://adna.network/images/og-reference.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Tool Setup — aDNA"><meta property="og:site_name" content="aDNA"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tool Setup — aDNA"><meta name="twitter:description" content="Every aDNA setup needs three things: Git, a text editor that reads Markdown and YAML, and Python 3.8+ for the validation tooling."><meta name="twitter:image" content="https://adna.network/images/og-reference.png"><meta name="twitter:image:alt" content="Tool Setup — aDNA"><!-- JSON-LD: single schema or @graph bundle for multiple schemas --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Tool Setup","description":"Every aDNA setup needs three things: Git, a text editor that reads Markdown and YAML, and Python 3.8+ for the validation tooling.","url":"https://adna.network/reference/tool-setup/","publisher":{"@type":"Organization","name":"aDNA Network","url":"https://github.com/aDNA-Network/aDNA"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://adna.network/"},{"@type":"ListItem","position":2,"name":"Reference","item":"https://adna.network/reference/"},{"@type":"ListItem","position":3,"name":"Tool Setup"}]}]}</script><script>
+      document.documentElement.classList.remove('no-js');
+    </script><script>
+      (function () {
+        const applyTheme = () => {
+          // Dark-first (ADR-032): the Tokyo Night register is the default for every
+          // visitor; light is opt-in via the toggle. Dark unless the user chose light.
+          const theme = localStorage.getItem('theme');
+          const dark = theme !== 'light';
+          document.documentElement.classList.toggle('dark', dark);
+        };
+        applyTheme();
+        document.addEventListener('astro:page-load', applyTheme);
+        matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+      })();
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BR60VNPF.js"></script><style>.spec-orientation[data-astro-cid-i26alp5a]{border:1px solid var(--color-border);border-left:3px solid var(--color-primary);background:var(--color-bg-alt);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);margin-bottom:var(--space-6);font-size:var(--text-sm)}.spec-orientation[data-astro-cid-i26alp5a] p[data-astro-cid-i26alp5a]{margin:0}.spec-orientation[data-astro-cid-i26alp5a] p[data-astro-cid-i26alp5a]+p[data-astro-cid-i26alp5a]{margin-top:var(--space-1)}.spec-orientation[data-astro-cid-i26alp5a] a[data-astro-cid-i26alp5a]{color:var(--color-link);font-weight:500}.ref-meta[data-astro-cid-i26alp5a]{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-6);font-size:var(--text-sm)}.ref-version[data-astro-cid-i26alp5a]{font-family:var(--font-mono);color:var(--color-text-muted)}.ref-stability[data-astro-cid-i26alp5a]{padding:.15em .6em;border-radius:var(--radius-full);font-weight:500;text-transform:capitalize}.ref-stability[data-astro-cid-i26alp5a].stable{background:color-mix(in srgb,var(--color-success) 15%,transparent);color:#116931}.ref-stability[data-astro-cid-i26alp5a].beta{background:color-mix(in srgb,var(--color-info) 15%,transparent);color:#096c9a}.ref-stability[data-astro-cid-i26alp5a].experimental{background:color-mix(in srgb,var(--color-warning) 15%,transparent);color:#9d6607}.ref-stability[data-astro-cid-i26alp5a].deprecated{background:color-mix(in srgb,var(--color-error) 15%,transparent);color:#9a1919}.dark .ref-stability[data-astro-cid-i26alp5a].stable{color:#34c06e}.dark .ref-stability[data-astro-cid-i26alp5a].beta{color:#5cb8e8}.dark .ref-stability[data-astro-cid-i26alp5a].experimental{color:#e89545}.dark .ref-stability[data-astro-cid-i26alp5a].deprecated{color:#e87070}
+</style>
+<link rel="stylesheet" href="/_astro/BaseLayout.BRcQ_MAb.css">
+<link rel="stylesheet" href="/_astro/DocumentationLayout.Dl3xw7td.css"><script type="module" src="/_astro/page.BrUNW4oj.js"></script></head> <body class="min-h-screen flex flex-col"> <a href="#main-content" class="skip-link">Skip to main content</a> <header class="header" data-astro-cid-qmpwvs2w> <div class="header-inner" data-astro-cid-qmpwvs2w> <a href="/" class="logo" aria-label="aDNA home" data-astro-cid-qmpwvs2w> <span class="logo-mark" data-astro-cid-qmpwvs2w>a</span><span class="logo-text" data-astro-cid-qmpwvs2w>DNA</span> </a> <nav class="nav-desktop-wrap" aria-label="Main navigation" data-astro-cid-qmpwvs2w> <div class="nav-desktop" data-astro-cid-qmpwvs2w> <a href="/network" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Network </a><a href="/vaults" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Vaults </a><a href="/commons" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Commons </a><a href="/learn" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Learn </a><a href="/patterns" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Patterns </a><a href="/use-cases" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Use Cases </a><a href="/community" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Community </a> </div> <details class="nav-more" data-astro-cid-qmpwvs2w> <summary class="nav-link nav-more-summary active" data-astro-cid-qmpwvs2w> More </summary> <div class="nav-more-panel" data-astro-cid-qmpwvs2w> <a href="/reference" class="nav-link active" data-astro-prefetch data-astro-cid-qmpwvs2w> Reference </a><a href="/glossary" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Glossary </a><a href="/how" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Guides </a><a href="/adopters" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> For you </a> </div> </details> </nav> <div class="header-actions" data-astro-cid-qmpwvs2w> <a href="/get-started" class="btn btn-primary header-cta" data-astro-prefetch data-astro-cid-qmpwvs2w>Get Started</a> <a href="https://github.com/aDNA-Network/aDNA" class="github-link" aria-label="GitHub repository" target="_blank" rel="noopener" data-astro-cid-qmpwvs2w> <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-astro-cid-qmpwvs2w> <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" data-astro-cid-qmpwvs2w></path> </svg> </a> <button class="dark-mode-toggle" aria-label="Toggle dark mode" type="button" data-astro-cid-twkxffgo> <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-twkxffgo> <circle cx="12" cy="12" r="5" data-astro-cid-twkxffgo></circle> <line x1="12" y1="1" x2="12" y2="3" data-astro-cid-twkxffgo></line> <line x1="12" y1="21" x2="12" y2="23" data-astro-cid-twkxffgo></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" data-astro-cid-twkxffgo></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" data-astro-cid-twkxffgo></line> <line x1="1" y1="12" x2="3" y2="12" data-astro-cid-twkxffgo></line> <line x1="21" y1="12" x2="23" y2="12" data-astro-cid-twkxffgo></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" data-astro-cid-twkxffgo></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" data-astro-cid-twkxffgo></line> </svg> <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-twkxffgo> <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" data-astro-cid-twkxffgo></path> </svg> </button> <script type="module">const t=document.querySelector(".dark-mode-toggle");t?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" data-astro-cid-qmpwvs2w> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-qmpwvs2w> <line x1="3" y1="6" x2="21" y2="6" data-astro-cid-qmpwvs2w></line> <line x1="3" y1="12" x2="21" y2="12" data-astro-cid-qmpwvs2w></line> <line x1="3" y1="18" x2="21" y2="18" data-astro-cid-qmpwvs2w></line> </svg> </button> </div> </div> <nav class="nav-mobile" aria-label="Mobile navigation" hidden data-astro-cid-qmpwvs2w> <a href="/network" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Network </a><a href="/vaults" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Vaults </a><a href="/commons" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Commons </a><a href="/learn" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Learn </a><a href="/patterns" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Patterns </a><a href="/use-cases" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Use Cases </a><a href="/community" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Community </a>  <p class="nav-mobile-label" data-astro-cid-qmpwvs2w>More</p> <a href="/reference" class="nav-link active" data-astro-prefetch data-astro-cid-qmpwvs2w> Reference </a><a href="/glossary" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Glossary </a><a href="/how" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> Guides </a><a href="/adopters" class="nav-link" data-astro-prefetch data-astro-cid-qmpwvs2w> For you </a> </nav> </header> <script type="module">const e=document.querySelector(".mobile-menu-btn"),t=document.querySelector(".nav-mobile");function d(){e?.setAttribute("aria-expanded","true"),t?.removeAttribute("hidden"),t?.querySelector("a")?.focus()}function i(){e?.setAttribute("aria-expanded","false"),t?.setAttribute("hidden",""),e?.focus()}e?.addEventListener("click",()=>{e.getAttribute("aria-expanded")==="true"?i():d()});document.addEventListener("keydown",n=>{n.key==="Escape"&&e?.getAttribute("aria-expanded")==="true"&&i()});t?.addEventListener("focusout",n=>{setTimeout(()=>{t&&!t.contains(document.activeElement)&&e!==document.activeElement&&i()},0)});</script> <main id="main-content" class="flex-1" tabindex="-1">  <div class="doc-layout" data-astro-cid-kpcmd3d5> <!-- Mobile section nav (audit C3: the sidebar was display:none below 768px, leaving
+         doc pages with no section navigation on phones). Native disclosure, zero JS; the
+         desktop <aside> below is display:none'd on mobile so only one copy is ever in
+         the accessibility tree. --> <details class="doc-mobile-nav" data-astro-cid-kpcmd3d5> <summary data-astro-cid-kpcmd3d5>In this section</summary> <div class="doc-mobile-nav-inner" data-astro-cid-kpcmd3d5> <nav class="sidebar-nav" aria-label="Documentation sections" data-astro-cid-owrjt5ou> <ul class="section-switcher" aria-label="All sections" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/learn/what-is-adna" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- learn — abstract layered paths (M5.3 cycle 103 D11 motif vocabulary: stepped progression) -->
+  <rect x="2.5" y="4" width="11" height="3" rx="0.5"/>
+  <rect x="6.5" y="10.5" width="11" height="3" rx="0.5"/>
+  <rect x="10.5" y="17" width="11" height="3" rx="0.5"/>
+  <line x1="13.5" y1="7" x2="17.5" y2="10.5" stroke-dasharray="0.8 0.8"/>
+  <line x1="17.5" y1="13.5" x2="21.5" y2="17" stroke-dasharray="0.8 0.8"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Learn</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/patterns/question-test" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- patterns — tessellating hexagons (M5.3 cycle 103 D11 motif vocabulary: composability / repeating modules) -->
+  <!-- center hex + 6 surrounding -->
+  <polygon points="12,8.5 14.6,10 14.6,13 12,14.5 9.4,13 9.4,10"/>
+  <polygon points="12,2 14.6,3.5 14.6,6.5 12,8 9.4,6.5 9.4,3.5"/>
+  <polygon points="17.2,5 19.8,6.5 19.8,9.5 17.2,11 14.6,9.5 14.6,6.5"/>
+  <polygon points="17.2,11 19.8,12.5 19.8,15.5 17.2,17 14.6,15.5 14.6,12.5"/>
+  <polygon points="12,14 14.6,15.5 14.6,18.5 12,20 9.4,18.5 9.4,15.5"/>
+  <polygon points="6.8,11 9.4,12.5 9.4,15.5 6.8,17 4.2,15.5 4.2,12.5"/>
+  <polygon points="6.8,5 9.4,6.5 9.4,9.5 6.8,11 4.2,9.5 4.2,6.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Patterns</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/use-cases/solo-developer" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- use_cases — concentric layered rectangles (M5.3 cycle 103 D11 motif vocabulary: scenarios stacked from generic to specific) -->
+  <rect x="3" y="3" width="18" height="18" rx="1"/>
+  <rect x="6" y="6" width="12" height="12" rx="0.75" opacity="0.75"/>
+  <rect x="9" y="9" width="6" height="6" rx="0.5" opacity="0.6"/>
+  <circle cx="12" cy="12" r="0.9" fill="currentColor"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Use Cases</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/community/community-roles" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Community</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/specification" class="switcher-link active" aria-current="true" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Reference</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/glossary/glossary-adna" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Glossary</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/how/publishing/vault-to-site" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- how — workflow arrows between nodes (M5.3 cycle 103 D11 motif; refined at cycle 106 per design_finding_for_cycle_106: explicit chevron arrowheads + straight shafts for legibility at nav scale 16-20px) -->
+  <rect x="1.5" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="9.25" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="17" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <line x1="7" y1="12" x2="8.55" y2="12"/>
+  <polyline points="7.95 11.1 9.25 12 7.95 12.9"/>
+  <line x1="14.75" y1="12" x2="16.3" y2="12"/>
+  <polyline points="15.7 11.1 17 12 15.7 12.9"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Guides</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/researchers" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>For you</span> </a> </li> </ul> <div class="nav-group" data-astro-cid-owrjt5ou> <p class="group-label" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Reference</span> </p> <ul class="group-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/specification" class="nav-item" data-astro-cid-owrjt5ou> Specification </a> </li><li class="subgroup" data-astro-cid-owrjt5ou> <details open data-astro-cid-owrjt5ou> <summary class="subgroup-label" data-astro-cid-owrjt5ou>Rationale &amp; guides</summary> <ul class="subgroup-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/design-rationale" class="nav-item" data-astro-cid-owrjt5ou> Design Rationale </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/reading-guide" class="nav-item" data-astro-cid-owrjt5ou> Reading Guide </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/agent-first-guide" class="nav-item" data-astro-cid-owrjt5ou> Agent-First Guide </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/migration-guide" class="nav-item" data-astro-cid-owrjt5ou> Migration Guide </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/tool-setup" class="nav-item active" aria-current="page" data-astro-cid-owrjt5ou> Tool Setup </a> </li> </ul> </details> </li><li class="subgroup" data-astro-cid-owrjt5ou> <details data-astro-cid-owrjt5ou> <summary class="subgroup-label" data-astro-cid-owrjt5ou>Governance &amp; quality</summary> <ul class="subgroup-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/governance-model" class="nav-item" data-astro-cid-owrjt5ou> Governance Model </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/quality-rubric" class="nav-item" data-astro-cid-owrjt5ou> Quality Rubric </a> </li> </ul> </details> </li><li class="subgroup" data-astro-cid-owrjt5ou> <details data-astro-cid-owrjt5ou> <summary class="subgroup-label" data-astro-cid-owrjt5ou>Craft</summary> <ul class="subgroup-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/writing-guidelines" class="nav-item" data-astro-cid-owrjt5ou> Writing Guidelines </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/visual-identity-v2" class="nav-item" data-astro-cid-owrjt5ou> Visual Identity v3 </a> </li> </ul> </details> </li> </ul> </div> </nav> </div> </details> <!-- SP-2 (H-1/H-2): the <article> (with its <h1>) comes BEFORE the <aside> sidebars in
+         DOM so a screen reader / agent reads breadcrumb → h1 → content before the ~100 nav
+         links. The visual column order (sidebar | content | toc) is restored via
+         grid-template-areas below, so there is no visual change. The skip-link (#main-content)
+         now lands on the content, not the sidebar. --> <article class="doc-content prose" data-astro-cid-kpcmd3d5> <a href="/reference/" class="back-to-index" data-astro-cid-y4oyvcup><span aria-hidden="true" data-astro-cid-y4oyvcup>←</span> Back to reference</a><nav aria-label="Breadcrumb" class="breadcrumb" data-astro-cid-y4oyvcup><ol data-astro-cid-y4oyvcup><li class="leg" data-astro-cid-y4oyvcup>WHAT</li><li class="sep" aria-hidden="true" data-astro-cid-y4oyvcup>›</li><li class="section-cell" data-astro-cid-y4oyvcup><span class="section-icon" aria-hidden="true" data-astro-cid-y4oyvcup><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span><a href="/reference/" data-astro-cid-y4oyvcup>Reference</a></li><li class="sep" aria-hidden="true" data-astro-cid-y4oyvcup>›</li><li aria-current="page" class="current" data-astro-cid-y4oyvcup>Tool Setup</li></ol></nav>  <h1 data-astro-cid-kpcmd3d5>Tool Setup</h1> <blockquote>
+<p>Get productive with aDNA using your preferred tool. aDNA is tool-agnostic at Tier 1 — any text editor and file system works.</p>
+</blockquote>
+<hr/>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>All setups require:</p>
+<ul>
+<li>Git (for cloning and version control)</li>
+<li>A text editor that can read markdown and YAML</li>
+<li>Python 3.8+ (for validation tooling)</li>
+</ul>
+<hr/>
+<h2 id="setup-1-terminal--claude-code-minimal">Setup 1: Terminal + Claude Code (Minimal)</h2>
+<p>Best for: agent operators, CLI-first workflows, headless environments.</p>
+<h3 id="quick-start">Quick Start</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Clone or create an aDNA instance</span></span>
+<span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> clone</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">your-adna-rep</span><span style="color:#E1E4E8">o</span><span style="color:#F97583">&gt;</span><span style="color:#E1E4E8"> &amp;&amp; </span><span style="color:#79B8FF">cd</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">repo-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Or bootstrap a new instance</span></span>
+<span class="line"><span style="color:#B392F0">bash</span><span style="color:#9ECBFF"> setup.sh</span><span style="color:#6A737D">  # if available, or manually create the triad</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Validate the instance</span></span>
+<span class="line"><span style="color:#B392F0">python</span><span style="color:#9ECBFF"> what/lattices/tools/adna_validate.py</span><span style="color:#9ECBFF"> .</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Start working — Claude Code reads CLAUDE.md automatically</span></span>
+<span class="line"><span style="color:#B392F0">claude</span></span></code></pre>
+<h3 id="what-works">What Works</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Feature</th><th>Support</th></tr></thead><tbody><tr><td>Directory structure (Tier 1)</td><td>Full — <code>ls</code>, <code>tree</code>, <code>find</code></td></tr><tr><td>YAML frontmatter (Tier 1/2)</td><td>Full — any YAML parser</td></tr><tr><td>Markdown content (Tier 1)</td><td>Full — <code>cat</code>, <code>less</code>, <code>bat</code></td></tr><tr><td>Validation tooling</td><td>Full — Python scripts</td></tr><tr><td>Wikilinks (Tier 3)</td><td>Rendered as plaintext — still navigable via grep</td></tr><tr><td>Graph view (Tier 3)</td><td>Not available</td></tr></tbody></table>
+<h3 id="tips">Tips</h3>
+<ul>
+<li>Use <code>grep -r &quot;type: mission&quot; how/missions/</code> to find active missions</li>
+<li>Use <code>grep -r &quot;status: active&quot; --include=&quot;*.md&quot;</code> for active items</li>
+<li>Session files are your changelog — check <code>how/sessions/active/</code></li>
+</ul>
+<hr/>
+<h2 id="setup-2-vs-code--cursor">Setup 2: VS Code / Cursor</h2>
+<p>Best for: developers, mixed code + knowledge workflows, team environments.</p>
+<h3 id="quick-start-1">Quick Start</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Clone and open</span></span>
+<span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> clone</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">your-adna-rep</span><span style="color:#E1E4E8">o</span><span style="color:#F97583">&gt;</span></span>
+<span class="line"><span style="color:#B392F0">code</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">repo-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">&gt;</span><span style="color:#6A737D">   # or: cursor &lt;repo-name&gt;</span></span></code></pre>
+<h3 id="recommended-extensions">Recommended Extensions</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Extension</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>YAML</strong> (Red Hat)</td><td>Frontmatter syntax highlighting and validation</td></tr><tr><td><strong>Markdown All in One</strong></td><td>Markdown preview, TOC generation</td></tr><tr><td><strong>Foam</strong> or <strong>Dendron</strong></td><td>Wikilink support, backlinks, graph view</td></tr><tr><td><strong>Mermaid Preview</strong></td><td>Render Mermaid diagrams inline</td></tr></tbody></table>
+<h3 id="configuration">Configuration</h3>
+<p>Add to <code>.vscode/settings.json</code> for best experience:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;files.associations&quot;</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    &quot;*.md&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;markdown&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;markdown.validate.enabled&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;yaml.schemas&quot;</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    &quot;what/lattices/lattice_yaml_schema.json&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;*.lattice.yaml&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    &quot;what/lattices/tools/frontmatter_schema.json&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;*.md&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="what-works-1">What Works</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Feature</th><th>Support</th></tr></thead><tbody><tr><td>Directory structure (Tier 1)</td><td>Full — file explorer</td></tr><tr><td>YAML frontmatter (Tier 1/2)</td><td>Full with YAML extension</td></tr><tr><td>Markdown content (Tier 1)</td><td>Full with preview</td></tr><tr><td>Wikilinks (Tier 3)</td><td>With Foam/Dendron extension</td></tr><tr><td>Validation tooling</td><td>Full — integrated terminal</td></tr><tr><td>Graph view (Tier 3)</td><td>With Foam extension (basic)</td></tr></tbody></table>
+<hr/>
+<h2 id="setup-3-obsidian">Setup 3: Obsidian</h2>
+<p>Best for: knowledge workers, visual thinkers, projects with heavy cross-referencing.</p>
+<h3 id="quick-start-2">Quick Start</h3>
+<ol>
+<li>Download <a href="https://obsidian.md">Obsidian</a></li>
+<li>Open the aDNA instance directory as a vault</li>
+<li>Trust the vault when prompted (required for community plugins)</li>
+</ol>
+<h3 id="recommended-plugins">Recommended Plugins</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Plugin</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Dataview</strong></td><td>Query frontmatter across the vault (Tier 2)</td></tr><tr><td><strong>Templater</strong></td><td>Use aDNA templates from <code>how/templates/</code></td></tr><tr><td><strong>Obsidian Git</strong></td><td>Auto-commit and sync</td></tr><tr><td><strong>Notebook Navigator</strong></td><td>Enhanced session navigation</td></tr></tbody></table>
+<h3 id="tier-3-features-obsidian-specific">Tier 3 Features (Obsidian-specific)</h3>
+<ul>
+<li><strong>Wikilinks</strong>: <code>[[file_name]]</code> syntax for bidirectional linking</li>
+<li><strong>Graph View</strong>: Visual map of all cross-references</li>
+<li><strong>Canvas</strong>: Visual composition of lattice workflows</li>
+<li><strong>Dataview queries</strong>: Dynamic tables from frontmatter</li>
+<li><strong>Banner images</strong>: Visual file identification via <code>banner</code> field</li>
+</ul>
+<h3 id="what-works-2">What Works</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Feature</th><th>Support</th></tr></thead><tbody><tr><td>All Tier 1/2/3 features</td><td>Full</td></tr><tr><td>Validation tooling</td><td>Via integrated terminal or external</td></tr></tbody></table>
+<hr/>
+<h2 id="conformance-by-tool">Conformance by Tool</h2>
+<p>All three setups support full aDNA conformance:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Conformance Level</th><th>Terminal</th><th>VS Code</th><th>Obsidian</th></tr></thead><tbody><tr><td>Starter</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>Standard</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>Full</td><td>Yes</td><td>Yes</td><td>Yes</td></tr></tbody></table>
+<p>The aDNA standard is designed so that <strong>Tier 1 features (directory structure, YAML frontmatter, markdown files, naming conventions) work universally</strong>. Tier 2 adds frontmatter querying (any YAML-aware tool). Tier 3 adds environment-specific enhancements.</p>
+<hr/>
+<h2 id="validation-all-tools">Validation (All Tools)</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Check instance conformance</span></span>
+<span class="line"><span style="color:#B392F0">python</span><span style="color:#9ECBFF"> what/lattices/tools/adna_validate.py</span><span style="color:#9ECBFF"> .</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Check governance file consistency</span></span>
+<span class="line"><span style="color:#B392F0">bash</span><span style="color:#9ECBFF"> what/lattices/tools/governance_sync_check.sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Validate a specific lattice YAML</span></span>
+<span class="line"><span style="color:#B392F0">python</span><span style="color:#9ECBFF"> what/lattices/tools/lattice_validate.py</span><span style="color:#9ECBFF"> path/to/file.lattice.yaml</span></span></code></pre>
+<h2 id="related-docs">Related Docs</h2>
+<ul>
+<li><code>agent_first_guide.md</code> — Agent operator setup (Claude Code focus)</li>
+<li><code>adna_standard.md</code> §16 — Tool Integration Tiers specification</li>
+<li><code>standard_reading_guide.md</code> — How to navigate the standard document</li>
+</ul>   </article> <aside class="doc-sidebar" aria-label="Documentation navigation" data-astro-cid-kpcmd3d5> <nav class="sidebar-nav" aria-label="Documentation sections" data-astro-cid-owrjt5ou> <ul class="section-switcher" aria-label="All sections" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/learn/what-is-adna" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- learn — abstract layered paths (M5.3 cycle 103 D11 motif vocabulary: stepped progression) -->
+  <rect x="2.5" y="4" width="11" height="3" rx="0.5"/>
+  <rect x="6.5" y="10.5" width="11" height="3" rx="0.5"/>
+  <rect x="10.5" y="17" width="11" height="3" rx="0.5"/>
+  <line x1="13.5" y1="7" x2="17.5" y2="10.5" stroke-dasharray="0.8 0.8"/>
+  <line x1="17.5" y1="13.5" x2="21.5" y2="17" stroke-dasharray="0.8 0.8"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Learn</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/patterns/question-test" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- patterns — tessellating hexagons (M5.3 cycle 103 D11 motif vocabulary: composability / repeating modules) -->
+  <!-- center hex + 6 surrounding -->
+  <polygon points="12,8.5 14.6,10 14.6,13 12,14.5 9.4,13 9.4,10"/>
+  <polygon points="12,2 14.6,3.5 14.6,6.5 12,8 9.4,6.5 9.4,3.5"/>
+  <polygon points="17.2,5 19.8,6.5 19.8,9.5 17.2,11 14.6,9.5 14.6,6.5"/>
+  <polygon points="17.2,11 19.8,12.5 19.8,15.5 17.2,17 14.6,15.5 14.6,12.5"/>
+  <polygon points="12,14 14.6,15.5 14.6,18.5 12,20 9.4,18.5 9.4,15.5"/>
+  <polygon points="6.8,11 9.4,12.5 9.4,15.5 6.8,17 4.2,15.5 4.2,12.5"/>
+  <polygon points="6.8,5 9.4,6.5 9.4,9.5 6.8,11 4.2,9.5 4.2,6.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Patterns</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/use-cases/solo-developer" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- use_cases — concentric layered rectangles (M5.3 cycle 103 D11 motif vocabulary: scenarios stacked from generic to specific) -->
+  <rect x="3" y="3" width="18" height="18" rx="1"/>
+  <rect x="6" y="6" width="12" height="12" rx="0.75" opacity="0.75"/>
+  <rect x="9" y="9" width="6" height="6" rx="0.5" opacity="0.6"/>
+  <circle cx="12" cy="12" r="0.9" fill="currentColor"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Use Cases</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/community/community-roles" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Community</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/specification" class="switcher-link active" aria-current="true" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Reference</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/glossary/glossary-adna" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Glossary</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/how/publishing/vault-to-site" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- how — workflow arrows between nodes (M5.3 cycle 103 D11 motif; refined at cycle 106 per design_finding_for_cycle_106: explicit chevron arrowheads + straight shafts for legibility at nav scale 16-20px) -->
+  <rect x="1.5" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="9.25" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <rect x="17" y="9.5" width="5.5" height="5" rx="0.7"/>
+  <line x1="7" y1="12" x2="8.55" y2="12"/>
+  <polyline points="7.95 11.1 9.25 12 7.95 12.9"/>
+  <line x1="14.75" y1="12" x2="16.3" y2="12"/>
+  <polyline points="15.7 11.1 17 12 15.7 12.9"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Guides</span> </a> </li><li data-astro-cid-owrjt5ou> <a href="/researchers" class="switcher-link" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- community — interlocking circles network (M5.3 cycle 103 D11 motif vocabulary: contribution graph) -->
+  <circle cx="6" cy="6" r="2.6"/>
+  <circle cx="18" cy="6" r="2.6"/>
+  <circle cx="6" cy="18" r="2.6"/>
+  <circle cx="18" cy="18" r="2.6"/>
+  <circle cx="12" cy="12" r="2.6"/>
+  <line x1="7.85" y1="7.85" x2="10.15" y2="10.15"/>
+  <line x1="16.15" y1="7.85" x2="13.85" y2="10.15"/>
+  <line x1="7.85" y1="16.15" x2="10.15" y2="13.85"/>
+  <line x1="16.15" y1="16.15" x2="13.85" y2="13.85"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>For you</span> </a> </li> </ul> <div class="nav-group" data-astro-cid-owrjt5ou> <p class="group-label" data-astro-cid-owrjt5ou> <span class="group-icon" aria-hidden="true" data-astro-cid-owrjt5ou><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- reference — blueprint grid with dimensional callouts (M5.3 cycle 103 D11 motif vocabulary: technical specification) -->
+  <!-- outer frame -->
+  <rect x="3" y="3" width="18" height="18" rx="0.5"/>
+  <!-- grid -->
+  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="9" y1="3" x2="9" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <line x1="15" y1="3" x2="15" y2="21" stroke-dasharray="0.5 0.5" opacity="0.6"/>
+  <!-- callout brackets -->
+  <path d="M5.5 11 L 5.5 13 M 5.5 12 L 8.5 12"/>
+  <path d="M11 17.5 L 13 17.5 M 12 17.5 L 12 14.5"/>
+</svg>
+</span> <span data-astro-cid-owrjt5ou>Reference</span> </p> <ul class="group-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/specification" class="nav-item" data-astro-cid-owrjt5ou> Specification </a> </li><li class="subgroup" data-astro-cid-owrjt5ou> <details open data-astro-cid-owrjt5ou> <summary class="subgroup-label" data-astro-cid-owrjt5ou>Rationale &amp; guides</summary> <ul class="subgroup-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/design-rationale" class="nav-item" data-astro-cid-owrjt5ou> Design Rationale </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/reading-guide" class="nav-item" data-astro-cid-owrjt5ou> Reading Guide </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/agent-first-guide" class="nav-item" data-astro-cid-owrjt5ou> Agent-First Guide </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/migration-guide" class="nav-item" data-astro-cid-owrjt5ou> Migration Guide </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/tool-setup" class="nav-item active" aria-current="page" data-astro-cid-owrjt5ou> Tool Setup </a> </li> </ul> </details> </li><li class="subgroup" data-astro-cid-owrjt5ou> <details data-astro-cid-owrjt5ou> <summary class="subgroup-label" data-astro-cid-owrjt5ou>Governance &amp; quality</summary> <ul class="subgroup-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/governance-model" class="nav-item" data-astro-cid-owrjt5ou> Governance Model </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/quality-rubric" class="nav-item" data-astro-cid-owrjt5ou> Quality Rubric </a> </li> </ul> </details> </li><li class="subgroup" data-astro-cid-owrjt5ou> <details data-astro-cid-owrjt5ou> <summary class="subgroup-label" data-astro-cid-owrjt5ou>Craft</summary> <ul class="subgroup-list" data-astro-cid-owrjt5ou> <li data-astro-cid-owrjt5ou> <a href="/reference/writing-guidelines" class="nav-item" data-astro-cid-owrjt5ou> Writing Guidelines </a> </li><li data-astro-cid-owrjt5ou> <a href="/reference/visual-identity-v2" class="nav-item" data-astro-cid-owrjt5ou> Visual Identity v3 </a> </li> </ul> </details> </li> </ul> </div> </nav> </aside> <aside class="doc-toc" aria-label="Table of contents" data-astro-cid-kpcmd3d5> <div class="toc-panel" data-astro-cid-tjvdr77h><p class="toc-title" data-astro-cid-tjvdr77h>On this page</p><ul class="toc-list" data-astro-cid-tjvdr77h><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#prerequisites" class="toc-link" data-slug="prerequisites" data-astro-cid-tjvdr77h>Prerequisites</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#setup-1-terminal--claude-code-minimal" class="toc-link" data-slug="setup-1-terminal--claude-code-minimal" data-astro-cid-tjvdr77h>Setup 1: Terminal + Claude Code (Minimal)</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#quick-start" class="toc-link" data-slug="quick-start" data-astro-cid-tjvdr77h>Quick Start</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#what-works" class="toc-link" data-slug="what-works" data-astro-cid-tjvdr77h>What Works</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#tips" class="toc-link" data-slug="tips" data-astro-cid-tjvdr77h>Tips</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#setup-2-vs-code--cursor" class="toc-link" data-slug="setup-2-vs-code--cursor" data-astro-cid-tjvdr77h>Setup 2: VS Code / Cursor</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#quick-start-1" class="toc-link" data-slug="quick-start-1" data-astro-cid-tjvdr77h>Quick Start</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#recommended-extensions" class="toc-link" data-slug="recommended-extensions" data-astro-cid-tjvdr77h>Recommended Extensions</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#configuration" class="toc-link" data-slug="configuration" data-astro-cid-tjvdr77h>Configuration</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#what-works-1" class="toc-link" data-slug="what-works-1" data-astro-cid-tjvdr77h>What Works</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#setup-3-obsidian" class="toc-link" data-slug="setup-3-obsidian" data-astro-cid-tjvdr77h>Setup 3: Obsidian</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#quick-start-2" class="toc-link" data-slug="quick-start-2" data-astro-cid-tjvdr77h>Quick Start</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#recommended-plugins" class="toc-link" data-slug="recommended-plugins" data-astro-cid-tjvdr77h>Recommended Plugins</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#tier-3-features-obsidian-specific" class="toc-link" data-slug="tier-3-features-obsidian-specific" data-astro-cid-tjvdr77h>Tier 3 Features (Obsidian-specific)</a></li><li class="toc-depth-3" data-astro-cid-tjvdr77h><a href="#what-works-2" class="toc-link" data-slug="what-works-2" data-astro-cid-tjvdr77h>What Works</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#conformance-by-tool" class="toc-link" data-slug="conformance-by-tool" data-astro-cid-tjvdr77h>Conformance by Tool</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#validation-all-tools" class="toc-link" data-slug="validation-all-tools" data-astro-cid-tjvdr77h>Validation (All Tools)</a></li><li class="toc-depth-2" data-astro-cid-tjvdr77h><a href="#related-docs" class="toc-link" data-slug="related-docs" data-astro-cid-tjvdr77h>Related Docs</a></li></ul></div><script type="module">const c=new IntersectionObserver(e=>{for(const t of e)t.isIntersecting&&(document.querySelectorAll(".toc-link").forEach(o=>o.classList.remove("active")),document.querySelector(`.toc-link[data-slug="${t.target.id}"]`)?.classList.add("active"))},{rootMargin:"-80px 0px -70% 0px",threshold:0});document.querySelectorAll(".doc-content h2[id], .doc-content h3[id]").forEach(e=>{c.observe(e)});</script> </aside> </div>  </main> <footer class="footer" data-astro-cid-l3trhy4j> <div class="footer-inner" data-astro-cid-l3trhy4j> <div class="footer-brand" data-astro-cid-l3trhy4j> <span class="footer-logo" data-astro-cid-l3trhy4j>aDNA</span> <p class="footer-tagline" data-astro-cid-l3trhy4j>Give your project a knowledge architecture that both humans and AI agents can navigate.</p> </div> <nav class="footer-links" aria-label="Footer navigation" data-astro-cid-l3trhy4j> <a href="/network" data-astro-cid-l3trhy4j>Network</a> <a href="/vaults" data-astro-cid-l3trhy4j>Vaults</a> <a href="/commons" data-astro-cid-l3trhy4j>Commons</a> <a href="/community" data-astro-cid-l3trhy4j>Community</a> <a href="/about" data-astro-cid-l3trhy4j>About</a> <a href="/security" data-astro-cid-l3trhy4j>Security</a> <a href="/privacy" data-astro-cid-l3trhy4j>Privacy</a> <a href="/reference/specification" data-astro-cid-l3trhy4j>Specification</a> <a href="/glossary" data-astro-cid-l3trhy4j>Glossary</a> <a href="/how" data-astro-cid-l3trhy4j>Guides</a> <a href="/get-started" data-astro-cid-l3trhy4j>Get Started</a> <a href="/changelog" data-astro-cid-l3trhy4j>Changelog</a> <a href="/design-system" data-astro-cid-l3trhy4j>Design system</a> <a href="/rss.xml" data-astro-cid-l3trhy4j>RSS</a> <a href="https://github.com/aDNA-Network/aDNA" target="_blank" rel="noopener" data-astro-cid-l3trhy4j>GitHub</a> </nav> <p class="footer-copyright" data-astro-cid-l3trhy4j>&copy; 2026 aDNA Network. Released under the MIT License.</p> </div> </footer> </body></html> <script type="module">function a(){document.querySelectorAll(".doc-content pre:not(.code-block pre)").forEach(t=>{if(t.closest(".code-block"))return;const n=document.createElement("div");n.className="code-block";const o=document.createElement("div");o.className="code-content",t.parentNode.insertBefore(n,t),n.appendChild(o),o.appendChild(t),t.hasAttribute("tabindex")||t.setAttribute("tabindex","0");const e=document.createElement("button");e.className="copy-btn",e.type="button",e.setAttribute("aria-label","Copy code"),e.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>',n.appendChild(e),e.addEventListener("click",async()=>{const c=t.querySelector("code")?.textContent??t.textContent??"";await navigator.clipboard.writeText(c),e.setAttribute("aria-label","Copied!"),setTimeout(()=>e.setAttribute("aria-label","Copy code"),2e3)})})}a();document.addEventListener("astro:page-load",a);</script>

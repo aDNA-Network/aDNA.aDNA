@@ -1,0 +1,67 @@
+Get Started — aDNA
+Skip to main content a DNA Network Vaults Commons Learn Patterns Use Cases Community More Reference Glossary Guides For you Get Started [SVG] [SVG] [SVG] [SVG] Network Vaults Commons Learn Patterns Use Cases Community More Reference Glossary Guides For you In this section [SVG]
+Learn [SVG]
+Patterns [SVG]
+Use Cases [SVG]
+Community [SVG]
+Reference [SVG]
+Glossary [SVG]
+Guides [SVG]
+For you Get Started
+Set up your own aDNA workspace — a local, agent-readable home for every project's context — in
+about 5 minutes. Everything lives on your machine; nothing is sent anywhere.
+ℹ Prerequisites
+Git, and Claude Code
+installed via npm install -g @anthropic-ai/claude-code . Obsidian is optional — vaults are
+plain Markdown, so any editor works.
+💡 What you'll have when you're done
+A ~/aDNA/ workspace that ships ready: the workspace CLAUDE.md router
+(your agent's map between projects) pre-instantiated at the root; the standard itself embedded in a hidden
+.adna/ folder (your agent reads it, never edits it — updates arrive with git pull
+at the workspace root); and your first <name>.aDNA/ project, scaffolded for you by the
+onboarding interview, with its own git history — kept out of the workspace image's history by design.
+1. Clone the workspace
+The clone is your workspace — not a template you copy from. The router comes pre-instantiated
+and the standard comes embedded; there is nothing to bootstrap by hand.
+git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA 2. Start Claude Code
+Run claude in the workspace. The agent reads the router, sees a fresh workspace
+with no projects yet, and walks you through creating your first one:
+cd ~/aDNA
+claude $ claude
+✓ Loaded CLAUDE.md (workspace router)
+This is a fresh aDNA workspace — the standard is in place and
+there are no projects yet. Let's create your first one.
+What is this project called, and what problem does it solve?
+> _
+The interview scaffolds <your_project>.aDNA/ — its triad of
+what/  ·  how/  ·  who/ , its governance
+files, and its own git history. When it finishes, your workspace looks like this:
+~/aDNA/
+├── CLAUDE.md # workspace router (ships with the clone)
+├── .adna/ # the standard (embedded; read-only — releases update it)
+└── my_project.aDNA/ # your first project — a working context graph
+├── CLAUDE.md # the project's own governance
+├── what/ # knowledge: context, decisions, artifacts
+├── how/ # operations: sessions, missions, skills
+└── who/ # people: roles, coordination
+From here, work happens inside projects: cd my_project.aDNA && claude
+and the agent picks up that project's governance automatically.
+ℹ The whole flow, one command
+Both steps, chained — auditable inline, nothing executed from the network:
+git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude ℹ Existing installs (pre-June-2026 layout)
+Installed earlier, with a cloned hidden .adna/ plus a copied router? It keeps working:
+the previous template repository is preserved read-only at
+adna-legacy , and your clone's old URLs
+redirect there — frozen, so nothing underneath you changes. To move to the current layout, run the
+standard's skill_workspace_upgrade from your workspace.
+[SVG] Try this in Claude Code
+Claude Code is Anthropic's official CLI (a terminal tool for AI-assisted development). Run this tutorial step by step with AI assistance — ask questions, get unstuck, and go deeper on any concept.
+npm install -g @anthropic-ai/claude-code [SVG] Next steps You just built a node in a living network. Grow it — then see where it connects: Where it joins: the living registry of vaults and the network your project can federate with — building in the open is the whole point. Ready to shape it: aDNA is built in the open — see how to propose a change to the standard or contribute a pattern, vault, or idea. What is aDNA? — the five-minute conceptual tour The Triad — why every project splits into what / how / who Tutorial: Create Your First CLAUDE.md Tutorial: Navigate a Vault — reading a context graph like an agent does Knowledge graphs — what your workspace grows into See it live: the aDNA repository is the workspace image itself — clone it and you are holding everything this page described. [SVG]
+Learn [SVG]
+Patterns [SVG]
+Use Cases [SVG]
+Community [SVG]
+Reference [SVG]
+Glossary [SVG]
+Guides [SVG]
+For you aDNA Give your project a knowledge architecture that both humans and AI agents can navigate. Network Vaults Commons Community About Security Privacy Specification Glossary Guides Get Started Changelog Design system RSS GitHub © 2026 aDNA Network. Released under the MIT License.

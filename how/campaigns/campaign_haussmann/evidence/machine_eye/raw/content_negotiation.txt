@@ -1,0 +1,25 @@
+=== Content negotiation: Accept: text/markdown ===
+--- /learn/what-is-adna (default Accept) ---
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+--- /learn/what-is-adna (Accept: text/markdown) ---
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+body-size comparison: default=   60481 md-accept=   60481 -> SAME_SIZE
+
+--- /reference/specification (default Accept) ---
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+--- /reference/specification (Accept: text/markdown) ---
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+body-size comparison: default=  169581 md-accept=  169581 -> SAME_SIZE
+
+--- /get-started (default Accept) ---
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+--- /get-started (Accept: text/markdown) ---
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+body-size comparison: default=   43787 md-accept=   43787 -> SAME_SIZE
+

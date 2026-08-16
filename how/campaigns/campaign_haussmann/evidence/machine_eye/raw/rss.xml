@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aDNA — the open standard &amp; network for shared context</title>
+    <link>https://adna.network/</link>
+    <description>Release notes and changelog for the aDNA standard and adna.network. The open standard and network to build, share, and govern the context that powers AI.</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 14 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://adna.network/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>v0.1.0 — Site scaffold</title>
+      <link>https://adna.network/changelog/#0.1.0</link>
+      <guid isPermaLink="false">adna-changelog-0.1.0</guid>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Initial site scaffold with content collections.</description>
+    </item>
+  </channel>
+</rss>

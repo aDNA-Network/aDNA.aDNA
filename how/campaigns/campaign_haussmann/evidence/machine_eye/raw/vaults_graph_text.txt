@@ -1,0 +1,15 @@
+The aDNA network — relationship graph
+Skip to main content a DNA Network Vaults Commons Learn Patterns Use Cases Community More Reference Glossary Guides For you Get Started [SVG] [SVG] [SVG] [SVG] Network Vaults Commons Learn Patterns Use Cases Community More Reference Glossary Guides For you ← Vaults · Network ← Back to The network, drawn 74 vaults, 14 relationships. Every edge is real and directed ,
+drawn from each vault’s governance — a consumer points at what it is built from, an
+org-vault at the children it contains, a successor at what it replaced. 59 vaults
+carry no cited relationship yet, so they sit unconnected here — that is honest topology, not missing data.
+Each box is a vault ; an aDNA computer — a node — is a Home.aDNA
+plus the vaults that live on it, with each box naming its class.
+New here? Start with what the network is →
+This is a context democracy, drawn : each project grows its own
+knowledge graph , and the graphs federate into a
+shared commons — narrowing from the whole network to the one vault you need is the
+convergence model at work.
+How to read it Line style = the kind of relationship umbrella · 1 — an org-vault contains its org-graph / pillar children federation · 9 — a consumer wrapper depends on the forge / framework it consumes partner · 0 — a platform ships with its default partner companion · 4 — a sibling persona-pair or thematic family supersedes · 0 — a successor replaced its predecessor (lifecycle) Box colour A vault — every box shares one fill; its class is named on the box and listed below. The lines carry the story. aDNA.aDNA — the standard this network documents. Vault classes in view Platform · 36 Forge · 9 Framework · 7 Org-Vault · 7 Org-Graph · 4 Genesis stub · 3 Coordination · 1 Framework (candidate) · 1 Knowledge-graph · 1 Network · 1 Node (operational) · 1 Standard · 1 Tooling · 1 Workspace · 1 Open any vault below — or browse them all on the vault index . Each vault page links back to this graph.
+[SVG]
+The aDNA network — cross-vault federation topology Vaults in the graph Tap a vault to open it. Platform RareHarness RemoteControl TappProtocol Terminal Forge Astro Molecules Oration Framework III VisualDNA Org-Vault RareArchive Science Stanley WilhelmAI Zen Zachary Framework (candidate) VAAS Standard aDNA Not yet linked aDNA Labs aiLP Dataroom Alpha Lattice APScheduler AWSBootstrap Bitwarden Caddy Cake Protocol CakeHealth Canvas ComfyUI Container Context ContextCommons D3 Dashboards Datarooms Datasets Emacs Exchange FastAPI Fluxer Forgejo Git GOTFN Groupware Home Inference Jupyter LA Venture Graph LatticeProtocol Lighthouse LlamaCppForge MagnaPetra Nebula Neo4j Nextcloud Obsidian Operations Organization Percy Sleep Prefect RareAnthropic React RealityScan Regenesis Spacemacs Store SuperLeague Tailwind Three.js TypeScript Vercel Videos Warp WebForge wga World Genome zeta aDNA Give your project a knowledge architecture that both humans and AI agents can navigate. Network Vaults Commons Community About Security Privacy Specification Glossary Guides Get Started Changelog Design system RSS GitHub © 2026 aDNA Network. Released under the MIT License.

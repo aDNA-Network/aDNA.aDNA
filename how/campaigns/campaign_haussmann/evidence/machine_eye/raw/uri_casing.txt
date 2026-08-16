@@ -1,0 +1,15 @@
+=== Stable URI / casing tests ===
+/vaults/III.aDNA -> HTTP:200 redirect_to: final_url:https://adna.network/vaults/III.aDNA
+/vaults/III.aDNA/ -> HTTP:200 redirect_to: final_url:https://adna.network/vaults/III.aDNA/
+/vaults/iii.adna -> HTTP:404 redirect_to: final_url:https://adna.network/vaults/iii.adna
+/vaults/iii.adna/ -> HTTP:404 redirect_to: final_url:https://adna.network/vaults/iii.adna/
+/vaults/Iii.Adna -> HTTP:404 redirect_to: final_url:https://adna.network/vaults/Iii.Adna
+/vaults/terminal -> HTTP:200 redirect_to: final_url:https://adna.network/vaults/terminal
+/vaults/terminal/ -> HTTP:200 redirect_to: final_url:https://adna.network/vaults/terminal/
+/vaults/Terminal -> HTTP:404 redirect_to: final_url:https://adna.network/vaults/Terminal
+/vaults/Terminal/ -> HTTP:404 redirect_to: final_url:https://adna.network/vaults/Terminal/
+/vaults/TERMINAL -> HTTP:404 redirect_to: final_url:https://adna.network/vaults/TERMINAL
+/vaults/III.aDNA -> HTTP:200 location_header_follows 
+/vaults/iii.adna -> HTTP:404 location_header_follows 
+/vaults/terminal -> HTTP:200 location_header_follows 
+/vaults/Terminal -> HTTP:404 location_header_follows 
