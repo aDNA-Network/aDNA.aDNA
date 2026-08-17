@@ -4,7 +4,7 @@ type: campaign
 title: "Operation HAUSSMANN — the adna.network rebuild: credible, legible, beautiful, agent-navigable at launch"
 owner: stanley
 persona: rosetta
-status: planning        # → active only at Gate C §7.7 ratification (operator)
+status: active          # RATIFIED at Gate C 2026-08-16 (operator, via AskUserQuestion in the genesis session) — see the §7.7 block
 phase_count: 6          # P0–P5 on the decade backbone
 mission_count: 27       # 5+4+6+5+5+2; P0–P2 = Decade 1 (committed), P3–P5 = Decade 2 (provisional, recalibrated at P2.6)
 estimated_sessions: "37-50"   # derived: sum of the per-phase tables below (7–9 + 6–8 + 8–11 + 7–9 + 6–9 + 3–4) — never a typed count (KW-14)
@@ -30,10 +30,14 @@ tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, a
 # Campaign: Operation HAUSSMANN
 
 > **Ratification (§7.7).** **Decision:** charter Operation HAUSSMANN — a 6-phase, 27-mission rebuild of
-> adna.network (+ community integration) to the VITRUVIUS standard, absorbing the open Storyweave wave.
-> **Ratified-by:** _pending — Stanley, Founding Architect (operator)._ **Date:** _pending (Gate C)._
-> **Status:** **proposed.** *(Authored by agent_rosetta from the Phase A/B genesis evidence, per the
-> operator cowork directive of 2026-08-16; an agent never sets `accepted`.)*
+> adna.network (+ community integration) to the VITRUVIUS standard, absorbing the open Storyweave wave;
+> Decade-1 (P0–P2) committed, Decade-2 provisional at DP6; ADR stubs 048–057 held at `proposed` pending
+> their DPs; the ADR-057 measurement regime adopted with the charter.
+> **Ratified-by:** Stanley, Founding Architect (operator). **Date:** 2026-08-16.
+> **Status:** **accepted** — ratified at **Gate C** via `AskUserQuestion` in the genesis session
+> (`session_stanley_20260816_094350_haussmann_genesis`; genesis commits `dc1bb35..30a9c3b`; both staged
+> outward acts — origin push + 4-memo delivery — GO'd in the same gate). *(Authored by agent_rosetta;
+> ratified by the operator.)*
 
 ## Goal
 
@@ -140,7 +144,7 @@ The genesis assessment (Gate B dossier, `artifacts/gate_b_dossier.md`) found a *
 
 | # | When | Decision | Status |
 |---|---|---|---|
-| DP1 | Gate C | Charter ratification (§7.7) + Decade-1 commitment | **pending — this gate** |
+| DP1 | Gate C | Charter ratification (§7.7) + Decade-1 commitment | **✅ RATIFIED — operator (Stanley/FA), 2026-08-16** |
 | DP2 | P0.1 close | ADR-048 positioning (incl. audience, name-collision handling, embargo language) | pending |
 | DP3 | P0.2 | ADR-050 deploy path (git-integration vs wrapped-manual vs hybrid) | pending |
 | DP4 | P1.3 | ADR-052 §admission — confidential-adjacent vaults in the public registry (aiLP-Dataroom, CakeHealth, PercySleep) | pending ⛩ |

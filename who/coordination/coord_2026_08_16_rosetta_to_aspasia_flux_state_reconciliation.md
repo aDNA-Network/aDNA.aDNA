@@ -3,7 +3,7 @@ type: coordination
 from: rosetta (aDNA.aDNA)
 to: aspasia (Fluxer.aDNA)
 created: 2026-08-16
-status: outbound_staged   # delivery = operator-gated outward act; campaign mission P0.4 executes + confirms receipt (the 'dispatched ≠ delivered' class is known)
+status: dispatched        # DELIVERED 2026-08-16 (operator GO at HAUSSMANN Gate C): copied into the recipient vault's who/coordination/ inbox (delivery ≠ sender-side flag — the Prometheus §0 lesson)
 ack_required: true
 urgency: high             # a live public property is running ahead of its own vault record
 tags: [coordination, haussmann, flux, state_reconciliation]

@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260816_094350_haussmann_genesis
 user: stanley
 started: 2026-08-16T16:43:50Z
-status: active
+status: completed
 tier: 2
 machine: L1 (Stanley's Mac, Darwin 25.6.0)
 intent: "Operation HAUSSMANN genesis — execute the operator's cowork directive: Phase A orientation artifacts, Phase B full VITRUVIUS situation assessment of adna.network + community.adna.network, Phase C campaign genesis package (charter + missions + ADR stubs + context artifacts + staged memos). This session designs the campaign; it does NOT touch site/."
@@ -26,8 +26,8 @@ token_budget_actual:
 files_modified: []
 files_created:
   - how/sessions/active/session_stanley_20260816_094350_haussmann_genesis.md
-completed:
-heartbeat: 2026-08-16T16:43:50Z
+completed: 2026-08-16T22:3xZ
+heartbeat: 2026-08-16T22:3xZ
 tags: [session, haussmann, genesis, campaign_planning, vitruvius, site]
 ---
 
@@ -53,6 +53,33 @@ tags: [session, haussmann, genesis, campaign_planning, vitruvius, site]
 - Cross-vault needs are staged as coordination memos, never written into peer vaults.
 - Credentials by name via the Home.aDNA broker only; none needed for genesis (outside-only assessment).
 - Codename record: `grep -ril "Operation HAUSSMANN" ~/aDNA` → 0 hits · `"Operation PERCIER"` → 0 hits (2026-08-16T16:43Z). HAUSSMANN is clean fleet-wide.
+
+## SITREP
+
+**Completed**: the entire HAUSSMANN genesis arc in one day — Phase A (4 orientation artifacts) · Phase B full fan-out (12 evidence packets: 202-page inventory · 280-capture visual review · automated sweep · machine-eye · 93-claim register w/ 8 FALSE · Flux outside-only · MCP+Mastra cohort ×2 scorers · 3 synthetic cold-reads · 11-exemplar dossier) · two-scorer baseline **51.6/100** reconciled · H1–H15 resolved · ⛩ Gate B confirmed · Phase C genesis package (charter + promoter + 27 missions + prompt index + ADR-048…057 + 5 context graduations + 4 memos) · cold-read test FAIL→FIXED · ⛩ **Gate C RATIFIED** (§7.7 accepted; campaign ACTIVE; STATE registered) · 4 memos DELIVERED to recipient inboxes · genesis commits pushed to origin.
+**In progress**: nothing — the genesis is closed; the campaign takes over.
+**Next up**: any P0 mission via `missions/session_prompts_haussmann.md` (P0.1 positioning · P0.2 deploy hardening · P0.3 WebForge intake · P0.4 Flux reconciliation · P0.5 editorial gate — parallelizable).
+**Blockers**: none. Standing requests: production-deploy freeze until P0.2 lands.
+**Watch item**: `WebForge.aDNA/who/coordination/coord_2026_08_16_vitruvius_to_rosetta_vercel_token_migration.md` exists in Vitruvius's outbox but has NOT reached this vault's inbox (the delivery-ambiguity class) — **P0.2 must read it before touching the deploy path.**
+**Files touched**: all additive — campaign dir (charter/CLAUDE/27 missions/prompts/4+2 artifacts/evidence pack) · 10 ADRs · 5 context files · 4 coord memos (+ delivered copies in 4 peer inboxes, uncommitted there by design — their owners' lanes) · 11 exemplar site files · STATE.md · this session file. Zero `site/` changes; zero deletions.
+
+## Next Session Prompt
+
+> You are Rosetta in `~/aDNA/aDNA.aDNA`. Operation HAUSSMANN is ACTIVE (charter ratified §7.7,
+> 2026-08-16; STATE `campaigns: [campaign_haussmann]`). Open
+> `how/campaigns/campaign_haussmann/CLAUDE.md` (conventions + contracts), then pick the next open P0
+> mission from `missions/session_prompts_haussmann.md` and execute its paste-row. Before P0.2, also read
+> `~/aDNA/WebForge.aDNA/who/coordination/coord_2026_08_16_vitruvius_to_rosetta_vercel_token_migration.md`
+> (in Vitruvius's outbox, undelivered here). The production deploy freeze stands until P0.2 lands.
+
+## AAR (SO#5) — genesis session close, 2026-08-16
+
+- **Worked.** The three-phase directive structure with a full parallel evidence fan-out: 12 packets + 2×2 isolated scorers landed a defensible 51.6 baseline in one day, and the two-reviewer variance (≤1 on 12/12) validated the agent-scorer protocol. The fresh-agent cold-read test caught 3 real cold-start blockers the author couldn't see.
+- **Didn't.** Two session-limit interruptions killed agents mid-flight (both recovered — one scorer's file survived its process); the first sitemap count used `grep -c` on single-line XML (caught before recording); a mission-file wikilink typo survived one write.
+- **Finding.** The site's honesty strata and its FALSE claims coexist — the marketing stratum diverged from the house style the rest of the site already practices; also, the fleet's delivery-ambiguity class (`dispatched` ≠ delivered) recurred live during this very session's memo delivery (the Vitruvius token memo inbound-undelivered).
+- **Change.** Evidence-pack-fed isolated scorers + a cold-read reproducibility test before any ratification gate should be standard for campaign geneses (candidate upstream skill).
+- **Follow-up.** P0 missions (5, parallelizable); the Vitruvius token-migration memo intake at P0.2; `_reference_set.md` manifest update at the next dossier synthesis review; Home/aDNALabs/WebForge/Fluxer owners commit their delivered memo copies in their own lanes.
+- **Token / tier.** Ran on fable (max effort) with sonnet drops for mechanical packets. Estimated ~5–8 MT; actual ≈ **5.1 MT** (≈3.9 MT subagents + ≈1.2 MT main loop) across ~10 h wall-clock incl. two limit-window pauses. Genesis commits `dc1bb35..30a9c3b` + close-out; pushed to origin.
 
 ## Activity Log
 

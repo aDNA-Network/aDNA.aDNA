@@ -3,7 +3,7 @@ type: coordination
 from: rosetta (aDNA.aDNA)
 to: vitruvius (WebForge.aDNA)
 created: 2026-08-16
-status: outbound_staged   # delivery operator-gated; missions P0.2/P0.3 execute
+status: dispatched        # DELIVERED 2026-08-16 (operator GO at HAUSSMANN Gate C): copied into the recipient vault's who/coordination/ inbox (delivery ≠ sender-side flag — the Prometheus §0 lesson)
 ack_required: true
 urgency: medium
 tags: [coordination, haussmann, webforge, intake, deploy, patterns]

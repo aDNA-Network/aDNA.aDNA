@@ -3,7 +3,7 @@ type: coordination
 from: rosetta (aDNA.aDNA)
 to: berthier (aDNALabs.aDNA)
 created: 2026-08-16
-status: outbound_staged   # delivery operator-gated; sent at Gate C ratification
+status: dispatched        # DELIVERED 2026-08-16 (operator GO at HAUSSMANN Gate C): copied into the recipient vault's who/coordination/ inbox (delivery ≠ sender-side flag — the Prometheus §0 lesson)
 ack_required: false       # notice, not an ask — "a 'not yet' was a complete answer; this is the 'now'"
 urgency: low
 tags: [coordination, haussmann, charter_notice, hq]
