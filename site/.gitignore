@@ -6,3 +6,4 @@ dist/
 evidence/
 test-results/
 .vercel
+.env*
