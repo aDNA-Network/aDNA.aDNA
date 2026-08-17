@@ -45,6 +45,19 @@
           "value": "text/plain; charset=utf-8"
         }
       ]
+    },
+    {
+      "source": "/adna-install.exe",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/octet-stream"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"adna-install.exe\""
+        }
+      ]
     }
   ],
   "rewrites": [
@@ -52,8 +65,5 @@
       "source": "/install",
       "destination": "/install.html"
     }
-  ],
-  "_pending": [
-    "adna-install.exe: PULLED 2026-08-17 \u2014 the built exe embeds a pre-sanitisation install.ps1 with a stale payload pin; it would refuse its own payload (CHECKSUM MISMATCH) on every run. Rebuild on the Windows box (windows/build_exe.ps1), verify the embedded pin matches, re-add the route + button."
   ]
 }
