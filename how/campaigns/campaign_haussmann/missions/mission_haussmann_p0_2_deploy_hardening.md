@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P0
 decade: 1
 owner: stanley
-status: active     # P0 wave opened 2026-08-16 (session haussmann_p0_wave; operator-ordered)
+status: completed   # 2026-08-16 P0-wave: headers LIVE 4/4 on adna.network (Observatory C/50→B+/80); ADR-050 RATIFIED (c) at DP3; deploys recorded (preview 01:38Z + prod 01:54Z, tree d88b6ff); drift checker red-proven; Vitruvius ack delivered. CI-side probe wiring → P4.4 (by design).
 mission_class: build
 executor_tier: opus   # infra judgment + one ADR; mechanical steps drop to sonnet inline
 token_budget_estimated: "~120–200 kT across 1–2 sessions: header-drift diagnosis + fix + live-header CI check + ADR-050 options + deploy runbook + baseline re-record (ADR-016)"
@@ -65,8 +65,15 @@ A stranger can deploy safely by following the runbook; live headers match config
 
 ## Progress
 
-*(at execution)*
+- **2026-08-16 (P0 wave, single session).** O0 diagnosis confirmed on disk (prebuilt ignores root vercel.json; `artifacts/p0_2/diagnosis.md`). O1 fix: `inject_headers.mjs` adopted byte-identical from WebForge (md5 `3fa4a975…` @ `6096157a`) + `deploy_adna.sh` (guards→build→inject→verify→deploy→live-verify→record) + `check_live_headers.mjs` (red-proofs: real drift 0/4 exit 1 · demo exit 1). Preview deploy 01:38Z → 4/4 headers. ⛩ prod GO → deploy 01:54Z → **adna.network 4/4 headers, Observatory B+/80 (9/10)**. O2 ADR-050 ratified (c) at ⛩ DP3. O3 drift checker standing (pre/post-deploy in the script; CI probe → P4.4 per its depends_on). O4 runbook = the self-documenting script + `deploy_log.txt` + diagnosis; token gap (`VERCEL_TOKEN_ADNA` unbrokered) standing in the Hestia memo §2a; **Vitruvius ack written + delivered** (their tracker: confirmed-migrated-pending-token).
 
 ## AAR (SO#5)
 
-*(before completed)*
+## AAR (SO#5) — P0.2 close, 2026-08-16
+
+- **Worked.** Consumer-not-fork paid off immediately: WebForge's injector fixed in one adoption what three review rounds had only diagnosed; the wrapped script made the prod deploy boring (guards caught nothing because the tree was clean — which is the point).
+- **Didn't.** `VERCEL_TOKEN_ADNA` still doesn't exist broker-side — the migration ack ships with an honest pending-token caveat instead of a clean swap.
+- **Finding.** The deployed site also silently carried 5,748 dev comments until this deploy (P0.5's strip rode along) — two invisible-drift classes closed by one ship.
+- **Change.** Every future deploy goes through `deploy_adna.sh`; hand-typed `vercel` commands are now a convention violation, not a habit.
+- **Follow-up.** P4.4 wires the drift probe into CI; token swap-preview fires unprompted when `_ADNA` lands; STATE Pending-Manual-Actions row about Vercel git integration gets retired at the post-P2 ADR-050 revisit.
+- **Token / tier.** opus-planned, ran in the fable wave; ~120 kT actual vs 120–200 est. Deploys: preview + prod recorded in `scripts/deploy_log.txt`.

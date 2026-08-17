@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P0
 decade: 1
 owner: stanley
-status: active     # P0 wave opened 2026-08-16 (session haussmann_p0_wave; operator-ordered)
+status: active      # 2026-08-16 P0-wave: O0 delivery VERIFIED (17:11 in Fluxer inbox) + O1 prerequisite register built (PR-1/2/3 × owners; ADR-054 sufficient as-is) + O3 escalation posted in the wave wrap-up. REMAINING: Aspasia ack/answers (her lane) → then this closes.
 mission_class: reconnaissance
 executor_tier: opus
 token_budget_estimated: "~80–140 kT in 1 session: memo delivery + answer intake + prerequisite register + ADR-054 skeleton (ADR-016)"
@@ -61,7 +61,7 @@ A true record exists somewhere authoritative; the prerequisites are named with o
 
 ## Progress
 
-*(at execution)*
+- **2026-08-16 (P0 wave).** O0: memo delivery re-verified `[D]` (python mtime listing — the `ls` flake dodged); no reply yet (~hours old). O1–O2: `artifacts/p0_4/prerequisite_register.md` (PR-1 policy floor · PR-2 branding · PR-3 inside-aliveness, owners + DP7 verification methods); ADR-054 stub confirmed sufficient unmodified. O3: escalation posted in the wave wrap-up with the recommendation (no urgency — the honest no-link fallback is acceptable indefinitely).
 
 ## AAR (SO#5)
 

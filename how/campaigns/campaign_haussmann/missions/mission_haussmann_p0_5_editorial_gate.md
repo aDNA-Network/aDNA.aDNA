@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P0
 decade: 1
 owner: stanley
-status: active     # P0 wave opened 2026-08-16 (session haussmann_p0_wave; operator-ordered)
+status: completed   # 2026-08-16 P0-wave: suite 371→404 (394✓ + 10 expected-failures = the 9 FALSE rows + leak baseline; 0 real), 4 red-tests proven incl. the unexpected-pass ratchet; comment-strip live in build AND deployed artifact; baseline 86 rows expires P1.3.
 mission_class: build
 executor_tier: opus
 token_budget_estimated: "~150–250 kT across 1–2 sessions: gate-16 extension design + claim-register-as-fixture wiring + tense/leak lint + red-tests (ADR-016)"

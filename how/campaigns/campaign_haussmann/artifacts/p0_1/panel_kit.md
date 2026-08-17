@@ -47,9 +47,9 @@ tags: [haussmann, p0_1, panel, cold_readers, dp2]
 
 Correct = matches ADR-048's positioning statement in substance (their words, not ours). Disagreement between scorers about "correct" is itself a finding — record it. Transcripts → `artifacts/p0_1/panel/reader_<n>_<role>.md`, verbatim, with the consent yes noted.
 
-## Stimulus
+## Stimulus (inserted at the O3 pick, 2026-08-16 — Candidate A)
 
-**⏳ Inserted after the O3 pick**: the drafted hero (winning candidate) staged as a local preview or screenshot — NOT deployed to production (hero ships only after DP2 ratifies ADR-048). Until then this kit is structurally complete and waiting.
+Show readers the **A-direction hero draft** (text in ADR-048 §Direction-picked; stage it as a local preview build or a composed screenshot — **not** production, which keeps the current hero until DP2). The draft, compactly: "aDNA (agentic DNA) is an open standard for organizing a project's files so AI agents — and the people working with them — always know where things live: three folders, plain Markdown, versioned in git. This site is the standard, its docs, and the registry of workspaces — 'vaults' — that run it." + audience sub + NOT-line + install block + annotated tree; lyric band directly below.
 
 ## After the panel
 

@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P0
 decade: 1
 owner: stanley
-status: active     # P0 wave opened 2026-08-16 (session haussmann_p0_wave; operator-ordered)
+status: active      # 2026-08-16 P0-wave: O0–O3 DONE (orientation · 4 candidates · 3/3 unanimous synthetic pre-screen · ⛩ operator picked A definition-as-hero; ADR-048 updated at proposed; panel kit stimulus loaded). REMAINING: O4 human panel (operator recruits, ≥80% of ≥5) → O5 DP2 ratification → then the hero ships (P1 lane).
 mission_class: design_excellence
 executor_tier: fable   # positioning is the campaign's highest-judgment call; panel logistics are operator-shared
 token_budget_estimated: "~250–400 kT across 2–3 sessions: corpus read + 3–5 positioning candidates + hero-copy drafts + synthetic pre-screen iterations + panel kit + ADR-048 authoring (ADR-016)"
@@ -71,7 +71,7 @@ ADR-048 at `proposed` carries: the ratified positioning sentence, audience, NOT-
 
 ## Progress
 
-*(at execution)*
+- **2026-08-16 (P0 wave).** O0 `artifacts/p0_1/orientation.md` (hero verified on disk; FALSE #2 confirmed in the lead; honest form already in-file). O1 `candidates_memo.md` (A/B/C/D). O2 `prescreen_results.md` — 3 blind synthetic readers, **A unanimous on ship** (clinician: "(agentic DNA) in the very first clause kills the genomics reading"); B flagged hazardous ("lives" → hosted misread ×2 — new avoid-list class); D confirmed split-attention. O3 ⛩ operator picked **A**; ADR-048 §Direction-picked updated (still `proposed` — DP2 gates on the human panel); `panel_kit.md` stimulus loaded with the A draft + recruitment brief handed to the operator.
 
 ## AAR (SO#5)
 

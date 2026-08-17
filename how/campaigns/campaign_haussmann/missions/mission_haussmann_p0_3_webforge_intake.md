@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P0
 decade: 1
 owner: stanley
-status: active     # P0 wave opened 2026-08-16 (session haussmann_p0_wave; operator-ordered)
+status: completed   # 2026-08-16 P0-wave: wrapper live (pin @ WebForge 6096157a verified), craft-floor Tier-2 ACCEPTED (Rosetta per O3; operator countermand window open), intake delivered; register row + site-row clarification = Vitruvius-side pending (recorded in wrapper CLAUDE.md).
 mission_class: integration
 executor_tier: sonnet   # wrapper + pin + register mechanics; the graduation ruling is the one judgment point
 token_budget_estimated: "~80–130 kT in 1 session: wrapper instantiation + vault-manifest pin + intake memo + craft-floor graduation ruling prep (ADR-016)"
@@ -107,4 +107,11 @@ voice-mapping + branding content adoption at P4.1; the P4.2 coverage declaration
 
 ## AAR (SO#5)
 
-*(before completed)*
+## AAR (SO#5) — P0.3 close, 2026-08-16
+
+- **Worked.** The wrapper instantiated cleanly against the contract; the agent independently re-verified the pin SHA against WebForge live HEAD and caught the vault-manifest version from their MANIFEST rather than trusting the brief.
+- **Didn't.** `art_direction.yaml` could not be authored honestly (needs a ratified `signature_element` — P4.1/ADR-053's decision); explicitly flagged pending rather than stubbed with a fake.
+- **Finding.** `site/branding.json` already duplicates what the wrapper now canonically holds — the exact "site/-only branding" anti-pattern, discovered by doing the intake; reconciliation is a P4.1 line item.
+- **Change.** none.
+- **Follow-up.** Vitruvius-side: consumer-register row + the `lock_coverage.yaml` `site`-row clarification (both asked in the delivered intake memo); P4.2 executes the accepted graduation's coverage declaration.
+- **Token / tier.** sonnet as planned; ~222 kT agent-actual vs 80–130 est (overrun: contract+template deep-reads — worth it; noted for P4 estimates).

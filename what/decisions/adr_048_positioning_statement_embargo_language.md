@@ -30,9 +30,18 @@ All three synthetic cold-readers failed or barely passed the 30-second test; the
 4. **Embargo language pair** — pre-embargo-lift: the "opening progressively" family sitewide, never "open protocol"; post-lift variant staged for a copy-swap.
 5. **Collision dispositions** — ancient-DNA: a first-screen disambiguation or deliberate acceptance (recorded); Compliance label: rename (e.g. "Provenance & audit") or scope-note.
 
-## Recommendation (to be tested, not assumed)
+## Direction picked (O3, operator, 2026-08-16 — P0-wave session)
 
-Definition-as-hero or definition-first-manifesto; audience explicit; the code block stays above the fold (it out-communicated the prose in every cold read). The human panel at P0.1 O4 is the arbiter — ≥4/5 unaided passes.
+**Candidate A — definition-as-hero** (operator pick via `AskUserQuestion`, informed by the unanimous 3/3 blind synthetic pre-screen `[D-syn]`; full results: `campaign_haussmann/artifacts/p0_1/prescreen_results.md`). The drafted stimulus for the O4 human panel:
+
+> **Lead:** "aDNA (agentic DNA) is an open standard for organizing a project's files so AI agents — and the people working with them — always know where things live: three folders, plain Markdown, versioned in git. This site is the standard, its docs, and the registry of workspaces — 'vaults' — that run it."
+> **Audience sub:** "For teams working with agentic coding tools on real projects." · **NOT-line:** "Not a product or service — no server, no signup, nothing leaves your machine."
+> **Lyric:** demoted *intact* to the movement band directly below the fold. **Install block + annotated `what/ how/ who/` tree** stay hero-level (R2 + the pre-screen's C-fold).
+> **Embargo pair:** pre-lift "federation runs on the Lattice Protocol — opening progressively, spec first" · post-lift (staged) "…— open spec and reference implementation."
+> **Dispositions:** ancient-DNA collision → "(agentic DNA)" expansion in the first clause (pre-screen-proven to kill the misparse) · Compliance label → rename to "Provenance & audit" (implements at P2.2; recorded here).
+> **Avoid-list entry (new, evidence-driven):** the phrase-class "the network where that shared context lives" — two blind readers independently misread it as a *hosted* destination; never use "lives/lived" for context location on public surfaces (→ P4.5 voice guide).
+
+**Still `proposed`**: DP2 ratification requires the O4 **human panel** (≥80% of ≥5, kit at `artifacts/p0_1/panel_kit.md`). No site/ hero edit ships before DP2.
 
 ## Consequences
 

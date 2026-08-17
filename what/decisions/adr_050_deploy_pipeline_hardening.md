@@ -2,9 +2,9 @@
 type: adr
 adr_number: "050"
 title: "Deploy-pipeline hardening for adna-docs: reproducible, recorded, drift-watched"
-status: proposed
+status: accepted
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-08-16   # RATIFIED same-day at DP3 (P0-wave session)
 last_edited_by: agent_rosetta
 campaign_id: campaign_haussmann
 supersedes: ""
@@ -12,11 +12,18 @@ superseded_by: ""
 tags: [adr, haussmann, deploy, vercel, d12]
 ---
 
-# ADR-050 — Deploy path (stub)
+# ADR-050 — Deploy path
 
 ## Status
 
-**Proposed** — options fixed at genesis; diagnosis + recommendation completed by mission P0.2, ratified at **DP3**.
+**Accepted** — ratified at **DP3**, 2026-08-16, in the P0-wave session (operator via `AskUserQuestion`), after the fix was verified on a preview deployment and before the production ship of the same tree.
+
+## Ratification
+
+- **Decision:** option **(c)** — wrapped-manual deploy now (`site/scripts/deploy_adna.sh`: token-env + clean-tree guards → `npx astro build` → header injection [WebForge canonical, byte-identical] → structural verification → deploy → live-header verification → appended `deploy_record:` line); git-integration re-evaluated after P2. The live-header drift checker (`check_live_headers.mjs`, red-path proven) stands guard pre/post-deploy; CI-side probe wiring rides P4.4.
+- **Ratified-by:** Stanley, Founding Architect (operator). **Date:** 2026-08-16. **Gate:** DP3 (session `haussmann_p0_wave`).
+- **Executed same gate:** production deploy GO → adna.network serves 4/4 configured headers `[D]`; MDN Observatory **C/50 → B+/80 (9/10)** `[D]`; deploy record `2026-08-17T01:54:03Z mode=prod tree=d88b6ff`.
+- **4-field block:** decision = *(c) wrapped-manual + injection + drift watch* · ratified-by = *Stanley (operator)* · date = *2026-08-16* · status = **accepted**.
 
 ## Context
 
