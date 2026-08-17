@@ -52,15 +52,29 @@ test('G-hero-claims: the NetworkDiagram is an inline SVG with real <text> labels
     const page = await context.newPage();
     await page.goto('/');
 
+    // HAUSSMANN P1.4 (F3): the figure now ships a landscape + portrait twin-pair of the SAME
+    // diagram, media-query-swapped at 768px so phone labels stay legible. Exactly two inline
+    // SVGs — and exactly ONE displayed per viewport (the hidden twin is display:none, out of
+    // the accessibility tree).
     const svg = page.locator(NETDIAGRAM_SVG);
-    await expect(svg, 'no inline NetworkDiagram SVG on the homepage with JS disabled').toHaveCount(1);
+    await expect(svg, 'expected the landscape + portrait NetworkDiagram twin-pair inline with JS disabled').toHaveCount(2);
+    await expect(
+      page.locator(`${NETDIAGRAM_SVG}:visible`),
+      'exactly one NetworkDiagram variant should be displayed at desktop width',
+    ).toHaveCount(1);
+    await page.setViewportSize({ width: 375, height: 800 });
+    await expect(
+      page.locator(`figure.netdiagram svg.netdiagram-svg--portrait:visible`),
+      'the portrait NetworkDiagram variant should be the one displayed at phone width (F3)',
+    ).toHaveCount(1);
 
     // Real, selectable <text> node/hub labels — not <foreignObject> HTML, not runtime-injected.
+    // Each twin carries its own full label set (>= 6 satellites + hub text).
     const labels = await page.locator(`${NETDIAGRAM_SVG} text`).count();
     expect(
       labels,
-      `expected >= 6 real <text> labels in the NetworkDiagram with JS disabled, got ${labels}`,
-    ).toBeGreaterThanOrEqual(6);
+      `expected >= 12 real <text> labels across the NetworkDiagram twin-pair with JS disabled, got ${labels}`,
+    ).toBeGreaterThanOrEqual(12);
     await expect(
       page.locator(`${NETDIAGRAM_SVG} foreignObject`),
       'NetworkDiagram uses <foreignObject> HTML labels, not real selectable <text>',

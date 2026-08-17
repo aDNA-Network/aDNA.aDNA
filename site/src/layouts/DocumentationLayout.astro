@@ -111,9 +111,17 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
 </script>
 
 <style>
+  /* F1 (HAUSSMANN P1.4): the base grid MUST define its named areas. Without them,
+     `grid-area: content` resolves to implicit named lines and throws the article into an
+     implicit second column beside the explicit track — on phones the page rendered a dead
+     left gutter with body text squeezed to ~185px (computed columns "141px 0px 233px" at
+     375). Invisible to gate-9 (nothing overflows; the article just shrinks). */
   .doc-layout {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "mobilenav"
+      "content";
     max-width: var(--content-width);
     margin: 0 auto;
     min-height: calc(100vh - 8rem);
@@ -132,6 +140,7 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
 
   /* ——— Mobile section-nav disclosure (<768px only) ——— */
   .doc-mobile-nav {
+    grid-area: mobilenav;
     margin: var(--space-4) var(--space-6) 0;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
@@ -179,6 +188,49 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
     padding: var(--space-8) var(--space-6);
     min-width: 0;
     overflow-x: hidden;
+  }
+
+  /* F12 (HAUSSMANN P1.4): the copy-button wrapper below is built at RUNTIME by this layout's
+     script, so CodeBlock.astro's scoped styles never reach it — the button rendered as a plain
+     inline element on its own line under every block. Mirror the CodeBlock idiom here via
+     :global (same tokens, same 44px mobile affordance). */
+  .doc-content :global(.code-block) {
+    position: relative;
+    margin: 0 0 var(--space-6);
+  }
+  .doc-content :global(.code-block pre) {
+    margin: 0;
+  }
+  .doc-content :global(.copy-btn) {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-1);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
+  }
+  .doc-content :global(.code-block:hover .copy-btn),
+  .doc-content :global(.copy-btn:focus-visible) {
+    opacity: 1;
+  }
+  .doc-content :global(.copy-btn:hover) {
+    color: var(--color-text);
+  }
+  @media (max-width: 640px) {
+    .doc-content :global(.copy-btn) {
+      opacity: 1;
+      min-height: 44px;
+      min-width: 44px;
+      padding: var(--space-2);
+    }
   }
 
   .doc-content :global(.doc-hero) {

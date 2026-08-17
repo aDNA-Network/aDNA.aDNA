@@ -492,11 +492,18 @@ const edgeTypes = [
     gap: var(--space-8);
   }
 
+  /* F2 (HAUSSMANN P1.4): `1fr` alone lets the body track's auto-minimum inherit the unbreakable
+     clone-URL width, and the band's overflow-x:hidden then CLIPS the steps mid-word on phones.
+     minmax(0, 1fr) + min-width:0 let the body shrink so its content wraps/scrolls instead. */
   .run-step {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto minmax(0, 1fr);
     gap: var(--space-5);
     align-items: start;
+  }
+
+  .run-step-body {
+    min-width: 0;
   }
 
   /* Numbered marker — cyan signal (local/data), the same pair band 2 uses. */
@@ -538,6 +545,10 @@ const edgeTypes = [
     font-size: var(--text-sm);
     line-height: 1.7;
     color: var(--color-text);
+    /* F2: copy-critical commands soft-wrap (the get-started H-8 rule) — the clone URL is
+       fully readable + selectable at 320px instead of running off-screen. */
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
   }
 
   /* Prereq / pointer note under a run-step — quiet, muted, the concrete HOW the lenses asked for. */

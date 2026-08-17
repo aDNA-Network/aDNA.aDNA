@@ -71,7 +71,11 @@ const browser = await chromium.launch();
 for (const route of routes) {
   const sName = surfaceName(route);
   for (const theme of themes) {
-    const ctx = await browser.newContext({ colorScheme: theme, viewport: { width: 1440, height: 900 } });
+    // reducedMotion:'reduce' — deterministic captures: entrance/scroll animations render in
+    // their final composed state from first paint (the F3 evidence class: full-page shots never
+    // scroll, so IntersectionObserver-armed elements were captured invisible/mid-fade). This is
+    // also what a motion-sensitive reader gets, so it stays an honest render. (HAUSSMANN P1.4.)
+    const ctx = await browser.newContext({ colorScheme: theme, reducedMotion: 'reduce', viewport: { width: 1440, height: 900 } });
     await ctx.addInitScript((t) => { try { localStorage.setItem('theme', t); } catch (e) {} }, theme);
     const page = await ctx.newPage();
     const errors = [];
