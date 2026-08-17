@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260816_r5_imagen_runner_port
 created: 2026-08-16
 updated: 2026-08-16
-status: active
+status: completed
 tier: 2
 persona: rosetta
 last_edited_by: agent_rosetta
@@ -85,8 +85,66 @@ and a runtime dependency from a runner to another vault's package is exactly wha
 
 ## Log
 
-*(appended as work proceeds)*
+1. Dispatch probe: lease-free, `runners/` clean, HEAD `28915e0`.
+2. Resolved `person_generation` against the real SDK **before** editing anything (above).
+3. Ported `e1_hero_helix_gen.py` by hand as the reference case; verified.
+4. Wrote an anchored, indentation-preserving transformer for the remaining 6. **Ran it on copies
+   first**; inspected output at both indentation extremes; only then applied it to the real files.
+   The transformer refuses to write a file whose anchors are missing or whose result fails to
+   re-parse.
+5. Swept 3 argparse help strings the transformer missed (they said *"if Ultra"*, the rule matched
+   *"when Ultra"*) plus one module docstring.
+6. Fixed `m355` — see below.
+7. Committed `9534691`, path-scoped.
+
+### `m355` was worse than the memo said — and it is a July defect, not an August one
+
+Its `sys.path.insert("~/aDNA/latlab")` + `from latlab.mcp.image.server import …` **cannot work**:
+that symlink resolves to `Jupyter.aDNA/what/lab`, which contains **`adna_lab/`**, not `latlab/`.
+
+**Reproduced:** `ModuleNotFoundError: No module named 'latlab.mcp'`.
+
+So this runner has been broken at import **since the Galilei rename on 2026-07-09** — independent of
+imagen entirely. The memo to Galileo hedged ("either resolves to an unmigrated copy or fails to
+import"); with its own hardcoded path, the answer is definite: **it fails to import.** Repointed to
+the real path + `adna_lab`; `adna_lab` now resolves (the remaining `structlog` failure is a runtime
+dep absent from this node's interpreter, not a path defect).
+
+Its two hardcoded model labels were **metadata only**. The success path now reports
+`result.get("model")`; the **failure path reports the tier requested** rather than inventing a model
+id for a call that never resolved one.
 
 ## SITREP
 
-*(filled at close)*
+**Completed** — all 8 runners migrated (`9534691`). Fleet R5 position: **10 of 11 live sites done**
+(Home `f9d2efa`, ContextCommons `ef39f4c`, these 8). **1 remains**: `Terminal.aDNA`'s
+`BUDGET_MODEL["high"]`, one dict value, vault still leased, memo staged Home-side.
+
+**Verification** — static only; **these call a paid API and none was executed**. All 8 AST-parse ·
+zero live `generate_images`/`generated_images` · zero live `imagen-4.0` · `person_generation` present
+in all 7 · `m355`'s import reproduced-broken then fixed and re-resolved.
+
+**Blockers** — none.
+
+**Files touched** — the 8 runners + this session file. **The 45 uncommitted HAUSSMANN files were not
+staged and not touched**; verified before and after the commit.
+
+**Next up** — Terminal's one-liner (owner-side) · then Chambellan **M-A3** (gitleaks + hook
+conformance), which owns the CRITICAL F-SS-07 census finding.
+
+## AAR (SO-9)
+
+- **Worked** — resolving `person_generation` against the real SDK *before* editing. It had no
+  `GenerateContentConfig` equivalent but *does* exist on `ImageConfig`, so a stated content restraint
+  carried over exactly instead of being quietly dropped.
+- **Didn't** — the transformer's help-string rule matched *"when Ultra"* and three files said
+  *"if Ultra"*. Caught by the residual grep, not by the transform. Verify-after-transform earned its
+  place.
+- **Finding** — `m355` was broken in **July**, not tomorrow. The imagen deadline surfaced a
+  five-week-old import defect that nothing else had noticed, because nothing runs these runners
+  routinely. A dated migration is a decent excuse to re-read code nobody executes.
+- **Change** — dry-run on copies before touching originals, and make the transformer refuse to emit
+  anything that does not re-parse. Cheap, and it makes a scripted edit defensible.
+- **Next lane must know** — the tier vocabulary (`ultra`/`pro`/`fast`) is unchanged everywhere, but
+  `ultra` now resolves to `image.pro`/`gemini-3-pro-image`, and **cost rises 2.2× at that tier**
+  ($0.06 → $0.134 per 1K image). Any batch budgeted against imagen-4.0 pricing will overrun.
