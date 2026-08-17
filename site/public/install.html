@@ -217,7 +217,7 @@
     </p>
 
     <div class="cta">
-      <a class="primary" id="dlBtn" href="/Install%20aDNA%20(Mac).command">Download for macOS</a>
+      <a class="primary" id="dlBtn" href="/adna-install-mac.command">Download for macOS</a>
       <span class="cta-sub" id="dlSub">Available for macOS, Windows, and Linux</span>
     </div>
     <p class="os-note" id="osNote"></p>
@@ -351,14 +351,15 @@
   var ua = navigator.userAgent;
   var dl = document.getElementById('dlBtn'), note = document.getElementById('osNote');
   if (/Win/i.test(ua)) {
-    dl.textContent = 'Download for Windows';
-    dl.href = '/adna-install.exe';
-    note.innerHTML = 'Windows may show &ldquo;Windows protected your PC&rdquo; on first run. ' +
-                     'Click <strong>More info</strong>, then <strong>Run anyway</strong>.';
+    // The Windows .exe is temporarily unpublished (rebuild pending); the one-line command is
+    // the Windows path meanwhile, so lead with it rather than a download that 404s.
+    dl.textContent = 'Copy the Windows command';
+    dl.href = '#terminal';
+    note.textContent = 'One line in PowerShell — no download, nothing to install first.';
     showCmd('win');
   } else if (/Linux/i.test(ua) && !/Android/i.test(ua)) {
     dl.textContent = 'Download for Linux';
-    dl.href = '/Install%20aDNA%20(Linux).sh';
+    dl.href = '/adna-install-linux.sh';
     note.innerHTML = 'Save it, make it executable, then double-click &mdash; or use the ' +
                      'one-line command below, which is quicker.';
   } else {

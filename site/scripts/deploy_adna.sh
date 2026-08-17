@@ -41,6 +41,13 @@ npx astro build
 echo "== inject headers (vercel.json → .vercel/output/config.json) =="
 node scripts/inject_headers.mjs .
 
+# Scoped per-file routes for the installer downloads. SEPARATE TOOL on purpose: inject_headers.mjs
+# is the byte-identical WebForge copy and aborts on any source but "/(.*)", so scoped rules live in
+# installer_routes.json. Same placement invariant, same abort-loudly discipline. No-op if the file
+# is absent, so this stays harmless on any surface that has no installer.
+echo "== inject installer routes (installer_routes.json -> config.json) =="
+node scripts/inject_installer_headers.mjs .
+
 echo "== verify injection =="
 node -e "
 const c=require('fs').readFileSync('.vercel/output/config.json','utf8');
@@ -53,6 +60,20 @@ if(missing.length){ console.error('ABORT: injected route missing: '+missing.join
 const idx=cfg.routes.indexOf(hdrRoute), h=cfg.routes.findIndex(r=>r&&r.handle);
 if(h!==-1&&idx>h){ console.error('ABORT: header route after first handle route (placement invariant)'); process.exit(1); }
 console.log('injection verified: '+need.join(', ')+' @ route index '+idx);
+const fs2=require('fs');
+if (fs2.existsSync('installer_routes.json')) {
+  const spec=JSON.parse(fs2.readFileSync('installer_routes.json','utf8'));
+  const want=(spec.headers||[]).map(x=>x.source);
+  const late=[], absent=[];
+  for (const src of want) {
+    const rx='^'+src.replace(/[.\\^$|]/g, c=>'\\'+c)+'$';
+    const i=cfg.routes.findIndex(r=>r.src===rx&&r.headers);
+    if(i===-1) absent.push(src); else if(h!==-1&&i>h) late.push(src);
+  }
+  if(absent.length){ console.error('ABORT: installer route(s) not injected: '+absent.join(', ')); process.exit(1); }
+  if(late.length){ console.error('ABORT: installer route(s) after first handle route: '+late.join(', ')); process.exit(1); }
+  console.log('installer routes verified: '+want.length+' scoped route(s), all before handle index '+h);
+}
 "
 
 echo "== deploy ($MODE) using \$${TOKEN_NAME%% *} =="

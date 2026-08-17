@@ -31,7 +31,7 @@ VERSION="0.3.0"
 BASE="${ADNA_INSTALL_BASE:-https://adna.network}"
 PAYLOAD="adna-installer-${VERSION}.tar.gz"
 # sha256 of ${PAYLOAD} — regenerate with ./release.sh, which prints the line to paste here.
-PAYLOAD_SHA256="946890c30f5bba166059c8b9b8a6eaf1abece61f730e04d888b85f536bd393d2"
+PAYLOAD_SHA256="d7c073fffeb92b6fea5d9c8da3c5c35f46e20b5dd582844415d276aca411fe25"
 
 say()  { printf '%s\n' "$*"; }
 die()  { printf '\n  ⛔ %s\n\n' "$*" >&2; exit 1; }

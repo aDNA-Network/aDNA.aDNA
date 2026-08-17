@@ -88,7 +88,7 @@ try {
     # Same discipline as the Unix bootstrap: the payload hash is pinned in THIS file, not
     # fetched alongside the payload. A checksum served from the same host as the artifact
     # catches corruption but not substitution.
-    $PAYLOAD_SHA256 = '946890c30f5bba166059c8b9b8a6eaf1abece61f730e04d888b85f536bd393d2'
+    $PAYLOAD_SHA256 = 'd7c073fffeb92b6fea5d9c8da3c5c35f46e20b5dd582844415d276aca411fe25'
     if ($PAYLOAD_SHA256 -eq 'PAYLOAD_SHA256_UNSET') {
         Die "this install.ps1 has no payload hash pinned -- it was published unreleased. Refusing to run unverified code."
     }

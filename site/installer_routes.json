@@ -1,0 +1,59 @@
+{
+  "_comment": [
+    "Per-file routes for the installer downloads, injected by scripts/inject_installer_headers.mjs.",
+    "SEPARATE FROM vercel.json ON PURPOSE: scripts/inject_headers.mjs is a byte-identical copy of",
+    "WebForge's canonical tool and aborts on any source other than '/(.*)'. Adding these to",
+    "vercel.json aborts the whole deploy (verified, not assumed).",
+    "",
+    "/install.ps1 as text/plain is LOAD-BEARING: Windows PowerShell 5.1 returns Invoke-WebRequest",
+    ".Content as a byte[] for application/octet-stream, so `irm ... | iex` receives a list of",
+    "character codes and dies. Observed on a real Windows 11 box."
+  ],
+  "headers": [
+    {
+      "source": "/install.ps1",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/install.sh",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/adna-install-mac.command",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/adna-install-linux.sh",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/install",
+      "destination": "/install.html"
+    }
+  ],
+  "_pending": [
+    "adna-install.exe: PULLED 2026-08-17 \u2014 the built exe embeds a pre-sanitisation install.ps1 with a stale payload pin; it would refuse its own payload (CHECKSUM MISMATCH) on every run. Rebuild on the Windows box (windows/build_exe.ps1), verify the embedded pin matches, re-add the route + button."
+  ]
+}
