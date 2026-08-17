@@ -1,9 +1,9 @@
-"""Runner: M3.5.5 D7d — 31 vault_card regen via Gemini Imagen 4 Ultra.
+"""Runner: M3.5.5 D7d — 31 vault_card regen via the shared image tier.
 
 Single-shot bulk regen of the 31 vault_card hero images at
 ``node.aDNA/who/assets/vault_cards/{vault_slug}.jpg``. Consumes the
-CanvasForge substrate end-to-end (latlab.mcp.image.server.GeminiImageClient
-adapter wired to the Imagen 4 Ultra model per ADR-003) and converts the
+CanvasForge substrate end-to-end (adna_lab.mcp.image.server.GeminiImageClient
+adapter, tier ``ultra``, per ADR-003) and converts the
 PNG output to JPG via PIL. Pre-validates the production Gemini pipeline
 that D11-D20 cycles will consume per m50_visual_inspection_methodology.md §3
 Step 3 BEFORE D11 (Visual Identity v2) commits at cycle 101.
@@ -54,9 +54,14 @@ from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
-sys.path.insert(0, "/Users/stanley/aDNA/latlab")
+# Canonical code home since Operation Galilei (2026-07-09): the package was renamed
+# latlab -> adna_lab and the vault Lab.aDNA -> Jupyter.aDNA. `~/aDNA/latlab` is still a
+# load-bearing back-compat symlink to the same directory, but the PACKAGE inside it is
+# adna_lab — so the old `from latlab.mcp...` import raised ModuleNotFoundError from the day
+# of the rename. Pointed at the real path; the symlink is not relied on.
+sys.path.insert(0, "/Users/stanley/aDNA/Jupyter.aDNA/what/lab")
 
-from latlab.mcp.image.server import GeminiImageClient
+from adna_lab.mcp.image.server import GeminiImageClient
 from PIL import Image
 
 
@@ -334,7 +339,10 @@ def regen_one(client: GeminiImageClient, card: VaultCard, retry: int = 1) -> dic
                 "vault_slug": card.slug,
                 "prompt_hash": prompt_hash,
                 "success": True,
-                "model": "imagen-4.0-ultra-generate-001",
+                # Report what the client actually resolved, not a hardcoded id. The literal here
+                # was imagen-4.0-ultra-generate-001, which retired 2026-08-17 — a hardcoded label
+                # mislabels provenance the moment the tier moves (Rosetta Stone R5, 2026-08-16).
+                "model": result.get("model", "unknown"),
                 "aspect_ratio": "16:9",
                 "png_size": png_size,
                 "jpg_size": jpg_size,
@@ -353,7 +361,11 @@ def regen_one(client: GeminiImageClient, card: VaultCard, retry: int = 1) -> dic
         "vault_slug": card.slug,
         "prompt_hash": prompt_hash,
         "success": False,
-        "model": "imagen-4.0-ultra-generate-001",
+        # Failure path: the call may have thrown before any model was resolved, so there is no
+        # result to read. Report the TIER that was requested rather than inventing a model id.
+        # (Was hardcoded imagen-4.0-ultra-generate-001, retired 2026-08-17 — Rosetta Stone R5.)
+        "model_tier_requested": "ultra",
+        "model": None,
         "aspect_ratio": "16:9",
         "png_size": 0,
         "jpg_size": 0,

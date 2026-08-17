@@ -30,7 +30,28 @@ VAULT_ROOT = Path("/Users/stanley/aDNA/aDNA.aDNA")
 OUT_DIR = VAULT_ROOT / "site/src/assets/heroes"
 LOG_PATH = VAULT_ROOT / "what/measurement/iii_results/2026-06/cycle_102_d11_hero_variants.image_gen_log.json"
 
-MODEL = "imagen-4.0-ultra-generate-001"
+def _first_image_bytes(response):
+    """Image bytes from a generate_content response, or None if it carries none.
+
+    Walks EVERY part: responses interleave modalities, so the image is not reliably first.
+    (Mirrors Home.aDNA googleai.client.first_image_bytes; inlined to keep this runner
+    self-contained — see the MODEL comment below.)
+    """
+    for candidate in getattr(response, "candidates", None) or []:
+        content = getattr(candidate, "content", None)
+        for part in getattr(content, "parts", None) or []:
+            inline = getattr(part, "inline_data", None)
+            if inline is not None and getattr(inline, "data", None):
+                return inline.data
+    return None
+
+
+# Migrated 2026-08-16 (Operation Rosetta Stone R5). The imagen-4.0-* family shut down 2026-08-17;
+# successor per Home.aDNA googleai.models SUNSET_SUCCESSORS: imagen-4.0-ultra-generate-001 ->
+# image.pro -> gemini-3-pro-image. The id is written out rather than imported from Home's registry
+# on purpose: a runtime dependency from a one-shot runner to another vault's package is what broke
+# m355 when `latlab` was renamed at Galilei.
+MODEL = "gemini-3-pro-image"
 ASPECT = "16:9"
 COST_PER_CALL_USD = 0.04
 HERO_WIDTH = 1408   # native Imagen 16:9 width
@@ -124,18 +145,24 @@ def main() -> int:
         print(f"[gen] {hero['slug']} — {MODEL} @ {ASPECT}...", flush=True)
         t0 = time.time()
         try:
-            response = client.models.generate_images(
+            # generate_content, not generate_images: the latter is the Imagen predict API, which
+            # went away with the imagen-4.0 family. person_generation moves from GenerateImagesConfig
+            # onto ImageConfig — same restraint, same value (verified against google-genai 2.5.0;
+            # PersonGeneration accepts dont_allow).
+            response = client.models.generate_content(
                 model=MODEL,
-                prompt=prompt,
-                config=types.GenerateImagesConfig(
-                    number_of_images=1,
-                    aspect_ratio=ASPECT,
-                    person_generation="dont_allow",
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    response_modalities=["Image"],
+                    image_config=types.ImageConfig(
+                        aspect_ratio=ASPECT,
+                        person_generation="dont_allow",
+                    ),
                 ),
             )
-            if not response.generated_images:
+            if _first_image_bytes(response) is None:
                 raise RuntimeError("no images returned")
-            bg_bytes = response.generated_images[0].image.image_bytes
+            bg_bytes = _first_image_bytes(response)
             # Optionally resize to target if Imagen returned different size
             img = Image.open(BytesIO(bg_bytes)).convert("RGB")
             if img.size != (HERO_WIDTH, HERO_HEIGHT):

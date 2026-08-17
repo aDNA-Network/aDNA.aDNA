@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""M5.3 D11 cycle 101 — OG cards regen (6 cards via imagen-4.0-ultra-generate-001).
+"""M5.3 D11 cycle 101 — OG cards regen (6 cards via gemini-3-pro-image).
+
+Originally run against imagen-4.0-ultra-generate-001; migrated 2026-08-16 (Rosetta Stone R5)
+when that family shut down. Cards regenerated after the migration will differ from the
+cycle-101 originals — a different model, not a re-run of the same one.
 
 Per M5.3 mission spec (`missions/mission_adna_str_p5_m53_d11_visual_identity.md`):
 - Step 3 of M5.0 per-cycle 7-step structure
@@ -44,7 +48,28 @@ LOG_PATH = (
     / "what/measurement/iii_results/2026-06/cycle_101_d11_og_cards_regen.image_gen_log.json"
 )
 
-MODEL = "imagen-4.0-ultra-generate-001"
+def _first_image_bytes(response):
+    """Image bytes from a generate_content response, or None if it carries none.
+
+    Walks EVERY part: responses interleave modalities, so the image is not reliably first.
+    (Mirrors Home.aDNA googleai.client.first_image_bytes; inlined to keep this runner
+    self-contained — see the MODEL comment below.)
+    """
+    for candidate in getattr(response, "candidates", None) or []:
+        content = getattr(candidate, "content", None)
+        for part in getattr(content, "parts", None) or []:
+            inline = getattr(part, "inline_data", None)
+            if inline is not None and getattr(inline, "data", None):
+                return inline.data
+    return None
+
+
+# Migrated 2026-08-16 (Operation Rosetta Stone R5). The imagen-4.0-* family shut down 2026-08-17;
+# successor per Home.aDNA googleai.models SUNSET_SUCCESSORS: imagen-4.0-ultra-generate-001 ->
+# image.pro -> gemini-3-pro-image. The id is written out rather than imported from Home's registry
+# on purpose: a runtime dependency from a one-shot runner to another vault's package is what broke
+# m355 when `latlab` was renamed at Galilei.
+MODEL = "gemini-3-pro-image"
 ASPECT = "16:9"  # Imagen native; closest to OG 1200x630 (1.905:1); we crop top/bottom
 COST_PER_CALL_USD = 0.04
 OG_WIDTH = 1200
@@ -183,19 +208,25 @@ def generate_background(client, prompt_full: str, slug: str) -> bytes:
 
     print(f"[gen] {slug} — calling {MODEL} @ {ASPECT}...", flush=True)
     t0 = time.time()
-    response = client.models.generate_images(
+    # generate_content, not generate_images: the latter is the Imagen predict API, which
+    # went away with the imagen-4.0 family. person_generation moves from GenerateImagesConfig
+    # onto ImageConfig — same restraint, same value (verified against google-genai 2.5.0;
+    # PersonGeneration accepts dont_allow).
+    response = client.models.generate_content(
         model=MODEL,
-        prompt=prompt_full,
-        config=types.GenerateImagesConfig(
-            number_of_images=1,
-            aspect_ratio=ASPECT,
-            person_generation="dont_allow",  # no human figures per restraint
+        contents=prompt_full,
+        config=types.GenerateContentConfig(
+            response_modalities=["Image"],
+            image_config=types.ImageConfig(
+                aspect_ratio=ASPECT,
+                person_generation="dont_allow",  # no human figures per restraint
+            ),
         ),
     )
     elapsed = time.time() - t0
-    if not response.generated_images:
+    if _first_image_bytes(response) is None:
         raise RuntimeError(f"{slug}: no images returned by API")
-    img_bytes = response.generated_images[0].image.image_bytes
+    img_bytes = _first_image_bytes(response)
     print(f"[gen] {slug} — {len(img_bytes) // 1024} KB in {elapsed:.1f}s", flush=True)
     return img_bytes
 

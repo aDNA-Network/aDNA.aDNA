@@ -22,7 +22,7 @@ Usage:
   cd /Users/stanley/aDNA/aDNA.aDNA
   python3.13 how/campaigns/campaign_adna_serious_tool_readiness/runners/e5_commons_hero_gen.py \
       --round r1 --direction all --variants 2
-  # Ultra is the default; pass --model imagen-4.0-fast-generate-001 if Ultra 429s.
+  # Ultra is the default; pass --model gemini-3.1-flash-lite-image if Ultra 429s.
   # Winner pick is manual: view candidates, copy the chosen one to hero_commons.png.
 
 Outputs:
@@ -50,7 +50,28 @@ VAULT_ROOT = Path("/Users/stanley/aDNA/aDNA.aDNA")
 OUT_DIR = VAULT_ROOT / "site/src/assets/heroes/candidates"
 LOG_DIR = VAULT_ROOT / "what/measurement/iii_results/2026-06"
 
-MODEL = "imagen-4.0-ultra-generate-001"
+def _first_image_bytes(response):
+    """Image bytes from a generate_content response, or None if it carries none.
+
+    Walks EVERY part: responses interleave modalities, so the image is not reliably first.
+    (Mirrors Home.aDNA googleai.client.first_image_bytes; inlined to keep this runner
+    self-contained — see the MODEL comment below.)
+    """
+    for candidate in getattr(response, "candidates", None) or []:
+        content = getattr(candidate, "content", None)
+        for part in getattr(content, "parts", None) or []:
+            inline = getattr(part, "inline_data", None)
+            if inline is not None and getattr(inline, "data", None):
+                return inline.data
+    return None
+
+
+# Migrated 2026-08-16 (Operation Rosetta Stone R5). The imagen-4.0-* family shut down 2026-08-17;
+# successor per Home.aDNA googleai.models SUNSET_SUCCESSORS: imagen-4.0-ultra-generate-001 ->
+# image.pro -> gemini-3-pro-image. The id is written out rather than imported from Home's registry
+# on purpose: a runtime dependency from a one-shot runner to another vault's package is what broke
+# m355 when `latlab` was renamed at Galilei.
+MODEL = "gemini-3-pro-image"
 ASPECT = "16:9"
 HERO_WIDTH = 1408
 HERO_HEIGHT = 792
@@ -138,7 +159,7 @@ def main() -> int:
     ap.add_argument("--direction", default="all", help="C1|C2|C3|all|comma-list")
     ap.add_argument("--variants", type=int, default=2)
     ap.add_argument("--model", default=MODEL,
-                    help=f"Imagen model (default {MODEL}; use imagen-4.0-fast-generate-001 if Ultra is out of capacity)")
+                    help=f"image model (default {MODEL}; use gemini-3.1-flash-lite-image if the pro tier is out of capacity)")
     args = ap.parse_args()
     model = args.model
     cost = 0.02 if "fast" in model else 0.04
@@ -197,16 +218,22 @@ def main() -> int:
                 last_exc = None
                 for attempt in range(1, 6):
                     try:
-                        response = client.models.generate_images(
+                        # generate_content, not generate_images: the latter is the Imagen predict API, which
+                        # went away with the imagen-4.0 family. person_generation moves from GenerateImagesConfig
+                        # onto ImageConfig — same restraint, same value (verified against google-genai 2.5.0;
+                        # PersonGeneration accepts dont_allow).
+                        response = client.models.generate_content(
                             model=model,
-                            prompt=prompt,
-                            config=types.GenerateImagesConfig(
-                                number_of_images=1,
-                                aspect_ratio=ASPECT,
-                                person_generation="dont_allow",
+                            contents=prompt,
+                            config=types.GenerateContentConfig(
+                                response_modalities=["Image"],
+                                image_config=types.ImageConfig(
+                                    aspect_ratio=ASPECT,
+                                    person_generation="dont_allow",
+                                ),
                             ),
                         )
-                        if not response.generated_images:
+                        if _first_image_bytes(response) is None:
                             raise RuntimeError("no images returned")
                         break
                     except Exception as e:  # noqa: BLE001
@@ -222,7 +249,7 @@ def main() -> int:
                         raise
                 if response is None:
                     raise last_exc if last_exc else RuntimeError("no response")
-                raw = response.generated_images[0].image.image_bytes
+                raw = _first_image_bytes(response)
                 img = Image.open(BytesIO(raw)).convert("RGB")
                 if img.size != (HERO_WIDTH, HERO_HEIGHT):
                     img = img.resize((HERO_WIDTH, HERO_HEIGHT), Image.LANCZOS)
