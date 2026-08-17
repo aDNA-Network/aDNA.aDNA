@@ -351,10 +351,11 @@
   var ua = navigator.userAgent;
   var dl = document.getElementById('dlBtn'), note = document.getElementById('osNote');
   if (/Win/i.test(ua)) {
-    dl.textContent = 'Download for Windows';
-    dl.href = '/adna-install.exe';
-    note.innerHTML = 'Windows may show &ldquo;Windows protected your PC&rdquo; on first run. ' +
-                     'Click <strong>More info</strong>, then <strong>Run anyway</strong>.';
+    // Windows .exe temporarily unpublished (rebuild against v0.3.1 pending) -- lead with the
+    // one-liner, which is tested, rather than a download button that 404s.
+    dl.textContent = 'Copy the Windows command';
+    dl.href = '#terminal';
+    note.textContent = 'One line in PowerShell -- no download, nothing to install first.';
     showCmd('win');
   } else if (/Linux/i.test(ua) && !/Android/i.test(ua)) {
     dl.textContent = 'Download for Linux';

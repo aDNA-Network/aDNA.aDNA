@@ -45,19 +45,6 @@
           "value": "text/plain; charset=utf-8"
         }
       ]
-    },
-    {
-      "source": "/adna-install.exe",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/octet-stream"
-        },
-        {
-          "key": "Content-Disposition",
-          "value": "attachment; filename=\"adna-install.exe\""
-        }
-      ]
     }
   ],
   "rewrites": [
@@ -65,5 +52,8 @@
       "source": "/install",
       "destination": "/install.html"
     }
+  ],
+  "_pending": [
+    "adna-install.exe: PULLED again 2026-08-17 (v0.3.1) \u2014 the rebuilt exe embeds the 0.3.1-superseded pin and would fail its own checksum gate. Rebuild on Windows against the 0.3.1 payload, verify the embedded pin, then restore this route and the page button."
   ]
 }

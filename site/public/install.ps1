@@ -36,7 +36,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference    = 'SilentlyContinue'   # Invoke-WebRequest is ~10x slower with the bar
-$VERSION = '0.3.0'
+$VERSION = '0.3.1'
 
 # PowerShell 5.1 can still default to TLS 1.0, which GitHub refuses outright.
 try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 }
@@ -88,7 +88,7 @@ try {
     # Same discipline as the Unix bootstrap: the payload hash is pinned in THIS file, not
     # fetched alongside the payload. A checksum served from the same host as the artifact
     # catches corruption but not substitution.
-    $PAYLOAD_SHA256 = '232c3db3e61b75338438163db6f2ea4cf112b90877778963abfc4a9916d62124'
+    $PAYLOAD_SHA256 = 'f9374a2d1871863d661a826926b976d6e5d42a208f2b42f70bbbb895424b61cd'
     if ($PAYLOAD_SHA256 -eq 'PAYLOAD_SHA256_UNSET') {
         Die "this install.ps1 has no payload hash pinned -- it was published unreleased. Refusing to run unverified code."
     }
@@ -132,6 +132,25 @@ try {
     if (-not $expect) { Die "no pinned checksum for $asset -- refusing to install it unverified." }
 
     New-Item -ItemType Directory -Path $binDir, $pkiDir -Force | Out-Null
+
+    # Skip acquisition when an adequate nebula is already in OUR bindir -- the same rerun fix the
+    # Unix installer got (its PATH-only check re-downloaded ~10MB per rerun). Version-gated so a
+    # stale binary still triggers re-acquisition; an offline rerun now succeeds entirely.
+    $ownCert = Join-Path $binDir 'nebula-cert.exe'
+    $haveGood = $false
+    if (Test-Path $ownCert) {
+        $v = (& (Join-Path $binDir 'nebula.exe') -version 2>$null) -join ' '
+        if ($v -match '(\d+)\.(\d+)\.(\d+)') {
+            $min = $C.nebula.min_version
+            $cur = @([int]$Matches[1], [int]$Matches[2], [int]$Matches[3])
+            $haveGood = ($cur[0] -gt $min[0]) -or
+                        ($cur[0] -eq $min[0] -and $cur[1] -gt $min[1]) -or
+                        ($cur[0] -eq $min[0] -and $cur[1] -eq $min[1] -and $cur[2] -ge $min[2])
+        }
+    }
+    if ($haveGood) {
+        Good "nebula already present in $binDir ($v) -- not re-downloading"
+    } else {
     $zip = Join-Path $tmp $asset
     Say "fetching $($C.nebula.pin) $asset"
     Invoke-WebRequest -Uri "$($C.nebula.release_base)/$($C.nebula.pin)/$asset" -OutFile $zip -UseBasicParsing
@@ -149,11 +168,19 @@ try {
     $wintun = Join-Path $tmp "nb\dist\windows\wintun\bin\$arch\wintun.dll"
     if (Test-Path $wintun) { Copy-Item $wintun $binDir -Force; Good "wintun.dll staged (adapter install needs admin, later)" }
     Good "nebula + nebula-cert installed to $binDir"
+    }
 
     # -- keypair --------------------------------------------------------------------------
     $keyPath = Join-Path $pkiDir 'host.key'
     $pubPath = Join-Path $pkiDir 'host.pub'
-    if ((Test-Path $keyPath) -and -not $Force) {
+    if (Test-Path $keyPath) {
+        # NO flag reaches this branch -- not even -Force. The Unix installer documents --force as
+        # "overwrite an existing config (never a key)"; this file used to invert that and let
+        # -Force regenerate the key, silently invalidating every certificate ever issued to the
+        # node. Found by code review; the two implementations now agree.
+        if (-not (Test-Path $pubPath)) {
+            Die "host.key exists but host.pub is MISSING at $pubPath -- cannot rebuild the enrollment request.`n        Restore host.pub from a backup, or move host.key aside to generate a fresh pair."
+        }
         Good "keypair already present at $keyPath -- NOT regenerating (an existing key is never overwritten)"
     } else {
         & (Join-Path $binDir 'nebula-cert.exe') keygen -out-key $keyPath -out-pub $pubPath
@@ -239,8 +266,15 @@ try {
     [void]$sb.AppendLine("    - { port: any, proto: any, host: any }")
     [void]$sb.AppendLine("  inbound:")
     [void]$sb.AppendLine("    - { port: any, proto: icmp, host: any }")
-    Set-Content -Path $yamlPath -Value $sb.ToString() -Encoding utf8 -NoNewline
-    Good "config written to $yamlPath"
+    if ((Test-Path $yamlPath) -and -not $Force) {
+        # Never overwrite: a signed node may carry hand-set values (the inbound port replaces
+        # REPLACE_AT_SIGNING at signing time). A rerun to re-emit an enrollment request must not
+        # silently reset them. Same contract, same wording, as the Unix installer.
+        Good "config already present at $yamlPath -- left untouched (-Force to overwrite)"
+    } else {
+        Set-Content -Path $yamlPath -Value $sb.ToString() -Encoding utf8 -NoNewline
+        Good "config written to $yamlPath"
+    }
 
     # -- aDNA workspace (optional, non-fatal, never requires an AI assistant) --------------
     # Unifying the two installs means one command both joins the network and gives you the

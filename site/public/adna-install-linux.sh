@@ -9,7 +9,7 @@
 # says, in plain words, what happened and what to do next.
 set -eu
 
-BASE="${ADNA_INSTALL_BASE:-https://install.adna.network}"
+BASE="${ADNA_INSTALL_BASE:-https://adna.network}"
 
 # macOS quarantines anything downloaded from a browser. If we were opened from a quarantined
 # copy the user has already clicked through that, so nothing to do here but note it for
