@@ -26,9 +26,10 @@ const orderedClasses = [
   ...classOrder.filter(c => c in classGroups),
   ...Object.keys(classGroups).filter(c => !classOrder.includes(c)).sort(),
 ];
-// Readable section/filter labels for non-obvious class slugs (default = underscores→spaces).
-const classLabels: Record<string, string> = { tbd_at_p0: 'genesis-planning' };
-const labelFor = (cls: string) => classLabels[cls] || cls.replace(/_/g, ' ');
+// Readable section/filter labels + attribute slugs (HAUSSMANN P1.3): visible text uses the shared
+// classLabel; ids/dataset values/CSS hooks use classSlug so raw machine enums (org_graph,
+// tbd_at_p0) never appear in built HTML — gate-27 lints attributes too.
+import { classLabel as labelFor, classSlug } from '../../utils/vaultLabels';
 
 const jsonLD = buildCollectionPageJsonLD({
   title: 'Vaults — the aDNA registry',
@@ -71,7 +72,7 @@ const goDeeper = [
         <h2>Browse by class</h2>
         <div class="facet-chips">
           {orderedClasses.map(cls => (
-            <VaultClassFacet vaultClass={cls} count={classGroups[cls].length} />
+            <VaultClassFacet slug={classSlug(cls)} label={labelFor(cls)} count={classGroups[cls].length} />
           ))}
         </div>
       </div>
@@ -95,7 +96,7 @@ const goDeeper = [
             All <span class="filter-count">{vault_count}</span>
           </button>
           {orderedClasses.map(cls => (
-            <button type="button" class="filter-chip" data-filter-class={cls} aria-pressed="false">
+            <button type="button" class="filter-chip" data-filter-class={classSlug(cls)} aria-pressed="false">
               {labelFor(cls)} <span class="filter-count">{classGroups[cls].length}</span>
             </button>
           ))}
@@ -124,7 +125,7 @@ const goDeeper = [
     </div>
 
     {orderedClasses.map(cls => (
-      <section class="vaults-class-section" id={`class-${cls}`}>
+      <section class="vaults-class-section" id={`class-${classSlug(cls)}`}>
         <h2>{labelFor(cls)} <span class="class-count">({classGroups[cls].length})</span></h2>
         <div class="vaults-grid">
           {classGroups[cls].map((v: any) => (

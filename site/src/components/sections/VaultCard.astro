@@ -1,4 +1,6 @@
 ---
+import { classLabel, classSlug, statusLabel, personaLabel } from '../../utils/vaultLabels';
+
 interface Props { vault: any; }
 const { vault } = Astro.props;
 
@@ -7,27 +9,31 @@ const { vault } = Astro.props;
 // fall back to `note` (the populated one-liner) so the purpose renders NOW from existing
 // data and auto-upgrades as Home backfills taglines. No strings authored here.
 const purpose = vault.tagline || vault.note || null;
-// Suppress the "—" persona placeholder (data-currency artifact routed to Hestia) so the
-// card never shows a lone em-dash above the new purpose line.
-const persona = vault.persona && vault.persona !== '—' ? vault.persona : null;
+// P1.3: persona placeholders project as null upstream; personaLabel keeps the display rule
+// local too (belt + braces). Class/status render as public labels; attributes carry the
+// hyphenated slug so raw machine enums never reach built HTML (gate-27 scans attributes).
+const persona = personaLabel(vault.persona);
+const statusPub = statusLabel(vault.status);
 // Flat search haystack for the client-side registry filter (M3.1.3); no-JS ignores it.
-const searchBlob = [vault.display_name, persona, vault.class, purpose]
+const searchBlob = [vault.display_name, persona, classLabel(vault.class), purpose]
   .filter(Boolean).join(' ').toLowerCase();
 ---
 
 <article
-  class={`vault-card class-${vault.class}`}
+  class={`vault-card class-${classSlug(vault.class)}`}
   data-vault-card
-  data-class={vault.class}
+  data-class={classSlug(vault.class)}
   data-search={searchBlob}
 >
   <h3>
     <a href={`/vaults/${vault.vault_slug}/`}>{vault.display_name}</a>
   </h3>
   {persona && <p class="vault-card-persona">{persona}</p>}
-  {purpose && <p class="vault-card-purpose">{purpose}</p>}
+  {purpose
+    ? <p class="vault-card-purpose">{purpose}</p>
+    : <p class="vault-card-purpose vault-card-purpose-absent">No public description yet.</p>}
   <p class="vault-card-meta">
-    <span class={`vault-status status-${vault.status}`}>{vault.status}</span>
+    <span class={`vault-status status-${classSlug(statusPub)}`}>{statusPub}</span>
     {vault.current_phase && <span class="vault-phase">{vault.current_phase}</span>}
   </p>
 </article>
@@ -57,6 +63,9 @@ const searchBlob = [vault.display_name, persona, vault.class, purpose]
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  /* P1.3 honest-absent affordance (WebForge data-honesty law): a vault with no public
+     description says so plainly — never a blank card, never invented copy. */
+  .vault-card-purpose-absent { color: var(--color-text-muted); font-style: italic; }
   .vault-card-meta { font-size: 0.8em; margin-top: 0.5rem; }
   .vault-status { padding: 0.1rem 0.4rem; border-radius: var(--radius-full); }
   .status-active { background: color-mix(in srgb, var(--color-success) 15%, transparent); color: color-mix(in srgb, var(--color-success) 55%, var(--color-text)); }

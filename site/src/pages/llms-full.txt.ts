@@ -3,6 +3,7 @@ import installTruth from '../data/install_truth.json';
 import { STANDARD_VERSION, ENTITY_TYPE_COUNT, CONFORMANCE_LEVELS, STANDARD_LICENSE } from '../data/standard';
 import { REPO_HTTPS, PUBLISHER } from '../data/canonical';
 import vaultsData from '../data/vaults.json';
+import { classLabel } from '../utils/vaultLabels';
 
 /**
  * H-3 (D3 agentic-readiness): /llms-full.txt — the concise index plus the full route/section map,
@@ -14,6 +15,7 @@ const CLASS_LABELS: Record<string, string> = {
   platform: 'Platform', org_vault: 'Org-Vault', org_graph: 'Org-Graph', standard_dev: 'Standard',
   network: 'Network', node_operational: 'Node (operational)', coordination: 'Coordination',
   document: 'Document', knowledge_graph: 'Knowledge-graph', tooling: 'Tooling', workspace: 'Workspace',
+  tbd_at_p0: 'Genesis-planning (category decided at genesis)',
 };
 
 const EDGE_LEGEND: Record<string, string> = {
@@ -40,7 +42,7 @@ export const GET: APIRoute = ({ site }) => {
 
   const classLines = Object.keys(classCensus)
     .sort((a, b) => classCensus[b] - classCensus[a] || a.localeCompare(b))
-    .map((c) => `- ${CLASS_LABELS[c] ?? c} (${classCensus[c]})`)
+    .map((c) => `- ${CLASS_LABELS[c] ?? classLabel(c)} (${classCensus[c]})`)
     .join('\n');
 
   const edgeLines = Object.keys(EDGE_LEGEND)

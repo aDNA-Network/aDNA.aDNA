@@ -4,6 +4,7 @@ import VaultRelationshipBlock from '../../components/sections/VaultRelationshipB
 import ClosingCTA from '../../components/sections/ClosingCTA.astro';
 import vaultsData from '../../data/vaults.json';
 import { buildWebPageJsonLD } from '../../utils/seo';
+import { classLabel, statusLabel, personaLabel, CLASS_GLOSS } from '../../utils/vaultLabels';
 
 export function getStaticPaths() {
   const data = vaultsData as { vaults: any[]; edges: any[] };
@@ -15,8 +16,14 @@ export function getStaticPaths() {
 
 const { vault, allVaults, allEdges } = Astro.props as { vault: any; allVaults: any[]; allEdges: any[] };
 
+// Public label treatment (HAUSSMANN P1.3): raw enums (`org_graph`, `tbd_at_p0`) and persona
+// placeholders never render — gate-27 lints them; personaPub null also fixes the F15 "— —" titles.
+const personaPub = personaLabel(vault.persona);
+const classPub = classLabel(vault.class);
+const statusPub = statusLabel(vault.status);
+
 const jsonLD = buildWebPageJsonLD({
-  title: `${vault.display_name} — ${vault.persona || vault.class}`,
+  title: `${vault.display_name} — ${personaPub || classPub}`,
   description: vault.tagline || vault.note || `aDNA vault: ${vault.display_name}`,
   url: Astro.url.href,
 });
@@ -33,17 +40,16 @@ const hasLinks = !!(vault.github_url || vault.docs_site_url);
 // Sparse vaults (many are early/pending with no note) get an honest templated lede built from real fields,
 // so "what is this?" is always answered and the page never reads as unfinished — no invented facts, just a
 // restatement of class + status. Status also carries a plain-language gloss (newcomers don't know "genesis").
-const classPretty = String(vault.class || 'vault').replace(/_/g, ' ');
-const ledeText = vault.note || `A ${classPretty} vault — ${vault.status}.`;
+const ledeText = vault.note || `A ${classPub} vault — ${statusPub}.`;
 const STATUS_GLOSS: Record<string, string> = {
   genesis: 'early — just getting started', pending: 'not yet started', active: 'active and in use',
   planning: 'in planning', completed: 'complete', archived: 'archived', superseded: 'superseded by a successor',
 };
-const statusTitle = STATUS_GLOSS[vault.status] ? `${vault.status} — ${STATUS_GLOSS[vault.status]}` : vault.status;
+const statusTitle = STATUS_GLOSS[statusPub] ? `${statusPub} — ${STATUS_GLOSS[statusPub]}` : statusPub;
 ---
 
 <BaseLayout
-  title={`${vault.display_name} — ${vault.persona || vault.class}`}
+  title={`${vault.display_name} — ${personaPub || classPub}`}
   description={vault.tagline || vault.note || `aDNA vault: ${vault.display_name}`}
   jsonLD={jsonLD}
 >
@@ -63,9 +69,9 @@ const statusTitle = STATUS_GLOSS[vault.status] ? `${vault.status} — ${STATUS_G
     <div class="vd-grid">
       <aside class="vd-aside" aria-label="Vault details">
         <dl class="vd-spec">
-          <div class="vd-spec-row"><dt>Class</dt><dd>{vault.class}</dd></div>
-          <div class="vd-spec-row"><dt>Status</dt><dd><span class="vd-status" title={statusTitle}>{vault.status}</span></dd></div>
-          {vault.persona && <div class="vd-spec-row"><dt>Persona</dt><dd>{vault.persona}</dd></div>}
+          <div class="vd-spec-row"><dt>Class</dt><dd title={CLASS_GLOSS[vault.class]}>{classPub}</dd></div>
+          <div class="vd-spec-row"><dt>Status</dt><dd><span class="vd-status" title={statusTitle}>{statusPub}</span></dd></div>
+          {personaPub && <div class="vd-spec-row"><dt>Persona</dt><dd>{personaPub}</dd></div>}
           {vault.current_phase && <div class="vd-spec-row"><dt>Phase</dt><dd>{vault.current_phase}</dd></div>}
           {vault.canonical_governance && (
             <div class="vd-spec-row"><dt>Governance</dt><dd><code>{vault.canonical_governance}</code></dd></div>

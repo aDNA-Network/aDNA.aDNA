@@ -1,10 +1,12 @@
 ---
-interface Props { vaultClass: string; count: number; }
-const { vaultClass, count } = Astro.props;
+// P1.3: the parent passes a public display label + an attribute-safe slug — raw class enums
+// (org_graph, tbd_at_p0) never reach the anchor href/class hooks (gate-27 scans attributes).
+interface Props { slug: string; label: string; count: number; }
+const { slug, label, count } = Astro.props;
 ---
 
-<a href={`#class-${vaultClass}`} class={`facet-chip facet-${vaultClass}`}>
-  {vaultClass.replace(/_/g, ' ')} <span class="facet-count">{count}</span>
+<a href={`#class-${slug}`} class={`facet-chip facet-${slug}`}>
+  {label} <span class="facet-count">{count}</span>
 </a>
 
 <style>

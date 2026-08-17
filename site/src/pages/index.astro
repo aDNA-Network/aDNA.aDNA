@@ -7,6 +7,7 @@ import { buildWebSiteJsonLD } from '../utils/seo';
 import { steps, stats, audiences } from '../data/home';
 import { STANDARD_VERSION, ENTITY_TYPE_COUNT } from '../data/standard';
 import vaultsData from '../data/vaults.json';
+import { classLabel as sharedClassLabel } from '../utils/vaultLabels';
 import subnetworksData from '../data/subnetworks.json';
 // Storyweave P5 / M5.1a — the single-sourced clone-and-run one-liner for the hero install pill (R2).
 // Same fixture /get-started + /network consume (built by scripts/build_install_truth.mjs); never
@@ -60,7 +61,9 @@ const CLASS_LABELS: Record<string, string> = {
   tooling: 'tooling',
   workspace: 'workspace',
 };
-const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
+// Curated homepage register above; anything uncurated falls to the shared public label
+// (never a raw enum — gate-27; HAUSSMANN P1.3).
+const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
 ---
 
 <BaseLayout

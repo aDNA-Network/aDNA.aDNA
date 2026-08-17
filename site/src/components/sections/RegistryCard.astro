@@ -15,16 +15,29 @@ interface Props {
   classLabel: string;
 }
 const { vault, classLabel } = Astro.props;
+import { personaLabel } from '../../utils/vaultLabels';
 
 // First sentence of the note, capped — keeps the card to one honest line of proof.
+// P1.3: a length cap cuts at a WORD boundary and never strands an unclosed parenthetical —
+// truncation-by-slice manufactured the H13 truncated-lede class at the generator; the same
+// rule holds at every presentation layer.
 function shortNote(note: string | null | undefined): string {
   if (!note) return '';
   const firstSentence = note.split('. ')[0].replace(/\.$/, '');
-  const s = firstSentence.length <= 104 ? firstSentence : note.slice(0, 100).trimEnd();
+  let s = firstSentence;
+  if (s.length > 104) {
+    s = note.slice(0, 100);
+    s = s.slice(0, s.lastIndexOf(' ') > 40 ? s.lastIndexOf(' ') : 100).trimEnd();
+    // drop back before any parenthetical the cut left open
+    while ((s.match(/\(/g) || []).length > (s.match(/\)/g) || []).length) {
+      s = s.slice(0, s.lastIndexOf('(')).trimEnd();
+    }
+    s = s.replace(/[\s,;:—-]+$/, '');
+  }
   return s + (s.length < (note || '').replace(/\.$/, '').length ? '…' : '');
 }
 
-const persona = vault.persona && vault.persona !== '—' ? vault.persona : null;
+const persona = personaLabel(vault.persona);
 const note = shortNote(vault.note);
 ---
 
