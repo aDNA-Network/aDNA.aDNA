@@ -6,11 +6,11 @@ campaign: campaign_haussmann
 phase: P0
 decade: 1
 owner: stanley
-status: active      # 2026-08-16 P0-wave: O0–O3 DONE (orientation · 4 candidates · 3/3 unanimous synthetic pre-screen · ⛩ operator picked A definition-as-hero; ADR-048 updated at proposed; panel kit stimulus loaded). REMAINING: O4 human panel (operator recruits, ≥80% of ≥5) → O5 DP2 ratification → then the hero ships (P1 lane).
+status: completed   # 2026-08-16 P1-wave close: O4 human panel WAIVED by operator (in-chat; deviation recorded in ADR-048 §Status; human validation deferred to P5.1) → O5 DP2 RATIFIED — ADR-048 accepted. Hero ships in P1.1's lane. P0-wave history: O0–O3 (orientation · 4 candidates · 3/3 unanimous synthetic pre-screen · ⛩ operator picked A definition-as-hero).
 mission_class: design_excellence
 executor_tier: fable   # positioning is the campaign's highest-judgment call; panel logistics are operator-shared
 token_budget_estimated: "~250–400 kT across 2–3 sessions: corpus read + 3–5 positioning candidates + hero-copy drafts + synthetic pre-screen iterations + panel kit + ADR-048 authoring (ADR-016)"
-token_budget_actual:
+token_budget_actual: "≈300 kT / 2 sessions — P0-wave O0–O3 ≈285 kT (incl. 3 isolated synthetic pre-screen readers ≈280 kT lane share) + P1-wave close-out ≈15 kT. Within estimate (250–400). Panel-session budget unspent (waived)."
 created: 2026-08-16
 last_edited_by: agent_rosetta
 grounded_in: [H1, H9, H10, H11, N10, "evidence/coldreads/ (3 SYNTHETIC transcripts)", "evidence/claims/claim_register.md #2 (FALSE 'open protocol')", "evidence/dossier/haussmann_reference_dossier_draft.md (hero-mode distribution)", "what/design/front_page_doctrine.md"]
@@ -72,7 +72,12 @@ ADR-048 at `proposed` carries: the ratified positioning sentence, audience, NOT-
 ## Progress
 
 - **2026-08-16 (P0 wave).** O0 `artifacts/p0_1/orientation.md` (hero verified on disk; FALSE #2 confirmed in the lead; honest form already in-file). O1 `candidates_memo.md` (A/B/C/D). O2 `prescreen_results.md` — 3 blind synthetic readers, **A unanimous on ship** (clinician: "(agentic DNA) in the very first clause kills the genomics reading"); B flagged hazardous ("lives" → hosted misread ×2 — new avoid-list class); D confirmed split-attention. O3 ⛩ operator picked **A**; ADR-048 §Direction-picked updated (still `proposed` — DP2 gates on the human panel); `panel_kit.md` stimulus loaded with the A draft + recruitment brief handed to the operator.
+- **2026-08-16 (P1 wave — close).** O4 **WAIVED** ⛩: operator ruled in-chat (`AskUserQuestion`, P1-wave session) to skip the human panel and ratify on the synthetic pre-screen alone. **The ≥4/5-human acceptance criterion was NOT met — it was operator-deviated**; deviation + residual risk recorded in ADR-048 §Status; human validation deferred to **P5.1** (panel kit stays live as its stimulus). O5 **DP2 RATIFIED**: ADR-048 → `accepted` (ratification block filled). Baton to P1: **P1.1 + P1.2 unblock**; every downstream mission quotes the candidate-A sentence as north star.
 
 ## AAR (SO#5)
 
-*(before completed)*
+- **Worked.** Isolated fresh-context synthetic pre-screening earned enough operator trust to carry a ratification: 3/3 blind unanimity on A (plus a falsifying find — the "lives" avoid-class — that proved the readers weren't rubber stamps).
+- **Didn't.** The human panel never ran — recruitment cost exceeded its marginal value for the operator this cycle; the mission's own acceptance criterion is closed by deviation, not by evidence.
+- **Finding.** A disclosed synthetic instrument + a real operator gate can substitute *sequencing* (ship now, validate at P5.1) for *blocking* — but only because the honest-fallback cost of being wrong is a copy revert, not a structural rebuild.
+- **Change.** ADR-048 carries a first-class deviation record; P5.1's scope now explicitly includes retro-validating the positioning (not just fresh evidence).
+- **Follow-up.** P1.1 ships the hero (verbatim from ADR-048); P4.5 inherits the avoid-list entry; P5.1 inherits `panel_kit.md` + the retro-validation duty.
