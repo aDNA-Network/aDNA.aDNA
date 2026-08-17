@@ -73,3 +73,21 @@ case "$OUT_IIH" in
   *"already injected"*|*"nothing to do"*) : ;;
   *) echo "ABORT: installer routes were NOT present after the injection step (second run was not a no-op)" >&2; exit 1 ;;
 esac
+echo "== deploy ($MODE) using \$${TOKEN_NAME%% *} =="
+if [[ "$MODE" == "prod" ]]; then
+  OUT="$(VERCEL_TOKEN="$TOKEN" npx vercel deploy --prebuilt --prod --yes 2>&1)" || { echo "$OUT" | sed "s/${TOKEN}/[REDACTED]/g" >&2; exit 1; }
+else
+  OUT="$(VERCEL_TOKEN="$TOKEN" npx vercel deploy --prebuilt --yes 2>&1)" || { echo "$OUT" | sed "s/${TOKEN}/[REDACTED]/g" >&2; exit 1; }
+fi
+URL="$(echo "$OUT" | grep -Eo 'https://[a-z0-9.-]+\.vercel\.app' | tail -1)"
+echo "$OUT" | sed "s/${TOKEN}/[REDACTED]/g" | tail -3
+[[ -n "$URL" ]] || { echo "ABORT: no deployment URL parsed" >&2; exit 1; }
+
+echo "== verify live headers ($URL) =="
+sleep 3
+node scripts/check_live_headers.mjs "$URL" || { echo "WARN: live header verification failed on $URL" >&2; exit 1; }
+
+STAMP="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+REC="deploy_record: $STAMP mode=$MODE url=$URL token=$TOKEN_NAME tree=$(git rev-parse --short HEAD)"
+echo "$REC" | tee -a scripts/deploy_log.txt
+echo "== DONE — record the deploy line above in the session log + STATE (campaign law) =="
