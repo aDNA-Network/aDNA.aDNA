@@ -31,7 +31,7 @@ const searchBlob = [vault.display_name, persona, classLabel(vault.class), purpos
   {persona && <p class="vault-card-persona">{persona}</p>}
   {purpose
     ? <p class="vault-card-purpose">{purpose}</p>
-    : <p class="vault-card-purpose vault-card-purpose-absent">No public description yet.</p>}
+    : <p class="vault-card-purpose vault-card-purpose-absent">{vault.listing === 'minimal' ? 'Minimal card — private engagement.' : 'No public description yet.'}</p>}
   <p class="vault-card-meta">
     <span class={`vault-status status-${classSlug(statusPub)}`}>{statusPub}</span>
     {vault.current_phase && <span class="vault-phase">{vault.current_phase}</span>}

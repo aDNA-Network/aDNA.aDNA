@@ -112,12 +112,12 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     `${JSON.stringify(
       {
         _doc:
-          'HAUSSMANN P0.5 (editorial gate, O2) — leak-lint BASELINE: the internal-language leaks present in the build on the generated date. This is tracked DEBT, not permission. gate-27 fails on any finding NOT recorded here (new leaks are blocked immediately) and carries one expected-failure test asserting this list is EMPTY — that test flips to an unexpected pass when P1.3 clears the debt, forcing this file to be retired.',
+          'Leak-lint BASELINE (HAUSSMANN P0.5 instrument). The 2026-08-16 debt (86 rows / 563 occurrences / 57 files) was RETIRED at P1.3 (2026-08-16): the projection now derives leak-free public copy at the generator, so this list is EMPTY and MUST STAY EMPTY — gate-27 hard-fails any leak on any public surface. This file remains as the zero-debt record + regen harness (--check reports drift against zero). Debt tracking, never permission.',
         _regenerate: 'npx astro build && node scripts/gen_leak_baseline.mjs',
         _not_an_allowlist:
           'Deliberate public copy that matches a pattern belongs in leak_allowlist.json (token-scoped, dated, reviewed) — never here.',
         generated: new Date().toISOString().slice(0, 10),
-        expires: 'P1.3',
+        expires: 'retired — debt cleared at P1.3 (2026-08-16); the empty state is now a hard gate',
         expires_mission: 'mission_haussmann_p1_3_registry_truth',
         summary: { finding_rows: findings.length, occurrences, files },
         findings,

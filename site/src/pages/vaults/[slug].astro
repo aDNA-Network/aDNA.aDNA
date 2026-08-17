@@ -40,7 +40,11 @@ const hasLinks = !!(vault.github_url || vault.docs_site_url);
 // Sparse vaults (many are early/pending with no note) get an honest templated lede built from real fields,
 // so "what is this?" is always answered and the page never reads as unfinished — no invented facts, just a
 // restatement of class + status. Status also carries a plain-language gloss (newcomers don't know "genesis").
-const ledeText = vault.note || `A ${classPub} vault — ${statusPub}.`;
+// DP4 (ADR-052 §admission): confidential-adjacent vaults are listed with a minimal card — the
+// registry count stays true, the engagement detail stays private, and the page says so plainly.
+const ledeText = vault.listing === 'minimal'
+  ? 'Listed with a minimal card — private engagement. The vault is real and governed; its detail is not public.'
+  : (vault.note || `A ${classPub} vault — ${statusPub}.`);
 const STATUS_GLOSS: Record<string, string> = {
   genesis: 'early — just getting started', pending: 'not yet started', active: 'active and in use',
   planning: 'in planning', completed: 'complete', archived: 'archived', superseded: 'superseded by a successor',

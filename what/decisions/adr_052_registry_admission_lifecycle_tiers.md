@@ -16,7 +16,20 @@ tags: [adr, haussmann, registry, tiers, d2, d7]
 
 ## Status
 
-**Proposed** — space fixed at genesis; §admission (the confidential ruling) lands early at **DP4** (mission P1.3); the tier model completes at P2.4.
+**Proposed** — space fixed at genesis; **§admission RULED at DP4** (below, operator 2026-08-16); the tier
+model completes at P2.4, where the full ADR ratifies.
+
+## §admission — DP4 ruling (operator, 2026-08-16, P1-wave session)
+
+**Minimal card, all three.** The confidential-adjacent vaults (**aiLP-Dataroom.aDNA** · **CakeHealth.aDNA** ·
+**PercySleep.aDNA**) **stay listed** — the registry count stays true — but the projection emits a **minimal
+card**: identity + class + status + persona only. Notes, taglines, links, phase, headline state, and
+relationship detail are suppressed **at the generator** (`MINIMAL_CARD_VAULTS` + `listing: "minimal"` in
+`scripts/build_vaults_data.mjs`), so no downstream surface — pages, cards, graph, llms, search blobs — can
+leak engagement detail. Templates render the honest reason: *"Listed with a minimal card — private
+engagement."* Escalation path: if even a NAME becomes sensitive, the row moves to removal by operator
+ruling (per-row, recorded here). Ruled via `AskUserQuestion` at the P1.3 O3 gate; implementation commit
+rides the same mission.
 
 ## Context
 

@@ -199,20 +199,26 @@ test('G-leak: no internal-language leak outside the dated baseline', () => {
   ).toEqual([]);
 });
 
-// ── The tracked debt: expected failure until P1.3 ─────────────────────────────
+// ── The retired debt: the empty baseline is now a HARD gate ───────────────────
+// P1.3 (2026-08-16) cleared the 2026-08-16 H13 debt (86 rows / 563 occurrences): the projection
+// derives leak-free copy at the generator, the templates render public labels, and the two
+// content stragglers were fixed at source. The former `test.fail()` expected-failure annotation
+// is dropped per its own retirement instruction — from here, ANY leak on ANY public surface is
+// a hard failure the moment it lands. Fix the copy or the generator; deliberate public copy
+// goes in the token-scoped allowlist, never back into a baseline.
 
-test(`G-leak: the leak baseline is empty (expected failure until ${baselineDoc.expires})`, () => {
-  test.fail(
-    baseline.length > 0,
-    `${baselineDoc.summary?.finding_rows ?? baseline.length} baseline rows recorded ${baselineDoc.generated}; retires at ${baselineDoc.expires}`,
-  );
+test('G-leak: the leak baseline stays empty (debt retired at P1.3, 2026-08-16)', () => {
+  expect(
+    baseline,
+    'leak_baseline.json has grown findings again — the baseline was retired at P1.3 and must stay empty; a new leak is fixed (or allowlisted, if deliberate public copy), never re-baselined',
+  ).toEqual([]);
   const live = scanFindings();
   const occurrences = live.reduce((n, f) => n + f.count, 0);
   const files = new Set(live.map((f) => f.file)).size;
   expect(
     live,
-    `${occurrences} internal-language leak(s) across ${files} built file(s) — the H13 debt recorded ${baselineDoc.generated}.\n` +
-      `Retires at ${baselineDoc.expires} (${baselineDoc.expires_mission ?? 'see the campaign'}). When this test PASSES unexpectedly,\n` +
-      `the debt is cleared: delete tests/gates/fixtures/leak_baseline.json's findings and drop the test.fail() annotation.`,
+    `${occurrences} internal-language leak(s) across ${files} built file(s) — zero tolerated since the P1.3 retirement (2026-08-16).\n` +
+      `Fix the copy or the generator. If the text is DELIBERATE public copy, add a dated, token-scoped\n` +
+      `entry to tests/gates/fixtures/leak_allowlist.json with a rationale.`,
   ).toEqual([]);
 });

@@ -151,10 +151,51 @@ function normalizePersona(p) {
   return s;
 }
 
+// DP4 ruling (HAUSSMANN P1.3, operator 2026-08-16, ADR-052 §admission): confidential-adjacent
+// vaults STAY LISTED — the registry count stays true — but project a MINIMAL card: identity +
+// class + status + persona only. Notes, taglines, links, phase, and headline state are suppressed
+// AT THE GENERATOR so no downstream surface (pages, cards, graph, llms, search blobs) can leak
+// engagement detail. Templates render the honest reason via `listing: "minimal"`.
+const MINIMAL_CARD_VAULTS = new Set(['aiLP-Dataroom.aDNA', 'CakeHealth.aDNA', 'PercySleep.aDNA']);
+
 // Merge inventory + vault_card overlay → projected vault entry
 function projectVault(invVault) {
   const slug = invVault.name; // canonical name e.g. "aDNA.aDNA"
   const card = vaultCards[slug] || {};
+  if (MINIMAL_CARD_VAULTS.has(slug)) {
+    return {
+      vault: slug,
+      vault_slug: card.vault_slug || slugOf(slug),
+      display_name: card.display_name || invVault.display_name || slug.replace(/\.aDNA$/, ''),
+      full_name: null,
+      tagline: null,
+      class: card.class || invVault.class || 'unknown',
+      subclass: null,
+      persona: normalizePersona(card.persona) ?? normalizePersona(invVault.persona),
+      persona_archetype: null,
+      status: card.status || invVault.health || 'unknown',
+      lifecycle_stage: null,
+      current_phase: null,
+      headline_mission: null,
+      headline_mission_state: null,
+      recent_closed: [],
+      headline_adrs: [],
+      umbrella_pillar: null,
+      companion_vaults: [],
+      federation_refs: [],
+      supersedes: null,
+      superseded_by: null,
+      default_partners: [],
+      github_url: null,
+      docs_site_url: null,
+      canonical_governance: null,
+      last_synced: card.last_synced || null,
+      note: null,
+      listing: 'minimal',
+      schema_version: card.schema_version || '0.1',
+      card_present: !!vaultCards[slug],
+    };
+  }
   return {
     // Identity (always from inventory; overlay from card if present)
     vault: slug,
@@ -222,6 +263,7 @@ if (fs.existsSync(OVERLAY_PATH)) {
 }
 const ARRAY_RELATIONS = ['umbrella_pillar', 'companion_vaults', 'federation_refs', 'default_partners'];
 for (const v of projectedVaults) {
+  if (v.listing === 'minimal') continue; // DP4: no relationship detail on minimal cards
   const ov = edgeOverlay[v.vault] || edgeOverlay[v.vault_slug] || {};
   for (const f of ARRAY_RELATIONS) {
     const cur = v[f];
