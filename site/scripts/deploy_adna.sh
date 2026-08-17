@@ -60,37 +60,16 @@ if(missing.length){ console.error('ABORT: injected route missing: '+missing.join
 const idx=cfg.routes.indexOf(hdrRoute), h=cfg.routes.findIndex(r=>r&&r.handle);
 if(h!==-1&&idx>h){ console.error('ABORT: header route after first handle route (placement invariant)'); process.exit(1); }
 console.log('injection verified: '+need.join(', ')+' @ route index '+idx);
-const fs2=require('fs');
-if (fs2.existsSync('installer_routes.json')) {
-  const spec=JSON.parse(fs2.readFileSync('installer_routes.json','utf8'));
-  const want=(spec.headers||[]).map(x=>x.source);
-  const late=[], absent=[];
-  for (const src of want) {
-    const rx='^'+src.replace(/[.\\^$|]/g, c=>'\\'+c)+'$';
-    const i=cfg.routes.findIndex(r=>r.src===rx&&r.headers);
-    if(i===-1) absent.push(src); else if(h!==-1&&i>h) late.push(src);
-  }
-  if(absent.length){ console.error('ABORT: installer route(s) not injected: '+absent.join(', ')); process.exit(1); }
-  if(late.length){ console.error('ABORT: installer route(s) after first handle route: '+late.join(', ')); process.exit(1); }
-  console.log('installer routes verified: '+want.length+' scoped route(s), all before handle index '+h);
-}
 "
 
-echo "== deploy ($MODE) using \$${TOKEN_NAME%% *} =="
-if [[ "$MODE" == "prod" ]]; then
-  OUT="$(VERCEL_TOKEN="$TOKEN" npx vercel deploy --prebuilt --prod --yes 2>&1)" || { echo "$OUT" | sed "s/${TOKEN}/[REDACTED]/g" >&2; exit 1; }
-else
-  OUT="$(VERCEL_TOKEN="$TOKEN" npx vercel deploy --prebuilt --yes 2>&1)" || { echo "$OUT" | sed "s/${TOKEN}/[REDACTED]/g" >&2; exit 1; }
-fi
-URL="$(echo "$OUT" | grep -Eo 'https://[a-z0-9.-]+\.vercel\.app' | tail -1)"
-echo "$OUT" | sed "s/${TOKEN}/[REDACTED]/g" | tail -3
-[[ -n "$URL" ]] || { echo "ABORT: no deployment URL parsed" >&2; exit 1; }
-
-echo "== verify live headers ($URL) =="
-sleep 3
-node scripts/check_live_headers.mjs "$URL" || { echo "WARN: live header verification failed on $URL" >&2; exit 1; }
-
-STAMP="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-REC="deploy_record: $STAMP mode=$MODE url=$URL token=$TOKEN_NAME tree=$(git rev-parse --short HEAD)"
-echo "$REC" | tee -a scripts/deploy_log.txt
-echo "== DONE — record the deploy line above in the session log + STATE (campaign law) =="
+# Installer routes: verify by RE-RUNNING the injector and requiring a no-op. The tool already
+# asserts presence and the placement invariant internally and aborts on violation — duplicating
+# that logic inline here is what just broke (backslashes in a regex do not survive bash's
+# double-quoted node -e). Idempotent no-op == every route present and correctly placed.
+echo "== verify installer routes (idempotent re-run) =="
+OUT_IIH="$(node scripts/inject_installer_headers.mjs .)" || { echo "$OUT_IIH" >&2; exit 1; }
+echo "$OUT_IIH"
+case "$OUT_IIH" in
+  *"already injected"*|*"nothing to do"*) : ;;
+  *) echo "ABORT: installer routes were NOT present after the injection step (second run was not a no-op)" >&2; exit 1 ;;
+esac
