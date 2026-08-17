@@ -1,0 +1,395 @@
+<title>Join the Lattice</title>
+<style>
+  /* ── tokens ───────────────────────────────────────────────────────────────
+     Light is the bare :root (a chart-plate on cool paper); dark is the night-sky
+     inversion. Both are designed, neither is an inversion of the other. Neutrals
+     carry an indigo bias so they read as chosen against the brass accent.        */
+  :root {
+    --ground:   #E8EAF0;
+    --surface:  #FDFDFE;
+    --plate:    #161B32;   /* the command plate stays night-side in both themes */
+    --plate-ink:#E4E7F2;
+    --ink:      #14182B;
+    --ink-soft: #4A5170;
+    --ink-faint:#767D9B;
+    --rule:     #C7CBD9;
+    --beacon:   #A8721A;   /* brass — the lamp. Darkened for contrast on paper.  */
+    --beacon-lit:#E0A340;  /* the same lamp, on the plate/night ground           */
+    --verified: #2F7256;
+    --shadow:   0 1px 2px rgba(20,24,43,.07), 0 8px 28px -12px rgba(20,24,43,.22);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:   #0A0D19;
+      --surface:  #121729;
+      --plate:    #060911;
+      --plate-ink:#E4E7F2;
+      --ink:      #DFE3F0;
+      --ink-soft: #9AA2C0;
+      --ink-faint:#6B738F;
+      --rule:     #262C46;
+      --beacon:   #E0A340;
+      --beacon-lit:#E0A340;
+      --verified: #58B08A;
+      --shadow:   0 1px 2px rgba(0,0,0,.4), 0 12px 36px -14px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:   #0A0D19;
+    --surface:  #121729;
+    --plate:    #060911;
+    --plate-ink:#E4E7F2;
+    --ink:      #DFE3F0;
+    --ink-soft: #9AA2C0;
+    --ink-faint:#6B738F;
+    --rule:     #262C46;
+    --beacon:   #E0A340;
+    --beacon-lit:#E0A340;
+    --verified: #58B08A;
+    --shadow:   0 1px 2px rgba(0,0,0,.4), 0 12px 36px -14px rgba(0,0,0,.7);
+  }
+
+  /* Old-style serif for display (almanac/chart vernacular, real numerals),
+     the platform UI face for running text, a true mono for anything typed. */
+  :root {
+    --display: Iowan Old Style, "Palatino Linotype", Palatino, Georgia, serif;
+    --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, "DejaVu Sans Mono", Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: var(--body); font-size: 17px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 62rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ── hero ── */
+  .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--rule); }
+  #sky { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .hero .wrap { position: relative; padding-top: 5.5rem; padding-bottom: 3.5rem; }
+  .eyebrow {
+    font-family: var(--mono); font-size: .72rem; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--beacon); margin: 0 0 1.25rem;
+  }
+  h1 {
+    font-family: var(--display); font-weight: 400; text-wrap: balance;
+    font-size: clamp(2.6rem, 6vw, 4.1rem); line-height: 1.04;
+    letter-spacing: -.018em; margin: 0 0 1rem;
+  }
+  .lede {
+    font-size: clamp(1.05rem, 2vw, 1.22rem); color: var(--ink-soft);
+    max-width: 34em; margin: 0 0 2.5rem;
+  }
+
+  /* ── the command plate: for a developer this IS the product ── */
+  .plate {
+    background: var(--plate); border-radius: 6px; box-shadow: var(--shadow);
+    padding: 1.15rem 1.25rem; display: flex; align-items: center; gap: 1rem;
+    border: 1px solid rgba(224,163,64,.22);
+  }
+  .plate code {
+    font-family: var(--mono); font-size: clamp(.8rem, 1.9vw, .97rem);
+    color: var(--plate-ink); overflow-x: auto; white-space: nowrap;
+    flex: 1; padding-bottom: 2px;
+  }
+  .plate code .sigil { color: var(--beacon-lit); user-select: none; }
+  button.copy {
+    font-family: var(--mono); font-size: .74rem; letter-spacing: .1em;
+    text-transform: uppercase; cursor: pointer; white-space: nowrap;
+    background: transparent; color: var(--beacon-lit);
+    border: 1px solid rgba(224,163,64,.45); border-radius: 3px;
+    padding: .5rem .8rem; transition: background .15s, color .15s;
+  }
+  button.copy:hover { background: var(--beacon-lit); color: #0A0D19; }
+  button.copy:focus-visible { outline: 2px solid var(--beacon-lit); outline-offset: 2px; }
+  button.copy[data-done="1"] { color: var(--verified); border-color: var(--verified); }
+  .plate-note {
+    font-size: .85rem; color: var(--ink-faint); margin: .8rem 0 0;
+    font-family: var(--mono);
+  }
+
+  /* ── primary download: the non-technical path leads, per the Claude Code rails ── */
+  .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-bottom: .9rem; }
+  a.primary {
+    display: inline-flex; align-items: center; gap: .6rem; text-decoration: none;
+    background: var(--beacon); color: #FFF9EE; font-weight: 600;
+    padding: 1.05rem 2rem; border-radius: 5px; font-size: 1.08rem;
+    box-shadow: var(--shadow); transition: filter .15s, transform .15s;
+  }
+  a.primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+  a.primary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .cta-sub { font-size: .88rem; color: var(--ink-faint); }
+  a.jump { color: var(--ink-soft); font-size: .92rem; text-underline-offset: 3px; }
+
+  /* ── terminal section ── */
+  .term { padding: 3.5rem 0 1rem; border-top: 1px solid var(--rule); }
+  .term h2 {
+    font-family: var(--display); font-weight: 400; font-size: 1.6rem;
+    margin: 0 0 .5rem; letter-spacing: -.01em;
+  }
+  .term p.intro { margin: 0 0 1.5rem; color: var(--ink-soft); max-width: 40em; }
+  .os-tabs { display: flex; gap: .4rem; margin-bottom: .9rem; }
+  .os-tabs button {
+    font-family: var(--mono); font-size: .74rem; letter-spacing: .08em;
+    text-transform: uppercase; cursor: pointer; background: transparent;
+    color: var(--ink-faint); border: 1px solid var(--rule);
+    border-radius: 3px; padding: .4rem .8rem;
+  }
+  .os-tabs button[aria-selected="true"] { color: var(--beacon); border-color: var(--beacon); }
+  .os-tabs button:focus-visible { outline: 2px solid var(--beacon); outline-offset: 2px; }
+
+  /* ── the fork: terminal or not ── */
+  .fork { padding: 4rem 0 1rem; }
+  .fork-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+  @media (min-width: 42rem) { .fork-grid { grid-template-columns: 1fr 1fr; } }
+  .card {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 6px;
+    padding: 1.9rem; display: flex; flex-direction: column; gap: .9rem;
+  }
+  .card h2 {
+    font-family: var(--display); font-weight: 400; font-size: 1.5rem;
+    margin: 0; letter-spacing: -.01em;
+  }
+  .card p { margin: 0; color: var(--ink-soft); font-size: .96rem; }
+  .card .spacer { flex: 1; }
+  a.download {
+    display: inline-block; text-align: center; text-decoration: none;
+    background: var(--beacon); color: #FFF9EE; font-weight: 600;
+    padding: .95rem 1.4rem; border-radius: 4px; font-size: 1.02rem;
+    transition: filter .15s;
+  }
+  a.download:hover { filter: brightness(1.1); }
+  a.download:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .os-note { font-size: .82rem; color: var(--ink-faint); margin: 0; }
+
+  /* ── sequence: these steps really are ordered, so they're numbered ── */
+  .seq { padding: 4rem 0; }
+  h2.section {
+    font-family: var(--display); font-weight: 400; font-size: 1.9rem;
+    margin: 0 0 2rem; letter-spacing: -.012em;
+  }
+  ol.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.6rem; }
+  ol.steps li { display: grid; grid-template-columns: 2.4rem 1fr; gap: 1.1rem; }
+  .num {
+    font-family: var(--mono); font-size: .78rem; color: var(--beacon);
+    padding-top: .3rem; font-variant-numeric: tabular-nums;
+  }
+  ol.steps h3 { font-size: 1.02rem; margin: 0 0 .25rem; font-weight: 600; }
+  ol.steps p { margin: 0; color: var(--ink-soft); font-size: .96rem; }
+
+  /* ── trust: piping a script to a shell deserves a plain accounting ── */
+  .trust { border-top: 1px solid var(--rule); padding: 3.5rem 0; }
+  .cols { display: grid; gap: 2.5rem; grid-template-columns: 1fr; }
+  @media (min-width: 46rem) { .cols { grid-template-columns: 1fr 1fr; } }
+  .cols h3 {
+    font-family: var(--mono); font-size: .74rem; letter-spacing: .14em;
+    text-transform: uppercase; margin: 0 0 1rem; color: var(--ink-faint);
+  }
+  .cols ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .7rem; }
+  .cols li { font-size: .95rem; color: var(--ink-soft); padding-left: 1.4rem; position: relative; }
+  .cols li::before {
+    position: absolute; left: 0; font-family: var(--mono); font-size: .85rem;
+  }
+  .does li::before   { content: "+"; color: var(--verified); }
+  .doesnt li::before { content: "\2013"; color: var(--ink-faint); }
+
+  footer {
+    border-top: 1px solid var(--rule); padding: 2rem 0 3.5rem;
+    font-size: .87rem; color: var(--ink-faint);
+  }
+  footer p { margin: 0 0 .5rem; }
+  footer code { font-family: var(--mono); font-size: .85em; }
+  a { color: var(--beacon); }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="hero">
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow">Alpha Lattice &middot; node onboarding</p>
+    <h1>Join the Lattice</h1>
+    <p class="lede">
+      One installer sets up your machine and then stops. Nothing connects until a
+      person on the other side approves you &mdash; so you cannot accidentally join
+      anything, and nothing about your machine is sent anywhere.
+    </p>
+
+    <div class="cta">
+      <a class="primary" id="dlBtn" href="/Install%20aDNA%20(Mac).command">Download for macOS</a>
+      <span class="cta-sub" id="dlSub">Available for macOS, Windows, and Linux</span>
+    </div>
+    <p class="os-note" id="osNote"></p>
+    <p><a class="jump" href="#terminal">Prefer the terminal? One command &darr;</a></p>
+  </div>
+</div>
+
+<div class="wrap term" id="terminal">
+  <h2>Install from the terminal</h2>
+  <p class="intro">
+    Same installer, same result. Pick your system:
+  </p>
+
+  <div class="os-tabs" role="tablist" aria-label="Choose your system">
+    <button role="tab" id="tab-unix" aria-selected="true" aria-controls="cmd">macOS / Linux</button>
+    <button role="tab" id="tab-win" aria-selected="false" aria-controls="cmd">Windows</button>
+  </div>
+
+  <div class="plate">
+    <code id="cmd"><span class="sigil">$ </span>curl -fsSL https://adna.network/install.sh | sh</code>
+    <button class="copy" id="copyBtn" type="button">Copy</button>
+  </div>
+  <p class="plate-note" id="reqNote">needs python3 &middot; no admin password required</p>
+</div>
+
+<div class="wrap seq">
+  <h2 class="section">What happens, in order</h2>
+  <ol class="steps">
+    <li>
+      <div class="num">01</div>
+      <div>
+        <h3>The installer sets up your machine</h3>
+        <p>
+          It downloads the networking software, checks it against a fingerprint
+          written into the installer itself, and creates a private key that is
+          generated on your machine and never leaves it.
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="num">02</div>
+      <div>
+        <h3>It stops and hands you a block of text</h3>
+        <p>
+          Your request to join. Send the whole block to whoever invited you &mdash;
+          email, chat, however you normally reach them. It contains no secrets.
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="num">03</div>
+      <div>
+        <h3>A person approves it and sends one file back</h3>
+        <p>
+          Save that file where the installer told you to, and you are on the
+          network. Approval is a human decision every time &mdash; nothing about
+          joining is automatic.
+        </p>
+      </div>
+    </li>
+  </ol>
+</div>
+
+<div class="wrap trust">
+  <div class="cols">
+    <div>
+      <h3>What it does</h3>
+      <ul class="does">
+        <li>Installs Nebula, pinned to one version and checked against a fingerprint baked into the installer</li>
+        <li>Generates a keypair on your machine, readable only by you</li>
+        <li>Writes its configuration in your own user folder</li>
+        <li>Prints your join request and exits</li>
+      </ul>
+    </div>
+    <div>
+      <h3>What it does not do</h3>
+      <ul class="doesnt">
+        <li>Ask for your admin password, or need one</li>
+        <li>Send anything about your machine anywhere</li>
+        <li>Change your firewall, DNS, or router</li>
+        <li>Connect you to the network on its own</li>
+        <li>Require an AI assistant, an account, or a signup</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <footer>
+    <p>
+      Prefer to read it before running it? The installer is a short shell script &mdash;
+      <a href="/install.sh">open it in a browser</a> first. It downloads one file
+      and refuses to run it if the fingerprint does not match.
+    </p>
+    <p>Alpha Lattice &middot; a sovereign mesh. You are invited by a person, not a signup form.</p>
+  </footer>
+</div>
+
+<script>
+  var UNIX = 'curl -fsSL https://adna.network/install.sh | sh';
+  var WIN  = 'irm https://adna.network/install.ps1 | iex';
+  var cmd = document.getElementById('cmd'), reqNote = document.getElementById('reqNote');
+  var tabUnix = document.getElementById('tab-unix'), tabWin = document.getElementById('tab-win');
+
+  function showCmd(which) {
+    var isWin = which === 'win';
+    cmd.innerHTML = '<span class="sigil">' + (isWin ? '> ' : '$ ') + '</span>' +
+                    (isWin ? WIN : UNIX);
+    reqNote.textContent = isWin
+      ? 'PowerShell \u00b7 nothing to install first \u00b7 no admin password required'
+      : 'needs python3 \u00b7 no admin password required';
+    tabWin.setAttribute('aria-selected', isWin);
+    tabUnix.setAttribute('aria-selected', !isWin);
+  }
+  tabUnix.addEventListener('click', function () { showCmd('unix'); });
+  tabWin.addEventListener('click', function () { showCmd('win'); });
+
+  document.getElementById('copyBtn').addEventListener('click', async function () {
+    var btn = this, text = cmd.textContent.replace(/^[$>]\s*/, '');
+    try { await navigator.clipboard.writeText(text); }
+    catch (e) {
+      var t = document.createElement('textarea');
+      t.value = text; document.body.appendChild(t); t.select();
+      document.execCommand('copy'); t.remove();
+    }
+    btn.textContent = 'Copied'; btn.dataset.done = '1';
+    setTimeout(function () { btn.textContent = 'Copy'; delete btn.dataset.done; }, 2000);
+  });
+
+  // Lead with the file that matches the visitor's machine -- the non-technical path first.
+  var ua = navigator.userAgent;
+  var dl = document.getElementById('dlBtn'), note = document.getElementById('osNote');
+  if (/Win/i.test(ua)) {
+    dl.textContent = 'Download for Windows';
+    dl.href = '/adna-install.exe';
+    note.innerHTML = 'Windows may show &ldquo;Windows protected your PC&rdquo; on first run. ' +
+                     'Click <strong>More info</strong>, then <strong>Run anyway</strong>.';
+    showCmd('win');
+  } else if (/Linux/i.test(ua) && !/Android/i.test(ua)) {
+    dl.textContent = 'Download for Linux';
+    dl.href = '/Install%20aDNA%20(Linux).sh';
+    note.innerHTML = 'Save it, make it executable, then double-click &mdash; or use the ' +
+                     'one-line command below, which is quicker.';
+  } else {
+    note.innerHTML = 'First open: right-click the file and choose <strong>Open</strong>. ' +
+                     'macOS blocks double-clicked downloads until you do that once.';
+  }
+
+  // A quiet star field: the lattice as a constellation. Static under reduced motion.
+  var cv = document.getElementById('sky'), cx = cv.getContext('2d');
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var stars = [], w = 0, h = 0;
+  function seed() {
+    var r = cv.getBoundingClientRect(), d = devicePixelRatio || 1;
+    w = r.width; h = r.height; cv.width = w * d; cv.height = h * d; cx.scale(d, d);
+    var n = Math.min(90, Math.round(w * h / 9000));
+    stars = Array.from({ length: n }, function () {
+      return { x: Math.random() * w, y: Math.random() * h,
+               r: Math.random() * 1.1 + 0.35, a: Math.random() * 0.5 + 0.12,
+               s: Math.random() * 0.0011 + 0.0004 };
+    });
+  }
+  function draw(t) {
+    cx.clearRect(0, 0, w, h);
+    for (var i = 0; i < stars.length; i++) {
+      var st = stars[i];
+      var a = reduce ? st.a : st.a * (0.62 + 0.38 * Math.sin(t * st.s + st.x));
+      cx.beginPath(); cx.arc(st.x, st.y, st.r, 0, 6.284);
+      cx.fillStyle = 'rgba(224,163,64,' + a + ')'; cx.fill();
+    }
+    if (!reduce) requestAnimationFrame(draw);
+  }
+  seed(); requestAnimationFrame(draw);
+  addEventListener('resize', function () { seed(); if (reduce) draw(0); });
+</script>

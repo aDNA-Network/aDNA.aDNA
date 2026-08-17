@@ -95,6 +95,26 @@ const installTruth = {
   generated: new Date().toISOString().slice(0, 10),
   legacy_repo_https: LEGACY_REPO,
   one_liner: `git clone ${CANONICAL_REPO}.git ~/aDNA && cd ~/aDNA && claude`,
+  // ADDITIVE, 2026-08-16 (operator ruling: unify the two installs). The one_liner above still
+  // describes the WORKSPACE install and ends in `claude`, which makes Claude Code a hard
+  // dependency of getting started. The node installer below needs no AI assistant, no Python on
+  // Windows, and no prerequisites: it joins the network AND clones this same workspace to the
+  // same ~/aDNA. Kept as separate keys rather than replacing one_liner so nothing that renders
+  // the existing surfaces breaks; switching which one the home hero leads with is a follow-up.
+  // The installer mirrors canonical_repo_git and clone_target from this file, and
+  // Network.aDNA/what/network/installer/conformance_test.py C6 fails if they ever disagree.
+  node_installer: {
+    unix: 'curl -fsSL https://adna.network/install.sh | sh',
+    windows: 'irm https://adna.network/install.ps1 | iex',
+    download_page: 'https://adna.network/install',
+    downloads: {
+      macos: '/Install aDNA (Mac).command',
+      windows: '/adna-install.exe',
+      linux: '/Install aDNA (Linux).sh',
+    },
+    requires_claude_code: false,
+    clones_workspace: true,
+  },
   router_template: 'how/templates/template_workspace_claude.md',
   schema_version: '0.2',
   template_sha,

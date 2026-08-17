@@ -8,12 +8,24 @@
     "launch": "claude"
   },
   "embedded_standard": ".adna",
-  "generated": "2026-07-22",
+  "generated": "2026-08-17",
   "legacy_repo_https": "https://github.com/aDNA-Network/adna-legacy",
+  "node_installer": {
+    "clones_workspace": true,
+    "download_page": "https://adna.network/install",
+    "downloads": {
+      "linux": "/Install aDNA (Linux).sh",
+      "macos": "/Install aDNA (Mac).command",
+      "windows": "/adna-install.exe"
+    },
+    "requires_claude_code": false,
+    "unix": "curl -fsSL https://adna.network/install.sh | sh",
+    "windows": "irm https://adna.network/install.ps1 | iex"
+  },
   "one_liner": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
   "router_template": "how/templates/template_workspace_claude.md",
   "schema_version": "0.2",
-  "template_sha": "3051a2d",
+  "template_sha": "fd32fc7",
   "verified_paths": {
     "CLAUDE.md": true,
     "how/skills/skill_onboarding.md": true,
