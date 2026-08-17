@@ -6,11 +6,11 @@ campaign: campaign_haussmann
 phase: P1
 decade: 1
 owner: stanley
-status: queued
+status: completed   # 2026-08-16 P1-wave: ALL objectives O0–O4 in one session. Leak baseline RETIRED (86 rows→0, hard gate, red-proven); DP4 ruled minimal-card ×3 (ADR-052 §admission); regen operator-GO'd (counts hold 74/14); graph currency 68→74; Hestia memo staged (delivery at close GO). Commits c61a544 + df0b30b.
 mission_class: build
 executor_tier: opus
 token_budget_estimated: "~200–300 kT across 2 sessions: projection-code fixes (leak classes, honest-absent, persona nulls, title bug) + graph data currency + Hestia data-ask memo + confidential-vault ruling prep (ADR-016)"
-token_budget_actual:
+token_budget_actual: "≈90 kT / 1 session (fable) — under estimate: the baseline profile pinpointed loci fast, and the sanitizer-v2 + label-util pattern cleared whole classes at once. +1 unplanned find: the gate suite was silently testing a foreign port-4321 server (fixed fail-loud in-lane)."
 created: 2026-08-16
 last_edited_by: agent_rosetta
 grounded_in: ["H13 (58/74 leak; root cause tagline/card gap)", "H4", "claims #6/#8 rows", "visual_findings F4/F7/F8/F10/F15 (graph counts; leaks; blanks; malformed Astro.aDNA title)", "Hestia 08-06 memo (0/27 taglines; 46/74 no card)", "N8 (confidential-adjacent vaults public)"]
@@ -64,8 +64,38 @@ All 74 pages pass the leak lint with honest-absent styling where data is missing
 
 ## Progress
 
-*(at execution)*
+- **2026-08-16 (P1 wave, single session).** O0 `artifacts/p1_3/design_note.md` — baseline profiled (86
+  rows / 563 occ / 57 files) and every class mapped to its locus; the marquee find: gate-27 scans raw
+  HTML, so raw enums in *attributes* (`data-class`, ids, CSS hooks) were ~40% of raw_enum. O1
+  `c61a544` — `publicNote()` v2 (sentence-granular, **fed by the same leak_patterns.json gate-27
+  enforces** — projection can never emit what the gate forbids), persona placeholders → null (F15
+  title fixed), shared `vaultLabels.ts` (label/slug/status/persona), honest-absent cards,
+  RegistryCard word-boundary truncation. **Unplanned find:** the suite silently adopted a foreign
+  port-4321 server (ScienceStanley dev) via `reuseExistingServer: true` — 304 bogus failures against
+  a stranger's site; fixed fail-loud + `GATE_PORT` (convention-6 class, now structural). O3 ⛩ **DP4
+  RULED** (operator): minimal card ×3, suppression at the generator (`listing: "minimal"`), ADR-052
+  §admission seeded; **regen GO** granted in the same gate (pt19 exception, diff verified
+  sanitization-only: 55 notes, 28→null, 7 personas, ZERO other fields). O2 regen + `sync:graph` —
+  svg 68-era→74; counts consistent sitewide (74/14/59; no stale 68). O4 `df0b30b` — **baseline
+  RETIRED**: 0 findings, empty-state promoted to a hard gate (red-proven by injection), 2 content
+  stragglers fixed at source (pre-truncated frontmatter description; unresolvable F-CHM id in public
+  copy); Hestia backfill memo staged (`coord_2026_08_16_rosetta_to_hestia_registry_data_backfill_ask`).
+  Suite **404 green, 9 xf** (all P1.1 claim rows).
 
 ## AAR (SO#5)
 
-*(before completed)*
+- **Worked.** Feeding the *enforcement* patterns into the *generator* (single source of truth) turned
+  "fix 58 pages" into one function: the projection now cannot emit what the gate lints. Sentence-level
+  drop (never slice) killed the whole truncated-lede class in one move.
+- **Didn't.** First full-suite run burned ~7 min against a foreign server before the og:image domain
+  gave it away — the suite trusted port 4321 blindly; and 2 of the 86 baseline rows were content
+  defects no projection fix could reach (source-copy edits, arguably P1.1's lane, taken here to
+  retire the baseline whole).
+- **Finding.** The honest cost of sanitization is sparseness: 29/74 vaults now have NO public
+  description. Honest-absent is correct, but the registry's richness now depends on Hestia's tagline
+  backfill — the data debt has a face.
+- **Change.** `reuseExistingServer: false` + `GATE_PORT` makes port contention fail-loud forever;
+  the empty leak baseline is now a ratchet that can't silently re-grow.
+- **Follow-up.** Hestia memo delivery (close GO) · P1.1 clears the 9 claim xf rows · P2.4 builds the
+  tier model on ADR-052 · WebForge upstream candidate: the "generator consumes the lint's own
+  patterns" pattern + the foreign-server fail-loud config.
