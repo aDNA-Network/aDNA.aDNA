@@ -1,0 +1,86 @@
+# aDNA.aDNA/how/federation/webforge/what/context/adna_voice_mapping.yaml
+#
+# Voice-register mapping for the adna.network site (aDNA.aDNA / Rosetta), seeded at WebForge intake
+# (mission_haussmann_p0_3_webforge_intake, 2026-08-16). Contract §5 required file (VCRIT validates against
+# it if/when this vault adopts that tooling — not wired here, genesis seed only).
+#
+# STATUS: structural seed, not content. Per-page registers, the reading-level push, and the mechanics of the
+# lyric/honest-plain transition rule are deliberately NOT authored here — they land at mission P0.1
+# (positioning, ADR-048, DP2-gated) and mission P4.5 (voice rewrite — scheduled LAST in the campaign by
+# design: "rewriting before positioning/IA/claims settle would mean rewriting twice",
+# mission_haussmann_p4_5_voice_rewrite.md). Every field marked `honest-absent` below is a deliberate mark,
+# not an omission (campaign convention 1: honesty is the aesthetic).
+
+vault: aDNA.aDNA
+archetype: documentation   # content-type label, not a WebForge archetype-build claim — see the matching
+                           # _archetype_note in branding.json beside this file. Bespoke 202-page site
+                           # (contract §2 "public website", Tier A), not an archetype re-platform.
+
+global_voice:
+  register: honest_plain_default
+  register_dial: >
+    ~55/45 revolutionary/restraint (front_page_doctrine.md §4, operator-ratified 2026-06-03). The warm
+    Tokyo-Night/Ghibli-pixel register (ADR-032) supplies the conviction half ("exciting because genuinely
+    novel"); measured claims, real artifacts, and the writing-guidelines AVOID list supply the restraint
+    half. The dial value itself did not move at ADR-032 — only how it is *felt* changed.
+  reading_level:
+    baseline_measured: >
+      FKGL 12-17.9 across key pages [D, finding H10 — evidence/sweep/reading_level.md; cited in
+      mission_haussmann_p4_5_voice_rewrite.md grounded_in]. Recorded as a baseline, not a target.
+    target: >
+      FKGL <= 10 on first-contact surfaces (home, get-started, what-is-adna, community); <= 12 on
+      reference intros [mission_haussmann_p4_5_voice_rewrite.md acceptance criterion — NOT YET MET;
+      this is P4.5's target, not the current state].
+  anti_slop_keywords:
+    # Every term below is grounded in THIS vault's own writing-guidelines.mdx AVOID table or
+    # front_page_doctrine.md §4 — not borrowed from a sibling vault's list (provenance discipline,
+    # campaign convention 1). Extend this list at P4.5, cite the source when adding.
+    - "blazingly fast"   # site/src/content/reference/writing-guidelines.mdx AVOID (Vercel row) + front_page_doctrine.md §4 explicit trio
+    - "revolutionary"    # front_page_doctrine.md §4 explicit trio ("never revolutionary/transformative/blazingly fast")
+    - "transformative"   # front_page_doctrine.md §4 explicit trio
+    - "effortlessly"     # writing-guidelines.mdx "concrete contrast" table, the AVOID (Vercel-style) example row
+    - "delightful"       # writing-guidelines.mdx AVOID (Vercel row)
+  lyric_placement_rule: >
+    honest-absent — the transition rule's MECHANICS (how a page moves between lyric and honest-plain
+    strata) is mission P4.5 Objective O0's deliverable (the voice guide). Campaign law fixes the BOUNDARY
+    now, not yet the mechanics: the lyric register is not banned, it is *placed* — legal only in manifesto
+    strata (the hero / positioning statement, once ADR-048 ratifies at DP2), never sitewide. Sources:
+    mission_haussmann_p4_5_voice_rewrite.md Constraints + adr_048_positioning_statement_embargo_language.md
+    (status: proposed, ratifies at P0.1 close / DP2).
+
+pages:
+  home_hero:
+    primary_voice: honest-absent   # pending P0.1 / DP2 ratification of ADR-048 (one-sentence definition + hero mode choice)
+    secondary_voice: honest-absent
+    pov: honest-absent
+    vocabulary_constraints: []
+    note: >
+      The one place the lyric register may legally appear, per the placement rule above — content is
+      pending ADR-048's ratified one-sentence definition (candidate hero modes in the ADR: definition-as-hero,
+      definition-first-manifesto, terse one-liner, content-as-hero).
+  about_community:
+    primary_voice: honest_plain_default
+    secondary_voice: honest-absent
+    pov: honest-absent
+    vocabulary_constraints: []
+    note: >
+      mission_haussmann_p4_5_voice_rewrite.md O0 names this surface's register as "the honest-register
+      house style already proven on /about" — i.e. this row is the LEAST honest-absent of the set, an
+      existing proof point rather than a pending decision.
+  reference_docs:
+    primary_voice: honest_plain_default   # LIFT register per writing-guidelines.mdx (Rust/Astro/Tailwind/Tauri precedents)
+    secondary_voice: honest-absent
+    pov: second_person   # writing-guidelines.mdx LIFT worked example: "names the actor (you)"
+    vocabulary_constraints:
+      - "glossary-link every proprietary term at first use — P4.5 acceptance criterion"
+  registry_marketplace:
+    primary_voice: honest-absent   # pending the P2 registry-redesign mission (consumes WebForge pattern P8, the marketplace archetype)
+    secondary_voice: honest-absent
+    pov: honest-absent
+    vocabulary_constraints: []
+
+# NOT enumerated: the remaining ~198 of 202 routes. Full per-route mapping is out of this mission's
+# acceptance criteria ("branding.json + voice-mapping seeds staged from ADR-032 register — full adoption
+# lands P4.1", mission_haussmann_p0_3_webforge_intake.md). This file seeds structure, the two governing
+# citations (front_page_doctrine.md §4, ADR-048), and the honest-absent discipline — not a route-by-route
+# table, which would fabricate certainty this mission does not have.

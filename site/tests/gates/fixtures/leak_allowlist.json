@@ -1,0 +1,186 @@
+{
+  "_doc": "HAUSSMANN P0.5 (editorial gate, O2) — dated allowlist of REVIEWED, PERMANENT exceptions to the leak lint. This is NOT the debt list: today's genuine leaks live in leak_baseline.json and must go to zero at P1.3. An entry here says 'this token, on this surface, is deliberate public copy'.",
+  "_discipline": "Every entry carries surface + pattern + an explicit `tokens` list + rationale + date + reviewed_by. Token-scoped by design: allowlisting `learn/** internal_id` wholesale would let a NEW internal id (e.g. campaign_haussmann) leak into a tutorial unseen. Only the reviewed strings are excused; anything else on the same surface still goes red.",
+  "_surface_globs": "`**` matches any path suffix. `index.html` matches the built homepage exactly.",
+  "updated": "2026-08-16",
+  "entries": [
+    {
+      "surface": "index.html",
+      "pattern": "internal_id",
+      "tokens": [
+        "mission_id",
+        "mission_wadna_p3_iterate"
+      ],
+      "rationale": "The homepage 'aDNA in action' demo panel deliberately renders a real mission file to show what a vault artifact looks like. gate-16's own header records this as intentional body copy ('D1 surfaces real artifacts in body copy … deliberately'). Showing the artifact IS the demonstration.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "learn/**",
+      "pattern": "internal_id",
+      "tokens": [
+        "campaign_id",
+        "campaign_docs",
+        "campaign_rosetta",
+        "mission_count",
+        "mission_id",
+        "mission_m04",
+        "mission_m04_pattern_library"
+      ],
+      "rationale": "Standing Order 8 (self-reference is mandatory): the learn surfaces teach campaign/mission decomposition by citing this vault's own artifacts. `campaign_id`/`mission_id` are ontology FIELD names — the standard's published vocabulary, not internal ids.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "learn/**",
+      "pattern": "op_codename",
+      "tokens": [
+        "Operation Rosetta"
+      ],
+      "rationale": "Standing Order 8. 'Operation Rosetta' is the named, published campaign that built this documentation vault — the learn pages cite it as the worked example of the thing they explain.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "patterns/**",
+      "pattern": "internal_id",
+      "tokens": [
+        "campaign_rosetta",
+        "mission_m03_advanced_concepts",
+        "mission_m04_pattern_library"
+      ],
+      "rationale": "Standing Order 8 — the pattern pages illustrate mission decomposition with this vault's real mission files.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "patterns/**",
+      "pattern": "op_codename",
+      "tokens": [
+        "Operation Rosetta"
+      ],
+      "rationale": "Standing Order 8 (self-reference): the pattern pages name Operation Rosetta as the campaign whose real execution the pattern was extracted from.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "glossary/**",
+      "pattern": "internal_id",
+      "tokens": [
+        "campaign_rosetta"
+      ],
+      "rationale": "Standing Order 8 — the glossary entries for campaign/mission cite this vault's own campaign as the concrete instance.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "glossary/**",
+      "pattern": "op_codename",
+      "tokens": [
+        "Operation Rosetta"
+      ],
+      "rationale": "Standing Order 8 (self-reference): glossary entries for campaign and mission cite Operation Rosetta as the concrete worked instance behind the definition.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "how/lattice-examples/**",
+      "pattern": "internal_id",
+      "tokens": [
+        "campaign_aar",
+        "campaign_context",
+        "campaign_docs",
+        "campaign_execution",
+        "campaign_id",
+        "campaign_phases_remaining",
+        "campaign_plan",
+        "campaign_rosetta",
+        "campaign_status",
+        "mission_complete",
+        "mission_context",
+        "mission_create",
+        "mission_files",
+        "mission_id",
+        "mission_objectives_remaining",
+        "mission_status"
+      ],
+      "rationale": "These are NODE IDs inside published example `.lattice.yaml` documents — the lattice spec's own content, rendered as the example it is. Removing them would break the example.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "how/lattice-examples/**",
+      "pattern": "op_codename",
+      "tokens": [
+        "Operation Rosetta"
+      ],
+      "rationale": "Standing Order 8 (self-reference): the published example lattices are drawn from Operation Rosetta's own campaign structure, and name it as their provenance.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "how/workshops/**",
+      "pattern": "internal_id",
+      "tokens": [
+        "campaign_rosetta"
+      ],
+      "rationale": "Standing Order 8 — the workshop kits walk participants through this vault's real campaign structure.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "how/workshops/**",
+      "pattern": "op_codename",
+      "tokens": [
+        "Operation Rosetta"
+      ],
+      "rationale": "Standing Order 8 (self-reference): the workshop kits walk participants through Operation Rosetta's real campaign as the teaching example.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "how/lattice-examples/index.html",
+      "pattern": "op_codename",
+      "tokens": [
+        "Operation Rosetta"
+      ],
+      "rationale": "Standing Order 8 (self-reference): the index page for the lattice example set names Operation Rosetta as the campaign the examples were drawn from.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "community/**",
+      "pattern": "backlog_finding_id",
+      "tokens": [
+        "idea_upstream_"
+      ],
+      "rationale": "The community pages document the upstream-contribution protocol, whose deliverable IS a file named `how/backlog/idea_upstream_{slug}.md`. Naming the filename is the instruction.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "community/**",
+      "pattern": "op_codename",
+      "tokens": [
+        "Operation Rosetta"
+      ],
+      "rationale": "Standing Order 8 (self-reference): the community pages cite Operation Rosetta when describing how this vault's own governance was built in the open.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "reference/**",
+      "pattern": "internal_id",
+      "tokens": [
+        "mission_adna_standard",
+        "mission_complex_project",
+        "mission_simple_task",
+        "mission_slug",
+        "mission_v2_launch"
+      ],
+      "rationale": "Illustrative filenames inside code blocks on the specification + design-rationale pages (example vault trees). These are invented teaching filenames, not this vault's internal artifacts.",
+      "date": "2026-08-16",
+      "reviewed_by": "agent_rosetta (P0.5)"
+    }
+  ]
+}

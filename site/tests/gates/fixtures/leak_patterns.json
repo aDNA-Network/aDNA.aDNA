@@ -1,0 +1,72 @@
+{
+  "_doc": "HAUSSMANN P0.5 (editorial gate, O2) — leak-lint pattern set. ONE source of truth, consumed by both site/tests/gates/gate-27-leak-lint.spec.ts and site/scripts/gen_leak_baseline.mjs. Classes derive from the B5 H13 annex (evidence/claims/claims_raw.json -> h13_leak_summary.class_counts; 58/74 vault pages leaking). Regexes are JSON-escaped source strings; `flags` is the RegExp flag string (the consumer forces `g`).",
+  "_scoping_note": "These target machine-shaped internal identifiers — underscore-joined ids, release-train codes, raw enum values, operator machine names, unclosed-parenthetical truncation. NOT prose words: 'campaign' and 'mission' are legitimate public vocabulary on this site and are deliberately not matched; only `campaign_*` / `mission_*` IDS are.",
+  "_self_test": "Every pattern carries `example` (MUST match) and `counter_example` (MUST NOT match). gate-27 asserts both — a regex typo that silently matches nothing, or a loosened regex that starts eating legitimate prose, fails the gate instead of quietly weakening it. Each counter_example is a real string from this tree that an earlier draft mis-flagged.",
+  "updated": "2026-08-16",
+  "patterns": [
+    {
+      "id": "internal_id",
+      "regex": "\\b(?:campaign|mission)_[a-z0-9_]+\\b",
+      "flags": "g",
+      "why": "Internal campaign/mission artifact ids (campaign_rosetta, mission_wadna_p3_iterate). Case-sensitive by design — ids are lower_snake_case.",
+      "example": "see campaign_haussmann and mission_p0_5 for detail",
+      "counter_example": "Run a campaign, decompose it into a mission, and claim an objective."
+    },
+    {
+      "id": "production_tidy",
+      "regex": "\\bpt\\d{2}\\b|Production Tidy",
+      "flags": "g",
+      "why": "The internal 'Production Tidy' release-train codes (pt08, pt09, pt12, pt13). Meaningless to a reader; the marquee H13 instance is the homepage card 'Renamed from TaskForge.aDNA (Production Tidy pt08.' H13 class: codename_jargon.",
+      "example": "Renamed from TaskForge.aDNA (Production Tidy pt08.",
+      "counter_example": "The type scale steps from 10pt to 20pt across the display sizes."
+    },
+    {
+      "id": "raw_enum",
+      "regex": "\\btbd_at_p0\\b|\\bgenesis_stub\\b|\\b(?:org_graph|org_vault|node_operational|framework_candidate|knowledge_graph|software_deployment_graph)\\b|\\bcode-as-WHAT\\b",
+      "flags": "g",
+      "why": "Raw machine enum values rendered as human-facing labels ('Class: org_graph', 'Persona: tbd_at_p0'). H13 classes: raw_enum_spec (23) + raw_enum_lede_code_as_WHAT (7). Also the standing evidence under FALSE claims R-23/R-61 — 'every vault has its own persona' fails on the very pages that print `tbd_at_p0` as the persona.",
+      "example": "Class: org_graph · Persona: tbd_at_p0",
+      "counter_example": "An aDNA vault is a knowledge graph an organization governs itself."
+    },
+    {
+      "id": "truncated_lede",
+      "regex": "\\([^)<\"]{0,80}\\.\\s*[<\"]",
+      "flags": "g",
+      "why": "The truncated-lede signature: an OPEN parenthesis whose text is cut at a period, with no closing paren before the text node or attribute ends. Catches the largest H13 class (truncation_unclosed_paren, 27) — 'Web-stack cohort (.', '(Production Tidy pt08.' — a generator artifact of clipping a lede mid-parenthetical. TUNING (2026-08-16): the `[^)<\"]` interior (rather than `[^)]`) is what separates a real truncation from a legitimate parenthetical containing inline markup; the counter_example below is the exact real-tree string that the looser draft mis-flagged.",
+      "example": "Build-face software-element context graph. Web-stack cohort (.<",
+      "counter_example": "harmonized (<code>CLAUDE.md</code> §Registry Awareness vs. <a href=\"/learn\">the concept page</a>)"
+    },
+    {
+      "id": "machine_ident",
+      "regex": "Mac/stanley|\\bstanley@|daily-driver",
+      "flags": "g",
+      "why": "Operator-machine identifiers on a public surface ('per-node operational governance for Mac/stanley; the operator's daily-driver'). Names a private machine and its role to any reader.",
+      "example": "per-node operational governance for Mac/stanley; the operator's daily-driver",
+      "counter_example": "Everything lives on your machine; clone the image and run it on your Mac."
+    },
+    {
+      "id": "op_codename",
+      "regex": "\\bOperation\\s+[A-Z][a-zA-Z]+\\b|\\bLIP-\\d{4}\\b",
+      "flags": "g",
+      "why": "Internal operation codenames (Operation Aegis / CAKE / Vitrine / Agora) and LIP proposal ids. H13 class: codename_jargon (14). NOTE: this vault's docs cite 'Operation Rosetta' pedagogically under Standing Order 8 — those uses are token-allowlisted per surface, never baselined.",
+      "example": "Operation Aegis BI cohort; ratified under LIP-0005",
+      "counter_example": "The operation of a vault is governed by its CLAUDE.md."
+    },
+    {
+      "id": "internal_path",
+      "regex": "\\bwhat/(?:code|contextscope|datarooms_core|emacs|harness|lab)/",
+      "flags": "g",
+      "why": "Vault-internal code-as-WHAT paths in registry ledes. H13 class: internal_path_lede (10). Deliberately an ENUMERATED list of leaking paths rather than a generic `what/*/` — the triad path vocabulary (what/context/, how/missions/) is legitimate public teaching material on this site.",
+      "example": "code-as-WHAT at what/harness/ (rareharnessneo relocated)",
+      "counter_example": "Knowledge objects live in what/context/ and plans in how/missions/."
+    },
+    {
+      "id": "backlog_finding_id",
+      "regex": "\\bidea_[a-z0-9_]+\\b|\\bF-CHM-\\d+\\b|\\bKW-\\d+\\b",
+      "flags": "g",
+      "why": "Backlog idea ids and internal review-finding ids (F-CHM-214, KW-n). Unresolvable for a reader — there is no public artifact behind the id.",
+      "example": "Honesty note (F-CHM-214) — filed as idea_upstream_shim_window_discipline",
+      "counter_example": "The idea behind the triad is that every file answers one question."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "entity": "aDNA",
+  "entityType": "project",
+  "title": "aDNA",
+  "subtitle": "Agentic DNA Knowledge Architecture",
+  "tagline": "Give your project a knowledge architecture that both humans and AI agents can navigate",
+  "archetype": "documentation",
+  "_archetype_note": "Content-type label, not a WebForge archetype-build claim. This is a bespoke 202-page Astro site (contract §2 'public website', Tier A) that consumes WebForge patterns through the wrapper CLAUDE.md — NOT a rebuild on WebForge's `documentation` archetype (pattern register P10/P7: consult-only / PARALLEL, own DocumentationLayout.astro implementation). Value preserved verbatim from the live site/branding.json rather than silently changed.",
+  "voice_register": "direct_instruction",
+  "_register": "Science-Stanley Ghibli-pixel / Tokyo Night — warm bio-digital retro-futurism (ADR-032, ratified 2026-06-04). Sitewide default is honest-plain (front_page_doctrine.md §4); lyric register is placed in manifesto strata only — see adna_voice_mapping.yaml beside this file.",
+  "colors": {
+    "primary": "#9d7cd8",
+    "primary_dark": "#6d4bb8",
+    "primary_light": "#bb9af7",
+    "accent": "#e0a84c",
+    "accent_light": "#f0c674",
+    "link": "#7dcfff",
+    "link_dark": "#1f6f9e",
+    "link_light": "#a9d8ff"
+  },
+  "_colors_base_neutrals": {
+    "note": "Tokyo Night base tones live in tokens.css, not here (this schema has no neutral-scale slot) — recorded for completeness since ADR-032 names them as part of the register.",
+    "base_dark_1": "#1a1b26",
+    "base_dark_2": "#24283b"
+  },
+  "typography": {
+    "display": "Space Grotesk",
+    "body": "Inter",
+    "mono": "JetBrains Mono"
+  },
+  "social": {
+    "github": "https://github.com/aDNA-Network/aDNA"
+  },
+  "_source": "Canonical copy per contract §11 anti-pattern #2 ('no site/-only branding', spec_webforge_provider_contract.md). Every value here is a verbatim seed from the live site/branding.json (read 2026-08-16) — itself ADR-032-sourced and cross-verified against site/src/styles/branding.css + tokens.css at the same read (colors and fonts agree across all three, no conflicts found). site/branding.json is NOT modified or removed by this mission (P0.3 constraint: no site/ changes) — reconciling site/ to consume this wrapper copy as the canonical source is follow-up work, candidate mission P4.1 (token pipeline adoption, webforge_pattern_register.md pattern P4).",
+  "_pin": "Seeded at wrapper creation, mission_haussmann_p0_3_webforge_intake, 2026-08-16. Full DTCG-pipeline adoption (or a formally recorded divergence) is mission P4.1's scope, not this one's."
+}

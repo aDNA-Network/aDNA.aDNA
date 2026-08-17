@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P0
 decade: 1
 owner: stanley
-status: queued
+status: active     # P0 wave opened 2026-08-16 (session haussmann_p0_wave; operator-ordered)
 mission_class: design_excellence
 executor_tier: fable   # positioning is the campaign's highest-judgment call; panel logistics are operator-shared
 token_budget_estimated: "~250–400 kT across 2–3 sessions: corpus read + 3–5 positioning candidates + hero-copy drafts + synthetic pre-screen iterations + panel kit + ADR-048 authoring (ADR-016)"

@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P0
 decade: 1
 owner: stanley
-status: queued
+status: active     # P0 wave opened 2026-08-16 (session haussmann_p0_wave; operator-ordered)
 mission_class: build
 executor_tier: opus   # infra judgment + one ADR; mechanical steps drop to sonnet inline
 token_budget_estimated: "~120–200 kT across 1–2 sessions: header-drift diagnosis + fix + live-header CI check + ADR-050 options + deploy runbook + baseline re-record (ADR-016)"

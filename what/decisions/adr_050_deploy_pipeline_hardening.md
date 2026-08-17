@@ -28,9 +28,14 @@ There is no Vercel git integration: pushing does not redeploy; deploys are hand-
 - **(b) Wrapped manual** — a checked deploy script (WebForge `deploy_prebuilt.sh` lineage): clean-tree assertion, header injection/verification, deploy-ID recording, token via broker env only.
 - **(c) b now, a after P2** — harden immediately, revisit integration once the IA churn settles.
 
-## Recommendation
+## Recommendation — evidence-complete (P0.2 O0, 2026-08-16)
 
-(c), pending P0.2's diagnosis of *why* headers drift (which may change the calculus). Either way: the live-header CI probe + deploy-ID recording discipline are unconditional.
+**(c) wrapped-manual now, git-integration revisited after P2.** The diagnosis (`campaign_haussmann/artifacts/p0_2/diagnosis.md`) settled the calculus: the drift's root cause is structural to `--prebuilt` (Build-Output config ignores root `vercel.json` — confirmed on disk + field-verified independently by WebForge B3.5), and option (a)'s git integration would force Vercel-side builds that the sibling-vault prebuild makes fragile. The implemented shape:
+
+- `site/scripts/deploy_adna.sh` = the only sanctioned path (token-env guard → clean-tree guard → `npx astro build` → header injection [WebForge canonical, byte-identical md5 `3fa4a975…`] → structural verification → deploy → live verification → appended `deploy_record:` line).
+- `site/scripts/check_live_headers.mjs` = the standing drift watcher (vercel.json-derived, red-path proven) — run post-deploy by the script and as a CI probe (offline-skip).
+- Token: `VERCEL_TOKEN_ADNA` when brokered (WebForge W1 rotation; not in the Keychain as of 2026-08-16), `SS_VERCEL_TOKEN` env-form interim.
+- Revisit trigger: after P2's IA/URL churn settles, re-evaluate (a) with a Vercel build-command override (`npx astro build`) as the candidate mechanism.
 
 ## Consequences
 

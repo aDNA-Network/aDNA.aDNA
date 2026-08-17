@@ -1,0 +1,176 @@
+{
+  "_doc": "HAUSSMANN P0.5 (editorial gate, O1) — the B5 claim register as a CI fixture. Source of record: how/campaigns/campaign_haussmann/evidence/claims/claim_register.md (93 adjudicated rows) + claims_raw.json (live fetch 2026-08-16). This fixture is the machine-checkable SLICE: all 8 FALSE rows (the launch blockers) + 12 representative verified rows (currency canaries).",
+  "_relation_to_gate_20": "gate-20 traces claims to their SOURCE FILES (does `vaults.json` still say 74?). This fixture asserts the RENDERED PAGE — that a false sentence is gone, and that a true one has not silently vanished. Different failure modes, no overlap: the G-01..G-10 accessor rows stay in claim_trace_manifest.json and are deliberately NOT duplicated here.",
+  "_quote_rule": "Every `quote` is the exact page-visible text, verified against the 2026-08-16 build snapshot. Comparison normalizes typography only (curly quotes -> straight, em/en dash -> hyphen, whitespace collapsed) so a smart-quote change cannot fake a pass or a fail. `match_in: html` rows assert against raw markup instead (attributes, hrefs).",
+  "_no_count_pinning": "Campaign convention 8 (WebForge KW-8/FR-K): verified quotes are trimmed to their non-numeric clause wherever a count appears, so this gate never pins live registry data. Count currency is gate-21's job, count provenance is gate-20's.",
+  "updated": "2026-08-16",
+  "rows": [
+    {
+      "id": "R-14",
+      "url": "/",
+      "quote": "built on the Lattice Protocol (the open coordination protocol underneath)",
+      "class": "FALSE",
+      "expected_fail_until": "P1.1",
+      "why": "The protocol is not open today: aDNA-Network/lattice-protocol is private, the vault repo is private, and publishing is counsel-gated. No public protocol artifact exists for a reader. The site's own honest phrasing on the same page ('opening progressively', R-15) contradicts this unqualified 'open'.",
+      "severity": "S1"
+    },
+    {
+      "id": "R-20",
+      "url": "/",
+      "quote": "the spec, the tooling, and the vaults are all public",
+      "class": "FALSE",
+      "expected_fail_until": "P1.1",
+      "why": "Spec and tooling are public; the vaults are not. 73/74 registry entries carry no public URL, fleet governance marks many vaults local-only, and only ~5 of 74 have public repos. This is the site's most checkable openness claim — one click into the registry disproves it.",
+      "severity": "S1"
+    },
+    {
+      "id": "R-23",
+      "url": "/",
+      "quote": "is a real, governed context graph - its own persona, its own history, its own place in the network",
+      "class": "FALSE",
+      "expected_fail_until": "P1.1",
+      "why": "Quantifier failure on 12/74: 7 vaults have no persona and 5 render the raw placeholder `tbd_at_p0` as the persona on their live pages. No registry record carries history fields. Same wording (with 'below') renders on /vaults — the shared clause is asserted so both surfaces are covered.",
+      "severity": "S1"
+    },
+    {
+      "id": "R-23b",
+      "url": "/vaults",
+      "quote": "is a real, governed context graph - its own persona, its own history, its own place in the network",
+      "class": "FALSE",
+      "expected_fail_until": "P1.1",
+      "why": "The /vaults twin of R-23 ('Every vault below is a real, governed context graph…'), tracked separately because the two surfaces are edited independently and P1.1 must clear both.",
+      "severity": "S1"
+    },
+    {
+      "id": "R-46",
+      "url": "/community",
+      "quote": "questions and ideas start in Discussions",
+      "class": "FALSE",
+      "expected_fail_until": "P1.1",
+      "why": "GitHub Discussions is not enabled on aDNA-Network/aDNA (API `has_discussions: false`; /discussions returns 404). The named venue does not exist.",
+      "severity": "S1"
+    },
+    {
+      "id": "R-47",
+      "url": "/community",
+      "quote": "through the public repository's issue templates",
+      "class": "FALSE",
+      "expected_fail_until": "P1.1",
+      "why": "The public repo has no .github/ directory at all — no issue templates. They were staged dev-side (Refit M6) and never shipped to the image. With R-46 this makes the whole advertised contribution funnel dead on arrival.",
+      "severity": "S1"
+    },
+    {
+      "id": "R-61",
+      "url": "/about",
+      "quote": "Every vault is \"tended by\" a named agent - and we name them as exactly that",
+      "class": "FALSE",
+      "expected_fail_until": "P1.1",
+      "why": "Same quantifier contradiction as R-23: 7 vaults have no persona, 5 render `tbd_at_p0`. Shares the single fix (fill or suppress placeholders, or soften the quantifier).",
+      "severity": "S1"
+    },
+    {
+      "id": "R-84",
+      "url": "/compliance",
+      "quote": "Git as second witness: every commit is signed and dated",
+      "class": "FALSE",
+      "expected_fail_until": "P1.1",
+      "why": "Commits are not cryptographically signed — `git log --show-signature` shows no GPG/SSH signatures and no signing config ships in the image. They are attributed and dated. On a compliance page aimed at auditors, 'signed' asserts a control that does not exist: the worst possible location for a false claim.",
+      "severity": "S1"
+    },
+    {
+      "id": "R-90",
+      "url": "/vaults/Videos.aDNA",
+      "quote": "https://github.com/aDNA-Network/Videos.aDNA",
+      "match_in": "html",
+      "class": "FALSE",
+      "expected_fail_until": "P1.1",
+      "why": "The only `github_url` in the entire registry, and it 404s publicly. The registry's single outbound code proof-link — the one place a skeptic can click through to code — is dead for every reader. Asserted against raw HTML because the claim is carried by the href, not by visible text.",
+      "severity": "S1"
+    },
+
+    {
+      "id": "R-12",
+      "url": "/",
+      "quote": "aDNA is an open standard for organizing project knowledge so both humans and AI agents can navigate it",
+      "class": "verified",
+      "why": "The load-bearing definition of the whole site. Spec is public, versioned and MIT; the clone-and-run image is real."
+    },
+    {
+      "id": "R-24",
+      "url": "/",
+      "quote": "Every file is plain Markdown. Browse in Obsidian, VS Code, or GitHub. No proprietary formats, no lock-in.",
+      "class": "verified",
+      "why": "The no-lock-in promise. Verifiable by cloning the image; must not silently disappear in a redesign."
+    },
+    {
+      "id": "R-31",
+      "url": "/network",
+      "quote": "The connections are not decorative. Each line is a relationship a vault actually declares",
+      "class": "verified",
+      "why": "The graph's honesty caption — it is what makes a sparse topology a feature rather than an embarrassment."
+    },
+    {
+      "id": "R-33",
+      "url": "/network",
+      "quote": "never leave the computer unless you send them",
+      "class": "verified",
+      "why": "The local-first privacy claim (Standing Rule 4). A high-consequence promise: if the architecture ever changes, this sentence must change with it."
+    },
+    {
+      "id": "R-42",
+      "url": "/community",
+      "quote": "MIT-licensed and versioned in public; the spec is the source of truth.",
+      "class": "verified",
+      "why": "Openness claim that IS true today — the contrast case for R-20. Keeping it asserted proves the gate is not simply hostile to openness language."
+    },
+    {
+      "id": "R-58",
+      "url": "/about",
+      "quote": "aDNA is stewarded today by one person",
+      "class": "verified",
+      "why": "The scale-honesty stratum the campaign exists to protect. The single most disarming sentence on the site; a growth-minded rewrite would delete it first."
+    },
+    {
+      "id": "R-64",
+      "url": "/get-started",
+      "quote": "Everything lives on your machine; nothing is sent anywhere.",
+      "class": "verified",
+      "why": "The privacy promise at the point of install, where it actually matters."
+    },
+    {
+      "id": "R-73",
+      "url": "/learn/what-is-adna",
+      "quote": "This documentation site is itself an aDNA vault",
+      "class": "verified",
+      "why": "The self-conformance proof (directive law 2). If this stops being true the site has refuted its own standard."
+    },
+    {
+      "id": "R-76",
+      "url": "/adopters",
+      "quote": "not real named adopters",
+      "class": "verified",
+      "why": "Honesty stratum: the disclaimer that keeps illustrative personas from reading as customer logos. Its removal would be a silent credibility regression."
+    },
+    {
+      "id": "R-85",
+      "url": "/compliance",
+      "quote": "not a certified",
+      "class": "verified",
+      "why": "Honesty stratum: the disclaimer that stops the compliance page reading as an accreditation. Sits on the same page as the FALSE R-84 — this gate protects one while condemning the other."
+    },
+    {
+      "id": "R-88",
+      "url": "/compliance",
+      "quote": "Archive, never delete",
+      "class": "verified",
+      "why": "A real, checkable governance control (Standing Order 6) on the auditor-facing page — the honest counterpart to R-84's false control claim."
+    },
+    {
+      "id": "R-92",
+      "url": "/vaults/graph",
+      "quote": "that is honest topology, not missing data",
+      "class": "verified",
+      "why": "The house style in one clause: an unflattering fact stated plainly. Quote trimmed of its leading count so this row cannot pin live registry data."
+    }
+  ]
+}

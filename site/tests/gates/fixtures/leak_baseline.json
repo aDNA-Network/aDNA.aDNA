@@ -1,0 +1,786 @@
+{
+  "_doc": "HAUSSMANN P0.5 (editorial gate, O2) — leak-lint BASELINE: the internal-language leaks present in the build on the generated date. This is tracked DEBT, not permission. gate-27 fails on any finding NOT recorded here (new leaks are blocked immediately) and carries one expected-failure test asserting this list is EMPTY — that test flips to an unexpected pass when P1.3 clears the debt, forcing this file to be retired.",
+  "_regenerate": "npx astro build && node scripts/gen_leak_baseline.mjs",
+  "_not_an_allowlist": "Deliberate public copy that matches a pattern belongs in leak_allowlist.json (token-scoped, dated, reviewed) — never here.",
+  "generated": "2026-08-17",
+  "expires": "P1.3",
+  "expires_mission": "mission_haussmann_p1_3_registry_truth",
+  "summary": {
+    "finding_rows": 86,
+    "occurrences": 563,
+    "files": 57
+  },
+  "findings": [
+    {
+      "file": "how/publishing/social-sharing/index.html",
+      "pattern": "truncated_lede",
+      "count": 4,
+      "tokens": [
+        "(Ope...\""
+      ]
+    },
+    {
+      "file": "index.html",
+      "pattern": "machine_ident",
+      "count": 2,
+      "tokens": [
+        "Mac/stanley",
+        "daily-driver"
+      ]
+    },
+    {
+      "file": "index.html",
+      "pattern": "op_codename",
+      "count": 1,
+      "tokens": [
+        "Operation Rosetta"
+      ]
+    },
+    {
+      "file": "index.html",
+      "pattern": "production_tidy",
+      "count": 2,
+      "tokens": [
+        "Production Tidy",
+        "pt08"
+      ]
+    },
+    {
+      "file": "learn/tutorials/exchange-adoption-path/index.html",
+      "pattern": "backlog_finding_id",
+      "count": 2,
+      "tokens": [
+        "F-CHM-214"
+      ]
+    },
+    {
+      "file": "llms-full.txt",
+      "pattern": "raw_enum",
+      "count": 1,
+      "tokens": [
+        "tbd_at_p0"
+      ]
+    },
+    {
+      "file": "vaults/aDNA.aDNA/index.html",
+      "pattern": "op_codename",
+      "count": 5,
+      "tokens": [
+        "Operation Rosetta"
+      ]
+    },
+    {
+      "file": "vaults/adnalabs/index.html",
+      "pattern": "raw_enum",
+      "count": 1,
+      "tokens": [
+        "org_vault"
+      ]
+    },
+    {
+      "file": "vaults/ailp-dataroom/index.html",
+      "pattern": "op_codename",
+      "count": 5,
+      "tokens": [
+        "Operation Vitrine"
+      ]
+    },
+    {
+      "file": "vaults/ailp-dataroom/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(classed platform for lack of a finer recognized class.\"",
+        "(classed platform for lack of a finer recognized class.<"
+      ]
+    },
+    {
+      "file": "vaults/apscheduler/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/CakeHealth.aDNA/index.html",
+      "pattern": "op_codename",
+      "count": 5,
+      "tokens": [
+        "Operation CAKE"
+      ]
+    },
+    {
+      "file": "vaults/CakeHealth.aDNA/index.html",
+      "pattern": "raw_enum",
+      "count": 1,
+      "tokens": [
+        "org_graph"
+      ]
+    },
+    {
+      "file": "vaults/cakeprotocol/index.html",
+      "pattern": "op_codename",
+      "count": 5,
+      "tokens": [
+        "Operation Layer"
+      ]
+    },
+    {
+      "file": "vaults/canvas/index.html",
+      "pattern": "internal_path",
+      "count": 5,
+      "tokens": [
+        "what/code/"
+      ]
+    },
+    {
+      "file": "vaults/canvas/index.html",
+      "pattern": "production_tidy",
+      "count": 5,
+      "tokens": [
+        "pt09"
+      ]
+    },
+    {
+      "file": "vaults/context/index.html",
+      "pattern": "internal_path",
+      "count": 5,
+      "tokens": [
+        "what/contextscope/"
+      ]
+    },
+    {
+      "file": "vaults/context/index.html",
+      "pattern": "production_tidy",
+      "count": 5,
+      "tokens": [
+        "pt12"
+      ]
+    },
+    {
+      "file": "vaults/context/index.html",
+      "pattern": "raw_enum",
+      "count": 5,
+      "tokens": [
+        "code-as-WHAT"
+      ]
+    },
+    {
+      "file": "vaults/context/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(RELOCATED from root sibling ~/aDNA/contextscope at PT pt12.\"",
+        "(RELOCATED from root sibling ~/aDNA/contextscope at PT pt12.<"
+      ]
+    },
+    {
+      "file": "vaults/ContextCommons.aDNA/index.html",
+      "pattern": "raw_enum",
+      "count": 7,
+      "tokens": [
+        "org_vault"
+      ]
+    },
+    {
+      "file": "vaults/d3/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/dashboards/index.html",
+      "pattern": "op_codename",
+      "count": 5,
+      "tokens": [
+        "Operation Aegis"
+      ]
+    },
+    {
+      "file": "vaults/dashboards/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/datarooms/index.html",
+      "pattern": "internal_path",
+      "count": 5,
+      "tokens": [
+        "what/datarooms_core/"
+      ]
+    },
+    {
+      "file": "vaults/datarooms/index.html",
+      "pattern": "raw_enum",
+      "count": 5,
+      "tokens": [
+        "code-as-WHAT"
+      ]
+    },
+    {
+      "file": "vaults/datarooms/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(class provisional, ratified R0.\"",
+        "(class provisional, ratified R0.<"
+      ]
+    },
+    {
+      "file": "vaults/datasets/index.html",
+      "pattern": "raw_enum",
+      "count": 8,
+      "tokens": [
+        "tbd_at_p0"
+      ]
+    },
+    {
+      "file": "vaults/datasets/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(PT.\"",
+        "(PT.<"
+      ]
+    },
+    {
+      "file": "vaults/emacs/index.html",
+      "pattern": "internal_path",
+      "count": 5,
+      "tokens": [
+        "what/emacs/"
+      ]
+    },
+    {
+      "file": "vaults/emacs/index.html",
+      "pattern": "raw_enum",
+      "count": 5,
+      "tokens": [
+        "code-as-WHAT"
+      ]
+    },
+    {
+      "file": "vaults/emacs/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/exchange/index.html",
+      "pattern": "op_codename",
+      "count": 5,
+      "tokens": [
+        "Operation Agora"
+      ]
+    },
+    {
+      "file": "vaults/fluxer/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(§8 — data-plane placement co-designed w/ Venus at its.\"",
+        "(§8 — data-plane placement co-designed w/ Venus at its.<"
+      ]
+    },
+    {
+      "file": "vaults/forgejo/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/gotfn/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(ratified ⛩ G0.\"",
+        "(ratified ⛩ G0.<"
+      ]
+    },
+    {
+      "file": "vaults/groupware/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/Harness.aDNA/index.html",
+      "pattern": "internal_path",
+      "count": 5,
+      "tokens": [
+        "what/harness/"
+      ]
+    },
+    {
+      "file": "vaults/Harness.aDNA/index.html",
+      "pattern": "production_tidy",
+      "count": 5,
+      "tokens": [
+        "pt13"
+      ]
+    },
+    {
+      "file": "vaults/Harness.aDNA/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(rareharnessneo relocated PT pt13.\"",
+        "(rareharnessneo relocated PT pt13.<"
+      ]
+    },
+    {
+      "file": "vaults/Home.aDNA/index.html",
+      "pattern": "machine_ident",
+      "count": 10,
+      "tokens": [
+        "Mac/stanley",
+        "daily-driver"
+      ]
+    },
+    {
+      "file": "vaults/Home.aDNA/index.html",
+      "pattern": "raw_enum",
+      "count": 1,
+      "tokens": [
+        "node_operational"
+      ]
+    },
+    {
+      "file": "vaults/index.html",
+      "pattern": "internal_path",
+      "count": 12,
+      "tokens": [
+        "what/code/",
+        "what/contextscope/",
+        "what/datarooms_core/",
+        "what/emacs/",
+        "what/harness/",
+        "what/lab/"
+      ]
+    },
+    {
+      "file": "vaults/index.html",
+      "pattern": "machine_ident",
+      "count": 3,
+      "tokens": [
+        "Mac/stanley",
+        "daily-driver"
+      ]
+    },
+    {
+      "file": "vaults/index.html",
+      "pattern": "op_codename",
+      "count": 10,
+      "tokens": [
+        "LIP-0005",
+        "LIP-0006",
+        "Operation Aegis",
+        "Operation Agora",
+        "Operation CAKE",
+        "Operation Layer",
+        "Operation Rosetta",
+        "Operation Vitrine"
+      ]
+    },
+    {
+      "file": "vaults/index.html",
+      "pattern": "production_tidy",
+      "count": 9,
+      "tokens": [
+        "Production Tidy",
+        "pt08",
+        "pt09",
+        "pt12",
+        "pt13"
+      ]
+    },
+    {
+      "file": "vaults/index.html",
+      "pattern": "raw_enum",
+      "count": 94,
+      "tokens": [
+        "code-as-WHAT",
+        "framework_candidate",
+        "genesis_stub",
+        "knowledge_graph",
+        "node_operational",
+        "org_graph",
+        "org_vault",
+        "tbd_at_p0"
+      ]
+    },
+    {
+      "file": "vaults/index.html",
+      "pattern": "truncated_lede",
+      "count": 54,
+      "tokens": [
+        "(.\"",
+        "(.<",
+        "(PT.<",
+        "(Production Tidy pt08.<",
+        "(RELOCATED from root sibling ~/aDNA/contextscope at PT pt12.<",
+        "(Tailscale folds in.<",
+        "(WebForge documentation archetype.<",
+        "(class provisional, ratified R0.<",
+        "(class provisional, ratified r0.\"",
+        "(class ratified.\"",
+        "(class ratified.<",
+        "(classed platform for lack of a finer recognized class.\"",
+        "(classed platform for lack of a finer recognized class.<",
+        "(production tidy pt08.\"",
+        "(pt.\"",
+        "(rareharnessneo relocated PT pt13.<",
+        "(rareharnessneo relocated pt pt13.\"",
+        "(ratified ⛩ G0.<",
+        "(ratified ⛩ g0.\"",
+        "(ratified.\"",
+        "(ratified.<",
+        "(relocated from root sibling ~/adna/contextscope at pt pt12.\"",
+        "(tailscale folds in.\"",
+        "(webforge documentation archetype.\"",
+        "(§8 — data-plane placement co-designed w/ Venus at its.<",
+        "(§8 — data-plane placement co-designed w/ Venus; heads-up memo landed at.<",
+        "(§8 — data-plane placement co-designed w/ venus at its.\"",
+        "(§8 — data-plane placement co-designed w/ venus; heads-up memo landed at.\""
+      ]
+    },
+    {
+      "file": "vaults/jupyter/index.html",
+      "pattern": "internal_path",
+      "count": 5,
+      "tokens": [
+        "what/lab/"
+      ]
+    },
+    {
+      "file": "vaults/jupyter/index.html",
+      "pattern": "raw_enum",
+      "count": 5,
+      "tokens": [
+        "code-as-WHAT"
+      ]
+    },
+    {
+      "file": "vaults/jupyter/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(ratified.\"",
+        "(ratified.<"
+      ]
+    },
+    {
+      "file": "vaults/latticeprotocol/index.html",
+      "pattern": "raw_enum",
+      "count": 12,
+      "tokens": [
+        "code-as-WHAT",
+        "tbd_at_p0"
+      ]
+    },
+    {
+      "file": "vaults/LAVentureGraph.aDNA/index.html",
+      "pattern": "raw_enum",
+      "count": 1,
+      "tokens": [
+        "knowledge_graph"
+      ]
+    },
+    {
+      "file": "vaults/lighthouse/index.html",
+      "pattern": "raw_enum",
+      "count": 7,
+      "tokens": [
+        "tbd_at_p0"
+      ]
+    },
+    {
+      "file": "vaults/magnapetra/index.html",
+      "pattern": "raw_enum",
+      "count": 8,
+      "tokens": [
+        "tbd_at_p0"
+      ]
+    },
+    {
+      "file": "vaults/nebula/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(Tailscale folds in.\"",
+        "(Tailscale folds in.<"
+      ]
+    },
+    {
+      "file": "vaults/neo4j/index.html",
+      "pattern": "op_codename",
+      "count": 5,
+      "tokens": [
+        "Operation Aegis"
+      ]
+    },
+    {
+      "file": "vaults/neo4j/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/Network.aDNA/index.html",
+      "pattern": "op_codename",
+      "count": 5,
+      "tokens": [
+        "LIP-0006"
+      ]
+    },
+    {
+      "file": "vaults/nextcloud/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/Obsidian.aDNA/index.html",
+      "pattern": "raw_enum",
+      "count": 5,
+      "tokens": [
+        "code-as-WHAT"
+      ]
+    },
+    {
+      "file": "vaults/Operations.aDNA/index.html",
+      "pattern": "production_tidy",
+      "count": 10,
+      "tokens": [
+        "Production Tidy",
+        "pt08"
+      ]
+    },
+    {
+      "file": "vaults/Operations.aDNA/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(Production Tidy pt08.\"",
+        "(Production Tidy pt08.<"
+      ]
+    },
+    {
+      "file": "vaults/organization/index.html",
+      "pattern": "op_codename",
+      "count": 5,
+      "tokens": [
+        "Operation Aegis"
+      ]
+    },
+    {
+      "file": "vaults/organization/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/percysleep/index.html",
+      "pattern": "raw_enum",
+      "count": 1,
+      "tokens": [
+        "org_graph"
+      ]
+    },
+    {
+      "file": "vaults/rareanthropic/index.html",
+      "pattern": "op_codename",
+      "count": 5,
+      "tokens": [
+        "LIP-0005"
+      ]
+    },
+    {
+      "file": "vaults/rareanthropic/index.html",
+      "pattern": "raw_enum",
+      "count": 1,
+      "tokens": [
+        "org_graph"
+      ]
+    },
+    {
+      "file": "vaults/rareanthropic/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(WebForge documentation archetype.\"",
+        "(WebForge documentation archetype.<"
+      ]
+    },
+    {
+      "file": "vaults/RareArchive.aDNA/index.html",
+      "pattern": "raw_enum",
+      "count": 1,
+      "tokens": [
+        "org_vault"
+      ]
+    },
+    {
+      "file": "vaults/react/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/realityscan/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(§8 — data-plane placement co-designed w/ Venus; heads-up memo landed at.\"",
+        "(§8 — data-plane placement co-designed w/ Venus; heads-up memo landed at.<"
+      ]
+    },
+    {
+      "file": "vaults/regenesis/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(class ratified.\"",
+        "(class ratified.<"
+      ]
+    },
+    {
+      "file": "vaults/RemoteControl.aDNA/index.html",
+      "pattern": "raw_enum",
+      "count": 2,
+      "tokens": [
+        "genesis_stub"
+      ]
+    },
+    {
+      "file": "vaults/sciencestanley/index.html",
+      "pattern": "raw_enum",
+      "count": 7,
+      "tokens": [
+        "org_vault"
+      ]
+    },
+    {
+      "file": "vaults/store/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/SuperLeague.aDNA/index.html",
+      "pattern": "raw_enum",
+      "count": 7,
+      "tokens": [
+        "org_graph"
+      ]
+    },
+    {
+      "file": "vaults/tailwind/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/terminal/index.html",
+      "pattern": "raw_enum",
+      "count": 5,
+      "tokens": [
+        "code-as-WHAT"
+      ]
+    },
+    {
+      "file": "vaults/threejs/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/VAAS.aDNA/index.html",
+      "pattern": "raw_enum",
+      "count": 7,
+      "tokens": [
+        "framework_candidate"
+      ]
+    },
+    {
+      "file": "vaults/vercel/index.html",
+      "pattern": "truncated_lede",
+      "count": 5,
+      "tokens": [
+        "(.\"",
+        "(.<"
+      ]
+    },
+    {
+      "file": "vaults/wga.aDNA/index.html",
+      "pattern": "raw_enum",
+      "count": 7,
+      "tokens": [
+        "org_vault"
+      ]
+    },
+    {
+      "file": "vaults/WilhelmAI.aDNA/index.html",
+      "pattern": "raw_enum",
+      "count": 1,
+      "tokens": [
+        "org_vault"
+      ]
+    },
+    {
+      "file": "vaults/worldgenome/index.html",
+      "pattern": "raw_enum",
+      "count": 8,
+      "tokens": [
+        "tbd_at_p0"
+      ]
+    },
+    {
+      "file": "vaults/zenzachary/index.html",
+      "pattern": "raw_enum",
+      "count": 1,
+      "tokens": [
+        "org_vault"
+      ]
+    }
+  ]
+}

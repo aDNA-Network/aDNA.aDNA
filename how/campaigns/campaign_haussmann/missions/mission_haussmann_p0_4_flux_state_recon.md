@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P0
 decade: 1
 owner: stanley
-status: queued
+status: active     # P0 wave opened 2026-08-16 (session haussmann_p0_wave; operator-ordered)
 mission_class: reconnaissance
 executor_tier: opus
 token_budget_estimated: "~80–140 kT in 1 session: memo delivery + answer intake + prerequisite register + ADR-054 skeleton (ADR-016)"
