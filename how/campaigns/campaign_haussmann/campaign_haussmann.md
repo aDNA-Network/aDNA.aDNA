@@ -39,6 +39,38 @@ tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, a
 > outward acts — origin push + 4-memo delivery — GO'd in the same gate). *(Authored by agent_rosetta;
 > ratified by the operator.)*
 
+```
+╭─ campaign_haussmann · rosetta ─────────────────────── 🧬 aDNA.aDNA OPENING ─╮
+│  opened 2026-08-16 (ratified §7.7 same day)          (top-level campaign)    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  INTENT   rebuild adna.network to the VITRUVIUS standard — credible,         │
+│           legible, beautiful, agent-navigable; honesty is the aesthetic      │
+│           ↳ north-star: zero FALSE claims · self-conformance proven &        │
+│             stated · baseline 51.6 → per-dimension gains · capstone ≥4.95    │
+│                                                                              │
+│  MISSION TREE                                  (2026-08-16, post-P0-wave)    │
+│    P0 preconditions   ✅ P0.2 deploy  ✅ P0.3 webforge  ✅ P0.5 edit-gate    │
+│                       🟡 P0.1 positioning (awaits HUMAN PANEL → ⛩ DP2)      │
+│                       🟡 P0.4 flux-recon (awaits Aspasia ack)               │
+│    P1 credibility     ▫ 1.1 claim-purge  ▫ 1.2 state-of-network             │
+│      (Decade 1)       ▫ 1.3 registry-truth(⛩DP4)  ▫ 1.4 mobile-S1s         │
+│    P2 structure       ▫ 2.1 urls  ▫ 2.2 ia(⛩DP5)  ▫ 2.3 docs-freshness     │
+│      (Decade 1)       ▫ 2.4 registry  ▫ 2.5 onboarding  ▫ 2.6 re-score⛩DP6  │
+│    P3 agentic+community  ▫ md-twins ▫ registry-json ▫ mcp-server            │
+│      (Decade 2·prov.)    ▫ flux(⛩DP7) ▫ proposals            [gated: DP6]   │
+│    P4 craft+hardening ▫ tokens/voice(⛩DP8) ▫ craft-floor ▫ a11y-manual      │
+│      (Decade 2·prov.) ▫ ci-hardening ▫ voice-rewrite-LAST    [gated: DP6]   │
+│    P5 launch          ▫ human-evidence ▫ re-score+capstone ⛩DP9 [gated:DP6] │
+│                                                                              │
+│  PLAN     phase P0/6 · 37–50 sessions (derived) · fable default tier ·      │
+│           prod HARDENED (4/4 headers · B+/80) · suite 404 · freeze lifted   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  GATES    phase gates are human gates · begin at: HUMAN PANEL → DP2 → P1    │
+│           arc AAR: artifacts/aar_p0_wave.md (this splash augments, never    │
+│           replaces it)                                                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+```
+
 ## Goal
 
 At launch, adna.network is **the most credible, most legible, most beautiful property in its category** — a senior engineer, a rare-disease clinician, a foundation program officer, and an autonomous agent each find it immediately navigable, and **none of them can catch it overstating itself**. Two laws govern everything (directive §1): **honesty is the aesthetic** (the site's refusal of vanity metrics is its strongest asset — extend it to every surface), and **self-conformance is the proof** (a standard for agent-navigable context whose own site is not agent-navigable has refuted itself — machine legibility is a first-class design surface).
