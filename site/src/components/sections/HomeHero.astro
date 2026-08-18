@@ -871,21 +871,18 @@ const heroNodes = graphLed
   }
 
   /* HAUSSMANN P1.2 — the proof block can carry two links (the disclosure surface, and the
-     one-click path to the named humans). Wraps rather than overflowing at narrow widths; the
-     separator is decorative and drawn in CSS so it never reaches the accessibility tree or the
-     copy-craft text assertions. */
+     one-click path to the named humans). Wraps rather than overflowing at narrow widths.
+
+     No pseudo-element separator between them: a `::before` "·" on the second link dangles at the
+     START of the wrapped line at 320px, which reads as a typo. Observed in the T0 mobile capture,
+     which is exactly the kind of defect only a real capture catches. The links are cyan against
+     muted body text and generously spaced, so the gap alone separates them unambiguously. */
   .hero-proof-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: baseline;
-    gap: var(--space-1) var(--space-3);
-  }
-
-  .hero-proof-links .hero-proof-link + .hero-proof-link::before {
-    content: '·';
-    color: var(--color-text-muted);
-    margin-right: var(--space-3);
+    gap: var(--space-1) var(--space-6);
   }
 
   /* Cyan link (AA both modes for small text; the site's link signal). */
