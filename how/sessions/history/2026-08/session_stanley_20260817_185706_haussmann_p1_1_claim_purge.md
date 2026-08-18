@@ -7,11 +7,12 @@ agent: agent_rosetta
 campaign: campaign_haussmann
 mission: mission_haussmann_p1_1_claim_purge
 started: 2026-08-17 18:57
-status: active
+ended: 2026-08-17 20:05
+status: completed
 executor_tier_declared: opus
 executor_tier_actual: fable
 token_budget_estimated: "150–250 kT (mission spec; single-session attempt)"
-token_budget_actual:
+token_budget_actual: "~460 kT (≈250 main + 207 hostile-read subagent)"
 tags: [session, haussmann, p1_1, claims]
 ---
 
@@ -67,4 +68,35 @@ zero-xfail + close + deploy under GO.
 
 ## SITREP
 
-*(at close)*
+**Completed**: Mission P1.1 CLOSED (all O0–O4, single session, AAR inline). 8 FALSE claims resolved;
+19 unsupported adjudicated; hero = ADR-048 verbatim; suite 407/407 green **zero xfail**; hostile-read
+18/18 dispositioned; channels shipped real (`aDNA-Network/aDNA`: templates `d4742db`, SECURITY.md
+`b64b81e`, private vuln reporting ENABLED); **DEPLOYED prod `2026-08-18T03:01:11Z tree=0f7cca0`**,
+live-verified on adna.network (new hero · movement band · zero retired phrases · Fluxer disclosure ·
+attributed-and-dated). Work commit `0f7cca0`; close commit follows (STATE banner + this file → history
++ deploy_log).
+
+**In progress**: —
+
+**Next up**: **P1.2 state-of-network** (last P1 mission; consent round at O1). Then P2.1.
+
+**Blockers**: none for P1.2. Standing: P0.4 Aspasia ack (the link-now override raises its urgency —
+the site now points humans at the policy-naked instance; P3.4 checklist inherits) · evidence-retention
+⛩ (72M + this session's uncommitted capture remainder) · Hestia memo delivery = staged (deliver at
+next cross-vault window or operator word).
+
+**Files touched**: 34-file work commit `0f7cca0` (site copy ×16 + gates ×3 + fixtures/data ×5 +
+campaign artifacts ×4 + ADR-054 + Hestia memo + session file + .github config) · outward:
+`aDNA-Network/aDNA` `fd32fc7..d4742db..b64b81e` + repo setting (private vuln reporting) · deploy
+`dpl adna-docs-4qup9bsj4` (log appended).
+
+## Next Session Prompt
+
+> You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p1_2_state_of_network.md` per
+> `how/campaigns/campaign_haussmann/missions/session_prompts_haussmann.md` (P1.2 row): open the
+> mission + campaign CLAUDE.md + ADR-048 + `evidence/claims/claim_register.md` (note §6 addendum —
+> the FALSE set is resolved; R-94–R-97 are new live rows). Execute O0 (design + copy draft), halt at
+> O1 for the consent round (named humans/institutions), then O2–O3. P1.1 landed the hero + movement
+> band — the state-of-network surface extends that honesty register; R-62's rebuilt "proof" surface
+> is yours. Suite baseline: 407 green, zero xfail. Deploys only via `site/scripts/deploy_adna.sh`
+> after fetch/compare of origin + deploy_log.

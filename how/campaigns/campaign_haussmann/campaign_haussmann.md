@@ -22,7 +22,7 @@ governing_instrument: directives/OPERATION_VITRUVIUS_review_instrument.md   # D1
 baseline_score: "51.6/100 (2026-08-16, two-reviewer reconciled; MCP ≈83, Mastra ≈65)"
 evidence_pack: [d58ea13, df3827c]
 created: 2026-08-16
-updated: 2026-08-18   # P1 CLOSED 4/4 (P1.2 deployed tree=84dd3bd, ranker 4.22); next = the ⛩ P1→P2 phase gate
+updated: 2026-08-18   # ⛩ P1→P2 phase gate SIGNED (3/4 conditions; D6/D7 deferred to P2.6) — P2 OPEN, P2.1 first
 last_edited_by: agent_rosetta
 tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, agentic]
 ---
@@ -54,19 +54,19 @@ tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, a
 │                       🟡 P0.4 flux-recon (awaits Aspasia ack — her lane)    │
 │    P1 credibility ✅  ✅ 1.1 claim-purge   ✅ 1.2 state-of-network          │
 │      (Decade 1) 4/4   ✅ 1.3 registry-truth(DP4) ✅ 1.4 mobile-S1s          │
-│    P2 structure       ▫ 2.1 urls  ▫ 2.2 ia(⛩DP5)  ▫ 2.3 docs-freshness     │
-│      (Decade 1)       ▫ 2.4 registry  ▫ 2.5 onboarding  ▫ 2.6 re-score⛩DP6  │
-│                          ↑ OPENS AT THE ⛩ P1→P2 PHASE GATE (SO-1)          │
+│    P2 structure 🟢    ▸ 2.1 urls  ▫ 2.2 ia(⛩DP5)  ▫ 2.3 docs-freshness     │
+│      (Decade 1) OPEN  ▫ 2.4 registry  ▫ 2.5 onboarding  ▫ 2.6 re-score⛩DP6  │
+│                          ↑ ⛩ P1→P2 GATE SIGNED 2026-08-18 (D6/D7 deferred)  │
 │    P3 agentic+community  ▫ md-twins ▫ registry-json ▫ mcp-server            │
 │      (Decade 2·prov.)    ▫ flux(⛩DP7) ▫ proposals            [gated: DP6]   │
 │    P4 craft+hardening ▫ tokens/voice(⛩DP8) ▫ craft-floor ▫ a11y-manual      │
 │      (Decade 2·prov.) ▫ ci-hardening ▫ voice-rewrite-LAST    [gated: DP6]   │
 │    P5 launch          ▫ human-evidence ▫ re-score+capstone ⛩DP9 [gated:DP6] │
 │                                                                              │
-│  PLAN     phase P1/6 CLOSED · 37–50 sessions (derived) · fable default ·    │
+│  PLAN     phase P2/6 OPEN · 37–50 sessions (derived) · fable default ·      │
 │           prod HARDENED (4/4 headers) · suite 444 zero xf · 0 FALSE claims  │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│  GATES    phase gates are human gates · next: ⛩ P1→P2 · then DP5 at 2.2    │
+│  GATES    phase gates are human gates · next: ⛩ DP5 at 2.2 (IA model)      │
 │           arc AAR: artifacts/aar_p0_wave.md (this splash augments, never    │
 │           replaces it)                                                       │
 ╰──────────────────────────────────────────────────────────────────────────────╯
@@ -139,6 +139,20 @@ The genesis assessment (Gate B dossier, `artifacts/gate_b_dossier.md`) found a *
 **Standing at close:** suite **444 green, zero xfail** · prod `tree=84dd3bd` live-verified on the apex
 · 4/4 security headers · registry leak baseline retired (86 rows → 0, hard-gated) · the deploy freeze
 lifted and the sole-sanctioned path in force.
+
+##### ⛩ P1→P2 phase gate — SIGNED (§7.7)
+
+| Field | Value |
+|---|---|
+| **Decision** | Open P2. The P1 exit gate is accepted at **3 of 4 conditions met**, with the fourth — the D6/D7 re-score — **deferred to P2.6**, where the instrument's own cadence puts a full dimension re-score. The deferral is accepted as a deferral; it is **not** recorded as satisfied. |
+| **Ratified by** | stanley (operator / FA), in-chat `AskUserQuestion` |
+| **Date** | 2026-08-18 |
+| **Status** | **accepted** — P2 open; P2.1 is the first mission (no deps, no DP). DP5 remains the next substantive decision point, at P2.2. |
+
+> The honest reading, kept here so a later reader does not mistake the signature for a clean sweep:
+> P1 closed 4/4 on *missions*, not 4/4 on *exit conditions*. The last hostile pass still found two
+> S2s (R-112/R-113) — fixed and gate-pinned before the deploy, but found. D6/D7 remain unmeasured
+> since the baseline. P2.6 is where that debt comes due, and it is tracked, not forgiven.
 
 **Carried into P2 with provenance** (not silently dropped): the Enterprise Architect routing gap
 (`/compliance`, `/enterprise` unreachable from either disclosure surface; the one org-scale exit
