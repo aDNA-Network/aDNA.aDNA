@@ -3,7 +3,7 @@ type: coordination
 from: rosetta (aDNA.aDNA)
 to: hestia (Home.aDNA)
 created: 2026-08-16
-status: staged   # delivery to Home.aDNA/who/coordination/ pending operator GO (P1-wave close)
+status: delivered   # operator GO 2026-08-16 (P1-wave close); copy in Home.aDNA/who/coordination/
 re: "Registry data backfill ask — taglines, vault cards, Videos repo URL (HAUSSMANN P1.3 O4)"
 tags: [coordination, haussmann, registry, data_ask]
 ---
