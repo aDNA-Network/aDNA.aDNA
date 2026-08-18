@@ -205,9 +205,9 @@ This rotation does NOT cascade to application-tier credentials — the underlyin
 | Field | Value |
 |---|---|
 | **decision** | Adopt the Chambellan M-A6 amendments to this doctrine: **§Scoped + expiring machine credentials** (expiry-as-trigger, scope-as-half-the-credential, second-holder coordination) · **§Revoke ≠ kill** (the S45 cached-CLI-identity property, charter D-36 — enumerate caches before revoking; a cached identity is a credential with its own row) · **§Rotation Procedure step 0 — Preserve the evidence before you rotate** (the D-58 / DP-11 lesson: a timing ruling carries its evidence-date; runsheets state what ages out and when) |
-| **ratified-by** | *(operator — unsigned)* |
-| **date** | *(unsigned)* |
-| **status** | **proposed** |
+| **ratified-by** | stanley |
+| **date** | 2026-08-17 |
+| **status** | **ratified** *(⛩ S198 chat gate, HQ fable desk — ruled "ratify 1–3, hold safe-mutations for Hestia's co-sign")* |
 
 **What the operator is signing, in plain terms**: that a revoke is not a kill until the caches are enumerated; that an expiring credential's rotation date is written down at mint, not remembered; and that a rotation begins by recording why it was needed, because the proof expires on its own schedule and the risk does not.
 

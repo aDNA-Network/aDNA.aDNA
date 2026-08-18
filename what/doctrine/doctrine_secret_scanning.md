@@ -331,9 +331,9 @@ If a hit lands, the old credential was already compromised before rotation — f
 | Field | Value |
 |---|---|
 | **decision** | Adopt the Chambellan M-A6 amendments to this doctrine: **§Scope amendment** (locus annotations + non-git-store blindness) · **§The pre-push gate** (D-41 — the `Network.aDNA` hardened fail-closed hook is the fleet standard, chosen over patching F1's control flow; commit-warns/push-fails-closed asymmetry; 4-part conformance definition + 3-case behavioral probe) · **§Closing the allow-list** (D-44 — applicable `.gitleaks.toml` spec, with D-24's fixture class held separate) · **§Scanning non-git stores** (D-57 — the transcript vector named; clean-within-reach; the wired nightly job; F-M-A7-2 duration/niceness) · **§Positive controls must fire** (the inert-control rule) · **§Instrument law** (D-46/D-60 multiset parity · **F-M-A7-1** re-validate-before-certifying · scoped-clean-report) |
-| **ratified-by** | *(operator — unsigned)* |
-| **date** | *(unsigned)* |
-| **status** | **proposed** |
+| **ratified-by** | stanley |
+| **date** | 2026-08-17 |
+| **status** | **ratified** *(⛩ S198 chat gate, HQ fable desk — the LAW only; the 91-vault propagation wave stays separately carded and Venus-co-sign-gated)* |
 
 **What the operator is signing, in plain terms**: that "clean" is a claim about an instrument's reach and must say so; that a control which cannot fire invalidates its run; that parity means comparing rows, not names; that an instrument must be checked against the change it is about to certify; and that the fleet gets **one** pre-push hook of record — the fail-closed one — rather than a patched second lineage.
 

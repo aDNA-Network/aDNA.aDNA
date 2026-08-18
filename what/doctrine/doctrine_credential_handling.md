@@ -514,9 +514,9 @@ This is the **discipline**, not a schema. The *federated wire-format* for a cros
 | Field | Value |
 |---|---|
 | **decision** | Adopt the Chambellan M-A6 amendments to this doctrine: **§2.5** (three-body access model — broker of record / access engine / IdP, and the four rules that follow) · **§3.5** (ADR-011 storage kinds `bitwarden_scoped` + `keycloak_client` and the `scope:` field as schema of record, plus the **named trigger** for a future `doctrine_identity_federation.md`) · **§4.5** (partner delivery of a value to a second person; n=2 variants with six binding rules) · **§6.9** (the locus rule; D-28's correction of F8's dead `.mcp.json` path) |
-| **ratified-by** | *(operator — unsigned)* |
-| **date** | *(unsigned)* |
-| **status** | **proposed** |
+| **ratified-by** | stanley |
+| **date** | 2026-08-17 |
+| **status** | **ratified** *(⛩ S198 chat gate, HQ fable desk — ruled "ratify 1–3, hold safe-mutations for Hestia's co-sign")* |
 
 **What the operator is signing, in plain terms**: that the three-body split is *law* rather than description — a value reachable outside the register becomes a finding; a Keycloak client is a row, never a place secrets hide; a value handed to a second person needs a register row **before** it is sent; and a doctrine that names a file path owes that path a date.
 
