@@ -5,6 +5,10 @@
 # scripts/build_vaults_data.mjs from PROJECT_ROOT (survives the Home-absent
 # CI/Vercel fallback, like network_edges.yaml) and projected to subnetworks.json.
 #
+# HAUSSMANN P1.1 (2026-08-17): governance-specificity claims not verifiable from public record
+# (five-council model · five-seat steward council · "Community-governed") lowered per claim
+# register R-50/R-51/R-54 — this yaml is the SOURCE; subnetworks.json is projected from it.
+#
 # Each featured subnetwork is a CURATED, CITED bundle pointing at real registry
 # vault(s). Honest-showcase discipline (E5 hard constraint): every claim cites a
 # governance source; no fabricated metrics; the showcase is CURATED, NOT EXHAUSTIVE
@@ -27,22 +31,21 @@ subnetworks:
     display_name: World Genome Academy
     tagline: Genomics knowledge as a shared commons
     member_vaults: [wga.aDNA]
-    steward: Five-council governance + Director
+    steward: Founding stewards · governance being formalized
     serves: Genomics education & research
     public_url: https://worldgeno.me
     ethos_alignment: Scientific knowledge and education, held in common
     publish_status: ready   # LatticeProtocol-internal; cleared to publish
     blurb: >-
-      The World Genome Academy builds genomics education and research in the open,
-      under a five-council model — Education, Agriculture, Research, an Indigenous-data
-      veto, and Technology — so the science is stewarded, not enclosed.
+      The World Genome Academy is building genomics education and research programs —
+      so the science is stewarded, not enclosed.
     cite: who/coordination/coord_2026_05_09_v7_wga.md §1
 
   - id: context_commons
     display_name: Context Commons
     tagline: Agentic-context literacy, shared
     member_vaults: [ContextCommons.aDNA]
-    steward: Community-governed
+    steward: Founding-steward today — community governance as it grows
     serves: Community agentic-literacy & enablement
     public_url: null
     ethos_alignment: Context as a commons people contribute to and steward
@@ -74,7 +77,7 @@ subnetworks:
     display_name: Rare Archive
     tagline: Open-source rare-disease AI
     member_vaults: [RareArchive.aDNA]
-    steward: Mnemosyne · five-seat steward council · anchor Wilhelm Foundation
+    steward: Mnemosyne · anchor Wilhelm Foundation
     serves: Rare-disease diagnosis acceleration
     public_url: https://github.com/Wilhelm-Foundation/rare-archive
     ethos_alignment: Rare-disease AI built in the open
@@ -83,6 +86,6 @@ subnetworks:
     publish_status: operator_cleared_2026_06_07   # WF ADR-010-window override; commit-only until close-deploy green-light
     blurb: >-
       Rare Archive is an open-source rare-disease AI project — the diagnosis-acceleration
-      pillar of AI4U — governed by a five-seat steward council, with a canonical home at
+      pillar of AI4U — governed under the Wilhelm Foundation, with a canonical home at
       Wilhelm-Foundation/rare-archive.
     cite: who/coordination/coord_2026_05_09_v7_rarearchive.md §1

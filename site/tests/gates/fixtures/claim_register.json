@@ -6,94 +6,11 @@
   "updated": "2026-08-16",
   "rows": [
     {
-      "id": "R-14",
-      "url": "/",
-      "quote": "built on the Lattice Protocol (the open coordination protocol underneath)",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "The protocol is not open today: aDNA-Network/lattice-protocol is private, the vault repo is private, and publishing is counsel-gated. No public protocol artifact exists for a reader. The site's own honest phrasing on the same page ('opening progressively', R-15) contradicts this unqualified 'open'.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-20",
-      "url": "/",
-      "quote": "the spec, the tooling, and the vaults are all public",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "Spec and tooling are public; the vaults are not. 73/74 registry entries carry no public URL, fleet governance marks many vaults local-only, and only ~5 of 74 have public repos. This is the site's most checkable openness claim — one click into the registry disproves it.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-23",
-      "url": "/",
-      "quote": "is a real, governed context graph - its own persona, its own history, its own place in the network",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "Quantifier failure on 12/74: 7 vaults have no persona and 5 render the raw placeholder `tbd_at_p0` as the persona on their live pages. No registry record carries history fields. Same wording (with 'below') renders on /vaults — the shared clause is asserted so both surfaces are covered.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-23b",
-      "url": "/vaults",
-      "quote": "is a real, governed context graph - its own persona, its own history, its own place in the network",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "The /vaults twin of R-23 ('Every vault below is a real, governed context graph…'), tracked separately because the two surfaces are edited independently and P1.1 must clear both.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-46",
-      "url": "/community",
-      "quote": "questions and ideas start in Discussions",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "GitHub Discussions is not enabled on aDNA-Network/aDNA (API `has_discussions: false`; /discussions returns 404). The named venue does not exist.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-47",
-      "url": "/community",
-      "quote": "through the public repository's issue templates",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "The public repo has no .github/ directory at all — no issue templates. They were staged dev-side (Refit M6) and never shipped to the image. With R-46 this makes the whole advertised contribution funnel dead on arrival.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-61",
-      "url": "/about",
-      "quote": "Every vault is \"tended by\" a named agent - and we name them as exactly that",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "Same quantifier contradiction as R-23: 7 vaults have no persona, 5 render `tbd_at_p0`. Shares the single fix (fill or suppress placeholders, or soften the quantifier).",
-      "severity": "S1"
-    },
-    {
-      "id": "R-84",
-      "url": "/compliance",
-      "quote": "Git as second witness: every commit is signed and dated",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "Commits are not cryptographically signed — `git log --show-signature` shows no GPG/SSH signatures and no signing config ships in the image. They are attributed and dated. On a compliance page aimed at auditors, 'signed' asserts a control that does not exist: the worst possible location for a false claim.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-90",
-      "url": "/vaults/Videos.aDNA",
-      "quote": "https://github.com/aDNA-Network/Videos.aDNA",
-      "match_in": "html",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "The only `github_url` in the entire registry, and it 404s publicly. The registry's single outbound code proof-link — the one place a skeptic can click through to code — is dead for every reader. Asserted against raw HTML because the claim is carried by the href, not by visible text.",
-      "severity": "S1"
-    },
-
-    {
       "id": "R-12",
       "url": "/",
-      "quote": "aDNA is an open standard for organizing project knowledge so both humans and AI agents can navigate it",
+      "quote": "aDNA (agentic DNA) is an open standard for organizing a project's files",
       "class": "verified",
-      "why": "The load-bearing definition of the whole site. Spec is public, versioned and MIT; the clone-and-run image is real."
+      "why": "The ADR-048 definition-as-hero lead (ratified DP2; shipped P1.1) — the anti-jargon functional definition, spec public + versioned + MIT, clone-and-run image real. Replaced the Meridian-era 'project knowledge' phrasing."
     },
     {
       "id": "R-24",
@@ -171,6 +88,20 @@
       "quote": "that is honest topology, not missing data",
       "class": "verified",
       "why": "The house style in one clause: an unflattering fact stated plainly. Quote trimmed of its leading count so this row cannot pin live registry data."
+    },
+    {
+      "id": "R-94",
+      "url": "/",
+      "quote": "Language and DNA were co-created by everyone before us. The context that powers AI should be too - built, shared, and governed in the open, for the good of all.",
+      "class": "verified",
+      "why": "The manifesto lyric, demoted INTACT from the hero to the movement band per ADR-048 ('demoted intact to the movement band directly below the fold'). Its silent deletion would violate the ratified package."
+    },
+    {
+      "id": "R-95",
+      "url": "/community",
+      "quote": "registration is approval-gated, and its terms of service, privacy policy, and branding are still being stood up",
+      "class": "verified",
+      "why": "The honest-state disclosure on the community-space link (ADR-054 copy law; link-GO fired by operator ruling 2026-08-17). Probe-verified [D 2026-08-17]: Fluxer bootstrap registration.mode='approval', legal.terms_url/privacy_url null, branding.* null. Exactly the sentence a growth-minded rewrite deletes first."
     }
   ]
 }

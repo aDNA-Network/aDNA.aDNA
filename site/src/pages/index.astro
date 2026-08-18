@@ -68,18 +68,23 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
 
 <BaseLayout
   title="aDNA — the open standard & network for shared context"
-  description="The open standard and network to build, share, and govern the context that powers AI — in the open, for the good of all. Built on the Lattice Protocol."
+  description="aDNA (agentic DNA) is an open standard for organizing a project's files so AI agents — and the people working with them — always know where things live. This site is the standard, its docs, and the vault registry."
   jsonLD={jsonLD}
 >
+  {/* HAUSSMANN P1.1 / ADR-048 — definition-as-hero (candidate A, ratified DP2): the lead defines,
+      the audience sub + NOT-line qualify, and the manifesto lyric demotes INTACT to the movement
+      band directly below the fold. Claim register rows R-13/R-14 resolved 2026-08-17. */}
   <HomeHero
     heroImage={heroImage}
     heroAlt="A pixel-art hero in the Tokyo Night palette: a glowing cyan DNA double-helix rising from a row of small computers and branching at the top into a network of connected nodes — shared inheritance resolving into the aDNA network."
+    audienceSub="For teams working with agentic coding tools on real projects."
+    notLine="Not a product or service — no server, no signup, nothing leaves your machine."
     reframe="Your context is just the notes, docs, and decisions you already keep — now shaped into a graph your agents can navigate, and shared in the open."
     primaryHref="/vaults"
     primaryLabel="Explore the network"
     secondaryHref="/get-started"
     secondaryLabel="Get Started"
-    proofLead="Real public-good work already lives here —"
+    proofLead="Four public-good subnetworks are taking shape here —"
     proofNames={subnetworks.map((s) => s.display_name)}
     proofHref="/about"
     proofLinkLabel="Who's behind aDNA →"
@@ -89,6 +94,16 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
     installOneLiner={installTruth.one_liner}
     showLicenseEyebrow={true}
   />
+
+  {/* The movement band — the manifesto lyric, demoted intact from the hero (ADR-048: "demoted
+      *intact* to the movement band directly below the fold"). The lyric register survives; the
+      fold now belongs to the definition. */}
+  <section class="movement-band">
+    <p class="movement-lyric">
+      Language and DNA were co-created by everyone before us. The context that powers AI should be
+      too — built, shared, and governed in the open, for the good of all.
+    </p>
+  </section>
 
   <!-- 1 · What a context democracy is -->
   <section class="context-democracy">
@@ -102,7 +117,7 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
       {/* Storyweave P3 / M3.2 — the S7 first-scroll N-pillar payoff: the hero sells the feeling,
           §1 pays it off with the "how" as a crisp 4-pillar (the Mastodon "Why?" model). */}
       <ul class="democracy-pillars" role="list">
-        <li><strong>Open</strong><span>MIT-licensed — the spec, the tooling, and the vaults are all public.</span></li>
+        <li><strong>Open</strong><span>MIT-licensed — the spec, the workspace image, and the registry data are public.</span></li>
         <li><strong>Federated</strong><span>Each project keeps its own graph; they connect by citation, not central control.</span></li>
         <li><strong>Co-owned</strong><span>No vendor owns your context — you govern it, in the open.</span></li>
         <li><strong>Agents &amp; humans</strong><span>One graph, legible to your AI and to you at the same time.</span></li>
@@ -110,7 +125,7 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
       <NetworkDiagram />
       <p class="diagram-caption">
         Real aDNA vaults — forges, frameworks, platforms, and public-good archives —
-        federating on the Lattice Protocol.
+        connected by the relationships they declare.
       </p>
     </div>
   </section>
@@ -120,8 +135,8 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
     <div class="section-inner">
       <h2 class="section-title">The living registry</h2>
       <p class="section-subtitle">
-        Every vault is a real, governed context graph — its own persona, its own history,
-        its own place in the network. Here's a slice across {vaultCount} of them.
+        Every vault is a real, governed context graph with its own place in the network —
+        most tended by a named agent. Here's a slice across {vaultCount} of them.
       </p>
       <div class="registry-grid">
         {registryVaults.map((v) => (
@@ -192,7 +207,7 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
   <section class="the-standard">
     <div class="section-inner">
       <h2 class="section-title">The Standard</h2>
-      <p class="section-subtitle">aDNA is an open specification — MIT licensed, community-driven, designed for extension.</p>
+      <p class="section-subtitle">aDNA is an open specification — MIT licensed, open to contribution, designed for extension.</p>
       <div class="standard-meta">
         <span class="meta-tag">{STANDARD_VERSION}</span>
         <span class="meta-tag">MIT License</span>
@@ -212,8 +227,8 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
       <h2 class="section-title">Join the network</h2>
       <p class="section-subtitle">
         The network is open — run a node, share a vault, and help
-        <a href="/reference/governance-model/">govern the standard</a>.
-        Mission-aligned subnetworks already steward real public-good work here, in the open.
+        <a href="/reference/governance-model/">shape the standard</a>.
+        Mission-aligned subnetworks are taking shape around real public-good work.
       </p>
       <ul class="subnetwork-tease">
         {subnetworks.map((s) => (
@@ -240,6 +255,26 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
 </BaseLayout>
 
 <style>
+  /* ——— Movement band (ADR-048): the demoted manifesto lyric, one quiet full-width statement
+     directly below the fold. Reads as the "why", after the hero has answered the "what". ——— */
+  .movement-band {
+    padding: var(--space-10) var(--space-6);
+    background: var(--color-bg-alt);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .movement-lyric {
+    max-width: 46rem;
+    margin: 0 auto;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--color-text);
+    text-wrap: balance;
+  }
+
   /* ——— Shared section styles ——— */
   .section-inner {
     max-width: var(--content-width);

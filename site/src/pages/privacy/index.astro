@@ -7,7 +7,6 @@ import { REPO_HTTPS, PUBLISHER } from '../../data/canonical';
 // is a functional `theme` preference in localStorage, fonts are self-hosted (no Google Fonts), and
 // there are no third-party script/iframe/img hosts → the browser makes zero third-party requests.
 // If any of that changes (e.g. analytics is ever added), this page MUST be updated first.
-const discussionsUrl = `${REPO_HTTPS}/discussions`;
 const issuesUrl = `${REPO_HTTPS}/issues`;
 const vercelPrivacyUrl = 'https://vercel.com/legal/privacy-policy';
 const updated = '2026-07-13';
@@ -73,9 +72,8 @@ const updated = '2026-07-13';
 
     <h2 id="contact">Questions or corrections</h2>
     <p>
-      This is a community, open-source project. If you have a privacy question — or you think
-      something on this page is inaccurate — open a
-      <a href={discussionsUrl} target="_blank" rel="noopener">discussion</a> or an
+      This is an open-source project. If you have a privacy question — or you think
+      something on this page is inaccurate — open an
       <a href={issuesUrl} target="_blank" rel="noopener">issue</a> on the canonical repository and
       a maintainer will follow up in the open.
     </p>

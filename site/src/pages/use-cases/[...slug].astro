@@ -36,5 +36,22 @@ const jsonLD = [
   headings={headings}
   jsonLD={jsonLD}
 >
+  {/* HAUSSMANN P1.1 (hostile-read finding 13): the hub carries the "illustrative scenarios"
+      disclosure but deep links land here without it — every leaf now discloses on-page, so a
+      reader arriving from /compliance or /enterprise (or a search snippet) never mistakes the
+      named personas for real adopters. Mirrors the /adopters anti-claim (claim register R-76). */}
+  <p class="uc-illustrative-note">
+    ℹ Illustrative scenario — a composite archetype, not a real named adopter.
+  </p>
   <Content />
 </DocumentationLayout>
+
+<style>
+  .uc-illustrative-note {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    border-left: 3px solid var(--color-border);
+    padding-left: var(--space-3);
+    margin: 0 0 var(--space-6);
+  }
+</style>

@@ -4,7 +4,7 @@ adr_number: "054"
 title: "Community integration model: prerequisites, the honest-state link, and the human-only line"
 status: proposed
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-08-17
 last_edited_by: agent_rosetta
 campaign_id: campaign_haussmann
 supersedes: ""
@@ -17,6 +17,17 @@ tags: [adr, haussmann, community, flux, d8]
 ## Status
 
 **Proposed** — prerequisites named at genesis (P0.4 refines with Aspasia); the link GO/NO-GO is **DP7** (mission P3.4).
+
+> **Operator ruling — link-GO fired early (deviation record, honesty law).** At the P1.1 session
+> (2026-08-17, in-chat `AskUserQuestion`), the operator directed the /community funnel to route to the
+> aDNA-Network GitHub **and the Fluxer at community.adna.network**, and — presented with the fresh probe
+> (`[D 2026-08-17]`: instance live, `legal.terms_url`/`privacy_url` **null**, `branding.*` **null**, no
+> Aspasia ack) — elected **"Override: link it now"**, overriding clause 1's prerequisites-before-link for
+> the `/community` link only. Residual risk accepted: the site links a surface with no ToS/privacy and no
+> aDNA branding. Mitigations binding on the copy: the link ships in the **honest-state pattern** (what it
+> is, its early state, policies still being stood up), the **human-only** line per aDNALabs ADR-025, and
+> clause 3's copy law in full. Clause 2's ladder is otherwise intact — full first-class integration remains
+> DP7/P3.4 + federation-GA-gated. Aspasia notified via the still-open P0.4 thread at next delivery window.
 
 ## Context
 

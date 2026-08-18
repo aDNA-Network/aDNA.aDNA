@@ -5,7 +5,7 @@
   "subnetworks": [
     {
       "attribution": null,
-      "blurb": "The World Genome Academy builds genomics education and research in the open, under a five-council model — Education, Agriculture, Research, an Indigenous-data veto, and Technology — so the science is stewarded, not enclosed.",
+      "blurb": "The World Genome Academy is building genomics education and research programs — so the science is stewarded, not enclosed.",
       "cite": "who/coordination/coord_2026_05_09_v7_wga.md §1",
       "display_name": "World Genome Academy",
       "ethos_alignment": "Scientific knowledge and education, held in common",
@@ -25,7 +25,7 @@
       "public_url": "https://worldgeno.me",
       "publish_status": "ready",
       "serves": "Genomics education & research",
-      "steward": "Five-council governance + Director",
+      "steward": "Founding stewards · governance being formalized",
       "tagline": "Genomics knowledge as a shared commons"
     },
     {
@@ -50,7 +50,7 @@
       "public_url": null,
       "publish_status": "ready",
       "serves": "Community agentic-literacy & enablement",
-      "steward": "Community-governed",
+      "steward": "Founding-steward today — community governance as it grows",
       "tagline": "Agentic-context literacy, shared"
     },
     {
@@ -80,7 +80,7 @@
     },
     {
       "attribution": "Wilhelm Foundation (Helene & Mikk Cederroth)",
-      "blurb": "Rare Archive is an open-source rare-disease AI project — the diagnosis-acceleration pillar of AI4U — governed by a five-seat steward council, with a canonical home at Wilhelm-Foundation/rare-archive.",
+      "blurb": "Rare Archive is an open-source rare-disease AI project — the diagnosis-acceleration pillar of AI4U — governed under the Wilhelm Foundation, with a canonical home at Wilhelm-Foundation/rare-archive.",
       "cite": "who/coordination/coord_2026_05_09_v7_rarearchive.md §1",
       "display_name": "Rare Archive",
       "ethos_alignment": "Rare-disease AI built in the open",
@@ -100,7 +100,7 @@
       "public_url": "https://github.com/Wilhelm-Foundation/rare-archive",
       "publish_status": "operator_cleared_2026_06_07",
       "serves": "Rare-disease diagnosis acceleration",
-      "steward": "Mnemosyne · five-seat steward council · anchor Wilhelm Foundation",
+      "steward": "Mnemosyne · anchor Wilhelm Foundation",
       "tagline": "Open-source rare-disease AI"
     }
   ]

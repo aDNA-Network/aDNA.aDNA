@@ -5,6 +5,7 @@ import ClosingCTA from '../../components/sections/ClosingCTA.astro';
 import vaultsData from '../../data/vaults.json';
 import { buildWebPageJsonLD } from '../../utils/seo';
 import { classLabel, statusLabel, personaLabel, CLASS_GLOSS } from '../../utils/vaultLabels';
+import verifiedLinks from '../../data/verified_links.json';
 
 export function getStaticPaths() {
   const data = vaultsData as { vaults: any[]; edges: any[] };
@@ -35,7 +36,14 @@ const jsonLD = buildWebPageJsonLD({
 // as a lede. Graph-traceable `vaults.json` fields only — the layout stays intentional from zeta.aDNA (4
 // fields) to a rich vault. Two columns ≥900px (reading column · spec-sheet aside), one column below.
 const showCanonical = vault.vault && vault.vault !== vault.display_name;
-const hasLinks = !!(vault.github_url || vault.docs_site_url);
+// HAUSSMANN P1.1 (R-90): external links render only when probe-verified (verified_links.json) —
+// the registry's one github_url 404s publicly, and a dead outbound proof-link is worse than none.
+// The data itself stays Hestia-owned (pt19); this gate is projection-side.
+const isVerifiedUrl = (u: unknown): u is string =>
+  typeof u === 'string' && (verifiedLinks.verified_urls as string[]).includes(u);
+const githubUrl = isVerifiedUrl(vault.github_url) ? vault.github_url : null;
+const docsSiteUrl = isVerifiedUrl(vault.docs_site_url) ? vault.docs_site_url : null;
+const hasLinks = !!(githubUrl || docsSiteUrl);
 
 // Sparse vaults (many are early/pending with no note) get an honest templated lede built from real fields,
 // so "what is this?" is always answered and the page never reads as unfinished — no invented facts, just a
@@ -86,8 +94,8 @@ const statusTitle = STATUS_GLOSS[statusPub] ? `${statusPub} — ${STATUS_GLOSS[s
           <nav class="vd-links" aria-label="External links">
             <p class="vd-aside-h">Links</p>
             <ul>
-              {vault.github_url && <li><a href={vault.github_url}>GitHub &rarr;</a></li>}
-              {vault.docs_site_url && <li><a href={vault.docs_site_url}>Docs site &rarr;</a></li>}
+              {githubUrl && <li><a href={githubUrl}>GitHub &rarr;</a></li>}
+              {docsSiteUrl && <li><a href={docsSiteUrl}>Docs site &rarr;</a></li>}
             </ul>
           </nav>
         )}

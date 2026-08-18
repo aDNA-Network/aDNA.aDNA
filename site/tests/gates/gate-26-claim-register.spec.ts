@@ -124,11 +124,11 @@ test('G-claim-register: the fixture covers the FALSE set and pairs every FALSE r
   expect(rows.length, 'claim_register.json has no rows').toBeGreaterThan(0);
 
   const falses = rows.filter((r) => r.class === 'FALSE');
-  expect(
-    falses.length,
-    'the B5 register adjudicated 8 FALSE claims (R-14, R-20, R-23, R-46, R-47, R-61, R-84, R-90) — the fixture must carry them all',
-  ).toBeGreaterThanOrEqual(8);
-
+  // P1.1 (2026-08-17) resolved the B5 FALSE set (R-14, R-20, R-23/R-23b, R-46, R-47, R-61, R-84,
+  // R-90) — copy harmonized down or the claimed thing shipped — so ZERO FALSE rows is now the
+  // healthy state. The P0.5-era `>= 8` floor is retired WITH the debt it counted. The invariant
+  // that survives: any future FALSE row must still carry its expiry (checked below), so a newly
+  // discovered false claim can be parked only behind an expected-failure with a named fixer.
   for (const r of falses) {
     expect(
       r.expected_fail_until,

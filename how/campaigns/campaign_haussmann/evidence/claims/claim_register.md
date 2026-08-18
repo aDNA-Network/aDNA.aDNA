@@ -3,7 +3,7 @@ type: evidence
 packet: B5
 campaign: campaign_haussmann
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-08-17
 status: active
 last_edited_by: agent_haussmann_b5
 tags: [claim_register, evidence, vitruvius_d6_d7, h13]
@@ -342,3 +342,38 @@ The verified core is strong: **every load-bearing number on the site is true** (
 
 *B5 complete. Fetched surfaces + parsed text + sweep script preserved in session scratchpad; machine-readable evidence in [`claims_raw.json`](claims_raw.json). Register reconciliation cadence per directive C.4: monthly.*
 
+---
+
+## 6 · P1.1 resolution addendum (2026-08-17, mission `mission_haussmann_p1_1_claim_purge`)
+
+**The FALSE set (§5.2) is resolved — 8/8.** Direction per campaign law (claims move down) + the operator's
+per-row elections (disposition memo `artifacts/p1_1/disposition_memo.md` §4). Gate-26's fixture rows deleted
+same-diff; zero xfail is now the suite's healthy state.
+
+| Row | Resolution | Mechanism |
+|---|---|---|
+| R-14 | **RESOLVED — copy** | Hero swap to ADR-048 candidate-A (definition-as-hero); the protocol appears only in the embargo-safe trust-link ("opening progressively"). gate-23 re-anchored + now guards the FALSE gloss's return. |
+| R-20 | **RESOLVED — copy** | Pillar → "the spec, the tooling, and the registry are all public." |
+| R-23 / R-23b | **RESOLVED — copy** | Quantifier → "with its own place in the network — most tended by a named agent"; "its own history" dropped (no history fields exist). Data side was P1.3. |
+| R-46 | **RESOLVED — copy + venue shipped** | Operator directive: questions/ideas route to the Fluxer at community.adna.network (link-GO fired early by operator override — deviation recorded in ADR-054 §Status; honest-state framing, human-only line). Discussions claim gone; Discussions NOT enabled (operator: issues only). |
+| R-47 | **RESOLVED — shipped** | Staged `.github/ISSUE_TEMPLATE/` (Refit M6) pushed to `aDNA-Network/aDNA` under operator GO (P1.1 O2); `config.yml` edited to drop the Discussions contact link first. |
+| R-61 | **RESOLVED — copy** | "Most vaults are 'tended by' a named agent…" |
+| R-84 | **RESOLVED — copy** (operator: state the truth) | "every commit is attributed and dated". |
+| R-90 | **RESOLVED — projection gate + data memo** | `/vaults/<slug>` renders external links only from probe-verified `src/data/verified_links.json` (empty as of 2026-08-17 — the dead link no longer renders); Hestia memo staged to fix the inventory at source (pt19). |
+
+**The 19 unsupported rows — adjudicated** (each: copy lowered / scoped to design-fact / kept-with-label /
+resolved structurally). R-13 resolved by the hero swap (avoid-class "lives"); R-15 kept as the ONLY protocol
+phrasing; R-18, R-27, R-28, R-30, R-36, R-38, R-48, R-49, R-50, R-51, R-54, R-56, R-62, R-70, R-79, R-93
+lowered per the disposition memo §2 (exact drafts there = exact shipped copy); R-83 kept (disclosed +
+labeled). R-62's surface rebuild (state-of-network) remains P1.2's lane.
+
+**New rows** (P1.1 copy, all `[D]`):
+
+| # | Surface | Claim (quoted) | Class | Evidence | Prov |
+|---|---------|----------------|-------|----------|------|
+| R-94 | / movement band | "Language and DNA were co-created by everyone before us. The context that powers AI should be too — built, shared, and governed in the open, for the good of all." | verified (as intact-demotion) | ADR-048 required the lyric demoted *intact*; fixture row guards deletion | [D] |
+| R-95 | /community | "registration is approval-gated, and its terms of service, privacy policy, and branding are still being stood up" | verified | Live Fluxer bootstrap probe 2026-08-17: `registration.mode: "approval"`, `legal.*` null, `branding.*` null | [D] |
+| R-96 | /community | "A real-time community space is open at community.adna.network" | verified | HTTP 200 on /, /register, /login (2026-08-17) | [D] |
+| R-97 | / hero quals | "For teams working with agentic coding tools on real projects." / "Not a product or service — no server, no signup, nothing leaves your machine." | verified (ADR-048 verbatim) | Ratified package (DP2); the NOT-line inherits R-64's narrow-scope caveat class (the required agent tool sends prompts to its provider) | [D] |
+
+*Register reconciliation cadence unchanged (monthly, directive C.4). Next full re-fetch: P2.6 midscore.*

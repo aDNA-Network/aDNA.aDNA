@@ -60,11 +60,12 @@ import { complianceCards, auditCards, federationCards, integrationCards, followU
     <li><strong>Provenance travels with the artifact:</strong> FAIR envelope (license, creators, keywords, provenance, identifier) is part of the file, not a side document.</li>
   </ul>
   <p>
-    <strong>Scope today:</strong> lattice publish / pull / compose works now within a shared
-    registry — the right primitive for teams inside one organization. Federation <em>across
-    separate organizations and nodes</em> runs on the network's opt-in, local-first membership
-    substrate, which is still being built; the standard builds toward that horizon rather than
-    implying it has already arrived.
+    <strong>Scope today:</strong> lattice publish / pull / compose is specified by the standard
+    and runs on the founding fleet — the right primitive for teams inside one organization. The
+    reference CLI is not yet publicly released. Federation <em>across separate organizations and
+    nodes</em> runs on the network's opt-in, local-first membership substrate, which is still
+    being built; the standard builds toward that horizon rather than implying it has already
+    arrived.
   </p>
   <CardGrid cards={federationCards} columns={2} />
 
@@ -91,7 +92,7 @@ import { complianceCards, auditCards, federationCards, integrationCards, followU
     <tbody>
       <tr><td>Same artifact for every team?</td><td>Yes — four root files at fixed paths, identical across vaults.</td></tr>
       <tr><td>Trace any AI output back to source context and reviewer?</td><td>Yes — session → mission → campaign → context inputs.</td></tr>
-      <tr><td>Share work without three reimplementations?</td><td>Yes — lattice publish / pull / compose with explicit version policy and a 6-point readiness gate.</td></tr>
+      <tr><td>Share work without three reimplementations?</td><td>Specified — lattice publish / pull / compose with explicit version policy and a 6-point readiness gate; reference CLI not yet publicly released.</td></tr>
       <tr><td>Adopt without replacing existing systems?</td><td>Yes — AGENTS.md routes agents at existing wikis / repos / identity stacks.</td></tr>
       <tr><td>Exit cleanly?</td><td>Yes — the vault is plain markdown in git, under an open specification.</td></tr>
     </tbody>

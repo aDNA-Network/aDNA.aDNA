@@ -20,6 +20,13 @@ interface Props {
    * omitted by /commons + /network (zero-diff — additive-optional-prop pattern).
    */
   reframe?: string;
+  /**
+   * HAUSSMANN P1.1 / ADR-048 (definition-as-hero, candidate A): the audience sub + the NOT-line,
+   * two short qualifier beats under the lead. Additive-optional (zero-diff for /network + /commons,
+   * which never pass them); home passes both verbatim from the ratified ADR-048 package.
+   */
+  audienceSub?: string;
+  notLine?: string;
   primaryHref?: string;
   primaryLabel?: string;
   secondaryHref?: string;
@@ -73,8 +80,14 @@ const {
   heroImage,
   heroAlt = "A bird's-eye pixel-art map of cozy vault-buildings linked by glowing cyan and purple conduits — the aDNA network sharing context, AI, and DNA",
   title = 'The aDNA Network',
-  lead = 'Language and DNA were co-created by everyone before us. The context that powers AI should be too — built, shared, and governed in the open, for the good of all. aDNA is an open standard for organizing project knowledge so both humans and AI agents can navigate it — and the open network where that shared context lives, built on the Lattice Protocol (the open coordination protocol underneath).',
+  /* HAUSSMANN P1.1 / ADR-048 §Direction-picked — the ratified definition-as-hero lead, verbatim.
+     The manifesto lyric it replaced demotes INTACT to the movement band directly below the fold
+     (index.astro); the protocol positioning lives only in the embargo-safe trust-link below
+     (never "open protocol" — claim register R-14, resolved 2026-08-17). */
+  lead = "aDNA (agentic DNA) is an open standard for organizing a project's files so AI agents — and the people working with them — always know where things live: three folders, plain Markdown, versioned in git. This site is the standard, its docs, and the registry of workspaces — 'vaults' — that run it.",
   reframe,
+  audienceSub,
+  notLine,
   primaryHref = '/vaults',
   primaryLabel = 'Explore the network',
   secondaryHref = '/reference/specification',
@@ -144,6 +157,14 @@ const heroNodes = graphLed
           </h1>
 
           <p class="hero-lead">{lead}</p>
+
+          {(audienceSub || notLine) && (
+            <p class="hero-quals">
+              {audienceSub && <span class="hero-audience">{audienceSub}</span>}
+              {audienceSub && notLine && ' '}
+              {notLine && <span class="hero-notline">{notLine}</span>}
+            </p>
+          )}
 
           {reframe && <p class="hero-reframe">{reframe}</p>}
 
@@ -253,6 +274,14 @@ const heroNodes = graphLed
       </div>
 
       <p class="hero-lead">{lead}</p>
+
+      {(audienceSub || notLine) && (
+        <p class="hero-quals">
+          {audienceSub && <span class="hero-audience">{audienceSub}</span>}
+          {audienceSub && notLine && ' '}
+          {notLine && <span class="hero-notline">{notLine}</span>}
+        </p>
+      )}
 
       {/* Storyweave J1 (S2): the "you already do X" reframe — the manifesto's second beat.
           A separate element so the lead keeps the gate-23 verbatim phrases intact. */}
@@ -610,6 +639,22 @@ const heroNodes = graphLed
     line-height: 1.6;
   }
 
+  /* ADR-048 qualifier beats (P1.1): audience sub + NOT-line — one compact small-print line under
+     the lead. The audience names who this is for; the NOT-line reads a shade brighter (it carries
+     the "nothing leaves your machine" reassurance). Muted, never competing with the lead. */
+  .hero-quals {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    max-width: 42rem;
+    margin: calc(-1 * var(--space-3)) auto var(--space-6);
+    line-height: 1.6;
+    text-wrap: balance;
+  }
+
+  .hero-quals .hero-notline {
+    color: var(--color-text);
+  }
+
   /* The reframe beat (J1): a touch brighter + medium weight than the muted manifesto lead,
      so it reads as the plain-language "here's what that means for you" line — calm, not loud. */
   .hero-reframe {
@@ -880,6 +925,7 @@ const heroNodes = graphLed
 
   /* Re-anchor the shared copy children to the copy column's left edge (they otherwise center). */
   .hero--graph-led .hero-lead,
+  .hero--graph-led .hero-quals,
   .hero--graph-led .hero-reframe {
     margin-left: 0;
     margin-right: 0;
@@ -1081,12 +1127,14 @@ const heroNodes = graphLed
 
     /* Re-center the shared copy children when stacked. */
     .hero--graph-led .hero-lead,
+    .hero--graph-led .hero-quals,
     .hero--graph-led .hero-reframe,
     .hero--graph-led .hero-proof-names {
       text-align: center;
     }
 
     .hero--graph-led .hero-lead,
+    .hero--graph-led .hero-quals,
     .hero--graph-led .hero-reframe {
       margin-left: auto;
       margin-right: auto;

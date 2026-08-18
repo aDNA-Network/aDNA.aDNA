@@ -4,6 +4,7 @@ import HomeHero from '../components/sections/HomeHero.astro';
 import NetworkDiagram from '../components/sections/NetworkDiagram.astro';
 import { buildWebPageJsonLD } from '../utils/seo';
 import vaultsData from '../data/vaults.json';
+import { STANDARD_VERSION } from '../data/standard';
 // Install commands render from the install-truth fixture (single source; gate-12).
 import installTruth from '../data/install_truth.json';
 import heroNetwork from '../assets/heroes/hero_network.png';
@@ -16,7 +17,7 @@ import heroNetwork from '../assets/heroes/hero_network.png';
 // public-good ethos close (cycle 153; RLP Gap #4). Sparse→Medium→Medium→Dense→Sparse.
 
 const description =
-  'An aDNA computer is one machine carrying many context vaults. See how nodes connect through real, directed relationships — and what stays local versus what you federate.';
+  'An aDNA computer is one machine carrying many context vaults. See how vaults connect through real, directed relationships — and what stays local versus what you federate.';
 
 const jsonLD = buildWebPageJsonLD({
   title: 'The network of aDNA computers',
@@ -55,7 +56,7 @@ const edgeTypes = [
     heroImage={heroNetwork}
     heroAlt="A wide bird's-eye pixel-art map of many small, independently lit settlements scattered across a dark Tokyo-Night ground, a few linked by glowing cyan and purple conduits — aDNA computers, each its own place, sparsely federated."
     title="The network of aDNA computers"
-    lead="An aDNA computer is one machine — laptop, server, or cloud box — carrying many context vaults (self-governing folders of project knowledge) under a single Home.aDNA. Nodes connect through real, directed relationships, and each one decides what stays local and what joins the shared commons."
+    lead="An aDNA computer is one machine — laptop, server, or cloud box — carrying many context vaults (self-governing folders of project knowledge) under a single Home.aDNA. Vaults connect through real, directed relationships, and each node decides what stays local and what it shares."
     primaryHref="/vaults/graph/"
     primaryLabel="See the relationship graph"
     secondaryHref="/vaults/"
@@ -190,7 +191,7 @@ const edgeTypes = [
             <h3>Opt into federation</h3>
             <p>
               Joining the commons is always explicit and reviewable — a change you author and inspect
-              before you push it. What actually crosses the boundary is a curated slice of your
+              before you push it. By design, what crosses the boundary is a curated slice of your
               <code>Home.aDNA</code> registry — which vaults exist and the relationships they declare —
               never their contents.
             </p>
@@ -215,13 +216,13 @@ const edgeTypes = [
       <p class="section-subtitle">
         The network is <a href="/commons/" class="commons-seam" data-astro-prefetch>a commons</a>, not a silo.
         The standard that holds it is openly specified and openly governed &mdash; a named steward, a public
-        process for proposing change, and every decision on the record.
+        process for proposing change, and the load-bearing decisions on the record as public ADRs.
       </p>
       <ul class="gov-signals" aria-label="How the aDNA standard is governed">
         <li class="gov-tag">Founding-Architect stewardship</li>
         <li class="gov-tag">Open spec &middot; MIT</li>
         <li class="gov-tag">Public change process</li>
-        <li class="gov-tag">Quarterly standard cadence</li>
+        <li class="gov-tag">Versioned releases · {STANDARD_VERSION} current</li>
       </ul>
       <div class="gov-cta">
         <a href="/reference/governance-model/" class="btn btn-primary" data-astro-prefetch>Read the governance model &rarr;</a>
