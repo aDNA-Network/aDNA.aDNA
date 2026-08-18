@@ -120,16 +120,23 @@
     {
       "id": "R-100",
       "url": "/canonical-properties",
-      "quote": "If you found aDNA somewhere that is not here, it is not us.",
+      "quote": "Every public property aDNA operates or vouches for is on this list.",
       "class": "verified",
-      "why": "The completeness claim that makes the properties page a defense rather than a list (instrument 7.1: both comparable projects in this category have spawned SEO clone-site swarms). Enforced by the gate-15 G6b set-equality assertions in both directions, so the claim cannot quietly become false."
+      "why": "The completeness claim that makes the properties page a defense rather than a list (instrument 7.1). SCOPED at O3: the original said 'Everything legitimate is on this list', which the page contradicted 40 lines later ('Not every repository under our organization is listed') and which /about contradicted by linking stanley.science. A completeness claim that documents its own exceptions spends credibility to buy nothing. Enforced by the gate-15 G6b set-equality assertions."
     },
     {
       "id": "R-101",
       "url": "/canonical-properties",
-      "quote": "aDNA runs none. There is no aDNA account on any social platform.",
+      "quote": "aDNA runs no social accounts. Any account using the name is not us.",
       "class": "verified",
-      "why": "True today: SocialLinks.astro is imported nowhere and no handle exists in site/src. A stronger clone-site defense than a handle list, because a list only tells a reader what is real while this tells them everything is fake. KNOWN EXPIRY: the day an aDNA account is opened, this row must be updated in the same diff as the copy."
+      "why": "True today: SocialLinks.astro is imported nowhere and no handle exists in site/src. TIGHTENED at O3: the original added 'There is no aDNA account on any social platform' — a universal negative about every platform on earth that we cannot know, a reader cannot check, and the very next sentence assumed the opposite of. KNOWN EXPIRY: the day an aDNA account is opened, this row must be updated in the same diff as the copy."
+    },
+    {
+      "id": "R-111",
+      "url": "/state-of-the-network",
+      "quote": "the person who operates this network also holds a role at the Foundation",
+      "class": "verified",
+      "why": "The related-party disclosure, added at O3 after a hostile read found the page calling the Wilhelm Foundation independent while /about named the operator as Head of AI there. Without it the 'What is not ours' section did credibility work it had not earned, and a reader comparing the two pages would have found the conflict the site itself supplied — which reads as selective disclosure and costs more than the fact it hides. Deleting this sentence restores that defect."
     }
   ]
 }

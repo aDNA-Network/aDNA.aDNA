@@ -36,8 +36,19 @@ export interface CanonicalProperty {
   probed: string;
   /** How it was checked, in the reader's terms. */
   evidence?: string;
-  /** Set where the property is legitimately connected to aDNA but NOT controlled by it. */
-  notOurs?: boolean;
+  /**
+   * Excluded from `Organization.sameAs`: this URL is not an identity OF the aDNA Network
+   * organization. It does NOT mean an independent party operates it — see `ownerNote`.
+   */
+  sameAsExcluded?: boolean;
+  /**
+   * What is actually true about who runs this, in the reader's terms. Rendered instead of a
+   * generic badge: a "not ours" badge on worldgeno.me implied an independent operator, when that
+   * subnetwork's vault runs on the same single computer as everything else. Implying independence
+   * the network has not earned is the borrowed-trust move this campaign exists to delete, so the
+   * display now states the specific relationship rather than a binary.
+   */
+  ownerNote?: string;
 }
 
 /** The day the full property sweep was last run end-to-end. */
@@ -72,14 +83,17 @@ for (const [name, url] of Object.entries({
 /** Rows rendered under "what runs" and in `Organization.sameAs`. */
 export const RESOLVING_PROPERTIES = CANONICAL_PROPERTIES.filter((p) => p.resolves);
 
+/** Properties carrying an explicit ownership note — derived, so prose never types the number. */
+export const OWNER_NOTED_PROPERTIES = CANONICAL_PROPERTIES.filter((p) => p.ownerNote);
+
 /**
  * `Organization.sameAs` — the machine-readable half of the §7.1 defense.
  *
  * `sameAs` asserts IDENTITY: each URL is another web presence *of this same organization*. It is
  * emitted on every page, so it is deliberately much narrower than the page's own list:
  *
- *   - `notOurs` rows are excluded. worldgeno.me belongs to a subnetwork; rare-archive belongs to the
- *     Wilhelm Foundation. Claiming either as an aDNA Network identity would be exactly the
+ *   - `sameAsExcluded` rows are excluded. worldgeno.me belongs to a subnetwork; rare-archive belongs
+ *     to the Wilhelm Foundation. Claiming either as an aDNA Network identity would be exactly the
  *     borrowed-trust move this campaign exists to remove — and a false identity claim in structured
  *     data is worse than one in prose, because machines act on it without reading the caveat.
  *   - **individual repositories are excluded.** `github.com/aDNA-Network` is in the list, and every
@@ -95,7 +109,7 @@ export const RESOLVING_PROPERTIES = CANONICAL_PROPERTIES.filter((p) => p.resolve
 export const PUBLISHER_SAME_AS: string[] = CANONICAL_PROPERTIES.filter(
   (p) =>
     p.resolves &&
-    !p.notOurs &&
+    !p.sameAsExcluded &&
     p.kind !== 'repo' &&
     p.kind !== 'machine-surface' &&
     p.kind !== 'retired' &&

@@ -4,10 +4,9 @@ import ClosingCTA from '../components/sections/ClosingCTA.astro';
 import Callout from '../components/sections/Callout.astro';
 import { buildWebPageJsonLD } from '../utils/seo';
 import subnetworksData from '../data/subnetworks.json';
-// HAUSSMANN P1.2 — derived counts (shared with the home hero + /state-of-the-network so the three
-// surfaces cannot disagree) and the public status label (raw registry enums are gate-27 failures).
+// HAUSSMANN P1.2 — derived counts, shared with the home hero + /state-of-the-network so the three
+// surfaces cannot disagree.
 import { subnetworkCount, subnetworksWithPublicUrl } from '../data/network_state';
-import { statusLabel } from '../utils/vaultLabels';
 
 // Storyweave P1 — the "who's behind this" credibility surface. Answers the O4 skeptic gap
 // (network-of-one / no real humans / democracy-vs-Founding-Architect) with the operator-
@@ -67,7 +66,7 @@ const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? nul
           <h3 class="person-name">Stanley Bishop</h3>
           <p class="person-role">
             Founding Architect, aDNA &middot; Head of AI, Wilhelm Foundation &middot; AI-Scientist in
-            Residence, UCLA Anderson School of Management
+            Residence, UCLA Anderson Venture Accelerator
           </p>
           <p class="person-bio">
             aDNA is stewarded today by one person, who holds decision authority over the standard
@@ -87,8 +86,10 @@ const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? nul
           <p class="person-role">Anchor partner &middot; Helene &amp; Mikk Cederroth</p>
           <p class="person-bio">
             The network's anchor partner carries a real rare- and undiagnosed-disease mission. Their
-            work grounds two of the public-good subnetworks already on aDNA &mdash; Wilhelm AI for
-            the Undiagnosed and the open Rare Archive.
+            work grounds two of the public-good subnetworks on aDNA &mdash; Wilhelm AI for the
+            Undiagnosed and the open Rare Archive. Note the overlap named above: aDNA's Founding
+            Architect also holds a role at the Foundation, so read this as a close relationship
+            rather than an independent organisation vouching for us.
           </p>
           {rareArchive?.public_url && (
             <p class="person-link">
@@ -213,11 +214,13 @@ const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? nul
             {s.public_url ? (
               <p class="proof-check">
                 <a href={s.public_url} target="_blank" rel="noopener">Open it &nearr;</a>
+                {s.id === 'rare_archive' && (
+                  <span class="proof-check-note"> &mdash; one contributor so far, ours.</span>
+                )}
               </p>
             ) : (
               <p class="proof-check proof-check--absent">
-                No public property yet &mdash; the vault record is at
-                {' '}{statusLabel(s.members?.[0]?.status)}.
+                No public site yet &mdash; this subnetwork is still being set up.
               </p>
             )}
           </li>
@@ -534,6 +537,12 @@ const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? nul
   }
 
   .proof-check--absent {
+    color: var(--color-text-muted);
+  }
+
+  /* The caveat rides with the link rather than sitting apart from it: the reader who is about to
+     click is exactly the reader who needs it. */
+  .proof-check-note {
     color: var(--color-text-muted);
   }
 

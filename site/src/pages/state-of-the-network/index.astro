@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Callout from '../../components/sections/Callout.astro';
-import { REPO_HTTPS } from '../../data/canonical';
 import { RESOLVING_PROPERTIES, PROPERTIES_PROBED_AT } from '../../data/canonical_properties';
 import { buildWebPageJsonLD } from '../../utils/seo';
 import {
@@ -31,7 +30,12 @@ import {
 // The zero-verified-URL fact is stated as FIXED PROSE rather than a rendered count, because the grammar
 // has to change when the count stops being zero. Gate-20 pins the underlying value at 0 and goes red the
 // moment it changes — deliberately, so copy and count update in the same diff.
-const issuesUrl = `${REPO_HTTPS}/issues`;
+// The repository THIS SITE is built from — distinct from REPO_HTTPS (the clone-and-run image).
+// A reader checking this page's numbers, or reporting that one is wrong, needs the vault the site
+// and its data files actually live in; sending them to the image would send them somewhere the
+// files are not. Declared as a canonical property, and allowlisted in gate-14 for this page.
+const SITE_REPO = 'https://github.com/aDNA-Network/aDNA.aDNA';
+const issuesUrl = `${SITE_REPO}/issues`;
 const jsonLD = buildWebPageJsonLD({
   title: 'The state of the network — aDNA',
   description:
@@ -49,10 +53,10 @@ const jsonLD = buildWebPageJsonLD({
     <header class="policy-head">
       <h1>The state of the network</h1>
       <p class="policy-lead">
-        This page exists because the honest answer to &ldquo;how big is aDNA?&rdquo; is smaller than
-        the registry looks. {vaultCount} vaults sound like {vaultCount} teams. They are not. Here is
-        what actually runs, who operates it, what is genuinely not ours, and what is only planned
-        &mdash; each with the date it was last checked.
+        The honest answer to &ldquo;how big is aDNA?&rdquo; is smaller than the registry looks.
+        {vaultCount} vaults sound like {vaultCount} teams. They are not. Here is what actually runs,
+        who operates it, what is genuinely not ours, and what is only planned &mdash; each with the
+        date it was last checked.
       </p>
     </header>
 
@@ -75,6 +79,12 @@ const jsonLD = buildWebPageJsonLD({
               <dt>What it is</dt>
               <dd>{p.what}</dd>
             </div>
+            {p.ownerNote && (
+              <div class="state-fact">
+                <dt>Who runs it</dt>
+                <dd>{p.ownerNote}</dd>
+              </div>
+            )}
             <div class="state-fact">
               <dt>Last opened from outside</dt>
               <dd>{p.probed}</dd>
@@ -93,10 +103,16 @@ const jsonLD = buildWebPageJsonLD({
     <h2 id="operator-operated">What is operator-operated</h2>
     <p>
       The registry holds {vaultCount} vaults. <strong>All of them run on one computer, operated by
-      one person</strong> &mdash; the Founding Architect named on
+      one person</strong> &mdash; Stanley Bishop, the Founding Architect named on
       <a href="/about/" data-astro-prefetch>Who&rsquo;s behind aDNA</a>. The graph on the home page is
       a real graph of real, declared relationships. It is not evidence of adoption, and this site will
       not present it as any.
+    </p>
+    <p>
+      That is a real single point of failure, and it is a bounded one. The standard is MIT-licensed,
+      the workspace it lives in is a public git repository, and nothing here runs on a server we
+      control &mdash; a vault is plain Markdown files on your own machine. If this operator stopped
+      tomorrow, every vault would keep working and anyone could fork the standard unchanged.
     </p>
     <p>What the registry records about itself, as regenerated on {registryGeneratedAt}:</p>
     <ul class="state-bullets">
@@ -108,14 +124,14 @@ const jsonLD = buildWebPageJsonLD({
           {s.label} is collapsed by the compiler, which rendered "57genesis, 10pending". */}
       <li>By stage: {statusCounts.map((s) => `${s.count} ${s.label}`).join(', ')}.</li>
       <li>
-        {recordedRepoCount === 1 ? 'One vault records' : `${recordedRepoCount} vaults record`} a code
-        repository at all, and that one does not resolve publicly &mdash; so this site does not link
+        {recordedRepoCount === 1 ? 'Only one vault records' : `Only ${recordedRepoCount} vaults record`}
+        a code repository at all, and it does not resolve publicly &mdash; so this site does not link
         it.
       </li>
       <li>
-        None of them carries an externally verified public URL. The site is built so a URL cannot
-        appear on a vault page until someone has opened it from outside, logged out, and recorded the
-        date.
+        No vault page carries an externally verified public URL. The check is built and running: a
+        URL cannot appear on a vault page until someone has opened it from outside, logged out, and
+        recorded the date. None has passed yet.
       </li>
       <li>
         Most vaults are tended by a named agent. Those are AI personas, not people;
@@ -126,15 +142,18 @@ const jsonLD = buildWebPageJsonLD({
       Of the {subnetworkCount} subnetworks on <a href="/commons/" data-astro-prefetch>the commons</a>,
       {subnetworksWithPublicUrl} have a public property you can open today. Their records were last
       synced on {subnetworksGeneratedAt} &mdash; older than the registry above, and shown rather than
-      hidden.
+      hidden. Those properties are not a second operator: the one live subnetwork site is run from
+      within this same orbit, and its vault is one of the {vaultCount} counted above.
     </p>
 
     <h2 id="not-ours">What is not ours</h2>
-    <p>Three things here belong to someone else, and naming them is the point.</p>
+    <p>These belong to someone else, and naming them is the point.</p>
     <p>
-      <strong>The Wilhelm Foundation</strong> &mdash; an independent rare- and undiagnosed-disease
-      foundation, and aDNA&rsquo;s anchor partner. It is not part of this network&rsquo;s operation;
-      it anchors two of the subnetworks on the commons.
+      <strong>The Wilhelm Foundation</strong> &mdash; a rare- and undiagnosed-disease foundation, and
+      aDNA&rsquo;s anchor partner. It is a separate organisation and no part of this network runs on
+      it. <strong>Related-party disclosure:</strong> the person who operates this network also holds
+      a role at the Foundation, so treat the relationship as a close one, not as an independent
+      third party vouching for us. The Foundation has published no statement about aDNA.
     </p>
     <p>
       <strong>The Rare Archive</strong> &mdash; hosted in the Foundation&rsquo;s own GitHub
@@ -143,9 +162,9 @@ const jsonLD = buildWebPageJsonLD({
       same person who operates this network. We would rather tell you that than let you find it.
     </p>
     <p>
-      <strong>The hosts</strong> &mdash; this site is static files on Vercel, the code is on GitHub,
-      and the fonts are served from this domain. None of them vouches for us.
-      <a href="/privacy/" data-astro-prefetch>What this site collects: nothing.</a>
+      <strong>The hosts</strong> &mdash; this site is static files on Vercel and the code is on
+      GitHub. Neither vouches for us. Fonts are served from this domain, so no third party sees your
+      visit. <a href="/privacy/" data-astro-prefetch>What this site collects: nothing.</a>
     </p>
 
     <h2 id="planned">What is planned</h2>
@@ -157,12 +176,13 @@ const jsonLD = buildWebPageJsonLD({
       <ul>
         <li>
           <strong>A second independent node.</strong> Everything in the registry is on one machine.
-          The federation the standard describes is real, working code &mdash; it has not yet been
-          exercised between two operators.
+          The federation code is written and in the public repository; it has not yet been exercised
+          between two operators, so treat it as untested until it has been.
         </li>
         <li>
-          <strong>Verified external properties.</strong> The gate is built and running; no vault URL
-          passes it today. What is missing is vaults with public homes, not machinery.
+          <strong>Verified external properties.</strong> The check described above is built and
+          running; no vault URL passes it today. What is missing is vaults with public homes, not
+          machinery.
         </li>
         <li>
           <strong>Profiles, follows, and feeds.</strong> Named as unbuilt on
@@ -182,14 +202,36 @@ const jsonLD = buildWebPageJsonLD({
 
     <h2 id="how-to-check">How to check this page</h2>
     <p>
-      Every count above is read at build time from a file in this site&rsquo;s own public repository
-      &mdash; <code>src/data/vaults.json</code> (regenerated {registryGeneratedAt}),
-      <code>src/data/subnetworks.json</code> (synced {subnetworksGeneratedAt}), and
-      <code>src/data/verified_links.json</code>. <strong>No number on this page is typed by
-      hand.</strong> Every property under &ldquo;what runs&rdquo; was opened from outside, logged out,
-      on the date shown beside it. If you check one and find it wrong,
+      Every count above is read at build time from a file in the public repository this site is built
+      from &mdash;
+      <a href={`${SITE_REPO}/blob/main/site/src/data/vaults.json`} target="_blank" rel="noopener"><code>site/src/data/vaults.json</code></a>
+      (regenerated {registryGeneratedAt}),
+      <a href={`${SITE_REPO}/blob/main/site/src/data/subnetworks.json`} target="_blank" rel="noopener"><code>site/src/data/subnetworks.json</code></a>
+      (synced {subnetworksGeneratedAt}), and
+      <a href={`${SITE_REPO}/blob/main/site/src/data/verified_links.json`} target="_blank" rel="noopener"><code>site/src/data/verified_links.json</code></a>.
+      <strong>No number on this page is typed by hand.</strong> Every property under &ldquo;what
+      runs&rdquo; was opened from outside, logged out, on the date shown beside it. If you check one
+      and find it wrong,
       <a href={issuesUrl} target="_blank" rel="noopener">open an issue</a> &mdash; that is a bug in
       this page, not a difference of opinion.
+    </p>
+
+    <h2 id="where-next">Where to go from here</h2>
+    <p>
+      <strong>If this is the answer you were hoping for:</strong> the standard works the same whether
+      the network has {vaultCount} vaults or several thousand &mdash; it is a way to organise files
+      on your own machine, and it does not need anyone else&rsquo;s participation to be useful.
+      <a href="/get-started/" data-astro-prefetch>Clone it and see &rarr;</a>
+    </p>
+    <p>
+      <strong>If you want to be the second independent node:</strong> that is the one thing on the
+      horizon above we cannot build alone.
+      <a href="/community/" data-astro-prefetch>The community space is here &rarr;</a>
+    </p>
+    <p>
+      <a href="/vaults/" data-astro-prefetch>Browse the registry &rarr;</a> &middot;
+      <a href="/canonical-properties/" data-astro-prefetch>Canonical properties &rarr;</a> &middot;
+      <a href="/security/" data-astro-prefetch>Reporting a security issue &rarr;</a>
     </p>
 
     <p class="policy-foot">

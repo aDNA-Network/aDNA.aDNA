@@ -39,9 +39,11 @@ const jsonLD = buildWebPageJsonLD({
     <header class="policy-head">
       <h1>Canonical properties</h1>
       <p class="policy-lead">
-        This page exists so you can tell a real aDNA property from a copy of one.
-        <strong>Everything legitimate is on this list.</strong> If you found aDNA somewhere that is
-        not here, it is not us. Every entry was opened from outside, logged out, on the date shown.
+        So you can tell a real aDNA property from a copy of one.
+        <strong>Every public property aDNA operates or vouches for is on this list.</strong> If you
+        found something calling itself aDNA that is not here and is not linked from a page on this
+        site, treat it as not us. Every domain, organization, and repository below was opened from
+        outside, logged out, on the date shown.
       </p>
     </header>
 
@@ -51,10 +53,11 @@ const jsonLD = buildWebPageJsonLD({
         <li class="prop-row">
           <h3 class="prop-name">
             <a href={p.url} target="_blank" rel="noopener">{p.label}</a>
-            {p.notOurs && <span class="prop-tag">not ours</span>}
+            {p.ownerNote && <span class="prop-tag">who runs it</span>}
           </h3>
           <dl class="prop-facts">
             <div class="prop-fact"><dt>What it is</dt><dd>{p.what}</dd></div>
+            {p.ownerNote && <div class="prop-fact"><dt>Who runs it</dt><dd>{p.ownerNote}</dd></div>}
             <div class="prop-fact"><dt>Checked</dt><dd>{p.probed}{p.evidence ? ` — ${p.evidence}` : ''}</dd></div>
           </dl>
         </li>
@@ -70,6 +73,7 @@ const jsonLD = buildWebPageJsonLD({
           </h3>
           <dl class="prop-facts">
             <div class="prop-fact"><dt>What it is</dt><dd>{p.what}</dd></div>
+            {p.ownerNote && <div class="prop-fact"><dt>Who runs it</dt><dd>{p.ownerNote}</dd></div>}
             <div class="prop-fact"><dt>Checked</dt><dd>{p.probed}{p.evidence ? ` — ${p.evidence}` : ''}</dd></div>
           </dl>
         </li>
@@ -82,24 +86,30 @@ const jsonLD = buildWebPageJsonLD({
         <li class="prop-row">
           <h3 class="prop-name">
             <a href={p.url} target="_blank" rel="noopener">{p.label}</a>
-            {p.notOurs && <span class="prop-tag">not ours</span>}
+            {p.ownerNote && <span class="prop-tag">who runs it</span>}
           </h3>
           <dl class="prop-facts">
             <div class="prop-fact"><dt>What it is</dt><dd>{p.what}</dd></div>
+            {p.ownerNote && <div class="prop-fact"><dt>Who runs it</dt><dd>{p.ownerNote}</dd></div>}
             <div class="prop-fact"><dt>Checked</dt><dd>{p.probed}{p.evidence ? ` — ${p.evidence}` : ''}</dd></div>
           </dl>
         </li>
       ))}
     </ul>
     <p>
-      Not every repository under our organization is listed. One is private and does not resolve
-      publicly, so it is not something you can check &mdash; it is counted, without a link, on
+      Not every repository under our organization is listed. One vault in the registry records a
+      repository URL that does not resolve publicly, so it is not something you can check &mdash; it
+      is counted, without a link, on
       <a href="/state-of-the-network/" data-astro-prefetch>the state of the network</a>. A list of
       things you can trust should only contain things you can reach.
     </p>
 
     <h2 id="machine-surfaces">Machine surfaces</h2>
-    <p>The files this site publishes for agents and readers that are not browsers.</p>
+    <p>
+      The files this site publishes for agents and readers that are not browsers. These are this
+      site's own paths rather than separate properties, so there is no outside to check them from
+      &mdash; open them yourself.
+    </p>
     <ul class="prop-ledger" role="list">
       {machineSurfaces.map((p) => (
         <li class="prop-row">
@@ -113,8 +123,7 @@ const jsonLD = buildWebPageJsonLD({
 
     <h2 id="social">Social accounts</h2>
     <p>
-      <strong>aDNA runs none.</strong> There is no aDNA account on any social platform. Any account
-      using the name is not us.
+      <strong>aDNA runs no social accounts.</strong> Any account using the name is not us.
     </p>
     <p>
       If that changes, it will be listed here first, and this sentence will be the thing that
@@ -139,29 +148,36 @@ const jsonLD = buildWebPageJsonLD({
     </p>
 
     <h2 id="verify">How to verify you are on a real property</h2>
-    <p>Three checks, none of which require taking this page's word for it:</p>
+    <p>One check settles it. The others only corroborate, and we would rather say so than pad the
+      list.</p>
     <ul class="prop-bullets">
-      <li>Every page on this site links back to this one from its footer.</li>
       <li>
-        The site name in the page's own metadata reads <strong>{PUBLISHER}</strong> &mdash; the same
-        name in the structured data and in the copyright line at the bottom of every page.
+        <strong>Look at your address bar.</strong> If it does not read <code>adna.network</code>, you
+        are not on our site. A copy can reproduce every word on this page &mdash; that is what
+        copying is &mdash; but it cannot serve them from our domain. This is the only check that a
+        clone cannot pass.
       </li>
       <li>
-        The structured data on this site declares this domain and the properties above as one
-        organization. A copy can reproduce the words on a page; it cannot make its own domain appear
-        inside ours.
+        Corroboration: every page in this site's navigation links back to this one from its footer,
+        and the site name in the page's metadata and copyright line reads <strong>{PUBLISHER}</strong>.
+      </li>
+      <li>
+        Corroboration: the structured data on every page names this organization, with its home at
+        this domain and its other presences listed. Note that a copy can reproduce that too, so read
+        it as a signal, not as proof.
       </li>
     </ul>
 
     <h2 id="never">What we will never do</h2>
     <p>
       We publish no testimonials &mdash; attributed or otherwise. We will never contact you asking
-      for a key, a token, or a payment. Fabricated quotes are the clone-site signature; a project
-      that uses them has adopted the visual signature of fraud, whatever its intentions.
+      for a key, a token, or a payment. Invented quotes and invented attribution are the clone-site
+      signature; if you see them beside this project's name, you are not on our site.
     </p>
 
     <p class="policy-foot">
-      All properties last checked from outside, logged out, on {PROPERTIES_PROBED_AT}. See also
+      Every domain, organization, and repository above last checked from outside, logged out, on
+      {PROPERTIES_PROBED_AT}. See also
       <a href="/state-of-the-network/" data-astro-prefetch>the state of the network</a> for what
       actually runs and who operates it.
     </p>

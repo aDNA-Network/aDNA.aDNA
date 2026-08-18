@@ -27,11 +27,12 @@
       "url": "https://worldgeno.me",
       "kind": "domain",
       "label": "worldgeno.me",
-      "what": "The World Genome Academy — a subnetwork’s own public site, run by that subnetwork.",
+      "what": "The World Genome Academy's public site. Pre-launch at the last check.",
       "resolves": true,
       "probed": "2026-08-18",
       "evidence": "HTTP 200, logged out",
-      "notOurs": true
+      "ownerNote": "A subnetwork's own public site. Its vault is one of the vaults counted above, on the same computer — this is not a second, independent operator.",
+      "sameAsExcluded": true
     },
     {
       "url": "https://github.com/aDNA-Network",
@@ -77,7 +78,8 @@
       "resolves": true,
       "probed": "2026-08-18",
       "evidence": "HTTP 200, logged out",
-      "notOurs": true
+      "ownerNote": "In the Wilhelm Foundation's own GitHub organization, under their control, not ours.",
+      "sameAsExcluded": true
     },
     {
       "url": "/llms.txt",
@@ -99,7 +101,7 @@
       "url": "/rss.xml",
       "kind": "machine-surface",
       "label": "/rss.xml",
-      "what": "The feed of changes to this site.",
+      "what": "The release feed for this site. One entry so far.",
       "resolves": true,
       "probed": "2026-08-18"
     },
@@ -120,5 +122,6 @@
       "probed": "2026-08-18",
       "evidence": "no DNS response"
     }
-  ]
+  ],
+  "_owner_note": "`sameAsExcluded` means ONLY: this URL is not an identity of the aDNA Network organization, so it must not appear in Organization.sameAs. It does NOT mean an independent party operates it — worldgeno.me is a subnetwork's site whose vault runs on the same single computer as the rest. Display uses `ownerNote`, which says what is actually true per property. Conflating the two produced a 'not ours' badge that implied independence the network has not earned — the exact borrowed-trust move this campaign exists to delete."
 }
