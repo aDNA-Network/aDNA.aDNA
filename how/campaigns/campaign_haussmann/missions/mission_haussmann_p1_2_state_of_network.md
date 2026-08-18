@@ -6,11 +6,11 @@ campaign: campaign_haussmann
 phase: P1
 decade: 1
 owner: stanley
-status: queued
+status: in_progress   # code-complete + verified; awaits the ⛩ operator deploy gate (human_gate: true)
 mission_class: design_excellence
 executor_tier: fable   # the campaign's signature editorial-design move
 token_budget_estimated: "~200–300 kT across 1–2 sessions: surface design + copy + hero proof-of-life re-placement + canonical-properties page + consent round (ADR-016)"
-token_budget_actual:
+token_budget_actual: "~430 kT across 1 session (est. 200–300 kT). Overrun is the adversarial pass: two independent reviews returned 24 + 5 findings and forced 11 claim corrections — the same unscoped-hostile-read class as P1.1, but this time the burn bought the mission its actual result."
 created: 2026-08-16
 last_edited_by: agent_rosetta
 grounded_in: [H5 (S1), H12, "claims #7 ('The proof' unsupported)", "instrument §8.3 (highest-leverage move)", "Berthier items: hero proof-of-life + manifesto reframe", "OWID pattern (dossier)", "anti-pattern 7.1 (canonical-properties)"]
@@ -62,8 +62,31 @@ A hostile reader who checks everything finds the site said it first, plainly, wi
 
 ## Progress
 
-*(at execution)*
+**All five acceptance criteria met; ⛩ deploy gate outstanding.** One session
+(`session_stanley_20260818_125835_haussmann_p1_2_state_of_network`), six commits `462ac2e` → `eff6670`.
+
+| O | Outcome |
+|---|---|
+| **O0** | `artifacts/p1_2/{consent_record,surface_design,copy_draft}.md` — docs only, zero site diff |
+| **O1** | **Satisfied in advance** — the operator ruled all six consent questions in-chat at plan approval, so the gate never halted execution. Ruling recorded verbatim in `consent_record.md`, including the Wilhelm title conflict and the "UCLA Anderson GSB" correction |
+| **O2** | `/state-of-the-network/` + `/canonical-properties/` + the shared `network_state.ts` + home hero re-placement + manifesto reframe + `/about` bands 1 and 4 + the canonical-identity single-source pass |
+| **O3** | axe 0 × 4 surfaces × both themes · 13/13 properties re-probed logged-out · sole-contributor claim re-verified against the GitHub API · R-58 byte-intact · 4/4 new gates red-proven · **two independent reviews → 11 claims corrected** · register 97 → 111 rows |
+
+**Suite 407 → 442, zero xfail.** Claim register: **zero FALSE, zero unsupported**; R-62's structural
+debt — the one §6 explicitly deferred to this mission — **discharged**.
+
+**Not done, by design:** the deploy. `human_gate: true`; nothing shipped to production this session.
+
+**Ranker 3.61 vs the ≥4.0 target** — recorded as not met. Credibility 4.50 and Tone 4.50 validated
+the thesis (zero apology constructions; all personas trusted the project more); Actionability 2.50
+was the miss, and the remediation targets it directly but was not re-scored. Re-rank owed.
 
 ## AAR (SO#5)
 
-*(before completed)*
+Full 5-line AAR in the session record. The finding that generalizes: **the author of a
+checkability claim is structurally the worst auditor of it.** This mission verified every number
+exhaustively and still shipped a verification checklist that verified nothing, a wrong path inside
+the section titled "How to check this page", and a claim its own earlier commit had falsified. Two
+independent reviewers each found the same two defects within minutes. Budget the adversarial pass as
+part of the work — here it changed 11 claims — and note that a page which *invites* verification is
+held to a standard an ordinary page is not. That is the trade this campaign took on deliberately.

@@ -449,3 +449,39 @@ style has the fold.
 
 *Register reconciliation cadence unchanged (monthly, directive C.4). Next full re-fetch: P2.6
 midscore — where R-108's title discrepancy is scheduled for re-check.*
+
+### §7.5 O3 remediation — what two independent reviews found (2026-08-18)
+
+A **hostile cold-read** (fresh agent, scoped to the two new surfaces + the four changed blocks, with
+live link probes) and a **persona ranker** (3 adopters × 6 dimensions + 2 reviewer lenses) ran
+independently at O3. **They converged on the same two S1 defects**, which is the signal worth
+recording: the pages whose thesis is *"check everything we say"* were shipping claims that fail
+precisely when checked.
+
+| # | The claim as shipped | Why it failed | Disposition |
+|---|---|---|---|
+| 1 | *"Three checks, none of which require taking this page's word for it"* | All three were artifacts served by the page being authenticated — a footer link, a metadata string, the page's own structured data. **A clone copies all three.** Check 3 was additionally FALSE: it claimed the structured data lists "the properties above" when `sameAs` deliberately carries two org-level identities. The O2a narrowing was correct; the prose was never re-read against it | **Rewritten** around the address bar — the one check a clone cannot pass — with the other two demoted to corroboration and labelled copyable |
+| 2 | *"Every entry was opened from outside, logged out, on the date shown"* | False for **4 of 13** entries: machine surfaces render no `Checked` row, because a same-origin path has no outside to be checked from | **Scoped** to domains/organizations/repositories |
+| 3 | `src/data/vaults.json` | No such path at repo root — the real one is `site/src/data/…`. On the section titled *"How to check this page"*, at the one step where the reader does work | **Corrected**, hyperlinked to blob URLs, all four probed 200 |
+| 4 | *"open an issue"* | Pointed at the clone-and-run image, not the repository the site and its data live in | **Repointed** |
+| 5 | *"One is private"* | Unevidenced: a logged-out 404 is indistinguishable from deleted or renamed | **Reduced** to the observable claim |
+| 6 | *"There is no aDNA account on any social platform"* | Universal negative about every platform on earth; contradicted by its own next sentence | **Cut** (R-101 re-quoted) |
+| 7 | *"Everything legitimate is on this list"* | Contradicted 40 lines later, and by `/about` linking stanley.science | **Scoped** (R-100 re-quoted) |
+| 8 | *"a place to be shared"* (manifesto) | Promised a submission route that does not exist — no intake form, no documented path, all vaults the operator's own | **Rewritten** |
+| 9 | *"run by that subnetwork"* (worldgeno.me) + the `not ours` badge | Both implied an independent operator; that vault runs on the same single computer. The binary badge was the design error | **Split**: a `sameAsExcluded` flag for machines, a specific `ownerNote` for readers |
+| **10** | **The Wilhelm Foundation filed under "What is not ours" as independent** | **`/about` names the operator as Head of AI at the Foundation.** A reader comparing the two pages finds the conflict *the site itself supplied* — which reads as selective disclosure and costs more than the fact it hides | **Related-party disclosure on both pages** → **R-111** |
+| 11 | `heroGraphCaption="15 connected vaults · 14 relationships"` | A hardcoded literal **two lines from the derived proof sentence, in the same component**, agreeing with the data only by luck — the exact drift class `network_state.ts` was written to kill | **Derived** |
+
+**Ranker: 3.61** against a 4.0 target — but the shape of the miss validated the campaign thesis.
+**Credibility 4.50 · Tone 4.50**: zero apology constructions found, and all three personas trusted
+the project *more* after reading. The failure was **Actionability 2.50** — the pages converted
+skepticism into trust and then dead-ended at the footer. Remedied by answering the bus-factor
+question the disclosure raises (a single point of failure that is *bounded*: MIT-licensed, public
+git, nothing on a server we control, every vault keeps working if the operator stops) and by adding
+real exits.
+
+**The pattern both reviewers named**, worth carrying into P2: the failures clustered as (a) *a second
+party's name doing credibility work the network has not earned* and (b) *verification instructions
+that break when a reader actually follows them*. Both are cheap to fix and expensive to be caught
+on — **because the page invited the check**. A page that asks to be verified is held to a standard
+an ordinary page is not, and that is the trade this campaign accepted deliberately.
