@@ -14,7 +14,7 @@
  * operator-gated; a wrong number here is fixed at the projection, or asked for by memo — never by
  * editing vaults.json.
  */
-import vaultsData from './vaults.json';
+import vaultsData from './vaults';
 import subnetworksData from './subnetworks.json';
 import verifiedLinks from './verified_links.json';
 import { statusLabel } from '../utils/vaultLabels';

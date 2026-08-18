@@ -11,7 +11,7 @@
  * IntersectionObserver-played, so it is fully visible with no JS and instant under
  * prefers-reduced-motion (global tokens.css rule).
  */
-import vaultsData from '../../data/vaults.json';
+import vaultsData, { canonicalVaultSlug } from '../../data/vaults';
 
 const hub = { cx: 320, cy: 190, r: 46 };
 
@@ -24,7 +24,13 @@ const hub = { cx: 320, cy: 190, r: 46 };
 // Remove a vault from vaults.json and its slot drops out — the data-driven proof.
 const vaultBySlug = new Map(vaultsData.vaults.map((v) => [v.vault_slug, v] as const));
 type Geo = { cx: number; cy: number; lx: number; ly: number; anchor: 'start' | 'middle' | 'end' };
-const slot = (slug: string, geo: Geo) => {
+// Slots are addressed by VAULT NAME and resolved through canonicalVaultSlug (HAUSSMANN P2.1 /
+// ADR-051), not by a literal slug. P2.1 canonicalized 24 route slugs and this lookup silently
+// missed on every renamed one — `slot()` returns null on a miss and the `.filter()` below drops
+// it, so four of six nodes vanished with no error, caught only by gate-23's label count. Routing
+// the name through the same function the routes use means a future slug change cannot desync it.
+const slot = (vaultName: string, geo: Geo) => {
+  const slug = canonicalVaultSlug(vaultName);
   const v = vaultBySlug.get(slug);
   return v ? { id: slug, label: v.display_name, ...geo } : null;
 };

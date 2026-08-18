@@ -13,7 +13,7 @@ import { STANDARD_VERSION, ENTITY_TYPE_COUNT, CONFORMANCE_LEVELS, STANDARD_LICEN
 // Proof-of-life leads the hero stat strip (Storyweave J3): the registry size is
 // the site's most compelling number, so it sits first — sourced from vaults.json
 // (never hardcoded; gate-20 claim-trace: vault-count → vaults.json vault_count).
-import vaultsData from './vaults.json' with { type: 'json' };
+import vaultsData from './vaults';
 
 export interface HomeStep {
   number: string;

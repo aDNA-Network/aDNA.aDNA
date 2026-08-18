@@ -68,7 +68,7 @@ const routes = [
   { name: 'Compliance page', path: '/compliance/' },
   { name: 'Security page', path: '/security/' },       // Meridian M9 — DP1 item 13 (new deploy route)
   // generated vault details beyond the gate-4 Harness sample (incl. a slugified-id record)
-  { name: 'Vault detail: III.aDNA', path: '/vaults/III.aDNA/' },
+  { name: 'Vault detail: III.aDNA', path: '/vaults/iii/' },
   { name: 'Vault detail: adnalabs (slug form)', path: '/vaults/adnalabs/' },
 ];
 

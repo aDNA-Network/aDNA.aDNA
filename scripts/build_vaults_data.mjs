@@ -73,6 +73,10 @@ if (fs.existsSync(VAULT_CARDS_DIR)) {
   }
 }
 
+// HAUSSMANN P2.1 / ADR-051 — the canonical vault route slug: lowercase, `.aDNA`
+// suffix dropped, anything outside [a-z0-9_-] folded to `_`. Idempotent, so it is
+// safe to apply to a value that is already canonical. Mirrored byte-for-byte by
+// `canonicalVaultSlug()` in site/src/data/vaults.ts; gate-30 asserts the two agree.
 function slugOf(name) {
   if (typeof name !== 'string') return null;
   return name.toLowerCase().replace(/\.adna$/, '').replace(/[^a-z0-9_-]/g, '_');
@@ -165,7 +169,7 @@ function projectVault(invVault) {
   if (MINIMAL_CARD_VAULTS.has(slug)) {
     return {
       vault: slug,
-      vault_slug: card.vault_slug || slugOf(slug),
+      vault_slug: slugOf(card.vault_slug || slug),
       display_name: card.display_name || invVault.display_name || slug.replace(/\.aDNA$/, ''),
       full_name: null,
       tagline: null,
@@ -199,7 +203,7 @@ function projectVault(invVault) {
   return {
     // Identity (always from inventory; overlay from card if present)
     vault: slug,
-    vault_slug: card.vault_slug || slugOf(slug),
+    vault_slug: slugOf(card.vault_slug || slug),
     display_name: card.display_name || invVault.display_name || slug.replace(/\.aDNA$/, ''),
     full_name: card.full_name || null,
     tagline: card.tagline || null,

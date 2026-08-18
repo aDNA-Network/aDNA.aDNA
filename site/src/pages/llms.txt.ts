@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import installTruth from '../data/install_truth.json';
 import { STANDARD_VERSION, ENTITY_TYPE_COUNT, CONFORMANCE_LEVELS, STANDARD_LICENSE } from '../data/standard';
 import { REPO_HTTPS, PUBLISHER } from '../data/canonical';
-import vaultsData from '../data/vaults.json';
+import vaultsData from '../data/vaults';
 
 /**
  * H-3 (D3 agentic-readiness): /llms.txt — a concise, agent-readable index of the site,

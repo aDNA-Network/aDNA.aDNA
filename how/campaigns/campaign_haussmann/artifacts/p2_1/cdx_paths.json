@@ -1,0 +1,137 @@
+{
+ "/": [
+  "adna.dev",
+  "adna.network"
+ ],
+ "/about-adapt": [
+  "adna.network"
+ ],
+ "/assets/css/style.css": [
+  "adna.dev"
+ ],
+ "/assets/img/apple-touch-icon.png": [
+  "adna.dev"
+ ],
+ "/assets/img/bg.jpg": [
+  "adna.dev"
+ ],
+ "/assets/img/fav.jpeg": [
+  "adna.dev"
+ ],
+ "/assets/img/favicon.png": [
+  "adna.dev"
+ ],
+ "/assets/img/portfolio/dashboard.png": [
+  "adna.dev"
+ ],
+ "/assets/img/portfolio/travel.png": [
+  "adna.dev"
+ ],
+ "/assets/js/main.js": [
+  "adna.dev"
+ ],
+ "/assets/vendor/bootstrap-icons/bootstrap-icons.css": [
+  "adna.dev"
+ ],
+ "/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff?856008caa5eb66df68595e734e59580d": [
+  "adna.dev"
+ ],
+ "/assets/vendor/bootstrap/css/bootstrap.min.css": [
+  "adna.dev"
+ ],
+ "/assets/vendor/bootstrap/js/bootstrap.bundle.min.js": [
+  "adna.dev"
+ ],
+ "/assets/vendor/boxicons/css/boxicons.min.css": [
+  "adna.dev"
+ ],
+ "/assets/vendor/boxicons/fonts/boxicons.eot": [
+  "adna.dev"
+ ],
+ "/assets/vendor/boxicons/fonts/boxicons.woff2": [
+  "adna.dev"
+ ],
+ "/assets/vendor/glightbox/css/glightbox.min.css": [
+  "adna.dev"
+ ],
+ "/assets/vendor/glightbox/js/glightbox.min.js": [
+  "adna.dev"
+ ],
+ "/assets/vendor/isotope-layout/isotope.pkgd.min.js": [
+  "adna.dev"
+ ],
+ "/assets/vendor/purecounter/purecounter.js": [
+  "adna.dev"
+ ],
+ "/assets/vendor/remixicon/remixicon.css": [
+  "adna.dev"
+ ],
+ "/assets/vendor/remixicon/remixicon.svg?t=1590207869815": [
+  "adna.dev"
+ ],
+ "/assets/vendor/swiper/swiper-bundle.min.css": [
+  "adna.dev"
+ ],
+ "/assets/vendor/swiper/swiper-bundle.min.js": [
+  "adna.dev"
+ ],
+ "/assets/vendor/waypoints/noframework.waypoints.js": [
+  "adna.dev"
+ ],
+ "/blog": [
+  "adna.network"
+ ],
+ "/blog-feed.xml": [
+  "adna.network"
+ ],
+ "/blog/article-4": [
+  "adna.network"
+ ],
+ "/blog/article-5": [
+  "adna.network"
+ ],
+ "/blog/design-a-stunning-blog": [
+  "adna.network"
+ ],
+ "/blog/grow-your-blog-community": [
+  "adna.network"
+ ],
+ "/blog/manage-your-blog-from-your-live-site": [
+  "adna.network"
+ ],
+ "/favicon.ico": [
+  "adna.dev",
+  "adna.network"
+ ],
+ "/feed/": [
+  "adna.network"
+ ],
+ "/post/article-4": [
+  "adna.network"
+ ],
+ "/post/article-5": [
+  "adna.network"
+ ],
+ "/post/comment-opinion-article-published-in-evolution-letters": [
+  "adna.network"
+ ],
+ "/post/design-a-stunning-blog": [
+  "adna.network"
+ ],
+ "/post/grow-your-blog-community": [
+  "adna.network"
+ ],
+ "/post/manage-your-blog-from-your-live-site": [
+  "adna.network"
+ ],
+ "/robots.txt": [
+  "adna.dev",
+  "adna.network"
+ ],
+ "/seminars": [
+  "adna.network"
+ ],
+ "/the-team": [
+  "adna.network"
+ ]
+}

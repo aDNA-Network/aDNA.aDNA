@@ -99,6 +99,61 @@ export default defineConfig({
     // Refit M3 / DP4 (2026-07-23): /org-context-graphs was a true orphan (0 inbound links,
     // "front end waiting to be built") — retired; its content lives on across the /vaults registry.
     '/org-context-graphs': '/vaults',
+
+    // --- HAUSSMANN P2.1 / ADR-051: the two redirects above were HALF-BROKEN in production ---
+    // Probed live 2026-08-18: `/org-context-graphs` and `/patterns/dual-audience` each 301 as
+    // intended, but `/org-context-graphs/` and `/patterns/dual-audience/` both returned **404**.
+    // Astro emits `^/org-context-graphs$` — an exact match the trailing-slash form misses, and
+    // trailing-slash is the shape every canonical URL on this site uses. The F-CHM-207 "no silent
+    // redirects" fix laid a redirect in the one shape its own site does not emit. Astro's config
+    // cannot express the slash form (it strips it), so the repair is inject_redirects.mjs.
+
+    // --- HAUSSMANN P2.1 / ADR-051: vault-slug canonicalization (24 legacy mixed-case slugs) ---
+    // Sources are listed WITHOUT the trailing slash because Astro normalises the key — a
+    // '/path/' entry collapses to the identical '^/path$' route, so writing both just emits a
+    // duplicate. The trailing-slash form is covered instead by scripts/inject_redirects.mjs,
+    // which widens every emitted redirect's `$` to `/?$` at deploy time. Generated from
+    // vaults.json, not typed.
+    '/vaults/Astro.aDNA': '/vaults/astro/',
+    '/vaults/CakeHealth.aDNA': '/vaults/cakehealth/',
+    '/vaults/ComfyUI.aDNA': '/vaults/comfyui/',
+    '/vaults/ContextCommons.aDNA': '/vaults/contextcommons/',
+    '/vaults/Harness.aDNA': '/vaults/harness/',
+    '/vaults/Home.aDNA': '/vaults/home/',
+    '/vaults/III.aDNA': '/vaults/iii/',
+    '/vaults/LAVentureGraph.aDNA': '/vaults/laventuregraph/',
+    '/vaults/Molecules.aDNA': '/vaults/molecules/',
+    '/vaults/Network.aDNA': '/vaults/network/',
+    '/vaults/Obsidian.aDNA': '/vaults/obsidian/',
+    '/vaults/Operations.aDNA': '/vaults/operations/',
+    '/vaults/Oration.aDNA': '/vaults/oration/',
+    '/vaults/RareArchive.aDNA': '/vaults/rarearchive/',
+    '/vaults/RemoteControl.aDNA': '/vaults/remotecontrol/',
+    '/vaults/Spacemacs.aDNA': '/vaults/spacemacs/',
+    '/vaults/SuperLeague.aDNA': '/vaults/superleague/',
+    '/vaults/TappProtocol.aDNA': '/vaults/tappprotocol/',
+    '/vaults/VAAS.aDNA': '/vaults/vaas/',
+    '/vaults/Videos.aDNA': '/vaults/videos/',
+    '/vaults/WilhelmAI.aDNA': '/vaults/wilhelmai/',
+    '/vaults/aDNA.aDNA': '/vaults/adna/',
+    '/vaults/wga.aDNA': '/vaults/wga/',
+    '/vaults/zeta.aDNA': '/vaults/zeta/',
+
+    // --- HAUSSMANN P2.1: B3 stale `.md` reference targets that HAVE a real destination ---
+    // The /reference/* pages were ported from a standalone `.md` document set and kept its
+    // relative cross-links, so `[aDNA Standard](adna_standard.md)` resolves to
+    // `/reference/adna_standard.md` and 404s (29 broken link instances, 11 unique targets).
+    // Redirected here because these are plausibly copied externally and a 301 is free.
+    // The remaining 6 targets — projects_folder_pattern.md, adna_bridge_patterns.md,
+    // template_bare/, /patterns/content-as-code, how/skills/AGENTS.md, /README.md — have NO
+    // destination on this site, so no honest redirect exists for them. Inventing one would
+    // point a reader at a page that does not answer their link. They are content fixes, and
+    // they belong to P2.3 (docs freshness: the 29 broken links + the CI link gate).
+    '/reference/adna_standard.md': '/reference/specification/',
+    '/reference/01_adna_standard.md': '/reference/specification/',
+    '/reference/adna_design.md': '/reference/design-rationale/',
+    '/reference/migration_guide.md': '/reference/migration-guide/',
+    '/reference/agent_first_guide.md': '/reference/agent-first-guide/',
   },
   integrations: [mdx(), sitemap(), stripHtmlComments()],
   prefetch: {

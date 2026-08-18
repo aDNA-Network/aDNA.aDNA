@@ -6,7 +6,7 @@ import RegistryCard from '../components/sections/RegistryCard.astro';
 import { buildWebSiteJsonLD } from '../utils/seo';
 import { steps, stats, audiences } from '../data/home';
 import { STANDARD_VERSION, ENTITY_TYPE_COUNT } from '../data/standard';
-import vaultsData from '../data/vaults.json';
+import vaultsData, { canonicalVaultSlug } from '../data/vaults';
 import { classLabel as sharedClassLabel } from '../utils/vaultLabels';
 import subnetworksData from '../data/subnetworks.json';
 // HAUSSMANN P1.2 — the derived network facts the hero, /about and /state-of-the-network all state.
@@ -36,7 +36,16 @@ const REGISTRY_SLUGS = [
 const bySlug: Record<string, any> = Object.fromEntries(
   (vaultsData.vaults as any[]).map((v) => [v.vault_slug, v])
 );
-const registryVaults = REGISTRY_SLUGS.map((s) => bySlug[s]).filter(Boolean);
+// Curated names are resolved through canonicalVaultSlug (HAUSSMANN P2.1 / ADR-051) so this
+// slice survives a slug change. It also FAILS THE BUILD on a miss rather than filtering it
+// away: the previous `.filter(Boolean)` meant a name that stopped resolving silently shrank
+// the homepage's registry preview, which is precisely how P2.1's canonicalization would have
+// dropped six of these eight cards with no error anywhere.
+const registryVaults = REGISTRY_SLUGS.map((s) => {
+  const v = bySlug[canonicalVaultSlug(s)];
+  if (!v) throw new Error(`index.astro REGISTRY_SLUGS: "${s}" resolves to no vault in the registry`);
+  return v;
+});
 const vaultCount = vaultsData.vault_count;
 
 // Section 5 — the featured public-good subnetworks, teased data-driven from the

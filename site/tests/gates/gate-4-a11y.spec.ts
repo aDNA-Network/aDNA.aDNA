@@ -20,7 +20,7 @@ const pages = [
   { name: '404 page', path: '/404.html' },
   // E4 aDNANetwork surfaces (cycle 150): the federation topology + a vault detail with relationships
   { name: 'Network graph', path: '/vaults/graph/' },
-  { name: 'Vault detail (with relationships)', path: '/vaults/Harness.aDNA/' },
+  { name: 'Vault detail (with relationships)', path: '/vaults/harness/' },
   // E4 aDNANetwork (cycle 151): the /network narrative + node-onboarding surface
   { name: 'Network page', path: '/network' },
   // E5 Public-Good Commons (cycle 160): the subnetwork showcase surface

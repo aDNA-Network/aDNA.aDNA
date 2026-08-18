@@ -48,6 +48,14 @@ node scripts/inject_headers.mjs .
 echo "== inject installer routes (installer_routes.json -> config.json) =="
 node scripts/inject_installer_headers.mjs .
 
+# Redirect widening (HAUSSMANN P2.1). Astro's redirect routes are anchored `…$`, which matches
+# the bare path only — verified live 2026-08-18, both shipped redirects 404'd on their
+# trailing-slash form, the shape every canonical URL on this site actually uses. This rewrites
+# each to `…/?$` so one route answers both. Carries no redirect list of its own: it widens
+# whatever astro.config.mjs emitted, so there is no second place to keep in sync.
+echo "== widen redirects to both slash forms (config.json) =="
+node scripts/inject_redirects.mjs .
+
 echo "== verify injection =="
 node -e "
 const c=require('fs').readFileSync('.vercel/output/config.json','utf8');

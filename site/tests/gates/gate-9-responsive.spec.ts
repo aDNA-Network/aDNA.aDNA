@@ -28,7 +28,7 @@ const pages = [
   // (the 40-node + orphan-shelf Mermaid SVG must scale inside its container, not overflow
   // the viewport); the vault detail carries the typed relationship block.
   { name: 'Graph page', path: '/vaults/graph' },
-  { name: 'Vault detail', path: '/vaults/Harness.aDNA' },
+  { name: 'Vault detail', path: '/vaults/harness' },
   // E5 Public-Good Commons (cycle 160): the subnetwork showcase (2-col grid → 1-col at ≤760px)
   { name: 'Commons page', path: '/commons' },
   // E5 c162 (context-graph experience): the registry gained an image-led HomeHero + stats
