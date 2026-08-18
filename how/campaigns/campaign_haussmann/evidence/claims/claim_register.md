@@ -377,3 +377,75 @@ labeled). R-62's surface rebuild (state-of-network) remains P1.2's lane.
 | R-97 | / hero quals | "For teams working with agentic coding tools on real projects." / "Not a product or service — no server, no signup, nothing leaves your machine." | verified (ADR-048 verbatim) | Ratified package (DP2); the NOT-line inherits R-64's narrow-scope caveat class (the required agent tool sends prompts to its provider) | [D] |
 
 *Register reconciliation cadence unchanged (monthly, directive C.4). Next full re-fetch: P2.6 midscore.*
+
+---
+
+## §7 · P1.2 addendum — the state-of-the-network + canonical-properties surfaces (2026-08-18)
+
+Mission `mission_haussmann_p1_2_state_of_network`. Adds two surfaces and rewrites four blocks. Every
+sentence below was authored against the ground truth in the same commit that shipped it, and every
+external URL was re-probed logged-out at O3 on 2026-08-18. Copy drafts with per-block rationale:
+`artifacts/p1_2/copy_draft.md`. Consent basis: `artifacts/p1_2/consent_record.md`.
+
+### §7.1 The R-62 debt, discharged
+
+**R-62 is CLOSED.** §6 recorded that P1.1 lowered the "The proof" copy as a stopgap while *"R-62's
+surface rebuild (state-of-network) remains P1.2's lane."* That rebuild has now landed in two places:
+
+- `/about` band 4 is retitled **"The public-good work, and what you can check"**, its counts derive
+  from the fixture, and **every row carries a check-state** — an "Open it ↗" link where a public
+  property exists, and *"No public property yet — the vault record is at pending."* where it does
+  not. The band no longer asserts that the work is real; it shows which parts of it a reader can
+  open. `[D]`
+- `/state-of-the-network/` gives the same fact its own dated surface.
+
+The family R-18 / R-28 / R-48 / R-49 that shared R-62's stopgap now resolves the same way: the home
+hero no longer leads with the subnetwork roll-call at all (see R-18 below).
+
+### §7.2 New rows
+
+| # | Surface | Claim (quoted) | Class | Evidence / ground truth | Sev | Prov |
+|---|---------|----------------|-------|------------------------|-----|------|
+| **R-98** | /state-of-the-network | "All of them run on one computer, operated by one person" | **verified** | 74/74 vaults on the operator's node; `Home.aDNA`/`Network.aDNA` private by design; no second node publicly evidenced. **Resolves H5 (S1) and inverts anti-pattern 7.3** — the distinction is now made on the page, in the reader's line of sight. Gate-26 fixture row. | — | [D] |
+| **R-99** | /state-of-the-network | "No number on this page is typed by hand." | **verified** | Structurally true via `src/data/network_state.ts`; machine-checked by the gate-20 manifest rows added in the same commit. The coupling is what makes it a guarantee rather than a promise. | — | [D] |
+| **R-100** | /canonical-properties | "If you found aDNA somewhere that is not here, it is not us." | **verified** | Completeness claim, enforced bidirectionally by the new gate-15 **G6b** set-equality assertions (nothing undeclared can appear; nothing declared can vanish). The §7.1 clone-site defense. | — | [D] |
+| **R-101** | /canonical-properties | "aDNA runs none. There is no aDNA account on any social platform." | **verified** | `SocialLinks.astro` is imported nowhere; no handle exists anywhere in `site/src`. **Known expiry** — the day an account is opened, this row and the copy must change in the same diff. | — | [D] |
+| R-102 | /state-of-the-network | "It is not evidence of adoption, and this site will not present it as any." | verified | A forward commitment, not a description — it is what converts the disclosure from a confession into a discipline. Nothing on the site presents the graph as adoption. | — | [D] |
+| R-103 | /state-of-the-network | "every commit in it came from the same person who operates this network" *(of `Wilhelm-Foundation/rare-archive`)* | **verified** | GitHub contributors API, re-checked 2026-08-18: exactly one contributor, `ScienceStanley`, 3 contributions. The single highest-value sentence in the mission — the most damaging fact a hostile reader could surface about the network's flagship public artifact, surfaced first and dated. | — | [D] |
+| R-104 | /state-of-the-network | "One vault records a code repository at all, and that one does not resolve publicly — so this site does not link it." | verified | Exactly 1 of 74 carries `github_url`; probed 404 logged-out 2026-08-18. The non-linking is enforced by P1.1's `verified_links` projection gate, not by discipline. | — | [D] |
+| R-105 | /state-of-the-network | "Their records were last synced on 2026-07-06 — older than the registry above, and shown rather than hidden." | verified | `subnetworks.json` `generated_at`. Deliberately surfaced; the lag is an honest signal about pace. Pinned by a gate-20 row so it cannot be cosmetically refreshed without the copy following. | — | [D] |
+| R-106 | /canonical-properties | "An early domain for this project, abandoned before launch. It does not resolve." *(adna.dev)* | verified | Probed 2026-08-18: no DNS response. Named rather than dropped — silence would leave a lapsed domain free to be re-registered against us with no way for a reader to tell. Gate-15 G6b asserts it is named but **never linked**. | — | [D] |
+| R-107 | /canonical-properties | "Not every repository under our organization is listed. One is private and does not resolve publicly" | verified | `aDNA-Network/Videos.aDNA`, 404 logged-out. Disclosed as a count without an anchor, so R-90's defect (an outbound proof-link a reader cannot follow) is not re-created on a page whose subject is trustworthy links. | — | [D] |
+| R-108 | /about | "Stanley Bishop — Founding Architect, aDNA · Head of AI, Wilhelm Foundation · AI-Scientist in Residence, UCLA Anderson School of Management" | verified | Name + UCLA role public on stanley.science `[D]`. Wilhelm title ratified `WilhelmAI.aDNA/STATE.md:16` `[R]` and shipped under the operator's recorded §1.1 ruling **with a known discrepancy**: stanley.science still reads "Lead AI Architect". Alignment memo staged (`coord_2026_08_18_rosetta_to_sciencestanley_wilhelmai_title_alignment.md`). **Re-check at P2.6.** | S4 | [D][R] |
+| R-109 | / movement band | "You already do the first half of this. The README that explains the project…" | verified | A design claim about the standard, not a network-behaviour claim — no tense exposure. Lands Berthier's "you already do X" item at the manifesto, where the memo placed it. Sibling paragraph; **R-94's lyric byte-untouched**. | — | [D] |
+| **R-18** *(rewritten)* | / hero proof | "74 vaults — every one of them on a single computer, ours. 15 are joined by 14 declared relationships; the rest stand alone." | **verified** | Replaces the borrowed-trust subnetwork roll-call. Counts derived from `network_state.ts`. **This is §7.3's "line of sight" requirement discharged**: the fold now states the operator-federation fact instead of leaning on four subnetworks whose vaults are all pending. | — | [D] |
+| R-110 | / registry band | "All of them run on one computer — the state of the network says whose, and what that means." | verified | Same fact as R-98, placed at its second point of exposure, because §7.3 wants the distinction made where the number is made. | — | [D] |
+
+### §7.3 Rows re-verified, unchanged
+
+- **R-58** (`/about`, "aDNA is stewarded today by one person…") — **byte-intact**, confirmed against
+  the built output at O3. This mission rewrote the card around it, which is precisely the scenario
+  its fixture `why` was written to catch.
+- **R-94** (the movement-band lyric) — byte-intact; the new reframe is a sibling paragraph.
+- **R-59** (the Cederroths) — unchanged, now with a *recorded* consent basis rather than an assumed
+  one (`consent_record.md` §2). Directive §7's halt condition is **satisfied, not tripped**.
+- **R-15** ("opening progressively") — reused verbatim in the horizon block; the forbidden gloss
+  ("the open coordination protocol") appears nowhere on either new page.
+
+### §7.4 Counts
+
+| Class | §5.1 | P1.1 (§6) | **After P1.2** |
+|---|---|---|---|
+| verified | 52 | 56 | **69** |
+| verifiable | 14 | 14 | 14 |
+| unsupported | 19 | 0 *(adjudicated)* | 0 |
+| FALSE (S1) | 8 | 0 *(resolved)* | **0** |
+| **Total adjudicated** | 93 | 97 | **110** |
+
+**Zero FALSE, zero unsupported, and the last structural debt (R-62) discharged.** The register's own
+verdict at §5.4 was that *"the site already knows how to tell the truth about its scale"* and that
+the defects were where the marketing stratum diverged from that house style. As of P1.2 the house
+style has the fold.
+
+*Register reconciliation cadence unchanged (monthly, directive C.4). Next full re-fetch: P2.6
+midscore — where R-108's title discrepancy is scheduled for re-check.*

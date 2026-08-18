@@ -55,6 +55,31 @@ is satisfied before O0 begins. Full record: `artifacts/p1_2/consent_record.md`.
 ## Activity log
 
 - **2026-08-18 12:58** — Session opened. Tasks 1–5 created (O0 · O2a · O2b · O2c · O3).
+- **13:02 — O0 closed** (`462ac2e`). Three artifacts: `consent_record.md` (six operator rulings,
+  verbatim), `surface_design.md`, `copy_draft.md` (register row per block). Counts re-derived on
+  disk at execution time per convention 12.
+- **13:12 — O2a closed** (`099e557`). Canonical identity single-source. 13 dead-domain fallbacks →
+  `SITE_ORIGIN`; `PUBLISHER_URL` off the GitHub repo; `og:site_name` reconciled; `sameAs` created;
+  publisher attached to the two builders that emitted none. **Unplanned correctness call:** first cut
+  put every repo in `sameAs`, which turned gate-14 red across all 203 pages — narrowed to org-level
+  identities (see AAR finding 2). gate-14's stale "(404)" rationale corrected, rule kept.
+- **13:29 — O2b+O2c closed** (`9e0fd06`), landed together: the two pages cross-reference, so
+  splitting would have shipped a knowingly-dead internal link. Both surfaces, the shared
+  `network_state.ts`, home hero re-placement + manifesto reframe + registry disclosure, `/about`
+  band 1 and band 4, 8 gate specs, 2 fixtures, both llms endpoints. Suite **407 → 441 green**.
+- **13:26 — 4/4 red proofs** before commit: undeclared clone link caught · declared repo vanishing
+  caught · retired domain rendered as a link caught · property list drifting from install truth
+  throws at build.
+- **13:40 — O3 evidence.** T0 captures 4 surfaces × 6 viewports × dark+light (`--axe` run twice,
+  once per theme, since it covers `themes[0]` only): **axe 0 on all four, both themes**, zero console
+  errors. 320px reflow verified by eye. **Every external property re-probed logged-out: 13/13 match
+  what the page claims.** The `rare-archive` sole-contributor claim independently re-verified against
+  the GitHub contributors API (one contributor, `ScienceStanley`). **R-58 confirmed byte-intact** in
+  the built output. Claim register §7 addendum appended (13 new rows; adjudicated 97 → 110; zero
+  FALSE, zero unsupported). Title-alignment memo staged.
+- **Concurrency note `[D]`:** a parallel lane committed `ab841c2` into this same tree mid-session
+  (the known shared-tree hazard). No divergence — 8 ahead, 0 behind origin. Explicit-path staging
+  used throughout; never `git add -A`.
 
 ## SITREP
 
