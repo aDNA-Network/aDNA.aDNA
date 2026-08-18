@@ -2,7 +2,7 @@
 type: governance
 scope: workspace
 created: 2026-05-25
-updated: 2026-08-17   # + §2.5/§3.5/§4.5/§6.9 three-body amendment, §9 ratification block PROPOSED (Chambellan M-A6; Rosetta edit — authored_by unchanged)
+updated: 2026-08-17   # S199: Hestia co-sign amendments folded (§2.5 normative/epistemic + vacuity · §3.5 as-executed corrections 33/112 + 100-of-112 + kinds-carried-by-no-row · §4.5 rule 6 binds the delivering lane); §9 block RATIFIED S198 + S199 amendment row. Was: three-body amendment PROPOSED (Chambellan M-A6)
 last_edited_by: agent_rosetta
 status: active
 canonical_at: /Users/stanley/aDNA/aDNA.aDNA/what/doctrine/doctrine_credential_handling.md
@@ -113,6 +113,8 @@ Four rules follow, and they are the whole point of naming the bodies separately:
 1. **Discovery always starts at the broker** (§1), whichever engine holds the value. An access engine that can hand you a value you cannot find in the register is a **finding**, not a shortcut — the register's coverage claim is false the moment that is true.
 2. **The IdP is not a credential store.** A Keycloak client is a broker row of `storage.kind: keycloak_client` recording client id, realm, and audience/scope — **never a client-secret value**. If a flow genuinely needs a long-lived client secret, that secret is a broker-held credential in its own right, with its own row and its own rotation trigger. "It's in Keycloak" is a locus, not an exemption.
 3. **No body is authoritative about another body's population.** A clean report from any one of the three covers **its own reach only**. This is the same rule `doctrine_secret_scanning.md` states for scanners (reach ≠ efficacy) and the same shape as the parity-instrument law there — a check is sound only over the population it actually enumerates.
+   *Rules 1 and 3 do not conflict, and the distinction is load-bearing (Hestia co-sign, 2026-08-17): rule 1 is **normative** — the register owns **identity** across all three bodies, and a gap is a finding against the register; rule 3 is **epistemic** — no body may report clean over a population it does not enumerate. The register is authoritative over identity, never over any engine's enumeration. A reader who resolves the apparent tension by weakening rule 1 has weakened the valuable one.*
+   *Coverage condition, recorded honestly: as of ratification both non-broker bodies are **empty** (0 rows carry either new `storage.kind`; DP-1/DP-13 undeployed), so rule 1's cross-body coverage duty is currently vacuous. It becomes real the day an engine stands up — **the reconciliation is a scheduled act named in each engine's stand-up runbook**, not a standing claim asserted from an empty population.*
 4. **The consumer interface does not change.** §3.3's invariant holds across all three bodies: env-var on the hot path, a cold path for a TTY. Consumer code and the §7 routing snippet **never branch on which body ultimately held the value** — that is precisely what makes a later custody move (§ `doctrine_safe_mutations.md` §8) survivable.
 
 ## §3 Storage — where credentials live, canonically
@@ -172,10 +174,10 @@ SSH keys are brokered in **two named tiers**; each key's tier is recorded in its
 
 ### §3.5 Storage kinds and scope under the three-body model (ADR-011 — WIRED, Chambellan M-A6 amendment)
 
-`Home.aDNA` **ADR-011** (`what/decisions/adr_011_register_schema_extensions_one_ruling.md` — ratified by the operator at the S197 chat gate, 2026-08-17; folding WI-20 + WI-21 + DP-8 + FU-2 into one ruling per the DP-8 recommendation) extends the **register schema of record**. This is **wired fact, not intent** — executed the same day at Home commit `5172655`, register at **100 rows**, multiset-parity **PASS in both directions**:
+`Home.aDNA` **ADR-011** (`what/decisions/adr_011_register_schema_extensions_one_ruling.md` — ratified by the operator at the S197 chat gate, 2026-08-17; folding WI-20 + WI-21 + DP-8 + FU-2 into one ruling per the DP-8 recommendation) extends the **register schema of record**. The **schema is wired fact** — executed the same day at Home commit `5172655`, the **credentials register at 100 rows (C01–C100)** (the file carries **112 enumerated entries** including 12 adjacents), multiset-parity **PASS in both directions**:
 
-- `storage.kind` gains two values: **`bitwarden_scoped`** and **`keycloak_client`**
-- every row gains a **`scope:`** field
+- `storage.kind` gains two values: **`bitwarden_scoped`** and **`keycloak_client`** — both **declared and currently carried by no row**; they bind the day DP-1/DP-13 stand up (as-executed correction, Hestia co-sign 2026-08-17)
+- every row **may carry** a **`scope:`** field — **unset is honest-absent and never inferred** (ADR-011 Part 3 as ruled; **33/112 populated at ratification**)
 
 The §3 tier table above is **unchanged and still correct** for what it describes (where a credential sits at rest, by tier). These two kinds are an **extension**, not a replacement — a credential's tier says what class of thing it is; its `storage.kind` says which body currently holds it, and the two now vary independently:
 
@@ -184,7 +186,7 @@ The §3 tier table above is **unchanged and still correct** for what it describe
 | `bitwarden_scoped` | Access engine (Vaultwarden per DP-1) | The collection/scope the value is reachable under — the blast radius of a single engine compromise | Value rotates in the engine; the broker row is unchanged (the row is identity, not value) |
 | `keycloak_client` | IdP (Aeacus) | Realm · client id · **token audience** — what an issued assertion is good *for* | Client lifecycle, not value rotation: the client is disabled/recreated, and every audience it was good for is affected at once |
 
-**Why `scope:` is load-bearing and not bookkeeping.** Every count derived from this register is a blast-radius estimate, and a row without scope silently reports the wrong one — the register's own history proves it twice: a broker row that understated `admin:org` **understated blast radius** (charter D-51), and a row claiming coverage for a file that does not exist **inflated every count derived from it** (D-50). `scope:` is where that failure is now forced into the open.
+**Why `scope:` is load-bearing and not bookkeeping.** Every count derived from this register is a blast-radius estimate, and a row without scope silently reports the wrong one — the register's own history proves it twice: a broker row that understated `admin:org` **understated blast radius** (charter D-51), and a row claiming coverage for a file that does not exist **inflated every count derived from it** (D-50). `scope:` is where that failure is now forced into the open. Because 70% of rows are honest-absent at ratification, **a blast radius derived from this register today is a lower bound, not an estimate** — any radius computation must state the populated-coverage fraction alongside its answer.
 
 **Trigger for a successor doctrine — named, not left implicit** (per the HQ naming rule, `aDNALabs.aDNA` ADR-014 §7: name the split-out trigger rather than pre-splitting). A standalone `doctrine_identity_federation.md` is chartered **when, and only when, IdP rules stop fitting as §-amendments here** — concretely, when *any* of: (a) realm/client lifecycle needs its own multi-step ceremony that is not a case of §4, (b) token audience/scoping rules need to bind consumers who are not credential consumers at all, or (c) `Keycloak.aDNA` (DP-13) has an operating surface whose rules would be duplicated rather than referenced here. Until then, the IdP is a **body in this doctrine**, not a doctrine of its own. See the M-A6 verdict recorded at §9.
 
@@ -294,7 +296,7 @@ After any new credential lands, append a row to `Home.aDNA/what/inventory/invent
 3. **Scoped and expiring *before* delivery, never after.** Per DP-6's alpha class — scoped, expiring, single-purpose. A credential that has to be narrowed after it is in a second person's hands has already been delivered wide.
 4. **Mitigations travel with the value, in the same message**: store-it-now, confirm-receipt, and *the sender deletes the delivery message*. A mitigation sent separately is a mitigation the recipient may never read.
 5. **A custodian of record is named, and it is not the delivery channel.** The 1P item stays custodian; the channel is transport, and **transport is assumed retained** (§6.1's "anything that helps reconstruct"). Variant B's whole risk is exactly this: an inline value in a retained messaging system.
-6. **The grant gets a register row before delivery, not after.** A live credential issued to a second person with no row in the register of record is the highest-priority defect the M-A2 reconciliation surfaced (charter D-46 note, row **E1** — that very token). Delivery without a row means the credential's existence depends on someone remembering it.
+6. **The delivering lane obtains a broker row id from `Home.aDNA` *before* the value leaves the custodian, and cites that id in the delivery record. A delivery with no row id is not authorized.** Minting the row is a routine Home lease act and requires no ruling — the register already carries rows that precede the *value* itself (C74, `not_yet_provisioned`), so a row preceding a delivery is an established shape. The duty-holder matters (Hestia co-sign, 2026-08-17): E1's defect was not that the broker refused a row — the delivering lane delivered on 08-16 and the row was minted on 08-17, because the broker is not present at the delivery. A rule that binds the broker binds the one party who cannot breach it. A live credential issued to a second person with no row in the register of record is the highest-priority defect the M-A2 reconciliation surfaced (charter D-46 note, row **E1** — that very token).
 
 **Recorded honestly, not smoothed**: variant B is the *less* safe of the two in the abstract, and it was chosen by operator direction with compensations (in-message mitigations, revoke/expiry/scope warnings retained, operator-deletes-the-message). Doctrine records the ruling and its compensations rather than retconning a preference; a future delivery picks A by default and must **state a reason** to pick B.
 
@@ -517,6 +519,7 @@ This is the **discipline**, not a schema. The *federated wire-format* for a cros
 | **ratified-by** | stanley |
 | **date** | 2026-08-17 |
 | **status** | **ratified** *(⛩ S198 chat gate, HQ fable desk — ruled "ratify 1–3, hold safe-mutations for Hestia's co-sign")* |
+| **amendment** | **S199 (2026-08-17, operator-ruled at the block-4 fold)**: Hestia's co-sign review contradicted three as-executed facts in the ratified §3.5 text and amended §2.5/§4.5 — folded with provenance: §2.5 normative/epistemic clause + vacuity condition · §3.5 corrections (**33/112 `scope:` honest-absent**, "credentials register at 100 rows (C01–C100)" with 112 file entries, two new kinds **schema-wired, carried by no row**) · §4.5 rule 6 **binds the delivering lane**. Amendment record: `Home.aDNA/who/coordination/coord_2026_08_17_hestia_to_rosetta_block4_cosign_reply.md` (Home `b41db8b`; figures desk-verified by second route) |
 
 **What the operator is signing, in plain terms**: that the three-body split is *law* rather than description — a value reachable outside the register becomes a finding; a Keycloak client is a row, never a place secrets hide; a value handed to a second person needs a register row **before** it is sent; and a doctrine that names a file path owes that path a date.
 

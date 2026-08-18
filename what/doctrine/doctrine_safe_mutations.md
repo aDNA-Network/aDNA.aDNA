@@ -1,7 +1,7 @@
 ---
 type: doctrine
 created: 2026-06-14
-updated: 2026-08-17   # + §8 custody moves, §9 vendor-default rule, §9.1 DP-10 item-2 window PROPOSED (90d), §10 ratification block PROPOSED (Chambellan M-A6)
+updated: 2026-08-17   # S199: §10 RATIFIED (stanley, co-sign hestia-with-amendments) — §9 figures per-store-corrected + step 1a + F-M-A6-2, §9.1 90d over ALLOW-LIST scope + 4th carve-out. Was: §8/§9/§9.1/§10 PROPOSED (Chambellan M-A6, S198)
 status: active
 last_edited_by: agent_rosetta
 tags: [doctrine, safe]
@@ -80,7 +80,9 @@ Two failure modes bound it, and they pull in opposite directions:
 > **Any retention, deletion, expiry, or sync behavior found RUNNING but UNCHOSEN is recorded, owned, and
 > pinned explicitly — even when the default is the value you would have picked.**
 
-**The instance that earned it** (charter **D-56**): a hard retention cliff was already deleting transcripts — **100 `.jsonl` at 30 days, ZERO at 31+** — with **no `cleanupPeriodDays` set anywhere** in the settings cascade. Nobody chose it, nobody owned it, and it was doing real deletion on a real credential-bearing surface. Worse, it was **asymmetric**: it covered `*.jsonl` only, while **5,269 non-`.jsonl` files beside it had no retention at all and reached 199 days** — including **2,066 persisted tool-result `.txt`**, `file-history/` (453 MB, 49 days), `plans/` (74 days), and `history.jsonl`.
+**The instance that earned it** (charter **D-56**): a hard retention cliff was already deleting transcripts — **100 `.jsonl` at 30 days, ZERO at 31+** — with **no `cleanupPeriodDays` set anywhere** in the settings cascade. Nobody chose it, nobody owned it, and it was doing real deletion on a real credential-bearing surface. Worse, it was **asymmetric**: it covered `*.jsonl` only, while the non-`.jsonl` population beside it carried no *chosen* retention — **23,541 files across `~/.claude/`, tail reaching 439.9 days** (measured 2026-08-17, regular files only, symlinks excluded per the D-55 declaration rule). Within `projects/` alone: **5,180 non-`.jsonl` files including 2,053 persisted tool-result `.txt`, reaching 199.3 days**; `plans/` reaches 74.3 days. *(Correction, Hestia co-sign 2026-08-17: this paragraph originally presented the `projects/`-scoped figures — 5,269 / 2,066 / 199 / "`file-history/` 49 days" — as whole-of-`~/.claude/` facts. The measurement was generalized without re-measuring: the campaign's signature error class, inside the doctrine that names it.)*
+
+**A second instance found inside the first's evidence base** (Hestia **F-M-A6-2**, confirmed by two independent routes 2026-08-17): `file-history/` — the largest "unreaped" store by file count, **10,873 files / 450.9 MB** — has a **hard cliff at ~34 days: 215 files between 30–33.6d, ZERO beyond**. The store §9's original text cited as "453 MB, 49 days, no retention at all" is already being reaped by something nobody chose, nobody owns, and nobody has pinned — a second D-56 defect, invisible because the aggregate tail (199d, itself `projects/`-scoped) hid the per-store cliff beneath it.
 
 The defect was never "there is no retention policy." It was **an unowned policy doing real work** — bounding exposure and destroying audit evidence *on the same clock*, invisibly, in a direction nobody had reasoned about.
 
@@ -89,49 +91,59 @@ The defect was never "there is no retention policy." It was **an unowned policy 
 **The rule in four steps** — apply at any audit, onboarding, or system survey:
 
 1. **Look for behavior, not configuration.** Ask what the system *is doing*, then find the setting; a survey that only reads config files will never find a default that was never written down. (D-56 was found by measuring file ages, not by reading settings.)
+   1a. **Apply the rule per store, not per aggregate** (F-M-A6-2's lesson). A single maximum over a mixed population proves only that *some* store is unretained; it cannot show that any store *is*. An aggregate tail hides every cliff beneath it — measure the distribution of each store you intend to make a claim about.
 2. **Record it with its measurement** — the observed behavior, the date, and the method. "30-day cliff, measured by file-age histogram 2026-08-17" survives; "retention is 30 days" does not.
 3. **Name an owner.** An unowned behavior has no one to notice when it changes.
 4. **Pin it explicitly**, even to its current value — then the next change is a diff instead of a discovery.
 
 **Wired instance** (verified 2026-08-17, Home `f5e4501`): `cleanupPeriodDays: 30` is now **pinned explicitly** in `~/.claude/settings.json` per the operator's DP-10 item 1 ruling. The vendor default and the pinned value agree today; that is the point.
 
-### §9.1 — Retention window for unreaped transcript-adjacent stores (DP-10 item 2) — **PROPOSED**
+### §9.1 — Retention window for unreaped transcript-adjacent stores (DP-10 item 2) — **RATIFIED as amended**
 
-DP-10 item 2 was ruled **(b)** at S197: the unreaped half is **left in place, excluded from backup, and scanned now**, with **the window to be proposed at M-A6**. This is that proposal. It lands `proposed`; the number is the operator's.
+DP-10 item 2 was ruled **(b)** at S197: the unreaped half is **left in place, excluded from backup, and scanned now**, with **the window to be proposed at M-A6**. This is that proposal, **amended at the broker's co-sign** (Hestia, 2026-08-17 — the reply memo is the amendment record) and signed at S199.
 
-**Proposed window: 90 days**, measured by file mtime, applied to the non-`.jsonl` contents of `~/.claude/` (persisted tool-result `.txt`, `file-history/`, `plans/`, and siblings).
+**Window: 90 days**, measured by file mtime, applied to an **enumerated allow-list of stores** under `~/.claude/` — never to "everything except `.jsonl`":
+
+- **In scope (the allow-list — a store not named here is out of scope by default):** `projects/` (non-`.jsonl`) · `plans/` · `file-history/` · `paste-cache/` · `shell-snapshots/`.
+- **Explicitly out:** `skills/`, `plugins/`, `local/` (installed software) · `tasks/`, `sessions/`, `jobs/`, `session-env/`, `ide/`, `daemon/`, `telemetry/`, `backups/` (operational state) · **all root-level files** (live configuration + rollback assets).
+
+**Why allow-list, not deny-list** (the co-sign's load-bearing correction): the original deny-list scope — "the non-`.jsonl` contents of `~/.claude/`" — quietly enrolled ~18,000 unmeasured files, and a 90-day mtime reaper run on 2026-08-17 would have deleted **155 files including `settings.local.json` (147 days old, valid JSON, carrying the live `permissions` allowlist)**. **mtime-age means opposite things in different stores**: in an append-only working store, high age is a staleness proxy; in a configuration store, high age is a *correctness* proxy — a config file that is right does not get rewritten. The asymmetry forces the inversion: a store wrongly *included* is destroyed; a store wrongly *excluded* merely keeps residue one cycle longer.
 
 **Reasoning:**
 
 - **Symmetry with the 30-day `.jsonl` cliff is the tempting answer and the wrong one.** The two halves do different jobs. `.jsonl` is conversation replay; the unreaped half contains **live working material** — `file-history/` is an undo/restore surface and `plans/` holds work the operator returns to. A 30-day cliff there destroys things still in use, and D-56's own lesson is that unexamined deletion is a defect even when the direction is "safer".
-- **90 sits above every measured useful lifetime, with margin.** The longest-lived working store measured is `plans/` at **74 days**; `file-history/` at **49**. 90 does not cut into live material *today*, while cutting the observed **199-day** tail by more than half.
+- **90 sits above every measured useful lifetime — with a thinner margin than first claimed, stated honestly.** The binding constraint is `plans/` at **74.3 days** (the "49-day `file-history/`" second line of defence was wrong — that store is already cliffed at ~34d, F-M-A6-2), so the true margin is **~16 days on a single store whose purpose is work the operator returns to**. 90 survives the broker's own histogram on the allow-list population (n=16,944): **>90d reaps 135 files, 0.80%, all genuine `projects/` residue**. If a second line of defence is ever wanted, carve out `plans/` — do not raise the number.
 - **The security argument is the load-bearing one: residue should not outlive the credentials it may carry.** The scoped/expiring machine-credential class this campaign standardizes is **90-day** (`doctrine_key_rotation.md` §Scoped + expiring). A 90-day residue window means a leaked partner token's residue expires no later than the token itself. **One number for both** is also one number the operator has to remember, and doctrine that needs two adjacent-but-different numbers gets one of them wrong eventually.
 - **Weakest point, stated**: a shorter window bounds exposure more, and D-58 shows key material transiting these stores *now*. The counter is that the unreaped half's 21 findings are all lower-specificity `generic-api-key` — the **17 high-specificity findings were all in the reaped half** — so the marginal exposure reduction from 90 → 30 is smaller than it looks, at a real cost in destroyed working material and audit evidence.
 
-**Three carve-outs, which are part of the proposal, not caveats on it:**
+**Four carve-outs, which are part of the ruling, not caveats on it:**
 
 1. **PRESERVE—LEGAL overrides globally.** Anything under a `preserve_in_place` posture (charter **D-59**, S47) is **exempt**; a retention window never becomes an instrument of spoliation.
 2. **`history.jsonl` is out of scope for a file-age reaper.** It is a single append-only file per user — age-based deletion would remove the whole history at once. It is **named here so it is not silently mishandled**; truncation policy for it is a separate, unproposed question.
 3. **Anything under an open incident or investigation is pinned until that closes.** The D-58 lesson exactly: *the residue self-destructs; the un-rotated credential's risk does not.* Evidence must outlive its own investigation (`doctrine_key_rotation.md` §Rotation Procedure step 0).
+4. **Rollback assets are never reaped by age** (Hestia's addition at co-sign — `settings.json.bak.*` and kin). A rollback asset's value *is* its age; the allow-list already excludes root-level files, and this carve-out makes the principle survive any future allow-list edit.
 
 ⚠ **What signing this costs, stated up front**: unlike item 1 — which *pinned a knob the vendor already provides* — **there is no vendor setting for this half.** A 90-day window means someone builds and schedules a reaper, with its own dry-run, its own carve-out enforcement, and its own positive control. **M-A6 builds nothing**; this section is the number a future implementation card takes as input.
 
 ## §10 — Ratification record (§7.7) — Chambellan M-A6 amendment
 
-> Authored by an agent; **owned by the operator**. `proposed` until signed; not in force before signature.
-> ⚠ **§9.1 carries a number the operator has not yet chosen** — it is a proposal with reasoning, and signing
-> it authorizes the window, not an implementation. Nothing was built by this amendment.
+> Authored by an agent; **owned by the operator**. Held `proposed` at S198 (blocks 1–3 signed, this file — block 4 —
+> held for the broker's co-sign). Co-signed by Hestia **WITH AMENDMENTS** 2026-08-17 (dispatched lane, Home `b41db8b`;
+> reply memo `Home.aDNA/who/coordination/coord_2026_08_17_hestia_to_rosetta_block4_cosign_reply.md` — the amendment
+> record, with every figure re-derived by her own route and desk-verified by second route). The five amendments were
+> folded into the text above at the S199 chat gate before signature. Signing authorizes the window, not an
+> implementation — the reaper is a separate card (`aDNALabs.aDNA` Chambellan M-A9) with its own operator ceremony.
 
 | Field | Value |
 |---|---|
-| **decision** | Adopt the Chambellan M-A6 amendments to this doctrine: **§8 Custody moves** (the P5 class — the gap and the ghost; the five-step move; prove the retirement, not just the write) · **§9 The vendor-default rule** (D-56 — behavior found running but unchosen is recorded, owned, and pinned explicitly) · **§9.1 Retention window for unreaped transcript-adjacent stores** — **PROPOSED at 90 days**, mtime-based, with three carve-outs (PRESERVE—LEGAL exempt · `history.jsonl` out of scope · open-incident pin) |
-| **ratified-by** | *(operator — unsigned)* |
-| **date** | *(unsigned)* |
-| **status** | **proposed** |
+| **decision** | Adopt the Chambellan M-A6 amendments to this doctrine **as amended at Hestia's co-sign**: **§8 Custody moves** (the P5 class — the gap and the ghost; the five-step move; prove the retirement, not just the write) · **§9 The vendor-default rule** (D-56 — behavior found running but unchosen is recorded, owned, and pinned explicitly; figures corrected to per-store scope; step 1a per-store rule; F-M-A6-2 second instance recorded) · **§9.1 Retention window** — **90 days, mtime-based, over the enumerated allow-list** (`projects/` non-`.jsonl` · `plans/` · `file-history/` · `paste-cache/` · `shell-snapshots/`), with **four carve-outs** (PRESERVE—LEGAL · `history.jsonl` · open-incident pin · rollback assets) |
+| **ratified-by** | stanley (operator) · co-signed hestia (broker of record, with amendments — folded before signature) |
+| **date** | 2026-08-17 (S199 chat gate) |
+| **status** | **ratified** |
 
-**What the operator is signing, in plain terms**: that moving a credential between stores is only finished when the *old* path is proven dead; that a behavior nobody chose but which is running gets written down and pinned even when you agree with it; and — separately and explicitly — **the 90-day number in §9.1**, which discharges DP-10 item 2's deferred window.
+**What the operator signed, in plain terms**: that moving a credential between stores is only finished when the *old* path is proven dead; that a behavior nobody chose but which is running gets written down and pinned even when you agree with it; and — separately and explicitly — **the 90-day number in §9.1 over the allow-list scope**, which discharges DP-10 item 2's deferred window and **commissions the reaper card** (M-A9), whose execution remains gated on its own operator ceremony.
 
-**Findings discharged here**: **D-56** (vendor default) · **DP-10 item 2** (window proposed) · **D-36** / **D-50** (both directions of the ghost) · **D-59** (PRESERVE—LEGAL carve-out).
+**Findings discharged here**: **D-56** (vendor default) · **DP-10 item 2** (window ruled) · **D-36** / **D-50** (both directions of the ghost) · **D-59** (PRESERVE—LEGAL carve-out). **Findings raised at co-sign**: **F-M-A6-1** (expiry key spelled two ways in the register — Home's to canonicalize; doctrine deliberately names no key until she does) · **F-M-A6-2** (`file-history/`'s unowned ~34d cliff — a second D-56 instance, owner Home, pin owed).
 
 ## §7 — Inheritance
 
