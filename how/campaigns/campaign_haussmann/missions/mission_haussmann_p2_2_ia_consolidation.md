@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P2
 decade: 1
 owner: stanley
-status: queued
+status: active       # 2026-08-18 — O0+O1 done (ADR-049 options, comps, ranker A 4.03 / C 4.17, both >=4.0); HALTED at the DP5 operator pick. O2/O3 = session 2.
 mission_class: design_excellence
 executor_tier: fable
 token_budget_estimated: "~250–350 kT across 2 sessions: ADR-049 options + design spike (comps) + ranker + implementation + redirects (ADR-016)"
@@ -62,7 +62,41 @@ A first-time visitor, a returning implementer, and a crawler each navigate one c
 
 ## Progress
 
-*(at execution)*
+**Session 1 of 2 — 2026-08-18** (`session_stanley_20260818_164055_haussmann_p2_1_deploy_p2_2_open`).
+O0 + O1 complete; **halted at ⛩ DP5** as the mission's own gate requires. No site source changed.
+
+| Obj | State | Evidence |
+|---|---|---|
+| O0 | ✅ | `what/decisions/adr_049_ia_model_audience_disposition.md` — three options authored with exact redirect counts derived from the route inventory `[D]`; **B cut as dominated**, with the reasoning recorded rather than the option silently dropped |
+| O1 | ✅ | `artifacts/p2_2/ia_comps.html` (Current / A / C, dark+light, headless-verified) + `artifacts/p2_2/ranker_record.md` |
+| O2 | ⛔ blocked on DP5 | — |
+| O3 | ⛔ blocked on DP5 | — |
+
+**Ranker: A = 4.03 · C = 4.17 · both ≥4.0 (gate met).** The 0.14 spread does **not** separate them —
+one persona moving one cell by one point — and the record says so rather than declaring a winner.
+The two are near-perfect mirrors: A scores Relevance 4.4 / Actionability 3.4; C scores Actionability
+4.8 / Relevance 3.4.
+
+**Declared conflict**: the agent that authored the comps also scored them, against campaign
+convention 4 (*the builder never self-certifies*) and P1.2's sharper form of it. The score is
+therefore logged as a `[D-syn]` **pre-screen**, not a verdict, and an independent re-rank was offered
+to the operator at the halt.
+
+**Findings carried to O2** (found while mapping, not fixed mid-spike):
+
+1. `site/tests/gates/gate-7-interaction.spec.ts:68` asserts against `/adopters/solo-developer` —
+   **a route that has never existed** (the real one is `/adopters/adopter-solo-developer`).
+   `page.goto` does not throw on a 404, so the assertion has been **passing vacuously** for its
+   whole life.
+2. Two built routes are nav-orphaned: `/learn/concepts/dual-audience/` (13 concept docs, 12 listed)
+   and `/learn/tutorials/exchange-adoption-path/` (10 guides, 9 listed).
+3. `question-test` renders at three routes (tutorial · pattern · glossary); `dual-audience` has three
+   near-namesakes. Consolidation candidates for the ADR to rule on.
+4. The audience link set exists in **four** places and the personas are nav-listed **twice** — any
+   option that does not collapse these merely moves the duplication.
+
+**Charter corrected**: the P2 row read `nav ≤8` against this mission's `≤7` and ADR-049's own
+decision space `≤7`. Operator ruled ≤7; the row now matches.
 
 ## AAR (SO#5)
 

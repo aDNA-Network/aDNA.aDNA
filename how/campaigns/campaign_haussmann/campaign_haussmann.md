@@ -169,7 +169,7 @@ shipped the /community link ahead of ADR-054's prerequisites**), `VERCEL_TOKEN_A
 | Mission | Title | Sessions | Tier | Deps |
 |---|---|---|---|---|
 | P2.1 | URL normalization: casing scheme (ADR-051), full redirect map (incl. Wayback CDX), gate specs same-diff | 1–2 | sonnet | — |
-| P2.2 | IA consolidation: 3 audience branches → positioned set (ADR-049); nav ≤8; CTA 1+1; design-spike + ranker ≥4.0 | 2 | fable | P0.1 |
+| P2.2 | IA consolidation: 3 audience branches → positioned set (ADR-049); **nav ≤7**; CTA 1+1; design-spike + ranker ≥4.0 | 2 | fable | P0.1 |
 | P2.3 | Docs freshness: spec pagination, per-page dates, edit-this-page, 29 broken links + **link gate in CI**, glossary previews, changelog/RSS revival + cadence | 2 | sonnet | — |
 | P2.4 | Registry redesign: admission standard + lifecycle tiers (ADR-052), facets, dual-clock signals, marketplace-archetype patterns | 2 | fable | P1.3 |
 | P2.5 | Onboarding paths: zero-install evaluation path, "first success" defined + published, uninstall docs, trust-cost mitigation, **TTFS instrument + clean-machine run** | 2 | opus | P0.1 |
