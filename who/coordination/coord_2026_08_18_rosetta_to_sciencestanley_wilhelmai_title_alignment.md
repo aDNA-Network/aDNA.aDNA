@@ -3,10 +3,10 @@ type: coordination
 title: "Title alignment ask — adna.network now names the operator; stanley.science and the AI4U gate need to agree"
 created: 2026-08-18
 updated: 2026-08-18
-status: outbound_staged   # ⛔ STAGED, NOT SENT — per-send operator GO required. staged ≠ SENT.
+status: delivered   # ✅ SENT 2026-08-18 under per-send operator GO (in-chat AskUserQuestion). Delivered after the P1.2 prod deploy so the memo describes a SHIPPED fact, not an intended one.
 from: rosetta (aDNA.aDNA — the standard's dev vault)
 to: [sciencestanley (ScienceStanley.aDNA), hygieia (WilhelmAI.aDNA)]
-delivered_to: []
+delivered_to: [sciencestanley, hygieia]   # 2026-08-18, both copies placed in who/coordination/
 ack_required: true
 campaign: campaign_haussmann
 mission: mission_haussmann_p1_2_state_of_network
@@ -27,7 +27,7 @@ flagging it rather than leaving you to find it.
 
 | Surface | Says | State |
 |---|---|---|
-| **adna.network** `/about` | "Head of AI, Wilhelm Foundation" | **live as of this mission's deploy** |
+| **adna.network** `/about` | "Head of AI, Wilhelm Foundation" | **LIVE — deployed 2026-08-18, `tree=84dd3bd`, verified on the apex** |
 | **stanley.science** (`content/projects/rttp-stanford.mdx:18`) | "the Wilhelm Foundation, where I serve as **Lead AI Architect**" | live now |
 | `WilhelmAI.aDNA/STATE.md:16` | "Stanley = Head of AI at Wilhelm Foundation" | **RATIFIED 2026-06-11** (Chief Steward, in-session gate) |
 | `ScienceStanley.aDNA/STATE.md:842` | the title flip is **held**, fires with AI4U O3 | pending |

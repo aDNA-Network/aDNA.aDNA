@@ -22,7 +22,7 @@ governing_instrument: directives/OPERATION_VITRUVIUS_review_instrument.md   # D1
 baseline_score: "51.6/100 (2026-08-16, two-reviewer reconciled; MCP ≈83, Mastra ≈65)"
 evidence_pack: [d58ea13, df3827c]
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-08-18   # P1 CLOSED 4/4 (P1.2 deployed tree=84dd3bd, ranker 4.22); next = the ⛩ P1→P2 phase gate
 last_edited_by: agent_rosetta
 tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, agentic]
 ---
@@ -48,24 +48,25 @@ tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, a
 │           ↳ north-star: zero FALSE claims · self-conformance proven &        │
 │             stated · baseline 51.6 → per-dimension gains · capstone ≥4.95    │
 │                                                                              │
-│  MISSION TREE                                  (2026-08-16, post-P0-wave)    │
-│    P0 preconditions   ✅ P0.2 deploy  ✅ P0.3 webforge  ✅ P0.5 edit-gate    │
-│                       🟡 P0.1 positioning (awaits HUMAN PANEL → ⛩ DP2)      │
-│                       🟡 P0.4 flux-recon (awaits Aspasia ack)               │
-│    P1 credibility     ▫ 1.1 claim-purge  ▫ 1.2 state-of-network             │
-│      (Decade 1)       ▫ 1.3 registry-truth(⛩DP4)  ▫ 1.4 mobile-S1s         │
+│  MISSION TREE                                    (2026-08-18, P1 CLOSED)     │
+│    P0 preconditions   ✅ P0.1 positioning(DP2) ✅ P0.2 deploy               │
+│                       ✅ P0.3 webforge  ✅ P0.5 edit-gate                   │
+│                       🟡 P0.4 flux-recon (awaits Aspasia ack — her lane)    │
+│    P1 credibility ✅  ✅ 1.1 claim-purge   ✅ 1.2 state-of-network          │
+│      (Decade 1) 4/4   ✅ 1.3 registry-truth(DP4) ✅ 1.4 mobile-S1s          │
 │    P2 structure       ▫ 2.1 urls  ▫ 2.2 ia(⛩DP5)  ▫ 2.3 docs-freshness     │
 │      (Decade 1)       ▫ 2.4 registry  ▫ 2.5 onboarding  ▫ 2.6 re-score⛩DP6  │
+│                          ↑ OPENS AT THE ⛩ P1→P2 PHASE GATE (SO-1)          │
 │    P3 agentic+community  ▫ md-twins ▫ registry-json ▫ mcp-server            │
 │      (Decade 2·prov.)    ▫ flux(⛩DP7) ▫ proposals            [gated: DP6]   │
 │    P4 craft+hardening ▫ tokens/voice(⛩DP8) ▫ craft-floor ▫ a11y-manual      │
 │      (Decade 2·prov.) ▫ ci-hardening ▫ voice-rewrite-LAST    [gated: DP6]   │
 │    P5 launch          ▫ human-evidence ▫ re-score+capstone ⛩DP9 [gated:DP6] │
 │                                                                              │
-│  PLAN     phase P0/6 · 37–50 sessions (derived) · fable default tier ·      │
-│           prod HARDENED (4/4 headers · B+/80) · suite 404 · freeze lifted   │
+│  PLAN     phase P1/6 CLOSED · 37–50 sessions (derived) · fable default ·    │
+│           prod HARDENED (4/4 headers) · suite 444 zero xf · 0 FALSE claims  │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│  GATES    phase gates are human gates · begin at: HUMAN PANEL → DP2 → P1    │
+│  GATES    phase gates are human gates · next: ⛩ P1→P2 · then DP5 at 2.2    │
 │           arc AAR: artifacts/aar_p0_wave.md (this splash augments, never    │
 │           replaces it)                                                       │
 ╰──────────────────────────────────────────────────────────────────────────────╯
@@ -126,6 +127,29 @@ The genesis assessment (Gate B dossier, `artifacts/gate_b_dossier.md`) found a *
 
 **Exit gate (operator):** claim register shows **zero FALSE / zero unsupported-above-ceiling**; a hostile external read (fresh agent, adversarial prompt) finds no unacknowledged overstatement; S1 visual defects re-captured clean; D6/D7 re-scored.
 
+#### ✅ P1 CLOSED — 4/4 missions, 2026-08-18 · exit-gate evidence
+
+| Exit condition | Evidence | State |
+|---|---|---|
+| Zero FALSE / zero unsupported-above-ceiling | claim register **113 adjudicated rows, zero FALSE, zero unsupported** (P1.1 cleared all 8 FALSE; P1.2 §7.5 corrected 11 more; §7.6 added R-112/R-113) | **met** |
+| Hostile external read finds no unacknowledged overstatement | two independent hostile cold-reads (P1.1: 18 findings, all dispositioned; P1.2: 24 findings → 11 claim corrections) + the P1.2-close re-rank, which found **2 further S2s** and had them fixed and gate-pinned | **met — and the last pass still found two, which is the honest caveat on "no unacknowledged overstatement"** |
+| S1 visual defects re-captured clean | P1.4 F1/F2/F3/F12 fixed; gate-29 reflow guard red-proven; axe **0** across 4 surfaces × both themes | **met** |
+| D6/D7 re-scored | **deferred to P2.6** (the mid-campaign re-score, ⛩ DP6) — the instrument's own cadence puts a full dimension re-score there, not at every phase boundary. P1.2's ranker (**4.22**) is the only in-phase measurement and is scoped to two surfaces, not to D6/D7 | **deferred, not met** |
+
+**Standing at close:** suite **444 green, zero xfail** · prod `tree=84dd3bd` live-verified on the apex
+· 4/4 security headers · registry leak baseline retired (86 rows → 0, hard-gated) · the deploy freeze
+lifted and the sole-sanctioned path in force.
+
+**Carried into P2 with provenance** (not silently dropped): the Enterprise Architect routing gap
+(`/compliance`, `/enterprise` unreachable from either disclosure surface; the one org-scale exit
+points at a human-only channel) → **P2.2**; `/privacy` emits no JSON-LD → **P2** candidate;
+`/install.html` is an orphan (reachable, no chrome, no sitemap entry) → decide, don't leave;
+the P2 sweep of surfaces P1.2 never touched, for the two patterns both reviewers named.
+
+**Still open outside P1:** P0.4 awaits Aspasia's ack (her lane; **more urgent since P1.1's override
+shipped the /community link ahead of ADR-054's prerequisites**), `VERCEL_TOKEN_ADNA` is unbrokered
+(Hestia), and the evidence-retention ruling is unmade.
+
 ### P2 — Structure (Decade 1; 6 missions, ~8–11 sessions)
 
 | Mission | Title | Sessions | Tier | Deps |
@@ -177,12 +201,12 @@ The genesis assessment (Gate B dossier, `artifacts/gate_b_dossier.md`) found a *
 | # | When | Decision | Status |
 |---|---|---|---|
 | DP1 | Gate C | Charter ratification (§7.7) + Decade-1 commitment | **✅ RATIFIED — operator (Stanley/FA), 2026-08-16** |
-| DP2 | P0.1 close | ADR-048 positioning (incl. audience, name-collision handling, embargo language) | pending |
-| DP3 | P0.2 | ADR-050 deploy path (git-integration vs wrapped-manual vs hybrid) | pending |
-| DP4 | P1.3 | ADR-052 §admission — confidential-adjacent vaults in the public registry (aiLP-Dataroom, CakeHealth, PercySleep) | pending ⛩ |
-| DP5 | P2.2 | ADR-049 IA model (audience-branch disposition) | pending |
+| DP2 | P0.1 close | ADR-048 positioning (incl. audience, name-collision handling, embargo language) | **✅ RATIFIED — operator, 2026-08-16** · candidate A (definition-as-hero); the O4 human panel was **waived** in-chat, deviation recorded in ADR-048 §Status, human validation deferred to **P5.1** |
+| DP3 | P0.2 | ADR-050 deploy path (git-integration vs wrapped-manual vs hybrid) | **✅ RATIFIED (c) — operator, 2026-08-16** · `deploy_adna.sh` is the sole sanctioned path; deploy freeze lifted |
+| DP4 | P1.3 | ADR-052 §admission — confidential-adjacent vaults in the public registry (aiLP-Dataroom, CakeHealth, PercySleep) | **✅ RULED — operator, 2026-08-16** · minimal-card ×3, suppression at the generator |
+| DP5 | P2.2 | ADR-049 IA model (audience-branch disposition) | pending ⛩ — **next substantive DP** |
 | DP6 | P2.6 | Decade-2 recalibration + re-plan ratification | pending (recurring shape) |
-| DP7 | P3.4 | ADR-054 community-link GO/NO-GO on verified prerequisites | pending |
+| DP7 | P3.4 | ADR-054 community-link GO/NO-GO on verified prerequisites | ⚠ **FIRED EARLY by operator override at P1.1 (2026-08-17)** — the /community link shipped with PR-1/2/3 unmet; deviation recorded in ADR-054 §Status, honest-state framing shipped and guarded by R-95/R-96. The DP itself is **still owed** on the verified prerequisites at P3.4 |
 | DP8 | P4.1 | ADR-053 visual voice (slot-contained program vs accent-only fallback) | pending |
 | DP9 | P5.2 | Launch GO + close | pending |
 

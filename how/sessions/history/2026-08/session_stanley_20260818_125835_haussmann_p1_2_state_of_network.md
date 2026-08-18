@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260818_125835_haussmann_p1_2_state_of_network
 created: 2026-08-18
 updated: 2026-08-18
-status: active
+status: completed
 tier: 1
 agent: agent_rosetta
 operator: stanley
@@ -12,7 +12,7 @@ mission: mission_haussmann_p1_2_state_of_network
 phase: P1
 executor_tier: fable
 token_budget_estimated: "~200–300 kT (mission declaration); hostile-read scoped explicitly this time per P1.1 AAR follow-up 4"
-token_budget_actual:
+token_budget_actual: "~430 kT (est. 200–300 kT). Overrun is the adversarial pass — two independent reviews returned 24 + 5 findings and forced 11 claim corrections. The mission's remaining ranker debt was discharged in the successor close session (session_stanley_20260818_143557_haussmann_p1_2_close)."
 last_edited_by: agent_rosetta
 tags: [session, haussmann, p1, disclosure, trust]
 ---
@@ -223,3 +223,30 @@ Network"; (4) set the mission `completed` with its `token_budget_actual`; (5) ge
 
 **P1 then closes and P2 opens** (P2.1 URL normalization). Read this session's AAR first — the
 stale-test-rationale finding and the `sameAs` minimality rule both generalize beyond this mission.
+
+---
+
+## Closed by the successor session (2026-08-18)
+
+`session_stanley_20260818_143557_haussmann_p1_2_close` executed the five steps this file's Next
+Session Prompt specified, in order:
+
+1. **Divergence checked before anything else** — `git ls-remote` confirmed the local `origin/main`
+   ref was current (`a37b40a`), 0 behind; the last `mode=prod` record was still P1.1's `tree=0f7cca0`,
+   so no lane had deployed into the gap.
+2. **The owed re-rank ran first.** AAR follow-up 5 was treated as a gate, not a note: **4.11 → 4.22,
+   the ≥ 4.0 criterion MET**, Actionability **2.50 → 4.00**. It caught two S2s (**R-112**, **R-113**),
+   both fixed, gate-pinned and red-proven before the deploy, so one deploy shipped everything.
+   Suite **442 → 444**, zero xfail.
+3. **⛩ Deploy fired** — `2026-08-18T21:45:51Z mode=prod tree=84dd3bd`, then live-verified on the
+   apex (both surfaces 200 + footer-linked, disclosure above the stat strip, `og:site_name` correct,
+   retired phrasings absent).
+4. **Mission set `completed`**, `token_budget_actual` recorded across both sessions.
+5. **Title-alignment memo delivered** under operator GO.
+
+**A correction to this file's record, worth carrying:** the ranker's own follow-up said *"do not
+assume the fixes cleared 4.0; measure it."* They had — but the measurement also found that this
+session's remediation had been applied to the two pages a reviewer named rather than to the claim
+family they had identified, which is how **R-112** survived fifty lines below the band this mission
+rebuilt against R-62. The generalization now lives in the mission AAR: **grep the claim family, not
+the component**, and **paired pages need paired reviews**.
