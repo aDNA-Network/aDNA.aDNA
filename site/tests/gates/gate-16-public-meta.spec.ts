@@ -29,6 +29,10 @@ const CODENAMES: { re: RegExp; label: string }[] = [
 const pages = [
   '/', '/learn/what-is-adna', '/network', '/vaults', '/commons',
   '/get-started', '/community', '/vaults/Harness.aDNA', '/learn/concepts/triad',
+  // HAUSSMANN P1.2 — the two disclosure surfaces (ADR-057 same-diff). These describe the network's
+  // own internals more directly than any other public page, which makes them the likeliest place
+  // for internal vocabulary to leak into public copy.
+  '/state-of-the-network', '/canonical-properties',
 ];
 
 for (const path of pages) {

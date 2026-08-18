@@ -82,6 +82,8 @@ ${installTruth.one_liner}
 - [Commons](${base('/commons')})
 - [Community](${base('/community')})
 - [Adopters](${base('/adopters')})
+- [State of the network](${base('/state-of-the-network')}) — dated disclosure: what runs, what is operator-operated, what is not ours, what is planned
+- [Canonical properties](${base('/canonical-properties')}) — every legitimate aDNA domain, repository, organization and machine surface
 
 ## Vault taxonomy (${vaultCount} vaults)
 

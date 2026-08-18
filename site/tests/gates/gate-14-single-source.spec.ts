@@ -43,9 +43,30 @@ const FORBIDDEN: { pattern: string; why: string }[] = [
   { pattern: 'LatticeProtocol/Agentic-DNA', why: 'C-3 — legacy branding.json github drift' },
 ];
 
-// Dated allowlist (empty by design). Add `{ file, pattern, rationale, date }` only
-// for a deliberate, reviewed exception.
-const ALLOW: { file: string; pattern: string }[] = [];
+// Dated allowlist. Add `{ file, pattern, rationale, date }` only for a deliberate,
+// reviewed exception — the type now carries the rationale the comment always promised,
+// so an exception cannot be added without saying why, in the file, next to the entry.
+const ALLOW: { file: string; pattern: string; rationale: string; date: string }[] = [
+  // HAUSSMANN P1.2 — the §7.1 clone-site defense needs to NAME the dev vault, because a reader
+  // asking "is this repository really aDNA's?" is exactly who these two pages serve. The rule
+  // above is about proof-link SEMANTICS (a proof-link should send you to the clone-and-run image,
+  // not the docs vault), and that still holds on every other page. Here the repository is the
+  // subject matter, not a proof-link. Probed logged-out 2026-08-18: HTTP 200, public.
+  {
+    file: 'canonical-properties/index.html',
+    pattern: 'aDNA-Network/aDNA.aDNA',
+    rationale:
+      'The canonical-properties page lists every legitimate aDNA property so a reader can tell a real one from a clone. The public dev vault is one of them; omitting it would make the page\'s completeness claim false.',
+    date: '2026-08-18',
+  },
+  {
+    file: 'state-of-the-network/index.html',
+    pattern: 'aDNA-Network/aDNA.aDNA',
+    rationale:
+      'The state-of-the-network "what runs" section lists the same probe-verified properties, each with the date it was last opened from outside.',
+    date: '2026-08-18',
+  },
+];
 
 test('G5 single-source: no drifted repo/publisher literals in built output', () => {
   const files = htmlFiles(DIST);

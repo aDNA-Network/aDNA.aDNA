@@ -42,6 +42,11 @@ const pages = [
   { name: 'Guides index', path: '/how' },
   { name: 'Glossary index', path: '/glossary' },
   { name: 'About', path: '/about' },
+  // HAUSSMANN P1.2 — the two disclosure surfaces (ADR-057 same-diff). Both are link- and
+  // definition-list-dense, which is exactly where AA regressions hide; the axe-0 record is
+  // campaign-protected, so a new public page that is not gated here is a page that is not protected.
+  { name: 'State of the network', path: '/state-of-the-network' },
+  { name: 'Canonical properties', path: '/canonical-properties' },
 ];
 
 // Dark is the default render; light is reached by seeding the theme preference before the page loads.

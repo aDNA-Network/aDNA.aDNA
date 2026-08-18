@@ -1,15 +1,27 @@
 {
   "_doc": "Operation Looking Glass claim-trace seed manifest (M1 Construct). Each entry is a high-signal site claim flagged for source-fidelity. gate-20-claim-trace asserts every source_ref RESOLVES and, where a machine accessor is given, the source YIELDS the expected value. Paths are relative to the site/ dir (use ../ for vault files). M2 (Inspect) extends this manifest with the enumerated claims. Source-of-truth + owner-class detail: how/campaigns/campaign_looking_glass/artifacts/site_backing_slice.md. Ring-A (pt19) entries are READ-ONLY — flag drift, never hand-fix.",
-  "_classes": ["quantitative", "status", "structural", "source_fidelity"],
+  "_classes": [
+    "quantitative",
+    "status",
+    "structural",
+    "source_fidelity"
+  ],
   "claims": [
     {
       "id": "vault-count",
       "class": "quantitative",
       "claim": "the registry holds 74 vaults",
-      "rendered_on": ["/", "/vaults", "/network"],
+      "rendered_on": [
+        "/",
+        "/vaults",
+        "/network"
+      ],
       "source_ref": "src/data/vaults.json",
       "owner": "pt19",
-      "check": { "kind": "json_field", "accessor": "vault_count" },
+      "check": {
+        "kind": "json_field",
+        "accessor": "vault_count"
+      },
       "expected": "74",
       "_note": "Ring-A (pt19-owned) expected refreshed 73->74 at registry-regen (2026-07-25) from the data-owner's committed inventory (source_inventory_sha 536e9d62be75c55b; Home faf5eac: +RareAnthropic.aDNA org_graph, Operation Portolan GO 2026-07-22); fixture-currency refresh to match the committed vaults.json, not a hand-edit of pt19 data (prior: 68->73 at Refit M2 2026-07-21 sha 59058a4ec1e65d3c; 54->68 at Meridian M9). Driver: coord_2026_07_22_rareanthropic_to_hestia_inventory_registration. Owner field UNCHANGED."
     },
@@ -17,91 +29,189 @@
       "id": "relationship-count",
       "class": "structural",
       "claim": "the network has 14 cited relationships (edges)",
-      "rendered_on": ["/network", "/vaults/graph"],
+      "rendered_on": [
+        "/network",
+        "/vaults/graph"
+      ],
       "source_ref": "src/data/vaults.json",
       "owner": "pt19",
-      "check": { "kind": "json_len", "accessor": "edges" },
+      "check": {
+        "kind": "json_len",
+        "accessor": "edges"
+      },
       "expected": "14"
     },
     {
       "id": "standard-version",
       "class": "status",
       "claim": "the aDNA standard is at v2.5",
-      "rendered_on": ["/", "/llms.txt", "/reference/specification"],
+      "rendered_on": [
+        "/",
+        "/llms.txt",
+        "/reference/specification"
+      ],
       "source_ref": "src/data/standard.ts",
       "owner": "website",
-      "check": { "kind": "ts_const", "accessor": "STANDARD_VERSION" },
+      "check": {
+        "kind": "ts_const",
+        "accessor": "STANDARD_VERSION"
+      },
       "expected": "v2.5"
     },
     {
       "id": "entity-type-count",
       "class": "quantitative",
       "claim": "the standard defines 16 base entity types",
-      "rendered_on": ["/", "/learn/what-is-adna"],
+      "rendered_on": [
+        "/",
+        "/learn/what-is-adna"
+      ],
       "source_ref": "src/data/standard.ts",
       "owner": "website",
-      "check": { "kind": "ts_const", "accessor": "ENTITY_TYPE_COUNT" },
+      "check": {
+        "kind": "ts_const",
+        "accessor": "ENTITY_TYPE_COUNT"
+      },
       "expected": "16"
     },
     {
       "id": "conformance-levels",
       "class": "quantitative",
       "claim": "the standard has 3 conformance levels",
-      "rendered_on": ["/", "/reference/specification"],
+      "rendered_on": [
+        "/",
+        "/reference/specification"
+      ],
       "source_ref": "src/data/standard.ts",
       "owner": "website",
-      "check": { "kind": "ts_const", "accessor": "CONFORMANCE_LEVELS" },
+      "check": {
+        "kind": "ts_const",
+        "accessor": "CONFORMANCE_LEVELS"
+      },
       "expected": "3"
     },
     {
       "id": "standard-license",
       "class": "status",
       "claim": "the standard is MIT-licensed",
-      "rendered_on": ["/", "/get-started"],
+      "rendered_on": [
+        "/",
+        "/get-started"
+      ],
       "source_ref": "src/data/standard.ts",
       "owner": "website",
-      "check": { "kind": "ts_const", "accessor": "STANDARD_LICENSE" },
+      "check": {
+        "kind": "ts_const",
+        "accessor": "STANDARD_LICENSE"
+      },
       "expected": "MIT"
     },
     {
       "id": "entity-types-spec-source",
       "class": "source_fidelity",
       "claim": "the 16 entity types trace to the normative spec",
-      "rendered_on": ["/learn/what-is-adna"],
+      "rendered_on": [
+        "/learn/what-is-adna"
+      ],
       "source_ref": "../what/docs/adna_standard.md",
       "owner": "standard",
-      "check": { "kind": "exists" },
+      "check": {
+        "kind": "exists"
+      },
       "expected": null
     },
     {
       "id": "canonical-repo",
       "class": "source_fidelity",
       "claim": "the clone-and-run image lives at the canonical repo",
-      "rendered_on": ["/", "/network", "/get-started"],
+      "rendered_on": [
+        "/",
+        "/network",
+        "/get-started"
+      ],
       "source_ref": "src/data/canonical.ts",
       "owner": "website",
-      "check": { "kind": "exists" },
+      "check": {
+        "kind": "exists"
+      },
       "expected": null
     },
     {
       "id": "subnetworks-count",
       "class": "structural",
       "claim": "four public-good subnetworks are featured",
-      "rendered_on": ["/commons"],
+      "rendered_on": [
+        "/commons"
+      ],
       "source_ref": "src/data/subnetworks.json",
       "owner": "website",
-      "check": { "kind": "exists" },
+      "check": {
+        "kind": "exists"
+      },
       "expected": null
     },
     {
       "id": "proof-links-canonical-repo",
       "class": "source_fidelity",
       "claim": "the /learn/what-is-adna proof-links all derive from the single canonical repo (no org/repo drift)",
-      "rendered_on": ["/learn/what-is-adna"],
+      "rendered_on": [
+        "/learn/what-is-adna"
+      ],
       "source_ref": "src/data/install_truth.json",
       "owner": "website",
-      "check": { "kind": "json_field", "accessor": "canonical_repo_https" },
+      "check": {
+        "kind": "json_field",
+        "accessor": "canonical_repo_https"
+      },
       "expected": "https://github.com/aDNA-Network/aDNA"
+    },
+    {
+      "id": "verified-external-urls",
+      "class": "quantitative",
+      "claim": "no vault carries an externally verified public URL",
+      "rendered_on": [
+        "/state-of-the-network"
+      ],
+      "source_ref": "src/data/verified_links.json",
+      "owner": "website",
+      "check": {
+        "kind": "json_len",
+        "accessor": "verified_urls"
+      },
+      "expected": "0",
+      "_note": "DELIBERATE TRIPWIRE, do not 'fix' by deleting this row. The state-of-the-network copy states the zero case as fixed prose ('None of them carries...') rather than a rendered count, because the grammar has to change when the count stops being zero. This row goes red the moment the first URL passes the probe gate, which forces the copy and the count to be updated in the same diff. A red here is the system working."
+    },
+    {
+      "id": "registry-generated-at",
+      "class": "status",
+      "claim": "the registry was last regenerated on 2026-08-17",
+      "rendered_on": [
+        "/state-of-the-network"
+      ],
+      "source_ref": "src/data/vaults.json",
+      "owner": "pt19",
+      "check": {
+        "kind": "json_field",
+        "accessor": "generated_at"
+      },
+      "expected": "2026-08-17",
+      "_note": "The disclosure surface dates its own counts. Owner is pt19: the date moves when the registry data owner regenerates, and this fixture follows that committed value — it is never hand-set to make the page look fresher."
+    },
+    {
+      "id": "subnetworks-generated-at",
+      "class": "status",
+      "claim": "subnetwork records were last synced on 2026-07-06",
+      "rendered_on": [
+        "/state-of-the-network"
+      ],
+      "source_ref": "src/data/subnetworks.json",
+      "owner": "website",
+      "check": {
+        "kind": "json_field",
+        "accessor": "generated_at"
+      },
+      "expected": "2026-07-06",
+      "_note": "Deliberately surfaced even though it lags the registry by weeks. The page says so in words ('older than the registry above, and shown rather than hidden'). Do not regenerate the fixture to close the gap cosmetically — the gap is an honest signal about the pace of the thing being described."
     }
   ]
 }

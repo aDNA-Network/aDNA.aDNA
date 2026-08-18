@@ -1,26 +1,24 @@
 /**
- * canonical_properties.ts — the single source of truth for every legitimate aDNA property
- * (domains, repositories, organizations, machine surfaces), and the retired ones.
+ * canonical_properties.ts — typed accessor over the canonical property list.
  *
  * HAUSSMANN P1.2, the §7.1 clone-site defense. Both comparable projects in this category have
  * spawned SEO clone-site swarms — parallel domains reproducing project descriptions with fabricated
- * testimonials and invented attribution, several outranking the official properties. The instrument's
- * counter-measure is threefold: assert the canonical domain in structured data, publish an official
- * properties page, and link it from the footer. This module feeds all three from one list, so the
- * human-readable page and the machine-readable `Organization.sameAs` cannot drift apart.
+ * testimonials and invented attribution, several outranking the official properties. The
+ * instrument's counter-measure is threefold: assert the canonical domain in structured data,
+ * publish an official-properties page, and link it from the footer. This module feeds all three
+ * from one list, so the human-readable page and the machine-readable `Organization.sameAs` cannot
+ * drift apart.
  *
- * PROBE DISCIPLINE — the thing that makes this file trustworthy:
- *   Every row's `resolves` + `probed` records a real HTTP check, run from outside and logged out,
- *   on the date shown. `probed` is a statement about a past check, never a claim about the present —
- *   which is why it cannot rot into a falsehood, only into obvious staleness. Same idiom as
- *   `verified_links.json` (P1.1 / claim register R-90).
- *   To add a row: probe it logged out, record the result and the date, then list it. Never the reverse.
+ * WHY THE DATA IS IN JSON AND NOT IN THIS FILE. A Playwright gate cannot import this module: it
+ * transitively imports install_truth.json, and Node rejects a JSON import without an import
+ * attribute (adding the attribute does not survive Playwright's transpile — tried). Keeping the
+ * rows in canonical_properties.json lets gate-15's G6b assertions read the SAME source the page
+ * renders from, with readFileSync, and check true set equality in both directions. A gate that
+ * checks the page against a copy of the list would just be testing the copy.
  *
- * A property that 404s or is private does NOT belong here even if we own it — this page lists what a
- * reader can trust AND reach. (`aDNA-Network/Videos.aDNA` is the live instance: under the canonical
- * org, but 404 publicly. It is disclosed as a count on /state-of-the-network, never as a link, so
- * R-90's defect — shipping an outbound proof-link a reader cannot follow — is not re-created.)
+ * Probe discipline and the not-listed rule are documented in the JSON's own header.
  */
+import raw from './canonical_properties.json';
 import { REPO_HTTPS, SITE_ORIGIN } from './canonical';
 import installTruth from './install_truth.json';
 
@@ -43,125 +41,33 @@ export interface CanonicalProperty {
 }
 
 /** The day the full property sweep was last run end-to-end. */
-export const PROPERTIES_PROBED_AT = '2026-08-18';
+export const PROPERTIES_PROBED_AT: string = raw.properties_probed_at;
 
-export const CANONICAL_PROPERTIES: CanonicalProperty[] = [
-  {
-    url: SITE_ORIGIN,
-    kind: 'domain',
-    label: 'adna.network',
-    what: 'The canonical site — this one. Everything official starts here.',
-    resolves: true,
-    probed: '2026-08-18',
-    evidence: 'HTTP 200, logged out',
-  },
-  {
-    url: 'https://community.adna.network',
-    kind: 'domain',
-    label: 'community.adna.network',
-    what: 'The community space: self-hosted, human-to-human, and early. Its honest current state is described on the community page.',
-    resolves: true,
-    probed: '2026-08-18',
-    evidence: 'HTTP 200, logged out',
-  },
-  {
-    url: 'https://worldgeno.me',
-    kind: 'domain',
-    label: 'worldgeno.me',
-    what: 'The World Genome Academy — a subnetwork’s own public site, run by that subnetwork.',
-    resolves: true,
-    probed: '2026-08-18',
-    evidence: 'HTTP 200, logged out',
-    notOurs: true,
-  },
-  {
-    url: 'https://github.com/aDNA-Network',
-    kind: 'org',
-    label: 'github.com/aDNA-Network',
-    what: 'The only GitHub organization aDNA publishes under. Code claiming to be aDNA from any other organization is not ours.',
-    resolves: true,
-    probed: '2026-08-18',
-    evidence: 'HTTP 200, logged out',
-  },
-  {
-    url: REPO_HTTPS,
-    kind: 'repo',
-    label: 'aDNA-Network/aDNA',
-    what: 'The clone-and-run workspace, MIT-licensed. This is what the install instructions point at.',
-    resolves: true,
-    probed: '2026-08-18',
-    evidence: 'HTTP 200, logged out',
-  },
-  {
-    url: 'https://github.com/aDNA-Network/aDNA.aDNA',
-    kind: 'repo',
-    label: 'aDNA-Network/aDNA.aDNA',
-    what: 'The workspace this website is built from — the standard, applied to itself, in public.',
-    resolves: true,
-    probed: '2026-08-18',
-    evidence: 'HTTP 200, logged out',
-  },
-  {
-    url: installTruth.legacy_repo_https,
-    kind: 'repo',
-    label: 'aDNA-Network/adna-legacy',
-    what: 'Frozen history from before the current repository layout. Archived and read-only — kept for the record, not for use.',
-    resolves: true,
-    probed: '2026-08-18',
-    evidence: 'HTTP 200, logged out; archived',
-  },
-  {
-    url: 'https://github.com/Wilhelm-Foundation/rare-archive',
-    kind: 'repo',
-    label: 'Wilhelm-Foundation/rare-archive',
-    what: 'The Rare Archive, in the Wilhelm Foundation’s own GitHub organization under Apache-2.0. Legitimately connected to aDNA, and not controlled by it.',
-    resolves: true,
-    probed: '2026-08-18',
-    evidence: 'HTTP 200, logged out',
-    notOurs: true,
-  },
-  {
-    url: '/llms.txt',
-    kind: 'machine-surface',
-    label: '/llms.txt',
-    what: 'The curated index this site offers to AI agents.',
-    resolves: true,
-    probed: '2026-08-18',
-  },
-  {
-    url: '/llms-full.txt',
-    kind: 'machine-surface',
-    label: '/llms-full.txt',
-    what: 'The expanded agent index.',
-    resolves: true,
-    probed: '2026-08-18',
-  },
-  {
-    url: '/rss.xml',
-    kind: 'machine-surface',
-    label: '/rss.xml',
-    what: 'The feed of changes to this site.',
-    resolves: true,
-    probed: '2026-08-18',
-  },
-  {
-    url: '/sitemap-index.xml',
-    kind: 'machine-surface',
-    label: '/sitemap-index.xml',
-    what: 'Every page on this site, listed for search engines.',
-    resolves: true,
-    probed: '2026-08-18',
-  },
-  {
-    url: 'https://adna.dev',
-    kind: 'retired',
-    label: 'adna.dev',
-    what: 'An early domain for this project, abandoned before launch. It does not resolve. If it ever resolves again, it is not us then either.',
-    resolves: false,
-    probed: '2026-08-18',
-    evidence: 'no DNS response',
-  },
-];
+export const CANONICAL_PROPERTIES: CanonicalProperty[] = raw.properties as CanonicalProperty[];
+
+/**
+ * Build-time consistency check — the reason writing these URLs literally in JSON is safe.
+ *
+ * The canonical and legacy repository URLs are generated into install_truth.json at build; the JSON
+ * list repeats them so the gate can read the list without importing TypeScript. This assertion makes
+ * that repetition non-drifting: if the generated install truth ever changes and the property list
+ * does not, `astro build` throws here rather than shipping two disagreeing answers to "where does
+ * aDNA live?" — which is precisely the question this page exists to answer.
+ */
+const declared = new Set(CANONICAL_PROPERTIES.map((p) => p.url));
+for (const [name, url] of Object.entries({
+  REPO_HTTPS,
+  SITE_ORIGIN,
+  legacy_repo_https: installTruth.legacy_repo_https,
+})) {
+  if (!declared.has(url)) {
+    throw new Error(
+      `canonical_properties.json is out of sync with the canonical source: ${name} = "${url}" is not ` +
+        `a declared property. Update src/data/canonical_properties.json (and re-probe the URL) so the ` +
+        `properties page and the install truth agree.`,
+    );
+  }
+}
 
 /** Rows rendered under "what runs" and in `Organization.sameAs`. */
 export const RESOLVING_PROPERTIES = CANONICAL_PROPERTIES.filter((p) => p.resolves);
@@ -179,7 +85,7 @@ export const RESOLVING_PROPERTIES = CANONICAL_PROPERTIES.filter((p) => p.resolve
  *   - **individual repositories are excluded.** `github.com/aDNA-Network` is in the list, and every
  *     repository we publish lives under it — so the org-level identity already covers them
  *     transitively. Asserting each repo separately adds nothing a verifier can use, and it would put
- *     the `aDNA-Network/aDNA.aDNA` literal into all ~203 pages, defeating gate-14's proof-link guard
+ *     the `aDNA-Network/aDNA.aDNA` literal into all ~205 pages, defeating gate-14's proof-link guard
  *     site-wide to gain no verification value. The per-repository detail belongs on the
  *     canonical-properties page, where a human is reading, not in every page's head.
  *   - machine surfaces are this site's own paths, not separate identities.

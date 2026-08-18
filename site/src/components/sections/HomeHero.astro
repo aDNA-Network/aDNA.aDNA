@@ -37,15 +37,28 @@ interface Props {
   githubHref?: string;
   stats?: Stat[];
   /**
-   * Optional proof-of-life beat (Storyweave J3): a calm borrowed-trust line naming the
-   * real public-good subnetworks, placed hero-adjacent under the stat strip. `proofNames`
-   * come from subnetworks.json (single-source — never hardcoded). `proofHref` +
-   * `proofLinkLabel` add one subtle "who's behind this" link to the credibility surface.
+   * Optional proof-of-life beat. Originally (Storyweave J3) a borrowed-trust line naming the real
+   * public-good subnetworks, placed under the stat strip.
+   *
+   * HAUSSMANN P1.2 changed both its content and its position:
+   *   • POSITION — it now renders ABOVE the stat strip. Berthier's build-wave item: "proof-of-life
+   *     is mis-placed — the hero shows insider stats rather than the compelling number." The
+   *     compelling fact should reach the reader before the vault/pattern tallies do.
+   *   • CONTENT — home now passes the operator-federation disclosure instead of a subnetwork roll
+   *     call (§7.3: the distinction must be made in the reader's line of sight, not in a footnote).
+   *     `proofNames` remains supported for any consumer that still wants the name list.
+   *   • `proofHrefSecondary`/`proofLinkLabelSecondary` add an optional second link, so the primary
+   *     can point at the disclosure surface while the one-click path to the named humans survives
+   *     (P1.2 acceptance criterion 3).
+   *
+   * All additive-optional: /network + /commons pass none of these and render pixel-identically.
    */
   proofLead?: string;
   proofNames?: string[];
   proofHref?: string;
   proofLinkLabel?: string;
+  proofHrefSecondary?: string;
+  proofLinkLabelSecondary?: string;
   /**
    * Optional pre-rendered "living network" hero graph — the compact connected-component radial
    * emitted by scripts/build_graph_svg.mjs → src/assets/hero_graph.svg, passed as a raw SVG string
@@ -101,6 +114,8 @@ const {
   proofNames = [],
   proofHref,
   proofLinkLabel,
+  proofHrefSecondary,
+  proofLinkLabelSecondary,
   heroGraph,
   heroGraphCaption = '15 connected vaults · 14 relationships',
   installOneLiner,
@@ -109,6 +124,11 @@ const {
 
 // Home-only graph-led variant is active iff a hero graph was passed (additive-optional prop).
 const graphLed = Boolean(heroGraph);
+
+// HAUSSMANN P1.2 — the proof block used to require `proofNames`; home now passes a disclosure
+// SENTENCE with no name list, so either alone is enough to render it. Consumers that pass neither
+// (/network, /commons) still render nothing at all.
+const showProof = proofNames.length > 0 || Boolean(proofLead);
 
 // Storyweave P3 / M3.1 — accessible deep-link twin for the hero graph (mirrors /vaults/graph's
 // node-list <nav>): parse the connected vaults' slug + name straight from the SSR SVG string
@@ -201,6 +221,25 @@ const heroNodes = graphLed
             <a href="/reference/specification" class="trust-link" data-astro-prefetch>built on the Lattice Protocol — the coordination layer, opening progressively</a>
           </div>
 
+          {/* HAUSSMANN P1.2 — proof BEFORE the stat strip (Berthier: the hero was leading with
+              insider stats rather than the compelling number). */}
+          {showProof && (
+            <div class="hero-proof">
+              <p class="hero-proof-names">
+                {proofLead}{proofLead && proofNames.length > 0 ? ' ' : ''}
+                {proofNames.length > 0 && <span class="hero-proof-list">{proofNames.join(' · ')}</span>}
+              </p>
+              <span class="hero-proof-links">
+                {proofHref && proofLinkLabel && (
+                  <a href={proofHref} class="hero-proof-link" data-astro-prefetch>{proofLinkLabel}</a>
+                )}
+                {proofHrefSecondary && proofLinkLabelSecondary && (
+                  <a href={proofHrefSecondary} class="hero-proof-link" data-astro-prefetch>{proofLinkLabelSecondary}</a>
+                )}
+              </span>
+            </div>
+          )}
+
           {stats.length > 0 && (
             <div class="trust-strip">
               {stats.map((stat) => (
@@ -209,17 +248,6 @@ const heroNodes = graphLed
                   <span class="trust-label">{stat.label}</span>
                 </div>
               ))}
-            </div>
-          )}
-
-          {proofNames.length > 0 && (
-            <div class="hero-proof">
-              <p class="hero-proof-names">
-                {proofLead}{proofLead ? ' ' : ''}<span class="hero-proof-list">{proofNames.join(' · ')}</span>
-              </p>
-              {proofHref && proofLinkLabel && (
-                <a href={proofHref} class="hero-proof-link" data-astro-prefetch>{proofLinkLabel}</a>
-              )}
             </div>
           )}
         </div>
@@ -312,6 +340,26 @@ const heroNodes = graphLed
         <a href="/reference/specification" class="trust-link" data-astro-prefetch>built on the Lattice Protocol — the coordination layer, opening progressively</a>
       </div>
 
+      {/* Proof-of-life, hero-adjacent. HAUSSMANN P1.2 moved it ABOVE the stat strip (Berthier's
+          mis-placement item) and home now passes the operator-federation disclosure rather than a
+          borrowed-trust name list. Home-only; zero-diff for other consumers. */}
+      {showProof && (
+        <div class="hero-proof">
+          <p class="hero-proof-names">
+            {proofLead}{proofLead && proofNames.length > 0 ? ' ' : ''}
+            {proofNames.length > 0 && <span class="hero-proof-list">{proofNames.join(' · ')}</span>}
+          </p>
+          <span class="hero-proof-links">
+            {proofHref && proofLinkLabel && (
+              <a href={proofHref} class="hero-proof-link" data-astro-prefetch>{proofLinkLabel}</a>
+            )}
+            {proofHrefSecondary && proofLinkLabelSecondary && (
+              <a href={proofHrefSecondary} class="hero-proof-link" data-astro-prefetch>{proofLinkLabelSecondary}</a>
+            )}
+          </span>
+        </div>
+      )}
+
       {stats.length > 0 && (
         <div class="trust-strip">
           {stats.map((stat) => (
@@ -320,20 +368,6 @@ const heroNodes = graphLed
               <span class="trust-label">{stat.label}</span>
             </div>
           ))}
-        </div>
-      )}
-
-      {/* Storyweave J3 — proof-of-life, hero-adjacent: name the real public-good work as
-          borrowed trust (subnetwork names from subnetworks.json, single-source), then offer
-          one calm link to the credibility surface. Home-only; zero-diff for other consumers. */}
-      {proofNames.length > 0 && (
-        <div class="hero-proof">
-          <p class="hero-proof-names">
-            {proofLead}{proofLead ? ' ' : ''}<span class="hero-proof-list">{proofNames.join(' · ')}</span>
-          </p>
-          {proofHref && proofLinkLabel && (
-            <a href={proofHref} class="hero-proof-link" data-astro-prefetch>{proofLinkLabel}</a>
-          )}
         </div>
       )}
     </Fragment>
@@ -836,6 +870,24 @@ const heroNodes = graphLed
     color: var(--color-text);
   }
 
+  /* HAUSSMANN P1.2 — the proof block can carry two links (the disclosure surface, and the
+     one-click path to the named humans). Wraps rather than overflowing at narrow widths; the
+     separator is decorative and drawn in CSS so it never reaches the accessibility tree or the
+     copy-craft text assertions. */
+  .hero-proof-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: var(--space-1) var(--space-3);
+  }
+
+  .hero-proof-links .hero-proof-link + .hero-proof-link::before {
+    content: '·';
+    color: var(--color-text-muted);
+    margin-right: var(--space-3);
+  }
+
   /* Cyan link (AA both modes for small text; the site's link signal). */
   .hero-proof-link {
     font-family: var(--font-display);
@@ -955,6 +1007,12 @@ const heroNodes = graphLed
 
   .hero--graph-led .hero-proof-names {
     text-align: left;
+  }
+
+  /* The two-link row follows the copy column's left edge in the graph-led variant (the shared
+     rule centres it). The narrow-width block below re-centres both, along with everything else. */
+  .hero--graph-led .hero-proof-links {
+    justify-content: flex-start;
   }
 
   /* Split title — "The aDNA" in the heading ink, "Network" in the cyan accent. */
@@ -1143,7 +1201,8 @@ const heroNodes = graphLed
     .hero--graph-led .hero-actions,
     .hero--graph-led .hero-trust-links,
     .hero--graph-led .trust-strip,
-    .hero--graph-led .hero-proof {
+    .hero--graph-led .hero-proof,
+    .hero--graph-led .hero-proof-links {
       justify-content: center;
       align-items: center;
     }

@@ -44,6 +44,11 @@ const pages = [
   { name: 'Learn hub', path: '/learn' },
   { name: 'Patterns index', path: '/patterns' },
   { name: 'Community index', path: '/community' },
+  // HAUSSMANN P1.2 — the two disclosure surfaces (ADR-057 same-diff). Both render long URLs and
+  // repository paths in label/value grids; 320px is the real risk here, which is why neither uses
+  // a <table>.
+  { name: 'State of the network', path: '/state-of-the-network' },
+  { name: 'Canonical properties', path: '/canonical-properties' },
 ];
 
 for (const vp of viewports) {

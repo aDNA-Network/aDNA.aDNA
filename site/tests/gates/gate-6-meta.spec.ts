@@ -15,6 +15,9 @@ const pages = [
   { name: 'Get started', path: '/get-started' },
   { name: 'Network page', path: '/network' },
   { name: 'Commons page', path: '/commons' },
+  // HAUSSMANN P1.2 — the two disclosure surfaces (ADR-057 same-diff).
+  { name: 'State of the network', path: '/state-of-the-network' },
+  { name: 'Canonical properties', path: '/canonical-properties' },
 ];
 
 for (const { name, path } of pages) {

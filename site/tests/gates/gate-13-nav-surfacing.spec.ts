@@ -39,7 +39,13 @@ test(`G13 Nav: 8-item desktop row fits at the ${NAV_SWITCH_ON}px switch-on (c158
 
 test('G13 Nav: footer carries the top-level model including Commons', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
-  for (const href of ['/network', '/vaults', '/commons', '/community']) {
+  // HAUSSMANN P1.2 added the two disclosure surfaces. /canonical-properties being footer-linked on
+  // every page is not cosmetic — it is the §7.1 clone-site defense's delivery mechanism: a reader
+  // who lands anywhere must be one click from the list of legitimate properties.
+  for (const href of [
+    '/network', '/vaults', '/commons', '/community',
+    '/state-of-the-network', '/canonical-properties',
+  ]) {
     await expect(page.locator(`.footer-links a[href="${href}"]`)).toBeVisible();
   }
 });

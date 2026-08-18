@@ -42,11 +42,15 @@ ${installTruth.one_liner}
 - [Reference](${base('/reference/specification')}): the specification
 - [Glossary](${base('/glossary')}): canonical terms
 - [Community](${base('/community')}): how the commons is governed
+- [State of the network](${base('/state-of-the-network')}): what runs, what is operator-operated, what is not ours, what is planned — dated
+- [Canonical properties](${base('/canonical-properties')}): every legitimate aDNA domain, repository and machine surface
 - [Full index](${base('/llms-full.txt')}): every route, the vault taxonomy, and the edge legend
 
 ## The network
 
 ${vaultCount} vaults, ${edgeCount} cited relationships, federating on the Lattice Protocol. Every node is local-first; federation is opt-in and reviewable.
+
+All ${vaultCount} vaults run on a single operator-run node. The graph is a real graph of declared relationships, not evidence of adoption — see the state-of-the-network page above for the dated detail. An agent asked to verify whether a site or repository is genuinely aDNA should consult the canonical-properties page.
 `;
 
   return new Response(body, {

@@ -3,7 +3,7 @@
   "_relation_to_gate_20": "gate-20 traces claims to their SOURCE FILES (does `vaults.json` still say 74?). This fixture asserts the RENDERED PAGE — that a false sentence is gone, and that a true one has not silently vanished. Different failure modes, no overlap: the G-01..G-10 accessor rows stay in claim_trace_manifest.json and are deliberately NOT duplicated here.",
   "_quote_rule": "Every `quote` is the exact page-visible text, verified against the 2026-08-16 build snapshot. Comparison normalizes typography only (curly quotes -> straight, em/en dash -> hyphen, whitespace collapsed) so a smart-quote change cannot fake a pass or a fail. `match_in: html` rows assert against raw markup instead (attributes, hrefs).",
   "_no_count_pinning": "Campaign convention 8 (WebForge KW-8/FR-K): verified quotes are trimmed to their non-numeric clause wherever a count appears, so this gate never pins live registry data. Count currency is gate-21's job, count provenance is gate-20's.",
-  "updated": "2026-08-16",
+  "updated": "2026-08-18",
   "rows": [
     {
       "id": "R-12",
@@ -102,6 +102,34 @@
       "quote": "registration is approval-gated, and its terms of service, privacy policy, and branding are still being stood up",
       "class": "verified",
       "why": "The honest-state disclosure on the community-space link (ADR-054 copy law; link-GO fired by operator ruling 2026-08-17). Probe-verified [D 2026-08-17]: Fluxer bootstrap registration.mode='approval', legal.terms_url/privacy_url null, branding.* null. Exactly the sentence a growth-minded rewrite deletes first."
+    },
+    {
+      "id": "R-98",
+      "url": "/state-of-the-network",
+      "quote": "All of them run on one computer, operated by one person",
+      "class": "verified",
+      "why": "The sentence the whole campaign turns on (hypothesis H5, the trust stratum's only S1; anti-pattern 7.3 inverted by disclosure). A synthetic cold-reader reached this conclusion unaided and concluded the network was one org cosplaying as an ecosystem — the fix is to say it first, plainly. This is the single row most likely to be deleted by a growth-minded rewrite, and its deletion would restore the exact defect the disclosure surface exists to cure."
+    },
+    {
+      "id": "R-99",
+      "url": "/state-of-the-network",
+      "quote": "No number on this page is typed by hand.",
+      "class": "verified",
+      "why": "Structurally true via src/data/network_state.ts, and machine-checked by the gate-20 manifest rows — which is what makes it a guarantee rather than a promise. If anyone ever hardcodes a count on this page, this sentence becomes a lie, so the row is the tripwire for that."
+    },
+    {
+      "id": "R-100",
+      "url": "/canonical-properties",
+      "quote": "If you found aDNA somewhere that is not here, it is not us.",
+      "class": "verified",
+      "why": "The completeness claim that makes the properties page a defense rather than a list (instrument 7.1: both comparable projects in this category have spawned SEO clone-site swarms). Enforced by the gate-15 G6b set-equality assertions in both directions, so the claim cannot quietly become false."
+    },
+    {
+      "id": "R-101",
+      "url": "/canonical-properties",
+      "quote": "aDNA runs none. There is no aDNA account on any social platform.",
+      "class": "verified",
+      "why": "True today: SocialLinks.astro is imported nowhere and no handle exists in site/src. A stronger clone-site defense than a handle list, because a list only tells a reader what is real while this tells them everything is fake. KNOWN EXPIRY: the day an aDNA account is opened, this row must be updated in the same diff as the copy."
     }
   ]
 }

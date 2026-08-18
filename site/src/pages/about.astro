@@ -4,6 +4,10 @@ import ClosingCTA from '../components/sections/ClosingCTA.astro';
 import Callout from '../components/sections/Callout.astro';
 import { buildWebPageJsonLD } from '../utils/seo';
 import subnetworksData from '../data/subnetworks.json';
+// HAUSSMANN P1.2 — derived counts (shared with the home hero + /state-of-the-network so the three
+// surfaces cannot disagree) and the public status label (raw registry enums are gate-27 failures).
+import { subnetworkCount, subnetworksWithPublicUrl } from '../data/network_state';
+import { statusLabel } from '../utils/vaultLabels';
 
 // Storyweave P1 — the "who's behind this" credibility surface. Answers the O4 skeptic gap
 // (network-of-one / no real humans / democracy-vs-Founding-Architect) with the operator-
@@ -50,14 +54,31 @@ const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? nul
       </p>
 
       <div class="people-grid">
+        {/* HAUSSMANN P1.2 — the named human (hypothesis H12: the site's strongest verifiable
+            anchors sat unlinked from the trust path). Full name + affiliations + one outbound link,
+            consent recorded at the mission's O1 gate. Affiliations are stated at their true
+            strength and no further: the roles are current and checkable, and no tenure dates,
+            credentials, or career history are asserted here — those live on the personal site this
+            links to, so there is one place to keep them true.
+            ⚠ The person-bio paragraph below is claim-register row R-58 and ships BYTE-INTACT. Its
+            own fixture note says a growth-minded rewrite would delete it first, and this edit is a
+            rewrite of exactly this card — so it is edited AROUND, never through. */}
         <article class="person-card">
-          <h3 class="person-name">Stanley</h3>
-          <p class="person-role">Founding Architect</p>
+          <h3 class="person-name">Stanley Bishop</h3>
+          <p class="person-role">
+            Founding Architect, aDNA &middot; Head of AI, Wilhelm Foundation &middot; AI-Scientist in
+            Residence, UCLA Anderson School of Management
+          </p>
           <p class="person-bio">
             aDNA is stewarded today by one person, who holds decision authority over the standard
             while the network is young. That's the honest current state &mdash; not a council we
             haven't formed. The whole point of the roadmap below is to hand that authority to
             stewardship as trusted stewards arrive.
+          </p>
+          <p class="person-link">
+            <a href="https://www.stanley.science" target="_blank" rel="noopener">
+              stanley.science &nearr;
+            </a>
           </p>
         </article>
 
@@ -167,13 +188,20 @@ const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? nul
     </div>
   </section>
 
-  <!-- Band 4 · The public-good work already here (single-sourced from subnetworks.json) -->
+  {/* Band 4 · the public-good work (single-sourced from subnetworks.json).
+      HAUSSMANN P1.2 — this is claim-register row R-62's surface rebuild, the mission's acceptance
+      criterion 2. This band used to be titled "The proof" and asserted that real public-good work
+      "already lives here": the site's strongest framing attached to its least-verifiable claim
+      family, since only one of the four survives a skeptical check and that one is operator-
+      authored. P1.1 lowered the wording as a stopgap; the register recorded that the STRUCTURE was
+      still owed. The fix is not softer adjectives — it is giving every row a check-state, so the
+      band stops asserting and starts showing. Counts derived, never typed. */}
   <section class="about-proof">
     <div class="section-inner">
-      <h2 class="section-title">The work: public-good missions taking shape</h2>
+      <h2 class="section-title">The public-good work, and what you can check</h2>
       <p class="section-subtitle">
-        The network is young and says so &mdash; one subnetwork ships public code today (the open
-        Rare Archive); three more are taking shape with real institutional anchors.
+        {subnetworkCount} subnetworks are declared on this network. {subnetworksWithPublicUrl} have
+        something you can open today; the rest do not yet. Each row says which.
       </p>
 
       <ul class="proof-grid" role="list">
@@ -182,11 +210,22 @@ const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? nul
             <h3 class="proof-name">{s.display_name}</h3>
             {s.serves && <p class="proof-serves">{s.serves}</p>}
             {s.attribution && <p class="proof-attr">{s.attribution}</p>}
+            {s.public_url ? (
+              <p class="proof-check">
+                <a href={s.public_url} target="_blank" rel="noopener">Open it &nearr;</a>
+              </p>
+            ) : (
+              <p class="proof-check proof-check--absent">
+                No public property yet &mdash; the vault record is at
+                {' '}{statusLabel(s.members?.[0]?.status)}.
+              </p>
+            )}
           </li>
         ))}
       </ul>
 
       <p class="roadmap-cta">
+        <a href="/state-of-the-network/" data-astro-prefetch>The state of the network &rarr;</a>
         <a href="/commons/" data-astro-prefetch>See the public-good commons &rarr;</a>
       </p>
     </div>
@@ -410,6 +449,12 @@ const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? nul
     font-family: var(--font-display);
     font-weight: 500;
     font-size: var(--text-sm);
+    /* Band 4 now closes with two links; they sit side by side and wrap at narrow widths rather
+       than overflowing (gate-9 / gate-29 reflow discipline). */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2) var(--space-6);
   }
 
   .roadmap-cta a {
@@ -443,6 +488,9 @@ const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? nul
     border: 1px solid var(--color-border);
     border-left: 3px solid var(--color-link);
     border-radius: var(--radius-md);
+    /* Column layout so the check-state can bottom-align across cards of unequal copy length. */
+    display: flex;
+    flex-direction: column;
   }
 
   .proof-name {
@@ -463,6 +511,30 @@ const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? nul
     font-size: var(--text-xs);
     margin: 0;
     line-height: 1.5;
+  }
+
+  /* The per-row check-state — the whole point of the rebuilt band. Pinned to the bottom of the
+     card so the states line up across the grid and the reader can scan "openable / not yet"
+     without reading each card. Never colour-only: each state carries its own words (gate-18). */
+  .proof-check {
+    margin: auto 0 0;
+    padding-top: var(--space-3);
+    font-size: var(--text-xs);
+    line-height: 1.5;
+  }
+
+  .proof-check a {
+    color: var(--color-link);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .proof-check a:hover {
+    text-decoration: underline;
+  }
+
+  .proof-check--absent {
+    color: var(--color-text-muted);
   }
 
   /* ——— Close ——— */
