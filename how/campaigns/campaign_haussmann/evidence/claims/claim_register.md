@@ -485,3 +485,49 @@ party's name doing credibility work the network has not earned* and (b) *verific
 that break when a reader actually follows them*. Both are cheap to fix and expensive to be caught
 on — **because the page invited the check**. A page that asks to be verified is held to a standard
 an ordinary page is not, and that is the trade this campaign accepted deliberately.
+
+### §7.6 P1.2 close — the re-rank, and the two claims it caught (2026-08-18)
+
+The mission's own `verification_method` required **ranker ≥ 4.0**; O3 measured **3.61** and never
+re-ran after the remediation aimed at that miss. This addendum records the re-run. Full instrument
+and per-persona reasoning: `artifacts/p1_2/rerank_record.md`.
+
+**Result: 4.11 pre-fix → 4.22 post-fix. Criterion MET** (and met before the fixes as well as after —
+the fixes were taken because the instrument named them, not because the score needed them).
+
+| Dimension | P1.2 (3.61 run) | Re-rank | Note |
+|---|---|---|---|
+| Credibility | 4.50 | **4.67** | held, then +F1 |
+| Tone | 4.50 | 4.50 | held exactly |
+| Actionability | **2.50** | **4.00** | the dimension the remediation targeted |
+| Findability | *not recorded* | 3.83 | not comparable |
+| Comprehension | *not recorded* | 4.50 | not comparable |
+| Relevance | *not recorded* | 3.83 | not comparable |
+
+**Only the first three rows are a true comparison.** The 3.61 run recorded neither its persona set
+nor three of its six dimensions, and two of the three it did name (*Credibility*, *Tone*) are not in
+the canonical `skill_decadal_aar` six — so it used a modified instrument that was never written
+down. The aggregate delta is indicative, not measured. **An unrecorded measurement is a number
+without provenance (convention 2), and it makes its own successor un-runnable** — the re-rank
+therefore states its instrument in full.
+
+#### New adjudicated rows
+
+| # | Surface | The claim | Class | Why | Severity | Tag |
+|---|---|---|---|---|---|---|
+| R-112 | `/about` closing band | *"a real Founding Architect, a real anchor partner, **real public-good work**"* | **unsupported → rewritten** | The **R-28/R-62 claim family's second recurrence**, unqualified, fifty lines below the band *this same mission* rebuilt to stop asserting it. R-28 was lowered on `/` (→ "are taking shape around"); its `/about` sibling was never adjudicated. Band 4 now *shows* the state row by row — 4 subnetworks declared, 2 with anything openable, one of those same-orbit and the other one-contributor-ours — and the closing band asserted past it. The trailing *"Real stewards grow the network"* asserted stewards the same page says do not exist yet: **cut, not softened** | S2 | [D] |
+| R-113 | `/canonical-properties` | *(absent — the page had no exits)* | **gap → fixed** | The page dead-ended at the footer while its twin, built in the same mission and sharing its scaffold, closed with five real exits. **Both reviewer lenses found this independently.** Same defect class as the original Actionability 2.50, surviving on the page the remediation did not revisit. A reader who has just satisfied themselves the site is genuine is at the point of highest intent; the page was spending it on a full stop | S2 | [D] |
+
+Both are pinned in `tests/gates/fixtures/claim_register.json` and **red-proven**: injecting the exact
+regression each row exists to catch turns those two rows red and nothing else. The R-28/R-62 family
+has now recurred twice, which is the reason it is gated rather than merely corrected.
+
+**What generalizes** (carried to P2): *a rebuilt band does not rebuild the page* — **grep the claim
+family, not the component**; and *paired pages need paired reviews* — when two surfaces ship
+together and share a scaffold, a fix to one is a hypothesis about both.
+
+**Not fixed here, logged with provenance for P2.2 (⛩ DP5):** neither disclosure surface routes to
+`/compliance/` or `/enterprise/`, and the one org-scale exit ("be the second independent node")
+points at `/community/`, which is human-only under aDNALabs ADR-025. That is the Enterprise
+Architect's 3.0 on both Actionability and Findability, and it is structural — an IA decision, not a
+sentence.

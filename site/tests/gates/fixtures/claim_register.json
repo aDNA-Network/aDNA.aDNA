@@ -137,6 +137,20 @@
       "quote": "the person who operates this network also holds a role at the Foundation",
       "class": "verified",
       "why": "The related-party disclosure, added at O3 after a hostile read found the page calling the Wilhelm Foundation independent while /about named the operator as Head of AI there. Without it the 'What is not ours' section did credibility work it had not earned, and a reader comparing the two pages would have found the conflict the site itself supplied — which reads as selective disclosure and costs more than the fact it hides. Deleting this sentence restores that defect."
+    },
+    {
+      "id": "R-112",
+      "url": "/about",
+      "quote": "The honest starting point is the one above: one named architect, one anchor partner whose closeness to this project we named rather than hid, public-good work shown row by row with what you can open today",
+      "class": "verified",
+      "why": "The /about closing band, rewritten at the P1.2 close after the re-rank (finding F1) caught it re-asserting 'a real Founding Architect, a real anchor partner, real public-good work' fifty lines below the band THIS MISSION rebuilt to stop asserting exactly that (R-62). Same claim family as R-28, which was lowered on / but never adjudicated on its /about sibling. This is the family's SECOND recurrence, which is why it is pinned: band 4 shows the state row by row, and the closing band must not assert past it. The cut clause 'Real stewards grow the network' asserted stewards the same page says do not exist yet."
+    },
+    {
+      "id": "R-113",
+      "url": "/canonical-properties",
+      "quote": "If you found something claiming to be aDNA that is not on this list",
+      "class": "verified",
+      "why": "The exits section added at the P1.2 close after the re-rank (finding F2) — both reviewer lenses independently found that this page dead-ended at the footer while its twin, built in the same mission and sharing its scaffold, closed with five real exits. Pinned because the reader who has just satisfied themselves the site is genuine is at the point of highest intent, and routing that intent to the security-reporting path is the whole operational value of a clone-site defense. Deleting the exits restores the dead end the 2.50 Actionability score measured."
     }
   ]
 }
