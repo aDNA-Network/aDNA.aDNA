@@ -59,7 +59,7 @@ Production probed directly `[D]`, confirming P2.1 is live-absent:
 |---|---|
 | `/org-context-graphs` | 301 → 200 ✅ |
 | `/org-context-graphs/` | **404** ❌ |
-| `/vaults/ScienceStanley` | **404** ❌ |
+| `/vaults/ScienceStanley` | **404** — ⚠ **retracted as evidence, see F2**: never a published URL, so this 404 is correct and is *not* a symptom of the P2.1 gap |
 | `/vaults/sciencestanley` | 200 ✅ |
 
 ## Incident — credential leaked into the transcript
