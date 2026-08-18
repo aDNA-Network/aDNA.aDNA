@@ -2,7 +2,7 @@
 type: governance
 scope: workspace
 created: 2026-05-25
-updated: 2026-07-22   # + §8.1 single-writer general form promoted (D-DP2 item 5, Refit M1; Rosetta edit — authored_by unchanged)
+updated: 2026-08-17   # + §2.5/§3.5/§4.5/§6.9 three-body amendment, §9 ratification block PROPOSED (Chambellan M-A6; Rosetta edit — authored_by unchanged)
 last_edited_by: agent_rosetta
 status: active
 canonical_at: /Users/stanley/aDNA/aDNA.aDNA/what/doctrine/doctrine_credential_handling.md
@@ -98,6 +98,23 @@ Some credentials live as env vars exported from shell rc directly (`SS_GEMINI_AP
   
   **Reference incident** (third-event recurrence for `SS_VERCEL_TOKEN`): `ScienceStanley.aDNA/who/coordination/incident_20260528_vercel_token_ps_leak.md`. Agent invoked `vercel deploy --prod --yes --token=$SS_VERCEL_TOKEN` during M08 P-D; full token value visible in `ps -ef` for ~6 min during a 1.4 GB upload. Local-only exposure window, but discipline regression. Most CLI tools (Vercel, gh, op, fly, doctl, etc.) accept env-var auth as a first-class path; if a tool ONLY supports `--flag`, file an upstream issue or wrap with `expect`/heredoc into stdin.
 
+### §2.5 Access under the three-body model (Chambellan M-A6 amendment)
+
+Three bodies now answer credential questions, and they answer **different** ones. Asking the wrong body is how a register goes stale without anybody lying.
+
+| Body | The question it answers | What it is authoritative about |
+|---|---|---|
+| **`Home.aDNA` (Hestia) — broker of record** | *Does this credential exist, what is it called, who consumes it, where does it live?* | **Existence and identity.** The register is the truth about what there is. |
+| **Bitwarden / Vaultwarden — access engine** | *Give me the value, now, under this scope.* | **Values**, for the tiers migrated to it. It holds no opinion about what *should* exist. |
+| **Keycloak (Aeacus) — identity provider** | *Is this principal who they claim to be, and what may they reach?* | **Assertions about principals.** It issues short-lived tokens, not long-lived secrets. |
+
+Four rules follow, and they are the whole point of naming the bodies separately:
+
+1. **Discovery always starts at the broker** (§1), whichever engine holds the value. An access engine that can hand you a value you cannot find in the register is a **finding**, not a shortcut — the register's coverage claim is false the moment that is true.
+2. **The IdP is not a credential store.** A Keycloak client is a broker row of `storage.kind: keycloak_client` recording client id, realm, and audience/scope — **never a client-secret value**. If a flow genuinely needs a long-lived client secret, that secret is a broker-held credential in its own right, with its own row and its own rotation trigger. "It's in Keycloak" is a locus, not an exemption.
+3. **No body is authoritative about another body's population.** A clean report from any one of the three covers **its own reach only**. This is the same rule `doctrine_secret_scanning.md` states for scanners (reach ≠ efficacy) and the same shape as the parity-instrument law there — a check is sound only over the population it actually enumerates.
+4. **The consumer interface does not change.** §3.3's invariant holds across all three bodies: env-var on the hot path, a cold path for a TTY. Consumer code and the §7 routing snippet **never branch on which body ultimately held the value** — that is precisely what makes a later custody move (§ `doctrine_safe_mutations.md` §8) survivable.
+
 ## §3 Storage — where credentials live, canonically
 
 Per ADR-002 G2.1, storage is **hybrid**:
@@ -152,6 +169,24 @@ SSH keys are brokered in **two named tiers**; each key's tier is recorded in its
 
 - **Broad / production keys** — the secure **default**: **passphrase-protected**, loaded into a running **`ssh-agent` once per session** (one TTY unlock → served non-interactively to agents thereafter). An agent never enters the passphrase mid-task. Example: `id_ed25519` (C27).
 - **Automation / scoped keys** — **dedicated, passphraseless**, protected by **scope + the cert-gated mesh + file perms (0600)**, and **revocable in one line** (delete the `authorized_keys` line + retire the key). Names + fingerprints in the inventory; **never the standard for broad keys** — justified per-key by an automation need that can't tolerate an interactive unlock, and carrying an explicit revoke condition. Example: `id_ed25519_adna_alpha_ops` (C55; ADR-018 alpha exemption; "revoke at alpha close"). This key stays **out of broad ssh-agent preload** by design.
+
+### §3.5 Storage kinds and scope under the three-body model (ADR-011 — WIRED, Chambellan M-A6 amendment)
+
+`Home.aDNA` **ADR-011** (`what/decisions/adr_011_register_schema_extensions_one_ruling.md` — ratified by the operator at the S197 chat gate, 2026-08-17; folding WI-20 + WI-21 + DP-8 + FU-2 into one ruling per the DP-8 recommendation) extends the **register schema of record**. This is **wired fact, not intent** — executed the same day at Home commit `5172655`, register at **100 rows**, multiset-parity **PASS in both directions**:
+
+- `storage.kind` gains two values: **`bitwarden_scoped`** and **`keycloak_client`**
+- every row gains a **`scope:`** field
+
+The §3 tier table above is **unchanged and still correct** for what it describes (where a credential sits at rest, by tier). These two kinds are an **extension**, not a replacement — a credential's tier says what class of thing it is; its `storage.kind` says which body currently holds it, and the two now vary independently:
+
+| `storage.kind` | Held by | `scope:` records | Rotation shape |
+|---|---|---|---|
+| `bitwarden_scoped` | Access engine (Vaultwarden per DP-1) | The collection/scope the value is reachable under — the blast radius of a single engine compromise | Value rotates in the engine; the broker row is unchanged (the row is identity, not value) |
+| `keycloak_client` | IdP (Aeacus) | Realm · client id · **token audience** — what an issued assertion is good *for* | Client lifecycle, not value rotation: the client is disabled/recreated, and every audience it was good for is affected at once |
+
+**Why `scope:` is load-bearing and not bookkeeping.** Every count derived from this register is a blast-radius estimate, and a row without scope silently reports the wrong one — the register's own history proves it twice: a broker row that understated `admin:org` **understated blast radius** (charter D-51), and a row claiming coverage for a file that does not exist **inflated every count derived from it** (D-50). `scope:` is where that failure is now forced into the open.
+
+**Trigger for a successor doctrine — named, not left implicit** (per the HQ naming rule, `aDNALabs.aDNA` ADR-014 §7: name the split-out trigger rather than pre-splitting). A standalone `doctrine_identity_federation.md` is chartered **when, and only when, IdP rules stop fitting as §-amendments here** — concretely, when *any* of: (a) realm/client lifecycle needs its own multi-step ceremony that is not a case of §4, (b) token audience/scoping rules need to bind consumers who are not credential consumers at all, or (c) `Keycloak.aDNA` (DP-13) has an operating surface whose rules would be duplicated rather than referenced here. Until then, the IdP is a **body in this doctrine**, not a doctrine of its own. See the M-A6 verdict recorded at §9.
 
 ## §4 Provisioning — onboard a new credential
 
@@ -244,6 +279,24 @@ pbcopy < /dev/null                                     # clipboard-clear
 ### §4.4 Discovery after provisioning
 
 After any new credential lands, append a row to `Home.aDNA/what/inventory/inventory_credentials.{md,yaml}`. The inventory is the broker's index; an unindexed credential is invisible to future sessions.
+
+### §4.5 Delivering a credential value to a second person (Chambellan M-A6 amendment)
+
+§4.1–§4.4 cover onboarding a credential the **operator** holds. Handing a live value to a **second person** is a different act with a different failure mode, and it has now happened twice on one credential — the S193 G31 arc (a 90-day, team-scoped partner token). Both variants are on record **because the second superseded the first mid-arc under operator direction**, so doctrine carries **n=2**, not a single blessed path:
+
+- **Variant A — view-once share link.** A one-shot link from the custodian store; the value is never composed into a message body. Preferred in the abstract: one retrieval, then the link is dead.
+- **Variant B — raw-token-inline message.** The value composed directly into a message to the recipient. Chosen by operator direction when the recipient's retrieval path made A unreliable.
+
+**Six rules make either variant lawful. All six bind both.**
+
+1. **The value never transits the conversation.** The message is composed operator-read → heredoc → clipboard and verified by **byte and occurrence count**, never by printing it. (Counting is how you confirm a value you are forbidden to look at — a hash or a length, never an echo; cf. §6.3.)
+2. **The value never lands in the vault.** §6.1 NAMES ONLY is unchanged and admits no delivery exception. The rebuild script for a delivery lives in session scratch, not in the tree.
+3. **Scoped and expiring *before* delivery, never after.** Per DP-6's alpha class — scoped, expiring, single-purpose. A credential that has to be narrowed after it is in a second person's hands has already been delivered wide.
+4. **Mitigations travel with the value, in the same message**: store-it-now, confirm-receipt, and *the sender deletes the delivery message*. A mitigation sent separately is a mitigation the recipient may never read.
+5. **A custodian of record is named, and it is not the delivery channel.** The 1P item stays custodian; the channel is transport, and **transport is assumed retained** (§6.1's "anything that helps reconstruct"). Variant B's whole risk is exactly this: an inline value in a retained messaging system.
+6. **The grant gets a register row before delivery, not after.** A live credential issued to a second person with no row in the register of record is the highest-priority defect the M-A2 reconciliation surfaced (charter D-46 note, row **E1** — that very token). Delivery without a row means the credential's existence depends on someone remembering it.
+
+**Recorded honestly, not smoothed**: variant B is the *less* safe of the two in the abstract, and it was chosen by operator direction with compensations (in-message mitigations, revoke/expiry/scope warnings retained, operator-deletes-the-message). Doctrine records the ruling and its compensations rather than retconning a preference; a future delivery picks A by default and must **state a reason** to pick B.
 
 ## §5 Rotation — periodic + on-leak
 
@@ -377,6 +430,20 @@ Operator handoff notes (`~/.lattice/handoff_*.md`, `~/.lattice/handoff_kai_*.md`
 
 Historical context (F14, M05 O1 audit 2026-05-25): a `~/.lattice/handoff_kai_*.md` file contained an 8-char prefix-plus-suffix reference (exceeded the §6.3 ≤6-char rule). The token has rotated 2× since — historical-only, benign — but the §6 family did not explicitly cover handoff notes when written. §6.8 closes that gap. F14 doctrine-gap RESOLVED at M06 2026-05-26.
 
+### §6.9 A rule that names a path names a **locus**, and loci rot (D-28 — Chambellan M-A6 amendment)
+
+The fleet's finding **F8** described the MCP-config secret surface as `.mcp.json`. Verified at the Chambellan census (charter **D-28**, 2026-08-16): the only workspace `.mcp.json` outside the DataRoom extraction is `Archive.aDNA/lattice-labs/.mcp.json` — **F8 as written describes a dead file in the archive.** Its failure mode survives; its locus does not.
+
+**Live surface, verified 2026-08-16**: `~/.claude.json` (mode `0600`) and `~/.lattice/mcp_config.json`. Registered as census rows **S24 / S25 / S26**. Both inherit §3.1's backup exclusion and §6.6's enforcement.
+
+The general rule — the part worth inheriting past this one correction:
+
+- **Every path a doctrine names is a claim with a date on it.** Write the date (`verified <YYYY-MM-DD>`) at the point of writing.
+- **Re-verify at use, not at authoring.** A rule executed a year after it was written is executing against a path nobody has looked at since. (Exact analogue: charter **D-47** — a remedy naming a specific free id went stale *three days* after it was written, and nothing watched it.)
+- **When a locus moves, correct the locus and keep the failure mode.** A finding does not retire because its file did. Annotate forward (SO-7); never delete the original.
+
+**Why this is worse than a missing path, not merely equivalent**: an uncorrected locus makes a scan of the wrong place **look like coverage**. The register reports clean, the sweep exits 0, and the live surface was never in scope. That is the same defect class as a parity checker that verifies both files exist while printing a row count (charter **D-60**) — a cheap legible proxy promoted to the thing it stands for.
+
 ## §7 Cross-vault routing (template snippet)
 
 Every consumer vault adds the following snippet to its `CLAUDE.md`. The snippet is **NAMES ONLY** — no credential value is referenced anywhere in a consumer vault.
@@ -438,6 +505,22 @@ The credential / inventory / doctrine surface is a small-fan-in shared resource 
 4. **Stuck → human.** When two writers genuinely need the same unit, the tie does **not** resolve by "last write wins" — it escalates to the operator. (The M05 reconciliation was operator-routed; that is the pattern, not the exception.)
 
 This is the **discipline**, not a schema. The *federated wire-format* for a cross-node lease (lease records, lock tables, a claim-lease protocol) stays **D-DP1-gated** — the Coordination-category ontology lock — and is Operations.aDNA's to define. A standalone `pattern_single_writer_lease` lifting these four rules out of the credential doctrine into a general operational pattern is **filed for M5 vNext triage** ([[idea_upstream_single_writer_lease_for_inventory]]); this promotion teaches the general form here in the meantime, per the D-DP2 / DP6 ruling (Operation Refit M1, 2026-07-22).
+
+## §9 Ratification record (§7.7) — Chambellan M-A6 amendment
+
+> Authored by an agent; **owned by the operator**. This block is `proposed` and stays `proposed` until the
+> operator signs it. Nothing in the M-A6 amendment set is in force before that signature.
+
+| Field | Value |
+|---|---|
+| **decision** | Adopt the Chambellan M-A6 amendments to this doctrine: **§2.5** (three-body access model — broker of record / access engine / IdP, and the four rules that follow) · **§3.5** (ADR-011 storage kinds `bitwarden_scoped` + `keycloak_client` and the `scope:` field as schema of record, plus the **named trigger** for a future `doctrine_identity_federation.md`) · **§4.5** (partner delivery of a value to a second person; n=2 variants with six binding rules) · **§6.9** (the locus rule; D-28's correction of F8's dead `.mcp.json` path) |
+| **ratified-by** | *(operator — unsigned)* |
+| **date** | *(unsigned)* |
+| **status** | **proposed** |
+
+**What the operator is signing, in plain terms**: that the three-body split is *law* rather than description — a value reachable outside the register becomes a finding; a Keycloak client is a row, never a place secrets hide; a value handed to a second person needs a register row **before** it is sent; and a doctrine that names a file path owes that path a date.
+
+**Findings discharged here**: charter **D-28** (locus) · **ADR-011 Part 3** as wired schema-of-record (Home `5172655`) · the S193 **G31** partner-delivery arc (n=2). **Deliberately not decided here**: which credentials migrate to which body — that is Chambellan **P5** custody work, and this doctrine only makes the move expressible.
 
 ## Related
 
