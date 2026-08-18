@@ -12,7 +12,7 @@ mission: mission_haussmann_p2_2_ia_consolidation
 phase: P2
 executor_tier: fable
 token_budget_estimated: "~200–300 kT: ship P2.1 (push + deploy + the owed live probe matrix + ADR-051 ratification + the unowned doctrine follow-up) ≈ 40–60 kT, then P2.2 O0+O1 (ADR-049 options, 2–3 IA comps, ranker) halting at ⛩ DP5 ≈ 150–200 kT. Mission alone is budgeted 250–350 kT across 2 sessions; this is session 1 of 2."
-token_budget_actual:
+token_budget_actual: "~110 kT (est. 200–300 kT). Under: P2.1's ship was cheap once the deploy-log diff cleared, and the comps reused the Storyweave pattern rather than inventing one. O2/O3 carry the remainder."
 last_edited_by: agent_rosetta
 tags: [session, haussmann, p2, deploy, redirects, ia, navigation, dp5]
 ---
@@ -76,8 +76,83 @@ is a throwaway test-account credential whose rotation is de-prioritized
 
 ## Activity Log
 
-*(appended as work proceeds)*
+1. Pre-flight: fetch, divergence check, deploy-log diff vs origin (identical — no competing lane).
+2. Pushed `070f104..b9d510a`, gitleaks clean.
+3. Deployed prod via `deploy_adna.sh prod`. `inject_redirects` widened **31 of 31** routes — its
+   first run against production. Headers 4/4, no drift.
+   `deploy_record: 2026-08-18T23:42:11Z mode=prod tree=b9d510a`
+4. Built + ran the owed live probe matrix. **First draft was wrong and looked right** (see Findings).
+   Corrected: **162 assertions, 0 failures**.
+5. ADR-051 → `accepted`; frontmatter, prose Status block, and Ratification table all reconciled.
+6. `doctrine_visual_inspection.md` §3.2 authored — the unowned P2.1 follow-up.
+7. Commit `7b9956e`.
+8. P2.2 O0 — ADR-049 authored (3 options, exact derived redirect counts; B cut with reasoning).
+9. P2.2 O1 — comps + ranker; headless-verified nav counts per pane. Commit `5112884`.
+10. STATE banner + phase row; mission Progress; charter nav-row correction.
+
+## Findings
+
+**F1 — the verification instrument reproduced the very bug it was verifying.** The probe's first
+draft printed `64 PASS, 0 FAIL` while testing **nothing** in its canonical third. It guessed the
+field name `slug`; the registry carries `vault_slug`; the resulting empty array iterated cleanly and
+the run looked green. This is P2.1's own documented silent-drop class — *a missed lookup filtered
+away rather than raised* — recurring **inside the verification code, within a day of being written
+up**. The generalizable form: **a green result from an instrument that derives its own scope is
+worthless until you check the scope it derived.** Fix: derive from the build snapshot and **throw**
+on an empty derivation.
+
+**F2 — a claim of mine needed retracting.** The plan's evidence table asserted
+`/vaults/ScienceStanley` was a broken mixed-case URL P2.1 would repair. It was never a published
+URL at all — that card already declares a canonical `vault_slug`, so its 404 is correct before and
+after. I had picked an arbitrary mixed-case string instead of a real legacy URL. The probe matrix
+was unaffected because it derives from data rather than from my example, which is the argument for
+deriving.
+
+**F3 — `gate-7-interaction.spec.ts:68` has been passing vacuously since it was written**, asserting
+against `/adopters/solo-developer`, a route that has never existed. `page.goto` does not throw on a
+404. Carried to P2.2 O2.
+
+**F4 — concurrent lane in this tree.** `cac43e1` (Venus, Network.aDNA) landed between my two
+commits: an inbound `ack_required: true` memo requesting **standard-side review of
+`adna.network.invite/v1` before Gangway Phase A's exit gate closes** (medium). Not this mission's
+lane; surfaced to the operator, unanswered. The shared-tree hazard held — explicit-path staging
+meant nothing was clobbered.
 
 ## SITREP
 
-*(at close)*
+**Completed.** P2.1 shipped, probed live (162/0), and closed for real; ADR-051 ratified against a
+result proven in production rather than asserted; doctrine §3.2 written (the follow-up that had no
+owner); P2.2 O0 (ADR-049) and O1 (comps + ranker) complete.
+
+**In progress.** P2.2 is `active`, halted at ⛩ DP5. O2/O3 are session 2 of 2.
+
+**Next up.** ⛩ **DP5 — the ADR-049 IA-model pick (A or C).** Then O2 (implement: nav ≤7, the
+consolidation + 301s, duplicate-title elimination, F3's vacuous gate) and O3 (re-crawl, same-diff
+gate updates, T0 captures, AAR).
+
+**Blockers.** None technical. Three operator items: the DP5 pick · a fresh push GO (HEAD is 3 ahead;
+the earlier GO was consumed by the P2.1 pair) · whether an independent re-rank is wanted before DP5,
+given the declared builder-scored-own-work conflict.
+
+**Files touched.** `site/scripts/deploy_log.txt` · `what/decisions/adr_051_*` (accepted) ·
+`what/decisions/adr_049_*` (options) · `what/doctrine/doctrine_visual_inspection.md` (§3.2) ·
+`how/campaigns/campaign_haussmann/{campaign_haussmann.md, missions/mission_haussmann_p2_2_*,
+artifacts/p2_1/probe_matrix.mjs, artifacts/p2_2/{ia_comps.html, ranker_record.md}}` · `STATE.md` ·
+this session file.
+
+## Next Session Prompt
+
+You are Rosetta in `~/aDNA/aDNA.aDNA`. Operation HAUSSMANN is at **P2, mission P2.2 (IA
+consolidation), halted at ⛩ DP5** — the ADR-049 IA-model pick. P2.1 is fully shipped and live-proven
+(162/0 probe, ADR-051 accepted). Read `what/decisions/adr_049_ia_model_audience_disposition.md`,
+open `how/campaigns/campaign_haussmann/artifacts/p2_2/ia_comps.html` in a browser, and read
+`ranker_record.md` — noting that the ranker **declines to separate A from C** (4.03 vs 4.17) and
+that the comps were scored by the agent that built them, so the score is a `[D-syn]` pre-screen.
+Once the operator picks, stamp ADR-049's Ratification block and execute **O2** (nav ≤7, branch
+consolidation + 301s under ADR-051's live law, duplicate-title elimination, and fix
+`gate-7-interaction.spec.ts:68` which asserts against a route that has never existed) then **O3**
+(re-crawl, same-diff gate updates — `gate-13-nav-surfacing` is the primary blocker and its test name
+hardcodes "8-item desktop row" — T0 captures, AAR). Content is **re-homed, never deleted**. Two
+outstanding operator items: HEAD is unpushed (per-action GO), and an inbound Venus memo
+(`coord_2026_08_18_inbound_from_venus_invite_schema_so10_checkin.md`, `ack_required: true`) awaits a
+standard-side review of `adna.network.invite/v1` before Gangway Phase A's exit gate closes.
