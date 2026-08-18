@@ -61,3 +61,18 @@ tags: [session, haussmann, p1, registry, mobile, dp2, dp4]
 - **Change.** Port contention fails loud (`reuseExistingServer: false` + GATE_PORT); the leak baseline cannot silently regrow (hard gate); T0 captures are deterministic.
 - **Follow-up.** P1.1/P1.2 open · Aspasia ack watch · token broker entry · evidence-retention ⛩ · WebForge upstream candidates: lint-fed-generator pattern, reflow-gate class, reducedMotion capture rule, foreign-server fail-loud.
 - **Clock note.** Deploy record timestamps are UTC 2026-08-18 (local 08-17 evening); human records keep the operator frame 2026-08-16 session start.
+
+## Post-close addendum — concurrent-deploy collision (caught + repaired)
+
+At push time origin was 12 ahead (parallel session: installer/ADR-058, prod-deployed 19:54Z tree
+`e8b4540`). My 01:33Z deploy (tree `3e53637`, built pre-installer) had **un-shipped the installer**
+(`/install.sh` 404 live `[D]`). Repair: rebase onto origin (sole conflict = append-only
+`deploy_log.txt`, unioned chronologically) → suite **414 green** on the merged tree → redeploy
+`2026-08-18T01:39:25Z mode=prod tree=62e7388` → live-verified: installer routes **200×3** +
+minimal-card + graph counts + 4/4 headers `[D]`. AAR delta — **Finding:** two lanes deploying the
+same prod surface from diverged trees silently un-ship each other; the deploy script verifies
+headers but not tree-vs-origin freshness. **Follow-up:** add a fetch-and-warn (origin-ahead check +
+deploy_log tail comparison) guard to `deploy_adna.sh` (staged as an idea for the campaign's P4.4 CI
+lane); token note — the parallel lane deployed with `VERCEL_TOKEN_ADNA` (broker entry LANDED); this
+shell still fell back to `SS_VERCEL_TOKEN` (env not present in this session's shells — resolves on
+next login shell).
