@@ -29,6 +29,7 @@ param(
     [string]$Prefix    = $(if ($env:ADNA_PREFIX)  { $env:ADNA_PREFIX }  else { "$env:LOCALAPPDATA\aDNA" }),
     [string]$Instance  = 'nebula-1043',
     [string]$Base      = $(if ($env:ADNA_INSTALL_BASE) { $env:ADNA_INSTALL_BASE } else { 'https://adna.network' }),
+    [switch]$SecondIdentity,
     [switch]$NoWorkspace,
     [switch]$DryRun,
     [switch]$Force
@@ -88,7 +89,7 @@ try {
     # Same discipline as the Unix bootstrap: the payload hash is pinned in THIS file, not
     # fetched alongside the payload. A checksum served from the same host as the artifact
     # catches corruption but not substitution.
-    $PAYLOAD_SHA256 = 'f9374a2d1871863d661a826926b976d6e5d42a208f2b42f70bbbb895424b61cd'
+    $PAYLOAD_SHA256 = '31f646fa50428ee2ec987a27117a5328a938a2f497e898397988093c47854da6'
     if ($PAYLOAD_SHA256 -eq 'PAYLOAD_SHA256_UNSET') {
         Die "this install.ps1 has no payload hash pinned -- it was published unreleased. Refusing to run unverified code."
     }
@@ -109,6 +110,14 @@ try {
     if ($P.requires_ratification -and $P.requires_ratification.Count -gt 0) {
         Die "persona '$PersonaName' has $($P.requires_ratification.Count) unratified decision(s) and cannot be installed yet:`n        $($P.requires_ratification[0])"
     }
+
+    # Already-on-the-network detection: an interface holding one of OUR overlay addresses means
+    # this machine is already enrolled -- emitting an enrollment request would ask for a second
+    # identity it does not need (found when the operator's own live node was told to send one).
+    $ovPrefix = ($C.overlay.cidr -split '\.')[0..2] -join '.'
+    $overlayIp = (Get-NetIPAddress -AddressFamily IPv4 -ErrorAction SilentlyContinue |
+                  Where-Object { $_.IPAddress -like "$ovPrefix.*" } |
+                  Select-Object -First 1).IPAddress
 
     $root   = Join-Path $Prefix $Instance
     $pkiDir = Join-Path $root 'pki'
@@ -342,6 +351,14 @@ try {
     $outFile = Join-Path $root 'enrollment_request.json'
     Set-Content -Path $outFile -Value $body -Encoding utf8
 
+    if ($overlayIp -and -not $SecondIdentity) {
+        Write-Host ""
+        Write-Host "NEXT: nothing. This machine already holds overlay address $overlayIp, so it is"
+        Write-Host "ALREADY ON THE NETWORK -- an enrollment request would ask for a second identity it"
+        Write-Host "does not need. Files were still installed/kept (nothing was overwritten)."
+        Write-Host "If a second identity is genuinely intended, rerun with -SecondIdentity."
+        return
+    }
     Write-Host ""
     Write-Host "NEXT: send this to whoever invited you. It contains your PUBLIC key only --"
     Write-Host "no private key, no password, nothing secret."

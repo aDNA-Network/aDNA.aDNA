@@ -56,10 +56,9 @@ fi
 echo ""
 if [ "$rc" -eq 0 ]; then
     cat <<'DONE'
-   ✅ Done. Scroll up — there is a block of text marked
-      ENROLLMENT REQUEST. Send that whole block to whoever
-      invited you. They approve it, send one file back, and
-      you are on.
+   ✅ Done. Scroll up and follow the line that starts
+      with NEXT — it says exactly what (if anything) to
+      send to whoever invited you.
 
 DONE
 else
