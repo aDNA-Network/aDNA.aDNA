@@ -1,4 +1,6 @@
 ---
+import { PUBLISHER, SITE_ORIGIN } from '../../data/canonical';
+
 type JsonLDValue = Record<string, unknown> | Record<string, unknown>[];
 
 interface Props {
@@ -34,7 +36,7 @@ function selectOgImage(path: string): string {
 const resolvedOgImage = ogImage ?? selectOgImage(Astro.url.pathname);
 
 const fullTitle = title.includes('aDNA') ? title : `${title} — aDNA`;
-const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? SITE_ORIGIN;
 const ogImageUrl = resolvedOgImage.startsWith('http') ? resolvedOgImage : `${siteUrl}${resolvedOgImage}`;
 ---
 
@@ -59,7 +61,10 @@ const ogImageUrl = resolvedOgImage.startsWith('http') ? resolvedOgImage : `${sit
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content={fullTitle} />
-<meta property="og:site_name" content="aDNA" />
+{/* HAUSSMANN P1.2 (§7.1): the site name a scraper reads must match the name in the structured data
+    and the footer copyright — one organization, one name, asserted identically everywhere. Was the
+    literal "aDNA" while JSON-LD and the footer both said "aDNA Network". */}
+<meta property="og:site_name" content={PUBLISHER} />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />

@@ -3,12 +3,21 @@
  * Documentation archetype: TechArticle, WebSite, WebPage, CollectionPage.
  */
 import { PUBLISHER, PUBLISHER_URL } from '../data/canonical';
+import { PUBLISHER_SAME_AS } from '../data/canonical_properties';
 
-/** Canonical publisher organization for every JSON-LD builder (SP-1 single-source; gate G5/G4). */
+/**
+ * Canonical publisher organization for every JSON-LD builder (SP-1 single-source; gate G5/G4).
+ *
+ * HAUSSMANN P1.2 added `sameAs` — the machine-readable half of the §7.1 clone-site defense. It is
+ * derived from the same property list the canonical-properties page renders, so the page a human
+ * reads and the graph a machine reads cannot disagree. `sameAs` carries only properties that ARE this
+ * organization (see canonical_properties.ts for why partner properties are deliberately excluded).
+ */
 const PUBLISHER_ORG = {
   '@type': 'Organization' as const,
   name: PUBLISHER,
   url: PUBLISHER_URL,
+  sameAs: PUBLISHER_SAME_AS,
 };
 
 interface WebPageParams {
@@ -30,6 +39,7 @@ export function buildWebPageJsonLD({ title, description, url }: WebPageParams): 
     name: title,
     description,
     url,
+    publisher: PUBLISHER_ORG,
   };
 }
 
@@ -111,5 +121,6 @@ export function buildCollectionPageJsonLD({ title, description, url }: WebPagePa
       name: 'aDNA — Agentic DNA Knowledge Architecture',
       url: new URL('/', url).href,
     },
+    publisher: PUBLISHER_ORG,
   };
 }

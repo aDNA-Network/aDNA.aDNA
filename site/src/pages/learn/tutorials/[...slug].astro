@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
 import TryInClaudeCode from '../../../components/sections/TryInClaudeCode.astro';
 import { buildHowToJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
+import { SITE_ORIGIN } from '../../../data/canonical';
 import '../../../styles/tutorial-meta.css';
 
 export async function getStaticPaths() {
@@ -19,7 +20,7 @@ const { Content, headings } = await render(guide);
 const timeMatch = guide.data.estimated_time?.match(/(\d+)\s*min/)?.[1];
 const totalTime = timeMatch ? `PT${timeMatch}M` : undefined;
 
-const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? SITE_ORIGIN;
 
 const jsonLD = [
   buildHowToJsonLD({

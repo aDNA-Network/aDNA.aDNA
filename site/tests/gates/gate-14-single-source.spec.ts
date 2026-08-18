@@ -32,7 +32,13 @@ function htmlFiles(dir: string): string[] {
 
 // Forbidden drift literals — the regression guards for C-1 + C-3.
 const FORBIDDEN: { pattern: string; why: string }[] = [
-  { pattern: 'aDNA-Network/aDNA.aDNA', why: 'C-1 — dead dev-vault repo (404); proofs must point at the public image aDNA-Network/aDNA' },
+  // HAUSSMANN P1.2, 2026-08-18 — rationale corrected, rule KEPT. This entry used to read "dead
+  // dev-vault repo (404)". That premise is now false: the dev vault was made public and returns 200
+  // (probed logged-out 2026-08-18). The rule survives on its other, still-valid ground — a reader
+  // following a proof-link wants the clone-and-run image, not the docs vault this site is built
+  // from. Left uncorrected, the stale "(404)" would have invited someone to delete a guard that is
+  // still doing real work.
+  { pattern: 'aDNA-Network/aDNA.aDNA', why: 'C-1 — proof-links must point at the public image aDNA-Network/aDNA, not the dev vault (the dev vault is public but is not the install target)' },
   { pattern: 'github.com/LatticeProtocol', why: 'C-3 — stale legacy-org publisher/repo; route through canonical.ts' },
   { pattern: 'LatticeProtocol/Agentic-DNA', why: 'C-3 — legacy branding.json github drift' },
 ];
