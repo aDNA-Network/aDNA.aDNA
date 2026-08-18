@@ -2,7 +2,7 @@
 type: adr
 adr_number: "051"
 title: "URL canonicalization: one slug law + a redirect map for every URL ever published"
-status: proposed
+status: accepted
 created: 2026-08-16
 updated: 2026-08-18
 last_edited_by: agent_rosetta
@@ -17,9 +17,13 @@ tags: [adr, haussmann, urls, redirects, d2, d12]
 
 ## Status
 
-**Proposed** — completed by mission P2.1 (2026-08-18); awaits operator ratification (§7.7).
-Agents author decisions; operators ratify them. Implemented in-session under the mission's
-`human_gate: false`, but **nothing is deployed** — the live cutover is a separate ⛩.
+**Accepted** — 2026-08-18, ratified by Stanley (operator) at the deploy ⛩, which the Ratification
+block below named as the earlier of its two permitted gates. Authored by mission P2.1 and held
+`proposed` until an operator signed it (§7.7: agents author decisions, operators ratify them).
+
+**Deployed and proven in production** the same day (`tree=b9d510a`, deploy record
+`2026-08-18T23:42:11Z`). The live probe matrix that this decision's §5 declared *owed* has now run:
+**162 assertions, 0 failures**. Ratification followed the probe, not the intent.
 
 ## Context
 
@@ -141,13 +145,21 @@ catches a canonical URL (loop guard). All assertions derive from the build snaps
   live only in `.vercel/output/config.json`, never in `dist/`. The control proves it: the
   pre-existing redirect that 301s in production also 404s locally. Redirect behavior is therefore
   verified at the config level plus regex simulation; **the live probe is owed at the deploy ⛩**.
+- **The owed live probe RAN and passed** (2026-08-18, deploy `tree=b9d510a`): **162 assertions,
+  0 failures** — 31 legacy redirect sources probed in *both* slash forms (62), all 74 canonical
+  vault URLs at 200 (zero 404), the 24 vault redirects followed end-to-end to a live page, and
+  `/org-context-graphs` resolving in both forms. `inject_redirects` reported **31 of 31 routes
+  widened**. The probe derives every URL from the build snapshot (`.vercel/output/config.json` +
+  `dist/vaults/`) and **throws on an empty derivation** — its first draft silently skipped the
+  canonical third of the matrix after a bad field guess (`slug` vs `vault_slug`), which is the
+  §5 silent-drop hazard reproduced in the instrument itself. Evidence: `artifacts/p2_1/probe_matrix.mjs`.
 
 ## Ratification
 
 | Field | Value |
 |---|---|
 | **Decision** | Adopt the slug law (§1), dual enforcement without a registry regen (§2), the 301 policy incl. the prior-owner non-redirect ruling (§3), and gate-30 (§4). |
-| **Ratified by** | *(pending — Stanley, operator)* |
-| **Gate** | P2 exit review, or earlier at the deploy ⛩ |
-| **Date** | *(pending)* |
-| **Status** | **proposed** |
+| **Ratified by** | **Stanley (operator)** — in-chat `AskUserQuestion`, ratify-at-the-deploy-⛩ option |
+| **Gate** | Deploy ⛩ (the earlier of the two the block allowed), after the live probe matrix passed 162/0 |
+| **Date** | 2026-08-18 |
+| **Status** | **accepted** |

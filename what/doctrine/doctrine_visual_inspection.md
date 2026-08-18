@@ -1,9 +1,9 @@
 ---
 type: doctrine
 created: 2026-07-07
-updated: 2026-07-27   # + §2 T1 "already configured" claim CORRECTED (was false on this node) + §3.1 authenticated-surface T0 + §5 vault bindings (Hypnos / PercySleep B3 fallout)
+updated: 2026-08-18
 status: active
-last_edited_by: agent_hypnos
+last_edited_by: agent_rosetta
 tags: [doctrine, visual_inspection, browser_automation, playwright, headless, screenshots]
 ---
 
@@ -49,7 +49,7 @@ tags: [doctrine, visual_inspection, browser_automation, playwright, headless, sc
 
 - **`aDNA.aDNA/scripts/visual_capture.mjs`** — the reusable T0 harness. Args: `--base <url>` · `--routes </a,/b>` · `--viewports <names>` · `--themes dark,light` · `--out <dir>` · `--axe` · `--report <path>`. Resolves Playwright portably (checks `site/node_modules`) so any web vault runs it without a copy-into-`site/` hack. Output: full-page PNGs (`<surface>__<viewport>__<theme>.png`) + `capture_report.json` (title/desc/h1/h2count/bodyLen/height/console-errors/loadMs).
 - **Canonical viewports** (`aDNA.aDNA/scripts/viewports.json`): mobile **320** / mobile-lg **375** / tablet **768** / laptop **900**(h) / desktop **1024** / wide **1440**. Themes set via `localStorage.theme` + `colorScheme`.
-- **Target live or local:** point `--base` at the deployed URL (when live == committed) or a local `astro preview`. Both render identically for a static site.
+- **Target live or local:** point `--base` at the deployed URL (when live == committed) or a local `astro preview`. Both render **page content** identically for a static site — but see §3.2 for what local preview cannot serve at all.
 
 ### §3.1 — Authenticated surfaces need a vault-local T0 *(added 2026-07-27)*
 
@@ -73,6 +73,18 @@ the auth step is vault-specific. Requirements:
 **Reference implementations:** `PercySleep.aDNA/what/percysleep_ops/local/inspect_twin.py` (authenticated
 SPA + assertions + red-check) · `Spacemacs.aDNA/how/standard/runbooks/visual_inspection.md` (vault-local
 localization of this doctrine).
+
+### §3.2 — Local preview does not serve the adapter layer *(added 2026-08-18)*
+
+**`astro preview` cannot test redirects or headers — not "less well", at all.** They are emitted into `.vercel/output/config.json` by the adapter and never exist in `dist/`, which is all the preview server has. A redirect that works perfectly in production returns **404** locally.
+
+The trap is that this failure is indistinguishable from a real bug, so it invites "fixing" something that was never broken. **The control that disambiguates:** probe a redirect *known* to work in production. If it also 404s locally, you are looking at the instrument, not the code. *(Established at HAUSSMANN P2.1, 2026-08-18 — where the pre-existing production redirect 404'd locally, proving the limit rather than a regression.)*
+
+Consequences for any mission touching routing:
+
+- **Config-level assertion is the only local instrument** — read `.vercel/output/config.json` and assert on the emitted routes (see `site/tests/gates/gate-30-url-canonical.spec.ts`). Regex simulation of the route patterns is a legitimate supplement.
+- **A live probe against the deployed origin is mandatory before the claim is verified**, and it belongs to the deploy ⛩, not the build. A mission may honestly close its objective as `⚠ partial-by-nature` with the probe recorded as *owed* — but the debt must be named, not rounded away.
+- **Derive the probe's URL list from the build snapshot, never type one** (WebForge KW-8/FR-K) — and make an empty derivation **throw**. P2.1's own probe silently skipped a third of its matrix after a bad field guess, which is the silent-drop hazard class reproduced inside the verification instrument.
 
 ## §4 — Relationship to III + RemoteControl
 
