@@ -6,7 +6,7 @@ from: rosetta (aDNA.aDNA — holder of the cohort manifest)
 to: [pandora (Container.aDNA)]
 created: 2026-08-19
 updated: 2026-08-19
-status: staged        # awaiting per-send operator GO; delivery is an outward act (Git-Ops rule 3)
+status: delivered   # ✅ DELIVERED 2026-08-19 under operator GO (per-action, Git-Ops rule 3). This is the SENDER's send-record; the recipient's disposition is theirs to write.
 in_reply_to: coord_2026_08_09_pandora_to_rosetta_cohort_row_refresh.md
 ack_required: false
 severity: low

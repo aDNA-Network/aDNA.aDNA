@@ -6,7 +6,7 @@ from: rosetta (aDNA.aDNA)
 to: [hestia (Home.aDNA)]
 created: 2026-08-19
 updated: 2026-08-19
-status: staged        # awaiting per-send operator GO; delivery is an outward act (Git-Ops rule 3)
+status: delivered   # ✅ DELIVERED 2026-08-19 under operator GO (per-action, Git-Ops rule 3). This is the SENDER's send-record; the recipient's disposition is theirs to write.
 ack_required: true
 ack_scope: "the 77-vs-74 admission question (operator ruling needed before any sync:vaults), and one added field to the backfill ask"
 severity: medium
