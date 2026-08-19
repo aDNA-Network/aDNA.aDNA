@@ -16,7 +16,7 @@ next: "15-archive-versioning"
 
 *Decisions: D14*
 
-### 14.1 Paradigm
+## 14.1 Paradigm
 
 Content-as-code is a universal paradigm for folder-based workflows: a file's directory location IS its processing state. Moving a file between stage directories advances it through the workflow.
 
@@ -37,7 +37,7 @@ stateDiagram-v2
     note right of review: AGENTS.md defines<br/>review checklist
 ```
 
-### 14.2 Pipeline Structure
+## 14.2 Pipeline Structure
 
 Pipelines live in `how/pipelines/{pipeline_name}/`:
 
@@ -58,7 +58,7 @@ Each stage folder MUST have an AGENTS.md with processing instructions specific t
 
 Stage names and count are pipeline-specific. The file's location is its state — no separate status tracking is needed.
 
-### 14.3 Pipeline Index
+## 14.3 Pipeline Index
 
 The `how/pipelines/` directory SHOULD have an AGENTS.md documenting all pipelines, their purposes, and their stage flows.
 

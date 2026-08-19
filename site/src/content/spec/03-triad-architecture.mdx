@@ -16,7 +16,7 @@ next: "4-governance-files"
 
 *Decisions: C1, C8*
 
-### 3.1 The what/how/who Ontology
+## 3.1 The what/how/who Ontology
 
 Every aDNA instance organizes knowledge into three categories:
 
@@ -62,7 +62,7 @@ flowchart TB
     style O fill:#8b5cf6,color:#fff
 ```
 
-### 3.2 Bare Triad
+## 3.2 Bare Triad
 
 In a bare triad deployment, `what/`, `how/`, and `who/` sit as top-level directories at the project root. Governance files sit alongside them at root level.
 
@@ -81,7 +81,7 @@ In a bare triad deployment, `what/`, `how/`, and `who/` sit as top-level directo
 └── {project_content}/
 ```
 
-### 3.3 Embedded Triad
+## 3.3 Embedded Triad
 
 In an embedded triad deployment, the triad is wrapped inside `.agentic/` at the repository root. Governance files remain at the repository root (not inside `.agentic/`).
 
@@ -102,13 +102,13 @@ In an embedded triad deployment, the triad is wrapped inside `.agentic/` at the 
 └── {codebase}/
 ```
 
-### 3.4 Deployment Form Selection
+## 3.4 Deployment Form Selection
 
 Both deployment forms are first-class. The triad ontology is identical in both — only the physical nesting differs. CLAUDE.md in each environment bridges any path differences.
 
 An aDNA instance MUST use exactly one deployment form. A project MUST NOT mix bare and embedded triads.
 
-### 3.5 Directory Convention
+## 3.5 Directory Convention
 
 An aDNA project directory SHOULD use the `.aDNA` suffix to indicate it follows the Agentic DNA knowledge architecture standard. This suffix serves as a visual type marker, analogous to `.app` bundles in macOS or `.git` directories in version control.
 

@@ -16,7 +16,7 @@ next: "11-coordination-protocol"
 
 *Decisions: D8*
 
-### 10.1 Location and Structure
+## 10.1 Location and Structure
 
 The context library lives in `what/context/`. It is the single location for all agent context — synthesized knowledge that agents load before domain work.
 
@@ -31,7 +31,7 @@ what/context/
     └── ...
 ```
 
-### 10.2 Context Subtypes
+## 10.2 Context Subtypes
 
 Context files use the `type` frontmatter field to distinguish content subtypes:
 
@@ -43,7 +43,7 @@ Context files use the `type` frontmatter field to distinguish content subtypes:
 
 All subtypes coexist in `what/context/` organized by topic. The subtype informs how agents use the content, not where it lives.
 
-### 10.3 Token Budget Awareness
+## 10.3 Token Budget Awareness
 
 The context library AGENTS.md SHOULD include token estimates per topic in a scannable format:
 

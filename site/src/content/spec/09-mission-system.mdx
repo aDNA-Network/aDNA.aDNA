@@ -16,7 +16,7 @@ next: "10-context-library"
 
 *Decisions: D12, D16, D17*
 
-### 9.1 Mission Structure
+## 9.1 Mission Structure
 
 Missions live in `how/missions/`. A mission decomposes work that spans multiple sessions into trackable objectives.
 
@@ -40,7 +40,7 @@ The mission file MUST include:
 - **Objective list**: Individual objectives with dependencies and status
 - **Status tracking**: Per-objective status (pending, in_progress, completed, blocked)
 
-### 9.2 Mission Stages
+## 9.2 Mission Stages
 
 Missions MAY define stage-based subdirectories for multi-phase work:
 
@@ -55,7 +55,7 @@ how/missions/{mission_slug}/
 
 Stage names and count are mission-specific. The convention is: numbered prefix for ordering, descriptive name for clarity.
 
-### 9.3 Mission Handoff
+## 9.3 Mission Handoff
 
 Agents claim mission objectives by session. A session file's `plan_id` and `task` frontmatter fields (legacy names, retained for compatibility) link it to the mission. When an objective spans multiple sessions, each session's SITREP provides the handoff. Agents MUST NOT claim objectives already in progress by another active session.
 

@@ -18,7 +18,7 @@ next: "5-directory-structure"
 
 Every aDNA instance MUST have governance files at the project root. These are the agent's primary orientation documents.
 
-### 4.1 Governance File List
+## 4.1 Governance File List
 
 The following ALLCAPS files constitute the governance layer:
 
@@ -49,7 +49,7 @@ flowchart LR
     style MANIFEST fill:#3b82f6,color:#fff
 ```
 
-### 4.2 CLAUDE.md — Agent Root Context
+## 4.2 CLAUDE.md — Agent Root Context
 
 CLAUDE.md is the primary agent orientation document. It MUST exist at the project root in both deployment forms. It is auto-loaded by Claude Code and serves as the agent's first read on every session.
 
@@ -85,7 +85,7 @@ CLAUDE.md is the primary agent orientation document. It MUST exist at the projec
 
 **Persona framework**: When a persona is defined, it MUST include: identity (name, role metaphor, mission), operating style (3-5 behavioral principles), and communication norms (tone, greeting/close patterns). See Appendix A for the full framework and reference implementation.
 
-### 4.3 MANIFEST.md — Project Overview
+## 4.3 MANIFEST.md — Project Overview
 
 MANIFEST.md describes what the project IS. It changes infrequently — only when project scope, architecture, or major workstreams change.
 
@@ -95,7 +95,7 @@ MANIFEST.md describes what the project IS. It changes infrequently — only when
 - Key entry points and navigation
 - Active missions / major workstreams (stable references, not dynamic status)
 
-### 4.4 STATE.md — Dynamic Operational State
+## 4.4 STATE.md — Dynamic Operational State
 
 STATE.md captures where the project IS RIGHT NOW. It SHOULD be updated on every session close-out. It MUST be updated when phase, blockers, or priorities change.
 
@@ -108,7 +108,7 @@ STATE.md captures where the project IS RIGHT NOW. It SHOULD be updated on every 
 
 STATE.md enables fast cold-start orientation: a fresh agent reads CLAUDE.md (structure and rules) then STATE.md (current situation) and is ready to work.
 
-### 4.5 AGENTS.md — Per-Directory Agent Guide
+## 4.5 AGENTS.md — Per-Directory Agent Guide
 
 Every aDNA instance MUST have a root-level AGENTS.md (listed in §4.1). Beyond root, every directory where agents operate SHOULD have an AGENTS.md file. AGENTS.md is agent-facing: optimized for machine consumption with structured, scannable content.
 
@@ -127,7 +127,7 @@ Every aDNA instance MUST have a root-level AGENTS.md (listed in §4.1). Beyond r
 
 AGENTS.md files grow through progressive enrichment: start lightweight, add detail when agents or humans repeatedly need information that is not yet documented.
 
-### 4.6 README.md — Per-Directory Human Guide
+## 4.6 README.md — Per-Directory Human Guide
 
 README.md is human-facing: optimized for browsing in GitHub, an IDE, or a knowledge-base tool. It complements AGENTS.md by providing navigation context for humans.
 

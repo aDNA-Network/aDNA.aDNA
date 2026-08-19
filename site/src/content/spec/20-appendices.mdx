@@ -14,13 +14,13 @@ next: null
 
 > **Scan**: Persona framework (App A), aggregation points (App B), deferred topics (App C), decision traceability matrix (App D — 40 decisions mapped to spec sections).
 
-### Appendix A: Persona Framework
+## Appendix A: Persona Framework
 
 *Decision: D6*
 
 A persona is OPTIONAL but structured when present. The persona framework defines what a persona includes and why it matters — consistency, predictability, and character continuity across sessions.
 
-#### A.1 Framework Structure
+### A.1 Framework Structure
 
 | Section | Contents | Purpose |
 |---------|----------|---------|
@@ -29,7 +29,7 @@ A persona is OPTIONAL but structured when present. The persona framework defines
 | **Communication Norms** | Tone, formatting, greeting/close patterns | Ensure consistent interaction style |
 | **Domain Awareness** | What the persona should know about the project domain | Ground the agent in project context |
 
-#### A.2 Reference Implementation
+### A.2 Reference Implementation
 
 The following is a reference persona. Projects MAY adopt it directly or use the framework to create their own.
 
@@ -45,7 +45,7 @@ The following is a reference persona. Projects MAY adopt it directly or use the 
 
 **Domain Awareness**: Defined per project in CLAUDE.md.
 
-### Appendix B: Aggregation Points
+## Appendix B: Aggregation Points
 
 *Decision: D22*
 
@@ -63,7 +63,7 @@ Standard aggregation points for cross-directory views. Implementation is tool-sp
 
 **Script implementation**: Any tool that parses YAML frontmatter from markdown files can produce these views.
 
-### Appendix C: Deferred Topics
+## Appendix C: Deferred Topics
 
 The following topics were identified during the planning arc but deferred from v1.0. They are acknowledged here for future standard revisions. (Retained from v1.0; no new deferrals in v2.0.)
 
@@ -75,11 +75,11 @@ The following topics were identified during the planning arc but deferred from v
 | G8 | **Cross-instance aDNA awareness** | Addressed by bridge patterns (informational companion, SHOULD-level guidance). Defines composition patterns (nesting, sibling, monorepo), discovery protocol, scope boundaries, cross-referencing conventions, and agent behavior rules. Addresses §18.3 #7 Network criterion. |
 | G10 | **Agent capability declaration** | Most aDNA instances target specific agent capabilities. CLAUDE.md can note capability assumptions. A formal capability schema is deferred pending broader agent ecosystem maturity. |
 
-### Appendix D: Decision Traceability Matrix
+## Appendix D: Decision Traceability Matrix
 
 This appendix maps every design decision to its location in the standard, ensuring complete coverage.
 
-#### D.1 Structural Decisions (C1-C15)
+### D.1 Structural Decisions (C1-C15)
 
 | ID | Decision | Spec Section(s) |
 |----|----------|-----------------|
@@ -99,7 +99,7 @@ This appendix maps every design decision to its location in the standard, ensuri
 | C14 | Ontology artifact: Mermaid (Tier 1) + Canvas (Tier 3) | §5.1 (ontology artifact) |
 | C15 | what/ as registry layer | §5.1 (registry pattern) |
 
-#### D.2 Process Decisions (D1-D25)
+### D.2 Process Decisions (D1-D25)
 
 | ID | Decision | Spec Section(s) |
 |----|----------|-----------------|
@@ -129,7 +129,7 @@ This appendix maps every design decision to its location in the standard, ensuri
 | D24 | Tiered error/recovery protocol | §17 |
 | D25 | Quickstart in CLAUDE.md + README.md | §4.2 (quickstart section) |
 
-#### D.3 Gap Dispositions (G1-G12)
+### D.3 Gap Dispositions (G1-G12)
 
 | Gap | Topic | Disposition | Location |
 |-----|-------|-------------|----------|

@@ -16,7 +16,7 @@ next: "20-appendices"
 
 The following patterns are available but not required. Projects adopt them based on need.
 
-### 19.1 Machine Registry
+## 19.1 Machine Registry
 
 *Decision: D10*
 
@@ -28,7 +28,7 @@ For projects running on multiple machines or sync environments where path patter
 
 RECOMMENDED for sync-based environments (cloud storage, team sync tools) where file paths differ across machines. OPTIONAL for git repositories where environment variables handle path differences.
 
-### 19.2 Backlog System
+## 19.2 Backlog System
 
 *Decision: D13*
 
@@ -42,7 +42,7 @@ Durable ideation and improvement tracking.
 
 Agents SHOULD scan `how/backlog/` during session startup for ideas relevant to the current work. New ideas discovered during work SHOULD be captured as backlog files.
 
-### 19.3 Skill Files
+## 19.3 Skill Files
 
 *Decision: D15*
 
@@ -54,7 +54,7 @@ Reusable agent procedures — step-by-step instructions agents can follow autono
 
 Skills are distinct from processes: skills are agent-executable (precise steps, verification checks); processes are human-readable (guidelines, decision trees).
 
-### 19.4 Testing/CI Awareness
+## 19.4 Testing/CI Awareness
 
 *Decision: D23*
 
@@ -66,7 +66,7 @@ aDNA does not prescribe test frameworks or CI/CD configurations — these belong
 - STATE.md reports test status when relevant (pass/fail, coverage, regressions)
 - CI/CD configuration lives in project content (`.github/`, `Makefile`, `pyproject.toml`, etc.)
 
-### 19.5 Reference Code
+## 19.5 Reference Code
 
 *Decision: C11*
 
@@ -80,7 +80,7 @@ Bounded exception for code-adjacent reference material inside the aDNA structure
 - Entries SHOULD link to source implementations rather than duplicating code
 - Documentation-only projects skip this entirely
 
-### 19.6 Architecture Decision Records (ADRs)
+## 19.6 Architecture Decision Records (ADRs)
 
 *Decision: C12*
 

@@ -16,13 +16,13 @@ next: "8-session-model"
 
 *Decisions: C4, D18, D20*
 
-### 7.1 Scope
+## 7.1 Scope
 
 YAML frontmatter MUST be present on all aDNA content files — files inside the triad (`what/`, `how/`, `who/` or `.agentic/what/`, etc.) and root governance files.
 
 Project content files (source code, external documentation) outside the triad are exempt from frontmatter requirements.
 
-### 7.2 Required Base Fields
+## 7.2 Required Base Fields
 
 Every aDNA content file MUST include these frontmatter fields:
 
@@ -48,7 +48,7 @@ tags: []
 
 **Per-class profile** (v2.5, ADR-044): the six base fields are required for content and session entities. **`status` is optional for `type: directory_index` and `type: coordination`** — an index or correspondence record has no lifecycle state, and their canonical templates omit it. The other five base fields remain required for all classes.
 
-### 7.3 Tag Conventions
+## 7.3 Tag Conventions
 
 Tags MUST use lowercase with underscores (e.g., `mission`, `context_research`).
 
@@ -56,19 +56,19 @@ Every aDNA content file MUST have at least one tag (the type tag is sufficient).
 
 No formal tag registry is prescribed. Projects SHOULD document their tag conventions in AGENTS.md files when the tag set exceeds a dozen unique tags.
 
-### 7.4 Priority Field
+## 7.4 Priority Field
 
 Content items that need prioritization (tasks, backlog ideas, customers) MAY include a `priority` field using a simple numeric scale: `0` (highest) through `N` (lowest).
 
 Rule/guardrail conflict resolution is a separate concern. Projects that need rule precedence SHOULD define their own mechanism in CLAUDE.md or governance files.
 
-### 7.5 Type-Specific Fields
+## 7.5 Type-Specific Fields
 
 Templates (§12) define additional frontmatter fields per content type. For example, a session template adds `session_id`, `plan_id` (legacy field name), `tier`; a customer template adds `segment`, `deal_stage`, `contacts`.
 
 Frontmatter is the integration layer between human tools (Dataview queries, IDE search) and agent queries. Consistent frontmatter enables consistent querying across any tool.
 
-### 7.6 Frontmatter Extension Policy
+## 7.6 Frontmatter Extension Policy
 
 Instance-specific frontmatter fields MAY be added to any entity type. The following rules govern extensions:
 
@@ -78,7 +78,7 @@ Instance-specific frontmatter fields MAY be added to any entity type. The follow
 4. Migration tools MUST preserve custom fields — standard version upgrades MUST NOT strip unrecognized frontmatter fields
 5. Projects SHOULD document their custom fields in the relevant `AGENTS.md` or template files
 
-### 7.7 Decision-Record Ratification Discipline
+## 7.7 Decision-Record Ratification Discipline
 
 Decision records (ADRs, `what/decisions/`) carry a lifecycle `status` whose advancement beyond `proposed` is a **human** act. Effective v2.5 (ADR-046, folding the discipline installed after an agent thread self-marked an ADR `accepted` without an operator gate):
 

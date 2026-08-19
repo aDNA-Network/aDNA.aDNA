@@ -16,7 +16,7 @@ next: "16-tool-integration-tiers"
 
 *Decisions: C9, C10*
 
-### 15.1 Archive Pattern
+## 15.1 Archive Pattern
 
 The archive pattern varies by environment:
 
@@ -31,17 +31,17 @@ The archive pattern varies by environment:
 - `archive/` subdirectories for visibly-deprecated items (documents users should see are retired)
 - Session history follows the same `YYYY-MM/` pattern regardless of environment
 
-### 15.2 Retention
+## 15.2 Retention
 
 Session history SHOULD NOT be auto-deleted. Manual cleanup after 6 months is acceptable if storage is a concern.
 
-### 15.3 Versioning
+## 15.3 Versioning
 
 aDNA instances track their own version via a comment in CLAUDE.md: `<!-- vX.Y | YYYY-MM-DD -->`.
 
 Major version increments indicate structural changes. Minor version increments indicate significant content updates. Session history serves as the detailed changelog — no formal CHANGELOG.md is required.
 
-### 15.4 Standard Versioning & Backwards Compatibility
+## 15.4 Standard Versioning & Backwards Compatibility
 
 The aDNA standard uses two versioning tracks:
 

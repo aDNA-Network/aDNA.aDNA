@@ -16,7 +16,7 @@ next: "9-mission-system"
 
 *Decisions: D3, D4, D5*
 
-### 8.1 Session Lifecycle
+## 8.1 Session Lifecycle
 
 A session is a bounded unit of agent work. Every session follows this lifecycle:
 
@@ -42,7 +42,7 @@ stateDiagram-v2
     }
 ```
 
-### 8.2 Session ID Format
+## 8.2 Session ID Format
 
 Session IDs MUST use the timestamped format:
 
@@ -54,7 +54,7 @@ Example: `session_{username}_20260211_120000_gap_analysis`
 
 Timestamped IDs are machine-sortable, collision-free across agents, and self-documenting. The descriptor SHOULD be a brief lowercase-underscore slug describing the session's purpose.
 
-### 8.3 Session Tiers
+## 8.3 Session Tiers
 
 | Tier | When | Requirements |
 |------|------|-------------|
@@ -65,7 +65,7 @@ Tier 1 is a lightweight audit trail. Tier 2 adds coordination safeguards for edi
 
 Sessions MAY include a **Technical Readiness Review (TRR)** quality gate before close-out — a structured check that deliverables meet acceptance criteria. TRR is particularly useful for code-generation sessions or sessions producing artifacts that downstream tasks depend on.
 
-### 8.4 SITREP Close-Out
+## 8.4 SITREP Close-Out
 
 Every session MUST end with a SITREP:
 
@@ -79,7 +79,7 @@ Every session MUST end with a SITREP:
 **Files touched**: [created, modified, moved]
 ```
 
-### 8.5 Next-Session Prompt
+## 8.5 Next-Session Prompt
 
 Every session MUST include a next-session prompt after the SITREP:
 
@@ -92,11 +92,11 @@ Include: what was accomplished, what remains, key context, recommended approach.
 
 The next-session prompt ensures continuity. A fresh agent reading this prompt and STATE.md SHOULD be able to continue the work without needing to read the full session history.
 
-### 8.6 STATE.md Update
+## 8.6 STATE.md Update
 
 STATE.md SHOULD be updated on every session close. It MUST be updated when the current phase, blockers, or priorities change.
 
-### 8.7 The 75% Rule
+## 8.7 The 75% Rule
 
 Agents MUST scope each session to use no more than approximately 75% of the context window. The remaining 25% is reserved for thinking, debugging, and course correction.
 

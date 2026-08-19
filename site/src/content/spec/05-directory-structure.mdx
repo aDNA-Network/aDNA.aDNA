@@ -16,7 +16,7 @@ next: "6-naming-conventions"
 
 *Decisions: C5, C6, C7, C11, C12, C14, C15*
 
-### 5.1 what/ — Knowledge Layer
+## 5.1 what/ — Knowledge Layer
 
 what/ contains everything the project KNOWS.
 
@@ -80,7 +80,7 @@ erDiagram
 
 Projects extend this skeleton with domain-specific entities (e.g., `customers`, `models`, `hardware`). Knowledge-base environments MAY additionally maintain `what/ontology.canvas` for interactive exploration.
 
-### 5.2 who/ — Organization Layer
+## 5.2 who/ — Organization Layer
 
 who/ contains everything about WHO is involved and WHY.
 
@@ -98,7 +98,7 @@ who/ contains everything about WHO is involved and WHY.
 | `identity/` | Stable identity records validated against external reality — node / network / deployment (hostname, operator, persistent UUID, peer-id). Base WHO type since v2.3 (ADR-035); markdown + paired `.yaml` companion. |
 | `{domain}/` | Project-specific organization: `customers/`, `partners/`, `contacts/`, `communications/`, `roadmap/` |
 
-### 5.3 how/ — Operations Layer
+## 5.3 how/ — Operations Layer
 
 how/ contains everything about HOW the project works.
 
@@ -127,7 +127,7 @@ how/ contains everything about HOW the project works.
 | `deliverables/` | Output artifacts |
 | `federation/` | Consumer federation wrappers — one `<wrapper>/` per federated software-element/service graph (v2.5, ADR-045) |
 
-### 5.4 Universal Skeleton
+## 5.4 Universal Skeleton
 
 The minimum viable aDNA instance. Graduated by project complexity:
 
@@ -183,11 +183,11 @@ Extends the Standard Skeleton with project-specific subdirectories in each triad
 
 For embedded triad deployments, the same skeletons apply inside `.agentic/`, with governance files remaining at the repository root.
 
-### 5.5 Conformance Levels
+## 5.5 Conformance Levels
 
 The skeletons defined in §5.4 establish three normative **conformance levels**. A project claiming aDNA conformance MUST satisfy all MUST requirements at its declared level.
 
-#### Level 1: Starter Conformance
+### Level 1: Starter Conformance
 
 An aDNA instance at Starter conformance MUST have:
 
@@ -200,7 +200,7 @@ Starter conformance represents the minimum viable aDNA instance — sufficient f
 
 **Conformance-walk scope** (v2.5, ADR-044): a conformance run validates the instance rooted at the directory being checked; it does NOT recurse into embedded standalone instances (in the reference vault: `what/docs/examples/` and `how/templates/template_node_adna_exemplar/`). Each embedded instance is validated standalone if desired.
 
-#### Level 2: Standard Conformance
+### Level 2: Standard Conformance
 
 An aDNA instance at Standard conformance MUST satisfy all Starter requirements AND:
 
@@ -211,7 +211,7 @@ An aDNA instance at Standard conformance MUST satisfy all Starter requirements A
 
 Standard conformance represents an active multi-agent project with operational discipline.
 
-#### Level 3: Full Conformance
+### Level 3: Full Conformance
 
 An aDNA instance at Full conformance MUST satisfy all Standard requirements AND:
 
@@ -222,7 +222,7 @@ An aDNA instance at Full conformance MUST satisfy all Standard requirements AND:
 
 Full conformance represents a mature, federatable aDNA instance ready for cross-instance interoperation.
 
-#### Conformance Declaration
+### Conformance Declaration
 
 Projects MAY declare their conformance level in `MANIFEST.md` using the `adna_conformance` frontmatter field:
 
