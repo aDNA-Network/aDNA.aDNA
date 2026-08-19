@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P2
 decade: 1
 owner: stanley
-status: queued
+status: in_progress   # O0 ✅ + O1 ✅ (2026-08-19) — ⛩ HALTED at the operator pick; O2–O3 follow the ruling
 mission_class: design_excellence
 executor_tier: fable
 token_budget_estimated: "~250–350 kT across 2 sessions: ADR-052 completion + registry-surface spike + build + fixtures (ADR-016)"
@@ -61,7 +61,38 @@ A stranger browsing 74 entries understands in one glance which are load-bearing 
 
 ## Progress
 
-*(at execution)*
+### O0 ✅ — ADR-052 §tiers completed at `proposed` (2026-08-19)
+
+Two of the four decision-space items did not survive contact with the data, and §tiers records that
+rather than rescoping quietly.
+
+- **`card_present` disqualified as a tier input** (§tiers.1). All 7 `active` vaults have a card, so
+  the planned active-with-card / active split yields an empty bucket; where it discriminates is
+  inside `genesis` (7/49). It measures documentation, not lifecycle. Tiering on it would give a
+  badge that claims maturity and measures paperwork — the narrated-vs-derived error inverted, and
+  harder to catch because the number really is derived, just from the wrong field.
+- **Every status here is self-declared and nothing corroborates it** (§tiers.2) — `github_url` 1/74,
+  `docs_site_url` 0/74, `last_synced` 24/74 with 18 frozen at one date. So the vocabulary describes
+  **declared stage**, never assessed maturity: **in use (7) · chartered (10) · planned (57)**. No
+  `flagship`, no `mature`. "Self-declared" ships plainly on the index.
+- **Dual clock: NOT DERIVABLE**, recorded unmet with coverage numbers as the reason (§tiers.4).
+- **77-vs-74 stated, not decided** (§tiers.6) — a DP4-class admission ruling; memo to Hestia staged.
+
+### O1 ✅ — spike + 10× test (2026-08-19) — ⛩ HALTED
+
+Full record: `artifacts/p2_4/spike_record.md`. Three variants over all 74 real rows plus a 740-row
+synthetic mode; **headless-verified 23/0**.
+
+**The finding that changes the question: none of the three scales.** A/B/C converge on ~19,000 px
+and ~5,900 DOM nodes at 740; C, designed to be the scalable one, beats A by **5%**. Density cuts
+cost per row and does nothing about row count. **The `scales at 10×` criterion is recorded UNMET** —
+the mechanism that would meet it (pagination / default-collapsed planned tier / virtualization) is
+orthogonal to the grouping choice, so **the pick is two decisions, not one**.
+
+Synthetic pre-screen is `[D-syn]`, **not** a ranker result — the builder scored its own comps
+(conflict declared, convention 4). No variant clears 4.0; A and C tie.
+
+### O2–O3 — pending the ⛩ ruling
 
 ## AAR (SO#5)
 
