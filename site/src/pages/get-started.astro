@@ -47,10 +47,46 @@ const jsonLD = buildWebPageJsonLD({
       A <code>{workspace_root}/</code> workspace that ships ready: the workspace <code>CLAUDE.md</code> router
       (your agent's map between projects) pre-instantiated at the root; the standard itself embedded in a hidden
       <code>.adna/</code> folder (your agent reads it, never edits it — updates arrive with <code>git pull</code>
-      at the workspace root); and your first <code>&lt;name&gt;.aDNA/</code> project, scaffolded for you by the
-      onboarding interview, with its own git history — kept out of the workspace image's history by design.
+      at the workspace root); and your first <code>&lt;name&gt;.aDNA/</code> project, scaffolded for you when the
+      agent follows the standard's project-fork skill, with its own git history — kept out of the workspace
+      image's history by design.
     </p>
   </Callout>
+
+  {/* HAUSSMANN P2.5 O1 — the cost statement (design §5, shipped as drafted at the ⛩ pick).
+      Placed ABOVE the first command rather than beside the one-liner at the foot of the page:
+      the objection it answers is one a reader forms before running anything, so answering it
+      after they have already been shown the command is answering it too late. */}
+  <h2 id="what-it-does">What this command does, before you run it</h2>
+  <p class="cmd-oneliner"><code>{installTruth.one_liner}</code></p>
+  <ul>
+    <li>
+      <strong>Writes one directory: <code>{workspace_root}/</code>.</strong> Nothing outside it — no system
+      settings, no <code>PATH</code> changes, no daemon, no login item. If you would rather not use that path,
+      clone anywhere: nothing in the workspace depends on its location, and <code>{workspace_root}</code> is
+      only the default the docs assume.
+    </li>
+    <li>
+      <strong>The <code>&amp;&amp; claude</code> starts an agent in that directory</strong>, which reads the
+      instruction files you just cloned — <code>CLAUDE.md</code> at the root, and the standard in
+      <code>.adna/</code>. That is the real trust question here, and it is a fair one: these files are
+      prompt-ware, and prompt-ware is executed by the agent that reads it.
+    </li>
+    <li>
+      <strong>So read them first.</strong>
+      <a href="/get-started/what-your-agent-reads/">Every file the agent reads on first run, annotated →</a>
+      They are shown verbatim, at a pinned commit, with hashes you can check against your own clone.
+    </li>
+    <li><strong>Nothing is sent anywhere.</strong> No account, no telemetry, no network call after the clone.</li>
+    <li>
+      <strong>This is a Claude Code convention.</strong> The workspace is plain Markdown that any tool can read,
+      but this one-command flow assumes Claude Code specifically. Other agents can read the same files; they
+      will not run this command.
+    </li>
+    <li>
+      <strong>To undo it: <code>rm -rf {workspace_root}</code>.</strong> There is nothing else to uninstall.
+    </li>
+  </ul>
 
   <h2 id="step-1">1. Clone the workspace</h2>
   <p>
@@ -66,18 +102,34 @@ const jsonLD = buildWebPageJsonLD({
   </p>
   <pre class="cmd"><code>{commands.enter}
 {commands.launch}</code></pre>
-  <pre><code>$ {commands.launch}
-✓  Loaded CLAUDE.md (workspace router)
 
-This is a fresh aDNA workspace — the standard is in place and
-there are no projects yet. Let's create your first one.
+  {/* HAUSSMANN P2.5 O1 — R-118. A rendered terminal block used to sit here, depicting output that
+      exists nowhere in the standard (searched .adna/ in full: zero hits) and dramatising an
+      onboarding interview that does not fire on a fresh clone. It was cut at the ⛩ pick rather
+      than refilled: the honest replacement is a real recorded session, and that arrives from the
+      clean-machine run at P2.5 O2. The gap is LABELLED because P2.4's lesson is that a
+      considerate-looking absence is where a defect hides. Do not fill this with an illustration. */}
+  <Callout variant="info" title="What a first run looks like — not yet recorded">
+    <p>
+      There was a sample transcript here. We wrote it by hand, and it showed output the software does
+      not actually print, so we removed it rather than leave a plausible-looking invention on the page
+      you use to decide whether to trust us. A real recording, from a clean machine, replaces it once
+      we have made that run and measured it.
+    </p>
+    <p>
+      In the meantime the honest version of the same thing is the source:
+      <a href="/get-started/what-your-agent-reads/">read the files your agent reads</a>, including the
+      project-fork skill it follows here — step by step, so you can predict what appears on disk.
+    </p>
+  </Callout>
 
-What is this project called, and what problem does it solve?
-&gt; _</code></pre>
   <p>
-    The interview scaffolds <code>&lt;your_project&gt;.aDNA/</code> — its triad of
+    With no project in the workspace yet, the router sends the agent to the standard's
+    project-fork skill, which scaffolds <code>&lt;your_project&gt;.aDNA/</code> — its triad of
     <code>what/</code>&thinsp;·&thinsp;<code>how/</code>&thinsp;·&thinsp;<code>who/</code>, its governance
-    files, and its own git history. When it finishes, your workspace looks like this:
+    files, and its own git history. It then offers to run an onboarding interview that customises the
+    new project for your domain; you can take it now or leave it for the first session inside the
+    project. When the scaffolding finishes, your workspace looks like this:
   </p>
   <pre><code>{workspace_root}/
 ├── CLAUDE.md            # workspace router (ships with the clone)
@@ -98,6 +150,71 @@ What is this project called, and what problem does it solve?
     </p>
     <p class="cmd-oneliner"><code>{installTruth.one_liner}</code></p>
   </Callout>
+
+  {/* HAUSSMANN P2.5 O1 — "first success", defined observably (design §2, accepted at the ⛩ pick
+      as the stop-condition for the O2 clean-machine run). Both halves ship: a success definition
+      the reader cannot check is an adjective. NOTE: no timing claim is authored here — R-34/R-63
+      are discharged by O2's measurement or revised down then, never by copy. */}
+  <h2 id="check-it-worked">3. Check it worked</h2>
+  <p>
+    "It worked" should be something you can verify, not something you feel. Five commands — each
+    prints nothing and exits <code>0</code> on success, except the last two, which print your project's
+    contents and its first commit:
+  </p>
+  <pre class="cmd"><code>test -f {workspace_root}/CLAUDE.md            # the router your agent reads first
+test -d {workspace_root}/.adna                # the standard, embedded and read-only
+ls -d {workspace_root}/*.aDNA                 # at least one project vault exists
+ls {workspace_root}/&lt;name&gt;.aDNA/what {workspace_root}/&lt;name&gt;.aDNA/how {workspace_root}/&lt;name&gt;.aDNA/who
+git -C {workspace_root}/&lt;name&gt;.aDNA log      # its own history, separate from the image's</code></pre>
+  <p>
+    Replace <code>&lt;name&gt;</code> with whatever you called your project. That the last one has its own
+    git log — not the workspace image's — is the check people most often skip and the one that matters:
+    your context graph is your repository from the first commit.
+  </p>
+  <p>
+    <strong>Then the half that is actually the point.</strong> Open a <em>new</em> agent session inside
+    <code>&lt;name&gt;.aDNA/</code> and ask it something about the project. It should already know where it
+    is and what the project's governance says, without you telling it where to look. The five commands
+    prove files were written; this proves the thing the standard exists for.
+  </p>
+
+  <h2 id="troubleshooting">If something goes wrong</h2>
+  <p>
+    The surface here is small — a clone and an agent launch — so the list of ways it fails is short.
+    These are the failures the two commands can actually produce:
+  </p>
+  <ul>
+    <li>
+      <code>{commands.launch}: command not found</code> — Claude Code is not installed, or not on your
+      <code>PATH</code>. Install it with <code>npm install -g @anthropic-ai/claude-code</code> and open a
+      new shell.
+    </li>
+    <li>
+      <code>fatal: destination path '{workspace_root}' already exists</code> — you already have a workspace
+      there. Either work in it, or clone somewhere else; nothing depends on the path.
+    </li>
+    <li>
+      <strong>The agent does not seem to know about aDNA.</strong> It is almost always started in the
+      wrong directory. The router is <code>CLAUDE.md</code> at the workspace root, so
+      <code>{commands.enter}</code> first — an agent launched from your home directory reads nothing.
+    </li>
+    <li>
+      <strong>You want to check what the agent is acting on.</strong> Every file it reads on first run is
+      <a href="/get-started/what-your-agent-reads/">published here verbatim</a>, with hashes to compare
+      against your clone.
+    </li>
+  </ul>
+  <p>
+    This list is short because it is drawn from what the commands can do, not from a support inbox.
+    It will grow as real installs are recorded.
+  </p>
+
+  <h2 id="removing-it">Removing it</h2>
+  <p>
+    <code>rm -rf {workspace_root}</code> — and that is the whole uninstall. Nothing was installed outside
+    that directory, so there is no package to remove, no configuration to revert, and no service to stop.
+    If you moved your projects elsewhere first, they are ordinary git repositories and keep working.
+  </p>
 
   <Callout variant="info" title="Existing installs (pre-June-2026 layout)">
     <p>

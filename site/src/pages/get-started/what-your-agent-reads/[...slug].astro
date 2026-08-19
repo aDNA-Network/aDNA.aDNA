@@ -1,0 +1,176 @@
+---
+/**
+ * One page per vendored file (HAUSSMANN P2.5 O1).
+ *
+ * The file is rendered VERBATIM into a <pre>, not through the markdown pipeline. That is the
+ * whole contract of this page: a reader auditing prompt-ware needs the bytes, and a rendered
+ * version is an interpretation of the bytes. It also happens to be the only workable option —
+ * the vendor set carries {braces} and <angles> that MDX would evaluate as expressions and JSX
+ * (see scripts/build_tour_files.mjs).
+ *
+ * Astro escapes text expressions, so {file.content} cannot inject markup no matter what the
+ * standard's authors write in a future release.
+ */
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import manifest from '../../../data/tour_manifest.json';
+import { TOUR_ANNOTATIONS } from '../../../data/tour_annotations';
+import { sourceForTour } from '../../../utils/contentSource';
+import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
+import { SITE_ORIGIN } from '../../../data/canonical';
+
+export async function getStaticPaths() {
+  /** Eager raw import — build-time only; nothing here reaches the client. */
+  const raw = import.meta.glob('../../../data/tour/*.txt', {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+  }) as Record<string, string>;
+
+  return manifest.files.map((file, i) => {
+    const note = TOUR_ANNOTATIONS[file.slug];
+    if (!note) throw new Error(`tour file "${file.slug}" has no annotation in tour_annotations.ts`);
+    const key = Object.keys(raw).find((k) => k.endsWith(`/${file.slug}.txt`));
+    if (!key) throw new Error(`tour file "${file.slug}" has no vendored .txt — run scripts/build_tour_files.mjs`);
+    return {
+      params: { slug: file.slug },
+      props: {
+        file,
+        note,
+        content: raw[key],
+        prevFile: i > 0 ? manifest.files[i - 1] : undefined,
+        nextFile: i + 1 < manifest.files.length ? manifest.files[i + 1] : undefined,
+      },
+    };
+  });
+}
+
+const { file, note, content, prevFile, nextFile } = Astro.props;
+
+// Guard the invariant the page's provenance line asserts. The manifest hash is written by the
+// generator; if the .txt on disk ever stopped matching it, the page would print a hash that does
+// not describe the bytes below it — the install_truth `template_sha` failure, reproduced. Cheap to
+// check at build time, and it fails loudly instead of rendering a false claim.
+const actualBytes = new TextEncoder().encode(content).length;
+if (actualBytes !== file.bytes) {
+  throw new Error(
+    `tour file "${file.slug}": vendored .txt is ${actualBytes} bytes but the manifest records ${file.bytes} — re-run scripts/build_tour_files.mjs`,
+  );
+}
+
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? SITE_ORIGIN;
+const fileName = file.source_path.split('/').pop() ?? file.source_path;
+const description = `${note.what} Shown verbatim from the aDNA standard at commit ${manifest.source_sha}.`;
+
+const jsonLD = [
+  buildTechArticleJsonLD({ title: note.title, description, url: Astro.url.href }),
+  buildBreadcrumbListJsonLD([
+    { name: 'Home', url: `${siteBase}/` },
+    { name: 'Get Started', url: `${siteBase}/get-started/` },
+    { name: 'What your agent reads', url: `${siteBase}/get-started/what-your-agent-reads/` },
+    { name: note.title, url: Astro.url.href },
+  ]),
+];
+
+const prevNote = prevFile ? TOUR_ANNOTATIONS[prevFile.slug] : undefined;
+const nextNote = nextFile ? TOUR_ANNOTATIONS[nextFile.slug] : undefined;
+---
+
+<DocumentationLayout
+  title={note.title}
+  description={description}
+  jsonLD={jsonLD}
+  source={sourceForTour(file.blob_url)}
+  prev={prevNote && prevFile
+    ? { label: prevNote.title, href: `/get-started/what-your-agent-reads/${prevFile.slug}/` }
+    : { label: 'What your agent reads', href: '/get-started/what-your-agent-reads/' }}
+  next={nextNote && nextFile
+    ? { label: nextNote.title, href: `/get-started/what-your-agent-reads/${nextFile.slug}/` }
+    : { label: 'Get Started', href: '/get-started/' }}
+>
+  <p class="tour-crumb">
+    <a href="/get-started/what-your-agent-reads/">← What your agent reads</a>
+  </p>
+
+  <p>{note.what}</p>
+  <p><strong>Why your agent reads it.</strong> {note.why}</p>
+  <p><strong>What to look for.</strong> {note.lookFor}</p>
+
+  <dl class="tour-provenance">
+    <div><dt>Path in the workspace</dt><dd><code>.adna/{file.source_path}</code></dd></div>
+    <div><dt>Size</dt><dd>{file.lines.toLocaleString()} lines · {(file.bytes / 1024).toFixed(1)}&thinsp;KB</dd></div>
+    <div><dt>Commit</dt><dd><code>{manifest.source_sha}</code> ({manifest.source_commit_date})</dd></div>
+    <div><dt>SHA-256</dt><dd><code class="tour-hash">{file.sha256}</code></dd></div>
+    <div>
+      <dt>Source</dt>
+      <dd><a href={file.blob_url} target="_blank" rel="noopener">View {fileName} in the standard repository →</a></dd>
+    </div>
+  </dl>
+  <p class="tour-verify">
+    Verify it yourself: <code>shasum -a 256 ~/aDNA/.adna/{file.source_path}</code> after cloning
+    should print the hash above.
+  </p>
+
+  <h2 id="file">{fileName}</h2>
+  <pre class="tour-file"><code>{content}</code></pre>
+</DocumentationLayout>
+
+<style>
+  .tour-crumb {
+    font-size: 0.9rem;
+    margin-bottom: var(--space-4);
+  }
+  .tour-provenance {
+    display: grid;
+    gap: var(--space-2);
+    margin: var(--space-5) 0 var(--space-3);
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-alt);
+    font-size: 0.9rem;
+  }
+  .tour-provenance > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-3);
+  }
+  .tour-provenance dt {
+    flex: 0 0 10rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-muted);
+  }
+  .tour-provenance dd {
+    margin: 0;
+    min-width: 0;
+  }
+  /* H-8 class: the hash must stay fully readable at 320px rather than hide behind a scrollbar. */
+  .tour-hash {
+    overflow-wrap: anywhere;
+  }
+  .tour-verify {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+  .tour-verify code {
+    overflow-wrap: anywhere;
+  }
+  /* The file itself.
+     SOFT-WRAPPED, following this funnel's own H-8 rule: copy-critical text must be fully readable
+     at 320–390px rather than hidden behind horizontal scroll. The first cut used `white-space: pre`
+     to protect the file's exact layout, and the mobile capture showed the cost — every prose line
+     in a ~100-column Markdown file ran off the edge, so auditing the standard on a phone meant
+     scrolling right and back on every line. On an audit surface that is a real barrier, and this
+     page exists to remove barriers to auditing.
+     `pre-wrap` keeps every newline and every leading indent; it only adds soft breaks where a line
+     would otherwise overflow. The DOM text is unchanged either way — gate-36 asserts the bytes, not
+     the rendering — so nothing about the byte-exactness claim depends on this. */
+  .tour-file {
+    max-height: 40rem;
+    overflow: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    border: 1px solid var(--color-border);
+  }
+</style>

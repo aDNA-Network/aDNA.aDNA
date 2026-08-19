@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "prebuild": "node ../scripts/build_vaults_data.mjs && node ../scripts/build_install_truth.mjs",
+    "prebuild": "node ../scripts/build_vaults_data.mjs && node ../scripts/build_install_truth.mjs && node scripts/build_tour_files.mjs",
     "sync:vaults": "node ../scripts/build_vaults_data.mjs",
     "sync:install": "node ../scripts/build_install_truth.mjs",
     "sync:graph": "node ../scripts/build_graph_svg.mjs",
+    "sync:tour": "node scripts/build_tour_files.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "test:gates": "playwright test",

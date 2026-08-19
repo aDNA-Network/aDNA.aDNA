@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260819_123105_haussmann_p2_4_deploy_p2_5_design
 created: 2026-08-19
 updated: 2026-08-19
-status: active
+status: completed
 tier: 1
 operator: stanley
 agent: agent_rosetta
@@ -11,7 +11,7 @@ campaign: campaign_haussmann
 mission: mission_haussmann_p2_5_onboarding_paths
 executor_tier: opus
 token_budget_estimated: "~120–180 kT — P2.4 prod deploy + live probe + changelog backfill, then P2.5 O0 design to the ⛩ pick"
-token_budget_actual:
+token_budget_actual: "~95 kT"
 tags: [session, haussmann, p2_4, deploy, p2_5, onboarding]
 ---
 

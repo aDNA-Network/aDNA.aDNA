@@ -1,0 +1,194 @@
+---
+/**
+ * The zero-install tour — hub (HAUSSMANN P2.5 O1, ⛩ operator pick 2026-08-19: variant A).
+ *
+ * WHY THIS PAGE EXISTS. The best-disposed reader in the cold-read packet — a senior engineer who
+ * liked the licence and half-believed the pitch — refused the install, and then wrote down the
+ * route he wanted instead: read CLAUDE.md and .adna/ raw in the browser, and only then decide.
+ * He improvised that route because the site did not offer one. This page is his route, made
+ * first-class. It is not a persuasion surface; it is an audit surface, and it should read like one.
+ *
+ * The files are vendored verbatim at a pinned commit by scripts/build_tour_files.mjs — see that
+ * file for why they are .txt and not MDX, and why the pin is derived here rather than borrowed
+ * from install_truth.json.
+ */
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import Callout from '../../../components/sections/Callout.astro';
+import manifest from '../../../data/tour_manifest.json';
+import { TOUR_ANNOTATIONS } from '../../../data/tour_annotations';
+import { sourceForTour } from '../../../utils/contentSource';
+import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
+import { SITE_ORIGIN } from '../../../data/canonical';
+
+// Fail the build rather than render a tour with a missing annotation: a card with no "what to look
+// for" is exactly the bare-generated-copy failure the campaign's editorial gate exists to catch.
+const files = manifest.files.map((f) => {
+  const note = TOUR_ANNOTATIONS[f.slug];
+  if (!note) throw new Error(`tour file "${f.slug}" has no annotation in tour_annotations.ts`);
+  return { ...f, note };
+});
+
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? SITE_ORIGIN;
+const totalKb = (manifest.files.reduce((n, f) => n + f.bytes, 0) / 1024).toFixed(0);
+
+const title = 'What your agent reads';
+const description =
+  'Every file a fresh aDNA workspace gives your agent on first run, shown verbatim at a pinned commit — so you can audit the instructions before you run anything.';
+
+const jsonLD = [
+  buildTechArticleJsonLD({ title, description, url: Astro.url.href }),
+  buildBreadcrumbListJsonLD([
+    { name: 'Home', url: `${siteBase}/` },
+    { name: 'Get Started', url: `${siteBase}/get-started/` },
+    { name: title, url: `${siteBase}/get-started/what-your-agent-reads/` },
+  ]),
+];
+---
+
+<DocumentationLayout
+  title={title}
+  description={description}
+  jsonLD={jsonLD}
+  source={sourceForTour(`${manifest.source_repo}/tree/${manifest.source_sha_full}/.adna`)}
+  prev={{ label: 'Get Started', href: '/get-started/' }}
+>
+  <p>
+    aDNA is Markdown instructions that an agent reads and acts on. That is the whole mechanism, and
+    it is also the reason you might not want to run our install command on a stranger's say-so:
+    the files <em>are</em> the program.
+  </p>
+  <p>
+    So read them first. Below is every file a fresh workspace hands your agent on its first run —
+    all {files.length} of them, about {totalKb}&thinsp;KB, shown exactly as they arrive. Nothing here
+    is a paraphrase or a screenshot. If you would rather read them in the repository, or diff them
+    against what you cloned, every file links to its source at the same commit.
+  </p>
+
+  <Callout variant="info" title="Where these came from">
+    <p>
+      Vendored from <a href={`${manifest.source_repo}/tree/${manifest.source_sha_full}/.adna`} target="_blank" rel="noopener">
+      the standard</a> at commit <code>{manifest.source_sha}</code> ({manifest.source_commit_date}). The build
+      refuses to publish this page if those bytes stop matching that commit, so the copy you are reading
+      cannot quietly drift from the copy you would clone.
+    </p>
+  </Callout>
+
+  <h2 id="reading-order">The reading order</h2>
+  <p>
+    This is the order your agent meets them in, not a ranking. The first two are read on every
+    session; the last two are procedures it follows only when you ask for a new project.
+  </p>
+
+  <ol class="tour-list">
+    {files.map((f, i) => (
+      <li class="tour-item">
+        <div class="tour-index" aria-hidden="true">{i + 1}</div>
+        <div class="tour-body">
+          <h3 id={f.slug}>
+            <a href={`/get-started/what-your-agent-reads/${f.slug}/`}>{f.note.title}</a>
+          </h3>
+          <p class="tour-path"><code>{f.source_path}</code> · {f.lines.toLocaleString()} lines</p>
+          <p>{f.note.what}</p>
+          <p><strong>Why your agent reads it.</strong> {f.note.why}</p>
+          <p><strong>What to look for.</strong> {f.note.lookFor}</p>
+          <p>
+            <a href={`/get-started/what-your-agent-reads/${f.slug}/`}>Read {f.source_path.split('/').pop()} in full →</a>
+          </p>
+        </div>
+      </li>
+    ))}
+  </ol>
+
+  <h2 id="what-a-project-looks-like">And what it builds</h2>
+  <p>
+    Those four files exist to produce one thing: a project that is legible to an agent without being
+    explained to it. Here is a real one — the triad of this vault, the context graph that publishes
+    the page you are reading:
+  </p>
+  <div class="tour-triad">
+    {manifest.vault_triad.map((leg) => (
+      <div class="tour-leg">
+        <h3 id={`triad-${leg.leg}`}><code>{leg.leg}/</code></h3>
+        <ul>{leg.entries.map((e) => <li><code>{e}/</code></li>)}</ul>
+      </div>
+    ))}
+  </div>
+  <p class="tour-triad-note">
+    Derived from this repository at build time, so it is the real directory listing rather than an
+    illustration of one. Knowledge in <code>what/</code>, operations in <code>how/</code>, people in
+    <code>who/</code> — that split is the standard's one structural rule, and everything above is in
+    service of it.
+  </p>
+
+  <h2 id="then-what">Then what</h2>
+  <p>
+    If the files look sane, the <a href="/get-started/">install page</a> states what the command
+    writes, what the agent does with it, and how to undo it. If they do not, you have lost a few
+    minutes of reading instead of an evening — which was the point of putting them here.
+  </p>
+</DocumentationLayout>
+
+<style>
+  /* Numbered cards. The list is semantic (<ol>) so screen readers get the ordering for free; the
+     visible numeral is aria-hidden to avoid reading each position twice. */
+  .tour-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0 0;
+  }
+  .tour-item {
+    display: flex;
+    gap: var(--space-4);
+    padding: var(--space-5) 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .tour-item:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .tour-index {
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-muted);
+    line-height: 1.4;
+  }
+  .tour-body {
+    min-width: 0;
+  }
+  .tour-body > h3 {
+    margin-top: 0;
+  }
+  .tour-path {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-top: calc(var(--space-1) * -1);
+  }
+  .tour-path code {
+    overflow-wrap: anywhere;
+  }
+  .tour-triad {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-5) 0;
+  }
+  .tour-leg {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    background: var(--color-bg-alt);
+  }
+  .tour-leg > h3 {
+    margin-top: 0;
+  }
+  .tour-leg ul {
+    margin: 0;
+    padding-left: var(--space-5);
+    font-size: 0.9rem;
+  }
+  .tour-triad-note {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+</style>

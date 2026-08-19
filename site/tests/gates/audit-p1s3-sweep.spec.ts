@@ -69,6 +69,11 @@ const routes = [
   { name: 'Use-case: startup', path: '/use-cases/startup/' },
   { name: 'Provenance & audit', path: '/provenance-audit/' },
   { name: 'Security page', path: '/security/' },       // Meridian M9 — DP1 item 13 (new deploy route)
+  // HAUSSMANN P2.5 O1 — the zero-install tour (ADR-057 same-diff: a new route joins this sweep in
+  // the commit that creates it). The hub plus one detail page; the detail pages are generated from
+  // one template, so a second adds coverage of nothing the first does not already exercise.
+  { name: 'Tour hub', path: '/get-started/what-your-agent-reads/' },
+  { name: 'Tour: workspace router', path: '/get-started/what-your-agent-reads/workspace-router/' },
   // generated vault details beyond the gate-4 Harness sample (incl. a slugified-id record)
   { name: 'Vault detail: III.aDNA', path: '/vaults/iii/' },
   { name: 'Vault detail: adnalabs (slug form)', path: '/vaults/adnalabs/' },

@@ -45,7 +45,11 @@ let dates: Map<string, string> | null = null;
 function loadDates(): Map<string, string> {
   const map = new Map<string, string>();
   if (isShallow) return map;
-  const log = git(['log', '--format=%cs', '--name-only', '--', 'site/src/content']);
+  // src/data is scanned alongside src/content because the zero-install tour renders committed
+  // data files rather than collection entries (their bytes are vendored verbatim — see
+  // scripts/build_tour_files.mjs for why they cannot be MDX). Adding a path only adds entries to
+  // the map; every existing page resolves exactly as before.
+  const log = git(['log', '--format=%cs', '--name-only', '--', 'site/src/content', 'site/src/data']);
   if (!log) return map;
   let currentDate = '';
   for (const line of log.split('\n')) {
@@ -103,5 +107,26 @@ export function sourceForSpec(): PageSource {
     editUrl: `${STANDARD_REPO_URL}/blob/main/.adna/what/docs/adna_standard.md`,
     updated: lastUpdated('site/src/content/reference/specification.mdx'),
     editLabel: 'Edit the standard',
+  };
+}
+
+/**
+ * Provenance for the zero-install tour pages.
+ *
+ * Same reasoning as sourceForSpec: these pages are vendored copies, so "edit this page" must point
+ * at the file that actually governs the bytes — in the standard repo, at the pinned commit rather
+ * than at main. Pinning matters more here than anywhere else on the site: the page's entire claim
+ * is "these are the bytes at that commit", and a link to a moving branch would quietly stop
+ * agreeing with the text beneath it.
+ *
+ * `updated` tracks the vendored data, not the source repo's own history — the honest answer to
+ * "when did this page last change" is when we last re-vendored, and git can answer that from this
+ * repo, which is the same shallow-clone-safe guarantee every other page gets.
+ */
+export function sourceForTour(blobUrl: string): PageSource {
+  return {
+    editUrl: blobUrl,
+    updated: lastUpdated('site/src/data/tour_manifest.json'),
+    editLabel: 'View this file in the standard',
   };
 }

@@ -548,6 +548,26 @@ not typed — every count in them is read from `vaults.json` at build time (KW-1
 | R-116 | `/vaults` + `/` tier badges | *in use · chartered · planned* (replacing raw `active` · `pending` · `genesis`) | **verified** | Derived from `status` alone by one shared `tierOf()`; no vault is hand-tiered. The words claim **stage, never quality** — no `flagship`, no `mature`, no `production`, gate-35 asserts their absence *from the tier vocabulary*. `pending` answered no question a stranger was asking and `genesis` was house jargon; the homepage was additionally rendering `vault.status` **raw**, so the two surfaces would have described one vault with two words | — | [D] |
 | R-117 | `/vaults` (retired) | *"Every vault below is a real, governed context graph with its own place in the network — **most tended by a named agent**."* | **unsupported → cut** | 61 of 74 rows carry a persona `[D]`, so *"most"* was numerically true — and *"tended"* was not. It reads as present, continuous activity across a set that is **57/74 planned**, i.e. a governance skeleton and little else; a persona pin on a planned vault records who *will* tend it. Aspirational present tense over a self-declared field is **anti-pattern 7.5**, and it was the claim doing the most work on the old page. Replaced by R-114, which states the split instead of characterising it | S3 | [D] |
 | R-118 | `/get-started/` step 2 | *(rendered terminal block)* `$ claude` → *"✓ Loaded CLAUDE.md (workspace router) … This is a fresh aDNA workspace … What is this project called, and what problem does it solve?"* | **unsupported → to fix at P2.5 O1** | The strings are **authored, not emitted**: searched `~/aDNA/.adna/` in full — **zero hits** for `Loaded CLAUDE.md`, `what problem does it solve`, or `no projects yet`; the only occurrence in the repository is this page `[D]`. The surrounding *prose* is fair — the agent does read the router and does walk you through a first project — but the block is formatted as a recording (`$` prompt, `✓` status line) and depicts an **onboarding interview that does not fire here**: `skill_onboarding.md` gates on a forked project directory and a fresh clone has none, so the root router's `skill_project_fork.md` path runs instead `[D]`. Campaign honesty law bars staged mockups presented as live, and this sits three inches above the one line the refusing cold-read reader said he trusted (*"nothing executed from the network" — right instinct, and it's true*). **Cut at O1 leaving a labelled gap**, not refilled — a real transcript arrives from O2's clean-machine run | S3 | [D] |
+| R-119 | `/get-started/` prose (2 places) | *"scaffolded for you by the **onboarding interview**"* (the what-you'll-have callout) · *"**The interview scaffolds** `<your_project>.aDNA/`"* (step 2) | **FALSE → fixed at P2.5 O1** | Registered separately from R-118 rather than folded into it, because it is a **different assertion in a different place**, and cutting the code block would have left it standing twice. The fabricated *block* and this *prose* share one error — wrong agent, wrong order — but only the block was in the finding. **This is the same-diff hazard class no route grep finds**: the defect is in sentences, not in a route, slug, or count, so ADR-057's mechanical sweep cannot see it. Found by grepping the built output for the mechanism's own words after the block was removed `[D]` | S3 | [D] |
+
+**R-118's mechanism, corrected at O1 — the interview is real, it is just second.** The row above
+says the page *"depicts an onboarding interview that does not fire here."* Reading the vendored
+files at O1 showed that is **too strong**, and the register should not carry an overstatement even
+in service of a correct verdict. The standard's own router states *"After creation, the project's
+own CLAUDE.md triggers a Socratic onboarding interview"* (`template_workspace_claude.md:102`), and
+`skill_project_fork.md:216` has the fork **offer** it once the project exists. So the interview does
+fire — after the fork, invited by it. What was actually wrong on the page was **agency and order**:
+the interview does not *scaffold* the project, and it is not the first thing a fresh clone meets.
+The fabrication finding is unchanged (the depicted strings still return zero hits across `.adna/`),
+and the disposition is unchanged. Recorded because the campaign's law cuts both ways: a claim of
+ours that overshoots its evidence is the same defect as a claim of the site's. `[D]`
+
+Noted while there, out of scope to fix: the shipped image's own `.adna/CLAUDE.md` carries internal
+campaign codenames (*Operation Distillery*, *Operation Palimpsest*) and `idea_upstream_` ids. They
+reach the public site only because the tour publishes the file verbatim, and they are already in
+every clone — but that the **image** carries them is an editorial finding for the next template
+release. Workspace Standing Rule 1 bars fixing it from here; it is allowlisted with that rationale
+in `leak_allowlist.json`, not baselined.
 
 **A note on scope, from a false positive this mission produced.** gate-35's overclaiming check was
 first written to scan the whole rendered page and failed on **"flagship"** — a word inside
