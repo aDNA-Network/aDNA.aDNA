@@ -54,5 +54,23 @@ jobs:
       - name: Build (posture-safe — committed data, no prebuild regen)
         run: npx astro build
 
+      # Assemble the artifact that actually ships (HAUSSMANN P2.3 O0).
+      #
+      # `astro build` alone is NOT what production serves. deploy_adna.sh post-processes
+      # .vercel/output/config.json — security headers, scoped installer routes, and the
+      # redirect widening that makes each route answer both slash forms. gate-30 asserts
+      # against that finished artifact, so a CI run that skips these steps fails gate-30
+      # every time, for a reason that has nothing to do with the commit.
+      #
+      # That is not hypothetical: this workflow was red on b9d510a, 356b33b and 301daef —
+      # every run from P2.1's redirect work onward — while the same suite passed locally,
+      # because local sessions had run a deploy (and therefore the injection) beforehand.
+      # A gate whose green depends on leftover state on one machine is not a gate.
+      - name: Assemble deploy artifact (headers · installer routes · redirect widening)
+        run: |
+          node scripts/inject_headers.mjs .
+          node scripts/inject_installer_headers.mjs .
+          node scripts/inject_redirects.mjs .
+
       - name: Run quality gates (G1 budget · G2 @audit · axe both-modes · all)
         run: npm run test:gates

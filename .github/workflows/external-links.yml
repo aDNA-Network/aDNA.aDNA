@@ -1,0 +1,50 @@
+name: external-links
+
+# HAUSSMANN P2.3 O0 — the non-blocking half of the link regime.
+#
+# Internal links are gated on every push (gate-31, inside `npm run test:gates`): they are wholly
+# within our control, so a broken one is always our defect and blocking is correct. External links
+# are a different animal — a third-party host can 503, rate-limit, or block CI egress without the
+# link being wrong. Gating on that teaches people to ignore red builds, which costs more than it
+# catches. So this runs on a schedule, reports, and never blocks.
+#
+# Deliberately NOT on push: link rot is a function of calendar time, not of our commits.
+#
+# Off-peak minute on purpose — GitHub's scheduled-run queue is heavily congested at :00.
+
+on:
+  schedule:
+    - cron: '17 9 * * 1' # Mondays 09:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: external-links
+  cancel-in-progress: true
+
+jobs:
+  external-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Posture-safe: `npx astro build`, never `npm run build` — the npm prebuild regenerates
+      # vault data from sibling vaults that are not in this checkout (pt19). Same rule as gates.yml.
+      - name: Build (posture-safe — committed data, no prebuild regen)
+        run: npx astro build
+
+      - name: Check external links (report only)
+        run: node scripts/check_external_links.mjs
