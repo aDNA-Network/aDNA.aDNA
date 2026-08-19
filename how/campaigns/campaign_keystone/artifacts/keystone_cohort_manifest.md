@@ -2,11 +2,11 @@
 type: artifact
 artifact_class: cohort_manifest
 created: 2026-06-22
-updated: 2026-06-22
+updated: 2026-08-19   # roster re-verified against every vault's HEAD on disk (all 10 rows were stale); DP-16 authored, awaiting operator ratification
 status: active
 campaign_id: campaign_keystone
 campaign_phase: 4
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [keystone, deployment_graph, cohort, manifest, roster, lighthouse, composition]
 ---
 
@@ -20,29 +20,46 @@ The authoritative register of the **software-deployment-graph cohort** seeded by
 
 ## Cohort roster (10 graphs)
 
-All ten are **genesis-planning stubs** (no install / deploy / service-start / infra), **local `git init` / no remote**, **router row STAGED `#needs-human`** (Operation Production Tidy freeze — never self-inserted), each carrying the **four wrappers** + deployment-gated standing orders. Personas are **working-pins** (each ratified against the fleet registry at that graph's own P0).
+All ten were seeded as **genesis-planning stubs** (no install / deploy / service-start / infra), **local `git init` / no remote**, **router row STAGED `#needs-human`** (Operation Production Tidy freeze — never self-inserted), each carrying the **four wrappers** + deployment-gated standing orders. Personas are **working-pins** (each ratified against the fleet registry at that graph's own P0).
+
+> **Roster refreshed 2026-08-19** — pins and file counts re-read from each vault's HEAD on disk, not
+> copied from a report. **Every one of the ten was stale**: the table below had described the cohort as
+> it stood at seeding on 2026-06-22, roughly two months and many missions earlier. Three graphs are no
+> longer stubs in any meaningful sense (`Inference` 165 files, `Container` 139, `Forgejo` 116).
+>
+> The refresh was prompted by **one** row — Pandora's 2026-08-09 memo reporting that row 6 read
+> "lean stub" at a thirteen-mission-stale pin. Checking the other nine before editing hers found all
+> nine equally stale. *Fixing only the row someone complained about would have left eight known-wrong
+> rows in a file whose first line calls itself "the authoritative register."*
+>
+> **`Fork method` is a historical fact and does not age** — it records how a graph was *created*, and
+> `Caddy`/`Bitwarden`'s divergence (below) is still the reconciliation it always was. The columns that
+> aged are the pin, the file count, and the state a reader infers from them; **`State` is now its own
+> column** so nobody has to read growth out of a file count again.
 
 ### §A — Net-new (proving instances; seeded P2, 2026-06-20→21)
 
-| # | Software | Graph | Persona | Commit | Class | Fork method | Files |
-|---|----------|-------|---------|--------|-------|-------------|-------|
-| 1 | Nextcloud (file-sync/collab) | `Nextcloud.aDNA` | Atlas | `142c113` | data-bearing (§8) | lean `template_software_graph_stub` | 15 |
-| 2 | Reverse-proxy (Caddy fleet-default) | `Caddy.aDNA` | Portunus | `04817c5` | data-bearing (fronts data) | full `skill_project_fork`† | 346 |
-| 3 | Secrets (Bitwarden/Vaultwarden) | `Bitwarden.aDNA` | Cerberus | `09ca97c` | data-bearing (secret store §8) | full `skill_project_fork`† | 358 |
-| 4 | Object store (MinIO/AIStor) | `Store.aDNA` | Plutus | `77d2e88` | data-bearing (§8) | lean stub | 15 |
-| 5 | Groupware (Stalwart JMAP) | `Groupware.aDNA` | Pheme | `85b4531` | data-bearing (§8) | lean stub | 15 |
-| 6 | Container runtime (rootless Podman) | `Container.aDNA` | Pandora | `5b248db` | control-plane | lean stub | 15 |
-| 7 | Inference (llama.cpp/MLX/vLLM/Ollama) | `Inference.aDNA` | Pythia | `fcf747d` | control-plane | lean stub | 15 |
-| 8 | API surface (FastAPI) | `FastAPI.aDNA` | Atalanta | `79bb176` | control-plane | lean stub | 15 |
+| # | Software | Graph | Persona | Commit | Class | Fork method | Files | State (2026-08-19) |
+|---|----------|-------|---------|--------|-------|-------------|-------|--------------------|
+| 1 | Nextcloud (file-sync/collab) | `Nextcloud.aDNA` | Atlas | `2b8c0f3` | data-bearing (§8) | lean `template_software_graph_stub` | 29 | genesis stub |
+| 2 | Reverse-proxy (Caddy fleet-default) | `Caddy.aDNA` | Portunus | `7708cd1` | data-bearing (fronts data) | full `skill_project_fork`† | 390 | built out (own work-stream) |
+| 3 | Secrets (Bitwarden/Vaultwarden) | `Bitwarden.aDNA` | Cerberus | `5e37f8a` | data-bearing (secret store §8) | full `skill_project_fork`† | 399 | built out (WS-B / Keyring) |
+| 4 | Object store (MinIO/AIStor) | `Store.aDNA` | Plutus | `f66fb72` | data-bearing (§8) | lean stub | 27 | genesis stub |
+| 5 | Groupware (Stalwart JMAP) | `Groupware.aDNA` | Pheme | `d6bf3a8` | data-bearing (§8) | lean stub | 29 | genesis stub |
+| 6 | Container runtime (**dual-runtime by node class** ‡) | `Container.aDNA` | Pandora | `80e29f7` | control-plane | lean stub | 139 | **P0–P4 CLOSED; five-verb design set complete; P5 open-partial (blocked on D-9 registry)** |
+| 7 | Inference (llama.cpp/MLX/vLLM/Ollama) | `Inference.aDNA` | Pythia | `22b1bd2` | control-plane — **⛩ DP-16 open**, see §DP-16 | lean stub | 165 | substantially built out; classification under review |
+| 8 | API surface (FastAPI) | `FastAPI.aDNA` | Atalanta | `4833507` | control-plane | lean stub | 27 | genesis stub |
 
 ### §B — Overlap (seam-gated; seeded P3, 2026-06-22, only after seams ratified)
 
-| # | Software | Graph | Persona | Commit | Class | Fork method | Files |
-|---|----------|-------|---------|--------|-------|-------------|-------|
-| 9 | Forgejo (software install/config only) | `Forgejo.aDNA` | Ilmarinen | `c45046f` | data-bearing (§8) | lean stub | 15 |
-| 10 | Nebula (node-side daemon only) | `Nebula.aDNA` | Heimdall | `e457135` | control-plane | lean stub | 15 |
+| # | Software | Graph | Persona | Commit | Class | Fork method | Files | State (2026-08-19) |
+|---|----------|-------|---------|--------|-------|-------------|-------|--------------------|
+| 9 | Forgejo (software install/config only) | `Forgejo.aDNA` | Ilmarinen | `69ec5c4` | data-bearing (§8) | lean stub | 116 | substantially built out |
+| 10 | Nebula (node-side daemon only) | `Nebula.aDNA` | Heimdall | `bd66aa1` | control-plane | lean stub | 28 | genesis stub |
 
 † **Fork-method divergence — documented, not reworked** (see reconciliation below). All remotes: **local-only**. All router rows: **STAGED `#needs-human`**.
+
+‡ **Row 6 scope, per Pandora (2026-08-09):** rootless Podman on Keystone-profile nodes, Docker sanctioned on designated brownfield. **ADR-001 scopes Keystone Decision #4; it does not reverse it.** Since the `5b248db` pin: P0 closed 2026-07-02 (Pandora ratified, ADR-000 accepted); estate censused; 5 consumer `container/` wrappers seeded; P2 seam ADRs (storage tiers T0/T1/T2, placement + node-class register) `proposed` awaiting counter-signature; P3 wrapper-conformance audit + install/configure design; **two node designations executed** (`adna_rd_l1` 2026-08-08 — the fleet's first — and `L1` 2026-08-09); P4 operate/update/interoperate design closed 2026-08-09; Decision #8 ruled (OCI-native signing, digest-pin floor); feedback loop live. *Her file to report, this vault's file to write — the staged text was adopted with the pin and file count re-read rather than copied, because both had moved again in the ten days since she wrote it.*
 
 ## Four-wrapper conformance audit (the conformance contract)
 
@@ -74,7 +91,71 @@ Eight graphs are lean 15-file `template_software_graph_stub` forks. **`Caddy.aDN
 Every **data-bearing** graph carries the control-plane-vs-data-plane discipline: the software runs on a **data-plane node the lighthouse coordinates, never the control-plane lighthouse host**, with placement / storage backing / ingress co-designed with **Venus (`Network.aDNA`)**.
 
 - **Data-bearing → §8 (6):** Nextcloud · Caddy · Bitwarden · Store · Groupware · Forgejo.
-- **Control-plane (4):** Container · Inference · FastAPI · Nebula.
+- **Control-plane (4):** Container · Inference\* · FastAPI · Nebula.
+
+\* **`Inference` carries an open classification question — ⛩ DP-16, below. Do not read this line as
+"nothing in these four persists" until it is ruled.**
+
+## §DP-16 — Inference's classification, with a live instance attached (⛩ AWAITING OPERATOR RULING)
+
+**Status: authored, NOT ratified.** Agents author, operators ratify (§7.7). The split above is
+**unchanged** pending the signature; this section states the question and a recommendation, and
+changes nothing.
+
+### The collision
+
+`Inference.aDNA` is classed **control-plane** here, and its own **ADR-000 §3** says the graph never
+persists payloads. Pythia reports (2026-08-18, process-table sweep) that an **OpenWebUI instance has
+been running on this node since 2026-04-10** — launchd `com.latticelabs.openwebui`, loopback
+`127.0.0.1:3000`, consuming Ollama `:11434` directly, and **persisting prompt/response payloads to
+`~/.open-webui/webui.db`**. No register anywhere carried it; the node ports register listed `:3000`
+as an unidentified squatter. Both statements cannot stand.
+
+Two process facts belong on the record with it. The 2026-08-07 memo that first raised DP-16 as a
+*hypothetical* was **staged and never dispatched**, while Inference's own STATE read "awaiting
+inbound: Rosetta on DP-16" for eleven days — Pythia records the delay as hers, and it is. And the
+credential half was found and remediated same-day (C76 ⚠HIGH, secret inline in a world-readable
+plist → rotated, Keychain-brokered, plist secretless + 0600). The history DB is untouched
+(archive-never-delete). None of that settles the classification, which is this vault's to hold.
+
+### The options
+
+| | Shape | What it means |
+|---|---|---|
+| **A** | **Narrow ADR-000 §3 to the serving lanes** | The lanes and gateway never persist payloads; a governed human surface may, under its own declared row. Pythia's recommendation. |
+| **B** | **Reclassify `Inference.aDNA` data-bearing** | The whole graph takes ADR-016 §8: data-plane placement, storage backing and ingress co-designed with Venus. |
+| **C** | **Don't run the surface** | With a live instance this is a *removal* decision, not an abstention — the operator's, not Pythia's and not mine. |
+
+### Recommendation — A, but not as written
+
+**A is right on the merits.** Classification should track what software does, and the two things
+inside this graph do different things: a serving lane processes a prompt and forgets it, while a
+chat UI keeps a transcript. B over-applies §8 to lanes that hold nothing and would make the
+discipline cheaper to ignore everywhere it *is* needed. C is a real option but not a classification
+answer.
+
+**A as stated has a failure mode, and this node just ran it for four months.** If the graph is
+labelled control-plane while one of its surfaces persists, then the label stops answering the only
+question it exists to answer — *does §8 apply to what is actually running here?* The OpenWebUI
+instance survived unregistered precisely because the graph's label said there was nothing to
+register.
+
+So: **A, conditional on the human surface becoming a declared row rather than a footnote** — its
+own line in this manifest, carrying data-bearing/§8 discipline, with placement and storage backing
+co-designed with Venus like any other §8 row. The graph stays control-plane *for its serving lanes*
+and the manifest says so in those words. A split classification that is written down is honest; one
+that is inferred is how this happened.
+
+**If the operator prefers B**, the cost is bounded and worth naming plainly: `Inference` moves to
+the §8 column, the "Control-plane (4)" line becomes three, and Venus acquires a placement
+co-design she has not been asked for yet.
+
+### Ratification
+
+- **Decision:** _pending_ · **Ratified-by:** _pending — Stanley (operator)_ · **Date:** _pending_ ·
+  **Status:** **proposed**. Raised by Pythia (`Inference.aDNA`), 2026-08-07 + 2026-08-18; authored
+  here 2026-08-19. Reply staged at
+  [[who/coordination/coord_2026_08_19_rosetta_to_pythia_dp16_ruling|coord_2026_08_19_rosetta_to_pythia_dp16_ruling]].
 
 ## Seam summary (overlap graphs)
 

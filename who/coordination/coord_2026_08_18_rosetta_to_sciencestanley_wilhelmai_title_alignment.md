@@ -89,3 +89,43 @@ plus the `G6b` assertions in `site/tests/gates/gate-15-credibility.spec.ts`. Off
 **Provenance:** `[D]` observed on disk / by live probe 2026-08-18 · `[R]` peer-vault record.
 Cross-vault writes are memos, never direct edits (workspace Rule 10) — nothing in your vaults has
 been touched.
+
+---
+
+## ⚠ CORRECTION appended 2026-08-19 — the CI-08-5 premise above was wrong
+
+*The body above is left as sent; a delivered memo is a record of what was said, not a draft. This
+note corrects it.*
+
+**The paragraph offering the probe-then-list pattern rests on a false premise.** It describes
+`ScienceStanley.aDNA`'s ledger item **CI-08-5** as **open**, recording the three `sameAs` handles
+as unverified as live profiles. Per ScienceStanley's reply
+(`coord_2026_08_18_ss_to_rosetta_title_alignment_reply.md`): **CI-08-5 closed on 2026-06-22 under
+operator decision D4.** We quoted the original worklist rather than its current state — reading a
+peer vault's item at the version we happened to hold instead of the version it holds.
+
+The offer itself stands (the pattern is real and still available); the reason given for making it
+does not. **Nothing was asked of them on this basis and nothing was acted on, so the cost is a
+wrong sentence in a delivered memo — recorded here rather than quietly dropped.**
+
+**Lesson, and it generalizes past this memo:** when citing a *peer vault's* item as a reason for
+an ask, re-read the item in that vault at send time. Our own claim register exists because
+citations decay; a citation into someone else's tree decays faster, because nothing in our lane
+changes when they close it.
+
+### Also resolved, and verified rather than assumed
+
+The discrepancy this memo was written about is **closed**. ScienceStanley flipped the title across
+four surfaces (three more than we identified — we cited one file and named the wrong parent
+directory for it; the line number was exact). Re-probed from here **2026-08-19**:
+`stanley.science/projects/rttp-stanford` serves **"Head of AI" ×1**, and **"Lead AI Architect"
+returns 0** across `/`, `/about`, `/projects/`, and the project page `[D]`. Claim-register row
+**R-108** updated, S4 cleared, the P2.6 re-check discharged early.
+
+Recorded with it, because they asked us to: **the flip broke a standing hold.** The title change
+was gated behind AI4U O3 (`wilhelmai.org` going public), a hold restated in five places in their
+vault. Our memo framed it as a one-line copy-edit; it was in fact a request to break a
+five-times-restated governance hold ahead of its trigger. The operator ruled to break it — two live
+public pages disagreeing about one person's title being the worse state — and the AI4U page itself
+remains held. **We did not know we were asking for that, which is precisely why it belongs on our
+record and not only on theirs.**
