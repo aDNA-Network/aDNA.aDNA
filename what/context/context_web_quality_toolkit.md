@@ -3,7 +3,7 @@ type: context
 context_type: reference
 title: "Web quality instrument toolkit — what each tool measures, what it costs, and how it lies"
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-08-19
 status: active
 last_edited_by: agent_rosetta
 agent_authored: true
@@ -223,6 +223,62 @@ content disclosed with a human ratification record.
 Red-test at birth: today's known-false claims must **fail** the gate on the day it ships (as
 `xfail`-until-remediation with an expiry), or the gate is unproven.
 
+**Allowlist vs baseline — they are not interchangeable, and conflating them is how a gate dies.** A
+**baseline** is *dated debt*: today's known violations, recorded so new ones go red while the backlog
+stays visible, with an expiry that forces its own retirement. An **allowlist** is a *permanent reviewed
+exception*: "this token, on this surface, is deliberate." Adding a genuine exception to the baseline
+silently converts permanent editorial judgment into debt that someone will later try to "clear"; adding
+genuine debt to the allowlist launders it into permission. Keep allowlist entries **token-scoped**
+(`learn/** internal_id` wholesale would let a *new* internal id through unseen), dated, and carrying a
+rationale a stranger can evaluate. **P2.5 `[D]`:** seven leaks on a new surface were all the standard's
+own words, published verbatim on purpose — allowlist, with the reason written down; the baseline stayed
+empty and its zero-tolerance assertion kept its teeth.
+
+### Verbatim publication — showing the artifact instead of describing it
+
+When the trust question is *"can I audit this before I run it?"*, the strongest available answer is not
+better prose about the artifact — it is **the artifact**, byte-for-byte, with a pin and a hash.
+
+**What it measures**: nothing. It is not a test; it is the *removal of an intermediary* between the
+reader and the thing being claimed about. That is why it outranks any amount of reassuring copy.
+
+**The mechanism, and its three failure modes** — each of which turns the page back into a depiction:
+
+1. **Drift.** Vendored bytes and source diverge. Guard: a `--check` mode that reconstitutes and a gate
+   that runs it. Red-prove it by mutating a byte and confirming a non-zero exit.
+2. **A pin that does not resolve.** *"These bytes came from commit X"* is worthless if X names nothing.
+   **P2.5 `[D]`:** an existing `template_sha` field in this repo records a commit that `git cat-file`
+   cannot resolve — frozen by its generator's idempotency guard, then orphaned when the checkout's
+   origin was repointed. Harmless there (nothing renders it), fatal on a page whose whole claim is the
+   pin. **Never borrow another artifact's pin; derive and verify your own, and refuse to emit rather
+   than print one you cannot stand behind.**
+3. **The wrong source.** The obvious reading of a path can be a data leak — *"the workspace router"*
+   points at the local operator's live file, not the one a user receives. Constrain sources
+   structurally and re-assert the constraint in the gate.
+
+**Known trap — the markup pipeline will silently eat the bytes.** Governance and config files are full
+of `{braces}` and `<angles>`; put them through MDX and they are evaluated as expressions and JSX. The
+build either dies or, worse, **quietly mangles the exact content the page exists to display**. Ship
+verbatim content as plain text into a `<pre>`, never through a markdown/MDX renderer.
+
+**Blind spot**: a build-time check proves what you *built*. It says nothing about what the server
+*sends* — see the live re-hash entry in §6.
+
+### The prose-level defect — what same-diff cannot see
+
+A same-diff rule ("any commit changing a route, slug, or count updates every spec that hardcodes it")
+is coupled to *identifiers*. It is structurally blind to a false statement in a **sentence**.
+
+**P2.5 `[D]`:** a fabricated terminal transcript was cut from a page — and the identical false mechanism
+was still asserted twice in surrounding prose, in the page's own voice. No route grep finds that; no
+fixture references it. It was found by grepping the built output for **the mechanism's own words** after
+the artifact was removed.
+
+**Carry-line**: after removing a defect, search the *rendered* output for the thing the defect
+**claimed**, not just for the artifact that claimed it. And an earlier finding of your own is fair game:
+the same pass showed that finding had overstated its mechanism, which is a correction worth making
+loudly rather than quoting forward.
+
 ### Reading level (FKGL)
 
 **Directional only.** Known weakness W1: on `.astro` pages, text comes from the built HTML `<main>`, and
@@ -264,6 +320,34 @@ summary only; the per-test breakdown exists only on the human-facing analyze pag
 never `--token`** (this vault has a leak history). Record every deploy ID in the session log and in
 STATE — an unrecorded deploy is an unfalsifiable claim about what is live.
 
+**Post-build injection is not part of the build.** Headers, scoped installer routes, and
+slash-form-widened redirects are injected into the adapter's `config.json` by the deploy script, *after*
+`astro build`. So a bare build leaves them absent, and any gate asserting them goes red on a working
+tree that is perfectly fine. **P2.5 `[D]`:** two redirect gates failed exactly this way and read as a
+regression for as long as it took to check which step owned them. Diagnose a red gate by asking **which
+step produces the thing it asserts**, before changing anything.
+
+### Live probe — the only instrument that measures production `[D]`
+
+A gate proves the build. A probe proves the deployment. They fail differently and you need both.
+
+**Rules that make a probe worth running:**
+
+- **Red-prove it before the deploy.** Run it against current production first. It must go substantially
+  red — *and not uniformly red*. A probe where everything fails proves only that it is pointed
+  somewhere; one that discriminates has assertions on both sides of the change. **P2.5 `[D]`:** 3 PASS /
+  33 FAIL before, 52/0 after.
+- **Derive every expectation, and throw on empty.** A probe that guessed a field name, got an empty
+  array, and iterated it happily once reported a green "64 PASS / 0 FAIL" while testing nothing.
+- **Assert rendered output fetched over the wire**, never source text — and never something a *comment*
+  could satisfy.
+- **Re-hash vendored content from the served HTML.** Where a page publishes a hash and invites readers
+  to check it, the probe should do exactly what the reader would: extract the block, un-escape it, hash
+  it, compare. Un-escape `&amp;` **last**, or every hash is wrong in a way that looks like drift.
+
+**Carry-line**: *"gates green"* is a claim about the working tree. Only a live probe is a claim about
+what a reader receives.
+
 ---
 
 ## 7 · Cohort calibration reference
@@ -280,7 +364,7 @@ The gap is ~31 points and it is **almost entirely trust-stratum**, not craft.
 
 ---
 
-## 8 · Quick reference — the eleven carry-lines
+## 8 · Quick reference — the fifteen carry-lines
 
 Whenever one of these numbers is cited downstream, its caveat travels with it. Permanently.
 
@@ -295,6 +379,10 @@ Whenever one of these numbers is cited downstream, its caveat travels with it. P
 9. *Persona ranker 4.x* → `[D-syn]` unless the reader was human
 10. *371/371 gates pass* → "no **known** regression; gates only catch what someone wrote a gate for"
 11. *Composite score X* → never without its per-dimension breakdown
+12. *Gates green* → a claim about the working tree, not about production. Only a live probe is that
+13. *"Vendored at commit X"* → worthless unless X resolves; verify the pin, never borrow one
+14. *Defect removed* → search the rendered output for what it **claimed**, not just for the artifact
+15. *TTFS = N min* → never bare; conditions attached, and one run is an observation, not a distribution
 
 ---
 

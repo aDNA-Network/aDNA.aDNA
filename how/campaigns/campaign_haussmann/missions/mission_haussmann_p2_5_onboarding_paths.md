@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P2
 decade: 1
 owner: stanley
-status: in_progress   # O0 ✅ + ⛩ pick taken (4/4 as recommended) + O1 ✅ 2026-08-19 — tour built, /get-started reworked, R-118 cut, R-119 found+fixed, gates 487/487. NEXT: O2 needs a clean machine (⛩ separate gate)
+status: completed     # 2026-08-19 SHIPPED tree=db4b34f, live probe 52/0. CLOSED at O1 under operator ruling with 3 of 4 acceptance criteria met — criterion 4 (TTFS instrument + clean-machine run) CARRIED to P2.6 O0b/O0c, never measured. R-34/R-63 remain undischarged.
 mission_class: build
 executor_tier: opus
 token_budget_estimated: "~200–300 kT across 2 sessions: zero-install path design+build + first-success definition + trust-cost copy + uninstall docs + TTFS instrument + clean-machine run (ADR-016)"
@@ -149,11 +149,67 @@ mobile capture showed every prose line running off the edge — auditing the sta
 have meant scrolling right on every line. Now `pre-wrap`, per this funnel's own H-8 rule. DOM text
 unchanged, so byte-exactness is untouched.
 
-### ⏭ Next — O2 needs a clean machine (⛩ separate operator gate)
+### 🚀 SHIPPED — `2026-08-19T22:54:11Z mode=prod tree=db4b34f`
 
-O2 runs the TTFS instrument on a fresh VM or user account and produces the real transcript as a
-by-product; O3 folds it in as variant B, retiring the labelled gap. **Do not author a timing claim
-before that run.**
+```
+deploy_record: 2026-08-19T22:54:11Z mode=prod
+url=https://adna-docs-f2ce65ov0-science-stanleys-projects.vercel.app
+token=SS_VERCEL_TOKEN (interim — migrate to VERCEL_TOKEN_ADNA when brokered) tree=db4b34f
+```
+
+221 pages · headers **4/4 verified live, no drift** · redirects **42/42 widened** · installer routes
+51 (idempotent re-run confirmed). Pushed `31369cb..db4b34f`, gitleaks clean.
+
+**Live probe 52 PASS / 0 FAIL**, red-proven **3/33** against production beforehand — and *not*
+uniformly red (three assertions already held), so it discriminates rather than merely failing. Its
+strongest assertion **re-hashes each vendored file from the served HTML**: a build-time gate proves
+what we built, only a live fetch proves what a reader receives. All four match their published
+SHA-256. `[D]`
+
+### ✅ Mission closed — 3 of 4 acceptance criteria met, 1 carried
+
+Closing at O1 under the operator's ruling. The record states what did **not** ship rather than
+implying completeness:
+
+| # | Criterion | Disposition |
+|---|---|---|
+| 1 | A zero-install evaluation path exists from the homepage | **met** — the tour, shipped and live |
+| 2 | "First success" defined + published, troubleshooting, uninstall documented | **met** |
+| 3 | The one-liner's cost stated up front | **met** |
+| 4 | TTFS instrument + one clean-machine run recorded, TTFS < 10 min | **CARRIED to P2.6 (O0b/O0c)** — the kit is authored, the run has never happened |
+
+**R-34 and R-63 remain undischarged.** Both "about 5 minutes" claims are still registered `[A]`/S4
+with no recorded run behind them; they ride P2.6 and are discharged by measurement or revised down
+then. `/get-started/` now says so in its own copy — the changelog entry states plainly that the
+five-minute claim is unmeasured.
+
+O2/O3 fold into **P2.6** rather than a new mission file: the charter's `mission_count: 27` sits
+inside the ratified §7.7 statement, and amending ratified text is the operator's act, not an agent's.
+P2.6 is also the better home — it is the mission that *scores* D3, and the TTFS number is exactly
+what its provisional 3 has been missing.
+
+## AAR (SO#5)
+
+- **Worked**: Reading the vendored files *before* building caught two defects that would have
+  shipped — a data leak (the node's router names five local-only vaults) and an unresolvable
+  provenance pin — and the design's own option set turned out to contain its answer: the honest
+  version of "rendered example session" was the thing the page was already faking.
+- **Didn't**: The plan's MDX content-collection shape was unbuildable (39 brace + 28 angle
+  constructs would have been evaluated as JS/JSX and silently mangled the bytes), and two of my own
+  instruments were wrong before the code was — a site-wide leak assertion that failed on nine
+  legitimate registry pages, and a regex that missed Astro's scoped `<code>` attribute.
+- **Finding**: **A defect can live in prose, where no route grep will find it** (R-119). ADR-057's
+  same-diff law is route/slug/count-coupled; cutting the fabricated block would have left the
+  identical false mechanism standing in two sentences. After removing a defect, grep the built
+  output for the *mechanism's own words*, not just for the artifact.
+- **Change**: When a finding asserts a mechanism, **read the mechanism's source before quoting the
+  finding forward**. R-118 said the onboarding interview "does not fire here"; it does, after the
+  fork and offered by it. The verdict survived, the reasoning did not — and an overstatement of ours
+  is the same defect as one of the site's.
+- **Follow-up**: P2.6 O0b/O0c (the TTFS run + cold-read re-test + D3 re-score) ·
+  `artifacts/p2_5/ttfs_runbook_fresh_account.md` (the runbook, operator-gated) · the TTFS kit owed
+  upstream to WebForge (A6) · `install_truth.json`'s unresolvable `template_sha` (latent) · the
+  shipped image carrying internal codenames (editorial finding for the next template release).
 
 ## AAR (SO#5)
 
