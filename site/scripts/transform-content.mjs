@@ -10,7 +10,9 @@
 
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
+import { execFileSync } from 'node:child_process';
 
+const SCRIPT_DIR = dirname(new URL(import.meta.url).pathname);
 const VAULT = join(dirname(new URL(import.meta.url).pathname), '../../');
 const SITE_CONTENT = join(dirname(new URL(import.meta.url).pathname), '../src/content');
 
@@ -371,5 +373,15 @@ total += transformGuides();
 
 console.log('Reference → reference');
 total += transformReference();
+
+// The spec is served as 20 section pages (HAUSSMANN P2.3 O1), generated from the file
+// transformReference() just rewrote. Re-splitting here means a spec update can never leave the
+// sectioned copy stale — the failure mode gate-32 exists to catch, closed at the source instead
+// of relying on someone remembering a second command.
+console.log('Specification → spec sections');
+execFileSync('node', [join(SCRIPT_DIR, 'split_specification.mjs')], {
+  cwd: join(SCRIPT_DIR, '..'),
+  stdio: 'inherit',
+});
 
 console.log(`\nDone. ${total} files transformed.`);

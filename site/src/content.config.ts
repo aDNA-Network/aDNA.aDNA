@@ -59,6 +59,26 @@ const reference = defineCollection({
   }),
 });
 
+/**
+ * Spec sections (HAUSSMANN P2.3 O1). GENERATED — `scripts/split_specification.mjs` projects
+ * `reference/specification.mdx` into one entry per numbered section so the spec is readable a
+ * section at a time on a phone. Never hand-edit `src/content/spec/`; gate-32 asserts the parts
+ * still reconstitute the source.
+ */
+const spec = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/spec' }),
+  schema: seoSchema.extend({
+    page_type: z.literal('spec_section').default('spec_section'),
+    section_title: z.string(),
+    number: z.number().int(),
+    /** Matches the id rehype gives the original h2, so full-page anchors and section URLs agree. */
+    slug_id: z.string(),
+    version: z.string(),
+    prev: z.string().nullable(),
+    next: z.string().nullable(),
+  }),
+});
+
 const changelog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/changelog' }),
   schema: seoSchema.extend({
@@ -70,4 +90,4 @@ const changelog = defineCollection({
   }),
 });
 
-export const collections = { docs, guides, reference, changelog };
+export const collections = { docs, guides, reference, spec, changelog };

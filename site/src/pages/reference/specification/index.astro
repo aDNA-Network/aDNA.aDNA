@@ -1,0 +1,185 @@
+---
+/**
+ * Specification hub (HAUSSMANN P2.3 O1, ⛩ operator ruling 2026-08-18).
+ *
+ * `/reference/specification/` used to serve the whole 67K-character standard as one page —
+ * 124K px on a phone (finding F6). It is now the contents page: orientation, the 20 sections,
+ * and a link to the full text, which still exists at /reference/specification/full/ and remains
+ * the citable artifact.
+ *
+ * ANCHOR FORWARDING. Old deep links of the form /reference/specification/#7-frontmatter-system
+ * cannot be redirected server-side — a URL fragment is never sent to the server. So the map below
+ * is built at BUILD time from the actually-rendered heading ids of the full document and inlined,
+ * and a small script forwards a matching hash to the section that now owns it.
+ *
+ * The map is derived, never guessed. Two traps make that non-negotiable:
+ *   - rehype strips the dot, so `### 1.4 Normative Language` is `#14-normative-language`, which
+ *     collides head-on with section 14's own `#14-content-as-code-pipelines`. Any "take the
+ *     leading number" heuristic misroutes it.
+ *   - `## 1. Introduction & Scope` renders `1-introduction--scope`, with a double dash.
+ * Both are invisible until someone follows a link, which is the worst time to find out.
+ *
+ * NO-JS BEHAVIOUR. Without JS the hash simply does not forward and the reader lands here, on a
+ * complete table of contents with the full text one click away. Degraded, never broken.
+ */
+import { getCollection, getEntry, render } from 'astro:content';
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
+import { SITE_ORIGIN } from '../../../data/canonical';
+
+const sections = (await getCollection('spec')).sort((a, b) => a.data.number - b.data.number);
+if (sections.length === 0) {
+  throw new Error('spec collection is empty — run `node scripts/split_specification.mjs`');
+}
+
+// Walk the full document's rendered headings in order. A depth-2 heading of the form "N. Title"
+// opens section N; every heading after it belongs to that section until the next one. This also
+// puts the un-numbered `## SITREP` and `## Next Session Prompt` into §8, where they live.
+const specEntry = await getEntry('reference', 'specification');
+if (!specEntry) throw new Error('reference/specification entry not found');
+const { headings: fullHeadings } = await render(specEntry);
+
+const slugByNumber = new Map(sections.map((s) => [s.data.number, s.data.slug_id]));
+const anchorMap: Record<string, string> = {};
+let current: number | null = null;
+for (const h of fullHeadings) {
+  const m = h.depth === 2 ? /^(\d+)\.\s/.exec(h.text) : null;
+  if (m) current = Number(m[1]);
+  const target = current !== null ? slugByNumber.get(current) : undefined;
+  if (target) anchorMap[h.slug] = target;
+}
+if (Object.keys(anchorMap).length === 0) {
+  throw new Error('anchor map came out empty — old deep links would silently stop working');
+}
+
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? SITE_ORIGIN;
+const version = sections[0].data.version;
+
+const jsonLD = [
+  buildTechArticleJsonLD({
+    title: 'aDNA Specification',
+    description: 'The aDNA knowledge architecture standard, by section.',
+    url: Astro.url.href,
+  }),
+  buildBreadcrumbListJsonLD([
+    { name: 'Home', url: `${siteBase}/` },
+    { name: 'Reference', url: `${siteBase}/reference/` },
+    { name: 'aDNA Specification' },
+  ]),
+];
+---
+
+<DocumentationLayout
+  title="aDNA Specification"
+  description="The aDNA knowledge architecture standard — 20 sections, readable one at a time."
+  jsonLD={jsonLD}
+  next={{ label: `1. ${sections[0].data.section_title}`, href: `/reference/specification/${sections[0].data.slug_id}/` }}
+>
+  <aside class="spec-orientation" aria-label="Orientation">
+    <p><strong>For implementers and evaluators.</strong> New to aDNA? Start with <a href="/learn/what-is-adna">What is aDNA &rarr;</a></p>
+    <p class="spec-orientation-build">Ready to build one? <a href="/get-started">Get started &rarr;</a></p>
+  </aside>
+
+  <p class="spec-hub-meta">
+    <span class="spec-hub-version">v{version}</span>
+    <span>20 sections</span>
+  </p>
+
+  <p>
+    <strong>Agentic DNA (aDNA)</strong> — a knowledge architecture standard for AI-native projects.
+    Read it a section at a time below, or open the
+    <a href="/reference/specification/full/">full specification</a> to search or cite the whole document.
+  </p>
+
+  <ol class="spec-toc">
+    {sections.map((s) => (
+      <li>
+        <a href={`/reference/specification/${s.data.slug_id}/`}>
+          <span class="spec-toc-num">§{s.data.number}</span>
+          <span class="spec-toc-title">{s.data.section_title}</span>
+        </a>
+      </li>
+    ))}
+  </ol>
+
+  <p class="spec-hub-full">
+    <a href="/reference/specification/full/">Read the full specification on one page &rarr;</a>
+  </p>
+
+  <script is:inline set:html={`
+    (function () {
+      var map = ${JSON.stringify(anchorMap)};
+      var h = location.hash.slice(1);
+      if (!h) return;
+      var target = map[h];
+      // Known anchor -> the section that now owns it. Unknown anchor -> the full document, where
+      // every id from the old single-page build still exists. Either way the reader lands on the
+      // text they asked for rather than on a contents page.
+      location.replace(
+        target
+          ? '/reference/specification/' + target + '/#' + h
+          : '/reference/specification/full/#' + h
+      );
+    })();
+  `} />
+</DocumentationLayout>
+
+<style>
+  .spec-orientation {
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-primary);
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    margin-bottom: var(--space-6);
+    font-size: var(--text-sm);
+  }
+  .spec-orientation p { margin: 0; }
+  .spec-orientation p + p { margin-top: var(--space-1); }
+  .spec-orientation a { color: var(--color-link); font-weight: 500; }
+
+  .spec-hub-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+  .spec-hub-version { font-family: var(--font-mono); }
+
+  .spec-toc {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0;
+    display: grid;
+    gap: var(--space-1);
+  }
+  .spec-toc li { margin: 0; }
+  .spec-toc a {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  .spec-toc a:hover,
+  .spec-toc a:focus-visible {
+    border-color: var(--color-border);
+    background: var(--color-bg-alt);
+  }
+  .spec-toc-num {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    min-width: 2.75rem;
+  }
+  .spec-toc-title { font-weight: 500; }
+
+  .spec-hub-full { margin-top: var(--space-6); }
+  .spec-hub-full a { color: var(--color-link); font-weight: 500; }
+</style>

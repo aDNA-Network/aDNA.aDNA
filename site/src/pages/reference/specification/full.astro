@@ -1,0 +1,69 @@
+---
+/**
+ * The whole specification on one page (HAUSSMANN P2.3 O1).
+ *
+ * This is what `/reference/specification/` used to be, unchanged: same entry, same renderer, so
+ * every one of the 98 heading ids from the old build still resolves here. That is deliberate and
+ * load-bearing — it is what makes the hub's anchor forwarding safe to fall back to, and it keeps
+ * the spec citable and Ctrl-F-able as a single artifact, which a specification has to be.
+ *
+ * Sectioned reading lives at /reference/specification/<section>/.
+ */
+import { getEntry, render } from 'astro:content';
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
+import { SITE_ORIGIN } from '../../../data/canonical';
+
+const ref = await getEntry('reference', 'specification');
+if (!ref) throw new Error('reference/specification entry not found');
+const { Content, headings } = await render(ref);
+
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? SITE_ORIGIN;
+
+const jsonLD = [
+  buildTechArticleJsonLD({
+    title: ref.data.ref_title,
+    description: ref.data.description ?? '',
+    url: Astro.url.href,
+    dateModified: ref.data.updated?.toISOString(),
+  }),
+  buildBreadcrumbListJsonLD([
+    { name: 'Home', url: `${siteBase}/` },
+    { name: 'Reference', url: `${siteBase}/reference/` },
+    { name: 'aDNA Specification', url: `${siteBase}/reference/specification/` },
+    { name: 'Full text' },
+  ]),
+];
+---
+
+<DocumentationLayout
+  title="aDNA Specification — full text"
+  description={ref.data.description ?? 'The complete aDNA specification on one page.'}
+  headings={headings}
+  prev={{ label: 'Specification contents', href: '/reference/specification/' }}
+  jsonLD={jsonLD}
+>
+  <p class="spec-full-meta">
+    <a href="/reference/specification/">Read by section</a>
+    <span aria-hidden="true">·</span>
+    <span>v{ref.data.version}</span>
+    <span>{ref.data.stability}</span>
+  </p>
+  <Content />
+</DocumentationLayout>
+
+<style>
+  .spec-full-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+  .spec-full-meta a { color: var(--color-link); font-weight: 500; }
+
+</style>
