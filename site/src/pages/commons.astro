@@ -7,7 +7,7 @@ import Callout from '../components/sections/Callout.astro';
 import heroCommons from '../assets/heroes/hero_commons.png';
 import { buildWebPageJsonLD } from '../utils/seo';
 import subnetworksData from '../data/subnetworks.json';
-import vaultsData from '../data/vaults';
+import vaultsData, { canonicalVaultSlug } from '../data/vaults';
 
 // E5 / M5.12 — the Public-Good Commons. Hero copy = Stage-0-ratified Direction B ("A commons,
 // not a catalog"). Cycle history (per-cycle plan REALIGNED at the audit P2, 2026-06-10):
@@ -40,6 +40,24 @@ const registry = vaultsData as any;
 const vaultsBySlug = new Map<string, any>(
   (registry.vaults ?? []).map((v: any) => [v.vault_slug, v] as [string, any])
 );
+
+/* HAUSSMANN P2.4 — the subnetworks overlay joins to the registry through a CANONICAL slug.
+ *
+ * `subnetworks.json` carries raw vault names (`wga.aDNA`, `WilhelmAI.aDNA`), while everything
+ * reached through `../data/vaults` — the vault index AND the edge endpoints — was canonicalized at
+ * P2.1 (ADR-051). The two stopped meeting, and the page did not complain: `vaultsBySlug.get()`
+ * returned undefined and `declaredRelationships()` matched nothing, so all four rows quietly lost
+ * their sync date and their declared relationships. Verified against production before the fix
+ * (2026-08-19): WilhelmAI rendered 0 of its 3 declared relationships, RareArchive 0 of 1, and
+ * "Last synced" appeared on none of the four despite all four carrying 2026-05-24.
+ *
+ * It hid because every dropped field had an honest-absent path, so a lookup failure rendered
+ * identically to a fact about the data. That is P2.1's own silent-drop lesson recurring one layer
+ * out — in a CONSUMER of the fix rather than in the fix itself.
+ *
+ * `canonicalVaultSlug` is idempotent, so applying it to an already-canonical id is safe. */
+const memberSlug = (raw: string | null | undefined): string | null =>
+  raw ? canonicalVaultSlug(raw) : null;
 const edgeName = (id: string) => vaultsBySlug.get(id)?.display_name ?? id;
 
 // Declared relationships for one member vault, phrased per edge type. Only edges the
@@ -63,7 +81,8 @@ function declaredRelationships(slug: string): string[] {
 
 const ledger = subnetworks.map((s: any) => {
   const member = (s.members ?? [])[0] ?? {};
-  const vault = vaultsBySlug.get(member.vault_slug);
+  const slug = memberSlug(member.vault_slug);
+  const vault = slug ? vaultsBySlug.get(slug) : undefined;
   // The Wilhelm-pair steward strings already name the resident persona; append it only
   // when it adds information the row doesn't already carry (no duplication, no invention).
   const persona = member.persona ?? vault?.persona ?? null;
@@ -73,12 +92,12 @@ const ledger = subnetworks.map((s: any) => {
       : s.steward;
   return {
     name: s.display_name,
-    slug: member.vault_slug,
+    slug,
     steward,
     attribution: s.attribution, // non-null on 2 of 4 — rendered only where the record exists
     license: s.license,
     governance: member.canonical_governance,
-    relationships: member.vault_slug ? declaredRelationships(member.vault_slug) : [],
+    relationships: slug ? declaredRelationships(slug) : [],
     lastSynced: vault?.last_synced ?? null,
   };
 });

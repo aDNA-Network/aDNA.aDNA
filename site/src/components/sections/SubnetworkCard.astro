@@ -18,6 +18,10 @@
  * elevated card surface (#24283b), where purple `--color-primary` computes to 4.38:1 — below the
  * 4.5:1 AA floor for small text. Purple = accents/large only; amber = decorative only.
  */
+// HAUSSMANN P2.4: `subnetworks.json` carries raw vault names (`WilhelmAI.aDNA`); every vault
+// route on this site is canonical since P2.1 (ADR-051). Normalize at the link boundary so these
+// cards stop emitting URLs that only work via a redirect hop. Idempotent — safe on canonical ids.
+import { canonicalVaultSlug } from '../../data/vaults';
 interface Props {
   subnetwork: any;
 }
@@ -51,7 +55,7 @@ const members = s.members ?? [];
       <p class="subnet-vaults">
         {members.map((m: any) =>
           m.vault_slug ? (
-            <a class="subnet-vault" href={`/vaults/${m.vault_slug}/`} data-astro-prefetch>{m.vault}</a>
+            <a class="subnet-vault" href={`/vaults/${canonicalVaultSlug(m.vault_slug)}/`} data-astro-prefetch>{m.vault}</a>
           ) : (
             <span class="subnet-vault subnet-vault-missing">{m.vault}</span>
           )

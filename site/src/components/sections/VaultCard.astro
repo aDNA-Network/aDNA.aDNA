@@ -1,8 +1,23 @@
 ---
-import { classLabel, classSlug, statusLabel, personaLabel } from '../../utils/vaultLabels';
+import { classLabel, classSlug, personaLabel, tierOf, tierLabel, tierSlug } from '../../utils/vaultLabels';
 
 interface Props { vault: any; }
 const { vault } = Astro.props;
+
+// HAUSSMANN P2.4 (ADR-052 §tiers, accepted): the meta pill is the LIFECYCLE TIER, not the raw
+// status. `statusLabel()` shipped `pending` and `genesis` straight to a stranger — "pending
+// what?", and "genesis" is house jargon. `in use` / `chartered` / `planned` say the same thing in
+// words a newcomer already owns, and the tier is derived from `status` alone so the badge cannot
+// drift from the data (§tiers.3).
+const tier = tierOf(vault.status);
+// The class moved onto the card because the page no longer groups by it. Under the tier-first
+// layout (variant A, ⛩ 2026-08-19) the class heading is gone, so a card that didn't carry its own
+// class label would silently lose that fact for every vault on the page.
+const classPub = classLabel(vault.class);
+// §tiers.1: `card_present` is a DOCUMENTATION signal, disqualified as a lifecycle input. It ships
+// as card completeness, never as a rank, and it says what it means in both directions — 50 of 74
+// rows have no card, and a blank there would read as an oversight rather than a fact.
+const documented = vault.card_present === true;
 
 // Refit M2 / DP1 (2026-07-21, ratification_record_refit_g1): `tagline` is the canonical
 // per-vault purpose field (`headline_mission` retired — 0/73 populated, never authored);
@@ -13,9 +28,9 @@ const purpose = vault.tagline || vault.note || null;
 // local too (belt + braces). Class/status render as public labels; attributes carry the
 // hyphenated slug so raw machine enums never reach built HTML (gate-27 scans attributes).
 const persona = personaLabel(vault.persona);
-const statusPub = statusLabel(vault.status);
 // Flat search haystack for the client-side registry filter (M3.1.3); no-JS ignores it.
-const searchBlob = [vault.display_name, persona, classLabel(vault.class), purpose]
+// The tier label joins it so a reader who types "chartered" finds the ten chartered vaults.
+const searchBlob = [vault.display_name, persona, classPub, tierLabel(tier), purpose]
   .filter(Boolean).join(' ').toLowerCase();
 ---
 
@@ -23,18 +38,25 @@ const searchBlob = [vault.display_name, persona, classLabel(vault.class), purpos
   class={`vault-card class-${classSlug(vault.class)}`}
   data-vault-card
   data-class={classSlug(vault.class)}
+  data-tier={tierSlug(tier)}
   data-search={searchBlob}
 >
   <h3>
     <a href={`/vaults/${vault.vault_slug}/`}>{vault.display_name}</a>
   </h3>
-  {persona && <p class="vault-card-persona">{persona}</p>}
+  <p class="vault-card-meta">
+    <span class={`vault-tier tier-${tierSlug(tier)}`}>{tierLabel(tier)}</span>
+    <span class="vault-card-class">{classPub}</span>
+    {vault.current_phase && <span class="vault-phase">{vault.current_phase}</span>}
+  </p>
+  {persona
+    ? <p class="vault-card-persona">{persona}</p>
+    : <p class="vault-card-persona vault-card-absent">No persona recorded</p>}
   {purpose
     ? <p class="vault-card-purpose">{purpose}</p>
-    : <p class="vault-card-purpose vault-card-purpose-absent">{vault.listing === 'minimal' ? 'Minimal card — private engagement.' : 'No public description yet.'}</p>}
-  <p class="vault-card-meta">
-    <span class={`vault-status status-${classSlug(statusPub)}`}>{statusPub}</span>
-    {vault.current_phase && <span class="vault-phase">{vault.current_phase}</span>}
+    : <p class="vault-card-purpose vault-card-absent">{vault.listing === 'minimal' ? 'Minimal card — private engagement.' : 'No public description yet.'}</p>}
+  <p class="vault-card-documented">
+    {documented ? 'Documented' : <span class="vault-card-absent">No card written yet</span>}
   </p>
 </article>
 
@@ -64,12 +86,20 @@ const searchBlob = [vault.display_name, persona, classLabel(vault.class), purpos
     white-space: nowrap;
   }
   /* P1.3 honest-absent affordance (WebForge data-honesty law): a vault with no public
-     description says so plainly — never a blank card, never invented copy. */
-  .vault-card-purpose-absent { color: var(--color-text-muted); font-style: italic; }
-  .vault-card-meta { font-size: 0.8em; margin-top: 0.5rem; }
-  .vault-status { padding: 0.1rem 0.4rem; border-radius: var(--radius-full); }
-  .status-active { background: color-mix(in srgb, var(--color-success) 15%, transparent); color: color-mix(in srgb, var(--color-success) 55%, var(--color-text)); }
-  .status-genesis,
-  .status-pending { background: color-mix(in srgb, var(--color-accent) 18%, transparent); color: color-mix(in srgb, var(--color-accent) 45%, var(--color-text)); }
-  .status-superseded { background: color-mix(in srgb, var(--color-text-muted) 15%, transparent); color: var(--color-text-muted); }
+     description — or no persona, or no card — says so plainly. Never a blank, never invented
+     copy, never a placeholder dash (P1.3's "— —" titles are the cautionary instance). */
+  .vault-card-absent { color: var(--color-text-muted); font-style: italic; }
+  .vault-card-meta { font-size: 0.8em; margin-top: 0.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+  .vault-card-class { color: var(--color-text-muted); }
+  .vault-card-documented { font-size: 0.8em; margin: 0.4rem 0 0; color: var(--color-text-muted); }
+
+  /* HAUSSMANN P2.4 — the lifecycle-tier badge (ADR-052 §tiers).
+     Deliberately NOT a heat scale. `in use` gets the success tint the old `active` pill had, but
+     `chartered` and `planned` share one neutral accent tint rather than descending through a
+     warning colour: a gradient would encode a quality judgment onto a self-declared field, which
+     is the one thing §tiers.2 says this surface must not do. AA-safe color-mix, both modes. */
+  .vault-tier { padding: 0.1rem 0.4rem; border-radius: var(--radius-full); }
+  .tier-in-use { background: color-mix(in srgb, var(--color-success) 15%, transparent); color: color-mix(in srgb, var(--color-success) 55%, var(--color-text)); }
+  .tier-chartered,
+  .tier-planned { background: color-mix(in srgb, var(--color-accent) 18%, transparent); color: color-mix(in srgb, var(--color-accent) 45%, var(--color-text)); }
 </style>

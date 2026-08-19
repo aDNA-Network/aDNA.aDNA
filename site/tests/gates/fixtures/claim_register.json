@@ -3,7 +3,7 @@
   "_relation_to_gate_20": "gate-20 traces claims to their SOURCE FILES (does `vaults.json` still say 74?). This fixture asserts the RENDERED PAGE — that a false sentence is gone, and that a true one has not silently vanished. Different failure modes, no overlap: the G-01..G-10 accessor rows stay in claim_trace_manifest.json and are deliberately NOT duplicated here.",
   "_quote_rule": "Every `quote` is the exact page-visible text, verified against the 2026-08-16 build snapshot. Comparison normalizes typography only (curly quotes -> straight, em/en dash -> hyphen, whitespace collapsed) so a smart-quote change cannot fake a pass or a fail. `match_in: html` rows assert against raw markup instead (attributes, hrefs).",
   "_no_count_pinning": "Campaign convention 8 (WebForge KW-8/FR-K): verified quotes are trimmed to their non-numeric clause wherever a count appears, so this gate never pins live registry data. Count currency is gate-21's job, count provenance is gate-20's.",
-  "updated": "2026-08-18",
+  "updated": "2026-08-19",
   "rows": [
     {
       "id": "R-12",
@@ -151,6 +151,20 @@
       "quote": "If you found something claiming to be aDNA that is not on this list",
       "class": "verified",
       "why": "The exits section added at the P1.2 close after the re-rank (finding F2) — both reviewer lenses independently found that this page dead-ended at the footer while its twin, built in the same mission and sharing its scaffold, closed with five real exits. Pinned because the reader who has just satisfied themselves the site is genuine is at the point of highest intent, and routing that intent to the security-reporting path is the whole operational value of a clone-site defense. Deleting the exits restores the dead end the 2.50 Actionability score measured."
+    },
+    {
+      "id": "R-114",
+      "url": "/vaults",
+      "quote": "which is not 74 live projects",
+      "class": "verified",
+      "why": "The /vaults hero sentence authored at P2.4 (ADR-052 §tiers). It exists to disarm the reading a bare count invites — anti-pattern 7.4, quantity of entries is not evidence of network health — in the first line a stranger reads rather than in a caveat further down. Pinned on the CLAUSE, not the numbers: campaign convention 8 (KW-8/FR-K) forbids pinning counts, and the surrounding figures are interpolated from vaults.json at build time, so a 75th vault must not turn this row red. gate-35 asserts the counts themselves against the registry."
+    },
+    {
+      "id": "R-115",
+      "url": "/vaults",
+      "quote": "These stages are self-declared",
+      "class": "verified",
+      "why": "ADR-052 §tiers.2 calls this the single most important caveat on the registry surface, and the measurement behind it is stark: github_url populated on 1 of 74 rows, docs_site_url on 0, last_synced on 24 with 18 sharing one date. There is genuinely nothing to check a declared stage against. Pinned because the tier badges make the registry look MORE authoritative than it was before, and this sentence is the entire counterweight — losing it silently would leave the badges asserting an assessment nobody performed. gate-35 additionally asserts it is body text and not a title attribute."
     }
   ]
 }

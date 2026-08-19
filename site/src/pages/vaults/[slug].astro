@@ -4,7 +4,7 @@ import VaultRelationshipBlock from '../../components/sections/VaultRelationshipB
 import ClosingCTA from '../../components/sections/ClosingCTA.astro';
 import vaultsData from '../../data/vaults';
 import { buildWebPageJsonLD } from '../../utils/seo';
-import { classLabel, statusLabel, personaLabel, CLASS_GLOSS } from '../../utils/vaultLabels';
+import { classLabel, statusLabel, personaLabel, CLASS_GLOSS, tierOf, tierLabel, TIER_MEANING } from '../../utils/vaultLabels';
 import verifiedLinks from '../../data/verified_links.json';
 
 export function getStaticPaths() {
@@ -22,6 +22,12 @@ const { vault, allVaults, allEdges } = Astro.props as { vault: any; allVaults: a
 const personaPub = personaLabel(vault.persona);
 const classPub = classLabel(vault.class);
 const statusPub = statusLabel(vault.status);
+// HAUSSMANN P2.4 (ADR-052 §tiers): the public-facing lifecycle word is the TIER, derived from
+// `status` alone. The raw status still backs the templated lede's fallback below, but what a
+// reader sees in the spec sheet is `in use` / `chartered` / `planned` — `pending` and `genesis`
+// were house vocabulary that answered no question a stranger was asking.
+const tier = tierOf(vault.status);
+const tierPub = tierLabel(tier);
 
 const jsonLD = buildWebPageJsonLD({
   title: `${vault.display_name} — ${personaPub || classPub}`,
@@ -52,12 +58,14 @@ const hasLinks = !!(githubUrl || docsSiteUrl);
 // registry count stays true, the engagement detail stays private, and the page says so plainly.
 const ledeText = vault.listing === 'minimal'
   ? 'Listed with a minimal card — private engagement. The vault is real and governed; its detail is not public.'
-  : (vault.note || `A ${classPub} vault — ${statusPub}.`);
+  : (vault.note || `A ${classPub} vault — ${tierPub}.`);
 const STATUS_GLOSS: Record<string, string> = {
   genesis: 'early — just getting started', pending: 'not yet started', active: 'active and in use',
   planning: 'in planning', completed: 'complete', archived: 'archived', superseded: 'superseded by a successor',
 };
-const statusTitle = STATUS_GLOSS[statusPub] ? `${statusPub} — ${STATUS_GLOSS[statusPub]}` : statusPub;
+// The tier carries its own one-line meaning (§tiers.3); the older per-status gloss stays as a
+// fallback for any status the tier model does not name (superseded, archived, completed).
+const statusTitle = TIER_MEANING[tier] || (STATUS_GLOSS[statusPub] ? `${statusPub} — ${STATUS_GLOSS[statusPub]}` : statusPub);
 ---
 
 <BaseLayout
@@ -82,13 +90,21 @@ const statusTitle = STATUS_GLOSS[statusPub] ? `${statusPub} — ${STATUS_GLOSS[s
       <aside class="vd-aside" aria-label="Vault details">
         <dl class="vd-spec">
           <div class="vd-spec-row"><dt>Class</dt><dd title={CLASS_GLOSS[vault.class]}>{classPub}</dd></div>
-          <div class="vd-spec-row"><dt>Status</dt><dd><span class="vd-status" title={statusTitle}>{statusPub}</span></dd></div>
+          <div class="vd-spec-row"><dt>Stage</dt><dd><span class="vd-status" title={statusTitle}>{tierPub}</span> <span class="vd-selfdeclared">self-declared</span></dd></div>
           {personaPub && <div class="vd-spec-row"><dt>Persona</dt><dd>{personaPub}</dd></div>}
           {vault.current_phase && <div class="vd-spec-row"><dt>Phase</dt><dd>{vault.current_phase}</dd></div>}
           {vault.canonical_governance && (
             <div class="vd-spec-row"><dt>Governance</dt><dd><code>{vault.canonical_governance}</code></dd></div>
           )}
-          {vault.last_synced && <div class="vd-spec-row"><dt>Last synced</dt><dd>{vault.last_synced}</dd></div>}
+          {vault.last_synced && (
+            <div class="vd-spec-row">
+              <dt>Last synced</dt>
+              {/* Shown as a date, never as "recently updated" (ADR-052 §tiers.3): 18 of the 24
+                  rows carrying this field share one date, which records a bulk registry sync and
+                  says nothing about when the vault itself last changed. */}
+              <dd><time datetime={vault.last_synced}>{vault.last_synced}</time> <span class="vd-selfdeclared">registry sync, not vault activity</span></dd>
+            </div>
+          )}
         </dl>
         {hasLinks && (
           <nav class="vd-links" aria-label="External links">
@@ -174,6 +190,11 @@ const statusTitle = STATUS_GLOSS[statusPub] ? `${statusPub} — ${STATUS_GLOSS[s
     .vd-main { grid-column: 1; grid-row: 1; }
     .vd-aside { grid-column: 2; grid-row: 1; }
   }
+
+  /* HAUSSMANN P2.4 — the provenance qualifier beside the stage and the sync date. Deliberately
+     inline rather than a footnote or a tooltip: a caveat a reader has to hover to find is a caveat
+     the page is hiding (ADR-052 §tiers.2). Muted + smaller so it qualifies without competing. */
+  .vd-selfdeclared { color: var(--color-text-muted); font-size: 0.85em; }
 
   /* Spec sheet — metadata pulled OUT of the prose into a bordered card (the SubnetworkCard `.subnet-meta`
      idiom: fixed label column + flexible value). Surface+border defines the card on both canvases. */

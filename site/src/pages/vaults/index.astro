@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HomeHero from '../../components/sections/HomeHero.astro';
 import VaultCard from '../../components/sections/VaultCard.astro';
-import VaultClassFacet from '../../components/sections/VaultClassFacet.astro';
+import VaultFacetChip from '../../components/sections/VaultFacetChip.astro';
 import vaultsData from '../../data/vaults';
 import { buildCollectionPageJsonLD } from '../../utils/seo';
 // E5 c162 (context-graph experience): the registry gets the original home network glyph —
@@ -12,7 +12,8 @@ import heroAdnaNetwork from '../../assets/heroes/hero_adna_network.png';
 
 const { vaults, vault_count, edges } = vaultsData as { vaults: any[]; vault_count: number; edges: any[] };
 
-// Group by class for facet display
+// Group by class — no longer the page's structure (see the tier grouping below), but still the
+// filter dimension and still what feeds the class chips.
 const classGroups: Record<string, any[]> = vaults.reduce((acc: Record<string, any[]>, v: any) => {
   (acc[v.class] = acc[v.class] || []).push(v);
   return acc;
@@ -29,7 +30,36 @@ const orderedClasses = [
 // Readable section/filter labels + attribute slugs (HAUSSMANN P1.3): visible text uses the shared
 // classLabel; ids/dataset values/CSS hooks use classSlug so raw machine enums (org_graph,
 // tbd_at_p0) never appear in built HTML — gate-27 lints attributes too.
-import { classLabel as labelFor, classSlug } from '../../utils/vaultLabels';
+import { classLabel as labelFor, classSlug, tierOf, tierLabel, tierSlug, TIER_ORDER, TIER_MEANING } from '../../utils/vaultLabels';
+
+/* HAUSSMANN P2.4 — the page's structure is the LIFECYCLE TIER, not the class (variant A,
+ * ⛩ operator 2026-08-19; model at ADR-052 §tiers, accepted).
+ *
+ * Why the grouping moved. Seventy-four entries in fourteen class groups rendered undifferentiated:
+ * the seven vaults actually being worked in sat scattered across the page, so a stranger could not
+ * tell load-bearing from seed. Tier-first puts the shape of the network first.
+ *
+ * Why the groups render visually EQUAL (this is the deciding design constraint, not a style
+ * choice). A denser treatment for the 57 planned rows scanned better and was rejected: rendering
+ * them as compact rows beside seven full cards reads as a *ranking*, and the thing it would rank by
+ * is self-declared with nothing corroborating it (§tiers.2). The layout must not claim more than
+ * the data supports, so all three tiers get the same card.
+ *
+ * Every count below is derived from the registry at build time — never typed (WebForge KW-14).
+ */
+const tierGroups: Record<string, any[]> = Object.fromEntries(TIER_ORDER.map(t => [t, [] as any[]]));
+for (const v of vaults) tierGroups[tierOf(v.status)].push(v);
+
+// Derivation guard (P2.1's silent-drop lesson, applied at the source rather than after the fact):
+// a curated slice that quietly loses rows renders a smaller, healthier-looking registry with no
+// error. Throwing here is the whole point — a build that cannot account for every vault must fail
+// loudly, not ship a page that under-reports the network.
+const tieredTotal = TIER_ORDER.reduce((n, t) => n + tierGroups[t].length, 0);
+if (tieredTotal !== vaults.length) {
+  throw new Error(
+    `vaults/index: tier grouping dropped rows — ${tieredTotal} tiered vs ${vaults.length} in the registry.`
+  );
+}
 
 const jsonLD = buildCollectionPageJsonLD({
   title: 'Vaults — the aDNA registry',
@@ -52,33 +82,49 @@ const goDeeper = [
     heroImage={heroAdnaNetwork}
     heroAlt="A bird's-eye pixel-art map of cozy vault-buildings linked by glowing cyan and purple conduits — the aDNA network sharing context, AI, and DNA"
     title="The vault registry"
-    lead="Every vault below is a real, governed context graph with its own place in the network — most tended by a named agent. Each project grows its own graph; they connect by the relationships they declare."
+    lead={`${vault_count} context graphs — which is not ${vault_count} live projects. ${tierGroups.in_use.length} are being worked in today, ${tierGroups.chartered.length} are chartered, and ${tierGroups.planned.length} are named places with a governance skeleton and little else. Grouped below by that stage, so the shape of the network is the first thing you see.`}
     primaryHref="/vaults/graph/"
     primaryLabel="View the relationship graph"
     secondaryHref="/network/"
     secondaryLabel="What the network is"
     stats={[
-      { value: String(vault_count), label: 'Vaults' },
-      { value: String(orderedClasses.length), label: 'Classes' },
+      { value: String(tierGroups.in_use.length), label: 'In use' },
+      { value: String(tierGroups.chartered.length), label: 'Chartered' },
+      { value: String(tierGroups.planned.length), label: 'Planned' },
       { value: String(edges?.length ?? 0), label: 'Cited relationships' },
     ]}
   />
 
   <div class="vaults-index">
     <section class="vaults-facets">
-      {/* No-JS baseline: the class jump-chips. The script below hides this and reveals the
-          live search/filter toolbar; without JS these anchors still jump to each class section. */}
+      {/* HAUSSMANN P2.4 — the caveat that matters most on this surface, stated once and plainly
+          rather than buried in a tooltip (ADR-052 §tiers.2). Every stage here is self-declared:
+          `github_url` is present on 1 of 74 rows and `docs_site_url` on 0, so there is nothing to
+          check a vault's claim against. Saying so makes the registry less impressive and more true. */}
+      <p class="vaults-caveat">
+        <strong>These stages are self-declared.</strong> Each vault reports its own, and the registry
+        has nothing to corroborate it with — no build status, no commit feed, no external check. Read
+        them as what a vault says about itself, not as an assessment of it.
+      </p>
+
+      {/* No-JS baseline: tier jump-chips, matching the three sections below. These were class
+          chips until P2.4; when the page stopped grouping by class the `#class-*` anchors they
+          pointed at ceased to exist, so retargeting them was mandatory, not cosmetic — a jump-link
+          to a section that isn't rendered fails silently and only for the no-JS reader. Class
+          survives as a filter dimension in the JS toolbar, where it can filter across all three
+          tiers instead of fragmenting them. */}
       <div data-nojs-facets>
-        <h2>Browse by class</h2>
+        <h2>Jump to a stage</h2>
         <div class="facet-chips">
-          {orderedClasses.map(cls => (
-            <VaultClassFacet slug={classSlug(cls)} label={labelFor(cls)} count={classGroups[cls].length} />
+          {TIER_ORDER.map(t => (
+            <VaultFacetChip targetId={`tier-${tierSlug(t)}`} label={tierLabel(t)} count={tierGroups[t].length} />
           ))}
         </div>
       </div>
 
-      {/* Storyweave P3 / M3.1 — client-side search + class filter (progressive enhancement).
-          `hidden` until the script reveals it; the SSR class-grouped list below is the no-JS fallback. */}
+      {/* Storyweave P3 / M3.1 — client-side search + filter (progressive enhancement).
+          `hidden` until the script reveals it; the SSR tier-grouped list below is the no-JS
+          fallback. P2.4 adds the tier dimension alongside class; the two compose. */}
       <div class="vaults-filter" data-vaults-filter hidden>
         <div class="vaults-search-row">
           <label for="vault-search" class="vaults-search-label">Search the registry</label>
@@ -86,20 +132,36 @@ const goDeeper = [
             type="search"
             id="vault-search"
             class="vaults-search"
-            placeholder="Search by name, persona, class, or purpose…"
+            placeholder="Search by name, persona, class, stage, or purpose…"
             autocomplete="off"
             spellcheck="false"
           />
         </div>
-        <div class="vaults-filter-chips" role="group" aria-label="Filter vaults by class">
-          <button type="button" class="filter-chip is-active" data-filter-class="all" aria-pressed="true">
-            All <span class="filter-count">{vault_count}</span>
-          </button>
-          {orderedClasses.map(cls => (
-            <button type="button" class="filter-chip" data-filter-class={classSlug(cls)} aria-pressed="false">
-              {labelFor(cls)} <span class="filter-count">{classGroups[cls].length}</span>
+        <div class="vaults-filter-group">
+          <span class="vaults-filter-legend" id="filter-tier-label">Stage</span>
+          <div class="vaults-filter-chips" role="group" aria-labelledby="filter-tier-label">
+            <button type="button" class="filter-chip is-active" data-filter-tier="all" aria-pressed="true">
+              All <span class="filter-count">{vault_count}</span>
             </button>
-          ))}
+            {TIER_ORDER.map(t => (
+              <button type="button" class="filter-chip" data-filter-tier={tierSlug(t)} aria-pressed="false">
+                {tierLabel(t)} <span class="filter-count">{tierGroups[t].length}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+        <div class="vaults-filter-group">
+          <span class="vaults-filter-legend" id="filter-class-label">Class</span>
+          <div class="vaults-filter-chips" role="group" aria-labelledby="filter-class-label">
+            <button type="button" class="filter-chip is-active" data-filter-class="all" aria-pressed="true">
+              All <span class="filter-count">{vault_count}</span>
+            </button>
+            {orderedClasses.map(cls => (
+              <button type="button" class="filter-chip" data-filter-class={classSlug(cls)} aria-pressed="false">
+                {labelFor(cls)} <span class="filter-count">{classGroups[cls].length}</span>
+              </button>
+            ))}
+          </div>
         </div>
         <p class="vaults-result-count" role="status" aria-live="polite"></p>
       </div>
@@ -124,11 +186,12 @@ const goDeeper = [
       </div>
     </div>
 
-    {orderedClasses.map(cls => (
-      <section class="vaults-class-section" id={`class-${classSlug(cls)}`}>
-        <h2>{labelFor(cls)} <span class="class-count">({classGroups[cls].length})</span></h2>
+    {TIER_ORDER.map(t => (
+      <section class="vaults-tier-section" id={`tier-${tierSlug(t)}`} data-tier-section={tierSlug(t)}>
+        <h2>{tierLabel(t)} <span class="tier-count">({tierGroups[t].length})</span></h2>
+        <p class="tier-meaning">{TIER_MEANING[t]}</p>
         <div class="vaults-grid">
-          {classGroups[cls].map((v: any) => (
+          {tierGroups[t].map((v: any) => (
             <VaultCard vault={v} />
           ))}
         </div>
@@ -137,16 +200,19 @@ const goDeeper = [
   </div>
 
   <script>
-    // Storyweave P3 / M3.1 — registry search + class filter (progressive enhancement).
-    // No-JS keeps the SSR jump-facets + class-grouped list. Astro bundles/defers this (below-LCP).
+    // Storyweave P3 / M3.1 — registry search + filter (progressive enhancement).
+    // HAUSSMANN P2.4: two independent facet dimensions now — stage (tier) and class — which
+    // compose (stage=planned AND class=forge). No-JS keeps the SSR tier jump-facets + the
+    // tier-grouped list. Astro bundles/defers this (below-LCP).
     (() => {
       const filterEl = document.querySelector('[data-vaults-filter]');
       if (!(filterEl instanceof HTMLElement)) return;
       const nojs = document.querySelector('[data-nojs-facets]');
       const input = filterEl.querySelector('#vault-search');
-      const chips = Array.from(filterEl.querySelectorAll('[data-filter-class]'));
+      const tierChips = Array.from(filterEl.querySelectorAll('[data-filter-tier]'));
+      const classChips = Array.from(filterEl.querySelectorAll('[data-filter-class]'));
       const cards = Array.from(document.querySelectorAll('[data-vault-card]'));
-      const sections = Array.from(document.querySelectorAll('.vaults-class-section'));
+      const sections = Array.from(document.querySelectorAll('.vaults-tier-section'));
       const countEl = filterEl.querySelector('.vaults-result-count');
       if (!(input instanceof HTMLInputElement) || !cards.length) return;
 
@@ -154,18 +220,20 @@ const goDeeper = [
       filterEl.hidden = false;
       if (nojs instanceof HTMLElement) nojs.hidden = true;
 
+      let activeTier = 'all';
       let activeClass = 'all';
       const apply = () => {
         const q = input.value.trim().toLowerCase();
         let visible = 0;
         for (const card of cards) {
+          const matchesTier = activeTier === 'all' || card.dataset.tier === activeTier;
           const matchesClass = activeClass === 'all' || card.dataset.class === activeClass;
           const matchesQuery = !q || (card.dataset.search || '').includes(q);
-          const show = matchesClass && matchesQuery;
+          const show = matchesTier && matchesClass && matchesQuery;
           card.hidden = !show;
           if (show) visible++;
         }
-        // Collapse any class section left with no visible cards.
+        // Collapse any tier section left with no visible cards.
         for (const sec of sections) {
           sec.hidden = !sec.querySelector('[data-vault-card]:not([hidden])');
         }
@@ -176,18 +244,26 @@ const goDeeper = [
         }
       };
 
+      // One handler shape for both chip groups: a group is single-select, and only the chips in
+      // that group change pressed state — writing this once is what keeps the two dimensions
+      // genuinely independent rather than accidentally clearing each other.
+      const wireGroup = (chips, attr, set) => {
+        for (const chip of chips) {
+          chip.addEventListener('click', () => {
+            set(chip.dataset[attr] || 'all');
+            for (const c of chips) {
+              const on = c === chip;
+              c.classList.toggle('is-active', on);
+              c.setAttribute('aria-pressed', String(on));
+            }
+            apply();
+          });
+        }
+      };
+
       input.addEventListener('input', apply);
-      for (const chip of chips) {
-        chip.addEventListener('click', () => {
-          activeClass = chip.dataset.filterClass || 'all';
-          for (const c of chips) {
-            const on = c === chip;
-            c.classList.toggle('is-active', on);
-            c.setAttribute('aria-pressed', String(on));
-          }
-          apply();
-        });
-      }
+      wireGroup(tierChips, 'filterTier', (v) => { activeTier = v; });
+      wireGroup(classChips, 'filterClass', (v) => { activeClass = v; });
       apply();
     })();
   </script>
@@ -201,9 +277,26 @@ const goDeeper = [
   .go-deeper { margin: 1.25rem 0 0; color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }
   .go-deeper a { color: var(--color-link); text-decoration: underline; }
   .gd-sep { color: var(--color-text-muted); }
-  .vaults-class-section { margin: 2rem 0; }
+  .vaults-tier-section { margin: 2rem 0; }
   .vaults-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
-  .class-count { font-size: 0.85em; color: var(--color-text-muted); }
+  .tier-count { font-size: 0.85em; color: var(--color-text-muted); }
+  /* The one-line meaning ships beside every tier heading — a badge whose word a reader has to
+     guess at is worse than no badge (ADR-052 §tiers.3). */
+  .tier-meaning { margin: 0.15rem 0 1rem; color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }
+
+  /* HAUSSMANN P2.4 — the self-declared caveat (ADR-052 §tiers.2). Given a left rule and the
+     alt background so it reads as a standing condition on the whole page rather than a note
+     attached to whatever is nearest it. Tokens only (gate-14). */
+  .vaults-caveat {
+    margin: 0 0 1.5rem;
+    padding: 0.85rem 1.1rem;
+    color: var(--color-text);
+    background: var(--color-bg-alt);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm, 0.9rem);
+    max-width: 68ch;
+  }
 
   /* Storyweave P3 / M3.1 — search + filter toolbar (JS-revealed; hidden for no-JS).
      Tokens only (gate-14); active chip uses the same AA-safe color-mix tint as the status pills. */
@@ -222,6 +315,17 @@ const goDeeper = [
   }
   .vaults-search:focus-visible { outline: 2px solid var(--color-link); outline-offset: 1px; border-color: var(--color-link); }
   .vaults-filter-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  /* P2.4 — two labelled facet groups. The legend is a real visible label, not a placeholder or an
+     aria-only string: with two independent dimensions on screen, an unlabelled second row of chips
+     is ambiguous for everyone, not just screen-reader users. */
+  .vaults-filter-group { margin-bottom: 0.9rem; }
+  .vaults-filter-legend {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: var(--text-sm, 0.9rem);
+    font-weight: 600;
+    color: var(--color-text-muted);
+  }
   .filter-chip {
     display: inline-flex;
     align-items: center;

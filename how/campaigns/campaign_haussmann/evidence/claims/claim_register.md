@@ -531,3 +531,28 @@ together and share a scaffold, a fix to one is a hypothesis about both.
 points at `/community/`, which is human-only under aDNALabs ADR-025. That is the Enterprise
 Architect's 3.0 on both Actionability and Findability, and it is structural — an IA decision, not a
 sentence.
+
+---
+
+### §7.7 — P2.4 registry redesign: the tier vocabulary and its caveat (2026-08-19)
+
+The registry index moved from class-first to **tier-first** (⛩ variant A). Three of the new rows are
+copy this mission authored; the fourth is a claim the page *stopped* making. All four ship derived,
+not typed — every count in them is read from `vaults.json` at build time (KW-14) and asserted by
+**gate-35**.
+
+| # | Surface | The claim | Class | Why | Severity | Tag |
+|---|---|---|---|---|---|---|
+| R-114 | `/vaults` hero | *"74 context graphs — which is not 74 live projects. 7 are being worked in today, 10 are chartered, and 57 are named places with a governance skeleton and little else."* | **verified** | Every number interpolated from the registry at build time; the split is `status` `active`/`pending`/`genesis`+`genesis_stub` = 7/10/57, verified against `vaults.json` `[D]`. The sentence exists to disarm the reading the bare count invites — anti-pattern **7.4** (*quantity of entries is not evidence of network health*) answered in the first line a stranger reads, rather than in a caveat further down | — | [D] |
+| R-115 | `/vaults` caveat band | *"These stages are self-declared. Each vault reports its own, and the registry has nothing to corroborate it with — no build status, no commit feed, no external check."* | **verified** | Measured, not asserted: `github_url` populated on **1 of 74** rows, `docs_site_url` on **0 of 74**, `last_synced` on **24 of 74** with **18 sharing `2026-05-24`** `[D]`. There is genuinely nothing to check a stage against. ADR-052 §tiers.2 calls this the single most important caveat on the surface, so it ships as body text — gate-35 asserts it is readable text and not a `title` attribute, because a caveat you must hover to find is one the page is hiding | — | [D] |
+| R-116 | `/vaults` + `/` tier badges | *in use · chartered · planned* (replacing raw `active` · `pending` · `genesis`) | **verified** | Derived from `status` alone by one shared `tierOf()`; no vault is hand-tiered. The words claim **stage, never quality** — no `flagship`, no `mature`, no `production`, gate-35 asserts their absence *from the tier vocabulary*. `pending` answered no question a stranger was asking and `genesis` was house jargon; the homepage was additionally rendering `vault.status` **raw**, so the two surfaces would have described one vault with two words | — | [D] |
+| R-117 | `/vaults` (retired) | *"Every vault below is a real, governed context graph with its own place in the network — **most tended by a named agent**."* | **unsupported → cut** | 61 of 74 rows carry a persona `[D]`, so *"most"* was numerically true — and *"tended"* was not. It reads as present, continuous activity across a set that is **57/74 planned**, i.e. a governance skeleton and little else; a persona pin on a planned vault records who *will* tend it. Aspirational present tense over a self-declared field is **anti-pattern 7.5**, and it was the claim doing the most work on the old page. Replaced by R-114, which states the split instead of characterising it | S3 | [D] |
+
+**A note on scope, from a false positive this mission produced.** gate-35's overclaiming check was
+first written to scan the whole rendered page and failed on **"flagship"** — a word inside
+`Harness.aDNA`'s own tagline (*"RareHarness = flagship Wilhelm clinical vertical"*). That is
+registry data Hestia owns under **pt19**, and a vault describing itself is not this site awarding it
+a rank. The rule §tiers.3 states is about **tier vocabulary**; it has no view on what a vault writes
+about its own work. The assertion now reads the badges and tier headings only. *An instrument
+reporting the surface broken deserves the same scrutiny as one reporting it healthy* — P2.3's lesson,
+recurring on schedule.

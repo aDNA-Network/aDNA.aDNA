@@ -15,7 +15,14 @@ interface Props {
   classLabel: string;
 }
 const { vault, classLabel } = Astro.props;
-import { personaLabel } from '../../utils/vaultLabels';
+import { personaLabel, tierOf, tierLabel, tierSlug } from '../../utils/vaultLabels';
+
+// HAUSSMANN P2.4 — the homepage card shows the same lifecycle word as /vaults (ADR-052 §tiers).
+// It was rendering `vault.status` RAW: `genesis` and `pending` reached the homepage as machine
+// vocabulary, bypassing even `statusLabel()` (so `genesis_stub` would have rendered verbatim), and
+// once /vaults moved to in use / chartered / planned the two surfaces would have described the same
+// vault with two different words. One derivation, imported by both.
+const tier = tierOf(vault.status);
 
 // First sentence of the note, capped — keeps the card to one honest line of proof.
 // P1.3: a length cap cuts at a WORD boundary and never strands an unclosed parenthetical —
@@ -44,7 +51,7 @@ const note = shortNote(vault.note);
 <a class="reg-card" href={`/vaults/${vault.vault_slug}/`}>
   <div class="reg-card-top">
     <span class="reg-class">{classLabel}</span>
-    <span class:list={['reg-status', `status-${vault.status}`]}>{vault.status}</span>
+    <span class:list={['reg-status', `tier-${tierSlug(tier)}`]}>{tierLabel(tier)}</span>
   </div>
   <h3 class="reg-name">{vault.display_name}</h3>
   {persona && <p class="reg-persona">tended by {persona}</p>}
@@ -94,14 +101,14 @@ const note = shortNote(vault.note);
     text-transform: lowercase;
   }
 
-  .status-active {
+  .tier-in-use {
     background: color-mix(in srgb, var(--color-success) 15%, transparent);
     /* Darkened toward text so the pill label meets AA on the pale-success tint (both modes). */
     color: color-mix(in srgb, var(--color-success) 55%, var(--color-text));
   }
 
-  .status-pending,
-  .status-genesis {
+  .tier-chartered,
+  .tier-planned {
     background: color-mix(in srgb, var(--color-accent) 18%, transparent);
     /* More --color-text in the mix = AA on the pale-amber tint in both modes. */
     color: color-mix(in srgb, var(--color-accent) 45%, var(--color-text));

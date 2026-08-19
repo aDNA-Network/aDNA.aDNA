@@ -1,11 +1,17 @@
 ---
 // P1.3: the parent passes a public display label + an attribute-safe slug — raw class enums
 // (org_graph, tbd_at_p0) never reach the anchor href/class hooks (gate-27 scans attributes).
-interface Props { slug: string; label: string; count: number; }
-const { slug, label, count } = Astro.props;
+//
+// HAUSSMANN P2.4: was `VaultClassFacet`, and it built its own href by prefixing `#class-`. That
+// hidden prefix is exactly what made retargeting these chips a silent-failure risk when the page
+// stopped grouping by class: the parent could pass a perfectly good tier slug and still emit a
+// dead `#class-tier-in-use`. The component now takes the FULL target id and links to it verbatim,
+// so what the caller asks for is what the anchor points at.
+interface Props { targetId: string; label: string; count: number; }
+const { targetId, label, count } = Astro.props;
 ---
 
-<a href={`#class-${slug}`} class={`facet-chip facet-${slug}`}>
+<a href={`#${targetId}`} class={`facet-chip facet-${targetId}`}>
   {label} <span class="facet-count">{count}</span>
 </a>
 

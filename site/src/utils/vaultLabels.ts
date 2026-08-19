@@ -54,6 +54,72 @@ export function statusLabel(status: string | null | undefined): string {
   return s === 'genesis_stub' ? 'genesis' : s.replace(/_/g, ' ');
 }
 
+/* ── Lifecycle tiers (HAUSSMANN P2.4 · ADR-052 §tiers, accepted 2026-08-19) ──────────────────
+ *
+ * The registry's three lifecycle tiers, derived from `status` ALONE. Nothing here is hand-tiered:
+ * a vault's tier is a pure function of the one field it already declares, so the badge cannot
+ * drift from the data and no editorial judgment enters the surface (KW-14).
+ *
+ * WHAT THESE WORDS DO AND DO NOT CLAIM
+ * ------------------------------------
+ * No tier claims quality. Not `flagship`, not `mature`, not `production`. Nothing in this registry
+ * supports those words: `github_url` is present on 1 of 74 rows, `docs_site_url` on 0, and
+ * `last_synced` on 24 with 18 of those frozen at a single date. Every status here is SELF-DECLARED
+ * and nothing corroborates it (ADR-052 §tiers.2), so the vocabulary describes a declared *stage*
+ * and never an assessed maturity. A badge that overclaims is worse than no badge, because it turns
+ * a thin registry into a misleading one.
+ *
+ * `card_present` is deliberately NOT an input (§tiers.1). All 7 `active` vaults have a card, so
+ * splitting on it yields an empty bucket; where it discriminates is inside `genesis` (7 of 49).
+ * It measures documentation, not lifecycle — tiering on it would ship a badge that claims maturity
+ * and measures paperwork. It surfaces separately as a *documented* completeness signal, not a rank.
+ */
+
+/** Tier ids, in the order they render. */
+export const TIER_ORDER = ['in_use', 'chartered', 'planned'] as const;
+export type VaultTier = (typeof TIER_ORDER)[number];
+
+/** Public label + the one line that ships beside the badge (ADR-052 §tiers.3). */
+export const TIER_LABELS: Record<VaultTier, string> = {
+  in_use: 'in use',
+  chartered: 'chartered',
+  planned: 'planned',
+};
+
+export const TIER_MEANING: Record<VaultTier, string> = {
+  in_use: 'Being worked in today.',
+  chartered: 'Scoped and opened; substantive work has not begun.',
+  planned: 'A named place in the network with a governance skeleton and little else.',
+};
+
+/**
+ * The tier for a vault status. `genesis_stub` folds into `genesis` exactly as `statusLabel()`
+ * above already does, so the public figure stays consistent with `network_state.ts`.
+ *
+ * Anything unrecognised falls to `planned` — the most conservative of the three. An unknown
+ * status is not evidence that a vault is in use, and a derivation that guesses upward would be
+ * the one failure mode this whole model exists to prevent.
+ */
+export function tierOf(status: string | null | undefined): VaultTier {
+  switch (String(status || '')) {
+    case 'active':
+      return 'in_use';
+    case 'pending':
+      return 'chartered';
+    default:
+      return 'planned';
+  }
+}
+
+export function tierLabel(tier: VaultTier): string {
+  return TIER_LABELS[tier];
+}
+
+/** Attribute/id/CSS-hook form for a tier — hyphenated, same contract as `classSlug`. */
+export function tierSlug(tier: VaultTier): string {
+  return tier.replace(/_/g, '-');
+}
+
 /** Persona display. Placeholders ('—', tbd_at_p0) are data-currency artifacts, not personae —
  *  they render as absent (the persona row/line is simply omitted). `_provisional` reads as a
  *  qualifier, not part of the name. */

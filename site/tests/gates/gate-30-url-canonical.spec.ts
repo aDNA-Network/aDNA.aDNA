@@ -80,6 +80,131 @@ test.describe('gate-30 URL canonicalization', () => {
     ).toEqual([]);
   });
 
+  /* HAUSSMANN P2.4 — closes this gate's own blind spot.
+   *
+   * The assertion above checks who imports `vaults.json`. That was the wrong question: it polices
+   * one data file, and vault route slugs live in more than one. `subnetworks.json` carries raw
+   * vault names, and so does the generated `vaults_graph.svg` — neither is an import of
+   * `vaults.json`, so both sailed past a green gate while emitting 13 non-canonical URLs.
+   *
+   * This checks the OUTPUT instead of the input path, so it holds for any data file, any component,
+   * and any future source nobody has thought of yet. */
+  test('every emitted vault link in the build is canonical, whatever data produced it', () => {
+    test.skip(!existsSync(DIST), 'no dist/ — site not built');
+
+    const htmlFiles = (dir: string, out: string[] = []): string[] => {
+      for (const e of readdirSync(dir, { withFileTypes: true })) {
+        const p = join(dir, e.name);
+        if (e.isDirectory()) htmlFiles(p, out);
+        else if (e.name.endsWith('.html')) out.push(p);
+      }
+      return out;
+    };
+
+    const pages = htmlFiles(DIST);
+    const offenders: string[] = [];
+    let total = 0;
+
+    for (const page of pages) {
+      const html = readFileSync(page, 'utf8');
+      for (const m of html.matchAll(/href="\/vaults\/([^"]*)"/g)) {
+        total++;
+        // Query/hash come off FIRST, then the trailing slash. The other order leaves
+        // `graph/?focus=adna` as the "slug" and reports the graph page's own deep-links as
+        // non-canonical vault routes — a false positive this gate shipped with on its first run.
+        const slug = m[1].split(/[?#]/)[0].replace(/\/$/, '');
+        if (slug === '' || slug === 'graph') continue;   // the index and the graph page
+        if (slug !== canonical(slug)) {
+          offenders.push(`${page.replace(DIST + '/', '')} → /vaults/${m[1]}`);
+        }
+      }
+    }
+
+    // Floor: if link emission collapsed, the check above would pass while testing nothing —
+    // the same vacuous-pass shape P2.1's probe and gate-7 both shipped with.
+    expect(total, 'expected vault links in the build — 0 means this asserted nothing').toBeGreaterThan(100);
+    expect(
+      offenders,
+      `non-canonical vault links in built HTML (each costs a redirect hop, and hard-404s on a case-sensitive host):\n  ${offenders.join('\n  ')}`,
+    ).toEqual([]);
+  });
+
+  /* HAUSSMANN P2.4 — the regression that the blind spot actually hid.
+   *
+   * P2.1 canonicalized the registry AND its edge endpoints behind the accessor. `commons.astro`
+   * kept joining to it with raw ids out of `subnetworks.json`, so `vaultsBySlug.get()` missed and
+   * `declaredRelationships()` matched nothing: all four commons rows silently lost their sync date
+   * and their declared relationships, and production rendered the sentence "member records last
+   * synced ." with an empty list. Nothing failed — every dropped field had an honest-absent path,
+   * so a lookup failure was indistinguishable from a fact about the data.
+   *
+   * Asserted on the join itself rather than on the rendered strings: the overlay is the thing that
+   * must keep resolving, and a copy-derived list would only re-encode today's four members. */
+  test('the subnetworks overlay resolves against the canonical registry', () => {
+    const overlayPath = join(SITE_ROOT, 'src/data/subnetworks.json');
+    test.skip(!existsSync(overlayPath), 'no subnetworks.json');
+    const overlay = JSON.parse(readFileSync(overlayPath, 'utf8'));
+    const known = new Set(registry.vaults.map((v: any) => canonical(v.vault_slug)));
+
+    const members = (overlay.subnetworks ?? []).flatMap((s: any) =>
+      (s.members ?? []).map((m: any) => ({ subnet: s.display_name, slug: m.vault_slug })),
+    ).filter((m: any) => m.slug);
+
+    expect(members.length, 'expected subnetwork members — 0 means this asserted nothing').toBeGreaterThan(0);
+
+    const unresolved = members
+      .filter((m: any) => !known.has(canonical(m.slug)))
+      .map((m: any) => `${m.subnet}: ${m.slug}`);
+    expect(
+      unresolved,
+      `subnetwork members that do not resolve to a registry vault — their dates and declared relationships will render empty:\n  ${unresolved.join('\n  ')}`,
+    ).toEqual([]);
+
+    /* And the join must actually PRODUCE those facts in the built page.
+     *
+     * This was first written as `expect(/canonicalVaultSlug/.test(commons_source))`, which the
+     * mutation test passed with the canonicalization fully removed — the docblock above the join
+     * mentions the function by name, so the assertion was matching a COMMENT. A gate a comment can
+     * satisfy is not a gate. It reads the output instead, where a comment has no vote.
+     *
+     * Both expectations are derived from the registry: the dates the members actually carry, and
+     * the relationships the registry's edges actually declare. */
+    const commonsPage = join(DIST, 'commons/index.html');
+    test.skip(!existsSync(commonsPage), 'no dist/commons — site not built');
+    const html = readFileSync(commonsPage, 'utf8');
+    const byCanonical = new Map<string, any>(
+      registry.vaults.map((v: any) => [canonical(v.vault_slug), v]),
+    );
+
+    const expectedDates = [
+      ...new Set(
+        members
+          .map((m: any) => byCanonical.get(canonical(m.slug))?.last_synced)
+          .filter(Boolean),
+      ),
+    ].sort();
+    for (const d of expectedDates) {
+      expect(
+        html.includes(d),
+        `the commons freshness line lost the member sync date ${d} — the overlay→registry join is dropping rows again`,
+      ).toBe(true);
+    }
+
+    const expectedEdges = members.filter((m: any) =>
+      (registry.edges ?? []).some(
+        (e: any) =>
+          canonical(e.source) === canonical(m.slug) || canonical(e.target) === canonical(m.slug),
+      ),
+    );
+    if (expectedEdges.length > 0) {
+      const rendered = (html.match(/Declared relationships/g) ?? []).length;
+      expect(
+        rendered,
+        `${expectedEdges.length} commons member(s) declare relationships in the registry but ${rendered} rendered them`,
+      ).toBe(expectedEdges.length);
+    }
+  });
+
   test('every legacy vault slug has a redirect declared', () => {
     const cfg = readFileSync(join(SITE_ROOT, 'astro.config.mjs'), 'utf8');
     const legacy = registry.vaults
