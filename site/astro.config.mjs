@@ -154,6 +154,32 @@ export default defineConfig({
     '/reference/adna_design.md': '/reference/design-rationale/',
     '/reference/migration_guide.md': '/reference/migration-guide/',
     '/reference/agent_first_guide.md': '/reference/agent-first-guide/',
+
+    // --- HAUSSMANN P2.2 / ADR-049 Option A: IA consolidation (11 redirects, ⛩ DP5) ---
+    // The same 6 audiences were served by up to 3 URL branches each — 16 pages where 7
+    // belong, with 4 byte-identical <title> pairs. /use-cases/ wins as the single audience
+    // surface: it is the richer prose and the larger set, so this is a redirect, not a
+    // rewrite. Sources are listed WITHOUT the trailing slash (Astro normalises the key —
+    // see the note above); inject_redirects.mjs widens each to /?$ at deploy.
+    //
+    // Nothing was dropped on the way. Each retiring page's distinct content folded into its
+    // destination FIRST: the four landings' curated reading paths, and all five adopter docs'
+    // "Typical Ontology Extensions" tables — 13 entity-type rows the /use-cases/ twins did
+    // not carry. ADR-049 called this leg "redirect-only, zero content rewritten"; the guard
+    // diff at O2 found that was wrong on the facts, and the fold is the correction.
+    '/adopters': '/use-cases/',
+    '/adopters/adopter-researcher': '/use-cases/research-lab/',
+    '/adopters/adopter-educator': '/use-cases/educator/',
+    '/adopters/adopter-enterprise-team': '/use-cases/enterprise-team/',
+    '/adopters/adopter-startup': '/use-cases/startup/',
+    '/adopters/adopter-solo-developer': '/use-cases/solo-developer/',
+    '/researchers': '/use-cases/research-lab/',
+    '/educators': '/use-cases/educator/',
+    '/enterprise': '/use-cases/enterprise-team/',
+    '/startup-first-hour': '/use-cases/startup/',
+    // ADR-048's owed rename (ratified at DP2, independent of DP5): this is a topic page about
+    // provenance and audit, not a compliance certification claim. The page itself moved.
+    '/compliance': '/provenance-audit/',
   },
   integrations: [mdx(), sitemap(), stripHtmlComments()],
   prefetch: {

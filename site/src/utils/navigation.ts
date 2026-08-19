@@ -3,14 +3,14 @@
  *
  * Group order mirrors the header nav for the shared sections
  * (Learn · Patterns · Use Cases · Community · Reference) with the
- * doc-only groups (Glossary · Guides · For you) appended — one
- * top-level model across BaseLayout and DocumentationLayout
- * (network-audit C3 secondary-nav unification, E5 c165).
+ * doc-only groups (Glossary · Guides) appended — one top-level model
+ * across BaseLayout and DocumentationLayout (network-audit C3
+ * secondary-nav unification, E5 c165).
  *
- * Ordering constraint: "For you" must stay AFTER "Community" — its
- * `/adopters` hub entry prefix-matches the Community group's
- * `/adopters/adopter-*` persona pages, and SidebarNav scopes to the
- * FIRST matching group.
+ * The "For you" group and its ordering constraint are gone as of
+ * HAUSSMANN P2.2 / ADR-049 Option A: the /adopters branch retired, so
+ * nothing prefix-matches the Community group's persona pages any more
+ * and SidebarNav's first-match scoping is no longer load-bearing here.
  */
 
 import { referenceIA } from '../data/reference-ia';
@@ -57,23 +57,30 @@ export interface TopNavEntry {
   children?: TopNavChild[];
 }
 
+/**
+ * Primary nav — 7 flat items, no disclosure (HAUSSMANN P2.2 / ADR-049 Option A, ⛩ DP5).
+ *
+ * The ceiling is ≤7 with no load-bearing "More". The previous 8-item row failed on both
+ * counts: it carried an 8th item AND parked Reference + Glossary — load-bearing by any
+ * reading — behind a disclosure. The fold that made 7 possible:
+ *
+ *   Standard  ← absorbs /reference/* + /glossary/* (the /reference hub already lists both)
+ *   Learn     ← absorbs /patterns/* + /how/* (Guides); /learn already cards Patterns
+ *   Use Cases ← the single audience surface; the "For you" group is dissolved
+ *
+ * Order follows ADR-048's positioning sentence — "the standard, its docs, and the registry" —
+ * so Standard leads. `href: '/reference'` rather than a new /standard route: the rename was
+ * outside the ratified 11-redirect budget, so the hub is retitled "The Standard" instead
+ * (site/src/pages/reference/index.astro) and no inbound link breaks.
+ */
 export const topNav: TopNavEntry[] = [
-  { label: 'Network', href: '/network' },
-  { label: 'Vaults', href: '/vaults' },
-  { label: 'Commons', href: '/commons' },
+  { label: 'Standard', href: '/reference' },
   { label: 'Learn', href: '/learn' },
-  { label: 'Patterns', href: '/patterns' },
+  { label: 'Vaults', href: '/vaults' },
+  { label: 'Network', href: '/network' },
+  { label: 'Commons', href: '/commons' },
   { label: 'Use Cases', href: '/use-cases' },
   { label: 'Community', href: '/community' },
-  {
-    label: 'More',
-    children: [
-      { label: 'Reference', href: '/reference' },
-      { label: 'Glossary', href: '/glossary' },
-      { label: 'Guides', href: '/how' },
-      { label: 'For you', href: '/adopters' },
-    ],
-  },
 ];
 
 // Reference sidebar group — derived from the single-source referenceIA
@@ -176,16 +183,9 @@ export const navigation: NavGroup[] = [
       { label: 'Processes', href: '/community/community-processes', order: 2 },
       { label: 'Context Commons', href: '/community/community-context-commons', order: 3 },
       { label: 'Contribution Standards', href: '/community/community-contribution-standards', order: 4 },
-      {
-        label: 'Adopter Personas',
-        items: [
-          { label: 'Solo Developer', href: '/adopters/adopter-solo-developer', order: 5 },
-          { label: 'Enterprise Team', href: '/adopters/adopter-enterprise-team', order: 6 },
-          { label: 'Educator', href: '/adopters/adopter-educator', order: 7 },
-          { label: 'Startup', href: '/adopters/adopter-startup', order: 8 },
-          { label: 'Researcher', href: '/adopters/adopter-researcher', order: 9 },
-        ],
-      },
+      // The "Adopter Personas" subgroup was removed at HAUSSMANN P2.2 / ADR-049 Option A: it
+      // listed the same five audiences a second time, under /adopters/adopter-*, which now
+      // 301 to their /use-cases/ twin. The Use Cases group above is the single audience surface.
     ],
   },
   {
@@ -245,6 +245,9 @@ export const navigation: NavGroup[] = [
   {
     label: 'Guides',
     items: [
+      // Rehomed from the retired "For you" group at HAUSSMANN P2.2 — an operational
+      // walkthrough, not an audience page (ADR-048 renamed /compliance for exactly that reason).
+      { label: 'Provenance & audit', href: '/provenance-audit', order: 0 },
       {
         label: 'Publishing',
         items: [
@@ -273,17 +276,11 @@ export const navigation: NavGroup[] = [
       },
     ],
   },
-  {
-    // Audience landing pages — orphan-surfaced at E5 c165 (network-audit C3: these
-    // were single-threaded off /adopters with no nav presence anywhere).
-    label: 'For you',
-    items: [
-      { label: 'Researchers', href: '/researchers', order: 1 },
-      { label: 'Educators', href: '/educators', order: 2 },
-      { label: 'Enterprise', href: '/enterprise', order: 3 },
-      { label: 'Compliance', href: '/compliance', order: 4 },
-      { label: 'Startups', href: '/startup-first-hour', order: 5 },
-      { label: 'Adopters Hub', href: '/adopters', order: 6 },
-    ],
-  },
+  // The "For you" group was removed at HAUSSMANN P2.2 / ADR-049 Option A. It held the five
+  // audience landings + the /adopters hub — the third of four copies of the same link set.
+  // Four of those five retired into their /use-cases/ twin (their reading paths folded into
+  // the destination first, so nothing was dropped); the fifth, /compliance, became the topic
+  // page /provenance-audit and moved to Guides below, which also closes the charter's
+  // "Enterprise Architect routing gap" — it was previously unreachable from either
+  // disclosure surface.
 ];

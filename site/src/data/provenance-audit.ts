@@ -1,10 +1,13 @@
 /**
- * Compliance walkthrough page data — surfaced via site/src/pages/compliance/index.astro.
+ * Provenance & audit walkthrough page data — surfaced via
+ * site/src/pages/provenance-audit/index.astro.
  *
  * Extracted from index.astro frontmatter at M5.4 D12 cycle 114
  * (data extraction follows cycle 113 home.ts precedent for page-scope card arrays).
+ * Renamed from compliance.ts at HAUSSMANN P2.2 (ADR-048's owed rename: this is a topic
+ * page about provenance and audit, not a compliance certification claim).
  *
- * Edit copy here; compliance/index.astro is the layout.
+ * Edit copy here; provenance-audit/index.astro is the layout.
  */
 
 export interface ComplianceCard {
@@ -68,15 +71,12 @@ export const federationCards: ComplianceCard[] = [
 ];
 
 export const followUpCards: ComplianceCard[] = [
+  // HAUSSMANN P2.2: the sibling /enterprise checklist and the /adopters persona profile both
+  // folded into /use-cases/enterprise-team, so the two cards that pointed at them merge here.
   {
-    title: 'Enterprise Adoption Checklist',
-    href: '/enterprise',
-    description: 'The sibling page: a structured evaluation framework across compliance, session audit, federation, and integration. Scan section by section.',
-  },
-  {
-    title: 'Enterprise Team Persona',
-    href: '/adopters/adopter-enterprise-team',
-    description: 'Quick-reference adopter profile: pain points, typical ontology extensions (compliance_check, team_policy, shared_pipeline), and deployment pattern.',
+    title: 'Enterprise Team',
+    href: '/use-cases/enterprise-team/',
+    description: 'The sibling surface: a structured evaluation framework across governance, session audit, federation, and integration — plus the pain points, ontology extensions (compliance_check, team_policy, shared_pipeline), and deployment pattern.',
   },
   {
     title: 'Federation Readiness Pattern',

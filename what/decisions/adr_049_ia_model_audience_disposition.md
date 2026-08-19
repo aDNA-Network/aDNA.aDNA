@@ -20,9 +20,24 @@ tags: [adr, haussmann, ia, navigation, d2]
 **Accepted** — **Option A**, ratified by Stanley (operator) at ⛩ **DP5**, 2026-08-18, after both
 comps cleared ranker ≥4.0. Options authored by mission P2.2 O0; comps and ranker at O1.
 
-**Not yet implemented.** O2 (nav, consolidation, 301s, duplicate-title elimination) and O3
-(re-crawl, same-diff gate updates, T0 captures, AAR) are session 2 of the mission. The decision is
-signed; the site is unchanged.
+**Implemented 2026-08-18** at mission P2.2 O2/O3 — nav to 7, 11 redirects, four link-set copies
+collapsed to one, zero duplicate titles, 446/446 gates. Built and gated; **deployment is a separate
+⛩** and had not been taken at time of writing.
+
+> **Implementation note — a premise in this ADR was wrong, and the record says so rather than
+> quietly diverging.** §Context below calls the `/adopters/*` prose "near-paraphrase" and Option A
+> "redirect-only … zero content rewritten". The guard diff at O2 measured otherwise: each adopter
+> doc carries a **`## Typical Ontology Extensions` table — 13 unique entity-type rows** across four
+> docs, plus a self-reference block and unique glossary links, none of it present in the
+> `/use-cases/` twin. The four segment landings are likewise **curated reading-path decks**
+> (~1,690w: a 3-week course structure, a procurement checklist, a 60-minute quickstart), not
+> narratives. Under SO-6, which this ADR itself restates, all of it **folded into the destination
+> before the source retired** — nine folds. The redirect count, the nav decision, and the audience
+> surface are exactly as ratified; only the cost line changes, from *zero content rewritten* to
+> **zero content discarded; seven destinations gained folded sections**.
+>
+> The decision DP5 took — *which branch survives* — was a judgment call and it held. The premise it
+> rested on was a measurable fact, and ratification does not make a wrong fact right.
 
 ## Context
 

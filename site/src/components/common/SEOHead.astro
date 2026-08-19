@@ -28,8 +28,10 @@ function selectOgImage(path: string): string {
   if (path.startsWith('/reference/') || path === '/reference') return '/images/og-reference.png';
   if (path.startsWith('/glossary/') || path === '/glossary') return '/images/og-reference.png';
   if (path.startsWith('/community/') || path === '/community') return '/images/og-community.png';
-  if (path.startsWith('/adopters/') || path === '/adopters') return '/images/og-community.png';
-  if (path.startsWith('/how/') || path === '/how') return '/images/og-how.png';
+  // HAUSSMANN P2.2: /adopters retired into /use-cases. The audience surface keeps the
+  // community OG card — it is still the "who is this for" face of the site.
+  if (path.startsWith('/use-cases/') || path === '/use-cases') return '/images/og-community.png';
+  if (path.startsWith('/how/') || path === '/how' || path === '/provenance-audit') return '/images/og-how.png';
   return '/images/og-default.png';
 }
 

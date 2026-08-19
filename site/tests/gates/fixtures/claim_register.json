@@ -63,21 +63,21 @@
     },
     {
       "id": "R-76",
-      "url": "/adopters",
+      "url": "/use-cases",
       "quote": "not real named adopters",
       "class": "verified",
       "why": "Honesty stratum: the disclaimer that keeps illustrative personas from reading as customer logos. Its removal would be a silent credibility regression."
     },
     {
       "id": "R-85",
-      "url": "/compliance",
+      "url": "/provenance-audit",
       "quote": "not a certified",
       "class": "verified",
       "why": "Honesty stratum: the disclaimer that stops the compliance page reading as an accreditation. Sits on the same page as the FALSE R-84 — this gate protects one while condemning the other."
     },
     {
       "id": "R-88",
-      "url": "/compliance",
+      "url": "/provenance-audit",
       "quote": "Archive, never delete",
       "class": "verified",
       "why": "A real, checkable governance control (Standing Order 6) on the auditor-facing page — the honest counterpart to R-84's false control claim."

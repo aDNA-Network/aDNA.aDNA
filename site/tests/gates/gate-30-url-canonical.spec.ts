@@ -114,4 +114,65 @@ test.describe('gate-30 URL canonicalization', () => {
     );
     expect(looping, `canonical URLs caught by a redirect (loop risk): ${looping.join(', ')}`).toEqual([]);
   });
+
+  // HAUSSMANN P2.2 / ADR-049 Option A (⛩ DP5). The 11 IA-consolidation redirects live here
+  // rather than in a navigation spec because the gate suite runs against `npm run preview`,
+  // which does not serve the adapter layer at all (P2.1 doctrine §3.2) — a preview-side
+  // redirect assertion fails in a way indistinguishable from a real bug. This reads the
+  // emitted routes instead. The live proof is the post-deploy probe matrix.
+  test('IA consolidation: every retired audience route has a redirect to its destination', () => {
+    const cfgPath = join(SITE_ROOT, '.vercel/output/config.json');
+    test.skip(!existsSync(cfgPath), 'no .vercel/output/config.json — adapter output not built');
+    const cfg = JSON.parse(readFileSync(cfgPath, 'utf8'));
+    const redirects = cfg.routes.filter((r: any) => [301, 302, 307, 308].includes(r.status) && r.src);
+
+    const expected: Record<string, string> = {
+      '/adopters': '/use-cases/',
+      '/adopters/adopter-researcher': '/use-cases/research-lab/',
+      '/adopters/adopter-educator': '/use-cases/educator/',
+      '/adopters/adopter-enterprise-team': '/use-cases/enterprise-team/',
+      '/adopters/adopter-startup': '/use-cases/startup/',
+      '/adopters/adopter-solo-developer': '/use-cases/solo-developer/',
+      '/researchers': '/use-cases/research-lab/',
+      '/educators': '/use-cases/educator/',
+      '/enterprise': '/use-cases/enterprise-team/',
+      '/startup-first-hour': '/use-cases/startup/',
+      '/compliance': '/provenance-audit/',
+    };
+
+    const broken: string[] = [];
+    for (const [from, to] of Object.entries(expected)) {
+      // Both slash forms, because inject_redirects.mjs widens `$` to `/?$` and trailing-slash
+      // is the shape every canonical URL on this site emits.
+      for (const probe of [from, `${from}/`]) {
+        const hit = redirects.find((r: any) => new RegExp(r.src).test(probe));
+        if (!hit) {
+          broken.push(`${probe} → (no redirect matches)`);
+        } else if (hit.headers?.Location !== to) {
+          broken.push(`${probe} → ${hit.headers?.Location} (expected ${to})`);
+        }
+      }
+    }
+    expect(broken, `retired audience routes without a working redirect:\n  ${broken.join('\n  ')}`).toEqual([]);
+  });
+
+  // The destinations must actually exist. A redirect to a 404 is worse than a 404 — it looks
+  // deliberate. Checked against the build snapshot, not a hardcoded list (WebForge KW-8/FR-K).
+  test('IA consolidation: every redirect destination built a page', () => {
+    const distDir = join(SITE_ROOT, 'dist');
+    test.skip(!existsSync(distDir), 'no dist/ — site not built');
+    const destinations = [
+      '/use-cases/',
+      '/use-cases/research-lab/',
+      '/use-cases/educator/',
+      '/use-cases/enterprise-team/',
+      '/use-cases/startup/',
+      '/use-cases/solo-developer/',
+      '/provenance-audit/',
+    ];
+    const missing = destinations.filter(
+      (d) => !existsSync(join(distDir, d.replace(/^\/|\/$/g, ''), 'index.html')),
+    );
+    expect(missing, `redirect destinations that built no page: ${missing.join(', ')}`).toEqual([]);
+  });
 });
