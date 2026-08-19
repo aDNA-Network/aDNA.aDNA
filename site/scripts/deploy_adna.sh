@@ -35,6 +35,18 @@ if [[ -n "$(git status --porcelain src/ public/ vercel.json astro.config.mjs 2>/
   git status --porcelain src/ public/ vercel.json astro.config.mjs >&2; exit 1
 fi
 
+# -- cadence: is the changelog keeping up with what we ship? (P2.3 O3) ---------
+# Non-blocking on purpose. Plenty of deploys are a typo fix and deserve no entry, so a hard gate
+# would train people to write filler to get past it. But the changelog decayed to a single April
+# entry precisely because nobody was ever asked, at the moment of shipping, whether this one
+# mattered. Asking here costs a line and puts the question where the answer is known.
+NEWEST_ENTRY="$(ls -1 src/content/changelog/*.md 2>/dev/null | sed 's#.*/##; s#\.md$##' | grep -E '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' | sort | tail -1)"
+TODAY="$(date -u +%Y-%m-%d)"
+if [[ -n "$NEWEST_ENTRY" && "$NEWEST_ENTRY" < "$TODAY" ]]; then
+  echo "-- cadence: newest changelog entry is $NEWEST_ENTRY, today is $TODAY."
+  echo "   If this deploy changes anything a reader would notice, add src/content/changelog/$TODAY.md first."
+fi
+
 echo "== build (npx astro build — never npm run build) =="
 npx astro build
 
