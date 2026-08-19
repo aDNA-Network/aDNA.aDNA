@@ -17,9 +17,18 @@ interface Props {
   next?: { label: string; href: string };
   jsonLD?: JsonLDValue;
   heroImage?: { src: ImageMetadata; alt: string };
+  /**
+   * Page provenance — last-updated date and an edit link (HAUSSMANN P2.3 O2, VITRUVIUS D4).
+   *
+   * Purely additive and optional: a consumer that does not pass it renders byte-identically to
+   * before (skill_documentation_layout_props_additive_extension). Build it with
+   * `sourceForEntry()` / `sourceForSpec()` in utils/contentSource.ts — `updated` is deliberately
+   * absent rather than guessed when git cannot answer.
+   */
+  source?: { editUrl: string; updated?: string; editLabel?: string };
 }
 
-const { title, description, headings = [], prev, next, jsonLD, heroImage } = Astro.props;
+const { title, description, headings = [], prev, next, jsonLD, heroImage, source } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} jsonLD={jsonLD}>
@@ -54,6 +63,18 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
       )}
       <h1>{title}</h1>
       <slot />
+      {source && (
+        <footer class="doc-provenance">
+          {source.updated && (
+            <span class="doc-provenance-updated">
+              Last updated <time datetime={source.updated}>{source.updated}</time>
+            </span>
+          )}
+          <a class="doc-provenance-edit" href={source.editUrl} rel="noopener">
+            {source.editLabel ?? 'Edit this page'}
+          </a>
+        </footer>
+      )}
       {(prev || next) && <PrevNextNav prev={prev} next={next} />}
     </article>
 
@@ -188,6 +209,25 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
     padding: var(--space-8) var(--space-6);
     min-width: 0;
     overflow-x: hidden;
+  }
+
+  /* Page provenance (HAUSSMANN P2.3 O2). Sits between the content and PrevNextNav; wraps rather
+     than truncates so the date and the edit link both survive a 320px viewport (WCAG 1.4.10). */
+  .doc-provenance {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2) var(--space-4);
+    margin-top: var(--space-8);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+  .doc-provenance-edit {
+    color: var(--color-link);
+    font-weight: 500;
   }
 
   /* F12 (HAUSSMANN P1.4): the copy-button wrapper below is built at RUNTIME by this layout's

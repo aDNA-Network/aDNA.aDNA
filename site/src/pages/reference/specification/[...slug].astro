@@ -11,6 +11,7 @@
  */
 import { getCollection, render } from 'astro:content';
 import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import { sourceForSpec } from '../../../utils/contentSource';
 import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
 import { SITE_ORIGIN } from '../../../data/canonical';
 
@@ -62,6 +63,8 @@ const next = nextSection
   prev={prev}
   next={next}
   jsonLD={jsonLD}
+
+  source={sourceForSpec()}
 >
   <p class="spec-section-meta">
     <a href="/reference/specification/">aDNA Specification</a>

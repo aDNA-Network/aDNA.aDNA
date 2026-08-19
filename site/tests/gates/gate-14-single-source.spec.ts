@@ -68,13 +68,30 @@ const ALLOW: { file: string; pattern: string; rationale: string; date: string }[
   },
 ];
 
+/**
+ * Scope refinement, not an exception (HAUSSMANN P2.3 O2).
+ *
+ * The C-1 rule is about proof-link SEMANTICS: a link offered as evidence must send the reader to
+ * the clone-and-run image, because that is the install target. The provenance footer's "edit this
+ * page" link is a different class of link — it is a contribution target, and the file it points at
+ * exists ONLY in the dev vault. `site/src/content/docs/triad.mdx` is not in `aDNA-Network/aDNA`,
+ * so pointing the edit link there to satisfy the literal scan would ship a link that 404s: the
+ * gate would be green and the site would be lying, which is the exact trade this campaign refuses.
+ *
+ * Allowlisting instead would mean 113 file entries and would hollow the rule out. Removing the one
+ * structurally-identified element from the scanned text leaves C-1 in full force on prose, proof
+ * links, and JSON-LD across every page — including on the pages that carry a footer.
+ */
+const PROVENANCE_EDIT_LINK = /<a[^>]*class="[^"]*doc-provenance-edit[^"]*"[^>]*>[\s\S]*?<\/a>/g;
+const scannable = (html: string) => html.replace(PROVENANCE_EDIT_LINK, '');
+
 test('G5 single-source: no drifted repo/publisher literals in built output', () => {
   const files = htmlFiles(DIST);
   expect(files.length, 'dist/ has no HTML — run `npx astro build` first').toBeGreaterThan(100);
 
   const hits: string[] = [];
   for (const f of files) {
-    const content = readFileSync(f, 'utf8');
+    const content = scannable(readFileSync(f, 'utf8'));
     const rel = f.slice(DIST.length + 1);
     for (const { pattern, why } of FORBIDDEN) {
       if (content.includes(pattern) && !ALLOW.some((a) => a.file === rel && a.pattern === pattern)) {

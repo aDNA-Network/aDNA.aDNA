@@ -11,6 +11,7 @@
  */
 import { getEntry, render } from 'astro:content';
 import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import { sourceForSpec } from '../../../utils/contentSource';
 import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
 import { SITE_ORIGIN } from '../../../data/canonical';
 
@@ -42,6 +43,8 @@ const jsonLD = [
   headings={headings}
   prev={{ label: 'Specification contents', href: '/reference/specification/' }}
   jsonLD={jsonLD}
+
+  source={sourceForSpec()}
 >
   <p class="spec-full-meta">
     <a href="/reference/specification/">Read by section</a>

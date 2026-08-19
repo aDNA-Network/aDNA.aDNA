@@ -24,6 +24,7 @@
  */
 import { getCollection, getEntry, render } from 'astro:content';
 import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import { sourceForSpec } from '../../../utils/contentSource';
 import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
 import { SITE_ORIGIN } from '../../../data/canonical';
 
@@ -74,6 +75,8 @@ const jsonLD = [
   description="The aDNA knowledge architecture standard — 20 sections, readable one at a time."
   jsonLD={jsonLD}
   next={{ label: `1. ${sections[0].data.section_title}`, href: `/reference/specification/${sections[0].data.slug_id}/` }}
+
+  source={sourceForSpec()}
 >
   <aside class="spec-orientation" aria-label="Orientation">
     <p><strong>For implementers and evaluators.</strong> New to aDNA? Start with <a href="/learn/what-is-adna">What is aDNA &rarr;</a></p>

@@ -42,7 +42,13 @@ jobs:
       run:
         working-directory: site
     steps:
+      # Full history: the freshness layer derives each page's last-updated date from git
+      # (HAUSSMANN P2.3 O2). A shallow clone has one commit, so every file would resolve to the
+      # same date — contentSource.ts detects that and omits the date rather than print a false
+      # one, which means a shallow CI build silently ships pages with no dates at all.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:

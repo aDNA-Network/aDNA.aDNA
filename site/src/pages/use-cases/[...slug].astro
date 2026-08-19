@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import { sourceForEntry } from '../../utils/contentSource';
 import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../utils/seo';
 import { SITE_ORIGIN } from '../../data/canonical';
 
@@ -13,6 +14,7 @@ export async function getStaticPaths() {
 }
 
 const { doc } = Astro.props;
+const source = sourceForEntry(doc);
 const { Content, headings } = await render(doc);
 
 const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? SITE_ORIGIN;
@@ -36,6 +38,8 @@ const jsonLD = [
   description={doc.data.description ?? `${doc.data.doc_title} — aDNA use case.`}
   headings={headings}
   jsonLD={jsonLD}
+
+  source={source}
 >
   {/* HAUSSMANN P1.1 (hostile-read finding 13): the hub carries the "illustrative scenarios"
       disclosure but deep links land here without it — every leaf now discloses on-page, so a
