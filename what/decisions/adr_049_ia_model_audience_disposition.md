@@ -2,7 +2,7 @@
 type: adr
 adr_number: "049"
 title: "IA model: one audience architecture, nav within doctrine"
-status: proposed
+status: accepted
 created: 2026-08-16
 updated: 2026-08-18
 last_edited_by: agent_rosetta
@@ -17,9 +17,12 @@ tags: [adr, haussmann, ia, navigation, d2]
 
 ## Status
 
-**Proposed** — decision space fixed at genesis; options authored by mission P2.2 O0 (2026-08-18,
-after ADR-048 was accepted at DP2). Comps and ranker at O1; **ratified at DP5**. Nothing in this
-ADR has been implemented — no site source changes until the operator picks.
+**Accepted** — **Option A**, ratified by Stanley (operator) at ⛩ **DP5**, 2026-08-18, after both
+comps cleared ranker ≥4.0. Options authored by mission P2.2 O0; comps and ranker at O1.
+
+**Not yet implemented.** O2 (nav, consolidation, 301s, duplicate-title elimination) and O3
+(re-crawl, same-diff gate updates, T0 captures, AAR) are session 2 of the mission. The decision is
+signed; the site is unchanged.
 
 ## Context
 
@@ -212,8 +215,27 @@ sides — which is exactly the shape of decision DP5 exists to take.
 
 | Field | Value |
 |---|---|
-| **Decision** | *(pending — one of A / B / C, plus the segment-page and nav dispositions)* |
-| **Ratified by** | *(pending — Stanley, operator)* |
-| **Gate** | **DP5**, at mission P2.2 O1 after the comps clear ranker ≥4.0 |
-| **Date** | *(pending)* |
-| **Status** | **proposed** |
+| **Decision** | **Option A — consolidate to `/use-cases/`.** The 5 `/adopters/adopter-*` docs and the `/adopters/` hub fold into their `/use-cases/` twin; the 4 remaining segment landings retire with 301s; `/compliance/` becomes the topic page `/provenance-audit/` per ADR-048. Nav to **7**: Standard · Learn · Vaults · Network · Commons · Use Cases · Community — Reference+Glossary absorbed by Standard, Patterns+Guides by Learn, "For you" dissolved. CTA stays 1+1. **11 redirects, zero content rewritten.** |
+| **Ratified by** | **Stanley (operator)** — in-chat `AskUserQuestion` at ⛩ DP5 |
+| **Gate** | **DP5**, at mission P2.2 O1, after both comps cleared ranker ≥4.0 |
+| **Date** | 2026-08-18 |
+| **Status** | **accepted** |
+
+### Why A, on the record
+
+The ranker cleared both and **deliberately declined to separate them** (A 4.03 · C 4.17; 0.14 from a
+single synthetic rater is one persona moving one cell). The decision was therefore taken on judgment,
+which is what DP5 exists for.
+
+**The reasoning that carried it:** A is the reversible move and generates behavioural evidence
+cheaply, and **P2.6 is already a mid-campaign re-score and Decade-2 recalibration** — the natural
+place to reconsider a task taxonomy with real data. C commits to a large, hard-to-reverse re-frame
+of 13 pages on zero behavioural evidence, and concentrates weight on `/get-started/`, a page not yet
+built to carry four task paths (unscored risk, named in the ranker record).
+
+**The cost is accepted, not hidden.** A keeps an identity taxonomy — deduplicated, not retired — so
+7.7 is answered only partly. And if C is later adopted, the same content moves twice, producing a
+second redirect generation. ADR-051's additive law makes that survivable; it is still churn, and it
+was weighed rather than discovered.
+
+**C is not rejected — it is deferred with a named revisit point:** P2.6, on evidence.

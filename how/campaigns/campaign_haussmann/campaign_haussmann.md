@@ -22,7 +22,7 @@ governing_instrument: directives/OPERATION_VITRUVIUS_review_instrument.md   # D1
 baseline_score: "51.6/100 (2026-08-16, two-reviewer reconciled; MCP ≈83, Mastra ≈65)"
 evidence_pack: [d58ea13, df3827c]
 created: 2026-08-16
-updated: 2026-08-18   # ⛩ P1→P2 phase gate SIGNED (3/4 conditions; D6/D7 deferred to P2.6) — P2 OPEN, P2.1 first
+updated: 2026-08-18   # ⛩ DP5 RATIFIED (Option A — consolidate to /use-cases/); P2.1 shipped + live-proven (162/0). Next DP = DP6 at P2.6. Prior same-day: P1→P2 gate signed.
 last_edited_by: agent_rosetta
 tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, agentic]
 ---
@@ -54,7 +54,7 @@ tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, a
 │                       🟡 P0.4 flux-recon (awaits Aspasia ack — her lane)    │
 │    P1 credibility ✅  ✅ 1.1 claim-purge   ✅ 1.2 state-of-network          │
 │      (Decade 1) 4/4   ✅ 1.3 registry-truth(DP4) ✅ 1.4 mobile-S1s          │
-│    P2 structure 🟢    ▸ 2.1 urls  ▫ 2.2 ia(⛩DP5)  ▫ 2.3 docs-freshness     │
+│    P2 structure 🟢    ✔ 2.1 urls  ▸ 2.2 ia(DP5✔)  ▫ 2.3 docs-freshness     │
 │      (Decade 1) OPEN  ▫ 2.4 registry  ▫ 2.5 onboarding  ▫ 2.6 re-score⛩DP6  │
 │                          ↑ ⛩ P1→P2 GATE SIGNED 2026-08-18 (D6/D7 deferred)  │
 │    P3 agentic+community  ▫ md-twins ▫ registry-json ▫ mcp-server            │
@@ -66,7 +66,7 @@ tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, a
 │  PLAN     phase P2/6 OPEN · 37–50 sessions (derived) · fable default ·      │
 │           prod HARDENED (4/4 headers) · suite 444 zero xf · 0 FALSE claims  │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│  GATES    phase gates are human gates · next: ⛩ DP5 at 2.2 (IA model)      │
+│  GATES    phase gates are human gates · next: ⛩ DP6 at 2.6 (re-plan)      │
 │           arc AAR: artifacts/aar_p0_wave.md (this splash augments, never    │
 │           replaces it)                                                       │
 ╰──────────────────────────────────────────────────────────────────────────────╯
@@ -147,7 +147,7 @@ lifted and the sole-sanctioned path in force.
 | **Decision** | Open P2. The P1 exit gate is accepted at **3 of 4 conditions met**, with the fourth — the D6/D7 re-score — **deferred to P2.6**, where the instrument's own cadence puts a full dimension re-score. The deferral is accepted as a deferral; it is **not** recorded as satisfied. |
 | **Ratified by** | stanley (operator / FA), in-chat `AskUserQuestion` |
 | **Date** | 2026-08-18 |
-| **Status** | **accepted** — P2 open; P2.1 is the first mission (no deps, no DP). DP5 remains the next substantive decision point, at P2.2. |
+| **Status** | **accepted** — P2 open. P2.1 ✅ shipped + live-proven 2026-08-18 (162/0 probe; ADR-051 accepted). **DP5 ✅ ratified 2026-08-18 (Option A)**; next substantive DP = **DP6 at P2.6**. |
 
 > The honest reading, kept here so a later reader does not mistake the signature for a clean sweep:
 > P1 closed 4/4 on *missions*, not 4/4 on *exit conditions*. The last hostile pass still found two
@@ -218,7 +218,7 @@ shipped the /community link ahead of ADR-054's prerequisites**), `VERCEL_TOKEN_A
 | DP2 | P0.1 close | ADR-048 positioning (incl. audience, name-collision handling, embargo language) | **✅ RATIFIED — operator, 2026-08-16** · candidate A (definition-as-hero); the O4 human panel was **waived** in-chat, deviation recorded in ADR-048 §Status, human validation deferred to **P5.1** |
 | DP3 | P0.2 | ADR-050 deploy path (git-integration vs wrapped-manual vs hybrid) | **✅ RATIFIED (c) — operator, 2026-08-16** · `deploy_adna.sh` is the sole sanctioned path; deploy freeze lifted |
 | DP4 | P1.3 | ADR-052 §admission — confidential-adjacent vaults in the public registry (aiLP-Dataroom, CakeHealth, PercySleep) | **✅ RULED — operator, 2026-08-16** · minimal-card ×3, suppression at the generator |
-| DP5 | P2.2 | ADR-049 IA model (audience-branch disposition) | pending ⛩ — **next substantive DP** |
+| DP5 | P2.2 | ADR-049 IA model (audience-branch disposition) | ✅ **RATIFIED — operator, 2026-08-18: Option A** (consolidate to `/use-cases/`; nav 7; 11 redirects; zero content rewritten). Both comps cleared ranker ≥4.0 and the instrument **declined to separate them** (A 4.03 · C 4.17), so the call was judgment: A is reversible and P2.6 is the named revisit point for C. Implementation = P2.2 O2/O3. |
 | DP6 | P2.6 | Decade-2 recalibration + re-plan ratification | pending (recurring shape) |
 | DP7 | P3.4 | ADR-054 community-link GO/NO-GO on verified prerequisites | ⚠ **FIRED EARLY by operator override at P1.1 (2026-08-17)** — the /community link shipped with PR-1/2/3 unmet; deviation recorded in ADR-054 §Status, honest-state framing shipped and guarded by R-95/R-96. The DP itself is **still owed** on the verified prerequisites at P3.4 |
 | DP8 | P4.1 | ADR-053 visual voice (slot-contained program vs accent-only fallback) | pending |
