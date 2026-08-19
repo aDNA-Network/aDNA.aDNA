@@ -119,6 +119,76 @@ the page that explains how to check this site's claims.
 The content-collection schema **rejected my first description at 213 characters** (limit 160). Caught
 by the gate, at the layer that should catch it; re-cut to 153 and re-verified by measurement.
 
+### P2.5 O0 — designed, ⛩ halted at the pick
+
+Deliverable: `artifacts/p2_5/design_zero_install_path.md`.
+
+Three variants costed. **Recommended: A now (annotated tour of the real files) · B at O3 (a real
+recorded session, produced as a by-product of O2's clean-machine run) · C not at all** (an animated
+replay would cost the site's no-JS baseline and axe-0 record for motion the static transcript already
+carries — and its no-JS twin would *be* variant B).
+
+A and B are not competitors; they answer **different objections**. A answers *"can I trust this before
+I run it?"* — the objection that actually produced the refusal. B answers *"does it work?"*, which that
+reader was already guardedly willing to believe (*"the downside is a wasted evening"*).
+
+The refusing cold-read did not merely decline the CTA — **it wrote down the path it wanted instead**
+(read `CLAUDE.md` and `.adna/` in the browser → clone to a scratch dir, not `~/aDNA` → read
+`skill_onboarding.md` before running `claude`). O0's design makes that route first-class rather than
+inventing a different one.
+
+Also delivered: **"first success" defined observably** (five runnable assertions plus the behavioural
+half — a *new* agent session in the project greets you already holding its governance); a **cost
+statement** for above the one-liner that retires two live contradictions (the *"any tool can support"*
+claim, and the absent uninstall path); and a **reusable TTFS kit** — clock starts at the *entry URL*,
+not the first command, because reading the page is where the refusal happened, and an empty friction
+log is reported as **suspect, not excellent**.
+
+### 🔎 F-P2.5-1 → R-118
+
+Registered in the claim register (`unsupported → fix at O1`, S3) rather than held for O1, because it is
+a live defect on a shipped page, not new copy. Deferring a known-false depiction to a later objective is
+the pattern this campaign keeps catching.
+
 ## SITREP
 
-*(at close)*
+**Completed**
+- **P2.4 deployed and proven live** — `tree=d42ee68`, 216 pages, headers 4/4, redirects 42/42, probe **37/0**
+- Probe **red-proven 17/17 before** the deploy; empty-derivation guard mutation-tested 4/4
+- Probe assertion **corrected in kind** (href = hard contract; raw `data-slug` = KNOWN-OPEN, named not silenced)
+- Changelog backfilled for P2.3 + P2.4, counts derived (**114**, not the recorded 113)
+- **P2.5 O0** designed; **R-118** registered; mission `queued → in_progress`
+- Gate suite **472/472**, zero xfail, post-change
+
+**In progress** — P2.5. O0 done; O1 blocked on the pick.
+
+**Next up** — ⛩ **the P2.5 pick (4 questions)**, then O1 build → O2 clean-machine TTFS run (⛩ machine)
+→ O3. Then **P2.6 / ⛩ DP6**, where the D6/D7 re-score deferred at the P1 gate comes due.
+
+**Blockers** — none technical. Two ⛩ operator items: the P2.5 pick, and a **push GO** (3 new commits;
+per-action, does not carry forward).
+
+**Open, carried** — 77-vs-74 (Hestia) · the 740 mechanism (deferred, recorded UNMET) ·
+`build_graph_svg.mjs` raw `data-slug` · P0.4 Aspasia ack · Vitruvius owed-back note staged-not-delivered
+· `VERCEL_TOKEN_ADNA` unbrokered, **C01 rotation before 2026-08-27 — 8 days** · four dateless prose pages.
+
+**Files touched** — `site/src/content/changelog/2026-08-19.md` · `site/scripts/deploy_log.txt` ·
+`artifacts/p2_4/deploy_probe_p2_4.mjs` (new) · `artifacts/p2_5/design_zero_install_path.md` (new) ·
+`evidence/claims/claim_register.md` · `missions/mission_haussmann_p2_5_onboarding_paths.md` · `STATE.md` ·
+this session file.
+
+**Token** — ~95 kT against ~120–180 kT estimated.
+
+## Next Session Prompt
+
+> Open `how/campaigns/campaign_haussmann/CLAUDE.md`, `STATE.md` (top banner), the P2.5 mission
+> (`missions/mission_haussmann_p2_5_onboarding_paths.md`), and the O0 design
+> (`artifacts/p2_5/design_zero_install_path.md`). **P2.4 is shipped and live** (`tree=d42ee68`, probe
+> 37/0) — do not redeploy it. **P2.5 O0 is complete and halted at a 4-question operator pick** (§7 of
+> the design): which zero-install variant O1 builds, what happens to the invented `/get-started/`
+> terminal block (**R-118**, recommended: delete now, ship a *labelled* gap), whether the cost-statement
+> copy ships as drafted, and whether the first-success definition is accepted as O2's stop-condition.
+> Take the pick, then build O1 — and note that **O2 needs a clean machine, which is a separate ⛩**.
+> Three commits are **unpushed**; a push is its own per-action GO. Before any deploy: `git fetch` and
+> diff `site/scripts/deploy_log.txt` first. Do not author any timing claim — R-34 and R-63 are
+> discharged by O2's measurement or revised down then, never by a design.

@@ -6,13 +6,14 @@ campaign: campaign_haussmann
 phase: P2
 decade: 1
 owner: stanley
-status: queued
+status: in_progress   # O0 ✅ 2026-08-19 — design + first-success definition + cost statement + TTFS kit authored; ⛩ HALTED at the pick (4 questions)
 mission_class: build
 executor_tier: opus
 token_budget_estimated: "~200–300 kT across 2 sessions: zero-install path design+build + first-success definition + trust-cost copy + uninstall docs + TTFS instrument + clean-machine run (ADR-016)"
-token_budget_actual:
+token_budget_actual: "~55 kT for O0 (this session, shared with the P2.4 deploy)"
 created: 2026-08-16
 last_edited_by: agent_rosetta
+updated: 2026-08-19
 grounded_in: ["H3 confirmed (+ the engineer's refusal rationale)", "D3 scoring (provisional 3; no TTFS run; no first-success definition)", "machine_eye 12 (no copy-as-context)", "dossier (bun/astro install-forward patterns; MCP use-vs-build split)"]
 vitruvius_dimensions: [D3, D1]
 decade_theme: navigation
@@ -60,7 +61,40 @@ An evaluator can understand-and-decide without installing; an installer knows th
 
 ## Progress
 
-*(at execution)*
+### O0 ✅ — design authored, ⛩ halted at the pick (2026-08-19)
+
+Deliverable: [[design_zero_install_path]] (`artifacts/p2_5/design_zero_install_path.md`).
+
+- **Zero-install path**: three variants costed (A annotated real-file tour · B real recorded session ·
+  C animated replay). **Recommended: A now, B at O3, C not at all** — A and B answer *different*
+  objections, and B's honest form depends on O2's run, so sequencing them follows the mission's own
+  order instead of fighting it.
+- **"First success" defined observably** — five structural assertions the reader can run, plus the
+  behavioural half (a *new* agent session in the project greets you already holding its governance).
+  Both ship on the page; a success definition the user cannot check is an adjective.
+- **Cost statement drafted** for above the one-liner — answers the trust objection in place, and
+  retires two live contradictions: the *"any tool can support"* claim (it is a Claude Code convention)
+  and the absent uninstall path (`rm -rf ~/aDNA`; there is nothing else).
+- **TTFS kit sketched reusable** (owed to WebForge, A6): clock starts at the *entry URL*, not the first
+  command, because reading the page is where the refusal happened; prerequisite time recorded
+  separately; an empty friction log is reported as **suspect, not excellent**.
+
+### 🔎 F-P2.5-1 — `/get-started/` renders invented terminal output as if real `[D]`
+
+The `$ claude` block depicts strings that exist **nowhere in the standard** — `.adna/` searched in
+full, zero hits; the only occurrence in the repository is the marketing page. It also depicts an
+onboarding interview that **does not fire on a fresh clone** (`skill_onboarding.md` gates on a forked
+project directory; a fresh workspace has none, so `skill_project_fork.md` runs instead).
+
+Registered **R-118** (`unsupported → to fix at O1`, S3). It decides the pick rather than sitting in a
+defect list: O0's option set includes "rendered example session," and the honest form of that option
+is precisely what this page is currently faking.
+
+### ⛩ Awaiting operator — 4 questions
+
+Variant pick · disposition of the invented transcript · cost-statement copy · first-success definition
+as O2's stop-condition. Recommendations in [[design_zero_install_path]] §7. **O1 does not start until
+the pick lands.**
 
 ## AAR (SO#5)
 
