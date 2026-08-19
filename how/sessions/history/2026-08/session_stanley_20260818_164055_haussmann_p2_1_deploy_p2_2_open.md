@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260818_164055_haussmann_p2_1_deploy_p2_2_open
 created: 2026-08-18
 updated: 2026-08-18
-status: active
+status: completed
 tier: 1
 agent: agent_rosetta
 operator: stanley
@@ -124,15 +124,22 @@ meant nothing was clobbered.
 result proven in production rather than asserted; doctrine §3.2 written (the follow-up that had no
 owner); P2.2 O0 (ADR-049) and O1 (comps + ranker) complete.
 
-**In progress.** P2.2 is `active`, halted at ⛩ DP5. O2/O3 are session 2 of 2.
+**⛩ DP5 RATIFIED in-session — Option A** (operator, 2026-08-18): consolidate to `/use-cases/`, nav 7,
+11 redirects, zero content rewritten. ADR-049 `accepted`; charter DP5 row + status board updated;
+next substantive DP is **DP6 at P2.6**. C deferred, not rejected, with P2.6 as the named revisit
+point. Pushed `b9d510a..19950c5`, gitleaks clean.
 
-**Next up.** ⛩ **DP5 — the ADR-049 IA-model pick (A or C).** Then O2 (implement: nav ≤7, the
-consolidation + 301s, duplicate-title elimination, F3's vacuous gate) and O3 (re-crawl, same-diff
-gate updates, T0 captures, AAR).
+**In progress.** P2.2 is `active` with the decision signed and **nothing implemented** — the site is
+unchanged. O2/O3 are session 2 of 2.
 
-**Blockers.** None technical. Three operator items: the DP5 pick · a fresh push GO (HEAD is 3 ahead;
-the earlier GO was consumed by the P2.1 pair) · whether an independent re-rank is wanted before DP5,
-given the declared builder-scored-own-work conflict.
+**Next up.** **P2.2 O2** — implement Option A: nav to 7 (Standard · Learn · Vaults · Network ·
+Commons · Use Cases · Community), fold `/adopters/*` into `/use-cases/*`, retire the 4 segment
+landings, rename `/compliance/` → `/provenance-audit/` (owed by ADR-048), eliminate the 4 duplicate
+titles, collapse the 4 copies of the audience link set, and fix F3's vacuously-passing gate. Then
+**O3** — re-crawl, same-diff gate updates, T0 captures, AAR.
+
+**Blockers.** None. Two open operator items, both non-blocking: the Venus memo ack (flagged, deferred
+to its own session by operator ruling) and the standing `VERCEL_TOKEN_ADNA` broker gap.
 
 **Files touched.** `site/scripts/deploy_log.txt` · `what/decisions/adr_051_*` (accepted) ·
 `what/decisions/adr_049_*` (options) · `what/doctrine/doctrine_visual_inspection.md` (§3.2) ·
@@ -143,16 +150,37 @@ this session file.
 ## Next Session Prompt
 
 You are Rosetta in `~/aDNA/aDNA.aDNA`. Operation HAUSSMANN is at **P2, mission P2.2 (IA
-consolidation), halted at ⛩ DP5** — the ADR-049 IA-model pick. P2.1 is fully shipped and live-proven
-(162/0 probe, ADR-051 accepted). Read `what/decisions/adr_049_ia_model_audience_disposition.md`,
-open `how/campaigns/campaign_haussmann/artifacts/p2_2/ia_comps.html` in a browser, and read
-`ranker_record.md` — noting that the ranker **declines to separate A from C** (4.03 vs 4.17) and
-that the comps were scored by the agent that built them, so the score is a `[D-syn]` pre-screen.
-Once the operator picks, stamp ADR-049's Ratification block and execute **O2** (nav ≤7, branch
-consolidation + 301s under ADR-051's live law, duplicate-title elimination, and fix
-`gate-7-interaction.spec.ts:68` which asserts against a route that has never existed) then **O3**
-(re-crawl, same-diff gate updates — `gate-13-nav-surfacing` is the primary blocker and its test name
-hardcodes "8-item desktop row" — T0 captures, AAR). Content is **re-homed, never deleted**. Two
-outstanding operator items: HEAD is unpushed (per-action GO), and an inbound Venus memo
-(`coord_2026_08_18_inbound_from_venus_invite_schema_so10_checkin.md`, `ack_required: true`) awaits a
-standard-side review of `adna.network.invite/v1` before Gangway Phase A's exit gate closes.
+consolidation), session 2 of 2**. **⛩ DP5 is already signed — ADR-049 accepted, Option A** — so the
+decision is settled and your job is to build it. Read
+`what/decisions/adr_049_ia_model_audience_disposition.md` (the §Ratification block carries the exact
+scope) and the mission's Progress section.
+
+**Execute O2**: nav to **7** — Standard · Learn · Vaults · Network · Commons · Use Cases · Community,
+with Reference+Glossary absorbed by Standard, Patterns+Guides by Learn, and "For you" dissolved (no
+`More` overflow — it currently holds Reference and Glossary, which is why the present nav fails).
+Fold the `/adopters/` hub + its 5 persona docs into their `/use-cases/` twin; retire the 4 segment
+landings; rename `/compliance/` → `/provenance-audit/` (**owed by ADR-048**, not optional). **11
+redirects total**, each one key in `site/astro.config.mjs:97` **without** a trailing slash —
+`inject_redirects.mjs` widens it at deploy and carries no list of its own. Eliminate the 4 duplicate
+`<title>` pairs, and **collapse the 4 copies of the audience link set** (`navigation.ts:280-287`,
+`data/home.ts:139-146`, `adopters/index.astro:16-36`, `Breadcrumb.astro:41-47`) plus the
+double-listing of personas at `navigation.ts:179-188` — an option that does not collapse these merely
+moves the duplication. Also fix **`gate-7-interaction.spec.ts:68`**, which asserts against
+`/adopters/solo-developer`, a route that has never existed and has been passing vacuously.
+
+**Same-diff (ADR-057) in the same commit.** `gate-13-nav-surfacing` is the primary blocker: its test
+*name* hardcodes "8-item desktop row", it asserts `.nav-desktop a[href="/commons"]` visible with
+exact text, a 1024px fit, the exact footer href set, and a triple-coupling of the "For you" group
+label / `/educators` href / breadcrumb. Then `gate-24-copy-craft` (11 hardcoded CardGrid routes — a
+branch merge fails it immediately), `gate-26-claim-register`, `audit-p1s3-sweep` (44 routes),
+`gate-4-a11y`, `gate-9-responsive`, `gate-30-url-canonical`. Note `Footer.astro:12-33` is **not**
+derived from `navigation.ts` — it needs its own edit.
+
+Then **O3**: re-crawl, T0 captures, AAR. `npx astro build` (never `npm run build`) + `npm run
+test:gates` green before committing; deploy is a separate ⛩ and needs its own GO, preceded by a
+fetch-and-diff of `site/scripts/deploy_log.txt`. Content is **re-homed, never deleted** (SO-6).
+
+**One non-blocking item deferred by operator ruling**: an inbound Venus memo
+(`who/coordination/coord_2026_08_18_inbound_from_venus_invite_schema_so10_checkin.md`,
+`ack_required: true`) awaits a standard-side review of `adna.network.invite/v1` before Gangway Phase
+A's exit gate closes — its own session, not this one.
