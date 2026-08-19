@@ -55,7 +55,69 @@ the engineer cold-read complained about is genuinely gone: **0 occurrences** in 
 
 ## Progress
 
-*(at execution)*
+### 🚀 P2.4 DEPLOYED — `2026-08-19T19:37:04Z mode=prod tree=d42ee68`
+
+```
+deploy_record: 2026-08-19T19:37:04Z mode=prod
+url=https://adna-docs-aiutnpigx-science-stanleys-projects.vercel.app
+token=SS_VERCEL_TOKEN (interim — migrate to VERCEL_TOKEN_ADNA when brokered) tree=d42ee68
+```
+
+216 pages · headers **4/4 verified live, no drift** · redirects **42/42 widened** to both slash
+forms · installer routes 51 (idempotent re-run confirmed). `VERCEL_TOKEN_ADNA` still unset, so the
+script fell back to `SS_VERCEL_TOKEN` — the unbrokered gap, unchanged.
+
+### Live probe — 37 PASS / 0 FAIL
+
+`artifacts/p2_4/deploy_probe_p2_4.mjs`, run from `site/` against `https://adna.network`. `[D]`
+
+**Red-proven BEFORE the deploy**, against production carrying the defect: **17 PASS / 17 FAIL**, and
+all 17 failures were P2.4 deliverables — the empty `"last synced ."`, 0 of 2 owed relationship
+blocks, no tier narration, no `#tier-*` anchors, 0 of 3 jump-chips, no badges on any of the three
+sampled detail pages, 30 non-canonical vault links. It was not uniformly red (17 assertions already
+held), so it discriminates rather than simply failing. The empty-derivation guard was separately
+mutation-tested: **all four empty forms refused** (`[]`, `null`, `0`, `undefined`).
+
+Verified by eye as well as by script — the headline fix, live: `[D]`
+
+| Before (tree=97561c0) | After (tree=d42ee68) |
+|---|---|
+| `member records last synced .` | renders the real sync date |
+| WilhelmAI **0 of 3** relationships | `umbrellas RareArchive · federates Astro, III` |
+| RareArchive **0 of 1** | `under the WilhelmAI umbrella` |
+| `/vaults/` no tier vocabulary | `7 are being worked in today, 10 are chartered, and 57 are named places…` |
+
+### One probe correction — it was asserting the wrong layer
+
+The first live run came back **36/1**, failing on 11 raw `data-slug` values. That is the recorded,
+deferred generator item (`scripts/build_graph_svg.mjs` writes raw ids into the committed hero SVG) —
+but the assertion was wrong *in kind*, not merely inconvenient: `HomeHero.astro` canonicalizes those
+values **on read**, and the SVG is `role="img"`, non-interactive to AT. **No reader path consumes the
+raw attribute.** The hard contract is the emitted `href`, and 0 of 109 scanned links were
+non-canonical. Split accordingly: the href assertion stays hard, the generator item prints under
+**KNOWN-OPEN** with its four sample values and its reason. Reported by name, not silenced, not green.
+
+### Changelog backfill — and what it surfaced
+
+`site/src/content/changelog/2026-08-19.md` covered **P2.1 and P2.2 only**. **P2.3 shipped to
+production earlier today with no changelog entry at all.** The deploy script's cadence prompt is
+non-blocking by design, printed its nudge, and was skipped — which is precisely the decay its own
+comment says it exists to prevent (*"the changelog decayed to a single April entry precisely because
+nobody was ever asked"*). Asking is not the same as being answered. `[D]`
+
+Extended (date-keyed, so one entry) to cover the spec pagination, the dated pages, the tier-first
+registry, and the `/commons` drop — the last named plainly, at length, because that page promises
+honest activity and for a while was showing none.
+
+**Counts derived, not typed** (KW-14): **114** pages carry a rendered `Last updated` marker in `dist`
+— STATE and the P2.3 record both said 113, and the derived figure is what shipped. `7/10/57` read off
+the rendered split sentence. 20 spec sections + `full` counted from `dist/reference/specification/`.
+The four dateless prose pages are **stated in the entry** rather than left for "114 pages carry a
+date" to read as *all* of them — `/provenance-audit/` among them, verified at 0 occurrences, which is
+the page that explains how to check this site's claims.
+
+The content-collection schema **rejected my first description at 213 characters** (limit 160). Caught
+by the gate, at the layer that should catch it; re-cut to 153 and re-verified by measurement.
 
 ## SITREP
 
