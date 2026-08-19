@@ -54,7 +54,7 @@ tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, a
 │                       🟡 P0.4 flux-recon (awaits Aspasia ack — her lane)    │
 │    P1 credibility ✅  ✅ 1.1 claim-purge   ✅ 1.2 state-of-network          │
 │      (Decade 1) 4/4   ✅ 1.3 registry-truth(DP4) ✅ 1.4 mobile-S1s          │
-│    P2 structure 🟢    ✔ 2.1 urls  ▸ 2.2 ia(DP5✔)  ▫ 2.3 docs-freshness     │
+│    P2 structure 🟢    ✔ 2.1 urls  ✔ 2.2 ia(DP5✔)  ✔ 2.3 docs-freshness     │
 │      (Decade 1) OPEN  ▫ 2.4 registry  ▫ 2.5 onboarding  ▫ 2.6 re-score⛩DP6  │
 │                          ↑ ⛩ P1→P2 GATE SIGNED 2026-08-18 (D6/D7 deferred)  │
 │    P3 agentic+community  ▫ md-twins ▫ registry-json ▫ mcp-server            │
@@ -147,7 +147,7 @@ lifted and the sole-sanctioned path in force.
 | **Decision** | Open P2. The P1 exit gate is accepted at **3 of 4 conditions met**, with the fourth — the D6/D7 re-score — **deferred to P2.6**, where the instrument's own cadence puts a full dimension re-score. The deferral is accepted as a deferral; it is **not** recorded as satisfied. |
 | **Ratified by** | stanley (operator / FA), in-chat `AskUserQuestion` |
 | **Date** | 2026-08-18 |
-| **Status** | **accepted** — P2 open. P2.1 ✅ shipped + live-proven 2026-08-18 (162/0 probe; ADR-051 accepted). **P2.2 ✅ COMPLETE 2026-08-18** — DP5 ratified (Option A) and implemented same-day: nav 7, 11 redirects, 0 duplicate titles, 446/446 gates; **built + gated, awaiting a deploy ⛩**. Next mission = **P2.3**; next substantive DP = **DP6 at P2.6**. |
+| **Status** | **accepted** — P2 open. P2.1 ✅ shipped + live-proven 2026-08-18 (162/0 probe; ADR-051 accepted). **P2.2 ✅ SHIPPED 2026-08-19T04:24Z** (`tree=301daef`) — DP5's Option A is live on adna.network: nav 7, 11 redirects proven in both slash forms, `/provenance-audit/` 200 where it was 404; deploy probe **121/0**. **P2.3 ✅ COMPLETE 2026-08-18** — zero internal 404s + a blocking link gate, spec paginated to a hub + 20 sections + full text (default URL 74,067 → 2,244 px), 113 pages carry a date and an edit link, changelog 1 → 4 entries with RSS, F11 fixed; suite **446 → 460**, axe 0. **Built + gated, NOT deployed** — a deploy ⛩ is per-action. Also closed a two-day CI outage nobody had noticed (gate-30 asserted a deploy-only injection step CI never ran). Next mission = **P2.4**; next substantive DP = **DP6 at P2.6**. |
 
 > The honest reading, kept here so a later reader does not mistake the signature for a clean sweep:
 > P1 closed 4/4 on *missions*, not 4/4 on *exit conditions*. The last hostile pass still found two
