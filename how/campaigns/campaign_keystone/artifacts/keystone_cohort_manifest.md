@@ -2,7 +2,7 @@
 type: artifact
 artifact_class: cohort_manifest
 created: 2026-06-22
-updated: 2026-08-19   # roster re-verified against every vault's HEAD on disk (all 10 rows were stale); DP-16 authored, awaiting operator ratification
+updated: 2026-08-19   # DP-16 RULED (operator) — shape A conditioned: Inference splits, control-plane for serving lanes + a declared §8 row for human chat surfaces. Prior same-day: roster re-verified against every vault's HEAD on disk (all 10 rows were stale)
 status: active
 campaign_id: campaign_keystone
 campaign_phase: 4
@@ -47,7 +47,7 @@ All ten were seeded as **genesis-planning stubs** (no install / deploy / service
 | 4 | Object store (MinIO/AIStor) | `Store.aDNA` | Plutus | `f66fb72` | data-bearing (§8) | lean stub | 27 | genesis stub |
 | 5 | Groupware (Stalwart JMAP) | `Groupware.aDNA` | Pheme | `d6bf3a8` | data-bearing (§8) | lean stub | 29 | genesis stub |
 | 6 | Container runtime (**dual-runtime by node class** ‡) | `Container.aDNA` | Pandora | `80e29f7` | control-plane | lean stub | 139 | **P0–P4 CLOSED; five-verb design set complete; P5 open-partial (blocked on D-9 registry)** |
-| 7 | Inference (llama.cpp/MLX/vLLM/Ollama) | `Inference.aDNA` | Pythia | `22b1bd2` | control-plane — **⛩ DP-16 open**, see §DP-16 | lean stub | 165 | substantially built out; classification under review |
+| 7 | Inference (llama.cpp/MLX/vLLM/Ollama) | `Inference.aDNA` | Pythia | `22b1bd2` | **split by ⛩ DP-16 (ruled)** — control-plane for the serving lanes; human chat surfaces are data-bearing (§8). See §DP-16 | lean stub | 165 | substantially built out; classification **ruled** 2026-08-19 (split) |
 | 8 | API surface (FastAPI) | `FastAPI.aDNA` | Atalanta | `4833507` | control-plane | lean stub | 27 | genesis stub |
 
 ### §B — Overlap (seam-gated; seeded P3, 2026-06-22, only after seams ratified)
@@ -90,17 +90,36 @@ Eight graphs are lean 15-file `template_software_graph_stub` forks. **`Caddy.aDN
 
 Every **data-bearing** graph carries the control-plane-vs-data-plane discipline: the software runs on a **data-plane node the lighthouse coordinates, never the control-plane lighthouse host**, with placement / storage backing / ingress co-designed with **Venus (`Network.aDNA`)**.
 
-- **Data-bearing → §8 (6):** Nextcloud · Caddy · Bitwarden · Store · Groupware · Forgejo.
-- **Control-plane (4):** Container · Inference\* · FastAPI · Nebula.
+- **Data-bearing → §8 (7):** Nextcloud · Caddy · Bitwarden · Store · Groupware · Forgejo ·
+  **`Inference` — human chat surfaces only** (see the split row below).
+- **Control-plane (4):** Container · **`Inference` — serving lanes only** · FastAPI · Nebula.
 
-\* **`Inference` carries an open classification question — ⛩ DP-16, below. Do not read this line as
-"nothing in these four persists" until it is ruled.**
+**`Inference.aDNA` is split, by ruling (⛩ DP-16, operator 2026-08-19 — shape A conditioned).** The
+split is stated here in both columns rather than left to a footnote, because that is the whole
+condition of the ruling:
 
-## §DP-16 — Inference's classification, with a live instance attached (⛩ AWAITING OPERATOR RULING)
+| Lane | Class | Discipline |
+|---|---|---|
+| **Serving lanes** — a prompt is processed and forgotten (llama.cpp / MLX / vLLM / Ollama inference endpoints) | **control-plane** | ADR-000 §3 applies, narrowed to these lanes |
+| **Human chat surfaces** — a transcript is kept (the OpenWebUI instance and any successor) | **data-bearing → §8** | Full ADR-016 §8: data-plane placement, storage backing, and ingress co-designed with **Venus** like any other §8 member |
 
-**Status: authored, NOT ratified.** Agents author, operators ratify (§7.7). The split above is
-**unchanged** pending the signature; this section states the question and a recommendation, and
-changes nothing.
+**Why the row exists rather than an understanding.** An OpenWebUI instance persisted prompt and
+response payloads on this node from **2026-04-10**, for four months, on a node whose ports register
+listed `:3000` as an unidentified squatter — inside a graph whose manifest label said
+control-plane. *The label is the reason nobody went looking.* Adopting shape A without writing the
+data-bearing lane down as its own row would leave exactly the condition that produced those four
+months in place, with the added disadvantage of now being deliberate.
+
+## §DP-16 — Inference's classification, with a live instance attached (✅ RULED 2026-08-19 — shape A, conditioned)
+
+**Status: RULED — operator, 2026-08-19, shape A conditioned.** Agents author, operators ratify
+(§7.7); this section was authored on 2026-08-19 and signed the same day. **The split section above
+now carries the ruling**: `Inference` appears in both columns, control-plane for its serving lanes
+and data-bearing/§8 for its human chat surfaces, with the reason written beside it.
+
+The question, the evidence, and the option set are left below **as they were put to the operator** —
+an argument rewritten to agree with its own outcome is no longer an argument. See §Ratification for
+what the signature covers.
 
 ### The collision
 
@@ -152,9 +171,12 @@ co-design she has not been asked for yet.
 
 ### Ratification
 
-- **Decision:** _pending_ · **Ratified-by:** _pending — Stanley (operator)_ · **Date:** _pending_ ·
-  **Status:** **proposed**. Raised by Pythia (`Inference.aDNA`), 2026-08-07 + 2026-08-18; authored
-  here 2026-08-19. Reply staged at
+- **Decision:** **shape A, conditioned** — `Inference.aDNA` stays **control-plane for its serving
+  lanes**, stated in those words, **and its human chat surfaces become a declared data-bearing/§8
+  row** in the split section above, with placement and storage backing co-designed with Venus like
+  any other §8 member · **Ratified-by:** Stanley (operator) · **Date:** 2026-08-19 (in-chat, at the
+  P2.4 session gate) · **Status:** **ruled**. Raised by Pythia (`Inference.aDNA`), 2026-08-07 +
+  2026-08-18; authored here 2026-08-19, ruled same day. Reply delivered at
   [[who/coordination/coord_2026_08_19_rosetta_to_pythia_dp16_ruling|coord_2026_08_19_rosetta_to_pythia_dp16_ruling]].
 
 ## Seam summary (overlap graphs)

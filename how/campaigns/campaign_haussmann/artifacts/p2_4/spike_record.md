@@ -13,9 +13,11 @@ tags: [haussmann, p2_4, registry, tiers, spike, scale, ranker]
 
 # P2.4 O1 — registry spike, the 10× test, and the finding that changes the question
 
-> **⛩ HALTS HERE for the operator pick.** Three variants built over the real registry, headless-
-> verified, measured at 10×. One structural finding below means the pick is now **two decisions, not
-> one**.
+> **⛩ RULED 2026-08-19 — variant A, and the 740 mechanism deferred.** See §⛩ RULED near the foot of
+> this file for what was decided and why. The record below is left exactly as it stood *before* the
+> ruling: three variants built over the real registry, headless-verified, measured at 10×, with the
+> structural finding that turned the pick into **two decisions, not one**. A spike record that gets
+> rewritten to agree with the decision it informed stops being evidence.
 
 ## What was built
 
@@ -101,6 +103,29 @@ worse in C's layout than in A's, where the groups are visually equal and only th
 or **explicitly defer**, on the grounds that 74 is the real number and 740 is a stress test that
 found a real limit but not a present problem. **Deferring is a legitimate answer** and would be
 recorded as such — the criterion stays unmet either way, and unmet-and-known beats met-on-paper.
+
+## ⛩ RULED — operator, 2026-08-19 (in-chat, at the session that opened P2.4 O2)
+
+Both decisions were put and both were answered.
+
+**Decision 1 — grouping: `A` (tier-first).** The pre-screen tied A and C at 3.88 and neither cleared
+4.0, so this was judgment, not a score. The reasoning on the record: A is the variant whose layout
+makes no claim the data cannot support. C's density gradient — full cards for 7, a table for 57 —
+reads as a *ranking*, and the thing it ranks by is self-declared (§tiers.2); a hostile reader asking
+"who decided these seven matter?" gets the honest answer "they did," which lands worse in C's layout
+than in A's, where the groups are visually equal and only the labels differ. On a site whose whole
+thesis is that claims move down to verifiability, that is the deciding difference. B was not in
+contention on the merits — it scores 2.5 on "what is load-bearing here?" because it leaves the seven
+in-use vaults scattered across fourteen class groups, which is the exact problem the mission exists
+to fix.
+
+**Decision 2 — the 740 mechanism: explicitly defer.** `scales at 10×` is recorded **UNMET**. The
+three candidate mechanisms (pagination · default-collapsed planned tier · virtualization) are named
+in **ADR-052 §tiers.7** with their trade-offs and a revisit trigger (~150 rows, or P3.2, whichever
+is first), so the option set is inherited rather than rediscovered. Nothing is built for it here.
+
+**Not put to this gate**: §tiers.6 (77-vs-74). It is an admission ruling needing Hestia's data pass,
+and staging it as a memo ask rather than forcing it at a design gate was the right call.
 
 ## Artifacts
 

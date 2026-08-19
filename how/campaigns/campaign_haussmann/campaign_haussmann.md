@@ -22,7 +22,7 @@ governing_instrument: directives/OPERATION_VITRUVIUS_review_instrument.md   # D1
 baseline_score: "51.6/100 (2026-08-16, two-reviewer reconciled; MCP ≈83, Mastra ≈65)"
 evidence_pack: [d58ea13, df3827c]
 created: 2026-08-16
-updated: 2026-08-19   # P2.3 SHIPPED live (tree=97561c0, probe 124/0); P2.4 O0+O1 done and ⛩ HALTED at the operator pick (grouping A/B/C AND the 740 mechanism — none of the three variants scales). Prior: ⛩ DP5 RATIFIED (Option A — consolidate to /use-cases/); P2.1 shipped + live-proven (162/0). Next DP = DP6 at P2.6. Prior same-day: P1→P2 gate signed.
+updated: 2026-08-19   # ⛩ FOUR RULINGS: variant A (tier-first) · 740 mechanism DEFERRED (10× recorded UNMET) · DP-16 shape-A-conditioned · outward-acts GO. P2.4 COMPLETE O0–O3, suite 460→472 zero xfail, 13→0 non-canonical vault links (one was hiding a live silent drop on /commons); ADR-052 accepted. UNDEPLOYED. Next DP = DP6 at P2.6.
 last_edited_by: agent_rosetta
 tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, agentic]
 ---
@@ -54,8 +54,8 @@ tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, a
 │                       🟡 P0.4 flux-recon (awaits Aspasia ack — her lane)    │
 │    P1 credibility ✅  ✅ 1.1 claim-purge   ✅ 1.2 state-of-network          │
 │      (Decade 1) 4/4   ✅ 1.3 registry-truth(DP4) ✅ 1.4 mobile-S1s          │
-│    P2 structure 🟢    ✔ 2.1 urls  ✔ 2.2 ia(DP5✔)  ✔ 2.3 docs-freshness↑    │
-│      (Decade 1) OPEN  ◐ 2.4 registry ⛩PICK  ▫ 2.5 onboard  ▫ 2.6 ⛩DP6      │
+│    P2 structure 🟢    ✔ 2.1 urls  ✔ 2.2 ia(DP5✔)  ✔ 2.3 docs-freshness      │
+│      (Decade 1) OPEN  ✔ 2.4 registry↑       ▫ 2.5 onboard  ▫ 2.6 ⛩DP6      │
 │                          ↑ ⛩ P1→P2 GATE SIGNED 2026-08-18 (D6/D7 deferred)  │
 │    P3 agentic+community  ▫ md-twins ▫ registry-json ▫ mcp-server            │
 │      (Decade 2·prov.)    ▫ flux(⛩DP7) ▫ proposals            [gated: DP6]   │
@@ -64,7 +64,7 @@ tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, a
 │    P5 launch          ▫ human-evidence ▫ re-score+capstone ⛩DP9 [gated:DP6] │
 │                                                                              │
 │  PLAN     phase P2/6 OPEN · 37–50 sessions (derived) · fable default ·      │
-│           prod HARDENED (4/4 headers) · suite 444 zero xf · 0 FALSE claims  │
+│           prod HARDENED (4/4 headers) · suite 472 zero xf · 0 FALSE claims  │
 ├──────────────────────────────────────────────────────────────────────────────┤
 │  GATES    phase gates are human gates · next: ⛩ DP6 at 2.6 (re-plan)      │
 │           arc AAR: artifacts/aar_p0_wave.md (this splash augments, never    │
@@ -219,7 +219,8 @@ shipped the /community link ahead of ADR-054's prerequisites**), `VERCEL_TOKEN_A
 | DP3 | P0.2 | ADR-050 deploy path (git-integration vs wrapped-manual vs hybrid) | **✅ RATIFIED (c) — operator, 2026-08-16** · `deploy_adna.sh` is the sole sanctioned path; deploy freeze lifted |
 | DP4 | P1.3 | ADR-052 §admission — confidential-adjacent vaults in the public registry (aiLP-Dataroom, CakeHealth, PercySleep) | **✅ RULED — operator, 2026-08-16** · minimal-card ×3, suppression at the generator |
 | DP5 | P2.2 | ADR-049 IA model (audience-branch disposition) | ✅ **RATIFIED — operator, 2026-08-18: Option A** (consolidate to `/use-cases/`; nav 7; 11 redirects). Both comps cleared ranker ≥4.0 and the instrument **declined to separate them** (A 4.03 · C 4.17), so the call was judgment: A is reversible and P2.6 is the named revisit point for C. **✅ IMPLEMENTED same-day at O2/O3** — 446/446 gates, 0 duplicate titles, 10/10 ≤2-click held; **undeployed** (separate ⛩). One correction on the record: the ADR's "zero content rewritten" was wrong on the facts — the retiring pages carried 13 unique ontology rows + ~1,690w of curated reading paths, all **folded into their destination before retiring** (ADR-049 §Status implementation note). |
-| **DP-16** | P2.4 (out-of-band) | **Inference's control-plane classification**, with a live persisting surface attached (raised by Pythia 2026-08-07 + 08-18) | ⛩ **AUTHORED, AWAITING RATIFICATION** — recommendation **shape A conditioned**: narrow ADR-000 §3 to the serving lanes *and* make the human surface a **declared §8 row**, not a footnote. Detail + options: `how/campaigns/campaign_keystone/artifacts/keystone_cohort_manifest.md` §DP-16 |
+| **DP-16** | P2.4 (out-of-band) | **Inference's control-plane classification**, with a live persisting surface attached (raised by Pythia 2026-08-07 + 08-18) | ✅ **RATIFIED — operator, 2026-08-19: shape A, conditioned.** Inference stays control-plane **for its serving lanes**, the manifest says so in those words, **and the human surface gets a declared §8 data-bearing row** — not a footnote. The condition is the load-bearing part: that instance ran four months unregistered *because* the graph's label said there was nothing to register, so adopting A without the declared row would leave the producing condition in place and now deliberately. Recorded at `how/campaigns/campaign_keystone/artifacts/keystone_cohort_manifest.md` §DP-16 |
+| **DP-P2.4** | P2.4 O1 | Registry grouping (A tier-first / B class-first / C density) **and** the 740-scale mechanism — split into two by O1's own finding that no variant scales | ✅ **RULED — operator, 2026-08-19: (1) variant A** (tier-first: in use 7 · chartered 10 · planned 57) **and (2) explicitly defer the 740 mechanism**. The self-scored pre-screen tied A and C at 3.88 with neither clearing 4.0, so the grouping call was judgment: A's groups are visually equal and only the labels differ, so its layout claims nothing the self-declared data cannot support — where C's density gradient reads as a ranking. `scales at 10×` is recorded **UNMET** with the arithmetic as the reason; the three candidate mechanisms are named in **ADR-052 §tiers.7** with a revisit trigger. **ADR-052 ratified `accepted` at the same gate**; §tiers.6 (77-vs-74) deliberately not put, and stays *stated, not decided* |
 | **P2.4 pick** | P2.4 O1 | Registry **grouping** (A tier-first / B class-first / C density) **and — separately — the 740 mechanism** (pagination / default-collapsed planned tier / virtualization / explicit defer) | ⛩ **AWAITING** — the 10× test found **none of the three variants scales** (all ~19,000 px at 740; C beats A by 5%), so the two questions came apart. Synthetic pre-screen is `[D-syn]`, conflict declared, and **declines to separate A and C**. Record: `artifacts/p2_4/spike_record.md` |
 | DP6 | P2.6 | Decade-2 recalibration + re-plan ratification | pending (recurring shape) |
 | DP7 | P3.4 | ADR-054 community-link GO/NO-GO on verified prerequisites | ⚠ **FIRED EARLY by operator override at P1.1 (2026-08-17)** — the /community link shipped with PR-1/2/3 unmet; deviation recorded in ADR-054 §Status, honest-state framing shipped and guarded by R-95/R-96. The DP itself is **still owed** on the verified prerequisites at P3.4 |

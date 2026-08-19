@@ -2,9 +2,9 @@
 type: adr
 adr_number: "052"
 title: "Registry admission standard, lifecycle tiers, and the public-projection policy"
-status: proposed
+status: accepted
 created: 2026-08-16
-updated: 2026-08-19   # §tiers completed at P2.4 O0 — 3 tiers from status alone; card_present disqualified as a lifecycle input; dual clock recorded NOT derivable
+updated: 2026-08-19   # ACCEPTED at the P2.4 ⛩ (operator): §tiers ratified (3 tiers from status alone) + §tiers.7 added (10× criterion deferred, recorded UNMET). §tiers.6 (77-vs-74) stays stated-not-decided — Hestia's B7 lane
 last_edited_by: agent_rosetta
 campaign_id: campaign_haussmann
 supersedes: ""
@@ -16,8 +16,14 @@ tags: [adr, haussmann, registry, tiers, d2, d7]
 
 ## Status
 
-**Proposed** — space fixed at genesis; **§admission RULED at DP4** (below, operator 2026-08-16); the tier
-model completes at P2.4, where the full ADR ratifies.
+**Accepted** — ratified at the **P2.4 ⛩ operator pick, 2026-08-19**. §admission was ruled earlier at
+**DP4** (below, operator 2026-08-16); **§tiers** and **§tiers.7** ratify here. See §Ratification for
+what each signature covers.
+
+**One item inside this ADR is deliberately still open**: **§tiers.6 — the 77-vs-74 registry
+admission question**. It is *stated, not decided*, because it is a DP4-class admission ruling that
+needs Hestia's B7 data pass, not a consequence of a tier redesign. An accepted ADR carrying a named
+open question is the honest shape here; burying it to make the document look finished is not.
 
 ## §admission — DP4 ruling (operator, 2026-08-16, P1-wave session)
 
@@ -183,6 +189,43 @@ side effect of a tier redesign.** This ADR does not decide it, and P2.4 does not
 (pt19, absolute). Staged as a memo ask; the registry count stays a true, unregenerated **74**
 until ruled.
 
+## §tiers.7 — The 10× criterion is UNMET, and the mechanism that would meet it is named
+
+P2.4 O1 built three grouping variants over the real registry and measured all three at a synthetic
+740 rows. **All three converge on ~19,000 px and ~5,900 DOM nodes**; variant C, designed to be the
+one that scales, came in **5% under A** — noise, not an architecture.
+
+| Variant | 74 rows | 740 rows |
+|---|---|---|
+| A tier-first | 2,279 px · 610 nodes | **18,896 px** · 5,938 |
+| B class-first | 3,697 px · 651 nodes | **19,327 px** · 5,979 |
+| C density | 2,172 px · 589 nodes | **17,974 px** · 5,665 |
+
+The reason is arithmetic and it applies to every grouping: at 10× the planned tier holds ~570 rows,
+and 570 dense table rows at ~30 px is ~17,000 px on its own. **Density reduces the cost per row; it
+does nothing about the number of rows.** No choice among A/B/C meets the criterion, so choosing
+differently was never the answer.
+
+**⛩ Operator ruling (2026-08-19): explicitly defer.** The criterion *"the browse experience at 740
+synthetic rows"* is recorded **UNMET**, not quietly satisfied because the page rendered without
+falling over. The grounds for deferring: **74 is the real number**, and at 74 all three variants sit
+between 2.2k and 3.7k px, which is a normal page. 740 is a stress test that found a real limit but
+not a present problem — and unmet-and-known beats met-on-paper.
+
+**The mechanisms that would meet it**, recorded here so a later mission inherits the option set
+rather than rediscovering it. Each is orthogonal to the grouping choice, which is precisely why this
+was a second decision and not a property of A/B/C:
+
+1. **Pagination** of the planned tier — simplest, and the only one that also bounds DOM node count.
+2. **Default-collapsed planned tier** — cheapest, and helps at 74 as well as 740; the cost is that
+   57 of 74 rows sit one click away, so the group header must state the count for it to read as
+   disclosure rather than concealment.
+3. **Virtualization** — highest ceiling, highest complexity, and it puts a JS dependency under a
+   surface whose no-JS fallback is currently load-bearing.
+
+**Revisit trigger**: whichever comes first — the registry passing ~150 rows, or **P3.2** (the
+registry JSON endpoint), which changes the consumption model anyway.
+
 ## Consequences
 
 The registry becomes an honest instrument that scales; H4/H13/N8 close structurally. **Two
@@ -197,6 +240,19 @@ which is what unblocks the dual clock.
 
 - **§admission** · **Decision:** minimal-card ×3, suppression at the generator · **Ratified-by:**
   Stanley (operator) · **Date:** 2026-08-16 (DP4, P1.3 O3 gate) · **Status:** **ruled**.
-- **§tiers** · **Decision:** _pending_ · **Ratified-by:** _pending — Stanley (operator)_ ·
-  **Date:** _pending_ · **Status:** **proposed** — authored at P2.4 O0, 2026-08-19; ratifies at the
-  P2.4 ⛩ operator pick alongside the O1 spike.
+- **§tiers** · **Decision:** three tiers from `status` alone — **in use (7) · chartered (10) ·
+  planned (57)**; `card_present` disqualified as a lifecycle input and rendered as a separate
+  *documented* completeness signal; the dual clock recorded **not derivable**; "self-declared"
+  ships plainly on the index · **Ratified-by:** Stanley (operator) · **Date:** 2026-08-19 (the P2.4
+  ⛩ pick, in-chat) · **Status:** **accepted**.
+- **§tiers.7** · **Decision:** the 10× criterion is **deferred** and recorded **UNMET**; the three
+  candidate mechanisms are named, none is built · **Ratified-by:** Stanley (operator) ·
+  **Date:** 2026-08-19 (the same ⛩) · **Status:** **accepted**.
+
+> **What the signature covers.** The operator was asked two questions at this gate and answered
+> both: the grouping (**variant A — tier-first**) and the 740 mechanism (**defer**). Choosing A
+> adopts the three-tier vocabulary this section defines, because A *is* that vocabulary rendered —
+> which is what the pre-ruling text above anticipated when it said §tiers "ratifies at the P2.4 ⛩
+> operator pick alongside the O1 spike." **§tiers.6 (77-vs-74) was deliberately not put to the
+> gate** and remains *stated, not decided*: it needs Hestia's B7 data pass, and the memo asking for
+> it went out under the same session's delivery GO.
