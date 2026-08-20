@@ -1,5 +1,11 @@
+# P4.5a live probe — POST-DEPLOY run against production
 
-HAUSSMANN P4.5a live probe → http://localhost:4400
+Run: 2026-08-20T20:06:22Z, after deploy_record 2026-08-20T20:05:44Z mode=prod tree=bb00464.
+Pre-deploy the same script returned 12 PASS / 14 FAIL (probe_predeploy_red.md). The delta is the mission.
+
+```
+
+HAUSSMANN P4.5a live probe → https://adna.network
 ================================================================
 
 Derived 4 HomeHero routes: /, /network/, /commons/, /vaults/
@@ -46,3 +52,4 @@ KNOWN-OPEN — stated, not silently passed
 ================================================================
 26 PASS / 0 FAIL   (3 known-open, printed above)
 
+```
