@@ -1,0 +1,211 @@
+---
+/**
+ * The AEP archive (HAUSSMANN P3.5 O1; ADR-055 §7, ratified 2026-08-20).
+ *
+ * Tables-first, per the anatomy shared by all four process-primary exemplars in the reference
+ * corpus (PEPs, TC39, EIPs, W3C Process) — the table IS the page, not a summary above prose.
+ *
+ * EVERY COUNT ON THIS PAGE IS DERIVED FROM THE COLLECTION (campaign convention 1 / WebForge
+ * KW-14). Nothing here is typed. That is not decoration: ADR-055 §8's honest-youth posture is
+ * only credible if the occupancy figures cannot be flattered, and a typed count is exactly the
+ * defect this campaign exists to end.
+ */
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import Callout from '../../../components/sections/Callout.astro';
+import { getSortedProposals, STATE_MACHINE, statusCounts } from '../../../utils/proposals';
+import { buildCollectionPageJsonLD } from '../../../utils/seo';
+
+const proposals = await getSortedProposals();
+const counts = statusCounts(proposals);
+const total = proposals.length;
+
+// The lowest unassigned number — derived, so the sentence about occupancy cannot drift.
+const nextNumber = total === 0 ? 1 : Math.max(...proposals.map((p) => p.data.number)) + 1;
+
+const jsonLD = buildCollectionPageJsonLD({
+  title: 'aDNA Enhancement Proposals',
+  description: 'The numbered public record of proposed changes to the aDNA standard.',
+  url: Astro.url.href,
+});
+---
+
+<DocumentationLayout
+  title="Proposals"
+  description="The numbered public record of proposed changes to the aDNA standard — including the ones that were turned down."
+  jsonLD={jsonLD}
+>
+  <p>
+    Changes to the aDNA standard are proposed as numbered <strong>aDNA Enhancement Proposals</strong>.
+    The process is described by <a href="/community/proposals/aep-1/">AEP-1</a>, which is itself a
+    proposal, filed through the process it describes.
+  </p>
+
+  <p>
+    Numbers are permanent. A proposal that is rejected or withdrawn keeps its number and stays on this
+    page, so what the project turned down is as readable as what it adopted.
+  </p>
+
+  <h2 id="archive">The archive</h2>
+
+  {total === 0 ? (
+    <p>No proposals have been filed yet.</p>
+  ) : (
+    <div class="table-scroll">
+      <table class="aep-table">
+        <caption class="sr-only">All aDNA Enhancement Proposals, by number</caption>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Status</th>
+            <th scope="col">Author</th>
+            <th scope="col">Sponsor</th>
+          </tr>
+        </thead>
+        <tbody>
+          {proposals.map((p) => (
+            <tr>
+              <td class="aep-num">
+                <a href={`/community/proposals/aep-${p.data.number}/`}>AEP-{p.data.number}</a>
+              </td>
+              <td>
+                <a href={`/community/proposals/aep-${p.data.number}/`}>{p.data.proposal_title}</a>
+              </td>
+              <td>
+                <span class={`aep-status aep-status-${p.data.status}`}>{p.data.status}</span>
+              </td>
+              <td>{p.data.authors.join(', ')}</td>
+              <td>{p.data.sponsor ?? <span class="aep-none">none</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+
+  <h2 id="states">The states</h2>
+  <p>
+    Every proposal is in exactly one of eight states. Occupancy below is counted from the archive above,
+    not asserted — which is why most rows read zero.
+  </p>
+
+  <div class="table-scroll">
+    <table class="aep-table">
+      <caption class="sr-only">The eight proposal states, their meanings, and how many proposals are in each</caption>
+      <thead>
+        <tr>
+          <th scope="col">State</th>
+          <th scope="col">Meaning</th>
+          <th scope="col">Terminal</th>
+          <th scope="col">Currently</th>
+        </tr>
+      </thead>
+      <tbody>
+        {STATE_MACHINE.map((s) => (
+          <tr>
+            <td><span class={`aep-status aep-status-${s.id}`}>{s.id}</span></td>
+            <td>{s.meaning}</td>
+            <td>{s.terminal ? 'yes' : 'no'}</td>
+            <td class="aep-count">{counts[s.id]}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    A terminal state is terminal for that number. A revived idea returns as a new proposal that names the
+    one it descends from; the old number keeps its old outcome.
+  </p>
+
+  <h2 id="file">How to file one</h2>
+  <p>
+    Open a change proposal on the
+    <a href="https://github.com/aDNA-Network/aDNA/issues/new?template=change_proposal.md" rel="noopener">aDNA repository</a>.
+    If the change is <em>normative</em> — if it alters what the standard requires of a conforming vault —
+    it becomes an AEP and is numbered here. If it does not, it stays an ordinary issue or pull request,
+    which is faster for everyone.
+  </p>
+  <p>
+    Agents may author proposals, and every proposal discloses whether one did. Only a human can ratify:
+    no proposal reaches <code>accepted</code> without a named person and a date. The
+    <a href="https://github.com/aDNA-Network/aDNA.aDNA/blob/main/CONTRIBUTING.md" rel="noopener">contribution guide</a>
+    covers the non-normative routes.
+  </p>
+
+  <Callout variant="info" title="The state of this process">
+    <p>
+      The process began on 20 August 2026. There {total === 1 ? 'is' : 'are'} <strong>{total}</strong>
+      {total === 1 ? ' proposal' : ' proposals'} on record and the next number to be assigned is
+      <strong>AEP-{nextNumber}</strong>. There is no published median review time here because none has
+      been measured yet; when there is enough history to compute one, it will appear.
+    </p>
+  </Callout>
+</DocumentationLayout>
+
+<style>
+  /* Tokens only — AA in both themes, no hardcoded colour (gate-25 token discipline). */
+  .table-scroll {
+    overflow-x: auto;
+    margin: 0 0 var(--space-6);
+  }
+
+  .aep-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+
+  .aep-table th,
+  .aep-table td {
+    text-align: left;
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+  }
+
+  .aep-table thead th {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+  }
+
+  .aep-num {
+    font-family: var(--font-mono);
+    white-space: nowrap;
+  }
+
+  .aep-count {
+    font-family: var(--font-mono);
+    text-align: right;
+  }
+
+  .aep-none {
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  /* Status is carried by the WORD, not by colour — the colour is a second channel only
+     (gate-18 categorical-colour discipline: never colour-alone). */
+  .aep-status {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    padding: 0.1em 0.5em;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    white-space: nowrap;
+  }
+
+  .aep-status-final,
+  .aep-status-accepted {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .aep-status-rejected,
+  .aep-status-withdrawn {
+    color: var(--color-text-muted);
+  }
+</style>

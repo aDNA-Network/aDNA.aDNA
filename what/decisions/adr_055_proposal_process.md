@@ -2,7 +2,7 @@
 type: adr
 adr_number: "055"
 title: "The aDNA proposal process: numbered, stated, archived, machine-indexed"
-status: proposed
+status: accepted   # ⛩ RATIFIED 2026-08-20 at P3.5 O0 (operator, in-session AskUserQuestion) — see the Ratification block
 created: 2026-08-16
 updated: 2026-08-20
 last_edited_by: agent_rosetta
@@ -16,9 +16,9 @@ tags: [adr, haussmann, proposals, governance, d8, d9]
 
 ## Status
 
-**Proposed** — anatomy fixed at genesis from exemplar evidence (2026-08-16); the constitution below authored
-at mission **P3.5** (2026-08-20) and ratified there. The genesis Context and Decision-space sections are
-preserved unedited; §§1–8 are the completion.
+**Accepted** — ⛩ ratified 2026-08-20 at mission **P3.5 O0**. Anatomy fixed at genesis from exemplar
+evidence (2026-08-16); the constitution below authored at P3.5 and ratified there. The genesis Context and
+Decision-space sections are preserved unedited; §§1–8 are the completion.
 
 ## Context
 
@@ -196,4 +196,18 @@ which is the point.
 
 ## Ratification
 
-- **Decision:** _pending P3.5 O0_ · **Ratified-by:** _pending — Stanley (operator)_ · **Date:** _pending_ · **Status:** **proposed**.
+- **Decision:** adopt the **AEP** process as specified in §§1–8 — immutable numbering, the 8-state machine,
+  the §4 conformance gate before `final`, disclosed agent authorship with human-only ratification, and the
+  `/community/proposals/` surface with its JSON index. **AEP-1 is the process itself** (the PEP-1 pattern
+  shared by all four process-primary exemplars), so the authorship policy is demonstrated on the first
+  item rather than asserted; the first *substantive* proposal is **AEP-2, the URL-casing law**. **⊳ D-J**
+  ruled in the same signature: fix the advertised door — CoC + a pointer-style root CONTRIBUTING in the
+  image repo, CTA unchanged, funnel surfaced on the site, both pushes GO-gated at the moment of firing.
+- **Ratified-by:** Stanley, Founding Architect (operator). · **Date:** 2026-08-20. · **Status:** **accepted**.
+
+> Ratified in-session via `AskUserQuestion` (`session_stanley_20260820_144905_haussmann_p3_5`), three
+> questions: ADR ratification · placement · first substantive proposal — all three taken as recommended.
+> The placement question was put because ADR-049's 7-item nav cap was the *reason* for the design, and a
+> constraint that shapes a decision should be ratifiable alongside it rather than inherited silently.
+> *(Authored by agent_rosetta; ratified by the operator — which is the policy this ADR establishes, applied
+> to the ADR that establishes it.)*
