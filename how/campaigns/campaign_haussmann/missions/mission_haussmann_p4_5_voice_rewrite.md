@@ -6,11 +6,11 @@ campaign: campaign_haussmann
 phase: P4
 decade: 2
 owner: stanley
-status: in_progress   # ⛩ DP6 RATIFIED 2026-08-19 — activated AND SPLIT by ⊳ D-A. P4.5a = the early copy increment (R-111 · R-120 · R-121 · R-125 [the ⊳ D-C hero cut, registered 2026-08-20]; R-124 DEFERRED OUT at execution per its own escape hatch), which runs FIRST IN DECADE 2, ahead of P3.5. P4.5b = the full voice rewrite, still LAST. One mission, two increments — mission_count stays 27. Set in_progress 2026-08-20 when P4.5a opened; it CANNOT reach `completed` until P4.5b also closes with its AAR (SO#5).
+status: in_progress   # ⛩ DP6 RATIFIED 2026-08-19 — activated AND SPLIT by ⊳ D-A. P4.5a = the early copy increment (R-111 · R-120 · R-121 · R-125 [the ⊳ D-C hero cut, registered 2026-08-20]; R-124 DEFERRED OUT at execution per its own escape hatch), which runs FIRST IN DECADE 2, ahead of P3.5. P4.5b = the full voice rewrite, still LAST. One mission, two increments — mission_count stays 27. P4.5a COMPLETE 2026-08-20 (6/6 acceptance criteria; shipped tree=bb00464, pushed a8cc707..e4f0d65). Set in_progress 2026-08-20 when P4.5a opened; it CANNOT reach `completed` until P4.5b also closes with its AAR (SO#5).
 mission_class: design_excellence
 executor_tier: fable
 token_budget_estimated: "~320–490 kT total across 3 sessions, SPLIT into two increments at ⛩ DP6 2026-08-19. P4.5a ~120–170 kT in 1 session: the copy rows (R-111 · R-120 · R-121 + the ⊳ D-C hero cut) each gate-anchored and red-proven per the same-diff law, PLUS two items the ratified figure could not know about — registering R-125 (the hero finding had no register row) and authoring this increment's own spec (P4.5a had none; the body below was 100% P4.5b). P4.5b ~200–320 kT across 2 sessions: voice guide + corpus rewrite passes (top surfaces first) + glossary-linking + reading-level gates + dual-audience reviews. REVISION HISTORY, so no figure is quoted forward blind: unsplit ~250–400 kT → split at DP6 to P4.5a ~70–110 + P4.5b ~200–320 = ~270–430 → P4.5a raised to ~120–170 at execution 2026-08-20 on discovered scope (ADR-016/SO#11: a budget that no longer matches its scope is a drifted number). The overrun against the ratified ~70–110 is STATED, not absorbed, and is reported estimate-vs-actual in the AAR."
-token_budget_actual:
+token_budget_actual: "P4.5a ≈195 kT (content load, rough per SO#11) — vs ~120–170 revised in-field and ~70–110 ratified at DP6. ~1.8× the ratified figure, inside SO#11's 2× retrospective trigger. The delta is O-A (registering R-125 + re-deriving the register) + O-B (authoring the spec that did not exist) + R-126, none of which the ratified figure covered. P4.5b unstarted."
 created: 2026-08-16
 updated: 2026-08-20
 last_edited_by: agent_rosetta
@@ -129,10 +129,61 @@ Every one of those is asserted by a gate that has been proven to fail without th
 
 ## Progress
 
-- **2026-08-20** — O-A ✅ (`615b2c8`): R-125 registered at S2, R-111 narrowed to one surface, R-124
-  deferred in writing, counts re-derived, three stale derived figures corrected. O-B ✅ (this section).
+**P4.5a COMPLETE 2026-08-20**, one session, commits `615b2c8 → e4f0d65`, **pushed** `a8cc707..e4f0d65`
+(gitleaks clean). **Deployed** `deploy_record: 2026-08-20T20:05:44Z mode=prod tree=bb00464` — 221 pages,
+headers **4/4 live, no drift**.
 
-## AAR (SO#5)
+| O | Result |
+|---|---|
+| O-A | ✅ `615b2c8` — R-125 registered (S2); R-111 **narrowed** to `/canonical-properties` alone; R-124 deferred in writing; counts re-derived; three stale derived figures corrected |
+| O-B | ✅ `2deedf0` — this spec, which did not exist; stale session-prompt index repaired |
+| O-C | ✅ `0c13f03` — four rows fixed |
+| O-D | ✅ `0c13f03` — suite **487 → 495** green zero xfail; axe **0** on 6 surfaces × both themes, 0 console errors; every new assertion **red-proven** by mutation; live probe **red-proven 12/14 pre-deploy** |
+| O-E | ✅ `bb00464` + `e4f0d65` — changelog written deliberately; **R-126 found and fixed**; deployed; live probe **26 PASS / 0 FAIL**; pushed |
+| O-F | ✅ this record |
+
+**Acceptance criteria: 6 of 6 met.** R-124's criterion was *"dispositioned in writing rather than fixed or
+dropped"* — met by deferral with reasoning (register §9.3), which is what the criterion asked for.
+
+## AAR — P4.5a increment (SO#5)
+
+> The **mission** AAR is still owed and lives below; P4.5 cannot reach `completed` until P4.5b closes.
+> This is the increment record.
+
+**Worked.** Re-probing every inherited row at execution instead of quoting it forward. It cost minutes and
+changed the mission twice: R-111 shrank from two surfaces to one, and R-124 left the scope entirely. The
+red-prove-before-deploy discipline also paid twice over — the pre-deploy probe was **12 PASS / 14 FAIL**,
+and the 12 passes are what make it an instrument rather than a thing that fails at everything.
+
+**Didn't.** The ratified budget (~70–110 kT) was wrong before the session began, because neither the
+missing spec nor the unregistered R-125 was known when it was set. Revising it in-field was right, but the
+deeper miss is that **DP6 ratified a budget for a mission whose spec nobody had checked existed** — the
+split was recorded in three places and implemented in none.
+
+**Finding.** *The same-diff law has a mirror nobody had written down: a gate can be coupled to the defect.*
+`gate-23` **required** the exact sentence ⊳ D-C ruled must be cut. The obvious repair — delete the failing
+test — would have silently removed its second half, the regression guard on **R-14**, a resolved FALSE
+claim. The gate had to be **inverted, not deleted**. Same-diff says *update the gate that hardcodes what
+you changed*; this adds: **check what else that gate was holding up.**
+
+**Change.** Two, both landed. Gate-23's hero assertion is now an absence check across all four HomeHero
+routes with the R-14 guard split into its own test, so neither can take the other down. And
+`session_prompts_haussmann.md` carries a standing warning that it is ordered by mission number and **not**
+by execution order — the index that told this session to run "deliberately last" was the second recurrence
+of *the index believed over the artifact*.
+
+**Follow-up.** (1) **R-124** needs an audience decision before any copy — operator to route. (2) **The
+vendored tour page publishes protocol material** the counsel embargo covers, through a pipeline no copy
+review sees by construction; not a copy fix, so routed rather than actioned (register §9.1). (3) **gate-26
+cannot express "a retired claim must stay gone"** for a row that was never FALSE — filed for P4.4. (4) The
+register's row-count **parse is undocumented**; two defensible readings differ by 2 rows — also P4.4.
+
+**Budget.** Estimated ~120–170 kT after in-field revision (ratified figure was ~70–110). Actual **≈195 kT**
+by content load — over the revised estimate by ~15%, over the ratified one by ~1.8×, which stays inside
+SO#11's 2× retrospective trigger. The overrun is O-A + O-B (register + spec) plus R-126, none of which the
+ratified number covered. Recorded, not absorbed.
+
+## AAR (SO#5) — the MISSION
 
 *(before the MISSION reaches `completed` — which requires P4.5b as well)*
 
