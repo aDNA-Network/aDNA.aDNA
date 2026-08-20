@@ -6,9 +6,9 @@ owner: stanley
 persona: rosetta
 status: active          # RATIFIED at Gate C 2026-08-16 (operator, via AskUserQuestion in the genesis session) — see the §7.7 block
 phase_count: 6          # P0–P5 on the decade backbone
-mission_count: 27       # 5+4+6+5+5+2; P0–P2 = Decade 1 (committed), P3–P5 = Decade 2 (provisional, recalibrated at P2.6)
+mission_count: 27       # 5+4+6+5+5+2; P0–P2 = Decade 1 (committed), P3–P5 = Decade 2 — RECALIBRATED + RATIFIED at ⛩ DP6 2026-08-19. Count HOLDS at 27: ⊳ D-A took option (ii), so P4.5 splits into two increments (P4.5a copy-rows first, P4.5b voice-rewrite last) and a split increment is not a new mission. Option (i) would have amended this field and was therefore explicitly the operator's to take; they declined it.
 estimated_sessions: "37-50"   # derived: sum of the per-phase tables below (7–9 + 6–8 + 8–11 + 7–9 + 6–9 + 3–4) — never a typed count (KW-14)
-calibrated_sessions: ""   # calibrate at the P2.6 mid-campaign re-score
+calibrated_sessions: "37-42"   # ⛩ DP6 ⊳ D-H, 2026-08-19. Derived, not typed: 16 Decade-1 actual (`ls how/sessions/history/2026-08/ | grep -c haussmann` → 17, minus the one that IS P2.6 s1) + 3 for P2.6 (s1 re-score · s2 ratification · s3 the O0b TTFS run + D3 + AAR) + 18–23 for Decade 2 (summed from p2_replan §4). Sits INSIDE estimated_sessions 37–50, at its low end. ⚠ The operator's quoted value was "36-41", derived before the ⊳ D-A split ruling in round 3 added a session; the ruling selected the PRINCIPLE "stamp the number that survives being counted today", which points here. Reverting to 36-41 is a one-line edit — see the D-H stamp in p2_replan.md.
 estimation_class: content-novel
 executor_tier_default: fable   # charter-altitude fallback (aDNA.aDNA ADR-025 §2 resolution chain — NOT aDNALabs ADR-025, the community ruling); judgment missions fable/opus, mechanical sweeps sonnet — per-mission fields override
 priority: high
@@ -22,7 +22,7 @@ governing_instrument: directives/OPERATION_VITRUVIUS_review_instrument.md   # D1
 baseline_score: "51.6/100 (2026-08-16, two-reviewer reconciled; MCP ≈83, Mastra ≈65)"
 evidence_pack: [d58ea13, df3827c]
 created: 2026-08-16
-updated: 2026-08-19   # ⛩ FOUR RULINGS: variant A (tier-first) · 740 mechanism DEFERRED (10× recorded UNMET) · DP-16 shape-A-conditioned · outward-acts GO. P2.4 COMPLETE O0–O3, suite 460→472 zero xfail, 13→0 non-canonical vault links (one was hiding a live silent drop on /commons); ADR-052 accepted. UNDEPLOYED. Next DP = DP6 at P2.6.
+updated: 2026-08-19   # ⛩ DP6 RATIFIED — Decade 2 is OPEN. p2_replan.md → accepted with all NINE ⊳ ruled (D-A…D-H plus D-I, which was unlettered inside §2's prose and would otherwise have ridden the master signature silently). 12 missions discharged queued-provisional → queued; mission_count HOLDS at 27; calibrated_sessions set to 37-42; order re-set with P4.5a FIRST. Re-score: 63.2/100 on eleven dimensions (baseline recomputed 50.5; D3 WITHHELD, no 12-dimension composite). ⛩ O0b still outstanding — P2.6 stays in_progress. Next DP = DP7 at P3.4 (already fired early by override; formal GO/NO-GO owed) / DP8 at P4.1.
 last_edited_by: agent_rosetta
 tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, agentic]
 ---
@@ -54,19 +54,19 @@ tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, a
 │                       🟡 P0.4 flux-recon (awaits Aspasia ack — her lane)    │
 │    P1 credibility ✅  ✅ 1.1 claim-purge   ✅ 1.2 state-of-network          │
 │      (Decade 1) 4/4   ✅ 1.3 registry-truth(DP4) ✅ 1.4 mobile-S1s          │
-│    P2 structure 🟢    ✔ 2.1 urls  ✔ 2.2 ia(DP5✔)  ✔ 2.3 docs-freshness      │
-│      (Decade 1) OPEN  ✔ 2.4 registry↑       ▫ 2.5 onboard  ▫ 2.6 ⛩DP6      │
-│                          ↑ ⛩ P1→P2 GATE SIGNED 2026-08-18 (D6/D7 deferred)  │
-│    P3 agentic+community  ▫ md-twins ▫ registry-json ▫ mcp-server            │
-│      (Decade 2·prov.)    ▫ flux(⛩DP7) ▫ proposals            [gated: DP6]   │
-│    P4 craft+hardening ▫ tokens/voice(⛩DP8) ▫ craft-floor ▫ a11y-manual      │
-│      (Decade 2·prov.) ▫ ci-hardening ▫ voice-rewrite-LAST    [gated: DP6]   │
-│    P5 launch          ▫ human-evidence ▫ re-score+capstone ⛩DP9 [gated:DP6] │
+│    P2 structure 🟢    ✔ 2.1 urls  ✔ 2.2 ia(DP5✔)  ✔ 2.3 docs-freshness       │
+│      (Decade 1) 5/6   ✔ 2.4 registry↑  ✔ 2.5 onboard  🟡 2.6 midscore        │
+│                          ↑ ⛩ DP6 RATIFIED 2026-08-19 — DECADE 2 IS OPEN     │
+│    P3 agentic+community  ▫ proposals+funnel 2nd ▫ md-twins↓                  │
+│      (Decade 2 · OPEN)   ▫ registry-json↓ ▫ mcp-server ▫ flux(⛩DP7)         │
+│    P4 craft+hardening    ▫ 4.5a copy-rows RUNS 1st ▫ tokens/voice(⛩DP8)     │
+│      (Decade 2 · OPEN)   ▫ craft-floor↑ ▫ ci-hardening↑ ▫ a11y ▫ 4.5b LAST   │
+│    P5 launch             ▫ human-evidence ▫ re-score+capstone↑ ⛩DP9         │
 │                                                                              │
-│  PLAN     phase P2/6 OPEN · 37–50 sessions (derived) · fable default ·      │
-│           prod HARDENED (4/4 headers) · suite 487 zero xf · 0 FALSE claims  │
+│  PLAN     phase P2/6 · Decade 2 OPEN · 37–42 sessions (calibrated ⊳D-H) ·    │
+│           suite 487 zero xf · 0 FALSE · 63.2/100 on 11 dims (D3 withheld)    │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│  GATES    phase gates are human gates · next: ⛩ DP6 at 2.6 (re-plan)      │
+│  GATES    phase gates are human gates · next: ⛩ O0b (TTFS run, machine)     │
 │           arc AAR: artifacts/aar_p0_wave.md (this splash augments, never    │
 │           replaces it)                                                       │
 ╰──────────────────────────────────────────────────────────────────────────────╯
@@ -101,6 +101,14 @@ The genesis assessment (Gate B dossier, `artifacts/gate_b_dossier.md`) found a *
 > re-score recalibrates their scope, order, and budgets before Decade 2 opens. Sequencing law
 > (directive §5.C.1): positioning resolves before IA; IA before visual craft. Any violation needs
 > written justification at a gate.
+>
+> **⛩ DISCHARGED 2026-08-19 — Decade 2 is no longer provisional.** DP6 ratified `p2_replan.md`; the
+> re-score ran (**63.2/100 on eleven dimensions**, baseline recomputed **50.5**, D3 withheld) and the
+> recalibration is done: two missions shrank on premises that died, four grew, order re-set. **The
+> sequencing law was bent once, deliberately and in writing** — ⊳ D-A splits P4.5 so its copy increment
+> (**P4.5a**) runs *first* in the decade, ahead of P3.5, because R-120 is an S2 self-contradiction in
+> the homepage's 30-second zone. **P4.5b, the actual voice rewrite, still runs last**, which is what the
+> law protects. This paragraph is that written justification.
 
 ## Phases & Missions
 
@@ -177,7 +185,7 @@ shipped the /community link ahead of ADR-054's prerequisites**), `VERCEL_TOKEN_A
 
 **Exit gate (operator):** TTFS < 10 min measured · zero internal 404s (gated) · ≤2 clicks preserved · re-score shows D1–D4 movement · Decade-2 re-plan ratified.
 
-### P3 — Agentic surface + community (Decade 2, provisional; 5 missions, ~7–9 sessions)
+### P3 — Agentic surface + community (Decade 2 — **RATIFIED ⛩ DP6 2026-08-19**; 5 missions, ~7–9 sessions)
 
 | Mission | Title | Sessions | Tier | Deps |
 |---|---|---|---|---|
@@ -187,9 +195,16 @@ shipped the /community link ahead of ADR-054's prerequisites**), `VERCEL_TOKEN_A
 | P3.4 | Community integration per ADR-054: prerequisites verified (policy floor + branding + aliveness), honest-state link from /community, ladder mapping, disclosure copy (SO#8) | 1–2 | opus | P0.4 |
 | P3.5 | Numbered proposal process (ADR-055): states, archive, machine index, **first proposal filed** | 1–2 | fable | — |
 
+> **⛩ DP6 order (2026-08-19).** Decade 2 runs **P4.5a → P3.5 → P3.1 → P3.2 → P3.3 → P3.4 → P4.1 →
+> P4.2 → P4.4 → P4.3 → P4.5b → P5.1 → P5.2.** Two departures from mission numbering, both ruled:
+> **P4.5a first** (an S2 homepage self-contradiction outranks the sequencing convention) and **P3.5
+> first within P3** (D9 is the only dimension nine missions never moved, and its repair is small).
+> Budgets/tiers are authoritative in the mission frontmatter, re-summed from those files by script:
+> **~2,380–3,650 kT across ~18–23 sessions**.
+
 **Exit gate (operator):** machine-legibility conformance report clean (D10 anchor-4+ verified) · first numbered proposal live · community link live only if prerequisites held.
 
-### P4 — Craft & hardening (Decade 2, provisional; 5 missions, ~6–9 sessions)
+### P4 — Craft & hardening (Decade 2 — **RATIFIED ⛩ DP6 2026-08-19**; 5 missions, ~6–9 sessions; P4.5 splits into P4.5a/P4.5b per ⊳ D-A)
 
 | Mission | Title | Sessions | Tier | Deps |
 |---|---|---|---|---|
@@ -197,11 +212,12 @@ shipped the /community link ahead of ADR-054's prerequisites**), `VERCEL_TOKEN_A
 | P4.2 | Craft-floor conformance (57 locks) + design-system debt + html-validate 5 classes + published diagram construction rules | 2 | sonnet | P0.3, P4.1 |
 | P4.3 | A11y manual: keyboard + screen-reader passes (virtual-screen-reader lane + operator VoiceOver), F2 adjudication, a11y statement page | 1 | opus | P1.4 |
 | P4.4 | CI hardening: visual-regression gate (container baselines), live-header check, Unlighthouse periodic, field-p75 instrument, CWV budgets | 1–2 | sonnet | P0.2 |
-| P4.5 | **Voice rewrite LAST** (Berthier rule): FKGL targets, glossary-linked first-use, register transitions, dual-audience review | 2 | fable | P0.1, P2.2 |
+| **P4.5a** | **Copy increment — RUNS FIRST IN DECADE 2** (⛩ D-A): R-111 · R-120 (S2, homepage 30-second zone) · R-121 · R-124, plus the ⊳ D-C hero cut of *"Lattice Protocol"* | 1 | fable | P0.1 |
+| **P4.5b** | **Voice rewrite LAST** (Berthier rule): FKGL targets, glossary-linked first-use, register transitions, dual-audience review | 2 | fable | P0.1, P2.2 |
 
 **Exit gate (operator):** zero a11y criticals incl. manual · design-system conformance on 20 sampled components · CWV green field · every new pattern authored back to WebForge.
 
-### P5 — Launch readiness (Decade 2, provisional; 2 missions, ~3–4 sessions)
+### P5 — Launch readiness (Decade 2 — **RATIFIED ⛩ DP6 2026-08-19**; 2 missions, ~3–4 sessions)
 
 | Mission | Title | Sessions | Tier | Deps |
 |---|---|---|---|---|
@@ -222,7 +238,7 @@ shipped the /community link ahead of ADR-054's prerequisites**), `VERCEL_TOKEN_A
 | **DP-16** | P2.4 (out-of-band) | **Inference's control-plane classification**, with a live persisting surface attached (raised by Pythia 2026-08-07 + 08-18) | ✅ **RATIFIED — operator, 2026-08-19: shape A, conditioned.** Inference stays control-plane **for its serving lanes**, the manifest says so in those words, **and the human surface gets a declared §8 data-bearing row** — not a footnote. The condition is the load-bearing part: that instance ran four months unregistered *because* the graph's label said there was nothing to register, so adopting A without the declared row would leave the producing condition in place and now deliberately. Recorded at `how/campaigns/campaign_keystone/artifacts/keystone_cohort_manifest.md` §DP-16 |
 | **DP-P2.4** | P2.4 O1 | Registry grouping (A tier-first / B class-first / C density) **and** the 740-scale mechanism — split into two by O1's own finding that no variant scales | ✅ **RULED — operator, 2026-08-19: (1) variant A** (tier-first: in use 7 · chartered 10 · planned 57) **and (2) explicitly defer the 740 mechanism**. The self-scored pre-screen tied A and C at 3.88 with neither clearing 4.0, so the grouping call was judgment: A's groups are visually equal and only the labels differ, so its layout claims nothing the self-declared data cannot support — where C's density gradient reads as a ranking. `scales at 10×` is recorded **UNMET** with the arithmetic as the reason; the three candidate mechanisms are named in **ADR-052 §tiers.7** with a revisit trigger. **ADR-052 ratified `accepted` at the same gate**; §tiers.6 (77-vs-74) deliberately not put, and stays *stated, not decided* |
 | ~~**P2.4 pick**~~ | P2.4 O1 | *(the same two questions as `DP-P2.4` above)* Registry **grouping** (A tier-first / B class-first / C density) **and — separately — the 740 mechanism** (pagination / default-collapsed planned tier / virtualization / explicit defer) | ⛔ **SUPERSEDED by `DP-P2.4`** — kept per SO-6, struck 2026-08-19 at P2.6 O3a. This row read ⛩ AWAITING for a gate that **fired the same day**: `DP-P2.4` records the ruling (variant A · 740 deferred) and `mission_haussmann_p2_4_registry_redesign.md` closes `status: completed`. A decision table showing a phantom open gate is the same defect class as a stale count — **do not read this row as live** — the 10× test found **none of the three variants scales** (all ~19,000 px at 740; C beats A by 5%), so the two questions came apart. Synthetic pre-screen is `[D-syn]`, conflict declared, and **declines to separate A and C**. Record: `artifacts/p2_4/spike_record.md` |
-| DP6 | P2.6 | Decade-2 recalibration + re-plan ratification | pending (recurring shape) |
+| DP6 | P2.6 | Decade-2 recalibration + re-plan ratification | ✅ **RATIFIED — operator, 2026-08-19** (in-chat, session `session_stanley_20260819_190213`): `p2_replan.md` → `accepted`, **all nine ⊳ ruled** — D-A **(ii) + placement**: P4.5 splits, **P4.5a runs FIRST in Decade 2** (an S2 homepage self-contradiction is not left live through eleven missions to preserve an ordering convention); D-B ADR-057 covered by Gate C → `accepted`; D-C cut *"Lattice Protocol"* from the hero while the counsel embargo forbids defining it; D-D **MIT** for the unlicensed docs repo (`#needs-human`, outward act at P3.5); D-E mirror `lighthouse_profiles.json` at P4.4; D-F Option C **closed** not-needed; D-G 740-mechanism stays deferred, **trigger >150 entries**; D-H `calibrated_sessions` **37-42**; **D-I** (unlettered when authored, in §2's P3.2 prose) nested `WebSite.publisher` **satisfies** the Organization half. **Decade 2 OPEN** — 12 missions discharged `queued-provisional` → `queued`; `mission_count` holds **27**. Order: **P4.5a → P3.5 → P3.1 → P3.2 → P3.3 → P3.4 → P4.1 → P4.2 → P4.4 → P4.3 → P4.5b → P5.1 → P5.2**. Budgets re-summed **from the mission files by script**: ~2,380–3,650 kT / ~18–23 sessions. **⛩ O0b is unaffected and remains outstanding** — D3 unscored, no 12-dimension composite, R-34/R-63 undischarged, P2.6 stays `in_progress`. Gate keeps its *"recurring shape"* — it may fire again. |
 | DP7 | P3.4 | ADR-054 community-link GO/NO-GO on verified prerequisites | ⚠ **FIRED EARLY by operator override at P1.1 (2026-08-17)** — the /community link shipped with PR-1/2/3 unmet; deviation recorded in ADR-054 §Status, honest-state framing shipped and guarded by R-95/R-96. The DP itself is **still owed** on the verified prerequisites at P3.4 |
 | DP8 | P4.1 | ADR-053 visual voice (slot-contained program vs accent-only fallback) | pending |
 | DP9 | P5.2 | Launch GO + close | pending |
@@ -236,7 +252,7 @@ shipped the /community link ahead of ADR-054's prerequisites**), `VERCEL_TOKEN_A
 | Registry projection fix collides with Hestia's regen ownership | Code-side fixes here; data asks staged as memos; honor pt19 absolutely |
 | Counsel embargo drifts (protocol opens mid-campaign) | ADR-048 carries both language variants; swap is a copy change, not a re-design |
 | Community prerequisites never land (Aspasia lane stalls) | P3.4 is contingent-by-design; the honest fallback (no link + honest state) is already the P1 posture |
-| Decade-2 front-runs the re-score | P3–P5 missions carry `decade: 2` + `status: queued-provisional`; P2.6 re-plan is their activation gate |
+| Decade-2 front-runs the re-score | ✅ **RETIRED 2026-08-19** — the control worked as designed: the missions sat at `queued-provisional` until P2.6's re-score ran, and the re-score then *changed* the plan (two premises died, two strengthened) rather than rubber-stamping it. All 12 discharged to `queued` at DP6. |
 | Live-data literals pinned in new tests (KW-8 class) | Snapshot-derivation law inherited from WebForge FR-K; stated in CLAUDE.md |
 | Fresh evidence goes stale during long campaign | Deploy baseline + drift check at every phase open; claim register re-verified monthly |
 
