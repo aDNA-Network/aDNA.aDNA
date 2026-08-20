@@ -78,7 +78,7 @@
       "resolves": true,
       "probed": "2026-08-18",
       "evidence": "HTTP 200, logged out",
-      "ownerNote": "In the Wilhelm Foundation's own GitHub organization, under their control, not ours.",
+      "ownerNote": "In the Wilhelm Foundation's own GitHub organization, under their control, not ours. Related-party disclosure: the person who operates this network also holds a role at the Foundation, so read “not ours” as a statement about control, not about distance.",
       "sameAsExcluded": true
     },
     {

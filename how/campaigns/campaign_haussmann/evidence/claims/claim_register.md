@@ -734,6 +734,28 @@ O0c-a probe — using the register's own idiom (`re.finditer` with context extra
 |---|---|---|---|---|---|---|
 | **R-125** | `/` hero trust-links — and `/network`, `/commons`, `/vaults`, which share the same `HomeHero` component | *"built on the **Lattice Protocol** — the coordination layer, opening progressively"* | **unsupported → cut** | A term named in the 30-second zone and **defined nowhere**. Re-probed 2026-08-20 `[D]`: `/glossary/` returns **0** occurrences of *lattice*; `/glossary/lattice`, `/glossary/lattice/`, `/glossary/lattice-protocol`, `/glossary/lattice-protocol/` are **404 ×4**. Flagged by **2 of 3** synthetic cold-readers at O0c-a `[D-syn]`, then re-probed here `[D]`. It is **not FALSE** — it is *unexplainable*: campaign constraint 9, the **counsel embargo**, forbids defining or linking protocol material until D-8 rules, so the term cannot be repaired by adding a definition. Hence `cut`, not `fix`. **⛩ Ruled at DP6 ⊳ D-C** (`p2_replan.md:285-291`), owner **P4.5a**, **reversible the moment counsel rules at D-8**. **Spread, measured not assumed**: the sentence is hardcoded in *both* arms of `HomeHero.astro`'s `graphLed` branch (`:230` graph-led, `:349` not), so it renders **×1 on each of four surfaces** — `/`, `/network`, `/commons`, `/vaults` — all 200, all verified `[D]`. **Severity S2 is a first assignment** — no prior file assigns ⊳ D-C an S-level — calibrated against the two nearest rows: **R-15** (the identical sentence, `unsupported`, **S2**) and **R-120** (the other 30-second-zone defect, **S2**) | **S2** | [D] |
 
+**R-125's boundary, measured after the cut and stated so nobody re-sweeps it.** Post-fix, the term is
+**0 on all four HomeHero surfaces** and survives in exactly **two** built pages, both deliberately left
+`[D]`:
+
+1. `/learn/tutorials/exchange-adoption-path/` — a deep tutorial that names the term inside an explicitly
+   **TAUGHT-AS-DESIGN** block and says in its own voice that *"the Protocol repo itself is
+   pre-public-launch."* D-C's reasoning is *"a term you may not explain does not belong in the first
+   sentence a stranger reads"* — this is neither the first sentence nor unexplained.
+2. `/get-started/what-your-agent-reads/skill-onboarding/` — **the vendored `.adna` file, rendered
+   byte-exact at a verified pin** (P2.5 O1, drift-gated by gate-36). **This one is not editable and must
+   not be "fixed"**: the page's entire claim is *these bytes came from that commit*, so altering the text
+   would falsify the page and turn its own drift gate red. A copy edit is the wrong instrument here.
+
+> **⚑ Finding routed onward, NOT actioned here (out of P4.5a's ruled scope).** That vendored file
+> publishes *"the **Lattice Protocol marketplace**… coming soon"* on a public surface. Campaign constraint
+> 9 forbids *publishing or linking protocol material* until D-8 rules, and this is protocol material
+> reaching a reader through a verbatim-vendoring pipeline that no copy review covers by construction —
+> the tour republishes whatever `.adna` says. It is also a **forward promise with no date**, the R-15
+> class. Not fixed here because the fix is not a copy edit: it is either an upstream `.adna` change
+> (`skill_template_release`) or a tour-selection change, and both are decisions rather than corrections.
+> **Owner: the operator to route** — P3.5 (D9/funnel) and P4.5b (voice) both plausibly touch it.
+
 ### §9.2 R-15 — superseded by R-125, and said so rather than closed quietly
 
 **R-15** (`:54`) carries the same sentence with the disposition *"Honest **relative to** R-14; should become

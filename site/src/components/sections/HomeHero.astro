@@ -227,7 +227,16 @@ const heroNodes = graphLed
             <span class="trust-sep" aria-hidden="true">·</span>
             <span class="trust-link trust-static">{STANDARD_LICENSE}-licensed</span>
             <span class="trust-sep" aria-hidden="true">·</span>
-            <a href="/reference/specification" class="trust-link" data-astro-prefetch>built on the Lattice Protocol — the coordination layer, opening progressively</a>
+            {/* HAUSSMANN P4.5a — R-125 (⊳ D-C, S2). Was: "built on the Lattice Protocol — the
+                coordination layer, opening progressively". CUT, not rewritten and not defined: the term
+                is named in the 30-second zone and defined NOWHERE (/glossary/ returns 0 for "lattice";
+                all four /glossary/lattice* forms 404), and campaign constraint 9 — the counsel embargo —
+                forbids defining or linking protocol material until D-8 rules. A term you may not explain
+                does not belong in the first sentence a stranger reads. REVERSIBLE the moment counsel
+                rules at D-8: restore the sentence here and in the non-graph-led branch below, and flip
+                gate-23's absence assertion back to a presence one. Replacement is term-free and
+                independently checkable — the spec is public and carries a version. */}
+            <a href="/reference/specification" class="trust-link" data-astro-prefetch>the standard, versioned and public</a>
           </div>
 
           {/* HAUSSMANN P1.2 — proof BEFORE the stat strip (Berthier: the hero was leading with
@@ -345,8 +354,15 @@ const heroNodes = graphLed
         {/* EV1 (Storyweave): the Lattice Protocol implementation repo is private (404) — never link it,
             and gate-14 forbids the legacy LatticeProtocol-org GitHub literal. Honest fix: link the PUBLIC
             spec/reference and frame the substrate as opening progressively (ties to progressive
-            decentralization), rather than a dead-end static tagline. */}
-        <a href="/reference/specification" class="trust-link" data-astro-prefetch>built on the Lattice Protocol — the coordination layer, opening progressively</a>
+            decentralization), rather than a dead-end static tagline.
+            HAUSSMANN P4.5a — R-125 (⊳ D-C, S2) SUPERSEDES the above. EV1's fix kept the term and made its
+            PROMISE honest; D-C rules on the term itself, which the embargo forbids explaining at all. Cut
+            here too, and this is the half that matters for spread: this is the NOT-graph-led branch, so it
+            is what /network, /commons and /vaults render — three surfaces the ruling did not name, reached
+            through the homepage's own primary CTA. Cutting only the graph-led branch above would have left
+            the term live on the page that CTA lands on. Operator ruled the cut covers all four.
+            REVERSIBLE at D-8 — restore both branches together. */}
+        <a href="/reference/specification" class="trust-link" data-astro-prefetch>the standard, versioned and public</a>
       </div>
 
       {/* Proof-of-life, hero-adjacent. HAUSSMANN P1.2 moved it ABOVE the stat strip (Berthier's

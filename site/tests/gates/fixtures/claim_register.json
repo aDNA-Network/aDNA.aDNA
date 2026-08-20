@@ -1,5 +1,5 @@
 {
-  "_doc": "HAUSSMANN P0.5 (editorial gate, O1) — the B5 claim register as a CI fixture. Source of record: how/campaigns/campaign_haussmann/evidence/claims/claim_register.md (125 unique ids across 139 table rows, derived by script at P4.5a §9.5) + claims_raw.json (live fetch 2026-08-16). This fixture is the machine-checkable SLICE. Its composition CHANGED at P1.1 and this line lagged two missions: it described 'all 8 FALSE rows (the launch blockers) + 12 representative verified rows', but P1.1 resolved the FALSE set 8/8 and the rows were cleaned out, so the slice is now 23 rows, ALL verified, ZERO FALSE — currency canaries only. The FALSE machinery in gate-26 is retained deliberately for the next false claim, not because one is pinned here.",
+  "_doc": "HAUSSMANN P0.5 (editorial gate, O1) — the B5 claim register as a CI fixture. Source of record: how/campaigns/campaign_haussmann/evidence/claims/claim_register.md (125 unique ids across 139 table rows, derived by script at P4.5a §9.5) + claims_raw.json (live fetch 2026-08-16). This fixture is the machine-checkable SLICE. Its composition CHANGED at P1.1 and this line lagged two missions: it described 'all 8 FALSE rows (the launch blockers) + 12 representative verified rows', but P1.1 resolved the FALSE set 8/8 and the rows were cleaned out, so the slice is now 25 rows, ALL verified, ZERO FALSE — currency canaries only. The FALSE machinery in gate-26 is retained deliberately for the next false claim, not because one is pinned here. KNOWN COVERAGE GAP (P4.5a, filed for P4.4): this gate cannot express 'a retired claim must stay gone' for a row that was never FALSE. FALSE rows are transient by design — they carry expected_fail_until and go RED as an unexpected pass the moment they are fixed — so an `unsupported -> cut` row like R-121 or R-125 has no permanent absence assertion here. R-125 and R-120 are guarded by dedicated assertions in gate-23 instead; R-121 is guarded indirectly, by pinning the LABEL that replaced the invention.",
   "_relation_to_gate_20": "gate-20 traces claims to their SOURCE FILES (does `vaults.json` still say 74?). This fixture asserts the RENDERED PAGE — that a false sentence is gone, and that a true one has not silently vanished. Different failure modes, no overlap: the G-01..G-10 accessor rows stay in claim_trace_manifest.json and are deliberately NOT duplicated here.",
   "_quote_rule": "Every `quote` is the exact page-visible text, verified against the 2026-08-16 build snapshot. Comparison normalizes typography only (curly quotes -> straight, em/en dash -> hyphen, whitespace collapsed) so a smart-quote change cannot fake a pass or a fail. `match_in: html` rows assert against raw markup instead (attributes, hrefs).",
   "_no_count_pinning": "Campaign convention 8 (WebForge KW-8/FR-K): verified quotes are trimmed to their non-numeric clause wherever a count appears, so this gate never pins live registry data. Count currency is gate-21's job, count provenance is gate-20's.",
@@ -165,6 +165,20 @@
       "quote": "These stages are self-declared",
       "class": "verified",
       "why": "ADR-052 §tiers.2 calls this the single most important caveat on the registry surface, and the measurement behind it is stark: github_url populated on 1 of 74 rows, docs_site_url on 0, last_synced on 24 with 18 sharing one date. There is genuinely nothing to check a declared stage against. Pinned because the tier badges make the registry look MORE authoritative than it was before, and this sentence is the entire counterweight — losing it silently would leave the badges asserting an assessment nobody performed. gate-35 additionally asserts it is body text and not a title attribute."
+    },
+    {
+      "id": "R-111b",
+      "url": "/canonical-properties",
+      "quote": "Related-party disclosure: the person who operates this network also holds a role at the Foundation",
+      "class": "verified",
+      "why": "HAUSSMANN P4.5a. R-111's live scope after re-probe (register §9.7) was /canonical-properties ALONE — the disclosure had already shipped on /about and /state-of-the-network, and the register row overstated the gap for two missions because it was never re-probed. This is the sharp half: the page whose entire job is 'here is how you check we are who we say we are' filed the Wilhelm Foundation under 'not ours' while two sibling pages disclosed that the operator holds a role there. Deleting this sentence restores selective disclosure on the one page a skeptical reader checks. Paired with the existing R-111 row, which guards the half that shipped at P1.2 — same finding, two faces."
+    },
+    {
+      "id": "R-121",
+      "url": "/learn/what-is-adna",
+      "quote": "not a case study, and no measured project is being described",
+      "class": "verified",
+      "why": "HAUSSMANN P4.5a. The 'Before and after' section asserted a lab's 200 files and a three-day onboarding with no lab, no date and no source — an unlabelled hypothetical in the site's own voice, found by a cold reader one mission after the campaign cut a fabrication and published why. Fixed the way R-118 was: invented specifics cut AND the nature of the claim labelled, because cutting the numbers while leaving 'a lab's' would still imply an observed case. This quote is that label; deleting it lets the section drift back toward reading as reportage."
     }
   ]
 }
