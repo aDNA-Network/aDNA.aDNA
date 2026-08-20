@@ -82,7 +82,46 @@ revised down then** — never by copy, and never by a runbook.
 
 ## Progress
 
-*(at execution)*
+### Session 1 — 2026-08-19 (`session_stanley_20260819_165937`), commits `3b8e90d`..`5b4f56e`
+
+**Operator rulings taken before work began**: (1) proceed to DP6 with **D3 withheld** rather than stall on
+the operator-gated TTFS run; (2) score on **instrument v1.0**, unchanged, so the deltas mean something.
+
+| Obj | State | Output |
+|---|---|---|
+| **O0** | ✅ | 156 T0 captures, axe **0 both themes**; claim register re-verified + **R-111 written** (S2); machine-eye delta; pack pinned `c9e8300` |
+| **O0b** | ⛩ **outstanding** | Operator: fresh macOS account + an unassisted non-builder runner. Runbook ready at `artifacts/p2_5/ttfs_runbook_fresh_account.md` |
+| **O0c-a** | ✅ | Three fresh cold reads + synthesis; **R-120…R-124** registered |
+| **O0c-b** | ⏸ blocked on O0b | The transcript fold (variant B) |
+| **O1** | ✅ | Isolation protocol authored (it existed nowhere); two `fable` scorers; **55.6 of 88 → 63.2/100**, baseline same-11 **50.5**, Δ **+11.2 / +12.7** |
+| **O2** | ✅ authored, ⛩ **DP6 pending** | `artifacts/p2_6/p2_replan.md` at `status: proposed` |
+| **O3a** | ✅ | **487 passed**; fixtures re-verified; charter corrected; ADR-057 staged |
+| **O3b** | ✅ | III **cycle 166** — first of the campaign, first in ~10 weeks |
+
+**Headline**: D6/D7/D8 each moved **2 → 3** — the credibility stratum the charter named as the binding
+constraint. **D9 did not move at all** and now fails for a *different* reason than at baseline.
+Calibration cleared at variance ≤1 on **11 of 11**, with both reviewers independently quoting the
+identical binding anchor on **eight** dimensions.
+
+**The four things worth reading the record for:**
+
+1. **R-111** — adjudicated at P1.2, assigned an id, **never given a row**, fix never shipped. Survived
+   three missions because it is an *absence* and not an identifier.
+2. **487 gates green, 8 claim rows open, zero overlap.** The suite is structurally blind to prose
+   contradictions, absences, and off-site state.
+3. **~0.8 of the delta is the instrument, not the site** — both scorers re-read D2's conjunctive anchor
+   the opposite way from the baseline, on a feature (`registry search`) that shipped in a *previous
+   campaign*. Annotated, not banked. The v1.1 fix must precede P5.2.
+4. **Three derived figures published wrong before being caught** (register §8.3, §8.6, re-plan §4). The
+   rule became mechanical: **count last**.
+
+**Constraint honored**: `git diff --name-only 3b8e90d~1..HEAD -- site/` → **0 files**. This mission wrote
+no site changes.
+
+### Session 2 — pending
+
+O0b write-up · R-34/R-63 verdict (three branches planned, including "did not complete") · O0c-b fold +
+the same-diff probe update · D3 final score + the 12-dimension composite · III cycle 167 · AAR.
 
 ## AAR (SO#5)
 

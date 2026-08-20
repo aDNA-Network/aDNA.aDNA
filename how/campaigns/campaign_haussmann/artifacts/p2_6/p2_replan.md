@@ -303,6 +303,15 @@ count derived, not typed; pt19 honored; cross-vault writes are memos; provenance
   rather than claiming absolute freshness.
 - **R-124** (no clinical/regulatory posture while `/` says *rare* ×15) — needs an audience decision before
   it needs copy. Not assigned; surfaced.
+- **Evidence-commit discipline is inconsistent across missions.** **187 untracked PNGs** sit under
+  `evidence/` in six per-mission capture dirs, in a mixed state — `captures_p2_2` has 36 files and **0**
+  tracked, `captures_p1_2` has 49 and 9, `captures_p2_3` has 36 and 37 `[D]`. P2.6 gitignored its own raw
+  sweep and committed only the report plus the curated set, following the baseline's pattern; the other
+  five missions each did something different. The cost is not disk — it is that `git status` is
+  permanently noisy, which is **how 27 stranded *curated* captures went unnoticed until this mission**,
+  18 of them cited by a markdown file and absent from the repo. **Not fixed here**: it touches five other
+  missions' evidence, and rewriting another mission's record without a mandate is the scope creep this
+  campaign guards against. One convention, applied once, at whichever mission the operator assigns it.
 
 **Deferred (horizon)**
 - The 740-scale registry mechanism (⊳ D-G).

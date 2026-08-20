@@ -3,14 +3,15 @@ type: session
 session_id: session_stanley_20260819_165937_haussmann_p2_6_midscore
 user: stanley
 started: 2026-08-19T23:59:37Z
-status: active
+status: completed
+completed: 2026-08-20T01:05:00Z
 intent: "HAUSSMANN P2.6 session 1 — O0 evidence refresh · O0c-a synthetic cold-read re-test · O1 two-scorer re-score (D3 WITHHELD) · O2 author p2_replan.md → halt at ⛩ DP6 · O3a gate re-baseline · O3b III cycle 166"
 campaign: campaign_haussmann
 mission: mission_haussmann_p2_6_midscore
 tier: 1
 executor_tier: fable
 token_budget_estimated: "~200–280 kT (session 1 of 2; mission total ~300–450 kT per ADR-016/SO#11)"
-token_budget_actual:
+token_budget_actual: "~95 kT main-loop content-load (est. ~200–280). Under — but the delegated work is the reason and it is large: 2 scorers + 3 cold readers ran as subagents at ~1.05 M subagent tokens, which never enter this context. SO#11's mission figure and the main-loop figure are different quantities; flagged for the AAR."
 files_modified: []
 files_created: []
 last_edited_by: agent_rosetta
@@ -138,4 +139,60 @@ existed nowhere as a file. Pack pinned at `c9e8300`.
 
 ## SITREP
 
-*(at close)*
+**Completed** — O0 · O0c-a · O1 · O2 (authored) · O3a · O3b. Eleven commits, `3b8e90d`..(this).
+**Zero `site/` changes**, verified by diff across the whole set.
+
+**In progress / handed off** — **O0b** is the only blocker and it is operator-gated: a fresh macOS
+Standard account plus a runner who did not build the system, unassisted. Everything downstream of it
+(O0c-b's transcript fold, D3's score, R-34/R-63's verdict, the 12-dimension composite, cycle 167) is
+session-2 work.
+
+**Next up** — ⛩ **DP6**: ratify `artifacts/p2_6/p2_replan.md`. Eight `⊳` sub-decisions are drafted with
+recommendations; **D-A** is the consequential one and **D-D** is flagged `#needs-human` on legal grounds.
+
+**Blockers** — none technical. Two operator gates: DP6 (a decision) and O0b (a machine act).
+
+**Files touched** — created: `artifacts/p2_6/{scorer_isolation_protocol,gate_rebaseline,decade2_premise_audit,p2_replan}.md` ·
+`evidence/scoring/{scoresheet_A_p2_6,scoresheet_B_p2_6,reconciliation_p2_6}.md` ·
+`evidence/captures_p2_6/` (report + findings; 156 PNGs gitignored) ·
+`evidence/coldreads/*_p2_6.md` + synthesis · `evidence/machine_eye/machine_eye_delta_p2_6.md` ·
+`what/measurement/iii_results/2026-08/cycle_166_haussmann_p2_6_midscore.json`.
+Modified: `evidence/claims/claim_register.md` (§8, six new rows) · `campaign_haussmann.md` (splash count,
+DP row struck) · `evidence/.gitignore` · the P2.6 mission file. Committed 27 stranded curated captures,
+**18 of which were cited by markdown and absent from the repo**.
+
+**Token budget actual** — ~95 kT content-load for this session, against ~200–280 kT estimated. Under, and
+the reason is legible: two scorers and three cold readers ran as subagents, so their ~1.05 M subagent
+tokens do not land in this context. The mission-level estimate should be read as *including* delegated
+work; SO#11's figure and the main-loop figure are not the same quantity, which is worth stating in the AAR.
+
+**Not done, deliberately** — no push. Outward acts are operator-gated (campaign CLAUDE.md §3); eleven
+commits sit local on `main`.
+
+---
+
+## Next Session Prompt
+
+Open `how/campaigns/campaign_haussmann/missions/mission_haussmann_p2_6_midscore.md` and
+`artifacts/p2_6/p2_replan.md`. **P2.6 session 1 is complete**: the re-score landed at **55.6 of 88 →
+63.2/100** on eleven dimensions (baseline recomputed on the same eleven: 50.5), **D3 withheld** pending
+the clean-machine TTFS run, and the Decade-2 re-plan sits at `status: proposed` awaiting **⛩ DP6**.
+
+Two operator gates are open and they are independent. **DP6** is a decision — read `p2_replan.md` §3's
+eight `⊳` sub-decisions; **D-A** (an S2 homepage self-contradiction whose only owner, P4.5, runs last)
+and **D-D** (`aDNA-Network/aDNA.aDNA` is unlicensed while receiving contributor PRs — `#needs-human`) are
+the two that matter most. **O0b** is a machine act: execute `artifacts/p2_5/ttfs_runbook_fresh_account.md`
+on a fresh macOS Standard account with a runner who did not build the site.
+
+If DP6 is ratified: apply the `⊳` rulings in place, stamp the §7.7 block, flip the five P3 missions to
+`queued`, write the ruled budgets/tiers into their frontmatter, set `calibrated_sessions: "35-40"`, and
+author **P3.5 first** (the new order — D9 is the only dimension nine missions never moved).
+
+If O0b has run: write the run record (number **with conditions attached, never bare**; friction log —
+**empty means suspect, not excellent**; scrubbed transcript), rule R-34/R-63 (supports · revised down at
+`get-started.astro:34` + `network.astro:153` · or "did not complete", which is a result), fold the
+transcript into `get-started.astro:112–124` **and update `deploy_probe_p2_5.mjs:182` in the same commit**
+(it currently asserts the gap is labelled — ADR-057 same-diff), then score D3 and publish the first
+12-dimension composite. Then III cycle 167 and the mission AAR.
+
+Eleven commits are **local and unpushed** — pushing is an operator-gated outward act.
