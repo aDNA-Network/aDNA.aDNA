@@ -2,9 +2,9 @@
 type: adr
 adr_number: "057"
 title: "The HAUSSMANN measurement regime: four instruments, composed — plus the same-diff gate law"
-status: proposed
+status: accepted   # ⛩ ⊳ D-B at DP6 2026-08-19 confirmed the Gate C signature of 2026-08-16 covered this ADR; `proposed` was a clerical omission, not a withheld decision
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-08-19
 last_edited_by: agent_rosetta
 campaign_id: campaign_haussmann
 supersedes: ""
@@ -12,11 +12,30 @@ superseded_by: ""
 tags: [adr, haussmann, measurement, gates, verification]
 ---
 
-# ADR-057 — Measurement regime (stub)
+# ADR-057 — Measurement regime
 
 ## Status
 
-**Proposed** — the regime the campaign runs throughout; ratified with the charter at Gate C (DP1), refined only by operator amendment.
+> **Ratification (§7.7).** **Decision:** adopt the HAUSSMANN measurement regime — four composed
+> instruments (gate suite · persona-ranker · VITRUVIUS · claim register) with the altitude assignments,
+> the **same-diff gate law**, and the cadences below. · **Ratified-by:** Stanley, Founding Architect
+> (operator). · **Date:** **2026-08-16**, at **Gate C / DP1**, as part of the charter — the §7.7 charter
+> block reads *"the ADR-057 measurement regime adopted with the charter."* · **Status:** **accepted**.
+
+**Accepted** — the regime the campaign runs throughout; refined only by operator amendment.
+
+> **Why this field said `proposed` until 2026-08-19, and what that cost.** The frontmatter read
+> `status: proposed` for three days while this same section asserted the ADR was *"ratified with the
+> charter at Gate C"* and the operator-signed charter §7.7 said *"adopted with the charter."* Three
+> statements, one of them contradicting the other two. The P2.6 re-score caught it, ⊳ **D-B** at ⛩ DP6
+> ruled that the **Gate C signature did cover it**, and the field is corrected here.
+>
+> **The Date above is 2026-08-16 — the decision — not 2026-08-19, the correction.** Backdating the act
+> while dating the correction separately is the only way both facts stay true. And this is worth more
+> than a clerical footnote: **the campaign was measuring itself under a regime whose own status field
+> denied it had been accepted.** An instrument that cannot vouch for its own authority is exactly the
+> failure class this ADR exists to prevent — which is why the discrepancy became an operator decision
+> rather than a silent field edit.
 
 ## Context
 
