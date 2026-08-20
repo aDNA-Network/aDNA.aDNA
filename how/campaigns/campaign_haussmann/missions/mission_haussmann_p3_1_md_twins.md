@@ -6,10 +6,10 @@ campaign: campaign_haussmann
 phase: P3
 decade: 2
 owner: stanley
-status: queued-provisional   # activates at the P2.6 re-plan ratification (DP6)
+status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — activated. RESCOPED DOWN: the "repair 29 dangling internal links" half is DROPPED — already done by P2.1/P2.2, uncredited (zero internal .md links remain; 14 of 15 .md hrefs are GitHub blobs, the 15th is the domain obsidian.md). Twins premise INTACT: 10/10 probed still 404.
 mission_class: build
 executor_tier: sonnet
-token_budget_estimated: "~180–260 kT across 2 sessions: .md twin route generation + Accept-negotiation (Vercel pattern) + llms-full真corpus + pointer blocks + gates (ADR-016)"
+token_budget_estimated: "~140–200 kT across 2 sessions: .md twin route generation + Accept: text/markdown negotiation with distinct ETag (Vercel pattern) + llms-full.txt made a real corpus OR renamed honestly (the honest rename is an acceptable outcome) + llms.txt linked in chrome/robots + pointer blocks + gates. Lowered from ~180–260 kT at ⛩ DP6 2026-08-19 when the dangling-links half proved already done (ADR-016/SO#11)"
 token_budget_actual:
 created: 2026-08-16
 last_edited_by: agent_rosetta

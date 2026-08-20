@@ -6,10 +6,10 @@ campaign: campaign_haussmann
 phase: P3
 decade: 2
 owner: stanley
-status: queued-provisional
+status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — provisionality discharged. RESCOPED UP: absorbs the D9 funnel repair (R-122 CTA target + R-123 licence, ruled MIT at ⊳ D-D). Runs SECOND in Decade 2, behind P4.5a — D9 is the only dimension nine missions never moved.
 mission_class: build
 executor_tier: fable   # governance design; the surface build is mechanical
-token_budget_estimated: "~200–300 kT across 1–2 sessions: ADR-055 process design + site surface + machine index + first proposal authored + filed (ADR-016)"
+token_budget_estimated: "~230–330 kT across 1–2 sessions: ADR-055 process design + site surface + machine index + first proposal authored + filed, PLUS the D9 funnel repair — R-122 (point the 'Contribute on GitHub' CTA at a repo that has CONTRIBUTING/CoC, or put them in the repo it points at) + R-123 (LICENSE the docs repo; MIT ruled at ⊳ D-D, and the push is an outward operator-gated act). Raised from ~200–300 kT at ⛩ DP6 2026-08-19 (ADR-016/SO#11)"
 token_budget_actual:
 created: 2026-08-16
 last_edited_by: agent_rosetta

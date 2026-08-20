@@ -6,10 +6,10 @@ campaign: campaign_haussmann
 phase: P4
 decade: 2
 owner: stanley
-status: queued-provisional
+status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — activated. RESCOPED UP: absorbs F19 (the thin-hub class is now FOUR instances — /reference/specification, h2=0 bodyLen 1,504, created by P2.3's own spec split) and F20 (the failing JetBrains Mono Variable face — the format('woff2-variations') hypothesis is [I] and UNTESTED; this mission TESTS it rather than assuming it). Still the only P4 mission with human_gate: false.
 mission_class: build
 executor_tier: sonnet
-token_budget_estimated: "~200–300 kT across 2 sessions: site lock-coverage row + gap fixes + html-validate 5 classes + design-system page refresh + diagram construction rules (ADR-016)"
+token_budget_estimated: "~230–340 kT across 2 sessions: 57 locks + gap fixes + ~964 markup errors in 5 systemic classes + html-validate in CI + design-system regeneration + diagram construction rules, PLUS F19 (thin hubs, now 4 instances — bring to budget or merge) and F20 (test the woff2-variations hypothesis, do not assume it). Raised from ~200–300 kT at ⛩ DP6 2026-08-19 (ADR-016/SO#11)"
 token_budget_actual:
 created: 2026-08-16
 last_edited_by: agent_rosetta

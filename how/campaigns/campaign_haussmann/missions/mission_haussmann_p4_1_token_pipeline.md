@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P4
 decade: 2
 owner: stanley
-status: queued-provisional
+status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — activated. KEPT UNCHANGED: untouched by the re-score; scope, tier and budget all stand. DP8 / ADR-053 still pending. Precedes P4.2 by the sequencing law.
 mission_class: design_excellence
 executor_tier: fable
 token_budget_estimated: "~250–400 kT across 2 sessions: ADR-053 (voice ruling) + DTCG pipeline adoption-or-pinned-divergence + illustration-slot spec + first aDNA VisualDNA bundle (ADR-016)"

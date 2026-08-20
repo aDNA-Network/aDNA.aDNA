@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P4
 decade: 2
 owner: stanley
-status: queued-provisional
+status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — activated. KEPT, condition HALF-discharged: the baseline's D11 CONDITIONAL PASS required "adjudicate/fix F2 + run a real manual pass". F2 is FIXED (P1.4, computed-geometry proofs + gate-29) and D11 moved 2 → 3. The manual half has NEVER been run — no AT traversal, no keyboard pass, no VoiceOver session — so D11's PASS is automated-scope-only until this mission runs. Scope unchanged; the qualifier is now explicit.
 mission_class: verification
 executor_tier: opus
 token_budget_estimated: "~150–250 kT in 1 session (+ operator VoiceOver time): virtual-screen-reader lane + keyboard traversal + F2 adjudication + WCAG 2.2 delta + statement page (ADR-016)"

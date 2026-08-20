@@ -6,10 +6,10 @@ campaign: campaign_haussmann
 phase: P4
 decade: 2
 owner: stanley
-status: queued-provisional
+status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — activated. RESCOPED UP: adds THREE gate classes for the blindness the re-baseline exposed (487 assertions green while 8 claim rows are open, ZERO overlap) — a zero-console-error gate (F20 shipped through 487 assertions unseen) · an off-site CTA-target gate (probe the repos the CTAs point at for CONTRIBUTING/CoC/LICENSE; R-122/R-123 were invisible because every gate asserts against the BUILT SITE) · a hub-substance floor (F19). Also owns ⊳ D-E: mirror lighthouse_profiles.json into how/federation/webforge/ (0 hits vault-wide today, so campaign convention 4 is unfollowable and every gate-19 bar is transcribed); amend the convention ONLY if Vitruvius declines.
 mission_class: build
 executor_tier: sonnet
-token_budget_estimated: "~180–280 kT across 1–2 sessions: toHaveScreenshot baselines (container) + reg reports + Unlighthouse periodic + field-p75 instrument + budget wiring (ADR-016)"
+token_budget_estimated: "~220–330 kT across 1–2 sessions: toHaveScreenshot baselines (container) + reg reports + Unlighthouse periodic + field-p75 via Speed Insights + CWV ratchet + budget wiring, PLUS three new gate classes (zero-console-error · off-site CTA-target · hub-substance floor) and the ⊳ D-E lighthouse_profiles.json mirror. Raised from ~180–280 kT at ⛩ DP6 2026-08-19 (ADR-016/SO#11)"
 token_budget_actual:
 created: 2026-08-16
 last_edited_by: agent_rosetta

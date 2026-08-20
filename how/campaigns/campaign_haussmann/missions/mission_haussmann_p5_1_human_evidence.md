@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P5
 decade: 2
 owner: stanley
-status: queued-provisional
+status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — activated, and better-equipped than when chartered. Two reinforcements from P2.6: the clinician cold-reader read "aDNA" as ANCIENT DNA (the standard abbreviation in her field) — a second synthetic signal that the DP2-waived human panel is worth running; and if O0b runs, this mission inherits an EXERCISED TTFS instrument instead of an unexercised one.
 mission_class: verification
 executor_tier: opus
 token_budget_estimated: "~120–200 kT (+ operator recruitment time): panel kits + session facilitation records + TTFS re-run + contribution-run log (ADR-016)"

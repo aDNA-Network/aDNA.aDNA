@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P3
 decade: 2
 owner: stanley
-status: queued-provisional
+status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — activated. KEPT UNCHANGED: premise intact and untouched by the re-score (/.well-known/mcp.json → 404, no MCP surface exists). The most build-heavy P3 mission; human_gate stays true — npm publish is an operator act.
 mission_class: build
 executor_tier: opus
 token_budget_estimated: "~250–350 kT across 2 sessions: server (official TS SDK; search/fetch/registry tools) + packaging (npx) + docs + homepage agent-entry statement + conformance report (ADR-016)"

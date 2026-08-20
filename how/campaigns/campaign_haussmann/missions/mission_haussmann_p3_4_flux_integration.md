@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P3
 decade: 2
 owner: stanley
-status: queued-provisional   # doubly contingent: P2.6 re-plan + the P0.4 prerequisite register
+status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — the re-plan contingency is discharged; the OTHER one is NOT. Still gated on the P0.4 prerequisite register (Aspasia's lane, ack outstanding). DP7 already fired EARLY by operator override at P1.1 — the /community link shipped with prerequisites unmet — so the formal GO/NO-GO is still owed and the register re-probes at execution. aDNALabs ADR-025 (human-only) + Fluxer SO#8 unchanged.
 mission_class: build
 executor_tier: opus
 token_budget_estimated: "~150–250 kT across 1–2 sessions: prerequisite verification + /community integration copy + ladder mapping + disclosure copy + DP7 gate (ADR-016)"

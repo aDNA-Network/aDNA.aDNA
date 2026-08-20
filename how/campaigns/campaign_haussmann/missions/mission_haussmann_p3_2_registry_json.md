@@ -6,10 +6,10 @@ campaign: campaign_haussmann
 phase: P3
 decade: 2
 owner: stanley
-status: queued-provisional
+status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — activated. RESCOPED DOWN: the "no Organization JSON-LD, no sameAs" premise is FALSE — both shipped at P1.2 as a side effect of canonical-identity single-sourcing, uncredited (seo.ts:11 says so in its own comment). ⊳ D-I ruled the nested WebSite.publisher form SATISFIES the Organization half; saved budget goes to the endpoint.
 mission_class: build
 executor_tier: sonnet
-token_budget_estimated: "~120–180 kT in 1 session: public projection schema + endpoint + JSON-LD upgrades (Organization+sameAs sitewide; Dataset on registry) + gates (ADR-016)"
+token_budget_estimated: "~90–140 kT in 1 session: versioned public JSON endpoint (4 obvious paths still 404) + Dataset on the registry + schema-dts in the build + the three zero-JSON-LD pages + endpoint derived from the SAME build snapshot as the HTML (zero drift, KW-8) + gates. Lowered from ~120–180 kT at ⛩ DP6 2026-08-19 — Organization+sameAs already shipped at P1.2 (ADR-016/SO#11)"
 token_budget_actual:
 created: 2026-08-16
 last_edited_by: agent_rosetta

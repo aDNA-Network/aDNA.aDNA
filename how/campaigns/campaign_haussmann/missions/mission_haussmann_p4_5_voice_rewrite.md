@@ -6,10 +6,10 @@ campaign: campaign_haussmann
 phase: P4
 decade: 2
 owner: stanley
-status: queued-provisional
+status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — activated AND SPLIT by ⊳ D-A. P4.5a = the early copy increment (R-111 · R-120 · R-121 · R-124 + the ⊳ D-C hero cut of "Lattice Protocol"), which runs FIRST IN DECADE 2, ahead of P3.5. P4.5b = the full voice rewrite, still LAST. One mission, two increments — mission_count stays 27.
 mission_class: design_excellence
 executor_tier: fable
-token_budget_estimated: "~250–400 kT across 2 sessions: voice guide + corpus rewrite passes (top surfaces first) + glossary-linking + reading-level gates + dual-audience reviews (ADR-016)"
+token_budget_estimated: "~270–430 kT total across 3 sessions, SPLIT into two increments at ⛩ DP6 2026-08-19. P4.5a ~70–110 kT in 1 session: four surgical copy rows (R-111 · R-120 · R-121 · R-124) + the ⊳ D-C hero cut, each gate-anchored and red-proven per the same-diff law. P4.5b ~200–320 kT across 2 sessions: voice guide + corpus rewrite passes (top surfaces first) + glossary-linking + reading-level gates + dual-audience reviews. The unsplit figure was ~250–400 kT; the +20/+30 is the second gate pass and the session boundary a single mission would not have had (ADR-016/SO#11)"
 token_budget_actual:
 created: 2026-08-16
 last_edited_by: agent_rosetta
