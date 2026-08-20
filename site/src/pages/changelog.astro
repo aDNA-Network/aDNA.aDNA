@@ -31,8 +31,15 @@ const jsonLD = buildWebPageJsonLD({
       <article class="changelog-entry">
         <div class="changelog-meta">
           <span class="changelog-version">{entry.data.version}</span>
+          {/* HAUSSMANN P4.5a — R-126. `timeZone: 'UTC'` is load-bearing, not cosmetic. A frontmatter
+              `date: 2026-08-20` parses to UTC midnight; formatting it without a timeZone renders it in
+              the BUILD MACHINE's zone, so a build from PDT (UTC-7) printed "August 19, 2026". Every
+              changelog entry was displaying one day early, and the rendered date changed depending on
+              where the build ran — CI in UTC was right, a laptop was wrong. Found while shipping the
+              2026-08-20 entry. The `datetime` attribute was always correct, so the machine-readable
+              date and the human-readable one disagreed on the same line. */}
           <time datetime={entry.data.date.toISOString()}>
-            {entry.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            {entry.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
           </time>
           {entry.data.breaking && <span class="breaking-badge">Breaking</span>}
         </div>

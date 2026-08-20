@@ -798,12 +798,18 @@ shrunk, since the row was filed.
 
 | Measure | Value |
 |---|---|
-| Physical table rows | **139** *(138 at §8.6, +1 for R-125)* |
-| **Unique ids** | **125** (10 `G-*` + 115 `R-*`, `R-11`…`R-125`) |
+| Physical table rows | **140** *(138 at §8.6, +1 for R-125, +1 for R-126)* |
+| **Unique ids** | **126** (10 `G-*` + 116 `R-*`, `R-11`…`R-126`) |
 | Gaps in the `R-*` sequence | **0** |
 
 Derived by script after the last edit to this file, per §8.6's rule: *the discipline is not "count carefully
 once", it is **count last**.*
+
+> **And it had to be re-derived twice.** This table first read **139 / 125**, correct at the time §9.1 was
+> written. **R-126** was then found and filed at O-E — *after* the counts — which invalidated them inside
+> the same commit. That is the third occurrence of this exact failure in two missions, and it is the reason
+> the rule is *count last* rather than *count carefully*: a derived figure is invalidated by any later edit,
+> and "later" includes edits you did not plan to make. Re-derived here **after** §9.8 landed.
 
 **⚠ A parse defect, found because the first derivation disagreed with §8.6 and was not published.** The
 parse behind §8.3/§8.6 is described only as *"the same parse"* — it is **never written down**. A
@@ -822,7 +828,8 @@ recorded above so the next derivation can be checked rather than trusted. Filed 
 
 **Open: 9** — R-34, R-63 (awaiting ⛩ O0b) · R-111, R-120, R-122, R-123, **R-125** (S2) · R-121, R-124 (S3).
 **FALSE: 0.** Supersedes the tally of **8** at §8.5. R-15 is not counted again: it is superseded by R-125
-(§9.2), not separately open.
+(§9.2), not separately open. **R-126 is not counted here** — it was found and fixed at O-E, after this
+tally's cut-off, and never existed as open debt; it is stated in §9.8 and in the close tally below.
 
 Of these, **P4.5a is scoped to close four** — R-111, R-120, R-121, R-125. **R-124 leaves the mission
 deferred** (§9.3), and **R-122/R-123 belong to P3.5**, the next mission in the ruled order. This tally is
@@ -856,3 +863,30 @@ pins `R-111` as a **`verified`** row on `/state-of-the-network`, asserting the s
 The register's R-111 is the **unshipped** half. Neither is wrong; they are the two faces of one finding, and
 nothing said so until now. Read the fixture row as *"the disclosure that shipped must not vanish"* and the
 register row as *"the disclosure that did not ship, now scoped to `/canonical-properties`."*
+
+### §9.8 R-126 — every changelog entry displayed the wrong date, and the date depended on who built it
+
+Found at O-E while shipping P4.5a's own changelog entry: the new `2026-08-20` entry rendered as
+**"August 19, 2026"**. Probed across the whole page rather than assumed to be a one-off — **all four
+existing entries were off by one too** `[D]`:
+
+| Frontmatter `date` | Rendered before the fix | After |
+|---|---|---|
+| `2026-08-17` | August 16, 2026 | August 17, 2026 |
+| `2026-08-18` | August 17, 2026 | August 18, 2026 |
+| `2026-08-19` | August 18, 2026 | August 19, 2026 |
+| `2026-08-20` | August 19, 2026 | August 20, 2026 |
+
+| # | Surface | The claim | Class | Why | Severity | Tag |
+|---|---|---|---|---|---|---|
+| **R-126** | `/changelog` — every entry | *(the displayed release date, e.g. "August 19, 2026" for the entry dated `2026-08-20`)* | **FALSE → fixed at P4.5a** | `changelog.astro:35` called `toLocaleDateString('en-US', …)` with **no `timeZone`**. A frontmatter date parses to **UTC midnight**, and the format call then renders it in the **build machine's** zone — so a build from PDT (UTC-7) rolled every date back one day. **The rendered date was a function of where the build ran**: CI in UTC produced correct dates, a laptop produced wrong ones, from identical source. The same `<time>` element's `datetime` attribute used `toISOString()` and was always right, so the machine-readable and human-readable dates **disagreed on the same line** — and only the wrong one was visible. Fixed by pinning `timeZone: 'UTC'`; all five entries verified correct post-fix `[D]`. Blast radius measured, not assumed: `grep` finds **exactly one** date-formatting call site in `src/` (the other two `toLocaleString()` calls format line counts, not dates), so no other surface carried this | **S3** | [D] |
+
+**Why it is filed FALSE rather than `unsupported`.** A date is a factual claim about when something
+happened, and the page stated one that was wrong — not unverifiable, wrong. It is the register's own
+category. It is also the **third** defect in this campaign whose root cause is a value being read in a
+context different from the one it was written in — after the shallow-clone date resolution (P2.2) and the
+`install_truth` pin frozen by its own idempotency guard (P2.5). *A timestamp with no zone is not a time.*
+
+**Scope note.** This is not one of P4.5a's four ruled rows. It was fixed anyway because the mission was
+**shipping into this exact surface** — publishing a new entry while knowing its date rendered wrong would
+have been shipping a known defect to satisfy a scope boundary. One-line change, no new claim authored.
