@@ -666,3 +666,41 @@ Recorded because the campaign's law cuts both ways, and because a register is on
 behind it: **an instrument reporting the surface broken deserves the same scrutiny as one reporting it
 healthy** — §7.7's lesson, recurring one mission later, this time against our own hand. Occurrence
 counting with context extraction is now the register's probe idiom; `grep -c` on served HTML is not.
+
+### §8.5 New rows — the cold-read re-test (O0c-a), verified
+
+Three fresh-context synthetic cold-reads ran against the shipped funnel (`evidence/coldreads/*_p2_6.md`,
+synthesis in `coldread_synthesis_p2_6.md`). Each reader was barred from the repository and had live HTTP
+only. **Their output is `[D-syn]`; every row below was then re-probed directly and carries `[D]`.** A
+synthetic reader may notice a thing; it does not get to assert one.
+
+| # | Surface | The claim | Class | Why | Severity | Tag |
+|---|---|---|---|---|---|---|
+| **R-120** | `/` hero paragraph | *"…no server, no signup, **nothing leaves your machine**. Your context is just the notes, docs, and decisions you already keep — now shaped into a graph your agents can navigate, **and shared in the open**."* | **unsupported → open** | The grammatical subject of *"shared in the open"* is **"Your context"**. Read literally — how a first-time reader reads — the site promises your notes stay local and are published, in consecutive sentences. The intended referent is almost certainly the *standard*, not the reader's context; that is not what the sentence says. It sits in the 30-second zone, inside the paragraph carrying the site's strongest trust claim. The clinician cold-reader called the pair **disqualifying on its own** for anyone holding patient notes `[D-syn]`; both clauses verified verbatim on production `[D]` | **S2** | [D] |
+| **R-121** | `/learn/what-is-adna` "Before and after" | *"Without aDNA: a lab's 200 files sprawl across Notion, Drive, and Git. Every session starts by pasting an outdated summary; last month's decisions get re-litigated; a new collaborator needs three days to orient."* | **unsupported → open** | Specific quantities (*200 files*, *three days*) under a **"Before and after"** heading, with no lab, no date, no source. **Weaker than R-118 and recorded as such** — there is no `$` prompt or `✓` line impersonating real output; it is an unlabelled hypothetical, not a forged recording. The finding is the **inconsistency of standard**: the campaign cut a fabrication one mission ago and published why, and a cold reader found the next one unaided, calling it *"the only thing that damages the credibility the rest of the site genuinely earns"* `[D-syn]`. Text verified verbatim `[D]` | **S3** | [D] |
+| **R-122** | `/` + footer — the contribution funnel | *"Contribute on GitHub"* → `aDNA-Network/aDNA` | **gap → open** | The CTA target has **`CONTRIBUTING.md` 404 and `CODE_OF_CONDUCT.md` 404**; both exist (**200/200**) in `aDNA-Network/aDNA.aDNA`, reachable only via the small footer *"Edit this page"* link `[D, GitHub raw]`. The contributor documentation is real and good — it is behind the wrong door. Bears on **D9**, scored 2 at baseline with *"advertised mouth = two 404s"*; this is the same defect class surviving in a new location | **S2** | [D] |
+| **R-123** | `/` badge *"MIT-licensed"* vs the docs repo | `aDNA-Network/aDNA.aDNA` — `license: null`, `LICENSE` **404**, `LICENSE.md` **404** `[D, GitHub API + raw]` | **unsupported → open** | The badge is **true of the image repo it links to** (`aDNA-Network/aDNA` → MIT `[D]`), so this is not a false badge. The defect is that *"Edit this page"* routes a contributor's PR into the **unlicensed** repo — they are invited to contribute under no stated terms. The one finding in this batch with a legal edge rather than an editorial one; a contribution accepted there has no inbound license | **S2** | [D] |
+| **R-124** | `/privacy` + `/security` | *(absent — no clinical or regulatory posture of any kind)* | **gap → open** | **0 occurrences** on both pages for every one of: HIPAA · GDPR · PHI · de-identif\* · IRB · consent · patient · clinical · health `[D]`. Meanwhile `/` mentions *rare* ×15, *undiagnosed* ×2, *Wilhelm* ×3 `[D]`. Stated fairly: aDNA is a file-layout convention and *"nothing leaves your machine"* is nearly the whole answer — the defect is **routing, not policy**. A clinician arriving through the site's own rare-disease framing, asking the first question her profession obliges her to ask, finds no page that acknowledges the question exists `[D-syn]` | **S3** | [D] |
+
+**Not registered — the embargo case.** *"Lattice Protocol"* is named in the homepage hero (*"built on
+the Lattice Protocol — the coordination layer, opening progressively"*) and defined **nowhere**: the
+glossary returns **0** for *lattice*, and `/glossary/lattice` + `/glossary/lattice-protocol` both **404**
+`[D]`. Two of three cold-readers flagged it. It is **not filed as a copy defect** because campaign
+constraint 9 — the **counsel embargo** — forbids publishing or linking protocol material until D-8 rules,
+so the term *cannot* be defined on the site today. The live question is therefore not *"define it"* but
+*"should the hero name a term the embargo forbids explaining"* — a decision, routed to the P2.6 re-plan.
+
+**Open by disposition after §8.5: 8** — R-34, R-63 (awaiting O0b) · R-111 (S2) · R-120, R-122, R-123
+(S2) · R-121, R-124 (S3). FALSE: **0**. The register's totals in §8.3 are superseded by §8.6.
+
+### §8.6 Counts — re-derived after §8.5
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **138** |
+| **Unique ids** | **124** (10 `G-*` + 114 `R-*`, `R-11`…`R-124`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Re-derived, not carried — the same parse as §8.3, run again because §8.5 changed the input. This is the
+second time in one mission that a typed derived count went stale inside its own commit; the discipline
+is not "count carefully once", it is **count last**.
