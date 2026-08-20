@@ -4,7 +4,7 @@ artifact_type: session_prompt_index
 campaign_id: campaign_haussmann
 title: "HAUSSMANN session opening prompts — paste-ready, one per mission"
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-08-20
 status: active
 last_edited_by: agent_rosetta
 tags: [haussmann, session_prompts, missions]
@@ -19,7 +19,23 @@ tags: [haussmann, session_prompts, missions]
 > them); the campaign CLAUDE.md carries the standing conventions + the path/notation/output contracts;
 > `grounded_in` evidence is **re-verified on disk at execution** (the genesis evidence ages). Every
 > session: Tier-1 session file first; explicit-path git staging; AAR before `completed`. Decade-2 prompts
-> (P3–P5) additionally require the P2.6 re-plan ratification (DP6).
+> (P3–P5) additionally require the P2.6 re-plan ratification (DP6) — **ratified 2026-08-19; Decade 2 is open.**
+
+> **⚠ THIS TABLE IS IN MISSION-NUMBER ORDER, WHICH IS NO LONGER EXECUTION ORDER.** Since ⛩ DP6
+> (2026-08-19), **phase order is not claim order.** Decade 2 runs:
+>
+> > **P4.5a → P3.5 → P3.1 → P3.2 → P3.3 → P3.4 → P4.1 → P4.2 → P4.4 → P4.3 → P4.5b → P5.1 → P5.2**
+>
+> Reading down this table and claiming the next open row would start the decade on **P3.1** — the wrong
+> mission. Two departures, both operator-ruled: **P4.5a runs first in the whole decade** (⊳ D-A — an S2
+> homepage self-contradiction outranks the ordering convention) and **P3.5 runs first within P3** (D9 is
+> the one dimension nine missions never moved, and its repair is small and high-leverage). Decade-1
+> leftovers stay open independently of that sequence: **P0.4** (Aspasia's ack) and **P2.6**
+> (`in_progress` behind ⛩ O0b, the operator-gated TTFS run).
+>
+> *(This warning exists because the index was last updated 2026-08-16 and still carried a P4.5 row reading
+> "deliberately last" — the instruction DP6 had reversed. An index believed over the artifact it points at
+> is §1.8's own finding, and it has now recurred twice in this campaign.)*
 
 | Mission | Paste this |
 |---|---|
@@ -47,6 +63,7 @@ tags: [haussmann, session_prompts, missions]
 | **P4.2** | *(post-DP6)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p4_2_craft_floor.md` (needs P4.1). Coverage anchors must be grep-verifiable; gaps are honest rows, not omissions. |
 | **P4.3** | *(post-DP6)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p4_3_a11y_manual.md`. Schedule my VoiceOver session at O2. Assertions test semantics, not pixels. |
 | **P4.4** | *(post-DP6)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p4_4_ci_hardening.md`. Baselines generate IN the CI container; red-test with a deliberate diff; I'll enable Speed Insights at O1. |
-| **P4.5** | *(post-DP6)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p4_5_voice_rewrite.md` — deliberately last. Halt at O0 for voice-guide sign-off. Claims never round up during rewrite. |
+| **P4.5a** | **⬅ FIRST IN DECADE 2** You are Rosetta in ~/aDNA/aDNA.aDNA. Execute the **P4.5a** section of `mission_haussmann_p4_5_voice_rewrite.md` — the copy increment (⛩ DP6 ⊳ D-A). Rows **R-120 · R-125 · R-111 · R-121**; **R-124 is deferred — do not fix it with copy.** Cut *"Lattice Protocol"* from all four `HomeHero` surfaces with term-free phrasing; **invert gate-23, never delete it** (its second half guards R-14). Red-prove every assertion. |
+| **P4.5b** | *(LAST)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute the **P4.5b** section of `mission_haussmann_p4_5_voice_rewrite.md` — deliberately last. Halt at O0 for voice-guide sign-off. Claims never round up during rewrite. |
 | **P5.1** | *(post-DP6)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p5_1_human_evidence.md`. O0 hands me the recruitment brief — humans only from here; no coaching, no defending. |
 | **P5.2** | *(post-DP6)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p5_2_rescore_capstone.md`. Full evidence refresh, isolated scorers, capstone ranker, launch checklist; halt at O3/O4 (DP9). |
