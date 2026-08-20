@@ -1,9 +1,9 @@
 {
-  "_doc": "HAUSSMANN P0.5 (editorial gate, O1) — the B5 claim register as a CI fixture. Source of record: how/campaigns/campaign_haussmann/evidence/claims/claim_register.md (93 adjudicated rows) + claims_raw.json (live fetch 2026-08-16). This fixture is the machine-checkable SLICE: all 8 FALSE rows (the launch blockers) + 12 representative verified rows (currency canaries).",
+  "_doc": "HAUSSMANN P0.5 (editorial gate, O1) — the B5 claim register as a CI fixture. Source of record: how/campaigns/campaign_haussmann/evidence/claims/claim_register.md (125 unique ids across 139 table rows, derived by script at P4.5a §9.5) + claims_raw.json (live fetch 2026-08-16). This fixture is the machine-checkable SLICE. Its composition CHANGED at P1.1 and this line lagged two missions: it described 'all 8 FALSE rows (the launch blockers) + 12 representative verified rows', but P1.1 resolved the FALSE set 8/8 and the rows were cleaned out, so the slice is now 23 rows, ALL verified, ZERO FALSE — currency canaries only. The FALSE machinery in gate-26 is retained deliberately for the next false claim, not because one is pinned here.",
   "_relation_to_gate_20": "gate-20 traces claims to their SOURCE FILES (does `vaults.json` still say 74?). This fixture asserts the RENDERED PAGE — that a false sentence is gone, and that a true one has not silently vanished. Different failure modes, no overlap: the G-01..G-10 accessor rows stay in claim_trace_manifest.json and are deliberately NOT duplicated here.",
   "_quote_rule": "Every `quote` is the exact page-visible text, verified against the 2026-08-16 build snapshot. Comparison normalizes typography only (curly quotes -> straight, em/en dash -> hyphen, whitespace collapsed) so a smart-quote change cannot fake a pass or a fail. `match_in: html` rows assert against raw markup instead (attributes, hrefs).",
   "_no_count_pinning": "Campaign convention 8 (WebForge KW-8/FR-K): verified quotes are trimmed to their non-numeric clause wherever a count appears, so this gate never pins live registry data. Count currency is gate-21's job, count provenance is gate-20's.",
-  "updated": "2026-08-19",
+  "updated": "2026-08-20",
   "rows": [
     {
       "id": "R-12",

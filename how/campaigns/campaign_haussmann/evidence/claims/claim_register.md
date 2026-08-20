@@ -3,9 +3,9 @@ type: evidence
 packet: B5
 campaign: campaign_haussmann
 created: 2026-08-16
-updated: 2026-08-19
+updated: 2026-08-20
 status: active
-last_edited_by: agent_haussmann_b5
+last_edited_by: agent_rosetta
 tags: [claim_register, evidence, vitruvius_d6_d7, h13]
 ---
 
@@ -682,6 +682,18 @@ synthetic reader may notice a thing; it does not get to assert one.
 | **R-123** | `/` badge *"MIT-licensed"* vs the docs repo | `aDNA-Network/aDNA.aDNA` — `license: null`, `LICENSE` **404**, `LICENSE.md` **404** `[D, GitHub API + raw]` | **unsupported → open** | The badge is **true of the image repo it links to** (`aDNA-Network/aDNA` → MIT `[D]`), so this is not a false badge. The defect is that *"Edit this page"* routes a contributor's PR into the **unlicensed** repo — they are invited to contribute under no stated terms. The one finding in this batch with a legal edge rather than an editorial one; a contribution accepted there has no inbound license | **S2** | [D] |
 | **R-124** | `/privacy` + `/security` | *(absent — no clinical or regulatory posture of any kind)* | **gap → open** | **0 occurrences** on both pages for every one of: HIPAA · GDPR · PHI · de-identif\* · IRB · consent · patient · clinical · health `[D]`. Meanwhile `/` mentions *rare* ×15, *undiagnosed* ×2, *Wilhelm* ×3 `[D]`. Stated fairly: aDNA is a file-layout convention and *"nothing leaves your machine"* is nearly the whole answer — the defect is **routing, not policy**. A clinician arriving through the site's own rare-disease framing, asking the first question her profession obliges her to ask, finds no page that acknowledges the question exists `[D-syn]` | **S3** | [D] |
 
+> **Annotation (P4.5a, 2026-08-20).** R-124's homepage figures above (*rare ×15 · undiagnosed ×2 ·
+> Wilhelm ×3*) were re-probed and have moved to **×18 · ×2 · ×5** `[D]`. They were true when measured;
+> registry-driven copy moves underneath a hand-counted figure. Left as-written, corrected in **§9.4**.
+> R-124's own disposition changed too — **deferred out of P4.5a**, see §9.3.
+
+> **⛔ SUPERSEDED 2026-08-20 by ⛩ DP6 ⊳ D-C — kept, never deleted (SO-6).** The paragraph below states
+> that this finding is *"not filed as a copy defect"* and that the live question is *"routed to the P2.6
+> re-plan."* Both were true when written and are false now: the re-plan **ruled it**
+> (`p2_replan.md:285-291` — *"cut it from the hero… Owner: P4.5a"*), and it **is** filed, as **R-125** in
+> §9 below. Read what follows as the record of *why it went one mission unregistered* — not as its status.
+> This heading is exactly the shape §8.1 warned about: *adjudicated, assigned an id, never given a row.*
+
 **Not registered — the embargo case.** *"Lattice Protocol"* is named in the homepage hero (*"built on
 the Lattice Protocol — the coordination layer, opening progressively"*) and defined **nowhere**: the
 glossary returns **0** for *lattice*, and `/glossary/lattice` + `/glossary/lattice-protocol` both **404**
@@ -704,3 +716,121 @@ so the term *cannot* be defined on the site today. The live question is therefor
 Re-derived, not carried — the same parse as §8.3, run again because §8.5 changed the input. This is the
 second time in one mission that a typed derived count went stale inside its own commit; the discipline
 is not "count carefully once", it is **count last**.
+
+---
+
+## §9 · P4.5a addendum — the row that was owed, and one that leaves (2026-08-20)
+
+Written as the **first act of P4.5a**, the mission ⊳ D-A ruled to the front of Decade 2. The re-plan named
+this step explicitly (`p2_replan.md:500-504`): P4.5a *"inherits four registered rows and one unregistered
+one, which is precisely how R-111 went missing for three missions."* Every row below was **re-probed live
+against production at execution time** (campaign convention 12), not quoted forward from the 2026-08-19
+O0c-a probe — using the register's own idiom (`re.finditer` with context extraction over served HTML, never
+`grep -c`, which counts *lines* and served HTML is one line).
+
+### §9.1 New row — the ⊳ D-C hero finding, finally registered
+
+| # | Surface | The claim | Class | Why | Severity | Tag |
+|---|---|---|---|---|---|---|
+| **R-125** | `/` hero trust-links — and `/network`, `/commons`, `/vaults`, which share the same `HomeHero` component | *"built on the **Lattice Protocol** — the coordination layer, opening progressively"* | **unsupported → cut** | A term named in the 30-second zone and **defined nowhere**. Re-probed 2026-08-20 `[D]`: `/glossary/` returns **0** occurrences of *lattice*; `/glossary/lattice`, `/glossary/lattice/`, `/glossary/lattice-protocol`, `/glossary/lattice-protocol/` are **404 ×4**. Flagged by **2 of 3** synthetic cold-readers at O0c-a `[D-syn]`, then re-probed here `[D]`. It is **not FALSE** — it is *unexplainable*: campaign constraint 9, the **counsel embargo**, forbids defining or linking protocol material until D-8 rules, so the term cannot be repaired by adding a definition. Hence `cut`, not `fix`. **⛩ Ruled at DP6 ⊳ D-C** (`p2_replan.md:285-291`), owner **P4.5a**, **reversible the moment counsel rules at D-8**. **Spread, measured not assumed**: the sentence is hardcoded in *both* arms of `HomeHero.astro`'s `graphLed` branch (`:230` graph-led, `:349` not), so it renders **×1 on each of four surfaces** — `/`, `/network`, `/commons`, `/vaults` — all 200, all verified `[D]`. **Severity S2 is a first assignment** — no prior file assigns ⊳ D-C an S-level — calibrated against the two nearest rows: **R-15** (the identical sentence, `unsupported`, **S2**) and **R-120** (the other 30-second-zone defect, **S2**) | **S2** | [D] |
+
+### §9.2 R-15 — superseded by R-125, and said so rather than closed quietly
+
+**R-15** (`:54`) carries the same sentence with the disposition *"Honest **relative to** R-14; should become
+the only phrasing."* That judgment was correct in its own frame — it ranked this phrasing above the retired
+FALSE gloss — but ⊳ D-C moves the baseline: the question is no longer *which* protocol phrasing is honest,
+it is whether the hero names an unexplainable term at all. **R-15 is superseded by R-125**, not
+independently resolved, and it is recorded here rather than allowed to lapse silently when the cut lands.
+The operator ruled the cut covers **all four surfaces** with **term-free replacement phrasing** — the spec
+link survives, only the embargoed term goes — so R-15's live text is removed by the same edit.
+**Consequence to state plainly:** a row outside P4.5a's four inherited rows is being disposed of by
+P4.5a's work. That is recorded, not absorbed.
+
+### §9.3 R-124 — assessed, and **deferred out of P4.5a** for the reason its own caveat predicted
+
+The re-plan attached an escape hatch (`p2_replan.md:214-217`): R-124 *"needs an audience decision before it
+needs copy"*, and if so it **drops back out of P4.5a and is stated as deferred — not silently fixed with copy
+that presumes an answer nobody has given.** Assessed at execution:
+
+- The absence re-confirms `[D]` — `/privacy/` and `/security/` both return **0** for every one of
+  HIPAA · GDPR · PHI · de-identif\* · IRB · consent · patient · clinical · health.
+- §8.5 frames the defect as *"routing, not policy."* **Probed, that framing does not survive**: routing
+  requires a destination, and **no page on the site answers the question** — so any fix must *author* the
+  posture rather than point at it.
+- Authoring it means answering *"is this site for clinicians handling patient data?"* — a **positioning**
+  claim, which is ADR-048 / P0.1 territory and ratified ground. Writing it inside a copy increment would be
+  precisely the presumptive copy the caveat forbids.
+
+**Disposition: R-124 is deferred out of P4.5a**, unchanged and still **open** at S3. It needs the audience
+decision first; the owning mission is for the operator to route (P4.5b and P5.1 both touch positioning).
+
+### §9.4 Freshness corrections to §8.5's derived counts
+
+§8.5's R-124 row cites the homepage as *"rare ×15, undiagnosed ×2, Wilhelm ×3"*, measured 2026-08-19.
+Re-probed 2026-08-20 on served HTML `[D]`: **rare ×18 · undiagnosed ×2 · Wilhelm ×5.** The originals were
+true when measured — registry-driven copy moves underneath a hand-counted figure — so §8.5 is **annotated,
+not rewritten**. The direction matters: the rare-disease framing the row complains about has grown, not
+shrunk, since the row was filed.
+
+### §9.5 Counts — re-derived after §9.1, and a parse defect found while deriving them
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **139** *(138 at §8.6, +1 for R-125)* |
+| **Unique ids** | **125** (10 `G-*` + 115 `R-*`, `R-11`…`R-125`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by script after the last edit to this file, per §8.6's rule: *the discipline is not "count carefully
+once", it is **count last**.*
+
+**⚠ A parse defect, found because the first derivation disagreed with §8.6 and was not published.** The
+parse behind §8.3/§8.6 is described only as *"the same parse"* — it is **never written down**. A
+reasonable stricter reading (require the id to be a closed table cell) returns **137**, not 139, because it
+silently drops two rows whose id cell carries an annotation rather than a bare id: `:357`
+`| R-23 / R-23b |` (a compound cell) and `:421` `| **R-18** *(rewritten)* |`. Both are real rows. The
+figure published above uses the **looser, §8.6-comparable parse** so the delta against 138 means what it
+appears to mean.
+
+The lesson generalizes past this file: **an undocumented derivation is a number nobody can reproduce, and
+two defensible parses of the same table differ by 2 rows here.** The two off-by-one-class row shapes are
+recorded above so the next derivation can be checked rather than trusted. Filed as a follow-up for P4.4
+(gate hardening): pin the parse in a script rather than in the phrase *"the same parse."*
+
+### §9.6 Open by disposition — as at registration, before P4.5a's copy edits land
+
+**Open: 9** — R-34, R-63 (awaiting ⛩ O0b) · R-111, R-120, R-122, R-123, **R-125** (S2) · R-121, R-124 (S3).
+**FALSE: 0.** Supersedes the tally of **8** at §8.5. R-15 is not counted again: it is superseded by R-125
+(§9.2), not separately open.
+
+Of these, **P4.5a is scoped to close four** — R-111, R-120, R-121, R-125. **R-124 leaves the mission
+deferred** (§9.3), and **R-122/R-123 belong to P3.5**, the next mission in the ruled order. This tally is
+restated at P4.5a's close against what actually shipped, rather than assumed forward from here.
+
+### §9.7 R-111 narrows to ONE surface — our own row outran its evidence
+
+R-111 (`:612`) reads *"`/canonical-properties` + `/about`"* and asserts *"the remediation never shipped."*
+Re-probed live 2026-08-20, **that is half wrong, and the half that is wrong is ours** `[D]`:
+
+| Surface | Disclosure present? | Evidence |
+|---|---|---|
+| `/state-of-the-network/` | **✅ shipped** | *"Related-party disclosure: the person who operates this network also holds a role at the Foundation, so treat the relationship as a close one, not as an independent third party vouching for us."* |
+| `/about/` | **✅ shipped** | *"Note the overlap named above: aDNA's Founding Architect also holds a role at the Foundation, so read this as a close relationship rather than an independent organisation vouching for us."* |
+| `/canonical-properties/` | **❌ absent** | The Rare Archive row reads *"Legitimately connected to aDNA, and not controlled by it"* and *"In the Wilhelm Foundation's own GitHub organization, under their control, not ours"* — **0** occurrences of any related-party or affiliation language on the page |
+
+**R-111's live scope is therefore `/canonical-properties` alone.** The `/about` half was remediated at the
+P1.2 close and the row was never updated to say so. The gap that remains is the sharp one — it is the page
+whose entire job is *"here is how you check we are who we say we are"*, filing the Foundation under
+**"not ours"** while two sibling pages disclose that the operator holds a role there.
+
+**Why this is recorded and not quietly narrowed.** The campaign's standing rule is that a claim of ours
+which outruns its evidence is the same defect as one of the site's. R-111 was itself filed as the register's
+cautionary tale — *adjudicated, assigned an id, never given a table row* — and the row written to fix that
+then **overstated the defect for two missions**. Both failure directions are the same root cause: **the row
+was never re-probed against the live page.** §9's rule (re-probe at execution, never quote forward) is what
+caught it.
+
+**Fixture note — the same id means two different things in two places.** `tests/gates/fixtures/claim_register.json`
+pins `R-111` as a **`verified`** row on `/state-of-the-network`, asserting the shipped sentence stays put.
+The register's R-111 is the **unshipped** half. Neither is wrong; they are the two faces of one finding, and
+nothing said so until now. Read the fixture row as *"the disclosure that shipped must not vanish"* and the
+register row as *"the disclosure that did not ship, now scoped to `/canonical-properties`."*
