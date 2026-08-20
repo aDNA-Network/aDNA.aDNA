@@ -577,3 +577,92 @@ a rank. The rule §tiers.3 states is about **tier vocabulary**; it has no view o
 about its own work. The assertion now reads the badges and tier headings only. *An instrument
 reporting the surface broken deserves the same scrutiny as one reporting it healthy* — P2.3's lesson,
 recurring on schedule.
+
+---
+
+## §8 · P2.6 O0 re-verify — the scheduled re-fetch, and the row that was never written (2026-08-19)
+
+§7.4 scheduled this: *"Next full re-fetch: P2.6 midscore."* Live probes against production
+(`tree=db4b34f`) 2026-08-19. Three rows re-confirmed, one **discharged early**, one **written for the
+first time**, and the counts corrected.
+
+### §8.1 R-111 — the row that was created but never given a row
+
+**§7.5 item 10** adjudicated the Wilhelm Foundation being filed under *"What is not ours"* as
+independent while `/about` names the operator as Head of AI at that same Foundation. Its disposition
+reads **"Related-party disclosure on both pages → R-111."** R-111 was assigned an id and **never given
+a table row** — `R-110` is followed directly by `R-112` throughout the register `[D]`.
+
+The missing row and an unshipped fix turn out to be the same gap. Measured on production:
+
+| Surface | Operator-role disclosure | Measured |
+|---|---|---|
+| `/about` | *"Stanley Bishop — Founding Architect, aDNA · Head of AI, Wilhelm Foundation · …"* | present — but this is **R-108's role line**, which pre-existed; it says nothing about the Rare Archive relationship. `related` / `not ours` → **0** `[D]` |
+| `/canonical-properties` | *(the "not ours" page — `not ours` ×2)* | **`Head of AI` 0 · `Stanley` 0 · `Founding Architect` 0 · `affiliat*` 0 · `disclos*` 0 · `conflict` 0** `[D]` |
+
+So the page that files the Foundation's property as *"under their control, not ours"* discloses no
+operator affiliation with that Foundation, and the page that states the affiliation never connects it
+to the filing. **The related-party disclosure §7.5 item 10 called for is unshipped on both sides of the
+comparison it was written to pre-empt.**
+
+Registering it now, with the row it should have had:
+
+| # | Surface | The claim | Class | Why | Severity | Tag |
+|---|---|---|---|---|---|---|
+| **R-111** | `/canonical-properties` + `/about` | *(absent — no related-party disclosure connecting the operator's Wilhelm Foundation role to the Rare Archive being filed as independent)* | **gap → open** | Adjudicated at P1.2 §7.5 item 10 with disposition *"related-party disclosure on both pages"*; the id was assigned, the row never written, and the remediation never shipped. The underlying reasoning is unchanged and is the register's own: *a reader comparing the two pages finds the conflict the site itself supplied — which reads as selective disclosure and costs more than the fact it hides.* Both facts are individually disclosed and true; what is missing is the **link** between them, on the page where a skeptical reader would look for it. Bears directly on **D7**, the campaign's binding constraint | **S2** | [D] |
+
+**Why this survived three missions**: it is not a route, a slug, or a count, so ADR-057's same-diff
+sweep is structurally blind to it (campaign CLAUDE.md §7); and it is an **absence**, so no grep for a
+wrong string finds it. The only instrument that catches a disposition which never shipped is a register
+whose ids are checked for continuity — which is what produced it here. **Routed** to the re-plan;
+`/about` and `/canonical-properties` are P1.2 surfaces, so the fix is a Decade-2 copy item, not a
+P2.6 one (this mission writes no `site/` changes).
+
+### §8.2 Rows re-verified
+
+| Row | Expected | Measured on production 2026-08-19 | Verdict |
+|---|---|---|---|
+| **R-34** | `/network` *"About five minutes"*, `[A]`, no recorded run | present ×1 `[D]` | **still open** — discharged or revised at O0b, never by copy |
+| **R-63** | `/get-started` *"in about 5 minutes"*, `[A]`, no recorded run | present ×1 `[D]` | **still open** — same |
+| **R-118** | fabricated terminal block cut at P2.5 O1 | `Loaded CLAUDE.md` **0** · `what problem does it solve` **0**; labelled gap (*"not yet recorded"*) present `[D]` | **fix holds** |
+| **R-119** | false mechanism prose fixed at P2.5 O1 | `interview scaffolds` **0**; the surviving *"onboarding interview"* occurrence reads *"It **then offers to run** an onboarding interview…"* — the corrected agency and order from R-118's own correction note `[D]` | **fix holds** |
+| **R-108** | `/about` title discrepancy, scheduled for P2.6 re-check | **discharged early 2026-08-19** by live re-probe; recorded in-row | **closed** |
+
+**R-118 / R-119 objective-id repointing.** Both rows say a real transcript *"arrives from **O2's**
+clean-machine run"* — P2.5's numbering. P2.5 closed at O1 with that criterion unmet, and the work
+re-homed to **P2.6 O0b** (the run) and **O0c** (the fold). Read those references as **P2.6 O0b/O0c**.
+The rows are otherwise unchanged.
+
+### §8.3 Counts — derived, and corrected against §7.4
+
+§7.4's *"Total adjudicated: 110"* was accurate after P1.2 and has been stale since §7.7 added six rows.
+Recomputed by parsing the register's own table rows rather than carried forward `[D]`:
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **133** |
+| **Unique ids** | **119** (10 `G-*` + 109 `R-*`, `R-11`…`R-119`) |
+| Ids appearing twice (re-quoted in later addenda) | 14 — R-14, R-18, R-20, R-23, R-34, R-46, R-47, R-61, R-63, R-84, R-90, R-108, R-118, R-119 |
+| Gaps in the `R-*` sequence | **0** — R-111 was the only one, and §8.1 closes it |
+
+*Counted after this section was written, not before.* The first draft of this table read 127 rows / 9
+duplicates — correct for the register as it stood one paragraph earlier, and wrong the moment §8.1 added
+R-111's row and §8.2 re-quoted five existing ones. **A derived number typed into prose stops being
+derived** (WebForge KW-14); re-deriving after the edit that changes it is the whole of the discipline.
+Reproduce with a parse of `^\| *\*{0,2}(R|G)-\d+` over this file.
+
+**Open by disposition: 3** — R-34, R-63 (both `[A]`, awaiting O0b), and R-111 (new, S2). FALSE: **0**.
+Unsupported: **0**.
+
+### §8.4 A measurement artifact this re-verify produced, recorded against ourselves
+
+The first pass of §8.2 used `grep -c "$string"` against the served HTML and reported apparent
+regressions on R-118 and R-119. **`grep -c` counts matching *lines*, not occurrences** — served HTML is
+effectively one long line, so it returns `1` for "matched somewhere" and cannot distinguish one
+occurrence from twenty. A `re.finditer` pass with context extraction showed both hits to be single,
+legitimate, correct copy. The rows above are the corrected reading.
+
+Recorded because the campaign's law cuts both ways, and because a register is only as good as the probe
+behind it: **an instrument reporting the surface broken deserves the same scrutiny as one reporting it
+healthy** — §7.7's lesson, recurring one mission later, this time against our own hand. Occurrence
+counting with context extraction is now the register's probe idiom; `grep -c` on served HTML is not.
