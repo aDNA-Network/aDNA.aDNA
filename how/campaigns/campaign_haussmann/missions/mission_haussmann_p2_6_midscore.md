@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P2
 decade: 1
 owner: stanley
-status: queued
+status: in_progress   # opened 2026-08-19, session_stanley_20260819_165937; O0 · O0c-a · O3a · O2-premise-audit closed, O1 running, DP6 pending
 mission_class: verification
 executor_tier: fable
 token_budget_estimated: "~300–450 kT across 2 sessions: 2-scorer re-score + reconciliation + Decade-2 re-plan artifact + gate re-baseline, PLUS the carried P2.5 O0b/O0c (clean-machine TTFS run + cold-read re-test + variant-B transcript). Raised from ~200–300 kT / 1 session when the two objectives were re-homed, 2026-08-19 (ADR-016/SO#11 — a budget that no longer matches its scope is a drifted number)"

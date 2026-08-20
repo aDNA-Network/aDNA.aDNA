@@ -26,7 +26,7 @@ All rows `[D]`, probed 2026-08-19 against `https://adna.network` and the built `
 
 | Stated premise | Measured now | Verdict |
 |---|---|---|
-| `.md` twins 404 (10/10) | `/about.md` `/network.md` `/commons.md` `/reference/specification.md` → **404 ×4** | **holds** |
+| `.md` twins 404 (10/10) | **10 of 10 → 404**: `/about` `/network` `/commons` `/get-started` `/learn/what-is-adna` `/reference/specification` `/vaults` `/use-cases` `/state-of-the-network` `/changelog`, each probed with a `.md` suffix | **holds** |
 | *"while **29 old links** point at them"* | **Zero internal `.md` links remain.** 15 distinct `.md` hrefs in the built site: **14 are `github.com` blob URLs** (legitimate external references to the standard), and the 15th is `https://obsidian.md` — a domain, not a file | **DEAD** |
 | llms-full.txt is *"a 2 KB index wearing a corpus name"* | **2,476 bytes** — still an index | **holds** |
 | llms.txt *"referenced zero times in the site's own HTML"* | **0** refs across `/`, `/get-started/`, `/about/`; llms.txt itself advertises **0** `.md` files | **holds** |
