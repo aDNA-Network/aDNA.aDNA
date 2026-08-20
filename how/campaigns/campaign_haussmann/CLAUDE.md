@@ -57,4 +57,10 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 
 ## Mission index
 
-`missions/` — 27 files `mission_haussmann_p{0..5}_*.md`; paste-ready prompts in `missions/session_prompts_haussmann.md`. Claim next open mission in phase order unless the operator directs otherwise.
+`missions/` — 27 files `mission_haussmann_p{0..5}_*.md`; paste-ready prompts in `missions/session_prompts_haussmann.md`.
+
+**⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
+convention 11 — **`P4.5a` is the next mission**, not `P3.1`. Claiming "the next open mission in phase
+order" would start the decade on the wrong one. Decade-1 leftovers still open regardless of that
+sequence: **P0.4** (`active`, awaiting Aspasia's ack — her lane) and **P2.6** (`in_progress`, awaiting
+⛩ **O0b**, the operator-gated TTFS run).

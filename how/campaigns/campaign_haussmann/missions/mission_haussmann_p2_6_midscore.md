@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P2
 decade: 1
 owner: stanley
-status: in_progress   # opened 2026-08-19, session_stanley_20260819_165937; O0 · O0c-a · O3a · O2-premise-audit closed, O1 running, DP6 pending
+status: in_progress   # opened 2026-08-19. Session 1: O0 · O0c-a · O1 · O2 · O3a · O3b closed. Session 2: ⛩ DP6 RATIFIED — p2_replan.md accepted, nine ⊳ stamped, cascade executed, Decade 2 OPEN. REMAINING: ⛩ O0b (operator-gated TTFS run) → O0c-b · R-34/R-63 verdict · D3 + the 12-dimension composite · III 167 · AAR. Stays in_progress until the AAR lands (SO#5).
 mission_class: verification
 executor_tier: fable
 token_budget_estimated: "~300–450 kT across 2 sessions: 2-scorer re-score + reconciliation + Decade-2 re-plan artifact + gate re-baseline, PLUS the carried P2.5 O0b/O0c (clean-machine TTFS run + cold-read re-test + variant-B transcript). Raised from ~200–300 kT / 1 session when the two objectives were re-homed, 2026-08-19 (ADR-016/SO#11 — a budget that no longer matches its scope is a drifted number)"
@@ -118,10 +118,68 @@ identical binding anchor on **eight** dimensions.
 **Constraint honored**: `git diff --name-only 3b8e90d~1..HEAD -- site/` → **0 files**. This mission wrote
 no site changes.
 
-### Session 2 — pending
+### Session 2 — 2026-08-19 (`session_stanley_20260819_190213`), commits `38874cc`..
 
-O0b write-up · R-34/R-63 verdict (three branches planned, including "did not complete") · O0c-b fold +
-the same-diff probe update · D3 final score + the 12-dimension composite · III cycle 167 · AAR.
+**⛩ DP6 RATIFIED. Decade 2 is open.** Operator rulings taken at planning: DP6 fires **in-chat** (not as
+an ISS surface) · **cascade then halt**, P3.5 not authored here · **O0b stays outstanding** · **push at
+session close**.
+
+| Obj | State | Output |
+|---|---|---|
+| **O0b** | ⛩ **still outstanding** | Unchanged by this gate. Runbook remains `ready_for_operator` |
+| **O0c-b** | ⏸ blocked on O0b | The transcript fold (variant B) |
+| **O2** | ✅ **RATIFIED** | `p2_replan.md` → `accepted`; **nine** ⊳ stamped; cascade executed across 16 files |
+
+**The gate itself.** Nine sub-decisions, not the eight the session announced — **D-I sat unlettered
+inside §2's P3.2 prose** and would have ridden the master signature silently. Found by grepping the
+document for `⊳` instead of trusting §3's heading; it is §1.8's own finding recurring one level up (*the
+index believed over the artifact*). All nine ruled; eight as recommended; **D-A took its recommendation
+and then went further than it**.
+
+**D-A is the one that mattered.** The drafted recommendation read *"P4.5 takes the copy rows early as a
+first increment"* — while §4's order left P4.5 at **position 10 of 12**. Read literally that is option
+(iii) wearing option (ii)'s label: an **S2 self-contradiction in the homepage's 30-second zone**, live
+through eleven missions. Put to the operator as a separate question; ruled to the **front of the whole
+decade**. P4.5 splits into **P4.5a** (four copy rows + the ⊳ D-C hero cut, runs first) and **P4.5b** (the
+voice rewrite, still last). `mission_count` holds at **27** — a split increment is not a new mission.
+
+**Three defects fixed in passing, all of the same family — a stale number outliving its derivation:**
+
+1. **`calibrated_sessions` moved twice.** Drafted `35-40`; the O0b ruling made P2.6 three sessions, not
+   two → `36-41`; then the round-3 D-A split added a session → **`37-42`**, which is what is stamped.
+   Both halves counted, not carried: `grep -c haussmann` on the session history → 17, minus the one that
+   *is* P2.6 s1 → **16** Decade-1 `[D]`. The operator's quoted value was `36-41`, derived one ruling
+   earlier; the ruling selected the *principle* (**"stamp the number that survives being counted
+   today"**), and the deviation is flagged in-field for one-line reversal.
+2. **The Decade-2 total is now machine-derived** — `~2,380–3,650 kT` summed **from the twelve mission
+   files by script**, not typed. It matches re-plan §4 exactly because §4 was re-summed the same way.
+3. **P3.1's budget string carried a mojibake CJK character** (`llms-full真corpus`), and **P4.5's split
+   field led with the superseded `250–400`** — the first `~N–N kT` a grep finds must be the operative
+   figure, not the one it replaced.
+
+**Two rules were found to be unfollowable and marked as such rather than left standing.** Campaign
+convention 4 (*"read gate bars from `lighthouse_profiles.json`, never transcribe"*) — the file is **0
+hits vault-wide**, so every gate-19 bar is a transcription; mirror owed at P4.4 (⊳ D-E). And convention
+11's *"claim next open mission in phase order"* — since D-A, **phase order is not claim order**.
+
+**ADR-057 held three statements about itself, one contradicting the other two.** Frontmatter `proposed`;
+its own Status section *"ratified with the charter at Gate C"*; the signed §7.7 *"adopted with the
+charter."* ⊳ D-B ruled Gate C covered it. Ratification **Date is 2026-08-16** (the act), annotated with
+the 08-19 correction.
+
+**Constraint honored**: zero `site/` files. The ⊳ D-C hero cut is *ruled* here and **implemented at
+P4.5a** — a copy edit needs a gate anchor and a probe, which is not a ratification session's work.
+
+**Owed before P4.5a**: the D-C finding was *held back* at O0c-a pending this ruling and **has no
+claim-register row**. P4.5a would otherwise inherit four registered rows and one unregistered one —
+exactly how R-111 went missing for three missions.
+
+### Session 3 — pending
+
+⛩ **O0b** (operator: fresh macOS account + an unassisted non-builder runner) · O0b write-up ·
+**R-34/R-63 verdict** (three branches planned, including "did not complete") · O0c-b fold + the
+same-diff probe update · **D3 final score + the first publishable 12-dimension composite** · III cycle
+167 · **AAR** → then and only then does P2.6 reach `completed` (SO#5).
 
 ## AAR (SO#5)
 
