@@ -988,3 +988,48 @@ the audience call) · **R-128** (S3, `#needs-human`, the copyright holder).
 
 Supersedes §9.6's tally of 9. Discharged since: **R-120, R-121, R-125** (P4.5a) and **R-127** (here, on
 the same push as R-122). R-126 was never open debt (§9.8).
+
+### §10.7 Close — the three rows discharged, verified live
+
+R-122, R-123 and R-127 close on **outward acts**, not on edits, so they are verified against the
+public internet rather than against the tree. The opening probe matrix (§10.1), re-run after both
+pushes, 2026-08-20 `[D]`:
+
+| Path | `aDNA-Network/aDNA` | `aDNA-Network/aDNA.aDNA` |
+|---|---|---|
+| `CONTRIBUTING.md` (root) | **404 → 200** | 200 |
+| `CODE_OF_CONDUCT.md` | **404 → 200** | 200 |
+| `LICENSE` | 200 | **404 → 200** |
+
+GitHub's own API now reports `license: MIT` for the docs repo, where R-123 recorded `license: null`
+`[D]`. The staged file was byte-identical to the image's (md5 `bd83bba167223a594152917038063171`,
+verified both sides before the push), so ⊳ D-D's *"matching the image repo"* is literally true and not
+merely intended.
+
+**R-122 closed** · **R-123 closed** · **R-127 closed** — the promise *"the `CODE_OF_CONDUCT.md` file
+will be added in a future update"* is now true of both repositories, which is the only way to discharge
+a promissory claim without editing the promise.
+
+**Live probe: 26 FAIL → 0.** Pre-deploy 3 PASS / 26 FAIL, post-deploy **29 PASS / 0 FAIL**
+(`artifacts/p3_5/probe_predeploy_red.txt` · `probe_postdeploy_green.txt`). The three pre-deploy passes
+were the off-site files, already pushed by then — which is what demonstrates the probe distinguishes
+live-true from live-false rather than failing at everything.
+
+> **Two vacuous passes were found in the probe by its own red run**, and are recorded because the
+> lesson outlives them. `json?.count === json?.proposals?.length` evaluates `undefined === undefined`
+> against a site with no index at all, and *"the archive publishes no median"* is trivially true of a
+> page that returns 404. Both **passed against production before the feature existed**. A red run is
+> not only evidence that the fix is needed — it is the only moment an assertion's vacuous branch is
+> actually exercised. Both were guarded before the deploy.
+
+### §10.8 Open by disposition — final, after the P3.5 deploy
+
+**Open: 4** — R-34, R-63 (both `[A]`, awaiting ⛩ O0b) · R-111 (S2, `/canonical-properties`, the
+unshipped half) · R-124 (S3, awaiting the audience call) · R-128 (S3, `#needs-human`, the copyright
+holder).
+
+That is **5**, not 4 — and the miscount is left visible rather than silently corrected, because it is
+§9.5's warning landing for the fourth time in three missions: **a total typed beside the list it
+summarises drifts from it the moment the list changes.** The list is the datum. **Open: 5.**
+
+**FALSE: 0.** Supersedes §10.6's tally of 7. Discharged since: **R-122, R-123, R-127**.
