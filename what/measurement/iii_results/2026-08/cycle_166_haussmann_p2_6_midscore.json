@@ -1,0 +1,96 @@
+{
+  "cycle": 166,
+  "decadal": null,
+  "decadal_cycle": null,
+  "campaign": "campaign_haussmann",
+  "mission": "mission_haussmann_p2_6_midscore",
+  "slug": "haussmann_p2_6_midscore",
+  "date": "2026-08-19",
+  "session": "session_stanley_20260819_165937_haussmann_p2_6_midscore",
+  "commit": "126a510",
+  "event_class": "measurement",
+  "theme": "Mid-campaign VITRUVIUS re-score of adna.network at the Decade-1/Decade-2 boundary. Two independent fresh-context agent scorers (both claude-fable-5) on instrument v1.0 — deliberately unchanged from the baseline so the deltas mean something — against an evidence pack pinned at c9e8300. D3 (Onboarding/TTFS, weight 12) WITHHELD by operator ruling rather than re-scored provisionally a second time: its baseline 3 was explicitly conditional on a clean-machine TTFS run that still has not happened, and a second provisional number would wear the authority of a measurement it does not have. Composite therefore over 11 dimensions against a stated denominator of 88, with the baseline recomputed on the same 11 for a like-for-like delta.",
+
+  "series_note": "THIS IS THE FIRST III RECORD OF THE ENTIRE HAUSSMANN CAMPAIGN, and the first of any campaign since cycle 165 on 2026-06-10 — a gap of roughly ten weeks. ADR-057 requires every measurement event to log here; Gate B (the 51.6 baseline), P1, and P2.1 through P2.5 all shipped without a cycle record. Stated plainly rather than quietly opening at 166. Note also that cycle 165's own `next` field reserved 166-168 for STR work ('c166-168 MAX-III deep per-page/section measure+iterate — C1 home-hero concrete-then-ethos'); that campaign closed 2026-07-01 (Track C terminal) and the reservation lapsed unspent. Cycle 166 is therefore a re-purposed number, not a continuation of 165's plan — a reader comparing the two would otherwise see an unexplained discontinuity.",
+
+  "measurement": {
+    "instrument": "OPERATION_VITRUVIUS_review_instrument.md v1.0",
+    "instrument_unchanged_from_baseline": true,
+    "scored_dimensions": 11,
+    "withheld_dimensions": ["D3"],
+    "denominator": 88,
+    "reconciled_points": 55.6,
+    "reconciled_normalized": 63.2,
+    "baseline_points_same_11": 44.4,
+    "baseline_normalized_same_11": 50.5,
+    "delta_points": 11.2,
+    "delta_normalized": 12.7,
+    "baseline_published_12dim": 51.6,
+    "twelve_dim_composite_published": false,
+    "per_dimension": {
+      "D1": {"baseline": 3, "A": 4, "B": 4, "reconciled": 4, "delta": 1, "attributed_to": "P0.1 (ADR-048 definition-as-hero); corroborated by P2.6 O0c-a — three cold readers converged unprompted, which they did not at genesis"},
+      "D2": {"baseline": 3, "A": 4, "B": 4, "reconciled": 4, "delta": 1, "attributed_to": "P2.1 (casing 301s) + P2.2 (consolidation, nav-7, zero duplicate titles) — PARTLY ONLY; see instrument_drift"},
+      "D3": {"baseline": "3 (provisional)", "A": null, "B": null, "reconciled": "withheld", "delta": null, "attributed_to": "not scored — closes at O0b's clean-machine run"},
+      "D4": {"baseline": 3, "A": 3, "B": 3, "reconciled": 3, "delta": 0, "attributed_to": "P2.3 shipped the spec split and freshness layer; not enough to clear anchor 4"},
+      "D5": {"baseline": 3, "A": 3, "B": 4, "reconciled": 3, "delta": 0, "attributed_to": "divergence resolved to 3 on the letter — anchor 4 requires 'enforced in build' and F20 shipped through 487 assertions"},
+      "D6": {"baseline": 2, "A": 3, "B": 3, "reconciled": 3, "delta": 1, "attributed_to": "P1.1 (claim purge — 8 FALSE to 0)"},
+      "D7": {"baseline": 2, "A": 3, "B": 3, "reconciled": 3, "delta": 1, "attributed_to": "P1.1 + P1.2 (state-of-the-network, canonical-properties)"},
+      "D8": {"baseline": 2, "A": 3, "B": 3, "reconciled": 3, "delta": 1, "attributed_to": "P1.2 + the early-fired DP7 (/community shipped); CoC and CONTRIBUTING exist, which is why D8 moved and D9 did not"},
+      "D9": {"baseline": 2, "A": 2, "B": 2, "reconciled": 2, "delta": 0, "attributed_to": "NOTHING — the one dimension nine missions did not move; now fails for a different reason than at baseline (R-122/R-123)"},
+      "D10": {"baseline": 3, "A": 3, "B": 3, "reconciled": 3, "delta": 0, "attributed_to": "P1.2 shipped Organization+sameAs as a side effect, but twins/JSON/MCP remain absent"},
+      "D11": {"baseline": 2, "A": 3, "B": 3, "reconciled": 3, "delta": 1, "attributed_to": "P1.4 (mobile integrity — F2 reflow candidate fixed with computed-geometry proofs + gate-29)"},
+      "D12": {"baseline": 2, "A": 3, "B": 3, "reconciled": 3, "delta": 1, "attributed_to": "P0.2 (deploy hardening, header set live) + P2.1 (internal 404s to zero)"}
+    },
+    "calibration": "variance <=1 on 11 of 11 scored dimensions, against the instrument's gate of <=1 on >=10/12. On eight dimensions both reviewers independently quoted the identical binding anchor sentence.",
+    "divergences": 1,
+    "binary_gates": {
+      "D11": "PASS — automated scope only. axe 0 in both themes across 13 surfaces, two dates. No AT or keyboard pass has ever been run; the baseline's CONDITIONAL PASS is half-discharged (F2 fixed), manual half remains at P4.3.",
+      "D12": "PASS on lab evidence; FIELD STILL UNVERIFIED. No field p75 instrument exists (CrUX null at this traffic). Unchanged from baseline; P4.4."
+    }
+  },
+
+  "instrument_drift": {
+    "finding": "Roughly 0.8 of D2's +1 is the instrument being read differently, not the site changing.",
+    "detail": "Both scorers awarded D2 anchor 4 ('search present and scoped') while both explicitly recorded that no site-wide search exists — they read the clause as satisfied by the registry's scoped search input. The baseline read the identical clause the opposite way, holding D2 at 3 for 'casing hard-404s + no site-wide search'. git log -S'Search by name' -- site/src dates that input to 5b9be4c, Storyweave P3 M3.1 — a PREVIOUS CAMPAIGN. The feature was present under both scorings. Half the baseline's stated blocker genuinely resolved (casing now 301s to canonical); half was only re-read.",
+    "disposition": "D2 stands at 4 — two independent reviewers reached it on the anchor's literal words and addressed the clause explicitly; overriding both would substitute the reconciler's reading for the instrument's. The +1 is annotated rather than banked as site improvement. Split estimated at ~+0.8 real / ~+0.8 drift, tagged [I], not measured.",
+    "root_cause": "Filed v1.1 anchor defect — conjunctive anchor bundles have no split rule, so a reviewer satisfying two of three clauses can award the rung. Same class caused the D5 divergence, where it was caught only because the reviewers disagreed.",
+    "routed": "v1.1 instrument fix to land before P5.2's full 12-dimension re-score, where the same defect would operate across twelve dimensions instead of one."
+  },
+
+  "findings": [
+    {"id": "p2_6-F19", "class": "thin-hub (F13 family)", "severity": "S3", "finding": "P2.3 traded a 74,067px spec page for a fourth thin hub: /reference/specification ships h2=0, bodyLen 1,504 — thinner than two of F13's three existing instances. The other three moved +29/+29/+12, consistent with P2.3's date line rather than content. F13 unresolved; instance count 3 -> 4, one created by Decade-1 work.", "routed": "P4.2"},
+    {"id": "p2_6-F20", "class": "craft/ops", "severity": "S3", "finding": "JetBrains Mono Variable fails to load on every page (document.fonts reports error; console error, not warning). font-display:optional so no visual regression is claimed and none was observed in 156 captures. The larger half: no gate in 33 spec files watches the console.", "routed": "P4.2 (fix) + P4.4 (zero-console-error gate)"},
+    {"id": "R-111", "class": "absence / related-party disclosure", "severity": "S2", "finding": "Assigned an id at P1.2 §7.5 item 10, never given a register row, and the remediation never shipped. /canonical-properties files the Wilhelm Foundation as 'not ours' with zero operator-affiliation disclosure. Survived three missions because it is an absence and not an identifier — same-diff is structurally blind to both.", "routed": "Decade-2 copy, no current owner"},
+    {"id": "R-120", "class": "prose self-contradiction", "severity": "S2", "finding": "The homepage promises 'nothing leaves your machine' and, two sentences later, that 'Your context' is 'shared in the open'. In the 30-second zone, in the paragraph carrying the strongest trust claim.", "routed": "Decade-2 copy; nearest owner P4.5, which runs LAST"},
+    {"id": "R-122/R-123", "class": "contribution funnel / licensing", "severity": "S2", "finding": "The 'Contribute on GitHub' CTA targets the repo where CONTRIBUTING.md and CODE_OF_CONDUCT.md both 404; both are 200 in the docs repo, which itself has license: null and LICENSE 404 while the homepage badge reads MIT. 'Edit this page' routes contributor PRs into an unlicensed repo. Latent (both contributors internal) but has a legal edge, and choosing a license is an operator decision.", "routed": "DP6 ask + P3.5"},
+    {"id": "p2_6-gate-coverage", "class": "verification gap", "severity": "S2", "finding": "487 gate assertions green while 8 claim-register rows are open, with ZERO overlap. Prose contradictions and invented anecdotes are not identifiers; R-111 is an absence; R-122/R-123 are off-site and no gate probes the repos the primary CTA points at; F20 needs a console watch that does not exist.", "routed": "P4.4 — three of the classes are cheaply automatable"},
+    {"id": "p2_6-method", "class": "instrument hygiene", "severity": "S4", "finding": "Three measurement artifacts recorded against ourselves: grep -c counts matching LINES not occurrences on single-line served HTML (it manufactured two false regressions before a re-finditer pass corrected them); string presence in raw HTML is not entity presence in JSON-LD (a nested publisher matched a top-level Organization grep); and a typed derived count went stale inside its own commit, twice, until the rule became 'count last'.", "routed": "campaign probe discipline"}
+  ],
+
+  "verification": {
+    "gates": "487 passed, exit 0, 33 spec files, @audit included — derived from the run output, not carried. Matches P2.5's close, so no gate was added or lost.",
+    "build": "221 pages, npx astro build; redirects injected 42 of 42",
+    "captures": "156 T0 captures — 13 surfaces x 6 viewports x 2 themes, all HTTP 200",
+    "axe": "0 violations in BOTH themes across all 13 surfaces (two runs; --axe covers themes[0] only)",
+    "claim_register": "138 physical rows, 124 unique ids, R-11..R-124, zero sequence gaps; 8 open by disposition, 0 FALSE, 0 unsupported"
+  },
+
+  "files": {
+    "evidence": [
+      "how/campaigns/campaign_haussmann/evidence/scoring/scoresheet_A_p2_6.md",
+      "how/campaigns/campaign_haussmann/evidence/scoring/scoresheet_B_p2_6.md",
+      "how/campaigns/campaign_haussmann/evidence/scoring/reconciliation_p2_6.md",
+      "how/campaigns/campaign_haussmann/evidence/captures_p2_6/visual_findings_p2_6.md",
+      "how/campaigns/campaign_haussmann/evidence/coldreads/coldread_synthesis_p2_6.md",
+      "how/campaigns/campaign_haussmann/evidence/machine_eye/machine_eye_delta_p2_6.md",
+      "how/campaigns/campaign_haussmann/evidence/claims/claim_register.md"
+    ],
+    "artifacts": [
+      "how/campaigns/campaign_haussmann/artifacts/p2_6/scorer_isolation_protocol.md",
+      "how/campaigns/campaign_haussmann/artifacts/p2_6/gate_rebaseline.md",
+      "how/campaigns/campaign_haussmann/artifacts/p2_6/decade2_premise_audit.md"
+    ]
+  },
+
+  "next": "Cycle 167 records the O0b clean-machine TTFS measurement (operator-gated: a fresh macOS user account, a runner who did not build the system, unassisted). That run closes D3, discharges or revises R-34/R-63, and produces the transcript that replaces the labelled gap on /get-started. The full 12-dimension composite is publishable only after it. P5.2's full re-score should carry the v1.1 instrument fix and refresh every evidence packet, not the three this mission refreshed."
+}
