@@ -85,6 +85,23 @@ const jsonLD = buildCollectionPageJsonLD({
     record, not in chat.
   </p>
 
+  <!-- HAUSSMANN P3.5 — the proposal process (ADR-055, ratified 2026-08-20). D9 scored 2 at
+       baseline and nine missions never moved it: the funnel's problem was never that the
+       contributor documentation was bad, it was that the site never rendered a route into it.
+       Every fact in this section is checked by gate-37. -->
+  <h2 id="proposals">How the standard changes</h2>
+  <p>
+    Changes to the standard are proposed as numbered
+    <a href="/community/proposals/">aDNA Enhancement Proposals</a>. Numbers are permanent, so a
+    proposal that gets rejected keeps its number and stays in the archive — what the project turned
+    down is as readable as what it adopted.
+  </p>
+  <p>
+    Anyone may file one. Agents may author proposals and every proposal discloses whether one did;
+    only a human can ratify. A proposal is only called <em>final</em> once a check in aDNA's own
+    tooling fails when the rule is violated, which keeps the archive from becoming a wishlist.
+  </p>
+
   <h2 id="explore">Explore further</h2>
   <p>The roles, processes, and shared-knowledge commons in depth:</p>
   <CardGrid cards={cards} columns={2} />
@@ -93,11 +110,11 @@ const jsonLD = buildCollectionPageJsonLD({
        the audit found its ctas[] held only the dark-mode toggle and the mobile menu. -->
   <ClosingCTA
     title="Contribute"
-    lead="The standard is built in the open, and authored by agents but ratified by humans. Report a bug or propose a change to the standard through the public repository's issue templates; questions and ideas are welcome in the community space at community.adna.network."
+    lead="The standard is built in the open, and authored by agents but ratified by humans. A change to what the standard requires goes through the numbered proposal process; anything else — a bug, a fix, a question — goes through the repository's issue templates, which is faster for everyone. The contribution guide and the code of conduct both live in the repository, and AI-assisted contributions are welcome as long as they say so."
     primaryLabel="Contribute on GitHub"
     primaryHref="https://github.com/aDNA-Network/aDNA"
-    secondaryLabel="Read the contribution standards"
-    secondaryHref="/community/community-contribution-standards/"
+    secondaryLabel="File a proposal"
+    secondaryHref="/community/proposals/"
   />
 </DocumentationLayout>
 

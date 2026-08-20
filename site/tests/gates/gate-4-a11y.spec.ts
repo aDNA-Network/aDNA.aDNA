@@ -47,6 +47,20 @@ const pages = [
   // campaign-protected, so a new public page that is not gated here is a page that is not protected.
   { name: 'State of the network', path: '/state-of-the-network' },
   { name: 'Canonical properties', path: '/canonical-properties' },
+  // HAUSSMANN P3.5 — the proposal surfaces. A new public page that is not gated here is a page that
+  // is not protected, and both templates are table-dense.
+  //
+  // ⚠ SCOPE NOTE, so this addition is not credited with more than it does. The defect that prompted
+  // it — an empty table header on /community/proposals/aep-1/ — was found by the T0 sweep
+  // (`scripts/visual_capture.mjs --axe`, which runs axe with its DEFAULT ruleset) and is
+  // `empty-table-header`, a **best-practice** rule. This gate filters to `wcag2a`/`wcag2aa`, so it
+  // passed on the unfixed page and would pass again if the defect returned. Adding these routes locks
+  // WCAG AA on them, which is worth doing; it does NOT close the class that was actually caught.
+  // The instrument gap — the gate suite is blind to everything axe classes as best-practice — is
+  // filed for P4.4, which owns gate hardening.
+  { name: 'Proposal archive', path: '/community/proposals/' },
+  { name: 'Proposal (constitution)', path: '/community/proposals/aep-1/' },
+  { name: 'Proposal (draft)', path: '/community/proposals/aep-2/' },
 ];
 
 // Dark is the default render; light is reached by seeding the theme preference before the page loads.

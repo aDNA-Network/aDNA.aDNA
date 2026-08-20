@@ -102,7 +102,7 @@ this project already operates internally, written down where it can be held to.
 aDNA keeps a second, older record: Architecture Decision Records, in the vault at `what/decisions/`.
 They are not the same thing and neither replaces the other.
 
-| | ADR | AEP |
+| Aspect | ADR | AEP |
 |---|---|---|
 | Governs | how this project builds its own vault | how the **standard** evolves |
 | Audience | the maintainers and their agents | anyone implementing aDNA |

@@ -890,3 +890,101 @@ context different from the one it was written in — after the shallow-clone dat
 **Scope note.** This is not one of P4.5a's four ruled rows. It was fixed anyway because the mission was
 **shipping into this exact surface** — publishing a new entry while knowing its date rendered wrong would
 have been shipping a known defect to satisfy a scope boundary. One-line change, no new claim authored.
+
+---
+
+## §10 — P3.5: the funnel repair, and a finding that shrank when it was re-probed
+
+### §10.1 R-122 narrows — the register outran its evidence for the second mission running
+
+R-122 (`:681`) reads: *"The CTA target has **`CONTRIBUTING.md` 404 and `CODE_OF_CONDUCT.md` 404**; both
+exist (**200/200**) in `aDNA-Network/aDNA.aDNA`."* Re-probed live at execution 2026-08-20, per convention
+12, before any repair was designed `[D, GitHub raw + API]`:
+
+| Path | `aDNA-Network/aDNA` (the CTA target) | `aDNA-Network/aDNA.aDNA` |
+|---|---|---|
+| `CONTRIBUTING.md` (root) | **404** | 200 |
+| **`.adna/CONTRIBUTING.md`** | **200** ← *the row missed this* | n/a |
+| `CODE_OF_CONDUCT.md` | **404** | 200 |
+| `LICENSE` | 200 (MIT) | **404** |
+| `.github/ISSUE_TEMPLATE/` | present — `bug_report` · `change_proposal` · `config` | the same three |
+
+**Half of R-122 is wrong.** The image repo's contributor guide is not missing; it sits at
+`.adna/CONTRIBUTING.md`, one directory below the three locations GitHub's contributor UI reads (root,
+`.github/`, `docs/`). It is present and invisible, which produces the identical reader experience and a
+**different repair**: promote a file, do not write one. Only the **CoC** is genuinely absent there.
+
+So the finding is not *"the contributor documentation is behind the wrong door."* It is: **one file is
+behind the wrong door, and one file does not exist.** R-122's severity (**S2**) and its disposition
+(**open**) are unchanged — it was right that the funnel is broken and right about why it matters. It was
+wrong about what is missing, which is the part that determines the fix.
+
+**This is the second consecutive mission in which a re-probe shrank an inherited row** — P4.5a's §9.7 cut
+R-111 from two surfaces to one. Two instances is a pattern worth naming: *a row is written once, at the
+moment of discovery, and then quoted forward by every mission that inherits it.* The probe costs minutes.
+Both times it changed the work.
+
+**A third correction, of a claim this register never made but the mission nearly did:** neither repo lacks
+issue templates. Recorded so it is not re-derived, and so no future row asserts it by inference from
+"the funnel is broken."
+
+### §10.2 New rows
+
+| # | Surface | The claim | Class | Why | Severity | Tag |
+|---|---|---|---|---|---|---|
+| **R-127** | `aDNA-Network/aDNA` → `.adna/CONTRIBUTING.md`, §"Code of Conduct" | *"This project **will adopt** the Contributor Covenant v2.1 as its Code of Conduct. The `CODE_OF_CONDUCT.md` file **will be added in a future update**."* | **stale → fixed at P3.5** | A promissory claim in the contributor-facing document, and it is **stale in both directions at once**. In the **docs repo** the promise is simply out of date: `CODE_OF_CONDUCT.md` sits beside it at 200, and that file's own header says it *"closes the reference both documents made to a `CODE_OF_CONDUCT.md` that had not yet been added"* — so one file announces the debt discharged while its neighbour still promises it `[D]`. In the **image repo**, which is the door the site advertises, the promise is *accurate*, which is worse: the CoC is genuinely 404 there. Future tense in a governance document is the campaign's anti-pattern 7.5 with a legal edge — a contributor is asked to agree to standards published nowhere. Discharged by shipping the CoC to the image repo (⊳ D-J) and by the fact that the sentence then becomes true of both | **S3** | [D] |
+| **R-128** | `aDNA-Network/aDNA/LICENSE` vs every other identity surface | *"Copyright (c) 2026 **Lat Labs**"* | **inconsistent → open** | The MIT licence names a copyright holder that appears **nowhere else**: `PUBLISHER` is `'aDNA Network'` (`src/data/canonical.ts:37`), the footer renders *"© 2026 aDNA Network"*, the org vault is **aDNA Labs**, and `grep -rn "Lat Labs" site/src/` returns **0 hits** `[D]`. It reads as a survival from the pre-pivot LatticeLabs era. **Not fixed here, deliberately**: ⊳ D-D ruled *"MIT, matching the image repo"*, and the staged `LICENSE` is therefore **byte-identical** to the image's (md5 `bd83bba167223a594152917038063171`, verified both sides) — so the ruling is satisfied literally. Correcting a copyright holder is a legal act and not an agent's call; **`#needs-human`**, routed to the operator with the same reasoning ⊳ D-D itself used | **S3** | [D] |
+
+### §10.3 What P3.5 shipped, and what it claims
+
+The proposal surface authors new public claims, so they are registered rather than assumed benign. Each is
+**derived at build time or checked by `gate-37`**, which is what distinguishes them from the class this
+campaign exists to remove.
+
+| # | Surface | The claim | Class | Backing | Severity | Tag |
+|---|---|---|---|---|---|---|
+| **G-11** | `/community/proposals/` | The occupancy figures — *"There are N proposals on record"*, the next number, and the per-state counts | **verified** | Derived from the collection at build; `gate-37 §3` asserts every state count equals the number of proposals actually holding it, and `§7` asserts the JSON index and the archive describe the same set. No count is typed | — | [D] |
+| **G-12** | `/community/proposals/aep-1/` | AEP-1's status is **`final`** | **verified** | ADR-055 §4 defines `final` as *enforced*, and `gate-37 §4` fails if a `final` proposal names a conformance check that does not exist on disk. AEP-1 names `gate-37` itself, so the claim is self-checking: delete the gate and the claim fails with it | — | [D] |
+| **G-13** | `/community/proposals/` + `/community` | *"Only a human can ratify"* and *"every proposal discloses whether an agent drafted it"* | **verified** | `authored_by_agent` is a **required** schema field (not optional), and `gate-37 §5` fails if anything reaches `accepted`/`final` without a named ratifier, or if a `draft`/`review` row claims one | — | [D] |
+| **G-14** | `/community/proposals/` | *"There is no published median review time here because none has been measured yet"* | **verified** | The honest-absence claim. `gate-37 §8` asserts `median_review_days` is `null` in the machine index **and** that the page publishes no numeric median — so the absence cannot be quietly filled in later without the gate being edited deliberately | — | [D] |
+
+**One claim was deliberately not made.** The surface says nothing about how many people participate, how
+fast proposals are reviewed, or how many contributors exist. ADR-055 §8 requires the page to state its own
+youth; on ship day the archive holds **2** proposals, one of which is the process itself, and the page says
+so.
+
+### §10.4 A gate that already knew the answer
+
+`gate-14`'s **C-1** rule — *proof-links must point at the public image `aDNA-Network/aDNA`, not the dev
+vault* — **failed this mission's first build**, on a link to the docs repo's `CONTRIBUTING.md`. It was
+right, and it was answering R-122 before the register did: if the site may not route contributors to the
+dev vault, then the contributor documentation **must** live in the image repo. The ruled repair and the
+existing gate agree, and the gate said so first.
+
+This is the P4.5a finding running the other way. There, a gate was **coupled to a defect** and had to be
+inverted rather than deleted. Here, a gate was coupled to a **rule the register had not yet applied**, and
+the correct response was to obey it. *Read a failing gate for what it knows before deciding it is in the
+way.*
+
+### §10.5 Counts — derived last
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **146** |
+| **Unique ids** | **132** (14 `G-*` + 118 `R-*`, `R-11`…`R-128`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by script after the final edit to this file, per §8.6's *count last* rule and §9.5's warning that
+"later" includes edits you did not plan to make. The parse is the **looser, §8.6-comparable** one (§9.5),
+so the delta against 140 is comparable to the deltas before it; pinning that parse in a script remains the
+P4.4 follow-up.
+
+### §10.6 Open by disposition — after P3.5
+
+**Open: 7** — R-34, R-63 (awaiting ⛩ O0b) · R-111 (S2, `/canonical-properties`, unshipped half) ·
+**R-122, R-123** (S2 — closed **only** when the ⊳ D-J pushes land; open until then) · R-124 (S3, awaiting
+the audience call) · **R-128** (S3, `#needs-human`, the copyright holder).
+**FALSE: 0.**
+
+Supersedes §9.6's tally of 9. Discharged since: **R-120, R-121, R-125** (P4.5a) and **R-127** (here, on
+the same push as R-122). R-126 was never open debt (§9.8).

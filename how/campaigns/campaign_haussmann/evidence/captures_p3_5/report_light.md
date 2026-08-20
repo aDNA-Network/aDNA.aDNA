@@ -1,0 +1,62 @@
+[
+  {
+    "surface": "community-proposals",
+    "path": "/community/proposals/",
+    "status": 200,
+    "loadMs": 548,
+    "title": "Proposals — aDNA",
+    "desc": "The numbered public record of proposed changes to the aDNA standard — including the ones that were turned down.",
+    "ogTitle": "Proposals — aDNA",
+    "h1": "Proposals",
+    "h2count": 3,
+    "bodyLen": 2948,
+    "fullH": 2353,
+    "axeViolations": 0,
+    "consoleErrors": []
+  },
+  {
+    "surface": "community-proposals-aep-1",
+    "path": "/community/proposals/aep-1/",
+    "status": 200,
+    "loadMs": 539,
+    "title": "AEP-1: The aDNA Enhancement Proposal process",
+    "desc": "How changes to the aDNA standard are proposed, reviewed, decided, and archived — who may file, and what a proposal must satisfy to be called final.",
+    "ogTitle": "AEP-1: The aDNA Enhancement Proposal process",
+    "h1": "AEP-1: The aDNA Enhancement Proposal process",
+    "h2count": 7,
+    "bodyLen": 6458,
+    "fullH": 4772,
+    "axeViolations": 0,
+    "consoleErrors": []
+  },
+  {
+    "surface": "community-proposals-aep-2",
+    "path": "/community/proposals/aep-2/",
+    "status": 200,
+    "loadMs": 536,
+    "title": "AEP-2: Canonical URL casing and permanent redirects — aDNA",
+    "desc": "Proposes raising slug normalization and permanent redirects from one site's internal decision to a rule for any conforming vault publishing on the web.",
+    "ogTitle": "AEP-2: Canonical URL casing and permanent redirects — aDNA",
+    "h1": "AEP-2: Canonical URL casing and permanent redirects",
+    "h2count": 5,
+    "bodyLen": 4792,
+    "fullH": 3427,
+    "axeViolations": 0,
+    "consoleErrors": []
+  },
+  {
+    "surface": "community",
+    "path": "/community/",
+    "status": 200,
+    "loadMs": 546,
+    "title": "Community — aDNA",
+    "desc": "Roles, processes, and contribution paths for the aDNA community.",
+    "ogTitle": "Community — aDNA",
+    "h1": "Community",
+    "h2count": 6,
+    "bodyLen": 5285,
+    "fullH": 3942,
+    "axeViolations": 0,
+    "consoleErrors": []
+  }
+]

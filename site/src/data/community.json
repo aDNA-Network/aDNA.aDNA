@@ -9,7 +9,9 @@
   "governance": [
     { "label": "Chartered", "value": "Operator-chartered — decisions are explicit and gated, never silent." },
     { "label": "Open standard", "value": "MIT-licensed and versioned in public; the spec is the source of truth." },
-    { "label": "Change process", "value": "Public — improvements run through the repository as upstream contributions, reviewable by anyone." },
+    { "label": "Change process", "value": "Public — normative changes run as numbered proposals with permanent numbers and a visible status machine; everything else runs as ordinary issues and pull requests." },
+    { "label": "Code of conduct", "value": "Contributor Covenant v2.1, in the repository. Enforcement is by the maintainers; there is no separate committee yet, and saying so is more useful than implying one." },
+    { "label": "AI-assisted contribution", "value": "Welcome, and disclosed. Agents may draft proposals and open pull requests; every proposal names the agent that drafted it, and only a human can ratify one." },
     { "label": "Attribution", "value": "By convention, content files record who last edited them — humans and agents alike." },
     { "label": "Accountability", "value": "Every unit of work closes with a written after-action report." }
   ],

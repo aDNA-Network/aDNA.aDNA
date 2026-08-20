@@ -126,11 +126,17 @@ const jsonLD = buildCollectionPageJsonLD({
     it becomes an AEP and is numbered here. If it does not, it stays an ordinary issue or pull request,
     which is faster for everyone.
   </p>
+  {/* The two links below MUST point at the image repo, not the dev vault: gate-14's C-1 rule
+      forbids proof-links to aDNA-Network/aDNA.aDNA, and it is right — the image is the install
+      target and the door the site advertises. Both files are added to the image repo in the same
+      increment (ADR-055 ⊳ D-J / R-122); if that push does not land, these links come out before
+      deploy rather than shipping dead. */}
   <p>
     Agents may author proposals, and every proposal discloses whether one did. Only a human can ratify:
     no proposal reaches <code>accepted</code> without a named person and a date. The
-    <a href="https://github.com/aDNA-Network/aDNA.aDNA/blob/main/CONTRIBUTING.md" rel="noopener">contribution guide</a>
-    covers the non-normative routes.
+    <a href="https://github.com/aDNA-Network/aDNA/blob/main/CONTRIBUTING.md" rel="noopener">contribution guide</a>
+    covers the non-normative routes, and participation is governed by the
+    <a href="https://github.com/aDNA-Network/aDNA/blob/main/CODE_OF_CONDUCT.md" rel="noopener">code of conduct</a>.
   </p>
 
   <Callout variant="info" title="The state of this process">
