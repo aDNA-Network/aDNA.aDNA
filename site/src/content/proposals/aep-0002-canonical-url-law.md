@@ -4,11 +4,18 @@ description: "Proposes raising slug normalization and permanent redirects from o
 page_type: proposal
 number: 2
 proposal_title: "Canonical URL casing and permanent redirects"
-status: draft
+status: review
 created: 2026-08-20
 updated: 2026-08-20
 authors: ["Stanley Sekar"]
-sponsor: null
+sponsor: "Stanley Sekar"
+history:
+  - date: 2026-08-20
+    state: draft
+    note: "Filed under AEP-1 as the first substantive proposal. No sponsor."
+  - date: 2026-08-20
+    state: review
+    note: "Sponsored by Stanley Sekar, who agreed to shepherd it through review."
 authored_by_agent: "agent_rosetta (Claude)"
 ratified_by: null
 conformance_check: null
@@ -18,8 +25,8 @@ implements_adr: null
 discussion_url: "https://github.com/aDNA-Network/aDNA/issues"
 ---
 
-**Status note.** This proposal is a `draft`. It has not been decided, it has no sponsor, and nothing in
-it is currently required of anyone. It is the first substantive proposal filed under [AEP-1](/community/proposals/aep-1/).
+**Status note.** This proposal is in `review`. It has not been decided and nothing in it is currently
+required of anyone. It is the first substantive proposal filed under [AEP-1](/community/proposals/aep-1/).
 
 ## Summary
 

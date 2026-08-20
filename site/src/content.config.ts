@@ -136,6 +136,23 @@ const proposals = defineCollection({
     /** §3 — `superseded` names its successor; a revived idea is a NEW number that names its ancestor. */
     superseded_by: z.number().int().positive().nullable().default(null),
     supersedes: z.number().int().positive().nullable().default(null),
+    /**
+     * The state history — every transition, dated, with the reason.
+     *
+     * This is what makes the status machine evidence rather than a badge. A proposal that shows
+     * only its current state is asking to be trusted about how it got there; ADR-055 §2's whole
+     * argument is that the archive should not have to be trusted. gate-37 asserts the LAST entry
+     * matches `status`, so the two cannot drift.
+     */
+    history: z
+      .array(
+        z.object({
+          date: dateSchema,
+          state: z.string(),
+          note: z.string(),
+        }),
+      )
+      .nonempty(),
     /** The in-vault decision this renders publicly, where one exists (§6). */
     implements_adr: z.string().nullable().default(null),
     discussion_url: z.string().url().nullable().default(null),

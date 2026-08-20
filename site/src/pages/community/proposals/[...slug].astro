@@ -121,12 +121,64 @@ const jsonLD = [
   </dl>
 
   <Content />
+
+  {/* The state history. Rendered AFTER the prose so the proposal reads as a proposal, but always
+      present: a status badge with no history is a claim about a journey nobody can check. */}
+  <h2 id="history">State history</h2>
+  <div class="table-scroll">
+    <table class="aep-history">
+      <caption class="sr-only">Every state this proposal has been in, in order</caption>
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">State</th>
+          <th scope="col">What happened</th>
+        </tr>
+      </thead>
+      <tbody>
+        {d.history.map((h) => (
+          <tr>
+            <td class="aep-mono">{fmt(h.date)}</td>
+            <td><span class={`aep-status aep-status-${h.state}`}>{h.state}</span></td>
+            <td>{h.note}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 </DocumentationLayout>
 
 <style>
   .aep-back {
     font-size: var(--text-sm);
     margin-bottom: var(--space-4);
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    margin: 0 0 var(--space-6);
+  }
+
+  .aep-history {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+
+  .aep-history th,
+  .aep-history td {
+    text-align: left;
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+  }
+
+  .aep-history thead th {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
   }
 
   .aep-meta {

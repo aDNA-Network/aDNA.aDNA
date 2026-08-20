@@ -54,6 +54,11 @@ export const GET: APIRoute = async ({ site }) => {
       implements_adr: p.data.implements_adr,
       discussion_url: p.data.discussion_url,
       created: p.data.created.toISOString().slice(0, 10),
+      history: p.data.history.map((h) => ({
+        date: h.date.toISOString().slice(0, 10),
+        state: h.state,
+        note: h.note,
+      })),
     })),
   };
 

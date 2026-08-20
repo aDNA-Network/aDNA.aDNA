@@ -54,6 +54,7 @@ type IndexJson = {
     authored_by_agent: string | null;
     ratified_by: string | null;
     conformance_check: string | null;
+    history: { date: string; state: string; note: string }[];
   }[];
 };
 
@@ -165,6 +166,41 @@ test.describe('gate-37 proposal process', () => {
       if (p.authored_by_agent) {
         expect(html, `AEP-${p.number} was agent-drafted but does not name the agent`).toContain(
           p.authored_by_agent,
+        );
+      }
+    }
+  });
+
+  // ── the state history ──────────────────────────────────────────────────
+  test('G37: every proposal has a state history whose last entry IS its status', () => {
+    // A status badge with no history is a claim about a journey nobody can check; a history whose
+    // tail disagrees with the badge is worse, because it looks checkable and is wrong.
+    for (const p of index.proposals) {
+      expect(p.history?.length, `AEP-${p.number} has no state history`).toBeGreaterThan(0);
+      const last = p.history[p.history.length - 1];
+      expect(last.state, `AEP-${p.number} is "${p.status}" but its history ends at "${last.state}"`).toBe(
+        p.status,
+      );
+    }
+  });
+
+  test('G37: every state in a history is one of the ratified eight', () => {
+    for (const p of index.proposals) {
+      for (const h of p.history) {
+        expect(RATIFIED_STATES, `AEP-${p.number} history names unratified state "${h.state}"`).toContain(
+          h.state as never,
+        );
+      }
+    }
+  });
+
+  test('G37: the state history is rendered, not merely stored', () => {
+    for (const p of index.proposals) {
+      const html = readFileSync(join(DIST, 'community', 'proposals', `aep-${p.number}`, 'index.html'), 'utf8');
+      expect(html, `AEP-${p.number} does not render its state history`).toContain('State history');
+      for (const h of p.history) {
+        expect(html, `AEP-${p.number} history note is not on the page: "${h.note}"`).toContain(
+          h.note.replace(/'/g, '&#39;'),
         );
       }
     }

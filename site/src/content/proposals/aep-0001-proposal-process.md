@@ -13,6 +13,19 @@ authored_by_agent: "agent_rosetta (Claude)"
 ratified_by: "Stanley Sekar, Founding Architect"
 ratified_date: 2026-08-20
 conformance_check: "site/tests/gates/gate-37-proposal-process.spec.ts"
+history:
+  - date: 2026-08-20
+    state: draft
+    note: "Drafted as the constitution of the process it describes."
+  - date: 2026-08-20
+    state: review
+    note: "Reviewed against the proposal anatomy of PEPs, TC39, EIPs and the MCP SEP process."
+  - date: 2026-08-20
+    state: accepted
+    note: "Ratified by Stanley Sekar, Founding Architect, as ADR-055."
+  - date: 2026-08-20
+    state: final
+    note: "gate-37 landed — the process is enforced by a check that fails when it is violated."
 superseded_by: null
 supersedes: null
 implements_adr: "ADR-055"
