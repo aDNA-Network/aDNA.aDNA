@@ -52,3 +52,9 @@ how/campaigns/campaign_haussmann/evidence/dossier/captures/**/*.png
 
 # Scratch capture output (Class 3 — no citation)
 /visual_capture_out/
+
+# ISS gate-receiver runtime state (HAUSSMANN wind-down 2026-08-21). The receiver writes a
+# PID lock and a port sidecar into how/gates/ while it is listening; both are ephemeral
+# process state, not vault content, and no such file has ever been tracked. The `.pending`
+# sentinels ARE tracked — they record that a gate awaits an operator decision.
+how/gates/.gate_receiver.*

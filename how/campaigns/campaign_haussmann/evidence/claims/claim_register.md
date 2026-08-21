@@ -1119,5 +1119,33 @@ again if anything below this line changes.
 **R-34 · R-63** (both `[A]`, awaiting ⛩ O0b) · **R-111** (S2, `/canonical-properties`, the unshipped
 half) · **R-124** (S3, awaiting the audience call).
 
+## §12 — R-129: a row that is well-formed and no longer true (registered 2026-08-21)
+
+| ID | Surface | Claim | Verdict | Basis | Sev | Prov |
+|---|---|---|---|---|---|---|
+| **R-129** | `/vaults/forgejo/` | *renders* `status: genesis` | **FALSE — stale, not malformed** | `Forgejo.aDNA` has been a **running service since 2026-08-08** (ladder P0–P6 closed; other lanes depend on it daily), reported by its own persona Ilmarinen `[R]`. The registry whose claim is that it publishes real self-published context graphs is, on this row, publishing the opposite | **S2** | `[R]` |
+
+**⛔ This vault cannot fix it, and must not try.** `vaults.json` is registry *data* — Hestia-owned,
+operator-gated (**pt19**, convention 5). Staged as a data ask:
+`who/coordination/coord_2026_08_21_rosetta_to_hestia_forgejo_row_stale.md`. Convention 5's exact shape:
+*this campaign fixes projection code and stages data asks as memos.*
+
+**Why it took a peer to find it, and what that says about this register.** The register catches
+truncation, jargon and internal paths — every one of them detectable **from the copy itself**. It is
+**structurally blind to a well-formed sentence that is simply no longer true**, because staleness is not
+a property of the text. Ilmarinen's formulation, adopted as campaign convention 15:
+
+> *a stale row and a broken row look identical from the outside, and only the named vault can tell you
+> which one you have.*
+
+There is already a `forgejo` row in this register for the truncated lede (*"Data-bearing ("*). Note what
+that means: the register had **looked at this row and passed it** on everything it can see. The
+truncation was the visible defect; the falsehood underneath it was not.
+
+**⚠ Consequence for the FALSE: 0 claim below.** That count means *zero false claims this register has
+found*, and it always did — but it has been read as *zero false claims on the site*. Those are different
+statements, and R-129 is the instance that separates them. The count is not restated here; the
+distinction is.
+
 **The list is the datum; no total is typed beside it** — §10.8 left a miscount visible for exactly this
 reason, and the fix is to stop writing the number, not to write it more carefully. **FALSE: 0.**

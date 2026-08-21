@@ -48,7 +48,7 @@ The S1 mobile defect shipped because nothing looks at pixels; headers drifted be
 
 ## Inherited follow-ups — routed here by earlier missions, and owed
 
-> **Read this section before scoping O0–O3.** These were routed to P4.4 by the P4.5a and P3.5 AARs and
+> **Read this section before scoping O0–O3.** These were routed to P4.4 by the P4.5a, P3.5 **and P3.1** AARs and
 > existed **only inside those AARs** until 2026-08-20. A follow-up recorded in the artifact that produced
 > it and nowhere else is a follow-up nobody will act on — the P4.5a AAR named this exact failure
 > (*"the split was recorded in three places and implemented in none"*), and it recurred. Each row below
@@ -61,6 +61,15 @@ The S1 mobile defect shipped because nothing looks at pixels; headers drifted be
 | **F-c** | **Wire `artifacts/p3_5/derive_register_counts.py` into the suite.** It pins the claim register's looser, §8.6-comparable parse, but still has to be **run and pasted by hand**. A gate that fails when a published count disagrees with the derived one is the other half | P3.5 AAR (§9.5 opened it) | Closes the "undocumented derivation" item: two defensible parses of the same table differ by 2 rows |
 | **F-d** | **`gate-26` cannot express "a retired claim must stay gone"** for a row that was never `FALSE` | P4.5a AAR | The R-125 class — an `unsupported → cut` row has no regression guard today |
 | **F-e** | **⊳ D-E — mirror `lighthouse_profiles.json`** into `how/federation/webforge/`, or amend campaign convention 4. Already in this mission's frontmatter; repeated here so it is visible where the work is scoped | ⛩ DP6 | `find . -name lighthouse_profiles.json` → **0 hits** vault-wide, so every gate-19 bar is currently a transcription |
+| **F-f** | **`check_live_headers.mjs` compares header NAMES, not VALUES.** P3.1 hardened it to assert `res.ok` + same-origin (it had been reading `vercel.com`'s login page and printing `OK — no drift`), but a **correct-name / wrong-value** drift still passes on prod today. The fix is a field-by-field comparison against `vercel.json`'s `/(.*)`  block — a bigger change to a shared deploy tool than P3.1 should have made mid-mission | P3.1 AAR | The instrument now refuses when it cannot reach the target; it still cannot tell you the CSP it read is *yours*. Convention 14 is the general rule this row implements |
+| **F-g** | **`stripHtmlComments()`'s second root is inert.** It walks both `dist` and `.vercel/output/static`, and its comment claims the dual walk means "the strip cannot be defeated by hook ordering." Measured at P3.1: **the adapter copies AFTER `astro:build:done`**, so at hook time that path holds either nothing or the *previous* build. The strip is safe — because the adapter copies the already-stripped `dist` afterwards, a different mechanism than the one documented | P3.1 AAR | Not broken; the comment misleads the next person who relies on it. Same ordering fact means **an Astro endpoint cannot read build output** — that is why the llms-full corpus is appended post-build |
+| **F-h** | **⚠ Re-read P0.2's header evidence against the alias.** P0.2 built header hardening *on preview deploys only* and verified it with the instrument in F-f — before either of its defects was known. Its header claims should be re-verified against `https://adna.network` before being relied on at launch | P3.1 AAR | Flagged, not acted on, at P3.1: P0.2 is not that mission's lane. This is an **evidence re-read**, not a rebuild — the headers may well be correct; what is missing is a verification that reached them |
+
+**F-b recurred at P3.1** (2026-08-21). `gitleaks detect --source .` was run by hand at every push point
+— because the pre-push hook is the retired v1 no-op (Hopper's census: **14 vaults**, not one) — and it
+reported `leaks found: 1` on the same `measured+gating` phrase every time. Recurrence is evidence for
+the allowlist, not a new row: a scanner that always cries once is a scanner whose output stops being
+read, which is precisely the state it is in.
 
 **⚠ One scope item in the frontmatter has changed meaning.** The **off-site CTA-target gate** was
 rescoped in at DP6 to *discover* the R-122/R-123 defects. **P3.5 closed both** (2026-08-20, verified

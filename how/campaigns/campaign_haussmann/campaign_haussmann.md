@@ -189,11 +189,20 @@ shipped the /community link ahead of ADR-054's prerequisites**), `VERCEL_TOKEN_A
 
 | Mission | Title | Sessions | Tier | Deps |
 |---|---|---|---|---|
-| P3.1 | .md twins + content negotiation + llms.txt linked + real llms-full corpus (ADR-056; pattern → WebForge) | 2 | sonnet | P2.1 |
+| P3.1 ✅ | .md twins + content negotiation + llms.txt linked + real llms-full corpus (ADR-056; pattern → WebForge) — **COMPLETE 2026-08-21**, deployed `tree=f053431`. 221 twins · 442 negotiation routes · corpus 2,476 B → 940,718 B · machine-eye 2/3/4/12 **all PASS live** | 2 | ~~sonnet~~ **opus** | P2.1 |
 | P3.2 | Registry JSON endpoint + Organization/Dataset JSON-LD + sameAs (ADR-056) | 1 | sonnet | P2.4 |
 | P3.3 | `adna-mcp-server` over docs+registry (npx, official TS SDK); **self-conformance demonstrated and stated on the page** | 2 | opus | P3.1, P3.2 |
 | P3.4 | Community integration per ADR-054: prerequisites verified (policy floor + branding + aliveness), honest-state link from /community, ladder mapping, disclosure copy (SO#8) | 1–2 | opus | P0.4 |
-| P3.5 | Numbered proposal process (ADR-055): states, archive, machine index, **first proposal filed** | 1–2 | fable | — |
+| P3.5 ✅ | Numbered proposal process (ADR-055): states, archive, machine index, **first proposal filed** — **COMPLETE 2026-08-20** | 1–2 | fable | — |
+
+> **Decade-2 progress, derived from the 27 mission frontmatters (2026-08-21).** `completed 15 · active 1
+> · in_progress 2 · queued 9`. Decade 1 (P0–P2) is complete but for **P0.4** (Aspasia's ack, her lane).
+> Decade 2 has shipped **3 of 13** — P4.5a ✅ · P3.5 ✅ · P3.1 ✅. **Next = P3.2**, whose scope already
+> SHRANK: `Organization`+`sameAs` shipped unremarked at P1.2 (machine-eye delta, 2026-08-19), leaving
+> `Dataset` on the registry, the versioned JSON endpoint, schema-dts, and the three zero-JSON-LD pages.
+> **P2.6 and P4.5 stay `in_progress` by design** — P2.6 behind ⛩ O0b, P4.5 until P4.5b runs last.
+> ⚠ **These mission tables carry no status column**; the frontmatter of each mission file is the truth,
+> and this line is a derived summary that will age. Re-derive rather than trust it.
 
 > **⛩ DP6 order (2026-08-19).** Decade 2 runs **P4.5a → P3.5 → P3.1 → P3.2 → P3.3 → P3.4 → P4.1 →
 > P4.2 → P4.4 → P4.3 → P4.5b → P5.1 → P5.2.** Two departures from mission numbering, both ruled:
