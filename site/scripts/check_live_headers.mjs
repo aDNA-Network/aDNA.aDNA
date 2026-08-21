@@ -35,6 +35,43 @@ try {
   console.error(`check_live_headers NETWORK: ${origin} unreachable (${e.message})`); process.exit(2);
 }
 
+/* ── the response must actually be OUR site (HAUSSMANN P3.1) ────────────────
+ *
+ * This check reported `OK — no drift` against a preview deployment it never reached. Vercel
+ * Deployment Protection answers every preview request with `302 → vercel.com/sso-api`; with
+ * `redirect: 'follow'` the fetch lands on Vercel's own login page, which sets all four of the
+ * header NAMES this script looks for — so `headers.has()` was satisfied by
+ * `default-src 'self' vercel.com *.stripe.com twitter.com …`, a CSP with nothing to do with ours.
+ *
+ * A presence-only check that follows redirects will pass for ANY deployment, including one whose
+ * headers are entirely missing. It is not a weak check; on a gated preview it is a vacuous one.
+ * Found when a P3.1 preview deploy printed 4/4 OK and then served `Redirecting...` for every probe.
+ *
+ * Two assertions close it: the final response must be OK, and it must still be on the origin we
+ * asked for. Both are cheap, and both turn a false green into an honest "cannot verify from here".
+ *
+ * NOT closed here: this still checks header NAMES, not VALUES, so a correct-name/wrong-value drift
+ * would pass on prod too. Fixing that needs vercel.json's expected values compared field by field
+ * — a bigger change than this mission should make to a shared deploy tool. Handed to P4.4, which
+ * owns CI hardening.
+ */
+const finalOrigin = (() => { try { return new URL(res.url).origin; } catch { return null; } })();
+if (!res.ok) {
+  console.error(
+    `live-headers CANNOT VERIFY: ${origin}/ answered ${res.status} (final URL ${res.url}). ` +
+      'Deployment Protection on a preview redirects to vercel.com/sso-api, whose login page sets ' +
+      'the same header NAMES — so a presence check there passes without ever reaching the site.',
+  );
+  process.exit(1);
+}
+if (finalOrigin && finalOrigin !== origin) {
+  console.error(
+    `live-headers CANNOT VERIFY: ${origin}/ redirected off-origin to ${finalOrigin}. ` +
+      'Headers read there belong to that host, not to this deployment.',
+  );
+  process.exit(1);
+}
+
 const missing = expected.filter(k => !res.headers.has(k.toLowerCase()));
 const served = expected.filter(k => res.headers.has(k.toLowerCase()));
 console.log(`live-headers ${origin} → served ${served.length}/${expected.length}: ${served.join(', ') || '(none)'}`);
