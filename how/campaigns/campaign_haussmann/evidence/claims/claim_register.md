@@ -1088,7 +1088,19 @@ occurrences workspace-wide: **74** `[D, derived after the edits]`, in three keep
 
 | # | Surface | The claim | Class | Verification | Severity | Tag |
 |---|---|---|---|---|---|---|
-| **R-128** | the live MIT LICENSEs | *"Copyright (c) 2026 **Lat Labs**"* | **inconsistent → CLOSED 2026-08-20** | All six MIT-class files resolved: five rewritten to `Copyright (c) 2026 aDNA Labs` and **byte-identical** (md5 `b189a96420df57c630764b57ba7ff2f4`, all five), the sixth (`.adna/`) inheriting at the next template release per Standing Rule 1. Verified on the public internet, not the tree, per the R-122/R-123 pattern: both public `LICENSE` files re-fetched raw post-push. **⊳ D-D still holds** — it ruled the docs repo *"MIT, matching the image repo"*, and both moved together, so they now match **on a correct name instead of a stale one** | **S3** | [D] |
+| **R-128** | the live MIT LICENSEs | *"Copyright (c) 2026 **Lat Labs**"* | **inconsistent → CLOSED 2026-08-20** | All six MIT-class files resolved: five rewritten to `Copyright (c) 2026 aDNA Labs` and **byte-identical** (md5 `b189a96420df57c630764b57ba7ff2f4`, all five), the sixth (`.adna/`) inheriting at the next template release per Standing Rule 1. **⊳ D-D still holds** — it ruled the docs repo *"MIT, matching the image repo"*, both moved together, so they now match **on a correct name instead of a stale one** | **S3** | [D] |
+
+**Verification, stated at the strength it actually has.** The R-122/R-123 pattern is *verify an outward act
+against the public internet, not the tree* — and here that is only possible for **two of the five** repos:
+
+| Repo | Verification | Strength |
+|---|---|---|
+| `aDNA-Network/aDNA` · `aDNA-Network/aDNA.aDNA` | raw `LICENSE` re-fetched post-push; both read *aDNA Labs*; md5 parity confirmed both sides | **`[D]` public** |
+| `zeta.aDNA` (**private** — API returns *Not Found* unauthenticated, raw 404) · `Exchange.aDNA` (Codeberg) · `LAVentureGraph.aDNA` (self-hosted `rd-forge`) | push accepted (`d079288..6e7eb2e`, `de778ad..6527f57`, `05e4f58..3fe62d8`) + local content confirmed | **`[D]` local + push-receipt** |
+
+Recording the difference matters because the whole point of the R-122/R-123 pattern is that a tree can be
+right while the world is wrong. For three of these repos that check is **unavailable, not passed** — and
+writing "verified live" across all five would be the exact claim-inflation this register exists to catch.
 
 ### §11.5 Counts — derived last
 
