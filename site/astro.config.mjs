@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 
 /**
@@ -83,6 +84,33 @@ function stripHtmlComments() {
           `dev-comment strip: removed ${stripped} comment(s) from ${files} file(s)` +
             (kept ? `; kept ${kept} licence/conditional comment(s)` : ''),
         );
+      },
+    },
+  };
+}
+
+/**
+ * HAUSSMANN P3.1 — tier-C markdown twins (ADR-056 clause 1).
+ *
+ * Runs AFTER stripHtmlComments() by list order, deliberately: the twin is extracted from the
+ * HTML that actually ships, so it must see the stripped output rather than the pre-strip one.
+ * Otherwise a twin could carry internal rationale prose that P0.5 removed from the page — the
+ * H13 leak class, reintroduced through the machine surface that was supposed to mirror the page.
+ *
+ * Shelling out rather than inlining, unlike stripHtmlComments(): this one is also invoked
+ * standalone when running the gate suite outside a deploy, so it has to be a script anyway. One
+ * implementation, two entry points.
+ */
+function emitBespokeTwins() {
+  return {
+    name: 'adna-emit-bespoke-twins',
+    hooks: {
+      'astro:build:done': ({ logger }) => {
+        const out = execFileSync('node', [join(process.cwd(), 'scripts', 'emit_bespoke_twins.mjs')], {
+          cwd: process.cwd(),
+          encoding: 'utf8',
+        });
+        logger.info(out.trim());
       },
     },
   };
@@ -181,7 +209,7 @@ export default defineConfig({
     // provenance and audit, not a compliance certification claim. The page itself moved.
     '/compliance': '/provenance-audit/',
   },
-  integrations: [mdx(), sitemap(), stripHtmlComments()],
+  integrations: [mdx(), sitemap(), stripHtmlComments(), emitBespokeTwins()],
   prefetch: {
     prefetchAll: false,
     defaultStrategy: 'hover',

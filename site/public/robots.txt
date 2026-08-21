@@ -2,3 +2,11 @@ User-agent: *
 Allow: /
 
 Sitemap: https://adna.network/sitemap-index.xml
+
+# Machine-readable surfaces (HAUSSMANN P3.1, ADR-056):
+#   /llms.txt       — curated index of this site, hand-written descriptions
+#   /llms-full.txt  — the full corpus: every page's markdown, concatenated
+#   <path>.md       — the markdown twin of any content URL, e.g. /learn/what-is-adna.md
+#                     Also served on <path> itself via `Accept: text/markdown`.
+# Each twin front-loads a pointer back to the index and carries the build date it
+# was generated from — these are build-time snapshots, not live state.

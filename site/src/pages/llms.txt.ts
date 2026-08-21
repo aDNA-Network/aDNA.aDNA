@@ -3,6 +3,7 @@ import installTruth from '../data/install_truth.json';
 import { STANDARD_VERSION, ENTITY_TYPE_COUNT, CONFORMANCE_LEVELS, STANDARD_LICENSE } from '../data/standard';
 import { REPO_HTTPS, PUBLISHER } from '../data/canonical';
 import vaultsData from '../data/vaults';
+import { BUILD_DAY } from '../utils/twin';
 
 /**
  * H-3 (D3 agentic-readiness): /llms.txt — a concise, agent-readable index of the site,
@@ -44,7 +45,15 @@ ${installTruth.one_liner}
 - [Community](${base('/community')}): how the commons is governed
 - [State of the network](${base('/state-of-the-network')}): what runs, what is operator-operated, what is not ours, what is planned — dated
 - [Canonical properties](${base('/canonical-properties')}): every legitimate aDNA domain, repository and machine surface
-- [Full index](${base('/llms-full.txt')}): every route, the vault taxonomy, and the edge legend
+- [Full corpus](${base('/llms-full.txt')}): every page of this site as markdown, concatenated
+
+## Reading this site as markdown
+
+Every content URL has a markdown twin at the same path with a \`.md\` suffix — e.g.
+${base('/learn/what-is-adna.md')}. The same markdown is served on the HTML URL itself to any client
+sending \`Accept: text/markdown\`. Each twin front-loads a pointer back to this index.
+
+State is a build-time snapshot generated ${BUILD_DAY}; nothing here is live.
 
 ## The network
 

@@ -35,6 +35,12 @@ const year = new Date().getFullYear();
       <a href="/changelog">Changelog</a>
       <a href="/design-system">Design system</a>
       <a href="/rss.xml">RSS</a>
+      {/* HAUSSMANN P3.1 (machine_eye item 12): the literal string "llms" appeared ZERO times across
+          every page HTML probed, so the site's one genuinely curated machine artifact was reachable
+          only by an agent that already knew the convention. It belongs on the machine-artifact shelf
+          the footer already keeps, beside RSS. ADR-049's cap is on PRIMARY nav (at 7); the footer is
+          not primary nav, so this adds no cap pressure. */}
+      <a href="/llms.txt">llms.txt</a>
       <a href={REPO_HTTPS} target="_blank" rel="noopener">GitHub</a>
     </nav>
     <p class="footer-copyright">&copy; {year} {PUBLISHER}. Released under the MIT License.</p>
