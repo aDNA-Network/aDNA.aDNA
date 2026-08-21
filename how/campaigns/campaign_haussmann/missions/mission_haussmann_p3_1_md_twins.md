@@ -33,6 +33,15 @@ tags: [plan, haussmann, p3, md_twins, llms, agentic]
 > **Read cold.** Persona **Rosetta**. Campaign governance: `how/campaigns/campaign_haussmann/CLAUDE.md`.
 > The agent path currently stops at anchor 3 — this mission lays the anchor-4 floor.
 
+> **⚠ `depends_on` names `p2_6_midscore`, which is still `in_progress`. This does NOT block you.**
+> P2.6 stays open only for ⛩ **O0b**, the operator-gated TTFS run on a fresh macOS account — an
+> evidence-gathering objective that produces nothing this mission consumes. **The gate that unblocks
+> Decade 2 is ⛩ DP6 (ratified 2026-08-19), not P2.6's completion.** P4.5a and P3.5 both executed under
+> exactly this condition. Recorded here at the wind-down of 2026-08-20 because it had never been written
+> down: a cold agent reading `depends_on` literally would halt, and an agent that overrode it silently
+> would be learning that `depends_on` is decorative. Neither is what we want. See campaign `CLAUDE.md`
+> convention 11.
+
 ## Why this mission exists
 
 `.md` twins 404 (10/10) while 29 old links point at them — a started-then-abandoned convention `[D]`; llms-full.txt is a 2 KB index wearing a corpus name; llms.txt — the one excellent artifact — is referenced zero times in the site's own HTML `[D machine_eye]`. MCP's verified pattern (twins sitewide + self-advertising pointer block) is the reference; Claude Code and 2 of 6 other agents negotiate `Accept: text/markdown` today, so ship **both** twin routes and negotiation.

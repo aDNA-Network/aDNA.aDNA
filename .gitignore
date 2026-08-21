@@ -38,5 +38,17 @@ how/missions/artifacts/storyweave_p4_docs_ia/lighthouse/
 how/missions/artifacts/storyweave_p5_measure/**/*.png
 how/missions/artifacts/storyweave_p5_m5_3/**/*.png
 how/missions/artifacts/storyweave_p5_m5_3/lighthouse/
+# HAUSSMANN capture estate (wind-down 2026-08-20) — the same Refit policy, applied to this campaign.
+# Applied in the policy's DANGLE-SAFE ORDER: the 61 PNGs individually cited by committed docs were
+# `git add`ed FIRST (git keeps tracked files tracked regardless of these patterns), so what follows
+# ignores only the 126 uncited sweep frames. Reversing that order is the policy's named inverse trap —
+# "gitignoring evidence a committed claim still cites recreates the dangle."
+# Regenerate any ignored frame with: node scripts/visual_capture.mjs --base <url> --routes … --axe
+how/campaigns/campaign_haussmann/evidence/captures_p1_2/**/*.png
+how/campaigns/campaign_haussmann/evidence/captures_p1_4/**/*.png
+how/campaigns/campaign_haussmann/evidence/captures_p2_2/**/*.png
+how/campaigns/campaign_haussmann/evidence/p1_1_captures/**/*.png
+how/campaigns/campaign_haussmann/evidence/dossier/captures/**/*.png
+
 # Scratch capture output (Class 3 — no citation)
 /visual_capture_out/

@@ -1033,3 +1033,79 @@ That is **5**, not 4 — and the miscount is left visible rather than silently c
 summarises drifts from it the moment the list changes.** The list is the datum. **Open: 5.**
 
 **FALSE: 0.** Supersedes §10.6's tally of 7. Discharged since: **R-122, R-123, R-127**.
+
+---
+
+## §11 — R-128 closed, and the scoping grep that was wrong twice
+
+### §11.1 The ruling, and its reversal recorded
+
+**⛩ Operator, 2026-08-20 (wind-down session): *"No latlabs at all."*** This **reverses** the disposition
+taken at the P3.5 push gate hours earlier (*"leave both, decide later"*), and the reversal is stated
+rather than quietly applied — a register that silently overwrites its own dispositions is not a record.
+
+Holder ruled **aDNA Labs**, which matches `aDNALabs.aDNA`'s own `display_name`. That vault's frontmatter
+already carries `previous_names: [LatticeLabs, lattice-labs]` `[D]`, so *"Lat Labs"* was an **unrecorded
+fourth variant** — which is why it read as stale rather than as a deliberate legal name.
+
+### §11.2 The scope, and the error in deriving it
+
+The sweep was scoped from a `grep … | head -20`. **The truncation hid files.** The scope put to the
+operator was *"four live LICENSEs"*; the real MIT-copyright-holder class is **six**:
+
+| # | File | Disposition |
+|---|---|---|
+| 1 | `aDNA-Network/aDNA/LICENSE` | ✅ → aDNA Labs |
+| 2 | `aDNA-Network/aDNA.aDNA/LICENSE` | ✅ → aDNA Labs |
+| 3 | `Exchange.aDNA/LICENSE` | ✅ → aDNA Labs |
+| 4 | `LAVentureGraph.aDNA/LICENSE` | ✅ → aDNA Labs |
+| 5 | **`zeta.aDNA/LICENSE`** | ✅ → aDNA Labs — **missed at scoping**, found by the verification grep |
+| 6 | **`.adna/LICENSE`** | **NOT edited — Standing Rule 1 forbids modifying `.adna/`.** It is a downstream copy, synced *from* the image repo by `skill_template_release` step (e), so fixing #1 fixes this one **at the next template release**. Editing it directly would create drift the release would then overwrite |
+
+**Why #5 was fixed without returning to the gate.** The operator's ruling selected a **principle** —
+*live MIT copyright holders become aDNA Labs; the BSL Licensor is left alone* — and `zeta.aDNA` is
+plainly in the first class. Applying the principle while flagging the changed input here is the pattern
+this campaign already uses for a ruling whose inputs move after the signature. The **quoted scope
+("four") is preserved verbatim above** beside the corrected count.
+
+**The lesson is the campaign's own, landing again.** §9.5: *"count last"*, and *derive, never type*. This
+time the defect was upstream of the count — **a truncated grep is a derived figure too**, and `head -20`
+silently converted a complete answer into a confident partial one. Both the count *and the enumeration it
+came from* have to be complete before either is quoted.
+
+### §11.3 What was deliberately left standing
+
+A purge that does not say what it spared reads as a purge that missed things. Remaining `"Lat Labs"`
+occurrences workspace-wide: **74** `[D, derived after the edits]`, in three keep-classes:
+
+| Class | Count | Why it stays |
+|---|---|---|
+| **BSL Licensor** — `Licensor: Lat Labs, Inc.` in `Jupyter.aDNA/what/lab/` + 4 `adna-lab` worktrees | 5 LICENSE files | A **named party to a commercial licence**, not a copyright line; `ADR_001_bsl_license.md` ties commercial terms to the name. `"Inc."` implies a registered entity, so the question is counsel's. ⛩ ruled **leave; route a memo** → `who/coordination/coord_2026_08_20_galileo_bsl_licensor.md` |
+| **Package metadata** — `pyproject.toml` authors, `__author__`, Dockerfile `LABEL`, `team@latlabs.io` | — | Belongs to `adna-lab` / `lattice-protocol`; cross-vault, memo-not-edit (Rule 10) |
+| **Historical records** — `.agentic/` ADRs, session completions, `AGENTS.md` | the bulk | **SO-6 archive-never-delete.** `skill_project_rename` names rewriting these as the §15 violation, and warns that a naive grep over-counts this defect *by an order of magnitude* — which is exactly what a 90-hit blanket purge would have been |
+
+### §11.4 The row closes
+
+| # | Surface | The claim | Class | Verification | Severity | Tag |
+|---|---|---|---|---|---|---|
+| **R-128** | the live MIT LICENSEs | *"Copyright (c) 2026 **Lat Labs**"* | **inconsistent → CLOSED 2026-08-20** | All six MIT-class files resolved: five rewritten to `Copyright (c) 2026 aDNA Labs` and **byte-identical** (md5 `b189a96420df57c630764b57ba7ff2f4`, all five), the sixth (`.adna/`) inheriting at the next template release per Standing Rule 1. Verified on the public internet, not the tree, per the R-122/R-123 pattern: both public `LICENSE` files re-fetched raw post-push. **⊳ D-D still holds** — it ruled the docs repo *"MIT, matching the image repo"*, and both moved together, so they now match **on a correct name instead of a stale one** | **S3** | [D] |
+
+### §11.5 Counts — derived last
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **147** *(146 at §10.5, +1 for R-128's close row)* |
+| **Unique ids** | **132** (14 `G-*` + 118 `R-*`, `R-11`…`R-128`) — unchanged; R-128 was already registered at §10.2 |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py` after the final edit to this file — the script that
+now pins the looser, §8.6-comparable parse, so the figure is reproducible rather than asserted. Run it
+again if anything below this line changes.
+
+### §11.6 Open by disposition — after the wind-down
+
+**R-34 · R-63** (both `[A]`, awaiting ⛩ O0b) · **R-111** (S2, `/canonical-properties`, the unshipped
+half) · **R-124** (S3, awaiting the audience call).
+
+**The list is the datum; no total is typed beside it** — §10.8 left a miscount visible for exactly this
+reason, and the fix is to stop writing the number, not to write it more carefully. **FALSE: 0.**
