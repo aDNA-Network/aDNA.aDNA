@@ -148,3 +148,35 @@ campaign-protected, and **gate-4 only covers `wcag2a/wcag2aa`** — the T0 sweep
 route. Open campaign items you are not expected to close: **⛩ O0b** (operator-gated TTFS run, holds
 P2.6 and the 12-dimension composite), **P0.4** (Aspasia's ack), and register rows R-34, R-63, R-111,
 R-124, R-128.
+
+---
+
+## Errata (added at the wind-down, 2026-08-20) — the gitleaks confirmations were weaker than stated
+
+The SITREP above reads: *"Gitleaks clean on outgoing changes both times."* **That overstates what the
+hook proved.**
+
+An unread inbound memo — `who/coordination/coord_2026_08_19_inbound_from_hopper_gitadna_release_batch_ninth_fix_skeleton_v2.md`,
+delivered 2026-08-19 and intaken only at the wind-down — reports finding **F-S158-01**: the **v1**
+`pre-push.gitleaks.sh` skeleton is a **proven no-op at push time**, because it invokes gitleaks with
+`--pre-commit`, which scans the *staged* diff — empty during a push. It prints its success line
+regardless.
+
+**This vault runs v1** `[D]`: `.git/hooks/pre-push → how/federation/git/hooks/pre-push.gitleaks.sh`,
+md5 **`216aaca254b97d69819562d506afca29`** — exactly the hash Hopper names as the no-op, against
+`a1288f7371afa187cb1cfd8b9810a669` for the fail-closed v2.
+
+**What was actually true.** The P3.5 origin push *was* scanned — by a **manual full-history
+`gitleaks detect`** run before pushing, whose single finding was reviewed and classified as the
+`webforge_pattern_register.md:23` *"DTCG token pipeline"* false positive. That scan is the evidence.
+**The hook's checkmark was not**, and the SITREP presented the two as one thing.
+
+Corrected claim: *the push was scanned manually and was clean; the pre-push hook's confirmation carried
+no information.* The image-repo push was likewise preceded by a manual `gitleaks detect` on the clone.
+
+**Routed, not fixed here.** Installing skeleton v2 is the **ninth item** in the pending `.adna/` release
+batch and fires on the next `skill_template_release` — it is Git.aDNA's lane and a release act, not a
+HAUSSMANN one. Until it lands, **treat the hook as decoration and run `gitleaks detect` by hand before
+any push that matters.** *(The three sibling vaults pushed at the wind-down print a different line —
+"clean across 1 outgoing range(s)" — from a hook at md5 `f255e2a0221794a29b5e24a65fc52622`, which is
+neither version Hopper names; unclassified, and not relied on here.)*
