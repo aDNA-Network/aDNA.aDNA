@@ -61,7 +61,17 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 `missions/` — 27 files `mission_haussmann_p{0..5}_*.md`; paste-ready prompts in `missions/session_prompts_haussmann.md`.
 
 **⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
-convention 11 — **`P4.5a` is the next mission**, not `P3.1`. Claiming "the next open mission in phase
-order" would start the decade on the wrong one. Decade-1 leftovers still open regardless of that
-sequence: **P0.4** (`active`, awaiting Aspasia's ack — her lane) and **P2.6** (`in_progress`, awaiting
-⛩ **O0b**, the operator-gated TTFS run).
+convention 11. **Next mission: `P3.1`** — P4.5a ✅ and P3.5 ✅ both closed 2026-08-20. Claiming "the next
+open mission in phase order" still lands wrong further down the sequence (P3.4 is followed by P4.1, and
+P4.4 precedes P4.3), so read convention 11's order, not the numbering. Decade-1 leftovers still open
+regardless of that sequence: **P0.4** (`active`, awaiting Aspasia's ack — her lane) and **P2.6**
+(`in_progress`, awaiting ⛩ **O0b**, the operator-gated TTFS run).
+
+> **This pointer has now gone stale three times** (it read "P4.5a is next" from 08-19 until P3.1's O0 on
+> 08-20, two missions after that was true). That is §1.8's own finding — *an index believed over the
+> artifact it points at* — recurring inside the campaign that named it. **The fix is not to trust this
+> line: `missions/session_prompts_haussmann.md` marks completions, and each mission file's `status:` is
+> the artifact.** A cold agent should confirm the next mission from a `status:` field before claiming it.
+> Whoever closes a mission updates this line in the close cascade — the same commit, per the same-diff
+> reflex (convention 7), because a mission index is route-coupled to mission state in exactly the way
+> ADR-057 governs for routes.
