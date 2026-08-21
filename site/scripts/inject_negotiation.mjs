@@ -82,10 +82,14 @@ if (missing.length) {
   );
 }
 
+// Two routes per twin: the `Accept:` negotiation form and the naive-append `/path/.md` form.
+const ROUTES_PER_TWIN = 2;
+const expectedRoutes = twins.length * ROUTES_PER_TWIN;
+
 const already = cfg.routes.filter((r) => r?.headers?.[MARKER]).length;
 if (already) {
-  if (already !== twins.length) {
-    die(`partially injected: ${already} negotiation route(s) present but the manifest lists ${twins.length}. Rebuild rather than layering a second pass onto a stale set.`);
+  if (already !== expectedRoutes) {
+    die(`partially injected: ${already} negotiation route(s) present but ${twins.length} twins need ${expectedRoutes}. Rebuild rather than layering a second pass onto a stale set.`);
   }
   console.log(`inject_negotiation: already injected (${already} negotiation routes)`);
   process.exit(0);
@@ -94,17 +98,38 @@ if (already) {
 const handleIdx = cfg.routes.findIndex((r) => r && r.handle);
 if (handleIdx === -1) die('no `handle` route found — cannot establish the filesystem boundary to insert before');
 
-const negotiationRoutes = twins.map((p) => ({
-  src: `^${escape(p === '/' ? '' : p)}/?$`,
-  has: [{ type: 'header', key: 'accept', value: '(.*text/markdown.*)' }],
-  dest: `${p === '/' ? '/index' : p}.md`,
-  headers: {
-    // Caches must key on Accept, or one client's markdown is served to the next client's browser.
-    Vary: 'Accept',
-    // Marks these routes as ours so a re-run is idempotent without re-deriving them.
-    [MARKER]: '1',
-  },
-}));
+const negotiationRoutes = twins.flatMap((p) => {
+  const dest = `${p === '/' ? '/index' : p}.md`;
+  return [
+    {
+      src: `^${escape(p === '/' ? '' : p)}/?$`,
+      has: [{ type: 'header', key: 'accept', value: '(.*text/markdown.*)' }],
+      dest,
+      headers: {
+        // Caches must key on Accept, or one client's markdown is served to the next client's browser.
+        Vary: 'Accept',
+        // Marks these routes as ours so a re-run is idempotent without re-deriving them.
+        [MARKER]: '1',
+      },
+    },
+    {
+      /* THE NAIVE-APPEND FORM: `/get-started/.md`.
+       *
+       * Every canonical URL on this site ends in a slash, and llms.txt tells agents that a twin
+       * is "the same path with a `.md` suffix" — so an agent following that instruction literally
+       * produces `/get-started/.md`, not `/get-started.md`. The live re-probe scored item 3 at
+       * 7/10 on exactly these three, and the honest reading is that the URL an agent naturally
+       * builds should work, not that the agent built it wrong.
+       *
+       * No `Accept` condition: this shape is unambiguous. Nothing but a twin request produces it.
+       * P2.1's lesson is the same one in reverse — a route that answers only the shape the site
+       * does not emit is a route that mostly does not fire. */
+      src: `^${escape(p === '/' ? '' : p)}/\\.md$`,
+      dest,
+      headers: { [MARKER]: '1' },
+    },
+  ];
+});
 
 cfg.routes.splice(handleIdx, 0, ...negotiationRoutes);
 
@@ -117,8 +142,12 @@ const late = cfg.routes
 if (late.length) die(`placement invariant violated: ${late.length} negotiation route(s) after the first handle route`);
 
 const injected = cfg.routes.filter((r) => r?.headers?.[MARKER]);
-if (injected.length !== twins.length) die(`expected ${twins.length} negotiation routes, found ${injected.length}`);
-const noVary = injected.filter((r) => r.headers.Vary !== 'Accept');
+if (injected.length !== expectedRoutes) die(`expected ${expectedRoutes} negotiation routes, found ${injected.length}`);
+// Vary is required on the CONTENT-NEGOTIATED form only. The `/path/.md` form returns one
+// representation for one URL, so declaring Vary there would claim a variance that does not exist.
+const negotiated = injected.filter((r) => Array.isArray(r.has));
+if (negotiated.length !== twins.length) die(`expected ${twins.length} Accept-conditioned routes, found ${negotiated.length}`);
+const noVary = negotiated.filter((r) => r.headers.Vary !== 'Accept');
 if (noVary.length) die(`${noVary.length} negotiation route(s) missing Vary: Accept — a shared cache would cross-serve variants`);
 
 // The redirects inject_redirects.mjs widened must still precede the filesystem boundary; this

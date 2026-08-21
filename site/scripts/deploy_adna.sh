@@ -124,9 +124,31 @@ URL="$(echo "$OUT" | grep -Eo 'https://[a-z0-9.-]+\.vercel\.app' | tail -1)"
 echo "$OUT" | sed "s/${TOKEN}/[REDACTED]/g" | tail -3
 [[ -n "$URL" ]] || { echo "ABORT: no deployment URL parsed" >&2; exit 1; }
 
-echo "== verify live headers ($URL) =="
+# HAUSSMANN P3.1 — VERIFY THE ALIAS, NOT THE DEPLOYMENT URL.
+#
+# `$URL` is the per-deployment *.vercel.app address, and Vercel Deployment Protection gates it on
+# BOTH preview and prod. Every request there answers 302 → vercel.com/sso-api, and the login page
+# it lands on sets the same four header NAMES this check looks for. So the step has been reading
+# Vercel's own CSP (`default-src 'self' vercel.com *.stripe.com twitter.com …`) and reporting
+# "OK — no drift" since P0.2 built it. It has never once verified adna.network.
+#
+# Found when P3.1's hardened checker refused the redirect and the step failed on a deploy that had
+# in fact succeeded — the deploy was fine; the verification had always been decorative.
+#
+# Prod verifies the public alias, which is genuinely reachable. Preview has no public alias, so it
+# is verified only when reachable, and says CANNOT VERIFY rather than passing on someone else's
+# headers — an honest gap beats a false green.
+PROD_ALIAS="https://adna.network"
+if [[ "$MODE" == "prod" ]]; then VERIFY_URL="$PROD_ALIAS"; else VERIFY_URL="$URL"; fi
+
+echo "== verify live headers ($VERIFY_URL) =="
 sleep 3
-node scripts/check_live_headers.mjs "$URL" || { echo "WARN: live header verification failed on $URL" >&2; exit 1; }
+if [[ "$MODE" == "prod" ]]; then
+  node scripts/check_live_headers.mjs "$VERIFY_URL" || { echo "WARN: live header verification failed on $VERIFY_URL" >&2; exit 1; }
+else
+  node scripts/check_live_headers.mjs "$VERIFY_URL" || \
+    echo "NOTE: preview headers unverifiable (Deployment Protection gates *.vercel.app). The deploy itself is unaffected; prod verifies against $PROD_ALIAS." >&2
+fi
 
 STAMP="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 REC="deploy_record: $STAMP mode=$MODE url=$URL token=$TOKEN_NAME tree=$(git rev-parse --short HEAD)"

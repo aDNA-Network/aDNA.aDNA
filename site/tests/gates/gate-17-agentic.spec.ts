@@ -228,20 +228,36 @@ test.describe('G15 — content negotiation is wired into the deploy surface', ()
     );
     const cfg = JSON.parse(readFileSync(configPath, 'utf8'));
     const routes: any[] = cfg.routes ?? [];
-    const negotiation = routes.filter((r) => r?.headers?.['x-adna-twin']);
+    const twinRoutes = routes.filter((r) => r?.headers?.['x-adna-twin']);
 
-    expect(negotiation.length, 'a negotiation route per twin').toBe(TWINS.length);
+    // TWO routes per twin: the Accept-conditioned form, and the naive-append `/path/.md` form an
+    // agent produces by following llms.txt literally against a canonical URL that ends in a slash.
+    // The live re-probe scored item 3 at 7/10 on exactly that shape before the second form existed.
+    expect(twinRoutes.length, 'two routes per twin: negotiated + naive-append').toBe(TWINS.length * 2);
 
     const handleIdx = routes.findIndex((r) => r?.handle);
     const lastNeg = routes.map((r, i) => [r, i] as const).filter(([r]) => r?.headers?.['x-adna-twin']).pop();
     expect(handleIdx, 'filesystem boundary exists').toBeGreaterThan(-1);
     expect(lastNeg![1], 'negotiation must precede handle: filesystem or the HTML wins first').toBeLessThan(handleIdx);
 
-    for (const r of negotiation) {
+    const negotiated = twinRoutes.filter((r) => Array.isArray(r.has));
+    const naiveAppend = twinRoutes.filter((r) => !Array.isArray(r.has));
+    expect(negotiated.length, 'one Accept-conditioned route per twin').toBe(TWINS.length);
+    expect(naiveAppend.length, 'one /path/.md route per twin').toBe(TWINS.length);
+
+    for (const r of negotiated) {
       expect(r.headers.Vary, `${r.src} must Vary: Accept`).toBe('Accept');
       expect(r.has?.[0]?.key, `${r.src} must key on the accept header`).toBe('accept');
       expect(r.has?.[0]?.value, `${r.src} must match text/markdown`).toContain('text/markdown');
       expect(r.dest, `${r.src} must point at a .md twin`).toMatch(/\.md$/);
+    }
+    for (const r of naiveAppend) {
+      expect(r.src, `${r.src} must match the /path/.md shape`).toMatch(/\/\\\.md\$$/);
+      expect(r.dest, `${r.src} must point at a .md twin`).toMatch(/\.md$/);
+      // No Vary here on purpose: one URL, one representation. Declaring Vary would claim a
+      // variance that does not exist, which is the same overclaim in miniature that this
+      // campaign spends its time removing.
+      expect(r.headers.Vary, `${r.src} must not claim a Vary it does not have`).toBeUndefined();
     }
   });
 
