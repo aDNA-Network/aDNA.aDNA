@@ -4,7 +4,8 @@ import HomeHero from '../../components/sections/HomeHero.astro';
 import VaultCard from '../../components/sections/VaultCard.astro';
 import VaultFacetChip from '../../components/sections/VaultFacetChip.astro';
 import vaultsData from '../../data/vaults';
-import { buildCollectionPageJsonLD } from '../../utils/seo';
+import { buildCollectionPageJsonLD, buildDatasetJsonLD } from '../../utils/seo';
+import { SITE_ORIGIN } from '../../data/canonical';
 // E5 c162 (context-graph experience): the registry gets the original home network glyph —
 // hero_adna_network.png was freed when the homepage moved to the helix (E4 c157) and is
 // exactly "the map of the network" this page renders as cards.
@@ -61,11 +62,29 @@ if (tieredTotal !== vaults.length) {
   );
 }
 
-const jsonLD = buildCollectionPageJsonLD({
-  title: 'Vaults — the aDNA registry',
-  description: `Browse the ${vault_count}-vault aDNA registry — personae, classes, cross-vault relationships.`,
-  url: Astro.url.href,
-});
+// Two blocks, two jobs (HAUSSMANN P3.2, ADR-056 clause 4). CollectionPage describes the PAGE;
+// Dataset describes the REGISTRY the page renders, and carries the `distribution` pointer to
+// /vaults.json so a machine reader can get from this HTML to the data in one hop. machine_eye
+// item 9 found no Dataset anywhere on the site while every vault page announced itself as a
+// generic WebPage — a structured, typed, governed collection describing itself as nothing in
+// particular. The counts below are read from the projection, never typed (KW-14).
+const jsonLD = [
+  buildCollectionPageJsonLD({
+    title: 'Vaults — the aDNA registry',
+    description: `Browse the ${vault_count}-vault aDNA registry — personae, classes, cross-vault relationships.`,
+    url: Astro.url.href,
+  }),
+  buildDatasetJsonLD({
+    title: 'The aDNA vault registry',
+    description:
+      `${vault_count} self-declared context graphs and ${edges?.length ?? 0} cited relationships from a single ` +
+      `operator-run aDNA node. Served as JSON; every entry is self-declared and uncorroborated.`,
+    url: Astro.url.href,
+    contentUrl: new URL('/vaults.json', Astro.site ?? SITE_ORIGIN).href,
+    dateModified: vaultsData.generated_at,
+    keywords: ['aDNA', 'context graph', 'knowledge architecture', 'vault registry', 'agentic context'],
+  }),
+];
 
 // Concept cross-links: the registry is a living context graph — point readers at the
 // concepts that explain what they're looking at (E5 c162; C2 terminology-spine seam).
@@ -105,6 +124,18 @@ const goDeeper = [
         <strong>These stages are self-declared.</strong> Each vault reports its own, and the registry
         has nothing to corroborate it with — no build status, no commit feed, no external check. Read
         them as what a vault says about itself, not as an assessment of it.
+      </p>
+
+      {/* HAUSSMANN P3.2 — the registry is also data, and this is where a reader looking for the
+          data will look. Advertised on the page rather than only in llms.txt, because an agent
+          reading the HTML should not have to fetch a second file to learn the first one exists
+          (machine_eye item 8: all four guessable JSON paths returned 404). */}
+      <p class="vaults-asdata">
+        <strong>The registry is available as data.</strong>{' '}
+        <a href="/vaults.json"><code>/vaults.json</code></a> serves all {vault_count} entries and{' '}
+        {edges?.length ?? 0} relationships as JSON, with the same fields these pages render. Pin{' '}
+        <a href="/api/registry.v1.json"><code>/api/registry.v1.json</code></a> for a shape that will
+        not change under you.
       </p>
 
       {/* No-JS baseline: tier jump-chips, matching the three sections below. These were class
@@ -296,6 +327,23 @@ const goDeeper = [
     border-radius: var(--radius-lg);
     font-size: var(--text-sm, 0.9rem);
     max-width: 68ch;
+  }
+
+  /* The as-data note sits beside the caveat but must not compete with it: the caveat is the one
+     thing every reader needs, this is for the subset who want the machine surface. Same geometry,
+     muted rule + no fill, so the hierarchy is visible without a second accent bar. */
+  .vaults-asdata {
+    margin: 0 0 1.5rem;
+    padding: 0.85rem 1.1rem;
+    color: var(--color-text-muted, var(--color-text));
+    border-left: 3px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm, 0.9rem);
+    max-width: 68ch;
+  }
+
+  .vaults-asdata code {
+    font-size: 0.95em;
   }
 
   /* Storyweave P3 / M3.1 — search + filter toolbar (JS-revealed; hidden for no-JS).

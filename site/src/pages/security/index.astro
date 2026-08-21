@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { REPO_HTTPS } from '../../data/canonical';
+import { buildWebPageJsonLD } from '../../utils/seo';
 
 const advisoryUrl = `${REPO_HTTPS}/security/advisories/new`;
 const securityMd = `${REPO_HTTPS}/blob/main/SECURITY.md`;
@@ -9,6 +10,12 @@ const securityMd = `${REPO_HTTPS}/blob/main/SECURITY.md`;
 <BaseLayout
   title="Security & Disclosure — aDNA"
   description="How to report a security vulnerability in the aDNA standard, templates, or site tooling — and what to expect from coordinated disclosure."
+  jsonLD={buildWebPageJsonLD({
+    title: 'Security & Disclosure — aDNA',
+    description:
+      'How to report a security vulnerability in the aDNA standard, templates, or site tooling — and what to expect from coordinated disclosure.',
+    url: Astro.url.href,
+  })}
 >
   <article class="policy">
     <header class="policy-head">

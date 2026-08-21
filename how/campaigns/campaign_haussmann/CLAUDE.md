@@ -3,7 +3,7 @@ type: campaign_governance
 campaign_id: campaign_haussmann
 persona: rosetta
 created: 2026-08-16
-updated: 2026-08-19
+updated: 2026-08-21
 status: active
 last_edited_by: agent_rosetta
 tags: [campaign_governance, haussmann]
@@ -66,13 +66,18 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 `missions/` — 27 files `mission_haussmann_p{0..5}_*.md`; paste-ready prompts in `missions/session_prompts_haussmann.md`.
 
 **⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
-convention 11. **Next mission: `P3.1`** — P4.5a ✅ and P3.5 ✅ both closed 2026-08-20. Claiming "the next
+convention 11. **Next mission: `P3.3`** (`mission_haussmann_p3_3_mcp_server.md`, `queued`) — P4.5a ✅,
+P3.5 ✅ (2026-08-20), P3.1 ✅ and P3.2 ✅ (2026-08-21) are closed. Claiming "the next
 open mission in phase order" still lands wrong further down the sequence (P3.4 is followed by P4.1, and
 P4.4 precedes P4.3), so read convention 11's order, not the numbering. Decade-1 leftovers still open
 regardless of that sequence: **P0.4** (`active`, awaiting Aspasia's ack — her lane) and **P2.6**
 (`in_progress`, awaiting ⛩ **O0b**, the operator-gated TTFS run).
 
-> **This pointer has now gone stale three times** (it read "P4.5a is next" from 08-19 until P3.1's O0 on
+> ⚠ **P3.2 is `completed` but UNDEPLOYED** — it halted at green gates for a separate ⛩ prod GO by
+> operator ship-scope ruling. Its machine-eye delta packet is measured on the **local build only**.
+> A cold agent must not read "P3.2 completed" as "the registry JSON is live on adna.network".
+
+> **This pointer had gone stale three times when that was written, and went stale a fourth** (it read "P4.5a is next" from 08-19 until P3.1's O0 on
 > 08-20, two missions after that was true). That is §1.8's own finding — *an index believed over the
 > artifact it points at* — recurring inside the campaign that named it. **The fix is not to trust this
 > line: `missions/session_prompts_haussmann.md` marks completions, and each mission file's `status:` is

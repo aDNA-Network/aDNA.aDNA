@@ -272,3 +272,182 @@ test.describe('G15 — content negotiation is wired into the deploy surface', ()
     expect(stranded.map(([r]) => r.src), 'redirects pushed past the filesystem boundary').toEqual([]);
   });
 });
+
+/* ── G16–G17 — HAUSSMANN P3.2 · ADR-056 clauses 3 + 4 ────────────────────────────────────────
+ *
+ * G16 covers the registry JSON endpoint, G17 the structured-data layer.
+ *
+ * Every count below is READ FROM THE BUILD, never pinned to a literal (KW-8 / FR-K). `vault_count`
+ * is asserted against the length of the array beside it and against what the page renders, so the
+ * assertion survives the registry growing — which it will, the moment Hestia's data pass lands the
+ * 77-vs-74 admission ruling. A gate that hardcoded 74 would go red on correct data.
+ */
+
+const CANONICAL_JSON = '/vaults.json';
+const VERSIONED_JSON = '/api/registry.v1.json';
+
+test.describe('G16 — the registry is available as data', () => {
+  test('G16: both endpoints serve JSON', async ({ request }) => {
+    for (const path of [CANONICAL_JSON, VERSIONED_JSON]) {
+      const res = await request.get(path);
+      expect(res.status(), `${path} must be served`).toBe(200);
+      expect(
+        res.headers()['content-type'] ?? '',
+        `${path} must declare application/json`,
+      ).toContain('application/json');
+    }
+  });
+
+  test('G16: the versioned twin is byte-identical to the canonical path', async ({ request }) => {
+    const [a, b] = await Promise.all([
+      request.get(CANONICAL_JSON).then((r) => r.text()),
+      request.get(VERSIONED_JSON).then((r) => r.text()),
+    ]);
+    // One producer, two routes. A pin that silently diverges from the canonical payload is worse
+    // than no pin, because the consumer cannot tell it has drifted.
+    expect(b, 'the pinnable URL must serve the same bytes as the canonical one').toBe(a);
+  });
+
+  test('G16: counts are derived from the payload, not asserted about it', async ({ request }) => {
+    const d = await request.get(CANONICAL_JSON).then((r) => r.json());
+    expect(Array.isArray(d.vaults), 'vaults must be an array').toBe(true);
+    expect(Array.isArray(d.edges), 'edges must be an array').toBe(true);
+    expect(d.vault_count, 'vault_count must equal the rows it counts').toBe(d.vaults.length);
+    expect(d.edge_count, 'edge_count must equal the edges it counts').toBe(d.edges.length);
+    expect(d.vaults.length, 'a registry with no rows is a build failure, not a thin registry')
+      .toBeGreaterThan(0);
+  });
+
+  test('G16: the payload states its own contract', async ({ request }) => {
+    const d = await request.get(CANONICAL_JSON).then((r) => r.json());
+    expect(d.schema_version, 'consumers pin on schema_version').toBeTruthy();
+    expect(d.about?.canonical_url, 'the payload must name its canonical URL').toContain(CANONICAL_JSON);
+    expect(d.about?.versioned_url, 'the payload must name its pinnable URL').toContain(VERSIONED_JSON);
+    expect(d.about?.versioning, 'clause 7 requires a stated deprecation policy').toMatch(/\d+\s*days/i);
+    // The self-declaration caveat is the single most important thing on this surface (ADR-052
+    // §tiers.2) and must travel WITH the data, not sit on an HTML page a machine never fetches.
+    expect(d.caveat, 'the self-declared caveat must ship in the payload').toMatch(/self-declared/i);
+    // Two clocks, not one — a stale registry must not be able to look as fresh as the last deploy.
+    expect(d.built_at, 'built_at must be present').toBeTruthy();
+    expect(d.generated_at, 'generated_at must be present').toBeTruthy();
+  });
+
+  test('G16: field_coverage counts match a recount of the rows', async ({ request }) => {
+    const d = await request.get(CANONICAL_JSON).then((r) => r.json());
+    const coverage = d.field_coverage ?? {};
+    expect(Object.keys(coverage).length, 'field_coverage must describe the fields').toBeGreaterThan(0);
+
+    for (const [field, stat] of Object.entries<any>(coverage)) {
+      const recount = d.vaults.filter((v: any) => {
+        const raw = v[field];
+        if (typeof raw === 'boolean') return true;
+        if (raw == null) return false;
+        if (Array.isArray(raw)) return raw.length > 0;
+        return String(raw).trim() !== '';
+      }).length;
+      expect(stat.of, `${field}: coverage denominator must be the row count`).toBe(d.vaults.length);
+      expect(stat.populated, `${field}: coverage is narrated, not derived`).toBe(recount);
+    }
+  });
+
+  test('G16: rows listed with a minimal card leak nothing beyond the DP4 set', async ({ request }) => {
+    const d = await request.get(CANONICAL_JSON).then((r) => r.json());
+    const minimal = d.vaults.filter((v: any) => v.listing === 'minimal');
+    // The DP4 ruling (ADR-052 §admission) is an operator decision about three named vaults. If the
+    // suppression ever stops reaching this surface, the gate must fail rather than the endpoint
+    // quietly publishing engagement detail — so a zero-length set is itself a failure.
+    expect(minimal.length, 'the minimal-card set vanished — suppression may have stopped applying')
+      .toBeGreaterThan(0);
+
+    const SUPPRESSED = [
+      'note', 'tagline', 'current_phase', 'canonical_governance',
+      'github_url', 'docs_site_url', 'headline_mission', 'headline_mission_state',
+    ];
+    for (const v of minimal) {
+      for (const field of SUPPRESSED) {
+        expect(v[field], `${v.vault_slug}.${field} must stay suppressed on a minimal card`).toBeNull();
+      }
+      for (const field of ['headline_adrs', 'recent_closed']) {
+        expect(v[field], `${v.vault_slug}.${field} must stay empty on a minimal card`).toEqual([]);
+      }
+      // Suppressed and empty must be distinguishable from the outside.
+      expect(v.listing_note, `${v.vault_slug} must say WHY it is thin`).toMatch(/minimal card/i);
+    }
+  });
+
+  test('G16: the endpoint is advertised where an agent will look', async ({ request }) => {
+    const llms = await request.get('/llms.txt').then((r) => r.text());
+    expect(llms, '/llms.txt must name the registry endpoint').toContain(CANONICAL_JSON);
+    expect(llms, '/llms.txt must name the pinnable endpoint').toContain(VERSIONED_JSON);
+
+    // An endpoint nobody can find fails machine_eye item 8's intent while returning 200.
+    const page = await request.get('/vaults/').then((r) => r.text());
+    expect(page, '/vaults must link the JSON endpoint').toContain(CANONICAL_JSON);
+  });
+
+  test('G16: every advertised row URL resolves', async ({ request }) => {
+    const d = await request.get(CANONICAL_JSON).then((r) => r.json());
+    // Spot-check rather than all 74 — this is a link-integrity smoke test, and gate-31 owns the
+    // exhaustive sweep. A pointer into a 404 is worse than no pointer (clause 1's own finding).
+    for (const v of d.vaults.slice(0, 5)) {
+      const url = new URL(v.url).pathname;
+      const md = new URL(v.markdown_url).pathname;
+      expect((await request.get(url)).status(), `${url} (row url) must resolve`).toBe(200);
+      expect((await request.get(md)).status(), `${md} (row markdown_url) must resolve`).toBe(200);
+    }
+  });
+});
+
+test.describe('G17 — structured data', () => {
+  /** JSON-LD blocks on a page, flattened through any `@graph` wrapper. */
+  async function blocksOn(request: any, path: string): Promise<any[]> {
+    const html = await request.get(path).then((r: any) => r.text());
+    const raw = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+    const out: any[] = [];
+    const walk = (o: any) => {
+      if (Array.isArray(o)) return o.forEach(walk);
+      if (o && typeof o === 'object') {
+        if (o['@graph']) return o['@graph'].forEach(walk);
+        out.push(o);
+      }
+    };
+    for (const m of raw) walk(JSON.parse(m[1]));
+    return out;
+  }
+
+  test('G17: the registry declares itself a Dataset pointing at the endpoint', async ({ request }) => {
+    const blocks = await blocksOn(request, '/vaults/');
+    const dataset = blocks.find((b) => b['@type'] === 'Dataset');
+    expect(dataset, '/vaults must carry a Dataset block').toBeTruthy();
+    expect(dataset.distribution?.['@type'], 'Dataset needs a DataDownload distribution').toBe('DataDownload');
+    expect(dataset.distribution?.encodingFormat).toBe('application/json');
+    // The half that makes it useful: page and endpoint must reference each other.
+    expect(dataset.distribution?.contentUrl, 'the distribution must point at the real endpoint')
+      .toContain(CANONICAL_JSON);
+    expect((await request.get(new URL(dataset.distribution.contentUrl).pathname)).status()).toBe(200);
+  });
+
+  test('G17: every block carries a publisher Organization with sameAs', async ({ request }) => {
+    // machine_eye item 9 read "0 Organization blocks" because it counted TOP-LEVEL @type only;
+    // the Organization is nested as `publisher` and has carried sameAs since P1.2. This asserts
+    // the thing that is actually true, so the next census cannot mistake nesting for absence.
+    for (const path of ['/', '/vaults/', '/learn/what-is-adna/', '/privacy/', '/security/']) {
+      const blocks = await blocksOn(request, path);
+      expect(blocks.length, `${path} must carry at least one JSON-LD block`).toBeGreaterThan(0);
+      const org = blocks.map((b) => b.publisher).find(Boolean);
+      expect(org?.['@type'], `${path} must name a publisher Organization`).toBe('Organization');
+      expect(Array.isArray(org?.sameAs) && org.sameAs.length, `${path} publisher must carry sameAs`)
+        .toBeTruthy();
+    }
+  });
+
+  test('G17: no Astro-rendered page ships without JSON-LD', async ({ request }) => {
+    // The three pages the P3.2 census found bare. `404` and `install.html` are excluded BY
+    // DECISION and named in ADR-056 clause 4: describing a page that does not exist is a claim,
+    // and install.html is a static public/ asset owned by the installer lane.
+    for (const path of ['/design-system/', '/privacy/', '/security/']) {
+      const blocks = await blocksOn(request, path);
+      expect(blocks.length, `${path} has no JSON-LD`).toBeGreaterThan(0);
+    }
+  });
+});

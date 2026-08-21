@@ -3,7 +3,7 @@ type: evidence
 packet: B5
 campaign: campaign_haussmann
 created: 2026-08-16
-updated: 2026-08-20
+updated: 2026-08-21
 status: active
 last_edited_by: agent_rosetta
 tags: [claim_register, evidence, vitruvius_d6_d7, h13]
@@ -1149,3 +1149,53 @@ distinction is.
 
 **The list is the datum; no total is typed beside it** — §10.8 left a miscount visible for exactly this
 reason, and the fix is to stop writing the number, not to write it more carefully. **FALSE: 0.**
+
+## §13 — P3.2: three new sentences, and the count that checks itself (registered 2026-08-21)
+
+P3.2 put new prose on `/vaults`, in `llms.txt`, and in a new reference page — plus, for the first
+time, **claims inside a JSON payload**. Every new sentence gets a row (the P1.2 rule).
+
+| ID | Surface | Claim | Verdict | Basis | Sev | Prov |
+|---|---|---|---|---|---|---|
+| **R-130** | `/vaults` as-data note | *"`/vaults.json` serves all 74 entries and 14 relationships as JSON, with the same fields these pages render."* | **verified** | Both figures are **rendered from the projection**, never typed — `{vault_count}` and `{edges?.length}` are the same expressions the page's own stat strip uses. gate-17 G16 asserts `vault_count === vaults.length` and `edge_count === edges.length` against the served payload, so the sentence cannot outlive the data `[D]`. *"the same fields these pages render"* is the endpoint's construction rule, not an aspiration: `PUBLIC_VAULT_FIELDS` is the union of what `/vaults/[slug]` and the card display | — | [D] |
+| **R-131** | `/vaults.json` → `about.versioning` | *"Breaking changes get a NEW versioned URL … The canonical `/vaults.json` follows the newest version only after that version has been served at its versioned URL for at least 90 days."* | **verifiable → unexercised** | A **forward promise about our own future conduct**, and the honest classification is `verifiable`, not `verified`: no breaking change has occurred, so nothing has tested it. Recorded in the same register-verifiable form ADR-056 clause 7 already carries. What *is* verified today is the mechanism the promise needs — a versioned URL exists and serves byte-identically `[D]` | **S4** | [D] |
+| **R-132** | `/vaults.json` → `caveat` | *"Every entry is self-declared … The graph is a graph of declared relationships, not evidence of adoption."* | **verified** | Restates the `/vaults` page caveat ratified at P2.4 (ADR-052 §tiers.2) into the payload. Independently true of the data: `github_url` 1/74, `docs_site_url` 0/74, `last_synced` 24/74 with 18 sharing one date — there is nothing to corroborate a status against `[D]` | — | [D] |
+
+### §13.1 A claim class this register has not carried before
+
+Rows R-131 and R-132 live **inside a JSON payload**, not in rendered copy. That matters for the
+register's own coverage, and is worth stating rather than absorbing silently: **every prior row in
+this file is a sentence in HTML.** A gate that greps the built pages — which is most of them — would
+not have seen either row, exactly as gate-27 could not see the 221 `.md` twins when they arrived
+(P3.1's finding) and cannot see `.json` today.
+
+The endpoint is nonetheless the more dangerous surface for an overclaim, because a machine consumer
+takes a field at face value and has no page context to read it against. Two consequences, both
+acted on rather than noted:
+
+1. `field_coverage` makes the payload's central quantitative claim **self-checking** — gate-17 G16
+   recounts every entry against the rows it describes, so a narrated coverage number fails.
+2. The **leak-lint gap is real and is routed, not closed here** — gate-27 scans `.html` and `.md`
+   only (`gate-27-leak-lint.spec.ts:136`). Extending it to `.json`, with the machine enums
+   (`org_graph`, `tbd_at_p0`, `genesis_stub`) scope-allowlisted as API keys while every other leak
+   class still applies, is a **P4.4** item — that mission already owns the "gates that cannot see a
+   whole surface class" work. Filed as **F-i**.
+
+### §13.2 What P3.2 deliberately did not claim
+
+**The D10 anchor is not claimed here.** The re-score belongs to P5.2 with fresh isolated scorers,
+never to the mission that did the building — the same discipline P3.1 applied to anchor 4.
+
+**Item 9 is not claimed closed.** Its `Dataset`-on-the-registry half is done; its *"vault entity
+pages are generic `WebPage`"* half is untouched and recorded open in
+`machine_eye_delta_p3_2.md`. The acceptance criterion said *the registry*, and the registry index is
+what shipped.
+
+### §13.3 Open by disposition — after P3.2
+
+**R-34 · R-63** (both `[A]`, awaiting ⛩ O0b) · **R-111** (S2, `/canonical-properties`, the unshipped
+half) · **R-124** (S3, awaiting the audience call) · **R-129** (S2, staged to Hestia — this vault
+cannot fix registry data) · **R-131** (S4, unexercised by construction).
+
+**The list is the datum; no total is typed beside it.** **FALSE: 0** — with §12's distinction still
+standing: that is zero false claims *this register has found*.

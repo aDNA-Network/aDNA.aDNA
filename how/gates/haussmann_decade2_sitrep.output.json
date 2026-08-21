@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "gate_id": "haussmann_decade2_sitrep",
+  "surface_type": "decision_gate",
+  "interaction_mode": "IM-B",
+  "persona": "rosetta",
+  "vault": "aDNA.aDNA",
+  "created_at": "2026-08-21T22:43:25Z",
+  "completed_at": "2026-08-21T22:49:44.537Z",
+  "operator": "stanley",
+  "decisions": [
+    {
+      "id": "delivered",
+      "value": "approve",
+      "note": null
+    },
+    {
+      "id": "inflight",
+      "value": "approve",
+      "note": null
+    },
+    {
+      "id": "remaining",
+      "value": "approve",
+      "note": null
+    },
+    {
+      "id": "owed",
+      "value": "approve",
+      "note": null
+    }
+  ],
+  "composite_decision": "approve",
+  "operator_comment_overall": null,
+  "confidence_score": 4,
+  "axis_scores": null,
+  "axis_avg": null,
+  "agent_ergonomics_seconds": null,
+  "rlhf_signal": {
+    "signal_shape": "structured",
+    "value": {
+      "sections": [
+        {
+          "id": "delivered",
+          "value": "approve",
+          "note": null
+        },
+        {
+          "id": "inflight",
+          "value": "approve",
+          "note": null
+        },
+        {
+          "id": "remaining",
+          "value": "approve",
+          "note": null
+        },
+        {
+          "id": "owed",
+          "value": "approve",
+          "note": null
+        }
+      ],
+      "composite": "approve",
+      "confidence": 4,
+      "axes": null,
+      "ergonomics": null
+    }
+  },
+  "rlhf_signal_type": "accept",
+  "rlhf_session_id": "haussmann_decade2_sitrep",
+  "rlhf_captured_at": "2026-08-21T22:49:44.538Z",
+  "rlhf_modification_delta": null,
+  "rlhf_severity_calibration": 0.75,
+  "metadata": {}
+}

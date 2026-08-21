@@ -4,7 +4,7 @@ import VaultRelationshipBlock from '../../components/sections/VaultRelationshipB
 import ClosingCTA from '../../components/sections/ClosingCTA.astro';
 import vaultsData from '../../data/vaults';
 import { buildWebPageJsonLD } from '../../utils/seo';
-import { classLabel, statusLabel, personaLabel, CLASS_GLOSS, tierOf, tierLabel, TIER_MEANING } from '../../utils/vaultLabels';
+import { classLabel, statusLabel, personaLabel, CLASS_GLOSS, tierOf, tierLabel, TIER_MEANING, MINIMAL_CARD_NOTE } from '../../utils/vaultLabels';
 import verifiedLinks from '../../data/verified_links.json';
 
 export function getStaticPaths() {
@@ -56,8 +56,10 @@ const hasLinks = !!(githubUrl || docsSiteUrl);
 // restatement of class + status. Status also carries a plain-language gloss (newcomers don't know "genesis").
 // DP4 (ADR-052 §admission): confidential-adjacent vaults are listed with a minimal card — the
 // registry count stays true, the engagement detail stays private, and the page says so plainly.
+// The sentence itself lives in vaultLabels.ts — the registry JSON endpoint (P3.2) publishes the
+// same policy note, and one ruling should not have two texts.
 const ledeText = vault.listing === 'minimal'
-  ? 'Listed with a minimal card — private engagement. The vault is real and governed; its detail is not public.'
+  ? MINIMAL_CARD_NOTE
   : (vault.note || `A ${classPub} vault — ${tierPub}.`);
 const STATUS_GLOSS: Record<string, string> = {
   genesis: 'early — just getting started', pending: 'not yet started', active: 'active and in use',

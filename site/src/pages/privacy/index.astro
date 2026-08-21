@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { REPO_HTTPS, PUBLISHER } from '../../data/canonical';
+import { buildWebPageJsonLD } from '../../utils/seo';
 
 // Storyweave P5 M5.3 O5 — the site privacy notice. Every claim below is verified against the
 // codebase (M5.3 O5 recon): zero analytics/tracking/cookies (grep-empty), the only client storage
@@ -15,6 +16,12 @@ const updated = '2026-07-13';
 <BaseLayout
   title="Privacy — aDNA"
   description="What adna.network collects: nothing. No accounts, no analytics, no cookies, no tracking. A static, open-source site — here is the honest, verifiable detail."
+  jsonLD={buildWebPageJsonLD({
+    title: 'Privacy — aDNA',
+    description:
+      'What adna.network collects: nothing. No accounts, no analytics, no cookies, no tracking. A static, open-source site — here is the honest, verifiable detail.',
+    url: Astro.url.href,
+  })}
 >
   <article class="policy">
     <header class="policy-head">

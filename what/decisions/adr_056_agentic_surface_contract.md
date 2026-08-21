@@ -4,7 +4,7 @@ adr_number: "056"
 title: "The agentic-surface contract: twins, llms artifacts, registry JSON, MCP server — versioned and self-conformant"
 status: proposed
 created: 2026-08-16
-updated: 2026-08-20
+updated: 2026-08-21
 last_edited_by: agent_rosetta
 campaign_id: campaign_haussmann
 supersedes: ""
@@ -17,9 +17,10 @@ tags: [adr, haussmann, agentic, machine_legibility, d10]
 ## Status
 
 **Proposed** — contract shape fixed at genesis; **clauses 1, 2 and 7 built and evidenced at P3.1
-(2026-08-20)**; clauses 3–6 land at P3.2–P3.3. Ratification is the operator's at the **P3 exit**,
-not the builder's (§7.7) — a clause being implemented is not a clause being accepted, and this ADR
-stays `proposed` until it is signed even though most of the machinery below is now live.
+(2026-08-20)**; **clauses 3 and 4 at P3.2 (2026-08-21)**; clauses 5–6 land at P3.3. Ratification is
+the operator's at the **P3 exit**, not the builder's (§7.7) — a clause being implemented is not a
+clause being accepted, and this ADR stays `proposed` until it is signed even though most of the
+machinery below is now live.
 
 ## Context
 
@@ -96,6 +97,97 @@ unzoned date on an honesty line invites the reader to catch it disagreeing with 
 Clause 3 (registry JSON), 4 (structured data — note `Organization`+`sameAs` already shipped
 unremarked at P1.2, so this clause is half-done by accident), 5 (MCP server), and 6 (published
 conformance report + homepage sentence) are P3.2/P3.3 work.
+
+## As built at P3.2 — clauses 3, 4
+
+*Same discipline as the P3.1 record above: each row is what shipped, not what was planned. `[D]`
+throughout, measured on the build of 2026-08-21.*
+
+### Clause 3 — registry JSON
+
+**Two routes, one producer.** `/vaults.json` is canonical and advertised; `/api/registry.v1.json`
+is the pinnable twin. Both call `renderRegistryJson()` in `site/src/utils/registryJson.ts` and are
+asserted **byte-identical** — 81 KB, 74 vaults, 14 edges.
+
+The two-URL shape was an **operator ruling** (2026-08-21), taken because the mission's acceptance
+criterion ("a versioned public registry endpoint") and this ADR's own clause 7 ("breaking changes
+get versioned URLs") point different ways, and the in-vault precedent shipped three days earlier at
+P3.5 (`/community/proposals.json`) puts the version in the *body* at an unversioned path. Serving
+both satisfies each reading without forcing a consumer to choose: `/vaults.json` is the URL an
+agent constructs unprompted — it is the first path `machine_eye` item 8 probed — and the versioned
+URL exists *before* the first breaking change rather than after it, which is the only moment
+creating one is useful.
+
+**Deprecation window, stated while nothing depends on it**: a breaking change lands at a new
+versioned URL; the previous version keeps serving for **at least 90 days**; `/vaults.json` follows
+the new version only after that window closes. Additive fields are not breaking. The policy ships
+inside the payload (`about.versioning`), not only in prose a consumer will not fetch.
+
+**The public field set is derived, not chosen.** `PUBLIC_VAULT_FIELDS` is the union of what the
+registry's own public surfaces already render: the 18 fields `/vaults/[slug]` shows plus
+`card_present`, which the card shows. Nineteen fields. The remaining eleven of the registry's
+thirty are excluded **because no page publishes them** — including some that are non-empty
+(`persona_archetype` 16/74, `federation_refs` 6/74, `companion_vaults` 3/74, `umbrella_pillar`
+1/74). Relationships reach consumers through `edges[]`, which the graph page does publish, so the
+per-vault duplicates would have been a second representation of one fact. **A field that no surface
+displays is not made public by being convenient to serialize.**
+
+**The registry is thin, and the endpoint measures its own thinness.** Six of the nineteen public
+fields are populated **0/74** — `tagline`, `current_phase`, `docs_site_url`, `headline_mission`,
+`headline_mission_state`, `headline_adrs`, `recent_closed` `[D]`. That is P1.3's sanitizer working
+(ADR-052 §tiers.0), and publishing ~450 silent nulls would let a consumer read absence as *unknown
+for this vault* when the truth is *not collected at all*. So absent scalars are `null` and never
+omitted (the `proposals.json` rule — an omitted key and a genuinely-unknown value are different
+facts), **and** the envelope carries a derived `field_coverage` block giving populated-count/74 per
+field. Thinness becomes a measurement instead of an inference. Every count is computed at build
+time; none is typed (KW-14).
+
+**Two clocks, deliberately not collapsed.** `generated_at` is when the registry *data* was last
+regenerated (operator-gated, pt19 — currently `2026-08-17`); `built_at` is when the file was
+serialized. One field would let a stale registry look as fresh as the last deploy.
+
+**The DP4 suppression is machine-readable.** The three minimal-card vaults carry
+`listing: "minimal"` plus a `listing_note` stating the reason, verified `[D]` to expose only
+identity / class / status / persona and their derived labels. **A suppressed row and an empty row
+are indistinguishable from the outside unless the surface says which it is** — and the policy
+sentence now has one home (`MINIMAL_CARD_NOTE`), consumed by both the detail page and the endpoint.
+
+**Advertised**, because an endpoint nobody can find fails item 8's intent while returning 200: a
+`## Reading the registry as data` section in `llms.txt`, a note on `/vaults` itself, and a full
+schema reference at `/reference/registry-api`.
+
+### Clause 4 — structured data
+
+| Item | State after P3.2 `[D]` |
+|---|---|
+| `Dataset` on the registry | **1** — on `/vaults`, with a `DataDownload` distribution pointing at `/vaults.json`, so page and endpoint reference each other |
+| `Organization` + `sameAs` | **226 occurrences, 0 without `sameAs`** — already shipped at P1.2; verified, not rebuilt |
+| Pages with no JSON-LD | **3 → 0** of the Astro-rendered set (`design-system`, `privacy`, `security` now covered) |
+| schema-dts in the build | Added; every builder in `utils/seo.ts` constructs a typed `WithContext<T>` |
+
+**The "0 Organization blocks" finding was a measurement artifact, and saying so is the point.**
+`jsonld_census` counted **top-level** `@type` only; the Organization is nested as `publisher` on
+every block, and has carried `sameAs` since P1.2. ⊳ D-I ruled the nested form sufficient, so this
+clause was **half-satisfied before the mission that was chartered to satisfy it began**. Recorded
+because an ADR that lets a corrected premise disappear is how the next re-score double-counts the
+same work.
+
+**schema-dts types the authoring surface, not the consumer contract.** `schema-dts` models
+schema.org with interfaces, which are not assignable to the `Record<string, unknown>` the layouts'
+`jsonLD` prop takes; rather than loosen every consumer, the checking happens at the construction
+site through a single `jsonLD<T>()` seam. **Red-tested** (convention 14): changing `license` to
+`licence` in the Dataset builder produces
+`ts(2561): 'licence' does not exist in type 'DatasetLeaf…'. Did you mean to write 'license'?`.
+
+**Two pages carry no JSON-LD, by decision** — the same shape as clause 1's three twin-less routes.
+`404.html`: describing a page that does not exist is a claim, not metadata. `install.html`: a
+static `public/` asset owned by the installer lane, outside the layout system entirely; adding
+structured data to it would be a cross-lane edit, not a fix.
+
+**What P3.2 does not settle**: clause 5 (MCP server) and clause 6 (published conformance report +
+homepage sentence) remain P3.3's. Clause 7's law is now **exercised in shape but still not in
+anger** — a versioned URL exists and a deprecation window is stated; no breaking change has yet
+tested either.
 
 ## Consequences
 

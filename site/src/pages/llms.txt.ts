@@ -55,6 +55,17 @@ sending \`Accept: text/markdown\`. Each twin front-loads a pointer back to this 
 
 State is a build-time snapshot generated ${BUILD_DAY}; nothing here is live.
 
+## Reading the registry as data
+
+The whole vault registry is served as JSON at ${base('/vaults.json')} — the same ${vaultCount} entries
+and ${edgeCount} relationships the registry pages render, with the fields those pages show. Pin the
+versioned twin at ${base('/api/registry.v1.json')} if you need the shape to hold still; it serves
+identical bytes, and breaking changes get a new versioned URL rather than a silent swap.
+
+The payload states its own caveats: every entry is self-declared, and a \`field_coverage\` block
+reports how many of the ${vaultCount} rows actually populate each field — several are populated zero
+times, which is the honest state of the registry rather than a fetch error.
+
 ## The network
 
 ${vaultCount} vaults, ${edgeCount} cited relationships, federating on the Lattice Protocol. Every node is local-first; federation is opt-in and reviewable.

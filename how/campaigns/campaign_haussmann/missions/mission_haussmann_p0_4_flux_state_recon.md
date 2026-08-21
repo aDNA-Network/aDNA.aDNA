@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P0
 decade: 1
 owner: stanley
-status: active      # 2026-08-16 P0-wave: O0 delivery VERIFIED (17:11 in Fluxer inbox) + O1 prerequisite register built (PR-1/2/3 × owners; ADR-054 sufficient as-is) + O3 escalation posted in the wave wrap-up. REMAINING: Aspasia ack/answers (her lane) → then this closes.
+status: active      # ⚠ THE ACK HAS ARRIVED — 2026-08-21, found untracked mid-session by the P3.2 sweep (`coord_2026_08_20_aspasia_to_rosetta_reconciliation_truth_note.md`, dated 08-20). All ten §6 questions answered; Ask 1 done (Fluxer STATE reconciled, "Nothing is deployed" gone); PR-3 aliveness CLEARED WITH EVIDENCE (4 guilds / 23 users / 49 channels / 264 messages, inside recon 08-20); D-1 RULED; D-3 interim = harvest OFF; venue ⛩ ruled "aDNA Community". RECORDED, NOT CLOSED — closing needs its own session + AAR (SO#5), and P3.2 was not that session. 2026-08-16 P0-wave: O0 delivery VERIFIED (17:11 in Fluxer inbox) + O1 prerequisite register built (PR-1/2/3 × owners; ADR-054 sufficient as-is) + O3 escalation posted in the wave wrap-up.
 mission_class: reconnaissance
 executor_tier: opus
 token_budget_estimated: "~80–140 kT in 1 session: memo delivery + answer intake + prerequisite register + ADR-054 skeleton (ADR-016)"
@@ -66,3 +66,40 @@ A true record exists somewhere authoritative; the prerequisites are named with o
 ## AAR (SO#5)
 
 *(before completed)*
+
+
+## ⚠ Inbound ack — intaken 2026-08-21, NOT yet processed into a close
+
+Aspasia's reply (`who/coordination/coord_2026_08_20_aspasia_to_rosetta_reconciliation_truth_note.md`,
+authored 2026-08-20, delivered 2026-08-21, `ack_required: false`) arrived **untracked and
+mid-session** during P3.2 — it was **not present** at that session's opening sweep. Recorded here
+immediately rather than carried in a session log, because this mission has been `active` for five
+days waiting on exactly this file.
+
+**What it discharges** `[R]`:
+
+| Item | Before | After Aspasia's reply |
+|---|---|---|
+| Ask 1 — STATE reconciliation | *"Nothing is deployed"* published while an instance ran | **Done** — STATE records the live instance, campaign amended v1.3, commit `88bbca2`+ |
+| **PR-3** aliveness | unknown from outside | **CLEARED WITH EVIDENCE** — inside recon 2026-08-20: 4 guilds · 23 users · 49 channels (+51 private) · 264 messages · same-day activity |
+| PR-1 policy floor | unowned | **Owned by Aspasia**; interim floor first, `#needs-human` legal, then the `legal.*` config act (rung ②) |
+| PR-2 branding | open | Dry-run-proven rebrand = rung ③; **venue name ⛩ ruled "aDNA Community"** (operator, 2026-08-20) |
+| D-1 host identity | unruled | **RULED** — ADR-002 Amendment 1 (live topology accepted; CAX21 → fallback) |
+| D-3 harvest | unruled | **Interim: harvest OFF** until `#needs-human` legal rules |
+| Ask 3 (ADR-054 prerequisites as their gate line) | proposed | **Accepted as their own gate line** |
+
+**What it does NOT discharge — and this is the part that matters for P3.4.** One of three
+prerequisites is green. Aspasia's own words: *"HAUSSMANN's honest no-link state remains correct
+until the ladder completes — we will signal when the three prerequisites are green rather than ask
+you to poll."*
+
+**The trigger model has therefore changed from POLL to PUSH**, and that is worth writing down: P3.4
+re-probes the register at execution (its charter says so), but the *signal* that the register is
+worth re-probing now arrives as a memo — through the same untracked drop-box that has delivered
+**six memos in three days, every one found only by `git ls-files --others --exclude-standard
+who/coordination/`**. A push trigger whose transport is a directory nobody is watching is a poll
+with extra steps. Named here, and it is the concrete instance behind
+[[idea_upstream_coordination_dropbox_doctrine]]'s discovery clause.
+
+**Next**: this mission closes in its own session with an AAR (SO#5), which also updates P3.4's
+prerequisite register from 0/3 to 1/3 green.

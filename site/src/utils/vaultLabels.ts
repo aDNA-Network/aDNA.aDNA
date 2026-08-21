@@ -120,6 +120,22 @@ export function tierSlug(tier: VaultTier): string {
   return tier.replace(/_/g, '-');
 }
 
+/**
+ * The DP4 minimal-card sentence (ADR-052 §admission), in one place.
+ *
+ * Three confidential-adjacent vaults are listed with identity/class/status/persona only: the
+ * registry count stays true and the engagement detail stays private. The ruling requires the
+ * surface to state the reason rather than render a row that merely *looks* empty — an
+ * indistinguishable-from-missing row is the failure mode, because a reader (or an agent) cannot
+ * tell suppression from absence.
+ *
+ * It lives here because P3.2 gave the sentence a second consumer: the registry JSON endpoint says
+ * the same thing to machines that `/vaults/[slug]` says to readers. Two copies of one policy
+ * sentence is precisely the drift channel gate-14 exists to close.
+ */
+export const MINIMAL_CARD_NOTE =
+  'Listed with a minimal card — private engagement. The vault is real and governed; its detail is not public.';
+
 /** Persona display. Placeholders ('—', tbd_at_p0) are data-currency artifacts, not personae —
  *  they render as absent (the persona row/line is simply omitted). `_provisional` reads as a
  *  qualifier, not part of the name. */

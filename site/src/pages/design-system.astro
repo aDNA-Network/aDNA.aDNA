@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Callout from '../components/sections/Callout.astro';
+import { buildWebPageJsonLD } from '../utils/seo';
 
 // The living design-system reference (Storyweave P5 M5.2 / B11). Every swatch, size,
 // and sample below is driven from the actual design tokens (tokens.css + branding.css)
@@ -80,10 +81,21 @@ const shadows = ['--shadow-sm', '--shadow-md', '--shadow-lg'];
 const badges = ['new', 'updated', 'deprecated', 'experimental'];
 ---
 
+{/* HAUSSMANN P3.2 — this page is `noindex`, and structured data on a page told not to index
+    looks contradictory at first glance. It is not: JSON-LD describes the page for any consumer
+    that parses it, and agents reading this site are not search crawlers. Covering all three of
+    the census's bare pages also lets gate-17 assert "zero pages without JSON-LD" absolutely,
+    and a gate with no allowlisted exception is a gate that cannot rot around its exception. */}
 <BaseLayout
   title="Design System"
   description="The living design-token reference for adna.network — colour, type, spacing, radius, shadow, and component samples, driven straight from the site's own tokens."
   noindex={true}
+  jsonLD={buildWebPageJsonLD({
+    title: 'Design System',
+    description:
+      "The living design-token reference for adna.network — colour, type, spacing, radius, shadow, and component samples, driven straight from the site's own tokens.",
+    url: Astro.url.href,
+  })}
 >
   <div class="ds">
     <header class="ds-head">
