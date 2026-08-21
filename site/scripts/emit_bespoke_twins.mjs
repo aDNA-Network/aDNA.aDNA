@@ -279,6 +279,47 @@ allTwins.sort();
 
 if (!allTwins.length) die('zero twins found — a silent zero here would ship the 404s again');
 
+/* ── append the corpus to /llms-full.txt (machine_eye item 2) ──────────────
+ *
+ * Item 2, verbatim: "CONFIRMED: index, not full-corpus — and the name overclaims. 2,018 B …
+ * zero page prose is inlined … a '-full' name promises deep-ingestion content it doesn't
+ * deliver." The endpoint owns the typed header; this owns the body, because only a post-build
+ * step can see the finished twins. See llms-full.txt.ts for why the split is forced.
+ */
+const CORPUS_MARKER =
+  '<!-- corpus pending: the page bodies are appended after the build; if you are reading this line, that step did not run -->';
+
+const corpusFile = join(root, 'llms-full.txt');
+if (!existsSync(corpusFile)) die('dist/llms-full.txt not found — the endpoint did not render');
+
+const header = readFileSync(corpusFile, 'utf8');
+if (!header.includes(CORPUS_MARKER)) {
+  die(
+    'dist/llms-full.txt has no corpus marker. Either the endpoint changed it or this tool\'s copy ' +
+      'drifted from src/utils/twin.ts CORPUS_MARKER — a mismatch would leave the corpus permanently ' +
+      'unappended while both halves looked correct on their own.',
+  );
+}
+
+const corpusSections = [];
+for (const p of allTwins) {
+  const file = join(root, `${p === '/' ? '/index' : p}.md`);
+  if (!existsSync(file)) die(`manifest lists ${p} but ${file} is absent`);
+  // Drop each twin's own pointer block — the same three lines repeated 221 times, pointing at
+  // the very document they would be sitting inside.
+  const twinBody = readFileSync(file, 'utf8').replace(/^(?:>.*(?:\n|$))+\s*/, '').trim();
+  if (!twinBody) die(`twin ${p} is empty after removing its pointer block`);
+  corpusSections.push(`\n\n---\n\n## https://adna.network${p === '/' ? '/' : `${p}/`}\n\n${twinBody}`);
+}
+
+writeFileSync(corpusFile, header.replace(CORPUS_MARKER, corpusSections.join('').trim()));
+const corpusBytes = statSync(corpusFile).size;
+if (corpusBytes < 100_000) {
+  // The defect being fixed was a 2 KB file wearing a "-full" name. Shipping a small one again
+  // would be the same claim failing the same way, so refuse rather than warn.
+  die(`corpus is only ${corpusBytes} B — that is the size class of the index this replaced, not a corpus`);
+}
+
 const manifestFile = join(cwd, 'src', 'data', 'twin_manifest.json');
 // Paths only — no date, no counts narrated. A date here would churn the committed tree every
 // day the build runs (the `build_vaults_data.mjs` lesson: "restore, don't commit").
@@ -288,6 +329,7 @@ if (prev !== next) writeFileSync(manifestFile, next);
 
 console.log(
   `emit_bespoke_twins: wrote ${written.length} tier-C twin(s); advertised ${advertised} via rel=alternate; ` +
+    `corpus ${(corpusBytes / 1024).toFixed(0)} KB from ${corpusSections.length} page(s); ` +
     `manifest lists ${allTwins.length} total` +
     (skipped.length ? `; skipped ${skipped.length} (${skipped.slice(0, 6).join(', ')}${skipped.length > 6 ? ', …' : ''})` : ''),
 );

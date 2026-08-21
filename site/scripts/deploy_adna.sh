@@ -68,6 +68,14 @@ node scripts/inject_installer_headers.mjs .
 echo "== widen redirects to both slash forms (config.json) =="
 node scripts/inject_redirects.mjs .
 
+# Content negotiation (HAUSSMANN P3.1 / ADR-056). Probed live 2026-08-19: `Accept: text/markdown`
+# returned text/html with the LITERAL SAME ETag — Vercel served one cached object regardless of
+# `Accept`. One exact route per twin, generated from twin_manifest.json; deliberately not a
+# blanket rewrite, which would 404 every path that has no twin. Runs AFTER inject_redirects so a
+# legacy URL still redirects to its canonical form first, then negotiates there.
+echo "== inject Accept: text/markdown negotiation (config.json) =="
+node scripts/inject_negotiation.mjs .
+
 echo "== verify injection =="
 node -e "
 const c=require('fs').readFileSync('.vercel/output/config.json','utf8');
@@ -93,6 +101,19 @@ case "$OUT_IIH" in
   *"already injected"*|*"nothing to do"*) : ;;
   *) echo "ABORT: installer routes were NOT present after the injection step (second run was not a no-op)" >&2; exit 1 ;;
 esac
+
+# Negotiation routes: same idempotent-re-run proof as the installer routes above. The tool
+# asserts placement, per-route `Vary: Accept`, count-vs-manifest, that every manifest twin is
+# actually present on the deploy surface, and that its splice did not push any redirect past the
+# filesystem boundary — so a no-op second run means all of that held.
+echo "== verify negotiation routes (idempotent re-run) =="
+OUT_NEG="$(node scripts/inject_negotiation.mjs .)" || { echo "$OUT_NEG" >&2; exit 1; }
+echo "$OUT_NEG"
+case "$OUT_NEG" in
+  *"already injected"*) : ;;
+  *) echo "ABORT: negotiation routes were NOT present after the injection step (second run was not a no-op)" >&2; exit 1 ;;
+esac
+
 echo "== deploy ($MODE) using \$${TOKEN_NAME%% *} =="
 if [[ "$MODE" == "prod" ]]; then
   OUT="$(VERCEL_TOKEN="$TOKEN" npx vercel deploy --prebuilt --prod --yes 2>&1)" || { echo "$OUT" | sed "s/${TOKEN}/[REDACTED]/g" >&2; exit 1; }

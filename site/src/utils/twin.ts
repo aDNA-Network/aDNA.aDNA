@@ -43,6 +43,21 @@ export const BUILD_DAY = `${new Date().toISOString().slice(0, 10)} (UTC)`;
 export const SITE_ORIGIN_FALLBACK = 'https://adna.network';
 
 /**
+ * The seam between `/llms-full.txt`'s two producers.
+ *
+ * The endpoint renders during the build (when no twin is on disk yet) and owns the typed header;
+ * `scripts/emit_bespoke_twins.mjs` runs after the build (when every twin exists) and replaces
+ * this line with the corpus. Declared once, here, so the two sides cannot drift apart on the
+ * literal — a marker mismatch would leave the corpus permanently unappended while both halves
+ * looked correct in isolation.
+ *
+ * The text is deliberately a plain sentence, not a machine token: if the append ever fails, this
+ * is what a reader sees, and it should tell them the truth rather than look like debris.
+ */
+export const CORPUS_MARKER =
+  '<!-- corpus pending: the page bodies are appended after the build; if you are reading this line, that step did not run -->';
+
+/**
  * The pointer block that front-loads every twin (MCP's verified convention: a machine surface
  * that advertises the index rather than assuming the reader already knows it).
  *
