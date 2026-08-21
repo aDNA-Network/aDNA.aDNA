@@ -112,7 +112,15 @@ test.describe('gate-30 URL canonicalization', () => {
         // Query/hash come off FIRST, then the trailing slash. The other order leaves
         // `graph/?focus=adna` as the "slug" and reports the graph page's own deep-links as
         // non-canonical vault routes — a false positive this gate shipped with on its first run.
-        const slug = m[1].split(/[?#]/)[0].replace(/\/$/, '');
+        // HAUSSMANN P3.1: `.md` comes off alongside the trailing slash. Every vault page now
+        // advertises its markdown twin (`<link rel=alternate href="/vaults/astro.md">`), and a twin
+        // href is not a vault page route — left unhandled, all 74 read as non-canonical.
+        //
+        // Stripped rather than skipped, deliberately: skipping `.md` hrefs would blind the gate to
+        // a non-canonical TWIN (`/vaults/III.aDNA.md`), which fails on a case-sensitive host for
+        // exactly the reason this gate exists. Stripping keeps the slug under assertion and only
+        // removes the suffix.
+        const slug = m[1].split(/[?#]/)[0].replace(/\/$/, '').replace(/\.md$/, '');
         if (slug === '' || slug === 'graph') continue;   // the index and the graph page
         if (slug !== canonical(slug)) {
           offenders.push(`${page.replace(DIST + '/', '')} → /vaults/${m[1]}`);

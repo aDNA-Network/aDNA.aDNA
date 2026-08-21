@@ -213,11 +213,14 @@ for (const file of walk(root)) {
   const body = htmlToMarkdown(main[1]);
   if (body.length < 200) { skipped.push(`${route} (thin: ${body.length}B)`); continue; }
 
+  // ONE contiguous quote block, not two. The tier-C note started as a separate paragraph and
+  // that made the pointer block structurally different from tier A/B's — every consumer that
+  // strips "the leading quote block" (the corpus builder, gate-17) then left a stray line behind
+  // on exactly the 32 pages tier C owns. A twin's envelope should not vary by how it was derived.
   const pointer = [
     `> Markdown twin of https://adna.network${route === '/' ? '' : route}/`,
     '> Index: https://adna.network/llms.txt · Full corpus: https://adna.network/llms-full.txt',
     `> State is a build-time snapshot generated ${new Date().toISOString().slice(0, 10)} (UTC); nothing here is live.`,
-    '',
     '> Derived from the rendered page — this route has no markdown source.',
     '',
   ].join('\n');

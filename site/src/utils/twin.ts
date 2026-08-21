@@ -79,6 +79,20 @@ export function pointerBlock(canonicalPath: string, origin: string = SITE_ORIGIN
   ].join('\n');
 }
 
+/**
+ * Apply a transform to the parts of a markdown document that are NOT inside a fenced code block.
+ *
+ * This site documents MDX, JSX and HTML, so its code samples legitimately contain the very
+ * syntax the twin transform strips. Without this, the docs teaching a construct would be the
+ * pages that lose it.
+ */
+function outsideFences(src: string, fn: (chunk: string) => string): string {
+  return src
+    .split(/(```[\s\S]*?```)/g)
+    .map((part) => (part.startsWith('```') ? part : fn(part)))
+    .join('');
+}
+
 /** Every component tag that may appear in a collection body, and how a twin renders it. */
 const COMPONENT_HANDLERS: Record<string, 'mermaid' | 'describe'> = {
   MermaidDiagram: 'mermaid',
@@ -115,6 +129,16 @@ export function mdxBodyToMarkdown(body: string, sourceId: string): string {
 
   // Component imports are machinery, not content.
   out = out.replace(/^import\s+.*?from\s+['"].*?['"];?\s*$/gm, '');
+
+  // MDX comments — `{/* … */}` — render to nothing in HTML but would survive verbatim into a
+  // twin. Caught by gate-17 on the first run: 24 twins carried them, and their contents are
+  // exactly the internal rationale P0.5 stripped from the site's HTML (ADR ids, campaign ids,
+  // version history). That is the H13 leak class re-entering through the machine surface built
+  // to mirror the page — a twin must not publish what its own page deliberately does not.
+  //
+  // Fence-aware: this site documents MDX, so `{/* … */}` inside a code block is example content
+  // and must survive. Masking fences first is the same care the component check below takes.
+  out = outsideFences(out, (chunk) => chunk.replace(/\{\s*\/\*[\s\S]*?\*\/\s*\}/g, ''));
 
   // <MermaidDiagram chart={`…`} caption="…" /> → a fenced mermaid block.
   // The diagram SOURCE survives as diagram source, which is strictly better markdown than the

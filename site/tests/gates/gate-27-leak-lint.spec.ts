@@ -70,13 +70,58 @@ const baseline: Finding[] = baselineDoc.findings;
 const surfaceMatches = (surface: string, file: string) =>
   surface === '**' ? true : surface.endsWith('/**') ? file.startsWith(surface.slice(0, -2)) : surface === file;
 
-const isAllowed = (file: string, patternId: string, token: string) =>
-  allowlist.some(
+/**
+ * HAUSSMANN P3.1 — DERIVED SURFACES INHERIT THE ALLOWANCES OF WHAT THEY DERIVE FROM.
+ *
+ * The site gained two kinds of surface that are not pages but carry page text verbatim:
+ * `.md` twins (one per content URL) and `llms-full.txt` (all of them concatenated). This gate's
+ * allowlist is surface-scoped AND token-scoped, so on their first run the twins arrived with no
+ * allowances at all and the corpus reported 95 "new" leaks — every one of them text that already
+ * passed this gate on the page it came from, under an entry like `learn/** · op_codename`.
+ *
+ * Baselining them was explicitly not an option (the baseline was retired at P1.3 and must stay
+ * empty), and neither was exempting the surfaces — 221 unlinted public files is the hole, not the
+ * fix. The right model is that a twin is not a new CLAIM, it is the same claim in another
+ * encoding, so it should be judged by the same rule:
+ *
+ *   learn/concepts/triad.md  → judged as  learn/concepts/triad/index.html
+ *   index.md                 → judged as  index.html
+ *   llms-full.txt            → the UNION of every page's allowances
+ *
+ * The union is sound rather than permissive: the corpus contains only text that appears on some
+ * page, so a token no page ever cleared is granted by no entry and still fires here — and fires
+ * on its own page too, where it is attributable. What the union prevents is one aggregate surface
+ * re-litigating 19 decisions already made page by page.
+ *
+ * `llms.txt` is NOT in this map. It is authored, not derived — its words are chosen by
+ * `llms.txt.ts`, so it answers for them itself. `llms-full.txt` is BOTH: an authored header and a
+ * derived body, split at the first section rule and judged separately (see scanFindings).
+ *
+ * THE GAP THIS MODEL HAD, AND HOW IT WAS FOUND. Red-testing the change caught it: a novel
+ * `idea_upstream_totally_new_thing_nobody_allowed` injected into the corpus did NOT fire, because
+ * the allowlist grants by prefix (`idea_upstream_`) and the union made every page's prefix grant
+ * apply corpus-wide. For the corpus BODY that is tolerable — the body is a concatenation of twins,
+ * so any leak in it also exists on a page, where it fires and is correctly attributed. But the
+ * HEADER has no page behind it, so a union there would have exempted authored text from the lint
+ * entirely. Hence the split: derived text inherits, authored text answers for itself.
+ */
+const CORPUS = 'llms-full.txt';
+
+const allowanceSurface = (file: string): string => {
+  if (file === CORPUS) return '**';
+  if (!file.endsWith('.md')) return file;
+  return file === 'index.md' ? 'index.html' : `${file.slice(0, -3)}/index.html`;
+};
+
+const isAllowed = (file: string, patternId: string, token: string) => {
+  const surface = allowanceSurface(file);
+  return allowlist.some(
     (e) =>
       e.pattern === patternId &&
-      surfaceMatches(e.surface, file) &&
+      (surface === '**' ? true : surfaceMatches(e.surface, surface)) &&
       e.tokens.some((t) => token === t || token.startsWith(t)),
   );
+};
 
 function scanTargets(): string[] {
   const out: string[] = [];
@@ -84,7 +129,11 @@ function scanTargets(): string[] {
     for (const e of readdirSync(dir, { withFileTypes: true })) {
       const p = join(dir, e.name);
       if (e.isDirectory()) walk(p);
-      else if (e.name.endsWith('.html')) out.push(p);
+      // HAUSSMANN P3.1: `.md` twins are public surfaces too. Adding them here is the point of the
+      // change — the twins arrived as 221 files this gate could not see, which is a bigger hole
+      // than any single leak it was written to catch. Their allowances resolve through
+      // allowanceSurface() above, so a twin is held to its page's standard, no looser.
+      else if (e.name.endsWith('.html') || e.name.endsWith('.md')) out.push(p);
     }
   };
   walk(DIST);
@@ -99,14 +148,45 @@ function scanFindings(): Finding[] {
   const findings: Finding[] = [];
   for (const abs of scanTargets()) {
     const file = relative(DIST, abs);
-    const text = readFileSync(abs, 'utf8');
+    const raw = readFileSync(abs, 'utf8');
+
+    // The corpus is scanned as two surfaces. Its authored header is judged strictly, as itself;
+    // its derived body inherits the union (see allowanceSurface). Splitting at the first section
+    // rule keeps authored text inside the lint instead of behind the union's skirts.
+    const units: { surfaceFile: string; text: string }[] =
+      file === CORPUS
+        ? (() => {
+            const at = raw.search(/^## https:\/\/adna\.network/m);
+            return at === -1
+              ? [{ surfaceFile: `${CORPUS}#header`, text: raw }]
+              : [
+                  { surfaceFile: `${CORPUS}#header`, text: raw.slice(0, at) },
+                  { surfaceFile: CORPUS, text: raw.slice(at) },
+                ];
+          })()
+        : [{ surfaceFile: file, text: raw }];
+
+    for (const unit of units) scanUnit(unit.surfaceFile, unit.text, findings);
+  }
+  return findings;
+}
+
+function scanUnit(file: string, text: string, findings: Finding[]): void {
+  {
     for (const p of patterns) {
       const re = new RegExp(p.regex, p.flags.includes('g') ? p.flags : `${p.flags}g`);
-      const hits = (text.match(re) || []).filter((h) => !isAllowed(file, p.id, h));
+      // HAUSSMANN P3.1: collapse internal whitespace in the matched token before judging it.
+      // A leak is about content, not line wrapping — and the two encodings differ here. HTML
+      // collapses whitespace when rendered, so `Operation Rosetta` broken across a source line
+      // reaches this gate as one token from a page; the markdown twin preserves the break and
+      // arrives as `"Operation\n    Rosetta"`, which no allowlist entry can match. Without this,
+      // the same sentence is cleared on the page and reported as a new leak on its own twin.
+      const hits = (text.match(re) || [])
+        .map((h) => h.replace(/\s+/g, ' '))
+        .filter((h) => !isAllowed(file, p.id, h));
       if (hits.length) findings.push({ file, pattern: p.id, count: hits.length, tokens: [...new Set(hits)].sort() });
     }
   }
-  return findings;
 }
 
 // ── Instrument self-tests: a lint that cannot detect is not a gate ─────────────
