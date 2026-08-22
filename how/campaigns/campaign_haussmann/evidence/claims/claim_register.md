@@ -1161,6 +1161,14 @@ time, **claims inside a JSON payload**. Every new sentence gets a row (the P1.2 
 | **R-131** | `/vaults.json` → `about.versioning` | *"Breaking changes get a NEW versioned URL … The canonical `/vaults.json` follows the newest version only after that version has been served at its versioned URL for at least 90 days."* | **verifiable → unexercised** | A **forward promise about our own future conduct**, and the honest classification is `verifiable`, not `verified`: no breaking change has occurred, so nothing has tested it. Recorded in the same register-verifiable form ADR-056 clause 7 already carries. What *is* verified today is the mechanism the promise needs — a versioned URL exists and serves byte-identically `[D]` | **S4** | [D] |
 | **R-132** | `/vaults.json` → `caveat` | *"Every entry is self-declared … The graph is a graph of declared relationships, not evidence of adoption."* | **verified** | Restates the `/vaults` page caveat ratified at P2.4 (ADR-052 §tiers.2) into the payload. Independently true of the data: `github_url` 1/74, `docs_site_url` 0/74, `last_synced` 24/74 with 18 sharing one date — there is nothing to corroborate a status against `[D]` | — | [D] |
 
+> **⛩ LIVE-VERIFIED 2026-08-21** (`tree=861e871`, deploy `2026-08-22T00:29:33Z`). R-130/131/132 were
+> registered against the **local preview build** while P3.2 sat undeployed under the operator's
+> ship-scope ruling. All three are now measured on `https://adna.network`: `/vaults.json` **200**,
+> 80,997 B, 74 vaults + 14 edges; `/api/registry.v1.json` **200** and `cmp`-identical; the `caveat`
+> and `about.versioning` strings served as registered. **R-131 stays `verifiable → unexercised`** —
+> deploying the mechanism does not exercise the promise, and moving it to `verified` because the
+> endpoint went live would be precisely the up-move this register exists to prevent.
+
 ### §13.1 A claim class this register has not carried before
 
 Rows R-131 and R-132 live **inside a JSON payload**, not in rendered copy. That matters for the

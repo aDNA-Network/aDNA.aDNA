@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P3
 decade: 2
 owner: stanley
-status: completed   # ✅ 2026-08-21 — 3/3 acceptance criteria; AAR below (SO#5). Built, gated 552/552 zero xfail, 12 assertions red-proven, axe 0 ×2 themes. NOT DEPLOYED — halts at ⛩ operator GO by ship-scope ruling. ⛩ DP6 RATIFIED 2026-08-19 — activated. RESCOPED DOWN: the "no Organization JSON-LD, no sameAs" premise is FALSE — both shipped at P1.2 as a side effect of canonical-identity single-sourcing, uncredited (seo.ts:11 says so in its own comment). ⊳ D-I ruled the nested WebSite.publisher form SATISFIES the Organization half; saved budget goes to the endpoint.
+status: completed   # ✅ 2026-08-21 — 3/3 acceptance criteria; AAR below (SO#5). Built, gated 552/552 zero xfail, 12 assertions red-proven, axe 0 ×2 themes. ⛩ DEPLOYED 2026-08-21 (`tree=861e871`, deploy record `2026-08-22T00:29:33Z`) — the ⛩ prod GO fired in the following session; every machine-eye row re-probed against the ALIAS and held unchanged from the local build; delta packet re-stamped `probe_scope: live_alias_verified`. ⛩ DP6 RATIFIED 2026-08-19 — activated. RESCOPED DOWN: the "no Organization JSON-LD, no sameAs" premise is FALSE — both shipped at P1.2 as a side effect of canonical-identity single-sourcing, uncredited (seo.ts:11 says so in its own comment). ⊳ D-I ruled the nested WebSite.publisher form SATISFIES the Organization half; saved budget goes to the endpoint.
 mission_class: build
 executor_tier: sonnet
 token_budget_estimated: "~90–140 kT in 1 session: versioned public JSON endpoint (4 obvious paths still 404) + Dataset on the registry + schema-dts in the build + the three zero-JSON-LD pages + endpoint derived from the SAME build snapshot as the HTML (zero drift, KW-8) + gates. Lowered from ~120–180 kT at ⛩ DP6 2026-08-19 — Organization+sameAs already shipped at P1.2 (ADR-016/SO#11)"
@@ -60,7 +60,11 @@ An agent can `curl` one documented URL and get the honest registry; search engin
 ## Progress
 
 **COMPLETE 2026-08-21** (build-side). Session `session_stanley_20260821_162437_haussmann_p3_2`.
-**Undeployed by ruling** — the operator set ship-scope to *build → gates green → halt for ⛩ GO*.
+~~**Undeployed by ruling** — the operator set ship-scope to *build → gates green → halt for ⛩ GO*.~~
+**⛩ DEPLOYED 2026-08-21** in the following session
+(`session_stanley_20260821_172747_haussmann_p3_2_deploy_p3_3_open`); deploy record
+`2026-08-22T00:29:33Z mode=prod tree=861e871`. The strike is deliberate — the undeployed interval
+was real and a reader should see when it closed.
 
 | O | Delivered |
 |---|---|
@@ -71,8 +75,12 @@ An agent can `curl` one documented URL and get the honest registry; search engin
 | O4 | *(operator-added)* Berthier ack — **adopt**, doctrine queued with a 2026-09-30 commitment |
 
 Machine-eye **item 8 ABSENT → present** (`/vaults.json` 200, 74 vaults + 14 edges) and **item 9
-moved with one half open**. ⚠ Both measured on the **local preview build only** — the live re-probe
-is owed at the deploy GO, and the delta packet says so on its face.
+moved with one half open**. ~~⚠ Both measured on the **local preview build only** — the live re-probe
+is owed at the deploy GO, and the delta packet says so on its face.~~ **Live re-probe done
+2026-08-21**: every row held unchanged against `https://adna.network` — 80,997 B byte-for-byte, both
+routes `cmp`-identical, the other three probed paths still deliberately 404, `Dataset →
+DataDownload` pointing at the live endpoint, P3.1's twins unregressed. The delta packet now reads
+`probe_scope: live_alias_verified`.
 
 ## AAR (SO#5)
 

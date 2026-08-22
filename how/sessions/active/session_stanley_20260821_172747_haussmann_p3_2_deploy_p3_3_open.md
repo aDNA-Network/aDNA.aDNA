@@ -74,6 +74,62 @@ moves two known behaviours:
   says it must not train.
 - `build_vaults_data.mjs` date-only churn after UTC midnight — restore, never commit.
 
+## ⛩ Deploy record (campaign law §6 — every deploy ID recorded)
+
+```
+deploy_record: 2026-08-22T00:29:33Z mode=prod
+               url=https://adna-docs-baguy90ta-science-stanleys-projects.vercel.app
+               token=SS_VERCEL_TOKEN (interim — migrate to VERCEL_TOKEN_ADNA when brokered)
+               tree=861e871
+```
+
+Chain ran clean: 225 pages · 32 tier-C twins re-emitted, 222 advertised, corpus 929 KB · headers
+injected 4/4 · installer routes 5 · redirects widened 42/42 · negotiation 444 routes ·
+**live-headers verified against `https://adna.network` → served 4/4, no drift**.
+
+That last line is P3.1's fix working. Before it, `check_live_headers.mjs` pointed at the
+per-deployment `*.vercel.app` URL, which Deployment Protection gates on prod as well as preview —
+so it read Vercel's SSO login page and printed the same `OK — no drift` it prints now. The output
+is identical; only now does it mean anything.
+
+## Live verification (item 8 / item 9, against the ALIAS)
+
+| Check | Result |
+|---|---|
+| `/vaults.json` | **200**, 80,997 B, `application/json; charset=utf-8` |
+| `/api/registry.v1.json` | **200**, `cmp` byte-identical, md5 `b8645979…` |
+| `/api/vaults` · `/vaults/index.json` · `/data/vaults.json` | **404** — the other three machine-eye paths, deliberately not aliased |
+| payload | 74 vaults + 14 edges, 19 `field_coverage` keys |
+| `/reference/registry-api` | **200** (both slash forms); `llms.txt` names both routes |
+| `Dataset` on `/vaults` | present, `distribution → DataDownload → contentUrl` = the live endpoint |
+| 3 formerly-bare pages | JSON-LD present on all 3 |
+| P3.1 twins | `/get-started/.md` · `/about/.md` · `/vaults/.md` → **200**, unregressed |
+
+**Nothing moved between local and live.** Both measurements are recorded separately in the delta
+packet rather than merged — local-green is evidence about the build, live-green about the site.
+
+## Findings
+
+- **F-l — the redaction idiom in this campaign's own notes is self-defeating.**
+  `${VAR:+SET}${VAR:-UNSET}` does **not** redact: `:+` emits `SET` when the var is set, and `:-`
+  then emits **the value** (it only falls back to `UNSET` when *unset*). Run against
+  `SS_VERCEL_TOKEN` at session open, it printed `SET` followed by the live token. The token is the
+  known throwaway test-account credential whose rotation the operator explicitly de-prioritized
+  (E4 c159, 2026-06-07), so this is not an incident — but the *idiom* is recorded in the campaign
+  memory as the redaction pattern, and it leaks every time it is used on a var that is set.
+  **Correct form: `[ -n "$VAR" ] && echo SET || echo UNSET`**, or `${VAR:+SET}` alone with no
+  fallback concatenated after it. Routed to **P4.4**.
+- **A third freshly-written instrument was wrong before the site was.** The live JSON-LD census
+  written for this session's re-probe walks `@graph` and nested `publisher` — the two blind spots
+  P3.2's AAR had just identified — and **not `distribution`**, so it reported `DataDownload` absent
+  from `/vaults`. It is present. Caught by reading the payload instead of believing the parser.
+  P3.2 hit this twice in one session; this is the third in two missions. Convention 14 is not
+  over-written.
+
 ## Progress log
 
 - **17:27** — session opened; startup checklist run; open sweep clean; recon recorded.
+- **17:29** — ⛩ prod GO fired; deploy clean; live headers verified against the alias.
+- **17:32** — item 8 / item 9 re-probed live; all rows held; delta packet re-stamped
+  `live_alias_verified`; claim rows R-130/131/132 live-verified (**R-131 deliberately NOT moved up**
+  to `verified` — deploying a mechanism does not exercise a forward promise).
