@@ -10,34 +10,52 @@ updated: 2026-08-21
 status: active
 last_edited_by: agent_rosetta
 probe_target: https://adna.network
-probe_scope: local_build_only    # ⚠ NOT live-verified. Flips to live_alias_verified at the deploy.
-deploy_tree:                     # unfilled — no deploy this session
-deploy_record:                   # unfilled — no deploy this session
+probe_scope: live_alias_verified  # ✅ re-probed on the ALIAS after the deploy, 2026-08-22T03:40:39Z
+deploy_tree: 43e0280
+deploy_record: "2026-08-22T03:40:39Z mode=prod url=https://adna-docs-588oiskjw-science-stanleys-projects.vercel.app tree=43e0280"
 full_report: evidence/machine_eye/conformance_report_p3_3.md
 tags: [evidence, haussmann, p3_3, machine_eye, d10, deferred_publish]
 ---
 
 # Machine-eye delta — items 11 / 13 after P3.3
 
-> ⚠ **THIS PACKET IS MEASURED AGAINST THE LOCAL BUILD, NOT PRODUCTION.** Nothing below is confirmed
-> on `adna.network`; the live re-probe is owed at the deploy GO. **This banner is written to be
-> struck by that probe** — struck, not deleted, per the P3.2 packet's discipline.
+> **✅ RE-STAMPED LIVE, 2026-08-22T03:40:39Z — probe target is `https://adna.network`, the ALIAS,
+> not the per-deployment `*.vercel.app` URL.** Deployed at `tree=43e0280`. Item 13 **flipped on the
+> live probe**; item 11 **re-confirmed ABSENT**, which is the correct outcome, not a miss.
+>
+> **What this banner said before, kept deliberately** — because the discipline is the point, not the
+> outcome: *⚠ THIS PACKET IS MEASURED AGAINST THE LOCAL BUILD, NOT PRODUCTION. Nothing below is
+> confirmed on `adna.network`; the live re-probe is owed at the deploy GO.* It was written to be
+> struck by exactly this probe, and it was — **struck, not deleted**.
 >
 > Local-green is evidence about the build; it is not evidence about the site. Convention 14 exists
 > because `check_live_headers.mjs` printed `OK — no drift` for months while reading Vercel's login
-> page, and a delta packet whose target is unstated invites the same reading.
+> page. Both measurements are now true and are recorded as **two measurements**, not merged into one.
 >
 > The full 13-item re-run — including the rows P3.3 did **not** touch — is
 > [[conformance_report_p3_3]]. This packet covers only what this mission moved.
+
+## ✅ Live verification (alias, post-deploy)
+
+| Probe | Result `[D]` |
+|---|---|
+| `"itself an aDNA vault"` on `/` | **1** — item 13's placement complaint discharged |
+| `"Built to be read by agents"` on `/` | **1** |
+| `"222 pages have one"` on `/` | **1** — the derived count rendered |
+| `/llms.txt` · `/llms-full.txt` · `/api/registry.v1.json` | **200 / 200 / 200**, correct content-types |
+| `.md` twins | **10/10 → 200** — no regression |
+| `/.well-known/mcp.json` · `/mcp` | **404 / 404** — correctly, and deliberately |
+| `mcp` · `npx` on `/` | **0 / 0** |
+| live headers on the alias | **served 4/4, no drift** |
 
 Baseline: `machine_eye.md` (2026-08-16, pinned `d58ea13`). All rows `[D]`.
 
 ## Result
 
-| Item | Baseline (2026-08-16) | Now (P3.3, **local build**) | Δ |
+| Item | Baseline (2026-08-16) | Now (P3.3, **live on `adna.network`**, 2026-08-22T03:40:39Z) | Δ |
 |---|---|---|---|
 | **11** MCP server | **ABSENT — no server, no endpoint, only one incidental mention** | ⏸ **STILL ABSENT.** `/.well-known/mcp.json` → **404**, `/mcp` → **404** (both re-probed live). Server built + red-tested at `mcp/`, **unpublished** | ⏸ **UNMOVED — deliberately** |
-| **13** Self-conformance | *"Real, specific, findable — but narrative, on one deep page, not the homepage, and not machine-checkable"* | Homepage `machine-door` block built: the self-conformance sentence **plus** the three live machine surfaces named. **Not deployed** — live homepage still greps **0** | ⏸ **pending deploy** |
+| **13** Self-conformance | *"Real, specific, findable — but narrative, on one deep page, not the homepage, and not machine-checkable"* | ✅ **LIVE on the homepage** — the self-conformance sentence **plus** the three machine surfaces named, verified on the alias post-deploy | ▲ **moved — the placement half.** ⚠ The *machine-checkable* half is untouched and stays open: still no `source_vault_path`, no frontmatter passthrough, no JSON-LD tie from page to source `.md`. An agent must still read and trust prose |
 
 ## Item 11 — the mission built the thing and the item still reads ABSENT
 
@@ -67,7 +85,7 @@ where the baseline found 0, all of them incidental (Playwright MCP in the visual
 `.mcp.json` gitignore advice, the Warp vault description). A future re-run that greps and stops will
 score item 11 as moved. It has not. Detail + routing (**F-o**) in the full report.
 
-## Item 13 — built, gate-green, and not live
+## Item 13 — built, gate-green, and now live
 
 The homepage block names **only** what was re-probed live the day it was written:
 

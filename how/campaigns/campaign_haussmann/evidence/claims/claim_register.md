@@ -1212,9 +1212,14 @@ standing: that is zero false claims *this register has found*.
 
 ## 14 · P3.3 rows — the homepage machine-door block (R-133+)
 
-> Added 2026-08-21 at P3.3 O3. **⚠ These rows describe copy that is BUILT AND NOT DEPLOYED.** Until
-> the deploy is recorded in [[machine_eye_delta_p3_3]], every row below is a claim about the tree,
-> not about `adna.network`. The live homepage greps **0** for any of them `[D]`.
+> Added 2026-08-21 at P3.3 O3. ✅ **DEPLOYED AND LIVE-VERIFIED 2026-08-22T03:40:39Z** (`tree=43e0280`,
+> probed on the **alias**): the homepage greps **1** for the self-conformance sentence, the heading and
+> the derived twin count `[D]`. Deploy record: [[machine_eye_delta_p3_3]].
+>
+> **What this note said before, kept deliberately:** *⚠ these rows describe copy that is BUILT AND NOT
+> DEPLOYED … the live homepage greps 0 for any of them.* True when written, struck by the probe that
+> was owed — **struck, not deleted**, because a register that only shows its settled state teaches
+> nobody how it got there.
 
 | # | Surface | Claim (quoted) | Class | Evidence/ground truth | Severity | Prov |
 |---|---------|----------------|-------|----------------------|----------|------|

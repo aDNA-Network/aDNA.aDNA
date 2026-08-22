@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260821_200408_haussmann_p3_3_o3_reduced
 created: 2026-08-21
 updated: 2026-08-21
-status: active
+status: completed
 tier: 1
 operator: stanley
 agent: agent_rosetta
@@ -11,7 +11,7 @@ campaign: campaign_haussmann
 mission: mission_haussmann_p3_3_mcp_server
 executor_tier: opus
 token_budget_estimated: "~120–145 kT (ADR-016 / SO#11), re-derived rather than inherited. O3's ratified band was ~90–130 kT and it INCLUDED the DEFECT-3 discoverability limb, which the operator's defer-O2 ruling cuts. Split: A1 Venus intake + convention-15 amendment (~12) · A2 P0.4 close + AAR (~25) · A3 DEFECT-3 clause into the upstream idea + convention 13 (~8) · A4 gitleaks + push (~5) · B1–B7 reduced O3 — homepage statement, 13-item conformance re-run, delta packet, register rows, gates, captures, index hygiene (~70–95). O2 carries no agent cost; it is an operator act, and this session does not perform it."
-token_budget_actual:
+token_budget_actual: "≈195 kT of main-loop content load against a ~120–145 kT estimate — over by roughly 1.4×, stated rather than absorbed (ADR-016 / SO#11). Under ADR-016's 2× retrospective trigger. Where it went: the estimate assumed the owed queue was four bounded chores, and two of them opened up. A2 (P0.4) was costed at ~25 kT for a close-and-AAR and cost closer to ~45 once a SECOND memo arrived mid-session and forced a live re-probe of another vault's instance plus a same-session strike of the AAR just written. A3 was costed at ~8 kT to add a clause and cost ~20 because the clause turned out to be wrong — the convention already asked the question, and diagnosing that correctly (rather than appending the sentence as instructed) was the session's most valuable output. B1–B7 landed near estimate (~85) despite the extra rebuild, because the reduced scope really was smaller. **The generalizable lesson for the next estimate: a queue item whose cost is bounded by OUR work is estimable; one whose cost is bounded by what a PEER sends mid-session is not.** Two of four owed items were the latter."
 tags: [session, haussmann, p3, p3_3, o3, p0_4, mcp, deferred_publish]
 ---
 
@@ -145,4 +145,83 @@ unauthenticated fetch sees* is a ⛩ DP7 call at P3.4's O0.
 
 ## SITREP
 
-*(at close)*
+### Completed
+
+- **P3.3 O3 (reduced)** — homepage `machine-door` block **shipped, deployed and live-verified on the
+  alias** (`2026-08-22T03:40:39Z`, `tree=43e0280`). Names `/llms.txt`, the `.md` twins and
+  `/api/registry.v1.json` only; twin count **222**, derived. Self-conformance sentence on the
+  homepage for the first time.
+- **AC4's conformance report** — all 13 items re-run live, not just the flattering two.
+- **P0.4 CLOSED** with AAR (SO#5) — then its own follow-up struck the same session (below).
+- **Convention 15** gained a third face (reachability). **Convention 13** amended — with a
+  correction to this mission's own false diagnosis of it.
+- **`idea_upstream_mission_ac_coherence_check`** gained two obligations: completeness + a coverage
+  record.
+- **Pushed** `58876e9..43e0280`. **gitleaks** `--source .`: 855 commits, **1 leak = the known FP**.
+
+### In progress
+
+- **P3.3 stays `in_progress` at ⛩ O2.** No AAR yet — SO#5 binds at completion, and this mission is
+  not complete.
+
+### Next up
+
+1. ⛩ **O2** — needs an **interactive operator `npm login`** before any GO is actionable, then
+   `npm run smoke && npm run redtest` (both exit 0) → `npm publish`. Then the discoverability limb
+   (`/.well-known/mcp.json` + `llms.txt` section) and the homepage's server line, which were
+   pre-agreed to ride the publish.
+2. **P3.4** — now claimable *and* materially changed: DP7 is a real question, not a formality.
+3. **P4.4** carries **16 debt rows (a→p)**, two of them added today.
+
+### Blockers
+
+- ⛩ **O2 — `#needs-human`.** Not an agent-solvable step: there is no npm identity on this node.
+- ⛩ **O0b** (P2.6's operator-gated TTFS run) — unchanged, still the only other Decade-1 leftover.
+
+### Files touched
+
+37 staged in `43e0280`, plus the post-deploy record updates. New: conformance report · delta packet ·
+12 captures · 2 tracked memos · this file.
+
+### ⭐ What this session actually taught — three instruments were wrong before the site was
+
+1. **My own copy.** *"A by-product, not an add-on bolted on later"* — false, and disproved by this
+   campaign's own mission files. Caught at the register pass, before shipping.
+2. **This mission's diagnosis of convention 13.** It claimed the convention *"does not ask whether
+   each method reaches the surface its test probes."* It does — that is its second sentence, and
+   P3.1 is already logged in it as the identical failure mode. **The real gap is coverage and
+   visibility**: *a correct question applied partially reports exactly like a correct question
+   applied fully.*
+3. **Item 11's own probe.** Its text half now returns 5 incidental `mcp` hits where the baseline
+   found 0, purely because P3.1 grew the corpus 2 KB → 950 KB. A future `grep -c` would score the
+   item as moved.
+
+Plus a fourth, in tooling: a `.replace()` in my own edit script **silently no-op'd** while reporting
+success. Fixed by asserting every replacement — and the very next run caught a real mismatch.
+
+> **The through-line: five times this session, the thing that was wrong was the instrument, not the
+> subject.** Convention 14 said an instrument must be demonstrated to fail before it is believed.
+> This session is the argument for a sibling clause: **an instrument must also report what it
+> actually touched**, because a clean result and an unrun result are the same string.
+
+### Next Session Prompt
+
+> You are Rosetta in `~/aDNA/aDNA.aDNA`. Read the campaign `CLAUDE.md` and
+> `missions/mission_haussmann_p3_3_mcp_server.md`. **P3.3 is `in_progress`, open at ⛩ O2 — its O0,
+> O1 and O3 are all closed and O3's homepage block is deployed and live-verified.** O2 is the npm
+> publish and it is **not performable by an agent**: this node has no npm identity (`npm whoami` →
+> `ENEEDAUTH`, no `~/.npmrc`, no token, no broker row), so it needs an interactive operator
+> `npm login` first; then `npm run smoke && npm run redtest` from `mcp/` (both must exit 0), then
+> `npm publish`. Only after that do the discoverability limb (`/.well-known/mcp.json` + an
+> `llms.txt` section) and the homepage's server line ship — all three were pre-agreed conditional on
+> the publish, because a descriptor naming an unpublished package is a false claim on a machine
+> surface. **`machine_eye` item 11 is ABSENT and must stay reported as ABSENT until then.** If the
+> operator prefers to move on instead, the ruled Decade-2 order puts **P3.4** next — now claimable
+> (P0.4 closed 2026-08-21) and materially changed: Aspasia's PUSH signal declares all three ADR-054
+> prerequisites green, and a direct re-probe found **PR-1 MET · PR-3 MET · PR-2 owner-green but
+> method-red** (config says "aDNA Community"; the served HTML `<title>` still says `Fluxer`,
+> an upstream ceiling their ADR-000 forbids fixing). **⛩ DP7 is therefore a genuine question** —
+> does "minimal aDNA branding" mean what a client renders or what an unauthenticated fetch sees? —
+> and P3.4's O0 owes a live re-probe regardless. **Sweep
+> `git ls-files --others --exclude-standard who/coordination/` at session open AND close** — that
+> drop-box has now delivered 8 untracked memos in 4 days and one arrived mid-session today.

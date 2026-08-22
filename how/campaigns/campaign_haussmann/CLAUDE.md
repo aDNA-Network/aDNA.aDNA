@@ -96,7 +96,7 @@ leftover still open.**
 > and P3.5 shipped in-session). When a mission halts before deploy, say so here, and strike it here
 > when it ships — do not leave a reader to infer it from a status field that cannot express it.
 
-> ⏸ **P3.3 is OPEN AT ⛩ O2 — O3 shipped ahead of it, reduced, and NOTHING IS DEPLOYED.** O0
+> ⏸ **P3.3 is OPEN AT ⛩ O2 — O3 shipped ahead of it, reduced, and ✅ IS NOW DEPLOYED AND LIVE-VERIFIED.** O0
 > (design → ADR-056 §mcp), O1 (build + red-tested smoke) and **O3 (reduced)** all closed 2026-08-21.
 > The package `adna-mcp-server` exists at `mcp/`, verified from a fresh client process (**26 smoke
 > assertions, 24 red-test mutations, all green**), and is **unpublished**.
@@ -120,8 +120,12 @@ leftover still open.**
 > machine surface. **`machine_eye` item 11 is UNMOVED**, and the conformance report leads with that
 > rather than burying it under nine green rows.
 >
-> ⏸ **NOT DEPLOYED.** Packet stamped `probe_scope: local_build_only`, banner written to be struck by
-> the live probe. Per the P3.2 warning above: strike this line when it ships.
+> ✅ **DEPLOYED 2026-08-22T03:40:39Z, `tree=43e0280`, verified on the ALIAS** — `"itself an aDNA
+> vault"` greps **1** on `adna.network` (was 0); the three named surfaces all 200; twins 10/10 no
+> regression; `/.well-known/mcp.json` and `/mcp` **still 404**, correctly. Packet re-stamped
+> `probe_scope: live_alias_verified`, its local-build banner **struck not deleted**. ⭐ **`machine_eye`
+> item 13 flipped on a live probe, not on a status field** — and only its *placement* half; the
+> machine-checkable half stays open. Item 11 remains **ABSENT** and the report still leads with it.
 >
 > ⭐ **The register pass caught a FALSE claim in the session's own new copy, before it shipped** —
 > *"not an add-on bolted on later"*, disproved by this campaign's own mission files (twins landed

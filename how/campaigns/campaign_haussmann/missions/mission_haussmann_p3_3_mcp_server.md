@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P3
 decade: 2
 owner: stanley
-status: in_progress   # ⏸ O0 ✅ + O1 ✅ + **O3 ✅ (REDUCED)** 2026-08-21. ⛩ **O2 DEFERRED BY OPERATOR** — and found NOT PERFORMABLE on this node: `npm whoami` → ENEEDAUTH, no ~/.npmrc, no npm token in env, NO npm row in the credential broker. There is no npm identity here for a GO to attach to — FOURTH instance of a gate asking for a GO on an act whose prerequisite does not exist on the performing tree, and this mission WROTE that rule at O0. O3 shipped the pre-agreed AC2-deferred wording: homepage machine-door block naming llms.txt + the .md twins + /api/registry.v1.json ONLY (twin count 222 DERIVED), self-conformance sentence on the homepage for the first time. NO server, NO install line, NO /.well-known/mcp.json (still 404, correctly). Gates 552/552, axe 0 in BOTH themes, 12 captures. ⭐ The register pass CAUGHT A FALSE CLAIM IN ITS OWN NEW COPY before it shipped ("not an add-on bolted on later" — disproved by this campaign's own mission files) → cut, recorded at claim_register §14.1. ⚠ machine_eye item 11 UNMOVED and reported so; its text-search probe has gone NOISY (5 incidental mcp hits in the grown llms-full.txt, was 0) → F-o; a G15 gate-guard defect → F-p. ⏸ NOT DEPLOYED — packet stamped local_build_only. Mission stays OPEN at O2; AAR fires at completion (SO#5).
+status: in_progress   # ⏸ O0 ✅ + O1 ✅ + **O3 ✅ (REDUCED)** 2026-08-21. ⛩ **O2 DEFERRED BY OPERATOR** — and found NOT PERFORMABLE on this node: `npm whoami` → ENEEDAUTH, no ~/.npmrc, no npm token in env, NO npm row in the credential broker. There is no npm identity here for a GO to attach to — FOURTH instance of a gate asking for a GO on an act whose prerequisite does not exist on the performing tree, and this mission WROTE that rule at O0. O3 shipped the pre-agreed AC2-deferred wording: homepage machine-door block naming llms.txt + the .md twins + /api/registry.v1.json ONLY (twin count 222 DERIVED), self-conformance sentence on the homepage for the first time. NO server, NO install line, NO /.well-known/mcp.json (still 404, correctly). Gates 552/552, axe 0 in BOTH themes, 12 captures. ⭐ The register pass CAUGHT A FALSE CLAIM IN ITS OWN NEW COPY before it shipped ("not an add-on bolted on later" — disproved by this campaign's own mission files) → cut, recorded at claim_register §14.1. ⚠ machine_eye item 11 UNMOVED and reported so; its text-search probe has gone NOISY (5 incidental mcp hits in the grown llms-full.txt, was 0) → F-o; a G15 gate-guard defect → F-p. ✅ DEPLOYED 2026-08-22T03:40:39Z tree=43e0280, live-verified on the ALIAS — item 13 FLIPPED (placement half only; the machine-checkable half stays open), item 11 still ABSENT and reported so. Mission stays OPEN at O2; AAR fires at completion (SO#5).
 mission_class: build
 executor_tier: opus
 token_budget_estimated: "~250–350 kT across 2 sessions: server (official TS SDK; search/fetch/registry tools) + packaging (npx) + docs + homepage agent-entry statement + conformance report (ADR-016)"
@@ -188,7 +188,7 @@ O2 carries no agent cost — it is an operator act.
 | O0 | ✅ **DONE 2026-08-21** — Design: tool surface, transport, SDK line, runtime-fetch-vs-snapshot, package name | ADR-056 §mcp | — |
 | O1 | ✅ **DONE 2026-08-21** — Build + fresh-client smoke, red-tested | `mcp/` + 2 suites | — |
 | O2 | ⏸ **DEFERRED ⛩ 2026-08-21** — and found NOT PERFORMABLE here (no npm identity on this node: `whoami` ENEEDAUTH · no `.npmrc` · no token · no broker row). Needs an interactive operator `npm login` FIRST, then the GO | — | ⛩ **operator (outward) — STILL OPEN** |
-| O3 | ✅ **DONE (REDUCED) 2026-08-21** — homepage machine-door block (llms.txt + twins + registry JSON only) · conformance report (13/13 re-run) · delta packet · register rows **R-133–R-139** · 552/552 gates · axe 0 both themes · 12 captures. ⛔ **The DEFECT-3 discoverability limb did NOT ship** — it was pre-agreed conditional on O2, and O2 was deferred. ⏸ **NOT DEPLOYED.** AAR deferred to mission close (SO#5) | evidence | — |
+| O3 | ✅ **DONE (REDUCED) 2026-08-21** — homepage machine-door block (llms.txt + twins + registry JSON only) · conformance report (13/13 re-run) · delta packet · register rows **R-133–R-139** · 552/552 gates · axe 0 both themes · 12 captures. ⛔ **The DEFECT-3 discoverability limb did NOT ship** — it was pre-agreed conditional on O2, and O2 was deferred. ✅ **DEPLOYED + live-verified** `2026-08-22T03:40:39Z` tree `43e0280` — item 13 flipped on the alias. AAR deferred to mission close (SO#5) | evidence | — |
 
 ## Constraints
 
@@ -317,8 +317,14 @@ probe's text half has gone **noisy** — `mcp` now returns 5 incidental hits in 
 from 0) purely because P3.1 grew the corpus 2 KB → 950 KB, so a future `grep -c` would score the
 item as moved. Routed **F-o**. A G15 gate-guard defect found the same way is routed **F-p**.
 
-⏸ **NOT DEPLOYED at the time of writing** — the packet is stamped `probe_scope: local_build_only`
-and its banner is written to be struck by the live probe, not deleted.
+✅ **DEPLOYED 2026-08-22T03:40:39Z** — `mode=prod tree=43e0280`, verified on the **alias**
+`adna.network`, not the `*.vercel.app` URL. Post-deploy `[D]`: `"itself an aDNA vault"` → **1**
+(was 0) · `"222 pages have one"` → **1** · the three named surfaces **200/200/200** · twins
+**10/10** no regression · `/.well-known/mcp.json` + `/mcp` **404/404**, correctly · `mcp`/`npx` on
+`/` → **0/0** · live headers **4/4, no drift**. Packet re-stamped `live_alias_verified`, its
+local-build banner **struck not deleted**. **`machine_eye` item 13 flipped on evidence** — and only
+its placement half; the machine-checkable half (no `source_vault_path`, no JSON-LD page→source tie)
+stays open, so the row reads ◐ not ▲.
 
 ## Remaining
 

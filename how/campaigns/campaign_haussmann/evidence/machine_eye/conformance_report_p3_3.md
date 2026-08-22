@@ -13,10 +13,10 @@ probe_target: https://adna.network
 probe_scope: live_alias_verified   # every row below measured against the ALIAS, not a preview build
 checklist_source: "directives/COWORK_DIRECTIVE_operation_haussmann_genesis.md §B.2 (13 boxes)"
 baseline: "evidence/machine_eye/machine_eye.md (2026-08-16, pinned d58ea13)"
-items_moved: 9
+items_moved: 10   # item 13 joined at the deploy
 items_held: 2
 items_unmoved: 1
-items_pending_deploy: 1
+items_pending_deploy: 0    # item 13 flipped at the 2026-08-22T03:40:39Z deploy
 tags: [evidence, haussmann, p3_3, machine_eye, conformance, d10, ac4]
 ---
 
@@ -37,7 +37,7 @@ own, re-issued verbatim where they still apply.
 
 ## Result
 
-| # | Item | Baseline (2026-08-16) | Live (2026-08-21) | Δ |
+| # | Item | Baseline (2026-08-16) | Live on the alias (post-deploy, 2026-08-22T03:40:39Z) | Δ |
 |---|---|---|---|---|
 | 1 | `/llms.txt` | PASS — curated, 1,464 B | **PASS** — 200, `text/plain`, **3,137 B** | ▬ held (grew) |
 | 2 | `/llms-full.txt` | *"index, not full-corpus — the name overclaims"*, 2,018 B | **200, 950,827 B** — the actual corpus | ▲ moved (P3.1) |
@@ -51,11 +51,11 @@ own, re-issued verbatim where they still apply.
 | 10 | Stable URIs | Casing = **hard 404, no redirect** | `/vaults/III.aDNA` → **301** (canonicalizes now); `/vaults/iii` → 200. ⚠ `/vaults/Terminal` → **404** still — the redirect covers the old mixed-case slugs, not arbitrary re-casing | ◐ moved, the general case open |
 | 11 | **MCP server** | **ABSENT** — no server, no endpoint, one incidental mention | ⏸ **STILL ABSENT.** `/.well-known/mcp.json` → **404**; `/mcp` → **404**; `mcp` in `llms.txt` → **0**. Server built, red-tested, **unpublished** | ⏸ **UNMOVED** |
 | 12 | Copy-as-context / `llms` discoverability | **0** occurrences of `llms` across 8 page HTMLs | **2 per page** + `rel=alternate`. *(The "copy page as markdown" control itself still does not exist — the discoverability half moved, the affordance half did not.)* | ◐ half moved |
-| 13 | Self-conformance | *"Real and specific — but narrative, on one deep page, not the homepage"* | ⏸ **Still 0 on the live homepage.** The homepage block is **built and gate-green, NOT DEPLOYED** | ⏸ pending deploy |
+| 13 | Self-conformance | *"Real and specific — but narrative, on one deep page, not the homepage"* | ✅ **LIVE on the homepage** — `"itself an aDNA vault"` greps **1** on the alias, beside the three named machine surfaces. ⚠ Still **not machine-checkable**: no `source_vault_path`, no frontmatter passthrough, no JSON-LD page→source tie | ◐ moved — placement half only |
 
-**Derived tallies** (counted from the Δ column, not typed): **3 moved outright** · **4 half-moved** ·
-**2 held** · **2 unmoved-or-pending** · **plus items 2/3/4/8 moved by prior missions** = 9 rows carry a
-▲ or ◐, 2 hold, 1 is unmoved, 1 awaits a deploy.
+**Derived tallies** (counted from the Δ column, not typed): **5 ▲ moved outright** (2·3·4·7·8) ·
+**5 ◐ half-moved** (6·9·10·12·13) · **2 ▬ held** (1·5) · **1 ⏸ unmoved** (11). Ten of thirteen rows
+carry movement; **one does not, and it is the one this mission was named for.**
 
 ## ⛔ Item 11 — the item this mission was named for, and it did not move
 
@@ -96,27 +96,48 @@ Routed to the debt queue as **F-o**.
 the site did not lie — the corpus underneath the probe changed, and the probe's meaning changed with
 it.)*
 
-## Item 13 — moved in the tree, not on the site, and the distinction is the point
+## Item 13 — moved, and only the half that was actually complained about
 
 The baseline's complaint was placement, not truth: the self-conformance claim was *"real, specific and
 findable — but it lives in prose on one deep page (not the homepage)."* `/learn/what-is-adna` has
 carried it all along.
 
 This mission puts it on the homepage, in a `machine-door` block that also names the three live
-machine surfaces. Built, gate-green, captured in both themes — **and 404-equivalent to a reader,
-because it is not deployed.** Measured on the live alias at the time of writing:
-`grep -c 'itself an aDNA vault'` on `https://adna.network/` → **0** `[D]`.
+machine surfaces. ✅ **Deployed and verified on the alias**: `grep -c 'itself an aDNA vault'` on
+`https://adna.network/` → **1** `[D]`, where it read **0** an hour earlier.
 
-⭐ **P3.2 read `completed` for a day while its entire surface 404'd in production.** That is the
-instance this row exists to not repeat: **item 13 flips when the deploy lands, and not one minute
-before.** If you are reading this report and the deploy has not been recorded below, item 13 is
-still ABSENT.
+⚠ **Only the placement half moved. The structural half is untouched and stays open** — there is
+still no `source_vault_path` meta, no frontmatter passthrough, and no JSON-LD field tying a rendered
+page to its source `.md`. The baseline's sharpest sentence still stands: *an agent must read and
+trust prose, not check a field.* Marking item 13 ◐ rather than ▲ is the honest call.
+
+⭐ **P3.2 read `completed` for a day while its entire surface 404'd in production.** This row was
+written to say ABSENT until a live probe said otherwise, and it did — **flipped on evidence, not on
+a status field.**
 
 ### Deploy record
 
-> *(unfilled — the ⛩ deploy GO had not been given when this report was written. When it lands:
-> stamp the deploy ID + tree here, re-probe item 13 on the **alias**, and flip the row. Until then
-> every "pending deploy" above is the honest reading.)*
+✅ **DEPLOYED AND LIVE-VERIFIED.**
+
+```
+deploy_record: 2026-08-22T03:40:39Z mode=prod tree=43e0280
+url=https://adna-docs-588oiskjw-science-stanleys-projects.vercel.app
+verified on the ALIAS https://adna.network (not the *.vercel.app URL)
+```
+
+| Post-deploy probe | Result `[D]` |
+|---|---|
+| `"itself an aDNA vault"` on `/` | **1** ✅ |
+| `"Built to be read by agents"` on `/` | **1** ✅ |
+| `"222 pages have one"` on `/` | **1** ✅ (derived count rendered) |
+| `/llms.txt` · `/llms-full.txt` · `/api/registry.v1.json` | **200 / 200 / 200** ✅ |
+| `.md` twins | **10/10 → 200** ✅ no regression |
+| `/.well-known/mcp.json` · `/mcp` | **404 / 404** ✅ correctly absent |
+| `mcp` · `npx` on `/` | **0 / 0** ✅ |
+| live headers on the alias | **4/4 served, no drift** ✅ |
+
+⇒ **Item 13 is flipped on evidence, not on a status field.** Item 11 is re-confirmed ABSENT, which
+is the correct outcome of a deferred publish rather than a miss.
 
 ## What a hostile reader gets to say after this
 
@@ -128,7 +149,7 @@ exactly where one would hide:
    — item 6 has no crawler policy, item 9's vault pages are still `WebPage`, item 10 still 404s on
    arbitrary re-casing, item 12 still has no copy-as-markdown control.
 3. **"Most of the movement wasn't this mission."** Correct — items 2/3/4/12 are P3.1's, 8/9 are
-   P3.2's, 10 is P2.1's. P3.3's own contribution to this table is **one row, item 13, and it is
-   pending a deploy.**
+   P3.2's, 10 is P2.1's. P3.3's own contribution to this table is **one row — item 13 — and only
+   half of that row.**
 
 That is the honest scoreboard, and it is better than the one this report could have written.
