@@ -4,7 +4,7 @@ artifact_type: session_prompt_index
 campaign_id: campaign_haussmann
 title: "HAUSSMANN session opening prompts — paste-ready, one per mission"
 created: 2026-08-16
-updated: 2026-08-20
+updated: 2026-08-21
 status: active
 last_edited_by: agent_rosetta
 tags: [haussmann, session_prompts, missions]
@@ -55,8 +55,8 @@ tags: [haussmann, session_prompts, missions]
 | **P2.5** | You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p2_5_onboarding_paths.md` (needs ADR-048). Halt at O0 for the zero-install-path pick; the TTFS run needs a clean machine — coordinate with me at O2. |
 | **P2.6** | You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p2_6_midscore.md` — the Decade-2 activation gate. Fresh isolated scorers, same protocol as baseline; halt at DP6 with the re-plan. |
 | **P3.1** | ✅ **COMPLETE 2026-08-21** *(kept for the record; scope corrected at O0 — twins are THREE tiers, not collections-only)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p3_1_md_twins.md`. Twins derive from the same single-source content as HTML; fix the old .md link targets to the new twins. |
-| **P3.2** | ✅ **COMPLETE 2026-08-21 — built + gated, NOT deployed (⛩ prod GO owed)** *(post-DP6; scope SHRANK — Organization+sameAs already shipped unremarked at P1.2, so what remains is Dataset on the registry, the versioned JSON endpoint, schema-dts, and the three zero-JSON-LD pages)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p3_2_registry_json.md`. The endpoint serves the sanitized projection only; versioned URL; honest-absent nulls. |
-| **P3.3** | **⬅ NEXT** *(post-DP6)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p3_3_mcp_server.md` (needs P3.1+P3.2). Halt at O2 for the npm-publish GO. The self-conformance sentence must pass the editorial gate. |
+| **P3.2** | ✅ **COMPLETE 2026-08-21 — and DEPLOYED 2026-08-22T00:29:33Z** *(the "NOT deployed / ⛩ prod GO owed" note this row carried was struck 2026-08-21 once the deploy landed and was live-verified on the alias; the row had outlived its own accuracy)* *(post-DP6; scope SHRANK — Organization+sameAs already shipped unremarked at P1.2, so what remains is Dataset on the registry, the versioned JSON endpoint, schema-dts, and the three zero-JSON-LD pages)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p3_2_registry_json.md`. The endpoint serves the sanitized projection only; versioned URL; honest-absent nulls. |
+| **P3.3** | ⏸ **O0 ✅ + O1 ✅ 2026-08-21 — HALTED AT ⛩ O2 (npm publish, operator act). Package `adna-mcp-server` built at `mcp/` and verified, but UNPUBLISHED and nothing is live.** ⬅ **RESUME HERE at O3** once O2 is decided; O3's homepage wording AND the new `/.well-known/mcp.json` + llms.txt limb are both **conditional on O2's outcome** — if the publish is deferred, neither ships. *(post-DP6)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p3_3_mcp_server.md` (needs P3.1+P3.2). The self-conformance sentence must pass the editorial gate. |
 | **P3.4** | *(post-DP6)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p3_4_flux_integration.md`. Verify the prerequisite checklist live at O0; halt at DP7 for GO/NO-GO. The honest no-link fallback is an acceptable end-state. |
 | **P3.5** | ✅ **COMPLETE 2026-08-20** *(kept for the record)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p3_5_proposal_process.md`. Halt at O0 for ADR-055 ratification; proposal #1 must traverse real states. |
 | **P4.1** | *(post-DP6)* You are Rosetta in ~/aDNA/aDNA.aDNA. Execute `mission_haussmann_p4_1_token_pipeline.md`. Halt at DP8 (ADR-053 visual-voice ruling) before building. Every aesthetic choice carries its a11y consequence. |

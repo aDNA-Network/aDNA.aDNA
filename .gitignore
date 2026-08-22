@@ -4,6 +4,12 @@ site/node_modules/
 site/dist/
 site/.vercel/
 
+# adna-mcp-server build output (P3.3). Not committed: `prepublishOnly` rebuilds
+# it, so the published tarball can never carry a stale dist/ — and a tarball is
+# never assembled from whatever happened to be on disk.
+mcp/dist/
+mcp/*.tgz
+
 # Playwright test artifacts
 test-results/
 playwright-report/
