@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P3
 decade: 2
 owner: stanley
-status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — activated. KEPT UNCHANGED: premise intact and untouched by the re-score (/.well-known/mcp.json → 404, no MCP surface exists). The most build-heavy P3 mission; human_gate stays true — npm publish is an operator act.
+status: in_progress   # OPENED 2026-08-21 (session …_172747_haussmann_p3_2_deploy_p3_3_open) at the convention-13 AC coherence pass, which is the gate BEFORE the budget is ratified. ⛩ DP6 RATIFIED 2026-08-19 — activated. Premise intact and untouched by the re-score (/.well-known/mcp.json → 404, no MCP surface exists). The most build-heavy P3 mission; human_gate stays true — npm publish is an operator act. ⚠ THE COHERENCE PASS FOUND TWO DEFECTS — see §AC coherence pass. AC2 presupposes an npm scope whose existence is UNVERIFIED and whose ownership we cannot check unauthenticated; AC3 is NOT independently deliverable and must not ship if AC2 is deferred. Budget NOT yet re-ratified.
 mission_class: build
 executor_tier: opus
 token_budget_estimated: "~250–350 kT across 2 sessions: server (official TS SDK; search/fetch/registry tools) + packaging (npx) + docs + homepage agent-entry statement + conformance report (ADR-016)"
@@ -37,6 +37,73 @@ tags: [plan, haussmann, p3, mcp, self_conformance]
 ## Why this mission exists
 
 For a context-standard project an MCP server over its own corpus is close to mandatory (D10.12); MCP's live `/mcp` endpoint earned it a 5 from both scorers `[D cohort]`. With twins (P3.1) + registry JSON (P3.2) landed, the server is a thin, high-differentiation layer — and the homepage finally gets to say the thesis-proof sentence the register can support.
+
+## ⛩ AC coherence pass (campaign convention 13) — run 2026-08-21, BEFORE any build
+
+> One pass, one question, applied to the four acceptance criteria *against each other*: **can the
+> stated method satisfy the stated test?** Convention 13 exists because two consecutive missions
+> shipped a spec whose halves nobody had read together. **This is the third, and it found two.**
+
+**✅ AC4 checks out — the count is right.** AC4 cites *"the §4.B.2 13-item checklist"*. Derived from
+the directive (`directives/COWORK_DIRECTIVE_operation_haussmann_genesis.md` §B.2): the checklist has
+**exactly 13** boxes `[D]`. The evidence packet `machine_eye.md` carries **15** verdict rows, which
+looks like a contradiction and is not — rows 14 (*text-extraction reads*) and 15 (*independent
+machine reader*) were expanded out of §B.2's preamble and **appended**, so items 1–13 keep the
+directive's numbering. The delta packets' item references (3 = twins, 8 = registry JSON, 9 = JSON-LD,
+11 = MCP) are consistent across both. Nothing to fix; recorded so the next reader does not re-derive
+it and conclude the AC is wrong.
+
+**⛔ DEFECT 1 — AC2 presupposes a resource that is not verifiably ours.** AC2 requires the server be
+*"published under **the org's npm scope**"*. Measured 2026-08-21 `[D]`:
+
+| Probe | Result |
+|---|---|
+| `registry.npmjs.org/-/org/adna/package` | **200** — while a nonsense control scope returns **404**, so **the `@adna` scope exists** |
+| …its package list | `{}` — **zero public packages** |
+| npm search `adna` | **`total: 0`** — no `adna*` package is published anywhere |
+| `@adna-network`, `@latticeprotocol`, `@adnalabs` | **404** — do not exist |
+| `adna`, `adna-mcp-server`, `@adna/mcp-server`, `@adna-network/mcp-server` | **404** — all available |
+| `npm whoami` | **`ENEEDAUTH`** — not logged in on this node |
+
+So a scope named `@adna` **exists and is empty**, and we **cannot confirm from here whether it is
+ours** — ownership needs an authenticated session. The honest classification is **UNKNOWN, not
+ours-and-ready**. AC2 reads as though the scope is a given; **no objective establishes it**, and O2
+("Package + publish (npm scope; operator GO)") assumes it. Claiming a scope is an account-level
+outward act with its own operator decision, distinct from the publish GO that O2 already gates.
+
+> **This is the same shape as the block that stopped the installer publish four hours earlier**: an
+> operator GO, correctly granted against an accurate description, for an act whose **prerequisite
+> resource was never checked for existence**. Twice in one session, in two unrelated lanes. The
+> general rule is now stated once, here: **before a gate asks for a GO on an outward act, verify the
+> act's prerequisites are reachable from the tree that will perform it** — the artifact, the
+> credential, the namespace. A gate cannot see a missing precondition, and neither can the operator
+> reading it.
+
+**⛔ DEFECT 2 — AC3 is not independently deliverable, and read alone it would ship a false claim.**
+AC3 requires the homepage to *"name the canonical agent entry point (llms.txt **+ the server**)"*
+with *"register-verifiable wording"*. But AC2 is `human_gate: true` and **may not land at all** — a
+publish is the operator's to defer. If AC3 ships while AC2 is deferred, the homepage names an
+installable server that **nobody can install**: an **S1 false claim on the highest-traffic page**,
+against a campaign whose north star is *zero false claims* and whose first law is *claims move DOWN
+to verifiability*.
+
+The objectives table already sequences this correctly (O2 halts for the GO, O3 writes the homepage),
+so the **defect is in the ACs, not the plan** — but the ACs are what a close cascade checks, and read
+literally AC3 is satisfiable while the site is lying. Resolution, adopted here:
+
+- **AC3 is conditional on AC2's outcome.** Two pre-agreed wordings, decided *now* rather than under
+  deadline at O3:
+  - **AC2 lands** → the homepage names llms.txt, the `.md` twins, the registry endpoint **and** the
+    server, with the one-line install.
+  - **AC2 deferred** → the homepage names llms.txt, the twins and the registry endpoint **only** —
+    all three live and verifiable today — and says nothing about a server. The self-conformance
+    sentence still ships; it does not depend on MCP.
+- Either way the sentence is register-verifiable **at the moment it ships**, which is what AC3
+  actually demands.
+
+**Budget consequence.** The `~250–350 kT` estimate assumed a scope that may need claiming and a
+homepage statement with one form. Neither is re-costed yet; the estimate is **not re-ratified**, and
+that is stated rather than absorbed (ADR-016 / SO#11).
 
 ## Objectives
 
