@@ -1207,3 +1207,63 @@ cannot fix registry data) · **R-131** (S4, unexercised by construction).
 
 **The list is the datum; no total is typed beside it.** **FALSE: 0** — with §12's distinction still
 standing: that is zero false claims *this register has found*.
+
+---
+
+## 14 · P3.3 rows — the homepage machine-door block (R-133+)
+
+> Added 2026-08-21 at P3.3 O3. **⚠ These rows describe copy that is BUILT AND NOT DEPLOYED.** Until
+> the deploy is recorded in [[machine_eye_delta_p3_3]], every row below is a claim about the tree,
+> not about `adna.network`. The live homepage greps **0** for any of them `[D]`.
+
+| # | Surface | Claim (quoted) | Class | Evidence/ground truth | Severity | Prov |
+|---|---------|----------------|-------|----------------------|----------|------|
+| **R-133** | / machine-door heading | *"Built to be read by agents"* | **verified** | Not a capability claim — a framing for the three surfaces beneath it, each independently verified below. The site does serve agent-targeted surfaces: `/llms.txt` 200, twins 10/10 200 `text/markdown`, registry JSON 200 `[D]` | — | [D] |
+| **R-134** | / machine-door | *"This site is itself an aDNA vault — the structure it documents is the structure that produced it."* | **verified** | True and already asserted at `/learn/what-is-adna` since before this campaign; this row moves it to the homepage, which is machine_eye item 13's actual complaint (*"narrative, on one deep page, not the homepage"*). ⚠ **Still not machine-checkable** — no `source_vault_path` meta, no frontmatter passthrough, no JSON-LD field tying a page to its source `.md`. An agent must read and trust prose. That half of item 13 is **untouched and stays open** | — | [D][R] |
+| **R-135** | / machine-door | *"Each surface below is generated from the same source as the pages themselves, so it cannot drift out of step with them."* | **verified** | Structural, and enforced in code: `src/utils/twin.ts` — *"THE NO-DRIFT LAW: a twin is derived, never authored"*; tiers A/B render from the collections the HTML renders from, tier C from the built artifact; the registry endpoint is a projection of the same `vaults.json` the `/vaults` pages read. All regenerate per build, so none can lag the page `[D]`. ⭐ **This sentence replaced a FALSE one — see §14.1** | — | [D] |
+| **R-136** | / machine-door | *"/llms.txt — A curated index of this site, written to be read by an agent rather than rendered."* | **verified** | 200, `text/plain`, 3,137 B; hand-written per-link descriptions, not an auto-dump (machine_eye item 1, re-confirmed 2026-08-21) `[D]` | — | [D] |
+| **R-137** | / machine-door | *"/llms-full.txt carries the whole corpus in one file."* | **verified** | 200, `text/plain`, **950,827 B** live. Was 2,018 B and an index at baseline — item 2's *"the name overclaims"* finding is discharged; the name is now accurate `[D]` | — | [D] |
+| **R-138** | / machine-door | *"Add `.md` to a documentation URL — or send `Accept: text/markdown` — and get the source instead of the page. 222 pages have one."* | **verified** | Count **derived** from `src/data/twin_manifest.json` at build (never typed — KW-14), corroborated independently by the build log (*"advertised 222 via rel=alternate; manifest lists 222 total"*) `[D]`. Both URL forms serve: 10/10 → 200 `text/markdown`; negotiation returns `text/markdown` + `Vary: Accept` `[D]`. **Not a universal claim, deliberately**: 2 of 224 built pages have no twin (`/design-system/`, `/vaults/graph/`), neither of them prose documentation — the sentence states the count instead of saying "any page" | — | [D] |
+| **R-139** | / machine-door | *"/api/registry.v1.json — The vault registry as versioned JSON, so the network can be queried as data instead of scraped out of HTML."* | **verified** | 200, `application/json`, 80,997 B live `[D]`. The contrast is the baseline's own finding: item 8 recorded that *"an agent's only path to the vault list is scraping /vaults/ HTML or parsing slugs out of sitemap-0.xml"* | — | [D] |
+
+### §14.1 ⭐ The row this register caught in its own author's copy, before it shipped
+
+The block's second sentence was first drafted as:
+
+> ~~*"The surfaces below are a by-product of that, not an add-on bolted on later."*~~
+
+**It is false, and the register pass is what caught it** — not review, not a gate. The twins were
+built at **P3.1** and the registry endpoint at **P3.2**, both on 2026-08-21, both *because*
+`machine_eye` had scored them ABSENT on 08-16. They are, in the plainest temporal reading, add-ons
+bolted on later. The sentence was reaching for a real structural property — derivation from a single
+source — and dressed it as a claim about history that the campaign's own mission files disprove.
+
+Replaced with **R-135**, which claims only the structural fact and is checkable in `twin.ts`.
+
+⚠ **Worth naming: the defect was in copy written by the agent running the honesty campaign, in the
+same session, for the block whose entire subject is machine-readable honesty.** Convention 1 says
+claims move DOWN to verifiability; this is the first instance in the campaign of that rule biting
+its own author mid-sentence, and it took one pass over the drafted copy to find. That is the
+argument for the register pass being a step, not a review reflex.
+
+### §14.2 What P3.3 deliberately did not claim
+
+**No server, anywhere.** `adna-mcp-server` is built and red-tested at `mcp/` and is **unpublished**.
+The block names no server, no install line, no `npx`. Verified by sweeping the **rendered** output
+(convention 7 — same-diff cannot see a false sentence): `mcp` · `npx` · `adna-mcp-server` ·
+`npm install` · `Model Context Protocol` → **0 each** in `dist/index.html` `[D]`.
+
+**No `/.well-known/mcp.json`.** It stays 404. A descriptor naming an unpublished package is a false
+claim on a machine surface — the same law as the copy, applied to a machine surface.
+
+**The D10 anchor is not claimed.** The re-score belongs to P5.2 with fresh isolated scorers, never to
+the mission that did the building — the discipline P3.1 and P3.2 both applied.
+
+### §14.3 Open by disposition — after P3.3
+
+**R-34 · R-63** (both `[A]`, awaiting ⛩ O0b) · **R-111** (S2, `/canonical-properties`) · **R-124**
+(S3, awaiting the audience call) · **R-129** (S2, staged to Hestia) · **R-131** (S4, unexercised —
+**still unexercised; P3.2 deployed the mechanism, which is not the same as exercising the promise**).
+
+**The list is the datum; no total is typed beside it.** **FALSE: 0** — and §14.1 is the honest
+footnote on that zero: one false claim was drafted this session and cut before it reached the tree.

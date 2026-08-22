@@ -22,8 +22,13 @@ import heroImage from '../assets/heroes/hero_adna_helix.png';
 // raw and inlined by HomeHero as the graph-led hero. HOME-ONLY (the additive-optional `heroGraph`
 // prop; /network + /commons don't pass it → they keep the image-led hero, zero-diff).
 import heroGraph from '../assets/hero_graph.svg?raw';
+// HAUSSMANN P3.3 O3 — the machine-door block's twin count, DERIVED from the same manifest that
+// drives twin emission and negotiation (scripts/emit_bespoke_twins.mjs + inject_negotiation.mjs).
+// Never typed: KW-14 / convention 1. If a twin stops being emitted this number falls with it.
+import twinManifest from '../data/twin_manifest.json';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.network';
+const twinCount = (twinManifest as { twins: string[] }).twins.length;
 const jsonLD = buildWebSiteJsonLD(siteUrl);
 
 // Section 2 — a curated slice across the network's classes (real data/vaults.json
@@ -258,6 +263,54 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
         <a href="/reference/specification" class="btn btn-primary" data-astro-prefetch>Read the Specification</a>
         <a href="https://github.com/aDNA-Network/aDNA" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
       </div>
+    </div>
+  </section>
+
+  <!-- Machine door (HAUSSMANN P3.3 O3) — the agent-readable entry points, named on the highest-
+       traffic page for the first time. Until now /llms.txt appeared only in the footer.
+
+       ⛔ SCOPE IS DELIBERATE AND LOAD-BEARING. This block names ONLY surfaces that were live and
+       re-probed the day it shipped. The mission that built it also built an MCP server, which is
+       NOT named here because it is not published — a homepage that advertises an uninstallable
+       server is an S1 false claim on S1 real estate. If the publish lands, the server joins this
+       list and a /.well-known/mcp.json descriptor ships with it; until then, neither. -->
+  <section class="machine-door">
+    <div class="section-inner">
+      <h2 class="section-title">Built to be read by agents</h2>
+      {/* "not an add-on bolted on later" was the first draft here and it was CUT at the register
+          pass, before shipping: the twins landed at P3.1 and the registry endpoint at P3.2, both
+          built deliberately after an audit scored them absent. Temporally they ARE later additions,
+          so the phrase was false in the reading a hostile reader would take. What is true is the
+          structural claim — every one of them derives from the same source the HTML does (the
+          no-drift law in src/utils/twin.ts), so they cannot fall out of step. Claims move DOWN. */}
+      <p class="section-subtitle">
+        This site is itself an aDNA vault — the structure it documents is the structure that
+        produced it. Each surface below is generated from the same source as the pages themselves,
+        so it cannot drift out of step with them.
+      </p>
+      <ul class="door-list">
+        <li class="door-item">
+          <a href="/llms.txt" class="door-path">/llms.txt</a>
+          <span class="door-note">
+            A curated index of this site, written to be read by an agent rather than rendered.
+            <a href="/llms-full.txt">/llms-full.txt</a> carries the whole corpus in one file.
+          </span>
+        </li>
+        <li class="door-item">
+          <span class="door-path">Markdown twins</span>
+          <span class="door-note">
+            Add <code>.md</code> to a documentation URL — or send <code>Accept: text/markdown</code> —
+            and get the source instead of the page. {twinCount} pages have one.
+          </span>
+        </li>
+        <li class="door-item">
+          <a href="/api/registry.v1.json" class="door-path">/api/registry.v1.json</a>
+          <span class="door-note">
+            The vault registry as versioned JSON, so the network can be queried as data instead of
+            scraped out of HTML.
+          </span>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -656,6 +709,64 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
     gap: var(--space-4);
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  /* ——— Machine door (HAUSSMANN P3.3 O3) ———
+     Sits between §4 (.the-standard, --color-bg-alt) and §5 (.join-network), so it takes the base
+     background to keep the alternating band rhythm rather than stacking two tinted sections. */
+  .machine-door {
+    padding: var(--space-24) 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .door-list {
+    list-style: none;
+    margin: var(--space-8) auto 0;
+    padding: 0;
+    max-width: 46rem;
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .door-item {
+    display: grid;
+    grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+    gap: var(--space-4);
+    align-items: baseline;
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .door-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .door-path {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    overflow-wrap: anywhere;
+  }
+
+  .door-note {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
+
+  .door-note code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+
+  /* Single column below the two-column breakpoint: a 14rem label column against a narrow viewport
+     leaves the note squeezed into a ribbon. Mobile integrity is a P1.4 standing concern. */
+  @media (max-width: 40rem) {
+    .door-item {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-2);
+    }
   }
 
   /* ——— 5 · Join the network ——— */

@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P3
 decade: 2
 owner: stanley
-status: in_progress   # OPENED 2026-08-21 (session …_172747_haussmann_p3_2_deploy_p3_3_open) at the convention-13 AC coherence pass, which is the gate BEFORE the budget is ratified. ⛩ DP6 RATIFIED 2026-08-19 — activated. Premise intact and re-measured at O0 (/.well-known/mcp.json → 404, /mcp → 404). The most build-heavy P3 mission; human_gate stays true — npm publish is an operator act. ⚠ THE COHERENCE PASS FOUND **THREE** DEFECTS — see §AC coherence pass. (1) AC2 presupposes an npm scope whose ownership is UNKNOWN — resolved by ⛩ operator ruling: build unscoped as `adna-mcp-server`, an explicit AC2 amendment. (2) AC3 is NOT independently deliverable and must not ship if AC2 is deferred — two wordings pre-agreed. (3) FOUND AT O0: AC1's npx-stdio method cannot move AC4's item-11 probe at all — clause 5 grows a discoverability limb (/.well-known/mcp.json + llms.txt section), landing O3, conditional on AC2. **O0 CLOSED 2026-08-21** — design at ADR-056 §mcp; budget RE-COSTED and RE-RATIFIED (~245–285 kT). O1 next; halt at ⛩ O2.
+status: in_progress   # ⏸ O0 ✅ + O1 ✅ + **O3 ✅ (REDUCED)** 2026-08-21. ⛩ **O2 DEFERRED BY OPERATOR** — and found NOT PERFORMABLE on this node: `npm whoami` → ENEEDAUTH, no ~/.npmrc, no npm token in env, NO npm row in the credential broker. There is no npm identity here for a GO to attach to — FOURTH instance of a gate asking for a GO on an act whose prerequisite does not exist on the performing tree, and this mission WROTE that rule at O0. O3 shipped the pre-agreed AC2-deferred wording: homepage machine-door block naming llms.txt + the .md twins + /api/registry.v1.json ONLY (twin count 222 DERIVED), self-conformance sentence on the homepage for the first time. NO server, NO install line, NO /.well-known/mcp.json (still 404, correctly). Gates 552/552, axe 0 in BOTH themes, 12 captures. ⭐ The register pass CAUGHT A FALSE CLAIM IN ITS OWN NEW COPY before it shipped ("not an add-on bolted on later" — disproved by this campaign's own mission files) → cut, recorded at claim_register §14.1. ⚠ machine_eye item 11 UNMOVED and reported so; its text-search probe has gone NOISY (5 incidental mcp hits in the grown llms-full.txt, was 0) → F-o; a G15 gate-guard defect → F-p. ⏸ NOT DEPLOYED — packet stamped local_build_only. Mission stays OPEN at O2; AAR fires at completion (SO#5).
 mission_class: build
 executor_tier: opus
 token_budget_estimated: "~250–350 kT across 2 sessions: server (official TS SDK; search/fetch/registry tools) + packaging (npx) + docs + homepage agent-entry statement + conformance report (ADR-016)"
@@ -127,10 +127,29 @@ is a false claim on a machine surface. Full text: ADR-056 §5f.
 
 > **Three defects of one shape, in one mission.** DEFECT 1: a criterion presupposing a resource
 > nobody checked existed. DEFECT 2: a criterion satisfiable while the site lies. DEFECT 3: a method
-> and a test that are each impeccable and still do not meet. **Convention 13 catches contradictions
-> *between* criteria; it does not yet ask whether each stated method reaches the surface its test
-> probes.** That is the amendment this mission owes upstream —
-> `idea_upstream_mission_ac_coherence_check` already exists and should gain this clause.
+> and a test that are each impeccable and still do not meet.
+>
+> ~~**Convention 13 catches contradictions *between* criteria; it does not yet ask whether each
+> stated method reaches the surface its test probes.** That is the amendment this mission owes
+> upstream — `idea_upstream_mission_ac_coherence_check` already exists and should gain this clause.~~
+>
+> ⛔ **STRUCK 2026-08-21 at O3 — that diagnosis is FALSE, and getting it wrong is a finding in its own
+> right.** Convention 13's second sentence *is* the question: *"can the stated method satisfy the
+> stated test?"* — and **P3.1 is already logged in that convention as the identical failure mode**, a
+> method that would have left 10/10 probes at 404. The question was written down, its worked example
+> matched, and this mission missed it anyway.
+>
+> ⇒ **The real gap is scope and visibility, not vocabulary.** This mission's pass compared AC2↔AC3
+> and cleared AC4's count, then stopped — and **recorded no coverage**, so a partial pass was
+> indistinguishable from a complete one to the operator who ratified the budget on it. *A correct
+> question, applied partially, reports exactly like a correct question applied fully.* The amendment
+> owed upstream is therefore **two obligations on the pass** — run it against every (method × test)
+> pair, and **state which pairs were checked** — not a new clause in the question. Landed
+> 2026-08-21 in `idea_upstream_mission_ac_coherence_check` (P3.3 evidence block + Proposal) and in
+> convention 13 itself.
+>
+> ⚠ Kept struck rather than deleted, per SO#6 and the campaign's own habit: **the wrong diagnosis
+> survived a mission close and a STATE write before anyone re-read the convention it accused.**
 
 ## ⛩ Operator rulings taken at O0 (2026-08-21)
 
@@ -168,8 +187,8 @@ O2 carries no agent cost — it is an operator act.
 |---|---|---|---|
 | O0 | ✅ **DONE 2026-08-21** — Design: tool surface, transport, SDK line, runtime-fetch-vs-snapshot, package name | ADR-056 §mcp | — |
 | O1 | ✅ **DONE 2026-08-21** — Build + fresh-client smoke, red-tested | `mcp/` + 2 suites | — |
-| O2 | Package + publish (**unscoped `adna-mcp-server`** per ⛩ ruling 1) + install docs | published | ⛩ **operator (outward) — HALT HERE** |
-| O3 | Homepage agent-entry statement **+ the DEFECT-3 discoverability limb** (`/.well-known/mcp.json` + llms.txt section, both conditional on O2) + conformance report + register rows R-133+; machine-eye full re-run; AAR; stage A2 upstream | evidence + AAR | — |
+| O2 | ⏸ **DEFERRED ⛩ 2026-08-21** — and found NOT PERFORMABLE here (no npm identity on this node: `whoami` ENEEDAUTH · no `.npmrc` · no token · no broker row). Needs an interactive operator `npm login` FIRST, then the GO | — | ⛩ **operator (outward) — STILL OPEN** |
+| O3 | ✅ **DONE (REDUCED) 2026-08-21** — homepage machine-door block (llms.txt + twins + registry JSON only) · conformance report (13/13 re-run) · delta packet · register rows **R-133–R-139** · 552/552 gates · axe 0 both themes · 12 captures. ⛔ **The DEFECT-3 discoverability limb did NOT ship** — it was pre-agreed conditional on O2, and O2 was deferred. ⏸ **NOT DEPLOYED.** AAR deferred to mission close (SO#5) | evidence | — |
 
 ## Constraints
 
@@ -235,10 +254,77 @@ built to check the work needed checking first.
 ⚠ **Not deployed, and nothing about this is live.** O1 produces a package on disk. `/.well-known/mcp.json`
 re-probed at close → **still 404** `[D]`, correctly: no site surface ships this session.
 
-### Halt
+### O2 — ⏸ DEFERRED BY ⛩ OPERATOR RULING 2026-08-21
 
-**⛩ O2 is the gate.** The publish is an operator act. Before it: `npm run smoke && npm run redtest`
-from `mcp/` (both must exit 0), then `npm publish`. `prepublishOnly` rebuilds `dist/` automatically.
+**The gate was reached and the operator deferred it.** O2 remains open; the mission does not close.
+
+⛔ **And the halt turned out to be harder than a GO.** Recon at the O3 session found O2 is **not
+performable from this node at all** `[D]`:
+
+| Probe | Result |
+|---|---|
+| `npm whoami` | **`ENEEDAUTH`** |
+| `~/.npmrc` | **absent** |
+| `NPM_TOKEN` · `NPM_AUTH_TOKEN` · `NODE_AUTH_TOKEN` · `NPMJS_TOKEN` | all **UNSET** |
+| npm row in the Home.aDNA broker credential index | **none** |
+
+There is no npm identity here — not expired, not unexported, **absent**. Publishing needs the
+operator to create or locate an npmjs account and `npm login` interactively (browser + OTP), which
+no GO substitutes for.
+
+⭐ **FOURTH instance in this campaign of one shape** — a gate asking for a GO on an outward act whose
+**prerequisite does not exist on the tree that must perform it**. The installer publish (GO granted,
+tarball nowhere). The `@adna` scope (DEFECT 1). DEFECT 3. Now O2. ⚠ **And this mission WROTE that
+rule at O0** — *"before a gate asks for a GO on an outward act, verify the act's prerequisites are
+reachable from the tree that will perform it — the artifact, the credential, the namespace"* — naming
+**the credential** explicitly, and then shipped O2 without checking one. **Writing a rule down is not
+running it.**
+
+**When O2 is taken up**: `npm login`, then `npm run smoke && npm run redtest` from `mcp/` (both must
+exit 0), then `npm publish`. `prepublishOnly` rebuilds `dist/` automatically.
+
+### O3 — reduced form ✅ 2026-08-21 (`session_stanley_20260821_200408_haussmann_p3_3_o3_reduced`)
+
+Shipped the **"AC2 deferred"** wording pre-agreed at the coherence pass — the branch chosen at O0
+precisely so this decision would not be made under deadline. It was not.
+
+**Built** (`site/src/pages/index.astro`): a `machine-door` block naming the three surfaces that were
+re-probed live the day it shipped — `/llms.txt` (200, 3,137 B) · `.md` twins (10/10 → 200
+`text/markdown`) · `/api/registry.v1.json` (200, 80,997 B) — plus the self-conformance sentence on
+the homepage for the first time. Twin count **222**, derived from `twin_manifest.json`, never typed.
+
+**Deliberately absent**: any server, install line, `npx`, or MCP mention; no `/.well-known/mcp.json`;
+no `llms.txt` MCP section. Verified by sweeping the **rendered** output — 0 occurrences of each `[D]`.
+
+| Artifact | Where |
+|---|---|
+| Conformance report (AC4 — all 13 items re-run) | `evidence/machine_eye/conformance_report_p3_3.md` |
+| Delta packet (items 11 / 13) | `evidence/machine_eye/machine_eye_delta_p3_3.md` |
+| Claim register rows **R-133 – R-139** (7) | `evidence/claims/claim_register.md` §14 |
+| T0 captures — 6 viewports × dark/light | `evidence/captures_p3_3/` |
+
+**Verification** `[D]`: full gate suite **552/552 green** · axe **0 violations in BOTH themes**
+(run twice — `--axe` covers `themes[0]` only) · 0 console errors.
+
+⭐ **The register pass caught a FALSE claim in this session's own copy, before it shipped.** The
+block first read *"a by-product of that, **not an add-on bolted on later**"* — false, and disproved
+by this campaign's own mission files: the twins landed at P3.1 and the endpoint at P3.2, both
+*because* an audit scored them absent. Replaced with the narrower structural claim that is checkable
+in `src/utils/twin.ts`. Full record: claim register **§14.1**.
+
+⚠ **Item 11 did not move, and the conformance report leads with that.** Also found: the item-11
+probe's text half has gone **noisy** — `mcp` now returns 5 incidental hits in `llms-full.txt` (up
+from 0) purely because P3.1 grew the corpus 2 KB → 950 KB, so a future `grep -c` would score the
+item as moved. Routed **F-o**. A G15 gate-guard defect found the same way is routed **F-p**.
+
+⏸ **NOT DEPLOYED at the time of writing** — the packet is stamped `probe_scope: local_build_only`
+and its banner is written to be struck by the live probe, not deleted.
+
+## Remaining
+
+**O2** (⛩ operator, and now also an npm-identity prerequisite) → then the discoverability limb
+(`/.well-known/mcp.json` + `llms.txt` section) and the homepage's server line, which were pre-agreed
+to ride the publish. Until then this mission stays `in_progress` and item 11 stays ABSENT.
 
 ## AAR (SO#5)
 

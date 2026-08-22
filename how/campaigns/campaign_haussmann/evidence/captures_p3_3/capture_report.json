@@ -1,0 +1,16 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 542,
+    "title": "aDNA — the open standard & network for shared context",
+    "desc": "aDNA (agentic DNA) is an open standard for organizing a project's files so AI agents — and the people working with them — always know where things live. This site is the standard, its docs, and the vault registry.",
+    "ogTitle": "aDNA — the open standard & network for shared context",
+    "h1": "The aDNA Network",
+    "h2count": 6,
+    "bodyLen": 8084,
+    "fullH": 7474,
+    "consoleErrors": []
+  }
+]
