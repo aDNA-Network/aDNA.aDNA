@@ -48,11 +48,22 @@ The S1 mobile defect shipped because nothing looks at pixels; headers drifted be
 
 ## Inherited follow-ups — routed here by earlier missions, and owed
 
-> **Read this section before scoping O0–O3.** These were routed to P4.4 by the P4.5a, P3.5 **and P3.1** AARs and
-> existed **only inside those AARs** until 2026-08-20. A follow-up recorded in the artifact that produced
-> it and nowhere else is a follow-up nobody will act on — the P4.5a AAR named this exact failure
-> (*"the split was recorded in three places and implemented in none"*), and it recurred. Each row below
-> cites its source so the reasoning can be re-read rather than re-derived.
+> **Read this section before scoping O0–O3.** These were routed to P4.4 by the P4.5a, P3.5, P3.1
+> **and P3.2** AARs — plus **F-k, the first row here that is an ⛩ operator ruling rather than a
+> mission's leftover** — and most of them existed **only inside those AARs** until 2026-08-20. A
+> follow-up recorded in the artifact that produced it and nowhere else is a follow-up nobody will act
+> on — the P4.5a AAR named this exact failure (*"the split was recorded in three places and
+> implemented in none"*), and it recurred. Each row below cites its source so the reasoning can be
+> re-read rather than re-derived.
+>
+> ⚠ **This section is growing faster than the mission that has to discharge it, and that is now worth
+> saying out loud.** It has taken rows from every Decade-2 mission so far. Derive the count before
+> quoting it — `grep -cE '^\| \*\*F-[a-z]\*\*'` — never type it; and when P4.4 is finally scoped,
+> **re-read every row against the live tree first**, because three of these have already shrunk or
+> changed purpose on a re-probe (R-122 narrowed, the CTA gate flipped from discovery to regression
+> guard, F-b became allowlist evidence rather than a bug). The budget above predates F-i, F-j, F-k
+> and F-l and has **not** been re-raised for them; that is a live under-estimate, flagged here rather
+> than silently absorbed (ADR-016/SO#11).
 
 | # | Item | Source | Note |
 |---|---|---|---|
@@ -66,6 +77,9 @@ The S1 mobile defect shipped because nothing looks at pixels; headers drifted be
 | **F-h** | **⚠ Re-read P0.2's header evidence against the alias.** P0.2 built header hardening *on preview deploys only* and verified it with the instrument in F-f — before either of its defects was known. Its header claims should be re-verified against `https://adna.network` before being relied on at launch | P3.1 AAR | Flagged, not acted on, at P3.1: P0.2 is not that mission's lane. This is an **evidence re-read**, not a rebuild — the headers may well be correct; what is missing is a verification that reached them |
 | **F-i** | **gate-27 leak-lint scans `.html` and `.md` only — `.json` is invisible to it.** `scanTargets()` (`gate-27-leak-lint.spec.ts:136`) filters on those two extensions, so the P3.2 registry endpoints (`/vaults.json`, `/api/registry.v1.json` — 81 KB of published surface, 74 rows of registry prose) are **unlinted**. This is the *identical* hole P3.1 found when 221 `.md` twins arrived unseen, recurring one mission later in a new extension. Fix: add `.json` to the scan, and **scope-allowlist the machine enums** (`org_graph`, `tbd_at_p0`, `genesis_stub`) to those routes and those keys — a JSON field named `class` whose value is `org_graph` is an API contract, not jargon in a sentence — so every *other* leak class (internal paths, mission ids, codenames) still applies in full | P3.2 AAR | The allowlist fixture already supports exactly this shape (`surface` glob + `pattern` + `tokens` + `rationale` + `date` + `reviewed_by`). **Do not skip the gate for JSON; scope it.** |
 | **F-j** | **`astro check` has a 26-error pre-existing baseline, so it cannot gate anything.** Measured at P3.2 `[D]`: 26 errors across 7 files — `src/pages/index.astro` (10), `src/pages/vaults/index.astro` (10, all in the client `<script>`), `vaults/graph.astro` (2), `HomeHero.astro`, `Header.astro`, and 2 gate specs. All are DOM typing in inline scripts (`Element.dataset`, `Element.hidden`, implicit `any`) — **none introduced by P3.2**, whose own files check clean. Consequence: P3.2 added `schema-dts` typing to every JSON-LD builder (red-tested — it catches `licence` for `license`), but that safety is **authoring-time only**; a new type error would land in a 26-error wash and CI cannot assert zero | P3.2 AAR | Cheap to fix (cast the query results, type the callbacks) and it converts an existing tool into a real gate. Until then, **do not cite `npm run check` as passing** — it does not |
+
+| **F-k** | **⛩ RULED OURS: `.adna/` has no pre-push secret-scanning hook at all** — verdict `FAIL_NONE`, the worst state, on a tree carrying a live origin (`github.com/aDNA-Network/adna-legacy`). Grace Hopper found it and correctly refused to patch it: Standing Rule 1 makes `.adna/` do-not-modify, and the only sanctioned path is a `skill_template_release` fire **from this vault**. Operator ruled the gate **ours to carry**, `2026-08-21T23:51:27Z` (Decade-2 SITREP composite → `approve`). The fail-closed skeleton v2 (`a1288f73…`) is already row 9 of Git.aDNA's pending batch; §2 makes it ten | Hopper memo §2 (2026-08-20) + ⛩ operator composite | Ships in the **next `skill_template_release`** — an operator-opened gate, so no date is pinned here on purpose. ⚠ **Two constraints from Hopper that change what we ship, not just when**: (a) *shipping v2 into the template does not deploy it* — **one live installation fleet-wide**, so a release note saying "the standard now carries a fail-closed gate" would be read as "the fleet is covered" and would be **false**; the existing-vault sweep is a separate act with a separate owner. (b) any conformance check must resolve **what git actually runs**, not what `.git/hooks/pre-push` appears to contain — `ScienceStanley.aDNA` reads PASS while running the no-op, and `Archive.aDNA/lattice-labs` points `core.hooksPath` at a defunct path outside the workspace |
+| **F-l** | **The redaction idiom this campaign uses in its own notes does not redact.** `${VAR:+SET}${VAR:-UNSET}` leaks the value whenever the var **is** set: `:+` emits `SET`, then `:-` emits **the value** (it falls back to `UNSET` only when *unset*), so the two concatenate to `SET<value>`. Run against `SS_VERCEL_TOKEN` at the P3.2-deploy session open, it printed the live token into the transcript. The credential is the known throwaway test-account token whose rotation the operator explicitly de-prioritized (E4 c159, 2026-06-07), so this is **not an incident** — but the idiom is recorded in campaign memory *as the redaction pattern*, and it leaks every time it is applied to a set variable | P3.2-deploy session `[D]` 2026-08-21 | Fix the recorded idiom: **`[ -n "$VAR" ] && echo SET \|\| echo UNSET`**, or `${VAR:+SET}` alone with nothing concatenated after it. ⚠ Same *outcome* as the 2026-06-04 incident (`session_stanley_20260604T160140Z_v8_m510_e1_reskin_deploy`, where the `vercel` CLI printed the same token) by a **different mechanism** — that one was a tool printing a secret, this one is our own probe. Worth a `doctrine_credential_handling` note: the ≤6-char-prefix rule (§428) governs how a leaked value is *referenced afterwards*; nothing governs the probes that produce one |
 
 **F-b recurred at P3.1** (2026-08-21). `gitleaks detect --source .` was run by hand at every push point
 — because the pre-push hook is the retired v1 no-op (Hopper's census: **14 vaults**, not one) — and it
