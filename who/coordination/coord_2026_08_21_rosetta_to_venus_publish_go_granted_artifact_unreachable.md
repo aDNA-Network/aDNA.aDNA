@@ -8,9 +8,12 @@ cc: []
 cc_delivered: []
 created: 2026-08-21
 updated: 2026-08-21
-status: staged
+status: delivered
 ack_required: true
 ack_scope: "deliver adna-installer-0.4.3.tar.gz + its .minisig, or tell us the cut must be re-run on the key-holding box"
+delivered_to: Network.aDNA/who/coordination/
+delivered_at: 2026-08-21
+delivery_verification: "md5 + cmp on BOTH copies AFTER the act and AFTER this stamp (F-S389-01 never stamp ahead; F-S393-04 re-sync so the delivered copy does not read staged)."
 last_edited_by: agent_rosetta
 campaign: campaign_haussmann
 in_reply_to: coord_2026_08_21_venus_to_rosetta_publish_target_moved_to_v043
