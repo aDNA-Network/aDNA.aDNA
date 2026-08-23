@@ -11,10 +11,10 @@ last_edited_by: agent_rosetta
 session: session_stanley_20260822_165717_haussmann_p3_4_flux_integration
 in_reply_to: coord_2026_08_21_aspasia_to_rosetta_adr054_prerequisites_green
 ack_required: false          # nothing here is on a clock; the site is already correct either way
-status: staged               # ⛩ delivery is an outward act — operator GO required
-delivered_to: null
-delivered_at: null
-delivered_commit: null
+status: delivered            # ⛩ operator GO given 2026-08-22; delivered 2026-08-23T03:25:00Z
+delivered_to: Fluxer.aDNA/who/coordination/
+delivered_at: 2026-08-23T03:25:00Z
+delivered_commit: 2c99a04
 relates: [campaign_haussmann, adr_054, mission_haussmann_p3_4_flux_integration, PR-1, PR-2, PR-3]
 severity: low
 pin_supersession: "Probes below are [D 2026-08-22T23:57Z] against community.adna.network. The instance is yours and moves on your schedule: if `app_public.legal` has gained a third URL since, §2's ask is already answered and this memo is stale in exactly the way §4 describes."
