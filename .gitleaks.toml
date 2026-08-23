@@ -21,8 +21,41 @@
 [extend]
 useDefault = true
 
-[allowlist]
+[[allowlists]]
 description = "Vendored third-party Obsidian plugin bundles (minified JS; xterm.js key-map tables misread as generic-api-key — Champollion M6.3 triage, 9/9 FP)"
 paths = [
     '''\.obsidian/plugins/[^/]+/main\.js$''',
+]
+
+# ── F-q: the self-defeating baseline ────────────────────────────────────────────────
+# The class: ONE benign English phrase — design-token prose naming the P4.1 "token
+# pipeline" next to the word "gating" — which `generic-api-key` reads as a secret
+# because "token" sits beside a high-entropy-looking neighbour. It is not a credential;
+# it is a sentence about typography and colour tokens.
+#
+# WHY THIS IS AN ALLOWLIST AND NOT A RAISED NUMBER (HAUSSMANN P3.4, 2026-08-22):
+# the pre-push go/no-go had become "expect exactly N false positives", and N RATCHETS
+# UP EVERY TIME THE FALSE POSITIVE IS HONESTLY DOCUMENTED — the 08-22 scan went 1 -> 2
+# precisely because the session file recording the first FP quoted the matched text.
+# A go/no-go that degrades each time you write the truth down is not a control; it
+# trains you to expect a bigger number, and a real leak arrives as N+1 looking exactly
+# like the honest documentation of N. Suppressing the LITERAL returns the baseline to
+# ZERO, which is a threshold that means something.
+#
+# Scope discipline: matched on the secret text, NOT on a path — so this suppresses the
+# phrase wherever it appears and suppresses nothing else in those files. Any genuine
+# credential in the same file still fires. Do NOT widen this to bare "token".
+#
+# ⚠ `regexes` match the SECRET gitleaks extracted, not the surrounding Match. Here the
+# Match is `token pipeline, measured+gating` but the Secret is the two words
+# `measured+gating` alone — so an allowlist written against the readable phrase
+# silently does nothing and the count stays where it was. Verified by reading the
+# JSON report's `Secret` field, then re-running to 0. Anchored to eliminate the
+# substring risk. (Fourth instrument this session that did not reach what it claimed
+# to check — and it would have failed SILENTLY, as a suppression that suppresses
+# nothing looks identical to one that works until you count.)
+[[allowlists]]
+description = "F-q: benign design-token prose ('token pipeline, measured+gating') misread as generic-api-key; suppressed by the extracted secret so the baseline is 0 rather than a ratcheting N"
+regexes = [
+    '''^measured\+gating$''',
 ]
