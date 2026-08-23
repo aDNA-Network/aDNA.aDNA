@@ -5,10 +5,10 @@ campaign_id: campaign_haussmann
 mission: mission_haussmann_p0_4_flux_state_recon
 title: "P0.4 — community-integration prerequisite register (the DP7 checklist, with owners)"
 created: 2026-08-16
-updated: 2026-08-21
+updated: 2026-08-22
 status: active
 last_edited_by: agent_rosetta
-prerequisites_green: 2        # of 3 by THIS REGISTER'S OWN stated verification methods (PR-1, PR-3). 3 of 3 by the owner's attestation — PR-2 is owner-green and method-red; see §PR-2 seam. Derived from the status column, not typed.
+prerequisites_green: 1        # ⬇ WAS 2, LOWERED at the P3.4 O0 re-probe 2026-08-22 — claims move DOWN (convention 1). Of 3 by THIS REGISTER'S OWN stated verification methods: PR-3 only. PR-1 is now SPLIT (config limb met; on-instance limb fails with controls; the CoC is reachable by neither route ⇒ 2 of the 3 documents it names) and PR-2 stays owner-green/method-red. 3 of 3 by the owner's attestation. See §O0 re-probe. Derived from the status column, not typed.
 trigger_model: push           # changed from POLL 2026-08-21 — AND THE SIGNAL FIRED THE SAME DAY, mid-session, untracked. See §Trigger model.
 tags: [haussmann, p0_4, flux, prerequisites, dp7]
 ---
@@ -68,10 +68,52 @@ tags: [haussmann, p0_4, flux, prerequisites, dp7]
 > ⇒ **P3.4's likely answer has flipped from NO-GO to a genuine question**, which is a materially
 > different mission than the one this register described this morning.
 
-| # | Prerequisite | Owner | ~~Status 2026-08-16~~ → **Status 2026-08-21** | Verification method (at DP7) |
+> ## ⚠⚠ SUPERSEDED AGAIN — the P3.4 O0 re-probe, 2026-08-22
+>
+> **The rows below are kept verbatim (SO#6) and are wrong in two places.** Full evidence with
+> controls: `artifacts/p3_4/o0_prerequisite_probe.md`. Three corrections:
+>
+> **1. ⭐ THIS REGISTER'S OWN PROBE PATHS ARE WRONG.** Every row and header below cites
+> `branding.*` and `legal.*` on `/api/.well-known/fluxer`. **Neither key exists at top level**
+> `[D 2026-08-22]`. The live shape is **`app_public.branding.*`** and **`app_public.legal.*`**.
+> A probe at the paths as written returns `None`/`{}` — **indistinguishable from every
+> prerequisite having been torn out.** This desk hit exactly that on its first probe and
+> re-checked before recording it. *(The values the 08-21 rows record were right; only the paths
+> were shorthand. Kept as a note because the failure mode is silent, and the next cold agent
+> copying these paths raises a false regression alarm on a healthy venue.)*
+>
+> **2. ⛔ PR-1 IS NOT MET — it is SPLIT, and the CoC is unreachable.** Its method has two limbs.
+> Config limb ✅. **On-instance limb FAILS**: `/terms`, `/privacy`, `/guidelines` are each **200,
+> 6,295 B, `<title>Fluxer` — the SPA shell**, proven two ways: a route that cannot exist
+> (`/this-route-does-not-exist-9f3a`) returns **the same 200 shell**, and `/terms` differs from
+> `/` by **nothing but a per-response CSP nonce** (`/` differs from *itself* the same way).
+> ⇒ **A 200 on this instance is not evidence a route exists**, and anyone running the
+> status-code half of this method alone would have scored `200 200 200` as MET.
+> **And the consequence the limbs obscure**: the prerequisite names *three* documents;
+> `app_public.legal` carries exactly `['privacy_url','terms_url']`, and `/guidelines` is the
+> shell — so **the CoC is reachable from the instance by neither route.** It exists
+> (`code_of_conduct.md`, 200, 3,013 B, instance-specific) but only inside the GitHub repo.
+> **PR-1 is 2 of the 3 documents it names.** The 08-21 row scored it MET on limb B alone and
+> filed this as *"minor, P3.4 should confirm"* — confirmed, and **one third of a policy floor is
+> not minor**. Whether upstream's `legal` block even accepts a third URL is **Aspasia's**
+> question; staged as an ask, never adjudicated here.
+>
+> **3. PR-2 is unchanged in kind and worse in degree** — the 08-21 row records one red surface
+> (`<title>`); there are **six**, and `theme-color` **contradicts** the config rather than
+> ignoring it (served `#4641D9`, config `#9d7cd8`). The served `meta description` reads *"Fluxer
+> is a free and open source instant messaging and VoIP chat app…"*, so **a link preview of the
+> venue says Fluxer** — the one consequence that is not cosmetic. All three occurrences of
+> "aDNA" in the served HTML are **inside the embedded bootstrap JSON**: the identity is in the
+> bytes, never in the document metadata. That is ⛩ DP7's question, made concrete.
+>
+> ⇒ **Green count lowered 2 → 1** (claims move DOWN, convention 1). **Sixth and seventh
+> instances in this campaign of a verification method that does not reach the thing it verifies
+> — and this time both were in an instrument this vault wrote itself.**
+
+| # | Prerequisite | Owner | ~~Status 2026-08-16~~ → ~~Status 2026-08-21~~ → **Status 2026-08-22 (O0 re-probe)** | Verification method (at DP7) |
 |---|---|---|---|---|
-| PR-1 | **Policy floor live on the instance**: ToS + privacy policy + community guidelines/CoC published at `/terms`, `/privacy`, `/guidelines` (or `legal.*` config URLs) | **Aspasia** (Fluxer.aDNA; config fields proven agentic in her 07-11 dry-run) — content itself may need the counsel lane (19 `#needs-human` items in her register) | ✅ **MET 2026-08-21 (rung ②)** — re-probed `[D]`, not taken on the memo's word. ~~`legal.terms_url`/`privacy_url` null + all three paths empty (genesis B7) `[D]`~~ → **both URLs non-null**, resolving to `aDNA-Network/community-policies` (**200**). Interim operator floor; counsel review deferred to their M8. ⚠ `legal.*` carries **terms + privacy only** — the CoC is in the repo but not wired into the config block; P3.4 should confirm | Unauthenticated GET on the three paths → substantive documents (not SPA shell); config `legal.*` non-null |
-| PR-2 | **Minimal aDNA branding**: instance title/meta/manifest identify it as the aDNA community (not stock "Fluxer") | **Aspasia** (rebrand demonstrated agentically in the dry-run) | ◐ **OWNER-GREEN, METHOD-RED — ⛩ DP7 must adjudicate.** Config `[D]`: `product_name` **"aDNA Community"**, `theme_color` **`#9d7cd8`**, self-hosted icon — all ✅. Served HTML `[D]`: `<title>` **still `Fluxer`**, stock favicons, PWA manifest — ⛔ **this row's stated method fails**. Aspasia disclosed it unprompted: baked into upstream's app-proxy binary, does not read instance config, deeper skinning = a fork their ADR-000 forbids. **An upstream ceiling, not work left undone** — but the method as written does not pass, and only a human decides whether the method or the prerequisite is the thing that is wrong | Unauthenticated GET `/` → title/meta/manifest carry aDNA identity |
+| PR-1 | **Policy floor live on the instance**: ToS + privacy policy + community guidelines/CoC published at `/terms`, `/privacy`, `/guidelines` (or `legal.*` config URLs) | **Aspasia** (Fluxer.aDNA; config fields proven agentic in her 07-11 dry-run) — content itself may need the counsel lane (19 `#needs-human` items in her register) | ◐ **SPLIT — 2026-08-22, LOWERED from MET.** ~~`legal.terms_url`/`privacy_url` null + all three paths empty (genesis B7) `[D]`~~ ~~✅ **MET 2026-08-21 (rung ②)** — both URLs non-null → `aDNA-Network/community-policies` (**200**)~~ → **config limb ✅ MET**: `app_public.legal.terms_url`/`privacy_url` → `terms.md` (200, **4,675 B**, *"# Terms of Service — aDNA Community"*) + `privacy.md` (200, **3,384 B**) — substantive and instance-specific `[D]`. **On-instance limb ⛔ FAILS**: `/terms`·`/privacy`·`/guidelines` are each **200, 6,295 B, `<title>Fluxer` — the SPA shell**; negative control (a route that cannot exist returns the same 200 shell) + nonce control (`/terms` differs from `/` by the CSP nonce alone) `[D]`. ⛔ **And the CoC is reachable by NEITHER route** — `app_public.legal` carries exactly `['privacy_url','terms_url']`, `/guidelines` is the shell; `code_of_conduct.md` exists (200, 3,013 B) **only in the GitHub repo**. ⇒ **2 of the 3 documents this row names.** The 08-21 "minor, P3.4 should confirm" is confirmed and is **not minor**. Interim operator floor; counsel review deferred to their M8 | Unauthenticated GET on the three paths → substantive documents (not SPA shell); config `legal.*` non-null |
+| PR-2 | **Minimal aDNA branding**: instance title/meta/manifest identify it as the aDNA community (not stock "Fluxer") | **Aspasia** (rebrand demonstrated agentically in the dry-run) | ◐ **OWNER-GREEN, METHOD-RED — ⛩ DP7 must adjudicate.** ⬇ **Re-probed 2026-08-22: unchanged in kind, WORSE IN DEGREE — six red surfaces, not one.** `<title>` `Fluxer` · `meta description` *"Fluxer is a free and open source instant messaging and VoIP chat app…"* · `meta theme-color` **`#4641D9`**, which **contradicts** the config's `#9d7cd8` rather than ignoring it · `manifest.json` `name`/`short_name` `Fluxer` + `theme_color` `#4641D9` · stock favicon/PWA icons at `/web/*` · `og:title` **absent** `[D]`. **All three occurrences of "aDNA" in the served HTML are inside the embedded `__FLUXER_BOOTSTRAP__` JSON** — the identity is in the bytes, never in the document metadata. ⇒ **A link preview of the venue reads "Fluxer — a free and open source instant messaging and VoIP chat app"** — the one consequence that is not cosmetic, and the concrete form of DP7's question. Config `[D]`: `product_name` **"aDNA Community"**, `theme_color` **`#9d7cd8`**, self-hosted icon — all ✅. Served HTML `[D]`: ⛔ **this row's stated method fails**. Aspasia disclosed it unprompted: baked into upstream's app-proxy binary, does not read instance config, deeper skinning = a fork their ADR-000 forbids. **An upstream ceiling, not work left undone** — but the method as written does not pass, and only a human decides whether the method or the prerequisite is the thing that is wrong | Unauthenticated GET `/` → title/meta/manifest carry aDNA identity |
 | PR-3 | **Inside-aliveness confirmation**: someone with access attests the instance is seeded, moderated, and answerable (not an empty shell) — outside probes cannot see past the auth wall | **Operator** (or Aspasia with operator co-sign) | ✅ **MET — CLEARED WITH EVIDENCE 2026-08-20** `[R]`. ~~UNKNOWN `[A]` — unverifiable from outside by design~~ → inside read-only recon, operator-GO'd: **4 guilds · 23 users · 49 channels (+51 private) · 264 messages · same-day activity · 2 invites**. Artifact: `Fluxer.aDNA` `what/context/fluxer/recon_live_instance_20260820` | A dated operator/Aspasia attestation note (channels seeded · first responders named · registration flow tested end-to-end) |
 
 ## Related record state
