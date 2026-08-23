@@ -101,6 +101,7 @@
     background: transparent; color: var(--beacon-lit);
     border: 1px solid rgba(224,163,64,.45); border-radius: 3px;
     padding: .5rem .8rem; transition: background .15s, color .15s;
+    min-width: 24px; min-height: 24px; /* WCAG 2.5.8 target size */
   }
   button.copy:hover { background: var(--beacon-lit); color: #0A0D19; }
   button.copy:focus-visible { outline: 2px solid var(--beacon-lit); outline-offset: 2px; }
@@ -136,6 +137,7 @@
     text-transform: uppercase; cursor: pointer; background: transparent;
     color: var(--ink-faint); border: 1px solid var(--rule);
     border-radius: 3px; padding: .4rem .8rem;
+    min-width: 24px; min-height: 24px; /* WCAG 2.5.8 target size */
   }
   .os-tabs button[aria-selected="true"] { color: var(--beacon); border-color: var(--beacon); }
   .os-tabs button:focus-visible { outline: 2px solid var(--beacon); outline-offset: 2px; }
@@ -202,23 +204,44 @@
   footer p { margin: 0 0 .5rem; }
   footer code { font-family: var(--mono); font-size: .85em; }
   a { color: var(--beacon); }
-  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+  }
+  /* WCAG 2.2.2: auto-moving content >5s needs a pause mechanism the user can SEE —
+     prefers-reduced-motion alone is contested as sufficient (w3c/wcag#3766). */
+  button.sky-pause {
+    position: absolute; top: .9rem; right: .9rem; z-index: 1;
+    font-family: var(--mono); font-size: .68rem; letter-spacing: .08em;
+    text-transform: uppercase; cursor: pointer; background: transparent;
+    color: var(--ink-faint); border: 1px solid var(--rule); border-radius: 3px;
+    padding: .35rem .6rem; min-width: 24px; min-height: 24px;
+  }
+  button.sky-pause:focus-visible { outline: 2px solid var(--beacon); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    button.sky-pause { display: none; } /* the field is already static */
+  }
 </style>
 
 <div class="hero">
   <canvas id="sky" aria-hidden="true"></canvas>
+  <button class="sky-pause" id="skyPause" type="button" aria-pressed="false">Pause stars</button>
   <div class="wrap">
     <p class="eyebrow">Alpha Lattice &middot; node onboarding</p>
     <h1>Join the Lattice</h1>
     <p class="lede">
-      One installer sets up your machine and then stops. Nothing connects until a
-      person on the other side approves you &mdash; so you cannot accidentally join
-      anything, and nothing about your machine is sent anywhere.
+      Someone gave you a short code. One command sets up your machine and asks to
+      join for you. Nothing connects until that person says yes &mdash; you cannot
+      join anything by accident.
     </p>
 
     <div class="cta">
       <a class="primary" id="dlBtn" href="/adna-install-mac.command">Download for macOS</a>
-      <span class="cta-sub" id="dlSub">Available for macOS, Windows, and Linux</span>
+      <span class="cta-sub" id="dlSub">Also for
+        <a href="/adna-install-mac.command">macOS</a>,
+        <a href="/adna-install.exe">Windows</a>, and
+        <a href="/adna-install-linux.sh">Linux</a></span>
     </div>
     <p class="os-note" id="osNote"></p>
     <p><a class="jump" href="#terminal">Prefer the terminal? One command &darr;</a></p>
@@ -232,15 +255,19 @@
   </p>
 
   <div class="os-tabs" role="tablist" aria-label="Choose your system">
-    <button role="tab" id="tab-unix" aria-selected="true" aria-controls="cmd">macOS / Linux</button>
-    <button role="tab" id="tab-win" aria-selected="false" aria-controls="cmd">Windows</button>
+    <button role="tab" id="tab-unix" aria-selected="true" aria-controls="cmdPanel">macOS / Linux</button>
+    <button role="tab" id="tab-win" aria-selected="false" aria-controls="cmdPanel" tabindex="-1">Windows</button>
   </div>
 
-  <div class="plate">
-    <code id="cmd"><span class="sigil">$ </span>curl -fsSL https://adna.network/install.sh | sh</code>
+  <div class="plate" role="tabpanel" id="cmdPanel" aria-labelledby="tab-unix">
+    <code id="cmd"><span class="sigil">$ </span>curl -fsSL https://adna.network/install.sh | sh -s -- --code YOUR-CODE</code>
     <button class="copy" id="copyBtn" type="button">Copy</button>
   </div>
-  <p class="plate-note" id="reqNote">needs python3 &middot; no admin password required</p>
+  <span class="visually-hidden" role="status" id="copyStatus"></span>
+  <p class="plate-note" id="reqNote">replace YOUR-CODE with the invite code you were given &middot;
+    needs python3 &middot; no admin password required</p>
+  <p class="plate-note">No code? Run it without <code>--code</code> &mdash; it prints your join
+    request as text to send by hand instead.</p>
 </div>
 
 <div class="wrap seq">
@@ -260,21 +287,23 @@
     <li>
       <div class="num">02</div>
       <div>
-        <h3>It stops and hands you a block of text</h3>
+        <h3>Your code sends the join request for you</h3>
         <p>
-          Your request to join. Send the whole block to whoever invited you &mdash;
-          email, chat, however you normally reach them. It contains no secrets.
+          The installer submits your request automatically &mdash; nothing to copy,
+          nothing to paste, and it contains no secrets. (No code? It prints the
+          request as text instead, and you send it by hand.)
         </p>
       </div>
     </li>
     <li>
       <div class="num">03</div>
       <div>
-        <h3>A person approves it and sends one file back</h3>
+        <h3>A person approves it &mdash; then rerun the same command</h3>
         <p>
-          Save that file where the installer told you to, and you are on the
-          network. Approval is a human decision every time &mdash; nothing about
-          joining is automatic.
+          Approval is a human decision every time; nothing about joining is
+          automatic. Once approved, the same command fetches your certificate,
+          checks it against a fingerprint that shipped inside the installer,
+          and you are on the network.
         </p>
       </div>
     </li>
@@ -289,7 +318,7 @@
         <li>Installs Nebula, pinned to one version and checked against a fingerprint baked into the installer</li>
         <li>Generates a keypair on your machine, readable only by you</li>
         <li>Writes its configuration in your own user folder</li>
-        <li>Prints your join request and exits</li>
+        <li>Submits your join request with your invite code (or prints it to send by hand), then exits</li>
       </ul>
     </div>
     <div>
@@ -317,8 +346,9 @@
 </div>
 
 <script>
-  var UNIX = 'curl -fsSL https://adna.network/install.sh | sh';
-  var WIN  = 'irm https://adna.network/install.ps1 | iex';
+  var UNIX = 'curl -fsSL https://adna.network/install.sh | sh -s -- --code YOUR-CODE';
+  // irm|iex cannot take parameters; the scriptblock form passes -Code through.
+  var WIN  = '& ([scriptblock]::Create((irm https://adna.network/install.ps1))) -Code YOUR-CODE';
   var cmd = document.getElementById('cmd'), reqNote = document.getElementById('reqNote');
   var tabUnix = document.getElementById('tab-unix'), tabWin = document.getElementById('tab-win');
 
@@ -331,9 +361,25 @@
       : 'needs python3 \u00b7 no admin password required';
     tabWin.setAttribute('aria-selected', isWin);
     tabUnix.setAttribute('aria-selected', !isWin);
+    // APG tabs pattern: roving tabindex, panel labelled by the active tab.
+    tabWin.tabIndex = isWin ? 0 : -1;
+    tabUnix.tabIndex = isWin ? -1 : 0;
+    document.getElementById('cmdPanel')
+      .setAttribute('aria-labelledby', isWin ? 'tab-win' : 'tab-unix');
   }
   tabUnix.addEventListener('click', function () { showCmd('unix'); });
   tabWin.addEventListener('click', function () { showCmd('win'); });
+  // Arrow keys move AND select (two tabs, either arrow toggles); Home/End go to the ends.
+  tabUnix.parentElement.addEventListener('keydown', function (e) {
+    var k = e.key, toWin;
+    if (k === 'ArrowLeft' || k === 'ArrowRight') toWin = tabUnix.tabIndex === 0;
+    else if (k === 'Home') toWin = false;
+    else if (k === 'End') toWin = true;
+    else return;
+    e.preventDefault();
+    showCmd(toWin ? 'win' : 'unix');
+    (toWin ? tabWin : tabUnix).focus();
+  });
 
   document.getElementById('copyBtn').addEventListener('click', async function () {
     var btn = this, text = cmd.textContent.replace(/^[$>]\s*/, '');
@@ -344,7 +390,11 @@
       document.execCommand('copy'); t.remove();
     }
     btn.textContent = 'Copied'; btn.dataset.done = '1';
-    setTimeout(function () { btn.textContent = 'Copy'; delete btn.dataset.done; }, 2000);
+    document.getElementById('copyStatus').textContent = 'Command copied to clipboard';
+    setTimeout(function () {
+      btn.textContent = 'Copy'; delete btn.dataset.done;
+      document.getElementById('copyStatus').textContent = '';
+    }, 2000);
   });
 
   // Lead with the file that matches the visitor's machine -- the non-technical path first.
@@ -380,16 +430,25 @@
                s: Math.random() * 0.0011 + 0.0004 };
     });
   }
+  var paused = false;
   function draw(t) {
     cx.clearRect(0, 0, w, h);
     for (var i = 0; i < stars.length; i++) {
       var st = stars[i];
-      var a = reduce ? st.a : st.a * (0.62 + 0.38 * Math.sin(t * st.s + st.x));
+      var still = reduce || paused;
+      var a = still ? st.a : st.a * (0.62 + 0.38 * Math.sin(t * st.s + st.x));
       cx.beginPath(); cx.arc(st.x, st.y, st.r, 0, 6.284);
       cx.fillStyle = 'rgba(224,163,64,' + a + ')'; cx.fill();
     }
-    if (!reduce) requestAnimationFrame(draw);
+    if (!reduce && !paused) requestAnimationFrame(draw);
   }
   seed(); requestAnimationFrame(draw);
-  addEventListener('resize', function () { seed(); if (reduce) draw(0); });
+  addEventListener('resize', function () { seed(); if (reduce || paused) draw(0); });
+  // WCAG 2.2.2 pause control (hidden under prefers-reduced-motion, where it has no job).
+  document.getElementById('skyPause').addEventListener('click', function () {
+    paused = !paused;
+    this.setAttribute('aria-pressed', paused);
+    this.textContent = paused ? 'Play stars' : 'Pause stars';
+    if (!paused) requestAnimationFrame(draw); else draw(0);
+  });
 </script>
