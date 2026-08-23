@@ -72,17 +72,48 @@ const jsonLD = buildCollectionPageJsonLD({
     <p>{horizon}</p>
   </Callout>
 
-  <!-- HAUSSMANN P1.1 — the community space, in the honest-state pattern (ADR-054 copy law;
-       link-GO fired by operator ruling 2026-08-17, recorded in the ADR). State facts probed
-       live [D 2026-08-17]; the human-only line is aDNALabs ADR-025. -->
+  <!-- HAUSSMANN P3.4 — the community space. Rewritten at ⛩ DP7 (2026-08-22); the P1.1
+       paragraph this replaces had gone stale in TWO places, both found by the O0 re-probe:
+       (1) R-95 said the venue's terms and privacy policy were "still being stood up" — both
+           went live 2026-08-21 [D 2026-08-22]. gate-26 pinned that quote as a `verified` row
+           whose text must be PRESENT, so the suite was green BECAUSE of the false sentence.
+       (2) It said agents work "not in chat" — falsified by aDNALabs S224 ruling ② (2026-08-21,
+           "Fluxer = human-visible agent chat", an R3-pilot extension inside the ADR-001/ADR-025
+           fences), and contradicted by the venue's own code of conduct §3, which this block
+           now links. The site cannot assert agents are absent one line from a document that
+           says they are present.
+       Rules are STATED; presence is NOT asserted either way — who is actually inside is behind
+       the auth wall and unverifiable from here [A]. That satisfies SO#8 (disclosure) without
+       claiming a fact we cannot check.
+       Link text is venue-scoped on purpose: the governance table above names the project-wide
+       Contributor Covenant v2.1, whose own preamble says it applies to "the community server"
+       too [D 2026-08-22]. Two documents govern this space, so "the code of conduct" alone would
+       have been ambiguous on this page — hence "the space's own".
+       Per the ⛩ DP7 ruling this copy is deliberately SILENT on the instance's public-face
+       branding: an unauthenticated fetch still returns stock Fluxer metadata, that is an
+       upstream ceiling (Fluxer ADR-000 forbids the fork that would fix it), and it is neither
+       ours to describe nor ours to claim. ADR-054 clause 2 GO state. -->
   <h2 id="space">The community space</h2>
   <p>
     A real-time community space is open at
     <a href="https://community.adna.network" rel="noopener">community.adna.network</a> &mdash; a
-    self-hosted Fluxer instance in its early days. Honest state, as of 2026-08-17: registration is
-    approval-gated, and its terms of service, privacy policy, and branding are still being stood
-    up. It is a human-to-human space &mdash; agents work in the repositories and on the public
-    record, not in chat.
+    self-hosted Fluxer instance in its early days. Honest state, as of 2026-08-22: registration
+    is approval-gated, so joining is a request an operator reviews, not a click.
+  </p>
+  <p>
+    Its rules are published, short, and explicitly interim &mdash; worth reading before you join:
+    the <a href="https://github.com/aDNA-Network/community-policies/blob/main/terms.md" rel="noopener">terms of service</a>,
+    the <a href="https://github.com/aDNA-Network/community-policies/blob/main/privacy.md" rel="noopener">privacy notice</a>, and
+    the space's own <a href="https://github.com/aDNA-Network/community-policies/blob/main/code_of_conduct.md" rel="noopener">code of conduct</a>,
+    which sits under the project-wide Contributor Covenant named above.
+    Two commitments in them are worth naming here: your content is not used to train or evaluate
+    AI models, and every agent in the space is labeled as an agent &mdash; no undisclosed
+    automation, in either direction.
+  </p>
+  <p>
+    Conversation happens there. Anything that should leave a durable record &mdash; a bug, a fix,
+    a change to the standard &mdash; goes through the repository instead, where it can be cited
+    later.
   </p>
 
   <!-- HAUSSMANN P3.5 — the proposal process (ADR-055, ratified 2026-08-20). D9 scored 2 at

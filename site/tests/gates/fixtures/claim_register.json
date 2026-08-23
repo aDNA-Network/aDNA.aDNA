@@ -3,7 +3,7 @@
   "_relation_to_gate_20": "gate-20 traces claims to their SOURCE FILES (does `vaults.json` still say 74?). This fixture asserts the RENDERED PAGE — that a false sentence is gone, and that a true one has not silently vanished. Different failure modes, no overlap: the G-01..G-10 accessor rows stay in claim_trace_manifest.json and are deliberately NOT duplicated here.",
   "_quote_rule": "Every `quote` is the exact page-visible text, verified against the 2026-08-16 build snapshot. Comparison normalizes typography only (curly quotes -> straight, em/en dash -> hyphen, whitespace collapsed) so a smart-quote change cannot fake a pass or a fail. `match_in: html` rows assert against raw markup instead (attributes, hrefs).",
   "_no_count_pinning": "Campaign convention 8 (WebForge KW-8/FR-K): verified quotes are trimmed to their non-numeric clause wherever a count appears, so this gate never pins live registry data. Count currency is gate-21's job, count provenance is gate-20's.",
-  "updated": "2026-08-20",
+  "updated": "2026-08-22",
   "rows": [
     {
       "id": "R-12",
@@ -99,9 +99,9 @@
     {
       "id": "R-95",
       "url": "/community",
-      "quote": "registration is approval-gated, and its terms of service, privacy policy, and branding are still being stood up",
+      "quote": "registration is approval-gated, so joining is a request an operator reviews, not a click",
       "class": "verified",
-      "why": "The honest-state disclosure on the community-space link (ADR-054 copy law; link-GO fired by operator ruling 2026-08-17). Probe-verified [D 2026-08-17]: Fluxer bootstrap registration.mode='approval', legal.terms_url/privacy_url null, branding.* null. Exactly the sentence a growth-minded rewrite deletes first."
+      "why": "The honest-state disclosure on the community-space link (ADR-054 copy law; link-GO fired by operator ruling 2026-08-17, promotion GO at DP7 2026-08-22). Re-probed [D 2026-08-22]: app_public.registration.mode='approval'. REWRITTEN AT P3.4 — the prior quote ('...its terms of service, privacy policy, and branding are still being stood up') was stamped `verified` on 2026-08-17 evidence and went FALSE on 2026-08-21 when both policies went live. Because this gate asserts `verified` quotes are PRESENT, the suite was green BECAUSE of the false sentence and would have gone red on the truth. No row here carries a probe date, so nothing could catch it: convention 15's stale-row blind spot, with an instrument defending the stale claim. The branding clause is dropped rather than restated, per the DP7 ruling that the instance's public face is an upstream ceiling the site neither describes nor claims."
     },
     {
       "id": "R-98",
@@ -186,6 +186,20 @@
       "quote": "August 20, 2026",
       "class": "verified",
       "why": "HAUSSMANN P4.5a. changelog.astro formatted entry dates with toLocaleDateString and no timeZone, so a UTC-midnight frontmatter date rendered in the BUILD MACHINE's zone — every entry displayed one day early from a PDT build, and correctly from a UTC one. The rendered date was a function of where the build ran, while the same <time> element's datetime attribute was always right, so the machine-readable and human-readable dates disagreed on one line. Pinned as the regression canary: if timeZone:'UTC' is ever dropped, the 2026-08-20 entry renders as August 19 and this row goes red. Not a count pin — changelog entries are static content, not live registry data."
+    },
+    {
+      "id": "R-140",
+      "url": "/community",
+      "quote": "your content is not used to train or evaluate AI models, and every agent in the space is labeled as an agent",
+      "class": "verified",
+      "why": "Both clauses are quoted commitments from the documents this block links, verified at source [D 2026-08-22]: privacy.md §2 'Your content is not used to train or evaluate AI models.' and code_of_conduct.md §3 'Every agent is visibly labeled as an agent.' + 'No undisclosed automation.' Framed as commitments IN THE RULES, not as independently observed facts — what happens inside the venue is behind the auth wall. Satisfies Fluxer SO#8 (agents always disclosed) without asserting a presence this desk cannot verify. Replaces the P1.1 sentence 'agents work in the repositories and on the public record, not in chat', which aDNALabs S224 ruling 2 (2026-08-21, 'Fluxer = human-visible agent chat') falsified and which the linked code of conduct §3 directly contradicts."
+    },
+    {
+      "id": "R-141",
+      "url": "/community",
+      "quote": "Anything that should leave a durable record",
+      "class": "verified",
+      "why": "The question-path routing ADR-054 clause 2 requires (AC2). States the venue/repository division WITHOUT naming GitHub Discussions, which is not enabled — that was R-46, the S1 FALSE row whose resolution re-routed the funnel to this venue. AC2 as written asked for a 'venue vs Discussions' division, i.e. a division against a venue that does not exist; corrected here. Consistent with the page's ClosingCTA and proposals section rather than competing with them."
     }
   ]
 }

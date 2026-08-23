@@ -1,0 +1,62 @@
+[
+  {
+    "surface": "community",
+    "path": "/community/",
+    "status": 200,
+    "loadMs": 547,
+    "title": "Community — aDNA",
+    "desc": "Roles, processes, and contribution paths for the aDNA community.",
+    "ogTitle": "Community — aDNA",
+    "h1": "Community",
+    "h2count": 6,
+    "bodyLen": 5793,
+    "fullH": 4198,
+    "axeViolations": 0,
+    "consoleErrors": []
+  },
+  {
+    "surface": "changelog",
+    "path": "/changelog/",
+    "status": 200,
+    "loadMs": 539,
+    "title": "Changelog — aDNA",
+    "desc": "Version history for the aDNA documentation site — release notes, breaking changes, and improvements by version.",
+    "ogTitle": "Changelog — aDNA",
+    "h1": "Changelog",
+    "h2count": 38,
+    "bodyLen": 27300,
+    "fullH": 17956,
+    "axeViolations": 0,
+    "consoleErrors": []
+  },
+  {
+    "surface": "canonical-properties",
+    "path": "/canonical-properties/",
+    "status": 200,
+    "loadMs": 531,
+    "title": "Canonical properties — aDNA",
+    "desc": "Every legitimate aDNA domain, repository, organization, and machine surface — each checked from outside, with the date. If you found aDNA somewhere that is not on this list, it is not us.",
+    "ogTitle": "Canonical properties — aDNA",
+    "h1": "Canonical properties",
+    "h2count": 9,
+    "bodyLen": 5672,
+    "fullH": 4420,
+    "axeViolations": 0,
+    "consoleErrors": []
+  },
+  {
+    "surface": "state-of-the-network",
+    "path": "/state-of-the-network/",
+    "status": 200,
+    "loadMs": 544,
+    "title": "The state of the network — aDNA",
+    "desc": "An honest, dated account of the aDNA network: what runs, what is operator-operated, what belongs to someone else, and what is only planned. Every number derived; every property checked from outside.",
+    "ogTitle": "The state of the network — aDNA",
+    "h1": "The state of the network",
+    "h2count": 6,
+    "bodyLen": 7675,
+    "fullH": 4882,
+    "axeViolations": 0,
+    "consoleErrors": []
+  }
+]

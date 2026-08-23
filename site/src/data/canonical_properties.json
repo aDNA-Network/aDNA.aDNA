@@ -18,7 +18,7 @@
       "url": "https://community.adna.network",
       "kind": "domain",
       "label": "community.adna.network",
-      "what": "The community space: self-hosted, human-to-human, and early. Its honest current state is described on the community page.",
+      "what": "The community space: self-hosted, approval-gated, and early. Its honest current state, and its published rules, are on the community page.",
       "resolves": true,
       "probed": "2026-08-18",
       "evidence": "HTTP 200, logged out"
