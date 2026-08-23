@@ -19,3 +19,4 @@ deploy_record: 2026-08-21T06:07:52Z mode=prod url=https://adna-docs-50lamlti1-sc
 deploy_record: 2026-08-21T19:21:07Z mode=prod url=https://adna-docs-lmm6ixc3j-science-stanleys-projects.vercel.app token=SS_VERCEL_TOKEN (interim — migrate to VERCEL_TOKEN_ADNA when brokered) tree=f053431
 deploy_record: 2026-08-22T00:29:33Z mode=prod url=https://adna-docs-baguy90ta-science-stanleys-projects.vercel.app token=SS_VERCEL_TOKEN (interim — migrate to VERCEL_TOKEN_ADNA when brokered) tree=861e871
 deploy_record: 2026-08-22T03:40:39Z mode=prod url=https://adna-docs-588oiskjw-science-stanleys-projects.vercel.app token=SS_VERCEL_TOKEN (interim — migrate to VERCEL_TOKEN_ADNA when brokered) tree=43e0280
+deploy_record: 2026-08-23T01:45:36Z mode=prod url=https://adna-docs-izrobe0cq-science-stanleys-projects.vercel.app token=SS_VERCEL_TOKEN (interim — migrate to VERCEL_TOKEN_ADNA when brokered) tree=5c6b22d

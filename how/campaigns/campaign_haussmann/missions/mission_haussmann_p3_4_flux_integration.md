@@ -6,11 +6,11 @@ campaign: campaign_haussmann
 phase: P3
 decade: 2
 owner: stanley
-status: in_progress   # CLAIMED 2026-08-22, session `session_stanley_20260822_165717_haussmann_p3_4_flux_integration`. O0 ✅ (re-probe + register correction, green count LOWERED 2→1); convention-13 AC-coherence pass ✅ COMPLETE (10/10 pairs recorded — **3 of the 4 acceptance criteria are unexecutable as written**, see the pass in the body); ⛩ DP7 next. Prior note kept: ⛩ DP6 discharged. ✅ P0.4 CLOSED 2026-08-21 — `depends_on` SATISFIED, mission CLAIMABLE. ⭐ **AND THE PREREQUISITES MOVED THE SAME DAY**: Aspasia's PUSH signal (`coord_2026_08_21_..._adr054_prerequisites_green`, found untracked mid-session) declares all three GREEN. Re-probed `[D]` rather than trusted: **PR-1 MET** (`legal.terms_url`+`privacy_url` non-null → aDNA-Network/community-policies, 200) · **PR-3 MET** · **PR-2 OWNER-GREEN / METHOD-RED** — config carries `product_name: "aDNA Community"` + `theme_color: #9d7cd8` + self-hosted icon, but the served HTML `<title>` is STILL `Fluxer` (baked into upstream's app-proxy binary; a fork is ruled out by Fluxer ADR-000). ⇒ **2/3 by the register's own stated methods, 3/3 by owner attestation.** ⛩ **THE DP7 QUESTION IS NOW REAL, not a formality**: does "minimal aDNA branding" mean what a CLIENT RENDERS or what an UNAUTHENTICATED FETCH SEES? Only the operator decides — and note this is the FIFTH instance in the campaign of a verification method that does not reach the thing it verifies. O0 MUST still re-probe live (the register ages, and PR-1's CoC is in the policies repo but NOT wired into `legal.*`). The honest no-link fallback remains an acceptable end-state. DP7 already fired EARLY by operator override at P1.1 — the /community link shipped with prerequisites unmet — so the formal GO/NO-GO is still owed. aDNALabs ADR-025 (human-only) + Fluxer SO#8 unchanged.
+status: completed   # ✅ CLOSED 2026-08-22 with AAR (SO#5), session `session_stanley_20260822_165717_haussmann_p3_4_flux_integration`. ⛩ **DP7 RULED GO** — "minimal aDNA branding" = what a CLIENT RENDERS; PR-2 MET with its method amended; PR-1 MET at the amended method (its on-instance limb is unsatisfiable by construction — the instance serves the SPA shell with 200 for EVERY path) with the CoC residual closed site-side + staged to Aspasia; PR-3 MET. **ADR-054 → `accepted`.** SHIPPED + LIVE: deploy_record 2026-08-23T01:45:36Z tree=5c6b22d, probe red-proven 8/15 before and **24 PASS / 0 FAIL** after, gates 554/554, axe 0 both themes. ⭐ **THE FINDING: a green test was green BECAUSE a claim was false** — R-95 was stamped `verified` on 08-17 evidence, went false 08-21, and gate-26 pins `verified` quotes as must-be-PRESENT. **A SECOND stale claim in the same paragraph** ("agents … not in chat") was falsified by aDNALabs S224 ruling ② and contradicted by the very CoC this mission links — found only by reading the document before linking it. **A THIRD copy** of the same description was live on two other pages from one shared data line. ⛔ **NOT built, named not skipped: the ladder→channel mapping** — AC2 required "where true" and no [D] evidence exists outside the auth wall. Convention-13 pass ran COMPLETE (10/10 pairs, coverage recorded) and found **3 of 4 ACs unexecutable as written**.
 mission_class: build
 executor_tier: opus
 token_budget_estimated: "~150–250 kT across 1–2 sessions: prerequisite verification + /community integration copy + ladder mapping + disclosure copy + DP7 gate (ADR-016)"
-token_budget_actual:
+token_budget_actual: "≈195 kT of main-loop content load against a ~150–250 kT estimate — INSIDE the band, at roughly its midpoint, and the first Decade-2 mission to land there without a stated overrun (ADR-016 / SO#11). Why it held despite the scope moving: the estimate's largest line was the ladder mapping, which the DP7 evidence retired outright (no [D] obtainable outside the auth wall), and that freed roughly the amount the three unplanned findings cost — the second stale claim, the third copy on two other pages, and the G15 diagnosis. A rough parity, not a forecast that came true; recorded as such."
 created: 2026-08-16
 last_edited_by: agent_rosetta
 grounded_in: ["flux/flux_assessment_draft.md (O3→O4 recommendation + prerequisites)", "H14 reframed", "aDNALabs ADR-025 (human-only until federation GA)", "Fluxer SO#8 (no syndication; agents disclosed)", "P0.4 prerequisite register"]
@@ -144,6 +144,54 @@ Register corrected: `artifacts/p0_4/prerequisite_register.md`, **green count low
 - ⭐ **The register's own probe paths were wrong** (`branding.*` → `app_public.branding.*`) and
   read as a total regression. Corrected, with the reason kept.
 
+### O1 — ⛩ DP7 ✅ RULED GO (2026-08-22, in-chat)
+
+**PR-2 MET on the client-renders reading**; method amended to probe `app_public.branding.*`. The
+stock-Fluxer public face is an upstream ceiling, recorded in ADR-054 — and **site copy stays silent
+on it**. **PR-1 MET at the amended method** (its on-instance limb is unsatisfiable by construction),
+CoC residual closed site-side + staged to Aspasia. **ADR-054 → `accepted`**, 4-field block, three
+corrections applied in its body. Scope: link the rules, state the routing, **no ladder mapping**.
+
+### O2 — build ✅ · O3 — prove ✅
+
+Deployed `deploy_record: 2026-08-23T01:45:36Z mode=prod tree=5c6b22d`, headers **4/4 on the ALIAS**.
+Live probe **red-proven first at 8 PASS / 15 FAIL** (all 7 controls green, one deliverable already
+holding — it discriminates), **24 PASS / 0 FAIL** after. Gates **554/554** (552 baseline + 2 for the
+new rows), axe **0** on 4 surfaces × both themes, 0 console errors, 56 captures.
+
 ## AAR (SO#5)
 
-*(before completed)*
+**Worked.** *Reading the documents before linking them.* The mission's job was to link three policy
+files; reading them first is what surfaced the second stale claim, and had we linked the code of
+conduct without opening it, `/community` would have asserted agents are absent **one line above a
+document saying they are present** — a contradiction any reader finds in one click. Also: the
+complete convention-13 pass. It cost one read and found **three of four acceptance criteria
+unexecutable**, before a budget was spent building against them.
+
+**Didn't work.** *Three of this session's own instruments were wrong before the subject was.*
+① The register's probe paths (`branding.*` vs `app_public.branding.*`) — a probe at the documented
+paths reads as total regression. ② The first red-test mutation matched nothing, because the raw HTML
+carries a line break the literal didn't; only an `assert` stopped "31 passed" being reported as a red
+test. ③ The live probe's changelog assertion looked for a frontmatter title on a page that renders
+bodies — it reported FAIL against a page serving the entry correctly. **None of the three was found
+by a checker. All three were found by having a control.**
+
+**Finding.** ⭐ **A green test can be green *because* a claim is false.** R-95 was stamped `verified`
+on 08-17 evidence; the world moved on 08-21; `gate-26` asserts `verified` quotes stay **present**, so
+the suite defended the stale sentence and would have gone red on the truth. This is not the register
+failing to notice — it is the register **enforcing** the wrong thing, and no amount of running it
+harder would have surfaced it. The blind spot is structural: **nothing in the fixture carries a probe
+date**, so no row can express "true as of when."
+
+**Change.** ADR-054 clause 3 now requires any sentence describing an **external** surface to carry
+its probe date on its face, with the date recorded in its claim row. ⛔ **Deliberately NOT built: a
+staleness checker.** Convention 15 already ruled on this shape — *the habit costs a sentence and
+cannot itself be wrong; the checker costs a sitting and can* — and this session produced three wrong
+instruments in four hours, which is the argument, not a counterargument.
+
+**Follow-up.** ① **Memo to Aspasia** — the CoC is reachable from the instance by neither `legal.*`
+nor `/guidelines`; ask whether upstream's `legal` block accepts a third URL. Hers to answer.
+② **Ladder→channel mapping deferred** pending inside evidence; recorded on the changelog as deferred,
+not left as a gap. ③ **F-r** (new): a site-wide grep for a struck claim now hits the changelog that
+quotes it — every absence assertion must name its surface. ④ **F-p confirmed live** — gate-17 G15's
+skip guard tests `config.json` existence, not the routes it asserts on; still routed to P4.4.

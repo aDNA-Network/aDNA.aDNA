@@ -73,17 +73,55 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 `missions/` — 27 files `mission_haussmann_p{0..5}_*.md`; paste-ready prompts in `missions/session_prompts_haussmann.md`.
 
 **⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
-convention 11. **Current mission: `P3.3`** (`mission_haussmann_p3_3_mcp_server.md`, `in_progress` —
-**O0 ✅, O1 ✅ and O3 ✅ (reduced) 2026-08-21; STILL OPEN AT ⛩ O2**, the npm publish. O3 ran *ahead*
-of O2 in its pre-agreed publish-deferred form, so the mission's remaining work is O2 itself plus the
-limb that rides it) — P4.5a ✅, P3.5 ✅ (2026-08-20), P3.1 ✅ and P3.2 ✅ (2026-08-21, deployed)
-are closed. Claiming "the next
-open mission in phase order" still lands wrong further down the sequence (P3.4 is followed by P4.1, and
-P4.4 precedes P4.3), so read convention 11's order, not the numbering. Decade-1 leftovers:
-~~**P0.4** (`active`, awaiting Aspasia's ack — her lane)~~ ✅ **P0.4 CLOSED 2026-08-21** (ack arrived,
-AAR written, register **1/3 green**; P3.4's `depends_on` **discharged**, ⛔ its DP7 **not** fired) and
-**P2.6** (`in_progress`, awaiting ⛩ **O0b**, the operator-gated TTFS run) — **the only Decade-1
-leftover still open.**
+convention 11. **Current mission: `P4.1`** (`mission_haussmann_p4_1_token_pipeline.md`, `queued` —
+halt at ⛩ **DP8**, the ADR-053 visual-voice ruling, *before* building). Closed: P4.5a ✅ · P3.5 ✅
+(08-20) · P3.1 ✅ · P3.2 ✅ (08-21, deployed) · **P3.4 ✅ (2026-08-22, deployed + live-verified
+24/0)**. **⏸ `P3.3` remains OPEN at ⛩ O2** and is *skipped, not finished* — the npm publish is **not
+performable on this node** (no npm identity; needs an interactive operator `npm login` first), so the
+sequence moved past it. Claiming "the next open mission in phase order" still lands wrong further down
+(P4.4 precedes P4.3), so read convention 11's order, not the numbering. Decade-1 leftovers:
+~~**P0.4**~~ ✅ **CLOSED 2026-08-21** and **P2.6** (`in_progress`, awaiting ⛩ **O0b**, the
+operator-gated TTFS run) — **the only Decade-1 leftover still open.**
+
+> ✅ **P3.4 is `completed`, DEPLOYED and LIVE-VERIFIED** (2026-08-22, `deploy_record:
+> 2026-08-23T01:45:36Z tree=5c6b22d`; probe red-proven **8 PASS / 15 FAIL** before, **24 PASS / 0
+> FAIL** after; gates **554/554**; axe **0** both themes). ⛩ **DP7 ruled GO** — *"minimal aDNA
+> branding"* means **what a client renders**, not what an unauthenticated fetch sees; **ADR-054 →
+> `accepted`**. PR-1 MET at an amended method too: its on-instance limb is **unsatisfiable by
+> construction** — the instance serves the SPA shell with **200 for every path**, proven by a
+> negative control (a route that cannot exist) and a nonce control. Copy stays **silent** on the
+> venue's stock-Fluxer public face: an upstream ceiling, recorded in the ADR, not spun on the site.
+>
+> ⭐ **THE FINDING — a green test was green BECAUSE a claim was false.** R-95 (*"…terms of service,
+> privacy policy, and branding are still being stood up"*) was stamped `verified` on 08-17 evidence
+> and went false on 08-21. `gate-26` asserts `verified` quotes stay **PRESENT**, so **the suite
+> defended the stale sentence and would have gone red on the truth.** Not the register failing to
+> notice — the register **enforcing the wrong thing**. Structural cause: **no fixture row carries a
+> probe date**, so no row can express *true as of when*. ⇒ **ADR-054 clause 3 now requires any
+> sentence describing an EXTERNAL surface to carry its probe date on its face.** ⛔ **No checker
+> built, deliberately** — convention 15 already ruled this shape, and this session produced three
+> wrong instruments of its own, which is the argument for the habit, not against it.
+>
+> ⭐ **A SECOND stale claim sat in the same paragraph**, and only reading the linked document caught
+> it: *"agents work in the repositories and on the public record, not in chat"* is falsified by
+> **aDNALabs S224 ruling ②** (2026-08-21, *"Fluxer = human-visible agent chat"* — verified at the
+> object, not from a STATE line) and **flatly contradicted by the venue's own code of conduct §3**,
+> which this mission links. Linking it unread would have shipped a one-click contradiction. The page
+> now **states the rules and asserts nothing about who is inside.** ⭐ **A THIRD copy** of the same
+> description was live on `/canonical-properties` + `/state-of-the-network` from one shared data
+> line — found by convention 7's *grep the rendered output, not the artifact*; the first sweep said
+> done, the second found two untouched pages.
+>
+> ⛔ **NOT built, named rather than skipped:** the ladder→channel mapping. AC2 required rungs mapped
+> *"where true"* and **no `[D]` evidence is obtainable outside an approval-gated venue**. Deferred on
+> the changelog, in public, rather than left as a gap a reader would have to notice.
+>
+> ⚠ **New debt: F-r** — a site-wide grep for a struck claim now hits the **changelog that quotes
+> it** (the entry is *about* the false sentence). Every absence assertion must name its surface;
+> P3.4's live probe scopes each one on purpose. **F-p confirmed live** at this mission's suite run
+> (gate-17 G15 red at 444-expected/0-found because `inject_redirects` alone creates `config.json`
+> and G15's skip guard tests **existence**, not the routes it asserts on) — remedy is convention 6's
+> *run the step that produces what the gate asserts*; the fix stays routed to **P4.4**.
 
 > ✅ **P3.2 is `completed` AND DEPLOYED** (2026-08-21, `tree=861e871`, deploy record
 > `2026-08-22T00:29:33Z`). `/vaults.json` and `/api/registry.v1.json` serve **200**, byte-identical,
