@@ -126,7 +126,61 @@ A pixel regression, a header drift, a budget breach, or a field-CWV red each fai
 
 ## Progress
 
-*(at execution)*
+### 2026-08-24 — ⛩ OPENED AT THE PRE-BUILD GATE, AND HALTED THERE. No build started.
+
+Session `session_stanley_20260824_213413_haussmann_p4_4_ci_hardening`. Claimed from this file's own
+`status: queued`, not from the campaign index line (stale four times). **Freeze re-verified at open:**
+`git cat-file -t 30c8163` and `f4fa9c5` **both fail** — lemur has not pushed; **the freeze holds**, and
+P4.1 + P4.2 remain built-not-deployed behind it. 8 commits unpushed.
+
+Three passes ran **before** any scoping, per P4.1's SO#11 ruling that *convention 13 runs before a DP
+ratifies a budget*. All three are artifacts, not prose in this file:
+
+| Artifact | Result |
+|---|---|
+| `artifacts/p4_4/register_reread_20260824.md` | **19 rows re-probed at the object.** 3 **DISCHARGED** · 1 narrowed · 4 **worsened** · 11 unchanged |
+| `artifacts/p4_4/f_u_alias_guard_design.md` | F-u's premise corrected — **a lease would not have prevented F-s**; the right primitive is an **ancestry guard** |
+| `artifacts/p4_4/convention_13_pass.md` | **30/30 pairs, coverage recorded.** 4 defects · 1 structural gap. **Zero of five criteria executable as written** |
+| `artifacts/p4_4/ac_amendment_proposal.md` | ⛩ **`status: proposed` — awaiting signature. NOT applied.** |
+
+⭐ **THREE ROWS OF THIS REGISTER WERE ALREADY DEAD, AND NOTHING SAID SO.** `F-b` + `F-q` were closed by
+a `.gitleaks.toml` allowlist landed at **P3.4, 2026-08-22** — verified at the object, not cited from
+P4.2's green: `gitleaks detect --source .` → **881 commits scanned, no leaks found**. `F-h` discharged by
+performing the re-read it asks for: all **4/4** `vercel.json` header **values** match what the alias
+serves. ⇒ Scoping from the register as written would have funded three fixes for defects that no longer
+exist. **The mission's own ⚠ instruction to re-read every row first is the only reason this was caught.**
+
+⭐ **AND FOUR ROWS UNDERSTATE THEMSELVES.** `F-m` twelve → **thirteen** ADRs behind (index tallies 41,
+highest row 046, `updated: 2026-07-02`; disk holds **54**, highest **059**). `F-n` 45 → **49** days.
+`F-o` **5 → 11** hits in three days — *the row predicts its own drift and the drift is accelerating*.
+`F-k` widens to change an owner: `.adna/` has no pre-push hook at all (`FAIL_NONE` confirmed), **and
+this vault's own hook is md5 `216aaca…` — the proven v1 no-op**, so the vault that will fire
+`skill_template_release` to ship the fail-closed v2 is not itself covered by it.
+
+⭐⭐ **F-u ASKS FOR THE WRONG INSTRUMENT.** Replay F-s with a perfect single-writer lease held
+throughout: lemur deploys and releases, this node deploys `922519c` and releases, **and v0.4.3 + the Arch
+repo are un-published anyway.** The two deploys **never raced** — they were sequential and still
+destructive. A mutex reasons about *time*; the defect is about *content*. The invariant is *never publish
+a tree that does not contain the commit currently serving the alias*, which needs the alias to be
+**self-describing** (`/.well-known/adna-build.json`) because `deploy_log.txt` is per-checkout — *a log on
+the machine that deployed is not evidence available to the machine about to deploy*, which is exactly
+why F-s was invisible. The guard fires correctly in **both** directions, including the restore that fired
+the hazard backwards under an operator GO while following every rule then in force.
+
+⭐ **A free design constraint fell out of discharging F-h, and it is recorded so F-f's implementer
+inherits it rather than discovering it.** The alias also serves `strict-transport-security`, which is
+**not in `vercel.json` at all** — Vercel injects it. ⇒ a field-by-field comparator must assert
+`expected ⊆ served`, **never set-equality**, or it false-fails on a platform header on its first live
+run. That is the shape of all five instruments this campaign has shipped wrong.
+
+⚠ **AC2 is unreachable by anything this mission does**, and it is the **sixth** instance of a criterion
+whose prerequisite does not exist on the performing tree: *"field data flowing"* needs the instrumented
+build **in production**, which the freeze blocks until **lemur** — another machine — pushes, and then
+needs traffic and calendar time for a p75 to exist. ⚠ **AC4's method is likewise impossible today**:
+`lighthouse_profiles.json` is **0 hits vault-wide**, so *"read from profiles"* names a mechanism that
+does not exist — **P4.2's AC3 recurring exactly**.
+
+⛩ **HALTED for operator signature on the amendment.** Nothing builds against un-ratified criteria.
 
 ## AAR (SO#5)
 
