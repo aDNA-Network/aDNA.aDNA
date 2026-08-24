@@ -27,6 +27,22 @@ const jsonLD = buildWebPageJsonLD({
   heroImage={{
     src: heroGetStarted,
     alt: 'Cozy pixel-art scene of a desk and computer with a glowing cyan DNA helix rising from the screen — a new aDNA workspace coming alive',
+    /* HAUSSMANN P4.1 O2 — the first exercise of ADR-053's `hero_panel` credit law, which the ADR
+       records as NORMATIVE and UNMET. Added here rather than nowhere so the field does not ship as
+       an authored-but-unexercised instrument.
+
+       ⭐ EVERY FACT IN THIS LINE WAS VERIFIED AT THE OBJECT, not quoted from a status line. The
+       model, register and cycle come from the generation ledger itself —
+       what/measurement/iii_results/2026-06/cycle_157_e1_hero_helix.r1.image_gen_log.json — which
+       records `"model": "imagen-4.0-ultra-generate-001"` and `"register": "ss_ghibli_pixel /
+       tokyo_night"`. This asset was promoted from that run's candidate `helix_r1_H2_v2`.
+
+       ⛔ SCOPE, STATED SO IT IS NOT MISREAD AS DONE: this is ONE of the ten live `hero_panel`
+       routes. The other nine are still uncredited, and ADR-053's credit law therefore remains
+       UNMET for the hero slot. AC5 covers the ONE NEW slot (`empty_state`), which is fully
+       credited; the hero backlog is named in the mission record, not implied away by this line. */
+    credit:
+      'Illustration generated with Google Imagen 4 Ultra (imagen-4.0-ultra-generate-001) in the ss-ghibli-pixel / Tokyo Night register, commissioned under ADR-032 and now governed by ADR-053.',
   }}
 >
   <p>

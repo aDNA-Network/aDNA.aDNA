@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import HomeHero from '../../components/sections/HomeHero.astro';
 import VaultCard from '../../components/sections/VaultCard.astro';
 import VaultFacetChip from '../../components/sections/VaultFacetChip.astro';
+import EmptyStateMark from '../../components/sections/EmptyStateMark.astro';
 import vaultsData from '../../data/vaults';
 import { buildCollectionPageJsonLD, buildDatasetJsonLD } from '../../utils/seo';
 import { SITE_ORIGIN } from '../../data/canonical';
@@ -138,6 +139,34 @@ const goDeeper = [
         not change under you.
       </p>
 
+      {/* HAUSSMANN P4.1 O2 — the `empty_state` slot's per-artifact CREDIT (ADR-053's credit law:
+          "every illustrated artifact carries its provenance where a reader can reach it").
+
+          RENDERED ONCE, deliberately. The credit is a property of the ARTIFACT, and the artifact is
+          one SVG file — this page happens to render it dozens of times. Fifty-odd identical
+          provenance lines would satisfy the letter of "where a reader can reach it" and defeat the
+          sentence it is made of (slot spec §6). Every other mark on this page passes no `credit` and
+          renders byte-identically; gate-35 asserts that byte-identity rather than assuming it.
+
+          It says HAND-DRAWN, and that is not modesty. ADR-053 names the generation pipeline
+          (ComfyUI under a VisualDNA bundle) as OWED, NOT BUILT, and binds this property not to write
+          any sentence implying it exists until it does.
+
+          The first draft of the credit read "(DP8, 2026-08-23)". A grep of the BUILT output found
+          that gate label on exactly one page in 225 — this one, because that draft had just put it
+          there. It is house notation for an operator decision gate and means nothing to a reader,
+          whereas ADR-0xx already appears site-wide. gate-35 tests precisely this class ("house
+          status vocabulary does not reach the public registry surfaces") and gate-27 lints for it;
+          neither had run yet. Caught by convention 7 — grep the rendered output — applied to new
+          copy of my own rather than to the site's old copy. */}
+      {/* A <div>, not a <p>: the component renders its credit as a <p>, and a <p> inside a <p> is
+          invalid and gets reparsed by the browser into something the gate would then assert against. */}
+      <div class="vaults-slot-credit">
+        <EmptyStateMark
+          credit="The empty-state mark on this page is a hand-drawn SVG — no generator, no model. It was commissioned by the site's visual-voice decision record (ADR-053, 2026-08-23), which sets out where illustration may appear here and where it may not."
+        />
+      </div>
+
       {/* No-JS baseline: tier jump-chips, matching the three sections below. These were class
           chips until P2.4; when the page stopped grouping by class the `#class-*` anchors they
           pointed at ceased to exist, so retargeting them was mandatory, not cosmetic — a jump-link
@@ -228,6 +257,28 @@ const goDeeper = [
         </div>
       </section>
     ))}
+
+    {/* HAUSSMANN P4.1 O2 — `empty_state`, second application: the ZERO-RESULT state.
+        ADR-053's slot row names two states ("zero-result AND `planned`-vault states"); this is the
+        half that did not exist. Until now a filter matching nothing collapsed every section and left
+        the reader facing blank page, with the only signal a " — nothing matched" suffix appended to a
+        count line above the fold they had already scrolled past.
+
+        `hidden` at rest and revealed by the filter script below, exactly as the toolbar itself is:
+        the no-JS reader can never reach a zero-result state (there is no filter to run), so rendering
+        this visibly for them would be a message about a condition they cannot be in.
+
+        The mark is the SAME artifact as the card marks, at `lg` — one file, two scales, which is the
+        cheapest available proof the slot spec generalizes rather than describing one application of
+        itself (spec §3). */}
+    <section class="vaults-empty" data-vaults-empty hidden>
+      <EmptyStateMark scale="lg" />
+      <h2>Nothing matched</h2>
+      <p>
+        No vault in the registry matches that search and filter combination. Clearing the search box,
+        or setting stage and class back to <strong>All</strong>, brings all {vault_count} back.
+      </p>
+    </section>
   </div>
 
   <script>
@@ -245,6 +296,12 @@ const goDeeper = [
       const cards = Array.from(document.querySelectorAll('[data-vault-card]'));
       const sections = Array.from(document.querySelectorAll('.vaults-tier-section'));
       const countEl = filterEl.querySelector('.vaults-result-count');
+      // HAUSSMANN P4.1 O2 — the `empty_state` slot's zero-result half. Queried, never required: if
+      // the block is ever removed the filter must keep working rather than dying on a null, so every
+      // use below is guarded. (The count line's " — nothing matched" suffix stays exactly as it was —
+      // this block is an addition to the signal, not a replacement for it, so a reader who is
+      // watching the count is not made to look somewhere new.)
+      const emptyEl = document.querySelector('[data-vaults-empty]');
       if (!(input instanceof HTMLInputElement) || !cards.length) return;
 
       // Reveal the enhanced toolbar; retire the no-JS jump-facets.
@@ -273,6 +330,8 @@ const goDeeper = [
             ? `${visible} vaults`
             : `${visible} of ${cards.length} vaults` + (visible === 0 ? ' — nothing matched' : '');
         }
+        // The slot's render condition is the absence itself — zero visible results — and nothing else.
+        if (emptyEl instanceof HTMLElement) emptyEl.hidden = visible !== 0;
       };
 
       // One handler shape for both chip groups: a group is single-select, and only the chips in
@@ -308,6 +367,33 @@ const goDeeper = [
   .go-deeper { margin: 1.25rem 0 0; color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }
   .go-deeper a { color: var(--color-link); text-decoration: underline; }
   .gd-sep { color: var(--color-text-muted); }
+  /* HAUSSMANN P4.1 O2 — the `empty_state` slot, zero-result application.
+     Tokens only (gate-14 / gate-25 G25b): --color-bg-alt and --color-border are already-shipped,
+     already-AA-verified pairs used by .vaults-caveat above, so this block introduces NO new contrast
+     pair in either theme and token_aa_check.py has nothing new to test (slot spec §5). The mark
+     itself carries no colour at all — it inherits currentColor. */
+  .vaults-empty {
+    margin: 3rem auto;
+    padding: var(--space-6, 2rem) var(--space-4, 1rem);
+    max-width: 52ch;
+    text-align: center;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+  .vaults-empty h2 { margin: 0 0 var(--space-2, 0.5rem); }
+  .vaults-empty p { margin: 0; color: var(--color-text-muted); }
+
+  /* The slot's per-artifact credit — rendered once for the whole surface (slot spec §6). Held at
+     muted weight: it is provenance a reader can reach, not a thing competing with the registry. */
+  .vaults-slot-credit {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.15rem;
+    margin: 0 0 1.5rem;
+    max-width: 68ch;
+  }
+
   .vaults-tier-section { margin: 2rem 0; }
   .vaults-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
   .tier-count { font-size: 0.85em; color: var(--color-text-muted); }

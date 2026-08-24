@@ -236,6 +236,18 @@ EXTRA_PAIRS = [
     # --color-success as text: 2 counted usages. --color-error as text: 1 (changelog.astro).
     ("--color-success",    "--color-bg",                4.5, "success text on app bg"),
     ("--color-error",      "--color-bg",                4.5, "error text on app bg"),
+    # ⭐ muted text on the ELEVATED surface — added at HAUSSMANN P4.1 O2, and it is a PRE-EXISTING
+    # GAP this mission surfaced rather than a pair this mission created. The list above tested
+    # `--color-text-muted` on `--color-bg` and on `--color-surface` but never on `--color-bg-alt`,
+    # while 23 files pair a `--color-bg-alt` container with `--color-text-muted` text and there are
+    # 40 such container rules site-wide (counted with `(?<![-\w])background(?:-color)?:` and
+    # `(?<![-\w])color:` — the hyphen guard is O1's regex lesson, without which `border-color:` is
+    # miscounted as a text usage and manufactures the very pair it appears to confirm).
+    # The concrete instance this mission adds, and the one that grounds the pair beyond
+    # co-occurrence: `.vaults-empty { background: var(--color-bg-alt) }` with
+    # `.vaults-empty p { color: var(--color-text-muted) }` — the `empty_state` slot's zero-result
+    # block, whose contrast ADR-053 requires verified in BOTH themes.
+    ("--color-text-muted", "--color-bg-alt",            4.5, "muted text on elevated surface"),
 ]
 
 # ⛔ DELIBERATE EXCLUSIONS — recorded so a future reader does not "restore the missing pairs".

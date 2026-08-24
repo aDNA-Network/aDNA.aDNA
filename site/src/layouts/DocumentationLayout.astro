@@ -16,7 +16,27 @@ interface Props {
   prev?: { label: string; href: string };
   next?: { label: string; href: string };
   jsonLD?: JsonLDValue;
-  heroImage?: { src: ImageMetadata; alt: string };
+  /**
+   * The `hero_panel` slot (ADR-053's normative five-slot table).
+   *
+   * `credit` added at HAUSSMANN P4.1 O2 — ADR-053's credit law is normative and was UNMET: "every
+   * illustrated artifact carries its provenance where a reader can reach it: generator/model lineage
+   * and the ruling that commissioned it." The ADR names the mechanism as an additive `credit` field
+   * alongside `{ src, alt }` on this prop — never a new component — and byte-identical for any page
+   * that does not pass it (skill_documentation_layout_props_additive_extension). Adding the field
+   * here is what makes that mechanism exist where the ADR said it would.
+   *
+   * ⚠ THE FIELD IS ADDED HERE; IT DOES NOT COVER THE `empty_state` SLOT, AND THE DISTINCTION IS
+   * WORTH KEEPING. P4.1's AC5(b) required the empty-state credit to ride *this* prop — but /vaults
+   * uses BaseLayout + HomeHero, not this layout, and an empty-state mark is not a hero under any
+   * layout, so `heroImage` structurally cannot carry it. ADR-053's normative text names the PATTERN
+   * (an additive optional prop, byte-identical when absent); AC5 named one INSTANCE of it. The
+   * pattern is applied at the slot's own host (EmptyStateMark.astro); the named instance is here.
+   * ⛩ Operator-ruled 2026-08-24 — both, not either. Record: slot_spec_empty_state.md §6.1.
+   *
+   * A credit must not imply a generation pipeline exists: ADR-053 names ours as OWED, not built.
+   */
+  heroImage?: { src: ImageMetadata; alt: string; credit?: string };
   /**
    * Page provenance — last-updated date and an edit link (HAUSSMANN P2.3 O2, VITRUVIUS D4).
    *
@@ -61,6 +81,10 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage, source
           loading="eager"
         />
       )}
+      {/* Additive and optional: a page passing `{ src, alt }` without `credit` emits nothing here
+          and renders byte-identically to before this field existed. gate-35 asserts that rather
+          than assuming it. */}
+      {heroImage?.credit && <p class="doc-hero-credit">{heroImage.credit}</p>}
       <h1>{title}</h1>
       <slot />
       {source && (
@@ -282,6 +306,15 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage, source
     border-radius: var(--radius-md);
     margin-bottom: var(--space-6);
     background: var(--color-bg-alt);
+  }
+
+  /* `hero_panel` credit (ADR-053, added P4.1 O2). Pulled up under the hero it describes — the hero's
+     own bottom margin would otherwise leave the credit floating between two unrelated blocks.
+     Token colour only; --color-text-muted is an already-AA-verified pair in both themes. */
+  .doc-content :global(.doc-hero-credit) {
+    margin: calc(var(--space-6) * -1 + var(--space-3)) 0 var(--space-6);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm, 0.9rem);
   }
 
   .doc-toc {

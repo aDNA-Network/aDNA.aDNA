@@ -200,6 +200,137 @@ applications · **V3** ranker ≥4.0 · **V4** ADR-053 record.
 add an AC covering O2's slot applications, and re-point AC4 at *"a bundle or a recorded, staged ask to
 Pygmalion"* so an unbuildable criterion cannot silently pass.
 
+### O2 — 2026-08-24, session `session_stanley_20260824_080010_haussmann_p4_1_o2_empty_state_slot`
+
+**Status: O2 COMPLETE. AC1 ✓ · AC2 ✓ · AC3 ✓ · AC5 ✓. AC4 remains (O3).** Suite **560/560** (555 +
+5 G35b), zero xfail. `token_aa_check.py` **AA PASS, 0 below floor**. axe **0** on all three changed
+surfaces × **both** themes. Convention-16 re-probe green at open (6/6 surfaces 200).
+
+⛔ **NOT DEPLOYED, and the criterion is recorded accordingly.** The freeze was re-verified at open:
+`git fetch origin` → lemur's `30c8163` + `f4fa9c5` still absent, HEAD == `origin/main` == `0312855`.
+⛩ Operator ruled *"live surface" = a real shipped route, build-verified*; AC5 is **MET-on-build**,
+deployment **named as owed**. Per P3.2's warning, this is said here rather than left to a reader to
+infer from a status field that cannot express it.
+
+**What shipped.** The `empty_state` slot — ADR-053's first *new* slot — in **both** the states its
+row names. One hand-drawn `currentColor` SVG at two scales
+(`site/src/assets/slots/empty_state_mark.svg`), hosted by `EmptyStateMark.astro`: inline beside each
+honest-absent line on the 74 registry cards, and at block scale heading a **zero-result block that
+did not previously exist** (a filter matching nothing collapsed every section and left only a
+` — nothing matched` suffix on a count line above the fold). Registered for contributors at
+`/design-system#illustration`; normative spec at `artifacts/p4_1/slot_spec_empty_state.md`.
+
+⛩ **Four operator rulings taken before building, three of them defects found by re-reading the
+ruling against the data:**
+
+1. **The ruled target set is not the set the slot is about.** The ruling named *"the 57 planned vault
+   cards."* Derived from the registry: of those 57 only **52** have any empty field and **3** are
+   fully empty, while **12 non-planned cards** (5 of 7 in-use, 7 of 10 chartered) do. Keying on tier
+   would mark 5 cards that are not empty and miss 12 that are — and would re-differentiate the tiers,
+   which **ADR-052 §tiers.2** ruled against in the page's own source. **Ruled: key on absence.**
+2. **AC5(b) named a mechanism that cannot reach the ruled surface** — `DocumentationLayout`'s
+   `heroImage` prop, on a page that uses **BaseLayout + HomeHero**, for a slot that is not a hero.
+   Executed literally it ticks with nothing on the page it is about. ADR-053's normative text names
+   the **pattern**; AC5 named one **instance**. **Ruled: both** — the pattern at the slot's host, and
+   the literal field added to `DocumentationLayout` and **exercised** on `/get-started` so it does not
+   ship unexercised.
+3. **"Live surface" vs the freeze** (above).
+4. **Scope: both halves of the slot**, so its reusability is demonstrated rather than asserted.
+
+⭐ **THE FINDING — the red test found a defect in MY OWN CODE that no green run could have.** The
+three absence predicates were written as named constants, but the persona and card lines still keyed
+on the surrounding ternary (`{persona ? … : …}`) with the predicate only *inside* the else-branch. So
+two of the three were **decorative**: a mutation setting `personaAbsent = true` left the gate green,
+not because the assertion was weak but **because the line it was aimed at could not move.** A reader
+auditing "the law lives in these three predicates" would have been wrong, and a future edit to them
+would have been a silent no-op. Both ternaries now key on the predicate itself. **9/9 mutations
+red-proven** after the fix; every mutation asserts it matched exactly once before the gate runs, and
+the one that stopped matching after the restructure was reported as a **harness bug, not a pass**.
+
+**Three more instruments were wrong before the subject was — the pattern holds at four sessions
+running.**
+
+- ⚠ **My own new copy put house jargon on a public surface.** The credit line first read
+  *"(⛩ DP8, 2026-08-23)"*. A grep of the **built** output found `DP8` on **exactly one page in 225** —
+  this one, because that draft had just put it there. `gate-35` tests this class and `gate-27` lints
+  for it; **neither had run yet.** Caught by convention 7 (*grep the rendered output*) applied to new
+  copy of my own rather than to the site's old copy.
+- ⚠ **The gate read the wrong slug and it looked exactly like the regression it exists to catch.**
+  First run: two failures naming `Operations` and `CakeHealth`. Both were the gate reading raw
+  `vault_slug` (`"Operations.aDNA"`) while the page emits `/vaults/operations/` — ADR-051's law is
+  applied at the **read boundary**, leaving the data byte-untouched under pt19. A raw lookup finds no
+  card for 24 of 74 rows and reports "no mark", which is **indistinguishable from tier-keying**. The
+  site was correct both times.
+- ⚠ **A capture labelled `light` was a dark capture.** An ad-hoc screenshot script set Playwright's
+  `colorScheme` and nothing else; this site's theme is driven by a **`.dark` class on `<html>`** plus
+  a localStorage key. The canonical harness does all three — the ad-hoc one did the first, and
+  produced a mislabelled artifact that would have been filed as both-theme evidence. Now asserts
+  `html.dark` matches the requested theme before it will screenshot.
+- ⚠ **I typed two counts, and deriving them corrected the predicate.** `/design-system` first read
+  *"Live on 10 pages"* / *"Live on 6"*, copied from ADR-053's table (WebForge KW-14, five instances
+  now). Deriving them found that counting pages passing the `heroImage` **prop** yields **9** —
+  `/vaults/graph` renders its hero through a bespoke `<Image class="hero-stage-img">`. The ADR's ten
+  is right and the naive predicate was wrong; *pages importing a hero asset* covers both mechanisms
+  and yields 10. ⚠ And the obvious shortcut is the wrong predicate **even though it currently
+  agrees**: `assets/heroes/` also holds exactly 10 files, so globbing assets would print the same
+  number today while claiming pages. *(Second-order: the first derivation used `node:fs` +
+  `import.meta.url` and killed the build with `ENOENT … dist/.prerender/pages/` — at render time
+  `import.meta.url` points at the bundled chunk, not the source tree. `import.meta.glob` is the only
+  place this question has an answer.)*
+
+⭐ **A distinction the data forced, and it is the honest half of this slot.** `listing: 'minimal'`
+rows (3) are **excluded**. They are not places where something could be written and has not been —
+they are places where something was deliberately **withheld** (*"Minimal card — private
+engagement."*). Marking a policy choice as an oversight is the same class of defect as the claims
+this campaign exists to retire. Gate-asserted in both directions.
+
+⭐ **A pre-existing contrast gap surfaced, not created.** The zero-result block needed
+`--color-text-muted` on `--color-bg-alt` — a pair `token_aa_check.py` **did not test**, though **23
+files** pair that container with that text and there are **40** such container rules site-wide. Added
+with its counted usage (hyphen-guarded scan, per O1) and **red-proven**: degraded in dark mode it
+reports **1.21:1** and exits 1. Live values **5.36:1** light / **6.41:1** dark.
+
+**Evidence.** `artifacts/p4_1/captures_o2/` — 3 surfaces × 3 viewports × 2 themes, plus
+`zero_result__desktop__{dark,light}.png` captured with the filter driven to 0 results and verified to
+hide again when results return. The `in use` cards carrying marks (Operations · Astro · Home · aDNA)
+are the **visible** proof the mark is not a tier badge. Axe zero verified **non-vacuous** (key
+present, `int`, 0) — the P3.1 wrong-key lesson.
+
+### ⛩ Convention 13 — AC-coherence pass over the AMENDED set, COMPLETE, coverage recorded
+
+The amendment added **AC5** and **replaced `verification_method` wholesale**, so O0's 16/16 pass does
+not cover the criteria now in force. Re-run over **5 ACs × 6 verification limbs = 30 pairs**, plus 5
+AC×AC dependency pairs. **Result: 0 failures, 1 scheduling note.**
+
+Limbs: **V1** ADR-053 record · **V2** both validators passing + red-proven + wrapper diff + staged
+memo · **V3** `derive_tenant_ceiling.py --validate-entry` · **V4** bundle-or-staged-memo on disk ·
+**V5** T0 captures both themes + axe-0 parity + full suite green · **V6** persona ranker ≥4.0
+(campaign-level).
+
+| | V1 record | V2 validators | V3 entry | V4 bundle/memo | V5 captures+suite | V6 ranker |
+|---|---|---|---|---|---|---|
+| **AC1** | ✅ the record *is* the test | n/a | n/a | n/a | n/a | n/a |
+| **AC2** | n/a | ✅ met O1 | n/a | n/a | n/a | n/a |
+| **AC3** | n/a | n/a | ✅ `entry READY` | n/a | n/a | n/a |
+| **AC4** | n/a | n/a | n/a | ⏭ O3 | n/a | n/a |
+| **AC5** | n/a | ⊕ contrast limb | n/a | n/a | ✅ **the operative test** | ⏭ O3 |
+
+- ✅ **Each criterion now has exactly one limb that can move it**, which is what the amendment was
+  for. The pre-amendment defect (a criterion whose stated verification could not see it under any
+  option) does not recur: V5 reads the rendered surface AC5 changes.
+- ⊕ **AC5(c) is verified by the AC2 instrument**, deliberately — the both-theme contrast check runs
+  through `token_aa_check.py`, so the slot's contrast is judged by the validator O1 adopted rather
+  than by a second instrument authored at O2. **This is a shared limb, not a gap**, and it is stated
+  because an unstated one reads as an omission.
+- ⏭ **The scheduling note, recorded rather than resolved: V6 (persona ranker ≥4.0) is UNRUN.** It is
+  campaign-level and the mission's own objective table assigns *"captures + ranker"* to **O3**, so it
+  is not owed here — but three surfaces changed this session, and saying so now is what stops O3
+  inheriting an unstated obligation. **AC5 is met on V5; V6 is O3's.**
+- **AC×AC (5 pairs, all satisfiable and ORDERED):** AC1→AC5 (the slot table is a DP8 dependent — a
+  slot cannot be built before the table naming it is ratified) · AC2→AC5(c) (the contrast instrument
+  must exist before the slot's contrast can be checked by it) · AC1→AC3 · AC2→AC3 · AC1→AC4. **No
+  cycle; O2's position after O1 is forced by AC2→AC5(c), not merely conventional.**
+
 ## AAR (SO#5)
 
-*(before completed)*
+*(before completed — O3 carries it, with AC4 and the ranker)*

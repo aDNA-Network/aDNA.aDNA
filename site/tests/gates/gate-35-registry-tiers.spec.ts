@@ -173,4 +173,241 @@ test.describe('gate-35 registry lifecycle tiers', () => {
       `card_present now splits the in-use tier (${withCard}/${active.length}) — ADR-052 §tiers.1 assumed it does not, and should be revisited`,
     ).toBe(true);
   });
+
+  /* ----------------------------------------------------------------------------------------------
+   * G35b — the `empty_state` illustration slot (HAUSSMANN P4.1 O2; ADR-053 slot table).
+   *
+   * Spec: how/campaigns/campaign_haussmann/artifacts/p4_1/slot_spec_empty_state.md.
+   *
+   * These assertions live in gate-35 rather than a gate of their own because the thing most likely
+   * to go wrong with this slot is a REGISTRY-TIER failure wearing an illustration costume: a future
+   * edit re-keying the mark from "this field is empty" to "this vault is planned". That is ADR-052
+   * §tiers.2's ranking defect, and gate-35 is where that law is already enforced.
+   *
+   * Every expected count is DERIVED from the registry (KW-8/FR-K) — a 75th vault must not falsify
+   * this, and a typed count would go stale the first time Home backfills a tagline.
+   * -------------------------------------------------------------------------------------------- */
+
+  /* ⚠ THE ROUTE SLUG IS NOT THE REGISTRY FIELD, and reading the raw field is how this gate was
+   * wrong on its first run. `vaults.json` carries `vault_slug: "Operations.aDNA"` for 24 of 74 rows;
+   * the page emits `/vaults/operations/` because ADR-051's law is applied at the READ boundary
+   * (src/data/vaults.ts), deliberately leaving the data byte-untouched under pt19. A gate that looks
+   * up the raw value finds no card, and `marked()` then reports `false` for every one of those 24 —
+   * which reads exactly like the tier-keying regression this gate exists to catch. Both first-run
+   * failures were this, and the site was correct in both.
+   *
+   * Restated rather than imported: gate-30 already pins generator↔accessor parity, and a Playwright
+   * gate cannot import site source that transitively imports JSON. */
+  const canonicalSlug = (value: string) =>
+    String(value).toLowerCase().replace(/\.adna$/, '').replace(/[^a-z0-9_-]/g, '_');
+
+  /** The slot's render law, restated here so the gate is not merely agreeing with the component. */
+  const absences = (v: any) => ({
+    persona: !v.persona,
+    // `listing: 'minimal'` is a deliberate withholding, NOT an absence — those rows say "Minimal
+    // card — private engagement." Marking a policy choice as an oversight is the defect this
+    // exclusion prevents, and it is asserted rather than trusted because it is invisible on the page.
+    purpose: !(v.tagline || v.note) && v.listing !== 'minimal',
+    card: v.card_present !== true,
+  });
+
+  const expectedCardMarks = registry.vaults.reduce((n: number, v: any) => {
+    const a = absences(v);
+    return n + (a.persona ? 1 : 0) + (a.purpose ? 1 : 0) + (a.card ? 1 : 0);
+  }, 0);
+
+  test('G35b the empty-state mark renders once per absent field, and nowhere else', () => {
+    test.skip(!existsSync(DIST), 'no dist/ — site not built');
+    const html = readIndex();
+
+    // Count marks in the CARD GRID only. The page also renders one at `lg` in the zero-result block
+    // and one beside the credit line; scoping to the grid is what makes this a statement about the
+    // cards rather than about the page.
+    const grids = html.match(/<div class="vaults-grid[^"]*"[\s\S]*?<\/div>\s*<\/section>/g) ?? [];
+    expect(grids.length, 'the three tier grids were not found in dist/').toBe(3);
+    const gridMarks = grids.join('').match(/class="empty-state-mark scale-sm/g)?.length ?? 0;
+
+    expect(
+      gridMarks,
+      `empty-state marks in the card grids (${gridMarks}) ≠ absent fields derived from the registry (${expectedCardMarks})`,
+    ).toBe(expectedCardMarks);
+
+    // Non-vacuity: a derived expectation of 0 would make the assertion above trivially true.
+    expect(expectedCardMarks, 'the registry has no absent fields — this assertion proves nothing').toBeGreaterThan(0);
+  });
+
+  test('G35b the mark keys on absence, NOT on lifecycle tier — asserted in both directions', () => {
+    test.skip(!existsSync(DIST), 'no dist/ — site not built');
+    const html = readIndex();
+
+    /* ⭐ THE DIRECTION THAT MATTERS. A one-way assertion ("the mark appears on planned cards")
+     * passes on a component that renders it unconditionally, AND passes on a tier-keyed
+     * implementation — which is the thing ADR-052 §tiers.2 forbids. So this checks the two
+     * populations the ruled target set gets WRONG:
+     *
+     *   • vaults with NO absent field must carry NO mark — 5 of the 57 `planned` vaults are in this
+     *     group, so a tier-keyed build fails here.
+     *   • vaults OUTSIDE the planned tier that DO have an absent field must carry one — 12 vaults
+     *     are in this group, so a tier-keyed build fails here too.
+     *
+     * Together they pin the law from both sides; neither alone would. */
+    const cardFor = (slug: string) => {
+      const i = html.indexOf(`/vaults/${slug}/`);
+      if (i < 0) return null;
+      const start = html.lastIndexOf('<article', i);
+      const end = html.indexOf('</article>', i);
+      return start < 0 || end < 0 ? null : html.slice(start, end);
+    };
+
+    const marked = (slug: string) => (cardFor(canonicalSlug(slug)) ?? '').includes('empty-state-mark');
+
+    const noAbsence = registry.vaults.filter((v: any) => {
+      const a = absences(v);
+      return !a.persona && !a.purpose && !a.card;
+    });
+    const nonPlannedWithAbsence = registry.vaults.filter((v: any) => {
+      const a = absences(v);
+      return tierOf(String(v.status)) !== 'planned' && (a.persona || a.purpose || a.card);
+    });
+
+    // Both populations must be non-empty or the test is vacuous in one direction.
+    expect(noAbsence.length, 'no fully-populated vault exists — the negative direction is untested').toBeGreaterThan(0);
+    expect(
+      nonPlannedWithAbsence.length,
+      'no non-planned vault has an absence — the tier-independence direction is untested',
+    ).toBeGreaterThan(0);
+
+    for (const v of noAbsence) {
+      expect(
+        marked(String(v.vault_slug)),
+        `${v.display_name} has every field populated but carries an empty-state mark`,
+      ).toBe(false);
+    }
+    for (const v of nonPlannedWithAbsence) {
+      expect(
+        marked(String(v.vault_slug)),
+        `${v.display_name} (${tierOf(String(v.status))}) has an absent field but carries no mark — the slot has been re-keyed to lifecycle tier, which ADR-052 §tiers.2 forbids`,
+      ).toBe(true);
+    }
+
+    // And the source must not have grown a tier condition around the mark.
+    const src = readFileSync(join(SITE_ROOT, 'src/components/sections/VaultCard.astro'), 'utf8');
+    const markLines = src.split('\n').filter((l) => l.includes('EmptyStateMark'));
+    expect(markLines.length, 'no EmptyStateMark usage found in VaultCard').toBeGreaterThan(0);
+    for (const l of markLines) {
+      expect(
+        /\btier\b|\bstatus\b|tierOf|tierSlug/.test(l),
+        `VaultCard renders the mark on a lifecycle condition — "${l.trim()}"`,
+      ).toBe(false);
+    }
+  });
+
+  test('G35b the mark is never the sole carrier of meaning', () => {
+    test.skip(!existsSync(DIST), 'no dist/ — site not built');
+    const html = readIndex();
+
+    // ADR-053's a11y clause: decorative marks are aria-hidden and must therefore never carry the
+    // meaning alone. The test of that is that REMOVING every mark loses nothing — so each absent
+    // sentence has to be present in its own right.
+    for (const sentence of ['No persona recorded', 'No public description yet.', 'No card written yet']) {
+      expect(html.includes(sentence), `the absent sentence "${sentence}" is missing from the page`).toBe(true);
+    }
+
+    // Every mark is hidden from assistive technology, with no exceptions.
+    const marks = html.match(/<span class="empty-state-mark[^>]*>/g) ?? [];
+    expect(marks.length, 'no marks rendered').toBeGreaterThan(0);
+    for (const m of marks) {
+      expect(/aria-hidden="true"/.test(m), `a mark reaches the accessibility tree: ${m}`).toBe(true);
+    }
+
+    // A deliberate withholding is not an absence: the three `listing: minimal` rows say so in words
+    // and must NOT be marked on the purpose line.
+    const minimal = registry.vaults.filter((v: any) => v.listing === 'minimal');
+    expect(minimal.length, 'no minimal-listing rows — this direction is untested').toBeGreaterThan(0);
+    for (const v of minimal) {
+      const i = html.indexOf(`/vaults/${canonicalSlug(String(v.vault_slug))}/`);
+      const card = i < 0 ? '' : html.slice(html.lastIndexOf('<article', i), html.indexOf('</article>', i));
+      const purposeLine = card.match(/<p class="vault-card-purpose[^"]*"[^>]*>[\s\S]*?<\/p>/)?.[0] ?? '';
+      expect(
+        purposeLine.includes('Minimal card'),
+        `${v.display_name} does not render the minimal-listing sentence`,
+      ).toBe(true);
+      expect(
+        purposeLine.includes('empty-state-mark'),
+        `${v.display_name} marks a deliberate withholding as an unwritten absence`,
+      ).toBe(false);
+    }
+  });
+
+  test('G35b the zero-result state exists, is hidden at rest, and is credited once', () => {
+    test.skip(!existsSync(DIST), 'no dist/ — site not built');
+    const html = readIndex();
+
+    // The second half of the slot (ADR-053 names both "zero-result AND planned-vault states").
+    const block = html.match(/<section class="vaults-empty"[^>]*>/)?.[0] ?? '';
+    expect(block, 'the zero-result block is not in dist/').not.toBe('');
+    expect(/\bhidden\b/.test(block), 'the zero-result block is not hidden at rest').toBe(true);
+    expect(html.includes('Nothing matched'), 'the zero-result block has no text equivalent').toBe(true);
+
+    // One artifact, two scales — the cheapest proof the slot spec generalises rather than describing
+    // a single application of itself.
+    expect(
+      (html.match(/class="empty-state-mark scale-lg/g) ?? []).length,
+      'the zero-result block does not render the mark at block scale',
+    ).toBe(1);
+
+    // Credit: ONCE per surface, not once per mark (slot spec §6).
+    expect(
+      (html.match(/<p class="empty-state-credit"/g) ?? []).length,
+      'the empty-state credit is not rendered exactly once on this surface',
+    ).toBe(1);
+
+    // ⛔ The credit must not claim a generation pipeline. ADR-053 names ours as OWED, NOT BUILT and
+    // binds the property against implying otherwise until one exists.
+    const credit = html.match(/<p class="empty-state-credit"[^>]*>([\s\S]*?)<\/p>/)?.[1] ?? '';
+    expect(credit.length, 'the credit rendered empty').toBeGreaterThan(0);
+    expect(
+      /comfyui|stable.?diffusion|midjourney|generated with/i.test(credit),
+      `the empty-state credit implies a generator for a hand-drawn artifact: "${credit}"`,
+    ).toBe(false);
+    expect(/hand-drawn/i.test(credit), 'the credit does not state the artifact is hand-drawn').toBe(true);
+  });
+
+  test('G35b the credit prop is additive — a consumer that omits it renders nothing', () => {
+    test.skip(!existsSync(DIST), 'no dist/ — site not built');
+
+    /* The additive-props law (skill_documentation_layout_props_additive_extension), asserted rather
+     * than assumed. `credit` was added to DocumentationLayout's heroImage prop at P4.1 O2; every
+     * page that does not pass it must render byte-identically to before the field existed.
+     *
+     * Derived from the source, never a typed list: any page passing heroImage to DocumentationLayout
+     * is checked, so a new hero page inherits the assertion automatically. */
+    const pages = ['get-started', 'learn', 'how', 'patterns', 'reference'];
+    let optedIn = 0;
+    let optedOut = 0;
+
+    for (const p of pages) {
+      const file = join(DIST, p, 'index.html');
+      if (!existsSync(file)) continue;
+      const html = readFileSync(file, 'utf8');
+      const srcCandidates = [`src/pages/${p}.astro`, `src/pages/${p}/index.astro`]
+        .map((f) => join(SITE_ROOT, f))
+        .filter((f) => existsSync(f));
+      if (!srcCandidates.length) continue;
+      const src = readFileSync(srcCandidates[0], 'utf8');
+      if (!/heroImage/.test(src)) continue;
+
+      const declares = /credit:/.test(src);
+      const renders = html.includes('doc-hero-credit');
+      expect(
+        renders,
+        `${p}: hero credit ${renders ? 'rendered' : 'absent'} but the page ${declares ? 'declares' : 'does not declare'} one`,
+      ).toBe(declares);
+      declares ? optedIn++ : optedOut++;
+    }
+
+    // Both branches must be exercised or the law is only half-tested.
+    expect(optedIn, 'no page passes a hero credit — the opt-in branch is untested').toBeGreaterThan(0);
+    expect(optedOut, 'every hero page passes a credit — the byte-identity branch is untested').toBeGreaterThan(0);
+  });
 });

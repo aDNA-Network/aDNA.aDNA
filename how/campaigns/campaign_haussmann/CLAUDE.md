@@ -122,8 +122,12 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 
 **⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
 convention 11. **Current mission: `P4.1`** (`mission_haussmann_p4_1_token_pipeline.md`, **`in_progress`
-— ⛩ DP8 RULED 2026-08-23, O0 CLOSED, resumes at O1**; the "halt at DP8 before building" instruction is
-now **discharged**, and O1's first act is the operator-ruled **AC amendment**, not a build). Closed:
+— O0 ✅ · O1 ✅ · O2 ✅ (2026-08-24); resumes at O3**, which carries **AC4** (the VisualDNA bundle or
+the staged Pygmalion ask), the **persona ranker** on the three surfaces O2 changed, and the **AAR**.
+The "halt at DP8 before building" instruction is **discharged**; the AC amendment is `accepted` and
+**applied** — read the amended AC2/AC4/AC5 and the replaced `verification_method`, never the
+originals). ⛔ **O2 is BUILT AND VERIFIED BUT NOT DEPLOYED** — the deploy freeze below stands, and
+AC5 is recorded **MET-on-build** with deployment **named as owed**, not implied. Closed:
 P4.5a ✅ · P3.5 ✅ (08-20) · P3.1 ✅ · P3.2 ✅ (08-21, deployed) · **P3.4 ✅ (2026-08-22, deployed +
 live-verified 24/0)**. **⏸ `P3.3` remains OPEN at ⛩ O2** and is *skipped, not finished* — the npm publish is **not
 performable on this node** (no npm identity; needs an interactive operator `npm login` first), so the
@@ -166,6 +170,45 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > ⛔ **Out-of-band: F-s, a live production regression** — see convention 16. Found by this mission's
 > capture harness, escalated, restored under operator GO, red-proven 10/10. **Its first casualty was this
 > session's own evidence**: 30 green T0 captures, of the wrong build. Re-captured against a local preview.
+>
+> ✅ **P4.1 O2 COMPLETE 2026-08-24 — the `empty_state` slot, ADR-053's first NEW slot, in BOTH the
+> states its row names.** Suite **560/560** (555 + 5 G35b, **9/9 mutations red-proven**), `token_aa_check`
+> **AA PASS 0 below floor**, axe **0** × 3 surfaces × **both** themes. ⛔ **BUILT, NOT DEPLOYED** —
+> freeze re-verified at open (lemur's two commits still absent; HEAD == origin/main).
+>
+> ⛩ **Four rulings taken before building; three were defects found by re-reading the ruling against
+> the data.** ⭐ **The ruled target set was not the set the slot is about**: *"the 57 planned vault
+> cards"* — but only **52** of those 57 have any empty field, while **12 non-planned cards do**, so
+> tier-keying would mark 5 non-empty cards, miss 12 empty ones, and re-differentiate the tiers
+> **ADR-052 §tiers.2** ruled equal. **The mark keys on the absence.** That it lands on `in use` cards
+> is the visible proof it is not a stage badge. ⭐ **AC5(b) named a mechanism that cannot reach its own
+> target** (`DocumentationLayout.heroImage`, on a BaseLayout page, for a non-hero slot) — ADR-053 names
+> the **pattern**, AC5 named one **instance**; ruled **both**, and the literal field is **exercised**
+> on `/get-started` so it does not ship unexercised.
+>
+> ⭐⭐ **THE RED TEST FOUND A DEFECT IN THE SESSION'S OWN CODE THAT NO GREEN RUN COULD HAVE.** Two of
+> the three absence predicates were **decorative** — the surrounding ternary was the real guard, so a
+> mutation setting `personaAbsent = true` left the gate green *because the line it was aimed at could
+> not move*. Red-proving is usually sold as proof the fix was needed; here it proved **the code's
+> stated structure was not its actual structure**. Fixed, then 9/9. ⚠ And when the restructure made an
+> older mutation stop matching, the harness reported it as a **harness bug, not a pass** — which is
+> the whole reason the match-count assertion is there.
+>
+> ⚠ **Four more instruments wrong before the subject** (fourth session running). My own new copy put
+> **`DP8` on the only page in 225 carrying it** — caught by grepping the *built* output before
+> gate-27/gate-35 ever ran. The new gate read **raw `vault_slug`** while the page emits the ADR-051
+> canonical slug, producing two failures **indistinguishable from the tier-keying regression it
+> exists to catch** (the site was right both times). An ad-hoc capture script set only Playwright's
+> `colorScheme` and produced **a dark screenshot under a light filename** — this site's theme is a
+> `.dark` class on `<html>`. And **two typed counts** (KW-14, fifth instance) whose derivation
+> *corrected the predicate*: `heroImage`-prop pages = **9**, because `/vaults/graph` renders bespoke;
+> ADR-053's ten is right and the naive predicate was wrong.
+>
+> ⭐ **`listing: 'minimal'` is EXCLUDED and that is the honest half.** Those rows are not unwritten —
+> they are **deliberately withheld**. Marking a policy choice as an oversight is the class of defect
+> this campaign exists to retire. ⭐ **A pre-existing contrast gap was surfaced, not created**:
+> `--color-text-muted` on `--color-bg-alt` was untested while **23 files** render it; added with its
+> counted usage and red-proven (1.21:1 under mutation, exits 1).
 >
 > ⚠ **New debt: F-t — this session leaked `SS_VERCEL_TOKEN` into its transcript.** The redaction was
 > written `${VAR:+SET}${VAR:-UNSET}`; the second expansion **prints the value precisely when the variable
