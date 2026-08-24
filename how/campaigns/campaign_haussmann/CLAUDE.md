@@ -64,6 +64,31 @@ tags: [campaign_governance, haussmann]
       ⛔ **No checker is built for this, deliberately, and the restraint is the ruling.** Venus proposed one (a `resolve`-at-delivery test in the same command as the `cp`) and then declined to build it, for a reason this campaign independently holds: *three verifiers have shipped wrong on their first live run in two weeks*, and convention 14 says an instrument is not believed until it has been demonstrated to fail. A fourth authored at the tail of a wind-down would be the fourth. **The habit costs a sentence and cannot itself be wrong; the checker costs a sitting and can.** If it is ever built, it is built with its controls, in a sitting of its own.
       ⚠ **This desk was wrong about it first.** We told Venus *"we do not think this one gets a verifier either"*; they disagreed, persuasively, and the distinction that resolved it — habit now, instrument later and only with controls — is theirs, not ours.
 
+16. **Every live check in this campaign runs once, at deploy time, and nothing ever asks again — so
+    "DEPLOYED + LIVE-VERIFIED" is a statement with a timestamp, not a standing property.** On 2026-08-23
+    `adna.network` was found serving a build predating **2026-08-18**: `/api/registry.v1.json` and
+    `/vaults.json` 404 (P3.2 verified them 200 on the alias the day before), `/state-of-the-network` 404
+    in all three forms while the footer and the homepage's own `proofHref` link it, P2.1's and P2.2's
+    redirects un-fired, the P3.3 machine-door block absent. **Ten production deploys had landed that day
+    from an actor outside this vault's deploy discipline, none recorded in any `deploy_log*` fleet-wide.**
+    Full record + restore: `artifacts/p4_1/finding_live_prod_regression_20260823.md`.
+    - ⭐ **This is convention 14's sibling, and the sharper one.** 14 says *an instrument is not believed
+      until it has been demonstrated to fail*. All four of those live verifications had been demonstrated —
+      they were **honest when they ran**. The gap is that **nothing re-runs them**, so four true sentences
+      became four false ones with no event anywhere to mark the transition. **A verification with no
+      recurrence is a claim about the past wearing the grammar of the present.**
+    - ⚠ **It was found by accident**, by a capture harness pointed at production for an unrelated mission.
+      Nothing in the campaign would otherwise have noticed. And note what did *not* catch it:
+      `check_live_headers.mjs` passed **4/4 on the alias both before and after the restore** — the stale
+      build carried the same four headers. **Headers were never the thing that regressed; content was, and
+      only a content probe can see content.**
+    - **The habit, adopted here:** any session that touches `site/` **re-probes the handful of surfaces its
+      phase shipped, against the alias, before trusting a `completed` status** — it costs one `curl` loop
+      and it is how F-s was found. ⛔ **No monitor is built, deliberately** — convention 15's ruling stands
+      (the habit costs a sentence and cannot itself be wrong; the instrument costs a sitting and can), and
+      this very session authored a **fifth** wrong instrument, which is the argument for the habit.
+    - ⚠ **The cause is still unknown.** The restore is a fact with a timestamp; it is not a guarantee.
+
 ## What this campaign protects (do not regress)
 
 The honesty strata (`/about`, `/community` empty-state candor, zero-count displays) · true load-bearing numbers · hero visual quality · dark/light parity · axe-0 record · perf 97–100 · curated llms.txt · the graph keyboard-twin pattern.
@@ -73,15 +98,57 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 `missions/` — 27 files `mission_haussmann_p{0..5}_*.md`; paste-ready prompts in `missions/session_prompts_haussmann.md`.
 
 **⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
-convention 11. **Current mission: `P4.1`** (`mission_haussmann_p4_1_token_pipeline.md`, `queued` —
-halt at ⛩ **DP8**, the ADR-053 visual-voice ruling, *before* building). Closed: P4.5a ✅ · P3.5 ✅
-(08-20) · P3.1 ✅ · P3.2 ✅ (08-21, deployed) · **P3.4 ✅ (2026-08-22, deployed + live-verified
-24/0)**. **⏸ `P3.3` remains OPEN at ⛩ O2** and is *skipped, not finished* — the npm publish is **not
+convention 11. **Current mission: `P4.1`** (`mission_haussmann_p4_1_token_pipeline.md`, **`in_progress`
+— ⛩ DP8 RULED 2026-08-23, O0 CLOSED, resumes at O1**; the "halt at DP8 before building" instruction is
+now **discharged**, and O1's first act is the operator-ruled **AC amendment**, not a build). Closed:
+P4.5a ✅ · P3.5 ✅ (08-20) · P3.1 ✅ · P3.2 ✅ (08-21, deployed) · **P3.4 ✅ (2026-08-22, deployed +
+live-verified 24/0)**. **⏸ `P3.3` remains OPEN at ⛩ O2** and is *skipped, not finished* — the npm publish is **not
 performable on this node** (no npm identity; needs an interactive operator `npm login` first), so the
 sequence moved past it. Claiming "the next open mission in phase order" still lands wrong further down
 (P4.4 precedes P4.3), so read convention 11's order, not the numbering. Decade-1 leftovers:
 ~~**P0.4**~~ ✅ **CLOSED 2026-08-21** and **P2.6** (`in_progress`, awaiting ⛩ **O0b**, the
 operator-gated TTFS run) — **the only Decade-1 leftover still open.**
+
+> ⛩ **P4.1 — DP8 RULED 2026-08-23; O0 CLOSED, mission `in_progress`, resumes at O1.**
+> **ADR-053 → `accepted` at option (a)**: the visual voice is a **governed, slot-contained illustration
+> program** with a **normative five-slot table** (`hero_panel` live ×10 · `vault_card_mark` ·
+> `empty_state` · `category_mark` partly-live ×6 · `graph_frame`), a containment rule holding all other
+> chrome to Tokyo-Night type-and-colour in both themes, **normative per-artifact credit (currently
+> UNMET)**, and a generation pipeline **named as owed, not claimed to exist**.
+> **ADR-059 → `accepted` at option (c)**: adopt WebForge's **validators** (`check_aa.py`,
+> `conformance.py --strict-leak`) over the existing CSS; **pin the emission divergence**. ⛔ No
+> `tenant_adna` ceiling is derived and no token value is regenerated in this phase.
+>
+> ⭐ **THE PREMISE OF THE ADR WAS FALSE, AND CORRECTING IT CHANGED WHAT THE GATE RULED.** The stub read
+> *"The site has one excellent hero and little else carrying the style."* `[D]` There are **ten**
+> illustrated routes, **in one coherent render language** (pixel art; warm wood/brass/amber against cool
+> cyan/purple; recurring DNA-helix motif — three assets viewed at full resolution). The instrument's
+> actual definition is *"nothing **else** carries the style"* — a claim about **confinement to one slot
+> type**, not about one image. **The finding survived; the sentence did not.** So DP8 did not elect
+> whether to *invent* a program: one already existed, ungoverned, and **three of the dossier's five
+> requirements were already met** — which made option (b) "reduce to an accent" mean *removing nine live
+> surfaces*, a cost the stub's wording concealed.
+>
+> ⚠ **Convention 13 ran COMPLETE (16/16 AC×V pairs + 4 AC×AC) and found THREE failures and a structural
+> gap** — the pass's best yield yet. **AC2's stated verification cannot see AC2** (gate-25 *excludes*
+> `tokens.css`/`branding.css` by construction; Gate 4d compares WebForge's own source, which this site is
+> not compiled from). **AC2's record limb named the wrong document** (V4 said "ADR-053 record"; the
+> substrate had none — resolved by authoring ADR-059). **AC4 has no schema to instantiate**: a house
+> visual voice is `style_atmosphere`, which VisualDNA v1.0 declares *"not exercised at GA"* and ships no
+> schema file for — **a Pygmalion ask, not a local fix.** And **O2's slot applications are covered by NO
+> acceptance criterion**, so all four ACs could pass with **zero slots built**, against a definition of
+> done reading *"a system a contributor could apply to a new page."* ⛩ Operator ruled **AMEND THE ACs
+> BEFORE O1**.
+>
+> ⛔ **Out-of-band: F-s, a live production regression** — see convention 16. Found by this mission's
+> capture harness, escalated, restored under operator GO, red-proven 10/10. **Its first casualty was this
+> session's own evidence**: 30 green T0 captures, of the wrong build. Re-captured against a local preview.
+>
+> ⚠ **New debt: F-t — this session leaked `SS_VERCEL_TOKEN` into its transcript.** The redaction was
+> written `${VAR:+SET}${VAR:-UNSET}`; the second expansion **prints the value precisely when the variable
+> is set**. **The safe form is `${VAR:+SET}` alone.** Operator ruled *record, no rotation* (known
+> throwaway credential). ⭐ **Fifth wrong instrument in two weeks, authored inside the session auditing
+> wrong instruments** — and the first whose failure mode is disclosure rather than a false green.
 
 > ✅ **P3.4 is `completed`, DEPLOYED and LIVE-VERIFIED** (2026-08-22, `deploy_record:
 > 2026-08-23T01:45:36Z tree=5c6b22d`; probe red-proven **8 PASS / 15 FAIL** before, **24 PASS / 0
