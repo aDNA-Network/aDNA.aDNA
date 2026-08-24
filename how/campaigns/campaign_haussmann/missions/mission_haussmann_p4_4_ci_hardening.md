@@ -118,7 +118,7 @@ apart from their criteria; **P4.4a's are new**, and A0 is the reason the split e
 |---|---|---|---|
 | **A0** | **The ancestry guard (AC0 / F-u).** `inject_build_stamp.mjs` → `/.well-known/adna-build.json`; the refusal in `deploy_adna.sh` after the clean-tree guard, prod only; `--force-rollback` loud + logged; bootstrap as a dated operator-signed single act | injector + guard | — |
 | **A0v** | **V5 — red-prove it.** The 7-case matrix **including its two passing controls**; assert match counts so a stale mutation reports as a harness bug, not a pass | `alias_guard_redtest.sh` | — |
-| **A1** | **The register.** Discharge or re-route the **16 live rows**, F-o first (its drift is accelerating). Includes the four gate fixes (F-a · F-i · F-j · F-p) and the three derived-count gates (F-c · F-m · F-n) | register at zero-or-routed | — |
+| **A1** | **The register.** Discharge or re-route the **16 live rows**, F-o first (its drift is accelerating). Includes the four gate fixes (F-a · F-i · F-j · F-p) and the three derived-count gates (F-c · F-m · F-n) | ✅ **DONE 2026-08-24** — 19 rows: **13 struck**, **6 live and ALL ROUTED** (F-d·F-j → A1b · F-e → A3 · F-k → template release · F-m·F-n fenced by gate-41, fix outstanding). Seven fixed + red-proven; four closed; F-a pulled forward on an ⛩ operator ruling after measurement | — |
 | **A2** | **The three rescoped-in gate classes** (zero-console-error · off-site CTA-target · hub-substance floor) **+ the token census as a gate** (ruling 2) | gates + red-tests | — |
 | **A3** | ⛩ **Deliver the Vitruvius ask** (ruling 3) + AAR | memo + AAR | ⛩ operator (outward act) |
 
@@ -253,6 +253,83 @@ A pixel regression, a header drift, a budget breach, or a field-CWV red each fai
 > Open this mission + campaign CLAUDE.md + the toolkit table (plan §Inspection-toolkit) + `idea_visual_regression_gate.md`. Execute O0, O2; O1 needs the operator's dashboard action; then O3.
 
 ## Progress
+
+### 2026-08-24 — ✅ P4.4a A1 COMPLETE. The register went 16 live → 6, all six routed.
+
+**Session** `session_stanley_20260824_230056_haussmann_p4_4a_a1_register` (resumed after a context
+crash; the predecessor's work was committed before the crash and nothing was lost).
+**Commits** `3cc659f` · `ffcc0f3` · `0c97af3`.
+
+| Row | Disposition | Evidence |
+|---|---|---|
+| `F-o` | ✅ fixed | `machine_eye_item11_probe.mjs`, red-proven **12/12** |
+| `F-p` | ✅ fixed | `gate-17` guards on routes, red-proven **10/10** |
+| `F-i` | ✅ fixed | `gate-27` scans `.json`, red-proven **11/11** |
+| `F-f` | ✅ fixed | `check_live_headers` compares values, red-proven **10/10** |
+| `F-c` | ✅ fixed | `gate-41` G41b + register §15.1 |
+| `F-a` | ✅ fixed | `gate-4` + `best-practice`, red-proven **6/6** — ⛩ pulled forward |
+| `F-u` · `F-g` · `F-l` · `F-r` | ✅ closed | AC0 · comment corrected · doctrine §6.10 · convention 17 |
+| `F-m` · `F-n` | ⛩ **fenced, NOT fixed** | `gate-41` G41c/G41d, dated ratchets |
+| `F-e` → A3 · `F-k` → template release · `F-d` · `F-j` → A1b | ⛩ routed | destinations named on each row |
+
+> ⚠ **THE TABLE ABOVE SPELLS ITS ROW IDS IN BACKTICKS, NOT BOLD, AND THAT IS DELIBERATE — F-q's
+> class, recurring inside the commit that closes the register.** Written first in the register's own
+> `| **F-x** |` shape, this summary made the canonical derivation
+> (`grep -cE '^\| \*\*F-[a-z]\*\*'`) read **26 total / 13 live** instead of **19 / 6**: the
+> record of the counts had become part of what the count counts.
+>
+> ⭐ **That is precisely the shape F-q named** — *an instrument whose OUTPUT changes its own INPUT
+> cannot hold a baseline* — and F-q was **struck as discharged four rows above**, in this same
+> session, on the grounds that its instance was gone. **The instance was gone; the class was not.**
+> Same session, one level up: the earlier one was a gitleaks baseline that rose each time an agent
+> documented why the scan was clean; this one is a debt tally that rose because the debt was
+> summarised in the debt register's own grammar.
+>
+> ⇒ **A derivation is only as specific as the grammar it keys on.** Keeping the `| **F-x** |` shape
+> unique to the register costs one character per row and keeps every count in this campaign
+> reproducible. **Do not restore bold here.**
+
+
+**Verification `[D]`** — suite **578/578** (574 + gate-41's 4, derived; no other spec moved) ·
+`alias_guard_redtest` **13/13** · `token_census_redtest` **10/10** · `astro check` **26 errors**
+(F-j's baseline, re-measured, unchanged) · alias re-probe `/` `/vaults.json`
+`/api/registry.v1.json` `/state-of-the-network/` all **200**, `/.well-known/adna-build.json` **404**
+(the documented pre-bootstrap state) · ⛔ **freeze re-verified at open AND close** — `30c8163` and
+`f4fa9c5` both `fatal`.
+
+#### ⭐ The three findings worth carrying
+
+1. **The obvious repair for F-o would have re-created F-o.** Counting capability tokens instead of
+   the substring `mcp` fails, because `/.well-known/mcp.json` returns **1 hit on a site with no MCP
+   server** — the changelog says the endpoint 404s. **This site's honesty stratum guarantees it
+   names its own absent capabilities in prose**, so every text probe finds the disclosure of absence
+   and scores it as presence. *The better the site's honesty, the more false the text limb.* No
+   filter repairs a probe whose signal and noise are the same string ⇒ **retirement, not filtering**.
+
+2. **Two rows had TYPED what they should have DERIVED, and both would have shipped red.** F-i named
+   three enums; the derivation found **seven**. F-a estimated *"will surface pre-existing
+   violations"*; the measurement found **zero**, and that estimate had deferred a one-line change
+   for **four missions**. ⇒ **KW-14 applies to a row's own scope claim, not only to what a page
+   narrates** — and *measure the cost before paying the caution*.
+
+3. **Three instruments reported a PRECONDITION failure in the vocabulary of a SUBJECT failure.**
+   The F-o harness read 5/12 with the probe correct throughout (**Docker held the port**; the
+   readiness check accepted *"something answers"* as *"my server is up"*). `alias_guard_redtest`
+   read **10/13** with the guard correct throughout (**deploy_adna.sh's clean-tree guard** firing on
+   this session's own uncommitted file). A `-g` fragment containing regex parens matched no test and
+   reported as a failure. **None of the three was a wrong instrument** — each was a correct
+   instrument whose failure vocabulary could not distinguish *"I could not run"* from *"the thing is
+   broken"*. Both harnesses now assert identity/preconditions up front.
+
+⚠ **A1b's scope, named rather than discovered:** F-j (**26 errors**, re-measured; a real editing
+session, not a gate fix) and F-d (**needs design**, and is **downstream of convention 17** — an
+absence assertion that does not name its surface cannot express what F-d asks for). Plus **F-m's
+index backfill** and **F-n's MANIFEST content review**, neither of which a green `gate-41` implies.
+
+⏭ **NEXT = A2** — the three rescoped-in gate classes (zero-console-error · off-site CTA-target
+*(regression guard, not discovery)* · hub-substance floor F19). Ruling 2's token census already
+shipped as `gate-40`. Then **A3** — ⛩ the Vitruvius ask + AAR.
+
 
 ### 2026-08-24 — ⛩ AMENDMENT SIGNED · P4.4a A0 + A0v COMPLETE · ruling 2 shipped
 

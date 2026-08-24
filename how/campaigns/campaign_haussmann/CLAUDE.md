@@ -172,7 +172,13 @@ is the record).
 > 27** — the split is **in-file**, on the P4.5a/P4.5b precedent, so convention 11's ruled order is
 > unchanged.
 >
-> **P4.4a** — *deploy safety + the debt* (`opus`, ~280–420 kT) — **OPEN at AC0**. AC0 + V5, the 16 live
+> **P4.4a** — *deploy safety + the debt* (`opus`, ~280–420 kT) — **OPEN at A2.** ✅ **A0 · A0v ·
+> ruling 2 · A1 all COMPLETE** (2026-08-24; `4a9bc09` · `ff4ad51` · `3cc659f` · `ffcc0f3` ·
+> `0c97af3`). **The debt register is discharged-or-routed: 19 rows, 13 struck, 6 live and every one
+> of the six carries a named destination** — F-d · F-j → A1b · F-e → A3's Vitruvius ask · F-k → the
+> next `skill_template_release` · **F-m · F-n FENCED by `gate-41`, not fixed** (a ratchet is not a
+> discharge, and a green there means only *it has not got worse*). Suite **578/578**, derived.
+> ⏭ **NEXT = A2**, the three rescoped-in gate classes. **Originally OPEN at AC0.** AC0 + V5, the 16 live
 > register rows, the three rescoped-in gate classes + the token census, the derived-count gates
 > (F-c · F-m · F-n) and the gate fixes (F-a · F-i · F-j · F-p). **No external dependency.**
 > **P4.4b** — *the three new systems* (`sonnet`, ~250–400 kT) — **not started**. AC1–AC4.
