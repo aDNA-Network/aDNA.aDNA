@@ -88,12 +88,33 @@ const jsonLD = [
     <span>20 sections</span>
   </p>
 
+  {/* HAUSSMANN P4.2 O3 — F19 thin-hub treatment. This hub was created by P2.3's own spec split and
+      arrived as the thinnest page of the four (h2=0, bodyLen 927): a contents page with no
+      structure of its own. The sections below document behaviour that already exists and was
+      invisible — how to choose between the two reading surfaces, how to cite, and the fact that old
+      deep links forward themselves. That last one is real, implemented in the inline script at the
+      bottom of this page, and until now a reader had no way to know it. */}
   <p>
     <strong>Agentic DNA (aDNA)</strong> — a knowledge architecture standard for AI-native projects.
     Read it a section at a time below, or open the
     <a href="/reference/specification/full/">full specification</a> to search or cite the whole document.
   </p>
 
+  <h2 id="two-ways-to-read-it">Two ways to read it</h2>
+  <p>
+    The <strong>section view</strong> — the contents below — is the one to read. Each section is its
+    own page with its own next/previous links, which is what makes the standard readable on a phone;
+    served as a single document it ran to roughly 124,000 pixels tall, which is not a document anyone
+    reads, it is a document people scroll past.
+  </p>
+  <p>
+    The <strong><a href="/reference/specification/full/">full text</a></strong> is the citable
+    artifact. Use it when you need to search the whole standard at once, quote it, or point someone at
+    a stable URL for the document rather than for a section of it. Both are generated from the same
+    source, so they cannot disagree.
+  </p>
+
+  <h2 id="the-sections">The {sections.length} sections</h2>
   <ol class="spec-toc">
     {sections.map((s) => (
       <li>
@@ -107,6 +128,30 @@ const jsonLD = [
 
   <p class="spec-hub-full">
     <a href="/reference/specification/full/">Read the full specification on one page &rarr;</a>
+  </p>
+
+  <h2 id="old-links-still-work">Old links still work</h2>
+  <p>
+    Before the split, the whole standard lived at this URL and people linked to headings inside it.
+    Those links still land where they should: a fragment like
+    <code>#7-frontmatter-system</code> is forwarded to whichever section now owns that heading, using
+    a map built at build time from the rendered heading ids rather than guessed from the numbering.
+    An unrecognised fragment goes to the full text, where every id from the old single-page version
+    still exists.
+  </p>
+  <p>
+    With JavaScript disabled the forward does not happen and you land here, on a complete table of
+    contents with the full text one click away — degraded, not broken. Worth stating plainly because
+    a fragment is never sent to the server, so this is the only place the behaviour can be explained.
+  </p>
+
+  <h2 id="citing-and-versioning">Citing and versioning</h2>
+  <p>
+    This is <strong>v{version}</strong>. Section URLs are stable across versions — a link to a section
+    keeps working when its text changes — so cite the section URL and the version together rather
+    than relying on either alone. Changes to the standard go through the public
+    <a href="/community/proposals/">proposal process</a>, and the
+    <a href="/changelog/">changelog</a> records what moved and when.
   </p>
 
   <script is:inline set:html={`

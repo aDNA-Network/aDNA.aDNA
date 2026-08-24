@@ -126,9 +126,15 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 `missions/` — 27 files `mission_haussmann_p{0..5}_*.md`; paste-ready prompts in `missions/session_prompts_haussmann.md`.
 
 **⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
-convention 11. **Current mission: `P4.2`** (`mission_haussmann_p4_2_craft_floor.md`, **`in_progress`**
-— **O0 ✅ · O1 ✅ 2026-08-24**, session `session_stanley_20260824_170854`; **⏭ resumes at O2**).
-Commits `61aff0e` · `e62a465` · `2d3f9ed`.
+convention 11. **Current mission: `P4.4`** (`mission_haussmann_p4_4_ci_hardening.md`) — the ruled
+successor to P4.2, and the holder of **F-u**, the deploy freeze's release condition. Confirm from its
+own `status:` before claiming it (this line has gone stale four times; the artifact is the record).
+
+**✅ `P4.2` CLOSED 2026-08-24** (`mission_haussmann_p4_2_craft_floor.md`, **`completed`** with AAR per
+SO#5 — O0 ✅ O1 ✅ O2 ✅ O3 ✅, all six criteria met). Commits `61aff0e` · `e62a465` · `2d3f9ed` ·
+`ae28fe9` · `e2fca67`. Lock census **enforced 8 → 13 · gap 29 → 24 · rung1a 6 → 11**; suite
+**560 → 571**. ⛔ **BUILT, NOT DEPLOYED** — the **second** mission accumulating unshipped work behind
+the freeze, said here rather than left to be inferred from a `completed` status that cannot express it.
 
 > ⛩ **THE ACs WERE AMENDED AND OPERATOR-SIGNED BEFORE ANY BUILD** (`artifacts/p4_2/
 > ac_amendment_proposal.md`, `accepted`). The convention-13 pass ran **30/30 pairs with its coverage
@@ -198,6 +204,53 @@ Commits `61aff0e` · `e62a465` · `2d3f9ed`.
 > stands (**F-u**); lemur's `30c8163` + `f4fa9c5` re-verified absent at session open. Suite
 > **560/560**, gitleaks **877 commits no leaks**. Said here rather than left to be inferred, which is
 > the condition P4.1's AAR attached to this mission.
+>
+> ✅ **O2 + O3 COMPLETE 2026-08-24, MISSION CLOSED** (session `session_stanley_20260824_190604`).
+> Locks **A5 · B4 · J1 · A2 · I3** enforced (census **8 → 13**, gap **29 → 24**, rung1a **6 → 11**);
+> `/design-system` on `DocumentationLayout` with a TOC and the diagram rules at `#diagram`; component
+> census **30/30**; thin hubs **4/4** to a **derived** budget. Suite **571/571** · html-validate **0** ·
+> axe **0** across 5 surfaces × 3 viewports × both themes · `craft_floor_redtest.sh` **11/11**
+> (9 mutations + 2 controls) · gitleaks **880 commits, no leaks**.
+>
+> ⭐⭐ **TWO OF THE CENSUS'S OWN FINDINGS WERE FALSE, AND BOTH WERE CAUGHT BY RE-VERIFYING AT THE
+> OBJECT BEFORE BUILDING AGAINST THEM.** B3/E4 (above) and **F20**: *"`JetBrains Mono Variable`
+> reports `document.fonts` state `error` on every page"* had stood untested since 08-19 — probed
+> across 4 routes × both themes, **errors 0/0 every time**. The observable that reads as the claim is
+> `unloaded: 5`, the *correct* state for five subsets whose `unicode-range` matches no glyph, and
+> **Inter and Space Grotesk show the identical shape** — the control was sitting in the same
+> FontFaceSet the whole time. ⇒ **A census that declares coverage does not exempt itself from
+> convention 14.** The one true limb survived: *nothing watched font loading*, which is exactly how a
+> false claim about it stood for five days. `gate-38` G38c/G38d watch it now.
+>
+> ⭐ **`gate-39` found a real defect on its first run and the honest answer is that lock O1's floor is
+> NOT met.** Measuring what the lock actually names — rendered size via `sqrt(|det(CTM)|)`, never
+> `getComputedStyle` — `hero-graph-svg` paints **27/27 labels below 12px at every width** (3.5px at
+> 320); `netdiagram-svg` 7/8; `convergence-funnel` 8/8 at 320. Ships with a **dated baseline** that
+> ratchets, and **O1 stays `gap`**: a non-regression fence is not the rule, and calling it one is the
+> fake-enforcement this lock's own text warns about. `/design-system#diagram` says the floor is unmet
+> rather than letting a reader assume. Fixes routed to **P4.4**.
+>
+> ⭐ **The component census's finding: the only token family with a gate was the only one that had not
+> drifted.** Colour (gate-25) 0 findings across 30 components; font-weight — whose tokens exist and
+> whose own comment says they *"replace the scattered literal 400/500/600/700 across components"* —
+> had reached **2 of 15 files**. A migration announced in a comment is not a migration, and the
+> difference is unobservable without an instrument.
+>
+> ⭐ **The thin-hub budget is DERIVED, and the first draft of it was circular.** It invented
+> `h2 ≥ 2, bodyLen ≥ 1200` and graded four pages against it. F13 never stated a threshold — it named a
+> **counter-example** (*"/learn does the same job with a numbered path"*), so the site's own conformant
+> hubs became the budget: floor **h2 4, bodyLen 1932**, and the two groups do not overlap on either
+> axis. **KW-14 applies to the yardstick, not only to the reading.**
+>
+> ⚠ **Nine instruments wrong before the subject this session** (sixth consecutive session), every one
+> caught by its own output: a grep narrower than its conclusion · a red test whose **control** failed
+> on port reuse · a control with no diagnostics · a 5-selector probe conflating *not found* with
+> *collapsed* · a regex expecting `class` before `href` · a census flagging SVG user units · a gate
+> reading a figure's class off the wrong element · an AC6 probe selecting an `<h2>` and calling it a
+> section · and **a suppressed build error** (`> /dev/null 2>&1`) that produced a stale `dist/` and
+> surfaced as a nonsense Playwright error. ⭐ **What caught them was structure, not vigilance**:
+> mutation-applied assertions, controls, coverage floors (`measured >= 200`, never `> 0`), and
+> re-verifying at the object. The red test twice found defects **in itself** before it could test a gate.
 
 **✅ `P4.1` CLOSED 2026-08-24** (`mission_haussmann_p4_1_token_pipeline.md`, **`completed`** with AAR
 per SO#5 — O0 ✅ O1 ✅ O2 ✅ O3 ✅, **all five criteria met**). ⛔ **O2 IS BUILT AND VERIFIED BUT STILL

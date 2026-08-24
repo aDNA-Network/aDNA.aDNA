@@ -25,6 +25,22 @@ const jsonLD = buildCollectionPageJsonLD({
   jsonLD={jsonLD}
   heroImage={{ src: heroPatterns, alt: 'Isometric pixel-art map of modular vault-blocks linked by glowing cyan and purple seams — reusable aDNA patterns' }}
 >
-  <p>8 proven patterns that solve recurring challenges in aDNA projects. Each pattern describes the problem, the solution, and where to find a working example in this vault.</p>
+  {/* HAUSSMANN P4.2 O3 — F13/F19 thin-hub treatment (was h2=0, bodyLen 1,507). The count in the
+      lead is DERIVED from the collection, not typed: `cards.length`. The first draft of this page
+      hardcoded "8", which is the KW-14 class and would have gone quietly wrong the moment a ninth
+      pattern landed. */}
+  <p>{cards.length} patterns that solve recurring challenges in aDNA projects. Each describes the problem, the solution, and where to find a working example in this vault.</p>
+
+  <h2 id="what-a-pattern-is">What a pattern is here</h2>
+  <p>A pattern is a shape that recurs, named so it can be discussed and reused. It sits between a <a href="/learn/concepts/">concept</a> — which explains what something <em>is</em> — and a procedure, which tells you what to <em>do</em>. A pattern tells you what tends to <em>work</em>, and when it does not.</p>
+  <p>Patterns here are descriptive rather than prescriptive. Each one was extracted from something this vault or a peer vault actually built, which is why every pattern carries a worked example: if we could not point at an instance, it was an idea and not yet a pattern.</p>
+
+  <h2 id="how-to-read-one">How to read one</h2>
+  <p>Every pattern follows the same four moves: the <strong>problem</strong> it recurs in response to, the <strong>solution</strong> shape, a <strong>worked example</strong> in a real vault, and the <strong>trade-off</strong> — what you give up by adopting it. Read the trade-off first if you are choosing between two patterns; it is usually the part that decides.</p>
+
+  <h2 id="the-patterns">The patterns</h2>
   <CardGrid cards={cards} columns={2} />
+
+  <h2 id="proposing-one">Proposing a pattern</h2>
+  <p>Patterns are added through the same public proposal process as any other change to the standard — see <a href="/community/proposals/">proposals</a>. The bar is the one above: a pattern needs an instance somewhere before it can be named here. A shape observed once is a coincidence; the proposal is where you argue it is not.</p>
 </DocumentationLayout>

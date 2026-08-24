@@ -51,14 +51,31 @@ locks:
   - id: A2
     coverage:
       adna_site:
-        status: gap
-        sequenced: P4.2 O3 (F20)
-        detail: >-
-          F20, open since 2026-08-19 and still untested: `JetBrains Mono Variable` reports
-          `document.fonts` state `error` on every page, declared at `src/styles/tokens.css:120-126`
-          with `format('woff2-variations')`. `font-display: optional` makes the failure silent. No
-          gate watches font loading OR the console. O3 tests the format hypothesis rather than
-          assuming it.
+        status: enforced
+        by: site/tests/gates/gate-38-layout-invariants.spec.ts
+        anchor: "G38c font-delivery: every as=font preload resolves to a bundled woff2, no external host"
+        note: >-
+          ENFORCED at P4.2 O3 against the lock's ACTUAL rule — "every as=font preload resolves; brand
+          fonts bundled woff2" — read from the upstream matrix rather than from the census's summary of
+          it. G38c is a static scan of every built page: 3 preloads on each, all `/_astro/*.woff2`, all
+          `type="font/woff2"`, all present in `dist/`, and no page reaching an external font host. It
+          asserts a preload was found at all, so it cannot pass vacuously. G38d is the companion
+          browser limb (no @font-face in the `error` state, 2 routes). Red-proven: case 5 repoints a
+          preload at a missing file, case 6 breaks a JetBrains `src` in the built CSS; both red,
+          control green (`scripts/craft_floor_redtest.sh`, 6 mutations + 1 control, 7/7).
+          ⭐ F20 IS STRUCK — TESTED AND FALSE, which is why the cell says preloads rather than fonts.
+          The claim was "`JetBrains Mono Variable` reports `document.fonts` state `error` on every
+          page", blamed `[I]` on the non-standard `format('woff2-variations')` keyword, and had stood
+          untested since 2026-08-19. Probed across 4 routes × both themes: **errors 0/0 every time**,
+          `document.fonts.status: loaded`, `check()` true, no failed font requests, and code renders
+          in JetBrains. The observable that reads as the claim is `unloaded: 5` — the CORRECT state
+          for five subsets whose `unicode-range` matches no glyph on the page. The control is in the
+          same FontFaceSet: Inter and Space Grotesk show the identical unloaded/loaded shape, and if
+          `unloaded` meant `error` the whole site would be rendering in system fonts. The duplicate
+          latin face is also deliberate, not a bug — `tokens.css` overrides the package's
+          `font-display: swap` to `optional` and says so.
+          ⚠ The one true limb of the old text survives and is why G38d exists: NOTHING WATCHED FONT
+          LOADING, which is precisely how a false claim about it could stand for five days.
 
   - id: A3
     coverage:
@@ -95,7 +112,7 @@ locks:
           `--header-height` is MEASURED (69px, identical at 375/768/1024/1280/1920 across four
           routes), not chosen. The gate re-measures the rendered header on every run rather than
           trusting that token, and asserts the header is still `sticky` so its own premise cannot
-          evaporate silently. Red-proven: `scripts/gate38_redtest.sh`, 4 mutations + 1 control, 5/5.
+          evaporate silently. Red-proven: `scripts/craft_floor_redtest.sh`, 6 mutations + 1 control, 7/7.
           ⚠ Removing the two page-local `scroll-margin-top` rules on `commons.astro` was REQUIRED,
           not tidying — scroll-padding and scroll-margin COMPOSE, so leaving both would have
           over-scrolled those sections by ~165px instead of ~85px.
@@ -157,7 +174,7 @@ locks:
           B4 asks whether it equals or exceeds the sum of the sticky chrome. The `toBeGreaterThanOrEqual`
           against the freshly measured `.header` height is B4's limb, and the red test aims a mutation
           at each separately (case 1 deletes the rule → A5; case 2 shrinks `--header-height` to 1rem,
-          leaving a real offset that is simply too small → B4). Both red, control green.
+          leaving a real offset that is simply too small → B4). Both red, control green (7/7 overall).
           ⚠ Only ONE piece of sticky chrome exists today, so "the sum" is a sum of one.
           `DocumentationLayout` has two further `position: sticky` elements (the sidebar and the TOC
           rail) but neither sits ABOVE the scroll target, so neither adds to the offset. If a sticky
@@ -518,13 +535,28 @@ locks:
   - id: I3
     coverage:
       adna_site:
-        status: gap
-        sequenced: P4.2 O3 (with the thin-hub work — same outline concern)
-        detail: >-
-          Documentation pages carry a sidebar section-nav (`SidebarNav.astro`, `aria-label`
-          "Documentation sections") and a breadcrumb. Nothing asserts their captions stay OUT of the
-          page heading outline. Adjacent to F19/F13: the thin hubs are an outline problem measured
-          from the other end.
+        status: enforced
+        by: site/tests/gates/gate-38-layout-invariants.spec.ts
+        anchor: "G38e outline-purity: documentation chrome contributes no headings to the page outline"
+        note: >-
+          Enforced at P4.2 O3. A static scan of every built page asserting that four documentation
+          chrome regions — `.sidebar-nav`, `.doc-toc`, `.doc-mobile-nav` and the breadcrumb — contain
+          no `<h1>`-`<h6>`. The site already conformed: SidebarNav captions are
+          `<p class="group-label">` and `<summary class="subgroup-label">`, TOCPanel's is
+          `<p class="toc-title">`. Nav captions are LABELS, not sections; as headings they would put
+          "Documentation sections" into the outline a screen-reader user navigates by. The gate
+          asserts it actually FOUND the regions, so a class rename turns it red rather than into a
+          permanent silent pass.
+          ⚠ Red-proven, and the red test found two defects in ITSELF before it could test the gate.
+          It first drew `dist/learn/index.html`, which has no expanded sidebar group at all
+          (SidebarNav's SP-2 fallback for a page outside every nav group), and aborted with MUTATION
+          DID NOT APPLY — the mutation-applied check earning its place. Then its grep looked for a
+          PARAPHRASE of the assertion message and reported STAYED GREEN for a gate that had in fact
+          gone red — a false negative in the checker of checkers. Both fixed;
+          `craft_floor_redtest.sh` case 9, 11/11 overall.
+          Sits beside AC5's thin hubs deliberately: both are the heading outline measured from
+          opposite ends — one asks whether chrome intrudes into it, the other whether the page has
+          one at all.
 
   # ── J ──────────────────────────────────────────────────────────────────────────────────────
   - id: J1
@@ -543,7 +575,7 @@ locks:
           false with nothing to say so. It is also why the red test matters more here than usual — on
           an already-conforming site a no-op assertion and a real one are indistinguishable until one
           of them is made to fail. Two mutations aimed at this cell (a planted second `<h1>`; an
-          `<h2>` moved above the `<h1>`), both red, control green.
+          `<h2>` moved above the `<h1>`), both red, control green (7/7 overall).
           ⚠ Scanning built HTML rather than the DOM means an h1 injected by client-side JS would be
           invisible to this gate. Nothing on this site does that today; if something starts, the cell
           needs a browser limb.
@@ -636,25 +668,46 @@ locks:
     coverage:
       adna_site:
         status: gap
-        sequenced: P4.2 O3 (with the diagram construction rules — AC4)
+        sequenced: P4.4 (the fixes) — the INSTRUMENT landed at P4.2 O3
         detail: >-
-          The site commits figures with a typeset layer — the SSR network graph carries ≥30 real
-          `<text>` node labels (`gate-22`) — and nothing measures their RENDERED size, overlap, or
-          rotation at any width. This lock's own history is the warning: it read `enforced` upstream
-          for a whole round while 48 of 48 badge `tspan`s sat below the floor. Landing it beside AC4
-          is deliberate: construction rules a contributor can follow, and a floor that checks them.
+          ⛔ STILL A GAP, DELIBERATELY, AND THE REASON IS THIS LOCK'S OWN RULE TEXT. `gate-39` now
+          measures exactly what the lock names — every `text, tspan` in a committed figure, rendered
+          size via `sqrt(|det(CTM)|)` and never `getComputedStyle`, at 320/390/1024/1440/1920 in both
+          appearances, plus overlap, clipping and the ±30° running-text clause. It found the floor is
+          NOT met: `hero-graph-svg` 27/27 labels below 12px at EVERY width (3.5px at 320, never better
+          than 7.1px at 1920) · `netdiagram-svg` 7/8 at 320 and 7/8 at desktop on /network/ ·
+          `convergence-funnel` 8/8 at 320. The gate therefore ships with a DATED BASELINE (gate-25's
+          allowlist idiom): each figure pinned at its current worst case, hard-failing any unlisted
+          figure and any regression, ratcheting as each one is fixed. Red-proven both ways —
+          `craft_floor_redtest.sh` cases 7 and 8.
+          ⚠ A NON-REGRESSION FENCE IS NOT THE RULE, so this cell is not `enforced`. Marking it so
+          would be precisely the fake-enforcement this lock's own text warns about — "a gate that
+          enumerates a SUBSET of its rule's domain is a fake enforcement even when its code is real" —
+          and this lock read `enforced` upstream for a whole round in exactly that state.
+          The remedy is design work, not a font-size bump: these are SVGs authored in a viewBox and
+          scaled (0.28× for the hero graph at 320px), so clearing the floor needs a portrait twin, a
+          min-width with scroll, or a redraw — and the homepage hero graph is a campaign-protected
+          surface. Rules a contributor can follow are published at /design-system#diagram, and that
+          page states plainly that the floor is currently unmet rather than letting a reader assume.
 
   - id: O2
     coverage:
       adna_site:
         status: gap
-        sequenced: P4.2 O3 (with AC4)
+        sequenced: P4.3 (a11y manual) — the RULE landed at P4.2 O3
         detail: >-
-          The TEXT-RECOVERABILITY limb largely holds and is genuinely good — `gate-22` proves the
-          topology is an inline `role="img"` SVG with an accessible title, real selectable labels, and
-          that it renders with JavaScript disabled; the audit sweep proves the Mermaid keyboard
-          node-twin is focusable. What is NOT asserted is the lock's second half: that every graph
-          ABSENT from a figure is a stated category rather than a silent omission.
+          The TEXT-RECOVERABILITY limb holds and is genuinely good — `gate-22` proves the topology is
+          an inline `role="img"` SVG with an accessible title, real selectable labels, and that it
+          renders with JavaScript disabled; the audit sweep proves the Mermaid keyboard node-twin is
+          focusable. P4.2 O3 published the second limb as a RULE at /design-system#diagram ("every
+          graph a figure omits is a stated category, not a silent omission; a network diagram showing
+          ten vaults out of seventy-four is honest, the same diagram unlabelled is a claim that the
+          network has ten"), and `gate-39`'s G39e asserts that rule stays present and reachable from
+          the page's own table of contents.
+          ⚠ STILL A GAP, because a published rule is not an enforced one and that distinction is what
+          this whole document is for. Whether a given figure's description ACTUALLY states what it
+          omits is a judgment about meaning — the same class as B3/E4's "is the announcement useful"
+          — and it belongs to the human instrument at P4.3/P5.1, not to a grep.
 
   # ── Q ──────────────────────────────────────────────────────────────────────────────────────
   - id: Q1

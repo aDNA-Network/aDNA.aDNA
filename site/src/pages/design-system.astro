@@ -138,6 +138,7 @@ const headings = [
   { depth: 2, slug: 'radius', text: 'Radius & elevation' },
   { depth: 2, slug: 'components', text: 'Components' },
   { depth: 2, slug: 'illustration', text: 'Illustration slots' },
+  { depth: 2, slug: 'diagram', text: 'Diagram construction' },
 ];
 ---
 
@@ -387,6 +388,98 @@ const headings = [
           be trusted to still describe the thing it documents.
         </p>
       </Callout>
+    </section>
+
+    {/* HAUSSMANN P4.2 O3 · AC4 — the DIAGRAM half only.
+        P4.1 O2 already published the illustration half above (the five-slot table, the no-sixth-slot
+        rule, the four contributor rules for applying a mark). Re-deriving that here would be
+        duplicated work landing on a protected section — see finding F-12, which narrowed AC4's real
+        scope to what is genuinely absent: how to DRAW a conformant diagram.
+
+        Every rule below is DERIVED from the diagrams already committed — ConvergenceFunnel,
+        TriadDiagram, NetworkDiagram, MermaidDiagram, hero_graph.svg, vaults_graph.svg and the six
+        category icons — not invented for this page. Where the existing set disagrees with itself,
+        the section says so rather than picking a winner silently. */}
+    <section class="ds-section" aria-labelledby="diagram">
+      <h2 id="diagram">Diagram construction</h2>
+
+      <p>
+        A <strong>diagram</strong> is a figure that carries information: nodes, edges, a funnel, a
+        graph. It is not an <a href="#illustration">illustration</a> — illustration is contained to
+        the five slots above and is about atmosphere; a diagram is about a claim, and is held to
+        whether a reader can read it. These rules are derived from the diagrams this site already
+        ships, so following them produces something that looks like the rest of the site rather than
+        merely something that is allowed.
+      </p>
+
+      <h3>Stroke and fill</h3>
+      <p>
+        Structural strokes are <strong>1.4–2 user units</strong>, and 1.6 is the house default — the
+        weight the funnel bands, the triad edges and the triad nodes all use. Node fills are
+        <code>var(--color-bg)</code> so a node knocks out the edges passing behind it; that is what
+        keeps a graph readable without a halo or a shadow.
+      </p>
+      <p>
+        <strong>Colour comes from <code>currentColor</code>, never from a hex value and never from a
+        theme query.</strong> This is the whole dual-theme mechanism: a diagram inherits the text
+        colour of the container it sits in, so it themes for free and cannot fall out of step with
+        the page around it. A diagram that needs a second colour takes it from a
+        <code>--color-*</code> token, and a diagram that needs a third is usually a diagram that is
+        trying to say too much.
+      </p>
+
+      <h3>Grid and scale</h3>
+      <p>
+        Draw into a <code>viewBox</code> and let the figure scale — 320×320, 320×280, 640×384 and
+        340×440 are the sizes in use. Keep the composition centred on a round number (160 is the
+        house centre) so a contributor can place a node without solving for it.
+      </p>
+      <p>
+        <strong>The trap is type.</strong> Inside a <code>viewBox</code>, <code>font-size="14"</code>
+        is 14 <em>user units</em>, not 14 pixels: at 320px wide a 640-unit figure paints that label at
+        7px. Every label must clear <strong>12 CSS px as rendered</strong>, at 320 · 390 · 1024 · 1440
+        · 1920, in both themes. Measure it in a browser from the transform matrix — a computed style
+        reports the authored number and is blind to the scale.
+      </p>
+
+      <Callout variant="warning" title="This rule is not met today">
+        <p>
+          All three of this site's committed diagrams currently fail that floor, and the worst renders
+          its labels at 3.5px. The measurement now runs on every build (<code>gate-39</code>) with each
+          figure pinned at its current worst case, so nothing gets worse and no new figure inherits the
+          exemption — but the existing three are a real, open debt, not a passing grade. It is recorded
+          here rather than left for a reader to discover by squinting.
+        </p>
+      </Callout>
+
+      <h3>Every diagram carries a text equivalent</h3>
+      <p>
+        A diagram is <code>role="img"</code> with <code>aria-labelledby</code> pointing at a
+        <code>&lt;title&gt;</code> and a <code>&lt;desc&gt;</code> inside the SVG. The
+        <code>&lt;title&gt;</code> names the figure; the <code>&lt;desc&gt;</code> <em>is</em> the
+        explanation, not a restatement of the title. The test is whether someone who cannot see the
+        figure gets the same claim from the description — if the description only says what the
+        picture looks like, it has not been written yet.
+      </p>
+      <p>
+        Add a <code>&lt;figcaption&gt;</code> when the figure needs a caption a sighted reader should
+        also see. Interactive figures need more: the relationship graph ships a keyboard-navigable
+        twin, because a node you can only reach with a pointer is a node some readers cannot reach.
+      </p>
+
+      <h3>What a diagram may leave out</h3>
+      <p>
+        A figure may show a subset — most useful figures do. What it may not do is let the subset pass
+        for the whole. <strong>Every graph a figure omits is a stated category, not a silent
+        omission</strong>: say what is not shown, in the description or the caption, in the figure's
+        own voice. A network diagram showing ten vaults out of seventy-four is honest; the same
+        diagram unlabelled is a claim that the network has ten.
+      </p>
+      <p>
+        The same rule governs data: a diagram encodes nothing its text layer does not also say. If a
+        node's colour means something, the meaning is written down somewhere a reader can reach
+        without the colour.
+      </p>
     </section>
   </div>
 </DocumentationLayout>

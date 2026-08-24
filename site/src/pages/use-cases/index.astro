@@ -25,10 +25,22 @@ const jsonLD = buildCollectionPageJsonLD({
   description="Illustrative aDNA adoption scenarios across solo developers, startups, research labs, and enterprises."
   jsonLD={jsonLD}
 >
+  {/* HAUSSMANN P4.2 O3 — F13/F19 thin-hub treatment (was h2=1, bodyLen 1,530). The honesty
+       framing was already the best thing on this page; it was just doing its work inside a Callout
+       with no section around it. Structuring it makes it findable rather than incidental. */}
   <p>See how different kinds of teams and individuals could use aDNA to organize their work. Each scenario follows an <strong>illustrative</strong> persona through a concrete deployment.</p>
+
+  <h2 id="illustrative-not-case-studies">Illustrative, not case studies</h2>
   <Callout variant="info" title="Illustrative scenarios">
     <p>These personas are composite archetypes, not real named adopters — they show the shape of a deployment, not a case study. For real, cited subnetworks running on aDNA today, see <a href="/commons/">the commons</a>.</p>
   </Callout>
+  <p>The distinction is load-bearing and we would rather lose the persuasive version of this page than blur it. A case study reports what someone did; a scenario shows what a deployment looks like. Only one of those is evidence, and pages that quietly present the second as the first are the reason the first is worth anything.</p>
+
+  <h2 id="how-to-read-a-scenario">How to read one</h2>
+  <p>Each scenario names a starting situation, the vaults the persona ends up with, and the decisions that got them there. The useful part is usually the <em>shape</em> — how many vaults, where the boundaries fall, what stays local — because that is the part that transfers. The specific tools and counts will not match your situation and are not meant to.</p>
+  <p>If none of them fits, that is a legitimate outcome rather than a gap in your understanding: aDNA is a structure for organising context, and plenty of real deployments look like none of these four.</p>
+
+  <h2 id="the-scenarios">The scenarios</h2>
   <CardGrid cards={cards} columns={2} />
 
   {/* Storyweave P3 / M3.2 — wire the on-ramp: the scenarios are illustrative, but the path is real.

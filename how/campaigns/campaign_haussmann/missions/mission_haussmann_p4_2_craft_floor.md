@@ -1,16 +1,16 @@
 ---
 plan_id: mission_haussmann_p4_2_craft_floor
 type: plan
-title: "P4.2 — Craft-floor conformance: the 57 locks declared, the markup debt paid, the diagram rules published"
+title: "P4.2 — Craft-floor conformance: the 60 locks declared, the markup debt paid, the diagram rules published"   # was "57 locks" — the very figure this mission corrected, left standing in its own title until the close
 campaign: campaign_haussmann
 phase: P4
 decade: 2
 owner: stanley
-status: in_progress   # 2026-08-24 session_stanley_20260824_170854 — O0 opened; convention-13 pass run FIRST (see §Convention-13 pass), AC amendment staged, ⛩ halted for signature. ⛩ DP6 RATIFIED 2026-08-19 — activated. RESCOPED UP: absorbs F19 (the thin-hub class is now FOUR instances — /reference/specification, h2=0 bodyLen 1,504, created by P2.3's own spec split) and F20 (the failing JetBrains Mono Variable face — the format('woff2-variations') hypothesis is [I] and UNTESTED; this mission TESTS it rather than assuming it). Still the only P4 mission with human_gate: false.
+status: completed   # 2026-08-24 — O0 ✅ O1 ✅ O2 ✅ O3 ✅, all six criteria met, AAR filed (SO#5). Two sessions: `session_stanley_20260824_170854` (O0+O1) and `session_stanley_20260824_190604` (O2+O3). ⛔ BUILT, NOT DEPLOYED — queued behind the standing deploy freeze, P4.4 row F-u. Prior history: DP6-ratified 2026-08-19; ACs amended + operator-signed 2026-08-24 before any build (six ACs); rescoped up to absorb F19 and F20 — F20 was TESTED at O3 and came back FALSE.
 mission_class: build
 executor_tier: sonnet
 token_budget_estimated: "~230–340 kT across 2 sessions: 57 locks + gap fixes + ~964 markup errors in 5 systemic classes + html-validate in CI + design-system regeneration + diagram construction rules, PLUS F19 (thin hubs, now 4 instances — bring to budget or merge) and F20 (test the woff2-variations hypothesis, do not assume it). Raised from ~200–300 kT at ⛩ DP6 2026-08-19 (ADR-016/SO#11)"
-token_budget_actual:
+token_budget_actual: "≈375 kT across 2 sessions (~170 O0+O1, ~205 O2+O3) against a ratified ~230–340 kT — ≈1.1–1.6×, inside ADR-016's 2× retrospective trigger. Overrun is concentrated in work the plan did not contain: two falsified census premises and a live defect gate-39 found on its first run. ⚠ Declared `executor_tier: sonnet`; both sessions ran **opus** — recorded at each open, not discovered in retrospect."
 created: 2026-08-16
 last_edited_by: agent_rosetta
 grounded_in: ["webforge P1/P2 (57 locks; coverage census mechanics; graduation offered)", "B3 #5 (964 html-validate errors, 5 classes)", "F13 (thin hubs)", "design-system-page-as-latent-bug-detector (memory)", "directive P4 (20-component sample verification; diagram rules published)"]
@@ -51,10 +51,10 @@ The site's 371 gates overlap the craft floor informally; nothing declares covera
 
 | # | Objective | Output | Gate |
 |---|---|---|---|
-| O0 | Author the site's lock-coverage declaration (57 rows; map existing gates as `by:` anchors; real `gap` rows honest) | coverage file + checker run | — |
-| O1 | Fix the 5 html-validate classes at their component sources; add to CI | clean validate | — |
-| O2 | Gap fixes from O0's dispositions; design-system page refresh + 20-component sample | fixes + sample audit | — |
-| O3 | Diagram construction rules doc (from the existing diagram set + dossier distill/OWID patterns); thin-hub treatment; AAR | rules + AAR | — |
+| O0 | Author the site's lock-coverage declaration (~~57~~ **60** rows, derived; map existing gates as `by:` anchors; real `gap` rows honest) | coverage file + checker run | ✅ |
+| O1 | Fix the ~~5~~ **11** html-validate classes at their component sources; add to CI | clean validate | ✅ |
+| O2 | Gap fixes from O0's dispositions (A5 · B4 · J1); design-system refresh + a ~~20-component sample~~ **30-component census** | fixes + census | ✅ |
+| O3 | Diagram construction rules (the DIAGRAM half only — F-12); locks O1 · O2 · I3 · A2; thin-hub treatment; AAR | rules + AAR | ✅ |
 
 ## Convention-13 pass — COMPLETE, coverage recorded (2026-08-24, before any build)
 
@@ -280,6 +280,164 @@ same session.)
 O3: the **diagram** construction rules (AC4, narrowed — P4.1 O2 already published the illustration
 half) with locks **O1 · O2**; **I3**; F19/F13 thin hubs (4 instances); F20's font test (**A2**); the AAR.
 
+### O2 ✅ COMPLETE (2026-08-24, session `session_stanley_20260824_190604`)
+
+**The gap set was read from the artifact, not the prose** (see the struck sentence above): O2 =
+**A5 · B4 · J1**, per the `sequenced:` fields, which AC1 makes the disposition of record.
+
+⭐ **B3/E4 IS FALSE AND WAS STRUCK BEFORE ANY BUILD.** `aria-live` has been at
+`vaults/index.astro:226` since **2026-07-11** (`5b9be4c`), six weeks before the census that called it
+absent, wired to the search input and both chip groups and announcing the zero case. Convention 16's
+amendment recurring inside the mission that cites it — *a negative result is only as wide as the
+command that produced it.* ⛩ Operator ruled **strike + re-disposition, build nothing**. The honest
+residue survives and is narrower: nothing *asserts* the region stays wired, and the empty-state mark
+sits outside the live region while the count line sits inside it. Both stay `gap` at **P4.3**, where
+an AT instrument can ask whether the announcement is *useful* rather than merely *present*.
+
+**A5/B4** — the real find. Fixed site-wide from a **measured** header height (69px, identical at
+5 viewports × 4 routes), one `--header-height` token, `scroll-padding-top` on `html`, and TOCPanel's
+hardcoded `-80px` repointed at the same computed value. ⚠ Removing `commons.astro`'s two page-local
+`scroll-margin-top` rules was **required, not tidying** — scroll-padding and scroll-margin *compose*,
+so the global fix would have over-scrolled the one page that had already solved the problem
+(~165px instead of ~85px).
+
+**J1** — one `<h1>`, first in the DOM, static scan of all 226 built pages. **The site already
+conformed 226/226**, which is exactly why the red test matters more here than usual: on a conforming
+site a no-op assertion and a real one are indistinguishable.
+
+**`/design-system`** → `DocumentationLayout`, fixing the ranker's weakest Findability (**3.6**).
+`noindex` rides a new optional pass-through prop (`skill_documentation_layout_props_additive_
+extension`; 130+ consumers byte-identical). The page's own `<h1>` is gone because the layout renders
+one — **gate-38's G38b, written in this same objective, fails on exactly that**. NOT added to
+`navigation.ts`: SidebarNav's SP-2 fallback is *designed* for out-of-IA pages, and an entry would
+inject a `noindex` page into every doc page's primary nav. The **Illustration slots section survives
+intact**.
+
+**Component census — 30, not a sample of 20** (⛩ operator-ruled). The derived frame is 30, so AC3's
+20 would have covered 67% of a population small enough to audit whole. Recorded as **exceeding** AC3's
+wording, never as redefining it. ⭐ **The finding: the only token family with a gate is the only one
+that had not drifted.** Colour (gate-25) 0; font-weight — whose tokens exist and whose own comment
+says they *"replace the scattered literal 400/500/600/700 across components"* — had reached **2 of 15
+files**. 26 literals → tokens across 13. "Zero rendered change" **proven, not asserted**: all 27
+`var()` references resolve. Artifact: `artifacts/p4_2/component_census.md`.
+
+### O3 ✅ COMPLETE (same session)
+
+**AC4 — the diagram half only** (F-12's narrowing), published at **`/design-system#diagram`** and
+derived from the committed set: stroke weight (1.4–2, house default 1.6), `currentColor` as the
+palette source and the whole dual-theme mechanism, viewBox grid, the rendered-12px type floor, the
+`role="img"` + `<title>`/`<desc>` text equivalent, and what a figure may leave out. **AC6's assertion
+exists**: `gate-39`'s **G39e** checks the rules are present *and reachable from the page's own TOC*,
+plus five content probes — "published" is not a verification.
+
+⭐ **LOCK O1 FOUND A REAL DEFECT ON ITS FIRST RUN, AND THE HONEST ANSWER IS THAT THE FLOOR IS NOT
+MET.** `gate-39` measures what the lock actually names — every `text, tspan`, rendered size via
+`sqrt(|det(CTM)|)` and never `getComputedStyle`, at 320/390/1024/1440/1920 in both appearances.
+Result: **`hero-graph-svg` 27/27 labels below 12px at every width** (3.5px at 320, never better than
+7.1px at 1920) · `netdiagram-svg` 7/8 at 320 and 7/8 at desktop on `/network/` · `convergence-funnel`
+8/8 at 320. Ships with a **dated baseline** (gate-25's idiom): each figure pinned at its worst case,
+hard-failing any unlisted figure and any regression, ratcheting as each is fixed. ⚠ **O1 therefore
+stays `gap`** — a non-regression fence is not the rule, and calling it one is the fake-enforcement
+this lock's own text warns about. The remedy is design work (these scale 0.28× at 320px), and the
+hero graph is a campaign-protected surface. **The page says the floor is unmet** rather than letting a
+reader assume.
+
+⭐ **F20 IS ALSO FALSE — tested, not assumed.** *"`JetBrains Mono Variable` reports `document.fonts`
+state `error` on every page"* had stood untested since 2026-08-19, blamed `[I]` on
+`format('woff2-variations')`. Probed across **4 routes × both themes: errors 0/0 every time**, fonts
+`loaded`, `check()` true, no failed requests. The observable that reads as the claim is
+`unloaded: 5` — the **correct** state for five subsets whose `unicode-range` matches no glyph;
+**Inter and Space Grotesk show the identical shape**, which is the control. **A2 is now `enforced`
+against the lock's real rule** (preload resolution + bundled woff2, G38c) with G38d watching font
+loading — because the one true limb of the old claim was that *nothing watched*, which is precisely
+how a false claim about it stood for five days.
+
+**Thin hubs — 4/4 brought to budget**, and ⭐ **the budget itself is derived, not invented**. The
+first draft picked `h2 ≥ 2, bodyLen ≥ 1200` and graded against it, which is circular. F13 named a
+**counter-example** instead — *"/learn does the same job with a numbered path"* — so the conformant
+set is the budget: `/learn /reference /community /glossary /vaults` floor at **h2 4, bodyLen 1932**,
+and the two groups do not overlap on either axis. Results: `/how` 0→4 / 659→2015 · `/patterns`
+0→4 / 1507→2659 · `/use-cases` 1→4 / 1530→2454 · `/reference/specification` 0→4 / 927→2630. Content
+is orientation a reader needs, not padding — including the spec hub's **anchor-forwarding behaviour,
+which was real, implemented, and undocumented**.
+
+**I3 `enforced`** — documentation chrome contributes no headings to the page outline, all 226 pages.
+
+**Verification**: suite **571/571** · html-validate **0** · `token_aa_check` **AA PASS** · lock census
+**PASS 60/60** (enforced **8→13**, gap **29→24**, rung1a **6→11**) · O0's checker red test **6/6** ·
+`craft_floor_redtest.sh` **11/11** (9 mutations + 2 controls) · component census **30/30** · hub depth
+**4/4** · axe **0** across 5 surfaces × 3 viewports × **both themes**, 0 console errors · luminance
+control confirms the light captures are light (236–249 vs 32–33) · gitleaks **880 commits, no leaks**.
+
+⛔ **BUILT, NOT DEPLOYED.** The freeze stands (P4.4 **F-u**); lemur's `30c8163` + `f4fa9c5` re-verified
+absent at session open. **Second mission accumulating unshipped work**, said here rather than inferred.
+
 ## AAR (SO#5)
 
-*(before completed)*
+**Worked** — **running convention 13 before the build, on a `human_gate: false` mission.** It found
+three ACs wrong at their premises and two tested by nothing, and nothing in P4.2's own definition
+would ever have stopped to ask. It also worked *twice*: the same discipline applied to the census's
+own output falsified two of its findings before either was built against.
+
+**Didn't** — **the census was trusted as an artifact when it is an instrument.** O0's three "defects
+the suite cannot see" were two; F20 was three-for-three false at its stated premise; and the O2/O3
+gap set in the mission's prose disagreed with the `sequenced:` fields it summarised. All three were
+caught only because O2 opened by re-verifying at the object (convention 12). A census that declares
+coverage does not exempt itself from the rule it exists to enforce.
+
+**Finding** — **the only token family with a gate was the only one that had not drifted.** Colour has
+gate-25 and scored 0 findings across 30 components; font-weight, whose tokens were introduced
+specifically to replace the literals and whose comment says so, had reached 2 of 15 files. Nobody
+regressed it — it simply stopped, invisibly, because each individual `font-weight: 600` looks
+ordinary and nothing was counting. The general form: **a migration announced in a comment is not a
+migration, and the difference is unobservable without an instrument.**
+
+**Change** — **derive the budget, not just the measurement.** The thin-hub work first invented
+`h2 ≥ 2, bodyLen ≥ 1200` and graded four pages against it, which is circular. F13 had named a
+counter-example rather than a threshold, so the site's own conformant hubs became the budget — and
+they separate cleanly from the thin ones on both axes, which an invented number could never have
+demonstrated. **KW-14 applies to the yardstick, not only to the reading.**
+
+**Follow-up** — **O1's three figures are a real open debt with numbers on their face**, routed to
+P4.4 with `gate-39` ratcheting so nothing worsens and no new figure inherits the exemption. Also
+owed: the component census is **advisory, not a gate** (converting it is a P4.4 candidate, named
+rather than assumed); **B3/E4 and O2's absent-graph limb need the human instrument** at P4.3/P5.1,
+not a grep; and everything O0–O3 built is **verified-not-shipped behind F-u**.
+
+### ⚠ Instruments wrong before the subject — sixth consecutive session, and the count is the point
+
+Nine this session, every one caught by its own output rather than by review:
+
+| # | Instrument | How it failed |
+|---|---|---|
+| 1 | O0's `aria-live` grep | Negative result narrower than its conclusion — the mechanism had existed for six weeks |
+| 2 | O0's F20 font claim | Read `unloaded` (correct, for an unneeded subset) as `error`; never tested |
+| 3 | `craft_floor_redtest.sh` | Reused one port across five runs; the **control** failed while the gate was green |
+| 4 | The control itself | Printed no diagnostics, so "control failed" was indistinguishable from a bind error |
+| 5 | Font-weight proof probe | 5 selectors, 2 returned `null`; pass condition conflated *not found* with *collapsed* |
+| 6 | My TOC-link regex | Looked for `class` before `href`; reported an empty TOC that had all six links |
+| 7 | Component census | Flagged 6 SVG **user-unit** font-sizes as token drift |
+| 8 | gate-39's figure identity | Read the class off the `<svg>`; `convergence-funnel` is on the `<figure>` → 6 phantom "unlisted figure" findings |
+| 9 | gate-39's AC6 probe | `#diagram` is the `<h2>`, not the section → every content check failed on a correct page |
+
+⭐ **What actually caught them was structure, not vigilance**: mutation-applied assertions, controls,
+coverage floors (`measured >= 200`, not `> 0`), and re-verifying at the object. Two more were caught
+by the red test finding defects *in itself* — a page with no expanded sidebar group, and a grep for a
+paraphrase of an assertion message rather than the message. ⚠ **And a suppressed build error** —
+`npx astro build > /dev/null 2>&1` hid a failure and produced a stale `dist/`, which then surfaced as
+a nonsense Playwright collection error. The lesson is not "be careful": it is **never redirect the
+output of the step whose success you are about to depend on.**
+
+### SO#11 — budget
+
+Estimated **~120–190 kT** for O2+O3; actual **~205 kT** (rough) — over the top of the range by ~8%,
+inside ADR-016's 2× retrospective trigger, so no retrospective is owed. Mission total ≈ **375 kT**
+against a ratified **~230–340 kT**: **~1.1–1.6×**, also inside the trigger. ⚠ The overrun is
+concentrated in work the plan did not contain: two falsified census premises, and gate-39 finding a
+live defect that had to be sized and baselined rather than fixed.
+
+⚠ **`executor_tier` divergence, recorded not buried**: the mission declares `sonnet`; both sessions
+ran **opus**. Both were judgment-heavy — a convention-13 pass, a causation test, an ADR-adjacent
+"is this a defect" ruling nine times over. P4.1's retrospective found four sessions running opus
+under `executor_tier: fable` with nobody noticing; the fix is saying so, which is done here and was
+done at each session's open.
