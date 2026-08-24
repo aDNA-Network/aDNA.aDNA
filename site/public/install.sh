@@ -33,11 +33,11 @@
 #
 set -eu
 
-VERSION="0.4.6"
+VERSION="0.4.7"
 BASE="${ADNA_INSTALL_BASE:-https://adna.network}"
 PAYLOAD="adna-installer-${VERSION}.tar.gz"
 # sha256 of ${PAYLOAD} — regenerate with ./release.sh, which prints the line to paste here.
-PAYLOAD_SHA256="8029bf68f781f8a0d3af9ebc65ae9016d081d893c3201cda8c53b532ce7609f7"
+PAYLOAD_SHA256="630c3f905d2a871bfa29243c058182a7df752c365450a658d070768fae846ce4"
 # minisign public key for the payload signature (Phase C1; keypair generated 2026-08-21,
 # secret brokered as adna_release_minisign.key on the release-cutting box). A missing or
 # bad signature is a hard refusal, never a warning.
@@ -121,8 +121,8 @@ trap 'rm -rf "$TMP"' EXIT INT TERM
 
 # ---------------------------------------------------------------- fetch + verify
 say ""
-say "  aDNA node installer ${VERSION}"
-say "  $SYM_DOT fetching payload"
+say "aDNA node installer ${VERSION}"
+say "$SYM_DOT fetching payload"
 fetch "${BASE}/${PAYLOAD}" "$TMP/p.tgz" || die NET-01 "could not download ${BASE}/${PAYLOAD}"
 
 got="$(sha256 "$TMP/p.tgz")"
@@ -134,7 +134,7 @@ fi
      expected $PAYLOAD_SHA256
      got      $got
      Do not retry blindly. Either the download was corrupted or the payload was substituted."
-say "  $SYM_OK payload verified"
+say "$SYM_OK payload verified"
 
 tar xzf "$TMP/p.tgz" -C "$TMP" || die PKG-01 "payload did not extract"
 [ -f "$TMP/adna_install.py" ] || die PKG-02 "payload is missing adna_install.py"
@@ -152,7 +152,7 @@ if [ "$MINISIGN_PUBKEY" != "MINISIGN_PUBKEY_UNSET" ]; then
         || die SIG-03 "PAYLOAD SIGNATURE FAILED — refusing to run.
      The download matched its checksum but not the release signature.
      Do not retry blindly. Report this to the person who invited you."
-    say "  $SYM_OK signature verified"
+    say "$SYM_OK signature verified"
 fi
 
 # ---------------------------------------------------------------- run
