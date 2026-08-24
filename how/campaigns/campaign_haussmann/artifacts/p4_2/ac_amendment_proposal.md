@@ -3,7 +3,7 @@ type: artifact
 artifact_type: ac_amendment_proposal
 campaign_id: campaign_haussmann
 mission_id: mission_haussmann_p4_2_craft_floor
-status: proposed          # ⛩ awaiting operator signature — authored 2026-08-24, NOT applied
+status: accepted          # ⛩ signed off AS DRAFTED — operator Stanley, 2026-08-24; applied to the mission frontmatter same-session
 created: 2026-08-24
 updated: 2026-08-24
 last_edited_by: agent_rosetta
@@ -213,6 +213,12 @@ declined to bundle it with this amendment.**
 | Field | Value |
 |---|---|
 | **Decision** | Amend P4.2's acceptance criteria as proposed above (AC1 replace · AC2 replace · AC3 replace · AC4 narrow · AC5 unchanged · **AC6 added** · `verification_method` replace) |
-| **Ratified by** | *(operator — unsigned)* |
-| **Date** | *(pending)* |
-| **Status** | `proposed` |
+| **Ratified by** | Operator (Stanley) |
+| **Date** | 2026-08-24 |
+| **Status** | `accepted` — **signed AS DRAFTED**, no modifications; applied to the mission frontmatter same-session |
+
+> ⚠ **Budget re-ratification was offered at the same gate and declined** — the operator elected the
+> amendment alone. The mission's `~230–340 kT across 2 sessions` therefore stands as a **known live
+> under-estimate**, flagged here and in the mission body rather than silently exceeded. If it overruns,
+> the SO#11 retrospective at close should read this line first: the overrun was **predicted and
+> accepted**, not discovered.

@@ -20,13 +20,21 @@ webforge_patterns: [P1, P2]
 patterns_to_author: []
 depends_on: [mission_haussmann_p4_1_token_pipeline]
 blocks: []
+# ⛩ AMENDED 2026-08-24, operator-signed — artifacts/p4_2/ac_amendment_proposal.md (status: accepted).
+# Convention-13 pass found 3 of 5 criteria wrong at their premises + 2 tested by nothing. Prior wording
+# preserved verbatim in the proposal; do not reconstruct it from memory.
 acceptance_criteria:
-  - "A lock-coverage declaration exists for the site (all 57 locks × the site surface: enforced-by/na-reason/gap — the WebForge census mechanic), with every `gap` dispositioned"
-  - "The 5 html-validate error classes fixed at their component loci (~964 errors → 0, or documented per-class exceptions); html-validate joins CI"
-  - "Design-system page regenerated + verified against the P4.1 tokens (20-component sample conformance check per the directive)"
-  - "Diagram/illustration construction rules published (so contributors can extend the language) — the D5 anchor-5 item"
-  - "Thin hubs (F13) brought to the section budget or honestly merged"
-verification_method: "lock-coverage checker + html-validate CI green + T0 design-system captures + 20-component sample audit"
+  - "AC1 — A lock-coverage declaration exists for this site as its OWN consumer-side surface (`adna_site`), covering all 60 locks of the craft floor at its live count (DERIVED from `lock_count_invariant`/`craft_floor_index`, never typed), with `enforced` cells carrying grep-verifiable `by:` + `anchor:` that survive the census rung test, `na` cells carrying an enum `reason:`, and every `gap` dispositioned via `sequenced:`/`accepted_by:`. The checker consumes WebForge's `check_lock_coverage` BY REFERENCE, substituting only the resolver seam (the P4.1 O1 precedent); the divergence is pinned in `how/federation/webforge/CLAUDE.md`"
+  - "AC2 — The html-validate error field is RE-MEASURED at execution (count derived; command + config recorded on the artifact face) and driven to zero-or-documented-exception across EVERY class, fixed at component loci not per page. Each exception lives in the committed config with its reason. `no-inline-style` is DIAGNOSED before it is dispositioned — cause tested, not assumed — and its ruling is the operator's. html-validate joins CI as a real `site/` devDependency plus a workflow step, not an ambient npx"
+  - "AC3 — The design-system page is REFRESHED IN PLACE (hand-authored; never regenerated — no generator exists) and its conformance to the P4.1 tokens is verified by `token_aa_check.py` + gate-25/G25b, with T0 captures as visual evidence rather than as the conformance test. The 20-component sample frame is declared and derived before sampling (AC6). P4.1 O2's Illustration-slots section is ADR-053-governed content and survives intact"
+  - "AC4 — The DIAGRAM construction rules are published (stroke weight, palette source, grid, dual-theme behaviour, accessible-equivalent requirement), EXTENDING the illustration rules P4.1 O2 already published at /design-system#illustration rather than replacing them, and derived from the existing diagram set. Completion is checked by a gate assertion, not by the word published (AC6)"
+  - "AC5 — Thin hubs (F13, instance count 4 not 3) brought to the section budget or honestly merged"
+  - "AC6 — Every criterion has a verification method that can move: the 20-component sample frame is declared and derived before sampling; AC4's rules are checked by a gate assertion that they are present and reachable from /design-system; AC5's thin-hub treatment is verified by the P2.6 measurement (h2 count + bodyLen per hub), re-run after the fix"
+verification_method: "consumer-side lock-coverage checker (RED-PROVEN by planted mutations before its green is believed — convention 14) + html-validate CI green-or-documented-exception + token conformance via `token_aa_check.py`/G25b + declared-frame 20-component sample audit + a gate assertion for the diagram rules + the P2.6 thin-hub measurement re-run"
+# Execution ordering the pass found (F-9/F-10/F-11): AC1's html-validate-enforced cells are written
+# LAST (a cell cannot cite a CI step that does not exist yet) · AC2 precedes AC3's sample (markup fixes
+# change /design-system's own output) · AC3 and AC4 collide on /design-system, so the protected
+# Illustration-slots section is at risk from BOTH.
 human_gate: false
 tags: [plan, haussmann, p4, craft_floor, design_system]
 ---

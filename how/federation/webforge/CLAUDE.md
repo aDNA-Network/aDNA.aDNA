@@ -97,8 +97,64 @@ mission P4.5 formalizes. Content is intentionally `honest-absent` in the seed fi
 | **P11** — Provider contract v1.2.0 (§3 intake, §4 build authority, §5 pins, §8 update protocol) | `WebForge.aDNA/what/artifacts/spec_webforge_provider_contract.md` | This wrapper *is* its §3/§5 execution |
 | **P4** — DTCG token pipeline, **VALIDATORS ONLY** (⛩ ADR-059 (c), 2026-08-23) | `WebForge.aDNA/what/lib/tokens/` (`check_aa.py`, `conformance.py` KW-10 rule) | `site/scripts/token_aa_check.py` **imports** the pair table + contrast math (never copies) and supplies its own resolver; the KW-10 colour-function rule is adopted **scoped** as gate-25 **G25b**. **Emission diverged and formally pinned** — see the section below |
 | **P5** — Art-direction register / ceiling engine | `WebForge.aDNA/what/doctrine/art_direction_register.md` | `what/context/art_direction.yaml` authored 2026-08-23 (⛩ ADR-053 (a)). WebForge's engine is `PROPOSED — not built`, so this entry is its **first live consumer test case**; implementation pressure owed back |
+| **P1 + P2** — Craft floor (**60** locks) + lock-coverage census discipline (2026-08-24, HAUSSMANN P4.2 O0) | `WebForge.aDNA/what/lib/gates/` (`lock_coverage.yaml`, `check_lock_coverage.py`) + `what/doctrine/doctrine_web_surface_craft_floor.md` | `site/scripts/lock_coverage_check.py` **imports** `check_lock_coverage` and repoints **exactly two module globals** (`VAULT`, `surface_dir`); `validate_cell`, `resolve_rung`, the rung ladder, `NA_REASONS`, `CELL_STATUSES` and `run_surface` are all used unchanged. Our declaration is `site/scripts/lock_coverage_adna.yaml` on its **own surface `adna_site`** — see the divergence below. Red-proven 6/6 (`lock_coverage_redtest.py`) |
 
 Full register (all 15 families, maturity + adoption gaps): `../../campaigns/campaign_haussmann/artifacts/webforge_pattern_register.md`.
+
+## Craft-floor census — PINNED DIVERGENCE (HAUSSMANN P4.2 O0, 2026-08-24)
+
+> **Pattern P1/P2 is adopted whole for its mechanic and diverged from in exactly one place: the
+> surface.** Contract §5 requires the divergence be recorded with its rationale and its review
+> condition, so here it is.
+
+### The divergence — we declare our own surface, we do not fill WebForge's `site` row
+
+`lock_coverage.yaml` carries a `site` row among its 14 surfaces, and P0.3 asked Vitruvius whether it
+denotes WebForge's self-site or reserves the aDNA site. **That question is still open on their
+side.** Measured here 2026-08-24: their `site` row is **60/60 cells, 28 enforced / 32 na**, with
+`by:` paths resolving inside *their* repo (`tests/a11y.spec.ts`, `tests/check_budgets.mjs`,
+`vercel.json`), and `check_lock_coverage.py --surface site` returns `Gate 4f PASS [site]`. `[D]`
+It is theirs, it is full, and it is passing.
+
+So this vault declares **`adna_site`** in its own consumer matrix. **Nothing is written into
+WebForge** (workspace Rule 10; campaign convention 4). If Vitruvius later rules the row was reserved
+for us, the merge is mechanical — the cell shape is byte-compatible because it is *their* validator
+that produced it.
+
+### The seam, and why it is two lines
+
+`check_lock_coverage.py` binds to its own tree by construction — `YAML_PATH = HERE/"lock_coverage.yaml"`,
+`VAULT = HERE.parents[2]`, `surface_dir()` resolving into WebForge, and a CLI of `--surface/--all/--log`
+with no consumer-matrix option. Because `resolve_by()` reads `surface_dir` and `VAULT` out of its own
+module namespace **at call time**, rebinding those two reaches every downstream caller without editing
+a line of their logic. That is the entire adapter, and it is the same seam `token_aa_check.py` uses for
+`check_aa`.
+
+### What is OURS and not theirs
+
+`check_lockset()` — our lock ids vs **theirs, derived from their live matrix on every run**. Not
+decoration: P4.2's AC1 was written against *"all 57 locks"* and the floor is **60**. A declaration
+three locks short is invisible to per-cell validation, because all 57 cells can be impeccable.
+
+### ⚠ Two consumer-side findings owed back to Vitruvius
+
+1. **`run_predicate` is comment-blind while `resolve_rung` is not.** The rot-hook predicate is a raw
+   regex over raw file text; the anchor ladder strips comments and *fails* an anchor that resolves
+   only in one (rung 3). So the same string, in the same file, is "not code" to one mechanism and
+   "code" to the other. Live instance: a plain `client:(load|visible|…)` predicate **fires on this
+   site**, on a comment in `DarkModeToggle.astro` that merely *describes* the component as an island.
+   Untested it would have flipped a correct `na` to `na_stale`. Our predicate matches an element
+   *usage* instead and ships with both controls.
+2. **Playwright assertion anchors can only ever reach rung 2.** `_near_report_call()` matches
+   `(check|pass|fail|warn|ok|assert|die|report)\s*\(` — Playwright's `expect(` is in none of those.
+   Every anchor of ours bound to an assertion message therefore lands rung 2 rather than rung 1p,
+   which is a *scoring* artifact of the consumer's test framework, not a weakness in the cell. Only
+   test-*title* anchors reach rung 1a here.
+
+### Review condition
+
+Re-open the surface question when **either** Vitruvius answers P0.3's `site`-row ask, **or** the two
+findings above are ruled upstream. Neither blocks the census, which is gating now.
 
 ## Token substrate — FORMALLY PINNED DIVERGENCE (ADR-059, ⛩ ratified 2026-08-23)
 
