@@ -117,7 +117,12 @@ coming back false — three of nineteen register rows were already dead when las
 
 - ⛔⛔ **Deploy freeze holds** — needs **lemur** to push `30c8163` + `f4fa9c5`. Outside this node's
   control. **P4.1 and P4.2 remain built-not-deployed; P4.4a's work now joins them.**
-- ⛩ **13 commits unpushed** (derived at close — the record commit itself moved it from 12). A push is a per-action outward GO.
+- ⛩ **Commits unpushed: derive it, do not read it here** — `git rev-list --count origin/main..HEAD`.
+  A push is a per-action outward GO. ⭐ *Minor finding, recorded because it is this campaign's own
+  class one level down:* the first two attempts to write the number were wrong the moment they were
+  committed, because **the commit that records the count increments the count**. That is `F-q`'s
+  shape exactly — *an instrument whose OUTPUT changes its own INPUT cannot hold a baseline* — and
+  KW-14's remedy applies unchanged: state the derivation, never the figure.
 - ⛩ **The Vitruvius ask (ruling 3) is undelivered** — an outward act needing its own GO, and it
   gates P4.4b's AC4.
 - ⛩ Still owed and out of scope here: Hopper `ack_required` · Pygmalion ask · Mondrian #9 ·
@@ -156,5 +161,5 @@ and inside P4.4a's ratified ~280–420 kT with A1–A3 still to run.
 > **10/10** · gitleaks **884 commits, no leaks**. Build with `npx astro build`, then
 > `node scripts/inject_redirects.mjs .` **and** `node scripts/inject_negotiation.mjs .` before running
 > gates outside a deploy (convention 6 — G15 needs the negotiation routes, not just the file).
-> ⛩ **13 commits unpushed** — a push is a per-action GO. ⛩ The **Vitruvius ask** (ruling 3) is still
+> ⛩ **Unpushed commits: derive with `git rev-list --count origin/main..HEAD`** — a push is a per-action GO. ⛩ The **Vitruvius ask** (ruling 3) is still
 > undelivered and gates P4.4b's AC4.
