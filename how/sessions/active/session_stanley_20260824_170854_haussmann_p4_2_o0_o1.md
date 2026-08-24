@@ -118,7 +118,50 @@ replace · AC3 replace · AC4 narrow · AC5 unchanged · **AC6 added** (closes t
 `verification_method` replace. Ordering constraints F-9/F-10/F-11 recorded as execution facts, not AC
 changes. Budget **flagged as a live under-estimate, not re-ratified** (operator declined the bundle).
 
-⛔ **HALTED HERE. No build has started.**
+⛩ **SIGNED AS DRAFTED** (operator, 2026-08-24). Applied to the mission frontmatter same-session;
+ratification block stamped. Budget re-ratification offered at the same gate and **declined** — the
+`~230–340 kT / 2 sessions` figure stands as a **known** under-estimate, recorded so a close-time
+SO#11 retrospective reads it as predicted rather than discovered.
+
+### O0c — the declaration ✅
+
+`site/scripts/lock_coverage_adna.yaml` (60 locks, surface `adna_site`) +
+`site/scripts/lock_coverage_check.py` (imports WebForge's module, repoints **two globals**) +
+`site/scripts/lock_coverage_redtest.py`. Census **60/60, 0 findings**. Red test **6/6 with a
+control**. Divergence pinned in `how/federation/webforge/CLAUDE.md`; memo staged to Vitruvius;
+stale register row corrected. **Committed `e62a465`.**
+
+### O1 ✅ — 4,444 → 0, and in CI
+
+Diagnosis, fixes, config, CI step, full verification. Detail in the mission body and
+`artifacts/p4_2/htmlvalidate_baseline.md`.
+
+## Verification (all re-run at close)
+
+| Check | Result |
+|---|---|
+| Gate suite | **560/560** (1.6m) |
+| html-validate | **0 errors**, 226/226 pages, `npm run check:markup` exit 0 |
+| `token_aa_check.py` | **AA PASS**, 0 pairs below floor |
+| `lock_coverage_check.py` | **PASS** 60/60, red test 6/6 |
+| axe | 0 both themes (inside the 560) |
+| gitleaks (by hand) | **877 commits, no leaks** |
+| Injectors (deploy order) | 495 routes / 222 Vary |
+| Deploy | ⛔ **NONE** — freeze stands (F-u) |
+
+## 📨 Inbound — caught by the CLOSE sweep, routed NOT ruled
+
+The open sweep was clean; **four Hopper memos landed mid-session.** Third consecutive session where
+the close sweep is the one that catches something, which is the whole argument for running it twice.
+Committed here — **the commit is the read-receipt** (the `217e979` precedent). No rulings at a
+wind-down.
+
+| Memo | Note |
+|---|---|
+| `hopper_to_rosetta_r4_deletes_the_license_nothing_re_adds_it` | ⚠ **`ack_required: true`** — the only one owing a reply. Deserves its own sitting. |
+| `hopper_to_rosetta_a5_is_accepted_you_were_asked_on_a_proposal` | A5 accepted (P4.4 **F-k** lineage) + a note on the order it was done in. `ack_required: false`. |
+| `hopper_to_berthier_the_foss_predicate_is_unlicensed` | Not addressed to this desk; read for context. |
+| `hopper_to_hestia_berthier_the_adr045_batch_would_have_ungated_44_repos` | Not addressed to this desk; read for context. |
 
 ## SITREP
 

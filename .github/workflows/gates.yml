@@ -78,5 +78,22 @@ jobs:
           node scripts/inject_installer_headers.mjs .
           node scripts/inject_redirects.mjs .
 
+      # Markup correctness (HAUSSMANN P4.2 O1, AC2). Complements the gates rather than duplicating
+      # them: axe and Lighthouse are WCAG-rule-focused and pass on markup that html-validate
+      # rejects — the two disagreed by 4,444 errors across 226 of 226 pages when this was first
+      # measured, with every page dirty and nothing watching.
+      #
+      # Runs BEFORE the suite deliberately. It takes ~30s against dist/, its failures are
+      # unambiguous (a rule id and a selector), and a markup regression is worth stopping for
+      # rather than reading past on the way to a gate failure.
+      #
+      # The config is passed EXPLICITLY. `.htmlvalidate.cjs` carries every exception with the
+      # reason it was granted and what would reverse it — the 08-19 sweep artifact recorded
+      # neither its command nor its config, and that single omission is why a 964-vs-4,444 delta
+      # could never be resolved. A config that is not named in the command is a config nobody can
+      # reproduce.
+      - name: Markup correctness (html-validate, exceptions declared in .htmlvalidate.cjs)
+        run: npm run check:markup
+
       - name: Run quality gates (G1 budget · G2 @audit · axe both-modes · all)
         run: npm run test:gates

@@ -201,7 +201,74 @@ Coverage is declared and checkable, the markup debt is paid, and a contributor c
 
 ## Progress
 
-*(at execution)*
+### O0 ✅ COMPLETE (2026-08-24, session `session_stanley_20260824_170854`)
+
+Convention-13 pass **30/30 pairs, coverage recorded above**, 12 findings → operator-signed AC
+amendment (`artifacts/p4_2/ac_amendment_proposal.md`, `accepted`, applied to this frontmatter).
+
+**The declaration**: `site/scripts/lock_coverage_adna.yaml` — **60 locks** on our own surface
+`adna_site`, validated by `site/scripts/lock_coverage_check.py`, which imports WebForge's
+`check_lock_coverage` and repoints **exactly two globals**. Census **60/60, 0 findings** —
+enforced 8 · na 16 · na_unverified_affordance 7 · gap 29. **Red-proven 6/6 with a control**
+(`lock_coverage_redtest.py`); case 4 reproduces this mission's own "57 locks" defect and catches it.
+
+⭐ **Three real defects the 560-assertion suite structurally cannot see**, because nothing had ever
+declared coverage: **A5/B4** the header is `position: sticky` with **no `scroll-padding-top` anywhere
+in `src/`** (every in-page anchor lands under the header; `gate-31` passes because it asserts anchors
+*resolve*, a different claim) · **B3/E4** **`aria-live` appears nowhere in `src/`**, so filtering the
+registry changes the result set in silence for AT users · **I2** the CSP self-validates against
+nothing. All dispositioned, none silently carried.
+
+⚠ **A rot-hook predicate fired falsely and was caught before shipping.** `run_predicate` is a raw
+regex with no comment stripping while `resolve_rung` strips — so the obvious "no hydration
+directives" predicate matched a **comment** describing a component as an island. Untested it would
+have failed the census over a directive that does not exist. Shipped form matches an element usage
+and carries both controls. Owed back to Vitruvius with a second finding (Playwright assertion
+anchors can only ever score rung 2).
+
+⚠ **The stale register row that caused AC1's "57" is fixed** — live floor is **60**, census
+**452/387/1 at R1**, and N2's *"the site's llms.txt lacks the honesty line"* was also stale (it has
+one, `llms.txt.ts:56`).
+
+### O1 ✅ COMPLETE (same session)
+
+**html-validate: 4,444 → 0**, all 226 pages clean, in CI as a real devDependency + `check:markup`
+script + a workflow step that passes the config **explicitly**.
+
+⭐ **The `no-inline-style` diagnosis falsified its own hypothesis.** Shiki was **already 4.0.2** on
+both sides of P3.2's lockfile touch; Astro unchanged; the page had the same 8 code fences; and
+`syntaxHighlight`/`shiki` have **never** appeared in `astro.config.mjs` history. ⇒ the 964→4,444
+delta is **not a regression but an unreproducible measurement** — the 08-19 artifact records neither
+command nor config, so the run cannot be re-executed. Recorded as a standing property, not as an
+event.
+
+⭐ **Two exceptions are refusals to trade real accessibility for a lint number.** `role="list"` on
+`<ul>`/`<ol>` is Safari's list-semantics workaround and **all six triggering lists carry
+`list-style: none`** — removing it would regress VoiceOver. And seven `aria-label`s are the only
+accessible name their lists have. Note the deliberate asymmetry: SidebarNav's `<ul aria-label>` **was**
+removed, because its parent `<nav>` already named the region. Same rule, opposite answers, because
+the question is whether information is lost.
+
+⛩ **Parity ruled fix-now — and the first fix broke axe-0.** `github-light`/`github-dark` both ship
+sub-AA token colours (`#e36209` on white = 3.48:1; `#6A737D` on `#24292e` = 3.05:1, **already live**
+before the fix). Shipped the `-high-contrast` variants; re-measured **all 58 code pages × 7 pairs ×
+both palettes = 0 failures**. ⭐ What settled causation was **a control, not a better probe**: revert
+only the Shiki change, rebuild, re-run the same gate — it passed. My ad-hoc axe probe had meanwhile
+reported 71 phantom nav failures, and my first contrast sweep read one page and generalised.
+
+**Verification**: suite **560/560** · html-validate **0** · `token_aa_check` **AA PASS** ·
+lock census **PASS** · gitleaks **877 commits, no leaks** · injectors 495 routes / 222 Vary.
+
+⛔ **BUILT, NOT DEPLOYED.** The freeze stands (P4.4 **F-u**); lemur's `30c8163` + `f4fa9c5`
+re-verified **absent** at session open. This is now the **second** mission accumulating unshipped
+work, said here rather than left to be inferred.
+
+### ⏭ O2 + O3 — session 2
+
+O2: gap fixes from O0's dispositions (**A5/B4 `scroll-padding-top` and B3/E4 `aria-live` are the
+live ones**); `/design-system` refreshed **in place** + the declared-frame 20-component sample.
+O3: the **diagram** construction rules (AC4, narrowed — P4.1 O2 already published the illustration
+half); F19/F13 thin hubs (4 instances); F20's font test (**A2**); the AAR.
 
 ## AAR (SO#5)
 

@@ -68,10 +68,35 @@ const STATUS_GLOSS: Record<string, string> = {
 // The tier carries its own one-line meaning (§tiers.3); the older per-status gloss stays as a
 // fallback for any status the tier model does not name (superseded, archived, completed).
 const statusTitle = TIER_MEANING[tier] || (STATUS_GLOSS[statusPub] ? `${statusPub} — ${STATUS_GLOSS[statusPub]}` : statusPub);
+
+/**
+ * HAUSSMANN P4.2 O1 — the <title> qualifier, chosen by MEASUREMENT rather than by row.
+ *
+ * `<title>` was `${display_name} — ${personaPub || classPub}`, which is right for 73 of 74 vaults
+ * and wrong for Exchange, whose `persona` is a full triad description
+ * ("triad: mnemosyne (registry) / hermes (transport) / themis (settlement); Berthier coord").
+ * That produced a 103-character title — past the 70 a search result will show, and the site's only
+ * `long-title` error.
+ *
+ * The fix is in PROJECTION CODE, not in the data: `vaults.json` is Hestia-owned and operator-gated
+ * (campaign convention 5 / pt19), so a long persona is not ours to shorten at the source. Nor
+ * should it be — the full triad is correct and it still renders in the page body, where length is
+ * not a constraint. It is only the <title> that has a budget.
+ *
+ * Derived, not special-cased: any persona that does not fit falls back to the class, so a future
+ * long persona is handled the same way without anyone editing this file. TITLE_MAX mirrors
+ * html-validate's `long-title` limit and SUFFIX_LEN the " — aDNA" BaseLayout appends; if either
+ * moves, this recomputes rather than drifting.
+ */
+const TITLE_MAX = 70;
+const SUFFIX_LEN = ' — aDNA'.length;
+const personaFits = personaPub
+  && `${vault.display_name} — ${personaPub}`.length + SUFFIX_LEN <= TITLE_MAX;
+const titleQualifier = personaFits ? personaPub : classPub;
 ---
 
 <BaseLayout
-  title={`${vault.display_name} — ${personaPub || classPub}`}
+  title={titleQualifier ? `${vault.display_name} — ${titleQualifier}` : vault.display_name}
   description={vault.tagline || vault.note || `aDNA vault: ${vault.display_name}`}
   jsonLD={jsonLD}
 >

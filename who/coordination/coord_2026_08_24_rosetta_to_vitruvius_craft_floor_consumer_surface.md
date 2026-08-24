@@ -73,6 +73,20 @@ Not a bug — the ladder is doing what it says. But if the census is going to sc
 the rung distribution will read low for reasons that are about the consumer's *test framework* rather
 than its craft.
 
+**3. `check_aa.luminance` rejects 3-digit hex** (different pattern — P4, the tokens lib — but same
+desk, so it rides along). `luminance('#fff')` raises `ValueError: invalid literal for int() with base
+16: ''`; it assumes a 6-digit string. We hit it live: Shiki emits `background-color:#fff` on every
+light-theme code block, so the first thing we tried to measure with your function crashed on real
+input. A one-line expansion (`if len(h)==3: h = ''.join(c*2 for c in h)`) covers it. We worked around
+it locally by normalising before the call and did **not** patch your file.
+
+Context for why we were calling it at all: P4.2 configured dual-theme syntax highlighting and the
+first attempt **broke our axe-0 record** — `github-light` and `github-dark` both ship token colours
+below AA at body size (`#e36209` on `#ffffff` = 3.48:1; `#6A737D` on `#24292e` = 3.05:1). The
+`-high-contrast` variants fixed it. If WebForge's `documentation` archetype (P7) ships Shiki
+dual-theme with the plain GitHub pair, **it likely carries the same two failures** — worth a check at
+your end, and the reason we are mentioning a palette detail at all.
+
 ## Reachability + pins (your F-S395-02 discipline, and convention 15's)
 
 Paths **from your root**, so you can resolve them before agreeing to anything:

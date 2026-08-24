@@ -209,6 +209,48 @@ export default defineConfig({
     // provenance and audit, not a compliance certification claim. The page itself moved.
     '/compliance': '/provenance-audit/',
   },
+  /**
+   * HAUSSMANN P4.2 O1 — dual-theme syntax highlighting (⛩ operator-ruled 2026-08-24).
+   *
+   * Until now this site had NO `markdown` config at all, so Astro's default Shiki theme
+   * (`github-dark`) was emitted as inline per-token styles and served in BOTH appearances: a
+   * light-mode reader got a dark slab on all 61 code-bearing pages. Nothing could see it —
+   * axe passes because the block is internally consistent (light text on dark ground is a fine
+   * ratio, so this was never a WCAG contrast failure); gate-25 cannot see it because inline
+   * attributes are not CSS; `token_aa_check.py` cannot see it because Shiki colours are not
+   * tokens. It is a dark/light PARITY break, and parity is on the campaign's do-not-regress list.
+   *
+   * `themes:` makes Shiki emit both palettes — the light value inline, the dark value as a
+   * `--shiki-dark*` custom property — which the `.astro-code` rules in global.css then switch on
+   * `html.dark`.
+   *
+   * ⚠ This does NOT reduce the html-validate `no-inline-style` count by one. Dual-theme Shiki is
+   * still inline styles; it just makes them theme-aware. The two issues are independent, and
+   * assuming otherwise is the easy mistake here.
+   */
+  markdown: {
+    shikiConfig: {
+      /**
+       * HIGH-CONTRAST variants, and the plain ones were tried first and MEASURED FAILING.
+       *
+       * `github-light`/`github-dark` are the obvious pair and both ship token colours below
+       * WCAG AA at body size:
+       *   light  #e36209 on #ffffff = 3.48:1  (markdown markers — caught by gate-4 on
+       *                                        /learn/tutorials/first-claude-md)
+       *   dark   #6A737D on #24292e = 3.05:1  (comments)
+       * The `-high-contrast` variants exist precisely for this and are what ship.
+       *
+       * ⚠ The dark failure was ALREADY LIVE before this config existed — the site rendered
+       * `github-dark` in both appearances, so that 3.05:1 comment colour has been shipping. axe
+       * did not catch it because axe reports what it can resolve on the page it is given, and the
+       * pages carrying comment-heavy blocks were not the ones in the gate's page list.
+       */
+      themes: {
+        light: 'github-light-high-contrast',
+        dark: 'github-dark-high-contrast',
+      },
+    },
+  },
   integrations: [mdx(), sitemap(), stripHtmlComments(), emitBespokeTwins()],
   prefetch: {
     prefetchAll: false,
