@@ -10,7 +10,7 @@ persona: rosetta
 operator: stanley
 created: 2026-08-24
 updated: 2026-08-24
-status: active
+status: completed
 executor_tier: opus
 token_budget_estimated: "~120–180 kT — ratification cascade + AC0 (build stamp injector, ancestry guard, 7-case red-test) + the token-census gate. Within P4.4a's ratified ~280–420 kT / 2–3 sessions."
 token_budget_actual: "~110–140 kT content-load, one session — inside the ~120–180 kT estimate."
@@ -163,3 +163,13 @@ and inside P4.4a's ratified ~280–420 kT with A1–A3 still to run.
 > gates outside a deploy (convention 6 — G15 needs the negotiation routes, not just the file).
 > ⛩ **Unpushed commits: derive with `git rev-list --count origin/main..HEAD`** — a push is a per-action GO. ⛩ The **Vitruvius ask** (ruling 3) is still
 > undelivered and gates P4.4b's AC4.
+
+---
+
+## Closure `[D]` 2026-08-24T23:00Z
+
+**Closed by the successor session** (`session_stanley_20260824_230056_haussmann_p4_4a_a1_register`).
+The context crashed after this session's SITREP had been authored **and committed** (`4dd5b46`,
+then `e10dbc8` + `0632390` correcting the unpushed-count derivation), so **nothing was lost** — only
+the `status:` flip and the move to `history/` were left undone. No work is re-run on that account;
+A0 · A0v · ruling 2 all stand as recorded above, re-verified at the successor's open.

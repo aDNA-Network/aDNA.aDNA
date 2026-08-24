@@ -39,6 +39,93 @@ raw_evidence_dir: how/campaigns/campaign_haussmann/evidence/machine_eye/raw/
 | 14 | Text-extraction reads | **High fidelity on `/` and `/get-started`; partial on `/vaults/graph` — plus a citable internal count mismatch** | `/`: 1,072 words extracted cleanly — hero, stat strip, ASCII directory tree, `CLAUDE.md` excerpt, and a mission-YAML excerpt all survive as coherent text. `/get-started`: 744 words, same fidelity — full tutorial, code blocks, CLI transcript all read as intact prose/code. `/vaults/graph`: the graph is a genuine inline, server-rendered `<svg id="vaultsGraph" role="img" aria-labelledby="...-title ...-desc">` (not `<canvas>`, not JS-only) whose own `<desc>` states **"the accompanying vault list is the keyboard-navigable twin."** That twin (519 words) *does* carry: the full vault roster grouped by class, and the edge-type legend with per-type counts. It does *not* carry the enumerated edges themselves (which specific vault points to which, with direction/type) — that topology exists only in the SVG's `<path>` geometry with no per-edge accessible name. **Opportunistic finding:** the graph page's lead paragraph says "74 vaults... 59 vaults carry no cited relationship," while the SVG's own `<title>`/`<desc>` says **"68 vaults... 15 of 68 vaults are joined... the remaining 53 vaults carry no cited relationship."** 74 vs. 68 and 59 vs. 53 — the hero copy reuses the sitewide constant (74) while the graph itself actually renders a smaller set (68); both halves are internally consistent on their own (74−59=15=68−53) but disagree with each other on the same page. | `[D]` |
 | 15 | Independent machine reader | **SYNTHETIC — see transcripts below.** Model correctly identified the product category, audience, and negative space, and derived the correct next action (the `git clone` command) directly from page text on both passes, with no fabricated facts; mild terminology drift ("framework" for what the site calls a "standard & network"). | See transcripts | `[SYNTHETIC]` |
 
+## ⛩ Item 11 — PROBE AMENDMENT, 2026-08-24 (HAUSSMANN P4.4a A1 / F-o)
+
+> **The 2026-08-16 verdict above stands unchanged and nothing in it is struck.** Item 11 is still
+> **ABSENT**, re-verified live today. What is amended is **how item 11 is re-measured**, because the
+> probe that produced that verdict has since become unable to reproduce it.
+
+### The defect
+
+Item 11's genesis probe had two halves: fetch the endpoints, and text-search the corpus for `mcp`.
+The text half returned **0** on 2026-08-16. It returns **11** today.
+
+**Nothing about the site's MCP capability changed.** P3.1 grew `llms-full.txt` from ~2 KB to ~950 KB
+and swept in incidental mentions — Playwright MCP named as a tool in `/doctrine/visual-inspection`,
+`.mcp.json` gitignore advice aimed at the reader, one vault description. ⇒ **a future `grep -c mcp`
+scores 11 and concludes item 11 MOVED. It has not.** The corpus changed underneath a static probe and
+the probe's *meaning* changed with it; neither the probe nor the site did anything wrong.
+
+### ⭐ Why the text limb is RETIRED rather than filtered — and this is not what F-o predicted
+
+F-o offered *"a negative filter or retirement."* The obvious repair is to stop counting `mcp` and
+count instead the tokens only a real MCP offering would emit. **That was measured:**
+
+| Token | Hits in the live corpus | |
+|---|---|---|
+| `adna-mcp-server` | 0 | |
+| `npx adna-mcp` | 0 | |
+| **`/.well-known/mcp.json`** | **1** | ⛔ **on a site with no MCP server** |
+
+The single most specific capability token there is returns a hit — because the changelog's
+*"What is not here"* section says, in as many words:
+
+> *"There is no MCP server. One exists, it works, and it is not published — so nothing on this site
+> mentions one, and `/.well-known/mcp.json` returns 404 rather than describing software you cannot
+> install."*
+
+⇒ **A capability-token probe has the identical defect one level up.** This site's honesty stratum
+(campaign convention 1) *guarantees* it names its own absent capabilities in prose. So every text
+probe for a capability token finds the site's disclosure **of that capability's absence** and scores
+it as presence. **The better the site's honesty, the more false the text limb** — and no filter can
+repair a probe whose signal and its noise are the same string.
+
+**The text limb therefore cannot decide item 11 at all.** It is retired as a decision input and kept
+as an advisory corpus-drift reading only.
+
+### The amended probe
+
+`artifacts/p4_4/machine_eye_item11_probe.mjs`, red-proven **12/12**
+(`artifacts/p4_4/item11_probe_redtest.sh`).
+
+| Limb | Method | Weight |
+|---|---|---|
+| **ENDPOINT** | `GET /.well-known/mcp.json` and `GET /mcp`, redirects **not** followed | **DECISIVE — the only thing that moves the item** |
+| **ADVISORY** | token counts over the corpus | **printed, never a vote** |
+
+Exit codes: `0` ABSENT · `1` MOVED · `2` UNREACHABLE. **2 is split from 0 deliberately** — an
+unreachable target is reported as *not knowing*, never as a clean result. That is convention 14's
+`check_live_headers.mjs` lesson (it printed *"OK — no drift"* for four months having read Vercel's SSO
+login page), and it is why redirects are refused rather than interpreted.
+
+### Live reading `[D]` 2026-08-24T23:00Z
+
+```
+ENDPOINT LIMB (decisive):   404  https://adna.network/.well-known/mcp.json
+                            404  https://adna.network/mcp
+ADVISORY LIMB:              mcp = 11 · adna-mcp-server = 0 · /.well-known/mcp.json = 1
+VERDICT: ABSENT — item 11 stands as recorded 2026-08-16.
+```
+
+⚠ **The advisory line reads 11 and the verdict is still ABSENT.** That divergence is the amendment
+working, and it is the state the next re-measurement should expect to find.
+
+### ⚠ The harness was wrong before the subject was — again, and it was mine
+
+The red-test's **first run reported 5 of 12 cases failing**, every MOVED and UNREACHABLE case coming
+back ABSENT — which reads exactly like a probe that always says ABSENT. **The probe was correct
+throughout.** The harness polled `curl -s -o /dev/null http://127.0.0.1:$PORT/` and treated a zero
+exit as *"my fixture server is up"*; on this node **Docker holds that port** and answered every
+request with 404, so the fixture servers never bound and the readiness check reported ready anyway.
+
+⭐ **That is convention 14 applied to the harness itself** — *an instrument must assert it reached the
+thing it claims to check* — and it is the same shape as the `check_live_headers` defect the probe is
+built to avoid. **P4.2 already recorded one red-test control failing on port reuse; this is the
+second.** ⇒ the remedy is **identity, not a different port number**: the fixture server now stamps
+`x-redtest-mode` on every response and `start_srv` polls for that exact value, so a foreign listener
+can never be mistaken for ours. It also now distinguishes *"nothing came up"* from *"someone else owns
+this port"*, because those need different fixes and look identical from a bare timeout.
+
 ## SYNTHETIC reader transcripts
 
 Both passes used `mcp__local-llm__local_chat`, model **`local-qwen3.6-35b-a3b`** (local inference, disclosed synthetic — a different model family from the agent conducting this audit, run against the plain-text extraction of the live HTML with no additional framing beyond the prompt below).

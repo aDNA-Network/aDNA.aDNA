@@ -133,7 +133,21 @@ function scanTargets(): string[] {
       // change — the twins arrived as 221 files this gate could not see, which is a bigger hole
       // than any single leak it was written to catch. Their allowances resolve through
       // allowanceSurface() above, so a twin is held to its page's standard, no looser.
-      else if (e.name.endsWith('.html') || e.name.endsWith('.md')) out.push(p);
+      // ⛩ HAUSSMANN P4.4a A1 / F-i — `.json` ADDED. The P3.2 registry endpoints
+      // (`/vaults.json`, `/api/registry.v1.json`) are 81 KB of published surface each and were
+      // INVISIBLE to this gate, because the filter listed the two extensions that existed when it
+      // was written. That is the IDENTICAL hole P3.1 found when 221 `.md` twins arrived unseen,
+      // recurring one mission later in a new extension — the filter is an allowlist of encodings,
+      // so every new encoding is unlinted by default and nothing announces it.
+      //
+      // MEASURED before widening, not assumed (all three files, gate's own patterns + allowances):
+      //   vaults.json             18 hits — raw_enum only, 7 distinct tokens
+      //   api/registry.v1.json    18 hits — raw_enum only, 7 distinct tokens (byte-identical file)
+      //   community/proposals.json  0 hits — clean, needs no allowance at all
+      // Every other pattern — internal paths, mission ids, codenames, truncated ledes — finds
+      // NOTHING in these files and therefore applies to them in full, at zero cost. Scoping the
+      // enums is the whole price of admission.
+      else if (e.name.endsWith('.html') || e.name.endsWith('.md') || e.name.endsWith('.json')) out.push(p);
     }
   };
   walk(DIST);
@@ -213,6 +227,27 @@ test('G-leak: the scan actually reaches the built surfaces', () => {
     targets.some((t) => t.endsWith('llms.txt')) && targets.some((t) => t.endsWith('llms-full.txt')),
     'the curated machine surfaces (llms.txt / llms-full.txt) are missing from dist/ — they are in scope for this gate',
   ).toBe(true);
+
+  /* ⛩ HAUSSMANN P4.4a A1 / F-i — THE WIDENING DEFENDS ITSELF.
+   *
+   * Twice now this gate has been silently narrower than the site: 221 `.md` twins arrived unseen
+   * (P3.1), then two 81 KB `.json` endpoints did (P3.2 → F-i). Both times the hole was invisible
+   * because a filter that omits an encoding LOOKS EXACTLY LIKE a filter that has nothing to find.
+   *
+   * So the published machine surfaces are named here. Deleting `.json` from scanTargets() now
+   * turns THIS test red instead of quietly re-opening the hole — the fix has to survive the next
+   * person who does not know why it is there. Note this asserts REACH, not cleanliness: the leak
+   * assertion below is what judges their contents.
+   */
+  const published = ['vaults.json', 'api/registry.v1.json'];
+  const rel = targets.map((t) => relative(DIST, t));
+  for (const f of published) {
+    expect(
+      rel.includes(f),
+      `${f} is published (81 KB of machine surface) but is NOT in this gate's scan — ` +
+        'the extension filter has narrowed. See the F-i note in scanTargets().',
+    ).toBe(true);
+  }
 });
 
 test('G-leak: the allowlist stays a reviewed instrument (dated, token-scoped, justified)', () => {

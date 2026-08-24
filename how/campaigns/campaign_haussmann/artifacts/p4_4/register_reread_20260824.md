@@ -166,3 +166,99 @@ regressed to the older release, which is the known and accepted state under the 
 3. **Four are worse than budgeted** (`F-k`, `F-m`, `F-n`, `F-o`) — `F-o` in particular is time-sensitive.
 4. **`F-f` inherits a free design constraint** from F-h's discharge: `expected ⊆ served`, never equality.
 5. **The register's real live count is 16**, of which **1** (`F-l`) is documentation-only.
+
+---
+
+# SECOND PASS — re-read at A1's execution, 2026-08-24T23:00Z
+
+> **Why a second pass eight hours after the first.** The pass above was P4.4's **pre-build gate**; it
+> scoped the mission. This one is convention 12's **recon-at-execution** — the rule that
+> `grounded_in:` evidence is re-verified *on disk at execution time*, because the genesis evidence
+> ages. A0, A0v and gate-40 all landed between the two passes, so at least one row (`F-u`) had a live
+> chance of having changed underneath the register. It had.
+>
+> ⭐ **The coverage statement is the point of this section, not the findings.** Convention 13's
+> amendment exists because P3.3 ran a *correct* pass **partially**, recorded no coverage, and a
+> partial pass then read to the ratifying operator as a clean bill of health. *A correct instrument
+> applied partially reports exactly like one applied fully.* So: **coverage is 16 of 16 live rows,
+> enumerated below, each with the command that produced its reading.**
+
+## Coverage: 16 / 16 live rows
+
+| Row | Probe run | Reading `[D]` | Verdict |
+|---|---|---|---|
+| **F-o** | `grep -oic mcp site/dist/llms-full.txt` | **11** | ⚠ **CONFIRMED, drift held at 11** — the 5 → 11 acceleration the row predicts. **Goes first.** |
+| **F-p** | `gate-17-*.spec.ts:225–226` | `test.skip(!existsSync(configPath), …)` | ⚠ **CONFIRMED** — guards the *file*, not the routes |
+| **F-i** | `gate-27-leak-lint.spec.ts:136` | `e.name.endsWith('.html') \|\| e.name.endsWith('.md')` | ⚠ **CONFIRMED** — `.json` invisible. *(Note the near-miss: `llms.txt`/`llms-full.txt` ARE hand-added just below, so the gate's author already met this class once by naming two files — and the general extension hole stayed open.)* |
+| **F-f** | `check_live_headers.mjs:75–76` | `expected.filter(k => !res.headers.has(k.toLowerCase()))` | ⚠ **CONFIRMED** — `has()` is a **name** test; no value is ever compared |
+| **F-a** | `gate-4-a11y.spec.ts:79` | `.withTags(['wcag2a', 'wcag2aa'])` | ⚠ **CONFIRMED** — best-practice blind |
+| **F-c** | `ls artifacts/p3_5/derive_register_counts.py` | present, 2.3k, **no spec references it** | ⚠ **CONFIRMED** — exists, unwired |
+| **F-m** | index vs disk | index `updated: 2026-07-02`, tallies **41**, highest `adr_046`; disk **55** files, highest **`adr_059`** | ⚠ **WORSENED AGAIN — 13 behind** (was 12 at filing, 13 at the first pass, 13 here) |
+| **F-n** | `MANIFEST.updated` vs `STATE.updated` | `2026-07-06` vs `2026-08-24` | ⚠ **WORSENED — 49 days** |
+| **F-e** | `find . -name lighthouse_profiles.json` | **0** | ⚠ **CONFIRMED** — the method is still impossible; ⊳ D-E still owed |
+| **F-d** | `gate-26-*.spec.ts:194` | iterates `rows.filter(r => r.class === 'verified')` for PRESENCE | ⚠ **CONFIRMED** — no class expresses *"a retired claim must stay gone"* |
+| **F-g** | `astro.config.mjs:36` | `stripHtmlComments()` live, dual-walk comment intact | ⚠ **CONFIRMED** — documentation defect, not a functional one |
+| **F-k** | `ls .adna/.git/hooks/pre-push` | **absent**; no hook template in `.adna/how/templates/` either | ⚠ **CONFIRMED `FAIL_NONE`** — and the *second* half is new information: there is no template to install *from*, so the release ships the skeleton, not just a pointer |
+| **F-l** | `grep -rn ':+SET}\${'` across campaign + sessions + doctrine | **5 hits, all of them prose ABOUT the defect** (the F-l row itself ×2, convention 16's P4.1 block, two history session files) | ✅ **effectively discharged — see below** |
+| **F-r** | convention 15's ruling | habit adopted, checker deliberately unbuilt | ✅ **CONFIRMED as ruled** — lands as a convention, not a gate |
+| **F-u** | AC0 shipped `4a9bc09`; `alias_guard_redtest.sh` | **13/13** | ✅ **DISCHARGEABLE — the only row this pass moved** |
+| **F-j** | `site/package.json:15` | `"check": "astro check"` present | ◐ **script confirmed; the 26-error baseline is P3.2's figure and is NOT re-measured here** — see the honesty note below |
+
+## ⭐ The finding, and it is the inverse of the first pass's
+
+**The first pass found three of nineteen rows already dead. This pass found none.** Sixteen rows were
+re-read at the object and **fifteen came back exactly as filed or worse**; the single row that moved
+(`F-u`) moved because *this mission built the fix eight hours earlier*, which is the one cause a
+re-read is guaranteed to detect.
+
+That is worth stating plainly, because the obvious inference from the first pass — *"the register
+rots, re-read it and rows will fall away"* — **is wrong**, and acting on it would be a different
+failure: skipping a build on the hope a row has died. The correct inference is narrower and it is the
+one the campaign already wrote down: **a debt row's truth value is unknown until read at the object,
+and unknown is not the same as false.** Two rows in fact *worsened* while nobody was looking
+(`F-m` 12 → 13, `F-n` 45 → 49 days), which is the same clock `F-o` is running on.
+
+## `F-l` — the row is discharged, but not by anyone fixing it
+
+All five live occurrences of `${VAR:+SET}${VAR:-UNSET}` are **prose describing why the idiom leaks**.
+Not one is a prescription, and not one is in an executable file. The row's own complaint — *"the idiom
+is recorded in campaign memory **as the redaction pattern**"* — is **no longer true**: every surviving
+mention already carries the correction beside it, and the F-l row itself names the safe form
+(`${VAR:+SET}` alone).
+
+⚠ **But do not read that as "fixed."** Nobody edited anything to make it true. It became true because
+the campaign wrote *about* the defect enough times that every instance acquired its own antidote in
+the same sentence. **That is discharge by documentation, and it is fragile in a way a code fix is
+not** — the next agent to need a redaction reaches for memory, not for this row. ⇒ the residue is
+routed where it belongs: a **`doctrine_credential_handling` note**, because the ≤6-char-prefix rule
+(§428) governs how a leaked value is *referenced afterwards* and **nothing governs the probes that
+produce one**. The row is struck; the doctrine note is the thing that carries it forward.
+
+## ⚠ What this pass did NOT measure, said rather than implied
+
+**`F-j`'s 26-error `astro check` baseline was not re-measured.** The script's existence was confirmed;
+the *number* is still P3.2's reading, taken before P3.4, P4.1 and P4.2 all touched the tree. It could
+be 26, higher, or lower. ⇒ **`F-j` is deferred to A1b with re-measurement as its first step**, and it
+is deferred *for that reason* — not because it is low value. Funding a fix against a stale count is
+the exact shape of the defect this whole artifact exists to prevent.
+
+Likewise **`F-a`'s blast radius is unmeasured**: the row says widening `gate-4` to axe
+`best-practice` *"will surface pre-existing violations"* across ~23 pages, and **nobody has counted
+them.** ⇒ deferred to A1b, whose first act is to produce that count and bring it to an ⛩ operator
+gate. A scoping decision cannot be taken against an unknown number.
+
+**`F-d` needs design, not measurement** — `gate-26` has no vocabulary for an absence assertion on a
+row that was never `FALSE`, and inventing one at the tail of a build session is how this campaign
+produced five wrong instruments in two weeks.
+
+## Disposition — all 16 rows
+
+| Disposition | Rows | Count |
+|---|---|---|
+| **BUILD this sitting** | `F-o` · `F-p` · `F-i` · `F-f` · `F-c` · `F-m` · `F-n` | 7 |
+| **CLOSE this sitting** | `F-u` (discharged by AC0) · `F-g` (comment) · `F-l` (→ doctrine note) · `F-r` (→ convention) | 4 |
+| **ROUTE** | `F-e` → A3's Vitruvius ask · `F-k` → next `skill_template_release` | 2 |
+| **DEFER to A1b, blast radius named** | `F-a` (unmeasured) · `F-j` (stale baseline) · `F-d` (needs design) | 3 |
+
+**16 = 7 + 4 + 2 + 3**, and the arithmetic is stated so a reader can check the partition is total —
+every live row has exactly one disposition and none is silently dropped.

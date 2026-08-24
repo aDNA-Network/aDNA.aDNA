@@ -221,14 +221,51 @@ test.describe('G15 — content negotiation is wired into the deploy surface', ()
   // the Vercel route table, so this reads the built config rather than pretending to probe.
   const configPath = join(process.cwd(), '.vercel', 'output', 'config.json');
 
-  test('G15: one Vary-carrying negotiation route per twin, all before the filesystem boundary', () => {
-    test.skip(
-      !existsSync(configPath),
-      'no .vercel/output/config.json — run `npx astro build` (a bare build does not inject; see campaign CLAUDE.md convention 6)',
+  /* ⛩ HAUSSMANN P4.4a A1 / F-p — THE SKIP GUARDS TESTED FOR THE WRONG THING.
+   *
+   * Both G15 tests used to guard on `!existsSync(configPath)`. But the Astro Vercel adapter
+   * writes config.json AT BUILD TIME, before any injector runs — so after a bare
+   * `npx astro build`, or after `inject_redirects.mjs` alone (convention 6's own out-of-deploy
+   * instruction), the file EXISTS while the routes these tests assert on DO NOT. The guard
+   * never fired, the tests ran unskipped, and they were CERTAIN TO FAIL on a perfectly good
+   * tree. Observed live at P3.3 O3 and again at P3.4; fixed by running the missing injector,
+   * with no code changed either time. And the skip message named `npx astro build` — a remedy
+   * that does not inject at all, which is precisely what convention 6 exists to warn about.
+   *
+   * ⇒ Guard on THE ROUTES EACH TEST ASSERTS ON, and name the step that produces them.
+   *
+   * ⚠ WHY THIS IS NOT A FAIL-OPEN, since "skip when the thing is missing" usually is.
+   * `inject_negotiation.mjs` is FAIL-CLOSED: having injected, it re-counts and `die()`s if the
+   * total is not exactly `twins × 2` (inject_negotiation.mjs:145). So an injector that RAN and
+   * produced nothing cannot exist — it would have exited non-zero and taken the build with it.
+   * Absent twin routes therefore has exactly one reachable cause: THE INJECTOR DID NOT RUN.
+   * That is a workflow state, correctly skipped. If that fail-closed check is ever weakened,
+   * this guard becomes a fail-open and must be revisited with it.
+   */
+  const loadConfig = (): any | null =>
+    existsSync(configPath) ? JSON.parse(readFileSync(configPath, 'utf8')) : null;
+  const twinRoutesOf = (cfg: any): any[] =>
+    (cfg?.routes ?? []).filter((r: any) => r?.headers?.['x-adna-twin']);
+  const redirectRoutesOf = (cfg: any): any[] =>
+    (cfg?.routes ?? []).filter(
+      (r: any) => [301, 302, 307, 308].includes(r?.status) && r?.headers?.Location,
     );
-    const cfg = JSON.parse(readFileSync(configPath, 'utf8'));
+
+  const NO_CONFIG = 'no .vercel/output/config.json — run `npx astro build` first';
+  const NO_NEGOTIATION =
+    'config.json carries no x-adna-twin routes — run `node scripts/inject_negotiation.mjs .`. ' +
+    'A bare `npx astro build` WRITES this file but injects nothing, and `inject_redirects.mjs` ' +
+    'does not add negotiation routes either (campaign CLAUDE.md convention 6).';
+  const NO_REDIRECTS =
+    'config.json carries no redirect routes — run `node scripts/inject_redirects.mjs .`. ' +
+    'With none present this assertion would pass vacuously, which is not the same as passing.';
+
+  test('G15: one Vary-carrying negotiation route per twin, all before the filesystem boundary', () => {
+    const cfg = loadConfig();
+    test.skip(!cfg, NO_CONFIG);
+    test.skip(twinRoutesOf(cfg).length === 0, NO_NEGOTIATION);
     const routes: any[] = cfg.routes ?? [];
-    const twinRoutes = routes.filter((r) => r?.headers?.['x-adna-twin']);
+    const twinRoutes = twinRoutesOf(cfg);
 
     // TWO routes per twin: the Accept-conditioned form, and the naive-append `/path/.md` form an
     // agent produces by following llms.txt literally against a canonical URL that ends in a slash.
@@ -262,8 +299,12 @@ test.describe('G15 — content negotiation is wired into the deploy surface', ()
   });
 
   test('G15: negotiation did not displace the redirects', () => {
-    test.skip(!existsSync(configPath), 'no .vercel/output/config.json — run `npx astro build`');
-    const cfg = JSON.parse(readFileSync(configPath, 'utf8'));
+    const cfg = loadConfig();
+    test.skip(!cfg, NO_CONFIG);
+    // This one guards on REDIRECTS, not on twin routes — it is an assertion about where the
+    // redirects sit, so its precondition is that redirects exist. Guarding it on negotiation
+    // instead would let it pass vacuously in the one state it is meant to catch.
+    test.skip(redirectRoutesOf(cfg).length === 0, NO_REDIRECTS);
     const routes: any[] = cfg.routes ?? [];
     const handleIdx = routes.findIndex((r) => r?.handle);
     const stranded = routes
