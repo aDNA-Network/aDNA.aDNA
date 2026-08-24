@@ -42,7 +42,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference    = 'SilentlyContinue'   # Invoke-WebRequest is ~10x slower with the bar
-$VERSION = '0.4.4'
+$VERSION = '0.4.5'
 
 # PowerShell 5.1 can still default to TLS 1.0, which GitHub refuses outright.
 try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 }
@@ -136,7 +136,7 @@ try {
     # for Windows users is the release artifacts + winget (Phase D), where the signature is
     # checked at package-build time. Recorded in security_design_notes.md -- a gap named is
     # not a gap hidden.
-    $PAYLOAD_SHA256 = '002fbfb2ad58df3cfd10b0c457e5bfc0b793103e0d07e7c92f13da9a1e41df0c'
+    $PAYLOAD_SHA256 = '6efe91196bcc3af66fe7fd76930cdcb20bba475610b256975877114dbb26d992'
     if ($PAYLOAD_SHA256 -eq 'PAYLOAD_SHA256_UNSET') {
         Die 'REL-01' "this install.ps1 has no payload hash pinned -- it was published unreleased. Refusing to run unverified code."
     }
