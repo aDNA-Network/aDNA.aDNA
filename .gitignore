@@ -55,6 +55,23 @@ how/campaigns/campaign_haussmann/evidence/captures_p1_4/**/*.png
 how/campaigns/campaign_haussmann/evidence/captures_p2_2/**/*.png
 how/campaigns/campaign_haussmann/evidence/p1_1_captures/**/*.png
 how/campaigns/campaign_haussmann/evidence/dossier/captures/**/*.png
+# P4.1 (2026-08-23) — same policy, but the cited frames are held by EXPLICIT NEGATION rather than by
+# having been `git add`ed first. The tracked-first order works only while the files stay tracked: a
+# `git reset` during staging re-exposed them to the pattern and the add failed. Negation states the
+# exception in the file itself, so it survives a reset, a fresh clone, and an agent who does not know
+# the ordering rule. (The blocks above are left as-is — their files are long since committed.)
+# ⚠ The outage set is NOT regenerable — the pre-2026-08-18 build it captures is gone. What survives of
+# it is deliberately the part that carries the evidence: the two cited frames plus the report
+# (per-surface status, title, h1, bodyLen), which is what the F-s finding actually argues from.
+how/campaigns/campaign_haussmann/artifacts/p4_1/captures/**/*.png
+how/campaigns/campaign_haussmann/artifacts/p4_1/captures_outage_20260823/**/*.png
+# — cited frames, deliberately kept (4 craft/slot evidence + 2 outage evidence):
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures/home__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures/home__desktop__light.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures/learn__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures/vaults__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures_outage_20260823/home__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures_outage_20260823/state-of-the-network__desktop__dark.png
 
 # Scratch capture output (Class 3 — no citation)
 /visual_capture_out/
