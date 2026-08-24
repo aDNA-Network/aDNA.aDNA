@@ -105,7 +105,12 @@ tags: [campaign_governance, haussmann]
       - ⭐ **The real gap is not a rogue actor — it is that `deploy_adna.sh` has a clean-tree guard and no
         SINGLE-WRITER LEASE FOR THE PRODUCTION ALIAS.** Both checkouts followed the discipline; both
         assumed they were the only one deploying. The guard proves *your* tree is clean; nothing proves
-        *the alias* is not about to be taken by someone else's. Routed to **P4.4**.
+        *the alias* is not about to be taken by someone else's. ~~Routed to **P4.4**.~~ ⚠ **This
+        sentence was false for four days.** It said *routed*; **P4.4's register had no such row** until
+        P4.1's close landed it as **F-u** (2026-08-24). ⇒ **"Routed" is a claim about the destination,
+        so verify it there** — the campaign's own index-vs-artifact finding, committed by the sentence
+        announcing the fix. **F-u is the freeze's release condition**, so this was not a cosmetic gap:
+        the one row that says when deploys can resume did not exist.
       - ⭐ **A NEGATIVE RESULT IS ONLY AS WIDE AS THE COMMAND THAT PRODUCED IT.** This convention was
         authored saying the deploys were in *"no `deploy_log*` anywhere in the fleet"* `[D]`. The grep ran
         over `~/aDNA` — **one machine**. `[D]` marks what was **observed**, not what was **searched**, and
@@ -121,15 +126,23 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 `missions/` — 27 files `mission_haussmann_p{0..5}_*.md`; paste-ready prompts in `missions/session_prompts_haussmann.md`.
 
 **⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
-convention 11. **Current mission: `P4.1`** (`mission_haussmann_p4_1_token_pipeline.md`, **`in_progress`
-— O0 ✅ · O1 ✅ · O2 ✅ (2026-08-24); resumes at O3**, which carries **AC4** (the VisualDNA bundle or
-the staged Pygmalion ask), the **persona ranker** on the three surfaces O2 changed, and the **AAR**.
-The "halt at DP8 before building" instruction is **discharged**; the AC amendment is `accepted` and
-**applied** — read the amended AC2/AC4/AC5 and the replaced `verification_method`, never the
-originals). ⛔ **O2 is BUILT AND VERIFIED BUT NOT DEPLOYED** — the deploy freeze below stands, and
-AC5 is recorded **MET-on-build** with deployment **named as owed**, not implied. Closed:
-P4.5a ✅ · P3.5 ✅ (08-20) · P3.1 ✅ · P3.2 ✅ (08-21, deployed) · **P3.4 ✅ (2026-08-22, deployed +
-live-verified 24/0)**. **⏸ `P3.3` remains OPEN at ⛩ O2** and is *skipped, not finished* — the npm publish is **not
+convention 11. **Current mission: `P4.2`** (`mission_haussmann_p4_2_craft_floor.md`, **`queued`** — its
+`depends_on: [mission_haussmann_p4_1_token_pipeline]` was satisfied at P4.1's close 2026-08-24;
+`executor_tier: sonnet`, and the **only P4 mission with `human_gate: false`**). **GO, with two
+conditions carried in from P4.1's AAR:** ⛔ P4.2 touches `site/` heavily (57 locks, ~964 markup errors,
+design-system regeneration) **and the deploy freeze applies to it too** — it will gate green and it
+will not ship, so plan it knowing its output queues behind **F-u** and say so at its close rather than
+letting a second mission accumulate unshipped work silently. ⚠ **`/design-system` now carries O2's
+Illustration-slots section** (the five-slot table, both scales, the four contributor rules) — that is
+**ADR-053-governed content, not generated chrome**, and a regeneration that overwrites it deletes the
+artifact AC5 was met on.
+
+**✅ `P4.1` CLOSED 2026-08-24** (`mission_haussmann_p4_1_token_pipeline.md`, **`completed`** with AAR
+per SO#5 — O0 ✅ O1 ✅ O2 ✅ O3 ✅, **all five criteria met**). ⛔ **O2 IS BUILT AND VERIFIED BUT STILL
+NOT DEPLOYED** — the deploy freeze below stands, re-verified at the close after `git fetch` (lemur's
+`30c8163` + `f4fa9c5` both still absent), and AC5 is recorded **MET-on-build** with deployment **named
+as owed**, not implied. Closed: P4.5a ✅ · P3.5 ✅ (08-20) · P3.1 ✅ · P3.2 ✅ (08-21, deployed) ·
+**P3.4 ✅ (2026-08-22, deployed + live-verified 24/0)** · **P4.1 ✅ (2026-08-24, NOT deployed)**. **⏸ `P3.3` remains OPEN at ⛩ O2** and is *skipped, not finished* — the npm publish is **not
 performable on this node** (no npm identity; needs an interactive operator `npm login` first), so the
 sequence moved past it. Claiming "the next open mission in phase order" still lands wrong further down
 (P4.4 precedes P4.3), so read convention 11's order, not the numbering. Decade-1 leftovers:
@@ -210,11 +223,82 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > `--color-text-muted` on `--color-bg-alt` was untested while **23 files** render it; added with its
 > counted usage and red-proven (1.21:1 under mutation, exits 1).
 >
-> ⚠ **New debt: F-t — this session leaked `SS_VERCEL_TOKEN` into its transcript.** The redaction was
-> written `${VAR:+SET}${VAR:-UNSET}`; the second expansion **prints the value precisely when the variable
-> is set**. **The safe form is `${VAR:+SET}` alone.** Operator ruled *record, no rotation* (known
-> throwaway credential). ⭐ **Fifth wrong instrument in two weeks, authored inside the session auditing
-> wrong instruments** — and the first whose failure mode is disclosure rather than a false green.
+> ⚠ ~~**New debt: F-t**~~ — **F-t IS WITHDRAWN: it was already registered as `F-l`** (struck at P4.1's
+> close 2026-08-24). This session leaked `SS_VERCEL_TOKEN` into its transcript; the redaction was
+> written `${VAR:+SET}${VAR:-UNSET}` and the second expansion **prints the value precisely when the
+> variable is set**. **The safe form is `${VAR:+SET}` alone.** Operator ruled *record, no rotation*
+> (known throwaway credential). ⭐ **Fifth wrong instrument in two weeks, authored inside the session
+> auditing wrong instruments** — and the first whose failure mode is disclosure rather than a false
+> green. ⚠ **But it is the SECOND sighting, not a second defect** — same idiom, same variable, same
+> mechanism as F-l, which P4.4 had carried since P3.2. It got a fresh ID because the sighting was
+> written up **from the session rather than checked against the register**. Per P4.4's own F-b
+> precedent (*"recurrence is evidence for the allowlist, not a new row"*), F-l carries the recurrence
+> and **F-t gets no row.** *(The index-vs-artifact class, one level down: a debt register has to be
+> read before it is appended to.)*
+
+> ✅ **P4.1 CLOSED 2026-08-24 at O3 — all five criteria met, AAR filed (SO#5), mission `completed`.**
+> Session `session_stanley_20260824_152000_haussmann_p4_1_o3`. Suite **unchanged at 560/560** (no
+> `site/` source changed, which is the correct result for a record-and-documentation objective, not a
+> reassuring one).
+>
+> **AC4 resolved to the staged Pygmalion ask** — the branch its own conditional selects, re-verified at
+> the object per convention 12: VisualDNA's schema directory still holds **3** files
+> (`character`/`location`/`object`), no `style_atmosphere` `[D]`. ⭐ **The ask is not "please invent a
+> schema."** `extensions_registry.yaml` → `class_2_new_entity_type.entries: []` is **empty**, while
+> `style_atmosphere` is the **worked example** both `spec_modular_extension_protocol.md:45` and
+> VDNA-ADR-004's own Context paragraph use to illustrate the Class-2 trigger — so the memo asks them to
+> run **Step 1 of their own protocol on their own example.** ⭐⭐ **And it states what we could see of
+> their ability to act**: their machinery is itself pre-activation (spec `DRAFT`, registry *"promotes to
+> ACTIVE at P5 close"*, `mission_p4` `STUB_NEXT_SESSION`, `mission_p5` `STUB_AWAITING_PILOT`) `[D]`, so
+> the full run is **two missions out on their roadmap** — said on the memo's face rather than left for
+> them to discover by trying (convention 15's reachability face). **One scope is performable today by
+> their own precedent**: both existing registry entries were pre-populated at `PROPOSED` with
+> `adr_path: null` *while the registry was and still is DRAFT*. Memo carries **both scopes and names
+> the choice as theirs**, with *"neither yet"* pre-recorded as a real answer. `status: staged` —
+> ⛩ delivery is a separate outward act needing its own GO.
+>
+> **Persona ranker (V6, the obligation convention 13 recorded as UNRUN and O3's): 4.03 `/vaults` ·
+> 4.10 `/design-system` · 4.37 `/get-started`** — all ≥4.0, scored **separately, never averaged**
+> (an average of 4.17 would have let `/vaults` hide behind `/get-started`). All 18 dimension means and
+> 3 totals **re-derived programmatically, not typed** (KW-14). ⚠ **`/vaults` clears by 0.03** — one
+> cell moved down anywhere puts it under the floor, recorded as the number rather than rounded.
+> Conflict of interest **declared not managed away** (`[D-syn]`, the builder scored the surfaces it
+> built; independent re-rank offered, operator ruled the P2.2 precedent governs).
+>
+> ⭐ **The ranker's finding: Delight is 3.6 on all three surfaces with the IDENTICAL persona vector
+> `4·4·3·3·4`** — the signature of a lazily-scored dimension, and treated as suspect before it was
+> treated as a result. It is not laziness: **it is ADR-053's containment rule appearing in the
+> measurement.** All three pages are structurally the same object for this dimension — one illustrated
+> hero, restraint everywhere else — so the rule that makes the voice governable caps delight, and caps
+> it identically because it applies identically. ⇒ It is a **designed trade** (option (b) would have
+> pushed it lower by deleting nine live surfaces) and it **bounds the remedy**: `vault_card_mark` and
+> `graph_frame` are the only sanctioned places it can move, so a future *"raise Delight"* reads as
+> **"build a slot"**, never *"decorate a page"*. ⚠ The instrument **cannot separate "capped by design"
+> from "under-delivered within the cap"** — that needs the human instrument at P5.1.
+>
+> ⚠ **Debt that this very file said was "routed to P4.4" had never reached P4.4's register.** The
+> convention-16 amendment below states the prod-alias gap is *"Routed to **P4.4**"*; **there was no
+> such row**, and no F-r or F-s row either. Landed at the close: **F-u** (the missing single-writer
+> lease — and the design constraint that the vault's own §Single-Writer Lease governs shared *files*,
+> so it does **not** port to an external alias with no `updated` field) and **F-r** (P3.4's, picked up
+> because a known-unrouted row is worse than a small scope bleed). Register **17 → 19**, derived.
+> ⇒ **"Routed" must be verified in the destination register, never in the prose that routed it.**
+>
+> ⚠ **SO#11 retrospective triggered**: ~590–930 kT across **four** sessions against a ratified
+> ~250–400 kT across **two** — ≈2.36× / ≈2.33×, over threshold at both ends. O1 and O2 each landed
+> *within* their own estimates; O0's overrun is **F-s** (incident response, not scope drift); and the
+> 2-session figure **was wrong at ratification**, because convention 13's pass ran *after* the budget
+> and then forced an operator-signed AC amendment mid-mission. ⇒ **The remedy is not "estimate higher"
+> — it is that convention 13 runs BEFORE a DP ratifies a budget**, which is what convention 13 already
+> says. Also unremarked for four sessions: `executor_tier: fable` while every session ran **opus**.
+>
+> ⚠ **A control fired and the control was the defect** (sixth instance this campaign). A luminance
+> check flagged three `vaults__*__light.png` captures as dark-under-a-light-filename — the exact O2
+> hazard. They are fine: median **255**, p95 **255**, bottom strip 243.7 identical to the
+> confirmed-good light control. The low reading is `/vaults`'s **dark `hero_panel`**, dark in both
+> themes by design. ⭐ **A control that fires is a question, not a verdict** — asking what else could
+> produce the reading saved 18 good captures. A second one the same session: a table-integrity checker
+> flagged `F-l` by splitting on `|` without honouring markdown's `\|` escape.
 
 > ✅ **P3.4 is `completed`, DEPLOYED and LIVE-VERIFIED** (2026-08-22, `deploy_record:
 > 2026-08-23T01:45:36Z tree=5c6b22d`; probe red-proven **8 PASS / 15 FAIL** before, **24 PASS / 0
