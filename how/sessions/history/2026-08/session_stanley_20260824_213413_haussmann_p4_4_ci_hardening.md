@@ -9,10 +9,10 @@ persona: rosetta
 operator: stanley
 created: 2026-08-24
 updated: 2026-08-24
-status: active
+status: completed
 executor_tier: opus
 token_budget_estimated: "~60–90 kT — pre-build only: register re-read (19 rows), lease design, convention-13 pass, amendment proposal. NO build."
-token_budget_actual:
+token_budget_actual: "~55–70 kT content-load, one session — inside estimate."
 last_edited_by: agent_rosetta
 tags: [session, haussmann, p4_4, ci_hardening, convention_13, register, deploy_lease]
 ---
@@ -120,3 +120,18 @@ deliberately unchanged** — the amendment is `proposed`, not applied).
 > ⛔ **Re-verify the freeze at open** (`git cat-file -t 30c8163 f4fa9c5` must both fail). ⛩ 8+ commits
 > unpushed — a push is a per-action GO. Suite baseline **571/571**; run `npx astro build` then
 > `node scripts/inject_redirects.mjs .` before gates outside a deploy (convention 6).
+
+---
+
+## Closure note (added 2026-08-24, next session)
+
+⚠ **This session's context crashed after its SITREP was written and after its work committed
+(`2284208`).** Nothing was lost: the four artifacts, the mission Progress edit and this file were all
+in the commit. **The only casualty was the file move** — the session sat in `active/` with
+`status: active` until the next session opened, which would have read to a cold agent as a live peer
+session holding a scope lock on the P4.4 mission file.
+
+⇒ **A session's status field is written before its last act, so a crash leaves it lying.** Same shape
+as convention 16's *"a verification with no recurrence is a claim about the past wearing the grammar
+of the present"* — one level down, on our own bookkeeping. The `active/` sweep at session open is
+what catches it, and it did.

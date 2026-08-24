@@ -3,7 +3,7 @@ type: artifact
 artifact_type: design_note
 campaign_id: campaign_haussmann
 mission_id: mission_haussmann_p4_4_ci_hardening
-status: proposed
+status: accepted   # ⛩ ratified 2026-08-24 with the AC amendment; AC0 implements this note
 created: 2026-08-24
 updated: 2026-08-24
 last_edited_by: agent_rosetta
@@ -12,9 +12,13 @@ tags: [haussmann, p4_4, f_u, deploy, freeze, single_writer, convention_14, adr_0
 
 # F-u — design before writing: the production-alias guard
 
+> ⛩ **RATIFIED 2026-08-24** (Stanley, operator) as part of [[ac_amendment_proposal]] — the premise
+> correction below is accepted, and **AC0 is this note's implementation**. Built in
+> `session_stanley_20260824_221214_haussmann_p4_4a_ac0`.
+>
 > F-u's own instruction is *"design the lease before writing it."* Doing so found that **the row asks
 > for the wrong instrument.** This note proposes the right one and states plainly what it cannot do.
-> **Nothing is implemented.** Implementation belongs to P4.4a, after ratification, with its red-test.
+> ~~**Nothing is implemented.**~~ Implementation belongs to P4.4a, after ratification, with its red-test.
 
 ## ⭐ The premise correction: a mutex would not have prevented F-s
 

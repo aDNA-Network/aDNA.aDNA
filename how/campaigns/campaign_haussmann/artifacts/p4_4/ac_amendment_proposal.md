@@ -3,17 +3,36 @@ type: artifact
 artifact_type: ac_amendment_proposal
 campaign_id: campaign_haussmann
 mission_id: mission_haussmann_p4_4_ci_hardening
-status: proposed          # ⛩ awaiting operator signature — NOT applied to the mission frontmatter
+status: accepted          # ⛩ OPERATOR-SIGNED 2026-08-24 — applied to the mission frontmatter
 created: 2026-08-24
 updated: 2026-08-24
 last_edited_by: agent_rosetta
 tags: [haussmann, p4_4, acceptance_criteria, amendment, convention_13, ci, deploy_lease]
 ---
 
-# P4.4 acceptance-criteria amendment — proposed
+# P4.4 acceptance-criteria amendment — ⛩ RATIFIED
 
-> ⛩ **§7.7 — agents author, operators ratify.** This is the draft; it is **not applied**.
-> **No build has started.** Supporting evidence, all produced before this proposal:
+> ## ⛩ Ratification record (§7.7 — agents author, operators ratify)
+>
+> | Field | Value |
+> |---|---|
+> | **Decision** | Adopt this amendment **as proposed** — AC0 (new) · AC1 amended · AC2 replaced · AC3 amended · AC4 replaced · V5 (new); the **P4.4a / P4.4b split**; and the **re-raised budget** ~530–820 kT / 4–5 sessions with `executor_tier` split **opus / sonnet**. |
+> | **Ratified by** | Stanley (operator) |
+> | **Date** | 2026-08-24 |
+> | **Status** | `accepted` — applied to `mission_haussmann_p4_4_ci_hardening.md` this session |
+>
+> **Three carried rulings decided at the same gate** (Part 4, below): **(1)** lock O1's 12px floor
+> **defers to P4.3** · **(2)** `component_token_census.mjs` **becomes a gate in P4.4a** · **(3)**
+> ⊳ D-E — **deliver the Vitruvius ask; do not amend convention 4.**
+>
+> ⚠ **The budget is ratified at ≈2.4× the original**, with the sanity check in Part 3 read and
+> accepted rather than waived: the agreement with P4.1's *measured* ≈2.36× overrun is the argument
+> that the estimate is honest, not padded.
+
+> ⛩ **§7.7 — agents author, operators ratify.** ~~This is the draft; it is **not applied**.~~
+> **Signed 2026-08-24; applied.** **No build had started when it was authored** — which is the whole
+> point of running this pass before a DP ratifies a budget (P4.1's SO#11 remedy). Supporting evidence,
+> all produced before this proposal:
 > [[register_reread_20260824]] · [[f_u_alias_guard_design]] · [[convention_13_pass]].
 
 ## Why this halt happens now rather than at O2
@@ -194,26 +213,61 @@ to match what will actually happen.
 
 ---
 
-## Part 4 — three rulings carried in, needing your call
+## Part 4 — three rulings carried in — ⛩ ALL THREE RULED 2026-08-24
 
 1. **Lock O1's 12px rendered-typeset floor is genuinely UNMET** (inherited from P4.2). `gate-39` ships a
    dated baseline that **ratchets**, and O1 stays `gap` deliberately — *a non-regression fence is not
    the rule*. `hero-graph-svg` paints **27/27** labels below floor at every width (3.5px at 320).
-   **The remedy is design work on a campaign-protected surface**, not a gate. → **P4.4a, or defer to P4.3?**
-2. **Does `component_token_census.mjs` become a gate** or stay advisory? Its finding was that the only
-   token family *with* a gate was the only one that had not drifted. → **recommend: gate it in P4.4a.**
+   **The remedy is design work on a campaign-protected surface**, not a gate. ~~→ **P4.4a, or defer to P4.3?**~~
+   ⛩ **RULED: DEFER TO P4.3.** Sub-12px labels are a **legibility judgement**, and P4.3 —
+   *"Accessibility beyond automation: manual passes"* — is both the right instrument and the very next
+   mission in convention 11's ruled order. **The same routing P4.2 already gave its `aria-live` residue,
+   for the same reason**: a human instrument can say whether the remedy *works*, which no gate can.
+   ⚠ **O1 therefore stays `gap` through P4.4** — recorded here so a reader of P4.4a's green suite does
+   not infer the floor was met.
+2. ~~**Does `component_token_census.mjs` become a gate** or stay advisory?~~ Its finding was that the only
+   token family *with* a gate was the only one that had not drifted. ⛩ **RULED: GATE IT IN P4.4a**, with
+   its own red-test and a **coverage floor** (`measured >= N`, never `> 0` — P4.2's lesson). The census's
+   own finding is the argument for gating it: *a migration announced in a comment is not a migration, and
+   the difference is unobservable without an instrument.*
 3. **⊳ D-E / F-e** — mirror `lighthouse_profiles.json` into `how/federation/webforge/`, **or** amend
    convention 4. Convention 4 says amend **only if Vitruvius declines**. A Vitruvius memo is already
-   staged and undelivered. → **recommend: deliver the ask; do not amend yet.**
+   staged and undelivered. ⛩ **RULED: DELIVER THE ASK; DO NOT AMEND.** Vitruvius has not declined, and
+   convention 4 reserves amendment for exactly that case. ⛩ **Delivery is a separate outward act needing
+   its own GO**, and the memo must state the artifact's path **from Vitruvius's root** (convention 15's
+   reachability face). Until it lands, AC4's amended interim wording governs: transcribe, **name the
+   source and the date**, and report it as a gap — never as adoption.
 
 ---
 
-## What I will do on your signature
+## What I ~~will do~~ DID on your signature — executed 2026-08-24
 
-Apply the amended criteria to the mission frontmatter, split the mission into a/b increments in-file,
-strike `F-b`/`F-h`/`F-q` with their evidence, re-word `F-u` to *ancestry guard* (**struck, not
-deleted** — the lease reasoning stays legible), and open **P4.4a at AC0**.
+Session `session_stanley_20260824_221214_haussmann_p4_4a_ac0`:
 
-**If you decline the split**, the fallback is one mission at `~530–820 kT` across 4–5 sessions with a
-mid-mission external dependency; the criteria amendments stand either way, because five of five are
-un-executable as written.
+- ✅ Applied the amended criteria to the mission frontmatter (AC0 · AC1 · AC2 · AC3 · AC4 · V5).
+- ✅ Split the mission into **P4.4a / P4.4b increments in-file** (P4.5a/b precedent; `mission_count`
+  holds at **27**; convention 11's ruled order unchanged).
+- ✅ Struck `F-b` / `F-h` / `F-q` with their evidence — **struck, not deleted** (SO-6).
+- ✅ Re-worded `F-u` to *ancestry guard*, the lease framing **struck, not deleted**, so the reasoning
+  that a mutex does not address this failure stays legible.
+- ✅ Recorded the three Part-4 rulings on the mission's face.
+- ✅ Opened **P4.4a at AC0**.
+
+~~**If you decline the split**, the fallback is one mission at `~530–820 kT` across 4–5 sessions with a
+mid-mission external dependency;~~ **The split was ratified.** The criteria amendments would have stood
+either way, because five of five were un-executable as written.
+
+## ⚠ What this ratification does NOT do
+
+Stated here so no downstream reader infers it from a signed amendment and a green suite:
+
+- ⛔⛔ **It does not lift the deploy freeze.** Release still requires **lemur pushing `30c8163` +
+  `f4fa9c5`** — an act on another machine — and then **one** deploy from a tree holding both halves.
+  Re-verified absent at this session's open. **P4.1 and P4.2 both remain built-not-deployed.**
+- **AC0 enforces the reconciliation; it does not perform it.** The guard would have caught F-s in both
+  directions. It cannot fetch bytes that have never reached this node.
+- **It does not start P4.4b.** Every P4.4b criterion waits on someone outside the session — the
+  operator's dashboard action, lemur's push, or Vitruvius's mirror. That is precisely why the split
+  line was drawn on **reachability** rather than on topic.
+- **It does not close lock O1** (ruling 1 defers it to P4.3) and **does not discharge ⊳ D-E**
+  (ruling 3 makes delivery a separate ⛩ GO).

@@ -102,10 +102,26 @@ tags: [campaign_governance, haussmann]
       - ⛔ **FREEZE: no `deploy_adna.sh prod` from ANY checkout until the two trees are reconciled** —
         lemur pushes `30c8163` + `f4fa9c5`, then **one** deploy from a tree holding both halves. Neither
         half is fixable from the other's machine: the v0.4.3 bytes have never reached this node.
-      - ⭐ **The real gap is not a rogue actor — it is that `deploy_adna.sh` has a clean-tree guard and no
-        SINGLE-WRITER LEASE FOR THE PRODUCTION ALIAS.** Both checkouts followed the discipline; both
-        assumed they were the only one deploying. The guard proves *your* tree is clean; nothing proves
-        *the alias* is not about to be taken by someone else's. ~~Routed to **P4.4**.~~ ⚠ **This
+      - ⭐ **The real gap is not a rogue actor — it is that `deploy_adna.sh` has a clean-tree guard and
+        ~~no SINGLE-WRITER LEASE FOR THE PRODUCTION ALIAS~~ NO ANCESTRY GUARD ON THE PRODUCTION
+        ALIAS.** Both checkouts followed the discipline; both assumed they were the only one deploying.
+        The guard proves *your* tree is clean; nothing proves *the alias* is not about to be taken by
+        someone else's.
+        - ⛩ **AMENDED 2026-08-24 — THIS SENTENCE NAMED THE WRONG INSTRUMENT, and F-u inherited the
+          error from it.** Designing before writing (F-u's own instruction) found that **a lease would
+          not have prevented F-s.** Replay it with a perfect lease held throughout: lemur acquires,
+          deploys, releases; this node acquires, deploys `922519c`, releases; **v0.4.3 and the Arch
+          repo are un-published anyway.** ⇒ **The two deploys never raced. They were sequential and
+          still destructive.** A mutex reasons about **time**; the defect is about **content**. The
+          right invariant is *never publish a tree that does not contain the commit currently serving
+          the alias* — with `/.well-known/adna-build.json` to make the alias self-describing, because
+          **a log on the machine that deployed is not evidence available to the machine about to
+          deploy**, which is exactly why F-s was invisible from here. Design: `artifacts/p4_4/
+          f_u_alias_guard_design.md` (`accepted`); built as **AC0** with verification limb **V5**.
+          ⭐ **The lesson is not "the row was wrong" — it is that the campaign wrote a remedy into
+          governance at the moment of diagnosis, when it knew the cause and not yet the fix**, and the
+          remedy then propagated into a debt row and nearly into a build. **Diagnosis and prescription
+          are separate acts and this file merged them.** ~~Routed to **P4.4**.~~ ⚠ **This
         sentence was false for four days.** It said *routed*; **P4.4's register had no such row** until
         P4.1's close landed it as **F-u** (2026-08-24). ⇒ **"Routed" is a claim about the destination,
         so verify it there** — the campaign's own index-vs-artifact finding, committed by the sentence
@@ -126,9 +142,63 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 `missions/` — 27 files `mission_haussmann_p{0..5}_*.md`; paste-ready prompts in `missions/session_prompts_haussmann.md`.
 
 **⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
-convention 11. **Current mission: `P4.4`** (`mission_haussmann_p4_4_ci_hardening.md`) — the ruled
-successor to P4.2, and the holder of **F-u**, the deploy freeze's release condition. Confirm from its
-own `status:` before claiming it (this line has gone stale four times; the artifact is the record).
+convention 11. **Current mission: `P4.4a`** (`mission_haussmann_p4_4_ci_hardening.md`, `in_progress`)
+— the ruled successor to P4.2, and the holder of **F-u**, the deploy freeze's release condition.
+Confirm from its own `status:` before claiming it (this line has gone stale five times; the artifact
+is the record).
+
+> ⛩ **P4.4's ACs WERE AMENDED AND OPERATOR-SIGNED BEFORE ANY BUILD, AND THE MISSION IS NOW SPLIT**
+> (2026-08-24; `artifacts/p4_4/ac_amendment_proposal.md`, **`accepted`**). **`mission_count` HOLDS AT
+> 27** — the split is **in-file**, on the P4.5a/P4.5b precedent, so convention 11's ruled order is
+> unchanged.
+>
+> **P4.4a** — *deploy safety + the debt* (`opus`, ~280–420 kT) — **OPEN at AC0**. AC0 + V5, the 16 live
+> register rows, the three rescoped-in gate classes + the token census, the derived-count gates
+> (F-c · F-m · F-n) and the gate fixes (F-a · F-i · F-j · F-p). **No external dependency.**
+> **P4.4b** — *the three new systems* (`sonnet`, ~250–400 kT) — **not started**. AC1–AC4.
+> **Every one of its criteria waits on an actor outside the session** — the operator's dashboard, lemur's
+> push, or Vitruvius's mirror. ⭐ **The split line is REACHABILITY, not topic**, so P4.4a cannot be
+> blocked and P4.4b's blockers are visible on its face instead of discovered at execution.
+>
+> **The pre-build gate ran convention 13 at 30/30 with coverage recorded and found ZERO of five criteria
+> executable as written** — AC2 unreachable by anything P4.4 does (needs a prod deploy under a freeze
+> that lifts on **another machine**); AC4's method impossible (`lighthouse_profiles.json` = **0 hits**
+> vault-wide) — **P4.2's AC3 recurring exactly.** AC0 and V5 were **added**: there had been no criterion
+> covering **F-u**, the row gating two missions of unshipped work, and **no V-limb touching it**, so it
+> could have been ticked with no guard built.
+>
+> ⭐⭐ **AND F-u ASKED FOR THE WRONG INSTRUMENT.** A single-writer lease would **not** have prevented
+> F-s: replayed with a perfect lease held throughout, **v0.4.3 and the Arch repo are un-published
+> anyway.** *The two deploys never raced — they were sequential and still destructive.* A mutex reasons
+> about **time**; the defect is about **content**. ⇒ **an ancestry guard** (*never publish a tree that
+> does not contain the commit currently serving the alias*), plus `/.well-known/adna-build.json` so the
+> alias is self-describing — because *a log on the machine that deployed is not evidence available to
+> the machine about to deploy*, which is exactly why F-s was invisible. It would have caught F-s in
+> **both** directions, **including the restore that fired the hazard backwards under an operator GO
+> while following every rule then in force.** Row re-worded, lease framing **struck not deleted**.
+>
+> ⭐ **THREE OF NINETEEN REGISTER ROWS WERE ALREADY DEAD AND NOTHING SAID SO.** `F-b` + `F-q` closed by
+> a `.gitleaks.toml` that landed at **P3.4** (verified at the object: **881 commits, no leaks**);
+> `F-h` discharged by performing the re-read it asks for (**4/4 headers match by value on the alias**).
+> **Four more worsened** — `F-o` went **5 → 11 hits in three days**. Live count **16**, derived.
+> ⇒ **Re-read a debt row at the object before funding it.**
+>
+> **Budget re-raised and ratified: ~530–820 kT / 4–5 sessions** — ≈2.4× the prior figure, almost exactly
+> P4.1's *measured* ≈2.36× overrun. The agreement is the argument that the estimate is honest rather
+> than padded. `executor_tier` is declared **per increment** because P4.1 ran four sessions on `opus`
+> under a `fable` declaration: **a declared tier nobody honours is worse than none.**
+>
+> ⛩ **Three carried rulings, all taken at the same gate:** lock O1's 12px floor **defers to P4.3**
+> (a legibility judgement for the a11y-manual mission — **O1 stays `gap` through all of P4.4**, said
+> here so a green P4.4a suite is not read as having met it) · `component_token_census.mjs` **becomes a
+> gate in P4.4a** · ⊳ D-E — **deliver the Vitruvius ask, do not amend convention 4** (they have not
+> declined; delivery is a separate ⛩ outward act).
+>
+> ⛔⛔ **NONE OF THIS LIFTS THE FREEZE.** Release still requires **lemur pushing `30c8163` + `f4fa9c5`**
+> and **one** deploy from a tree holding both halves — re-verified absent at every session open.
+> **AC0 enforces that reconciliation; it cannot perform it. P4.1 and P4.2 both remain
+> built-not-deployed** — said here rather than left to be inferred from a `completed` status that
+> cannot express it.
 
 **✅ `P4.2` CLOSED 2026-08-24** (`mission_haussmann_p4_2_craft_floor.md`, **`completed`** with AAR per
 SO#5 — O0 ✅ O1 ✅ O2 ✅ O3 ✅, all six criteria met). Commits `61aff0e` · `e62a465` · `2d3f9ed` ·
