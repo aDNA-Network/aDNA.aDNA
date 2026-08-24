@@ -254,6 +254,71 @@ A pixel regression, a header drift, a budget breach, or a field-CWV red each fai
 
 ## Progress
 
+### 2026-08-24 — ⛩ AMENDMENT SIGNED · P4.4a A0 + A0v COMPLETE · ruling 2 shipped
+
+Session `session_stanley_20260824_221214_haussmann_p4_4a_ac0`. Commits `9b429e1` (cascade) ·
+`4a9bc09` (AC0 + V5) · `ff4ad51` (gate-40). ⛔ **Nothing deployed. The freeze holds.**
+
+| Objective | State | Evidence |
+|---|---|---|
+| **A0** — the ancestry guard | ✅ | `inject_build_stamp.mjs` · `check_alias_ancestry.mjs` · the guard + `--dry-run` + two dated flags in `deploy_adna.sh` |
+| **A0v / V5** — red-prove it | ✅ **13/13** | `alias_guard_redtest.sh` — 5 mutations · 2 named controls · 4 further controls · the enumeration limb · **case 9** |
+| **Ruling 2** — gate the census | ✅ **10/10** | `gate-40-token-census.spec.ts` + `token_census_redtest.sh` |
+| **A1** — the 16 live register rows | ⏭ next | `F-o` first (drift accelerating) |
+| **A2** — the three gate classes | ⏭ | zero-console-error · off-site CTA-target · hub-substance floor |
+| **A3** — ⛩ Vitruvius ask + AAR | ⏭ | outward act, needs its own GO |
+
+**Suite 571 → 574**, derived: exactly gate-40's three tests, no other spec moved. gitleaks **884
+commits, no leaks**. Freeze re-verified at open **and** close (`git fetch` then `cat-file -t` — both
+still fatal).
+
+⭐ **AC0's design pass changed the instrument, and the build then found the gap the design had not.**
+The 7-case matrix covers the guard's *refusal* logic — but cases 1–8 all drive `--dry-run`, which
+exits **before the injectors run**. Delete the `inject_build_stamp` line and all twelve still pass,
+while the alias would never be stamped again, the guard would 404 forever, and every deploy would
+demand a bootstrap flag until someone built the forbidden branch. **The guard and the writer are one
+instrument**; a harness testing only the refusing half is convention 13's partial-pass shape.
+⇒ **case 9**, red-proven by deleting the call.
+
+⭐ **Three design calls worth re-reading before A1:**
+1. **Exit codes 1 vs 2 are load-bearing.** 404 → exit 2, a real violation → exit 1, and
+   `--bootstrap-stamp` can only forgive exit 2. That is how the bootstrap exception is *structurally*
+   prevented from becoming the standing `no stamp ⇒ allow` branch — it cannot reach the ancestry
+   branch at all (case 7c).
+2. **The escape hatches are DATED, and that is the mechanism.** `--force-rollback=YYYY-MM-DD` must
+   equal today UTC, so it self-expires and cannot be pasted into a runbook or aliased into the
+   default. *An escape hatch that does not expire is the habit.*
+3. **`--stamp-url` exists only under `--dry-run`, and that refusal is itself red-tested (case 8).**
+   The red-test drives the **real** `deploy_adna.sh`, because a red-test of a copy is not a red-test
+   of the thing — and the affordance enabling that is confined to a path that cannot publish.
+
+⚠ **FIVE instruments of mine were wrong before the subject this session** (seventh consecutive
+session), every one caught by a control rather than by vigilance:
+- A meta-test of the red-test **reported a false pass**: the mutation never applied (shell quoting),
+  so case 9 stayed green for the wrong reason. Caught by asserting the mutation applied — *the rule
+  the harness enforces on its own cases and which I had not applied to my test of it.*
+- A comment filter used `\s`, **unsupported in BSD grep's BRE**, working only by accident for
+  column-0 comments. "Happens to work" is how the next person inherits a decorative assertion.
+- The token red-test's **control declared gate-40 not-green while playwright printed `3 passed`** —
+  `grep -q` under `set -o pipefail` SIGPIPEs the producer and the pipeline reports failure. **A green
+  gate read as red.**
+- The `shadow` family was **silently unproven**: the chosen victim carries a declared shadow
+  exclusion, so a planted shadow is correctly swallowed and the case passes *by not running*. Fixed
+  with a second victim **plus a guard asserting that victim is not itself in `EXCLUSIONS`**.
+- An injector "happy path" test **failed against a tmpdir** and read as a defect; it was the guard
+  working correctly (a non-repo surface dir has no commit to stamp). Re-tested with a git-backed
+  fixture, then against the **real build**.
+
+⚠ **`/.well-known/adna-build.json` is 404 on the live alias right now**, and that is the *documented*
+pre-bootstrap state, not a fault — it is red-test case 5 confirmed against production. The first
+prod deploy after the freeze lifts needs `--bootstrap-stamp=<that day>` **once**, with a GO.
+
+⚠ **A one-word deviation from the ratified design, recorded rather than silent:** the stamp emits
+**`built_at`**, not the design's `deployed_at`. The stamp is written post-build and **pre-upload**,
+so at write time no deploy has happened and a field asserting one is a claim about the future — in a
+campaign whose first convention is that claims move DOWN to verifiability. The guard contract is
+unchanged (it reads `.commit` only).
+
 ### 2026-08-24 — ⛩ OPENED AT THE PRE-BUILD GATE, AND HALTED THERE. No build started.
 
 Session `session_stanley_20260824_213413_haussmann_p4_4_ci_hardening`. Claimed from this file's own

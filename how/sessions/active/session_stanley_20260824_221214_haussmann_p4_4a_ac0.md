@@ -13,7 +13,7 @@ updated: 2026-08-24
 status: active
 executor_tier: opus
 token_budget_estimated: "~120–180 kT — ratification cascade + AC0 (build stamp injector, ancestry guard, 7-case red-test) + the token-census gate. Within P4.4a's ratified ~280–420 kT / 2–3 sessions."
-token_budget_actual:
+token_budget_actual: "~110–140 kT content-load, one session — inside the ~120–180 kT estimate."
 last_edited_by: agent_rosetta
 tags: [session, haussmann, p4_4a, ac0, ancestry_guard, deploy, f_u, ratification]
 ---
@@ -77,8 +77,84 @@ coming back false — three of nineteen register rows were already dead when las
 
 ## Progress
 
-_(in progress)_
+| # | Work | Output |
+|---|---|---|
+| 1 | Ratification cascade | `9b429e1` — amendment `accepted`, ACs applied, mission split in-file, register corrected, index updated |
+| 2 | **A0 / AC0** — the ancestry guard | `4a9bc09` — `inject_build_stamp.mjs` · `check_alias_ancestry.mjs` · guard + `--dry-run` + dated flags in `deploy_adna.sh` |
+| 3 | **A0v / V5** — red-prove it | `alias_guard_redtest.sh` — **13/13** |
+| 4 | ⛩ **Ruling 2** — gate the census | `ff4ad51` — `gate-40-token-census.spec.ts` + `token_census_redtest.sh` — **10/10** |
 
 ## SITREP
 
-_(pending)_
+### Completed
+
+- **⛩ The operator gate P4.4 had been halted at since `2284208` is closed.** Amendment signed as
+  proposed; three carried rulings taken; the cascade applied in one commit per convention 7.
+- **AC0 built and red-proven 13/13** — the deploy freeze's release condition is now an instrument
+  instead of two operators remembering. **It does not lift the freeze**; it enforces the
+  reconciliation the freeze currently relies on.
+- **Ruling 2 shipped**: gate-40 fences the five token families that had none, red-proven 10/10 with
+  one planted literal per family.
+- **Register corrected**: `F-b` · `F-h` · `F-q` struck with evidence (struck, not deleted);
+  `F-u` re-worded to *ancestry guard* with the lease reasoning kept legible. Live count **16**,
+  derived four ways, never typed.
+- **Convention 16 habit discharged** at open and close.
+
+### Verification `[D]`
+
+| Check | Result |
+|---|---|
+| Gate suite | **574/574** — exactly 571 + gate-40's 3, derived; no other spec moved |
+| `alias_guard_redtest.sh` | **13/13** (5 mutations · 2 named controls · 4 further controls · enumeration limb · case 9) |
+| Guard demonstrated to FAIL | mutating it to fail-open turns **5 cases red**; removing the injector call turns **case 9 red** |
+| `token_census_redtest.sh` | **10/10** — all six families planted and caught; frame-collapse proves the coverage floor |
+| gitleaks (full history) | **884 commits, no leaks** |
+| ⛔ Deploy freeze | **HOLDS** — `git fetch` then `cat-file -t` on `30c8163` + `f4fa9c5`: both fatal, at open **and** close |
+| Alias re-probe (read-only) | `/` · `/vaults.json` · `/api/registry.v1.json` · `/state-of-the-network/` all **200**; `/.well-known/adna-build.json` **404** = the documented pre-bootstrap state |
+| Tree after red-tests | clean — both harnesses restore in a trap; no `redtest` residue in `src/` |
+
+### Blockers
+
+- ⛔⛔ **Deploy freeze holds** — needs **lemur** to push `30c8163` + `f4fa9c5`. Outside this node's
+  control. **P4.1 and P4.2 remain built-not-deployed; P4.4a's work now joins them.**
+- ⛩ **12 commits unpushed.** A push is a per-action outward GO.
+- ⛩ **The Vitruvius ask (ruling 3) is undelivered** — an outward act needing its own GO, and it
+  gates P4.4b's AC4.
+- ⛩ Still owed and out of scope here: Hopper `ack_required` · Pygmalion ask · Mondrian #9 ·
+  P3.3 O2 (`npm login`) · P2.6 O0b.
+
+### Next up
+
+**P4.4a A1** — the 16 live register rows, **`F-o` first** (5 → 11 hits in three days, accelerating).
+Then A2's three gate classes, then A3's ask + AAR.
+
+### Files touched
+
+**Created** — `site/scripts/{inject_build_stamp.mjs,check_alias_ancestry.mjs,alias_guard_redtest.sh,token_census_redtest.sh}` · `site/tests/gates/gate-40-token-census.spec.ts` · this session file.
+**Modified** — `site/scripts/deploy_adna.sh` · `missions/mission_haussmann_p4_4_ci_hardening.md` ·
+`missions/session_prompts_haussmann.md` · `campaign_haussmann/CLAUDE.md` (convention 16 amended —
+it named the wrong instrument and F-u inherited the error from it) ·
+`artifacts/p4_4/{ac_amendment_proposal,f_u_alias_guard_design}.md`.
+**Moved** — the crashed session file → `history/2026-08/`.
+
+### Token budget
+
+`token_budget_actual` ≈ **110–140 kT** content-load, one session — inside the ~120–180 kT estimate,
+and inside P4.4a's ratified ~280–420 kT with A1–A3 still to run.
+
+### Next Session Prompt
+
+> Persona **Rosetta**. Open `how/campaigns/campaign_haussmann/CLAUDE.md` and
+> `missions/mission_haussmann_p4_4_ci_hardening.md`. **P4.4a is OPEN and A0 + A0v + ruling 2 are
+> DONE** (`9b429e1` · `4a9bc09` · `ff4ad51`); the AC amendment is **signed and applied** — do not
+> re-open that gate. **Next is A1: the 16 live register rows, `F-o` FIRST** (its `mcp` hit count went
+> 5 → 11 in three days and the row's whole content is a prediction that a future `grep -c` misreads
+> the item as *moved*). Read each row **at the object before funding it** — three of nineteen were
+> already dead last time and nothing said so. ⛔ **Re-verify the freeze at open**
+> (`git cat-file -t 30c8163 f4fa9c5` must both fail) and re-probe the alias read-only (convention 16).
+> Baselines: suite **574/574** · `alias_guard_redtest.sh` **13/13** · `token_census_redtest.sh`
+> **10/10** · gitleaks **884 commits, no leaks**. Build with `npx astro build`, then
+> `node scripts/inject_redirects.mjs .` **and** `node scripts/inject_negotiation.mjs .` before running
+> gates outside a deploy (convention 6 — G15 needs the negotiation routes, not just the file).
+> ⛩ **12 commits unpushed** — a push is a per-action GO. ⛩ The **Vitruvius ask** (ruling 3) is still
+> undelivered and gates P4.4b's AC4.
