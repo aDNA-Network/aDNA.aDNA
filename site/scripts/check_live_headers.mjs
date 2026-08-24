@@ -26,6 +26,11 @@ const vercelJson = JSON.parse(readFileSync(join(here, '..', 'vercel.json'), 'utf
 const block = (vercelJson.headers || []).find(h => h.source === '/(.*)');
 if (!block) { console.error('check_live_headers ABORT: no "/(.*)" headers block in vercel.json'); process.exit(1); }
 const expected = block.headers.map(h => h.key);
+/* F-f: carry the configured VALUE alongside the key, so the compare below can
+ * ask the question this script was named for. Keyed by the configured spelling;
+ * lookups against the response lowercase separately (HTTP header names are
+ * case-insensitive, Map keys are not). */
+const expectedValues = new Map(block.headers.map(h => [h.key, h.value]));
 if (demo) expected.push('X-Bogus-Header-That-Cannot-Exist');
 
 let res;
@@ -50,10 +55,7 @@ try {
  * Two assertions close it: the final response must be OK, and it must still be on the origin we
  * asked for. Both are cheap, and both turn a false green into an honest "cannot verify from here".
  *
- * NOT closed here: this still checks header NAMES, not VALUES, so a correct-name/wrong-value drift
- * would pass on prod too. Fixing that needs vercel.json's expected values compared field by field
- * — a bigger change than this mission should make to a shared deploy tool. Handed to P4.4, which
- * owns CI hardening.
+ * ⛩ NOW CLOSED — HAUSSMANN P4.4a A1 / F-f. Values are compared field by field below.
  */
 const finalOrigin = (() => { try { return new URL(res.url).origin; } catch { return null; } })();
 if (!res.ok) {
@@ -72,11 +74,59 @@ if (finalOrigin && finalOrigin !== origin) {
   process.exit(1);
 }
 
-const missing = expected.filter(k => !res.headers.has(k.toLowerCase()));
-const served = expected.filter(k => res.headers.has(k.toLowerCase()));
-console.log(`live-headers ${origin} → served ${served.length}/${expected.length}: ${served.join(', ') || '(none)'}`);
+/* ⛩ HAUSSMANN P4.4a A1 / F-f — VALUES, NOT JUST NAMES.
+ *
+ * Until now this compared header NAMES only (`res.headers.has(k)`), so a
+ * correct-name / wrong-value drift passed on production. That is a real gap and
+ * not a hypothetical one: the whole reason the origin/ok assertions above exist
+ * is that Vercel's SSO login page sets all four of the same header NAMES with
+ * entirely different values, and this script called that "no drift" for four
+ * months.
+ *
+ * ⚠ THE COMPARISON IS `expected ⊆ served`, NEVER SET EQUALITY. That constraint
+ * came free from F-h's discharge, which re-read P0.2's header evidence against
+ * the alias by hand: the alias serves 14 headers vercel.json does not name
+ * (`strict-transport-security`, `x-vercel-*`, the usual transport set), so an
+ * equality check would go red on Vercel's own additions and be reverted within
+ * a week. We assert about the headers WE configure, and say nothing about the
+ * rest.
+ *
+ * WHY EXACT STRING EQUALITY AND NOT A NORMALISED COMPARE: measured before
+ * choosing (2026-08-24, live alias) — all four configured values match
+ * BYTE-FOR-BYTE, CSP included. Normalisation would therefore be tolerance we
+ * have not earned, and a loose compare is how a value drifts one directive at a
+ * time without anything going red. If a legitimate divergence ever appears, the
+ * honest response is to fix the config or record the divergence with its
+ * reason — not to quietly widen this predicate.
+ */
+const norm = (s) => (s ?? '').trim();
+const report = expected.map((k) => {
+  const got = res.headers.get(k.toLowerCase());
+  if (got === null) return { key: k, state: 'MISSING' };
+  const want = expectedValues.get(k);
+  // A demo-injected key has no configured value; presence alone settles it.
+  if (want === undefined) return { key: k, state: 'OK' };
+  return norm(got) === norm(want) ? { key: k, state: 'OK' } : { key: k, state: 'MISMATCH', want, got };
+});
+
+const missing = report.filter((r) => r.state === 'MISSING');
+const mismatched = report.filter((r) => r.state === 'MISMATCH');
+const ok = report.filter((r) => r.state === 'OK');
+
+console.log(
+  `live-headers ${origin} → ${ok.length}/${expected.length} match by value: ${ok.map((r) => r.key).join(', ') || '(none)'}`,
+);
+
 if (missing.length) {
-  console.error(`live-headers DRIFT: missing ${missing.join(', ')} — deployed artifact does not match vercel.json`);
-  process.exit(1);
+  console.error(`live-headers DRIFT: missing ${missing.map((r) => r.key).join(', ')} — deployed artifact does not match vercel.json`);
 }
-console.log('live-headers OK — no drift');
+for (const r of mismatched) {
+  console.error(
+    `live-headers DRIFT: ${r.key} is SERVED BUT WRONG — this is the class a presence check cannot see.\n` +
+      `  vercel.json: ${r.want}\n` +
+      `  served:      ${r.got}`,
+  );
+}
+if (missing.length || mismatched.length) process.exit(1);
+
+console.log('live-headers OK — no drift (names and values)');

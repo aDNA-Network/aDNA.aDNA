@@ -1274,3 +1274,34 @@ the mission that did the building — the discipline P3.1 and P3.2 both applied.
 
 **The list is the datum; no total is typed beside it.** **FALSE: 0** — and §14.1 is the honest
 footnote on that zero: one false claim was drafted this session and cut before it reached the tree.
+
+
+---
+
+## §15 · P4.4a A1 — counts re-derived, because §11.5 told us to (2026-08-24)
+
+### §15.1 Counts — derived last
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **160** |
+| **Unique ids** | **145** (14 `G-*` + 131 `R-*`, `R-11`…`R-141`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, not typed.
+
+⭐ **THIS SECTION EXISTS BECAUSE THE REGISTER'S OWN INSTRUCTION WENT UNFOLLOWED, AND THAT IS
+EXACTLY THE DEFECT `F-c` DESCRIBES.** §11.5 ends *"Run it again if anything below this line
+changes."* Sections **§12, §13 and §14 were all written below that line** and the count was never
+re-run — so the register's most recent published figure read **147 rows / 132 ids** while the
+derivation read **160 / 145**. Nobody was careless: the instruction was correct, sitting in
+the right file, addressed to the right person, and **nothing enforced it**.
+
+⇒ **That is the whole argument for `gate-41`**, landed in the same session: *a published tally that
+disagrees with the derived one fails a gate rather than waiting to be noticed by someone opening
+the file for another reason.* The instruction stays — it is still good advice — but it is no longer
+the only thing standing between this register and a stale number.
+
+⚠ **The gate reads the LAST `Counts` table in the file, in document order** — the one claiming
+currency by position. So this section must remain last, and any future `§N.M Counts` section must be
+appended after it, never inserted above.
