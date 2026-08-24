@@ -8,7 +8,16 @@ cc: []
 created: 2026-08-23
 updated: 2026-08-23
 direction: outbound
-status: staged                 # ⛩ delivery GO at session close — staged, never written into WebForge (Rule 10)
+status: delivered              # ⛩ operator GO at session close 2026-08-23
+delivered_to: WebForge.aDNA/who/coordination/
+delivered_at: 2026-08-24T04:31Z
+delivered_commit: 17fc92d      # stamped BEFORE the peer-side copy (Hopper F-F23) so src and dst are zero-delta
+delivery_probe: >              # the same test peers apply to us before writing into our tree
+  Probed at the act: WebForge lease `session_vitruvius_20260824_kw25_client_half.md` read ACTIVE, and it
+  DOES declare files in who/coordination/ — five of them, all `coord_2026_08_23_vitruvius_to_*`. None
+  collides with this filename, and the tree showed ZERO writer-class changes in the preceding 30 minutes.
+  Delivered on that basis. Recorded because "the lease was active" alone is not a verdict either way —
+  what matters is whether it declares the thing you are about to touch.
 ack_required: false
 severity: low                  # nothing of yours is broken; one thing of ours was, and one thing of yours is unbuilt and now has evidence
 session: session_stanley_20260823_204458_haussmann_p4_1_o1_ac_amendment

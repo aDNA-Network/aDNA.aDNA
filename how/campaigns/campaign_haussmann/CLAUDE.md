@@ -87,7 +87,30 @@ tags: [campaign_governance, haussmann]
       and it is how F-s was found. ⛔ **No monitor is built, deliberately** — convention 15's ruling stands
       (the habit costs a sentence and cannot itself be wrong; the instrument costs a sitting and can), and
       this very session authored a **fifth** wrong instrument, which is the argument for the habit.
-    - ⚠ **The cause is still unknown.** The restore is a fact with a timestamp; it is not a guarantee.
+    - ⛔⛔ **AMENDMENT 2026-08-24 — CAUSE FOUND, AND IT IS NOT WHAT THIS CONVENTION FIRST SAID. THERE IS
+      NOW A STANDING DEPLOY FREEZE.** ~~The cause is still unknown.~~ Venus relayed it from the deputy lane:
+      the deploys came from the **lemur checkout of `aDNA.aDNA`** — *a second clone of this same repo on
+      another machine* — riding local commits `30c8163` + `f4fa9c5` (v0.4.3 installer artifacts + the Arch
+      `[adna]` repo), **recorded in lemur's own `deploy_log.txt`**, unpushed because the deputy grant does
+      not cover origin.
+      - ⛔ **AND THE RESTORE FIRED THE SAME HAZARD BACKWARDS.** Deploying `tree=922519c` from here
+        **un-published v0.4.3 and the Arch repo** (`[D]` 2026-08-24: three 404s). **Both checkouts hold
+        work the other lacks, and each one's `--prod` deploy silently un-publishes the other's.**
+        *(Not broken, though — live `install.sh` pins `0.3.1` and that payload serves 200, so the site is
+        internally consistent, just regressed to the older release. Check which alarm you have before
+        raising one.)*
+      - ⛔ **FREEZE: no `deploy_adna.sh prod` from ANY checkout until the two trees are reconciled** —
+        lemur pushes `30c8163` + `f4fa9c5`, then **one** deploy from a tree holding both halves. Neither
+        half is fixable from the other's machine: the v0.4.3 bytes have never reached this node.
+      - ⭐ **The real gap is not a rogue actor — it is that `deploy_adna.sh` has a clean-tree guard and no
+        SINGLE-WRITER LEASE FOR THE PRODUCTION ALIAS.** Both checkouts followed the discipline; both
+        assumed they were the only one deploying. The guard proves *your* tree is clean; nothing proves
+        *the alias* is not about to be taken by someone else's. Routed to **P4.4**.
+      - ⭐ **A NEGATIVE RESULT IS ONLY AS WIDE AS THE COMMAND THAT PRODUCED IT.** This convention was
+        authored saying the deploys were in *"no `deploy_log*` anywhere in the fleet"* `[D]`. The grep ran
+        over `~/aDNA` — **one machine**. `[D]` marks what was **observed**, not what was **searched**, and
+        an un-truncated command over a scope that silently excludes the answer reads exactly like a
+        thorough one. Sibling of the campaign's own *"a truncated command is a derived figure."*
 
 ## What this campaign protects (do not regress)
 

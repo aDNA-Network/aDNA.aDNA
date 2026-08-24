@@ -5,7 +5,7 @@ finding_id: F-s
 campaign_id: campaign_haussmann
 mission_id: mission_haussmann_p4_1_token_pipeline
 severity: S1
-status: resolved   # restored 2026-08-24T02:44:59Z under operator GO; red-proven 10/10 — see §Resolution
+status: partially_resolved   # Haussmann surfaces restored 2026-08-24T02:44:59Z (red-proven 10/10). ⛔ NOT resolved: the restore un-published v0.4.3 + the Arch repo, cause now KNOWN (lemur checkout), reconciliation blocked on commits absent from this tree. See §CAUSE FOUND.
 created: 2026-08-23
 updated: 2026-08-23
 last_edited_by: agent_rosetta
@@ -41,6 +41,44 @@ The live `llms.txt` does not name `/state-of-the-network`; the live sitemap does
 footer still links `/adopters`. **These are not cache artifacts** — a cache-busted request returns the same,
 and a stale HTML cache cannot make a JSON *route* 404.
 
+## ⚠ CAUSE FOUND 2026-08-24 — and two sentences in this finding were wrong
+
+> Corrected in place; the wrong sentences below are **struck, not deleted** (SO-6), because the
+> reasoning error is the useful part.
+
+**The cause was never unknown. It was out of scope of the command that looked for it.**
+Venus relayed it from the deputy lane (`coord_2026_08_23_venus_to_rosetta_two_unpushed_deploy_commits_unpublish_hazard.md`,
+`severity: high`, delivered **2026-08-24T03:28Z** — **44 minutes AFTER the restore below had already
+fired**): the deploys came from the **lemur checkout of `aDNA.aDNA`**, a *different machine's clone of
+this same repo*, operated through Jake's deputy grant. They rode local commits **`30c8163`** and
+**`f4fa9c5`** (v0.4.3 installer artifacts + the Arch `[adna]` package repo), and are **recorded in
+lemur's `deploy_log.txt`** — deploy records `2026-08-23T20:27:03Z tree=30c8163` and
+`2026-08-23T20:57:21Z tree=f4fa9c5`, both `mode=prod`.
+
+⭐ **The reasoning error, which is worth more than the fact.** This finding said the deploys appeared in
+*"no `deploy_log*` anywhere in the fleet"* `[D]`. The grep behind that ran over `~/aDNA` — **one
+machine**. Lemur is a peer node with its own clone, so its log was never in the search space. The
+honest sentence was *"not recorded on this node."* **A negative result is only as wide as the command
+that produced it, and `[D]` marks what was observed, not what was searched.** Same shape as the
+campaign's `grep | head` finding (*"a truncated command is a derived figure"*), one step further out:
+**an un-truncated command over a scope that silently excluded the answer.**
+
+⛔ **AND THE RESTORE FIRED THE SAME HAZARD IN REVERSE.** Both checkouts hold work the other lacks.
+Lemur's deploys rolled back six days of Haussmann surfaces; the restore below then **un-published
+v0.4.3 and the Arch repo** — verified live 2026-08-24 `[D]`: `/adna-installer-0.4.3.tar.gz` **404** ·
+`.minisig` **404** · `/repo/arch/adna-0.4.3-1-any.pkg.tar.zst` **404**. Neither `30c8163` nor `f4fa9c5`
+exists in this checkout (`git cat-file` → absent), so **this desk cannot reconcile it** — the fifth
+instance in this campaign of a required act whose prerequisite does not exist on the performing tree.
+
+✅ **Nothing is broken or dangling.** Live `install.sh` pins `VERSION="0.3.1"` and
+`adna-installer-0.3.1.tar.gz` serves **200**, so the site is internally consistent — *regressed to the
+older release*, not left pointing at a missing one. Checked before escalating, because "installs are
+broken" and "an older release is live" are very different alarms.
+
+⛔ **STANDING: no `deploy_adna.sh prod` from ANY checkout until the two trees are reconciled.** Whichever
+deploys next silently un-publishes the other's work. The way out is one deploy from a tree holding both
+halves.
+
 ## Where it came from
 
 `site/scripts/deploy_log.txt` ends at:
@@ -51,15 +89,23 @@ deploy_record: 2026-08-23T01:45:36Z mode=prod url=…izrobe0cq… tree=5c6b22d
 
 — the P3.4 deploy, correct and recorded. **`vercel ls` shows TEN production deployments since**, at roughly
 1h ×4, 2h ×2, 4h, 5h, 6h ×2, all `● Ready`, all `target: production`, all `Builds: . [0ms]` (prebuilt
-uploads), all under user `sciencestanley-5565`. **Not one of them appears in any `deploy_log*` anywhere in
-the fleet** `[D]` — a fleet-wide grep returns only this vault's log, whose last line is the P3.4 record.
+uploads), all under user `sciencestanley-5565`. ~~**Not one of them appears in any `deploy_log*` anywhere in
+the fleet** `[D]`~~ ⚠ **STRUCK 2026-08-24 — FALSE.** They appear in **lemur's** `deploy_log.txt`; the grep
+behind that claim covered `~/aDNA` on THIS node only, and lemur is a peer machine with its own clone.
+The honest sentence was *"not recorded on this node."*
 
 The project has **no git integration** (`vercel project inspect` shows no repository section), so these were
-**CLI deploys by an actor outside this vault's deploy discipline** — not an auto-build. On Vercel, the
-production domain follows the newest `--prod` deployment automatically, so each of those ten silently took
-`adna.network`; the last one is what a reader gets today.
+CLI deploys — not an auto-build. On Vercel, the production domain follows the newest `--prod` deployment
+automatically, so each of those ten silently took `adna.network`; the last one is what a reader got.
 
-⚠ **This vault did not deploy today.** This session has run no build, no deploy, and no write to `site/`.
+⚠ ~~**CLI deploys by an actor outside this vault's deploy discipline.**~~ **STRUCK 2026-08-24 — unfair and
+inaccurate.** They were run from the **lemur checkout**, through Jake's deputy grant, using
+`deploy_adna.sh` and recorded in that checkout's own `deploy_log.txt`. That is *inside* the discipline;
+what is outside it is the **assumption both checkouts made — that they were the only one deploying.**
+The discipline has no single-writer lease for the production alias, and that is the actual gap.
+
+⚠ ~~**This vault did not deploy today.**~~ True when written; **false within the hour.** This vault then
+deployed the restore at `2026-08-24T02:44:59Z` — and un-published lemur's v0.4.3 work in the process.
 
 ## Why it matters beyond the outage
 
@@ -79,8 +125,9 @@ production domain follows the newest `--prod` deployment automatically, so each 
 
 ## What is NOT claimed
 
-- **No cause is assigned.** Who ran the ten deploys, from which tree, and why, is unknown from here. It is
-  not asserted to be malicious, accidental, or automated — only that it is unrecorded.
+- ~~**No cause is assigned.** Who ran the ten deploys, from which tree, and why, is unknown from here.~~
+  ⚠ **SUPERSEDED 2026-08-24** — cause found: the lemur checkout, via the deputy lane. See §CAUSE FOUND.
+  The restraint was right; the scope of the search was not.
 - **`izrobe0cq` is not proven good by probe.** It is `● Ready` and carries `tree=5c6b22d`, the tree the P3.4
   record names and the tree whose site content matches the working tree (`git log -- site/` HEAD is
   `c84e19b`; nothing after `5c6b22d` touches `site/`). Its own URL is Deployment-Protection-gated, so it
