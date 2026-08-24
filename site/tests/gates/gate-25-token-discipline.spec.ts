@@ -91,3 +91,90 @@ test('G25 token-discipline: no undocumented hardcoded hex in CSS', () => {
   }
   expect(violations, `Undocumented hardcoded hex:\n${violations.join('\n')}`).toEqual([]);
 });
+
+/**
+ * G25b — Colour-function literals  (HAUSSMANN P4.1 O1 · ADR-059 (c) limb (i))
+ *
+ * G25 above matches `#rrggbb` only, so the `hsl()` form of a colour is invisible to it. That is not
+ * hypothetical: `styles/tutorial-meta.css` carries three AA-tuned difficulty-badge colours whose
+ * DARK-mode hex twins are allowlisted in G25 above, while their LIGHT-mode `hsl()` originals sat in
+ * the same file unseen by any gate.
+ *
+ * This is the scoped adoption of WebForge's `conformance.py --strict-leak` (its KW-10 colour-function
+ * rule), and the scoping is the ruling. Measured against this site, the full lint fires ~400 times:
+ * 308 SVG `fill`/`stroke` attrs — mostly `fill="none"`, the rest illustration assets that ADR-053
+ * just made a normative part of the visual voice — plus 64 `color-mix()` forms that are token-based
+ * and which WebForge's own regex is deliberately anchored to skip. Adopting it wholesale would buy
+ * ~400 allowlist rows to surface three real items. So:
+ *
+ *   ADOPTED     colour-function literals (`rgb()/rgba()/hsl()/hsla()` with a LITERAL first argument)
+ *               in the same surfaces G25 already scans.
+ *   NOT ADOPTED SVG markup attrs, inline `style=` attrs, named colours, primitive-ramp refs (we have
+ *               no primitive ramps), and the byte-identity half of conformance.py — which is
+ *               inapplicable by ruling, because ADR-059 (c) pins the EMISSION divergence and this
+ *               site is deliberately not compiled from WebForge's DTCG source.
+ *
+ * The `[\d.+-]` anchor after the paren is what separates a literal from `hsl(var(--x) …)`; token-based
+ * forms must keep passing, which the red-test proves in both directions.
+ */
+const COLORFN = /\b(?:rgba?|hsla?)\(\s*[\d.+-]/gi;
+
+// Allowlist — colour-function literals kept on purpose, keyed by src-relative path with a rationale.
+// Same contract as ALLOW above: prefer a token; allowlist only what is genuinely deliberate.
+const ALLOW_COLORFN: Record<string, string[]> = {
+  // ── Class 1: light-mode AA-tuned twins of hex already allowlisted in G25 above ──
+  // The finding this gate was built for, and it turned out to be TWO files, not one. In both, the
+  // DARK-mode value is hex and fenced by G25, while the LIGHT-mode value is the hsl() original and
+  // was fenced by nothing. Half-guarded pairs: the gate that could see one half could not see the
+  // other, so a light-mode regression here would have been silent.
+  //
+  // Three difficulty badges, darkened for AA on their tinted color-mix backgrounds.
+  // (dark twins in G25: #34c06e / #5cb8e8 / #e89545)
+  'styles/tutorial-meta.css': ['hsl(142 72% 24%)', 'hsl(217 91% 35%)', 'hsl(25 95% 35%)'],
+  // Four reference-stability labels, same shape — found by this gate, not predicted before writing it.
+  // (dark twins at L125-128, in G25: #34c06e / #5cb8e8 / #e89545 / #e87070)
+  'pages/reference/[...slug].astro': [
+    'hsl(142 72% 24%)', 'hsl(199 89% 32%)', 'hsl(38 92% 32%)', 'hsl(0 72% 35%)',
+  ],
+
+  // ── Class 2: translucent black/white veils — shadows, scrims, hairlines ──
+  // Not brand colour and not tokenizable without encoding alpha per use-site. G25's own header
+  // already names this class ("the always-dark hero scrim") as deliberate. Listed rather than
+  // pattern-excluded so a NEW veil still fires and gets dispositioned.
+  'components/sections/GlossaryTooltip.astro': ['rgba(0, 0, 0, 0.18)'],   // tooltip box-shadow
+  'components/sections/HomeHero.astro': ['rgba(0, 0, 0, 0.55)', 'rgba(0, 0, 0, 0.5)'], // hero title shadow stack
+  'components/sections/NetworkDiagram.astro': ['rgba(255, 255, 255, 0.82)'], // diagram label fill
+  'pages/index.astro': ['rgba(255, 255, 255, 0.07)'],                     // hairline divider
+  // NOTE on scope, verified at authoring: HomeHero's canvas palette (L458-539) holds ~18 further
+  // rgba() literals and correctly does NOT fire — they live in <script>, and this gate scans only
+  // <style> blocks and .css, exactly as G25 does. That is a deliberate scope, not an oversight:
+  // the canvas palette is imperative drawing code, not a stylesheet.
+};
+
+test('G25b token-discipline: no undocumented colour-function literals in CSS', () => {
+  const violations: string[] = [];
+  for (const f of walk(SRC)) {
+    const rel = f.slice(SRC.length + 1);
+    if (TOKEN_FILES.has(rel)) continue;
+    const raw = readFileSync(f, 'utf8');
+    let css = '';
+    if (f.endsWith('.css')) css = raw;
+    else if (f.endsWith('.astro')) {
+      css = [...raw.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g)].map((m) => m[1]).join('\n');
+    } else continue;
+    css = stripComments(css);
+    const allowed = new Set((ALLOW_COLORFN[rel] ?? []).map((v) => v.toLowerCase().replace(/\s+/g, ' ')));
+    // Re-read each match in full (the regex anchors on the opening paren; the value is what a
+    // reader must disposition, and what an allowlist entry authorises).
+    for (const m of css.matchAll(COLORFN)) {
+      const start = m.index!;
+      const close = css.indexOf(')', start);
+      if (close === -1) continue;
+      const value = css.slice(start, close + 1).replace(/\s+/g, ' ').trim();
+      if (!allowed.has(value.toLowerCase())) {
+        violations.push(`${rel}: ${value} — tokenize (--color-* / palette.ts) or allowlist with a rationale`);
+      }
+    }
+  }
+  expect(violations, `Undocumented colour-function literals:\n${violations.join('\n')}`).toEqual([]);
+});

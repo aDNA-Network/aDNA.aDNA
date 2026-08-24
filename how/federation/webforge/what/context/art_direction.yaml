@@ -18,8 +18,13 @@
 entity: adna
 version: 0.1.0
 date: 2026-08-23
-status: proposed                     # → `ratified` when O1 closes AC2/AC3 (the pin + the two gates).
-                                     # The RULINGS are accepted; this ENTRY is not yet complete.
+status: ratified                     # ⛩ The CONTENT was operator-ratified at DP8 2026-08-23 (ADR-053 (a)
+                                     # for signature_element + the slot table; ADR-059 (c) for color_grade).
+                                     # This field is the P5 build-readiness marker, and it flips here on
+                                     # the condition this file itself stated: AC2's four limbs are closed
+                                     # (both validators adopted + red-tested · divergence pinned in the
+                                     # wrapper · Vitruvius memo staged · nothing derived or regenerated).
+                                     # It is NOT an agent ratifying its own work — it records one.
 
 sources:
   visual_dna: absent                 # honest-absent (a legal value) — no populated bundle exists fleet-wide.
@@ -119,7 +124,12 @@ signature_element:
     surface stays Tokyo-Night type and colour in both themes. The containment IS the signature: the art
     reads as a property because it never becomes chrome.
   where: "the five slots in `imagery.slots` above; live today at 10 hero panels"
-  mechanism: image                   # optimised <Image> with explicit widths/sizes, no client JS
+  # `generated_asset` per the P5 enum ['css','generated_asset','island','layout','type'] — a NON-colour
+  # mechanism, which is the constraint the enum exists to enforce (a signature must not be colour alone;
+  # DCRIT dc_06). This field first read `image`, an invented value; `--validate-entry` rejected it and
+  # `generated_asset` is the better description anyway — the slot art IS a generated asset (ADR-053's
+  # ComfyUI lineage), delivered through an optimised <Image> with explicit widths/sizes and no client JS.
+  mechanism: generated_asset
   floor_note: >
     Zero-JS content-static (FR-A). The containment rule is also the a11y control: keeping illustration
     out of nav/tables/rows is what keeps AA verifiable in both themes. Any slot that regresses LCP on its

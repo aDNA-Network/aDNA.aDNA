@@ -22,10 +22,13 @@ depends_on: [mission_haussmann_p0_3_webforge_intake, mission_haussmann_p2_6_mids
 blocks: [mission_haussmann_p4_2_craft_floor]
 acceptance_criteria:
   - "⛩ DP8 / ADR-053 ratified: the visual voice = a governed, slot-contained illustration program (fixed slots: hero panel, vault/graph cards, category marks, empty states; chrome stays Tokyo-Night type-and-color) — or the operator's elected alternative — with the containment rule + credit-per-artifact + generation-pipeline note"
-  - "Token substrate decision executed: adopt the WebForge DTCG pipeline (site tokens compiled from the single source; tokyo_night seed + aDNA deltas) OR a formally pinned divergence with rationale in the wrapper"
+  # ⛩ AC2/AC4/AC5 + verification_method AMENDED 2026-08-23, operator-signed. Record + rationale:
+  # artifacts/p4_1/ac_amendment_proposal.md (`accepted`). AC1 unchanged and already MET (ADR-053 accepted).
+  - "ADR-059 (c) executed, all four limbs: (i) WebForge's check_aa.py + conformance.py --strict-leak adopted as gates over the existing token layer, EACH RED-TESTED BY DELIBERATE MUTATION before it is believed; (ii) the EMISSION divergence formally pinned in how/federation/webforge/CLAUDE.md with its rationale and its stated review condition; (iii) the correcting memo to Vitruvius staged, withdrawing the pattern register's 'convergence is natural' line; (iv) no ceiling derived and no token value regenerated"
   - "aDNA's art_direction.yaml entry authored (signature_element = the ruled program; anti_signature named) at the wrapper path per P5 schema"
-  - "The first real aDNA VisualDNA bundle authored (schema v1.0) so the identity is reusable beyond hero PNGs"
-verification_method: "gate-25/4d-class token checks + T0 captures of slot applications + ranker ≥4.0 + ADR-053 record"
+  - "Either the first real aDNA VisualDNA bundle authored against a schema that fits a house visual voice, OR — if style_atmosphere is still unexercised with no schema file — a STAGED coordination memo to Pygmalion asking for it, with aDNA's entry as the first live consumer case. The gap is recorded either way; it is NEVER silently satisfied by authoring a location/object bundle for one hero scene, which would not make the identity reusable and would report done against a criterion that had not moved"
+  - "At least one NEW slot from the ADR-053 table is specified and applied on a live surface, shipping in the same change as (a) its text equivalent, (b) its per-artifact CREDIT — the additive `credit` field on DocumentationLayout's existing heroImage prop, never a new component — and (c) its both-theme contrast check. The slot spec is written so a contributor could apply the same slot to a new page without asking"
+verification_method: "One testable instrument per criterion (the old 'gate-25/4d-class token checks' could not see AC2 under ANY option — gate-25 EXCLUDES tokens.css/branding.css by construction; 4d compares WebForge's source, which this site is not compiled from). AC1 → the ADR-053 record. AC2 → the two adopted validators passing over the site's token layer, each RED-PROVEN BY MUTATION, plus the wrapper diff showing the pin and the staged memo on disk. AC3 → `derive_tenant_ceiling.py --validate-entry` on the wrapper entry (the P5 build-readiness gate; AC3 was previously tested by nothing). AC4 → the bundle, or the staged memo, on disk. AC5 → T0 captures of the applied slot in BOTH themes + axe-0 parity + the full gate suite green. Campaign-level: persona ranker ≥4.0 on any surface changed."
 human_gate: true
 tags: [plan, haussmann, p4, tokens, visual_voice]
 ---
@@ -74,6 +77,75 @@ convention-13 coverage below.
 regression — `adna.network` was serving a pre-2026-08-18 build. Record:
 `artifacts/p4_1/finding_live_prod_regression_20260823.md`. Restored
 `deploy_record: 2026-08-24T02:44:59Z mode=prod url=…j2fq4vn44… tree=922519c`, red-proven 10/10.
+
+### O1 — 2026-08-23, session `session_stanley_20260823_204458_haussmann_p4_1_o1_ac_amendment`
+
+**Status: O1 COMPLETE. AC1 ✓ · AC2 ✓ · AC3 ✓. AC4 and AC5 remain (O3 and O2).** Suite **555/555**
+(554 + G25b), zero xfail. Convention-16 re-probe green at open; alias unchanged.
+
+**⛩ The AC amendment landed first, as ruled** — record + rationale at
+`artifacts/p4_1/ac_amendment_proposal.md` (`accepted`). ⭐ **Re-reading the criteria against the
+RULINGS — a different act from reading them against each other — found a FIFTH defect the DP8-day pass
+had missed.** AC2 offered a binary (*adopt the pipeline* OR *pin a divergence*) and the operator had
+ruled **(c), a hybrid neither branch describes**. Executed as written, O1 would have ticked AC2 on the
+"pinned divergence" branch and **the validator adoption — the actual work, and the only part that closes
+the verification gap — would never have appeared in the acceptance record.** A mission can satisfy its
+criteria and under-report what it did.
+
+**AC2, all four limbs:**
+
+- **(i) Validators adopted, both red-proven.** `site/scripts/token_aa_check.py` **imports**
+  `check_aa.PAIRS` + `check_aa.ratio` from WebForge (by reference, never copied — wrapper SO 1) and
+  supplies only its own resolver, because our layer is hand-authored CSS and
+  `compile_css.resolved_role_map` has nothing to resolve. Reports **AA PASS, 0 pairs below floor**.
+  Red-proven **three ways** against a clean control: WebForge's imported pair table (dark `--color-text`
+  → 3 rows red), our consumer pairs **through the `var()` chain** (`--brand-link-dark` → light link rows
+  red), and a mode-independent badge pill. Every mutation **asserted before the run** — the P3.4 lesson
+  that a mutation matching nothing reports as a pass.
+  Second validator adopted **scoped**, as gate-25 **G25b** (colour-function literals), red-proven in
+  **both** directions: a literal `hsl()` fires; a token-based `hsl(var(--h) …)` and a token-based
+  `color-mix()` do **not**.
+- **(ii)** Divergence pinned in `how/federation/webforge/CLAUDE.md` §*Token substrate* — rationale, a
+  coverage table naming what each gate is **blind to**, and a **review condition** that re-opens (a).
+- **(iii)** Vitruvius memo staged at `who/coordination/coord_2026_08_23_rosetta_to_vitruvius_tokyo_night_is_not_our_seed.md`;
+  the false cell in `artifacts/webforge_pattern_register.md` withdrawn in-place with its evidence.
+- **(iv)** No ceiling derived, no token value regenerated. `derive_tenant_ceiling.py` was run **only** in
+  its `--validate-entry` mode, never against `site/`.
+
+**AC3 ✓ — and it has a real test for the first time.** `derive_tenant_ceiling.py --validate-entry`
+returns **`entry READY`, exit 0**. It earned its keep on the way: it rejected
+`signature_element.mechanism: image`, a value this desk invented — the P5 enum is
+`['css','generated_asset','island','layout','type']`, and **`generated_asset` is the better description
+anyway**. A control with a deliberately bad mechanism is still rejected.
+
+⭐ **THE FINDING — the instrument was wrong before the subject was, twice, and both times only a control
+caught it.**
+
+1. **`token_aa_check.py`'s first run reported FOUR failures. All four were pairs this desk fabricated.**
+   `--color-warning` and `--color-info` were tested as body text against the page background: they are
+   used as text **zero** times site-wide — they are border-and-background accents only. And
+   `--color-border` was given a 3:1 non-text floor: WCAG 1.4.11 governs component boundaries and
+   meaningful graphics, **not decorative separators**, and 103 of its 105 usages are dividers.
+   **A contrast pair asserts "this colour is rendered on that colour"; if no rule in the codebase does
+   that, the pair tests nothing and its verdict is noise.** Every pair in the file now carries its usage
+   count.
+2. ⚠ **Two of those four were manufactured by a single regex bug in the verification of the
+   verification.** The usage scan used `\bcolor\s*:`, which **also matches `border-color:`** — so
+   `.callout-warning { border-color: … }` read as a text usage and appeared to confirm the pair was
+   real. `(?<![-\w])color\s*:` gives the true count: **0**. *The check on the checker had the same class
+   of defect as the checker.*
+3. ⚠ **A third near-miss, caught before it reached a peer.** `--validate-entry` appeared to print
+   NOT-READY while **exiting 0** — which would have been a real upstream defect (a check that cannot
+   gate). It was `| head` swallowing the exit status. Re-run unpiped it **exits 1**. The false finding
+   was one sentence away from a delivered memo.
+
+⚠ **`conformance.py --strict-leak` is NOT adopted wholesale — ruled, measured, and recorded rather than
+skipped.** Its byte-identity half is inapplicable by construction. Its leak half fires **~400 times**
+here: 308 SVG `fill`/`stroke` attrs (mostly `fill="none"`; the rest illustration assets **ADR-053 made
+normative that same day**), 64 token-based `color-mix()` forms its own regex is anchored to skip, 4
+warn-only named colours — to surface **3** predicted real items. ⭐ **G25b found 7, in two files.** Both
+are the same shape: a **half-guarded pair**, where the dark-mode hex was fenced by G25 and its
+light-mode `hsl()` twin was fenced by nothing. The second file was not predicted before the gate existed.
 
 ### ⛩ Convention 13 — AC-coherence pass, COMPLETE, coverage recorded
 

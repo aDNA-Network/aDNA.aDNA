@@ -95,8 +95,61 @@ mission P4.5 formalizes. Content is intentionally `honest-absent` in the seed fi
 |---|---|---|
 | **P13** — Deploy orchestration (`deploy_prebuilt.sh`, `inject_headers.mjs`, HSTS ladder, `redact_vercel.sh`) | `WebForge.aDNA/what/lib/deploy/` | Adapted in-lane by mission P0.2 (deploy hardening) — consumer-lane single-build, not a copy. `VERCEL_TOKEN_ADNA` stays WebForge's own parked roster item (S9, Bitwarden-gated); this vault uses its existing `SS_VERCEL_TOKEN` in the interim, per P0.2's constraint to coordinate rather than duplicate or wait on WebForge's wave |
 | **P11** — Provider contract v1.2.0 (§3 intake, §4 build authority, §5 pins, §8 update protocol) | `WebForge.aDNA/what/artifacts/spec_webforge_provider_contract.md` | This wrapper *is* its §3/§5 execution |
+| **P4** — DTCG token pipeline, **VALIDATORS ONLY** (⛩ ADR-059 (c), 2026-08-23) | `WebForge.aDNA/what/lib/tokens/` (`check_aa.py`, `conformance.py` KW-10 rule) | `site/scripts/token_aa_check.py` **imports** the pair table + contrast math (never copies) and supplies its own resolver; the KW-10 colour-function rule is adopted **scoped** as gate-25 **G25b**. **Emission diverged and formally pinned** — see the section below |
+| **P5** — Art-direction register / ceiling engine | `WebForge.aDNA/what/doctrine/art_direction_register.md` | `what/context/art_direction.yaml` authored 2026-08-23 (⛩ ADR-053 (a)). WebForge's engine is `PROPOSED — not built`, so this entry is its **first live consumer test case**; implementation pressure owed back |
 
 Full register (all 15 families, maturity + adoption gaps): `../../campaigns/campaign_haussmann/artifacts/webforge_pattern_register.md`.
+
+## Token substrate — FORMALLY PINNED DIVERGENCE (ADR-059, ⛩ ratified 2026-08-23)
+
+> **Pattern P4 (DTCG token pipeline) is adopted for its VALIDATORS and diverged from for its
+> EMISSION.** Ruled at ⛩ DP8, option (c). Authority: `what/decisions/adr_059_token_substrate.md`
+> (`accepted`). This is the §5-required record of the divergence, its rationale, and its review
+> condition — it is a **pin, not a permanent exemption**.
+
+**Adopted.** WebForge's contrast audit, consumed **by reference** — `site/scripts/token_aa_check.py`
+imports `check_aa.PAIRS` and `check_aa.ratio` from `what/lib/tokens/` and supplies only its own
+resolver, because this site's token layer is hand-authored CSS rather than compiled DTCG. Plus a
+**scoped** adoption of `conformance.py`'s KW-10 colour-function rule as **gate-25 G25b**.
+
+**Diverged.** The site's tokens are **not** compiled from WebForge's DTCG source, **no ceiling is
+assigned**, and `derive_tenant_ceiling.py` is **not** run against `site/`.
+
+### Why (the short form; the argument is ADR-059 §§1–3)
+
+1. **`tokyo_night` is not this site's seed** — the pattern register said *"convergence is natural"* and
+   that line is **withdrawn**. It is filed under `ss_ceilings` as *"SS app canon (dark-only)"*, declares
+   `appearances: ["dark"]`, ships only `primitives.dark.json`, and is the **`anti_signature` in
+   WebForge's own filled fixture**. Adopting it would delete this site's light mode — a protected asset
+   (dark/light parity + an axe-0 record verified in both themes).
+2. **The hand-authored layer is a repair history, not a default.** `--color-success` sits at
+   `hsl(142 72% 26%)` because 40% lightness failed AA at 2.46:1 on a success tint; `--space-5/10/20`
+   exist because ~25 live declarations were silently collapsing to `initial`. A regenerated ramp is
+   perceptually principled and does not know any of that.
+3. **The derivation engine is unproven here.** Convention 14: not believed until demonstrated to fail.
+
+### Review condition — what re-opens full adoption
+
+A derived tenant ceiling diffed against the live CSS **under a working AA check**, showing no
+regression in either theme. That check now exists (`token_aa_check.py`, red-proven three ways), so the
+blocker is the diff, not the instrument. **Adoption was premature by exactly one instrument, and this
+pin is what holds the door open rather than closing it.**
+
+### What the two adopted gates actually cover — and what they do not
+
+| Gate | Covers | Blind to |
+|---|---|---|
+| `site/scripts/token_aa_check.py` | WCAG AA contrast on **resolved token values**, both appearances, WebForge's pair table + 8 consumer pairs | Anything not expressed as a token pair; rendered-page composition (that is gate-4/axe) |
+| gate-25 **G25** | raw `#hex` in `src/**` CSS + `.astro <style>` | `hsl()`/`rgb()` forms; `<script>`; token files |
+| gate-25 **G25b** *(new)* | colour-function **literals** in the same surfaces | SVG markup attrs, inline `style=`, named colours, `<script>` — all **deliberately** out of scope |
+
+⛔ **`conformance.py --strict-leak` is NOT adopted wholesale, by ruling.** Its byte-identity half is
+inapplicable (nothing here is generated from that source). Its leak half, measured against this site,
+fires ~**400** times — 308 SVG `fill`/`stroke` attrs (mostly `fill="none"`, the rest illustration
+assets that **ADR-053 just made a normative part of the visual voice**), 64 token-based `color-mix()`
+forms its own regex is anchored to skip, 4 warn-only named colours. It would buy ~400 allowlist rows to
+surface three real items. G25b surfaces those items — and found **seven**, in two files, not the three
+predicted.
 
 ## Patterns to author (owed back to WebForge)
 
@@ -131,11 +184,13 @@ reported back honestly, implementation pressure included.
 3. **Token-migration memo intake** (`VERCEL_TOKEN_ADNA`) — handled by mission P0.2 (deploy hardening), not
    duplicated here; P0.2 coordinates with WebForge's parked S9/Bitwarden-gated wave rather than waiting on it
    or re-asking separately.
-4. **`what/context/art_direction.yaml`** — the consumer-wrapper template
-   (`WebForge.aDNA/what/artifacts/template_webforge_consumer_wrapper.md`) specifies this as a required
-   **SIGNATURE step**: an operator-ratified `signature_element`, DCRIT `dc_06` pre-checked before any build
-   reads it. That is explicitly **P5 in the pattern register** — a P4 visual-voice mission's deliverable, not
-   this intake mission's. **Not authored here; its absence is not a P0.3 gap.**
+4. ~~**`what/context/art_direction.yaml`** — not authored here; its absence is not a P0.3 gap.~~
+   ✅ **AUTHORED 2026-08-23** at HAUSSMANN P4.1 (`what/context/art_direction.yaml`), with the
+   operator-ratified `signature_element` the template requires as its **SIGNATURE step** — ⛩ ADR-053 (a),
+   *"the contained pixel-art panel"*, plus the five-slot table and a three-clause `anti_signature` whose
+   first clause is *"not SS's tokyo-night app canon"*. `status: proposed` until O1's remaining limbs land.
+   **Still owed to Vitruvius**: this is the **first live consumer entry** against a P5 engine that is
+   `PROPOSED — not built`, so the implementation pressure is real and reportable (see the memo below).
 5. **`site/branding.json` duplication (finding, not yet resolved)** — this vault already had a live
    `site/branding.json` (and a `site/src/styles/branding.css` generated from it) predating this wrapper,
    itself already ADR-032-accurate (colors/fonts cross-verified, no conflict). That is precisely the
