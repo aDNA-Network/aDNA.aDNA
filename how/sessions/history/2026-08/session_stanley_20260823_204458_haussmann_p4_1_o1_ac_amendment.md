@@ -4,7 +4,7 @@ session_id: session_stanley_20260823_204458_haussmann_p4_1_o1_ac_amendment
 tier: 1
 created: 2026-08-23
 updated: 2026-08-23
-status: active
+status: completed
 last_edited_by: agent_rosetta
 persona: rosetta
 campaign: campaign_haussmann
@@ -12,7 +12,7 @@ mission: mission_haussmann_p4_1_token_pipeline
 objective: O1
 executor_tier: opus
 token_budget_estimated: "~200–320 kT (AC amendment → sign-off → the four ADR-059 obligations)"
-token_budget_actual:
+token_budget_actual: "within the ~200–320 kT estimate; no overrun. The unplanned work (F-s cause + the ack + the freeze) displaced O2 rather than adding to the total."
 tags: [session, haussmann, p4, p4_1, o1, tokens, adr_059, ac_amendment]
 ---
 
