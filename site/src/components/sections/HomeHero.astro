@@ -679,7 +679,7 @@ const heroNodes = graphLed
   .hero-title {
     font-family: var(--font-display);
     font-size: clamp(2.25rem, 7vw, 4.75rem);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     line-height: 1.02;
     letter-spacing: -0.02em;
     color: #f7f7fb;
@@ -721,7 +721,7 @@ const heroNodes = graphLed
   .hero-reframe {
     font-size: var(--text-lg);
     color: var(--color-text);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     max-width: 42rem;
     margin: calc(-1 * var(--space-2)) auto var(--space-6);
     line-height: 1.6;
@@ -732,7 +732,7 @@ const heroNodes = graphLed
      always `.dark`, so the warm accent ink sits on the dark ground at AAA contrast (gate-4). */
   .hero-eyebrow {
     font-size: var(--text-sm);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-accent);
@@ -826,7 +826,7 @@ const heroNodes = graphLed
   .trust-link {
     color: var(--color-text-muted);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     transition: color var(--transition-fast);
   }
 
@@ -862,7 +862,7 @@ const heroNodes = graphLed
   .trust-value {
     font-family: var(--font-display);
     font-size: var(--text-xl);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     color: var(--color-primary);
   }
 
@@ -915,7 +915,7 @@ const heroNodes = graphLed
   /* Cyan link (AA both modes for small text; the site's link signal). */
   .hero-proof-link {
     font-family: var(--font-display);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     font-size: var(--text-sm);
     color: var(--color-link);
     text-decoration: none;

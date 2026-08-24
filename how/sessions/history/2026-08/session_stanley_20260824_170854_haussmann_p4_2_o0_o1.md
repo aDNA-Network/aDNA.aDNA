@@ -4,7 +4,7 @@ session_id: session_stanley_20260824_170854_haussmann_p4_2_o0_o1
 tier: 1
 created: 2026-08-24
 updated: 2026-08-24
-status: in_progress
+status: completed
 last_edited_by: agent_rosetta
 persona: rosetta
 campaign: campaign_haussmann
@@ -12,7 +12,7 @@ mission: mission_haussmann_p4_2_craft_floor
 objective: O0+O1
 executor_tier: opus
 token_budget_estimated: "~140–210 kT for O0+O1 of a mission budgeted ~230–340 kT across 2 sessions. ⚠ The mission's declared `executor_tier: sonnet` is diverging at execution: this session runs **opus**, because O0's first act is a convention-13 judgment pass and O0c must author a by-reference checker seam. Recorded rather than left silent — P4.1's SO#11 retrospective found four sessions running opus under `executor_tier: fable` with nobody noticing."
-token_budget_actual:
+token_budget_actual: "~170 kT (rough) — inside the ~140–210 kT declared for O0+O1. Recorded retroactively at the successor session's open."
 tags: [session, haussmann, p4, p4_2, o0, o1, craft_floor, lock_coverage, html_validate]
 ---
 
@@ -165,4 +165,40 @@ wind-down.
 
 ## SITREP
 
-*(at close)*
+> ⚠ **Written retroactively at the OPEN of the next session (2026-08-24T19:06Z,
+> `session_stanley_20260824_190604_haussmann_p4_2_o2_o3`), not at this session's own close.** The
+> close cascade `ae28fe9` updated STATE and the campaign mission-index pointer but left this file at
+> `status: in_progress` in `active/`. Said here rather than back-dated, because a session file that
+> closes itself and one that a successor closes are different objects, and only one of them is
+> evidence that the close protocol ran. Content below is summarised from this file's own record — no
+> new claims are introduced.
+
+- **Completed** — O0 (the 60-lock `adna_site` coverage declaration, gating, red-proven 6/6 with a
+  control) and O1 (html-validate 4,444 → 0 across 226 pages, in CI as a real devDependency).
+  Commits `61aff0e` · `e62a465` · `2d3f9ed`; close cascade `ae28fe9`.
+- **In progress** — none. O2 and O3 were declared session-2 work at this session's open.
+- **Next up** — O2 (gap fixes A5/B4/J1, `/design-system` refresh, the component census) then O3
+  (diagram construction rules, thin hubs, the F20 font test, AAR).
+- **Blockers** — ⛔ the deploy freeze (P4.4 **F-u**); everything O0/O1 built is verified-not-shipped.
+  ⛩ the Hopper memo `hopper_to_rosetta_r4_deletes_the_license_nothing_re_adds_it` is
+  `ack_required: true` and still owes a reply.
+- **Files touched** — as recorded in the sections above.
+
+### ⚠ One O0 finding was falsified at the next session's open
+
+**B3/E4's *"`aria-live` appears nowhere in `src/`"* is FALSE.** `site/src/pages/vaults/index.astro:226`
+has carried `<p class="vaults-result-count" role="status" aria-live="polite">` since **2026-07-11**
+(`5b9be4c`), wired to the search input and both chip groups, announcing the zero-result case. The
+"three defects the suite cannot see" are **two**. Correction and cause are recorded in the successor
+session and in the lock file itself — noted here so this file does not read as the last word on its
+own finding.
+
+## Next Session Prompt
+
+You are Rosetta in `~/aDNA/aDNA.aDNA`. HAUSSMANN **P4.2 is `in_progress` at O2** — O0 and O1 are
+complete and committed (`61aff0e` · `e62a465` · `2d3f9ed` · `ae28fe9`). Open
+`missions/mission_haussmann_p4_2_craft_floor.md` and `how/campaigns/campaign_haussmann/CLAUDE.md`.
+**Read the gap dispositions from `site/scripts/lock_coverage_adna.yaml`, not from the mission
+prose** — the `sequenced:` fields are the record, and they put **A5 · B4 · J1** in O2 and **A2 · I3 ·
+O1 · O2** in O3. ⛔ The deploy freeze (**F-u**) stands: P4.2 gates green and does not ship. Re-verify
+it at open (`git cat-file -t 30c8163 f4fa9c5` must both fail). Push is a per-action GO.

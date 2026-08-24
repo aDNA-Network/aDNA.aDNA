@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import DocumentationLayout from '../layouts/DocumentationLayout.astro';
 import Callout from '../components/sections/Callout.astro';
 // The `empty_state` slot artifact, imported rather than re-drawn: this page documents the real
 // component, so it cannot drift from what the registry ships (HAUSSMANN P4.1 O2).
@@ -112,6 +112,33 @@ const radii = [
 ];
 const shadows = ['--shadow-sm', '--shadow-md', '--shadow-lg'];
 const badges = ['new', 'updated', 'deprecated', 'experimental'];
+
+/* HAUSSMANN P4.2 O2 — the in-page TOC.
+ *
+ * The P4.1 ranker scored this page's Findability at 3.6, its weakest dimension on any surface: no
+ * in-page TOC and no left nav on a 5,584px page. The remedy is the layout the rest of the site's
+ * reference surfaces already use, not a bespoke TOC built here.
+ *
+ * ⚠ THE ARRAY IS HAND-BUILT BECAUSE ASTRO CANNOT EXTRACT HEADINGS FROM AN `.astro` PAGE — only from
+ * content-collection markdown. `learn/what-is-adna.astro` sets the precedent and says the same thing
+ * in its own comment. The slugs MUST match the `id=` on each <h2> below — a TOC link to a missing
+ * anchor is a dead link that looks like navigation. That IS already gated, site-wide and derived from
+ * the build: `gate-31`'s "every in-page anchor resolves to a real id". Checked before writing this
+ * sentence, because the first draft of it credited the wrong gate.
+ *
+ * Depth 2 only, deliberately. TOCPanel renders depth 2–3, and this page's <h3>s are token-group
+ * labels generated inside `.map()` calls ("Surfaces", "Text", "Brand", …) — listing eleven of those
+ * would bury the six sections a reader is actually navigating between. A TOC is an index, not a
+ * mirror of the outline.
+ */
+const headings = [
+  { depth: 2, slug: 'color', text: 'Colour' },
+  { depth: 2, slug: 'type', text: 'Typography' },
+  { depth: 2, slug: 'space', text: 'Spacing' },
+  { depth: 2, slug: 'radius', text: 'Radius & elevation' },
+  { depth: 2, slug: 'components', text: 'Components' },
+  { depth: 2, slug: 'illustration', text: 'Illustration slots' },
+];
 ---
 
 {/* HAUSSMANN P3.2 — this page is `noindex`, and structured data on a page told not to index
@@ -119,10 +146,30 @@ const badges = ['new', 'updated', 'deprecated', 'experimental'];
     that parses it, and agents reading this site are not search crawlers. Covering all three of
     the census's bare pages also lets gate-17 assert "zero pages without JSON-LD" absolutely,
     and a gate with no allowlisted exception is a gate that cannot rot around its exception. */}
-<BaseLayout
+{/* HAUSSMANN P4.2 O2 — moved from BaseLayout to DocumentationLayout for the sidebar + in-page TOC
+    (ranker Findability 3.6, this page's weakest score on any surface). `noindex` rides the layout's
+    new optional pass-through prop rather than being lost in the move: this page is deliberately out
+    of the search index and that must survive a layout change.
+
+    ⚠ THE PAGE'S OWN <h1> IS GONE ON PURPOSE — DocumentationLayout renders `<h1>{title}</h1>` itself,
+    so keeping the local one would put two h1s on the page. That is not a hypothetical: gate-38's
+    G38b, written in this same objective, fails on exactly that. The title changed case with the move
+    ("Design system" → "Design System") because the layout renders the `title` prop verbatim and that
+    prop is also the <title>, the breadcrumb label and the JSON-LD name — one string, four surfaces,
+    rather than two strings that can disagree.
+
+    ⚠ `/design-system` is NOT added to `utils/navigation.ts`, deliberately. SidebarNav's SP-2
+    fallback shows the section switcher with no group expanded when a page belongs to no group — a
+    designed behaviour, not a degradation — which is right for an out-of-IA reference page. Adding an
+    entry would inject a `noindex` page into the primary docs nav of every documentation page: a
+    fleet-visible IA change, and a contradiction of the noindex intent. Breadcrumb likewise matches no
+    route prefix and renders nothing, which is correct — a page that is its own section has no index
+    to go back to. */}
+<DocumentationLayout
   title="Design System"
   description="The living design-token reference for adna.network — colour, type, spacing, radius, shadow, and component samples, driven straight from the site's own tokens."
   noindex={true}
+  headings={headings}
   jsonLD={buildWebPageJsonLD({
     title: 'Design System',
     description:
@@ -132,8 +179,6 @@ const badges = ['new', 'updated', 'deprecated', 'experimental'];
 >
   <div class="ds">
     <header class="ds-head">
-      <p class="ds-eyebrow">Reference</p>
-      <h1>Design system</h1>
       <p class="ds-lead">
         The tokens and components adna.network is built from — the SS-Ghibli / Tokyo-Night register
         (ADR-032). Every swatch and sample below renders straight from the live tokens, so the colours
@@ -344,31 +389,24 @@ const badges = ['new', 'updated', 'deprecated', 'experimental'];
       </Callout>
     </section>
   </div>
-</BaseLayout>
+</DocumentationLayout>
 
 <style>
+  /* HAUSSMANN P4.2 O2 — `.ds` no longer owns the page frame. `.doc-layout` supplies
+     `max-width: var(--content-width)` + centring and `.doc-content` supplies the padding, so the
+     copies that lived here were not merely redundant: nested, the two `var(--space-6)` paddings
+     ADDED, insetting the content by 3rem a side. Only the bottom rhythm is this page's own.
+     ⚠ `.doc-content` also sets `overflow-x: hidden`, which is gate-29's F2 clipping class. This
+     page's widest object is the five-row slot table; it is checked at 320/375 rather than assumed. */
   .ds {
-    max-width: var(--content-width);
-    margin: 0 auto;
-    padding: var(--space-12) var(--space-6) var(--space-20);
+    padding-bottom: var(--space-20);
   }
 
+  /* `.ds-eyebrow` and `.ds-head h1` REMOVED with their elements: the layout renders the <h1> from
+     the `title` prop, and Breadcrumb (correctly rendering nothing here) has replaced what the
+     "Reference" eyebrow was doing. Dead CSS outlives its markup silently — deleting it in the same
+     diff is the same-diff reflex applied to styles. */
   .ds-head { margin-bottom: var(--space-12); }
-  .ds-eyebrow {
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    margin: 0 0 var(--space-2);
-  }
-  .ds-head h1 {
-    font-family: var(--font-display);
-    font-size: var(--text-4xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-heading);
-    margin: 0 0 var(--space-4);
-  }
   .ds-lead {
     font-size: var(--text-lg);
     color: var(--color-text-muted);

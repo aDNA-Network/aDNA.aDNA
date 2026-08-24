@@ -11,6 +11,17 @@
   --font-mono: var(--font-mono);
 }
 
+/* ——— In-page anchor offset (HAUSSMANN P4.2 O2 — craft-floor locks A5 + B4) ———
+   One site-wide rule, on the scroll container, rather than `scroll-margin-top` sprinkled per
+   section: the sticky header is a property of the LAYOUT, so the offset belongs to the layout too.
+   `--space-4` of breathing room above the target so the heading is not flush against the header
+   edge. Lock B4's rule is that the offset must equal or exceed the sum of the sticky chrome —
+   `gate-38` is what checks that, by re-measuring the rendered header rather than trusting either
+   number here. */
+html {
+  scroll-padding-top: calc(var(--header-height) + var(--space-4));
+}
+
 /* Global base styles */
 body {
   font-family: var(--font-body);

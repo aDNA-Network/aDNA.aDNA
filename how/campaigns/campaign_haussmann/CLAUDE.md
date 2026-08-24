@@ -152,12 +152,29 @@ Commits `61aff0e` · `e62a465` · `2d3f9ed`.
 > Markup debt **4,444 → 0** across 226 pages, html-validate in CI with every exception carrying its
 > reason in the committed config.
 >
-> ⭐ **The census immediately found three defects the 560-assertion suite structurally cannot see**,
-> because nothing had ever declared coverage: the header is `position: sticky` with **no
-> `scroll-padding-top` anywhere in `src/`** (every in-page anchor lands under it; `gate-31` passes
-> because it asserts anchors *resolve*, a different claim) · **`aria-live` appears nowhere in `src/`**,
-> so filtering the registry changes the result set in silence for AT users · the CSP self-validates
-> against nothing. **These are O2's first work.**
+> ⭐ **The census immediately found ~~three~~ TWO defects the 560-assertion suite structurally cannot
+> see** (corrected at O2, 2026-08-24), because nothing had ever declared coverage: the header is
+> `position: sticky` with **no `scroll-padding-top` anywhere in `src/`** (every in-page anchor lands
+> under it; `gate-31` passes because it asserts anchors *resolve*, a different claim) · the CSP
+> self-validates against nothing (P4.4's row, not O2's).
+>
+> ⚠ **THE THIRD WAS NOT A DEFECT, AND THE WAY IT FAILED IS THIS CAMPAIGN'S OWN CLASS.** The struck
+> claim — *"`aria-live` appears nowhere in `src/`, so filtering the registry changes the result set in
+> silence for AT users"* — is **false**. `src/pages/vaults/index.astro:226` carries
+> `<p class="vaults-result-count" role="status" aria-live="polite">`, landed **2026-07-11** in
+> `5b9be4c`, **six weeks before the census that reported it absent**, and it is *wired*:
+> `countEl.textContent` is assigned in `apply()`, which runs on the search input and on both chip
+> groups, emitting `— nothing matched` in the zero case. **A negative result is only as wide as the
+> command that produced it** — convention 16's own amendment, recurring inside the mission that cites
+> it, and the fifth consecutive session in which an instrument was wrong before the subject was.
+> ⭐ **The honest residue is narrower and it survived**: nothing *asserts* the region stays wired, and
+> the empty-state mark sits outside the live region while the count line sits inside it. Both stay
+> `gap` at **P4.3**, where an AT instrument can say whether the announcement is *useful* rather than
+> merely *present* — a question no grep was ever going to answer.
+>
+> ⇒ **O2's real first work is A5/B4 and J1**, read from the `sequenced:` fields rather than from the
+> prose summarising them. The prose also **omitted J1**, which is the heading-outline instrument
+> **AC5's thin hubs are graded by**.
 >
 > ⭐ **The `no-inline-style` diagnosis falsified its own hypothesis, and the answer was better than a
 > fix.** Shiki was already 4.0.2 on both sides of P3.2's lockfile touch; nothing in the config history;

@@ -83,13 +83,22 @@ locks:
   - id: A5
     coverage:
       adna_site:
-        status: gap
-        sequenced: P4.2 O2 (fix, not merely a declaration)
-        detail: >-
-          A REAL DEFECT SURFACED BY THIS CENSUS. `Header.astro:147` is `position: sticky`, and
-          `scroll-padding-top` appears NOWHERE in `src/` — verified by a whole-tree grep. Every
-          in-page anchor jump on this site lands its target underneath the sticky header. `gate-31`
-          asserts anchors RESOLVE, which is a different claim and passes regardless.
+        status: enforced
+        by: site/tests/gates/gate-38-layout-invariants.spec.ts
+        anchor: "G38a anchor-offset: scroll-padding clears the sticky header"
+        note: >-
+          FIXED AND ENFORCED at P4.2 O2, 2026-08-24. Was the census's real find: `Header.astro:147`
+          is `position: sticky` and `scroll-padding-top` appeared NOWHERE in `src/`, so every
+          in-page anchor jump landed its target underneath the header — `gate-31` passed the whole
+          time because it asserts anchors RESOLVE, a different and true claim. Fixed site-wide with
+          `html { scroll-padding-top: calc(var(--header-height) + var(--space-4)) }` in global.css;
+          `--header-height` is MEASURED (69px, identical at 375/768/1024/1280/1920 across four
+          routes), not chosen. The gate re-measures the rendered header on every run rather than
+          trusting that token, and asserts the header is still `sticky` so its own premise cannot
+          evaporate silently. Red-proven: `scripts/gate38_redtest.sh`, 4 mutations + 1 control, 5/5.
+          ⚠ Removing the two page-local `scroll-margin-top` rules on `commons.astro` was REQUIRED,
+          not tidying — scroll-padding and scroll-margin COMPOSE, so leaving both would have
+          over-scrolled those sections by ~165px instead of ~85px.
 
   # ── B ──────────────────────────────────────────────────────────────────────────────────────
   - id: B1
@@ -119,17 +128,41 @@ locks:
         status: gap
         sequenced: P4.3 (a11y manual)
         detail: >-
-          The `aria-pressed` limb HOLDS in the source — the `/vaults` filter chips carry
-          `aria-pressed` on both toggle groups. The `aria-live` limb does NOT exist: `aria-live`
-          appears nowhere in `src/`, so filtering the registry changes the result set with no
-          announcement to assistive technology. A second real defect from this census.
+          CORRECTED 2026-08-24 (P4.2 O2). The `aria-pressed` limb HOLDS — the `/vaults` filter chips
+          carry `aria-pressed` on both toggle groups. STRUCK, FALSE AS WRITTEN AT O0: "the `aria-live`
+          limb does NOT exist: `aria-live` appears nowhere in `src/`, so filtering the registry changes
+          the result set with no announcement to assistive technology. A second real defect from this
+          census." It does exist. `src/pages/vaults/index.astro:226` carries
+          `<p class="vaults-result-count" role="status" aria-live="polite">`, landed 2026-07-11 in
+          `5b9be4c` — six weeks before the census that reported it absent — and it is WIRED, not
+          decorative: `countEl.textContent` is assigned in `apply()` (index.astro:328-332), which runs
+          on the search input event and on both chip groups' click handlers. O0's grep was narrower
+          than its conclusion; a negative result is only as wide as the command that produced it
+          (campaign convention 16's amendment, recurring inside the mission that cites it).
+          WHAT IS ACTUALLY MISSING is an ASSERTION, not a mechanism: nothing anywhere tests that the
+          live region stays wired, so a refactor dropping `countEl` breaks the announcement with no
+          gate going red. Still `gap` for that reason, and still P4.3 — the a11y-manual mission is
+          where a live-region assertion belongs, alongside the AT verification that can say whether
+          the announcement is USEFUL and not merely present.
 
   - id: B4
     coverage:
       adna_site:
-        status: gap
-        sequenced: P4.2 O2 (with A5 — same fix, same locus)
-        detail: Same root as A5 — there is no `scroll-padding-top` at all, so it cannot equal or exceed a sum.
+        status: enforced
+        by: site/tests/gates/gate-38-layout-invariants.spec.ts
+        anchor: "G38a anchor-offset: scroll-padding clears the sticky header"
+        note: >-
+          Fixed with A5 at P4.2 O2 — same locus, but a DIFFERENT assertion inside the same test, and
+          worth naming because the two are easy to conflate. A5 asks whether an offset exists at all;
+          B4 asks whether it equals or exceeds the sum of the sticky chrome. The `toBeGreaterThanOrEqual`
+          against the freshly measured `.header` height is B4's limb, and the red test aims a mutation
+          at each separately (case 1 deletes the rule → A5; case 2 shrinks `--header-height` to 1rem,
+          leaving a real offset that is simply too small → B4). Both red, control green.
+          ⚠ Only ONE piece of sticky chrome exists today, so "the sum" is a sum of one.
+          `DocumentationLayout` has two further `position: sticky` elements (the sidebar and the TOC
+          rail) but neither sits ABOVE the scroll target, so neither adds to the offset. If a sticky
+          sub-header is ever added under the main one, this cell's "sum" becomes load-bearing and the
+          gate must measure both.
 
   - id: B5
     coverage:
@@ -289,11 +322,18 @@ locks:
         status: gap
         sequenced: P4.3 (a11y manual)
         detail: >-
-          Empty-state copy now EXISTS and is gated — `gate-35` G35b covers the P4.1 O2 `empty_state`
-          slot in both its states, including that the mark is never the sole carrier of meaning. What
-          is missing is the LIVE REGION: the zero-result block appears on client-side filtering with
-          no `aria-live` anywhere in `src/`, so a screen-reader user filters to zero results in
-          silence. Shares its root with B3.
+          CORRECTED 2026-08-24 (P4.2 O2), with B3 — same false premise, same correction. Empty-state
+          copy EXISTS and is gated: `gate-35` G35b covers the P4.1 O2 `empty_state` slot in both its
+          states, including that the mark is never the sole carrier of meaning. STRUCK, FALSE AS
+          WRITTEN AT O0: "What is missing is the LIVE REGION: the zero-result block appears on
+          client-side filtering with no `aria-live` anywhere in `src/`, so a screen-reader user filters
+          to zero results in silence." The zero case IS announced — `apply()` writes
+          `0 of N vaults — nothing matched` into the `role="status"` region on the same tick it
+          unhides the empty-state block. NOTE THE ASYMMETRY, because it is the honest residue: the
+          COUNT LINE is the live region; the `empty_state` MARK and its copy sit outside it, so an AT
+          user hears the count sentence and not the block. Whether that is sufficient is an AT
+          question, not a grep question — which is exactly why this stays `gap` at P4.3 rather than
+          being closed here on the strength of the mechanism existing.
 
   - id: E5
     coverage:
@@ -490,12 +530,23 @@ locks:
   - id: J1
     coverage:
       adna_site:
-        status: gap
-        sequenced: P4.2 O2 (cheap, and the rule is absolute)
-        detail: >-
-          No assertion anywhere that each route has exactly one `<h1>`, first in the DOM. The suite
-          measures h2 counts (P2.6's thin-hub method) and axe enforces heading ORDER, but neither
-          enforces h1 primacy — and a heading-outline lock is the one AC5's thin hubs are graded by.
+        status: enforced
+        by: site/tests/gates/gate-38-layout-invariants.spec.ts
+        anchor: "G38b heading-primacy: every built page has exactly one h1, before any h2"
+        note: >-
+          Enforced at P4.2 O2 as a STATIC SCAN OF `dist/` (the gate-14/gate-28 idiom), so it covers
+          every built page — 226 at authoring — rather than a chosen sample. Route list derived from
+          the build snapshot, never pinned (convention 8).
+          ⭐ THE SITE ALREADY CONFORMED 226/226 WHEN THIS LANDED — no page was missing an h1, none had
+          two, none emitted an h2 first. That is the honest result and it is not a reason to skip the
+          gate: the rule was held by habit, and a rule held by habit is one refactor away from being
+          false with nothing to say so. It is also why the red test matters more here than usual — on
+          an already-conforming site a no-op assertion and a real one are indistinguishable until one
+          of them is made to fail. Two mutations aimed at this cell (a planted second `<h1>`; an
+          `<h2>` moved above the `<h1>`), both red, control green.
+          ⚠ Scanning built HTML rather than the DOM means an h1 injected by client-side JS would be
+          invisible to this gate. Nothing on this site does that today; if something starts, the cell
+          needs a browser limb.
 
   - id: J2
     coverage:

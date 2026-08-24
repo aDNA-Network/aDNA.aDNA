@@ -46,12 +46,38 @@ interface Props {
    * absent rather than guessed when git cannot answer.
    */
   source?: { editUrl: string; updated?: string; editLabel?: string };
+  /**
+   * Pass-through to BaseLayout's `noindex` (HAUSSMANN P4.2 O2).
+   *
+   * BaseLayout has carried this since the beginning; this layout simply never forwarded it, so a
+   * page that needed both the documentation chrome and `noindex` could have only one. `/design-system`
+   * is that page: it is an internal reference surface, deliberately out of the search index, and it
+   * needed the sidebar + TOC to fix the ranker's weakest Findability score (3.6 — no in-page TOC, no
+   * left nav, on a 5,584px page).
+   *
+   * Purely additive and optional, per `skill_documentation_layout_props_additive_extension`: the
+   * default `false` is what every existing consumer was already getting implicitly, so all 130+ of
+   * them render byte-identically. Extending the shared layout with one optional field is the
+   * sanctioned move here — forking it, or giving /design-system a bespoke copy of the doc chrome,
+   * is not.
+   */
+  noindex?: boolean;
 }
 
-const { title, description, headings = [], prev, next, jsonLD, heroImage, source } = Astro.props;
+const {
+  title,
+  description,
+  headings = [],
+  prev,
+  next,
+  jsonLD,
+  heroImage,
+  source,
+  noindex = false,
+} = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} jsonLD={jsonLD}>
+<BaseLayout title={title} description={description} jsonLD={jsonLD} noindex={noindex}>
   <div class="doc-layout">
     <!-- Mobile section nav (audit C3: the sidebar was display:none below 768px, leaving
          doc pages with no section navigation on phones). Native disclosure, zero JS; the
@@ -202,7 +228,7 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage, source
     align-items: center;
     padding: var(--space-2) var(--space-4);
     font-family: var(--font-display);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     font-size: var(--text-sm);
     color: var(--color-text);
   }
@@ -251,7 +277,7 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage, source
   }
   .doc-provenance-edit {
     color: var(--color-link);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
   }
 
   /* F12 (HAUSSMANN P1.4): the copy-button wrapper below is built at RUNTIME by this layout's

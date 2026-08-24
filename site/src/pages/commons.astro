@@ -329,10 +329,14 @@ const memberSyncDates = [...new Set(ledger.map((r: any) => r.lastSynced).filter(
   }
 
   /* ——— Band 2 · connect (c163) — plain bg alternates against the featured band's bg-alt ——— */
+  /* `scroll-margin-top: var(--space-20)` REMOVED at HAUSSMANN P4.2 O2 (locks A5/B4). It was this
+     site's only sticky-header offset, and it covered one page. The rule is now site-wide —
+     `html { scroll-padding-top }` in global.css. ⚠ Removing it is REQUIRED, not tidying:
+     scroll-padding (container) and scroll-margin (target) COMPOSE rather than override, so leaving
+     both would have offset these two sections by ~165px instead of ~85px — the global fix would
+     have introduced an over-scroll defect on the one page that had already solved the problem. */
   .commons-connect {
     padding: var(--space-16) 0 var(--space-20);
-    /* anchor-jump target: keep the heading clear of the sticky header */
-    scroll-margin-top: var(--space-20);
   }
 
   .connect-paths {
@@ -378,11 +382,10 @@ const memberSyncDates = [...new Set(ledger.map((r: any) => r.lastSynced).filter(
   }
 
   /* ——— Band 3 · the commons, today (c164) — dense; bg-alt alternation against #connect ——— */
+  /* `scroll-margin-top` removed with .commons-connect's — same reason, see the note above. */
   .commons-today {
     padding: var(--space-16) 0 var(--space-20);
     background: var(--color-bg-alt);
-    /* anchor-jump target (linked from .connect-horizon): clear of the sticky header */
-    scroll-margin-top: var(--space-20);
   }
 
   .today-ledger {

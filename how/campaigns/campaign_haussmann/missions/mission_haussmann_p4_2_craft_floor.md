@@ -212,12 +212,14 @@ amendment (`artifacts/p4_2/ac_amendment_proposal.md`, `accepted`, applied to thi
 enforced 8 · na 16 · na_unverified_affordance 7 · gap 29. **Red-proven 6/6 with a control**
 (`lock_coverage_redtest.py`); case 4 reproduces this mission's own "57 locks" defect and catches it.
 
-⭐ **Three real defects the 560-assertion suite structurally cannot see**, because nothing had ever
-declared coverage: **A5/B4** the header is `position: sticky` with **no `scroll-padding-top` anywhere
+⭐ ~~**Three real defects**~~ **TWO real defects the 560-assertion suite structurally cannot see**
+(struck and corrected at O2, 2026-08-24 — see the O2 entry), because nothing had ever declared
+coverage: **A5/B4** the header is `position: sticky` with **no `scroll-padding-top` anywhere
 in `src/`** (every in-page anchor lands under the header; `gate-31` passes because it asserts anchors
-*resolve*, a different claim) · **B3/E4** **`aria-live` appears nowhere in `src/`**, so filtering the
-registry changes the result set in silence for AT users · **I2** the CSP self-validates against
-nothing. All dispositioned, none silently carried.
+*resolve*, a different claim) · ~~**B3/E4** **`aria-live` appears nowhere in `src/`**, so filtering the
+registry changes the result set in silence for AT users~~ **← FALSE, struck at O2: the live region
+exists at `vaults/index.astro:226`, has since 2026-07-11, and is wired** · **I2** the CSP
+self-validates against nothing. All dispositioned, none silently carried.
 
 ⚠ **A rot-hook predicate fired falsely and was caught before shipping.** `run_predicate` is a raw
 regex with no comment stripping while `resolve_rung` strips — so the obvious "no hydration
@@ -265,10 +267,18 @@ work, said here rather than left to be inferred.
 
 ### ⏭ O2 + O3 — session 2
 
-O2: gap fixes from O0's dispositions (**A5/B4 `scroll-padding-top` and B3/E4 `aria-live` are the
-live ones**); `/design-system` refreshed **in place** + the declared-frame 20-component sample.
+~~O2: gap fixes from O0's dispositions (**A5/B4 `scroll-padding-top` and B3/E4 `aria-live` are the
+live ones**); `/design-system` refreshed **in place** + the declared-frame 20-component sample.~~
+**⚠ This sentence was wrong twice and is superseded by the O2 entry below.** It named **B3/E4**, whose
+premise is false, and omitted **J1**, which the dispositions actually sequence to O2 — and J1 is the
+heading-outline instrument **AC5's thin hubs are graded by**, so executing from this prose would have
+built a fix for a working mechanism and skipped the one O3 depends on. ⇒ **The `sequenced:` fields in
+`lock_coverage_adna.yaml` are the record; this narrative is a summary of it and lost to it.** O2 =
+**A5 · B4 · J1**. (Index-vs-artifact, the campaign's standing class, here between two artifacts of the
+same session.)
+
 O3: the **diagram** construction rules (AC4, narrowed — P4.1 O2 already published the illustration
-half); F19/F13 thin hubs (4 instances); F20's font test (**A2**); the AAR.
+half) with locks **O1 · O2**; **I3**; F19/F13 thin hubs (4 instances); F20's font test (**A2**); the AAR.
 
 ## AAR (SO#5)
 

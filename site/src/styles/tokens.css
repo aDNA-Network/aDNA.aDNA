@@ -23,6 +23,23 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
+  /* ——— Sticky-header offset (HAUSSMANN P4.2 O2 — craft-floor locks A5 + B4) ———
+     `.header` is `position: sticky; top: 0` (Header.astro), so without a scroll offset EVERY
+     in-page anchor on this site landed its target UNDERNEATH the header. `gate-31` never caught
+     it because it asserts anchors RESOLVE — a different claim, true the whole time.
+
+     ⚠ THE VALUE IS MEASURED, NOT CHOSEN (campaign convention 1 / KW-14). 69px rendered, IDENTICAL
+     at 375 / 768 / 1024 / 1280 / 1920 across `/`, `/design-system`, `/vaults` and
+     `/learn/what-is-adna` — the logo does scale with `--text-xl`'s clamp, but it is not the
+     tallest child, so the row height does not move. 69px = 4.3125rem at the 16px root measured
+     on every one of those runs.
+
+     ⚠ AND THE MEASUREMENT IS NOT TRUSTED — it is asserted. `gate-38` re-measures the rendered
+     header at four viewports on every run and fails if it exceeds this token. A measured constant
+     still drifts the moment someone adds a nav item; what makes it safe is that the drift is loud.
+     Do not hand-edit this without re-running that gate. */
+  --header-height: 4.3125rem;
+
   /* Spacing scale (4px base) */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
