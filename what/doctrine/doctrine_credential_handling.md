@@ -446,6 +446,55 @@ The general rule — the part worth inheriting past this one correction:
 
 **Why this is worse than a missing path, not merely equivalent**: an uncorrected locus makes a scan of the wrong place **look like coverage**. The register reports clean, the sweep exits 0, and the live surface was never in scope. That is the same defect class as a parity checker that verifies both files exist while printing a row count (charter **D-60**) — a cheap legible proxy promoted to the thing it stands for.
 
+### §6.10 The PROBE that produces a leak is ungoverned (HAUSSMANN F-l, 2026-08-24)
+
+Every rule in §6 governs what happens to a credential value **after** it has been seen: how a
+handoff note references it (§6.8), how many characters of prefix may appear in prose (§6.3, ≤ 6),
+how a plaintext file is destroyed (§6.5). **Nothing governs the probe that puts the value on screen
+in the first place** — and that is where the last two disclosures on this node came from.
+
+**The instance.** A campaign wrote its "is the token set?" probe as:
+
+```sh
+echo "TOKEN: ${VAR:+SET}${VAR:-UNSET}"     # ⛔ LEAKS
+```
+
+`:+` emits `SET` when the variable is set; `:-` falls back to the value **only when it is unset**,
+so for a **set** variable the two expansions concatenate to `SET<the actual value>`. Run against
+`SS_VERCEL_TOKEN` it printed the live token into the transcript. The safe forms:
+
+```sh
+[ -n "$VAR" ] && echo SET || echo UNSET     # ✅ preferred — no expansion of the value at all
+echo "${VAR:+SET}"                          # ✅ acceptable — nothing concatenated after it
+```
+
+**The rule, and it is general rather than about this idiom:**
+
+> **A probe that reports on a credential must be constructed so that no branch of it can expand the
+> value.** Test *presence*, never *content*, and read the probe by asking what it prints when the
+> variable **is** set — which is the branch nobody checks, because the reason for writing the probe
+> was the fear that it was unset.
+
+**Why it belongs in doctrine and not in a checker.** A grep for this one idiom would retire this one
+idiom; the failure mode is *"an expansion whose set-branch differs from the author's intent"*, and it
+has as many spellings as shell has operators. The habit costs a line at authoring time and cannot
+itself be wrong. Note also the sibling mechanism, so the rule is not read too narrowly: the
+**2026-06-04** incident printed the same credential from the `vercel` CLI's own output. **One was a
+tool printing a secret; one was our own probe. Only the second is ours to prevent — but only the
+first was covered by any rule we had.**
+
+**Status of the originating row.** HAUSSMANN `F-l` is **discharged**: re-read at the object
+2026-08-24, **no executable file in the vault carries the idiom** — every surviving occurrence is
+prose describing the defect, each carrying the correction beside it. ⚠ But discharge-by-documentation
+is fragile in a way a code fix is not: the next agent needing a redaction reaches for memory, not for
+a struck debt row. **This section is where the rule now lives**, which is the point of writing it
+here rather than closing the row and moving on.
+
+⚠ **The credential involved was the known throwaway test-account token whose rotation the operator
+explicitly de-prioritized (E4 c159, 2026-06-07), so this was recorded, not escalated.** That is a
+fact about one credential and not a general tolerance — the same probe against a live credential is
+an incident under §5.
+
 ## §7 Cross-vault routing (template snippet)
 
 Every consumer vault adds the following snippet to its `CLAUDE.md`. The snippet is **NAMES ONLY** — no credential value is referenced anywhere in a consumer vault.

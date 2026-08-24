@@ -133,6 +133,26 @@ tags: [campaign_governance, haussmann]
         an un-truncated command over a scope that silently excludes the answer reads exactly like a
         thorough one. Sibling of the campaign's own *"a truncated command is a derived figure."*
 
+17. **Every absence assertion names its surface.** A grep proving a claim is *gone* cannot, by
+    itself, tell a live claim from **the changelog entry that retired it**. After P3.4 struck the
+    stale R-95 sentence, a site-wide grep for the struck wording still returned hits — from the
+    entry whose *subject* is the false sentence. The claim was correctly gone from every page that
+    asserted it, and **the sweep that proved so read as red.**
+    - **The rule:** state the surface an absence is asserted over, at the point of asserting it —
+      *"absent from `src/pages/**`"*, not *"absent"*. P3.4's live probe already scopes each one
+      deliberately; this makes that the rule rather than one mission's good manners.
+    - ⛔ **No checker, deliberately.** F-r's own remedy proposed one *"if a checker is ever built"*,
+      with an exclusion for `src/content/changelog/**`. Convention 15's ruling governs: **the habit
+      costs a sentence and cannot itself be wrong; the checker costs a sitting and can.** The
+      session that adopted this convention authored six instruments and **the first run of the very
+      first one reported 5 of 12 cases failing because the HARNESS was broken, not the subject.**
+      That is the argument for the habit, not against it.
+    - ⭐ **Why it generalises past changelogs:** any surface that *documents* a retirement contains
+      the retired string. Session records, AARs, ADRs and this very file all do. An absence
+      assertion whose scope includes the vault's own memory can never go green, and one that
+      silently excludes it is making a narrower claim than it appears to. **Naming the surface is
+      what makes the claim checkable at all.** *(Landed at P4.4a A1, 2026-08-24, discharging F-r.)*
+
 ## What this campaign protects (do not regress)
 
 The honesty strata (`/about`, `/community` empty-state candor, zero-count displays) · true load-bearing numbers · hero visual quality · dark/light parity · axe-0 record · perf 97–100 · curated llms.txt · the graph keyboard-twin pattern.

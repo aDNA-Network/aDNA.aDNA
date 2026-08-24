@@ -75,8 +75,27 @@ for (const mode of modes) {
       if (mode.seed) await page.addInitScript(mode.seed);
       await page.goto(path, { waitUntil: 'networkidle' });
 
+      /* ⛩ HAUSSMANN P4.4a A1 / F-a — `best-practice` ADDED, and the row's cost estimate was wrong.
+       *
+       * This gate filtered to wcag2a/wcag2aa, so it was BLIND to everything axe classes as
+       * best-practice. A real `empty-table-header` on /community/proposals/aep-1/ passed a fully
+       * green 512-assertion suite and was caught only by the T0 sweep, which runs axe's DEFAULT
+       * ruleset. P3.5 added those routes here — locking WCAG AA on them, and NOT closing the class.
+       *
+       * F-a predicted widening "will surface pre-existing violations, so it is a scoping decision,
+       * not a one-line change." MEASURED 2026-08-24 before deciding: 23 pages × 2 themes = 46 runs,
+       * **ZERO best-practice violations**. It was a one-line change, and the row's own caution is
+       * what had kept it unmade for four missions. ⇒ Measure the cost before paying the caution.
+       *
+       * ⚠ THE ZERO IS CONTROLLED, because a tag that matches no rules produces the same zero as a
+       * clean site — the exact vacuity this campaign keeps finding:
+       *   A. 28 best-practice rules genuinely evaluated on / (16 passes, 12 inapplicable)
+       *   B. a planted empty-table-header IS caught under this tag set
+       *   C. that same planted defect is INVISIBLE to wcag2a/wcag2aa — F-a's premise, reproduced
+       * Controls A–C are re-runnable from scripts/a11y_bestpractice_redtest.sh.
+       */
       const results = await new AxeBuilder({ page })
-        .withTags(['wcag2a', 'wcag2aa'])
+        .withTags(['wcag2a', 'wcag2aa', 'best-practice'])
         .analyze();
 
       const violations = results.violations.map((v) => ({

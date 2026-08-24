@@ -30,8 +30,29 @@ import { join } from 'node:path';
  * untouched by construction.
  *
  * Runs over BOTH the Astro output dir and `.vercel/output/static` (the adapter copy
- * that `vercel --prebuilt --prod` actually deploys), so the strip cannot be defeated
- * by hook ordering.
+ * that `vercel --prebuilt --prod` actually deploys).
+ *
+ * ⛩ HAUSSMANN P4.4a A1 / F-g — WHY THE STRIP IS SAFE, CORRECTED. This comment used to
+ * end "…so the strip cannot be defeated by hook ordering", and that reason is wrong.
+ *
+ * The Vercel adapter copies `dist` → `.vercel/output/static` AFTER `astro:build:done`.
+ * So at the moment this hook runs, the second root holds either NOTHING (first build)
+ * or THE PREVIOUS BUILD's files — never this build's. Measured 2026-08-24: with `dist`
+ * at 16:17 the adapter copy was still at 15:30, two builds behind.
+ *
+ * ⇒ The second root is INERT for the build that is running. The strip is safe anyway,
+ * by a different mechanism entirely: the adapter later copies the `dist` this hook has
+ * ALREADY stripped. Ordering is not defeated because the second walk defends against
+ * it — it is not defeated because the copy happens downstream of the strip.
+ *
+ * Keeping the second root costs nothing and cleans a stale tree, so it stays. But do
+ * not rely on the sentence that was here: anyone reasoning "the dual walk protects me"
+ * would conclude a hook that ran BEFORE the adapter copy was covered, and it is not.
+ * ⚠ It also means the `files`/`stripped` counters logged below can include stale-tree
+ * numbers, so they are a health signal, not a measurement of this build.
+ *
+ * The same ordering fact is why an Astro endpoint cannot read build output, which is
+ * why the llms-full corpus is appended post-build.
  */
 function stripHtmlComments() {
   const KEEP = /^\s*\[if\s|<!\[endif\]|@license|SPDX|Copyright|\(c\)\s*\d{4}/i;

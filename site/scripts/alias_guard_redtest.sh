@@ -25,6 +25,40 @@
 # Usage:  bash scripts/alias_guard_redtest.sh     (from site/)
 
 set -uo pipefail
+
+# ⛩ HAUSSMANN P4.4a A1 — UNDECLARED PRECONDITION, FOUND BY IT FIRING.
+#
+# Cases 7/7b/7c drive the REAL `deploy_adna.sh`, which opens with a CLEAN-TREE
+# GUARD. So a dirty `site/src|public|vercel.json|astro.config.mjs` makes all
+# three abort at rc=1 — for the right reason, by a guard doing its job — and the
+# harness reported them as THREE FAILURES with no hint of the cause.
+#
+# Observed 2026-08-24: a one-line comment edit to astro.config.mjs turned a
+# 13/13 baseline into 10/13, and the obvious reading ("the ancestry guard
+# regressed") was exactly wrong. ⇒ A HARNESS WHOSE RESULT DEPENDS ON
+# WORKING-TREE STATE MUST SAY SO BEFORE IT RUNS, or its own numbers become
+# untrustworthy the moment anyone is mid-edit — which is always.
+#
+# This is the campaign's standing class one more time: not a wrong instrument,
+# but a correct instrument reporting a precondition failure in the vocabulary of
+# a subject failure. Sibling of the Docker port-reuse finding in
+# item11_probe_redtest.sh, same session.
+CLEAN_TREE_PATHS='site/src|site/public|site/vercel.json|site/astro.config.mjs'
+_dirty="$(cd .. && git status --porcelain 2>/dev/null | grep -E "$CLEAN_TREE_PATHS" || true)"
+if [ -n "$_dirty" ]; then
+  echo
+  echo "⛔ PRECONDITION NOT MET — this harness cannot run cases 7/7b/7c."
+  echo "   deploy_adna.sh has a CLEAN-TREE GUARD and the tree is dirty:"
+  printf '%s
+' "$_dirty" | sed 's/^/     /'
+  echo
+  echo "   Those three cases will abort at rc=1 on the CLEAN-TREE branch, not on"
+  echo "   the ancestry branch, and a 10/13 here means NOTHING ABOUT THE GUARD."
+  echo "   Commit or stash the paths above, then re-run."
+  echo
+  exit 2
+fi
+
 cd "$(dirname "$0")/.." || exit 2
 
 PORT="${ALIAS_GUARD_PORT:-4407}"
