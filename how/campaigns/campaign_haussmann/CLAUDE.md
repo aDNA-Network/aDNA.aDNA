@@ -126,16 +126,61 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 `missions/` — 27 files `mission_haussmann_p{0..5}_*.md`; paste-ready prompts in `missions/session_prompts_haussmann.md`.
 
 **⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
-convention 11. **Current mission: `P4.2`** (`mission_haussmann_p4_2_craft_floor.md`, **`queued`** — its
-`depends_on: [mission_haussmann_p4_1_token_pipeline]` was satisfied at P4.1's close 2026-08-24;
-`executor_tier: sonnet`, and the **only P4 mission with `human_gate: false`**). **GO, with two
-conditions carried in from P4.1's AAR:** ⛔ P4.2 touches `site/` heavily (57 locks, ~964 markup errors,
-design-system regeneration) **and the deploy freeze applies to it too** — it will gate green and it
-will not ship, so plan it knowing its output queues behind **F-u** and say so at its close rather than
-letting a second mission accumulate unshipped work silently. ⚠ **`/design-system` now carries O2's
-Illustration-slots section** (the five-slot table, both scales, the four contributor rules) — that is
-**ADR-053-governed content, not generated chrome**, and a regeneration that overwrites it deletes the
-artifact AC5 was met on.
+convention 11. **Current mission: `P4.2`** (`mission_haussmann_p4_2_craft_floor.md`, **`in_progress`**
+— **O0 ✅ · O1 ✅ 2026-08-24**, session `session_stanley_20260824_170854`; **⏭ resumes at O2**).
+Commits `61aff0e` · `e62a465` · `2d3f9ed`.
+
+> ⛩ **THE ACs WERE AMENDED AND OPERATOR-SIGNED BEFORE ANY BUILD** (`artifacts/p4_2/
+> ac_amendment_proposal.md`, `accepted`). The convention-13 pass ran **30/30 pairs with its coverage
+> recorded** and found **three of five criteria wrong at their premises** plus **two tested by
+> nothing**. The mission now carries **six** ACs. ⭐ **This is the pass paying for itself on a
+> `human_gate: false` mission** — nothing in P4.2's own definition would ever have stopped to ask.
+>
+> **The three premise defects, for anyone citing the old wording:** AC1 typed **57 locks** against a
+> floor of **60** (triple-confirmed; WebForge added `O1 O2 Q1`) and named *"the site surface"*, which
+> is **WebForge's own row** — 60/60, full, passing — so our declaration is a distinct consumer surface
+> `adna_site`. AC2 said *"the 5 classes, ~964 → 0"* when the field was **11 classes and 4,444
+> errors**, with the dominant class absent from the five: **the stated method could not make the
+> stated test green.** AC3 said *"regenerated"* of a **hand-authored 506-line page with no generator
+> anywhere** — ⚠ **and this file's own protective warning was built on that same absent mechanism**:
+> the hazard to `/design-system`'s Illustration-slots section is a **manual rewrite**, not a
+> regeneration. That section is still ADR-053-governed content and still must survive O2 intact.
+>
+> **What O0/O1 shipped.** The craft floor is declared and **gating**: `site/scripts/
+> lock_coverage_adna.yaml` (60 locks) validated by `lock_coverage_check.py`, which imports WebForge's
+> `check_lock_coverage` and repoints **exactly two globals** — red-proven **6/6 with a control**.
+> Markup debt **4,444 → 0** across 226 pages, html-validate in CI with every exception carrying its
+> reason in the committed config.
+>
+> ⭐ **The census immediately found three defects the 560-assertion suite structurally cannot see**,
+> because nothing had ever declared coverage: the header is `position: sticky` with **no
+> `scroll-padding-top` anywhere in `src/`** (every in-page anchor lands under it; `gate-31` passes
+> because it asserts anchors *resolve*, a different claim) · **`aria-live` appears nowhere in `src/`**,
+> so filtering the registry changes the result set in silence for AT users · the CSP self-validates
+> against nothing. **These are O2's first work.**
+>
+> ⭐ **The `no-inline-style` diagnosis falsified its own hypothesis, and the answer was better than a
+> fix.** Shiki was already 4.0.2 on both sides of P3.2's lockfile touch; nothing in the config history;
+> same code fences. ⇒ the 964→4,444 delta is **not a regression but an unreproducible measurement** —
+> the 08-19 artifact records **neither its command nor its config**. Hence AC2's amended wording, and
+> hence this mission's own baseline artifact records both on its face.
+>
+> ⚠ **Two instruments of mine were wrong before the subject, again** (the campaign's standing class).
+> A contrast sweep of **one page** reported *"light failures: 0"* — true for that page, false for the
+> site. An ad-hoc axe probe reported **71 phantom nav failures** because it drove the theme by
+> class-toggling while the real gate is **dark-by-default and seeds `localStorage` before load**.
+> ⭐ **What settled causation was a CONTROL, not a better probe**: revert only the Shiki change,
+> rebuild, re-run the same gate — it passed. It took less time than the probing had.
+>
+> ⚠ **And the parity fix broke axe-0 on its first attempt.** `github-light`/`github-dark` both ship
+> sub-AA token colours (`#e36209` on white **3.48:1**; `#6A737D` on `#24292e` **3.05:1** — the dark one
+> **already live**, since the site rendered `github-dark` in *both* appearances). The
+> `-high-contrast` variants ship instead; re-measured **58 pages × 7 pairs × 2 palettes = 0**.
+>
+> ⛔ **BUILT, NOT DEPLOYED — and this is the SECOND mission accumulating unshipped work.** The freeze
+> stands (**F-u**); lemur's `30c8163` + `f4fa9c5` re-verified absent at session open. Suite
+> **560/560**, gitleaks **877 commits no leaks**. Said here rather than left to be inferred, which is
+> the condition P4.1's AAR attached to this mission.
 
 **✅ `P4.1` CLOSED 2026-08-24** (`mission_haussmann_p4_1_token_pipeline.md`, **`completed`** with AAR
 per SO#5 — O0 ✅ O1 ✅ O2 ✅ O3 ✅, **all five criteria met**). ⛔ **O2 IS BUILT AND VERIFIED BUT STILL
