@@ -1,0 +1,270 @@
+---
+/**
+ * Accessibility statement — HAUSSMANN P4.3 AC5 (D11 check 14).
+ *
+ * ⚠ THE LOAD-BEARING RULE FOR THIS PAGE: every limitation named below is TRUE and MEASURED. AC5's
+ * amended wording is explicit that "known limitations must be TRUE, read from register rows" — a
+ * statement that lists comfortable limitations while omitting the real ones is worse than no
+ * statement at all, because it converts an unknown gap into an implied clearance. Each figure here
+ * traces to a dated record in the campaign's evidence tree, and the sources are named in the
+ * comments beside them so a future editor can re-verify rather than re-assert.
+ *
+ * ⛔ WHAT THIS PAGE MUST NOT CLAIM. The site's honesty stratum (campaign convention 1) applies to
+ * itself here more sharply than anywhere else on the site: an accessibility statement is the one
+ * page whose subject is its own trustworthiness. Aspirational present tense is a defect. If a check
+ * has not been run, it says so; if a result rests on browser behaviour rather than on this site's
+ * markup, it says that too.
+ *
+ * Layout: BaseLayout + the `.policy` pattern, matching /security and /privacy — this is a policy
+ * page and its siblings are those two, not the documentation tree.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { REPO_HTTPS } from '../../data/canonical';
+import { buildWebPageJsonLD } from '../../utils/seo';
+
+const issuesUrl = `${REPO_HTTPS}/issues/new`;
+
+const TITLE = 'Accessibility — aDNA';
+const DESCRIPTION =
+  'What this site has been tested for, what it has not, and the accessibility limitations we know about — with the contact path for reporting one we have missed.';
+---
+
+<BaseLayout
+  title={TITLE}
+  description={DESCRIPTION}
+  jsonLD={buildWebPageJsonLD({ title: TITLE, description: DESCRIPTION, url: Astro.url.href })}
+>
+  <article class="policy">
+    <header class="policy-head">
+      <h1>Accessibility</h1>
+      <p class="policy-lead">
+        aDNA is a public-good project, and a good deal of what it documents is used by clinical and
+        patient communities. Accessibility is an obligation here rather than a compliance exercise.
+        This page states what has actually been tested, what has not, and the limitations we know
+        about — including the ones we have not fixed.
+      </p>
+    </header>
+
+    <h2 id="standard">The standard we hold ourselves to</h2>
+    <p>
+      <strong>WCAG 2.2 Level AA</strong> is the floor. Every page template is checked automatically
+      on every build, and the checks run in CI — a change that introduces a violation fails the
+      build rather than reaching this site.
+    </p>
+
+    <h2 id="tested">What has been tested</h2>
+    <ul>
+      {/* Every row here is an assertion that exists in tests/gates/ and runs in CI. Nothing is
+          listed that is not enforced — a "tested" list is a claim about the future, not the past,
+          and only a gate makes it one. */}
+      <li>
+        <strong>Automated rule checks</strong> — axe across every page template, in both the dark
+        and light themes, at three viewport widths. The standing result is zero violations.
+      </li>
+      <li>
+        <strong>Keyboard-only traversal</strong> — five primary surfaces walked stop by stop, plus
+        six primary flows driven end to end without a mouse. Focus stays visible, order is logical,
+        there are no traps, and <kbd>Shift</kbd>+<kbd>Tab</kbd> retraces the path exactly.
+      </li>
+      <li>
+        <strong>Screen-reader semantics</strong> — an assistive-technology engine walks the opening
+        of each of five surfaces in CI and asserts what it hears: landmark and heading announcements,
+        traversal order, and that the registry's result count is genuinely <em>announced</em> when
+        you filter, not merely updated on screen.
+      </li>
+      <li>
+        <strong>Text resizing</strong> — pages are checked at 200% browser text size for horizontal
+        scrolling and content loss, in addition to the narrow-viewport checks.
+      </li>
+      <li>
+        <strong>Reduced motion</strong> — animations are asserted to stop when your system asks for
+        reduced motion, with controls proving the assertion can actually fail.
+      </li>
+      <li>
+        <strong>The network graph</strong> — the diagram has a keyboard- and screen-reader-navigable
+        twin that lists every vault <em>and</em> every relationship between them, in both directions,
+        with the kind of each relationship named. It is asserted to stay equivalent to the diagram.
+      </li>
+    </ul>
+
+    <h2 id="limitations">Known limitations</h2>
+    <p>
+      These are real, current, and measured. Where we have chosen not to fix something yet, the
+      reason is stated rather than left as an absence.
+    </p>
+
+    <ul>
+      {/* Source: artifacts/p4_3/ac6_typeset_floor_adjudication.md — 3 routes x 5 widths x 2 themes,
+          2026-08-24. Aggregate 398/510; hero worst case 3.5px @320 dark. Scope is FIGURE text
+          (diagram labels), NOT body copy — stating it wider than it was measured would be the exact
+          defect this page exists to avoid. */}
+      <li>
+        <strong>Text inside diagrams is too small.</strong> Our own floor is 12&nbsp;px of rendered
+        text; on narrow screens the labels inside several diagrams fall well below it — as small as
+        3.5&nbsp;px on the homepage graphic at a 320&nbsp;px width. Measured across every diagram,
+        width and theme, <strong>398 of 510 rendered labels</strong> are under the floor. This is
+        page <em>illustrations</em>, not body copy, and every diagram has a text alternative — but it
+        is a genuine legibility failure and it is not fixed. A build gate now prevents it getting
+        worse while the redesign work is scheduled.
+      </li>
+
+      {/* Source: P4.3 AC3 — gate-4 gains wcag22aa; axe 4.11.3 ships target-size (2.5.8) and nothing
+          else for 2.2. 2.4.11 is swept by gate-47, not by axe. The other four are uncheckable
+          because the interaction does not exist here — TRUE TODAY, false the moment one is added. */}
+      <li>
+        <strong>Automated checking does not cover all of WCAG 2.2.</strong> Our tooling adds exactly
+        one new rule for 2.2 — target size. Four further 2.2 criteria cannot be checked here because
+        the interactions they govern (dragging, redundant entry, accessible authentication) do not
+        exist on this site; that is true today and stops being true the moment one is added. Focus
+        obscuring is covered by our own keyboard checks rather than by the rule engine.
+      </li>
+
+      {/* Source: P4.3 AC2, amended at the pre-build gate (G-2), and the operator ruling of
+          2026-08-25 deferring the VoiceOver sitting to a follow-up campaign. Both halves of check 5
+          are named; neither is silently passed. */}
+      <li>
+        <strong>No human screen-reader session has been run.</strong> Our automated checks use a
+        screen-reader engine, which can prove the right information is <em>exposed</em> — it cannot
+        tell us whether what a person actually hears is <em>useful</em>. A guided listening session
+        is written and scheduled, and has not yet happened. Separately, testing with
+        <strong>NVDA</strong> is out of scope: it is Windows-only and this project is maintained on
+        macOS. We would rather say both of these plainly than let an automated pass imply them.
+      </li>
+
+      {/* Source: P4.3 AC5 amendment (G-8). Anchor 5 of our own review instrument has three
+          conjuncts; this is the one that is not reachable by a maintainer running a screen reader. */}
+      <li>
+        <strong>We have not tested with assistive-technology users.</strong> Everything above is
+        maintainers and machines. Testing with people who use these tools daily is a different and
+        better instrument, and we have not done it.
+      </li>
+
+      {/* Source: P4.3 O0 — the reader costs ~11ms/step (300 steps = 3,273ms), so a full document
+          walk exceeds the timeout. gate-45 asserts a bounded opening of 60 phrases with a >= 25
+          coverage floor, and must never be cited as a whole-document audit. */}
+      <li>
+        <strong>The automated screen-reader check reads the opening of a page, not all of it.</strong>
+        Walking a whole document with a real reader engine is too slow for a build check, so it
+        asserts against roughly the first sixty things announced. Problems further down a long page
+        would not be caught by it.
+      </li>
+
+      {/* Source: P4.3 O1 keyboard record — the obscured assertion goes red at 820px, not at 340px,
+          because Chromium parks focus at the nearest edge. The clean 2.4.11 result is therefore
+          partly a browser property. Stated because a clean result whose cause you have not
+          identified is not the same as a clean result you have earned. */}
+      <li>
+        <strong>One clean result rests partly on browser behaviour.</strong> Our sticky header never
+        hides the focused element during keyboard navigation — but testing showed that is partly
+        because browsers scroll focus to the nearest edge, not solely because of how this site is
+        built. A different browser could behave differently.
+      </li>
+
+      {/* Source: P4.3 O1, item 5 of the VoiceOver script. Deliberately NOT asserted as a 4.1.3
+          failure: that criterion governs status messages that ARE provided. */}
+      <li>
+        <strong>The "copy" buttons confirm quietly.</strong> Copying a command changes the button's
+        label to "Copied!", which some screen readers announce and others do not, and if the copy
+        fails there is no feedback at all. This is on the list to fix.
+      </li>
+    </ul>
+
+    <h2 id="contact">Telling us about a problem</h2>
+    <p>
+      If you hit a barrier on this site — including one not listed above — please tell us. A
+      description of what you were trying to do, the page, and the assistive technology or browser
+      you were using is enough; you do not need to identify the WCAG criterion.
+    </p>
+    <p>
+      <a class="policy-cta" href={issuesUrl} target="_blank" rel="noopener">
+        Open an accessibility issue &rarr;
+      </a>
+    </p>
+    <p>
+      If opening an issue on GitHub is itself a barrier, that is a legitimate report in its own
+      right — reach us through any channel listed on the
+      <a href="/community">community page</a> and we will file it for you.
+    </p>
+
+    <h2 id="how-we-work">How this page stays true</h2>
+    <p>
+      Most of the claims above are enforced by checks that run on every build, so they cannot
+      quietly stop being true. The limitations are not — they are a record of what was measured, on
+      the dates it was measured. When one is fixed it is removed from this list in the same change
+      that fixes it, and when a check is added the list above grows with it.
+    </p>
+
+    <p class="policy-foot">
+      Last reviewed 25 August 2026, against the build this page was published from. The measurements
+      behind the limitations were taken on 24–25 August 2026.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .policy {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: var(--space-16) var(--space-6) var(--space-24);
+  }
+  .policy-head {
+    margin-bottom: var(--space-10);
+  }
+  .policy h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+  .policy-lead {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    line-height: 1.6;
+  }
+  .policy h2 {
+    font-size: var(--text-xl);
+    margin: var(--space-10) 0 var(--space-3);
+  }
+  .policy p {
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  .policy ul {
+    line-height: 1.7;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-4);
+  }
+  .policy li {
+    margin-bottom: var(--space-3);
+  }
+  .policy kbd {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    padding: 0.05em 0.3em;
+  }
+  .policy code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--color-surface);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+  }
+  .policy a {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+  .policy-cta {
+    display: inline-block;
+    font-weight: 600;
+    margin: var(--space-2) 0;
+  }
+  .policy-foot {
+    margin-top: var(--space-10);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+</style>

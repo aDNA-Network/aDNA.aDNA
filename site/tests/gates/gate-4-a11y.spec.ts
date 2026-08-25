@@ -35,6 +35,11 @@ const pages = [
   { name: 'Design system', path: '/design-system' },
   // Storyweave P5 M5.3 / O5: the new privacy notice (a required outward legal page — lock axe both modes).
   { name: 'Privacy', path: '/privacy' },
+  // HAUSSMANN P4.3 AC5 (ADR-057 same-diff): the accessibility statement. ⚠ Of every route on this
+  // site this is the one that must not carry an accessibility violation — a statement that fails
+  // the standard it describes discredits the whole page, and its readers are disproportionately
+  // the people a violation actually stops. Sweeping it is not a formality.
+  { name: 'Accessibility statement', path: '/accessibility' },
   // Storyweave P5 M5.3 / O6: representative index/landing archetypes — durably lock the long-tail
   // both-mode axe that the one-off T0 sweep confirmed. CardGrid index pages were the M5.2 latent
   // badge-AA locus; /about is a prose marketing page. (T0 confirmed all four axe-0 both themes.)

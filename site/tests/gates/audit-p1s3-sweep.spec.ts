@@ -69,6 +69,10 @@ const routes = [
   { name: 'Use-case: startup', path: '/use-cases/startup/' },
   { name: 'Provenance & audit', path: '/provenance-audit/' },
   { name: 'Security page', path: '/security/' },       // Meridian M9 — DP1 item 13 (new deploy route)
+  // HAUSSMANN P4.3 AC5 (ADR-057 same-diff): the accessibility statement joins the mobile-overflow
+  // sweep in the commit that creates it. It is a long prose page with a long limitations list —
+  // exactly the shape that overflows at 375px if a measurement or a code span runs wide.
+  { name: 'Accessibility statement', path: '/accessibility/' },
   // HAUSSMANN P2.5 O1 — the zero-install tour (ADR-057 same-diff: a new route joins this sweep in
   // the commit that creates it). The hub plus one detail page; the detail pages are generated from
   // one template, so a second adds coverage of nothing the first does not already exercise.
