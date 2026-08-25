@@ -6,11 +6,11 @@ campaign: campaign_haussmann
 phase: P4
 decade: 2
 owner: stanley
-status: in_progress   # ⚠ READ THE QUALIFIER: **OPEN AT THE PRE-BUILD GATE AND NOTHING IS BUILT.** S1 ran 2026-08-24 (⛩ operator routing call opened P4.3 over holding for P4.4b; all three Vitruvius memos ruled STAGED). Convention 13's pass ran **COMPLETE at 30/30 with coverage recorded** and found **3 of 5 criteria not satisfiable as written · 2 inherited obligations (O1's 12px floor, P4.2's aria-live residue) under NO criterion · 1 ceiling overclaim (anchor 5 is unreachable; this mission's honest ceiling is D11 = 4)**. ⛩ `artifacts/p4_3/ac_amendment_proposal.md` is `proposed` — **NO BUILD AND NO RATIFIED BUDGET until it is signed**; the proposed set is 7 ACs at ~220–320 kT. ⛔⛔ Freeze re-verified HOLDING (`30c8163` + `f4fa9c5` both absent); P4.3 will be the FOURTH mission built-not-deployed. Prior status was `queued` under ⛩ DP6 2026-08-19 — activated. KEPT, condition HALF-discharged: the baseline's D11 CONDITIONAL PASS required "adjudicate/fix F2 + run a real manual pass". F2 is FIXED (P1.4, computed-geometry proofs + gate-29) and D11 moved 2 → 3. The manual half has NEVER been run — no AT traversal, no keyboard pass, no VoiceOver session — so D11's PASS is automated-scope-only until this mission runs. Scope unchanged; the qualifier is now explicit.
+status: completed   # ✅ CLOSED 2026-08-25 with AAR (SO#5). **AC1 ✅ AC2 ◐ AC3 ✅ AC4 ✅ AC5 ✅ AC6 ✅ AC7 ✅** · V1 ✅ V2 ✅ V3 ✅ V4 ✅ V5 ✅. ⚠ **READ AC2's QUALIFIER: it is ◐ PARTIAL, not ✅.** Its keyboard half is MET; its human-VoiceOver half is **UNRUN and ⛩ DEFERRED TO A FOLLOW-UP CAMPAIGN by operator ruling 2026-08-25** (priority is the site fully updated/reviewed). The deferral is a REGISTER ROW (**F-v**), not prose — G-6/G-7's lesson applied to this mission's own close — and it is named ON THE PUBLIC PAGE, so no automated pass implies a human one. D11 re-scored **2 → 4**, binary gate CONDITIONAL PASS → **PASS**; ceiling 4 declared before the work, anchor 5 unreachable (needs AT-USER testing). ⛩ **THE DEPLOY FREEZE WAS LIFTED at this session's open** on a measurement (the ancestry guard is built, red-proven 13/13 and already on origin/main at 4a9bc09, so lemur gets it on pull) — P4.3 is therefore NOT the fourth built-not-deployed mission; it ships with P4.1 + P4.2 + P4.4a in ONE deploy. Suite **628/628** derived.
 mission_class: verification
 executor_tier: opus
 token_budget_estimated: "⛩ RE-SET AND RATIFIED 2026-08-24 at the pre-build gate → ~220–320 kT across 2–3 sessions (+ ~30 min operator VoiceOver time at AC2). SUPERSEDES ~150–250 kT in 1 session, which was costed against FIVE criteria of which two were unreachable and two obligations were invisible — so it was never an estimate of this mission's actual scope. The delta buys two instrument builds the original assumed already existed (a zoom transform; gate-4's tag set extended to wcag22aa) plus AC6 + AC7. Convention 13 ran BEFORE this figure was ratified, which is P4.1's SO#11 remedy — there the pass ran after the budget and forced an operator-signed amendment mid-mission. (ADR-016/SO#11)"
-token_budget_actual:
+token_budget_actual: "≈300–380 kT across 3 sessions against the ratified ~220–320 kT band — at or slightly over the top of it, and reported as a RANGE because the figure is reconstructed, not measured. ⚠ THE REAL SO#11 FINDING IS THAT IT HAD TO BE: S1 and the O0/O1 session both closed with `token_budget_actual:` EMPTY, recording only 'comfortably inside the band' in prose. A band cannot be falsified by a sentence that assumes it. No retrospective is triggered (nowhere near 2x), but the instrument that would detect a 2x overrun on this mission did not exist, and that is worth more than the number. The overage that did occur is attributable and small: AC4 was built to its FIRST disjunct (genuine edge equivalence + a new gate + a 7-case red test) where the criterion also permitted the cheaper 'state the limitation' branch. ADR-016/SO#11."
 created: 2026-08-16
 last_edited_by: agent_rosetta
 grounded_in: ["scoring D11 divergence + gate condition (F2 reflow candidate)", "toolkit A13 (@guidepup/virtual-screen-reader adopt; VoiceOver local trial)", "instrument D11 checks 2/5/7/11/13/14 (the manual third)", "graph keyboard-twin partial-equivalence finding (machine_eye 14)"]
@@ -291,13 +291,170 @@ gate**: reordering `tabindex` cannot fail a test that asserts `Shift+Tab` **retr
 reordered-but-consistent order retraces perfectly. **Naming which of the two a non-red is, is the point
 of running the harness.**
 
-⛔⛔ **BUILT, NOT DEPLOYED.** Freeze re-verified HOLDING at resume and at close. **P4.3 is the fourth
-mission accumulating unshipped work**, said here rather than left to be inferred.
+~~⛔⛔ **BUILT, NOT DEPLOYED.** Freeze re-verified HOLDING at resume and at close. **P4.3 is the fourth
+mission accumulating unshipped work**, said here rather than left to be inferred.~~
 
-⏭ **NEXT: O2** ⛩ (operator VoiceOver, ~30 min, script ready) **then O3** — graph-twin equivalence
+~~⏭ **NEXT: O2** ⛩ (operator VoiceOver, ~30 min, script ready) **then O3** — graph-twin equivalence
 (item 13 of the script decides AC4's disjunct), the accessibility statement, D11 re-score against the
-stated ceiling of **4**, AAR.
+stated ceiling of **4**, AAR.~~
+
+> ⛩ **BOTH PARAGRAPHS SUPERSEDED 2026-08-25, struck not deleted (SO#6) — they were true at O1's close
+> and both went false at this session's open.** The **freeze was LIFTED** on a measurement, so P4.3 is
+> **not** a fourth built-not-deployed mission; it ships with P4.1 + P4.2 + P4.4a in one deploy. And
+> **O2 was ⛩ deferred to a follow-up campaign**, so the sequence ran **O3 without it**.
+> ⚠ Note what that costs, because the struck line names it: *"item 13 of the script decides AC4's
+> disjunct."* With no sitting, **item 13 never ran** — AC4's disjunct was chosen instead from the
+> operator's stated priority (improve the site) and from measurement, landing on the *stronger* branch
+> (genuine equivalence) than the one a listening session might have licensed. **The decision was made
+> on different evidence than planned, and that is recorded rather than papered over.**
+
+### ◐ O2 — the human VoiceOver sitting: ⛩ DEFERRED, NOT SKIPPED (2026-08-25)
+
+⛩ **Operator ruling, 2026-08-25**, in the operator's own framing: the priority is *the adna website
+fully updated / reviewed / improved*, and the VoiceOver work routes to a **follow-up campaign**. The
+ruling was taken with the cost stated — that deferring it leaves D11 check 5 unmet in its human half
+and puts the anchor-4 reading on an interpretive step (below).
+
+**What that leaves standing, and what it does not:**
+
+| | Status |
+|---|---|
+| AC2 keyboard half | ✅ **MET** at O1 — 5 surfaces × 60 stops, 6 flows, 14 PASS / 1 NOTE / 0 FAIL |
+| AC2 VoiceOver half | ◐ **UNRUN** — [[voiceover_session_script]] stays `ready_to_run` (18 items, 6 surfaces) |
+| NVDA | ⛔ **out of scope by design** (Windows-only; L1 macOS node) — G-2, recorded at the pre-build gate |
+| The AT *engine* lane | ✅ `gate-45`, 5 surfaces, red-proven 9/9 — unaffected by the deferral |
+
+⭐ **The deferral is a REGISTER ROW, not a sentence — and that is this mission's own lesson applied to
+its own close.** P4.3 exists partly because **G-6** and **G-7** found two obligations deferred *into
+it by name*, in prose, that none of its five original criteria mentioned; all five could have passed
+with both untouched. A deferral recorded only in narrative is a deferral with no gate. So the unrun
+sitting is **F-v** in the campaign register, with its destination, its ready instrument, and its
+consequence named. Register re-derived at the commit: total **20** · struck **13** · live **7**.
+
+⚠ **And it is named ON THE PUBLIC PAGE.** `/accessibility` states that the automated checks use a
+screen-reader *engine*, that an engine can prove information is exposed but not that what a person
+hears is useful, and that **no human sitting has been run**. The site does not let an automated pass
+imply a human one — which is the whole reason AC5 requires the limitations to be true.
+
+⛔ **No instrument is proposed for F-v** (convention 15). What is missing is a person listening; there
+is no version of that a checker can hold, and this campaign has shipped enough wrong instruments
+authored at the tail of a session that finishes something else.
+
+### ✅ O3 COMPLETE 2026-08-25 — AC4, AC5, the re-score, and a green suite that knew nothing
+
+**AC4 — graph twin equivalence: MET at the FIRST disjunct.** The criterion permitted either genuine
+equivalence *or* a stated limitation; the operator's stated priority (improve the site) selects the
+first. The twin now enumerates all **14** edges from **both ends** with direction and type —
+*"WilhelmAI — contains RareArchive"* against *"RareArchive — contained by WilhelmAI"* — derived from
+the same `edges` array the SVG is built from (KW-8/FR-K), 15 rows, **28** relationship links, exactly
+2× the edge count. `gate-22` **3 → 6** assertions, red-proven **7/7** (`graph_twin_redtest.sh`).
+
+⭐ **M4 is the case that earns the gate.** It flattens `contained by` → `contains` and changes nothing
+else: every count assertion still passes, every link still points at the right vault, and the
+topology is gone. A gate that stayed green there would be a **link census wearing an equivalence
+check's clothes** — `machine_eye` 14's exact finding, unfixed while reading as fixed. M3 is the
+anti-vacuity case: every content assertion iterates rows, and over zero rows all of them are green.
+
+⭐⭐ **THE RESOLVER WAS BUILT AGAINST THE WRONG OBJECT, AND ONLY THE RENDERED OUTPUT SAID SO.** Endpoint
+resolution was measured against `vaults.json`, which shows a genuine mix of identifier forms (11
+endpoints matching `vault`, 4 matching only `vault_slug`; `vault !== vault_slug` for 50 of 74), so
+the first resolver keyed on both. Then the built page emitted `/vaults/astro/` where that reading
+predicts `/vaults/Astro.aDNA/`. **The page does not import the JSON** — it imports `data/vaults.ts`,
+the ADR-051 consumption boundary, which canonicalizes every slug *and* both ends of every edge, so in
+that object a single key is not merely sufficient but the only correct one. ⇒ **`vaults.json` and
+`data/vaults` are two different objects with one name**, and a measurement is only as good as the
+object it was taken against — the campaign's standing law, in a new costume. The second key was dead
+weight sitting one collision away from resolving to the wrong vault.
+
+⚠ **The twin said "federatesAstro".** Written as `{e.phrase} <a>`, Astro collapses the gap between an
+expression and the following tag: correct to the eye at a glance, **one word to a screen reader**, on
+the one surface whose entire purpose is being read aloud. Fixed with an explicit `{' '}`, measured in
+`dist/` before and after. **Found by reading the built output, not the source** — and it would have
+survived every assertion in the suite, because nothing asserts on spacing.
+
+**AC5 — the accessibility statement: MET on build, publication owed and now discharged.** In the tree
+at `/accessibility`, on the `.policy` pattern its siblings `/security` and `/privacy` use, linked from
+the footer of **every** page — a statement reachable only from a page you already knew about is not
+reachable, and its readers are the people who arrived somewhere unexpected. Verified against a **local
+preview** (V3 as amended), T0 captures at mobile-lg + desktop × dark + light, axe **0** both modes.
+
+⭐ **The limitations are the page, and each traces to a dated measurement named in a source comment**:
+the 12px floor unmet at **398/510** rendered labels (3.5px worst case) · WCAG 2.2 automated coverage
+is **exactly one rule**, the other four criteria uncheckable *only because the interactions do not
+exist here — true today, false the moment one is added* · NVDA out of scope · the AT gate reads a
+**bounded opening**, never a whole document · no human sitting · no AT-**user** testing · and the one
+least comfortable to write: **a clean 2.4.11 result rests partly on Chromium parking focus at the
+nearest edge**, not solely on this site's layout. A statement listing only comfortable limitations is
+worse than none — it converts an unknown gap into an implied clearance, on the one page whose subject
+is its own trustworthiness.
+
+⭐⭐ **AND A 620-GREEN SUITE KNEW NOTHING ABOUT THE NEW PAGE.** `gate-4`'s page list and the P1S3 sweep
+are both **hardcoded**, so adding a route adds **zero** coverage of it: a full green run that has
+evaluated no rule about the thing under test — convention 14's family at the level of the *suite*
+rather than the gate. ADR-057's same-diff law exists for this and was honoured in the same commit.
+⚠ **The first attempt at honouring it was itself wrong**, and re-reading the sweep's own contract
+caught it: the P1S3 sweep is `@audit` (**excluded from normal gate runs**) and its stated scope is
+*"every route class `gate-4` does NOT already cover"*, so listing the statement there would have
+**duplicated axe twice while leaving the overflow check outside CI entirely**. Corrected to the
+permanent gates: **`gate-4` +2** (axe, both modes) · **`gate-9` +6** (overflow, six viewports).
+⇒ *Same-diff is not "add the route everywhere" — it is "add it where the assertion belongs", and that
+needs each gate's contract read rather than assumed.*
+
+**V4 — D11 re-scored 2 → 4; binary gate CONDITIONAL PASS → PASS.** Record appended (dated, never
+rewritten) to [[reconciliation]]. The baseline's own condition — *"adjudicate/fix F2 + a real manual
+pass"* — is discharged in both halves (F2 closed at AC3; the keyboard pass is a real manual pass).
+Anchor 3's binding clause was *"complex graphics **partially** covered"*, which **AC4 closed
+precisely**. ⚠ **The 4 rests on one interpretive step, and it is named in the record so it can be
+challenged**: *"screen-reader tested"* read as satisfied by a screen-reader **engine** rather than a
+human. Anchor 5 stays unreachable — it requires AT-**user** testing (G-8), and the mission declared
+its ceiling of 4 **before the work started** rather than discovering it at the re-score.
+⚠ Composite holds at **51.6**: D11's weight is 2, so 2 → 4 is 4 weighted points. **D11's value was
+never its weight** — it is one of two dimensions carrying a *binary gate*, and the gate is what
+blocked sign-off from claiming AA. The composite re-score is **P5.2's**, against a deployed build.
+
+**V5 — AC6 and AC7 each carry their own limb, as designed.** AC6: ✅ met as a criterion (floor
+adjudicated NOT MET, ratchet held, lock O1 stays `gap`). AC7: ✅ met and gated (`gate-45` M6 — strip
+`aria-live`, leave the text correct, the region goes silent, the gate goes red).
+
+⛩ **THE DEPLOY FREEZE WAS LIFTED AT THIS SESSION'S OPEN**, on a measurement rather than a lapse: the
+ancestry guard is built, red-proven 13/13, and **already on `origin/main` at `4a9bc09`**, so lemur
+receives it on pull; the alias serves `922519c` and HEAD contains it. ⇒ P4.3 is **not** the fourth
+built-not-deployed mission — it ships with P4.1 + P4.2 + P4.4a in **one** deploy. ⚠ What the lift does
+not change: v0.4.3 and the Arch `[adna]` repo stay un-published and still need lemur; live
+`install.sh` stays at `0.3.1`.
 
 ## AAR (SO#5)
 
-*(before completed)*
+**Worked.** The pre-build gate, for the fourth consecutive mission — AC4 and AC5 were both amended at
+it, and the amended AC4 is why edge equivalence was *built* rather than waved through by its cheaper
+disjunct. Red-proving before believing: **7/7** on a gate that had gone **6/6 green on its first run**,
+and M4 was the one that mattered. Reading the **built output** rather than the source — it caught both
+"federatesAstro" and the wrong-object resolver, neither of which any assertion in a 628-test suite
+would have flagged.
+
+**Didn't.** Two of three sessions closed with `token_budget_actual:` **empty**, so the mission's actual
+had to be reconstructed rather than summed — *a band cannot be falsified by a prose sentence claiming
+it holds*. The first same-diff fix was wrong (route added to an `@audit` sweep whose contract excludes
+it) and was caught only by re-reading that spec's header. And the resolver was measured against
+`vaults.json` when the page reads `data/vaults.ts` — the campaign's own law, breached inside the
+mission that cites it, for the *n*th time.
+
+**Finding.** ⭐⭐ **A suite's route coverage is a hardcoded list, so a green suite says nothing about a
+route you just added — and "add it everywhere" is the wrong repair.** Three gates could have taken
+`/accessibility`; only two should, because one is `@audit`-excluded and scoped to what `gate-4`
+*doesn't* cover. **Same-diff (ADR-057) is a claim about where an assertion belongs, and discharging it
+requires reading each gate's contract.** The second finding is older and cheaper: **`vaults.json` and
+`data/vaults` are two objects with one name**, and every future measurement of registry data must say
+which one it read.
+
+**Change.** F-v carries the unrun sitting with its destination and its ready instrument. The D11
+re-score names the single interpretive step holding it at 4, so a reviewer can strike one sentence
+rather than re-derive the score. `/accessibility` states the human-AT gap publicly, so the deferral
+cannot be silently forgotten by anyone — including us.
+
+**Follow-up.** ⛩ The VoiceOver sitting → follow-up campaign (**F-v**, script `ready_to_run`). The
+header's dead "More" disclosure stays **routed not fixed** (a claim-truth defect, not an a11y one —
+nothing is stranded, `/glossary` and `/how` are in every footer). Lock O1's 12px floor stays `gap`;
+its remedy is design work on the campaign-protected hero. **P5.1 unblocks on this session's deploy** —
+its human-evidence criteria were satisfiable under the freeze and would have produced evidence about
+the wrong build (**G-11**).

@@ -49,6 +49,13 @@ const pages = [
   // a <table>.
   { name: 'State of the network', path: '/state-of-the-network' },
   { name: 'Canonical properties', path: '/canonical-properties' },
+  // HAUSSMANN P4.3 AC5 (ADR-057 same-diff): the accessibility statement. It is a long prose page
+  // whose limitations list carries measurements and inline units ("3.5 px", "398 of 510"), and a
+  // page about accessibility that overflows on a phone would be self-refuting. Gated here rather
+  // than in the P1S3 sweep: that sweep is `@audit` (excluded from normal gate runs) and its stated
+  // scope is routes gate-4 does NOT cover, so putting this route there would have duplicated axe
+  // twice over while leaving the overflow check outside CI.
+  { name: 'Accessibility statement', path: '/accessibility' },
 ];
 
 for (const vp of viewports) {
