@@ -47,7 +47,20 @@ tags: [session, haussmann, p4, p4_3, a11y, wcag, pre_build_gate]
 | Check | Result |
 |---|---|
 | Conflicting sessions | **none** — `how/sessions/active/` was empty |
-| `origin/main` vs `HEAD` | **`0 0`** at `32069f3` — ⭐ **the 2 commits memory carried as "unpushed, awaiting GO" are PUSHED** |
+| `origin/main` vs `HEAD` | ~~**`0 0`** at `32069f3`~~ — see the correction below. **`origin/main` IS at `32069f3` `[D]`**, so the substantive half holds: ⭐ **the 2 commits memory carried as "unpushed, awaiting GO" are PUSHED.** |
+
+> ⚠ **CORRECTION, made at 19:35 against the reflog — my session-open probe was wrong by one commit.**
+> It reported `ahead/behind 0 0`, and I reported that. The reflog says `2fe9093` *("two ISS findings
+> filed from Home")* moved HEAD at **18:45:35**, **14 minutes BEFORE this session opened**, so the
+> count at open was **1**, not 0. The two readings in that probe (`git log` top-of-list and
+> `rev-list --count`) **agreed with each other and were both wrong**, which is why nothing looked
+> off — and it is the strongest argument for the campaign's own rule that a count is **derived at the
+> moment it is used**, never carried forward from an earlier reading.
+> ⭐ **`2fe9093` IS NOT THIS SESSION'S WORK** — it is an operator commit from a **Home.aDNA lane**
+> filing two ISS findings (`F-GATE-06`, `F-GATE-07`) into this vault's `how/backlog/`. It is benign
+> and on-topic, and it is **in the unpushed set**: any push GO must name it deliberately rather than
+> sweep it along as *"my"* commits. Recorded because a foreign commit riding out on someone else's
+> push is the shared-tree hazard this node has already been bitten by.
 | ⛔⛔ Deploy freeze | **HOLDS** — `git cat-file -t` fails on **both** `30c8163` and `f4fa9c5` `[D]` |
 | Vitruvius memos | **3 staged, undelivered** in `who/coordination/` — operator re-ruled STAGED at session open |
 | `@guidepup/virtual-screen-reader` | **NOT installed** (`site/node_modules/@guidepup` absent) — O0 adds a dependency |
