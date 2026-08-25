@@ -2,16 +2,16 @@
 type: backlog
 subtype: upstream_idea
 created: 2026-08-23
-updated: 2026-08-23
+updated: 2026-08-24
 status: proposed
 last_edited_by: agent_hestia
 origin_vault: Home.aDNA
 origin_persona: hestia
 target_skill: how/skills/skill_open_iss.md
 related: [skill_create_iss, skill_watch_iss, adr_028_iss_architecture, adr_029_iss_standard_touch]
-findings: [F-GATE-02, F-GATE-04, F-GATE-05]
+findings: [F-GATE-02, F-GATE-04, F-GATE-05, F-GATE-06]
 severity: high
-tags: [upstream, iss, operator_gate, provenance, stale_tab, frontmost_unique]
+tags: [upstream, iss, operator_gate, provenance, stale_tab, frontmost_unique, f_gate_06, copy_drift, canonical_vs_copies, browser_of_record, receiver_0_4_2_provenance_landed]
 ---
 
 # Upstream idea — an ISS gate cannot currently prove who ruled it, and the open step cannot prove which tab
@@ -93,3 +93,68 @@ fabrication outright.
 receiver is `WebForge.aDNA`'s. A unilateral cross-vault edit to a canonical skill is exactly the move the
 workspace forbids — and with three copies in the fleet, editing one would create the drift this idea is
 about. **Home's canonical md5 at filing: `829f95307deb9ce3eecbe6e7bc2fefdc` (unchanged).**
+
+---
+
+## ▸ APPENDED 2026-08-24 (Hestia, P5.4 wave-11 sitting) — F-GATE-06, and the finding CHANGED UNDER MEASUREMENT
+
+**What was going to be filed:** *"`skill_open_iss` defaults to Safari; the operator rules in Chrome, so
+the open step strands the gate."* Home has been carrying that sentence since the wave-9 sitting.
+
+🔴 **It is wrong about the canonical skill, and checking took one `grep`.** The canonical
+`aDNA.aDNA/how/skills/skill_open_iss.md` (`updated: 2026-05-29`, md5 `829f9530…`) reads:
+
+> *"Browsers present: Google Chrome (default for ISS gates), Safari. **Chrome is the default for ISS
+> gates.** Safari blocks `file://` pages from loading image subresources … so images render **broken** in
+> Safari."*
+
+**The canonical was already correct, and it was corrected for exactly this reason.**
+
+### ⭐ The real finding is worse, and it is this idea's own closing paragraph coming true
+
+| copy | `updated` | md5 | says |
+|---|---|---|---|
+| `aDNA.aDNA/how/skills/` — **canonical** | **2026-05-29** | `829f9530…` | *"Google Chrome (default for ISS gates)"* |
+| `Astro.aDNA/how/skills/` | **2026-05-21** | `fdd7cd2c…` | 🔴 *"Safari (default), Google Chrome"* |
+| `WebForge.aDNA/how/skills/` | **2026-05-21** | `fdd7cd2c…` | 🔴 *"Safari (default), Google Chrome"* |
+
+**The 05-29 correction never propagated.** Both downstream copies are byte-identical to each other and
+**three months stale**, and their whole pattern block — the AppleScript, the `open POSIX file` form, the
+variants table — is written **for Safari**, the browser the canonical singles out as the one that renders
+image gates broken over `file://`.
+
+⇒ **This idea's closing paragraph — *"with three copies in the fleet, editing one would create the drift
+this idea is about"* — is not a hypothetical. It already happened, to the fix.** And the drift runs in the
+direction that hurts: **consumers reach the stale copy.** Home's own federated route is
+`Home.aDNA/how/federation/astro/` → **Astro's copy** → **Safari**. An agent that follows Home's wrapper
+faithfully gets the wrong browser *and* the broken-image failure mode, while the canonical sits corrected
+and unread.
+
+🔑 **A canonical that cannot prove its copies match it is not canonical; it is one of three opinions.**
+The remedy this idea should carry is therefore **not** "change a default" — the default is already right
+where it counts — but **a propagation check**: `skill_open_iss` (and its siblings) need a copy-census the
+way `Git.aDNA`'s wrapper does, so a corrected canonical is detectably ahead of its copies.
+
+### ✅ And the cheap remedy this idea asked for HAS LANDED — which is what makes the better rule possible
+
+This idea's *"record provenance in the artifact"* section asked for `source` / `user_agent` /
+`remote_addr` on the verdict, noting *"the receiver already has all three at write time and discards
+them."* **Receiver `0.4.2` now writes all three.** Verified first-hand on
+`Home.aDNA/how/gates/p5_4_wave10_shape_gate.output.json`:
+
+```
+"receiver": { "version": "0.4.2", "remote_addr": "127.0.0.1", "receiver_port": 8767,
+              "user_agent": "…Chrome/151.0.0.0 Safari/537.36" }
+```
+
+⇒ **the browser of record is now DERIVABLE rather than assumed**, and that is the rule worth adding to the
+canonical skill: *open the gate in the browser the last verdict on this node was posted from; fall back to
+the documented default only when no receiver log exists.* It could not have been written before `0.4.2`.
+
+⚠ **Scope, stated so it is not over-read:** one `user_agent` string is *the last ruler*, not *the
+operator's preference*. It is a better default than a hardcoded one, not a proof of anything.
+
+**Filed, not fixed** — three copies, and a unilateral edit to one is the move that produced the table
+above. Home takes no cross-vault edit here. Home-side action taken instead: Home's own gate-opening step
+derives the browser from the receiver log, and Home's memory of *"canonical defaults to Safari"* is struck
+as **false of the canonical and true only of the copy Home's wrapper reaches**.
