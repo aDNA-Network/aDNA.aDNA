@@ -172,14 +172,47 @@ convention 11. ✅ **`P4.4a` CLOSED 2026-08-24** (AAR filed, SO#5; criteria **AC
 one file holds both halves — a `completed` there would claim P4.4b). ⛔⛔ **BUILT, NOT DEPLOYED**, the
 third consecutive mission behind the freeze.
 
-⛩ **THE NEXT MISSION IS AN OPERATOR ROUTING CALL, AND IT IS NOT TAKEN HERE (SO#1).** Convention 11's
+~~⛩ **THE NEXT MISSION IS AN OPERATOR ROUTING CALL, AND IT IS NOT TAKEN HERE (SO#1).** Convention 11's
 ruled order puts **P4.4 → P4.3**, but P4.4's remaining half is **P4.4b, and every one of its criteria
 waits on an actor outside the session** — Vitruvius's answer (the ask is **staged, not delivered**),
 lemur's push, the operator's dashboard. So the choice is: **hold for P4.4b's unblock**, or **open
 `P4.3`** (*accessibility beyond automation: manual passes*), which already holds inherited work —
 **O1's 12px rendered-typeset floor**, ⛩ deferred to it as a legibility judgement, plus P4.2's
 `aria-live` residue (B3/E4) which needs an AT instrument rather than a grep. **Neither is claimed by
-this line.**
+this line.**~~
+
+⛩ **ROUTING CALL TAKEN 2026-08-24: `P4.3` IS OPEN; ALL THREE VITRUVIUS MEMOS STAY STAGED.** P4.4b is
+untouched and still blocked on actors outside the session. **`P4.3` is `in_progress` AT ITS PRE-BUILD
+GATE — nothing is built and its budget is NOT ratified.** Convention 13's pass ran **COMPLETE at 30/30
+with its coverage recorded** in the mission body and found **3 of 5 criteria not satisfiable as written,
+2 inherited obligations under NO criterion, and 1 ceiling overclaim**. ⛩
+`artifacts/p4_3/ac_amendment_proposal.md` is **`proposed`** — 7 ACs, V3/V4 amended, V5 added,
+**~220–320 kT** (up from a ~150–250 kT band costed against five criteria, two unreachable and two
+obligations invisible). **No build until signed.**
+
+> ⭐⭐ **THE PASS'S SHARPEST FINDING IS THE THIRD SIGHTING OF ONE DEFECT: `P4.2`'s AC3, `P4.4`'s AC2, and
+> now `P4.3`'s AC5 all require a prod deploy under a freeze that lifts on ANOTHER MACHINE.** All three
+> were authored **before the freeze existed** (2026-08-16) and **none was re-read against it when it
+> landed**. ⇒ **Three instances is a mission-authoring habit, not three accidents** — and the campaign
+> already holds the remedy it keeps re-deriving: **MET-on-build, with deployment named as owed** and its
+> unblock condition on the mission's face (P3.3 O3 · P4.1 AC5 · P4.4 AC2-amended). **Every remaining
+> unstarted mission should be re-read against the freeze once, now, rather than one at a time at each
+> pre-build gate.**
+>
+> ⭐ **And the two obligations under no criterion were both carried in PROSE — in this very file.**
+> Lock O1's 12px floor (*"defers to P4.3"*) and P4.2's `aria-live` residue (*"both stay `gap` at P4.3"*)
+> were deferred **by name** into a mission whose five criteria mention neither, so all five could pass
+> with both untouched — **P4.1's structural gap recurring in the mission that inherited the deferrals.**
+> ⇒ **A deferral recorded only in narrative is a deferral with no gate.** Proposed as **AC6 + AC7**, each
+> with its own V-limb.
+>
+> ⚠ **`grounded_in: "toolkit A13"` cites a label that does not exist.** The toolkit is
+> `what/context/context_web_quality_toolkit.md` — **vault-root-relative**, so a campaign-scoped search
+> finds nothing — and `\bA[0-9]+\b` returns **0 hits** in it `[D]`. Its substance is real and on point.
+> **`P4.4` cites `toolkit A2` identically**, so this is a campaign-wide citation scheme the cited
+> artifact never carried. Citation repointed to section + lines; evidence stands. ⚠ **The first probe
+> for it was campaign-scoped and phrased absolutely** — convention 16's own law, inside the session
+> citing it.
 
 **Confirm from the mission's own `status:` before claiming anything** — and read its qualifier, not
 just the field: this index line has gone stale **five** times, and the field now says `in_progress`
