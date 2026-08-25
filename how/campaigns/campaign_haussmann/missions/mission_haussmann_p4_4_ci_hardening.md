@@ -6,14 +6,14 @@ campaign: campaign_haussmann
 phase: P4
 decade: 2
 owner: stanley
-status: in_progress   # ⛩ AC AMENDMENT OPERATOR-SIGNED 2026-08-24 (artifacts/p4_4/ac_amendment_proposal.md, `accepted`) — the pre-build gate found ZERO of five criteria executable as written; six criteria changes applied, mission SPLIT into P4.4a/P4.4b in-file (P4.5a/b precedent; mission_count HOLDS AT 27). P4.4a OPEN AT AC0 (the ancestry guard = F-u, the deploy freeze's release condition). P4.4b NOT started — every one of its criteria waits on an actor outside the session. Prior status was `queued` under ⛩ DP6 2026-08-19; the RESCOPE-UP recorded there (three gate classes + ⊳ D-E) survives into P4.4a unchanged.
+status: in_progress   # 2026-08-24 — P4.4a **OPEN AT A3**; A0 · A0v · ruling 2 · A1 · A2 all ✅. A2 shipped gate-42 (console, 224 routes × 2 themes) · gate-43 (off-site CTA, targets DERIVED from the build) · gate-44 (hub substance, reusing hub_depth_measure.mjs); all three are REGRESSION GUARDS (F20 tested false; R-122/R-123 and F19 already closed), so all three went green on their first run and each is red-proven 7/7 · 6/6 · 7/7. Suite 587/587 derived. ⛩ Budget re-raised to ~600–750 kT at A2's open (SO#11). A3 = the Vitruvius ask + AAR, an OUTWARD ACT needing its own GO. ⛔⛔ Freeze holds; A2 deployed nothing. Prior: ⛩ AC AMENDMENT OPERATOR-SIGNED 2026-08-24 (artifacts/p4_4/ac_amendment_proposal.md, `accepted`) — the pre-build gate found ZERO of five criteria executable as written; six criteria changes applied, mission SPLIT into P4.4a/P4.4b in-file (P4.5a/b precedent; mission_count HOLDS AT 27). P4.4b NOT started — every one of its criteria waits on an actor outside the session. Prior status was `queued` under ⛩ DP6 2026-08-19; the RESCOPE-UP recorded there (three gate classes + ⊳ D-E) survives into P4.4a unchanged.
 mission_class: build
 increments: [P4.4a, P4.4b]        # in-file, NOT separate mission files — mission_count holds at 27
 executor_tier: opus               # P4.4a. ⚠ SPLIT PER INCREMENT — P4.4b is `sonnet` (see increment table). P4.1's AAR: `executor_tier: fable` sat unremarked for four sessions while every session ran opus. A declared tier nobody honours is worse than none.
 executor_tier_p4_4a: opus         # AC0 design + register adjudication are judgment-heavy
 executor_tier_p4_4b: sonnet       # mechanical: snapshot project, sweep config, budget wiring
-token_budget_estimated: "⛩ RE-RAISED AND RATIFIED 2026-08-24 → ~530–820 kT across 4–5 sessions (P4.4a ~280–420 kT / 2–3 · P4.4b ~250–400 kT / 2). That is ≈2.4× the prior figure, stated rather than hidden — and almost exactly P4.1's MEASURED overrun (≈2.36×), which is the argument the estimate is honest rather than padded. SUPERSEDES: ~220–330 kT across 1–2 sessions, which predated F-i…F-u, the three rescoped-in gate classes and AC0, and which this file already flagged as a live under-estimate."
-token_budget_actual:
+token_budget_estimated: "⛩ RE-RAISED A SECOND TIME AND RATIFIED 2026-08-24 (at A2's open) → ~850–1150 kT across 5–6 sessions (P4.4a ~600–750 kT / 3–4 · P4.4b ~250–400 kT / 2). The P4.4a half is the part that moved: A0+A0v+A1 consumed ~310–380 kT of a ~280–420 kT band before A2 and A3 had started, so the band was already spent. SO#11/ADR-016 requires the re-raise be taken as an operator act rather than absorbed silently — that is the whole point of declaring a budget. SUPERSEDES: ~530–820 kT (P4.4a ~280–420 kT), itself a ratified re-raise from ~220–330 kT."
+token_budget_actual: "P4.4a A2 ≈ 165 kT (within the ~180–250 kT allocation). Running P4.4a total ≈ 475–545 kT of the ~600–750 kT band, with A3 (~80–120 kT) outstanding — the re-raised band is holding."
 created: 2026-08-16
 last_edited_by: agent_rosetta
 grounded_in: ["toolkit A2 (container baselines solve the old deferral; Lost Pixel archived — avoid) / A3 (Unlighthouse) / A8 (Speed Insights as p75; CrUX null; keyless PSI dead)", "idea_visual_regression_gate (deferred for exactly the noise this solves)", "N12 (no field instrument)", "P0.2 header check (extend)", "webforge P3 (class-keyed bars, ratchet law)"]
@@ -119,7 +119,7 @@ apart from their criteria; **P4.4a's are new**, and A0 is the reason the split e
 | **A0** | **The ancestry guard (AC0 / F-u).** `inject_build_stamp.mjs` → `/.well-known/adna-build.json`; the refusal in `deploy_adna.sh` after the clean-tree guard, prod only; `--force-rollback` loud + logged; bootstrap as a dated operator-signed single act | injector + guard | — |
 | **A0v** | **V5 — red-prove it.** The 7-case matrix **including its two passing controls**; assert match counts so a stale mutation reports as a harness bug, not a pass | `alias_guard_redtest.sh` | — |
 | **A1** | **The register.** Discharge or re-route the **16 live rows**, F-o first (its drift is accelerating). Includes the four gate fixes (F-a · F-i · F-j · F-p) and the three derived-count gates (F-c · F-m · F-n) | ✅ **DONE 2026-08-24** — 19 rows: **13 struck**, **6 live and ALL ROUTED** (F-d·F-j → A1b · F-e → A3 · F-k → template release · F-m·F-n fenced by gate-41, fix outstanding). Seven fixed + red-proven; four closed; F-a pulled forward on an ⛩ operator ruling after measurement | — |
-| **A2** | **The three rescoped-in gate classes** (zero-console-error · off-site CTA-target · hub-substance floor) **+ the token census as a gate** (ruling 2) | gates + red-tests | — |
+| **A2** | **The three rescoped-in gate classes** (zero-console-error · off-site CTA-target · hub-substance floor) **+ the token census as a gate** (ruling 2) | ✅ **DONE 2026-08-24** — `gate-42` (console, 224 routes × 2 themes) · `gate-43` (off-site CTA, 6 governance doors + 1 clone destination, all **derived** from the build) · `gate-44` (hub substance, reusing `hub_depth_measure.mjs`). Census shipped earlier as `gate-40`. **All three went green on their first run** — all three originating defects were already closed — so each is red-proven: **7/7 · 6/6 · 7/7** (14 mutations + 6 controls) | — |
 | **A3** | ⛩ **Deliver the Vitruvius ask** (ruling 3) + AAR | memo + AAR | ⛩ operator (outward act) |
 
 ### P4.4b — the three new systems (`sonnet`, ~250–400 kT, NOT STARTED)
@@ -253,6 +253,71 @@ A pixel regression, a header drift, a budget breach, or a field-CWV red each fai
 > Open this mission + campaign CLAUDE.md + the toolkit table (plan §Inspection-toolkit) + `idea_visual_regression_gate.md`. Execute O0, O2; O1 needs the operator's dashboard action; then O3.
 
 ## Progress
+
+### 2026-08-24 — ✅ P4.4a A2 COMPLETE. Three gates, none of which discovers anything, all three red-proven.
+
+**Session** `session_stanley_20260824_172016_haussmann_p4_4a_a2_gates`.
+
+⛩ **Two operator rulings taken at this session's open.**
+**(1) Budget re-raised to ~600–750 kT** for P4.4a — SUPERSEDES the ~280–420 kT ratified on
+2026-08-24, which A0+A0v+A1 had already consumed ~310–380 kT of (SO#11 / ADR-016). Allocation:
+A2 ~180–250 kT · A3 ~80–120 kT.
+**(2) `gate-43` blocks CI, with the two failure modes separated** — a 404 is our defect and fails;
+an unreachable or rate-limited host reports as a **precondition** failure in its own vocabulary.
+This was a real conflict: `check_external_links.mjs` deliberately does **not** block, on the stated
+grounds that *"gating on that would train everyone to ignore a red build."* The distinction that
+resolves it is ownership — these are our own org's repos and the site's primary CTA.
+
+#### ⭐ All three classes had already been closed. Every gate is a regression guard.
+
+Re-verified at the object before building, per the lesson this campaign keeps paying for:
+
+| Class | Origin | State |
+|---|---|---|
+| zero-console-error | **F20** | **FALSE** — P4.2 O3 measured errors 0/0 across 4 routes × both themes |
+| off-site CTA-target | **R-122 / R-123** | **CLOSED** by P3.5, 2026-08-20 |
+| hub-substance floor | **F19** | **CLOSED** by P4.2; spec hub re-measured **h2=4, bodyLen 2,630** (was `h2=0`, 1,504 B) |
+
+⇒ **All three gates went green on their first run**, which is exactly the state in which a real
+assertion and a no-op are indistinguishable. The red-tests are therefore the entire evidentiary
+value of this objective, not a formality.
+
+| Gate | What it fences | Red-test | Result |
+|---|---|---|---|
+| `gate-42` console clean | console.error · pageerror · same-origin request failure · non-200, over **224 routes × 2 themes** | `console_clean_redtest.sh` | **7/7** (5 mutations + 2 controls) |
+| `gate-43` off-site CTA | 6 governance doors + 1 clone destination, **all derived from the build** | `offsite_cta_redtest.sh` | **6/6** (4 mutations + 2 controls) |
+| `gate-44` hub substance | h2 + bodyLen budget per hub, **reusing `hub_depth_measure.mjs`** | `hub_substance_redtest.sh` | **7/7** (5 mutations + 2 controls) |
+
+#### ⭐ The three findings worth carrying
+
+1. **A false finding caught before it became a gate — the same shape as F20, one layer up.** The
+   first design probed a fixed `CONTRIBUTING/CODE_OF_CONDUCT/LICENSE` triple against the four
+   own-org repos the site links. `aDNA-Network/community-policies` returned **404 on all three**,
+   which reads as a live R-122. It is not: that repo is a policy-document repo holding
+   `code_of_conduct.md` (lowercase), `privacy.md`, `terms.md`, and **all three URLs the site actually
+   links resolve 200**. The 404s were an artifact of the probe's assumed shape, not a defect.
+   A gate shipped on that rule would have fired forever on a correct state — and `adna-legacy`
+   (archived, correctly no CoC) would have been the second false positive. ⇒ **Derive the target set
+   from what the site links, never from what a repo "should" contain.** F-c's class, reached from a
+   new direction.
+2. **The narrowing is stated, not silently applied.** The build publishes **128** unique own-org
+   GitHub URLs; ~95 are per-page "edit this page" links. `gate-43` gates 7 of them and says so in its
+   header. A bounded scope that goes unmentioned reads as full coverage — convention 14's family, and
+   the reason P3.3's partial pass read as a clean bill of health.
+3. **`gate-42` widened P4.2's F20 refutation by ~56×** — 4 routes × 2 themes became 224 × 2, still
+   **0 console errors**. The refutation was already sound; it is now standing evidence rather than a
+   one-off probe. This is the gate class earning its keep on the day it ships, without discovering
+   anything: what it converts is a *measurement someone once took* into a *fact that stays true*.
+
+**Verification `[D]`** — full suite **587/587, zero failures** (1.6 min), **derived from the run**:
+578 + 9, three gates × three tests each; no other spec moved. Red-tests **7/7 · 6/6 · 7/7** =
+14 planted mutations caught + 6 controls. Tree verified clean after every harness (each restores in
+a trap and re-runs the gate green as its final control); the only files containing mutation strings
+are the harnesses themselves. `astro check` unchanged at F-j's baseline. **Nothing deployed** —
+⛔⛔ the freeze holds, re-verified at open (`git cat-file -t` fails on both `30c8163` and `f4fa9c5`).
+
+⏭ **NEXT = A3** — ⛩ the Vitruvius ask (⊳ D-E, row F-e; gates P4.4b's AC4) + the mission AAR. A3 is
+an **outward act** and needs its own operator GO.
 
 ### 2026-08-24 — ✅ P4.4a A1 COMPLETE. The register went 16 live → 6, all six routed.
 
