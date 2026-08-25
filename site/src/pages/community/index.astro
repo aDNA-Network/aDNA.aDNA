@@ -72,6 +72,67 @@ const jsonLD = buildCollectionPageJsonLD({
     <p>{horizon}</p>
   </Callout>
 
+  <!-- HAUSSMANN P3.4 — the community space. Rewritten at ⛩ DP7 (2026-08-22); the P1.1
+       paragraph this replaces had gone stale in TWO places, both found by the O0 re-probe:
+       (1) R-95 said the venue's terms and privacy policy were "still being stood up" — both
+           went live 2026-08-21 [D 2026-08-22]. gate-26 pinned that quote as a `verified` row
+           whose text must be PRESENT, so the suite was green BECAUSE of the false sentence.
+       (2) It said agents work "not in chat" — falsified by aDNALabs S224 ruling ② (2026-08-21,
+           "Fluxer = human-visible agent chat", an R3-pilot extension inside the ADR-001/ADR-025
+           fences), and contradicted by the venue's own code of conduct §3, which this block
+           now links. The site cannot assert agents are absent one line from a document that
+           says they are present.
+       Rules are STATED; presence is NOT asserted either way — who is actually inside is behind
+       the auth wall and unverifiable from here [A]. That satisfies SO#8 (disclosure) without
+       claiming a fact we cannot check.
+       Link text is venue-scoped on purpose: the governance table above names the project-wide
+       Contributor Covenant v2.1, whose own preamble says it applies to "the community server"
+       too [D 2026-08-22]. Two documents govern this space, so "the code of conduct" alone would
+       have been ambiguous on this page — hence "the space's own".
+       Per the ⛩ DP7 ruling this copy is deliberately SILENT on the instance's public-face
+       branding: an unauthenticated fetch still returns stock Fluxer metadata, that is an
+       upstream ceiling (Fluxer ADR-000 forbids the fork that would fix it), and it is neither
+       ours to describe nor ours to claim. ADR-054 clause 2 GO state. -->
+  <h2 id="space">The community space</h2>
+  <p>
+    A real-time community space is open at
+    <a href="https://community.adna.network" rel="noopener">community.adna.network</a> &mdash; a
+    self-hosted Fluxer instance in its early days. Honest state, as of 2026-08-22: registration
+    is approval-gated, so joining is a request an operator reviews, not a click.
+  </p>
+  <p>
+    Its rules are published, short, and explicitly interim &mdash; worth reading before you join:
+    the <a href="https://github.com/aDNA-Network/community-policies/blob/main/terms.md" rel="noopener">terms of service</a>,
+    the <a href="https://github.com/aDNA-Network/community-policies/blob/main/privacy.md" rel="noopener">privacy notice</a>, and
+    the space's own <a href="https://github.com/aDNA-Network/community-policies/blob/main/code_of_conduct.md" rel="noopener">code of conduct</a>,
+    which sits under the project-wide Contributor Covenant named above.
+    Two commitments in them are worth naming here: your content is not used to train or evaluate
+    AI models, and every agent in the space is labeled as an agent &mdash; no undisclosed
+    automation, in either direction.
+  </p>
+  <p>
+    Conversation happens there. Anything that should leave a durable record &mdash; a bug, a fix,
+    a change to the standard &mdash; goes through the repository instead, where it can be cited
+    later.
+  </p>
+
+  <!-- HAUSSMANN P3.5 — the proposal process (ADR-055, ratified 2026-08-20). D9 scored 2 at
+       baseline and nine missions never moved it: the funnel's problem was never that the
+       contributor documentation was bad, it was that the site never rendered a route into it.
+       Every fact in this section is checked by gate-37. -->
+  <h2 id="proposals">How the standard changes</h2>
+  <p>
+    Changes to the standard are proposed as numbered
+    <a href="/community/proposals/">aDNA Enhancement Proposals</a>. Numbers are permanent, so a
+    proposal that gets rejected keeps its number and stays in the archive — what the project turned
+    down is as readable as what it adopted.
+  </p>
+  <p>
+    Anyone may file one. Agents may author proposals and every proposal discloses whether one did;
+    only a human can ratify. A proposal is only called <em>final</em> once a check in aDNA's own
+    tooling fails when the rule is violated, which keeps the archive from becoming a wishlist.
+  </p>
+
   <h2 id="explore">Explore further</h2>
   <p>The roles, processes, and shared-knowledge commons in depth:</p>
   <CardGrid cards={cards} columns={2} />
@@ -80,11 +141,11 @@ const jsonLD = buildCollectionPageJsonLD({
        the audit found its ctas[] held only the dark-mode toggle and the mobile menu. -->
   <ClosingCTA
     title="Contribute"
-    lead="The standard is built in the open, and authored by agents but ratified by humans. Report a bug or propose a change to the standard through the public repository's issue templates; questions and ideas start in Discussions."
+    lead="The standard is built in the open, and authored by agents but ratified by humans. A change to what the standard requires goes through the numbered proposal process; anything else — a bug, a fix, a question — goes through the repository's issue templates, which is faster for everyone. The contribution guide and the code of conduct both live in the repository, and AI-assisted contributions are welcome as long as they say so."
     primaryLabel="Contribute on GitHub"
     primaryHref="https://github.com/aDNA-Network/aDNA"
-    secondaryLabel="Read the contribution standards"
-    secondaryHref="/community/community-contribution-standards/"
+    secondaryLabel="File a proposal"
+    secondaryHref="/community/proposals/"
   />
 </DocumentationLayout>
 

@@ -73,51 +73,146 @@ if (fs.existsSync(VAULT_CARDS_DIR)) {
   }
 }
 
+// HAUSSMANN P2.1 / ADR-051 — the canonical vault route slug: lowercase, `.aDNA`
+// suffix dropped, anything outside [a-z0-9_-] folded to `_`. Idempotent, so it is
+// safe to apply to a value that is already canonical. Mirrored byte-for-byte by
+// `canonicalVaultSlug()` in site/src/data/vaults.ts; gate-30 asserts the two agree.
 function slugOf(name) {
   if (typeof name !== 'string') return null;
   return name.toLowerCase().replace(/\.adna$/, '').replace(/[^a-z0-9_-]/g, '_');
 }
 
-// Public-note sanitizer (audit P1 / campaign_adna_network_audit DS3): the inventory `note` is
-// internal/private editorial context (campaign state, partner/client identities, private repos)
-// pulled from Home.aDNA (local-by-default). It is rendered publicly (homepage RegistryCard blurb,
-// vault-detail body + meta description), so it MUST be reduced to a public-safe blurb before it
-// reaches the public vaults.json. Strategy: truncate at the first internal/private marker, redact
-// "for <Named person/org>" client clauses, drop if nothing safe remains. Conservative — prefers
-// under-sharing to leaking a named client (the live CakeHealth.aDNA exposure this fixes).
-// Internal/private/operational markers — truncate the public note at the first occurrence (keeps
-// the clean "what it is" lead). Codenames like "Operation X" are NOT markers (they're descriptive);
-// the named-client risk is handled by the "for <Name>" redaction below.
+// Public-note sanitizer v2 (HAUSSMANN P1.3): the inventory `note` is internal/private editorial
+// context (campaign state, partner/client identities, private repos) pulled from Home.aDNA
+// (local-by-default). It renders publicly (homepage RegistryCard blurb, vault-detail lede + meta
+// description, registry cards), so it is reduced to a public-safe blurb here — at SENTENCE
+// granularity, never by slicing inside a sentence. The v1 marker-slice cut mid-parenthetical and
+// manufactured the H13 `truncated_lede` class ("Web-stack cohort ("). Strategy: keep leading
+// sentences while each is (a) free of every gate-27 leak pattern, (b) free of the private markers,
+// (c) parenthesis-balanced; stop WHOLE-SENTENCE at the first dirty one; return null when nothing
+// clean survives (downstream renders an honest-absent affordance — never fabricated copy).
+// Conservative — prefers under-sharing to leaking a named client or an internal identifier.
 const PRIVATE_MARKERS = /\b(Campaign\s|campaign_|CHARTERED|DG-[A-Z]|consumer wrappers?|Phase\s+\d|P\d(-P\d)?\s|genesis|ADR-\d|read-only|creds?\b|credential|DuploCloud|#needs-human|NOTE:|flagged for|Private|\d{4}-\d{2}-\d{2})/i;
+
+// Single source of truth with the editorial gate: the same pattern set gate-27 lints the built
+// site with (site/tests/gates/fixtures/leak_patterns.json). The projection can never emit
+// note-derived text the gate forbids. Fails loud if the fixture moves — silence would reopen H13.
+const LEAK_PATTERNS_PATH = path.join(PROJECT_ROOT, 'site/tests/gates/fixtures/leak_patterns.json');
+const leakPatterns = JSON.parse(fs.readFileSync(LEAK_PATTERNS_PATH, 'utf-8')).patterns.map(
+  (p) => new RegExp(p.regex, p.flags.replace('g', '')),
+);
+
+// Sentence splitter tuned for inventory notes: boundary = [.!?] + whitespace + [A-Z0-9("'].
+// A lowercase continuation ("… standard. aDNA is …") is NOT a boundary, and neither is a short
+// abbreviation ("e.g.", "incl.", "vs.") — both would otherwise strand ugly fragments.
+function splitSentences(text) {
+  const out = [];
+  let start = 0;
+  const abbrev = /\b(?:e\.g|i\.e|etc|vs|incl|approx|ca|v\d*)\.$/i;
+  for (let i = 0; i < text.length; i++) {
+    if (!'.!?'.includes(text[i])) continue;
+    const rest = text.slice(i + 1).match(/^(\s+)(.)/);
+    if (!rest || !/[A-Z0-9("']/.test(rest[2])) continue;
+    if (abbrev.test(text.slice(start, i + 1).trimEnd())) continue;
+    out.push(text.slice(start, i + 1).trim());
+    start = i + 1;
+  }
+  const tail = text.slice(start).trim();
+  if (tail) out.push(tail);
+  return out;
+}
+
+const parensBalanced = (s) => (s.match(/\(/g) || []).length === (s.match(/\)/g) || []).length;
+
 function publicNote(note) {
   if (!note) return null;
-  let s = String(note);
-  const m = s.match(PRIVATE_MARKERS);          // 1) cut at first internal/private marker
-  if (m) s = s.slice(0, m.index);
-  // 2) redact "for <Honorific Name…>( (Org))?" or "for <Name> (Org)" client/partner clauses
-  s = s.replace(/\s+for\s+(?:(?:Dr\.|Prof\.|Mr\.|Mrs\.|Ms\.)\s*[A-Z][\w.]+(?:\s+[A-Z][\w.]+)*(?:\s*\([^)]*\))?|[A-Z][\w.]+(?:\s+[A-Z][\w.]+)*\s*\([^)]+\))/g, '');
-  s = s.replace(/[;,]\s+\w+$/, '');             // 3a) drop a trailing dangling fragment after ;/,
-  s = s.replace(/[\s,;:—-]+$/, '').trim();      // 3b) tidy trailing connectors
-  if (s && !/[.!?]$/.test(s)) s += '.';
-  return s.length >= 12 ? s : null;             // 4) drop sub-meaningful fragments
+  const kept = [];
+  for (const raw of splitSentences(String(note))) {
+    // Redact "for <Honorific Name…>( (Org))?" / "for <Name> (Org)" client/partner clauses first —
+    // a sentence may be publishable once the named client is out (the CakeHealth fix, preserved).
+    let s = raw.replace(/\s+for\s+(?:(?:Dr\.|Prof\.|Mr\.|Mrs\.|Ms\.)\s*[A-Z][\w.]+(?:\s+[A-Z][\w.]+)*(?:\s*\([^)]*\))?|[A-Z][\w.]+(?:\s+[A-Z][\w.]+)*\s*\([^)]+\))/g, '');
+    s = s.replace(/\s{2,}/g, ' ').trim();
+    if (!s) break;
+    if (PRIVATE_MARKERS.test(s)) break;               // private/operational content — stop, whole-sentence
+    if (leakPatterns.some((re) => re.test(s))) break; // would fail the editorial gate — stop
+    if (!parensBalanced(s)) break;                    // never emit an unclosed parenthetical
+    kept.push(s);
+    if (kept.length >= 3) break;                      // a lede, not the whole dossier
+  }
+  let out = kept.join(' ').trim();
+  if (!out) return null;
+  if (!/[.!?]$/.test(out)) out += '.';
+  return out.length >= 12 ? out : null;               // drop sub-meaningful fragments
 }
+
+// Persona placeholders ('—', 'tbd_at_p0') are data-currency artifacts, not personae. Projected as
+// null so every consumer (templates, the Mermaid node <sub> label, search blobs, page <title>)
+// renders honest-absent instead of a literal placeholder — the "Astro — — —" title class (F15).
+function normalizePersona(p) {
+  if (p == null) return null;
+  const s = String(p).trim();
+  if (!s || s === '—' || s === '-' || /^tbd(_at_p0)?$/i.test(s)) return null;
+  return s;
+}
+
+// DP4 ruling (HAUSSMANN P1.3, operator 2026-08-16, ADR-052 §admission): confidential-adjacent
+// vaults STAY LISTED — the registry count stays true — but project a MINIMAL card: identity +
+// class + status + persona only. Notes, taglines, links, phase, and headline state are suppressed
+// AT THE GENERATOR so no downstream surface (pages, cards, graph, llms, search blobs) can leak
+// engagement detail. Templates render the honest reason via `listing: "minimal"`.
+const MINIMAL_CARD_VAULTS = new Set(['aiLP-Dataroom.aDNA', 'CakeHealth.aDNA', 'PercySleep.aDNA']);
 
 // Merge inventory + vault_card overlay → projected vault entry
 function projectVault(invVault) {
   const slug = invVault.name; // canonical name e.g. "aDNA.aDNA"
   const card = vaultCards[slug] || {};
+  if (MINIMAL_CARD_VAULTS.has(slug)) {
+    return {
+      vault: slug,
+      vault_slug: slugOf(card.vault_slug || slug),
+      display_name: card.display_name || invVault.display_name || slug.replace(/\.aDNA$/, ''),
+      full_name: null,
+      tagline: null,
+      class: card.class || invVault.class || 'unknown',
+      subclass: null,
+      persona: normalizePersona(card.persona) ?? normalizePersona(invVault.persona),
+      persona_archetype: null,
+      status: card.status || invVault.health || 'unknown',
+      lifecycle_stage: null,
+      current_phase: null,
+      headline_mission: null,
+      headline_mission_state: null,
+      recent_closed: [],
+      headline_adrs: [],
+      umbrella_pillar: null,
+      companion_vaults: [],
+      federation_refs: [],
+      supersedes: null,
+      superseded_by: null,
+      default_partners: [],
+      github_url: null,
+      docs_site_url: null,
+      canonical_governance: null,
+      last_synced: card.last_synced || null,
+      note: null,
+      listing: 'minimal',
+      schema_version: card.schema_version || '0.1',
+      card_present: !!vaultCards[slug],
+    };
+  }
   return {
     // Identity (always from inventory; overlay from card if present)
     vault: slug,
-    vault_slug: card.vault_slug || slugOf(slug),
+    vault_slug: slugOf(card.vault_slug || slug),
     display_name: card.display_name || invVault.display_name || slug.replace(/\.aDNA$/, ''),
     full_name: card.full_name || null,
     tagline: card.tagline || null,
 
-    // Class + persona (inventory primary; card overlay)
+    // Class + persona (inventory primary; card overlay). Persona placeholders normalize to null —
+    // a card's '—' must not shadow a real inventory persona, hence the per-source normalize.
     class: card.class || invVault.class || 'unknown',
     subclass: card.subclass || null,
-    persona: card.persona || invVault.persona || null,
+    persona: normalizePersona(card.persona) ?? normalizePersona(invVault.persona),
     persona_archetype: card.persona_archetype || null,
 
     // Status + lifecycle
@@ -172,6 +267,7 @@ if (fs.existsSync(OVERLAY_PATH)) {
 }
 const ARRAY_RELATIONS = ['umbrella_pillar', 'companion_vaults', 'federation_refs', 'default_partners'];
 for (const v of projectedVaults) {
+  if (v.listing === 'minimal') continue; // DP4: no relationship detail on minimal cards
   const ov = edgeOverlay[v.vault] || edgeOverlay[v.vault_slug] || {};
   for (const f of ARRAY_RELATIONS) {
     const cur = v[f];

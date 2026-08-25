@@ -13,7 +13,7 @@ import { STANDARD_VERSION, ENTITY_TYPE_COUNT, CONFORMANCE_LEVELS, STANDARD_LICEN
 // Proof-of-life leads the hero stat strip (Storyweave J3): the registry size is
 // the site's most compelling number, so it sits first — sourced from vaults.json
 // (never hardcoded; gate-20 claim-trace: vault-count → vaults.json vault_count).
-import vaultsData from './vaults.json' with { type: 'json' };
+import vaultsData from './vaults';
 
 export interface HomeStep {
   number: string;
@@ -134,16 +134,31 @@ export const personas: HomePersona[] = [
 ];
 
 // §5 "Join the network" audience pathways (E5 c165; audit C3 orphan surfacing).
-// These link the role landing pages (PersonaPage surfaces), not the /use-cases/*
-// narratives the `personas` array above points at — two different surfaces.
-export const audiences: HomeAudience[] = [
-  { label: 'Researchers', href: '/researchers/' },
-  { label: 'Educators', href: '/educators/' },
-  { label: 'Enterprise', href: '/enterprise/' },
-  { label: 'Compliance', href: '/compliance/' },
-  { label: 'Startups', href: '/startup-first-hour/' },
-  { label: 'Adopters', href: '/adopters/' },
-];
+//
+// HAUSSMANN P2.2 / ADR-049 Option A: this used to be a second, hand-maintained copy of the
+// audience link set, pointing at the /researchers-style landings — "two different surfaces",
+// as the old comment here admitted. Those landings retired into their /use-cases/ twin, so
+// the array is now DERIVED from `personas` above. One source: the two surfaces can no longer
+// drift apart, and gate-13 keeps deriving its assertions instead of hardcoding routes
+// (WebForge KW-8/FR-K).
+//
+// Trailing slash is appended because the site builds in `directory` format — every canonical
+// URL here ends in one, and ADR-051 made that the site's slug law.
+export const audiences: HomeAudience[] = personas.map((p) => ({
+  label: p.title,
+  href: `${p.href}/`,
+}));
+
+// Loud, not silent. A curated list that derives to nothing is the failure mode this campaign
+// has now hit twice — P2.1's `card.vault_slug` silent drop, then the P2.1 probe's own `slug`
+// guess reproducing it inside the verification instrument. An empty §5 would render as a
+// missing section rather than an error, so refuse to build instead.
+if (audiences.length === 0) {
+  throw new Error(
+    'home.ts: `audiences` derived from `personas` but came out empty — §5 "Join the network" ' +
+      'would render with no pathways. Check that `personas` is populated.',
+  );
+}
 
 // Storyweave J3 (proof-of-life placement): "68 Vaults" leads — the real, growing
 // registry size is the number a stranger can check — and the insider standard facts

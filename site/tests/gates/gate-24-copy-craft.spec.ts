@@ -25,7 +25,7 @@ const INDEX_PAGES = [
   '/reference/',
   '/patterns/',
   '/community/',
-  '/adopters/',
+  // '/adopters/' retired at HAUSSMANN P2.2 (ADR-049 Option A) — folded into /use-cases/.
   '/learn/comparisons/',
   '/learn/concepts/',
   '/learn/tutorials/',

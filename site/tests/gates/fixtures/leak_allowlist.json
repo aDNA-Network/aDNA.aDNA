@@ -2,7 +2,7 @@
   "_doc": "HAUSSMANN P0.5 (editorial gate, O2) — dated allowlist of REVIEWED, PERMANENT exceptions to the leak lint. This is NOT the debt list: today's genuine leaks live in leak_baseline.json and must go to zero at P1.3. An entry here says 'this token, on this surface, is deliberate public copy'.",
   "_discipline": "Every entry carries surface + pattern + an explicit `tokens` list + rationale + date + reviewed_by. Token-scoped by design: allowlisting `learn/** internal_id` wholesale would let a NEW internal id (e.g. campaign_haussmann) leak into a tutorial unseen. Only the reviewed strings are excused; anything else on the same surface still goes red.",
   "_surface_globs": "`**` matches any path suffix. `index.html` matches the built homepage exactly.",
-  "updated": "2026-08-16",
+  "updated": "2026-08-19",
   "entries": [
     {
       "surface": "index.html",
@@ -181,6 +181,79 @@
       "rationale": "Illustrative filenames inside code blocks on the specification + design-rationale pages (example vault trees). These are invented teaching filenames, not this vault's internal artifacts.",
       "date": "2026-08-16",
       "reviewed_by": "agent_rosetta (P0.5)"
+    },
+    {
+      "surface": "get-started/what-your-agent-reads/**",
+      "pattern": "internal_path",
+      "tokens": [
+        "what/code/"
+      ],
+      "rationale": "The zero-install tour publishes the standard's own files VERBATIM and byte-exact (gate-36 enforces the byte-equality), so a reader can audit the prompt-ware before running the install. Every token on this surface already ships inside the public clone-and-run image — anyone who runs the install command receives these exact bytes. Editing them to satisfy a copy lint would make the page a depiction of the file rather than the file, which is the defect (R-118) this surface was built to retire. Same class as the homepage demo-panel entry above: showing the artifact IS the demonstration.",
+      "date": "2026-08-19",
+      "reviewed_by": "agent_rosetta (P2.5 O1)"
+    },
+    {
+      "surface": "get-started/what-your-agent-reads/**",
+      "pattern": "internal_id",
+      "tokens": [
+        "mission_id"
+      ],
+      "rationale": "As above — verbatim publication of the shipped standard. `mission_id` is in any case an ontology FIELD name, i.e. the standard's published vocabulary (see the learn/** entry).",
+      "date": "2026-08-19",
+      "reviewed_by": "agent_rosetta (P2.5 O1)"
+    },
+    {
+      "surface": "get-started/what-your-agent-reads/**",
+      "pattern": "op_codename",
+      "tokens": [
+        "Operation Distillery",
+        "Operation Palimpsest"
+      ],
+      "rationale": "As above — verbatim publication of the shipped standard. These codenames appear in the release notes inside .adna/CLAUDE.md and are therefore already in every clone. Token-scoped deliberately: a NEW codename appearing here means the vendored set changed, which is worth a look rather than a blanket pass. NOTE for the next template release: that the shipped image carries internal campaign codenames at all is an editorial finding about the IMAGE, recorded at P2.5 O1 and out of scope to fix here (Workspace Standing Rule 1 — .adna/ is never modified from this vault).",
+      "date": "2026-08-19",
+      "reviewed_by": "agent_rosetta (P2.5 O1)"
+    },
+    {
+      "surface": "get-started/what-your-agent-reads/**",
+      "pattern": "backlog_finding_id",
+      "tokens": [
+        "idea_upstream_"
+      ],
+      "rationale": "As above — verbatim publication of the shipped standard. Part of the same image-side editorial finding recorded on the op_codename entry.",
+      "date": "2026-08-19",
+      "reviewed_by": "agent_rosetta (P2.5 O1)"
+    },
+    {
+      "surface": "vaults.json",
+      "pattern": "raw_enum",
+      "tokens": [
+        "framework_candidate",
+        "genesis_stub",
+        "knowledge_graph",
+        "node_operational",
+        "org_graph",
+        "org_vault",
+        "tbd_at_p0"
+      ],
+      "rationale": "HAUSSMANN P4.4a A1 / F-i. This is a MACHINE surface: a JSON field whose value is `org_graph` is an API CONTRACT, not jargon in a sentence. The registry's consumers key on these literals, so rewriting them to prose would break the contract the endpoint exists to publish — the raw_enum pattern is aimed at enums leaking into HUMAN copy, which is a different defect on a different surface. SCOPE: this entry grants raw_enum on THIS FILE ONLY. Every other leak class (internal_path, internal_id, op_codename, machine_ident, truncated_lede, production_tidy, backlog_finding_id) applies to it in full and was measured at ZERO. TOKENS ARE DERIVED, NOT TYPED (KW-14) — F-i's own row named three (`org_graph`, `tbd_at_p0`, `genesis_stub`); running the gate's patterns against the built file found SEVEN. Scoping to the three the row typed would have left four firing and the gate red on a good tree. They live under exactly two keys: `class` (6) and `status` (1 = genesis_stub). Re-derive with: node -e \"...leak_patterns against dist/vaults.json...\" (see the gate's scanTargets note). A NEW CLASS FIRING HERE IS THE GATE WORKING — add it by review, never by widening the pattern.",
+      "date": "2026-08-24",
+      "reviewed_by": "agent_rosetta (P4.4a A1 / F-i)"
+    },
+    {
+      "surface": "api/registry.v1.json",
+      "pattern": "raw_enum",
+      "tokens": [
+        "framework_candidate",
+        "genesis_stub",
+        "knowledge_graph",
+        "node_operational",
+        "org_graph",
+        "org_vault",
+        "tbd_at_p0"
+      ],
+      "rationale": "HAUSSMANN P4.4a A1 / F-i. This is a MACHINE surface: a JSON field whose value is `org_graph` is an API CONTRACT, not jargon in a sentence. The registry's consumers key on these literals, so rewriting them to prose would break the contract the endpoint exists to publish — the raw_enum pattern is aimed at enums leaking into HUMAN copy, which is a different defect on a different surface. SCOPE: this entry grants raw_enum on THIS FILE ONLY. Every other leak class (internal_path, internal_id, op_codename, machine_ident, truncated_lede, production_tidy, backlog_finding_id) applies to it in full and was measured at ZERO. TOKENS ARE DERIVED, NOT TYPED (KW-14) — F-i's own row named three (`org_graph`, `tbd_at_p0`, `genesis_stub`); running the gate's patterns against the built file found SEVEN. Scoping to the three the row typed would have left four firing and the gate red on a good tree. They live under exactly two keys: `class` (6) and `status` (1 = genesis_stub). Re-derive with: node -e \"...leak_patterns against dist/vaults.json...\" (see the gate's scanTargets note). A NEW CLASS FIRING HERE IS THE GATE WORKING — add it by review, never by widening the pattern.",
+      "date": "2026-08-24",
+      "reviewed_by": "agent_rosetta (P4.4a A1 / F-i)"
     }
   ]
 }

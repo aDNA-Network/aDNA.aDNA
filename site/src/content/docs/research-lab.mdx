@@ -49,8 +49,28 @@ chen_lab.aDNA/
 
 New postdocs orient in a day instead of a month — they read CLAUDE.md, browse the context library, and understand the lab's methods. AI agents produce lab-specific analysis instead of generic output. The protocol library eliminates "how did we do this last time?" conversations. Federation lets Maya share validated analysis lattices with collaborating labs without emailing YAML files.
 
+## Typical Ontology Extensions
+
+| Entity | Triad | Purpose |
+|--------|-------|---------|
+| `protocol` | what/ | Experimental protocols (wet lab + computational) |
+| `dataset` | what/ | Dataset metadata, lineage, and FAIR annotations |
+| `experiment` | how/ | Individual experiment records with methods and results |
+| `collaboration` | who/ | Cross-lab coordination and data sharing agreements |
+
+## Where to go next
+
+A reading path, in order. Each tutorial is self-contained.
+
+1. [Write a Context File](/learn/tutorials/write-a-context-file) — 30 min · Intermediate — curate a quality-rubric-scored knowledge file your agents load before working on a specific domain or dataset.
+2. [Extend the Ontology](/learn/tutorials/extend-the-ontology) — 25 min · Intermediate — add domain-specific entity types: experiment, protocol, finding, hypothesis — whatever your research taxonomy demands.
+3. [Design a Mission](/learn/tutorials/design-a-mission) — 25 min · Intermediate — decompose a multi-week analysis arc into claimable objectives. Each objective fits in a single agent session.
+4. [Build a Lattice](/learn/tutorials/build-a-lattice) — 30 min · Advanced — compose a research workflow as a validated `.lattice.yaml` graph of modules. Machine-executable, human-readable.
+
 ## Related
 
 - [Governance Files](/learn/concepts/governance-files) — how CLAUDE.md orients new lab members
-- [Extend the Ontology](/learn/tutorials/extend-the-ontology) — how Maya added `protocols/` as a custom entity type
-- [FAIR Metadata](/learn/concepts/fair-metadata) — how FAIR enables sharing analysis pipelines
+- [FAIR Metadata](/learn/concepts/fair-metadata) — how aDNA satisfies Findable, Accessible, Interoperable, Reusable at the knowledge-architecture level
+- [The Convergence Model](/learn/concepts/convergence) — load exactly the context a task needs, not the entire dataset catalog
+- [Federation Readiness](/patterns/federation-readiness) — the six-point checklist that gates cross-lab sharing
+- [Mission](/glossary/glossary-mission) — the unit that decomposes a multi-week arc into claimable objectives

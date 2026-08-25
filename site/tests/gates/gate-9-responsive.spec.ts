@@ -28,7 +28,7 @@ const pages = [
   // (the 40-node + orphan-shelf Mermaid SVG must scale inside its container, not overflow
   // the viewport); the vault detail carries the typed relationship block.
   { name: 'Graph page', path: '/vaults/graph' },
-  { name: 'Vault detail', path: '/vaults/Harness.aDNA' },
+  { name: 'Vault detail', path: '/vaults/harness' },
   // E5 Public-Good Commons (cycle 160): the subnetwork showcase (2-col grid → 1-col at ≤760px)
   { name: 'Commons page', path: '/commons' },
   // E5 c162 (context-graph experience): the registry gained an image-led HomeHero + stats
@@ -44,6 +44,11 @@ const pages = [
   { name: 'Learn hub', path: '/learn' },
   { name: 'Patterns index', path: '/patterns' },
   { name: 'Community index', path: '/community' },
+  // HAUSSMANN P1.2 — the two disclosure surfaces (ADR-057 same-diff). Both render long URLs and
+  // repository paths in label/value grids; 320px is the real risk here, which is why neither uses
+  // a <table>.
+  { name: 'State of the network', path: '/state-of-the-network' },
+  { name: 'Canonical properties', path: '/canonical-properties' },
 ];
 
 for (const vp of viewports) {

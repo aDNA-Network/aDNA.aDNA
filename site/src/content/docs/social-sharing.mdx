@@ -1,6 +1,6 @@
 ---
 title: "Social Sharing — aDNA Publishing"
-description: "When someone shares an aDNA.aDNA page on social media, a branded preview image and description appear automatically. This document describes the OG (Ope..."
+description: "How the site's OG (Open Graph) social-preview system works: branded preview images, section-aware selection, and how to configure previews for the vault."
 doc_title: "Social Sharing"
 section: "publishing"
 order: 3
@@ -20,7 +20,7 @@ Five branded OG images (1200x630px) cover the site's content sections. Each uses
 | Learn | `site/public/images/og-learn.png` | Concepts, tutorials, comparisons (`/learn/*`) |
 | Patterns | `site/public/images/og-patterns.png` | Pattern library (`/patterns/*`) |
 | Reference | `site/public/images/og-reference.png` | Specification, glossary (`/reference/*`, `/glossary/*`) |
-| Community | `site/public/images/og-community.png` | Community roles, adopter personas (`/community/*`, `/adopters/*`) |
+| Community | `site/public/images/og-community.png` | Community roles, audience scenarios (`/community/*`, `/use-cases/*`) |
 
 ### Generation
 
@@ -41,7 +41,7 @@ The `SEOHead.astro` component selects the correct OG image based on the current 
 | `/learn/` | og-learn.png |
 | `/patterns/` | og-patterns.png |
 | `/reference/`, `/glossary/` | og-reference.png |
-| `/community/`, `/adopters/` | og-community.png |
+| `/community/`, `/use-cases/` | og-community.png |
 | Everything else | og-default.png |
 
 Every page also gets an auto-generated `<meta name="description">` from the first paragraph of its content (truncated to 155 characters by the [transform pipeline](/how/publishing/vault-to-site)).

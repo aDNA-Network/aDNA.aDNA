@@ -1,0 +1,121 @@
+---
+title: "Registry JSON — aDNA Reference"
+description: "The vault registry as data: a documented, versioned JSON endpoint serving the same fields the registry pages render."
+ref_title: "Registry JSON"
+api_module: "registry"
+version: "1.0"
+stability: "stable"
+updated: 2026-08-21
+---
+
+{/*  The registry as data — endpoint, schema, and what it deliberately does not contain  */}
+
+## Endpoints
+
+| URL | Promise |
+| --- | --- |
+| [`/vaults.json`](/vaults.json) | The current registry. Follow this if you want whatever is live. |
+| [`/api/registry.v1.json`](/api/registry.v1.json) | The **v1 shape**. Pin this if you need fields to keep meaning what they meant. |
+
+Both serve identical bytes as `application/json`. They are built from one function, so a pin can
+never silently diverge from the canonical path.
+
+```bash
+curl -s https://adna.network/vaults.json | jq '.vault_count, .vaults[0].display_name'
+```
+
+## Versioning
+
+Breaking changes get a **new versioned URL** — `/api/registry.v2.json` — and the old one keeps
+serving for at least **90 days** after the new version is published. `/vaults.json` moves to the
+new version only after that window closes.
+
+Adding a field is **not** a breaking change and may happen at any time. Write consumers that ignore
+keys they do not recognise.
+
+## Envelope
+
+| Field | What it is |
+| --- | --- |
+| `schema_version` | This endpoint's contract version (`1.0`). |
+| `about` | Self-description: canonical and versioned URLs, the versioning policy, licence. |
+| `generated_at` | When the registry **data** was last regenerated. |
+| `built_at` | When this file was **serialized**. Deliberately separate — a stale registry should not look as fresh as the last deploy. |
+| `snapshot_note` | Plain-language restatement that this is a build-time snapshot. |
+| `registry_schema_version` | The underlying registry's own schema version. |
+| `source_inventory_sha` | Fingerprint of the node inventory the registry was generated from. |
+| `caveat` | The self-declaration caveat, in the payload rather than only on the page. |
+| `vault_count` · `edge_count` | Counted from the arrays below, never typed separately. |
+| `field_coverage` | Per field: how many rows populate it, out of how many. See below. |
+| `vaults` | The vault rows. |
+| `edges` | Declared relationships: `source`, `target`, `type`. |
+
+## Vault rows
+
+Each row carries the raw registry value **and** its public label, so you can key on one and display
+the other:
+
+```json
+{
+  "vault_slug": "operations",
+  "display_name": "Operations",
+  "class": "coordination",
+  "class_label": "coordination",
+  "status": "active",
+  "status_label": "active",
+  "tier": "in_use",
+  "tier_label": "in use",
+  "tier_meaning": "Being worked in today.",
+  "persona": "Berthier",
+  "note": null,
+  "url": "https://adna.network/vaults/operations/",
+  "markdown_url": "https://adna.network/vaults/operations.md"
+}
+```
+
+`tier` is derived from `status` alone (`active` → `in_use`, `pending` → `chartered`, everything
+else → `planned`). It is shipped so you do not have to reimplement the mapping.
+
+Absent scalar values are `null`, never omitted. Absent lists are `[]`. An omitted key and a key
+whose value is genuinely unknown are different facts, and collapsing them is how a consumer ends up
+inferring something that was never there.
+
+## `field_coverage` — read this before you trust a field
+
+Several fields are populated **zero times** across the whole registry. That is not a fetch error
+and not a bug: the registry's descriptive fields were deliberately emptied when internal language
+was stripped out of the public projection, and sparseness is the honest cost of that. Rather than
+let you discover it row by row, the endpoint counts it for you:
+
+```json
+"field_coverage": {
+  "display_name": { "populated": 74, "of": 74 },
+  "persona":      { "populated": 61, "of": 74 },
+  "note":         { "populated": 44, "of": 74 },
+  "tagline":      { "populated":  0, "of": 74 }
+}
+```
+
+Check coverage before building a view that depends on a field. `last_synced` deserves particular
+care: it records a **registry sync**, not vault activity, and most of the rows that carry it share
+a single date. Reading it as freshness would be false.
+
+## Rows listed with a minimal card
+
+Three vaults are listed with identity, class, status and persona only. They carry
+`"listing": "minimal"` and a `listing_note` saying so. The vaults are real and governed; their
+detail is private by ruling, not missing by accident. Treat a minimal row as **suppressed**, not
+empty — the `listing_note` is there precisely so the two are distinguishable.
+
+## What this endpoint is not
+
+It is a projection of the **published** registry — the same fields the registry pages render, no
+more. Fields that no page displays are not made public by being convenient to serialize. It is a
+snapshot of one operator-run node's declarations, not a census of aDNA adoption, and nothing in it
+is corroborated by an external signal.
+
+## Related
+
+- [The registry](/vaults) — the same data, rendered
+- [`llms.txt`](/llms.txt) — the machine index for this whole site
+- [Canonical properties](/canonical-properties) — how to verify a surface is genuinely aDNA

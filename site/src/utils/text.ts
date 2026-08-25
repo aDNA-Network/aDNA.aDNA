@@ -10,11 +10,16 @@
  * stripped, the text is cut at the last word boundary under `maxLen`, and a real
  * Unicode ellipsis (…) is appended — NEVER mid-word, NEVER an ASCII "...".
  *
- * It deliberately does NOT split on the first sentence terminator (the glossary
- * `firstSentence()` approach), because collection descriptions contain internal
- * dots — "AGENTS.md", "e.g.", "v2.5", "Python 3.8+" — that a sentence splitter
- * would wrongly cut at. `firstSentence()` in glossary.ts stays as-is (glossary
- * index only); consolidating the two is a tracked follow-up.
+ * It deliberately does NOT split on the first sentence terminator, because
+ * collection descriptions contain internal dots — "AGENTS.md", "e.g.", "v2.5",
+ * "Python 3.8+" — that a naive sentence splitter would wrongly cut at.
+ *
+ * That warning was written before the bug it predicted had been fixed: the
+ * glossary index really was rendering "AGENTS.md — AGENTS." and "README.md —
+ * README." (F11). The follow-up this docblock filed is now closed —
+ * `firstSentence()` in glossary.ts requires a terminator to be followed by
+ * whitespace or end-of-string, and hands its result to `excerpt()` for the cap.
+ * The two compose rather than compete.
  */
 export function excerpt(text: string | null | undefined, maxLen = 160): string {
   const raw = (text ?? '').trim();

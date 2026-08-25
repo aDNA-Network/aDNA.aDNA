@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-07-24",
+  "source_repo": "https://github.com/aDNA-Network/aDNA",
+  "source_sha": "0364d85",
+  "source_sha_full": "0364d85cba4253e1234178a61abba0e551dd79e2",
+  "source_commit_date": "2026-07-24",
+  "files": [
+    {
+      "slug": "workspace-router",
+      "source_path": "how/templates/template_workspace_claude.md",
+      "bytes": 11000,
+      "lines": 150,
+      "sha256": "dac6ea82437103986416b23ec487fe3f4ac6f5ebd912321db51f1699aa887d2b",
+      "blob_url": "https://github.com/aDNA-Network/aDNA/blob/0364d85cba4253e1234178a61abba0e551dd79e2/.adna/how/templates/template_workspace_claude.md"
+    },
+    {
+      "slug": "standard-governance",
+      "source_path": "CLAUDE.md",
+      "bytes": 26199,
+      "lines": 358,
+      "sha256": "0dc5b814219ce2bbdb45e62db0a8da7c365af180661320a8866672fbaf910088",
+      "blob_url": "https://github.com/aDNA-Network/aDNA/blob/0364d85cba4253e1234178a61abba0e551dd79e2/.adna/CLAUDE.md"
+    },
+    {
+      "slug": "skill-project-fork",
+      "source_path": "how/skills/skill_project_fork.md",
+      "bytes": 19288,
+      "lines": 261,
+      "sha256": "50240c92842ebe2dbc203f650aaec80d8638f4bc82fe45247f739833e296262b",
+      "blob_url": "https://github.com/aDNA-Network/aDNA/blob/0364d85cba4253e1234178a61abba0e551dd79e2/.adna/how/skills/skill_project_fork.md"
+    },
+    {
+      "slug": "skill-onboarding",
+      "source_path": "how/skills/skill_onboarding.md",
+      "bytes": 15248,
+      "lines": 266,
+      "sha256": "8d73d086cdb9aa6eca25c186766feb6a6c3877fb6843b1e7a1eadac2ef719e2e",
+      "blob_url": "https://github.com/aDNA-Network/aDNA/blob/0364d85cba4253e1234178a61abba0e551dd79e2/.adna/how/skills/skill_onboarding.md"
+    }
+  ],
+  "vault_triad": [
+    {
+      "leg": "what",
+      "entries": [
+        "assets",
+        "comparisons",
+        "concepts",
+        "context",
+        "decisions",
+        "design",
+        "docs",
+        "doctrine",
+        "exemplars",
+        "glossary",
+        "inventory",
+        "lattices",
+        "measurement",
+        "patterns",
+        "specs",
+        "tutorials",
+        "use_cases"
+      ]
+    },
+    {
+      "leg": "how",
+      "entries": [
+        "backlog",
+        "campaigns",
+        "configs",
+        "federation",
+        "gates",
+        "migrations",
+        "missions",
+        "pipelines",
+        "publishing",
+        "quests",
+        "sessions",
+        "skills",
+        "standard",
+        "tasks",
+        "templates",
+        "workshops"
+      ]
+    },
+    {
+      "leg": "who",
+      "entries": [
+        "adopters",
+        "assets",
+        "community",
+        "coordination",
+        "governance",
+        "identity",
+        "reviewers",
+        "team"
+      ]
+    }
+  ]
+}

@@ -11,9 +11,16 @@ import { test, expect } from '@playwright/test';
 import subnetworksData from '../../src/data/subnetworks.json' with { type: 'json' };
 import { audiences } from '../../src/data/home';
 
-// Keep in sync with Header.astro's inline-nav switch-on media query (1024px since the
-// 8th item — see the c165 measurement note there).
+// Keep in sync with Header.astro's inline-nav switch-on media query (1024px — see the c165
+// measurement note there; it was set when the row carried 8 items, and HAUSSMANN P2.2 cut it
+// to 7, so the row now has slack at this width rather than being fitted to it).
 const NAV_SWITCH_ON = 1024;
+
+// ADR-049 (⛩ DP5): the primary nav ceiling is 7 items with NO load-bearing overflow. Before
+// P2.2 nothing asserted this — the row was fenced by fit and presence only, so it had drifted
+// to 8 flat items plus a "More" disclosure holding Reference and Glossary. The ceiling is a
+// ratified constraint, so it gets a real assertion.
+const NAV_MAX_ITEMS = 7;
 
 test('G13 Nav: header carries Commons in the desktop row (1440px)', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
@@ -23,7 +30,23 @@ test('G13 Nav: header carries Commons in the desktop row (1440px)', async ({ pag
   await expect(link).toHaveText('Commons');
 });
 
-test(`G13 Nav: 8-item desktop row fits at the ${NAV_SWITCH_ON}px switch-on (c158 lesson)`, async ({ page }) => {
+test(`G13 Nav: desktop row is ≤${NAV_MAX_ITEMS} items with no overflow disclosure (ADR-049)`, async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/', { waitUntil: 'networkidle' });
+  const items = page.locator('.nav-desktop a');
+  expect(
+    await items.count(),
+    `primary nav must stay within the ${NAV_MAX_ITEMS}-item ceiling ratified at ⛩ DP5`,
+  ).toBeLessThanOrEqual(NAV_MAX_ITEMS);
+  // "No load-bearing More" is the other half of the criterion: the disclosure that used to
+  // hold Reference and Glossary is gone, not merely shortened.
+  await expect(
+    page.locator('details.nav-more'),
+    'the More disclosure was dissolved at P2.2 — Reference+Glossary fold under Standard',
+  ).toHaveCount(0);
+});
+
+test(`G13 Nav: desktop row fits at the ${NAV_SWITCH_ON}px switch-on (c158 lesson)`, async ({ page }) => {
   await page.setViewportSize({ width: NAV_SWITCH_ON, height: 700 });
   await page.goto('/', { waitUntil: 'networkidle' });
   await expect(page.locator('.nav-desktop')).toBeVisible();
@@ -39,7 +62,13 @@ test(`G13 Nav: 8-item desktop row fits at the ${NAV_SWITCH_ON}px switch-on (c158
 
 test('G13 Nav: footer carries the top-level model including Commons', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
-  for (const href of ['/network', '/vaults', '/commons', '/community']) {
+  // HAUSSMANN P1.2 added the two disclosure surfaces. /canonical-properties being footer-linked on
+  // every page is not cosmetic — it is the §7.1 clone-site defense's delivery mechanism: a reader
+  // who lands anywhere must be one click from the list of legitimate properties.
+  for (const href of [
+    '/network', '/vaults', '/commons', '/community',
+    '/state-of-the-network', '/canonical-properties',
+  ]) {
     await expect(page.locator(`.footer-links a[href="${href}"]`)).toBeVisible();
   }
 });
@@ -90,11 +119,26 @@ test('G13 Mobile disclosure: hidden at tablet+ where the sidebar shows', async (
   await expect(page.locator('aside.doc-sidebar')).toBeVisible();
 });
 
-test('G13 Audience surfacing: /researchers scopes to the For-you group with a breadcrumb', async ({ page }) => {
+// HAUSSMANN P2.2 / ADR-049: this test used to assert that /researchers scoped to the "For you"
+// sidebar group. That group was the third of four copies of the audience link set and is gone;
+// four of its five landings retired into their /use-cases/ twin. The fifth, /compliance, became
+// the topic page /provenance-audit and moved to Guides — and it is the one that matters here,
+// because the charter's "Enterprise Architect routing gap" was precisely that it was reachable
+// from NEITHER disclosure surface. This now fences the fix.
+test('G13 Audience surfacing: /provenance-audit scopes to Guides with a breadcrumb', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
-  await page.goto('/researchers/', { waitUntil: 'networkidle' });
+  const resp = await page.goto('/provenance-audit/', { waitUntil: 'networkidle' });
+  expect(resp?.status(), '/provenance-audit must resolve 200 (ADR-048 rename)').toBe(200);
   const sidebar = page.locator('aside.doc-sidebar');
-  await expect(sidebar.locator('.nav-group .group-label')).toContainText('For you');
-  await expect(sidebar.locator('a[href="/educators"]')).toBeVisible();
-  await expect(page.locator('nav[aria-label="Breadcrumb"]')).toContainText('For you');
+  await expect(sidebar.locator('.nav-group .group-label')).toContainText('Guides');
+  // .nav-item specifically: the section-switcher also links /provenance-audit (it is the
+  // active section), so an unscoped href match resolves to two elements.
+  await expect(sidebar.locator('a.nav-item[href="/provenance-audit"]')).toBeVisible();
+  await expect(page.locator('nav[aria-label="Breadcrumb"]')).toContainText('Guides');
 });
+
+// NOTE: the 11 consolidation redirects are NOT asserted here. This suite runs against
+// `npm run preview`, and per P2.1's doctrine §3.2 the preview server does not serve the
+// adapter layer at all — a redirect assertion would fail locally in a way indistinguishable
+// from a real bug. They are fenced in gate-30-url-canonical, which reads the emitted
+// .vercel/output/config.json, and proven live by the probe matrix after the deploy gate.

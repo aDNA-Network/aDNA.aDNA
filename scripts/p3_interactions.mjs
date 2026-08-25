@@ -194,8 +194,10 @@ try {
   check(uc.links.some(h => h && h.includes('/commons')), false, `L1 /use-cases points to /commons for real proof`);
   check(uc.links.some(h => h && (h.includes('/get-started') || h.includes('/commons'))), false, `O1 /use-cases has a real on-ramp (not browse-only)`);
 
-  const ad = await bodyText('/adopters');
-  check(/illustrative/i.test(ad.text) || ad.links.some(h => h && h.includes('/commons')), false, `L2 /adopters labelled illustrative or points to /commons`);
+  // HAUSSMANN P2.2: /adopters retired into /use-cases (ADR-049 Option A). The L2 check moves
+  // to a use-case leaf, where the "illustrative" disclosure now renders per-page.
+  const ad = await bodyText('/use-cases/enterprise-team');
+  check(/illustrative/i.test(ad.text) || ad.links.some(h => h && h.includes('/commons')), false, `L2 /use-cases leaf labelled illustrative or points to /commons`);
 
   const co = await bodyText('/community');
   check(co.links.some(h => h && (h.includes('/get-started') || h.includes('/how/publishing') || h.includes('github.com'))), false, `O2 /community ladder rungs wired to actions`);

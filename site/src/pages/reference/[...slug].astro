@@ -1,20 +1,28 @@
 ---
 import { getCollection, render } from 'astro:content';
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import { sourceForEntry } from '../../utils/contentSource';
 import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../utils/seo';
+import { SITE_ORIGIN } from '../../data/canonical';
 
 export async function getStaticPaths() {
   const refs = await getCollection('reference', ({ data }) => !data.draft);
-  return refs.map((ref) => ({
-    params: { slug: ref.id },
-    props: { ref },
-  }));
+  return refs
+    // `specification` is owned by src/pages/reference/specification/ — a hub, 20 section pages,
+    // and the full text (HAUSSMANN P2.3 O1). Leaving it here would build two different pages at
+    // /reference/specification/ and let the route collision decide which one ships.
+    .filter((ref) => ref.id !== 'specification')
+    .map((ref) => ({
+      params: { slug: ref.id },
+      props: { ref },
+    }));
 }
 
 const { ref } = Astro.props;
+const source = sourceForEntry(ref);
 const { Content, headings } = await render(ref);
 
-const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? SITE_ORIGIN;
 
 const jsonLD = [
   buildTechArticleJsonLD({
@@ -36,6 +44,8 @@ const jsonLD = [
   description={ref.data.description ?? `${ref.data.ref_title} — aDNA reference.`}
   headings={headings}
   jsonLD={jsonLD}
+
+  source={source}
 >
   {ref.id === 'specification' && (
     <aside class="spec-orientation" aria-label="Orientation">

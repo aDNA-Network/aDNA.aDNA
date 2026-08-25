@@ -1,0 +1,45 @@
+
+HAUSSMANN P3.5 live probe → https://adna.network
+================================================================
+
+ADR-055 §7 — the proposal surface is live
+  PASS  /community/proposals/ responds 200
+  PASS  archive renders the AEP-1 row
+  PASS  archive renders the AEP-2 row
+  PASS  archive shows the eight-state table
+  PASS  /community/proposals/aep-1/ responds 200
+  PASS  AEP-1 renders its state history
+  PASS  AEP-1 discloses agent authorship
+  PASS  /community/proposals/aep-2/ responds 200
+  PASS  AEP-2 renders its state history
+  PASS  AEP-2 discloses agent authorship
+
+ADR-055 §7 — the machine index, and it agrees with the pages
+  PASS  /community/proposals.json responds 200
+  PASS  index parses as JSON
+  PASS  index declares a schema version
+  PASS  index count equals the proposals it serves
+  PASS  every proposal in the index has a page linked from the archive
+
+ADR-055 §4/§5 — final is enforced, ratification is human
+  PASS  AEP-1 is final
+  PASS  AEP-1 names a conformance check
+  PASS  AEP-1 names a human ratifier
+  PASS  AEP-2 is in review
+  PASS  AEP-2 claims no ratifier
+  PASS  index states ratification is human only
+
+ADR-055 §8 — no metric is published that was never measured
+  PASS  index publishes no median review time
+  PASS  archive publishes no numeric median
+
+D9 — the funnel reaches the archive, and the advertised door works
+  PASS  /community links to the archive
+  PASS  /community explains how the standard changes
+  PASS  the footer carries Proposals site-wide
+  PASS  aDNA-Network/aDNA/CONTRIBUTING.md is 200 (off-site CTA target)
+  PASS  aDNA-Network/aDNA/CODE_OF_CONDUCT.md is 200 (off-site CTA target)
+  PASS  aDNA-Network/aDNA.aDNA/LICENSE is 200 (off-site CTA target)
+
+================================================================
+29 PASS / 0 FAIL

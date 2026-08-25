@@ -1,99 +1,16 @@
 {
-  "_doc": "HAUSSMANN P0.5 (editorial gate, O1) — the B5 claim register as a CI fixture. Source of record: how/campaigns/campaign_haussmann/evidence/claims/claim_register.md (93 adjudicated rows) + claims_raw.json (live fetch 2026-08-16). This fixture is the machine-checkable SLICE: all 8 FALSE rows (the launch blockers) + 12 representative verified rows (currency canaries).",
+  "_doc": "HAUSSMANN P0.5 (editorial gate, O1) — the B5 claim register as a CI fixture. Source of record: how/campaigns/campaign_haussmann/evidence/claims/claim_register.md (126 unique ids across 140 table rows, derived by script at P4.5a §9.5) + claims_raw.json (live fetch 2026-08-16). This fixture is the machine-checkable SLICE. Its composition CHANGED at P1.1 and this line lagged two missions: it described 'all 8 FALSE rows (the launch blockers) + 12 representative verified rows', but P1.1 resolved the FALSE set 8/8 and the rows were cleaned out, so the slice is now 26 rows, ALL verified, ZERO FALSE — currency canaries only. The FALSE machinery in gate-26 is retained deliberately for the next false claim, not because one is pinned here. KNOWN COVERAGE GAP (P4.5a, filed for P4.4): this gate cannot express 'a retired claim must stay gone' for a row that was never FALSE. FALSE rows are transient by design — they carry expected_fail_until and go RED as an unexpected pass the moment they are fixed — so an `unsupported -> cut` row like R-121 or R-125 has no permanent absence assertion here. R-125 and R-120 are guarded by dedicated assertions in gate-23 instead; R-121 is guarded indirectly, by pinning the LABEL that replaced the invention.",
   "_relation_to_gate_20": "gate-20 traces claims to their SOURCE FILES (does `vaults.json` still say 74?). This fixture asserts the RENDERED PAGE — that a false sentence is gone, and that a true one has not silently vanished. Different failure modes, no overlap: the G-01..G-10 accessor rows stay in claim_trace_manifest.json and are deliberately NOT duplicated here.",
   "_quote_rule": "Every `quote` is the exact page-visible text, verified against the 2026-08-16 build snapshot. Comparison normalizes typography only (curly quotes -> straight, em/en dash -> hyphen, whitespace collapsed) so a smart-quote change cannot fake a pass or a fail. `match_in: html` rows assert against raw markup instead (attributes, hrefs).",
   "_no_count_pinning": "Campaign convention 8 (WebForge KW-8/FR-K): verified quotes are trimmed to their non-numeric clause wherever a count appears, so this gate never pins live registry data. Count currency is gate-21's job, count provenance is gate-20's.",
-  "updated": "2026-08-16",
+  "updated": "2026-08-22",
   "rows": [
-    {
-      "id": "R-14",
-      "url": "/",
-      "quote": "built on the Lattice Protocol (the open coordination protocol underneath)",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "The protocol is not open today: aDNA-Network/lattice-protocol is private, the vault repo is private, and publishing is counsel-gated. No public protocol artifact exists for a reader. The site's own honest phrasing on the same page ('opening progressively', R-15) contradicts this unqualified 'open'.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-20",
-      "url": "/",
-      "quote": "the spec, the tooling, and the vaults are all public",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "Spec and tooling are public; the vaults are not. 73/74 registry entries carry no public URL, fleet governance marks many vaults local-only, and only ~5 of 74 have public repos. This is the site's most checkable openness claim — one click into the registry disproves it.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-23",
-      "url": "/",
-      "quote": "is a real, governed context graph - its own persona, its own history, its own place in the network",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "Quantifier failure on 12/74: 7 vaults have no persona and 5 render the raw placeholder `tbd_at_p0` as the persona on their live pages. No registry record carries history fields. Same wording (with 'below') renders on /vaults — the shared clause is asserted so both surfaces are covered.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-23b",
-      "url": "/vaults",
-      "quote": "is a real, governed context graph - its own persona, its own history, its own place in the network",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "The /vaults twin of R-23 ('Every vault below is a real, governed context graph…'), tracked separately because the two surfaces are edited independently and P1.1 must clear both.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-46",
-      "url": "/community",
-      "quote": "questions and ideas start in Discussions",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "GitHub Discussions is not enabled on aDNA-Network/aDNA (API `has_discussions: false`; /discussions returns 404). The named venue does not exist.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-47",
-      "url": "/community",
-      "quote": "through the public repository's issue templates",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "The public repo has no .github/ directory at all — no issue templates. They were staged dev-side (Refit M6) and never shipped to the image. With R-46 this makes the whole advertised contribution funnel dead on arrival.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-61",
-      "url": "/about",
-      "quote": "Every vault is \"tended by\" a named agent - and we name them as exactly that",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "Same quantifier contradiction as R-23: 7 vaults have no persona, 5 render `tbd_at_p0`. Shares the single fix (fill or suppress placeholders, or soften the quantifier).",
-      "severity": "S1"
-    },
-    {
-      "id": "R-84",
-      "url": "/compliance",
-      "quote": "Git as second witness: every commit is signed and dated",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "Commits are not cryptographically signed — `git log --show-signature` shows no GPG/SSH signatures and no signing config ships in the image. They are attributed and dated. On a compliance page aimed at auditors, 'signed' asserts a control that does not exist: the worst possible location for a false claim.",
-      "severity": "S1"
-    },
-    {
-      "id": "R-90",
-      "url": "/vaults/Videos.aDNA",
-      "quote": "https://github.com/aDNA-Network/Videos.aDNA",
-      "match_in": "html",
-      "class": "FALSE",
-      "expected_fail_until": "P1.1",
-      "why": "The only `github_url` in the entire registry, and it 404s publicly. The registry's single outbound code proof-link — the one place a skeptic can click through to code — is dead for every reader. Asserted against raw HTML because the claim is carried by the href, not by visible text.",
-      "severity": "S1"
-    },
-
     {
       "id": "R-12",
       "url": "/",
-      "quote": "aDNA is an open standard for organizing project knowledge so both humans and AI agents can navigate it",
+      "quote": "aDNA (agentic DNA) is an open standard for organizing a project's files",
       "class": "verified",
-      "why": "The load-bearing definition of the whole site. Spec is public, versioned and MIT; the clone-and-run image is real."
+      "why": "The ADR-048 definition-as-hero lead (ratified DP2; shipped P1.1) — the anti-jargon functional definition, spec public + versioned + MIT, clone-and-run image real. Replaced the Meridian-era 'project knowledge' phrasing."
     },
     {
       "id": "R-24",
@@ -146,21 +63,21 @@
     },
     {
       "id": "R-76",
-      "url": "/adopters",
+      "url": "/use-cases",
       "quote": "not real named adopters",
       "class": "verified",
       "why": "Honesty stratum: the disclaimer that keeps illustrative personas from reading as customer logos. Its removal would be a silent credibility regression."
     },
     {
       "id": "R-85",
-      "url": "/compliance",
+      "url": "/provenance-audit",
       "quote": "not a certified",
       "class": "verified",
       "why": "Honesty stratum: the disclaimer that stops the compliance page reading as an accreditation. Sits on the same page as the FALSE R-84 — this gate protects one while condemning the other."
     },
     {
       "id": "R-88",
-      "url": "/compliance",
+      "url": "/provenance-audit",
       "quote": "Archive, never delete",
       "class": "verified",
       "why": "A real, checkable governance control (Standing Order 6) on the auditor-facing page — the honest counterpart to R-84's false control claim."
@@ -171,6 +88,118 @@
       "quote": "that is honest topology, not missing data",
       "class": "verified",
       "why": "The house style in one clause: an unflattering fact stated plainly. Quote trimmed of its leading count so this row cannot pin live registry data."
+    },
+    {
+      "id": "R-94",
+      "url": "/",
+      "quote": "Language and DNA were co-created by everyone before us. The context that powers AI should be too - built, shared, and governed in the open, for the good of all.",
+      "class": "verified",
+      "why": "The manifesto lyric, demoted INTACT from the hero to the movement band per ADR-048 ('demoted intact to the movement band directly below the fold'). Its silent deletion would violate the ratified package."
+    },
+    {
+      "id": "R-95",
+      "url": "/community",
+      "quote": "registration is approval-gated, so joining is a request an operator reviews, not a click",
+      "class": "verified",
+      "why": "The honest-state disclosure on the community-space link (ADR-054 copy law; link-GO fired by operator ruling 2026-08-17, promotion GO at DP7 2026-08-22). Re-probed [D 2026-08-22]: app_public.registration.mode='approval'. REWRITTEN AT P3.4 — the prior quote ('...its terms of service, privacy policy, and branding are still being stood up') was stamped `verified` on 2026-08-17 evidence and went FALSE on 2026-08-21 when both policies went live. Because this gate asserts `verified` quotes are PRESENT, the suite was green BECAUSE of the false sentence and would have gone red on the truth. No row here carries a probe date, so nothing could catch it: convention 15's stale-row blind spot, with an instrument defending the stale claim. The branding clause is dropped rather than restated, per the DP7 ruling that the instance's public face is an upstream ceiling the site neither describes nor claims."
+    },
+    {
+      "id": "R-98",
+      "url": "/state-of-the-network",
+      "quote": "All of them run on one computer, operated by one person",
+      "class": "verified",
+      "why": "The sentence the whole campaign turns on (hypothesis H5, the trust stratum's only S1; anti-pattern 7.3 inverted by disclosure). A synthetic cold-reader reached this conclusion unaided and concluded the network was one org cosplaying as an ecosystem — the fix is to say it first, plainly. This is the single row most likely to be deleted by a growth-minded rewrite, and its deletion would restore the exact defect the disclosure surface exists to cure."
+    },
+    {
+      "id": "R-99",
+      "url": "/state-of-the-network",
+      "quote": "No number on this page is typed by hand.",
+      "class": "verified",
+      "why": "Structurally true via src/data/network_state.ts, and machine-checked by the gate-20 manifest rows — which is what makes it a guarantee rather than a promise. If anyone ever hardcodes a count on this page, this sentence becomes a lie, so the row is the tripwire for that."
+    },
+    {
+      "id": "R-100",
+      "url": "/canonical-properties",
+      "quote": "Every public property aDNA operates or vouches for is on this list.",
+      "class": "verified",
+      "why": "The completeness claim that makes the properties page a defense rather than a list (instrument 7.1). SCOPED at O3: the original said 'Everything legitimate is on this list', which the page contradicted 40 lines later ('Not every repository under our organization is listed') and which /about contradicted by linking stanley.science. A completeness claim that documents its own exceptions spends credibility to buy nothing. Enforced by the gate-15 G6b set-equality assertions."
+    },
+    {
+      "id": "R-101",
+      "url": "/canonical-properties",
+      "quote": "aDNA runs no social accounts. Any account using the name is not us.",
+      "class": "verified",
+      "why": "True today: SocialLinks.astro is imported nowhere and no handle exists in site/src. TIGHTENED at O3: the original added 'There is no aDNA account on any social platform' — a universal negative about every platform on earth that we cannot know, a reader cannot check, and the very next sentence assumed the opposite of. KNOWN EXPIRY: the day an aDNA account is opened, this row must be updated in the same diff as the copy."
+    },
+    {
+      "id": "R-111",
+      "url": "/state-of-the-network",
+      "quote": "the person who operates this network also holds a role at the Foundation",
+      "class": "verified",
+      "why": "The related-party disclosure, added at O3 after a hostile read found the page calling the Wilhelm Foundation independent while /about named the operator as Head of AI there. Without it the 'What is not ours' section did credibility work it had not earned, and a reader comparing the two pages would have found the conflict the site itself supplied — which reads as selective disclosure and costs more than the fact it hides. Deleting this sentence restores that defect."
+    },
+    {
+      "id": "R-112",
+      "url": "/about",
+      "quote": "The honest starting point is the one above: one named architect, one anchor partner whose closeness to this project we named rather than hid, public-good work shown row by row with what you can open today",
+      "class": "verified",
+      "why": "The /about closing band, rewritten at the P1.2 close after the re-rank (finding F1) caught it re-asserting 'a real Founding Architect, a real anchor partner, real public-good work' fifty lines below the band THIS MISSION rebuilt to stop asserting exactly that (R-62). Same claim family as R-28, which was lowered on / but never adjudicated on its /about sibling. This is the family's SECOND recurrence, which is why it is pinned: band 4 shows the state row by row, and the closing band must not assert past it. The cut clause 'Real stewards grow the network' asserted stewards the same page says do not exist yet."
+    },
+    {
+      "id": "R-113",
+      "url": "/canonical-properties",
+      "quote": "If you found something claiming to be aDNA that is not on this list",
+      "class": "verified",
+      "why": "The exits section added at the P1.2 close after the re-rank (finding F2) — both reviewer lenses independently found that this page dead-ended at the footer while its twin, built in the same mission and sharing its scaffold, closed with five real exits. Pinned because the reader who has just satisfied themselves the site is genuine is at the point of highest intent, and routing that intent to the security-reporting path is the whole operational value of a clone-site defense. Deleting the exits restores the dead end the 2.50 Actionability score measured."
+    },
+    {
+      "id": "R-114",
+      "url": "/vaults",
+      "quote": "which is not 74 live projects",
+      "class": "verified",
+      "why": "The /vaults hero sentence authored at P2.4 (ADR-052 §tiers). It exists to disarm the reading a bare count invites — anti-pattern 7.4, quantity of entries is not evidence of network health — in the first line a stranger reads rather than in a caveat further down. Pinned on the CLAUSE, not the numbers: campaign convention 8 (KW-8/FR-K) forbids pinning counts, and the surrounding figures are interpolated from vaults.json at build time, so a 75th vault must not turn this row red. gate-35 asserts the counts themselves against the registry."
+    },
+    {
+      "id": "R-115",
+      "url": "/vaults",
+      "quote": "These stages are self-declared",
+      "class": "verified",
+      "why": "ADR-052 §tiers.2 calls this the single most important caveat on the registry surface, and the measurement behind it is stark: github_url populated on 1 of 74 rows, docs_site_url on 0, last_synced on 24 with 18 sharing one date. There is genuinely nothing to check a declared stage against. Pinned because the tier badges make the registry look MORE authoritative than it was before, and this sentence is the entire counterweight — losing it silently would leave the badges asserting an assessment nobody performed. gate-35 additionally asserts it is body text and not a title attribute."
+    },
+    {
+      "id": "R-111b",
+      "url": "/canonical-properties",
+      "quote": "Related-party disclosure: the person who operates this network also holds a role at the Foundation",
+      "class": "verified",
+      "why": "HAUSSMANN P4.5a. R-111's live scope after re-probe (register §9.7) was /canonical-properties ALONE — the disclosure had already shipped on /about and /state-of-the-network, and the register row overstated the gap for two missions because it was never re-probed. This is the sharp half: the page whose entire job is 'here is how you check we are who we say we are' filed the Wilhelm Foundation under 'not ours' while two sibling pages disclosed that the operator holds a role there. Deleting this sentence restores selective disclosure on the one page a skeptical reader checks. Paired with the existing R-111 row, which guards the half that shipped at P1.2 — same finding, two faces."
+    },
+    {
+      "id": "R-121",
+      "url": "/learn/what-is-adna",
+      "quote": "not a case study, and no measured project is being described",
+      "class": "verified",
+      "why": "HAUSSMANN P4.5a. The 'Before and after' section asserted a lab's 200 files and a three-day onboarding with no lab, no date and no source — an unlabelled hypothetical in the site's own voice, found by a cold reader one mission after the campaign cut a fabrication and published why. Fixed the way R-118 was: invented specifics cut AND the nature of the claim labelled, because cutting the numbers while leaving 'a lab's' would still imply an observed case. This quote is that label; deleting it lets the section drift back toward reading as reportage."
+    },
+    {
+      "id": "R-126",
+      "url": "/changelog",
+      "quote": "August 20, 2026",
+      "class": "verified",
+      "why": "HAUSSMANN P4.5a. changelog.astro formatted entry dates with toLocaleDateString and no timeZone, so a UTC-midnight frontmatter date rendered in the BUILD MACHINE's zone — every entry displayed one day early from a PDT build, and correctly from a UTC one. The rendered date was a function of where the build ran, while the same <time> element's datetime attribute was always right, so the machine-readable and human-readable dates disagreed on one line. Pinned as the regression canary: if timeZone:'UTC' is ever dropped, the 2026-08-20 entry renders as August 19 and this row goes red. Not a count pin — changelog entries are static content, not live registry data."
+    },
+    {
+      "id": "R-140",
+      "url": "/community",
+      "quote": "your content is not used to train or evaluate AI models, and every agent in the space is labeled as an agent",
+      "class": "verified",
+      "why": "Both clauses are quoted commitments from the documents this block links, verified at source [D 2026-08-22]: privacy.md §2 'Your content is not used to train or evaluate AI models.' and code_of_conduct.md §3 'Every agent is visibly labeled as an agent.' + 'No undisclosed automation.' Framed as commitments IN THE RULES, not as independently observed facts — what happens inside the venue is behind the auth wall. Satisfies Fluxer SO#8 (agents always disclosed) without asserting a presence this desk cannot verify. Replaces the P1.1 sentence 'agents work in the repositories and on the public record, not in chat', which aDNALabs S224 ruling 2 (2026-08-21, 'Fluxer = human-visible agent chat') falsified and which the linked code of conduct §3 directly contradicts."
+    },
+    {
+      "id": "R-141",
+      "url": "/community",
+      "quote": "Anything that should leave a durable record",
+      "class": "verified",
+      "why": "The question-path routing ADR-054 clause 2 requires (AC2). States the venue/repository division WITHOUT naming GitHub Discussions, which is not enabled — that was R-46, the S1 FALSE row whose resolution re-routed the funnel to this venue. AC2 as written asked for a 'venue vs Discussions' division, i.e. a division against a venue that does not exist; corrected here. Consistent with the page's ClosingCTA and proposals section rather than competing with them."
     }
   ]
 }

@@ -50,8 +50,49 @@ platform_team_a.aDNA/
 
 Compliance audits go from week-long investigations to SQL queries against session files. Cross-team duplication drops as shared lattices replace independent reimplementations. New hires orient in the same structured way regardless of team assignment. The governance overhead is minimal — the same session tracking agents do anyway becomes the compliance audit trail.
 
+## Typical Ontology Extensions
+
+| Entity | Triad | Purpose |
+|--------|-------|---------|
+| `compliance_check` | how/ | Audit checkpoints and review sign-offs |
+| `team_policy` | who/ | Team-specific agent behavior policies |
+| `shared_pipeline` | what/ | Cross-team reusable infrastructure patterns |
+
+## The adoption checklist
+
+A procurement-ready evaluation guide, grouped by the question each section answers.
+
+**Governance — what an auditor reads first**
+
+- [Governance Files](/learn/concepts/governance-files) — four root-level files (CLAUDE.md, MANIFEST.md, STATE.md, AGENTS.md) declare policy, inventory, state, and agent routing. The same for every vault, so auditors orient once and reuse the mental model across teams.
+- [Architecture Decisions](/patterns/dual-audience-writing) — ADR files under `what/decisions/` pair each technical choice with its rationale, trade-offs, and compliance context, for both engineering and non-engineering reviewers.
+- [Dual-Audience Review](/patterns/dual-audience-writing) — every governance artifact is legible to a platform engineer and to a compliance officer without translation. This is what keeps audit prep from becoming a separate workstream.
+
+**Audit trail — what you can prove after the fact**
+
+- [Session](/glossary/glossary-session) — every agent-assisted work unit produces a file in `how/sessions/` with session ID, intent, files touched, and a SITREP. The audit trail is the working artifact, not an afterthought.
+- [Collision Prevention](/glossary/glossary-collision-prevention) — the last-edited-by + updated + read-before-write contract stops parallel agents and humans clobbering one another. This is the primitive that makes a shared vault safe for concurrent work.
+- [SITREP](/glossary/glossary-sitrep) — the structured close-out every session ends with.
+
+**Federation — what leaves the building, and under what terms**
+
+- [Federation Readiness](/patterns/federation-readiness) — a six-point checklist (schema valid, opt-in, source instance, license, keywords, resolved references) gates every shared artifact. Federation is never accidental.
+- [Lattice Composition](/learn/concepts/lattice-composition) — teams publish reusable pipelines as lattices; sibling teams pull and compose them. Three implementations collapse to one maintained source, with an explicit version policy.
+- [FAIR Envelope](/patterns/fair-envelope) — license, creators, keywords, provenance, and identifier travel with every federated artifact. Legal provenance is a data field, not a separate document.
+
+**Integration — what it costs to coexist with what you already run**
+
+- [AGENTS.md Routing](/patterns/agents-md) — drop-in routing files let aDNA coexist with existing documentation. Confluence, internal wikis, and repo READMEs stay authoritative; AGENTS.md just points agents at them.
+- [Base + Extension](/patterns/base-extension) — keep the 16-entity base ontology and add domain-specific types per team without forking the standard.
+- [Open Standard](/learn/concepts/open-standard) — the specification is open and permissively licensed. No vendor lock-in, no platform dependency; teams can self-host, audit the spec, and exit cleanly.
+
+## Where to go next
+
+- [Extend the Ontology](/learn/tutorials/extend-the-ontology) — 25 min — add a domain-specific entity type (directory + AGENTS.md + template) without forking the base standard.
+- [Federate a Vault](/learn/tutorials/federate-a-vault) — 30 min — export, import, and compose across two aDNA instances: the handshake Teams A, B, and C will use in production.
+
 ## Related
 
-- [Lattice Composition](/learn/concepts/lattice-composition) — how teams compose shared pipelines
-- [Federation Readiness](/patterns/federation-readiness) — preparing lattices for cross-team sharing
-- [Governance Files](/learn/concepts/governance-files) — the consistent orientation layer across teams
+- [Provenance & audit](/provenance-audit) — the five audit questions answered end-to-end via `how/sessions/` + `who/governance/`
+- [The Embedded Triad](/glossary/glossary-embedded-triad) — how the structure nests inside an existing repo
+- [Community Roles](/community/community-roles) — participation levels for teams adopting in stages

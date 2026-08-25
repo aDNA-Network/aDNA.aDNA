@@ -1,0 +1,46 @@
+{
+  "name": "adna-mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server over the aDNA standard's own documentation corpus and vault registry at adna.network.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "adna-mcp-server": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aDNA-Network/aDNA.aDNA.git",
+    "directory": "mcp"
+  },
+  "homepage": "https://adna.network",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "adna",
+    "context-graph",
+    "documentation"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "smoke": "node test/smoke.mjs",
+    "redtest": "node test/redtest.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.0.0",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.8.3"
+  }
+}

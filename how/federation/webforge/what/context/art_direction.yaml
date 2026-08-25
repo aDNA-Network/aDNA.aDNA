@@ -1,0 +1,148 @@
+# art_direction.yaml — aDNA.aDNA consumer entry (WebForge pattern P5)
+#
+# Schema of record: WebForge.aDNA/what/doctrine/art_direction_register.md §1.
+# Filled reference: WebForge.aDNA/what/lib/tokens/fixtures/art_direction.example.yaml (synthetic "Meridian").
+#
+# Authored at HAUSSMANN P4.1 O0 (2026-08-23). ⛩ **DP8 RULED 2026-08-23**: ADR-053 → **(a)** the
+# slot-contained illustration program; ADR-059 → **(c)** validators without emission.
+# The DP8-dependent fields below are now filled FROM THE RULING. Fields still marked `O1` are execution
+# outputs, not decisions — they fill when O1 runs, and inventing them here would be the aspirational
+# present tense the campaign treats as a defect (convention 1).
+#
+# `[D]` = observed on the live tree 2026-08-23.
+#
+# This file is also the input `derive_tenant_ceiling.py --from-entry` consumes. ⛔ Under the (c) ruling
+# that engine is NOT run against site/ — see ADR-059 "What (c) forbids". The entry stands on its own as
+# the art-direction record; derivation is a possible future, not the current use.
+
+entity: adna
+version: 0.1.0
+date: 2026-08-23
+status: ratified                     # ⛩ The CONTENT was operator-ratified at DP8 2026-08-23 (ADR-053 (a)
+                                     # for signature_element + the slot table; ADR-059 (c) for color_grade).
+                                     # This field is the P5 build-readiness marker, and it flips here on
+                                     # the condition this file itself stated: AC2's four limbs are closed
+                                     # (both validators adopted + red-tested · divergence pinned in the
+                                     # wrapper · Vitruvius memo staged · nothing derived or regenerated).
+                                     # It is NOT an agent ratifying its own work — it records one.
+
+sources:
+  visual_dna: absent                 # honest-absent (a legal value) — no populated bundle exists fleet-wide.
+                                     # P4.1 O3 authors aDNA's, which would be the FIRST real VisualDNA bundle.
+  branding_json: what/context/branding.json    # wrapper-relative; seeded from ADR-032 + the live register
+
+hero_treatment:
+  kind: illustration_panel           # [D] 10 routes render a page-top illustration panel
+  params:
+    routes: 10                       # [D] / · /get-started · /network · /commons · /patterns ·
+                                     #     /vaults · /vaults/graph · /reference · /how · /learn
+    mechanism: astro_image           # [D] <Image> with explicit widths/sizes; loading="eager"
+
+type_voice:
+  display: Space Grotesk             # [D] tokens.css --font-display
+  body: Inter                        # [D] tokens.css --font-body
+  mono: JetBrains Mono               # [D] tokens.css --font-mono (variable, font-display: optional)
+  scale_profile: modular_1_25        # [D] tokens.css — clamp() modular scale, 1.25 ratio
+  rationale: >
+    A geometric grotesque display over a neutral UI grotesque: technical without severity, and legible
+    at the small sizes a dense registry demands. Mono is load-bearing here, not decorative — this
+    property renders paths, frontmatter and commands as content.
+
+color_grade:
+  # ⛩ DP8 ruled ADR-059 **(c)**: adopt WebForge's VALIDATORS, pin the EMISSION divergence.
+  # There is therefore no WebForge ceiling for this consumer — by decision, not by omission.
+  ceiling: divergent_pinned          # NOT a bare named ceiling (D-AD-1 forbids that) and NOT `tokyo_night`:
+                                     # that one is appearances:["dark"] SS app canon and adopting it would
+                                     # delete this site's light mode (ADR-059 §1).
+  divergence:
+    kind: emission                   # validators adopted; compiled emission NOT adopted
+    source_of_truth: site/src/styles/tokens.css + branding.css   # hand-authored, AA-repair history intact
+    rationale: adr_059_token_substrate
+    # review_condition: what would re-open option (a) — stated so the pin is reviewable, not
+    # permanent by default. (No comment may follow the `>` indicator: inside a block scalar,
+    # comments are content, and one here set the block indent and broke the parse. Caught by
+    # validating rather than by eye.)
+    review_condition: >
+      A derived tenant ceiling diffed against the live CSS under a WORKING AA check, showing no
+      regression in either theme. Until that evidence exists, adoption is premature by one instrument.
+    pinned_in: how/federation/webforge/CLAUDE.md   # ← O1 writes the pin there (AC2)
+  appearances: [light, dark]         # [D] NOT NEGOTIABLE — dark/light parity is a protected asset and
+                                     # axe-0 is verified in BOTH themes. Any future ceiling must carry both.
+  # The four axes below are DERIVATION inputs. Under (c) nothing derives, so they are honest-absent
+  # rather than invented; they become live only if (a) is re-opened on the evidence above.
+  undertone: ~
+  chroma: ~
+  curve_family: ~
+  dark_stance: ~
+
+motion_signature:
+  profile: restrained                # [D] the site ships minimal motion; transitions zeroed under
+                                     # prefers-reduced-motion at the :root (tokens.css)
+  signature_moment: ~                # honest-absent — no signature moment is claimed today
+
+imagery:
+  provider: absent                   # ⚠ HONEST-ABSENT, NOT "comfyui". ComfyUI is the ADR-053 lineage of
+                                     # intent; requirement 2 (a reproducible generation pipeline) is
+                                     # ABSENT and is named as OWED. Do not write `comfyui` here until a
+                                     # workflow of record exists — ADR-053 forbids implying otherwise.
+  register: ghibli_pixel             # [D] pixel art; warm wood/brass/amber against cool cyan/purple;
+                                     # DNA-helix motif recurring. Verified by viewing three assets at
+                                     # full resolution (hero_adna_helix, hero_reference, hero_learn).
+  credit: absent                     # [D] ⚠ requirement 5 UNMET — DocumentationLayout's heroImage prop
+                                     # carries { src, alt } and has NO credit field. ADR-053 makes credit
+                                     # NORMATIVE; the mechanism is an additive `credit` field on that same
+                                     # prop object, never a new component.
+  # ⛩ The ADR-053 slot table, NORMATIVE. Illustration is permitted in these slots and NOWHERE else.
+  # Adding a slot is an amendment to ADR-053, not a page-level decision.
+  slots:
+    - name: hero_panel
+      where: one per section-index route, page-top
+      state: live                    # [D] 10 routes
+      a11y: per-page alt text present [D]
+    - name: vault_card_mark
+      where: registry card — category-scale, never per-vault
+      state: proposed                # highest-leverage: /vaults renders 74 cards, 57 of them near-empty
+      a11y: decorative — alt="" + aria-hidden; never the sole carrier of meaning
+    - name: empty_state
+      where: zero-result states and `planned`-vault cards
+      state: proposed
+      a11y: text equivalent ships in the same change or the slot does not ship
+    - name: category_mark
+      where: section/nav category glyphs
+      state: partly_live             # [D] 6 icon SVGs, inline + currentColor
+      a11y: decorative; label carried by adjacent text
+    - name: graph_frame
+      where: the relationship-graph surround — never the graph data
+      state: proposed
+      a11y: must not reduce the keyboard-twin pattern the campaign protects
+
+signature_element:
+  name: the contained pixel-art panel
+  description: >
+    A governed illustration program in a fixed slot set — warm wood/brass/amber pixel-art scenes with a
+    recurring DNA-helix motif, set against cool cyan/purple bio-digital glow — while every non-slot
+    surface stays Tokyo-Night type and colour in both themes. The containment IS the signature: the art
+    reads as a property because it never becomes chrome.
+  where: "the five slots in `imagery.slots` above; live today at 10 hero panels"
+  # `generated_asset` per the P5 enum ['css','generated_asset','island','layout','type'] — a NON-colour
+  # mechanism, which is the constraint the enum exists to enforce (a signature must not be colour alone;
+  # DCRIT dc_06). This field first read `image`, an invented value; `--validate-entry` rejected it and
+  # `generated_asset` is the better description anyway — the slot art IS a generated asset (ADR-053's
+  # ComfyUI lineage), delivered through an optimised <Image> with explicit widths/sizes and no client JS.
+  mechanism: generated_asset
+  floor_note: >
+    Zero-JS content-static (FR-A). The containment rule is also the a11y control: keeping illustration
+    out of nav/tables/rows is what keeps AA verifiable in both themes. Any slot that regresses LCP on its
+    route fails the craft floor (P4.2) regardless of how it looks.
+  known_debt: >
+    hero_reference.png renders with letterbox bands [D] — the operator-deferred Storyweave
+    "hero-letterbox re-cut". Inherited open, not silently re-specified around.
+
+# The anti-signature is NOT pending: it is the one thing this session established as fact rather than
+# proposal (ADR-059 §1), and it is stated here in the same terms WebForge's own fixture uses.
+anti_signature: |
+  Not SS's tokyo-night app canon — that ceiling is dark-only by construction and this property is
+  dark-FIRST with light first-class; adopting it would delete a protected surface.
+  Not a full-field whimsy takeover (the Charm path): the credibility register this property sits in
+  is unanimously restrained, and a saturated field would crush spec and registry legibility.
+  Not a generic centered marketing splash.

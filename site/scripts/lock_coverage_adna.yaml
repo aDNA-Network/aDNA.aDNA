@@ -1,0 +1,721 @@
+# lock_coverage_adna.yaml — the craft-floor census for THIS SITE.
+#
+# HAUSSMANN P4.2 O0 · AC1. Consumer-side declaration against WebForge's 60-lock craft floor.
+# Validated by `site/scripts/lock_coverage_check.py`, which consumes WebForge's cell semantics
+# BY REFERENCE and repoints only the resolver seam.
+#
+# READ THIS BEFORE EDITING A CELL
+#   `enforced` is a claim that a named file contains code that tests this lock's rule. It is
+#   machine-checked: the `by:` path must exist and be a file, and the `anchor:` must resolve in
+#   COMMENT-STRIPPED code. An anchor found only in a comment FAILS (rung 3). An anchor found only
+#   in a `describe()` container FAILS (rung 1b). Fabricated cells cannot pass.
+#
+#   `gap` is not a failure of this document — it is the document working. This site has run a
+#   371→560-assertion suite for two decades of campaign without ever declaring coverage, which is
+#   precisely the KW-12 condition the census exists to expose: nothing catches what nothing claims.
+#
+#   Where a lock has several limbs and we test some, the cell is `gap` and the disposition NAMES the
+#   limb that holds. Declaring `enforced` on a subset is the failure mode lock O1 names in its own
+#   rule text — "a gate that enumerates a SUBSET of its rule's domain is a fake enforcement even when
+#   its code is real" — and we are not going to commit it in the act of adopting the floor. Cells
+#   that ARE enforced but leave a named limb untested carry a `note:`.
+#
+# The lock count is NOT declared here. `lock_coverage_check.py` derives it from WebForge's live
+# matrix on every run and fails if our id set differs. P4.2's AC1 was originally written against
+# "57 locks"; the floor is 60. That is the defect the derivation exists to make impossible.
+
+schema: lock_coverage_consumer/v1
+upstream: WebForge.aDNA · what/lib/gates/lock_coverage.yaml
+upstream_surface_note: >-
+  WebForge's own `site` row is THEIR self-site (60/60, 28 enforced / 32 na, `by:` paths inside their
+  repo). P0.3 staged the "whose `site` is this row" clarification to Vitruvius and it is still open on
+  their side, so this file declares a distinct surface rather than assuming an answer.
+census_round: R1
+census_status: gating
+surfaces:
+  - adna_site
+
+locks:
+  # ── A ──────────────────────────────────────────────────────────────────────────────────────
+  - id: A1
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.3 (a11y manual)
+        detail: >-
+          The HOVER limb holds — `token_aa_check.py` audits `--color-link-hover`/`--color-bg` and the
+          primary-hover role at 4.5:1 in BOTH appearances (P4.1 O1, red-proven). The `:active` limb is
+          untested and no page-level hover/active contrast test exists. Declared `gap` rather than
+          `enforced` because half a rule enforced is the fake-enforcement class lock O1 names.
+
+  - id: A2
+    coverage:
+      adna_site:
+        status: enforced
+        by: site/tests/gates/gate-38-layout-invariants.spec.ts
+        anchor: "G38c font-delivery: every as=font preload resolves to a bundled woff2, no external host"
+        note: >-
+          ENFORCED at P4.2 O3 against the lock's ACTUAL rule — "every as=font preload resolves; brand
+          fonts bundled woff2" — read from the upstream matrix rather than from the census's summary of
+          it. G38c is a static scan of every built page: 3 preloads on each, all `/_astro/*.woff2`, all
+          `type="font/woff2"`, all present in `dist/`, and no page reaching an external font host. It
+          asserts a preload was found at all, so it cannot pass vacuously. G38d is the companion
+          browser limb (no @font-face in the `error` state, 2 routes). Red-proven: case 5 repoints a
+          preload at a missing file, case 6 breaks a JetBrains `src` in the built CSS; both red,
+          control green (`scripts/craft_floor_redtest.sh`, 6 mutations + 1 control, 7/7).
+          ⭐ F20 IS STRUCK — TESTED AND FALSE, which is why the cell says preloads rather than fonts.
+          The claim was "`JetBrains Mono Variable` reports `document.fonts` state `error` on every
+          page", blamed `[I]` on the non-standard `format('woff2-variations')` keyword, and had stood
+          untested since 2026-08-19. Probed across 4 routes × both themes: **errors 0/0 every time**,
+          `document.fonts.status: loaded`, `check()` true, no failed font requests, and code renders
+          in JetBrains. The observable that reads as the claim is `unloaded: 5` — the CORRECT state
+          for five subsets whose `unicode-range` matches no glyph on the page. The control is in the
+          same FontFaceSet: Inter and Space Grotesk show the identical unloaded/loaded shape, and if
+          `unloaded` meant `error` the whole site would be rendering in system fonts. The duplicate
+          latin face is also deliberate, not a bug — `tokens.css` overrides the package's
+          `font-display: swap` to `optional` and says so.
+          ⚠ The one true limb of the old text survives and is why G38d exists: NOTHING WATCHED FONT
+          LOADING, which is precisely how a false claim about it could stand for five days.
+
+  - id: A3
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.3 (a11y manual)
+        detail: >-
+          axe (gate-4) enforces that links HAVE accessible names, in both themes, on every surface —
+          it does not enforce that repeated action links have DISTINCT ones. The registry cards are
+          the live instance: many cards, same link text.
+
+  - id: A4
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.4 (CI hardening)
+        detail: >-
+          `gate-33` parses `<time datetime="...">`, asserts the attribute is well-formed `YYYY-MM-DD`
+          and that not every page carries the same day (the shallow-clone tell). It never compares the
+          attribute to the element's VISIBLE TEXT, which is what this lock is about.
+
+  - id: A5
+    coverage:
+      adna_site:
+        status: enforced
+        by: site/tests/gates/gate-38-layout-invariants.spec.ts
+        anchor: "G38a anchor-offset: scroll-padding clears the sticky header"
+        note: >-
+          FIXED AND ENFORCED at P4.2 O2, 2026-08-24. Was the census's real find: `Header.astro:147`
+          is `position: sticky` and `scroll-padding-top` appeared NOWHERE in `src/`, so every
+          in-page anchor jump landed its target underneath the header — `gate-31` passed the whole
+          time because it asserts anchors RESOLVE, a different and true claim. Fixed site-wide with
+          `html { scroll-padding-top: calc(var(--header-height) + var(--space-4)) }` in global.css;
+          `--header-height` is MEASURED (69px, identical at 375/768/1024/1280/1920 across four
+          routes), not chosen. The gate re-measures the rendered header on every run rather than
+          trusting that token, and asserts the header is still `sticky` so its own premise cannot
+          evaporate silently. Red-proven: `scripts/craft_floor_redtest.sh`, 6 mutations + 1 control, 7/7.
+          ⚠ Removing the two page-local `scroll-margin-top` rules on `commons.astro` was REQUIRED,
+          not tidying — scroll-padding and scroll-margin COMPOSE, so leaving both would have
+          over-scrolled those sections by ~165px instead of ~85px.
+
+  # ── B ──────────────────────────────────────────────────────────────────────────────────────
+  - id: B1
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.4 (CI hardening)
+        detail: >-
+          `gate-6` asserts the required meta tags are PRESENT and that `og:image` is an absolute
+          `.png` URL; `gate-31` asserts internal links resolve. Neither fetches the `<head>` assets to
+          prove they resolve, which is this lock's rule. A2's font failure is the standing proof the
+          gap is not theoretical.
+
+  - id: B2
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.4 (CI hardening)
+        detail: >-
+          `gate-19` gates LCP/CLS/Perf against a Lighthouse fixture and `gate-10` bans
+          render-blocking external scripts. Neither computes a combined inline+external JS budget,
+          which is the measurement this lock names.
+
+  - id: B3
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.3 (a11y manual)
+        detail: >-
+          CORRECTED 2026-08-24 (P4.2 O2). The `aria-pressed` limb HOLDS — the `/vaults` filter chips
+          carry `aria-pressed` on both toggle groups. STRUCK, FALSE AS WRITTEN AT O0: "the `aria-live`
+          limb does NOT exist: `aria-live` appears nowhere in `src/`, so filtering the registry changes
+          the result set with no announcement to assistive technology. A second real defect from this
+          census." It does exist. `src/pages/vaults/index.astro:226` carries
+          `<p class="vaults-result-count" role="status" aria-live="polite">`, landed 2026-07-11 in
+          `5b9be4c` — six weeks before the census that reported it absent — and it is WIRED, not
+          decorative: `countEl.textContent` is assigned in `apply()` (index.astro:328-332), which runs
+          on the search input event and on both chip groups' click handlers. O0's grep was narrower
+          than its conclusion; a negative result is only as wide as the command that produced it
+          (campaign convention 16's amendment, recurring inside the mission that cites it).
+          WHAT IS ACTUALLY MISSING is an ASSERTION, not a mechanism: nothing anywhere tests that the
+          live region stays wired, so a refactor dropping `countEl` breaks the announcement with no
+          gate going red. Still `gap` for that reason, and still P4.3 — the a11y-manual mission is
+          where a live-region assertion belongs, alongside the AT verification that can say whether
+          the announcement is USEFUL and not merely present.
+
+  - id: B4
+    coverage:
+      adna_site:
+        status: enforced
+        by: site/tests/gates/gate-38-layout-invariants.spec.ts
+        anchor: "G38a anchor-offset: scroll-padding clears the sticky header"
+        note: >-
+          Fixed with A5 at P4.2 O2 — same locus, but a DIFFERENT assertion inside the same test, and
+          worth naming because the two are easy to conflate. A5 asks whether an offset exists at all;
+          B4 asks whether it equals or exceeds the sum of the sticky chrome. The `toBeGreaterThanOrEqual`
+          against the freshly measured `.header` height is B4's limb, and the red test aims a mutation
+          at each separately (case 1 deletes the rule → A5; case 2 shrinks `--header-height` to 1rem,
+          leaving a real offset that is simply too small → B4). Both red, control green (7/7 overall).
+          ⚠ Only ONE piece of sticky chrome exists today, so "the sum" is a sum of one.
+          `DocumentationLayout` has two further `position: sticky` elements (the sidebar and the TOC
+          rail) but neither sits ABOVE the scroll target, so neither adds to the offset. If a sticky
+          sub-header is ever added under the main one, this cell's "sum" becomes load-bearing and the
+          gate must measure both.
+
+  - id: B5
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.3 (a11y manual)
+        detail: >-
+          No measure/line-length assertion exists anywhere in the suite. `gate-29` proves docs copy
+          FILLS the viewport and does not clip; nothing bounds it from above at desktop.
+
+  - id: B6
+    coverage:
+      adna_site:
+        status: na
+        reason: class_out_of_scope
+        detail: Countdown is an `event_campaign` affordance. This surface ships no countdown and no event date.
+
+  # ── C ──────────────────────────────────────────────────────────────────────────────────────
+  - id: C1
+    coverage:
+      adna_site:
+        status: na
+        reason: no_affordance
+        predicate: {grep: 'role="dialog"|<dialog[\s>]', in: 'site/src/**/*.astro'}
+        detail: >-
+          No modal anywhere — `<dialog>` and `role="dialog"` both return zero hits across `src/`.
+          The mobile nav is a disclosure, not a modal, and does not make the background inert.
+          The predicate is the KW-12 rot-hook: if a dialog ever lands, this cell flips to `na_stale`
+          and the census fails rather than quietly continuing to assert no affordance exists.
+
+  - id: C2
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.3 (a11y manual)
+        detail: >-
+          The TOKEN limb holds via `token_aa_check.py` (P4.1 O1) at the palette layer. The RUNTIME
+          limb — the selected/pressed fill as actually cascaded on the `/vaults` `.is-active` filter
+          chip — is measured by nothing.
+
+  - id: C3
+    coverage:
+      adna_site:
+        status: na
+        reason: no_affordance
+        predicate: {grep: 'server:defer', in: 'site/src/**/*.astro'}
+        detail: >-
+          No `server:defer` island, and no islands at all in the Astro sense: the site ships no UI
+          framework integration (devDependencies carry none) and `client:` appears on zero components.
+          Interactivity is plain `<script>`.
+
+  # ── D ──────────────────────────────────────────────────────────────────────────────────────
+  - id: D1
+    coverage:
+      adna_site:
+        status: na
+        reason: class_out_of_scope
+        detail: >-
+          The lock's own rule text scopes it — "enforced on ops-center only today" (per FR-D). Recorded
+          as out-of-scope rather than as a gap so it does not read as debt this surface owes.
+        note: >-
+          The underlying 2.5.3 blindness is real here too — axe cannot see Label-in-Name — so if the
+          floor ever widens D1 beyond ops-center, this cell becomes a gap, not an na.
+
+  - id: D2
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.3 (a11y manual)
+        detail: >-
+          The dark-mode toggle is SSR'd and the theme is a `.dark` class on `<html>` set pre-paint,
+          but nothing asserts the toggle's SSR `aria-pressed` matches that pre-paint class. P4.1 O2
+          learned the same fact the hard way from the other side: Playwright's `colorScheme` alone
+          does not switch this site's theme.
+
+  - id: D3
+    coverage:
+      adna_site:
+        status: na
+        reason: no_affordance
+        predicate: {grep: 'window\.confirm|data-confirm', in: 'site/src/**/*.astro'}
+        detail: A documentation/registry surface with no destructive action and no confirm dialog.
+
+  - id: D4
+    coverage:
+      adna_site:
+        status: enforced
+        by: site/tests/gates/gate-9-responsive.spec.ts
+        anchor: "— no horizontal overflow"
+        note: >-
+          Enforced at exactly the width the lock names: the viewport ladder's first rung is
+          `mobile_small` 320px, and `audit-p1s3-sweep` repeats it at 375. The "tables scroll in
+          overflow-x" limb is NOT separately asserted — a table that overflowed would be caught only
+          if it pushed the whole page, which is a weaker test than the lock's wording.
+
+  - id: D5
+    coverage:
+      adna_site:
+        status: na
+        reason: no_affordance
+        detail: No mutation path — the surface is static + client-side filtering. There is no action to re-enter.
+
+  - id: D6
+    coverage:
+      adna_site:
+        status: na
+        reason: no_affordance
+        predicate: {grep: '<[A-Z][\w.]*[^>]*\sclient:(load|visible|idle|only|media)', in: 'site/src/**/*.astro'}
+        detail: >-
+          No hydration directive exists to gate. Zero `client:` directives site-wide and no UI
+          framework integration installed; `DarkModeToggle.astro` is a plain component whose own
+          comment calls it a "client:load island" but which is used as `<DarkModeToggle />` with no
+          directive at all.
+        note: >-
+          ⚠ THE PREDICATE IS DELIBERATELY NARROWER THAN THE OBVIOUS ONE, AND THE OBVIOUS ONE WAS
+          TESTED AND REJECTED. A plain `client:(load|visible|…)` grep FIRES on this site — on
+          `DarkModeToggle.astro`'s own comment — because `run_predicate` is a raw regex with NO
+          comment stripping, while `resolve_rung` (the anchor ladder) DOES strip. Two mechanisms in
+          the same checker disagree about whether a comment counts as code. Untested, this cell would
+          have flipped to `na_stale` and failed the census over a directive that does not exist. The
+          shipped form matches an element USAGE (`<Component client:load`), and carries both controls:
+          it matches a synthetic real directive and does not match the comment. Staged to Vitruvius.
+
+  # ── E ──────────────────────────────────────────────────────────────────────────────────────
+  - id: E1
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.4 (CI hardening — joins F-h, the known-open header debt)
+        detail: >-
+          `vercel.json` ships FOUR headers (CSP, X-Frame-Options, X-Content-Type-Options,
+          Referrer-Policy) against the lock's six-plus-hash-CSP. There is one render mode (static), so
+          the "every render mode" limb is trivially met, and the money-path limb is n/a. Joins the
+          standing P4.4 debt: `check_live_headers.mjs` compares header NAMES, not values, so
+          correct-name/wrong-value drift passes on production today.
+
+  - id: E2
+    coverage:
+      adna_site:
+        status: na
+        reason: no_affordance
+        detail: No money path — nothing on this surface is purchasable and there is no terms-derived CTA verb.
+
+  - id: E3
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.3 (a11y manual)
+        detail: >-
+          `gate-29` proves reflow behaviour (docs article fills the viewport, steps wrap, nothing
+          clipped) at the narrow widths. It does not prove that a scrollable overflow container is
+          keyboard-FOCUSABLE and LABELLED, which is the accessibility half of this lock.
+
+  - id: E4
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.3 (a11y manual)
+        detail: >-
+          CORRECTED 2026-08-24 (P4.2 O2), with B3 — same false premise, same correction. Empty-state
+          copy EXISTS and is gated: `gate-35` G35b covers the P4.1 O2 `empty_state` slot in both its
+          states, including that the mark is never the sole carrier of meaning. STRUCK, FALSE AS
+          WRITTEN AT O0: "What is missing is the LIVE REGION: the zero-result block appears on
+          client-side filtering with no `aria-live` anywhere in `src/`, so a screen-reader user filters
+          to zero results in silence." The zero case IS announced — `apply()` writes
+          `0 of N vaults — nothing matched` into the `role="status"` region on the same tick it
+          unhides the empty-state block. NOTE THE ASYMMETRY, because it is the honest residue: the
+          COUNT LINE is the live region; the `empty_state` MARK and its copy sit outside it, so an AT
+          user hears the count sentence and not the block. Whether that is sufficient is an AT
+          question, not a grep question — which is exactly why this stays `gap` at P4.3 rather than
+          being closed here on the strength of the mechanism existing.
+
+  - id: E5
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.4 (CI hardening)
+        detail: >-
+          The JSON-LD limb holds — `gate-15` parses every block on every audited route, so an
+          unescaped `<` would fail the parse. The `set:html` limb is unasserted: nothing forbids
+          `set:html` reachable from collection or external data.
+
+  - id: E6
+    coverage:
+      adna_site:
+        status: na
+        reason: class_out_of_scope
+        detail: >-
+          Nothing was cloned. This is a bespoke 226-page surface that consumes WebForge PATTERNS via
+          the federation wrapper; it was never instantiated from an archetype, so there is no carried
+          scaffold to have gone dead.
+
+  - id: E7
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.3 (a11y manual)
+        detail: >-
+          `gate-18` bans a rainbow palette on the graph (≤2 accent hues) and `gate-35` proves the
+          empty-state mark is never meaning's sole carrier. Neither asserts the general rule that
+          every STATUS is also carried as text — the registry's lifecycle tiers are the live instance.
+
+  - id: E8
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.4 (CI hardening)
+        detail: >-
+          `robots.txt`, `sitemap-index.xml` and `sitemap-0.xml` all BUILD — verified present in
+          `dist/`. No assertion proves they resolve on the deployed surface, and F-s is the standing
+          proof that "it built" and "it serves" are different claims about this site.
+
+  # ── F ──────────────────────────────────────────────────────────────────────────────────────
+  - id: F1
+    coverage:
+      adna_site:
+        status: enforced
+        by: site/tests/gates/gate-14-single-source.spec.ts
+        anchor: "no drifted repo/publisher literals in built output"
+
+  - id: F2
+    coverage:
+      adna_site:
+        status: na
+        reason: no_affordance
+        detail: No mutation surface. Client-side filter state is not presented as persisted.
+
+  - id: F3
+    coverage:
+      adna_site:
+        status: na
+        reason: no_affordance
+        predicate: {grep: 'cmdk|command-palette|data-palette', in: 'site/src/**/*.astro'}
+        detail: No command palette.
+
+  - id: F4
+    coverage:
+      adna_site:
+        status: na
+        reason: no_affordance
+        detail: >-
+          No verdict-gated action. The proposal archive PUBLISHES ratification state
+          (`gate-37` §5 asserts nothing reaches accepted/final without a named human ratifier) but the
+          site performs no gated action — ratification happens off-surface.
+
+  - id: F5
+    coverage:
+      adna_site:
+        status: na
+        reason: no_affordance
+        detail: Satisfies with E2 — no money path, so no verb to bind hero and meta to.
+
+  - id: F6
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.4 (CI hardening)
+        detail: >-
+          `gate-6` asserts the 404 page carries `noindex`. Nothing derives the SET of noindex routes
+          and proves each is robots-Disallowed, which is the coverage-can't-drift property the lock
+          is actually about.
+
+  - id: F7
+    coverage:
+      adna_site:
+        status: na
+        reason: class_out_of_scope
+        detail: Marketplace-only lock. The registry lists vaults; it issues no trust badge.
+
+  - id: F8
+    coverage:
+      adna_site:
+        status: na
+        reason: no_affordance
+        detail: No row-level mutation.
+
+  - id: F9
+    coverage:
+      adna_site:
+        status: enforced
+        by: site/scripts/lock_coverage_check.py
+        marker: external
+        key: adna_site
+        note: >-
+          The meta-lock, and by the floor's own design the `by:` points at the checker rather than at
+          a test. D4's cell cannot go undeclared here: `run_surface()` walks every lock in the matrix
+          and buckets a missing cell as a hard problem, and `check_lockset()` independently fails if
+          our id set differs from WebForge's live one. Completeness, not enforcement — D4's own
+          enforcement is its own cell.
+
+  # ── G ──────────────────────────────────────────────────────────────────────────────────────
+  - id: G1
+    coverage:
+      adna_site:
+        status: enforced
+        by: site/tests/gates/gate-15-credibility.spec.ts
+        anchor: "parses and any publisher is canonical"
+        note: >-
+          The structured-data twin limb is the one this anchor tests. `gate-14`'s canonical-publisher
+          assertion covers the rendered-copy limb on the same identity.
+
+  - id: G2
+    coverage:
+      adna_site:
+        status: enforced
+        by: site/tests/gates/gate-21-currency.spec.ts
+        anchor: "current vault count is the single source and reaches the output"
+        note: >-
+          The site's strongest lock. A descriptor that drifts from its source fails the build — and
+          the same spec separately catches a swept-stale entity-type count regressing.
+
+  - id: G3
+    coverage:
+      adna_site:
+        status: enforced
+        by: site/tests/gates/gate-16-public-meta.spec.ts
+        anchor: "carries no internal codenames"
+        note: >-
+          `gate-27` leak-lint enforces the same rule with a dated, expiring allowlist and a
+          self-test that every pattern matches its example and spares its counter-example.
+
+  # ── H ──────────────────────────────────────────────────────────────────────────────────────
+  - id: H1
+    coverage:
+      adna_site:
+        status: na
+        reason: class_out_of_scope
+        detail: >-
+          Instantiation-time lock, and this surface was never instantiated from a template (see E6).
+          The equivalent live discipline is the campaign's own copy register.
+
+  # ── I ──────────────────────────────────────────────────────────────────────────────────────
+  - id: I1
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.4 (CI hardening — with E1 and F-h)
+        detail: >-
+          Statics door only, and it ships four of the named six headers from `vercel.json` via
+          `inject_headers.mjs`. Recorded as one gap with E1 rather than split, because it is one
+          header set with one remedy.
+
+  - id: I2
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.4 (CI hardening)
+        detail: >-
+          A CSP ships, but nothing validates it against the ACTUAL build — no assertion that every
+          inline hash is pinned or that `unsafe-inline` is absent. This is the self-validation limb,
+          and it is the one that would have caught a CSP going stale against new inline script.
+
+  - id: I3
+    coverage:
+      adna_site:
+        status: enforced
+        by: site/tests/gates/gate-38-layout-invariants.spec.ts
+        anchor: "G38e outline-purity: documentation chrome contributes no headings to the page outline"
+        note: >-
+          Enforced at P4.2 O3. A static scan of every built page asserting that four documentation
+          chrome regions — `.sidebar-nav`, `.doc-toc`, `.doc-mobile-nav` and the breadcrumb — contain
+          no `<h1>`-`<h6>`. The site already conformed: SidebarNav captions are
+          `<p class="group-label">` and `<summary class="subgroup-label">`, TOCPanel's is
+          `<p class="toc-title">`. Nav captions are LABELS, not sections; as headings they would put
+          "Documentation sections" into the outline a screen-reader user navigates by. The gate
+          asserts it actually FOUND the regions, so a class rename turns it red rather than into a
+          permanent silent pass.
+          ⚠ Red-proven, and the red test found two defects in ITSELF before it could test the gate.
+          It first drew `dist/learn/index.html`, which has no expanded sidebar group at all
+          (SidebarNav's SP-2 fallback for a page outside every nav group), and aborted with MUTATION
+          DID NOT APPLY — the mutation-applied check earning its place. Then its grep looked for a
+          PARAPHRASE of the assertion message and reported STAYED GREEN for a gate that had in fact
+          gone red — a false negative in the checker of checkers. Both fixed;
+          `craft_floor_redtest.sh` case 9, 11/11 overall.
+          Sits beside AC5's thin hubs deliberately: both are the heading outline measured from
+          opposite ends — one asks whether chrome intrudes into it, the other whether the page has
+          one at all.
+
+  # ── J ──────────────────────────────────────────────────────────────────────────────────────
+  - id: J1
+    coverage:
+      adna_site:
+        status: enforced
+        by: site/tests/gates/gate-38-layout-invariants.spec.ts
+        anchor: "G38b heading-primacy: every built page has exactly one h1, before any h2"
+        note: >-
+          Enforced at P4.2 O2 as a STATIC SCAN OF `dist/` (the gate-14/gate-28 idiom), so it covers
+          every built page — 226 at authoring — rather than a chosen sample. Route list derived from
+          the build snapshot, never pinned (convention 8).
+          ⭐ THE SITE ALREADY CONFORMED 226/226 WHEN THIS LANDED — no page was missing an h1, none had
+          two, none emitted an h2 first. That is the honest result and it is not a reason to skip the
+          gate: the rule was held by habit, and a rule held by habit is one refactor away from being
+          false with nothing to say so. It is also why the red test matters more here than usual — on
+          an already-conforming site a no-op assertion and a real one are indistinguishable until one
+          of them is made to fail. Two mutations aimed at this cell (a planted second `<h1>`; an
+          `<h2>` moved above the `<h1>`), both red, control green (7/7 overall).
+          ⚠ Scanning built HTML rather than the DOM means an h1 injected by client-side JS would be
+          invisible to this gate. Nothing on this site does that today; if something starts, the cell
+          needs a browser limb.
+
+  - id: J2
+    coverage:
+      adna_site:
+        status: enforced
+        by: site/tests/gates/gate-6-meta.spec.ts
+        anchor: "og:image must be an absolute URL"
+        note: >-
+          The shipped-AND-raster limb is what this anchor proves — an absolute URL matching `\\.png$`,
+          per-route, so a vector or a relative reference fails. The `>=1200x630` DIMENSION limb is not
+          asserted against the file itself; `SEOHead.astro` declares `og:image:width` 1200 as a
+          static meta value, which is a claim rather than a measurement.
+
+  - id: J3
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.3 (a11y manual — with D2, one mechanism)
+        detail: >-
+          Same mechanism as D2 and dispositioned with it. The pre-hydration truth this lock protects
+          is real on this site — the theme is a `.dark` class plus a localStorage key applied before
+          paint — but no test pins the parse-time `aria-pressed` sync or its CSP posture.
+
+  # ── L (AUTH) ───────────────────────────────────────────────────────────────────────────────
+  - id: L1
+    coverage: {adna_site: {status: na, reason: no_affordance, detail: "No authentication, no sessions, no roles — a fully static public surface. L1-L6 are declared na on one evidence base: there is no server-side state change to authorize."}}
+  - id: L2
+    coverage: {adna_site: {status: na, reason: satisfied_via, via: L1, detail: "No protected routes to allowlist against; every route is public by construction."}}
+  - id: L3
+    coverage: {adna_site: {status: na, reason: satisfied_via, via: L1, detail: "No session record to revoke."}}
+  - id: L4
+    coverage: {adna_site: {status: na, reason: satisfied_via, via: L1, detail: "No session cookie is set, so there is no cookie to harden and no mutation to forge an Origin against."}}
+  - id: L5
+    coverage: {adna_site: {status: na, reason: satisfied_via, via: L1, detail: "No sign-in surface, so no error copy that could disclose account existence."}}
+  - id: L6
+    coverage: {adna_site: {status: na, reason: satisfied_via, via: L1, detail: "No login or callback endpoint to rate-limit."}}
+
+  # ── M ──────────────────────────────────────────────────────────────────────────────────────
+  - id: M1
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.3 (a11y manual)
+        detail: >-
+          This surface DOES render chips — the `/vaults` tier and class filter chips, and the
+          lifecycle tier labels. No derived `--status-<family>-text`/`-bg` pair audit runs at the
+          rendered cascade. `token_aa_check.py` audits the palette, which is the shift-left, not this.
+
+  # ── N ──────────────────────────────────────────────────────────────────────────────────────
+  - id: N1
+    coverage:
+      adna_site:
+        status: na
+        reason: class_out_of_scope
+        detail: >-
+          One door. The site builds and serves at a single origin (`adna.network`) with no
+          `BASE_PATH`/`OUT_DIR` parameterization and no second gated door, so there is no prefixed
+          build whose internal refs could go unprefixed.
+
+  - id: N2
+    coverage:
+      adna_site:
+        status: enforced
+        by: site/tests/gates/gate-17-agentic.spec.ts
+        anchor: "served as text/plain"
+        note: >-
+          ⚠ CORRECTS A STALE REGISTER LINE. The pattern register says this lock "requires the
+          snapshot honesty line the site's llms.txt lacks". The site HAS it — `llms.txt.ts:56` emits
+          "State is a build-time snapshot generated ${BUILD_DAY}; nothing here is live." The register
+          row predates it. `gate-17` additionally proves the file is reachable, sectioned, advertised
+          in page HTML, and that the corpus keeps the index it replaced.
+
+  - id: N3
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.4 (CI hardening)
+        detail: >-
+          The site IS graph-bearing and DOES ship machine projections — `/vaults.json` and
+          `/api/registry.v1.json`, byte-identical, gated by `gate-17` G16 including that counts are
+          recounted from the payload and that minimal rows leak nothing beyond the DP4 set. What it
+          does not ship is the `graphs.json` `adna-face-graphs/v0-draft` projection this lock names.
+          A near-miss, not an absence — recorded as a gap so the shape difference stays visible.
+
+  # ── O ──────────────────────────────────────────────────────────────────────────────────────
+  - id: O1
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.4 (the fixes) — the INSTRUMENT landed at P4.2 O3
+        detail: >-
+          ⛔ STILL A GAP, DELIBERATELY, AND THE REASON IS THIS LOCK'S OWN RULE TEXT. `gate-39` now
+          measures exactly what the lock names — every `text, tspan` in a committed figure, rendered
+          size via `sqrt(|det(CTM)|)` and never `getComputedStyle`, at 320/390/1024/1440/1920 in both
+          appearances, plus overlap, clipping and the ±30° running-text clause. It found the floor is
+          NOT met: `hero-graph-svg` 27/27 labels below 12px at EVERY width (3.5px at 320, never better
+          than 7.1px at 1920) · `netdiagram-svg` 7/8 at 320 and 7/8 at desktop on /network/ ·
+          `convergence-funnel` 8/8 at 320. The gate therefore ships with a DATED BASELINE (gate-25's
+          allowlist idiom): each figure pinned at its current worst case, hard-failing any unlisted
+          figure and any regression, ratcheting as each one is fixed. Red-proven both ways —
+          `craft_floor_redtest.sh` cases 7 and 8.
+          ⚠ A NON-REGRESSION FENCE IS NOT THE RULE, so this cell is not `enforced`. Marking it so
+          would be precisely the fake-enforcement this lock's own text warns about — "a gate that
+          enumerates a SUBSET of its rule's domain is a fake enforcement even when its code is real" —
+          and this lock read `enforced` upstream for a whole round in exactly that state.
+          The remedy is design work, not a font-size bump: these are SVGs authored in a viewBox and
+          scaled (0.28× for the hero graph at 320px), so clearing the floor needs a portrait twin, a
+          min-width with scroll, or a redraw — and the homepage hero graph is a campaign-protected
+          surface. Rules a contributor can follow are published at /design-system#diagram, and that
+          page states plainly that the floor is currently unmet rather than letting a reader assume.
+
+  - id: O2
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.3 (a11y manual) — the RULE landed at P4.2 O3
+        detail: >-
+          The TEXT-RECOVERABILITY limb holds and is genuinely good — `gate-22` proves the topology is
+          an inline `role="img"` SVG with an accessible title, real selectable labels, and that it
+          renders with JavaScript disabled; the audit sweep proves the Mermaid keyboard node-twin is
+          focusable. P4.2 O3 published the second limb as a RULE at /design-system#diagram ("every
+          graph a figure omits is a stated category, not a silent omission; a network diagram showing
+          ten vaults out of seventy-four is honest, the same diagram unlabelled is a claim that the
+          network has ten"), and `gate-39`'s G39e asserts that rule stays present and reachable from
+          the page's own table of contents.
+          ⚠ STILL A GAP, because a published rule is not an enforced one and that distinction is what
+          this whole document is for. Whether a given figure's description ACTUALLY states what it
+          omits is a judgment about meaning — the same class as B3/E4's "is the announcement useful"
+          — and it belongs to the human instrument at P4.3/P5.1, not to a grep.
+
+  # ── Q ──────────────────────────────────────────────────────────────────────────────────────
+  - id: Q1
+    coverage:
+      adna_site:
+        status: gap
+        sequenced: P4.4 (CI hardening)
+        detail: >-
+          `gate-33` proves provenance dates are present, well-formed, and not uniformly identical. It
+          does not compare a build-derived day against the build host's local day, nor against the
+          `generated_at` of its own generated file — the drift this lock exists to catch.

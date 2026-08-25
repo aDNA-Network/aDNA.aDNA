@@ -14,7 +14,18 @@ const year = new Date().getFullYear();
       <a href="/vaults">Vaults</a>
       <a href="/commons">Commons</a>
       <a href="/community">Community</a>
+      {/* HAUSSMANN P3.5 — the proposal archive, in the chrome rather than only one click into
+          /community. ADR-055 §7 places the surface under /community because ADR-049 caps the
+          PRIMARY nav at 7 and it is at 7; the footer carries no such ceiling, and a standards
+          process a reader cannot find from an arbitrary page is a process in name only. */}
+      <a href="/community/proposals/">Proposals</a>
       <a href="/about">About</a>
+      {/* HAUSSMANN P1.2 — both disclosure surfaces, reachable from every page. The
+          canonical-properties link is load-bearing for the §7.1 clone-site defense: a reader who
+          lands on a copy of this site should be one click from the list of what is genuinely ours,
+          from wherever they landed. */}
+      <a href="/state-of-the-network">State of the network</a>
+      <a href="/canonical-properties">Canonical properties</a>
       <a href="/security">Security</a>
       <a href="/privacy">Privacy</a>
       <a href="/reference/specification">Specification</a>
@@ -24,6 +35,12 @@ const year = new Date().getFullYear();
       <a href="/changelog">Changelog</a>
       <a href="/design-system">Design system</a>
       <a href="/rss.xml">RSS</a>
+      {/* HAUSSMANN P3.1 (machine_eye item 12): the literal string "llms" appeared ZERO times across
+          every page HTML probed, so the site's one genuinely curated machine artifact was reachable
+          only by an agent that already knew the convention. It belongs on the machine-artifact shelf
+          the footer already keeps, beside RSS. ADR-049's cap is on PRIMARY nav (at 7); the footer is
+          not primary nav, so this adds no cap pressure. */}
+      <a href="/llms.txt">llms.txt</a>
       <a href={REPO_HTTPS} target="_blank" rel="noopener">GitHub</a>
     </nav>
     <p class="footer-copyright">&copy; {year} {PUBLISHER}. Released under the MIT License.</p>
@@ -54,7 +71,7 @@ const year = new Date().getFullYear();
 
   .footer-logo {
     font-family: var(--font-display);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: var(--text-lg);
     color: var(--color-text-heading);
   }

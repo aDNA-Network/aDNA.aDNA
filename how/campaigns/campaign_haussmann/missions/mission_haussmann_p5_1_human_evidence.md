@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P5
 decade: 2
 owner: stanley
-status: queued-provisional
+status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — activated, and better-equipped than when chartered. Two reinforcements from P2.6: the clinician cold-reader read "aDNA" as ANCIENT DNA (the standard abbreviation in her field) — a second synthetic signal that the DP2-waived human panel is worth running; and if O0b runs, this mission inherits an EXERCISED TTFS instrument instead of an unexercised one.
 mission_class: verification
 executor_tier: opus
 token_budget_estimated: "~120–200 kT (+ operator recruitment time): panel kits + session facilitation records + TTFS re-run + contribution-run log (ADR-016)"
@@ -36,6 +36,11 @@ tags: [plan, haussmann, p5, panel, ttfs, contribution_run]
 ## Why this mission exists
 
 Instrument Δ3 deferred Steps 5/6/7 to the campaign; the genesis scores carry "provisional" and "unawardable" flags wherever human evidence was missing (D1 anchor 5, D3, D9 first-contribution). This mission converts those flags into data — with the operator recruiting (agents cannot).
+
+> **Inherited duty (DP2 deviation, 2026-08-16).** The P0.1 O4 human panel was **operator-waived**; ADR-048 was
+> ratified on the synthetic pre-screen alone (deviation record: ADR-048 §Status). This mission now also
+> **retro-validates the shipped positioning** against real humans — `artifacts/p0_1/panel_kit.md` is the stimulus,
+> run against the *live* hero. A failing retro-verdict reopens the positioning question at DP9, not silently.
 
 ## Objectives
 

@@ -11,6 +11,17 @@
   --font-mono: var(--font-mono);
 }
 
+/* ——— In-page anchor offset (HAUSSMANN P4.2 O2 — craft-floor locks A5 + B4) ———
+   One site-wide rule, on the scroll container, rather than `scroll-margin-top` sprinkled per
+   section: the sticky header is a property of the LAYOUT, so the offset belongs to the layout too.
+   `--space-4` of breathing room above the target so the heading is not flush against the header
+   edge. Lock B4's rule is that the offset must equal or exceed the sum of the sticky chrome —
+   `gate-38` is what checks that, by re-measuring the rendered header rather than trusting either
+   number here. */
+html {
+  scroll-padding-top: calc(var(--header-height) + var(--space-4));
+}
+
 /* Global base styles */
 body {
   font-family: var(--font-body);
@@ -267,4 +278,29 @@ main:focus {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ——— Syntax highlighting: dark/light parity (HAUSSMANN P4.2 O1, ⛩ ruled 2026-08-24) ——— */
+/*
+   Shiki emits its LIGHT palette as an inline style and its DARK palette as `--shiki-dark*`
+   custom properties (astro.config.mjs → markdown.shikiConfig.themes). These rules swap to the
+   dark palette when the document carries `.dark` — this site's theme is a class on <html>, not
+   a `prefers-color-scheme` query, so the standard Astro media-query recipe would not fire here.
+
+   `!important` is load-bearing and not laziness: Shiki's light values ship as INLINE style
+   attributes, which outrank any stylesheet rule on specificity alone. This is the one place on
+   the site where overriding an inline style is the intended mechanism.
+
+   No hex appears here — every value is a custom property Shiki wrote — so gate-25's
+   hardcoded-colour ban is satisfied by construction rather than by exemption.
+
+   Before this existed, every code block on 61 pages served `github-dark` in BOTH appearances.
+*/
+html.dark .astro-code,
+html.dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
 }

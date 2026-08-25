@@ -28,24 +28,23 @@ const routes: Route[] = [
   { prefix: '/glossary/', leg: 'WHAT', sectionLabel: 'Glossary', sectionHref: '/glossary/', icon: iconReference },
   { prefix: '/use-cases/', leg: 'WHAT', sectionLabel: 'Use Cases', sectionHref: '/use-cases/', icon: iconUseCases },
   { prefix: '/reference/', leg: 'WHAT', sectionLabel: 'Reference', sectionHref: '/reference/', icon: iconReference },
-  { prefix: '/adopters/', leg: 'WHO', sectionLabel: 'Adopters', sectionHref: '/adopters/', icon: iconUseCases },
   { prefix: '/community/', leg: 'WHO', sectionLabel: 'Community', sectionHref: '/community/', icon: iconCommunity },
   { prefix: '/how/publishing/', leg: 'HOW', sectionLabel: 'Publishing', sectionHref: '/how/publishing/', icon: iconHow },
   { prefix: '/how/workshops/', leg: 'HOW', sectionLabel: 'Workshops', sectionHref: '/how/workshops/', icon: iconHow },
   { prefix: '/how/lattice-examples/', leg: 'HOW', sectionLabel: 'Lattice Examples', sectionHref: '/how/lattice-examples/', icon: iconHow },
 ];
 
-// Single-page audience landings (E5 c165 — audit C3 breadcrumb seams). These pages ARE
-// their own section, so the prefix rule above (which hides breadcrumbs on section indexes)
-// can never match them. They crumb as WHO › For you › <page>, anchored at the adopters hub
-// (the de-facto audience index; matches the "For you" sidebar group). No back-link — a
-// one-page section has no index to go back to.
+// Single-page terminal routes (E5 c165 — audit C3 breadcrumb seams). These pages ARE their
+// own section, so the prefix rule above (which hides breadcrumbs on section indexes) can
+// never match them. No back-link — a one-page section has no index to go back to.
+//
+// HAUSSMANN P2.2 / ADR-049 Option A: this was the fourth copy of the audience link set —
+// five rows crumbing as WHO › For you, anchored at the /adopters hub. Four of those landings
+// retired into their /use-cases/ twin and the hub is gone, so only the renamed audit
+// walkthrough remains. It crumbs under HOW now, matching its new home in the Guides group:
+// it is an operational walkthrough, not an audience page (which is why ADR-048 renamed it).
 const terminalRoutes: Route[] = [
-  { prefix: '/researchers', leg: 'WHO', sectionLabel: 'For you', sectionHref: '/adopters/', icon: iconUseCases },
-  { prefix: '/educators', leg: 'WHO', sectionLabel: 'For you', sectionHref: '/adopters/', icon: iconUseCases },
-  { prefix: '/enterprise', leg: 'WHO', sectionLabel: 'For you', sectionHref: '/adopters/', icon: iconUseCases },
-  { prefix: '/compliance', leg: 'WHO', sectionLabel: 'For you', sectionHref: '/adopters/', icon: iconUseCases },
-  { prefix: '/startup-first-hour', leg: 'WHO', sectionLabel: 'For you', sectionHref: '/adopters/', icon: iconUseCases },
+  { prefix: '/provenance-audit', leg: 'HOW', sectionLabel: 'Guides', sectionHref: '/how/', icon: iconHow },
 ];
 
 const path = Astro.url.pathname;
@@ -121,7 +120,7 @@ const crumb = match ?? terminal;
 
   .breadcrumb .leg {
     font-size: var(--text-xs);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-text-muted);
@@ -171,6 +170,6 @@ const crumb = match ?? terminal;
 
   .breadcrumb .current {
     color: var(--color-text);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
   }
 </style>

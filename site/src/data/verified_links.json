@@ -1,0 +1,4 @@
+{
+  "_doc": "HAUSSMANN P1.1 (claim register R-90): external repo/docs links on /vaults/<slug> pages render ONLY when listed here, probe-verified live at the time of addition. The registry data (vaults.json, Hestia-owned — pt19) may carry URLs that have gone dead or private; this fixture is the projection-side truth gate so the site never ships an outbound proof-link a reader can't follow. To add a URL: probe it (expect 200 publicly, logged out), then list it with the date. Empty is a valid state — as of 2026-08-17 the registry's only external URL (github.com/aDNA-Network/Videos.aDNA) 404s publicly, so nothing is verified.",
+  "verified_urls": []
+}

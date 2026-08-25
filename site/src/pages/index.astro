@@ -6,8 +6,12 @@ import RegistryCard from '../components/sections/RegistryCard.astro';
 import { buildWebSiteJsonLD } from '../utils/seo';
 import { steps, stats, audiences } from '../data/home';
 import { STANDARD_VERSION, ENTITY_TYPE_COUNT } from '../data/standard';
-import vaultsData from '../data/vaults.json';
+import vaultsData, { canonicalVaultSlug } from '../data/vaults';
+import { classLabel as sharedClassLabel } from '../utils/vaultLabels';
 import subnetworksData from '../data/subnetworks.json';
+// HAUSSMANN P1.2 — the derived network facts the hero, /about and /state-of-the-network all state.
+// One module so the three surfaces cannot disagree; never type a count here (KW-14).
+import { connectedCount, edgeCount } from '../data/network_state';
 // Storyweave P5 / M5.1a — the single-sourced clone-and-run one-liner for the hero install pill (R2).
 // Same fixture /get-started + /network consume (built by scripts/build_install_truth.mjs); never
 // hardcoded. HOME-ONLY additive-optional prop → /network + /commons stay zero-diff.
@@ -18,8 +22,13 @@ import heroImage from '../assets/heroes/hero_adna_helix.png';
 // raw and inlined by HomeHero as the graph-led hero. HOME-ONLY (the additive-optional `heroGraph`
 // prop; /network + /commons don't pass it → they keep the image-led hero, zero-diff).
 import heroGraph from '../assets/hero_graph.svg?raw';
+// HAUSSMANN P3.3 O3 — the machine-door block's twin count, DERIVED from the same manifest that
+// drives twin emission and negotiation (scripts/emit_bespoke_twins.mjs + inject_negotiation.mjs).
+// Never typed: KW-14 / convention 1. If a twin stops being emitted this number falls with it.
+import twinManifest from '../data/twin_manifest.json';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.network';
+const twinCount = (twinManifest as { twins: string[] }).twins.length;
 const jsonLD = buildWebSiteJsonLD(siteUrl);
 
 // Section 2 — a curated slice across the network's classes (real data/vaults.json
@@ -32,7 +41,16 @@ const REGISTRY_SLUGS = [
 const bySlug: Record<string, any> = Object.fromEntries(
   (vaultsData.vaults as any[]).map((v) => [v.vault_slug, v])
 );
-const registryVaults = REGISTRY_SLUGS.map((s) => bySlug[s]).filter(Boolean);
+// Curated names are resolved through canonicalVaultSlug (HAUSSMANN P2.1 / ADR-051) so this
+// slice survives a slug change. It also FAILS THE BUILD on a miss rather than filtering it
+// away: the previous `.filter(Boolean)` meant a name that stopped resolving silently shrank
+// the homepage's registry preview, which is precisely how P2.1's canonicalization would have
+// dropped six of these eight cards with no error anywhere.
+const registryVaults = REGISTRY_SLUGS.map((s) => {
+  const v = bySlug[canonicalVaultSlug(s)];
+  if (!v) throw new Error(`index.astro REGISTRY_SLUGS: "${s}" resolves to no vault in the registry`);
+  return v;
+});
 const vaultCount = vaultsData.vault_count;
 
 // Section 5 — the featured public-good subnetworks, teased data-driven from the
@@ -60,32 +78,69 @@ const CLASS_LABELS: Record<string, string> = {
   tooling: 'tooling',
   workspace: 'workspace',
 };
-const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
+// Curated homepage register above; anything uncurated falls to the shared public label
+// (never a raw enum — gate-27; HAUSSMANN P1.3).
+const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
 ---
 
 <BaseLayout
   title="aDNA — the open standard & network for shared context"
-  description="The open standard and network to build, share, and govern the context that powers AI — in the open, for the good of all. Built on the Lattice Protocol."
+  description="aDNA (agentic DNA) is an open standard for organizing a project's files so AI agents — and the people working with them — always know where things live. This site is the standard, its docs, and the vault registry."
   jsonLD={jsonLD}
 >
+  {/* HAUSSMANN P1.1 / ADR-048 — definition-as-hero (candidate A, ratified DP2): the lead defines,
+      the audience sub + NOT-line qualify, and the manifesto lyric demotes INTACT to the movement
+      band directly below the fold. Claim register rows R-13/R-14 resolved 2026-08-17. */}
   <HomeHero
     heroImage={heroImage}
     heroAlt="A pixel-art hero in the Tokyo Night palette: a glowing cyan DNA double-helix rising from a row of small computers and branching at the top into a network of connected nodes — shared inheritance resolving into the aDNA network."
-    reframe="Your context is just the notes, docs, and decisions you already keep — now shaped into a graph your agents can navigate, and shared in the open."
+    audienceSub="For teams working with agentic coding tools on real projects."
+    notLine="Not a product or service — no server, no signup, nothing leaves your machine."
+    {/* HAUSSMANN P4.5a — R-120 (S2) resolved. This clause used to end "…your agents can navigate,
+        and shared in the open." Its grammatical subject is "Your context", so read literally — how a
+        first-time reader reads — the fold promised that your notes stay on your machine AND are
+        published, two sentences apart, in the 30-second zone. A clinician cold-reader called the pair
+        disqualifying on its own for anyone holding patient notes. The intended referent was always the
+        STANDARD, not the reader's files; the sentence just never said so. Openness now attaches to the
+        thing that is actually open, and the second half restates the local promise rather than
+        contradicting it. Gate-anchored in gate-23. */}
+    reframe="Your context is just the notes, docs, and decisions you already keep — now shaped into a graph your agents can navigate. The standard that shapes it is open; your files stay on your machine."
     primaryHref="/vaults"
     primaryLabel="Explore the network"
     secondaryHref="/get-started"
     secondaryLabel="Get Started"
-    proofLead="Real public-good work already lives here —"
-    proofNames={subnetworks.map((s) => s.display_name)}
-    proofHref="/about"
-    proofLinkLabel="Who's behind aDNA →"
+    proofLead={`${vaultCount} vaults — every one of them on a single computer, ours. ${connectedCount} are joined by ${edgeCount} declared relationships; the rest stand alone.`}
+    proofHref="/state-of-the-network/"
+    proofLinkLabel="The state of the network, dated →"
+    proofHrefSecondary="/about/"
+    proofLinkLabelSecondary="Who's behind aDNA →"
     stats={stats}
     heroGraph={heroGraph}
-    heroGraphCaption="15 connected vaults · 14 relationships"
+    heroGraphCaption={`${connectedCount} connected vaults · ${edgeCount} relationships`}
     installOneLiner={installTruth.one_liner}
     showLicenseEyebrow={true}
   />
+
+  {/* The movement band — the manifesto lyric, demoted intact from the hero (ADR-048: "demoted
+      *intact* to the movement band directly below the fold"). The lyric register survives; the
+      fold now belongs to the definition. */}
+  <section class="movement-band">
+    <p class="movement-lyric">
+      Language and DNA were co-created by everyone before us. The context that powers AI should be
+      too — built, shared, and governed in the open, for the good of all.
+    </p>
+    {/* HAUSSMANN P1.2 — the "you already do X" reframe at the manifesto (Berthier's build-wave
+        item: the manifesto is "abstract where it should be concrete"). Deliberately a SIBLING
+        paragraph: the lyric above is claim-register row R-94 and ships byte-intact per ratified
+        ADR-048, so it is never reflowed, merged, or re-punctuated to accommodate this. The hero's
+        `reframe` prop carries the fold-level beat; this is its concrete twin below the fold. */}
+    <p class="movement-reframe">
+      You already do the first half of this. The README that explains the project. The decision
+      someone wrote down so nobody re-litigates it. The note on why the schema is shaped the way it
+      is. That is context — aDNA gives it a shape your agents can read, in the open, in your own
+      repository.
+    </p>
+  </section>
 
   <!-- 1 · What a context democracy is -->
   <section class="context-democracy">
@@ -99,7 +154,7 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
       {/* Storyweave P3 / M3.2 — the S7 first-scroll N-pillar payoff: the hero sells the feeling,
           §1 pays it off with the "how" as a crisp 4-pillar (the Mastodon "Why?" model). */}
       <ul class="democracy-pillars" role="list">
-        <li><strong>Open</strong><span>MIT-licensed — the spec, the tooling, and the vaults are all public.</span></li>
+        <li><strong>Open</strong><span>MIT-licensed — the spec, the workspace image, and the registry data are public.</span></li>
         <li><strong>Federated</strong><span>Each project keeps its own graph; they connect by citation, not central control.</span></li>
         <li><strong>Co-owned</strong><span>No vendor owns your context — you govern it, in the open.</span></li>
         <li><strong>Agents &amp; humans</strong><span>One graph, legible to your AI and to you at the same time.</span></li>
@@ -107,7 +162,7 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
       <NetworkDiagram />
       <p class="diagram-caption">
         Real aDNA vaults — forges, frameworks, platforms, and public-good archives —
-        federating on the Lattice Protocol.
+        connected by the relationships they declare.
       </p>
     </div>
   </section>
@@ -117,8 +172,16 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
     <div class="section-inner">
       <h2 class="section-title">The living registry</h2>
       <p class="section-subtitle">
-        Every vault is a real, governed context graph — its own persona, its own history,
-        its own place in the network. Here's a slice across {vaultCount} of them.
+        Every vault is a real, governed context graph with its own place in the network —
+        most tended by a named agent. Here's a slice across {vaultCount} of them.
+      </p>
+      {/* HAUSSMANN P1.2 (§7.3) — the operator-federation distinction is made where the number is
+          made, not only in the fold. A reader meeting "{vaultCount}" for the second time meets the
+          qualifier with it. */}
+      <p class="registry-disclosure">
+        All of them run on one computer &mdash; ours.
+        <a href="/state-of-the-network/" data-astro-prefetch>The state of the network</a> says what
+        that means.
       </p>
       <div class="registry-grid">
         {registryVaults.map((v) => (
@@ -189,7 +252,7 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
   <section class="the-standard">
     <div class="section-inner">
       <h2 class="section-title">The Standard</h2>
-      <p class="section-subtitle">aDNA is an open specification — MIT licensed, community-driven, designed for extension.</p>
+      <p class="section-subtitle">aDNA is an open specification — MIT licensed, open to contribution, designed for extension.</p>
       <div class="standard-meta">
         <span class="meta-tag">{STANDARD_VERSION}</span>
         <span class="meta-tag">MIT License</span>
@@ -203,14 +266,62 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
     </div>
   </section>
 
+  <!-- Machine door (HAUSSMANN P3.3 O3) — the agent-readable entry points, named on the highest-
+       traffic page for the first time. Until now /llms.txt appeared only in the footer.
+
+       ⛔ SCOPE IS DELIBERATE AND LOAD-BEARING. This block names ONLY surfaces that were live and
+       re-probed the day it shipped. The mission that built it also built an MCP server, which is
+       NOT named here because it is not published — a homepage that advertises an uninstallable
+       server is an S1 false claim on S1 real estate. If the publish lands, the server joins this
+       list and a /.well-known/mcp.json descriptor ships with it; until then, neither. -->
+  <section class="machine-door">
+    <div class="section-inner">
+      <h2 class="section-title">Built to be read by agents</h2>
+      {/* "not an add-on bolted on later" was the first draft here and it was CUT at the register
+          pass, before shipping: the twins landed at P3.1 and the registry endpoint at P3.2, both
+          built deliberately after an audit scored them absent. Temporally they ARE later additions,
+          so the phrase was false in the reading a hostile reader would take. What is true is the
+          structural claim — every one of them derives from the same source the HTML does (the
+          no-drift law in src/utils/twin.ts), so they cannot fall out of step. Claims move DOWN. */}
+      <p class="section-subtitle">
+        This site is itself an aDNA vault — the structure it documents is the structure that
+        produced it. Each surface below is generated from the same source as the pages themselves,
+        so it cannot drift out of step with them.
+      </p>
+      <ul class="door-list">
+        <li class="door-item">
+          <a href="/llms.txt" class="door-path">/llms.txt</a>
+          <span class="door-note">
+            A curated index of this site, written to be read by an agent rather than rendered.
+            <a href="/llms-full.txt">/llms-full.txt</a> carries the whole corpus in one file.
+          </span>
+        </li>
+        <li class="door-item">
+          <span class="door-path">Markdown twins</span>
+          <span class="door-note">
+            Add <code>.md</code> to a documentation URL — or send <code>Accept: text/markdown</code> —
+            and get the source instead of the page. {twinCount} pages have one.
+          </span>
+        </li>
+        <li class="door-item">
+          <a href="/api/registry.v1.json" class="door-path">/api/registry.v1.json</a>
+          <span class="door-note">
+            The vault registry as versioned JSON, so the network can be queried as data instead of
+            scraped out of HTML.
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <!-- 5 · Join the network -->
   <section class="join-network">
     <div class="section-inner">
       <h2 class="section-title">Join the network</h2>
       <p class="section-subtitle">
         The network is open — run a node, share a vault, and help
-        <a href="/reference/governance-model/">govern the standard</a>.
-        Mission-aligned subnetworks already steward real public-good work here, in the open.
+        <a href="/reference/governance-model/">shape the standard</a>.
+        Mission-aligned subnetworks are taking shape around real public-good work.
       </p>
       <ul class="subnetwork-tease">
         {subnetworks.map((s) => (
@@ -237,6 +348,38 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
 </BaseLayout>
 
 <style>
+  /* ——— Movement band (ADR-048): the demoted manifesto lyric, one quiet full-width statement
+     directly below the fold. Reads as the "why", after the hero has answered the "what". ——— */
+  .movement-band {
+    padding: var(--space-10) var(--space-6);
+    background: var(--color-bg-alt);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .movement-lyric {
+    max-width: 46rem;
+    margin: 0 auto;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--color-text);
+    text-wrap: balance;
+  }
+
+  /* The concrete twin under the lyric — quieter and smaller, so the lyric keeps the band and this
+     grounds it rather than competing with it. */
+  .movement-reframe {
+    max-width: 42rem;
+    margin: var(--space-5) auto 0;
+    text-align: center;
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    text-wrap: pretty;
+  }
+
   /* ——— Shared section styles ——— */
   .section-inner {
     max-width: var(--content-width);
@@ -256,6 +399,18 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
     font-size: var(--text-lg);
     max-width: 36rem;
     margin: 0 auto var(--space-10);
+    line-height: 1.6;
+  }
+
+  /* The disclosure line under the registry count — sits between the subtitle and the grid, quieter
+     than the subtitle it qualifies. It pulls up under the subtitle's bottom margin so the pair
+     reads as one block. */
+  .registry-disclosure {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    max-width: 36rem;
+    margin: calc(var(--space-10) * -1 + var(--space-3)) auto var(--space-10);
     line-height: 1.6;
   }
 
@@ -554,6 +709,64 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? c.replace(/_/g, ' ');
     gap: var(--space-4);
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  /* ——— Machine door (HAUSSMANN P3.3 O3) ———
+     Sits between §4 (.the-standard, --color-bg-alt) and §5 (.join-network), so it takes the base
+     background to keep the alternating band rhythm rather than stacking two tinted sections. */
+  .machine-door {
+    padding: var(--space-24) 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .door-list {
+    list-style: none;
+    margin: var(--space-8) auto 0;
+    padding: 0;
+    max-width: 46rem;
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .door-item {
+    display: grid;
+    grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+    gap: var(--space-4);
+    align-items: baseline;
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .door-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .door-path {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    overflow-wrap: anywhere;
+  }
+
+  .door-note {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
+
+  .door-note code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+
+  /* Single column below the two-column breakpoint: a 14rem label column against a narrow viewport
+     leaves the note squeezed into a ribbon. Mobile integrity is a P1.4 standing concern. */
+  @media (max-width: 40rem) {
+    .door-item {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-2);
+    }
   }
 
   /* ——— 5 · Join the network ——— */

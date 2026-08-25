@@ -2,8 +2,8 @@
 type: governance
 scope: workspace
 created: 2026-05-25
-updated: 2026-05-31
-last_edited_by: agent_hestia
+updated: 2026-08-17   # + scoped/expiring class, revoke≠kill (S45), procedure step 0 evidence-preservation; ratification block PROPOSED (Chambellan M-A6; Rosetta edit — authored_by unchanged)
+last_edited_by: agent_rosetta
 status: active
 canonical_at: /Users/stanley/aDNA/aDNA.aDNA/what/doctrine/doctrine_key_rotation.md
 lifted_from: /Users/stanley/aDNA/ScienceStanley.aDNA/how/governance/doctrine_key_rotation.md (M01 2026-05-25; generalized to workspace scope)
@@ -68,9 +68,44 @@ A "rotation" that stores the same byte-identical value back is **not a rotation*
 
 Pre-launch hygiene session 2026-05-21 explicitly **did not** rotate the SS Gemini key per operator directive ("We do not want to mess with any of the gemini keys"). Rotation envelope remained operator-discretionary until a mandatory-trigger event. Use this as the policy template: scheduled hygiene that touches a stable key is operator-discretionary; mandatory triggers are not.
 
+## Scoped + expiring machine credentials (Chambellan M-A6 amendment)
+
+The credential classes above assume a long-lived value the operator rotates on a trigger. A second class is now in routine use and rotates on a **clock instead of an event**: the scoped, expiring machine credential — DP-6's alpha class (*scoped, expiring, single-graph, single-node*), of which the S193 90-day partner token is the worked example.
+
+**What changes for this class:**
+
+- **Expiry is the rotation trigger.** A 90-day token has a rotation date the day it is minted. That date belongs in the register row at mint time, not in someone's memory. A class whose rotation trigger is a calendar entry that was never written down does not have a rotation trigger.
+- **Scope is half the credential.** A team-scoped mint is not "a smaller token" — it is a *different* credential with a different blast radius, and the register's `scope:` field (per `doctrine_credential_handling.md` §3.5) is what makes that radius auditable. Rotating a scoped credential into an unscoped replacement is a **silent privilege escalation**, and it will not look like one in any log.
+- **A second holder makes expiry a coordination event.** If the value was delivered to a partner (`doctrine_credential_handling.md` §4.5), expiry is *their* outage as well as yours. §6 "Notify downstream consumers" is mandatory for this class, not discretionary, and the notice goes out **before** expiry, not after the breakage.
+
+### Revoke ≠ kill: cached CLI identities (the S45 property)
+
+⚠ **Revoking a token at the vendor does not necessarily end the session it authorized.** Charter **D-36** located the worked case: the shared cached Vercel CLI identity at `~/Library/Application Support/com.vercel.cli/auth.json` (mode `0600`, ~252 B) — present in no register before Chambellan, registered as census row **S45**. **A token revoke does not kill it.**
+
+Generalized, this is a property of the whole class of tools that exchange a token for a local session artifact (CLI auth caches, `gh`'s keyring entry, browser-extension sessions, agent sidecars holding a warm client):
+
+1. **Step 4 of the procedure below ("revoke the old key") is necessary and not sufficient** for any credential that has ever been fed to a CLI that caches. Enumerate the caches *before* you revoke, so you know what is left alive after.
+2. **A cached identity is a credential.** It gets its own register row, its own path, its own mode — and its own removal step in the runsheet. A file that grants access and appears in no register is exactly the defect the Chambellan census exists to find.
+3. **The old-key-is-dead assumption is what makes this dangerous.** After a revoke, everyone stops watching. A cache that still authenticates is then unmonitored *and* believed-dead — a worse state than before the rotation.
+
 ## Rotation Procedure
 
 When rotation is triggered, execute in this order:
+
+### 0. Preserve the evidence before you rotate (Chambellan M-A6 amendment)
+
+**Rotation destroys the evidence of why it was needed.** Before touching the vendor console, write down what the investigation will need after the value is gone — because after step 4 nobody can re-derive it.
+
+The lesson is dated, and the date is the point (charter **D-58** / **DP-11**): the residue that proved a credential's exposure — the three `C01` transcript copies — **ages out on a 30-day clock and self-destructs around 2026-08-27**, while the un-rotated credential's risk does not. A ruling made against that evidence had to be re-sequenced (**DP-11 amendment-in-effect**, S197: queue item ② moved to a standalone rotation *before* the evidence-expiry date) precisely because the evidence had an expiry the ruling never stated.
+
+**Therefore, every rotation runsheet states, before step 1:**
+
+1. **What evidence exists** that this rotation is needed — file, rule, and date only (never content; the M-A3 pattern). "17 findings on high-specificity rules, ages 2–22 days" is evidence; the finding bodies are not, and must not be copied to preserve them.
+2. **What ages out, and when.** Any store with a retention window — transcript residue at 30 days, vendor audit logs at their own cadence, CI logs — carries an **expiry date written into the runsheet**. A timing ruling that does not carry its evidence-date is a ruling that can silently outlive its own basis.
+3. **What survives the rotation on purpose** — the register row, the coord note, the incident file (§5). These are the permanent record; the residue is not, and must never be the only place a fact lives.
+4. **Whether preservation conflicts with a deletion posture.** Where a store is under `preserve_in_place` (PRESERVE—LEGAL — charter **D-59**), preservation wins and the runsheet says so explicitly. Where it is not, evidence is *summarized into* the durable record rather than kept by suppressing a retention job.
+
+**The one-line rule**: *a rotation is an act of destruction as well as repair — take the picture before you fire.*
 
 ### 1. Provision the new key
 
@@ -162,6 +197,21 @@ The 1P service-account token at `~/.lattice/secrets/op_service_account_token_<sc
 6. Coord note at `Home.aDNA/who/coordination/coord_<YYYYMMDD>_service_account_rotation.md`.
 
 This rotation does NOT cascade to application-tier credentials — the underlying 1P items are unchanged, just the access token used to read them.
+
+## Ratification record (§7.7) — Chambellan M-A6 amendment
+
+> Authored by an agent; **owned by the operator**. `proposed` until signed; not in force before signature.
+
+| Field | Value |
+|---|---|
+| **decision** | Adopt the Chambellan M-A6 amendments to this doctrine: **§Scoped + expiring machine credentials** (expiry-as-trigger, scope-as-half-the-credential, second-holder coordination) · **§Revoke ≠ kill** (the S45 cached-CLI-identity property, charter D-36 — enumerate caches before revoking; a cached identity is a credential with its own row) · **§Rotation Procedure step 0 — Preserve the evidence before you rotate** (the D-58 / DP-11 lesson: a timing ruling carries its evidence-date; runsheets state what ages out and when) |
+| **ratified-by** | stanley |
+| **date** | 2026-08-17 |
+| **status** | **ratified** *(⛩ S198 chat gate, HQ fable desk — ruled "ratify 1–3, hold safe-mutations for Hestia's co-sign")* |
+
+**What the operator is signing, in plain terms**: that a revoke is not a kill until the caches are enumerated; that an expiring credential's rotation date is written down at mint, not remembered; and that a rotation begins by recording why it was needed, because the proof expires on its own schedule and the risk does not.
+
+**Findings discharged here**: charter **D-36** (S45 cached identity) · **D-58** + **DP-11** (evidence-dates a ruling) · DP-6's alpha class as a named credential class.
 
 ## Related
 

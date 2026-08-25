@@ -1,0 +1,353 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Callout from '../../components/sections/Callout.astro';
+import { RESOLVING_PROPERTIES, PROPERTIES_PROBED_AT } from '../../data/canonical_properties';
+import { buildWebPageJsonLD } from '../../utils/seo';
+import {
+  vaultCount,
+  edgeCount,
+  connectedCount,
+  unconnectedCount,
+  statusCounts,
+  recordedRepoCount,
+  subnetworkCount,
+  subnetworksWithPublicUrl,
+  registryGeneratedAt,
+  subnetworksGeneratedAt,
+} from '../../data/network_state';
+
+// HAUSSMANN P1.2 — the dated state-of-the-network disclosure surface. Instrument §8.3 calls this the
+// campaign's single highest-leverage move: the site's greatest asset is its honesty, and its greatest
+// risk is the gap between the scale it depicts and the scale a skeptical reader can verify. §7.3 is
+// explicit that the operator-federation distinction must be made ON THE PAGE, in the reader's line of
+// sight — a hostile reader will check, and finding it themselves costs you the account.
+//
+// EVERY NUMBER HERE IS DERIVED (network_state.ts → the committed data files). Nothing is typed. If you
+// are editing this page and find yourself about to write a digit, stop: add it to network_state.ts and
+// the gate-20 claim-trace manifest instead. That coupling is the reason the page can claim "no number
+// on this page is typed by hand" and have it be true rather than aspirational.
+//
+// The zero-verified-URL fact is stated as FIXED PROSE rather than a rendered count, because the grammar
+// has to change when the count stops being zero. Gate-20 pins the underlying value at 0 and goes red the
+// moment it changes — deliberately, so copy and count update in the same diff.
+// The repository THIS SITE is built from — distinct from REPO_HTTPS (the clone-and-run image).
+// A reader checking this page's numbers, or reporting that one is wrong, needs the vault the site
+// and its data files actually live in; sending them to the image would send them somewhere the
+// files are not. Declared as a canonical property, and allowlisted in gate-14 for this page.
+const SITE_REPO = 'https://github.com/aDNA-Network/aDNA.aDNA';
+const issuesUrl = `${SITE_REPO}/issues`;
+const jsonLD = buildWebPageJsonLD({
+  title: 'The state of the network — aDNA',
+  description:
+    'What actually runs, what is operator-operated, what is not ours, and what is only planned — each with the date it was last checked.',
+  url: new URL('/state-of-the-network/', Astro.site ?? 'https://adna.network').href,
+});
+---
+
+<BaseLayout
+  title="The state of the network — aDNA"
+  description="An honest, dated account of the aDNA network: what runs, what is operator-operated, what belongs to someone else, and what is only planned. Every number derived; every property checked from outside."
+  jsonLD={jsonLD}
+>
+  <article class="policy">
+    <header class="policy-head">
+      <h1>The state of the network</h1>
+      <p class="policy-lead">
+        The honest answer to &ldquo;how big is aDNA?&rdquo; is smaller than the registry looks.
+        {vaultCount} vaults sound like {vaultCount} teams. They are not. Here is what actually runs,
+        who operates it, what is genuinely not ours, and what is only planned &mdash; each with the
+        date it was last checked.
+      </p>
+    </header>
+
+    <h2 id="what-runs">What runs</h2>
+    <p>
+      Everything in this section is a URL you can open, logged out, on a machine that has never heard
+      of us. The date beside each one is the day it was last opened from outside.
+    </p>
+
+    <ul class="state-ledger" role="list">
+      {RESOLVING_PROPERTIES.filter((p) => p.kind !== 'machine-surface').map((p) => (
+        <li class="state-row">
+          <h3 class="state-name">
+            {p.url.startsWith('/')
+              ? <a href={p.url}>{p.label}</a>
+              : <a href={p.url} target="_blank" rel="noopener">{p.label}</a>}
+          </h3>
+          <dl class="state-facts">
+            <div class="state-fact">
+              <dt>What it is</dt>
+              <dd>{p.what}</dd>
+            </div>
+            {p.ownerNote && (
+              <div class="state-fact">
+                <dt>Who runs it</dt>
+                <dd>{p.ownerNote}</dd>
+              </div>
+            )}
+            <div class="state-fact">
+              <dt>Last opened from outside</dt>
+              <dd>{p.probed}</dd>
+            </div>
+          </dl>
+        </li>
+      ))}
+    </ul>
+
+    <p>
+      That is the whole list. If something is not on it, it is not yet a thing you can check. The
+      machine-readable surfaces this site offers, and every property we consider legitimate, are
+      listed on <a href="/canonical-properties/" data-astro-prefetch>canonical properties</a>.
+    </p>
+
+    <h2 id="operator-operated">What is operator-operated</h2>
+    <p>
+      The registry holds {vaultCount} vaults. <strong>All of them run on one computer, operated by
+      one person</strong> &mdash; Stanley Bishop, the Founding Architect named on
+      <a href="/about/" data-astro-prefetch>Who&rsquo;s behind aDNA</a>. The graph on the home page is
+      a real graph of real, declared relationships. It is not evidence of adoption, and this site will
+      not present it as any.
+    </p>
+    <p>
+      That is a real single point of failure, and it is a bounded one. The standard is MIT-licensed,
+      the workspace it lives in is a public git repository, and nothing here runs on a server we
+      control &mdash; a vault is plain Markdown files on your own machine. If this operator stopped
+      tomorrow, every vault would keep working and anyone could fork the standard unchanged.
+    </p>
+    <p>What the registry records about itself, as regenerated on {registryGeneratedAt}:</p>
+    <ul class="state-bullets">
+      <li>
+        {connectedCount} vaults are joined by {edgeCount} declared relationships.
+        {unconnectedCount} declare none &mdash; that is honest topology, not missing data.
+      </li>
+      {/* Built as one string, not a JSX fragment map: the literal space between {s.count} and
+          {s.label} is collapsed by the compiler, which rendered "57genesis, 10pending". */}
+      <li>By stage: {statusCounts.map((s) => `${s.count} ${s.label}`).join(', ')}.</li>
+      <li>
+        {recordedRepoCount === 1 ? 'Only one vault records' : `Only ${recordedRepoCount} vaults record`}
+        a code repository at all, and it does not resolve publicly &mdash; so this site does not link
+        it.
+      </li>
+      <li>
+        No vault page carries an externally verified public URL. The check is built and running: a
+        URL cannot appear on a vault page until someone has opened it from outside, logged out, and
+        recorded the date. None has passed yet.
+      </li>
+      <li>
+        Most vaults are tended by a named agent. Those are AI personas, not people;
+        <a href="/about/" data-astro-prefetch>the about page</a> says so plainly and explains why.
+      </li>
+    </ul>
+    <p>
+      Of the {subnetworkCount} subnetworks on <a href="/commons/" data-astro-prefetch>the commons</a>,
+      {subnetworksWithPublicUrl} have a public property you can open today. Their records were last
+      synced on {subnetworksGeneratedAt} &mdash; older than the registry above, and shown rather than
+      hidden. Those properties are not a second operator: the one live subnetwork site is run from
+      within this same orbit, and its vault is one of the {vaultCount} counted above.
+    </p>
+
+    <h2 id="not-ours">What is not ours</h2>
+    <p>These belong to someone else, and naming them is the point.</p>
+    <p>
+      <strong>The Wilhelm Foundation</strong> &mdash; a rare- and undiagnosed-disease foundation, and
+      aDNA&rsquo;s anchor partner. It is a separate organisation and no part of this network runs on
+      it. <strong>Related-party disclosure:</strong> the person who operates this network also holds
+      a role at the Foundation, so treat the relationship as a close one, not as an independent
+      third party vouching for us. The Foundation has published no statement about aDNA.
+    </p>
+    <p>
+      <strong>The Rare Archive</strong> &mdash; hosted in the Foundation&rsquo;s own GitHub
+      organization under Apache-2.0. Not ours to move, and the only public code any subnetwork here
+      can show you. As of the last check on {PROPERTIES_PROBED_AT}, every commit in it came from the
+      same person who operates this network. We would rather tell you that than let you find it.
+    </p>
+    <p>
+      <strong>The hosts</strong> &mdash; this site is static files on Vercel and the code is on
+      GitHub. Neither vouches for us. Fonts are served from this domain, so no third party sees your
+      visit. <a href="/privacy/" data-astro-prefetch>What this site collects: nothing.</a>
+    </p>
+
+    <h2 id="planned">What is planned</h2>
+    <Callout variant="info" title="The horizon">
+      <p>
+        None of this exists yet. It is here so you can tell the difference between what we have and
+        what we intend.
+      </p>
+      <ul>
+        <li>
+          <strong>A second independent node.</strong> Everything in the registry is on one machine.
+          The federation code is written and in the public repository; it has not yet been exercised
+          between two operators, so treat it as untested until it has been.
+        </li>
+        <li>
+          <strong>Verified external properties.</strong> The check described above is built and
+          running; no vault URL passes it today. What is missing is vaults with public homes, not
+          machinery.
+        </li>
+        <li>
+          <strong>Profiles, follows, and feeds.</strong> Named as unbuilt on
+          <a href="/commons/#today" data-astro-prefetch>the commons</a> &mdash; still unbuilt.
+        </li>
+        <li>
+          <strong>The coordination layer, opening progressively.</strong>
+          <a href="/reference/specification/" data-astro-prefetch>The specification</a> is the public
+          part today.
+        </li>
+      </ul>
+      <p>
+        Nothing above carries a date, because we do not have one. When one becomes true it moves up
+        this page, and the date moves with it.
+      </p>
+    </Callout>
+
+    <h2 id="how-to-check">How to check this page</h2>
+    <p>
+      Every count above is read at build time from a file in the public repository this site is built
+      from &mdash;
+      <a href={`${SITE_REPO}/blob/main/site/src/data/vaults.json`} target="_blank" rel="noopener"><code>site/src/data/vaults.json</code></a>
+      (regenerated {registryGeneratedAt}),
+      <a href={`${SITE_REPO}/blob/main/site/src/data/subnetworks.json`} target="_blank" rel="noopener"><code>site/src/data/subnetworks.json</code></a>
+      (synced {subnetworksGeneratedAt}), and
+      <a href={`${SITE_REPO}/blob/main/site/src/data/verified_links.json`} target="_blank" rel="noopener"><code>site/src/data/verified_links.json</code></a>.
+      <strong>No number on this page is typed by hand.</strong> Every property under &ldquo;what
+      runs&rdquo; was opened from outside, logged out, on the date shown beside it. If you check one
+      and find it wrong,
+      <a href={issuesUrl} target="_blank" rel="noopener">open an issue</a> &mdash; that is a bug in
+      this page, not a difference of opinion.
+    </p>
+
+    <h2 id="where-next">Where to go from here</h2>
+    <p>
+      <strong>If this is the answer you were hoping for:</strong> the standard works the same whether
+      the network has {vaultCount} vaults or several thousand &mdash; it is a way to organise files
+      on your own machine, and it does not need anyone else&rsquo;s participation to be useful.
+      <a href="/get-started/" data-astro-prefetch>Clone it and see &rarr;</a>
+    </p>
+    <p>
+      <strong>If you want to be the second independent node:</strong> that is the one thing on the
+      horizon above we cannot build alone.
+      <a href="/community/" data-astro-prefetch>The community space is here &rarr;</a>
+    </p>
+    <p>
+      <a href="/vaults/" data-astro-prefetch>Browse the registry &rarr;</a> &middot;
+      <a href="/canonical-properties/" data-astro-prefetch>Canonical properties &rarr;</a> &middot;
+      <a href="/security/" data-astro-prefetch>Reporting a security issue &rarr;</a>
+    </p>
+
+    <p class="policy-foot">
+      Registry regenerated {registryGeneratedAt} &middot; subnetwork records synced
+      {subnetworksGeneratedAt} &middot; properties last checked from outside {PROPERTIES_PROBED_AT}.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Scaffold matches the policy pages (/privacy, /security) — same measure, same rhythm.
+     Tokens only: gate-25 fails any hardcoded colour here. */
+  .policy {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: var(--space-16) var(--space-6) var(--space-24);
+  }
+  .policy-head {
+    margin-bottom: var(--space-10);
+  }
+  .policy h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+  .policy-lead {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    line-height: 1.6;
+  }
+  .policy h2 {
+    font-size: var(--text-xl);
+    margin: var(--space-10) 0 var(--space-3);
+  }
+  .policy p {
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+  }
+  .policy code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--color-surface);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+  }
+  .policy a {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+
+  .state-bullets {
+    line-height: 1.7;
+    color: var(--color-text);
+    margin: 0 0 var(--space-4);
+    padding-left: var(--space-6);
+  }
+  .state-bullets li {
+    margin-bottom: var(--space-3);
+  }
+
+  /* Property ledger — the /commons `today-facts` idiom (label/value grid that stacks at narrow
+     widths). Deliberately NOT a <table>: a two-column table is the 320px overflow class gate-9 and
+     gate-29 exist to catch. */
+  .state-ledger {
+    list-style: none;
+    margin: 0 0 var(--space-6);
+    padding: 0;
+    display: grid;
+    gap: var(--space-5);
+  }
+  .state-row {
+    padding: var(--space-4) var(--space-5);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+  .state-name {
+    font-size: var(--text-base);
+    font-family: var(--font-mono);
+    margin: 0 0 var(--space-2);
+    overflow-wrap: anywhere;
+  }
+  .state-facts {
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: var(--space-1) var(--space-6);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+  }
+  .state-fact {
+    display: contents;
+  }
+  .state-fact dt {
+    color: var(--color-text-muted);
+  }
+  .state-fact dd {
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .policy-foot {
+    margin-top: var(--space-10);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 760px) {
+    .state-facts {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .state-fact dt {
+      margin-top: var(--space-2);
+    }
+  }
+</style>

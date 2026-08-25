@@ -1,0 +1,47 @@
+[
+  {
+    "surface": "vaults",
+    "path": "/vaults/",
+    "status": 200,
+    "loadMs": 546,
+    "title": "Vaults — the aDNA registry",
+    "desc": "Browse the 74-vault aDNA registry — personae, classes, cross-vault relationships",
+    "ogTitle": "Vaults — the aDNA registry",
+    "h1": "The vault registry",
+    "h2count": 5,
+    "bodyLen": 13287,
+    "fullH": 7495,
+    "axeViolations": 0,
+    "consoleErrors": []
+  },
+  {
+    "surface": "design-system",
+    "path": "/design-system/",
+    "status": 200,
+    "loadMs": 549,
+    "title": "Design System — aDNA",
+    "desc": "The living design-token reference for adna.network — colour, type, spacing, radius, shadow, and component samples, driven straight from the site's own tokens.",
+    "ogTitle": "Design System — aDNA",
+    "h1": "Design system",
+    "h2count": 6,
+    "bodyLen": 5018,
+    "fullH": 5584,
+    "axeViolations": 0,
+    "consoleErrors": []
+  },
+  {
+    "surface": "get-started",
+    "path": "/get-started/",
+    "status": 200,
+    "loadMs": 547,
+    "title": "Get Started — aDNA",
+    "desc": "Set up your own local aDNA workspace in one command: clone the workspace image from GitHub — router pre-instantiated, standard embedded — and let your first agent session scaffold your first project.",
+    "ogTitle": "Get Started — aDNA",
+    "h1": "Get Started",
+    "h2count": 7,
+    "bodyLen": 8929,
+    "fullH": 6228,
+    "axeViolations": 0,
+    "consoleErrors": []
+  }
+]

@@ -2,7 +2,7 @@
 type: adr
 adr_number: "048"
 title: "Positioning statement, audience, and embargo-safe protocol language for adna.network"
-status: proposed
+status: accepted
 created: 2026-08-16
 updated: 2026-08-16
 last_edited_by: agent_rosetta
@@ -12,11 +12,19 @@ superseded_by: ""
 tags: [adr, haussmann, positioning, d1]
 ---
 
-# ADR-048 — Positioning statement + embargo language (stub)
+# ADR-048 — Positioning statement + embargo language
 
 ## Status
 
-**Proposed** — authored at HAUSSMANN genesis from Gate B evidence; the decision **content** is produced by mission P0.1 and ratified at **DP2**. This stub fixes the decision *space* so P0.1 opens with the question sharp.
+**Accepted** — ratified at **DP2** (2026-08-16, operator, in-chat) on the candidate-A package recorded in
+§Direction-picked below. Authored at HAUSSMANN genesis from Gate B evidence; content produced by mission P0.1.
+
+> **Deviation record (honesty law).** The charter's Phase-0 gate specified an O4 **human** cold-reader panel
+> (≥80% of ≥5). The operator **waived the panel** at DP2 (in-chat `AskUserQuestion`, 2026-08-16, P1-wave session):
+> ratification rests on the **3/3 unanimous blind synthetic pre-screen `[D-syn]`** (`campaign_haussmann/artifacts/p0_1/prescreen_results.md`)
+> alone. Human validation of the positioning is **deferred to P5.1** (human evidence mission — the campaign's
+> remaining human instrument); the panel kit (`artifacts/p0_1/panel_kit.md`) stays live as P5.1 stimulus.
+> Residual risk accepted: synthetic readers are a disclosed stand-in, never equivalent to the human gate.
 
 ## Context
 
@@ -41,7 +49,9 @@ All three synthetic cold-readers failed or barely passed the 30-second test; the
 > **Dispositions:** ancient-DNA collision → "(agentic DNA)" expansion in the first clause (pre-screen-proven to kill the misparse) · Compliance label → rename to "Provenance & audit" (implements at P2.2; recorded here).
 > **Avoid-list entry (new, evidence-driven):** the phrase-class "the network where that shared context lives" — two blind readers independently misread it as a *hosted* destination; never use "lives/lived" for context location on public surfaces (→ P4.5 voice guide).
 
-**Still `proposed`**: DP2 ratification requires the O4 **human panel** (≥80% of ≥5, kit at `artifacts/p0_1/panel_kit.md`). No site/ hero edit ships before DP2.
+**Ratified as the decision at DP2** (panel waived — see the deviation record in §Status). With DP2 fired, the
+hero copy above is cleared to ship — implementation lane: **P1.1** (claim purge + hero), inheriting this package
+verbatim. The avoid-list entry seeds the P4.5 voice guide.
 
 ## Consequences
 
@@ -49,4 +59,4 @@ Every copy/IA/voice mission (P1.1, P1.2, P2.2, P2.5, P4.5) inherits one sentence
 
 ## Ratification
 
-- **Decision:** _pending P0.1_ · **Ratified-by:** _pending — Stanley (operator; agents never ratify)_ · **Gate:** DP2 (P0.1 close, after the human panel) · **Date:** _pending_ · **Status:** **proposed**.
+- **Decision:** Candidate **A — definition-as-hero** (the §Direction-picked package: lead definition + audience sub + NOT-line + lyric demoted intact + embargo pair + both collision dispositions + the "lives" avoid-class) · **Ratified-by:** Stanley (operator; in-chat `AskUserQuestion`, human panel waived — deviation recorded in §Status) · **Gate:** DP2 (P0.1 close) · **Date:** 2026-08-16 · **Status:** **accepted**.

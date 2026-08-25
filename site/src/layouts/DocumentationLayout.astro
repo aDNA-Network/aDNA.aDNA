@@ -16,13 +16,68 @@ interface Props {
   prev?: { label: string; href: string };
   next?: { label: string; href: string };
   jsonLD?: JsonLDValue;
-  heroImage?: { src: ImageMetadata; alt: string };
+  /**
+   * The `hero_panel` slot (ADR-053's normative five-slot table).
+   *
+   * `credit` added at HAUSSMANN P4.1 O2 — ADR-053's credit law is normative and was UNMET: "every
+   * illustrated artifact carries its provenance where a reader can reach it: generator/model lineage
+   * and the ruling that commissioned it." The ADR names the mechanism as an additive `credit` field
+   * alongside `{ src, alt }` on this prop — never a new component — and byte-identical for any page
+   * that does not pass it (skill_documentation_layout_props_additive_extension). Adding the field
+   * here is what makes that mechanism exist where the ADR said it would.
+   *
+   * ⚠ THE FIELD IS ADDED HERE; IT DOES NOT COVER THE `empty_state` SLOT, AND THE DISTINCTION IS
+   * WORTH KEEPING. P4.1's AC5(b) required the empty-state credit to ride *this* prop — but /vaults
+   * uses BaseLayout + HomeHero, not this layout, and an empty-state mark is not a hero under any
+   * layout, so `heroImage` structurally cannot carry it. ADR-053's normative text names the PATTERN
+   * (an additive optional prop, byte-identical when absent); AC5 named one INSTANCE of it. The
+   * pattern is applied at the slot's own host (EmptyStateMark.astro); the named instance is here.
+   * ⛩ Operator-ruled 2026-08-24 — both, not either. Record: slot_spec_empty_state.md §6.1.
+   *
+   * A credit must not imply a generation pipeline exists: ADR-053 names ours as OWED, not built.
+   */
+  heroImage?: { src: ImageMetadata; alt: string; credit?: string };
+  /**
+   * Page provenance — last-updated date and an edit link (HAUSSMANN P2.3 O2, VITRUVIUS D4).
+   *
+   * Purely additive and optional: a consumer that does not pass it renders byte-identically to
+   * before (skill_documentation_layout_props_additive_extension). Build it with
+   * `sourceForEntry()` / `sourceForSpec()` in utils/contentSource.ts — `updated` is deliberately
+   * absent rather than guessed when git cannot answer.
+   */
+  source?: { editUrl: string; updated?: string; editLabel?: string };
+  /**
+   * Pass-through to BaseLayout's `noindex` (HAUSSMANN P4.2 O2).
+   *
+   * BaseLayout has carried this since the beginning; this layout simply never forwarded it, so a
+   * page that needed both the documentation chrome and `noindex` could have only one. `/design-system`
+   * is that page: it is an internal reference surface, deliberately out of the search index, and it
+   * needed the sidebar + TOC to fix the ranker's weakest Findability score (3.6 — no in-page TOC, no
+   * left nav, on a 5,584px page).
+   *
+   * Purely additive and optional, per `skill_documentation_layout_props_additive_extension`: the
+   * default `false` is what every existing consumer was already getting implicitly, so all 130+ of
+   * them render byte-identically. Extending the shared layout with one optional field is the
+   * sanctioned move here — forking it, or giving /design-system a bespoke copy of the doc chrome,
+   * is not.
+   */
+  noindex?: boolean;
 }
 
-const { title, description, headings = [], prev, next, jsonLD, heroImage } = Astro.props;
+const {
+  title,
+  description,
+  headings = [],
+  prev,
+  next,
+  jsonLD,
+  heroImage,
+  source,
+  noindex = false,
+} = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} jsonLD={jsonLD}>
+<BaseLayout title={title} description={description} jsonLD={jsonLD} noindex={noindex}>
   <div class="doc-layout">
     <!-- Mobile section nav (audit C3: the sidebar was display:none below 768px, leaving
          doc pages with no section navigation on phones). Native disclosure, zero JS; the
@@ -31,7 +86,7 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
     <details class="doc-mobile-nav">
       <summary>In this section</summary>
       <div class="doc-mobile-nav-inner">
-        <SidebarNav />
+        <SidebarNav label="Section navigation" />
       </div>
     </details>
 
@@ -52,8 +107,24 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
           loading="eager"
         />
       )}
+      {/* Additive and optional: a page passing `{ src, alt }` without `credit` emits nothing here
+          and renders byte-identically to before this field existed. gate-35 asserts that rather
+          than assuming it. */}
+      {heroImage?.credit && <p class="doc-hero-credit">{heroImage.credit}</p>}
       <h1>{title}</h1>
       <slot />
+      {source && (
+        <footer class="doc-provenance">
+          {source.updated && (
+            <span class="doc-provenance-updated">
+              Last updated <time datetime={source.updated}>{source.updated}</time>
+            </span>
+          )}
+          <a class="doc-provenance-edit" href={source.editUrl} rel="noopener">
+            {source.editLabel ?? 'Edit this page'}
+          </a>
+        </footer>
+      )}
       {(prev || next) && <PrevNextNav prev={prev} next={next} />}
     </article>
 
@@ -111,9 +182,17 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
 </script>
 
 <style>
+  /* F1 (HAUSSMANN P1.4): the base grid MUST define its named areas. Without them,
+     `grid-area: content` resolves to implicit named lines and throws the article into an
+     implicit second column beside the explicit track — on phones the page rendered a dead
+     left gutter with body text squeezed to ~185px (computed columns "141px 0px 233px" at
+     375). Invisible to gate-9 (nothing overflows; the article just shrinks). */
   .doc-layout {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "mobilenav"
+      "content";
     max-width: var(--content-width);
     margin: 0 auto;
     min-height: calc(100vh - 8rem);
@@ -132,6 +211,7 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
 
   /* ——— Mobile section-nav disclosure (<768px only) ——— */
   .doc-mobile-nav {
+    grid-area: mobilenav;
     margin: var(--space-4) var(--space-6) 0;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
@@ -148,7 +228,7 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
     align-items: center;
     padding: var(--space-2) var(--space-4);
     font-family: var(--font-display);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     font-size: var(--text-sm);
     color: var(--color-text);
   }
@@ -181,6 +261,68 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
     overflow-x: hidden;
   }
 
+  /* Page provenance (HAUSSMANN P2.3 O2). Sits between the content and PrevNextNav; wraps rather
+     than truncates so the date and the edit link both survive a 320px viewport (WCAG 1.4.10). */
+  .doc-provenance {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2) var(--space-4);
+    margin-top: var(--space-8);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+  .doc-provenance-edit {
+    color: var(--color-link);
+    font-weight: var(--font-weight-medium);
+  }
+
+  /* F12 (HAUSSMANN P1.4): the copy-button wrapper below is built at RUNTIME by this layout's
+     script, so CodeBlock.astro's scoped styles never reach it — the button rendered as a plain
+     inline element on its own line under every block. Mirror the CodeBlock idiom here via
+     :global (same tokens, same 44px mobile affordance). */
+  .doc-content :global(.code-block) {
+    position: relative;
+    margin: 0 0 var(--space-6);
+  }
+  .doc-content :global(.code-block pre) {
+    margin: 0;
+  }
+  .doc-content :global(.copy-btn) {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-1);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
+  }
+  .doc-content :global(.code-block:hover .copy-btn),
+  .doc-content :global(.copy-btn:focus-visible) {
+    opacity: 1;
+  }
+  .doc-content :global(.copy-btn:hover) {
+    color: var(--color-text);
+  }
+  @media (max-width: 640px) {
+    .doc-content :global(.copy-btn) {
+      opacity: 1;
+      min-height: 44px;
+      min-width: 44px;
+      padding: var(--space-2);
+    }
+  }
+
   .doc-content :global(.doc-hero) {
     display: block;
     width: 100%;
@@ -190,6 +332,15 @@ const { title, description, headings = [], prev, next, jsonLD, heroImage } = Ast
     border-radius: var(--radius-md);
     margin-bottom: var(--space-6);
     background: var(--color-bg-alt);
+  }
+
+  /* `hero_panel` credit (ADR-053, added P4.1 O2). Pulled up under the hero it describes — the hero's
+     own bottom margin would otherwise leave the credit floating between two unrelated blocks.
+     Token colour only; --color-text-muted is an already-AA-verified pair in both themes. */
+  .doc-content :global(.doc-hero-credit) {
+    margin: calc(var(--space-6) * -1 + var(--space-3)) 0 var(--space-6);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm, 0.9rem);
   }
 
   .doc-toc {

@@ -1,0 +1,23 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 0,
+    "loadMs": 60004,
+    "title": "Warp — The open platform for automating development",
+    "desc": "Warp is an open platform for building software with agents. Build cloud software factories with Oz, and build locally with Warp’s open source agentic terminal. Free to start.",
+    "ogTitle": "Warp — The open platform for automating development",
+    "h1": "The open platform for automating development",
+    "h2count": 3,
+    "bodyLen": 5564,
+    "fullH": 7727,
+    "consoleErrors": [
+      "Loading the script 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/10817224442/?random=1786899736321&cv=11&fst=1786899736321&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be68c1v9203497256za200zd9203497256xec&gcd=13l3l3l3",
+      "Connecting to 'https://44.212.189.233/is?cb=1786899736350' violates the following Content Security Policy directive: \"connect-src 'self' https://api.sanity.io https://*.api.sanity.io https://sanity-cdn.com https://cdn.sanity.io https://stat",
+      "Fetch API cannot load https://44.212.189.233/is?cb=1786899736350. Refused to connect because it violates the document's Content Security Policy.",
+      "Loading the script 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/10817224442/?random=1786899736405&cv=11&fst=1786899736405&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be68c1v9203497256z89257647363za200zd9203497256xec&",
+      "Loading the image 'https://www.linkedin.com/px/li_sync?redirect=https%3A%2F%2Fpx.ads.linkedin.com%2Fcollect%3Fv%3D2%26fmt%3Djs%26pid%3D4810452%26time%3D1786899736344%26li_adsId%3D2c808c5e-6daf-43d5-92b4-5f83233dfd0a%26url%3Dhttps%253A%252F%",
+      "Loading the image 'https://image6.pubmatic.com/AdServer/UCookieSetPug?rd=https%3A%2F%2Fevent-va1.pubmatic.com%2Fevent%3Fcb%3D455980916%26ref%3Dhttps%3A%2F%2Fwww.warp.dev%2F%26adv%3D28875&gdpr=0' violates the following Content Security Polic"
+    ]
+  }
+]

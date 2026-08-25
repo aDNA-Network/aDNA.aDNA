@@ -1,0 +1,339 @@
+<meta charset="utf-8">
+<title>aDNA IA comps — P2.2 / DP5</title>
+<style>
+  /* ===== HAUSSMANN P2.2 O1 · IA comps (Storyweave comp pattern) =====================
+     Self-contained: no external fonts/images/scripts. Scoped to #comp so it can be
+     pasted into a review surface. Deviation from Storyweave's one-file-per-comp: IA is
+     judged by DELTA, so the three states share one file and a switcher — flipping
+     between them is the comparison. Nav sets, counts and dispositions are transcribed
+     from ADR-049, which derived them from disk. ============================== */
+  #comp{
+    --bg:#0e0e15; --bg2:#08080c; --panel:#13131c; --line:#242a40; --line2:#23273f;
+    --ink:#c8d0f0; --head:#f7f7fb; --muted:#8b93b8; --faint:#565f89;
+    --cyan:#7dcfff; --purple:#bb9af7; --green:#9ece6a; --amber:#e0af68; --red:#f7768e;
+    --disp:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+    font-family:var(--disp); color:var(--ink); background:var(--bg);
+    min-height:100vh; -webkit-font-smoothing:antialiased; line-height:1.5;
+  }
+  #comp[data-theme="light"]{
+    --bg:#f5f6fb; --bg2:#e9ecf7; --panel:#fff; --line:#dde1f0; --line2:#e4e7f4;
+    --ink:#3a4066; --head:#171826; --muted:#5c6288; --faint:#8b90b0;
+    --cyan:#1f83c9; --purple:#7a5bc0; --green:#4a8a2a; --amber:#a56d10; --red:#c0344f;
+  }
+  #comp *{box-sizing:border-box} #comp a{color:inherit}
+  .evalbar{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;padding:.6rem 1rem;
+    background:var(--bg2);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:9}
+  .badge-tier{font-family:var(--mono);font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+  .badge-tier b{color:var(--cyan)}
+  .segs{margin-left:auto;display:flex;flex-wrap:wrap;gap:.5rem}
+  .seg{display:inline-flex;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:2px}
+  .seg .lbl{font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding:0 .45rem}
+  .seg button{appearance:none;background:none;border:0;color:var(--muted);font-family:var(--disp);
+    font-weight:600;font-size:.72rem;padding:.28rem .6rem;border-radius:7px;cursor:pointer;transition:.15s}
+  .seg button[aria-pressed=true]{background:color-mix(in srgb,var(--cyan) 22%,transparent);color:var(--head)}
+  .seg button:focus-visible{outline:2px solid var(--cyan);outline-offset:1px}
+  .wrap{max-width:74rem;margin:0 auto;padding:clamp(1.2rem,3vw,2.2rem) clamp(1rem,3vw,2rem)}
+  h2.opt{font-size:clamp(1.4rem,2.6vw,2rem);color:var(--head);margin:0 0 .3rem;letter-spacing:-.015em}
+  .thesis{color:var(--muted);max-width:52rem;margin:0 0 1.6rem;font-size:1rem}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.2rem;margin-bottom:1.1rem}
+  .panel h3{margin:0 0 .8rem;font-size:.68rem;font-family:var(--mono);letter-spacing:.12em;
+    text-transform:uppercase;color:var(--faint);font-weight:600}
+  /* --- the rendered nav --- */
+  .navbar{display:flex;align-items:center;gap:.15rem;flex-wrap:wrap;background:var(--bg2);
+    border:1px solid var(--line2);border-radius:10px;padding:.55rem .7rem}
+  .brand{font-weight:700;color:var(--head);margin-right:.7rem;letter-spacing:-.01em}
+  .navitem{font-size:.83rem;font-weight:500;color:var(--ink);padding:.34rem .58rem;border-radius:7px;
+    text-decoration:none;white-space:nowrap}
+  .navitem:hover{background:color-mix(in srgb,var(--cyan) 14%,transparent)}
+  .navitem.more{color:var(--amber);border:1px dashed color-mix(in srgb,var(--amber) 55%,transparent)}
+  .navcta{margin-left:auto;background:var(--cyan);color:#081018;font-weight:600;font-size:.8rem;
+    padding:.36rem .8rem;border-radius:8px;text-decoration:none;white-space:nowrap}
+  .navmeta{display:flex;gap:1.1rem;flex-wrap:wrap;margin-top:.6rem;font-family:var(--mono);font-size:.66rem;color:var(--faint)}
+  .navmeta b{font-family:var(--disp)}
+  .ok{color:var(--green)} .bad{color:var(--red)} .warn{color:var(--amber)}
+  /* --- fold-out of what a nav item absorbs --- */
+  .absorb{margin-top:.7rem;display:grid;gap:.3rem}
+  .absorb div{font-size:.78rem;color:var(--muted)}
+  .absorb b{color:var(--ink);font-weight:600}
+  .absorb code{font-family:var(--mono);font-size:.72rem;color:var(--cyan)}
+  /* --- home section stack --- */
+  .stack{display:grid;gap:.4rem}
+  .sect{display:flex;align-items:center;gap:.7rem;background:var(--bg2);border:1px solid var(--line2);
+    border-radius:8px;padding:.5rem .7rem;font-size:.85rem}
+  .sect .n{font-family:var(--mono);font-size:.66rem;color:var(--faint);min-width:1.1rem}
+  .sect.changed{border-color:color-mix(in srgb,var(--cyan) 50%,transparent);
+    background:color-mix(in srgb,var(--cyan) 8%,var(--bg2))}
+  .sect .tag{margin-left:auto;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--cyan)}
+  /* --- disposition table --- */
+  table{width:100%;border-collapse:collapse;font-size:.83rem}
+  th,td{text-align:left;padding:.45rem .55rem;border-bottom:1px solid var(--line2);vertical-align:top}
+  th{font-family:var(--mono);font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);font-weight:600}
+  td code{font-family:var(--mono);font-size:.75rem;color:var(--cyan)}
+  td.to code{color:var(--green)}
+  .arrow{color:var(--faint);padding:0 .2rem}
+  .tally{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:.8rem;font-size:.8rem;color:var(--muted)}
+  .tally b{color:var(--head);font-size:1.15rem;font-weight:700;display:block;font-family:var(--mono)}
+  /* --- pros/cons --- */
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media(max-width:720px){.pc{grid-template-columns:1fr}}
+  .pc ul{margin:0;padding-left:1.1rem}.pc li{margin-bottom:.4rem;font-size:.86rem;color:var(--muted)}
+  .pc li b{color:var(--ink)}
+  .pc h4{margin:0 0 .5rem;font-size:.68rem;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase}
+  .for h4{color:var(--green)} .against h4{color:var(--red)}
+  .note{font-size:.8rem;color:var(--faint);border-left:2px solid var(--line);padding-left:.8rem;margin-top:1rem}
+  [hidden]{display:none !important}
+</style>
+
+<div id="comp" data-theme="dark">
+  <div class="evalbar">
+    <span class="badge-tier">HAUSSMANN <b>P2.2 O1</b> · IA comps · ⛩ DP5</span>
+    <div class="segs">
+      <div class="seg"><span class="lbl">Option</span>
+        <button data-opt="cur" aria-pressed="false">Current</button>
+        <button data-opt="a" aria-pressed="true">A · Use&nbsp;cases</button>
+        <button data-opt="c" aria-pressed="false">C · Tasks</button>
+      </div>
+      <div class="seg"><span class="lbl">Theme</span>
+        <button data-theme-btn="dark" aria-pressed="true">Dark</button>
+        <button data-theme-btn="light" aria-pressed="false">Light</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- ================= CURRENT ================= -->
+    <section data-pane="cur" hidden>
+      <h2 class="opt">Current — the baseline being replaced</h2>
+      <p class="thesis">Three parallel audience branches, each addressing the same readers. Shown so
+        the delta is visible rather than asserted. <b>Fails the ≤7 criterion on both counts:</b> 8 top-level
+        items, and a <code>More</code> menu holding Reference and Glossary — load-bearing by any reading.</p>
+
+      <div class="panel"><h3>Primary navigation</h3>
+        <nav class="navbar">
+          <span class="brand">aDNA</span>
+          <a class="navitem">Network</a><a class="navitem">Vaults</a><a class="navitem">Commons</a>
+          <a class="navitem">Learn</a><a class="navitem">Patterns</a><a class="navitem">Use Cases</a>
+          <a class="navitem">Community</a><a class="navitem more">More ▾</a>
+          <a class="navcta">Get Started</a>
+        </nav>
+        <div class="navmeta">
+          <span><b class="bad">8</b> top-level <span class="bad">✕ over ≤7</span></span>
+          <span><b>11</b> destinations</span>
+          <span class="bad">✕ More is load-bearing (Reference · Glossary · Guides · For you)</span>
+        </div>
+      </div>
+
+      <div class="panel"><h3>Homepage section stack</h3>
+        <div class="stack">
+          <div class="sect"><span class="n">1</span>Hero — definition-as-hero (ADR-048)</div>
+          <div class="sect"><span class="n">2</span>Movement band — the lyric, demoted intact</div>
+          <div class="sect"><span class="n">3</span>What a context democracy is</div>
+          <div class="sect"><span class="n">4</span>The living registry</div>
+          <div class="sect"><span class="n">5</span>How it Works</div>
+          <div class="sect"><span class="n">6</span>The Standard</div>
+          <div class="sect changed"><span class="n">7</span>Join the network — <b>audience pathways ×5</b><span class="tag">the debt</span></div>
+        </div>
+      </div>
+
+      <div class="panel"><h3>The duplication, measured</h3>
+        <table>
+          <tr><th>Audience</th><th>Landing</th><th>/adopters/</th><th>/use-cases/</th><th>#</th></tr>
+          <tr><td>Researcher / lab</td><td><code>/researchers/</code></td><td><code>adopter-researcher</code></td><td><code>research-lab</code></td><td>3</td></tr>
+          <tr><td>Educator</td><td><code>/educators/</code></td><td><code>adopter-educator</code></td><td><code>educator</code></td><td>3</td></tr>
+          <tr><td>Enterprise</td><td><code>/enterprise/</code> + <code>/compliance/</code></td><td><code>adopter-enterprise-team</code></td><td><code>enterprise-team</code></td><td>4</td></tr>
+          <tr><td>Startup</td><td><code>/startup-first-hour/</code></td><td><code>adopter-startup</code></td><td><code>startup</code></td><td>3</td></tr>
+          <tr><td>Solo developer</td><td>—</td><td><code>adopter-solo-developer</code></td><td><code>solo-developer</code></td><td>2</td></tr>
+          <tr><td>Open source</td><td>—</td><td>—</td><td><code>open-source-project</code></td><td>1</td></tr>
+        </table>
+        <div class="tally">
+          <span><b>16</b> pages</span><span><b>6</b> audiences</span>
+          <span><b class="bad">4</b> byte-identical &lt;title&gt; pairs</span>
+          <span><b class="bad">4</b> copies of the link set</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OPTION A ================= -->
+    <section data-pane="a">
+      <h2 class="opt">Option A — consolidate to <code>/use-cases/</code></h2>
+      <p class="thesis">The narrative surface wins: richer prose, the more conventional public label,
+        the larger set. <b>Redirect-only — no content rewrite.</b> Every audience keeps a browsable
+        page; the reader can still self-select.</p>
+
+      <div class="panel"><h3>Primary navigation</h3>
+        <nav class="navbar">
+          <span class="brand">aDNA</span>
+          <a class="navitem">Standard</a><a class="navitem">Learn</a><a class="navitem">Vaults</a>
+          <a class="navitem">Network</a><a class="navitem">Commons</a><a class="navitem">Use Cases</a>
+          <a class="navitem">Community</a>
+          <a class="navcta">Get Started</a>
+        </nav>
+        <div class="navmeta">
+          <span><b class="ok">7</b> top-level <span class="ok">✓ meets ≤7</span></span>
+          <span><b>7</b> destinations</span>
+          <span class="ok">✓ no More overflow</span>
+        </div>
+        <div class="absorb">
+          <div><b>Standard</b> absorbs <code>/reference/*</code> + <code>/glossary/*</code> — the thing itself, first in nav because it is first in the positioning sentence.</div>
+          <div><b>Learn</b> absorbs <code>/patterns/*</code> + <code>/how/*</code> (Guides) — everything that teaches.</div>
+          <div><b>Use Cases</b> becomes the single audience surface; <code>For you</code> dissolves.</div>
+        </div>
+      </div>
+
+      <div class="panel"><h3>Homepage section stack</h3>
+        <div class="stack">
+          <div class="sect"><span class="n">1</span>Hero — unchanged (ADR-048)</div>
+          <div class="sect"><span class="n">2</span>Movement band — unchanged</div>
+          <div class="sect"><span class="n">3</span>What a context democracy is</div>
+          <div class="sect"><span class="n">4</span>The living registry</div>
+          <div class="sect"><span class="n">5</span>How it Works</div>
+          <div class="sect"><span class="n">6</span>The Standard</div>
+          <div class="sect changed"><span class="n">7</span>Join the network — pathways now point at <code>/use-cases/*</code>, one per audience<span class="tag">rewired</span></div>
+        </div>
+      </div>
+
+      <div class="panel"><h3>URL disposition — 11 permanent redirects</h3>
+        <table>
+          <tr><th>From</th><th></th><th class="to">To</th><th>Why</th></tr>
+          <tr><td><code>/adopters/</code></td><td class="arrow">→</td><td class="to"><code>/use-cases/</code></td><td>hub merges</td></tr>
+          <tr><td><code>/adopters/adopter-researcher/</code></td><td class="arrow">→</td><td class="to"><code>/use-cases/research-lab/</code></td><td rowspan="5">5 persona docs fold into their richer twin</td></tr>
+          <tr><td><code>/adopters/adopter-educator/</code></td><td class="arrow">→</td><td class="to"><code>/use-cases/educator/</code></td></tr>
+          <tr><td><code>/adopters/adopter-enterprise-team/</code></td><td class="arrow">→</td><td class="to"><code>/use-cases/enterprise-team/</code></td></tr>
+          <tr><td><code>/adopters/adopter-startup/</code></td><td class="arrow">→</td><td class="to"><code>/use-cases/startup/</code></td></tr>
+          <tr><td><code>/adopters/adopter-solo-developer/</code></td><td class="arrow">→</td><td class="to"><code>/use-cases/solo-developer/</code></td></tr>
+          <tr><td><code>/researchers/</code></td><td class="arrow">→</td><td class="to"><code>/use-cases/research-lab/</code></td><td rowspan="4">segment landings retire (7.7)</td></tr>
+          <tr><td><code>/educators/</code></td><td class="arrow">→</td><td class="to"><code>/use-cases/educator/</code></td></tr>
+          <tr><td><code>/enterprise/</code></td><td class="arrow">→</td><td class="to"><code>/use-cases/enterprise-team/</code></td></tr>
+          <tr><td><code>/startup-first-hour/</code></td><td class="arrow">→</td><td class="to"><code>/use-cases/startup/</code></td></tr>
+          <tr><td><code>/compliance/</code></td><td class="arrow">→</td><td class="to"><code>/provenance-audit/</code></td><td><b>owed by ADR-048</b> — a topic, not an audience</td></tr>
+        </table>
+        <div class="tally">
+          <span><b>11</b> redirects</span><span><b class="ok">7</b> audience pages (from 16)</span>
+          <span><b class="ok">0</b> duplicate titles</span><span><b class="ok">0</b> content rewritten</span>
+        </div>
+      </div>
+
+      <div class="panel pc">
+        <div class="for"><h4>For</h4><ul>
+          <li><b>Redirect-only.</b> The surviving pages are the ones already written best; nothing is re-authored, so the risk is close to zero.</li>
+          <li><b>Keeps the self-select surface.</b> A first-time visitor can still scan "is this for me?" — a real acquisition asset.</li>
+          <li><b>Most reversible</b> of the three if the ranker or later evidence disagrees.</li>
+          <li>Solves the enterprise routing gap: <code>/enterprise</code> folds into a nav-reachable page.</li>
+        </ul></div>
+        <div class="against"><h4>Against</h4><ul>
+          <li><b>"Use cases" is a marketing register</b> on a site whose positioning is deliberately anti-marketing.</li>
+          <li>It describes <b>scenarios</b> where the reader often wants <b>instructions</b>.</li>
+          <li>Keeps an identity taxonomy — the thing 7.7 warns is a substitute for positioning — merely deduplicated.</li>
+          <li>Nav still carries 7; no headroom for a future section.</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ================= OPTION C ================= -->
+    <section data-pane="c" hidden>
+      <h2 class="opt">Option C — retire into positioned sections (task taxonomy)</h2>
+      <p class="thesis">Both branches retire. The site stops sorting readers by <b>who they are</b> and
+        sorts work by <b>what they are trying to do</b> — which is what the positioning promises:
+        "always know where things live". Scenario narratives survive as <b>evidence</b> attached to a
+        task, not as segments.</p>
+
+      <div class="panel"><h3>Primary navigation</h3>
+        <nav class="navbar">
+          <span class="brand">aDNA</span>
+          <a class="navitem">Standard</a><a class="navitem">Learn</a><a class="navitem">Vaults</a>
+          <a class="navitem">Network</a><a class="navitem">Commons</a><a class="navitem">Community</a>
+          <a class="navcta">Get Started</a>
+        </nav>
+        <div class="navmeta">
+          <span><b class="ok">6</b> top-level <span class="ok">✓ under ≤7</span></span>
+          <span><b>6</b> destinations</span>
+          <span class="ok">✓ no More overflow</span>
+          <span class="ok">✓ headroom for one future section</span>
+        </div>
+        <div class="absorb">
+          <div><b>Standard</b> absorbs <code>/reference/*</code> + <code>/glossary/*</code>.</div>
+          <div><b>Learn</b> absorbs <code>/patterns/*</code> + <code>/how/*</code>.</div>
+          <div><b>Get Started</b> stays the header CTA and becomes the <b>task surface</b> — which is where a task taxonomy belongs, reached by intent rather than browsed by identity.</div>
+        </div>
+      </div>
+
+      <div class="panel"><h3>Homepage section stack</h3>
+        <div class="stack">
+          <div class="sect"><span class="n">1</span>Hero — unchanged (ADR-048)</div>
+          <div class="sect"><span class="n">2</span>Movement band — unchanged</div>
+          <div class="sect"><span class="n">3</span>What a context democracy is</div>
+          <div class="sect"><span class="n">4</span>The living registry</div>
+          <div class="sect"><span class="n">5</span>How it Works</div>
+          <div class="sect"><span class="n">6</span>The Standard</div>
+          <div class="sect changed"><span class="n">7</span>Join the network — pathways become <b>4 task paths</b> into <code>/get-started/</code><span class="tag">re-framed</span></div>
+        </div>
+        <div class="absorb">
+          <div><code>#start-a-vault</code> · <code>#adopt-across-a-team</code> · <code>#teach-with-it</code> · <code>#evaluate-for-provenance</code></div>
+        </div>
+      </div>
+
+      <div class="panel"><h3>URL disposition — 18 permanent redirects</h3>
+        <table>
+          <tr><th>Set</th><th>Count</th><th class="to">Destination</th></tr>
+          <tr><td><code>/adopters/</code> hub + 5 persona docs</td><td>6</td><td class="to">matching <code>/get-started/#task</code></td></tr>
+          <tr><td><code>/use-cases/</code> hub + 6 docs</td><td>7</td><td class="to">the task they illustrate, as evidence</td></tr>
+          <tr><td>4 persona landings</td><td>4</td><td class="to">matching task path</td></tr>
+          <tr><td><code>/compliance/</code></td><td>1</td><td class="to"><code>/provenance-audit/</code> (ADR-048)</td></tr>
+        </table>
+        <div class="tally">
+          <span><b class="warn">18</b> redirects</span><span><b class="ok">0</b> audience pages (from 16)</span>
+          <span><b class="ok">0</b> duplicate titles</span><span><b class="warn">13</b> pages re-framed</span>
+        </div>
+      </div>
+
+      <div class="panel pc">
+        <div class="for"><h4>For</h4><ul>
+          <li><b>The only option that matches ADR-048's own self-description</b> — standard, docs, registry — at the top level.</li>
+          <li><b>Answers 7.7 rather than deduplicating it.</b> The identity taxonomy is retired, not tidied.</li>
+          <li>Smallest nav (6) with genuine headroom; largest reduction in surface.</li>
+          <li>Task-shaped content is what a reader arriving from an agentic tool actually wants.</li>
+        </ul></div>
+        <div class="against"><h4>Against</h4><ul>
+          <li><b>Largest move</b> — 18 URLs and 13 pages re-framed, so the most exposure in one commit.</li>
+          <li><b>Deletes the self-select surface.</b> A visitor who wants to see themselves on the page no longer can.</li>
+          <li><b>Least reversible</b>; the prose is re-framed, not just re-homed.</li>
+          <li>Concentrates weight on <code>/get-started/</code>, a page not yet built to carry four paths.</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <p class="note"><b>Option B (consolidate to <code>/adopters/</code>) was cut at O0, not omitted.</b>
+      It is dominated on the evidence: it costs <i>more</i> redirects (12) <i>and</i> a substantial content
+      rewrite, because it retires the richer prose into the thinner shells — and it has no home for
+      <code>open-source-project</code>, which has no adopter twin. "Adopters" is also insider vocabulary;
+      a stranger does not self-identify as one. Full reasoning in ADR-049 §Option&nbsp;B.</p>
+
+    <p class="note">Every disposition above is <b>301 permanent</b> under ADR-051, which was ratified and
+      verified live earlier today (162 probe assertions, 0 failures). Content is <b>re-homed, never
+      deleted</b> (SO-6 applies to prose). Nothing here is implemented — these are comps for ⛩ DP5.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var c=document.getElementById('comp');
+  c.querySelectorAll('[data-opt]').forEach(function(b){
+    b.addEventListener('click',function(){
+      c.querySelectorAll('[data-opt]').forEach(function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');
+      c.querySelectorAll('[data-pane]').forEach(function(p){
+        p.hidden = (p.getAttribute('data-pane') !== b.getAttribute('data-opt'));
+      });
+    });
+  });
+  c.querySelectorAll('[data-theme-btn]').forEach(function(b){
+    b.addEventListener('click',function(){
+      c.querySelectorAll('[data-theme-btn]').forEach(function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');
+      c.setAttribute('data-theme', b.getAttribute('data-theme-btn'));
+    });
+  });
+})();
+</script>

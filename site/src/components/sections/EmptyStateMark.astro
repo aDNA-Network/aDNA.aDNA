@@ -1,0 +1,105 @@
+---
+/**
+ * `empty_state` — slot host (HAUSSMANN P4.1 O2).
+ *
+ * Governed by ADR-053's normative five-slot table; construction rules and the full contributor
+ * checklist live at `how/campaigns/campaign_haussmann/artifacts/p4_1/slot_spec_empty_state.md`.
+ * Read the spec before applying this to a new page — it is short, and §1.1 and §4 are the two
+ * clauses that are easy to violate without noticing.
+ *
+ * ⚠ ADR-053's "never a new component" governs the CREDIT MECHANISM — do not build a `<Credit>`
+ * component — not the slot itself. `hero_panel` is a component too (`HomeHero`). Stated here so a
+ * later reader does not mistake this file for a violation of the ADR it implements.
+ *
+ * TWO RULES THIS COMPONENT CANNOT ENFORCE FOR YOU, both asserted by gate-35 instead:
+ *
+ *  1. **Key the render on the ABSENCE, never on a tier/stage/class/status** (spec §1.1). The two sets
+ *     are measurably different — 5 of 57 `planned` vaults have no empty field at all, while 12
+ *     non-planned vaults do — and a tier-keyed treatment re-introduces exactly the ranking read
+ *     ADR-052 §tiers.2 ruled against.
+ *  2. **The mark is never the sole carrier of meaning** (spec §4). It is `aria-hidden` and adds
+ *     nothing to the accessibility tree, so the visible sentence beside it must say the whole thing.
+ *     Removing the mark must lose zero information.
+ *
+ * The SVG is inlined via `?raw` rather than `<img>` so `currentColor` resolves against the text
+ * colour of wherever it sits — which is what makes the both-theme contract structural rather than a
+ * spot-check (spec §3, §5), and keeps the artifact out of gate-25 G25b's colour-literal scan.
+ */
+import markSvg from '../../assets/slots/empty_state_mark.svg?raw';
+
+interface Props {
+  /**
+   * `sm` — ~1em, inline, sits beside an honest-absent line inside a card.
+   * `lg` — ~96px, block, heads a zero-result region.
+   * One artifact at two scales, by design: it is the cheapest available proof that the slot spec
+   * generalizes rather than describing a single application of itself.
+   */
+  scale?: 'sm' | 'lg';
+  /**
+   * Per-artifact provenance (ADR-053's credit law). PURELY ADDITIVE AND OPTIONAL: a consumer that
+   * does not pass it renders byte-identically, and gate-35 asserts that byte-identity rather than
+   * assuming it.
+   *
+   * Pass it ONCE PER SURFACE, not once per mark. The credit is a property of the artifact, and the
+   * artifact is one file — 52 identical provenance lines would satisfy the letter of "where a reader
+   * can reach it" and defeat the sentence it is made of (spec §6).
+   */
+  credit?: string;
+  /** Extra class hook for the consuming surface. Never used to recolour the mark. */
+  class?: string;
+}
+
+const { scale = 'sm', credit, class: className } = Astro.props;
+---
+
+<span class:list={['empty-state-mark', `scale-${scale}`, className]} aria-hidden="true" set:html={markSvg} />
+{credit && <p class="empty-state-credit">{credit}</p>}
+
+<style>
+  /* Token-driven throughout (gate-14 / gate-25). The mark carries NO colour of its own: it inherits
+     `currentColor` from whatever text it sits beside, which is why it introduces no contrast pair in
+     either theme and why `token_aa_check.py` has nothing new to test for it (spec §5). */
+  .empty-state-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    /* The mark is a companion to a sentence, never a peer of it: held below full text weight so it
+       reads as an annotation on the absence rather than as a second thing to look at. */
+    opacity: 0.55;
+  }
+  .empty-state-mark :global(svg) {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* sm — inline beside an honest-absent line. Sized in `em` so it tracks the type it annotates
+     rather than a fixed pixel size that would drift at the page's clamp() scale extremes. */
+  .scale-sm {
+    width: 1.05em;
+    height: 1.05em;
+    margin-right: 0.4em;
+    vertical-align: -0.15em;
+  }
+
+  /* lg — heads a zero-result region. */
+  .scale-lg {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto var(--space-3, 0.75rem);
+    display: flex;
+  }
+
+  .empty-state-credit {
+    margin: var(--space-3, 0.75rem) 0 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm, 0.9rem);
+  }
+
+  /* The mark is decorative and static; nothing here animates. Declared anyway so a future edit that
+     adds motion inherits the reduced-motion contract instead of re-discovering it (ADR-053 a11y). */
+  @media (prefers-reduced-motion: reduce) {
+    .empty-state-mark { transition: none; }
+  }
+</style>

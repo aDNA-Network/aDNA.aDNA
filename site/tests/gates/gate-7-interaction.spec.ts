@@ -59,18 +59,30 @@ test('G7 Interaction: homepage has ≤ MAX_MEDIA_PLACEHOLDERS placeholder elemen
 });
 
 test('G7 Interaction: site-wide placeholder count ≤ MAX_MEDIA_PLACEHOLDERS', async ({ page }) => {
-  // Check a representative set of content pages for stray placeholders
+  // Check a representative set of content pages for stray placeholders.
+  //
+  // HAUSSMANN P2.2: this list used to end with '/adopters/solo-developer' — a route that
+  // NEVER existed (the real slug was '/adopters/adopter-solo-developer'). page.goto does not
+  // throw on a 404, so that entry counted placeholders on the 404 page and the assertion
+  // passed vacuously for its whole life. The route is gone now (301 to /use-cases/), but the
+  // real fix is the status check below: a dead entry in this list must fail loudly rather
+  // than quietly contributing zero. Same silent-drop class as P2.1's vault_slug bug.
   const contentPages = [
     '/',
     '/learn/concepts/triad',
     '/learn/tutorials/first-claude-md',
     '/use-cases/solo-developer',
-    '/adopters/solo-developer',
+    '/use-cases/enterprise-team',
   ];
 
   let total = 0;
   for (const path of contentPages) {
-    await page.goto(path, { waitUntil: 'networkidle' });
+    const resp = await page.goto(path, { waitUntil: 'networkidle' });
+    expect(
+      resp?.status(),
+      `${path} must resolve 200 — a 404 here would silently contribute zero placeholders ` +
+      `and make this assertion vacuous`
+    ).toBe(200);
     const count = await page.evaluate(() =>
       document.querySelectorAll('[data-media], .media-placeholder').length
     );

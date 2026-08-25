@@ -6,10 +6,10 @@ campaign: campaign_haussmann
 phase: P5
 decade: 2
 owner: stanley
-status: queued-provisional
+status: queued   # ⛩ DP6 RATIFIED 2026-08-19 — activated. RESCOPED UP with two HARD preconditions: (1) the instrument v1.1 anchor fix MUST land BEFORE this mission — at P2.6 both scorers re-read D2's conjunctive anchor the opposite way from the baseline, worth ~0.8 points of instrument drift on ONE dimension; unfixed it would operate across all twelve here. (2) It refreshes EVERY evidence packet or states which it did not — P2.6's pack was out-run by both scorers (9 and 5 divergences, every one favouring the site). The full 12-dimension composite is publishable only once D3 has a number, which needs O0b.
 mission_class: verification
 executor_tier: fable
-token_budget_estimated: "~250–400 kT across 2 sessions: full VITRUVIUS re-score (2 agents + human evidence + operator arbiter) + 16-persona capstone ranker + launch checklist/rollback/monitoring + campaign AAR + close cascade (ADR-016)"
+token_budget_estimated: "~280–430 kT across 2 sessions: full VITRUVIUS re-score (2 agents + human evidence + operator arbiter) + 16-persona capstone ranker + launch checklist/rollback/monitoring + campaign AAR + close cascade, PLUS the v1.1 instrument fix landing first and a full refresh of every evidence packet (sweep/ + inventory/ + hypotheses_resolved.md, none of which P2.6's O0 refreshed) + re-authoring the lost production crawler scripts/crawl_haussmann_b1.mjs. Raised from ~250–400 kT at ⛩ DP6 2026-08-19 (ADR-016/SO#11)"
 token_budget_actual:
 created: 2026-08-16
 last_edited_by: agent_rosetta

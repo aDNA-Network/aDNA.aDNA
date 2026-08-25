@@ -6,15 +6,19 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "prebuild": "node ../scripts/build_vaults_data.mjs && node ../scripts/build_install_truth.mjs",
+    "prebuild": "node ../scripts/build_vaults_data.mjs && node ../scripts/build_install_truth.mjs && node scripts/build_tour_files.mjs",
     "sync:vaults": "node ../scripts/build_vaults_data.mjs",
     "sync:install": "node ../scripts/build_install_truth.mjs",
     "sync:graph": "node ../scripts/build_graph_svg.mjs",
+    "sync:tour": "node scripts/build_tour_files.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "test:gates": "playwright test",
     "test:gates:fast": "playwright test --grep-invert @audit",
-    "audit:p1s3": "playwright test --grep @audit"
+    "check:links": "playwright test tests/gates/gate-31-link-integrity.spec.ts",
+    "check:links:external": "node scripts/check_external_links.mjs",
+    "audit:p1s3": "playwright test --grep @audit",
+    "check:markup": "html-validate -c .htmlvalidate.cjs 'dist/**/*.html'"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",
@@ -33,6 +37,8 @@
     "@axe-core/playwright": "^4.11.1",
     "@playwright/test": "^1.59.1",
     "@tailwindcss/vite": "^4.1.4",
+    "html-validate": "^11.4.0",
+    "schema-dts": "^2.0.0",
     "tailwindcss": "^4.1.4",
     "typescript": "^5.8.3"
   }

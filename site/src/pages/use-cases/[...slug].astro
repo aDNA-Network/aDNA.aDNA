@@ -1,7 +1,9 @@
 ---
 import { getCollection, render } from 'astro:content';
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import { sourceForEntry } from '../../utils/contentSource';
 import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../utils/seo';
+import { SITE_ORIGIN } from '../../data/canonical';
 
 export async function getStaticPaths() {
   const docs = await getCollection('docs', ({ data }) => data.section === 'use-cases' && !data.draft);
@@ -12,9 +14,10 @@ export async function getStaticPaths() {
 }
 
 const { doc } = Astro.props;
+const source = sourceForEntry(doc);
 const { Content, headings } = await render(doc);
 
-const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? SITE_ORIGIN;
 
 const jsonLD = [
   buildTechArticleJsonLD({
@@ -35,6 +38,27 @@ const jsonLD = [
   description={doc.data.description ?? `${doc.data.doc_title} — aDNA use case.`}
   headings={headings}
   jsonLD={jsonLD}
+
+  source={source}
 >
+  {/* HAUSSMANN P1.1 (hostile-read finding 13): the hub carries the "illustrative scenarios"
+      disclosure but deep links land here without it — every leaf now discloses on-page, so a
+      reader arriving from a redirect or a search snippet never mistakes the named personas for
+      real adopters. P2.2 made this the ONLY audience surface (the /adopters branch 301s here),
+      so the on-page disclosure now carries the anti-claim alone — claim register R-76 moved
+      onto this route with it. */}
+  <p class="uc-illustrative-note">
+    ℹ Illustrative scenario — a composite archetype, not a real named adopter.
+  </p>
   <Content />
 </DocumentationLayout>
+
+<style>
+  .uc-illustrative-note {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    border-left: 3px solid var(--color-border);
+    padding-left: var(--space-3);
+    margin: 0 0 var(--space-6);
+  }
+</style>

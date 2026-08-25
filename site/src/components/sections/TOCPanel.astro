@@ -23,6 +23,15 @@ const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 )}
 
 <script>
+  // HAUSSMANN P4.2 O2 — the top inset was a hardcoded `-80px`, a second copy of the sticky-header
+  // height that nothing kept in sync with the header. It now reads the ONE constant: the computed
+  // `scroll-padding-top` the anchor-jump fix (locks A5/B4) puts on <html>. Two mechanisms that must
+  // agree about where the header ends now cannot disagree.
+  // The literal stays only as a fallback for the case the property computes to `auto` — which is
+  // what it did site-wide before this session, so the fallback is the OLD behaviour, not a guess.
+  const rootPad = getComputedStyle(document.documentElement).scrollPaddingTop;
+  const topInset = /^[\d.]+px$/.test(rootPad) ? rootPad : '80px';
+
   const observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
@@ -33,9 +42,12 @@ const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
         }
       }
     },
-    { rootMargin: '-80px 0px -70% 0px', threshold: 0 }
+    { rootMargin: `-${topInset} 0px -70% 0px`, threshold: 0 }
   );
 
+  // `.doc-content` is DocumentationLayout's article wrapper. The selector is deliberately scoped:
+  // a page whose headings live outside it gets a TOC with no scroll-spy rather than a spy that
+  // fights the page's own scroll handlers.
   document.querySelectorAll('.doc-content h2[id], .doc-content h3[id]').forEach((heading) => {
     observer.observe(heading);
   });
@@ -49,7 +61,7 @@ const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
   .toc-title {
     font-family: var(--font-display);
     font-size: var(--text-xs);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--color-text-muted);

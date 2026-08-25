@@ -1,0 +1,257 @@
+---
+/**
+ * A single AEP (HAUSSMANN P3.5 O1; ADR-055).
+ *
+ * Route is /community/proposals/aep-<n>/ — derived from the immutable number (§2), never from the
+ * filename, so a file rename can never move a published proposal's URL. That is the numbering law
+ * enforced at the route layer rather than trusted at the content layer.
+ *
+ * The metadata block above the prose is the honesty surface: authorship (including agent
+ * authorship, §5), who ratified it and when, and — for anything claiming `final` — the check that
+ * backs it (§4). A proposal that cannot fill those fields renders them as absent, not as blank.
+ */
+import { getCollection, render } from 'astro:content';
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import { STATE_MACHINE, proposalPath } from '../../../utils/proposals';
+import { sourceForEntry } from '../../../utils/contentSource';
+import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
+import { SITE_ORIGIN } from '../../../data/canonical';
+
+export async function getStaticPaths() {
+  const proposals = await getCollection('proposals');
+  return proposals.map((proposal) => ({
+    params: { slug: `aep-${proposal.data.number}` },
+    props: { proposal },
+  }));
+}
+
+const { proposal } = Astro.props;
+const d = proposal.data;
+const { Content, headings } = await render(proposal);
+const source = sourceForEntry(proposal);
+
+const state = STATE_MACHINE.find((s) => s.id === d.status)!;
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? SITE_ORIGIN;
+
+const fmt = (date: Date) =>
+  date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+const jsonLD = [
+  buildTechArticleJsonLD({ title: d.proposal_title, description: d.description ?? '', url: Astro.url.href }),
+  buildBreadcrumbListJsonLD([
+    { name: 'Home', url: `${siteBase}/` },
+    { name: 'Community', url: `${siteBase}/community/` },
+    { name: 'Proposals', url: `${siteBase}/community/proposals/` },
+    { name: `AEP-${d.number}` },
+  ]),
+];
+---
+
+<DocumentationLayout
+  title={`AEP-${d.number}: ${d.proposal_title}`}
+  description={d.description ?? `AEP-${d.number} — ${d.proposal_title}.`}
+  headings={headings}
+  jsonLD={jsonLD}
+  source={source}
+>
+  <p class="aep-back"><a href="/community/proposals/">&larr; All proposals</a></p>
+
+  <dl class="aep-meta">
+    <div class="aep-meta-row">
+      <dt>Number</dt>
+      <dd><span class="aep-mono">AEP-{d.number}</span> &mdash; permanent, never reassigned</dd>
+    </div>
+    <div class="aep-meta-row">
+      <dt>Status</dt>
+      <dd>
+        <span class={`aep-status aep-status-${d.status}`}>{d.status}</span>
+        <span class="aep-meta-note">{state.meaning}{state.terminal ? ' This state is terminal.' : ''}</span>
+      </dd>
+    </div>
+    <div class="aep-meta-row">
+      <dt>Author</dt>
+      <dd>{d.authors.join(', ')}</dd>
+    </div>
+    <div class="aep-meta-row">
+      <dt>Drafted by an agent</dt>
+      <dd>{d.authored_by_agent ?? 'No — written by a person.'}</dd>
+    </div>
+    <div class="aep-meta-row">
+      <dt>Sponsor</dt>
+      <dd>{d.sponsor ?? <span class="aep-absent">None yet &mdash; a proposal without one goes dormant rather than sitting in review.</span>}</dd>
+    </div>
+    <div class="aep-meta-row">
+      <dt>Ratified by</dt>
+      <dd>
+        {d.ratified_by
+          ? <>{d.ratified_by}{d.ratified_date ? <> &mdash; {fmt(d.ratified_date)}</> : null}</>
+          : <span class="aep-absent">Not ratified. Only a human can ratify a proposal.</span>}
+      </dd>
+    </div>
+    <div class="aep-meta-row">
+      <dt>Enforced by</dt>
+      <dd>
+        {d.conformance_check
+          ? <code>{d.conformance_check}</code>
+          : <span class="aep-absent">No conformance check yet &mdash; so this cannot be called final.</span>}
+      </dd>
+    </div>
+    <div class="aep-meta-row">
+      <dt>Created</dt>
+      <dd>{fmt(d.created)}</dd>
+    </div>
+    {d.supersedes && (
+      <div class="aep-meta-row">
+        <dt>Supersedes</dt>
+        <dd><a href={proposalPath(d.supersedes)}>AEP-{d.supersedes}</a></dd>
+      </div>
+    )}
+    {d.superseded_by && (
+      <div class="aep-meta-row">
+        <dt>Superseded by</dt>
+        <dd><a href={proposalPath(d.superseded_by)}>AEP-{d.superseded_by}</a></dd>
+      </div>
+    )}
+    {d.discussion_url && (
+      <div class="aep-meta-row">
+        <dt>Discussion</dt>
+        <dd><a href={d.discussion_url} rel="noopener">{d.discussion_url.replace('https://', '')}</a></dd>
+      </div>
+    )}
+  </dl>
+
+  <Content />
+
+  {/* The state history. Rendered AFTER the prose so the proposal reads as a proposal, but always
+      present: a status badge with no history is a claim about a journey nobody can check. */}
+  <h2 id="history">State history</h2>
+  <div class="table-scroll">
+    <table class="aep-history">
+      <caption class="sr-only">Every state this proposal has been in, in order</caption>
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">State</th>
+          <th scope="col">What happened</th>
+        </tr>
+      </thead>
+      <tbody>
+        {d.history.map((h) => (
+          <tr>
+            <td class="aep-mono">{fmt(h.date)}</td>
+            <td><span class={`aep-status aep-status-${h.state}`}>{h.state}</span></td>
+            <td>{h.note}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</DocumentationLayout>
+
+<style>
+  .aep-back {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    margin: 0 0 var(--space-6);
+  }
+
+  .aep-history {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+
+  .aep-history th,
+  .aep-history td {
+    text-align: left;
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+  }
+
+  .aep-history thead th {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+  }
+
+  .aep-meta {
+    display: grid;
+    gap: var(--space-2);
+    margin: 0 0 var(--space-8);
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-alt);
+    font-size: var(--text-sm);
+  }
+
+  .aep-meta-row {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: var(--space-3);
+  }
+
+  /* Below the breakpoint the two columns stack rather than squeeze — the label column is a fixed
+     rem width, which at 320px would leave the value ~4 characters wide (gate-29 reflow). */
+  @media (max-width: 640px) {
+    .aep-meta-row {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  .aep-meta dt {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    padding-top: 0.15em;
+  }
+
+  .aep-meta dd {
+    margin: 0;
+  }
+
+  .aep-meta-note {
+    display: block;
+    color: var(--color-text-muted);
+    margin-top: var(--space-1);
+  }
+
+  .aep-absent {
+    color: var(--color-text-muted);
+  }
+
+  .aep-mono {
+    font-family: var(--font-mono);
+  }
+
+  .aep-status {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    padding: 0.1em 0.5em;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    white-space: nowrap;
+  }
+
+  .aep-status-final,
+  .aep-status-accepted {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .aep-status-rejected,
+  .aep-status-withdrawn {
+    color: var(--color-text-muted);
+  }
+</style>

@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 
 /**
@@ -29,8 +30,29 @@ import { join } from 'node:path';
  * untouched by construction.
  *
  * Runs over BOTH the Astro output dir and `.vercel/output/static` (the adapter copy
- * that `vercel --prebuilt --prod` actually deploys), so the strip cannot be defeated
- * by hook ordering.
+ * that `vercel --prebuilt --prod` actually deploys).
+ *
+ * ⛩ HAUSSMANN P4.4a A1 / F-g — WHY THE STRIP IS SAFE, CORRECTED. This comment used to
+ * end "…so the strip cannot be defeated by hook ordering", and that reason is wrong.
+ *
+ * The Vercel adapter copies `dist` → `.vercel/output/static` AFTER `astro:build:done`.
+ * So at the moment this hook runs, the second root holds either NOTHING (first build)
+ * or THE PREVIOUS BUILD's files — never this build's. Measured 2026-08-24: with `dist`
+ * at 16:17 the adapter copy was still at 15:30, two builds behind.
+ *
+ * ⇒ The second root is INERT for the build that is running. The strip is safe anyway,
+ * by a different mechanism entirely: the adapter later copies the `dist` this hook has
+ * ALREADY stripped. Ordering is not defeated because the second walk defends against
+ * it — it is not defeated because the copy happens downstream of the strip.
+ *
+ * Keeping the second root costs nothing and cleans a stale tree, so it stays. But do
+ * not rely on the sentence that was here: anyone reasoning "the dual walk protects me"
+ * would conclude a hook that ran BEFORE the adapter copy was covered, and it is not.
+ * ⚠ It also means the `files`/`stripped` counters logged below can include stale-tree
+ * numbers, so they are a health signal, not a measurement of this build.
+ *
+ * The same ordering fact is why an Astro endpoint cannot read build output, which is
+ * why the llms-full corpus is appended post-build.
  */
 function stripHtmlComments() {
   const KEEP = /^\s*\[if\s|<!\[endif\]|@license|SPDX|Copyright|\(c\)\s*\d{4}/i;
@@ -88,6 +110,33 @@ function stripHtmlComments() {
   };
 }
 
+/**
+ * HAUSSMANN P3.1 — tier-C markdown twins (ADR-056 clause 1).
+ *
+ * Runs AFTER stripHtmlComments() by list order, deliberately: the twin is extracted from the
+ * HTML that actually ships, so it must see the stripped output rather than the pre-strip one.
+ * Otherwise a twin could carry internal rationale prose that P0.5 removed from the page — the
+ * H13 leak class, reintroduced through the machine surface that was supposed to mirror the page.
+ *
+ * Shelling out rather than inlining, unlike stripHtmlComments(): this one is also invoked
+ * standalone when running the gate suite outside a deploy, so it has to be a script anyway. One
+ * implementation, two entry points.
+ */
+function emitBespokeTwins() {
+  return {
+    name: 'adna-emit-bespoke-twins',
+    hooks: {
+      'astro:build:done': ({ logger }) => {
+        const out = execFileSync('node', [join(process.cwd(), 'scripts', 'emit_bespoke_twins.mjs')], {
+          cwd: process.cwd(),
+          encoding: 'utf8',
+        });
+        logger.info(out.trim());
+      },
+    },
+  };
+}
+
 export default defineConfig({
   site: process.env.SITE_URL || 'https://adna.network',
   output: 'static',
@@ -99,8 +148,131 @@ export default defineConfig({
     // Refit M3 / DP4 (2026-07-23): /org-context-graphs was a true orphan (0 inbound links,
     // "front end waiting to be built") — retired; its content lives on across the /vaults registry.
     '/org-context-graphs': '/vaults',
+
+    // --- HAUSSMANN P2.1 / ADR-051: the two redirects above were HALF-BROKEN in production ---
+    // Probed live 2026-08-18: `/org-context-graphs` and `/patterns/dual-audience` each 301 as
+    // intended, but `/org-context-graphs/` and `/patterns/dual-audience/` both returned **404**.
+    // Astro emits `^/org-context-graphs$` — an exact match the trailing-slash form misses, and
+    // trailing-slash is the shape every canonical URL on this site uses. The F-CHM-207 "no silent
+    // redirects" fix laid a redirect in the one shape its own site does not emit. Astro's config
+    // cannot express the slash form (it strips it), so the repair is inject_redirects.mjs.
+
+    // --- HAUSSMANN P2.1 / ADR-051: vault-slug canonicalization (24 legacy mixed-case slugs) ---
+    // Sources are listed WITHOUT the trailing slash because Astro normalises the key — a
+    // '/path/' entry collapses to the identical '^/path$' route, so writing both just emits a
+    // duplicate. The trailing-slash form is covered instead by scripts/inject_redirects.mjs,
+    // which widens every emitted redirect's `$` to `/?$` at deploy time. Generated from
+    // vaults.json, not typed.
+    '/vaults/Astro.aDNA': '/vaults/astro/',
+    '/vaults/CakeHealth.aDNA': '/vaults/cakehealth/',
+    '/vaults/ComfyUI.aDNA': '/vaults/comfyui/',
+    '/vaults/ContextCommons.aDNA': '/vaults/contextcommons/',
+    '/vaults/Harness.aDNA': '/vaults/harness/',
+    '/vaults/Home.aDNA': '/vaults/home/',
+    '/vaults/III.aDNA': '/vaults/iii/',
+    '/vaults/LAVentureGraph.aDNA': '/vaults/laventuregraph/',
+    '/vaults/Molecules.aDNA': '/vaults/molecules/',
+    '/vaults/Network.aDNA': '/vaults/network/',
+    '/vaults/Obsidian.aDNA': '/vaults/obsidian/',
+    '/vaults/Operations.aDNA': '/vaults/operations/',
+    '/vaults/Oration.aDNA': '/vaults/oration/',
+    '/vaults/RareArchive.aDNA': '/vaults/rarearchive/',
+    '/vaults/RemoteControl.aDNA': '/vaults/remotecontrol/',
+    '/vaults/Spacemacs.aDNA': '/vaults/spacemacs/',
+    '/vaults/SuperLeague.aDNA': '/vaults/superleague/',
+    '/vaults/TappProtocol.aDNA': '/vaults/tappprotocol/',
+    '/vaults/VAAS.aDNA': '/vaults/vaas/',
+    '/vaults/Videos.aDNA': '/vaults/videos/',
+    '/vaults/WilhelmAI.aDNA': '/vaults/wilhelmai/',
+    '/vaults/aDNA.aDNA': '/vaults/adna/',
+    '/vaults/wga.aDNA': '/vaults/wga/',
+    '/vaults/zeta.aDNA': '/vaults/zeta/',
+
+    // --- HAUSSMANN P2.1: B3 stale `.md` reference targets that HAVE a real destination ---
+    // The /reference/* pages were ported from a standalone `.md` document set and kept its
+    // relative cross-links, so `[aDNA Standard](adna_standard.md)` resolves to
+    // `/reference/adna_standard.md` and 404s (29 broken link instances, 11 unique targets).
+    // Redirected here because these are plausibly copied externally and a 301 is free.
+    // The remaining 6 targets — projects_folder_pattern.md, adna_bridge_patterns.md,
+    // template_bare/, /patterns/content-as-code, how/skills/AGENTS.md, /README.md — have NO
+    // destination on this site, so no honest redirect exists for them. Inventing one would
+    // point a reader at a page that does not answer their link. They are content fixes, and
+    // they belong to P2.3 (docs freshness: the 29 broken links + the CI link gate).
+    '/reference/adna_standard.md': '/reference/specification/',
+    '/reference/01_adna_standard.md': '/reference/specification/',
+    '/reference/adna_design.md': '/reference/design-rationale/',
+    '/reference/migration_guide.md': '/reference/migration-guide/',
+    '/reference/agent_first_guide.md': '/reference/agent-first-guide/',
+
+    // --- HAUSSMANN P2.2 / ADR-049 Option A: IA consolidation (11 redirects, ⛩ DP5) ---
+    // The same 6 audiences were served by up to 3 URL branches each — 16 pages where 7
+    // belong, with 4 byte-identical <title> pairs. /use-cases/ wins as the single audience
+    // surface: it is the richer prose and the larger set, so this is a redirect, not a
+    // rewrite. Sources are listed WITHOUT the trailing slash (Astro normalises the key —
+    // see the note above); inject_redirects.mjs widens each to /?$ at deploy.
+    //
+    // Nothing was dropped on the way. Each retiring page's distinct content folded into its
+    // destination FIRST: the four landings' curated reading paths, and all five adopter docs'
+    // "Typical Ontology Extensions" tables — 13 entity-type rows the /use-cases/ twins did
+    // not carry. ADR-049 called this leg "redirect-only, zero content rewritten"; the guard
+    // diff at O2 found that was wrong on the facts, and the fold is the correction.
+    '/adopters': '/use-cases/',
+    '/adopters/adopter-researcher': '/use-cases/research-lab/',
+    '/adopters/adopter-educator': '/use-cases/educator/',
+    '/adopters/adopter-enterprise-team': '/use-cases/enterprise-team/',
+    '/adopters/adopter-startup': '/use-cases/startup/',
+    '/adopters/adopter-solo-developer': '/use-cases/solo-developer/',
+    '/researchers': '/use-cases/research-lab/',
+    '/educators': '/use-cases/educator/',
+    '/enterprise': '/use-cases/enterprise-team/',
+    '/startup-first-hour': '/use-cases/startup/',
+    // ADR-048's owed rename (ratified at DP2, independent of DP5): this is a topic page about
+    // provenance and audit, not a compliance certification claim. The page itself moved.
+    '/compliance': '/provenance-audit/',
   },
-  integrations: [mdx(), sitemap(), stripHtmlComments()],
+  /**
+   * HAUSSMANN P4.2 O1 — dual-theme syntax highlighting (⛩ operator-ruled 2026-08-24).
+   *
+   * Until now this site had NO `markdown` config at all, so Astro's default Shiki theme
+   * (`github-dark`) was emitted as inline per-token styles and served in BOTH appearances: a
+   * light-mode reader got a dark slab on all 61 code-bearing pages. Nothing could see it —
+   * axe passes because the block is internally consistent (light text on dark ground is a fine
+   * ratio, so this was never a WCAG contrast failure); gate-25 cannot see it because inline
+   * attributes are not CSS; `token_aa_check.py` cannot see it because Shiki colours are not
+   * tokens. It is a dark/light PARITY break, and parity is on the campaign's do-not-regress list.
+   *
+   * `themes:` makes Shiki emit both palettes — the light value inline, the dark value as a
+   * `--shiki-dark*` custom property — which the `.astro-code` rules in global.css then switch on
+   * `html.dark`.
+   *
+   * ⚠ This does NOT reduce the html-validate `no-inline-style` count by one. Dual-theme Shiki is
+   * still inline styles; it just makes them theme-aware. The two issues are independent, and
+   * assuming otherwise is the easy mistake here.
+   */
+  markdown: {
+    shikiConfig: {
+      /**
+       * HIGH-CONTRAST variants, and the plain ones were tried first and MEASURED FAILING.
+       *
+       * `github-light`/`github-dark` are the obvious pair and both ship token colours below
+       * WCAG AA at body size:
+       *   light  #e36209 on #ffffff = 3.48:1  (markdown markers — caught by gate-4 on
+       *                                        /learn/tutorials/first-claude-md)
+       *   dark   #6A737D on #24292e = 3.05:1  (comments)
+       * The `-high-contrast` variants exist precisely for this and are what ship.
+       *
+       * ⚠ The dark failure was ALREADY LIVE before this config existed — the site rendered
+       * `github-dark` in both appearances, so that 3.05:1 comment colour has been shipping. axe
+       * did not catch it because axe reports what it can resolve on the page it is given, and the
+       * pages carrying comment-heavy blocks were not the ones in the gate's page list.
+       */
+      themes: {
+        light: 'github-light-high-contrast',
+        dark: 'github-dark-high-contrast',
+      },
+    },
+  },
+  integrations: [mdx(), sitemap(), stripHtmlComments(), emitBespokeTwins()],
   prefetch: {
     prefetchAll: false,
     defaultStrategy: 'hover',

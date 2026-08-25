@@ -35,6 +35,22 @@ const jsonLD = buildCollectionPageJsonLD({
   jsonLD={jsonLD}
   heroImage={{ src: heroHow, alt: 'Bird\'s-eye pixel-art desk with glowing module-boxes wired into a left-to-right pipeline of light — aDNA operations' }}
 >
-  <p>The <strong>how/</strong> leg of the aDNA triad covers operational processes — the repeatable workflows that turn knowledge into outcomes. This section documents the publishing pipeline behind this site, workshop kits for teaching aDNA, and self-referential lattice definitions that model aDNA's own processes.</p>
+  {/* HAUSSMANN P4.2 O3 — F13/F19 thin-hub treatment. This page was an h1, one paragraph and a
+      three-card grid (h2=0, bodyLen 659, the thinnest hub on the site). The sections below are
+      structure over content a reader actually needs to navigate the leg, not filler to clear a
+      number: what the leg is for, what distinguishes its three areas, and where to start. */}
+  <p>The <strong>how/</strong> leg of the aDNA triad covers operational processes — the repeatable workflows that turn knowledge into outcomes. Where <a href="/learn/">what/</a> holds what a project knows and <a href="/community/">who/</a> holds who decides, <strong>how/</strong> holds the procedures: the things a person or an agent runs.</p>
+
+  <h2 id="what-belongs-here">What belongs in how/</h2>
+  <p>The test is whether the document tells someone <em>to do something</em>, in an order, repeatably. A description of the publishing pipeline is how/; an explanation of what a lattice <em>is</em> is what/. The distinction matters because it decides where an agent looks: an agent asked to publish this site reads how/ and does not need to load the concept library to do it.</p>
+  <p>In practice that means three kinds of document — a pipeline (a sequence a machine can run), a kit (a sequence a person runs, with materials), and a lattice definition (a sequence written as a graph, so it can be executed or inspected).</p>
+
+  <h2 id="the-three-areas">The three areas</h2>
   <CardGrid cards={sections} columns={3} />
+
+  <h2 id="where-to-start">Where to start</h2>
+  <p>If you want to see how this site is produced from a vault, read <a href="/how/publishing/">Publishing</a> — it is the pipeline running behind the page you are reading. If you are teaching aDNA to a group, start with <a href="/how/workshops/">Workshops</a>. If you want to see a process written as a graph rather than as prose, <a href="/how/lattice-examples/">Lattice Examples</a> models this vault's own workflows.</p>
+
+  <h2 id="in-this-vault">In this vault</h2>
+  <p>Everything in this section is a working example rather than a description of one. The publishing pipeline documented here is the pipeline that built this page; the lattice examples model the campaigns that wrote it. That is the aDNA structure doing its own job — <code>how/</code> in a vault holds the procedures that produced the vault, so the documentation and the mechanism cannot drift apart without one of them visibly breaking.</p>
 </DocumentationLayout>

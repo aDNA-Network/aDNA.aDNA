@@ -1,34 +1,97 @@
 ---
+import { classLabel, classSlug, personaLabel, tierOf, tierLabel, tierSlug } from '../../utils/vaultLabels';
+import EmptyStateMark from './EmptyStateMark.astro';
+
 interface Props { vault: any; }
 const { vault } = Astro.props;
+
+// HAUSSMANN P2.4 (ADR-052 §tiers, accepted): the meta pill is the LIFECYCLE TIER, not the raw
+// status. `statusLabel()` shipped `pending` and `genesis` straight to a stranger — "pending
+// what?", and "genesis" is house jargon. `in use` / `chartered` / `planned` say the same thing in
+// words a newcomer already owns, and the tier is derived from `status` alone so the badge cannot
+// drift from the data (§tiers.3).
+const tier = tierOf(vault.status);
+// The class moved onto the card because the page no longer groups by it. Under the tier-first
+// layout (variant A, ⛩ 2026-08-19) the class heading is gone, so a card that didn't carry its own
+// class label would silently lose that fact for every vault on the page.
+const classPub = classLabel(vault.class);
+// §tiers.1: `card_present` is a DOCUMENTATION signal, disqualified as a lifecycle input. It ships
+// as card completeness, never as a rank, and it says what it means in both directions — 50 of 74
+// rows have no card, and a blank there would read as an oversight rather than a fact.
+const documented = vault.card_present === true;
 
 // Refit M2 / DP1 (2026-07-21, ratification_record_refit_g1): `tagline` is the canonical
 // per-vault purpose field (`headline_mission` retired — 0/73 populated, never authored);
 // fall back to `note` (the populated one-liner) so the purpose renders NOW from existing
 // data and auto-upgrades as Home backfills taglines. No strings authored here.
 const purpose = vault.tagline || vault.note || null;
-// Suppress the "—" persona placeholder (data-currency artifact routed to Hestia) so the
-// card never shows a lone em-dash above the new purpose line.
-const persona = vault.persona && vault.persona !== '—' ? vault.persona : null;
+// P1.3: persona placeholders project as null upstream; personaLabel keeps the display rule
+// local too (belt + braces). Class/status render as public labels; attributes carry the
+// hyphenated slug so raw machine enums never reach built HTML (gate-27 scans attributes).
+const persona = personaLabel(vault.persona);
+/* HAUSSMANN P4.1 O2 — the `empty_state` slot (ADR-053 slot table; spec at
+ * campaign_haussmann/artifacts/p4_1/slot_spec_empty_state.md).
+ *
+ * ⭐ THE MARK KEYS ON THE ABSENCE, NEVER ON THE TIER — and the two are measurably different sets.
+ * The ruling named "the 57 planned vault cards"; derived from the registry, only 52 of those 57 have
+ * any empty field (3 are fully empty), while 12 NON-planned cards do have one. Keying on tier would
+ * mark 5 cards that are not empty and miss 12 that are — and would re-differentiate the tiers, which
+ * ADR-052 §tiers.2 ruled against in this file's sibling (see vaults/index.astro: a denser treatment
+ * for the planned rows "reads as a ranking"). So every condition below is a predicate over the FIELD,
+ * and `tier` appears nowhere in it. That the mark also lands on in-use cards is the structural proof
+ * it is not a stage badge.
+ *
+ * ⚠ `listing: 'minimal'` is EXCLUDED, and the distinction is the point. Those three rows are not
+ * places where something could be written and has not been — they are places where something was
+ * deliberately WITHHELD ("Minimal card — private engagement."). Marking a policy choice as an
+ * oversight would be the same class of defect as the claims this campaign exists to retire.
+ *
+ * The marks are `aria-hidden` and carry no meaning of their own (spec §4): each absent sentence below
+ * still says the whole thing, and removing every mark would lose exactly nothing. gate-35 asserts
+ * both halves of that, in both directions.
+ *
+ * ⭐ THESE THREE PREDICATES ARE THE GUARD, and the first draft only looked as though they were. The
+ * persona and card lines were written `{persona ? … : …}` with `{personaAbsent && <Mark/>}` inside
+ * the else-branch — so the TERNARY was the real condition and the named predicate was decorative:
+ * editing it changed nothing. The red test is what exposed it. A mutation setting
+ * `personaAbsent = true` left the gate GREEN, not because the assertion was weak but because the
+ * line it was aimed at could not move. Both ternaries now key on the predicate itself, so the law
+ * lives in exactly one place per field and an edit to it is an edit to the page.
+ */
+const isMinimal = vault.listing === 'minimal';
+const personaAbsent = !persona;
+const purposeAbsent = !purpose && !isMinimal;
+const cardAbsent = !documented;
+
 // Flat search haystack for the client-side registry filter (M3.1.3); no-JS ignores it.
-const searchBlob = [vault.display_name, persona, vault.class, purpose]
+// The tier label joins it so a reader who types "chartered" finds the ten chartered vaults.
+const searchBlob = [vault.display_name, persona, classPub, tierLabel(tier), purpose]
   .filter(Boolean).join(' ').toLowerCase();
 ---
 
 <article
-  class={`vault-card class-${vault.class}`}
+  class={`vault-card class-${classSlug(vault.class)}`}
   data-vault-card
-  data-class={vault.class}
+  data-class={classSlug(vault.class)}
+  data-tier={tierSlug(tier)}
   data-search={searchBlob}
 >
   <h3>
     <a href={`/vaults/${vault.vault_slug}/`}>{vault.display_name}</a>
   </h3>
-  {persona && <p class="vault-card-persona">{persona}</p>}
-  {purpose && <p class="vault-card-purpose">{purpose}</p>}
   <p class="vault-card-meta">
-    <span class={`vault-status status-${vault.status}`}>{vault.status}</span>
+    <span class={`vault-tier tier-${tierSlug(tier)}`}>{tierLabel(tier)}</span>
+    <span class="vault-card-class">{classPub}</span>
     {vault.current_phase && <span class="vault-phase">{vault.current_phase}</span>}
+  </p>
+  {personaAbsent
+    ? <p class="vault-card-persona vault-card-absent"><EmptyStateMark />No persona recorded</p>
+    : <p class="vault-card-persona">{persona}</p>}
+  {purpose
+    ? <p class="vault-card-purpose">{purpose}</p>
+    : <p class="vault-card-purpose vault-card-absent">{purposeAbsent && <EmptyStateMark />}{isMinimal ? 'Minimal card — private engagement.' : 'No public description yet.'}</p>}
+  <p class="vault-card-documented">
+    {cardAbsent ? <span class="vault-card-absent"><EmptyStateMark />No card written yet</span> : 'Documented'}
   </p>
 </article>
 
@@ -57,10 +120,21 @@ const searchBlob = [vault.display_name, persona, vault.class, purpose]
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .vault-card-meta { font-size: 0.8em; margin-top: 0.5rem; }
-  .vault-status { padding: 0.1rem 0.4rem; border-radius: var(--radius-full); }
-  .status-active { background: color-mix(in srgb, var(--color-success) 15%, transparent); color: color-mix(in srgb, var(--color-success) 55%, var(--color-text)); }
-  .status-genesis,
-  .status-pending { background: color-mix(in srgb, var(--color-accent) 18%, transparent); color: color-mix(in srgb, var(--color-accent) 45%, var(--color-text)); }
-  .status-superseded { background: color-mix(in srgb, var(--color-text-muted) 15%, transparent); color: var(--color-text-muted); }
+  /* P1.3 honest-absent affordance (WebForge data-honesty law): a vault with no public
+     description — or no persona, or no card — says so plainly. Never a blank, never invented
+     copy, never a placeholder dash (P1.3's "— —" titles are the cautionary instance). */
+  .vault-card-absent { color: var(--color-text-muted); font-style: italic; }
+  .vault-card-meta { font-size: 0.8em; margin-top: 0.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+  .vault-card-class { color: var(--color-text-muted); }
+  .vault-card-documented { font-size: 0.8em; margin: 0.4rem 0 0; color: var(--color-text-muted); }
+
+  /* HAUSSMANN P2.4 — the lifecycle-tier badge (ADR-052 §tiers).
+     Deliberately NOT a heat scale. `in use` gets the success tint the old `active` pill had, but
+     `chartered` and `planned` share one neutral accent tint rather than descending through a
+     warning colour: a gradient would encode a quality judgment onto a self-declared field, which
+     is the one thing §tiers.2 says this surface must not do. AA-safe color-mix, both modes. */
+  .vault-tier { padding: 0.1rem 0.4rem; border-radius: var(--radius-full); }
+  .tier-in-use { background: color-mix(in srgb, var(--color-success) 15%, transparent); color: color-mix(in srgb, var(--color-success) 55%, var(--color-text)); }
+  .tier-chartered,
+  .tier-planned { background: color-mix(in srgb, var(--color-accent) 18%, transparent); color: color-mix(in srgb, var(--color-accent) 45%, var(--color-text)); }
 </style>

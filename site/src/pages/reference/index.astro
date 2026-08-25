@@ -53,14 +53,18 @@ const headings = [
 ];
 
 const jsonLD = buildCollectionPageJsonLD({
-  title: 'Reference',
+  title: 'The Standard',
   description: 'aDNA specification documents, design rationale, governance model, glossary, and operational guides.',
   url: Astro.url.href,
 });
 ---
 
+{/* HAUSSMANN P2.2 / ADR-049 Option A: this hub is the nav's "Standard" destination — first in
+    nav because it is first in ADR-048's positioning sentence ("the standard, its docs, and the
+    registry"). The URL stays /reference so no inbound link breaks; the title matches the nav
+    label so the click does not land on a differently-named page. */}
 <DocumentationLayout
-  title="Reference"
+  title="The Standard"
   description="aDNA specification documents, design rationale, governance model, glossary, and operational guides."
   headings={headings}
   jsonLD={jsonLD}

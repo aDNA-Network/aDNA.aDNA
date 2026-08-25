@@ -1,0 +1,106 @@
+{
+  "version": "2.5",
+  "preamble": "{/*  v2.5 | 2026-07-02 | ADR-046 (Champollion G2): §7.2 per-class frontmatter profile + §5.5 walk scope (ADR-044) · new §7.7 decision-record ratification discipline · §5.3 federation/ optional row (ADR-045) · §15.4 version-cut checklist. Body mirrored from what/docs/adna_standard.md v2.5.  */}\n\n**Agentic DNA (aDNA)** — A knowledge architecture standard for AI-native projects.\n\n---",
+  "sections": [
+    {
+      "number": 1,
+      "title": "Introduction & Scope",
+      "slug": "1-introduction-scope"
+    },
+    {
+      "number": 2,
+      "title": "Terminology",
+      "slug": "2-terminology"
+    },
+    {
+      "number": 3,
+      "title": "Triad Architecture",
+      "slug": "3-triad-architecture"
+    },
+    {
+      "number": 4,
+      "title": "Governance Files",
+      "slug": "4-governance-files"
+    },
+    {
+      "number": 5,
+      "title": "Directory Structure",
+      "slug": "5-directory-structure"
+    },
+    {
+      "number": 6,
+      "title": "Naming Conventions",
+      "slug": "6-naming-conventions"
+    },
+    {
+      "number": 7,
+      "title": "Frontmatter System",
+      "slug": "7-frontmatter-system"
+    },
+    {
+      "number": 8,
+      "title": "Session Model",
+      "slug": "8-session-model"
+    },
+    {
+      "number": 9,
+      "title": "Mission System",
+      "slug": "9-mission-system"
+    },
+    {
+      "number": 10,
+      "title": "Context Library",
+      "slug": "10-context-library"
+    },
+    {
+      "number": 11,
+      "title": "Coordination Protocol",
+      "slug": "11-coordination-protocol"
+    },
+    {
+      "number": 12,
+      "title": "Template System",
+      "slug": "12-template-system"
+    },
+    {
+      "number": 13,
+      "title": "Collision Prevention",
+      "slug": "13-collision-prevention"
+    },
+    {
+      "number": 14,
+      "title": "Content-as-Code Pipelines",
+      "slug": "14-content-as-code-pipelines"
+    },
+    {
+      "number": 15,
+      "title": "Archive & Versioning",
+      "slug": "15-archive-versioning"
+    },
+    {
+      "number": 16,
+      "title": "Tool Integration Tiers",
+      "slug": "16-tool-integration-tiers"
+    },
+    {
+      "number": 17,
+      "title": "Error & Recovery Protocol",
+      "slug": "17-error-recovery-protocol"
+    },
+    {
+      "number": 18,
+      "title": "Success Criteria",
+      "slug": "18-success-criteria"
+    },
+    {
+      "number": 19,
+      "title": "Optional Extensions",
+      "slug": "19-optional-extensions"
+    },
+    {
+      "number": 20,
+      "title": "Appendices",
+      "slug": "20-appendices"
+    }
+  ]
+}

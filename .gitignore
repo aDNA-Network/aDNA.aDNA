@@ -4,6 +4,12 @@ site/node_modules/
 site/dist/
 site/.vercel/
 
+# adna-mcp-server build output (P3.3). Not committed: `prepublishOnly` rebuilds
+# it, so the published tarball can never carry a stale dist/ — and a tarball is
+# never assembled from whatever happened to be on disk.
+mcp/dist/
+mcp/*.tgz
+
 # Playwright test artifacts
 test-results/
 playwright-report/
@@ -38,5 +44,61 @@ how/missions/artifacts/storyweave_p4_docs_ia/lighthouse/
 how/missions/artifacts/storyweave_p5_measure/**/*.png
 how/missions/artifacts/storyweave_p5_m5_3/**/*.png
 how/missions/artifacts/storyweave_p5_m5_3/lighthouse/
+# HAUSSMANN capture estate (wind-down 2026-08-20) — the same Refit policy, applied to this campaign.
+# Applied in the policy's DANGLE-SAFE ORDER: the 61 PNGs individually cited by committed docs were
+# `git add`ed FIRST (git keeps tracked files tracked regardless of these patterns), so what follows
+# ignores only the 126 uncited sweep frames. Reversing that order is the policy's named inverse trap —
+# "gitignoring evidence a committed claim still cites recreates the dangle."
+# Regenerate any ignored frame with: node scripts/visual_capture.mjs --base <url> --routes … --axe
+how/campaigns/campaign_haussmann/evidence/captures_p1_2/**/*.png
+how/campaigns/campaign_haussmann/evidence/captures_p1_4/**/*.png
+how/campaigns/campaign_haussmann/evidence/captures_p2_2/**/*.png
+how/campaigns/campaign_haussmann/evidence/p1_1_captures/**/*.png
+how/campaigns/campaign_haussmann/evidence/dossier/captures/**/*.png
+# P4.1 (2026-08-23) — same policy, but the cited frames are held by EXPLICIT NEGATION rather than by
+# having been `git add`ed first. The tracked-first order works only while the files stay tracked: a
+# `git reset` during staging re-exposed them to the pattern and the add failed. Negation states the
+# exception in the file itself, so it survives a reset, a fresh clone, and an agent who does not know
+# the ordering rule. (The blocks above are left as-is — their files are long since committed.)
+# ⚠ The outage set is NOT regenerable — the pre-2026-08-18 build it captures is gone. What survives of
+# it is deliberately the part that carries the evidence: the two cited frames plus the report
+# (per-surface status, title, h1, bodyLen), which is what the F-s finding actually argues from.
+how/campaigns/campaign_haussmann/artifacts/p4_1/captures/**/*.png
+
+# P4.1 O2/O3 (2026-08-24) — the `captures_o2` estate, same Refit policy, same DANGLE-SAFE order:
+# the frames a committed doc argues FROM are held by EXPLICIT NEGATION below; the 21 uncited sweep
+# frames (17.5 MB) are ignored and are REGENERABLE — unlike the outage set, the build they capture is
+# `site/dist` from `site/src` at commit 9608820, which is committed.
+#   node scripts/visual_capture.mjs --base http://localhost:4321 \
+#     --routes /vaults/,/design-system/,/get-started/ --viewports mobile-lg,tablet,desktop \
+#     --themes dark,light --axe --out <out>
+# The three provenance JSONs (capture_report / axe_dark / axe_light) are NOT ignored and stay committed
+# — per-surface status, title, h1, bodyLen and the axe result are what the claims actually argue from.
+how/campaigns/campaign_haussmann/artifacts/p4_1/captures_o2/**/*.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures_o2/vaults__desktop__light.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures_o2/vaults__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures_o2/get-started__desktop__light.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures_o2/zero_result__desktop__light.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures_o2/zero_result__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures_o2/design-system__desktop__dark.png
+# ⚠ `zero_result__desktop__dark` was added to this list only after a `--no-index` check: it had been
+# COMMITTED at O2 while the new pattern said ignore it. `git check-ignore` does NOT report tracked
+# files by default, so the first verification pass came back clean *because the files were staged* —
+# a check that cannot see the state it exists to find. Verify ignore rules with `--no-index`.
+how/campaigns/campaign_haussmann/artifacts/p4_1/captures_outage_20260823/**/*.png
+# — cited frames, deliberately kept (4 craft/slot evidence + 2 outage evidence):
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures/home__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures/home__desktop__light.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures/learn__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures/vaults__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures_outage_20260823/home__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/p4_1/captures_outage_20260823/state-of-the-network__desktop__dark.png
+
 # Scratch capture output (Class 3 — no citation)
 /visual_capture_out/
+
+# ISS gate-receiver runtime state (HAUSSMANN wind-down 2026-08-21). The receiver writes a
+# PID lock and a port sidecar into how/gates/ while it is listening; both are ephemeral
+# process state, not vault content, and no such file has ever been tracked. The `.pending`
+# sentinels ARE tracked — they record that a gate awaits an operator decision.
+how/gates/.gate_receiver.*

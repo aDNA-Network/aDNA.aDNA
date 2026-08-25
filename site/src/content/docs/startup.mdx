@@ -48,8 +48,41 @@ devtool.aDNA/
 
 Onboarding drops from 3 weeks to 3 days. New engineers read the context library and decision records instead of shadowing senior devs. AI agents produce codebase-aware output because they load architecture context before generating. The team ships the same speed but with less context loss.
 
+## Typical Ontology Extensions
+
+| Entity | Triad | Purpose |
+|--------|-------|---------|
+| `api_spec` | what/ | API endpoint documentation with versioning |
+| `onboarding_checklist` | how/ | New hire setup and orientation tasks |
+| `customer_feedback` | who/ | Structured customer feedback tracking |
+
+## The first hour
+
+A 60-minute quickstart for a CTO who has one hour and no appetite for ceremony.
+
+**Minutes 0–10 · Clone and install** — fork the base template into your repo root. You get the triad (`what/`, `how/`, `who/`), the 16-entity base ontology, and a working CLAUDE.md scaffold. Start at [Navigate a Vault](/learn/tutorials/navigate-a-vault).
+
+**Minutes 10–25 · CLAUDE.md** — edit the root CLAUDE.md to name your project, voice, and standing orders. This is the first file every agent session reads. See [Create Your First CLAUDE.md](/learn/tutorials/first-claude-md).
+
+**Minutes 25–40 · STATE.md** — write a one-paragraph operational snapshot: current phase, blockers, next steps. Every new hire and every new agent session reads this second. See [Governance Files](/learn/concepts/governance-files).
+
+**Minutes 40–60 · First ADR** — capture one decision that currently lives in a Slack thread as `what/decisions/adr_001_<slug>.md`. Future agents and future hires read this instead of re-asking. See [Knowledge Graph](/learn/concepts/knowledge-graph).
+
+**What you should have at the end of the hour**
+
+- *The vault is legible to an agent.* CLAUDE.md + STATE.md means a fresh agent session reads two files and knows where everything is. No per-session re-explanation.
+- *Decisions stop evaporating.* One ADR seeds a decision log. Within a month the founding-engineer bus factor starts breaking down — the "why" lives on disk.
+- *Onboarding has an entry point.* Your next hire reads STATE.md and walks the ADR list. No Slack archaeology, no "ping me if you have questions."
+
+## Where to go next
+
+- [Design a Mission](/learn/tutorials/design-a-mission) — hour one is individual discipline; hour two is team coordination. When you have a sprint-sized goal, a mission file turns it into claimable objectives.
+- [Run a Campaign](/learn/tutorials/run-a-campaign) — structuring quarterly goals as phased, gated work.
+- [Base + Extension](/patterns/base-extension) — growing the vault organically without forking the standard.
+
 ## Related
 
 - [Token Selection](/learn/concepts/token-selection) — how agents load the right context for each task
 - [Convergence Model](/learn/concepts/convergence) — how campaigns and missions focus weekly sprints
 - [aDNA vs. Notion](/learn/comparisons/adna-vs-notion) — why the startup chose aDNA alongside Notion
+- [Mission](/glossary/glossary-mission) — the unit that turns a sprint goal into claimable objectives

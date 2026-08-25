@@ -1,6 +1,40 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import DocumentationLayout from '../layouts/DocumentationLayout.astro';
 import Callout from '../components/sections/Callout.astro';
+// The `empty_state` slot artifact, imported rather than re-drawn: this page documents the real
+// component, so it cannot drift from what the registry ships (HAUSSMANN P4.1 O2).
+import EmptyStateMark from '../components/sections/EmptyStateMark.astro';
+import { buildWebPageJsonLD } from '../utils/seo';
+
+/* HAUSSMANN P4.1 O2 — the illustration-slot register's counts, DERIVED, never typed (WebForge
+ * KW-14 / campaign convention 1: "every count a page narrates must be derived").
+ *
+ * ⭐ The first draft typed "Live on 10 pages" and "Live on 6", copied from ADR-053's table — the
+ * exact defect this vault has now hit five times, here caught in my own new copy. Deriving it also
+ * corrected the PREDICATE: counting pages that pass the `heroImage` prop yields NINE, because
+ * /vaults/graph renders its hero through a bespoke <Image class="hero-stage-img"> instead. The ADR's
+ * ten is right and the naive predicate was wrong. Counting pages that IMPORT A HERO ASSET covers
+ * both mechanisms and yields 10 — a file count is not an entry count unless the predicate matches
+ * what is actually being counted.
+ *
+ * ⚠ Resolved with Vite's build-time `import.meta.glob`, NOT with `node:fs` + `import.meta.url`.
+ * The first attempt did the latter and the build died on
+ * `ENOENT … dist/.prerender/pages/`: at render time `import.meta.url` points at the BUNDLED CHUNK,
+ * not at the source tree, so a path relative to it walks the build output. `import.meta.glob` is
+ * resolved by Vite against the source at compile time, which is the only place this question has
+ * an answer.
+ *
+ * ⚠ And the obvious shortcut is the WRONG PREDICATE even though it currently agrees: there are
+ * exactly 10 files in `assets/heroes/` too, so globbing the assets would print the same 10 today.
+ * But the column claims PAGES, and one hero reused on two pages would silently make the two
+ * diverge — which nearly happened when `hero_adna_network` was freed from the homepage and
+ * re-homed on /vaults. Count the thing the sentence claims.
+ */
+const heroPanelCount = Object.values(
+  import.meta.glob('/src/pages/**/*.astro', { query: '?raw', import: 'default', eager: true }),
+).filter((src) => String(src).includes('assets/heroes/')).length;
+
+const categoryMarkCount = Object.keys(import.meta.glob('/src/assets/icons/*.svg')).length;
 
 // The living design-system reference (Storyweave P5 M5.2 / B11). Every swatch, size,
 // and sample below is driven from the actual design tokens (tokens.css + branding.css)
@@ -78,17 +112,74 @@ const radii = [
 ];
 const shadows = ['--shadow-sm', '--shadow-md', '--shadow-lg'];
 const badges = ['new', 'updated', 'deprecated', 'experimental'];
+
+/* HAUSSMANN P4.2 O2 — the in-page TOC.
+ *
+ * The P4.1 ranker scored this page's Findability at 3.6, its weakest dimension on any surface: no
+ * in-page TOC and no left nav on a 5,584px page. The remedy is the layout the rest of the site's
+ * reference surfaces already use, not a bespoke TOC built here.
+ *
+ * ⚠ THE ARRAY IS HAND-BUILT BECAUSE ASTRO CANNOT EXTRACT HEADINGS FROM AN `.astro` PAGE — only from
+ * content-collection markdown. `learn/what-is-adna.astro` sets the precedent and says the same thing
+ * in its own comment. The slugs MUST match the `id=` on each <h2> below — a TOC link to a missing
+ * anchor is a dead link that looks like navigation. That IS already gated, site-wide and derived from
+ * the build: `gate-31`'s "every in-page anchor resolves to a real id". Checked before writing this
+ * sentence, because the first draft of it credited the wrong gate.
+ *
+ * Depth 2 only, deliberately. TOCPanel renders depth 2–3, and this page's <h3>s are token-group
+ * labels generated inside `.map()` calls ("Surfaces", "Text", "Brand", …) — listing eleven of those
+ * would bury the six sections a reader is actually navigating between. A TOC is an index, not a
+ * mirror of the outline.
+ */
+const headings = [
+  { depth: 2, slug: 'color', text: 'Colour' },
+  { depth: 2, slug: 'type', text: 'Typography' },
+  { depth: 2, slug: 'space', text: 'Spacing' },
+  { depth: 2, slug: 'radius', text: 'Radius & elevation' },
+  { depth: 2, slug: 'components', text: 'Components' },
+  { depth: 2, slug: 'illustration', text: 'Illustration slots' },
+  { depth: 2, slug: 'diagram', text: 'Diagram construction' },
+];
 ---
 
-<BaseLayout
+{/* HAUSSMANN P3.2 — this page is `noindex`, and structured data on a page told not to index
+    looks contradictory at first glance. It is not: JSON-LD describes the page for any consumer
+    that parses it, and agents reading this site are not search crawlers. Covering all three of
+    the census's bare pages also lets gate-17 assert "zero pages without JSON-LD" absolutely,
+    and a gate with no allowlisted exception is a gate that cannot rot around its exception. */}
+{/* HAUSSMANN P4.2 O2 — moved from BaseLayout to DocumentationLayout for the sidebar + in-page TOC
+    (ranker Findability 3.6, this page's weakest score on any surface). `noindex` rides the layout's
+    new optional pass-through prop rather than being lost in the move: this page is deliberately out
+    of the search index and that must survive a layout change.
+
+    ⚠ THE PAGE'S OWN <h1> IS GONE ON PURPOSE — DocumentationLayout renders `<h1>{title}</h1>` itself,
+    so keeping the local one would put two h1s on the page. That is not a hypothetical: gate-38's
+    G38b, written in this same objective, fails on exactly that. The title changed case with the move
+    ("Design system" → "Design System") because the layout renders the `title` prop verbatim and that
+    prop is also the <title>, the breadcrumb label and the JSON-LD name — one string, four surfaces,
+    rather than two strings that can disagree.
+
+    ⚠ `/design-system` is NOT added to `utils/navigation.ts`, deliberately. SidebarNav's SP-2
+    fallback shows the section switcher with no group expanded when a page belongs to no group — a
+    designed behaviour, not a degradation — which is right for an out-of-IA reference page. Adding an
+    entry would inject a `noindex` page into the primary docs nav of every documentation page: a
+    fleet-visible IA change, and a contradiction of the noindex intent. Breadcrumb likewise matches no
+    route prefix and renders nothing, which is correct — a page that is its own section has no index
+    to go back to. */}
+<DocumentationLayout
   title="Design System"
   description="The living design-token reference for adna.network — colour, type, spacing, radius, shadow, and component samples, driven straight from the site's own tokens."
   noindex={true}
+  headings={headings}
+  jsonLD={buildWebPageJsonLD({
+    title: 'Design System',
+    description:
+      "The living design-token reference for adna.network — colour, type, spacing, radius, shadow, and component samples, driven straight from the site's own tokens.",
+    url: Astro.url.href,
+  })}
 >
   <div class="ds">
     <header class="ds-head">
-      <p class="ds-eyebrow">Reference</p>
-      <h1>Design system</h1>
       <p class="ds-lead">
         The tokens and components adna.network is built from — the SS-Ghibli / Tokyo-Night register
         (ADR-032). Every swatch and sample below renders straight from the live tokens, so the colours
@@ -218,32 +309,197 @@ const badges = ['new', 'updated', 'deprecated', 'experimental'];
         <p>This page is itself a working example of the token system it documents.</p>
       </Callout>
     </section>
+
+    {/* HAUSSMANN P4.1 O2 — the illustration slots, registered where a contributor actually looks.
+        AC5 requires the slot spec be "written so a contributor could apply the same slot to a new
+        page without asking"; a spec that lives only in a campaign artifact directory is a spec
+        nobody outside the campaign will find. */}
+    <section class="ds-section" aria-labelledby="illustration">
+      <h2 id="illustration">Illustration slots</h2>
+
+      <p>
+        Illustration on this site is <strong>contained</strong>: it is permitted in five named slots
+        and nowhere else. Everywhere else — navigation, prose, tables, registry rows, code, form
+        controls, footers — is type and colour only, in both themes. That containment is not only a
+        style rule: keeping artwork out of the interface is part of what keeps contrast verifiable.
+      </p>
+
+      <table class="ds-slot-table">
+        <thead>
+          <tr><th scope="col">Slot</th><th scope="col">Where it goes</th><th scope="col">Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>hero_panel</code></td><td>One per section-index page, at the top</td><td>Live on {heroPanelCount} pages</td></tr>
+          <tr><td><code>vault_card_mark</code></td><td>Registry cards, at category scale</td><td>Not built</td></tr>
+          <tr><td><code>empty_state</code></td><td>Zero-result states, and fields nothing has been written into</td><td>Live</td></tr>
+          <tr><td><code>category_mark</code></td><td>Section and navigation glyphs</td><td>Live on {categoryMarkCount}</td></tr>
+          <tr><td><code>graph_frame</code></td><td>The surround of the relationship graph, never the graph data</td><td>Not built</td></tr>
+        </tbody>
+      </table>
+
+      <p class="ds-note">
+        A page may not invent a sixth slot. Adding one is an amendment to the decision record that
+        governs this table (ADR-053), not a choice made on the page that wants it.
+      </p>
+
+      <h3><code>empty_state</code></h3>
+
+      <p>
+        One mark, used at two sizes: inline beside a line that says a field is empty, and as a block
+        heading a result set that matched nothing. Both are live on the <a href="/vaults/">vault
+        registry</a>.
+      </p>
+
+      <div class="ds-row ds-slot-demo">
+        <span class="ds-slot-demo-item"><EmptyStateMark />inline, beside an absent line</span>
+      </div>
+      <div class="ds-slot-demo-block">
+        <EmptyStateMark scale="lg" />
+        <p>…and at block size, heading an empty result set.</p>
+      </div>
+
+      <p>Four rules govern applying it to a new page:</p>
+      <ol>
+        <li>
+          <strong>Write the sentence first.</strong> The mark is hidden from assistive technology and
+          carries no meaning of its own, so the visible text beside it has to say the whole thing.
+          Removing every mark must lose exactly nothing.
+        </li>
+        <li>
+          <strong>Show it where something is actually missing</strong> — never keyed to a vault's
+          stage, class or status. A mark tied to a lifecycle stage reads as a ranking of that stage,
+          and the registry has nothing to rank with: every stage on it is self-declared.
+        </li>
+        <li>
+          <strong>Credit the artwork once per page, not once per mark.</strong> The credit describes
+          the artwork, and there is one piece of artwork however many times a page draws it.
+        </li>
+        <li>
+          <strong>Check both themes.</strong> The mark takes its colour from the text beside it, so it
+          follows the theme on its own; a container you put it in does not, and needs its own contrast
+          check.
+        </li>
+      </ol>
+
+      <Callout variant="self-reference" title="In this vault…">
+        <p>
+          The marks above are the same file the registry renders — imported, not copied. If the
+          artwork changes, this page changes with it, which is the only way a design system page can
+          be trusted to still describe the thing it documents.
+        </p>
+      </Callout>
+    </section>
+
+    {/* HAUSSMANN P4.2 O3 · AC4 — the DIAGRAM half only.
+        P4.1 O2 already published the illustration half above (the five-slot table, the no-sixth-slot
+        rule, the four contributor rules for applying a mark). Re-deriving that here would be
+        duplicated work landing on a protected section — see finding F-12, which narrowed AC4's real
+        scope to what is genuinely absent: how to DRAW a conformant diagram.
+
+        Every rule below is DERIVED from the diagrams already committed — ConvergenceFunnel,
+        TriadDiagram, NetworkDiagram, MermaidDiagram, hero_graph.svg, vaults_graph.svg and the six
+        category icons — not invented for this page. Where the existing set disagrees with itself,
+        the section says so rather than picking a winner silently. */}
+    <section class="ds-section" aria-labelledby="diagram">
+      <h2 id="diagram">Diagram construction</h2>
+
+      <p>
+        A <strong>diagram</strong> is a figure that carries information: nodes, edges, a funnel, a
+        graph. It is not an <a href="#illustration">illustration</a> — illustration is contained to
+        the five slots above and is about atmosphere; a diagram is about a claim, and is held to
+        whether a reader can read it. These rules are derived from the diagrams this site already
+        ships, so following them produces something that looks like the rest of the site rather than
+        merely something that is allowed.
+      </p>
+
+      <h3>Stroke and fill</h3>
+      <p>
+        Structural strokes are <strong>1.4–2 user units</strong>, and 1.6 is the house default — the
+        weight the funnel bands, the triad edges and the triad nodes all use. Node fills are
+        <code>var(--color-bg)</code> so a node knocks out the edges passing behind it; that is what
+        keeps a graph readable without a halo or a shadow.
+      </p>
+      <p>
+        <strong>Colour comes from <code>currentColor</code>, never from a hex value and never from a
+        theme query.</strong> This is the whole dual-theme mechanism: a diagram inherits the text
+        colour of the container it sits in, so it themes for free and cannot fall out of step with
+        the page around it. A diagram that needs a second colour takes it from a
+        <code>--color-*</code> token, and a diagram that needs a third is usually a diagram that is
+        trying to say too much.
+      </p>
+
+      <h3>Grid and scale</h3>
+      <p>
+        Draw into a <code>viewBox</code> and let the figure scale — 320×320, 320×280, 640×384 and
+        340×440 are the sizes in use. Keep the composition centred on a round number (160 is the
+        house centre) so a contributor can place a node without solving for it.
+      </p>
+      <p>
+        <strong>The trap is type.</strong> Inside a <code>viewBox</code>, <code>font-size="14"</code>
+        is 14 <em>user units</em>, not 14 pixels: at 320px wide a 640-unit figure paints that label at
+        7px. Every label must clear <strong>12 CSS px as rendered</strong>, at 320 · 390 · 1024 · 1440
+        · 1920, in both themes. Measure it in a browser from the transform matrix — a computed style
+        reports the authored number and is blind to the scale.
+      </p>
+
+      <Callout variant="warning" title="This rule is not met today">
+        <p>
+          All three of this site's committed diagrams currently fail that floor, and the worst renders
+          its labels at 3.5px. The measurement now runs on every build (<code>gate-39</code>) with each
+          figure pinned at its current worst case, so nothing gets worse and no new figure inherits the
+          exemption — but the existing three are a real, open debt, not a passing grade. It is recorded
+          here rather than left for a reader to discover by squinting.
+        </p>
+      </Callout>
+
+      <h3>Every diagram carries a text equivalent</h3>
+      <p>
+        A diagram is <code>role="img"</code> with <code>aria-labelledby</code> pointing at a
+        <code>&lt;title&gt;</code> and a <code>&lt;desc&gt;</code> inside the SVG. The
+        <code>&lt;title&gt;</code> names the figure; the <code>&lt;desc&gt;</code> <em>is</em> the
+        explanation, not a restatement of the title. The test is whether someone who cannot see the
+        figure gets the same claim from the description — if the description only says what the
+        picture looks like, it has not been written yet.
+      </p>
+      <p>
+        Add a <code>&lt;figcaption&gt;</code> when the figure needs a caption a sighted reader should
+        also see. Interactive figures need more: the relationship graph ships a keyboard-navigable
+        twin, because a node you can only reach with a pointer is a node some readers cannot reach.
+      </p>
+
+      <h3>What a diagram may leave out</h3>
+      <p>
+        A figure may show a subset — most useful figures do. What it may not do is let the subset pass
+        for the whole. <strong>Every graph a figure omits is a stated category, not a silent
+        omission</strong>: say what is not shown, in the description or the caption, in the figure's
+        own voice. A network diagram showing ten vaults out of seventy-four is honest; the same
+        diagram unlabelled is a claim that the network has ten.
+      </p>
+      <p>
+        The same rule governs data: a diagram encodes nothing its text layer does not also say. If a
+        node's colour means something, the meaning is written down somewhere a reader can reach
+        without the colour.
+      </p>
+    </section>
   </div>
-</BaseLayout>
+</DocumentationLayout>
 
 <style>
+  /* HAUSSMANN P4.2 O2 — `.ds` no longer owns the page frame. `.doc-layout` supplies
+     `max-width: var(--content-width)` + centring and `.doc-content` supplies the padding, so the
+     copies that lived here were not merely redundant: nested, the two `var(--space-6)` paddings
+     ADDED, insetting the content by 3rem a side. Only the bottom rhythm is this page's own.
+     ⚠ `.doc-content` also sets `overflow-x: hidden`, which is gate-29's F2 clipping class. This
+     page's widest object is the five-row slot table; it is checked at 320/375 rather than assumed. */
   .ds {
-    max-width: var(--content-width);
-    margin: 0 auto;
-    padding: var(--space-12) var(--space-6) var(--space-20);
+    padding-bottom: var(--space-20);
   }
 
+  /* `.ds-eyebrow` and `.ds-head h1` REMOVED with their elements: the layout renders the <h1> from
+     the `title` prop, and Breadcrumb (correctly rendering nothing here) has replaced what the
+     "Reference" eyebrow was doing. Dead CSS outlives its markup silently — deleting it in the same
+     diff is the same-diff reflex applied to styles. */
   .ds-head { margin-bottom: var(--space-12); }
-  .ds-eyebrow {
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    margin: 0 0 var(--space-2);
-  }
-  .ds-head h1 {
-    font-family: var(--font-display);
-    font-size: var(--text-4xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-heading);
-    margin: 0 0 var(--space-4);
-  }
   .ds-lead {
     font-size: var(--text-lg);
     color: var(--color-text-muted);
@@ -336,6 +592,24 @@ const badges = ['new', 'updated', 'deprecated', 'experimental'];
 
   /* Component samples */
   .ds-row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; margin-bottom: var(--space-2); }
+
+  /* HAUSSMANN P4.1 O2 — the illustration-slot register. Tokens only (gate-25 / gate-14); the table
+     reuses the surfaces the rest of this page already uses, so it introduces no new contrast pair
+     in either theme. */
+  .ds-slot-table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: var(--text-sm, 0.9rem); }
+  .ds-slot-table th, .ds-slot-table td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .ds-slot-table th { color: var(--color-text-heading); }
+  .ds-note { color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); max-width: 68ch; }
+  .ds-slot-demo-item { display: inline-flex; align-items: center; color: var(--color-text-muted); }
+  .ds-slot-demo-block {
+    margin: var(--space-4) 0;
+    padding: var(--space-5, 1.5rem) var(--space-4);
+    text-align: center;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+  .ds-slot-demo-block p { margin: 0; color: var(--color-text-muted); }
 
   .ds-badge {
     font-size: var(--text-xs);

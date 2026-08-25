@@ -1,7 +1,9 @@
 ---
 import { getCollection, render } from 'astro:content';
 import DocumentationLayout from '../../layouts/DocumentationLayout.astro';
+import { sourceForEntry } from '../../utils/contentSource';
 import { buildTechArticleJsonLD, buildBreadcrumbListJsonLD } from '../../utils/seo';
+import { SITE_ORIGIN } from '../../data/canonical';
 
 export async function getStaticPaths() {
   const docs = await getCollection('docs', ({ data }) => data.section === 'community' && !data.draft);
@@ -12,9 +14,10 @@ export async function getStaticPaths() {
 }
 
 const { doc } = Astro.props;
+const source = sourceForEntry(doc);
 const { Content, headings } = await render(doc);
 
-const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.dev';
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? SITE_ORIGIN;
 
 const jsonLD = [
   buildTechArticleJsonLD({
@@ -35,6 +38,8 @@ const jsonLD = [
   description={doc.data.description ?? `${doc.data.doc_title} — aDNA community.`}
   headings={headings}
   jsonLD={jsonLD}
+
+  source={source}
 >
   <Content />
 </DocumentationLayout>

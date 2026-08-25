@@ -1,0 +1,160 @@
+#!/usr/bin/env node
+/**
+ * split_specification.mjs — HAUSSMANN P2.3 O1.
+ *
+ * Projects `src/content/reference/specification.mdx` into one file per numbered section, so the
+ * spec can be read a section at a time on a phone instead of as one 124K-px page (finding F6).
+ *
+ * WHY A GENERATED PROJECTION AND NOT A HAND-SPLIT.
+ * `specification.mdx` is ITSELF a projection — `transform-content.mjs` maps
+ * `.adna/what/docs/adna_standard.md` → it, and its own header says "Body mirrored from
+ * what/docs/adna_standard.md". Splitting the file by hand would be silently reverted the next
+ * time that transform runs. This is the `subnetworks.yaml` clobber class: trace a data file to
+ * its generator before editing it. So the split is generated, committed like every other
+ * projection in this repo, and guarded by a drift assertion in gate-32 that reconstitutes the
+ * source from the parts.
+ *
+ * WHY IT SPLITS ON NUMBERED HEADINGS, NOT ON `## `.
+ * The spec contains `## SITREP` and `## Next Session Prompt` — h2s that live INSIDE §8 Session
+ * Model as illustrative sub-content. A naive heading-level split produces 22 chunks and two
+ * orphan pages torn out of their parent section. Document structure is not heading level. The
+ * numbered form `## N. Title` is the actual section boundary; there are 20 of them.
+ *
+ * Usage:  node scripts/split_specification.mjs         (from site/)
+ *         node scripts/split_specification.mjs --check  (verify, write nothing; used by CI/gate)
+ */
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, existsSync } from 'node:fs';
+import { join } from 'node:path';
+
+const SITE = process.cwd();
+const SOURCE = join(SITE, 'src/content/reference/specification.mdx');
+const OUT_DIR = join(SITE, 'src/content/spec');
+const CHECK = process.argv.includes('--check');
+
+const raw = readFileSync(SOURCE, 'utf8');
+
+// Frontmatter is `---\n…\n---\n`; everything after is the body we split.
+const fmMatch = raw.match(/^---\n([\s\S]*?)\n---\n/);
+if (!fmMatch) throw new Error('specification.mdx has no frontmatter — refusing to guess the body boundary');
+const body = raw.slice(fmMatch[0].length);
+
+const version = fmMatch[1].match(/^version:\s*"?([^"\n]+)"?/m)?.[1]?.trim() ?? '';
+if (!version) throw new Error('specification.mdx frontmatter carries no version — the section pages would misreport it');
+
+/**
+ * The section boundary. `## 7. Frontmatter System` matches; `## SITREP` does not.
+ * Anchored to line start, multiline.
+ */
+const SECTION_RE = /^## (\d+)\.\s+(.+)$/gm;
+
+const marks = [...body.matchAll(SECTION_RE)];
+if (marks.length === 0) throw new Error('found no numbered `## N.` sections — the split pattern no longer matches the spec');
+
+// Anything before section 1 is the preamble (the mirrored-from note + the one-line summary).
+// It belongs to the hub, not to any section.
+const preamble = body.slice(0, marks[0].index).trim();
+
+const sections = marks.map((m, i) => {
+  const start = m.index;
+  const end = i + 1 < marks.length ? marks[i + 1].index : body.length;
+  const number = Number(m[1]);
+  const title = m[2].trim();
+  return {
+    number,
+    title,
+    // The section's URL slug. Deliberately NOT assumed equal to the id rehype gives the same
+    // heading: `## 1. Introduction & Scope` renders as `1-introduction--scope` (the `&` leaves a
+    // double dash) while a clean URL wants `1-introduction-scope`. Anything that needs to map an
+    // anchor to a section must read the RENDERED heading ids rather than re-deriving them here —
+    // the hub page does exactly that. Guessing another tool's slugger is how you ship a 404.
+    slug: `${number}-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`,
+    /** Body WITHOUT its own `## N. Title` line — the page renders that as the <h1>. */
+    content: body.slice(start, end).replace(SECTION_RE, '').trim(),
+  };
+});
+
+// Numbering must be dense and ascending, or prev/next silently skips a section.
+const expected = sections.map((_, i) => i + 1);
+const actual = sections.map((s) => s.number);
+if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+  throw new Error(`section numbering is not 1..N ascending: got ${actual.join(', ')}`);
+}
+
+const esc = (s) => s.replace(/"/g, '\\"');
+
+/**
+ * Promote every body heading one level.
+ *
+ * On a section page the section title is the <h1>, and the body's first heading is `### 7.1 Scope`
+ * — so the document goes h1 -> h3 and skips a level. axe flags that as `heading-order` on all 20
+ * pages, in both themes. Shifting `###` to `##` makes the outline true: the section is the
+ * heading, its subsections are one level down. Heading ids are derived from heading TEXT, not
+ * level, so `#71-scope` is unchanged and no anchor moves.
+ *
+ * FENCES ARE SKIPPED. Section 8 contains a SITREP template inside a ```markdown block whose
+ * content includes `## SITREP`. Rewriting inside the fence would silently edit an example the
+ * spec is quoting — the same trap that makes a heading-level split wrong in the first place.
+ */
+function promoteHeadings(md) {
+  let inFence = false;
+  return md
+    .split('\n')
+    .map((line) => {
+      if (/^\s*(```|~~~)/.test(line)) { inFence = !inFence; return line; }
+      if (inFence) return line;
+      const m = /^(#{3,6})\s/.exec(line);
+      return m ? '#'.repeat(m[1].length - 1) + line.slice(m[1].length) : line;
+    })
+    .join('\n');
+}
+
+const files = sections.map((s, i) => ({
+  name: `${String(s.number).padStart(2, '0')}-${s.slug.replace(/^\d+-/, '')}.mdx`,
+  body: [
+    '---',
+    `title: "${esc(`${s.number}. ${s.title}`)} — aDNA Specification"`,
+    `description: "aDNA Specification §${s.number} — ${esc(s.title)}."`,
+    `section_title: "${esc(s.title)}"`,
+    `number: ${s.number}`,
+    `slug_id: "${s.slug}"`,
+    `version: "${version}"`,
+    `prev: ${i > 0 ? `"${sections[i - 1].slug}"` : 'null'}`,
+    `next: ${i + 1 < sections.length ? `"${sections[i + 1].slug}"` : 'null'}`,
+    '---',
+    '',
+    '{/* GENERATED by scripts/split_specification.mjs from src/content/reference/specification.mdx.',
+    '    Do not edit by hand — edits are lost on the next run. Change the spec, then re-split. */}',
+    '',
+    promoteHeadings(s.content),
+    '',
+  ].join('\n'),
+}));
+
+if (CHECK) {
+  let drift = 0;
+  for (const f of files) {
+    const p = join(OUT_DIR, f.name);
+    if (!existsSync(p)) { console.error(`MISSING  ${f.name}`); drift++; continue; }
+    if (readFileSync(p, 'utf8') !== f.body) { console.error(`STALE    ${f.name}`); drift++; }
+  }
+  const onDisk = existsSync(OUT_DIR) ? readdirSync(OUT_DIR).filter((n) => n.endsWith('.mdx')) : [];
+  for (const n of onDisk) {
+    if (!files.some((f) => f.name === n)) { console.error(`ORPHAN   ${n}`); drift++; }
+  }
+  console.log(drift === 0
+    ? `spec split is current: ${files.length} section(s), version ${version}`
+    : `spec split has ${drift} drift(s) — run: node scripts/split_specification.mjs`);
+  process.exit(drift ? 1 : 0);
+}
+
+if (existsSync(OUT_DIR)) rmSync(OUT_DIR, { recursive: true });
+mkdirSync(OUT_DIR, { recursive: true });
+for (const f of files) writeFileSync(join(OUT_DIR, f.name), f.body, 'utf8');
+
+writeFileSync(
+  join(OUT_DIR, '_preamble.json'),
+  JSON.stringify({ version, preamble, sections: sections.map(({ number, title, slug }) => ({ number, title, slug })) }, null, 2) + '\n',
+  'utf8',
+);
+
+console.log(`wrote ${files.length} section file(s) + _preamble.json to src/content/spec (spec v${version})`);

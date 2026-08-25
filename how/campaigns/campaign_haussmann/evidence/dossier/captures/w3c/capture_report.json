@@ -1,0 +1,16 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 864,
+    "title": "W3C",
+    "desc": "The World Wide Web Consortium (W3C) develops standards and guidelines to help everyone build a web based on the principles of accessibility, internationalization, privacy and security.",
+    "ogTitle": "W3C",
+    "h1": "Making the web work",
+    "h2count": 11,
+    "bodyLen": 3344,
+    "fullH": 3549,
+    "consoleErrors": []
+  }
+]

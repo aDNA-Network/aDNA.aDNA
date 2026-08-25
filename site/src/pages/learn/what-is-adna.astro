@@ -56,7 +56,7 @@ const proofLinks = [
 
   <h2 id="the-problem">The problem</h2>
   <p>AI agents struggle with the same thing people do: finding the right context in a sea of files. Without structure, an agent burns tokens on the wrong content — or misses what matters. You re-explain the project every session. Agents contradict decisions they made last week. Weeks of work vanish when the context window closes.</p>
-  <p>It is a knowledge-architecture problem, not an agent-capability one — the agent is capable; it has nowhere to look. Until aDNA there was no shared answer: every team improvised with long READMEs and custom prompts, and none of it survived across sessions, agents, or teams. aDNA is one open answer any team can adopt, any tool can support, and any agent can read without custom setup.</p>
+  <p>It is a knowledge-architecture problem, not an agent-capability one — the agent is capable; it has nowhere to look. Most teams improvise with long READMEs and custom prompts, and none of it survives across sessions, agents, or teams. aDNA is one open answer any team can adopt, any tool can support, and any agent can read without custom setup.</p>
 
   <h2 id="the-approach">How aDNA works</h2>
   <p>aDNA gives a project three things:</p>
@@ -140,7 +140,18 @@ aDNA.aDNA/
   </details>
 
   <h2 id="before-after">Before and after</h2>
-  <p><strong>Without aDNA:</strong> a lab's 200 files sprawl across Notion, Drive, and Git. Every session starts by pasting an outdated summary; last month's decisions get re-litigated; a new collaborator needs three days to orient.</p>
+  {/* HAUSSMANN P4.5a — R-121 (S3). This paragraph read: "a lab's 200 files sprawl across Notion,
+      Drive, and Git … a new collaborator needs three days to orient." Two specific quantities under a
+      "Before and after" heading, with no lab, no date and no source — an unlabelled hypothetical
+      presented in the site's own voice. Recorded as WEAKER than R-118 (there was no forged terminal
+      output here), and the finding is the inconsistency of standard: the campaign cut a fabrication
+      one mission earlier and published why, then a cold reader found the next one unaided. Fixed the
+      way R-118 was — the invented specifics are cut AND the nature of the claim is labelled, because
+      cutting the numbers while leaving "a lab's" would have kept the page implying an observed case.
+      The "With aDNA" paragraph below is untouched: it describes this vault's actual structure, which
+      a reader can open and check. */}
+  <p><em>The contrast below is the general pattern the standard is built against — not a case study, and no measured project is being described.</em></p>
+  <p><strong>Without aDNA:</strong> project knowledge sprawls across Notion, Drive, and Git. Every session starts by pasting an outdated summary, last month's decisions get re-litigated, and a new collaborator has to work out where everything lives before they can start.</p>
   <p><strong>With aDNA:</strong> the same project has a <code>what/context/</code> library, a <code>STATE.md</code> of priorities and blockers, and a <code>how/missions/</code> directory of work broken into claimable objectives. An agent loads <code>CLAUDE.md</code>, reads the relevant context, and starts in the right direction — same session.</p>
 
   <h2 id="see-for-yourself">See for yourself</h2>

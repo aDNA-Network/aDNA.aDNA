@@ -6,11 +6,11 @@ campaign: campaign_haussmann
 phase: P1
 decade: 1
 owner: stanley
-status: queued
+status: completed   # 2026-08-16 P1-wave: O0–O3 all done. F1 (grid areas) + F2 (minmax reflow+wrap) + F3 (portrait diagram twin) + F12 (:global wrapper styles + measure-fit tree) fixed; gate-29 red-proven 10-green; gate-23 same-diff; capture tool now reducedMotion-deterministic. Suite 414 green; axe 0 both themes. Evidence: evidence/captures_p1_4/.
 mission_class: build
 executor_tier: sonnet   # CSS-scoped fixes with a clear evidence trail; judgment already done
 token_budget_estimated: "~100–160 kT in 1 session: docs-grid fix + /network reflow + home-diagram mobile treatment + full T0 re-capture (ADR-016)"
-token_budget_actual:
+token_budget_actual: "≈75 kT / 1 session (fable) — under estimate; geometry probes (computed grid columns / scrollWidth) localized each root cause in one measurement."
 created: 2026-08-16
 last_edited_by: agent_rosetta
 grounded_in: ["visual_findings F1 (S1 docs column), F2 (/network clipping — D11 gate condition), F3 (diagram mobile collapse), F12 (code-block copy button), F14", "scoring reconciliation D11 divergence"]
@@ -61,8 +61,40 @@ The three findings are gone in captures, a gate now guards the class, and the mo
 
 ## Progress
 
-*(at execution)*
+- **2026-08-16 (P1 wave, single session).** O0 — all four reproduced locally (T0 + headless geometry
+  probes; the decisive numbers: docs grid computed `"141px 0px 233px"` at 375; copy-btn computed
+  `position: static`; run-code scrollWidth > clientWidth under `overflow-x: hidden`). Root causes:
+  **F1** = the base grid never declared its named areas, so `grid-area: content` resolved to
+  implicit lines (article thrown into an implicit column — invisible to gate-9); **F2** = `auto 1fr`
+  auto-minimum inheriting the clone-URL width + band-level clip; **F12** = the runtime-built
+  copy-button wrapper is unreachable by CodeBlock's Astro-scoped styles; **F3** = 640-unit landscape
+  SVG scaling to ≤0.59× (≈6.5px labels). O1 — grid areas at base + `minmax(0,1fr)`/`min-width:0` +
+  run-code soft-wrap (H-8 rule) + `:global` wrapper styles mirroring the CodeBlock idiom + tree
+  comments fit the 70ch measure. O2 — **portrait diagram twin** (same data/classes/palette/motion,
+  media-swapped at 768px; labels ≥13px at 320). Bonus instrument find: the F3 evidence was partly a
+  **capture artifact** (full-page shots never scroll → armed animations shot invisible) —
+  `visual_capture.mjs` now emulates `reducedMotion: 'reduce'` (deterministic, honest) and the
+  compose fallback tightened 1600→600ms. O3 — `gate-29-reflow.spec.ts` (10 assertions;
+  **red-proven**: reinstating F1 flips 6 red); gate-23 updated same-diff for the twin-pair; full T0
+  re-capture 4 surfaces × 6 viewports × 2 themes, **axe 0 both themes**, evidence note + cited
+  before/after subset at `evidence/captures_p1_4/`. Suite **414 passed** (the 9 P1.1 claim xf
+  remain by design).
 
 ## AAR (SO#5)
 
-*(before completed)*
+- **Worked.** Geometry-level probes (computed grid columns, scrollWidth, computed position) turned
+  four "looks broken on phones" reports into four one-line root causes before any CSS was touched.
+- **Didn't.** The first red-test didn't go red — reverting only *half* the F1 fix left my new
+  `grid-area: mobilenav` line altering the failure geometry; a faithful red-proof had to reinstate
+  the defect exactly. And gate-23's single-SVG pin caught the twin-pair (good gate, same-diff cost).
+- **Finding.** Two of the four defects were *invisible to every existing automated gate by
+  construction*: F1 shrank content instead of overflowing (gate-9 blind), F12 lived in
+  runtime-built DOM that scoped-style tooling can't see. The eyes-only S1 class is real; gate-29
+  now covers its geometry signature. Also: evidence captures can lie about animated surfaces —
+  determinism needed emulating reduced motion at the instrument.
+- **Change.** T0 captures are reducedMotion-deterministic from now on; the reflow gate guards the
+  shrink-not-overflow class permanently.
+- **Follow-up.** P4.3 (a11y manual) unblocks; WebForge upstream candidates: the reflow-gate pattern
+  (KW-class: "shrink defeats overflow gates") + the reducedMotion capture rule + the
+  scoped-styles-vs-runtime-DOM trap; evidence-retention ruling for the 72M of on-disk capture sets
+  (operator, SITREP).

@@ -6,9 +6,9 @@ owner: stanley
 persona: rosetta
 status: active          # RATIFIED at Gate C 2026-08-16 (operator, via AskUserQuestion in the genesis session) — see the §7.7 block
 phase_count: 6          # P0–P5 on the decade backbone
-mission_count: 27       # 5+4+6+5+5+2; P0–P2 = Decade 1 (committed), P3–P5 = Decade 2 (provisional, recalibrated at P2.6)
+mission_count: 27       # 5+4+6+5+5+2; P0–P2 = Decade 1 (committed), P3–P5 = Decade 2 — RECALIBRATED + RATIFIED at ⛩ DP6 2026-08-19. Count HOLDS at 27: ⊳ D-A took option (ii), so P4.5 splits into two increments (P4.5a copy-rows first, P4.5b voice-rewrite last) and a split increment is not a new mission. Option (i) would have amended this field and was therefore explicitly the operator's to take; they declined it.
 estimated_sessions: "37-50"   # derived: sum of the per-phase tables below (7–9 + 6–8 + 8–11 + 7–9 + 6–9 + 3–4) — never a typed count (KW-14)
-calibrated_sessions: ""   # calibrate at the P2.6 mid-campaign re-score
+calibrated_sessions: "37-42"   # ⛩ DP6 ⊳ D-H, 2026-08-19. Derived, not typed: 16 Decade-1 actual (`ls how/sessions/history/2026-08/ | grep -c haussmann` → 17, minus the one that IS P2.6 s1) + 3 for P2.6 (s1 re-score · s2 ratification · s3 the O0b TTFS run + D3 + AAR) + 18–23 for Decade 2 (summed from p2_replan §4). Sits INSIDE estimated_sessions 37–50, at its low end. ⚠ The operator's quoted value was "36-41", derived before the ⊳ D-A split ruling in round 3 added a session; the ruling selected the PRINCIPLE "stamp the number that survives being counted today", which points here. Reverting to 36-41 is a one-line edit — see the D-H stamp in p2_replan.md.
 estimation_class: content-novel
 executor_tier_default: fable   # charter-altitude fallback (aDNA.aDNA ADR-025 §2 resolution chain — NOT aDNALabs ADR-025, the community ruling); judgment missions fable/opus, mechanical sweeps sonnet — per-mission fields override
 priority: high
@@ -22,7 +22,7 @@ governing_instrument: directives/OPERATION_VITRUVIUS_review_instrument.md   # D1
 baseline_score: "51.6/100 (2026-08-16, two-reviewer reconciled; MCP ≈83, Mastra ≈65)"
 evidence_pack: [d58ea13, df3827c]
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-08-20   # 2026-08-20 ✅ HAUSSMANN WIND-DOWN — R-128 CLOSED + the handoff made cold-start-proof. ⛩ Operator: *"no latlabs at all"*, holder ruled **aDNA Labs** — REVERSING the "leave both, decide later" taken hours earlier at the P3.5 push gate (reversal stated in register §11.1, not silently applied). ⚠ THE SCOPE PUT TO THE OPERATOR WAS WRONG: it said "four live LICENSEs", derived from a `grep | head -20`; the real MIT-holder class is **SIX**. zeta.aDNA was missed (fixed under the ruled principle, flagged in-field); `.adna/LICENSE` NOT edited — Standing Rule 1 — and inherits from the image repo at the next template release. **FINDING: a truncated command is a derived figure.** §9.5 said *count last*; this is the same defect one step upstream — the ENUMERATION a count comes from can be silently partial, and `head -N` never announces itself. `grep | head` is fine for orientation, never for scoping a decision. 5 repos pushed on GO: image `b94ec45` · aDNA.aDNA `71efbce` · zeta `6e7eb2e` · Exchange `6527f57` · LAVentureGraph `3fe62d8`; all five LICENSEs byte-identical md5 `b189a96420df57c630764b57ba7ff2f4`, so ⊳ D-D's "matching the image repo" now holds on a CORRECT name. Verification asymmetry recorded: only 2 of 5 are publicly fetchable — for zeta (private) / Exchange (Codeberg) / LAVentureGraph (rd-forge) the live check is UNAVAILABLE, not passed. LEFT STANDING deliberately: the BSL Licensor *"Lat Labs, Inc."* (a party to a commercial licence, not a copyright line — memo routed to Galileo, `coord_2026_08_20_galileo_bsl_licensor.md`), package metadata in other vaults, and ~74 historical refs (SO-6). HANDOFF FIXES: **P4.4 now carries the FIVE follow-ups routed to it** — they existed only inside the P4.5a/P3.5 AARs, which is *"recorded in three places and implemented in none"* recurring; its off-site CTA-target gate also changed PURPOSE (R-122/R-123 closed → it guards a regression, not a discovery). **convention 11 + P3.1 now state `depends_on: p2_6_midscore` is discharged by the DP6 signature** — P2.6 stays `in_progress` indefinitely behind ⛩ O0b, and a cold agent must neither halt nor learn depends_on is decorative. EVIDENCE ESTATE CLOSED (open since P1): the ratified Refit policy applied in its DANGLE-SAFE ORDER — 61 cited PNGs committed FIRST, then 126 uncited frames gitignored; zero new dangles (the 4 found are pre-existing Storyweave/Refit ignores). All 10 remaining Decade-2 specs verified substantive (66–72 lines, 4–5 objectives). NEXT = P3.1.  ·  2026-08-20 ✅ P3.5 COMPLETE — the standard now has a public proposal process, and D9 finally moved. ADR-055 ⛩ RATIFIED (§§1–8: AEP naming, immutable numbers, the 8-state machine, §4's `final`-means-enforced gate, disclosed agent authorship + human-only ratification, /community/proposals/ placement forced by ADR-049's 7-item nav cap). ⊳ D-J ruled in the same signature. AEP-1 IS the process (the PEP-1 pattern) at `final`; AEP-2 (the URL-casing law) at `review`, ⛩ operator-sponsored in-session. R-122 NARROWED by a live re-probe — the image repo's CONTRIBUTING was never missing, it sat at .adna/CONTRIBUTING.md below GitHub's detection paths; only the CoC was absent. Second consecutive mission where a re-probe shrank an inherited row. R-122/R-123/R-127 CLOSED by two ⛩ GO'd outward pushes, verified live 6/6 + GitHub API license: MIT. R-128 filed #needs-human (the LICENSE names 'Lat Labs', a holder on no other surface). gate-37 (20 assertions) red-proven 16/17; suite 495→521 zero xfail; axe 0 across 4 surfaces × 6 viewports × 2 themes. Deployed tree=16e2c34; probe 3/26 RED pre-deploy → 29/0 GREEN post. FINDING: a red run is the only moment an assertion's vacuous branch is exercised — the probe passed 2 checks against a site without the feature. NEXT = P3.1. P4.5 stays in_progress until P4.5b; P2.6 still in_progress behind ⛩ O0b.  ·  2026-08-20 ✅ P4.5a COMPLETE — Decade 2's first mission shipped. 6/6 acceptance criteria; four rows fixed (R-120 · R-125 · R-111 · R-121); suite 487→495 zero xfail; live probe 12/14 RED pre-deploy → 26/0 GREEN post; deployed tree=bb00464, pushed a8cc707..e4f0d65. R-124 DEFERRED (needs the audience call). R-126 found+fixed at O-E: every changelog entry had been rendering one day early, and the date depended on the build machine's timezone. NEXT = P3.5. P4.5 stays in_progress until P4.5b. P2.6 still in_progress behind ⛩ O0b.  ·  2026-08-20 P4.5a OPENED — the first mission of Decade 2 is executing. Its spec did NOT exist (the ⊳ D-A split lived only in frontmatter comments + this table); authored in-file. The ⊳ D-C hero finding registered as R-125 (S2); R-124 DEFERRED OUT under its own caveat; R-111 narrowed to /canonical-properties alone after a live re-probe showed the /about half had shipped. Register 125 unique ids / 139 rows, derived. · 2026-08-19 ⛩ DP6 RATIFIED — Decade 2 is OPEN. p2_replan.md → accepted with all NINE ⊳ ruled (D-A…D-H plus D-I, which was unlettered inside §2's prose and would otherwise have ridden the master signature silently). 12 missions discharged queued-provisional → queued; mission_count HOLDS at 27; calibrated_sessions set to 37-42; order re-set with P4.5a FIRST. Re-score: 63.2/100 on eleven dimensions (baseline recomputed 50.5; D3 WITHHELD, no 12-dimension composite). ⛩ O0b still outstanding — P2.6 stays in_progress. Next DP = DP7 at P3.4 (already fired early by override; formal GO/NO-GO owed) / DP8 at P4.1.
 last_edited_by: agent_rosetta
 tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, agentic]
 ---
@@ -48,24 +48,25 @@ tags: [campaign, haussmann, site, adna_network, rebuild, vitruvius, community, a
 │           ↳ north-star: zero FALSE claims · self-conformance proven &        │
 │             stated · baseline 51.6 → per-dimension gains · capstone ≥4.95    │
 │                                                                              │
-│  MISSION TREE                                  (2026-08-16, post-P0-wave)    │
-│    P0 preconditions   ✅ P0.2 deploy  ✅ P0.3 webforge  ✅ P0.5 edit-gate    │
-│                       🟡 P0.1 positioning (awaits HUMAN PANEL → ⛩ DP2)      │
-│                       🟡 P0.4 flux-recon (awaits Aspasia ack)               │
-│    P1 credibility     ▫ 1.1 claim-purge  ▫ 1.2 state-of-network             │
-│      (Decade 1)       ▫ 1.3 registry-truth(⛩DP4)  ▫ 1.4 mobile-S1s         │
-│    P2 structure       ▫ 2.1 urls  ▫ 2.2 ia(⛩DP5)  ▫ 2.3 docs-freshness     │
-│      (Decade 1)       ▫ 2.4 registry  ▫ 2.5 onboarding  ▫ 2.6 re-score⛩DP6  │
-│    P3 agentic+community  ▫ md-twins ▫ registry-json ▫ mcp-server            │
-│      (Decade 2·prov.)    ▫ flux(⛩DP7) ▫ proposals            [gated: DP6]   │
-│    P4 craft+hardening ▫ tokens/voice(⛩DP8) ▫ craft-floor ▫ a11y-manual      │
-│      (Decade 2·prov.) ▫ ci-hardening ▫ voice-rewrite-LAST    [gated: DP6]   │
-│    P5 launch          ▫ human-evidence ▫ re-score+capstone ⛩DP9 [gated:DP6] │
+│  MISSION TREE                                    (2026-08-18, P1 CLOSED)     │
+│    P0 preconditions   ✅ P0.1 positioning(DP2) ✅ P0.2 deploy               │
+│                       ✅ P0.3 webforge  ✅ P0.5 edit-gate                   │
+│                       🟡 P0.4 flux-recon (awaits Aspasia ack — her lane)    │
+│    P1 credibility ✅  ✅ 1.1 claim-purge   ✅ 1.2 state-of-network          │
+│      (Decade 1) 4/4   ✅ 1.3 registry-truth(DP4) ✅ 1.4 mobile-S1s          │
+│    P2 structure 🟢    ✔ 2.1 urls  ✔ 2.2 ia(DP5✔)  ✔ 2.3 docs-freshness       │
+│      (Decade 1) 5/6   ✔ 2.4 registry↑  ✔ 2.5 onboard  🟡 2.6 midscore        │
+│                          ↑ ⛩ DP6 RATIFIED 2026-08-19 — DECADE 2 IS OPEN     │
+│    P3 agentic+community  ▫ proposals+funnel 2nd ▫ md-twins↓                  │
+│      (Decade 2 · OPEN)   ▫ registry-json↓ ▫ mcp-server ▫ flux(⛩DP7)         │
+│    P4 craft+hardening    ▫ 4.5a copy-rows RUNS 1st ▫ tokens/voice(⛩DP8)     │
+│      (Decade 2 · OPEN)   ▫ craft-floor↑ ▫ ci-hardening↑ ▫ a11y ▫ 4.5b LAST   │
+│    P5 launch             ▫ human-evidence ▫ re-score+capstone↑ ⛩DP9         │
 │                                                                              │
-│  PLAN     phase P0/6 · 37–50 sessions (derived) · fable default tier ·      │
-│           prod HARDENED (4/4 headers · B+/80) · suite 404 · freeze lifted   │
+│  PLAN     phase P2/6 · Decade 2 OPEN · 37–42 sessions (calibrated ⊳D-H) ·    │
+│           suite 487 zero xf · 0 FALSE · 63.2/100 on 11 dims (D3 withheld)    │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│  GATES    phase gates are human gates · begin at: HUMAN PANEL → DP2 → P1    │
+│  GATES    phase gates are human gates · next: ⛩ O0b (TTFS run, machine)     │
 │           arc AAR: artifacts/aar_p0_wave.md (this splash augments, never    │
 │           replaces it)                                                       │
 ╰──────────────────────────────────────────────────────────────────────────────╯
@@ -100,6 +101,14 @@ The genesis assessment (Gate B dossier, `artifacts/gate_b_dossier.md`) found a *
 > re-score recalibrates their scope, order, and budgets before Decade 2 opens. Sequencing law
 > (directive §5.C.1): positioning resolves before IA; IA before visual craft. Any violation needs
 > written justification at a gate.
+>
+> **⛩ DISCHARGED 2026-08-19 — Decade 2 is no longer provisional.** DP6 ratified `p2_replan.md`; the
+> re-score ran (**63.2/100 on eleven dimensions**, baseline recomputed **50.5**, D3 withheld) and the
+> recalibration is done: two missions shrank on premises that died, four grew, order re-set. **The
+> sequencing law was bent once, deliberately and in writing** — ⊳ D-A splits P4.5 so its copy increment
+> (**P4.5a**) runs *first* in the decade, ahead of P3.5, because R-120 is an S2 self-contradiction in
+> the homepage's 30-second zone. **P4.5b, the actual voice rewrite, still runs last**, which is what the
+> law protects. This paragraph is that written justification.
 
 ## Phases & Missions
 
@@ -126,12 +135,49 @@ The genesis assessment (Gate B dossier, `artifacts/gate_b_dossier.md`) found a *
 
 **Exit gate (operator):** claim register shows **zero FALSE / zero unsupported-above-ceiling**; a hostile external read (fresh agent, adversarial prompt) finds no unacknowledged overstatement; S1 visual defects re-captured clean; D6/D7 re-scored.
 
+#### ✅ P1 CLOSED — 4/4 missions, 2026-08-18 · exit-gate evidence
+
+| Exit condition | Evidence | State |
+|---|---|---|
+| Zero FALSE / zero unsupported-above-ceiling | claim register **113 adjudicated rows, zero FALSE, zero unsupported** (P1.1 cleared all 8 FALSE; P1.2 §7.5 corrected 11 more; §7.6 added R-112/R-113) | **met** |
+| Hostile external read finds no unacknowledged overstatement | two independent hostile cold-reads (P1.1: 18 findings, all dispositioned; P1.2: 24 findings → 11 claim corrections) + the P1.2-close re-rank, which found **2 further S2s** and had them fixed and gate-pinned | **met — and the last pass still found two, which is the honest caveat on "no unacknowledged overstatement"** |
+| S1 visual defects re-captured clean | P1.4 F1/F2/F3/F12 fixed; gate-29 reflow guard red-proven; axe **0** across 4 surfaces × both themes | **met** |
+| D6/D7 re-scored | **deferred to P2.6** (the mid-campaign re-score, ⛩ DP6) — the instrument's own cadence puts a full dimension re-score there, not at every phase boundary. P1.2's ranker (**4.22**) is the only in-phase measurement and is scoped to two surfaces, not to D6/D7 | **deferred, not met** |
+
+**Standing at close:** suite **444 green, zero xfail** · prod `tree=84dd3bd` live-verified on the apex
+· 4/4 security headers · registry leak baseline retired (86 rows → 0, hard-gated) · the deploy freeze
+lifted and the sole-sanctioned path in force.
+
+##### ⛩ P1→P2 phase gate — SIGNED (§7.7)
+
+| Field | Value |
+|---|---|
+| **Decision** | Open P2. The P1 exit gate is accepted at **3 of 4 conditions met**, with the fourth — the D6/D7 re-score — **deferred to P2.6**, where the instrument's own cadence puts a full dimension re-score. The deferral is accepted as a deferral; it is **not** recorded as satisfied. |
+| **Ratified by** | stanley (operator / FA), in-chat `AskUserQuestion` |
+| **Date** | 2026-08-18 |
+| **Status** | **accepted** — P2 open. P2.1 ✅ shipped + live-proven 2026-08-18 (162/0 probe; ADR-051 accepted). **P2.2 ✅ SHIPPED 2026-08-19T04:24Z** (`tree=301daef`) — DP5's Option A is live on adna.network: nav 7, 11 redirects proven in both slash forms, `/provenance-audit/` 200 where it was 404; deploy probe **121/0**. **P2.3 ✅ COMPLETE 2026-08-18** — zero internal 404s + a blocking link gate, spec paginated to a hub + 20 sections + full text (default URL 74,067 → 2,244 px), 113 pages carry a date and an edit link, changelog 1 → 4 entries with RSS, F11 fixed; suite **446 → 460**, axe 0. **Built + gated, NOT deployed** — a deploy ⛩ is per-action. Also closed a two-day CI outage nobody had noticed (gate-30 asserted a deploy-only injection step CI never ran). Next mission = **P2.4**; next substantive DP = **DP6 at P2.6**. |
+
+> The honest reading, kept here so a later reader does not mistake the signature for a clean sweep:
+> P1 closed 4/4 on *missions*, not 4/4 on *exit conditions*. The last hostile pass still found two
+> S2s (R-112/R-113) — fixed and gate-pinned before the deploy, but found. D6/D7 remain unmeasured
+> since the baseline. P2.6 is where that debt comes due, and it is tracked, not forgiven.
+
+**Carried into P2 with provenance** (not silently dropped): the Enterprise Architect routing gap
+(`/compliance`, `/enterprise` unreachable from either disclosure surface; the one org-scale exit
+points at a human-only channel) → **P2.2**; `/privacy` emits no JSON-LD → **P2** candidate;
+`/install.html` is an orphan (reachable, no chrome, no sitemap entry) → decide, don't leave;
+the P2 sweep of surfaces P1.2 never touched, for the two patterns both reviewers named.
+
+**Still open outside P1:** P0.4 awaits Aspasia's ack (her lane; **more urgent since P1.1's override
+shipped the /community link ahead of ADR-054's prerequisites**), `VERCEL_TOKEN_ADNA` is unbrokered
+(Hestia), and the evidence-retention ruling is unmade.
+
 ### P2 — Structure (Decade 1; 6 missions, ~8–11 sessions)
 
 | Mission | Title | Sessions | Tier | Deps |
 |---|---|---|---|---|
 | P2.1 | URL normalization: casing scheme (ADR-051), full redirect map (incl. Wayback CDX), gate specs same-diff | 1–2 | sonnet | — |
-| P2.2 | IA consolidation: 3 audience branches → positioned set (ADR-049); nav ≤8; CTA 1+1; design-spike + ranker ≥4.0 | 2 | fable | P0.1 |
+| P2.2 | IA consolidation: 3 audience branches → positioned set (ADR-049); **nav ≤7**; CTA 1+1; design-spike + ranker ≥4.0 | 2 | fable | P0.1 |
 | P2.3 | Docs freshness: spec pagination, per-page dates, edit-this-page, 29 broken links + **link gate in CI**, glossary previews, changelog/RSS revival + cadence | 2 | sonnet | — |
 | P2.4 | Registry redesign: admission standard + lifecycle tiers (ADR-052), facets, dual-clock signals, marketplace-archetype patterns | 2 | fable | P1.3 |
 | P2.5 | Onboarding paths: zero-install evaluation path, "first success" defined + published, uninstall docs, trust-cost mitigation, **TTFS instrument + clean-machine run** | 2 | opus | P0.1 |
@@ -139,19 +185,35 @@ The genesis assessment (Gate B dossier, `artifacts/gate_b_dossier.md`) found a *
 
 **Exit gate (operator):** TTFS < 10 min measured · zero internal 404s (gated) · ≤2 clicks preserved · re-score shows D1–D4 movement · Decade-2 re-plan ratified.
 
-### P3 — Agentic surface + community (Decade 2, provisional; 5 missions, ~7–9 sessions)
+### P3 — Agentic surface + community (Decade 2 — **RATIFIED ⛩ DP6 2026-08-19**; 5 missions, ~7–9 sessions)
 
 | Mission | Title | Sessions | Tier | Deps |
 |---|---|---|---|---|
-| P3.1 | .md twins + content negotiation + llms.txt linked + real llms-full corpus (ADR-056; pattern → WebForge) | 2 | sonnet | P2.1 |
+| P3.1 ✅ | .md twins + content negotiation + llms.txt linked + real llms-full corpus (ADR-056; pattern → WebForge) — **COMPLETE 2026-08-21**, deployed `tree=f053431`. 221 twins · 442 negotiation routes · corpus 2,476 B → 940,718 B · machine-eye 2/3/4/12 **all PASS live** | 2 | ~~sonnet~~ **opus** | P2.1 |
 | P3.2 | Registry JSON endpoint + Organization/Dataset JSON-LD + sameAs (ADR-056) | 1 | sonnet | P2.4 |
 | P3.3 | `adna-mcp-server` over docs+registry (npx, official TS SDK); **self-conformance demonstrated and stated on the page** | 2 | opus | P3.1, P3.2 |
 | P3.4 | Community integration per ADR-054: prerequisites verified (policy floor + branding + aliveness), honest-state link from /community, ladder mapping, disclosure copy (SO#8) | 1–2 | opus | P0.4 |
-| P3.5 | Numbered proposal process (ADR-055): states, archive, machine index, **first proposal filed** | 1–2 | fable | — |
+| P3.5 ✅ | Numbered proposal process (ADR-055): states, archive, machine index, **first proposal filed** — **COMPLETE 2026-08-20** | 1–2 | fable | — |
+
+> **Decade-2 progress, derived from the 27 mission frontmatters (2026-08-21).** `completed 15 · active 1
+> · in_progress 2 · queued 9`. Decade 1 (P0–P2) is complete but for **P0.4** (Aspasia's ack, her lane).
+> Decade 2 has shipped **3 of 13** — P4.5a ✅ · P3.5 ✅ · P3.1 ✅. **Next = P3.2**, whose scope already
+> SHRANK: `Organization`+`sameAs` shipped unremarked at P1.2 (machine-eye delta, 2026-08-19), leaving
+> `Dataset` on the registry, the versioned JSON endpoint, schema-dts, and the three zero-JSON-LD pages.
+> **P2.6 and P4.5 stay `in_progress` by design** — P2.6 behind ⛩ O0b, P4.5 until P4.5b runs last.
+> ⚠ **These mission tables carry no status column**; the frontmatter of each mission file is the truth,
+> and this line is a derived summary that will age. Re-derive rather than trust it.
+
+> **⛩ DP6 order (2026-08-19).** Decade 2 runs **P4.5a → P3.5 → P3.1 → P3.2 → P3.3 → P3.4 → P4.1 →
+> P4.2 → P4.4 → P4.3 → P4.5b → P5.1 → P5.2.** Two departures from mission numbering, both ruled:
+> **P4.5a first** (an S2 homepage self-contradiction outranks the sequencing convention) and **P3.5
+> first within P3** (D9 is the only dimension nine missions never moved, and its repair is small).
+> Budgets/tiers are authoritative in the mission frontmatter, re-summed from those files by script:
+> **~2,380–3,650 kT across ~18–23 sessions**.
 
 **Exit gate (operator):** machine-legibility conformance report clean (D10 anchor-4+ verified) · first numbered proposal live · community link live only if prerequisites held.
 
-### P4 — Craft & hardening (Decade 2, provisional; 5 missions, ~6–9 sessions)
+### P4 — Craft & hardening (Decade 2 — **RATIFIED ⛩ DP6 2026-08-19**; 5 missions, ~6–9 sessions; P4.5 splits into P4.5a/P4.5b per ⊳ D-A)
 
 | Mission | Title | Sessions | Tier | Deps |
 |---|---|---|---|---|
@@ -159,11 +221,12 @@ The genesis assessment (Gate B dossier, `artifacts/gate_b_dossier.md`) found a *
 | P4.2 | Craft-floor conformance (57 locks) + design-system debt + html-validate 5 classes + published diagram construction rules | 2 | sonnet | P0.3, P4.1 |
 | P4.3 | A11y manual: keyboard + screen-reader passes (virtual-screen-reader lane + operator VoiceOver), F2 adjudication, a11y statement page | 1 | opus | P1.4 |
 | P4.4 | CI hardening: visual-regression gate (container baselines), live-header check, Unlighthouse periodic, field-p75 instrument, CWV budgets | 1–2 | sonnet | P0.2 |
-| P4.5 | **Voice rewrite LAST** (Berthier rule): FKGL targets, glossary-linked first-use, register transitions, dual-audience review | 2 | fable | P0.1, P2.2 |
+| **P4.5a** | **Copy increment — RUNS FIRST IN DECADE 2** (⛩ D-A): R-111 · R-120 (S2, homepage 30-second zone) · R-121 · **R-125** (the ⊳ D-C hero cut of *"Lattice Protocol"*, **registered 2026-08-20** — it had no row when this table was written). ~~R-124~~ **DEFERRED OUT at execution** under its own re-plan caveat: routing it requires *authoring* a clinical posture, which is a positioning decision nobody has taken. Scope at execution = **4 rows, not 4+1** | 1 | fable | P0.1 |
+| **P4.5b** | **Voice rewrite LAST** (Berthier rule): FKGL targets, glossary-linked first-use, register transitions, dual-audience review | 2 | fable | P0.1, P2.2 |
 
 **Exit gate (operator):** zero a11y criticals incl. manual · design-system conformance on 20 sampled components · CWV green field · every new pattern authored back to WebForge.
 
-### P5 — Launch readiness (Decade 2, provisional; 2 missions, ~3–4 sessions)
+### P5 — Launch readiness (Decade 2 — **RATIFIED ⛩ DP6 2026-08-19**; 2 missions, ~3–4 sessions)
 
 | Mission | Title | Sessions | Tier | Deps |
 |---|---|---|---|---|
@@ -177,12 +240,15 @@ The genesis assessment (Gate B dossier, `artifacts/gate_b_dossier.md`) found a *
 | # | When | Decision | Status |
 |---|---|---|---|
 | DP1 | Gate C | Charter ratification (§7.7) + Decade-1 commitment | **✅ RATIFIED — operator (Stanley/FA), 2026-08-16** |
-| DP2 | P0.1 close | ADR-048 positioning (incl. audience, name-collision handling, embargo language) | pending |
-| DP3 | P0.2 | ADR-050 deploy path (git-integration vs wrapped-manual vs hybrid) | pending |
-| DP4 | P1.3 | ADR-052 §admission — confidential-adjacent vaults in the public registry (aiLP-Dataroom, CakeHealth, PercySleep) | pending ⛩ |
-| DP5 | P2.2 | ADR-049 IA model (audience-branch disposition) | pending |
-| DP6 | P2.6 | Decade-2 recalibration + re-plan ratification | pending (recurring shape) |
-| DP7 | P3.4 | ADR-054 community-link GO/NO-GO on verified prerequisites | pending |
+| DP2 | P0.1 close | ADR-048 positioning (incl. audience, name-collision handling, embargo language) | **✅ RATIFIED — operator, 2026-08-16** · candidate A (definition-as-hero); the O4 human panel was **waived** in-chat, deviation recorded in ADR-048 §Status, human validation deferred to **P5.1** |
+| DP3 | P0.2 | ADR-050 deploy path (git-integration vs wrapped-manual vs hybrid) | **✅ RATIFIED (c) — operator, 2026-08-16** · `deploy_adna.sh` is the sole sanctioned path; deploy freeze lifted |
+| DP4 | P1.3 | ADR-052 §admission — confidential-adjacent vaults in the public registry (aiLP-Dataroom, CakeHealth, PercySleep) | **✅ RULED — operator, 2026-08-16** · minimal-card ×3, suppression at the generator |
+| DP5 | P2.2 | ADR-049 IA model (audience-branch disposition) | ✅ **RATIFIED — operator, 2026-08-18: Option A** (consolidate to `/use-cases/`; nav 7; 11 redirects). Both comps cleared ranker ≥4.0 and the instrument **declined to separate them** (A 4.03 · C 4.17), so the call was judgment: A is reversible and P2.6 is the named revisit point for C. **✅ IMPLEMENTED same-day at O2/O3** — 446/446 gates, 0 duplicate titles, 10/10 ≤2-click held; **undeployed** (separate ⛩). One correction on the record: the ADR's "zero content rewritten" was wrong on the facts — the retiring pages carried 13 unique ontology rows + ~1,690w of curated reading paths, all **folded into their destination before retiring** (ADR-049 §Status implementation note). |
+| **DP-16** | P2.4 (out-of-band) | **Inference's control-plane classification**, with a live persisting surface attached (raised by Pythia 2026-08-07 + 08-18) | ✅ **RATIFIED — operator, 2026-08-19: shape A, conditioned.** Inference stays control-plane **for its serving lanes**, the manifest says so in those words, **and the human surface gets a declared §8 data-bearing row** — not a footnote. The condition is the load-bearing part: that instance ran four months unregistered *because* the graph's label said there was nothing to register, so adopting A without the declared row would leave the producing condition in place and now deliberately. Recorded at `how/campaigns/campaign_keystone/artifacts/keystone_cohort_manifest.md` §DP-16 |
+| **DP-P2.4** | P2.4 O1 | Registry grouping (A tier-first / B class-first / C density) **and** the 740-scale mechanism — split into two by O1's own finding that no variant scales | ✅ **RULED — operator, 2026-08-19: (1) variant A** (tier-first: in use 7 · chartered 10 · planned 57) **and (2) explicitly defer the 740 mechanism**. The self-scored pre-screen tied A and C at 3.88 with neither clearing 4.0, so the grouping call was judgment: A's groups are visually equal and only the labels differ, so its layout claims nothing the self-declared data cannot support — where C's density gradient reads as a ranking. `scales at 10×` is recorded **UNMET** with the arithmetic as the reason; the three candidate mechanisms are named in **ADR-052 §tiers.7** with a revisit trigger. **ADR-052 ratified `accepted` at the same gate**; §tiers.6 (77-vs-74) deliberately not put, and stays *stated, not decided* |
+| ~~**P2.4 pick**~~ | P2.4 O1 | *(the same two questions as `DP-P2.4` above)* Registry **grouping** (A tier-first / B class-first / C density) **and — separately — the 740 mechanism** (pagination / default-collapsed planned tier / virtualization / explicit defer) | ⛔ **SUPERSEDED by `DP-P2.4`** — kept per SO-6, struck 2026-08-19 at P2.6 O3a. This row read ⛩ AWAITING for a gate that **fired the same day**: `DP-P2.4` records the ruling (variant A · 740 deferred) and `mission_haussmann_p2_4_registry_redesign.md` closes `status: completed`. A decision table showing a phantom open gate is the same defect class as a stale count — **do not read this row as live** — the 10× test found **none of the three variants scales** (all ~19,000 px at 740; C beats A by 5%), so the two questions came apart. Synthetic pre-screen is `[D-syn]`, conflict declared, and **declines to separate A and C**. Record: `artifacts/p2_4/spike_record.md` |
+| DP6 | P2.6 | Decade-2 recalibration + re-plan ratification | ✅ **RATIFIED — operator, 2026-08-19** (in-chat, session `session_stanley_20260819_190213`): `p2_replan.md` → `accepted`, **all nine ⊳ ruled** — D-A **(ii) + placement**: P4.5 splits, **P4.5a runs FIRST in Decade 2** (an S2 homepage self-contradiction is not left live through eleven missions to preserve an ordering convention); D-B ADR-057 covered by Gate C → `accepted`; D-C cut *"Lattice Protocol"* from the hero while the counsel embargo forbids defining it; D-D **MIT** for the unlicensed docs repo (`#needs-human`, outward act at P3.5); D-E mirror `lighthouse_profiles.json` at P4.4; D-F Option C **closed** not-needed; D-G 740-mechanism stays deferred, **trigger >150 entries**; D-H `calibrated_sessions` **37-42**; **D-I** (unlettered when authored, in §2's P3.2 prose) nested `WebSite.publisher` **satisfies** the Organization half. **Decade 2 OPEN** — 12 missions discharged `queued-provisional` → `queued`; `mission_count` holds **27**. Order: **P4.5a → P3.5 → P3.1 → P3.2 → P3.3 → P3.4 → P4.1 → P4.2 → P4.4 → P4.3 → P4.5b → P5.1 → P5.2**. Budgets re-summed **from the mission files by script**: ~2,380–3,650 kT / ~18–23 sessions. **⛩ O0b is unaffected and remains outstanding** — D3 unscored, no 12-dimension composite, R-34/R-63 undischarged, P2.6 stays `in_progress`. Gate keeps its *"recurring shape"* — it may fire again. |
+| DP7 | P3.4 | ADR-054 community-link GO/NO-GO on verified prerequisites | ⚠ **FIRED EARLY by operator override at P1.1 (2026-08-17)** — the /community link shipped with PR-1/2/3 unmet; deviation recorded in ADR-054 §Status, honest-state framing shipped and guarded by R-95/R-96. The DP itself is **still owed** on the verified prerequisites at P3.4 |
 | DP8 | P4.1 | ADR-053 visual voice (slot-contained program vs accent-only fallback) | pending |
 | DP9 | P5.2 | Launch GO + close | pending |
 
@@ -195,7 +261,7 @@ The genesis assessment (Gate B dossier, `artifacts/gate_b_dossier.md`) found a *
 | Registry projection fix collides with Hestia's regen ownership | Code-side fixes here; data asks staged as memos; honor pt19 absolutely |
 | Counsel embargo drifts (protocol opens mid-campaign) | ADR-048 carries both language variants; swap is a copy change, not a re-design |
 | Community prerequisites never land (Aspasia lane stalls) | P3.4 is contingent-by-design; the honest fallback (no link + honest state) is already the P1 posture |
-| Decade-2 front-runs the re-score | P3–P5 missions carry `decade: 2` + `status: queued-provisional`; P2.6 re-plan is their activation gate |
+| Decade-2 front-runs the re-score | ✅ **RETIRED 2026-08-19** — the control worked as designed: the missions sat at `queued-provisional` until P2.6's re-score ran, and the re-score then *changed* the plan (two premises died, two strengthened) rather than rubber-stamping it. All 12 discharged to `queued` at DP6. |
 | Live-data literals pinned in new tests (KW-8 class) | Snapshot-derivation law inherited from WebForge FR-K; stated in CLAUDE.md |
 | Fresh evidence goes stale during long campaign | Deploy baseline + drift check at every phase open; claim register re-verified monthly |
 

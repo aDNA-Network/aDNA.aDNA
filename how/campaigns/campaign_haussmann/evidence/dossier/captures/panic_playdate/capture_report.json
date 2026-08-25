@@ -1,0 +1,16 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 3163,
+    "title": "Playdate",
+    "desc": "It’s yellow. It fits in your pocket. There’s a crank. It comes with 24 free games to get you started. Say hi to Playdate from Panic.",
+    "ogTitle": "Playdate. Order now!",
+    "h1": "Playdate®",
+    "h2count": 15,
+    "bodyLen": 5887,
+    "fullH": 16395,
+    "consoleErrors": []
+  }
+]
