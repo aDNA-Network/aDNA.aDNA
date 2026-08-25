@@ -359,6 +359,7 @@ Reusable agent recipes and documented procedures in `how/skills/`. Skills have t
 | `skill_substrate_inversion_with_adr` | agent | Implementation-class mission whose S2 surfaces a load-bearing decision — draft an ADR alongside the spec+skill, ratify in the close cascade *(graduated M3.7)* |
 | `skill_documentation_layout_props_additive_extension` | agent | A shared Astro layout needs new optional content across many pages — extend via one purely-additive optional Props field (zero-diff for non-opting consumers), never fork *(graduated STR M5.3 cycle 107, 3/3; ratified Champollion G3 D2c)* |
 | `skill_inline_svg_raw_import_currentcolor_inheritance` | agent | Ship theme-inheriting zero-runtime-JS icons/diagrams in Astro — inline the SVG (`?raw` import for static, inline-template for dynamic) + `currentColor`, not `<img>` or runtime JS *(graduated STR M5.3 cycle 108, 3/3; ratified Champollion G3 D2c)* |
+| `skill_web_quality_sweep` | agent | Any assessment, review, audit, phase-gate verification, or re-score of a rendered web surface — and any HAUSSMANN mission whose `verification_method` names gates, captures, Lighthouse, or a machine-eye pass *(authored 2026-08-17; **added to this inventory 2026-08-25 — it had been active and un-tabled for 8 days**, found by deriving the count instead of reading it)* |
 
 ---
 

@@ -49,9 +49,17 @@ const CAMPAIGN = join(VAULT, 'how', 'campaigns', 'campaign_haussmann');
 
 /** Dated ratchet baselines. These may only ever go DOWN. See the header. */
 const RATCHET = {
-  measured: '2026-08-24',
+  measured: '2026-08-25',
   adrsMissingFromIndex: 13,
-  manifestStateDriftDays: 49,
+  // 49 → 0: the MANIFEST was genuinely REVIEWED on 2026-08-25, not date-bumped. What the review
+  // found is why the ratchet exists at all — three stale claims, each of which had been read and
+  // believed for weeks: `campaign_rosetta active` (closed 2026-04-26, two campaigns ago), the
+  // context library at "27 subtopics" (32), and ⭐ **"56 skills" when the directory held 57**.
+  // That last one is the sharp one: CLAUDE.md's own inventory says the count is "auditable by
+  // counting rows", and `skill_web_quality_sweep` had been active and UN-TABLED since 2026-08-17 —
+  // authored during this very campaign, missing from the list that promises to be countable.
+  // Found by DERIVING the number rather than reading it (KW-14), which is the whole discipline.
+  manifestStateDriftDays: 0,
 } as const;
 
 const readFm = (file: string, key: string): string | null => {

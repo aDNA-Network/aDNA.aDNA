@@ -1,7 +1,7 @@
 ---
 type: manifest
 created: 2026-04-13
-updated: 2026-07-06
+updated: 2026-08-25
 last_edited_by: agent_rosetta
 tags: [manifest, governance]
 ---
@@ -31,16 +31,16 @@ aDNA.aDNA/
 │   ├── glossary/       [EXT] Term definitions with spec refs
 │   ├── use_cases/      [EXT] Adoption narratives by domain
 │   ├── comparisons/    [EXT] aDNA vs. other systems
-│   ├── context/        Agent context library (5 topics, 27 subtopics)
+│   ├── context/        Agent context library (5 topics, 32 subtopics)
 │   ├── decisions/      ADRs
 │   ├── docs/           Specification documents
 │   └── lattices/       Lattice YAML tools, schema, examples
 ├── how/            # HOW — Campaigns, workshops, publishing, operations
 │   ├── workshops/      [EXT] Workshop kits + facilitation
 │   ├── publishing/     [EXT] Vault-to-web pipeline
-│   ├── campaigns/      Strategic initiatives (campaign_rosetta active)
+│   ├── campaigns/      Strategic initiatives (campaign_haussmann active; campaign_rosetta closed 2026-04-26)
 │   ├── templates/      45 templates (26 base + 11 extension + 8 operational)
-│   ├── skills/         56 skills (27 base + 29 project-specific)
+│   ├── skills/         57 skills (27 base + 30 project-specific)
 │   ├── sessions/       Session tracking
 │   ├── missions/       Multi-session task decomposition
 │   ├── pipelines/      Content-as-code workflows
@@ -81,7 +81,7 @@ WHO (4: governance, team, coordination, identity), WHAT (5: context, decisions, 
 | **Developers learning aDNA** | `what/concepts/` | `what/patterns/` → `what/tutorials/` → `what/lattices/` |
 | **Non-developers exploring** | `what/tutorials/` | `what/glossary/` → `what/concepts/` → `what/use_cases/` |
 | **Workshop facilitators** | `how/workshops/` | facilitation guide → participant tutorials |
-| **Agents** | `CLAUDE.md` (auto-loaded) | `STATE.md` → `how/campaigns/campaign_rosetta/` → work |
+| **Agents** | `CLAUDE.md` (auto-loaded) | `STATE.md` → `how/campaigns/campaign_haussmann/` → work |
 | **Humans browsing** | `README.md` | `MANIFEST.md` → browse triad → `STATE.md` |
 
 ## Key Components
@@ -163,11 +163,11 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | Component | Status | Description |
 |-----------|--------|-------------|
 | aDNA Standard v2.5 | Inherited | Core specification — triad, ontology, sessions, missions, campaigns |
-| Context library | Inherited | 5 topics, 27 subtopics, ~75K tokens |
+| Context library | Inherited | 5 topics, 32 subtopics |
 | Lattice YAML tools | Inherited | Validate, convert (YAML↔canvas), JSON Schema, 19 examples |
 | 26 base templates | Inherited | Full operational set (12 auto-triggered + 13 manual-apply) |
 | 27 base skills | Inherited | Onboarding, fork, entity type, quality audit, lifecycle (archive / second-genesis / merge / rename / spring-clean), etc. |
 | Execution hierarchy v2 | Inherited | OODA cascade, AAR protocol, escalation cascade |
 | Quality framework | Inherited | 10-dimension compliance rubric |
 
-See `how/campaigns/campaign_rosetta/campaign_rosetta.md` for the full campaign brief and `STATE.md` for current operational state.
+See `how/campaigns/campaign_haussmann/campaign_haussmann.md` for the **active** campaign brief (Operation HAUSSMANN — the adna.network rebuild; `campaign_rosetta` closed 2026-04-26 at ranker 5.00) and `STATE.md` for current operational state.
