@@ -42,7 +42,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference    = 'SilentlyContinue'   # Invoke-WebRequest is ~10x slower with the bar
-$VERSION = '0.4.12'
+$VERSION = '0.4.13'
 
 # PowerShell 5.1 can still default to TLS 1.0, which GitHub refuses outright.
 try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 }
@@ -66,14 +66,13 @@ function Say  { param($m) Write-Host "   $m" }
 $LOG_FILE = Join-Path $HOME 'adna-install-log.txt'
 # strings-begin
 $MSG_RERUN = 'Nothing was left half done. It is safe to run the same command again.'
-$MSG_HELP  = 'Stuck? Send that log file to the person who invited you, or tell them the code.'
 # strings-end
 function Die  { param($code, $m)
     if (-not $m) { $m = $code; $code = 'GEN-01' }   # old single-arg callers stay safe
     Write-Host ""; WriteC "   [X] $m" Red; Write-Host ""
     Say $MSG_RERUN
-    Say "For the person helping you: the code is $code. The log is saved at $LOG_FILE."
-    Say $MSG_HELP; Write-Host ""
+    Say "Error code $code. Full log: $LOG_FILE"
+    Write-Host ""
     try {
         Add-Content -Path $LOG_FILE -Value ("--- install.ps1 $VERSION " +
             (Get-Date -Format 'yyyy-MM-dd HH:mm:ss') + " failed ${code}`n$m") -ErrorAction Stop
@@ -136,7 +135,7 @@ try {
     # for Windows users is the release artifacts + winget (Phase D), where the signature is
     # checked at package-build time. Recorded in security_design_notes.md -- a gap named is
     # not a gap hidden.
-    $PAYLOAD_SHA256 = '9da124f69abf4cc1014ad75f7f98499e79815ab8fb43e9bf80412df89c705b42'
+    $PAYLOAD_SHA256 = '5344af3464d00b0a9516a6ce4ede986fd2ca687b7986b9f83104b1f62f55b14f'
     if ($PAYLOAD_SHA256 -eq 'PAYLOAD_SHA256_UNSET') {
         Die 'REL-01' "this install.ps1 has no payload hash pinned -- it was published unreleased. Refusing to run unverified code."
     }

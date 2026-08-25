@@ -33,11 +33,11 @@
 #
 set -eu
 
-VERSION="0.4.12"
+VERSION="0.4.13"
 BASE="${ADNA_INSTALL_BASE:-https://adna.network}"
 PAYLOAD="adna-installer-${VERSION}.tar.gz"
 # sha256 of ${PAYLOAD} — regenerate with ./release.sh, which prints the line to paste here.
-PAYLOAD_SHA256="9da124f69abf4cc1014ad75f7f98499e79815ab8fb43e9bf80412df89c705b42"
+PAYLOAD_SHA256="5344af3464d00b0a9516a6ce4ede986fd2ca687b7986b9f83104b1f62f55b14f"
 # minisign public key for the payload signature (Phase C1; keypair generated 2026-08-21,
 # secret brokered as adna_release_minisign.key on the release-cutting box). A missing or
 # bad signature is a hard refusal, never a warning.
@@ -52,14 +52,12 @@ say()  { printf '%s\n' "$*"; }
 LOG_FILE="$HOME/adna-install-log.txt"
 # strings-begin
 MSG_RERUN="Nothing was left half done. It is safe to run the same command again."
-MSG_HELP="Stuck? Send that log file to the person who invited you, or tell them the code."
 # strings-end
 die()  { # $1 = short failure code (for the helper); rest = what happened, in plain words
     code="$1"; shift
     printf '\n%s %s\n\n' "$SYM_ERR" "$*" >&2
     printf '%s\n' "$MSG_RERUN" >&2
-    printf 'For the person helping you: the code is %s. The log is saved at %s.\n' "$code" "$LOG_FILE" >&2
-    printf '%s\n\n' "$MSG_HELP" >&2
+    printf 'Error code %s. Full log: %s\n' "$code" "$LOG_FILE" >&2
     { printf -- '--- install.sh %s · %s · failed %s\n%s\n' \
         "$VERSION" "$(date '+%Y-%m-%d %H:%M:%S' 2>/dev/null)" "$code" "$*"; } >>"$LOG_FILE" 2>/dev/null || true
     exit 1
