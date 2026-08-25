@@ -88,6 +88,60 @@ const keyRetired = classDefColors['classsuperseded'] ?? '#9ea3ad';
 const hasStandard = (classCensus['standard_dev'] ?? 0) > 0;
 const hasRetired = (classCensus['superseded'] ?? 0) > 0;
 
+// P4.3 AC4 — EDGE EQUIVALENCE FOR THE KEYBOARD TWIN. machine_eye 14 measured the twin as only
+// PARTIALLY equivalent to the graph: it listed the nodes but not the relationships, so a sighted
+// reader saw the topology and an AT reader got an alphabetised roster. D11 check 7 asks for a twin
+// that is "genuinely equivalent, not a partial listing" — which means every edge the SVG draws must
+// be readable here, WITH ITS DIRECTION AND TYPE.
+//
+// Endpoints resolve on `vault_slug` ALONE, and the reason is a guarantee rather than a coincidence:
+// `data/vaults.ts` (ADR-051, the single consumption boundary) runs `canonicalVaultSlug()` over BOTH
+// every `vault_slug` AND both endpoints of every edge, so the two are canonical in the same alphabet
+// by construction. ⚠ The raw `vaults.json` is a different object — there `vault_slug` is mixed-form
+// ("Astro.aDNA" for 24 vaults, "harness" for 50), and a resolver written against THAT file needs a
+// second key. This page imports the accessor, not the JSON, so it does not.
+// Resolution THROWS on a miss rather than dropping: convention 7's lesson is that a missed lookup
+// `.filter(Boolean)`-ed away is a silent drop, and this is a curated list where quiet is the wrong
+// failure. A build-time throw is loud, immediate, and cannot ship.
+const vaultBySlug = new Map<string, any>(
+  ((vaultsData as any).vaults ?? []).map((v: any) => [v.vault_slug, v]),
+);
+const resolveEndpoint = (ep: string) => {
+  const v = vaultBySlug.get(ep);
+  if (!v) throw new Error(`vaults_graph: edge endpoint "${ep}" matches no vault by canonical vault_slug`);
+  return v;
+};
+
+// Direction-aware phrasing per edge type. The twin must not read "related to" in both directions —
+// an umbrella edge means something different at each end, and that difference IS the topology.
+// `companion` is symmetric by definition (a sibling persona-pair), so both ends read the same.
+const edgePhrasing: Record<string, { out: string; in: string }> = {
+  umbrella:   { out: 'contains',   in: 'contained by' },
+  federation: { out: 'federates',  in: 'federated by' },
+  partner:    { out: 'ships with', in: 'partner of' },
+  companion:  { out: 'companion of', in: 'companion of' },
+  supersedes: { out: 'supersedes', in: 'superseded by' },
+};
+
+// Per-vault relationship index, keyed by vault_slug. Derived from the same `edges` array the SVG is
+// built from — never a literal-pinned copy (WebForge KW-8/FR-K), so the twin cannot drift from the graph.
+const edgesBySlug = new Map<string, { phrase: string; slug: string; name: string; type: string }[]>();
+const pushEdge = (slug: string, rel: { phrase: string; slug: string; name: string; type: string }) => {
+  const list = edgesBySlug.get(slug) ?? [];
+  list.push(rel);
+  edgesBySlug.set(slug, list);
+};
+for (const e of ((vaultsData as any).edges ?? [])) {
+  const src = resolveEndpoint(e.source);
+  const tgt = resolveEndpoint(e.target);
+  const phrasing = edgePhrasing[e.type] ?? { out: e.type, in: e.type };
+  pushEdge(src.vault_slug, { phrase: phrasing.out, slug: tgt.vault_slug, name: tgt.display_name, type: e.type });
+  pushEdge(tgt.vault_slug, { phrase: phrasing.in, slug: src.vault_slug, name: src.display_name, type: e.type });
+}
+for (const list of edgesBySlug.values()) {
+  list.sort((a, b) => a.phrase.localeCompare(b.phrase) || a.name.localeCompare(b.name));
+}
+
 // Client round-trip map (E4 cycle 154): `label` is the Mermaid node text (the vault name, as the .mmd
 // renders it), `name` is the friendly display name for the back-link, `slug` routes to /vaults/<slug>/.
 const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
@@ -99,7 +153,11 @@ const vaultNameMap = ((vaultsData as any).vaults ?? []).map((v: any) => ({
 // with the unlinked set last — a structured, legible index of the same vaults + links. ONE DOM list
 // serves both the keyboard-twin (desktop) and the mobile-primary roles (no duplicate list for SR users).
 const isOrphan = (v: any) => !linkedSlugs.has(v.vault_slug) && !linkedSlugs.has(v.vault);
-const toListItem = (v: any) => ({ slug: v.vault_slug, name: v.display_name });
+const toListItem = (v: any) => ({
+  slug: v.vault_slug,
+  name: v.display_name,
+  edges: edgesBySlug.get(v.vault_slug) ?? [],   // AC4: the relationships this vault carries in the graph
+});
 const byName = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name);
 const allVaultsForList = ((vaultsData as any).vaults ?? []);
 const nodeGroups = [
@@ -214,13 +272,36 @@ const jsonLD = buildCollectionPageJsonLD({
         node, in the same order the .mmd defines them. Visually hidden; revealed on keyboard focus. */}
     <nav class="graph-node-list visually-hidden" aria-label="Open a vault from the network graph">
       <h2>Vaults in the graph</h2>
-      <p class="nodelist-intro">Tap a vault to open it.</p>
+      {/* AC4: the copy is derived, not typed (KW-14) — `edgeCount` is the same figure the diagram
+          caption and the JSON-LD description are built from, so the three cannot disagree. */}
+      <p class="nodelist-intro">
+        Every vault in the diagram, grouped by class. Vaults with relationships list them here —
+        {edgeCount} directed links in all, each readable from both ends. Tap a vault to open it.
+      </p>
       {nodeGroups.map((g) => (
         <div class="nodelist-group">
           <p class="nodelist-group-label">{g.label}</p>
           <ul>
             {g.items.map((v) => (
-              <li><a href={`/vaults/${v.slug}/`} data-slug={v.slug}>{v.name}</a></li>
+              <li class={v.edges.length > 0 ? 'has-rels' : undefined}>
+                <a href={`/vaults/${v.slug}/`} data-slug={v.slug}>{v.name}</a>
+                {/* AC4: the edges this node carries in the SVG, with DIRECTION and TYPE, so the twin
+                    states the topology rather than just the roster. ⚠ These anchors deliberately carry
+                    NO `data-slug` — the round-trip script resolves `?focus=` with querySelector, which
+                    returns the FIRST match, so a relationship link bearing the attribute could pre-empt
+                    the node row it points at. */}
+                {/* ⚠ The separating space is an EXPLICIT `{' '}`, not source whitespace: written as
+                    `{e.phrase} <a>`, Astro collapses the gap between the expression and the tag and
+                    the twin renders "federatesAstro" — correct to the eye at a glance, and one word
+                    to a screen reader. Measured in `dist/` before and after. */}
+                {v.edges.length > 0 && (
+                  <span class="nodelist-rels">
+                    {v.edges.map((e: any, i: number) => (
+                      <span class="rel">{i === 0 ? ' — ' : ', '}{e.phrase}{' '}<a href={`/vaults/${e.slug}/`}>{e.name}</a></span>
+                    ))}
+                  </span>
+                )}
+              </li>
             ))}
           </ul>
         </div>
@@ -509,6 +590,13 @@ const jsonLD = buildCollectionPageJsonLD({
   .nodelist-group:last-child { margin-bottom: 0; }
   .nodelist-group-label { font-size: var(--text-xs, 0.78rem); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; color: var(--color-text-muted); margin: 0 0 var(--space-2, 0.5rem); }
   .nodelist-focus { outline: 2px solid var(--color-link); outline-offset: 2px; border-radius: 3px; }
+
+  /* P4.3 AC4: a vault carrying relationships takes its own row — the roster stays a compact wrap for
+     the ~59 not-yet-linked vaults, while the 15 linked ones read as one sentence each ("Astro —
+     federated by Molecules, federated by WilhelmAI"). Muted colour on the connective words keeps the
+     vault names as the scannable elements; both stay above the 12px floor lock O1 measures. */
+  .graph-node-list li.has-rels { flex-basis: 100%; }
+  .nodelist-rels { color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }
 
   /* H-9 (D4 C5): on phones the 40-node flowchart scales to ~310px and is illegible, so swap the visual
      graph for the (already-present, already-in-the-a11y-tree) node-list as the PRIMARY mobile view.
