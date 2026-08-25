@@ -12,7 +12,7 @@ operator: stanley
 user: stanley
 created: 2026-08-25
 started: 2026-08-25T18:00:57Z
-status: active
+status: completed
 machine: L1 (Stanley's Mac, Darwin 25.6.0)
 executor_tier: opus
 intent: "Operation HAUSSMANN P4.3 — run ⛩ O2 (the operator VoiceOver sitting, ~30 min) and then O3 (AC4 graph-twin adjudication · the accessibility statement · D11 re-score against a stated ceiling of 4 · AAR), closing the mission. THEN — ⛩ NEW THIS SESSION — lift the deploy freeze in the governance record and discharge it with ONE prod deploy carrying P4.1 + P4.2 + P4.4a + P4.3, preceded by a push. The freeze lift is an operator ruling taken at session open on a measurement, not a lapse of the old condition: see `## The freeze ruling` below."
@@ -134,10 +134,76 @@ CONDITIONAL PASS → **PASS**, appended dated to `reconciliation.md` with the ba
 register re-derived **20 / 13 / 7**; campaign `CLAUDE.md` + `STATE.md` carry the close **and the
 freeze lift**. Suite **628/628** derived (617 → 628).
 
-⏭ **NEXT: ⛩ the push (its own GO), then ⛩ ONE prod deploy.**
+**Step 5 — ⛩ the push, and the freeze's release condition satisfying itself mid-session. ✅**
+`gitleaks` 908 commits clean → read the 14 commits → **push REJECTED (`fetch first`)**.
+⭐⭐ **The remote had gained 21 commits, and among them were `30c8163` + `f4fa9c5`** — the freeze's two
+named halves, **re-verified ABSENT at this session's 11:03 open and PRESENT by 15:53** — plus a merge
+of our own Haussmann work, installer releases through **v0.4.17**, and **lemur's own bootstrap-stamped
+prod deploy at `89a7263`**. ⇒ **convention 16, live, and this time in our favour**: our session-open
+reading was true when taken and false three hours later, and only re-probing found it. Merged clean
+(no conflicts; lemur had already merged `32069f3`), rebuilt, re-ran the suite.
 
-*(subsequent steps appended as they close)*
+**Step 6 — F-n discharged en route, because the merge tripped it. ✅** `6675442`. Bumping STATE to
+08-25 moved MANIFEST drift **49 → 50** and gate-41 blocked. Its message forbids the date bump, so the
+MANIFEST was **reviewed**: `campaign_rosetta active` (closed two campaigns ago) · 27 → **32**
+subtopics · and ⭐ **"56 skills" against a directory holding 57** — `skill_web_quality_sweep`, active
+since 2026-08-17, **un-tabled for 8 days** in an inventory whose own text promises the count is
+*"auditable by counting rows"*. **MANIFEST and CLAUDE.md agreed with each other and both disagreed
+with the filesystem** — two documents agreeing is not evidence. Ratchet **49 → 0**.
+
+**Step 7 — ⛩ ONE prod deploy. ✅** `deploy_record: 2026-08-25T22:58:05Z mode=prod tree=6675442`.
+⭐ **No `--bootstrap-stamp` was needed or used** — lemur had already consumed the one-time exception,
+so the alias was self-describing and `check_alias_ancestry.mjs` ran on real evidence rather than a
+forgiveness branch: *"live 89a7263 is an ancestor of HEAD 6675442"*, exit 0. The guard refused nothing
+because **merging first was the only path it left open** — which is precisely its design.
+
+**Step 8 — post-deploy re-probe (convention 16, the habit that found F-s). ✅**
+Stamp `6675442` · `/accessibility` **200** (new) · `/vaults/graph` twin **15 relationship rows live** ·
+`/vaults.json` · `/api/registry.v1.json` · `/state-of-the-network` · `/canonical-properties` ·
+`/security` · `/privacy` all **200** · live-headers **4/4 by value**.
+⭐⭐⭐ **AND THE PROOF THAT F-s IS CLOSED RATHER THAN FENCED: live `install.sh` still reads `0.4.17`,
+`/repo/arch/adna.db` and `adna-installer-0.4.17.tar.gz` still 200.** Both checkouts' work is live
+**simultaneously**, for the first time in this campaign. The hazard that raised the freeze did not
+recur — not because anyone remembered, but because the guard made merge-before-deploy the only
+available path.
 
 ## SITREP
 
-*(at close)*
+**Completed.** P4.3 closed with AAR (AC1 ✅ AC2 ◐ AC3 ✅ AC4 ✅ AC5 ✅ AC6 ✅ AC7 ✅ · V1–V5 ✅) ·
+graph-twin edge equivalence + `gate-22` 3 → 6, red-proven 7/7 · `/accessibility` published · D11
+**2 → 4**, binary gate CONDITIONAL PASS → **PASS** · F-v filed for the deferred sitting · F-n
+discharged · **pushed** · **ONE prod deploy** carrying P4.1 + P4.2 + P4.4a + P4.3 · live-verified.
+Suite **628/628**. gitleaks **928 commits, no leaks**.
+
+**In progress.** Nothing. The mission is closed and the deploy is discharged.
+
+**Next up.** ⛩ **P5.1 (human evidence) is UNBLOCKED** — it was hard-blocked by **G-11** (its criteria
+go green under the freeze while producing evidence about the *wrong build*), and production now
+carries all four missions and stamps the commit each participant saw via
+`/.well-known/adna-build.json`. Then **P5.2** (capstone re-score), whose predecessors-DEPLOYED
+precondition is now satisfiable. Also open: **P4.4b** (still waiting on actors outside the session —
+Vitruvius's answer; lemur's push is now DONE) · **P4.5b** · **P2.6 O0b** · **P3.3 O2** (⛩ `npm login`).
+
+**Blockers.** None for P5.1. ⛩ Three Vitruvius memos remain **staged, not delivered** (delivery is an
+outward act needing its own GO). The **VoiceOver sitting** is deferred to a follow-up campaign by
+operator ruling — tracked as **F-v**, script `ready_to_run`.
+
+**Files touched.** `site/src/pages/vaults/graph.astro` · `site/src/pages/accessibility/index.astro`
+(new) · `site/src/components/common/Footer.astro` · `site/tests/gates/{gate-22,gate-4,gate-9,gate-41,audit-p1s3-sweep}` ·
+`site/scripts/graph_twin_redtest.sh` (new) · `site/src/data/twin_manifest.json` ·
+`MANIFEST.md` · `CLAUDE.md` · `STATE.md` · campaign `CLAUDE.md` · `missions/mission_haussmann_p4_3_a11y_manual.md` ·
+`missions/mission_haussmann_p4_4_ci_hardening.md` (F-v) · `evidence/scoring/reconciliation.md` · this file.
+
+**Next Session Prompt.** Open `how/campaigns/campaign_haussmann/CLAUDE.md` + `campaign_haussmann.md` +
+`missions/mission_haussmann_p5_1_human_evidence.md`, and claim P5.1 from **its own `status:` field**,
+never from an index line (that line has gone stale five times). **P4.3 is CLOSED and the deploy freeze
+is LIFTED AND DISCHARGED** — `deploy_record: 2026-08-25T22:58:05Z tree=6675442`; production carries
+P4.1 + P4.2 + P4.4a + P4.3, and `/.well-known/adna-build.json` now serves a real stamp (it 404'd for
+the whole pre-bootstrap era, so any note saying otherwise predates 08-25). **Re-verify at the object
+before trusting any of this** (convention 12): this session's own open recorded lemur's commits as
+absent and they arrived three hours later, so re-derive `git rev-list --count origin/main..HEAD`,
+re-probe the alias stamp, and re-read the suite baseline from the runner rather than carrying **628**.
+⚠ **P5.1 carries G-11**: every criterion must record the commit the participant saw — that is the
+whole reason the freeze was on its critical path. The **second writer (lemur) is live and active** on
+this same repo: merge before deploying, always, and never pass `--bootstrap-stamp` again — the
+one-time exception was consumed on 2026-08-25.
