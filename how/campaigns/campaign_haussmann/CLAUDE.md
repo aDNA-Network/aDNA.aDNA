@@ -104,9 +104,31 @@ tags: [campaign_governance, haussmann]
         *(Not broken, though — live `install.sh` pins `0.3.1` and that payload serves 200, so the site is
         internally consistent, just regressed to the older release. Check which alarm you have before
         raising one.)*
-      - ⛔ **FREEZE: no `deploy_adna.sh prod` from ANY checkout until the two trees are reconciled** —
+      - ~~⛔ **FREEZE: no `deploy_adna.sh prod` from ANY checkout until the two trees are reconciled** —
         lemur pushes `30c8163` + `f4fa9c5`, then **one** deploy from a tree holding both halves. Neither
-        half is fixable from the other's machine: the v0.4.3 bytes have never reached this node.
+        half is fixable from the other's machine: the v0.4.3 bytes have never reached this node.~~
+      - ⛩⛩ **THE FREEZE IS LIFTED, 2026-08-25, BY OPERATOR RULING ON A MEASUREMENT — struck above, not
+        deleted, because the reasoning is the reusable part.** ⭐ **The freeze's RELEASE CONDITION and
+        its PROTECTIVE PURPOSE had come apart, and its own text merged them into one sentence.** It was
+        raised after F-s to stop two checkouts silently un-publishing each other. Measured at the lift:
+        the actual invariant — *never publish a tree that does not contain the commit currently serving
+        the alias* — is **built, red-proven 13/13, and already on `origin/main` at `4a9bc09`**, so lemur
+        receives it **on pull**; the alias serves `922519c` and **HEAD contains it** (37 commits ahead),
+        so the guard **passes on ancestry**; and lemur's v0.4.3 + the Arch repo were **already
+        un-published** at the 08-24 restore, so deploying does not destroy them again. ⇒ *"lemur pushes
+        both halves"* is what **RESTORES** lemur's work — it is no longer what **PROTECTS** it. The
+        guard does that now, in both directions. Holding cost four missions of unshipped work and
+        **hard-blocked P5.1**, whose criteria go green under the freeze while producing evidence about
+        the wrong build (**G-11**) — putting the freeze on the critical path to the campaign's capstone.
+      - ⛩ **A PUSH IS NOW A PRECONDITION OF A DEPLOY, and this coupling was surfaced rather than
+        quietly reversed.** Deploy an unpushed tree and the alias is stamped with a commit absent from
+        `origin`; lemur pulls `origin/main`, does not get it, and **the guard refuses their deploy with
+        no way to fix it by pulling** — converting a protection into a permanent block on the other
+        writer. ⇒ **push precedes deploy, each with its own ⛩ GO.**
+      - ⛔ **WHAT THE LIFT DOES NOT CHANGE, stated so nobody infers otherwise:** v0.4.3 and the Arch
+        `[adna]` repo stay **un-published** and still need lemur; live `install.sh` stays at `0.3.1`
+        after our deploy, which is the current live state and internally consistent, **not a regression
+        we introduce**.
       - ⭐ **The real gap is not a rogue actor — it is that `deploy_adna.sh` has a clean-tree guard and
         ~~no SINGLE-WRITER LEASE FOR THE PRODUCTION ALIAS~~ NO ANCESTRY GUARD ON THE PRODUCTION
         ALIAS.** Both checkouts followed the discipline; both assumed they were the only one deploying.
@@ -239,9 +261,67 @@ untouched and still blocked on actors outside the session.
 > fail a test that asserts `Shift+Tab` **retraces**. **Naming which of the two a non-red is, is the
 > point of running the harness.**
 >
-> ⏭ **NEXT: ⛩ O2** (operator VoiceOver, ~30 min — [[voiceover_session_script]] is ready and its item 13
+> ~~⏭ **NEXT: ⛩ O2** (operator VoiceOver, ~30 min — [[voiceover_session_script]] is ready and its item 13
 > **decides AC4's disjunct**), **then O3** (twin equivalence · statement · D11 re-score against the
-> stated ceiling of **4** · AAR).
+> stated ceiling of **4** · AAR).~~
+
+> ✅ **`P4.3` IS CLOSED 2026-08-25** (`mission_haussmann_p4_3_a11y_manual.md`, **`completed`**, AAR filed
+> per SO#5 — **AC1 ✅ AC2 ◐ AC3 ✅ AC4 ✅ AC5 ✅ AC6 ✅ AC7 ✅ · V1–V5 ✅**). Suite **628/628** derived
+> (617 → 628: gate-22 **+3** · gate-4 **+2** · gate-9 **+6**).
+>
+> ⛩ **O2 IS DEFERRED TO A FOLLOW-UP CAMPAIGN BY OPERATOR RULING — read AC2 as ◐ PARTIAL, never ✅.**
+> The operator's stated priority is the site fully updated/reviewed/improved; the human VoiceOver
+> sitting routes onward with its 18-item script `ready_to_run`. **The deferral is register row `F-v`,
+> not a sentence** — ⭐ which is *this mission's own finding applied to its own close*: P4.3 exists
+> partly because **G-6/G-7** caught two obligations deferred *into it by name*, in prose, that none of
+> its five original criteria mentioned. **A deferral recorded only in narrative is a deferral with no
+> gate.** Register re-derived: **20** total · **13** struck · **7** live. ⚠ It is also named **on the
+> public page** — `/accessibility` says no human sitting has been run, so the site never lets an
+> automated pass imply a human one.
+>
+> ⭐ **AC4 met at its FIRST disjunct — the twin now STATES THE TOPOLOGY.** All **14** edges readable
+> from **both ends** with direction and type (*"WilhelmAI — contains RareArchive"* / *"RareArchive —
+> contained by WilhelmAI"*), derived from the `edges` array (KW-8/FR-K); 15 rows, **28** links, exactly
+> 2× the edge count. `gate-22` **3 → 6**, red-proven **7/7**. ⭐⭐ **M4 is the case that earns it**: it
+> flattens `contained by` → `contains` and changes nothing else — every count still passes, every link
+> still points at the right vault, and **the topology is gone**. A green there would be a *link census
+> wearing an equivalence check's clothes*, i.e. `machine_eye` 14's finding unfixed while reading as
+> fixed. ⚠ **The resolver was built against the WRONG OBJECT and only the rendered output said so**:
+> measured against `vaults.json` (a genuine mix of identifier forms) when the page imports
+> `data/vaults.ts`, the ADR-051 boundary that canonicalizes slugs *and* both ends of every edge. **Two
+> different objects with one name.** And the twin said **"federatesAstro"** — Astro collapses the gap
+> between an expression and the following tag: correct to the eye, **one word to a screen reader**, on
+> the one surface whose purpose is being read aloud.
+>
+> ⭐ **AC5 — the statement is at `/accessibility`**, footer-linked from every page, on the `.policy`
+> pattern its siblings `/security` + `/privacy` use. Every limitation is **true and traced to a dated
+> measurement**: the 12px floor unmet at **398/510** labels · WCAG 2.2 automated coverage is **exactly
+> one rule** · NVDA out of scope · the AT gate reads a **bounded opening** · no human sitting · no
+> AT-**user** testing · and **a clean 2.4.11 result resting partly on Chromium**, not on this layout.
+>
+> ⭐⭐ **AND A 620-GREEN SUITE KNEW NOTHING ABOUT THE NEW ROUTE** — `gate-4`'s list and the P1S3 sweep are
+> both hardcoded, so adding a page adds **zero** coverage of it: convention 14's family at the level of
+> the *suite*. ⚠ **The first same-diff fix was itself wrong**: the P1S3 sweep is `@audit` (excluded from
+> normal gate runs) and scoped to *"every route class gate-4 does NOT already cover"*, so listing it
+> there would have **duplicated axe twice while leaving overflow outside CI**. ⇒ **ADR-057 is a claim
+> about WHERE an assertion belongs; discharging it means reading each gate's contract, not adding the
+> route everywhere.**
+>
+> ✅ **V4 — D11 RE-SCORED 2 → 4; binary gate CONDITIONAL PASS → PASS** ([[reconciliation]], appended
+> dated, baseline rows untouched). The baseline's own condition is discharged in both halves (F2 closed
+> at AC3; the keyboard pass *is* a real manual pass), and anchor 3's binding clause — *"complex graphics
+> **partially** covered"* — is exactly what AC4 closed. ⚠ **The 4 rests on ONE interpretive step, named
+> in the record so it can be challenged**: *"screen-reader tested"* read as satisfied by an **engine**
+> rather than a human. Anchor 5 stays unreachable (AT-**user** testing, G-8). ⚠ Composite holds at
+> **51.6** — D11's weight is 2, and **its value was never its weight**: it carries a *binary gate*, and
+> the gate is what blocked sign-off from claiming AA. Composite re-score is **P5.2's**.
+>
+> ⚠ **SO#11**: two of three P4.3 sessions closed with `token_budget_actual:` **empty**, so the actual
+> was **reconstructed** (≈300–380 kT vs ratified ~220–320 kT). No retrospective triggers; the finding is
+> not the number — *a band cannot be falsified by a prose sentence claiming it holds*.
+>
+> ⏭ **NEXT: ⛩ the push, then ⛩ ONE prod deploy** carrying **P4.1 + P4.2 + P4.4a + P4.3** (the freeze is
+> lifted — see convention 16's amendment). Then **P5.1 unblocks**, which the freeze had hard-blocked.
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is

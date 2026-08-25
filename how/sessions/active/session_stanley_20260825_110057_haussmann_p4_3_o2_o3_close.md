@@ -104,6 +104,38 @@ into a permanent block on the other writer. ⇒ **push precedes deploy**, each w
 **pre-edit** content (the known node quirk) — caught by diffing the staged blob against the worktree,
 and re-staged with an explicit-path `git add`.
 
+**Step 1 — ⛩ O2 ROUTING CALL: the sitting is DEFERRED, not run. ✅** The operator asked what the
+VoiceOver work was *for*, and ruled on the answer: priority is **the site fully updated / reviewed /
+improved**, so the ~30-minute human sitting routes to a **follow-up campaign**. The cost was stated
+before the ruling, not after — D11 check 5 unmet in its human half, and the anchor-4 reading left
+resting on an interpretive step. **AC2 → ◐ PARTIAL** (keyboard ✅, human ✗, NVDA out of scope).
+⭐ Recorded as **register row `F-v`**, not prose: this mission exists partly because G-6/G-7 caught
+two obligations deferred *into it by name* in narrative that none of its criteria gated.
+
+**Step 2 — AC4, the twin states the topology. ✅** `7433ced`. 14 edges readable from both ends with
+direction + type; 15 rows, 28 links, 2× the edge count. `gate-22` 3 → 6, red-proven **7/7**.
+⭐⭐ **The resolver was built against the wrong object** — measured on `vaults.json` (a real mix of
+identifier forms) when the page imports `data/vaults.ts`, the ADR-051 boundary that canonicalizes
+slugs *and* edge endpoints. **Two objects, one name.** Caught only because the built page emitted
+`/vaults/astro/` where my reading predicted `/vaults/Astro.aDNA/`. ⚠ And the twin said
+**"federatesAstro"** — Astro collapses the gap between an expression and the next tag: one word to a
+screen reader, on the surface whose whole purpose is being read aloud.
+
+**Step 3 — AC5, the accessibility statement. ✅** `ffbea93`. `/accessibility`, footer-linked from every
+page, `.policy` pattern. Limitations all true and traced to dated measurements, including the
+uncomfortable ones (398/510 labels under the floor; a clean 2.4.11 resting partly on Chromium; no
+human sitting). ⭐⭐ **The 620-green suite knew nothing about the new route** — gate-4 and the P1S3
+sweep are hardcoded lists. ⚠ **My first same-diff fix was also wrong**: the sweep is `@audit`
+(excluded from normal runs) and scoped to what gate-4 does *not* cover, so it would have duplicated
+axe twice while leaving overflow outside CI. Corrected to gate-4 **+2** and gate-9 **+6**.
+
+**Step 4 — close cascade. ✅** `f265e86`. Mission `completed` + AAR (SO#5); **D11 2 → 4**, binary gate
+CONDITIONAL PASS → **PASS**, appended dated to `reconciliation.md` with the baseline rows untouched;
+register re-derived **20 / 13 / 7**; campaign `CLAUDE.md` + `STATE.md` carry the close **and the
+freeze lift**. Suite **628/628** derived (617 → 628).
+
+⏭ **NEXT: ⛩ the push (its own GO), then ⛩ ONE prod deploy.**
+
 *(subsequent steps appended as they close)*
 
 ## SITREP
