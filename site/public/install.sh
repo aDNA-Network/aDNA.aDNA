@@ -1,14 +1,15 @@
 #!/bin/sh
 # adna node installer — one command.
 #
-#   curl -fsSL https://<host>/install.sh | sh
+#   curl --proto '=https' --tlsv1.2 -fsSL https://<host>/install.sh | sh
 #
 # This bootstrap is deliberately small and boring so that a person can read the whole
 # thing before piping it to a shell. It does exactly four things:
 #
 #   1. checks for python3                 (the payload is python; no other runtime)
 #   2. downloads ONE payload tarball      (adna_install.py + the persona profiles)
-#   3. VERIFIES it against a hash pinned in this file
+#   3. VERIFIES it against a hash pinned in this file (and, once a signing key exists,
+#      a minisign signature against the public key pinned in this file)
 #   4. runs it
 #
 # WHY THE HASH IS PINNED HERE: `curl | sh` is already a trust decision — you are trusting
@@ -17,24 +18,60 @@
 # is baked in above. If the payload does not match, this refuses and exits non-zero. Fetching
 # a checksum next to the payload would be theatre: whoever can swap one can swap both.
 #
+# WHY EVERYTHING RUNS THROUGH main(): a truncated download of this script must execute
+# nothing. Piped `sh` runs what it has as it streams; with the body in a function that is
+# only CALLED on the last line, a cut-off transfer defines half a function and then ends —
+# it cannot half-run an install. (rustup does the same, for the same reason.)
+#
 # Nothing here needs root. Nebula's binaries and config go under $ADNA_PREFIX (default
 # ~/.adna), and the install stops before joining any network — a mesh join needs a
 # certificate signed by a human at the CA. The last thing printed is the enrollment request
 # to send back. Nothing about your machine is transmitted anywhere by this script.
 #
 # Pass options through the pipe like this:
-#   curl -fsSL https://<host>/install.sh | sh -s -- --profile developer --dry-run
+#   curl --proto '=https' --tlsv1.2 -fsSL https://<host>/install.sh | sh -s -- --profile developer --dry-run
 #
 set -eu
 
-VERSION="0.3.1"
+VERSION="0.4.17"
 BASE="${ADNA_INSTALL_BASE:-https://adna.network}"
 PAYLOAD="adna-installer-${VERSION}.tar.gz"
 # sha256 of ${PAYLOAD} — regenerate with ./release.sh, which prints the line to paste here.
-PAYLOAD_SHA256="31f646fa50428ee2ec987a27117a5328a938a2f497e898397988093c47854da6"
+PAYLOAD_SHA256="cdd3d1bbd5763c5f94a36f81506384aeb166dce7ab642774f33ea37d347c1d32"
+# minisign public key for the payload signature (Phase C1; keypair generated 2026-08-21,
+# secret brokered as adna_release_minisign.key on the release-cutting box). A missing or
+# bad signature is a hard refusal, never a warning.
+MINISIGN_PUBKEY="RWSKI+VKqsFhyMP0KFYiosvvf2mqJVcWKJ+m/SvwajdU9DnBGSvxBUyQ"
 
 say()  { printf '%s\n' "$*"; }
-die()  { printf '\n  ⛔ %s\n\n' "$*" >&2; exit 1; }
+
+# Four-layer failure block (research_accessibility_2026-08 §2): what happened → safe to
+# re-run → code + log path for the helper → reach help. The block is also appended to a
+# persistent log so a closed window never takes the evidence with it. Log writes may fail
+# (read-only home) and must never mask the real error.
+LOG_FILE="$HOME/adna-install-log.txt"
+# strings-begin
+MSG_RERUN="It is safe to run the same command again."
+# strings-end
+die()  { # $1 = short failure code (for the helper); rest = what happened, in plain words
+    code="$1"; shift
+    printf '\n%s %s\n\n' "$SYM_ERR" "$*" >&2
+    printf '%s\n' "$MSG_RERUN" >&2
+    printf 'Error code %s. Full log: %s\n' "$code" "$LOG_FILE" >&2
+    { printf -- '--- install.sh %s · %s · failed %s\n%s\n' \
+        "$VERSION" "$(date '+%Y-%m-%d %H:%M:%S' 2>/dev/null)" "$code" "$*"; } >>"$LOG_FILE" 2>/dev/null || true
+    exit 1
+}
+
+main() {
+
+# Plain output (no-color.org): ASCII words instead of symbols when NO_COLOR is set, TERM is
+# dumb, stdout is not a terminal, or --plain is passed (which also flows through to python).
+SYM_OK="✓"; SYM_ERR="⛔"; SYM_DOT="•"
+case " $* " in *" --plain "*) NO_COLOR=1 ;; esac
+if [ -n "${NO_COLOR:-}" ] || [ "${TERM:-}" = dumb ] || [ ! -t 1 ]; then
+    SYM_OK="[OK]"; SYM_ERR="[ERROR]"; SYM_DOT="*"
+fi
 
 # ---------------------------------------------------------------- preflight
 # Refuse to run under sudo from a normal user's shell. Everything goes under $HOME, which
@@ -44,7 +81,7 @@ die()  { printf '\n  ⛔ %s\n\n' "$*" >&2; exit 1; }
 # solves the identical problem. ADNA_ALLOW_SUDO=1 for a deliberate root install.
 if [ "$(id -u)" -eq 0 ] && [ -n "${SUDO_USER:-}" ] && [ "$SUDO_USER" != "root" ] \
    && [ -z "${ADNA_ALLOW_SUDO:-}" ]; then
-    die "do not run this installer with sudo.
+    die SYS-04 "do not run this installer with sudo.
 
      It installs into your home directory and does not need root. Under sudo everything
      would land in root's home instead of yours, and your own nebula would never find it.
@@ -53,21 +90,28 @@ if [ "$(id -u)" -eq 0 ] && [ -n "${SUDO_USER:-}" ] && [ "$SUDO_USER" != "root" ]
      To install for root on purpose, set ADNA_ALLOW_SUDO=1."
 fi
 
-command -v python3 >/dev/null 2>&1 || die "python3 is required and was not found.
+command -v python3 >/dev/null 2>&1 || die SYS-01 "python3 is required and was not found.
      macOS:  xcode-select --install
      Debian/Ubuntu:  sudo apt install python3
      Fedora:  sudo dnf install python3"
 
-if command -v curl >/dev/null 2>&1; then fetch() { curl -fsSL "$1" -o "$2"; }
-elif command -v wget >/dev/null 2>&1; then fetch() { wget -qO "$2" "$1"; }
-else die "need curl or wget"
+# TLS floor (research_security_2026-08 item 5): over https, refuse protocol downgrades and
+# pre-1.2 TLS. The floor is applied only to https so the local release.sh --serve test path
+# (plain http on 127.0.0.1) keeps working — an http BASE is already a deliberate test act.
+case "$BASE" in
+    https://*) TLS_FLOOR="--proto =https --tlsv1.2"; WGET_FLOOR="--https-only --secure-protocol=TLSv1_2" ;;
+    *)         TLS_FLOOR=""; WGET_FLOOR="" ;;
+esac
+if command -v curl >/dev/null 2>&1; then fetch() { curl $TLS_FLOOR -fsSL "$1" -o "$2"; }
+elif command -v wget >/dev/null 2>&1; then fetch() { wget $WGET_FLOOR -qO "$2" "$1"; }
+else die SYS-02 "need curl or wget"
 fi
 
 # macOS ships shasum, most Linux ships sha256sum. Accept either; refuse if neither, because
 # an install that silently skips verification is worse than one that stops.
 if command -v sha256sum >/dev/null 2>&1; then sha256() { sha256sum "$1" | cut -d' ' -f1; }
 elif command -v shasum  >/dev/null 2>&1; then sha256() { shasum -a 256 "$1" | cut -d' ' -f1; }
-else die "no sha256 tool (sha256sum or shasum) — cannot verify the download, refusing to continue"
+else die SYS-03 "no sha256 tool (sha256sum or shasum) — cannot verify the download, refusing to continue"
 fi
 
 TMP="$(mktemp -d)"
@@ -75,23 +119,39 @@ trap 'rm -rf "$TMP"' EXIT INT TERM
 
 # ---------------------------------------------------------------- fetch + verify
 say ""
-say "  aDNA node installer ${VERSION}"
-say "  • fetching payload"
-fetch "${BASE}/${PAYLOAD}" "$TMP/p.tgz" || die "could not download ${BASE}/${PAYLOAD}"
+say "aDNA node installer ${VERSION}"
+say "$SYM_DOT fetching payload"
+fetch "${BASE}/${PAYLOAD}" "$TMP/p.tgz" || die NET-01 "could not download ${BASE}/${PAYLOAD}"
 
 got="$(sha256 "$TMP/p.tgz")"
 if [ "$PAYLOAD_SHA256" = "PAYLOAD_SHA256_UNSET" ]; then
-    die "this install.sh has no payload hash pinned — it was published unreleased.
+    die REL-01 "this install.sh has no payload hash pinned — it was published unreleased.
      Refusing to run unverified code. Report this; do not work around it."
 fi
-[ "$got" = "$PAYLOAD_SHA256" ] || die "PAYLOAD CHECKSUM MISMATCH — refusing to run
+[ "$got" = "$PAYLOAD_SHA256" ] || die SUM-01 "PAYLOAD CHECKSUM MISMATCH — refusing to run
      expected $PAYLOAD_SHA256
      got      $got
      Do not retry blindly. Either the download was corrupted or the payload was substituted."
-say "  ✓ payload verified"
+say "$SYM_OK payload verified"
 
-tar xzf "$TMP/p.tgz" -C "$TMP" || die "payload did not extract"
-[ -f "$TMP/adna_install.py" ] || die "payload is missing adna_install.py"
+tar xzf "$TMP/p.tgz" -C "$TMP" || die PKG-01 "payload did not extract"
+[ -f "$TMP/adna_install.py" ] || die PKG-02 "payload is missing adna_install.py"
+
+# ---------------------------------------------------------------- signature (Phase C1)
+# Defense in depth over the pin, and the load-bearing check for artifacts that reach users
+# through channels the pin does not cover (package managers, release pages). Fail closed:
+# once a key is pinned above, no signature means no install.
+if [ "$MINISIGN_PUBKEY" != "MINISIGN_PUBKEY_UNSET" ]; then
+    fetch "${BASE}/${PAYLOAD}.minisig" "$TMP/p.tgz.minisig" \
+        || die SIG-01 "could not download the payload signature ${BASE}/${PAYLOAD}.minisig
+     This release is signed. A payload without its signature does not get run."
+    [ -f "$TMP/verify_minisig.py" ] || die SIG-02 "payload is missing verify_minisig.py — cannot check the signature, refusing to continue"
+    python3 "$TMP/verify_minisig.py" --pubkey "$MINISIGN_PUBKEY" "$TMP/p.tgz" "$TMP/p.tgz.minisig" \
+        || die SIG-03 "PAYLOAD SIGNATURE FAILED — refusing to run.
+     The download matched its checksum but not the release signature.
+     Do not retry blindly. Report this to the person who invited you."
+    say "$SYM_OK signature verified"
+fi
 
 # ---------------------------------------------------------------- run
 # Default is a real install under ~/.adna. --dry-run (or ADNA_DRY_RUN=1) plans without
@@ -114,17 +174,29 @@ while [ $i -lt $n ]; do
 done
 
 [ -n "$HAS_PROFILE" ] || set -- "$@" --profile "${ADNA_PROFILE:-developer}"
-if [ -z "$DRY" ]; then
-    PREFIX="${ADNA_PREFIX:-$HOME/.adna}"
-    set -- "$@" --execute --prefix "$PREFIX" --bindir "$PREFIX/bin"
-fi
+# --prefix/--bindir ride BOTH modes: a dry-run must print the same paths a real run would
+# use, or the plan is "confident, specific, wrong" (the F-S393-01 class — a dry-run used to
+# show /etc + /usr/local/bin while the real run wrote under ~/.adna).
+PREFIX="${ADNA_PREFIX:-$HOME/.adna}"
+set -- "$@" --prefix "$PREFIX" --bindir "$PREFIX/bin"
+if [ -z "$DRY" ]; then set -- "$@" --execute; fi
 
 # stdin is the pipe carrying THIS script, not a keyboard. Anything the installer wants to ask
 # has to come from the terminal, or it silently eats the rest of the script. Hand it /dev/tty
 # when one exists; otherwise give it nothing rather than the pipe.
 cd "$TMP"
+# No exec: exec replaced the shell and silently defeated the cleanup trap above, leaking one
+# payload dir per run — and the printed resume commands only worked because of that leak
+# (F-III-4). The installer now persists itself to $PREFIX/installer/ on a real run, so the
+# temp dir can be cleaned honestly; set -e propagates the installer's exit code to the trap.
 if [ -t 1 ] && [ -r /dev/tty ]; then
-    exec python3 adna_install.py "$@" </dev/tty
+    python3 adna_install.py "$@" </dev/tty
 else
-    exec python3 adna_install.py "$@" </dev/null
+    python3 adna_install.py "$@" </dev/null
 fi
+
+}
+
+# The ONLY top-level statement that does anything. Everything above is definition; a
+# truncated download stops before this line and executes nothing.
+main "$@"

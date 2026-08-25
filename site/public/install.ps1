@@ -32,40 +32,79 @@ param(
     [switch]$SecondIdentity,
     [switch]$NoWorkspace,
     [switch]$DryRun,
-    [switch]$Force
+    [switch]$Force,
+    # invite code (like BDWJ-HQPK-7NMR) -- submits the enrollment request automatically and
+    # fetches the cert when approved; without it, the request is printed to send by hand.
+    [string]$Code,
+    # ASCII/no-color output; also honors NO_COLOR (no-color.org), TERM=dumb, and redirection.
+    [switch]$Plain
 )
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference    = 'SilentlyContinue'   # Invoke-WebRequest is ~10x slower with the bar
-$VERSION = '0.3.1'
+$VERSION = '0.4.17'
 
 # PowerShell 5.1 can still default to TLS 1.0, which GitHub refuses outright.
 try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 }
 catch { Write-Verbose 'Could not set TLS 1.2; on PowerShell 7 it is already the default and this property is obsolete.' }
 
+# Color is decoration only -- every status already carries an ASCII word ([ok]/[X]/[!]), so
+# plain mode just suppresses ForegroundColor. On when -Plain, NO_COLOR, TERM=dumb, or stdout
+# is redirected.
+$script:UseColor = -not ($Plain -or $env:NO_COLOR -or $env:TERM -eq 'dumb' -or
+                         [Console]::IsOutputRedirected)
+function WriteC { param($m, $color)
+    if ($script:UseColor -and $color) { Write-Host $m -ForegroundColor $color }
+    else { Write-Host $m }
+}
 function Say  { param($m) Write-Host "   $m" }
-function Die  { param($m) Write-Host ""; Write-Host "   [X] $m" -ForegroundColor Red; Write-Host ""; exit 1 }
-function Good { param($m) Write-Host "   [ok] $m" -ForegroundColor Green }
+
+# Four-layer failure block (research_accessibility_2026-08 s2): what happened -> safe to
+# re-run -> code + log path for the helper -> reach help. Appended to a persistent log so a
+# closed window never takes the evidence with it; the exe launcher already holds the window
+# open (Enter-to-close). Log writes must never mask the real error.
+$LOG_FILE = Join-Path $HOME 'adna-install-log.txt'
+# strings-begin
+$MSG_RERUN = 'It is safe to run the same command again.'
+# strings-end
+function Die  { param($code, $m)
+    if (-not $m) { $m = $code; $code = 'GEN-01' }   # old single-arg callers stay safe
+    Write-Host ""; WriteC "   [X] $m" Red; Write-Host ""
+    Say $MSG_RERUN
+    Say "Error code $code. Full log: $LOG_FILE"
+    Write-Host ""
+    try {
+        Add-Content -Path $LOG_FILE -Value ("--- install.ps1 $VERSION " +
+            (Get-Date -Format 'yyyy-MM-dd HH:mm:ss') + " failed ${code}`n$m") -ErrorAction Stop
+    } catch { }
+    exit 1
+}
+function Good { param($m) WriteC "   [ok] $m" Green }
+
+# Everything below is the install flow, and it runs ONLY through the Main call on the last
+# line of this file (Phase C1, research_security_2026-08 item 5). A truncated copy of this
+# script defines part of a function and then ends -- it cannot half-run an install.
+function Main {
 
 Write-Host ""
-Write-Host "   aDNA node installer $VERSION (Windows)" -ForegroundColor Cyan
+WriteC "   aDNA node installer $VERSION (Windows)" Cyan
 Write-Host ""
 
 # -- preflight ----------------------------------------------------------------------------
 if ($PSVersionTable.PSVersion.Major -lt 5) {
-    Die "PowerShell 5.1 or newer is required (found $($PSVersionTable.PSVersion))."
+    Die 'SYS-05' "PowerShell 5.1 or newer is required (found $($PSVersionTable.PSVersion))."
 }
 
 $arch = switch ($env:PROCESSOR_ARCHITECTURE) {
     'AMD64' { 'amd64' }
     'ARM64' { 'arm64' }
-    'x86'   { Die "32-bit Windows is not supported. This mesh needs a 64-bit OS." }
-    default { Die "Unrecognised processor architecture '$env:PROCESSOR_ARCHITECTURE'." }
+    'x86'   { Die 'SYS-06' "32-bit Windows is not supported. This mesh needs a 64-bit OS." }
+    default { Die 'SYS-07' "Unrecognised processor architecture '$env:PROCESSOR_ARCHITECTURE'." }
 }
 
 # tar.exe (bsdtar) ships with Windows 10 1803+ and is how we read the shared payload.
 if (-not (Get-Command tar.exe -ErrorAction SilentlyContinue)) {
-    Die "tar.exe was not found. It ships with Windows 10 1803 and newer -- this machine looks older than the minimum supported."
+    Die 'SYS-08' "tar.exe was not found. It ships with Windows 10 1803 and newer -- this machine looks older than the minimum supported."
 }
 
 # The clock trap costs more debugging than anything else: nebula handshakes fail against a
@@ -84,31 +123,38 @@ try {
     Say "fetching shared payload"
     $payload = Join-Path $tmp 'payload.tar.gz'
     try { Invoke-WebRequest -Uri "$Base/adna-installer-$VERSION.tar.gz" -OutFile $payload -UseBasicParsing }
-    catch { Die "could not download the payload from $Base -- $($_.Exception.Message)" }
+    catch { Die 'NET-01' "could not download the payload from $Base -- $($_.Exception.Message)" }
 
     # Same discipline as the Unix bootstrap: the payload hash is pinned in THIS file, not
     # fetched alongside the payload. A checksum served from the same host as the artifact
     # catches corruption but not substitution.
-    $PAYLOAD_SHA256 = '31f646fa50428ee2ec987a27117a5328a938a2f497e898397988093c47854da6'
+    # SIGNATURE NOTE (Phase C1): the Unix bootstrap additionally verifies the payload's
+    # minisign signature. This one cannot -- PowerShell 5.1 / .NET Framework has no Ed25519,
+    # and the payload's pure-python verifier needs the python3 this platform deliberately
+    # does not require. On Windows the sha256 pin IS the authenticator; the signed channel
+    # for Windows users is the release artifacts + winget (Phase D), where the signature is
+    # checked at package-build time. Recorded in security_design_notes.md -- a gap named is
+    # not a gap hidden.
+    $PAYLOAD_SHA256 = 'cdd3d1bbd5763c5f94a36f81506384aeb166dce7ab642774f33ea37d347c1d32'
     if ($PAYLOAD_SHA256 -eq 'PAYLOAD_SHA256_UNSET') {
-        Die "this install.ps1 has no payload hash pinned -- it was published unreleased. Refusing to run unverified code."
+        Die 'REL-01' "this install.ps1 has no payload hash pinned -- it was published unreleased. Refusing to run unverified code."
     }
     $got = (Get-FileHash -Algorithm SHA256 -Path $payload).Hash.ToLower()
     if ($got -ne $PAYLOAD_SHA256.ToLower()) {
-        Die "PAYLOAD CHECKSUM MISMATCH -- refusing to run`n        expected $PAYLOAD_SHA256`n        got      $got`n        Do not retry blindly."
+        Die 'SUM-01' "PAYLOAD CHECKSUM MISMATCH -- refusing to run`n        expected $PAYLOAD_SHA256`n        got      $got`n        Do not retry blindly."
     }
     Good "payload verified"
 
     tar.exe -xzf $payload -C $tmp
-    if ($LASTEXITCODE -ne 0) { Die "payload did not extract" }
+    if ($LASTEXITCODE -ne 0) { Die 'PKG-01' "payload did not extract" }
 
     $C = Get-Content (Join-Path $tmp 'network_constants.json') -Raw | ConvertFrom-Json
     $personaFile = Join-Path $tmp "persona_profiles\persona_$PersonaName.json"
-    if (-not (Test-Path $personaFile)) { Die "unknown persona '$PersonaName'." }
+    if (-not (Test-Path $personaFile)) { Die 'PKG-03' "unknown persona '$PersonaName'." }
     $P = Get-Content $personaFile -Raw | ConvertFrom-Json
 
     if ($P.requires_ratification -and $P.requires_ratification.Count -gt 0) {
-        Die "persona '$PersonaName' has $($P.requires_ratification.Count) unratified decision(s) and cannot be installed yet:`n        $($P.requires_ratification[0])"
+        Die 'GOV-01' "persona '$PersonaName' has $($P.requires_ratification.Count) unratified decision(s) and cannot be installed yet:`n        $($P.requires_ratification[0])"
     }
 
     # Already-on-the-network detection: an interface holding one of OUR overlay addresses means
@@ -138,7 +184,7 @@ try {
     # -- nebula ---------------------------------------------------------------------------
     $asset  = "nebula-windows-$arch.zip"
     $expect = $C.nebula.sha256.$asset
-    if (-not $expect) { Die "no pinned checksum for $asset -- refusing to install it unverified." }
+    if (-not $expect) { Die 'REL-02' "no pinned checksum for $asset -- refusing to install it unverified." }
 
     New-Item -ItemType Directory -Path $binDir, $pkiDir -Force | Out-Null
 
@@ -165,7 +211,7 @@ try {
     Invoke-WebRequest -Uri "$($C.nebula.release_base)/$($C.nebula.pin)/$asset" -OutFile $zip -UseBasicParsing
     $got = (Get-FileHash -Algorithm SHA256 -Path $zip).Hash.ToLower()
     if ($got -ne $expect.ToLower()) {
-        Die "CHECKSUM MISMATCH on $asset -- refusing to install`n        expected $expect`n        got      $got"
+        Die 'SUM-02' "CHECKSUM MISMATCH on $asset -- refusing to install`n        expected $expect`n        got      $got"
     }
     Good "sha256 verified against the pinned value"
 
@@ -188,12 +234,12 @@ try {
         # -Force regenerate the key, silently invalidating every certificate ever issued to the
         # node. Found by code review; the two implementations now agree.
         if (-not (Test-Path $pubPath)) {
-            Die "host.key exists but host.pub is MISSING at $pubPath -- cannot rebuild the enrollment request.`n        Restore host.pub from a backup, or move host.key aside to generate a fresh pair."
+            Die 'KEY-01' "host.key exists but host.pub is MISSING at $pubPath -- cannot rebuild the enrollment request.`n        Restore host.pub from a backup, or move host.key aside to generate a fresh pair."
         }
         Good "keypair already present at $keyPath -- NOT regenerating (an existing key is never overwritten)"
     } else {
         & (Join-Path $binDir 'nebula-cert.exe') keygen -out-key $keyPath -out-pub $pubPath
-        if ($LASTEXITCODE -ne 0) { Die "nebula-cert keygen failed" }
+        if ($LASTEXITCODE -ne 0) { Die 'KEY-02' "nebula-cert keygen failed" }
         Good "keypair generated at $keyPath"
     }
 
@@ -217,7 +263,7 @@ try {
     $extra = (Get-Acl $keyPath).Access | ForEach-Object { $_.IdentityReference.Value } |
              Where-Object { $_ -ne $mine }
     if ($extra) {
-        Die "the private key at $keyPath is still readable by: $($extra -join ', ')`n        Refusing to continue."
+        Die 'KEY-03' "the private key at $keyPath is still readable by: $($extra -join ', ')`n        Refusing to continue."
     }
     Good "private key readable only by $mine (verified, never leaves this machine)"
 
@@ -305,7 +351,7 @@ try {
         Say "cloning the aDNA workspace to $wsTarget"
         & git clone --depth 1 $C.workspace.canonical_repo_git $wsTarget 2>&1 | Out-Null
         if ($LASTEXITCODE -eq 0) { Good "workspace cloned to $wsTarget"; $wsPath = $wsTarget }
-        else { Write-Host "   [!] workspace clone FAILED (the network install is unaffected)" -ForegroundColor Yellow }
+        else { WriteC "   [!] workspace clone FAILED (the network install is unaffected)" Yellow }
     }
 
     # -- enrollment request ---------------------------------------------------------------
@@ -328,9 +374,13 @@ try {
             cgnat     = $null
         }
         cert_request      = [ordered]@{
-            groups         = @($P.cert_request.groups)
-            duration_hours = $P.cert_request.duration_hours
-            auto_signable  = $autoSignable
+            groups           = @($P.cert_request.groups)
+            duration_hours   = $P.cert_request.duration_hours
+            # Gangway A3: the invite envelope is checked against role/inbound too -- stated
+            # explicitly, still claims not authorizations; the master recomputes at signing.
+            role             = $P.network.role
+            inbound_required = [bool]$P.network.inbound_required
+            auto_signable    = $autoSignable
         }
         # [IO.File]::ReadAllText, NOT Get-Content -Raw. On Windows PowerShell 5.1 a string from
         # Get-Content carries ETS note properties, and ConvertTo-Json serialises the decoration
@@ -344,7 +394,7 @@ try {
     # from here. Checking at emission is the only place the error is still cheap.
     foreach ($f in 'schema', 'installer_version', 'persona', 'host_pub', 'note') {
         if ($req[$f] -isnot [string]) {
-            Die "internal: enrollment field '$f' is $($req[$f].GetType().Name), expected String. Refusing to emit a document the master cannot parse."
+            Die 'PKG-04' "internal: enrollment field '$f' is $($req[$f].GetType().Name), expected String. Refusing to emit a document the master cannot parse."
         }
     }
     $body = $req | ConvertTo-Json -Depth 6
@@ -353,12 +403,185 @@ try {
 
     if ($overlayIp -and -not $SecondIdentity) {
         Write-Host ""
-        Write-Host "NEXT: nothing. This machine already holds overlay address $overlayIp, so it is"
-        Write-Host "ALREADY ON THE NETWORK -- an enrollment request would ask for a second identity it"
-        Write-Host "does not need. Files were still installed/kept (nothing was overwritten)."
-        Write-Host "If a second identity is genuinely intended, rerun with -SecondIdentity."
+        Write-Host "NEXT: nothing. This machine is ALREADY ON THE NETWORK -- its overlay address is"
+        Write-Host "$overlayIp. Asking to join again would create a second identity, which you"
+        Write-Host "do not need. Your files were installed or kept in place; nothing was overwritten."
+        Write-Host "If you really do want a second identity, rerun with -SecondIdentity."
         return
     }
+    # -- the code flow (Gangway A3) ---------------------------------------------------------
+    # An invite code makes the machine move the payload. NO NEW TRUST DECISIONS: the endpoint
+    # is a dumb queue, a human still signs, and the received CA is verified against the
+    # fingerprint pinned in this payload (kubeadm-style). Endpoint unreachable -> fall
+    # through to the paste flow below; a dead queue never strands an install.
+    if ($Code) {
+        $canon = ($Code -replace '[-\s]', '').ToUpper()
+        if ($canon.Length -ne 12 -or $canon -notmatch '^[ABCDEFGHJKMNPQRSTUVWXYZ2-9]+$') {
+            Die 'COD-01' "that invite code is not in the right shape. Codes look like BDWJ-HQPK-7NMR -- twelve letters and digits. Dashes and capitals do not matter; every character does."
+        }
+        $endpoint = $(if ($env:ADNA_ENROLL_URL) { $env:ADNA_ENROLL_URL } else { $C.enrollment.endpoint_url })
+        if (-not $endpoint) {
+            Say "invite code noted, but this installer has no enrollment endpoint configured yet"
+            Say "-- falling back to the copy-paste hand-off below."
+        } else {
+            $endpoint  = $endpoint.TrimEnd('/')
+            # F-S380-01: the payload pin is the ONLY client-side trust anchor in the code flow.
+            # With an empty pin the client would silently adopt whatever fingerprint the endpoint
+            # returns, turning endpoint compromise into CA substitution. Hard-fail BEFORE the
+            # submit, so a broken payload never burns an invite use.
+            $pinned = $C.enrollment.ca_fingerprint
+            if (-not $pinned) {
+                Die 'PKG-05' "this installer payload carries no CA fingerprint pin, so it cannot verify the certificate authority it would receive. This payload is malformed or was never released -- re-download the installer; do not retry with this one."
+            }
+            $codeSha   = [BitConverter]::ToString([Security.Cryptography.SHA256]::Create().ComputeHash([Text.Encoding]::UTF8.GetBytes($canon))).Replace('-','').ToLower()
+            $stateFile = Join-Path $root 'enrollment_submission.json'
+            $state     = $null
+            if (Test-Path $stateFile) {
+                $prior = Get-Content $stateFile -Raw | ConvertFrom-Json
+                # same code, same request -- resume, don't burn another invite use
+                if ($prior.code_sha256 -eq $codeSha) { $state = $prior }
+            }
+            if (-not $state) {
+                try {
+                    $resp = Invoke-RestMethod -Method Post -Uri "$endpoint/enroll" -ContentType 'application/json' `
+                        -Body (@{ code = $canon; request = $req } | ConvertTo-Json -Depth 6)
+                    $invFp  = $resp.invite.network.ca_fingerprint
+                    if ($invFp -and $invFp -ne $pinned) {
+                        Die 'SRV-03' "the enrollment service returned an invite for a DIFFERENT certificate authority than this installer was built for. Refusing to continue -- report this to whoever invited you; do not retry."
+                    }
+                    $state = [ordered]@{
+                        request_id     = $resp.request_id
+                        code_sha256    = $codeSha
+                        endpoint       = $endpoint
+                        ca_fingerprint = $pinned
+                        submitted_at   = (Get-Date -Format 's')
+                    }
+                    $state | ConvertTo-Json | Set-Content -Path $stateFile -Encoding utf8
+                    Good "enrollment request submitted."
+                } catch {
+                    WriteC "   [!] could not submit to the enrollment service: $($_.Exception.Message)" Yellow
+                    Say "your install is fine; only the automatic hand-off failed. Falling back"
+                    Say "to the copy-paste hand-off below (or rerun the same command to retry)."
+                    $state = $null
+                }
+            }
+            if ($state) {
+                $caPath = Join-Path $pkiDir 'ca.crt'
+                if ((Test-Path $caPath) -and (Test-Path (Join-Path $pkiDir 'host.crt'))) {
+                    Good "certificates already delivered and verified."
+                    return
+                }
+                for ($i = 0; $i -lt 6; $i++) {
+                    $st = Invoke-RestMethod -Method Get -Uri "$endpoint/enroll/$($state.request_id)"
+                    if ($st.state -eq 'queued') {
+                        if ($i -eq 0) {
+                            Write-Host ""
+                            Say "Submitted. Waiting for approval -- a person reviews every request."
+                            Say "Safe to close this window; rerun the same command later to check."
+                        }
+                        Start-Sleep -Seconds 10
+                        continue
+                    }
+                    if ($st.state -eq 'refused')   { Die 'SRV-04' "your enrollment request was refused: $($st.reason). Contact the person who invited you." }
+                    if ($st.state -eq 'picked_up') { Die 'SRV-05' "this request's certificates were already collected, but they are not on this machine. Rerun the installer with a fresh invite code." }
+                    if ($st.state -eq 'ready') {
+                        $tmpCa = Join-Path $pkiDir 'ca.crt.incoming'
+                        Set-Content -Path $tmpCa -Value $st.ca_crt -Encoding utf8
+                        # The received CA must match the fingerprint pinned in this payload AND
+                        # carried by the signed invite -- checked BEFORE activation can trust it.
+                        $fps = & (Join-Path $binDir 'nebula-cert.exe') print -json -path $tmpCa | ConvertFrom-Json
+                        if (@($fps).fingerprint -notcontains $state.ca_fingerprint) {
+                            Remove-Item $tmpCa -ErrorAction SilentlyContinue
+                            Die 'SRV-06' "the certificate authority we received DOES NOT MATCH the one this installer was built to trust. Refusing to install it. Report this to whoever invited you; do not retry."
+                        }
+                        Move-Item $tmpCa $caPath -Force
+                        Set-Content -Path (Join-Path $pkiDir 'host.crt') -Value $st.host_crt -Encoding utf8
+                        Good "approved! certificates received and verified against the pinned CA."
+                        Say "Next: the service install (needs Administrator) -- follow the activation"
+                        Say "steps printed at the end of this installer's output."
+                        return
+                    }
+                    Die 'SRV-07' "unexpected state from the enrollment service: $($st.state)"
+                }
+                Write-Host ""
+                Say "Still waiting for approval -- a person signs every request."
+                Say "Safe to close this window; rerun the same command later to check."
+                return
+            }
+        }
+    }
+
+    # -- codeless intake (0.4.17 -- parity with adna_install.py 0.4.11) --------------------
+    # No invite code: auto-submit to the operator queue so nobody hand-carries JSON; the
+    # paste block below stays the offline path of last resort. Found as a GAP the day the
+    # first real Windows box tried to join: the Unix installer got this at 0.4.11 and the
+    # port never happened, so Windows users were still hand-carrying.
+    if (-not $Code) {
+        $endpoint = $(if ($env:ADNA_ENROLL_URL) { $env:ADNA_ENROLL_URL } else { $C.enrollment.endpoint_url })
+        $pinned   = $C.enrollment.ca_fingerprint
+        if ($endpoint -and $pinned) {
+            $endpoint = $endpoint.TrimEnd('/')
+            $uFile  = Join-Path $root 'uninvited_submission.json'
+            $uState = $null
+            if (Test-Path $uFile) {
+                try { $uState = Get-Content $uFile -Raw | ConvertFrom-Json } catch { $uState = $null }
+            }
+            if (-not $uState) {
+                try {
+                    $resp = Invoke-RestMethod -Method Post -Uri "$endpoint/request" -ContentType 'application/json' -Body $body
+                    if ($resp.request_id) {
+                        ([ordered]@{
+                            endpoint       = $endpoint
+                            request_id     = $resp.request_id
+                            ca_fingerprint = $pinned
+                            uninvited      = $true
+                            submitted_at   = (Get-Date -Format 's')
+                        } | ConvertTo-Json) | Set-Content -Path $uFile -Encoding utf8
+                        Write-Host ""
+                        Good "Enrollment request sent to the network operator."
+                        Say  "Rerun this same command any time to check; approval completes automatically."
+                        return
+                    }
+                } catch {
+                    # queue unreachable -> the paste fallback below, by design (a dead queue
+                    # never strands an install); unsaved state only costs the rerun shortcut
+                }
+            } else {
+                # Rerun: one status check, no waiting loop (approval is human-paced).
+                try { $st = Invoke-RestMethod -Method Get -Uri "$endpoint/enroll/$($uState.request_id)" } catch { $st = $null }
+                if ($st) {
+                    if ($st.state -eq 'uninvited') {
+                        Write-Host ""
+                        Say "Your request is with the network operator, waiting for review."
+                        Say "Rerun this same command any time to check; approval completes automatically."
+                        return
+                    }
+                    if ($st.state -eq 'refused')   { Die 'SRV-04' "your enrollment request was refused: $($st.reason). Contact the person who invited you." }
+                    if ($st.state -eq 'picked_up') { Die 'SRV-05' "this request's certificates were already collected, but they are not on this machine. Rerun the installer with a fresh invite code." }
+                    if ($st.state -eq 'ready') {
+                        # Same pickup + pinned-CA gate as the code flow above -- kept in
+                        # lockstep; the fingerprint check runs BEFORE anything is trusted.
+                        $caPath = Join-Path $pkiDir 'ca.crt'
+                        $tmpCa  = Join-Path $pkiDir 'ca.crt.incoming'
+                        Set-Content -Path $tmpCa -Value $st.ca_crt -Encoding utf8
+                        $fps = & (Join-Path $binDir 'nebula-cert.exe') print -json -path $tmpCa | ConvertFrom-Json
+                        if (@($fps).fingerprint -notcontains $uState.ca_fingerprint) {
+                            Remove-Item $tmpCa -ErrorAction SilentlyContinue
+                            Die 'SRV-06' "the certificate authority we received DOES NOT MATCH the one this installer was built to trust. Refusing to install it. Report this to whoever invited you; do not retry."
+                        }
+                        Move-Item $tmpCa $caPath -Force
+                        Set-Content -Path (Join-Path $pkiDir 'host.crt') -Value $st.host_crt -Encoding utf8
+                        Good "approved! certificates received and verified against the pinned CA."
+                        Say "Next: the service install (needs Administrator) -- follow the activation"
+                        Say "steps printed at the end of this installer's output."
+                        return
+                    }
+                }
+                # unknown state or endpoint unreachable -> paste fallback below
+            }
+        }
+    }
+
     Write-Host ""
     Write-Host "NEXT: send this to whoever invited you. It contains your PUBLIC key only --"
     Write-Host "no private key, no password, nothing secret."
@@ -386,3 +609,8 @@ try {
 finally {
     Remove-Item -Recurse -Force $tmp -ErrorAction SilentlyContinue
 }
+
+}
+
+# The ONLY top-level statement that does anything (see the comment on function Main).
+Main

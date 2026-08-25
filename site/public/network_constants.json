@@ -1,0 +1,123 @@
+{
+  "_comment": [
+    "THE single source of truth for every network fact an installer must emit.",
+    "",
+    "This file exists because these values are now consumed by TWO implementations \u2014",
+    "adna_install.py (Unix) and install.ps1 (Windows) \u2014 and hand-copying them into a second",
+    "language is exactly how a blocklist once shipped with four of its five entries.",
+    "A conformance test can only detect that kind of drift after it happens; a shared file",
+    "prevents it. Neither implementation may inline any value that belongs here.",
+    "",
+    "The blocklist is the UNION across the master's two instances, which share one CA.",
+    "Neither instance alone carries all five (S347 \u00a73) \u2014 shipping one instance's list is the bug.",
+    "",
+    "nebula sha256 values were OBSERVED from the published SHASUM256.txt on 2026-08-16,",
+    "then INDEPENDENTLY RE-VERIFIED on 2026-08-21 (Phase C1) -- see nebula.provenance below.",
+    "An asset with no entry here must be REFUSED, never installed unverified."
+  ],
+  "schema": "adna.network.constants/v1",
+  "request_schema": "adna.network.enrollment_request/v1",
+  "nebula": {
+    "pin": "v1.11.0",
+    "min_version": [
+      1,
+      10,
+      3
+    ],
+    "release_base": "https://github.com/slackhq/nebula/releases/download",
+    "sha256": {
+      "nebula-linux-amd64.tar.gz": "e7cdb240597d0783c9943e9c89aad3c96c59b67e75c644d62f33ae558e69d09e",
+      "nebula-linux-arm64.tar.gz": "da314d9791185583dddceb14dffe991caa6997eaff8dbe0445331a2fa70c6fd9",
+      "nebula-darwin.zip": "2e23051ba93cb2013fa2acb656a4edc73db37cd9f4bfd1fa45cf712197c21065",
+      "nebula-windows-amd64.zip": "dc6b144bd852b5a17fc0c9283d96e6309fd918c9e8f385fab256da6dfdd42232",
+      "nebula-windows-arm64.zip": "a7a544f2aa4547db8c21553a9dbd9cfc5a77d206bad29fd36bca75621738453b"
+    },
+    "verified_by_real_download": [
+      "nebula-linux-amd64.tar.gz",
+      "nebula-linux-arm64.tar.gz"
+    ],
+    "provenance": {
+      "_comment": [
+        "Phase C1 (research_security_2026-08 item 1): the trust-on-first-observation pins",
+        "above were re-verified against upstream evidence at pin-audit time, and that",
+        "verification is recorded here so an auditor does not have to take the pins on faith."
+      ],
+      "verified_on": "2026-08-21",
+      "verified_by": "session_jake_lemur_S342 (Gangway C1)",
+      "shasum256_txt": {
+        "source": "https://github.com/slackhq/nebula/releases/download/v1.11.0/SHASUM256.txt",
+        "result": "all 5 pinned hashes match upstream exactly"
+      },
+      "live_redownload": {
+        "asset": "nebula-linux-amd64.tar.gz",
+        "result": "sha256 of freshly downloaded bytes == pinned e7cdb240..."
+      },
+      "gh_artifact_attestations": {
+        "checked": "gh attestation verify -R slackhq/nebula",
+        "result": "NOT PUBLISHED upstream for v1.11.0 (API 404 on the artifact digest); recorded as absent, not skipped"
+      }
+    }
+  },
+  "overlay": {
+    "cidr": "10.43.0.0/24",
+    "mtu": 1300,
+    "port": 4242,
+    "tun_dev": {
+      "linux": "nebula1043",
+      "wsl2": "nebula1043",
+      "windows": "nebula1043",
+      "macos": ""
+    }
+  },
+  "lighthouses": [
+    "10.43.0.12",
+    "10.43.0.4"
+  ],
+  "relays": [
+    "10.43.0.12",
+    "10.43.0.4"
+  ],
+  "static_host_map": {
+    "10.43.0.4": [
+      "47.156.153.166:4242",
+      "pi-lattice-labs.duckdns.org:4242"
+    ],
+    "10.43.0.12": [
+      "lighthouse.adna.network:4242",
+      "35.252.85.248:4242"
+    ]
+  },
+  "blocklist": [
+    "010fd79885621ea8b611d133766a5be6799bb88b9695250e8b744c8cb2cee6a4",
+    "2dd3947a355102d14e4f70ed79b54fb867dfb4abecb16cce105a442967b5daca",
+    "188abdafbfbbabde25f2ae777cf1bd0f65b608d8cd2b3218f9c354df54e995bf",
+    "c25ce1bb0f751ad162a64c087f6a7ec990f7b79f5ade6c1cf579c6dd7f70b12c",
+    "cec15cfc314a51df61cb75f5bc37ce01a7a0245429d9c5751be13ea150b213a2"
+  ],
+  "enrollment": {
+    "_comment": [
+      "Gangway A3: the code flow. endpoint_url is the adna-enroll worker (empty until the",
+      "operator deploys it -- with it empty, --code falls back to the paste flow with a clear",
+      "message; ADNA_ENROLL_URL overrides for tests). ca_fingerprint is the trust anchor for",
+      "received certificates: it ships INSIDE the pinned installer payload, kubeadm-style, so",
+      "a compromised endpoint can queue garbage but can never redirect a node onto a different",
+      "CA. VERIFIED 2026-08-18 against a live mesh node's /etc/nebula/ca.crt (Lattice Mesh CA,",
+      "notAfter 2028-04-04) AND the S175 MEMBERSHIP_CERT_ISSUED ledger event -- both agree."
+    ],
+    "endpoint_url": "https://adna-enroll.science-stanley-048.workers.dev",
+    "ca_fingerprint": "267978824feba1818b2a1ce2655ce11aa9c3031b384c1800371f72329d24447e"
+  },
+  "conntrack": {
+    "tcp_timeout": "12m",
+    "udp_timeout": "3m",
+    "default_timeout": "10m"
+  },
+  "workspace": {
+    "_comment": "Mirrors aDNA.aDNA/site/src/data/install_truth.json, which is generated by build_install_truth.mjs and is the site's single source for install commands. conformance_test.py C6 asserts these agree. Do not edit one without the other.",
+    "canonical_repo_git": "https://github.com/aDNA-Network/aDNA.git",
+    "clone_target": "~/aDNA",
+    "embedded_standard": ".adna",
+    "optional": true,
+    "why_optional": "Joining the network and having the aDNA workspace are separate goods. The mesh works with no workspace; the workspace is useful with no mesh. One installer offers both, neither requires the other, and NOTHING here requires Claude Code -- that was the point of unifying them."
+  }
+}
