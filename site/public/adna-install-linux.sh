@@ -63,8 +63,7 @@ if [ "$rc" -eq 0 ]; then
 DONE
 else
     cat <<'FAILED'
-   ⛔ It stopped early. Nothing was left half-connected —
-      this installer does not change your network settings.
+   ⛔ It stopped early. It is safe to run again.
 
       Copy everything above and send it to whoever invited
       you; the reason is in there.

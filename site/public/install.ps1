@@ -42,7 +42,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference    = 'SilentlyContinue'   # Invoke-WebRequest is ~10x slower with the bar
-$VERSION = '0.4.13'
+$VERSION = '0.4.14'
 
 # PowerShell 5.1 can still default to TLS 1.0, which GitHub refuses outright.
 try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 }
@@ -65,7 +65,7 @@ function Say  { param($m) Write-Host "   $m" }
 # open (Enter-to-close). Log writes must never mask the real error.
 $LOG_FILE = Join-Path $HOME 'adna-install-log.txt'
 # strings-begin
-$MSG_RERUN = 'Nothing was left half done. It is safe to run the same command again.'
+$MSG_RERUN = 'It is safe to run the same command again.'
 # strings-end
 function Die  { param($code, $m)
     if (-not $m) { $m = $code; $code = 'GEN-01' }   # old single-arg callers stay safe
@@ -135,7 +135,7 @@ try {
     # for Windows users is the release artifacts + winget (Phase D), where the signature is
     # checked at package-build time. Recorded in security_design_notes.md -- a gap named is
     # not a gap hidden.
-    $PAYLOAD_SHA256 = '5344af3464d00b0a9516a6ce4ede986fd2ca687b7986b9f83104b1f62f55b14f'
+    $PAYLOAD_SHA256 = '88de6ac6c622e6cfc0347fab034ce6f62fc363d01a0eb98c22d3f545634582f6'
     if ($PAYLOAD_SHA256 -eq 'PAYLOAD_SHA256_UNSET') {
         Die 'REL-01' "this install.ps1 has no payload hash pinned -- it was published unreleased. Refusing to run unverified code."
     }
@@ -457,7 +457,7 @@ try {
                         submitted_at   = (Get-Date -Format 's')
                     }
                     $state | ConvertTo-Json | Set-Content -Path $stateFile -Encoding utf8
-                    Good "enrollment request submitted automatically -- nothing to copy."
+                    Good "enrollment request submitted."
                 } catch {
                     WriteC "   [!] could not submit to the enrollment service: $($_.Exception.Message)" Yellow
                     Say "your install is fine; only the automatic hand-off failed. Falling back"
@@ -504,7 +504,7 @@ try {
                     Die 'SRV-07' "unexpected state from the enrollment service: $($st.state)"
                 }
                 Write-Host ""
-                Say "Still waiting for approval -- that is normal, a person signs every request."
+                Say "Still waiting for approval -- a person signs every request."
                 Say "Safe to close this window; rerun the same command later to check."
                 return
             }

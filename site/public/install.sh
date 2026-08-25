@@ -33,11 +33,11 @@
 #
 set -eu
 
-VERSION="0.4.13"
+VERSION="0.4.14"
 BASE="${ADNA_INSTALL_BASE:-https://adna.network}"
 PAYLOAD="adna-installer-${VERSION}.tar.gz"
 # sha256 of ${PAYLOAD} — regenerate with ./release.sh, which prints the line to paste here.
-PAYLOAD_SHA256="5344af3464d00b0a9516a6ce4ede986fd2ca687b7986b9f83104b1f62f55b14f"
+PAYLOAD_SHA256="88de6ac6c622e6cfc0347fab034ce6f62fc363d01a0eb98c22d3f545634582f6"
 # minisign public key for the payload signature (Phase C1; keypair generated 2026-08-21,
 # secret brokered as adna_release_minisign.key on the release-cutting box). A missing or
 # bad signature is a hard refusal, never a warning.
@@ -51,7 +51,7 @@ say()  { printf '%s\n' "$*"; }
 # (read-only home) and must never mask the real error.
 LOG_FILE="$HOME/adna-install-log.txt"
 # strings-begin
-MSG_RERUN="Nothing was left half done. It is safe to run the same command again."
+MSG_RERUN="It is safe to run the same command again."
 # strings-end
 die()  { # $1 = short failure code (for the helper); rest = what happened, in plain words
     code="$1"; shift
@@ -174,10 +174,12 @@ while [ $i -lt $n ]; do
 done
 
 [ -n "$HAS_PROFILE" ] || set -- "$@" --profile "${ADNA_PROFILE:-developer}"
-if [ -z "$DRY" ]; then
-    PREFIX="${ADNA_PREFIX:-$HOME/.adna}"
-    set -- "$@" --execute --prefix "$PREFIX" --bindir "$PREFIX/bin"
-fi
+# --prefix/--bindir ride BOTH modes: a dry-run must print the same paths a real run would
+# use, or the plan is "confident, specific, wrong" (the F-S393-01 class — a dry-run used to
+# show /etc + /usr/local/bin while the real run wrote under ~/.adna).
+PREFIX="${ADNA_PREFIX:-$HOME/.adna}"
+set -- "$@" --prefix "$PREFIX" --bindir "$PREFIX/bin"
+if [ -z "$DRY" ]; then set -- "$@" --execute; fi
 
 # stdin is the pipe carrying THIS script, not a keyboard. Anything the installer wants to ask
 # has to come from the terminal, or it silently eats the rest of the script. Hand it /dev/tty
