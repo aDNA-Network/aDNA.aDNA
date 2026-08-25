@@ -88,9 +88,18 @@ sighting this campaign has logged and the reason the rule is a habit rather than
 
 **Disposition:** evidence stands; **the citation is repointed** to section + line range, not amended away.
 
-## Findings for the convention-13 pass
+## Progress
 
-*(recorded below at O0b — the pass runs COMPLETE, over every method×test pair, with its coverage stated)*
+| Increment | State | Commit |
+|---|---|---|
+| S1 — pre-build gate (convention 13, 30/30, coverage recorded) | ✅ | `ce5b628` |
+| ⛩ Amendment signed + freeze sweep | ✅ | `b63641d` |
+| S2 / O0 — AT lane (AC1 + AC7), red-proven 9/9 | ✅ | `f200686` |
+| O1 — keyboard pass · zoom · WCAG 2.2 delta · F2 closure | ⏭ next | — |
+| O2 ⛩ operator VoiceOver · O3 twin + statement + AAR | pending | — |
+
+**Baselines**: suite **587 → 593** (derived) · `at_traversal_redtest.sh` **9/9** (7 mutations + 2
+controls) · dist restored + verified after mutation · freeze **HOLDING**, nothing deployed.
 
 ## SITREP
 
