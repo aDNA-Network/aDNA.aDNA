@@ -14,10 +14,18 @@ scope:
     - how/sessions/active/                           # this file
   files:
     - how/campaigns/campaign_haussmann/missions/mission_haussmann_p4_3_a11y_manual.md
+    - site/tests/gates/                              # ⛩ S2 ONLY — unlocked by the AC signature, see the scope note
+    - site/scripts/                                  # ⛩ S2 ONLY — the red-test harness
   excluded:
-    - site/**                                        # S1 BUILDS NOTHING — no gate, no page, no package.json
     - site/src/data/vaults.json                      # pt19 — Hestia-owned, NEVER
     - who/coordination/                              # operator ruled all three Vitruvius memos stay STAGED
+    - site/src/pages/**                              # no page ships this session; AC5's statement is S3
+  scope_note: >-
+    This file opened declaring `site/**` EXCLUDED, on the correct ground that **S1 builds nothing**, and
+    S1 did not. The exclusion was lifted by a **specific event, not by convenience**: the operator signed
+    `ac_amendment_proposal.md` (`accepted`, 2026-08-24), which is the gate whose entire purpose is to
+    authorize the build. Recording the amendment rather than silently widening the scope — a scope
+    declaration that quietly grows is indistinguishable from one that was never honoured.
 executor_tier: opus   # AC adjudication is judgment-heavy; declared per the P4.4 precedent and honoured
 token_budget_estimated: "~40–70 kT for S1 (pre-build gate only). The mission's own ~150–250 kT band covers O0–O3 and is NOT ratified until the amendment is signed — convention 13 runs BEFORE the budget (P4.1's SO#11 remedy)."
 token_budget_actual:

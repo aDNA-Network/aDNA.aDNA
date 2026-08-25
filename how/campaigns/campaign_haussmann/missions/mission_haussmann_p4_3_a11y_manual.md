@@ -158,6 +158,57 @@ to carry a criterion requiring a prod deploy under a freeze that lifts on **anot
 were authored **before the freeze existed** and none was re-read against it when it landed.
 **Three instances is a mission-authoring habit, not three accidents.**
 
+**⛩ AMENDMENT SIGNED 2026-08-24, and the freeze sweep ran at the same gate** ([[freeze_sweep]]).
+7 ACs accepted; **P4.4b measured already-clean** (the sweep's control passed — the remedy was already
+written and applied there); **P4.5b** carries G-5 #4; **P5.2** gains a *predecessors-DEPLOYED* precondition;
+and ⛔⛔ **P5.1 carries G-11**, a **different class** — its human-evidence criteria are *satisfiable* under
+the freeze and would produce evidence **about the wrong build**. Every P5.1 criterion now records the
+commit the participant saw, via the `/.well-known/adna-build.json` mechanism **AC0 shipped at P4.4a**.
+
+### ✅ O0 COMPLETE 2026-08-24 — the AT lane (AC1 + AC7), built and red-proven
+
+**`gate-45-at-traversal.spec.ts`** — 6 assertions, **suite 587 → 593 (derived)**, and
+**`scripts/at_traversal_redtest.sh` 9/9 (7 mutations + 2 controls)**.
+
+⭐ **The gate deliberately does NOT re-test what `gate-4` already covers.** axe runs `wcag2a` +
+`wcag2aa` + `best-practice` over 23 pages × 2 themes, so link-name, landmark rules,
+`page-has-heading-one` and `bypass` are already gated; duplicating them would add assertions and no
+coverage. gate-45's delta is the part axe **structurally cannot reach** — and it is exactly D11's
+manual third: **ORDER** (`bypass` proves a skip mechanism *exists*; a skip link announced *last*
+passes it), **PHRASING** (what is actually said), and **LIVE SPEECH** (axe is a static-snapshot
+instrument and cannot test an announcement at all).
+
+⭐⭐ **AC7 is answered, and the red test is what makes the answer worth anything.** Mutation **M6**
+strips `aria-live` while leaving the region's text **correct** — the words are still right and the
+region goes **silent** — and gate-45 goes **red**. *That single case is the difference between an AT
+instrument and a `textContent` check wearing one's clothes.* P4.2 deferred this here by name because
+*"no grep was ever going to answer it"*; the answer is that the region **is** wired and **does**
+announce (`"polite: 0 of 74 vaults — nothing matched"` `[D]`), and there is now an assertion that
+fails if it ever stops.
+
+⚠ **THE BOUND IS STATED ON THE INSTRUMENT'S FACE.** The reader costs **~11 ms/step** (measured: 300
+steps = 3,273 ms), so a full walk of the homepage exceeds a 30 s timeout. gate-45 walks a **bounded
+opening** of 60 phrases and asserts **only about the opening** — it is *not* a whole-document AT audit
+and must never be cited as one. ⚠ The obvious fast path, `page.accessibility.snapshot()`, was
+**REMOVED in Playwright 1.59** (`TypeError: Cannot read properties of undefined`) — measured before the
+design was chosen, so the bound is a consequence, not a preference. A **coverage floor**
+(`≥ 25 phrases`, never `> 0`) is asserted first, because every other assertion is about the *content*
+of the opening and none of them can tell a clean opening from **an opening that was never read**.
+
+⚠⚠ **THREE INSTRUMENT DEFECTS, ALL MINE, ALL BEFORE THE SUBJECT — the campaign's standing class, and
+the third is the sharpest it has produced.**
+1. The order assertion pinned `log[0]`, but `spokenPhraseLog()[0]` is **`"document"`** — the reader
+   announces the container root on `start()`. Failed on **all five surfaces**; the site was right.
+2. A fixed **600 ms** sleep before reading the live log produced an empty capture **indistinguishable
+   from a silent region** — a timing flake wearing the costume of a real defect. Now polls.
+3. ⭐⭐ **`spokenPhraseLog()` returns a LIVE REFERENCE to the reader's internal array, not a copy.**
+   Held by reference, `before` and `after` are the **same object**, so `after.length > before.length`
+   is never true and `after.slice(before.length)` is always `[]`. **The gate reported "the live region
+   was never announced" against a region that was announcing correctly the whole time** — a verifier
+   comparing a value **to itself**, which can only ever report *no change*. Fixed with a spread.
+   ⇒ **A green is not the only way an instrument lies; this one lied in red**, and it would have
+   written up a perfectly good live region as a defect.
+
 ## AAR (SO#5)
 
 *(before completed)*
