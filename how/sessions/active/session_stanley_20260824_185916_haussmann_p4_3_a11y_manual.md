@@ -108,11 +108,101 @@ sighting this campaign has logged and the reason the rule is a habit rather than
 | S1 — pre-build gate (convention 13, 30/30, coverage recorded) | ✅ | `ce5b628` |
 | ⛩ Amendment signed + freeze sweep | ✅ | `b63641d` |
 | S2 / O0 — AT lane (AC1 + AC7), red-proven 9/9 | ✅ | `f200686` |
-| O1 — keyboard pass · zoom · WCAG 2.2 delta · F2 closure | ⏭ next | — |
-| O2 ⛩ operator VoiceOver · O3 twin + statement + AAR | pending | — |
+| S3 / O1a — the three instruments (AC2 keyboard · AC3 entire), red-proven 9/9 + 9/9 + 3 new controls | ✅ | *this commit* |
+| O1b — traversal record · F2 closure · AC6 adjudication · O2 script | ⏭ next | — |
+| O2 ⛩ operator VoiceOver (⛩ deferred — script only this session) · O3 twin + statement + AAR | pending | — |
 
-**Baselines**: suite **587 → 593** (derived) · `at_traversal_redtest.sh` **9/9** (7 mutations + 2
-controls) · dist restored + verified after mutation · freeze **HOLDING**, nothing deployed.
+**Baselines**: suite **587 → 593 → 617** (derived from the runner) · `at_traversal_redtest.sh` **9/9** ·
+`zoom_resize_redtest.sh` **9/9** (7 mutations + 2 controls) · `keyboard_redtest.sh` **9/9** (7 + 2) ·
+`a11y_bestpractice_redtest.sh` **9/9** (A–I, three new for `wcag22aa`) · dist restored + verified after
+every mutation · freeze **HOLDING**, nothing deployed.
+
+## S3 / O1a — the crash resume, and a real defect the suite could not see
+
+⛩ **Operator routing at resume**: run **all of O1 in one session**; **O2's VoiceOver sitting deferred**
+(script only, authored after the keyboard findings so it is fed by them). The prior session crashed
+after O0's commit; the tree was **clean** and nothing was half-built — S1, the amendment, the freeze
+sweep and O0 were all committed.
+
+**State re-derived at the object, not carried:** freeze **HOLDS** (`git cat-file -t` fails on both
+`30c8163` + `f4fa9c5` `[D]`) · `origin/main` = `32069f3`, HEAD = `33de102`, **6 unpushed** (including
+`2fe9093`, the foreign Home.aDNA commit — any push GO must name it) · suite baseline **593**, read from
+`playwright test --list`, not from the mission file.
+
+### ⭐ AC3 — the finding: 229px of horizontal scrolling at 200% text, on every page
+
+**WCAG 1.4.4 (Resize text).** With the browser's text size at 200% — a user preference, **not** page
+zoom, so the viewport stays 1280 — the header ran to **x=1509 in a 1280px viewport** and **every page
+scrolled horizontally by 229px**; at 1024 the overflow was **460px**. The offender is
+`.header-actions` (CTA + GitHub + theme toggle), pushed off-screen by `margin-left: auto` against a
+nav that had also doubled.
+
+⭐ **Nothing in 593 assertions could see it, and the reason is precise:** `gate-9` and `gate-29`
+parameterize the **viewport width**, and narrowing a viewport is a *different transform* from
+enlarging the text inside it. AC3's amended wording said both halves "REQUIRE NEW INSTRUMENT WORK and
+may not be ticked against the existing suite" — measured `[D]`: `deviceScaleFactor|zoom` = **0 hits**
+in `tests/`. That was right.
+
+**Fix: `flex-wrap: wrap` on `.header-inner`** — one line, **inert at normal text size** (the row only
+wraps when it cannot fit, which it always can today; gate-13 still asserts the flat-row fit at 1024).
+Measured after: **overflow 0** at both 1280 and 1024 on every route probed.
+
+### AC3 — the WCAG 2.2 delta, and the honest coverage statement
+
+`gate-4` now runs `wcag22aa`. **Measured before deciding** (the F-a discipline, one mission on):
+16 routes × 2 themes = **32 runs, 0 violations, `target-size` in `passes` on all 32** — evaluated, not
+inapplicable. ⚠ **The tag buys exactly ONE rule**: axe-core 4.11.3 ships `target-size` (2.5.8) and
+nothing else for 2.2 `[D]`. 2.4.11 · 2.5.7 · 3.2.6 · 3.3.7 · 3.3.8 are **not machine-checkable here**
+and are named on the gate's face — four of the five because the interaction does not exist on this
+site, which is true **today** and stops being true the moment one is added. **2.4.11 is swept by
+gate-47**, not by axe.
+
+### AC3 — reduced motion swept, not recorded out of scope
+
+13 implementations exist in `src/` `[D]` and **none had ever been verified**. gate-46 asserts the
+`--transition-*` tokens zero under the preference **and** that NetworkDiagram refuses to arm its
+compose animation — each with the control that proves the un-emulated state differs.
+
+### AC2 — the keyboard pass is CLEAN, and the controls are what make that worth saying
+
+Five surfaces × 60 Tab presses: **0 focus stops without a ring · 0 consecutive repeats (no trap) ·
+0 DOM-order breaks · 0 positive tabindex · 0 elements obscured by the sticky header**, and Shift+Tab
+retraces the forward walk exactly. The negative claims carry coverage floors — the walk asserts it
+**scrolled** (72 of 87 steps on `/`, max scrollY 6574) because *"nothing was obscured"* and *"nothing
+ever scrolled far enough to be obscured"* are the same green.
+
+⚠ **One honest qualifier, found by red-proving:** a `340px` sticky header did **not** turn the
+obscured assertion red — Chromium's focus scroll aligns to the **nearest edge**, parking each element
+near the *bottom* of the viewport when tabbing down. It goes red at 820px. ⇒ **the site's green here
+rests partly on browser scroll behaviour, not only on its own layout**, and the record says so rather
+than claiming a design property this site did not earn.
+
+### ⚠⚠ SIX INSTRUMENT DEFECTS, ALL MINE, ALL BEFORE THE SUBJECT — the campaign's standing class
+
+1. **`addInitScript` never applied the root font-size.** An entire probe run reported *"no overflow"*
+   for 15 routes it had **never actually resized** (body text stayed 14.4px). That green is
+   indistinguishable from a conformant site. ⇒ gate-46 asserts the transform happened **first**, and
+   `zoom_resize_redtest.sh` case 2 pins the type scale to px to prove that control fires.
+2. **A clip predicate that flagged deliberate `text-overflow: ellipsis`** — all 39 of `/vaults`'s
+   "clips" were a design truncation.
+3. **The same predicate flagged the sr-only keyboard twins** (`nav.hero-graph-nodelist`,
+   `nav.graph-node-list`) as clipping containers. They are the **machine_eye 14 twins** — the thing
+   AC4 is about — reported as a defect by the instrument built to protect them.
+4. **gate-46's own duration control asserted `/\d+ms/`** and went red against a correct token set:
+   authored `150ms`, **minified to `.15s`**. The gate was wrong before the subject was.
+5. **The obscured predicate counted the header's OWN CHILDREN** — 11 per route, on every route.
+6. **The skip-link check read the rect mid-transition** (`top=-56`) and failed on `/` alone while
+   passing on four surfaces. Measured settle: `-56.5 → -9.1 → **8** from t+200ms`. Its *first* fix
+   was also wrong — it broke on two equal frames during a slow homepage paint. Now: three equal
+   samples **and** a 250ms floor above the 150ms transition.
+
+⭐ **And one mutation that failed to go red was aimed at the wrong assertion, not at a weak gate.**
+`keyboard_redtest.sh` case 7 originally hijacked tab order with `tabindex="3"` and expected the
+**reverse-walk** test to fail. It cannot: that test asserts Shift+Tab *retraces* the forward walk, and
+a reordered-but-consistent order retraces perfectly. Reordering is case 2's, on the traversal test
+where the DOM-order claim lives. The reverse test can only catch **asymmetry**, so the mutation is now
+a real one-way trap (Shift+Tab swallowed). ⇒ **naming which of the two a non-red is, is the point of
+running the harness at all.**
 
 ## SITREP
 

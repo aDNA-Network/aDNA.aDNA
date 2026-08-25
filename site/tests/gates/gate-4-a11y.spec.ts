@@ -94,8 +94,29 @@ for (const mode of modes) {
        *   C. that same planted defect is INVISIBLE to wcag2a/wcag2aa — F-a's premise, reproduced
        * Controls A–C are re-runnable from scripts/a11y_bestpractice_redtest.sh.
        */
+      /* ⛩ HAUSSMANN P4.3 O1 / AC3 — `wcag22aa` ADDED, and what it buys is stated rather than implied.
+       *
+       * MEASURED BEFORE DECIDING (the F-a discipline, one mission on): 16 routes × 2 themes = 32 runs
+       * under `withTags(['wcag22a','wcag22aa'])` → **0 violations, and `target-size` landed in
+       * `passes` on all 32** — evaluated, not inapplicable. So the extension is a one-line change and
+       * the zero is a real zero, not a tag that matched nothing.
+       *
+       * ⚠ THE TAG BUYS EXACTLY ONE RULE, AND THAT IS THE HONEST COVERAGE STATEMENT. axe-core 4.11.3
+       * ships **`target-size` (2.5.8) and nothing else** for WCAG 2.2 — `getRules(['wcag22a',
+       * 'wcag22aa'])` returns a single entry `[D]`. The rest of the 2.2 AA delta is NOT machine-
+       * checkable here and must never be read as covered because this gate is green:
+       *   · 2.4.11 Focus not obscured (minimum) — swept by the keyboard pass (gate-47 + O1 record)
+       *   · 2.5.7  Dragging movements          — no drag interaction exists on this site
+       *   · 3.2.6  Consistent help             — the header/footer help path is uniform by template
+       *   · 3.3.7  Redundant entry             — no multi-step form exists on this site
+       *   · 3.3.8  Accessible authentication   — no authentication exists on this site
+       * Four of those five are "does not apply because the interaction does not exist", which is a
+       * true statement about THIS site and would stop being true the moment one is added.
+       *
+       * Controls for the new tag are cases G/H/I of scripts/a11y_bestpractice_redtest.sh.
+       */
       const results = await new AxeBuilder({ page })
-        .withTags(['wcag2a', 'wcag2aa', 'best-practice'])
+        .withTags(['wcag2a', 'wcag2aa', 'wcag22aa', 'best-practice'])
         .analyze();
 
       const violations = results.violations.map((v) => ({

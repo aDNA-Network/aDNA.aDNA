@@ -160,6 +160,19 @@ const moreActive = moreEntry?.children?.some((c) => currentPath.startsWith(c.hre
     max-width: var(--content-width);
     margin: 0 auto;
     padding: var(--space-3) var(--space-6);
+    /* HAUSSMANN P4.3 O1 — WCAG 1.4.4 (Resize text). MEASURED, not supposed: with the browser's
+       text size at 200% (a user preference, NOT page zoom — the viewport stays 1280), this row
+       ran to x=1509 in a 1280px viewport and EVERY page scrolled horizontally by 229px. The
+       offender was `.header-actions` (CTA + GitHub + theme toggle), pushed off-screen by
+       `margin-left: auto` against a nav that had also doubled; at 1024 the overflow was 460px.
+       Nothing in the suite could see it: gate-9/gate-29 parameterize the VIEWPORT WIDTH, and
+       narrowing a viewport is not the same transform as enlarging the text inside it.
+
+       `flex-wrap: wrap` is the whole fix and it is inert at normal text size — the row only
+       wraps when it cannot fit, which it always can today (gate-13 still asserts the flat-row
+       fit at exactly 1024). Measured after: overflow 0 at 1280 AND 1024, all routes probed.
+       gate-46 keeps it true and is red-proven by removing this line. */
+    flex-wrap: wrap;
   }
 
   .logo {

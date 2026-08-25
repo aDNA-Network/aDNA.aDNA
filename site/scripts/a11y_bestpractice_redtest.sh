@@ -63,6 +63,41 @@ test('D: the live site is clean under the widened set — the zero being claimed
   const r = await new AxeBuilder({ page }).withTags(['best-practice']).analyze();
   expect(r.violations.map((v) => `${v.id}×${v.nodes.length}`), 'the page F-a s defect was found on').toEqual([]);
 });
+
+/* ── HAUSSMANN P4.3 O1 / AC3 — the same three questions, asked of `wcag22aa` ──────────────────
+ * The 2.2 tag has the identical vacuity hazard as best-practice did, and a sharper one: axe-core
+ * 4.11.3 ships exactly ONE rule for WCAG 2.2 (`target-size`), so a version bump that dropped or
+ * renamed it would leave the tag matching nothing and the gate just as green. */
+const plantSmallTargets = async (page: any) => {
+  await page.evaluate(() => {
+    const box = document.createElement('div');
+    box.innerHTML =
+      '<button style="width:16px;height:16px;padding:0;margin:0">a</button>' +
+      '<button style="width:16px;height:16px;padding:0;margin:0">b</button>';
+    document.body.appendChild(box);
+  });
+};
+
+test('G: the wcag22aa tag actually EVALUATES target-size', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  const r = await new AxeBuilder({ page }).withTags(['wcag22aa']).analyze();
+  const all = [...r.passes, ...r.violations, ...r.incomplete, ...r.inapplicable].map((x) => x.id);
+  expect(all, `wcag22aa matched rules [${all.join(', ')}] — if target-size is absent the tag is a no-op and every zero under it is vacuous`).toContain('target-size');
+});
+
+test('H: the widened tag set CATCHES planted sub-24px targets', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  await plantSmallTargets(page);
+  const r = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag22aa', 'best-practice']).analyze();
+  expect(r.violations.map((v) => v.id)).toContain('target-size');
+});
+
+test('I: the pre-P4.3 tag set was BLIND to it', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  await plantSmallTargets(page);
+  const r = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'best-practice']).analyze();
+  expect(r.violations.map((v) => v.id)).not.toContain('target-size');
+});
 EOF
 
 pass=0; fail=0
@@ -89,13 +124,22 @@ check "C. old set was BLIND to the same defect      → passed" passed "$(run "$
 check "D. the claimed zero holds on the real page   → passed" passed "$(run "$SPEC" 'D: the live site')"
 
 echo
+echo "-- P4.3 O1: the same three questions asked of wcag22aa --"
+check "G. wcag22aa actually evaluates target-size   → passed" passed "$(run "$SPEC" 'G: the wcag22aa')"
+check "H. widened set CATCHES planted small targets → passed" passed "$(run "$SPEC" 'H: the widened')"
+check "I. pre-P4.3 set was BLIND to the same defect → passed" passed "$(run "$SPEC" 'I: the pre-P4.3')"
+
+echo
 echo "-- the gate itself: widened runs clean, and the widening is load-bearing --"
-check "E. gate-4 green with best-practice           → passed" passed "$(run "$GATE" 'Proposal archive')"
+check "E. gate-4 green with the full tag set        → passed" passed "$(run "$GATE" 'Proposal archive')"
 
 python3 - <<'PYEOF'
 p='tests/gates/gate-4-a11y.spec.ts'
 s=open(p).read()
-old=".withTags(['wcag2a', 'wcag2aa', 'best-practice'])"
+# ADR-057 same-diff: this literal is the gate's tag set. P4.3 O1 added 'wcag22aa'; the mutation
+# string moved in the SAME commit, because a stale literal here matches 0 times and the harness
+# reports a harness bug rather than silently "passing".
+old=".withTags(['wcag2a', 'wcag2aa', 'wcag22aa', 'best-practice'])"
 assert s.count(old)==1, f'MUTATION DID NOT APPLY (matched {s.count(old)}, expected 1) — harness bug, not a pass'
 open(p,'w').write(s.replace(old,".withTags(['best-practice-typo-that-matches-nothing'])"))
 PYEOF
