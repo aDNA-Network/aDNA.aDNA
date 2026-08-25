@@ -33,11 +33,11 @@
 #
 set -eu
 
-VERSION="0.4.15"
+VERSION="0.4.16"
 BASE="${ADNA_INSTALL_BASE:-https://adna.network}"
 PAYLOAD="adna-installer-${VERSION}.tar.gz"
 # sha256 of ${PAYLOAD} — regenerate with ./release.sh, which prints the line to paste here.
-PAYLOAD_SHA256="89c5747b2c87d3b9f94e3fb8b9ffb56a69cc98f8a3f2a33e676b821b86844679"
+PAYLOAD_SHA256="df298051a6caf17179a75682ad6403042c54b958e6107a8831b00ea48397c0c6"
 # minisign public key for the payload signature (Phase C1; keypair generated 2026-08-21,
 # secret brokered as adna_release_minisign.key on the release-cutting box). A missing or
 # bad signature is a hard refusal, never a warning.
@@ -185,10 +185,14 @@ if [ -z "$DRY" ]; then set -- "$@" --execute; fi
 # has to come from the terminal, or it silently eats the rest of the script. Hand it /dev/tty
 # when one exists; otherwise give it nothing rather than the pipe.
 cd "$TMP"
+# No exec: exec replaced the shell and silently defeated the cleanup trap above, leaking one
+# payload dir per run — and the printed resume commands only worked because of that leak
+# (F-III-4). The installer now persists itself to $PREFIX/installer/ on a real run, so the
+# temp dir can be cleaned honestly; set -e propagates the installer's exit code to the trap.
 if [ -t 1 ] && [ -r /dev/tty ]; then
-    exec python3 adna_install.py "$@" </dev/tty
+    python3 adna_install.py "$@" </dev/tty
 else
-    exec python3 adna_install.py "$@" </dev/null
+    python3 adna_install.py "$@" </dev/null
 fi
 
 }
