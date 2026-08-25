@@ -3,7 +3,8 @@ type: session
 session_id: session_stanley_20260824_185916_haussmann_p4_3_a11y_manual
 user: stanley
 started: 2026-08-25T01:59:16Z
-status: active
+ended: 2026-08-25T02:00:00Z
+status: completed   # ⚠ Closed at the NEXT session's open (2026-08-25), not by its own hand — a crash-and-resume session left it `active` in `how/sessions/active/` after its SITREP was written. The SITREP below is the record; nothing was added to it at closure. **P4.3 itself is NOT closed by this field** — the mission stayed open at ⛩ O2 when this session ended.
 tier: 1
 machine: L1 (Stanley's Mac, Darwin 25.6.0)
 intent: "Operation HAUSSMANN P4.3 S1 — the pre-build gate ONLY. Re-verify the freeze + every grounded_in entry at the object (convention 12), then run the convention-13 AC-coherence pass COMPLETE with its coverage recorded, and author the AC amendment proposal for operator signature. Builds nothing: no gate, no dependency, no page. The operator routing call that opened P4.3 (and held all three Vitruvius memos staged) was taken at session open."

@@ -133,12 +133,37 @@ A sighted operator driving VoiceOver is a real instrument and a different one. T
 
 ## Findings
 
-*(⛩ operator — fill in during the session; date it, and note the commit from the pre-flight step)*
+### Pre-flight — done for you, 2026-08-25 (agent)
 
-| # | What was said | CLEAR / CONFUSING / SILENT | Note |
-|---|---|---|---|
-| 1 | | | |
-| 5 | | | |
-| 9 | | | |
-| 13 | | | |
-| 18 | | | |
+| | |
+|---|---|
+| **Date of sitting** | 2026-08-25 |
+| **Commit under test** | `745d462` `[D]` — record it here so this evidence can never be mistaken for a statement about production (**G-11**) |
+| **Build** | `npx astro build` + `inject_redirects.mjs .` + `inject_negotiation.mjs .`, all clean |
+| **Preview** | `http://localhost:4321` — **UP**, all five surfaces 200 `[D]` (`/` · `/get-started` · `/vaults` · `/vaults/graph/` · `/reference/specification`) |
+| **Production, for contrast** | serving `922519c` — **predates P4.1 + P4.2 + P4.4a + P4.3**. Do not listen there. |
+
+⛩ **Operator — fill the table below during the session.** A rough note that is true beats a clean one
+reconstructed afterwards. ⭐ marks the four items something downstream actually waits on; the rest are
+still worth recording, but nothing blocks on them.
+
+| # | Page | What was said | CLEAR / CONFUSING / SILENT | Note |
+|---|---|---|---|---|
+| 1 | `/` skip link first? | | | |
+| 2 | `/` did activating it tell you you moved? | | | |
+| 3 | `/` graph heard twice, once, confusing? | | | |
+| 4 | `/` heading rotor — outline or fragments? | | | |
+| ⭐ 5 | `/get-started` copy button — **decides whether the copy confirmation needs a live region** | | | announced "Copied!" / said something else / SILENT |
+| 6 | `/get-started` clear you are inside a code sample? | | | |
+| 7 | `/get-started` is the install command intelligible aloud? | | | no fix implied |
+| 8 | `/vaults` search field purpose clear? | | | |
+| ⭐ 9 | `/vaults` live region on `zzzznomatch` — **useful, not merely present** | | | how long after you stopped typing? |
+| 10 | `/vaults` filter chip — which filter, how many results? | | | |
+| 11 | `/vaults` empty state heard, or only the count? | | | P4.2 residue |
+| 12 | `/vaults/graph/` can you form a picture from the roster? | | | |
+| ⭐ 13 | `/vaults/graph/` **is the missing edge information noticeable? — DECIDES AC4** | | | roster incomplete ⇒ build edges · roster complete ⇒ state the limitation |
+| 14 | `/vaults/graph/` clear you had left and arrived somewhere new? | | | |
+| 15 | `/reference/specification` landmarks named helpfully? | | | |
+| 16 | `/reference/specification` reachable mid-document via headings? | | | |
+| 17 | `/reference/specification` anything meaningless to hear? | | | raw slug / punctuation run / "link link link" |
+| ⭐ 18 | anywhere — **single most annoying thing for a screen-reader user** | | | ⭐ answer even if the answer is "nothing" — a genuine nothing is a result |
