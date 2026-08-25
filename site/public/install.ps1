@@ -42,7 +42,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference    = 'SilentlyContinue'   # Invoke-WebRequest is ~10x slower with the bar
-$VERSION = '0.4.16'
+$VERSION = '0.4.17'
 
 # PowerShell 5.1 can still default to TLS 1.0, which GitHub refuses outright.
 try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 }
@@ -135,7 +135,7 @@ try {
     # for Windows users is the release artifacts + winget (Phase D), where the signature is
     # checked at package-build time. Recorded in security_design_notes.md -- a gap named is
     # not a gap hidden.
-    $PAYLOAD_SHA256 = 'df298051a6caf17179a75682ad6403042c54b958e6107a8831b00ea48397c0c6'
+    $PAYLOAD_SHA256 = 'cdd3d1bbd5763c5f94a36f81506384aeb166dce7ab642774f33ea37d347c1d32'
     if ($PAYLOAD_SHA256 -eq 'PAYLOAD_SHA256_UNSET') {
         Die 'REL-01' "this install.ps1 has no payload hash pinned -- it was published unreleased. Refusing to run unverified code."
     }
@@ -507,6 +507,77 @@ try {
                 Say "Still waiting for approval -- a person signs every request."
                 Say "Safe to close this window; rerun the same command later to check."
                 return
+            }
+        }
+    }
+
+    # -- codeless intake (0.4.17 -- parity with adna_install.py 0.4.11) --------------------
+    # No invite code: auto-submit to the operator queue so nobody hand-carries JSON; the
+    # paste block below stays the offline path of last resort. Found as a GAP the day the
+    # first real Windows box tried to join: the Unix installer got this at 0.4.11 and the
+    # port never happened, so Windows users were still hand-carrying.
+    if (-not $Code) {
+        $endpoint = $(if ($env:ADNA_ENROLL_URL) { $env:ADNA_ENROLL_URL } else { $C.enrollment.endpoint_url })
+        $pinned   = $C.enrollment.ca_fingerprint
+        if ($endpoint -and $pinned) {
+            $endpoint = $endpoint.TrimEnd('/')
+            $uFile  = Join-Path $root 'uninvited_submission.json'
+            $uState = $null
+            if (Test-Path $uFile) {
+                try { $uState = Get-Content $uFile -Raw | ConvertFrom-Json } catch { $uState = $null }
+            }
+            if (-not $uState) {
+                try {
+                    $resp = Invoke-RestMethod -Method Post -Uri "$endpoint/request" -ContentType 'application/json' -Body $body
+                    if ($resp.request_id) {
+                        ([ordered]@{
+                            endpoint       = $endpoint
+                            request_id     = $resp.request_id
+                            ca_fingerprint = $pinned
+                            uninvited      = $true
+                            submitted_at   = (Get-Date -Format 's')
+                        } | ConvertTo-Json) | Set-Content -Path $uFile -Encoding utf8
+                        Write-Host ""
+                        Good "Enrollment request sent to the network operator."
+                        Say  "Rerun this same command any time to check; approval completes automatically."
+                        return
+                    }
+                } catch {
+                    # queue unreachable -> the paste fallback below, by design (a dead queue
+                    # never strands an install); unsaved state only costs the rerun shortcut
+                }
+            } else {
+                # Rerun: one status check, no waiting loop (approval is human-paced).
+                try { $st = Invoke-RestMethod -Method Get -Uri "$endpoint/enroll/$($uState.request_id)" } catch { $st = $null }
+                if ($st) {
+                    if ($st.state -eq 'uninvited') {
+                        Write-Host ""
+                        Say "Your request is with the network operator, waiting for review."
+                        Say "Rerun this same command any time to check; approval completes automatically."
+                        return
+                    }
+                    if ($st.state -eq 'refused')   { Die 'SRV-04' "your enrollment request was refused: $($st.reason). Contact the person who invited you." }
+                    if ($st.state -eq 'picked_up') { Die 'SRV-05' "this request's certificates were already collected, but they are not on this machine. Rerun the installer with a fresh invite code." }
+                    if ($st.state -eq 'ready') {
+                        # Same pickup + pinned-CA gate as the code flow above -- kept in
+                        # lockstep; the fingerprint check runs BEFORE anything is trusted.
+                        $caPath = Join-Path $pkiDir 'ca.crt'
+                        $tmpCa  = Join-Path $pkiDir 'ca.crt.incoming'
+                        Set-Content -Path $tmpCa -Value $st.ca_crt -Encoding utf8
+                        $fps = & (Join-Path $binDir 'nebula-cert.exe') print -json -path $tmpCa | ConvertFrom-Json
+                        if (@($fps).fingerprint -notcontains $uState.ca_fingerprint) {
+                            Remove-Item $tmpCa -ErrorAction SilentlyContinue
+                            Die 'SRV-06' "the certificate authority we received DOES NOT MATCH the one this installer was built to trust. Refusing to install it. Report this to whoever invited you; do not retry."
+                        }
+                        Move-Item $tmpCa $caPath -Force
+                        Set-Content -Path (Join-Path $pkiDir 'host.crt') -Value $st.host_crt -Encoding utf8
+                        Good "approved! certificates received and verified against the pinned CA."
+                        Say "Next: the service install (needs Administrator) -- follow the activation"
+                        Say "steps printed at the end of this installer's output."
+                        return
+                    }
+                }
+                # unknown state or endpoint unreachable -> paste fallback below
             }
         }
     }
