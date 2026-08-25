@@ -37,7 +37,12 @@ tags: [campaign_governance, haussmann]
 1. **Honesty is the aesthetic.** Claims move DOWN to verifiability, never up to ambition. The claim register (`evidence/claims/claim_register.md`, living) is the arbiter; aspirational present tense is a defect (anti-pattern 7.5); every count a page narrates must be derived, not typed (WebForge KW-14).
 2. **Provenance tags** `[D]/[I]/[R]/[A]` on every finding and every evidence citation. Untagged assertions are inadmissible.
 3. **Headless-first visual work** ([[doctrine_visual_inspection]]): T0 `scripts/visual_capture.mjs` (6 canonical viewports × dark+light; `--axe` covers themes[0] — run twice for both) → T1 `@playwright/mcp` → T2 only by escalation with a stated fallback. Visual findings without captures are inadmissible.
-4. **WebForge is the pattern source — consumer, never fork.** Consume via `how/federation/webforge/` (P0.3 creates it); a pattern we need that WebForge lacks gets authored back (`patterns_to_author:`), never solved locally. Read gate bars from `lighthouse_profiles.json`, never transcribe (KW-14) — **⚠ UNFOLLOWABLE TODAY; DO NOT TREAT AS A LIVE RULE.** `find . -name lighthouse_profiles.json` returns **0 hits** vault-wide `[D]` (P2.6, 2026-08-19), so **every gate-19 bar in the suite is a transcription** — precisely what this clause forbids. ⊳ **D-E** ruled at ⛩ DP6: **mirror the file into `how/federation/webforge/` at P4.4**; amend this convention **only** if Vitruvius declines. Until then transcribe **and name the source you transcribed from**. Momus/reviewer independence: the builder never self-certifies.
+4. **WebForge is the pattern source — consumer, never fork.** Consume via `how/federation/webforge/` (P0.3 creates it); a pattern we need that WebForge lacks gets authored back (`patterns_to_author:`), never solved locally. Read gate bars from `lighthouse_profiles.json`, never transcribe (KW-14) — ~~**⚠ UNFOLLOWABLE TODAY; DO NOT TREAT AS A LIVE RULE.** `find . -name lighthouse_profiles.json` returns **0 hits** vault-wide `[D]` (P2.6, 2026-08-19), so **every gate-19 bar in the suite is a transcription** — precisely what this clause forbids. ⊳ **D-E** ruled at ⛩ DP6: **mirror the file into `how/federation/webforge/` at P4.4**; amend this convention **only** if Vitruvius declines. Until then transcribe **and name the source you transcribed from**.~~
+   - ⭐⭐ **THE RULE IS FOLLOWABLE AND ALWAYS WAS — the evidence sentence above was wrong, and it is corrected here rather than the rule** (A3, 2026-08-24). **The `find` searched `aDNA.aDNA` and reported *"vault-wide"*** — the file is at `WebForge.aDNA/what/lib/gates/lighthouse_profiles.json` (43,988 B), and our federation pin `6096157` is **byte-current** against it (md5 `134c9647c4c348034db3fa32d65d9db1`, identical at the pin, at their HEAD `14838774`, and in their working tree). ⇒ **convention 16's own law — *a negative result is only as wide as the command that produced it* — and convention 17's *name your surface*, both breached by the sentence that cited neither, inside the file that authored both.**
+   - ⚠ **And the second claim was wrong in the other direction: the bars are NOT transcriptions.** `grep -rn lighthouse_profiles site/` → **0**; nothing of ours has ever read that file. `gate-19`'s bars are the CWV *Good band* over committed **slim desktop** fixtures. ⇒ they are **UN-SOURCED**, which is a different defect with a different fix, and the mirror would not have touched it. **Perf ≥ 90 is LOOSER than their `content_static` 95** — the direction their `ratchet_law` reserves for an operator gate.
+   - ⛔ **The mirror is WITHDRAWN as the mechanism**, contradicted from both ends: our own wrapper names **gates** among what is *"consumed by reference, never copied"* (`how/federation/webforge/CLAUDE.md:24`), and WebForge's `CLAUDE.md` says the bars *"are class-keyed data … **read them there and never transcribe them**"*. The two live consumers we already have (`lock_coverage_check.py`, `token_aa_check.py`) both **resolve the pinned path**; a mirror would be a third mechanism that goes stale in silence.
+   - ⛩ **Ruling 3 STANDS and is honoured**: the ask was authored and **staged** at A3 ([[coord_2026_08_24_rosetta_to_vitruvius_profiles_are_read_not_mirrored]]) — **this convention's RULE is not amended**, and no amendment is owed, because Vitruvius has not declined and the rule is not in conflict with anything. **The interim clause still governs until a bar is actually sourced: transcribe AND name the source you transcribed from** — to date we have done neither half, which is the live residue (**F-e**, and P4.4b's **AC4**).
+   Momus/reviewer independence: the builder never self-certifies.
 5. **Honor pt19**: never run `sync:vaults` or hand-edit `site/src/data/vaults.json` — registry *data* regen is Hestia-owned + operator-gated. This campaign fixes projection *code* and stages data asks as memos.
 6. **Build discipline**: `npx astro build` (never `npm run build` — prebuild regenerates committed data). Deploy via `site/scripts/deploy_adna.sh prod` — the only sanctioned path; token env-var only, never `--token` (leak history); record every deploy ID in the session log + STATE (the 08-11 unrecorded deploy is the cautionary instance). Never co-run Lighthouse with the gate preview server. Port 4321 = the site preview; WebForge's port register claims 4321 for its own archetype — never co-run against WebForge suites.
    - **`npx astro build` does NOT inject headers, installer routes, or redirects.** Those are post-build steps the deploy script owns (`inject_headers` · `inject_installer_headers` · `inject_redirects`), writing into `.vercel/output/config.json`. A bare build therefore leaves gate-30's redirect assertions red on a perfectly good tree — run `node scripts/inject_redirects.mjs .` after building if you are running the suite outside a deploy. **Diagnose a red gate by asking which step produces the thing it asserts, before changing anything** (P2.5 `[D]`).
@@ -162,10 +167,23 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 `missions/` — 27 files `mission_haussmann_p{0..5}_*.md`; paste-ready prompts in `missions/session_prompts_haussmann.md`.
 
 **⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
-convention 11. **Current mission: `P4.4a`** (`mission_haussmann_p4_4_ci_hardening.md`, `in_progress`)
-— the ruled successor to P4.2, and the holder of **F-u**, the deploy freeze's release condition.
-Confirm from its own `status:` before claiming it (this line has gone stale five times; the artifact
-is the record).
+convention 11. ✅ **`P4.4a` CLOSED 2026-08-24** (AAR filed, SO#5; criteria **AC0 ✅ + V5 ✅**;
+`mission_haussmann_p4_4_ci_hardening.md` stays **`in_progress`** because **P4.4b has not started** and
+one file holds both halves — a `completed` there would claim P4.4b). ⛔⛔ **BUILT, NOT DEPLOYED**, the
+third consecutive mission behind the freeze.
+
+⛩ **THE NEXT MISSION IS AN OPERATOR ROUTING CALL, AND IT IS NOT TAKEN HERE (SO#1).** Convention 11's
+ruled order puts **P4.4 → P4.3**, but P4.4's remaining half is **P4.4b, and every one of its criteria
+waits on an actor outside the session** — Vitruvius's answer (the ask is **staged, not delivered**),
+lemur's push, the operator's dashboard. So the choice is: **hold for P4.4b's unblock**, or **open
+`P4.3`** (*accessibility beyond automation: manual passes*), which already holds inherited work —
+**O1's 12px rendered-typeset floor**, ⛩ deferred to it as a legibility judgement, plus P4.2's
+`aria-live` residue (B3/E4) which needs an AT instrument rather than a grep. **Neither is claimed by
+this line.**
+
+**Confirm from the mission's own `status:` before claiming anything** — and read its qualifier, not
+just the field: this index line has gone stale **five** times, and the field now says `in_progress`
+for a reason a bare read will get wrong. **The artifact is the record.**
 
 > ⛩ **P4.4's ACs WERE AMENDED AND OPERATOR-SIGNED BEFORE ANY BUILD, AND THE MISSION IS NOW SPLIT**
 > (2026-08-24; `artifacts/p4_4/ac_amendment_proposal.md`, **`accepted`**). **`mission_count` HOLDS AT
@@ -173,8 +191,28 @@ is the record).
 > unchanged.
 >
 > **P4.4a** — *deploy safety + the debt* (`opus`, ⛩ **~600–750 kT, re-raised + ratified 2026-08-24**,
-> superseding ~280–420 kT under SO#11/ADR-016) — **OPEN at A3.** ✅ **A0 · A0v · ruling 2 · A1 · A2
-> all COMPLETE** (2026-08-24; `4a9bc09` · `ff4ad51` · `3cc659f` · `ffcc0f3` · `0c97af3`).
+> superseding ~280–420 kT under SO#11/ADR-016) — ✅ **CLOSED 2026-08-24 at ≈555–635 kT, inside the
+> band; AAR filed (SO#5); AC0 ✅ + V5 ✅.** A0 · A0v · ruling 2 · A1 · A2 · **A3** all COMPLETE
+> (`4a9bc09` · `ff4ad51` · `3cc659f` · `ffcc0f3` · `0c97af3` · `72fb15b` · this close).
+>
+> ⭐⭐ **A3 SET OUT TO SEND AN ASK AND FOUND THE ROW ASKING FOR IT WAS WRONG ABOUT THE PEER'S TREE.**
+> `lighthouse_profiles.json` **exists** (`WebForge.aDNA/what/lib/gates/`, 43,988 B) and our federation
+> pin `6096157` is **byte-current** against it (md5 `134c9647c4c348034db3fa32d65d9db1` at the pin, at
+> their HEAD `14838774`, and in their tree). **Nothing of ours reads it** — `grep -rn
+> lighthouse_profiles site/` → **0** — so gate-19's bars are **UN-SOURCED, not transcriptions**: the
+> CWV *Good band* over slim **desktop** fixtures, with **Perf ≥ 90 LOOSER than their `content_static`
+> 95**. And the **mirror is contradicted from both ends** — our own wrapper names *gates* among what is
+> *"consumed by reference, never copied"*, their `CLAUDE.md` says *"read them there and never
+> transcribe them"*, and our two live consumers already **resolve the pinned path**.
+> ⭐ **A1's re-read pass had run and confirmed the wrong thing, because it re-ran the row's own
+> `find`.** ⇒ **re-reading a row at the object means re-deriving its question, never re-running its
+> command.** And F-e prescribed a *mirror* at the moment of diagnosis exactly as F-u prescribed a
+> *lease* — **two instances is a pattern: diagnosis and prescription are separate acts.**
+> ⛩ **Ruling 3 honoured**: the ask is **authored + STAGED** (delivery ⛩ deferred by operator ruling —
+> all three Vitruvius memos stay staged), convention 4's **rule is untouched**, and only its **evidence
+> sentence** is corrected to name the surface it searched (conventions 16 + 17, both authored here,
+> both breached by that sentence). ⚠ **Residual: the bars are still un-sourced, and P4.4b's AC4 does
+> NOT close that by hashing a mirrored file** — AC4 amended, B2 gated on Vitruvius's answer.
 > **The debt register is discharged-or-routed: 19 rows, 13 struck, 6 live and every one
 > of the six carries a named destination** — F-d · F-j → A1b · F-e → A3's Vitruvius ask · F-k → the
 > next `skill_template_release` · **F-m · F-n FENCED by `gate-41`, not fixed** (a ratchet is not a
@@ -183,7 +221,8 @@ is the record).
 > three are REGRESSION GUARDS, because F20 tested false and R-122/R-123 and F19 were already closed,
 > so all three went green on their first run and each is red-proven 7/7 · 6/6 · 7/7** (14 mutations +
 > 6 controls). Suite **587/587**, derived.
-> ⏭ **NEXT = A3** — ⛩ the Vitruvius ask (⊳ D-E) + the AAR; an **outward act**, needs its own GO.
+> ~~⏭ **NEXT = A3** — ⛩ the Vitruvius ask (⊳ D-E) + the AAR; an **outward act**, needs its own GO.~~
+> ✅ **A3 DONE 2026-08-24** — ask **staged, not delivered** (⛩ operator ruled); AAR filed; P4.4a closed.
 > **Originally OPEN at AC0.** AC0 + V5, the 16 live
 > register rows, the three rescoped-in gate classes + the token census, the derived-count gates
 > (F-c · F-m · F-n) and the gate fixes (F-a · F-i · F-j · F-p). **No external dependency.**
