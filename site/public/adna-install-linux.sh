@@ -22,11 +22,12 @@ cat <<'BANNER'
    │   aDNA — joining you to the network          │
    └──────────────────────────────────────────────┘
 
-   This sets up your machine and then STOPS with a request
-   to send back. It does not connect you to anything on its
-   own — a person has to approve your machine first.
-
-   Nothing is sent anywhere by this installer.
+   This sets up your machine and sends one enrollment
+   request to the network operator: your machine's name
+   and its PUBLIC key, nothing else. It does not connect
+   you to anything on its own — a person has to approve
+   your machine first. Offline, the request is printed
+   for you to send instead.
 
 BANNER
 
