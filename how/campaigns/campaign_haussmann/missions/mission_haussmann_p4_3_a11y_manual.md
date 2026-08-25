@@ -45,8 +45,8 @@ The a11y record is automation-only (axe 0×32, LH 100×10) with one evidenced ma
 
 | # | Objective | Output | Gate |
 |---|---|---|---|
-| O0 | Wire virtual-screen-reader assertions (5 surfaces; traversal order + phrasing) into CI; red-test | CI lane | — |
-| O1 | Keyboard traversal protocol + full pass; zoom + target-size sweep; F2 closure evidence | records | — |
+| O0 | Wire virtual-screen-reader assertions (5 surfaces; traversal order + phrasing) into CI; red-test | CI lane ✅ | — |
+| O1 | Keyboard traversal protocol + full pass; zoom + target-size sweep; F2 closure evidence | records ✅ | — |
 | O2 | Operator VoiceOver session (guided script, ~30 min) | session notes | ⛩ operator |
 | O3 | Graph-twin equivalence upgrade (or honest limitation note); statement page; AAR | pages + AAR | — |
 
@@ -208,6 +208,95 @@ the third is the sharpest it has produced.**
    comparing a value **to itself**, which can only ever report *no change*. Fixed with a spread.
    ⇒ **A green is not the only way an instrument lies; this one lied in red**, and it would have
    written up a perfectly good live region as a defect.
+
+### ✅ O1 COMPLETE 2026-08-24 — the manual pass (AC2 keyboard · AC3 entire · AC6), and a defect 593 assertions could not see
+
+Resumed after a crash. The tree was **clean** — S1, the amendment, the freeze sweep and O0 all
+committed, nothing half-built. ⛩ **Operator routing at resume: run all of O1 in one session; O2's
+VoiceOver sitting deferred (script only).** State re-derived, not carried: freeze **HOLDS** `[D]`,
+`origin/main` `32069f3` vs HEAD, **6 unpushed** (incl. `2fe9093`, the foreign Home.aDNA commit), suite
+baseline **593** read from the runner.
+
+**Suite 593 → 617** (derived). `gate-46` **13** · `gate-47` **11**. Red-proven: `zoom_resize_redtest.sh`
+**9/9** · `keyboard_redtest.sh` **9/9** (7 mutations + 2 controls each) · `a11y_bestpractice_redtest.sh`
+**9/9** with **three new `wcag22aa` controls** (G/H/I).
+
+⭐⭐ **AC3's zoom half found a real defect, and AC3's amended wording is why it was looked for at all.**
+At **200 % TEXT** — a browser preference, **not** page zoom, so the viewport stays 1280 — the header ran
+to **x=1509 in a 1280 px viewport** and **every page scrolled horizontally by 229 px**; **460 px at
+1024**. Offender: `.header-actions` pushed off-screen by `margin-left: auto` against a doubled nav.
+**Nothing in 593 assertions could see it, and the reason is exact**: `gate-9`/`gate-29` parameterize the
+**viewport width**, and narrowing a viewport is a *different transform* from enlarging the text inside
+it. The amended AC3 said both halves "REQUIRE NEW INSTRUMENT WORK and may not be ticked against the
+existing suite" — measured `[D]`, `deviceScaleFactor|zoom` = **0 hits**. **The pre-build gate paid for
+itself a second time.** Fix: **`flex-wrap: wrap` on `.header-inner`**, one line, **inert at normal text
+size**; measured after, overflow **0** at 1280 and 1024 on every route probed.
+
+**AC3's 2.2 half — the coverage statement is the deliverable, not the tag.** `gate-4` gains `wcag22aa`;
+measured before deciding (F-a's discipline, one mission on): **32 runs, 0 violations, `target-size` in
+`passes` on all 32** — evaluated, not inapplicable. ⚠ **The tag buys exactly ONE rule** — axe 4.11.3
+ships `target-size` (2.5.8) and nothing else for 2.2 `[D]`. **2.4.11 · 2.5.7 · 3.2.6 · 3.3.7 · 3.3.8 are
+named on the gate's face as uncheckable here**, four of them because the interaction does not exist on
+this site — true **today**, false the moment one is added. **2.4.11 is swept by `gate-47`, not by axe.**
+`prefers-reduced-motion`: 13 implementations in `src/`, **none ever verified**; now asserted *with*
+controls (tokens zero under the preference; NetworkDiagram refuses to arm).
+
+**AC2 keyboard half — MET.** [[keyboard_traversal_record]]: five surfaces × 60 stops — **0 ringless ·
+0 traps · 0 order breaks · 0 positive tabindex · 0 obscured**, `Shift+Tab` retraces exactly; and six
+primary flows driven keyboard-only, **16 steps / 14 PASS / 1 NOTE / 0 FAIL**. ⚠ **Honest qualifier
+found by red-proving:** a **340 px** sticky header does **not** turn the obscured assertion red —
+Chromium parks focus at the **nearest edge** (the bottom, tabbing down); it goes red at **820 px**. ⇒
+**the clean 2.4.11 result rests partly on browser behaviour, not only on this site's layout**, said
+rather than claimed as earned.
+
+**AC3's F2 half — CLOSED.** [[f2_closure]]: `/network/` at 320 + 375, both themes — **0** doc overflow,
+**0/3** clipped steps, the clone block unclipped **and** `overflow-x: auto`, and ⭐ **both sentences the
+finding quotes mid-truncation render whole**. That last is the load-bearing evidence: a zero overflow is
+also what a page with the text **deleted** would report.
+
+**AC6 — lock O1's 12 px floor: NOT MET, and that is the criterion being met.** [[ac6_typeset_floor_adjudication]]:
+re-measured independently across 3 routes × 5 widths × 2 themes — `hero-graph-svg` **3.5 px, 27/27** ·
+`netdiagram-svg` **8.0 px, 7/8** · `convergence-funnel` **8.5 px, 8/8**, per-figure worst cases matching
+P4.2's **exactly** (the reproducibility control), plus a corpus aggregate derived for the first time:
+**398 of 510 painted text nodes below the floor.** Remedy is design work on a **campaign-protected**
+homepage hero, so the ratchet holds and **lock O1 stays `gap`**. ⚠ Its `sequenced:` field still read
+*"P4.4 (the fixes)"* — a routing field naming a mission the ⛩ P4.4 gate had already superseded;
+corrected in the same commit. **The deferral chain (P4.2 → P4.4 → P4.3) stops here.**
+
+⚠ **Found by the keyboard pass, routed not fixed:** the header's **"More" disclosure does not render at
+all** — `Header.astro:38` builds it only when a `topNav` entry has `children`, and `navigation.ts:76-84`
+has **seven flat entries, none with children** `[D]`; `grep -c nav-more dist/index.html` → **0**. So
+~60 lines of dead CSS ship, and `Header.astro:211` describes the row as *"7 links + a compact More
+disclosure"* — **a comment describing a control the build does not ship.** ⭐ **Not an accessibility
+finding: nothing is stranded** — `/glossary` and `/how` are in the footer of every page `[D]`. It is a
+claim-truth defect, and a nav change at the tail of an a11y objective would be the unforced widening
+the freeze sweep just finished cleaning up.
+
+⚠ **NOTE for O2's ear:** the copy button's only confirmation is an `aria-label` swap to *"Copied!"* on
+the focused element — announced **inconsistently** by screen readers, with **no live region** — and it
+fires only **after** `clipboard.writeText` resolves, so a rejected promise leaves **no feedback at
+all**. Deliberately **not** asserted as a 4.1.3 failure (that criterion governs status messages that
+*are* provided). It is item 5 of [[voiceover_session_script]], authored **after** the keyboard pass so
+its listening items are the ones this pass actually raised.
+
+⚠⚠ **SIX INSTRUMENT DEFECTS, ALL MINE, ALL BEFORE THE SUBJECT** — the campaign's standing class, and
+every one caught by its own output: `addInitScript` never applied the 200 % root font-size (**15 routes
+"passed" a transform that never happened**) · a clip predicate flagging deliberate `text-overflow:
+ellipsis` · ⭐ **the same predicate flagging the sr-only keyboard TWINS** (`machine_eye` 14's subject)
+**as clipping containers — the instrument built to protect them reporting them as the defect** · a
+duration control asserting `/\d+ms/` against CSS **minified to `.15s`** · an obscured predicate counting
+the header's **own children** · a skip-link rect read **mid-transition**, whose *first* fix was also
+wrong. ⭐ **And one mutation that failed to go red was aimed at the WRONG ASSERTION, not at a weak
+gate**: reordering `tabindex` cannot fail a test that asserts `Shift+Tab` **retraces**, because a
+reordered-but-consistent order retraces perfectly. **Naming which of the two a non-red is, is the point
+of running the harness.**
+
+⛔⛔ **BUILT, NOT DEPLOYED.** Freeze re-verified HOLDING at resume and at close. **P4.3 is the fourth
+mission accumulating unshipped work**, said here rather than left to be inferred.
+
+⏭ **NEXT: O2** ⛩ (operator VoiceOver, ~30 min, script ready) **then O3** — graph-twin equivalence
+(item 13 of the script decides AC4's disjunct), the accessibility statement, D11 re-score against the
+stated ceiling of **4**, AAR.
 
 ## AAR (SO#5)
 

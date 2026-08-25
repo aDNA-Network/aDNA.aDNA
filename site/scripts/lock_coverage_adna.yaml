@@ -668,7 +668,17 @@ locks:
     coverage:
       adna_site:
         status: gap
-        sequenced: P4.4 (the fixes) — the INSTRUMENT landed at P4.2 O3
+        sequenced: >-
+          ⛩ ADJUDICATED AT P4.3 O1 (AC6), 2026-08-24 — NOT MET, and it stays `gap` on purpose.
+          The INSTRUMENT landed at P4.2 O3. This field previously read "P4.4 (the fixes)", which
+          the ⛩ P4.4 gate had already superseded by deferring the legibility judgement to P4.3 by
+          name — a routing field naming a mission that had closed, which is the index-vs-artifact
+          class one level down. Re-measured independently at P4.3 O1 across 3 routes × 5 widths ×
+          2 themes: per-figure worst cases MATCH P4.2's exactly (3.5 / 8.0 / 8.5 px), and the
+          corpus-wide aggregate — derived for the first time — is 398 of 510 painted text nodes
+          below the floor. The deferral chain STOPS here: this is open debt with a characterised
+          remedy (per-figure mobile treatment), not a fourth hand-off.
+          Record: how/campaigns/campaign_haussmann/artifacts/p4_3/ac6_typeset_floor_adjudication.md
         detail: >-
           ⛔ STILL A GAP, DELIBERATELY, AND THE REASON IS THIS LOCK'S OWN RULE TEXT. `gate-39` now
           measures exactly what the lock names — every `text, tspan` in a committed figure, rendered

@@ -108,8 +108,8 @@ sighting this campaign has logged and the reason the rule is a habit rather than
 | S1 — pre-build gate (convention 13, 30/30, coverage recorded) | ✅ | `ce5b628` |
 | ⛩ Amendment signed + freeze sweep | ✅ | `b63641d` |
 | S2 / O0 — AT lane (AC1 + AC7), red-proven 9/9 | ✅ | `f200686` |
-| S3 / O1a — the three instruments (AC2 keyboard · AC3 entire), red-proven 9/9 + 9/9 + 3 new controls | ✅ | *this commit* |
-| O1b — traversal record · F2 closure · AC6 adjudication · O2 script | ⏭ next | — |
+| S3 / O1a — the three instruments (AC2 keyboard · AC3 entire), red-proven 9/9 + 9/9 + 3 new controls | ✅ | `465566d` |
+| S3 / O1b — traversal record · F2 closure · AC6 adjudication · O2 script | ✅ | *this commit* |
 | O2 ⛩ operator VoiceOver (⛩ deferred — script only this session) · O3 twin + statement + AAR | pending | — |
 
 **Baselines**: suite **587 → 593 → 617** (derived from the runner) · `at_traversal_redtest.sh` **9/9** ·
@@ -204,6 +204,98 @@ where the DOM-order claim lives. The reverse test can only catch **asymmetry**, 
 a real one-way trap (Shift+Tab swallowed). ⇒ **naming which of the two a non-red is, is the point of
 running the harness at all.**
 
+## S3 / O1b — the records, and two findings the flows raised
+
+Four artifacts in `artifacts/p4_3/`: [[keyboard_traversal_record]] · [[f2_closure]] ·
+[[ac6_typeset_floor_adjudication]] · [[voiceover_session_script]]. Plus
+`site/scripts/keyboard_flow_probe.mjs` — committed rather than run-and-discarded, because a record
+whose evidence cannot be re-derived is a record nobody can check.
+
+**Six primary flows, keyboard only — 16 steps · 14 PASS · 1 NOTE · 0 FAIL.** Bypass (skip link →
+`#main-content`) · theme toggle (flips, and **keeps focus**) · registry (search → `"0 of 74 vaults —
+nothing matched"` → chip → `"7 of 74 vaults"`) · install copy button · graph twin (node → `/vaults/harness/`).
+
+⚠ **NOTE — the copy confirmation is fragile, and the honest reading is narrow.** The only feedback is
+an `aria-label` swap to *"Copied!"* on the **focused** element, which screen readers announce
+inconsistently; there is no live region. And it fires only **after** `clipboard.writeText` resolves, so
+a rejected promise leaves **no feedback at all**. **Deliberately not called a 4.1.3 failure** — that
+criterion governs status messages that *are* provided. It is **item 5** of the O2 script, because
+whether an announcement is *useful* rather than merely *present* is the AC7 question and it needs an ear.
+
+⚠ **ROUTED, NOT FIXED — the header's "More" disclosure does not render at all.** `Header.astro:38`
+builds it only when a `topNav` entry has `children`; `navigation.ts:76-84` has **seven flat entries,
+none with children** `[D]`, so `grep -c nav-more dist/index.html` → **0**. ~60 lines of dead CSS ship,
+and `Header.astro:211` describes the row as *"7 links + a compact More disclosure"* — **a comment
+describing a control the build does not ship**. ⭐ **Nothing is stranded**: `/glossary` and `/how` are
+in the footer of every page `[D]`, `/reference` is in the header as *"Standard"*. ⇒ a **claim-truth**
+defect, not an accessibility one, and a nav change at the tail of an a11y objective would be the
+unforced widening the freeze sweep just finished cleaning up.
+
+**AC6 adjudicated NOT MET** at the object (3.5 / 8.0 / 8.5 px, matching P4.2 **exactly** — the
+reproducibility control — plus a first-time corpus aggregate of **398 / 510** text nodes below floor).
+`lock_coverage_adna.yaml`'s `sequenced:` field named **P4.4**, a mission the ⛩ P4.4 gate had already
+superseded by deferring the judgement here; corrected in the same commit. `lock_coverage_check.py`
+re-run: **PASS, 60/60 cells, gap still 24.**
+
 ## SITREP
 
-*(at close)*
+**Completed**
+- **O1 in full** (⛩ operator ruled one session): AC2's keyboard half · AC3 entire (zoom · WCAG 2.2 ·
+  reduced motion · F2) · AC6.
+- **Three instruments, each red-proven with controls**: `gate-46` (13 assertions, `zoom_resize_redtest.sh`
+  9/9) · `gate-47` (11 assertions, `keyboard_redtest.sh` 9/9) · `gate-4`'s `wcag22aa` widening
+  (`a11y_bestpractice_redtest.sh` 9/9, three new cases).
+- **One real defect found and fixed**: 229 px of horizontal scrolling at 200 % text on every page
+  (460 px at 1024) — `flex-wrap: wrap` on `.header-inner`, one line, inert at normal text size.
+- **Four evidence artifacts** + a committed, re-runnable flow probe.
+- **Suite 593 → 617**, derived from the runner · **gitleaks 902 commits, no leaks** · `lock_coverage`
+  PASS.
+
+**In progress** — none. O1 is closed; nothing is half-built.
+
+**Next up**
+1. ⛩ **O2 — the operator VoiceOver session** (~30 min). [[voiceover_session_script]] is ready; its
+   **item 13 decides AC4's disjunct** (upgrade the graph twin to enumerate edges, or state the
+   limitation on the page) and **item 5** settles the copy-confirmation NOTE.
+2. **O3** — twin equivalence, the accessibility statement (AC5: known limitations must be **TRUE**,
+   read from register rows — [[ac6_typeset_floor_adjudication]] and this record are two of them), the
+   **D11 re-score against the stated ceiling of 4** (G-8), and the AAR (SO#5).
+
+**Blockers**
+- ⛔⛔ **The deploy freeze HOLDS** — `30c8163` + `f4fa9c5` re-verified absent at open and close.
+  **P4.3 is the FOURTH mission built-not-deployed** (after P4.1, P4.2, P4.4a). Release still needs
+  lemur to push both commits and **one** deploy from a tree holding both halves. `#needs-human`
+- ⛩ **O2 needs operator time.** Nothing headless substitutes for it, and AC4 waits on its item 13.
+- ⛩ **A push is an outward act needing its own GO.** **8 commits unpushed**, and one of them —
+  `2fe9093` — is a **foreign Home.aDNA commit** filing two ISS findings into this vault. Any GO must
+  name it deliberately rather than sweep it along.
+
+**Files touched** — created: `site/tests/gates/gate-46-zoom-resize.spec.ts` ·
+`site/tests/gates/gate-47-keyboard.spec.ts` · `site/scripts/zoom_resize_redtest.sh` ·
+`site/scripts/keyboard_redtest.sh` · `site/scripts/keyboard_flow_probe.mjs` ·
+`artifacts/p4_3/{keyboard_traversal_record,f2_closure,ac6_typeset_floor_adjudication,voiceover_session_script}.md`.
+Modified: `site/src/components/common/Header.astro` · `site/tests/gates/gate-4-a11y.spec.ts` ·
+`site/scripts/a11y_bestpractice_redtest.sh` · `site/scripts/lock_coverage_adna.yaml` ·
+`missions/mission_haussmann_p4_3_a11y_manual.md` · `campaign_haussmann/CLAUDE.md` · this file.
+
+**Token budget** — `token_budget_actual` for the mission is recorded at O3's close, not here; this
+session ran S1 + O0 (prior context) and O1a + O1b, comfortably inside the ratified ~220–320 kT band.
+
+## Next Session Prompt
+
+> Operation HAUSSMANN, mission **P4.3** (`missions/mission_haussmann_p4_3_a11y_manual.md`), persona
+> **Rosetta**, campaign governance `how/campaigns/campaign_haussmann/CLAUDE.md`. **O0 and O1 are
+> COMPLETE** (`f200686`, `465566d`, + the O1b commit); the mission's amended **7 ACs are
+> operator-signed** and **AC1 · AC2-keyboard · AC3 · AC6 · AC7 are met**. **Open at ⛩ O2**: the
+> operator VoiceOver session, ~30 minutes, script ready at
+> `artifacts/p4_3/voiceover_session_script.md` — run it **against a LOCAL PREVIEW** (the freeze means
+> production is a pre-P4.1 build; evidence about the wrong build is G-11) and record answers into its
+> `## Findings` table. **Item 13 decides AC4's disjunct** and **item 5** settles whether the copy
+> confirmation needs a live region. Then **O3**: graph-twin equivalence (gate-22 asserts the roster
+> only), the accessibility statement in-tree with **publication named as owed, never claimed** (G-5 —
+> nothing this mission does can make anything live), **D11 re-scored against a stated ceiling of 4**
+> with check 5 recorded **PARTIAL by design** (NVDA is Windows-only), and the AAR (SO#5) with
+> `token_budget_actual`. **Re-verify at the object first** (convention 12): the freeze
+> (`git cat-file -t 30c8163 f4fa9c5` must fail), the unpushed count **derived not carried**, and the
+> suite baseline from the runner (**617** at this close). ⛩ **A push needs its own GO and must name
+> `2fe9093`, a foreign Home.aDNA commit riding in the unpushed set.** ⛔⛔ Deploy nothing.

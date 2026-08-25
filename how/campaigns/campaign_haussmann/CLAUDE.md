@@ -182,8 +182,70 @@ lemur's push, the operator's dashboard. So the choice is: **hold for P4.4b's unb
 this line.**~~
 
 ⛩ **ROUTING CALL TAKEN 2026-08-24: `P4.3` IS OPEN; ALL THREE VITRUVIUS MEMOS STAY STAGED.** P4.4b is
-untouched and still blocked on actors outside the session. **`P4.3` is `in_progress` AT ITS PRE-BUILD
-GATE — nothing is built and its budget is NOT ratified.** Convention 13's pass ran **COMPLETE at 30/30
+untouched and still blocked on actors outside the session.
+
+> ✅ **P4.3 O0 + O1 COMPLETE 2026-08-24** (a crash between them left a clean tree — S1, the amendment,
+> the freeze sweep and O0 all committed, nothing half-built; ⛩ operator ruled at the resume: **run all
+> of O1 in one session**, **O2's VoiceOver sitting deferred, script only**). Suite **587 → 593 → 617**,
+> derived. **AC1 ✅ AC2-keyboard ✅ AC3 ✅ AC6 ✅ AC7 ✅**; ⛩ **AC2-VoiceOver owed** (script ready) ·
+> **AC4 + AC5 are O3's**. ⛔⛔ **BUILT, NOT DEPLOYED — the FOURTH consecutive mission behind the freeze.**
+>
+> ⭐⭐ **AC3'S ZOOM HALF FOUND A DEFECT THE 593-ASSERTION SUITE COULD NOT SEE, AND THE PRE-BUILD GATE IS
+> WHY IT WAS LOOKED FOR.** At **200 % TEXT** — a browser preference, **not** page zoom, so the viewport
+> stays 1280 — **every page scrolled horizontally by 229 px** (460 px at 1024): `.header-actions` at
+> **x=1509 in a 1280 px viewport**, pushed out by `margin-left: auto` against a doubled nav. **The
+> reason nothing saw it is exact: `gate-9`/`gate-29` parameterize the VIEWPORT WIDTH, and narrowing a
+> viewport is a different transform from enlarging the text inside it.** AC3's amended wording had said
+> both halves need new instrument work and *"may not be ticked against the existing suite"* — measured
+> `[D]`, `deviceScaleFactor|zoom` = 0 hits. Fix: **one line**, `flex-wrap: wrap` on `.header-inner`,
+> inert at normal text size. ⇒ **convention 13 has now paid for itself on four consecutive missions.**
+>
+> ⚠ **The WCAG 2.2 tag buys EXACTLY ONE RULE, and saying so is the deliverable.** `gate-4` gains
+> `wcag22aa` (measured first: **32 runs, 0 violations, `target-size` in `passes` on all 32** —
+> evaluated, not inapplicable). axe 4.11.3 ships `target-size` **and nothing else** for 2.2 `[D]`;
+> **2.4.11 · 2.5.7 · 3.2.6 · 3.3.7 · 3.3.8 are named on the gate's face as uncheckable here**, four
+> because the interaction does not exist on this site — **true today, false the moment one is added**.
+> 2.4.11 is swept by `gate-47`. ⭐ **This is F-a's lesson one mission on: a tag matching nothing
+> produces the same green as a clean site, so the zero is CONTROLLED** (cases G/H/I).
+>
+> **AC2 keyboard: MET** — 5 surfaces × 60 stops, **0 ringless · 0 traps · 0 order breaks · 0 obscured**;
+> 6 primary flows keyboard-only, **14 PASS / 1 NOTE / 0 FAIL**. ⚠ **Qualifier found by red-proving:** a
+> 340 px sticky header does NOT turn the obscured assertion red — **Chromium parks focus at the nearest
+> edge** (the bottom, tabbing down) — it goes red at 820 px. ⇒ **the clean 2.4.11 rests partly on
+> browser behaviour, not only on this layout.** **AC3 F2: CLOSED** — and the load-bearing evidence is
+> that **both sentences the finding quotes mid-truncation now render whole**, because a zero overflow is
+> also what a page with the text **deleted** would report.
+>
+> ⭐ **AC6 — lock O1's 12 px floor is NOT MET, and that is the criterion being MET.** Re-measured
+> independently: **3.5 / 8.0 / 8.5 px**, matching P4.2 **exactly** (the reproducibility control), plus a
+> first-time corpus aggregate — **398 of 510 painted text nodes below the floor**. Remedy is design work
+> on a campaign-protected hero ⇒ ratchet holds, lock stays `gap`. ⚠ Its `sequenced:` field named
+> **P4.4**, a mission the ⛩ P4.4 gate had already superseded — the *index-vs-artifact* class one level
+> down, corrected in the same commit. **The deferral chain P4.2 → P4.4 → P4.3 STOPS HERE.**
+>
+> ⚠ **Found by the keyboard pass, ROUTED NOT FIXED:** the header's **"More" disclosure does not render
+> at all** — built only when a `topNav` entry has `children`, and all seven are flat `[D]`; `grep -c
+> nav-more dist/index.html` → **0**. ~60 lines of dead CSS, and `Header.astro:211` calls the row *"7
+> links + a compact More disclosure"* — **a comment describing a control the build does not ship.**
+> ⭐ **Nothing is stranded** (`/glossary`, `/how` are in every footer `[D]`), so it is a claim-truth
+> defect, not an a11y one — and a nav change at the tail of an a11y objective is the unforced widening
+> the freeze sweep just finished cleaning up.
+>
+> ⚠⚠ **SIX instrument defects, all mine, all before the subject** — including ⭐ **a clip predicate that
+> flagged the sr-only keyboard TWINS as defects: the instrument built to protect `machine_eye` 14's
+> subject reporting that subject as the fault** — and `addInitScript` silently not applying a 200 % root
+> font-size, so **15 routes "passed" a transform that never happened**. ⭐ **And one red-test mutation
+> failed to go red because it was aimed at the WRONG ASSERTION, not at a weak gate**: reordering cannot
+> fail a test that asserts `Shift+Tab` **retraces**. **Naming which of the two a non-red is, is the
+> point of running the harness.**
+>
+> ⏭ **NEXT: ⛩ O2** (operator VoiceOver, ~30 min — [[voiceover_session_script]] is ready and its item 13
+> **decides AC4's disjunct**), **then O3** (twin equivalence · statement · D11 re-score against the
+> stated ceiling of **4** · AAR).
+
+~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
+GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is
+signed and O0 + O1 are built.)* Convention 13's pass ran **COMPLETE at 30/30
 with its coverage recorded** in the mission body and found **3 of 5 criteria not satisfiable as written,
 2 inherited obligations under NO criterion, and 1 ceiling overclaim**. ⛩
 `artifacts/p4_3/ac_amendment_proposal.md` is **`proposed`** — 7 ACs, V3/V4 amended, V5 added,
