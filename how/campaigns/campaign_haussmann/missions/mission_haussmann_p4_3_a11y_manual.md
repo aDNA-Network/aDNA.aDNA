@@ -9,7 +9,7 @@ owner: stanley
 status: in_progress   # ⚠ READ THE QUALIFIER: **OPEN AT THE PRE-BUILD GATE AND NOTHING IS BUILT.** S1 ran 2026-08-24 (⛩ operator routing call opened P4.3 over holding for P4.4b; all three Vitruvius memos ruled STAGED). Convention 13's pass ran **COMPLETE at 30/30 with coverage recorded** and found **3 of 5 criteria not satisfiable as written · 2 inherited obligations (O1's 12px floor, P4.2's aria-live residue) under NO criterion · 1 ceiling overclaim (anchor 5 is unreachable; this mission's honest ceiling is D11 = 4)**. ⛩ `artifacts/p4_3/ac_amendment_proposal.md` is `proposed` — **NO BUILD AND NO RATIFIED BUDGET until it is signed**; the proposed set is 7 ACs at ~220–320 kT. ⛔⛔ Freeze re-verified HOLDING (`30c8163` + `f4fa9c5` both absent); P4.3 will be the FOURTH mission built-not-deployed. Prior status was `queued` under ⛩ DP6 2026-08-19 — activated. KEPT, condition HALF-discharged: the baseline's D11 CONDITIONAL PASS required "adjudicate/fix F2 + run a real manual pass". F2 is FIXED (P1.4, computed-geometry proofs + gate-29) and D11 moved 2 → 3. The manual half has NEVER been run — no AT traversal, no keyboard pass, no VoiceOver session — so D11's PASS is automated-scope-only until this mission runs. Scope unchanged; the qualifier is now explicit.
 mission_class: verification
 executor_tier: opus
-token_budget_estimated: "~150–250 kT in 1 session (+ operator VoiceOver time): virtual-screen-reader lane + keyboard traversal + F2 adjudication + WCAG 2.2 delta + statement page (ADR-016)"
+token_budget_estimated: "⛩ RE-SET AND RATIFIED 2026-08-24 at the pre-build gate → ~220–320 kT across 2–3 sessions (+ ~30 min operator VoiceOver time at AC2). SUPERSEDES ~150–250 kT in 1 session, which was costed against FIVE criteria of which two were unreachable and two obligations were invisible — so it was never an estimate of this mission's actual scope. The delta buys two instrument builds the original assumed already existed (a zoom transform; gate-4's tag set extended to wcag22aa) plus AC6 + AC7. Convention 13 ran BEFORE this figure was ratified, which is P4.1's SO#11 remedy — there the pass ran after the budget and forced an operator-signed amendment mid-mission. (ADR-016/SO#11)"
 token_budget_actual:
 created: 2026-08-16
 last_edited_by: agent_rosetta
@@ -20,13 +20,15 @@ webforge_patterns: []
 patterns_to_author: []
 depends_on: [mission_haussmann_p1_4_mobile_integrity, mission_haussmann_p2_6_midscore]
 blocks: []
-acceptance_criteria:
-  - "Headless AT-traversal assertions (@guidepup/virtual-screen-reader) on home, get-started, one reference page, the registry, the graph — in CI"
-  - "Keyboard-only traversal pass of every primary flow recorded (focus visible, no traps, logical order); operator VoiceOver spot-session on the same five surfaces"
-  - "F2 formally adjudicated closed (1.4.10) + zoom 200%/400% checks + target-size (2.2) delta swept"
-  - "Graph keyboard-twin upgraded to genuine equivalence (edges enumerated, not just the roster) or its limitation stated on the page"
-  - "Accessibility statement published (known limitations + contact path) — the D11 anchor-5 item"
-verification_method: "CI AT-assertions green (red-tested) + traversal records + statement live + D11 re-score with the binary gate clean"
+acceptance_criteria:            # ⛩ AMENDED + OPERATOR-SIGNED 2026-08-24 (artifacts/p4_3/ac_amendment_proposal.md, `accepted`). The convention-13 pass ran COMPLETE at 30/30 with coverage recorded and found 3 of 5 originals not satisfiable as written, 2 inherited obligations under NO criterion, and 1 ceiling overclaim. The superseded wording is preserved below in `## Acceptance criteria — superseded`, struck not deleted (SO#6).
+  - "AC1 [unchanged in kind] — Headless AT-traversal assertions (@guidepup/virtual-screen-reader) on home, get-started, one reference page, the registry, the graph — in CI. RED-PROVEN WITH CONTROLS, and each assertion asserts it REACHED its surface (convention 14): a gate reporting zero violations cannot otherwise detect that it evaluated zero rules."
+  - "AC2 [AMENDED · G-2] — Keyboard-only traversal of every primary flow recorded (focus visible, no traps, logical order) + operator VoiceOver session on the same five surfaces. NVDA IS OUT OF SCOPE AND THE REASON IS NAMED: D11 check 5 asks for VoiceOver + NVDA, NVDA is Windows-only, and this is an L1 macOS node. Check 5 is therefore recorded PARTIALLY MET BY DESIGN, never silently passed. AC1's engine-agnostic lane covers the semantics both readers consume — claimed as exactly that much and no more."
+  - "AC3 [AMENDED · G-3 + G-9] — F2 formally adjudicated closed (1.4.10). The zoom 200%/400% and WCAG 2.2 halves EACH REQUIRE NEW INSTRUMENT WORK and may not be ticked against the existing suite: measured [D], `wcag22|2.5.8|target-size` = 0 hits in site/tests/ (gate-4 asserts wcag2a/wcag2aa/best-practice only) and `deviceScaleFactor|zoom` = 0 hits (gate-29 is viewport-WIDTH parameterized, never zoom). Extend gate-4's tag set to wcag22aa; add a zoom transform. Both ship red-proven. `prefers-reduced-motion` (D11 check 10) + focus-order review: swept, or explicitly recorded out-of-scope — silence is not an option."
+  - "AC4 [AMENDED · G-4] — Graph keyboard-twin upgraded to genuine equivalence (EDGES ENUMERATED — which vault points to which, with direction and type — not just the roster + legend that machine_eye 14 measured) or its limitation stated on the page. MET ON-BUILD; publication named as owed. gate-22 today asserts the roster only and cannot see edge equivalence."
+  - "AC5 [AMENDED · G-5 + G-8] — Accessibility statement IN THE TREE (known limitations + contact path), verified against a local preview. PUBLICATION IS NAMED AS OWED WITH ITS UNBLOCK CONDITION (freeze release), NEVER CLAIMED — nothing P4.3 does can make anything live. Known limitations must be TRUE, read from register rows. The ceiling is stated as D11 = 4, not 5: anchor 5 also requires testing with assistive-tech USERS, which an operator VoiceOver session is not."
+  - "AC6 [NEW · G-6] — Lock O1's 12px rendered-typeset floor ADJUDICATED: met, or its limitation stated with the ratchet held and `gap` retained honestly. Deferred to this mission BY NAME at the P4.4 gate and covered by no original criterion. [D] gate-39 FLOOR_PX=12; hero-graph-svg 27/27 labels below floor at every width (3.5px @320); netdiagram-svg 7/8; convergence-funnel 8/8 @320. A non-regression fence is not the rule — calling it one is the fake-enforcement lock O1's own text warns about."
+  - "AC7 [NEW · G-7] — The registry live region ASSERTED WIRED, and its announcement judged USEFUL rather than merely PRESENT, by the AT instrument. Deferred to this mission BY NAME at P4.2's close and covered by no original criterion. [D] src/pages/vaults/index.astro:226 carries role=status aria-live=polite, empty in source, populated by countEl.textContent in apply(); nothing asserts it stays wired, and the empty-state mark sits outside the region."
+verification_method: "V1 CI AT-assertions green (red-tested, with controls) · V2 traversal records · V3 ⛩ AMENDED — statement IN TREE + verified on a LOCAL PREVIEW, never 'live' (G-5: the freeze lifts on another machine, so a 'live' limb is unreachable by anything this mission does; MET-on-build per the P3.3 O3 / P4.1 AC5 / P4.4 AC2 precedent) · V4 ⛩ AMENDED — D11 re-score against a STATED CEILING OF 4, with check 5 recorded PARTIAL (G-2) and anchor 5's AT-user conjunct named as owed (G-8) · V5 ⛩ NEW — AC6 and AC7 each carry their own limb, because G-6/G-7's whole lesson is that an obligation with no criterion has no gate."
 human_gate: true
 tags: [plan, haussmann, p4, a11y, wcag]
 ---
@@ -102,9 +104,23 @@ is a sighted operator driving a screen reader — a real instrument, and not an 
 **Result: 3 of 5 criteria not satisfiable as written · 2 obligations under no criterion · 1 ceiling
 overclaim.** Proposed set: **7 ACs**, V3/V4 amended, **V5 added** so AC6/AC7 each carry a limb.
 
+## Acceptance criteria — superseded (struck, not deleted — SO#6)
+
+The five originals, as written 2026-08-16, for anyone citing the old wording:
+
+1. ~~"Headless AT-traversal assertions (@guidepup/virtual-screen-reader) on home, get-started, one reference page, the registry, the graph — in CI"~~ → **AC1**, unchanged in kind; red-test + reached-its-surface obligations made explicit.
+2. ~~"Keyboard-only traversal pass of every primary flow recorded …; operator VoiceOver spot-session on the same five surfaces"~~ → **AC2** (**G-2**: silent on NVDA, which its own grounding check requires and this node cannot run).
+3. ~~"F2 formally adjudicated closed (1.4.10) + zoom 200%/400% checks + target-size (2.2) delta swept"~~ → **AC3** (**G-3**: *swept* by what? Both halves measured **0 instrument coverage**).
+4. ~~"Graph keyboard-twin upgraded to genuine equivalence … or its limitation stated on the page"~~ → **AC4** (**G-4**: the second disjunct is a public-surface claim behind the freeze).
+5. ~~"Accessibility statement **published** (known limitations + contact path) — the D11 **anchor-5** item"~~ → **AC5** (**G-5** unreachable under the freeze; **G-8** anchor 5 also requires AT-**user** testing).
+6. *(nothing)* → **AC6** — lock O1's 12px floor, deferred here **by name**, gated by nothing (**G-6**).
+7. *(nothing)* → **AC7** — P4.2's `aria-live` residue, deferred here **by name**, gated by nothing (**G-7**).
+
 ## Constraints
 
 Assertions test semantics, not pixel positions (stability); the statement's "known limitations" must be true (register rows); nothing regresses the axe-0 record.
+
+⛩ **Sequencing constraint from the AC×AC pass:** **AC4 lands before AC1's and AC2's graph assertions** — the graph is a surface in all three, and AC4 changes its twin. Those assertions **derive** from the twin rather than pinning its contents (WebForge KW-8/FR-K: no literal-pinned live data in tests).
 
 ## Definition of done
 

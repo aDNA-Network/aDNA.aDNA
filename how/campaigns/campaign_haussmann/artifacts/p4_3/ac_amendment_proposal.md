@@ -4,7 +4,7 @@ title: "P4.3 — AC amendment proposal (convention-13 pre-build gate)"
 campaign: campaign_haussmann
 mission: mission_haussmann_p4_3_a11y_manual
 created: 2026-08-24
-status: proposed        # ⛩ operator signature required BEFORE any build (§7.7)
+status: accepted        # ⛩ OPERATOR-SIGNED 2026-08-24 — see the ratification block below (§7.7)
 last_edited_by: agent_rosetta
 supersedes: "the five acceptance_criteria as written at mission creation 2026-08-16"
 tags: [haussmann, p4_3, a11y, convention_13, amendment]
@@ -180,10 +180,22 @@ unreachable and two obligations of which were invisible. Seven criteria with two
 2–3 sessions**, ratified at signature. *(P4.1's overrun was ≈2.36×; a re-raise taken as an operator act
 rather than absorbed silently is SO#11's whole point.)*
 
-## ⛩ Operator decision
+## ⛩ Operator decision — SIGNED
 
-- [ ] **Sign as proposed** (7 ACs, amended V-limbs, ~220–320 kT)
-- [ ] **Sign with modifications** — specify
-- [ ] **Reject** — P4.3 executes as originally written
+- [x] **Sign as proposed** (7 ACs, amended V-limbs, ~220–320 kT)
+- [ ] ~~Sign with modifications~~
+- [ ] ~~Reject — P4.3 executes as originally written~~
 
-**Nothing builds until this is signed.**
+### Ratification record (§7.7)
+
+| Field | Value |
+|---|---|
+| **Decision** | Adopt the amended criteria set for `mission_haussmann_p4_3_a11y_manual`: **7 ACs** (AC1 unchanged in kind; AC2/AC3/AC4/AC5 amended per G-2/G-3/G-4/G-5/G-8/G-9; **AC6 + AC7 NEW** per G-6/G-7), **V3 amended** to *in-tree + verified on local preview* (never *live*), **V4 amended** to re-score against a stated ceiling of **D11 = 4** with check 5 recorded partial, **V5 added** so AC6/AC7 each carry a limb. Budget re-set to **~220–320 kT across 2–3 sessions**. |
+| **Ratified by** | stanley (operator) |
+| **Date** | 2026-08-24 |
+| **Status** | **accepted** — P4.3 may build against the amended set |
+
+> ⛩ **A second ruling was taken at the same gate: the freeze sweep is authorized as ONE PASS, NOW** —
+> every remaining unstarted mission is re-read against the deploy freeze in a single sitting and its
+> public-surface criteria amended to *MET-on-build, deployment named as owed*, rather than each
+> pre-build gate re-deriving G-5 a fourth and fifth time. Record: `freeze_sweep.md` in this directory.

@@ -206,6 +206,41 @@ obligations invisible). **No build until signed.**
 > ⇒ **A deferral recorded only in narrative is a deferral with no gate.** Proposed as **AC6 + AC7**, each
 > with its own V-limb.
 >
+> ⛩ **SIGNED 2026-08-24 — and a FREEZE SWEEP was authorized at the same gate and has RUN.**
+> P4.3's amended set (**7 ACs**, V3/V4 amended, V5 added, **~220–320 kT**) is `accepted`; the mission may
+> build against it. Record: [[freeze_sweep]] (`artifacts/p4_3/`). Target set derived from each mission's
+> **own `status:`** `[D]` — 22 `completed`, 5 `in_progress`, 2 `queued` — sweeping the two `queued`
+> missions plus the **unstarted halves** of P4.4 and P4.5.
+>
+> - **P4.4b — ✅ ALREADY CLEAN, and that is the finding.** Amended at its own gate to be freeze-safe by
+>   construction (*"met ON-BUILD"*, *"sweeps the CI-BUILT ARTIFACT … no freeze dependency"*, *"production
+>   sweeps EXPLICITLY OUT OF SCOPE"*). **The sweep's control passed** — the remedy is not theoretical,
+>   it is already written, already signed, already applied once. **P4.4b is what the others should be.**
+> - **P4.5b — G-5 recurrence #4** (*"A **published** voice guide"*): → in-tree + publication owed.
+>   ⚠ **G-10 routed to its own gate**: D6 anchor 5 has **three** conjuncts and the AC names one as *the*
+>   item — but unlike P4.3's G-8 this is **not a ceiling overclaim**, because the other two look
+>   reachable (the claim register exists; disclosure **unverified, and not asserted either way**).
+> - **P5.2 — precondition added**: its predecessors must be **DEPLOYED**, not `completed`. *Four missions
+>   now carry a `completed` that cannot express built-not-deployed, and P5.2 is the one that would be
+>   misled by reading the field.*
+>
+> ⛔⛔ ⭐⭐ **P5.1 — G-11, THE SHARPEST DEFECT THE SWEEP FOUND, AND A DIFFERENT CLASS FROM G-5.** Its three
+> human-evidence criteria are **perfectly satisfiable under the freeze — and would produce evidence about
+> the wrong build.** Production lacks **P4.1 + P4.2 + P4.4a**; a cold-reader panel run today scores a site
+> with no `empty_state` slot, no craft-floor markup fixes, no rebuilt `/design-system`. **Every criterion
+> goes green and the capstone evidence is silently invalid.** This is **F-s's first casualty repeating** —
+> *"30 green T0 captures, of the wrong build"* — except that one was caught **by accident**, and human
+> panel evidence carries no build stamp to contradict it. ⇒ **Hard precondition added** (freeze lifted +
+> backlog deployed), and **every criterion now records the commit the participant saw**, read from
+> `/.well-known/adna-build.json` — ⭐ **the mechanism AC0 shipped at P4.4a, pointed at human evidence for
+> the first time.**
+>
+> ⭐ **G-5 and G-11 are one blind spot at two altitudes.** G-5 *cannot go green* — self-announcing, caught
+> by any pre-build gate. G-11 **goes green and is wrong**, because every instrument this campaign owns
+> measures the **artifact** and not the **build the artifact describes** (convention 15's blind spot and
+> convention 16's, meeting in one criterion). ⇒ **Evidence about a deployed surface must record which
+> deployment it saw.**
+>
 > ⚠ **`grounded_in: "toolkit A13"` cites a label that does not exist.** The toolkit is
 > `what/context/context_web_quality_toolkit.md` — **vault-root-relative**, so a campaign-scoped search
 > finds nothing — and `\bA[0-9]+\b` returns **0 hits** in it `[D]`. Its substance is real and on point.

@@ -20,7 +20,8 @@ webforge_patterns: []
 patterns_to_author: []
 depends_on: [mission_haussmann_p5_1_human_evidence]
 blocks: []
-acceptance_criteria:
+acceptance_criteria:            # ⛩ PRECONDITION ADDED BY THE FREEZE SWEEP 2026-08-24 (artifacts/p4_3/freeze_sweep.md). The criteria themselves are unchanged — four of five are live-surface or field-data claims, which is CORRECT for a launch mission and needs no rescoping. What was missing is that it said none of it.
+  - "⛔⛔ PRECONDITION [NEW] — P5.2 may not open until the deploy freeze has lifted AND P4.1, P4.2, P4.4a, P4.3, P4.4b and P4.5b are DEPLOYED and live-verified. ⭐ P5.2's precondition is NOT that its predecessors are `completed` — it is that they are DEPLOYED, and those are different facts. FOUR missions now carry a `completed` status that structurally cannot express `built-not-deployed`, and P5.2 is precisely the mission that would be misled by reading the status field. Additionally: 'field data' requires P4.4b's instrument PLUS a deploy PLUS traffic accumulation, so it is two dependencies deep, not one."
   - "Full re-score: two fresh agent scorers + the human evidence + operator arbitration; per-dimension improvement vs 51.6 demonstrated; both binary gates green WITH field data; every S1/S2 in the finding register closed + verified"
   - "16-persona capstone ranker ≥ 4.95 (skill_decadal_aar)"
   - "Launch checklist executed (claims green · channels live · redirects verified · monitoring on · rollback documented + drilled once)"

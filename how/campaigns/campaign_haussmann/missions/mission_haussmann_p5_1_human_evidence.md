@@ -20,11 +20,12 @@ webforge_patterns: []
 patterns_to_author: []
 depends_on: [mission_haussmann_p4_5_voice_rewrite, mission_haussmann_p4_4_ci_hardening]
 blocks: [mission_haussmann_p5_2_rescore_capstone]
-acceptance_criteria:
-  - "Human cold-reader re-panel ≥5 across the 3 profiles (senior engineer / domain expert / prospective contributor): verbatim transcripts, no coaching; ≥4/5 pass the 30-second criteria"
-  - "Clean-VM TTFS run by someone who did not build the system: stopwatch + screen recording + friction log; TTFS < 10 min"
-  - "Outsider contribution run: a real first contribution attempted end-to-end without privileged access; every stage timed; the funnel's truth recorded"
-  - "All three artifacts filed to evidence with consent records for participants"
+acceptance_criteria:            # ⛩ AMENDED BY THE FREEZE SWEEP 2026-08-24 (artifacts/p4_3/freeze_sweep.md, operator-authorized at P4.3's gate). ⛔⛔ HARD PRECONDITION ADDED — see below. Every criterion now records the BUILD the participant actually saw.
+  - "⛔⛔ PRECONDITION [NEW · G-11] — P5.1 MUST NOT RUN until the deploy freeze has lifted AND the built-not-deployed backlog is deployed and live-verified (P4.1 + P4.2 + P4.4a today; + P4.3, P4.4b, P4.5b as they close). ⭐ THIS IS NOT A 'CANNOT BE MET' CONSTRAINT — IT IS THE OPPOSITE, AND THAT IS WHY IT IS DANGEROUS: run today, all three evidence criteria go GREEN and the capstone evidence is SILENTLY INVALID, because production is missing three closed missions of work. A panellist would score a site with no `empty_state` slot, no craft-floor markup fixes, no rebuilt /design-system. This is F-s's first casualty repeating — P4.1 O0's own record reads 'its first casualty was this session's own evidence: 30 green T0 captures, OF THE WRONG BUILD' — and that one was caught by accident, which human panel evidence affords no equivalent of."
+  - "Human cold-reader re-panel ≥5 across the 3 profiles (senior engineer / domain expert / prospective contributor): verbatim transcripts, no coaching; ≥4/5 pass the 30-second criteria. RECORDS THE COMMIT THE PANELLIST SAW, read from /.well-known/adna-build.json — the self-describing-alias mechanism P4.4a's AC0 shipped for exactly this class of question."
+  - "Clean-VM TTFS run by someone who did not build the system: stopwatch + screen recording + friction log; TTFS < 10 min. RECORDS THE COMMIT SERVING THE ALIAS AT RUN TIME."
+  - "Outsider contribution run: a real first contribution attempted end-to-end without privileged access; every stage timed; the funnel's truth recorded. RECORDS THE COMMIT SERVING THE ALIAS AT RUN TIME."
+  - "All three artifacts filed to evidence with consent records for participants — and each artifact carries its build stamp on its face, so a later reader can tell what was actually in front of the human without asking."
 verification_method: "the artifacts themselves (transcripts/recording/log) — this mission IS verification"
 human_gate: true
 tags: [plan, haussmann, p5, panel, ttfs, contribution_run]
