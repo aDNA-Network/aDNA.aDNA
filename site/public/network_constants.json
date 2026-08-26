@@ -94,6 +94,19 @@
     "c25ce1bb0f751ad162a64c087f6a7ec990f7b79f5ade6c1cf579c6dd7f70b12c",
     "cec15cfc314a51df61cb75f5bc37ce01a7a0245429d9c5751be13ea150b213a2"
   ],
+  "trust_tiers": {
+    "_comment": [
+      "Network ADR-022 (ratified 2026-08-26): trust is a tier, and the tier is a Nebula",
+      "firewall group carried in the cert, computed by the master at signing (never",
+      "self-asserted). Tiers gate what a node may REACH via every other node's inbound",
+      "rules; a fresh enrollment lands at the floor and is promoted by cert re-issue.",
+      "default_group is what shipping personas issue; it confers no reach that groups:[]",
+      "did not, so it stays exempt from the auto-signable privilege test (Ruling C) --",
+      "both implementations key that exemption off THIS name (conformance C16)."
+    ],
+    "tiers": ["t0_newcomer", "t1_member", "t2_infra"],
+    "default_group": "t0_newcomer"
+  },
   "enrollment": {
     "_comment": [
       "Gangway A3: the code flow. endpoint_url is the adna-enroll worker (empty until the",

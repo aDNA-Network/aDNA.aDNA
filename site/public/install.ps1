@@ -42,7 +42,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference    = 'SilentlyContinue'   # Invoke-WebRequest is ~10x slower with the bar
-$VERSION = '0.4.18'
+$VERSION = '0.4.19'
 
 # PowerShell 5.1 can still default to TLS 1.0, which GitHub refuses outright.
 try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 }
@@ -135,7 +135,7 @@ try {
     # for Windows users is the release artifacts + winget (Phase D), where the signature is
     # checked at package-build time. Recorded in security_design_notes.md -- a gap named is
     # not a gap hidden.
-    $PAYLOAD_SHA256 = '20246ea84480a543151c98dfde2532ae76b89131ad1a53689822c304feb61669'
+    $PAYLOAD_SHA256 = '74350e04520da687fac983454918a9a3ed1caa3f7cf8f790f425d36fd9c02b03'
     if ($PAYLOAD_SHA256 -eq 'PAYLOAD_SHA256_UNSET') {
         Die 'REL-01' "this install.ps1 has no payload hash pinned -- it was published unreleased. Refusing to run unverified code."
     }
@@ -355,7 +355,9 @@ try {
     }
 
     # -- enrollment request ---------------------------------------------------------------
-    $autoSignable = (-not $P.cert_request.groups) -and
+    # ADR-022: the t0_newcomer floor is exempt from the privilege test (mirrors adna_install.py)
+    $privGroups = @($P.cert_request.groups) | Where-Object { $_ -ne 't0_newcomer' }
+    $autoSignable = (-not $privGroups) -and
                     (-not $P.network.inbound_required) -and
                     ($P.network.role -in @('dial_out_client', 'relay_client', 'none'))
 
