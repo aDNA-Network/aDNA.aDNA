@@ -320,8 +320,96 @@ untouched and still blocked on actors outside the session.
 > was **reconstructed** (≈300–380 kT vs ratified ~220–320 kT). No retrospective triggers; the finding is
 > not the number — *a band cannot be falsified by a prose sentence claiming it holds*.
 >
-> ⏭ **NEXT: ⛩ the push, then ⛩ ONE prod deploy** carrying **P4.1 + P4.2 + P4.4a + P4.3** (the freeze is
-> lifted — see convention 16's amendment). Then **P5.1 unblocks**, which the freeze had hard-blocked.
+> ~~⏭ **NEXT: ⛩ the push, then ⛩ ONE prod deploy** carrying **P4.1 + P4.2 + P4.4a + P4.3** (the freeze is
+> lifted — see convention 16's amendment). Then **P5.1 unblocks**, which the freeze had hard-blocked.~~
+> ✅ **DONE 2026-08-25 — pushed, then deployed.** Prod serves `6675442`; `install.sh` is at **0.4.17**,
+> so **both writers' work is live at once** and F-s is discharged, not fenced.
+
+> ⏸ **`P4.5b` IS OPEN AND HALTED AT ITS ⛩ PRE-BUILD GATE (2026-08-25) — nothing built, budget NOT
+> re-ratified.** ⛩ **Routing call taken at the session open: P4.5b, not P5.1.** A `MEMORY.md` handoff
+> read *"NEXT = P5.1"*; that is the **precondition** sense — G-11 went green when the freeze lifted — and
+> **not the order**. Convention 11 rules `… → P4.4 → P4.3 → **P4.5b** → P5.1 → P5.2`, **P5.1's own
+> `depends_on` names P4.5 and P4.4 (both `in_progress`)**, and P4.5b rewrites the exact surfaces P5.1's
+> panellists cold-read ⇒ running P5.1 first buys transcripts about copy scheduled for replacement,
+> **G-11's own defect class in slow motion.** *(Note the asymmetry: G-11 is a hard precondition on P5.1;
+> this is not. It is the same reasoning arriving as a judgement instead of a gate — which is why it was
+> put to the operator rather than taken here.)*
+>
+> **Convention 13 ran COMPLETE at 22/22 with coverage recorded** (16 AC×V + 6 AC×AC) →
+> `artifacts/p4_5b/ac_amendment_proposal.md`, **`proposed`**: **3 failures · 2 structural gaps · 1 stale
+> amendment · 4 premise corrections.** Fifth consecutive mission where the pass has paid for itself.
+>
+> ⭐⭐ **THE PASS WAS RUN IN BOTH DIRECTIONS, AND ONLY THE REVERSE ONE FOUND THE WORST DEFECT.** Every
+> prior sighting reads **AC→V** (*can the stated method move the stated test?*). Read **V→AC**, the same
+> 16 cells ask *is this criterion tested by anything at all?* — and **AC-a is covered by ZERO limb**: all
+> four V limbs measure **rendered pages**, AC-a's deliverable is a **governance document**, and **nothing
+> binds the rewrite to the guide**, so a one-paragraph guide never applied to a sentence passes AC-a
+> while AC-b/AC-c are met by any rewrite at all. **This is P4.1's structural gap inverted** (*there*, an
+> objective's output was covered by no criterion; *here*, a criterion is covered by no limb). ⇒ **the
+> matrix has two directions and costs no extra cells to read both.** Remedy binds the guide to work
+> already required rather than adding a reviewer: **V2's records must cite the guide rule each decision
+> applied** — a rule nothing cites is a rule that did not govern.
+>
+> ⭐⭐ **G-10 IS MEASURED, AND THE ANSWER IS "MISPLACED", NOT "MISSING" — a different defect with a
+> different fix.** The AC called agent-authorship disclosure *"UNVERIFIED — a 3-phrase grep over
+> `site/src/pages/**` … a statement about that grep and not about the site."* **The caution was right and
+> the measurement inverts the conclusion.** Surface `dist/**/*.html`, tree `6675442`: **41 pages name a
+> persona · 4 disclose that personas are AI · 3 say *"tended by"* — and the one that does not disclose is
+> `/`.** The source grep could never have found them; they render from content collections and
+> components. **Third instance in this campaign of a negative result narrower than its conclusion**
+> (F-e's `find` · convention 16's own `grep` · this).
+>
+> ⭐⭐ **AND THE SAME SHAPE APPEARS TWICE MORE IN THE CLINICIAN LIST, CONVERGING ON ONE PAGE.** *"ancient
+> DNA"* is addressed on **4** pages — all deep reference/concept routes, **none of them `/`, `/learn`,
+> `/get-started` or `/about`** — three-to-four clicks below the point of confusion, exactly like the
+> persona disclosure. ⇒ **two of the ten items are not missing content; they are content in the wrong
+> place.** Both land on the homepage, which is *also* the worst-measuring first-contact surface
+> (**13.90** against a target of 10). **A coherence gap, a cold-read and a reading-level measurement,
+> three independent instruments, all pointing at the same page.**
+>
+> ⭐ **The charter's own FKGL figure cannot serve as the mission's *before*, and `V1` asks for "deltas".**
+> `evidence/sweep/reading_level_p4_5b_baseline.md` re-measures over **P3.1's `.md` twins** — a committed
+> build artifact — because the 08-16 corpus was a **session scratchpad, verified absent today**; it is
+> ~11 missions stale (`/learn/what-is-adna` **1301 → 944 words**: two texts, not a delta); and **it never
+> measured `/`**. ⇒ *P3.1's twins closed an extraction problem nobody had connected them to.* The 08-16
+> file is annotated **superseded and retained** (SO-6), not replaced.
+>
+> ⭐ **The top-20 is DERIVED — and it contradicts AC-b's own named list.** Inbound internal links across
+> the 226 built pages: **exactly 20 routes at 226 (global nav + footer), then a cliff to 141.** It landed
+> on twenty without being chosen. But **`/learn/what-is-adna` is rank 21** — `/learn` is in the nav, its
+> child is not — while AC-b names it a first-contact target. **Operative scope 21 = top-20 ∪ the four
+> named**, stated rather than silently resolved in either direction (dropping it would drop the page the
+> clinician actually read; redefining "top-20" to include it would type a count the build disagrees with).
+>
+> ⭐ **Fourth consecutive mission where a re-probe SHRANK inherited scope.** `/get-started` measures
+> **9.69 and already meets AC-b** (15.85 at 08-16). **Three of the clinician's ten items are dead** —
+> *3 Conformance Levels* · *Production Tidy pt08* (retired by P1.3's leak purge) · *org vault pending* —
+> so AC-c executed as written would resolve three phrases that do not exist. Live scope **7**, of which
+> ⭐ **C8 is 75 pages from ONE component line** (`VaultRelationshipBlock.astro:30`), P3.4's *"a THIRD copy
+> … from one shared data line"* recurring at scale.
+>
+> ⚠ **AC-a's freeze amendment is STALE IN THE UPWARD DIRECTION, and the class is worth a name.** Amended
+> 08-24 to *"publication NAMED AS OWED … NEVER CLAIMED"*; **the freeze lifted 08-25** and prod carries the
+> backlog. **G-5 caught criteria that could not go green; this is a criterion that now UNDER-CLAIMS.**
+> ⇒ *a criterion amended around a temporary condition must be re-read when the condition expires* —
+> otherwise a mission ships a guide it was allowed to publish and records it as owed.
+>
+> ⚠ **`/vaults` will read 40.96 forever and it is page shape, not prose** (3 detected sentences over 228
+> words; ~77 terminal marks collapse on a card list). Measured across **all 223 twins: 3 such pages**.
+> Load-bearing for AC-d — a CI trend report without a shape guard is a permanent false alarm. `gate-48`
+> reports them **excluded with the reason**, never silently dropped. ⚠ And the twins' 4-line preamble
+> biases every reading by **+0.05 to +0.28 FKGL** (`reading_level.mjs` strips lists and tables but **not
+> blockquotes**) — **measured, not assumed**, and stripped by a leading-block-only rule so body
+> pull-quotes survive.
+>
+> ⚠ **Executor tier declared at the OPEN rather than discovered at the AAR**: the mission says `fable`;
+> this session ran **`opus`**. P4.1's AAR — *a declared tier nobody honours is worse than none.*
+>
+> ⛩ **HALT. Two documents need a signature before O1 rewrites one sentence:**
+> `what/doctrine/doctrine_site_voice.md` (**`proposed`**) and the amendment (**5 ACs**, AC-e new, V2
+> amended, V5 added, **~280–400 kT / 2–3 sessions**). ⛩ Also queued **behind** the gate: **O4**, delivery
+> of the **three** staged Vitruvius memos — operator-GO'd at this session's open, reversing the 08-24
+> ruling, **each to be shown before sending**.
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is

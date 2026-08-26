@@ -12,7 +12,7 @@ executor_tier: fable
 token_budget_estimated: "~320–490 kT total across 3 sessions, SPLIT into two increments at ⛩ DP6 2026-08-19. P4.5a ~120–170 kT in 1 session: the copy rows (R-111 · R-120 · R-121 + the ⊳ D-C hero cut) each gate-anchored and red-proven per the same-diff law, PLUS two items the ratified figure could not know about — registering R-125 (the hero finding had no register row) and authoring this increment's own spec (P4.5a had none; the body below was 100% P4.5b). P4.5b ~200–320 kT across 2 sessions: voice guide + corpus rewrite passes (top surfaces first) + glossary-linking + reading-level gates + dual-audience reviews. REVISION HISTORY, so no figure is quoted forward blind: unsplit ~250–400 kT → split at DP6 to P4.5a ~70–110 + P4.5b ~200–320 = ~270–430 → P4.5a raised to ~120–170 at execution 2026-08-20 on discovered scope (ADR-016/SO#11: a budget that no longer matches its scope is a drifted number). The overrun against the ratified ~70–110 is STATED, not absorbed, and is reported estimate-vs-actual in the AAR."
 token_budget_actual: "P4.5a ≈195 kT (content load, rough per SO#11) — vs ~120–170 revised in-field and ~70–110 ratified at DP6. ~1.8× the ratified figure, inside SO#11's 2× retrospective trigger. The delta is O-A (registering R-125 + re-deriving the register) + O-B (authoring the spec that did not exist) + R-126, none of which the ratified figure covered. P4.5b unstarted."
 created: 2026-08-16
-updated: 2026-08-20
+updated: 2026-08-25   # 2026-08-25 ⏸ **P4.5b OPENED AND IS HALTED AT ITS ⛩ PRE-BUILD GATE — nothing built, budget NOT re-ratified.** Convention 13 ran **COMPLETE at 22/22 with coverage recorded** (16 AC×V + 6 AC×AC) → `artifacts/p4_5b/ac_amendment_proposal.md`, **`proposed`**: **3 failures · 2 structural gaps · 1 stale amendment · 4 premise corrections**; 5 ACs proposed (AC-e new), V2 amended, V5 added, budget **~280–400 kT / 2–3 sessions**. ⭐⭐ **The pass was run in BOTH directions and only the reverse found the worst defect: AC-a is covered by ZERO verification limb** — all four V limbs measure rendered pages, AC-a's deliverable is a governance document, and **nothing binds the rewrite to the guide**; P4.1's structural gap inverted. ⭐⭐ **G-10 MEASURED: agent-authorship disclosure is NOT absent, it is MISPLACED** — 41 pages name a persona, **4** disclose, and the one saying *"tended by"* without disclosing is **`/`** (surface `dist/**/*.html`, tree `6675442`); the AC's own caution about its 3-phrase source grep was right — **third instance of a negative result narrower than its conclusion**. ⭐⭐ **The clinician list has the SAME shape twice**: *"ancient DNA"* is addressed on 4 deep pages and **none of `/`, `/learn`, `/get-started`, `/about`** ⇒ two items are **content in the wrong place**, both converging on the homepage — which is also the worst first-contact measurement (**13.90** vs target 10). **Three independent instruments point at one page.** ⭐ **The charter's FKGL figure cannot serve as the *before*** (scratchpad corpus **verified absent**, ~11 missions stale, **`/` never measured**) → re-baselined over P3.1's **`.md` twins**, `evidence/sweep/reading_level_p4_5b_baseline.md`; the 08-16 file annotated **superseded, retained** (SO-6). ⭐ **Top-20 DERIVED — exactly 20 routes are linked from every page (226), then a cliff to 141 — and it contradicts AC-b, which names `/learn/what-is-adna` at rank 21**; operative scope **21 = top-20 ∪ the four named**. ⭐ **Fourth consecutive re-probe shrinking scope**: `/get-started` **9.69, already meets AC-b**; **3 of the clinician's 10 items are dead**; live scope **7**, of which **C8 is 75 pages from ONE component line**. ⚠ **AC-a's freeze amendment is STALE UPWARD** — the freeze lifted 08-25, so publication becomes required, not owed (**G-5's inverse: a criterion that now under-claims**). ⚠ `/vaults` reads **40.96** as a list-shape artifact (3 of 223 twins) → `gate-48` shape guard. ⚠ Tier divergence declared at the OPEN: mission says `fable`, this session ran **`opus`**. ⛩ **HALT until the operator signs the guide + the amendment.** Authored: `what/doctrine/doctrine_site_voice.md` (`proposed`).
 last_edited_by: agent_rosetta
 grounded_in: ["P4.5a — claim_register.md §8.1 R-111, §8.5 R-120/R-121, §9.1 R-125, §9.3 R-124 deferral, §9.7 R-111 narrowing", "P4.5a — p2_replan.md ⊳ D-A (:243-267) + ⊳ D-C (:280-291) + §2 scope block (:195-217)", "P4.5b — H10 quantified (FKGL 12–17.9 ×6)", "P4.5b — Berthier standing finding (3 campaigns; 'a writing problem wearing a design problem's clothes'; sequence LAST)", "P4.5b — clinician jargon list (verbatim)", "P4.5b — anti-pattern 7.6 (one new term/paragraph)", "P4.5b — skill_dual_audience_review", "P4.5b — ADR-048 voice seed"]
 vitruvius_dimensions: [D6, D1, D7]
@@ -218,4 +218,85 @@ A newcomer reads the first screen without a dictionary; a developer still finds 
 
 ## Progress
 
-*(at execution)*
+### ⏸ O0 — OPEN AT THE ⛩ PRE-BUILD GATE, 2026-08-25. Nothing is built; the budget is not re-ratified.
+
+Session `session_stanley_20260825_223916_haussmann_p4_5b_o0`. **P4.5b is next in convention 11's ruled
+order** (`… → P4.4 → P4.3 → **P4.5b** → P5.1 → P5.2`), confirmed by the operator at the session open —
+against a `MEMORY.md` handoff reading `NEXT = P5.1`, which is the *precondition* sense (G-11 went green
+when the freeze lifted), not the order. **P5.1's own `depends_on` names P4.5 and P4.4, both
+`in_progress`**, and P4.5b rewrites the exact surfaces P5.1's panellists cold-read — so running P5.1
+first buys transcripts about copy scheduled for replacement, **G-11's own defect class in slow motion.**
+
+**Convention 13's pass ran COMPLETE at 22/22 with its coverage recorded** (16 AC×V + 6 AC×AC) →
+[[ac_amendment_proposal]] (`artifacts/p4_5b/`, **`proposed`**). Verdict: **3 failures · 2 structural
+gaps · 1 stale amendment · 4 premise corrections.** Five ACs proposed (AC-e new), V2 amended, V5 added,
+budget **~280–400 kT / 2–3 sessions**. **Fifth consecutive mission where this pass has paid for itself.**
+
+⭐⭐ **THE PASS RAN IN BOTH DIRECTIONS AND ONLY THE REVERSE ONE FOUND THE WORST DEFECT.** Every previous
+sighting was AC→V (*a criterion whose stated method cannot move its stated test*). Here **AC-a is
+covered by ZERO verification limb** — all four V limbs measure **rendered pages**; AC-a's deliverable is
+a **governance document**. A one-paragraph voice guide, never applied to a sentence, passes AC-a and
+leaves V1–V4 unmoved — **and nothing binds the rewrite to the guide at all**, so AC-b/AC-c could be met
+by any rewrite. This is **P4.1's structural gap inverted** (*"all four ACs could pass with zero slots
+built"* → *a criterion covered by no limb*). ⇒ **The matrix must be read AC→V and V→AC; the same 16
+cells answer two different questions.** Remedy binds the guide to work already required rather than
+adding a reviewer: **V2's records must cite the guide rule each decision applied.**
+
+⭐⭐ **G-10 IS MEASURED, AND IT IS NOT ABSENT — IT IS MISPLACED, WHICH IS A DIFFERENT FIX.** The AC
+called agent-authorship disclosure *"UNVERIFIED — a 3-phrase grep over `site/src/pages/**` … a statement
+about that grep and not about the site."* **That caution was right.** Surface: `dist/**/*.html`, tree
+`6675442` — **41 pages name a persona; 4 disclose that personas are AI; the one page saying *"tended
+by"* WITHOUT disclosing is `/`.** The source grep could never have found them: the disclosures render
+from content collections and components. **Third instance in this campaign of a negative result narrower
+than its conclusion** (F-e's `find` · convention 16's own `grep` · this). ⇒ new **AC-e**.
+
+⭐⭐ **AND THE SAME SHAPE APPEARS AGAIN IN THE CLINICIAN LIST — TWICE, CONVERGING ON ONE PAGE.**
+*"ancient DNA"* is addressed on **4** pages, all deep reference/concept routes, **none of them `/`,
+`/learn`, `/get-started` or `/about`** — the disclosure sits three-to-four clicks below the point of
+confusion, exactly like the persona one. ⇒ **Two of the ten items are not missing content; they are
+content in the wrong place.** Both converge on the homepage, which is *also* the worst-measuring
+first-contact surface (**13.90** against a target of 10). **Three independent instruments — a coherence
+gap, a cold-read, and a reading-level measurement — point at the same page.**
+
+⭐ **The charter's own FKGL figure could not serve as the mission's *before*, and `V1` says "deltas".**
+[[reading_level_p4_5b_baseline]] re-measures over P3.1's **`.md` twins** — a committed build artifact —
+because the 08-16 corpus was a session scratchpad, **verified absent today**; it is ~11 missions stale
+(`/learn/what-is-adna` was 1301 words, is now 944 — two texts, not a delta); and **it never measured
+`/`**, which AC-b names. ⇒ *P3.1's twins solved an extraction problem nobody had connected them to.*
+
+⭐ **The top-20 is DERIVED and it contradicts AC-b's own list.** Ranked by inbound internal links across
+the 226 built pages: **exactly 20 routes are linked from every page** (226), then a **cliff to 141**. It
+landed on 20 without being chosen. But **`/learn/what-is-adna` is rank 21** — `/learn` is in the nav, its
+child is not — so AC-b asks for the top-20 rewritten *and* names a target outside it. Operative scope
+**21 routes = top-20 ∪ the four named**, stated rather than silently resolved either way.
+
+⭐ **Re-probing shrank the scope for the fourth consecutive mission.** `/get-started` measures **9.69**
+and **already meets AC-b** (it was 15.85 at 08-16). **Three of the clinician's ten items are dead** —
+*"3 Conformance Levels"* · *"Production Tidy pt08"* (retired by P1.3's leak purge) · *"org vault
+pending"* — so AC-c executed as written would resolve three phrases that do not exist. Live scope: **7**.
+
+⭐ **C8 is 75 pages from ONE line** (`VaultRelationshipBlock.astro:30`) — the highest-leverage item on
+the list, and P3.4's *"a THIRD copy … from one shared data line"* recurring.
+
+⚠ **AC-a's freeze amendment is now STALE IN THE UPWARD DIRECTION, and that is a class worth naming.**
+It was amended 08-24 to *"publication NAMED AS OWED … NEVER CLAIMED"*; **the freeze lifted 08-25** and
+prod carries the backlog. **G-5 caught criteria that could not go green; this is a criterion that now
+under-claims.** ⇒ *a criterion amended around a temporary condition must be re-read when the condition
+expires.* Publication becomes required (deploy takes its own ⛩ GO, push first per the ancestry guard).
+
+⚠ **`/vaults` will read 40.96 forever and it is not prose** — 77 sentence-endings collapse to 3 detected
+sentences on a card list. Blast radius measured across **all 223 twins: 3 pages**. `gate-48` carries a
+shape guard and reports them **excluded with the reason**, never silently dropped.
+
+⚠ **Executor tier declared at the OPEN, not discovered at the AAR.** The mission declares `fable`; **this
+session ran `opus`.** P4.1's AAR: *a declared tier nobody honours is worse than none.* Proposed per
+increment — `opus` for O0–O1 (judgment), `fable` for O2's remainder.
+
+**Authored this objective:** [[doctrine_site_voice]] (`what/doctrine/`, **`proposed`**) ·
+[[ac_amendment_proposal]] (`artifacts/p4_5b/`, **`proposed`**) · [[reading_level_p4_5b_baseline]]
+(`evidence/sweep/`) · the 08-16 baseline annotated **superseded, retained** (SO-6).
+
+⛩ **HALT — O0d's gate. The operator signs the voice guide AND the AC amendment before O1 rewrites a
+single sentence.** `human_gate: true` on this mission is scoped to exactly this. **Queued behind the
+gate:** O4 — delivery of the three staged Vitruvius memos, ⛩ GO'd at the session open, to be shown
+before sending.

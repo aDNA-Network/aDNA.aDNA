@@ -1,3 +1,18 @@
+> ⛔ **SUPERSEDED 2026-08-25 by `reading_level_p4_5b_baseline.md`. Retained under SO-6 (archive, never
+> delete) — these numbers are the source of P4.5b's charter figure *"FKGL 12–17.9"* and must stay
+> citable. Do NOT use this file as P4.5b's *before*, for three measured reasons:**
+>
+> 1. **Not reproducible.** The measured paths below are text extracts in a session scratchpad
+>    (`.../234be40f-.../reading_extracts/`). `test -d` on that directory, 2026-08-25: **absent** `[D]`.
+>    The numbers survive; the corpus they describe does not.
+> 2. **~11 missions stale** (P2.1–P2.5 · P3.1–P3.5 · P4.1–P4.3 · P4.5a all changed copy).
+>    `/learn/what-is-adna` was **1301 words** here and is **944** now — not the same object, so
+>    14.38 → 13.90 is two measurements of two texts, not a delta.
+> 3. **`/` was never measured**, and AC-b names home as a first-contact target.
+>
+> The successor measures the **`.md` twins** (P3.1), a committed build artifact, with its normalization
+> and its command recorded on its face.
+
 /private/tmp/claude-501/-Users-stanley-aDNA-aDNA-aDNA/234be40f-777d-40c0-8da1-53617198bd7c/scratchpad/reading_extracts/what_is_adna.txt
   FKGL: 14.38 ⚠ > Grade 10  passive: 1.9% (1 hits)
   sentences: 52  words: 1301  avg wps: 25.0  spw: 1.71
