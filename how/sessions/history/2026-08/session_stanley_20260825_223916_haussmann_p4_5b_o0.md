@@ -4,7 +4,7 @@ session_id: session_stanley_20260825_223916_haussmann_p4_5b_o0
 tier: 1
 created: 2026-08-25
 updated: 2026-08-25
-status: active
+status: completed
 owner: stanley
 persona: rosetta
 campaign: campaign_haussmann
@@ -142,6 +142,14 @@ hold across 223.
 Progress) · `evidence/sweep/reading_level.md` (superseded banner; **content retained**, SO-6).
 
 **Not touched, deliberately** — no `site/` source. O0 halts before rewriting.
+
+## Closure
+
+⛩ **GATE APPROVED 2026-08-26.** Both documents signed: `doctrine_site_voice.md` and the AC
+amendment (now `accepted`). O1 + O2 executed in the follow-on session
+`session_stanley_20260826_haussmann_p4_5b_o1_o2`, which also corrected two O0 measurements —
+the canonical metric (prose-only) and the clinician tally (8 live, not 7). Both corrections are
+struck-not-deleted in the artifacts, under the operator's ruling.
 
 ## SITREP
 
