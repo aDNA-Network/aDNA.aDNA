@@ -94,11 +94,30 @@ const {
   heroImage,
   heroAlt = "A bird's-eye pixel-art map of cozy vault-buildings linked by glowing cyan and purple conduits — the aDNA network sharing context, AI, and DNA",
   title = 'The aDNA Network',
-  /* HAUSSMANN P1.1 / ADR-048 §Direction-picked — the ratified definition-as-hero lead, verbatim.
+  /* HAUSSMANN P1.1 / ADR-048 §Direction-picked — the ratified definition-as-hero lead.
      The manifesto lyric it replaced demotes INTACT to the movement band directly below the fold
-     (index.astro); the protocol positioning lives only in the embargo-safe trust-link below
-     (never "open protocol" — claim register R-14, resolved 2026-08-17). */
-  lead = "aDNA (agentic DNA) is an open standard for organizing a project's files so AI agents — and the people working with them — always know where things live: three folders, plain Markdown, versioned in git. This site is the standard, its docs, and the registry of workspaces — 'vaults' — that run it.",
+     (index.astro); the protocol positioning sits only in the embargo-safe trust-link below
+     (never "open protocol" — claim register R-14, resolved 2026-08-17).
+
+     ⛩ HAUSSMANN P4.5b O1, 2026-08-26 — NO LONGER ADR-048 VERBATIM. Flagged rather than
+     changed quietly, because the previous comment said "verbatim" and a reader is entitled
+     to know when that stops being true. Two reasons, both from ADR-048 itself:
+
+     (1) Its own avoid-list (§50) rules that "lives/lived" must never be used for context
+         location on a public surface — two blind readers had misread the phrase-class as a
+         HOSTED destination — and §54 routes that list to this mission's voice guide. The
+         ratified lead then said "always know where things live". ⚠ The call is a judgement,
+         not a lint: §50's cited phrase is "the network where that shared context lives",
+         which claims a place, while "know where things live" is idiomatic for "know where
+         things are". Read by the letter it is forbidden; read by the harm it is milder. It
+         is cut because a hero has no room to rely on the reader taking the mild reading.
+     (2) It was one 47-word sentence with an em-dash aside and a colon list, and it is the
+         first thing a stranger reads.
+
+     Nothing factual is dropped: category noun, three folders, plain Markdown, git, the
+     site's self-description, and the introduction of "vaults" all survive. Reversible in
+     one edit if the operator prefers the ratified wording. */
+  lead = "aDNA (agentic DNA) is an open standard for organizing a project's files, so that AI agents and the people working with them can always find what they need. Three folders, plain Markdown, tracked in git. This site is the standard itself, its docs, and the registry of the workspaces — 'vaults' — that run it.",
   reframe,
   audienceSub,
   notLine,

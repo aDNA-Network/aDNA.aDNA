@@ -194,9 +194,12 @@ const jsonLD = buildCollectionPageJsonLD({
         org-vault at the children it contains, a successor at what it replaced. {unlinkedCount} vaults
         carry no cited relationship yet, so they sit unconnected here — that is honest topology, not missing data.
       </p>
+      {/* HAUSSMANN P4.5b O1 — clinician item C8, second copy. Same circular definition and the
+          same "live on", found by grepping the RENDERED output for what the defect claimed
+          rather than only the component that claimed it (convention 7). */}
       <p class="lede lede-node">
-        Each box is a <strong>vault</strong>; an aDNA computer — a <em>node</em> — is a <code>Home.aDNA</code>
-        plus the vaults that live on it, with each box naming its class.
+        Each box is a <strong>vault</strong>, and names its class. A <em>node</em> is one computer
+        running one or more aDNA vaults, with a <code>Home.aDNA</code> vault that keeps track of them.
         <a href="/network/">New here? Start with what the network is &rarr;</a>
       </p>
       <div class="graph-stage">

@@ -85,7 +85,7 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
 
 <BaseLayout
   title="aDNA — the open standard & network for shared context"
-  description="aDNA (agentic DNA) is an open standard for organizing a project's files so AI agents — and the people working with them — always know where things live. This site is the standard, its docs, and the vault registry."
+  description="aDNA (agentic DNA) is an open standard for organizing a project's files, so that AI agents and the people working with them can always find what they need. This site is the standard, its docs, and the vault registry."
   jsonLD={jsonLD}
 >
   {/* HAUSSMANN P1.1 / ADR-048 — definition-as-hero (candidate A, ratified DP2): the lead defines,
@@ -104,7 +104,7 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
         STANDARD, not the reader's files; the sentence just never said so. Openness now attaches to the
         thing that is actually open, and the second half restates the local promise rather than
         contradicting it. Gate-anchored in gate-23. */}
-    reframe="Your context is just the notes, docs, and decisions you already keep — now shaped into a graph your agents can navigate. The standard that shapes it is open; your files stay on your machine."
+    reframe="Your context is just the notes, docs and decisions you already keep — now in a shape your agents can follow. The standard that gives it that shape is open. Your files stay on your machine."
     primaryHref="/vaults"
     primaryLabel="Explore the network"
     secondaryHref="/get-started"
@@ -171,9 +171,18 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
   <section class="living-registry">
     <div class="section-inner">
       <h2 class="section-title">The living registry</h2>
+      {/* HAUSSMANN P4.5b O1 — AC-e. The cards below each say "tended by <name>", and until now
+          the only page saying those names are AI was /about. Measured on the deployed tree
+          6675442: 41 built pages name a persona, 4 disclose that personas are AI, and the one
+          page that says "tended by" WITHOUT disclosing was this one — the homepage. The
+          clinician cold-reader recorded the consequence verbatim: "I assumed these were people
+          until the About page told me… Honest once found, but three pages late." The disclosure
+          existed and was misplaced, which is a different defect from a missing one, so the fix
+          is placement: say it in the sentence that first uses the phrase. */}
       <p class="section-subtitle">
-        Every vault is a real, governed context graph with its own place in the network —
-        most tended by a named agent. Here's a slice across {vaultCount} of them.
+        Every vault is a real, governed context graph with its own place in the network. Most are
+        tended by a named agent &mdash; an <a href="/about/#agent-stewards" data-astro-prefetch>AI
+        persona</a>, not a person. Here's a slice across {vaultCount} of them.
       </p>
       {/* HAUSSMANN P1.2 (§7.3) — the operator-federation distinction is made where the number is
           made, not only in the fold. A reader meeting "{vaultCount}" for the second time meets the

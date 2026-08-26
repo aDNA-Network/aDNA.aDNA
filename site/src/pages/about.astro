@@ -104,7 +104,12 @@ const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? nul
   </section>
 
   <!-- Band 2 · The agent-stewards, framed honestly -->
-  <section class="about-agents">
+  {/* HAUSSMANN P4.5b O1 — id added so the homepage can deep-link the disclosure at the point
+      a reader first meets "tended by <name>" (AC-e). Nothing else on this page changes; the
+      defect was the disclosure's REACH, not its content. ⚠ The id did not exist when the link
+      was written — /about carried only #main-content — and the link was checked against the
+      built output before shipping rather than assumed. */}
+  <section class="about-agents" id="agent-stewards">
     <div class="section-inner">
       <h2 class="section-title">The agent-stewards, honestly</h2>
       <p class="section-subtitle">

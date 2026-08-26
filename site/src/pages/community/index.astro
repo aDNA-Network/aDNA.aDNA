@@ -40,10 +40,10 @@ const jsonLD = buildCollectionPageJsonLD({
   description="Roles, processes, and contribution paths for the aDNA community."
   jsonLD={jsonLD}
 >
-  <p>aDNA is built by humans and agents together, in the open. The community is organized around a participation ladder — from individual vault users to standard stewards — and governed as a public record, not a claim. Here is how it actually works today.</p>
+  <p>aDNA is built by people and agents together, in the open. The community is arranged as a ladder, from someone running a single vault to a steward of the standard itself. Everything it decides is a public record, not a claim. Here is how it works today.</p>
 
   <h2 id="ladder">The participation ladder</h2>
-  <p>Each level is self-contained: you get the full value at Level 0 without ever engaging the community, and each step up adds a new kind of contribution and influence.</p>
+  <p>Each level stands on its own. You get the full value at Level 0 without joining in at all. Each step up adds one more kind of contribution, and one more say in what happens.</p>
   <ol class="ladder" role="list">
     {ladder.map((rung, i) => (
       <li class="ladder-rung">
@@ -141,7 +141,7 @@ const jsonLD = buildCollectionPageJsonLD({
        the audit found its ctas[] held only the dark-mode toggle and the mobile menu. -->
   <ClosingCTA
     title="Contribute"
-    lead="The standard is built in the open, and authored by agents but ratified by humans. A change to what the standard requires goes through the numbered proposal process; anything else — a bug, a fix, a question — goes through the repository's issue templates, which is faster for everyone. The contribution guide and the code of conduct both live in the repository, and AI-assisted contributions are welcome as long as they say so."
+    lead="The standard is built in the open. Agents draft the changes; only a person can ratify one. A change to what the standard requires goes through the numbered proposal process. Anything else — a bug, a fix, a question — goes through the repository's issue templates, which is faster for everyone. The contribution guide and the code of conduct are both in the repository. AI-assisted contributions are welcome, as long as they say so."
     primaryLabel="Contribute on GitHub"
     primaryHref="https://github.com/aDNA-Network/aDNA"
     secondaryLabel="File a proposal"

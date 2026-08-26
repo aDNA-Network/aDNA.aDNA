@@ -56,7 +56,13 @@ const HOMEHERO_ROUTES = ['/', '/network/', '/commons/', '/vaults/'];
 // context" — promising, two sentences after "nothing leaves your machine", that the reader's notes
 // are published. Openness now attaches to the standard instead.
 const R120_RETIRED = 'and shared in the open';
-const R120_REPLACEMENT = 'The standard that shapes it is open';
+// HAUSSMANN P4.5b O1 (2026-08-26) — re-pinned in the same commit as the copy change
+// (same-diff, ADR-057). The reframe was rewritten for reading level; the R-120 REPAIR is
+// untouched — openness still attaches to the standard and not to the reader's files, which
+// is the whole point of the assertion. Only the phrasing moved:
+//   was: "The standard that shapes it is open; your files stay on your machine."
+//   now: "The standard that gives it that shape is open. Your files stay on your machine."
+const R120_REPLACEMENT = 'The standard that gives it that shape is open';
 
 // The homepage NetworkDiagram: an inline abstract-geometric SVG (NetworkDiagram.astro).
 const NETDIAGRAM_SVG = 'figure.netdiagram svg.netdiagram-svg';

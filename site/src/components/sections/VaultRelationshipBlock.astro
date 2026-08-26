@@ -25,9 +25,16 @@ const TYPE_MEANING: Record<string, string> = {
 
 <section class="vault-relationships">
   <h2>Cross-vault relationships</h2>
+  {/* HAUSSMANN P4.5b O1 — clinician item C8, and the highest-leverage line on the site: this
+      one sentence renders on 75 built pages [D]. It read "a node is a Home.aDNA plus the vaults
+      that live on it", which the cold-reader called "circular to an outsider" — it defines
+      `node` using `Home.aDNA`, a term a first-time reader does not have. It also used "live on"
+      for where things are, twice, which ADR-048 §50 rules out on public surfaces. Rewritten so
+      the plain word comes first and `Home.aDNA` arrives as a consequence, not a premise. */}
   <p class="rel-intro">
-    This vault is one of many that can live on a single aDNA computer — a <strong>node</strong> is a
-    <code>Home.aDNA</code> plus the vaults that live on it. <a href="/network/">New here? Start with what the network is &rarr;</a>
+    This vault is one of many that can sit on a single computer. We call that computer a
+    <strong>node</strong>: one machine, running one or more aDNA vaults, with a
+    <code>Home.aDNA</code> vault that keeps track of them. <a href="/network/">New here? Start with what the network is &rarr;</a>
   </p>
   {hasEdges ? (
     <>

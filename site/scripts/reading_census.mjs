@@ -54,25 +54,103 @@ export function stripTwinPreamble(text) {
   return lines.slice(i).join("\n");
 }
 
-// A line is a card/link cluster — markup shape, not prose — if it carries two or more
-// markdown links, or is a card affordance, an image alt, or a shell transcript.
-// Each predicate is named so a future reader can disagree with a specific one.
+// LINE predicates — markup shape that is recognizable one line at a time.
 export const CLUSTER_PREDICATES = [
   { name: "multi-link", test: l => (l.match(/\]\(/g) || []).length >= 2 },
   { name: "card-affordance", test: l => /Open vault\s*(→|&rarr;)/.test(l) },
   { name: "image-alt", test: l => /^\s*\*\[image:/.test(l) },
   { name: "shell-transcript", test: l => /^\s*\$\s/.test(l) },
+  { name: "heading", test: l => /^\s*#{1,6}\s/.test(l) },
+  { name: "table-row", test: l => /^\s*\|/.test(l) },
+];
+
+// BLOCK predicates — and these are the ones that matter, because the failures that
+// survived a line-only pass were all block-shaped [D, P4.5b O1]:
+//
+//   /learn/what-is-adna, after the line pass, still had its three worst "sentences" be
+//   the proof-link list (FKGL 63.9 over 153 words), the flattened 16-entity table (48.3
+//   over 100), and the "Explore further" list (23.9 over 60). None was catchable per line
+//   — each link sat on its own line, so `multi-link` never fired, and the twin renders the
+//   table with no pipes, so `table-row` never fired either.
+//
+// ⭐ The invariant that does catch them: PROSE IS PUNCTUATED. A paragraph ends its
+// sentences; a link list, a table flattened into text, and a nav cluster do not. The
+// sentence splitter needs [.!?] + whitespace + capital, so an unpunctuated block does not
+// merely measure badly — it collapses into ONE pseudo-sentence and drags words/sentences
+// up for the whole page.
+//
+// This is deliberately the THIRD formulation of this guard, and the last: `avg wps > 40`
+// (page-level, missed mixed pages) → line predicates (missed block shapes) → this. Each
+// earlier one was a patch written at the moment of diagnosis. Convention 15's ruling is
+// that an instrument gets built with its controls in one sitting, so `--selftest` below
+// exercises every predicate against fixtures in both directions.
+// ⚠ These are measured on the block AS A WHOLE, never per line. The first version of this
+// guard counted "lines ending in a full stop" and dropped a third of the real prose on the
+// site — a wrapped four-line paragraph has one terminator and three bare line-ends, so it
+// scored the same as a link list. `/vaults` and `/privacy` came back at FKGL -15.2 (i.e.
+// nothing left to measure) and `/commons` fell 8.5 grades, which is what caught it.
+//
+// ⭐ The self-test passed 11/11 while that was true, because every fixture in it put one
+// sentence on one line. **The controls covered the predicate and not the data.** Wrapped
+// fixtures are now in the set, and that is the actual repair — the ratio below would have
+// been arrived at eventually, but a control that cannot see the failure is the real defect.
+export const BLOCK_PREDICATES = [
+  {
+    name: "unpunctuated-block",
+    // Prose is punctuated. A link list, a flattened table, a nav cluster and a stat row
+    // are not — they have no sentence terminators at all, which is what makes the sentence
+    // splitter collapse them into one 150-word pseudo-sentence.
+    // Wrapping-invariant: judged on words-per-terminator across the whole block, so it does
+    // not matter where the line breaks fall.
+    test: lines => {
+      const text = lines.join(" ");
+      const words = (text.match(/\b[A-Za-z][A-Za-z'-]*\b/g) || []).length;
+      const stops = (text.match(/[.!?]["')\]]?(\s|$)/g) || []).length;
+      // No sentence ends anywhere in the block → not prose, at ANY length. The length
+      // escape below has to sit *after* this: a stat row ("74 Vaults / 16 Entity Types /
+      // 3 Conformance Levels") is only 8 alphabetic words, so a short-block exemption
+      // placed first waves it straight through. Genuine short prose still terminates.
+      if (stops === 0) return true;
+      if (words < 12) return false;              // too short for the ratio to mean anything
+      return words / stops > 45;                 // one "sentence" per 45+ words is a list, not a paragraph
+    },
+  },
+  {
+    name: "link-dense-block",
+    // More links than sentences: a navigation cluster wearing prose punctuation.
+    test: lines => {
+      const text = lines.join(" ");
+      const links = (text.match(/\]\(/g) || []).length;
+      const stops = (text.match(/[.!?]["')\]]?(\s|$)/g) || []).length;
+      return links >= 3 && links > stops;
+    },
+  },
 ];
 
 export function toProse(text) {
   const kept = [];
   const dropped = [];
-  for (const line of stripTwinPreamble(text).split("\n")) {
-    const hit = CLUSTER_PREDICATES.find(p => p.test(line));
-    if (hit) dropped.push({ line, reason: hit.name });
-    else kept.push(line);
+
+  for (const rawBlock of stripTwinPreamble(text).split(/\n\s*\n/)) {
+    // Line pass first, so a block is judged on what survives it.
+    const lines = [];
+    for (const line of rawBlock.split("\n")) {
+      if (!line.trim()) continue;
+      const hit = CLUSTER_PREDICATES.find(p => p.test(line));
+      if (hit) dropped.push({ line, reason: hit.name });
+      else lines.push(line);
+    }
+    if (!lines.length) continue;
+
+    const blockHit = BLOCK_PREDICATES.find(p => p.test(lines));
+    if (blockHit) {
+      for (const l of lines) dropped.push({ line: l, reason: blockHit.name });
+    } else {
+      kept.push(lines.join("\n"));
+    }
   }
-  return { prose: kept.join("\n"), dropped };
+
+  return { prose: kept.join("\n\n"), dropped };
 }
 
 // ---------------------------------------------------------------------------
@@ -153,12 +231,74 @@ export function census(dist, routes) {
 }
 
 // ---------------------------------------------------------------------------
+// Self-test — the controls this instrument does not get believed without
+// ---------------------------------------------------------------------------
+//
+// Convention 14: a verification instrument is not believed until it has been demonstrated
+// to fail. A classifier is believed only if it separates BOTH ways — dropping markup is
+// worthless if it also drops prose, and this one silently lowers every number it touches,
+// so a false drop looks like a successful rewrite. Half these cases exist to catch that.
+
+const SELFTEST = [
+  // --- must be KEPT (prose) ---------------------------------------------------
+  { keep: true, name: "plain paragraph",
+    text: "AI agents have the same trouble people do: finding the right file. With no shape to follow, an agent reads the wrong thing." },
+  { keep: true, name: "bulleted prose (punctuated)",
+    text: "- The Triad — three directories, in every project.\n- Governance files orient an agent at each level." },
+  { keep: true, name: "prose containing ONE link",
+    text: "The public image at [github](https://example.com) is a real aDNA workspace. One command gives you the standard." },
+  { keep: true, name: "prose with a trailing quote/paren",
+    text: 'She called it "the most honest project page I have read in years." That is the register this guide takes.' },
+  { keep: true, name: "prose ending in a colon lead-in then a sentence",
+    text: "aDNA gives a project three things. Each one is described below." },
+  // ⚠ The wrapped cases. Their absence is what let the first block guard ship: every
+  // fixture above puts one sentence on one line, so a rule counting line-ends passed all
+  // of them and still ate a third of the site's real prose.
+  { keep: true, name: "WRAPPED paragraph — one terminator, four bare line-ends",
+    text: "The problem is the filing, not the agent. The agent is able; it has\nnowhere to look. Most teams patch the gap with long READMEs and custom\nprompts, and none of that carries to the next session, the next agent,\nor the next teammate." },
+  { keep: true, name: "WRAPPED single long sentence — no interior line ends a sentence",
+    text: "A well-built aDNA project lets any agent answer three questions at\nonce, without asking anyone and without reading more than three files\nin the repository root." },
+  { keep: true, name: "WRAPPED prose carrying one inline link",
+    text: "The public image at [github.com/aDNA-Network/aDNA](https://example.com)\nis a real aDNA workspace, and one command gives you the standard, the\nskills and the templates." },
+
+  // --- must be DROPPED (markup) -----------------------------------------------
+  { keep: false, name: "link list, one per line (the proof-links case)",
+    text: "[CLAUDE.md](https://e.com/a) — the operating protocol an agent loads first\n[.adna/](https://e.com/b) — the standard, embedded\n[skill_onboarding.md](https://e.com/c) — the first-run recipe" },
+  { keep: false, name: "twin-flattened table (no pipes, no stops)",
+    text: "TriadEntityPurpose\nWHORoles, policies, decision authority\nWHOWho works on the project\nWHATCurated knowledge files" },
+  { keep: false, name: "nav cluster (Explore further)",
+    text: "[The Triad](/a) — the structure underneath it all\n[Governance Files](/b) — CLAUDE.md and what each is for\n[Get Started](/c) — set up your first project" },
+  { keep: false, name: "stat row",
+    text: "74 Vaults\n16 Entity Types\n3 Conformance Levels\nMIT Licensed" },
+  { keep: false, name: "vault card strip",
+    text: "[the standard in use ### aDNA tended by Rosetta Open vault →](/vaults/adna/)[framework in use ### III tended by Argus Open vault →](/vaults/iii/)" },
+  { keep: false, name: "heading alone",
+    text: "## How aDNA works" },
+];
+
+function selftest() {
+  let pass = 0;
+  const failures = [];
+  for (const c of SELFTEST) {
+    const { prose } = toProse(c.text);
+    const kept = prose.trim().length > 0;
+    if (kept === c.keep) pass++;
+    else failures.push(`${c.keep ? "should KEEP" : "should DROP"}: ${c.name}`);
+  }
+  const keeps = SELFTEST.filter(c => c.keep).length;
+  console.log(`reading_census selftest: ${pass}/${SELFTEST.length} (${keeps} keep-cases, ${SELFTEST.length - keeps} drop-cases)`);
+  for (const f of failures) console.log(`  ✗ ${f}`);
+  return failures.length === 0;
+}
+
+// ---------------------------------------------------------------------------
 // CLI
 // ---------------------------------------------------------------------------
 
 const isMain = process.argv[1] && process.argv[1].endsWith("reading_census.mjs");
 if (isMain) {
   const argv = process.argv.slice(2);
+  if (argv.includes("--selftest")) process.exit(selftest() ? 0 : 1);
   const opt = k => { const i = argv.indexOf(k); return i === -1 ? null : argv[i + 1]; };
   const dist = opt("--dist") || "site/dist";
   const routes = opt("--routes") ? opt("--routes").split(",") : (argv.includes("--all") ? allTwins(dist) : SCOPE_21);

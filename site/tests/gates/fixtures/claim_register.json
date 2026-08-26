@@ -57,9 +57,9 @@
     {
       "id": "R-73",
       "url": "/learn/what-is-adna",
-      "quote": "This documentation site is itself an aDNA vault",
+      "quote": "This site is itself an aDNA vault",
       "class": "verified",
-      "why": "The self-conformance proof (directive law 2). If this stops being true the site has refuted its own standard."
+      "why": "The self-conformance proof (directive law 2). If this stops being true the site has refuted its own standard. Quote re-pinned at HAUSSMANN P4.5b O1 (2026-08-26): the rewrite dropped the word 'documentation'. The CLAIM is unchanged and still verified — site source is in the public aDNA-Network/aDNA.aDNA repo under site/ — so this is a same-diff re-pin, not a weakening."
     },
     {
       "id": "R-76",
