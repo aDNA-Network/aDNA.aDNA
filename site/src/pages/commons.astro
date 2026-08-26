@@ -161,12 +161,18 @@ const memberSyncDates = [...new Set(ledger.map((r: any) => r.lastSynced).filter(
           </p>
         </li>
         <li class="connect-path">
-          <h3>Federate a wrapper</h3>
+          {/* HAUSSMANN P4.5b O2 — clinician item C3. The heading and the body between them used
+              three unexplained terms — "federate", "wrapper", "forge consumer" — and she named
+              the last one directly: "I don't know what a forge consumer is." The heading now says
+              what the reader would do; "wrapper" is defined in place; "forge consumer" is cut,
+              because it explained nothing and named a category the reader has no reason to hold. */}
+          <h3>Connect to a subnetwork</h3>
           <p>
-            Consume a subnetwork's shared context from your own vault: a wrapper directory with a
-            <code>federation_ref</code> block, the same pattern every forge consumer uses.
+            Read a subnetwork's shared context from inside your own vault. You add a small
+            directory that points at theirs — a <code>federation_ref</code> block — and nothing is
+            copied, so their context stays theirs.
             <a href="/patterns/federation-readiness/">Federation readiness</a> covers what to check
-            before you federate — and before you share your own context back.
+            before you connect, and before you share your own context back.
           </p>
         </li>
         <li class="connect-path">

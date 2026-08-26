@@ -34,23 +34,28 @@ const securityMd = `${REPO_HTTPS}/blob/main/SECURITY.md`;
     </p>
     <p><a class="policy-cta" href={advisoryUrl} target="_blank" rel="noopener">Report a vulnerability privately &rarr;</a></p>
     <p>
-      If you cannot use GitHub Security Advisories, open a minimal public issue saying only
-      "security report — please open a private channel" (with no details), and a maintainer
-      will follow up privately. Where you can, include the affected file, route, or script,
-      steps to reproduce, and the impact you foresee.
+      If you cannot use GitHub Security Advisories, open a public issue that says only
+      &ldquo;security report &mdash; please open a private channel&rdquo;. Include no details
+      there. A maintainer will follow up privately. When you can, tell us the affected file,
+      route or script, the steps to reproduce it, and the impact you expect.
     </p>
 
     <h2 id="scope">Scope</h2>
+    {/* HAUSSMANN P4.5b O2 — both paragraphs were single semicolon-chained sentences of ~31
+        words. Split into short sentences; the scope itself is unchanged, item for item.
+        ⚠ Deliberately NOT converted to a bulleted list: a list would drop out of the prose
+        metric entirely and read as an improvement without being one, which is the "never
+        rewrite to move a number" rule in doctrine_site_voice §7. */}
     <p>
-      <strong>In scope:</strong> the published standard and templates (the <code>.adna/</code>
-      tree, skills, governance templates); the website tooling and build scripts in the
-      repository (<code>site/</code>, <code>scripts/</code>); and any workflow the repository
-      executes (CI, the gate harness).
+      <strong>In scope:</strong> the published standard and its templates — the
+      <code>.adna/</code> tree, the skills, the governance templates. The website tooling and
+      build scripts in the repository (<code>site/</code>, <code>scripts/</code>). And anything
+      the repository runs itself: CI, and the gate harness.
     </p>
     <p>
-      <strong>Out of scope:</strong> third-party tools the standard composes with (Obsidian,
-      Claude Code, git hosts) — report those to their own maintainers; and self-managed
-      deployments or private vaults you run on your own infrastructure.
+      <strong>Out of scope:</strong> third-party tools that aDNA works alongside — Obsidian,
+      Claude Code, git hosts. Report those to their own maintainers. Also out of scope:
+      deployments and private vaults you run on your own machines.
     </p>
 
     <h2 id="what-to-expect">What to expect</h2>
@@ -69,7 +74,7 @@ const securityMd = `${REPO_HTTPS}/blob/main/SECURITY.md`;
     </p>
 
     <p class="policy-foot">
-      The machine-readable policy also lives at
+      The machine-readable policy is also at
       <a href={securityMd} target="_blank" rel="noopener"><code>SECURITY.md</code></a>
       in the repository.
     </p>

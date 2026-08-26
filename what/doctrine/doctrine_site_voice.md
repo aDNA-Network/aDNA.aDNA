@@ -134,6 +134,24 @@ encounter, on the surface where the confusion happens.
 | avoid | why | instead |
 |---|---|---|
 | *"lives" / "lived"* for where context is | **two blind readers independently misread it as a hosted destination** (ADR-048 §50, which seeds this guide by name) | say where the files are: *"on your machine"* |
+
+> ⚠ **Scope of the "lives" rule, settled at P4.5b O2 and recorded so that fixing a few instances
+> is legible as a judgement rather than an oversight.** A sweep of authored copy
+> (`src/{pages,components,content,data}`) found **~40** uses of *lives / lived / live in*. Applying
+> the rule to all of them would be wrong, and here is the line.
+>
+> **§50's harm is a hosted destination** — readers took *"the network where that shared context
+> lives"* to mean a place aDNA runs your data. That harm needs the **local-vs-hosted axis** to be
+> in play. It is, on marketing and first-contact copy: the hero, *"Everything lives on your
+> machine"*, *"a node is a `Home.aDNA` plus the vaults that live on it"*. **Those are fixed.**
+>
+> It is **not** in play in *"Missions live in `how/missions/`"*. That is a **file path**. No reader
+> can mistake a directory for a server, and the spec and docs use this idiom throughout — including
+> in the ratified specification mirror, which a copy mission has no business rewriting.
+>
+> ⇒ **The rule binds where the ambiguity it was written for can actually occur.** Rewriting the
+> other ~37 would be applying a rule past its reason, which is its own kind of dishonesty about what
+> the rule is for.
 | *"a context democracy"* as a headline | *"headline concept, never landed for me"* | say the thing, then compress it later if it earns the line |
 | *"opening progressively"* unglossed | *"what does 'opening progressively' mean?"* — and it is **embargo-mandatory** wording, so it stays but must be **explained on first use** | keep the phrase, add the clause |
 | first-screen counters — *"16 Entity Types"*, *"3 Conformance Levels"* | *"first-screen counters that mean nothing to a newcomer"* | keep the numbers where a reader has a reason to want them |

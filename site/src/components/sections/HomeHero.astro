@@ -7,6 +7,8 @@ import { STANDARD_LICENSE } from '../../data/standard';
 interface Stat {
   value: string;
   label: string;
+  /* HAUSSMANN P4.5b O2 (C4) — optional; a stat without it renders exactly as before. */
+  href?: string;
 }
 
 interface Props {
@@ -282,7 +284,9 @@ const heroNodes = graphLed
               {stats.map((stat) => (
                 <div class="trust-stat">
                   <span class="trust-value">{stat.value}</span>
-                  <span class="trust-label">{stat.label}</span>
+                  {stat.href
+                    ? <a class="trust-label trust-label-link" href={stat.href}>{stat.label}</a>
+                    : <span class="trust-label">{stat.label}</span>}
                 </div>
               ))}
             </div>
@@ -409,7 +413,9 @@ const heroNodes = graphLed
           {stats.map((stat) => (
             <div class="trust-stat">
               <span class="trust-value">{stat.value}</span>
-              <span class="trust-label">{stat.label}</span>
+              {stat.href
+                ? <a class="trust-label trust-label-link" href={stat.href}>{stat.label}</a>
+                : <span class="trust-label">{stat.label}</span>}
             </div>
           ))}
         </div>

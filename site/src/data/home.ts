@@ -31,6 +31,20 @@ export interface HomePersona {
 export interface HomeStat {
   value: string;
   label: string;
+  /**
+   * HAUSSMANN P4.5b O2 — clinician item C4. Optional, and purely additive: a stat with no
+   * `href` renders exactly as before. Two of the five first-screen counters are terms of
+   * art — the cold-reader called "16 Entity Types" and "3 Conformance Levels"
+   * "first-screen counters that mean nothing to a newcomer" — while "74 Vaults",
+   * "v2.5 Current Version" and "MIT Licensed" explain themselves.
+   *
+   * ⭐ Both terms ARE defined on this site, and neither definition was reachable from the
+   * number. That is the THIRD sighting of one shape in this mission, after the persona
+   * disclosure and the ancient-DNA collision: content that exists, below the point of
+   * confusion. So the fix is the same one — make it reachable — rather than deleting a
+   * true, derived number or trading a precise term for an approximate plain-English one.
+   */
+  href?: string;
 }
 
 export interface HomeAudience {
@@ -165,8 +179,8 @@ if (audiences.length === 0) {
 // (entity types, conformance levels, version, license) follow it, not the reverse.
 export const stats: HomeStat[] = [
   { value: String(vaultsData.vault_count), label: 'Vaults' },
-  { value: String(ENTITY_TYPE_COUNT), label: 'Entity Types' },
-  { value: String(CONFORMANCE_LEVELS), label: 'Conformance Levels' },
+  { value: String(ENTITY_TYPE_COUNT), label: 'Entity Types', href: '/learn/what-is-adna#entity-types' },
+  { value: String(CONFORMANCE_LEVELS), label: 'Conformance Levels', href: '/glossary/glossary-conformance-level/' },
   { value: STANDARD_VERSION, label: 'Current Version' },
   { value: STANDARD_LICENSE, label: 'Licensed' },
 ];
