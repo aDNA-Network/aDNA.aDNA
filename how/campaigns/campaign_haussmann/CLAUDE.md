@@ -179,6 +179,29 @@ tags: [campaign_governance, haussmann]
       assertion whose scope includes the vault's own memory can never go green, and one that
       silently excludes it is making a narrower claim than it appears to. **Naming the surface is
       what makes the claim checkable at all.** *(Landed at P4.4a A1, 2026-08-24, discharging F-r.)*
+    - ⭐⭐ **AMENDMENT 2026-08-26 (P4.5b O1 pre-flight) — NAMING A SURFACE DOES NOT MAKE IT THE RIGHT
+      ONE, AND THE FAILURE LOOKS EXACTLY LIKE COMPLIANCE.** P4.5b's O0 probe of the clinician
+      confusion list named its surface exactly as this convention requires — *"`dist/**/*.html`, the
+      deployed tree `6675442`, `grep -rlF`, literal"* — and reported *"3 Conformance Levels"*
+      **dead**. It is **live**: the homepage renders the figure and its label as **separate DOM
+      nodes**, so the phrase exists for a reader and not for a literal HTML match. Re-run against the
+      `.md` twins it returns **1**.
+      - **The clause:** *the surface must match the claim's own verb.* **"A reader encounters this
+        phrase"** is a question about **rendered, flattened text** — the twin. **"The source asserts
+        this"** is about source. **"The DOM contains this node"** is about HTML. Picking HTML for a
+        reader-facing claim is a surface that is **precise about the wrong thing**.
+      - ⚠ **And it fails in BOTH directions, so there is no single safe default**: the same re-probe
+        found *"context democracy"* at **2** in HTML and **1** in the twins — the twin drops page
+        metadata that HTML carries. **Neither surface alone answers "what does a reader see."** State
+        which question you are asking, then pick.
+      - ⭐ **Why this is worth a clause rather than a note:** convention 17 as written is satisfiable
+        by a wrong answer. A named surface reads as diligence, so the sentence *"absent from
+        `dist/**/*.html`"* passes review while being useless for the claim it supports — which is a
+        worse failure mode than an unnamed one, because an unnamed absence invites the question and a
+        named one closes it. *(Fourth member of the instrument-narrower-than-its-conclusion family —
+        F-e's `find` over the wrong vault · convention 16's `grep` over one machine · P4.5b's
+        average-based shape guard · this. **Three of the four were authored by this desk in eight
+        days**, which is the argument for the habit and against authoring a fifth instrument.)*
 
 ## What this campaign protects (do not regress)
 

@@ -15,7 +15,10 @@
 import { readFileSync } from "node:fs";
 import { globSync } from "node:fs";
 
-function stripMarkdown(text) {
+// Exported for `site/scripts/reading_census.mjs` (HAUSSMANN P4.5b), which adds a
+// prose-only normalization on top of these primitives rather than reimplementing
+// the FKGL math. Purely additive: running this file directly is unchanged.
+export function stripMarkdown(text) {
   // frontmatter
   text = text.replace(/^---\n[\s\S]*?\n---\n/, "");
   // fenced code
@@ -58,7 +61,7 @@ function countSyllables(word) {
 
 const PASSIVE_BE = /\b(is|are|was|were|be|been|being|am)\s+(\w+ed|done|made|given|taken|seen|gone|shown|known|written|built|run|held|kept|told|brought)\b/gi;
 
-function analyze(body) {
+export function analyze(body) {
   const sentences = body
     .split(/(?<=[.!?])\s+(?=[A-Z])/)
     .map(s => s.trim())
@@ -91,13 +94,20 @@ function report(file) {
   return `${file}\n  FKGL: ${r.fkgl}${flag}  passive: ${r.passiveRatio}% (${r.passiveCount} hits)${pflag}\n  sentences: ${r.sentences}  words: ${r.words}  avg wps: ${r.avgWordsPerSentence.toFixed(1)}  spw: ${r.avgSyllablesPerWord.toFixed(2)}\n`;
 }
 
-const args = process.argv.slice(2);
-if (args.length === 0) {
-  console.error("Usage: node scripts/reading_level.mjs <file> [<file> ...]");
-  process.exit(1);
-}
+// Run the CLI only when invoked directly. Without this guard, importing the file for its
+// exported primitives also runs this block against the IMPORTER's argv — which is exactly
+// what happened on `reading_census.mjs`'s first run (it tried to open "--dist" as a file).
+// Caught by running it; noted because a module with import-time side effects fails in a way
+// that looks like a bug in the caller.
+if (process.argv[1] && process.argv[1].endsWith("reading_level.mjs")) {
+  const args = process.argv.slice(2);
+  if (args.length === 0) {
+    console.error("Usage: node scripts/reading_level.mjs <file> [<file> ...]");
+    process.exit(1);
+  }
 
-const files = args.flatMap(a => (a.includes("*") ? globSync(a) : [a]));
-for (const f of files) {
-  process.stdout.write(report(f));
+  const files = args.flatMap(a => (a.includes("*") ? globSync(a) : [a]));
+  for (const f of files) {
+    process.stdout.write(report(f));
+  }
 }

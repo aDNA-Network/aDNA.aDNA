@@ -6,11 +6,11 @@ increment: P4.5b
 objective: O0a
 title: "P4.5b — convention-13 pre-build gate: coverage record + AC amendment proposal"
 created: 2026-08-25
-updated: 2026-08-25
-status: proposed        # ⛩ requires operator signature before ANY building (convention 13)
+updated: 2026-08-26
+status: accepted        # ⛩ OPERATOR-SIGNED 2026-08-26. Then CORRECTED IN PLACE the same day at O1 pre-flight, strike-not-delete, under the operator's ruling: AC-b's metric is PROSE-ONLY, and AC-c's live scope is 8 not 7. The signature stands — only the factual basis moved, and the ~280–400 kT band did not, so no re-ratification is owed. Both corrections are mine and both are visible: §5's correction block and the baseline's.
 last_edited_by: agent_rosetta
 coverage: "22/22 pairs — 16 AC×V + 6 AC×AC. Complete; see §2 for the matrix."
-verdict: "3 FAILURES · 2 structural gaps · 1 stale amendment · 4 premise corrections"
+verdict: "3 FAILURES · 2 structural gaps · 1 stale amendment · 4 premise corrections — PLUS 2 self-corrections landed 2026-08-26: a surface mismatch (HTML grep for a reader-facing claim) and an arithmetic miscount (rows counted, not the clinician's bullets)"
 precedent: ["artifacts/p4_3/ac_amendment_proposal.md (accepted)", "artifacts/p4_4/ac_amendment_proposal.md (accepted)", "artifacts/p4_2/ac_amendment_proposal.md (accepted)"]
 tags: [artifact, haussmann, p4_5b, convention_13, ac_amendment, pre_build_gate]
 ---
@@ -198,7 +198,7 @@ deploy taking its own ⛩ GO (and the push preceding it, per the ancestry guard)
 | C2 | *"opening progressively"* | 1 | **live** |
 | C3 | *"Federate a wrapper"* / `federation_ref` | 1 / 3 | **live** |
 | C4 | *"16 Entity Types"* | 2 | **live** |
-| C4b | *"3 Conformance Levels"* | **0** | ✅ **dead** |
+| C4b | *"3 Conformance Levels"* | ~~0~~ **1 (twin)** | ⛩ **CORRECTED 2026-08-26 — LIVE, NOT DEAD.** See below |
 | C5 | *"tended by"* (assumed to be people) | 3 | **live** — and it is **GAP 1**: the homepage is the one that does not disclose |
 | C6 | *"Modules, datasets, and lattices compose into workflows"* | 1 | **live** |
 | C7 | *"Renamed from TaskForge.aDNA (Production Tidy pt08"* | **0** | ✅ **dead** — retired by P1.3's leak-baseline purge |
@@ -222,8 +222,68 @@ content; they are content in the wrong place.** The fix is placement, and it con
 which is also the worst-measuring first-contact surface (**13.90** vs target 10). **Three independent
 instruments point at the same page.**
 
-⚠ **AC-c executed as written would "resolve" three phrases that do not exist.** Scope is **7 live items**,
-derived.
+### ⛩⛩ CORRECTION 2026-08-26 — the tally above was measured on the wrong surface. Live scope is **8**, not 7
+
+> **Operator ruling: correct in place, strike not delete; the signature stands, only the factual basis
+> is corrected.** Campaign precedent: F-e's premise withdrawal (P4.4a A3) and convention 16's amendment.
+
+**C4b — *"3 Conformance Levels"* is LIVE.** The probe above grepped `dist/**/*.html`, where the homepage
+renders the figure and its label as **separate DOM nodes**, so a literal match for the phrase finds
+nothing. The **twin** — flattened rendered text — contains it. Re-measured on both surfaces:
+
+| phrase | HTML | twin | |
+|---|---|---|---|
+| *"3 Conformance Levels"* | 0 | **1** | ⛔ **disagree — HTML misses text split across elements** |
+| *"context democracy"* | **2** | 1 | ⛔ **disagree the other way — the twin drops page metadata** |
+| *"Production Tidy"* · *"org vault pending"* | 0 | 0 | ✅ dead on both — the two genuine deaths |
+| *"16 Entity Types"* · *"tended by"* | 2 · 3 | 2 · 3 | agree |
+
+⭐⭐ **THE LESSON IS NOT "I NAMED THE WRONG SURFACE" — I NAMED A SURFACE, WHICH IS WHAT CONVENTION 17
+ASKS, AND THE CLAIM WAS STILL FALSE.** So the convention needs one more clause, and this is it:
+
+> **Naming the surface makes a claim checkable; it does not make it correct. The surface must match the
+> claim's own verb.**
+
+*"A reader encounters this phrase"* is a question about **rendered, flattened text** — the twin. *"The
+source asserts this"* is a question about source. *"The DOM contains this node"* is a question about
+HTML. Choosing HTML for a reader-facing claim is a surface that is *precise about the wrong thing*, and
+it fails in **both** directions: HTML misses text split across elements, twins miss text in metadata.
+**Neither surface alone answers "what does a reader see."**
+
+⭐ **Fourth sighting of the instrument-narrower-than-its-conclusion family, and the first authored
+inside this mission** — after F-e's `find` over the wrong vault, convention 16's `grep` over one
+machine, and this file's own average-based shape guard (see [[reading_level_p4_5b_baseline]]). **Three
+of the four were authored by the same desk in eight days, which is the argument for the habit rather
+than for more instruments.**
+
+~~⚠ **AC-c executed as written would "resolve" three phrases that do not exist.** Scope is **7 live items**,
+derived.~~
+
+⇒ **Re-derived from the clinician's §5 itself rather than from my table of it — and there were TWO
+errors, not one.**
+
+The clinician's §5 has **ten bullets**. C4 is **one bullet naming two phrases** (*"16 Entity Types"*
+**and** *"3 Conformance Levels"* — *"first-screen counters that mean nothing to a newcomer"*), and C3
+likewise names two. My O0 table split both into separate rows and then counted rows.
+
+| | |
+|---|---|
+| **Dead: 2** | C7 *Production Tidy pt08* (retired by P1.3's leak-baseline purge) · C9 *org vault pending* |
+| **Live: 8** | C1 · C2 · C3 · C4 · C5 · C6 · C8 · C10 |
+
+**Error 1 — the surface.** *"3 Conformance Levels"* was marked dead on an HTML grep that could not see
+it. ⚠ **This one did not move the count**: C4's other phrase was live at 2 pages, so the bullet was
+always live. What it moved is **what "resolving C4" has to cover** — half of it was believed closed.
+
+**Error 2 — arithmetic, and independent of the first.** O0 stated *"live scope 7"* while its own table
+showed **9 live rows** (12 rows, 3 struck). Neither 7 nor 9 is the answer; **8** is, because the unit is
+the clinician's bullet, not my row. ⭐ **A derived figure is only derived from the object it was derived
+from** — I derived faithfully from my own transcription and never re-read the source. That is
+convention 12's *recon-at-execution* applied one level too shallowly, and it is the same shape as
+P4.4a A3's finding: **re-reading a row means re-deriving its question, not re-running its command** —
+here, not re-counting its table.
+
+Both dead items are recorded **with the mission that killed them**, per AC-c's amended wording.
 
 ⚠ **And V3 is partly circular for AC-c**: the list came from a synthetic clinician, and V3 re-tests with a
 synthetic clinician. `[D-syn]` is a disclosed stand-in, never the human instrument — **the real
@@ -235,8 +295,8 @@ this one rewrites. Stated as a limit, not treated as a defect.
 | | change | why |
 |---|---|---|
 | **AC-a** | publication **required**, not owed; guide states its own targets | the freeze lifted — STALE, above |
-| **AC-b** | scope = **21 routes** (top-20 ∪ the four named), derived and recorded; `/get-started` recorded **already met**; the 3 list-shaped pages **excluded with reason**; the glossary limb gated against the **25 derived terms**, scoped to the 21 | FAILURE 2 + premise corrections 2–4 + GAP 2 |
-| **AC-c** | scope = the **7 live items**; the 3 dead ones recorded as dead **with the mission that killed them**; **C8 fixed at its single source** | §5 |
+| **AC-b** | scope = **21 routes** (top-20 ∪ the four named), derived and recorded; `/get-started` recorded **already met**; ⛩ **the metric is PROSE-ONLY** (operator ruling 08-26) via `site/scripts/reading_census.mjs`, with whole-twin reported alongside; ~~the 3 list-shaped pages excluded with reason~~ → **artifact LINES excluded, not pages**, and thin-prose pages flagged `low_confidence` and reported; the glossary limb gated against the **25 derived terms**, scoped to the 21 | FAILURE 2 + premise corrections 2–4 + GAP 2 + the 08-26 correction |
+| **AC-c** | scope = the ~~7~~ **8 live items** (⛩ corrected 08-26); the ~~3~~ **2** dead ones recorded as dead **with the mission that killed them**; **C8 fixed at its single source** | §5 + its correction |
 | **AC-d** | CI report non-blocking (unchanged); DA records must be **auditable against the skill's checklist** | FAILURE 3 |
 | **AC-e** | **NEW** — the two ungated D6 anchor-5 conjuncts: register named as met; **agent-authorship disclosure reachable at first persona mention on `/`** | GAP 1 / G-10 |
 | **V2** | amended — records must **cite the guide rule each decision applied** | FAILURE 1 |
