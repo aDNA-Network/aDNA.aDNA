@@ -129,6 +129,30 @@ function htmlToMarkdown(html) {
 
 const stripInline = (h) => h.replace(/<[^>]+>/g, '');
 
+/**
+ * `<a href>` → a markdown link, as a named step rather than one line inside `clean()`.
+ *
+ * ⭐ IT IS A FUNCTION BECAUSE NESTING GOES BOTH WAYS, AND ONE DIRECTION WAS SILENTLY LOSING
+ * LINKS (HAUSSMANN P4.5b O3). `clean()` converted `<strong>` before `<a>`, and the strong
+ * handler flattens its content with `stripInline` — so `<strong><a href="…">Triad</a></strong>`
+ * emitted `**Triad**` with the href discarded, while `<a href="…"><strong>Triad</strong></a>`
+ * survived. Measured on `/learn/what-is-adna`: the HTML carried 8 glossary links and the twin
+ * carried 6, the two missing being exactly the two the copy had wrapped in `<strong>`.
+ *
+ * That is not a formatting nit. The twins are this site's machine-readable face (P3.1), so an
+ * agent reading the twin was told a term existed and not where its definition was — the same
+ * "content that exists, below the point a reader meets it" shape the copy work keeps finding,
+ * arriving in the emitter instead of in a sentence.
+ *
+ * Running it inside the strong/em handlers as well as at top level fixes the broken direction
+ * without changing the working one: `<a><strong>` still yields `[**t**](href)`.
+ */
+const linkify = (h) => h.replace(/<a\b[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi, (_m, href, text) => {
+  const label = stripInline(text).replace(/\s+/g, ' ').trim();
+  if (!label) return '';
+  return href.startsWith('#') ? label : `[${label}](${href})`;
+});
+
 function decode(s) {
   return s
     .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')
@@ -141,13 +165,9 @@ function decode(s) {
 function clean(fragment) {
   let s = fragment;
   s = s.replace(/<code[^>]*>([\s\S]*?)<\/code>/gi, (_m, c) => `\`${decode(stripInline(c)).trim()}\``);
-  s = s.replace(/<(strong|b)[^>]*>([\s\S]*?)<\/\1>/gi, (_m, _t, c) => `**${stripInline(c).trim()}**`);
-  s = s.replace(/<(em|i)[^>]*>([\s\S]*?)<\/\1>/gi, (_m, _t, c) => `*${stripInline(c).trim()}*`);
-  s = s.replace(/<a\b[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi, (_m, href, text) => {
-    const label = stripInline(text).replace(/\s+/g, ' ').trim();
-    if (!label) return '';
-    return href.startsWith('#') ? label : `[${label}](${href})`;
-  });
+  s = s.replace(/<(strong|b)[^>]*>([\s\S]*?)<\/\1>/gi, (_m, _t, c) => `**${stripInline(linkify(c)).trim()}**`);
+  s = s.replace(/<(em|i)[^>]*>([\s\S]*?)<\/\1>/gi, (_m, _t, c) => `*${stripInline(linkify(c)).trim()}*`);
+  s = linkify(s);
   s = s.replace(/<img\b[^>]*alt="([^"]*)"[^>]*>/gi, (_m, alt) => (alt ? `*[image: ${alt}]*` : ''));
   return decode(stripInline(s)).replace(/[ \t]+/g, ' ').trim();
 }

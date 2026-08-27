@@ -78,7 +78,7 @@ export const steps: HomeStep[] = [
   {
     number: '02',
     title: 'Orient',
-    description: 'Without a map, agents blast through irrelevant files or ask you to re-explain the project. Agents read your CLAUDE.md and AGENTS.md first, then pull typed context at exactly the depth they need — not your entire repo, not a blank slate.',
+    description: 'Without a map, agents blast through irrelevant files or ask you to re-explain the project. Agents read your CLAUDE.md and <a href="/glossary/glossary-agents-md/">AGENTS.md</a> first, then pull typed context at exactly the depth they need — not your entire repo, not a blank slate.',
     demo: `<div class="step-demo">
   <div class="step-demo-bar">
     <span class="demo-dots"><span></span><span></span><span></span></span>

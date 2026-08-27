@@ -56,7 +56,33 @@ export function stripTwinPreamble(text) {
 
 // LINE predicates — markup shape that is recognizable one line at a time.
 export const CLUSTER_PREDICATES = [
-  { name: "multi-link", test: l => (l.match(/\]\(/g) || []).length >= 2 },
+  // ⚠ AMENDED P4.5b O3 — this predicate was `links >= 2`, full stop, and it was dropping
+  // PROSE. Measured site-wide before the change: 90 lines carry two or more links, and **30 of
+  // them are punctuated paragraphs** — most of the glossary's definition sentences ("A
+  // [deployment form](…) where `what/`, `how/`, and `who/` exist as top-level directories."),
+  // and `/get-started`'s closing paragraph. Two inline links in a fifty-word sentence is
+  // ordinary writing, not a nav cluster.
+  //
+  // ⭐ THE PERVERSE PART, AND WHY IT HAD TO BE FIXED HERE RATHER THAN NOTED: the drop is
+  // triggered by LINKING, so the corpus shrank every time the copy got MORE reachable. O3's
+  // own emitter fix — which recovered two glossary links the twins had been losing — pushed a
+  // fifty-word prose bullet on `/learn/what-is-adna` over this threshold and out of the
+  // measurement. **An instrument that degrades as its subject improves is measuring against
+  // the wrong axis**, and it would have quietly rewarded leaving terms unlinked.
+  //
+  // The repair is not a new idea: it is the SAME invariant the block guard below already runs
+  // on — *prose is punctuated* — applied to the line predicate, which predates it. A line with
+  // links but no sentence ending is a cluster; a line with links that terminates more sentences
+  // than it carries links is prose. Both directions are in `--selftest`.
+  { name: "multi-link", test: l => {
+      const links = (l.match(/\]\(/g) || []).length;
+      if (links < 2) return false;
+      const stops = (l.match(/[.!?]["')\]]?(\s|$)/g) || []).length;
+      const words = (l.match(/\b[A-Za-z][A-Za-z'-]*\b/g) || []).length;
+      if (stops === 0) return true;          // links and no sentence ends → cluster
+      if (words < 12) return true;           // too short to be a paragraph carrying links
+      return links > stops;                  // more links than sentences → cluster
+    } },
   { name: "card-affordance", test: l => /Open vault\s*(→|&rarr;)/.test(l) },
   { name: "image-alt", test: l => /^\s*\*\[image:/.test(l) },
   { name: "shell-transcript", test: l => /^\s*\$\s/.test(l) },
@@ -258,6 +284,17 @@ const SELFTEST = [
     text: "The problem is the filing, not the agent. The agent is able; it has\nnowhere to look. Most teams patch the gap with long READMEs and custom\nprompts, and none of that carries to the next session, the next agent,\nor the next teammate." },
   { keep: true, name: "WRAPPED single long sentence — no interior line ends a sentence",
     text: "A well-built aDNA project lets any agent answer three questions at\nonce, without asking anyone and without reading more than three files\nin the repository root." },
+  // ⚠ The multi-link cases. Their absence is what let `links >= 2` drop 30 real prose lines
+  // site-wide — every fixture above carried at most ONE link, so a predicate keying on two
+  // passed the whole set while eating the glossary's definition paragraphs.
+  { keep: true, name: "MULTI-LINK punctuated prose (the glossary definition shape)",
+    text: "A [deployment form](/glossary/glossary-deployment-form) where the triad is nested inside `.agentic/` at the repository root. It suits projects that already own their top level." },
+  { keep: true, name: "MULTI-LINK prose, links equal to sentences",
+    text: "The [triad](/a) is three directories. Every [governance file](/b) sits at a fixed path, so an agent always knows where to look first." },
+  { keep: false, name: "two links, no sentence ending (a nav pair)",
+    text: "[Get Started](/get-started) · [Read the spec](/reference/specification)" },
+  { keep: false, name: "two links in a short labelled row",
+    text: "Docs: [guide](/a), [reference](/b)" },
   { keep: true, name: "WRAPPED prose carrying one inline link",
     text: "The public image at [github.com/aDNA-Network/aDNA](https://example.com)\nis a real aDNA workspace, and one command gives you the standard, the\nskills and the templates." },
 

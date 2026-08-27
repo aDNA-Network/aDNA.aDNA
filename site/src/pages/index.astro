@@ -218,7 +218,7 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
       <div class="feature-strip">
         <div class="feature-item">
           <strong>Agent-native</strong>
-          <span>Governance files and typed context give agents orientation — no prompt re-engineering every session.</span>
+          <span><a href="/glossary/glossary-governance-file/">Governance files</a> and typed context give agents orientation — no prompt re-engineering every session.</span>
         </div>
         <div class="feature-item">
           <strong>Human-readable</strong>
@@ -239,7 +239,11 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
           <div class="step">
             <div class="step-number">{step.number}</div>
             <h3 class="step-title">{step.title}</h3>
-            <p class="step-description">{step.description}</p>
+            {/* set:html so a step description can carry a glossary link at a term's first use
+                (voice guide §3, the one-new-term law). Same mechanism the sibling `step.demo`
+                already uses on the next line, from the same data module — not a new pattern.
+                The strings are authored in `src/data/home.ts` and carry no user input. */}
+            <p class="step-description" set:html={step.description}></p>
             <Fragment set:html={step.demo} />
           </div>
         ))}
