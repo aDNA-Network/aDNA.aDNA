@@ -6,13 +6,13 @@ campaign: campaign_haussmann
 mission: mission_haussmann_p5_1_human_evidence
 objective: O0
 phase: P5
-status: active
+status: completed
 executor_tier: opus          # declared AND honoured — this session runs opus
 created: 2026-08-26
 updated: 2026-08-26
 last_edited_by: agent_rosetta
 token_budget_estimated: "~90–140 kT (O0 half of the ratified ~180–280 kT / 2 sessions)"
-token_budget_actual:
+token_budget_actual: "~105 kT (est., content-load units) — inside the ~90–140 kT O0 half of the ratified ~180–280 kT band. Recorded at close rather than left empty: two of three P4.3 sessions closed this field blank and the actual had to be reconstructed (SO#11)."
 tags: [session, haussmann, p5_1, o0, panel_kit, ttfs, contribution_run]
 ---
 
