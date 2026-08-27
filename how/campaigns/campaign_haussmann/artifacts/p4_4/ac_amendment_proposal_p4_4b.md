@@ -7,16 +7,37 @@ increment: P4.4b
 phase: P4
 created: 2026-08-26
 updated: 2026-08-26
-status: proposed          # ⛩ AWAITING THE OPERATOR SIGNATURE. Agents author decisions; operators
-                          # ratify them (§7.7). No build until signed.
+status: accepted          # ⛩ OPERATOR-SIGNED 2026-08-26 — see the ratification block below.
+                          # Agents author decisions; operators ratify them (§7.7). P4.4b may now
+                          # build against this set. ~~proposed~~ (struck, not deleted — SO-6).
 last_edited_by: agent_rosetta
 executor_tier: opus       # the pass; P4.4b's build increment stays declared `sonnet`
 supersedes: "the P4.4b half of artifacts/p4_4/ac_amendment_proposal.md (2026-08-24, `accepted`) — AMENDS, does not replace: that document's AC0/V5 (P4.4a) are closed and untouched here"
 tags: [artifact, haussmann, p4_4b, convention_13, ac_amendment, pre_build_gate]
 ---
 
-> **⛩ THIS IS A PROPOSAL, NOT A RULING.** Convention 13's pass, run complete and in both directions
-> before P4.4b builds anything. Every proposed change traces to a numbered finding below.
+> ~~**⛩ THIS IS A PROPOSAL, NOT A RULING.**~~ **⛩ SIGNED 2026-08-26 — THIS IS NOW A RULING.**
+> Convention 13's pass, run complete and in both directions before P4.4b built anything. Every change
+> traces to a numbered finding below. *(Superseded wording struck, not deleted — SO-6.)*
+
+## ⛩ Ratification record (§7.7)
+
+| Field | Value |
+|---|---|
+| **Decision** | P4.4b's amended criteria set is adopted: §5's AC1–AC4 + V1–V4 changes, rulings 2–5, the B2 → **B2a / B2b** split, and the re-ratified budget. **§4 ruled (c)** — build **B2a** now, **hold B2b** until Vitruvius answers ⊳ D-E. |
+| **Ratified by** | Operator (Stanley), at the P4.4b pre-build gate |
+| **Date** | 2026-08-26 |
+| **Status** | `accepted` — P4.4b may build against this set. **B2b may not be built** until the ⊳ D-E answer lands, at which point it re-enters at **its own ⛩ gate**; it does not silently absorb into B2a. |
+
+**Budget re-ratified (SO#11 / ADR-016):** ~~~250–400 kT / 2 sessions~~ → **~280–440 kT / 3 sessions**
+(the ~330–520 band applies only under §4 option (b), which was not taken — B2b's ~50–80 kT leaves the
+band entirely under (c)). The raise is **≈1.3×**: three red-test mutations, the mask discipline, the
+theme control, and the split. **Nothing here adds a feature.**
+
+⚠ **What the signature does NOT close, recorded on the ruling's own face so nobody infers otherwise**
+(§4's closing note): the gate-19 bars **remain un-sourced** (F-e's live residue), and **Perf ≥ 90 is
+LOOSER than WebForge's `content_static` 95** — the direction their `ratchet_law` reserves for an
+operator gate. **AC4 does not close either by hashing anything.**
 
 # P4.4b — AC amendment proposal (pre-build gate, 2026-08-26)
 

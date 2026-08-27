@@ -213,9 +213,19 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 
 **⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
 convention 11. ✅ **`P4.4a` CLOSED 2026-08-24** (AAR filed, SO#5; criteria **AC0 ✅ + V5 ✅**;
-`mission_haussmann_p4_4_ci_hardening.md` stays **`in_progress`** because **P4.4b has not started** and
-one file holds both halves — a `completed` there would claim P4.4b). ⛔⛔ **BUILT, NOT DEPLOYED**, the
-third consecutive mission behind the freeze.
+`mission_haussmann_p4_4_ci_hardening.md` stays **`in_progress`** because ~~**P4.4b has not started**~~
+**P4.4b IS SIGNED AND BUILDING (2026-08-26)** and one file holds both halves — a `completed` there
+would claim P4.4b). ~~⛔⛔ **BUILT, NOT DEPLOYED**, the third consecutive mission behind the freeze.~~
+✅ **DEPLOYED** — the freeze lifted 08-25 and the 08-25 ship carried **P4.1 + P4.2 + P4.4a + P4.3**;
+prod now serves `51af717` (P4.5b, 08-27) `[D]`.
+
+> ⚠ **Both struck claims were TRUE WHEN WRITTEN and neither was ever revisited — this is the campaign's
+> own *index-vs-artifact* class, in the index, corrected same-diff with the mission file under
+> convention 7 / ADR-057** (ruling 4 of the P4.4b signature, FINDING 9). ⭐ **Note which half needed
+> correcting: not the mission file — its `status:` qualifier had already been struck and corrected at
+> the 08-26 gate. The INDEX kept the claim the artifact had moved past**, which is the exact direction
+> this campaign keeps re-finding, and the reason ruling 4 was written as *same-diff* rather than as a
+> follow-up.
 
 ~~⛩ **THE NEXT MISSION IS AN OPERATOR ROUTING CALL, AND IT IS NOT TAKEN HERE (SO#1).** Convention 11's
 ruled order puts **P4.4 → P4.3**, but P4.4's remaining half is **P4.4b, and every one of its criteria
@@ -757,8 +767,26 @@ untouched and still blocked on actors outside the session.
 > nothing here adds a feature; it is three red-test mutations, the mask discipline, the theme control
 > and the split. Contrast P4.4a's **2.4×**, which was real new work.
 >
-> ⏭ **NEXT: ⛩ THE SIGNATURE** on `ac_amendment_proposal_p4_4b.md`, which also carries the **one
-> operator question** (§4). **Until then, no build.**
+> ~~⏭ **NEXT: ⛩ THE SIGNATURE** on `ac_amendment_proposal_p4_4b.md`, which also carries the **one
+> operator question** (§4). **Until then, no build.**~~
+>
+> ⛩⛩ **SIGNED 2026-08-26 — `ac_amendment_proposal_p4_4b.md` is `accepted` and P4.4b IS BUILDING.**
+> Both answers taken at the same gate:
+> - **§4 → (c) SPLIT.** Build **B2a** (the sweep — no external dependency); **HOLD B2b** (budget
+>   provenance) until Vitruvius answers ⊳ D-E. ⭐ **AC4 therefore closes only PARTIALLY in this
+>   increment**, recorded ◐ **OWED** as a **register row, not a sentence** (P4.3's F-v precedent —
+>   *a deferral recorded only in narrative is a deferral with no gate*). If the reply lands
+>   mid-increment, **B2b re-enters at its own ⛩ gate**; it does not silently absorb into B2a.
+> - **Rulings 2–5, the §5 criteria changes, and the budget: signed as proposed.** AC1 gains mask
+>   enumeration + pinned arithmetic + a **theme control**; AC2 gains ***emits*, not merely shipped**;
+>   AC3's co-run prohibition is **enforced** by `gates.yml:32`'s existing `concurrency:` group; AC4's
+>   interim clause is **re-keyed** off the withdrawn mirror; **V1–V4 are now labelled `[asserts AC-n]`**
+>   and V2 gains the **provenance mutation** — *a bar edited by hand goes red* — which is the test
+>   DEFECT-4 always needed and never had.
+> - **Budget ⛩ re-ratified: ~250–400 kT / 2 sessions → ~280–440 kT / 3** (B2b's ~50–80 kT leaves the
+>   band under (c)). ≈1.3×, and **nothing in it adds a feature**.
+>
+> ⏭ **NEXT: `B0`** — the visual-regression lane. **No deploy is in scope**; P4.4b is met on-build.
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is
