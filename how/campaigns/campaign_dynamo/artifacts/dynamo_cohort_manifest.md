@@ -4,7 +4,7 @@ artifact_class: cohort_manifest
 created: 2026-08-26
 updated: 2026-08-26
 status: active
-status_note: "⛩ GATE 1 RATIFIED 2026-08-26 (operator, in-chat inline ruling table): DP-1 A · DP-2 B (pre-ruled) · DP-3 A · DP-4 B (pre-ruled) · DP-5 A · R1 held open (#needs-human, non-blocking) · R2 read-quarry allowed · R3 as proposed · R4 inline. Dispositions below are executable."
+status_note: "⛩ GATE 1 RATIFIED 2026-08-26 (operator, in-chat inline ruling table): DP-1 A · DP-2 B (pre-ruled) · DP-3 A · DP-4 B (pre-ruled) · DP-5 A · R1 held open (#needs-human, non-blocking) · R2 read-quarry allowed · R3 as proposed · R4 inline. ⛩ GATE 2 RATIFIED same day: all four genesis campaigns approved as authored; ROUTER COHORT ROW INSERTED under the gate's authority (Home.aDNA commit e751c12; the four per-graph staged memos flipped satisfied). P2/P3 executed — see the Seed register. AAR: ../aar_operation_dynamo_20260826.md."
 campaign_id: campaign_dynamo
 campaign_phase: 1
 last_edited_by: agent_rosetta
