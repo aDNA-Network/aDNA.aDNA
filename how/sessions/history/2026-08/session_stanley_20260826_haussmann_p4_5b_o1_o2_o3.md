@@ -4,18 +4,18 @@ session_id: session_stanley_20260826_haussmann_p4_5b_o1_o2
 tier: 1
 created: 2026-08-26
 updated: 2026-08-26
-status: active
+status: completed
 owner: stanley
 persona: rosetta
 campaign: campaign_haussmann
 mission: mission_haussmann_p4_5_voice_rewrite
 increment: P4.5b
-objective: "pre-flight · O1 · O2"
+objective: "pre-flight · O1 · O2 · O3 (mission close)"
 executor_tier: opus   # as amended and signed; the mission's frontmatter still declares `fable` for the increment overall
 token_budget_estimated: "~280–400 kT across 2–3 sessions for all of P4.5b (amended + signed 2026-08-26)"
-token_budget_actual:
+token_budget_actual: "≈390–470 kT for all of P4.5b across 3 sessions (content load, rough per SO#11) vs ~280–400 kT ratified — at/just over the band top, inside the 2× trigger. This session ≈170–210 kT."
 last_edited_by: agent_rosetta
-tags: [session, haussmann, p4_5b, voice, o1, o2, copy_rewrite]
+tags: [session, haussmann, p4_5b, voice, o1, o2, o3, copy_rewrite, mission_close]
 ---
 
 # Session — HAUSSMANN P4.5b pre-flight + O1 + O2
@@ -147,3 +147,129 @@ three Vitruvius memos.
 > cold-read re-test and ranker, then ⛩ push and ⛩ deploy as **separate** GOs, push first. Close with
 > the AAR (SO#5). **O4** — deliver the three staged Vitruvius memos, operator-GO'd 2026-08-25,
 > showing each before it goes. Build with `npx astro build`, never `npm run build`.
+
+---
+
+# O3 — the evidence half, and the mission close (2026-08-27)
+
+✅ **P4.5b CLOSED, and the whole `P4.5` mission with it.** Commits `78f6bbe` · `51af717`.
+**DEPLOYED** — `deploy_record: 2026-08-27T01:31:40Z mode=prod tree=51af717`, headers 4/4 by value,
+alias re-probed **8 of 8 shipped surfaces present**.
+
+## Result
+
+Suite **633/633** derived (628 → 633: `gate-48` **+5**, plus one previously-skipped test now running
+because `inject_redirects` was run per convention 6) · `html-validate` **0** · `gitleaks` **938
+commits, no leaks** · unpushed **0** · `reading_census --selftest` **18/18** ·
+`glossary_first_use --selftest` **16/16** · `reading_glossary_redtest.sh` **7/7**.
+
+**AC-a ✅ AC-b ✅ AC-c ✅ AC-d ✅ AC-e ✅ · V1 ✅ V2 ✅ V3 ✅ V5 ✅ · ⚠ V4 PARTIAL** (4 of 5 ranker
+surfaces ≥ 4.0; `/commons` **3.77**, recorded as a fail and routed to D-8, not rounded).
+
+Reading census, prose-only canonical, unchanged on every first-contact surface after O3's edits —
+because the three first-use links were added by **wrapping existing words**, adding none:
+
+| route | prose | target |
+|---|---|---|
+| `/` | **9.96** | 10 — clears by **0.04** |
+| `/community` | **9.28** | 10 |
+| `/get-started` | **7.89** | 10 |
+| `/learn/what-is-adna` | **7.11** | 10 |
+
+**1 of 21 over target**: `/reference/specification` at 12.69, whose **intro measures 11.49**, which
+is what AC-b names. Glossary first-use **5 of 6 unlinked → 0 of 6**.
+
+## Findings
+
+**F17 — Measuring the criterion before building the gate for it changed the gate completely.**
+AC-b's glossary limb read literally (all 25 terms × all 21 routes) reports **79 unlinked mentions**,
+top offenders `/glossary` (20) and `/reference/specification` (19) — the definition home itself and
+the ratified spec mirror. **A 97 % violation rate is the signature of a rule measuring the wrong
+thing, not of a site that is 97 % broken.** Scoped to where the one-new-term law binds it reports
+**6 mentions, 5 real defects**. ⚠ An earlier draft's *one* finding was a **false positive** —
+*"you explain the project again at the start of each session"* is not the aDNA `session` entity.
+**A gate whose only finding is wrong is worse than no gate.**
+
+**F18 — Two of the five defects were not copy defects, and the copy had been right all along.**
+The twin emitter converted `<strong>` before `<a>` and flattened with `stripInline`, so
+`<strong><a href>Triad</a></strong>` emitted `**Triad**` with the href discarded. Measured on
+`/learn/what-is-adna`: **8 glossary links in the HTML, 6 in the twin.** ⇒ **the machine surface was
+lying about correct copy**, on the artefact P3.1 built to be machine-readable. Recovered across 223
+twins: **3 links, 2 of them glossary** — small, targeted, no collateral change.
+
+⭐⭐ **F19 — And fixing that made a second instrument worse, in the one direction that matters.**
+Recovering a link pushed a fifty-word prose bullet over the census's `multi-link` predicate
+(`links >= 2`) and **out of the reading corpus**. Site-wide: **90 lines carry ≥ 2 links and 30 of
+them are punctuated paragraphs** — most of the glossary's definitions, and `/get-started`'s closing
+paragraph. ⇒ **the corpus shrank every time the copy became more reachable, so the metric would
+quietly have rewarded leaving terms unlinked. An instrument that degrades as its subject improves is
+measuring against the wrong axis.** Repaired with the block guard's **already-ratified** invariant
+(*prose is punctuated*), explicitly **not** a fourth formulation; self-test **14/14 → 18/18** with
+fixtures both ways. `/how` and `/learn` gained enough recovered prose to clear the thin-prose
+threshold.
+
+⚠ **F20 — The post-deploy probe for this mission breached this mission's own amendment.** It grepped
+**HTML** for *"AI persona"* and reported the homepage disclosure **ABSENT**. It is live — Astro split
+`AI` and `persona` across a source line break. **Convention 17's amendment, authored at this
+increment's O1 pre-flight, breached three commits later by the desk that wrote it.**
+
+⚠ **F21 — A second wrong instrument, caught only because its number was impossible.** A health-term
+census reported **HIPAA in 224 of 223 twins**, because `grep -lic` prints `file:0` for *every* file
+and `wc -l` counted them all. Honest counts: **HIPAA 1 · GDPR 1 (both `/changelog`) · PHI, IRB,
+de-identification 0** — R-124's deferral standing exactly where it was left.
+
+⭐ **F22 — The ranker's separate-scoring rule caught a real failure for the first time.** `/commons`
+**3.77**; the pooled mean of the five is **4.13** and clears the gate. Recorded as a fail. The cause
+is not wording — Actionability 3.0 is gated by aDNALabs **ADR-025** and the counsel embargo, so
+raising it would mean **inviting an action that does not exist**, a claim moving *up*.
+
+⭐ **F23 — The homepage's lyric line was not cut; it MOVED.** An earlier draft of the cold-read
+re-test asserted *"co-created by everyone before us"* was gone from the page. `grep -c` on the twin
+returns **1**: it now sits at **line 40 of 183**, below the definition and the counters. **That is
+the voice guide's transition rule visible in the measurement** — *plain before lyric; move them,
+do not cut them.*
+
+## Files touched
+
+**Instrument** — `site/scripts/glossary_first_use.mjs` (new) · `site/scripts/emit_bespoke_twins.mjs`
+(`linkify`) · `site/scripts/reading_census.mjs` (`multi-link` predicate + 4 fixtures)
+**Gate** — `site/tests/gates/gate-48-reading-glossary.spec.ts` (new) ·
+`site/scripts/reading_glossary_redtest.sh` (new) · `.github/workflows/gates.yml` (non-blocking step)
+**Copy** — `src/data/home.ts` · `src/pages/index.astro` · `src/pages/get-started.astro` ·
+`src/pages/design-system.astro` (the published `#voice` section + TOC)
+**Record** — `doctrine_site_voice.md` (`accepted` + `published_at`) · `dual_audience_records.md` ·
+`ranker_record.md` + `ranker_derive.mjs` · `coldread_SYNTHETIC_clinician_researcher_p4_5b.md` ·
+mission file (O3 record + mission AAR) · campaign `CLAUDE.md` · `STATE.md`
+
+## SITREP
+
+**Completed** — O3 in full; **P4.5b and the P4.5 mission closed with the mission AAR (SO#5)**;
+pushed; deployed; alias re-probed.
+
+**In progress** — none.
+
+**Next up** — ⛩ **O4**: deliver the three staged Vitruvius memos (operator-GO'd 08-25, each shown
+before sending) — *not* an acceptance criterion, which is why the close did not wait on it. Then
+**P5.1** (human evidence), whose G-11 precondition is now genuinely met.
+
+**Blockers** — none.
+
+**Not touched, deliberately** — P4.4b · P3.3 O2 (⛩ needs an interactive `npm login`) · P2.6 O0b ·
+F-v · `site/public/**` (lemur's lane) · R-124 (needs an audience decision, not copy).
+
+## Next Session Prompt
+
+> You are Rosetta in `~/aDNA/aDNA.aDNA`. **P4.5 is `completed` and deployed** (`tree=51af717`);
+> P4.5b's AAR is filed. Two things are open. **(1) O4** — deliver the three staged Vitruvius memos
+> (`registry_tier_pattern_owed_back` 08-19 · `craft_floor_consumer_surface` 08-24 · the profiles ask
+> 08-24), operator-GO'd 2026-08-25, **each shown before sending**; per convention 15 verify each
+> still states its pin's supersession condition and gives the artifact path **from Vitruvius's
+> root**. **(2) P5.1** (human evidence) is next in convention 11's order — its `depends_on` are
+> satisfiable now and **G-11's hard precondition is genuinely met**, but ⛩ **re-read
+> `/.well-known/adna-build.json` at the open rather than quoting `51af717` forward**: this session
+> found the alias serving `4b43c63` when the handoff said `6675442`. Open follow-ups: `/commons`
+> Actionability (3.77) is re-scorable at D-8 · **R-124 needs an audience decision, not copy** · the
+> published `/design-system#voice` section and `doctrine_site_voice.md` are kept in step **by hand**.
+> Build with `npx astro build`, then `inject_redirects.mjs .` and `inject_negotiation.mjs .`; run
+> gates with `GATE_PORT=<n>`. Trust no number from `reading_census.mjs` until `--selftest` reports
+> **18/18**, nor from `glossary_first_use.mjs` until **16/16**.

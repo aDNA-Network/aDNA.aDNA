@@ -348,8 +348,68 @@ untouched and still blocked on actors outside the session.
 > ✅ **DONE 2026-08-25 — pushed, then deployed.** Prod serves `6675442`; `install.sh` is at **0.4.17**,
 > so **both writers' work is live at once** and F-s is discharged, not fenced.
 
-> ⏸ **`P4.5b` IS OPEN AND HALTED AT ITS ⛩ PRE-BUILD GATE (2026-08-25) — nothing built, budget NOT
-> re-ratified.** ⛩ **Routing call taken at the session open: P4.5b, not P5.1.** A `MEMORY.md` handoff
+> ✅ **`P4.5b` IS CLOSED, AND THE WHOLE `P4.5` MISSION WITH IT — 2026-08-27, DEPLOYED**
+> (`mission_haussmann_p4_5_voice_rewrite.md`, **`completed`**, AAR filed per SO#5).
+> `deploy_record: 2026-08-27T01:31:40Z mode=prod tree=51af717`; alias re-probed, **8 of 8 shipped
+> surfaces present**; `install.sh` still serves lemur's **0.4.19** and `/repo/arch/adna.db` is 200,
+> so **both writers' work is live simultaneously** and F-s stays discharged. Suite **633/633**
+> derived (628 → 633: `gate-48` **+5**, plus one previously-skipped test now running because
+> `inject_redirects` was run per convention 6) · `html-validate` **0** · `gitleaks` **938 commits,
+> no leaks** · unpushed **0**.
+>
+> **AC-a ✅ AC-b ✅ AC-c ✅ AC-d ✅ AC-e ✅ · V1 ✅ V2 ✅ V3 ✅ V5 ✅ · ⚠ V4 PARTIAL.** The voice guide is
+> `accepted` and **published** at `/design-system#voice` — its publication limb was re-read from
+> *"named as owed"* to **required** once the freeze lifted, which is the *criterion amended around a
+> temporary condition* class closing in the healthy direction for once.
+>
+> ⛔ **V4 IS PARTIAL AND IS RECORDED AS SUCH: `/commons` scores 3.77 against a 4.0 gate.** The pooled
+> mean of the five ranked surfaces is **4.13** and clears it — ⭐ **which is precisely why P4.1 ruled
+> surfaces are scored separately and never averaged, and this is the first time that rule caught a
+> real failure rather than a hypothetical one.** Neither weak dimension is a copy defect:
+> Actionability 3.0 is gated by aDNALabs **ADR-025** (human-only until federation GA) and the counsel
+> embargo, so raising it would mean **inviting an action that does not exist** — a claim moving *up*,
+> which convention 1 forbids. ⇒ **routed to D-8 / federation GA, not fixed.**
+>
+> ⭐⭐ **THE GATE'S SHAPE WAS THE FINDING, AND MEASURING FIRST IS WHAT PRODUCED IT.** AC-b's glossary
+> limb read literally — all 25 glossary terms across all 21 rewritten routes — reports **79 unlinked
+> mentions**, top offenders `/glossary` (20) and `/reference/specification` (19): **the definition
+> home itself, and the ratified spec mirror.** A 97 % violation rate is the signature of a rule
+> measuring the wrong thing, not of a site that is 97 % broken. Scoped to where the one-new-term law
+> actually binds — the four first-contact surfaces, and the 20 terms a literal match can decide — it
+> reports **6 mentions and 5 real defects**, all cheap. ⚠ An earlier draft's *one* finding was a
+> **false positive** (*"at the start of each session"* is not the aDNA `session` entity), and **a gate
+> whose only finding is wrong is worse than no gate.** Every exclusion is named on `gate-48`'s face
+> (V5) and **G48d pins the arithmetic**, because moving an inconvenient term into the ambiguous list
+> is the cheapest possible way to fake it green.
+>
+> ⭐⭐ **TWO OF THE FIVE DEFECTS WERE NOT COPY DEFECTS — AND FIXING ONE MADE A SECOND INSTRUMENT
+> WORSE.** The twin emitter converted `<strong>` before `<a>` and flattened the content, so
+> `<strong><a href>Triad</a></strong>` emitted `**Triad**` with the href discarded: **8 glossary links
+> in the HTML of `/learn/what-is-adna`, 6 in its twin.** The copy was already right; **the machine
+> surface was lying about it**, which is this campaign's *content that exists below the point of
+> confusion* shape arriving in an emitter instead of a sentence. Recovering the links then pushed a
+> fifty-word prose bullet over the census's `multi-link` threshold and **out of the reading corpus** —
+> measured site-wide, **90 lines carry ≥ 2 links and 30 of them are punctuated paragraphs**, mostly
+> the glossary's own definitions. ⇒ **the corpus shrank every time the copy became more reachable, so
+> the instrument would quietly have rewarded leaving terms unlinked. An instrument that degrades as
+> its subject improves is measuring against the wrong axis.** Repaired with the block guard's
+> already-ratified invariant (*prose is punctuated*), not a fourth formulation; self-test **14/14 →
+> 18/18**, both directions.
+>
+> ⚠ **AND THE POST-DEPLOY PROBE FOR THIS MISSION BREACHED THIS MISSION'S OWN AMENDMENT.** It grepped
+> **HTML** for *"AI persona"* and reported the homepage disclosure **ABSENT**. It is live — Astro
+> split `AI` and `persona` across a source line break, so the literal match fails on HTML and succeeds
+> on the twin. **That is convention 17's amendment, authored at this increment's O1 pre-flight,
+> breached three commits later by the desk that wrote it.** Knowing a rule and applying it while
+> wearing a different hat are separate acts.
+>
+> ⛩ **Still queued: O4** — delivery of the three staged Vitruvius memos, operator-GO'd 2026-08-25,
+> each to be shown before sending. **Not an acceptance criterion of this mission**, which is why the
+> close does not wait on it.
+>
+> ~~⏸ **`P4.5b` IS OPEN AND HALTED AT ITS ⛩ PRE-BUILD GATE (2026-08-25) — nothing built, budget NOT
+> re-ratified.**~~ *(superseded above; the reasoning below is retained because it is the reusable
+> part.)* ⛩ **Routing call taken at the session open: P4.5b, not P5.1.** A `MEMORY.md` handoff
 > read *"NEXT = P5.1"*; that is the **precondition** sense — G-11 went green when the freeze lifted — and
 > **not the order**. Convention 11 rules `… → P4.4 → P4.3 → **P4.5b** → P5.1 → P5.2`, **P5.1's own
 > `depends_on` names P4.5 and P4.4 (both `in_progress`)**, and P4.5b rewrites the exact surfaces P5.1's
@@ -428,11 +488,21 @@ untouched and still blocked on actors outside the session.
 > ⚠ **Executor tier declared at the OPEN rather than discovered at the AAR**: the mission says `fable`;
 > this session ran **`opus`**. P4.1's AAR — *a declared tier nobody honours is worse than none.*
 >
-> ⛩ **HALT. Two documents need a signature before O1 rewrites one sentence:**
-> `what/doctrine/doctrine_site_voice.md` (**`proposed`**) and the amendment (**5 ACs**, AC-e new, V2
-> amended, V5 added, **~280–400 kT / 2–3 sessions**). ⛩ Also queued **behind** the gate: **O4**, delivery
-> of the **three** staged Vitruvius memos — operator-GO'd at this session's open, reversing the 08-24
-> ruling, **each to be shown before sending**.
+> ~~⛩ **HALT. Two documents need a signature before O1 rewrites one sentence:**~~ ✅ **BOTH SIGNED
+> 2026-08-26** — `what/doctrine/doctrine_site_voice.md` (now **`accepted`** and published) and the
+> amendment (**5 ACs**, AC-e new, V2 amended, V5 added, **~280–400 kT / 2–3 sessions**), which was
+> then **corrected in place the same day** at the O1 pre-flight, strike-not-delete: the metric is
+> **prose-only**, and AC-c's live scope is **8, not 7**. The signature stood because only the factual
+> basis moved and the band did not.
+>
+> ⏭ **NEXT: `P5.1`** (human evidence). Its two `depends_on` are now satisfiable — **P4.5 is
+> `completed`** and P4.4 stays `in_progress` for **P4.4b** alone. ⭐ **G-11's hard precondition is
+> genuinely met for the first time**: the freeze is lifted, the backlog is deployed, and
+> `/.well-known/adna-build.json` serves a real stamp (**`51af717`**), so every criterion can record
+> the commit the participant actually saw. ⚠ **Re-read that stamp at P5.1's open rather than quoting
+> `51af717` forward** — this session found the alias serving `4b43c63` when the handoff said
+> `6675442`, which is convention 16 exactly: *a verification with no recurrence is a claim about the
+> past wearing the grammar of the present.*
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is

@@ -6,13 +6,13 @@ campaign: campaign_haussmann
 phase: P4
 decade: 2
 owner: stanley
-status: in_progress   # ⛩ DP6 RATIFIED 2026-08-19 — activated AND SPLIT by ⊳ D-A. P4.5a = the early copy increment (R-111 · R-120 · R-121 · R-125 [the ⊳ D-C hero cut, registered 2026-08-20]; R-124 DEFERRED OUT at execution per its own escape hatch), which runs FIRST IN DECADE 2, ahead of P3.5. P4.5b = the full voice rewrite, still LAST. One mission, two increments — mission_count stays 27. P4.5a COMPLETE 2026-08-20 (6/6 acceptance criteria; shipped tree=bb00464, pushed a8cc707..e4f0d65). Set in_progress 2026-08-20 when P4.5a opened; it CANNOT reach `completed` until P4.5b also closes with its AAR (SO#5).
+status: completed   # ✅ CLOSED 2026-08-27 — BOTH increments done and the mission AAR filed (SO#5). P4.5a complete 2026-08-20; P4.5b complete + DEPLOYED 2026-08-27 (tree=51af717). AC-a/b/c/d/e all met; V1/V2/V3/V5 met; ⚠ V4 PARTIAL — 4 of 5 ranker surfaces ≥4.0, /commons at 3.77, recorded as a fail and routed to D-8 rather than rounded (its weak dimensions are gated by aDNALabs ADR-025 + the counsel embargo, not by wording). Read the V4 row before citing this `completed` as unqualified. ⛩ DP6 RATIFIED 2026-08-19 — activated AND SPLIT by ⊳ D-A. P4.5a = the early copy increment (R-111 · R-120 · R-121 · R-125 [the ⊳ D-C hero cut, registered 2026-08-20]; R-124 DEFERRED OUT at execution per its own escape hatch), which runs FIRST IN DECADE 2, ahead of P3.5. P4.5b = the full voice rewrite, still LAST. One mission, two increments — mission_count stays 27. P4.5a COMPLETE 2026-08-20 (6/6 acceptance criteria; shipped tree=bb00464, pushed a8cc707..e4f0d65). Set in_progress 2026-08-20 when P4.5a opened; it CANNOT reach `completed` until P4.5b also closes with its AAR (SO#5).
 mission_class: design_excellence
 executor_tier: fable
 token_budget_estimated: "~320–490 kT total across 3 sessions, SPLIT into two increments at ⛩ DP6 2026-08-19. P4.5a ~120–170 kT in 1 session: the copy rows (R-111 · R-120 · R-121 + the ⊳ D-C hero cut) each gate-anchored and red-proven per the same-diff law, PLUS two items the ratified figure could not know about — registering R-125 (the hero finding had no register row) and authoring this increment's own spec (P4.5a had none; the body below was 100% P4.5b). P4.5b ~200–320 kT across 2 sessions: voice guide + corpus rewrite passes (top surfaces first) + glossary-linking + reading-level gates + dual-audience reviews. REVISION HISTORY, so no figure is quoted forward blind: unsplit ~250–400 kT → split at DP6 to P4.5a ~70–110 + P4.5b ~200–320 = ~270–430 → P4.5a raised to ~120–170 at execution 2026-08-20 on discovered scope (ADR-016/SO#11: a budget that no longer matches its scope is a drifted number). The overrun against the ratified ~70–110 is STATED, not absorbed, and is reported estimate-vs-actual in the AAR."
-token_budget_actual: "P4.5a ≈195 kT (content load, rough per SO#11) — vs ~120–170 revised in-field and ~70–110 ratified at DP6. ~1.8× the ratified figure, inside SO#11's 2× retrospective trigger. The delta is O-A (registering R-125 + re-deriving the register) + O-B (authoring the spec that did not exist) + R-126, none of which the ratified figure covered. P4.5b unstarted."
+token_budget_actual: "MISSION ≈585–665 kT. P4.5b ≈390–470 kT across 3 sessions vs ~280–400 kT ratified 2026-08-26 — at/just over the band top, inside SO#11's 2× trigger; the overrun is O3's two instrument repairs + the measure-before-building pass, discovered work not scope drift. ⚠ executor_tier declared opus for O0–O1 / fable after; O2 AND O3 both ran opus, stated not absorbed. // P4.5a ≈195 kT (content load, rough per SO#11) — vs ~120–170 revised in-field and ~70–110 ratified at DP6. ~1.8× the ratified figure, inside SO#11's 2× retrospective trigger. The delta is O-A (registering R-125 + re-deriving the register) + O-B (authoring the spec that did not exist) + R-126, none of which the ratified figure covered. P4.5b unstarted."
 created: 2026-08-16
-updated: 2026-08-25   # 2026-08-25 ⏸ **P4.5b OPENED AND IS HALTED AT ITS ⛩ PRE-BUILD GATE — nothing built, budget NOT re-ratified.** Convention 13 ran **COMPLETE at 22/22 with coverage recorded** (16 AC×V + 6 AC×AC) → `artifacts/p4_5b/ac_amendment_proposal.md`, **`proposed`**: **3 failures · 2 structural gaps · 1 stale amendment · 4 premise corrections**; 5 ACs proposed (AC-e new), V2 amended, V5 added, budget **~280–400 kT / 2–3 sessions**. ⭐⭐ **The pass was run in BOTH directions and only the reverse found the worst defect: AC-a is covered by ZERO verification limb** — all four V limbs measure rendered pages, AC-a's deliverable is a governance document, and **nothing binds the rewrite to the guide**; P4.1's structural gap inverted. ⭐⭐ **G-10 MEASURED: agent-authorship disclosure is NOT absent, it is MISPLACED** — 41 pages name a persona, **4** disclose, and the one saying *"tended by"* without disclosing is **`/`** (surface `dist/**/*.html`, tree `6675442`); the AC's own caution about its 3-phrase source grep was right — **third instance of a negative result narrower than its conclusion**. ⭐⭐ **The clinician list has the SAME shape twice**: *"ancient DNA"* is addressed on 4 deep pages and **none of `/`, `/learn`, `/get-started`, `/about`** ⇒ two items are **content in the wrong place**, both converging on the homepage — which is also the worst first-contact measurement (**13.90** vs target 10). **Three independent instruments point at one page.** ⭐ **The charter's FKGL figure cannot serve as the *before*** (scratchpad corpus **verified absent**, ~11 missions stale, **`/` never measured**) → re-baselined over P3.1's **`.md` twins**, `evidence/sweep/reading_level_p4_5b_baseline.md`; the 08-16 file annotated **superseded, retained** (SO-6). ⭐ **Top-20 DERIVED — exactly 20 routes are linked from every page (226), then a cliff to 141 — and it contradicts AC-b, which names `/learn/what-is-adna` at rank 21**; operative scope **21 = top-20 ∪ the four named**. ⭐ **Fourth consecutive re-probe shrinking scope**: `/get-started` **9.69, already meets AC-b**; **3 of the clinician's 10 items are dead**; live scope **7**, of which **C8 is 75 pages from ONE component line**. ⚠ **AC-a's freeze amendment is STALE UPWARD** — the freeze lifted 08-25, so publication becomes required, not owed (**G-5's inverse: a criterion that now under-claims**). ⚠ `/vaults` reads **40.96** as a list-shape artifact (3 of 223 twins) → `gate-48` shape guard. ⚠ Tier divergence declared at the OPEN: mission says `fable`, this session ran **`opus`**. ⛩ **HALT until the operator signs the guide + the amendment.** Authored: `what/doctrine/doctrine_site_voice.md` (`proposed`).
+updated: 2026-08-27   # ✅ MISSION CLOSED. P4.5b O1+O2 (3c50f8c · b4e22c8 · 00adddd) and O3 (78f6bbe · 51af717) complete; DEPLOYED 2026-08-27T01:31:40Z tree=51af717, alias re-probed 8/8 surfaces present. Suite 633/633 derived · html-validate 0 · gitleaks 938 commits no leaks · unpushed 0. Voice guide PUBLISHED at /design-system#voice (AC-a's publication limb was re-read from "owed" to REQUIRED when the freeze lifted). gate-48 red-proven 7/7. ⚠ V4 partial — /commons 3.77, routed to D-8.
 last_edited_by: agent_rosetta
 grounded_in: ["P4.5a — claim_register.md §8.1 R-111, §8.5 R-120/R-121, §9.1 R-125, §9.3 R-124 deferral, §9.7 R-111 narrowing", "P4.5a — p2_replan.md ⊳ D-A (:243-267) + ⊳ D-C (:280-291) + §2 scope block (:195-217)", "P4.5b — H10 quantified (FKGL 12–17.9 ×6)", "P4.5b — Berthier standing finding (3 campaigns; 'a writing problem wearing a design problem's clothes'; sequence LAST)", "P4.5b — clinician jargon list (verbatim)", "P4.5b — anti-pattern 7.6 (one new term/paragraph)", "P4.5b — skill_dual_audience_review", "P4.5b — ADR-048 voice seed"]
 vitruvius_dimensions: [D6, D1, D7]
@@ -296,7 +296,102 @@ increment — `opus` for O0–O1 (judgment), `fable` for O2's remainder.
 [[ac_amendment_proposal]] (`artifacts/p4_5b/`, **`proposed`**) · [[reading_level_p4_5b_baseline]]
 (`evidence/sweep/`) · the 08-16 baseline annotated **superseded, retained** (SO-6).
 
-⛩ **HALT — O0d's gate. The operator signs the voice guide AND the AC amendment before O1 rewrites a
-single sentence.** `human_gate: true` on this mission is scoped to exactly this. **Queued behind the
-gate:** O4 — delivery of the three staged Vitruvius memos, ⛩ GO'd at the session open, to be shown
-before sending.
+~~⛩ **HALT — O0d's gate. The operator signs the voice guide AND the AC amendment before O1 rewrites
+a single sentence.**~~ ✅ **SIGNED 2026-08-26.** `human_gate: true` is discharged; the amendment is
+`accepted`, and the guide reached `accepted` at O3 on publication.
+
+### ✅ O1 + O2 — COMPLETE 2026-08-26 (`3c50f8c` · `b4e22c8` · `00adddd`)
+
+All four first-contact surfaces under the ≤ 10 target on the prose-only metric (`/` **13.90 →
+9.96** · `/community` **12.11 → 9.28** · `/learn/what-is-adna` **13.90 → 7.11** · `/get-started`
+**7.89**, already passing). Clinician list closed. Findings F10–F16 in the session record; the
+reusable ones are carried into the AAR below.
+
+### ✅ O3 — COMPLETE 2026-08-27 (`78f6bbe` · `51af717`), DEPLOYED
+
+`deploy_record: 2026-08-27T01:31:40Z mode=prod tree=51af717` — headers **4/4 by value**; alias
+re-probed, **8 of 8 shipped surfaces present**. Suite **633/633** derived (628 → 633: `gate-48`
+**+5**, plus one previously-skipped test now running because `inject_redirects` was run per
+convention 6). `html-validate` **0** · `gitleaks` **938 commits, no leaks** · unpushed **0**.
+
+| Criterion | Result |
+|---|---|
+| **AC-a** | ✅ Guide in tree **and published** at `/design-system#voice` with a TOC entry, live on the alias. `status: accepted`. |
+| **AC-b** | ✅ 21 routes measured; **1 over target** — `/reference/specification` at 12.69, whose **intro measures 11.49**, which is what AC-b names. Glossary limb **0 of 6 first uses unlinked**. |
+| **AC-c** | ✅ 8 live items resolved; the 2 dead recorded with the mission that killed them. |
+| **AC-d** | ✅ Non-blocking CI step in `gates.yml` + [[dual_audience_records]] (9 surfaces × 8 checklist items, each with its evidence sentence). |
+| **AC-e** | ✅ Register named with its path; disclosure **30 characters after** the homepage's first *"tended by"* — the same sentence — verified on the twin. |
+| **V1** | ✅ Deltas against the O0 baseline. |
+| **V2** | ✅ Records **cite the guide rule** each decision applied — the only thing binding the rewrite to the guide. |
+| **V3** | ✅ Cold-read re-test: 8/8 resolved; IT-committee confidence **3/10 → 5/10**. |
+| **V4** | ⚠ **PARTIAL — 4 of 5 surfaces ≥ 4.0; `/commons` scores 3.77.** See below. |
+| **V5** | ✅ `gate-48` red-proven **7/7** (5 mutations + 2 controls). |
+
+⛔ **V4 IS RECORDED AS PARTIAL RATHER THAN ROUNDED, AND THE FAILING SURFACE IS THE POINT.**
+`/commons` scores **3.77** on Actionability 3.0 / Relevance 3.4. The pooled mean of the five is
+**4.13** and clears the gate — which is exactly why P4.1 ruled that surfaces are scored separately
+and never averaged; here that rule stopped being hypothetical. **Neither weak dimension is a copy
+defect:** the action the page describes is gated by aDNALabs **ADR-025** (human-only until
+federation GA) and the counsel embargo, so raising Actionability would mean **inviting an action
+that does not exist** — a claim moving *up*, which convention 1 forbids. ⇒ **Routed to D-8 /
+federation GA, not fixed.** A 3.77 is a truer number than a 4.0 bought with a promise.
+
+**Authored at O3:** `gate-48` · `glossary_first_use.mjs` · `reading_glossary_redtest.sh` ·
+[[dual_audience_records]] · [[ranker_record]] + `ranker_derive.mjs` ·
+[[coldread_SYNTHETIC_clinician_researcher_p4_5b]] · the published `#voice` section.
+
+## AAR (SO#5) — the MISSION
+
+**Worked.** *Measuring the criterion before building the gate for it.* AC-b's glossary limb, read
+literally over all 25 terms and all 21 routes, reports **79 unlinked mentions** — and the top two
+offenders are `/glossary` (20) and `/reference/specification` (19): the definition home itself, and
+the ratified spec mirror. **A 97 % violation rate is the signature of a rule measuring the wrong
+thing, not of a site that is 97 % broken.** Scoped to where the one-new-term law actually binds, it
+reported 6 mentions and 5 real defects, all cheap to fix. The measurement cost minutes and changed
+the gate's shape completely; building first would have produced a gate nobody could have made green.
+
+**Didn't.** *The verification probe for this mission repeated the exact defect this mission
+authored.* The post-deploy sweep grepped the **HTML** for *"AI persona"* and reported the homepage
+disclosure **ABSENT**. It is live — Astro split `AI` and `persona` across a source line break, so a
+literal match fails on HTML and succeeds on the twin. **That is convention 17's amendment, written
+at this increment's own O1 pre-flight** (*the surface must match the claim's own verb; a
+reader-facing claim is a question about flattened text*), breached three commits later by the desk
+that wrote it. **Knowing a rule and applying it while wearing a different hat are separate acts.**
+
+**Finding.** ⭐⭐ **Two of the five glossary defects were not copy defects at all — and fixing one
+made a second instrument worse.** The twin emitter converted `<strong>` before `<a>` and flattened
+the content, so `<strong><a href>Triad</a></strong>` emitted `**Triad**` with the href discarded:
+**8 glossary links in the HTML of `/learn/what-is-adna`, 6 in its twin.** The copy was right and the
+machine surface was lying about it. Recovering those links then pushed a fifty-word prose bullet
+over the census's `multi-link` threshold and **out of the reading corpus** — a measurement that
+shrank every time the copy became more reachable, i.e. **an instrument that would quietly have
+rewarded leaving terms unlinked.** Measured site-wide: 90 lines carry ≥ 2 links and **30 of them are
+punctuated paragraphs**, mostly the glossary's own definitions. ⇒ **An instrument that degrades as
+its subject improves is measuring against the wrong axis** — and it surfaced only because the fix
+and the metric were exercised in the same sitting.
+
+**Change.** Three, all landed. `linkify()` is now a named step called inside the strong/em handlers,
+so **both** nesting directions survive. The census's `multi-link` predicate runs the block guard's
+already-ratified invariant — *prose is punctuated* — instead of a bare link count; self-test
+**14/14 → 18/18** with fixtures in both directions, and `/how` + `/learn` gained enough recovered
+prose to clear the thin-prose threshold. And `gate-48`'s **G48d pins the exclusion arithmetic**,
+because quietly moving an inconvenient term into the ambiguous list is the cheapest possible way to
+fake this gate green — which is why that is the red-test case that matters most.
+
+**Follow-up.** (1) **`/commons` Actionability is re-scorable at D-8 / federation GA** — routed
+above, not fixed. (2) **R-124 remains deferred**: HIPAA and GDPR appear in **1 twin each** (both
+`/changelog`), PHI / IRB / de-identification in none, and the clinician's IT-committee confidence is
+held at 5/10 by that gap alone. It needs an audience decision, not copy. (3) The published `#voice`
+section and `doctrine_site_voice.md` are **kept in step by hand** — no gate asserts they agree; a
+stated gap, not an oversight. (4) **`/` clears its target by 0.04** (9.96 against 10), so any future
+prose there spends a margin the page does not have.
+
+**Budget.** P4.5b estimated **~280–400 kT / 2–3 sessions** (ratified 2026-08-26 at the amended
+gate). Actual **≈390–470 kT across 3 sessions** by content load, rough per SO#11 — at or slightly
+above the top of the band, **inside SO#11's 2× retrospective trigger**. The overrun sits in O3 and
+is the two instrument repairs plus the measure-before-building pass; both were discovered work
+rather than scope drift, and neither was covered by the estimate. **Mission total** (P4.5a ≈195 kT +
+P4.5b) ≈ **585–665 kT**. `executor_tier`: declared `opus` for O0–O1 and `fable` for the remainder;
+**O2 and O3 both ran `opus`**, stated here rather than discovered later — *a declared tier nobody
+honours is worse than none* (P4.1's AAR), and this is the second increment running to report the
+divergence instead of absorbing it.
