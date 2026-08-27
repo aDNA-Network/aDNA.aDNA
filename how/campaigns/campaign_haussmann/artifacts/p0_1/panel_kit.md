@@ -5,8 +5,8 @@ campaign_id: campaign_haussmann
 mission: mission_haussmann_p0_1_positioning
 title: "P0.1 O4 — human cold-reader panel kit + recruitment brief (the directive's Phase-0 gate)"
 created: 2026-08-16
-updated: 2026-08-16
-status: active
+updated: 2026-08-26
+status: superseded   # §Stimulus expired; P5.1's operative kit is panel_kit_v2.md. Retained as the P0.1 record (SO-6).
 last_edited_by: agent_rosetta
 tags: [haussmann, p0_1, panel, cold_readers, dp2]
 ---
@@ -47,9 +47,33 @@ tags: [haussmann, p0_1, panel, cold_readers, dp2]
 
 Correct = matches ADR-048's positioning statement in substance (their words, not ours). Disagreement between scorers about "correct" is itself a finding — record it. Transcripts → `artifacts/p0_1/panel/reader_<n>_<role>.md`, verbatim, with the consent yes noted.
 
-## Stimulus (inserted at the O3 pick, 2026-08-16 — Candidate A)
+## ⛔ Stimulus — **SUPERSEDED 2026-08-26. DO NOT USE THIS SECTION FOR P5.1.**
 
-Show readers the **A-direction hero draft** (text in ADR-048 §Direction-picked; stage it as a local preview build or a composed screenshot — **not** production, which keeps the current hero until DP2). The draft, compactly: "aDNA (agentic DNA) is an open standard for organizing a project's files so AI agents — and the people working with them — always know where things live: three folders, plain Markdown, versioned in git. This site is the standard, its docs, and the registry of workspaces — 'vaults' — that run it." + audience sub + NOT-line + install block + annotated tree; lyric band directly below.
+> **This kit's stimulus expired and the kit could not say so.** The block below was written on
+> 2026-08-16 under an explicit temporary condition — *"**not** production, which keeps the current
+> hero until DP2"*. **DP2 ratified on 2026-08-16, the hero shipped, and P4.5b then rewrote the very
+> copy panellists cold-read.** Measured at the **live twin** on 2026-08-26 `[D]` (surface matched to
+> the claim's verb per convention 17's amendment — *"a reader encounters this copy"* is a question
+> about rendered flattened text, not about HTML):
+>
+> | | Draft, i.e. what this kit shows | Live, i.e. what a panellist would actually see |
+> |---|---|---|
+> | definition | *"…always know where things live: three folders, plain Markdown, **versioned** in git."* | *"…can always **find what they need**. Three folders, plain Markdown, **tracked** in git."* |
+> | third para | *(none)* | *"Your context is just the notes, docs and decisions you already keep…"* |
+>
+> ⇒ **P5.1's stimulus is the LIVE PRODUCTION HERO at the recorded build stamp**, per its amended
+> **AC-1** (`ac_amendment_proposal.md` §2, `accepted` 2026-08-26). The operative kit is
+> **[[panel_kit_v2]]**; this file stands as the P0.1 record.
+>
+> ⭐ **Struck, not deleted (SO-6), and the reasoning is the reusable part:** *a criterion — or an
+> instrument — amended around a temporary condition must be re-read when the condition expires.*
+> Fourth sighting in this campaign, and note the direction: P4.5b's AC-a **under-claimed** and
+> self-announced; **this one would have run the wrong stimulus and reported a perfectly valid panel.**
+> Nothing would have caught it at run time except a panellist reading a screenshot of retired copy.
+> ⚠ **And the same stale sentence sat in ADR-048 §Status** — a *ratified decision record* — so it was
+> never only an instrument defect; corrected there under ruling 5 on the same day.
+
+~~Show readers the **A-direction hero draft** (text in ADR-048 §Direction-picked; stage it as a local preview build or a composed screenshot — **not** production, which keeps the current hero until DP2). The draft, compactly: "aDNA (agentic DNA) is an open standard for organizing a project's files so AI agents — and the people working with them — always know where things live: three folders, plain Markdown, versioned in git. This site is the standard, its docs, and the registry of workspaces — 'vaults' — that run it." + audience sub + NOT-line + install block + annotated tree; lyric band directly below.~~
 
 ## After the panel
 

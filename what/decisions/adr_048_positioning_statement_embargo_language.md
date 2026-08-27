@@ -4,7 +4,7 @@ adr_number: "048"
 title: "Positioning statement, audience, and embargo-safe protocol language for adna.network"
 status: accepted
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-08-26
 last_edited_by: agent_rosetta
 campaign_id: campaign_haussmann
 supersedes: ""
@@ -23,8 +23,33 @@ tags: [adr, haussmann, positioning, d1]
 > (≥80% of ≥5). The operator **waived the panel** at DP2 (in-chat `AskUserQuestion`, 2026-08-16, P1-wave session):
 > ratification rests on the **3/3 unanimous blind synthetic pre-screen `[D-syn]`** (`campaign_haussmann/artifacts/p0_1/prescreen_results.md`)
 > alone. Human validation of the positioning is **deferred to P5.1** (human evidence mission — the campaign's
-> remaining human instrument); the panel kit (`artifacts/p0_1/panel_kit.md`) stays live as P5.1 stimulus.
+> remaining human instrument); ~~the panel kit (`artifacts/p0_1/panel_kit.md`) stays live as P5.1 stimulus.~~
 > Residual risk accepted: synthetic readers are a disclosed stand-in, never equivalent to the human gate.
+
+> ⛩ **CORRECTION 2026-08-26 (operator ruling 5, taken at P5.1's pre-build gate; strike-not-delete, SO-6).**
+> **The struck sentence above went false and this record could not say so.** It was true when written —
+> and *"stays live"* is a claim in the present tense about a future mission, so it aged into a false
+> instruction the moment its subject moved. Two things moved: **DP2 ratified that same day and the hero
+> shipped**, retiring the draft the kit shows; then **P4.5b rewrote the very hero copy panellists
+> cold-read** (`51af717`, deployed 2026-08-27). Measured at the **live twin** `[D]` — surface matched to
+> the claim's verb, since *"a reader encounters this copy"* is a question about rendered flattened text
+> (convention 17's 2026-08-26 amendment) — the hero's definition sentence differs (*"versioned in git"*
+> → *"tracked in git"*, *"always know where things live"* → *"can always find what they need"*) and a
+> third paragraph exists with no draft equivalent.
+>
+> ⇒ **P5.1's stimulus is the LIVE PRODUCTION HERO at the recorded build stamp**, per its amended AC-1
+> (`campaign_haussmann/artifacts/p5_1/ac_amendment_proposal.md` §2, `accepted` 2026-08-26). The
+> operative kit is `artifacts/p5_1/panel_kit_v2.md`; `panel_kit.md` is marked `superseded` and stands
+> as the P0.1 record. **The deferral of human validation to P5.1 — the substance of this Status block —
+> is UNCHANGED and still binding.**
+>
+> ⭐ **Why this is corrected in a ratified record rather than routed onward.** A stale sentence in an
+> *instrument* misleads whoever runs it; a stale sentence in a **ratified decision record** is cited
+> forward as settled — and **P5.2 reads this ADR**. Convention 13's pass found this defect in the kit
+> and only then found it here, which is the point worth keeping: *ratification freezes a decision, not
+> the world the decision describes.* Fourth sighting of **a criterion amended around a temporary
+> condition must be re-read when the condition expires** — and the one that reached furthest, because
+> nothing about a ratified `accepted` status invites a re-read.
 
 ## Context
 

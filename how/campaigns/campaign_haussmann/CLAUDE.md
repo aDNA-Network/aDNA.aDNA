@@ -505,9 +505,74 @@ untouched and still blocked on actors outside the session.
 > past wearing the grammar of the present.* ✅ **Re-read 2026-08-26: still `51af717`** — the habit
 > cost one `curl` and this time confirmed rather than contradicted.
 
-> ⏸ **`P5.1` IS OPEN AND HALTED AT ITS ⛩ PRE-BUILD GATE (2026-08-26) — nothing built, criteria NOT
-> edited, budget NOT re-ratified.** ⛩ **Routing call taken at the open: pass first, halt at the
-> gate** (the P4.2/P4.3/P4.4/P4.5b precedent — *no build until signed*).
+> ⛩⛩ **`P5.1` IS SIGNED AND OPEN AT O0 (2026-08-26) — the gate is PASSED.** The amendment is
+> **`accepted`** (4-field ratification block on its face): criteria replaced by its §2, **V1–V5 added**,
+> budget re-ratified **~120–200 → ~180–280 kT / 2 sessions**. Mission `queued` → **`in_progress`**.
+> Suite **633/633** (632 passed · 1 skipped · **0 failed**) · `html-validate` **0**.
+>
+> ⛩ **Two further rulings taken at the signature**, both recorded in the proposal's §3 — *because §3 is
+> what a later mission cites, and this campaign's own finding is that a routing claim must be verified
+> in its destination, never in the prose that routed it*:
+> **(4)** AC-2 is **operator-run** and *"by someone who did not build the system"* is **STRUCK**, CoI
+> declared not managed away. **(5)** ADR-048's stale stimulus sentence is **corrected in this mission**,
+> strike-not-delete.
+>
+> ⭐⭐ **RULING 4 DISCHARGED A CONDITION INSIDE A DIFFERENT FINDING'S REMEDY, AND THAT IS THE ENTRY WORTH
+> READING.** DEFECT-5's remedy was written conditionally — *"**if** one person performs both runs, AC-3
+> precedes AC-2"*. Ruling 2 had put AC-3 on the operator; ruling 4 put AC-2 there too; **one person does
+> perform both**, so the antecedent is satisfied and the conditional is dead weight. ⇒ **AC-3 precedes
+> AC-2, unconditionally.** Left conditional it would have read at run time as *unmet* — the campaign's
+> own *criterion amended around a temporary condition* class **arriving inside the remedy for a
+> different finding**, caught only because the ruling was read back against every finding it touched
+> rather than filed against the question it answered.
+>
+> ⭐ **The open choice was closed by STRIKING, not reinterpreting.** A clause reinterpreted in silence
+> reads to every later citation as a clause that was **met**; struck, it reads as one that was **paid
+> for**, with the price in AC-2's text rather than inferable from its absence. ⚠ **And the runbook had
+> it right all along**: `ttfs_runbook_fresh_account.md` already said *"if the operator runs it
+> themselves, **that is a condition to record**"* — the instrument treated runner-identity as a
+> **condition**, the criterion had hardened it into a **gate**. Ruling 4 restores the instrument's own
+> reading. **First time in this campaign that the kit was the half that was correct.**
+>
+> **O0 shipped four protocols** (`artifacts/p5_1/`), none of them a new instrument (conventions
+> 15/16/17): **[[panel_kit_v2]]** (live-hero stimulus at a per-session build stamp; two-scorer isolation
+> **delegated** to `scorer_isolation_protocol.md` rather than re-authored) · **[[recruitment_brief]]**
+> (the ⛩ operator handoff) · **[[ttfs_run_record]]** · **[[contribution_run_protocol]]**.
+>
+> ⭐⭐ **AUTHORING THE KIT FOUND A TRAP THE PASS HAD NOT: THE PANELLIST READS THE *LIVE* HERO AND THE
+> SCORER SCORES AGAINST *ADR-048*, AND THOSE TWO TEXTS ARE NOT WORD-IDENTICAL.** P4.5b moved *"versioned
+> in git"* → *"tracked in git"* and *"always know where things live"* → *"can always find what they
+> need"*, and added a third paragraph with no ADR equivalent. **Measured at the live twin `[D]`: the
+> substance is unchanged** — same category noun, mechanism, audience sub and NOT-line — **so the referent
+> is sound.** But a scorer working from the ADR alone could mark down a reader who correctly echoes the
+> *live* wording, and **a wrong ruling there would have looked exactly like rigour.** Kit §4 now says
+> *scorers score substance, never wording*.
+>
+> ⭐⭐ **AND AC-2's RUN IS P2.6's O0b — THE SAME RUN.** P2.6 is `in_progress` **solely** for O0b, the
+> operator-gated fresh-account TTFS run. ⇒ performing AC-2 (a) closes the last Decade-1 leftover,
+> (b) makes **D3 non-provisional** for the first time — it was *withheld entirely* from the P2.6
+> re-score rather than re-invented — and (c) turns `ttfs_instrument_kit.md` from
+> `authored_unexercised` into an instrument with a proving run behind it, which its own banner asks
+> for. P5.1's status note predicted the dependency in the other direction; **it is mutual.** ⛔ **Not
+> claimed as discharged here** — three separate acts by their owners; routed at P5.1's close, because
+> *"routed" is a claim about the destination.*
+> ⚠ **A path conflict surfaced with it:** signed AC-4 says `evidence/`, the runbook says
+> `artifacts/p2_6/`. **The signed criterion governs** (`evidence/p5_1/ttfs/`); P2.6 cites it there.
+>
+> ⚠⚠ **THE FUNNEL'S TRUTH, READ BEFORE WRITING A PROTOCOL ABOUT IT:** the AEP archive holds **two**
+> proposals and **both are authored *and* sponsored by the operator**; six of eight states sit at
+> occupancy **0**. ⇒ **no outsider has ever traversed this funnel**, and **the sponsor step is the
+> likeliest wall** — every sponsor to date has been the author. ⭐ The zeros are **not** a defect to
+> fix: the page derives occupancy from the archive rather than asserting it, which is the empty-state
+> candour this campaign protects. The finding, if there is one, is about **reachability**.
+>
+> ⛔ **AC-3 halts before submitting.** Filing a public issue is an outward act needing its own ⛩ GO;
+> *"reached submission, did not submit"* is a complete result, and the record must say which happened.
+>
+> ~~⏸ **`P5.1` IS OPEN AND HALTED AT ITS ⛩ PRE-BUILD GATE (2026-08-26) — nothing built, criteria NOT
+> edited, budget NOT re-ratified.**~~ *(superseded above; retained — SO-6.)* ⛩ **Routing call taken at
+> the open: pass first, halt at the gate** (the P4.2/P4.3/P4.4/P4.5b precedent — *no build until
+> signed*).
 >
 > **Convention 13 ran COMPLETE at 15/15 with coverage recorded** (10 AC×AC + 5 AC×V, each read
 > **both** directions) → `artifacts/p5_1/ac_amendment_proposal.md`, **`proposed`**: **3 failures ·
@@ -570,10 +635,38 @@ untouched and still blocked on actors outside the session.
 > ⚠ **Surface named**: that check is on the **source** surface and the claim is about the **deployed
 > output** — the bridge is the self-describing alias, stated rather than hidden inside a green tick.
 >
-> ⏭ **NEXT: ⛩ THE SIGNATURE.** On signature — criteria replaced, **V1–V5 added** (the mission
-> currently self-certifies: *"this mission IS verification"*, against convention 4's *the builder
-> never self-certifies*), budget ratified at **~180–280 kT** (from ~120–200 kT), then O0. **No kit
-> until signed.**
+> ~~⏭ **NEXT: ⛩ THE SIGNATURE.**~~ ✅ **TAKEN 2026-08-26 — see the signed block above.**
+>
+> ⭐⭐ **AND THE VERIFICATION STEP EARNED ITSELF ON A SESSION THAT CHANGED NO `site/` FILE.** This desk
+> checked `git diff -- site/` (empty), concluded *"the suite is structurally unchanged"*, and was
+> **wrong**: `gate-41` reads **vault governance frontmatter**, not `site/` source. The suite came back
+> **1 FAILED** — `G41d`, MANIFEST.md 2 days behind STATE.md. ⇒ **a negative result is only as wide as
+> the command that produced it** — convention 16's own law, breached one step after quoting it, by the
+> desk that wrote it. **Sixth member of the instrument-narrower-than-its-conclusion family.**
+>
+> ⭐⭐ **AND THE RED WAS PRE-EXISTING, WITH A PROVABLE AUTHOR: THE COMMIT THAT RECORDED "SUITE 633/633"
+> IS THE COMMIT THAT TURNED THE GATE RED.** At `51af717` (the deployed tree, measured green) MANIFEST
+> and STATE both read `2026-08-25` — drift **0**. `7f0d5e5`, *"P4.5b CLOSED … Suite 633/633 derived"*,
+> **bumped STATE.md to 08-27 and did not touch MANIFEST.md** — drift **2**, red — and **nothing re-ran
+> the suite for two commits.** ⇒ convention 16 one altitude up: *the 633/633 was honest when it ran,
+> and the act of recording it made it false.* **A close cascade that edits STATE is a change the suite
+> can see.**
+>
+> ⭐ **The MANIFEST review the gate demanded found FOUR derived-count defects, and the file contradicted
+> itself twice** (KW-14): `57 skills (27 base + 30 project)` in the tree line vs **`### Skills (56)`**
+> and `27 base + 29 project` in its own §Skills, 93 lines apart; and `5 topics, **32** subtopics` twice
+> against its own table summing to **27**. Derived, not typed: **57 = 27 + 30**, table ⇄ disk
+> reconciled with **zero drift both directions**; context subtopics **27**; reviewer personas **16**
+> (the §Skills row still said *5-persona ranker*). ⚠⚠ **And `6675442` is titled *"F-n discharged — the
+> MANIFEST reviewed"*: that review fixed the tree line and `CLAUDE.md` and MISSED the same file's own
+> §Skills heading.** ⇒ **a file can state its own count in more than one place, and a review that
+> greps for the number it expects will find the copy it already fixed.** Gate green; ratchet held at
+> **0**, not lowered — *the fix was the content, never the date.*
+>
+> ⏭ **NEXT: ⛩ THE OPERATOR HANDOFF.** [[recruitment_brief]] is `ready_for_operator`. **O1–O3 are each
+> ⛩ gated on a human act** — five recruited cold readers (agents must not recruit), a fresh macOS
+> account, and the operator running the funnel as an outsider. **Run order: AC-3 → AC-2**, then the
+> panel as readers land. Agent-side work resumes at transcription and two-scorer scoring.
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is

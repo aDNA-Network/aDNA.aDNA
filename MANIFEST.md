@@ -1,7 +1,7 @@
 ---
 type: manifest
 created: 2026-04-13
-updated: 2026-08-25
+updated: 2026-08-27
 last_edited_by: agent_rosetta
 tags: [manifest, governance]
 ---
@@ -31,7 +31,7 @@ aDNA.aDNA/
 │   ├── glossary/       [EXT] Term definitions with spec refs
 │   ├── use_cases/      [EXT] Adoption narratives by domain
 │   ├── comparisons/    [EXT] aDNA vs. other systems
-│   ├── context/        Agent context library (5 topics, 32 subtopics)
+│   ├── context/        Agent context library (5 topics, 27 subtopics)
 │   ├── decisions/      ADRs
 │   ├── docs/           Specification documents
 │   └── lattices/       Lattice YAML tools, schema, examples
@@ -133,16 +133,16 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | `template_second_genesis_dossier.md` | operational | new `<Name>.aDNA/` re-genesis intake |
 | `template_disposition_ledger.md` | operational | fleet spring-clean (`skill_workspace_spring_clean`) |
 
-### Skills (56)
+### Skills (57)
 
-27 base skills (inherited from the `.adna/` template) + 29 project-specific. Full inventory in [`CLAUDE.md`](CLAUDE.md) §Skills; representative project-specific examples:
+27 base skills (inherited from the `.adna/` template) + 30 project-specific. Full inventory in [`CLAUDE.md`](CLAUDE.md) §Skills; representative project-specific examples:
 
 | Skill | Type | Purpose |
 |-------|------|---------|
 | `skill_dual_audience_review` | agent | Review content against dual-audience test |
 | `skill_self_reference_check` | agent | Verify self-referential vault citations |
 | `skill_iii_cycle` | agent | Single III improvement cycle (7-step: measure → implement → validate) |
-| `skill_decadal_aar` | agent | Decadal AAR with 5-persona ranker review (every 10 cycles) |
+| `skill_decadal_aar` | agent | Decadal AAR with 16-persona ranker review (every 10 cycles) |
 
 ## Active Builds
 
@@ -163,7 +163,7 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | Component | Status | Description |
 |-----------|--------|-------------|
 | aDNA Standard v2.5 | Inherited | Core specification — triad, ontology, sessions, missions, campaigns |
-| Context library | Inherited | 5 topics, 32 subtopics |
+| Context library | Inherited | 5 topics, 27 subtopics |
 | Lattice YAML tools | Inherited | Validate, convert (YAML↔canvas), JSON Schema, 19 examples |
 | 26 base templates | Inherited | Full operational set (12 auto-triggered + 13 manual-apply) |
 | 27 base skills | Inherited | Onboarding, fork, entity type, quality audit, lifecycle (archive / second-genesis / merge / rename / spring-clean), etc. |

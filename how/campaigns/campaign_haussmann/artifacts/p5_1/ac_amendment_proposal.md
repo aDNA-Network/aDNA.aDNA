@@ -8,9 +8,14 @@ objective: pre-build gate
 title: "P5.1 AC amendment proposal — the convention 13 pass, 15 pairs, both directions"
 created: 2026-08-26
 updated: 2026-08-26
-status: proposed          # ⛩ NOT ratified. No kit is authored against these criteria until signed.
+status: accepted          # ⛩ RATIFIED 2026-08-26 — see the ratification block below. Kits may now be authored.
 last_edited_by: agent_rosetta
 executor_tier: opus
+ratification:
+  decision: "Sign as proposed — the five criteria of §2 replace the mission's current set, the five verification limbs of §2.1 are added (retiring the self-certifying `verification_method`), and the budget is re-ratified at ~180–280 kT across 2 sessions under SO#11/ADR-016. Two further rulings taken at the same gate: AC-2's `by someone who did not build the system` is STRUCK (ruling 4), and ADR-048's stale stimulus sentence is corrected in this mission (ruling 5)."
+  ratified_by: stanley
+  date: 2026-08-26
+  status: accepted
 grounded_in:
   - "mission_haussmann_p5_1_human_evidence.md (criteria as amended by the freeze sweep 2026-08-24)"
   - "artifacts/p0_1/panel_kit.md (the reused instrument)"
@@ -23,7 +28,14 @@ tags: [artifact, haussmann, p5_1, convention_13, amendment, proposed]
 
 # P5.1 — acceptance-criteria amendment proposal
 
-> ⛩ **This document is `proposed`. It is not a record of work done; it is a request for a signature.**
+> ⛩⛩ **SIGNED 2026-08-26. This document is `accepted`.** The request below was granted as proposed,
+> with two further rulings taken at the same gate (**4** and **5**, §3). The mission's criteria are
+> replaced by §2, the limbs of §2.1 are added, the budget is ratified at **~180–280 kT / 2 sessions**,
+> and **O0 may be authored**. The pre-signature framing is retained below, struck where it has been
+> overtaken (SO-6) — *the reasoning is the reusable part, and a document that erases its own question
+> cannot be audited against the answer.*
+
+> ~~⛩ **This document is `proposed`. It is not a record of work done; it is a request for a signature.**~~
 > Convention 13 requires the pass to run **before a DP ratifies a budget**. P5.1's budget was ratified
 > at **⛩ DP6, 2026-08-19**; its criteria were **amended by the freeze sweep on 2026-08-24**. ⇒ the
 > ratified budget was costed against **a criteria set that no longer exists** — the exact condition
@@ -198,16 +210,29 @@ depends on site-reading freshness that the quickstart destroys, whereas TTFS's p
 is already labelled as warm. If two people are available, they are run independently and the
 independence is recorded.
 
-### ⚠ OPEN CHOICE — AC-2 says *"by someone who did not build the system"* and ruling 1 did not settle it
+### ✅ ~~OPEN CHOICE~~ **CLOSED BY RULING 4** — AC-2's *"by someone who did not build the system"* is **STRUCK**
 
-Ruling 1 settled **isolation** (VM vs. account). It did not settle **who runs**. Read literally, the
+~~Ruling 1 settled **isolation** (VM vs. account). It did not settle **who runs**. Read literally, the
 operator does not satisfy *"someone who did not build the system"*. **This is not decided here** —
-it is an operator call with a real trade, stated so it is not resolved silently in either direction:
+it is an operator call with a real trade, stated so it is not resolved silently in either direction:~~
 
-- **Recruit a runner** — satisfies the criterion as written; costs recruitment time (and a recruited
-  runner is the same scarce resource AC-1 needs five of).
-- **Operator runs it, CoI declared** — parallel to ruling 2; costs the *"did not build"* clause, which
-  would be **struck** rather than quietly reinterpreted.
+- ~~**Recruit a runner** — satisfies the criterion as written; costs recruitment time (and a recruited
+  runner is the same scarce resource AC-1 needs five of).~~
+- ⛩ **CHOSEN 2026-08-26 — Operator runs it, CoI declared** — parallel to ruling 2; costs the
+  *"did not build"* clause, which is **struck** rather than quietly reinterpreted.
+
+⭐ **The choice was left open for exactly one reason and that reason is now discharged**: a clause
+reinterpreted in silence reads, to every later citation, as a clause that was *met*. Struck, it reads
+as a clause that was **paid for** — and the price is legible in AC-2's text rather than inferable from
+its absence. *(P4.1's ranker precedent: a conflict of interest is **declared, not managed away**.)*
+
+⭐⭐ **AND THE RULING DISCHARGES A CONDITION ELSEWHERE, WHICH IS WHY IT IS RECORDED HERE AND NOT ONLY
+IN §3.** DEFECT-5's remedy is written conditionally — *"**if** one person performs both runs, AC-3
+precedes AC-2"*. Ruling 2 makes AC-3 operator-run; ruling 4 makes AC-2 operator-run; **one person does
+perform both**, so the antecedent is satisfied and the conditional is dead weight. ⇒ **AC-3 precedes
+AC-2, unconditionally**, and §2's AC-3 says so flatly. **A condition nobody re-evaluates is a
+condition that will be read as unmet** — the campaign's own *criterion amended around a temporary
+condition* class (fourth sighting at FAIL-3), caught here at the signature instead of at the run.
 
 ### ✅ CLEAN, and worth saying so — the eight pairs that pass
 
@@ -239,7 +264,9 @@ recorded so the ruling can be revisited on evidence rather than rediscovered.
   statement — **two independent scorers, raw sheets committed before reconciliation opens**, reusing
   `scorer_isolation_protocol.md`'s mechanism rather than a new one; **disagreement is recorded as a
   finding, never resolved away**. Records the commit each panellist saw.
-- **AC-2 (amended — FAIL-1, FAIL-2, ruling 1, open choice).** TTFS run per
+- **AC-2 (amended — FAIL-1, FAIL-2, ruling 1, ~~open choice~~ **ruling 4**).** ~~by someone who did
+  not build the system~~ — **struck at ruling 4**; the run is performed by **the operator, with the
+  conflict of interest declared on the report's face**. TTFS run per
   `ttfs_runbook_fresh_account.md` on a **fresh macOS account**, with the condition **labelled on the
   report's face** — *"prerequisites pre-installed; not the cold case; the true cold case needs a
   VM"*. Stopwatch + screen recording + friction log. **The deliverable is the number with its
@@ -251,7 +278,9 @@ recorded so the ruling can be revisited on evidence rather than rediscovered.
   truth recorded. **Operator-as-outsider discipline, with the conflict of interest declared in the
   artifact, not managed away**; every use of non-public knowledge is a **logged entry**, and an empty
   such list is reported as **suspect**. **Records both the alias build stamp and the `origin/main`
-  HEAD read.** If one person performs both runs, **AC-3 precedes AC-2** and the ordering is stated.
+  HEAD read.** ~~If one person performs both runs,~~ **AC-3 precedes AC-2** — *unconditionally*, since
+  rulings 2 + 4 put both runs on the operator (the conditional is discharged, not dropped) — and the
+  ordering is stated on both artifacts' faces with its reasoning.
 - **AC-4 (amended — GAP-1's remedy).** All three artifacts filed to `evidence/` with consent records
   **where participants exist** (named explicitly for the operator-as-runner case, so an absent
   consent record reads as *inapplicable* and not as an omission). Each artifact carries its build
@@ -278,6 +307,14 @@ The mission currently self-certifies: *"the artifacts themselves — this missio
 | 1 | TTFS runs on a **fresh macOS account**, condition labelled honestly | 2026-08-26, in-chat | Resolves FAIL-1; the labelling obligation is promoted into AC-2 |
 | 2 | AC-3 is **operator-as-outsider**, CoI **declared not managed away** | 2026-08-26, in-chat | Resolves AC-3's runner; **creates** GAP-2, remedied above |
 | 3 | **Pass first, halt at the gate** — proposal → signature → kits | 2026-08-26, in-chat | This document exists instead of a kit |
+| **4** | **AC-2 is run by the operator; *"by someone who did not build the system"* is STRUCK**, CoI declared not managed away | 2026-08-26, in-chat | Closes §1's open choice; **and discharges DEFECT-5's conditional** — AC-3 now precedes AC-2 unconditionally |
+| **5** | **ADR-048's stale stimulus sentence is corrected in THIS mission**, strike-not-delete (SO-6) | 2026-08-26, in-chat | FAIL-3's second home. The ratified record stops carrying a false sentence into P5.2 |
+| — | **THE SIGNATURE** — sign as proposed: §2 criteria · §2.1 limbs · ~180–280 kT / 2 sessions | 2026-08-26, in-chat | §6 discharged; O0 authorized |
+
+⚠ **Rulings 4 and 5 were taken at the signature gate, so this table is longer than the document that
+asked for it.** Recorded here rather than only in the session file, because **§3 is what a later
+mission cites** — and the campaign's own *index-vs-artifact* finding is that a routing claim must be
+verified in its destination, never in the prose that routed it.
 
 ## 4 · Budget
 
@@ -309,8 +346,16 @@ It did not check the criteria against **P5.2's** consumption of them — P5.2's 
 its gate, not this one. It did not run any instrument. It authored **no new instrument**, deliberately
 (conventions 15/16/17). And it did not edit the mission's criteria: **that happens at signature.**
 
-## 6 · The signature this asks for
+## 6 · ~~The signature this asks for~~ ✅ **THE SIGNATURE, TAKEN 2026-08-26**
 
-⛩ **Sign, amend, or decline.** On signature: the mission file's criteria are replaced by §2, the
-V-limbs in §2.1 are added, the budget in §4 is ratified under SO#11/ADR-016, and O0 (panel kit v2 +
-recruitment brief + protocols) may be authored. **Until then, no kit.**
+~~⛩ **Sign, amend, or decline.**~~ ⛩ **SIGNED AS PROPOSED.** The mission file's criteria are replaced
+by §2, the V-limbs in §2.1 are added, the budget in §4 is ratified at **~180–280 kT / 2 sessions**
+under SO#11/ADR-016, and O0 (panel kit v2 + recruitment brief + protocols) **is authorized**.
+~~Until then, no kit.~~
+
+⛔ **What the signature does NOT authorize, said so nobody infers it from a granted request:** no
+`site/` change, no build, no deploy; **no recruitment** (agents must not recruit humans — the panel
+kit's own law); and **no new instrument** — GAP-1's remedy is one `git merge-base` command per
+artifact, written into AC-4's text and into each run record as a step. Building a checker for it
+would forfeit the exact property that made the remedy acceptable (§1, GAP-1), and conventions
+15/16/17 each ruled against authoring an instrument at the tail of a sitting.
