@@ -72,6 +72,29 @@ start, no infra**; local `git init`, no remote; router rows **STAGED `#needs-hum
 self-inserted); four wrappers per ADR-037/045 (`how/federation/{git,feedback,iii}/` + Home
 credential-routing snippet, names-only); deployment-gated standing orders.
 
+### Seed register (P2 executed 2026-08-26, same-day as Gate 1)
+
+| Graph | Persona | Commit | Fork method | Files | First mission | State (2026-08-26) |
+|---|---|---|---|---|---|---|
+| `Ray.aDNA` | Helios | `57af121` | lean stub (Keystone-pattern) | 21 | `mission_charter_m00` (P0: §8 ruling + seam ack), then M1–M3 execution-ready | seeded; as-found L2 record in `what/context/distributed_compute/`; Galileo seam memo delivered (ack invited) |
+| `Hardware.aDNA` | Babbage | `fb71b91` | **full `skill_project_fork`**† | 373 | `mission_charter_m00` (P0: category ruling), then M1–M3 execution-ready | seeded; two evidence-base legs; Venus contradiction memo delivered |
+| `Kubernetes.aDNA` | Palinurus | `b0f57a9` | lean stub | 18 | `mission_00_plan_the_genesis_planning` (**fable** meta-planning) | seeded; NOTHING RUNNING (by design); Pandora courtesy memo staged sender-side |
+| `Argo.aDNA` | Jason | `d58adbe` | lean stub | 18 | `mission_00_plan_the_genesis_planning` (**fable** meta-planning) | seeded; ADR-018 rejection memorialized as ground truth |
+
+† Fork-method divergence documented, not reworked (Keystone reconciliation precedent — the
+operation order specified the full scaffold for the non-SDG Hardware graph; conformance is
+wrappers, not file count). `Fork method` is a historical fact and does not age; the dated `State`
+column is what ages — refresh it from each vault's HEAD, never from this table.
+
+### Four-wrapper conformance audit (at seed, 2026-08-26)
+
+| Graph | `git/` | `feedback/` | `iii/` | credential routing | Deployment-gated SOs | Result |
+|-------|:------:|:-----------:|:------:|:------------------:|:--------------------:|:------:|
+| Ray.aDNA | ✓ | ✓ | ✓ | ✓ (named rows incl. the pending-ceremony bearer) | ✓ (live-head read-only) | **PASS** |
+| Hardware.aDNA | ✓ | **deferred-to-P0 by design** (nothing deploys; recorded in CLAUDE + ADR-000 §5) | ✓ | ✓ (none needed; names-only) | ✓ (n/a-runtime) | **PASS with recorded deferral** |
+| Kubernetes.aDNA | ✓ | ✓ (doubly inert) | ✓ | ✓ | ✓ (no-claims SO) | **PASS** |
+| Argo.aDNA | ✓ | ✓ (doubly inert) | ✓ | ✓ | ✓ (ADR-018-stands SO) | **PASS** |
+
 ---
 
 ## Target blocks
