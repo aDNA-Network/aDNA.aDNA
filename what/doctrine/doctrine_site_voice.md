@@ -2,8 +2,8 @@
 type: doctrine
 title: "Site voice — the registers adna.network writes in, and the rule for moving between them"
 created: 2026-08-25
-updated: 2026-08-25
-status: proposed        # ⛩ operator sign-off at P4.5b's O0 gate, alongside artifacts/p4_5b/ac_amendment_proposal.md
+updated: 2026-08-26
+status: accepted        # ⛩ OPERATOR-SIGNED 2026-08-26 at P4.5b's O0 gate, alongside artifacts/p4_5b/ac_amendment_proposal.md. PUBLISHED at O3 — see published_at.
 last_edited_by: agent_rosetta
 campaign: campaign_haussmann
 mission: mission_haussmann_p4_5_voice_rewrite
@@ -14,7 +14,7 @@ grounded_in:
   - "the /about register — the one surface a cold-reader called 'the most honest project page I've read in years'"
   - "evidence/coldreads/coldread_SYNTHETIC_clinician_researcher.md §5 (ten verbatim confusions)"
   - "evidence/sweep/reading_level_p4_5b_baseline.md (FKGL over the .md twins, deployed tree 6675442)"
-published_at: "/design-system#voice (proposed — reuses the surface that already carries the diagram construction rules, rather than spending one of ADR-049's seven nav slots)"
+published_at: "/design-system#voice — PUBLISHED at P4.5b O3 (site/src/pages/design-system.astro), reusing the surface that already carries the diagram construction rules rather than spending one of ADR-049's seven nav slots. ⚠ The published section is this document's PUBLIC FACE, not a copy: campaign-internal references (mission ids, register rows, the cold-reader's persona) are dropped, and the two are kept in step BY HAND. AC-a's publication limb was amended from 'named as owed' to REQUIRED at the pre-build gate, because the deploy freeze it was written around lifted on 2026-08-25 — a criterion amended for a temporary condition, re-read when the condition expired."
 tags: [doctrine, voice, copy, adna_network, haussmann, p4_5b, dual_audience]
 ---
 

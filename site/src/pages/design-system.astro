@@ -139,6 +139,7 @@ const headings = [
   { depth: 2, slug: 'components', text: 'Components' },
   { depth: 2, slug: 'illustration', text: 'Illustration slots' },
   { depth: 2, slug: 'diagram', text: 'Diagram construction' },
+  { depth: 2, slug: 'voice', text: 'Voice' },
 ];
 ---
 
@@ -479,6 +480,148 @@ const headings = [
         The same rule governs data: a diagram encodes nothing its text layer does not also say. If a
         node's colour means something, the meaning is written down somewhere a reader can reach
         without the colour.
+      </p>
+
+      {/* The voice guide, published. It lands on this page rather than taking a nav slot because
+          the rules below are the same kind of object as the diagram rules above: constraints a
+          contributor applies, derived from what this site already does. Source of truth is
+          `what/doctrine/doctrine_site_voice.md` in the repository; this is that document's
+          public face and the two are kept in step by hand. */}
+      <h2 id="voice">Voice</h2>
+
+      <p>
+        These are the rules this site's copy is written to. They are not a list of preferences.
+        Each one exists because a specific sentence here confused a specific reader, or because a
+        measurement said so. Where a rule rests on taste rather than evidence, it says so and you
+        may argue with it.
+      </p>
+
+      <h3>The one rule the rest serve</h3>
+      <p>
+        <strong>Honesty is the aesthetic.</strong> Claims move <em>down</em> to what can be
+        verified, never <em>up</em> to what would be impressive. That is not a moral posture, it is
+        the positioning: a standard for trustworthy context that overstates itself has refuted its
+        own argument in the first paragraph.
+      </p>
+
+      <h3>Two registers, and the order they go in</h3>
+      <p>
+        The site writes plainly, and it sometimes writes a line that compresses an idea. Both are
+        legitimate. The failure is never the compressed line itself — it is that line arriving
+        <em>before</em> the reader knows what the thing is.
+      </p>
+      <p>
+        <strong>Plain before compressed, on every surface, every time.</strong> A compressed line
+        may summarise what the reader now knows; it may never be the thing that introduces it. The
+        <a href="/about/">About page</a> is the worked example: it opens with what aDNA is, spends
+        four sections on named people and named limits, and only then reaches for a line that
+        compresses all of it — which costs the reader nothing, because they already hold every
+        part.
+      </p>
+      <p>
+        <strong>The rule is about order, not ratio.</strong> "Cut the memorable lines" is the wrong
+        reading and produces worse writing: flat, forgettable, and no more honest. Move them.
+      </p>
+
+      <h3>Tense</h3>
+      <p>
+        Write what is true now in the present, and what is not yet true in a tense that says so.
+        Aspirational present tense is a defect, not a flourish — "the network where teams share
+        context" describes something that does not exist yet, in the grammar of something that
+        does, and a reader cannot tell the difference. Write "stewarded today by one person"
+        instead, where the word <em>today</em> is doing real work.
+      </p>
+      <p>
+        Any sentence describing a surface outside this site carries the date it was checked. A
+        statement about someone else's project is true <em>as of</em> a moment.
+      </p>
+
+      <h3>One new term per paragraph</h3>
+      <p>
+        <strong>At most one unfamiliar term per paragraph, defined where it is first used, linked
+        to its <a href="/glossary/">glossary</a> entry.</strong> A paragraph that introduces two
+        undefined nouns has introduced neither. The glossary is the single canonical home for a
+        definition: define in place with a clause, then link — do not define the same term twice in
+        two voices, because then there are two definitions.
+      </p>
+      <p>
+        Defining a term in place makes a sentence longer and raises its reading grade. That trade
+        is taken deliberately: <strong>a grade-9 sentence about an undefined noun is not more
+        readable than a grade-11 sentence that defines it.</strong> Reading level is a proxy;
+        comprehension is the thing.
+      </p>
+
+      <h3>Say the limit in the same breath as the claim</h3>
+      <p>
+        Concede and then claim. State the limit as part of the fact. Pre-empt the objection in the
+        reader's own words, and answer "why should I believe you" out loud. A reader who has
+        already been handed the counter-argument has nothing left to catch you at — which is where
+        the credibility comes from, not from an absence of weaknesses.
+      </p>
+
+      <h3>Disclose where the confusion happens</h3>
+      <p>
+        <strong>A true statement placed below the moment a reader needs it is not yet a
+        disclosure.</strong> This site has twice shipped a disclosure that existed and was
+        unreachable: the note that its agent personas are AI sat only on the About page while
+        forty-one pages named a persona, and the note that <em>aDNA</em> here does not mean
+        <em>ancient DNA</em> sat on four deep reference pages and none of the first-contact ones.
+        Both were true, and both were three clicks past the reader who needed them. When a rule
+        here says <em>disclose</em>, it means at first encounter, on the surface where the
+        confusion happens.
+      </p>
+
+      <h3>Things to avoid, each one earned</h3>
+      <ul>
+        <li>
+          <strong>"lives" for where context is.</strong> Readers took it to mean a hosted
+          destination. Say where the files actually are: <em>on your machine</em>. The rule binds
+          where that ambiguity can occur — a file path like <code>how/missions/</code> is not
+          a server and nobody has ever mistaken one for the other.
+        </li>
+        <li>
+          <strong>A compressed phrase as a headline.</strong> If a reader has to hold a concept
+          they have not been given, the line is in the wrong place, not the wrong words.
+        </li>
+        <li>
+          <strong>Counters with no reason to want them.</strong> A number on a first screen that
+          means nothing to a newcomer is decoration. Keep the number where a reader has a reason
+          for it, and make its definition reachable.
+        </li>
+        <li>
+          <strong>Circular definitions.</strong> Define the outer term without using the inner one.
+        </li>
+        <li><strong>Status labels with no legend</strong>, and <strong>internal shorthand</strong>.</li>
+      </ul>
+
+      <h3>What the reading-level number is, and is not</h3>
+      <p>
+        Copy is measured for reading grade, and the number can tell you two real things: sentences
+        are too long, or the words have too many syllables. It cannot tell you whether a reader
+        understood. A page can score well and be incomprehensible if its nouns are undefined; a
+        page that is mostly a card list scores nonsense, because the measure needs sentences and a
+        list has none.
+      </p>
+      <p>
+        <strong>Never rewrite to move the number.</strong> Rewrite because a reader was lost, and
+        let the number confirm it. A paragraph broken into bullets will always score better and
+        will not always read better.
+      </p>
+
+      <h3>How to know a rewrite is done</h3>
+      <ol>
+        <li>A stranger reads the first screen without a dictionary.</li>
+        <li>A developer still finds the precision — nothing was made vague to be made simple.</li>
+        <li>Nothing in it can be caught overstating.</li>
+        <li>The measured grade level agrees.</li>
+      </ol>
+      <p>In that order. The fourth is the confirmation, never the goal.</p>
+
+      <p>
+        <strong>What these rules rest on.</strong> They are drawn from readings of this site by
+        simulated first-time visitors — a cheap early-warning instrument, not people. Sessions with
+        human readers are the real test, and where a human reading contradicts a rule above, the
+        reading wins and the rule is amended in public rather than quietly dropped.
       </p>
     </section>
   </div>

@@ -95,5 +95,26 @@ jobs:
       - name: Markup correctness (html-validate, exceptions declared in .htmlvalidate.cjs)
         run: npm run check:markup
 
+      # Reading-level trend (HAUSSMANN P4.5b O3, AC-d). NON-BLOCKING BY CONTRACT: AC-d asks for
+      # the trend to be *visible*, not enforced, so this step never fails a build over a grade.
+      #
+      # It is a separate step rather than a line inside the suite because "visible" means visible
+      # in the workflow UI — gate-48 prints the same table, but buried in 633 lines of Playwright
+      # output, where a slow drift over months is exactly what nobody scrolls to find.
+      #
+      # ⚠ NON-BLOCKING IS NOT UNGUARDED, and the split is deliberate: the numbers are advisory
+      # here, but gate-48 (G48a/G48b) hard-fails if the INSTRUMENT is broken or a route silently
+      # leaves the corpus — because a route dropping out shrinks the corpus and IMPROVES the
+      # average, the one direction this measurement must never move by accident.
+      #
+      # The metric is prose-only (operator ruling 2026-08-26); whole-twin is printed alongside so
+      # the gap between them stays legible rather than being an unexplained discrepancy later.
+      - name: Reading-level trend (non-blocking report — AC-d)
+        continue-on-error: true
+        run: |
+          node scripts/reading_census.mjs --selftest
+          node scripts/reading_census.mjs --dist dist
+          node scripts/glossary_first_use.mjs --dist dist
+
       - name: Run quality gates (G1 budget · G2 @audit · axe both-modes · all)
         run: npm run test:gates
