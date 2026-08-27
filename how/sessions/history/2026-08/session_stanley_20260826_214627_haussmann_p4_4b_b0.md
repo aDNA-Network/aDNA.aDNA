@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 mission: mission_haussmann_p4_4_ci_hardening
 objective: P4.4b — apply the signature, then B0 (visual-regression lane)
 phase: P4
-status: active
+status: completed
 executor_tier: opus          # ⚠ DECLARED AT THE OPEN, NOT DISCOVERED AT THE AAR. The mission
                              # declares P4.4b as `sonnet`; this session runs **opus**, and the
                              # amendment proposal's §7 named exactly this case in advance: "B0's
@@ -18,8 +18,7 @@ created: 2026-08-26
 updated: 2026-08-26
 last_edited_by: agent_rosetta
 token_budget_estimated: "~150–220 kT — B0's band from the ⛩ re-ratified ~280–440 kT / 3 sessions (signed this session, ruling (c)), plus ~15–25 kT for the 1a signature-application act, which is bookkeeping rather than build. ⛔ Named so it is not discovered as an overrun: if baselines need regenerating after a mask or theme correction, that is a re-capture of all 24 images, and it is inside B0's band ONCE, not repeatedly (§7)."
-token_budget_actual: ""     # ⛔ FILLED AT CLOSE, NOT LEFT EMPTY (SO#11). Two of three P4.3
-                            # sessions closed this blank and the actual had to be reconstructed.
+token_budget_actual: "≈210–250 kT (content-load units) against a ~165–245 kT allocation (B0 ~150–220 + ~15–25 for the 1a signature act) — AT OR JUST OVER the top of the band, well inside SO#11's >2× retrospective trigger. ⭐ The overrun has ONE named cause and it is not scope creep: THREE defects in the gate itself, each found by V1 and each requiring an investigation the estimate did not carry — the loose threshold, the two inert mutations, and `home`'s instability (which cost three wrong hypotheses, each rejected at the object: a decode wait, a hero-variant check, and a sharp-based row diff proving the picture was pixel-identical and only the PNG BYTE LENGTH moved). ⚠ Recorded at close rather than reconstructed later: two of three P4.3 sessions closed this field blank and the actual had to be inferred, and a band cannot be falsified by a prose sentence claiming it holds."
 tags: [session, haussmann, p4_4b, b0, visual_regression, signature_applied]
 ---
 
@@ -154,4 +153,50 @@ wild within an hour of authoring the gate against it). Taken instead:
 
 ## SITREP
 
-*(filled at close)*
+**Completed** — ⛩ the P4.4b signature applied (proposal `accepted` + 4-field ratification block; AC1–AC4
+and V1–V4 amended and **labelled `[asserts AC-n]`**; B2 split into B2a/B2b; ruling 4's same-diff index
+correction; budget re-ratified) · **B0 shipped and verified**: `gate-49` (26 assertions), 24
+container-generated baselines, the in-container runner, and V1's 7-case red-test at **7/7**.
+
+**Verified `[D]`** — suite **633 → 659** (derived via `--list` on both lanes) · standing lane **633**
+(632 passed + 1 skipped) · gate-49 **26/26 green on two consecutive container runs at ZERO pixel
+tolerance** · V1 **7/7** in-container · gitleaks **946 commits, no leaks** · **no deploy** (P4.4b is met
+on-build).
+
+**In progress** — P4.4b: **B1** and **B2a** remain (session 2), **B3** + AAR (session 3).
+
+**Next up** — **B1**: the field instrument, **wired AND emitting** — V4's amended limb tests *emits*, not
+*shipped*, and the campaign has been bitten twice by the difference. Then **B2a**: the Unlighthouse sweep,
+**failing loudly** — V3 requires a run that actually goes **red**, because one passing run proves the sweep
+executes, not that it fails.
+
+**Blockers** — none for B1/B2a. ⛔ **B2b is held by ⛩ operator ruling (c)** pending Vitruvius's ⊳ D-E reply
+(delivered `44c4d79`, `ack_required: true`, no reply `[D]`). It re-enters at **its own ⛩ gate**; it does not
+absorb into B2a.
+
+**⛩ Owed to the operator** — a **push** (2 unpushed: `4d0fd87`, `1816993`). Not taken here: a push is an
+outward act needing its own GO, and *"push precedes deploy, each with its own ⛩ GO"* (convention 16).
+Nothing here needs a deploy.
+
+**Files touched** — see above.
+
+## Next Session Prompt
+
+Continue HAUSSMANN **P4.4b** at **B1**, in `~/aDNA/aDNA.aDNA`. The mission is
+`how/campaigns/campaign_haussmann/missions/mission_haussmann_p4_4_ci_hardening.md`; read
+`how/campaigns/campaign_haussmann/CLAUDE.md` first (conventions 1–17), then this session file. **The gate
+is signed** — `artifacts/p4_4/ac_amendment_proposal_p4_4b.md` is `accepted`, ⛩ **ruled (c)**: build **B2a**,
+**hold B2b** until Vitruvius answers ⊳ D-E. Budget **~280–440 kT / 3 sessions**; ~200–250 kT spent on
+session 1, so **B1 (~40–70) + B2a (~60–100)** is session 2. **B0 is done** (`1816993`, `gate-49`, suite
+**659** derived, V1 7/7). **B1**: choose + wire the field-p75 instrument (`web-vitals` is not yet a
+dependency), shipped in the tree, with the dashboard action and first reading **named as owed** and **not
+claimed** — and **V4 must demonstrate it EMITS at least one collected metric on a page load**, because
+*shipped is not wired* and this campaign has shipped the difference twice (P4.2's font-weight *"migration
+announced in a comment"*, the `aria-live` residue). **B2a**: Unlighthouse over the **CI-built artifact**,
+weekly, and **V3 needs a run that goes RED** — a passing run only proves the sweep executes. Its workflow
+**joins** `gates.yml`'s existing `concurrency: group: gates-${{ github.ref }}` rather than declaring its
+own (AC3's enforced co-run rule; B0's lane and the sweep must not co-run). **Re-read
+`/.well-known/adna-build.json` at open, never quote a tree forward**; alias served `51af717` at this
+session's open. **No deploy is in scope.** ⛩ **2 commits are unpushed and a push needs its own GO.**
+⚠ Run visual work via `npm run test:visual:container` — **never bare on macOS**: the baselines are
+container-generated and would produce 24 false reds here.

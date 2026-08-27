@@ -786,7 +786,64 @@ untouched and still blocked on actors outside the session.
 > - **Budget ⛩ re-ratified: ~250–400 kT / 2 sessions → ~280–440 kT / 3** (B2b's ~50–80 kT leaves the
 >   band under (c)). ≈1.3×, and **nothing in it adds a feature**.
 >
-> ⏭ **NEXT: `B0`** — the visual-regression lane. **No deploy is in scope**; P4.4b is met on-build.
+> ~~⏭ **NEXT: `B0`** — the visual-regression lane.~~ ✅ **B0 IS DONE 2026-08-26** (`1816993`) —
+> `gate-49`, 12 templates × 2 themes, baselines generated **and** compared in
+> `mcr.microsoft.com/playwright:v1.59.1-noble`. Suite **633 → 659** derived · **V1 7/7** (5 mutations
+> + 2 controls, in-container) · gitleaks **946 commits, no leaks**. **AC1 ✅.** **No deploy** —
+> P4.4b is met on-build.
+>
+> ⭐⭐ **THE RED-TEST FOUND THREE DEFECTS IN THE GATE BEFORE THE GATE FOUND ANYTHING IN THE SITE, AND
+> ALL THREE HAD A MASK AS THE EASY FIX.** (1) **A tolerance written by feel let a visible regression
+> through** — `maxDiffPixelRatio: 0.002`, commented *"deliberately TIGHT"*, passed an `h1`
+> letter-spacing change because one heading's glyphs are a vanishing fraction of a 7,597 px
+> full-page capture; only `body{display:none}` could move it. ⭐ **AC1 supplied its own fix**: a
+> tolerance exists to absorb non-determinism, and AC1's same-container requirement *removes the only
+> source this lane has* ⇒ **`maxDiffPixels: 0`**. ⚠ **Both of this gate's tolerances were first
+> drafted too loose by the same author in the same sitting** (the mask budget: 0.40 % against a
+> 0.0716 % worst case). ⇒ ***a number written by feel is a formality wearing a pin's clothing*** —
+> and *measure first, then pin* is the only thing that caught either.
+> (2) ⭐ **TWO MUTATION CASES WERE INERT, AND ONE OF THEM WAS A CONTROL THAT REPORTED SUCCESS.** Bare
+> `h1{…}` at (0,0,1) loses to Astro's scoped `h1[data-astro-cid-…]` at (0,1,1): correctly written,
+> correctly applied, **correctly served** (curl-verified) — and never reaching a pixel. ⭐ **A non-red
+> is one of THREE things — a weak gate, a mutation aimed at the wrong assertion, or one aimed
+> correctly and INERT — and naming which is the point of running the harness** (P4.3 named the first
+> two; this is the third). **Case 1 announced itself by failing; case 6 was a control, so it
+> announced success.** *A control that passes for the wrong reason is worse than no control, because
+> it certifies a mechanism it never exercised.* ⚠ And the surface error underneath is **convention
+> 17's own amendment, committed inside the harness written to enforce it**: `grep` proved *"the
+> mutation is in the file"*, which is **not** the claim *"the mutation changes the render"*.
+> (3) ⭐⭐ **`home` WAS UNSTABLE AND THE FIRST THREE EXPLANATIONS WERE ALL WRONG** — not a
+> partially-decoded PNG, not a random hero variant, **not an unstable region** (two full-page captures
+> 600 ms apart are *pixel-identical*; every 800 px band is stable alone; only the PNG **byte length**
+> moved). The cause is **the capture perturbing the page**: `fullPage` resizes the viewport → the
+> hero's `ResizeObserver` redraws the canvas → the stability check never converges.
+>
+> ⭐⭐ **THE REMEDY REJECTED IS THE REUSABLE PART.** All three had a mask available and **every mask
+> would have gone green** — masking the hero would have blanked *the one region this campaign lists
+> as protected*. **Over-masking arrived disguised as a flake remedy, within an hour of the gate being
+> authored against it** — which is precisely how FINDING 4 said masks grow, observed live. Taken
+> instead: **`reducedMotion: 'reduce'`, the site's own mechanism** (`HomeHero.astro:593` starts the
+> rAF loop only `if (!reduceMQ.matches)`), and the canvas **hidden rather than masked**, so the
+> **SSR SVG beneath it is asserted** — the component's own declared no-JS/a11y baseline. ⇒ **hiding
+> revealed a guarded layer where a mask would have removed one.** ⚠ Limitation stated on the gate's
+> face: the baselines assert the **reduced-motion** rendering; the animated constellation is **not
+> covered and not claimed**.
+>
+> ⚠ **Caught in passing, and it would have bitten every developer:** `npm run test:gates` was bare
+> `playwright test`, which runs **every** project — it would have dragged the snapshot lane onto
+> macOS and produced **24 red on a perfectly good tree**, which is how a suite teaches people to run
+> it with `--grep-invert`. Pinned to `--project=chromium`; the visual lane is its own script and its
+> own CI step, joining the **existing** `concurrency: gates-${{ github.ref }}` group that AC3's
+> amendment names as the co-run mechanism.
+>
+> ⚠ Named, not absorbed: the baselines are **15 MB across 24 files** — full-page capture is what makes
+> the coverage real, and the payload is its price. ⚠ gate-30's two reds during verification were
+> **convention 6's documented case** (`astro build` does not inject redirects), diagnosed by asking
+> which step produces the thing it asserts before changing anything.
+>
+> ⏭ **NEXT: `B1`** (field instrument, **wired AND emitting** — V4's amended limb) **then `B2a`** (the
+> sweep, **failing loudly** — V3 needs a run that goes red, not merely a run). ⛔ **B2b stays held**
+> under ⛩ ruling (c) until Vitruvius answers.
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is
