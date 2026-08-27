@@ -3,7 +3,8 @@ type: artifact
 artifact_class: cohort_manifest
 created: 2026-08-26
 updated: 2026-08-26
-status: draft   # DRAFT — no disposition below is executed until the Gate 1 ratification blocks are signed
+status: active
+status_note: "⛩ GATE 1 RATIFIED 2026-08-26 (operator, in-chat inline ruling table): DP-1 A · DP-2 B (pre-ruled) · DP-3 A · DP-4 B (pre-ruled) · DP-5 A · R1 held open (#needs-human, non-blocking) · R2 read-quarry allowed · R3 as proposed · R4 inline. Dispositions below are executable."
 campaign_id: campaign_dynamo
 campaign_phase: 1
 last_edited_by: agent_rosetta
@@ -276,7 +277,7 @@ wires `JupyterLab.aDNA` because the org repo exists. Mitigation: rider R1 asks t
 rule REC-K2d-5 (subsume / keep-thin / archive the JARK stubs), which closes the confusion at its
 source.
 
-**Ratification**: Decision: — · Ratified-by: — · Date: — · Status: **pending (Gate 1)**
+**Ratification**: Decision: ⛩ **A — JupyterLab remains a facet of `Jupyter.aDNA`; no graph, no shim.** Rider R1 (REC-K2d-5) held open, non-blocking. · Ratified-by: Stanley (operator) · Date: 2026-08-26 (in-chat, Gate 1 inline ruling table) · Status: **ruled**
 
 ### §DP-2 — Kubernetes ↔ `Container.aDNA` and the podman-first present
 
@@ -311,7 +312,7 @@ A**: the graph tries to become the fleet inventory and collides with Home/Venus 
 boundary paragraph in block 2+3 (vocabulary, never facts) being written into the seed CLAUDE.md
 verbatim.
 
-**Ratification**: Decision: — · Ratified-by: — · Date: — · Status: **pending (Gate 1)**
+**Ratification**: Decision: ⛩ **A — SEED one graph `Hardware.aDNA`** (persona pin Babbage), legs `node_hardware` + `gpu_acceleration`, category `tbd_at_p0`; vocabulary-never-facts boundary written into the seed CLAUDE.md verbatim. · Ratified-by: Stanley (operator) · Date: 2026-08-26 (in-chat, Gate 1 inline ruling table) · Status: **ruled**
 
 ### §DP-4 — Argo ↔ Prefect ↔ APScheduler: orchestration lane assignments
 
@@ -352,7 +353,7 @@ software surface" being the memo's first line. **If the operator prefers B**, th
 and named: Ray governance lands as Galileo missions, this manifest's Ray block becomes his intake
 packet, and the Operations token ceremony still needs an owner — it would be his.
 
-**Ratification**: Decision: — · Ratified-by: — · Date: — · Status: **pending (Gate 1)**
+**Ratification**: Decision: ⛩ **A — SEED `Ray.aDNA`** (persona pin Helios), gated on the Galileo seam memo per Keystone §B discipline; seam first line: code stays in `what/lab/`, the graph owns the software surface; §8 flag on the persisted data volume ruled at P0. Keystone §D fold-into-Lab superseded on its own trigger having fired. · Ratified-by: Stanley (operator) · Date: 2026-08-26 (in-chat, Gate 1 inline ruling table) · Status: **ruled**
 
 ---
 
