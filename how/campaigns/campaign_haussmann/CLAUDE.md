@@ -495,14 +495,85 @@ untouched and still blocked on actors outside the session.
 > **prose-only**, and AC-c's live scope is **8, not 7**. The signature stood because only the factual
 > basis moved and the band did not.
 >
-> ⏭ **NEXT: `P5.1`** (human evidence). Its two `depends_on` are now satisfiable — **P4.5 is
-> `completed`** and P4.4 stays `in_progress` for **P4.4b** alone. ⭐ **G-11's hard precondition is
-> genuinely met for the first time**: the freeze is lifted, the backlog is deployed, and
-> `/.well-known/adna-build.json` serves a real stamp (**`51af717`**), so every criterion can record
-> the commit the participant actually saw. ⚠ **Re-read that stamp at P5.1's open rather than quoting
-> `51af717` forward** — this session found the alias serving `4b43c63` when the handoff said
+> ~~⏭ **NEXT: `P5.1`** (human evidence).~~ ✅ **P5.1 IS OPEN — see below.** Its two `depends_on` are
+> now satisfiable — **P4.5 is `completed`** and P4.4 stays `in_progress` for **P4.4b** alone.
+> ⭐ **G-11's hard precondition is genuinely met for the first time**: the freeze is lifted, the
+> backlog is deployed, and `/.well-known/adna-build.json` serves a real stamp, so every criterion can
+> record the commit the participant actually saw. ⚠ **Re-read that stamp at P5.1's open rather than
+> quoting `51af717` forward** — this session found the alias serving `4b43c63` when the handoff said
 > `6675442`, which is convention 16 exactly: *a verification with no recurrence is a claim about the
-> past wearing the grammar of the present.*
+> past wearing the grammar of the present.* ✅ **Re-read 2026-08-26: still `51af717`** — the habit
+> cost one `curl` and this time confirmed rather than contradicted.
+
+> ⏸ **`P5.1` IS OPEN AND HALTED AT ITS ⛩ PRE-BUILD GATE (2026-08-26) — nothing built, criteria NOT
+> edited, budget NOT re-ratified.** ⛩ **Routing call taken at the open: pass first, halt at the
+> gate** (the P4.2/P4.3/P4.4/P4.5b precedent — *no build until signed*).
+>
+> **Convention 13 ran COMPLETE at 15/15 with coverage recorded** (10 AC×AC + 5 AC×V, each read
+> **both** directions) → `artifacts/p5_1/ac_amendment_proposal.md`, **`proposed`**: **3 failures ·
+> 2 structural gaps · 2 unstated constraints · 1 open operator choice**, 8 pairs clean. **Sixth
+> consecutive mission where the pass has paid for itself.** ⚠ **And the reason it was run at all is
+> the finding underneath it: P5.1's budget was ratified at ⛩ DP6 on 08-19, and the freeze sweep
+> amended its criteria on 08-24** — so the ratified budget was costed against **a criteria set that
+> no longer exists**, which is convention 13's own sentence (*a DP ratified a budget against a spec
+> whose halves nobody had read together*) arriving for the sixth time.
+>
+> ⭐⭐ **THE V→AC DIRECTION FOUND THE WORST DEFECT AGAIN, AND IT IS G-11 EATING ITSELF. AC-P — the
+> hard precondition the freeze sweep added — IS TESTED BY NOTHING.** All three evidence artifacts are
+> statements about *what a human did*; none is a statement about *what production contained*. P5.1
+> could file three perfect artifacts with the precondition silently unmet — **the exact defect G-11
+> was written to prevent, reappearing inside G-11**, and P4.1's structural gap inverted precisely as
+> P4.5b's pass found it. ⭐ **The remedy required no new instrument**: AC-4 already demands a build
+> stamp on each artifact's face, so the stamp is **checked** (ancestor-of-HEAD ∧ contains the closed
+> missions' work) rather than merely recorded. **Zero fifth instruments** — conventions 15/16/17 all
+> ruled against authoring one at the tail of a sitting, and three of this desk's last four instrument
+> defects are why.
+>
+> ⭐⭐ **AC-2 FAILS TWICE, AND THE SECOND IS CONVENTION 1 IN INSTRUMENT FORM.** It requires a
+> **clean-VM** run; the only instrument that exists (`ttfs_runbook_fresh_account.md`,
+> `ready_for_operator`) says on its own face *"it is **not** the cold case… the true cold case needs
+> a VM"* — the P3.1/P3.3 shape, **third sighting**. And it sets **`TTFS < 10 min` as a pass/fail bar
+> on a single observation**, which `ttfs_instrument_kit.md` §5 forbids in terms — *"one run is an
+> observation, not a distribution… not a retry until it works."* A threshold on `n=1` licenses
+> quoting one run as a property of the product, **which is the precise scar the kit was built
+> against**. Criterion and kit were written eleven days apart and never read against each other.
+>
+> ⭐ **AC-1's instrument points at a stimulus that no longer exists — and so does the ratified ADR.**
+> `panel_kit.md` §Stimulus shows the **A-direction hero draft**, *"not production, which keeps the
+> current hero until DP2"* — a condition that expired when DP2 ratified and **P4.5b rewrote the very
+> copy panellists cold-read**. Measured at the **live twin** (surface matched to the claim's verb per
+> convention 17's 08-26 amendment), the definition sentence differs and a third paragraph has no
+> draft equivalent. **ADR-048 line 26 carries the same stale sentence**, so this is in the ratified
+> decision record, not only in the kit. ⭐ Fourth sighting of *a criterion amended around a temporary
+> condition must be re-read when the condition expires* — and note the direction: **P4.5b's AC-a
+> under-claimed; this one would have run the wrong stimulus and reported a valid panel.**
+>
+> ⚠ **Two constraints nobody had stated.** AC-3's stamp **records the wrong object** — a contribution
+> run's subject is the **repo and the funnel**, not the rendered site ⇒ stamp `origin/main` HEAD too.
+> ⭐ **The sweep amended all three criteria identically because it was asking one question (*does this
+> survive the freeze?*), which is correct for that question and imprecise for this one** — not a
+> criticism of the sweep, but what a second, differently-aimed pass is for. And **AC-2 and AC-3
+> contaminate each other** if one person runs both: a TTFS run walks the runner through the entire
+> quickstart, so an **order** is required and no criterion states one.
+>
+> ⛩ **Three operator rulings taken at the open**, and one question deliberately left open: TTFS runs
+> on a **fresh macOS account** with the condition labelled (resolves failure 1) · AC-3 is
+> **operator-as-outsider with the CoI declared, not managed away** (P4.1's ranker precedent — and it
+> *creates* a gap, since *"without privileged access"* becomes a discipline no artifact can show,
+> remedied by a logged non-public-knowledge list whose emptiness reads as **suspect**) · pass-first.
+> **Left open:** AC-2's *"by someone who did not build the system"* — ruling 1 settled **isolation**,
+> not **who runs**; recruit, or strike the clause rather than quietly reinterpret it.
+>
+> ⛩ **G-11's precondition is HELD and verified `[D]`, not assumed**: freeze lifted 08-25; alias serves
+> `51af717`; `git diff 51af717..HEAD -- site/` = **1 file**, a non-rendering deploy log; unpushed
+> **0**, behind **0**; P4.4b unstarted (nothing built) and P4.3's O2 deferred as row **F-v**.
+> ⚠ **Surface named**: that check is on the **source** surface and the claim is about the **deployed
+> output** — the bridge is the self-describing alias, stated rather than hidden inside a green tick.
+>
+> ⏭ **NEXT: ⛩ THE SIGNATURE.** On signature — criteria replaced, **V1–V5 added** (the mission
+> currently self-certifies: *"this mission IS verification"*, against convention 4's *the builder
+> never self-certifies*), budget ratified at **~180–280 kT** (from ~120–200 kT), then O0. **No kit
+> until signed.**
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is
