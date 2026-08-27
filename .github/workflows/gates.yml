@@ -118,3 +118,31 @@ jobs:
 
       - name: Run quality gates (G1 budget · G2 @audit · axe both-modes · all)
         run: npm run test:gates
+
+      # ⛩ HAUSSMANN P4.4b B0 · AC1 · V1 — the visual-regression lane (gate-49).
+      #
+      # A SEPARATE STEP, and `test:gates` is now pinned to `--project=chromium` so the two never
+      # merge back together. Bare `playwright test` runs EVERY project, which would have dragged this
+      # lane onto developer machines: 24 container-generated baselines compared against macOS font
+      # rasterisation is 24 red on a perfectly good tree, and a suite that cries wolf locally is a
+      # suite people start running with `--grep-invert`.
+      #
+      # THIS IS THE CONTAINER AC1 MEANS. The job already runs in
+      # mcr.microsoft.com/playwright:v1.59.1-noble (see `container:` above), which is the same image
+      # scripts/visual_regression_container.sh pins locally — and that script ASSERTS the two agree
+      # rather than assuming it, because the moment they drift, "generated in the CI container"
+      # becomes a sentence about a container nobody used.
+      #
+      # ⚠ BLOCKING, deliberately. Every other new gate this campaign shipped was a regression guard
+      # over a defect already fixed; this one guards pixels nobody re-checks by hand. Its 24
+      # baselines were red-proven 7/7 (5 mutations + 2 passing controls) via
+      # `scripts/visual_regression_redtest.sh` — including the case that matters most, over-masking,
+      # which is the only failure mode here that is PERMANENT rather than merely missed.
+      #
+      # ⚠ AC1 × AC3 CO-RUN PROHIBITION: this lane and the scheduled Unlighthouse sweep (B2a) both
+      # drive a browser over the whole site and MUST NOT co-run — the failure mode is flaky visual
+      # diffs, which read as real regressions. Enforced, not stated: the workflow-level
+      # `concurrency: group: gates-${{ github.ref }}` above is the mechanism, and B2a's workflow
+      # joins THAT group rather than declaring one of its own.
+      - name: Visual regression (gate-49 — 12 templates × 2 themes, in-container baselines)
+        run: npm run test:visual

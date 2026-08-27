@@ -48,7 +48,14 @@ const year = new Date().getFullYear();
       <a href="/llms.txt">llms.txt</a>
       <a href={REPO_HTTPS} target="_blank" rel="noopener">GitHub</a>
     </nav>
-    <p class="footer-copyright">&copy; {year} {PUBLISHER}. Released under the MIT License.</p>
+    {/* ⛩ HAUSSMANN P4.4b B0 / AC1 — the year is wrapped so the visual-regression mask can be TIGHT.
+      * `year` is `new Date().getFullYear()` (line 3), evaluated at BUILD time and baked into every
+      * page, so it is the one non-deterministic token in this line and it turns all 24 baselines red
+      * on 1 January for a non-regression. Masking `.footer-copyright` wholesale would have been the
+      * cheap fix and it would have swallowed the MIT licence claim — a truth claim this site makes —
+      * which is exactly the OVER-MASKING hazard gate-49 is built to refuse (FINDING 4: a mask that
+      * swallows a real region leaves it green forever, and masks only ever grow). One span instead. */}
+    <p class="footer-copyright">&copy; <span class="footer-year">{year}</span> {PUBLISHER}. Released under the MIT License.</p>
   </div>
 </footer>
 
