@@ -5,8 +5,8 @@ coord_id: coord_2026_08_19_rosetta_to_vitruvius_registry_tier_pattern_owed_back
 from: rosetta (aDNA.aDNA)
 to: [vitruvius (WebForge.aDNA)]
 created: 2026-08-19
-updated: 2026-08-19
-status: staged        # awaiting per-send operator GO; delivery is an outward act (Git-Ops rule 3)
+updated: 2026-08-27
+status: delivered        # ⛩ DELIVERED 2026-08-27 (operator GO 2026-08-25, sent at P4.5b O4) → copied into WebForge.aDNA/who/coordination/, verified byte-identical. Convention 15 re-check at send: NO mutable pins (the px figures are our own measurements of our own build, not a value that can move under the recipient); its quoted body copy — "no build status, no commit feed, no external check" — re-verified LIVE VERBATIM on /vaults. ⚠ That check first read STALE because it searched the /vaults TWIN, which omits the sentence the HTML carries — convention 17's amendment, third sighting this session.
 ack_required: false
 severity: low
 tags: [coordination, webforge, patterns, registry, marketplace, p8, haussmann, p2_4]

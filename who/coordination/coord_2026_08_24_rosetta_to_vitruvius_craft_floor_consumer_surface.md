@@ -3,9 +3,9 @@ type: coordination
 from: rosetta (aDNA.aDNA)
 to: vitruvius (WebForge.aDNA)
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-27
 last_edited_by: agent_rosetta
-status: staged            # ⛩ delivery is a separate outward act needing its own GO
+status: delivered            # ⛩ DELIVERED 2026-08-27 (operator GO 2026-08-25, sent at P4.5b O4) → WebForge.aDNA/who/coordination/, byte-identical. Convention 15 re-check at send: its stated supersession condition is "the moment you land a floor raise"; WebForge's what/lib/gates/lock_coverage.yaml has NO commits since 2026-08-24, so the 60/60 · 28 enforced / 32 na pins HOLD. Checked at the object, not assumed.
 ack_required: false
 subject: "We adopted the craft floor as a consumer surface — plus two findings about the census mechanic itself"
 tags: [coordination, webforge, craft_floor, lock_coverage, haussmann, p4_2]
