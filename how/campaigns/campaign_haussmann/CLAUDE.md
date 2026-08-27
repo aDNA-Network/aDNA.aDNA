@@ -667,6 +667,98 @@ untouched and still blocked on actors outside the session.
 > ⛩ gated on a human act** — five recruited cold readers (agents must not recruit), a fresh macOS
 > account, and the operator running the funnel as an outsider. **Run order: AC-3 → AC-2**, then the
 > panel as readers land. Agent-side work resumes at transcription and two-scorer scoring.
+>
+> ✅ **THE HANDOFF WAS MADE 2026-08-26** — the brief was presented in full (profiles, burn rule,
+> consent script, run order **AC-3 → AC-2**, and the two things a handoff loses if left in prose: a
+> **failing panel is outside the ratified budget**, and **AC-3 halts before submitting**). P5.1 now
+> waits on humans and **nothing in it waits on an agent**.
+
+> ⛩⛩ **`P4.4b` IS OPEN AND HALTED AT ITS PRE-BUILD GATE (2026-08-26) — nothing built, criteria NOT
+> edited, budget NOT re-ratified.** ⛩ **Routing call taken by the operator, not here (SO#1)**: P5.1's
+> remaining objectives are each gated on a human act, so the choice was *hand off and halt* or *hand
+> off and open P4.4b* — **ruled: open P4.4b, pass first, no build until signed**, on the
+> P4.2/P4.3/P4.4a/P4.5b/P5.1 precedent. Push ⛩ GO'd at the same gate: `44c4d79..4b4d044`, gitleaks
+> clean, unpushed **3 → 0** derived.
+>
+> **Convention 13 ran COMPLETE at 26/26 with coverage recorded** (`AC×AC = C(4,2) = 6` plus
+> `AC×V = 4×5 = 20`, derived not typed) → `artifacts/p4_4/ac_amendment_proposal_p4_4b.md`,
+> **`proposed`**: **20 clean · 6 defective**, plus **6 non-pair findings**. **Seventh consecutive
+> mission where the pass has paid for itself**, and the reason it ran is the finding underneath it:
+> P4.4b's budget was ratified **08-24** and since then the freeze lifted, four missions closed, the
+> suite moved 587 → 633, and AC4's gating memo was delivered — *a budget costed against conditions
+> that no longer hold*, for the seventh time.
+>
+> ⭐⭐ **THE SHARPEST FINDING: THE AMENDMENT THAT REPLACED AC4 LEFT THE LIMB THAT FAILED IT
+> UNCHANGED.** DEFECT-4 was that AC4's distinguishing claim *"was tested by nothing — a breach test
+> proves a budget fails when exceeded, and **a transcribed budget breaches identically**."* AC4 was
+> **REPLACED**; `verification_method` still reads *"V1–V4 **unchanged in kind** … **deliberate budget
+> breach**"*. ⇒ **DEFECT-4 survives intact inside the verification method written to close it.**
+> ⭐ **And the asymmetry is visible in one sentence**: AC1's amendment *was* mirrored into V1 —
+> `IN-CONTAINER` is right there in caps — and AC4's was not, same author, same field, same sitting.
+> **A criterion and its limb are two objects, and amending one is not amending the other.**
+>
+> ⭐⭐ **AC4's INTERIM CLAUSE IS KEYED TO AN EVENT THAT CAN NO LONGER OCCUR.** It reads *"if ⊳ D-E's
+> **mirror** has not landed"* — and **the mirror was WITHDRAWN at A3** as contradicted from both ends.
+> The antecedent is not *"not yet"* but **"never"**, so AC4 is permanently in its fallback and nothing
+> says so. ⭐ **This is the *criterion amended around a temporary condition* class INVERTED**: in its
+> four prior sightings the condition **expired**; here it was **abolished by a later amendment in the
+> same document**, and the criterion was not re-read against it. **An amendment can strand a clause
+> elsewhere in the file it is amending.**
+>
+> ⛩ **AND AC4's CRITERION AND ITS OWN AMENDMENT ROW GIVE OPPOSITE INSTRUCTIONS, LIVE TODAY.** The
+> criterion says *proceed under the interim clause, report as a gap*; the amendment row says
+> ***"do not build B2 before that answer."*** The memo was **delivered 08-27** with `ack_required:
+> true` and **there is no reply** `[D]`. ⇒ **P4.4b cannot be executed as written without choosing
+> between two clauses of its own AC4**, and neither is subordinate on its face. **Left to the
+> operator (§4), not resolved here** — recommendation **(c)**: build **B2a** now, hold **B2b**.
+>
+> ⭐⭐ **B2 FUSES TWO REACHABILITY CLASSES, AND THE REMEDY IS THIS MISSION'S OWN SPLIT ONE LEVEL
+> DOWN.** The **sweep** runs over the CI-built artifact with *no* external dependency; the **budget
+> provenance** is the half that waits — and B2 bundles them under a single ⊳ D-E gate, so the
+> unblocked half is blocked by a question it does not depend on. P4.4 was split into P4.4a/P4.4b on
+> exactly this principle, stated in this file: ***"the split line is REACHABILITY, not topic."***
+> B2 fuses on **topic**. ⇒ **B2a / B2b.**
+>
+> ⭐ **Three further limb defects, all with zero-new-instrument remedies** — conventions 15/16/17 each
+> ruled against authoring an instrument at the tail of a sitting, and three of this desk's last four
+> instrument defects are why. **V1 cannot see over-masking** (a mask that swallows a real region
+> leaves it green forever; masks only ever grow) — remedy is `gate-48`'s already-ratified exclusion
+> discipline, *"THE EXCLUSIONS ARE PART OF THE CLAIM AND ARE ASSERTED, NOT ASSUMED"*, with G48d's
+> pinned arithmetic. **V4 cannot tell a *wired* instrument from an *inert* one** — AC2 says *"WIRED
+> INTO THE APP AND SHIPPED"*, V4 tests *shipped*; the campaign has been bitten twice (P4.2's
+> font-weight *"migration announced in a comment"*, the `aria-live` residue). **AC3's *"fails
+> loudly"* is tested by nothing** — one passing sweep run proves the sweep executes, not that it
+> fails.
+>
+> ⭐ **AND THE STRUCTURAL FINDING IS UPSTREAM OF ALL THREE: THE V-LIMBS ARE UNLABELLED.** P5.1's and
+> P4.5b's limbs carry `[asserts AC-n]`; P4.4b's do not, and they are listed in an order that does
+> **not** track AC1–AC4 — the second limb belongs to AC4, the fourth to AC2. **A pass cannot ask "is
+> this criterion tested by anything" against a field that never says what anything tests**, and all
+> three mismatches became visible only once the mapping was written out. *An unlabelled limb is how a
+> partial pass reads as complete* — convention 13's own amendment, one level down. Remedy: free.
+>
+> ⚠ **Two execution hazards named so B0 does not discover them by flake.** ⭐ **A baseline is the one
+> artifact in this suite where an instrument defect becomes PERMANENT** — every other gate re-derives
+> each run; a baseline is captured once and everything after is compared to it. This campaign has
+> produced that defect twice (P4.1's *"dark screenshot under a light filename"*; P4.2's **71 phantom**
+> nav failures from class-toggling) and P4.3 found **`addInitScript` silently not applying**, so *the
+> very API the correct pattern uses can fail open*. Verified at the object: `BaseLayout.astro:74–76`
+> (dark default, light via `localStorage.theme`), `gate-4-a11y.spec.ts:73–80` (the working seed).
+> ⇒ **B0 needs a theme control on capture.** And the **freshness date is a confirmed dynamic region**,
+> not a hypothetical one — `utils/contentSource.ts:63 lastUpdated()` renders a git-derived per-page
+> date through `DocumentationLayout` across five route families `[D]`.
+>
+> ✅ **One control passed and is recorded as a result**: `gates.yml` already runs
+> `mcr.microsoft.com/playwright:v1.59.1-noble`, so AC1's container amendment adds a **snapshot
+> project**, not a CI substrate — the 08-24 amendment predicted this and the prediction held.
+>
+> ⛩ **Budget proposed for re-ratification: ~250–400 kT / 2 → ~330–520 kT / 3 sessions** (**~280–440
+> under (a)/(c)**, because B2b leaves the band). The raise is **≈1.3× and modest on purpose** —
+> nothing here adds a feature; it is three red-test mutations, the mask discipline, the theme control
+> and the split. Contrast P4.4a's **2.4×**, which was real new work.
+>
+> ⏭ **NEXT: ⛩ THE SIGNATURE** on `ac_amendment_proposal_p4_4b.md`, which also carries the **one
+> operator question** (§4). **Until then, no build.**
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is
@@ -781,10 +873,19 @@ for a reason a bare read will get wrong. **The artifact is the record.**
 > **Originally OPEN at AC0.** AC0 + V5, the 16 live
 > register rows, the three rescoped-in gate classes + the token census, the derived-count gates
 > (F-c · F-m · F-n) and the gate fixes (F-a · F-i · F-j · F-p). **No external dependency.**
-> **P4.4b** — *the three new systems* (`sonnet`, ~250–400 kT) — **not started**. AC1–AC4.
-> **Every one of its criteria waits on an actor outside the session** — the operator's dashboard, lemur's
-> push, or Vitruvius's mirror. ⭐ **The split line is REACHABILITY, not topic**, so P4.4a cannot be
-> blocked and P4.4b's blockers are visible on its face instead of discovered at execution.
+> **P4.4b** — *the three new systems* (`sonnet`, ~250–400 kT) — ~~**not started**~~ **OPEN AT ITS
+> ⛩ PRE-BUILD GATE 2026-08-26 (see the P4.4b block below)**. AC1–AC4.
+> ~~**Every one of its criteria waits on an actor outside the session** — the operator's dashboard, lemur's
+> push, or Vitruvius's mirror.~~ ⭐⭐ **STRUCK 2026-08-26 — FALSE FOR THREE OF THE FOUR, AND CONTRADICTED
+> BY AN AMENDMENT WRITTEN THE SAME DAY** (SO-6; the reasoning is the reusable part). **lemur's push** is
+> discharged (freeze lifted 08-25). **The operator's dashboard never bound the build** — AC2 was
+> *replaced in the same sitting* to be met **ON-BUILD**. **Vitruvius's mirror** was **WITHDRAWN at A3**
+> as the wrong mechanism, so that blocker names a thing that no longer exists. Only **AC4** has a live
+> external dependency, and it carries an interim clause ⇒ a **branch, not a block**.
+> ⭐ **The split line is REACHABILITY, not topic**, so P4.4a cannot be
+> blocked and P4.4b's blockers are visible on its face instead of discovered at execution. ⚠ **And that
+> principle is exactly what this line stopped applying**: a blocker list is only load-bearing if it is
+> re-read when its entries expire, and three of these three had.
 >
 > **The pre-build gate ran convention 13 at 30/30 with coverage recorded and found ZERO of five criteria
 > executable as written** — AC2 unreachable by anything P4.4 does (needs a prod deploy under a freeze
