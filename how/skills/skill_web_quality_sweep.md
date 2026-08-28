@@ -2,7 +2,7 @@
 type: skill
 skill_type: agent
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-08-28   # step-1/2 patch: the three CI injectors made part of the build step (Grande Revue P0 finding — the skill's own procedure false-redded gate-30 on a fresh checkout); baselines refreshed 203pp/371 → 226pp/659, superseded-not-deleted
 status: active
 category: quality
 trigger: "Any assessment, review, audit, phase-gate verification, or re-score of a rendered web surface — and any HAUSSMANN mission whose verification_method names gates, captures, Lighthouse, or a machine-eye pass"
@@ -59,20 +59,32 @@ whose commit is unrecorded cannot be compared to any other sweep.
 ```bash
 cd ~/aDNA/aDNA.aDNA/site
 npx astro build            # NEVER npm run build — prebuild regenerates committed registry data (pt19)
+node scripts/inject_headers.mjs . && node scripts/inject_installer_headers.mjs . && node scripts/inject_redirects.mjs .
 ```
 
+**The three injectors are part of the build for this skill's purposes, not an optional extra.**
+`astro build` does not inject headers, installer routes, or redirects — CI runs them as separate
+steps (`gates.yml`), and a bare local build leaves gate-30's redirect assertions red on a perfectly
+good tree (convention 6's documented case; re-confirmed live at Grande Revue P0, 2026-08-27, where
+this skill's own step 2 produced two false reds by omitting them).
+
 Record: page count · build time · error count · every warning verbatim.
-Expected shape (2026-08 baseline `[D]`): ~203 pages, <10 s, 0 errors, 2 non-fatal Vite warnings.
-A page-count *decrease* is a finding, always.
+Expected shape (~~2026-08 baseline `[D]`: ~203 pages~~ superseded — baseline `[D] 2026-08-27`:
+**226 pages**, <10 s, 0 errors). A page-count *decrease* is a finding, always.
 
 ## Step 2 — Regression floor
 
 ```bash
-npm run test:gates          # full suite incl. @audit specs
+npm run test:gates          # full suite incl. @audit specs — chromium project only (visual lane is container-only)
 # npm run test:gates:fast   # excludes @audit — for iteration only, never for an assessment of record
 ```
 
-Record pass/fail counts and duration. Baseline `[D] 2026-08-16`: **371/371 pass, ~1.5 min**.
+Record pass/fail counts and duration. Baseline ~~`[D] 2026-08-16`: **371/371 pass, ~1.5 min**~~
+superseded — `[D] 2026-08-27`: suite is **659** derived (633 → 659 at P4.4b B0, gate-49); the fast
+lane ran **514 passed / 1 skipped / 0 failed** at Grande Revue P0 *after* the injectors above.
+⚠ **The gate-49 visual lane runs ONLY in `mcr.microsoft.com/playwright:v1.59.1-noble`** — its
+baselines are generated and compared in-container by design (P4.4b AC1); a bare-macOS run false-reds
+and is not evidence of anything. Never chase its reds outside the container.
 **Red here stops the sweep.** Green here means "no known regression," not "good."
 
 ## Step 3 — Static analysis (parallel-safe, against `dist/`)
