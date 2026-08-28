@@ -689,6 +689,18 @@ synthetic reader may notice a thing; it does not get to assert one.
 > registry-driven copy moves underneath a hand-counted figure. Left as-written, corrected in **§9.4**.
 > R-124's own disposition changed too — **deferred out of P4.5a**, see §9.3.
 
+> ⛩ **Annotation (GRANDE REVUE Gate 1 Lane B3, 2026-08-28) — the deferral now has a GATE, not a
+> narrative.** The revue found (P2-5) that R-124 had become a **narrative-only deferral**: both missions
+> its deferral named as owners (P4.5b, P5.1) closed or handed off **without taking it** — 0 hits in
+> either signed amendment — which is the exact class P4.3's close condemned (*a deferral recorded only
+> in narrative is a deferral with no gate*). **Named destination, per the ⛩-signed battle plan:
+> Lane D (story coverage) of `artifacts/grande_revue/battle_plan.md` — the ⛩ audience decision this row
+> has needed since P4.5a §9.3 (*"needs an audience decision before it needs copy"*) is taken at Lane D's
+> own scope gate, before any copy is authored.** Supersession condition: this routing lapses if Lane D
+> closes without ruling it, at which point the row re-escalates to the campaign's next ⛩ gate — it does
+> not silently expire. Status stays **gap → open**; the row moves only when `/privacy`/`/security` (or a
+> ruled alternative surface) acknowledges the question, or the operator rules the audience out of scope.
+
 > **⛔ SUPERSEDED 2026-08-20 by ⛩ DP6 ⊳ D-C — kept, never deleted (SO-6).** The paragraph below states
 > that this finding is *"not filed as a copy defect"* and that the live question is *"routed to the P2.6
 > re-plan."* Both were true when written and are false now: the re-plan **ruled it**
