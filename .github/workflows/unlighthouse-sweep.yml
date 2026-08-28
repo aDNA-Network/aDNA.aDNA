@@ -1,0 +1,72 @@
+# unlighthouse-sweep.yml — HAUSSMANN P4.4b B2a (AC3 as amended ×2, signed 2026-08-26).
+#
+# Weekly whole-site Lighthouse sweep over the CI-BUILT artifact — reproducible, matches HEAD,
+# no freeze dependency. Production sweeps are EXPLICITLY OUT OF SCOPE and belong with
+# convention 16's deliberately-unbuilt monitor.
+#
+# FAILS LOUDLY BY CONTRACT (V3): a budget breach exits non-zero and this run goes red.
+# No continue-on-error anywhere in this file — the opposite posture to external-links.yml,
+# on purpose. gate-51 asserts that (and the rest of this file's contract) in the suite,
+# red-proven, so the contract cannot rot in silence.
+#
+# ⚠ CO-RUN PROHIBITION (AC1 × AC3, convention 6): this lane and the gates lane both drive a
+# browser over the whole site; co-running produces flaky visual diffs that read as real
+# regressions. ENFORCED, NOT STATED — this workflow JOINS gates.yml's concurrency group
+# (`gates-${{ github.ref }}`) rather than declaring its own, exactly as gates.yml's own
+# comment (lines 142–146) contracts. cancel-in-progress is false HERE so the sweep queues
+# behind a running gate lane instead of cancelling it.
+#
+# ⚠ BUDGET PROVENANCE (B2b, HELD): the perf bar lives in site/unlighthouse.config.ts and is
+# TRANSCRIBED from gate-19's standing BUDGET (un-sourced — register row F-e). Source-hashed
+# provenance is B2b's owed work (AC4 ◐, ⊳ D-E). This workflow does not claim it.
+#
+# Version pin: @unlighthouse/cli is npx-pinned here rather than added to site/package.json,
+# so the heavy sweep toolchain does not ride every `npm ci` in the gates lane. The pin is
+# the reproducibility mechanism; bump it deliberately, never float a tag.
+
+name: unlighthouse-sweep
+
+on:
+  schedule:
+    - cron: '43 7 * * 2' # Tuesdays 07:43 UTC — off-peak minute on purpose (see external-links.yml)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gates-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # the git-derived freshness layer reads history
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      # npx astro build, NEVER npm run build — the npm prebuild regenerates committed data
+      # from sibling vaults that are not in this checkout (campaign convention 6).
+      - name: Build (posture-safe — committed data, no prebuild regen)
+        run: npx astro build
+
+      - name: Serve the CI-built artifact
+        run: |
+          (npm run preview -- --port 4462 &)
+          for i in $(seq 1 30); do curl -sf http://localhost:4462/ > /dev/null && break; sleep 1; done
+          curl -sf http://localhost:4462/ > /dev/null
+
+      - name: Unlighthouse sweep (budget-failing — a breach reds this run)
+        run: npx -y -p @unlighthouse/cli@0.18.0 unlighthouse-ci --site http://localhost:4462

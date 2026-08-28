@@ -7,3 +7,6 @@ evidence/
 test-results/
 .vercel
 .env*
+
+# Unlighthouse sweep output (P4.4b B2a) — local/CI run artifact, never committed
+.unlighthouse/
