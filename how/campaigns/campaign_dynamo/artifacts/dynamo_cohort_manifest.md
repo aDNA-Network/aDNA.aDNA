@@ -2,7 +2,7 @@
 type: artifact
 artifact_class: cohort_manifest
 created: 2026-08-26
-updated: 2026-08-26
+updated: 2026-08-28
 status: active
 status_note: "⛩ GATE 1 RATIFIED 2026-08-26 (operator, in-chat inline ruling table): DP-1 A · DP-2 B (pre-ruled) · DP-3 A · DP-4 B (pre-ruled) · DP-5 A · R1 held open (#needs-human, non-blocking) · R2 read-quarry allowed · R3 as proposed · R4 inline. ⛩ GATE 2 RATIFIED same day: all four genesis campaigns approved as authored; ROUTER COHORT ROW INSERTED under the gate's authority (Home.aDNA commit e751c12; the four per-graph staged memos flipped satisfied). P2/P3 executed — see the Seed register. AAR: ../aar_operation_dynamo_20260826.md."
 campaign_id: campaign_dynamo
@@ -11,7 +11,7 @@ last_edited_by: agent_rosetta
 tags: [dynamo, compute_cohort, manifest, roster, triage, ray, hardware, kubernetes, argo, jupyterlab, acceleration]
 ---
 
-# Operation Dynamo — Compute Cohort Manifest (DRAFT)
+# Operation Dynamo — Compute Cohort Manifest
 
 The triage-and-disposition register of the **compute-infrastructure cohort**: Hardware ·
 Acceleration · Argo · JupyterLab · Kubernetes · Ray. Operation Dynamo is the **compute sibling of
@@ -52,12 +52,12 @@ claim below carries a path. Unknowns carry `#needs-human` — nothing is invente
 member-authored content; `Argo/JupyterLab/Kubernetes/Ray.aDNA` are empty template scaffolds
 (name-reservations). None are org artifacts; none are workspace graphs. See Gate-1 rider R2.
 
-## Cohort roster (proposed)
+## Cohort roster (ratified — ⛩ Gate 1, 2026-08-26)
 
-| # | Target | Graph | Disposition (proposed) | Category | Persona pin | Class | State (2026-08-26) |
+| # | Target | Graph | Disposition (ratified) | Category | Persona pin | Class | State (2026-08-26) |
 |---|--------|-------|------------------------|----------|-------------|-------|--------------------|
 | 1 | Ray (distributed compute) | `Ray.aDNA` | **SCOPE → SEED** (seam-gated on Galileo) | Platform · SDG, software-named brick | **Helios** | control-plane (compute lanes) + **§8 flag** on the persisted job/model volume — ruled at P0 | absent; software **LIVE on L2, ungoverned** |
-| 2 | Hardware (node hardware ontology) | `Hardware.aDNA` | **SEED** (one graph, two legs — see §DP-3) | `tbd_at_p0` (Framework candidate) | **Babbage** | knowledge-only; no runtime; taxonomy generic (per-node fingerprints stay in Home/Network) | absent; facts scattered, one live contradiction (lsu_l2) |
+| 2 | Hardware (node hardware ontology) | `Hardware.aDNA` | **SEED** (one graph, two legs — see §DP-3) | `tbd_at_p0` (Framework candidate) | **Babbage** | knowledge-only; no runtime; taxonomy generic (per-node fingerprints stay in Home/Network) | absent; facts scattered, one live contradiction (lsu_l2 — ⛩ closed 2026-08-27) |
 | 3 | Acceleration (GPU/CUDA/VRAM discipline) | *(leg of `Hardware.aDNA`)* | **FOLD into #2** as `what/context/gpu_acceleration/` (see §DP-3) | — | — | — | absent; constraints scattered across Inference/ComfyUI/LlamaCppForge |
 | 4 | JupyterLab | — | **DO-NOT-CREATE** (facet of `Jupyter.aDNA`) — see §DP-1 | — | Galileo (existing) | — | deliberately absent; `Jupyter.aDNA` live v1, Tier-1 conformant |
 | 5 | Kubernetes | `Kubernetes.aDNA` | **SEED — forward-planning genesis stub** (⛩ pre-ruled 2026-08-26, see §DP-2) | Platform · SDG (working), software-named brick | **Palinurus** | control-plane; **nothing running** — stub makes no deployment claims | absent; L2 = rootless podman; dormant k8s/helm assets in the lab repo |
@@ -70,7 +70,10 @@ that graph's own P0. All four verified unused 2026-08-26 (router table + 8 non-r
 Common seeding conditions (all SEEDs): genesis-planning stubs — **no install, no deploy, no service
 start, no infra**; local `git init`, no remote; router rows **STAGED `#needs-human`** (never
 self-inserted); four wrappers per ADR-037/045 (`how/federation/{git,feedback,iii}/` + Home
-credential-routing snippet, names-only); deployment-gated standing orders.
+credential-routing snippet, names-only) — **three where `feedback/` is deferred-by-design; see the
+conformance audit table** (Hardware deploys nothing, so the deploy-signal loop has no signal to
+carry, and its wrapper count is two-plus-routing, not three-plus-routing); deployment-gated
+standing orders.
 
 ### Seed register (P2 executed 2026-08-26, same-day as Gate 1)
 
@@ -173,10 +176,31 @@ graph coordinates, code lands in Galileo's tree — see campaign M3).
 - L2 (exxact3): richest record at `Jupyter.aDNA/what/lab/deploy/l2-seed/exxact3.lattice.yaml:18-37`
   — Supermicro SYS-4029GP-TVRT, 8× V100-SXM2-32GB NVLink, CUDA 12.8, 7.3 TB RAID,
   rootless-podman 4.9.3.
-- **Live contradiction**: `Network.aDNA/what/network/nodes/lsu_l2.aDNA/STATE.md:32`
-  (2× Xeon Silver 4216, 1007 GiB — corrected S258) vs the same graph's `MANIFEST.md:20,84`
-  (AMD EPYC, 1024 GB — stale). Two hardware strings for one box in one graph. → Venus coord memo
-  (Phase 2), never an edit in her tree.
+- **~~Live contradiction~~ → ⛩ CLOSED 2026-08-27, and narrower than we reported.** As found:
+  `Network.aDNA/what/network/nodes/lsu_l2.aDNA/STATE.md:32` (2× Xeon Silver 4216, 1007 GiB —
+  corrected S258) vs the same graph's `MANIFEST.md:20,84` (AMD EPYC, 1024 GB). Reported to Venus by
+  memo (Phase 2), never an edit in her tree — and she **ruled it from the node**, not from the three
+  secondary records, per SO-7: a contradiction *inside* the mirror cannot be settled by a majority
+  vote among mirrors. Read-only mesh probe from `stanley_l1`, 2026-08-27: `Xeon Silver 4216`,
+  `Socket(s): 2`, `Core(s) per socket: 16`, `CPU(s): 64`, `free -g total: 1007`, 8× V100-SXM2-32GB.
+  ⇒ `STATE.md:32` **correct**; `MANIFEST.md:84` **corrected in her tree with the probe recorded
+  inline as `hardware_provenance`**.
+
+  ⚠ **Her narrowing — this manifest named two false strings and only one was false.** `MANIFEST:20`
+  carries **no vendor at all**, and its `64` is the *thread* count in `lscpu`'s own `CPU(s)`
+  vocabulary: a **coarser** row than `:32`, not a contradicting one. She left it alone. **And the RAM
+  figures were never a third contradiction**, though they read like one — `1024` is nominal installed
+  capacity, `1007 GiB` is what the OS reports after firmware reservation. Advertised vs usable:
+  `exxact3.lattice.yaml` (`memory_gb: 1024`) and `STATE.md` (`1007 GiB`) are **both right about
+  different things**, and ruling from the three records would very likely have "corrected" one true
+  value into another.
+
+  **Both halves went into the vocabulary requirement**, which is the point of the exercise: the
+  machine-class schema must express **advertised-vs-usable** as distinct capability statements, and
+  must say which of `CPU(s)` / cores / sockets a bare integer denotes. Recorded at
+  `Hardware.aDNA/what/context/node_hardware/context_evidence_base_20260826.md` §"Dated note".
+  Neither desk could have closed this alone — the contradiction was visible only from a cohort-wide
+  vantage, the resolution only from a mesh vantage.
 - Fleet index: 15 node-mirror graphs under `Network.aDNA/what/network/nodes/` are the de-facto
   inventory; `Lighthouse.aDNA` composes by software brick, never by hardware class (zero hardware
   mentions in its STATE).
@@ -415,5 +439,22 @@ pre-ruled stubs are mechanical once the template is warm; JupyterLab needs only 
 
 Operation order (2026-08-26, operator) → Phase 0 three-lane recon (same day, read-only) → this
 manifest (P1 sole artifact) → Gate 1 rulings recorded in the blocks above → Phase 2 execution
-strictly per ruling. Campaign master: authored at Phase 3 alongside the per-graph campaigns
-(the campaign dir is born with this artifact; charter follows the rulings it must encode).
+strictly per ruling. Campaign master: [[../campaign_dynamo|campaign_dynamo]], authored at Phase 3
+alongside the per-graph campaigns (the campaign dir is born with this artifact; charter follows the
+rulings it must encode).
+
+### Dated refresh — 2026-08-28 (P5 refit, `missions/mission_refit_m05.md`)
+
+Per the Keystone dated-refresh pattern: this artifact is **not** rewritten to look as though it were
+always right. What changed, and why:
+
+| Was | Now | Finding |
+|-----|-----|---------|
+| Title carried "(DRAFT)"; roster "(proposed)"; column "Disposition (proposed)" | De-DRAFTed; roster and column marked **ratified** | **F11** — both gates fired 2026-08-26; the labels had outlived the ruling by two days |
+| Seeding conditions said "four wrappers" flatly | Notes the **three where `feedback/` is deferred-by-design**, pointing at the conformance audit table | **F15a** — the sentence contradicted this manifest's *own* audit table |
+| lsu_l2 recorded as a live contradiction | ⛩ **CLOSED**, with Venus's narrowing of our over-claim stated in full | **F1-adjacent** — the fix and the *lesson* both recorded, per this manifest's own §"inherits the fix rather than the lesson" warning |
+| Provenance line unlinked | Wikilinked to the campaign master | **F11** |
+
+⚠ **On dating, stated because this manifest asks others to state it:** the P4 artifacts were authored
+on the morning of 2026-08-27 and stamped to the 2026-08-26 sitting. This refresh was executed
+2026-08-28 and is dated 2026-08-28.

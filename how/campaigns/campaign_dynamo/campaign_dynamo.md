@@ -4,24 +4,28 @@ type: campaign
 title: "Operation Dynamo — Compute Cohort Genesis & Triage"
 owner: stanley
 status: active
-phase_count: 5
-mission_count: "4 phase-acts (P0 recon · P1 manifest · P2/P3 genesis+campaigns · P4 consolidation); per-graph missions live in each graph"
+phase_count: 6   # P0-P4 = 5; +P5 refit (mission_refit_m05), added 2026-08-28
+mission_count: "5 phase-acts (P0 recon · P1 manifest · P2/P3 genesis+campaigns · P4 consolidation · P5 refit); per-graph missions live in each graph"
 estimated_sessions: "1-2 (executed largely in one sitting) + per-graph genesis ladders"
 estimation_class: governance-broad
 priority: high
 parent_campaign:
 created: 2026-08-26
-updated: 2026-08-26
+updated: 2026-08-28
 last_edited_by: agent_rosetta
 tags: [campaign, dynamo, compute_cohort, keystone_sibling, ray, hardware, kubernetes, argo]
 ---
 
 # Campaign: Operation Dynamo — Compute Cohort Genesis & Triage
 
-> **⏭ Phase status (2026-08-26):** P0 (recon) ✅ · P1 (manifest) ✅ · ⛩ **Gate 1 RATIFIED**
+> **⏭ Phase status (updated 2026-08-28):** P0 (recon) ✅ · P1 (manifest) ✅ · ⛩ **Gate 1 RATIFIED**
 > (operator, in-chat — rulings in the manifest `status_note` + §DP blocks) · P2 (genesis: 4 graphs
-> seeded) ✅ · P3 (campaigns + adjacent deltas) ✅ · **⛩ Gate 2 + P4 (router/STATE/AAR) = the
-> live edge.**
+> seeded) ✅ · P3 (campaigns + adjacent deltas) ✅ · ⛩ **Gate 2 RATIFIED** ✅ · P4 (router `e751c12`
+> · HQ `b527a37` · AAR) ✅ · **P5 refit = the live edge.**
+>
+> *This block read "Gate 2 + P4 = the live edge" for two days after both had fired (audit finding
+> **F7**). P5 (`missions/mission_refit_m05.md`) closes 15 findings from the 2026-08-27 fresh-eyes
+> audit of the 08-26 seeding — including this one.*
 
 ## Commander's Intent (from the operation order, 2026-08-26)
 
@@ -49,8 +53,12 @@ Operation Keystone.
   M00s are **fable-tier meta-planning** per the operator's plan-review ruling). Seam memo to
   Galileo (ratified, ack invited) · contradiction memo to Venus (lsu_l2) · courtesy memo to
   Pandora (staged sender-side).
-- **P4** (pending Gate 2): router row(s) per ruling · aDNALabs STATE pointer (lease-checked) ·
-  AAR · final commit sweep · SITREP.
+- **P4** ✅ (2026-08-26/27): router cohort row inserted under the Gate 2 ruling (`e751c12`) ·
+  aDNALabs STATE pointer (`b527a37`) · AAR · commit sweep · SITREP.
+- **P5 (refit)** — `missions/mission_refit_m05.md`, executed 2026-08-28. Closes the 15 findings of
+  the 2026-08-27 adversarial audit: wrapper schema migration ×11 · Home registration staged ·
+  three owed memos delivered · Ray's `data_bearing` string, guarded-lane target and five dead M00
+  refs · gitleaks hooks ×4 · Hardware de-templated + M04 authored · router prose · this record.
 
 ## Success criterion (from the order)
 
