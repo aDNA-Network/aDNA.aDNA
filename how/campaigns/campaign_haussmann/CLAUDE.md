@@ -841,9 +841,31 @@ untouched and still blocked on actors outside the session.
 > **convention 6's documented case** (`astro build` does not inject redirects), diagnosed by asking
 > which step produces the thing it asserts before changing anything.
 >
-> ⏭ **NEXT: `B1`** (field instrument, **wired AND emitting** — V4's amended limb) **then `B2a`** (the
+> ~~⏭ **NEXT: `B1`** (field instrument, **wired AND emitting** — V4's amended limb) **then `B2a`** (the
 > sweep, **failing loudly** — V3 needs a run that goes red, not merely a run). ⛔ **B2b stays held**
-> under ⛩ ruling (c) until Vitruvius answers.
+> under ⛩ ruling (c) until Vitruvius answers.~~
+>
+> ✅ **B1 + B2a DONE 2026-08-28** (`9c8d79b` · `f852060`) — suite **659 → 667** derived, fast lane
+> 514 → 522/1skip. **B1 / AC2 ✅ ON-BUILD**: `web-vitals` emitter wired in `BaseLayout`, same-origin,
+> **zero-network by construction** (CSP `connect-src 'self'` · static output · gate-42 each forbid a
+> transport today); **emission observed live** (TTFB + FCP on one page load → `window.__adnaVitals` +
+> the `adna:vital` event); `gate-50` red-proven **6/6**; `/privacy` gained §performance **in the same
+> commit, before ship, per that page's own written commitment**. The owed-list is on the mission's
+> face: dashboard enable (Speed Insights, ⛩ operator) → transport (its own gate, `/privacy` first) →
+> first p75 reading (+ deploy + traffic). **B2a / AC3 ✅**: weekly `unlighthouse-sweep.yml` over the
+> CI-built artifact, **no `continue-on-error`**, **joins `gates-${{ github.ref }}`** exactly as
+> gates.yml's own comment contracts (queues, never cancels); `gate-51` contract gate red-proven **7/7**
+> incl. a transcription-drift detector binding the sweep's bar to gate-19's `perfMin`×100 same-diff;
+> **V3 demonstrated live** — EXIT=1 at bar 100 with per-route ERRORs, EXIT=0 at the standing 90.
+> ⭐ **The calibration finding**: Unlighthouse's CI default applied **mobile 4G network throttle to a
+> DESKTOP form factor**, scoring the site **0.78** where gate-19's fixture instrument
+> (`--preset=desktop`) reads **0.95–1.0** — *a bar transcribed from one instrument and enforced by a
+> stricter hybrid is two instruments sharing one number*; the sweep is pinned to the bar's own
+> instrument, measured not assumed. ⛔ **B2b stays HELD** — Vitruvius's 08-27 notice telegraphs a
+> scope-B reply *staged on their side*; a staged reply is not a delivered one, so the ⛩ re-entry gate
+> has not fired. ⏭ **NEXT: GR-1 Lane A at its own conv-13 pre-build gate** (the ratified Gate-1
+> order); P4.4b's own remainder is **B3** (+ B2b when the reply lands). Nothing deployed — P4.4b is
+> met on-build; the first on-GitHub scheduled sweep run is owed on the next ⛩ push GO.
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is
