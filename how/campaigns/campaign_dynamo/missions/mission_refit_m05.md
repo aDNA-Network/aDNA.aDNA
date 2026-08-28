@@ -3,9 +3,10 @@ plan_id: mission_refit_m05
 type: plan
 title: "P5 Refit — post-AAR corrections to the Dynamo compute cohort (15 audit findings)"
 owner: stanley
-status: in_progress
+status: completed
 claimed_by: session_stanley_20260828_124050_dynamo_p5_refit
 claimed_on: 2026-08-28
+completed_on: 2026-08-28
 campaign_id: campaign_dynamo
 campaign_phase: 5
 campaign_mission_number: 5
@@ -190,3 +191,52 @@ M00s · executor_tier fable → `/model fable`".
 5. `for g in Ray Hardware Kubernetes Argo; do shasum -a 256 ~/aDNA/$g.aDNA/.git/hooks/pre-push; done` → 4× `0ee689ec…49fe`; `.gitignore` present ×4.
 6. `git status --porcelain` clean in all 9 repos (other lanes' pre-existing untracked files excepted).
 7. `head -5 ~/aDNA/Hardware.aDNA/AGENTS.md` names Hardware; `mission_detemplate_m04.md` passes a fresh-context read.
+
+---
+
+## Close — 2026-08-28
+
+**All 9 acts executed.** Verification suite run at close (results in the session record). 12 findings
+fixed, 2 delegated to an execution-ready mission, 1 reported-not-adjudicated. Full disposition table
+and the honest account of what this mission's own spec got wrong: the **P5 addendum** on
+[[../aar_operation_dynamo_20260826|aar_operation_dynamo_20260826.md]].
+
+### Deviations from this file, and their basis
+
+1. **Act 1 applied per wrapper kind, not blanket** (operator-ruled at the plan gate, 2026-08-28).
+   This file directed a blanket `version: null` + `version_policy: commit_pin` *and* directed that
+   Container's exemplar be mirrored precisely — but that exemplar only uses `commit_pin` for `git`.
+   Blanket application would have **de-pinned III from its live v0.6.0 series**: fresh drift wearing
+   the costume of a fix. `iii` wrappers pin `0.6.0` @ `be7dba1` (the **tag** commit, not III's HEAD,
+   so the pin matches the version it declares); `feedback` pins spec `0.1.0`.
+2. **Act 0's ADR-022 prediction was wrong** (operator-ruled, same gate). The memo bears on the
+   standard's `MEMBERSHIP_*` vocabulary, not Hardware's machine-class enum — so this file's own
+   `else` branch (record-and-leave) applied, and no Hardware pointer was added. Its
+   `ack_required: true` went undischarged by this spec; an ack was sent and the substance filed at
+   `how/backlog/idea_upstream_membership_vocabulary_pre_admission_tier.md` rather than ruled from a
+   corrections lane.
+3. **Memos carry 2026-08-28, not this file's pre-authored `coord_2026_08_27_*` filenames.** This
+   mission was authored 08-27 for a successor session; that session opened 08-28. Back-stamping
+   today's memos to yesterday would have repeated the exact defect Act 9 requires be confessed about
+   the P4 artifacts.
+4. **Act 6 was executed before Act 2's commit.** The Act 2 memo asserts the gitleaks hooks are
+   installed; delivering that claim before installing them would have made it false on arrival.
+5. **F3's skill count corrected 4 → 5** by counting; **F2's "blocks derivation" corrected** by
+   reading the deriver (it resolves on `source_vault`; the real defect was stamping `"genesis"` into
+   11 edges as if it were a commit).
+
+### 5-line AAR (SO-9)
+
+- **Worked** — Pre-recorded rulings meant zero re-litigation across 9 acts and 10 repos. Scripting
+  the 11-wrapper migration and the 4 drop-box READMEs kept them byte-consistent.
+- **Didn't** — This file's Act 1 contradicted itself and its Act 0 mispredicted a memo's subject;
+  both were caught only because the exemplar and the memo were read at the object before editing.
+  A pre-authored mission is a hypothesis about files, not a description of them.
+- **Finding** — Every HIGH and most MEDs were **wrong descriptions of correct operations**. Nothing
+  was broken; a truthy string in a boolean field, a one-party "ratified", a stale "live edge", and a
+  vault titled as the standard all *work* — and all get cited. Descriptions rot silently because
+  nothing fails when they do.
+- **Change** — Verify a schema migration by reading its **consumer**, not by grepping that the old
+  key is gone. Check the addressee's drop-box at send time, not at staging time.
+- **Follow-up** — Hestia's registration + 4 gitleaks-register rows · Hardware M04 (sonnet) ·
+  the membership-vocabulary backlog item · the four M00s (fable) · operator close-ruling on Dynamo.
