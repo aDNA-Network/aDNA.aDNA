@@ -6,13 +6,13 @@ campaign: campaign_haussmann
 mission: operation_grande_revue          # commissioned by chief-of-staff order 2026-08-27; executes INSIDE campaign_haussmann as its review-and-improve phase — no standalone mission file yet by design (Phase 2 folds it into the campaign's own plan)
 objective: "Grande Revue Phase 0 — orientation + situation report → Gate 0"
 phase: P4                                # the campaign's live phase; the revue reads it, does not advance it
-status: active
+status: completed                        # closed at Gate 0 presentation; archived 2026-08-28 at the Phase 1 open, when ⛩ Gate 0 was ACKNOWLEDGED — ruling: GO, run Phase 1 now (sequencing per situation report §5)
 executor_tier: fable                     # declared at the open (SO#11 discipline): orientation + situation-report authoring is judgment work run on the session's resolved model; no mechanical sweep to down-tier
 created: 2026-08-27
 updated: 2026-08-27
 last_edited_by: agent_rosetta
 token_budget_estimated: "~60–90 kT — Phase 0 only (recon already spent ~2 subagent windows, costed outside this band as fan-out reads; this band covers build + gate run + situation report + Gate 0 presentation). ⛔ Drawn from NO ratified HAUSSMANN mission band — Grande Revue is a commissioned operation whose budget is put to the operator at Gate 1; Phase 0 is its own orientation act, costed separately per the pre-build-gate precedent."
-token_budget_actual: ""
+token_budget_actual: "not recorded at close — flagged per SO#11 rather than reconstructed (P4.3's lesson: a band cannot be falsified by a prose sentence claiming it holds); the sitting ran Phase 0 only and halted at the Gate 0 presentation as designed"
 tags: [session, haussmann, grande_revue, phase_0, situation_report, review]
 ---
 
