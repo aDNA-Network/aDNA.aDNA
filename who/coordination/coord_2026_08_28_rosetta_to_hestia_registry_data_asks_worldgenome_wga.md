@@ -8,7 +8,12 @@ cc: [WorldGenome.aDNA (Gaia), wga.aDNA]
 cc_delivered: []
 created: 2026-08-28
 updated: 2026-08-28
-status: staged            # ⛩ Lane C GO taken at GRANDE REVUE Gate 1 (2026-08-28): stage → show → deliver
+status: delivered         # ⛩ Lane C GO taken at GRANDE REVUE Gate 1 (2026-08-28): stage → show → deliver
+delivered_to: Home.aDNA/who/coordination/
+delivered_on: 2026-08-28
+delivered_cmp: identical          # cmp run in the same command as the cp (the S419 lesson — never stamp a digest)
+delivered_state: untracked_peer_side   # the delivering session commits nothing in Home.aDNA; Hestia commits at her cadence
+delivered_by: "⛩ Lane C GO, GRANDE REVUE Gate 1 ruling 2026-08-28 (AskUserQuestion: stage and deliver, shown in the session record)"
 ack_required: false
 needs_human: false
 relates: [coord_2026_08_26_worldgenome_registry_row_correction, grande_revue_mid_campaign_review_P1-5, grande_revue_mid_campaign_review_P2-4, pt19]
