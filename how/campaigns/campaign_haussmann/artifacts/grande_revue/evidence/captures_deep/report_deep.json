@@ -1,0 +1,163 @@
+[
+  {
+    "surface": "learn-what-is-adna",
+    "path": "/learn/what-is-adna",
+    "status": 200,
+    "loadMs": 913,
+    "title": "What is aDNA?",
+    "desc": "aDNA (Agentic DNA) is an open standard for organizing project knowledge so that both humans and AI agents can navigate it.",
+    "ogTitle": "What is aDNA?",
+    "h1": "What is aDNA?",
+    "h2count": 6,
+    "bodyLen": 6867,
+    "fullH": 4641,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "learn-tutorials-getting-started-first-vault",
+    "path": "/learn/tutorials/getting-started-first-vault",
+    "status": 404,
+    "loadMs": 740,
+    "title": "Page not found — aDNA",
+    "desc": "The page you're looking for doesn't exist.",
+    "ogTitle": "Page not found — aDNA",
+    "h1": "404",
+    "h2count": 0,
+    "bodyLen": 522,
+    "fullH": 900,
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 ()",
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "reference-specification",
+    "path": "/reference/specification",
+    "status": 200,
+    "loadMs": 961,
+    "title": "aDNA Specification",
+    "desc": "The aDNA knowledge architecture standard — 20 sections, readable one at a time.",
+    "ogTitle": "aDNA Specification",
+    "h1": "aDNA Specification",
+    "h2count": 4,
+    "bodyLen": 3246,
+    "fullH": 3237,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "vaults-graph",
+    "path": "/vaults/graph",
+    "status": 200,
+    "loadMs": 841,
+    "title": "The aDNA network — relationship graph",
+    "desc": "The federation topology of the aDNA network: every edge is a real, directed relationship drawn from vault governance — umbrella, federation, partner, companion, supersedes.",
+    "ogTitle": "The aDNA network — relationship graph",
+    "h1": "The network, drawn",
+    "h2count": 2,
+    "bodyLen": 5293,
+    "fullH": 4614,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "patterns",
+    "path": "/patterns",
+    "status": 200,
+    "loadMs": 927,
+    "title": "Patterns — aDNA",
+    "desc": "Reusable aDNA architectural patterns for common knowledge architecture challenges.",
+    "ogTitle": "Patterns — aDNA",
+    "h1": "Patterns",
+    "h2count": 4,
+    "bodyLen": 3197,
+    "fullH": 2669,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "how-publishing",
+    "path": "/how/publishing",
+    "status": 200,
+    "loadMs": 716,
+    "title": "Publishing — aDNA",
+    "desc": "How aDNA vault content becomes a live documentation site — pipeline, content mapping, and social sharing.",
+    "ogTitle": "Publishing — aDNA",
+    "h1": "Publishing",
+    "h2count": 0,
+    "bodyLen": 1284,
+    "fullH": 1208,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "community-proposals",
+    "path": "/community/proposals",
+    "status": 200,
+    "loadMs": 776,
+    "title": "Proposals — aDNA",
+    "desc": "The numbered public record of proposed changes to the aDNA standard — including the ones that were turned down.",
+    "ogTitle": "Proposals — aDNA",
+    "h1": "Proposals",
+    "h2count": 3,
+    "bodyLen": 2981,
+    "fullH": 2480,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "changelog",
+    "path": "/changelog",
+    "status": 200,
+    "loadMs": 956,
+    "title": "Changelog — aDNA",
+    "desc": "Version history for the aDNA documentation site — release notes, breaking changes, and improvements by version.",
+    "ogTitle": "Changelog — aDNA",
+    "h1": "Changelog",
+    "h2count": 38,
+    "bodyLen": 27321,
+    "fullH": 17956,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "glossary",
+    "path": "/glossary",
+    "status": 200,
+    "loadMs": 888,
+    "title": "aDNA Glossary",
+    "desc": "Quick-reference definitions for all aDNA terms. Each entry includes plain-language and technical explanations.",
+    "ogTitle": "aDNA Glossary",
+    "h1": "aDNA Glossary",
+    "h2count": 4,
+    "bodyLen": 3704,
+    "fullH": 2620,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "state-of-the-network",
+    "path": "/state-of-the-network",
+    "status": 200,
+    "loadMs": 777,
+    "title": "The state of the network — aDNA",
+    "desc": "An honest, dated account of the aDNA network: what runs, what is operator-operated, what belongs to someone else, and what is only planned. Every number derived; every property checked from outside.",
+    "ogTitle": "The state of the network — aDNA",
+    "h1": "The state of the network",
+    "h2count": 6,
+    "bodyLen": 7823,
+    "fullH": 4928,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  }
+]

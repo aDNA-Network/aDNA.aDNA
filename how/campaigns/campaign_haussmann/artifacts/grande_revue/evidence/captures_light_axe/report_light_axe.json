@@ -1,0 +1,172 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 815,
+    "title": "aDNA — the open standard & network for shared context",
+    "desc": "aDNA (agentic DNA) is an open standard for organizing a project's files, so that AI agents and the people working with them can always find what they need. This site is the standard, its docs, and the vault registry.",
+    "ogTitle": "aDNA — the open standard & network for shared context",
+    "h1": "The aDNA Network",
+    "h2count": 6,
+    "bodyLen": 8293,
+    "fullH": 7562,
+    "axeViolations": 0,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "learn",
+    "path": "/learn",
+    "status": 200,
+    "loadMs": 753,
+    "title": "Learn aDNA",
+    "desc": "An ordered path into aDNA: start with the overview, understand the core ideas, practice with a tutorial, then compare to what you already know.",
+    "ogTitle": "Learn aDNA",
+    "h1": "Learn aDNA",
+    "h2count": 5,
+    "bodyLen": 2610,
+    "fullH": 2854,
+    "axeViolations": 0,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "vaults",
+    "path": "/vaults",
+    "status": 200,
+    "loadMs": 889,
+    "title": "Vaults — the aDNA registry",
+    "desc": "Browse the 74-vault aDNA registry — personae, classes, cross-vault relationships",
+    "ogTitle": "Vaults — the aDNA registry",
+    "h1": "The vault registry",
+    "h2count": 5,
+    "bodyLen": 13301,
+    "fullH": 7495,
+    "axeViolations": 0,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "community",
+    "path": "/community",
+    "status": 200,
+    "loadMs": 751,
+    "title": "Community — aDNA",
+    "desc": "Roles, processes, and contribution paths for the aDNA community.",
+    "ogTitle": "Community — aDNA",
+    "h1": "Community",
+    "h2count": 6,
+    "bodyLen": 5848,
+    "fullH": 4221,
+    "axeViolations": 0,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "commons",
+    "path": "/commons",
+    "status": 200,
+    "loadMs": 768,
+    "title": "The Public-Good Commons — aDNA",
+    "desc": "Mission-aligned subnetworks are taking shape on the aDNA network — real missions, named stewards, honest about their stage. See the public-good work and connect to it.",
+    "ogTitle": "The Public-Good Commons — aDNA",
+    "h1": "A commons, not a catalog.",
+    "h2count": 4,
+    "bodyLen": 5889,
+    "fullH": 5207,
+    "axeViolations": 0,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "network",
+    "path": "/network",
+    "status": 200,
+    "loadMs": 760,
+    "title": "The network of aDNA computers",
+    "desc": "An aDNA computer is one machine carrying many context vaults. See how vaults connect through real, directed relationships — and what stays local versus what you federate.",
+    "ogTitle": "The network of aDNA computers",
+    "h1": "The network of aDNA computers",
+    "h2count": 5,
+    "bodyLen": 4603,
+    "fullH": 5545,
+    "axeViolations": 0,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "reference",
+    "path": "/reference",
+    "status": 200,
+    "loadMs": 772,
+    "title": "The Standard — aDNA",
+    "desc": "aDNA specification documents, design rationale, governance model, glossary, and operational guides.",
+    "ogTitle": "The Standard — aDNA",
+    "h1": "The Standard",
+    "h2count": 5,
+    "bodyLen": 2922,
+    "fullH": 2902,
+    "axeViolations": 0,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "use-cases",
+    "path": "/use-cases",
+    "status": 200,
+    "loadMs": 725,
+    "title": "Use Cases — aDNA",
+    "desc": "Illustrative aDNA adoption scenarios across solo developers, startups, research labs, and enterprises.",
+    "ogTitle": "Use Cases — aDNA",
+    "h1": "Use Cases",
+    "h2count": 4,
+    "bodyLen": 2993,
+    "fullH": 2365,
+    "axeViolations": 0,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "get-started",
+    "path": "/get-started",
+    "status": 200,
+    "loadMs": 768,
+    "title": "Get Started — aDNA",
+    "desc": "Set up your own local aDNA workspace in one command: clone the workspace image from GitHub — router pre-instantiated, standard embedded — and let your first agent session scaffold your first project.",
+    "ogTitle": "Get Started — aDNA",
+    "h1": "Get Started",
+    "h2count": 7,
+    "bodyLen": 8943,
+    "fullH": 6228,
+    "axeViolations": 0,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  },
+  {
+    "surface": "about",
+    "path": "/about",
+    "status": 200,
+    "loadMs": 757,
+    "title": "Who's behind aDNA",
+    "desc": "Who's behind aDNA: the Founding Architect, the anchor Wilhelm Foundation partnership, the agent-stewards that tend the network today, and the progressive-decentralization roadmap toward steward-led, public governance.",
+    "ogTitle": "Who's behind aDNA",
+    "h1": "Who's behind aDNA",
+    "h2count": 5,
+    "bodyLen": 4631,
+    "fullH": 4375,
+    "axeViolations": 0,
+    "consoleErrors": [
+      "Loading the font 'data:font/woff2;base64,d09GMgABAAAAAAfsABQAAAAAEAwAAAeCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbHhwoP0hWQVJbBmA/U1RBVIFiJyYAdC9qEQgKhGSEAAsgADCGCAE2AiQDOgQgBYlMB4EUDAcbLQ4onoexrSC/2ZyLAa8p8VHB8/x3Vue+V0hVJalMJg2nx/TCrQXxBeqLjQG"
+    ]
+  }
+]
