@@ -6,14 +6,26 @@ operation: operation_grande_revue
 title: "GRANDE REVUE — the battle plan: Phase 2/3 decomposition proposed at Gate 1"
 created: 2026-08-28
 updated: 2026-08-28
-status: proposed          # ⛩ Gate 1 signs (or amends) this before anything in it executes
+status: accepted          # ⛩ Gate 1 SIGNED AS PROPOSED 2026-08-28 — see the ratification block below
 last_edited_by: agent_rosetta
-session: session_stanley_20260828_135704_haussmann_grande_revue_p1
+session: session_stanley_20260828_144549_haussmann_grande_revue_gate1_laneB_laneC
 grounded_in: "[[mid_campaign_review]] (all finding IDs below refer to its §2)"
 tags: [artifact, grande_revue, battle_plan, gate_1, phase_2]
 ---
 
 # GRANDE REVUE — battle plan (proposed at ⛩ Gate 1)
+
+> ⛩⛩ **RATIFICATION (§7.7)**
+> **decision**: battle plan SIGNED AS PROPOSED — lanes A–D ratified in the recommended order
+> **B → P4.4b B1+B2a → GR-1 Lane A (after its own conv-13 gate) → Lane D**; Lane C additionally
+> **GO'd stage-and-deliver** (memo shown in full before delivery — the outward act rides this GO).
+> **ratified-by**: operator (⛩, via AskUserQuestion at the 2026-08-28 session open)
+> **date**: 2026-08-28
+> **status**: accepted
+>
+> Unchanged by this signature: GR-1's budget is NOT ratified here (its own convention-13
+> pre-build gate comes first, per the note below); P4.4b B2b stays HELD on ⊳ D-E; P5.1 stays
+> with the humans.
 
 > **Nothing below executes on this document's authority.** Gate 1 ratifies the shape; each new
 > mission then gets its own convention-13 pre-build pass BEFORE its budget is ratified (the
