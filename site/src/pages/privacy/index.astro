@@ -4,13 +4,19 @@ import { REPO_HTTPS, PUBLISHER } from '../../data/canonical';
 import { buildWebPageJsonLD } from '../../utils/seo';
 
 // Storyweave P5 M5.3 O5 — the site privacy notice. Every claim below is verified against the
-// codebase (M5.3 O5 recon): zero analytics/tracking/cookies (grep-empty), the only client storage
-// is a functional `theme` preference in localStorage, fonts are self-hosted (no Google Fonts), and
-// there are no third-party script/iframe/img hosts → the browser makes zero third-party requests.
+// codebase (M5.3 O5 recon): zero tracking/cookies, the only client storage is a functional
+// `theme` preference in localStorage, fonts are self-hosted (no Google Fonts), and there are no
+// third-party script/iframe/img hosts → the browser makes zero third-party requests.
 // If any of that changes (e.g. analytics is ever added), this page MUST be updated first.
+// HAUSSMANN P4.4b B1 (2026-08-28): a Core-Web-Vitals measurement script now runs in-page
+// (src/scripts/vitals.ts). It transmits NOTHING — zero-network by construction (CSP
+// connect-src 'self', static output) — so §performance below discloses it and the "collects
+// nothing about you" claims stand. If delivery to an aggregate dashboard is ever enabled
+// (an operator-gated act), this page updates again BEFORE that ships, per the commitment
+// in the closing paragraph.
 const issuesUrl = `${REPO_HTTPS}/issues`;
 const vercelPrivacyUrl = 'https://vercel.com/legal/privacy-policy';
-const updated = '2026-07-13';
+const updated = '2026-08-28';
 ---
 
 <BaseLayout
@@ -49,6 +55,17 @@ const updated = '2026-07-13';
       choice on your next visit. It never leaves your device, is never sent to us or anyone else,
       and you can clear it any time through your browser. That is the only thing the site stores,
       and it exists purely to serve you, not to identify you.
+    </p>
+
+    <h2 id="performance">Performance measurement (stays on your device)</h2>
+    <p>
+      The site runs a small script that measures how fast each page loads <em>in your own
+      browser</em> — standard web performance numbers like "how long until the largest element
+      painted". Today those numbers are <strong>not sent anywhere</strong>: they exist only in the
+      page's memory while it is open and are discarded when you leave. Nothing in them identifies
+      you, and nothing is stored. If we ever start collecting these numbers in aggregate to watch
+      site performance — a change we may make — we will update this page before that ships, per the
+      commitment below.
     </p>
 
     <h2 id="hosting">Hosting &amp; server logs</h2>

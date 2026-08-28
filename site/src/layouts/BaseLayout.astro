@@ -81,6 +81,12 @@ const {
       })();
     </script>
 
+    <!-- Field CWV instrument (P4.4b B1): bundled same-origin module, zero-network.
+         Gate-50 asserts it is shipped AND emitting; see src/scripts/vitals.ts. -->
+    <script>
+      import '../scripts/vitals';
+    </script>
+
     <ClientRouter />
   </head>
   <body class:list={['min-h-screen flex flex-col', bodyClass]}>
