@@ -1,7 +1,7 @@
 ---
 type: directory_index
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-08-28   # GRANDE REVUE Gate 1 Lane B5 (P1-6): adr_047–059 backfilled, 13 rows derived from disk frontmatter; tally 41 → 54; regeneration drift-check fixed (it matched this index's own filename — off by one permanently, found at P4.4a G41c)
 last_edited_by: agent_rosetta
 tags: [directory_index, decisions, adr_index]
 ---
@@ -10,7 +10,7 @@ tags: [directory_index, decisions, adr_index]
 
 One row per ADR in `what/decisions/`, derived from each file's frontmatter + H1. Auto-generated — see Regeneration below.
 
-**Tally:** 41 ADRs — accepted: 40 · amended: 1
+**Tally:** 54 ADRs — accepted: 52 · amended: 1 · proposed: 1
 
 > **Numbering note** (F-CHM-206): numbers **015** and **018–021** are unassigned — reserved/withdrawn during drafting, never materialized as files. The highest number in use (**046**) exceeds the 41-file count by exactly these 5 gaps; the tally counts actual files and is internally correct. ADR-012 records a 009→012 renumber. Do **not** renumber existing ADRs to close the gaps (stable IDs are load-bearing across cross-references). Preserve this note on regeneration.
 
@@ -57,7 +57,20 @@ One row per ADR in `what/decisions/`, derived from each file's frontmatter + H1.
 | [044](adr_044_per_class_frontmatter_profiles.md) | Per-class frontmatter profiles — `status` optional for directory_index + coordination; nested-instance walk exclusion | accepted | 2026-06-30 | 2026-06-30 | Accepted — 2026-06-30 (ratified by the operator; authored by Rosetta / `aDNA.aDNA` during how/missions/mission_frontmatter_conformance, the … |
 | [045](adr_045_wrapper_placement_in_triad.md) | Wrapper placement in the triad — consumer federation wrappers live under how/federation/<wrapper>/ | accepted | 2026-06-30 | 2026-07-02 | Accepted. This pins a structural convention of the aDNA Universal Standard (where a consumer's federation wrappers sit relative to the triad). |
 | [046](adr_046_standard_version_cut_v2_5.md) | Standard version cut v2.4 → v2.5 — ADR-044 fold, ratification-record discipline, federation-wrapper scope decision, version-metadata hygiene | accepted | 2026-07-02 | 2026-07-02 | Accepted — ratified at Champollion G2 with all arms resolved: D2a = v2.5 · D2b = Arm A (absorb — §5.3 gains the federation/ row) · D2c = C6 d… |
+| [047](adr_047_governance_doctrine_checklist_ruling.md) | Operation Concord F1 + DP3 ruling — governance-doctrine adoption is checklist-only (no v6→v8 tooling); consumer vaults adopt the doctrine items, not a version number | accepted | 2026-07-06 | 2026-07-06 | Accepted — ratified by the operator at Operation Concord DP3 (2026-07-06). Consumer vaults adopt the doctrine items, not a version number. |
+| [048](adr_048_positioning_statement_embargo_language.md) | Positioning statement, audience, and embargo-safe protocol language for adna.network | accepted | 2026-08-16 | 2026-08-26 | Accepted — ratified at DP2 (2026-08-16, operator) on the candidate-A package; stale stimulus sentence corrected 2026-08-26 per P5.1 ruling 5. |
+| [049](adr_049_ia_model_audience_disposition.md) | IA model: one audience architecture, nav within doctrine | accepted | 2026-08-16 | 2026-08-18 | Accepted — Option A, ratified by the operator at ⛩ DP5, 2026-08-18. Primary nav capped at 7 entries. |
+| [050](adr_050_deploy_pipeline_hardening.md) | Deploy-pipeline hardening for adna-docs: reproducible, recorded, drift-watched | accepted | 2026-08-16 | 2026-08-16 | Accepted — ratified at DP3, 2026-08-16, after the fix was verified on a preview deployment. |
+| [051](adr_051_url_canonicalization_redirects.md) | URL canonicalization: one slug law + a redirect map for every URL ever published | accepted | 2026-08-16 | 2026-08-18 | Accepted — 2026-08-18, ratified by the operator at the deploy ⛩. One slug law; every published URL redirects rather than 404s. |
+| [052](adr_052_registry_admission_lifecycle_tiers.md) | Registry admission standard, lifecycle tiers, and the public-projection policy | accepted | 2026-08-16 | 2026-08-19 | Accepted — ratified at the P2.4 ⛩ operator pick, 2026-08-19: §tiers ratified (3 tiers from status alone); §tiers.6 stays stated-not-decided (Hestia's lane). |
+| [053](adr_053_visual_voice_systematization.md) | Visual voice: the Ghibli-pixel identity as a governed, slot-contained illustration program (ADR-032 revision) | accepted | 2026-08-16 | 2026-08-23 | Accepted — ratified at ⛩ DP8, 2026-08-23, option (a): a governed, slot-contained illustration program with a normative five-slot table. |
+| [054](adr_054_community_integration_model.md) | Community integration model: prerequisites, the honest-state link, and the human-only line | accepted | 2026-08-16 | 2026-08-22 | Accepted — ratified at ⛩ DP7, 2026-08-22 (mission P3.4): "minimal aDNA branding" means what a client renders; clause 3 requires probe dates on external-surface claims. |
+| [055](adr_055_proposal_process.md) | The aDNA proposal process: numbered, stated, archived, machine-indexed | accepted | 2026-08-16 | 2026-08-20 | Accepted — ⛩ ratified 2026-08-20 at mission P3.5 O0: AEP naming, immutable numbers, 8-state machine, human-only ratification. |
+| [056](adr_056_agentic_surface_contract.md) | The agentic-surface contract: twins, llms artifacts, registry JSON, MCP server — versioned and self-conformant | proposed | 2026-08-16 | 2026-08-21 | Proposed — contract shape fixed at genesis; clauses 1, 2 and 7 built and evidenced at P3.1–P3.3; MCP clause conditional on the npm publish (⛩ O2). |
+| [057](adr_057_measurement_regime.md) | The HAUSSMANN measurement regime: four instruments, composed — plus the same-diff gate law | accepted | 2026-08-16 | 2026-08-19 | Accepted — the regime the campaign runs throughout; ⊳ D-B at DP6 confirmed the Gate C signature covered it (the `proposed` was clerical). |
+| [058](adr_058_unified_installer_no_agent_dependency.md) | One installer: joining the network and getting the workspace, with no AI-assistant dependency | accepted | 2026-08-16 | 2026-08-16 | Accepted — one installer for network join + workspace fetch, with no AI-assistant dependency. |
+| [059](adr_059_token_substrate.md) | Token substrate: adopt WebForge's DTCG pipeline, pin a formal divergence, or take the validators only | accepted | 2026-08-23 | 2026-08-23 | Accepted — ratified at ⛩ DP8, 2026-08-23, option (c): adopt WebForge's validators over the existing CSS; pin the emission divergence; no ceiling derived. |
 
 ## Regeneration
 
-This index is derived and must be regenerated after any ADR add or status change: enumerate `what/decisions/adr_*.md`, re-extract frontmatter `title`/`status`/`created`/`updated` + first informative body sentence as Subject. Quick drift check: `rg -c "^| [" what/decisions/adr_index.md` should equal `ls what/decisions/adr_*.md | wc -l`.
+This index is derived and must be regenerated after any ADR add or status change: enumerate `what/decisions/adr_0*.md`, re-extract frontmatter `title`/`status`/`created`/`updated` + first informative body sentence as Subject. Quick drift check: the table's row count should equal `ls what/decisions/adr_0*.md | wc -l`. *(Glob corrected 2026-08-28: the previous `adr_*.md` matched **this index's own filename**, making the documented check off by one permanently — found at P4.4a while gating G41c. `adr_0*.md` matches ADR files only.)*
