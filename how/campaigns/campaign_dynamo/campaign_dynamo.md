@@ -3,7 +3,8 @@ campaign_id: campaign_dynamo
 type: campaign
 title: "Operation Dynamo — Compute Cohort Genesis & Triage"
 owner: stanley
-status: active
+status: completed
+completed_on: 2026-08-28   # operator close-ruling, bundled at the Ray M00 P0 gate (inline ruling table)
 phase_count: 6   # P0-P4 = 5; +P5 refit (mission_refit_m05), added 2026-08-28
 mission_count: "5 phase-acts (P0 recon · P1 manifest · P2/P3 genesis+campaigns · P4 consolidation · P5 refit); per-graph missions live in each graph"
 estimated_sessions: "1-2 (executed largely in one sitting) + per-graph genesis ladders"
@@ -12,7 +13,7 @@ priority: high
 parent_campaign:
 created: 2026-08-26
 updated: 2026-08-28
-last_edited_by: agent_rosetta
+last_edited_by: agent_helios
 tags: [campaign, dynamo, compute_cohort, keystone_sibling, ray, hardware, kubernetes, argo]
 ---
 
@@ -21,7 +22,11 @@ tags: [campaign, dynamo, compute_cohort, keystone_sibling, ray, hardware, kubern
 > **⏭ Phase status (updated 2026-08-28):** P0 (recon) ✅ · P1 (manifest) ✅ · ⛩ **Gate 1 RATIFIED**
 > (operator, in-chat — rulings in the manifest `status_note` + §DP blocks) · P2 (genesis: 4 graphs
 > seeded) ✅ · P3 (campaigns + adjacent deltas) ✅ · ⛩ **Gate 2 RATIFIED** ✅ · P4 (router `e751c12`
-> · HQ `b527a37` · AAR) ✅ · **P5 refit = the live edge.**
+> · HQ `b527a37` · AAR) ✅ · P5 (refit, 15 findings: 12 fixed · 2 delegated · 1 reported) ✅ ·
+> ⛩ **CAMPAIGN CLOSED — operator close-ruling 2026-08-28**, bundled at the Ray M00 P0 gate
+> (inline ruling table). Per-graph genesis ladders continue under their own governance; frontier
+> at close = Hardware M00 · Kubernetes M00 · Argo M00 (all `fable`), Ray P0 ⛩ closed same day
+> (§8 ruled data-bearing, ADR-000 accepted, seam invited-pending).
 >
 > *This block read "Gate 2 + P4 = the live edge" for two days after both had fired (audit finding
 > **F7**). P5 (`missions/mission_refit_m05.md`) closes 15 findings from the 2026-08-27 fresh-eyes

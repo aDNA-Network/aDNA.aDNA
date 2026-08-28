@@ -17,7 +17,7 @@ tags: [governance, campaign, dynamo, compute_cohort, keystone_sibling]
 |-------|-------|
 | Campaign | `campaign_dynamo` |
 | Owner | stanley |
-| Status | active (Phase 2/3 executed same-day as Gate 1) |
+| Status | ⛩ completed 2026-08-28 (operator close-ruling, bundled at the Ray M00 P0 gate; per-graph ladders continue under their own governance) |
 | Persona | Rosetta (this vault triages the cohort; each seeded graph carries its own persona) |
 
 ## Quick Start
