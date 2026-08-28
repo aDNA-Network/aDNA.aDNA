@@ -3,7 +3,9 @@ plan_id: mission_refit_m05
 type: plan
 title: "P5 Refit — post-AAR corrections to the Dynamo compute cohort (15 audit findings)"
 owner: stanley
-status: planned
+status: in_progress
+claimed_by: session_stanley_20260828_124050_dynamo_p5_refit
+claimed_on: 2026-08-28
 campaign_id: campaign_dynamo
 campaign_phase: 5
 campaign_mission_number: 5
@@ -11,7 +13,7 @@ mission_class: refit
 executor_tier: opus
 token_budget_estimated: "120k-200k (content-load units) — 9 acts across 9 repos, mostly mechanical edits + memo craft; decisions pre-ruled"
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-08-28
 last_edited_by: agent_rosetta
 tags: [plan, campaign, dynamo, refit, audit, p5]
 ---
