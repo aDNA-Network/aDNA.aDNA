@@ -9,16 +9,16 @@ objective: pre-build gate
 title: "GR-1 AC amendment proposal — the convention 13 pass, 40 pairs, both directions"
 created: 2026-08-28
 updated: 2026-08-28
-status: proposed          # ⛩ AWAITING THE OPERATOR SIGNATURE. Agents author decisions; operators
-                          # ratify them (§7.7). NOTHING IN GR-1 MAY BE BUILT UNTIL THIS IS `accepted`.
+status: accepted          # ⛩ OPERATOR-SIGNED 2026-08-28 — see the ratification block below.
+                          # GR-1 may now build against this set. ~~proposed~~ (struck, not deleted — SO-6).
 last_edited_by: agent_rosetta
-session: session_stanley_20260828_174733_haussmann_gr_1_gate
+session: session_stanley_20260828_174733_haussmann_gr_1_gate   # authored; signed in the successor sitting
 executor_tier: opus       # the pass; GR-1's build increments are also declared `opus`
 ratification:
-  decision:               # ⛩ operator
-  ratified_by:
-  date:
-  status: proposed
+  decision: "SIGN AS PROPOSED — §4's criteria changes adopted wholesale (AC-1 gains a non-vacuous static limb with V1 demoted to the scope-settling measurement; AC-2's P2-3 half becomes a register row with a named destination; AC-4 carries the byte-identity measurement WITH its supersession condition; AC-5 drops to two rendering surfaces; V6's `[asserts]` widens to all five; the two execution orderings are stated). Budget ratified ~200–290 kT / 2 sessions, `opus`. PLUS all three §5 questions ruled: (2) the shipped visual identity is v2 and the TITLE is the wrong string; (3) `mission_count: 27 → 28` with a new `### GR` charter section; (4) the local-proxy gate class is adopted as a campaign convention, HABIT ONLY — no checker."
+  ratified_by: stanley
+  date: 2026-08-28
+  status: accepted
 grounded_in:
   - "mission_haussmann_gr_1_trust_path.md (criteria as authored 2026-08-28)"
   - "artifacts/grande_revue/battle_plan.md — Lane A, `accepted`; budget expressly NOT ratified there"
@@ -27,10 +27,46 @@ grounded_in:
 tags: [artifact, haussmann, grande_revue, gr_1, convention_13, amendment, proposed]
 ---
 
-> ⛩ **THIS IS A PROPOSAL, NOT A RULING.** GR-1's criteria and budget are **not ratified** until the
-> block above is filled. The battle plan ratified this mission's **shape**; it says so on its own face —
-> *"Nothing below executes on this document's authority… each new mission then gets its own
-> convention-13 pre-build pass BEFORE its budget is ratified."*
+> ~~⛩ **THIS IS A PROPOSAL, NOT A RULING.**~~ ⛩⛩ **SIGNED 2026-08-28 — THIS IS NOW A RULING.** GR-1's
+> criteria and budget are ratified; the mission may build. *(Struck, not deleted — SO-6. The battle plan
+> had ratified this mission's **shape** only, and said so on its own face: "Nothing below executes on
+> this document's authority… each new mission then gets its own convention-13 pre-build pass BEFORE its
+> budget is ratified." That sequence was honoured.)*
+
+## ⛩ Ratification record (§7.7)
+
+| Field | Value |
+|---|---|
+| **Decision** | **Sign as proposed** — §4's criteria changes adopted wholesale; budget ratified **~200–290 kT / 2 sessions**, `executor_tier: opus`. All three §5 questions ruled in the same act (below). |
+| **Ratified by** | Operator (Stanley), at GR-1's convention-13 pre-build gate |
+| **Date** | 2026-08-28 |
+| **Status** | `accepted` — **GR-1 may build O1→O5.** |
+
+**The three §5 rulings, recorded here because §5 is what a later mission cites** — and this campaign's
+own finding is that *a routing claim must be verified in its destination, never in the prose that routed
+it*:
+
+- **Ruling 2 — the shipped visual identity is `v2`, and the TITLE is the wrong string.**
+  `visual-identity-v2.mdx`'s `title` + `ref_title` correct to *"Visual Identity v2"*. The two
+  `writing-guidelines` links and the route slug were **already right and are not touched**.
+  ⭐ **DEFECT-5's reclassification is load-bearing in this ruling, not incidental to it**:
+  `HomeHero.astro:327` is the **evidence the ruling rests on** and is *cited, not edited* — a source
+  comment is not a surface, and P4.2's *a migration announced in a comment is not a migration* inverts
+  here into **the comment is the witness**.
+- **Ruling 3 — `mission_count: 27 → 28`, plus a new `### GR — Grande Revue` charter section** with its
+  own exit gate; `estimated_sessions` and `calibrated_sessions` re-derived (KW-14), never typed.
+  ⚠ Note what this does **not** do: it does not fold GR into the P0–P5 backbone. `phase_count` **holds
+  at 6**.
+- **Ruling 4 — the local-proxy gate class is adopted as a campaign convention** (*state the surface an
+  instrument runs against, and whether it is the surface the claim is about*). ⛔ **HABIT ONLY — no
+  checker**, per conventions 15/16/17's standing ruling: *the habit costs a sentence and cannot itself
+  be wrong; the checker costs a sitting and can.*
+
+⚠ **What the signature does NOT close, stated so nobody infers otherwise.** **AC-1's scope question is
+still open** and is settled by V1's red run during O1, not by this signature — §7's first bullet stands
+unchanged. **The byte-identity measurement carries its supersession condition** (tag `v8.9` vs `.adna@0364d85`);
+a re-sync or tag move invalidates it. **No deploy is authorised** — GR-1 is met on-build, and push
+precedes deploy with its own ⛩ GO. **P4.4b B2b stays HELD** on ⊳ D-E; nothing here touches it.
 
 # GR-1 — acceptance-criteria amendment proposal
 

@@ -7,23 +7,28 @@ operation: operation_grande_revue
 phase: GR                  # ⛩ NEW LANE, not P0–P5. Grande Revue is the campaign's late-stage
                            # review-and-improve phase (situation_report §1), arriving between
                            # P4.4b's build increments and the human-gated P5.1/P5.2 endgame.
-                           # `mission_count: 27 → 28` is PROPOSED at this mission's ⛩ signature,
-                           # NOT edited here — the charter's own comment reserves that field to the
-                           # operator, who declined to amend it once before (⊳ D-A option (i)).
+                           # ~~`mission_count: 27 → 28` is PROPOSED at this mission's ⛩ signature,
+                           # NOT edited here~~ ⛩ RULED 2026-08-28: the charter IS amended to 28 and
+                           # gains a `### GR — Grande Revue` section with its own exit gate.
+                           # `phase_count` HOLDS at 6 — GR is not folded into the P0–P5 backbone.
 decade: 2
 owner: stanley
-status: queued             # ⏸ OPEN AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE (2026-08-28) — nothing
-                           # built, criteria NOT ratified, budget NOT ratified. The battle plan
-                           # ratified this mission's SHAPE, not its execution: "Nothing below
-                           # executes on this document's authority." Gate artifact:
-                           # artifacts/gr_1/ac_amendment_proposal.md (`proposed`). NO BUILD UNTIL SIGNED.
+status: in_progress        # ⛩⛩ SIGNED 2026-08-28 — THE PRE-BUILD GATE IS PASSED and GR-1 IS BUILDING.
+                           # artifacts/gr_1/ac_amendment_proposal.md is `accepted` (4-field block on its
+                           # face); §4's criteria changes adopted wholesale; budget ratified; three
+                           # further rulings taken in the same act — (2) the shipped visual identity is
+                           # v2 and the TITLE is the wrong string, HomeHero.astro:327 cited NOT edited;
+                           # (3) mission_count 27 → 28 + a `### GR` charter section, phase_count HOLDS
+                           # at 6; (4) the local-proxy gate class becomes a convention, HABIT ONLY —
+                           # no checker. ⚠ AC-1's scope question is NOT closed by the signature: V1's
+                           # red run during O1 settles it. ~~queued~~ (struck, not deleted — SO-6).
 mission_class: build
 executor_tier: opus        # judgment-heavy: three instrument repairs, an embargo-sensitive copy
                            # change, and a provenance ruling. Declared at the OPEN, not discovered
                            # at the AAR — P4.1's lesson (a declared tier nobody honours is worse
                            # than none). Per-objective drop to `sonnet` is legitimate for A5's
                            # mechanical string fixes and must be recorded if taken.
-token_budget_estimated: "⛩ PROPOSED, NOT RATIFIED — ~200–290 kT / 2 sessions, re-derived per objective at this gate (A1 ~40–60 · A2 ~20–30 · A3 ~50–70 · A4 ~40–60 · A5 ~20–30 · close cascade + AAR ~30–40). Supersedes the battle plan's ~120–200 kT / 1–2, which that document explicitly marked 'to be re-derived at the mission's own gate'. The ≈1.5× is THREE INSTRUMENT REPAIRS (headers-applied CSP probe · twin fidelity · public pin resolvability), not new features — contrast P4.4a's 2.4×, which was real new work. The gate sitting itself is separate at ~60–90 kT."
+token_budget_estimated: "⛩ RATIFIED 2026-08-28 — ~200–290 kT / 2 sessions, re-derived per objective at this gate (A1 ~40–60 · A2 ~20–30 · A3 ~50–70 · A4 ~40–60 · A5 ~20–30 · close cascade + AAR ~30–40). Supersedes the battle plan's ~120–200 kT / 1–2, which that document explicitly marked 'to be re-derived at the mission's own gate'. The ≈1.5× is THREE INSTRUMENT REPAIRS (headers-applied CSP probe · twin fidelity · public pin resolvability), not new features — contrast P4.4a's 2.4×, which was real new work. The gate sitting itself is separate at ~60–90 kT."
 token_budget_actual:
 created: 2026-08-28
 last_edited_by: agent_rosetta
@@ -44,22 +49,24 @@ depends_on: []             # ⭐ NONE. Deliberate, and stated rather than left b
 blocks: []                 # Lane D (story coverage) is sequenced AFTER this by the Gate-1 order —
                            # "so the trust path is sound before new copy lands on it" — but that is
                            # an ORDERING, not a dependency, and is recorded in the battle plan.
-acceptance_criteria:       # ⛩ PROPOSED AT THE PRE-BUILD GATE — see artifacts/gr_1/ac_amendment_proposal.md.
-                           # NOT ratified. Convention 13's pass ran COMPLETE at 40/40 with coverage recorded.
-  - "AC-1 (P1-1) — No font asset ships as a `data:` URI at any size: the build is configured so fonts are emitted as FILES under the existing `font-src 'self'`, and `vercel.json`'s CSP is UNCHANGED — adding `data:` to `font-src` is expressly forbidden, being a claim moving DOWN in security to make a test pass. Met when a probe WITH THE LIVE HEADERS APPLIED records zero blocked font loads, red before the fix."
-  - "AC-2 (P1-2, P2-3) — `src/pages/llms.txt.ts:71` carries embargo-safe phrasing (the counsel embargo forbids present-tense protocol claims; `canonical.ts:14-17` rules the NOUN correct, so the defect is the verb 'federating on', not 'Lattice Protocol'), AND all SIX non-HTML emitters are asserted clean BY NAME over BUILT output. P2-3's vendored `.adna` marketplace promise is a STAGED upstream memo with a named destination and an owed-row — never a local edit to vendored bytes (⛩ ruled 2026-08-28)."
+acceptance_criteria:       # ⛩⛩ RATIFIED 2026-08-28 — artifacts/gr_1/ac_amendment_proposal.md is `accepted`.
+                           # Convention 13's pass ran COMPLETE at 40/40 with coverage recorded, both
+                           # directions: 31 clean · 9 defective. Each criterion below carries the
+                           # finding ID its amendment answers. ~~PROPOSED … NOT ratified~~ (SO-6).
+  - "AC-1 (P1-1; amended — FAIL-1) — No font asset ships as a `data:` URI at any size: the build is configured so fonts are emitted as FILES under the existing `font-src 'self'`, and `vercel.json`'s CSP is UNCHANGED — adding `data:` to `font-src` is expressly forbidden, being a claim moving DOWN in security to make a test pass. **Met on a STATIC limb that cannot be vacuous: zero `data:font` occurrences in `dist/**/*.css`**, red-proven by restoring the inline threshold. ~~Met when a probe WITH THE LIVE HEADERS APPLIED records zero blocked font loads, red before the fix.~~ — struck as the SOLE limb: the inlined subset is `cyrillic-ext` and is not preloaded, so a headers-applied probe may be green on the UNFIXED tree, making its own 'red before the fix' clause unsatisfiable and the criterion unmeetable. The probe is RETAINED as V1 corroboration and its red run is the measurement that SETTLES the scope question."
+  - "AC-2 (P1-2, P2-3) — `src/pages/llms.txt.ts:71` carries embargo-safe phrasing (the counsel embargo forbids present-tense protocol claims; `canonical.ts:14-17` rules the NOUN correct, so the defect is the verb 'federating on', not 'Lattice Protocol'), AND all SIX non-HTML emitters are asserted clean BY NAME over BUILT output. P2-3's vendored `.adna` marketplace promise is a STAGED upstream memo — never a local edit to vendored bytes (⛩ ruled 2026-08-28) — and (amended, GAP-1) **that half is discharged as a REGISTER ROW WITH A NAMED DESTINATION, not as prose**: P4.3's F-v precedent, a deferral recorded only in narrative is a deferral with no gate."
   - "AC-3 (P1-4) — The tier-C twin emitter preserves `<name>`-class placeholders: the decode-before-strip ordering is corrected at every site, using line 113's already-safe `decode(stripInline(x))` order as the model. Met when the twin of a page containing such a placeholder CONTAINS it — a comparison of twin content to page content, which no existing gate performs."
-  - "AC-4 (P1-3) — `tour_manifest.json`'s pin resolves PUBLICLY in the repository `source_repo` names. The generator reads the UPSTREAM release SHA rather than the local checkout's HEAD, and byte-identity of all four vendored files is re-measured AT THAT SHA (a mitigation measured against `raw/main` is not a measurement against the pin)."
-  - "AC-5 (P2-1, P3) — Three copy corrections, each verified in BUILT output: the 'Nothing is sent anywhere' claim carries a scope clause covering the `&& claude` step; 'except the last two' becomes THREE (derived: `ls -d …/*.aDNA` prints); and the visual-identity v2/v3 label contradiction is resolved per the ⛩ ruling this gate requests, applied to ALL THREE disagreeing surfaces, not just the one the review named."
+  - "AC-4 (P1-3) — `tour_manifest.json`'s pin resolves PUBLICLY in the repository `source_repo` names. The generator reads the UPSTREAM release SHA rather than the local checkout's HEAD, and byte-identity of all four vendored files is re-measured AT THAT SHA (a mitigation measured against `raw/main` is not a measurement against the pin). **Amended (GAP-2): that measurement was TAKEN AT THE GATE and is already true** — all four vendored files byte-identical local-`.adna`-HEAD vs upstream `v8.9` `[D]` — **and it carries its supersession condition on this criterion's face: it holds for tag `v8.9` against `.adna@0364d85`; a `.adna` re-sync or any tag move invalidates it and it must be re-measured before the pin is trusted again** (convention 15)."
+  - "AC-5 (P2-1, P3) — Three copy corrections, each verified in BUILT output: the 'Nothing is sent anywhere' claim carries a scope clause covering the `&& claude` step; 'except the last two' becomes THREE (derived: `ls -d …/*.aDNA` prints); and the visual-identity contradiction is resolved per ⛩ **ruling 2 (taken 2026-08-28: the shipped identity is `v2`; the TITLE is the wrong string)** — `visual-identity-v2.mdx`'s `title` + `ref_title` correct to *'Visual Identity v2'*, while the two `writing-guidelines` links and the route slug were ALREADY RIGHT and are NOT touched. **Amended (DEFECT-5): TWO rendering surfaces, ~~ALL THREE disagreeing surfaces~~** — `HomeHero.astro:327` is a SOURCE COMMENT that never renders, so V5 could never assert it; it is reclassified as **the evidence the ruling rests on**, cited not edited."
 verification_method: |     # ⛩ V1–V6 PROPOSED AT THE PRE-BUILD GATE. Every limb carries `[asserts AC-n]`:
                            # P4.4b's FINDING 7 — a pass cannot ask "is this criterion tested by anything"
                            # against a field that never says what anything tests.
-  V1 — a probe serving `dist/` WITH `vercel.json`'s headers applied records ZERO blocked font loads across a derived route set (floor stated, never `> 0`); demonstrated RED on the pre-fix tree  [asserts AC-1]
-  V2 — the six non-HTML emitters are ENUMERATED BY NAME and each asserted clean over BUILT output, the surface matched to the claim's verb (a machine-surface claim is decided on emitted bytes, not on source)  [asserts AC-2]
+  V1 (amended — FAIL-1) — CORROBORATION, not the sole limb: a probe serving `dist/` WITH `vercel.json`'s headers applied, across a derived route set (floor stated, never `> 0`). Its run on the PRE-FIX tree is the measurement that SETTLES whether the violation fires on every page or only where a cyrillic-ext glyph paints — a question the revue answered with a TYPED figure (KW-14). AC-1 passes on its static limb regardless of which way that lands  [asserts AC-1]
+  V2 — the six non-HTML emitters are ENUMERATED BY NAME and each asserted clean over BUILT output, the surface matched to the claim's verb (a machine-surface claim is decided on emitted bytes, not on source) — AND the P2-3 register row exists with a named destination (amended, GAP-1)  [asserts AC-2]
   V3 — twin-fidelity: for every page carrying a `<name>`-class placeholder, the placeholder is present in that page's twin; red-proven by mutation  [asserts AC-3]
   V4 — gate-36's pin limb asserts PUBLIC resolvability against `source_repo`, and no longer `test.skip`s itself out of CI  [asserts AC-4]
   V5 — each corrected string is asserted in BUILT output on the surface its claim addresses — a reader-facing claim on the twin, a DOM claim on HTML (convention 17's 2026-08-26 amendment)  [asserts AC-5]
-  V6 — every gate this mission repairs or adds is RED-PROVEN BY MUTATION with a stated control before its green is believed, and a non-red is diagnosed as one of the three named kinds — weak gate / mutation aimed at the wrong assertion / mutation correct but INERT (convention 14; P4.4b B0's case 6)  [asserts AC-1, AC-3, AC-4]
+  V6 — every gate this mission repairs or adds is RED-PROVEN BY MUTATION with a stated control before its green is believed, and a non-red is diagnosed as one of the three named kinds — weak gate / mutation aimed at the wrong assertion / mutation correct but INERT (convention 14; P4.4b B0's case 6)  [asserts AC-1, AC-2, AC-3, AC-4, AC-5]   # amended — DEFECT-4: the prior ~~[asserts AC-1, AC-3, AC-4]~~ was present, well-formed and UNDER-SCOPED; V2 and V5 are new assertions too
 human_gate: true           # the ⛩ pre-build signature; the A5a v2/v3 content-truth ruling; and any
                            # eventual push/deploy, which this mission does NOT claim (met on-build).
 tags: [plan, haussmann, grande_revue, gr_1, trust_path, csp, provenance, twins]

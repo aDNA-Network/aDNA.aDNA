@@ -203,6 +203,36 @@ tags: [campaign_governance, haussmann]
         average-based shape guard · this. **Three of the four were authored by this desk in eight
         days**, which is the argument for the habit and against authoring a fifth instrument.)*
 
+18. ⛩ **STATE THE SURFACE AN INSTRUMENT RUNS AGAINST, AND WHETHER IT IS THE SURFACE THE CLAIM IS
+    ABOUT.** *(Ratified 2026-08-28, ruling 4 of the GR-1 signature.)* Conventions 16 and 17 govern the
+    **commands** we run and the **absences** we assert. This governs the **instruments we already
+    trust**: a gate can run correctly, pass honestly, and be pointed at a **local proxy for a public or
+    rendered property** — in which case its green is a true statement about the wrong object.
+    - **Three live instances, found in one pass**, which is why this is a convention and not a note.
+      `gate-42` asserts a clean console against `astro preview`, which applies **no `vercel.json`
+      headers**, so it structurally cannot see a CSP violation (`grep -rn "font-src" tests/ scripts/`
+      → **0**). `gate-36:73` asserts the provenance pin resolves — with `git cat-file -t` **in the same
+      local checkout the pin was read from**, and `test.skip`s itself out of CI entirely, so it **can
+      only ever pass**, while its own comment names the exact defect that is live. `gate-17` G12
+      asserts twin *shape* and **never compares twin content to page content**, so a silently deleted
+      placeholder passes every gate.
+    - **The rule:** at the point of authoring or citing a gate, say what it runs against and whether
+      that is the surface the claim is about — *"against `astro preview`, which has no CSP"*, not
+      *"against the site"*. A local stand-in is legitimate; **an unnamed one is how a green becomes
+      evidence for something it never touched.**
+    - ⭐ **Why it is not a restatement of 16 or 17.** Convention 16's law is about the **width of a
+      command** (*a negative result is only as wide as the command that produced it*); 17's is about
+      the **surface of an absence**, amended to add that the surface must match the claim's **verb**.
+      Both are about assertions a session **writes**. This one is about assertions the suite **already
+      holds and re-runs**, where nobody is looking — and it is the fourth family member to arrive at
+      the level of the **suite** rather than of one command. *(Sibling of convention 16's "DEPLOYED +
+      LIVE-VERIFIED is a statement with a timestamp": there, nothing re-runs the check; here, the check
+      re-runs forever against the wrong object.)*
+    - ⛔ **NO CHECKER, deliberately, and the restraint is the ruling.** Conventions 15/16/17 all ruled
+      this shape: **the habit costs a sentence and cannot itself be wrong; the checker costs a sitting
+      and can.** A meta-instrument auditing what instruments point at would be the sixth authored by
+      this desk in a month, and the standing count of those later found defective is the argument.
+
 ## What this campaign protects (do not regress)
 
 The honesty strata (`/about`, `/community` empty-state candor, zero-count displays) · true load-bearing numbers · hero visual quality · dark/light parity · axe-0 record · perf 97–100 · curated llms.txt · the graph keyboard-twin pattern.
@@ -955,7 +985,30 @@ untouched and still blocked on actors outside the session.
 > 27 → 28`** with a new `### GR` charter section · whether the **local-proxy gate class** becomes a
 > convention.
 >
-> ⏭ **NEXT: ⛩ THE SIGNATURE. Until then, no build.**
+> ~~⏭ **NEXT: ⛩ THE SIGNATURE. Until then, no build.**~~
+>
+> ⛩⛩ **SIGNED 2026-08-28 — `ac_amendment_proposal.md` IS `accepted` AND GR-1 IS BUILDING.** §4's
+> criteria changes adopted **as proposed**; budget ⛩ ratified **~200–290 kT / 2 sessions**, `opus`;
+> mission `queued` → **`in_progress`**. All three §5 questions ruled in the same act:
+> - **Ruling 2 — the shipped visual identity is `v2`; the TITLE is the wrong string.**
+>   `visual-identity-v2.mdx`'s `title` + `ref_title` correct to *"Visual Identity v2"*; the two
+>   `writing-guidelines` links and the route slug were **already right and are not touched** — so this
+>   is a one-word content fix, **not** a URL change, and ADR-057's redirect obligations do not fire.
+>   ⭐ **DEFECT-5 is load-bearing in the ruling rather than incidental to it**: `HomeHero.astro:327` is
+>   the **evidence the ruling rests on** and is *cited, not edited*. P4.2's *a migration announced in a
+>   comment is not a migration* **inverts here — the comment is the witness.**
+> - **Ruling 3 — `mission_count: 27 → 28`**, the first change to that field since DP6, plus a new
+>   **`### GR — Grande Revue`** charter section with its own exit gate. `estimated_sessions` **37-50 →
+>   39-52** and `calibrated_sessions` **37-42 → 39-44**, both **re-derived in the same commit** because
+>   both are marked derived-not-typed (KW-14) and the lane that moved the count moves them too.
+>   ⚠ **`phase_count` HOLDS at 6** — GR is a lane inside the campaign, not a seventh phase.
+> - **Ruling 4 — the local-proxy gate class is now `convention 18`.** ⛔ **Habit only, no checker.**
+>
+> ⚠ **What the signature does NOT close, said so nobody infers otherwise: AC-1's scope question is
+> still open** and is settled by **V1's red run during O1**, not by the signature — which is the
+> honest state of a criterion deliberately written so **either answer gives the same fix**.
+>
+> ⏭ **NEXT: `O1`** (fonts as files under an unchanged CSP), then O2→O5.
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is

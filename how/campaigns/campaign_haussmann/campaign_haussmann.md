@@ -6,9 +6,9 @@ owner: stanley
 persona: rosetta
 status: active          # RATIFIED at Gate C 2026-08-16 (operator, via AskUserQuestion in the genesis session) — see the §7.7 block
 phase_count: 6          # P0–P5 on the decade backbone
-mission_count: 27       # 5+4+6+5+5+2; P0–P2 = Decade 1 (committed), P3–P5 = Decade 2 — RECALIBRATED + RATIFIED at ⛩ DP6 2026-08-19. Count HOLDS at 27: ⊳ D-A took option (ii), so P4.5 splits into two increments (P4.5a copy-rows first, P4.5b voice-rewrite last) and a split increment is not a new mission. Option (i) would have amended this field and was therefore explicitly the operator's to take; they declined it.
-estimated_sessions: "37-50"   # derived: sum of the per-phase tables below (7–9 + 6–8 + 8–11 + 7–9 + 6–9 + 3–4) — never a typed count (KW-14)
-calibrated_sessions: "37-42"   # ⛩ DP6 ⊳ D-H, 2026-08-19. Derived, not typed: 16 Decade-1 actual (`ls how/sessions/history/2026-08/ | grep -c haussmann` → 17, minus the one that IS P2.6 s1) + 3 for P2.6 (s1 re-score · s2 ratification · s3 the O0b TTFS run + D3 + AAR) + 18–23 for Decade 2 (summed from p2_replan §4). Sits INSIDE estimated_sessions 37–50, at its low end. ⚠ The operator's quoted value was "36-41", derived before the ⊳ D-A split ruling in round 3 added a session; the ruling selected the PRINCIPLE "stamp the number that survives being counted today", which points here. Reverting to 36-41 is a one-line edit — see the D-H stamp in p2_replan.md.
+mission_count: 28       # ⛩ AMENDED 27 → 28 ON 2026-08-28 at GR-1's pre-build gate — the first change to this field since DP6, and it is the operator's to take by this comment's own terms. **GR-1 is a genuinely NEW mission, not a split increment**, so the reasoning below (which held the count at 27 through the P4.5a/b and P4.4a/b splits) does not reach it. Derived: 5+4+6+5+5+2 = 27 across P0–P5, **plus 1 in the GR lane** (see `### GR — Grande Revue`). ⚠ `phase_count` HOLDS at 6 — GR is a lane inside the campaign, not a seventh phase. ~~27~~ · original note follows: 5+4+6+5+5+2; P0–P2 = Decade 1 (committed), P3–P5 = Decade 2 — RECALIBRATED + RATIFIED at ⛩ DP6 2026-08-19. Count HOLDS at 27: ⊳ D-A took option (ii), so P4.5 splits into two increments (P4.5a copy-rows first, P4.5b voice-rewrite last) and a split increment is not a new mission. Option (i) would have amended this field and was therefore explicitly the operator's to take; they declined it.
+estimated_sessions: "39-52"   # ⛩ RE-DERIVED 2026-08-28 with the GR lane: (7–9 + 6–8 + 8–11 + 7–9 + 6–9 + 3–4) + **GR 2** = 39–52. ~~37-50~~ — never a typed count (KW-14), so the lane that moved `mission_count` moves this too, in the same commit
+calibrated_sessions: "39-44"   # ⛩ RE-DERIVED 2026-08-28: DP6's 37–42 **+ GR-1's ratified 2** = 39–44. ~~37-42~~. The DP6 derivation below is unchanged and still governs its own terms. ⛩ DP6 ⊳ D-H, 2026-08-19. Derived, not typed: 16 Decade-1 actual (`ls how/sessions/history/2026-08/ | grep -c haussmann` → 17, minus the one that IS P2.6 s1) + 3 for P2.6 (s1 re-score · s2 ratification · s3 the O0b TTFS run + D3 + AAR) + 18–23 for Decade 2 (summed from p2_replan §4). Sits INSIDE estimated_sessions 37–50, at its low end. ⚠ The operator's quoted value was "36-41", derived before the ⊳ D-A split ruling in round 3 added a session; the ruling selected the PRINCIPLE "stamp the number that survives being counted today", which points here. Reverting to 36-41 is a one-line edit — see the D-H stamp in p2_replan.md.
 estimation_class: content-novel
 executor_tier_default: fable   # charter-altitude fallback (aDNA.aDNA ADR-025 §2 resolution chain — NOT aDNALabs ADR-025, the community ruling); judgment missions fable/opus, mechanical sweeps sonnet — per-mission fields override
 priority: high
@@ -234,6 +234,27 @@ shipped the /community link ahead of ADR-054's prerequisites**), `VERCEL_TOKEN_A
 | P5.2 | Full VITRUVIUS re-score (agent×2 + human arbiter) + 16-persona capstone ranker ≥4.95 + launch checklist/rollback/monitoring + campaign AAR | 2 | fable | P5.1 |
 
 **Exit gate (operator — campaign close):** composite improvement per dimension · every S1/S2 closed + verified · cold-reader re-test passed · launch checklist signed.
+
+### GR — Grande Revue (⛩ **RATIFIED 2026-08-28**; 1 mission, ~2 sessions) — the late-stage review-and-improve lane
+
+> ⭐ **NOT a seventh phase, and `phase_count` HOLDS AT 6.** Grande Revue is the campaign's late-stage
+> **review-and-improve phase** ([[situation_report]] §1), commissioned by chief-of-staff order
+> 2026-08-27 and executed *inside* HAUSSMANN. It arrives **between P4.4b's build increments and the
+> human-gated P5.1/P5.2 endgame**, which is why its missions carry **no phase number** (`phase: GR`)
+> and why reading this table top-to-bottom does not give execution order.
+>
+> ⛩ **Gate 1 (2026-08-28)** ratified the battle plan's four lanes in the order **B → P4.4b B1+B2a →
+> GR-1 (Lane A) → Lane D**, Lane C riding whenever its memo is GO'd. **Lanes B and C are executed**;
+> **Lane D is content scope**, gate-decided, and has no mission file yet.
+
+| Mission | Title | Sessions | Tier | Deps |
+|---|---|---|---|---|
+| **GR-1** | **Trust-path repairs** — the surfaces that let a reader verify are the surfaces that break: CSP/font · `llms.txt` R-14 residue · twin-emitter placeholder corruption · provenance pin · scope-clause + label micro-fixes | 2 | opus | **none** |
+
+**Exit gate (operator):** all five criteria met with their six limbs green **and each limb red-proven
+first** · the three repaired gates no longer verify a local proxy for a public or rendered property ·
+suite delta **derived** · every register row discharged **or** routed with a named destination · AAR
+filed (SO#5). **Met on-build** — deployment is named as owed, never implied.
 
 ## Decision Points
 
