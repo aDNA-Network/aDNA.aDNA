@@ -90,6 +90,38 @@ carried it as step 4 with the probe (step 3) in front of it.
 
 ## Progress
 
+### ⚠⚠ 2026-08-29 — CI HAS BEEN RED SINCE 2026-08-27 AND NOTHING SURFACED IT
+
+Checked after the push, because a push triggers CI and the deploy decision depends on it.
+`gh run list` → the **last four completed runs on `main` all FAILED** (08-27). Nobody knew: the
+campaign's records from that window report *local* suite numbers, and no session mentions CI.
+⇒ **The campaign has been shipping with a red CI it was not reading** — convention 16's shape
+(*a verification with no recurrence*) inverted: here the verification **does** recur, and nobody
+reads the result.
+
+**Our run `33229440619`: 641 passed · 1 failed · 3 skipped** — an improvement (08-27 had **2**
+failures; `gate-42` G42b dark-mode console now **passes** in CI).
+
+**The surviving red is `gate-33-freshness`**, and it is an instrument defect, not a site defect:
+```
+Error: no last-updated dates were rendered — a shallow git clone makes
+contentSource.ts omit them; set fetch-depth: 0
+```
+⭐ **The remedy the error names is ALREADY APPLIED** — `gates.yml:51` reads `fetch-depth: 0`. So the
+diagnostic sends a reader to fix something that is not broken, and the real cause is elsewhere
+(plausible, unverified: git refusing the container's repo ownership, which the *visual* container
+script already handles with `git config --global --add safe.directory` and `gates.yml` does not).
+**A gate whose failure message names the wrong remedy is worse than a bare failure**, because it
+converts a symptom into a confident wrong diagnosis — the campaign's own class, in CI.
+
+⛔ **This does NOT gate the deploy, and the reason is structural, not optimistic:**
+`deploy_adna.sh:157` runs `npx astro build` **locally** and `:237` ships `vercel deploy --prebuilt`.
+**CI's artifact never reaches production.** Locally the same gate is green — the full suite ran
+**644 passed / 0 failed** on this tree. ⇒ the red is about CI's environment, not about what ships.
+
+⚠ **Named rather than absorbed:** this needs its own sitting — a register row and a fix — and it
+should not be folded into a deploy. Two things are owed: the cause, and the wrong error message.
+
 ## SITREP
 
 *(filled at close)*
