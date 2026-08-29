@@ -209,7 +209,13 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 
 ## Mission index
 
-`missions/` — 27 files `mission_haussmann_p{0..5}_*.md`; paste-ready prompts in `missions/session_prompts_haussmann.md`.
+`missions/` — **28** files, **derived not typed** (`ls missions/mission_haussmann_*.md | wc -l`): 27
+`mission_haussmann_p{0..5}_*.md` **plus `mission_haussmann_gr_1_trust_path.md`**, which the `p{0..5}`
+glob does **not** match. ⚠ **The old glob was load-bearing and silently wrong the moment GR-1 landed** —
+it would have kept reporting 27 forever while the directory held 28, which is F-m's shape (a drift-check
+whose own pattern excludes the thing that drifted) recurring in the sentence that states the count. Note
+this file count is **not** the charter's `mission_count`, which still reads **27** pending the ⛩ ruling.
+Paste-ready prompts in `missions/session_prompts_haussmann.md`.
 
 **⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
 convention 11. ✅ **`P4.4a` CLOSED 2026-08-24** (AAR filed, SO#5; criteria **AC0 ✅ + V5 ✅**;
@@ -863,9 +869,93 @@ untouched and still blocked on actors outside the session.
 > stricter hybrid is two instruments sharing one number*; the sweep is pinned to the bar's own
 > instrument, measured not assumed. ⛔ **B2b stays HELD** — Vitruvius's 08-27 notice telegraphs a
 > scope-B reply *staged on their side*; a staged reply is not a delivered one, so the ⛩ re-entry gate
-> has not fired. ⏭ **NEXT: GR-1 Lane A at its own conv-13 pre-build gate** (the ratified Gate-1
-> order); P4.4b's own remainder is **B3** (+ B2b when the reply lands). Nothing deployed — P4.4b is
-> met on-build; the first on-GitHub scheduled sweep run is owed on the next ⛩ push GO.
+> has not fired. ~~⏭ **NEXT: GR-1 Lane A at its own conv-13 pre-build gate** (the ratified Gate-1
+> order)~~ ✅ **GR-1 IS OPEN — see the GR-1 block below.** P4.4b's own remainder is **B3** (+ B2b when
+> the reply lands). Nothing deployed — P4.4b is met on-build; the first on-GitHub scheduled sweep run
+> is owed on the next ⛩ push GO.
+
+> ⏸⛩ **`GR-1` IS OPEN AND HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE (2026-08-28) — nothing built,
+> criteria NOT ratified, budget NOT ratified.** `missions/mission_haussmann_gr_1_trust_path.md`,
+> **`queued`**. This is **GRANDE REVUE Lane A**, opened per the ratified Gate-1 order (**B → P4.4b
+> B1+B2a → GR-1 → Lane D**) and on the P4.2/P4.3/P4.4a/P4.4b/P4.5b/P5.1 precedent: **pass first, no
+> build until signed.** The battle plan ratified this mission's **shape** and says so on its own face —
+> *"GR-1's budget is NOT ratified here."*
+>
+> ⭐ **It is the first mission in this campaign with NO phase number.** Grande Revue is the campaign's
+> **late-stage review-and-improve phase** (situation_report §1), not a P-slot, so `phase: GR` and
+> artifacts land at `artifacts/gr_1/`. ⛩ **`mission_count: 27 → 28` is PROPOSED, NOT EDITED** — GR-1 is
+> a genuinely new mission rather than a split increment, so the charter's *"a split increment is not a
+> new mission"* reasoning does not hold the count; and that field's own comment records that amending it
+> *"was therefore explicitly the operator's to take."*
+>
+> **Convention 13 ran COMPLETE at 40/40 with coverage recorded** (`AC×AC = C(5,2) = 10` + `AC×V = 5×6 =
+> 30`, derived not typed), each pair read **both** directions → `artifacts/gr_1/ac_amendment_proposal.md`,
+> **`proposed`**: **31 clean · 9 defective** — 1 failure · 2 structural gaps · 2 limb defects · 2 unstated
+> constraints · 1 open operator choice · **1 control that passed**. **Eighth consecutive mission where the
+> pass has paid for itself.**
+>
+> ⭐⭐ **THE UNIFYING FINDING: THREE OF THE FIVE OBJECTIVES ARE GUARDED BY GATES THAT VERIFY A LOCAL PROXY
+> FOR A PUBLIC OR RENDERED PROPERTY.** `gate-42` runs against `astro preview`, which applies **no
+> `vercel.json` headers**, so it structurally cannot see a CSP violation (`grep -rn "font-src" tests/
+> scripts/` → **0**) · `gate-36:73` resolves the pin with `git cat-file -t` **in the same local checkout
+> the pin was read from**, and `test.skip`s itself out of CI entirely, so it **can only ever pass** —
+> while its own comment names the exact defect that is live · `gate-17` G12 checks twin **shape** (200,
+> content-type, pointer block, an `h1`, >200 bytes) and **never compares twin content to page content**,
+> so a silently deleted placeholder passes every gate. ⇒ **A1, A3 and A4 are one finding with three
+> faces**, and each objective's real deliverable is *the gate that could have caught it*, not only the
+> fix. This is the **instrument-narrower-than-its-conclusion** family arriving at the level of the
+> **suite** rather than of one command. ⛩ Proposed as a convention rather than a sixth criterion — the
+> defects have gates; the **class** does not.
+>
+> ⚠ **And it is the SECOND defect in the same emitter's HTML→markdown conversion.** P4.5b found it
+> converting `<strong>` before `<a>` and discarding hrefs — *"the copy was already right; the machine
+> surface was lying about it."* A3 is that sentence again, same file family, found by a different route.
+>
+> ⭐⭐ **A4 IS WORSE THAN THE REVIEW RECORDED, AND ONE OF THE BATTLE PLAN'S TWO REMEDIES IS NOT
+> PERFORMABLE.** `build_tour_files.mjs:67` hardcodes `aDNA-Network/aDNA` while `:104-106` reads the SHA
+> from the **local `~/aDNA/.adna` checkout — whose origin is the archived, frozen `adna-legacy`** and
+> which is **12 commits ahead of it**; `git branch -r --contains 0364d85` is **empty** `[D]`. ⇒ the
+> script **pairs a SHA from one repository with the URL of another**, and *"push the release-sync
+> commit"* names an outward act with **nowhere to push** (Standing Rule 1 forbids modifying `.adna/`) —
+> the *"a GO on an act whose prerequisite does not exist on the performing tree"* class, **fifth
+> instance**. ⭐ **A third option neither disjunct offered is performable today**: the local commit's own
+> message reads *"release sync: **v8.9 from aDNA-Network/aDNA**"* — a **downstream artifact is never a
+> citable source** — and that upstream release is public, tag **`v8.9` → `c8e5427`**, serving **200**,
+> with the manifest's own `source_commit_date: 2026-07-24` **already matching it**.
+>
+> ✅ **THE MOST DANGEROUS PAIR WAS MEASURED, NOT ASSUMED, AND THE CONTROL PASSED.** If any of those 12
+> local commits had touched the four vendored files, AC-4 would not be a pin correction at all — it
+> would be a **content change to the trust page**, silently altering the bytes the page publishes hashes
+> for. Measured `[D]`: **all four byte-identical** (`CLAUDE.md` · `template_workspace_claude.md` ·
+> `skill_project_fork.md` · `skill_onboarding.md`) local-`.adna`-HEAD vs upstream `v8.9`. ⇒ the re-pin
+> **moves no content**, and the byte-identity limb is **already satisfied** — recorded **with its
+> supersession condition** (a `.adna` re-sync or a tag move invalidates it), per convention 15.
+>
+> ⚠ **AC-1's SCOPE IS DELIBERATELY LEFT UNSETTLED, AND THE CRITERION IS WRITTEN SO EITHER ANSWER GIVES
+> THE SAME FIX.** The revue captured real console text `[D]` and called it *"every page, both themes"*;
+> this desk measured that the inlined asset is a **`cyrillic-ext`** subset (~2028 B) and that
+> `BaseLayout.astro:52-54` preloads **latin only** — a subset neither preloaded nor matched by a painted
+> glyph is never loaded, hence never blocked. **Both are `[D]`; they cannot both be complete.** ⇒ the
+> revue's *"every page"* is a **typed** figure (KW-14), and a criterion keyed to it is
+> unfalsifiable-green if the true count is zero and wrongly-red otherwise. **AC-1 gains a static limb**
+> (*no `data:font` in `dist/**/*.css`*, which cannot be vacuous) and V1's red run is demoted to **the
+> measurement that settles the scope** rather than a precondition of passing.
+>
+> ⭐ **THIS PASS DID NOT RAISE THE BAND — THE FIRST OF EIGHT THAT DIDN'T, WHICH IS WHY IT IS WORTH A
+> LINE.** Its findings split evenly between cheap remedies (a static limb; a mislabelled `[asserts]`
+> list) and **scope reductions**: GAP-2 discharged by the control above, and DEFECT-5 cutting AC-5 from
+> three surfaces to two after one turned out to be a **source comment that never renders** — so V5 could
+> never have asserted it, and P4.2's *a migration announced in a comment is not a migration* inverts
+> here into *the comment is the evidence, not the surface*. Band: **~200–290 kT / 2 sessions**,
+> `executor_tier: opus`; the gate sitting itself is separate at ~60–90 kT.
+>
+> ⛩ **THREE QUESTIONS CARRIED TO THE SIGNATURE** (proposal §5): the **v2/v3 content-truth ruling** (three
+> surfaces disagree; `HomeHero.astro:327` points at the *title* being wrong, but a v3 document beside v2
+> tokens is coherent, and an agent picking silently would be **typing a claim**) · **`mission_count:
+> 27 → 28`** with a new `### GR` charter section · whether the **local-proxy gate class** becomes a
+> convention.
+>
+> ⏭ **NEXT: ⛩ THE SIGNATURE. Until then, no build.**
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is
