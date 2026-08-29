@@ -282,6 +282,44 @@ three turned out to be a **source comment that never renders**.
 28` with a new `### GR` charter section · whether the **local-proxy gate class** becomes a convention.
 **No build until signed.**
 
+### ✅ 2026-08-28 — O1 COMPLETE (A1 / AC-1). Fonts ship as files under an UNCHANGED CSP.
+
+`assetsInlineLimit` in `astro.config.mjs` now returns `false` for font extensions and `undefined` for
+everything else — **surgical by design**: a flat `0` would have stopped inlining every small SVG and
+image on the site, a build-wide behaviour change to fix a font defect, which is the unforced widening
+this campaign keeps cleaning up. `vercel.json`'s CSP is **untouched**; `cyrillic-ext` now ships as
+`jetbrains-mono-cyrillic-ext-wght-normal.EocZY2iu.woff2` alongside its five siblings.
+
+**AC-1 ✅** on its static limb: `data:font` in `dist/**/*.css` = **0**. `gate-42` gains **G42e** —
+placed in the gate that was *structurally blind to the defect*, which is convention 18's remedy
+applied where the hole was. Red-proven **4/4** (`scripts/font_inline_redtest.sh`): M1 restores the
+default threshold and goes **RED**; C0/C1 green; ⭐ **C2 is the control that earns its keep** — a
+legitimate inlined SVG must NOT trip the predicate, separating *"catches inlined fonts"* from
+*"catches any `data:` URI"*, because a gate that fires on correct code teaches people to
+`--grep-invert` it.
+
+⭐⭐ **V1 SETTLED THE SCOPE QUESTION AND FALSIFIED THE PASS'S PREMISE.** `scripts/csp_font_probe.mjs`
+serves `dist/` with the CSP **read from `vercel.json`** (never transcribed — KW-14). Pre-fix:
+**50 of 50** page×theme loads refused the font. Post-fix: **0 of 50**. ⇒ **The revue's "every page,
+both themes" was RIGHT**, and FAIL-1's reasoning — that an un-preloaded, glyph-gated subset might
+never load — **was wrong**: `unicode-range` defers a NETWORK FETCH, and a `data:` face has none, so
+the engine constructs it immediately and CSP fires at construction. **The remedy survived its own
+premise**, because AC-1 was deliberately written against the ASSET rather than a page count; the
+correction is recorded at all four objects that carried it rather than quietly dropped.
+
+⚠ **And the revue's figure was TYPED when written** (KW-14) — correct, but not derived. This run makes
+it derived. *A typed figure that happens to be right is still typed.*
+
+⚠ **My own instrument was wrong before the subject, again** (the campaign's standing streak): the
+red-test's first guard grepped the bare word `assetsInlineLimit`, which also appears in **that
+option's own doc comment**, so it condemned a correctly-applied mutation as a HARNESS BUG. Caught
+only because the mutation asserts its application *separately* from the guard — which is the whole
+reason that separation exists.
+
+Fast lane **522 → 523/1skip** derived. ⛔ Nothing deployed; GR-1 is met on-build.
+⏭ Changelog entry for GR-1's user-visible changes is **owed at O6**, extending the day's existing
+`2026-08-28.md` deliberately (convention 6: the cadence prompt is date-keyed and will not fire twice).
+
 ## AAR (SO#5)
 
 *(mandatory before `status: completed`)*

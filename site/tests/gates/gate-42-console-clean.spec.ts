@@ -151,4 +151,65 @@ test.describe('gate-42 — zero console error', () => {
       ).toEqual([]);
     });
   }
+
+  /**
+   * ⛩ HAUSSMANN GR-1 O1 / AC-1 — G42e: NO FONT SHIPS AS A `data:` URI.
+   *
+   * ⭐⭐ THIS ASSERTION EXISTS BECAUSE THIS GATE WAS STRUCTURALLY BLIND TO A LIVE DEFECT, AND THE
+   * BLINDNESS IS THE FINDING (campaign convention 18, ratified at this mission's signature).
+   * Every test above drives `astro preview`, which serves NO `vercel.json` headers — so no CSP is
+   * ever applied, and a CSP violation cannot produce a console error for this gate to catch. The
+   * production CSP carries `font-src 'self'`; Vite's default 4096-byte `assetsInlineLimit` emitted
+   * the JetBrains Mono `cyrillic-ext` subset as `url(data:font/woff2;base64,…)`; the browser
+   * refused to load the site's own font on production and this 180-route sweep stayed green.
+   * `grep -rn "font-src" tests/ scripts/` returned **0** before this landed.
+   *
+   * WHY STATIC RATHER THAN A HEADERS-APPLIED PROBE — AND WHY THE ORIGINAL REASON WAS WRONG.
+   * Convention 13's pass argued a dynamic probe could not be the sole limb because `cyrillic-ext` is
+   * not preloaded (`BaseLayout.astro:52-54` is latin-only) and matches no glyph an English page
+   * paints, so the face might never load. ⭐⭐ **MEASURED AT O1, THAT IS FALSE**: V1 reports **50 of
+   * 50** page×theme loads refusing the font pre-fix. `unicode-range` defers a NETWORK FETCH, and a
+   * `data:` face has none — the engine constructs it immediately and CSP fires at construction.
+   *
+   * ⇒ The dynamic probe WOULD have worked as a limb. This assertion is still the right one to gate
+   * on, for the reason that survived: a `data:` URI in built CSS is **present or absent**, so it
+   * cannot be vacuous, and it does not depend on a browser's font-loading behaviour remaining what
+   * it is today. **A correct remedy reached from a wrong premise is still worth re-deriving**, which
+   * is why the premise is corrected here rather than quietly dropped.
+   *
+   * WHAT IT DOES NOT CLAIM (convention 18 applied to itself): it reads the BUILT CSS, so it proves
+   * a property of the artifact, not of the served response. It would not catch a font referenced
+   * from an external host (that is gate-38's G38c) nor a CSP that stops matching `vercel.json`
+   * (that is `check_live_headers.mjs`). It closes exactly one hole: an inlined font.
+   */
+  test('G42e: no font ships as a data: URI — the production CSP would refuse it', () => {
+    const cssDir = join(DIST, '_astro');
+    if (!existsSync(cssDir)) throw new Error(`no ${cssDir} — run \`npx astro build\` first`);
+    const sheets = readdirSync(cssDir).filter((f) => f.endsWith('.css'));
+
+    // Floor, not `> 0` — a collapsed walk reports every stylesheet as clean (P4.2's lesson).
+    expect(
+      sheets.length,
+      `only ${sheets.length} stylesheet(s) found in _astro — the walk collapsed, and a collapsed ` +
+        `walk reports a clean result for a site it never read.`,
+    ).toBeGreaterThanOrEqual(1);
+
+    const offenders: string[] = [];
+    for (const f of sheets) {
+      const css = readFileSync(join(cssDir, f), 'utf8');
+      // Matches `data:font/woff2;base64,…` and `data:application/font-woff…` alike.
+      const m = css.match(/url\(\s*["']?data:(?:font|application\/(?:font|x-font))[^)]*\)/gi);
+      if (m) offenders.push(`${f}: ${m.length} inlined font(s), first starts ${m[0].slice(0, 48)}…`);
+    }
+
+    expect(
+      offenders,
+      `${offenders.length} stylesheet(s) inline a font as a data: URI. The production CSP is ` +
+        `\`font-src 'self'\` (site/vercel.json), which REFUSES a data: font — so this ships a page ` +
+        `that cannot load its own typeface. ⛔ Do NOT fix this by adding \`data:\` to font-src: ` +
+        `that is a claim moving DOWN in security to make a test pass (campaign convention 1). ` +
+        `Fix it in \`astro.config.mjs\`'s \`build.assetsInlineLimit\`, which returns false for ` +
+        `font extensions so fonts are always emitted as files.`,
+    ).toEqual([]);
+  });
 });

@@ -24,7 +24,7 @@ grounded_in:
   - "artifacts/grande_revue/battle_plan.md — Lane A, `accepted`; budget expressly NOT ratified there"
   - "artifacts/grande_revue/mid_campaign_review.md §2 — P1-1 · P1-2 · P1-3 · P1-4 · P2-1 · P2-3 · §P3"
   - "artifacts/grande_revue/evidence/dimension_reports_digest.md — D3 console capture, D6 provenance probe"
-tags: [artifact, haussmann, grande_revue, gr_1, convention_13, amendment, proposed]
+tags: [artifact, haussmann, grande_revue, gr_1, convention_13, amendment, accepted]
 ---
 
 > ~~⛩ **THIS IS A PROPOSAL, NOT A RULING.**~~ ⛩⛩ **SIGNED 2026-08-28 — THIS IS NOW A RULING.** GR-1's
@@ -62,9 +62,11 @@ it*:
   checker**, per conventions 15/16/17's standing ruling: *the habit costs a sentence and cannot itself
   be wrong; the checker costs a sitting and can.*
 
-⚠ **What the signature does NOT close, stated so nobody infers otherwise.** **AC-1's scope question is
+⚠ **What the signature does NOT close, stated so nobody infers otherwise.** ~~**AC-1's scope question is
 still open** and is settled by V1's red run during O1, not by this signature — §7's first bullet stands
-unchanged. **The byte-identity measurement carries its supersession condition** (tag `v8.9` vs `.adna@0364d85`);
+unchanged.~~ ✅ **SETTLED AT O1, 2026-08-28: 50 of 50 page×theme loads pre-fix, 0 of 50 post-fix — the
+revue's "every page, both themes" was RIGHT and this desk's contrary inference was wrong.** See FAIL-1's
+dated correction in §2 and §7's amended first bullet. **The byte-identity measurement carries its supersession condition** (tag `v8.9` vs `.adna@0364d85`);
 a re-sync or tag move invalidates it. **No deploy is authorised** — GR-1 is met on-build, and push
 precedes deploy with its own ⛩ GO. **P4.4b B2b stays HELD** on ⊳ D-E; nothing here touches it.
 
@@ -136,6 +138,30 @@ both be complete. Either the *"every page"* scope is wider than the sample, or a
 ⭐ **The point is that a criterion must not be keyed to a count nobody derived.** The revue's *"every
 page"* is a **typed** figure (KW-14). Written against it, AC-1 is unfalsifiable-green if the true count
 is zero on latin pages and wrongly-red otherwise.
+
+### ⭐⭐ FAIL-1 — CORRECTED AT O1 (2026-08-28, appended dated; the analysis above retained, SO-6)
+
+**The factual half of FAIL-1 was wrong, and V1's first run falsified it.** Measured with the
+production CSP applied to a pre-fix build: **50 of 50 page×theme loads refused the font** — *every
+page, both themes*, precisely as the revue recorded. Post-fix: **0 of 50**.
+
+⇒ **The revue's figure was right.** This desk's inference — that an un-preloaded, glyph-gated subset
+would rarely or never load — does not hold for an inlined face: **`unicode-range` defers a NETWORK
+FETCH, and a `data:` URI has no fetch to defer**, so the engine constructs the face immediately and
+CSP is evaluated at construction. The lazy-loading intuition is real and simply does not reach this
+case.
+
+⭐ **The remedy stands, and why it stands is the interesting part.** V1 *would* have worked as a limb
+after all — its "red before the fix" clause was satisfiable all along. But the static limb is still
+the one to gate on, for the half of the argument that survived: a `data:` URI in built CSS is
+**present or absent**, so it cannot be vacuous, and it does not depend on a browser's font-loading
+behaviour remaining what it is today. ⇒ **A correct remedy reached from a wrong premise is still a
+wrong premise**, and it is corrected here rather than quietly inherited by whoever cites this
+document next.
+
+⚠ **The meta-point holds in the other direction too.** The revue's *"every page"* was a **typed**
+figure when written (KW-14) — right, but not derived. This run makes it derived. *A typed figure that
+happens to be correct is still typed*, and measuring is the only way to tell the two apart.
 
 **Remedy — zero new instruments, and it makes the criterion decidable either way.** AC-1 gains a
 **static limb that is directly checkable and cannot be vacuous**: *no `data:font` occurrence in built
@@ -347,10 +373,11 @@ which was real new work.
 
 ## 7 · What this pass did not do
 
-- **It did not settle A1's scope.** Whether the CSP violation fires on every page or only where a
-  cyrillic-ext glyph paints is **unresolved**, deliberately: settling it requires the headers-applied
-  probe that is AC-1's own deliverable, and building an instrument at a review's tail is what
-  conventions 15/16/17 rule against. AC-1 is written so **either answer produces the same fix**.
+- ~~**It did not settle A1's scope.**~~ ✅ **SETTLED AT O1 (appended 2026-08-28).** The pass correctly
+  declined to settle it — building the probe was AC-1's own deliverable, not a review's tail — and O1
+  then measured it: **50/50 pre-fix, 0/50 post-fix.** The revue was right; this desk's reasoning was
+  wrong (`unicode-range` defers a network fetch, and a `data:` face has none). **AC-1 was written so
+  either answer produced the same fix, and that is the part that held.**
 - **It did not re-verify the revue's dimension reports.** Findings were re-read at the **object**, not
   against the reports that produced them; where the two disagree (A1's scope), both are recorded.
 - **It did not run any gate.** No `site/` file has been read for state beyond source inspection, and

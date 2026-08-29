@@ -279,5 +279,45 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      /**
+       * ⛩ HAUSSMANN GR-1 O1 / AC-1 — P1-1: THE PRODUCTION CSP BLOCKED THE SITE'S OWN FONT.
+       *
+       * `vercel.json`'s CSP carries `font-src 'self'` — no `data:`. Vite's DEFAULT
+       * `assetsInlineLimit` is 4096 bytes, and exactly one font asset fell under it: the
+       * JetBrains Mono Variable `cyrillic-ext` subset (~2028 B decoded), which shipped as
+       * `url(data:font/woff2;base64,…)` inside the BaseLayout stylesheet linked from every
+       * page. Every other subset was already emitted as a FILE — `cyrillic-ext` was the only
+       * one absent from `dist/_astro/`, because it was the only one small enough to inline.
+       *
+       * ⛔ THE OTHER FIX IS FORBIDDEN. Adding `data:` to `font-src` would also make the
+       * error go away, and it is a claim moving DOWN in security to make a test pass —
+       * campaign convention 1. The CSP is unchanged; the ASSETS move.
+       *
+       * WHY A FUNCTION AND NOT `assetsInlineLimit: 0`. A flat 0 would also stop inlining
+       * every small SVG and image on the site — a build-wide behaviour change to fix a
+       * font defect, i.e. exactly the unforced widening this campaign keeps cleaning up.
+       * Returning `false` for fonts and `undefined` for everything else leaves all other
+       * asset classes on Vite's default.
+       *
+       * ⚠ SCOPE — MEASURED, AND THE REVUE WAS RIGHT. V1 (`scripts/csp_font_probe.mjs`) ran
+       * against a pre-fix build with this CSP applied: **50 of 50 page×theme loads refused
+       * the font**, i.e. every page, both themes, exactly as the revue recorded. Post-fix:
+       * **0 of 50**.
+       *
+       * ⭐⭐ THE PRE-BUILD PASS REASONED THAT IT MIGHT FIRE RARELY OR NEVER — `cyrillic-ext`
+       * is not preloaded (`BaseLayout.astro:52-54` is latin-only) and matches no glyph an
+       * English page paints — AND THAT REASONING WAS WRONG. `unicode-range` defers a
+       * NETWORK FETCH; a `data:` URI face has no fetch to defer, so the engine constructs it
+       * immediately and CSP is evaluated at construction. The lazy-loading intuition simply
+       * does not reach inlined faces.
+       *
+       * ⇒ The fix below is unchanged, because it was deliberately written against the ASSET
+       * rather than against a page count — which is the half of the pass's reasoning that
+       * held.
+       */
+      assetsInlineLimit: (filePath) =>
+        /\.(woff2?|ttf|otf|eot)$/i.test(filePath) ? false : undefined,
+    },
   },
 });
