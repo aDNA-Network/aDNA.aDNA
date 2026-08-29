@@ -50,9 +50,9 @@
     {
       "id": "R-64",
       "url": "/get-started",
-      "quote": "Everything stays on your machine. Nothing is sent anywhere.",
+      "quote": "The workspace is files on your machine and makes no network calls of its own.",
       "class": "verified",
-      "why": "The privacy promise at the point of install, where it actually matters. Quote re-pinned at HAUSSMANN P4.5b O2 (2026-08-26): the promise is unchanged and still verified; only the wording moved, from 'lives on' to 'stays on'. Note what this row was doing before the re-pin — gate-26 asserts verified quotes are PRESENT, so the register was pinning the one phrasing ADR-048 §50's avoid-list rules out. A claim register locks in wording as well as truth."
+      "why": "The privacy promise at the point of install, where it actually matters. RE-PINNED A SECOND TIME at HAUSSMANN GR-1 O5 (2026-08-28), and this time the CLAIM changed, not just the wording: the S3 caveat this row had carried since P0.5 — that the required agent tool sends prompts and file contents to its provider — is now STATED ON THE PAGE rather than held only in the register. The old sentence scoped, as written, over a command ending `&& claude`. First re-pin was P4.5b O2 (2026-08-26), wording only, lives-on -> stays-on for ADR-048 §50. Note what this row was doing before that: gate-26 asserts verified quotes are PRESENT, so the register was pinning the one phrasing the voice rule forbids. A claim register locks in wording as well as truth — and it can also hold a diagnosis whose remedy nobody ships, which is what happened here for eleven missions."
     },
     {
       "id": "R-73",

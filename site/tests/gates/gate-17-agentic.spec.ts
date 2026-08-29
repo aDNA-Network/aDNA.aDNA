@@ -28,7 +28,7 @@
  * been bitten by once (a probe that PASSED two checks against a site without the feature).
  */
 import { test, expect } from '@playwright/test';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const manifest: { twins: string[] } = JSON.parse(
@@ -163,6 +163,89 @@ test.describe('G12 — markdown twins resolve', () => {
       expect(withoutPointer, `${path}.md must not carry section nav chrome`).not.toContain('In this section');
     });
   }
+});
+
+test.describe('G18 — twin FIDELITY: the twin says what the page says', () => {
+  /**
+   * ⛩ HAUSSMANN GR-1 O3 / AC-3 · V3 — THE ASSERTION NO GATE PERFORMED.
+   *
+   * ⭐⭐ G12 CHECKS TWIN *SHAPE* AND NEVER TWIN *CONTENT*, and that is how P1-4 shipped behind a
+   * green suite. `/get-started.md` served `ls ~/aDNA/.aDNA/what` and "Replace `` with whatever you
+   * called your project" — the quickstart's own verification commands, corrupted, on the surface
+   * the machine door advertises — while every G12 assertion passed: 200, text/markdown, pointer
+   * block present, an h1 near the top, >200 bytes, no MDX leak, no nav chrome. **Every one of those
+   * is a property of the twin alone.** Nothing ever compared it to the page.
+   *
+   * That is campaign convention 18 (ratified at this mission's signature): an instrument can run
+   * correctly, pass honestly, and be pointed at a LOCAL PROXY for the property actually claimed.
+   * The emitter's own header promises "no drift channel"; only a comparison can hold it to that.
+   *
+   * WHAT THIS ASSERTS, NARROWLY AND ON PURPOSE. Placeholders of the `<name>` class — angle-bracket
+   * tokens inside a `<code>` element — are the one construct where HTML escaping and markdown
+   * plain-text collide, and they are load-bearing: they appear in commands a reader is told to run.
+   * If the page shows one, the twin must contain it. This does NOT attempt general prose
+   * equivalence (a tier-C twin is deliberately rougher than its page — that is the declared price
+   * of deriving it from the artifact) and it is not a diff.
+   *
+   * ⚠ COVERAGE FLOOR, NOT `> 0` (P4.2's lesson). "No corrupted placeholders" is also what you get
+   * from a walk that read nothing, so the corpus size and the placeholder count are both asserted.
+   *
+   * Red-proven by `scripts/twin_fidelity_redtest.sh`.
+   */
+  const PLACEHOLDER_FLOOR = 3;
+
+  test('G18: every <code> placeholder on a page survives into its twin', () => {
+    const dist = join(process.cwd(), 'dist');
+    if (!existsSync(dist)) throw new Error(`no build output at ${dist} — run \`npx astro build\` first`);
+
+    const pairs: { route: string; html: string; twin: string }[] = [];
+    (function walk(dir: string) {
+      for (const e of readdirSync(dir, { withFileTypes: true })) {
+        const fp = join(dir, e.name);
+        if (e.isDirectory()) { walk(fp); continue; }
+        if (e.name !== 'index.html') continue;
+        const rel = fp.slice(dist.length + 1).replace(/index\.html$/, '');
+        // Tier-C twins are emitted as a SIBLING `<route>.md`, which is the advertised convention.
+        const twinPath = join(dist, rel.replace(/\/$/, '') + '.md');
+        if (rel && existsSync(twinPath)) {
+          pairs.push({ route: '/' + rel, html: readFileSync(fp, 'utf8'), twin: readFileSync(twinPath, 'utf8') });
+        }
+      }
+    })(dist);
+
+    expect(pairs.length, 'no page/twin pairs found — the walk collapsed, and a collapsed walk '
+      + 'reports a clean result for a corpus it never read').toBeGreaterThanOrEqual(10);
+
+    // `&lt;word&gt;` inside a <code> element: the escaped placeholder as the page really emits it.
+    const CODE_PLACEHOLDER = /<code[^>]*>([\s\S]*?)<\/code>/gi;
+    const TOKEN = /&lt;([a-z][a-z0-9_-]*)&gt;/gi;
+
+    let found = 0;
+    const missing: string[] = [];
+    for (const { route, html, twin } of pairs) {
+      const tokens = new Set<string>();
+      for (const m of html.matchAll(CODE_PLACEHOLDER)) {
+        for (const t of m[1].matchAll(TOKEN)) tokens.add(t[1]);
+      }
+      for (const t of tokens) {
+        found += 1;
+        if (!twin.includes(`<${t}>`)) {
+          missing.push(`${route}: page shows <${t}> inside <code>, its twin does not contain it`);
+        }
+      }
+    }
+
+    expect(found, `only ${found} <code> placeholder(s) found across ${pairs.length} page/twin pairs — `
+      + 'below the floor, so a clean result here would say nothing about the emitter')
+      .toBeGreaterThanOrEqual(PLACEHOLDER_FLOOR);
+
+    expect(missing,
+      `${missing.length} placeholder(s) present on the page and MISSING from its twin. The emitter `
+      + 'decoded an escaped placeholder into a live-looking tag and a later blind `stripInline` ate '
+      + 'it — see `protect()`/`restoreProtected()` in scripts/emit_bespoke_twins.mjs. This is a '
+      + 'content-fidelity defect, not a formatting one: the twin is advertised as saying what the '
+      + 'page says, and these are commands a reader is told to run.').toEqual([]);
+  });
 });
 
 test.describe('G13 — the machine surfaces are discoverable from the page', () => {

@@ -105,12 +105,13 @@ const stripTags = (html) => {
 
 /** Minimal, deliberate HTML → markdown over the structures this site actually emits. */
 function htmlToMarkdown(html) {
+  PROTECTED = [];              // per-document; a shared store across pages would cross-contaminate
   let s = stripTags(html);
 
   // Block structures, before inline ones.
   s = s.replace(/<pre[^>]*>[\s\S]*?<code[^>]*>([\s\S]*?)<\/code>[\s\S]*?<\/pre>/gi,
-    (_m, code) => `\n\`\`\`\n${decode(code).trim()}\n\`\`\`\n`);
-  s = s.replace(/<pre[^>]*>([\s\S]*?)<\/pre>/gi, (_m, code) => `\n\`\`\`\n${decode(stripInline(code)).trim()}\n\`\`\`\n`);
+    (_m, code) => `\n\`\`\`\n${protect(decode(code).trim())}\n\`\`\`\n`);
+  s = s.replace(/<pre[^>]*>([\s\S]*?)<\/pre>/gi, (_m, code) => `\n\`\`\`\n${protect(decode(stripInline(code)).trim())}\n\`\`\`\n`);
 
   for (let level = 1; level <= 6; level += 1) {
     s = s.replace(new RegExp(`<h${level}[^>]*>([\\s\\S]*?)</h${level}>`, 'gi'),
@@ -124,10 +125,49 @@ function htmlToMarkdown(html) {
   s = s.replace(/<br\s*\/?>/gi, '\n');
   s = s.replace(/<\/(p|div|section|header|footer|article|tr|dl|dt|dd|table)>/gi, '\n');
 
-  return tidy(clean(s));
+  // restore LAST — after tidy, so a fence body is never re-indented (indentation is its content)
+  return restoreProtected(tidy(clean(s)));
 }
 
 const stripInline = (h) => h.replace(/<[^>]+>/g, '');
+
+/**
+ * ⛩ HAUSSMANN GR-1 O3 / AC-3 — P1-4: THE TWIN WAS DELETING THE PLACEHOLDERS IT EXISTS TO CARRY.
+ *
+ * `/get-started.md` served `ls ~/aDNA/.aDNA/what` and "Replace `` with whatever you called your
+ * project" — the quickstart's own check commands, corrupted, on the surface the machine door
+ * advertises. The page and the built HTML were both CORRECT: `<code>&lt;name&gt;</code>` throughout.
+ *
+ * THE BUG IS AN ORDERING, NOT A MISSING RULE. Two paths ran `decode()` and handed the result back
+ * into a later blind `stripInline` (`/<[^>]+>/g`): the fenced-block branch decoded `&lt;name&gt;`
+ * into a live-looking `<name>`, and `clean()`'s inline-code branch emitted `` `<name>` `` — then
+ * `clean()`'s own closing `decode(stripInline(s))` ate both. The `<pre>`-without-`<code>` branch had
+ * the SAFE order all along, which is why the corruption looked inconsistent.
+ *
+ * ⭐ WHY NOT JUST TIGHTEN THE REGEX. The obvious fix — strip only things that look like real HTML
+ * tags — cannot work: `<name>` IS shaped exactly like a tag (`/<\/?[a-z][a-z0-9]*.*?>/` matches it).
+ * There is no lexical test that separates a placeholder from an element. So the fix is to make
+ * already-converted content UNREACHABLE by any later strip, rather than to teach the strip to guess.
+ *
+ * Sentinels use U+0001, which no source text contains and which survives `decode`, `stripInline`
+ * and `tidy`'s whitespace collapsing untouched. `restoreProtected` runs LAST, after `tidy` — so
+ * fence bodies are never re-indented either, which is the behaviour `tidy` already wanted.
+ *
+ * ⚠ SECOND DEFECT IN THIS CONVERSION, and the first one rhymes: P4.5b found `<strong>` converted
+ * before `<a>`, discarding hrefs — *"the copy was already right; the machine surface was lying about
+ * it."* Both are the same shape, an ordering that destroys content rather than a rule that is
+ * missing, which is why AC-3's limb compares the twin to the PAGE rather than checking the twin's
+ * shape (all `gate-17` G12 ever did, and why this shipped behind a green suite).
+ */
+let PROTECTED = [];
+const protect = (text) => `\u0001${PROTECTED.push(text) - 1}\u0001`;
+const restoreProtected = (s) => {
+  const out = s.replace(/\u0001(\d+)\u0001/g, (_m, i) => PROTECTED[Number(i)] ?? '');
+  // A surviving sentinel means a transform ate the token but not its content — silent corruption of
+  // exactly the kind this fix exists to end. Fail loudly rather than emit a control character.
+  if (/\u0001/.test(out)) throw new Error('twin emitter: unrestored protection sentinel — a transform corrupted a protected span');
+  return out;
+};
 
 /**
  * `<a href>` → a markdown link, as a named step rather than one line inside `clean()`.
@@ -164,7 +204,7 @@ function decode(s) {
 /** Inline formatting worth keeping, then everything else dropped. */
 function clean(fragment) {
   let s = fragment;
-  s = s.replace(/<code[^>]*>([\s\S]*?)<\/code>/gi, (_m, c) => `\`${decode(stripInline(c)).trim()}\``);
+  s = s.replace(/<code[^>]*>([\s\S]*?)<\/code>/gi, (_m, c) => `\`${protect(decode(stripInline(c)).trim())}\``);
   s = s.replace(/<(strong|b)[^>]*>([\s\S]*?)<\/\1>/gi, (_m, _t, c) => `**${stripInline(linkify(c)).trim()}**`);
   s = s.replace(/<(em|i)[^>]*>([\s\S]*?)<\/\1>/gi, (_m, _t, c) => `*${stripInline(linkify(c)).trim()}*`);
   s = linkify(s);

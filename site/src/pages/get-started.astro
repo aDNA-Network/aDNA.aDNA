@@ -47,7 +47,7 @@ const jsonLD = buildWebPageJsonLD({
 >
   <p>
     Set up your own aDNA workspace — a local, agent-readable home for every project's context — in
-    about 5 minutes. Everything stays on your machine. Nothing is sent anywhere.
+    about 5 minutes. The workspace is files on your machine and makes no network calls of its own.
   </p>
 
   <Callout variant="info" title="Prerequisites">
@@ -93,7 +93,12 @@ const jsonLD = buildWebPageJsonLD({
       <a href="/get-started/what-your-agent-reads/">Every file the agent reads on first run, annotated →</a>
       They are shown verbatim, at a pinned commit, with hashes you can check against your own clone.
     </li>
-    <li><strong>Nothing is sent anywhere.</strong> No account, no telemetry, no network call after the clone.</li>
+    <li><strong>The workspace sends nothing anywhere.</strong> No account, no telemetry, no network call
+      after the clone — it is plain Markdown on your disk. <strong>Your agent is a separate question,
+      and the command above starts one:</strong> the trailing <code>&amp;&amp; claude</code> launches
+      Claude Code, which needs an Anthropic account and sends the files it reads to Anthropic. That is
+      the agent's network behaviour, not the workspace's — and you can skip it, open the files in any
+      editor, and the workspace still works.</li>
     <li>
       <strong>This is a Claude Code convention.</strong> The workspace is plain Markdown that any tool can read,
       but this one-command flow assumes Claude Code specifically. Other agents can read the same files; they
@@ -173,9 +178,9 @@ const jsonLD = buildWebPageJsonLD({
       are discharged by O2's measurement or revised down then, never by copy. */}
   <h2 id="check-it-worked">3. Check it worked</h2>
   <p>
-    "It worked" should be something you can verify, not something you feel. Five commands — each
-    prints nothing and exits <code>0</code> on success, except the last two, which print your project's
-    contents and its first commit:
+    "It worked" should be something you can verify, not something you feel. Five commands — the first
+    two print nothing and exit <code>0</code> on success; the last three print your vault list, your
+    project's contents, and its first commit:
   </p>
   <pre class="cmd"><code>test -f {workspace_root}/CLAUDE.md            # the router your agent reads first
 test -d {workspace_root}/.adna                # the standard, embedded and read-only

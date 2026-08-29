@@ -320,6 +320,57 @@ Fast lane **522 → 523/1skip** derived. ⛔ Nothing deployed; GR-1 is met on-bu
 ⏭ Changelog entry for GR-1's user-visible changes is **owed at O6**, extending the day's existing
 `2026-08-28.md` deliberately (convention 6: the cadence prompt is date-keyed and will not fire twice).
 
+### ✅ 2026-08-28 — O3 + O5 COMPLETE (A3 / AC-3 and A5+P2-1 / AC-5), LANDED TOGETHER per CONSTRAINT-7
+
+**AC-3 ✅.** `/get-started.md` now serves `ls ~/aDNA/<name>.aDNA/what …` and *"Replace `<name>` with
+whatever you called your project"* — the quickstart's own verification commands, intact, on the
+surface the machine door advertises.
+
+⭐ **The fix is protection, not a tighter regex, and the reason matters.** The obvious remedy — strip
+only things that look like real tags — **cannot work**: `<name>` is shaped exactly like an element,
+and no lexical test separates a placeholder from markup. So already-converted spans are made
+*unreachable* by any later strip (`protect()` / `restoreProtected()`, U+0001 sentinels, restored
+after `tidy` so fence indentation survives). A surviving sentinel **throws** rather than emitting a
+control character.
+
+**V3 ✅ — `gate-17` gains `G18`, the assertion no gate performed.** ⭐⭐ G12 checks twin *shape* —
+200, content-type, pointer block, an h1, >200 bytes, no MDX leak, no nav chrome — **every one a
+property of the twin alone.** Nothing ever compared it to the page, which is exactly how a corrupted
+quickstart shipped behind seven green assertions. Red-proven **5/5**: M1 (drop `restoreProtected`)
+RED · **M2 restores P1-4's own mechanism** and goes RED · C0/C1 GREEN · ⭐ **C2 is the control that
+earns its keep** — flattening every heading (8 → 1) loses no placeholder and stays **GREEN**, because
+a tier-C twin is *deliberately* rougher than its page; a gate that fired there would be a
+prose-equivalence check wearing a fidelity check's clothes and would make the emitter's own declared
+trade un-shippable.
+
+⚠ **`G16` was taken — an ID collision, caught only by running it.** Renamed to `G18`. A `--grep` that
+matches two describe blocks reports the other one's passes as yours.
+
+**AC-5 ✅**, all three corrections asserted in **built** output on the surface each claim's verb picks:
+*"except the last two"* → **three** (`ls -d …/*.aDNA` prints; 0 occurrences of the old string in HTML
+**and** twin) · P2-1's scope clause on **both** carriers (`:50` hero and `:96` bullet — the review
+named one) · and ⛩ ruling 2 applied to `visual-identity-v2.mdx` only, leaving `writing-guidelines`
+and the slug untouched, so this is a one-word content fix and **ADR-057's redirect obligations do not
+fire**.
+
+⭐⭐ **AND gate-26 CAUGHT THE COPY CHANGE — R-64 HAD ALREADY DIAGNOSED P2-1, WITH THE REMEDY, SINCE
+P0.5.** The row read *"for the newcomer the sentence over-promises; scope it to 'aDNA itself sends
+nothing'"* — **the exact fix GR-1 shipped** — and the Grande Revue rediscovered it independently as
+P2-1 **eleven missions later**, because nothing converts a register caveat into work. ⇒ **A caveat in
+the register is a finding with a home and no gate**: P4.3's F-v lesson arriving inside the instrument
+built to prevent it. Re-pinned in the register **and** the gate fixture same-diff (the row's own
+P4.5b precedent), and this time **the claim moved, not just the wording** — the S3 caveat is
+discharged because the page now states it. ⚠ Note which surface was honest throughout: the register
+never claimed the sentence was unqualified; **the page did.**
+
+⚠ **Two harness bugs, both mine, both in the INERTNESS GUARDS rather than the gate** — `grep -c`
+prints `0` and *exits 1*, so `|| echo 0` appended a second zero and compared `"0\n0"` against `"0"`,
+condemning a correctly-applied mutation; and C2 asserted headings `== 0` when the twin legitimately
+keeps one the mutated loop never produced — *a guard narrower than its conclusion, inside the harness
+written to catch exactly that.* The gate was right on all five checks both times.
+
+Fast lane **523 → 524/1skip** derived. ⛔ Nothing deployed.
+
 ## AAR (SO#5)
 
 *(mandatory before `status: completed`)*
