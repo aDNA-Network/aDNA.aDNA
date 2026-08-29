@@ -2,7 +2,7 @@
 type: wrapper
 wrapper: git
 created: 2026-06-22
-updated: 2026-06-22
+updated: 2026-08-28
 status: active
 last_edited_by: agent_stanley
 tags: [wrapper, git, federation, git_provider, github, public, p_released, wave_2]
@@ -35,6 +35,14 @@ git_provider:
     origin: https://github.com/aDNA-Network/aDNA.aDNA.git   # unchanged by the flip (visibility-only; no host move)
     mirror:                    # n/a — GitHub IS the public home (ADR-013 D3)
     upstream:                  # n/a
+    mesh-rd: rd-forge:aDNA-Network/aDNA.aDNA.git   # ADR-014 A4 §5 mirror; nightly 02:30 replica push, Operations-scheduled; first push pending node return (2026-08-28)
+  # ADR-014 A4 §5 mirror surface (Wave 2, 2026-08-28). ⛔ THE CONF IS PRIMARY, THIS IS THE MIRROR: the
+  # runner reads Operations' `enrolled_vaults.conf` and NEVER a wrapper, so a divergence here is a
+  # graph-side legibility defect, not a replication one. Row mirrored verbatim from the conf.
+  mesh_replicas:
+    mesh-rd:
+      state: enrolled
+      freshness_mode: active_co_development   # declared 2026-08-28 (operator-approved Wave-2 enrollment; conf is primary)
 ```
 
 > **Public-flip provenance (2026-06-22):** Git.aDNA P6 Wave 2 canary flipped this **dev-graph** repo (`aDNA-Network/aDNA.aDNA`) GitHub-private → **GitHub-public** via `gitops_set_visibility` (the verb's first live exercise). The flip is **visibility-only** — `origin` is unchanged, so there is **no `rollback` remote and no Home §C shim** (the reverse is a one-command re-privatize). Distinct from the standard's separately-released public image `aDNA-Network/aDNA` (MIT; see MANIFEST "Public face"). Companion files: `hooks/pre-push.gitleaks.sh` (ADR-011 D2) + `.gitleaks.toml` (the hook resolves it via `git/.gitleaks.toml`).
