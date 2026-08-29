@@ -97,13 +97,42 @@ function git(args) {
   return execFileSync('git', args, { cwd: TEMPLATE_ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
 }
 
-let sourceSha;
-let sourceShaFull;
+/**
+ * ⛩ HAUSSMANN GR-1 O4 / AC-4 — P1-3: THE PIN NAMED ONE REPOSITORY AND CAME FROM ANOTHER.
+ *
+ * ⭐⭐ THE DEFECT WAS A PROVENANCE INVERSION, not a stale value. `STANDARD_REPO` is the public image
+ * `aDNA-Network/aDNA`, but the SHA was read with `git rev-parse HEAD` in the LOCAL `~/aDNA/.adna`
+ * checkout — whose origin is `aDNA-Network/adna-legacy`, the ARCHIVED, frozen repo, and which sits
+ * 12 commits ahead of even that (`git branch -r --contains` → empty). So the script paired a SHA
+ * from one repository with the URL of another, and every "at the same commit" link on
+ * `/get-started/what-your-agent-reads/` returned 404 — at the exact moment a skeptic accepts the
+ * page's invitation to verify.
+ *
+ * ⛔ THE OBVIOUS REMEDY IS NOT PERFORMABLE. "Push the release-sync commit" has nowhere to push:
+ * workspace Standing Rule 1 forbids modifying `.adna/`, and its origin is an archived repo.
+ *
+ * ⭐ THE PIN IS NOW THE UPSTREAM RELEASE, DERIVED FROM THE STANDARD'S OWN PUBLISHED VERSION.
+ * The local HEAD's commit message says what it is — *"release sync: v8.9 from aDNA-Network/aDNA"* —
+ * and a downstream sync artifact is never a citable source. The upstream release IS public and
+ * immutable: tag `v8.9`, and `.adna/CLAUDE.md` at that tag serves 200. So `source_ref` is read from
+ * `.adna/CLAUDE.md`'s own `version:` frontmatter — **derived, never transcribed** (KW-14) — and every
+ * published URL is built from the TAG. Tags are immutable by the release skill's own rule (never
+ * move a pushed tag), so a ref pin is stabler than a SHA pin and legible to a human besides.
+ *
+ * ⚠ The local sync SHA is still recorded, as `local_sync_sha`, because it is genuinely useful for
+ * tracing which sync produced these bytes. It is NOT published in any URL, and `gate-36` asserts
+ * that — a local-only identifier on a public surface is the whole defect.
+ */
+let localSyncSha;
+let sourceRef;
 let sourceCommitDate;
 try {
-  sourceShaFull = git(['rev-parse', 'HEAD']);
-  sourceSha = git(['rev-parse', '--short', 'HEAD']);
+  localSyncSha = git(['rev-parse', 'HEAD']);
   sourceCommitDate = git(['log', '-1', '--format=%cs']);
+  const standardClaude = readFileSync(join(TEMPLATE_ROOT, 'CLAUDE.md'), 'utf8');
+  const v = /^version:\s*"?([0-9]+\.[0-9]+)"?\s*$/m.exec(standardClaude);
+  if (!v) throw new Error('no `version:` in .adna/CLAUDE.md frontmatter — nothing to derive a release ref from');
+  sourceRef = `v${v[1]}`;
 } catch {
   console.error('[build_tour_files] REFUSING: cannot read a commit from the standard checkout.');
   console.error('  The tour\'s claim is "these bytes came from that commit". Without a resolvable');
@@ -115,10 +144,10 @@ try {
 // and that is the exact failure mode install_truth.json is sitting in today (fd32fc7 -> not a
 // valid object name). Assert it here so the class cannot recur silently in this file.
 try {
-  const type = git(['cat-file', '-t', sourceShaFull]);
+  const type = git(['cat-file', '-t', localSyncSha]);
   if (type !== 'commit') throw new Error(`pin resolves to a ${type}, not a commit`);
 } catch (err) {
-  console.error(`[build_tour_files] REFUSING: pin ${sourceSha} does not resolve to a commit in ${TEMPLATE_ROOT}.`);
+  console.error(`[build_tour_files] REFUSING: local sync commit ${localSyncSha} does not resolve in ${TEMPLATE_ROOT}.`);
   console.error(`  ${err.message}`);
   process.exit(1);
 }
@@ -135,7 +164,7 @@ try {
 if (dirty) {
   console.error('[build_tour_files] REFUSING: the standard checkout has uncommitted changes to vendored files:');
   console.error(dirty.split('\n').map((l) => `    ${l}`).join('\n'));
-  console.error(`  Vendoring now would print pin ${sourceSha} above bytes that are not at ${sourceSha}.`);
+  console.error('  Vendoring from a checkout whose own HEAD is unreadable cannot be traced back to anything.');
   process.exit(1);
 }
 
@@ -163,7 +192,7 @@ const files = FILES.map(({ slug, path: relPath }) => {
     bytes: Buffer.byteLength(raw, 'utf8'),
     lines: raw.split('\n').length,
     sha256: sha256(raw),
-    blob_url: `${STANDARD_REPO}/blob/${sourceShaFull}/.adna/${relPath}`,
+    blob_url: `${STANDARD_REPO}/blob/${sourceRef}/.adna/${relPath}`,
     _content: raw,
   };
 });
@@ -184,8 +213,11 @@ const manifest = {
   schema_version: '1.0',
   generated: sourceCommitDate,
   source_repo: STANDARD_REPO,
-  source_sha: sourceSha,
-  source_sha_full: sourceShaFull,
+  // The PUBLIC pin: an immutable upstream release tag that resolves in `source_repo`.
+  source_ref: sourceRef,
+  // Traceability only — the local `.adna` sync commit. NEVER published in a URL: it exists in no
+  // remote, and publishing it is exactly the defect GR-1 O4 repaired. gate-36 asserts this.
+  local_sync_sha: localSyncSha,
   source_commit_date: sourceCommitDate,
   files: files.map(({ _content, ...meta }) => meta),
   vault_triad: triad,
@@ -208,7 +240,8 @@ if (CHECK) {
       prevBySlug.delete(f.slug);
     }
     for (const orphan of prevBySlug.keys()) problems.push(`ORPHAN: ${orphan} in the manifest but not in the vendor set`);
-    if (prev.source_sha !== sourceSha) problems.push(`STALE: manifest pins ${prev.source_sha}; the standard checkout is at ${sourceSha}`);
+    if (prev.source_ref !== sourceRef) problems.push(`STALE: manifest pins release ${prev.source_ref}; the standard checkout publishes ${sourceRef}`);
+    if (prev.local_sync_sha !== localSyncSha) problems.push(`STALE: manifest records sync ${prev.local_sync_sha}; the checkout is at ${localSyncSha}`);
   }
   for (const f of files) {
     const txt = join(OUT_DIR, `${f.slug}.txt`);
@@ -220,7 +253,7 @@ if (CHECK) {
     console.error('  Re-run: node scripts/build_tour_files.mjs');
     process.exit(1);
   }
-  console.log(`[build_tour_files] OK — ${files.length} files current with ${sourceSha}`);
+  console.log(`[build_tour_files] OK — ${files.length} files current with ${sourceRef} (sync ${localSyncSha.slice(0,7)})`);
   process.exit(0);
 }
 
@@ -239,4 +272,4 @@ for (const f of files) writeFileSync(join(OUT_DIR, `${f.slug}.txt`), f._content)
 writeFileSync(OUT_MANIFEST, nextManifest);
 
 const totalKb = (files.reduce((n, f) => n + f.bytes, 0) / 1024).toFixed(1);
-console.log(`[build_tour_files] wrote ${files.length} files (${totalKb} KB) pinned at ${sourceSha} (${sourceCommitDate})`);
+console.log(`[build_tour_files] wrote ${files.length} files (${totalKb} KB) pinned at release ${sourceRef} (${sourceCommitDate}); local sync ${localSyncSha.slice(0,7)}`);

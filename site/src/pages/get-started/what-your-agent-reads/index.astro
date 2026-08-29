@@ -49,7 +49,7 @@ const jsonLD = [
   title={title}
   description={description}
   jsonLD={jsonLD}
-  source={sourceForTour(`${manifest.source_repo}/tree/${manifest.source_sha_full}/.adna`)}
+  source={sourceForTour(`${manifest.source_repo}/tree/${manifest.source_ref}/.adna`)}
   prev={{ label: 'Get Started', href: '/get-started/' }}
 >
   <p>
@@ -66,8 +66,8 @@ const jsonLD = [
 
   <Callout variant="info" title="Where these came from">
     <p>
-      Vendored from <a href={`${manifest.source_repo}/tree/${manifest.source_sha_full}/.adna`} target="_blank" rel="noopener">
-      the standard</a> at commit <code>{manifest.source_sha}</code> ({manifest.source_commit_date}). The build
+      Vendored from <a href={`${manifest.source_repo}/tree/${manifest.source_ref}/.adna`} target="_blank" rel="noopener">
+      the standard</a> at release <code>{manifest.source_ref}</code> ({manifest.source_commit_date}). The build
       refuses to publish this page if those bytes stop matching that commit, so the copy you are reading
       cannot quietly drift from the copy you would clone.
     </p>

@@ -1008,7 +1008,64 @@ untouched and still blocked on actors outside the session.
 > still open** and is settled by **V1's red run during O1**, not by the signature — which is the
 > honest state of a criterion deliberately written so **either answer gives the same fix**.
 >
-> ⏭ **NEXT: `O1`** (fonts as files under an unchanged CSP), then O2→O5.
+> ~~⏭ **NEXT: `O1`** (fonts as files under an unchanged CSP), then O2→O5.~~
+>
+> ✅ **`GR-1` IS CLOSED 2026-08-28 — ALL FIVE CRITERIA MET, AAR FILED (SO#5), mission `completed`.**
+> **AC-1 ✅ AC-2 ✅ AC-3 ✅ AC-4 ✅ AC-5 ✅ · V1–V6 ✅.** Fast lane **522 → 526/1skip** derived ·
+> `html-validate` **0**. Every new or repaired gate **red-proven with controls**: `G42e` 4/4 ·
+> `G18` 5/5 · `gate-36`'s pin limb 5/5 · `G19` 5/5. ⛔ **BUILT, NOT DEPLOYED** — met on-build by
+> design; a ⛩ push GO **then** a ⛩ deploy GO are owed, in that order.
+>
+> ⭐⭐ **CONVENTION 18 WAS EARNED BY THREE LIVE INSTANCES, AND ALL THREE FIXES LANDED IN THE BLIND
+> GATE RATHER THAN BESIDE IT.** `gate-42` gains **G42e** (no font ships as a `data:` URI — a *static*
+> limb, because a dynamic probe on a CSP-free preview is what made the gate blind). `gate-17` gains
+> **G18** (twin content vs page content — G12 checked seven properties of the twin **alone**).
+> `gate-36`'s pin limb is **replaced**: it resolved the pin in *the same checkout the pin came from*
+> and `test.skip`ped in CI, so it **could only ever pass** — the new one needs neither the checkout
+> nor the network and therefore **runs everywhere**.
+>
+> ⭐⭐ **A4's REMEDY WAS A THIRD OPTION NEITHER RATIFIED DISJUNCT CONTAINED**, found by asking *what
+> is this SHA actually a SHA of?* rather than *is it reachable?* The generator now derives the pin
+> from `.adna/CLAUDE.md`'s own `version:` (**`v8.9`**, derived not transcribed) and publishes the
+> **immutable release tag**; the local sync SHA is recorded and never published. **All five URLs
+> 200** (were 404) and **all four files byte-identical AT THE PIN** — the revue's `raw/main`
+> mitigation could not be inherited, because *`main` is not the pin and `main` moves*.
+>
+> ⭐ **AC-1's disputed scope was SETTLED, and it falsified the pass's own premise.** V1 measured
+> **50/50 page×theme loads pre-fix, 0/50 post-fix** — the revue's *"every page, both themes"* was
+> **right**, and this desk's inference (an un-preloaded, glyph-gated subset would rarely load) was
+> **wrong**: `unicode-range` defers a *network fetch*, and a `data:` face has none. **The remedy
+> survived its premise** because AC-1 was written against the ASSET, not a page count; the correction
+> is recorded at all four objects that carried it. ⚠ And the revue's figure was **typed** when
+> written (KW-14) — right, but not derived. *A typed figure that happens to be right is still typed.*
+>
+> ⭐⭐ **THE SECOND-ORDER FINDING IS THE SHARPER ONE: `R-64` HAD ALREADY DIAGNOSED P2-1 — WITH ITS
+> REMEDY — SINCE P0.5.** *"For the newcomer the sentence over-promises; scope it to 'aDNA itself
+> sends nothing'"* is exactly what GR-1 shipped, and the Grande Revue rediscovered it independently
+> **eleven missions later**, because nothing converts a register caveat into work. ⇒ **A caveat in
+> the register is a finding with a home and no gate** — P4.3's F-v lesson arriving *inside the
+> instrument built to prevent it*. ⚠ Note which surface was honest throughout: the register never
+> claimed the sentence was unqualified; **the page did.**
+>
+> ⚠ **FIVE of this desk's own instruments were wrong before their subjects** (the standing streak) —
+> a guard grepping a word that also appears in its option's doc comment · `grep -c` exiting 1 on zero
+> so `|| echo 0` yielded `"0\n0"` · a control asserting an absolute count its mutation never governed
+> · **a corpus excision that split on text the corpus does not contain verbatim, and so silently
+> excluded nothing while reading exactly like a successful exclusion** · a schema-limit check that
+> measured one field and assumed its sibling. **All five caught by structure, not vigilance.**
+>
+> **`F-w` added** (the vendored marketplace promise, P2-3) with a named destination — the next
+> `skill_template_release`, joining F-k. Register re-derived **21 total · 15 struck · 6 live**, and
+> **G19 asserts the row exists** (GAP-1's remedy: a memo is not an emitter, so V2 could have passed
+> with it unwritten). ⭐ It is unfixable here — the file is **byte-vendored** and the page **publishes
+> its sha256 and invites a diff**, so editing the site copy would trade a copy defect for a **trust
+> defect on the one surface built to be checked** — and O4's release-tag pin makes the eventual fix
+> arrive for free.
+>
+> ⏭ **NEXT: ⛩ a push GO, then ⛩ a deploy GO** (in that order — push precedes deploy, never
+> `--bootstrap-stamp`), which would put GR-1 **and** P4.4b's B1+B2a live. Then **Lane D** (story
+> coverage, the Gate-1 order's last lane) or **P4.4b B3**. ⛔ B2b stays HELD on ⊳ D-E; P5.1 stays
+> with the humans.
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is

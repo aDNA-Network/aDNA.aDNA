@@ -59,7 +59,7 @@ if (actualBytes !== file.bytes) {
 
 const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? SITE_ORIGIN;
 const fileName = file.source_path.split('/').pop() ?? file.source_path;
-const description = `${note.what} Shown verbatim from the aDNA standard at commit ${manifest.source_sha}.`;
+const description = `${note.what} Shown verbatim from the aDNA standard at release ${manifest.source_ref}.`;
 
 const jsonLD = [
   buildTechArticleJsonLD({ title: note.title, description, url: Astro.url.href }),
@@ -98,7 +98,7 @@ const nextNote = nextFile ? TOUR_ANNOTATIONS[nextFile.slug] : undefined;
   <dl class="tour-provenance">
     <div><dt>Path in the workspace</dt><dd><code>.adna/{file.source_path}</code></dd></div>
     <div><dt>Size</dt><dd>{file.lines.toLocaleString()} lines · {(file.bytes / 1024).toFixed(1)}&thinsp;KB</dd></div>
-    <div><dt>Commit</dt><dd><code>{manifest.source_sha}</code> ({manifest.source_commit_date})</dd></div>
+    <div><dt>Release</dt><dd><code>{manifest.source_ref}</code> ({manifest.source_commit_date})</dd></div>
     <div><dt>SHA-256</dt><dd><code class="tour-hash">{file.sha256}</code></dd></div>
     <div>
       <dt>Source</dt>

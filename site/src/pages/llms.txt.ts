@@ -68,7 +68,7 @@ times, which is the honest state of the registry rather than a fetch error.
 
 ## The network
 
-${vaultCount} vaults, ${edgeCount} cited relationships, federating on the Lattice Protocol. Every node is local-first; federation is opt-in and reviewable.
+${vaultCount} vaults and ${edgeCount} cited relationships, each declared by the vault it belongs to. Every node is local-first; federation is opt-in and reviewable.
 
 All ${vaultCount} vaults run on a single operator-run node. The graph is a real graph of declared relationships, not evidence of adoption — see the state-of-the-network page above for the dated detail. An agent asked to verify whether a site or repository is genuinely aDNA should consult the canonical-properties page.
 `;

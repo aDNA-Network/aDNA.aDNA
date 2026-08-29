@@ -13,7 +13,16 @@ phase: GR                  # ⛩ NEW LANE, not P0–P5. Grande Revue is the camp
                            # `phase_count` HOLDS at 6 — GR is not folded into the P0–P5 backbone.
 decade: 2
 owner: stanley
-status: in_progress        # ⛩⛩ SIGNED 2026-08-28 — THE PRE-BUILD GATE IS PASSED and GR-1 IS BUILDING.
+status: completed          # ✅ CLOSED 2026-08-28 — AAR filed per SO#5; ALL FIVE CRITERIA MET
+                           # (AC-1 ✅ AC-2 ✅ AC-3 ✅ AC-4 ✅ AC-5 ✅ · V1–V6 ✅), every new or repaired
+                           # gate RED-PROVEN with controls (G42e 4/4 · G18 5/5 · gate-36 pin 5/5 ·
+                           # G19 5/5). Fast lane 522 → 526/1skip derived; html-validate 0.
+                           # ⛔ BUILT, NOT DEPLOYED — GR-1 is met ON-BUILD by design; a ⛩ push GO
+                           # then a ⛩ deploy GO are owed, in that order, and `completed` cannot
+                           # express that, which is why it is said here.
+                           # ⚠ AC-1's scope question WAS settled at O1 (50/50 → 0/50) and FAIL-1's
+                           # premise corrected at all four objects. ~~in_progress~~ ~~queued~~ (SO-6).
+                           # PRIOR: ⛩⛩ SIGNED 2026-08-28 — THE PRE-BUILD GATE IS PASSED.
                            # artifacts/gr_1/ac_amendment_proposal.md is `accepted` (4-field block on its
                            # face); §4's criteria changes adopted wholesale; budget ratified; three
                            # further rulings taken in the same act — (2) the shipped visual identity is
@@ -29,7 +38,7 @@ executor_tier: opus        # judgment-heavy: three instrument repairs, an embarg
                            # than none). Per-objective drop to `sonnet` is legitimate for A5's
                            # mechanical string fixes and must be recorded if taken.
 token_budget_estimated: "⛩ RATIFIED 2026-08-28 — ~200–290 kT / 2 sessions, re-derived per objective at this gate (A1 ~40–60 · A2 ~20–30 · A3 ~50–70 · A4 ~40–60 · A5 ~20–30 · close cascade + AAR ~30–40). Supersedes the battle plan's ~120–200 kT / 1–2, which that document explicitly marked 'to be re-derived at the mission's own gate'. The ≈1.5× is THREE INSTRUMENT REPAIRS (headers-applied CSP probe · twin fidelity · public pin resolvability), not new features — contrast P4.4a's 2.4×, which was real new work. The gate sitting itself is separate at ~60–90 kT."
-token_budget_actual:
+token_budget_actual: "≈250–310 kT across 2 sittings (⛩ gate ~75–95 + build ~175–215) against the ratified ~200–290 kT / 2 sessions — at or just over the top of the band; NO SO#11 retrospective (the threshold is 2×). The overrun is the three red-test harnesses and the five instrument defects they caught in themselves, which is what the band was raised for. executor_tier declared `opus`, ran `opus` — honoured, not discovered at the AAR."
 created: 2026-08-28
 last_edited_by: agent_rosetta
 grounded_in:
@@ -371,9 +380,102 @@ written to catch exactly that.* The gate was right on all five checks both times
 
 Fast lane **523 → 524/1skip** derived. ⛔ Nothing deployed.
 
+### ✅ 2026-08-28 — O4 + O2 COMPLETE. **ALL FIVE CRITERIA MET; GR-1's build is done.**
+
+**AC-4 ✅ — and the fix is a third option neither battle-plan disjunct offered.** `build_tour_files.mjs`
+now derives the pin from **`.adna/CLAUDE.md`'s own `version:` frontmatter** (`v8.9`) — *derived, never
+transcribed* (KW-14) — and builds every URL from the **immutable release tag**. The local sync SHA is
+still **recorded** as `local_sync_sha`, because tracing which sync produced these bytes is genuinely
+useful, and is **never published**.
+
+Measured, not assumed: **all five provenance URLs return 200** (all five were 404), and **all four
+vendored files are byte-identical AT THE PUBLISHED PIN** (`sha256`, manifest ⇄ `raw/v8.9` ⇄ committed
+`.txt`). ⚠ The revue's mitigation could not be inherited — it measured against `raw/main`, and *`main`
+is not the pin and `main` moves*.
+
+**V4 ✅ — `gate-36`'s pin limb replaced, and it is no longer a tautology.** The old test resolved the
+pin with `git cat-file -t` **in the same checkout the pin was read from**, and `test.skip`ped whenever
+that checkout was absent — so **it never ran in CI and could only ever pass**, while its own comment
+named the defect class it was failing to see. The replacement asserts a property needing **neither the
+checkout nor the network**: the pin must be an immutable release ref, and no local-only identifier may
+appear in any published URL. ⭐ A build-time fetch was **considered and rejected** — it would make CI
+depend on GitHub's availability. Red-proven **5/5**: M1 (the historical defect) RED · M2 (mutable
+`main`) RED · ⭐ **C2 — a *different* valid tag stays GREEN**, so the next template release will not
+turn it red for being correct.
+
+**AC-2 ✅.** `llms.txt:71`'s present-tense claim is struck; the noun stays, because `canonical.ts:14-17`
+rules it correct prose — **the verb was the defect**, and a gate matching the noun would condemn
+correct copy and be disabled within a week.
+
+**V2 ✅ — `gate-17` gains `G19`**, sweeping all six emitters **by name** over built output.
+⚠ **The exclusion is asserted, not assumed** (gate-48's discipline): a sweep for a retired claim
+necessarily hits **the changelog entry that retired it**, whose *subject* is the false sentence. So the
+changelog is excluded **by name**, `llms-full.txt` is swept **with its changelog block excised rather
+than skipped whole**, and the exclusion carries a **coverage floor** — if the changelog stops matching,
+the predicate has drifted and every clean result above it is vacuous.
+
+⚠ **The first excision silently removed nothing.** It split the corpus on the twin's exact text; the
+corpus re-wraps each page, so the match failed — and **a `split()` that matches nothing reads exactly
+like a successful exclusion.** Replaced with a structural page-block excision. *An exclusion that
+excludes nothing is the cheapest possible false green.*
+
+Red-proven **5/5**, and ⭐ **the load-bearing pair is M2 vs C0/C1, not M1**: the same sentence goes
+**RED outside** the changelog and stays **GREEN inside** it. Without that pair, *"excluded the
+changelog"* is indistinguishable from *"stopped looking"*.
+
+**GAP-1 discharged: `F-w` is a register row with a named destination** (the next
+`skill_template_release`, joining F-k) — register re-derived **21 total · 15 struck · 6 live**, and
+G19 **asserts the row exists**. ⭐ It cannot be fixed on the site: the file is **byte-vendored** and
+`/get-started/what-your-agent-reads/` **publishes its sha256 and invites a diff** — editing the site
+copy would trade a copy defect for a **trust defect on the one surface built to be checked**.
+⭐ And O4 makes the eventual fix free: the tour now pins the **release tag**, so the corrected text
+arrives the moment the next release ships.
+
+**Changelog** extended deliberately on the day's existing entry (convention 6 — the cadence prompt is
+date-keyed and will not fire twice). ⚠ Its `title` then failed the schema at **70 chars**: I had
+measured `description` against its 160 limit and **assumed** the sibling field — *an instrument
+narrower than its conclusion, in the act of checking a limit.*
+
+**Suite: fast lane 524 → 526/1skip derived** (G19 + gate-36's split limb) · `html-validate` **0**.
+
+⛔ **Nothing deployed. GR-1 is met ON-BUILD**; the first live serving of these repairs is owed to a
+⛩ push GO and then a ⛩ deploy GO, in that order.
+
 ## AAR (SO#5)
 
-*(mandatory before `status: completed`)*
+- **Worked.** The convention-13 pass, for the eighth consecutive mission — and this time it produced a
+  **third option** on A4 that neither ratified disjunct contained, by asking *what is this SHA actually
+  a SHA of?* rather than *is this SHA reachable?* Re-verifying every inherited finding at the object
+  before authoring: **none stale, three materially re-scoped, one remedy not performable.** Measuring
+  the most dangerous AC×AC pair instead of reasoning about it — that single measurement discharged
+  GAP-2 outright and is why this became the first of eight passes **not to raise a band**.
+- **Didn't.** **Five of my own instruments were wrong before their subjects** — a red-test guard
+  grepping a word that also appears in its option's doc comment · `grep -c` exiting 1 on zero so
+  `|| echo 0` produced `"0\n0"` · a control asserting an absolute heading count the mutation never
+  governed · a corpus excision splitting on text the corpus does not contain verbatim · a schema-limit
+  check that measured one field and assumed its sibling. **Every one was caught by structure, not
+  vigilance**: mutations that assert their own application separately from the guard, and controls that
+  must stay green.
+- **Finding.** ⭐⭐ **Three gates in this suite verified a LOCAL PROXY for a PUBLIC or RENDERED
+  property** — `gate-42` on a CSP-free preview, `gate-36` resolving a pin in the checkout it came from,
+  `gate-17` G12 checking twin shape and never twin content. Each passed honestly against the wrong
+  object, and **all three defects shipped behind them**. Now campaign **convention 18**. ⭐ The
+  second-order finding is sharper: **`R-64` had carried P2-1's diagnosis *and its remedy* since P0.5**,
+  and the revue rediscovered it independently eleven missions later — *a caveat in the register is a
+  finding with a home and no gate.*
+- **Change.** Every fix landed **in the gate that was blind to it** rather than beside it. Three
+  instrument repairs, each red-proven with controls that prove the predicate is *scoped* — a legitimate
+  inlined SVG, a rougher twin, a different valid release tag, the changelog's own quotation. **A gate
+  that fires on correct code teaches people to `--grep-invert` it**, so proving what must stay green
+  mattered as much as proving what must go red.
+- **Follow-up.** **F-w** → the next `skill_template_release` (with F-k). ⛩ A **push GO then a deploy
+  GO** are owed before any of this is live. **AC-1's scope question is settled** (50/50 → 0/50) and
+  FAIL-1's premise is corrected at all four objects that carried it.
+- **Token / tier.** Declared `opus`, ran **`opus`** — honoured, not discovered at the AAR (P4.1's
+  lesson). Band **~200–290 kT / 2 sessions** ratified; actual **≈250–310 kT across 2 sittings**
+  (gate ~75–95 + build ~175–215), **at or just over the top of the band, no SO#11 trigger** (2× is the
+  threshold). The overrun is the three red-test harnesses and their five self-inflicted defects —
+  *which is what the band was raised for, and it still landed inside it.*
 
 ## Related
 

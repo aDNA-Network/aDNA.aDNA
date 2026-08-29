@@ -29,7 +29,7 @@
  */
 import { test, expect } from '@playwright/test';
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, sep } from 'node:path';
 
 const manifest: { twins: string[] } = JSON.parse(
   readFileSync(join(process.cwd(), 'src', 'data', 'twin_manifest.json'), 'utf8'),
@@ -163,6 +163,123 @@ test.describe('G12 — markdown twins resolve', () => {
       expect(withoutPointer, `${path}.md must not carry section nav chrome`).not.toContain('In this section');
     });
   }
+});
+
+test.describe('G19 — the machine surfaces carry no present-tense protocol claim', () => {
+  /**
+   * ⛩ HAUSSMANN GR-1 O2 / AC-2 · V2 — P1-2: THE PURGE WAS PAGE-BY-PAGE, NOT SURFACE-BY-SURFACE.
+   *
+   * P1.1 removed "built on the Lattice Protocol" from the fold of four pages and logged the removal
+   * in the changelog. `llms.txt` kept its own hand-typed variant — *"federating on the Lattice
+   * Protocol"* — for eleven missions, on the surface an AGENT reads, which is exactly where the
+   * embargoed protocol story leaks as *runs now*.
+   *
+   * ⭐ THE NOUN IS NOT THE DEFECT — THE VERB IS. `src/data/canonical.ts:14-17` rules "Lattice
+   * Protocol" correct prose for the substrate. What the counsel embargo forbids is the present-tense
+   * assertion that the network RUNS ON it. A gate matching the noun would condemn correct copy and
+   * be disabled within a week; this one matches the claim shape.
+   *
+   * ⚠ THE EXCLUSION IS PART OF THE CLAIM AND IS ASSERTED, NOT ASSUMED (gate-48's discipline, and
+   * convention 17's founding case). A site-wide sweep for a retired claim necessarily hits **the
+   * changelog entry that retired it** — the entry's SUBJECT is the false sentence, quoted in past
+   * tense. That is not residue; deleting it would be deleting the record of the fix. So the
+   * changelog is excluded BY NAME, and `llms-full.txt` is swept with its changelog section removed
+   * rather than skipped whole — the corpus embeds the twin, which is why one document produced two
+   * hits on the first run.
+   *
+   * ⚠ AND THE EXCLUSION CARRIES A COVERAGE FLOOR, so it cannot quietly become the whole answer:
+   * the changelog MUST still contain at least one hit. If it stops matching, the predicate has
+   * drifted and every clean result above it is vacuous — the failure mode where a gate reports zero
+   * because it can no longer see anything.
+   */
+  const CLAIM = /(federating on|federates on|built on|runs on|powered by)\s+the\s+Lattice\s+Protocol/gi;
+
+  test('G19: no non-HTML emitter asserts the network runs on the protocol', () => {
+    const dist = join(process.cwd(), 'dist');
+    if (!existsSync(dist)) throw new Error(`no build output at ${dist} — run \`npx astro build\` first`);
+
+    const read = (p: string) => (existsSync(join(dist, p)) ? readFileSync(join(dist, p), 'utf8') : null);
+    // Named one by one. A glob would silently stop covering a surface that gets renamed.
+    const named: Record<string, string | null> = {
+      'llms.txt': read('llms.txt'),
+      'rss.xml': read('rss.xml'),
+      'vaults.json': read('vaults.json'),
+      'api/registry.v1.json': read('api/registry.v1.json'),
+    };
+    const missing = Object.entries(named).filter(([, v]) => v === null).map(([k]) => k);
+    expect(missing, `emitter surface(s) absent from the build: ${missing.join(', ')} — a surface that `
+      + 'is not there cannot be clean, and its absence must not read as a pass').toEqual([]);
+
+    const offenders: string[] = [];
+    for (const [name, body] of Object.entries(named)) {
+      const hits = body!.match(CLAIM);
+      if (hits) offenders.push(`${name}: ${hits.length} × "${hits[0]}"`);
+    }
+
+    // The corpus, with its changelog section excised — not skipped. The corpus is where an agent
+    // reads the whole site at once, so leaving it unswept would exempt the widest surface there is.
+    const full = read('llms-full.txt');
+    expect(full, 'llms-full.txt absent from the build').toBeTruthy();
+    // ⚠ EXCISE BY PAGE BLOCK, NOT BY VERBATIM MATCH. The first draft removed the changelog by
+    // splitting the corpus on the twin's exact text — and failed, because the corpus does not embed
+    // the twin byte-for-byte (it re-wraps and re-heads each page). A `split()` that silently matches
+    // nothing removes nothing and reads exactly like a successful exclusion. The corpus delimits
+    // pages with `---` and a `# Title`, so the block is identified structurally.
+    const blocks = full!.split(/\n---\n/);
+    expect(blocks.length, 'the corpus did not split into page blocks — the delimiter changed, and an '
+      + 'unsplit corpus would be swept as one undifferentiated blob').toBeGreaterThanOrEqual(50);
+    const changelogBlocks = blocks.filter((b) => /^\s*#\s+Changelog\s*$/m.test(b));
+    expect(changelogBlocks.length, 'no `# Changelog` block found in the corpus — the exclusion targets '
+      + 'nothing, so it is not an exclusion').toBe(1);
+    const fullMinusChangelog = blocks.filter((b) => !/^\s*#\s+Changelog\s*$/m.test(b)).join('\n---\n');
+    const corpusHits = fullMinusChangelog.match(CLAIM);
+    if (corpusHits) offenders.push(`llms-full.txt (outside the changelog): ${corpusHits.length} hit(s)`);
+
+    // Every twin except the changelog's own.
+    const twins: string[] = [];
+    (function walk(dir: string) {
+      for (const e of readdirSync(dir, { withFileTypes: true })) {
+        const fp = join(dir, e.name);
+        if (e.isDirectory()) walk(fp);
+        else if (e.name.endsWith('.md')) twins.push(fp);
+      }
+    })(dist);
+    expect(twins.length, 'no .md twins found — the walk collapsed and reports a clean corpus it never read')
+      .toBeGreaterThanOrEqual(100);
+    for (const t of twins) {
+      if (t.endsWith(`${sep}changelog.md`)) continue;
+      if (readFileSync(t, 'utf8').match(CLAIM)) offenders.push(`twin ${t.slice(dist.length + 1)}`);
+    }
+
+    expect(offenders,
+      `${offenders.length} machine surface(s) still assert the network RUNS ON the protocol. The noun `
+      + 'is permitted prose (src/data/canonical.ts:14-17); the present-tense verb is not, while the '
+      + 'counsel embargo stands. Rephrase to what is verifiable — the vaults and their declared '
+      + 'relationships — rather than deleting the counts.').toEqual([]);
+
+    // ⛩ GAP-1's remedy (GR-1's convention-13 pass): AC-2's P2-3 half — the vendored `.adna`
+    // marketplace promise — is discharged as a REGISTER ROW WITH A NAMED DESTINATION, not as prose.
+    // Convention 13 found that half was tested by NOTHING: a memo is not an emitter, so V2's sweep
+    // could pass with it unwritten. P4.3's F-v precedent: a deferral recorded only in narrative is a
+    // deferral with no gate. Asserted here rather than in a new instrument — zero new checkers.
+    const registerPath = join(process.cwd(), '..', 'how', 'campaigns', 'campaign_haussmann',
+      'missions', 'mission_haussmann_p4_4_ci_hardening.md');
+    expect(existsSync(registerPath), 'the debt register is not where this gate expects it').toBe(true);
+    const register = readFileSync(registerPath, 'utf8');
+    expect(register, 'row F-w (the vendored marketplace promise, GR-1 AC-2 / P2-3) is missing from the '
+      + 'debt register. It cannot be fixed on the site — the file is byte-vendored and the page '
+      + 'publishes its hash — so it must carry a named destination, or it is a finding with no gate.')
+      .toMatch(/\|\s*\*\*F-w\*\*\s*\|/);
+    expect(register.slice(register.indexOf('| **F-w**'), register.indexOf('| **F-w**') + 2000),
+      'row F-w carries no named destination').toMatch(/skill_template_release/);
+
+    // COVERAGE FLOOR on the exclusion itself. If this goes to zero the predicate has drifted and
+    // every clean result above is meaningless — the gate would be reporting silence, not absence.
+    expect((changelogBlocks[0].match(CLAIM) ?? []).length,
+      'the changelog no longer quotes the retired claim. Either the entry was removed (it is the '
+      + 'record of the P1.1 purge and should not be) or this predicate has drifted and the sweep '
+      + 'above is vacuous.').toBeGreaterThanOrEqual(1);
+  });
 });
 
 test.describe('G18 — twin FIDELITY: the twin says what the page says', () => {

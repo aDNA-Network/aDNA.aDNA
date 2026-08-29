@@ -70,17 +70,67 @@ test.describe('gate-36 zero-install tour provenance', () => {
     expect(out).toContain('OK');
   });
 
-  test('the pinned commit resolves to a commit in the standard checkout', () => {
-    test.skip(!existsSync(TEMPLATE_ROOT), 'standard checkout absent (CI)');
-    expect(manifest.source_sha_full, 'manifest carries no pin').toBeTruthy();
-    // The install_truth `fd32fc7` class: a recorded sha that no longer names an object. A page
-    // that prints an unresolvable commit above the bytes it describes is asserting something
-    // nobody — including us — can verify.
-    const type = execFileSync('git', ['cat-file', '-t', manifest.source_sha_full], {
+  /**
+   * ⛩ HAUSSMANN GR-1 O4 / AC-4 · V4 — THE PIN MUST BE PUBLISHABLE, AND THIS TEST MUST RUN IN CI.
+   *
+   * ⭐⭐ WHAT THIS REPLACES, AND WHY IT COULD ONLY EVER PASS. The prior assertion resolved the pin
+   * with `git cat-file -t` inside `TEMPLATE_ROOT` — **the same local checkout the pin was read from
+   * by `build_tour_files.mjs`** — and `test.skip`ped itself whenever that checkout was absent, i.e.
+   * **it never ran in CI at all**. A value copied out of a repository always resolves back in that
+   * repository, so the test was a tautology wearing an assertion's clothes, and P1-3 shipped behind
+   * it: the manifest paired a SHA from the local clone of the ARCHIVED `adna-legacy` with the URL of
+   * `aDNA-Network/aDNA`, and all five published links 404'd.
+   *
+   * That is campaign convention 18 exactly — *state the surface an instrument runs against, and
+   * whether it is the surface the claim is about.* The claim is about a PUBLIC repository; the
+   * instrument read a private working copy. Its own comment even named the defect class it was
+   * guarding ("a recorded sha that no longer names an object") while being unable to see it.
+   *
+   * ⭐ THE FIX IS TO ASSERT A PROPERTY THAT NEEDS NEITHER THE CHECKOUT NOR THE NETWORK, so it runs
+   * everywhere and cannot be skipped: the published pin must be an immutable RELEASE REF, and no
+   * local-only identifier may appear in any URL the page prints. A build-time network fetch was
+   * considered and rejected — it would make CI depend on GitHub's availability, and conventions
+   * 15/16/17 rule against authoring a fragile standing instrument. Public resolvability and
+   * byte-identity AT THE PIN were instead MEASURED ONCE, at O4, and recorded on AC-4's face with
+   * their supersession condition.
+   */
+  test('the published pin is a release ref, not a local-only identifier', () => {
+    // No `test.skip` — this runs in CI, which is half the point.
+    expect(manifest.source_ref, 'manifest carries no source_ref').toBeTruthy();
+    expect(manifest.source_ref, `source_ref ${manifest.source_ref} is not an immutable release tag`)
+      .toMatch(/^v\d+\.\d+$/);
+
+    // The local sync commit is fine to RECORD and must never be PUBLISHED. Its presence in a URL
+    // is the entire defect: it exists in no remote, so every link built from it 404s.
+    const urls = [`${manifest.source_repo}/tree/${manifest.source_ref}/.adna`,
+                  ...manifest.files.map((f: { blob_url: string }) => f.blob_url)];
+    expect(urls.length, 'no provenance URLs in the manifest — a collapsed read reports a clean result')
+      .toBeGreaterThanOrEqual(5);
+
+    const bad = urls.filter((u) => /\/(?:blob|tree)\/[0-9a-f]{7,40}\//.test(u));
+    expect(bad,
+      `${bad.length} provenance URL(s) are built from a raw commit SHA rather than the release ref. `
+      + 'The SHA available at build time comes from the LOCAL `.adna` checkout, whose origin is the '
+      + 'archived `adna-legacy` and which is ahead of even that — so such a URL resolves nowhere '
+      + 'public and 404s at the exact moment a reader accepts the page\'s invitation to verify.')
+      .toEqual([]);
+
+    if (manifest.local_sync_sha) {
+      const leaked = urls.filter((u) => u.includes(manifest.local_sync_sha));
+      expect(leaked, 'the local sync SHA is published in a URL — it exists in no remote').toEqual([]);
+    }
+  });
+
+  test('the recorded local sync commit still resolves in the standard checkout', () => {
+    // This one legitimately needs the checkout — it is a claim ABOUT the checkout, and it is
+    // labelled as such rather than standing in for the public claim above.
+    test.skip(!existsSync(TEMPLATE_ROOT), 'standard checkout absent (CI) — a claim about the local tree only');
+    expect(manifest.local_sync_sha, 'manifest records no local sync commit').toBeTruthy();
+    const type = execFileSync('git', ['cat-file', '-t', manifest.local_sync_sha], {
       cwd: TEMPLATE_ROOT,
       encoding: 'utf8',
     }).trim();
-    expect(type, `pin ${manifest.source_sha} does not resolve to a commit`).toBe('commit');
+    expect(type, `local sync ${manifest.local_sync_sha} does not resolve to a commit`).toBe('commit');
   });
 
   test('every vendored file is sourced from inside the standard tree', () => {
