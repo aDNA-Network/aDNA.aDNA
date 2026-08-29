@@ -1067,6 +1067,52 @@ untouched and still blocked on actors outside the session.
 > coverage, the Gate-1 order's last lane) or **P4.4b B3**. ⛔ B2b stays HELD on ⊳ D-E; P5.1 stays
 > with the humans.
 
+> ⛩⛩ **2026-08-29 — THE DEPLOY GO WAS TAKEN AND IT IS LIVE. GR-1 + P4.4b B1/B2a serve at
+> `adna.network`, `tree=d5ff043`, and the probe reads 26 PASS / 0 FAIL.**
+> Record: [[probe_postdeploy_green]] beside [[probe_predeploy_red]]. No override flags — the
+> alias-ancestry guard passed on its own terms (`live 51af717 is an ancestor of HEAD d5ff043`).
+>
+> ⚠ **TWO CARRIED FACTS WERE WRONG AT SESSION OPEN AND BOTH WERE DERIVED, NOT TRUSTED.** The record
+> said *unpushed 39* and *next = push GO then deploy GO*. Derived: unpushed was **2**, and the push
+> GO **was already spent** — `f2d7324` was on `origin/main` (checked with `git ls-remote`, i.e. at
+> the remote, not at a tracking ref that can be stale by exactly this much). ⇒ the gate in front of
+> the operator was **one act, not two**. *This is the third consecutive session in which a
+> carried count was wrong and the derived one was right; "derive, never trust" keeps earning itself.*
+>
+> ⭐⭐ **THE PUSH-BEFORE-DEPLOY RULE HAS A MECHANISM, AND WE FOUND IT BY READING FOR ONE.** The two
+> unpushed commits were **records only** — zero shipped-surface bytes — so "push first" looked purely
+> procedural, and the tempting move was to deploy and push after. `inject_build_stamp.mjs:83` stamps
+> `git rev-parse HEAD` and **nothing in the chain checks that HEAD is public.** Deploying at an
+> unpushed `d5ff043` would have published `/.well-known/adna-build.json` naming a commit **no
+> stranger could resolve** — **P1-3's exact defect class, reintroduced by the act of shipping P1-3's
+> fix**, and it would have left the next deploy's ancestry guard resolvable only from this checkout
+> (F-s's shape). ⇒ **A convention whose mechanism you cannot state is a convention you will
+> eventually skip on a day it looks like ceremony.** Verified at the object, not inferred:
+> `git branch -r --contains <stamped sha>` → `origin/main`.
+>
+> ⭐ **Convention 18 did the deciding on whether CI's red blocks.** CI was red on `gate-33-freshness`
+> and the question is not "is the suite green" but **which surface the instrument ran against**.
+> `deploy_adna.sh:157` builds locally; `:237` ships `--prebuilt`; **CI's artifact never reaches
+> production**, and the gate's own claim — *dates are real on shipped pages* — is green on the
+> surface that ships. The red is a statement about **CI's checkout**. Scoped out, deliberately and
+> with the reason written down, rather than waved past.
+>
+> ⚠ **`F-x` added — the gate-33 CI defect, and it is TWO debts, not one.** (a) The cause: unknown.
+> (b) **The error message names a remedy already applied** (`gates.yml:51` is `fetch-depth: 0`), so
+> the gate converts a symptom into a confident wrong diagnosis — the campaign's own class, in its own
+> CI. ⭐ A lead, filed **as a hypothesis and explicitly not as a diagnosis**: the CI log shows
+> `actions/checkout` writing `safe.directory` under a **temporarily overridden HOME** which it then
+> restores, and `contentSource.ts:37` computes `isShallow` as `git(...) !== 'false'` — so **a git
+> that fails for any reason at all is indistinguishable from a shallow clone**, which is precisely
+> what lets the message be wrong. That conflation is fixable regardless of the cause. ⛔ Operator
+> scoped this OUT of the deploy sitting: it gets its own, and a fix authored on an unverified cause
+> is the thing the last session warned against. Register **22 total · 15 struck · 7 live**.
+>
+> ⏭ **NEXT: Lane D** (story coverage, the Gate-1 order's last lane) or **P4.4b B3**; `F-x`'s own
+> sitting is now competing with both. ⛔ Still held: **B2b** on ⊳ D-E (Vitruvius scope-B reply is
+> *staged*, not delivered) · the **Hopper reply** (separate ⛩) · **P5.1** with the humans. ⚠ B1's
+> vitals emitter is live but **zero-network** — owed: ⛩ Speed Insights enable → transport → first p75.
+
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is
 signed and O0 + O1 are built.)* Convention 13's pass ran **COMPLETE at 30/30
