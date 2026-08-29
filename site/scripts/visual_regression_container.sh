@@ -76,7 +76,27 @@ exec docker run --rm "${TTY_FLAGS[@]}" \
     set -e
     git config --global --add safe.directory /work
     # npm ci, not npm install: the lockfile is the point of a reproducible baseline.
-    [ -x node_modules/.bin/astro ] || npm ci --no-audit --no-fund
+    #
+    # ⛩ HAUSSMANN GR-1 (2026-08-28) — THE GUARD WAS NARROWER THAN ITS CONCLUSION, AND IT BROKE.
+    # It used to read \`[ -x node_modules/.bin/astro ] || npm ci\`. That tests for ONE BINARY and
+    # concludes THE DEPENDENCIES ARE INSTALLED — so once this named volume held astro, \`npm ci\`
+    # never ran again and any dependency added afterwards was silently absent. Measured live: the
+    # volume was populated at P4.4b B0 (\`1816993\`); \`web-vitals\` landed at B1 (\`9c8d79b\`); the
+    # container build then died with \`Rollup failed to resolve import \"web-vitals\"\` — a real
+    # failure that looks exactly like a code error and is not one.
+    #
+    # ⚠ IT IS A STALENESS GUARD THAT CANNOT DETECT STALENESS — the campaign's own
+    # instrument-narrower-than-its-conclusion class, in the harness. CI never hit it because
+    # \`gates.yml\` runs \`npm ci\` unconditionally on a fresh runner; only the LOCAL lane rots, which
+    # is worse, because the local lane is the one that is supposed to catch things before CI does.
+    #
+    # Now keyed to the lockfile itself: the thing whose change is what makes an install stale.
+    LOCK_HASH=\"\$(sha256sum package-lock.json | cut -c1-16)\"
+    if [ ! -f node_modules/.adna_lock_hash ] || [ \"\$(cat node_modules/.adna_lock_hash)\" != \"\$LOCK_HASH\" ]; then
+      echo \"→ lockfile changed (or first run) — npm ci\"
+      npm ci --no-audit --no-fund
+      echo \"\$LOCK_HASH\" > node_modules/.adna_lock_hash
+    fi
     # \`npx astro build\`, NEVER \`npm run build\` — the prebuild regenerates committed vault data
     # from sibling vaults that are not in this mount (campaign convention 6, and gates.yml's own note).
     npx astro build
