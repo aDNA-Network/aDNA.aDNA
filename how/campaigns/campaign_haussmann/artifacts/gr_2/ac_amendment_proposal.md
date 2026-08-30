@@ -7,7 +7,9 @@ mission: mission_haussmann_gr_2_ci_freshness
 title: "GR-2 — convention-13 pre-build pass: the acceptance criteria read against each other"
 created: 2026-08-29
 updated: 2026-08-29
-status: proposed          # ⛩ NOT SIGNED. No build until this carries a 4-field ratification block.
+status: accepted          # ⛩ SIGNED 2026-08-29 — see the ratification block at the foot.
+                          # Signed WITH three amendments to this document itself (§6), two of which
+                          # are corrections to findings it had already made.
 last_edited_by: agent_rosetta
 session: session_stanley_20260829_143321_haussmann_gr_2_ci_freshness
 tags: [artifact, gr_2, convention_13, ac_amendment, f_x]
@@ -93,9 +95,19 @@ can never go green.**
 that, convention 17's own case: a site-wide grep for a struck sentence returned hits *from the
 changelog entry that retired it*.
 
-**Amendment.** The assertion is constructed so it cannot match its own literal — the forbidden string
-is assembled at runtime rather than written as a source literal, **and the test states in a comment
-why it is written that awkwardly**, so a later tidy-up does not helpfully re-introduce the bug.
+~~**Amendment.** The assertion is constructed so it cannot match its own literal — the forbidden
+string is assembled at runtime rather than written as a source literal, **and the test states in a
+comment why it is written that awkwardly**, so a later tidy-up does not helpfully re-introduce the
+bug.~~
+
+⛩ **AMENDMENT REPLACED AT SIGNATURE (see §6, Change 1) — THE REMEDY ABOVE WAS THE WRONG LESSON.**
+It proposed **engineering around** the hazard. The hazard is a reason **not to build the test**: a
+grep-your-own-source assertion is low value (the message change is a one-time edit), the real
+protection is V3's *runtime* half, and conventions 15/16 govern — *the habit costs a sentence and
+cannot itself be wrong; the checker costs a sitting and can*. ⇒ **V3 keeps its runtime half and drops
+the static half entirely.** ⭐ The pass was one signature away from authoring **the fourth instrument
+in three weeks to ship wrong on its first run**, inside the mission convened to stop an instrument
+being wrong.
 
 ### ⭐ F4 — AC-5 × V5: byte-identity has no control, and its failure mode is a wrong diagnosis
 
@@ -123,8 +135,20 @@ because *"the carried count has been wrong three sessions running."* The pass tr
   appear in both), and further IDs exist only in prose.
 - Distinct IDs anywhere in the campaign directory: **24**, contiguous `F-a`…`F-x`.
 - `F-t` is **withdrawn** (it was `F-l` re-registered under a new letter) ⇒ **23**.
-- The carried tally says **22**. The 08-24 re-read's own baseline of *"nineteen register rows"* does
-  not reconcile with a letter count either (`F-a`…`F-u` minus `F-t` = 20).
+- The carried tally says **22**. ~~The 08-24 re-read's own baseline of *"nineteen register rows"*
+  does not reconcile with a letter count either (`F-a`…`F-u` minus `F-t` = 20).~~
+
+⛩ **SHARPENED AT SIGNATURE (§6, Change 2) — THE GAP HAS A NAME, AND FINDING IT CORRECTED THIS
+DOCUMENT'S OWN ARITHMETIC.** The struck sentence said the 08-24 baseline "does not reconcile". It
+reconciles **exactly**, and the reconciliation is what exposes the missing row:
+
+> *nineteen* = **16 tabled live + 3 found dead** (`F-b`, `F-q`, `F-h`) — and those nineteen are
+> precisely `F-a`…`F-u` **minus `F-s` and `F-t`**.
+
+`F-t` is withdrawn. But **`F-s` is a real row** — `CLAUDE.md:395` calls it *discharged* — and it
+appears in **no tabled surface and in neither baseline**. ⇒ the claim tightens from *"the numbers
+disagree"* to **"`F-s` is a real register row that no tally counts, and no surface exists that would
+have caught it."** Same conclusion; one named instance; much harder to wave past. `[D] 2026-08-29`
 
 ⇒ **Every tally in this campaign is running arithmetic carried forward from a prose sentence, and
 there is no surface against which to check it.** That is not a bookkeeping annoyance; it is *why*
@@ -190,12 +214,74 @@ than being absorbed.
 
 ---
 
+---
+
+## 6. Amendments taken AT the signature — the pass reviewed against itself
+
+⭐⭐ The operator asked for **advice on this proposal** before signing it. That review found **three
+changes, two of them corrections to findings this document had already made.** Recorded here rather
+than silently folded, because *a pass that cannot be wrong about itself is convention 13 exempting
+the one document nobody re-reads.*
+
+### Change 1 — F3's remedy was the wrong lesson (replaces it; see F3 above)
+
+Delete the static self-grep rather than engineer around it. V3 keeps its runtime half only.
+
+### Change 2 — F5's arithmetic was wrong, and fixing it sharpened the finding (folded into F5 above)
+
+This document claimed the 08-24 baseline "does not reconcile". It reconciles exactly, and the
+reconciliation names the missing row: **`F-s`**.
+
+### ⭐⭐ Change 3 — a DISCRIMINATING fact, found after the pass was written
+
+`unlighthouse-sweep.yml` runs **the same `npx astro build`, with the same `fetch-depth: 0`, over the
+same freshness layer** — its line 51 comment says so in those words — and it has **no `container:`
+block**. `gates.yml` has one. On a bare runner, checkout and build run as the same user, so no
+ownership mismatch arises.
+
+⇒ **The container is the only differentiating variable between the two CI builds.** `[D] 2026-08-29`
+
+This is the strongest corroboration of the mechanism yet, and it is *structural* — it does not depend
+on reading a log. It is added to the mission's evidence table.
+
+⚠ **Latent-risk note, filed with it**: the sweep has **never run on GitHub even once** (its first run
+is owed on a push GO). If it is ever moved into a container, it inherits this defect **silently** —
+a Lighthouse sweep does not fail on missing dates, it just measures a slightly different artifact
+than production. Convention 18, waiting to happen.
+
+### Two forks called at the signature, not escalated
+
+- **O3's vehicle**: push the diagnostic to `main`, **not** a PR. `gates.yml` triggers on
+  `pull_request` too, so a PR would give identical evidence — but `main` is already red, so the extra
+  red run costs nothing, and PR flow is new process at a review's tail for no evidentiary gain.
+- **AC-2's shape**: **warn, do not throw.** Failing the build when CI's git cannot answer would
+  surface the reason at the step that caused it rather than three minutes later at a gate — and it
+  would add a hard failure mode to a lane that **has never run on GitHub even once** (Change 3).
+  Adding a new way for an untested workflow to break, inside the sitting convened to fix CI, is the
+  wrong trade. The diagnostic yields the same information without the blast radius.
+
+### Named at the signature so it is not discovered later
+
+**~165–270 kT for a diagnosis plus a roughly one-line CI fix is heavy**, and nearly all of it is
+discipline — red-proofs, two operator gates, records — not code. That is this campaign's chosen
+operating cost. It is stated rather than absorbed.
+
+---
+
 ## ⛩ Ratification
 
-> **decision**: *(pending)*
-> **ratified-by**: *(pending)*
-> **date**: *(pending)*
-> **status**: `proposed`
+> **decision**: **SIGNED WITH AMENDMENTS.** §2's six findings adopted, **as amended by §6** —
+> F3's remedy replaced (delete the static self-grep, do not engineer around it), F5's arithmetic
+> corrected and its claim sharpened to the named `F-s` gap, and §6 Change 3's discriminating fact
+> (`unlighthouse-sweep.yml` has no container) folded into the mission's evidence. §3's routing
+> adopted; §4's band **~165–270 kT / 2 sessions** ratified. Both forks called as recorded:
+> O3 pushes to `main`, and AC-2 **warns rather than throws**. `mission_count: 28 → 29`;
+> `phase_count` HOLDS at 6. F5's new register row is lettered **`F-y`**.
+> **ratified-by**: operator (⛩, in-session 2026-08-29, on an advice-then-go request — the advice
+> is §6 and the changes were taken before the signature, not after)
+> **date**: 2026-08-29
+> **status**: `accepted`
 >
-> Signing adopts §2's six amendments wholesale, §3's routing, and §4's band. It also settles the
-> lettering of F5's new register row and `mission_count: 28 → 29`.
+> ⛔ Unchanged by this signature: **no deploy** is sought or owed at any objective (AC-5 is why);
+> **O3 and O4 each carry their own ⛩ push GO** and neither is granted here; B2b, the Hopper reply,
+> P5.1 and Lane D all stay exactly where they were.

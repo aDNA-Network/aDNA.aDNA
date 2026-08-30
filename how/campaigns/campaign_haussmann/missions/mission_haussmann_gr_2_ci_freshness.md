@@ -9,15 +9,20 @@ phase: GR                  # Grande Revue lane, no phase number — GR-1's prece
                            # NOT edited here. `phase_count` HOLDS at 6.
 decade: 2
 owner: stanley
-status: in_progress        # ⛩ AT ITS PRE-BUILD GATE 2026-08-29 — nothing built, budget NOT ratified.
-                           # The convention-13 pass is at artifacts/gr_2/ac_amendment_proposal.md,
-                           # `proposed`. NO BUILD UNTIL SIGNED.
+status: in_progress        # ⛩⛩ PRE-BUILD GATE PASSED 2026-08-29 — SIGNED WITH AMENDMENTS.
+                           # artifacts/gr_2/ac_amendment_proposal.md is `accepted`; its §6 records
+                           # three changes taken AT the signature, two of them corrections to the
+                           # pass's own findings (F3's remedy replaced — delete the self-grep rather
+                           # than outsmart it; F5's arithmetic corrected and sharpened to the named
+                           # `F-s` gap). Budget ratified ~165–270 kT / 2 sessions.
+                           # ~~⛩ AT ITS PRE-BUILD GATE — nothing built, budget NOT ratified.~~ (SO-6)
+                           # ⛔ O3 and O4 each still carry their OWN ⛩ push GO. No deploy at any point.
 mission_class: build
 executor_tier: opus        # judgment-heavy: a diagnosis held open against a strong hypothesis, an
                            # instrument-semantics change on shipped code, and a CI fix that must not
                            # be authored before its cause is named. Declared at the OPEN (P4.1's
                            # lesson), not discovered at the AAR.
-token_budget_estimated: "PROPOSED, NOT RATIFIED — ~130–215 kT / 1–2 sessions (Stage 0 ~25–40 · Stage 1 ~25–40 · Stage 2 ~40–70 · Stage 3 ~20–35 · Stage 4 ~20–30). ⚠ The convention-13 pass raises this: see the amendment proposal §4. Costed against conditions verified 2026-08-29, not carried."
+token_budget_estimated: "⛩ RATIFIED 2026-08-29 — ~165–270 kT / 2 sessions (O0 ~30–45 · O1 ~25–40 · O2 ~45–75 · O3 ~25–40 · O4 ~20–35 · O5 ~20–35). Supersedes the plan's ~130–215 kT / 1–2. The ≈1.25× is F1's: O3 adds a full CI round-trip and a second operator gate between diagnosis and fix; F2 adds a small extraction. NOTHING HERE ADDS A FEATURE. ⚠ Named at the signature so it is not discovered as an overrun: ~165–270 kT for a diagnosis plus a roughly one-line CI fix is HEAVY, and nearly all of it is discipline — red-proofs, two gates, records — not code. ⛔ If O3's reason is NOT the ownership mechanism, the fix is unwritten scope this band does not cover, and that branch reopens at its own ⛩ gate rather than being absorbed. Costed against conditions verified 2026-08-29, not carried."
 token_budget_actual:
 created: 2026-08-29
 last_edited_by: agent_rosetta
@@ -40,7 +45,7 @@ acceptance_criteria:
   - "AC-4 — CI IS GREEN ON main, READ AT THE RUN. The gates.yml fix is authored ONLY on AC-1's captured reason. ⚠ A green local suite does NOT satisfy this criterion; the local-vs-CI conflation is this mission's subject and cannot also be its evidence."
   - "AC-5 — SHIPPED BYTES ARE UNCHANGED ON A HEALTHY BUILD. Production builds locally and is healthy, so no deploy is owed. Asserted by comparison, not by reasoning."
   - "AC-6 — THE SURFACING GAP IS CLOSED BY A HABIT, NOT AN INSTRUMENT (conventions 15/16). Campaign convention 19: derive main's CI status at session open. F-x struck with BOTH halves discharged."
-verification_method: "⛩ PROPOSED — each limb labelled [asserts AC-n] per P4.4b's finding 7 (an unlabelled limb is how a partial pass reads as complete). V1 [asserts AC-1] — in CI's own image (mcr.microsoft.com/playwright:v1.59.1-noble, the pin gates.yml uses), a mutation removing visual_regression_container.sh:74's safe.directory line reproduces the failure (no dates, gate-33 red on the same assertion) and a control restoring it produces dates; git's stderr captured verbatim. V1b [asserts AC-1] — the SAME reason is read from a real CI run, because V1 proves sufficiency of a mechanism and not the identity of CI's cause. V2 [asserts AC-2] — three-state discrimination red-proven per state: git-unavailable at integration level via V1's mutation; shallow at unit level against a stubbed probe (⚠ convention 18: THE SURFACE IS A STUB, NOT A REAL SHALLOW CLONE, and the mission says so rather than letting the limb read wider than it is); healthy as control at both levels. V3 [asserts AC-3] — in the induced git-unavailable run the diagnostic names the state AND the captured reason, and the gate's failure text prescribes no remedy; plus a static assertion that the spec carries no fetch-depth prescription, written so it cannot match its own literal (P1-6's self-matching-glob class). V4 [asserts AC-4] — a real run on main reads green at `gh run view`; any non-gate-33 failure is reported as a new finding, never absorbed. V5 [asserts AC-5] — dist/ hash-compared pre/post on a healthy local build, WITH A NO-CHANGE CONTROL FIRST (two builds of unchanged source must agree before the pre/post comparison means anything; if they do not, the volatile paths are named and excluded explicitly). V6 [asserts AC-6] — convention 19 present in the numbered list; F-x struck; the register tally handled per the amendment's §3 finding."
+verification_method: "⛩ PROPOSED — each limb labelled [asserts AC-n] per P4.4b's finding 7 (an unlabelled limb is how a partial pass reads as complete). V1 [asserts AC-1] — in CI's own image (mcr.microsoft.com/playwright:v1.59.1-noble, the pin gates.yml uses), a mutation removing visual_regression_container.sh:74's safe.directory line reproduces the failure (no dates, gate-33 red on the same assertion) and a control restoring it produces dates; git's stderr captured verbatim. V1b [asserts AC-1] — the SAME reason is read from a real CI run, because V1 proves sufficiency of a mechanism and not the identity of CI's cause. V2 [asserts AC-2] — three-state discrimination red-proven per state: git-unavailable at integration level via V1's mutation; shallow at unit level against a stubbed probe (⚠ convention 18: THE SURFACE IS A STUB, NOT A REAL SHALLOW CLONE, and the mission says so rather than letting the limb read wider than it is); healthy as control at both levels. V3 [asserts AC-3] — ⛩ AMENDED AT THE SIGNATURE (§6 Change 1): in the induced git-unavailable run the diagnostic names the state AND the captured reason, and the gate's failure text prescribes no remedy. ~~plus a static assertion that the spec carries no fetch-depth prescription, written so it cannot match its own literal (P1-6's self-matching-glob class)~~ — THE STATIC HALF IS DELETED, NOT MADE CLEVER. A grep-your-own-source assertion is low value and the self-matching hazard is a reason not to build it; conventions 15/16 govern. ⭐ The pass was one signature away from authoring the FOURTH instrument in three weeks to ship wrong on its first run, inside the mission convened to stop an instrument being wrong. V4 [asserts AC-4] — a real run on main reads green at `gh run view`; any non-gate-33 failure is reported as a new finding, never absorbed. V5 [asserts AC-5] — dist/ hash-compared pre/post on a healthy local build, WITH A NO-CHANGE CONTROL FIRST (two builds of unchanged source must agree before the pre/post comparison means anything; if they do not, the volatile paths are named and excluded explicitly). V6 [asserts AC-6] — convention 19 present in the numbered list; F-x struck; the register tally handled per the amendment's §3 finding."
 human_gate: true
 tags: [plan, haussmann, gr_2, f_x, ci, gate_33]
 ---
@@ -91,12 +96,27 @@ is six. The commit that *announced* the CI-red finding was itself followed by a 
    path to an empty date map is **git throwing**, which `git()` catches and returns `null`. `[I]`
 4. `git()` runs `stdio: ['ignore', 'pipe', 'ignore']` — **stderr is discarded.** ⭐ *The line that
    makes the cause unknowable is the same line that has to change to make it knowable.* `[D]`
-5. **Corroboration, and it is ours:** `visual_regression_container.sh:74` runs
+5. ~~**Corroboration, and it is ours:** `visual_regression_container.sh:74` runs
    `git config --global --add safe.directory /work` before `npx astro build`. We wrote that at
-   P4.4b B0 **because git fails in this exact image.** CI's `actions/checkout` writes the same
+   P4.4b B0 **because git fails in this exact image.**~~ ⛔ **STRUCK AT O1 — THIS WAS AN `[I]`
+   DRESSED AS A `[D]`, AND IT IS FALSE ON THIS HOST.** Measured 2026-08-29: git works fine in that
+   image here **without** the line, because Docker Desktop remaps bind-mount ownership to the
+   running user. The line is defensive and worth keeping (a Linux host or a non-remapping driver
+   would need it), but **it never demonstrated what I said it demonstrated.** The reasoning that
+   remains — and it is untouched — is that CI's `actions/checkout` writes the same
    config into a **temporary** global config it then discards — its own log says so in those words:
    *"Adding repository directory to the temporary git global config as a safe directory."*
    ⇒ local container build → dates; CI build → no dates. Exactly the observed split. `[D]`
+6. ⭐⭐ **THE DISCRIMINATING FACT, and it is structural rather than log-read** (added at the ⛩
+   signature, amendment §6 Change 3). `unlighthouse-sweep.yml` runs **the same `npx astro build`,
+   with the same `fetch-depth: 0`, over the same freshness layer** — its line 51 comment says so in
+   those words — and it has **no `container:` block**. `gates.yml` has one. On a bare runner,
+   checkout and build run as the same user, so no ownership mismatch can arise. ⇒ **the container is
+   the only differentiating variable between the two CI builds.** `[D] 2026-08-29`
+   - ⚠ **Latent risk, filed with it**: the sweep has **never run on GitHub even once** (first run
+     owed on a push GO). Moved into a container, it inherits this defect **silently** — a Lighthouse
+     sweep does not fail on missing dates, it just measures a different artifact than production.
+     **Convention 18, waiting to happen.**
 
 ⛔ **This is a hypothesis with a named mechanism, not a diagnosis**, and AC-1 is written so that a
 local reproduction cannot close it alone. *A mechanism sufficient to produce a failure is not
@@ -152,7 +172,27 @@ both halves discharged. Every limb red-proven first, with its surface named. AAR
 
 ## Progress (2026-08-29)
 
-- **O0 in progress** — mission authored; convention-13 pass running.
+- ✅ **O0 CLOSED** — conv-13 pass ran **42/42 pairs with coverage recorded**: 6 defective · 8 clean ·
+  28 correctly unrelated. ⛩ **SIGNED WITH AMENDMENTS** — `artifacts/gr_2/ac_amendment_proposal.md`
+  is `accepted`; §6 records three changes taken **at** the signature, two of them corrections to the
+  pass's own findings. Budget ratified **~165–270 kT / 2 sessions**.
+- ✅ **O1 CLOSED `[V1]`** — `artifacts/gr_2/o1_redproof_record.md`. ⭐⭐ **The planned mutation failed
+  to mutate, and that vindicated F1 empirically**: Docker Desktop remaps bind-mount ownership to the
+  running user, so the local container **cannot** produce a uid mismatch at any uid — measured at 0
+  and 1001. Not "does not"; **cannot**. The ownership mechanism was then proven on a real filesystem
+  with a control (`fatal: detected dubious ownership`, exit 128, **empty stdout** ⇒ `'' !== 'false'`
+  ⇒ `isShallow` true), and the **code path was red-proven at the gate itself in CI's image**: a
+  cause-agnostic failing-git stub reproduces **CI's exact signature** — 3 passed · 1 failed at `:78`,
+  `Received: 0`, same message — while inducing a cause that is **provably not shallowness**. ⇒
+  **`F-x`(b) is demonstrated, not argued.** ⭐ `build exit=0` in the mutation: the build shipped 121
+  dateless provenance footers **silently**, which is AC-2's subject.
+  - ⚠ Two of my own claims fell: evidence point 5 above (struck), and a near-filed finding that was
+    **in my grep, not in the subject** (146→25 by my instrument vs 146→**0** by the gate's).
+  - ⚠ A `set -e` in my first probe **exited the script at the very failure it was measuring** —
+    sixth instrument-defect-before-subject this campaign.
+- ⛔ **AC-1 STAYS OPEN.** Everything so far shows a mechanism *sufficient* to produce CI's exact
+  signature. Nothing yet shows it is CI's. **O3 only.**
+- ⏭ **NEXT = O2** (three-state + diagnostic + message), then ⛩ **O3's push GO**.
 
 ## AAR (SO#5)
 
