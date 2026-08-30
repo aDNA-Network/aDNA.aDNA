@@ -42,7 +42,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference    = 'SilentlyContinue'   # Invoke-WebRequest is ~10x slower with the bar
-$VERSION = '0.4.19'
+$VERSION = '0.4.20'
 
 # PowerShell 5.1 can still default to TLS 1.0, which GitHub refuses outright.
 try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 }
@@ -135,7 +135,7 @@ try {
     # for Windows users is the release artifacts + winget (Phase D), where the signature is
     # checked at package-build time. Recorded in security_design_notes.md -- a gap named is
     # not a gap hidden.
-    $PAYLOAD_SHA256 = '74350e04520da687fac983454918a9a3ed1caa3f7cf8f790f425d36fd9c02b03'
+    $PAYLOAD_SHA256 = '2e287e2cb53492c5cb0f982c2e468310f79497d342b70f9e005d32d7bad144ab'
     if ($PAYLOAD_SHA256 -eq 'PAYLOAD_SHA256_UNSET') {
         Die 'REL-01' "this install.ps1 has no payload hash pinned -- it was published unreleased. Refusing to run unverified code."
     }
@@ -221,7 +221,17 @@ try {
     # Wintun is the virtual adapter driver. Staged next to nebula.exe now; ACTUALLY installing
     # the adapter happens at service-install time and is the step that needs Administrator.
     $wintun = Join-Path $tmp "nb\dist\windows\wintun\bin\$arch\wintun.dll"
-    if (Test-Path $wintun) { Copy-Item $wintun $binDir -Force; Good "wintun.dll staged (adapter install needs admin, later)" }
+    if (Test-Path $wintun) {
+        Copy-Item $wintun $binDir -Force
+        # nebula 1.11.0 does NOT load wintun.dll from beside the exe -- it resolves the
+        # dev-tree path dist\windows\wintun\bin\<arch>\ relative to the exe (found live S354:
+        # "can not load the wintun driver" with the dll sitting right next to nebula.exe).
+        # Stage BOTH so either loader behavior finds it.
+        $wtDst = Join-Path $binDir "dist\windows\wintun\bin\$arch"
+        New-Item -ItemType Directory -Force -Path $wtDst | Out-Null
+        Copy-Item $wintun $wtDst -Force
+        Good "wintun.dll staged (adapter install needs admin, later)"
+    }
     Good "nebula + nebula-cert installed to $binDir"
     }
 
@@ -251,21 +261,28 @@ try {
     # SSH session (IdentityNotMappedException). A SID needs no name lookup, so it also survives
     # a domain-joined machine and a non-English Windows.
     $me  = [Security.Principal.WindowsIdentity]::GetCurrent().User
+    # SYSTEM gets Read alongside the owner: activation installs nebula as a LocalSystem service,
+    # and a key locked to the user alone leaves that service unable to read its own key -- it
+    # dies with WIN32_EXIT_CODE 1066 and an empty event log (found live S354). SYSTEM can read
+    # any local file anyway, so this grant costs nothing against other users.
+    $sys = New-Object Security.Principal.SecurityIdentifier('S-1-5-18')
     $acl = Get-Acl $keyPath
     $acl.SetAccessRuleProtection($true, $false)
     $acl.Access | ForEach-Object { $acl.RemoveAccessRule($_) | Out-Null }
     $acl.AddAccessRule((New-Object Security.AccessControl.FileSystemAccessRule($me, 'FullControl', 'Allow')))
+    $acl.AddAccessRule((New-Object Security.AccessControl.FileSystemAccessRule($sys, 'Read', 'Allow')))
     Set-Acl -Path $keyPath -AclObject $acl
 
     # PROVE it rather than assume it. If anyone else can read the private key the install is not
     # in a safe state, and reporting success would be a lie.
-    $mine  = $me.Translate([Security.Principal.NTAccount]).Value
+    $mine    = $me.Translate([Security.Principal.NTAccount]).Value
+    $sysName = $sys.Translate([Security.Principal.NTAccount]).Value
     $extra = (Get-Acl $keyPath).Access | ForEach-Object { $_.IdentityReference.Value } |
-             Where-Object { $_ -ne $mine }
+             Where-Object { $_ -ne $mine -and $_ -ne $sysName }
     if ($extra) {
         Die 'KEY-03' "the private key at $keyPath is still readable by: $($extra -join ', ')`n        Refusing to continue."
     }
-    Good "private key readable only by $mine (verified, never leaves this machine)"
+    Good "private key readable only by $mine + SYSTEM/the service (verified, never leaves this machine)"
 
     $listen = if ($P.network.inbound_required) { 'REPLACE_AT_SIGNING' } else { '0' }
     $yamlPath = Join-Path $root 'config.yml'
@@ -549,6 +566,14 @@ try {
                     # never strands an install); unsaved state only costs the rerun shortcut
                 }
             } else {
+                # Delivered-certs short-circuit -- same check as the code flow above. Without it a
+                # rerun with certs already in place polls anyway and dies SRV-05 on picked_up
+                # (found live S354: hand-placed certs, installer still said "rerun with a fresh
+                # invite code"). The two poll paths must BOTH carry this check.
+                if ((Test-Path (Join-Path $pkiDir 'ca.crt')) -and (Test-Path (Join-Path $pkiDir 'host.crt'))) {
+                    Good "certificates already delivered and verified."
+                    return
+                }
                 # Rerun: one status check, no waiting loop (approval is human-paced).
                 try { $st = Invoke-RestMethod -Method Get -Uri "$endpoint/enroll/$($uState.request_id)" } catch { $st = $null }
                 if ($st) {

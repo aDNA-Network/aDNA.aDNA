@@ -33,11 +33,11 @@
 #
 set -eu
 
-VERSION="0.4.19"
+VERSION="0.4.20"
 BASE="${ADNA_INSTALL_BASE:-https://adna.network}"
 PAYLOAD="adna-installer-${VERSION}.tar.gz"
 # sha256 of ${PAYLOAD} — regenerate with ./release.sh, which prints the line to paste here.
-PAYLOAD_SHA256="74350e04520da687fac983454918a9a3ed1caa3f7cf8f790f425d36fd9c02b03"
+PAYLOAD_SHA256="2e287e2cb53492c5cb0f982c2e468310f79497d342b70f9e005d32d7bad144ab"
 # minisign public key for the payload signature (Phase C1; keypair generated 2026-08-21,
 # secret brokered as adna_release_minisign.key on the release-cutting box). A missing or
 # bad signature is a hard refusal, never a warning.
