@@ -20,7 +20,15 @@
     ADMIN: this script does NOT need Administrator. Downloading, verifying, generating a
     keypair and writing config are all userland. Administrator is needed LATER, to install the
     Wintun virtual adapter and register the service -- steps this script deliberately stops
-    before. Anything telling you to run this elevated is wrong.
+    before. Anything telling you to run the FIRST command elevated is wrong.
+
+    THE SECOND COMMAND is `-Activate` (mirrors the Unix installer's --activate): after the
+    signed certificate arrives, the same one-liner with -Activate verifies the cert chain +
+    key binding, then installs and starts the service. THAT one runs in an elevated
+    PowerShell -- it is the only step that needs Administrator, and it says so itself when
+    run unelevated. Before 0.4.21 there was no Windows activation code at all: service
+    install was hand-driven chat instructions, and the first two real activations (S354,
+    S437/Teddy) each burned half an hour on nebula.exe's service-verb quirks.
 #>
 [CmdletBinding()]
 param(
@@ -36,13 +44,16 @@ param(
     # invite code (like BDWJ-HQPK-7NMR) -- submits the enrollment request automatically and
     # fetches the cert when approved; without it, the request is printed to send by hand.
     [string]$Code,
+    # second step: after your signed certificate arrives, verify it and start the service
+    # (needs an elevated PowerShell -- the ONLY step that does).
+    [switch]$Activate,
     # ASCII/no-color output; also honors NO_COLOR (no-color.org), TERM=dumb, and redirection.
     [switch]$Plain
 )
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference    = 'SilentlyContinue'   # Invoke-WebRequest is ~10x slower with the bar
-$VERSION = '0.4.20'
+$VERSION = '0.4.21'
 
 # PowerShell 5.1 can still default to TLS 1.0, which GitHub refuses outright.
 try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 }
@@ -80,6 +91,134 @@ function Die  { param($code, $m)
     exit 1
 }
 function Good { param($m) WriteC "   [ok] $m" Green }
+
+# -- activation (the SECOND command; parity with adna_install.py's activate()) --------------
+# Split from the install for the same two reasons as Unix: there is no certificate at
+# first-install time (a service started then would only crash-loop), and this is the ONLY
+# step that needs Administrator -- keeping it apart is what lets the first command stay
+# honestly no-privilege. Every gate here turns nebula's silent-non-handshake failure mode
+# into a loud refusal. Closes the S354 bonus finding (no Windows activation code at all).
+function Invoke-Activation {
+    param($C, $Root, $PkiDir, $BinDir, $Arch)
+    Write-Host ""
+    Say "ACTIVATING $Root"
+    Write-Host ""
+    $nebula     = Join-Path $BinDir 'nebula.exe'
+    $nebulaCert = Join-Path $BinDir 'nebula-cert.exe'
+    $cfg        = Join-Path $Root 'config.yml'
+    $ca  = Join-Path $PkiDir 'ca.crt'
+    $crt = Join-Path $PkiDir 'host.crt'
+    $pub = Join-Path $PkiDir 'host.pub'
+    $key = Join-Path $PkiDir 'host.key'
+    if (-not (Test-Path $nebula)) {
+        Die 'ACT-02' "nebula.exe not found at $nebula. Run the installer first (the same command, without -Activate)."
+    }
+
+    # A0 -- the cert pair must have arrived.
+    if (-not ((Test-Path $ca) -and (Test-Path $crt))) {
+        Die 'ACT-03' "the signed certificate has not arrived yet. Rerun the installer (without -Activate) to fetch it -- or save the two files you were sent as:`n        $ca`n        $crt`n        Nothing else is needed; your private key is already here."
+    }
+
+    # A1 -- signed by a CA we trust.
+    & $nebulaCert verify -ca $ca -crt $crt
+    if ($LASTEXITCODE -ne 0) { Die 'ACT-04' "certificate does not verify against $ca" }
+
+    # A2 -- THE KEY-BINDING GATE (same as Unix): a cert that verifies against the CA can
+    # still have been issued for somebody else's key -- perfectly valid and useless, and
+    # nebula's failure mode is a silent non-handshake that looks like a network problem.
+    $info = & $nebulaCert print -json -path $crt | ConvertFrom-Json
+    if ($info -is [array]) { $info = $info[0] }
+    if (Test-Path $pub) {
+        $pubB64 = ((Get-Content $pub) | Where-Object { $_ -notmatch '-----' }) -join ''
+        $pubHex = ([BitConverter]::ToString([Convert]::FromBase64String($pubB64)) -replace '-', '').ToLower()
+        if ($info.publicKey -and $info.publicKey -ne $pubHex) {
+            Die 'ACT-05' "CERTIFICATE / KEY MISMATCH -- this certificate was issued for a different key.`n        certificate carries : $($info.publicKey)`n        this machine's key  : $pubHex`n        It would verify against the CA and still never connect. Ask for a certificate issued against the enrollment request from THIS machine."
+        }
+    }
+
+    # A3 -- the config must load before a service is worth registering.
+    & $nebula -test -config $cfg
+    if ($LASTEXITCODE -ne 0) { Die 'ACT-06' "config does not load: $cfg" }
+
+    # A4 -- LocalSystem must be able to read the private key (S354 gap 3: a key locked to
+    # the user alone dies as WIN32_EXIT_CODE 1066 with an empty event log). Idempotent
+    # re-grant, so keys placed by hand or by an older installer are repaired here too.
+    if (Test-Path $key) {
+        $sys = New-Object Security.Principal.SecurityIdentifier('S-1-5-18')
+        $acl = Get-Acl $key
+        $acl.AddAccessRule((New-Object Security.AccessControl.FileSystemAccessRule($sys, 'Read', 'Allow')))
+        Set-Acl -Path $key -AclObject $acl
+        Good "host.key readable by SYSTEM (the service account) -- verified"
+    }
+
+    # A5 -- wintun must be where nebula's loader actually looks (S354 gap 2).
+    $wtDev = Join-Path $BinDir "dist\windows\wintun\bin\$Arch\wintun.dll"
+    if (-not ((Test-Path $wtDev) -or (Test-Path (Join-Path $BinDir 'wintun.dll')))) {
+        WriteC "   [!] wintun.dll is not staged under $BinDir -- if the service cannot create its adapter, rerun the installer (without -Activate) to restage it." Yellow
+    }
+
+    if ($DryRun) {
+        Say "(dry run) gates passed. Would now: register the 'Nebula' service pointing at"
+        Say "$cfg, start it, and check a lighthouse answers. Re-run elevated without -DryRun."
+        return
+    }
+
+    # THE ONLY STEP THAT NEEDS ADMINISTRATOR: the service (and its Wintun adapter).
+    $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()
+               ).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+    if (-not $isAdmin) {
+        Write-Host ""
+        Say "Ready -- every certificate gate passed. The last step needs Administrator."
+        Say "In an ELEVATED PowerShell (right-click PowerShell -> Run as administrator), run:"
+        Write-Host ""
+        Write-Host "  & ([scriptblock]::Create((irm $Base/install.ps1))) -Activate"
+        Write-Host ""
+        return
+    }
+
+    # Service registration, idempotently. Two live-learned quirks (S437, Teddy's box):
+    # nebula.exe parses -config on EVERY service verb before touching the SCM (a bare
+    # `-service start` dies wanting a config even though the registered service knows its
+    # own), and `-service install` hard-fails if the service exists at all. So: reuse an
+    # existing registration when it already points at our config, re-register when it
+    # points elsewhere, install fresh otherwise -- and -config rides on every call.
+    $svc = Get-Service Nebula -ErrorAction SilentlyContinue
+    if ($svc) {
+        $binPath = (Get-CimInstance Win32_Service -Filter "Name='Nebula'").PathName
+        if ($binPath -notlike "*$cfg*") {
+            Say "a Nebula service exists but points at a different config -- re-registering"
+            & $nebula -service stop -config $cfg 2>$null
+            & $nebula -service uninstall -config $cfg
+            if ($LASTEXITCODE -ne 0) { Die 'ACT-07' "could not remove the existing Nebula service registration" }
+            & $nebula -service install -config $cfg
+            if ($LASTEXITCODE -ne 0) { Die 'ACT-07' "could not register the Nebula service" }
+        } else {
+            Good "Nebula service already registered with this config -- reusing it"
+        }
+    } else {
+        & $nebula -service install -config $cfg
+        if ($LASTEXITCODE -ne 0) { Die 'ACT-07' "could not register the Nebula service" }
+        Good "Nebula service registered"
+    }
+    & $nebula -service start -config $cfg
+    if ($LASTEXITCODE -ne 0) { Die 'ACT-08' "could not start the Nebula service" }
+    Start-Sleep -Seconds 3
+    $svc = Get-Service Nebula -ErrorAction SilentlyContinue
+    if (-not $svc -or $svc.Status -ne 'Running') {
+        Die 'ACT-08' "the service started and then stopped. Check the key ACL (icacls $key -- SYSTEM needs read) and the wintun note above, then run this again."
+    }
+    Good "service installed and running (starts automatically at boot)"
+
+    # Prove it, do not assume it -- a started service that never handshakes is the common
+    # failure. A lighthouse answering over the overlay is the network truth.
+    $lh = $C.lighthouses | Select-Object -First 1
+    if ($lh -and (Test-Connection -ComputerName $lh -Count 3 -Quiet -ErrorAction SilentlyContinue)) {
+        Write-Host ""
+        Good "ON THE NETWORK -- lighthouse $lh answered."
+    } else {
+        WriteC "   [!] service is running but the lighthouse has not answered yet -- handshakes can take a few seconds. Try: ping $lh" Yellow
+    }
+}
 
 # Everything below is the install flow, and it runs ONLY through the Main call on the last
 # line of this file (Phase C1, research_security_2026-08 item 5). A truncated copy of this
@@ -135,7 +274,7 @@ try {
     # for Windows users is the release artifacts + winget (Phase D), where the signature is
     # checked at package-build time. Recorded in security_design_notes.md -- a gap named is
     # not a gap hidden.
-    $PAYLOAD_SHA256 = '2e287e2cb53492c5cb0f982c2e468310f79497d342b70f9e005d32d7bad144ab'
+    $PAYLOAD_SHA256 = '21337afb85eb024af5d34f1a6b59cdf78f8a048df3ba52dfdd23620eac895751'
     if ($PAYLOAD_SHA256 -eq 'PAYLOAD_SHA256_UNSET') {
         Die 'REL-01' "this install.ps1 has no payload hash pinned -- it was published unreleased. Refusing to run unverified code."
     }
@@ -168,6 +307,11 @@ try {
     $root   = Join-Path $Prefix $Instance
     $pkiDir = Join-Path $root 'pki'
     $binDir = Join-Path $Prefix 'bin'
+
+    if ($Activate) {
+        Invoke-Activation -C $C -Root $root -PkiDir $pkiDir -BinDir $binDir -Arch $arch
+        return
+    }
 
     Write-Host ""
     Write-Host "   $(if ($DryRun) {'PLAN:'} else {'EXECUTING:'})"
@@ -488,6 +632,11 @@ try {
                 $caPath = Join-Path $pkiDir 'ca.crt'
                 if ((Test-Path $caPath) -and (Test-Path (Join-Path $pkiDir 'host.crt'))) {
                     Good "certificates already delivered and verified."
+                    $svc = Get-Service Nebula -ErrorAction SilentlyContinue
+                    if (-not $svc -or $svc.Status -ne 'Running') {
+                        Say "The service is not running yet -- in an ELEVATED PowerShell, run:"
+                        Write-Host "  & ([scriptblock]::Create((irm $Base/install.ps1))) -Activate"
+                    }
                     return
                 }
                 for ($i = 0; $i -lt 6; $i++) {
@@ -502,7 +651,8 @@ try {
                         continue
                     }
                     if ($st.state -eq 'refused')   { Die 'SRV-04' "your enrollment request was refused: $($st.reason). Contact the person who invited you." }
-                    if ($st.state -eq 'picked_up') { Die 'SRV-05' "this request's certificates were already collected, but they are not on this machine. Rerun the installer with a fresh invite code." }
+                    if ($st.state -eq 'picked_up') { Die 'SRV-05' "this request's certificates were already collected, but they are not on this machine. Ask the person who invited you for a fresh code, or ask the network operator to re-stage this request's certificates." }
+                    if ($st.state -eq 'delivered') { Die 'SRV-08' "this machine already received and confirmed its certificates, but they are not in place here now. Contact the network operator to re-stage them; then rerun this command." }
                     if ($st.state -eq 'ready') {
                         $tmpCa = Join-Path $pkiDir 'ca.crt.incoming'
                         Set-Content -Path $tmpCa -Value $st.ca_crt -Encoding utf8
@@ -515,9 +665,23 @@ try {
                         }
                         Move-Item $tmpCa $caPath -Force
                         Set-Content -Path (Join-Path $pkiDir 'host.crt') -Value $st.host_crt -Encoding utf8
+                        # Confirm delivery AFTER the certs are safe on disk -- the ack is what
+                        # consumes the staged copy (two-phase pickup, F-S352L-01). Best-effort:
+                        # a failed ack costs nothing; the certs stay re-fetchable server-side.
+                        if ($st.ack_token) {
+                            try {
+                                Invoke-RestMethod -Method Post -Uri "$endpoint/enroll/$($state.request_id)/ack" `
+                                    -ContentType 'application/json' -Body (@{ ack_token = $st.ack_token } | ConvertTo-Json) | Out-Null
+                            } catch {
+                                WriteC "   [!] could not confirm delivery back to the enrollment service -- harmless; your certificates are already safe on this machine." Yellow
+                            }
+                        }
                         Good "approved! certificates received and verified against the pinned CA."
-                        Say "Next: the service install (needs Administrator) -- follow the activation"
-                        Say "steps printed at the end of this installer's output."
+                        Say "Next -- ONE more command, in an ELEVATED PowerShell (right-click -> Run as administrator):"
+                        Write-Host ""
+                        Write-Host "  & ([scriptblock]::Create((irm $Base/install.ps1))) -Activate"
+                        Write-Host ""
+                        Say "It verifies the certificate against your key, then installs + starts the service."
                         return
                     }
                     Die 'SRV-07' "unexpected state from the enrollment service: $($st.state)"
@@ -572,6 +736,11 @@ try {
                 # invite code"). The two poll paths must BOTH carry this check.
                 if ((Test-Path (Join-Path $pkiDir 'ca.crt')) -and (Test-Path (Join-Path $pkiDir 'host.crt'))) {
                     Good "certificates already delivered and verified."
+                    $svc = Get-Service Nebula -ErrorAction SilentlyContinue
+                    if (-not $svc -or $svc.Status -ne 'Running') {
+                        Say "The service is not running yet -- in an ELEVATED PowerShell, run:"
+                        Write-Host "  & ([scriptblock]::Create((irm $Base/install.ps1))) -Activate"
+                    }
                     return
                 }
                 # Rerun: one status check, no waiting loop (approval is human-paced).
@@ -584,7 +753,8 @@ try {
                         return
                     }
                     if ($st.state -eq 'refused')   { Die 'SRV-04' "your enrollment request was refused: $($st.reason). Contact the person who invited you." }
-                    if ($st.state -eq 'picked_up') { Die 'SRV-05' "this request's certificates were already collected, but they are not on this machine. Rerun the installer with a fresh invite code." }
+                    if ($st.state -eq 'picked_up') { Die 'SRV-05' "this request's certificates were already collected, but they are not on this machine. This is a fault on our side, not yours -- contact the network operator; they can re-stage the certificates for this same request. Then just rerun this command." }
+                    if ($st.state -eq 'delivered') { Die 'SRV-08' "this machine already received and confirmed its certificates, but they are not in place here now. Contact the network operator to re-stage them; then rerun this command." }
                     if ($st.state -eq 'ready') {
                         # Same pickup + pinned-CA gate as the code flow above -- kept in
                         # lockstep; the fingerprint check runs BEFORE anything is trusted.
@@ -598,9 +768,21 @@ try {
                         }
                         Move-Item $tmpCa $caPath -Force
                         Set-Content -Path (Join-Path $pkiDir 'host.crt') -Value $st.host_crt -Encoding utf8
+                        # Delivery ack -- same contract as the code flow above, kept in lockstep.
+                        if ($st.ack_token) {
+                            try {
+                                Invoke-RestMethod -Method Post -Uri "$endpoint/enroll/$($uState.request_id)/ack" `
+                                    -ContentType 'application/json' -Body (@{ ack_token = $st.ack_token } | ConvertTo-Json) | Out-Null
+                            } catch {
+                                WriteC "   [!] could not confirm delivery back to the enrollment service -- harmless; your certificates are already safe on this machine." Yellow
+                            }
+                        }
                         Good "approved! certificates received and verified against the pinned CA."
-                        Say "Next: the service install (needs Administrator) -- follow the activation"
-                        Say "steps printed at the end of this installer's output."
+                        Say "Next -- ONE more command, in an ELEVATED PowerShell (right-click -> Run as administrator):"
+                        Write-Host ""
+                        Write-Host "  & ([scriptblock]::Create((irm $Base/install.ps1))) -Activate"
+                        Write-Host ""
+                        Say "It verifies the certificate against your key, then installs + starts the service."
                         return
                     }
                 }
@@ -630,7 +812,8 @@ try {
     }
     Write-Host ""
     Say "Service install and the Wintun adapter are NOT done -- those need Administrator and"
-    Say "a signed certificate, which comes back after your request is approved."
+    Say "a signed certificate, which comes back after your request is approved. Once it has,"
+    Say "run the same one-liner with -Activate in an elevated PowerShell to finish."
     Write-Host ""
 }
 finally {
