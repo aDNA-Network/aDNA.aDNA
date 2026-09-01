@@ -166,5 +166,28 @@ signed*, on the precedent of every mission since P4.2.
 
 ⛩ **Two things need the operator, not an agent:** the charter's `mission_count` (recorded as ruled
 `28 → 29` at GR-2's signature, **never performed**; `estimated_sessions` and `calibrated_sessions`
-move with it), and whether **`F-s`** gets its backfill row. ⛔ **No deploy is owed** — GR-2 changed no
-shipped byte, and production serves `d5ff043` from the 08-29 ship.
+move with it), and whether **`F-s`** gets its backfill row. ⛔ **No deploy is owed** — GR-2 changed no shipped byte.
+~~Production serves `d5ff043` from the 08-29 ship.~~ ⚠ **CORRECTED AT THE SESSION'S OWN TAIL, hours
+after it was written — convention 16 catching this file in the act.** Re-probed `[D]`: the alias
+serves **`a852423`**, `built_at 2026-09-01T19:40:19Z`, `install.sh` at **0.4.22** — lemur deployed
+0.4.21 and then 0.4.22 while this sitting ran. **Nothing of ours was un-published**: `d5ff043` **and**
+`e6d3ba9` are both ancestors of the live commit `[D]`, so GR-1, P4.4b B1/B2a and O4's fix all rode
+forward. ⭐ *A build stamp is a statement with a timestamp — including one written by the session that
+is still running.* **Re-probe it at your open; do not quote this line.**
+
+## Coda — the push halted on its own condition, and the reconcile was performed under a fresh ruling
+
+The pre-granted GO said *"if lemur has moved, halt and report."* At the close push lemur had moved
+**8 commits** (0.4.21 + 0.4.22 installers, two prod deploys) and the push was **rejected**. Halted,
+reported, and ⛩ **re-ruled by the operator: rebase, re-run the suite on the merged tree, then push** —
+O3's own precedent, and the option that refuses to put a tree on `main` that no suite has run against.
+
+**Measured before recommending anything, and RE-DERIVED rather than carried from O3** `[D]`: zero file
+overlap (they touched only `site/public/*` + `deploy_log.txt`; we touched only `how/*`); **no gate
+reads `install.sh` and no test pins a version** — O3's identical measurement was re-run rather than
+quoted, because the versions it was made against (0.4.19) are three releases stale.
+
+`git pull --rebase --autostash` (autostash for the operator's Obsidian state, as O3 did) — **clean, 3
+commits replayed, behind 0 / ahead 3**. Merged tree measured: chromium **652 passed / 1 skipped**,
+`html-validate` **0**, `gitleaks` clean on the outgoing range. Remote re-derived at the remote
+immediately before pushing. Pushed `abbf829..7bd38cd`; **unpushed 0**, derived.
