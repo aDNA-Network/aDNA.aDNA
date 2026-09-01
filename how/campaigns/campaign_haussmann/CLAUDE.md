@@ -270,9 +270,14 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 
 ## Mission index
 
-`missions/` — **29** files, **derived not typed** (`ls missions/mission_haussmann_*.md | wc -l`): 27
-`mission_haussmann_p{0..5}_*.md` **plus 2 `mission_haussmann_gr_*.md`**, which the `p{0..5}` glob does
-**not** match. ⚠ **The old glob was load-bearing and silently wrong the moment GR-1 landed** —
+`missions/` — **30** files, **derived not typed** (`ls missions/mission_haussmann_*.md | wc -l`): 27
+`mission_haussmann_p{0..5}_*.md` **plus 3 `mission_haussmann_gr_*.md`**, which the `p{0..5}` glob does
+**not** match. *(Re-derived 2026-09-01 at `GR-3`'s open — the GR lane went 2 → 3. ⛩ ✅ **SURFACED AND PERFORMED
+IN THE SAME SITTING** — the charter's `mission_count` is now **30**, with `estimated_sessions` **42-56**
+and `calibrated_sessions` **42-48** re-derived in the same commit. That field is **the operator's to
+take by its own terms**; it was put to them and ruled. ⭐ **This is the discipline GR-2 had to learn
+twice** — its 28→29 ruling was recorded as taken and then sat unperformed at this destination for four
+days. `phase_count` **HOLDS at 6**.)* ⚠ **The old glob was load-bearing and silently wrong the moment GR-1 landed** —
 it would have kept reporting 27 forever while the directory held 28, which is F-m's shape (a drift-check
 whose own pattern excludes the thing that drifted) recurring in the sentence that states the count.
 ~~Note this file count is **not** the charter's `mission_count`, which still reads **27** pending the
@@ -1396,6 +1401,91 @@ untouched and still blocked on actors outside the session.
 > **success**. ⇒ O4's fix holds on a checkout this desk never touched — the one thing a green on our
 > own push could not show. *The two-writer situation that keeps generating findings generated a
 > control this time.*
+
+> ⛩⛩ **`GR-3` — THE FALSE RED, 2026-09-01. Convention 19 fired on its SECOND-EVER use and found `main`
+> red; the red was the gate's own doing, and underneath it sat an assertion that had never once been
+> demonstrated to fail.** Records: `artifacts/gr_3/`. Mission: `mission_haussmann_gr_3_false_red.md`.
+>
+> ⭐⭐ **THE CAMPAIGN'S FIRST FALSE *RED*.** Conventions 14 and 16 were both built from false *greens*
+> — an instrument passing when it should not. This is the mirror. `gate-42` failed `main` at `2ad7768`
+> for **six same-origin `net::ERR_ABORTED`s** on `/learn/concepts/context-commons/` — chunks the gate
+> had **cancelled itself** by navigating away while `MermaidDiagram.astro`'s `await import('mermaid')`
+> was still in flight. Its traversal used `waitUntil: 'load'` + `waitForTimeout(120)`: **a bet on a
+> duration**, which an unloaded Mac wins and a loaded CI runner loses. Nothing had shipped — all four
+> commits since the last green were campaign prose. ⇒ *the gate accused the site of a defect the gate
+> caused, on a commit where only prose had changed.*
+> ⚠ **And it is worse than a false green in one specific way**: the gate's own message argues that
+> gating on things that are not ours would be *"training people to ignore a red build"* — which is
+> exactly what a flaky assertion does, **one session after `GR-2` spent an entire mission on the
+> finding that nobody read a red for fourteen days.**
+>
+> ⭐ **NON-DETERMINISM DEMONSTRATED, NOT ARGUED.** `gh run rerun 33558250778` — same commit, same
+> bytes, **`success`**. ⭐⭐ **And that reading had already been anticipated by the pre-build pass**,
+> which demoted `AC-2` from *the proof* to *a regression check* on the reasoning that **a flaky gate
+> passes sometimes anyway**, so one green cannot separate *"the fix worked"* from *"we got lucky."*
+> **First time in this campaign a convention-13 pass has paid off in advance rather than in hindsight**
+> — 35/35 pairs, coverage recorded, **3 defects found and fixed BEFORE the budget was signed.**
+>
+> ⭐⭐ **THE FINDING THAT OUTLIVES THE FIX — CONVENTION 14'S MISSING SECOND CLAUSE.**
+> `console_clean_redtest.sh` red-proved `gate-42` with five mutations and reported **5/5**, and it was
+> **wrong about which assertion one of them exercised, for the gate's entire life.** Case 3 —
+> *labelled* the same-origin-asset case — deletes a file, which yields a **404 RESPONSE**, so
+> `requestfailed` never fires; Chromium logs the 404 as a console error; `hits` is asserted first; a
+> non-soft `expect` throws immediately. **`assetFailures` was never evaluated.** Probed at the object:
+> the red reads `225 console error(s)`, and the same-origin message appears nowhere. ⇒ **the assertion
+> had NEVER been demonstrated to fail, and its first firing in its existence was the false positive
+> that opened this mission.**
+> > **Convention 14: an instrument is not believed until it has been demonstrated to fail.**
+> > **The missing clause: A DEMONSTRATION IS ONLY WORTH WHAT IT CAN ATTRIBUTE.**
+>
+> A red that cannot be traced to the assertion under test proves the gate is alive, not that the
+> assertion is. Every case now matches the assertion's own message, and a red via the wrong one
+> reports as a **HARNESS BUG**. ⚠ Family named: convention 13's *"a correct instrument applied
+> partially, reporting like a complete one"*, found this time **inside the harness whose entire job is
+> to enforce convention 14 on everything else.**
+>
+> ⭐ **AC-7's THRESHOLD IS THE ONLY CRITERION HERE THAT CHANGED THE BUILD, AND IT DID SO BY FAILING.**
+> The ratified mechanism was `networkidle` — the convention every other gate uses. Measured: **1.1 min
+> → 3.9 min, +255%**, past the stated +100% ceiling, so the decision was re-taken **on the
+> measurement**. `networkidle`'s 500 ms quiet window is a **flat tax every route pays in full** (these
+> pages go quiet in ~50 ms); draining the in-flight request count costs **110 ms/route against 508**.
+> ⇒ mechanism swapped, criterion unchanged. **Final: 56.0 s — FASTER than the 1.1 min it replaced.**
+> *The defect never cost wall clock; it only ever cost the bet being wrong.* ⭐ **A stated numeric
+> threshold on a cost criterion is what forced the measurement that found a design 4× cheaper AND
+> strictly more correct** — "record the cost" would have recorded 3.9 min and shipped it.
+>
+> **Built:** traversal drains to zero in-flight requests, expiry **asserted** (`unsettled`) and placed
+> **BEFORE** the same-origin check — *the cause must report ahead of the symptom it produces*, or the
+> reader is told the site has six broken assets when one page would not settle. **All three predicates
+> byte-unchanged**, so every prior red-proof still covers them. **Red-proof: 8 pass / 0 fail (6
+> mutations + 2 controls)**, every case naming its assertion; **case 6 red BEFORE and AFTER the fix**,
+> which is what proves the fix removed the sweep's race and not the assertion's teeth.
+> ⛔ **The settle guard is deliberately NOT red-proven** — a race has no deterministic mutation.
+> Conventions 15/16 hold: five instruments have shipped wrong on their first live run, and a sixth
+> authored at a mission's tail would be the sixth. **Stated as a limit, never implied as coverage.**
+> ⚠ **Bound, not removal:** a page that goes quiet and *then* fires a delayed request can still be
+> raced; `networkidle` carries the identical residual.
+>
+> ✅ **`F-z` and `F-s` BOTH WRITTEN.** `F-z` = this finding, both halves, authored and struck. `F-s` =
+> ⛩ **operator-ruled into scope** at the pre-build gate — the 2026-08-23 production regression, **cited
+> by ID across this campaign for nine days with no row**, backfilled and struck. ⇒ **`F-y`'s gap is
+> closed**: the letter sequence now reads **a–z with only `t` missing**, and `t` is the one hole with a
+> documented reason. Register **re-derived at the object, never carried**: **25 total · 18 struck · 7
+> live** (F-d · F-e · F-j · F-k · F-v · F-w · F-y).
+>
+> ⛩ ✅ **SURFACED, RULED AND PERFORMED IN ONE SITTING** — charter `mission_count` **29 → 30** (disk
+> holds 30: 27 `p{0..5}` + **3** `gr_*`), `estimated_sessions` **41-54 → 42-56**, `calibrated_sessions`
+> **41-46 → 42-48**, all re-derived in the same commit because all three are marked derived-not-typed.
+> `phase_count` **HOLDS at 6**. ⭐ **The point is the timing, not the number**: GR-2 recorded this same
+> ruling as *taken* and it sat unperformed at the charter for four days — the *index-vs-artifact* class
+> the campaign keeps finding. Put to the operator (the field's own comment says it is theirs to take),
+> ruled, and **written at its destination before the sitting closed.**
+>
+> ⏭ **NEXT: Lane D** (story coverage, the Gate-1 order's last lane) or **P4.4b B3** — unchanged by
+> GR-3, which was an unplanned interrupt, each still at its own ⛩ conv-13 pre-build gate. ⛔ Still
+> held: **B2b** on ⊳ D-E · the **Hopper reply** (own ⛩ send GO) · **P5.1** with the humans. ⚠ Owed:
+> B1's Speed-Insights → transport → first p75 · the ~59 uncited capture PNGs still untracked. ✅ **No
+> longer owed: `F-s`'s backfill row.**
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is

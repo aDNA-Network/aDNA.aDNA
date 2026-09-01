@@ -47,6 +47,16 @@ const DIST = join(process.cwd(), 'dist');
  *  wrong cwd), not an ordinary page deletion — a broken walk reports every page as quiet. */
 const ROUTE_FLOOR = 180;
 
+/** How long a route gets to go network-quiet before the sweep moves on. Generous on purpose: the
+ *  cost of waiting too long is wall clock, and the cost of waiting too little is a FALSE RED that
+ *  blames the site for the sweep's own cancelled requests (GR-3). Expiry is asserted, never
+ *  swallowed — see the settle in G42b. */
+const SETTLE_TIMEOUT_MS = 10_000;
+/** How long "no requests outstanding" must hold before the page counts as settled. Covers the gap
+ *  between one request finishing and the next being issued — a chained `await import()` resolving
+ *  and immediately fetching its own dependency, which is exactly mermaid's shape. */
+const SETTLE_QUIET_MS = 100;
+
 /** Derive the frame from the build, the same walk `check_external_links.mjs` uses. Throws rather
  *  than returning [] — an empty derivation must never read as a clean bill of health. */
 function builtRoutes(): string[] {
@@ -94,6 +104,7 @@ test.describe('gate-42 — zero console error', () => {
       const hits: Hit[] = [];
       const badStatus: string[] = [];
       const assetFailures: Hit[] = [];
+      const unsettled: string[] = [];
 
       if (mode.seed) await page.addInitScript(mode.seed);
 
@@ -106,7 +117,15 @@ test.describe('gate-42 — zero console error', () => {
       page.on('pageerror', (err) => {
         hits.push({ route: current, mode: mode.name, kind: 'pageerror', detail: String(err.message).slice(0, 300) });
       });
+      // In-flight request count, for the settle below. Clamped at zero: a request issued by the
+      // PREVIOUS page can finish (or abort) after we have navigated, and an unclamped counter would
+      // go negative and then read as permanently busy.
+      let inflight = 0;
+      page.on('request', () => { inflight++; });
+      page.on('requestfinished', () => { inflight = Math.max(0, inflight - 1); });
+
       page.on('requestfailed', (req) => {
+        inflight = Math.max(0, inflight - 1);
         // Same-origin only. A third-party 503 is not this site's defect and gating on it would
         // train everyone to ignore a red build — the same reasoning check_external_links.mjs
         // records for external links. Everything this site serves, it owns.
@@ -123,9 +142,41 @@ test.describe('gate-42 — zero console error', () => {
         // A 404 is quiet. Counting it as "no console errors" is the vacuity this gate is fenced
         // against, so a bad status is recorded as its own failure rather than silently sampled.
         if (status !== 200) badStatus.push(`${route} → HTTP ${status}`);
-        // Async work (mermaid chunks, view transitions) throws after `load`. Without a settle the
-        // sweep races past exactly the errors it exists to catch.
-        await page.waitForTimeout(120);
+        // Async work (mermaid chunks, view transitions) starts AFTER `load` and throws later. Without
+        // a settle the sweep races past exactly the errors it exists to catch — AND, the defect that
+        // brought this here, it CANCELS that work by navigating away mid-flight. A cancelled request
+        // arrives as `requestfailed`/net::ERR_ABORTED, which the same-origin assertion below then
+        // reports as the SITE's broken asset. On 2026-09-01 that failed `main` with six aborted
+        // mermaid chunks on /learn/concepts/context-commons/ — the gate accusing the site of a defect
+        // the gate itself caused, on a commit where nothing but prose had changed (GR-3, F-z).
+        //
+        // The old settle was `waitForTimeout(120)`: a bet that a mermaid bundle downloads in 120 ms.
+        // An unloaded Mac wins that bet and a loaded CI runner loses it, so the gate was decided by
+        // the runner's mood. This waits for the CONDITION instead of betting on a duration — it
+        // drains to zero outstanding requests, so a slow chunk is waited for however long it takes
+        // and a fast page is not taxed for being fast.
+        //
+        // ⚠ WHY NOT `networkidle`, which every other gate uses. Measured, not assumed (GR-3 AC-7):
+        // networkidle costs 508 ms/route here against this drain's 110 ms — 3.8 min vs 0.8 min across
+        // the 452 navigations — because its 500 ms quiet window is a FLAT TAX every route pays in
+        // full, while these pages actually go quiet in ~50 ms. It is a proxy for the thing we care
+        // about; the in-flight count IS the thing we care about. Same correctness, a quarter of the
+        // clock, and roughly what the 120 ms it replaces already cost.
+        //
+        // ⚠ The timeout is NOT swallowed. A settle that quietly gives up would restore the exact race
+        // it replaces while reading as a clean pass — the shape this campaign keeps finding. Expiry is
+        // recorded and asserted below, so a page that will not go quiet is a NAMED red, not a mystery
+        // abort attributed to the site.
+        let settled = false;
+        const deadline = Date.now() + SETTLE_TIMEOUT_MS;
+        let quietSince = Date.now();
+        for (;;) {
+          if (inflight > 0) quietSince = Date.now();
+          else if (Date.now() - quietSince >= SETTLE_QUIET_MS) { settled = true; break; }
+          if (Date.now() > deadline) break;
+          await page.waitForTimeout(10);
+        }
+        if (!settled) unsettled.push(`${route} → ${inflight} request(s) still in flight after ${SETTLE_TIMEOUT_MS} ms`);
       }
 
       expect(
@@ -140,6 +191,19 @@ test.describe('gate-42 — zero console error', () => {
           `${mode.name} mode. This is the class F20 was wrongly accused of and that nothing was ` +
           `watching for. Fix the page, or — if a message is genuinely third-party and unfixable — ` +
           `add a NARROW, DATED, REASONED allowlist entry here rather than widening the predicate.`,
+      ).toEqual([]);
+
+      // ⚠ ASSERTED BEFORE the same-origin check, and the order is load-bearing. A route that never
+      // goes quiet gets navigated away from, which aborts its in-flight requests, which the check
+      // below reports as failed same-origin assets. Asserted the other way round, the SYMPTOM would
+      // throw first and hide its own CAUSE — and the reader would be told the site has six broken
+      // assets when what it actually has is one page that would not settle.
+      expect(
+        unsettled.slice(0, 20),
+        `${unsettled.length} route(s) were still requesting after ${SETTLE_TIMEOUT_MS} ms and the ` +
+          `sweep moved on, cancelling whatever was in flight. Those cancellations are NOT the site's ` +
+          `broken assets — they are this sweep's. Raise SETTLE_TIMEOUT_MS, or fix the page that will ` +
+          `not go quiet; do NOT relax the same-origin check below to absorb it.`,
       ).toEqual([]);
 
       // Reported on the same run so a broken same-origin asset cannot hide behind a quiet console.
