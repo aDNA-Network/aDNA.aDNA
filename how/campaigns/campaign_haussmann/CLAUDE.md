@@ -280,12 +280,18 @@ whose own pattern excludes the thing that drifted) recurring in the sentence tha
 directory holds **29** (GR-2 landed on 08-29 and the count was never moved), and the charter's
 `mission_count` reads **28**, not 27, having been amended at GR-1's signature. **Neither number was
 wrong when written; neither was re-read.**
-⛩ **AND THE CHARTER FIELD IS OWED, NOT TAKEN HERE.** The `GR-2` block above records
-`mission_count: 28 → 29` as ruled at the 08-29 signature; **the charter still reads 28** `[D]`, and
-`estimated_sessions` / `calibrated_sessions` move with it by their own derivations. That is the
-*index-vs-artifact* class again — a ruling recorded in prose and never performed at its destination,
-the **fourth** sighting in this one sitting — but the field is marked *"the operator's to take"*, so
-the close **surfaces it rather than editing it**. Paste-ready prompts in
+⛩ ~~**AND THE CHARTER FIELD IS OWED, NOT TAKEN HERE.**~~ ✅ **SURFACED, THEN OPERATOR-TAKEN AND
+PERFORMED, 2026-09-01.** The `GR-2` block above recorded `mission_count: 28 → 29` as ruled at the
+08-29 signature; **the charter still read 28** four days later `[D]` — the *index-vs-artifact* class,
+**fourth** sighting in this one sitting, and a ruling that had been taken but never performed at its
+destination. ⛩ Put to the operator rather than assumed (the field's own comment says it is *"the
+operator's to take"*), and ruled: **perform all three**. Charter now reads **`mission_count: 29`**
+(derived from disk: 27 `p{0..5}` + 2 `gr_*`) · **`estimated_sessions: 41-54`** (37–50 + GR-1's 2 +
+GR-2's 2) · **`calibrated_sessions: 41-46`** (DP6's 37–42 + 2 + 2), each re-derived in the same
+commit because all three are marked derived-not-typed. ⚠ `phase_count` **HOLDS at 6**. ⭐ GR-2's
+addend is **measured, not assumed**: its ratified 2 sessions is also what it actually took (s1 =
+O0–O3, s2 = O4–O5) — the token band ran at/over its top edge while the *session* count landed exactly.
+Paste-ready prompts in
 `missions/session_prompts_haussmann.md`.
 
 **⚠ Since ⛩ DP6 (2026-08-19), phase order is NOT claim order.** Decade 2 runs the ruled sequence in
