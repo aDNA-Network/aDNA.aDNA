@@ -115,6 +115,34 @@ reason and on nothing else.
 Desktop remaps bind-mount ownership, so the local container *cannot* produce a uid mismatch at any
 uid). It needs the ⛩ push.
 
+⚠⚠ **AND THE PUSH GO IS NOW A DIFFERENT ACT THAN IT WAS AT THE MISSION'S OPEN: THE TREES HAVE
+DIVERGED.** Derived at the remote after the commit, not from a tracking ref:
+
+| Fact | Value |
+|---|---|
+| `HEAD` | `65d2130` |
+| `origin/main` **at the remote** | **`a68c88c`** — *not* `09faced`, which is what this mission's own open recorded |
+| relationship | ⛔ **DIVERGED** — behind **2**, ahead **3**; remote main is **not** an ancestor of HEAD |
+| what lemur added | `dd94531` installer 0.4.20 (three Windows-activation gaps) · `a68c88c` `adna-install.exe` rebuild |
+
+⭐ **This is F-s's two-writer situation recurring — caught BEFORE the push this time, and by deriving
+the remote rather than trusting a carried sha.** The mission's own "Derived at open" table says
+`origin/main = 09faced, unpushed 0`; that was true on 08-29 and is false now. *A derived fact is a
+statement with a timestamp too.*
+
+**Measured, not assumed, before recommending anything:**
+- **Zero file overlap** between the two writers' commits `[D]` — no conflict.
+- lemur touched only `site/public/` (installer binaries, `install.sh` 0.4.19 → 0.4.20, `install.ps1`,
+  the Arch repo). **No gate reads `install.sh`**, and **no test pins `0.4.19`** `[D]`.
+  `install_truth.json` carries only `schema_version`, so the version bump is not coupled to it.
+- ⚠ **But the 653/1skip recorded above was measured on a tree WITHOUT lemur's two commits.** Pushing
+  after a reconcile would put a tree on `main` that no suite has ever run against — and O3's whole
+  purpose is a *clean* CI signal about `gate-33`.
+
+⇒ **O3's procedure, amended by this finding:** reconcile first (`git pull --rebase`, no conflicts
+expected), **re-run the suite on the merged tree**, *then* push. ⛔ Not done here — reconciliation is
+part of performing the push, and the push is the operator's gate.
+
 **Surfaced, not folded in** — three inbound memos sit **untracked** in `who/coordination/`, one of
 them the Vitruvius scope-B reply `P4.4b B2b` is held on (it is in our tree, answering our 08-24 ask
 by name, while its own `status:` still reads `staged`). Operator ruled: **surface only**; B2b's

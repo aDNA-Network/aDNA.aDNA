@@ -1182,6 +1182,18 @@ untouched and still blocked on actors outside the session.
 > *sufficient* to produce CI's exact signature; nothing yet shows it is CI's — and by O1's measurement
 > it **cannot** be shown from this machine. **O3 only.**
 >
+> ⚠⚠ **THE TREES HAVE DIVERGED, AND THE PUSH GO IS NOW A DIFFERENT ACT THAN AT THE MISSION'S OPEN.**
+> Derived at the remote after O2's commit `[D] 2026-08-31`: `origin/main` = **`a68c88c`**, **not** the
+> `09faced` this mission's own open recorded — **behind 2, ahead 3, remote main is NOT an ancestor of
+> HEAD.** lemur shipped installer **0.4.20** (`dd94531` + `a68c88c`). ⭐ **F-s's two-writer situation
+> recurring — caught BEFORE the push this time, by deriving the remote instead of trusting the sha the
+> mission carried.** *A derived fact is a statement with a timestamp too.* Measured before
+> recommending anything: **zero file overlap** (no conflict); lemur touched only `site/public/`; **no
+> gate reads `install.sh`** and **no test pins `0.4.19`** `[D]`. ⚠ But **O2's 653/1skip was measured on
+> a tree without those two commits**, so a push-after-reconcile would put a tree on `main` that no
+> suite has run — and O3 needs a *clean* CI signal. ⇒ **O3 = reconcile (`pull --rebase`) → re-run the
+> suite → then push.** ⛔ Not done here: reconciliation is part of performing the push.
+>
 > ⏭ **NEXT: ⛩ O3's PUSH GO** — push the diagnostic **alone** to `main` (ruled at the signature: `main`
 > is already red, so the extra red run costs nothing and a PR buys no evidence), then read CI's
 > **named** reason. `O4` authors the `gates.yml` fix on **that reason and nothing else**, under its own
