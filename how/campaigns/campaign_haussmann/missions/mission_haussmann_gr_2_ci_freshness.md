@@ -5,8 +5,12 @@ title: "GR-2 — The gate-33 CI sitting: name the cause, and stop the gate namin
 campaign: campaign_haussmann
 operation: operation_grande_revue
 phase: GR                  # Grande Revue lane, no phase number — GR-1's precedent.
-                           # `mission_count: 28 → 29` is PROPOSED at this mission's ⛩ signature,
-                           # NOT edited here. `phase_count` HOLDS at 6.
+                           # `mission_count: 28 → 29` was PROPOSED at this mission's ⛩ signature and
+                           # ⛩ PERFORMED IN THE CHARTER 2026-09-01 — it had been RULED at the
+                           # signature and never carried out at its destination for four days, the
+                           # index-vs-artifact class, fourth sighting in this mission's close alone.
+                           # `estimated_sessions` 39-52 → 41-54 and `calibrated_sessions` 39-44 →
+                           # 41-46 moved with it, each re-derived. `phase_count` HOLDS at 6.
 decade: 2
 owner: stanley
 status: completed          # ✅ CLOSED 2026-09-01 — all six criteria met, AAR filed (SO#5).
@@ -28,7 +32,7 @@ executor_tier: opus        # judgment-heavy: a diagnosis held open against a str
                            # be authored before its cause is named. Declared at the OPEN (P4.1's
                            # lesson), not discovered at the AAR.
 token_budget_estimated: "⛩ RATIFIED 2026-08-29 — ~165–270 kT / 2 sessions (O0 ~30–45 · O1 ~25–40 · O2 ~45–75 · O3 ~25–40 · O4 ~20–35 · O5 ~20–35). Supersedes the plan's ~130–215 kT / 1–2. The ≈1.25× is F1's: O3 adds a full CI round-trip and a second operator gate between diagnosis and fix; F2 adds a small extraction. NOTHING HERE ADDS A FEATURE. ⚠ Named at the signature so it is not discovered as an overrun: ~165–270 kT for a diagnosis plus a roughly one-line CI fix is HEAVY, and nearly all of it is discipline — red-proofs, two gates, records — not code. ⛔ If O3's reason is NOT the ownership mechanism, the fix is unwritten scope this band does not cover, and that branch reopens at its own ⛩ gate rather than being absorbed. Costed against conditions verified 2026-08-29, not carried."
-token_budget_actual:
+token_budget_actual: "≈225–275 kT across 2 sessions — s1 (O0–O3) ≈130–150 recorded at the time, s2 (O4–O5) ≈95–125 likewise. AT or slightly OVER the ratified ~165–270 top edge; no SO#11 retrospective triggers (≈1.0–1.02× at the top, threshold 2×). ⭐ The SESSION count landed exactly on its ratified 2, which is the half that was costed most tightly. ⚠ The overrun is named rather than left to be noticed, and it has one identifiable cause: deriving the real red streak was costed as a one-line restatement of a carried figure and became the sitting's sharpest finding (the assertion had NEVER passed in CI). A band cannot be falsified by a prose sentence claiming it holds — P4.3's lesson, applied to this field."
 created: 2026-08-29
 last_edited_by: agent_rosetta
 grounded_in:
@@ -373,3 +377,48 @@ both halves discharged. Every limb red-proven first, with its surface named. AAR
   read against its **filed, unretrofittable** prediction — `freshness: git answered` on a bare runner;
   **`F-s`'s backfill row**; B1's Speed-Insights enable → transport → first p75. ⛔ Still held: **B2b**
   on ⊳ D-E · the **Hopper reply** · **P5.1** with the humans. ⏭ Next lane: **Lane D** or **P4.4b B3**.
+
+---
+
+## Addendum 2026-09-01 (post-close) — ⭐⭐ THE NEGATIVE ARM RAN, AND THE PREDICTION HELD VERBATIM
+
+⛔ **Not a reopening.** This was filed at the close as *owed and dated*, explicitly **not** an
+acceptance criterion. It is recorded here because the prediction was filed **before** the run and can
+therefore be read, not retrofitted (SO#6 — append, never rewrite).
+
+**Run `33509441805`** — `unlighthouse-sweep`, `schedule`, on **`e6d3ba9`**, **success**. Its Build
+step, verbatim `[D]`:
+
+> `freshness: git answered — last-updated dates derived from history.`
+
+**Predicted, in writing, before the run:** *"`freshness: git answered`."* ⇒ **held.**
+
+⭐⭐ **§6 Change 3's structural claim is now MEASURED rather than argued: the `container:` block is the
+differentiating variable.** Verified at the object, because the whole value of a negative arm is that
+it is genuinely negative `[D]`:
+
+| | `gates.yml` | `unlighthouse-sweep.yml` |
+|---|---|---|
+| `container:` | **1** | **0** |
+| `safe.directory` | **2** (the O4 fix + its comment) | **0** |
+| commits in the file's history | many | **1** (`f852060`) — byte-unchanged since it landed |
+| same repo · same `fetch-depth: 0` · same `npx astro build` | ✔ | ✔ |
+
+⇒ The sweep is green **without the fix**, on the same checkout, because it has no container and so
+checkout and build share a uid. The fix did not reach it and did not need to. ⭐ **This is why O4
+refused to add the step here**: a remedy applied to an absent cause would have made this arm useless
+*and* looked like a success — `F-x`(b)'s shape, reintroduced by the commit fixing `F-x`.
+
+⚠ **Two details of the prediction were wrong and neither touches its substance — said plainly rather
+than smoothed over.** It named **07:43 UTC** and **`1c8fde6`**; the run fired at **12:45 UTC** on
+**`e6d3ba9`**. **A cron is a lower bound, not a time** — GitHub queues scheduled workflows under load —
+and the ref moved between the filing and the firing. The *reading* is unaffected: the variable under
+test is the sweep's own workflow, which is unchanged, and the fix lives only in `gates.yml`. ⭐ Fifth
+carried-fact defect in this mission, and the third of a *new* kind — after a wrong count and a wrong
+tense, **a wrong schedule**. *A cron expression is a request, not a promise.*
+
+✅ **And two independent corroborations arrived unasked, from the other writer's machine.** `gates`
+runs **`33546897238`** and **`33550897183`** — lemur's 0.4.21/0.4.22 installer pushes — both
+**success**. ⇒ O4's fix holds on a checkout this desk never touched, which is the one thing a green on
+our own push could not show. *The two-writer situation that keeps producing findings produced a
+control this time.*

@@ -1365,9 +1365,37 @@ untouched and still blocked on actors outside the session.
 >
 > ⏭ **NEXT: Lane D** (story coverage, the Gate-1 order's last lane) or **P4.4b B3**. ⛔ Still held:
 > **B2b** on ⊳ D-E (the Vitruvius scope-B reply is *staged*, not delivered) · the **Hopper reply**
-> (its own ⛩ send GO) · **P5.1** with the humans. ⚠ **Owed and dated**: the sweep's first-ever run
-> (Tuesday 07:43 UTC) against its filed prediction · B1's Speed-Insights enable → transport → first
-> p75 · `F-s`'s backfill row.
+> (its own ⛩ send GO) · **P5.1** with the humans. ⚠ **Owed and dated**: ~~the sweep's first-ever run
+> (Tuesday 07:43 UTC) against its filed prediction~~ ✅ **RUN AND READ — see the addendum below** ·
+> B1's Speed-Insights enable → transport → first p75 · `F-s`'s backfill row.
+>
+> ⭐⭐ **ADDENDUM 2026-09-01 (post-close — not a reopening; this was filed as *owed*, never as a
+> criterion): THE NEGATIVE ARM RAN AND THE PREDICTION HELD VERBATIM.** Run **`33509441805`**,
+> `unlighthouse-sweep`, `schedule`, on `e6d3ba9`, **success**. Its Build step `[D]`:
+> `freshness: git answered — last-updated dates derived from history.` — **exactly the reading filed
+> before the run, and therefore unretrofittable.**
+>
+> ⇒ **§6 Change 3's structural claim is now MEASURED, not argued: the `container:` block is the
+> differentiating variable.** Verified at the object, because a negative arm is worth something only
+> if it is genuinely negative `[D]`: the sweep has **0** `container:`, **0** `safe.directory`, and
+> **one** commit in its entire file history (`f852060`) — byte-unchanged since it landed — against
+> `gates.yml`'s **1** container and **2** `safe.directory`. **The sweep is green WITHOUT the fix**, on
+> the same repo, same `fetch-depth: 0`, same `npx astro build`. ⭐ **This is why O4 refused to add the
+> step there**: a remedy applied to an absent cause would have destroyed the arm *and looked like a
+> success*.
+>
+> ⚠ **Two details of the prediction were wrong and neither touches its substance — said plainly rather
+> than smoothed over.** It named **07:43 UTC** on **`1c8fde6`**; it fired at **12:45 UTC** on
+> **`e6d3ba9`**. **A cron is a lower bound, not a time** (GitHub queues scheduled runs under load) and
+> the ref moved in between. ⇒ **fifth carried-fact defect in this mission, and the third of a NEW
+> kind** — after a wrong count and a wrong tense, **a wrong schedule**. *A cron expression is a
+> request, not a promise.*
+>
+> ✅ **And two corroborations arrived unasked, from the OTHER writer's machine**: `gates` runs
+> **`33546897238`** and **`33550897183`** (lemur's 0.4.21 / 0.4.22 installer pushes) are both
+> **success**. ⇒ O4's fix holds on a checkout this desk never touched — the one thing a green on our
+> own push could not show. *The two-writer situation that keeps generating findings generated a
+> control this time.*
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is
