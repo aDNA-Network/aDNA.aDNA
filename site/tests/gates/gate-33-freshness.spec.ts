@@ -81,14 +81,19 @@ test.describe('gate-33 page freshness & provenance', () => {
       .filter((d): d is string => Boolean(d));
 
     // ⛩ HAUSSMANN GR-2 (F-x, debt (b)). This message used to read "a shallow git clone makes
-    // contentSource.ts omit them; set fetch-depth: 0" — and it printed that for six consecutive red
-    // runs on main while gates.yml:51 HAD ALREADY BEEN fetch-depth: 0 the entire time. The gate was
-    // converting a symptom into a confident wrong diagnosis, which is worse than a bare failure.
+    // contentSource.ts omit them; set fetch-depth: 0" — and it printed that for SEVEN consecutive
+    // red runs on main while gates.yml:51 HAD ALREADY BEEN fetch-depth: 0 the entire time. The gate
+    // was converting a symptom into a confident wrong diagnosis, which is worse than a bare failure.
+    // (The count read "six" until O3 derived it at the object; the seventh red came from a DIFFERENT
+    // machine, which is how we know nothing about one checkout was implicated. A carried count was
+    // wrong again, and again in the direction of understatement.)
     //
     // It cannot know why git could not answer; the BUILD knows, and now says so. So the gate stops
     // guessing and points at the build's own diagnostic instead of prescribing a cure. Proven at
     // artifacts/gr_2/o1_redproof_record.md: a failing git that is provably NOT a shallow clone
-    // reproduces this exact failure, message and all.
+    // reproduces this exact failure, message and all — and named at the object in CI at
+    // artifacts/gr_2/o3_ci_reason_record.md: `fatal: detected dubious ownership`. The remedy is one
+    // step in gates.yml (GR-2 O4), scoped to $GITHUB_WORKSPACE and never `*`.
     expect(
       dates.length,
       'no last-updated dates were rendered. contentSource.ts omits them rather than guessing, in ' +

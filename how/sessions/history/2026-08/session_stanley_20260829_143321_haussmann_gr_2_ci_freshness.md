@@ -2,13 +2,13 @@
 type: session
 session_id: session_stanley_20260829_143321_haussmann_gr_2_ci_freshness
 created: 2026-08-29
-updated: 2026-08-29
-status: active
+updated: 2026-09-01
+status: completed
 tier: 1
 last_edited_by: agent_rosetta
 campaign: campaign_haussmann
 mission: mission_haussmann_gr_2_ci_freshness
-increment: "GR-2 O0 → O2 — open, conv-13 pass, ⛩ budget gate, O1 red-proof, O2 build (three states + build diagnostic + gate-33 message); halt at ⛩ O3's push GO"
+increment: "GR-2 O0 → O3 — open, conv-13 pass, ⛩ budget gate, O1 red-proof, O2 build (three states + build diagnostic + gate-33 message), ⛩ O3 push GO granted and AC-1 CLOSED from CI. Halts at ⛩ O4's push GO."
 executor_tier_declared: opus
 executor_tier_actual: opus
 token_budget_estimated: "⛩ RATIFIED 2026-08-29 — ~165–270 kT / 2 sessions (O0 ~30–45 · O1 ~25–40 · O2 ~45–75 · O3 ~25–40 · O4 ~20–35 · O5 ~20–35). Supersedes the plan's ~130–215 kT / 1–2."

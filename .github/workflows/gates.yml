@@ -50,6 +50,29 @@ jobs:
         with:
           fetch-depth: 0
 
+      # HAUSSMANN GR-2 O4 — authored on the reason CI itself printed, and on nothing else.
+      #
+      # Run 33465663585's Build step, verbatim: "freshness: GIT COULD NOT ANSWER — dates omitted.
+      # This is NOT a shallow clone and fetch-depth will not fix it. git said: fatal: detected
+      # dubious ownership in repository at '/__w/aDNA.aDNA/aDNA.aDNA'". Seven consecutive reds on
+      # main, all of them this.
+      #
+      # Mechanism: the runner creates the workspace as its own uid; this job runs in a `container:`
+      # as a different one. actions/checkout DOES write safe.directory — into a TEMPORARY global git
+      # config it then discards (its own log says so in those words) — so by the time `npx astro
+      # build` shells out to git, git refuses. Not shallowness: fetch-depth: 0 above was correct the
+      # whole time and was never the lever.
+      #
+      # Scoped to $GITHUB_WORKSPACE, NEVER `*`. A wildcard silences this class everywhere, including
+      # where it is a real warning — the same defect shape as the message GR-2 just removed from
+      # gate-33. $GITHUB_WORKSPACE resolves to /__w/aDNA.aDNA/aDNA.aDNA, the exact path in git's
+      # error, so the scoped form is sufficient.
+      #
+      # Deliberately NOT added to unlighthouse-sweep.yml: no container there, so no refusal to fix,
+      # and a remedy applied to an absent cause is F-x(b) reintroduced by the commit fixing F-x.
+      - name: Trust the workspace (the container's uid does not own the checkout)
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
       - uses: actions/setup-node@v4
         with:
           node-version: 24
