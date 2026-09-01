@@ -9,7 +9,12 @@ phase: GR                  # Grande Revue lane, no phase number — GR-1's prece
                            # NOT edited here. `phase_count` HOLDS at 6.
 decade: 2
 owner: stanley
-status: in_progress        # ⛩⛩ PRE-BUILD GATE PASSED 2026-08-29 — SIGNED WITH AMENDMENTS.
+status: completed          # ✅ CLOSED 2026-09-01 — all six criteria met, AAR filed (SO#5).
+                           # AC-4 was met AT THE RUN (33467130677, success) and could not have been
+                           # met anywhere else; AC-6 closed by convention 19 plus the F-x row, which
+                           # had to be AUTHORED before it could be struck. ⛔ Nothing deployed and
+                           # nothing owed to production — AC-5 measured the shipped bytes unchanged.
+                           # ⛩⛩ PRE-BUILD GATE PASSED 2026-08-29 — SIGNED WITH AMENDMENTS.
                            # artifacts/gr_2/ac_amendment_proposal.md is `accepted`; its §6 records
                            # three changes taken AT the signature, two of them corrections to the
                            # pass's own findings (F3's remedy replaced — delete the self-grep rather
@@ -268,12 +273,103 @@ both halves discharged. Every limb red-proven first, with its surface named. AAR
   run fires **2026-09-01 07:43 UTC** on `1c8fde6`, on a **bare runner with no container**, where
   checkout and build share a uid. **Predicted reading: `freshness: git answered`.** If it holds,
   §6 Change 3's structural claim is *measured* rather than argued.
-- ⏭ **NEXT = ⛩ O4's PUSH GO.** The fix is **designed, not built** (record §6): one `gates.yml` step,
+- ~~⏭ **NEXT = ⛩ O4's PUSH GO.**~~ ✅ **GRANTED AND DONE — see the O4 block below.** The fix was
+  **designed, not built** (record §6): one `gates.yml` step,
   `git config --global --add safe.directory "$GITHUB_WORKSPACE"`, after checkout and before build.
   ⚠ Scoped to `$GITHUB_WORKSPACE`, **never `*`** · ⚠ **not** added to the sweep, which has no
   container and no refusal to fix — a remedy applied to an absent cause is `F-x`(b) reintroduced by
   the commit fixing `F-x`. Run `33465663585` is `V4`'s standing **red control**.
 
+### 2026-09-01 — ⛩ O4's push GO granted (pre-granted, conditional); **`AC-4` MET AT THE RUN**
+
+- ✅ **O4 CLOSED `[V4]` — `AC-4` IS MET.** `artifacts/gr_2/o4_ci_green_record.md`. One step added to
+  `.github/workflows/gates.yml` after checkout — `git config --global --add safe.directory
+  "$GITHUB_WORKSPACE"` — authored on O3's captured reason and nothing else. Pushed
+  `1c8fde6..e6d3ba9`. Run **`33467130677`**, **success**. CI's Build step, verbatim `[D]`:
+  > `freshness: git answered — last-updated dates derived from history.`
+- ✅ **`F6` satisfied with nothing to absorb, and the comparison is exact.** Against the standing red
+  control `33465663585`: **653 assertions both runs**, 649+1failed → **650+0failed**. **Exactly one**
+  assertion changed state, and it is `gate-33:78`. No non-gate-33 failure to file; no silent
+  improvement elsewhere to mistake for one. Visual lane 26 passed.
+- ⭐ **One ordering constraint the ratified design did not name**: the job sets
+  `defaults.run.working-directory: site`, so a step placed *before* checkout cannot `cd` into a
+  directory that does not exist yet. "After checkout" is load-bearing for **two** reasons, not one.
+- ⚠ **Same-diff coupling checked, not assumed** (convention 7): `gate-51` parses `gates.yml` as YAML
+  and reads `concurrency.group` only — inert to an added step; `gates.yml:51` is still
+  `fetch-depth: 0`, so `gate-33`'s and `gate-52`'s citations of that line stay accurate.
+- ⚠⚠ **THE CARRIED STREAK WAS WRONG A THIRD TIME, AND THE TRUE FORM IS STRONGER THAN ANY NUMBER.**
+  Every record here says *"seven consecutive reds"*. Derived: the last **green** `gates` run on `main`
+  was **`32191049401`, 2026-08-18T22:05 UTC**; the failing assertion landed at **`0eb48fa`** (P2.3 O2)
+  at **2026-08-19 05:13 UTC**, *after* it; and **no run on `main` has succeeded in between** (46
+  failure · 15 cancelled · 0 success), with **13** consecutive runs verified one-by-one as carrying
+  exactly one `gate-33` failure. ⇒ **`gate-33`'s date assertion had NEVER ONCE PASSED IN CI. This run
+  is its first green, ever** — red for its entire life on the branch, ~14 days, while the local lane
+  was green throughout. ⚠ Stated at its exact width: that is *"no run in which every assertion
+  passed"*, **not** a claim that all 46 failures were `gate-33` failures (several carried other reds
+  that later missions fixed). ⭐ **Three carried counts wrong in one mission — six → seven → never
+  green — every one understating.** *The habit keeps paying, and what it keeps catching is our own
+  record.*
+- ⚠ **And a fourth carried defect, of a new kind: a wrong TENSE.** O3's record and the Next Session
+  Prompt both say to read the unlighthouse sweep's first-ever run *"**fired** 2026-09-01 07:43 UTC"*.
+  Derived at the open: it has **never run**, its cron is `43 7 * * 2`, 2026-09-01 **is** that Tuesday,
+  and 07:43 UTC was **~4 h in the future**. The prediction stands, owed to a later sitting, and O4
+  does not spoil it — the sweep's own workflow is deliberately untouched, so it remains the negative
+  arm whichever commit it runs against. ⚠ Timing honoured: pushed 03:41, run finished 03:48, clearing
+  the 07:43 window by four hours (a push inside it would have **cancelled** the sweep's first run).
+- ⛔ **No deploy, and none is owed** — `AC-5` was measured at O2 and production has always built on a
+  machine where git answers. Nothing about production changed today.
+
+### 2026-09-01 — O5: convention 19, the register, the close
+
+- ✅ **O5 CLOSED `[V6]` — `AC-6` IS MET.** Campaign **convention 19** — *derive `main`'s CI status at
+  session open, one command* — is in the numbered list, ⛔ **as a habit with no checker**, and the
+  restraint carries an extra edge here: **the thing that failed WAS an automated monitor**, so
+  answering an unread monitor with a second monitor is the defect proposing itself as its own remedy.
+  ⭐ It is **convention 16 with the polarity reversed**: 16 is a check that *stopped running*; this is
+  a check that ran on every push for two weeks, went red every time, and **nobody read it**.
+- ⭐⭐ **`AC-6`'s FIRST ACT WAS TO FIND THAT THE ROW IT WAS SENT TO STRIKE DID NOT EXIST.** `F-x` had
+  **no register row** — the 08-29 campaign `CLAUDE.md` said *"`F-x` added … 22 total · 15 struck ·
+  7 live"* while the register held **21 / 15 / 6** and no such row `[D]`. ⇒ **`F-u`'s exact class,
+  third sighting**, landing on the one row a whole mission was convened to discharge. **The row was
+  authored in full and struck in the same commit** (SO#6 — the ledger shows what was *owed*, not
+  merely that nothing is owed now), and the tally is corrected at the sentence that typed it.
+- ⭐ **`F-y` is wider than the handoff framed it.** It was routed as *"the register has no derivable
+  tally"*; derived, the `F-` letter sequence reads **a–r, u, v, w** — `t` missing for a *documented*
+  reason (withdrawn as a duplicate of `F-l`), and **`s` and `x` missing because nobody wrote the
+  row.** **`F-s`, the production regression that raised the deploy freeze and cost four missions of
+  unshipped work, still has no row.** The habit: **an `F-` ID is minted BY WRITING THE ROW.**
+  ⛔ `F-s`'s backfill is **named, not smuggled into `GR-2`'s scope** — it is a closed incident and
+  belongs to whoever opens it deliberately.
+- **Register re-derived at the commit, not carried:** total **23** · struck **16** · live **7**
+  (F-d · F-e · F-j · F-k · F-v · F-w · **F-y**). ⚠ A naive `awk -F'|'` cell count flagged the new
+  `F-y` row as malformed; it is not — the row contains one **escaped** `\|` inside a `grep` pattern.
+  **That is `F-l`'s documented false positive, reproduced by the row that documents it**, and the
+  re-check honouring `(?<!\\)\|` reads **4 cells** for both new rows.
+
 ## AAR (SO#5)
 
-*(mandatory before `status: completed`)*
+- **Worked.** **Deriving instead of carrying, on every single fact this mission touched.** It caught
+  four carried defects in one sitting — the streak (*seven* → **never green**), a wrong **tense**
+  (*"fired"* for an event four hours in the future), a routing claim false at its destination
+  (`F-x` had no row), and the tally that counted the row that did not exist. ⭐ **Also the two-push
+  shape** the convention-13 pass forced at O0: reproduce → **read CI's own reason** → *then* author.
+  The fix is one line, and authoring it on a local reproduction would have been indistinguishable
+  from authoring it on evidence — right answer, no proof.
+- **Didn't.** The **carried record was the weakest instrument in the room, four times over**, and
+  three of those four had been written by this desk two days earlier. ⚠ And the O4 record was drafted
+  saying *"this ends a seven-red streak"* before the streak was derived — the fifth carried figure,
+  caught only because deriving it was the plan. ⚠ `F-s` remains rowless: this sitting found the gap
+  and **deliberately did not close it**, which is honest scoping and still an open debt.
+- **Finding.** ⭐⭐ **`gate-33`'s date assertion had NEVER ONCE PASSED IN CI.** It landed at `0eb48fa`
+  *after* the last green run and no `gates` run on `main` succeeded between them — ~14 days, 46 failed
+  runs, **two writers' machines** — while the local lane was green throughout. **A green you do run
+  hides a red you do not.** ⭐⭐ And the second-order finding: **a mission can be convened on a debt
+  that was never recorded.** `GR-2` existed to discharge `F-x`; `F-x` was a sentence, not a row.
+- **Change.** The fix landed **in the workflow that was broken**, scoped to `$GITHUB_WORKSPACE` and
+  never `*` — refusing the wildcard *because* a wildcard is the same defect shape as the message this
+  mission removed: silencing a class to make one instance quiet. Both remaining gaps became a **habit
+  and a row** (convention 19, `F-y`) rather than a sixth instrument, and the reason is on their face.
+- **Follow-up.** ⚠ **Owed and dated**: the unlighthouse sweep's first-ever run (Tuesday **07:43 UTC**)
+  read against its **filed, unretrofittable** prediction — `freshness: git answered` on a bare runner;
+  **`F-s`'s backfill row**; B1's Speed-Insights enable → transport → first p75. ⛔ Still held: **B2b**
+  on ⊳ D-E · the **Hopper reply** · **P5.1** with the humans. ⏭ Next lane: **Lane D** or **P4.4b B3**.
