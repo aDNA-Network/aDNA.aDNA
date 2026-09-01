@@ -1108,10 +1108,86 @@ untouched and still blocked on actors outside the session.
 > scoped this OUT of the deploy sitting: it gets its own, and a fix authored on an unverified cause
 > is the thing the last session warned against. Register **22 total · 15 struck · 7 live**.
 >
-> ⏭ **NEXT: Lane D** (story coverage, the Gate-1 order's last lane) or **P4.4b B3**; `F-x`'s own
-> sitting is now competing with both. ⛔ Still held: **B2b** on ⊳ D-E (Vitruvius scope-B reply is
-> *staged*, not delivered) · the **Hopper reply** (separate ⛩) · **P5.1** with the humans. ⚠ B1's
+> ~~⏭ **NEXT: Lane D** (story coverage, the Gate-1 order's last lane) or **P4.4b B3**; `F-x`'s own
+> sitting is now competing with both.~~ ✅ **`F-x`'s sitting IS `GR-2` — see the block below.**
+> ⛔ Still held: **B2b** on ⊳ D-E (Vitruvius scope-B reply is *staged*, not delivered) · the **Hopper
+> reply** (separate ⛩) · **P5.1** with the humans. ⚠ B1's
 > vitals emitter is live but **zero-network** — owed: ⛩ Speed Insights enable → transport → first p75.
+
+> ⛩⛩ **`GR-2` IS SIGNED AND BUILDING — O0/O1/O2 CLOSED (2026-08-31), HALTED AT ⛩ O3's PUSH GO.**
+> `missions/mission_haussmann_gr_2_ci_freshness.md`, **`in_progress`**. GRANDE REVUE's second lane,
+> convened on `F-x` — **two debts**: (a) the cause of six consecutive `gate-33-freshness` reds on
+> `main`, and (b) an error message naming a remedy `gates.yml:51` had applied the whole time.
+> Convention 13 ran **complete at 42/42 with coverage recorded** (6 defective · 8 clean · 28
+> correctly unrelated), **signed with amendments**; budget ⛩ ratified **~165–270 kT / 2 sessions**;
+> `mission_count: 28 → 29`, `phase_count` **HOLDS at 6**. **Ninth consecutive mission where the pass
+> has paid for itself.**
+>
+> ⭐⭐ **O1: THE PLANNED MUTATION FAILED TO MUTATE, AND THAT VINDICATED `F1` EMPIRICALLY.** Docker
+> Desktop remaps bind-mount ownership to the running user, so the local container **cannot** produce
+> a uid mismatch at any uid — measured at 0 and 1001. Not *"does not"*; **cannot**. `F1` had predicted
+> a local reproduction could not close AC-1 and gave the wrong reason; the truth is stronger and
+> simpler — **the local surface has no uid pair at all.** The mechanism was then proven on a real
+> filesystem with a control (`fatal: detected dubious ownership`, exit 128, **empty stdout** ⇒
+> `'' !== 'false'` ⇒ `isShallow` true), and the code path red-proven **at the gate, in CI's image**:
+> a cause-agnostic failing-git stub reproduces **CI's exact signature** while inducing a cause that is
+> **provably not shallowness**. ⇒ **`F-x`(b) demonstrated, not argued.**
+>
+> ✅ **O2 CLOSED 2026-08-31 — `AC-2` ✅ `AC-3` ✅ `AC-5` ✅** (`artifacts/gr_2/o2_redproof_record.md`).
+> `contentSource.ts` carries three states over a **pure** `freshnessStateFrom(probe)`; `git()` **pipes
+> stderr instead of discarding it**; every build prints one `freshness:` line naming the state and
+> quoting git's own words. **Warns, does not throw.** `gate-52` red-proven **8/8** (5 mutations ·
+> 3 controls); `V3`'s in-container mutation reproduces the failure with the diagnostic **naming the
+> cause and prescribing nothing**, control green. Chromium lane **645 → 653** · fast lane
+> **526 → 534/1skip** · `html-validate` **0**.
+>
+> ⭐⭐ **`V5`'s NO-CHANGE CONTROL FAILED ON ITS FIRST RUN, EXACTLY WHERE `F4` SAID IT WOULD — AND THE
+> LIMB WAS WRITTEN TO PROVE THIS MISSION HARMLESS.** Two builds of *unchanged* source differ in
+> **15 of 709** paths: Astro mints a fresh random DOM id per render for the diagram components'
+> `aria-labelledby` wiring (`mermaid-*` · `triad-*` · `convergence-*`). Run in its original
+> control-less form — after the change, as originally specified — V5 would have reported **"O2
+> altered the shipped artifact"**: *a confident wrong diagnosis produced by an uncontrolled
+> instrument, which is `F-x`(b)'s own shape inside the limb built to certify this mission safe.*
+> Exclusion **named and asserted** (gate-48's ratified discipline), control then **0/709**, and V5
+> passes. ⇒ **AC-5 met; no deploy is owed and none is sought.**
+>
+> ⭐ **AND MY OWN DIAGNOSTIC SHIPPED ILLEGIBLE, WITH `grep` HIDING IT.** The line first rendered glued
+> to Astro's route progress — `…/aep-1/index.htmlfreshness: git answered…` — because `loadDates()`
+> fires mid-render and Astro emits progress without a trailing newline. **`grep` found it every time;
+> a human scrolling a CI log would not, and being read in a CI log is the line's entire purpose.**
+> Found by *reading* the log rather than searching it. Fixed at the call site, never in the returned
+> string (gate-52 asserts that string verbatim). ⇒ *convention 17's amendment — the surface must match
+> the claim's own verb — arriving in a build log instead of a page.*
+>
+> ⚠ **Deviation `D1` recorded, not absorbed**: `F2`'s amendment said *"the module-level value becomes
+> that function applied to a real probe"*; the probe moved **inside `loadDates()`** instead, so
+> importing the module executes **no git at all** (a cleaner seam than F2 asked for) and a **`git log`
+> that fails after a healthy probe** reaches the same diagnostic. Verified before the change:
+> `isShallow` had no consumer outside the file.
+>
+> ⚠ **A carried figure was RIGHT for once, and the naive comparison was wrong.** `npm run test:gates`
+> printed **653** against a carried **667**, which reads as 14 tests vanishing. Derived: chromium
+> **653** · snapshot **26** · **all-projects 679** = 671 (HEAD) + 8, and 667 + GR-1's 4 = **671**.
+> Nothing missing — the campaign's "suite" figure is **all-projects** and `test:gates` is the chromium
+> lane. ⇒ **a count is only comparable to a count produced by the same command.** This increment's
+> own delta was isolated with `--list` (gate-52 present vs absent): **+8, removed nothing.**
+>
+> ⚠ **Two more harness defects of mine, both caught by their own output** (the standing streak, now
+> eighth and ninth this campaign): a canonical-hash run that produced a **0-line file and compared
+> cleanly against nothing** — *the cheapest possible false green*, now guarded by a `>700` floor — and
+> a **grouped-diff read** that inflated the volatile set 15 → 16 by counting an unchanged `.md` twin
+> shown as hunk context. *A truncated reading of a diff is a derived figure.*
+>
+> ⛔ **`AC-1` IS STILL OPEN AND NOTHING IN O2 NARROWS IT.** Everything so far shows a mechanism
+> *sufficient* to produce CI's exact signature; nothing yet shows it is CI's — and by O1's measurement
+> it **cannot** be shown from this machine. **O3 only.**
+>
+> ⏭ **NEXT: ⛩ O3's PUSH GO** — push the diagnostic **alone** to `main` (ruled at the signature: `main`
+> is already red, so the extra red run costs nothing and a PR buys no evidence), then read CI's
+> **named** reason. `O4` authors the `gates.yml` fix on **that reason and nothing else**, under its own
+> ⛩ GO, and verifies green **at the run** (any non-gate-33 failure is a **new finding, never
+> absorbed** — F6). `O5` = convention 19 · strike `F-x` · route `F-y` · AAR. ⛔ **No deploy at any
+> point.**
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD
 GATE — nothing is built and its budget is NOT ratified.**~~ *(true at S1; superseded — the amendment is

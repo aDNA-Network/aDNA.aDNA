@@ -80,9 +80,21 @@ test.describe('gate-33 page freshness & provenance', () => {
       .map((p) => /<time datetime="([^"]+)"/.exec(p.html)?.[1])
       .filter((d): d is string => Boolean(d));
 
+    // ⛩ HAUSSMANN GR-2 (F-x, debt (b)). This message used to read "a shallow git clone makes
+    // contentSource.ts omit them; set fetch-depth: 0" — and it printed that for six consecutive red
+    // runs on main while gates.yml:51 HAD ALREADY BEEN fetch-depth: 0 the entire time. The gate was
+    // converting a symptom into a confident wrong diagnosis, which is worse than a bare failure.
+    //
+    // It cannot know why git could not answer; the BUILD knows, and now says so. So the gate stops
+    // guessing and points at the build's own diagnostic instead of prescribing a cure. Proven at
+    // artifacts/gr_2/o1_redproof_record.md: a failing git that is provably NOT a shallow clone
+    // reproduces this exact failure, message and all.
     expect(
       dates.length,
-      'no last-updated dates were rendered — a shallow git clone makes contentSource.ts omit them; set fetch-depth: 0',
+      'no last-updated dates were rendered. contentSource.ts omits them rather than guessing, in ' +
+        'THREE different situations — a shallow clone, a git that could not answer, and a git log ' +
+        'that failed. They need different fixes and only one of them is fetch-depth. Read the ' +
+        'build log: the build prints a "freshness:" line naming which one it hit and what git said.',
     ).toBeGreaterThan(90);
 
     const malformed = dates.filter((d) => !/^\d{4}-\d{2}-\d{2}$/.test(d));

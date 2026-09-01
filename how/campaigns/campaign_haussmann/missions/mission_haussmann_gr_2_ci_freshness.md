@@ -192,7 +192,42 @@ both halves discharged. Every limb red-proven first, with its surface named. AAR
     sixth instrument-defect-before-subject this campaign.
 - ⛔ **AC-1 STAYS OPEN.** Everything so far shows a mechanism *sufficient* to produce CI's exact
   signature. Nothing yet shows it is CI's. **O3 only.**
-- ⏭ **NEXT = O2** (three-state + diagnostic + message), then ⛩ **O3's push GO**.
+- ~~⏭ **NEXT = O2** (three-state + diagnostic + message), then ⛩ **O3's push GO**.~~
+
+### 2026-08-31
+
+- ✅ **O2 CLOSED `[V2 · V3 · V5]`** — `artifacts/gr_2/o2_redproof_record.md`. **AC-2 ✅ AC-3 ✅
+  AC-5 ✅.** `contentSource.ts` now carries three states over a pure `freshnessStateFrom(probe)`,
+  `git()` **pipes stderr instead of discarding it**, and every build prints one `freshness:` line
+  naming the state and quoting git's own words. **Warns, does not throw**, per the signature.
+  `gate-52` red-proven **8/8** (5 mutations · 3 controls); `V3` in CI's own image reproduces the
+  failure with the diagnostic **naming the cause and prescribing nothing**, control green.
+  Chromium lane **645 → 653**, fast lane **526 → 534/1skip**, `html-validate` **0**.
+- ⭐⭐ **V5's NO-CHANGE CONTROL FAILED ON ITS FIRST RUN, EXACTLY WHERE `F4` SAID IT WOULD.** Two
+  builds of *unchanged* source differ in **15 of 709** paths — Astro mints a fresh random DOM id per
+  render for the diagram components' `aria-labelledby` wiring (`mermaid-*`, `triad-*`,
+  `convergence-*`). Run in its original control-less form, V5 would have reported **"O2 altered the
+  shipped artifact"** — *a confident wrong diagnosis from an uncontrolled instrument, which is
+  `F-x`(b)'s own shape inside the limb written to prove this mission harmless.* Exclusion **named and
+  asserted**, control then **0/709**, and V5 passes.
+- ⭐ **A defect in my own diagnostic, found by LOOKING at it rather than grepping for it.** The line
+  first rendered glued to Astro's route progress —
+  `…/aep-1/index.htmlfreshness: git answered…` — because `loadDates()` fires mid-render and Astro
+  emits progress without a trailing newline. `grep` found it every time; a human scrolling a CI log
+  would not, **and being read in a CI log is the line's entire purpose.** Fixed at the call site,
+  never in the returned string (gate-52 asserts that string verbatim).
+- ⚠ **Deviation `D1` from the signed amendment, recorded not absorbed.** F2 said *"the module-level
+  value becomes that function applied to a real probe"*; the probe moved **inside `loadDates()`**
+  instead, so importing the module executes **no git at all** (a cleaner seam than F2 asked for) and
+  a **`git log` that fails after a healthy probe** can reach the same diagnostic. Verified first:
+  `isShallow` had no consumer outside the file.
+- ⚠ **The carried suite figure and the printed one are different lanes**, and the naive comparison
+  looked like 14 tests vanishing. Derived: chromium **653**, snapshot **26**, all-projects **679** =
+  671 (HEAD) + 8. 667 + GR-1's 4 = 671. Nothing missing. *A count is only comparable to a count from
+  the same command* — and this is the first sitting where the **carried** figure was right.
+- ⛔ **AC-1 IS STILL OPEN**, and nothing in O2 narrows it. **O3 only.**
+- ⏭ **NEXT = ⛩ O3's PUSH GO** — push the diagnostic **alone** to `main`, then read CI's *named*
+  reason. `O4`'s `gates.yml` fix is authored on that reason and on nothing else.
 
 ## AAR (SO#5)
 
