@@ -6,11 +6,11 @@ campaign: campaign_haussmann
 phase: P4
 decade: 2
 owner: stanley
-status: in_progress   # ⛩ PRE-BUILD GATE PASSED 2026-09-01 — convention-13 pass COMPLETE at 35/35 with coverage recorded below (3 defects found, all resolved in the criteria BEFORE the signature); budget RATIFIED at the full ~120–180 kT band; O5b (F-s backfill) RULED IN. O1 executed ahead of the gate by design (it is measurement, not build, and three criteria were unwritable without its verdict — see "Why O1 ran first"). Build (O2/O3) and push (O4) begin on this signature.
+status: completed   # ✅ CLOSED 2026-09-01 — ALL SEVEN CRITERIA MET, AAR FILED (SO#5). AC-1 ✅ AC-2 ✅ AC-3 ✅ AC-4 ✅ AC-5 ✅ AC-6 ✅ AC-7 ✅. CI `33572683681` on `9419b4e` **success**: 650 passed / 0 failed / 3 skipped against the red control `33558250778`'s 649 / 1 / 3 — **exactly one assertion changed state**, no silent improvement elsewhere. ⛔ Nothing deployed and nothing owed to production: the diff carries no site bytes. Prior: ⛩ PRE-BUILD GATE PASSED 2026-09-01 — convention-13 pass COMPLETE at 35/35 with coverage recorded below (3 defects found, all resolved in the criteria BEFORE the signature); budget RATIFIED at the full ~120–180 kT band; O5b (F-s backfill) RULED IN. O1 executed ahead of the gate by design (it is measurement, not build, and three criteria were unwritable without its verdict — see "Why O1 ran first"). Build (O2/O3) and push (O4) begin on this signature.
 mission_class: verification
 executor_tier: opus   # instrument design + red-test reasoning is judgment work; the defect class this fixes is precisely the one a cheaper tier reproduces.
 token_budget_estimated: "⛩ PROPOSED 2026-09-01 — ~120–180 kT / 1–2 sessions. O0 ~25–40 (the complete convention-13 pass) · O1 ~20–30 · O2 ~15–25 · O3 ~35–50 (the harness, and the largest share — it is the part with a real design in it) · O4 ~10–15 · O5 ~15–20. Basis: no new surface, no new page, no deploy; the cost is reasoning about an instrument, not building one."
-token_budget_actual:
+token_budget_actual: "≈150–185 kT — at/just over the top of the ratified ~120–180 kT band, recorded HERE at the time rather than reconstructed later (SO#11). ⚠ Basis named rather than asserted: ~40 kT is the campaign CLAUDE.md, auto-loaded and the largest single read in any HAUSSMANN session. ~25 kT is UNPLANNED SCOPE and it is the sitting's best purchase — AC-7's threshold failed on the ratified mechanism, forcing a probe that found a design 4× cheaper AND strictly more correct; the plan had costed that criterion as 'measure and record'. Session count landed at **1**, under the ratified 1–2."
 created: 2026-09-01
 last_edited_by: agent_rosetta
 grounded_in:
