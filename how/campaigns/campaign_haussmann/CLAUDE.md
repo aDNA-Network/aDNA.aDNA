@@ -901,8 +901,11 @@ untouched and still blocked on actors outside the session.
 > scope-B reply *staged on their side*; a staged reply is not a delivered one, so the ⛩ re-entry gate
 > has not fired. ~~⏭ **NEXT: GR-1 Lane A at its own conv-13 pre-build gate** (the ratified Gate-1
 > order)~~ ✅ **GR-1 IS OPEN — see the GR-1 block below.** P4.4b's own remainder is **B3** (+ B2b when
-> the reply lands). Nothing deployed — P4.4b is met on-build; the first on-GitHub scheduled sweep run
-> is owed on the next ⛩ push GO.
+> the reply lands). Nothing deployed — P4.4b is met on-build; ~~the first on-GitHub scheduled sweep run
+> is owed on the next ⛩ push GO.~~ ⛔ **STRUCK 2026-09-01 AT GR-2 O3 — FALSE, AND NEVER CHECKED
+> AGAINST THE FILE IT DESCRIBES.** `unlighthouse-sweep.yml` triggers on `schedule` +
+> `workflow_dispatch` **only** `[D]`; **a push neither triggers it nor is required for it.** Its first
+> run is owed to the **Tuesday 07:43 UTC cron**, and fires 2026-09-01 whatever anyone does.
 
 > ⏸⛩ **`GR-1` IS OPEN AND HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE (2026-08-28) — nothing built,
 > criteria NOT ratified, budget NOT ratified.** `missions/mission_haussmann_gr_1_trust_path.md`,
@@ -1194,11 +1197,64 @@ untouched and still blocked on actors outside the session.
 > suite has run — and O3 needs a *clean* CI signal. ⇒ **O3 = reconcile (`pull --rebase`) → re-run the
 > suite → then push.** ⛔ Not done here: reconciliation is part of performing the push.
 >
-> ⏭ **NEXT: ⛩ O3's PUSH GO** — push the diagnostic **alone** to `main` (ruled at the signature: `main`
-> is already red, so the extra red run costs nothing and a PR buys no evidence), then read CI's
-> **named** reason. `O4` authors the `gates.yml` fix on **that reason and nothing else**, under its own
-> ⛩ GO, and verifies green **at the run** (any non-gate-33 failure is a **new finding, never
-> absorbed** — F6). `O5` = convention 19 · strike `F-x` · route `F-y` · AAR. ⛔ **No deploy at any
+> ~~⏭ **NEXT: ⛩ O3's PUSH GO** — push the diagnostic **alone** to `main`, then read CI's **named**
+> reason.~~ ✅ **GRANTED AND DONE 2026-09-01.**
+>
+> ⛩⛩ **O3 CLOSED — `AC-1` IS CLOSED. CI NAMED ITS OWN CAUSE, IN GIT'S OWN WORDS.**
+> `artifacts/gr_2/o3_ci_reason_record.md`. Rebased onto lemur's 0.4.20 (clean, zero overlap), suite
+> re-run on the merged tree **652 passed / 1 skipped · html-validate 0**, gitleaks clean, pushed
+> `a68c88c..1c8fde6`. Run **`33465663585`**, Build step, verbatim `[D]`:
+> > `freshness: GIT COULD NOT ANSWER — dates omitted. This is NOT a shallow clone and fetch-depth
+> > will not fix it. git said: fatal: detected dubious ownership in repository at
+> > '/__w/aDNA.aDNA/aDNA.aDNA'`
+>
+> ⇒ **seven** consecutive reds explained. **Not a shallow clone.** `fetch-depth: 0` was correct the
+> whole time and was never the lever — which is precisely what `F-x`(b) said the old message was
+> wrong about, now shown **from the failing surface** rather than argued from a local one.
+> **`F-x`(a) is discharged.** ✅ `F6` clean: **exactly one** failing assertion (`gate-33:78`);
+> 649 passed · 3 skipped · 1 failed = **653**, matching the local lane; **gate-52 passed in CI**, on
+> the very runner whose git refuses — deviation `D1` paying off.
+>
+> ⭐⭐ **THE PREDICTION HELD VERBATIM.** `gate-52`'s `DUBIOUS` constant, written 08-29 from the
+> hypothesis, is **byte-identical** to the string CI produced on 09-01. ⛔ And it is stated carefully,
+> because this is where a good result gets overclaimed: that does **not** retroactively promote `V2`
+> from a pure-function test, and O1's `F1` was right that no local run could close `AC-1`. **This run
+> closed it, and nothing else.** *Corroboration of a mechanism is not a substitute for the
+> measurement.*
+>
+> ⭐ **THE REMEDY WAS ALREADY IN OUR OWN TREE, AND O1 WAS RIGHT TO STRIKE THE SENTENCE CLAIMING SO.**
+> `visual_regression_container.sh:74` runs `git config --global --add safe.directory /work`; at O1
+> the claim that we wrote it *"because git fails in this exact image"* was struck as an `[I]` dressed
+> as a `[D]`, since git works fine in that image on this host. **Both facts hold, and neither cancels
+> the other.** ⇒ ***a defensive measure you cannot demonstrate on your own machine is not thereby
+> unjustified — it is unmeasured.*** Striking the *evidence* while keeping the *line* was correct on
+> both counts.
+>
+> ⚠⚠ **TWO CARRIED CLAIMS IN THIS FILE WERE FALSE, BOTH ABOUT INSTRUMENTS NOBODY HAD READ.**
+> **(1)** The red streak is **7, not 6** — lemur's 08-30 push failed on the same single assertion,
+> **from a different machine**, so nothing about this checkout is implicated and the failure is
+> CI-side and persistent across writers. **(2)** *"the sweep's first on-GitHub run is owed on the next
+> ⛩ push GO"* (said twice above) is **FALSE**: `unlighthouse-sweep.yml` triggers on `schedule` +
+> `workflow_dispatch` **only** — a push neither triggers it nor is required for it, and it has never
+> run. ~~first run owed on a push GO~~ ⇒ *the campaign's own class again: a confident statement about
+> an instrument, written without opening the instrument.*
+>
+> ⭐ **A PREDICTION FILED BEFORE ITS RUN, so it cannot be retrofitted.** The sweep's **first-ever** run
+> fires **2026-09-01 07:43 UTC** on `1c8fde6`, on a **bare runner with no `container:` block**, where
+> checkout and build share a uid and no refusal can arise. **Predicted reading: `freshness: git
+> answered`.** If it holds, §6 Change 3's structural claim — *the container is the only
+> differentiating variable* — is **measured** rather than argued. ⚠ It has never run; a failure there
+> is a **new finding, filed and never absorbed** (F6), and it is a different workflow so it cannot
+> muddy gate-33's signal. ⚠ **Timing hazard, named:** `gates.yml` is `cancel-in-progress: true` on the
+> group the sweep **joins**, so a push landing while the sweep runs **cancels it**.
+>
+> ⏭ **NEXT: ⛩ O4's PUSH GO.** The fix is **designed, NOT built** (record §6): one `gates.yml` step,
+> `git config --global --add safe.directory "$GITHUB_WORKSPACE"`, after checkout, before build.
+> ⚠ Scoped to `$GITHUB_WORKSPACE`, **never `*`** — a wildcard silences the class everywhere including
+> where it is a real warning, the same defect shape as the message just removed. ⚠ **Not** added to
+> the sweep, which has no container and no refusal to fix: *a remedy applied to an absent cause is
+> `F-x`(b) reintroduced by the commit fixing `F-x`.* Run `33465663585` is `V4`'s standing **red
+> control**. Then `O5` = convention 19 · strike `F-x` · route `F-y` · AAR. ⛔ **No deploy at any
 > point.**
 
 ~~**`P4.3` is `in_progress` AT ITS PRE-BUILD

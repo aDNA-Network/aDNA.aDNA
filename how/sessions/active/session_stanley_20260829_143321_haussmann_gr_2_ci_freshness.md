@@ -98,22 +98,44 @@ route progress. Found by reading the log rather than searching it.
 of mine caught by their own output (a 0-line hash file that compared cleanly against nothing; a
 grouped-diff readthat inflated 15 → 16).
 
+### O3 ✅ 2026-09-01 — ⛩ push GO granted; **`AC-1` CLOSED** (`artifacts/gr_2/o3_ci_reason_record.md`)
+
+Rebased onto lemur's 0.4.20 (autostash for the operator's Obsidian state; clean, zero overlap), suite
+re-run **on the merged tree** — 652 passed / 1 skipped, html-validate 0 — gitleaks clean, pushed
+`a68c88c..1c8fde6`. Run **`33465663585`**, Build step, verbatim:
+
+> `freshness: GIT COULD NOT ANSWER — dates omitted. This is NOT a shallow clone and fetch-depth will
+> not fix it. git said: fatal: detected dubious ownership in repository at '/__w/aDNA.aDNA/aDNA.aDNA'`
+
+**Exactly one** failing assertion (`gate-33:78`) — F6 clean. ⭐⭐ gate-52's `DUBIOUS` constant, written
+08-29 from the hypothesis, is **byte-identical** to CI's real string. ⭐ The remedy was already in our
+tree (`visual_regression_container.sh:74`) and O1 was still right to strike the sentence claiming it
+was demonstrated — *unmeasured is not unjustified*.
+
 ## SITREP
 
-**Completed** — O0, O1, **O2**. `contentSource.ts` can tell a failed git from a shallow clone and
+**Completed** — O0, O1, **O2**, **O3**. `contentSource.ts` can tell a failed git from a shallow clone and
 says which it found; `gate-33` no longer prescribes a remedy it cannot know applies; the shipped
 bytes are demonstrated unchanged on a healthy build, so **nothing is owed to production**.
 
 **In progress** — nothing. The increment is complete and committed locally.
 
-**Next up** — ⛩ **O3's push GO**: push the diagnostic **alone** to `main` (ruled at the signature —
-`main` is already red, so the extra red run costs nothing and a PR buys no evidence), then read CI's
-*named* reason. **`AC-1` closes there and nowhere earlier.** `O4` authors the `gates.yml` fix on that
-reason and on nothing else.
+**Next up** — ⛩ **O4's push GO.** The fix is **designed, not built**: one `gates.yml` step,
+`git config --global --add safe.directory "$GITHUB_WORKSPACE"`, after checkout and before build.
+⚠ Scoped to `$GITHUB_WORKSPACE`, **never `*`** · ⚠ **not** added to `unlighthouse-sweep.yml`, which
+has no container and no refusal to fix. Run `33465663585` is `V4`'s standing **red control**. Then
+`O5` = convention 19 · strike `F-x` · route `F-y` · AAR.
 
-**Blockers** — `AC-1` cannot be closed from this machine, **by construction** (O1 `F1`: Docker
-Desktop remaps bind-mount ownership, so the local container *cannot* produce a uid mismatch at any
-uid). It needs the ⛩ push.
+**Also owed, before anything else next session** — read the **unlighthouse sweep's first-ever run**
+(fired 2026-09-01 **07:43 UTC** on `1c8fde6`, bare runner, no container). **Predicted, filed before
+the run: `freshness: git answered`.** If it holds, §6 Change 3's container claim is measured.
+
+**Blockers** — none. ~~`AC-1` cannot be closed from this machine~~ — it was closed at O3, from CI,
+which is exactly where O1's `F1` said it would have to be.
+
+⚠ **Timing hazard for the next push**: `gates.yml` is `cancel-in-progress: true` on the concurrency
+group the sweep **joins**, so a push landing while the sweep is running **cancels it**. Check the
+sweep has completed before pushing O4.
 
 ⚠⚠ **AND THE PUSH GO IS NOW A DIFFERENT ACT THAN IT WAS AT THE MISSION'S OPEN: THE TREES HAVE
 DIVERGED.** Derived at the remote after the commit, not from a tracking ref:
@@ -157,16 +179,35 @@ file.
 ## Next Session Prompt
 
 Resume **HAUSSMANN GR-2** (`missions/mission_haussmann_gr_2_ci_freshness.md`, `in_progress`) at
-**O3**. O0/O1/O2 are closed; **AC-2, AC-3 and AC-5 are met**; **AC-1 is deliberately still open and
-cannot be closed locally.** O3 needs a ⛩ **operator push GO**, then: push `main`, watch the `gates`
-workflow, and read the `freshness:` line the build now prints — it names the state and quotes git's
-stderr verbatim. That line **is** AC-1's evidence. Then `O4` authors the `gates.yml` fix **on that
-captured reason and on nothing else** (a fix on an unverified cause is what this sitting was scoped
-out of the deploy sitting to avoid), pushes again under its own ⛩ GO, and verifies **at the run**
-that `gate-33-freshness` passes — reporting any non-gate-33 failure as a **new finding, never
-absorbed** (F6). `O5` then adds campaign convention 19 (derive `main`'s CI status at session open),
-strikes `F-x`, routes `F-y` (the register has no derivable tally — state it as carried arithmetic
-with its basis named), and files the AAR. ⛔ **No deploy at any point** — AC-5 is measured and met.
-**Derive, never carry**: re-read `HEAD`, `git ls-remote origin refs/heads/main`, unpushed count, and
-`/.well-known/adna-build.json` at the open. Suite counts are **all-projects** (679 here), which is
-*not* what `npm run test:gates` prints (653) — compare like with like.
+**O4**. O0/O1/O2/**O3** are closed; **AC-1, AC-2, AC-3 and AC-5 are met**. `AC-1` closed at run
+**`33465663585`**: CI's own build printed *"GIT COULD NOT ANSWER … git said: `fatal: detected dubious
+ownership in repository at '/__w/aDNA.aDNA/aDNA.aDNA'`"* — **not** a shallow clone, so `fetch-depth`
+was never the lever.
+
+**FIRST ACT, before O4:** read the **unlighthouse sweep's first-ever run** (fired 2026-09-01 07:43
+UTC on `1c8fde6`; `gh run list --workflow=unlighthouse-sweep.yml`). It is a **bare runner with no
+container**, so it is the negative arm of the ownership hypothesis. **Predicted before the run, and
+recorded so it cannot be retrofitted: `freshness: git answered`.** Report what it actually said. A
+failure there is a **new finding, never absorbed into GR-2** (F6).
+
+Then **O4**, under its own ⛩ **push GO**: add one step to `.github/workflows/gates.yml`, after
+`actions/checkout` and before the build — `git config --global --add safe.directory
+"$GITHUB_WORKSPACE"`. ⚠ Scoped to `$GITHUB_WORKSPACE`, **never `*`** (a wildcard silences the class
+everywhere including where it is a real warning — the same defect shape just removed). ⚠ **Do not add
+it to `unlighthouse-sweep.yml`**: no container, no refusal to fix, and a remedy applied to an absent
+cause is `F-x`(b) reintroduced by the commit fixing `F-x`. Verify **at the run** that
+`gate-33-freshness` passes, against run `33465663585` as the standing **red control**; any
+non-gate-33 failure is a new finding, never absorbed.
+
+⚠ **Push timing**: `gates.yml` is `cancel-in-progress: true` on the group the sweep joins — **confirm
+the sweep has finished before pushing**, or the push cancels it.
+
+`O5` then adds campaign **convention 19** (derive `main`'s CI status at session open), **strikes
+`F-x`** with both halves discharged, routes **`F-y`** (the register has no derivable tally — state it
+as carried arithmetic with its basis named; `F-s` is the row no tally counts), and files the **AAR**
+(SO#5). ⛔ **No deploy at any point** — AC-5 is measured and met.
+
+**Derive, never carry** — it has paid off every sitting: re-read `HEAD`, `git ls-remote origin
+refs/heads/main` (the remote moved mid-mission once already), the unpushed count, and
+`/.well-known/adna-build.json`. Suite counts are **all-projects** (679 here), which is *not* what
+`npm run test:gates` prints (653) — compare like with like.

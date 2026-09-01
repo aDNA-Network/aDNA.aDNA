@@ -113,10 +113,15 @@ is six. The commit that *announced* the CI-red finding was itself followed by a 
    those words — and it has **no `container:` block**. `gates.yml` has one. On a bare runner,
    checkout and build run as the same user, so no ownership mismatch can arise. ⇒ **the container is
    the only differentiating variable between the two CI builds.** `[D] 2026-08-29`
-   - ⚠ **Latent risk, filed with it**: the sweep has **never run on GitHub even once** (first run
-     owed on a push GO). Moved into a container, it inherits this defect **silently** — a Lighthouse
-     sweep does not fail on missing dates, it just measures a different artifact than production.
-     **Convention 18, waiting to happen.**
+   - ⚠ **Latent risk, filed with it**: the sweep has **never run on GitHub even once** (~~first run
+     owed on a push GO~~ ⛔ **STRUCK AT O3 — FALSE**: it is `schedule` + `workflow_dispatch` **only**,
+     so a push neither triggers it nor is required for it; the first run is owed to the **Tuesday
+     07:43 UTC cron** and fired 2026-09-01). Moved into a container, it inherits this defect
+     **silently** — a Lighthouse sweep does not fail on missing dates, it just measures a different
+     artifact than production. **Convention 18, waiting to happen.**
+     - ⭐ **And O3 turned this latent risk into a live control.** Because the sweep is bare-runner,
+       it is the *negative* arm of the ownership hypothesis, and its first run lands on the commit
+       carrying the diagnostic. **Predicted before the run: `freshness: git answered`.**
 
 ⛔ **This is a hypothesis with a named mechanism, not a diagnosis**, and AC-1 is written so that a
 local reproduction cannot close it alone. *A mechanism sufficient to produce a failure is not
@@ -226,8 +231,48 @@ both halves discharged. Every limb red-proven first, with its surface named. AAR
   671 (HEAD) + 8. 667 + GR-1's 4 = 671. Nothing missing. *A count is only comparable to a count from
   the same command* — and this is the first sitting where the **carried** figure was right.
 - ⛔ **AC-1 IS STILL OPEN**, and nothing in O2 narrows it. **O3 only.**
-- ⏭ **NEXT = ⛩ O3's PUSH GO** — push the diagnostic **alone** to `main`, then read CI's *named*
-  reason. `O4`'s `gates.yml` fix is authored on that reason and on nothing else.
+- ~~⏭ **NEXT = ⛩ O3's PUSH GO** — push the diagnostic **alone** to `main`, then read CI's *named*
+  reason.~~ ✅ **DONE — see O3 below.**
+
+### 2026-09-01 — ⛩ push GO granted, O3 closed
+
+- ✅ **O3 CLOSED `[V1b]` — `AC-1` IS CLOSED.** `artifacts/gr_2/o3_ci_reason_record.md`. Run
+  **`33465663585`**, `gates` on `main` at **`1c8fde6`**. CI's own Build step, verbatim:
+  > `freshness: GIT COULD NOT ANSWER — dates omitted. This is NOT a shallow clone and fetch-depth
+  > will not fix it. git said: fatal: detected dubious ownership in repository at
+  > '/__w/aDNA.aDNA/aDNA.aDNA'`
+
+  ⇒ the cause of **seven** consecutive reds is named **at the object, from CI, in git's own words**.
+  It is **not** a shallow clone; `fetch-depth: 0` was correct all along and was never the lever.
+- ✅ **`F6` satisfied with nothing to absorb**: **exactly one** failing assertion, `gate-33:78`.
+  649 passed · 3 skipped · 1 failed = **653**, matching the local chromium lane exactly. **gate-52's
+  8 assertions passed in CI** — on the very runner whose git is refusing, which is deviation **`D1`
+  paying off**: the probe lives in `loadDates()`, so importing `contentSource` runs no git, and the
+  discrimination gate is not a hostage to the condition it describes.
+- ⭐⭐ **THE PREDICTION HELD VERBATIM.** `gate-52`'s `DUBIOUS` constant, written 08-29 from the
+  *hypothesis*, is **byte-identical** to the string CI produced on 09-01 — same message, same path.
+  ⛔ Stated carefully: that does **not** retroactively make `V2` an integration test, and O1's `F1`
+  was right that no local run could close `AC-1`. **This run closed it, and nothing else.**
+- ⭐ **The remedy was already in our own tree, and O1 was right to strike the sentence claiming so.**
+  `visual_regression_container.sh:74` runs `git config --global --add safe.directory /work` — struck
+  at O1 as an `[I]` dressed as a `[D]` because git works fine in that image on this host. **Both
+  facts hold.** ⇒ *a defensive measure you cannot demonstrate on your own machine is not unjustified
+  — it is unmeasured.* Striking the evidence while keeping the line was correct on both counts.
+- ⚠ **Two carried claims corrected at O3, both in the campaign file, both never checked against the
+  instrument they describe.** The red streak is **7, not 6** (lemur's 08-30 push failed on the same
+  single assertion, from a *different machine* — so nothing about this checkout is implicated). And
+  *"the sweep's first on-GitHub run is owed on the next ⛩ push GO"* is **false**:
+  `unlighthouse-sweep.yml` is `schedule` + `workflow_dispatch` only — a push neither triggers it nor
+  is needed for it.
+- ⭐ **A prediction filed BEFORE its run, so it cannot be retrofitted**: the sweep's **first-ever**
+  run fires **2026-09-01 07:43 UTC** on `1c8fde6`, on a **bare runner with no container**, where
+  checkout and build share a uid. **Predicted reading: `freshness: git answered`.** If it holds,
+  §6 Change 3's structural claim is *measured* rather than argued.
+- ⏭ **NEXT = ⛩ O4's PUSH GO.** The fix is **designed, not built** (record §6): one `gates.yml` step,
+  `git config --global --add safe.directory "$GITHUB_WORKSPACE"`, after checkout and before build.
+  ⚠ Scoped to `$GITHUB_WORKSPACE`, **never `*`** · ⚠ **not** added to the sweep, which has no
+  container and no refusal to fix — a remedy applied to an absent cause is `F-x`(b) reintroduced by
+  the commit fixing `F-x`. Run `33465663585` is `V4`'s standing **red control**.
 
 ## AAR (SO#5)
 
