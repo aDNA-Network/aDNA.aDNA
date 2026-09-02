@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260902_060732_haussmann_gr_4_gate
 created: 2026-09-02
 updated: 2026-09-02
-status: active
+status: completed   # ⚠ CLOSED RETROACTIVELY at GR-4 O1's open, 2026-09-02 — this file's SITREP was complete and its work was committed at `f17ff58`, but the field was never moved and the file was never filed to history, so it sat in `active/` reading as a LIVE PEER SESSION. Found by the startup checklist's own step 4 (`how/sessions/active/` conflict scan), which is the one place it was visible.
 tier: 1
 last_edited_by: agent_rosetta
 campaign: campaign_haussmann
@@ -12,7 +12,7 @@ increment: "GR-4 OPENED **AND SIGNED** — Grande Revue Lane D (story coverage),
 executor_tier_declared: opus
 executor_tier_actual: opus
 token_budget_estimated: "~55-85 kT for the gate sitting itself (GR-1's precedent costed its gate sitting separately at ~60-90 kT). ~40 kT of that is the campaign CLAUDE.md, auto-loaded and the largest single read in any HAUSSMANN session. The MISSION's band is NOT estimated here — it is derived by the pass and carried to the ⛩ gate, because convention 13's own lesson is that a budget ratified before the pass is a budget costed against a spec nobody has read."
-token_budget_actual: ""
+token_budget_actual: "⚠ **NOT RECORDED AT THE TIME — RECONSTRUCTED at GR-4 O1's open, and labelled as such rather than quietly filled.** Reconstructed **≈70–95 kT** against the ~55–85 kT estimate: the sitting ran the conv-13 pass at 63 pairs, then the signature cascade (four rulings, the AC-8/V7 amendment, the 21-pair extension, the charter fields, the capture-estate fold) — the last of which was *not in the estimate at all*, because the estimate was written before the operator's rulings existed. Over the top edge by ~12%, **inside SO#11's 2× retrospective threshold ⇒ no retrospective triggers.** ⭐ The finding is not the number: it is that this is **the third P4.3-class instance** — *a band cannot be falsified by a prose sentence claiming it holds*, and a reconstruction cannot falsify it either. SO#11 says record it **at the time**; the only fix is the habit."
 files_touched: []
 tags: [session, haussmann, gr_4, lane_d, story_coverage, convention_13, pre_build_gate]
 ---

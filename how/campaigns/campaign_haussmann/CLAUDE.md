@@ -2349,8 +2349,91 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > is exactly the edit nobody checks against the set.*** Coverage now **84** total (`C(8,2)=28` +
 > `8×7=56`), **7 defective · 77 clean**, derived not typed.
 >
-> ⏭ **NEXT: `O1`** (D1 + D2 — the two clean agent-reachable adds, `V1` with its **asserted** vendored
-> exclusions and its red-test), then O2 (D4 → `/commons`) · O3 (D3, branch (i)) · O4 (D5, **plus the
-> owed prose-corpus measurement**) · O5 (D6 + AC-8 + close cascade + AAR). ⛔ **No deploy is authorized
-> or owed** — Lane D is met on-build, as every GR mission before it. **A push remains its own ⛩ GO.**
-> ⛔ Held: **P5.1** with the humans.
+> ~~⏭ **NEXT: `O1`** (D1 + D2 — the two clean agent-reachable adds, `V1` with its **asserted** vendored
+> exclusions and its red-test)~~ ✅ **O1 IS DONE — see below**, then O2 (D4 → `/commons`) · O3 (D3,
+> branch (i)) · O4 (D5, **plus the owed prose-corpus measurement**) · O5 (D6 + AC-8 + close cascade +
+> AAR). ⛔ **No deploy is authorized or owed** — Lane D is met on-build, as every GR mission before it.
+> **A push remains its own ⛩ GO.** ⛔ Held: **P5.1** with the humans.
+
+> ✅ **`GR-4` O1 IS DONE 2026-09-02 — `AC-1` ✅ `AC-2` ✅ `V1` ✅. The first new public copy this
+> campaign has authored since P4.5b.** D1 (model routing) and D2 (the per-mission token-budget
+> doctrine) are published on `/patterns/mission-decomposition` and `/learn/tutorials/design-a-mission`.
+> Chromium **660 → 668**, **delta isolated by `--list` with and without the spec (+8, removed
+> nothing)**; all-projects **694** · snapshot **26** · `html-validate` **0**; red-test **10/10**, every
+> case red at **exactly** its declared assertion set. ⛔ **Nothing deployed and nothing owed** — met
+> on-build; prod still serves `a852423`, re-probed at the open.
+>
+> ⛩ **A scope question the signature did not settle was put to the operator, not taken here (SO#1):**
+> AC-1 names **no home page** while AC-2 names two. **Ruled — D1 lands on the same two pages as D2**,
+> so **no new route** and ADR-057's route-coupling obligations (gate-4's list, the `@audit` P1S3 sweep,
+> nav, the twin emitter) never fire. `executor_tier` and `token_budget_estimated` are two fields on one
+> mission card.
+>
+> ⭐⭐ **THE MEASUREMENT FALSIFIED THE INSTRUMENT BEFORE THE INSTRUMENT GRADED ANYTHING, AND THE
+> FALSIFYING FACT IS REUSABLE.** `doctrine_layer_measure.mjs` first gated **two** axes — prose length
+> AND structural elements — copying `hub_depth_measure`'s shape. Measured, those axes are
+> **ANTI-CORRELATED** across the pages' own conformant sections: `Anti-Pattern` **726 prose / 0
+> elements**, `Step 5` **41 prose / 1 element** (one large fenced template). A conjunction would have
+> failed genuinely conformant siblings, and each axis's independent floor (**41**, **0**) grades
+> nothing at all. ⇒ ***two axes are correct where a thin subject is thin on BOTH, and wrong where the
+> axes trade off*** — the pattern was copied from a sibling instrument without re-deriving whether its
+> premise held here. Re-cut to one gated axis (`bodyLen`) which separates a doctrine section from **a
+> mention** — the threat AC-2 actually names — regardless of whether the section argues or tabulates.
+> Floor **derived at 217** from comparators spanning 217–1510; graded sections **3855** and **666**.
+> ⭐ **The guessed pin was 330/4 and was wrong on both axes**: *measure first, then pin* is the only
+> thing that caught it, exactly as at B0.
+>
+> ⭐⭐ **AND THIS VAULT'S OWN TWO SOURCES CONTRADICT EACH OTHER ON TIER ORDERING — CAUGHT ONE LINE
+> BEFORE IT WAS PUBLISHED.** `pattern_model_tiered_campaign_execution.md` §2.1/§2.5 bind **fable →
+> strategy/judgment** and **sonnet → mechanical**; `glossary_model_tiered_execution.md` describes the
+> same field as *"cheapest → most capable"* — **backwards**. Both were cited as grounding, and **the
+> draft took the ordering from the glossary**, putting it into the tutorial's example and a wrong
+> *"higher tier"* direction into the sentence about P4.1. Caught by verifying that sentence at
+> **P4.1's own mission file** (`executor_tier: fable` at line 11; AAR line 489 *"four sessions ran
+> `opus`"*; **4** session files) rather than at the campaign prose summarising it — *the register's own
+> "verify at the object" rule, paying off on the campaign's own history.* ⇒ the copy publishes **no
+> capability ordering at all**: ***a contradiction between two sources is not a coin to flip — it is a
+> claim you are not yet entitled to make***, and publishing either side would have moved a claim UP
+> past the evidence while looking like ordinary copywriting. ✅ Scope measured, not assumed: `grep -rl
+> cheapest site/dist/` → **3 paths, ALL of them this increment's own copy** `[D]` ⇒ **the
+> contradiction was never public, and this mission would have been the one to publish it.** Routed as
+> **`F-aa`**; ⛔ **not fixed here** — a `what/glossary/` governance edit is outside O1's site-copy
+> scope, and unforced widening at a mission's tail is this campaign's most-repeated defect.
+>
+> ⭐ **`gate-14` G5 WENT RED AND THE OBVIOUS FIX WOULD HAVE MADE THE CLAIM FALSE.** The draft linked
+> `github.com/aDNA-Network/aDNA.aDNA`; C-1 forbids it — *"proof-links must point at the public image
+> `aDNA-Network/aDNA`, not the dev vault"*. But the claim is about **mission files that exist only in
+> the dev vault**, so swapping to the canonical URL would have gone **green while sending readers to a
+> repo containing none of them.** ⇒ ***a gate can name the right defect while its message implies the
+> wrong remedy — diagnose by asking what the assertion protects, not by satisfying its regex.*** The
+> link was removed and the claim kept; the available `ALLOW` entry was **NOT** taken, because the
+> gate's own header says allowlisting *"would hollow the rule out"* — the over-masking shape arriving
+> as a convenience, and the second time in one increment the cheap remedy was the wrong one.
+>
+> ⚠ **THE READING CENSUS DOES NOT COVER EITHER PAGE, AND THAT IS SAID RATHER THAN REPORTED AS "NO
+> CHANGE".** Its frame is **21 landing routes** `[D]`; neither target page is in it, so this
+> increment's reading-level delta is **UNMEASURED, not zero** — convention 16 at the level of a
+> reassuring silence. The single route over target (`/reference/specification`, **12.69** vs 12) is
+> **pre-existing and untouched**. `gate-48`'s G48c is non-blocking and neither page is a first-contact
+> surface, so nothing binds — which is why this is a note and not a defect.
+>
+> ⚠ **Found at the session open and repaired: a FINISHED session was still in `how/sessions/active/`.**
+> GR-4's own gate sitting left `status: active` with `token_budget_actual:` **empty**, so to a cold
+> agent following the startup checklist it read as a **live peer session** — the one signal the
+> Single-Writer Lease uses to decide whether a file may be co-written. ⇒ ***a finished session left in
+> `active/` is a lease nobody is holding.*** Its actual was **reconstructed (≈70–95 kT vs ~55–85 kT,
+> ~12% over, inside SO#11's 2× ⇒ no retrospective) and LABELLED as reconstructed** — the **third**
+> P4.3-class instance. ⭐ And the reason it ran over is GR-4's own signed finding recurring in the
+> session file of the sitting that wrote it: *a budget ratified before the operator's rulings is costed
+> against a scope nobody has chosen yet* — the signature cascade was not in the estimate at all.
+>
+> ⚠ **`git mv` staged the PRE-EDIT blob** when that session file was filed to history — `git diff
+> --cached --stat` read **0 insertions** on a file carrying two edits, so the commit would have taken
+> the rename and silently dropped both. Re-staged with an explicit `git add`. *The node quirk is
+> written down and it still only surfaced because the staged stat was read rather than the command
+> trusted.*
+>
+> ⏭ **NEXT: `O2`** (D4 → `/commons`, with `reading_census.mjs` before/after on the **same** surface —
+> HAZARD-1: run from the repo root, `npx astro build`, never `npm run build`). ⛔ Held: **P5.1** with
+> the humans. ⚠ Owed: B1's ⛩ Speed-Insights → transport → first p75 · babbage's lease question ·
+> babbage's two upstream findings still `proposed` · **`F-aa`**.

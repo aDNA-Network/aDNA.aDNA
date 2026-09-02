@@ -39,9 +39,58 @@ Campaign → Mission → Objective
 2. Identify natural work boundaries (e.g., concepts, patterns, tutorials are different missions)
 3. Within each mission, list specific deliverables as objectives
 4. Order objectives by dependency (foundational concepts before advanced ones)
-5. Estimate context budget — if a mission needs more than ~15K tokens of domain context, it's too broad
+5. Estimate the context budget and declare the model tier — see [Budgeting and Routing a Mission](#budgeting-and-routing-a-mission) below. As a first cut: more than ~15K tokens of *domain* context in one objective usually means the objective is too broad
 
 **Handoff continuity**: Each mission file contains enough context for a fresh agent to continue. The intent, objectives, context dependencies, and handoff notes create a self-contained briefing.
+
+## Budgeting and Routing a Mission
+
+Decomposing the work leaves two questions open: **how much context each objective will cost**, and **which model should run it**. Both are answered on the mission file itself, before the work starts — so they are recorded decisions rather than things reconstructed afterwards from what happened.
+
+### The budget: two fields
+
+Every mission declares `token_budget_estimated`. Every session that works on it logs `token_budget_actual`. Both are measured in kT — thousands of tokens of context loaded.
+
+The estimate comes from a formula, not a feeling:
+
+```
+session_cost ≈ transition_tax + Σ per_objective_work
+```
+
+`transition_tax` is what a fresh agent spends before it does anything useful: reading the governance files, the campaign, the mission. In this vault it measures around 23K tokens. `per_objective_work` runs roughly 5K–80K depending on the kind of objective — planning is cheap, verification is expensive.
+
+The total then decides the shape of the work:
+
+| Estimated total | Session shape |
+|-----------------|---------------|
+| Under 50K | One session. Splitting costs more in transition tax than it saves. |
+| 50K–80K | One or two sessions. |
+| 80K–200K | Two or three sessions. |
+| 200K or more | **Split it into more than one mission.** |
+
+The last row is the one that earns the table. A mission that needs more than 200K tokens is not a mission that needs a bigger window — it is two missions that have not been separated yet.
+
+### Why the actual is recorded too
+
+An estimate nobody checks is a formality. Each mission's After-Action Review reports estimate against actual, and drift beyond **2×** in either direction triggers a retrospective — not a penalty, a question: was the estimate wrong, or did the scope move while nobody was looking?
+
+That second case is the common one, and it has a shape worth naming: a budget ratified before the mission's acceptance criteria are settled is a budget costed against work nobody has chosen yet. The fix is ordering — settle the criteria, then cost them.
+
+### The tier: which model runs it
+
+Alongside the budget, a mission declares `executor_tier` — the class of model the work is routed to. The classes are defined by properties of the *decision*, not by model names:
+
+| Class | The work it names |
+|-------|-------------------|
+| Strategy / judgment | Novel design, ambiguous requirements, irreversible or outward-facing consequences, adversarial review. "What should we even do?" |
+| Mid-judgment | Well-briefed execution making local decisions inside stated guardrails; drafting against acceptance criteria. |
+| Mechanical | Enumerable, verifiable, low-ambiguity transforms: sweeps, counts, extractions, format fixes. |
+
+Which model each class binds to is a **separate table, re-pinned as model generations change**. The classes are the doctrine; the model names are not, and writing the names into the pattern would date it on contact.
+
+What makes it safe to run a mission on a cheaper model is not the model — it is the brief. A mission is only routable downward if its brief already carries six things explicitly: the objective, the acceptance criteria, the guardrails (what must not be touched, pushed, or decided), the verification surface that proves completion, the named conditions under which the executor halts and escalates instead of improvising, and the budget. Judgment is spent at design time so that it does not have to be spent at execution time.
+
+**The limit, in the same breath**: `executor_tier` is a plan, and plans are sometimes not honoured. This vault has shipped a mission whose declared tier and actual tier diverged for four consecutive sessions, and nobody noticed until the After-Action Review. The record now names both, because a declared tier nobody honours is worse than no field at all. Both fields are visible in this vault's own mission files — including the mission that added this section, which declared its tier and its budget band before a word of it existed.
 
 ## When to Use
 

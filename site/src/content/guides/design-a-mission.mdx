@@ -70,6 +70,21 @@ For each objective, estimate what context needs to be loaded:
 
 If the total exceeds what a session can hold, the mission has too many objectives or needs to be split.
 
+Write the total onto the mission as `token_budget_estimated`. It is not decoration: the number decides the shape of the work — under 50K is one session, 80K–200K is two or three, and 200K or more means the mission should be split rather than run. See [Budgeting and Routing a Mission](/patterns/mission-decomposition#budgeting-and-routing-a-mission) for the formula the estimate comes from.
+
+### Step 4b: Declare the Model Tier
+
+Beside the budget, declare which class of model runs the work:
+
+```yaml
+token_budget_estimated: "~12K tokens"
+executor_tier: sonnet     # the class of model this mission is routed to
+```
+
+Pick the tier from what the work *decides*, not from how big it is. Novel design, ambiguous requirements, and anything irreversible or outward-facing go to the judgment class. Well-briefed execution inside stated guardrails goes to the middle class. Sweeps, counts and format fixes go to the mechanical class.
+
+A mission is only safe to run on a cheaper model if Steps 1–4 have already been done properly — the tier you can afford is decided by the quality of the brief, not the other way round.
+
 ### Step 5: Write the Mission File
 
 Put it all together using this structure:
@@ -86,7 +101,8 @@ created: 2026-04-14
 updated: 2026-04-14
 last_edited_by: agent_stanley
 tags: [mission, patterns]
-context_budget: "~12K tokens"
+token_budget_estimated: "~12K tokens"
+executor_tier: sonnet
 ---
 
 # Mission M04 — Pattern Library
@@ -121,7 +137,8 @@ context_budget: "~12K tokens"
 |-------|-------|
 | Every objective names a specific deliverable | |
 | Dependencies are mapped (or stated as "none") | |
-| Context budget fits within 75% rule | |
+| `token_budget_estimated` is declared, and its band matches the session shape | |
+| `executor_tier` is declared, and the brief is good enough to justify it | |
 | Intent is clear enough for a fresh agent to understand | |
 | Quality gates are defined | |
 | No objective requires more than one session | |
@@ -132,7 +149,8 @@ context_budget: "~12K tokens"
 
 - Missions decompose multi-session work into claimable, session-sized objectives
 - Every objective needs a named deliverable — not just a description of activity
-- Context budgets determine whether the mission is correctly scoped
+- Context budgets determine whether the mission is correctly scoped — and the session that runs the mission logs `token_budget_actual` beside your estimate, so the two can be compared at the After-Action Review
+- The model tier is declared before the work, not chosen during it
 - The mission file is a self-contained briefing: any agent can pick it up and work
 
 ## Next Steps

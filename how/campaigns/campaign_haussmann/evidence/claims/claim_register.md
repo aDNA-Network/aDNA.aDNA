@@ -1368,3 +1368,126 @@ the only thing standing between this register and a stale number.
 ⚠ **The gate reads the LAST `Counts` table in the file, in document order** — the one claiming
 currency by position. So this section must remain last, and any future `§N.M Counts` section must be
 appended after it, never inserted above.
+
+---
+
+## §16 — GR-4 O1: the doctrine layer, and a contradiction caught one line before it was published (2026-09-02)
+
+GR-4 Lane D's **O1** publishes two stories that had no home: **D1 model routing** and **D2 the
+per-mission token-budget doctrine**, both on `/patterns/mission-decomposition` and
+`/learn/tutorials/design-a-mission`. Every new public sentence gets a row (the P1.2 rule).
+
+### §16.1 The enumeration, and its rule — asserted, not remembered
+
+⭐ **The claim set is ENUMERATED FROM THE DIFF, and the enumeration is part of the claim.** GR-4's
+convention-13 pass found (**DEFECT-5**) that a limb asserting *"register rows present for every new
+claim"* can only ever confirm the rows it was handed — **the set it checks is exactly the set
+someone remembered to give it**, so a forgotten claim is invisible to the check written to catch
+forgotten claims. The over-masking shape, arriving in a governance limb.
+
+Enumerator: `git diff -- site/src/content/` over the two touched files, added lines only.
+**20 added prose lines** `[D]`. The rule separating a **claim** from **instruction**:
+
+- **A row is owed** where a line asserts something a reader could check against this repo or the
+  world — a number, a mechanism, a fact about this vault's own history.
+- **No row is owed** where a line tells the reader what to *do* (*"Pick the tier from what the work
+  decides"*), or restates the page's own structure (*"The total then decides the shape of the
+  work:"*). These are instructions, not assertions, and registering them would inflate the register
+  while weakening what a row means.
+
+**8 of the 20 lines carry checkable assertions. All 8 are below.** The other 12 are instructional or
+structural, named here as a set so the exclusion is auditable rather than silent.
+
+| ID | Surface | Claim | Verdict | Basis | Sev | Prov |
+|---|---------|-------|---------|-------|-----|------|
+| **R-142** | `/patterns/mission-decomposition` | *"`transition_tax` is what a fresh agent spends before it does anything useful … In this vault it measures around 23K tokens. `per_objective_work` runs roughly 5K–80K"* | **verified** | ADR-016 Clause A, the M1.3 canonical formula: `transition_tax = ~23 kT (CP-1 mean cold-start orientation)`, `per_objective_work ≈ 5-80 kT`. Hedged on the page (*"around"*, *"roughly"*) because the source is a mean over a 49-session corpus, not a constant `[D]` | — | [D] |
+| **R-143** | `/patterns/mission-decomposition` | the four decomposition bands — under 50K one session · 50–80K one or two · 80–200K two or three · **200K or more, split the mission** | **verified** | ADR-016 Clause A's decomposition-threshold table, reproduced with its bands unchanged. The site publishes the **content-load** column only; the ADR's API-billing companion columns are deliberately not published, being a second metric that would need its own explanation `[D]` | — | [D] |
+| **R-144** | `/patterns/mission-decomposition` | *"drift beyond **2×** in either direction triggers a retrospective"* | **verified** | Project Standing Order #11 (root `CLAUDE.md`): *"Drift > 2× on either metric triggers a retrospective."* Exercised live — P4.1 ran ≈2.36× and its AAR records the retrospective firing `[D]` | — | [D] |
+| **R-145** | `/patterns/mission-decomposition` | the three capability classes, *"defined by properties of the **decision**, not by model names"* | **verified** | `pattern_model_tiered_campaign_execution.md` §2.1, whose table is keyed on decision properties and whose own text says model names go in a versioned binding table *"so the pattern survives model generations"* `[D]` | — | [D] |
+| **R-146** | `/patterns/mission-decomposition` | *"Which model each class binds to is a **separate table, re-pinned as model generations change**"* | **verified** | §2.1's binding column is dated (`2026-07`) and §2.5 records it being re-pinned (Sonnet 4.6→5, Haiku 4.5) `[D]`. ⭐ **The site deliberately publishes NO model names** — see §16.2 | — | [D] |
+| **R-147** | `/patterns/mission-decomposition` | the six things a downtier-safe brief must carry (objective · acceptance criteria · guardrails · verification surface · escalation triggers · budget) | **verified** | §2.2's design-brief contract, enumerated 1–6. Count derived from the source list, not typed (KW-14) `[D]` | — | [D] |
+| **R-148** | `/patterns/mission-decomposition` | *"This vault has shipped a mission whose declared tier and actual tier diverged for four consecutive sessions, and nobody noticed until the After-Action Review."* | **verified** | `mission_haussmann_p4_1_token_pipeline.md:11` reads `executor_tier: fable`; its AAR (line 489) reads *"four sessions ran `opus` (each session file records it)"*; **4** P4.1 session files exist in `how/sessions/history/2026-08/` `[D]`. ⚠ **The first draft of this sentence said the mission ran at a HIGHER tier than declared, and that direction was wrong** — see §16.2 | — | [D] |
+| **R-149** | `/patterns/mission-decomposition` | *"Both fields are visible in this vault's own mission files — including the mission that added this section, which declared its tier and its budget band before a word of it existed."* | **verified** | `mission_haussmann_gr_4_story_coverage.md` carries `executor_tier: opus` and a `token_budget_estimated` ⛩ ratified at its signature, both **before** O1 authored any copy `[D]`. ⚠ **The first draft linked `github.com/aDNA-Network/aDNA.aDNA` and `gate-14` G5 caught it — see §16.4. The link is GONE; the claim is unchanged and still true without it** | — | [D] |
+
+### §16.2 ⭐⭐ The finding: the vault's own two sources CONTRADICT each other on tier ordering, and this mission nearly published the wrong one
+
+`pattern_model_tiered_campaign_execution.md` §2.1 binds **strategy/judgment → Fable** and
+**mechanical → Sonnet** — fable is the *judgment* class — and §2.5's class→tier table agrees
+(planning/design/review → fable; build → opus; sonnet *"reserved … for provably-mechanical sweeps"*).
+
+`glossary_model_tiered_execution.md` describes the same field as *"(`fable` / `sonnet`, **cheapest →
+most capable**)"* — **which orders them backwards.**
+
+⚠ **Both were cited as grounding for this copy, and the draft took the ordering from the glossary**,
+putting `# fable | opus | sonnet — cheapest to most capable` into the tutorial's example and
+*"a higher tier than its own field claimed"* into R-148. **Both were wrong, and both were caught
+before the commit** by verifying R-148 at P4.1's own mission file rather than at the campaign prose
+summarising it.
+
+⇒ **Two remedies, and the second one is the interesting one:**
+
+1. R-148's direction claim is **struck**, not corrected — the AAR supports *"diverged"*, and it does
+   not support a direction. **The narrower true claim, not the fixable false one.**
+2. The copy now publishes **no capability ordering at all.** The classes are defined by decision
+   properties, which is what both sources agree on; the ordering is precisely what they disagree
+   about. ⭐ **A contradiction between two sources is not a coin to flip — it is a claim you are not
+   yet entitled to make**, and publishing either side would have moved a claim UP past the evidence
+   (convention 1) while looking like ordinary copywriting.
+
+✅ **Measured, so the scope of the defect is known rather than assumed**: `grep -rl "cheapest"
+site/dist/` returns **3 paths, and all three are this increment's own new copy** (the tutorial, its
+twin, `llms-full.txt`) `[D]`. ⇒ **the contradiction was never public, and this mission would have
+been the one to publish it.**
+
+⛔ **The glossary entry is NOT fixed here, and that restraint is deliberate.** It is a `what/glossary/`
+governance file, outside O1's criteria and outside the site surface this mission touches; correcting a
+graduated pattern's glossary entry is a governance edit, and this campaign's standing lesson is that
+unforced widening at a mission's tail is where defects come from. **Routed, and routed at a
+destination rather than in prose** — filed as **`F-aa`** below, because *"routed" is a claim about a
+destination and this campaign has been bitten four times by verifying it in the prose that routed it.*
+
+### §16.3 New debt row
+
+| ID | Finding | Destination | Status |
+|---|---------|-------------|--------|
+| **`F-aa`** | `glossary_model_tiered_execution.md` orders the executor tiers *"cheapest → most capable"*, contradicting `pattern_model_tiered_campaign_execution.md` §2.1/§2.5, which bind fable to strategy/judgment and sonnet to mechanical. The glossary is the vault's own definition surface for the term, so the two SSOT documents for one field disagree. **Not published** — verified `[D]` — so this is an internal-consistency defect, not a live claim defect | a `what/` governance sitting of its own; **not** GR-4, which is site-copy scope | **live** |
+
+### §16.4 ⭐ `gate-14` caught a repo literal, and the obvious fix would have made the claim FALSE
+
+The suite went red on **`gate-14` G5** — *"no drifted repo/publisher literals in built output"* — for
+the link this increment put on `/patterns/mission-decomposition`:
+`github.com/aDNA-Network/aDNA.aDNA`. The gate's stated reason `[D]`: *"C-1 — proof-links must point
+at the public image `aDNA-Network/aDNA`, not the dev vault (the dev vault is public but is not the
+install target)."*
+
+⭐⭐ **The reflex fix — swap the URL for the canonical one — would have turned the gate green and made
+the sentence FALSE.** The claim is *"both fields are visible in this vault's own mission files"*, and
+those mission files exist in the **dev vault**; the public image does not contain this campaign's
+missions at all. A reader following the corrected link would have found no mission files and no
+fields. ⇒ **the gate names the right defect and its remedy does not follow from its message** —
+diagnose by asking what the assertion is protecting, not by satisfying its regex.
+
+**Taken instead: the link is removed and the claim kept.** The sentence's substance never needed a
+URL, the self-reference (SO#8) survives intact, and the site's own position — *do not route readers
+to the dev vault* — is respected rather than allowlisted around.
+
+⛔ **An `ALLOW` entry was available and was NOT taken.** `gate-14`'s own header says allowlisting
+*"would mean 113 file entries and would hollow the rule out."* Adding the 114th to spare one link is
+the over-masking shape (**masks only ever grow**) arriving as a convenience — and it would have been
+the second time in this one increment that the cheap remedy was the wrong one.
+
+### §16.5 Counts — derived last
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **168** |
+| **Unique ids** | **153** (14 `G-*` + 139 `R-*`, `R-11`…`R-149`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, **not typed** — and re-run *after* §16 was
+written, which is the whole point of §15's finding: sections written below the line without re-running
+are how the published tally went stale by 13 rows last time. Reconciles exactly against §15: rows
+**160 + 8 = 168**, ids **145 + 8 = 153**, `R-141` → `R-149`.
+
+⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order.** This section is now
+that table. Any future `§N.M Counts` section is appended **after** this one, never inserted above.

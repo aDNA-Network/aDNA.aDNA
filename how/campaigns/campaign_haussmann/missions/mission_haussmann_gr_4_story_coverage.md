@@ -192,7 +192,7 @@ scope is ruled would be the P4.5a defect: a spec whose halves nobody read togeth
 | Obj | Covers | Gated on |
 |---|---|---|
 | O0 | this pass + the ⛩ gate | — |
-| O1 | D1 + D2 (the two clean, agent-reachable adds) | signature only |
+| **O1 ✅** | **D1 + D2 (the two clean, agent-reachable adds)** — **DONE 2026-09-02** | signature only |
 | O2 | D4 | ⛩ receiving-surface ruling |
 | O3 | D3 | ⛩ home ruling (the false-premise fork) |
 | O4 | D5 | signature only |
@@ -226,6 +226,72 @@ it was amending*. Here, **an amendment omitted a clause its siblings already car
 seam, entered from the other side. ⇒ ***a criteria set is not re-read when it is amended, and the
 amendment is precisely the edit nobody checks against the set.*** **Remedy, free: V3's census
 assertion covers `/commons` AND `/privacy`.**
+
+## O1 — DONE 2026-09-02 (`AC-1` ✅ · `AC-2` ✅ · `V1` ✅)
+
+⛩ **One scope question the signature did not settle was put to the operator at O1's open**: AC-1 names
+**no home page**, unlike AC-2 which names two. **Ruled — D1 lands on the SAME TWO PAGES as D2**
+(`/patterns/mission-decomposition` · `/learn/tutorials/design-a-mission`), so **no new route** and
+ADR-057's route-coupling obligations do not fire. `executor_tier` and `token_budget_estimated` are two
+fields on one mission card; a single doctrine layer is the honest shape as well as the cheap one.
+
+**Built:** the doctrine section on the pattern page (budget: the two fields, the content-load formula,
+the four decomposition bands, the 2× retrospective trigger; routing: the three decision-property
+classes, the versioned binding, the six-element brief contract) · Step 4b + template + checklist +
+`What You Learned` on the tutorial · **`gate-54`** (G54a–G54h, 8 assertions) ·
+`scripts/doctrine_layer_measure.mjs` · `scripts/doctrine_layer_redtest.sh` · register **§16**
+(R-142…R-149 + `F-aa`).
+
+**Verified:** chromium **660 → 668** — delta isolated by `--list` with and without the spec (**+8,
+removed nothing**), all-projects **694**, snapshot **26**, each by its own command · `html-validate`
+**0** · red-test **10/10**, every case red at **exactly** its declared assertion set · the vendored
+`src/data/tour/` tree byte-identical to HEAD by sha256 **after both red-test runs**.
+
+⭐⭐ **THE MEASUREMENT FALSIFIED THE INSTRUMENT BEFORE THE INSTRUMENT GRADED ANYTHING.** The first draft
+gated `proseLen` **and** `elements` together. Measured, those two axes are **ANTI-CORRELATED** across
+the pages' own conformant sections — `Anti-Pattern` 726 prose / **0** elements, `Step 5` **41** prose /
+1 element (one large fenced template) — so a conjunction would have failed genuinely conformant
+siblings, and each axis's independent floor (41, 0) grades nothing at all. ⇒ **two axes are right for
+`hub_depth_measure`, where a thin hub is thin on BOTH; they are wrong here.** Re-cut to one gated axis
+(`bodyLen`, the whole section body) which does not care whether a doctrine section argues or tabulates
+and still separates both from **a mention** — the threat AC-2 actually names. Floor **derived** at
+**217** from the conformant set (comparators 217–1510); graded sections **3855** and **666**.
+*Measure first, then pin: the guessed pin was 330/4 and was wrong on both axes.*
+
+⭐⭐ **AND THE VAULT'S OWN TWO SOURCES CONTRADICT EACH OTHER ON TIER ORDERING — CAUGHT ONE LINE BEFORE
+IT WAS PUBLISHED.** `pattern_model_tiered_campaign_execution.md` §2.1/§2.5 bind **fable →
+strategy/judgment** and **sonnet → mechanical**; `glossary_model_tiered_execution.md` says *"cheapest →
+most capable"*, **ordering them backwards**. Both were cited as grounding and **the draft took the
+ordering from the glossary**, putting it in the tutorial's example and a wrong *"higher tier"* into the
+P4.1 sentence. Caught by verifying that sentence at **P4.1's own mission file** rather than at the
+campaign prose summarising it. ⇒ the copy now publishes **no capability ordering at all**: *a
+contradiction between two sources is not a coin to flip — it is a claim you are not yet entitled to
+make*, and either side would have moved a claim UP while looking like ordinary copywriting. Measured
+`[D]`: `grep -rl cheapest site/dist/` returns **3 paths, all of them this increment's own copy** ⇒ the
+contradiction was never public and this mission would have been the one to publish it. Routed as
+**`F-aa`**, **not** fixed here (a `what/glossary/` governance edit is outside O1's site-copy scope).
+
+⭐ **`gate-14` G5 went red, and the obvious fix would have made the claim FALSE.** The draft linked
+`github.com/aDNA-Network/aDNA.aDNA`; C-1 forbids it because *"proof-links must point at the public
+image … not the dev vault"*. But the claim is about **mission files that exist only in the dev vault**
+— swapping to the canonical URL would have gone green and sent readers to a repo with no mission files
+in it. **The link was removed and the claim kept**, and the available `ALLOW` entry was **not** taken
+(the gate's own header: allowlisting *"would hollow the rule out"*). ⇒ *diagnose by asking what the
+assertion protects, not by satisfying its regex.*
+
+⚠ **The reading census does NOT cover either page, and that is stated rather than reported as "no
+change".** Its frame is **21 landing routes** `[D]`; `/patterns/mission-decomposition` and
+`/learn/tutorials/design-a-mission` are in neither. The one route over target
+(`/reference/specification`, 12.69 vs 12) is **pre-existing and untouched**. *A negative result is only
+as wide as the command that produced it* — this increment's reading-level delta is **unmeasured**, not
+zero. `gate-48`'s G48c is non-blocking and neither page is a first-contact surface, so nothing binds.
+
+⚠ **Found at the open and repaired**: the sitting that opened GR-4 left its session file `status:
+active` in `how/sessions/active/` with `token_budget_actual:` **empty** — a finished session reading as
+a **live peer lease**, and the third P4.3-class instance of an unrecorded actual.
+
+⏭ **NEXT: `O2`** (D4 → `/commons`, with the census before/after on the same surface). ⛔ No deploy
+authorized or owed; a push is its own ⛩ GO.
 
 ## AAR
 
