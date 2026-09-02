@@ -1,14 +1,13 @@
 {
   "_meta": {
     "artifact": "bar_provenance.json",
-    "purpose": "Per-bar provenance for gate-19's Lighthouse BUDGET. Closes HAUSSMANN P4.4b AC4 and register row F-e. AC4's shape: 'this bar was read from classes.<c> at pin <sha>, whose content hashes to <md5>' — so provenance is PER BAR, and each bar names its OWN source.",
-    "ruling": "⛩ SIGNED 2026-09-02 (b2b_reentry_proposal.md, accepted): perfMin HELD at 0.9 and SOURCED rather than moved; the four un-adopted bars NAMED with reasons, not opened. No number changes in this increment.",
+    "purpose": "Per-bar provenance for gate-19's Lighthouse BUDGET. Closes HAUSSMANN P4.4b AC4 and register row F-e. AC4's shape: 'this bar was read from classes.<c> at pin <sha>, whose content hashes to <md5>' \u2014 so provenance is PER BAR, and each bar names its OWN source.",
+    "ruling": "\u26e9 SIGNED 2026-09-02 (b2b_reentry_proposal.md, accepted): perfMin HELD at 0.9 and SOURCED rather than moved; the four un-adopted bars NAMED with reasons, not opened. No number changes in this increment.",
     "why_not_a_whole_file_hash": "MEASURED, not argued (2026-09-02). Between our federation pin 6096157 and WebForge HEAD b7c6d653 the profiles FILE moved 43988 -> 52879 bytes across 5 commits (md5 134c9647... -> ff9a0f1b...), while classes.content_static did NOT move at all (sha256 f2292ca9... at BOTH refs). A whole-file hash would have gone red across all five for reasons that have nothing to do with our bars. The class subtree is the stable object; the file is not.",
-    "surface_law": "convention 18 — every limb states the surface it runs against. G53a/b/c/d/e read ONLY files inside this repo and therefore run everywhere, including CI. G53f reads the peer vault and CANNOT run in CI; it reports NOT VERIFIED rather than skipping silently, because gate-36's original pin limb test.skip'ed itself out of CI and could only ever pass.",
+    "surface_law": "convention 18 \u2014 every limb states the surface it runs against. G53a/b/c/d/e read ONLY files inside this repo and therefore run everywhere, including CI. G53f reads the peer vault and CANNOT run in CI; it reports NOT VERIFIED rather than skipping silently, because gate-36's original pin limb test.skip'ed itself out of CI and could only ever pass.",
     "recorded": "2026-09-02",
     "recorded_by": "agent_rosetta"
   },
-
   "source_refs": {
     "webforge_content_static": {
       "kind": "external_peer_vault",
@@ -23,37 +22,40 @@
       "sha256": "f2292ca946b3cd0287bf1e458051d46cd5a6547c54cddeed893600639be0c764",
       "verified_at": "2026-09-02",
       "verified_note": "sha256 identical at our pin 6096157 AND at their HEAD b7c6d653, verified by extracting both blobs with git show.",
-      "class_assignment_authority": "coord_2026_08_26_vitruvius_to_rosetta_scope_b_and_your_three_findings_verified.md §1 — SCOPE B. Their words: 'A static Astro build with no SSR app shell is content_static — that is what the class is. Your reading is right, so name it and derive against it.'",
+      "class_assignment_authority": "coord_2026_08_26_vitruvius_to_rosetta_scope_b_and_your_three_findings_verified.md \u00a71 \u2014 SCOPE B. Their words: 'A static Astro build with no SSR app shell is content_static \u2014 that is what the class is. Your reading is right, so name it and derive against it.'",
       "what_this_does_NOT_grant": [
-        "It is a BAR-SET, not a certification (their §2). Naming the class says our bars derive from theirs; it does not make our surface a roster member.",
+        "It is a BAR-SET, not a certification (their \u00a72). Naming the class says our bars derive from theirs; it does not make our surface a roster member.",
         "They have NOT measured adna.network, and scope B does not ask them to.",
-        "route_bars do NOT travel with the class (their §2). Only class defaults are portable.",
-        "Their _meta.rebaseline_law binds these bars to THEIR host AND browser fingerprint and VOIDS them on a change to either. We are a different host and browser, so their MEASURED baseline is not portable to us — only the class name and its policy basis are."
+        "route_bars do NOT travel with the class (their \u00a72). Only class defaults are portable.",
+        "Their _meta.rebaseline_law binds these bars to THEIR host AND browser fingerprint and VOIDS them on a change to either. We are a different host and browser, so their MEASURED baseline is not portable to us \u2014 only the class name and its policy basis are."
       ],
-      "supersession": "This record holds while sha256 of /classes/content_static equals the value above. A change to that subtree supersedes it and forces a re-read. Changes elsewhere in the file (_meta, surfaces, route bars) do NOT supersede it — that is the point of hashing the subtree."
+      "supersession": "This record holds while sha256 of /classes/content_static equals the value above. A change to that subtree supersedes it and forces a re-read. Changes elsewhere in the file (_meta, surfaces, route bars) do NOT supersede it \u2014 that is the point of hashing the subtree."
     },
-
     "cwv_good_band": {
       "kind": "public_standard",
       "name": "Core Web Vitals 'Good' thresholds",
       "note": "LCP < 2500 ms and CLS < 0.1 are the published CWV Good band. gate-19 took them from the band directly; WebForge's content_static ALSO takes them from the band. The two agree because they share an ancestor, NOT because one was derived from the other.",
       "relationship_law": "EQUALITY IS NOT PROVENANCE. Recording these as 'adopted from content_static' would assert a derivation that never happened."
     },
-
     "local_desktop_fixture_band": {
       "kind": "local_instrument",
       "name": "gate-19 committed desktop fixtures",
       "path": "site/tests/gates/fixtures/",
-      "fixtures": ["lighthouse_d4c5_graph.json", "lighthouse_d4c6_concept.json", "lighthouse_get_started.json", "lighthouse_what_is_adna.json"],
+      "fixtures": [
+        "lighthouse_d4c5_graph.json",
+        "lighthouse_d4c6_concept.json",
+        "lighthouse_get_started.json",
+        "lighthouse_what_is_adna.json"
+      ],
       "lighthouse_version": "13.4.0",
       "runs_per_route": 1,
       "statistic": "single committed run (NOT a median)",
       "form_factor_claim": "desktop (lighthouse --preset=desktop)",
-      "form_factor_evidence": "[I] INFERRED, NOT OBSERVED — the fixtures carry configSettings ABSENT (no formFactor, no throttling, no screenEmulation), so the instrument that produced them is not recorded IN them. The desktop claim rests on site/unlighthouse.config.ts's account of gate-19's instrument, not on the artifacts. Stated as a limitation rather than asserted as fact; see un_adopted.notes.fixture_attribution.",
-      "supersession": "Any re-baseline of these fixtures must record configSettings, which would upgrade form_factor_evidence from [I] to [D]."
+      "form_factor_evidence": "[D] OBSERVED \u2014 CORRECTED 2026-09-02. \u26a0 THIS FIELD PREVIOUSLY READ '[I] INFERRED, NOT OBSERVED ... the fixtures do not record the instrument that produced them'. THAT WAS FALSE, and it was written by checking ONE field. (a) Every committed fixture carries a top-level `_provenance` string naming it: e.g. 'Lighthouse 13.4.0 desktop on /vaults/graph'; two of the four name the command exactly ('lighthouse --preset=desktop'). (b) The RAW archived runs (site/evidence/, gitignored, local-only) carry hard configSettings: formFactor='desktop', screenEmulation.mobile=false, throttling.rttMs=40 \u2014 precisely the --preset=desktop constant unlighthouse.config.ts names \u2014 at lighthouseVersion 13.4.0. \u21d2 The desktop claim is OBSERVED, not inferred. The original error checked `configSettings` (the standard LHR field), found it absent, and concluded no record existed \u2014 without checking the custom `_provenance` key at the fixture's own top level. That is convention 16 (a negative result is only as wide as the command that produced it) breached one sitting after this record cited it.",
+      "supersession": "Superseded by the 2026-09-02 re-baseline, which carries configSettings INTO the committed fixture and adds gate-53's G53g to assert it. After that, the form factor is machine-checked on every run rather than recorded in prose.",
+      "residual_narrowed": "The honest residual is NARROWER than the struck claim and is what the re-baseline actually repairs: the COMMITTED fixture carries no MACHINE-READABLE instrument field, so NO GATE CAN ASSERT the form factor \u2014 `_provenance` is prose, and a gate cannot assert prose. And the hard machine-readable evidence lives in a GITIGNORED directory CI never sees. \u21d2 the defect was never 'we cannot prove it'; it was 'nothing re-checks it'."
     }
   },
-
   "bars": {
     "lcpMaxMs": {
       "value_in_force": 2500,
@@ -67,7 +69,6 @@
         "relationship": "equal_by_common_ancestry"
       }
     },
-
     "clsMax": {
       "value_in_force": 0.1,
       "unit": "unitless",
@@ -80,7 +81,6 @@
         "relationship": "equal_by_common_ancestry"
       }
     },
-
     "perfMin": {
       "value_in_force": 0.9,
       "unit": "fraction_0_to_1",
@@ -88,28 +88,26 @@
       "source": "local_desktop_fixture_band",
       "external_counterpart": null,
       "relationship": "no_counterpart_exists",
-      "why_no_counterpart": "content_static's performance 95 is a MOBILE-EMULATION bar. WebForge's _meta.lh_settings, verbatim: 'Lighthouse default config: mobile emulation + simulated throttling (the industry-standard hardest honest lab bar; design D5). Desktop pass: not wired (design §7 SEQUENCED).' There is no desktop content_static performance bar in existence to derive from.",
-      "why_not_transcribed_anyway": "MEASURED (HAUSSMANN P4.4b B2a, 2026-08-28): applying mobile 4G throttling to a desktop form factor scored this site 0.78 where the desktop instrument reads 0.95-1.0. The FORM-FACTOR gap is ~17 points; the bar gap is 5. Transcribing 95 onto a desktop instrument would be 'two instruments sharing one number' — the exact defect B2a fixed, run backwards.",
-      "ratchet_law_note": "WebForge's _meta.ratchet_law reserves LOOSENING an adopted bar for an operator gate. It does not bind here, because this bar was never adopted from them — there is nothing to loosen. F-e's framing ('90 is LOOSER than 95, the direction their ratchet_law reserves for a gate') compared two numbers from different instruments and read the difference as a policy relaxation. It is a category error, not a relaxation.",
+      "why_no_counterpart": "content_static's performance 95 is a MOBILE-EMULATION bar. WebForge's _meta.lh_settings, verbatim: 'Lighthouse default config: mobile emulation + simulated throttling (the industry-standard hardest honest lab bar; design D5). Desktop pass: not wired (design \u00a77 SEQUENCED).' There is no desktop content_static performance bar in existence to derive from.",
+      "why_not_transcribed_anyway": "MEASURED (HAUSSMANN P4.4b B2a, 2026-08-28): applying mobile 4G throttling to a desktop form factor scored this site 0.78 where the desktop instrument reads 0.95-1.0. The FORM-FACTOR gap is ~17 points; the bar gap is 5. Transcribing 95 onto a desktop instrument would be 'two instruments sharing one number' \u2014 the exact defect B2a fixed, run backwards.",
+      "ratchet_law_note": "WebForge's _meta.ratchet_law reserves LOOSENING an adopted bar for an operator gate. It does not bind here, because this bar was never adopted from them \u2014 there is nothing to loosen. F-e's framing ('90 is LOOSER than 95, the direction their ratchet_law reserves for a gate') compared two numbers from different instruments and read the difference as a policy relaxation. It is a category error, not a relaxation.",
       "scale_note": "gate-19 stores this as a fraction (0.9); content_static stores performance as an integer 0-100 (95). Any future comparison must normalise, or it compares 0.9 to 95.",
-      "ruling": "⛩ 2026-09-02 — HELD at 0.9 and sourced. Options considered: adopt 95 / hold+source / adopt-comparable-only. Held. Note the change would have been INERT anyway: all four fixtures currently score performance 1.0, so 0.9 -> 0.95 passes without moving anything, and a change that cannot fail proves nothing (convention 14)."
+      "ruling": "\u26e9 2026-09-02 \u2014 HELD at 0.9 and sourced. Options considered: adopt 95 / hold+source / adopt-comparable-only. Held. Note the change would have been INERT anyway: all four fixtures currently score performance 1.0, so 0.9 -> 0.95 passes without moving anything, and a change that cannot fail proves nothing (convention 14)."
     }
   },
-
   "un_adopted": {
     "_law": "THE EXCLUSIONS ARE PART OF THE CLAIM AND ARE ASSERTED, NOT ASSUMED (gate-48's ratified exclusion discipline). G53e asserts this enumeration is COMPLETE against the source subtree: every leaf in classes.content_static is either mapped by a bar above or listed here with a reason. If WebForge ADDS a metric to the class, this gate goes RED until it is consciously adopted or consciously un-adopted. Silence is not an option the schema permits.",
-    "_ruling": "⛩ 2026-09-02 — NOT opened in B2b. Adding four bars at the tail of a closing increment is the unforced widening conventions 15/16/17 all ruled against. They are a named, dated gap.",
-
+    "_ruling": "\u26e9 2026-09-02 \u2014 NOT opened in B2b. Adding four bars at the tail of a closing increment is the unforced widening conventions 15/16/17 all ruled against. They are a named, dated gap.",
     "/categories/performance": {
       "value": 95,
-      "reason": "DECLINED as not comparable, which is a different disposition from the gaps below and is recorded separately so it cannot be read as an oversight. This is the leaf perfMin would map to if a mapping existed; it does not — see bars.perfMin.why_no_counterpart (their 95 is mobile-emulation; their desktop pass is unwired). ⛩ Ruled 2026-09-02: hold 0.9 and source it.",
+      "reason": "DECLINED as not comparable, which is a different disposition from the gaps below and is recorded separately so it cannot be read as an oversight. This is the leaf perfMin would map to if a mapping existed; it does not \u2014 see bars.perfMin.why_no_counterpart (their 95 is mobile-emulation; their desktop pass is unwired). \u26e9 Ruled 2026-09-02: hold 0.9 and source it.",
       "status": "declined_not_comparable",
       "see": "bars.perfMin",
-      "_found_by": "Writing G53e's completeness assertion surfaced this leaf as covered by NEITHER a bar mapping NOR an un_adopted entry — it was declined in prose only. The completeness rule earned itself before it ever ran, which is the argument for asserting exclusions rather than narrating them."
+      "_found_by": "Writing G53e's completeness assertion surfaced this leaf as covered by NEITHER a bar mapping NOR an un_adopted entry \u2014 it was declined in prose only. The completeness rule earned itself before it ever ran, which is the argument for asserting exclusions rather than narrating them."
     },
     "/metrics/tbt_ms": {
       "value": 200,
-      "reason": "We have no TBT bar at all. TBT is content_static's interactivity lab proxy (their _meta.metric_honesty). Adopting it means choosing a form factor first — see bars.perfMin.why_no_counterpart, which blocks this for the same reason.",
+      "reason": "We have no TBT bar at all. TBT is content_static's interactivity lab proxy (their _meta.metric_honesty). Adopting it means choosing a form factor first \u2014 see bars.perfMin.why_no_counterpart, which blocks this for the same reason.",
       "status": "named_gap"
     },
     "/categories/accessibility": {
@@ -129,13 +127,12 @@
     },
     "/seo_mode": {
       "value": "category",
-      "reason": "Not a bar — it selects HOW WebForge scores SEO for the class. Inert for us while /categories/seo is un-adopted.",
+      "reason": "Not a bar \u2014 it selects HOW WebForge scores SEO for the class. Inert for us while /categories/seo is un-adopted.",
       "status": "not_a_bar"
     },
-
     "notes": {
-      "fixture_attribution": "gate-19's four fixtures carry configSettings ABSENT, so they do not record the instrument that produced them. B2b can source the BAR; it cannot retroactively attribute the FIXTURES. Any claim that perfMin is 'a desktop bar' is [I] at the artifact today. Named, not fixed — a re-baseline is the only honest repair and it is out of this increment's scope.",
-      "sweep_coupling": "site/unlighthouse.config.ts's ci.budget.performance is a TRANSCRIPTION of perfMin x 100, enforced by gate-51 G51c's transcription-drift detector. Because the ⛩ ruling HELD perfMin at 0.9, nothing moves and G51c stays green with no same-diff churn. If a future ruling moves perfMin, ADR-057 requires the sweep config move in the SAME commit."
+      "fixture_attribution": "\u26a0 CORRECTED 2026-09-02 \u2014 see source_refs.local_desktop_fixture_band.form_factor_evidence. The prior text ('the fixtures do not record the instrument ... B2b can source the BAR, it cannot retroactively attribute the FIXTURES') was FALSE: both the committed `_provenance` and the raw runs' configSettings record it [D]. The real gap was that nothing MACHINE-CHECKED it, which the re-baseline + G53g now close.",
+      "sweep_coupling": "site/unlighthouse.config.ts's ci.budget.performance is a TRANSCRIPTION of perfMin x 100, enforced by gate-51 G51c's transcription-drift detector. Because the \u26e9 ruling HELD perfMin at 0.9, nothing moves and G51c stays green with no same-diff churn. If a future ruling moves perfMin, ADR-057 requires the sweep config move in the SAME commit."
     }
   }
 }

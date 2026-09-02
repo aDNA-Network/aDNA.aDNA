@@ -758,7 +758,7 @@ not `[D]`; only a re-baseline repairs it. (2) **AC2's owed-list stands** — ⛩
 transport (its own gate, `/privacy` first) → first p75 on traffic; the emitter is live and
 **zero-network by construction**, and *"the emitter ships"* is not *"vitals are collected."*
 (3) The **four un-adopted class leaves** (TBT 200 + a11y/best-practices/seo) are a dated, asserted
-gap, not an absence.
+gap, not an absence. ⛔⛔ **CORRECTED 2026-09-02 — THIS CLAIM WAS FALSE AND IT WAS MINE.** The fixtures **do** record their instrument: every one carries a top-level **`_provenance`** string (*"Lighthouse 13.4.0 **desktop** on /vaults/graph"*; two name `--preset=desktop` exactly), and the **raw archived runs** (`site/evidence/`, gitignored) carry hard `configSettings` `[D]`: **`formFactor: desktop` · `screenEmulation.mobile: false` · `rttMs: 40`** at LH **13.4.0**. ⇒ **the desktop claim is `[D]`, not `[I]`.** The error was checking `configSettings` alone, finding it absent, and concluding no record existed — **convention 16 breached one sitting after this campaign cited it**, by the desk that cited it. ⭐ **The residual is real but NARROWER**: the *committed* fixture carries no **machine-readable** instrument field, so **no gate can assert it** (a gate cannot assert prose), and the hard evidence sits in a **gitignored** directory CI never sees. *The defect was never "we cannot prove it" — it was "nothing re-checks it".* Closed by the 2026-09-02 re-baseline + `gate-53`'s **G53g**.
 
 ⚠ **SO#11.** B2b ⛩ re-ratified at **~55–85 kT / 1 session, `opus`** — its own act, because B2b's
 band *left* P4.4b's entirely under ruling (c). Declared at the open and honoured. **P4.4b overall ran

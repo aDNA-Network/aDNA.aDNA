@@ -149,7 +149,7 @@ not travel with the class** — the class defaults are the only portable part."*
 ### §2.3 · ⚠ A third defect, found by reading our own fixtures
 
 `gate-19`'s four fixtures carry `lighthouseVersion: 13.4.0` and **`configSettings` ABSENT** `[D]` —
-no `formFactor`, no `throttling`, no `screenEmulation`.
+no `formFactor`, no `throttling`, no `screenEmulation`. ⛔⛔ **CORRECTED 2026-09-02 — THIS CLAIM WAS FALSE AND IT WAS MINE.** The fixtures **do** record their instrument: every one carries a top-level **`_provenance`** string (*"Lighthouse 13.4.0 **desktop** on /vaults/graph"*; two name `--preset=desktop` exactly), and the **raw archived runs** (`site/evidence/`, gitignored) carry hard `configSettings` `[D]`: **`formFactor: desktop` · `screenEmulation.mobile: false` · `rttMs: 40`** at LH **13.4.0**. ⇒ **the desktop claim is `[D]`, not `[I]`.** The error was checking `configSettings` alone, finding it absent, and concluding no record existed — **convention 16 breached one sitting after this campaign cited it**, by the desk that cited it. ⭐ **The residual is real but NARROWER**: the *committed* fixture carries no **machine-readable** instrument field, so **no gate can assert it** (a gate cannot assert prose), and the hard evidence sits in a **gitignored** directory CI never sees. *The defect was never "we cannot prove it" — it was "nothing re-checks it".* Closed by the 2026-09-02 re-baseline + `gate-53`'s **G53g**.
 
 ⇒ **We cannot prove our own fixtures are desktop.** `unlighthouse.config.ts` asserts gate-19's
 instrument is `--preset=desktop`, and that is almost certainly right — but **at the object it is an
