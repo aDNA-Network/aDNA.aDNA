@@ -776,3 +776,60 @@ verified by its red-test, not by its green run**: two mutation cases turn it red
 established it genuinely reads the peer vault rather than passing through its NOT-VERIFIED branch.
 *A limb that can skip must be shown failing, or its green is unattributable* — convention 14's second
 clause, applied to the one limb that cannot run in CI.
+
+---
+
+## ⭐⭐ ADDENDUM 2026-09-02 (post-close) — THE FOUR UN-ADOPTED BARS ARE ADOPTED
+
+⛔ **Not a reopening.** P4.4 stays **`completed`**; all its criteria were met at the close. The four
+`content_static` leaves were filed there as an **owed item**, and this discharges it — the **GR-2
+addendum precedent** (*"filed as owed, never as a criterion"*). ⛩ Operator instruction: *"Go and
+adopt."*
+
+**Adoption was not a config change.** The committed fixtures carried **1 category and 2 audits**, so
+there was nothing to assert against ⇒ a **fixture re-baseline**, and the script to do it **did not
+exist**: every fixture's `_provenance` said *"regenerate…"* while nothing in the repo could.
+`site/scripts/gen_lighthouse_fixtures.mjs` is that script.
+
+**Measured first, then pinned** — all four routes at `lighthouse@13.4.1 --preset=desktop`:
+`perf 1.0 · a11y 1.0 · bp 1.0 · seo 1.0 · TBT 0 ms · desktop`.
+
+**Adopted into `gate-19`**: `a11yMin 0.95` · `bestPracticesMin 0.95` · `seoMin 1.0` · `tbtMaxMs 200`.
+**`perfMin` stays 0.9** — adopting siblings does not reopen it. `gate-53` gains **G53g**; red-test
+**15/15** (13 mutations + 2 controls), every case red at its **declared** set. Chromium **659 → 660**.
+
+⚠ **TBT IS ADOPTED AND INERT, SAID RATHER THAN HIDDEN** — 0 ms measured against a 200 ms ceiling.
+*A bar that cannot currently fail proves nothing* (convention 14), so it ships as a **regression
+floor**. It inherits `perfMin`'s exact caveat: TBT is a CPU-throttling metric, so 200 is a
+**mobile-derived** number on **desktop** fixtures. Adopted anyway — *a loose floor is harmless where a
+wrong bar is not* — and **not** silently tightened to a desktop-derived value, because inventing a bar
+is what `ratchet_law` reserves for an operator gate.
+⚠ **`seoMin` has ZERO headroom** (class bar 100, measured exactly 1.0). ⚠ **a11y is deliberate
+redundancy** — `gate-4`'s axe pass at zero violations is strictly stronger.
+
+### ⛔⛔ AND THE ADDENDUM OPENS BY CORRECTING THIS MISSION'S OWN CLOSE
+
+The AAR's follow-up (1) said *"`gate-19`'s fixtures carry `configSettings` ABSENT, so 'our 90 is a
+desktop bar' is `[I]`, not `[D]`."* **That was false**, in **seven surfaces**, and it was written
+**one sitting after this campaign cited the rule it breaks**: every fixture carried a top-level
+**`_provenance`** naming the instrument, and the **raw archived runs** carry hard `configSettings`
+(`formFactor: desktop` · `mobile: false` · `rttMs: 40`) `[D]`. The error was checking the *standard*
+field, finding it absent, and concluding no record existed. **Convention 16, breached by the desk that
+cited it, inside the artifact built to record provenance.** Corrected at `e60e7ad`, **before** the
+re-baseline, because a remedy aimed at the wrong defect is what this campaign keeps finding.
+
+⭐ **The residual was real but NARROWER, and G53g is its actual close**: the *committed* fixture
+carried no **machine-readable** instrument field, so **no gate could assert it** — *a gate cannot
+assert prose* — and the hard evidence sat in a **gitignored** directory CI never sees.
+
+⚠ **A re-baseline that also moves the instrument cannot attribute what it measures.** LH went
+**13.4.0 → 13.4.1** in the same act; `/learn/concepts/knowledge-graph` read **0.99 before, 1.0 after**,
+and nothing here can say whether that is the version, the machine, or the page. **Confounded, and
+recorded as confounded.**
+
+⭐ **Three harness defects, all caught by the harness's own discipline** — `failing_set()` matched
+`G53[a-f]` and **could not see `G53g`** (every new case would have reported NO RED: *the harness blind
+to the assertion it was extended to prove*); **`G53c`'s coverage floor was `>= 2` against an actual 6**,
+so four counterparts could have vanished green (raised to 6); and two **declared red-sets** went stale
+for that same reason and reported as **HARNESS BUG** rather than passing. ⇒ ***a coverage floor goes
+stale the moment its subject grows.***

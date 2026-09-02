@@ -2120,3 +2120,62 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > desktop bar"* is `[I]`, not `[D]`, and only a re-baseline repairs it · ~59 uncited capture PNGs.
 >
 > ⛔⛔ **CORRECTED 2026-09-02 — THIS CLAIM WAS FALSE AND IT WAS MINE.** The fixtures **do** record their instrument: every one carries a top-level **`_provenance`** string (*"Lighthouse 13.4.0 **desktop** on /vaults/graph"*; two name `--preset=desktop` exactly), and the **raw archived runs** (`site/evidence/`, gitignored) carry hard `configSettings` `[D]`: **`formFactor: desktop` · `screenEmulation.mobile: false` · `rttMs: 40`** at LH **13.4.0**. ⇒ **the desktop claim is `[D]`, not `[I]`.** The error was checking `configSettings` alone, finding it absent, and concluding no record existed — **convention 16 breached one sitting after this campaign cited it**, by the desk that cited it. ⭐ **The residual is real but NARROWER**: the *committed* fixture carries no **machine-readable** instrument field, so **no gate can assert it** (a gate cannot assert prose), and the hard evidence sits in a **gitignored** directory CI never sees. *The defect was never "we cannot prove it" — it was "nothing re-checks it".* Closed by the 2026-09-02 re-baseline + `gate-53`'s **G53g**.
+> ⭐⭐ **ADDENDUM 2026-09-02 (post-close, NOT a reopening) — THE FOUR UN-ADOPTED BARS ARE ADOPTED, AND
+> THE ADDENDUM OPENS BY CORRECTING P4.4's OWN CLOSE.** ⛩ Operator: *"Go and adopt."* P4.4 stays
+> **`completed`**; the four `content_static` leaves were filed at its close as an **owed item**, and
+> this discharges it (the **GR-2 addendum precedent** — *filed as owed, never as a criterion*).
+>
+> **Adoption turned out to be a RE-BASELINE.** The committed fixtures carried **1 category and 2
+> audits**, so there was nothing to assert against — and the regeneration script **did not exist**,
+> though every fixture's `_provenance` said *"regenerate…"* and three separate missions had hand-made
+> them. `site/scripts/gen_lighthouse_fixtures.mjs` is that script. Measured first, then pinned, all
+> four routes at `lighthouse@13.4.1 --preset=desktop`: **perf 1.0 · a11y 1.0 · bp 1.0 · seo 1.0 ·
+> TBT 0 ms · desktop.** `gate-19` **3 bars → 7**; `gate-53` **6 → 7** (**G53g**); red-test **15/15**
+> (13 mutations + 2 controls); chromium **659 → 660** · fast **542** · all-projects **686**.
+>
+> ⛔⛔ **THE CORRECTION IS THE ENTRY WORTH READING.** P4.4's AAR said *"`gate-19`'s fixtures carry
+> `configSettings` ABSENT, so 'our 90 is a desktop bar' is `[I]`, not `[D]`."* **False, in seven
+> surfaces.** Every fixture carries a top-level **`_provenance`** naming the instrument (*"Lighthouse
+> 13.4.0 **desktop** on /vaults/graph"*), and the **raw archived runs** carry hard `configSettings`
+> `[D]` (`formFactor: desktop` · `mobile: false` · `rttMs: 40`). The error was checking the *standard*
+> LHR field, finding it absent, and concluding **no record existed** — **convention 16 breached one
+> sitting after this campaign cited it, by the desk that cited it, inside the artifact built to record
+> provenance.** Corrected at `e60e7ad` **before** the re-baseline, because *a remedy aimed at the wrong
+> defect* is what this campaign keeps finding. ⭐ **The residual was real but NARROWER, and G53g is its
+> close**: the *committed* fixture carried no **machine-readable** instrument field, so **no gate could
+> assert it — a gate cannot assert prose** — and the hard evidence sat in a **gitignored** directory CI
+> never sees. *The defect was never "we cannot prove it"; it was "nothing re-checks it."*
+>
+> ⚠ **TBT IS ADOPTED AND INERT, AND SAYS SO ON THE GATE'S FACE** — 0 ms measured against a 200 ms
+> ceiling. *A bar that cannot currently fail proves nothing* (convention 14) ⇒ it ships as a
+> **regression floor**, and it inherits `perfMin`'s exact caveat (TBT is a CPU-throttling metric, so
+> 200 is **mobile-derived** on **desktop** fixtures). Adopted anyway — *a loose floor is harmless where
+> a wrong bar is not* — and **not** silently tightened, because inventing a bar is what `ratchet_law`
+> reserves for an operator gate. ⚠ **`seoMin` has ZERO headroom**; ⚠ **a11y is deliberate redundancy**,
+> `gate-4`'s axe-at-zero being strictly stronger.
+>
+> ⚠ **A RE-BASELINE THAT ALSO MOVES THE INSTRUMENT CANNOT ATTRIBUTE WHAT IT MEASURES.** LH went
+> **13.4.0 → 13.4.1** in the same act, and `/learn/concepts/knowledge-graph` read **0.99 before, 1.0
+> after** — version, machine, or page, nothing here can say. **Confounded, and recorded as confounded**
+> rather than banked as an improvement.
+>
+> ⭐ **Three harness defects, every one caught by the harness's own discipline:** `failing_set()`
+> matched `G53[a-f]` and **could not see `G53g`**, so every new case would have reported **NO RED** —
+> *the harness silently blind to the assertion it was extended to prove*; **`G53c`'s coverage floor was
+> `>= 2` against an actual 6**, so four counterparts could have vanished green (raised to 6); and two
+> **declared red-sets** went stale for that same reason and reported as **HARNESS BUG** rather than
+> passing. ⇒ ***A COVERAGE FLOOR GOES STALE THE MOMENT ITS SUBJECT GROWS*** — raise it in the commit
+> that grows it, or the limb decays into a formality.
+>
+> ✅ **Also cleared this sitting:** the push (`60d0120..0362a00`, gitleaks clean, verified at the
+> remote) and **both staged replies DELIVERED** — Hopper → `Git.aDNA`, babbage → `Hardware.aDNA`,
+> byte-identical, stamped, then **RESYNCed** so both ends carry the delivered stamp. ⭐ **Hopper's memo
+> was stale on its face and its own clause caught it**: it said the literal stays public *"until our
+> next ⛩ GO'd push"* — which had happened thirty minutes earlier — so the clause was **updated at
+> delivery** rather than delivered false. *Convention 15 working exactly as designed.*
+>
+> ⏭ **NEXT is unchanged: Lane D**, at its own ⛩ conv-13 gate, needing an **⛩ audience/scope decision
+> before any copy**. ⛔ Held: **P5.1** with the humans. ⚠ Owed: B1's Speed-Insights → transport → first
+> p75 · ~59 uncited capture PNGs · babbage's **lease question** (operator ruling, routed to
+> `idea_upstream_coordination_dropbox_doctrine`) · babbage's two upstream findings still **proposed,
+> not filed** (`skill_upstream_contribution` needs operator approval).
