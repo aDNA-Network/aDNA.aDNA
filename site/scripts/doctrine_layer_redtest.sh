@@ -40,6 +40,7 @@ TWIN_PATTERN="dist/patterns/mission-decomposition.md"
 TWIN_TUTORIAL="dist/learn/tutorials/design-a-mission.md"
 TOUR="src/data/tour/standard-governance.txt"
 TWIN_COMMONS="dist/commons.md"          # GR-4 O2 · D4 — AC-4's presence half (G54i/G54j)
+TWIN_NETWORK="dist/network.md"          # GR-4 O3 · D3 — AC-3's framing half (G54k/G54l/G54m/G54n)
 
 BAK="$(mktemp -d)"
 PASS=0; FAIL=0
@@ -52,11 +53,12 @@ cleanup() {
   [ -f "$BAK/twin_tutorial" ] && cp "$BAK/twin_tutorial" "$TWIN_TUTORIAL"
   [ -f "$BAK/tour" ]          && cp "$BAK/tour"          "$TOUR"
   [ -f "$BAK/twin_commons" ]  && cp "$BAK/twin_commons"  "$TWIN_COMMONS"
+  [ -f "$BAK/twin_network" ]  && cp "$BAK/twin_network"  "$TWIN_NETWORK"
   rm -rf "$BAK"
 }
 trap cleanup EXIT
 
-for f in "$SPEC" "$MEASURE" "$SRC_PATTERN" "$SRC_TUTORIAL" "$TWIN_PATTERN" "$TWIN_TUTORIAL" "$TOUR" "$TWIN_COMMONS"; do
+for f in "$SPEC" "$MEASURE" "$SRC_PATTERN" "$SRC_TUTORIAL" "$TWIN_PATTERN" "$TWIN_TUTORIAL" "$TOUR" "$TWIN_COMMONS" "$TWIN_NETWORK"; do
   [ -f "$f" ] || { echo "HARNESS BUG: $f not found (build first? wrong cwd?)" >&2; exit 2; }
 done
 cp "$MEASURE" "$BAK/measure"
@@ -66,6 +68,7 @@ cp "$TWIN_PATTERN" "$BAK/twin_pattern"
 cp "$TWIN_TUTORIAL" "$BAK/twin_tutorial"
 cp "$TOUR" "$BAK/tour"
 cp "$TWIN_COMMONS" "$BAK/twin_commons"
+cp "$TWIN_NETWORK" "$BAK/twin_network"
 
 # Prints the sorted set of failing assertion ids, e.g. "G54c G54h".
 #
@@ -85,7 +88,7 @@ failing_set() {
 restore_all() { cp "$BAK/measure" "$MEASURE"; cp "$BAK/src_pattern" "$SRC_PATTERN";
   cp "$BAK/src_tutorial" "$SRC_TUTORIAL"; cp "$BAK/twin_pattern" "$TWIN_PATTERN";
   cp "$BAK/twin_tutorial" "$TWIN_TUTORIAL"; cp "$BAK/tour" "$TOUR";
-  cp "$BAK/twin_commons" "$TWIN_COMMONS"; }
+  cp "$BAK/twin_commons" "$TWIN_COMMONS"; cp "$BAK/twin_network" "$TWIN_NETWORK"; }
 
 # case <n> <label> <declared-red-set> <mutation-verifier-cmd>
 check_case() {
@@ -107,7 +110,15 @@ check_case() {
 }
 
 applied() { # applied <file> <grep-pattern> <case-label>
-  grep -q "$2" "$1" || { echo "  ✗ HARNESS BUG: mutation for $3 did not apply to $1" >&2; FAIL=$((FAIL+1)); return 1; }
+  grep -q "$2" "$1" && return 0
+  echo "  ✗ HARNESS BUG: mutation for $3 did not apply to $1" >&2
+  FAIL=$((FAIL+1))
+  # ⛔ RESTORE BEFORE RETURNING. Without this the `&& check_case` chain short-circuits past the only
+  # `restore_all` in the case, the mutated tree survives into every case after it, and each one fails
+  # for a reason belonging to its predecessor. Observed 2026-09-02: one stale grep pattern produced
+  # FOUR false HARNESS BUGs and a red final control. A case that cannot apply must fail ALONE.
+  restore_all
+  return 1
 }
 
 echo
@@ -174,7 +185,12 @@ s = re.sub(r'(## Budgeting and Routing a Mission\n)[\s\S]*?(?=\n## When to Use)'
            r'\1\nMissions declare a token_budget_estimated.\n', s)
 open(p, 'w').write(s)
 PY
-applied "$TWIN_PATTERN" 'Missions declare a token_budget_estimated\.' "case 7" && check_case 7 "graded section gutted to a mention" "G54f"
+# ⚠ DECLARES BOTH FLOORS, and the second was added by the commit that added G54k (same-diff, ADR-057).
+# A section gutted to one sentence is below the shared pin AND below its own page's siblings, so it
+# legitimately reds both. The harness caught this declaration going stale the moment G54k landed —
+# which is the coverage-floor-goes-stale-as-its-subject-grows lesson arriving in a CASE rather than
+# in `failing_set`. Case 12 is the one that isolates G54k alone.
+applied "$TWIN_PATTERN" 'Missions declare a token_budget_estimated\.' "case 7" && check_case 7 "graded section gutted to a mention" "G54f G54k"
 
 # ── CASE 8 → G54g — an EXEMPLAR thins so the derivation stops supporting the pin ─────────────────
 # Not the graded section: the evidence UNDER the floor. gate-44's G44c, for gate-44's reason.
@@ -214,13 +230,60 @@ if applied "$TWIN_COMMONS" 'the standard' "case 11"; then
     || { echo "  ✗ HARNESS BUG: the collision term is gone too, so case 11 cannot test what it claims" >&2; FAIL=$((FAIL+1)); restore_all; }
 fi
 
+# ── CASE 12 → G54k — the D3 section clears the SHARED pin and is thinner than its own siblings ────
+# ⭐ THE CASE THAT JUSTIFIES G54k EXISTING, and it had to be MEASURED rather than eyeballed. The
+# replacement must land strictly BETWEEN the shared pin (217) and /network's own thinnest band (547):
+# above 217 so G54f STAYS GREEN and reports the layer as conformant, below 547 so G54k alone reds.
+# ⚠ The first draft was written by feel at ~205 and reds BOTH floors — isolating nothing and proving
+# nothing. The harness caught it and said so. A mutation aimed between two thresholds is a MEASUREMENT,
+# not a sentence, which is B0's rule arriving in a red-test case.
+python3 - <<'PYCASE'
+import re
+p = "dist/network.md"
+s = open(p).read()
+s = re.sub(r'(## Running a model on your own machine\n)[\s\S]*?(?=\n## Governed)',
+           r'\1\nLocal models are planned work, not shipped work, and nothing here runs yet. It is not '
+           r'built. Two vaults hold the plan, and the registry marks both of them genesis, with no code '
+           r'behind it yet. No date is set, and none is promised. When there is something to run, it '
+           r'will ship as a step in Get started, and this section will say so at that point.\n', s)
+open(p, "w").write(s)
+PYCASE
+applied "$TWIN_NETWORK" 'will say so at that point' "case 12" \
+  && check_case 12 "D3 thinner than its own page's bands, above the shared pin" "G54k"
+
+# ── CASE 13 → G54l — the D3 probe stops reaching real text ───────────────────────────────────────
+# Targets the REACH CONTROL only, and ⚠ mutates the BODY, never the heading: the heading is how the
+# graded section is FOUND, so changing it would red G54e/G54f/G54k and report the wrong cause. Same
+# discipline as case 9 on /commons — a control that a broken probe would satisfy is not a control.
+perl -0pi -e 's/a local model to a node/a local widget to a node/; s/the model files it would serve/the widget files it would serve/; s/Running the model on the same machine/Running the engine on the same machine/' "$TWIN_NETWORK"
+applied "$TWIN_NETWORK" 'a local widget to a node' "case 13" \
+  && check_case 13 "the D3 probe no longer reaches its own subject" "G54l"
+
+# ── CASE 14 → G54m — the planned framing is stripped, the content stays ──────────────────────────
+# Every fact survives; only the markers that make the copy TESTABLY forward-looking go. The section
+# keeps its length (G54f/G54k green) and makes no availability claim (G54n green) — it has simply
+# stopped saying that none of this exists. This is how planned framing dies in practice: not deleted,
+# smoothed away by an editor tidying hedges out of the prose.
+perl -0pi -e 's/\*\*planned work, not shipped work\*\* — nothing here runs yet/\*\*a natural next step\*\* — the shape of it is clear enough/; s/It is not built\./That is the direction\./; s/both of them as \*\*planned\*\*/both of them as \*\*early\*\*/; s/and no code behind it yet/and a scope they are growing into/; s/No date is set, and none is promised\./The sequencing follows the roadmap./' "$TWIN_NETWORK"
+applied "$TWIN_NETWORK" 'a natural next step' "case 14" \
+  && check_case 14 "planned markers smoothed away, facts intact" "G54m"
+
+# ── CASE 15 → G54n — ⭐ THE LOAD-BEARING CASE FOR D3 ─────────────────────────────────────────────
+# Nothing is removed. One sentence is ADDED, and it is the single sentence this whole section exists
+# to not say. The hedges all remain, so G54m is GREEN and the copy still LOOKS careful — which is
+# precisely the failure mode: planned framing does not fail by going missing, it fails by acquiring
+# a promise beside it. V7's lesson, borrowed one criterion sideways.
+perl -0pi -e 's/(No date is set, and none is promised\.)/You can run a local model today. $1/' "$TWIN_NETWORK"
+applied "$TWIN_NETWORK" 'You can run a local model today' "case 15" \
+  && check_case 15 "an availability claim added beside intact hedges" "G54n"
+
 # ── FINAL CONTROL — the tree was left as found ───────────────────────────────────────────────────
-echo "control 12: tree restored"
+echo "control 16: tree restored"
 if [ -z "$(failing_set)" ]; then
-  echo "  ✓ control 12: gate green again ⇒ every mutation was reverted"
+  echo "  ✓ control 16: gate green again ⇒ every mutation was reverted"
   PASS=$((PASS+1))
 else
-  echo "  ✗ control 12: gate STILL RED after restore — the harness has left the tree mutated" >&2
+  echo "  ✗ control 16: gate STILL RED after restore — the harness has left the tree mutated" >&2
   FAIL=$((FAIL+1))
 fi
 

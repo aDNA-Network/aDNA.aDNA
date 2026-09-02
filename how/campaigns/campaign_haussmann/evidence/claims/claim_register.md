@@ -1610,3 +1610,94 @@ tally went stale by 13 rows). Reconciles exactly against §16: rows **168 + 3 = 
 
 ⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order.** This section is now
 that table. Any future `§N.M Counts` section is appended **after** this one, never inserted above.
+
+## §18 — GR-4 O3: D3 reaches `/network`, and the word the registry does not publish (2026-09-02)
+
+`AC-3` · `AC-7` · verification limb `V2`. New public copy on `/network` (Band 4b), plus **one
+pre-existing sentence scoped** because this increment put it into direct contradiction.
+
+### §18.1 The enumeration, and its rule — asserted, not remembered
+
+⭐ **The claim set is ENUMERATED FROM THE DIFF**, per §16.1's ratified rule (DEFECT-5: a limb
+asserting *"rows present for every new claim"* can only confirm the set someone handed it, so a
+forgotten claim is invisible to the check written to catch forgotten claims).
+
+Enumerator: `git diff -- site/src/pages/network.astro`, **added lines only**. **78 added non-blank
+lines** `[D]`, decomposing as **14 rendered prose · 18 markup · 8 HTML comment · 38 scoped CSS**.
+
+**8 of the prose lines' sentences carry checkable new assertions (R-153…R-160). All 8 are below**,
+plus **R-161** for the scoped pre-existing bullet. The remaining prose is named here as a set so the
+exclusion is auditable rather than silent:
+
+- **`<h2>` "Running a model on your own machine"** — a section heading and navigation label. It
+  asserts no fact; the band beneath it carries the content.
+- *"Your vaults, their history and your credentials stay put. The prompts leave."* — a **concrete
+  restatement** of R-153, deliberately echoing the enumeration `/network` already publishes 35 lines
+  above (*"its vaults, their full history, the machine's inventory, and its credentials never
+  leave"*). Registering it would create a row whose basis is another row (§17.1's hinge precedent).
+- *"When there is something to run, it will ship as a step in Get started, and this section will say
+  so."* — a statement about **future editorial behaviour**, not about the present product. It is the
+  sentence R-160 makes checkable, and it is the only forward commitment on the page that binds *us*
+  rather than describing the software.
+
+| ID | Surface | Claim | Verdict | Basis | Sev | Prov |
+|---|---------|-------|---------|-------|-----|------|
+| **R-153** | `/network` | *"Your files stay on your node today. Your prompts do not."* | **verified** | First half restates the page's own live band 35 lines above — *"Stays on your machine — By default, everything"* (`network.md:35-40`) `[D]`. Second half is the **new disclosure**, and it moves a claim **DOWN**: it names an exception to a boundary the page had been stating without one. Grounded in the page's own prerequisite bullet, *"Needs `git` + the Claude Code CLI"* — the agent is a stated requirement, and R-64 records that it sends prompts and file contents to its provider | — | [D] |
+| **R-154** | `/network` | *"Closing that gap is planned work, not shipped work — nothing here runs yet."* | **verified** | An absence assertion about this vault's own roadmap. Surface named per convention 17: **absent from `site/src/**` and from the 226-page built tree** — no local-model serving code, no install step, no route. The two named vaults are `status: genesis` in `vaults.json` with no code `[D]` | — | [D] |
+| **R-155** | `/network` | *"A node needs a coding agent to do its work. That agent sends your prompts to its provider."* | **verified** | The page's own prerequisite bullet requires the Claude Code CLI `[D]`; `/get-started` states in its own voice, since GR-1 O5, that the trailing `&& claude` starts Claude Code, needs an Anthropic account, and sends the files it reads to Anthropic. ⭐ **This is R-64's S3 caveat stated on a SECOND surface in the page's own voice** — the remedy that row prescribed at P0.5, now applied where the reader meets the boundary claim | — | [D] |
+| **R-156** | `/network` | *"Running the model on the same machine would close that gap. It is not built."* | **verified** | Conditional in its first clause and an absence assertion in its second. Same basis as R-154; the conditional asserts no present fact | — | [D] |
+| **R-157** | `/network` | *"the registry lists both of them as **planned** — a name, an owner, and no code behind it yet"* | **verified — AND CORRECTED BEFORE SHIPPING** | ⛔⛔ **The drafted sentence said `genesis`, and that was FALSE OF THE SURFACE IT SENDS THE READER TO.** `vaults.json` carries `status: "genesis"` `[D]`, but the site's public face **renders that state as `planned`**: `dist/vaults/inference/index.html` and `dist/vaults/llamacppforge/index.html` each read **`Stage: planned` (self-declared)** and contain the literal `genesis` **0 times**, `planned` **1 time** `[D]`. The claim's verb is *"the registry lists"*, and a reader settles that **at the card**, not at the source field — **convention 17's amendment, arriving in a vocabulary rather than in a grep**. ⭐ It would have passed every limb: `G54m`'s marker list contained `'genesis'`, so the framing assertion was green **on the source's own word** while the copy misdirected the reader. Corrected same-diff in copy + marker list + red-test case 14. The gloss restates the site's own tooltip, *"A named place in the network with a governance skeleton and little else"* `[D]` | — | [D] |
+| **R-158** | `/network` | *"Inference — the plan for serving a local model to a node."* | **verified** | `vaults.json` `inference`: `class: platform`, `status: genesis`, description *"Keystone cohort — local LLM inference serving (one graph, selectable backends: llama.cpp/MLX/vLLM/Ollama)"* `[D]`. *"the plan for"* is the register's own claim-lowering: the vault is a plan, not a server | — | [D] |
+| **R-159** | `/network` | *"LlamaCppForge — the plan for building the model files it would serve."* | **verified** | `vaults.json` `llamacppforge`: `class: forge`, `status: genesis`, described as the *"build-with face"* for llama.cpp `[D]`. The build/serve split matches the workspace router's own distinction (*"LlamaCppForge = build-face; `Inference.aDNA` serves"*) | — | [D] |
+| **R-160** | `/network` | *"No date is set, and none is promised."* | **verified** | An absence assertion about commitments. Surface named: **no date, milestone or release target for local models appears in `site/src/**`, the built tree, or either vault's registry row** `[D]`. ⭐ It is also the sentence that makes the following one safe — a forward statement about shipping is only honest beside an explicit refusal to date it | — | [D] |
+| **R-161** | `/network` | *"Local-first — **your vault files** never leave until you choose"* ⟵ was *"Local-first — **nothing** leaves until you choose"* | **verified (SCOPED — a claim moved DOWN)** | ⛔ **A pre-existing sentence, repaired because THIS increment put it into direct contradiction.** The new band 40 lines below says in the page's own voice that prompts **do** leave; an unqualified *"nothing"* one band above is a contradiction a reader meets without looking for it. ⭐⭐ **This is `R-64`'s class on a second surface, and R-64's own remedy was written at P0.5** (*"scope it to 'aDNA itself sends nothing'"*) — **GR-1 discharged it on `/get-started` ONLY.** ⚠ **Unpinned before the edit**: no register row, no `gate-26` fixture, no gate quote `[D]`, so the change costs no same-diff churn. ⛔ **The third instance, `R-97` (the homepage NOT-line, `verified (ADR-048 verbatim)`), is NAMED AND NOT TOUCHED** — ratified copy needs its own gate. ⇒ *a caveat in the register is a finding with a home and no gate*, and the proof it still binds is that its remedy reached one of three surfaces | — | [D] |
+
+### §18.2 ⭐⭐ The finding: a shared notation is not a shared referent
+
+⛩ **Ruling 2 sent D3 to *"where the L0–L3 ladder actually lives"*. That ladder is a HOMONYM**, and
+the recon matched four labels and inferred a subject `[D]`:
+
+- `agentic-literacy.mdx:12-14` → **`L0 Aware → L1 User → L2 Builder → L3 Architect`** — a
+  **human-literacy** ladder.
+- The **compute** ladder (`L0` this workspace … `L2+` regional/cloud) is at
+  `src/data/tour/workspace-router.txt:133-137` — **byte-vendored**, and therefore the one place
+  branch (i) could not put authored copy (Standing Rule 1; `F-w`'s trust-page reasoning, third row).
+
+⇒ **branch (i) was unperformable as ruled, for two independent reasons**, and was ⛩ re-ruled onto
+`/network` on corrected reasoning. ***A label that matches exactly is the hardest kind of wrong
+answer to notice*** — convention 17's amendment one level up: there the *surface* had to match the
+claim's verb; here the **term** has to match the claim's **subject**.
+
+⚠ **The revue's sentence stays FALSE and its conclusion survives**: `/network` still carries **0**
+L0–L3 and **0** compute-tier `[D]`. It is the right home because it owns the *aDNA-computer* /
+local-vs-federated subject, **not** because it owns the ladder.
+
+### §18.3 Counts — derived last
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **180** |
+| **Unique ids** | **165** (14 `G-*` + 151 `R-*`, `R-11`…`R-161`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, **not typed**, and re-run *after* §18 was
+written. Reconciles exactly against §17: rows **171 + 9 = 180**, ids **156 + 9 = 165**,
+`R-153` → `R-161`.
+
+⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order.** This section is now
+that table. Any future `§N.M Counts` section is appended **after** this one, never inserted above.
+
+⭐⭐ **§17.5's WARNING WAS FOLLOWED EXACTLY AND THE GATE STILL WENT RED — because the warning
+governed POSITION and the failure was FORMAT.** §18 was appended *after* §17.5, precisely as
+instructed; the first draft of this section was a prose sentence (*"Rows added: 9…"*) rather than the
+parseable table, so `G41b` reported *"the register's last Counts section does not publish a parseable
+row figure — the format changed and this gate went blind rather than red."*
+⇒ ***a note that transfers one obligation reads as if it transferred all of them***, and the half it
+does not mention is the half nobody checks. **The gate refusing to go blind is what caught it** — it
+did not silently compare against §17.5 and report a stale green, which is the failure mode this
+whole file exists to prevent.
+⚠ **And it was caught only because the suite was RE-RUN after the record edits.** The green quoted
+in this objective's commit was measured **before** this section existed — **convention 16's own law
+(*a verification with no recurrence is a claim about the past wearing the grammar of the present*),
+one step after this desk quoted it**, and **P5.1's finding recurring verbatim: the commit that
+records a close is a change the suite can see.**

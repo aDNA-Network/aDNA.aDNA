@@ -29,7 +29,7 @@ blocks: []
 acceptance_criteria:
   - "AC-1 [D1 · model routing] — the model-routing story is published in AUTHORED site content, and its test surface EXCLUDES `src/data/tour/**` and any other byte-vendored artifact. ⚠ The exclusion is the criterion, not a detail: measured 2026-09-02, the ONLY model-routing occurrence site-wide is a skills-table row inside the vendored `.adna/CLAUDE.md` at `src/data/tour/standard-governance.txt:260`, so a naive site-wide grep is ALREADY GREEN and would be met by building nothing."
   - "AC-2 [D2 · token-budget doctrine] — the SO-11 / ADR-016 per-mission budget doctrine layer is published on its NAMED homes, `mission-decomposition.mdx` and/or `design-a-mission.mdx` (both verified present on disk), and meets a SUBSTANCE FLOOR derived from the existing doctrine sections on those same pages. ⚠ DEFECT-3 remedy: the baseline is 0, so a bare count is satisfied by a single passing mention anywhere — in a changelog entry, a glossary stub — while the layer stays unwritten. The floor is DERIVED from the page's own siblings, never typed by feel (B0: a number written by feel is a formality wearing a pin's clothing)."
-  - "AC-3 [D3 · local models] — a *planned*-framed local-models section ships WHERE THE L0-L3 LADDER ACTUALLY LIVES (⛩ RULING 2, branch (i)), NOT on `/network`, whose ratified home-claim measured FALSE (0 L0-L3, 0 compute-tier on its live twin — it owns the aDNA-computer story). Every sentence is distinguishable BY TEST from a live claim, and the copy is checked against the counsel embargo and R-14/R-15 before it ships (CONSTRAINT-1: D1 and D2 are this vault's own live doctrine and are embargo-safe; D3 is not, and no criterion said so)."
+  - "AC-3 [D3 · local models] — ⛩⛩ RE-RULED 2026-09-02 AT O3's OPEN, strike-not-delete, and PERFORMED HERE IN THE SAME COMMIT AS THE BUILD so the criterion and the artifact are never left disagreeing (convention 7 / ADR-057): a *planned*-framed local-models section ships ON `/network`. ~~WHERE THE L0-L3 LADDER ACTUALLY LIVES (⛩ RULING 2, branch (i)), NOT on `/network`~~ — ⛔ THAT DESTINATION DID NOT EXIST, for TWO independent reasons measured at the object [D]: (1) `L0-L3` is a HOMONYM — `agentic-literacy.mdx:12-14` is `L0 Aware → L1 User → L2 Builder → L3 Architect`, a HUMAN-LITERACY ladder, and the recon matched four labels and inferred a subject; (2) the COMPUTE ladder's only site-wide home is `src/data/tour/workspace-router.txt:133-137`, BYTE-VENDORED, so branch (i) executed literally would have routed authored copy into the tree Standing Rule 1 forbids and AC-1's own exclusion exists to protect (F-w's trust-page reasoning, third row). ⚠ The revue's home-claim STAYS FALSE and its CONCLUSION survives: `/network` still carries 0 L0-L3 and 0 compute-tier, and is the right home because it owns the aDNA-computer / local-vs-federated story (Standing Rule 4) — which is what `run a model on your own machine` continues. Every sentence is distinguishable BY TEST from a live claim, and the copy is checked against the counsel embargo and R-14/R-15 before it ships (CONSTRAINT-1: D1 and D2 are this vault's own live doctrine and are embargo-safe; D3 is not, and no criterion said so)."
   - "AC-4 [D4 · ancient DNA] — the ancient-DNA disambiguation is PRESENT on `/commons` (⛩ RULING 3, the surface the MEASUREMENT selected: headroom 3.39 vs `/about` 0.57 and `/` 0.04), asserted on the `.md` TWIN — the surface whose verb is 'a reader encounters' — AND `/commons`'s prose FKGL stays at or under its own target, re-measured by `reading_census.mjs` with the before-figure recorded in the same artifact. ⚠ DEFECT-1 remedy: the presence half is the criterion's SUBSTANCE and was tested by nothing; and because FKGL FALLS as prose gets shorter, the constraint limb moves in the reassuring direction exactly when the criterion is met."
   - "AC-5 [D5 · latest strip] — a returning-member entry point to changelog/RSS exists above the footer, and the top-level nav still holds exactly 7 flat entries (ADR-049's cap, derived from `navigation.ts`, not typed)."
   - "AC-6 [D6 · movement 3] — movement-3 stays UNSHIPPED under the embargo, and that is the criterion being MET. Its evidence is a dated absence assertion naming its surface. ⚠ It ALSO corrects, at the record, the revue's false parenthetical that the ratified 'opening progressively' phrasing has 0 hits corpus-wide."
@@ -194,7 +194,7 @@ scope is ruled would be the P4.5a defect: a spec whose halves nobody read togeth
 | O0 | this pass + the ⛩ gate | — |
 | **O1 ✅** | **D1 + D2 (the two clean, agent-reachable adds)** — **DONE 2026-09-02** | signature only |
 | **O2 ✅** | **D4** — **DONE 2026-09-02** | ⛩ receiving-surface ruling |
-| O3 | D3 | ⛩ home ruling (the false-premise fork) |
+| **O3 ✅** | **D3** — **DONE 2026-09-02** | ⛩ home ruling — ⛩⛩ **RE-RULED at O3's open onto `/network`**: the ruled destination did not exist (homonym + vendored) |
 | O4 | D5 | signature only |
 | O5 | D6 + R-124's disposition + close cascade + AAR | ⛩ R-124 audience call |
 
@@ -359,6 +359,110 @@ remembering the finding, which is the argument for reading output.
 ⏭ **NEXT: `O3`** (D3 — the local-models section, branch (i): route it to where the L0–L3 ladder
 actually lives, **not** `/network`, whose ratified home-claim measured FALSE). ⛔ No deploy authorized
 or owed; a push is its own ⛩ GO.
+
+## O3 — DONE 2026-09-02 (`AC-3` ✅ · `AC-7` ◐ mission-level · `V2` ✅)
+
+D3, the local-models story, ships as **Band 4b — "Running a model on your own machine"** on
+`/network`, placed after *"Run a node"* because it continues that band's subject: what runs on your
+machine. Full record: `artifacts/gr_4/o3_d3_record.md`.
+
+**Derived, each by its own command `[D]`:** chromium **670 → 674** (delta isolated by `--list`:
+gate-54's own file **10 → 14**, `674 − 660 = 14` ⇒ **+4, removed nothing**) · all-projects **700** ·
+**snapshot 26, UNCHANGED** · run **673 passed / 1 skipped / 0 failed** · `check:markup` **0**,
+control-checked against a deliberately invalid file · red-test **17 pass / 0 fail**, every case red
+at **exactly** its declared assertion set. ⛔ **Nothing deployed and nothing owed** — met on-build;
+prod still serves `a852423`, re-probed at the open.
+
+⭐ **`snapshot` unchanged was MEASURED, not assumed from O2's shape.** `/network` is **not** among
+`gate-49`'s 12 `TEMPLATES` `[D]` ⇒ **no re-baseline fires**. O2's dominant cost came from a
+**fixture attached to the route**, not from its criteria — the SO#11 lesson O2's own AAR filed,
+spent forward by reading the template list *before* costing O3.
+
+⛩⛩ **THE RULING'S DESTINATION DID NOT EXIST, AND AC-3 IS CORRECTED AT ITS OWN FACE.** See the
+frontmatter. **`L0–L3` is a homonym** — `agentic-literacy.mdx:12-14` is `L0 Aware → L1 User → L2
+Builder → L3 Architect`, a **human-literacy** ladder — and the **compute** ladder's only site-wide
+home is the **byte-vendored** `src/data/tour/workspace-router.txt`. ⇒ branch (i) was unperformable
+for **two** independent reasons, the second being **D1's trap class recurring for the third time in
+this mission**. ⇒ ***a shared notation is not a shared referent, and a grep for the notation cannot
+tell you which one it found.*** The revue's home-claim **stays FALSE**; **its conclusion survives its
+reasoning**, and holding those apart is the record.
+
+⭐⭐ **THE COPY NAMED A WORD THE REGISTRY DOES NOT PUBLISH — CAUGHT BY THE AC-7 ENUMERATION, BEFORE
+IT SHIPPED.** The draft read *"the registry marks both of them **genesis**"*. `vaults.json` does
+carry `status: "genesis"` `[D]` — but the site's public face **renders that state as `planned`**:
+both linked cards read **`Stage: planned`** and contain the literal `genesis` **0 times**, `planned`
+**1 time** `[D]`. A reader who follows the link to check the claim finds a different word in its
+place. ⭐ **It would have passed every limb**: `G54m`'s marker list contained `'genesis'`, so the
+framing assertion was **green on the source's own word** while the copy misdirected the reader —
+*a marker naming the SOURCE field certifies the copy against the thing the copy is wrong about.*
+Corrected same-diff across copy + marker list + red-test case 14. ⇒ **convention 17's amendment
+arriving in a VOCABULARY rather than in a grep**, and the second time in this mission the register
+pass stopped a claim at enumeration rather than at review (O1 stopped the tier-ordering
+contradiction the same way).
+
+⭐⭐ **AND THE NEW BAND PUT A PRE-EXISTING OVER-PROMISE INTO DIRECT CONTRADICTION.**
+`network.astro:155` read *"Local-first — **nothing** leaves until you choose"*, **40 lines above** a
+new band saying in the page's own voice that prompts **do** leave. **Scoped** to *"your vault files
+never leave until you choose"* (**R-161**). ⛔ **A FORCED repair, not a sweep**, and the test applied
+is the distinction: *is the sentence merely pre-existing, or did this increment make it worse?* The
+homepage's identical claim (**R-97**, `verified (ADR-048 verbatim)`) is **NAMED AND NOT TOUCHED** —
+ratified copy needs its own gate. ⚠ Verified **unpinned** before the edit (no register row, no
+`gate-26` fixture) so it cost no same-diff churn. ⭐⭐ **This is `R-64`'s class on a second surface,
+and R-64's own remedy was written at P0.5** — GR-1 discharged it on `/get-started` **only**. ⇒ ***a
+caveat in the register is a finding with a home and no gate***, and the proof it still binds is that
+its remedy reached one of three surfaces and nothing noticed for five days.
+
+⚠⚠ **AC-3 CARRIES NO READING-LEVEL CONSTRAINT, AND SAYING SO IS THE POINT.** `/network` prose FKGL
+**11.56 → 8.89** against a target of 12 — a **2.67** drop, **~6×** the 0.44 headroom the constraint
+was supposedly protecting and **~8.6×** O2's 0.31 move. **Ship NOTHING and it reads 11.56 and the
+census still passes.** ⇒ D3 reproduces AC-4's DEFECT-1 at ~8.6× the magnitude. **What makes AC-3
+falsifiable is `G54e`/`G54f`/`G54k` and `G54l`/`G54m`/`G54n`** — the census is context, not the
+proof. ⛔ **HAZARD-2 honoured**: both ends on the **same instrument** (revert → build → census →
+restore → build). ⚠ **And the pair first written into the gate header was wrong** — `→ 8.93 / Δ 2.63`
+— because the genesis→planned correction moved the prose after the figure was taken; **corrected in
+the commit that quotes it.** ⭐ The *before* re-derived **exactly**, which is what makes the *after*
+being wrong legible as drift rather than noise.
+
+⭐⭐ **`G54n` IS THE LOAD-BEARING LIMB, AND CASE 15 IS WHY.** Planned framing does not fail by going
+missing — **a future editor does not delete *"not built"*, they add *"you can run"* beside it.**
+Case 15 removes nothing, adds **one** sentence, and **`G54m` stays green while `G54n` reds**: the
+copy still *looks* careful and has acquired a promise. **`V7`'s lesson borrowed one criterion
+sideways**, exercised before AC-8's `/privacy` section exists to teach it at O5.
+
+⭐ **`G54k` exists because a third page falsified `G54f`'s own message.** `G54f` said its floor was
+*"derived from that page's own sibling sections"* — true while two pages shared a pin of **217**
+taken from the thinner of them, **false for `/network`, whose own bands floor at 547**. Graded
+section: **768**. Corrected same-diff in the commit that made it false. ⭐ **Case 12 had to be
+MEASURED**: its replacement must land strictly between 217 and 547 so `G54k` reds **alone**; the
+first draft, written by feel at ~205 chars, red **both** floors and isolated nothing.
+
+⚠ **A harness defect fixed in passing, and it had already fired.** `applied()` returned on a HARNESS
+BUG **without restoring the tree**, so the `&& check_case` chain short-circuited past the case's only
+`restore_all` and **the mutated tree survived into every case after it** — one stale grep pattern
+produced **four false HARNESS BUGs and a red final control**, each failing for a reason belonging to
+its predecessor. ⇒ ***a case that cannot apply must fail ALONE.***
+
+⚠ **Convention 19's green has a WIDTH**: `main` is green at **`7210d5e`**, the last **pushed**
+commit. **GR-4's commits have never been through CI**, and this one has not either — a push is its
+own ⛩ GO.
+
+⭐⭐ **AND THE CLOSE ITSELF TURNED A GATE RED — CAUGHT ONLY BY RE-RUNNING THE SUITE AFTER THE RECORD
+EDITS.** `G41b` reads the **last** `Counts` table in `claim_register.md`; §18's first draft published
+its tally as a **prose sentence** rather than the parseable table, so the gate reported *"the
+format changed and this gate went blind rather than red."* ⭐ **§17.5's warning was followed
+exactly** — *"any future Counts section is appended after this one, never inserted above"* — **and it
+governed POSITION while the failure was FORMAT.** ⇒ ***a note that transfers one obligation reads as
+if it transferred all of them***, and the half it does not mention is the half nobody checks.
+⚠⚠ **The green quoted mid-objective was measured BEFORE that section existed** — **convention 16's
+own law one step after this desk quoted it**, and **P5.1's finding verbatim: *a close cascade that
+edits a governance file is a change the suite can see.*** Register tally re-derived and published:
+rows **171 → 180**, ids **156 → 165**, `R-11…R-161`, **0 gaps**. Final: **673 passed / 1 skipped /
+0 failed.**
+
+⏭ **NEXT: `O4`** (D5 — the returning-member entry point to changelog/RSS, **plus the owed
+prose-corpus measurement**: does a link-dense strip enter the prose corpus at all? P4.5b measured
+that link-dense lines *leave* it). Then **O5** (D6 + AC-8's `/privacy` section + close cascade +
+AAR; `/privacy`'s before-figure is **banked at 9.43/12** from O2).
 
 ## AAR
 

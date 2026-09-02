@@ -140,6 +140,17 @@ export const PAGES = [
     graded: 'Step 4b: Declare the Model Tier',
     excludeFromComparators: [],
   },
+  /* O3 · D3 — the local-models story. The page's own bands are `##`, so `level: 2` compares a band
+   * against its sibling bands. NOTHING is excluded from the comparator set here: unlike the pattern
+   * page, `/network` has no link-list `##` masquerading as a section, and an empty exclusion list
+   * asserted is worth more than one assumed (G54b's discipline, one level down). */
+  {
+    twin: 'dist/network.md',
+    route: '/network',
+    level: 2,
+    graded: 'Running a model on your own machine',
+    excludeFromComparators: [],
+  },
 ];
 
 /** Fence-aware split into `{ heading, body }` at exactly `level`. See the header note. */
@@ -208,7 +219,11 @@ function measureSection(sec) {
     .replace(/[*_>#]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
-  return { heading: sec.heading, bodyLen, proseLen: prose.length, elements: tableRows + listItems + subHeads + fences };
+  /* `prose` is CARRIED, not just counted. O3's framing limbs (G54l/G54m) probe the graded section's
+   * words, and re-splitting the twin inside the gate to get them would be a SECOND splitter reading
+   * the same file — two instruments sharing one number, the defect this file's own header refuses at
+   * the surface level. One split, one section, both the length and the words it was measured from. */
+  return { heading: sec.heading, bodyLen, proseLen: prose.length, elements: tableRows + listItems + subHeads + fences, prose };
 }
 
 function measurePage(cfg) {
@@ -217,9 +232,11 @@ function measurePage(cfg) {
   const all = sections(readFileSync(file, 'utf8'), cfg.level).map(measureSection);
   const graded = all.find((s) => s.heading === cfg.graded);
   if (!graded) return { route: cfg.route, error: `graded section "${cfg.graded}" not found in the twin` };
-  const comparators = all.filter(
-    (s) => s.heading !== cfg.graded && !cfg.excludeFromComparators.includes(s.heading),
-  );
+  /* Comparators are used for their LENGTHS only, so their prose is dropped here rather than shipped
+   * to every consumer. The graded section keeps its words, because that is what the framing limbs read. */
+  const comparators = all
+    .filter((s) => s.heading !== cfg.graded && !cfg.excludeFromComparators.includes(s.heading))
+    .map(({ prose: _drop, ...rest }) => rest);
   return { route: cfg.route, graded, comparators, excludedFromComparators: cfg.excludeFromComparators };
 }
 

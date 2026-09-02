@@ -76,6 +76,45 @@
  * aloud. It cannot be here (the URL carries an underscore), but "it happens not to match today" is
  * not an assertion — the same reasoning that made AC-1's vendored exclusion load-bearing.
  *
+ * ── GR-4 O3 EXTENSION (AC-3 · D3 · verification limb V2, plus G54k) ────────────────────────────
+ *
+ * G54k–G54n were added at O3. D3 is the local-models story: copy about something that DOES NOT RUN,
+ * so its criterion is not "is it there" but "does it stay distinguishable BY TEST from a live claim".
+ *
+ * ⛩ SURFACE (convention 18): the `.md` TWIN, `dist/network.md`, and the prose comes from the MEASURE
+ * SCRIPT's own split rather than a second read of the file here. A gate that re-splits the twin to
+ * get the words it grades would be a second instrument sharing the first one's number — the defect
+ * this file's own header refuses one level up.
+ *
+ * ⭐⭐ G54k EXISTS BECAUSE A THIRD PAGE FALSIFIED G54f's MESSAGE. G54f described its floor as "derived
+ * from that page's own sibling sections". True while two pages shared a pin of 217 taken from the
+ * thinner of them; FALSE for `/network`, whose own bands floor at 547. A 250-char section there clears
+ * 217 and is under half the thinnest band a reader already meets. The shared pin stays deliberately
+ * conservative (never grade against a floor a page's own siblings do not support) and G54k adds back
+ * the strictness the message was already claiming. Red-test case 12 isolates it — and its first draft,
+ * written by feel at ~205 chars, red BOTH floors and proved nothing until it was MEASURED.
+ *
+ * ⭐⭐ AND D3 REPRODUCED O2'S FINDING AT ~8.6× THE MAGNITUDE. `/network` prose FKGL went 11.56 → 8.89
+ * against a target of 12 — a 2.67 drop, ~6× the 0.44 headroom the constraint was supposedly
+ * protecting, and ~8.6× O2's 0.31 move on `/commons`. Ship NOTHING and it reads 11.56 and the census
+ * still passes. So on this criterion, as on AC-4, the census is not what makes it falsifiable:
+ * G54e/G54f/G54k are. The constraint limb is real and it is not the proof.
+ *   ⚠ Both figures RE-DERIVED at the close on the SAME instrument (revert → build → census → restore
+ *   → build), not carried: the pair first written here read `→ 8.93 / 2.63`, measured before the
+ *   genesis→planned copy correction below moved the prose. A figure in a committed instrument is
+ *   re-derived at the commit that quotes it — the campaign's own rule, applied to its own comment.
+ *
+ * ⭐ G54n IS THE LOAD-BEARING HALF, not G54m. Planned framing does not fail by going missing — a
+ * future editor does not delete "not built", they add "you can run" beside it. Case 15 adds exactly
+ * that ONE sentence, leaves every hedge intact, and G54m stays green while G54n reds. That is V7's
+ * lesson (the failure mode of a disclaiming posture is that it quietly becomes a promise) borrowed
+ * one criterion sideways, before AC-8's own section exists to teach it at O5.
+ *
+ * ⚠ AVAILABILITY VOCABULARY IS MATCHED AS UNAMBIGUOUS PHRASES ONLY, and the reason is the subject:
+ * this section is ABOUT running a model, so "run"/"runs"/"running" are load-bearing words inside it.
+ * A loose pattern would red on the section's own heading, and a blocklist that fires on its own
+ * subject is a blocklist somebody switches off.
+ *
  * ⚠ G54j ASSERTS BOTH TERMS, because "ancient DNA" alone is a MENTION and AC-4 asks for a
  * DISAMBIGUATION. A page could say "this is not about ancient DNA" and leave a reader no better
  * off. The resolution — "Agentic DNA" — is what makes it an answer. This is DEFECT-3's lesson
@@ -86,7 +125,7 @@ import { execFileSync } from 'node:child_process';
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-type Section = { heading: string; bodyLen: number; proseLen: number; elements: number };
+type Section = { heading: string; bodyLen: number; proseLen: number; elements: number; prose?: string };
 type Page =
   | { route: string; graded: Section; comparators: Section[]; excludedFromComparators: string[]; error?: undefined }
   | { route: string; error: string };
@@ -127,7 +166,7 @@ function run(): Measure {
   return JSON.parse(raw) as Measure;
 }
 
-test.describe('gate-54: GR-4 story coverage — the D1/D2 doctrine layer, and D4 on /commons', () => {
+test.describe('gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network', () => {
   let m: Measure;
   test.beforeAll(() => {
     m = run();
@@ -205,10 +244,31 @@ test.describe('gate-54: GR-4 story coverage — the D1/D2 doctrine layer, and D4
     for (const p of (m.pages as Extract<Page, { graded: Section }>[]).filter((p) => !('error' in p && p.error))) {
       expect(
         p.graded.bodyLen,
-        `${p.route} — "${p.graded.heading}" measures ${p.graded.bodyLen} against a floor of ` +
-          `${m.budget.bodyLen} derived from that page's own sibling sections. A criterion satisfied ` +
-          `by a passing mention is what this floor exists to refuse.`,
+        `${p.route} — "${p.graded.heading}" measures ${p.graded.bodyLen} against the SHARED pinned ` +
+          `floor of ${m.budget.bodyLen}, which is the lowest comparator across ALL graded pages — ` +
+          `not this page's own. A criterion satisfied by a passing mention is what it exists to refuse.`,
       ).toBeGreaterThanOrEqual(m.budget.bodyLen);
+    }
+  });
+
+  /* ⚠⚠ G54k EXISTS BECAUSE ADDING A THIRD PAGE FALSIFIED G54f's OWN MESSAGE.
+   * G54f said its floor was "derived from that page's own sibling sections". That was true while two
+   * pages shared a pin of 217 taken from the thinner of them. It is FALSE for `/network`, whose own
+   * siblings floor at 547 — a section of 250 chars there would clear 217 while being less than half
+   * the thinnest band a reader already meets on that page. The shared pin is deliberately the LOWER
+   * of the page floors (see the measure script's header: never grade a section against a floor its
+   * own siblings do not support), so G54f stays as the conservative limb and this one adds back the
+   * strictness its message was already claiming. ⇒ SAME-DIFF, ADR-057: the message was corrected in
+   * the commit that made it false, and the assertion it described now exists. */
+  test('G54k: each graded section also clears its OWN page\'s comparator floor', () => {
+    for (const p of (m.pages as Extract<Page, { graded: Section }>[]).filter((p) => !('error' in p && p.error))) {
+      const ownFloor = Math.min(...p.comparators.map((c) => c.bodyLen));
+      expect(
+        p.graded.bodyLen,
+        `${p.route} — "${p.graded.heading}" measures ${p.graded.bodyLen} but this page's own thinnest ` +
+          `sibling band is ${ownFloor}. It clears the shared pin and is still thinner than anything a ` +
+          `reader already meets here, which is the gap the shared pin cannot see.`,
+      ).toBeGreaterThanOrEqual(ownFloor);
     }
   });
 
@@ -279,5 +339,96 @@ test.describe('gate-54: GR-4 story coverage — the D1/D2 doctrine layer, and D4
         'tells a reader what aDNA is not and leaves them no better off. AC-4 asks for the answer, ' +
         'and "Agentic DNA" is the half that supplies it.',
     ).toContain('agentic dna');
+  });
+
+  /* ── GR-4 O3 · D3 · AC-3's FRAMING half (V2) ────────────────────────────────────────────────
+   * The D3 section is *planned*-framed copy about something that DOES NOT RUN. AC-3 asks that every
+   * sentence stay distinguishable BY TEST from a live claim, which is two obligations, not one, so
+   * they are two ids: the framing must be PRESENT (G54m) and the availability claim must be ABSENT
+   * (G54n). ONE MUTATION PER ASSERTION — DEFECT-4's standing remedy.
+   *
+   * ⭐ G54n IS THE LOAD-BEARING ONE, and it is V7's lesson borrowed one criterion sideways: the
+   * failure mode of planned framing is not that it goes missing, it is that it quietly becomes a
+   * promise. A future editor does not delete "not built"; they add "you can run" beside it.
+   *
+   * The prose comes from the MEASURE SCRIPT's split, not a second read of the twin here — see the
+   * note on `measureSection`. One split, one section, both the length and the words. */
+  const d3Section = () => {
+    const p = m.pages.find((x) => x.route === '/network');
+    if (!p || 'error' in p) return null;
+    return (p as Extract<Page, { graded: Section }>).graded.prose ?? null;
+  };
+
+  /** Declared, not inline: an exclusion or match list that lives inside its assertion cannot be
+   *  reviewed without reading the assertion (gate-48's discipline). */
+  const PLANNED_MARKERS = [
+    'planned work, not shipped work',
+    'nothing here runs yet',
+    'is not built',
+    /* ⛔ "both of them as planned", NOT "genesis". `vaults.json` carries `status: "genesis"`, but the
+     * site RENDERS that state as `planned` — both linked cards read "Stage: planned" and contain the
+     * literal "genesis" ZERO times [D]. A marker naming the SOURCE field would have gone green while
+     * the copy told a reader to expect a word the page they were sent to does not use. */
+    'both of them as planned',
+    'no code behind it yet',
+    'no date is set',
+  ];
+  const MARKER_FLOOR = 3;
+
+  /** Present-tense AVAILABILITY vocabulary. Deliberately unambiguous phrases only: the section's own
+   *  subject is running a model, so "run"/"runs"/"running" are load-bearing words IN it and a loose
+   *  pattern would red on the heading. A blocklist that fires on its own subject gets suppressed. */
+  const AVAILABILITY_CLAIMS = [
+    'available now',
+    'generally available',
+    'you can run',
+    'already runs',
+    'runs today',
+    'works today',
+    'supported today',
+    'out of the box',
+    'ships today',
+    'in production',
+  ];
+
+  test('G54l: the D3 section is measurable and the probe reaches real text', () => {
+    const prose = d3Section();
+    expect(
+      prose,
+      'no graded prose for /network. G54n below asserts an ABSENCE, so it would be VACUOUSLY GREEN ' +
+        'over a section that was never read — the absence of a claim in a string that does not exist ' +
+        'is not evidence about the page. This is G54i\'s role for G54j, one criterion across.',
+    ).not.toBeNull();
+
+    // The control that makes G54n's verdict mean something: if the probe cannot find the section's
+    // own subject in its own body, a zero for availability vocabulary is a fact about the probe.
+    expect(
+      (prose ?? '').toLowerCase(),
+      'the D3 graded prose does not contain "model" — the probe is not reaching the text it grades.',
+    ).toContain('model');
+  });
+
+  test('G54m: the D3 section carries its planned-framing markers', () => {
+    const prose = (d3Section() ?? '').toLowerCase();
+    const found = PLANNED_MARKERS.filter((k) => prose.includes(k));
+    expect(
+      found.length,
+      `the D3 section carries ${found.length} of the ${PLANNED_MARKERS.length} declared planned-framing ` +
+        `markers, below the floor of ${MARKER_FLOOR}. Found: [${found.join(' · ')}]. AC-3 asks that ` +
+        `every sentence stay distinguishable BY TEST from a live claim; unmarked, this copy reads as ` +
+        `a description of something that works.`,
+    ).toBeGreaterThanOrEqual(MARKER_FLOOR);
+  });
+
+  test('G54n: the D3 section makes no present-availability claim', () => {
+    const prose = (d3Section() ?? '').toLowerCase();
+    const violations = AVAILABILITY_CLAIMS.filter((k) => prose.includes(k));
+    expect(
+      violations,
+      `the D3 section claims present availability: [${violations.join(' · ')}]. Nothing in this story ` +
+        `runs — two genesis stubs are the whole of it — so an availability phrase here moves a claim ` +
+        `UP, which is convention 1's single prohibition. This is the limb that matters: planned ` +
+        `framing does not fail by going missing, it fails by quietly becoming a promise.`,
+    ).toEqual([]);
   });
 });

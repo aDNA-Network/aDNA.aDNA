@@ -152,7 +152,14 @@ const edgeTypes = [
       <ul class="run-meta" aria-label="What running a node takes">
         <li>About five minutes</li>
         <li>Needs <code>git</code> + the Claude Code CLI</li>
-        <li>Local-first — nothing leaves until you choose</li>
+        <!-- ⛔ SCOPED, not absolute — "nothing" was over-promising and O3's band below is why it
+             could not stay. R-64 diagnosed this class at P0.5 and GR-1 discharged it on /get-started
+             ONLY; this is the same over-promise on a second surface, and the new local-models band
+             40 lines down says in the page's own voice that prompts DO leave. An unqualified
+             "nothing" one band above that is a contradiction a reader meets without looking for it.
+             ⚠ The homepage carries the identical claim (R-97, ADR-048 verbatim) — NAMED, NOT TOUCHED:
+             it is ratified copy and needs its own gate. -->
+        <li>Local-first — your vault files never leave until you choose</li>
       </ul>
 
       <ol class="run-steps">
@@ -206,6 +213,47 @@ const edgeTypes = [
         <a href="/get-started/" class="btn btn-primary" data-astro-prefetch>Run your first node &rarr;</a>
         <a href="/reference/" class="btn btn-secondary" data-astro-prefetch>Read the standard &rarr;</a>
       </div>
+    </div>
+  </section>
+
+  <!-- Band 4b · Local models (GR-4 O3 · D3). PLANNED-FRAMED THROUGHOUT — graded by gate-54 G54k/l/m/n.
+       Placed after "Run a node" because it continues that band's subject: what runs on your machine.
+       ⚠ Every sentence here must stay distinguishable BY TEST from a live claim (AC-3).
+       ⛔ "planned", NOT "genesis" — and do not "correct" it back. `vaults.json` carries
+       `status: "genesis"`, but the site's own public face RENDERS that state as `planned`: both linked
+       cards read "Stage: planned" and contain the literal "genesis" ZERO times [D]. The claim's verb is
+       "the registry lists", and a reader checks that by following the link — so the surface that
+       settles it is the rendered card, not the source field (convention 17's amendment). -->
+  <section class="net-local">
+    <div class="section-inner">
+      <h2 class="section-title">Running a model on your own machine</h2>
+      <p class="section-subtitle">
+        Your files stay on your node today. Your prompts do not. Closing that gap is
+        <strong>planned work, not shipped work</strong> &mdash; nothing here runs yet.
+      </p>
+      <p class="local-body">
+        A node needs a coding agent to do its work. That agent sends your prompts to its provider.
+        Your vaults, their history and your credentials stay put. The prompts leave.
+      </p>
+      <p class="local-body">
+        Running the model on the same machine would close that gap. It is not built. Two vaults hold
+        the plan, and the registry lists both of them as <strong>planned</strong> &mdash; a name, an
+        owner, and no code behind it yet.
+      </p>
+      <ul class="plan-stubs" aria-label="Local-model vaults, both listed as planned">
+        <li>
+          <a href="/vaults/inference/" data-astro-prefetch>Inference</a> &mdash; the plan for serving
+          a local model to a node.
+        </li>
+        <li>
+          <a href="/vaults/llamacppforge/" data-astro-prefetch>LlamaCppForge</a> &mdash; the plan for
+          building the model files it would serve.
+        </li>
+      </ul>
+      <p class="run-note">
+        No date is set, and none is promised. When there is something to run, it will ship as a step
+        in <a href="/get-started/" data-astro-prefetch>Get started</a>, and this section will say so.
+      </p>
     </div>
   </section>
 
@@ -263,6 +311,7 @@ const edgeTypes = [
   .net-node,
   .net-topology,
   .net-run,
+  .net-local,
   .net-govern {
     padding: var(--space-24) 0;
     overflow-x: hidden;
@@ -565,6 +614,49 @@ const edgeTypes = [
   .run-note a {
     color: var(--color-link);
     text-decoration: underline;
+  }
+
+  /* ——— Band 4b · Local models (GR-4 O3 · D3) ———
+     Default ground: net-run above it is bg-alt and net-govern below is default, so this band keeps
+     the page's existing alternation rather than putting two alt bands back to back. */
+  .local-body,
+  .plan-stubs {
+    max-width: 46rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .local-body {
+    margin-top: 0;
+    margin-bottom: var(--space-5);
+    line-height: 1.7;
+  }
+
+  .plan-stubs {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: var(--space-5);
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .plan-stubs li {
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--color-border);
+    line-height: 1.6;
+  }
+
+  /* Underlined, not colour-only — same WCAG link-in-text-block reasoning as .run-note a. */
+  .plan-stubs a {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+
+  .net-local .run-note {
+    max-width: 46rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .run-cta {
