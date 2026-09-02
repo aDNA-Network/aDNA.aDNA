@@ -8,7 +8,10 @@ cc: [operator]
 cc_delivered: []
 created: 2026-09-02
 updated: 2026-09-02
-status: staged            # ⛩ delivery is an outward act — shown to the operator before sending
+status: delivered        # ⛩ SEND GO 2026-09-02; copied to Hardware.aDNA/who/coordination/inbox/, verified byte-identical with cmp
+delivered_to: "Hardware.aDNA/who/coordination/inbox/"
+delivered_at: "2026-09-02"
+delivered_commit: "0362a00"
 ack_required: false       # You asked for an ack and a published preference; this carries the ack. The preference is the operator's and is named as owed, not answered.
 needs_human: true         # §3's lease question is an operator ruling, not mine to take
 answers: coord_2026_08_29_babbage_to_rosetta_machine_class_validation_and_rubric_accuracy_axis
