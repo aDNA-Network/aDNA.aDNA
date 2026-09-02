@@ -5,7 +5,7 @@ title: "P4.4b B2b — re-entry gate: the answer landed, and it says our bar and 
 campaign: campaign_haussmann
 mission: mission_haussmann_p4_4_ci_hardening
 increment: B2b
-status: proposed          # ⛩ NOT ratified. No build against this document until it is signed.
+status: accepted          # ⛩⛩ SIGNED 2026-09-02 — all three §4/§5 questions ruled as recommended. B2b IS BUILDING.
 created: 2026-09-02
 updated: 2026-09-02
 last_edited_by: agent_rosetta
@@ -22,9 +22,22 @@ tags: [haussmann, p4_4b, b2b, ac4, f_e, provenance, scope_b, convention_13]
 
 # B2b re-entry gate
 
-> ⛩ **This document is `proposed`. Nothing builds against it until the operator signs.**
-> The 08-26 ruling (c) is explicit: *"If a reply lands mid-increment, B2b re-enters at **its own ⛩
-> gate** — it does not silently absorb into B2a."* This is that gate.
+> **Ratification (§7.7).** **Decision:** B2b re-enters and builds under scope B, with
+> `gate-19`'s `perfMin` **held at 0.9** and **sourced** rather than moved (§4 option **b**); the four
+> un-looked-at bars (**TBT 200** + the three category bars) **named as un-adopted with the reason**,
+> not opened; budget ⛩ ratified **~55–85 kT / 1 session**, `executor_tier: opus`.
+> **Ratified-by:** Stanley, Founding Architect (operator). **Date:** 2026-09-02.
+> **Status:** **accepted** — taken via `AskUserQuestion` at the re-entry gate, all three questions in
+> one act. *(Authored by agent_rosetta; ratified by the operator.)*
+>
+> ⭐ **What the signature bought, stated so it is not inferred:** the ruling is *hold and source*, so
+> **no number changes** — `gate-51`'s transcription-drift detector stays green with no same-diff churn
+> (DEFECT-B is discharged by the ruling itself rather than by an edit), and **`F-e` closes by
+> recording provenance, not by moving a bar.**
+
+> ⛩ ~~**This document is `proposed`. Nothing builds against it until the operator signs.**~~
+> ✅ **SIGNED 2026-09-02.** The 08-26 ruling (c) is explicit: *"If a reply lands mid-increment, B2b
+> re-enters at **its own ⛩ gate** — it does not silently absorb into B2a."* This was that gate.
 
 ## §0 · Why this gate is convened
 
