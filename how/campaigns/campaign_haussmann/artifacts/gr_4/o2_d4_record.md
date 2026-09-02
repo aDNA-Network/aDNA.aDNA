@@ -15,7 +15,15 @@ tags: [evidence, haussmann, gr_4, o2, d4, ancient_dna, reading_census, gate_54]
 
 # O2 — D4 reaches `/commons`
 
-**`AC-4` ✅ · `AC-7` ✅ · `V3` ◐ PARTIAL (AC-4's half closed; AC-8's is O5's).**
+**`AC-4` ✅ · `AC-7` ◐ PARTIAL · `V3` ◐ PARTIAL.**
+
+⚠ **`AC-7` IS RECORDED AS PARTIAL, AND AN EARLIER DRAFT OF THIS LINE SAID ✅.** AC-7 is a
+**mission-level** criterion, not an objective-level one: it also requires **R-124's disposition read
+back IN the register** (AC-8's, hence O5's) and the **AAR** (O5's, SO#5). What O2 discharges is its
+own share — the claim set enumerated from the diff with the enumeration asserted (§17.1), every count
+derived by its own command, and `token_budget_actual` recorded at the time rather than reconstructed.
+⇒ *an objective cannot tick a criterion whose scope is the mission*, and marking it ✅ here would have
+made the close cascade read as owing less than it does.
 
 ## 1. What was measured, and on which surface
 
