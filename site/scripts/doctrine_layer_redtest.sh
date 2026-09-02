@@ -41,6 +41,8 @@ TWIN_TUTORIAL="dist/learn/tutorials/design-a-mission.md"
 TOUR="src/data/tour/standard-governance.txt"
 TWIN_COMMONS="dist/commons.md"          # GR-4 O2 · D4 — AC-4's presence half (G54i/G54j)
 TWIN_NETWORK="dist/network.md"          # GR-4 O3 · D3 — AC-3's framing half (G54k/G54l/G54m/G54n)
+TWIN_HOME="dist/index.md"               # GR-4 O4 · D5 — AC-5's entry point (G54p/G54q/G54r/G54s)
+NAV="src/utils/navigation.ts"           # GR-4 O4 · D5 — ADR-049's nav cap (G54o)
 
 BAK="$(mktemp -d)"
 PASS=0; FAIL=0
@@ -54,11 +56,13 @@ cleanup() {
   [ -f "$BAK/tour" ]          && cp "$BAK/tour"          "$TOUR"
   [ -f "$BAK/twin_commons" ]  && cp "$BAK/twin_commons"  "$TWIN_COMMONS"
   [ -f "$BAK/twin_network" ]  && cp "$BAK/twin_network"  "$TWIN_NETWORK"
+  [ -f "$BAK/twin_home" ]     && cp "$BAK/twin_home"     "$TWIN_HOME"
+  [ -f "$BAK/nav" ]           && cp "$BAK/nav"           "$NAV"
   rm -rf "$BAK"
 }
 trap cleanup EXIT
 
-for f in "$SPEC" "$MEASURE" "$SRC_PATTERN" "$SRC_TUTORIAL" "$TWIN_PATTERN" "$TWIN_TUTORIAL" "$TOUR" "$TWIN_COMMONS" "$TWIN_NETWORK"; do
+for f in "$SPEC" "$MEASURE" "$SRC_PATTERN" "$SRC_TUTORIAL" "$TWIN_PATTERN" "$TWIN_TUTORIAL" "$TOUR" "$TWIN_COMMONS" "$TWIN_NETWORK" "$TWIN_HOME" "$NAV"; do
   [ -f "$f" ] || { echo "HARNESS BUG: $f not found (build first? wrong cwd?)" >&2; exit 2; }
 done
 cp "$MEASURE" "$BAK/measure"
@@ -69,6 +73,8 @@ cp "$TWIN_TUTORIAL" "$BAK/twin_tutorial"
 cp "$TOUR" "$BAK/tour"
 cp "$TWIN_COMMONS" "$BAK/twin_commons"
 cp "$TWIN_NETWORK" "$BAK/twin_network"
+cp "$TWIN_HOME" "$BAK/twin_home"
+cp "$NAV" "$BAK/nav"
 
 # Prints the sorted set of failing assertion ids, e.g. "G54c G54h".
 #
@@ -88,7 +94,8 @@ failing_set() {
 restore_all() { cp "$BAK/measure" "$MEASURE"; cp "$BAK/src_pattern" "$SRC_PATTERN";
   cp "$BAK/src_tutorial" "$SRC_TUTORIAL"; cp "$BAK/twin_pattern" "$TWIN_PATTERN";
   cp "$BAK/twin_tutorial" "$TWIN_TUTORIAL"; cp "$BAK/tour" "$TOUR";
-  cp "$BAK/twin_commons" "$TWIN_COMMONS"; cp "$BAK/twin_network" "$TWIN_NETWORK"; }
+  cp "$BAK/twin_commons" "$TWIN_COMMONS"; cp "$BAK/twin_network" "$TWIN_NETWORK";
+  cp "$BAK/twin_home" "$TWIN_HOME"; cp "$BAK/nav" "$NAV"; }
 
 # case <n> <label> <declared-red-set> <mutation-verifier-cmd>
 check_case() {
@@ -277,13 +284,66 @@ perl -0pi -e 's/(No date is set, and none is promised\.)/You can run a local mod
 applied "$TWIN_NETWORK" 'You can run a local model today' "case 15" \
   && check_case 15 "an availability claim added beside intact hedges" "G54n"
 
+# ── CASE 16 → G54o — the nav cap is breached ─────────────────────────────────────────────────────
+# ⭐ THE MUTATION THE PRE-BUILD PASS REJECTED AS *THE ONLY ONE*. V4 as ratified red-proved AC-5 with
+# this single case — and because it reds via the nav COUNT, the entry-point assertions below would
+# never once have been demonstrated to fail. It is a good case; it was never a sufficient one.
+# DEFECT-4's remedy is that it now proves G54o AND NOTHING ELSE, with cases 17-20 proving the rest.
+perl -0pi -e "s/(  \{ label: 'Community', href: '\/community' \},\n)/\$1  { label: 'Changelog', href: '\/changelog' },\n/" "$NAV"
+applied "$NAV" "label: 'Changelog'" "case 16" \
+  && check_case 16 "an 8th flat nav entry breaches ADR-049's cap" "G54o"
+
+# ── CASE 17 → G54p — the home twin collapses to its pointer block ────────────────────────────────
+# ⚠ DECLARES FOUR IDS AND THAT IS CORRECT, NOT SLOPPY. G54p is a COVERAGE control: when the twin is
+# a stub, the three assertions it guards genuinely have nothing to read, and the honest report is
+# that all four are red rather than that three passed over a file with no page in it. That is the
+# whole reason a coverage limb sits above them. Cases 18-20 isolate each of the three alone.
+head -6 "$BAK/twin_home" > "$TWIN_HOME"
+applied "$TWIN_HOME" 'Markdown twin of' "case 17" \
+  && check_case 17 "home twin collapsed to a stub ⇒ every reader-facing D5 assertion is unread" \
+     "G54p G54q G54r G54s"
+
+# ── CASE 18 → G54q — the entry point names ONE destination ───────────────────────────────────────
+# ⭐ The subtle half, and the direct sibling of case 11. The strip stays, the dates stay, the
+# changelog link stays — only the FEED goes. A naive "is there a what's-new entry point" check is
+# GREEN, and the returning member who wanted to subscribe rather than revisit is not served.
+# P2-7 is a finding about BOTH surfaces; naming one is a mention.
+# ⚠ The verifier greps for the POST-mutation shape — an unlinked "RSS feed" following the separator.
+# `applied` can only assert PRESENCE, so a case that removes something must name what the removal
+# leaves behind. The first draft of this line grepped for a word that is in neither state and
+# reported a HARNESS BUG — correctly, and ALONE, which is O3's `applied` restore fix earning itself.
+perl -0pi -e 's/\[RSS feed\]\(\/rss\.xml\)/RSS feed/' "$TWIN_HOME"
+applied "$TWIN_HOME" '· RSS feed' "case 18" \
+  && check_case 18 "the feed link is dropped ⇒ one destination, not both" "G54q"
+
+# ── CASE 19 → G54r — the strip goes STALE while still looking correct ────────────────────────────
+# ⭐⭐ THE CASE THAT JUSTIFIES G54r EXISTING. Nothing is missing and nothing is malformed: three
+# dated entries with plausible headlines, exactly as a hardcoded strip would read on the day someone
+# typed it. Only the DERIVATION is gone. This is convention 15's "a stale row and a broken row look
+# identical from the outside" arriving on our own front page — and it is the one D5 failure a reader
+# cannot detect, because the homepage would be confidently telling them the wrong thing is newest.
+perl -0pi -e 's/Aug 28, 2026/Aug 14, 2026/' "$TWIN_HOME"
+applied "$TWIN_HOME" 'Aug 14, 2026' "case 19" \
+  && check_case 19 "the strip no longer shows the collection's newest entry" "G54r"
+
+# ── CASE 20 → G54s — ⭐ THE LOAD-BEARING CASE FOR D5 ─────────────────────────────────────────────
+# NOTHING IS REMOVED. One lead sentence is added — the single most natural edit anyone would make to
+# this section, and the one the ⛩ form ruling exists to refuse. Every other assertion stays GREEN:
+# the entry point is present (G54q), both destinations are named, the dates still derive (G54r), and
+# the section reads BETTER than before. And `/`'s prose corpus has silently acquired a paragraph
+# against 0.04 of headroom. ⇒ the exact shape of G54n one criterion across: the failure mode is not
+# that the section goes missing, it is that it quietly stops having the property it was built with.
+perl -0pi -e "s/(## What's new\n)/\$1\nThe site changes in the open, and every release is dated and readable.\n/" "$TWIN_HOME"
+applied "$TWIN_HOME" 'The site changes in the open' "case 20" \
+  && check_case 20 "a punctuated lead sentence puts the strip into the prose corpus" "G54s"
+
 # ── FINAL CONTROL — the tree was left as found ───────────────────────────────────────────────────
-echo "control 16: tree restored"
+echo "control 21: tree restored"
 if [ -z "$(failing_set)" ]; then
-  echo "  ✓ control 16: gate green again ⇒ every mutation was reverted"
+  echo "  ✓ control 21: gate green again ⇒ every mutation was reverted"
   PASS=$((PASS+1))
 else
-  echo "  ✗ control 16: gate STILL RED after restore — the harness has left the tree mutated" >&2
+  echo "  ✗ control 21: gate STILL RED after restore — the harness has left the tree mutated" >&2
   FAIL=$((FAIL+1))
 fi
 

@@ -122,8 +122,15 @@
  */
 import { test, expect } from '@playwright/test';
 import { execFileSync } from 'node:child_process';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+// GR-4 O4 · D5 — the nav cap DERIVED from the module the header renders (gate-52's precedent for
+// importing a src util), never counted by hand and never grepped for `href:`.
+import { topNav } from '../../src/utils/navigation';
+// …and the census's own classifier, so G54s asserts the property against the SAME predicates that
+// produced the measurement. A second implementation here would be a second instrument to be wrong
+// (conventions 15/16/17), and it could drift from the one whose reading the record quotes.
+import { toProse } from '../../scripts/reading_census.mjs';
 
 type Section = { heading: string; bodyLen: number; proseLen: number; elements: number; prose?: string };
 type Page =
@@ -152,6 +159,9 @@ const EXPECTED_EXCLUDED_DIRS = ['src/data/tour'];
 const SCAN_FLOOR = 200;
 const COMPARATOR_FLOOR = 3;
 const D2_HOME_COUNT = 2;
+/** The D5 strip's own heading, declared rather than inlined: G54s locates the section by it, so a
+ *  rename must move this in the same diff instead of turning the assertion silently vacuous. */
+const D5_HEADING = "## What's new";
 
 function run(): Measure {
   let raw: string;
@@ -429,6 +439,175 @@ test.describe('gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, 
         `runs — two genesis stubs are the whole of it — so an availability phrase here moves a claim ` +
         `UP, which is convention 1's single prohibition. This is the limb that matters: planned ` +
         `framing does not fail by going missing, it fails by quietly becoming a promise.`,
+    ).toEqual([]);
+  });
+
+  /* ── GR-4 O4 · D5 · AC-5 (V4) ──────────────────────────────────────────────────────────────────
+   *
+   * AC-5 is two obligations and they fail in opposite directions, so they are separate ids:
+   * the entry point must be PRESENT (G54p/G54q) and the nav must still be CAPPED (G54o).
+   *
+   * ⚠⚠ G54o IS A REGRESSION CHECK AND NOT A PROOF, AND SAYING SO IS THE POINT. The nav holds 7
+   * entries today and held 7 before this objective started, so this assertion is green against zero
+   * work — the D1 trap, which this mission has now met three times. It earns its place only because
+   * ADR-049's cap is the REASON D5 is a homepage strip rather than an eighth nav item: it guards the
+   * remedy's premise, not the remedy. A green here is never evidence that AC-5 was met.
+   *
+   * ⭐ ONE MUTATION PER ASSERTION — DEFECT-4's standing remedy, and the reason V4's originally
+   * ratified single mutation (an 8th nav entry) was rejected at the pre-build pass: it reds via the
+   * COUNT, so the entry-point assertion would never once have been demonstrated to fail. GR-3's
+   * clause — a demonstration is only worth what it can attribute — spent forward at authoring time.
+   */
+  const HOME_TWIN = join(process.cwd(), 'dist', 'index.md');
+  const TOP_NAV_CAP = 7;
+  const LATEST_COUNT = 3;
+  /** Derived, not typed: the real stripped home twin is 9316 chars and a pointer-block-only collapse
+   *  — the emitter writing its preamble and no page — is ~521. The floor sits between them, far from
+   *  both, so ordinary copy edits cannot trip it and a collapsed emit always does. */
+  const HOME_TWIN_FLOOR = 4000;
+
+  let homeTwinRaw: string | null = null;
+  let homeProse: string | null = null;
+  test.beforeAll(() => {
+    if (!existsSync(HOME_TWIN)) return;
+    homeTwinRaw = readFileSync(HOME_TWIN, 'utf8');
+    homeProse = toProse(homeTwinRaw).prose;
+  });
+
+  test('G54o: the top nav is still capped at its ratified 7 flat entries', () => {
+    // DERIVED from the module the header renders, never counted by hand and never grepped for
+    // `href:` — a naive grep over navigation.ts reads 94, because the file also carries the Learn
+    // and Reference sidebar trees. The predicate is "flat entries", i.e. those carrying an href.
+    const flat = topNav.filter((e) => typeof e.href === 'string');
+    expect(
+      topNav.length,
+      'topNav imported empty — G54o would then pass vacuously on a nav that does not exist.',
+    ).toBeGreaterThanOrEqual(TOP_NAV_CAP);
+    expect(
+      flat.length,
+      `the top nav carries ${flat.length} flat entries against ADR-049's cap of ${TOP_NAV_CAP}: ` +
+        `[${flat.map((e) => e.label).join(' · ')}]. The cap is why D5 ships as a homepage strip ` +
+        `rather than an eighth nav item, so breaking it does not merely violate ADR-049 — it removes ` +
+        `the premise the ratified remedy rests on.`,
+    ).toBe(TOP_NAV_CAP);
+  });
+
+  test('G54p: the home twin is measurable, and the probe reaches real text', () => {
+    expect(
+      homeTwinRaw,
+      `no twin at ${HOME_TWIN}. G54q and G54r below would be VACUOUSLY GREEN over a file that does ` +
+        `not exist. Run \`npx astro build\`.`,
+    ).not.toBeNull();
+
+    expect(
+      (homeTwinRaw ?? '').length,
+      'the home twin is too short to be the real page — a collapsed emit would let the assertions ' +
+        'below pass on a stub carrying nothing but its pointer block.',
+    ).toBeGreaterThan(HOME_TWIN_FLOOR);
+
+    // The control that makes an absence below mean something about the PAGE and not about the probe.
+    expect(
+      (homeTwinRaw ?? '').toLowerCase(),
+      'the home twin does not contain "adna" — the probe is not reaching the text it grades.',
+    ).toContain('adna');
+  });
+
+  test('G54q: the returning-member entry point names BOTH destinations', () => {
+    const twin = (homeTwinRaw ?? '').toLowerCase();
+
+    // ⚠ Measured at O4's open, BEFORE the strip landed: this twin contained "changelog" and "rss"
+    // ZERO times [D]. P2-7 confirmed at the object — so neither of these is green against zero work.
+    expect(
+      twin,
+      'the homepage names no changelog. P2-7: changelog and RSS were reachable only from the footer, ' +
+        'so a returning member had no what-is-new entry point at all.',
+    ).toContain('/changelog');
+
+    expect(
+      twin,
+      'the homepage names no feed. G54j\'s lesson one criterion across: naming ONE destination is a ' +
+        'MENTION — P2-7 is a finding about both surfaces, and the feed is the half a returning ' +
+        'member subscribes to rather than revisits.',
+    ).toContain('/rss.xml');
+  });
+
+  test('G54r: the strip\'s entries are DERIVED from the changelog collection, not typed', () => {
+    // KW-14 in its most literal form. A hand-typed strip is the silent failure here: it looks
+    // identical on the day it ships and goes quietly stale from the next entry onward, which is
+    // precisely the "stale row and broken row look identical from outside" shape (convention 15).
+    const dir = join(process.cwd(), 'src', 'content', 'changelog');
+    const dates = readdirSync(dir)
+      .filter((f) => f.endsWith('.md'))
+      .map((f) => readFileSync(join(dir, f), 'utf8').match(/^date:\s*(\S+)/m)?.[1])
+      .filter((d): d is string => Boolean(d))
+      .map((d) => new Date(d))
+      .sort((a, b) => b.getTime() - a.getTime())
+      .slice(0, LATEST_COUNT);
+
+    expect(
+      dates.length,
+      'fewer changelog entries than the strip claims to show — the derivation below would compare ' +
+        'against a set smaller than the assertion.',
+    ).toBe(LATEST_COUNT);
+
+    // Formatted exactly as index.astro formats it, `timeZone: 'UTC'` included — R-126: without the
+    // zone a PDT build renders every entry one day early, and the twin would disagree with the
+    // collection for a reason that has nothing to do with derivation.
+    const missing = dates
+      .map((d) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }))
+      .filter((s) => !(homeTwinRaw ?? '').includes(s));
+
+    expect(
+      missing,
+      `the home strip does not show the changelog's ${LATEST_COUNT} most recent entries — missing ` +
+        `[${missing.join(' · ')}]. Either the strip is hardcoded, or it is reading a different sort ` +
+        `order than /changelog does, and both mean the homepage can tell a returning member that the ` +
+        `latest change is something other than the latest change.`,
+    ).toEqual([]);
+  });
+
+  /* ⭐⭐ G54s — THE MEASUREMENT, MADE RECURRENT.
+   *
+   * O4 owed a measurement the signature deferred: does a link-dense strip enter `/`'s prose corpus?
+   * Measured [D] — it does not. `/` prose FKGL 9.96 → 9.96 and the corpus is BYTE-IDENTICAL at 6030
+   * chars, with each strip line dropped by a named predicate (heading · unpunctuated-block ×3 ·
+   * multi-link). The whole-twin figure moved 13.00 → 13.16, which is the control that makes the
+   * result mean something: had BOTH held still, the reading would have been indistinguishable from
+   * the strip never shipping.
+   *
+   * ⚠ But a reading is a statement with a timestamp (convention 16), and the property is FRAGILE in
+   * a way that is invisible to a reader: `unpunctuated-block` drops a block only while it carries
+   * ZERO sentence terminators. One full stop — a lead sentence, a title punctuated by an editor who
+   * had no reason to know — and this section silently enters a corpus with 0.04 of headroom. So the
+   * measurement is asserted rather than merely recorded. THIS is what stops O4 reproducing AC-4's
+   * DEFECT-1: AC-5 carries no reading-level constraint at all, and this is the limb that makes the
+   * absence of one safe rather than merely unmeasured.
+   */
+  test('G54s: nothing in the D5 strip enters the home page prose corpus', () => {
+    const raw = homeTwinRaw ?? '';
+    const at = raw.indexOf(D5_HEADING);
+    expect(
+      at,
+      `the D5 strip heading ${JSON.stringify(D5_HEADING)} is not in the home twin — this assertion ` +
+        `would be VACUOUSLY GREEN over a section that does not exist. G54q covers presence; this ` +
+        `covers where the text lands, and it must not be the thing that reports the section missing.`,
+    ).toBeGreaterThan(-1);
+
+    const leaked = raw
+      .slice(at)
+      .split('\n')
+      .map((l) => l.trim())
+      .filter(Boolean)
+      .filter((l) => (homeProse ?? '').includes(l));
+
+    expect(
+      leaked,
+      `${leaked.length} line(s) of the D5 strip entered \`/\`'s PROSE corpus: [${leaked.join(' | ')}]. ` +
+        `The homepage clears its reading-level target by 0.04 — the tightest margin on the site — and ` +
+        `this strip was written unpunctuated so the census's \`unpunctuated-block\` predicate holds ` +
+        `it out BY CONSTRUCTION. A single full stop in a changelog title or a lead sentence added ` +
+        `here removes that property silently. Either restore the unpunctuated form, or re-measure ` +
+        `\`/\` and show it still clears 10.`,
     ).toEqual([]);
   });
 });

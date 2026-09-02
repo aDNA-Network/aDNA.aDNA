@@ -1701,3 +1701,97 @@ in this objective's commit was measured **before** this section existed — **co
 (*a verification with no recurrence is a claim about the past wearing the grammar of the present*),
 one step after this desk quoted it**, and **P5.1's finding recurring verbatim: the commit that
 records a close is a change the suite can see.**
+
+---
+
+## §19 — GR-4 O4: D5's entry point, and an increment whose copy is almost entirely derived (2026-09-02)
+
+`AC-5` · `AC-7` · verification limb `V4`. New public copy on `/` (the `latest-strip` section).
+
+### §19.1 The enumeration, and the thing it exposed
+
+⭐ **The claim set is ENUMERATED FROM THE DIFF**, per §16.1's ratified rule (DEFECT-5: a limb
+asserting *"rows present for every new claim"* can only confirm the set someone handed it).
+
+Enumerator: `git diff -- site/src/pages/index.astro`, **added lines only**. **130 added non-blank
+lines** `[D]`, decomposing as **62 scoped CSS · 43 comment (35 JS + 8 HTML) · 20 markup · 5
+frontmatter derivation**.
+
+⭐⭐ **AND THE ENUMERATION FOUND SOMETHING NO PRIOR SECTION OF THIS REGISTER HAS HAD TO STATE: THIS
+INCREMENT AUTHORS ALMOST NO SENTENCES.** Reader-facing strings literally written by this desk number
+**three** — *"What's new"*, *"Full changelog"*, *"RSS feed"* — and **not one of them is a proposition**.
+Every other word a reader sees in this section is **read from the changelog collection at build
+time**. The strip's dates and headlines are not authored copy at all.
+
+⇒ **The claim surface of D5 is not its prose; it is its DERIVATION.** The only substantive assertion
+the section makes is an implicit one — *these are the newest things that happened* — and a strip that
+was hardcoded would make that assertion **falsely while reading identically**. That is why `R-162`
+below is a claim about a mechanism rather than about a sentence, and why `G54r` exists at all.
+
+**Named as excluded, so the exclusion is auditable rather than silent** (§18.1's discipline):
+
+- **`<h2>` "What's new"** — a section heading and navigation label. It asserts no fact.
+- **The three rendered changelog titles** — already-published copy, live on `/changelog`, reached by
+  derivation rather than transcription. Registering them here would create rows whose basis is
+  another surface's already-registered copy (§17.1's hinge precedent, §18.1's second exclusion).
+- **The three rendered dates** — each is the entry's own `date` frontmatter field, formatted. A date
+  is not a claim about the world; the claim that they are the *right* three is `R-162`.
+
+| ID | Surface | Claim | Verdict | Basis | Sev | Prov |
+|---|---------|-------|---------|-------|-----|------|
+| **R-162** | `/` | *(implicit, by the strip's existence)* — **the three entries shown are the changelog's three most recent** | **verified** | ⭐ **The claim this section actually makes, and the only one a reader cannot check.** Derived at build time from `getSortedChangelog()` (`utils/collections.ts:42`) — **the same sorted collection `/changelog` itself renders** (`changelog.astro:6`), so the two surfaces cannot disagree about what *latest* means. Asserted by **`G54r`**, which re-derives the top-3 from `src/content/changelog/*.md` frontmatter and fails if the twin does not show them. ⚠ **Red-proven by case 19**, which changes one date and leaves the strip otherwise perfect — *a stale row and a broken row look identical from the outside* (convention 15), arriving on our own front page | — | [D] |
+| **R-163** | `/` | *"Full changelog"* → `/changelog` | **verified** | `site/dist/changelog/index.html` exists in the 226-page built tree `[D]`; the route is the one `Footer.astro:40` has linked since before this increment. Asserted by `G54q` | — | [D] |
+| **R-164** | `/` | *"RSS feed"* → `/rss.xml` | **verified** | `site/dist/rss.xml` is a well-formed RSS 2.0 document carrying **8 `<item>` elements** — one per changelog entry `[D]`. ⭐ The count is the control: a feed route that built but emitted nothing would serve 200 and satisfy a link check while giving a subscriber nothing. Asserted by `G54q`, red-proven by case 18 | — | [D] |
+
+### §19.2 ⭐⭐ The finding: the measurement the signature deferred, taken — and then made recurrent
+
+⛩ Ruling 3 dissolved `CONSTRAINT-2` by moving D4 off the homepage, and said in the same breath that
+***a constraint that stops binding is not a measurement that has been taken***. D5 lands **on `/`**,
+whose prose FKGL clears its target by **0.04** — the tightest margin on the site. The measurement:
+
+| Measure | Before | After | Δ |
+|---|---|---|---|
+| `/` **prose** FKGL (target 10) | **9.96** | **9.96** | **0.00** |
+| `/` prose corpus, characters | **6030** | **6030** | **0** — byte-identical |
+| `/` **whole-twin** FKGL | 13.00 | **13.16** | **+0.16** |
+
+Both ends on the **same local build** (HAZARD-2 — a before from prod and an after from `dist/` would
+be *two instruments sharing one number*). Each of the strip's 5 lines is in the census's `dropped`
+set **with the predicate that dropped it named**: `heading` ×1 · `unpunctuated-block` ×3 ·
+`multi-link` ×1. Lines leaked into prose: **0**.
+
+⭐⭐ **THE WHOLE-TWIN DELTA IS THE LOAD-BEARING HALF OF THIS TABLE, AND IT IS WHY THE RESULT MEANS
+ANYTHING.** Had **both** figures held still, the reading would have been **indistinguishable from the
+strip never shipping** — which is `DEFECT-1`'s shape exactly: a limb that cannot tell a met criterion
+from an empty one. The whole-twin moving while the prose corpus did not is what separates *"the
+classifier correctly excluded it"* from *"the twin never contained it"*.
+
+⚠⚠ **AND `AC-5` CARRIES NO READING-LEVEL CONSTRAINT AT ALL** — the same gap as `AC-3` and the same
+class as `AC-4`'s `DEFECT-1`, now sighted in **three consecutive objectives**. Ship this strip with a
+lead sentence and `/` could cross 10 with nothing in the criterion able to say so. **`G54s` is what
+makes the absence safe rather than merely unmeasured**: it asserts the property rather than recording
+the reading, because **a reading is a statement with a timestamp** (convention 16) and this property
+is fragile in a way invisible to a reader — `unpunctuated-block` drops a block only while it carries
+**zero** sentence terminators, so **one full stop**, in a lead sentence or in a future changelog
+title, silently puts this section into a corpus with 0.04 of headroom.
+
+⭐ **Red-proven by case 20, which is `G54n`'s shape one criterion across**: nothing is removed, one
+natural lead sentence is *added*, every other assertion stays green, the section reads **better** —
+and the property is gone. *Planned framing does not fail by going missing; neither does this.*
+
+### §19.3 Counts — derived last
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **183** |
+| **Unique ids** | **168** (14 `G-*` + 154 `R-*`, `R-11`…`R-164`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, **not typed**, and re-run *after* §19 was
+written. Reconciles against §18: rows **180 + 3 = 183**, ids **165 + 3 = 168**, `R-162` → `R-164`.
+
+⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order.** This section is now
+that table. Any future `§N.M Counts` section is appended **after** this one, never inserted above —
+**and it must be a PARSEABLE TABLE, not a prose sentence.** §18.3 records why both halves are
+spelled out: §17.5 transferred the position obligation, O3 followed it exactly, and shipped the
+tally as prose — *a note that transfers one obligation reads as if it transferred all of them*.

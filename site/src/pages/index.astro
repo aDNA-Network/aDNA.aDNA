@@ -26,6 +26,10 @@ import heroGraph from '../assets/hero_graph.svg?raw';
 // drives twin emission and negotiation (scripts/emit_bespoke_twins.mjs + inject_negotiation.mjs).
 // Never typed: KW-14 / convention 1. If a twin stops being emitted this number falls with it.
 import twinManifest from '../data/twin_manifest.json';
+// HAUSSMANN GR-4 O4 · D5 — the returning-member entry point (Grande Revue P2-7). The same sorted
+// collection /changelog renders, so the strip cannot show a different "latest" than the page it
+// links to. DERIVED, never typed (KW-14 / convention 1): if an entry lands, this moves with it.
+import { getSortedChangelog } from '../utils/collections';
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://adna.network';
 const twinCount = (twinManifest as { twins: string[] }).twins.length;
@@ -81,6 +85,41 @@ const CLASS_LABELS: Record<string, string> = {
 // Curated homepage register above; anything uncurated falls to the shared public label
 // (never a raw enum — gate-27; HAUSSMANN P1.3).
 const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
+
+/* ── Section 6 (HAUSSMANN GR-4 O4 · D5 · AC-5) — "What's new" ───────────────────────────────────
+ *
+ * The Grande Revue's P2-7: changelog + RSS were reachable ONLY from the footer, so a returning
+ * member had no what's-new entry point at all. ADR-049 caps the top nav at 7 flat entries, so the
+ * ratified remedy is a homepage strip and explicitly NOT an eighth nav item.
+ *
+ * ⛩ FORM RULED AT O4's OPEN (SO#1): a dated strip with NO lead sentence. That is a reading-level
+ * decision as much as an editorial one. `/` clears its FKGL target by 0.04 — the tightest margin on
+ * the site — and `reading_census.mjs`'s `unpunctuated-block` predicate drops a block carrying zero
+ * sentence terminators. A dated link list has none, so this section contributes NOTHING to the
+ * prose corpus BY CONSTRUCTION rather than by luck.
+ *
+ * ⭐ That was MEASURED before this was written, not reasoned about: the `subnetwork-tease` list
+ * forty lines below is the identical shape (`- [link](/href) unpunctuated label`) and the census
+ * already classifies it `unpunctuated-block` on this very page. `G54s` asserts the property so it
+ * RECURS — convention 16's law, that a verification with no recurrence is a claim about the past
+ * wearing the grammar of the present. ⚠ The fragility it guards is real and specific: give any
+ * entry a title ending in a full stop and `stops` becomes 1, the block survives the predicate, and
+ * this section silently enters the corpus against a 0.04 margin.
+ */
+const LATEST_COUNT = 3;
+const latestEntries = (await getSortedChangelog()).slice(0, LATEST_COUNT);
+
+/* Titles are authored as `<version> — <headline>`, which would print the date twice beside the
+ * `date` field. Stripped only when the prefix is LITERALLY there, so a title that does not follow
+ * the convention degrades to itself rather than being surgically mangled. */
+const changelogHeadline = (title: string, version: string) =>
+  title.startsWith(`${version} — `) ? title.slice(version.length + 3) : title;
+
+/* `timeZone: 'UTC'` is load-bearing, not cosmetic — R-126. A frontmatter `date: 2026-08-28` parses
+ * to UTC midnight; formatted without a zone it renders in the BUILD MACHINE's, so a build from PDT
+ * printed "August 27". Same fix, same reason, as changelog.astro's own date line. */
+const changelogDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
 
 <BaseLayout
@@ -365,6 +404,37 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
             <a href={a.href}>{a.label}</a>{i < audiences.length - 1 && <span class="sep" aria-hidden="true">·</span>}
           </Fragment>
         ))}
+      </p>
+    </div>
+  </section>
+
+  <!-- What's new (HAUSSMANN GR-4 O4 · D5 · AC-5) — the returning-member entry point.
+
+       ⛔ SCOPE IS DELIBERATE. This names the changelog and the feed and NOTHING ELSE. It is not a
+       release-notes summary and it does not characterise what changed: the entries' own titles are
+       the only claim made, and they are read from the collection /changelog renders, so the two
+       surfaces cannot disagree about what "latest" means.
+
+       ⚠ EVERY LINE HERE IS UNPUNCTUATED ON PURPOSE. See the frontmatter note: a full stop anywhere
+       in this block puts it into `/`'s prose corpus, which clears its reading-level target by 0.04.
+       `G54s` fails if that happens. Do not add a lead sentence. -->
+  <section class="latest-strip">
+    <div class="section-inner">
+      <h2 class="section-title">What's new</h2>
+      <ul class="latest-list" role="list">
+        {latestEntries.map((e) => (
+          <li class="latest-item">
+            <a href="/changelog" class="latest-date">
+              <time datetime={e.data.date.toISOString()}>{changelogDate(e.data.date)}</time>
+            </a>
+            <span class="latest-headline">{changelogHeadline(e.data.title, e.data.version)}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="latest-actions">
+        <a href="/changelog" data-astro-prefetch>Full changelog</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="/rss.xml">RSS feed</a>
       </p>
     </div>
   </section>
@@ -872,6 +942,79 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
     color: var(--color-border);
   }
 
+  /* ——— What's new (GR-4 O4 · D5) — the quietest band on the page, deliberately. It is a
+     wayfinding affordance for someone who has already been here, so it sits below the join CTA
+     and reads as a footer shelf rather than competing with it. ——— */
+  .latest-strip {
+    padding: 0 0 var(--space-24);
+  }
+
+  .latest-list {
+    list-style: none;
+    margin: 0 auto var(--space-6);
+    padding: 0;
+    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .latest-item {
+    display: flex;
+    gap: var(--space-4);
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .latest-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .latest-date {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    /* Cyan — AA in both modes for small brand-coloured text, same token as .tease-name. */
+    color: var(--color-link);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .latest-date:hover {
+    text-decoration: underline;
+  }
+
+  .latest-headline {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  /* Underlined — the row is a link cluster with a separator, not prose (link-in-text-block guard,
+     same treatment as .audience-pathways above). */
+  .latest-actions {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--text-sm);
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .latest-actions a {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+
+  .latest-actions .sep {
+    color: var(--color-border);
+  }
+
   /* ——— Responsive ——— */
   @media (max-width: 480px) {
     .section-title {
@@ -901,6 +1044,10 @@ const classLabel = (c: string) => CLASS_LABELS[c] ?? sharedClassLabel(c);
 
     .join-network {
       padding: var(--space-12) 0 var(--space-16);
+    }
+
+    .latest-strip {
+      padding: 0 0 var(--space-12);
     }
 
     .steps-grid {

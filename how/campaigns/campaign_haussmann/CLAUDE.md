@@ -2621,10 +2621,90 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > rows **171 → 180**, ids **156 → 165**, `R-11…R-161`, **0 gaps**. Final: **673 passed / 1 skipped /
 > 0 failed.**
 >
-> ⏭ **NEXT: `O4`** (D5 — the returning-member entry point to changelog/RSS, **plus the owed
-> prose-corpus measurement**: does a link-dense strip enter the prose corpus at all? P4.5b measured
-> that link-dense lines *leave* it). Then **O5** (D6 + AC-8 + close cascade + AAR; `/privacy`'s
-> before-figure is **banked at 9.43/12** from O2). ⛔ Held: **P5.1** with the humans. ⚠ Owed: B1's ⛩
+> ~~⏭ **NEXT: `O4`** (D5 — the returning-member entry point to changelog/RSS, **plus the owed
+> prose-corpus measurement**)~~ ✅ **O4 IS DONE — see below.** ⚠ **And the carried inbox count was
+> wrong AGAIN**: *"3 untracked inbound coordination memos"* — derived at O4's open, it is **4**.
+
+> ✅ **`GR-4` O4 IS DONE 2026-09-02 — `AC-5` ✅ · `V4` ✅ · `AC-7` ◐ (mission-level).** D5, the
+> returning-member entry point, ships as a **`latest-strip`** on `/`: the changelog's three most
+> recent entries, dated and **derived**, plus the feed. Record: `artifacts/gr_4/o4_d5_record.md`.
+> Chromium **674 → 679**, delta isolated by `--list` (gate-54's own file **14 → 19**; +5, removed
+> nothing); all-projects **705** · **snapshot 26** · `check:markup` **0** control-checked · red-test
+> **22 pass / 0 fail**, every case red at exactly its declared set. ⛔ **Nothing deployed and nothing
+> owed** — met on-build; prod still serves `a852423`, re-probed at the open.
+>
+> ⛩ **A question the signature did not settle was put to the operator (SO#1):** AC-5 fixes the
+> **surface** and says nothing about the **form**. **Ruled — a dated strip with NO lead sentence**,
+> because on `/` the form is a **measurement** decision as much as an editorial one.
+>
+> ⭐⭐ **THE MEASUREMENT THE SIGNATURE DEFERRED WAS TAKEN, AND THE CONTROL IS THE ENTRY WORTH
+> READING.** Ruling 3 dissolved `CONSTRAINT-2` by moving D4 off `/` and said in the same breath that
+> ***a constraint that stops binding is not a measurement that has been taken.*** D5 lands **on**
+> `/`. Measured, both ends on the **same local build** (HAZARD-2): `/` **prose FKGL 9.96 → 9.96**,
+> corpus **6030 → 6030 chars — byte-identical**, all 5 strip lines in the census's `dropped` set with
+> the predicate that dropped them named (`heading` ×1 · `unpunctuated-block` ×3 · `multi-link` ×1),
+> **0 leaked**. ⭐⭐ **And the whole-twin moved 13.00 → 13.16, which is what makes the result mean
+> anything**: had BOTH figures held still, the reading would have been **indistinguishable from the
+> strip never shipping** — `DEFECT-1`'s shape exactly. *The whole-twin delta separates "the
+> classifier correctly excluded it" from "the twin never contained it."*
+> ⭐ **The form was chosen against a LIVE PRECEDENT on the same page**, not against a reading of the
+> predicate's source: `join-network`'s tease list is the identical shape and the census **already**
+> classified it `unpunctuated-block` on `/` `[D]`.
+>
+> ⚠⚠ **`AC-5` CARRIES NO READING-LEVEL CONSTRAINT — THE THIRD CONSECUTIVE OBJECTIVE WITH THAT GAP**
+> (AC-3 had none; AC-4's was DEFECT-1). The property is fragile in a way invisible to a reader:
+> `unpunctuated-block` drops a block only while it carries **zero** sentence terminators, so **one
+> full stop** — a lead sentence, or a future changelog title punctuated by an editor with no reason
+> to know — silently puts this section into a corpus with **0.04** of headroom. **`G54s` asserts the
+> property so it RECURS** — *a reading is a statement with a timestamp (convention 16); an assertion
+> is not.* Red-proven by **case 20**, which is **`G54n`'s shape one criterion across**: nothing
+> removed, one natural lead sentence added, every other assertion green, the section reads **better**
+> — and the property is gone.
+>
+> ⭐⭐ **THE ENUMERATION EXPOSED AN INCREMENT THAT AUTHORS ALMOST NO SENTENCES.** Reader-facing
+> strings literally written here number **three** — *"What's new"*, *"Full changelog"*, *"RSS feed"*
+> — and **none is a proposition**; everything else a reader sees is read from the changelog
+> collection at build time. ⇒ ***D5's claim surface is not its prose, it is its DERIVATION***, and
+> its only substantive assertion — *these are the newest things that happened* — is one **a hardcoded
+> strip would make falsely while reading identically**. Convention 15's *a stale row and a broken row
+> look identical from the outside*, arriving on our own front page. That is **R-162**, and it is why
+> **`G54r`** exists; case 19 changes one date and leaves the strip otherwise perfect.
+>
+> ⭐ **`V4`'s RATIFIED SINGLE MUTATION WAS INSUFFICIENT, AND DEFECT-4 SAID SO AT AUTHORING TIME.** As
+> signed, V4 red-proved AC-5 with **one** mutation — an 8th nav entry — which reds via the nav
+> **COUNT**, so the entry-point assertions **would never once have been demonstrated to fail**.
+> GR-3's clause (*a demonstration is only worth what it can attribute*) spent **forward** instead of
+> discovered in a harness's fourteenth day: five assertions, five cases. ⚠ **`G54o` is a REGRESSION
+> CHECK and says so on the gate's own face** — the nav held 7 before this objective, so it is green
+> against zero work. It earns its place by guarding the **premise** of the ratified remedy (the cap
+> is *why* D5 is a strip and not a nav item), never as evidence AC-5 was met.
+>
+> ⚠ **Two defects of mine, both caught by structure rather than vigilance.** The red-test harness
+> caught **case 18 and it failed ALONE** — a placeholder `applied()` verifier grepping a word present
+> in *neither* state — with cases 19, 20 and control 21 clean after: **O3's `applied()` restore fix
+> earning itself in its first extension**, where before it one bad pattern produced four false
+> HARNESS BUGs and a red final control. ⇒ the narrower lesson: ***`applied()` can only assert
+> PRESENCE, so a case that REMOVES something must name what the removal leaves behind.*** And **a
+> scripted edit to the `cleanup()` trap silently did not apply** — its pattern carried single spaces
+> where the file is **column-aligned** — so the two new mutation targets would have been backed up
+> and **never restored on an aborted run**. Caught by reading the file after the edit rather than
+> trusting the exit code.
+>
+> ⭐ **The `gate-49` re-baseline was PREDICTED, and the prediction was falsifiable.** `/` **is** a
+> template, so O2's dominant cost applied here and O3's did not — SO#11's O2 retrospective spent
+> forward at costing time. Red **confirmed first** (2 failed · 24 passed), then all 24 regenerated
+> in-container with **exactly 2 changed**, both `home`; the **22 untouched baselines independently
+> prove the scoped styles did not leak.** ⛔ No mask, no tolerance raised.
+>
+> ✅ **The 4 untracked inbound memos are COMMITTED** — *the receiving commit is the read-receipt*.
+> ⛩ **Vitruvius's carries `decision_required: true`** (approve / refuse / amend the `/g/adna/` Graph
+> Front-Page, and it reports `node_home` publishing a **non-ratified tagline** for us) and **Hopper's
+> hook 4.2.0 carries `ack_required: true`** (routes to `skill_template_release`); Hopper's ADR-017
+> offer and Aspasia's dead-link correction ask nothing. ⛔ **Committing is receiving, not answering**
+> — every reply is a separate outward act with its own ⛩ GO.
+>
+> ⏭ **NEXT: `O5`** (D6 + AC-8's `/privacy` section + close cascade + AAR; `/privacy`'s before-figure
+> is **banked at 9.43/12** from O2). ⛔ Held: **P5.1** with the humans. ⚠ Owed: B1's ⛩
 > Speed-Insights → transport → first p75 · babbage's lease question · babbage's two upstream findings
-> · **`F-aa`** · ⚠ **3 untracked inbound coordination memos in `who/coordination/`** — *the receiving
-> commit is the read-receipt* (P4.4's finding, live again).
+> · **`F-aa`** · **R-97** (the homepage's third *"nothing leaves"* instance, named at O3 and still
+> untouched — ratified copy needs its own gate).

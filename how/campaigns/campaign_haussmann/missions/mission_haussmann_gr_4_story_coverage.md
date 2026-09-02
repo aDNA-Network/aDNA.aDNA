@@ -31,7 +31,7 @@ acceptance_criteria:
   - "AC-2 [D2 · token-budget doctrine] — the SO-11 / ADR-016 per-mission budget doctrine layer is published on its NAMED homes, `mission-decomposition.mdx` and/or `design-a-mission.mdx` (both verified present on disk), and meets a SUBSTANCE FLOOR derived from the existing doctrine sections on those same pages. ⚠ DEFECT-3 remedy: the baseline is 0, so a bare count is satisfied by a single passing mention anywhere — in a changelog entry, a glossary stub — while the layer stays unwritten. The floor is DERIVED from the page's own siblings, never typed by feel (B0: a number written by feel is a formality wearing a pin's clothing)."
   - "AC-3 [D3 · local models] — ⛩⛩ RE-RULED 2026-09-02 AT O3's OPEN, strike-not-delete, and PERFORMED HERE IN THE SAME COMMIT AS THE BUILD so the criterion and the artifact are never left disagreeing (convention 7 / ADR-057): a *planned*-framed local-models section ships ON `/network`. ~~WHERE THE L0-L3 LADDER ACTUALLY LIVES (⛩ RULING 2, branch (i)), NOT on `/network`~~ — ⛔ THAT DESTINATION DID NOT EXIST, for TWO independent reasons measured at the object [D]: (1) `L0-L3` is a HOMONYM — `agentic-literacy.mdx:12-14` is `L0 Aware → L1 User → L2 Builder → L3 Architect`, a HUMAN-LITERACY ladder, and the recon matched four labels and inferred a subject; (2) the COMPUTE ladder's only site-wide home is `src/data/tour/workspace-router.txt:133-137`, BYTE-VENDORED, so branch (i) executed literally would have routed authored copy into the tree Standing Rule 1 forbids and AC-1's own exclusion exists to protect (F-w's trust-page reasoning, third row). ⚠ The revue's home-claim STAYS FALSE and its CONCLUSION survives: `/network` still carries 0 L0-L3 and 0 compute-tier, and is the right home because it owns the aDNA-computer / local-vs-federated story (Standing Rule 4) — which is what `run a model on your own machine` continues. Every sentence is distinguishable BY TEST from a live claim, and the copy is checked against the counsel embargo and R-14/R-15 before it ships (CONSTRAINT-1: D1 and D2 are this vault's own live doctrine and are embargo-safe; D3 is not, and no criterion said so)."
   - "AC-4 [D4 · ancient DNA] — the ancient-DNA disambiguation is PRESENT on `/commons` (⛩ RULING 3, the surface the MEASUREMENT selected: headroom 3.39 vs `/about` 0.57 and `/` 0.04), asserted on the `.md` TWIN — the surface whose verb is 'a reader encounters' — AND `/commons`'s prose FKGL stays at or under its own target, re-measured by `reading_census.mjs` with the before-figure recorded in the same artifact. ⚠ DEFECT-1 remedy: the presence half is the criterion's SUBSTANCE and was tested by nothing; and because FKGL FALLS as prose gets shorter, the constraint limb moves in the reassuring direction exactly when the criterion is met."
-  - "AC-5 [D5 · latest strip] — a returning-member entry point to changelog/RSS exists above the footer, and the top-level nav still holds exactly 7 flat entries (ADR-049's cap, derived from `navigation.ts`, not typed)."
+  - "AC-5 [D5 · latest strip] — ✅ MET AT O4 2026-09-02. A returning-member entry point to changelog/RSS exists above the footer, and the top-level nav still holds exactly 7 flat entries (ADR-049's cap, derived from `navigation.ts`, not typed). ⛩ FORM RULED AT O4's OPEN (SO#1 — the criterion fixes the surface and says nothing about the form): a dated strip with NO lead sentence, because on `/` the form is a measurement decision as much as an editorial one. ⚠⚠ THIS CRITERION CARRIES NO READING-LEVEL CONSTRAINT — the third consecutive objective with that gap (AC-3 had none; AC-4's was DEFECT-1) — and `/` clears its target by 0.04, the tightest margin on the site. The gap is made SAFE rather than merely unmeasured by `G54s`, which asserts that nothing in the strip enters `/`'s prose corpus: measured 9.96 → 9.96 with the corpus byte-identical at 6030 chars, and asserted so it RECURS, because `unpunctuated-block` holds the section out only while it carries ZERO sentence terminators and one full stop — a lead sentence, or a future changelog title — removes the property silently."
   - "AC-6 [D6 · movement 3] — movement-3 stays UNSHIPPED under the embargo, and that is the criterion being MET. Its evidence is a dated absence assertion naming its surface. ⚠ It ALSO corrects, at the record, the revue's false parenthetical that the ratified 'opening progressively' phrasing has 0 hits corpus-wide."
   - "AC-7 [governance] — every new public sentence carries a claim-register row, with THE CLAIM SET ENUMERATED FROM THE DIFF and the enumeration itself asserted; every count this mission narrates is derived by its own command; R-124's disposition is read back IN the register; AAR filed (SO#5); `token_budget_actual` recorded at the time, not reconstructed. ⚠ DEFECT-5 remedy: a limb that confirms the rows it was handed is structurally blind to a row nobody remembered — the over-masking shape (masks only ever grow) arriving in a governance limb."
   - "AC-8 [R-124 · ⛩ RULING 1] — `/privacy` carries a short section stating that aDNA is a file-layout convention, that nothing is transmitted, and that HIPAA/GDPR/IRB obligations rest with the OPERATOR AND THEIR OWN TOOLING. It asserts NO compliance claim of any kind. Every sentence carries a register row, and R-124's row moves AT ITS OWN DESTINATION — and moves ONLY when the section is live on the surface, never when it is merely written. ⚠ If the section cannot be written without implying a compliance posture, that is a FINDING TO REPORT, not a sentence to force (convention 1: claims move down, never up)."
@@ -195,7 +195,7 @@ scope is ruled would be the P4.5a defect: a spec whose halves nobody read togeth
 | **O1 ✅** | **D1 + D2 (the two clean, agent-reachable adds)** — **DONE 2026-09-02** | signature only |
 | **O2 ✅** | **D4** — **DONE 2026-09-02** | ⛩ receiving-surface ruling |
 | **O3 ✅** | **D3** — **DONE 2026-09-02** | ⛩ home ruling — ⛩⛩ **RE-RULED at O3's open onto `/network`**: the ruled destination did not exist (homonym + vendored) |
-| O4 | D5 | signature only |
+| **O4 ✅** | **D5 + the owed prose-corpus measurement** — **DONE 2026-09-02** | signature only; ⛩ **form ruled at the open** |
 | O5 | D6 + R-124's disposition + close cascade + AAR | ⛩ R-124 audience call |
 
 ## Convention 13 — coverage
@@ -459,10 +459,96 @@ edits a governance file is a change the suite can see.*** Register tally re-deri
 rows **171 → 180**, ids **156 → 165**, `R-11…R-161`, **0 gaps**. Final: **673 passed / 1 skipped /
 0 failed.**
 
-⏭ **NEXT: `O4`** (D5 — the returning-member entry point to changelog/RSS, **plus the owed
+~~⏭ **NEXT: `O4`** (D5 — the returning-member entry point to changelog/RSS, **plus the owed
 prose-corpus measurement**: does a link-dense strip enter the prose corpus at all? P4.5b measured
-that link-dense lines *leave* it). Then **O5** (D6 + AC-8's `/privacy` section + close cascade +
-AAR; `/privacy`'s before-figure is **banked at 9.43/12** from O2).
+that link-dense lines *leave* it).~~ ✅ **O4 IS DONE — see below.** Then **O5** (D6 + AC-8's
+`/privacy` section + close cascade + AAR; `/privacy`'s before-figure is **banked at 9.43/12** from
+O2).
+
+## O4 — DONE 2026-09-02 (`AC-5` ✅ · `V4` ✅ · `AC-7` ◐ mission-level)
+
+D5, the returning-member entry point, ships as a **`latest-strip`** section on `/` — the changelog's
+three most recent entries, dated and **derived**, plus the feed. Record:
+`artifacts/gr_4/o4_d5_record.md`. Chromium **674 → 679**, delta isolated by `--list` (gate-54's own
+file **14 → 19**; +5, removed nothing) · all-projects **705** · **snapshot 26** · `check:markup`
+**0** control-checked · red-test **22 pass / 0 fail**, every case red at exactly its declared set ·
+`gate-49` red **confirmed first**, then **exactly 2 of 24 baselines changed**, both `home`.
+⛔ Nothing deployed and nothing owed — met on-build; prod still serves `a852423`, re-probed at open.
+Register **§19, R-162…R-164**; counts re-derived **rows 183 · ids 168 · 0 gaps**.
+
+⛩ **A question the signature did not settle was put to the operator (SO#1):** AC-5 fixes the
+**surface** and says nothing about the **form**. **Ruled — a dated strip with NO lead sentence**,
+because on `/` the form is a measurement decision as much as an editorial one.
+
+### ⭐⭐ The measurement the signature deferred was taken, and it is the entry worth reading
+
+Ruling 3 dissolved `CONSTRAINT-2` by moving D4 off `/`, and said in the same breath that ***a
+constraint that stops binding is not a measurement that has been taken.*** D5 lands **on** `/`.
+
+`/` **prose FKGL 9.96 → 9.96**, corpus **6030 → 6030 chars, byte-identical**, all 5 strip lines in
+the census's `dropped` set with the predicate that dropped them named (`heading` ×1 ·
+`unpunctuated-block` ×3 · `multi-link` ×1), **0 leaked**. Both ends on the **same local build**
+(HAZARD-2).
+
+⭐⭐ **THE WHOLE-TWIN DELTA IS WHAT MAKES THE RESULT MEAN ANYTHING: 13.00 → 13.16.** Had **both**
+figures held still, the reading would have been **indistinguishable from the strip never shipping**
+— `DEFECT-1`'s shape exactly. The whole-twin moving while the prose corpus did not is what separates
+*the classifier correctly excluded it* from *the twin never contained it*.
+
+⭐ **And the form was chosen against a live precedent on the same page, not against a reading of the
+predicate's source**: `join-network`'s tease list is the identical shape and the census **already**
+classified it `unpunctuated-block` on `/` `[D]`.
+
+⚠⚠ **`AC-5` CARRIES NO READING-LEVEL CONSTRAINT — the third consecutive objective with that gap**
+(AC-3 had none; AC-4's was `DEFECT-1`). The property is fragile in a way invisible to a reader:
+`unpunctuated-block` drops a block only while it carries **zero** terminators, so **one full stop**
+— a lead sentence, or a future changelog title — silently puts this section into a corpus with 0.04
+of headroom. **`G54s` asserts the property so it RECURS**; a reading is a statement with a timestamp
+(convention 16), an assertion is not. Red-proven by **case 20**, which is `G54n`'s shape one
+criterion across: nothing removed, one natural lead sentence added, every other assertion green, the
+section reads *better* — and the property is gone.
+
+### ⭐⭐ The enumeration exposed an increment that authors almost no sentences
+
+Reader-facing strings literally written here number **three** — *"What's new"*, *"Full changelog"*,
+*"RSS feed"* — and **none is a proposition**. Everything else a reader sees is read from the
+changelog collection at build time. ⇒ ***D5's claim surface is not its prose; it is its
+DERIVATION***, and its only substantive assertion — *these are the newest things that happened* — is
+one **a hardcoded strip would make falsely while reading identically** (convention 15's *a stale row
+and a broken row look identical from the outside*, on our own front page). That is **R-162**, and it
+is why **`G54r`** exists; case 19 changes one date and leaves the strip otherwise perfect.
+
+### ⭐ `V4`'s ratified single mutation was insufficient, and DEFECT-4 said so at authoring time
+
+V4 as signed red-proved AC-5 with **one** mutation — an 8th nav entry — which reds via the nav
+**count**, so the entry-point assertions **would never once have been demonstrated to fail**. GR-3's
+clause (*a demonstration is only worth what it can attribute*) spent **forward** rather than
+discovered in a harness's fourteenth day. ⚠ **`G54o` is a REGRESSION CHECK and says so on the gate's
+face** — the nav held 7 before this objective, so it is green against zero work; it earns its place
+by guarding the **premise** of the ratified remedy, never as evidence AC-5 was met.
+
+### ⚠ Two defects of mine, both caught by structure rather than vigilance
+
+**The red-test harness caught case 18 and it failed ALONE** — its `applied()` verifier was a
+placeholder grepping a word present in *neither* state; cases 19, 20 and control 21 ran clean after.
+**O3's `applied()` restore fix earning itself in its first extension.** ⇒ the narrower lesson:
+**`applied()` can only assert PRESENCE, so a case that REMOVES something must name what the removal
+leaves behind.** And **a scripted edit to the `cleanup()` trap silently did not apply** — its pattern
+had single spaces where the file is **column-aligned** — so the two new mutation targets would have
+been backed up and **never restored on an aborted run**. Caught by reading the file after the edit
+rather than trusting the exit code.
+
+⚠ **`gate-49`'s re-baseline was PREDICTED and the prediction was falsifiable**: `/` **is** a
+template, so O2's cost applied here and O3's did not. Red confirmed **first** (2 failed · 24
+passed), then 24 regenerated in-container with **exactly 2 changed** — the 22 untouched baselines
+independently prove the scoped styles did not leak. ⛔ **No mask, no tolerance raised.**
+
+⚠ **The inbox held 4 untracked memos, not the 3 the record carried.** All read at the open and
+committed as a rider — *the receiving commit is the read-receipt*. ⛩ **Vitruvius's carries
+`decision_required: true`** (approve/refuse/amend the `/g/adna/` Graph Front-Page) and **Hopper's
+hook 4.2.0 carries `ack_required: true`**; both replies are outward acts with their own ⛩ GO.
+
+⏭ **NEXT: `O5`** — D6 + AC-8's `/privacy` section + the close cascade + the AAR.
 
 ## AAR
 
