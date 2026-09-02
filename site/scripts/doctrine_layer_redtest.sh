@@ -39,6 +39,7 @@ SRC_TUTORIAL="src/content/guides/design-a-mission.mdx"
 TWIN_PATTERN="dist/patterns/mission-decomposition.md"
 TWIN_TUTORIAL="dist/learn/tutorials/design-a-mission.md"
 TOUR="src/data/tour/standard-governance.txt"
+TWIN_COMMONS="dist/commons.md"          # GR-4 O2 · D4 — AC-4's presence half (G54i/G54j)
 
 BAK="$(mktemp -d)"
 PASS=0; FAIL=0
@@ -50,11 +51,12 @@ cleanup() {
   [ -f "$BAK/twin_pattern" ]  && cp "$BAK/twin_pattern"  "$TWIN_PATTERN"
   [ -f "$BAK/twin_tutorial" ] && cp "$BAK/twin_tutorial" "$TWIN_TUTORIAL"
   [ -f "$BAK/tour" ]          && cp "$BAK/tour"          "$TOUR"
+  [ -f "$BAK/twin_commons" ]  && cp "$BAK/twin_commons"  "$TWIN_COMMONS"
   rm -rf "$BAK"
 }
 trap cleanup EXIT
 
-for f in "$SPEC" "$MEASURE" "$SRC_PATTERN" "$SRC_TUTORIAL" "$TWIN_PATTERN" "$TWIN_TUTORIAL" "$TOUR"; do
+for f in "$SPEC" "$MEASURE" "$SRC_PATTERN" "$SRC_TUTORIAL" "$TWIN_PATTERN" "$TWIN_TUTORIAL" "$TOUR" "$TWIN_COMMONS"; do
   [ -f "$f" ] || { echo "HARNESS BUG: $f not found (build first? wrong cwd?)" >&2; exit 2; }
 done
 cp "$MEASURE" "$BAK/measure"
@@ -63,16 +65,27 @@ cp "$SRC_TUTORIAL" "$BAK/src_tutorial"
 cp "$TWIN_PATTERN" "$BAK/twin_pattern"
 cp "$TWIN_TUTORIAL" "$BAK/twin_tutorial"
 cp "$TOUR" "$BAK/tour"
+cp "$TWIN_COMMONS" "$BAK/twin_commons"
 
 # Prints the sorted set of failing assertion ids, e.g. "G54c G54h".
+#
+# ⛔⛔ THE RANGE IS `a-z` AND THAT IS NOT COSMETIC — IT WAS `a-h` AND O2 WALKED STRAIGHT INTO THE
+# DEFECT THE ADOPTION ADDENDUM HAD FOUND EIGHT HOURS EARLIER IN gate-53's HARNESS (`G53[a-f]` could
+# not see `G53g`, so every new case would have reported NO RED). With `a-h`, G54i and G54j would have
+# been INVISIBLE to this harness: their mutations would produce a genuine red, `failing_set` would
+# return the empty string, and `check_case` would report "NO RED — the gate did not catch the
+# mutation" — an instrument silently blind to the assertion it was extended to prove, reporting the
+# subject as broken. ⇒ A COVERAGE FLOOR GOES STALE THE MOMENT ITS SUBJECT GROWS; raise it in the
+# commit that grows it. Widened to the whole alphabet so the next extension cannot re-earn this.
 failing_set() {
   npx playwright test --project=chromium "$SPEC" --reporter=list 2>&1 \
-    | grep -oE '✘.*(G54[a-h])' | grep -oE 'G54[a-h]' | sort -u | tr '\n' ' ' | sed 's/ $//'
+    | grep -oE '✘.*(G54[a-z])' | grep -oE 'G54[a-z]' | sort -u | tr '\n' ' ' | sed 's/ $//'
 }
 
 restore_all() { cp "$BAK/measure" "$MEASURE"; cp "$BAK/src_pattern" "$SRC_PATTERN";
   cp "$BAK/src_tutorial" "$SRC_TUTORIAL"; cp "$BAK/twin_pattern" "$TWIN_PATTERN";
-  cp "$BAK/twin_tutorial" "$TWIN_TUTORIAL"; cp "$BAK/tour" "$TOUR"; }
+  cp "$BAK/twin_tutorial" "$TWIN_TUTORIAL"; cp "$BAK/tour" "$TOUR";
+  cp "$BAK/twin_commons" "$TWIN_COMMONS"; }
 
 # case <n> <label> <declared-red-set> <mutation-verifier-cmd>
 check_case() {
@@ -174,13 +187,40 @@ open(p, 'w').write(s)
 PY
 applied "$TWIN_TUTORIAL" '^Thin\.$' "case 8" && check_case 8 "an exemplar thins ⇒ derivation no longer supports the pin" "G54g"
 
+# ── CASE 9 → G54i — the /commons probe stops reaching real text ──────────────────────────────────
+# Targets the REACH CONTROL, not the content. The twin keeps its length and keeps both D4 terms;
+# only the site's own name goes. If G54i were decorative, a zero from a broken probe would read
+# exactly like an honest absence — which is the whole reason a control sits under G54j at all.
+perl -0pi -e 's/aDNA/zQNA/g' "$TWIN_COMMONS"
+applied "$TWIN_COMMONS" 'zQNA' "case 9" && check_case 9 "the /commons probe no longer reaches text" "G54i"
+
+# ── CASE 10 → G54j — ⭐ THE LOAD-BEARING CASE FOR D4 ─────────────────────────────────────────────
+# The mission ships NOTHING. The page is otherwise untouched — same length, same name, same bands —
+# and the disambiguation is simply not there. This is the exact state /commons was in on 2026-09-02
+# before O2, and the state in which the reading census (V3's other limb) passes happily, because
+# FKGL is trivially unchanged when no copy lands. A green here would mean AC-4 is tested by nothing.
+perl -0pi -e 's/ancient DNA/palaeo genomics/gi; s/Agentic DNA/the standard/gi' "$TWIN_COMMONS"
+applied "$TWIN_COMMONS" 'palaeo genomics' "case 10" && check_case 10 "D4 absent from /commons entirely" "G54j"
+
+# ── CASE 11 → G54j — the disambiguation degrades to a MENTION ────────────────────────────────────
+# ⭐ The subtler half, and the one most likely to be decorative: the COLLISION term stays, the
+# RESOLUTION goes. The page still says "ancient DNA" — a naive presence check is GREEN — while a
+# reader is told only what aDNA is not. DEFECT-3's lesson (a criterion satisfiable by a passing
+# mention) applied to the sibling criterion that did not carry it.
+perl -0pi -e 's/Agentic DNA/the standard/gi' "$TWIN_COMMONS"
+if applied "$TWIN_COMMONS" 'the standard' "case 11"; then
+  grep -qi 'ancient DNA' "$TWIN_COMMONS" \
+    && check_case 11 "collision term kept, resolution stripped ⇒ a mention, not an answer" "G54j" \
+    || { echo "  ✗ HARNESS BUG: the collision term is gone too, so case 11 cannot test what it claims" >&2; FAIL=$((FAIL+1)); restore_all; }
+fi
+
 # ── FINAL CONTROL — the tree was left as found ───────────────────────────────────────────────────
-echo "control 9: tree restored"
+echo "control 12: tree restored"
 if [ -z "$(failing_set)" ]; then
-  echo "  ✓ control 9: gate green again ⇒ every mutation was reverted"
+  echo "  ✓ control 12: gate green again ⇒ every mutation was reverted"
   PASS=$((PASS+1))
 else
-  echo "  ✗ control 9: gate STILL RED after restore — the harness has left the tree mutated" >&2
+  echo "  ✗ control 12: gate STILL RED after restore — the harness has left the tree mutated" >&2
   FAIL=$((FAIL+1))
 fi
 

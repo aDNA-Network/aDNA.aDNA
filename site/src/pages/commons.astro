@@ -125,6 +125,38 @@ const memberSyncDates = [...new Set(ledger.map((r: any) => r.lastSynced).filter(
     secondaryLabel="Read the standard"
   />
 
+  <!-- HAUSSMANN GR-4 O2 · D4 — the ancient-DNA disambiguation, AC-4.
+       WHY HERE, AND NOT WHERE THE REVUE PROPOSED. P4.5b's clinician cold-read recorded "in my
+       field aDNA means ancient DNA… I briefly expected paleogenomics" after meeting the hero that
+       was supposed to have disambiguated it (ADR-048 §5). The content was never missing — it sat
+       three-to-four clicks below the point of confusion, and /learn/what-is-adna's own comment
+       explains why it is answered THERE: that is where someone who wondered about the name goes
+       looking. This note does not contradict that. It exists because /commons is a LANDING
+       surface — inbound from the homepage §5 hand-off, the header and the footer (c165, audit C3)
+       — so a reader can arrive here having passed through none of the pages that answer it.
+       The Grande Revue proposed "hero micro-copy or /about". ⛩ RULING 3 chose /commons on the
+       MEASUREMENT instead: prose-FKGL headroom /commons 3.39 · /about 0.57 · / 0.04 — ~6x and
+       ~85x — a surface neither disjunct named. That ruling also dissolved CONSTRAINT-2, since D4
+       off the homepage no longer competes with O4's changelog strip for that 0.04 margin.
+       A CALLOUT AND NOT A BAND, by operator ruling on the form: a titled <section> would add a
+       heading to the page outline for what is a two-sentence answer, and one clause woven into
+       the subnetworks subtitle would read as an aside to a reader who is not confused — and be
+       invisible to the one who is. Convention 1 governs every sentence here: this disambiguates a
+       name and asserts nothing about the field, the science, or who uses the term. -->
+  <div class="commons-name-note">
+    <div class="section-inner">
+      <Callout variant="info" title="A note on the name">
+        <p>
+          In genomics, <em>aDNA</em> usually means
+          <a href="https://en.wikipedia.org/wiki/Ancient_DNA">ancient DNA</a>. This is not that.
+          Here it stands for <em>Agentic DNA</em> &mdash; a shared way to file what a project knows,
+          so people and AI agents can both find their way around it.
+        </p>
+        <p class="name-note-more"><a href="/learn/what-is-adna/">What aDNA is &rarr;</a></p>
+      </Callout>
+    </div>
+  </div>
+
   <!-- Band 1 · The featured subnetworks (curated, not exhaustive) -->
   <section id="featured" class="commons-featured">
     <div class="section-inner">
@@ -315,6 +347,21 @@ const memberSyncDates = [...new Set(ledger.map((r: any) => r.lastSynced).filter(
     max-width: 42rem;
     margin: 0 auto var(--space-12);
     line-height: 1.6;
+  }
+
+  /* ——— GR-4 O2 · the name note (D4). Not a band: no heading, no page-outline entry.
+     The inner max-width is narrower than --content-width because this is a two-sentence
+     aside, and a 3-line note stretched to full band width reads as a banner. ——— */
+  .commons-name-note {
+    padding: var(--space-10) 0 0;
+  }
+
+  .commons-name-note .section-inner {
+    max-width: 46rem;
+  }
+
+  .commons-name-note .name-note-more {
+    margin-bottom: 0;
   }
 
   /* ——— Band 1 · featured subnetworks (each card = SubnetworkCard.astro) ——— */

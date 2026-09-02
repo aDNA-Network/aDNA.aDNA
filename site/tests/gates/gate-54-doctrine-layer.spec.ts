@@ -48,9 +48,43 @@
  * Red-proven by `scripts/doctrine_layer_redtest.sh` — ONE MUTATION PER ASSERTION, each case naming
  * the assertion it reds via, because a demonstration is only worth what it can attribute (GR-3's
  * `F-z`, spent forward at authoring time rather than discovered in this harness's fourteenth day).
+ *
+ * ── GR-4 O2 EXTENSION (AC-4 · D4 · verification limb V3's PRESENCE half) ────────────────────────
+ *
+ * G54i–G54j were added at O2 and they are a DIFFERENT criterion on a DIFFERENT surface, so they say
+ * so rather than hiding inside a gate whose title names D1/D2. ⚠ THE FILENAME IS NOW NARROWER THAN
+ * THE GATE — named here rather than fixed, because renaming the spec would move a path three other
+ * files hardcode, for no assertion gained.
+ *
+ * ⭐⭐ WHY A PRESENCE ASSERTION EXISTS AT ALL, AND IT IS THE SHARPEST THING IN THIS MISSION'S PASS.
+ * AC-4 has two halves — the disambiguation REACHES `/commons` (substance), and `/commons`'s reading
+ * level STAYS under target (constraint). V3 is the reading census: it tests the constraint. Before
+ * this gate, NOTHING tested the substance, so the mission could have shipped nothing at all, run the
+ * census, and passed. Worse, and this is the part that makes it dangerous rather than merely absent:
+ * FKGL FALLS AS PROSE GETS SHORTER AND SIMPLER, so a plain two-sentence disambiguation LOWERS the
+ * number — the constraint limb moves in the REASSURING direction exactly when the criterion is met.
+ * Measured live at O2: `/commons` went 8.61 → 8.30 against a target of 12. A limb that improves when
+ * its criterion is met is a limb that will be read as confirmation.
+ *
+ * ⛩ SURFACE (convention 18): the `.md` TWIN, `dist/commons.md`. AC-4's verb is "a reader
+ * ENCOUNTERS", which is a question about rendered, flattened text — not about source, and not about
+ * the DOM. Convention 17's amendment made that choice explicit after P4.5b named a surface correctly
+ * and still picked the wrong one; it fails in BOTH directions, so there is no safe default.
+ *
+ * ⚠ LINK TARGETS ARE STRIPPED BEFORE MATCHING, and that exclusion is part of the claim. The copy
+ * links `en.wikipedia.org/wiki/Ancient_DNA`; a naive match could be satisfied by a URL nobody reads
+ * aloud. It cannot be here (the URL carries an underscore), but "it happens not to match today" is
+ * not an assertion — the same reasoning that made AC-1's vendored exclusion load-bearing.
+ *
+ * ⚠ G54j ASSERTS BOTH TERMS, because "ancient DNA" alone is a MENTION and AC-4 asks for a
+ * DISAMBIGUATION. A page could say "this is not about ancient DNA" and leave a reader no better
+ * off. The resolution — "Agentic DNA" — is what makes it an answer. This is DEFECT-3's lesson
+ * (a criterion satisfiable by a passing mention) applied to a sibling criterion that did not carry it.
  */
 import { test, expect } from '@playwright/test';
 import { execFileSync } from 'node:child_process';
+import { readFileSync, existsSync } from 'node:fs';
+import { join } from 'node:path';
 
 type Section = { heading: string; bodyLen: number; proseLen: number; elements: number };
 type Page =
@@ -93,7 +127,7 @@ function run(): Measure {
   return JSON.parse(raw) as Measure;
 }
 
-test.describe('gate-54: the D1/D2 doctrine layer', () => {
+test.describe('gate-54: GR-4 story coverage — the D1/D2 doctrine layer, and D4 on /commons', () => {
   let m: Measure;
   test.beforeAll(() => {
     m = run();
@@ -186,5 +220,64 @@ test.describe('gate-54: the D1/D2 doctrine layer', () => {
         `${m.derived?.bodyLen}. The budget is stricter than the evidence for it, so every grade it ` +
         `hands down is unfounded — re-derive the pin or restore the exemplars.`,
     ).toBe(true);
+  });
+
+  /* ── GR-4 O2 · D4 · AC-4's PRESENCE half (V3) ───────────────────────────────────────────────
+   * Read the twin ONCE, here, rather than in each case: two cases sharing one read cannot disagree
+   * about what the surface said, which is the failure mode gate-40's "assert on one output" rule
+   * exists to refuse. Link TARGETS are stripped; link TEXT is kept, because link text is read. */
+  const COMMONS_TWIN = join(process.cwd(), 'dist', 'commons.md');
+  let commonsProse: string | null = null;
+  test.beforeAll(() => {
+    if (!existsSync(COMMONS_TWIN)) return;
+    commonsProse = readFileSync(COMMONS_TWIN, 'utf8')
+      .replace(/\]\([^)]*\)/g, ']') // drop (href); keep [text]
+      .replace(/https?:\/\/\S+/g, ''); // and any bare URL
+  });
+
+  test('G54i: the /commons twin is measurable, and the probe reaches real text', () => {
+    expect(
+      commonsProse,
+      `no twin at ${COMMONS_TWIN}. G54j below is VACUOUSLY GREEN over a file that does not exist — ` +
+        `an unbuilt twin must fail loudly here, not pass quietly there. Run \`npx astro build\`.`,
+    ).not.toBeNull();
+
+    // Coverage floor, not `> 0`: a truncated or half-written twin reads exactly like a real one.
+    // ⭐ DERIVED, NOT TYPED (KW-14; and B0's "a number written by feel is a formality wearing a pin's
+    // clothing"). Measured 2026-09-02 at O2: the stripped twin is 6407 chars, and a POINTER-BLOCK-ONLY
+    // twin — the realistic collapse, the emitter writing its preamble and no page — is ~671. The floor
+    // sits between them at 3000 (~0.47x the real page, ~4.5x the stub), so ordinary copy edits, which
+    // move this by tens, can never trip it, and a collapse, which moves it by thousands, always does.
+    expect(
+      (commonsProse ?? '').length,
+      'the /commons twin is too short to be the real page — a collapsed emit would let G54j pass on ' +
+        'a stub carrying nothing but its pointer block.',
+    ).toBeGreaterThan(3000);
+
+    // The control that makes G54j's verdict mean something: if the probe cannot find the site's own
+    // name on its own page, a zero for "ancient DNA" is a statement about the probe, not the page.
+    expect(
+      (commonsProse ?? '').toLowerCase(),
+      'the /commons twin does not contain "aDNA" — the probe is not reaching the text it grades, so ' +
+        'any absence it reports below would be vacuous rather than real.',
+    ).toContain('adna');
+  });
+
+  test('G54j: the D4 ancient-DNA disambiguation reaches the reader on /commons', () => {
+    const prose = (commonsProse ?? '').toLowerCase();
+
+    expect(
+      prose,
+      'the COLLISION term is absent from the /commons twin. A reader landing here from the homepage ' +
+        'hand-off, the header or the footer may pass through none of the pages that answer it — ' +
+        'which is D4: content that exists, three clicks below the point of confusion.',
+    ).toContain('ancient dna');
+
+    expect(
+      prose,
+      'the RESOLUTION term is absent. "ancient DNA" alone is a MENTION, not a disambiguation — it ' +
+        'tells a reader what aDNA is not and leaves them no better off. AC-4 asks for the answer, ' +
+        'and "Agentic DNA" is the half that supplies it.',
+    ).toContain('agentic dna');
   });
 });

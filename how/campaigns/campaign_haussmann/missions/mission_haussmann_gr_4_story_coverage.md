@@ -193,7 +193,7 @@ scope is ruled would be the P4.5a defect: a spec whose halves nobody read togeth
 |---|---|---|
 | O0 | this pass + the ⛩ gate | — |
 | **O1 ✅** | **D1 + D2 (the two clean, agent-reachable adds)** — **DONE 2026-09-02** | signature only |
-| O2 | D4 | ⛩ receiving-surface ruling |
+| **O2 ✅** | **D4** — **DONE 2026-09-02** | ⛩ receiving-surface ruling |
 | O3 | D3 | ⛩ home ruling (the false-premise fork) |
 | O4 | D5 | signature only |
 | O5 | D6 + R-124's disposition + close cascade + AAR | ⛩ R-124 audience call |
@@ -290,8 +290,75 @@ zero. `gate-48`'s G48c is non-blocking and neither page is a first-contact surfa
 active` in `how/sessions/active/` with `token_budget_actual:` **empty** — a finished session reading as
 a **live peer lease**, and the third P4.3-class instance of an unrecorded actual.
 
-⏭ **NEXT: `O2`** (D4 → `/commons`, with the census before/after on the same surface). ⛔ No deploy
-authorized or owed; a push is its own ⛩ GO.
+~~⏭ **NEXT: `O2`** (D4 → `/commons`, with the census before/after on the same surface).~~ ✅ **O2 IS
+DONE — see below.** ⛔ No deploy authorized or owed; a push is its own ⛩ GO.
+
+## O2 — DONE 2026-09-02 (`AC-4` ✅ · `V3` ◐ **PARTIAL, and recorded as partial**)
+
+⛩ **One question the signature did not settle was put to the operator at O2's open**: AC-4 fixes the
+*surface* (`/commons`) and says nothing about the **form**. **Ruled — a Callout under the hero**, not
+a titled band (which would add a heading to the page outline for a two-sentence answer) and not a
+clause woven into the subnetworks subtitle (which would read as an aside to a reader who is not
+confused, and be invisible to the one who is).
+
+**Built:** the *"A note on the name"* Callout on `site/src/pages/commons.astro`, reusing the component
+the page already imports · `gate-54` **G54i + G54j** (the presence limb DEFECT-1 found missing) ·
+red-test cases **9/10/11** · register **§17** (R-150…R-152).
+
+**Verified:** chromium **668 → 670** — delta isolated by `--list` (gate-54's own file 8 → 10, **+2,
+removed nothing**), all-projects **696**, snapshot **26**, each by its own command · `html-validate`
+**0**, control-checked against a deliberately invalid file so the zero is not vacuous · red-test
+**13/13**, every case red at **exactly** its declared assertion set.
+
+⭐⭐ **AC-4's CONSTRAINT LIMB IMPROVED AT THE EXACT MOMENT THE CRITERION WAS MET — MEASURED, NOT
+ARGUED.** `/commons` prose FKGL **8.61 → 8.30** against a target of 12, before and after on the same
+local build (HAZARD-2 honoured; a before from prod and an after from `dist/` would be *two instruments
+sharing one number*). ⇒ the pass's DEFECT-1 was not merely a silent gap: **FKGL falls as prose gets
+shorter, so V3 moves 0.31 in the REASSURING direction when nothing at all has shipped.** The presence
+assertion is what makes AC-4 falsifiable, and it needed **no new instrument** — `gate-54` already
+graded twins.
+
+⭐ **G54j asserts BOTH terms, and red-test case 11 is why.** *"ancient DNA"* alone is a **mention** —
+a page can name the collision and leave a reader no better off. Case 11 keeps the collision term and
+strips only *"Agentic DNA"*; the gate goes red. **DEFECT-3's lesson applied to the sibling criterion
+that did not carry it** — the same asymmetry P4.4b found, where one criterion's exclusion set was
+spelled out and its sibling under the same limb got none.
+
+⛔⛔ **THE RED-TEST HARNESS WAS ONE CHARACTER FROM BEING BLIND TO THE ASSERTIONS IT WAS EXTENDED TO
+PROVE.** `failing_set()` matched **`G54[a-h]`**. With `G54i`/`G54j` added it would have returned the
+empty string on a genuine red and reported *"NO RED — the gate did not catch the mutation"* — the
+instrument blind to its own new assertion **and blaming the subject**. ⚠ **This is the adoption
+addendum's `G53[a-f]` defect recurring the SAME DAY in a sibling harness**, caught the same way: by
+reading the harness rather than trusting it. ⇒ ***a coverage floor goes stale the moment its subject
+grows***; range widened to `a-z`.
+
+⭐ **THE RE-BASELINE ATTRIBUTED ITSELF.** `/commons` is a `gate-49` template at `maxDiffPixels: 0`, so
+the copy necessarily reds the snapshot lane — **confirmed first (2 failed · 24 passed · 5207 → 5455 px
+`[D]`), not assumed.** All 24 baselines were then regenerated in-container and **exactly 2 files
+changed**. That is the control the adoption addendum's warning asks for (*a re-baseline that also
+moves the instrument cannot attribute what it measures*): nothing unrelated was absorbed, and the 24
+untouched baselines independently prove the scoped style override did not leak. ⛔ **No mask, no
+tolerance raised** — B0's ruling stands.
+
+◐ **`V3` IS PARTIALLY EXERCISED AND SAYS SO.** V3 asserts **AC-4 and AC-8**; AC-8's `/privacy` section
+does not exist until **O5**, so only the `/commons` half is closed here. `/privacy`'s before-figure
+was **banked while the same build was up** (**9.43** against a target of 12, headroom 2.57) so O5's
+delta is readable on the same surface. *A limb partially exercised reports as partial* — convention
+13's own amendment.
+
+⚠ **A pre-existing gap found and NOT fixed, because finding one is not a licence to widen.** The
+identical disambiguation sentence has been live on `/learn/what-is-adna` since P4.5b and **carries no
+register row** (`grep -i ancient` over the register returned **0** before §17 `[D]`). AC-7 governs
+*new* public sentences; back-filling P4.5b's at an objective's tail is this campaign's most-repeated
+defect. **Named in §17.1 as a debt with a destination rather than a silence.**
+
+⚠ **`grep -c` exits 1 on zero, so `|| echo 0` printed `0\n0`** in this sitting's first baseline probe
+— **the identical idiom GR-1 already paid for.** Caught by reading the output rather than by
+remembering the finding, which is the argument for reading output.
+
+⏭ **NEXT: `O3`** (D3 — the local-models section, branch (i): route it to where the L0–L3 ladder
+actually lives, **not** `/network`, whose ratified home-claim measured FALSE). ⛔ No deploy authorized
+or owed; a push is its own ⛩ GO.
 
 ## AAR
 

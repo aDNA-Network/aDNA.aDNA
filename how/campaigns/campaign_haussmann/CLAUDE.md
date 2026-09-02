@@ -2433,7 +2433,75 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > written down and it still only surfaced because the staged stat was read rather than the command
 > trusted.*
 >
-> ⏭ **NEXT: `O2`** (D4 → `/commons`, with `reading_census.mjs` before/after on the **same** surface —
-> HAZARD-1: run from the repo root, `npx astro build`, never `npm run build`). ⛔ Held: **P5.1** with
-> the humans. ⚠ Owed: B1's ⛩ Speed-Insights → transport → first p75 · babbage's lease question ·
-> babbage's two upstream findings still `proposed` · **`F-aa`**.
+> ~~⏭ **NEXT: `O2`** (D4 → `/commons`, with `reading_census.mjs` before/after on the **same** surface —
+> HAZARD-1: run from the repo root, `npx astro build`, never `npm run build`).~~ ✅ **O2 IS DONE — see
+> below.** ⛔ Held: **P5.1** with the humans. ⚠ Owed: B1's ⛩ Speed-Insights → transport → first p75 ·
+> babbage's lease question · babbage's two upstream findings still `proposed` · **`F-aa`**.
+
+> ✅ **`GR-4` O2 IS DONE 2026-09-02 — `AC-4` ✅ · `V3` ◐ PARTIAL AND RECORDED AS PARTIAL.** D4, the
+> ancient-DNA disambiguation, is live on `/commons` as an *"A note on the name"* Callout under the
+> hero. Chromium **668 → 670**, delta isolated by `--list` (gate-54's own file **8 → 10**, +2, removed
+> nothing); all-projects **696** · snapshot **26** · `html-validate` **0**, control-checked against a
+> deliberately invalid file so the zero is not vacuous; red-test **13/13**, every case red at
+> **exactly** its declared assertion set. ⛔ **Nothing deployed and nothing owed** — met on-build; prod
+> still serves `a852423`, re-probed at the open.
+>
+> ⛩ **A question the signature did not settle was put to the operator (SO#1):** AC-4 fixes the
+> *surface* and says nothing about the **form**. **Ruled — a Callout, not a band** (a titled
+> `<section>` would add a heading to the page outline for a two-sentence answer) **and not a woven
+> clause** (which reads as an aside to a reader who is not confused, and is invisible to the one who
+> is).
+>
+> ⭐⭐ **AC-4's CONSTRAINT LIMB IMPROVED AT THE EXACT MOMENT THE CRITERION WAS MET, AND THAT IS THE
+> PASS'S DEFECT-1 MEASURED RATHER THAN ARGUED.** `/commons` prose FKGL **8.61 → 8.30** against a target
+> of 12, before and after on the **same local build** (HAZARD-2 honoured — a before from prod and an
+> after from `dist/` would be *two instruments sharing one number*, B2a's finding). ⇒ **FKGL falls as
+> prose gets shorter, so V3 moves 0.31 in the REASSURING direction when nothing has shipped at all.**
+> A limb that improves when its subject improves is not merely blind — *it will be read as
+> confirmation by the next person who runs it.* The remedy added **no instrument**: `gate-54` gains
+> **G54i** (the `/commons` twin is measurable **and the probe reaches real text**) and **G54j** (both
+> D4 terms present), on the **`.md` twin**, because AC-4's verb is *"a reader encounters"* (convention
+> 17's amendment).
+>
+> ⭐ **G54j ASSERTS BOTH TERMS, AND RED-TEST CASE 11 IS WHY.** *"ancient DNA"* alone is a **mention** —
+> a page can name the collision and leave a reader no better off. Case 11 keeps the collision term and
+> strips only *"Agentic DNA"*; the gate goes red. **DEFECT-3's lesson applied to the sibling criterion
+> that did not carry it** — the same asymmetry P4.4b found, where one criterion's exclusion set was
+> spelled out and its sibling under the same limb got none.
+>
+> ⛔⛔ **THE RED-TEST HARNESS WAS ONE CHARACTER FROM BEING BLIND TO THE ASSERTIONS IT WAS EXTENDED TO
+> PROVE.** `failing_set()` matched **`G54[a-h]`**; with `G54i`/`G54j` added it would have returned the
+> empty string on a genuine red and reported *"NO RED — the gate did not catch the mutation"* — **the
+> instrument blind to its own new assertion, and blaming the subject.** ⚠ **This is the adoption
+> addendum's `G53[a-f]` defect recurring THE SAME DAY in a sibling harness**, caught the same way — by
+> reading the harness instead of trusting it. ⇒ ***a coverage floor goes stale the moment its subject
+> grows***; widened to `a-z`.
+>
+> ⭐ **THE RE-BASELINE ATTRIBUTED ITSELF.** `/commons` is a `gate-49` template at `maxDiffPixels: 0`,
+> so this copy necessarily reds the snapshot lane (ADR-057's same-diff law arriving at a **fixture**
+> rather than a route) — **confirmed first, not assumed**: 2 failed · 24 passed · page 5207 → 5455 px
+> `[D]`. All 24 baselines were then regenerated in-container and **exactly 2 files changed**. That is
+> the control the adoption addendum's warning asks for (*a re-baseline that also moves the instrument
+> cannot attribute what it measures*): nothing unrelated was absorbed, and the **24 untouched baselines
+> independently prove the scoped style override did not leak.** ⛔ **No mask, no tolerance raised** —
+> B0's ruling stands; the pixels genuinely changed, and a mask would have been the cheap answer.
+>
+> ◐ **`V3` IS PARTIAL BECAUSE IT ASSERTS TWO CRITERIA AND ONLY ONE EXISTS YET.** AC-8's `/privacy`
+> section is **O5's**, so only AC-4's half closes here. `/privacy`'s before-figure was **banked while
+> the same build was up** (**9.43** vs target 12) so O5's delta is readable on the same surface. *A
+> limb partially exercised reports as partial.*
+>
+> ⚠ **A pre-existing gap found and NOT fixed:** the identical disambiguation sentence has been live on
+> `/learn/what-is-adna` since P4.5b and **carries no register row** (`grep -i ancient` over the
+> register returned **0** before §17 `[D]`). AC-7 governs *new* public sentences; back-filling P4.5b's
+> at an objective's tail is this campaign's most-repeated defect. **Named in §17.1 as a debt with a
+> destination rather than a silence.**
+>
+> ⚠ **`grep -c` exits 1 on zero, so `|| echo 0` printed `0\n0`** in the first baseline probe — the
+> identical idiom **GR-1 already paid for**. Caught by reading the output, not by remembering the
+> finding. ⚠ **Convention 19's green has a width**: `main` is green at `7210d5e`, the last **pushed**
+> commit; GR-4's own commits have never been through CI, because a push is its own ⛩ GO.
+>
+> ⏭ **NEXT: `O3`** (D3 — the local-models section at **branch (i)**: route it to where the L0–L3
+> ladder actually lives, **not** `/network`, whose ratified home-claim measured FALSE). Then O4 (D5 +
+> the owed prose-corpus measurement) · O5 (D6 + AC-8 + close cascade + AAR).

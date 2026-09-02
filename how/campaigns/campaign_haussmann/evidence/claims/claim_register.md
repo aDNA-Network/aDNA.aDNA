@@ -1491,3 +1491,122 @@ are how the published tally went stale by 13 rows last time. Reconciles exactly 
 
 ⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order.** This section is now
 that table. Any future `§N.M Counts` section is appended **after** this one, never inserted above.
+
+---
+
+## §17 — GR-4 O2: D4 reaches `/commons`, and the limb that would have confirmed nothing (2026-09-02)
+
+`AC-4` · `AC-7` · verification limb `V3`. Three new public sentences on `/commons`, and the
+**presence** assertion the convention-13 pass found that criterion had never had.
+
+### §17.1 The enumeration, and its rule — asserted, not remembered
+
+⭐ **The claim set is ENUMERATED FROM THE DIFF**, per §16.1's ratified rule (DEFECT-5: a limb
+asserting *"rows present for every new claim"* can only confirm the set someone handed it, so a
+forgotten claim is invisible to the check written to catch forgotten claims).
+
+Enumerator: `git diff -- site/src/pages/commons.astro`, added lines only. **41 added non-blank
+lines** `[D]`, of which **6 are rendered prose** (the Callout body, diff lines 22–27) and **35 are
+comment, markup or scoped CSS** — an HTML comment block (17), element and component tags (7), a
+`<style>` rule set (9), and two structural wrapper lines.
+
+**3 of the 6 prose lines carry checkable assertions. All 3 are below.** The other 3 are named here as
+a set so the exclusion is auditable rather than silent:
+
+- *"This is not that."* — the **hinge** between R-150 and R-151. It asserts no third fact: its whole
+  content is the negation R-150 sets up and R-151 answers. Registering it would create a row whose
+  basis is two other rows.
+- *"What aDNA is →"* — a **navigation label**, not an assertion.
+- The closing `</p>` and component tags — markup.
+
+| ID | Surface | Claim | Verdict | Basis | Sev | Prov |
+|---|---------|-------|---------|-------|-----|------|
+| **R-150** | `/commons` | *"In genomics, `aDNA` usually means [ancient DNA]."* | **verified** | The site already publishes this exact sentence at `learn/what-is-adna.astro:68`, live since P4.5b and unchallenged; it is hedged (*"usually"*) rather than absolute. Independently evidenced by this campaign's own field data: **ADR-048 §5** records the collision as a ratified finding (*"'aDNA' collides with *ancient DNA* for life-science readers"*), and P4.5b's clinician cold-reader recorded *"in my field aDNA means ancient DNA… I briefly expected paleogenomics"* `[D]` | — | [D] |
+| **R-151** | `/commons` | *"Here it stands for `Agentic DNA`."* | **verified** | The vault's own expansion, published site-wide and on this repo's face; identical to the already-live sentence at `learn/what-is-adna.astro:68` `[D]` | — | [D] |
+| **R-152** | `/commons` | *"a shared way to file what a project knows, so people and AI agents can both find their way around it"* | **verified** | A deliberate **softening** of the canonical lede (*"an open standard for organizing what a project knows, so that people and AI agents can both find their way around it"*, `learn/what-is-adna.astro:55`). ⭐ The direction is the point: convention 1 says claims move DOWN, and *"a shared way to file"* claims strictly less than *"an open standard"* while the second half is carried over verbatim. `gate-14` (single-source) passes, so this is not a competing definition `[D]` | — | [D] |
+
+⚠ **A pre-existing gap found and NOT fixed here, because finding one is not a licence to widen.**
+The identical sentence has been live on `/learn/what-is-adna` since P4.5b and **carries no register
+row** — `grep -i ancient` over this file returned **0** before §17 `[D]`. The row it lacks is not
+this mission's to write: AC-7 governs *new* public sentences, and back-filling P4.5b's would be
+scope bleed at an objective's tail, which is this campaign's most-repeated defect. **Named, so it is
+a debt with a destination rather than a silence.**
+
+### §17.2 ⭐⭐ The finding: AC-4's constraint limb IMPROVES when the criterion is met
+
+This is the sharpest thing in GR-4's pass and O2 measured it live rather than arguing it.
+
+AC-4 has two halves — the disambiguation **reaches** `/commons`, and `/commons`'s reading level
+**stays under target**. `V3` is the reading census: **it tests the constraint, and before this
+increment nothing tested the substance.** The mission could have shipped nothing, run the census,
+and passed.
+
+⭐ And it is worse than a silent gap, which is why it earned an assertion rather than a note:
+**FKGL falls as prose gets shorter and simpler.** Measured on the same local build, before and after:
+
+| Surface | before | after | target |
+|---|---|---|---|
+| `/commons` prose FKGL | **8.61** | **8.30** | 12 |
+
+⇒ **the limb moved 0.31 in the reassuring direction at the exact moment the criterion was met.** A
+limb that improves when its subject improves is not merely blind — it will be *read as confirmation*
+by the next person who runs it. *P4.1's structural gap inverted, fifth sighting in this campaign.*
+
+**Remedy, and it added no instrument** (conventions 15/16/17): `gate-54` gains **G54i** (the
+`/commons` twin is measurable, and the probe reaches real text) and **G54j** (both D4 terms are
+present). Surface: the **`.md` twin**, because AC-4's verb is *"a reader encounters"* — convention
+17's amendment.
+
+⭐ **G54j asserts BOTH terms, and case 11 of the red-test is why.** *"ancient DNA"* alone is a
+**mention**: a page can name the collision and leave a reader no better off. The resolution —
+*"Agentic DNA"* — is what makes it an answer. Case 11 keeps the collision term and strips only the
+resolution; the gate goes red. **This is DEFECT-3's lesson (a criterion satisfiable by a passing
+mention) applied to the sibling criterion that did not carry it** — the same asymmetry P4.4b found,
+where one criterion's exclusion set was spelled out and its sibling under the same limb got none.
+
+### §17.3 ⛔⛔ The harness was one character from being blind to the assertions it was extended to prove
+
+`doctrine_layer_redtest.sh`'s `failing_set()` matched **`G54[a-h]`**. Adding `G54i`/`G54j` would have
+left it **structurally unable to see them**: their mutations produce a genuine red, `failing_set`
+returns the empty string, and `check_case` reports *"NO RED — the gate did not catch the mutation"*
+— **an instrument silently blind to the very assertion it was extended to prove, reporting the
+subject as broken.**
+
+⚠ **This is the adoption addendum's `G53[a-f]` defect, recurring the same day, in a sibling harness.**
+That one was found the same way — by extending a gate and reading the harness rather than trusting
+it. ⇒ ***A COVERAGE FLOOR GOES STALE THE MOMENT ITS SUBJECT GROWS***, and the range is now `a-z` so
+the next extension cannot re-earn it.
+
+### §17.4 ⭐ The re-baseline that attributed itself
+
+`/commons` is a `gate-49` visual-regression template at **`maxDiffPixels: 0`**, so this copy
+necessarily reds the snapshot lane (ADR-057's same-diff law arriving at a **fixture** rather than a
+route). Confirmed before regenerating rather than assumed: **2 failed, 24 passed**, page height
+5207 → 5455 px `[D]`.
+
+⭐ **All 24 baselines were regenerated and exactly 2 files changed** —
+`commons-dark.png`, `commons-light.png` `[D]`. That is the strongest control available here, and it
+answers the adoption addendum's warning directly (*"a re-baseline that also moves the instrument
+cannot attribute what it measures"*): nothing unrelated was silently absorbed, and the 24 untouched
+baselines are independent evidence that the scoped `.commons-name-note .section-inner` override did
+not leak to any other template.
+
+⛔ **No mask, and no tolerance raised.** B0's ruling stands — every one of its three defects had a
+mask available and every mask would have gone green. The pixels genuinely changed; a re-baseline is
+the honest act and a mask would have been the cheap one.
+
+### §17.5 Counts — derived last
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **171** |
+| **Unique ids** | **156** (14 `G-*` + 142 `R-*`, `R-11`…`R-152`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, **not typed**, and re-run *after* §17 was
+written (§15's finding: sections written below the line without re-running are how the published
+tally went stale by 13 rows). Reconciles exactly against §16: rows **168 + 3 = 171**, ids
+**153 + 3 = 156**, `R-149` → `R-152`.
+
+⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order.** This section is now
+that table. Any future `§N.M Counts` section is appended **after** this one, never inserted above.
