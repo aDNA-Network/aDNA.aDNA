@@ -1,7 +1,7 @@
 ---
 type: manifest
 created: 2026-04-13
-updated: 2026-08-28
+updated: 2026-09-02   # ⛩ GENUINELY REVIEWED at P4.4b B3's close cascade, not date-bumped (G41d's own instruction: "`updated:` claims the content was reviewed that day"). All four derived counts RE-DERIVED FROM DISK and reconciled, **zero drift both directions**: skills **57** (`ls how/skills/skill_*.md`) = 57 in the tree line = 57 rows in CLAUDE.md's inventory · templates **45** · context topics **5** · context subtopics **27**. ⭐ THE SUBTOPIC PREDICATE IS NOW WRITTEN DOWN, because the correct number is reachable by a wrong instrument: `find what/context -mindepth 2 -maxdepth 2 -name '*.md'` reads **32**, and the extra 5 are the per-topic `AGENTS.md` files, which are DIRECTORY GOVERNANCE, not subtopics. The predicate is `-name 'context_*.md'` → **27**. A future review running the naive find would read 32, believe it had found drift, and "fix" a correct figure — which is KW-14 inverted (a derived count is only as good as the predicate that derives it).
 last_edited_by: agent_rosetta
 tags: [manifest, governance]
 ---

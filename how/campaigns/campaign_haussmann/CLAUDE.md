@@ -2046,3 +2046,75 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > Whoever closes a mission updates this line in the close cascade — the same commit, per the same-diff
 > reflex (convention 7), because a mission index is route-coupled to mission state in exactly the way
 > ADR-057 governs for routes.
+
+> ✅✅ **`P4.4` IS CLOSED 2026-09-02 — BOTH HALVES — AND THE ANSWER THAT UNBLOCKED IT HAD BEEN IN OUR
+> OWN INBOX FOR FOUR DAYS.** `mission_haussmann_p4_4_ci_hardening.md` → **`completed`**, AAR filed
+> (SO#5, scoped to P4.4b; P4.4a's stands unchanged). **AC1 ✅ AC2 ✅ AC3 ✅ AC4 ✅ · V1–V4 ✅**, with
+> P4.4a's **AC0 ✅ + V5 ✅** ⇒ every criterion met. Commits `d2228b0` · `c3c29a3` · `72f3bbd` ·
+> `1f495c6` · `4bbbe01`. Chromium **659** · fast **541** · snapshot **26** · all-projects **685**
+> (each derived by its **own** command) · html-validate **0**. ⛔ **Nothing deployed and nothing owed
+> to production** — P4.4b is met ON-BUILD by design; prod serves `a852423`, an ancestor of `main`,
+> and the diff carries no site bytes.
+>
+> ⭐⭐ **`F-e` IS STRUCK, AND THE PREMISE IT RESTED ON FOR THREE WEEKS WAS A CATEGORY ERROR.** The row,
+> and every citation of it, said `gate-19`'s **Perf ≥ 90 is LOOSER than `content_static`'s 95 — "the
+> direction their `ratchet_law` reserves for an operator gate."** `_meta.lh_settings`, verbatim `[D]`:
+> *"Lighthouse default config: **mobile emulation** + simulated throttling… **Desktop pass: not
+> wired**."* ⇒ **their 95 is a MOBILE bar, ours is a DESKTOP bar, and there is no desktop
+> `content_static` bar in existence to be looser than.** And the campaign had **already measured what
+> that difference is worth** at B2a: mobile throttling on a desktop form factor scored this site
+> **0.78** against the desktop instrument's **0.95–1.0** ⇒ **the form-factor gap is ~17 points and the
+> bar gap is 5.** Transcribing 95 would have been B2a's own defect run backwards — *two instruments
+> sharing one number*. ⛩ **Ruled: HOLD 0.9 and SOURCE it**, so `F-e` closes by **recording where each
+> number came from, not by moving one** — and `gate-51`'s drift detector stays green with zero
+> same-diff churn. ⚠ `ratchet_law` never bound us: it governs loosening an **adopted** bar, and we
+> never adopted theirs.
+>
+> ⭐⭐ **EQUALITY IS NOT PROVENANCE — the finding that generalises past this gate.** Two of our three
+> bars (**LCP 2500 · CLS 0.1**) are *identical* to `content_static`'s and were **never derived from
+> it**: both sides independently took the CWV *Good* band. For three weeks the campaign read that
+> identity as evidence of a relationship that did not exist. ⇒ ***a number that matches its supposed
+> source is the hardest kind of un-sourced number to notice, because it looks like the check already
+> passed.*** The record now distinguishes **derived-from** · **equal-by-common-ancestry** ·
+> **no-counterpart-exists**, which prose never could. ⚠ **Second instance in the same increment**:
+> `skill_web_quality_sweep`'s stale baseline (`633 → 659`, mixing a **chromium** figure with an
+> **all-projects** one) now reads as correct **because chromium today genuinely is 659**.
+>
+> **Built:** `site/tests/gates/bar_provenance.json` + **`gate-53`** (G53a–G53f), red-proven **9/9**
+> (7 mutations + 2 controls), **every case red at its DECLARED assertion set** — GR-3's attribution
+> clause applied from the harness's **first** run rather than discovered in its fourteenth day.
+> ⭐ **Hash the CLASS SUBTREE, never the file — and that is MEASURED, not argued:** between our pin
+> `6096157` and their HEAD `b7c6d653` the *file* moved **43,988 → 52,879 B across 5 commits** while
+> `classes.content_static` **did not move at all** (sha256 `f2292ca9…` at both refs). A file hash
+> would have redded all five for reasons unrelated to our bars. ⭐ **G53e asserts the EXCLUSIONS**
+> (gate-48's discipline): every leaf of the class is mapped, declined, or un-adopted **with a
+> reason**, so a metric WebForge *adds* reds this gate until someone rules on it — *silence is not a
+> disposition*. **Writing that assertion surfaced a leaf (`/categories/performance`) covered by
+> neither, declined in prose only ⇒ the rule earned itself before its first run.**
+>
+> ⚠⚠ **THE DELIVERY FINDING, AND IT IS THE SHARPEST THING IN THIS INCREMENT.** Vitruvius's scope-B
+> answer was **delivered 2026-08-29 14:20** and sat **untracked** in `who/coordination/`. This
+> campaign recorded B2b as *"HELD — no reply yet `[D]`"* **three times afterwards** (GR-2's close,
+> GR-3's close, and the mission's own B2b row), because the hold was re-verified in **Vitruvius's
+> 08-27 prose notice** and **never at our own inbox — the destination the claim was about.**
+> ⇒ **`F-u`'s class, fourth sighting.** ⭐ And **babbage's 08-29 memo named the three untracked memos
+> explicitly** — *"from the sender's side those three are indistinguishable from undelivered"* — so
+> **the warning that our inbox was unread sat unread in that inbox for four days.** That is
+> convention 19's finding (*an instrument nobody reads is indistinguishable from one that does not
+> exist*) arriving at the level of the **inbox** rather than the CI run list. **5 inbound memos
+> committed** (`d2228b0`) — the receiving commit *is* the read-receipt.
+>
+> ⚠ **And `STATE.md` was the same finding's next instance, found in this very cascade**: it carried
+> **ZERO mentions of `GR-2` or `GR-3`** `[D]`, both closed 2026-09-01 — each close updated *this*
+> file and not the vault's operational snapshot. Repaired, with `MANIFEST.md` genuinely re-reviewed
+> in the same commit (G41d): **57 skills · 45 templates · 5 topics · 27 subtopics, zero drift**, and
+> the subtopic **predicate** written down because a naive `find` reads **32** (the extra 5 are
+> per-topic `AGENTS.md`) and would "fix" a correct number.
+>
+> ⏭ **NEXT: Lane D** — story coverage, the Gate-1 order's **last lane**, at its own ⛩ conv-13
+> pre-build gate, and it needs an **⛩ audience/scope decision before any copy is authored** (R-124 is
+> routed to that gate). **P4.4b B3 no longer competes with it.** ⛔ Still held: **P5.1** with the
+> humans · the **Hopper reply** and the **babbage reply**, each its own ⛩ send GO. ⚠ Owed: B1's
+> ⛩ Speed-Insights → transport → first p75 · the four un-adopted class leaves (TBT + a11y/bp/seo),
+> a **dated, asserted** gap · `gate-19`'s fixtures carry `configSettings` **ABSENT**, so *"our 90 is a
+> desktop bar"* is `[I]`, not `[D]`, and only a re-baseline repairs it · ~59 uncited capture PNGs.
