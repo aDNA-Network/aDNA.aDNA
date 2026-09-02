@@ -701,6 +701,32 @@ synthetic reader may notice a thing; it does not get to assert one.
 > not silently expire. Status stays **gap → open**; the row moves only when `/privacy`/`/security` (or a
 > ruled alternative surface) acknowledges the question, or the operator rules the audience out of scope.
 
+> ⛩ **Annotation (GR-4, 2026-09-02) — THE ROUTED GATE HAS ARRIVED, AND THIS ROW SAYS SO AT ITS OWN
+> DESTINATION.** Lane D opened as **`mission_haussmann_gr_4_story_coverage.md`** (`status: queued`,
+> halted at its ⛩ convention-13 pre-build gate). R-124 is carried to that gate as **CHOICE-1** of
+> `artifacts/gr_4/ac_amendment_proposal.md` §6 — the first of its three ⛩ questions, and the one the
+> Lane-B3 annotation above named as this row's destination.
+>
+> ⭐ **Why this annotation exists at all, rather than the ruling simply appearing here later.** The
+> annotation above is a claim about a **destination**, and this campaign has been bitten four times by
+> *"routed" being verified in the prose that routed it rather than at the place it points* (`F-u`'s
+> class; most recently at P4.4's close, where three records read *"no reply yet"* while the reply sat
+> untracked in our own inbox). **A routing is only checkable if the destination records the arrival.**
+> This line is that record, written the sitting the gate opened — not at its close, when it would be a
+> claim about the past.
+>
+> ⛔ **NO RULING IS TAKEN HERE.** The disposition is the operator's, and this row's own history is the
+> argument for not taking it: R-124 was deferred out of P4.5a because *"routing it requires authoring a
+> clinical posture, which is a positioning decision nobody has taken"* — and an agent taking it in
+> passing is precisely how it became a narrative-only deferral the first time. **"Not now" remains a
+> real answer**, provided it lands as a row with a named destination and never as a sentence. Status
+> **unchanged: gap → open.**
+>
+> ⚠ **Supersession condition, restated and now dated:** the Lane-B3 routing above lapses if **GR-4**
+> closes without ruling this row, at which point R-124 re-escalates to the campaign's next ⛩ gate. That
+> condition is live as of 2026-09-02 and is **not** discharged by this annotation — *arriving at a gate
+> is not being ruled at one.*
+
 > **⛔ SUPERSEDED 2026-08-20 by ⛩ DP6 ⊳ D-C — kept, never deleted (SO-6).** The paragraph below states
 > that this finding is *"not filed as a copy defect"* and that the live question is *"routed to the P2.6
 > re-plan."* Both were true when written and are false now: the re-plan **ruled it**

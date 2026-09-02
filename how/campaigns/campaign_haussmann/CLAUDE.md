@@ -270,9 +270,17 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 
 ## Mission index
 
-`missions/` — **30** files, **derived not typed** (`ls missions/mission_haussmann_*.md | wc -l`): 27
-`mission_haussmann_p{0..5}_*.md` **plus 3 `mission_haussmann_gr_*.md`**, which the `p{0..5}` glob does
-**not** match. *(Re-derived 2026-09-01 at `GR-3`'s open — the GR lane went 2 → 3. ⛩ ✅ **SURFACED AND PERFORMED
+`missions/` — **31** files, **derived not typed** (`ls missions/mission_haussmann_*.md | wc -l`): 27
+`mission_haussmann_p{0..5}_*.md` **plus 4 `mission_haussmann_gr_*.md`**, which the `p{0..5}` glob does
+**not** match. *(Re-derived 2026-09-02 at `GR-4`'s open — the GR lane went 3 → 4, moved in the **same
+commit** as the file that moved it, per convention 7 / ADR-057. ⛩ **The charter's `mission_count` is a
+SEPARATE field and is NOT edited here: it stays `30` until the operator rules 30 → 31 at GR-4's gate**,
+where it is surfaced as `artifacts/gr_4/ac_amendment_proposal.md` §8. ⭐ **The two numbers are allowed
+to disagree for exactly as long as one gate is open**, and saying so is the point — GR-2's failure was
+recording a ruling as taken and leaving the charter unmoved for four days, which is invisible unless
+somebody writes down which of the two is currently authoritative. **Here: this index is the disk;
+the charter is the ratified figure; they reconcile at the signature.** ~~30~~ · prior note follows:
+Re-derived 2026-09-01 at `GR-3`'s open — the GR lane went 2 → 3. ⛩ ✅ **SURFACED AND PERFORMED
 IN THE SAME SITTING** — the charter's `mission_count` is now **30**, with `estimated_sessions` **42-56**
 and `calibrated_sessions` **42-48** re-derived in the same commit. That field is **the operator's to
 take by its own terms**; it was put to them and ruled. ⭐ **This is the discipline GR-2 had to learn
@@ -2179,3 +2187,114 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > p75 · ~59 uncited capture PNGs · babbage's **lease question** (operator ruling, routed to
 > `idea_upstream_coordination_dropbox_doctrine`) · babbage's two upstream findings still **proposed,
 > not filed** (`skill_upstream_contribution` needs operator approval).
+
+> ⏸⛩ **`GR-4` IS OPEN AND HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE (2026-09-02) — nothing built,
+> NO COPY AUTHORED, criteria NOT ratified, budget NOT ratified.**
+> `missions/mission_haussmann_gr_4_story_coverage.md`, **`queued`**. This is **GRANDE REVUE Lane D**
+> (story coverage), the ratified Gate-1 order's **LAST lane** (**B → P4.4b B1+B2a → GR-1 → Lane D**),
+> opened on the P4.2/P4.3/P4.4a/P4.4b/P4.5b/P5.1/GR-1/GR-2/GR-3 precedent: **pass first, no build until
+> signed.** The battle plan ratified this lane's **shape** and says so on its own face.
+> Pass: `artifacts/gr_4/ac_amendment_proposal.md`, **`proposed`** — **COMPLETE at 63/63 with coverage
+> recorded** (`AC×AC = C(7,2) = 21` + `AC×V = 7×6 = 42`, derived not typed), each pair read **both**
+> directions: **6 defective · 57 clean-or-correctly-unrelated**, plus **7 non-pair findings**.
+> **Tenth consecutive mission where the pass has paid for itself.**
+>
+> ⚠ **FIRST CONTENT-CLASS MISSION TO REACH THIS GATE, AND THE PASS WAS RE-AIMED FOR IT.** All nine
+> prior passes examined **build** missions, where the characteristic defect is *a stated method that
+> cannot move a stated test*. A content mission fails differently: **a criterion met by a claim moving
+> UP** · **a criterion already green for a reason that builds nothing** · **a criterion whose met-state
+> is emptiness**, which most limbs cannot tell from neglect. **All three are present**, which is the
+> argument the re-aim was right.
+>
+> ⭐⭐ **THE PASS PAID FOR ITSELF IN THE RECON, BEFORE A SINGLE CRITERION EXISTED — TWO OF THE REVUE'S
+> SIX PREMISES ARE FALSE AND A THIRD IS MATERIALLY NARROWER.**
+> - **D1 (model routing, *"ABSENT … the cheapest add"*)** — measured **1 occurrence site-wide**, at
+>   `src/data/tour/standard-governance.txt:260`: a skills-table row inside the **byte-vendored
+>   `.adna/CLAUDE.md`**, published on the trust page **with its sha256 and an invitation to diff it**
+>   `[D]`. ⇒ **the obvious criterion — *"model routing appears on the site"* — IS ALREADY GREEN, against
+>   zero work**, and cannot be fixed by editing the file (Standing Rule 1; and editing the published
+>   copy trades a copy defect for a **trust defect on the one surface built to be checked** — `F-w`'s
+>   reasoning, second row). The exclusion is written **into AC-1 itself** and asserted, on gate-48's
+>   discipline. ⭐ **Convention 18's family caught in a criterion that did not exist yet** — every prior
+>   sighting was a shipped gate pointed at a local proxy; **first time this class has been caught before
+>   the instrument was written** rather than in its fourteenth day.
+> - **D3 (*"`/network` … owns the L0–L3 story"*)** — **FALSE.** The live `/network` twin carries **0**
+>   L0–L3 and **0** compute-tier `[D]`; it owns the ***aDNA-computer*** / local-vs-federated story
+>   (Standing Rule 4). The ladder lives in `agentic-literacy.mdx`. ⇒ two readings with materially
+>   different costs, ⛩ **ruled at the gate, not resolved here.**
+> - **D6 (*"the ratified 'opening progressively' phrasing — currently 0 hits corpus-wide"*)** —
+>   **FALSE WHEN WRITTEN, not stale.** It is **live and rendered** on `/state-of-the-network` (twin
+>   line 114), landed `9e0fd06` **2026-08-18 — ten days BEFORE the revue measured it** `[D]`. ⭐ The
+>   mechanism: source carries **4** occurrences, **2 render and 2 are source comments that never do**
+>   (`HomeHero.astro:252` literally reads *"CUT, not rewritten"*) ⇒ **source and rendered greps disagree
+>   in BOTH directions on one phrase — and neither returns zero.** The figure was **typed** (KW-14), and
+>   typed wrong. ⚠ Not cosmetic: D6's remedy was keyed to the phrase being *available and unused*, so the
+>   real question changes from *"shall we introduce this"* to ***"is the horizon claim already made?"***
+>
+> ⭐⭐ **DEFECT-1, FOUND IN THE V→AC DIRECTION FOR THE FOURTH TIME: `AC-4` IS TESTED ONLY BY ITS
+> CONSTRAINT, NEVER BY ITS SUBSTANCE.** AC-4 says the ancient-DNA disambiguation *reaches* a
+> first-contact surface **and** that the surface's FKGL stays under target. `V3` is the reading census —
+> it tests the constraint; **nothing in V1–V6 asserts presence.** ⇒ the mission could **ship nothing**,
+> run the census, and V3 passes. ⭐ And it is worse than a silent gap: **FKGL falls as prose gets shorter
+> and simpler**, so a one-line disambiguation *lowers* the number — **the limb moves in the reassuring
+> direction when the criterion is met**, which is the signature of a limb that gets read as confirmation.
+> *P4.1's structural gap inverted, fifth sighting.* Remedy: a presence assertion on the **`.md` twin**
+> (the surface whose verb is *"a reader encounters"*), **no new instrument**.
+>
+> ⭐ **DEFECT-4 SPENDS `F-z` FORWARD FOR THE FIRST TIME.** `V4` asserted **two** things — nav is exactly
+> 7, and the homepage entry point is present — red-proven by **one** mutation (an 8th nav entry), which
+> reds via the **nav-count** assertion ⇒ **the entry-point assertion would never have been demonstrated
+> to fail.** That is GR-3's clause verbatim — ***a demonstration is only worth what it can attribute*** —
+> applied **at authoring time instead of discovered in the fourteenth day.** One mutation per assertion;
+> a red via the wrong one reports as a **HARNESS BUG**.
+>
+> **Also: DEFECT-2** — `V2`'s `AC-6` assignment is **vacuous by construction** (a *planned*-framing probe
+> over new sentences, aimed at a criterion whose met-state is that **nothing ships** ⇒ it passes on an
+> empty set; B0's *control that passes for the wrong reason*, in a limb label). **DEFECT-3** — `AC-2` is
+> satisfiable by **a mention rather than a doctrine layer**, and note the asymmetry: **AC-1's exclusion
+> set was spelled out and its sibling under the same limb got none** (P4.4b's finding, second sighting).
+> **DEFECT-5** — `V5` can see a register row that exists and **never one that is missing** (the
+> over-masking shape in a governance limb: *the set it checks is exactly the set someone remembered to
+> hand it*). **CONSTRAINT-2** — `AC-4` and `AC-5` may compete for `/`'s **0.04** FKGL headroom and
+> neither mentions the other; ⚠ **measure, do not assume** — a link-dense strip may not enter the prose
+> corpus at all (P4.5b measured that link-dense lines *leave* it), and that measurement is **owed before
+> either lands**, in either direction.
+>
+> ⭐ **THE HEADROOM WAS MEASURED AND IT POINTS SOMEWHERE NEITHER DISJUNCT NAMED.** `/` **9.96 / 10 ⇒
+> 0.04** · `/community` 0.72 · `/about` 0.57 · `/get-started` 1.84 · **`/commons` 3.39** `[D]`. The revue
+> proposed *"hero micro-copy or `/about`"*; `/commons` has **~6× `/about`'s headroom and ~85× `/`'s** —
+> **GR-1's A4 shape, second sighting.** ⚠ And the target set is itself ambiguous: P2-2 names `/`,
+> `/about`, `/commons`; the instrument's ratified `FIRST_CONTACT` (`reading_census.mjs:244`, derived) is
+> `["/", "/get-started", "/learn/what-is-adna", "/community"]` — **the two sets share exactly one
+> member**, so *"the first-contact surfaces"* would silently mean the second.
+>
+> ⛩ **THREE QUESTIONS CARRIED TO THE SIGNATURE** (proposal §6): **CHOICE-1 — R-124's audience/scope
+> call**, the one this campaign routed to this gate · **CHOICE-2 — D3's home**, the false-premise fork ·
+> **CHOICE-3 — D4's receiving surface**, ruled on measured headroom. ⛩ Plus §8: **`mission_count` 30 →
+> 31** with both session bands re-derived in the same commit (`phase_count` **HOLDS at 6**).
+>
+> ✅ **`R-124`'s ROUTING IS RECORDED AT ITS OWN DESTINATION** (`claim_register.md`, GR-4 annotation).
+> ⭐ **Why that annotation exists rather than the ruling merely appearing later:** the Lane-B3 routing is
+> a claim about a **destination**, and this campaign has been bitten **four times** by *"routed" being
+> verified in the prose that routed it* (`F-u`'s class; most recently at P4.4's close). **A routing is
+> only checkable if the destination records the arrival** — written the sitting the gate opened, not at
+> its close when it would be a claim about the past. ⛔ **No ruling taken**: status stays `gap → open`,
+> and *arriving at a gate is not being ruled at one.*
+>
+> ⚠ **A defect at this sitting's OPEN, caught before it landed: THE CLOCK.** `date` on this node returns
+> **2026-09-01 23:0x PDT**; every session file in `history/2026-09/` is stamped **UTC** and the last two
+> read `created: 2026-09-02`. A local stamp would have filed a session **sorting before two sessions that
+> already happened**, with a date contradicting every campaign record of the last two days. ⇒ **a
+> timestamp is a measurement, and it has a zone the way a count has a command** — GR-2's *a count is only
+> comparable to a count produced by the same command*, arriving in a filename. ⚠ Note the shape: the
+> local stamp is **not wrong-looking**; nothing downstream would have rejected it. It would simply have
+> been quietly out of order forever — **a defect that reads exactly like compliance.**
+>
+> ⚠ **No prior band exists for Lane D to raise** — the battle plan costed Lanes A and B and left Lane D
+> with **no estimate at all** `[D]`. §7's figure is the **first** for this lane; the honest statement is
+> that it **cannot be compared**, not that it held. Proposed: **branch (i) ~230–360 kT / 2–3 sessions**
+> · **branch (ii) ~265–415 / 3** · **without D3 ~195–305 / 2**, `executor_tier: opus`.
+>
+> ⏭ **NEXT: ⛩ THE SIGNATURE. Until then, no build and no copy.** ⛔ Still held: **P5.1** with the
+> humans. ⚠ Owed: B1's ⛩ Speed-Insights → transport → first p75 · ~59 uncited capture PNGs (offered as
+> a close-cascade rider, not folded in) · babbage's lease question · babbage's two upstream findings.
