@@ -1,18 +1,49 @@
 {
-  "_provenance": "Lighthouse 13.4.0 desktop on /vaults/graph — WEBSITE D4 C5 (2026-06-20). The full raw run is archived local-only at site/evidence/lighthouse_d4c5_graph.json (evidence/ is gitignored); this committed slim fixture is what gate-19 (G1) asserts. Regenerate both when the graph page changes (npm run preview -> lighthouse desktop /vaults/graph).",
-  "lighthouseVersion": "13.4.0",
-  "finalUrl": "http://localhost:4321/vaults/graph",
+  "_provenance": "Lighthouse 13.4.1 desktop on /vaults/graph — H-11 (D4 C5) — the graph page. Regenerated 2026-09-02 by scripts/gen_lighthouse_fixtures.mjs (HAUSSMANN P4.4b follow-on: the ⛩ adoption of content_static's TBT + a11y/best-practices/seo bars required categories the prior fixtures did not carry). Command: lighthouse --preset=desktop --only-categories=performance,accessibility,best-practices,seo. The full raw run is archived local-only at site/evidence/ (gitignored); this slim fixture is what gate-19 asserts and what gate-53 G53g checks the instrument of. ⚠ configSettings is carried DELIBERATELY: a gate cannot assert prose, and without it nothing re-checks the form factor.",
+  "finalUrl": "http://localhost:4465/vaults/graph",
+  "lighthouseVersion": "13.4.1",
+  "configSettings": {
+    "formFactor": "desktop",
+    "screenEmulation": {
+      "mobile": false,
+      "width": 1350,
+      "height": 940,
+      "deviceScaleFactor": 1,
+      "disabled": false
+    },
+    "throttling": {
+      "rttMs": 40,
+      "throughputKbps": 10240,
+      "requestLatencyMs": 0,
+      "downloadThroughputKbps": 0,
+      "uploadThroughputKbps": 0,
+      "cpuSlowdownMultiplier": 1
+    },
+    "throttlingMethod": "simulate"
+  },
   "categories": {
     "performance": {
+      "score": 1
+    },
+    "accessibility": {
+      "score": 1
+    },
+    "best-practices": {
+      "score": 1
+    },
+    "seo": {
       "score": 1
     }
   },
   "audits": {
     "largest-contentful-paint": {
-      "numericValue": 445.9954
+      "numericValue": 492.17355
     },
     "cumulative-layout-shift": {
-      "numericValue": 0.000092
+      "numericValue": 0.00005233417587327339
+    },
+    "total-blocking-time": {
+      "numericValue": 0
     }
   }
 }

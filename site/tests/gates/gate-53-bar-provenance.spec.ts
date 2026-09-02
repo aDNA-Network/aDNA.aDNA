@@ -148,9 +148,19 @@ test('G53c Bar provenance: external counterparts resolve inside the hashed sourc
     ).toBe(cp.value);
     checked++;
   }
-  // Coverage floor — never `> 0`. If the record stops claiming counterparts this gate must not
-  // silently become vacuous (P4.2's `measured >= 200, never > 0` discipline).
-  expect(checked, 'at least 2 bars must claim an external counterpart, or G53c is asserting nothing').toBeGreaterThanOrEqual(2);
+  // Coverage floor — never `> 0`, and never loose (P4.2's `measured >= 200, never > 0` discipline).
+  // ⚠ RAISED 2 -> 6 ON 2026-09-02, AND THE RED-TEST IS WHY. When the four content_static bars were
+  // adopted the counterpart count went 2 -> 6, and a floor of 2 meant FOUR counterparts could vanish
+  // with G53c still green. The `a bar dropped from the record` case caught it by reporting a HARNESS
+  // BUG — its declared red-set no longer matched — rather than quietly passing.
+  // ⇒ A COVERAGE FLOOR IS A NUMBER THAT GOES STALE THE MOMENT ITS SUBJECT GROWS. Raise it in the same
+  // commit that adds a counterpart-bearing bar, or this limb decays into a formality.
+  expect(
+    checked,
+    `only ${checked} bars claim an external counterpart; 6 are expected as of the 2026-09-02 adoption ` +
+      `(lcpMaxMs · clsMax · a11yMin · bestPracticesMin · seoMin · tbtMaxMs). If you deliberately removed ` +
+      `one, lower this floor in the SAME commit and say why — do not let G53c thin out silently.`,
+  ).toBeGreaterThanOrEqual(6);
 });
 
 // ---------------------------------------------------------------------------
@@ -220,6 +230,55 @@ test('G53e Bar provenance: the un-adopted enumeration is COMPLETE against the so
 // checkout exists. Reports NOT VERIFIED explicitly when it does not: an absent
 // check must not read as a passing one.
 // ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// G53g — THE COMMITTED FIXTURE ASSERTS ITS OWN INSTRUMENT. Runs everywhere.
+//
+// This is the limb that closes the residual a 2026-09-02 correction narrowed. The fixtures always
+// DID record their instrument — in a prose `_provenance` string, and in the raw runs' configSettings
+// — but PROSE IS NOT ASSERTABLE, so nothing re-checked it and a future re-baseline could silently
+// switch to mobile emulation with every bar still green and every number meaningless.
+//
+// The bars in gate-19 are form-factor-dependent (perfMin and tbtMaxMs especially — see
+// bar_provenance.json). A fixture measured on a different form factor does not merely shift a score;
+// it makes the comparison a category error, which is the exact defect F-e turned out to be.
+// ---------------------------------------------------------------------------
+test('G53g Bar provenance: every gate-19 fixture records the instrument it was measured with', () => {
+  const gate19 = fs.readFileSync(GATE19_PATH, 'utf8');
+  const fixtures = [...gate19.matchAll(/fixture:\s*'([^']+)'/g)].map((m) => m[1]);
+  expect(fixtures.length, 'gate-19 must declare fixtures — G53g reads them from its GUARDED table').toBeGreaterThanOrEqual(4);
+
+  const pin = prov._meta?.instrument_pin ?? '';
+  const pinnedVersion = pin.match(/lighthouse@([\d.]+)/)?.[1];
+  expect(pinnedVersion, 'bar_provenance._meta.instrument_pin must name the exact pinned lighthouse version').toBeTruthy();
+
+  for (const name of fixtures) {
+    const p = path.join(GATES_DIR, 'fixtures', name);
+    expect(fs.existsSync(p), `fixture ${name} missing`).toBe(true);
+    const lh = JSON.parse(fs.readFileSync(p, 'utf8'));
+    const cs = lh.configSettings;
+
+    expect(
+      cs,
+      `${name} carries no configSettings. The committed fixture must record its own instrument — ` +
+        `a _provenance PROSE string is a real record but no gate can assert it. Regenerate with ` +
+        `scripts/gen_lighthouse_fixtures.mjs.`,
+    ).toBeTruthy();
+    expect(
+      cs.formFactor,
+      `${name}: formFactor is "${cs?.formFactor}", not "desktop". gate-19's bars are desktop-derived ` +
+        `and content_static's are mobile-derived — measuring on the wrong form factor does not shift a ` +
+        `score, it makes the comparison a category error.`,
+    ).toBe('desktop');
+    expect(cs.screenEmulation?.mobile, `${name}: screenEmulation.mobile must be false for a desktop run`).toBe(false);
+    expect(
+      lh.lighthouseVersion,
+      `${name} was measured with lighthouse ${lh.lighthouseVersion} but the declared pin is ` +
+        `${pinnedVersion}. An instrument change must be a deliberate re-baseline of ALL routes together, ` +
+        `recorded as such — never a drift under an unrelated edit.`,
+    ).toBe(pinnedVersion);
+  }
+});
+
 test('G53f Bar provenance: recorded source hash still matches the live peer vault (host-only)', () => {
   const ref = prov.source_refs.webforge_content_static;
   const peer = path.resolve(GATES_DIR, '../../../..', ref.vault, ref.path);

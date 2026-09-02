@@ -30,7 +30,30 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const BUDGET = { lcpMaxMs: 2500, clsMax: 0.1, perfMin: 0.9 };
+/**
+ * ⛩ BARS ADOPTED FROM WebForge's `classes.content_static` 2026-09-02 (operator-ruled). Provenance is
+ * PER BAR and machine-checked — see `bar_provenance.json` + `gate-53`. Do not edit a number here
+ * without editing its provenance entry in the same commit: gate-53 G53b asserts the two agree.
+ *
+ * ⚠ SCALE: `content_static` stores category bars as integers 0-100 (a11y 95, bp 95, seo 100);
+ * Lighthouse category scores are FRACTIONS 0-1. The bars below are the fraction form. Comparing 0.95
+ * to 95 is the mistake this comment exists to prevent.
+ *
+ * ⚠ `perfMin` is NOT from content_static and is deliberately unchanged at 0.9 — their performance 95
+ * is a MOBILE-EMULATION bar and these fixtures are DESKTOP (their desktop pass is unwired). See
+ * bar_provenance.json bars.perfMin.why_no_counterpart.
+ *
+ * ⚠ `tbtMaxMs` IS ADOPTED BUT INERT ON THIS SURFACE, and that is stated rather than hidden: all four
+ * fixtures measure TBT = 0 ms against a 200 ms ceiling (2026-09-02). It is a FLOOR against future
+ * regression, NOT evidence of interactivity health today — a bar that cannot currently fail proves
+ * nothing (convention 14). It was not silently tightened to a desktop-derived number: inventing a bar
+ * is exactly what `ratchet_law` reserves for an operator gate.
+ *
+ * ⚠ `seoMin` has ZERO headroom — the class bar is 100 and all four fixtures measure exactly 1.0, so
+ * any SEO regression at all turns this red. That is the class's own choice (`seo_mode: category`),
+ * carried faithfully, not a tolerance we picked.
+ */
+const BUDGET = { lcpMaxMs: 2500, clsMax: 0.1, perfMin: 0.9, a11yMin: 0.95, bestPracticesMin: 0.95, seoMin: 1.0, tbtMaxMs: 200 };
 const FIXTURES_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'fixtures');
 
 // Each guarded route + its committed desktop budget fixture.
@@ -42,7 +65,7 @@ const GUARDED: { route: string; fixture: string }[] = [
 ];
 
 for (const { route, fixture } of GUARDED) {
-  test(`G1 Lighthouse budget: ${route} fixture meets LCP/CLS/Perf budget`, () => {
+  test(`G1 Lighthouse budget: ${route} fixture meets LCP/CLS/Perf/A11y/BP/SEO/TBT budget`, () => {
     const fixturePath = path.join(FIXTURES_DIR, fixture);
     expect(
       fs.existsSync(fixturePath),
@@ -64,5 +87,24 @@ for (const { route, fixture } of GUARDED) {
     expect(lcp, `LCP ${Math.round(lcp)}ms must be < ${BUDGET.lcpMaxMs}ms (fixture ${fixture})`).toBeLessThan(BUDGET.lcpMaxMs);
     expect(cls, `CLS ${cls.toFixed(4)} must be < ${BUDGET.clsMax} (fixture ${fixture})`).toBeLessThan(BUDGET.clsMax);
     expect(perf, `Perf score ${Math.round(perf * 100)} must be >= ${BUDGET.perfMin * 100} (fixture ${fixture})`).toBeGreaterThanOrEqual(BUDGET.perfMin);
+
+    // --- Bars adopted from classes.content_static, 2026-09-02 (⛩ operator-ruled) ------------------
+    const a11y = lh.categories?.accessibility?.score;
+    const bp = lh.categories?.['best-practices']?.score;
+    const seo = lh.categories?.seo?.score;
+    const tbt = lh.audits?.['total-blocking-time']?.numericValue;
+
+    // Presence is asserted separately from the bar. A fixture missing a category would otherwise make
+    // `undefined >= 0.95` fail with a message about a SCORE, when the real fault is a stale fixture
+    // that predates the re-baseline — a red naming the wrong cause (GR-3's attribution clause).
+    expect(typeof a11y, `categories.accessibility missing in ${fixture} — regenerate with scripts/gen_lighthouse_fixtures.mjs`).toBe('number');
+    expect(typeof bp, `categories['best-practices'] missing in ${fixture} — regenerate with scripts/gen_lighthouse_fixtures.mjs`).toBe('number');
+    expect(typeof seo, `categories.seo missing in ${fixture} — regenerate with scripts/gen_lighthouse_fixtures.mjs`).toBe('number');
+    expect(typeof tbt, `audits['total-blocking-time'] missing in ${fixture} — regenerate with scripts/gen_lighthouse_fixtures.mjs`).toBe('number');
+
+    expect(a11y, `A11y score ${Math.round(a11y * 100)} must be >= ${BUDGET.a11yMin * 100} — content_static bar (fixture ${fixture}). NOTE: gate-4's axe pass at ZERO violations is the stricter instrument; this is deliberate redundancy, not the a11y coverage.`).toBeGreaterThanOrEqual(BUDGET.a11yMin);
+    expect(bp, `Best-practices score ${Math.round(bp * 100)} must be >= ${BUDGET.bestPracticesMin * 100} — content_static bar (fixture ${fixture})`).toBeGreaterThanOrEqual(BUDGET.bestPracticesMin);
+    expect(seo, `SEO score ${Math.round(seo * 100)} must be >= ${BUDGET.seoMin * 100} — content_static bar, ZERO headroom by the class's own choice (fixture ${fixture})`).toBeGreaterThanOrEqual(BUDGET.seoMin);
+    expect(tbt, `TBT ${Math.round(tbt)}ms must be <= ${BUDGET.tbtMaxMs}ms — content_static bar (fixture ${fixture}). ⚠ INERT on desktop today (measured 0ms); a regression floor, not evidence of interactivity health.`).toBeLessThanOrEqual(BUDGET.tbtMaxMs);
   });
 }

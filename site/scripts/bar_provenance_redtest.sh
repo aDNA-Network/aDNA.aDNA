@@ -26,14 +26,26 @@ GATE19="tests/gates/gate-19-lighthouse-budget.spec.ts"
 SPEC="tests/gates/gate-53-bar-provenance.spec.ts"
 WORK="$(mktemp -d)"
 
-cleanup() { cp "$WORK/prov.bak" "$PROV" 2>/dev/null; cp "$WORK/gate19.bak" "$GATE19" 2>/dev/null; rm -rf "$WORK"; }
+FIXDIR="tests/gates/fixtures"
+
+restore() {
+  cp "$WORK/prov.bak" "$PROV" 2>/dev/null
+  cp "$WORK/gate19.bak" "$GATE19" 2>/dev/null
+  # Fixtures are mutated by the G53g cases; without this they would persist into the repo.
+  for f in "$WORK"/fix/*.json; do [ -e "$f" ] && cp "$f" "$FIXDIR/$(basename "$f")"; done
+  return 0
+}
+cleanup() { restore; rm -rf "$WORK"; }
 trap cleanup EXIT INT TERM
 cp "$PROV" "$WORK/prov.bak"
 cp "$GATE19" "$WORK/gate19.bak"
+mkdir -p "$WORK/fix" && cp "$FIXDIR"/lighthouse_*.json "$WORK/fix/"
 
 PASS=0; FAIL=0
 
-# Run gate-53 and print the sorted set of failing assertion ids (G53a..G53f), space separated.
+# Run gate-53 and print the sorted set of failing assertion ids (G53a..G53z), space separated.
+# ⚠ The pattern was [a-f] when G53g landed — it would have reported every G53g case as NO RED, i.e. the
+# harness silently unable to see the assertion it was extended to prove. Caught before first run.
 failing_set() {
   npx playwright test --project=chromium "$SPEC" --reporter=json 2>/dev/null \
     | python3 -c '
@@ -44,7 +56,7 @@ out=set()
 def walk(s):
     for spec in s.get("specs",[]):
         if not spec.get("ok",True):
-            m=re.match(r"(G53[a-f])",spec.get("title",""))
+            m=re.match(r"(G53[a-z])",spec.get("title",""))   # [a-z], not [a-f]: G53g exists
             if m: out.add(m.group(1))
     for sub in s.get("suites",[]): walk(sub)
 for su in d.get("suites",[]): walk(su)
@@ -54,7 +66,7 @@ print(" ".join(sorted(out)))'
 # case <name> <expected-set> <mutation-shell>
 case_run() {
   local name="$1" expected="$2" mutate="$3"
-  cp "$WORK/prov.bak" "$PROV"; cp "$WORK/gate19.bak" "$GATE19"
+  restore
   eval "$mutate"
   local actual; actual="$(failing_set)"
   if [ "$actual" = "$expected" ]; then
@@ -68,7 +80,7 @@ case_run() {
         "$name" "$expected" "${actual:-<none>}"
     fi
   fi
-  cp "$WORK/prov.bak" "$PROV"; cp "$WORK/gate19.bak" "$GATE19"
+  restore
 }
 
 # Small JSON edit helper — operates on the provenance record.
@@ -80,7 +92,7 @@ $1
 json.dump(d,open(p,'w'),indent=2)
 "; }
 
-echo "gate-53 bar-provenance red-test — 7 mutations + 2 controls"
+echo "gate-53 bar-provenance red-test — 13 mutations + 2 controls"
 echo
 
 # --- MUTATIONS ------------------------------------------------------------
@@ -116,6 +128,39 @@ json.dump(d,open(p,'w'),indent=2)\""
 case_run "no-counterpart bar loses its reason" "G53d" \
   "jedit \"d['bars']['perfMin']['why_no_counterpart']='too short'\""
 
+# --- ADOPTED BARS (2026-09-02) --------------------------------------------
+# Each adopted bar gets its own case, because "the four bars are covered" is exactly the kind of
+# aggregate claim convention 13's amendment calls a partial pass reporting as a complete one.
+
+case_run "adopted a11y bar: record vs in force" "G53b" \
+  "jedit \"d['bars']['a11yMin']['value_in_force']=0.5\""
+
+case_run "adopted seo bar: counterpart hand-edited" "G53c" \
+  "jedit \"d['bars']['seoMin']['external_counterpart']['value']=90\""
+
+# Reds G53c too, via the coverage floor raised to 6 in the same sitting — dropping ANY
+# counterpart-bearing bar now thins G53c below its floor. Declared, not discovered.
+case_run "adopted tbt bar dropped from record" "G53b G53c G53e" \
+  "jedit \"del d['bars']['tbtMaxMs']\""
+
+# ⭐ THE CASE G53g EXISTS FOR: a re-baseline silently switches form factor. Every bar stays green —
+# gate-19 asserts scores, not the instrument — and every number becomes a category error.
+case_run "fixture form factor flipped to mobile" "G53g" \
+  "python3 -c \"
+import json;p='tests/gates/fixtures/lighthouse_get_started.json';d=json.load(open(p))
+d['configSettings']['formFactor']='mobile';d['configSettings']['screenEmulation']['mobile']=True
+json.dump(d,open(p,'w'),indent=2)\""
+
+case_run "fixture instrument version drifts" "G53g" \
+  "python3 -c \"
+import json;p='tests/gates/fixtures/lighthouse_d4c5_graph.json';d=json.load(open(p))
+d['lighthouseVersion']='13.3.0';json.dump(d,open(p,'w'),indent=2)\""
+
+case_run "fixture loses configSettings entirely" "G53g" \
+  "python3 -c \"
+import json;p='tests/gates/fixtures/lighthouse_what_is_adna.json';d=json.load(open(p))
+del d['configSettings'];json.dump(d,open(p,'w'),indent=2)\""
+
 # --- CONTROLS -------------------------------------------------------------
 # A control that passes for the WRONG reason is worse than no control (P4.4b B0's finding), so
 # control 2 mutates a REAL field the gate should be indifferent to — proving the gate reacts to
@@ -125,5 +170,5 @@ case_run "CONTROL irrelevant field changed" "" \
   "jedit \"d['_meta']['recorded_by']='agent_control_probe'\""
 
 echo
-echo "  $PASS pass / $FAIL fail  (9 cases: 7 mutations + 2 controls)"
+echo "  $PASS pass / $FAIL fail  (15 cases: 13 mutations + 2 controls)"
 [ "$FAIL" -eq 0 ] || exit 1

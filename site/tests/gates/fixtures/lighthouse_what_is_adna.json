@@ -1,18 +1,49 @@
 {
-  "_provenance": "Lighthouse 13.4.0 desktop on /learn/what-is-adna — Storyweave P5 M5.3 O3 (2026-07-13). Full raw run archived local-only at site/evidence/lighthouse_what-is-adna.json (evidence/ is gitignored); this committed slim fixture is what gate-19 (G1) asserts. Regenerate when the page changes (npm run preview -> lighthouse --preset=desktop /learn/what-is-adna/).",
-  "lighthouseVersion": "13.4.0",
-  "finalUrl": "http://localhost:4321/learn/what-is-adna/",
+  "_provenance": "Lighthouse 13.4.1 desktop on /learn/what-is-adna — Storyweave P5 M5.3 O3 — the flagship learn surface. Regenerated 2026-09-02 by scripts/gen_lighthouse_fixtures.mjs (HAUSSMANN P4.4b follow-on: the ⛩ adoption of content_static's TBT + a11y/best-practices/seo bars required categories the prior fixtures did not carry). Command: lighthouse --preset=desktop --only-categories=performance,accessibility,best-practices,seo. The full raw run is archived local-only at site/evidence/ (gitignored); this slim fixture is what gate-19 asserts and what gate-53 G53g checks the instrument of. ⚠ configSettings is carried DELIBERATELY: a gate cannot assert prose, and without it nothing re-checks the form factor.",
+  "finalUrl": "http://localhost:4465/learn/what-is-adna",
+  "lighthouseVersion": "13.4.1",
+  "configSettings": {
+    "formFactor": "desktop",
+    "screenEmulation": {
+      "mobile": false,
+      "width": 1350,
+      "height": 940,
+      "deviceScaleFactor": 1,
+      "disabled": false
+    },
+    "throttling": {
+      "rttMs": 40,
+      "throughputKbps": 10240,
+      "requestLatencyMs": 0,
+      "downloadThroughputKbps": 0,
+      "uploadThroughputKbps": 0,
+      "cpuSlowdownMultiplier": 1
+    },
+    "throttlingMethod": "simulate"
+  },
   "categories": {
     "performance": {
+      "score": 1
+    },
+    "accessibility": {
+      "score": 1
+    },
+    "best-practices": {
+      "score": 1
+    },
+    "seo": {
       "score": 1
     }
   },
   "audits": {
     "largest-contentful-paint": {
-      "numericValue": 444.48095
+      "numericValue": 446.14009999999996
     },
     "cumulative-layout-shift": {
-      "numericValue": 0.00008767653271087451
+      "numericValue": 0.00005233417587327339
+    },
+    "total-blocking-time": {
+      "numericValue": 0
     }
   }
 }
