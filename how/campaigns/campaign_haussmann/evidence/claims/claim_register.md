@@ -727,6 +727,31 @@ synthetic reader may notice a thing; it does not get to assert one.
 > condition is live as of 2026-09-02 and is **not** discharged by this annotation — *arriving at a gate
 > is not being ruled at one.*
 
+> ⛩⛩ **RULED 2026-09-02 AT GR-4's SIGNATURE — R-124 IS ROUTED, NOT DEFERRED AGAIN.**
+> **Decision: a MINIMAL DISCLAIMING POSTURE.** `/privacy` gains a short section stating that aDNA is a
+> **file-layout convention**, that **nothing is transmitted**, and that **HIPAA / GDPR / IRB obligations
+> rest with the operator and their own tooling**. It asserts **NO compliance claim of any kind**.
+> Ratified-by: operator (⛩, at the GR-4 pre-build gate) · date: 2026-09-02 · status: **accepted**.
+> Carried into the mission as **`AC-8`**, with its own limb **`V7`**.
+>
+> ⭐ **Why this option and not the other three, recorded because the reasoning is the reusable part.**
+> It is the only disposition that satisfies **convention 1 in both directions**: deferring a fourth time
+> would leave unanswered a question **the site's own rare-disease framing invites**, and a full clinical
+> posture would move a claim **UP** into compliance language nothing here can support. ⚠ **Said plainly
+> rather than sold: this IS a posture** — the smallest one that discharges the row, not an escape from
+> authoring one. The register's *"the defect is routing, not policy"* is what makes the small version
+> honest rather than evasive.
+>
+> ⛔ **THE ROW DOES NOT MOVE YET, AND THE CONDITION IS EXACT: it moves when the section is LIVE ON THE
+> SURFACE, never when it is written.** A ruling is not a deployment, and this campaign's own class —
+> *a fix's commit is not the register's strike* (`F-n`) — is the reason that sentence is here instead of
+> a status change. Status therefore stays **`gap → open`**.
+>
+> ⚠ **`V7`'s load-bearing half is the negative one.** It asserts the section is present **and that it
+> contains no compliance-claim vocabulary** — because **the failure mode of a disclaiming posture is not
+> that it goes missing, it is that it quietly becomes a promise.** ⛔ And if the section cannot be
+> written without implying a posture, **that is a finding to report, not a sentence to force.**
+
 > **⛔ SUPERSEDED 2026-08-20 by ⛩ DP6 ⊳ D-C — kept, never deleted (SO-6).** The paragraph below states
 > that this finding is *"not filed as a copy defect"* and that the live question is *"routed to the P2.6
 > re-plan."* Both were true when written and are false now: the re-plan **ruled it**

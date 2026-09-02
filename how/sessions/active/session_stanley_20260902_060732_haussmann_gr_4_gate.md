@@ -8,7 +8,7 @@ tier: 1
 last_edited_by: agent_rosetta
 campaign: campaign_haussmann
 mission: mission_haussmann_gr_4_story_coverage
-increment: "GR-4 OPEN — Grande Revue Lane D (story coverage), the ratified Gate-1 order's LAST lane. This sitting authors the mission, runs convention 13's pass COMPLETE with coverage recorded, lands R-124's disposition at its own destination, and HALTS at the ⛩ pre-build gate. No site copy is authored; nothing is built; nothing is deployed."
+increment: "GR-4 OPENED **AND SIGNED** — Grande Revue Lane D (story coverage), the ratified Gate-1 order's LAST lane. This sitting authored the mission, ran convention 13's pass COMPLETE with coverage recorded, landed R-124's disposition at its own destination, halted at the ⛩ pre-build gate — **and the operator took the gate in-session**, so it also carries the signature cascade: four rulings, the amended criteria (8 ACs / 7 limbs), the charter fields performed, and the capture estate folded in. ⚠ The pass was then **extended over its own amendment** and found a seventh defect. No site copy is authored; nothing is built in `site/`; nothing is deployed."
 executor_tier_declared: opus
 executor_tier_actual: opus
 token_budget_estimated: "~55-85 kT for the gate sitting itself (GR-1's precedent costed its gate sitting separately at ~60-90 kT). ~40 kT of that is the campaign CLAUDE.md, auto-loaded and the largest single read in any HAUSSMANN session. The MISSION's band is NOT estimated here — it is derived by the pass and carried to the ⛩ gate, because convention 13's own lesson is that a budget ratified before the pass is a budget costed against a spec nobody has read."
@@ -31,7 +31,12 @@ carried fact is a claim with a timestamp.
 | `origin/main` | `7210d5e` | `git ls-remote origin main` — **at the remote**, not a tracking ref | agrees |
 | `HEAD` | `7210d5e` ⇒ **unpushed 0** | `git rev-parse HEAD` | agrees |
 | Production alias | `a852423` · built `2026-09-01T19:40:19.817Z` · `mode=prod` | `curl https://adna.network/.well-known/adna-build.json` | **agrees — re-probed, not assumed** |
-| Mission files on disk | **30** = 27 `p{0..5}` + 3 `gr_*` | three `ls | wc -l`, each its own command | agrees (charter reads 30) |
+| Mission files on disk | **30** = 27 `p{0..5}` + 3 `gr_*` | three `ls | wc -l`, each its own command | agrees (charter read 30 **at open**) |
+
+⚠ **That last row is an AT-OPEN measurement and is deliberately not updated**: this sitting created
+GR-4 and the operator then ruled the charter to **31 · 44-59 · 44-51**. Both figures are correct for
+their moment, and overwriting the open-time one would erase the evidence that the count moved *because
+of this sitting* — which is the same-diff obligation's whole point (convention 7).
 
 ⭐ **Convention 19 fired for the third time and found `main` green.** Recorded as a result rather
 than skipped: the habit exists because a green you *do* run hides a red you *don't*, and a habit
@@ -90,7 +95,9 @@ no build until signed*. This sitting does not author copy.
    `artifacts/gr_4/ac_amendment_proposal.md` at **`status: proposed`**.
 4. Land **R-124's disposition in the claim register itself** — the destination, not the prose that
    routes there (`F-u`'s class, four sightings).
-5. **HALT** at the ⛩ pre-build gate.
+5. **HALT** at the ⛩ pre-build gate. ✅ **The gate was then TAKEN in-session** — see the SITREP.
+   *(Steps 1–5 describe the sitting as planned and are left standing: they were the correct plan, and
+   the signature is an operator act that arrived inside the same session rather than a change of plan.)*
 
 ## Out of scope, named rather than silently dropped
 
@@ -98,8 +105,11 @@ no build until signed*. This sitting does not author copy.
 - **No deploy.** Prod serves `a852423`, an ancestor of `main`; the diff carries no site bytes.
 - **P5.1** — with the humans; nothing in it waits on an agent.
 - **B1's ⛩ Speed-Insights → transport → first p75** — owed, operator-gated, its own sitting.
-- **~59 uncited capture PNGs** — owed hygiene; offered as a close-cascade rider at the gate, not
-  folded in unasked.
+- ~~**~59 uncited capture PNGs** — owed hygiene; offered as a close-cascade rider, not folded in~~
+  ⛔ **STRUCK: ⛩ operator ruled the rider IN, and the carried figure was wrong in both numbers.**
+  Derived: **67 untracked = 20 cited + 47 uncited**. Applied in the ratified **dangle-safe order**
+  (cited committed *first*, then uncited ignored — ignoring first can strand a cited file), with three
+  controls: **0** still-untracked · **20** staged · **0** dangling.
 - **babbage's lease question** + **two upstream findings still `proposed`** — each its own operator act.
 
 ## SITREP
@@ -131,11 +141,32 @@ no build until signed*. This sitting does not author copy.
 
 **In progress** — nothing. The mission is halted by design, not part-built.
 
-**Next up** — ⛩ **the signature**, carrying three questions (proposal §6) and §8's
-`mission_count` 30 → 31.
+**⛩⛩ THE GATE WAS TAKEN IN-SESSION — GR-4 IS SIGNED AND BUILDING.** All four questions ruled;
+proposal `accepted`; mission `queued` → `in_progress`; budget ⛩ ratified at the **AMENDED**
+**~255–400 kT / 2–3 sessions**.
 
-**Blockers** — none technical. GR-4 is blocked only on the operator, which is the correct state for
-a pre-build gate.
+- **R-124 → minimal disclaiming posture** ⇒ new **AC-8** + limb **V7**. ⛔ Register row moves when
+  the section is **LIVE**, never when written (`F-n`'s class).
+- **D3 → route to where the L0–L3 ladder lives** (branch (i)) — the false premise corrected, not
+  built around.
+- **D4 → `/commons`** — chosen by the measurement, named by neither disjunct ⇒ **CONSTRAINT-2
+  dissolved**; ⚠ the strip's prose-corpus measurement is **still owed at O4**.
+- **Both admin items performed**: charter **31 · 44-59 · 44-51** (`phase_count` 6), and the capture
+  estate folded in **dangle-safe** — derived **67 = 20 cited + 47 uncited** (the carried *"~59
+  uncited"* was wrong in both numbers); controls **0 · 20 · 0**.
+
+⚠⚠ **The band moved because a ruling has a price, quoted in the same act** — SO#11's P4.1 lesson
+with a sibling: *a budget ratified before the OPERATOR'S RULINGS is costed against a scope nobody
+has chosen yet.*
+
+⭐⭐ **The pass was extended over its own amendment and found a SEVENTH defect.** AC-8 and V7 arrived
+**at** the signature ⇒ not among the 63. The 21 new pairs surfaced **DEFECT-6**: AC-8 adds prose to
+`/privacy` with **no** reading-level constraint while AC-4 carries one. **P4.4b's finding inverted** —
+an amendment *omitted* a clause its siblings carried. Coverage **84 · 7 defective · 77 clean**.
+
+**Next up** — **`O1`** (D1 + D2), then O2 → O5 in order.
+
+**Blockers** — none. ⛔ No deploy authorized or owed; a push is its own ⛩ GO.
 
 **Files touched** — created: this session file · `missions/mission_haussmann_gr_4_story_coverage.md`
 · `artifacts/gr_4/ac_amendment_proposal.md`. Modified: `campaign_haussmann/CLAUDE.md` ·

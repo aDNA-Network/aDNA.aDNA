@@ -6,18 +6,25 @@ mission: mission_haussmann_gr_4_story_coverage
 title: "GR-4 — convention-13 pre-build pass, and the criteria amendment it proposes"
 created: 2026-09-02
 updated: 2026-09-02
-status: proposed          # ⛩ NOT SIGNED. No build, no copy, until this reads `accepted`.
+status: accepted          # ⛩⛩ SIGNED 2026-09-02 — all four questions ruled at the gate; GR-4 is BUILDING. See §9.
 last_edited_by: agent_rosetta
 session: session_stanley_20260902_060732_haussmann_gr_4_gate
 grounded_in: "artifacts/grande_revue/battle_plan.md §Lane D (⛩ Gate 1, accepted 2026-08-28)"
-tags: [artifact, gr_4, lane_d, convention_13, ac_amendment, proposed]
+tags: [artifact, gr_4, lane_d, convention_13, ac_amendment, accepted]
 ---
 
 # GR-4 — the convention-13 pass, COMPLETE at 63/63 with coverage recorded
 
-> ⛩ **THIS DOCUMENT IS `proposed`.** Nothing in GR-4 executes on its authority. The criteria are not
-> ratified, the budget is not ratified, and **three questions in §6 are the operator's, not this
-> desk's.**
+> ⛩⛩ **SIGNED 2026-09-02 — THIS DOCUMENT IS `accepted` AND GR-4 IS BUILDING.** All four questions
+> ruled at the gate; criteria adopted with the §3 remedies; budget ratified at the **amended**
+> ~255–400 kT / 2–3 sessions (Ruling 1 added an objective — §9.2). **§6's questions are ANSWERED in
+> §9.1; read §9 before §6, which is preserved as the state at the halt.**
+>
+> ~~⛩ **THIS DOCUMENT IS `proposed`.** Nothing in GR-4 executes on its authority. The criteria are not
+> ratified, the budget is not ratified, and three questions in §6 are the operator's, not this desk's.~~
+> ⛔ **Struck same-diff at the signature (convention 7), not left to be inferred from a status field** —
+> P1-7 is the campaign's own instance of a stale qualifier denying a signature its own frontmatter
+> records, and *"a cold agent obeying READ THE QUALIFIER would re-open a passed gate."*
 
 **Tenth consecutive mission where the pass has paid for itself** — and the first where it paid
 before a single criterion had been written, in the recon (§1).
@@ -303,3 +310,88 @@ HAUSSMANN session — named rather than absorbed, per GR-3's precedent.
   sitting. The field's own comment says it is **the operator's to take**.
 - **A rider, offered not folded in:** ~59 uncited capture PNGs sit untracked in the working tree.
   Owed hygiene, not Lane D scope.
+
+---
+
+## 9. ⛩⛩ RATIFICATION (§7.7) — SIGNED 2026-09-02
+
+> **decision**: the §3 defect remedies and §4 findings are **adopted as proposed**; **all four
+> questions ruled** (below); budget ⛩ ratified at the **amended** band in §9.2; mission
+> `queued` → **`in_progress`**.
+> **ratified-by**: operator (⛩, via AskUserQuestion at the 2026-09-02 pre-build gate)
+> **date**: 2026-09-02
+> **status**: accepted
+>
+> Unchanged by this signature: **P5.1 stays with the humans** · **no deploy is authorized or owed**
+> (Lane D is met on-build, like every GR mission before it) · **a push remains its own ⛩ GO**.
+
+### 9.1 The four rulings
+
+- **RULING 1 (CHOICE-1) — R-124: MINIMAL DISCLAIMING POSTURE.** `/privacy` gains a short section
+  stating that aDNA is a file-layout convention, that nothing is transmitted, and that
+  HIPAA/GDPR/IRB obligations rest with **the operator and their own tooling**. It makes **no
+  compliance claim of any kind** — it acknowledges the question and routes to the local-first answer
+  the site already gives. ⚠ **Said plainly rather than sold: this IS a posture**, just the smallest
+  one that discharges the row, and it is therefore **new scope** (see §9.2).
+  ⭐ **It is also the only option that satisfies convention 1 in both directions**: deferring again
+  would have left a question the site's own framing invites unanswered, and a full posture would
+  have moved a claim **up** into compliance language nothing here can support.
+- **RULING 2 (CHOICE-2) — D3 routes to where the L0–L3 ladder actually lives**, not to `/network`.
+  ⇒ **branch (i)**; the false premise is corrected rather than built around, and `/network`'s real
+  subject (the *aDNA-computer* / local-vs-federated story) is left intact.
+- **RULING 3 (CHOICE-3) — D4's receiving surface is `/commons`**, the surface the **measurement**
+  selected (headroom **3.39** vs `/about` 0.57 and `/` 0.04) and one **neither of the revue's two
+  disjuncts named**. ⭐ **CONSTRAINT-2 is dissolved by this ruling rather than managed**: with D4 off
+  the homepage, it no longer competes with D5's strip for `/`'s 0.04 margin. The strip's own
+  prose-corpus measurement is still **owed** at O4 — a constraint that stops binding is not a
+  measurement that has been taken.
+- **RULING 4 (§8) — BOTH admin items performed.** Charter `mission_count` **30 → 31** with both
+  session bands re-derived in the same commit (`phase_count` **HOLDS at 6**), **and** the capture
+  estate folded in under the ratified Refit policy.
+
+### 9.2 ⚠ THE BAND MOVED, AND IT MOVED BECAUSE OF RULING 1 — SAID, NOT ABSORBED
+
+§7 costed R-124 as an **⛩ disposition**, on the reasonable reading that "defer" or "out of scope"
+were live answers. **Ruling 1 makes it a deliverable**, so the mission gains an objective:
+
+| | kT |
+|---|---|
+| §7 branch (i) total | ~230–360 |
+| **+ AC-8** (R-124's `/privacy` section + `V7`, its own register rows, its own red-test) | **+25–40** |
+| **⛩ RATIFIED** | **~255–400 kT / 2–3 sessions** |
+
+⭐ **This is not padding and it is not an overrun — it is a ruling with a price, quoted at the moment
+the ruling was taken.** The campaign's SO#11 lesson from P4.1 was that *a budget ratified before the
+pass is costed against a spec nobody has read*; the sibling lesson, recorded here, is that **a budget
+ratified before the OPERATOR'S RULINGS is costed against a scope nobody has chosen yet.** Both are
+fixed the same way: quote the delta at the gate, in the same act as the ruling.
+
+### 9.3 Criteria as amended (the signed set — 8 ACs, 7 limbs)
+
+Full text on the mission's face. Deltas from §3/§4, each traceable to its defect:
+
+- **AC-1** — unchanged; its vendored-exclusion clause was already load-bearing (PREMISE-1).
+- **AC-2** — **DEFECT-3 remedy**: names its home pages and carries a **substance floor derived from
+  the existing doctrine sections on those pages**, never a bare count and never a floor typed by feel.
+- **AC-3** — **RULING 2** applied (home named); **CONSTRAINT-1 remedy**: gains an explicit embargo limb.
+- **AC-4** — **RULING 3** applied (`/commons`); **DEFECT-1 remedy**: gains a **presence** assertion on
+  the `.md` twin, so the criterion's substance is tested and not only its constraint.
+- **AC-5** — unchanged; **DEFECT-4 remedy lands in V4**, not in the criterion.
+- **AC-6** — unchanged; **DEFECT-2 remedy**: struck from `V2`'s `[asserts]` list. **V6 alone.**
+- **AC-7** — **DEFECT-5 remedy**: the claim set is **enumerated from the diff** and the enumeration
+  itself asserted.
+- **AC-8** — **NEW, from RULING 1.** R-124's `/privacy` section ships; it asserts **no** compliance
+  claim; every sentence carries a register row; and **R-124's row is moved at its own destination**.
+  ⛔ **The register row moves only when the section is live on the surface** — not when it is written.
+- **V4** — **DEFECT-4 remedy**: one mutation **per assertion**, each case naming the assertion it reds
+  via; a red via the wrong one reports **HARNESS BUG**, never a pass. (`F-z`, spent forward.)
+- **V7** — **NEW** `[asserts AC-8]`: a probe asserting the section is present on `/privacy` **and that
+  it contains no compliance-claim vocabulary** — the second half matters more than the first, because
+  the failure mode of a disclaiming posture is that it quietly becomes a promise.
+
+### 9.4 What this signature does NOT settle
+
+- **D5's prose-corpus question is still owed** (CONSTRAINT-2's measurement half), at O4.
+- **AC-8's exact wording is not pre-approved.** It is a public claim on a trust surface; it goes
+  through the claim register like any other, and if it cannot be written without a compliance
+  implication, that is a **finding to report, not a sentence to force**.

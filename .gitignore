@@ -102,3 +102,32 @@ how/campaigns/campaign_haussmann/artifacts/p4_1/captures_outage_20260823/**/*.pn
 # process state, not vault content, and no such file has ever been tracked. The `.pending`
 # sentinels ARE tracked — they record that a gate awaits an operator decision.
 how/gates/.gate_receiver.*
+
+# GRANDE REVUE evidence estate (2026-09-02, GR-4's ⛩ close-cascade rider — operator-ruled in).
+# Ratified Refit policy in its DANGLE-SAFE ORDER: the CITED frames are committed FIRST (above,
+# same commit), THEN the uncited are ignored — ignoring first can strand a cited file.
+# Derived, not typed: 67 untracked = 20 cited + 47 uncited. ⚠ The figure this campaign carried
+# for days was "~59 uncited" and was wrong in BOTH numbers — re-derive, never quote.
+how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/**/*.png
+how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures_deep/**/*.png
+how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures_light_axe/**/*.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/about__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/commons__mobile-lg__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/community__mobile-lg__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/get-started__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/get-started__desktop__light.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/get-started__mobile-lg__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/get-started__mobile-lg__light.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/home__mobile-lg__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/home__mobile-lg__light.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/learn__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/network__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/network__mobile-lg__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures/vaults__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures_deep/changelog__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures_deep/glossary__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures_deep/learn-what-is-adna__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures_deep/reference-specification__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures_deep/state-of-the-network__desktop__dark.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures_light_axe/get-started__desktop__light.png
+!how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures_light_axe/home__desktop__light.png

@@ -21,10 +21,39 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
 
-> ⏸⛩ **2026-09-02(c) — `GR-4` (GRANDE REVUE **Lane D**, story coverage) IS OPEN AND HALTED AT ITS
-> ⛩ CONVENTION-13 PRE-BUILD GATE. NOTHING BUILT, NO COPY AUTHORED, criteria and budget NOT ratified.**
-> `missions/mission_haussmann_gr_4_story_coverage.md` → **`queued`**;
-> `artifacts/gr_4/ac_amendment_proposal.md` → **`proposed`**. This is the ratified Gate-1 order's
+> ⛩⛩ **2026-09-02(c) — `GR-4` (GRANDE REVUE **Lane D**, story coverage) IS OPEN, SIGNED, AND BUILDING.**
+> `missions/mission_haussmann_gr_4_story_coverage.md` → **`in_progress`**;
+> `artifacts/gr_4/ac_amendment_proposal.md` → **`accepted`**. Budget ⛩ ratified at the **AMENDED**
+> **~255–400 kT / 2–3 sessions**. ~~queued / proposed / criteria and budget NOT ratified~~ *(struck
+> same-diff at the signature — P1-7's lesson: a stale qualifier denying a signature its own
+> frontmatter records is how a cold agent re-opens a passed gate.)*
+>
+> ⛩ **FOUR RULINGS.** **R-124 → MINIMAL DISCLAIMING POSTURE** (new `AC-8` + `V7`: `/privacy` states
+> aDNA is a file-layout convention, nothing is transmitted, and HIPAA/GDPR/IRB obligations rest with
+> the **operator and their own tooling** — **no compliance claim of any kind**; ⛔ the register row
+> moves when the section is **LIVE**, never when written). **D3 → route to where the L0–L3 ladder
+> actually lives** (branch (i); the false premise **corrected, not built around**). **D4 → `/commons`**,
+> the surface the **measurement** selected and **neither disjunct named** ⇒ **CONSTRAINT-2 dissolved**
+> (⚠ the strip's prose-corpus measurement is **still owed at O4** — *a constraint that stops binding is
+> not a measurement that has been taken*). **Both admin items PERFORMED**: charter **31 · 44-59 ·
+> 44-51** (`phase_count` HOLDS at 6), and the capture estate folded in **dangle-safe** — ⚠ derived
+> **67 untracked = 20 cited + 47 uncited**, where the carried figure *"~59 uncited"* was **wrong in
+> both numbers**; controls **0 untracked · 20 staged · 0 dangling**.
+>
+> ⚠⚠ **THE BAND MOVED BECAUSE A RULING HAS A PRICE, AND IT WAS QUOTED IN THE SAME ACT.** §7 costed
+> R-124 as an ⛩ *disposition*; Ruling 1 makes it a **deliverable** ⇒ +25–40 kT for AC-8. ⭐ **SO#11's
+> P4.1 lesson has a sibling**: *a budget ratified before the pass is costed against a spec nobody has
+> read* — and ***a budget ratified before the OPERATOR'S RULINGS is costed against a scope nobody has
+> chosen yet.*** Same fix: quote the delta at the gate.
+>
+> ⭐⭐ **THE PASS WAS EXTENDED OVER ITS OWN AMENDMENT AND FOUND A SEVENTH DEFECT.** `AC-8` and `V7`
+> arrived **at** the signature ⇒ they were **not among the 63**, and a signature is exactly when a pass
+> stops being re-run. The **21 new pairs** surfaced **DEFECT-6**: **AC-8 adds prose to `/privacy` with
+> NO reading-level constraint while its sibling AC-4 carries one** (`/privacy` 9.43 vs target 12 ⇒
+> headroom 2.57 — low risk, **but low risk is not an assertion**, and V3 already runs the whole census).
+> ⚠ **P4.4b's finding INVERTED** — there an amendment *stranded* a clause; here an amendment **omitted
+> one its siblings carried**. ⇒ ***a criteria set is not re-read when it is amended, and the amendment
+> is exactly the edit nobody checks against the set.*** Coverage **84 · 7 defective · 77 clean**. This is the ratified Gate-1 order's
 > **LAST lane**. Derived at open: CI **green ×5** (`33586055067`), `origin/main` == HEAD `7210d5e`,
 > **unpushed 0**, prod alias **`a852423`** re-probed (convention 16 — it **confirmed**, second time in
 > this campaign against three contradictions). **No deploy is owed or sought.**
@@ -78,7 +107,9 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 > session **sorting before two that already happened**. ⇒ **a timestamp is a measurement, and it has a
 > zone the way a count has a command** — and it would have read exactly like compliance.
 >
-> ⛩ **NEXT: THE SIGNATURE, carrying THREE questions** (proposal §6): **R-124's audience/scope call** ·
+> ⏭ **NEXT: `O1`** (D1 + D2 — the two clean agent-reachable adds), then O2 (D4 → `/commons`) · O3 (D3,
+> branch (i)) · O4 (D5 **+ the owed prose-corpus measurement**) · O5 (D6 + AC-8 + close cascade + AAR).
+> ⛔ **No deploy authorized or owed**; a push is its own ⛩ GO. ~~THE SIGNATURE, carrying THREE questions~~ (proposal §6): **R-124's audience/scope call** ·
 > **D3's home** (the false-premise fork) · **D4's receiving surface** (ruled on measured headroom); plus
 > §8's **`mission_count` 30 → 31** with both session bands re-derived same-commit (`phase_count` **HOLDS
 > at 6**). **Until then, no build and no copy.** ⛔ Held: **P5.1** with the humans. ⚠ Owed: B1's

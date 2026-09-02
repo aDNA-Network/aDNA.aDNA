@@ -273,13 +273,16 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 `missions/` — **31** files, **derived not typed** (`ls missions/mission_haussmann_*.md | wc -l`): 27
 `mission_haussmann_p{0..5}_*.md` **plus 4 `mission_haussmann_gr_*.md`**, which the `p{0..5}` glob does
 **not** match. *(Re-derived 2026-09-02 at `GR-4`'s open — the GR lane went 3 → 4, moved in the **same
-commit** as the file that moved it, per convention 7 / ADR-057. ⛩ **The charter's `mission_count` is a
-SEPARATE field and is NOT edited here: it stays `30` until the operator rules 30 → 31 at GR-4's gate**,
-where it is surfaced as `artifacts/gr_4/ac_amendment_proposal.md` §8. ⭐ **The two numbers are allowed
-to disagree for exactly as long as one gate is open**, and saying so is the point — GR-2's failure was
-recording a ruling as taken and leaving the charter unmoved for four days, which is invisible unless
-somebody writes down which of the two is currently authoritative. **Here: this index is the disk;
-the charter is the ratified figure; they reconcile at the signature.** ~~30~~ · prior note follows:
+commit** as the file that moved it, per convention 7 / ADR-057. ✅ **RECONCILED AT THE SIGNATURE THE
+SAME SITTING: the charter now reads `mission_count: 31`, `estimated_sessions: 44-59`,
+`calibrated_sessions: 44-51`, `phase_count` HOLDS at 6** — surfaced as proposal §8, ⛩ ruled, and
+**performed at the destination before the sitting closed.** ~~it stays `30` until the operator rules
+30 → 31 at GR-4's gate~~ ⭐ **The two numbers were allowed to disagree for exactly as long as the gate
+was open, and that window is now closed** — which is the whole point of having written down which of
+them was authoritative meanwhile. GR-2's failure was recording a ruling as taken and leaving the
+charter unmoved for four days; the defect is invisible unless somebody says which surface is the disk
+and which is the ratified figure. **Here: this index is the disk; the charter is the ratified figure;
+as of this commit they agree at 31.** ~~30~~ · prior note follows:
 Re-derived 2026-09-01 at `GR-3`'s open — the GR lane went 2 → 3. ⛩ ✅ **SURFACED AND PERFORMED
 IN THE SAME SITTING** — the charter's `mission_count` is now **30**, with `estimated_sessions` **42-56**
 and `calibrated_sessions` **42-48** re-derived in the same commit. That field is **the operator's to
@@ -2298,3 +2301,56 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > ⏭ **NEXT: ⛩ THE SIGNATURE. Until then, no build and no copy.** ⛔ Still held: **P5.1** with the
 > humans. ⚠ Owed: B1's ⛩ Speed-Insights → transport → first p75 · ~59 uncited capture PNGs (offered as
 > a close-cascade rider, not folded in) · babbage's lease question · babbage's two upstream findings.
+
+> ⛩⛩ **SIGNED 2026-09-02 — `ac_amendment_proposal.md` IS `accepted` AND `GR-4` IS BUILDING.**
+> §3's defect remedies and §4's findings adopted as proposed; mission `queued` → **`in_progress`**;
+> **all four questions ruled in the same act:**
+> - **RULING 1 — `R-124`: MINIMAL DISCLAIMING POSTURE.** `/privacy` gains a short section — aDNA is a
+>   **file-layout convention**, **nothing is transmitted**, and **HIPAA/GDPR/IRB obligations rest with
+>   the operator and their own tooling** — asserting **no compliance claim of any kind**. Carried as
+>   **new `AC-8`** with its own limb **`V7`**. ⭐ **The only option satisfying convention 1 in BOTH
+>   directions**: a fourth deferral leaves unanswered a question **the site's own framing invites**, and
+>   a full posture moves a claim **UP** into language nothing here supports. ⚠ **Said rather than sold:
+>   this IS a posture**, just the smallest that discharges the row. ⛔ **The register row moves when the
+>   section is LIVE, never when it is written** (`F-n`'s class: *a fix's commit is not the strike*).
+> - **RULING 2 — `D3` routes to where the L0–L3 ladder actually lives**, branch (i). The false premise
+>   is **corrected rather than built around**, and `/network`'s real subject is left intact.
+> - **RULING 3 — `D4`'s surface is `/commons`**, selected by the **measurement** (3.39 vs `/about` 0.57
+>   and `/` 0.04) and named by **neither** of the revue's disjuncts. ⭐ **CONSTRAINT-2 is DISSOLVED
+>   rather than managed** — with D4 off the homepage it no longer competes with D5's strip for `/`'s
+>   0.04 margin. ⚠ The strip's own prose-corpus measurement is **still owed at O4**: *a constraint that
+>   stops binding is not a measurement that has been taken.*
+> - **RULING 4 — both §8 admin items PERFORMED, not recorded as taken.** Charter **`mission_count` 30 →
+>   31 · `estimated_sessions` 42-56 → 44-59 · `calibrated_sessions` 42-48 → 44-51**, all re-derived in
+>   the same commit; `phase_count` **HOLDS at 6**. And the **capture estate folded in** under the
+>   ratified Refit policy in its **DANGLE-SAFE ORDER** — cited committed **first**, then uncited
+>   ignored. ⚠ **Derived: 67 untracked = 20 cited + 47 uncited**; the figure this campaign carried for
+>   days was *"~59 uncited"* and was **wrong in both numbers**. Three controls run: **0** still-untracked
+>   · **20** staged · **0** dangling (no staged file is also ignored).
+>
+> ⚠⚠ **THE BAND MOVED, BECAUSE A RULING HAS A PRICE — QUOTED IN THE SAME ACT, NOT ABSORBED.** §7 costed
+> R-124 as an ⛩ *disposition*, on the reasonable reading that "defer" and "out of scope" were live
+> answers. Ruling 1 makes it a **deliverable** ⇒ branch (i)'s ~230–400 becomes **⛩ ratified ~255–400 kT
+> / 2–3 sessions** (`+25–40` for AC-8 + V7 + its register rows + its red-test).
+> ⭐ **This is SO#11's P4.1 lesson with a sibling.** There: *a budget ratified before the pass is costed
+> against a spec nobody has read.* Here: ***a budget ratified before the OPERATOR'S RULINGS is costed
+> against a scope nobody has chosen yet.*** Both are fixed the same way — quote the delta at the gate.
+>
+> ⭐⭐ **AND THE PASS WAS EXTENDED OVER ITS OWN AMENDMENT, WHICH FOUND A SEVENTH DEFECT.** `AC-8` and
+> `V7` arrived **at the signature**, so they were **not among the 63** — and a signature is precisely
+> the moment a pass stops being re-run. Extending it over the **21 new pairs** (`AC-8×AC-1..7` +
+> `AC-8×V1..V7` + `AC-1..7×V7`) cost one pass and produced **DEFECT-6**: **`AC-8` adds prose to
+> `/privacy` and carries NO reading-level constraint, while its sibling `AC-4` carries one.**
+> `/privacy` measures **9.43 against a target of 12** (headroom 2.57) ⇒ low risk — **but low risk is not
+> an assertion**, and V3 already runs the whole census, so covering `/privacy` costs nothing.
+> ⚠ **This is P4.4b's finding INVERTED**: there, *an amendment stranded a clause elsewhere in the file
+> it was amending*; here, **an amendment omitted a clause its siblings already carried** — the same seam
+> entered from the other side. ⇒ ***a criteria set is not re-read when it is amended, and the amendment
+> is exactly the edit nobody checks against the set.*** Coverage now **84** total (`C(8,2)=28` +
+> `8×7=56`), **7 defective · 77 clean**, derived not typed.
+>
+> ⏭ **NEXT: `O1`** (D1 + D2 — the two clean agent-reachable adds, `V1` with its **asserted** vendored
+> exclusions and its red-test), then O2 (D4 → `/commons`) · O3 (D3, branch (i)) · O4 (D5, **plus the
+> owed prose-corpus measurement**) · O5 (D6 + AC-8 + close cascade + AAR). ⛔ **No deploy is authorized
+> or owed** — Lane D is met on-build, as every GR mission before it. **A push remains its own ⛩ GO.**
+> ⛔ Held: **P5.1** with the humans.

@@ -6,10 +6,10 @@ campaign: campaign_haussmann
 phase: GR                  # Grande Revue lane, no phase number — GR-1's precedent, GR-2/GR-3 following.
 decade: 2
 owner: stanley
-status: queued   # ⏸ OPEN AND HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE (2026-09-02) — nothing built, no copy authored, criteria NOT ratified, budget NOT ratified. This is GRANDE REVUE **Lane D**, the ratified Gate-1 order's LAST lane, opened on the P4.2/P4.3/P4.4a/P4.4b/P4.5b/P5.1/GR-1/GR-2/GR-3 precedent: **pass first, no build until signed.** The battle plan ratified this lane's SHAPE and says so on its own face. ⛩ It additionally carries an **audience/scope decision (R-124)** that must be taken BEFORE any copy is authored.
+status: in_progress   # ⛩⛩ SIGNED 2026-09-02 — THE GATE IS PASSED AND GR-4 IS BUILDING. All four questions ruled: **R-124 → MINIMAL DISCLAIMING POSTURE** (new AC-8) · **D3 → route to where the L0–L3 ladder actually lives**, branch (i), the false premise corrected rather than built around · **D4 → `/commons`**, the surface the MEASUREMENT selected (headroom 3.39 vs `/about` 0.57 and `/` 0.04) and one neither of the revue's disjuncts named · **both §8 admin items PERFORMED in this same commit** (charter 30→31 + bands; the capture estate folded under the ratified Refit policy in its dangle-safe order). Budget ⛩ ratified at the **AMENDED** ~255–400 kT / 2–3 sessions — Ruling 1 turned an ⛩ disposition into a deliverable, and the delta was quoted at the moment the ruling was taken (proposal §9.2). ~~⏸ OPEN AND HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE — nothing built, no copy authored, criteria NOT ratified, budget NOT ratified.~~ *(struck same-diff at the signature, never left to be inferred from a status field — P1-7's own lesson.)* Opened on the P4.2/P4.3/P4.4a/P4.4b/P4.5b/P5.1/GR-1/GR-2/GR-3 precedent: **pass first, no build until signed.**
 mission_class: content     # ⚠ FIRST content-class mission to reach this gate. Every prior convention-13 pass was aimed at a BUILD mission; the failure modes here are different and are named in the pass.
 executor_tier: opus        # judgment-heavy and NOT because it is large: the work is authoring public claims under an active embargo, against an unresolved audience question, on surfaces whose reading-level headroom is measured in hundredths. A cheaper tier reproduces exactly the defect class this campaign exists to retire — a claim moving UP.
-token_budget_estimated: "⛩ PROPOSED — see the ⛩ gate. The band is deliberately NOT typed here: it is derived in `artifacts/gr_4/ac_amendment_proposal.md` §7 AFTER the pass, because convention 13's own repeated lesson — nine sightings — is that a budget ratified before the pass is a budget costed against a spec nobody has read."
+token_budget_estimated: "⛩ RATIFIED 2026-09-02 at **~255–400 kT / 2–3 sessions** — §7's branch-(i) band (~230–360) **plus AC-8's ~25–40**, because Ruling 1 turned R-124 from an ⛩ disposition into a deliverable. ⭐ The delta was quoted **in the same act as the ruling**, which is the sibling of convention 13's own lesson: a budget ratified before the pass is costed against a spec nobody has read, and a budget ratified before the OPERATOR'S RULINGS is costed against a scope nobody has chosen yet. Both are fixed the same way. ⚠ ~40 kT of O0 is the campaign CLAUDE.md, auto-loaded — named, not absorbed (GR-3's precedent)."
 token_budget_actual: ""
 created: 2026-09-02
 last_edited_by: agent_rosetta
@@ -28,27 +28,39 @@ depends_on: []
 blocks: []
 acceptance_criteria:
   - "AC-1 [D1 · model routing] — the model-routing story is published in AUTHORED site content, and its test surface EXCLUDES `src/data/tour/**` and any other byte-vendored artifact. ⚠ The exclusion is the criterion, not a detail: measured 2026-09-02, the ONLY model-routing occurrence site-wide is a skills-table row inside the vendored `.adna/CLAUDE.md` at `src/data/tour/standard-governance.txt:260`, so a naive site-wide grep is ALREADY GREEN and would be met by building nothing."
-  - "AC-2 [D2 · token-budget doctrine] — the SO-11 / ADR-016 per-mission budget doctrine layer is published on an existing home (`mission-decomposition.mdx` and/or `design-a-mission.mdx`, both verified present on disk). Measured baseline: 0 occurrences of ADR-016 or token_budget in `site/src/**` [D]."
-  - "AC-3 [D3 · local models] — a *planned*-framed local-models section ships on a home ⛩ RULED AT THE GATE, and every sentence in it is distinguishable by test from a live claim. ⛔ The battle plan's stated home rests on a premise measured FALSE (see AC-3's note): `/network` carries ZERO L0-L3 and zero compute-tier content."
-  - "AC-4 [D4 · ancient DNA] — the ancient-DNA disambiguation reaches at least one surface a first-contact reader lands on, AND the receiving surface's prose FKGL stays at or under its own target, re-measured by `reading_census.mjs` after the copy lands. ⛩ The receiving surface is ruled at the gate on MEASURED headroom, not chosen in prose."
+  - "AC-2 [D2 · token-budget doctrine] — the SO-11 / ADR-016 per-mission budget doctrine layer is published on its NAMED homes, `mission-decomposition.mdx` and/or `design-a-mission.mdx` (both verified present on disk), and meets a SUBSTANCE FLOOR derived from the existing doctrine sections on those same pages. ⚠ DEFECT-3 remedy: the baseline is 0, so a bare count is satisfied by a single passing mention anywhere — in a changelog entry, a glossary stub — while the layer stays unwritten. The floor is DERIVED from the page's own siblings, never typed by feel (B0: a number written by feel is a formality wearing a pin's clothing)."
+  - "AC-3 [D3 · local models] — a *planned*-framed local-models section ships WHERE THE L0-L3 LADDER ACTUALLY LIVES (⛩ RULING 2, branch (i)), NOT on `/network`, whose ratified home-claim measured FALSE (0 L0-L3, 0 compute-tier on its live twin — it owns the aDNA-computer story). Every sentence is distinguishable BY TEST from a live claim, and the copy is checked against the counsel embargo and R-14/R-15 before it ships (CONSTRAINT-1: D1 and D2 are this vault's own live doctrine and are embargo-safe; D3 is not, and no criterion said so)."
+  - "AC-4 [D4 · ancient DNA] — the ancient-DNA disambiguation is PRESENT on `/commons` (⛩ RULING 3, the surface the MEASUREMENT selected: headroom 3.39 vs `/about` 0.57 and `/` 0.04), asserted on the `.md` TWIN — the surface whose verb is 'a reader encounters' — AND `/commons`'s prose FKGL stays at or under its own target, re-measured by `reading_census.mjs` with the before-figure recorded in the same artifact. ⚠ DEFECT-1 remedy: the presence half is the criterion's SUBSTANCE and was tested by nothing; and because FKGL FALLS as prose gets shorter, the constraint limb moves in the reassuring direction exactly when the criterion is met."
   - "AC-5 [D5 · latest strip] — a returning-member entry point to changelog/RSS exists above the footer, and the top-level nav still holds exactly 7 flat entries (ADR-049's cap, derived from `navigation.ts`, not typed)."
   - "AC-6 [D6 · movement 3] — movement-3 stays UNSHIPPED under the embargo, and that is the criterion being MET. Its evidence is a dated absence assertion naming its surface. ⚠ It ALSO corrects, at the record, the revue's false parenthetical that the ratified 'opening progressively' phrasing has 0 hits corpus-wide."
-  - "AC-7 [governance] — every new public sentence carries a claim-register row; every count this mission narrates is derived by its own command; R-124's disposition is read back IN the register; AAR filed (SO#5); `token_budget_actual` recorded at the time, not reconstructed."
+  - "AC-7 [governance] — every new public sentence carries a claim-register row, with THE CLAIM SET ENUMERATED FROM THE DIFF and the enumeration itself asserted; every count this mission narrates is derived by its own command; R-124's disposition is read back IN the register; AAR filed (SO#5); `token_budget_actual` recorded at the time, not reconstructed. ⚠ DEFECT-5 remedy: a limb that confirms the rows it was handed is structurally blind to a row nobody remembered — the over-masking shape (masks only ever grow) arriving in a governance limb."
+  - "AC-8 [R-124 · ⛩ RULING 1] — `/privacy` carries a short section stating that aDNA is a file-layout convention, that nothing is transmitted, and that HIPAA/GDPR/IRB obligations rest with the OPERATOR AND THEIR OWN TOOLING. It asserts NO compliance claim of any kind. Every sentence carries a register row, and R-124's row moves AT ITS OWN DESTINATION — and moves ONLY when the section is live on the surface, never when it is merely written. ⚠ If the section cannot be written without implying a compliance posture, that is a FINDING TO REPORT, not a sentence to force (convention 1: claims move down, never up)."
 verification_method: >-
   V1 [asserts AC-1, AC-2] — a content probe over AUTHORED source only, with `src/data/tour/**` excluded
   BY NAME and the exclusion asserted (gate-48's ratified discipline: the exclusions are part of the
   claim), red-proven by a mutation that puts the term back in a vendored file alone and must NOT go green.
-  V2 [asserts AC-3, AC-6] — a *planned*-framing probe: every new forward-looking sentence is matched to a
+  V2 [asserts AC-3] — a *planned*-framing probe: every new forward-looking sentence is matched to a
   planned-marker, and a control mutation that strips the marker goes RED. This is convention 1 in
-  instrument form.
-  V3 [asserts AC-4] — `node site/scripts/reading_census.mjs` re-run after the copy lands; the receiving
-  route at or under its own target, and the BEFORE figure recorded in the same artifact so the delta is
-  readable.
+  instrument form. ⛔ **AC-6 STRUCK from this limb (DEFECT-2)**: AC-6's met-state is that NOTHING SHIPS,
+  so a probe iterating new sentences has an empty set and passes by construction — certifying a
+  mechanism it never exercised. **AC-6 is V6's alone.**
+  V3 [asserts AC-4, AC-8] — `node site/scripts/reading_census.mjs` **run from the REPO ROOT** re-run
+  after the copy lands; **`/commons` AND `/privacy`** each at or under their own target, with the BEFORE
+  figures recorded in the same artifact so both deltas are readable. **DEFECT-6 remedy** — AC-8 arrived
+  at the signature without the constraint AC-4 carries, and the census already covers the whole corpus.
   V4 [asserts AC-5] — nav entry count derived from `navigation.ts` (exactly 7 flat) and the homepage
-  entry point asserted present; red-proven by a mutation adding an 8th nav entry.
+  entry point asserted present, red-proven by **ONE MUTATION PER ASSERTION**, each case NAMING the
+  assertion it reds via; a red via the wrong assertion reports as a **HARNESS BUG**, never a pass.
+  ⭐ **DEFECT-4 remedy — `F-z` spent FORWARD.** The single 8th-nav-entry mutation reds via the nav
+  COUNT, so the entry-point assertion would never have been demonstrated to fail: *a demonstration is
+  only worth what it can attribute* (GR-3), applied at authoring time instead of in a harness's
+  fourteenth day.
   V5 [asserts AC-7] — register rows present for every new claim; `git status --porcelain` read at close.
   V6 [asserts AC-6] — the dated absence assertion for movement-3, with its surface named, plus the
-  corrected 'opening progressively' figure re-derived at the commit that quotes it.
+  corrected 'opening progressively' figure re-derived at the commit that quotes it. **AC-6's sole limb.**
+  V7 [asserts AC-8] — a probe asserting the `/privacy` section is present AND that it contains no
+  compliance-claim vocabulary. ⭐ **The second half matters more than the first**: the failure mode of a
+  disclaiming posture is not that it goes missing, it is that it quietly becomes a promise.
 human_gate: true
 tags: [plan, haussmann, gr_4, lane_d, story_coverage, content, embargo, r_124]
 ---
@@ -194,9 +206,26 @@ partial pass is legible as partial (convention 13's own amendment).
 
 | | Pairs | Derivation |
 |---|---|---|
-| AC×AC | **21** | `C(7,2)` — 7 criteria |
-| AC×V | **42** | `7 × 6` — 7 criteria × 6 limbs |
-| **Total** | **63** | derived, not typed |
+| **At the halt** — AC×AC | **21** | `C(7,2)` — 7 criteria |
+| **At the halt** — AC×V | **42** | `7 × 6` — 7 criteria × 6 limbs |
+| **Subtotal (the pass as run)** | **63** | **6 defective · 57 clean** |
+| **After the signature** — new pairs | **21** | `AC-8 × AC-1..7` (7) + `AC-8 × V1..V7` (7) + `AC-1..7 × V7` (7) |
+| **TOTAL** | **84** | `C(8,2)=28` + `8×7=56` — derived, not typed. **7 defective · 77 clean.** |
+
+⭐⭐ **THE PASS WAS EXTENDED OVER ITS OWN AMENDMENT, AND IT FOUND A SEVENTH DEFECT.** AC-8 and V7
+arrived **at the signature**, so **they were not in the 63** — and a signature is exactly the moment
+a pass stops being re-run. Extending it cost one pass over 21 pairs and produced **DEFECT-6**:
+
+> **AC-8 adds prose to `/privacy` and carries NO reading-level constraint, while its sibling AC-4
+> carries one.** `/privacy` measures **9.43 against a target of 12** (headroom 2.57), so the risk is
+> low — **but low risk is not an assertion**, and V3 already runs the whole census, so covering
+> `/privacy` costs nothing.
+
+⚠ **This is P4.4b's finding inverted.** There, *an amendment stranded a clause elsewhere in the file
+it was amending*. Here, **an amendment omitted a clause its siblings already carried** — the same
+seam, entered from the other side. ⇒ ***a criteria set is not re-read when it is amended, and the
+amendment is precisely the edit nobody checks against the set.*** **Remedy, free: V3's census
+assertion covers `/commons` AND `/privacy`.**
 
 ## AAR
 
