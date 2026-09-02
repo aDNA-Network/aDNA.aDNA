@@ -2,7 +2,7 @@
 type: skill
 skill_type: agent
 created: 2026-08-17
-updated: 2026-08-28   # step-1/2 patch: the three CI injectors made part of the build step (Grande Revue P0 finding — the skill's own procedure false-redded gate-30 on a fresh checkout); baselines refreshed 203pp/371 → 226pp/659, superseded-not-deleted
+updated: 2026-09-02   # B3 patch: the Step-2 baseline MIXED DENOMINATORS (a chromium 633 and an all-projects 659 on one arrow) while the step prescribes chromium only — struck, replaced by a per-command table (chromium 659 · fast 541 · snapshot 26 · all-projects 685, all derived 2026-09-02). Prior: step-1/2 patch: the three CI injectors made part of the build step (Grande Revue P0 finding — the skill's own procedure false-redded gate-30 on a fresh checkout); baselines refreshed 203pp/371 → 226pp/659, superseded-not-deleted
 status: active
 category: quality
 trigger: "Any assessment, review, audit, phase-gate verification, or re-score of a rendered web surface — and any HAUSSMANN mission whose verification_method names gates, captures, Lighthouse, or a machine-eye pass"
@@ -80,8 +80,30 @@ npm run test:gates          # full suite incl. @audit specs — chromium project
 ```
 
 Record pass/fail counts and duration. Baseline ~~`[D] 2026-08-16`: **371/371 pass, ~1.5 min**~~
-superseded — `[D] 2026-08-27`: suite is **659** derived (633 → 659 at P4.4b B0, gate-49); the fast
-lane ran **514 passed / 1 skipped / 0 failed** at Grande Revue P0 *after* the injectors above.
+~~superseded — `[D] 2026-08-27`: suite is **659** derived (633 → 659 at P4.4b B0, gate-49); the fast
+lane ran **514 passed / 1 skipped / 0 failed** at Grande Revue P0 *after* the injectors above.~~
+
+⛔⛔ **STRUCK 2026-09-02 (P4.4b B3) — THAT BASELINE MIXED TWO DENOMINATORS, AND THE STEP ABOVE TELLS
+YOU TO RUN ONLY ONE OF THEM.** *"633 → 659 at B0"* put a **chromium** figure (633) and an
+**all-projects** figure (659) on the two ends of one arrow. `npm run test:gates` — the command this
+step actually prescribes — is `--project=chromium`, so a reader comparing its output to 659 was
+comparing to a number that command has never printed. ⭐ **And today chromium genuinely IS 659, so
+the stale line now reads as correct for the wrong reason** — the hardest kind of stale number to
+catch, and the second instance this increment of *a figure that matches by coincidence looking like a
+check that passed*. **A count is only comparable to a count produced by the same command** (GR-2).
+
+**Baselines, each naming its own command — `[D] 2026-09-02`:**
+
+| Command | Count |
+|---|---|
+| `npm run test:gates` (`--project=chromium`) — **what this step runs** | **659** (658 passed · 1 skipped) |
+| `npm run test:gates:fast` (chromium, `--grep-invert @audit`) — iteration only | **541** (540 passed · 1 skipped) |
+| `npm run test:visual` (`--project=snapshot`) — **container-only**, see below | **26** |
+| `npx playwright test --list` (all projects) — **not run by this skill** | **685** = 659 + 26 |
+
+⚠ **Derive the delta with `--list` (gate present vs absent), never by subtracting two run outputs** —
+Playwright's `line` reporter overwrites, so a gate's absence from captured output is **not** evidence
+it did not run.
 ⚠ **The gate-49 visual lane runs ONLY in `mcr.microsoft.com/playwright:v1.59.1-noble`** — its
 baselines are generated and compared in-container by design (P4.4b AC1); a bare-macOS run false-reds
 and is not evidence of anything. Never chase its reds outside the container.
