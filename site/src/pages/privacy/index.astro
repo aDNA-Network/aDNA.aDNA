@@ -14,9 +14,13 @@ import { buildWebPageJsonLD } from '../../utils/seo';
 // nothing about you" claims stand. If delivery to an aggregate dashboard is ever enabled
 // (an operator-gated act), this page updates again BEFORE that ships, per the commitment
 // in the closing paragraph.
+// HAUSSMANN GR-4 O5 (2026-09-03): §regulated-data added — R-124's ⛩-ruled minimal disclaiming
+// posture. It changes NOTHING about what this site collects; it answers a question the site's own
+// rare-disease framing invites and that no page acknowledged. It asserts no compliance claim, and
+// the comment above that section states why its regime names sit where they do.
 const issuesUrl = `${REPO_HTTPS}/issues`;
 const vercelPrivacyUrl = 'https://vercel.com/legal/privacy-policy';
-const updated = '2026-08-28';
+const updated = '2026-09-03';
 ---
 
 <BaseLayout
@@ -85,6 +89,52 @@ const updated = '2026-08-28';
       you choose to configure a remote. Nothing about your vault — its contents, structure, or
       the credential <em>names</em> it indexes — is transmitted to us by using this site or the
       standard. This site is documentation; it is not a service that ingests your data.
+    </p>
+
+    {/* HAUSSMANN GR-4 O5 · AC-8 — R-124's disposition, ⛩ ruled at the pre-build gate as a MINIMAL
+        DISCLAIMING POSTURE. R-124's own diagnosis is that "the defect is ROUTING, not policy": a
+        clinician arriving through the site's rare-disease framing, asking the first question her
+        profession obliges her to ask, found no page acknowledging the question exists. Hence a
+        section with its OWN heading and anchor rather than a clause folded into #your-vault above —
+        a reader scanning headings has to be able to find it.
+
+        ⛔ THIS SECTION ASSERTS NO COMPLIANCE CLAIM AND MUST NEVER ACQUIRE ONE. Its failure mode is
+        not that it goes missing; it is that it quietly becomes a promise (G54x, the load-bearing
+        limb — G54n's shape one criterion across).
+
+        ⚠ NOTE WHY THE REGIME NAMES SIT WHERE THEY DO, so a later editor does not "tidy" them: the
+        denial below is deliberately REGIME-FREE ("no regulatory claim … under any regime") and the
+        regime names appear ONLY in the sentence that hands the obligation to the operator. Writing
+        "aDNA is not HIPAA compliant" would be true and would still read, to a skimming eye, as
+        "HIPAA … compliant" — a disclaimer that scans as the promise it denies. The polarity is
+        invisible to a literal probe, which is exactly why the copy avoids the adjacency instead of
+        asking the gate to detect it.
+
+        ⚠ FOUR THINGS THE AC-7 ENUMERATION CUT FROM THE FIRST DRAFT, recorded so they are not
+        helpfully restored. (1) "and clinical work" — the homepage says rare ×15 and undiagnosed
+        ×2 but "clinical" ZERO times [D], so it described the site's examples as something they
+        are not. (2) "not a platform, a PROCESSOR, or a service" — "processor" is a GDPR term of
+        art, and denying a defined legal role is itself a regulatory self-characterisation, in a
+        section whose entire point is to make none. (3) "moves no data anywhere" — an unscoped
+        absolute, and the R-64 / R-97 / R-161 over-promise class, which THIS MISSION narrowed on
+        /network one objective ago; it is now scoped to the convention, which genuinely has no
+        network behaviour. (4) the definition was rewritten to sit WITH the site's ratified
+        "open specification" rather than beside it as a rival. */}
+    <h2 id="regulated-data">If you work with regulated data</h2>
+    <p>
+      This site's own examples reach into rare-disease research, so it is worth saying plainly
+      what aDNA is. It is an open specification for how knowledge files and directories are named
+      and annotated — <strong>a file-layout convention</strong>, not a system that runs. Adopting
+      it transmits nothing, because a naming convention has nothing to transmit with.
+    </p>
+    <p>
+      Because of that, <strong>we make no regulatory claim about it at all</strong>: nothing here
+      is certified, approved, audited, or warranted under any regime. If you keep regulated
+      material in a vault, the obligations that attach to it — HIPAA, GDPR, IRB review, or
+      whatever governs your work — rest entirely with <strong>you and the tools you actually
+      run</strong>: your machine, your storage, your agents, your institution's rules. A directory
+      layout cannot discharge any of them, and nothing on this site should be read as though it
+      could.
     </p>
 
     <h2 id="links-out">Links to other sites</h2>

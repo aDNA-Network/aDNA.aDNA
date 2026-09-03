@@ -43,6 +43,11 @@ TWIN_COMMONS="dist/commons.md"          # GR-4 O2 · D4 — AC-4's presence half
 TWIN_NETWORK="dist/network.md"          # GR-4 O3 · D3 — AC-3's framing half (G54k/G54l/G54m/G54n)
 TWIN_HOME="dist/index.md"               # GR-4 O4 · D5 — AC-5's entry point (G54p/G54q/G54r/G54s)
 NAV="src/utils/navigation.ts"           # GR-4 O4 · D5 — ADR-049's nav cap (G54o)
+TWIN_PRIVACY="dist/privacy.md"          # GR-4 O5 · R-124 — AC-8's posture (G54v/G54w/G54x)
+# GR-4 O5 · D6 — the ONLY non-excluded twin carrying "Lattice Protocol" [D], and therefore the whole
+# of G54t's control. Named as a variable rather than inlined so that if it stops being the one, the
+# harness fails at its existence check instead of quietly mutating a file that no longer matters.
+TWIN_EXCHANGE="dist/learn/tutorials/exchange-adoption-path.md"
 
 BAK="$(mktemp -d)"
 PASS=0; FAIL=0
@@ -58,11 +63,13 @@ cleanup() {
   [ -f "$BAK/twin_network" ]  && cp "$BAK/twin_network"  "$TWIN_NETWORK"
   [ -f "$BAK/twin_home" ]     && cp "$BAK/twin_home"     "$TWIN_HOME"
   [ -f "$BAK/nav" ]           && cp "$BAK/nav"           "$NAV"
+  [ -f "$BAK/twin_privacy" ]  && cp "$BAK/twin_privacy"  "$TWIN_PRIVACY"
+  [ -f "$BAK/twin_exchange" ] && cp "$BAK/twin_exchange" "$TWIN_EXCHANGE"
   rm -rf "$BAK"
 }
 trap cleanup EXIT
 
-for f in "$SPEC" "$MEASURE" "$SRC_PATTERN" "$SRC_TUTORIAL" "$TWIN_PATTERN" "$TWIN_TUTORIAL" "$TOUR" "$TWIN_COMMONS" "$TWIN_NETWORK" "$TWIN_HOME" "$NAV"; do
+for f in "$SPEC" "$MEASURE" "$SRC_PATTERN" "$SRC_TUTORIAL" "$TWIN_PATTERN" "$TWIN_TUTORIAL" "$TOUR" "$TWIN_COMMONS" "$TWIN_NETWORK" "$TWIN_HOME" "$NAV" "$TWIN_PRIVACY" "$TWIN_EXCHANGE"; do
   [ -f "$f" ] || { echo "HARNESS BUG: $f not found (build first? wrong cwd?)" >&2; exit 2; }
 done
 cp "$MEASURE" "$BAK/measure"
@@ -75,6 +82,8 @@ cp "$TWIN_COMMONS" "$BAK/twin_commons"
 cp "$TWIN_NETWORK" "$BAK/twin_network"
 cp "$TWIN_HOME" "$BAK/twin_home"
 cp "$NAV" "$BAK/nav"
+cp "$TWIN_PRIVACY" "$BAK/twin_privacy"
+cp "$TWIN_EXCHANGE" "$BAK/twin_exchange"
 
 # Prints the sorted set of failing assertion ids, e.g. "G54c G54h".
 #
@@ -95,7 +104,8 @@ restore_all() { cp "$BAK/measure" "$MEASURE"; cp "$BAK/src_pattern" "$SRC_PATTER
   cp "$BAK/src_tutorial" "$SRC_TUTORIAL"; cp "$BAK/twin_pattern" "$TWIN_PATTERN";
   cp "$BAK/twin_tutorial" "$TWIN_TUTORIAL"; cp "$BAK/tour" "$TOUR";
   cp "$BAK/twin_commons" "$TWIN_COMMONS"; cp "$BAK/twin_network" "$TWIN_NETWORK";
-  cp "$BAK/twin_home" "$TWIN_HOME"; cp "$BAK/nav" "$NAV"; }
+  cp "$BAK/twin_home" "$TWIN_HOME"; cp "$BAK/nav" "$NAV";
+  cp "$BAK/twin_privacy" "$TWIN_PRIVACY"; cp "$BAK/twin_exchange" "$TWIN_EXCHANGE"; }
 
 # case <n> <label> <declared-red-set> <mutation-verifier-cmd>
 check_case() {
@@ -337,13 +347,76 @@ perl -0pi -e "s/(## What's new\n)/\$1\nThe site changes in the open, and every r
 applied "$TWIN_HOME" 'The site changes in the open' "case 20" \
   && check_case 20 "a punctuated lead sentence puts the strip into the prose corpus" "G54s"
 
+# ── CASE 21 → G54t — the ABSENCE loses its control ───────────────────────────────────────────────
+# ⭐⭐ THE CASE THAT MAKES G54u's ZERO MEAN ANYTHING. G54u asserts that no retired protocol claim
+# reaches a reader. A zero is only evidence if the probe could have found something — and this case
+# removes the subject rather than the claim: it strips "Lattice Protocol" from the ONLY non-excluded
+# twin that carries it. G54u STAYS GREEN, correctly, because no claim was added — and G54t goes red
+# to say the green is now meaningless. ⇒ this is the difference between "the site makes no protocol
+# claim" and "the site has stopped mentioning the protocol", which a bare absence grep cannot tell
+# apart and would report identically. Convention 16's law with the subject removed instead of the
+# scope narrowed.
+perl -0pi -e 's/Lattice Protocol/Coordination Layer/g' "$TWIN_EXCHANGE"
+applied "$TWIN_EXCHANGE" 'Coordination Layer' "case 21" \
+  && check_case 21 "no non-excluded twin mentions the protocol ⇒ the absence has no control" "G54t"
+
+# ── CASE 22 → G54u — a retired protocol claim returns to a reader-facing surface ─────────────────
+# R-14's exact FALSE gloss, reintroduced on `/network` — the page whose subject is local-vs-federated
+# and therefore the likeliest place a future editor would reach for it. ⚠ Note the surface: gate-23
+# already guards this string, but ONLY ON THE HOMEPAGE ("has returned to the homepage", :82), so a
+# green there is a true statement about `/` and nothing else. This case reds via G54u, not gate-23,
+# and that is the point — convention 18's family, and the reason the D6 limb is site-wide.
+perl -0pi -e 's/(## Running a model on your own machine\n)/$1\naDNA is built on the open coordination protocol.\n/' "$TWIN_NETWORK"
+applied "$TWIN_NETWORK" 'open coordination protocol' "case 22" \
+  && check_case 22 "R-14's retired gloss is live again on /network" "G54u"
+
+# ── CASE 23 → G54v — the /privacy twin collapses to its pointer block ────────────────────────────
+# ⚠ DECLARES THREE IDS AND THAT IS CORRECT (case 17's precedent). When the twin is a stub, G54w has
+# no section to find and G54x's ABSENCE assertion has nothing to read — and an absence assertion that
+# passes over a missing file is the worst green in this gate. The coverage limb is what makes the
+# honest report "all three unread" rather than "two passed".
+head -6 "$BAK/twin_privacy" > "$TWIN_PRIVACY"
+applied "$TWIN_PRIVACY" 'Markdown twin of' "case 23" \
+  && check_case 23 "privacy twin collapsed to a stub ⇒ every AC-8 assertion is unread" "G54v G54w G54x"
+
+# ── CASE 24 → G54w — the posture is reduced to a MENTION ─────────────────────────────────────────
+# The heading survives, the anchor survives, a sentence survives — and the section stops answering
+# the question. This is case 11's shape a third time (G54j: "ancient DNA" alone is a mention) and
+# the reason R-124's row says "the defect is ROUTING, not policy": a reader who finds the heading
+# and then finds nothing under it is worse served than one who finds no heading at all, because the
+# site has now told them the question was considered.
+# ⚠ The replacement KEEPS all three of Ruling 1's required elements — file-layout convention,
+# transmits nothing, HIPAA — so this case cannot red via the element check. It reds via the DERIVED
+# FLOOR alone, which is what proves the floor is the thing separating a posture from a mention.
+perl -0pi -e 's/(## If you work with regulated data\n).*?(\n## )/$1\naDNA is a file-layout convention. It transmits nothing. HIPAA obligations rest with you.\n$2/s' "$TWIN_PRIVACY"
+applied "$TWIN_PRIVACY" 'HIPAA obligations rest with you' "case 24" \
+  && check_case 24 "the section is reduced below its derived floor ⇒ a mention, not a posture" "G54w"
+
+# ── CASE 25 → G54x — ⭐ THE LOAD-BEARING CASE FOR AC-8 ───────────────────────────────────────────
+# NOTHING IS REMOVED. The disclaimer stays word for word; one reassuring clause is added — the single
+# most natural edit anyone would make to a page that has just told a clinician "no". Every other
+# assertion stays GREEN: the heading is there (G54w), all three of Ruling 1's elements are there, the
+# section is longer than its floor, and it reads MORE helpful than before. And the posture has become
+# a promise. ⇒ G54n's shape one criterion across, and the signature said so before either existed:
+# "the failure mode of a disclaiming posture is not that it goes missing, it is that it quietly
+# becomes a promise." ⚠ The clause used is deliberately the plausible one, not a straw man.
+# ⚠ ANCHORED ON A SENTENCE END THAT SITS WHOLLY ON ONE TWIN LINE. The first draft anchored on
+# "moves no data anywhere." — a sentence the AC-7 enumeration then CUT from the copy as an unscoped
+# absolute (the R-161 class). The harness reported it as a HARNESS BUG and failed ALONE, which is
+# O3's `applied` restore fix earning itself a second time. ⇒ a red-test case is coupled to the copy
+# it mutates, and a copy edit is a same-diff change to its own harness (convention 7 / ADR-057, one
+# altitude down).
+perl -0pi -e 's/(nothing to transmit with\.)/$1 Vaults are HIPAA compliant when kept on encrypted storage./' "$TWIN_PRIVACY"
+applied "$TWIN_PRIVACY" 'HIPAA compliant' "case 25" \
+  && check_case 25 "the disclaimer acquires a compliance promise while reading better" "G54x"
+
 # ── FINAL CONTROL — the tree was left as found ───────────────────────────────────────────────────
-echo "control 21: tree restored"
+echo "control 26: tree restored"
 if [ -z "$(failing_set)" ]; then
-  echo "  ✓ control 21: gate green again ⇒ every mutation was reverted"
+  echo "  ✓ control 26: gate green again ⇒ every mutation was reverted"
   PASS=$((PASS+1))
 else
-  echo "  ✗ control 21: gate STILL RED after restore — the harness has left the tree mutated" >&2
+  echo "  ✗ control 26: gate STILL RED after restore — the harness has left the tree mutated" >&2
   FAIL=$((FAIL+1))
 fi
 

@@ -1795,3 +1795,203 @@ that table. Any future `§N.M Counts` section is appended **after** this one, ne
 **and it must be a PARSEABLE TABLE, not a prose sentence.** §18.3 records why both halves are
 spelled out: §17.5 transferred the position obligation, O3 followed it exactly, and shipped the
 tally as prose — *a note that transfers one obligation reads as if it transferred all of them*.
+
+## §20 — GR-4 O5: the story that stays unshipped, and the smallest posture that discharges R-124 (2026-09-03)
+
+`AC-6` · `AC-8` · `AC-7` at mission level · verification limbs `V6` and `V7`, with `V3`'s owed half.
+New public copy on `/privacy` (the `#regulated-data` section). ⚠ **Dated 09-03, and the mission's
+other four objectives are dated 09-02** — this sitting opened at **2026-09-03 02:10 UTC** while the
+node's local clock still read 09-02. The vault is UTC; a local stamp would have filed O5 under the
+same date as its predecessors and *read exactly like continuity*.
+
+### §20.1 The enumeration, and the four things it cut
+
+⭐ **The claim set is ENUMERATED FROM THE DIFF**, per §16.1's ratified rule (DEFECT-5).
+
+Enumerator: `git diff -- site/src/pages/privacy/index.astro`, added lines only. **52 added lines**
+`[D]`, classified **structurally, not by grep** — a first pass used pattern classes that did not sum
+to the total, which is a typed figure wearing a derivation's clothing: **5 blank · 26 Astro comment ·
+4 JS comment · 11 prose · 5 markup · 1 frontmatter**.
+
+⚠ **30 of the 47 non-blank added lines are COMMENT — 64%, nearly 3× the prose.** That is not
+padding and it is worth stating: this section's failure mode is not that it goes missing but that a
+later editor helpfully improves it, so the rationale is the part doing the protective work. The
+comment names what was cut and why, precisely so it is not restored.
+
+⭐⭐ **AND THE ENUMERATION CUT FOUR THINGS FROM THE FIRST DRAFT — the third consecutive objective in
+which this rule stopped a claim at enumeration rather than at review** (O1: the tier-ordering
+contradiction; O3: the word the registry does not publish; here, four at once).
+
+1. **"and clinical work"** — the draft said the site's examples *"reach into rare-disease and
+   clinical work."* Re-derived on the `/` twin `[D]`: **rare ×15 · undiagnosed ×2 · Wilhelm ×2 —
+   and `clinical` ZERO times.** The sentence described the site's examples as something they are
+   not, *in the section written because a clinician could not find her question answered.* Cut to
+   *"rare-disease research"*. ⚠ The register's own R-124 row cites *Wilhelm ×3*, measured 08-19; it
+   is **2** today — a figure that was right when written and was never re-read.
+2. **"a processor"** — the draft read *"not a platform, a processor, or a service."* **`Processor`
+   is a GDPR term of art**, and denying a defined legal role is itself a regulatory
+   self-characterisation — **inside the one section whose entire purpose is to make none.** ⇒ the
+   disclaimer had reached for the vocabulary of a regime it disclaims. Cut.
+3. **"moves no data anywhere"** — an unscoped absolute, and **the R-64 / R-97 / R-161 over-promise
+   class, on a fourth surface, in the mission that narrowed it on the third one objective ago.**
+   Scoped to the convention, which genuinely has no network behaviour: *"Adopting it transmits
+   nothing, because a naming convention has nothing to transmit with."*
+4. **The definition was rewritten to sit WITH the site's ratified wording rather than beside it.**
+   The draft opened *"aDNA is a file-layout convention"* — ⛩ Ruling 1's exact words — while `/`
+   says **"aDNA is an open specification"** `[D]`. Both are true and narrowing is convention 1's
+   safe direction, but two rival opening definitions on one site is a reader's problem, not a
+   logician's. The copy now carries **both, in one sentence**, with Ruling 1's phrase intact.
+
+**Named as excluded, so the exclusion is auditable rather than silent** (§18.1/§19.1's discipline):
+
+- **`<h2>` "If you work with regulated data"** — a heading and anchor. It asserts no fact. ⚠ It is
+  nonetheless **the single most load-bearing string in the section**, because R-124's own diagnosis
+  is *"the defect is ROUTING, not policy"*: without a heading a reader scanning for the question
+  never learns it was answered. Asserted by `G54w`, not registered as a claim.
+- **`updated = '2026-09-03'`** — the `policy-foot` date. §19.1's ruling governs: a date is not a
+  claim about the world.
+
+| ID | Surface | Claim | Verdict | Basis | Sev | Prov |
+|---|---------|-------|---------|-------|-----|------|
+| **R-165** | `/privacy` | *"This site's own examples reach into rare-disease research"* | **verified** | Re-derived on the `/` twin at this commit `[D]`: **rare ×15 · undiagnosed ×2 · Wilhelm ×2**. ⭐ The word **`clinical` measures ZERO** and was cut from the draft for that reason — see §20.1(1). This is the sentence that earns the section's existence: R-124's defect is that the site's framing invites a question no page acknowledged | — | [D] |
+| **R-166** | `/privacy` | *"an open specification for how knowledge files and directories are named and annotated — a file-layout convention, not a system that runs"* | **verified** | *"Open specification"* is the site's own ratified wording (`/` twin `[D]`); *"file-layout convention"* is ⛩ Ruling 1's. The narrowing half is what the section needs and it moves the claim **DOWN** (convention 1). Asserted by `G54w`, whose element check requires the literal phrase | — | [D] |
+| **R-167** | `/privacy` | *"Adopting it transmits nothing, because a naming convention has nothing to transmit with."* | **verified** | ⭐ **Scoped, and the scoping is the claim.** The draft's *"moves no data anywhere"* was the R-64/R-97/R-161 over-promise class recurring on a fourth surface — a vault pushed to a remote **does** move data. This sentence is about the **convention**, which has no network behaviour at all, and is therefore unfalsifiable by anything the reader's own tooling does. Asserted by `G54w` | — | [D] |
+| **R-168** | `/privacy` | *"we make no regulatory claim about it at all: nothing here is certified, approved, audited, or warranted under any regime"* | **verified** | ⛩ Ruling 1's core. **Deliberately REGIME-FREE**: no regime is named in the denial. *"aDNA is not HIPAA compliant"* would be true and would still read, to a skimming eye, as *"HIPAA … compliant"* — a disclaimer that scans as the promise it denies, and a polarity no literal probe can see. Asserted **negatively** by `G54x`, red-proven by case 25 | — | [D] |
+| **R-169** | `/privacy` | *"the obligations that attach to it — HIPAA, GDPR, IRB review, or whatever governs your work — rest entirely with you and the tools you actually run"* | **verified** | ⛩ Ruling 1's third element, verbatim in substance. ⭐ **The regime names appear HERE and nowhere else in the section** — only in the sentence that hands the obligation away, never adjacent to an affirming word. `G54w` requires `hipaa` to be present; `G54x` requires no affirmative adjacency | — | [D] |
+| **R-170** | `/privacy` | *"A directory layout cannot discharge any of them, and nothing on this site should be read as though it could."* | **verified** | The closing narrowing sentence, and the one that makes the section a **posture** rather than a hedge: it forecloses the inference the whole page could otherwise invite. Covered by `G54x`'s absence assertion and `G54w`'s floor | — | [D] |
+
+### §20.2 ⭐⭐ The finding: AC-6's own label resolves to NOTHING, and a grep for it would have passed
+
+`AC-6`'s subject is the Lattice **"movement 3"** story. Measured before anything was built `[D]`:
+
+| Where the label was looked for | Occurrences of `movement` |
+|---|---|
+| `directives/COWORK_DIRECTIVE_operation_haussmann_genesis.md` (the campaign order) | **0** |
+| `directives/OPERATION_VITRUVIUS_review_instrument.md` | **0** |
+| `LatticeProtocol.aDNA/what/whitepaper/source/whitepaper.tex` | **4**, every one ordinary English (*"the DeSci movement"*, *"lateral movement of data"*) |
+
+The term enters the campaign in **its own** `rubric_v1.md` and `situation_report.md`, both attributing
+it to *"new scope **the order adds**"* — and the Grande Revue order was **verbal** (*"Commissioned by
+chief-of-staff order 2026-08-27"*), so there is no artifact to resolve it against.
+
+⇒ **A gate greping for `movement 3` would return 0, go green, and check nothing whatsoever.**
+
+⭐⭐ **This is O3's homonym finding ENTERED FROM THE OTHER SIDE, and the pair is the reusable part.**
+At O3 a shared notation (`L0–L3`) resolved to the **wrong** referent and produced a confident false
+**positive**. Here the notation resolves to **no** referent and produces a false **negative that is
+indistinguishable from a met criterion** — because AC-6's met-state *is* absence. Same family, and
+the second one is worse, because the first announces itself the moment you read what you matched.
+
+> ***A grep cannot tell you what it found, and it especially cannot tell you that it found nothing
+> because there was never anything to find.***
+
+**The subject was therefore taken from D9(e)'s own body rather than from its label**: the
+**embargoed protocol-opening story**, keyed to R-14/R-15 and to the P1-2 leak. That subject has a
+checkable vocabulary precisely because **it has shipped and been retired three times** — R-14's
+*"open coordination protocol"*, P1-2's *"federating on the Lattice Protocol"*, R-125's *"built on
+the Lattice Protocol"*. `G54u` asserts all three; `G54t` controls the zero.
+
+**Measured, on the built tree `[D]`:**
+
+- All three retired claims: **0** occurrences across every non-excluded twin.
+- **The control**: `dist/learn/tutorials/exchange-adoption-path.md` is the **only** non-excluded twin
+  mentioning the Lattice Protocol ⇒ the probe reaches protocol text, so the zero is about the
+  **site** and not about the probe. Red-proven by case 21, which removes the *subject* rather than
+  the claim and reds `G54t` **alone** while `G54u` correctly stays green.
+- **GR-4's own diff adds none of it**: `git diff 7210d5e..HEAD -- site/src/` touches 5 files and
+  adds **zero** lines carrying protocol or horizon vocabulary `[D]`.
+
+⚠ **And the absence is NOT total — which a bare "movement 3 is absent" would have hidden.** Two
+horizon passages are already live and both were found by asking what the subject *is*:
+
+1. `/learn/tutorials/exchange-adoption-path` carries a candor-framed passage — *"the draft
+   `lattice-ledger` spec"*, *"the Protocol repo itself is **pre-public-launch**"*, *"the horizon"*,
+   tagged `TAUGHT-AS-DESIGN`. **It makes no availability claim**, so AC-6 holds; but *"movement 3 is
+   absent"* is false as stated, and the honest sentence is that the horizon story is **present and
+   candor-framed**.
+2. `/get-started/what-your-agent-reads/skill-onboarding` carries ***"The marketplace is coming
+   soon."*** — the one un-candid promise about the protocol horizon anywhere on the site. It is
+   **byte-vendored `.adna` content**, unfixable here (Standing Rule 1; editing the published copy
+   would trade a copy defect for a trust defect on the surface built to be checked), and it is
+   **already registered as `F-w`** with a named destination.
+
+⭐ **`F-w` was filed at GR-1 as a trust-page defect (P2-3). It is also the single un-candid instance
+of D6's own subject, and nothing had connected the two** — the same row, read through the criterion
+convened five days later to rule on exactly that story.
+
+⛔ **`gate-23` already guards R-14's gloss — but only on the homepage** (*"has returned to the
+homepage"*, `:82`), so its green is a true statement about `/` and nothing else. `G54u` is
+site-wide. **Convention 18's family, and the reason the D6 limb is not scoped to one page.**
+
+### §20.3 ⚠ The correction of the revue's figure was ITSELF wrong, in the same direction
+
+The revue's D9(e) called the ratified *"opening progressively"* phrasing ***"currently 0 hits
+corpus-wide"***. GR-4's recon corrected that to **"4 in source, of which 2 render and 2 are source
+comments"**, and that correction has been carried since — in this mission's `AC-6`, its body, the
+campaign governance file, and the amendment proposal.
+
+**Re-derived at the object, on the built tree `[D]`:**
+
+| Surface | Command | Result |
+|---|---|---|
+| Source | `grep -ro "opening progressively" src/` | **4** — `HomeHero.astro:252`, `HomeHero.astro:379`, `state-of-the-network/index.astro:193`, `:196` |
+| …of which render | each occurrence read at the object | **1** — only `:196`, a `<strong>`. `:252`, `:379` and `:193` are all `{/* … */}` **comments** |
+| Rendered HTML | `grep -ro … --include="*.html" dist/` | **1**, `dist/state-of-the-network/index.html` |
+| Rendered twin | `grep -ro … --include="*.md" dist/` | **1**, `dist/state-of-the-network.md:114` |
+
+⇒ **It is 1 rendered and 3 comments, not 2 and 2.**
+
+⭐⭐ **The mechanism is the reusable part: the TOTAL was derived and the BREAKDOWN was typed.** The
+recon ran a real command for `4`, then **partitioned it by inference** — reading `:252`'s explicit
+*"CUT, not rewritten"* as the comment and assuming its sibling at `:379` was the render, without
+opening `:379`. ⇒ ***a derived total can carry an underived breakdown, and the breakdown is what the
+conclusion rests on*** — KW-14 one level down, and **the same shape as the error it was correcting**.
+
+⚠ **A second carried claim also fails here.** The campaign record says *"a source grep and a
+rendered grep disagree **in both directions** on this one phrase."* They do not: source **4**,
+HTML **1**, twin **1** — the disagreement is **one-directional** (source over-counts by 3) and HTML
+and twin **agree exactly**. The both-directions case is real but it is **P4.5b's *"context
+democracy"*** (HTML 2, twins 1), a different phrase. *A general lesson was attached to a specific
+instance that does not exhibit it.*
+
+⛔ **The conclusion survives its arithmetic, and that is stated rather than smoothed over.** D9(e)'s
+figure was **0**; the true figure is **1**; the remedy was keyed to the phrase being *available and
+unused*, and it is **deployed and carrying the horizon claim**, landed `9e0fd06` **2026-08-18 — ten
+days before the revue measured it** `[D]`. So D6's real question was never *"shall we introduce this
+phrasing"* but ***"is the horizon claim already made, and is more wanted under the embargo?"*** —
+and under the ⛩ ratified hold (*battle plan: "hold under embargo … revisit at D-8"*) the answer is
+**no**. **AC-6 is met by nothing shipping, and that is the criterion, not a shortfall.**
+
+### §20.4 ⛔ R-124 is read back at its own destination — and it does NOT move
+
+⛩ Ruling 1's condition is exact: **the row moves when the section is LIVE ON THE SURFACE, never when
+it is written.** Measured at the close `[D]`: the section is **built** (`dist/privacy.md:55`, 892
+chars, three ratified elements present, `G54v`/`G54w`/`G54x` green, red-proven 3/3) and production
+serves **`a852423`**, which does not contain it.
+
+⇒ **`R-124` stays `gap → open`.** Its ⛩ ruling, its criterion and its verification are all recorded
+above; what is *not* recorded is a resolution, because there is not one yet. *A fix's commit is not
+the register's strike* (`F-n`) — and this campaign has been bitten **four times** by a routing
+verified in the prose that routed it rather than at the destination.
+
+**Discharge condition, stated so the next reader does not have to reconstruct it:** R-124 resolves
+when a production deploy carries `#regulated-data` to `adna.network/privacy` and the section is
+re-probed live. **No deploy is authorized or owed by this mission** — Lane D is met on-build.
+
+### §20.5 Counts — derived last
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **189** |
+| **Unique ids** | **174** (14 `G-*` + 160 `R-*`, `R-11`…`R-170`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, **not typed**, and re-run *after* §20 was
+written. Reconciles against §19: rows **183 + 6 = 189**, ids **168 + 6 = 174**, `R-165` → `R-170`.
+
+⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order.** This section is now
+that table. Any future `§N.M Counts` section is appended **after** this one, never inserted above —
+**and it must be a PARSEABLE TABLE, not a prose sentence.** ⭐ Both halves are spelled out because
+§17.5 stated only the first, O3 obeyed it exactly, published its tally as prose, and turned `G41b`
+**blind rather than red** — *a note that transfers one obligation reads as if it transferred all of
+them, and the half it does not mention is the half nobody checks.*

@@ -6,11 +6,11 @@ campaign: campaign_haussmann
 phase: GR                  # Grande Revue lane, no phase number — GR-1's precedent, GR-2/GR-3 following.
 decade: 2
 owner: stanley
-status: in_progress   # ⛩⛩ SIGNED 2026-09-02 — THE GATE IS PASSED AND GR-4 IS BUILDING. All four questions ruled: **R-124 → MINIMAL DISCLAIMING POSTURE** (new AC-8) · **D3 → route to where the L0–L3 ladder actually lives**, branch (i), the false premise corrected rather than built around · **D4 → `/commons`**, the surface the MEASUREMENT selected (headroom 3.39 vs `/about` 0.57 and `/` 0.04) and one neither of the revue's disjuncts named · **both §8 admin items PERFORMED in this same commit** (charter 30→31 + bands; the capture estate folded under the ratified Refit policy in its dangle-safe order). Budget ⛩ ratified at the **AMENDED** ~255–400 kT / 2–3 sessions — Ruling 1 turned an ⛩ disposition into a deliverable, and the delta was quoted at the moment the ruling was taken (proposal §9.2). ~~⏸ OPEN AND HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE — nothing built, no copy authored, criteria NOT ratified, budget NOT ratified.~~ *(struck same-diff at the signature, never left to be inferred from a status field — P1-7's own lesson.)* Opened on the P4.2/P4.3/P4.4a/P4.4b/P4.5b/P5.1/GR-1/GR-2/GR-3 precedent: **pass first, no build until signed.**
+status: completed   # ✅✅ CLOSED 2026-09-03 — ALL EIGHT CRITERIA MET, AAR filed (SO#5). AC-1 ✅ AC-2 ✅ AC-3 ✅ AC-4 ✅ AC-5 ✅ AC-6 ✅ AC-7 ✅ AC-8 ✅ · V1–V7 ✅. Suite: chromium 684 · all-projects 710 · snapshot 26 · run 683 passed / 1 skipped / 0 failed · red-test 27/0 · html-validate 0 control-checked · gitleaks 1025 commits no leaks. ⛔ NOTHING DEPLOYED AND NOTHING OWED TO PRODUCTION — Lane D is met on-build, as every GR mission before it; prod serves `a852423`. ⛔ R-124 is BUILT, NOT LIVE, and its row deliberately does NOT move (register §20.4). GRANDE REVUE's Gate-1 order is now COMPLETE: B → P4.4b B1+B2a → GR-1 → Lane D, all four lanes closed.
 mission_class: content     # ⚠ FIRST content-class mission to reach this gate. Every prior convention-13 pass was aimed at a BUILD mission; the failure modes here are different and are named in the pass.
 executor_tier: opus        # judgment-heavy and NOT because it is large: the work is authoring public claims under an active embargo, against an unresolved audience question, on surfaces whose reading-level headroom is measured in hundredths. A cheaper tier reproduces exactly the defect class this campaign exists to retire — a claim moving UP.
 token_budget_estimated: "⛩ RATIFIED 2026-09-02 at **~255–400 kT / 2–3 sessions** — §7's branch-(i) band (~230–360) **plus AC-8's ~25–40**, because Ruling 1 turned R-124 from an ⛩ disposition into a deliverable. ⭐ The delta was quoted **in the same act as the ruling**, which is the sibling of convention 13's own lesson: a budget ratified before the pass is costed against a spec nobody has read, and a budget ratified before the OPERATOR'S RULINGS is costed against a scope nobody has chosen yet. Both are fixed the same way. ⚠ ~40 kT of O0 is the campaign CLAUDE.md, auto-loaded — named, not absorbed (GR-3's precedent)."
-token_budget_actual: ""
+token_budget_actual: "≈205–275 kT across 2 sessions — RECORDED AT THE TIME, not reconstructed (AC-7). Against the ⛩ ratified ~255–400 kT / 2–3 sessions: INSIDE the band at both ends and UNDER it at the low end, on 2 of the ratified 2–3 sessions. No SO#11 retrospective triggers. ⭐ The band held because the two costing lessons this campaign paid for were spent FORWARD rather than re-learned: gate-49's TEMPLATES list was read BEFORE costing each of O3, O4 and O5 (`/network` no, `/` yes, `/privacy` no), and the +25–40 kT AC-8 delta was quoted in the same act as ⛩ Ruling 1 instead of absorbed. ⚠ O5 ran at the top of its own ~55–90 kT estimate: the AC-7 enumeration turned into four copy revisions and a red-test anchor repair, which is the estimate learning what the subject was rather than scope drift."
 created: 2026-09-02
 last_edited_by: agent_rosetta
 grounded_in:
@@ -32,9 +32,9 @@ acceptance_criteria:
   - "AC-3 [D3 · local models] — ⛩⛩ RE-RULED 2026-09-02 AT O3's OPEN, strike-not-delete, and PERFORMED HERE IN THE SAME COMMIT AS THE BUILD so the criterion and the artifact are never left disagreeing (convention 7 / ADR-057): a *planned*-framed local-models section ships ON `/network`. ~~WHERE THE L0-L3 LADDER ACTUALLY LIVES (⛩ RULING 2, branch (i)), NOT on `/network`~~ — ⛔ THAT DESTINATION DID NOT EXIST, for TWO independent reasons measured at the object [D]: (1) `L0-L3` is a HOMONYM — `agentic-literacy.mdx:12-14` is `L0 Aware → L1 User → L2 Builder → L3 Architect`, a HUMAN-LITERACY ladder, and the recon matched four labels and inferred a subject; (2) the COMPUTE ladder's only site-wide home is `src/data/tour/workspace-router.txt:133-137`, BYTE-VENDORED, so branch (i) executed literally would have routed authored copy into the tree Standing Rule 1 forbids and AC-1's own exclusion exists to protect (F-w's trust-page reasoning, third row). ⚠ The revue's home-claim STAYS FALSE and its CONCLUSION survives: `/network` still carries 0 L0-L3 and 0 compute-tier, and is the right home because it owns the aDNA-computer / local-vs-federated story (Standing Rule 4) — which is what `run a model on your own machine` continues. Every sentence is distinguishable BY TEST from a live claim, and the copy is checked against the counsel embargo and R-14/R-15 before it ships (CONSTRAINT-1: D1 and D2 are this vault's own live doctrine and are embargo-safe; D3 is not, and no criterion said so)."
   - "AC-4 [D4 · ancient DNA] — the ancient-DNA disambiguation is PRESENT on `/commons` (⛩ RULING 3, the surface the MEASUREMENT selected: headroom 3.39 vs `/about` 0.57 and `/` 0.04), asserted on the `.md` TWIN — the surface whose verb is 'a reader encounters' — AND `/commons`'s prose FKGL stays at or under its own target, re-measured by `reading_census.mjs` with the before-figure recorded in the same artifact. ⚠ DEFECT-1 remedy: the presence half is the criterion's SUBSTANCE and was tested by nothing; and because FKGL FALLS as prose gets shorter, the constraint limb moves in the reassuring direction exactly when the criterion is met."
   - "AC-5 [D5 · latest strip] — ✅ MET AT O4 2026-09-02. A returning-member entry point to changelog/RSS exists above the footer, and the top-level nav still holds exactly 7 flat entries (ADR-049's cap, derived from `navigation.ts`, not typed). ⛩ FORM RULED AT O4's OPEN (SO#1 — the criterion fixes the surface and says nothing about the form): a dated strip with NO lead sentence, because on `/` the form is a measurement decision as much as an editorial one. ⚠⚠ THIS CRITERION CARRIES NO READING-LEVEL CONSTRAINT — the third consecutive objective with that gap (AC-3 had none; AC-4's was DEFECT-1) — and `/` clears its target by 0.04, the tightest margin on the site. The gap is made SAFE rather than merely unmeasured by `G54s`, which asserts that nothing in the strip enters `/`'s prose corpus: measured 9.96 → 9.96 with the corpus byte-identical at 6030 chars, and asserted so it RECURS, because `unpunctuated-block` holds the section out only while it carries ZERO sentence terminators and one full stop — a lead sentence, or a future changelog title — removes the property silently."
-  - "AC-6 [D6 · movement 3] — movement-3 stays UNSHIPPED under the embargo, and that is the criterion being MET. Its evidence is a dated absence assertion naming its surface. ⚠ It ALSO corrects, at the record, the revue's false parenthetical that the ratified 'opening progressively' phrasing has 0 hits corpus-wide."
+  - "AC-6 [D6 · movement 3] — ✅ MET AT O5 2026-09-03, and the met-state is that NOTHING SHIPPED. Evidence: a dated absence assertion naming its surface (the rendered `.md` twins, excluding `changelog.md` and the byte-vendored `get-started/what-your-agent-reads/**`, both exclusions ASSERTED by `G54t`). ⭐⭐ THE CRITERION'S OWN LABEL RESOLVES TO NOTHING: `movement 3` is 0 in both campaign directives [D], the whitepaper's 4 hits are ordinary English, and the Grande Revue order was VERBAL ⇒ a gate greping the label returns 0, goes green, and checks nothing — O3's homonym finding entered from the other side, and the worse half, because AC-6's met-state IS absence. Subject re-derived from D9(e)'s body: the embargoed protocol-opening story, whose vocabulary is checkable because it SHIPPED AND WAS RETIRED THREE TIMES (R-14 · P1-2 · R-125), all three measuring 0 across every non-excluded twin. ⚠ The absence is NOT total and that is said rather than hidden: a candor-framed horizon passage is already live on `/learn/tutorials/exchange-adoption-path`, and the vendored `skill-onboarding.md` carries the one un-candid promise — which is `F-w`, filed at GR-1 as a TRUST-PAGE defect and never connected to D6 until now. ⚠ It ALSO corrects, at the record, the revue's false parenthetical that the ratified 'opening progressively' phrasing has 0 hits corpus-wide — AND corrects this mission's own correction of it: re-derived [D] it is 1 RENDERED and 3 COMMENTS, not 2 and 2. The total was derived and the breakdown was typed."
   - "AC-7 [governance] — every new public sentence carries a claim-register row, with THE CLAIM SET ENUMERATED FROM THE DIFF and the enumeration itself asserted; every count this mission narrates is derived by its own command; R-124's disposition is read back IN the register; AAR filed (SO#5); `token_budget_actual` recorded at the time, not reconstructed. ⚠ DEFECT-5 remedy: a limb that confirms the rows it was handed is structurally blind to a row nobody remembered — the over-masking shape (masks only ever grow) arriving in a governance limb."
-  - "AC-8 [R-124 · ⛩ RULING 1] — `/privacy` carries a short section stating that aDNA is a file-layout convention, that nothing is transmitted, and that HIPAA/GDPR/IRB obligations rest with the OPERATOR AND THEIR OWN TOOLING. It asserts NO compliance claim of any kind. Every sentence carries a register row, and R-124's row moves AT ITS OWN DESTINATION — and moves ONLY when the section is live on the surface, never when it is merely written. ⚠ If the section cannot be written without implying a compliance posture, that is a FINDING TO REPORT, not a sentence to force (convention 1: claims move down, never up)."
+  - "AC-8 [R-124 · ⛩ RULING 1] — ✅ MET AT O5 2026-09-03. `/privacy` carries `<h2 id=\"regulated-data\">` — 892 chars, placed after `#your-vault` — stating that aDNA is a file-layout convention, that adopting it transmits nothing, and that HIPAA/GDPR/IRB obligations rest with the OPERATOR AND THEIR OWN TOOLING. It asserts NO compliance claim of any kind (`G54x`, red-proven by case 25: nothing removed, one reassuring clause added, every other assertion green). ⛩ FORM RULED AT O5's OPEN (the signature said in terms that the wording was not pre-approved): a new `<h2>` with its own anchor, because R-124's diagnosis is 'the defect is ROUTING, not policy'. Six register rows R-165…R-170. ⭐⭐ THE AC-7 ENUMERATION CUT FOUR THINGS FROM THE DRAFT: 'clinical' (the `/` twin measures it ZERO while rare reads 15), 'a processor' (a GDPR TERM OF ART — denying a defined legal role is itself a regulatory self-characterisation, inside the section whose purpose is to make none), 'moves no data anywhere' (the R-64/R-97/R-161 over-promise class on a FOURTH surface, in the mission that narrowed it on the third one objective ago), and a definition that competed with the site's ratified 'open specification'. ⛔ R-124's ROW DOES NOT MOVE: Ruling 1's condition is that it moves when the section is LIVE, and prod serves `a852423`. Discharge condition recorded at register §20.4."
 verification_method: >-
   V1 [asserts AC-1, AC-2] — a content probe over AUTHORED source only, with `src/data/tour/**` excluded
   BY NAME and the exclusion asserted (gate-48's ratified discipline: the exclusions are part of the
@@ -548,8 +548,141 @@ committed as a rider — *the receiving commit is the read-receipt*. ⛩ **Vitru
 `decision_required: true`** (approve/refuse/amend the `/g/adna/` Graph Front-Page) and **Hopper's
 hook 4.2.0 carries `ack_required: true`**; both replies are outward acts with their own ⛩ GO.
 
-⏭ **NEXT: `O5`** — D6 + AC-8's `/privacy` section + the close cascade + the AAR.
+~~⏭ **NEXT: `O5`** — D6 + AC-8's `/privacy` section + the close cascade + the AAR.~~ ✅ **DONE.**
 
-## AAR
+## O5 — DONE 2026-09-03 (`AC-6` ✅ · `AC-8` ✅ · `AC-7` ✅ · `V3` ✅ · `V6` ✅ · `V7` ✅)
 
-*(filed at close, per SO#5 — before `status: completed`)*
+D6 stays **unshipped**, which is the criterion. R-124 ships as **`<h2 id="regulated-data">`** on
+`/privacy`. Full record: `artifacts/gr_4/o5_d6_r124_record.md`; register **§20**.
+
+⚠ **Dated 09-03 while O0–O4 are dated 09-02.** This sitting opened at **2026-09-03 02:10 UTC** with
+the node's local clock still reading 09-02. The mission spans a UTC date boundary and the record says
+so rather than flattening it — the gate sitting's own finding (*a timestamp is a measurement, and it
+has a zone the way a count has a command*) recurring in the direction that would have been invisible.
+
+**Derived, each by its own command `[D]`:** chromium **679 → 684** (delta isolated by `--list`:
+gate-54's own file **19 → 24**, `684 − 660 = 24` ⇒ **+5, removed nothing**) · all-projects **710** ·
+**snapshot 26, UNCHANGED** · run **683 passed / 1 skipped / 0 failed** · `check:markup` **0**,
+control-checked against a deliberately invalid file that exits 1 · red-test **27 pass / 0 fail**,
+every case red at exactly its declared set · `gitleaks` **1025 commits, no leaks**.
+⛔ **Nothing deployed and nothing owed** — met on-build; prod serves `a852423`, re-probed at the open.
+
+⛩ **A question the signature did not settle was put to the operator (SO#1)** — and the signature said
+in terms that *"AC-8's exact wording is not pre-approved."* **Ruled: a new `<h2>` with its own anchor**,
+matching `/privacy`'s seven-sibling idiom. R-124's own diagnosis is *"the defect is ROUTING, not
+policy"*, so a reader scanning headings must be able to find that the question was answered.
+
+### ⭐⭐ AC-6's own label resolves to NOTHING, and a grep for it would have passed
+
+`movement 3` appears **0 times in both campaign directives** `[D]`; the whitepaper's four hits are
+ordinary English (*"the DeSci movement"*); the term enters via this campaign's own `rubric_v1.md` and
+`situation_report.md`, both attributing it to *"new scope the order adds"* — and **the Grande Revue
+order was VERBAL**, so there is no artifact to resolve it against.
+
+⇒ **A gate greping the label returns 0, goes green, and checks nothing whatsoever.**
+
+⭐⭐ **This is O3's homonym finding entered from the OTHER SIDE, and the pair is the reusable part.**
+There, a shared notation resolved to the **wrong** referent — a confident false **positive**. Here it
+resolves to **no** referent and yields a false **negative indistinguishable from a met criterion**,
+because AC-6's met-state *is* absence. ***A grep cannot tell you what it found, and it especially
+cannot tell you that it found nothing because there was never anything to find.***
+
+The subject was taken from **D9(e)'s own body** instead: the embargoed protocol-opening story, keyed
+to R-14/R-15 and the P1-2 leak — which has a checkable vocabulary precisely because **it has shipped
+and been retired three times** (R-14 · P1-2, fixed at GR-1 `311b3c3` · R-125). All three measure
+**0** across every non-excluded twin, and GR-4's own diff adds **0** lines of it.
+
+⚠ **The absence is NOT total, and a bare "movement 3 is absent" would have hidden both cases.**
+`/learn/tutorials/exchange-adoption-path` already carries a **candor-framed** horizon passage
+(*"pre-public-launch"*, *"draft"*, `TAUGHT-AS-DESIGN`) — no availability claim, so AC-6 holds, but the
+honest sentence is *present and candor-framed*, not *absent*. And the vendored
+`skill-onboarding.md` carries ***"The marketplace is coming soon"*** — the one un-candid promise about
+the horizon anywhere on the site. ⭐ **That is `F-w`, filed at GR-1 as a TRUST-PAGE defect; nothing had
+connected it to D6.** Same row, read through the criterion convened five days later to rule on exactly
+that story.
+
+### ⚠ The correction of the revue's figure was ITSELF wrong, in the same direction
+
+This mission has carried *"4 in source, of which **2 render** and 2 are source comments"* since its
+recon — in `AC-6`, this body, the campaign governance file and the proposal. Re-derived at the object
+`[D]`: **1 renders and 3 are comments.** `HomeHero.astro:252`, `:379` and `state-of-the-network:193`
+are all `{/* … */}`; only `:196` is a `<strong>`. Rendered HTML **1**, rendered twin **1**.
+
+⭐⭐ **The total was DERIVED and the breakdown was TYPED.** The recon ran a real command for `4`, then
+partitioned it by inference — reading `:252`'s explicit *"CUT, not rewritten"* as the comment and
+assuming its sibling at `:379` was the render, **without opening `:379`**. ⇒ ***a derived total can
+carry an underived breakdown, and the breakdown is what the conclusion rests on*** — KW-14 one level
+down, and **the same shape as the error it was correcting**. ⚠ The companion claim that *"a source
+grep and a rendered grep disagree in BOTH directions on this one phrase"* is also false: source **4**,
+HTML **1**, twin **1** — one direction, and the two rendered surfaces agree. The both-directions case
+is P4.5b's *"context democracy"*, a different phrase.
+
+⛔ **The conclusion survives its arithmetic.** D9(e) said 0; the truth is 1; the phrase is **live and
+carrying the horizon claim** (`9e0fd06`, 2026-08-18, ten days before the revue). So D6's real question
+was never *"shall we introduce this phrasing"* but *"is the horizon claim already made?"* — and under
+the ratified hold, more is not wanted. **AC-6 is met by nothing shipping.**
+
+### ⭐⭐ The AC-7 enumeration cut FOUR things from the copy, and one was this mission's own class
+
+Third consecutive objective where the diff-enumeration stopped a claim at **enumeration** rather than
+review (O1: the tier-ordering contradiction; O3: the word the registry does not publish).
+
+1. **"and clinical work"** — the `/` twin measures **rare ×15 · undiagnosed ×2 · Wilhelm ×2 · clinical
+   ZERO** `[D]`. The sentence described the site's examples as something they are not, **in the very
+   section written because a clinician could not find her question answered.** *(And R-124's own row
+   cites Wilhelm ×3 from 08-19 — right when written, never re-read.)*
+2. **"a processor"** — **a GDPR term of art.** Denying a defined legal role is itself a regulatory
+   self-characterisation, **inside the one section whose purpose is to make none**: the disclaimer had
+   reached for the vocabulary of a regime it disclaims.
+3. **"moves no data anywhere"** — an unscoped absolute, and **the R-64 / R-97 / R-161 over-promise
+   class on a FOURTH surface, in the mission that narrowed it on the third one objective ago.**
+4. **The definition was rewritten to sit WITH the site's ratified *"open specification"*** rather than
+   beside it as a rival.
+
+### ⭐ Two instrument defects of mine, both caught by structure rather than vigilance
+
+**The `R124_FLOOR` pair was TYPED AND WRONG, AND WENT GREEN.** The gate shipped `1113`/`292` by feel;
+measured, the section is **892** and the thinnest sibling is **295**. The wrong pair passed — 872 ≥ 292
+— *which is how a guessed pin survives review*. **B0's finding, fourth sighting in this mission**
+(O1's 330/4 · B0's tolerance · O3's case-12 length · this): ***a number written by feel is a formality
+wearing a pin's clothing***, and only *measure first, then pin* catches it.
+
+**And the copy revision silently invalidated a red-test anchor.** Case 25 anchored on *"moves no data
+anywhere."* — the sentence the enumeration then **cut**. The harness reported a **HARNESS BUG and
+failed ALONE**, cases before and after clean: **O3's `applied()` restore fix earning itself a second
+time.** ⇒ the narrower lesson: ***a red-test case is coupled to the copy it mutates, so a copy edit is
+a same-diff change to its own harness*** — convention 7 / ADR-057 one altitude down.
+
+⚠ **`gate-23` guards R-14's gloss ON THE HOMEPAGE ONLY** (`:82`), so its green is a true statement
+about `/` and nothing else — convention 18's family. `G54u` is site-wide. ⛔ **Named, not widened**:
+re-scoping gate-23 is R-14's business, not AC-6's.
+
+⚠ **Convention 19's green has a width**: `main` was green at **`7210d5e`**, the last *pushed* commit,
+with **all 7 of GR-4's commits never through CI** — which is what O5's ⛩ push GO addresses.
+
+## AAR (SO#5)
+
+**Worked.** The **AC-7 diff-enumeration**, for the third objective running, and this time it cut four
+live problems out of two paragraphs before they reached a reader — including one this mission had just
+finished fixing elsewhere. **Measure-then-pin** caught a fourth guessed number. **Reading the subject
+out of D9(e)'s body instead of off its label** turned a criterion that would have passed vacuously
+into one that found two live horizon passages and connected `F-w` to D6 for the first time.
+
+**Didn't.** The recon's *"2 render, 2 comments"* was **typed inside a derivation** and carried by four
+artifacts for a day. The `R124_FLOOR` pair was typed and **went green**, so nothing but a deliberate
+re-measure would ever have surfaced it. Both are the same failure: **a real command run, then a
+conclusion inferred past where the command reached.**
+
+**Finding.** ***A derived total can carry an underived breakdown, and the breakdown is what the
+conclusion rests on.*** Its sibling, from the same objective: ***a grep cannot tell you that it found
+nothing because there was never anything to find*** — the O3 homonym pair completed, and the reason
+AC-6 needed its subject re-derived rather than its label matched.
+
+**Change.** Absence criteria state the **subject**, not the label, and name the artifact the subject
+is resolved against; when no such artifact exists, that is the finding. And a breakdown of a derived
+total is **itself derived** — the structural classifier this objective used replaced a grep-class pass
+whose numbers did not sum, which is a typed figure wearing a derivation's clothing.
+
+**Follow-up.** `R-124` is **built, not live** — its discharge condition is at register §20.4 and needs
+a deploy nobody has GO'd. `F-w` gains a second lens and keeps its one destination. `gate-23`'s
+homepage-only scope is **named and not widened**. `F-aa` and `R-97` stay open with their own homes.

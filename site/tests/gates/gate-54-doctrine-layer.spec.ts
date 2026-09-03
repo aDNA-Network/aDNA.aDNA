@@ -610,4 +610,260 @@ test.describe('gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, 
         `\`/\` and show it still clears 10.`,
     ).toEqual([]);
   });
+
+  /* ── GR-4 O5 · D6 · AC-6 (V6) ──────────────────────────────────────────────────────────────────
+   *
+   * ⭐⭐ AC-6 IS THE ONLY CRITERION IN THIS MISSION WHOSE MET-STATE IS THAT NOTHING SHIPS, AND THAT
+   * IS WHY IT IS THE EASIEST ONE TO FAKE. DEFECT-2 already struck it from V2 (a planned-framing
+   * probe over new sentences passes on an empty set). The remaining trap is subtler and was found
+   * by measuring: the criterion's own label, "movement 3", RESOLVES TO NOTHING. Both campaign
+   * directives carry ZERO occurrences of "movement" [D], the whitepaper's four are ordinary English
+   * ("the DeSci movement"), and the Grande Revue order that introduced the term was VERBAL. So a
+   * gate greping for the label would return 0, go green, and check nothing whatsoever.
+   *
+   * ⇒ This is O3's homonym finding ENTERED FROM THE OTHER SIDE. There a shared notation resolved to
+   * the WRONG referent and produced a false positive. Here it resolves to NO referent and produces
+   * a false NEGATIVE that reads exactly like a met criterion. Same family: *a grep for a notation
+   * cannot tell you what it found, and it especially cannot tell you that it found nothing because
+   * there was never anything to find.*
+   *
+   * The subject is therefore taken from D9(e)'s own body rather than from its label: the
+   * EMBARGOED PROTOCOL-OPENING STORY, keyed to R-14/R-15 and to the P1-2 leak. That subject has a
+   * checkable vocabulary, because it has SHIPPED TWICE AND BEEN RETIRED TWICE.
+   */
+  const DIST = join(process.cwd(), 'dist');
+
+  /** ⚠ Two strings that ACTUALLY SHIPPED, not a pattern invented at a mission's tail. Conventions
+   *  15/16/17 all rule that an instrument authored late is the one that goes wrong first; a
+   *  vocabulary of real retired claims cannot be wrong about what it is for. */
+  const RETIRED_PROTOCOL_CLAIMS = [
+    { text: 'open coordination protocol', row: 'R-14 (FALSE) — the homepage hero gloss, cut at P4.5a' },
+    { text: 'federating on the Lattice Protocol', row: 'P1-2 — llms.txt, hand-typed, fixed at GR-1 (311b3c3)' },
+    { text: 'built on the Lattice Protocol', row: 'R-125 (⊳ D-C, S2) — the hero trust-link, ×4 surfaces, cut at P4.5a' },
+  ];
+
+  /** ⛔ THE EXCLUSIONS ARE PART OF THE CLAIM AND ARE ASSERTED, NOT ASSUMED — gate-48's ratified
+   *  discipline, and AC-1's exact pattern arriving for the FOURTH time in this mission. Both
+   *  entries are load-bearing and G54t pins their arithmetic so the set cannot quietly grow to
+   *  swallow an inconvenient result (B0's FINDING 4: masks only ever grow). */
+  const D6_EXCLUDED_TWINS = [
+    // Convention 17: a surface that DOCUMENTS a retirement contains the retired string. The
+    // changelog entry whose subject is the false sentence is not the false sentence returning.
+    //
+    // ⭐ AND THIS ONE IS NOT PRECAUTIONARY — IT IS CATCHING SOMETHING TODAY, measured [D]:
+    // `dist/changelog.md` carries "built on the Lattice Protocol" (R-125), the ONLY rendered
+    // occurrence of that string anywhere on the site, in the entry whose subject IS its removal.
+    // Delete this line and the gate reds on a clean tree for a non-defect — which is the whole of
+    // convention 17 in one file. ⚠ Said precisely, because the first two strings in the vocabulary
+    // are NOT caught by either exclusion right now: describing a mask that currently swallows
+    // nothing as "load-bearing" is the same overclaim this campaign keeps finding.
+    'changelog.md',
+    // Byte-vendored `.adna` content, published on the trust page WITH ITS SHA256 and an explicit
+    // invitation to diff it. Standing Rule 1 forbids editing it, and editing the published copy
+    // would trade a copy defect for a trust defect on the one surface built to be checked (F-w's
+    // reasoning). The one un-candid promise inside it — "The marketplace is coming soon" — is
+    // ALREADY REGISTERED AS F-w with a named destination (the next skill_template_release).
+    'get-started/what-your-agent-reads/',
+  ];
+
+  function twinFiles(): string[] {
+    const out: string[] = [];
+    const walk = (dir: string) => {
+      for (const e of readdirSync(dir, { withFileTypes: true })) {
+        const p = join(dir, e.name);
+        if (e.isDirectory()) walk(p);
+        else if (e.name.endsWith('.md')) out.push(p.slice(DIST.length + 1));
+      }
+    };
+    if (existsSync(DIST)) walk(DIST);
+    return out;
+  }
+
+  const isExcluded = (rel: string) => D6_EXCLUDED_TWINS.some((x) => rel === x || rel.startsWith(x));
+  const TWIN_FLOOR = 200;
+
+  test('G54t: the D6 probe reaches protocol text, and its exclusion arithmetic is pinned', () => {
+    const all = twinFiles();
+    expect(
+      all.length,
+      `only ${all.length} twin(s) under dist/ — G54u asserts an ABSENCE and would be VACUOUSLY ` +
+        `GREEN over an empty frame. Run \`npx astro build\`.`,
+    ).toBeGreaterThanOrEqual(TWIN_FLOOR);
+
+    const excluded = all.filter(isExcluded);
+    const kept = all.filter((f) => !isExcluded(f));
+    expect(excluded.length + kept.length, 'the exclusion split does not account for every twin').toBe(all.length);
+
+    // Each declared exclusion must actually match something. An exclusion matching nothing is an
+    // exclusion that has silently stopped protecting anything, and it reads identically to one
+    // that works — GR-1's "corpus excision that split on text the corpus does not contain".
+    const inert = D6_EXCLUDED_TWINS.filter((x) => !all.some((f) => f === x || f.startsWith(x)));
+    expect(inert, `declared exclusion(s) matching NO twin: [${inert.join(' · ')}]`).toEqual([]);
+
+    // ⭐ THE CONTROL THAT MAKES G54u's ZERO MEAN SOMETHING ABOUT THE SITE RATHER THAN ABOUT THE
+    // PROBE. If no NON-EXCLUDED twin talks about the protocol at all, then "no protocol claim" is
+    // the absence of a subject, not the absence of a claim — and this gate would certify the
+    // embargo holding on a site that had simply stopped mentioning the thing.
+    const reach = kept.filter((f) => readFileSync(join(DIST, f), 'utf8').toLowerCase().includes('lattice protocol'));
+    expect(
+      reach.length,
+      'no non-excluded twin mentions the Lattice Protocol. G54u below would then be reporting the ' +
+        'absence of a SUBJECT, not the absence of a CLAIM.',
+    ).toBeGreaterThanOrEqual(1);
+  });
+
+  test('G54u: no retired present-tense protocol claim reaches a reader', () => {
+    const kept = twinFiles().filter((f) => !isExcluded(f));
+    const hits: string[] = [];
+    for (const f of kept) {
+      const body = readFileSync(join(DIST, f), 'utf8').toLowerCase();
+      for (const c of RETIRED_PROTOCOL_CLAIMS) {
+        if (body.includes(c.text.toLowerCase())) hits.push(`${f} :: "${c.text}" [${c.row}]`);
+      }
+    }
+
+    expect(
+      hits,
+      `a retired protocol-availability claim is live on a reader-facing surface: ${hits.join(' | ')}. ` +
+        `AC-6's met-state is that the protocol-opening story stays UNSHIPPED under the counsel ` +
+        `embargo, and both of these strings have shipped and been retired before — R-14 from the ` +
+        `homepage hero, P1-2 from llms.txt, where it survived a purge that was "verified ` +
+        `page-by-page, never surface-by-surface". This is not a hypothetical failure mode; it is ` +
+        `the one that has actually happened, twice.`,
+    ).toEqual([]);
+  });
+
+  /* ── GR-4 O5 · R-124 · AC-8 (V7) ───────────────────────────────────────────────────────────────
+   *
+   * AC-8 is ⛩ Ruling 1's minimal disclaiming posture. Like AC-3 it is two obligations that fail in
+   * OPPOSITE directions, so they are two ids: the section must be PRESENT and substantive (G54w),
+   * and it must make NO compliance claim (G54x).
+   *
+   * ⭐ G54x IS THE LOAD-BEARING ONE, and the signature said so before either existed: "the failure
+   * mode of a disclaiming posture is not that it goes missing, it is that it quietly becomes a
+   * promise." That is G54n's shape one criterion across — and G54n's red-test case 15 already
+   * demonstrated it on D3: remove nothing, add one reassuring sentence, every other assertion stays
+   * green.
+   *
+   * ⚠ WHY THIS GATE CANNOT SEE POLARITY, AND WHY THE COPY IS WRITTEN AROUND THAT RATHER THAN THE
+   * GATE BEING TAUGHT TO. "aDNA is not HIPAA compliant" is a true disclaimer that a literal probe
+   * reads as "HIPAA … compliant", and a skimming reader reads the same way. Both problems have one
+   * fix and it is editorial: the denial is REGIME-FREE and the regime names appear only where the
+   * obligation is handed to the operator. The section's own comment records this so a later editor
+   * does not helpfully reunite them.
+   */
+  const PRIVACY_TWIN = join(process.cwd(), 'dist', 'privacy.md');
+  const R124_HEADING = '## If you work with regulated data';
+  /** DERIVED [D], and the first draft of both numbers was TYPED AND WRONG — recorded because the
+   *  wrong pair went GREEN, which is how a guessed pin survives review. Measured over the built
+   *  twin, `/privacy`'s eight sections run 295 · 418 · 437 · 456 · 520 · 522 · 594 · 892; the
+   *  thinnest sibling (#links-out) is 295 and the graded section is 892. The floor is that
+   *  sibling — the same "derived from the page's own siblings" rule G54f states, G54k had to
+   *  repair, and which now applies to a fourth page. *A number written by feel is a formality
+   *  wearing a pin's clothing* (B0); the drafted pair was 1113/292 and neither was measured. */
+  const R124_FLOOR = 295;
+
+  /** Affirmative compliance vocabulary. ⚠ Each pattern is anchored so it CANNOT CROSS A SENTENCE
+   *  BOUNDARY (`[^.]`), because adjacency across a full stop is not a claim — it is two sentences. */
+  const COMPLIANCE_CLAIMS: { re: RegExp; why: string }[] = [
+    { re: /(hipaa|gdpr|irb|hitrust|soc\s*2|iso\s*27001)[^.]{0,40}\b(compliant|compliance|certified|accredited|validated|approved)\b/i,
+      why: 'a regime named as satisfied' },
+    { re: /\b(compliant|certified|accredited|approved)\b[^.]{0,40}(hipaa|gdpr|irb|hitrust)/i,
+      why: 'a regime named as satisfied (reverse adjacency)' },
+    { re: /\b(?:is|are|fully|hipaa-|gdpr-)\s*compliant\b/i, why: 'a bare affirmative compliance claim' },
+    { re: /\bmeets? (?:the )?(?:requirements|standards|obligations)\b/i, why: 'a requirements-satisfied claim' },
+    { re: /\b(?:safe|suitable|cleared|approved) for (?:phi|protected health|patient data|regulated)/i,
+      why: 'a fitness-for-regulated-data claim' },
+  ];
+
+  let privacyTwin: string | null = null;
+  test.beforeAll(() => {
+    if (existsSync(PRIVACY_TWIN)) privacyTwin = readFileSync(PRIVACY_TWIN, 'utf8');
+  });
+
+  test('G54v: the /privacy twin is measurable, and the probe reaches real text', () => {
+    expect(
+      privacyTwin,
+      `no twin at ${PRIVACY_TWIN}. G54w and G54x below would be VACUOUSLY GREEN over a file that ` +
+        `does not exist — and G54x asserts an ABSENCE, which is the worse of the two to fake.`,
+    ).not.toBeNull();
+
+    expect(
+      (privacyTwin ?? '').length,
+      'the /privacy twin is too short to be the real page — a collapsed emit would let both ' +
+        'assertions below pass on a stub carrying nothing but its pointer block.',
+    ).toBeGreaterThan(1200);
+
+    expect(
+      (privacyTwin ?? '').toLowerCase(),
+      'the /privacy twin does not contain "collects" — the probe is not reaching the page it grades.',
+    ).toContain('collects');
+  });
+
+  test('G54w: R-124\'s disclaiming section reaches the reader, and is not a mention', () => {
+    const raw = privacyTwin ?? '';
+    const at = raw.indexOf(R124_HEADING);
+    expect(
+      at,
+      `${JSON.stringify(R124_HEADING)} is not on the /privacy twin. R-124's own diagnosis is that ` +
+        `"the defect is ROUTING, not policy" — the section needs its own heading, or a reader ` +
+        `scanning for the question still cannot find that it has been answered.`,
+    ).toBeGreaterThan(-1);
+
+    const next = raw.slice(at + R124_HEADING.length).search(/\n##\s/);
+    const body = next === -1 ? raw.slice(at) : raw.slice(at, at + R124_HEADING.length + next);
+
+    expect(
+      body.length,
+      `the section is ${body.length} chars against a floor of ${R124_FLOOR}, derived from ` +
+        `/privacy's own thinnest sibling section (#links-out). Below that it is a MENTION, and ` +
+        `⛩ Ruling 1 chose the SMALLEST posture that discharges R-124 — not the absence of one. ` +
+        `⚠ The floor is a MENTION guard, not a length target: this section should not grow either, ` +
+        `because a disclaiming posture that expands is one acquiring detail it cannot support.`,
+    ).toBeGreaterThanOrEqual(R124_FLOOR);
+
+    // The three things Ruling 1 names, each asserted separately: dropping any one leaves a section
+    // that looks complete and answers a different question.
+    const lower = body.toLowerCase();
+    const missing = (
+      [
+        ['file-layout convention', 'what aDNA IS'],
+        ['transmits nothing', 'that nothing is transmitted'],
+        ['hipaa', 'the regimes whose obligations rest with the operator'],
+      ] as const
+    ).filter(([needle]) => !lower.includes(needle)).map(([needle, why]) => `${why} (${needle})`);
+
+    expect(
+      missing,
+      `⛩ Ruling 1 names three things and the section is missing: ${missing.join(' · ')}. The row ` +
+        `moves only when all three reach a reader.`,
+    ).toEqual([]);
+  });
+
+  test('G54x: the R-124 section makes NO compliance claim', () => {
+    const raw = privacyTwin ?? '';
+    const at = raw.indexOf(R124_HEADING);
+    expect(
+      at,
+      'the R-124 section is absent, so this ABSENCE assertion would be vacuously green. G54w owns ' +
+        'presence; this one must never be the assertion that reports the section missing.',
+    ).toBeGreaterThan(-1);
+
+    const next = raw.slice(at + R124_HEADING.length).search(/\n##\s/);
+    const body = next === -1 ? raw.slice(at) : raw.slice(at, at + R124_HEADING.length + next);
+
+    const found = COMPLIANCE_CLAIMS.filter(({ re }) => re.test(body)).map(
+      ({ re, why }) => `${why}: ${body.match(re)?.[0]?.trim()}`,
+    );
+
+    expect(
+      found,
+      `the disclaiming section has acquired a COMPLIANCE CLAIM: ${found.join(' | ')}. AC-8 asserts ` +
+        `no compliance claim of ANY kind, and this is the limb that matters: a disclaimer does not ` +
+        `fail by going missing, it fails by quietly becoming a promise. Claims move DOWN to ` +
+        `verifiability, never up to ambition (convention 1). ⚠ If the sentence that tripped this is ` +
+        `a DENIAL, do not allowlist it — separate the regime name from the affirming word, which ` +
+        `is what the section's own comment tells you to do and what stops it scanning as a promise.`,
+    ).toEqual([]);
+  });
 });
