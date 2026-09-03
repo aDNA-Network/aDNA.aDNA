@@ -2825,8 +2825,21 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > the last *pushed* commit, with **all 7 of GR-4's commits never through CI**. ⛩ That is what O5's
 > ruled push GO addresses.
 >
-> ⏭ **NEXT: `P4.4b B3`, or the campaign's endgame.** Grande Revue's Gate-1 order is complete and
-> **Lane D was its last lane**, so nothing in the ratified sequence is now queued. ⛔ Still held:
+> ⏭ ~~**NEXT: `P4.4b B3`, or the campaign's endgame.**~~ ⛔⛔ **STRUCK 2026-09-03 AT THE DEPLOY
+> SITTING — `P4.4b B3` WAS ALREADY CLOSED WHEN THIS WAS WRITTEN, BY A DAY.** B3 shipped
+> **2026-09-02 (`4bbbe01`)** and `mission_haussmann_p4_4_ci_hardening.md` reads **`status:
+> completed`, both halves**, AAR filed — *and this very file says so at its own P4.4 close block,
+> which adds* "P4.4b B3 no longer competes with it." ⇒ **the campaign's *index-vs-artifact* class,
+> and the sharpest instance of it yet**: the pointer contradicted an artifact **and** a passage in
+> the same file, and still propagated to **three surfaces** (here, `STATE.md`, `MEMORY.md`).
+> ⭐⭐ **The finding is about how it survived, not that it happened.** All three surfaces **agreed**,
+> so re-reading them against each other would have confirmed it every time. It fell only when the
+> mission file the pointer *names* was opened. ⇒ ***three agreeing indexes are not a corroboration;
+> they are one claim copied twice*** — and note the direction, which is the usual one: the artifact
+> moved and the pointers did not. **⏭ THE TRUE NEXT is the campaign's endgame, which is HUMAN-GATED
+> at `P5.1`** — nothing agent-reachable remains in the backbone. Grande Revue's Gate-1 order is
+> complete and **Lane D was its last lane**, so nothing in the ratified sequence is now queued.
+> ⛔ Still held:
 > **P5.1** with the humans (its three criteria each wait on a human act) · **P5.2** waits on P5.1.
 > ⚠ Owed: B1's ⛩ Speed-Insights → transport → first p75 · babbage's lease question · babbage's two
 > upstream findings still `proposed` · **`F-aa`** · **`R-97`** · **`F-w`**'s second lens, still
@@ -2851,3 +2864,81 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > tests vanished. ✅ Also read from the run, not inferred: `freshness: git answered — last-updated
 > dates derived from history` (GR-2's `safe.directory` fix still holding, 2 days on) and the
 > **snapshot lane green at 26** in its own job.
+
+> 🚀🚀 **2026-09-03 — DEPLOYED. THE FIVE INCREMENTS ARE LIVE AND `R-124` IS DISCHARGED.**
+> `deploy_record: 2026-09-03T21:37:31Z mode=prod tree=7cef6e0`
+> (`url=https://adna-docs-e1ru2wwdg-science-stanleys-projects.vercel.app`, `token=SS_VERCEL_TOKEN`).
+> **No override flags** — the alias-ancestry guard passed on its own terms (`a852423` is an ancestor
+> of `7cef6e0`), pre-verified at the session open rather than discovered at the gate; live headers
+> **4/4 by name AND value** on the alias. Probe **38 PASS / 0 FAIL** against `7cef6e0`
+> ([[probe_postdeploy_green]], beside [[probe_predeploy_red]]'s **15 PASS / 22 FAIL** on `a852423`).
+> ⛩ Two GOs, taken in order — **push, then deploy** — because `inject_build_stamp.mjs:83` stamps
+> `git rev-parse HEAD` and nothing checks HEAD is public.
+>
+> ⭐ **`R-124` MOVES, AND ONLY NOW** (register **§21.1**, `gap → open` → **`gap → fixed`**). ⛩ Ruling
+> 1's condition was *LIVE on the surface, never written*, and GR-4's close held the row open against
+> a built-but-unshipped section for exactly that reason. ⭐ It is `fixed`, **not `verified`**, and the
+> difference is load-bearing: `verified` means *a claim the site makes has been checked true*, and
+> `§regulated-data` **makes no claim to verify** — growing that section is how it breaks, not how it
+> improves. Register counts **unchanged at 189 / 174 / 0**, derived by the script *after* §21 was
+> written — **the correct result, since §21 adds no row.** *A register whose counts move every time
+> someone writes a paragraph is counting paragraphs.*
+>
+> ⚠⚠ **THE GREEN IS WEAKER THAN GR-1's AND THE RECORD SAYS SO.** GR-1's green was worth what it was
+> because *the same unmodified script* had read red hours earlier. **This script was modified between
+> the two runs.** The first post-deploy run read **33 PASS / 4 FAIL**, all four in the `AC-5` block —
+> **a FALSE RED, the campaign's second after GR-3's.** Astro appends a scoped-style attribute, so the
+> served tag is `<section class="latest-strip" data-astro-cid-j7pv25f6>`; an extraction demanding an
+> immediate `>` returned the **empty string** and four assertions failed against nothing.
+> ⛔ **The cheap remedy was the wrong one for the second time in this probe's life** — reverting to
+> the whole-page match goes green instantly and **restores the exact vacuity the scoping had removed
+> an hour earlier.** Verified at the object with `curl` before changing a character.
+> ⇒ **The cost, stated rather than absorbed: those four strip-content assertions have never been
+> demonstrated to fail for the reason they assert.** They red via the empty-extraction path on both
+> sides, so their red-proof attributes to *"no strip"*, never to *"strip present, content wrong"* —
+> **GR-3's `F-z` verbatim, in a probe written hours after this desk quoted it.** *Catching a class
+> once in a sitting is not immunity from it.* Remedy is structural, not vigilance: a new assertion
+> reds **first and alone** when the extraction empties (O3's *a case that cannot apply must fail
+> ALONE*, applied to a fetch-and-extract probe). ⛔ **No fixture harness authored** — that would be
+> the seventh instrument written at a sitting's tail, and conventions 15/16/17 each ruled against it.
+>
+> ⭐⭐ **AND TWO ASSERTIONS WERE GREEN AGAINST A SITE WITH NO STRIP, caught in the RED run.** *"it
+> links the changelog"* and *"it links the feed"* were matching the **footer** — which has linked
+> both since before **P2-7, the finding that created D5.** Scoped to the strip's own markup; the
+> pre-deploy run went **17/20 → 15/22**. ⭐ **What caught it was reading the red line by line, not
+> counting it**: a 20-FAIL total looks thorough, and two passes sitting inside an all-red block are
+> visible only to a reader.
+>
+> ⚠ **The build refused the changelog entry first, for a defect this campaign has a name for.**
+> `title` is capped at **70** and the draft was **73**. The `description` had been measured against
+> its 160 and the title's length was **printed and compared to nothing** — **GR-1's own *"a
+> schema-limit check that measured one field and assumed its sibling"***, recurring in the sitting
+> that cites GR-1. Both limits are now **derived from `src/content.config.ts`**, not remembered.
+>
+> ✅ **The changelog entry was OWED and is the reason a `home` re-baseline fired.** Newest entry was
+> **2026-08-28**: five increments had shipped into the tree with no entry, and the cadence prompt is
+> date-keyed so it fires once. `/` **is** a `gate-49` template, so the strip's rendered dates moved
+> the baseline — **predicted at costing time, confirmed red FIRST (2 failed / 24 passed), then
+> exactly 2 of 24 regenerated in-container**, the 22 untouched independently proving nothing
+> unrelated was absorbed. No mask, no tolerance raised. ⭐ `G54r` needed **no same-diff date update**
+> because it *derives* the strip from the changelog collection — the derivation D5 was built for,
+> paying off in the first entry after it shipped.
+>
+> ✅ **`F-aa` DISCHARGED.** `glossary_model_tiered_execution.md` described the tier order as
+> *"cheapest → most capable"*, **backwards** against the authority it links (§2.1: `fable` =
+> strategy/judgment · `opus` = mid-judgment · `sonnet` = mechanical). Corrected to the pattern's
+> binding rather than a third phrasing. ✅ Control **re-measured, not carried**: `grep -rl cheapest
+> site/dist/` → **0** (it was 3 at O1, all that increment's own copy) ⇒ the contradiction was never
+> public and is now fixed at its source.
+>
+> ⏭ **NEXT: the campaign's endgame, and it is HUMAN-GATED.** `P5.1`'s three criteria each wait on a
+> human act (five recruited cold readers · a fresh macOS account · the operator running the funnel as
+> an outsider), and `P5.2` waits on `P5.1`. ⭐ **`P5.1`'s `AC-P` is now satisfiable for the first
+> time**: its stamp check demands *ancestor-of-HEAD **and** contains the closed missions' work*, and
+> production carried none of GR-4's copy until today — a panel run yesterday would have cold-read
+> `/` with no strip and `/commons` with no disambiguation, **G-11 exactly**. ⛔ Still held: `P2.6`
+> (⛩ TTFS run) · `P3.3` (⛩ operator `npm login`, not performable on this node). ⚠ Owed: B1's
+> ⛩ Speed-Insights → transport → first p75 · **`R-97`** (ratified homepage copy, needs its own gate)
+> · **`F-w`**'s second lens → next `skill_template_release` · babbage's lease question · babbage's
+> two upstream findings still `proposed` · **⛩ Vitruvius's `/g/adna/` decision** (`decision_required:
+> true`) and **Hopper's 4.2.0 ack** (`ack_required: true`), each its own outward act.

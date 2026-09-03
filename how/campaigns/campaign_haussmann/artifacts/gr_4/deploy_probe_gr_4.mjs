@@ -129,7 +129,17 @@ console.log("\nAC-5 — the homepage strip exists AND is derived");
   // vacuity this file's own header quotes P4.5a about. Extracting the section first is what makes
   // a red attributable to the strip (GR-3's F-z: a demonstration is only worth what it can
   // attribute). Found by reading the red run rather than counting it.
-  const strip = /<section class="latest-strip">([\s\S]*?)<\/section>/.exec(home.body)?.[1] ?? '';
+  // ⚠ `[^>]*` IS LOAD-BEARING, AND THE FIRST DRAFT OMITTED IT. Astro appends a scoped-style
+  // attribute, so the served tag is `<section class="latest-strip" data-astro-cid-j7pv25f6>` — a
+  // pattern demanding an immediate `>` extracts the EMPTY STRING and every assertion below fails
+  // against nothing. That produced a 4-FAIL post-deploy run on a site where all four facts were
+  // live, i.e. a FALSE RED, and the tempting fix was to revert to the whole-page match — which is
+  // the vacuity this block was scoped to remove an hour earlier. ⭐ The cheap remedy was the wrong
+  // one for the second time in this probe's life; verified at the object (curl) before changing a
+  // character, per the campaign's own rule.
+  const strip = /<section class="latest-strip"[^>]*>([\s\S]*?)<\/section>/.exec(home.body)?.[1] ?? '';
+  check('the strip section EXTRACTS (a scoped-attribute change would empty it)', strip.length > 0,
+    'extraction returned empty — the assertions below would fail against nothing, not against the site');
   check('it is headed "What\'s new"', /What(?:&#39;|&apos;|')s new/.test(strip));
   check('the STRIP links the changelog (not merely the footer)', /href="\/changelog"/.test(strip));
   check('the STRIP links the feed (not merely the footer)', /rss\.xml|\/feed/i.test(strip));

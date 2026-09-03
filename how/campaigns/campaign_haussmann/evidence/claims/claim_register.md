@@ -682,7 +682,7 @@ synthetic reader may notice a thing; it does not get to assert one.
 | **R-121** | `/learn/what-is-adna` "Before and after" | *"Without aDNA: a lab's 200 files sprawl across Notion, Drive, and Git. Every session starts by pasting an outdated summary; last month's decisions get re-litigated; a new collaborator needs three days to orient."* | **unsupported → open** | Specific quantities (*200 files*, *three days*) under a **"Before and after"** heading, with no lab, no date, no source. **Weaker than R-118 and recorded as such** — there is no `$` prompt or `✓` line impersonating real output; it is an unlabelled hypothetical, not a forged recording. The finding is the **inconsistency of standard**: the campaign cut a fabrication one mission ago and published why, and a cold reader found the next one unaided, calling it *"the only thing that damages the credibility the rest of the site genuinely earns"* `[D-syn]`. Text verified verbatim `[D]` | **S3** | [D] |
 | **R-122** | `/` + footer — the contribution funnel | *"Contribute on GitHub"* → `aDNA-Network/aDNA` | **gap → open** | The CTA target has **`CONTRIBUTING.md` 404 and `CODE_OF_CONDUCT.md` 404**; both exist (**200/200**) in `aDNA-Network/aDNA.aDNA`, reachable only via the small footer *"Edit this page"* link `[D, GitHub raw]`. The contributor documentation is real and good — it is behind the wrong door. Bears on **D9**, scored 2 at baseline with *"advertised mouth = two 404s"*; this is the same defect class surviving in a new location | **S2** | [D] |
 | **R-123** | `/` badge *"MIT-licensed"* vs the docs repo | `aDNA-Network/aDNA.aDNA` — `license: null`, `LICENSE` **404**, `LICENSE.md` **404** `[D, GitHub API + raw]` | **unsupported → open** | The badge is **true of the image repo it links to** (`aDNA-Network/aDNA` → MIT `[D]`), so this is not a false badge. The defect is that *"Edit this page"* routes a contributor's PR into the **unlicensed** repo — they are invited to contribute under no stated terms. The one finding in this batch with a legal edge rather than an editorial one; a contribution accepted there has no inbound license | **S2** | [D] |
-| **R-124** | `/privacy` + `/security` | *(absent — no clinical or regulatory posture of any kind)* | **gap → open** | **0 occurrences** on both pages for every one of: HIPAA · GDPR · PHI · de-identif\* · IRB · consent · patient · clinical · health `[D]`. Meanwhile `/` mentions *rare* ×15, *undiagnosed* ×2, *Wilhelm* ×3 `[D]`. Stated fairly: aDNA is a file-layout convention and *"nothing leaves your machine"* is nearly the whole answer — the defect is **routing, not policy**. A clinician arriving through the site's own rare-disease framing, asking the first question her profession obliges her to ask, finds no page that acknowledges the question exists `[D-syn]` | **S3** | [D] |
+| **R-124** | `/privacy` + `/security` | *(absent — no clinical or regulatory posture of any kind)* | ~~**gap → open**~~ **gap → fixed** *(2026-09-03 — §21.1; live at `adna.network/privacy#regulated-data`, tree `7cef6e0`, re-probed at the alias. ⛩ Ruling 1's condition was LIVE, never written, and it is now satisfied.)* | **0 occurrences** on both pages for every one of: HIPAA · GDPR · PHI · de-identif\* · IRB · consent · patient · clinical · health `[D]`. Meanwhile `/` mentions *rare* ×15, *undiagnosed* ×2, *Wilhelm* ×3 `[D]`. Stated fairly: aDNA is a file-layout convention and *"nothing leaves your machine"* is nearly the whole answer — the defect is **routing, not policy**. A clinician arriving through the site's own rare-disease framing, asking the first question her profession obliges her to ask, finds no page that acknowledges the question exists `[D-syn]` | **S3** | [D] |
 
 > **Annotation (P4.5a, 2026-08-20).** R-124's homepage figures above (*rare ×15 · undiagnosed ×2 ·
 > Wilhelm ×3*) were re-probed and have moved to **×18 · ×2 · ×5** `[D]`. They were true when measured;
@@ -1995,3 +1995,62 @@ that table. Any future `§N.M Counts` section is appended **after** this one, ne
 §17.5 stated only the first, O3 obeyed it exactly, published its tally as prose, and turned `G41b`
 **blind rather than red** — *a note that transfers one obligation reads as if it transferred all of
 them, and the half it does not mention is the half nobody checks.*
+
+---
+
+## §21 — R-124 DISCHARGED AT THE DEPLOY, AND THE ROW MOVES BECAUSE THE SURFACE MOVED
+
+*(⛩ deploy GO sitting, 2026-09-03. Not a mission increment: `GR-4` is `completed` and this discharges
+a condition its close deliberately left open.)*
+
+### §21.1 R-124 → `gap → fixed`
+
+⛩ **Ruling 1's condition was exact and is now satisfied.** The row was held at `gap → open` through
+`GR-4`'s entire close — §20.4 recorded *"the section is built and production serves `a852423`, which
+does not contain it"* — because **a fix's commit is not the register's strike** (`F-n`).
+
+Measured at the destination `[D] 2026-09-03 ~21:40 UTC`:
+
+| Check | Surface | Result |
+|---|---|---|
+| `deploy_record` | — | `2026-09-03T21:37:31Z mode=prod tree=7cef6e0` |
+| the alias has moved off `a852423` | `/.well-known/adna-build.json` | ✅ serving **`7cef6e0`** |
+| the section has its own anchor | `/privacy/` **HTML** (a DOM fact) | ✅ `id="regulated-data"` |
+| the heading is readable | `/privacy.md` **twin** (verb: *a reader encounters*) | ✅ *"If you work with regulated data"* |
+| it states what aDNA is | `/privacy.md` | ✅ *"a file-layout convention"* |
+| it disclaims rather than reassures | `/privacy.md` | ✅ *"no regulatory claim"* |
+| obligations routed to the operator | `/privacy.md` | ✅ HIPAA · GDPR · IRB all named |
+
+⇒ **`R-124` is `gap → fixed`.** The row is struck at its own destination, by the live surface, and
+not by the prose that routed it — which is the discipline four sightings of `F-u`'s class bought.
+
+⭐ **What the row did NOT become.** It is `fixed`, not `verified`, and the difference is load-bearing:
+`verified` in this register means *a claim the site makes has been checked true*. `§regulated-data`
+**makes no claim to verify** — its entire content is a disclaimer of claims, ⛩ ruled as the *minimal*
+posture precisely so that it never acquires one. A future editor reading this row should understand
+that growing that section is how it breaks, not how it improves.
+
+⚠ **Two things this discharge does not touch, named so nobody infers otherwise.** `R-97` — the
+homepage's *"nothing leaves until you choose"*, `verified (ADR-048 verbatim)` — is **ratified copy and
+still carries the over-promise class** that `R-64`, `R-161` and this row all belong to; it needs its
+own gate and did not get one here. And `F-w`, the vendored *"marketplace is coming soon"*, is still
+destined for the next `skill_template_release`.
+
+### §21.2 Counts — derived last
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **189** |
+| **Unique ids** | **174** (14 `G-*` + 160 `R-*`, `R-11`…`R-170`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, **not typed**, and re-run *after* §21 was
+written. ⭐ **Unchanged from §20.5, and that is the correct result, not a stale copy**: this section
+adds **no row**. It moves one existing row's status and records why. *A register whose counts move
+every time someone writes a paragraph is counting paragraphs.*
+
+⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order.** This section is now
+that table. Any future `§N.M Counts` section is appended **after** this one, never inserted above —
+**and it must be a PARSEABLE TABLE, not a prose sentence.** Both halves are restated rather than
+cross-referenced, because §17.5 stated only the first, O3 obeyed it exactly, and turned `G41b`
+**blind rather than red**.
