@@ -1450,7 +1450,7 @@ destination and this campaign has been bitten four times by verifying it in the 
 
 | ID | Finding | Destination | Status |
 |---|---------|-------------|--------|
-| **`F-aa`** | `glossary_model_tiered_execution.md` orders the executor tiers *"cheapest → most capable"*, contradicting `pattern_model_tiered_campaign_execution.md` §2.1/§2.5, which bind fable to strategy/judgment and sonnet to mechanical. The glossary is the vault's own definition surface for the term, so the two SSOT documents for one field disagree. **Not published** — verified `[D]` — so this is an internal-consistency defect, not a live claim defect | a `what/` governance sitting of its own; **not** GR-4, which is site-copy scope | **live** |
+| **`F-aa`** | `glossary_model_tiered_execution.md` orders the executor tiers *"cheapest → most capable"*, contradicting `pattern_model_tiered_campaign_execution.md` §2.1/§2.5, which bind fable to strategy/judgment and sonnet to mechanical. The glossary is the vault's own definition surface for the term, so the two SSOT documents for one field disagree. **Not published** — verified `[D]` — so this is an internal-consistency defect, not a live claim defect | a `what/` governance sitting of its own; **not** GR-4, which is site-copy scope | ~~**live**~~ **STRUCK 2026-09-03** — corrected at the ⛩ deploy sitting to §2.1's binding (*judgment → mid-judgment → mechanical*), citing the pattern rather than authoring a third phrasing. ✅ Control **re-measured, not carried**: `grep -rl cheapest site/dist/` → **0** (3 at O1, all that increment's own copy) ⇒ never public, now fixed at source |
 
 ### §16.4 ⭐ `gate-14` caught a repo literal, and the obvious fix would have made the claim FALSE
 
@@ -2036,7 +2036,68 @@ still carries the over-promise class** that `R-64`, `R-161` and this row all bel
 own gate and did not get one here. And `F-w`, the vendored *"marketplace is coming soon"*, is still
 destined for the next `skill_template_release`.
 
-### §21.2 Counts — derived last
+### §21.2 `F-ab` — `gate-39` is NON-DETERMINISTIC IN CI, DEMONSTRATED NOT ARGUED
+
+The close-cascade commit `1d6af75` — **records only** — turned CI red on `gate-39`:
+
+> `/network/ @320 dark [below-floor (regression)] "the network" renders at 7.4px` — worse than
+> `netdiagram-svg`'s pinned baseline of **7.9px**.
+
+⭐ **Measured before concluding anything `[D]`:** `git diff 7cef6e0..1d6af75 -- site/src site/public
+astro.config.mjs vercel.json` is **EMPTY**. The red commit and the green one (`7cef6e0`, the tree
+production serves) carry **byte-identical shipped surfaces**; the diff is `STATE.md`, this register,
+the campaign file, a glossary entry, a session file and a deploy log. **The same bytes had gone
+green in CI twice** (`33808884733` at `7cef6e0`, and `33708987835` at `8eb6955`).
+
+⇒ **`gh run rerun 33811108468 --failed` on the same commit: `success` (attempt 2).** Non-determinism
+**demonstrated**, which is GR-3's method — *one green cannot separate "the fix worked" from "we got
+lucky", so the demonstration has to be the rerun, not the argument.*
+
+**Mechanism, filed as a HYPOTHESIS and explicitly not as a diagnosis** (GR-2's discipline — a fix
+authored on an unverified cause is the thing this campaign keeps warning about): `gate-39` derives
+rendered size from the SVG's **CTM scale**, which is a function of the container's width **at the
+moment of measurement**. A 0.5px drift at a 320px viewport is ~6%, the size of a scrollbar appearing
+or a portrait-twin media query resolving on either side of a layout settle. **That is GR-3's class
+exactly** — *a bet on a moment* rather than on a duration — and this is the campaign's **third false
+red**, after GR-3's `gate-42` and this sitting's own probe extraction.
+
+⚠ **The sharper reading, and the reason this gets a row rather than a shrug: the baseline was pinned
+from a measurement that CI does not reproduce.** `7.9` came from a local run. If CI can produce
+`7.4` on identical bytes, then **every green `gate-39` in CI has been green partly by luck**, and the
+pin is not the ratchet it is documented to be. *A ratchet whose tooth position is non-deterministic
+does not ratchet.*
+
+⛔ **NOT FIXED HERE, and the restraint is the ruling.** Three reasons, each independently sufficient:
+the remedy is a considered mobile treatment on a **campaign-protected figure** (the lock's own text
+forbids a nudge); loosening the pin to `7.4` would be **moving a bar to make a test pass**, which
+convention 1 forbids and which `ratchet_law` reserves for an operator gate; and authoring an
+instrument fix at a sitting's tail is this campaign's most-repeated defect — six of this desk's
+instruments have shipped wrong under exactly those conditions, **two of them in this sitting.**
+
+| ID | Finding | Destination | Status |
+|---|---------|-------------|--------|
+⚠⚠ **AND IT IS NOT ONE GATE — THREE WERE OBSERVED NON-DETERMINISTIC IN THIS ONE SITTING, WHICH IS
+WHY `F-ab` IS SCOPED TO THE CLASS AND NOT TO `gate-39`.** The close-cascade suite re-run reported
+**4 flaky · 677 passed** where an earlier run of the same tree read **684 passed / 0 failed**:
+`gate-42` **G42b** (light mode) and **three `gate-47` keyboard** assertions failed and passed on
+retry. Re-run in isolation immediately after: **15/15 pass in 1.1m** `[D]`.
+
+⭐ **The variable is measured, not guessed: the flaky run took 12.8m against the clean run's 1.6m —
+8×.** These gates fail under **machine load**, not on content. ⇒ *a duration-sensitive assertion is
+a bet on how busy the machine is*, and **that is GR-3's own explicitly-stated residual arriving**:
+GR-3 fixed `gate-42`'s in-flight-drain race and wrote down, in terms, that *"a page that goes quiet
+and then fires a delayed request can still be raced"* and that the settle guard is **deliberately
+not red-proven** because a race has no deterministic mutation. **This is that residual, observed.**
+
+⚠ **Read together, the three instances say something the single `gate-39` finding does not:** the
+local lane's greens are load-dependent too, so *"the local suite is green"* — the sentence this
+campaign has leaned on at every close — **is a statement about a machine's spare capacity as much as
+about the code.** GR-2's law generalises: *a count is only comparable to a count produced by the same
+command* — **on a comparably loaded machine.**
+
+| **`F-ab`** | **Duration- and load-sensitive gates across the suite.** `gate-39`'s `netdiagram-svg` measurement is **non-deterministic in CI** — `7.4px` vs a pinned `7.9px` on bytes that went green twice; rerun on the identical commit passed `[D]`. Two debts, as `F-x` had: **(a)** the flake itself, cause **unverified** (hypothesis: container width at measure time); **(b)** the pin was taken from a local measurement CI does not reproduce, so the ratchet's tooth is not where it is documented to be | a sitting of its own, with the **operator ruling on the pin** — never a same-diff loosening. Pairs naturally with lock O1's deferred 12px floor work | **live** |
+
+### §21.3 Counts — derived last
 
 | Measure | Value |
 |---|---|

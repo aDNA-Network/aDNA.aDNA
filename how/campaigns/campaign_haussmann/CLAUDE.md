@@ -2942,3 +2942,45 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > · **`F-w`**'s second lens → next `skill_template_release` · babbage's lease question · babbage's
 > two upstream findings still `proposed` · **⛩ Vitruvius's `/g/adna/` decision** (`decision_required:
 > true`) and **Hopper's 4.2.0 ack** (`ack_required: true`), each its own outward act.
+
+> ⚠⚠ **ADDENDUM 2026-09-03 (post-close, NOT a reopening) — THE CLOSE CASCADE'S OWN PUSH WENT RED IN
+> CI, ON BYTES THAT HAD GONE GREEN TWICE. `F-ab` FILED.** `1d6af75` — **records only** — failed
+> `gate-39`: *`/network/ @320 dark [below-floor (regression)] "the network" renders at 7.4px`*,
+> against `netdiagram-svg`'s pinned **7.9px**.
+>
+> ⭐ **Measured before concluding `[D]`:** `git diff 7cef6e0..1d6af75 -- site/src site/public
+> astro.config.mjs vercel.json` is **EMPTY** — the red commit and the deployed green one carry
+> **byte-identical shipped surfaces**. Those bytes had gone green in CI **twice**
+> (`33808884733` · `33708987835`). ⇒ **`gh run rerun --failed` on the same commit: `success`.**
+> **Non-determinism demonstrated, not argued** — GR-3's method, because *one green cannot separate
+> "it works" from "we got lucky."* **The campaign's THIRD false red**, after GR-3's `gate-42` and
+> this sitting's own probe extraction.
+>
+> ⚠ **The sharper half: the pin was taken from a measurement CI does not reproduce.** `7.9` came
+> from a local run; CI can produce `7.4` on identical bytes ⇒ **every green `gate-39` in CI has been
+> green partly by luck**, and ***a ratchet whose tooth position is non-deterministic does not
+> ratchet.*** Cause filed as a **hypothesis, explicitly not a diagnosis** (GR-2's discipline):
+> `gate-39` derives size from the SVG's **CTM scale**, a function of container width **at the moment
+> of measurement**, and 0.5px at a 320 viewport is about the size of a scrollbar appearing.
+>
+> ⛔ **NOT FIXED, and the restraint is the ruling** — three independently sufficient reasons: the
+> remedy is a considered mobile treatment on a **campaign-protected figure**; loosening the pin to
+> 7.4 is **moving a bar to make a test pass** (convention 1 forbids it, `ratchet_law` reserves it for
+> an operator gate); and six of this desk's instruments have shipped wrong when authored at a
+> sitting's tail, **two of them in this sitting.** Registered as **`F-ab`** at register **§21.2**
+> with its destination named — *a deferral recorded only in narrative is a deferral with no gate*
+> (P4.3's `F-v`).
+>
+> ⚠⚠ **AND `F-ab` WIDENED THE SAME SITTING — THREE GATES, NOT ONE.** The post-addendum suite re-run
+> read **4 flaky · 677 passed** where the same tree had read **684 / 0** ninety minutes earlier:
+> `gate-42` **G42b** and **three `gate-47`** keyboard assertions failed-then-passed on retry, and all
+> **15 pass in isolation (1.1m)** `[D]`. ⭐ **The variable is measured, not guessed — the flaky run
+> took 12.8m against 1.6m, 8×.** These are **load**-sensitive, not content-sensitive.
+> ⇒ ***a duration-sensitive assertion is a bet on how busy the machine is*** — and this is **GR-3's
+> own explicitly-stated residual arriving**: it fixed `gate-42`'s drain race and wrote down that a
+> page going quiet and *then* firing can still be raced, with the settle guard **deliberately not
+> red-proven** because a race has no deterministic mutation.
+> ⚠ **The consequence is bigger than three gates, and it lands on a sentence this campaign leans on
+> at every close:** *"the local suite is green"* is a statement about a machine's spare capacity as
+> much as about the code. **GR-2's law generalises — a count is only comparable to a count produced
+> by the same command, ON A COMPARABLY LOADED MACHINE.**

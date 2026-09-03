@@ -60,6 +60,15 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 > *"cheapest → most capable"* was backwards against §2.1's binding; control re-measured, `grep -rl
 > cheapest site/dist/` → **0**.
 >
+> ⚠⚠ **CI ADDENDUM — the close cascade's push went RED on `gate-39`, on bytes that had gone green
+> twice, and a rerun of the SAME commit passed. `F-ab` filed (register §21.2).** The deployed tree
+> `7cef6e0` is **CI-green**; `1d6af75` is records-only and `git diff … -- site/src site/public` is
+> **empty**. ⇒ **the campaign's third false red**, non-determinism **demonstrated** by rerun rather
+> than argued. ⚠ Sharper half: `netdiagram-svg`'s **7.9px pin came from a local measurement CI does
+> not reproduce** (it read 7.4) ⇒ ***a ratchet whose tooth position is non-deterministic does not
+> ratchet.*** ⛔ **Not fixed** — the figure is campaign-protected, loosening the pin is moving a bar
+> to pass a test, and this sitting already produced two of its own instrument defects.
+>
 > ⏭ **NEXT: the endgame, and it is HUMAN-GATED — nothing agent-reachable remains in the backbone.**
 > `P5.1`'s three criteria each wait on a human act (five recruited cold readers · a fresh macOS
 > account · the operator running the funnel as an outsider); `P5.2` waits on `P5.1`. ⭐ **`P5.1`'s
