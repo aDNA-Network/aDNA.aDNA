@@ -2833,3 +2833,21 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > destined for the next `skill_template_release` · and **`R-124`'s discharge, which needs a deploy
 > nobody has GO'd** — five increments of new public copy (two doctrine pages, `/commons`, `/network`,
 > `/`'s strip, `/privacy`) are **built and unseen**.
+> ⛩✅ **THE PUSH WAS GO'd AND TAKEN, AND CI WAS READ — 2026-09-03.** `7210d5e..ba48f9c`, gitleaks
+> clean on the outgoing range, verified **at the remote** (`git ls-remote`), never at a tracking ref.
+> Run **`33708500026`**, `gates` on `main` at **`ba48f9c`**, **success** in 7m02s. ⛔ **No deploy** —
+> the ruling was push-only; prod stays at `a852423`.
+>
+> ⭐ **This closes convention 19's WIDTH gap, which is the whole reason the push was ruled here.**
+> Every GR-4 figure to date was **local-lane only**: all 7 of its commits had gone through the
+> pre-build gate, the red-tests and the local suite, and **none had ever been through CI**. The lane
+> is now green on a runner this desk does not control.
+>
+> ⚠ **AND THE TWO LANES DO NOT REPORT THE SAME SPLIT — said rather than glossed.** Local reads
+> **683 passed / 1 skipped**; CI reads **681 passed / 3 skipped** `[D]`. **Both total 684**, so
+> nothing is missing — **2 assertions skip in CI that run locally.** That is GR-2's law holding in the
+> reassuring direction (*a count is only comparable to a count produced by the same command*), and it
+> is recorded because a bare *"CI green, 681 passed"* set beside a local *"683 passed"* reads like two
+> tests vanished. ✅ Also read from the run, not inferred: `freshness: git answered — last-updated
+> dates derived from history` (GR-2's `safe.directory` fix still holding, 2 days on) and the
+> **snapshot lane green at 26** in its own job.
