@@ -1,0 +1,85 @@
+---
+import { render } from 'astro:content';
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import CourseCheck from '../../../components/islands/CourseCheck.astro';
+import { sourceForEntry } from '../../../utils/contentSource';
+import { getCourseLadder } from '../../../utils/collections';
+import TryInClaudeCode from '../../../components/sections/TryInClaudeCode.astro';
+import { buildHowToJsonLD, buildBreadcrumbListJsonLD } from '../../../utils/seo';
+import { SITE_ORIGIN } from '../../../data/canonical';
+import '../../../styles/tutorial-meta.css';
+
+/**
+ * Lesson pages for the intro course.
+ *
+ * Mirrors `learn/tutorials/[...slug].astro` deliberately — same path generation, same provenance,
+ * same structured data, same shell. Two additions, both of which the existing pieces already
+ * support: `prev`/`next` come from the ladder's `order` (the layout has carried those props from
+ * the beginning, so sequencing needs no new component), and the lesson's `check` mounts the island.
+ */
+export async function getStaticPaths() {
+  const ladder = await getCourseLadder();
+  return ladder.map((lesson, i) => ({
+    params: { slug: lesson.id },
+    props: {
+      lesson,
+      previous: ladder[i - 1] ?? null,
+      upcoming: ladder[i + 1] ?? null,
+    },
+  }));
+}
+
+const { lesson, previous, upcoming } = Astro.props;
+const source = sourceForEntry(lesson);
+const { Content, headings } = await render(lesson);
+
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? SITE_ORIGIN;
+
+const jsonLD = [
+  buildHowToJsonLD({
+    title: lesson.data.lesson_title,
+    description: lesson.data.description ?? '',
+    url: Astro.url.href,
+    totalTime: `PT${lesson.data.estimated_minutes}M`,
+  }),
+  buildBreadcrumbListJsonLD([
+    { name: 'Home', url: `${siteBase}/` },
+    { name: 'Learn', url: `${siteBase}/learn/` },
+    { name: 'Course', url: `${siteBase}/learn/course/` },
+    { name: lesson.data.lesson_title },
+  ]),
+];
+---
+
+<DocumentationLayout
+  title={lesson.data.lesson_title}
+  description={lesson.data.description ?? `Lesson ${lesson.data.order} of the aDNA intro course.`}
+  headings={headings}
+  jsonLD={jsonLD}
+  source={source}
+  prev={previous ? { label: previous.data.lesson_title, href: `/learn/course/${previous.id}` } : undefined}
+  next={upcoming ? { label: upcoming.data.lesson_title, href: `/learn/course/${upcoming.id}` } : undefined}
+>
+  {/*
+    The badge carries `.difficulty-badge` (shape + capitalization) and no colour modifier. The
+    modifiers in tutorial-meta.css are hand-tuned per difficulty for AA contrast in both themes;
+    inventing `orientation`/`operating`/`capstone` variants would mean editing a shared stylesheet
+    this build may not touch, and reusing `beginner` for a lesson labelled "orientation" would put
+    a class in the DOM that says something untrue. The unmodified pill is honest and passes.
+  */}
+  <div class="guide-meta">
+    <span class="difficulty-badge">{lesson.data.level}</span>
+    <span class="estimated-time">{lesson.data.estimated_minutes} min</span>
+  </div>
+
+  <p class="lesson-outcomes-intro">By the end of this lesson you can:</p>
+  <ul class="lesson-outcomes">
+    {lesson.data.learner_can.map((outcome) => <li>{outcome}</li>)}
+  </ul>
+
+  <Content />
+
+  <CourseCheck lessonId={lesson.id} check={lesson.data.check} />
+
+  <TryInClaudeCode tutorialTitle={lesson.data.lesson_title} />
+</DocumentationLayout>

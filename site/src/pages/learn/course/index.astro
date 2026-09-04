@@ -1,0 +1,79 @@
+---
+import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
+import CardGrid from '../../../components/sections/CardGrid.astro';
+import CourseProgress from '../../../components/islands/CourseProgress.astro';
+import { getCourseLadder, getCourseByLevel } from '../../../utils/collections';
+import { buildCollectionPageJsonLD } from '../../../utils/seo';
+
+/**
+ * The course ladder. Mirrors `learn/tutorials/index.astro` — same layout, same CardGrid, same
+ * JSON-LD helper — with the progress island added, since a resumable course has to be able to tell
+ * the learner where they left off.
+ */
+const ladder = await getCourseLadder();
+const { orientation, operating, capstone } = await getCourseByLevel();
+
+function toCards(lessons: typeof ladder) {
+  return lessons.map((lesson) => ({
+    title: `${lesson.data.order}. ${lesson.data.lesson_title}`,
+    description: `${lesson.data.estimated_minutes} min — ${lesson.data.description ?? ''}`.trim(),
+    href: `/learn/course/${lesson.id}`,
+  }));
+}
+
+const totalMinutes = ladder.reduce((sum, lesson) => sum + lesson.data.estimated_minutes, 0);
+
+const jsonLD = buildCollectionPageJsonLD({
+  title: 'Intro to your new aDNA graph',
+  description: 'An interactive course: from "what is this folder" to running your first session.',
+  url: Astro.url.href,
+});
+---
+
+<DocumentationLayout
+  title="Intro to your new aDNA graph"
+  description="An interactive course: from “what is this folder” to running your first session."
+  jsonLD={jsonLD}
+>
+  <p>
+    A course for anyone who has just been handed an aDNA workspace and is not yet sure what they are
+    looking at. Each lesson is short, ends in something you do rather than something you read, and
+    assumes no prior knowledge — if you can find a folder on your computer, you can start here.
+  </p>
+
+  <p>
+    Every lesson also says what <em>your agent</em> will do with what you just learned. That second
+    half is the point: you are not learning a note-taking system, you are learning how to set up the
+    context an AI assistant reads before it helps you.
+  </p>
+
+  <CourseProgress total={ladder.length} />
+
+  {ladder.length > 0 && (
+    <p>{ladder.length} lessons, about {totalMinutes} minutes end to end. Your progress is remembered in this browser — no account, nothing sent anywhere.</p>
+  )}
+
+  {orientation.length > 0 && (
+    <>
+      <h2 id="orientation">Orientation — what all of this is</h2>
+      <p>Start here. These lessons build the vocabulary everything else uses.</p>
+      <CardGrid cards={toCards(orientation)} columns={2} />
+    </>
+  )}
+
+  {operating.length > 0 && (
+    <>
+      <h2 id="operating">Operating — how the work actually runs</h2>
+      <p>How a piece of work starts, gets recorded, and finishes — and how separate graphs talk to each other without stepping on one another.</p>
+      <CardGrid cards={toCards(operating)} columns={2} />
+    </>
+  )}
+
+  {capstone.length > 0 && (
+    <>
+      <h2 id="capstone">Capstone — make one of your own</h2>
+      <p>Put it together: fork your own graph and run your first real session in it.</p>
+      <CardGrid cards={toCards(capstone)} columns={2} />
+    </>
+  )}
+</DocumentationLayout>

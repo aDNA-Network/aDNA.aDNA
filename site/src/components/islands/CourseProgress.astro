@@ -1,0 +1,55 @@
+---
+/**
+ * CourseProgress — how far through the ladder the learner is.
+ *
+ * Reads the local progress store; writes nothing. Progress is a convenience, so the server-rendered
+ * state is the honest one ("0 of 7 lessons complete") and the script only ever revises it upward
+ * once it has read `localStorage`. With JavaScript off, or storage disabled, the sentence is still
+ * true — it just never changes.
+ */
+interface Props {
+  total: number;
+}
+
+const { total } = Astro.props;
+---
+
+<p class="course-progress" data-course-progress data-total={String(total)} role="status" aria-live="polite">
+  <span data-progress-text>0 of {total} lessons complete</span>
+</p>
+
+<script>
+  import { progressStore, selectCompletedCount } from '../../scripts/course/progress';
+
+  document.querySelectorAll<HTMLElement>('[data-course-progress]').forEach((root) => {
+    const text = root.querySelector<HTMLElement>('[data-progress-text]');
+    const total = Number(root.dataset.total);
+    if (!text || !Number.isFinite(total)) return;
+
+    const render = () => {
+      const done = Math.min(selectCompletedCount(progressStore.getState()), total);
+      text.textContent = `${done} of ${total} lessons complete`;
+      root.dataset.state = done >= total ? 'complete' : 'in-progress';
+    };
+
+    render();
+    progressStore.subscribe(render);
+  });
+</script>
+
+<style>
+  .course-progress {
+    margin-block: var(--space-4);
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    display: inline-block;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .course-progress[data-state='complete'] {
+    color: var(--color-success);
+    border-color: var(--color-success);
+  }
+</style>

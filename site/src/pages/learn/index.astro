@@ -65,14 +65,20 @@ const jsonLD = buildCollectionPageJsonLD({
   <p>Once the overview clicks, these are the concepts everything else builds on. Start with the Triad, then branch out.</p>
   <CardGrid cards={conceptCards} columns={2} />
 
-  <h2 id="tutorials">2 · Practice with a tutorial</h2>
+  <h2 id="course">2 · Take the intro course</h2>
+  <p>Brand new to all of this? The course runs from “what is this folder” to running your first session, in short lessons that each end in something you do. Your progress is remembered in this browser.</p>
+  <CardGrid cards={[
+    { title: 'Intro to your new aDNA graph', description: 'An interactive course — no prior knowledge assumed.', href: '/learn/course' },
+  ]} columns={2} />
+
+  <h2 id="tutorials">3 · Practice with a tutorial</h2>
   <p>Learn by doing. The tutorials run from your first CLAUDE.md to federating a vault — beginner to advanced.</p>
   <CardGrid cards={[
     { title: 'Create your first CLAUDE.md', description: 'The best place to start building — a governed file in about ten minutes.', href: '/learn/tutorials/first-claude-md' },
     { title: 'All 9 tutorials', description: 'Step-by-step, beginner to advanced.', href: '/learn/tutorials' },
   ]} columns={2} />
 
-  <h2 id="compare">3 · Compare to what you know</h2>
+  <h2 id="compare">4 · Compare to what you know</h2>
   <p>Already use PARA, Zettelkasten, or Notion? See where aDNA agrees, where it differs, and when to reach for it.</p>
   <CardGrid cards={compareCards} columns={2} />
 

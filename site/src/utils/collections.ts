@@ -39,6 +39,24 @@ export async function getSortedReference() {
   return allRef;
 }
 
+/**
+ * Course lessons in ladder order. `order` is the single sort key — `level` groups for display but
+ * never reorders, so the prev/next chain and the visual grouping cannot disagree.
+ */
+export async function getCourseLadder() {
+  const lessons = await getCollection('course', ({ data }) => !data.draft);
+  return lessons.sort((a, b) => a.data.order - b.data.order);
+}
+
+export async function getCourseByLevel() {
+  const ladder = await getCourseLadder();
+  return {
+    orientation: ladder.filter((l) => l.data.level === 'orientation'),
+    operating: ladder.filter((l) => l.data.level === 'operating'),
+    capstone: ladder.filter((l) => l.data.level === 'capstone'),
+  };
+}
+
 export async function getSortedChangelog() {
   const allChanges = await getCollection('changelog');
   return allChanges.sort(

@@ -126,6 +126,10 @@ export const navigation: NavGroup[] = [
           { label: 'FAIR Metadata', href: '/learn/concepts/fair-metadata', order: 13 },
         ],
       },
+      // Slots into the unused `order: 14` between Concepts (…13) and Tutorials (15…), so the course
+      // sits where a newcomer meets it — after the ideas, before the hands-on tutorials — without
+      // renumbering a single existing entry.
+      { label: 'Intro Course', href: '/learn/course', order: 14 },
       {
         label: 'Tutorials',
         items: [

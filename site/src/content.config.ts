@@ -159,4 +159,107 @@ const proposals = defineCollection({
   }),
 });
 
-export const collections = { docs, guides, reference, spec, changelog, proposals };
+/**
+ * Course lessons — "Intro to your new aDNA graph" (TypeScript.aDNA course C3b, under the
+ * operator-carried consent of 2026-09-03).
+ *
+ * `.md`, not `.mdx`, deliberately: the course's own promise is that an agent can be pointed at
+ * `src/content/course/` and read the curriculum raw. MDX would buy components we do not need and
+ * cost that promise its literalness.
+ *
+ * `check` is the one schema-shaped idea here. Every lesson ends in something the learner DOES, and
+ * the five kinds differ structurally — a quiz has questions, a sorter has items and bins. A
+ * discriminated union says that once, at the boundary, and the renderer narrows on `kind` with a
+ * `never` proof: adding a sixth kind becomes a compile error at the switch rather than a lesson
+ * that silently renders nothing.
+ */
+const quizQuestion = z.object({
+  prompt: z.string(),
+  options: z.array(z.string()).min(2),
+  /** Index into `options`. Refined below — an out-of-range answer is an unanswerable question. */
+  answer: z.number().int().min(0),
+  explanation: z.string(),
+});
+
+const course = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/course' }),
+  schema: seoSchema.extend({
+    page_type: z.literal('lesson').default('lesson'),
+    lesson_title: z.string(),
+    /** Position in the ladder. Drives sort, prev/next, and the progress denominator. */
+    order: z.number().int().min(1),
+    level: z.enum(['orientation', 'operating', 'capstone']),
+    estimated_minutes: z.number().int().positive(),
+    /** Lesson ids (filenames without extension), not titles. */
+    prerequisites: z.array(z.string()).default([]),
+    /**
+     * The `template_tutorial.md` contract: every lesson states what the HUMAN learns and what their
+     * AGENT will do with it. A literal rather than a boolean — there is no legal `false`, and a
+     * field that can be switched off is a contract that will be switched off.
+     */
+    dual_audience: z.literal(true),
+    /** Testable outcomes, in the learner's voice. At least one, or the lesson has no point. */
+    learner_can: z.array(z.string()).min(1),
+    check: z.discriminatedUnion('kind', [
+      z.object({
+        kind: z.literal('quiz'),
+        questions: z.array(quizQuestion).min(1),
+      }),
+      z.object({
+        kind: z.literal('sorter'),
+        bins: z.array(z.string()).min(2),
+        /** `bin` must name one of `bins`; refined below. */
+        items: z.array(z.object({ text: z.string(), bin: z.string() })).min(1),
+      }),
+      z.object({
+        kind: z.literal('sequence'),
+        /** Authored in the CORRECT order; the island shuffles deterministically at render. */
+        steps: z.array(z.string()).min(2),
+      }),
+      z.object({
+        kind: z.literal('frontmatter_fill'),
+        schema_ref: z.string(),
+        fields: z.array(z.object({ name: z.string(), hint: z.string() })).min(1),
+      }),
+      z.object({
+        kind: z.literal('checklist'),
+        items: z.array(z.string()).min(1),
+      }),
+    ]),
+    draft: z.boolean().default(false),
+    updated: dateSchema.optional(),
+  })
+    // A quiz answer pointing past the end of its options list parses fine and then renders an
+    // ungradeable question. Catching it at build time is the whole reason the schema is the
+    // boundary — the alternative is a learner who can never be right.
+    .superRefine((data, ctx) => {
+      if (data.check.kind === 'quiz') {
+        data.check.questions.forEach((q, i) => {
+          if (q.answer >= q.options.length) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              path: ['check', 'questions', i, 'answer'],
+              message: `answer ${q.answer} is out of range for ${q.options.length} options`,
+            });
+          }
+        });
+      }
+      if (data.check.kind === 'sorter') {
+        // Bound to a const: narrowing on `data.check` does not survive into a closure, because the
+        // property could in principle be reassigned between the test and the call.
+        const sorter = data.check;
+        const bins = new Set(sorter.bins);
+        sorter.items.forEach((item, i) => {
+          if (!bins.has(item.bin)) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              path: ['check', 'items', i, 'bin'],
+              message: `bin "${item.bin}" is not one of: ${sorter.bins.join(', ')}`,
+            });
+          }
+        });
+      }
+    }),
+});
+
+export const collections = { docs, guides, reference, spec, changelog, proposals, course };

@@ -1,0 +1,220 @@
+---
+/**
+ * CourseCheck — the end-of-lesson check.
+ *
+ * Zero-framework, following this site's island convention (`DarkModeToggle.astro`): semantic markup
+ * rendered on the server, a `<script>` that is a one-line import of a typed module, and a scoped
+ * `<style>` written entirely in design tokens. All logic lives in `src/scripts/course/`, under
+ * `tsconfig`, where `astro check` can see it — a bare `<script>` body is bundled but not deeply
+ * type-checked, and "our TypeScript passes the gate" has to mean something.
+ *
+ * Every control is a native form control on purpose. A drag-and-drop sorter was the obvious reading
+ * of the curriculum's "drag 8 questions onto who/what/how"; native `<select>`s are what a keyboard
+ * and a screen reader can actually operate, and this site's gates (keyboard operability, axe, zoom
+ * and reflow) are not negotiable. The interaction is duller and the check is usable by everyone.
+ */
+import type { Check } from '../../scripts/course/types';
+
+interface Props {
+  lessonId: string;
+  check: Check;
+}
+
+const { lessonId, check } = Astro.props;
+
+/**
+ * Compile-time proof that the markup below covers every arm of the union. Adding a sixth kind to
+ * the collection schema makes this alias stop being `never`, and the file stops compiling — the
+ * same guarantee the grader's `never` proof gives, on the rendering side.
+ */
+type Assert<T extends never> = T;
+type _AllKindsRendered = Assert<
+  Exclude<Check['kind'], 'quiz' | 'sorter' | 'sequence' | 'frontmatter_fill' | 'checklist'>
+>;
+
+/**
+ * Sequence steps are authored in the correct order, so they must not be DISPLAYED in it. Reversal
+ * is deterministic — a random shuffle would change the built HTML between builds and break visual
+ * comparison for no pedagogical gain. Each control keeps its original index in its `name`, so the
+ * grader never depends on display order.
+ */
+const sequenceDisplay =
+  check.kind === 'sequence'
+    ? check.steps.map((step, index) => ({ step, index })).reverse()
+    : [];
+---
+
+<section class="course-check" data-course-check data-lesson-id={lessonId} aria-labelledby={`check-${lessonId}`}>
+  <h2 id={`check-${lessonId}`}>Check yourself</h2>
+
+  <script type="application/json" data-check-payload set:html={JSON.stringify(check)} />
+
+  <form data-check-form novalidate={false}>
+    {check.kind === 'quiz' && check.questions.map((q, i) => (
+      <fieldset class="check-item" data-check-item={String(i)}>
+        <legend>{q.prompt}</legend>
+        {q.options.map((option, oi) => (
+          <label class="check-option">
+            <input type="radio" name={`q${i}`} value={String(oi)} required />
+            <span>{option}</span>
+          </label>
+        ))}
+        <p class="check-explanation" data-check-explanation hidden>{q.explanation}</p>
+      </fieldset>
+    ))}
+
+    {check.kind === 'sorter' && check.items.map((item, i) => (
+      <div class="check-item" data-check-item={String(i)}>
+        <label class="check-label" for={`${lessonId}-item${i}`}>{item.text}</label>
+        <select id={`${lessonId}-item${i}`} name={`item${i}`} required>
+          <option value="">Choose one…</option>
+          {check.bins.map((bin) => <option value={bin}>{bin}</option>)}
+        </select>
+      </div>
+    ))}
+
+    {check.kind === 'sequence' && sequenceDisplay.map(({ step, index }) => (
+      <div class="check-item" data-check-item={String(index)}>
+        <label class="check-label" for={`${lessonId}-step${index}`}>{step}</label>
+        <select id={`${lessonId}-step${index}`} name={`step${index}`} required>
+          <option value="">Position…</option>
+          {check.steps.map((_, position) => (
+            <option value={String(position + 1)}>{position + 1}</option>
+          ))}
+        </select>
+      </div>
+    ))}
+
+    {check.kind === 'frontmatter_fill' && check.fields.map((field, i) => (
+      <div class="check-item" data-check-item={String(i)}>
+        <label class="check-label" for={`${lessonId}-field${i}`}>{field.name}</label>
+        <input id={`${lessonId}-field${i}`} name={`field${i}`} type="text" autocomplete="off" />
+        <p class="check-hint">{field.hint}</p>
+      </div>
+    ))}
+
+    {check.kind === 'checklist' && check.items.map((item, i) => (
+      <label class="check-option check-item" data-check-item={String(i)}>
+        <input type="checkbox" name={`item${i}`} />
+        <span>{item}</span>
+      </label>
+    ))}
+
+    <button type="submit" class="check-submit">Check my answers</button>
+  </form>
+
+  <p class="check-result" data-check-result role="status" aria-live="polite"></p>
+</section>
+
+<script>
+  import '../../scripts/course/checks';
+</script>
+
+<style>
+  .course-check {
+    margin-block: var(--space-10);
+    padding: var(--space-6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-alt);
+  }
+
+  .course-check > h2 {
+    margin-top: 0;
+    margin-bottom: var(--space-4);
+  }
+
+  .check-item {
+    margin-bottom: var(--space-5);
+    padding: var(--space-3);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-fast);
+  }
+
+  fieldset.check-item {
+    border: 1px solid var(--color-border);
+  }
+
+  .check-item legend {
+    padding-inline: var(--space-2);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  /* State is carried by a border colour AND the result text, never colour alone. */
+  .check-item[data-state='correct'] {
+    border-color: var(--color-success);
+  }
+
+  .check-item[data-state='incorrect'] {
+    border-color: var(--color-error);
+  }
+
+  .check-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    /* 44px minimum touch target, matching this site's .dark-mode-toggle / .mobile-menu-btn rule. */
+    min-height: 44px;
+    padding-inline: var(--space-1);
+    cursor: pointer;
+  }
+
+  .check-label {
+    display: block;
+    margin-bottom: var(--space-2);
+  }
+
+  .course-check select,
+  .course-check input[type='text'] {
+    min-height: 44px;
+    width: 100%;
+    max-width: 28rem;
+    padding: var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: inherit;
+  }
+
+  .check-hint,
+  .check-explanation {
+    margin-top: var(--space-2);
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+  }
+
+  .check-submit {
+    min-height: 44px;
+    padding-inline: var(--space-5);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: inherit;
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+  }
+
+  .check-submit:hover {
+    background: var(--color-bg);
+  }
+
+  .check-result {
+    margin-top: var(--space-4);
+    margin-bottom: 0;
+    font-weight: var(--font-weight-medium);
+    /* Empty until an attempt is graded; it must not reserve a visible empty row. */
+    min-height: 0;
+  }
+
+  .check-result[data-state='passed'] {
+    color: var(--color-success);
+  }
+
+  .check-result[data-state='retry'] {
+    color: var(--color-text);
+  }
+</style>
