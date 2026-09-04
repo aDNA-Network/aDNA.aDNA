@@ -236,6 +236,36 @@ Measured at the objects `[D]`, this sitting:
   report `Duplicate ID "x"` and exit non-zero, so the zero is not vacuous. `gate-49` re-checked
   in-container: **26/26, no re-baseline owed** (the strip renders titles and dates, not headings).
 
+- **05:45 UTC** — ✅ **CI GREEN ON `2a72efe` AFTER A RERUN ON IDENTICAL BYTES.** Attempt 1 failed at
+  **exactly one assertion** — `gate-39` figure-typeset (dark), **681 passed / 1 failed** — which is
+  **`F-ab`(a) verbatim**. `gh run rerun --failed` on the *same commit*: **success**. Non-determinism
+  **demonstrated, not argued** (GR-3's method), and this is the campaign's **fourth** sighting of
+  `gate-39`'s CI flake. ⛔ Nothing was loosened and no pin was touched.
+- **05:50 UTC** — ⛔⛔ **DEPLOY HALTED. THE TREE CHANGED UNDER ME: A SECOND WRITER LANDED
+  `b2e943b` — *"Intro course (TypeScript.aDNA C3b Slice A)"*, 13 files, 1157 insertions — WHILE THIS
+  SITTING WAS RUNNING.** It sits on top of my work and is **unpushed**. Derived `[D]`:
+  `origin/main` = **`2a72efe`** (mine, CI-green) · HEAD = **`b2e943b`** (theirs, **never through
+  CI**) · prod = **`7cef6e0`**. The working tree additionally carries **uncommitted modifications to
+  generated data** — `vaults.json`, `twin_manifest.json`, `subnetworks.json`, `vaults_graph.mmd` —
+  the signature of a `npm run build` (whose prebuild regenerates committed data) rather than the
+  sanctioned `npx astro build`, and **`vaults.json` is Hestia-owned pt19 territory this campaign may
+  not hand-edit** (convention 5).
+  ⇒ **Three independently sufficient reasons not to deploy**, none of which existed when the ⛩ GO was
+  given: (1) deploying HEAD would **publish another writer's 1157-line feature that no CI has ever
+  seen**, and it is not this sitting's to ship; (2) `b2e943b` is **unpushed**, so
+  `inject_build_stamp.mjs:83` would stamp a commit **no stranger can resolve** — the P1-3 defect the
+  push-before-deploy ordering exists to prevent, and the exact reason the operator sequenced the two
+  GOs; (3) the tree is **dirty with registry data**, which `deploy_adna.sh`'s clean-tree guard would
+  refuse anyway.
+  ⭐ **This is `F-s`'s family caught BEFORE the act rather than after** — the campaign's standing
+  finding is that *two checkouts each silently un-publish the other's work*, and here the two writers
+  are in **one checkout**. The alias-ancestry guard would **not** have saved this: `7cef6e0` is an
+  ancestor of `b2e943b`, so the guard **passes** while the deploy still publishes un-CI'd work.
+  ***An ancestry guard reasons about lineage; this defect is about REVIEW STATE.***
+  ⛩ **Returned to the operator. The deploy GO was given for the R-97 tree and the tree is no longer
+  that tree** — the campaign's own law that a ratification costed against conditions that have since
+  moved is not a ratification of what is in front of you now.
+
 ## SITREP
 
 **Completed** — `R-97` scoped and built: ADR-048 amended and operator-ratified; the homepage NOT-line
