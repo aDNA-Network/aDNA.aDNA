@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260904_155111_haussmann_deploy_gr5
 created: 2026-09-04
 updated: 2026-09-04
-status: active
+status: completed
 tier: 1
 last_edited_by: agent_rosetta
 campaign: campaign_haussmann
@@ -12,7 +12,7 @@ increment: "⛩⛩ The two owed GOs — **push, then deploy** — taken in that 
 executor_tier_declared: opus
 executor_tier_actual: opus
 token_budget_estimated: "~60–110 kT for the GO half (recon ~10 · push + CI triage ~15–25 · deploy + live verification ~15–25 · records + charter correction ~15–30 · handoff ~5–10). ⚠ Costed AFTER reading `gate-49`'s TEMPLATES list per SO#11's O2 retrospective, for the sixth consecutive sitting: **no re-baseline fires** — this sitting ships no copy and no changelog entry; the deploy is of an already-built, already-green tree. GR-5's own band is costed AT its gate, not here (this campaign's standing finding: *a budget ratified before the operator's rulings is costed against a scope nobody has chosen yet*)."
-token_budget_actual:
+token_budget_actual: "~95 kT (est. 60–110 — inside band)"
 tags: [session, haussmann, deploy, r_97, gr_5, f_ab, routing]
 ---
 
