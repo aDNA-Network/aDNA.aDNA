@@ -214,6 +214,55 @@ than left for someone to discover.
 in this run. Recorded because `F-ab`'s whole subject is a rate: **this is one more green observation on
 the load-sensitive set**, and a rate is what `GR-5` needs.
 
+## ⭐⭐ POST-SITREP — `F-s`'s CONDITION CAUGHT **LIVE**, WITH THE OTHER WRITER STILL TYPING
+
+Recorded because it happened **after** the SITREP was written and it is the sharpest thing in the sitting.
+
+**What happened, measured at the reflog `[D]`:**
+
+```
+7c1800c HEAD@{0}: commit: GR-5 authored and HALTED at its ⛩ gate
+f847266 HEAD@{1}: checkout: moving from main to course/slice-b     ← NOT THIS DESK
+f847266 HEAD@{2}: commit: 🚀 DEPLOYED — R-97 is live …
+```
+
+Between this desk's deploy commit and its GR-5 commit, **the course lane created and checked out
+`course/slice-b` in this shared checkout.** The GR-5 commit therefore landed on **their branch**, and
+`git push origin main` answered **`Everything up-to-date`** — *truthfully*, because `main` had not moved.
+
+⭐⭐ **The push said `Everything up-to-date` about a commit that had just been made.** That sentence is
+**not a lie and not a bug** — it is a true statement about the ref that was named, while the work sat
+on a ref nobody named. ⇒ ***a success message is scoped to the question asked, and "did my work get
+published" was never the question `git push origin main` answers.*** It was caught only because the
+next command **derived the remote** (`git ls-remote`) instead of trusting the push's own output —
+convention 12's recon-at-execution applied to a command's *success* rather than to its failure.
+
+⚠ **This is `F-s`'s family — *two writers each silently un-publishing the other* — and it is the THIRD
+sighting, but the FIRST caught while the other writer was still at the keyboard**: `pgrep -x git`
+returned a live pid, and two new course lessons (`home-adna-your-nodes-home-vault.md`,
+`sessions-missions-campaigns-skills.md`) had been written **two minutes earlier**. Both prior sightings
+were autopsies; this one was found with the patient awake.
+
+⛔ **What was deliberately NOT done, and the restraint is the ruling.** The tidy fix — `git checkout
+main`, or `git branch -f course/slice-b` back to where they created it — would have **switched or
+rewritten another lane's ref while that lane was mid-session.** Cross-lane writes are memos, never
+direct edits (Rule 10), and *"it's a no-op on file contents"* (both refs sat at `7c1800c`) is an
+argument about **files**, not about the **ref their next commit lands on** — which is exactly the
+defect this desk had just suffered, and inflicting it back is not a fix.
+
+**What was done instead — the minimal act that touches nothing of theirs:**
+
+1. `git merge-base --is-ancestor f847266 7c1800c` → **verified a pure fast-forward before moving anything.**
+2. `git branch -f main 7c1800c` — **no branch switch, no working-tree change, no ref of theirs touched.**
+3. `git push origin main` → `f847266..7c1800c`, gitleaks clean; **`git ls-remote` confirms `7c1800c` at
+   the remote.** The GR-5 work is public and safe.
+4. This record committed **from a `git worktree` on `main`**, so the shared checkout was never disturbed.
+
+⚠ **Left as it stands, for the operator, not resolved unilaterally:** `HEAD` in the primary checkout is
+still on **`course/slice-b`**, whose tip is this desk's GR-5 commit. **Any further commit in that
+checkout lands on their branch.** That is a two-lane question and it is theirs to settle — the two
+lanes are sharing one working tree, which is the condition, not the accident.
+
 ## SITREP
 
 **Completed** — ⛩ **GO #1** (push `2a72efe..c32a4b7`, gitleaks clean) and ⛩ **GO #2** (deploy
