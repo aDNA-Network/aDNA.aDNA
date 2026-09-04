@@ -220,6 +220,22 @@ Measured at the objects `[D]`, this sitting:
   against the loaded run's **3.6 m**. Combined with the measured control-vs-changed rates, **none is a
   regression from this change.** `gate-41` **4/4** after the cascade; counts **189/174/0** re-derived.
 
+- **05:10 UTC** — ⛔⛔ **CI WENT RED ON THE PUSHED COMMIT, AND IT WAS REAL — NOT `F-ab`, AND MINE.**
+  Run `33839129621` on `7475318`: **`html-validate` failed — `Duplicate ID "what-we-did-not-do"` on
+  `/changelog`.** ⚠ **The cause is a verification I listed and did not run**: the plan's own
+  verification section names `check:markup`, and this sitting never executed it before pushing.
+  *A verification step that is written down and skipped is indistinguishable from one that passed —
+  until a runner nobody controls runs it.* ⭐ **This is exactly what the ⛩ push-before-deploy ruling
+  bought**: had the deploy gone first, this would have shipped.
+  ⭐⭐ **The defect is a real coupling nobody had written down: `/changelog` concatenates EVERY entry
+  onto ONE page, so a changelog heading's slug must be unique across the ENTIRE changelog history,
+  not within its own entry.** My `## What we did not do` collided with `2026-08-22.md`'s. Measured
+  `[D]`: it is the **only** heading collision in the whole changelog, so nothing pre-existing is
+  implicated and the entry that introduced it is this one. Renamed to `## The rewrites we rejected`.
+  ✅ `check:markup` **0**, and **control-checked** — a deliberately invalid two-`id` file makes it
+  report `Duplicate ID "x"` and exit non-zero, so the zero is not vacuous. `gate-49` re-checked
+  in-container: **26/26, no re-baseline owed** (the strip renders titles and dates, not headings).
+
 ## SITREP
 
 **Completed** — `R-97` scoped and built: ADR-048 amended and operator-ratified; the homepage NOT-line
