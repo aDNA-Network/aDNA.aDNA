@@ -21,6 +21,66 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
 
+> ⛩⛩ **2026-09-04 (2nd sitting) — FOUR RULINGS TAKEN AT ONE BATCHED PLANNING GATE, ALL FOUR RECORDED.**
+> The queue below is **superseded on every point it covers**; kept for its evidence (SO-6).
+>
+> 1. **⛩ `gate-39` pin → OPTION (1): re-derive `worstPx` in CI's own environment**, ordered strictly
+>    after AC-1 (CONSTRAINT-1), **plus a conditional fallback rider** — if the CI re-derivation is
+>    *itself* unstable across n runs, fall back to advisory automatically with the measured instability
+>    as the reason, no second trip to the operator. ⇒ **`GR-5` is SIGNED**, `status: active`, budget
+>    **ratified at ~220 kT** (top of band, which is what option (1) selects), `phase: P4`→`GR` corrected.
+> 2. **⛩ ADR-056 RATIFIED with a debt rider** — the last `proposed` ADR in the vault; the tally is now
+>    **53 accepted · 1 amended · 0 proposed**, *derived* not transcribed. Clauses **1–4 + 7 re-probed
+>    live at ratification** (2026-09-04 20:37 UTC `[D]`); clause 5 **built but NOT live**
+>    (`/.well-known/mcp.json` → 404, `npm whoami` → ENEEDAUTH); clause 6 **unbuilt**. ⚠ The anchor-4/D10
+>    re-score is **still not claimed** — it is P5.2's, with fresh isolated scorers.
+> 3. **⛩ `gate-49 doc-hub` re-baseline ruled MECHANICAL** and permitted to this desk (convention 4
+>    relaxed at a named boundary). **Done, pushed `5246e78`.**
+> 4. **⛩ TTFS runner FOLDED into `P5.1`'s recruitment** — one recruited cold reader is a non-builder by
+>    definition, runs it once, artifact labelled for **both** `P2.6 O0b` and `P5.1 AC-2`. ⇒ O0b's
+>    condition is **MET, not waived**, and **`D3` will not be CoI-limited**.
+>
+> ⭐⭐ **THE UNBIDDEN FINDING — `F-ab` HAS A FOURTH SURFACE, and the control run that found it was
+> looking at something else.** Ruling 3's mandated control (*"`--update-snapshots` must change exactly
+> 2 PNGs"*) reported **4**: `home-dark`/`home-light` too. Measured in the container `gates.yml` pins:
+> **17 px / 19 px**, ratio 0.01, **no size change** — against `doc-hub`'s **70,664 px** *and* a
+> 2851→3193 px height change. Three orders of magnitude apart ⇒ **home is noise, doc-hub is content.**
+> ⛔⛔ `playwright.config.ts` sets **`maxDiffPixels: 0`** on the stated premise that in-container
+> generation *"removes the only source of non-determinism this lane has ... every remaining differing
+> pixel is a real change."* **That premise is now falsified by measurement taken inside that very
+> container.** `gate-49` is the **one gate that writes permanent artifacts**, so it can bake its own
+> noise into a ratchet — `gate-39`'s disease with a longer half-life. Extras **reverted**; nothing
+> fixed (both quick fixes are forbidden: raising tolerance is convention 1, re-baselining on noise
+> re-anchors to an unstable number). **Routed to GR-5 as AMENDMENT 1.** ⚠ As a rate, honestly: local
+> **1 pass / 2 fail**, CI at `6d10611` **pass** both themes `[D]` — n=4 across two environments, which
+> is *not* a rate yet, and is exactly why AC-1 exists.
+>
+> ⭐⭐ **THE CONSEQUENCE NOBODY ASKED FOR — ruling 4 ran the 2026-08-26 signature's own chain backwards.**
+> That signature was praised for noticing that its ruling 4 satisfied DEFECT-5's antecedent
+> (*"**if** one person performs both runs, AC-3 precedes AC-2"*) and so made the ordering
+> **unconditional**. Moving AC-2 to a cold reader makes that antecedent **FALSE** — two different people
+> now run the two acts, so the contamination the ordering guards against **cannot occur**.
+> ⚠ **NOT unilaterally reordered** — an agent does not dissolve an operator's ordering by deriving that
+> its premise lapsed. ⛩ **One line owed at `P5.1`'s open**: release the ordering, or retain it for a
+> *different stated reason*. ⇒ *A conditional discharged by a temporary arrangement is discharged only
+> while the arrangement lasts, and nothing was watching the arrangement.*
+>
+> **Charter drift closed in the same sitting:** `mission_count` **31→32** and `estimated_sessions`
+> **44–59→45–61** (both derived from disk); the **GR section was three missions stale** (tabled GR-1
+> alone, said *"1 mission"*, and denied Lane D had a mission file two days after GR-4 closed as Lane D);
+> **`DP7` folded into `DP9`** — its charter row said *"still owed"* while P3.4's mission file said
+> *"⛩ DP7 RULED GO"*, a direct contradiction decided by which file you opened; charter `updated:` had
+> **not moved since 2026-08-20**, across ~10 missions.
+>
+> ⏭ **NEXT — and the split is the point: nothing in the backbone is agent-blocked, and everything left
+> that MOVES THE SITE is human-gated.** Agent-side: **`GR-5` O1** (the rate harness — now over a
+> **four**-gate set). Operator-side, in this order: **⛩ the course-deploy GO** (before recruitment —
+> `AC-1`'s stimulus is the live hero at a recorded stamp), then **`P5.1`'s five cold readers**, one of
+> whom runs the TTFS. Then `P5.2` → **⛩ DP9**. The outward-acts batch (Vitruvius `/g/adna/` · Hopper
+> 4.2.0 ack · babbage's lease · two upstream findings · the registry-truth cluster) blocks nothing and
+> can ride any sitting.
+
+
 > 🚀 **2026-09-04 — DEPLOYED. `R-97` IS LIVE, AND THE FOUR-SURFACE OVER-PROMISE CLASS IS CLOSED.**
 > `deploy_record: 2026-09-04T16:09:21Z mode=prod tree=2a72efe`. **No override flags** — the alias-ancestry
 > guard passed on its own terms (`7cef6e0` is an ancestor of `2a72efe`); live headers **4/4 by name AND
@@ -557,7 +617,22 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## Active Blockers
 
-None.
+⚠ **Corrected 2026-09-04.** This section read *"None."* while the ⏭ QUEUED block above it recorded a
+red `main`, an unsigned ⛩ gate and an unresolved runner conflict — **two sections of one file
+disagreeing, with the stale one being the one a cold reader would trust**, because it is short,
+declarative and headed *Active Blockers*. The campaign's **index-vs-artifact** class, inside `STATE.md`
+itself. *(Prior value preserved, SO-6: `None.`)*
+
+**Live, 2026-09-04 20:5x UTC:**
+
+| # | Blocker | Owner | Note |
+|---|---|---|---|
+| 1 | **`P5.1` needs five recruited cold readers** — and now **one of them also runs the TTFS**, which is what discharges `P2.6 O0b` | ⛩ **operator** | The campaign's true critical path. Kit built and waiting since 2026-08-26; `AC-P` satisfied since the 2026-09-04 deploy. **Nothing agent-side unblocks this.** |
+| 2 | **`P5.2` → `DP9`** | ⛩ operator | Blocked on 1. **`DP7` now folds in here**, ruled 2026-09-04. |
+| 3 | **⛩ course-deploy GO** — `/learn/course/*` is **404** live; the 7-lesson ladder is complete in-tree | ⛩ operator | ⭐ **Must be taken BEFORE recruitment opens** — `P5.1 AC-1` fixes its stimulus as *"the LIVE production hero at the recorded build stamp"*, so a deploy *after* the panel means the panel evaluated a site that no longer exists. |
+| 4 | **`F-ab` — now FOUR surfaces**, `gate-49`/`home` added 2026-09-04 | `GR-5` (signed) | Not blocking, but a standing tax: a red on the load-sensitive set is *a question, not a verdict*. |
+| 5 | Clause 5 of ADR-056 — `npm login` | *the world* | Ratified-with-rider; not a decision. |
+
 
 
 ## Next Steps → archived

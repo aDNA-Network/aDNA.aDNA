@@ -3,13 +3,13 @@ plan_id: mission_haussmann_gr_5_flaky_gates
 type: plan
 title: "GR-5 — F-ab: three gates that are bets on how busy the machine is, and a ratchet whose tooth moves"
 campaign: campaign_haussmann
-phase: P4
+phase: GR   # corrected 2026-09-04 at the signature: was `P4`, the only GR mission so tagged. The charter's GR section rules that GR missions carry no phase number. GR-1..GR-4 all read `GR`; this was a typo, caught by deriving the set rather than reading the file.
 decade: 2
 owner: stanley
-status: proposed   # ⛩ AWAITING THE PRE-BUILD GATE. Convention-13 pass is COMPLETE at 24/24 with coverage recorded below — **4 defects + 1 unstated constraint found, all resolved in the criteria BEFORE this file was written to disk**. Budget PROPOSED, not ratified. ⛩ **One ruling is owed at this gate and the mission cannot be costed without it: the `gate-39` pin** (§The ⛩ ruling). ⛔ NO BUILD, NO INSTRUMENT, NO PIN EDIT BEFORE THE SIGNATURE.
+status: active   # ⛩ SIGNED — Stanley (operator), 2026-09-04. The one owed ruling is TAKEN: **option (1), re-derive the `gate-39` pin in CI's own environment**, ordered strictly AFTER AC-1 per CONSTRAINT-1, **plus a conditional fallback rider** (§The ⛩ ruling). Budget RATIFIED at the TOP of the band, ~220 kT, which is what option (1) selects. ⭐ A FOURTH surface arrived unbidden on the day of the signature — see §AMENDMENT 1. ⛔ O1 → O2 → O3 is a dependency, not a preference.
 mission_class: verification
 executor_tier: opus   # the subject is measurement design under non-determinism — the one class where a cheaper tier reproduces the defect being fixed (it concludes from n=1, which is this finding's own headline).
-token_budget_estimated: "⛩ PROPOSED 2026-09-04 — **~140–220 kT / 1–2 sessions**, and ⚠ **the band is conditional on the ⛩ pin ruling**: option (1) *re-derive in CI* costs a CI round-trip per iteration and sits at the TOP of the band; option (2) *advisory with its reason* sits at the BOTTOM. Quoting the delta at the gate rather than after it is GR-4's own lesson — *a budget ratified before the operator's rulings is costed against a scope nobody has chosen yet*. Bands: O0 (this pass + the gate) ~20–30 · O1 the rate harness ~35–55 (**the largest share and the only part with a real design in it**) · O2 the gate-47 discriminating experiment ~25–40 · O3 the pin, per the ruling ~15–45 · O4 red-proofs ~20–30 · O5 close cascade ~15–20. ⚠ ~40 kT of any HAUSSMANN sitting is the campaign CLAUDE.md, auto-loaded — named because GR-3 found it to be the largest single read in the session and it is inside this band, not beside it. ⛔ **Deliberately NOT in this band**: a mobile treatment for `netdiagram-svg` (campaign-protected figure, its own mission) and lock O1's deferred 12px floor work, which `F-ab`'s row notes *pairs naturally* — pairing is not scope."
+token_budget_estimated: "⛩ RATIFIED 2026-09-04 — **~220 kT / 1–2 sessions**, the TOP of the proposed 140–220 band, because the ⛩ ruling selected **option (1)** and option (1) is what the top of the band was costed for. The conditional band is now a number, which is the whole reason the ruling was put at the gate. Per-objective as proposed: O0 ~20–30 [SPENT] · O1 ~35–55 · O2 ~25–40 · O3 ~45 (option (1)) · O4 ~20–30 · O5 ~15–20. ⚠ **AMENDMENT 1 may push past this and it is FLAGGED, not silently absorbed** — a fourth flaky surface (`gate-49`/`home`) is the most expensive of the four to sample: ~38 s per in-container run against milliseconds for the others, so an n=20 rate on it is ~13 min of wall-clock per tree × two trees. If O1's design needs that, it is re-costed AT O1 and reported, never quietly. ⚠ ~40 kT of any HAUSSMANN sitting is the campaign CLAUDE.md, auto-loaded — inside this band, not beside it."
 token_budget_actual:
 created: 2026-09-04
 last_edited_by: agent_rosetta
@@ -77,10 +77,88 @@ put here rather than discovered at execution.
 | **1** | **Re-derive `worstPx` in CI's own environment** | The pin becomes **a fact about the environment that asserts it**. The ratchet becomes a ratchet again. | A CI round-trip per iteration; ⚠ **ordered after AC-1** (CONSTRAINT-1) — re-deriving from a single CI run reproduces the original defect **in the other lane**, so it needs AC-1's rate first. Top of the band. |
 | **2** | **Record the gate advisory, with its reason on its face** | Honest immediately; costs nothing; the gate stops making a claim it cannot support. | **Loses the ratchet** on this figure until someone restores it. Bottom of the band. |
 
+### ⛩ RULING TAKEN — Stanley (operator), 2026-09-04
+
+**Option (1) — re-derive `worstPx` in CI's own environment** — ordered **strictly after AC-1**, per
+CONSTRAINT-1.
+
+⭐ **Plus a conditional fallback rider, adopted at the same signature so that a second trip to the
+operator is not needed for a foreseeable outcome:**
+
+> **If the CI re-derivation is ITSELF unstable across n runs — i.e. CI cannot produce a stable
+> `worstPx` for `netdiagram-svg` either — then fall back to option (2) automatically, recording
+> the measured instability as the reason on the gate's face.**
+
+**Why the rider rather than a bare option (1):** option (1)'s premise is that *CI is a stable
+measuring environment and the local Mac was not*. That premise is exactly the kind this campaign
+keeps finding to be false (convention 14: an instrument is not believed until it has been
+demonstrated to fail; convention 16: a negative result is only as wide as the command that
+produced it). **AMENDMENT 1 below falsified the identical premise for `gate-49` within hours of
+this signature.** If it is false for `gate-39` too, the honest end state *is* option (2) — and the
+rider means that conclusion arrives with **a measured rate attached** rather than as a shrug.
+
+⛔ **The rider is not a licence to reach for (2) early.** It fires only on a *measured* instability
+from the AC-1 harness, never on inconvenience, and the measurement is reported either way.
+
+---
+
 ⛔ **NOT AN OPTION, and it is named so it cannot be reached for under time pressure: `7.9 → 7.4`.**
 That is moving a bar to pass a test — convention 1 forbids it, and the gate's own `ratchet_law`
 (`gate-39-figure-typeset.spec.ts:268`) reserves the direction for an operator gate precisely so it
 cannot happen by same-diff reflex.
+
+## ⭐ AMENDMENT 1 — a FOURTH surface, found the day this mission was signed (2026-09-04)
+
+**Not sought. Found by a control run in another lane**, which is the only reason it is here.
+
+While executing ⛩ ruling 3 (the `gate-49 doc-hub` re-baseline), the mandated control — *"`--update-snapshots`
+must change exactly 2 PNGs"* — reported **4**. Measured in-container, generated and compared in the
+image `gates.yml` pins `[D]`:
+
+| Run | `home` | Detail |
+|---|---|---|
+| 1 (check) | ✅ passed both themes | — |
+| 2 (update) | rewritten | — |
+| 3 (check, after revert) | ❌ **failed both themes** | **17 px** dark / **19 px** light · ratio 0.01 · **no size change** |
+
+Contrast `doc-hub`, the real content change: **70,664 px** *and* a 2851→3193 px height change.
+**Three orders of magnitude apart** — so `home` is noise and `doc-hub` is content, and conflating
+them would have been the error.
+
+⛔⛔ **WHY THIS IS A FINDING AND NOT A NUISANCE.** `playwright.config.ts` sets **`maxDiffPixels: 0`**,
+and its own comment states the reason:
+
+> *"AC1's 08-24 amendment removes the only source [of non-determinism] this lane has — font
+> rasterisation between a developer Mac and the container — by requiring baselines to be generated
+> AND compared inside the same image. With that settled, **every remaining differing pixel is a real
+> change**, and any nonzero tolerance is unjustified headroom that a real regression can hide inside."*
+
+**That premise is now falsified by measurement taken inside the very container the amendment
+specifies.** There is a second source of non-determinism; it lives in `home`; and the sparse-scatter
+signature matches the hero constellation that `reducedMotion: 'reduce'` was believed to have frozen
+into a deterministic static render (`playwright.config.ts:47-60`, `HomeHero.astro:593`).
+
+⇒ **`F-ab`'s surface count goes 3 → 4**, and the fourth is the most consequential: `gate-49` is the
+**one gate in the suite that writes permanent artifacts** (`gate-49-…spec.ts:28` — *"a baseline is
+the ONE artifact in this suite where an instrument defect becomes PERMANENT"*). A flaky
+zero-tolerance gate that writes permanent artifacts can **bake its own noise into the ratchet**,
+which is `gate-39`'s disease with a longer half-life.
+
+⚠ **Stated as a rate, because that is the only honest form** (this mission's whole subject): CI at
+`6d10611` shows `home` **PASSING** both themes (`✓ 3`, `✓ 15`), read from the run log rather than
+inherited from a session summary `[D]`. So: **3 local observations = 1 pass / 2 fail; 1 CI
+observation = pass.** That is n=4 across two environments and it is **not** a rate yet — it is the
+reason AC-1 exists.
+
+⛔ **Nothing was fixed. Both quick fixes are forbidden and the restraint is the ruling:** raising the
+tolerance is **convention 1** (moving a bar to pass a test — the identical act the `7.9 → 7.4`
+prohibition exists to forbid, one gate over), and re-baselining on noise re-anchors a ratchet to a
+number that was never stable. `home`'s committed baseline was **reverted and left untouched**.
+
+**What AC-1 inherits:** the harness's gate set becomes `{gate-39, gate-42 G42b, gate-47 ×3,
+gate-49/home}`. ⚠ **Cost flagged, not absorbed** — `gate-49` samples at ~38 s per in-container run
+against milliseconds for the others (see the ratified budget's amendment note).
+
 
 ## Objectives
 

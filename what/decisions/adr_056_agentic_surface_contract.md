@@ -2,9 +2,9 @@
 type: adr
 adr_number: "056"
 title: "The agentic-surface contract: twins, llms artifacts, registry JSON, MCP server — versioned and self-conformant"
-status: proposed
+status: accepted
 created: 2026-08-16
-updated: 2026-08-21
+updated: 2026-09-04
 last_edited_by: agent_rosetta
 campaign_id: campaign_haussmann
 supersedes: ""
@@ -16,7 +16,19 @@ tags: [adr, haussmann, agentic, machine_legibility, d10]
 
 ## Status
 
-**Proposed** — contract shape fixed at genesis; **clauses 1, 2 and 7 built and evidenced at P3.1
+⛩ **RATIFIED — Stanley (operator), 2026-09-04**, at a batched planning gate rather than at the P3
+exit it was written for. **It sat `proposed` for 14 days past its own gate** and was the last
+`proposed` ADR in the vault. The ratification carries a **debt rider** (see §Ratification) naming
+exactly what is signed-but-unbuilt, so that a signature is never mistaken for a completion.
+
+⭐ **What the signature is over, stated so it cannot be over-read:** the *contract* — the seven
+clauses as a decision about how this site addresses machines. It is **not** a statement that all
+seven are live. Clauses 1–4 and 7 are live and were **re-probed at ratification** (2026-09-04
+20:37 UTC, `[D]`, table in §Ratification); clause 5 is built and **not** live; clause 6 is unbuilt.
+
+*Original status paragraph, preserved not replaced (SO-6):*
+
+> **Proposed** — contract shape fixed at genesis; **clauses 1, 2 and 7 built and evidenced at P3.1
 (2026-08-20)**; **clauses 3 and 4 at P3.2 (2026-08-21)**; **clause 5 designed at P3.3 O0 and built
 at O1 (2026-08-21), its publish held at ⛩ O2**; clause 6 lands at P3.3 O3. Ratification is
 the operator's at the **P3 exit**, not the builder's (§7.7) — a clause being implemented is not a
@@ -385,4 +397,33 @@ Claims move down to verifiability, never up to ambition.
 
 ## Ratification
 
-- **Decision:** _contract above; details land P3.1–P3.3_ · **Ratified-by:** _pending — Stanley (operator)_ · **Gate:** P3 exit · **Date:** _pending_ · **Status:** **proposed**.
+- **Decision:** adopt the seven-clause agentic-surface contract as written · **Ratified-by:** **Stanley (operator)** · **Gate:** P3 exit *(taken late, at the 2026-09-04 batched planning gate)* · **Date:** **2026-09-04** · **Status:** **accepted**.
+
+### ⛩ Debt rider — what this signature does NOT assert
+
+Attached at the operator's instruction, so the ADR cannot be read as a completion certificate.
+**Liveness re-probed at ratification, not inherited** — `curl` against `https://adna.network`,
+2026-09-04 20:37 UTC, production `tree=2a72efe` `[D]`:
+
+| Clause | Live? | Probe |
+|---|---|---|
+| 1 — twins + `Accept: text/markdown` | ✅ | `/learn/concepts/triad.md` → **200**; `Accept: text/markdown` on the bare URL → **200 `text/markdown; charset=utf-8`** |
+| 2 — `llms.txt` + a true `llms-full.txt` | ✅ | both → **200** |
+| 3 — versioned registry JSON | ✅ | `/vaults.json` → **200**, `/api/registry.v1.json` → **200** |
+| 4 — JSON-LD | ✅ | `/` → `Organization` + `WebSite`; `/vaults` → `Dataset` + `DataDownload` + `CollectionPage` |
+| 5 — MCP server | ⛔ **NO** | `/.well-known/mcp.json` → **404**; `npm whoami` → **ENEEDAUTH** |
+| 6 — conformance report + homepage sentence | ⛔ **unbuilt** | O3, never started |
+| 7 — versioning law | ✅ governing | the versioned URLs above are its instances |
+
+⇒ **Open debt, carried forward and owned:**
+
+1. **Clause 5 ⛩ O2** — the npm publish of `adna-mcp-server` remains its **own operator gate**, and
+   O3's discoverability limb (`/.well-known/mcp.json` + the `llms.txt` section) is **conditional on
+   it**. Blocked on `npm login`, which is *waiting on the world, not on a decision*.
+2. **Clause 6** — unbuilt in full.
+3. **The `@adna` npm scope is UNKNOWN, not ours-and-ready** — unchanged since P3.3 O0 `[D]`.
+
+⚠ **The anchor-4 / D10 re-score is still NOT claimed by this ratification**, on the ADR's own
+principle: the re-score belongs to **P5.2** with fresh isolated scorers. *Signing a contract is not
+scoring against it* — and a ratification that quietly moved the anchor would be exactly the
+"claims move up to ambition" failure this ADR forbids one paragraph above.

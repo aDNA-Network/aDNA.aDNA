@@ -98,6 +98,61 @@ in this very pass) arriving *within the remedy for a different finding*. **Caugh
 instead of at the run, and only because the ruling was read back against the findings it touched
 rather than filed against the question it answered.**
 
+## ⛩ AMENDMENT 2 — 2026-09-04: AC-2 moves OFF the operator, and that un-grounds the AC-3→AC-2 ordering
+
+**Operator ruling, 2026-09-04 batched planning gate.** `P2.6 O0b` and this mission's `AC-2` were
+found to be **the same physical act** — one TTFS run of `artifacts/p2_5/ttfs_runbook_fresh_account.md`
+on a fresh macOS account — carrying **conflicting runner conditions**: O0b requires an unassisted
+**non-builder**; AC-2 (2026-08-26 ruling 4) **struck** that and put the run on the operator with the
+CoI declared.
+
+**Ruled:** ⇒ **fold the runner into THIS mission's own recruitment.** `AC-1` already requires five
+recruited cold readers, and **a cold reader is by definition a non-builder** — so one of them performs
+the TTFS run, in one session, and **the artifact is labelled for both consumers** (`P2.6 O0b` and
+`P5.1 AC-2`). Zero marginal recruitment cost, and it is the only option under which **`D3` carries a
+number that is not CoI-limited**.
+
+⛔ **This SUPERSEDES the 2026-08-26 ruling 4** *in its runner clause only*, strike-not-delete (SO-6).
+Ruling 4's text stands above, unedited, and is now read with this amendment. Its *reasoning* — that a
+CoI is declared rather than managed away — is **not** overturned; it is **made unnecessary**, because
+there is no longer a conflict to declare.
+
+### ⭐⭐ THE CONSEQUENCE NOBODY ASKED ABOUT, AND IT RUNS THE SIGNATURE'S OWN CHAIN BACKWARDS
+
+The block above records, approvingly, how ruling 4 discharged DEFECT-5's conditional:
+
+> DEFECT-5's remedy was written conditionally — *"**if** one person performs both runs, AC-3 precedes
+> AC-2"*. Ruling 2 had already put AC-3 on the operator; ruling 4 put AC-2 there too; **one person does
+> perform both**, so the antecedent is satisfied ⇒ **AC-3 precedes AC-2, unconditionally.**
+
+**This amendment falsifies that antecedent.** AC-3 stays with the operator-as-outsider; AC-2 moves to a
+recruited cold reader. ⇒ **two different people perform the two runs** ⇒ the conditional's *"if one
+person performs both"* is **FALSE** ⇒ the ordering's stated ground — *"a TTFS run walks the runner
+through the entire quickstart, so a contribution run afterwards is performed by someone just
+onboarded"* — **describes a contamination that can no longer occur.**
+
+⚠⚠ **NOT UNILATERALLY REORDERED, and the restraint is deliberate.** The unconditional ordering was set
+by an **operator ruling**, and an agent does not dissolve an operator's ordering by deriving that its
+premise lapsed — that is precisely the *"clause reinterpreted in silence"* failure the paragraph below
+this one warns against, which would read to every later citation as a clause that was **met**.
+
+⛩ **What is owed: one line at P5.1's open.** Either —
+- **(a)** the ordering is released (AC-2 and AC-3 may run in **either order, or in parallel**, since
+  different people run them — this is the reading the reasoning supports and it saves real
+  scheduling), or
+- **(b)** the ordering is **retained for a different stated reason** than contamination.
+
+⭐ **Recorded because the chain is the lesson, not the answer.** The 2026-08-26 signature was praised
+here for reading a ruling back *against the findings it touched* rather than filing it against the
+question it answered. **This amendment is that same discipline applied to a ruling that arrived nine
+days later** — and it found that the earlier ruling's most-admired consequence was the first thing the
+new one broke. ⇒ *A conditional discharged by a temporary arrangement is only discharged for as long
+as the arrangement lasts, and nothing in the file was watching the arrangement.* This is the campaign's
+**criterion amended around a temporary condition** class (FAIL-3) — **now sighted a fifth time, inside
+the remedy that was written to close its fourth.**
+
+---
+
 ⭐ **The open choice was closed by STRIKING, not by reinterpreting, and the difference is legible.** A
 clause reinterpreted in silence reads to every later citation as a clause that was **met**; struck, it
 reads as a clause that was **paid for**, with the price in AC-2's text rather than inferable from its
