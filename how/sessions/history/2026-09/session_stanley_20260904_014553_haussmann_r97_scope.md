@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260904_014553_haussmann_r97_scope
 created: 2026-09-04
 updated: 2026-09-04
-status: active
+status: completed
 tier: 1
 last_edited_by: agent_rosetta
 campaign: campaign_haussmann
@@ -303,3 +303,22 @@ before diagnosing, and never loosen a pin to make them green. After the deploy, 
 is **`GR-5`** on `F-ab` at its own convention-13 pre-build gate, carrying the ⛩ pin ruling for
 `gate-39` (recommended: re-derive the pin in CI's own environment, or record the gate advisory with
 the reason on its face — not 7.9 → 7.4).*
+
+
+## ⛩⛩ CLOSED 2026-09-04 — THE TWO OWED GOs ARE DISCHARGED
+
+Both ⛩ GOs this session halted before were taken in `session_stanley_20260904_155111_haussmann_deploy_gr5`:
+
+- **GO #1 push** — `2a72efe..c32a4b7`, gitleaks clean; `b2e943b` is now CI-visible for the first time (run `33893251012`).
+- **GO #2 deploy** — ⛩ operator ruled the **scope**: `tree=2a72efe`, **R-97 alone**. Live and content-verified;
+  `/learn/course/` **404** ⇒ the course did not ship.
+
+⭐ **This session's halt bought exactly the option it was taken to buy — and the option was already there.**
+R-97's fix was already at `origin/main` and already CI-green; `b2e943b` sits **above** it, so the deploy never
+needed the commit that was blocking it. The choice was framed as *ship both or ship neither*; it was neither.
+
+⚠ **One attribution here is corrected at the object, not deleted (SO-6).** This file reads `b2e943b` as
+*"another writer's … not this sitting's to ship."* `git log -1 --format='%an'` returns **Stanley**,
+co-authored by Milner, *"under the operator-carried consent of 2026-09-03."* **The halt was right on review
+state and wrong on authorization** — un-CI'd is un-CI'd, and that alone justified it. `F-u`'s family, seventh
+sighting, falsified by a single command.
