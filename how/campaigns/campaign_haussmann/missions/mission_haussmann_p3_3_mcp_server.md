@@ -6,7 +6,7 @@ campaign: campaign_haussmann
 phase: P3
 decade: 2
 owner: stanley
-status: in_progress   # ⏸ O0 ✅ + O1 ✅ + **O3 ✅ (REDUCED)** 2026-08-21. ⛩ **O2 DEFERRED BY OPERATOR** — and found NOT PERFORMABLE on this node: `npm whoami` → ENEEDAUTH, no ~/.npmrc, no npm token in env, NO npm row in the credential broker. There is no npm identity here for a GO to attach to — FOURTH instance of a gate asking for a GO on an act whose prerequisite does not exist on the performing tree, and this mission WROTE that rule at O0. O3 shipped the pre-agreed AC2-deferred wording: homepage machine-door block naming llms.txt + the .md twins + /api/registry.v1.json ONLY (twin count 222 DERIVED), self-conformance sentence on the homepage for the first time. NO server, NO install line, NO /.well-known/mcp.json (still 404, correctly). Gates 552/552, axe 0 in BOTH themes, 12 captures. ⭐ The register pass CAUGHT A FALSE CLAIM IN ITS OWN NEW COPY before it shipped ("not an add-on bolted on later" — disproved by this campaign's own mission files) → cut, recorded at claim_register §14.1. ⚠ machine_eye item 11 UNMOVED and reported so; its text-search probe has gone NOISY (5 incidental mcp hits in the grown llms-full.txt, was 0) → F-o; a G15 gate-guard defect → F-p. ✅ DEPLOYED 2026-08-22T03:40:39Z tree=43e0280, live-verified on the ALIAS — item 13 FLIPPED (placement half only; the machine-checkable half stays open), item 11 still ABSENT and reported so. Mission stays OPEN at O2; AAR fires at completion (SO#5).
+status: completed   # ⛩ CLOSED 2026-09-04 at the retirement of the O2 gate (see the ⛩⛩ block at the end of this comment). ~~in_progress~~ · ⏸ O0 ✅ + O1 ✅ + **O3 ✅ (REDUCED)** 2026-08-21. ⛩ **O2 DEFERRED BY OPERATOR** — and found NOT PERFORMABLE on this node: `npm whoami` → ENEEDAUTH, no ~/.npmrc, no npm token in env, NO npm row in the credential broker. There is no npm identity here for a GO to attach to — FOURTH instance of a gate asking for a GO on an act whose prerequisite does not exist on the performing tree, and this mission WROTE that rule at O0. O3 shipped the pre-agreed AC2-deferred wording: homepage machine-door block naming llms.txt + the .md twins + /api/registry.v1.json ONLY (twin count 222 DERIVED), self-conformance sentence on the homepage for the first time. NO server, NO install line, NO /.well-known/mcp.json (still 404, correctly). Gates 552/552, axe 0 in BOTH themes, 12 captures. ⭐ The register pass CAUGHT A FALSE CLAIM IN ITS OWN NEW COPY before it shipped ("not an add-on bolted on later" — disproved by this campaign's own mission files) → cut, recorded at claim_register §14.1. ⚠ machine_eye item 11 UNMOVED and reported so; its text-search probe has gone NOISY (5 incidental mcp hits in the grown llms-full.txt, was 0) → F-o; a G15 gate-guard defect → F-p. ✅ DEPLOYED 2026-08-22T03:40:39Z tree=43e0280, live-verified on the ALIAS — item 13 FLIPPED (placement half only; the machine-checkable half stays open), item 11 still ABSENT and reported so. ~~Mission stays OPEN at O2; AAR fires at completion (SO#5).~~ ⛩⛩ **CLOSED 2026-09-04 — `status: in_progress` → `completed`, THE O2 GATE RETIRED RATHER THAN CONVENED, AAR FILED (SO#5).** ⛩ Operator ruling at the batched planning gate: **retire the gate; do not convene it.** ⭐ **The ground is this mission's own O0 rule**: a gate asking for a GO on an act whose prerequisite does not exist on the performing tree is a **defect in the gate**, not a pending decision — and O2 is the *fifth* instance of the class **inside the mission that wrote the rule down**. Re-verified at the object before the ruling was performed `[D] 2026-09-04`: `npm whoami` → `ENEEDAUTH` · no `~/.npmrc` · no npm token in env · **no npm row in the Home.aDNA broker index**. ⇒ there is no npm identity here for a GO to attach to, and there has not been for the fourteen days this gate sat "open". ⛔ **RETIRING THE GATE IS NOT PUBLISHING THE PACKAGE** — `adna-mcp-server` stays **unpublished**, `/.well-known/mcp.json` stays **404**, `machine_eye` item 11 stays **ABSENT**, and the DEFECT-3 discoverability limb stays **unshipped**. Every one of those was pre-agreed conditional on the publish and **none of them silently flips on this close**. Routed to `how/backlog/idea_publish_adna_mcp_server.md` with the credential provision named as its precondition. ⚠ **Consequence recorded rather than absorbed: ADR-056's clause 5 stays `built, not live` INDEFINITELY** — its debt rider already reads *"clause 5 is built and **not** live"*, so nothing in the ADR becomes false; what changes is that the not-live state is no longer *pending a GO* but *pending a credential nobody has scheduled*. **A rider that says "not live" and a rider that says "not live and no longer waiting on anything" are different statements**, and the ADR should be read as the second from today.
 mission_class: build
 executor_tier: opus
 token_budget_estimated: "~250–350 kT across 2 sessions: server (official TS SDK; search/fetch/registry tools) + packaging (npx) + docs + homepage agent-entry statement + conformance report (ADR-016)"
@@ -187,7 +187,7 @@ O2 carries no agent cost — it is an operator act.
 |---|---|---|---|
 | O0 | ✅ **DONE 2026-08-21** — Design: tool surface, transport, SDK line, runtime-fetch-vs-snapshot, package name | ADR-056 §mcp | — |
 | O1 | ✅ **DONE 2026-08-21** — Build + fresh-client smoke, red-tested | `mcp/` + 2 suites | — |
-| O2 | ⏸ **DEFERRED ⛩ 2026-08-21** — and found NOT PERFORMABLE here (no npm identity on this node: `whoami` ENEEDAUTH · no `.npmrc` · no token · no broker row). Needs an interactive operator `npm login` FIRST, then the GO | — | ⛩ **operator (outward) — STILL OPEN** |
+| O2 | ⏸ **DEFERRED ⛩ 2026-08-21** — and found NOT PERFORMABLE here (no npm identity on this node: `whoami` ENEEDAUTH · no `.npmrc` · no token · no broker row). Needs an interactive operator `npm login` FIRST, then the GO | — | ⛩ ~~**operator (outward) — STILL OPEN**~~ **RETIRED 2026-09-04, not convened** — a gate whose prerequisite does not exist on the performing tree is a defect in the gate (this mission's own O0 rule). Package stays unpublished; routed to `idea_publish_adna_mcp_server` |
 | O3 | ✅ **DONE (REDUCED) 2026-08-21** — homepage machine-door block (llms.txt + twins + registry JSON only) · conformance report (13/13 re-run) · delta packet · register rows **R-133–R-139** · 552/552 gates · axe 0 both themes · 12 captures. ⛔ **The DEFECT-3 discoverability limb did NOT ship** — it was pre-agreed conditional on O2, and O2 was deferred. ✅ **DEPLOYED + live-verified** `2026-08-22T03:40:39Z` tree `43e0280` — item 13 flipped on the alias. AAR deferred to mission close (SO#5) | evidence | — |
 
 ## Constraints
@@ -334,4 +334,32 @@ to ride the publish. Until then this mission stays `in_progress` and item 11 sta
 
 ## AAR (SO#5)
 
-*(before completed)*
+*Filed 2026-09-04 at the retirement of the ⛩ O2 gate. `template_aar_lightweight.md`.*
+
+**Worked.** Splitting the build from the publish. O0/O1/O3 shipped a real, red-tested package
+(26 smoke assertions · 24 red-test mutations) and a live homepage machine-door block, **none of which
+needed an npm account** — so fourteen days of an unfirable gate cost the site nothing. The
+**pre-agreed conditional wording** is the reusable half: O3 shipped exactly what was true without the
+publish and named the four things it deliberately did not ship, so the close needed no retractions.
+
+**Didn't.** The gate itself. O2 was reached, deferred, and then found **not performable** — no npm
+identity on this node, no broker row, nothing for a GO to attach to — and it then sat "open" for two
+weeks as the campaign's longest-running non-decision. ⚠ **It was never a decision the operator was
+withholding; it was a question nobody could answer from here**, and the mission index carried it as a
+pending gate the whole time.
+
+**Finding.** ⭐⭐ **This mission WROTE the rule that would have caught its own defect, at O0, and then
+shipped O2 without applying it** — *a gate must not ask for a GO on an act whose prerequisite does not
+exist on the performing tree*, and O2 is the **fifth** instance of that class, inside the file that
+authored it. ⇒ ***writing a rule down is not running it***, and the gap between the two is invisible
+because the rule's presence reads as its application. The general form is convention 13's family: a
+correct instrument applied partially, reporting like a complete one.
+
+**Change.** A gate's **prerequisite** is checked when the gate is *authored*, not when it is reached —
+one command, at the same moment the gate is written. ⛔ **No checker** (conventions 15/16/17/18 all
+ruled this shape): the habit costs a line and cannot itself be wrong.
+
+**Follow-up.** `how/backlog/idea_publish_adna_mcp_server.md` — the publish, with the credential
+provision named as its precondition. ⚠ **ADR-056 clause 5 stays `built, not live` indefinitely** and
+its rider should now be read as *not live and no longer waiting on a GO*. `machine_eye` item 11 stays
+**ABSENT** and the conformance report still leads with it.

@@ -93,18 +93,63 @@ ours.** ADR-048 §Direction-picked, the ratified substance:
 |---|---|
 | **Q1** | An **open standard / convention for organizing a project's files** so that AI agents *and* the people with them can find things — three folders, plain Markdown, in git. *(A reader who says "a way of laying out a repo so AI tools know where stuff is" is **correct**.)* |
 | **Q2** | **Teams working with agentic coding tools on real projects.** *(Not "AI researchers", not "everyone".)* |
-| **Q3** | **Not a product or service** — no server, no signup, nothing leaves your machine. |
+| **Q3** | **Not a product or service** — no server, no signup, **aDNA itself sends nothing**. ⛩ **AMENDED 2026-09-04 (R-97)** — ~~*"nothing leaves your machine"*~~ is **struck at ADR-048 itself** (`adr_048:71`), replaced by the scoped line at `adr_048:150` (Amendment ratification block, **`accepted`**, ⛩ R-97 signature). ⛔ **Score the SCOPED claim, never the absolute** — see the amendment note below. |
 
 ⚠⚠ **THE TRAP, AND IT IS THE REASON THIS SECTION EXISTS.** The panellist reads the **live hero**; the
 scorer scores against **ADR-048**; and *those two texts are not word-identical*. P4.5b's rewrite moved
 *"versioned in git"* → *"tracked in git"* and *"always know where things live"* → *"can always find
 what they need"*, and added a third paragraph with no ADR equivalent. **Verified at the live twin
 2026-08-26 `[D]`: the substance is unchanged** — same category noun, same mechanism, same audience sub,
-same NOT-line — **so the referent is sound.** But a scorer working from the ADR alone could mark down a
+~~same NOT-line~~ — **so the referent is sound.** But a scorer working from the ADR alone could mark down a
 reader who correctly echoes the *live* wording.
 
 ⇒ **Scorers score substance, never wording.** A reader who says *"it tracks your project files in
 git"* has Q1 right. This is stated here because a wrong ruling on it would look exactly like rigour.
+
+### ⛩⛩ AMENDMENT 2026-09-04 — THE NOT-LINE CLAUSE ABOVE EXPIRED, AND *"SCORE SUBSTANCE"* DOES NOT SAVE IT
+
+⛔ **`R-97` shipped on 2026-09-04 and changed the one conjunct the paragraph above certifies as
+unchanged**, nine days after it was certified. Struck rather than deleted (SO-6) — the reasoning is
+the reusable part, and only the NOT-line conjunct is wrong.
+
+| Surface | Reading `[D] 2026-09-04` |
+|---|---|
+| `adr_048:71` | the DP2 NOT-line is **`~~struck~~`**; *"the operative NOT-line is now…"* |
+| `adr_048:150` | Amendment block — *"…no server, no signup; **aDNA itself sends nothing**"* · **Status: accepted** |
+| live `/index.md` twin | *"Not a product or service — no server, no signup; aDNA itself sends nothing."* |
+| live `/`, `"nothing leaves your machine"` | **×0** |
+| live `/`, `"itself sends nothing"` | **×1** |
+
+⭐⭐ **THIS SECTION'S OWN ESCAPE HATCH DOES NOT REACH IT, AND THAT IS THE FINDING.** The rule above is
+*scorers score substance, never wording* — sound, and it is why the 08-26 divergences were harmless.
+**`R-97` moved the SUBSTANCE.** *"Nothing leaves your machine"* is an **unscoped absolute** whose
+falsifying case is a vault pushed to a remote; *"aDNA itself sends nothing"* **scopes the promise to
+the tool**. Those are different claims, not two wordings of one — which is precisely why R-97 needed
+an ADR amendment and a ⛩ signature rather than a copy edit.
+
+⇒ **The failure mode is specific, and it favours the site.** A panellist reading the live hero says
+*"the thing itself doesn't send anything"* — **correct**. A sharper one adds *"…though if I push my
+vault to GitHub, that obviously leaves my machine"* — which is **the exact reasoning R-97 was ratified
+to accommodate**, and against the stale key it reads as a reader who *failed* to absorb the NOT-line.
+***The retired over-promise would have been scored as the correct answer, in the panel whose stated
+purpose is retro-validating ADR-048.***
+
+⛔ **Scope of this amendment, named so it is not over-applied** (convention 17): the stale referent was
+in **this file's Q3 row alone**. `recruitment_brief.md`, `ttfs_run_record.md` and
+`contribution_run_protocol.md` were swept for the struck string and are **clean** `[D]`.
+
+⚠ **What a scorer must now do with the falsifying case.** A reader who volunteers the push-to-remote
+caveat is **not** marking the site down — they have read the scoped claim correctly. Record it as a
+**correct Q3**, and note the observation separately: a reader reaching for the falsifying case
+unprompted is evidence the scoping was necessary, which is a finding about ADR-048's amendment and
+not about the panellist.
+
+⭐ **The general form, because this will recur:** *a kit that certifies "substance unchanged" has
+stamped a measurement, and a measurement is a statement with a timestamp* (convention 16). The
+certification above was honest on 2026-08-26 and became false without any event marking the
+transition — **the same class the campaign found in its live-verification claims, arriving in a
+scoring key.** ⇒ **re-derive the stimulus↔referent comparison at the panel's open, never at the kit's
+authoring** — it costs one `curl` of `/index.md` against `adr_048:150`.
 
 ## 5 · Two independent scorers — mechanism reused from `scorer_isolation_protocol.md`
 
