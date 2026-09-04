@@ -3069,3 +3069,89 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > gate **advisory with the reason on its face**). ⛔ Held: **P5.1** with the humans — and its `AC-P`
 > re-stamps against whatever tree this ships, so the deploy precedes the panel by the ⛩ ruling
 > *fix → deploy → panel*.
+
+> ⛩⛩ **`GR-5` IS SIGNED AND `active` (2026-09-04) — `F-ab`: three gates that are bets on how busy the
+> machine is, plus a ratchet whose tooth moves.** `missions/mission_haussmann_gr_5_flaky_gates.md`.
+> ⛔⛔ **THIS BLOCK IS ITSELF THE FINDING THAT PROMPTED IT.** GR-5's authoring (`7c1800c`), its ⛩
+> signature and `AMENDMENT 1` (`3889c29`) **all landed in `STATE.md` and the mission file, and NONE of
+> them reached this index** — so the campaign's own governance file ended at `R-97` while a *signed,
+> active* mission had been running underneath it for a day. ⭐ **The index-vs-artifact class, in the
+> index, for the fifth time** — and note which half was honest: the **mission file was right
+> throughout**; this file simply never heard. Convention 7's close-cascade rule (*whoever closes a
+> mission updates this line in the same commit*) governs a **close**; nothing governed an **open**,
+> which is the gap. ⇒ ***a mission's OPEN is as index-coupled as its close.***
+>
+> **Convention 13 ran COMPLETE at 24/24 with coverage recorded** (method-bearing AC-1/2/3/6 × test-bearing
+> AC-1…AC-6 = 4 × 6, derived not typed; 4 self-pairs + 20 cross-pairs): **4 defects · 1 unstated
+> constraint · 19 clean**, every one resolved in the criteria before the file reached disk.
+> **Eleventh consecutive mission where the pass paid for itself**, and the **second** where a
+> **self-pair** was the one that paid — `DEFECT-4`: the method said *"≥N runs"*, the test said
+> *"reports a rate"*, and **N was never named**, so at §22.4's measured 40–60% flake the instrument
+> would emit **a number that looks like a rate and licenses conclusions n=5 cannot support.** ⭐ That is
+> ***a control is a rate, not a run*** reappearing **one level up, inside the criterion written to fix
+> it** — and self-pairs are exactly the pairs a pass "checking the suspicious ones" skips by
+> construction.
+>
+> ⛩ **The one owed ruling was TAKEN at the signature: option (1) — re-derive `gate-39`'s `worstPx` in
+> CI's own environment**, ordered **strictly after AC-1** (`CONSTRAINT-1`: re-pinning from a single CI
+> run reproduces `F-ab`(b) in the other lane), **plus a conditional fallback rider** — if CI is *itself*
+> unstable across n runs, fall to **advisory** automatically with the measured instability as the reason.
+> ⛔⛔ **NEVER `7.9 → 7.4`**: that is moving a bar to pass a test (convention 1), and the gate's own
+> `ratchet_law` (`gate-39-figure-typeset.spec.ts:268`) reserves the direction for an operator gate.
+> Budget ⛩ ratified at the **TOP** of the band — **~220 kT / 1–2 sessions**, `opus` — because option (1)
+> is what the top was costed for. `phase: P4 → GR` corrected (the only GR mission carrying a phase
+> number). ⭐ **The rider is the reusable part**: option (1)'s premise is *CI is stable and the Mac was
+> not*, and **`AMENDMENT 1` falsified that identical premise for `gate-49` within hours of the
+> signature.**
+>
+> ⭐ **`AMENDMENT 1` — a FOURTH surface, found the day of the signature, and NOT sought.** Executing ⛩
+> ruling 3's `gate-49 doc-hub` re-baseline, the **mandated control** (*"`--update-snapshots` must change
+> exactly 2 PNGs"*) reported **4**. Measured in-container: `home` differs by **17 px dark / 19 px light
+> with no size change**, against `doc-hub`'s **70,664 px** *and* a 2851→3193 height change — **three
+> orders of magnitude apart**, so `home` is noise and `doc-hub` is content, and conflating them would
+> have been the error. ⛔⛔ **This falsifies `playwright.config.ts`'s own stated premise** for
+> `maxDiffPixels: 0` — *"every remaining differing pixel is a real change"* — **by measurement taken
+> inside the very container the AC1 amendment specifies.** ⇒ `gate-49` is the **one gate in the suite
+> that writes permanent artifacts**, so a flaky zero-tolerance gate **can bake its own noise into the
+> ratchet** — *`gate-39`'s disease with a longer half-life*. ⛔ Nothing fixed; the baseline was
+> **reverted and left untouched**, because raising the tolerance is the `7.9 → 7.4` act one gate over.
+>
+> ⭐⭐ **DATUM 1 (O1's open, 2026-09-04) — `gate-39` PASSED AND FAILED IN CI ON BYTE-IDENTICAL BYTES.**
+> Convention 19 at the open found `main` **RED at HEAD**, which the carried handoff did not have: run
+> **`33917725977`** (`3889c29`) **success**, run **`33918391804`** (`fe2bba6`) ⛔ **failure — 1 failed /
+> 681 passed**, the single red being `gate-39-figure-typeset.spec.ts:137` (dark). **The control is the
+> point:** `git diff --stat 3889c29..fe2bba6 -- site/` is **EMPTY** `[D]` — `fe2bba6` touched only
+> `how/sessions/`. ⇒ **two independent runs of the standing lane, eight minutes apart, disagreed on
+> identical shipped bytes**, where every prior observation needed a `rerun` to produce its pair.
+> ⛔ **It does NOT trip the fallback rider** — that fires on a *measured rate from AC-1's harness*, and
+> **n=3 is not a rate.** ⚠ **And a carried prediction in GR-5's own file had already expired**: it said
+> a red `main` would be `gate-49 doc-hub`, *"NOT `F-ab`, NOT this mission's"* — written **before** ruling
+> 3's re-baseline, which worked (`gate-49` **26 passed** in CI). ⇒ ***a carried prediction expires the
+> moment the act it anticipates is performed, and it does not announce that it has*** — read literally,
+> it would have routed this red out of GR-5's scope.
+>
+> ⚠ **THE ONLY UNSHIPPED SITE DELTA IS THE INTRO COURSE, AND SHIPPING IT MAKES A LIVE `/privacy`
+> SENTENCE FALSE.** Prod serves **`2a72efe`**; of the 8 commits since, the shipped-surface diff is **one
+> thing** — `b2e943b`, the course (TypeScript.aDNA C3b Slice A), 13 files, +1157/−3 — everything else is
+> records-only, and `/learn/course/` is **404 by ruling** `[D]`. **C1:** `/privacy` §*"The one thing
+> stored in your browser"* (`privacy/index.astro:55`) names exactly one key, `theme` (`:58`); the course
+> adds a **second** `localStorage` key (`scripts/course/progress.ts:76,91`) ⇒ **convention 1, on the
+> trust-adjacent page.** **C2:** `grep -rn "learn/course" site/tests/ site/scripts/` → **0 hits** and the
+> commit touched **zero** test/gate/audit files ⇒ **ADR-057 / convention 7 not honoured**, and P4.3's
+> *"a 620-green suite knew nothing about the new route"* verbatim. ⭐ **Said in fairness, because the
+> register pass cuts both ways:** `progress.ts:7` documents that *"`localStorage` is the whole
+> transport"*, so the **zero-network property holds** and **`R-97` is not contradicted** — the defect is
+> **a count in a sentence, not a transport**. ⛩ Routed to the **course-deploy GO**, which is ordered
+> **before** `P5.1` recruitment because `AC-P` re-stamps against whatever tree ships.
+>
+> ⏭ **NEXT: `O1`** — the rate harness, **parameterised by tree AND config from the first line**
+> (`DEFECT-1`, because `O2` consumes the same instrument), **`n` named with its power stated**
+> (`DEFECT-4`), wall-clock per run recorded, over **FOUR** surfaces. Then **O2** (the `gate-47`
+> discriminating experiment — ⛔ *a refutation is a valid and complete result*, and `AC-4` reports
+> **INAPPLICABLE**, never a blank) → **O3** (the ⛩ pin ruling). ⛔ Held: **P5.1** with the humans ·
+> `P2.6`'s TTFS **folded into P5.1 recruitment** by ⛩ ruling 4 (O0b's non-builder condition **MET, not
+> waived**) with ⛩ **one line owed at P5.1's open** on the `AC-3 → AC-2` ordering, whose antecedent that
+> ruling **falsified**. ⚠ Owed: the ⛩ course-deploy GO · `P3.3`'s ⛩ `npm login` (ADR-056's debt rider,
+> clause 5 — `/.well-known/mcp.json` **404** `[D]`) · B1's ⛩ Speed-Insights → transport → first p75 ·
+> ⛩ Vitruvius's `/g/adna/` decision · Hopper's 4.2.0 ack · babbage's lease question + two `proposed`
+> upstream findings.

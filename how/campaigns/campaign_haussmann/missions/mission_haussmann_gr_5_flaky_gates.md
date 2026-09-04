@@ -160,6 +160,56 @@ gate-49/home}`. ⚠ **Cost flagged, not absorbed** — `gate-49` samples at ~38 
 against milliseconds for the others (see the ratified budget's amendment note).
 
 
+## ⭐⭐ DATUM 1 — `gate-39` PASSED AND FAILED IN CI ON BYTE-IDENTICAL BYTES (2026-09-04, O1's open)
+
+**A datum for `AC-1`, not a diagnosis and not a fix.** Recorded here rather than in a session file
+because `AC-1`'s subject *is* the rate, and because this campaign has been bitten four times by a
+finding whose only home was the prose that reported it.
+
+Derived at O1's open by convention 19 (`gh run list --workflow=gates.yml --branch main -L 5`),
+which is the entire reason it was seen at all:
+
+| Run | Commit | Verdict | Reading |
+|---|---|---|---|
+| `33917725977` | `3889c29` | **success** | 682 passed · `gate-49` 26 passed · 0 failed steps |
+| `33918391804` | `fe2bba6` | ⛔ **failure** | **1 failed · 681 passed (4.7m)** |
+
+The single failing assertion, verbatim `[D]`:
+
+```
+✘ 315 [chromium] › tests/gates/gate-39-figure-typeset.spec.ts:137:5 ›
+      Gate 39 — figure typeset floor (lock O1) ›
+      G39 figure-typeset: rendered text clears the 12px floor, unclipped and level (dark)
+```
+
+⭐⭐ **THE CONTROL IS THE POINT.** `git diff --stat 3889c29..fe2bba6 -- site/` is **EMPTY** `[D]` —
+`fe2bba6` is a session-close commit touching **only** `how/sessions/`. ⇒ **the two runs measured
+byte-identical shipped surfaces, eight minutes apart, and disagreed.** Every prior CI observation of
+this gate's non-determinism required a `gh run rerun` to produce its pair; **this pair is two
+independent runs of the standing lane**, which is a stronger form of the same evidence.
+
+⚠ **WHERE THIS LANDS AGAINST ⛩ RULING 1, STATED CAREFULLY BECAUSE IT IS TEMPTING TO OVERCLAIM.**
+Option (1)'s premise is that *CI is a stable measuring environment and the local Mac was not*. This
+is a **counter-observation to that premise**, in the lane the ruling proposes to measure in — and
+`AMENDMENT 1` falsified the identical premise for `gate-49` within hours of the signature. ⛔ **It
+does NOT trip the conditional fallback rider.** The rider fires on *a measured rate from AC-1's
+harness*; **n=3 is not a rate**, and this mission's own headline — ***a control is a rate, not a
+run*** — binds evidence that flatters the mission exactly as hard as evidence against it. ⇒ **O1 is
+built to test this, and O3 is where it is answered.**
+
+⚠ **A CARRIED PREDICTION IN THIS FILE HAD ALREADY EXPIRED.** The Next Session Prompt below says
+*"`main` may still be RED on `gate-49 doc-hub (/learn/)` — that is the course lane's ADR-057 debt,
+**NOT `F-ab`** and **NOT this mission's**."* It was written before ⛩ ruling 3's re-baseline landed
+(`5246e78`). The re-baseline **worked** — `gate-49` reads **26 passed** in CI at `3889c29` `[D]` —
+and the red that remains is a **different gate** and **is** this mission's. ⇒ ***a carried
+prediction expires the moment the act it anticipates is performed***, and it does not announce that
+it has: read literally at this session's open, it would have routed a `gate-39` red to the course
+lane and out of `GR-5`'s scope.
+
+⭐ **Running `gate-39` CI tally — observations, deliberately not a rate:** fail `1d6af75` → `rerun
+--failed` success · **pass** `33917725977` · **fail** `33918391804`.
+
+
 ## Objectives
 
 | # | Objective | Output | Gate |
