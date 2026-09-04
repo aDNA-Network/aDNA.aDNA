@@ -85,7 +85,19 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 > explicitly** that P2.6 O0b takes the CoI-declared form too, rather than leaving it open on a condition
 > that was quietly superseded next door.
 >
-> ⏭ **NEXT: `GR-5` on `F-ab`** at its own ⛩ convention-13 pre-build gate, carrying the pin ruling.
+> ⏭ **NEXT: `GR-5` IS AUTHORED AND `proposed` — ⛩ AWAITING ITS PRE-BUILD GATE.**
+> `missions/mission_haussmann_gr_5_flaky_gates.md`. Convention-13 pass **COMPLETE at 24/24 with coverage
+> recorded** (derived: 4 method-bearing × 6 test-bearing; 4 self-pairs + 20 cross) — **4 defects + 1
+> unstated constraint, all resolved in the criteria BEFORE the file reached disk.** ⭐ **DEFECT-4 was a
+> SELF-PAIR and it paid**: the method said *"≥N runs"*, the test said *"reports a rate"*, and **N was
+> never named** — at §22.4's measured 40–60% flake, **n=5 cannot separate 40% from 60%** ⇒ the
+> instrument would emit a number that looks like a rate and licenses conclusions it cannot support.
+> ***This campaign's own headline defect — a control is a rate, not a run — reappearing one level up,
+> inside the criterion written to fix it.*** ⭐ **DEFECT-2**: AC-3 and AC-5 were **met by opposite states
+> of the same file** and each read fine alone. ⭐ **DEFECT-3**: AC-4 read literally made **a refutation a
+> mission failure**, and *a mission that must not return null will find a fix it has no evidence for.*
+> ⛩ **ONE RULING IS OWED AND THE BUDGET CANNOT BE RATIFIED WITHOUT IT** (the band's top and bottom are
+> different options — GR-4's lesson, quoted at the gate rather than after it).
 > `gate-39` / `gate-42 G42b` / three `gate-47` assertions are load-sensitive ⇒ **three gates are currently
 > unreadable**, a standing tax on every remaining sitting. The sharp half is diagnosed: `netdiagram-svg`'s
 > **7.9px pin came from a local measurement CI does not reproduce** (CI reads 7.4) ⇒ ***a ratchet whose
