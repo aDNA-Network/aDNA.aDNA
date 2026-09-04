@@ -53,8 +53,13 @@ const HOMEHERO_ROUTES = ['/', '/network/', '/commons/', '/vaults/'];
 
 // ── HAUSSMANN P4.5a (R-120): the homepage 30-second-zone contradiction ──
 // The reframe clause used to end "and shared in the open", whose grammatical subject is "Your
-// context" — promising, two sentences after "nothing leaves your machine", that the reader's notes
-// are published. Openness now attaches to the standard instead.
+// context" — promising, two sentences after the NOT-line's local-storage reassurance, that the
+// reader's notes are published. Openness now attaches to the standard instead.
+// ⚠ Re-quoted at R-97 (2026-09-04, same-diff per ADR-057): this comment quoted the NOT-line as
+// "nothing leaves your machine", which the ⛩ amendment retired as an unscoped absolute. ⭐ Worth
+// knowing WHY both lines needed work: R-120 scoped the reframe correctly and nothing routed it to
+// its sibling nine lines up, so the page carried the scoped claim and the absolute together for
+// two weeks. The NOT-line is now pinned in gate-26's fixture (it was asserted by nothing at all).
 const R120_RETIRED = 'and shared in the open';
 // HAUSSMANN P4.5b O1 (2026-08-26) — re-pinned in the same commit as the copy change
 // (same-diff, ADR-057). The reframe was rewritten for reading level; the R-120 REPAIR is

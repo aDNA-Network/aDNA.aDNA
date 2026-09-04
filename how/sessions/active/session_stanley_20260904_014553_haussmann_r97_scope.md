@@ -12,7 +12,7 @@ increment: "⛩ R-97 — scope the homepage NOT-line, the LAST of four surfaces 
 executor_tier_declared: opus
 executor_tier_actual: opus
 token_budget_estimated: "~70–120 kT / 1 session for the gate half. Costed AFTER reading `gate-49`'s TEMPLATES list (SO#11's O2 retrospective, applied at costing time for the fifth consecutive sitting): ⚠ `/` **IS** a template (`gate-49:50`) ⇒ a `home` re-baseline **WILL** fire, but only in the BUILD half, which is post-signature and NOT in this band. Bands: session open + derivations ~10 · baseline FKGL measurement on `/` (build + census, both ends same instrument) ~15–25 · the four-surface lineage re-verified at each object ~10–20 · the ADR-048 amendment authored with its measured wording options ~20–35 · gate-coverage finding + register note ~10–20 · halt + handoff ~5–10. ⛔ The build half (copy + fixture + red-test + re-baseline + changelog + deploy) is a SEPARATE band, costed at the signature — this campaign's own repeated finding is that a budget ratified before the operator's rulings is costed against a scope nobody has chosen yet."
-token_budget_actual:
+token_budget_actual: "≈150–200 kT — RECORDED AT THE TIME, not reconstructed. Against the ~70–120 kT gate-half band PLUS the ~80–140 kT build-half band quoted at the signature (~150–260 kT combined): inside it. ⚠ The named overrun driver inside the gate half is the ATTRIBUTION work on `F-ab` — two rebuilt trees × 5 runs each to establish that `gate-47`'s flake rate is comparable with and without this change. That was not in the estimate and it is not scope drift: it is the cost of refusing to ship on an unverified attribution, and it produced the sitting's second-sharpest finding (*a control is a rate, not a run*)."
 tags: [session, haussmann, r_97, adr_048, claim_register, pre_build_gate, routing]
 ---
 
@@ -157,10 +157,103 @@ Measured at the objects `[D]`, this sitting:
   the best-scoring one.** *The cheap remedy was the wrong one* — GR-4 O1's class, arriving at wording
   rather than at an instrument.
   ⇒ Recommended **candidate 1**, *"…no server, no signup; **aDNA itself sends nothing**"* — which is
-  **`R-64`'s ratified remedy verbatim, already shipped on `/get-started` by GR-1**, so this is one
-  ruling reaching its fourth surface rather than a new phrasing to be judged. Costs **0.02**, leaving
-  **0.02**, and that price is stated rather than absorbed.
+  **`R-64`'s P0.5 prescription verbatim**, so this is one ruling's own words rather than a new
+  phrasing to be judged. Costs **0.02**, leaving **0.02**, and that price is stated rather than
+  absorbed.
+- **02:20 UTC** — ⛩⛩ **SIGNED: candidate 1, scope HELD.** Both offered widenings (a `gate-23`
+  hero-claims assertion set; a `/get-started` re-verification) were **declined** at the gate.
+- **02:35 UTC** — ⛔⛔ **A FALSE PROVENANCE CLAIM OF MINE WAS CAUGHT MID-BUILD, ON FIVE SURFACES, AND
+  IT IS THE SITTING'S SHARPEST FINDING.** Every draft above said candidate 1 was *"already shipped on
+  `/get-started` by GR-1."* **False.** GR-1 discharged `R-64` with a **different string** —
+  *"…makes no network calls of its own"* — and `"itself sends nothing"` measured **0 occurrences
+  across the built site** `[D]`. ⇒ **R-97 is the FIRST surface to ship the prescribed string**, which
+  is a sharper fact than the one it replaces: *the register held an exact remedy wording for nineteen
+  days and nothing ever used it.*
+  ⭐ **Where it came from:** `R-64`'s own register row calls the prescription *"the exact remedy GR-1
+  shipped"* — meaning the **substance**, reading as the **string**. Inherited without opening
+  `/get-started`. ***A claim about a destination, verified in the prose that routed it*** — `F-u`'s
+  class, propagated to **this session file, the proposal, the ADR amendment, the `index.astro`
+  comment and the fixture `why`** before anything caught it.
+  ⭐⭐ **What caught it was not vigilance — it was the fixture.** Adding `R-97` meant reading the
+  neighbouring rows, and **`R-64`'s row sits four entries above with its ACTUAL shipped string in the
+  `quote` field.** *The instrument being extended is what exposed the claim the extension was
+  justified by.*
+  ⚠ **The correction runs BOTH ways:** *"fourth surface"* holds; ***"and last"* does not** — `R-33`
+  (*"never leave the computer unless you send them"*) was **already correctly scoped pre-campaign**,
+  and the ⛩ ruling declined a sweep, so *"the last"* is a claim wider than the command that produced
+  it (convention 16). **All five surfaces corrected in the build commit.**
+  ⚠ **One surface cannot be corrected: commit `8f97773`'s message**, which carries the false sentence
+  permanently. Corrected here and at every live surface instead (SO-6, strike-not-delete).
 - **02:15 UTC** — ⛩ **HALT AT THE SIGNATURE.** `artifacts/r97/adr_048_not_line_amendment.md` is
   `proposed`. **Four controls confirm nothing was performed** `[D]`: `site/src` **0** changed ·
   ADR-048 **0** · `claim_register.md` **0** · `site/tests` **0**. The only new files are this session
   record and the proposal.
+- **02:40–03:35 UTC** — **BUILD HALF.** ADR-048 amended (strike-not-delete + §Amendment + 4-field
+  block) · `index.astro:137` ruled wording · two stale comments re-quoted same-diff
+  (`HomeHero.astro`, `gate-23`) · `gate-26` fixture gains `R-97` · register **§22** · close cascade
+  (campaign `CLAUDE.md`, `STATE.md`, `MANIFEST.md` genuinely re-derived).
+- **03:05 UTC** — ✅ **Real build reproduced the gate's estimate EXACTLY: prose FKGL 9.98**, against
+  the twin-substitution prediction of 9.98. ⭐ *That agreement is what makes the estimation method
+  reusable at a future gate rather than a lucky guess.* Headroom **0.02** remains, as priced.
+- **03:10 UTC** — ✅ **`gate-49` re-baseline PREDICTED, then confirmed RED FIRST** (in-container:
+  **2 failed / 24 passed**, both `home`), then **exactly 2 of 24** regenerated. The **22 untouched
+  independently prove nothing leaked**. ⛔ No mask, no tolerance raised.
+- **03:20 UTC** — ✅ **`R-97` red-proven with controls**: 32/32 green → a mutation reverting only the
+  NOT-line reds **exactly `R-97`** (1 failed / 31 passed) → restore 32/32, `dist` byte-identical.
+  *The demonstration attributes to the assertion under test* (`F-z`).
+- **03:25 UTC** — ⚠ **`gate-30`'s two reds were convention 6's documented case.** The in-container
+  `gate-49` run rebuilt `dist/` and overwrote `.vercel/output/config.json` **without the
+  redirect-widening step**. Diagnosed by asking *which step produces the thing the gate asserts*
+  before touching anything; `inject_redirects` → green.
+- **03:30 UTC** — ⛔ **A FIFTH instrument defect, in PROSE.** §22.4's comparison table first read
+  *"(R-97 reverted…)"* in its **first cell**, and `derive_register_counts.py`'s predicate is *"a table
+  row whose FIRST cell contains an id"* — so it published **190** against a real **189**.
+  ⇒ ***writing an id into the first cell of a non-claim table mints a phantom claim row.*** Fixed in
+  the **prose, never the script** (a predicate loosened for my table would stop catching the compound
+  rows it was loosened for). ⭐ Caught **only** by re-deriving *after* writing the section — the
+  discipline §21.3 exists to enforce, and GR-4 O5 learned the hard way.
+- **03:40 UTC** — ✅ **FINAL SUITE, re-run AFTER the record edits** (P5.1's finding: *a close cascade
+  that edits a governance file is a change the suite can see*). **680 passed · 4 failed · 1 skipped =
+  685**, and 685 = the carried 684 **+1**, the single new `gate-26` assertion — derived, not assumed.
+  ⚠ **All four failures are `F-ab`'s named family** (`gate-39` + exactly the three `gate-47` keyboard
+  assertions its row names). **Discriminator applied, not assumed: 14/14 pass in isolation in 17.4 s**
+  against the loaded run's **3.6 m**. Combined with the measured control-vs-changed rates, **none is a
+  regression from this change.** `gate-41` **4/4** after the cascade; counts **189/174/0** re-derived.
+
+## SITREP
+
+**Completed** — `R-97` scoped and built: ADR-048 amended and operator-ratified; the homepage NOT-line
+ships R-64's P0.5 prescription; `gate-26` pins it (red-proven); register §22; `gate-49` re-baselined
+2/24; changelog entry; full close cascade.
+
+**In progress** — nothing. The increment is **built and complete on-build**.
+
+**Next up** — ⛩ **a push GO, then ⛩ a deploy GO**, in that order (`inject_build_stamp.mjs:83` stamps
+HEAD and nothing checks HEAD is public). Then **`GR-5`** on `F-ab` at its own ⛩ convention-13
+pre-build gate, carrying the **pin ruling**. Then **`P5.1`** with the humans — its `AC-P` re-stamps
+against whatever tree this ships, which is why ⛩ *fix → deploy → panel* was ruled.
+
+**Blockers** — none agent-side. `P5.1`/`P5.2` remain human-gated.
+
+**Files touched** — `site/src/pages/index.astro` · `site/src/components/sections/HomeHero.astro` ·
+`site/tests/gates/gate-23-hero-claims.spec.ts` · `site/tests/gates/fixtures/claim_register.json` ·
+`site/src/content/changelog/2026-09-04.md` (new) · `site/tests/gates/__screenshots__/home-{dark,light}.png` ·
+`what/decisions/adr_048_positioning_statement_embargo_language.md` ·
+`how/campaigns/campaign_haussmann/evidence/claims/claim_register.md` ·
+`how/campaigns/campaign_haussmann/CLAUDE.md` ·
+`how/campaigns/campaign_haussmann/artifacts/r97/adr_048_not_line_amendment.md` (new) ·
+`STATE.md` · `MANIFEST.md` · this session file.
+
+**Next Session Prompt** — *Operation HAUSSMANN, aDNA.aDNA (Rosetta). `R-97` is built and committed but
+**NOT deployed**: the homepage NOT-line now reads "Not a product or service — no server, no signup;
+aDNA itself sends nothing", ADR-048 carries an operator-ratified §Amendment, and `gate-26` pins the
+new string. Two ⛩ GOs are owed in order — **push, then deploy** — and the deploy must precede `P5.1`'s
+panel by operator ruling (fix → deploy → panel), because the panel cold-reads this hero and scores it
+against ADR-048. Derive at your open: `date -u`, `gh run list --workflow=gates.yml --branch main -L 5`,
+`git ls-remote origin main`, and production's stamp from `/.well-known/adna-build.json`. ⚠ Expect
+`gate-39` and three `gate-47` keyboard assertions to fail under load — that is **`F-ab`**, measured
+this sitting at comparable rates on an unmodified control tree; **14/14 pass in isolation**, so rerun
+before diagnosing, and never loosen a pin to make them green. After the deploy, the ratified next lane
+is **`GR-5`** on `F-ab` at its own convention-13 pre-build gate, carrying the ⛩ pin ruling for
+`gate-39` (recommended: re-derive the pin in CI's own environment, or record the gate advisory with
+the reason on its face — not 7.9 → 7.4).*

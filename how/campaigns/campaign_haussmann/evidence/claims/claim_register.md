@@ -376,7 +376,7 @@ labeled). R-62's surface rebuild (state-of-network) remains P1.2's lane.
 | R-96 | /community | "A real-time community space is open at community.adna.network" | verified | HTTP 200 on /, /register, /login (2026-08-17) | [D] |
 | R-140 | /community | "your content is not used to train or evaluate AI models, and every agent in the space is labeled as an agent" | verified | Both clauses quoted from the documents this block links, verified at source `[D 2026-08-22]`: `privacy.md` §2 *"Your content is not used to train or evaluate AI models."* + `code_of_conduct.md` §3 *"Every agent is visibly labeled as an agent."* / *"No undisclosed automation."* Framed as **commitments in the rules**, never as observed facts — the inside is behind the auth wall. ⭐ **Replaces the P1.1 sentence *"agents work in the repositories and on the public record, not in chat"*, which aDNALabs **S224 ruling ②** (2026-08-21, *"Fluxer = human-visible agent chat"*, R3-pilot inside the ADR-001/ADR-025 fences) falsified — and which the linked CoC §3 flatly contradicts.** A second stale claim in the same paragraph, found only because the mission read the documents before linking them | [D] |
 | R-141 | /community | "Anything that should leave a durable record" | verified | The question-path routing ADR-054 clause 2 requires. States the venue↔repository division **without naming GitHub Discussions**, which is not enabled — that was **R-46**, the S1 FALSE row whose resolution re-routed the funnel to this venue. AC2 as written asked for a *"venue vs Discussions"* division, i.e. a division against a venue that does not exist; corrected here (convention-13 pass, seam 5) | [D] |
-| R-97 | / hero quals | "For teams working with agentic coding tools on real projects." / "Not a product or service — no server, no signup, nothing leaves your machine." | verified (ADR-048 verbatim) | Ratified package (DP2); the NOT-line inherits R-64's narrow-scope caveat class (the required agent tool sends prompts to its provider) | [D] |
+| R-97 | / hero quals | "For teams working with agentic coding tools on real projects." / *"Not a product or service — no server, no signup; **aDNA itself sends nothing**."* ⟵ was *"…no signup, **nothing leaves your machine**."* | **verified (SCOPED — a claim moved DOWN; ⛩ ADR-048 AMENDED)** | ⛩⛩ **AMENDED AND SCOPED 2026-09-04 at the R-97 gate** (`artifacts/r97/adr_048_not_line_amendment.md`, `accepted`; ADR-048 §Amendment carries the 4-field record). **The S3 caveat this row had carried since P0.5 is DISCHARGED, because the sentence now states its own scope.** ⭐ **The ruled string is R-64's P0.5 PRESCRIPTION verbatim** — *"scope it to 'aDNA itself sends nothing'"* — and ⛔ **R-97 is the FIRST surface ever to ship it**: `grep -rl "itself sends nothing" site/dist/` measured **0** before this commit `[D]`. GR-1 discharged R-64 on `/get-started` with a **different** string (*"makes no network calls of its own"*). ⚠⚠ **This desk asserted the opposite on five surfaces before checking** — every draft said the string was *"already shipped on /get-started by GR-1"*, inherited from **R-64's own row calling it *"the exact remedy GR-1 shipped"***, which means the *substance* and reads as the *string*. ⇒ ***a claim about a destination verified in the prose that routed it*** (`F-u`'s class), and **what caught it was the fixture, not vigilance** — adding this row meant reading R-64's, four entries above, whose `quote` field holds the actual shipped text. ⭐ **The homepage already contained the correction nine lines below**: `index.astro:146`'s `reframe` has read *"Your files stay on your machine"* since P4.5a's **R-120**, so the page carried the scoped claim and the absolute **in one component, both above the fold**, and R-120's own fix is what put them into tension — R-161's shape. **R-120 was not wrong; nothing routed it to its sibling.** ⚠ **Measured, not assumed**: the NOT-line **is** in `/`'s prose corpus (built twin, punctuated), and `/` carries the site's tightest headroom — **prose FKGL 9.96 / target 10**. Ruled wording costs **+0.02, leaving 0.02**; two cheaper candidates were **rejected on truth, not cost** — *"nothing **of yours**"* narrows on **the wrong axis** (the falsifying case *is* "yours") and the best-scoring one (**9.84**) drops R-161's *"until you choose"*. ⭐ **Now PINNED in `gate-26`'s fixture, closing a hole this gate had all along**: R-97 was classed `verified` and asserted by **nothing** — absent from the fixture (28 rows), from `claim_trace_manifest.json`, and present in `gate-23` only as a comment `[D]`. *gate-26's green was a true statement about a set that excluded the site's most-read sentence* (convention 18). ⚠ **Fourth surface the campaign has scoped** (R-64 `/get-started` · R-161 `/network` · R-167 `/privacy` · R-97 `/`) — ⛔ **NOT claimed to be the last**: R-33 was already correctly scoped pre-campaign, and the ⛩ scope ruling declined a sweep, so *"the last"* would be wider than the command that produced it (convention 16) | [D] |
 
 *Register reconciliation cadence unchanged (monthly, directive C.4). Next full re-fetch: P2.6 midscore.*
 
@@ -2115,3 +2115,135 @@ that table. Any future `§N.M Counts` section is appended **after** this one, ne
 **and it must be a PARSEABLE TABLE, not a prose sentence.** Both halves are restated rather than
 cross-referenced, because §17.5 stated only the first, O3 obeyed it exactly, and turned `G41b`
 **blind rather than red**.
+
+## §22 — R-97 SCOPED: the fourth surface, and the provenance claim that was wrong on five of them
+
+### §22.1 What shipped
+
+⛩ **Ratified 2026-09-04** (operator, in-session `AskUserQuestion`; record:
+`artifacts/r97/adr_048_not_line_amendment.md`, `accepted`; ADR-048 carries a §Amendment with its own
+4-field block). `/`'s NOT-line moves from *"…no signup, **nothing leaves your machine**"* to
+*"…no signup; **aDNA itself sends nothing**."* **R-97's status moves and its S3 caveat is
+discharged**, because the sentence now states its own scope rather than the register holding the
+qualification on its behalf.
+
+⭐ **The measurement is what made this a decision rather than a rewrite.** `/` carries the site's
+tightest reading headroom (**prose FKGL 9.96 / target 10**) and the NOT-line **is** in the prose
+corpus — checked at the built twin, because GR-4 O4's comparable strip lines turned out to be
+*excluded* and assuming either way would have been the same error. Four candidates were measured by
+twin substitution with the baseline **re-derived at exactly 9.96** afterwards, and the real build then
+**reproduced the prediction exactly at 9.98** — so the gate's estimate and the shipped figure agree,
+which is the control that makes the method reusable.
+
+⛔⛔ **Two candidates were rejected on TRUTH, not on cost, and they were the cheapest and the
+best-scoring.** *"nothing **of yours** leaves your machine"* costs **0.00** and **fixes nothing** —
+the falsifying case *is* "yours", so it keeps the absolute and excludes the only thing that breaks it.
+*"Your files stay on your machine"* scores **9.84**, the best of the four, and drops the *"until you
+choose"* qualifier `R-161` needed, since a vault pushed to a remote does move data (`R-167`).
+⇒ ***the cheap remedy was the wrong one*** — GR-4 O1's class, arriving at wording instead of at an
+instrument.
+
+### §22.2 ⭐⭐ THE FINDING: A PROVENANCE CLAIM OF THIS DESK'S WAS FALSE ON FIVE SURFACES
+
+Every draft of this increment said the ruled string was *"already shipped on `/get-started` by
+GR-1."* **False.** Measured `[D 2026-09-04]`: GR-1 discharged `R-64` with a **different** string —
+*"The workspace is files on your machine and makes no network calls of its own"* — and
+`grep -rl "itself sends nothing" site/dist/` returned **0** before this commit. ⇒ **R-97 is the FIRST
+surface ever to ship the P0.5 prescription**, which is a sharper fact than the one it replaced: *the
+register held an exact remedy wording for nineteen days and nothing ever used it.*
+
+⭐ **Where it came from:** `R-64`'s own row calls the prescription *"the exact remedy GR-1 shipped"* —
+meaning the remedy's **substance**, reading as its **string**. Inherited without opening
+`/get-started`. ***A claim about a destination, verified in the prose that routed it*** (`F-u`'s
+class, **sixth sighting**), and it had reached **five surfaces** — the proposal, the ADR amendment,
+the `index.astro` comment, the fixture `why` and the session record — before anything caught it.
+
+⭐⭐ **What caught it was the instrument, not vigilance.** Adding `R-97` to `gate-26`'s fixture meant
+reading the neighbouring rows, and **`R-64` sits four entries above with its ACTUAL shipped string in
+the `quote` field.** *The instrument being extended is what exposed the claim the extension was
+justified by.* ⚠ And the correction runs **both ways**: *"fourth surface"* holds; ***"and last"* does
+not** — `R-33` was already correctly scoped pre-campaign, and the ⛩ scope ruling declined a sweep, so
+*"the last"* would be a claim wider than the command that produced it (convention 16).
+
+### §22.3 ⭐ `R-97` WAS CLASSED `verified` AND ASSERTED BY NOTHING — now pinned
+
+Measured at three objects before the fix `[D]`: absent from `gate-26`'s fixture (**28 rows**), absent
+from `claim_trace_manifest.json`, and present in `gate-23` **only as a comment**. `gate-26`'s contract
+is *"verified rows → the quoted text must be PRESENT"*, so **the register's strongest class had a hole
+at the site's most-read sentence** — convention 18's family, where a gate's green is a true statement
+about a set that excludes the claim. Now pinned, and **red-proven with controls**: green 32/32 →
+mutation reverting only the NOT-line reds **exactly `R-97` and nothing else** (1 failed / 31 passed) →
+restore 32/32, `dist` byte-identical. *The demonstration attributes to the assertion under test*
+(`F-z`).
+
+### §22.4 ⚠ `F-ab` EXTENDED — `gate-47`'s Shift+Tab assertion MEASURED, and it is not load-only
+
+`F-ab`'s row named *"three `gate-47` keyboard assertions"* as load-sensitive on the evidence that all
+15 passed in isolation. **Measured here, that is incomplete.** `G47 keyboard: Shift+Tab walks back
+through the same order` fails **in isolation** at a 21-second runtime:
+
+| Tree | Runs | Result |
+|---|---|---|
+| **Pre-change control** (NOT-line reverted, rebuilt) | 5 | **3 pass / 2 fail** |
+| **This increment's tree** | 5 | **2 pass / 3 fail** |
+
+> ⚠ **That first cell originally read *"(R-97 reverted, rebuilt)"* and the derivation counted the row
+> as a CLAIM ROW**, publishing **190** where the register holds 189. `derive_register_counts.py`'s
+> predicate is *"a table row whose FIRST cell contains an id"* — deliberately loose, to catch real
+> rows like `| R-23 / R-23b |`. ⇒ ***writing an id into the first cell of a non-claim table mints a
+> phantom claim row.*** Caught by re-running the derivation **after** writing the section, which is
+> the discipline §21.3 exists to enforce; fixed in the **prose**, never in the script — *the row was
+> never a claim, and a predicate loosened to accommodate my table would stop catching the rows it was
+> loosened for in the first place.*
+
+⇒ **comparable rates on both trees ⇒ this increment is NOT implicated**, and the assertion is flaky at
+roughly 40–60 % locally today. ⛔⛔ **This desk concluded the opposite first, from `n=1`** — a single
+control run passed and was read as *"the change caused it"*. **That is GR-3's own clause breached one
+step after invoking it**: *one green cannot separate "it works" from "we got lucky."* **A control is a
+rate, not a run.**
+
+⭐ **Mechanism, filed as a HYPOTHESIS and explicitly not a diagnosis** (GR-2's discipline): `readFocus`
+keys each stop as `tag.class#domIndex` where `domIndex = [...document.querySelectorAll('*')].indexOf(el)`
+— an index over **every element in the document** — and the forward and backward walks are separated
+by ~11 keypresses. **Any reordering** between them shifts every index. Measured `[D]`: the DOM does
+**not grow** (640 elements at 0 ms, 300 ms and 2300 ms), so the shift is **reordering, not injection**,
+which points at the hero graph's rAF drift loop — the same component `gate-49` had to neutralise with
+`reducedMotion: 'reduce'`, and which `gate-47` does not.
+
+⛔ **NOT FIXED, and the restraint is the ruling.** The ⛩ scope ruling held this increment to one prop;
+`F-ab` already owns this class with a named destination; and authoring an instrument fix at a
+sitting's tail is this campaign's most-repeated defect — this sitting produced **four** wrong
+instruments of its own before the subject (§22.5).
+
+### §22.5 ⚠ Four instrument defects of this desk's, all caught by their own output
+
+1. **A build that exited `0` from the wrong cwd** and left a `dist/` with no `.md` twins — the census's
+   `missing: ["/"]` field caught it. *A build that exits 0 in the wrong directory is
+   indistinguishable from one that ran.*
+2. **The census's opposite cwd contract**, with `2>/dev/null` turning a legible error into four
+   identical JSON tracebacks. **The build wants `site/`; the census wants the repo root.**
+3. ⛔ **A false green**: `grep -rl … --include=*.html` unquoted under zsh **failed**, and `wc -l`
+   counted the empty pipe as **`0`** — *a zero meaning "the command failed", not "the string is
+   absent"*. Re-run with the glob quoted **and a positive control first**, which is what made the real
+   `0` legible.
+4. **Running `--project=snapshot` on the host** against container-generated baselines — the script's
+   own header says every screenshot diffs on font rasterisation there. **Convention 18: the green (or
+   red) was about the wrong surface.** Re-run via `visual_regression_container.sh`: **2 failed / 24
+   passed**, exactly the predicted `home`-only re-baseline.
+
+### §22.6 Counts — derived last
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **189** |
+| **Unique ids** | **174** (14 `G-*` + 160 `R-*`, `R-11`…`R-170`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, **not typed**, and re-run *after* §22 was
+written. ⭐ **Unchanged from §21.3, and that is the correct result**: this section adds **no row** — it
+moves one existing row's status and records why.
+
+⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order. This section is now that
+table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and
+it must be a PARSEABLE TABLE, not a prose sentence.** Both halves restated rather than
+cross-referenced, per §21.3's own instruction.

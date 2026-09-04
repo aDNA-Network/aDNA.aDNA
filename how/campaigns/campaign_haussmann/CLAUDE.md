@@ -2984,3 +2984,88 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > at every close:** *"the local suite is green"* is a statement about a machine's spare capacity as
 > much as about the code. **GR-2's law generalises — a count is only comparable to a count produced
 > by the same command, ON A COMPARABLY LOADED MACHINE.**
+
+> ⛩✅ **`R-97` IS SCOPED AND BUILT — 2026-09-04. THE HOMEPAGE NOT-LINE, AND ADR-048 IS AMENDED.**
+> Not a mission: an **operator-ruled increment** on the P4.4-addendum precedent (⛩ *"R-97 first, then
+> GR-5"*, taken at the sitting's open, SO#1). Records: `artifacts/r97/adr_048_not_line_amendment.md`
+> (`accepted`, 4-field block), ADR-048 §Amendment, register **§22**. Chromium **684 → 685** (the one
+> new assertion is `gate-26`'s `R-97` row) · `gate-49` **2 of 24** re-baselined · counts **189/174/0**
+> derived *after* §22 was written. ⛔ **BUILT, NOT DEPLOYED** — ⛩ push and ⛩ deploy are separate GOs,
+> in that order.
+>
+> *"…no signup, **nothing leaves your machine**"* → *"…no signup; **aDNA itself sends nothing**."*
+> The old line was an **unscoped absolute, false for the reader's own tooling** — the agentic coding
+> tool the audience sub names sends prompts to its provider. `R-97`'s row has carried that caveat
+> since **P0.5**; nothing converted it into work. ⛩ **Ordered before `P5.1`** because the panel
+> cold-reads this exact hero **and scores it against ADR-048**, so a senior-engineer panellist marking
+> it down would have been **correct**, which makes the finding uninformative.
+>
+> ⭐⭐ **THE MEASUREMENT DISQUALIFIED THE CHEAP CANDIDATE, AND THE BEST-SCORING ONE.** Four wordings
+> measured by twin substitution against `/`'s **0.04** headroom (the tightest on the site), baseline
+> re-derived at exactly 9.96 afterwards. *"nothing **of yours** leaves your machine"* is the smallest
+> diff, costs **0.00**, and **fixes nothing** — the falsifying case *is* "yours", so it keeps the
+> absolute and excludes the only thing that breaks it. *"Your files stay on your machine"* scores best
+> (**9.84**) and drops `R-161`'s *"until you choose"*, which a vault pushed to a remote makes
+> necessary (`R-167`). ⇒ **two of four wrong, and they are the cheapest and the best-scoring** — GR-4
+> O1's *the cheap remedy was the wrong one*, arriving at **wording** rather than at an instrument.
+> ✅ The real build **reproduced the twin-substitution prediction exactly at 9.98**, which is what
+> makes the gate's estimation method reusable rather than lucky.
+>
+> ⛔⛔ **A PROVENANCE CLAIM OF THIS DESK'S WAS FALSE ON FIVE SURFACES, AND THE INSTRUMENT CAUGHT IT.**
+> Every draft said the ruled string was *"already shipped on `/get-started` by GR-1."* **False**: GR-1
+> discharged `R-64` with a **different** string (*"makes no network calls of its own"*), and
+> *"itself sends nothing"* measured **0 occurrences site-wide** before this commit `[D]` ⇒ **R-97 is
+> the FIRST surface ever to ship the P0.5 prescription** — *the register held an exact remedy wording
+> for nineteen days and nothing used it.* ⭐ **Where it came from:** `R-64`'s own row calls it *"the
+> exact remedy GR-1 shipped"*, meaning the **substance** and reading as the **string** — `F-u`'s
+> class, **sixth sighting**. ⭐⭐ **What caught it was the fixture, not vigilance**: adding `R-97` meant
+> reading the neighbouring rows, and `R-64` sits four entries above **with its actual shipped string in
+> the `quote` field**. *The instrument being extended exposed the claim the extension was justified
+> by.* ⚠ Corrected **both ways**: *"fourth surface"* holds, ***"and last"* does not** — `R-33` was
+> already scoped pre-campaign and the ⛩ ruling declined a sweep.
+>
+> ⭐ **`R-97` WAS CLASSED `verified` AND ASSERTED BY NOTHING.** Absent from `gate-26`'s fixture (28
+> rows), absent from `claim_trace_manifest.json`, present in `gate-23` **only as a comment** `[D]` —
+> so **the register's strongest class had a hole at the site's most-read sentence** (convention 18).
+> Now pinned and **red-proven with controls**: 32/32 green → a mutation reverting only the NOT-line
+> reds **exactly `R-97`** (1 failed / 31 passed) → restore 32/32, `dist` byte-identical.
+>
+> ⚠⚠ **`F-ab` IS EXTENDED AND NOW MEASURED — AND THIS DESK GOT IT WRONG FROM `n=1` FIRST.**
+> `gate-47`'s *Shift+Tab walks back* fails **in isolation**, not only under load as `F-ab` recorded.
+> Rates: **control 3 pass / 2 fail · this tree 2 pass / 3 fail** (5 runs each, rebuilt between) ⇒
+> **this increment is NOT implicated**. ⛔⛔ A single control run had passed and was read as *"the change
+> caused it"* — **GR-3's own clause breached one step after invoking it**: *one green cannot separate
+> "it works" from "we got lucky."* ⇒ ***a control is a rate, not a run.*** ⭐ Mechanism as
+> **hypothesis, not diagnosis**: `readFocus` keys stops by `domIndex` over **every element in the
+> document**, compared across two walks ~11 keypresses apart, so **any reordering** breaks it — and the
+> DOM measured **stable at 640 elements** (0/300/2300 ms) ⇒ reordering, not injection, pointing at the
+> hero rAF loop that `gate-49` neutralises with `reducedMotion` and `gate-47` does not. ⛔ **NOT FIXED**
+> — the ⛩ scope ruling held this increment to one prop, `F-ab` owns the class with a named destination,
+> and this sitting produced four wrong instruments of its own.
+>
+> ⚠ **Four instrument defects, all mine, all caught by their own output** (the standing streak): a
+> build that **exited 0 from the wrong cwd** and left a twin-less `dist/` (the census's `missing` field
+> caught it) · **the census's opposite cwd contract** with `2>/dev/null` turning the error into JSON
+> tracebacks — *the build wants `site/`, the census wants the repo root* · ⛔ **a FALSE GREEN** where an
+> unquoted `--include='*.html'` glob made `grep` **fail** under zsh and `wc -l` counted the empty pipe
+> as **`0`** — *a zero meaning "the command failed", not "the string is absent"*, re-run with the glob
+> quoted **and a positive control first** · and **`--project=snapshot` run on the host** against
+> container baselines, which the script's own header says diffs every screenshot on font rasterisation
+> (**convention 18** — a red about the wrong surface). ⭐ **And a fifth, in prose**: §22.4's comparison
+> table first read *"(R-97 reverted…)"* in its first cell, which `derive_register_counts.py` counts as
+> a **claim row** — publishing **190** against a real 189. ⇒ ***writing an id into the first cell of a
+> non-claim table mints a phantom claim row***; fixed in the **prose, never the script**, and caught
+> only by re-deriving *after* writing, which is the discipline §21.3 exists to enforce.
+>
+> ⚠ **`gate-30`'s two reds were convention 6's documented case, diagnosed before anything was changed**:
+> the **in-container** `gate-49` run rebuilt `dist/` and overwrote `.vercel/output/config.json` without
+> the redirect-widening step. `node scripts/inject_redirects.mjs .` → green. *Ask which step produces
+> the thing a gate asserts, before touching the gate.*
+>
+> ⏭ **NEXT: ⛩ a push GO, then ⛩ a deploy GO** (in that order — `inject_build_stamp.mjs:83` stamps HEAD
+> and nothing checks HEAD is public). Then **`GR-5`** (`F-ab`, at its own ⛩ convention-13 pre-build
+> gate, with the **pin ruling** on `gate-39`: ⛔ recommended **not** to loosen 7.9 → 7.4 — that is
+> moving a bar to make a test pass — but to **re-derive it in CI's own environment**, or record the
+> gate **advisory with the reason on its face**). ⛔ Held: **P5.1** with the humans — and its `AC-P`
+> re-stamps against whatever tree this ships, so the deploy precedes the panel by the ⛩ ruling
+> *fix → deploy → panel*.

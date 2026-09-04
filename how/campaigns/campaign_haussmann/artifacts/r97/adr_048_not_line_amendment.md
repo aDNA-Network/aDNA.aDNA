@@ -7,7 +7,7 @@ increment: R-97
 created: 2026-09-04
 updated: 2026-09-04
 last_edited_by: agent_rosetta
-status: proposed          # ⛩ Agents author, operators ratify (§7.7). NOTHING IN §5 IS PERFORMED. ADR-048 is UNTOUCHED and `site/src` is UNTOUCHED — verified `git status --porcelain site/src` empty at authoring time `[D]`.
+status: accepted          # ⛩⛩ SIGNED 2026-09-04 — see §7. Ruled: **candidate 1** (`aDNA itself sends nothing`) and **scope HELD** at §6.2's recommended line. §5 is now authorized and is performed in this same increment. ~~proposed~~ · prior note follows: ⛩ Agents author, operators ratify (§7.7). NOTHING IN §5 IS PERFORMED. ADR-048 is UNTOUCHED and `site/src` is UNTOUCHED — verified `git status --porcelain site/src` empty at authoring time `[D]`.
 amends: what/decisions/adr_048_positioning_statement_embargo_language.md
 register_row: R-97
 tags: [proposal, haussmann, r_97, adr_048, over_promise, claim_register]
@@ -133,10 +133,29 @@ implied remedy, and the available `ALLOW` entry).
 
 Three independent reasons:
 
-1. ⭐ **It is `R-64`'s ratified remedy, verbatim.** P0.5 diagnosed the class and prescribed *"scope it
-   to **'aDNA itself sends nothing'**"*; **GR-1 shipped exactly that on `/get-started`.** This is not
-   new wording to be judged — it is the existing ruling reaching its fourth and last surface, which
-   is why it needs a signature and not a design review.
+1. ⭐ **It is `R-64`'s P0.5 prescription, verbatim.** P0.5 diagnosed the class and prescribed *"scope
+   it to **'aDNA itself sends nothing'**"*, and that wording has sat in `R-64`'s row ever since. This
+   is not new wording to be judged — it is an existing ruling's own words, which is why it needs a
+   signature and not a design review.
+   > ⛔⛔ **CORRECTED AT EXECUTION, 2026-09-04 — this clause originally read *"GR-1 shipped exactly
+   > that on `/get-started`"* and that is FALSE.** Verified at the object rather than at the prose:
+   > GR-1 discharged `R-64` with a **different string** — *"The workspace is files on your machine and
+   > makes no network calls of its own"*, plus the page stating the `&& claude` caveat in its own
+   > voice — and *"itself sends nothing"* measured **0 occurrences across the built site** before this
+   > commit `[D]`. ⇒ **R-97 is the FIRST surface to ship the prescribed string**, which is a sharper
+   > fact than the one it replaces: *the register held an exact remedy wording for nineteen days and
+   > nothing ever used it.*
+   > ⭐ **Where the error came from, because that is the reusable part:** `R-64`'s own row calls it
+   > *"the exact remedy GR-1 shipped"* — meaning the remedy's **substance**, reading as its
+   > **string**. Inherited without opening `/get-started`. ***A claim about a destination, verified in
+   > the prose that routed it*** (`F-u`'s class), and it had reached **four surfaces of this
+   > increment** — this document, the ADR amendment, the `index.astro` comment and the fixture `why` —
+   > before the fixture's own neighbouring row made it visible. **All four corrected in the same
+   > commit.**
+   > ⚠ **And "fourth AND LAST surface" is corrected too, in the other direction:** fourth is right,
+   > *last* is **unmeasured**. `R-33` was already correctly scoped pre-campaign, and the ⛩ scope
+   > ruling declined a sweep — so *"the last"* would be a claim wider than the command that produced
+   > it (convention 16).
 2. **It preserves the NOT-line's rhetorical shape.** The line is a list of negations; candidate 2
    breaks the parallel with a positive clause. The claim moves **DOWN** (convention 1's permitted
    direction) without the sentence changing kind.
@@ -199,8 +218,22 @@ Nothing below is done. On ⛩ signature:
 
 ## 7 · Ratification record
 
-- **Decision:** *(unfilled — this document is `proposed`)*
-- **Ratified-by:** *(unfilled)*
+- **Decision:** **Candidate 1** — *"Not a product or service — no server, no signup; aDNA itself
+  sends nothing."* — `R-64`'s ratified remedy verbatim, reaching its fourth and last surface. **And
+  §6.2's scope HELD**: one prop · one ADR clause · two stale comments · one fixture row · one
+  register row, and **no new `gate-23` assertion set** and **no `/get-started` re-verification**,
+  both of which were offered and both of which were declined as unforced widening at an increment's
+  tail. ⚠ **The 0.02 residual headroom is accepted knowingly**, on the stated reasoning that buying
+  0.14 of a reading score with a sentence needing a qualifier it does not carry is the trade this
+  campaign exists to refuse.
+- **Ratified-by:** Stanley (operator; in-session `AskUserQuestion`, 2026-09-04)
 - **Gate:** ⛩ R-97 signature
-- **Date:** *(unfilled)*
-- **Status:** **proposed**
+- **Date:** 2026-09-04
+- **Status:** **accepted**
+
+> ⭐ **What the signature does NOT close, said so nobody infers otherwise.** §3.3's figures are a
+> **twin substitution, not a rebuild** (convention 18 — the surface is named on its face). The
+> post-signature build **re-measures on a real build, and that figure governs**; if it lands over
+> 10, the wording moves and **the bar does not** (convention 1). Recorded here rather than left to
+> be discovered, because a ratified number that was never re-derived is exactly the shape this
+> campaign keeps finding.

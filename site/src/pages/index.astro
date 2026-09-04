@@ -134,7 +134,19 @@ const changelogDate = (d: Date) =>
     heroImage={heroImage}
     heroAlt="A pixel-art hero in the Tokyo Night palette: a glowing cyan DNA double-helix rising from a row of small computers and branching at the top into a network of connected nodes — shared inheritance resolving into the aDNA network."
     audienceSub="For teams working with agentic coding tools on real projects."
-    notLine="Not a product or service — no server, no signup, nothing leaves your machine."
+    {/* HAUSSMANN R-97 (2026-09-04) — ADR-048's NOT-line clause, ⛩ amended and scoped. It read
+        "…nothing leaves your machine", an unscoped absolute that is FALSE for the reader's own
+        tooling: the agentic coding tool the audience sub names sends prompts to its provider. The
+        register carried that caveat in R-97's own row since P0.5 and nothing converted it into work.
+        This string is R-64's P0.5 prescription VERBATIM ("scope it to 'aDNA itself sends nothing'"),
+        and R-97 is the FIRST surface to ship it — GR-1 discharged R-64 on /get-started with a
+        different string ("makes no network calls of its own"), so the prescribed wording sat unused
+        in the register for nineteen days. Fourth surface the campaign has scoped (R-64 /get-started ·
+        R-161 /network · R-167 /privacy · R-97 /); NOT claimed to be the last — that would need a
+        sweep this increment's ⛩ scope ruling declined. ⚠ Do not "tighten" this back to an absolute: the
+        scoping is the claim, and aDNA-the-convention having no network behaviour is what makes the
+        sentence unfalsifiable by anything the reader's tools do. Pinned in gate-26's fixture. */}
+    notLine="Not a product or service — no server, no signup; aDNA itself sends nothing."
     {/* HAUSSMANN P4.5a — R-120 (S2) resolved. This clause used to end "…your agents can navigate,
         and shared in the open." Its grammatical subject is "Your context", so read literally — how a
         first-time reader reads — the fold promised that your notes stay on your machine AND are

@@ -3,7 +3,7 @@
   "_relation_to_gate_20": "gate-20 traces claims to their SOURCE FILES (does `vaults.json` still say 74?). This fixture asserts the RENDERED PAGE — that a false sentence is gone, and that a true one has not silently vanished. Different failure modes, no overlap: the G-01..G-10 accessor rows stay in claim_trace_manifest.json and are deliberately NOT duplicated here.",
   "_quote_rule": "Every `quote` is the exact page-visible text, verified against the 2026-08-16 build snapshot. Comparison normalizes typography only (curly quotes -> straight, em/en dash -> hyphen, whitespace collapsed) so a smart-quote change cannot fake a pass or a fail. `match_in: html` rows assert against raw markup instead (attributes, hrefs).",
   "_no_count_pinning": "Campaign convention 8 (WebForge KW-8/FR-K): verified quotes are trimmed to their non-numeric clause wherever a count appears, so this gate never pins live registry data. Count currency is gate-21's job, count provenance is gate-20's.",
-  "updated": "2026-08-22",
+  "updated": "2026-09-04",
   "rows": [
     {
       "id": "R-12",
@@ -200,6 +200,13 @@
       "quote": "Anything that should leave a durable record",
       "class": "verified",
       "why": "The question-path routing ADR-054 clause 2 requires (AC2). States the venue/repository division WITHOUT naming GitHub Discussions, which is not enabled — that was R-46, the S1 FALSE row whose resolution re-routed the funnel to this venue. AC2 as written asked for a 'venue vs Discussions' division, i.e. a division against a venue that does not exist; corrected here. Consistent with the page's ClosingCTA and proposals section rather than competing with them."
+    },
+    {
+      "id": "R-97",
+      "url": "/",
+      "quote": "no server, no signup; aDNA itself sends nothing",
+      "class": "verified",
+      "why": "ADR-048's NOT-line, ⛩ AMENDED AND SCOPED AT R-97 (2026-09-04). It read '…nothing leaves your machine' — an unscoped absolute that is FALSE for the reader's own tooling, since the agentic coding tool the audience sub names sends prompts to its provider. This string is R-64's P0.5 PRESCRIPTION verbatim (\"scope it to 'aDNA itself sends nothing'\"), and R-97 is the FIRST surface to ship it: GR-1 discharged R-64 on /get-started with a DIFFERENT string ('makes no network calls of its own'), and 'itself sends nothing' measured 0 occurrences across the built site before this commit [D 2026-09-04]. Fourth surface the campaign has scoped (R-64 /get-started · R-161 /network · R-167 /privacy · R-97 /); NOT claimed to be the last — R-33 was already correctly scoped pre-campaign, and whether any unscoped absolute remains is unmeasured, since the ⛩ scope ruling declined a sweep (convention 16: a claim no wider than the command that produced it). ⭐ THIS ROW EXISTS BECAUSE IT DID NOT: R-97 was classed `verified` in the register and asserted by NOTHING — absent from this fixture (28 rows), absent from claim_trace_manifest.json, and present in gate-23 only as a comment [D 2026-09-04]. gate-26's contract is 'verified rows must be PRESENT', so the register's strongest class had a hole at the site's most-read sentence — convention 18's family, where a gate's green is a true statement about a set that excludes the claim. Trimmed to the operative clause per the _quote_rule and convention 8: a partial revert of the tail alone still reds this row, which is the failure mode worth catching."
     }
   ]
 }
