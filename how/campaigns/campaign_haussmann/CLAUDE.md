@@ -270,9 +270,29 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 
 ## Mission index
 
-`missions/` — **31** files, **derived not typed** (`ls missions/mission_haussmann_*.md | wc -l`): 27
-`mission_haussmann_p{0..5}_*.md` **plus 4 `mission_haussmann_gr_*.md`**, which the `p{0..5}` glob does
-**not** match. *(Re-derived 2026-09-02 at `GR-4`'s open — the GR lane went 3 → 4, moved in the **same
+`missions/` — **33** files, **derived not typed** (`ls missions/mission_haussmann_*.md | wc -l`): **27**
+`mission_haussmann_p{0..5}_*.md` **plus 6 `mission_haussmann_gr_*.md`**, which the `p{0..5}` glob does
+**not** match.
+
+> ⛩ **THE CHARTER READS `mission_count: 32` AND THAT IS CORRECT UNTIL `GR-6`'S SIGNATURE.** This index
+> is **the disk**; the charter is **the ratified figure**; `GR-6` is authored and **`queued`**, so the
+> amendment **32 → 33** (with both session bands re-derived, `phase_count` HOLDING at 6) is **owed at
+> its gate, not taken here** — the field's own comment says it is the operator's to take. GR-4 wrote
+> the discipline down: *the two numbers may disagree for exactly as long as the gate is open, provided
+> somebody says which is which.*
+>
+> ⛔⛔ **AND THIS LINE WAS STALE AT 31 FOR A DAY BEFORE THAT — CORRECTED 2026-09-05, NOT DELETED
+> (SO-6).** `GR-5` landed 2026-09-04 and moved the charter to **32**; **this index never heard**, so
+> disk and charter both read 32 while the sentence claiming to be *"derived not typed"* read 31.
+> ⭐⭐ **The finding is not the stale number — it is that the stale number PROPAGATED INTO A PLAN.**
+> The 2026-09-05 session plan set GR-6's same-diff obligation as `31 → 32`, having taken the figure
+> from **this line** rather than from disk or the charter. ⇒ ***a routing claim verified in the prose
+> that routed it*** (`F-u`'s class, **eighth sighting**) — committed by a plan whose entire purpose was
+> to close an orphan of exactly that kind, and caught only by re-deriving at the session open.
+> ⚠ **`GR-5`'s own block below already recorded this class** (*"a mission's OPEN is as index-coupled as
+> its close"*) — **written one day earlier, in this file, and it did not prevent the next instance.**
+> *A convention written down is not a convention applied.* ~~31~~ · prior note follows:
+> *(Re-derived 2026-09-02 at `GR-4`'s open — the GR lane went 3 → 4, moved in the **same
 commit** as the file that moved it, per convention 7 / ADR-057. ✅ **RECONCILED AT THE SIGNATURE THE
 SAME SITTING: the charter now reads `mission_count: 31`, `estimated_sessions: 44-59`,
 `calibrated_sessions: 44-51`, `phase_count` HOLDS at 6** — surfaced as proposal §8, ⛩ ruled, and
@@ -3284,3 +3304,120 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > clause 5 — `/.well-known/mcp.json` **404** `[D]`) · B1's ⛩ Speed-Insights → transport → first p75 ·
 > ⛩ Vitruvius's `/g/adna/` decision · Hopper's 4.2.0 ack · babbage's lease question + two `proposed`
 > upstream findings.
+
+> ⏸⛩ **`GR-6` IS AUTHORED AND HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE (2026-09-05) — criteria NOT
+> ratified, budget NOT ratified.** `missions/mission_haussmann_gr_6_instrument_calibration.md`,
+> **`queued`**. Subject: **the two `P5.2` preconditions nobody owned** — the **v1.1 instrument anchor
+> fix** and the **lost production crawler**, both filed at `p2_replan.md:444` under *"Routed
+> (non-blocking)"* while `P5.2`'s own `status:` says the first **"MUST land BEFORE this mission."**
+> ⇒ *required by a mission that cannot open until they land, owned by nothing, for twenty days* —
+> `R-64`'s *a caveat in the register is a finding with a home and no gate*, and `F-v`'s sibling.
+> ⛔ **No site bytes, no copy, no deploy authorized or owed.** Prod stays at `1cc80ca`.
+>
+> ⚠⚠ **READ THE DEVIATION BEFORE THE CRITERIA: `AC-1` WAS PERFORMED AT THE GATE.** The operator
+> approved a session plan ordering *derive → author v1.1 → … → author the mission → halt*, which
+> **inverts** the standing law of eleven missions (*pass first, no build until signed*). The instrument
+> (a governance document) was authored under that plan's authority; **the crawler was deliberately NOT**,
+> on three independently sufficient grounds already ruled here — conventions 15/16/17 decline to author
+> an instrument at a sitting's tail and **this desk's count of later-defective instruments is the
+> argument**; convention 14's red-proof-with-controls is a sitting's work; and the crawler is `AC-3`'s
+> named instrument (**CONSTRAINT-1**), so building it first would fix its output shape against a
+> consumer nobody had enumerated. ⇒ **the pass is a POST-HOC coherence check for `AC-1` and a pre-build
+> gate for the rest** — *a pass run after the build is worth less than one run before it, and saying
+> which you have is the whole of the difference.*
+>
+> ⭐⭐ **THE FIRST FINDING ARRIVED BEFORE A CRITERION EXISTED: *"five filed anchor defects"* NAMES A
+> LIST NO ARTIFACT HOLDS.** `p2_replan.md:444` says *"Five filed"*; `reconciliation_p2_6.md:91` says
+> *"already on the filed list"* — **each points at the other's list and neither is one** `[D]`. Two
+> prose references, **zero enumerations**: GR-4's *three agreeing indexes are not a corroboration; they
+> are one claim copied twice*, at n=2. The set was therefore **DERIVED from the scoring record**
+> (`artifacts/gr_6/anchor_defect_derivation.md`) — **AD-1** conjunctive-bundle split rule · **AD-2** no
+> rung 1 · **AD-3** undefined awardability · **AD-4** failing-vs-unevidenced · **AD-5** no between-rungs
+> tie-break. ⚠ **The cardinality matching "five" is a COINCIDENCE and is explicitly NOT offered as
+> corroboration** — with no filed list to compare against, nothing can say these are *those* five, and
+> reading the match as confirmation would commit the finding's own defect inside the file correcting it.
+>
+> ⭐⭐ **AD-2 IS THE ONE NO SCORESHEET COULD HAVE SURFACED, AND IT WAS FOUND BY DERIVING OVER THE
+> INSTRUMENT.** **All twelve anchor tables skip rung 1** — `0 2 3 4 5`, twelve times — while §5's
+> composite (`score ÷ 5 × weight`) admits **1** as a legal score with **no letter to bind it**, in an
+> instrument whose own reconciliation says the anchor-letter discipline *"is doing real work, not
+> decorating a judgment."* ⇒ **the bottom of the scale is a two-point cliff exactly where this site
+> sits**: five of twelve dimensions reconciled to **2**, with both baseline scorers repeatedly writing
+> *"above anchor 2's letter"* and nowhere to put it (`scoresheet_A_adna.md:125,134` ·
+> `scoresheet_B_adna.md:120,156`). ⚠ Stated at its width: **no scorer has ever awarded a 1**, so this
+> has never yet moved a number — **latent**, unlike AD-1, which has already cost **~0.8 weighted
+> points** on D2.
+>
+> **v1.1 SHIPPED (`AC-1`)**: `Version 1.0 → 1.1` with a changelog naming each change **and its filing
+> line**; **§5.1** adds the split rule, the between-rungs tie-break, the `FAILS`/`UNEVIDENCED` table and
+> the awardability table (`graded`/`provisional`/`unawardable`); **rung 1 added to all twelve**, verified
+> **12/12 complete `0–5` ladders** by script. ⛔ **`AC-4` bounds it: NOTHING was re-scored** — changing
+> an anchor and re-reading a score in one pass is the exact mechanism that produced the D2 drift.
+> ⛔⛔ **THE INSTRUMENT BOUNDARY IS ON THE INSTRUMENT'S FACE**: the **51.6** baseline and the P2.6
+> midscore were awarded under **v1.0**, so any `P5.2` delta **crosses an instrument boundary and is not
+> pure site movement** — `reconciliation_p2_6.md:88` had to make that split *after the fact*; v1.1 makes
+> it *in advance*, which is the only place it is cheap.
+>
+> ⭐ **Convention 13 ran COMPLETE at 22/22 with coverage recorded** (`AC×AC = C(4,2) = 6` + `AC×V = 4×4
+> = 16`, derived not typed), both directions: **18 clean · 3 defective · 1 ordering constraint**, every
+> one resolved in the criteria **before the file reached disk**. **Twelfth consecutive mission where the
+> pass has paid for itself.** ⭐⭐ **`DEFECT-1` came from the V→AC direction and is the sharpest: V1
+> asserted ONE of `AC-1`'s five deliverables.** Only AD-2 is a ladder; AD-1/3/4/5 are **prose rules in
+> §5**, so a v1.1 carrying the changelog table and the rung-1 rows with **§5 entirely unwritten** would
+> have passed — **and the changelog table *describes* those four rules, so the limb would have read a
+> claim that they exist as evidence that they do.** *The index-vs-artifact class, inside a verification
+> limb* — and it was blind to **AD-1**, the one `p2_replan` calls *"the load-bearing one."*
+> **`DEFECT-2`**: `AC-2`'s *"consumable by `P5.2`'s O0"* named a contract **`P5.2` does not define**
+> `[D]` — resolved by **measuring instead of inventing**: the contract already exists as a committed
+> artifact, `page_inventory.csv`'s **13 named columns**, now read from the file and never transcribed.
+> **`DEFECT-3`**: V3 tested the packet list's **length**, not its content — 21 rows with every
+> instrument cell empty would have passed, **certifying the very silence `P5.2`'s precondition
+> forbids**. **`CONSTRAINT-1`**: `AC-3` depends on `AC-2` ⇒ **O2 precedes O3**.
+>
+> **Scope, derived:** live sitemap **228** routes · genesis `page_inventory.csv` **202** rows ⇒ **26
+> routes the packet has never seen** · `evidence/` packets **21** · anchor ladders **12/12**.
+> ⚠ The packet's URLs are absolute `https://adna.network/…`, so a refresh reads **production** — which
+> makes `AC-2`'s `res.ok` + same-origin assertion load-bearing rather than ceremonial (the
+> `check_live_headers.mjs` scar: 4/4 green having read Vercel's SSO login page).
+>
+> ⛩ **Also performed this sitting, at their own destinations rather than recorded as taken** — GR-2's
+> four-day lesson: **`P5.1`'s owed line is TAKEN, option (a) — the `AC-3 → AC-2` ordering is RELEASED**
+> (AMENDMENT 3 in the mission file, and the clause **struck in `AC-3`'s own text** so a cold reader of
+> the criteria does not inherit the superseded rule). ⭐ **First time the `FAIL-3` class has been *paid*
+> rather than re-found**: AMENDMENT 2 discovered it and deliberately stopped short of the remedy, and
+> **the debt closed because it was written down as a debt with a destination.** Practical effect: the
+> TTFS run and the contribution run may now be scheduled **concurrently**, on a critical path where
+> every remaining act is human.
+>
+> ⛔⛔ **RULING 2's TRANSPORT IS DESIGNED, NOT BUILT, AND THE PLAN'S "ONE ADDITIVE CHANGE" WAS WRONG —
+> THE CODEBASE SAID SO FIRST.** `src/scripts/vitals.ts:9-16`, written at P4.4b B1, already reads *"the
+> transport is added **at its own gate** and `/privacy` is updated **BEFORE** it ships."* Verified at
+> the object: **P-1** `/privacy:81-82` commits **in the site's own rendered voice** to updating before
+> the change ships ⇒ shipping first **falsifies a live trust-page sentence in the same act** — the
+> over-promise class on a **fifth** surface, and the first this desk would have committed *knowingly*.
+> **P-2** `gate-42:127,212` fails on **any** same-origin request failure across every route × both
+> themes, and a platform-served `/_vercel/…` endpoint **404s under `astro preview`**. **P-3** ⭐ the CSP
+> is **NOT** the blocker — `connect-src 'self'` already covers a same-origin beacon, so *"widen the
+> CSP"* would **loosen the site's strongest header for a reason that does not exist**; ***a constraint
+> list is not a diagnosis***, and the entry that binds is the one it mentions last. Design + the five
+> ordered steps: `artifacts/gr_6/speed_insights_transport_design.md`. ⚠ **The clock did not start
+> today** — enable → transport → deploy → traffic → p75, and only the first link moved.
+>
+> ⛩ **`/g/adna/` APPROVED — BOTH DOORS** (ruling 4), reply **staged** at
+> `who/coordination/coord_2026_09_05_rosetta_to_vitruvius_g_adna_approved_both_doors.md`; ⛩ send is its
+> own outward act. ⭐⭐ **Checking their KW-59 found a THIRD tagline, in our own house**: measured in
+> `site/src/data/vaults.json` `[D]`, our own row carries **`tagline: null`** and
+> **`last_synced: 2026-05-24`** (104 days) ⇒ **`adna.network` publishes no tagline for this vault at
+> all**, so the state is **ratified (Home) · wrong (`node_home` hub) · absent (us)**, and their page
+> becomes the most complete public description of this graph that exists. ⚠ **And their 36-in/2-out
+> edge count cannot simply be repeated back**: our published file shows **0 in / 1 out** of 14 — *two
+> numbers for one property is a thing to say out loud rather than average.* ⛔ **`vaults.json` NOT
+> edited** (pt19): staged as a data ask to Hestia,
+> `coord_2026_09_05_rosetta_to_hestia_our_own_registry_row_publishes_no_tagline.md`.
+>
+> ⏭ **NEXT: ⛩ THE SIGNATURE** — ratify/amend the four criteria + four limbs, ratify the band
+> (**~140–210 kT / 2 sessions for O2–O4**, explicitly **excluding** `AC-1`'s already-spent ≈95–130 kT,
+> because a band covering spent work is unfalsifiable), and take the same-diff admin: charter
+> `mission_count` **32 → 33** with both session bands re-derived, `phase_count` **HOLDING at 6**.
+> **Until then, O2/O3/O4 do not begin.** ⛔ Held: **P5.1** with the humans — still the campaign's true
+> critical path, and nothing here moves it.

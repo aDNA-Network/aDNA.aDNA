@@ -24,7 +24,7 @@ acceptance_criteria:            # ⛩⛩ REPLACED AT THE SIGNATURE 2026-08-26 �
   - "AC-P (unchanged in force, NOW VERIFIABLE) — ⛔⛔ P5.1 must not run until the deploy freeze has lifted AND the built-not-deployed backlog is deployed and live-verified. ⭐ THIS IS NOT A 'CANNOT BE MET' CONSTRAINT — IT IS THE OPPOSITE, AND THAT IS WHY IT IS DANGEROUS: run against a stale production and all three evidence criteria go GREEN while the capstone evidence is SILENTLY INVALID. VERIFIED THROUGH AC-4's STAMP CHECK, NOT BY ASSERTION (GAP-1): a transcript, a recording and a friction log are statements about what a HUMAN DID; none is a statement about what PRODUCTION CONTAINED, so read V→AC this criterion was tested by nothing — G-11's own defect reappearing inside the criterion written to prevent it. Status at signature: HELD `[D]` — freeze lifted 2026-08-25; alias serves 51af717; `git diff 51af717..HEAD -- site/` = 1 non-rendering log file."
   - "AC-1 (amended — FAIL-3) — Human cold-reader re-panel ≥5 across the 3 profiles (senior engineer / domain expert unfamiliar with agents / prospective contributor): verbatim transcripts, no coaching. ⛔ STIMULUS IS THE LIVE PRODUCTION HERO AT THE RECORDED BUILD STAMP, NOT the P0.1 A-direction draft — that draft's own condition (`not production, which keeps the current hero until DP2`) EXPIRED when DP2 ratified and P4.5b rewrote the very copy panellists cold-read. ≥4/5 pass Q1–Q3 unaided within ~30s, scored against ADR-048's positioning statement by TWO INDEPENDENT SCORERS whose raw sheets are committed BEFORE reconciliation opens (mechanism reused from artifacts/p2_6/scorer_isolation_protocol.md, not re-authored); disagreement is RECORDED AS A FINDING, never resolved away. Records the commit each panellist saw, read from /.well-known/adna-build.json."
   - "AC-2 (amended — FAIL-1, FAIL-2, ruling 1, ruling 4) — TTFS run per artifacts/p2_5/ttfs_runbook_fresh_account.md on a FRESH macOS ACCOUNT, with the condition LABELLED ON THE REPORT'S FACE: 'prerequisites pre-installed; not the cold case; the true cold case needs a VM' — promoted out of the kit's prose into the criterion so it cannot be dropped downstream. ⛔ `by someone who did not build the system` is STRUCK (ruling 4): the OPERATOR runs it with the CONFLICT OF INTEREST DECLARED, not managed away. Stopwatch + screen recording + friction log. THE DELIVERABLE IS THE NUMBER WITH ITS CONDITIONS ATTACHED, reported as ONE OBSERVATION AND NOT A DISTRIBUTION; `< 10 min` is a STATED EXPECTATION WHOSE MISS IS A FINDING, NOT A FAIL, and 'did not complete' is a valid result — never a blank and never a retry until it works (ttfs_instrument_kit.md §5, which a pass/fail bar on n=1 would have breached). Records the commit serving the alias at run time."
-  - "AC-3 (amended — GAP-2, DEFECT-4, DEFECT-5, ruling 2) — Contribution run against the LIVE FUNNEL, NAMED: /community/proposals (ADR-055, verified 200 on the alias at signature `[D]`), end-to-end, every stage timed, the funnel's truth recorded. OPERATOR-AS-OUTSIDER DISCIPLINE with the CONFLICT OF INTEREST DECLARED IN THE ARTIFACT — `without privileged access` is a discipline, not a fact, and no artifact can demonstrate a discipline was kept, so: every use of knowledge a stranger would not have is a LOGGED ENTRY, and an EMPTY SUCH LIST IS REPORTED AS SUSPECT (the kit's own §4 reasoning about empty friction logs). RECORDS BOTH the alias build stamp AND the origin/main HEAD read and forked — a contribution run's subject is the REPO AND THE FUNNEL, not the rendered site, so the alias stamp alone records half the world the run happened in. ⛔ AC-3 PRECEDES AC-2, UNCONDITIONALLY (rulings 2 + 4 put both runs on the operator): a TTFS run walks the runner through the entire quickstart, so a contribution run afterwards is performed by someone just onboarded. Order changes the measurement; the ordering and its reasoning are stated on both artifacts' faces."
+  - "AC-3 (amended — GAP-2, DEFECT-4, DEFECT-5, ruling 2) — Contribution run against the LIVE FUNNEL, NAMED: /community/proposals (ADR-055, verified 200 on the alias at signature `[D]`), end-to-end, every stage timed, the funnel's truth recorded. OPERATOR-AS-OUTSIDER DISCIPLINE with the CONFLICT OF INTEREST DECLARED IN THE ARTIFACT — `without privileged access` is a discipline, not a fact, and no artifact can demonstrate a discipline was kept, so: every use of knowledge a stranger would not have is a LOGGED ENTRY, and an EMPTY SUCH LIST IS REPORTED AS SUSPECT (the kit's own §4 reasoning about empty friction logs). RECORDS BOTH the alias build stamp AND the origin/main HEAD read and forked — a contribution run's subject is the REPO AND THE FUNNEL, not the rendered site, so the alias stamp alone records half the world the run happened in. ~~⛔ AC-3 PRECEDES AC-2, UNCONDITIONALLY (rulings 2 + 4 put both runs on the operator): a TTFS run walks the runner through the entire quickstart, so a contribution run afterwards is performed by someone just onboarded. Order changes the measurement; the ordering and its reasoning are stated on both artifacts' faces.~~ ⛩⛩ **RELEASED 2026-09-05 — see AMENDMENT 3.** Struck, not deleted (SO-6): its reasoning is the reusable part and its premise is what lapsed, not its logic. AMENDMENT 2 moved AC-2 to a recruited cold reader while AC-3 stayed with the operator ⇒ **two different people perform the two runs**, so the contamination this clause names **cannot occur**. **AC-2 and AC-3 may now run in either order or in parallel.** ⛔ Unchanged by the release: AC-2's recruited-non-builder runner, AC-3's operator-as-outsider CoI discipline, and the requirement that each artifact state on its face which run happened when."
   - "AC-4 (amended — GAP-1's remedy) — All three artifacts filed to evidence/ with consent records WHERE PARTICIPANTS EXIST (named explicitly for the operator-as-runner case, so an absent consent record reads as INAPPLICABLE and not as an omission). Each artifact carries its build stamp ON ITS FACE, and ⭐ EACH RECORDED STAMP IS CHECKED, NOT MERELY RECORDED: `git merge-base --is-ancestor <recorded_commit> HEAD` AND the recorded commit contains the closed missions' work. That converts AC-P from an unverifiable gate into a CHECKABLE PROPERTY OF THE FILED ARTIFACTS, at the cost of ONE COMMAND PER ARTIFACT and ZERO NEW INSTRUMENTS — conventions 15/16/17 each ruled against authoring an instrument at the tail of a sitting, and three of this desk's last four instrument defects are why."
 verification_method: |         # ⛩ V1–V5 ADDED AT THE SIGNATURE. ⛔ The prior value — "the artifacts themselves (transcripts/recording/log) — this mission IS verification" — was a SELF-CERTIFICATION, which convention 4 forbids in terms (the builder never self-certifies). Struck, not deleted: it survives in git history and in §2.1 of the proposal.
   V1 — every filed artifact carries a build stamp, and each stamp is ancestor-of-HEAD AND contains the closed missions' work  [asserts AC-P, AC-4]
@@ -150,6 +150,42 @@ new one broke. ⇒ *A conditional discharged by a temporary arrangement is only 
 as the arrangement lasts, and nothing in the file was watching the arrangement.* This is the campaign's
 **criterion amended around a temporary condition** class (FAIL-3) — **now sighted a fifth time, inside
 the remedy that was written to close its fourth.**
+
+## ⛩ AMENDMENT 3 — 2026-09-05: THE OWED LINE IS TAKEN. THE ORDERING IS **RELEASED**, OPTION (a)
+
+**Operator ruling, 2026-09-05 planning gate.** AMENDMENT 2 closed by naming a debt — *"⛩ **What is
+owed: one line at P5.1's open**"* — with two disjuncts. **Ruled: (a).**
+
+> **`AC-3` and `AC-2` may run in EITHER ORDER, or in PARALLEL.** The unconditional `AC-3 → AC-2`
+> ordering set at the 2026-08-26 signature is **RELEASED**.
+
+**The stated ground, in full, because an ordering released without one is as unreadable as an ordering
+retained without one.** That ordering's entire basis was **contamination** — *"a TTFS run walks the
+runner through the entire quickstart, so a contribution run afterwards is performed by someone just
+onboarded."* AMENDMENT 2 moved `AC-2` to a **recruited cold reader** while `AC-3` stayed with the
+**operator**. ⇒ **two different people perform the two runs**, and the contamination the ordering
+existed to prevent **cannot occur**. The ground is gone; the ordering goes with it.
+
+⛔ **What this does NOT release, stated so nothing is inferred:**
+- **`AC-2`'s runner condition is unchanged** — a recruited non-builder, per AMENDMENT 2. Releasing the
+  *ordering* does not return the run to the operator.
+- **`AC-3`'s operator-as-outsider discipline is unchanged**, CoI declared not managed away, with the
+  non-public-knowledge list still reported as **suspect if empty**.
+- **`AC-1`'s stimulus pin is unchanged** — the live production hero at the recorded build stamp.
+
+⭐⭐ **THIS IS THE FIRST TIME IN THIS CAMPAIGN THAT THE `FAIL-3` CLASS HAS BEEN *PAID* RATHER THAN
+RE-FOUND.** Its five prior sightings were all discoveries: a criterion amended around a temporary
+condition, the condition expired, nobody re-read it. AMENDMENT 2 was the sixth discovery **and it
+deliberately stopped short of the remedy** — *"an agent does not dissolve an operator's ordering by
+deriving that its premise lapsed"* — leaving the ruling as a named, dated debt with a destination.
+⇒ **The debt is now discharged at the destination that named it**, and the mechanism that made that
+possible was writing the owed line down instead of acting on it. *A deferral with a gate closes; a
+deferral in narrative does not* (`F-v`).
+
+⚠ **The scheduling consequence, which is the practical point.** Under the retained ordering, five
+recruited readers, a fresh macOS account and the operator's own funnel run had to be **sequenced**;
+released, `AC-2` and `AC-3` can be scheduled **independently and concurrently**. On a critical path
+whose every remaining act is human, that is the difference between one calendar window and two.
 
 ---
 

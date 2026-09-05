@@ -1,9 +1,42 @@
 # OPERATION VITRUVIUS
 ## Category Review Instrument — Open-Source Agent / Open-Standard Network Websites
 
-**Version** 1.0 · **Date** 16 August 2026 · **Classification** Working doctrine, MIT-releasable
+~~**Version** 1.0 · **Date** 16 August 2026~~
+**Version** 1.1 · **Date** 5 September 2026 · **Classification** Working doctrine, MIT-releasable
 **Primary target** `https://adna.network`
 **Instrument type** Reusable. Any site in the category can be scored with this document and nothing else.
+
+---
+
+## Changelog — v1.0 → v1.1
+
+> **What this release is.** v1.1 fixes **how anchors are read**. It changes **no dimension, no weight,
+> no check, and no score.** Every v1.0 anchor sentence is retained verbatim; the additions are the rules
+> that were being invented per-scorer because the instrument stated none. Derivation, with the line
+> exhibiting each defect: `../artifacts/gr_6/anchor_defect_derivation.md`.
+
+| # | Change | Filed by |
+|---|---|---|
+| **AD-1** | **Conjunctive-bundle split rule** added to §5 — how to score an anchor when *n* of *m* clauses hold | `reconciliation_p2_6.md:65-94` · `scoresheet_B_p2_6.md:272` |
+| **AD-2** | **Rung 1 added to all twelve** anchor tables. v1.0 skipped 1 on every dimension while §5 admits it as a legal score | derived over the instrument, `[D] 2026-09-05` |
+| **AD-3** | **Awardability** defined — `unawardable` / `provisional` / `graded`, what is recorded, how the composite treats each | `scoresheet_A_adna.md:197` · `reconciliation.md:23,48` |
+| **AD-4** | **Verified-failing vs unevidenced** clauses given distinct dispositions | `scoresheet_B_adna.md:93` vs `:147` |
+| **AD-5** | **Between-rungs tie-break** stated | `scoresheet_B_adna.md:75` |
+
+⛔⛔ **THE INSTRUMENT BOUNDARY, STATED HERE SO IT CANNOT LATER BE INFERRED AS SITE IMPROVEMENT.**
+The **51.6** baseline (2026-08-16) and the **P2.6 midscore** were both awarded under **v1.0**. Any
+re-score under v1.1 therefore **crosses an instrument boundary**, and its delta is **not** pure site
+movement. This is not hypothetical: `reconciliation_p2_6.md:88` had to make exactly this split after
+the fact on D2 — *"call it +0.8 weighted points of real movement, +0.8 of instrument drift"* — because
+two sittings read one conjunctive anchor two different ways. **AD-1 is what stops that recurring; it
+does not retroactively repair the readings already taken.**
+
+⇒ **Any report using v1.1 against a v1.0 figure must say which instrument produced each number.**
+*A count is only comparable to a count produced by the same command* — and an anchor table is a command.
+
+⚠ **v1.1 re-scores nothing and is not a re-score.** Changing an anchor and re-reading a score in one
+pass is the mechanism that produced the drift above. Scoring under v1.1 is done by **fresh, isolated
+scorers** (`../artifacts/p2_6/scorer_isolation_protocol.md`).
 
 ---
 
@@ -144,6 +177,7 @@ Dimensions are numbered D1–D12 and map onto the target's existing decade backb
 | Score | Condition |
 |---|---|
 | 0 | Cold readers cannot say what it is |
+| 1 | Cold readers give conflicting accounts of what it is; the category noun is absent or contested *(v1.1)* |
 | 2 | Readers grasp the mission but not the mechanism, or vice versa |
 | 3 | Correct summary, but only after scrolling past the fold |
 | 4 | Correct summary in ~30s at all three viewports; audience explicit |
@@ -177,6 +211,7 @@ Dimensions are numbered D1–D12 and map onto the target's existing decade backb
 | Score | Condition |
 |---|---|
 | 0 | No coherent taxonomy; orphans common |
+| 1 | A taxonomy exists but two navigations disagree; orphans present and unmapped *(v1.1)* |
 | 2 | Navigable by the initiated only; overflow menus carrying real weight |
 | 3 | Coherent but deep; several high-value pages ≥3 clicks |
 | 4 | ≤2 clicks to all high-value pages; search present and scoped; no orphans |
@@ -209,6 +244,7 @@ Dimensions are numbered D1–D12 and map onto the target's existing decade backb
 | Score | Condition |
 |---|---|
 | 0 | Quickstart does not complete on a clean machine |
+| 1 | Completes only with maintainer help or unpublished knowledge *(v1.1)* |
 | 2 | Completes with undocumented workarounds; TTFS > 30 min |
 | 3 | Completes as written; TTFS 10–30 min; troubleshooting thin |
 | 4 | TTFS < 10 min; prerequisites stated up front; troubleshooting and escape hatches present |
@@ -242,6 +278,7 @@ Dimensions are numbered D1–D12 and map onto the target's existing decade backb
 | Score | Condition |
 |---|---|
 | 0 | Documentation is a README |
+| 1 | More than a README, but no reference layer at all; documentation is narrative only *(v1.1)* |
 | 2 | Substantial docs, undifferentiated types, gaps in reference |
 | 3 | Clear types, complete reference, versioning weak |
 | 4 | Four types cleanly separated in the IA; versioned; migrations documented; examples tested |
@@ -277,6 +314,7 @@ Dimensions are numbered D1–D12 and map onto the target's existing decade backb
 | Score | Condition |
 |---|---|
 | 0 | Template default, no system |
+| 1 | Departures from the template are ad hoc; templates disagree on core styling *(v1.1)* |
 | 2 | Coherent surface, no enforced tokens, drift visible across templates |
 | 3 | Tokenised system, mostly conformant, some drift |
 | 4 | Published system, enforced in build, responsive integrity verified, states designed |
@@ -309,6 +347,7 @@ Dimensions are numbered D1–D12 and map onto the target's existing decade backb
 | Score | Condition |
 |---|---|
 | 0 | Inconsistent, unedited |
+| 1 | Edited, but voice varies by author and some claims contradict each other on the site *(v1.1)* |
 | 2 | Competent, register breaks common, unsupported claims present |
 | 3 | Consistent voice, claims mostly supportable, some aspirational tense |
 | 4 | Single voice throughout; every claim verified or verifiable; tense discipline enforced |
@@ -343,6 +382,7 @@ Dimensions are numbered D1–D12 and map onto the target's existing decade backb
 | Score | Condition |
 |---|---|
 | 0 | Anonymous, unverifiable, or overclaimed |
+| 1 | Attribution present but unresolvable (first names, no affiliation); nothing links to an external corroborator *(v1.1)* |
 | 2 | Named humans, no independent adoption, claims at strength ceiling |
 | 3 | Named humans, some verifiable third-party use, activity visible |
 | 4 | Multiple independent adopters with linked artifacts; live metrics; security path; claims at or below true strength |
@@ -379,6 +419,7 @@ Dimensions are numbered D1–D12 and map onto the target's existing decade backb
 | Score | Condition |
 |---|---|
 | 0 | No governance surface |
+| 1 | A governance page exists and names roles or processes that nothing on the site instantiates *(v1.1)* |
 | 2 | Governance described in prose; no process artifacts; no venue |
 | 3 | Ladder + contribution standards + CoC published; venue exists; process informal |
 | 4 | Numbered proposal process with public archive; chartered groups; named role-holders; live venue |
@@ -406,6 +447,7 @@ Dimensions are numbered D1–D12 and map onto the target's existing decade backb
 | Score | Condition |
 |---|---|
 | 0 | No path; PRs unwelcome or unanswered |
+| 1 | PRs accepted in principle; the advertised entry point is broken or leads nowhere *(v1.1)* |
 | 2 | Repo accepts PRs; no guidance; no labelled entry points |
 | 3 | CONTRIBUTING + templates + some labelled issues; response time unmeasured |
 | 4 | One-command dev setup; populated good-first-issues; median first response < 72h; non-code paths named |
@@ -443,6 +485,7 @@ Dimensions are numbered D1–D12 and map onto the target's existing decade backb
 | Score | Condition |
 |---|---|
 | 0 | JS-only rendering; no machine artifacts |
+| 1 | Server-rendered HTML; no machine artifacts at all, not even a sitemap *(v1.1)* |
 | 2 | Server-rendered HTML; sitemap only |
 | 3 | llms.txt + sitemap + RSS + clean extraction |
 | 4 | As 3, plus markdown twins, JSON-LD, machine-readable registry, documented agent entry point |
@@ -474,6 +517,7 @@ Dimensions are numbered D1–D12 and map onto the target's existing decade backb
 | Score | Condition |
 |---|---|
 | 0 | Automated criticals; keyboard traversal broken |
+| 1 | Automated criticals confined to secondary templates; keyboard traversal works but focus is unlabelled or invisible *(v1.1)* |
 | 2 | Automated clean; manual failures in key flows |
 | 3 | AA on primary templates; complex graphics partially covered |
 | 4 | Verified AA across all templates including graphics and registry; screen-reader tested |
@@ -503,6 +547,7 @@ Dimensions are numbered D1–D12 and map onto the target's existing decade backb
 | Score | Condition |
 |---|---|
 | 0 | Fails CWV; broken links common |
+| 1 | Passes CWV on some templates; internal 404s present and unmapped *(v1.1)* |
 | 2 | Passes desktop, fails mobile; no monitoring |
 | 3 | CWV green at p75; no internal 404s |
 | 4 | As 3, plus budgets enforced in CI, redirect map maintained, security headers set |
@@ -549,6 +594,79 @@ Findings must be adjudicated across dimensions, not scored in isolation. The imp
 > D11 and D12 carry low *weights* but binary *gates*: any WCAG AA critical or any CWV red at p75 blocks phase sign-off regardless of weighted score. Low weight ≠ optional.
 
 **Composite** = Σ (dimension score ÷ 5 × weight). Report as a percentage with the per-dimension breakdown always shown alongside. A composite reported without its breakdown is a lie by compression.
+
+### 5.1 Reading an anchor (v1.1)
+
+> **Why these rules exist.** Every rule below was already being applied — inconsistently, by different
+> reviewers, in different sittings, invented at the point of need and recorded only in a scoresheet's
+> prose. The anchor letters do real work; these say how to read them so two reviewers reading the same
+> letter reach the same rung for the same reason.
+
+**5.1.1 · Conjunctive bundles — the split rule (AD-1).** Most anchors bundle several clauses with `;`
+or `and`. To award a rung:
+
+1. **Decompose the anchor into its clauses** and list them. A rung is not awarded against a remembered
+   gist; it is awarded against an enumeration.
+2. **A rung is awarded only if EVERY clause holds.** Partial satisfaction does not award the rung.
+3. **A clause that fails sends you down**, not sideways: award the highest rung all of whose clauses
+   hold, and **name the failing clause verbatim** in the sheet.
+4. **`As N, plus …` rungs inherit.** Rung 5 phrased as *"As 4, plus X"* requires every clause of 4
+   **and** X.
+5. **Report the split.** Where a rung was refused on *k* of *m* clauses, write `k/m` and quote them.
+   *"Fails 4"* is not a finding; *"fails 4 on 'search present and scoped' (1/3)"* is.
+
+⚠ **The reading this rule OVERRULES, named so the change is legible.** At P2.6 both scorers awarded
+**D2 = 4** on the anchor's literal words *while both recorded that no site-wide search exists*. Under
+5.1.1 that is **3**, with the failing clause quoted. The baseline reviewers had both reached 3 by this
+reasoning without a rule to cite. ⇒ v1.1 **ratifies the baseline reading** and makes it citable.
+
+**5.1.2 · Between two rungs — the tie-break (AD-5).** Where a target exceeds rung *N*'s letter but
+fails rung *N+1* under 5.1.1, **the score is *N***. Exceeding a letter earns no fraction; the anchors
+are a floor ladder, not an interpolation. **Record the excess as a finding**, never as a partial point,
+so the next reviewer sees the judgement rather than inheriting a number that absorbed it.
+
+**5.1.3 · Failing vs unevidenced (AD-4).** Both prevent a rung; they are **not** the same disposition
+and must be labelled:
+
+| Disposition | Meaning | Closed by | Provenance |
+|---|---|---|---|
+| **`FAILS`** | The clause was tested and the target does not meet it | **work on the target** | `[D]` |
+| **`UNEVIDENCED`** | The clause was not tested; no instrument was run | **running the instrument** | `[A]`, never `[D]` |
+
+⭐ **Why the distinction is normative and not bookkeeping.** They are opposite kinds of debt: one is a
+fix, the other is a measurement. Labelling both *"fails 4"* tells the next reader nothing about which
+they hold — and lets *"we never looked"* wear the grammar of *"we checked and it is bad."* A rung
+refused **only** on `UNEVIDENCED` clauses is scored under 5.1.4, not simply refused.
+
+**5.1.4 · Awardability (AD-3).** Some rungs cannot be reached with the evidence a pass has. Three
+states, and every dimension declares one:
+
+| State | When | Recorded as |
+|---|---|---|
+| **`graded`** | Every clause of the awarded rung, and of the one above, was tested | the score |
+| **`provisional`** | The score stands but a clause above or at it is `UNEVIDENCED` | the score **+ the instrument owed + which way it could move** |
+| **`unawardable`** | A rung is unreachable **by construction** in this pass — the instrument does not exist, or is barred | **a declared ceiling**, with the reason |
+
+**Rules.**
+- A dimension is scored at the highest rung all of whose clauses hold **and are `[D]`**. A rung resting
+  on an `UNEVIDENCED` clause may be awarded **only** as `provisional`, and the sheet states **which
+  direction it moves** when the instrument runs.
+- **`unawardable` applies to ANCHORS, never to dimensions.** A dimension always receives a score; what
+  is capped is the rung it may reach. **Declare the ceiling before scoring**, so a ceiling is not
+  mistaken for a verdict.
+- **The composite has no term for any of this** and is computed from the numbers alone. ⇒ **a composite
+  carrying `provisional` or ceilinged dimensions is reported with them named**, exactly as the
+  breakdown rule above requires. A composite that hides its ceilings is the same lie by compression.
+- **A `provisional` score that is later confirmed is not an improvement.** State it, or a resolved flag
+  reads as movement.
+
+⭐ **This codifies what both baseline reviewers did unprompted** — *"anchor 5 unawardable pre-panel"*
+(D1, no human panel) · *"D3 anchors above 3"* (no clean-machine TTFS run) · *"D9 first-contribution
+experience"* (no outsider contribution run) · *"D11 anchors above [3]"* (no AT testing). **That two
+isolated scorers converged on the same missing concept is why it is in the instrument now.**
+
+⚠ **Consequence for any pass that closes one of these:** a dimension whose ceiling lifts because an
+instrument finally ran has changed **what could be measured**, not only what was measured. Say which.
 
 **Severity taxonomy for individual findings**
 
