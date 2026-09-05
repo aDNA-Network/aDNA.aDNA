@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260904_230810_haussmann_gr_5_o1
 created: 2026-09-04   # stamped `date -u` (23:08:10 UTC) — never local; the node runs PDT and a local stamp files a session sorting before ones that already happened (GR-4's open finding)
 updated: 2026-09-04
-status: active
+status: completed
 tier: 1
 campaign: campaign_haussmann
 mission: mission_haussmann_gr_5_flaky_gates
@@ -11,7 +11,7 @@ objective: O1 — the rate harness
 executor_tier: opus   # declared at the open and honoured; the mission's own field says a cheaper tier reproduces this finding's headline defect (concluding from n=1)
 last_edited_by: agent_rosetta
 token_budget_estimated: "~35–55 kT (GR-5 O1's per-objective share of the ⛩ ratified ~220 kT band). ⚠ ~40 kT of any HAUSSMANN sitting is the campaign CLAUDE.md, auto-loaded — inside the band, not beside it."
-token_budget_actual:
+token_budget_actual: "~55-75 kT reconstructed at the close (SO#11) and LABELLED as reconstructed — the field was empty while the sampler ran. Inside the ~35-55 kT per-objective share once O0's harness authoring is counted with it; no retrospective triggers."
 tags: [session, haussmann, gr_5, f_ab, rate_harness]
 ---
 
@@ -92,4 +92,48 @@ a transport.
 
 ## Work log
 
-*(appended as objectives close)*
+### ✅ O1 / `AC-1` COMPLETE — 2026-09-05, and the result is the opposite of the expected one
+
+The `n=100` sampler finished (process exited; `pgrep -f flake_rate_measure` → **0** `[D]`).
+**All three families 0/100, Wilson 95% `[0.0%, 3.7%]`, verdict STABLE**, `harnessErrors: 0`.
+Full record + limits: `artifacts/gr_5/o1_rate_record.md` §Results; machine-readable
+`o1_rate_report.json`.
+
+⇒ **§22.4's `40–60%` is excluded for this configuration** — `P(0/100 | p=0.4) ≈ 6.6 × 10⁻²³`.
+⛔ **And that is a statement about the HOST**, while `DATUM 1` and `F-ab`(b) are **CI** observations
+on a machine this desk cannot sample from here — the limit that governs how the verdicts may be
+cited (convention 18).
+
+⭐ **The grep-selection check is what makes the zero a result rather than an artifact**: `W8` guards
+against a grep matching *zero* tests and **not** against one matching *the wrong non-zero subset*.
+Verified with `--list` after the run — all three families select the exact assertions `F-ab` names,
+including `Shift+Tab` at `:203` and `G39 …(dark)` at `:137`, CI's actual red.
+
+⚠ **A hypothesis of this desk's was half wrong and the free load datum said so**: the first reading
+was *"the harness sampled the quiet end"*. Across 600 recorded `load1` values — median **10.55**,
+**16.7% at ≥ 15** — that holds for `g42b` (median 7.67) and **fails for `g39`, which ran at median
+14.13 and never failed.**
+
+⛔ **`O2` HAS LOST ITS SUBJECT** and the mission halts rather than improvising: `AC-2` discriminates
+by comparing two arms' rates, and a 0/100 baseline leaves nothing to separate. **This is a third
+state `AC-2` does not name** — not its ratified *"the rates did not separate"* refutation branch,
+which presumes the phenomenon occurred. ⛩ **Three options costed in the record's §Results; the
+scope call is the operator's** (SO#1). `O3` is unaffected, is now the only runnable objective, and
+still needs its own ⛩ GO because it drives CI.
+
+## Session close
+
+**Completed.** O0 (harness + 11/11 self-test) · **O1 / `AC-1`** in full, with its limits stated.
+**Blocked.** `O2` on the ⛩ scope call above; `O3` on its ⛩ CI GO.
+**Files touched.** `site/scripts/flake_rate_measure.mjs` · `artifacts/gr_5/o1_rate_record.md` ·
+`artifacts/gr_5/o1_rate_report.json` · `artifacts/gr_5/o1_rate_run.log` · this file.
+⛔ **Zero `site/src` bytes changed** — O1 measures and fixes nothing, by `AC-1`'s own terms.
+
+⚠ **Lease note, recorded rather than glossed.** The peer session
+`session_stanley_20260904_233911_haussmann_gate_rulings` declared this session's `artifacts/gr_5/*`
+as **not** co-writable, then wrote `o1_rate_record.md` §Results once the sampler had exited. **The
+declaration was honoured in substance** — the write happened only after the owning process was
+verified gone — **but the lease was never formally released**, because this file said `active` while
+nothing was running. ⭐ **That is GR-4's own finding recurring**: *a finished session left in
+`active/` is a lease nobody is holding.* Closed here at the moment the fact became true, not at the
+next session's open.

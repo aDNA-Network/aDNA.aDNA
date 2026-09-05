@@ -4,7 +4,7 @@ title: "GR-5 O1 — the rate harness: method, self-test, and the power arithmeti
 campaign: campaign_haussmann
 mission: mission_haussmann_gr_5_flaky_gates
 objective: O1
-status: in_progress   # method + self-test COMPLETE and recorded; the n=100 measurement is running. Results appended at the bottom, never rewritten above.
+status: complete   # ⛩ O1 / AC-1 COMPLETE 2026-09-05. Method + self-test + the n=100 measurement, all three families STABLE at 0/100. ~~in_progress~~ · Results appended at the bottom, never rewritten above (SO-6). ⛔ Read §Results' limits before citing the verdicts: the harness ran on the HOST and `F-ab`'s hardest evidence is CI-side, and `O2` has lost its subject.
 created: 2026-09-04
 updated: 2026-09-04
 last_edited_by: agent_rosetta
@@ -126,4 +126,140 @@ opening runs — this node is **busy**, which is the condition `F-ab` names.
 
 ## Results
 
-*(pending — the n=100 run is in flight)*
+**Run complete 2026-09-05T01:1x UTC** — `n=100` per family, sequential, tree `fe2bba6`, config
+unmodified, `harnessErrors: 0` on all three. Machine-readable: `o1_rate_report.json`.
+
+| Family | Selected assertions | n | failures | point | **95% Wilson** | verdict | wall-clock median |
+|---|---|---|---|---|---|---|---|
+| `g39` · figure typeset floor | 2 (dark + light) | 100 | **0** | 0.0% | **[0.0%, 3.7%]** | **STABLE** | 2.96 s |
+| `g47` · keyboard traversal | 11 (incl. Shift+Tab) | 100 | **0** | 0.0% | **[0.0%, 3.7%]** | **STABLE** | 10.4 s |
+| `g42b` · console clean | 2 (dark + light) | 100 | **0** | 0.0% | **[0.0%, 3.7%]** | **STABLE** | 57.2 s |
+
+⛔ **The point rate is never quoted without its interval** — the harness prints the warning itself, and
+at `k=0` the normal approximation would report `0%` with **zero width** (self-test **W1**).
+
+### ⭐ What this refutes, stated at exactly its width
+
+**§22.4's `40–60%` is excluded as a rate for this configuration.** Not *"unlikely"* — arithmetic:
+at the band's most favourable end, `P(0 failures | p=0.4, n=100) = 0.6¹⁰⁰ ≈ 6.6 × 10⁻²³`; at `p=0.6`
+it is `≈ 1.6 × 10⁻⁴⁰`. **`n=100` clears `n_required=97`, so for the first time in `F-ab`'s life these
+families return a verdict that is not INCONCLUSIVE** — and the verdict is the opposite of the one the
+mission was convened expecting.
+
+### ⭐⭐ THE CHECK THAT MAKES THE ZERO MEAN ANYTHING, AND IT IS NOT ONE THE SELF-TEST COULD DO
+
+**W8** asserts that a grep matching **zero** tests is a HARNESS ERROR. It does **not** guard against a
+grep matching **the wrong non-zero subset** — which would produce a clean, confident `0/100` about
+assertions nobody is asking about. Verified at the object with `--list`, after the run `[D]`:
+
+| Family | `--grep` | selects | includes the assertion `F-ab` names? |
+|---|---|---|---|
+| `g39` | `G39 figure-typeset` | 2 | ✅ `…(dark)` at `:137` — **CI's actual red in `DATUM 1`** |
+| `g47` | `G47 keyboard` | 11 | ✅ `G47 keyboard: Shift+Tab walks back…` at `:203` — **§22.4's subject** |
+| `g42b` | `G42b` | 2 | ✅ both themes of `G42b: no console error…` at `:102` |
+
+Counts reconcile with the run log's own per-run `2 / 11 / 2 tests ok`. ⇒ **the instrument sampled the
+right targets**, which is the precondition for the zero being a result rather than an artifact.
+
+### ⛔⛔ THE DECISIVE LIMIT — CONVENTION 18: THIS HARNESS RAN ON THE HOST, AND `F-ab`'s HARDEST EVIDENCE IS FROM CI
+
+`DATUM 1` is two **CI** runs (`33917725977` success · `33918391804` failure) on byte-identical bytes.
+`F-ab`(b) — the ratchet debt — is *"`7.9` came from a local run; **CI** read `7.4`"*. Both are
+observations about **a machine this desk does not control and cannot sample from here.**
+
+### ⭐⭐ AND THE SEAM IS NOT A CAUTION — IT IS DEMONSTRATED, ON THIS EXACT TREE, FOR THIS EXACT ASSERTION
+
+This is the strongest thing O1 produced, and it was available only because the session's own
+convention-19 check at the open recorded it `[D]`:
+
+| | |
+|---|---|
+| Tree | **`fe2bba6`** — the tree this harness sampled |
+| CI run `33918391804`, `gates` on `main` at `fe2bba6` | ⛔ **FAILURE** — `gate-39-figure-typeset.spec.ts:137` · `G39 figure-typeset: … (dark)` · 1 failed / 681 passed |
+| This harness, same tree, same assertion | ✅ **0 failures in 100 runs** |
+
+⇒ ***The same assertion, on the same bytes, failed in CI and did not fail once in 100 host runs.***
+Both observations are `[D]` and neither is in doubt, so the disagreement is not noise to be resolved —
+**it localizes `F-ab`(a) to the environment rather than to the code.** ⭐ That is a genuine advance on
+the mission's opening state, where the cause was *"unverified"* with a container-width hypothesis
+attached: **whatever the mechanism is, it is something CI has and this Mac does not**, and no amount
+of further host sampling will find it.
+
+⇒ **`O3` is not merely still runnable — the evidence now points at it.** Re-deriving `worstPx` in CI's
+own environment is precisely the measurement this result argues for, and ⛩ Ruling 1 selected it before
+this datum existed.
+
+⚠ **Stated at its width, because it is one CI observation.** `n=1` in the CI lane is exactly what
+`AC-1` exists to refuse quoting as a rate — *a control is a rate, not a run*. The claim here is the
+**disagreement**, which one failure is sufficient to establish; **not** a CI failure rate, which it is
+not.
+
+⇒ ***A host run cannot refute a CI flake.*** For `g39` in particular — the family whose entire
+evidentiary basis is CI-side — `0/100` on this Mac is **not** evidence the flake is gone; it is a
+precise statement about **a different machine**. Recorded as the limit it is, because a `STABLE`
+verdict in a table is exactly the shape that gets cited later as *"`F-ab` was measured and it was
+fine."* **It was measured on the wrong side of the seam for `g39`.**
+
+### ⚠⚠ A HYPOTHESIS OF THIS DESK'S WAS HALF WRONG, AND THE HARNESS'S FREE DATUM IS WHAT SAID SO
+
+On seeing the zeros, this desk's first reading was: *the harness sampled the quiet end of the load
+distribution, so it missed the regime `F-ab` names.* **Measured across all 600 recorded `load1`
+readings `[D]`** — the before/after pair the harness records on every run, which nothing asked for:
+
+| Scope | n | min | median | p90 | max |
+|---|---|---|---|---|---|
+| all families | 600 | 4.87 | **10.55** | 16.58 | 22.95 |
+| `g39` | 200 | 9.08 | **14.13** | — | 21.91 |
+| `g47` | 200 | 6.70 | 10.36 | — | 22.95 |
+| `g42b` | 200 | 4.87 | **7.67** | — | 20.23 |
+
+**16.7% of samples sat at `load1 ≥ 15`** on a 16-core box.
+
+⇒ **The hypothesis survives for `g42b` (median 7.67 — genuinely quiet) and DIES for `g39`, which ran
+at median 14.13 and a max of 21.91 and did not fail once in 100 runs.** ⭐ That is the *stronger*
+result, and it was only available because the load pair was recorded on a record already being
+written — the line in §Method that says *"free, and nothing asked for it… recorded, **not concluded
+from**"*. It is concluded from **now**, deliberately and once, and the conclusion is against this
+desk's own guess.
+
+### ⚠ One regime difference that DOES survive, and it is concrete
+
+§22.4's arms were **5 runs each, rebuilt between**. This harness **builds once per tree**
+(`flake_rate_measure.mjs:264`, inside `setupWorktree`) and **never inside `runOnce` (`:298`)** `[D]`.
+A rebuild is a heavy multi-core event that the following run starts on top of. ⇒ **§22.4 may have
+been generating the load whose effect it attributed to the increment** — which does not overturn its
+comparative conclusion (*"this increment is NOT implicated"*, supported by the **control arm failing
+at all**), but does mean **its arms and this harness sampled different machines in the same box.**
+
+### ⭐⭐ THE CONSEQUENCE FOR `O2`, AND IT IS STRUCTURAL: THE EXPERIMENT HAS LOST ITS SUBJECT
+
+`AC-2` discriminates the `gate-47` mechanism by running two arms at equal `n` — `reducedMotion` on and
+off — and asks whether **"the rates separate beyond AC-1's stated interval."** With a measured
+baseline of **0/100**, both arms read 0, and **no separation is detectable at any `n` this node can
+afford.** *You cannot measure a treatment effect on a phenomenon that does not occur in the regime you
+can sample.*
+
+⛔ **This is NOT `AC-2`'s ratified refutation branch, and collapsing the two would be the overclaim.**
+`DEFECT-3`'s clause says *"if the rates do not separate, the cause is still unverified, no fix is
+authored… `F-ab` stays `live`"* — that branch presumes **the phenomenon occurred and the treatment
+failed to move it.** What O1 found is a **third state the criterion does not name**: *the phenomenon
+did not reproduce at all on the surface available to the experiment.* The honest report is **not**
+*"the hypothesis is refuted"* — it is ***"the experiment is currently unrunnable, because its subject
+is absent from the only regime this instrument can reach."***
+
+⇒ ⛩ **A scope decision is owed and is NOT taken here** (SO#1). The candidates, with what each buys:
+
+| # | Option | Buys | Costs |
+|---|---|---|---|
+| **1** | **Re-aim `O2` at the regime that reproduces** — sample **inside a full-suite run** rather than a `--grep`'d family, which is where all four original observations came from | Restores the subject; tests `F-ab`'s actual claim | Expensive per sample (the suite is minutes, not seconds), and `n≥97` may be unaffordable |
+| **2** | **Move the experiment to CI**, where `g39`'s evidence actually lives | The only surface `DATUM 1` speaks about | CI round-trips; and it merges into `O3`'s lane |
+| **3** | **Record `AC-2` INAPPLICABLE with the measurement attached** and proceed to `O3` | Honest, cheap, and `AC-4` already has an INAPPLICABLE path | Leaves the `gate-47` mechanism unverified — `F-ab`(c) stays `live` |
+
+⚠ **`O3` IS UNAFFECTED AND IS NOW THE ONLY RUNNABLE OBJECTIVE.** `CONSTRAINT-1` ordered it *strictly
+after `AC-1`*, and `AC-1` is complete. It is a **CI-lane** measurement, which is precisely the surface
+this record just established the host cannot substitute for. ⭐ **And O1 says nothing about its
+fallback rider**, correctly: the rider fires on *"CI cannot produce a stable `worstPx` across `n`
+runs"*, and **this run measured the host** — so the rider is neither triggered nor excluded, and
+reading a host `STABLE` as evidence CI is stable would be the exact substitution this section forbids.
+
+⛔ **`O3` still needs its own ⛩ GO regardless** — it drives CI, and a push is an outward act.

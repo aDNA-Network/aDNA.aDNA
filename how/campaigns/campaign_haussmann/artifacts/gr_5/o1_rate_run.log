@@ -1,0 +1,363 @@
+
+════════════════════════════════════════════════════════════════════════════════
+  GR-5 · AC-1 — FLAKE RATE MEASUREMENT
+════════════════════════════════════════════════════════════════════════════════
+  started        2026-09-04T23:17:18.507Z
+  arm label      o1_baseline
+  tree           WORKTREE @ fe2bba68eb15  (working tree — may be dirty; see the report)
+  config         playwright.config.ts (unmodified)
+  n per family   100
+  hypothesis     [40.0%, 60.0%]  (register §22.4's measured range)
+  host           16 cores · load1 at open 9.08
+
+  ⛔ POWER, STATED BEFORE ANY NUMBER IS PRODUCED (AC-1 / DEFECT-4):
+     to resolve a rate to within the ±10.0% half-band at 95%, n must be ≥ 97.
+     n=100 MEETS that. 
+
+────────────────────────────────────────────────────────────────────────────────
+  gate-39 · figure typeset floor (netdiagram-svg)
+  surface: local `astro preview` over dist/
+  invocation (verbatim, V2's requirement): npx playwright test --project=chromium --grep 'G39 figure-typeset'   (GATE_PORT=4399, cwd: /Users/stanley/aDNA/aDNA.aDNA/site)
+
+    ✓ run   1/100  3.1s  load1 9.08→13.24  2 tests ok
+    ✓ run   2/100  3.0s  load1 13.24→12.90  2 tests ok
+    ✓ run   3/100  3.0s  load1 12.90→12.90  2 tests ok
+    ✓ run   4/100  3.0s  load1 12.90→12.27  2 tests ok
+    ✓ run   5/100  3.0s  load1 12.27→12.27  2 tests ok
+    ✓ run   6/100  2.9s  load1 12.27→14.25  2 tests ok
+    ✓ run   7/100  3.5s  load1 14.25→15.27  2 tests ok
+    ✓ run   8/100  3.0s  load1 15.27→15.27  2 tests ok
+    ✓ run   9/100  2.9s  load1 15.27→14.45  2 tests ok
+    ✓ run  10/100  3.2s  load1 14.45→16.57  2 tests ok
+    ✓ run  11/100  3.0s  load1 16.57→16.57  2 tests ok
+    ✓ run  12/100  3.0s  load1 16.57→15.65  2 tests ok
+    ✓ run  13/100  3.0s  load1 15.65→15.65  2 tests ok
+    ✓ run  14/100  3.0s  load1 15.65→14.71  2 tests ok
+    ✓ run  15/100  2.9s  load1 14.71→14.71  2 tests ok
+    ✓ run  16/100  3.0s  load1 14.71→17.70  2 tests ok
+    ✓ run  17/100  3.0s  load1 17.70→16.76  2 tests ok
+    ✓ run  18/100  3.0s  load1 16.76→16.76  2 tests ok
+    ✓ run  19/100  2.9s  load1 16.76→16.06  2 tests ok
+    ✓ run  20/100  3.0s  load1 16.06→16.06  2 tests ok
+    ✓ run  21/100  3.0s  load1 16.06→15.41  2 tests ok
+    ✓ run  22/100  3.0s  load1 15.41→14.90  2 tests ok
+    ✓ run  23/100  3.0s  load1 14.90→14.90  2 tests ok
+    ✓ run  24/100  3.0s  load1 14.90→14.51  2 tests ok
+    ✓ run  25/100  3.0s  load1 14.51→14.51  2 tests ok
+    ✓ run  26/100  3.0s  load1 14.51→13.99  2 tests ok
+    ✓ run  27/100  2.9s  load1 13.99→13.35  2 tests ok
+    ✓ run  28/100  3.0s  load1 13.35→13.35  2 tests ok
+    ✓ run  29/100  2.9s  load1 13.35→12.76  2 tests ok
+    ✓ run  30/100  2.9s  load1 12.76→12.76  2 tests ok
+    ✓ run  31/100  3.1s  load1 12.76→12.86  2 tests ok
+    ✓ run  32/100  3.0s  load1 12.86→12.39  2 tests ok
+    ✓ run  33/100  2.9s  load1 12.39→12.39  2 tests ok
+    ✓ run  34/100  3.1s  load1 12.39→11.88  2 tests ok
+    ✓ run  35/100  2.9s  load1 11.88→11.88  2 tests ok
+    ✓ run  36/100  3.0s  load1 11.88→11.65  2 tests ok
+    ✓ run  37/100  2.9s  load1 11.65→11.19  2 tests ok
+    ✓ run  38/100  3.0s  load1 11.19→11.19  2 tests ok
+    ✓ run  39/100  3.0s  load1 11.19→11.42  2 tests ok
+    ✓ run  40/100  3.0s  load1 11.42→11.42  2 tests ok
+    ✓ run  41/100  3.0s  load1 11.42→10.98  2 tests ok
+    ✓ run  42/100  2.9s  load1 10.98→10.34  2 tests ok
+    ✓ run  43/100  3.0s  load1 10.34→10.34  2 tests ok
+    ✓ run  44/100  3.0s  load1 10.34→11.44  2 tests ok
+    ✓ run  45/100  3.0s  load1 11.44→11.44  2 tests ok
+    ✓ run  46/100  2.9s  load1 11.44→11.00  2 tests ok
+    ✓ run  47/100  3.0s  load1 11.00→12.92  2 tests ok
+    ✓ run  48/100  3.0s  load1 12.92→12.92  2 tests ok
+    ✓ run  49/100  2.9s  load1 12.92→15.73  2 tests ok
+    ✓ run  50/100  2.9s  load1 15.73→15.73  2 tests ok
+    ✓ run  51/100  2.9s  load1 15.73→14.79  2 tests ok
+    ✓ run  52/100  2.9s  load1 14.79→14.79  2 tests ok
+    ✓ run  53/100  2.9s  load1 14.79→14.17  2 tests ok
+    ✓ run  54/100  2.9s  load1 14.17→13.75  2 tests ok
+    ✓ run  55/100  3.0s  load1 13.75→13.75  2 tests ok
+    ✓ run  56/100  2.9s  load1 13.75→13.37  2 tests ok
+    ✓ run  57/100  3.0s  load1 13.37→13.37  2 tests ok
+    ✓ run  58/100  3.0s  load1 13.37→21.91  2 tests ok
+    ✓ run  59/100  3.0s  load1 21.91→20.88  2 tests ok
+    ✓ run  60/100  3.0s  load1 20.88→20.88  2 tests ok
+    ✓ run  61/100  3.0s  load1 20.88→19.37  2 tests ok
+    ✓ run  62/100  2.9s  load1 19.37→19.37  2 tests ok
+    ✓ run  63/100  2.9s  load1 19.37→18.30  2 tests ok
+    ✓ run  64/100  3.0s  load1 18.30→18.11  2 tests ok
+    ✓ run  65/100  2.9s  load1 18.11→18.11  2 tests ok
+    ✓ run  66/100  2.9s  load1 18.11→18.50  2 tests ok
+    ✓ run  67/100  2.9s  load1 18.50→18.50  2 tests ok
+    ✓ run  68/100  3.0s  load1 18.50→17.34  2 tests ok
+    ✓ run  69/100  3.1s  load1 17.34→18.83  2 tests ok
+    ✓ run  70/100  2.9s  load1 18.83→18.83  2 tests ok
+    ✓ run  71/100  3.0s  load1 18.83→17.89  2 tests ok
+    ✓ run  72/100  2.9s  load1 17.89→17.89  2 tests ok
+    ✓ run  73/100  3.0s  load1 17.89→16.77  2 tests ok
+    ✓ run  74/100  2.9s  load1 16.77→16.77  2 tests ok
+    ✓ run  75/100  2.9s  load1 16.77→16.15  2 tests ok
+    ✓ run  76/100  2.9s  load1 16.15→15.26  2 tests ok
+    ✓ run  77/100  2.9s  load1 15.26→15.26  2 tests ok
+    ✓ run  78/100  2.9s  load1 15.26→14.44  2 tests ok
+    ✓ run  79/100  2.9s  load1 14.44→14.44  2 tests ok
+    ✓ run  80/100  2.9s  load1 14.44→15.20  2 tests ok
+    ✓ run  81/100  3.0s  load1 15.20→14.47  2 tests ok
+    ✓ run  82/100  3.0s  load1 14.47→14.47  2 tests ok
+    ✓ run  83/100  2.9s  load1 14.47→13.87  2 tests ok
+    ✓ run  84/100  3.0s  load1 13.87→13.87  2 tests ok
+    ✓ run  85/100  3.0s  load1 13.87→13.40  2 tests ok
+    ✓ run  86/100  2.9s  load1 13.40→13.12  2 tests ok
+    ✓ run  87/100  2.9s  load1 13.12→13.12  2 tests ok
+    ✓ run  88/100  2.9s  load1 13.12→13.27  2 tests ok
+    ✓ run  89/100  3.0s  load1 13.27→13.27  2 tests ok
+    ✓ run  90/100  3.0s  load1 13.27→13.01  2 tests ok
+    ✓ run  91/100  2.9s  load1 13.01→12.45  2 tests ok
+    ✓ run  92/100  2.9s  load1 12.45→12.45  2 tests ok
+    ✓ run  93/100  2.9s  load1 12.45→14.10  2 tests ok
+    ✓ run  94/100  2.9s  load1 14.10→14.10  2 tests ok
+    ✓ run  95/100  3.0s  load1 14.10→13.45  2 tests ok
+    ✓ run  96/100  2.9s  load1 13.45→13.45  2 tests ok
+    ✓ run  97/100  2.9s  load1 13.45→12.93  2 tests ok
+    ✓ run  98/100  2.9s  load1 12.93→13.18  2 tests ok
+    ✓ run  99/100  2.9s  load1 13.18→13.18  2 tests ok
+    ✓ run 100/100  2.9s  load1 13.18→13.48  2 tests ok
+
+    n (valid)      100
+    failures       0
+    point rate     0.0%   ⚠ never quote this without the interval
+    95% interval   [0.0%, 3.7%]
+    VERDICT        STABLE — 95% upper bound 3.7% is below the band
+    wall-clock     median 3.0s · min 2.9s · max 3.5s
+
+────────────────────────────────────────────────────────────────────────────────
+  gate-47 · keyboard traversal (incl. Shift+Tab walks back)
+  surface: local `astro preview` over dist/
+  invocation (verbatim, V2's requirement): npx playwright test --project=chromium --grep 'G47 keyboard'   (GATE_PORT=4399, cwd: /Users/stanley/aDNA/aDNA.aDNA/site)
+
+    ✓ run   1/100  10.4s  load1 13.48→11.87  11 tests ok
+    ✓ run   2/100  10.3s  load1 11.87→11.63  11 tests ok
+    ✓ run   3/100  10.6s  load1 11.63→12.22  11 tests ok
+    ✓ run   4/100  10.3s  load1 12.22→11.82  11 tests ok
+    ✓ run   5/100  10.4s  load1 11.82→10.78  11 tests ok
+    ✓ run   6/100  10.4s  load1 10.78→9.95  11 tests ok
+    ✓ run   7/100  10.4s  load1 9.95→10.52  11 tests ok
+    ✓ run   8/100  10.4s  load1 10.52→9.97  11 tests ok
+    ✓ run   9/100  10.4s  load1 9.97→9.21  11 tests ok
+    ✓ run  10/100  10.3s  load1 9.21→8.25  11 tests ok
+    ✓ run  11/100  10.3s  load1 8.25→8.04  11 tests ok
+    ✓ run  12/100  10.3s  load1 8.04→7.51  11 tests ok
+    ✓ run  13/100  10.3s  load1 7.51→7.20  11 tests ok
+    ✓ run  14/100  10.3s  load1 7.20→7.37  11 tests ok
+    ✓ run  15/100  10.4s  load1 7.37→6.92  11 tests ok
+    ✓ run  16/100  10.4s  load1 6.92→6.70  11 tests ok
+    ✓ run  17/100  10.4s  load1 6.70→6.89  11 tests ok
+    ✓ run  18/100  10.3s  load1 6.89→7.17  11 tests ok
+    ✓ run  19/100  10.3s  load1 7.17→9.07  11 tests ok
+    ✓ run  20/100  10.4s  load1 9.07→10.49  11 tests ok
+    ✓ run  21/100  10.3s  load1 10.49→10.41  11 tests ok
+    ✓ run  22/100  10.4s  load1 10.41→10.31  11 tests ok
+    ✓ run  23/100  10.4s  load1 10.31→9.86  11 tests ok
+    ✓ run  24/100  10.3s  load1 9.86→9.13  11 tests ok
+    ✓ run  25/100  10.3s  load1 9.13→18.10  11 tests ok
+    ✓ run  26/100  10.3s  load1 18.10→16.10  11 tests ok
+    ✓ run  27/100  10.4s  load1 16.10→14.00  11 tests ok
+    ✓ run  28/100  10.4s  load1 14.00→12.38  11 tests ok
+    ✓ run  29/100  10.4s  load1 12.38→11.47  11 tests ok
+    ✓ run  30/100  10.4s  load1 11.47→11.75  11 tests ok
+    ✓ run  31/100  10.4s  load1 11.75→11.25  11 tests ok
+    ✓ run  32/100  11.6s  load1 11.25→10.59  11 tests ok
+    ✓ run  33/100  12.0s  load1 10.59→9.72  11 tests ok
+    ✓ run  34/100  11.6s  load1 9.72→9.39  11 tests ok
+    ✓ run  35/100  11.7s  load1 9.39→12.14  11 tests ok
+    ✓ run  36/100  11.6s  load1 12.14→22.95  11 tests ok
+    ✓ run  37/100  11.7s  load1 22.95→21.75  11 tests ok
+    ✓ run  38/100  11.1s  load1 21.75→19.91  11 tests ok
+    ✓ run  39/100  11.6s  load1 19.91→17.65  11 tests ok
+    ✓ run  40/100  11.5s  load1 17.65→16.74  11 tests ok
+    ✓ run  41/100  10.4s  load1 16.74→16.67  11 tests ok
+    ✓ run  42/100  10.5s  load1 16.67→15.55  11 tests ok
+    ✓ run  43/100  10.6s  load1 15.55→14.47  11 tests ok
+    ✓ run  44/100  11.5s  load1 14.47→13.02  11 tests ok
+    ✓ run  45/100  11.8s  load1 13.02→12.62  11 tests ok
+    ✓ run  46/100  10.5s  load1 12.62→11.29  11 tests ok
+    ✓ run  47/100  10.4s  load1 11.29→10.80  11 tests ok
+    ✓ run  48/100  11.5s  load1 10.80→10.14  11 tests ok
+    ✓ run  49/100  11.5s  load1 10.14→9.31  11 tests ok
+    ✓ run  50/100  10.3s  load1 9.31→8.49  11 tests ok
+    ✓ run  51/100  10.3s  load1 8.49→8.96  11 tests ok
+    ✓ run  52/100  10.3s  load1 8.96→8.42  11 tests ok
+    ✓ run  53/100  10.3s  load1 8.42→9.79  11 tests ok
+    ✓ run  54/100  10.3s  load1 9.79→9.34  11 tests ok
+    ✓ run  55/100  10.3s  load1 9.34→8.59  11 tests ok
+    ✓ run  56/100  10.3s  load1 8.59→8.04  11 tests ok
+    ✓ run  57/100  10.3s  load1 8.04→8.35  11 tests ok
+    ✓ run  58/100  10.3s  load1 8.35→10.49  11 tests ok
+    ✓ run  59/100  10.3s  load1 10.49→9.50  11 tests ok
+    ✓ run  60/100  10.3s  load1 9.50→9.63  11 tests ok
+    ✓ run  61/100  10.3s  load1 9.63→8.93  11 tests ok
+    ✓ run  62/100  10.3s  load1 8.93→8.47  11 tests ok
+    ✓ run  63/100  10.5s  load1 8.47→9.23  11 tests ok
+    ✓ run  64/100  10.3s  load1 9.23→10.39  11 tests ok
+    ✓ run  65/100  10.4s  load1 10.39→9.47  11 tests ok
+    ✓ run  66/100  10.3s  load1 9.47→8.98  11 tests ok
+    ✓ run  67/100  10.4s  load1 8.98→8.61  11 tests ok
+    ✓ run  68/100  10.4s  load1 8.61→8.29  11 tests ok
+    ✓ run  69/100  10.5s  load1 8.29→7.94  11 tests ok
+    ✓ run  70/100  10.5s  load1 7.94→7.78  11 tests ok
+    ✓ run  71/100  10.4s  load1 7.78→14.93  11 tests ok
+    ✓ run  72/100  11.6s  load1 14.93→14.16  11 tests ok
+    ✓ run  73/100  10.4s  load1 14.16→12.45  11 tests ok
+    ✓ run  74/100  10.5s  load1 12.45→11.55  11 tests ok
+    ✓ run  75/100  10.5s  load1 11.55→11.38  11 tests ok
+    ✓ run  76/100  10.4s  load1 11.38→10.79  11 tests ok
+    ✓ run  77/100  10.4s  load1 10.79→9.97  11 tests ok
+    ✓ run  78/100  10.4s  load1 9.97→10.38  11 tests ok
+    ✓ run  79/100  10.5s  load1 10.38→10.21  11 tests ok
+    ✓ run  80/100  10.6s  load1 10.21→10.40  11 tests ok
+    ✓ run  81/100  10.6s  load1 10.40→10.19  11 tests ok
+    ✓ run  82/100  10.4s  load1 10.19→9.77  11 tests ok
+    ✓ run  83/100  10.4s  load1 9.77→9.71  11 tests ok
+    ✓ run  84/100  10.6s  load1 9.71→10.51  11 tests ok
+    ✓ run  85/100  10.4s  load1 10.51→10.34  11 tests ok
+    ✓ run  86/100  10.4s  load1 10.34→10.40  11 tests ok
+    ✓ run  87/100  10.4s  load1 10.40→9.96  11 tests ok
+    ✓ run  88/100  10.4s  load1 9.96→9.74  11 tests ok
+    ✓ run  89/100  10.4s  load1 9.74→9.23  11 tests ok
+    ✓ run  90/100  10.4s  load1 9.23→9.37  11 tests ok
+    ✓ run  91/100  10.4s  load1 9.37→10.13  11 tests ok
+    ✓ run  92/100  10.5s  load1 10.13→13.16  11 tests ok
+    ✓ run  93/100  10.4s  load1 13.16→12.56  11 tests ok
+    ✓ run  94/100  10.4s  load1 12.56→11.78  11 tests ok
+    ✓ run  95/100  10.4s  load1 11.78→11.03  11 tests ok
+    ✓ run  96/100  10.4s  load1 11.03→16.06  11 tests ok
+    ✓ run  97/100  10.5s  load1 16.06→14.21  11 tests ok
+    ✓ run  98/100  10.8s  load1 14.21→13.93  11 tests ok
+    ✓ run  99/100  10.4s  load1 13.93→13.51  11 tests ok
+    ✓ run 100/100  10.4s  load1 13.51→15.10  11 tests ok
+
+    n (valid)      100
+    failures       0
+    point rate     0.0%   ⚠ never quote this without the interval
+    95% interval   [0.0%, 3.7%]
+    VERDICT        STABLE — 95% upper bound 3.7% is below the band
+    wall-clock     median 10.4s · min 10.3s · max 12.0s
+
+────────────────────────────────────────────────────────────────────────────────
+  gate-42 · G42b console clean
+  surface: local `astro preview` — ⚠ NO vercel.json headers, so no CSP (convention 18, and gate-42's own known blindness)
+  invocation (verbatim, V2's requirement): npx playwright test --project=chromium --grep 'G42b'   (GATE_PORT=4399, cwd: /Users/stanley/aDNA/aDNA.aDNA/site)
+
+    ✓ run   1/100  55.0s  load1 15.10→11.10  2 tests ok
+    ✓ run   2/100  54.8s  load1 11.10→6.96  2 tests ok
+    ✓ run   3/100  54.8s  load1 6.96→8.81  2 tests ok
+    ✓ run   4/100  56.2s  load1 8.81→9.59  2 tests ok
+    ✓ run   5/100  55.8s  load1 9.59→9.05  2 tests ok
+    ✓ run   6/100  57.2s  load1 9.05→14.16  2 tests ok
+    ✓ run   7/100  57.4s  load1 14.16→20.23  2 tests ok
+    ✓ run   8/100  57.2s  load1 20.23→17.04  2 tests ok
+    ✓ run   9/100  57.2s  load1 17.04→16.58  2 tests ok
+    ✓ run  10/100  57.3s  load1 16.58→12.37  2 tests ok
+    ✓ run  11/100  57.1s  load1 12.37→7.69  2 tests ok
+    ✓ run  12/100  57.2s  load1 7.69→9.65  2 tests ok
+    ✓ run  13/100  57.2s  load1 9.65→10.38  2 tests ok
+    ✓ run  14/100  57.2s  load1 10.38→13.28  2 tests ok
+    ✓ run  15/100  57.3s  load1 13.28→12.64  2 tests ok
+    ✓ run  16/100  57.3s  load1 12.64→9.94  2 tests ok
+    ✓ run  17/100  57.1s  load1 9.94→9.20  2 tests ok
+    ✓ run  18/100  57.2s  load1 9.20→10.13  2 tests ok
+    ✓ run  19/100  57.2s  load1 10.13→7.49  2 tests ok
+    ✓ run  20/100  57.3s  load1 7.49→9.95  2 tests ok
+    ✓ run  21/100  57.2s  load1 9.95→15.41  2 tests ok
+    ✓ run  22/100  57.2s  load1 15.41→12.87  2 tests ok
+    ✓ run  23/100  57.2s  load1 12.87→9.27  2 tests ok
+    ✓ run  24/100  58.7s  load1 9.27→8.27  2 tests ok
+    ✓ run  25/100  57.0s  load1 8.27→7.59  2 tests ok
+    ✓ run  26/100  57.2s  load1 7.59→8.17  2 tests ok
+    ✓ run  27/100  57.2s  load1 8.17→9.45  2 tests ok
+    ✓ run  28/100  57.2s  load1 9.45→10.04  2 tests ok
+    ✓ run  29/100  57.4s  load1 10.04→10.31  2 tests ok
+    ✓ run  30/100  57.3s  load1 10.31→8.90  2 tests ok
+    ✓ run  31/100  57.6s  load1 8.90→6.80  2 tests ok
+    ✓ run  32/100  55.2s  load1 6.80→5.87  2 tests ok
+    ✓ run  33/100  55.0s  load1 5.87→6.10  2 tests ok
+    ✓ run  34/100  55.0s  load1 6.10→4.87  2 tests ok
+    ✓ run  35/100  54.8s  load1 4.87→6.04  2 tests ok
+    ✓ run  36/100  54.8s  load1 6.04→6.61  2 tests ok
+    ✓ run  37/100  55.1s  load1 6.61→6.26  2 tests ok
+    ✓ run  38/100  57.2s  load1 6.26→6.66  2 tests ok
+    ✓ run  39/100  57.2s  load1 6.66→6.37  2 tests ok
+    ✓ run  40/100  57.4s  load1 6.37→6.89  2 tests ok
+    ✓ run  41/100  57.5s  load1 6.89→6.94  2 tests ok
+    ✓ run  42/100  57.1s  load1 6.94→7.07  2 tests ok
+    ✓ run  43/100  57.3s  load1 7.07→8.14  2 tests ok
+    ✓ run  44/100  57.4s  load1 8.14→10.13  2 tests ok
+    ✓ run  45/100  57.4s  load1 10.13→6.44  2 tests ok
+    ✓ run  46/100  55.8s  load1 6.44→6.15  2 tests ok
+    ✓ run  47/100  54.9s  load1 6.15→6.57  2 tests ok
+    ✓ run  48/100  54.9s  load1 6.57→9.54  2 tests ok
+    ✓ run  49/100  54.8s  load1 9.54→8.35  2 tests ok
+    ✓ run  50/100  54.9s  load1 8.35→6.33  2 tests ok
+    ✓ run  51/100  55.0s  load1 6.33→7.44  2 tests ok
+    ✓ run  52/100  57.1s  load1 7.44→8.15  2 tests ok
+    ✓ run  53/100  55.4s  load1 8.15→8.91  2 tests ok
+    ✓ run  54/100  54.9s  load1 8.91→8.75  2 tests ok
+    ✓ run  55/100  55.0s  load1 8.75→7.56  2 tests ok
+    ✓ run  56/100  54.9s  load1 7.56→8.32  2 tests ok
+    ✓ run  57/100  54.8s  load1 8.32→6.52  2 tests ok
+    ✓ run  58/100  54.8s  load1 6.52→7.67  2 tests ok
+    ✓ run  59/100  56.6s  load1 7.67→7.71  2 tests ok
+    ✓ run  60/100  58.1s  load1 7.71→7.85  2 tests ok
+    ✓ run  61/100  57.6s  load1 7.85→7.93  2 tests ok
+    ✓ run  62/100  58.0s  load1 7.93→8.60  2 tests ok
+    ✓ run  63/100  57.9s  load1 8.60→7.10  2 tests ok
+    ✓ run  64/100  58.5s  load1 7.10→5.90  2 tests ok
+    ✓ run  65/100  58.6s  load1 5.90→5.86  2 tests ok
+    ✓ run  66/100  58.9s  load1 5.86→5.80  2 tests ok
+    ✓ run  67/100  58.6s  load1 5.80→6.18  2 tests ok
+    ✓ run  68/100  58.5s  load1 6.18→8.25  2 tests ok
+    ✓ run  69/100  58.5s  load1 8.25→7.39  2 tests ok
+    ✓ run  70/100  58.6s  load1 7.39→7.24  2 tests ok
+    ✓ run  71/100  58.7s  load1 7.24→6.57  2 tests ok
+    ✓ run  72/100  58.7s  load1 6.57→8.58  2 tests ok
+    ✓ run  73/100  58.5s  load1 8.58→8.00  2 tests ok
+    ✓ run  74/100  58.7s  load1 8.00→6.03  2 tests ok
+    ✓ run  75/100  58.6s  load1 6.03→6.63  2 tests ok
+    ✓ run  76/100  58.7s  load1 6.63→6.71  2 tests ok
+    ✓ run  77/100  58.6s  load1 6.71→6.71  2 tests ok
+    ✓ run  78/100  57.1s  load1 6.71→8.71  2 tests ok
+    ✓ run  79/100  56.6s  load1 8.71→7.02  2 tests ok
+    ✓ run  80/100  56.6s  load1 7.02→5.20  2 tests ok
+    ✓ run  81/100  56.5s  load1 5.20→10.94  2 tests ok
+    ✓ run  82/100  56.6s  load1 10.94→9.02  2 tests ok
+    ✓ run  83/100  57.0s  load1 9.02→8.11  2 tests ok
+    ✓ run  84/100  58.6s  load1 8.11→6.88  2 tests ok
+    ✓ run  85/100  59.0s  load1 6.88→8.12  2 tests ok
+    ✓ run  86/100  58.6s  load1 8.12→6.18  2 tests ok
+    ✓ run  87/100  58.6s  load1 6.18→5.11  2 tests ok
+    ✓ run  88/100  58.5s  load1 5.11→5.70  2 tests ok
+    ✓ run  89/100  58.6s  load1 5.70→8.43  2 tests ok
+    ✓ run  90/100  58.5s  load1 8.43→6.69  2 tests ok
+    ✓ run  91/100  58.6s  load1 6.69→6.18  2 tests ok
+    ✓ run  92/100  58.8s  load1 6.18→6.65  2 tests ok
+    ✓ run  93/100  58.6s  load1 6.65→5.99  2 tests ok
+    ✓ run  94/100  58.6s  load1 5.99→6.92  2 tests ok
+    ✓ run  95/100  58.7s  load1 6.92→6.76  2 tests ok
+    ✓ run  96/100  58.8s  load1 6.76→7.20  2 tests ok
+    ✓ run  97/100  58.8s  load1 7.20→7.47  2 tests ok
+    ✓ run  98/100  58.8s  load1 7.47→7.89  2 tests ok
+    ✓ run  99/100  58.6s  load1 7.89→7.40  2 tests ok
+    ✓ run 100/100  58.7s  load1 7.40→7.02  2 tests ok
+
+    n (valid)      100
+    failures       0
+    point rate     0.0%   ⚠ never quote this without the interval
+    95% interval   [0.0%, 3.7%]
+    VERDICT        STABLE — 95% upper bound 3.7% is below the band
+    wall-clock     median 57.2s · min 54.8s · max 59.0s
+
+  → machine-readable report: ../how/campaigns/campaign_haussmann/artifacts/gr_5/o1_rate_report.json
+
+════════════════════════════════════════════════════════════════════════════════
+  STABLE        gate-39 · figure typeset floor (netdiagram-svg)   0/100  95% [0.0%, 3.7%]
+  STABLE        gate-47 · keyboard traversal (incl. Shift+Tab walks back)   0/100  95% [0.0%, 3.7%]
+  STABLE        gate-42 · G42b console clean   0/100  95% [0.0%, 3.7%]
+════════════════════════════════════════════════════════════════════════════════
+
