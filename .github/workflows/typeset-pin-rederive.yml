@@ -71,9 +71,14 @@ jobs:
       - name: Trust the workspace (the container's uid does not own the checkout)
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
+      # ⚠ 24, DERIVED from the sibling workflows, not chosen. This shipped as `20` and the first live
+      # run died in 78 s: "Node.js v20.20.2 is not supported by Astro! Please upgrade to >=22.12.0".
+      # Both gates.yml:78 and unlighthouse-sweep.yml:55 pin 24 — the header above says this job
+      # mirrors gates.yml's container setup, and then a value was TYPED instead of read from the file
+      # it claimed to mirror. KW-14, in a workflow whose whole subject is a typed pin.
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Install dependencies
         run: npm ci
