@@ -52,13 +52,23 @@ const updated = '2026-09-03';
       and there are no embedded widgets, iframes, or remote scripts.
     </p>
 
-    <h2 id="the-one-exception">The one thing stored in your browser</h2>
+    {/* ⚠ THE ANCHOR IS DELIBERATELY UNCHANGED at `the-one-exception`, even though the heading no
+        longer says "one". Nothing on the site links it (grep: 1 hit, its own definition), so
+        renaming it buys nothing and churns a stable identifier that external links may already use.
+        ⭐ AND THE HEADING CARRIES NO COUNT, WHICH IS THE DESIGN RATHER THAN A STYLE CHOICE. The old
+        wording did not fail because its number was wrong — it failed because A COUNT IN PROSE HAS NO
+        MECHANISM KEEPING IT TRUE (KW-14). "Two things" would be the identical defect with a
+        different integer, going stale on the third key exactly as "one" went stale on the second.
+        This section therefore ENUMERATES AND NEVER TOTALS, and `gate-55` binds the enumeration to
+        the keys the built bundles actually write, in both directions. */}
+    <h2 id="the-one-exception">What is stored in your browser</h2>
     <p>
-      If you switch between light and dark mode, we save that single preference — the word
-      <code>theme</code> — in your browser's <code>localStorage</code> so the site remembers your
-      choice on your next visit. It never leaves your device, is never sent to us or anyone else,
-      and you can clear it any time through your browser. That is the only thing the site stores,
-      and it exists purely to serve you, not to identify you.
+      If you switch between light and dark mode, we save that choice — the word <code>theme</code>.
+      If you work through the intro course, we save which lessons you have finished — under
+      <code>adna:course:v1</code>. Both live in your browser's <code>localStorage</code>, so the site
+      remembers them on your next visit. Neither ever leaves your device, neither is sent to us or to
+      anyone else, and you can clear both at any time through your browser. They exist to serve you,
+      not to identify you.
     </p>
 
     <h2 id="performance">Performance measurement (stays on your device)</h2>

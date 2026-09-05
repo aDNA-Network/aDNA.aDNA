@@ -16,6 +16,23 @@ const pages = [
   { name: 'Homepage', path: '/' },
   { name: 'Concept page', path: '/learn/concepts/triad' },
   { name: 'Tutorial page', path: '/learn/tutorials/first-claude-md' },
+  // Course-deploy increment (ADR-057 same-diff): `/learn/course/*` shipped in b2e943b with ZERO gate
+  // coverage — `grep -rn "learn/course" tests/ scripts/` returned 0 and the commit touched no test
+  // file. P4.3's finding verbatim: "a 620-green suite knew nothing about the new route."
+  //
+  // ⭐ BOTH pages, and the reason is not thoroughness-by-default. The index and a lesson are
+  // different templates carrying DIFFERENT interactive islands — CourseProgress on the index,
+  // CourseCheck on a lesson — so sweeping only one leaves the other island's markup unaxed, which is
+  // precisely the hole this addition exists to close. Interactive islands in a new route family are
+  // exactly gate-4's subject.
+  //
+  // ⛔ DELIBERATELY NOT ADDED to audit-p1s3-sweep, whose contract is "every route class gate-4 does
+  // NOT already cover": listing them there too would run axe twice over the same markup and cover
+  // nothing new. P4.3's own first fix made that mistake — ADR-057 is a claim about WHERE an
+  // assertion belongs, and discharging it means reading each gate's contract, not adding the route
+  // everywhere. (Verified: the sweep names no course route, so nothing there needs a same-diff edit.)
+  { name: 'Course index', path: '/learn/course/' },
+  { name: 'Course lesson (interactive checks)', path: '/learn/course/what-is-an-adna-graph/' },
   { name: 'Pattern page', path: '/patterns/agents-md' },
   { name: '404 page', path: '/404.html' },
   // E4 aDNANetwork surfaces (cycle 150): the federation topology + a vault detail with relationships
