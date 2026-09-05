@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260905_024313_haussmann_gr_5_o2_o3
 created: 2026-09-05   # stamped `date -u` (02:43:13 UTC) — never local; the node runs PDT and a local stamp files a session sorting before ones that already happened (GR-4's open finding)
 updated: 2026-09-05
-status: active
+status: completed   # closed 2026-09-05 after the deploy + probe; filed to history in the same commit (GR-4 O1's finding: a finished session left in `active/` is a lease nobody is holding)
 tier: 1
 campaign: campaign_haussmann
 mission: mission_haussmann_gr_5_flaky_gates (O2 → O3) · course_deploy increment (C1 + C2)
@@ -11,7 +11,7 @@ objective: "GR-5 O2 (AC-2 INAPPLICABLE, ⛩ ruled) → O3 (the ⛩-ruled CI re-d
 executor_tier: opus
 last_edited_by: agent_rosetta
 token_budget_estimated: "GR-5's remaining share ~45 (O3) + ~20–30 (O4/O5 close) from the ratified ~220 kT band. ⚠ **Phase C is NOT inside that band** — it is a separate operator-ruled increment on the P4.4-addendum / R-97 precedent and carries its own ~60–90 kT line, said rather than absorbed (*a budget ratified before the operator's rulings is costed against a scope nobody has chosen yet* — GR-4's signed finding). ⚠ ~40 kT of any HAUSSMANN sitting is the campaign CLAUDE.md, auto-loaded — inside these bands, not beside them."
-token_budget_actual:
+token_budget_actual: "≈300–360 kT — **RECORDED AT THE TIME**, not reconstructed. Splits ~145–175 kT to `GR-5` (O2 + O3 + close, inside its ratified ~220 band across the mission's two sittings) and ~155–185 kT to the **course-deploy increment** (C1 + C2 + `gate-55` + two red-tests + the probe + the `gate-49` re-baseline + the deploy), against the ~60–90 kT this file estimated for it. ⚠ **That is ~2× on the Phase C line and it is FLAGGED, not absorbed** — the estimate was costed before the `gate-55` design was falsified by measuring the real bundles (a two-form resolver, not a one-line grep), before the deploy probe existed, and before the `gate-49` red that held the deploy a full CI cycle. ⭐ **The band that held is the one whose scope was ruled at a gate; the band that doubled is the one whose scope was discovered while building** — GR-4's finding, observed in both directions inside one sitting."
 tags: [session, haussmann, gr_5, f_ab, course_deploy, adr_057, privacy]
 ---
 
@@ -94,19 +94,28 @@ how noise gets baked into a ratchet (`AMENDMENT 1`'s finding).
 - **`GR-5` CLOSED** — AAR filed (SO#5), register **§24**, `token_budget_actual` **recorded at the
   time** (≈195–235 kT vs a ratified ~220), STATE + MANIFEST + campaign index moved in the cascade.
 
+- **🚀 DEPLOYED** — `deploy_record: 2026-09-05T04:51:01Z mode=prod url=https://adna-docs-lo4omw6hs-science-stanleys-projects.vercel.app token=SS_VERCEL_TOKEN tree=1cc80ca`. No override flags; ancestry guard passed on its own terms; live headers **4/4 by value**. Probe **16 PASS / 0 FAIL** ([[deploy_probe_course]]) against its red-proven **8/8** pre-deploy run.
+- **`gate-49` `home` re-baselined** (`1cc80ca`) — a **real** content change (twin count 223 → 226 rendered on `/`) wearing `AMENDMENT 1`'s exact 17/19 px noise figures. CI green on `1cc80ca` before the deploy.
+
 **Suite: 693 chromium (692 passed / 1 skipped / 0 failed)**, re-run **after** the record edits.
 Delta from 685 isolated with `--list`: `gate-55` **+4**, `gate-4` **48 → 52**.
 
 ## In progress
 
-- Nothing. The sitting's agent-reachable work is done; what remains is a ⛩ gate.
+- Nothing. ⛩ Both GOs were granted and taken, in order; the deploy is live and probe-verified.
 
 ## Next up
 
-⛩ **A push GO, then a ⛩ deploy GO**, in that order — `inject_build_stamp.mjs:83` stamps HEAD and
-nothing checks HEAD is public. The deploy would put the **intro course** live (`/learn/course/*` is
-404 today) alongside C1/C2. Then `P5.1` recruitment opens — **and not before**, because `AC-1` pins
-its stimulus to the live build at a recorded stamp.
+⭐⭐ **`P5.1` RECRUITMENT IS NOW UNBLOCKED AND IT IS THE CAMPAIGN'S CRITICAL PATH.** Prod serves
+`1cc80ca`, so `AC-1`'s stimulus — *the live production hero at a recorded build stamp* — is fixed and
+self-describing. **Nothing agent-reachable remains in the backbone.** It needs **five recruited cold
+readers** (agents must not recruit), a **fresh macOS account**, and the **operator as outsider**; one
+reader also runs the TTFS, which closes `P2.6 O0b`. Then `P5.2` → ⛩ **DP9**.
+
+⛩ **One line owed at `P5.1`'s open**, carried forward so it does not lapse: ruling 4 (TTFS → a cold
+reader) **falsified the antecedent** that made `AC-3 → AC-2` unconditional. Either release the
+ordering or retain it **for a different stated reason** — an agent does not dissolve an operator's
+ordering by deriving that its premise expired.
 
 ## Findings this sitting
 
