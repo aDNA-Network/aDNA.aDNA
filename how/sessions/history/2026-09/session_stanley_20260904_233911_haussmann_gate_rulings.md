@@ -3,7 +3,7 @@ type: session
 session_id: session_stanley_20260904_233911_haussmann_gate_rulings
 created: 2026-09-04   # stamped `date -u` (23:39:11 UTC) — never local (GR-4's open finding: a local stamp files a session sorting before ones that already happened)
 updated: 2026-09-04
-status: active
+status: completed   # ⛩ CLOSED at the 2026-09-05 session open. ~~active~~ (SO-6) — the file was left in `active/` with `status: active` while every one of its deliverables was committed at `3889c29`, and its own §Next Session Prompt hands off to a *later* sitting, so it was finished by its own account. ⭐ **GR-4 O1's finding, second sighting: a finished session left in `active/` is a lease nobody is holding** — and this instance is sharper, because the file's §Concurrency block is *itself* the Single-Writer Lease mechanism, so a cold agent reading `active/` saw TWO apparent live peers and neither was.
 tier: 2               # Tier-2, not Tier-1: a PEER SESSION IS LIVE and this one declares scope against it (see §Concurrency)
 campaign: campaign_haussmann
 mission: multiple — P5.1 (O0 currency) · P3.3 (⛩ ruling 4) · R-111 · P4.4 AC2 owed item
@@ -11,7 +11,7 @@ objective: "Phase A — the four ⛩ rulings taken at the 2026-09-04 planning ga
 executor_tier: opus
 last_edited_by: agent_rosetta
 token_budget_estimated: "~60–90 kT — authoring only. No builds, no suite runs, no deploys (see §Concurrency). The build limbs of rulings 1 and 3 are deferred to Phase C by the operator's window ruling."
-token_budget_actual:
+token_budget_actual: "~85–110 kT, **RECONSTRUCTED at the 2026-09-05 open and LABELLED as reconstructed** — the field was empty when the file was left in `active/`, so this is an estimate from the artifacts it produced (four rulings written into two mission files + the charter + STATE, four findings, and `artifacts/course_deploy/c1_c2_design.md` at 11 kB), never a reading. Against the ratified ~60–90 kT that is ~1.2× at the top edge — **inside SO#11's 2× threshold, so no retrospective triggers.** ⚠ The finding is not the number: **a band cannot be falsified by a prose sentence claiming it holds** (P4.3's), and this is the **fourth** consecutive P4.3-class instance of an actual reconstructed rather than recorded."
 tags: [session, haussmann, gate_rulings, p5_1, p3_3, r_111, speed_insights]
 ---
 

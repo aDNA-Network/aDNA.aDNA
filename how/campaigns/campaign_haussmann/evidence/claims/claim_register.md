@@ -2247,3 +2247,81 @@ moves one existing row's status and records why.
 table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and
 it must be a PARSEABLE TABLE, not a prose sentence.** Both halves restated rather than
 cross-referenced, per §21.3's own instruction.
+
+---
+
+## §23 — GR-5 O2: `AC-2` IS INAPPLICABLE, AND `F-ab` DOES NOT MOVE
+
+Record: `artifacts/gr_5/o2_inapplicable_record.md`. ⛩ Operator-ruled 2026-09-05 (option 3 of the
+three `O1` put and declined to choose, SO#1). **This section moves no row and adds no id** — it is
+here so the ledger shows *why* a live row stayed live, on the **§20.4 precedent**.
+
+### §23.1 ⛔ `F-ab` stays `live` — and "unrunnable" is not "refuted"
+
+`O1` measured `gate-47`'s family at **0 failures / 100 runs** on the host, which removed `AC-2`'s
+subject: with a control arm at zero, both arms read zero and **no separation is detectable at any `n`
+this node can afford.**
+
+⇒ `AC-2` **INAPPLICABLE**; `V2` inapplicable with it; `AC-4` **INAPPLICABLE** for that objective by
+its own clause. ⛔⛔ **NOT `DEFECT-3`'s ratified refutation branch.** That branch presumes *the
+phenomenon occurred and the treatment failed to move it* — a null result, which is evidence **against**
+the hypothesis. What happened is a **third state the criterion does not name**: *the phenomenon did
+not reproduce at all in the sampled regime*, which is evidence **in neither direction**. Filing it as
+a refutation would retire a live hypothesis on a measurement that never tested it.
+
+### §23.2 ⭐⭐ Two host measurements of one assertion, one day apart, disagree completely
+
+| Source | Regime | Reading |
+|---|---|---|
+| §22.4 (2026-09-04) | the **single** `Shift+Tab` test, **rebuilt between runs**, n=5/arm | **2 fail / 5** and **3 fail / 5** ⇒ *"roughly 40–60 % locally"* |
+| `O1` (2026-09-05) | the **11-test** `g47` selection, **built once per tree**, n=100 | **0 / 100** |
+
+Both `[D]`, same machine. **40–60 % and 0 % cannot both describe one phenomenon in one regime**, so
+they describe **two regimes** — and the two differ in **TWO variables, not one**: the **rebuild
+between runs** (a heavy multi-core event the next run starts on top of ⇒ §22.4 may have been
+generating the load whose effect it attributed to the increment) **and the selection breadth** (1 test
+vs 11, a different execution envelope for an assertion whose subject *is* focus order across a live
+document). ⛔ **Either alone is a sufficient explanation and nothing separates them** — recorded as a
+**confound, not a diagnosis**.
+
+⭐ *A count is only comparable to a count produced by the same command, on a comparably loaded
+machine* — arriving with unusual force, because these two counts were about to be read as a
+contradiction **about the site**. They are not. They are a statement that **the command is part of the
+phenomenon.**
+
+### §23.3 ⭐ A reproducing regime is KNOWN to exist — a deferral, not an impossibility
+
+§22.4's regime reproduces at 40–60 %, so `AC-2` is runnable *in principle* and unrunnable *with `O1`'s
+instrument as configured*. Whoever resumes it inherits: re-run both arms in **§22.4's regime** at
+**`n ≥ 97`** (`O1`'s power arithmetic for ±10 pp at 95 % in that band — §22.4's `n=5` is **~5 % of
+it**, which is why its numbers are INCONCLUSIVE as *rates* while its **comparative** conclusion
+survives). ⭐ **No new instrument is needed**: `flake_rate_measure.mjs` is already parameterised by
+tree and config, so this is configuration, not authorship — `DEFECT-1` paying off exactly as intended.
+
+### §23.4 ⚠ A naming correction: there is no `F-ab(c)`
+
+This objective's planning prose referred to *"`F-ab`(c)"* for the `gate-47` half. **`F-ab` is one row
+(`:2098`) lettering exactly two debts, `(a)` and `(b)`; §22.4 is an EXTENSION, not a third limb.**
+⭐ Minting a sub-letter in prose is what **`F-y`** was registered for — ***an `F-` ID is minted by
+writing the row*** — and caught the same way `F-y` was: by opening the row instead of citing the plan
+that cited it (`F-u`'s class).
+
+### §23.5 Counts — derived last
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **189** |
+| **Unique ids** | **174** (14 `G-*` + 160 `R-*`, `R-11`…`R-170`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, **not typed**, and re-run *after* §23 was
+written. ⭐ **Unchanged from §22.6, and that is the correct result**: this section adds **no row** and
+**moves none** — it records why a live row stayed live. ⭐⭐ It also **empirically cleared §22.4's own
+trap**: §23.2's comparison table carries `§22.4 (2026-09-04)` in a first cell, and the count holding
+at 189 is what *proves* no phantom claim row was minted — checked by re-deriving, never by reasoning
+about the predicate.
+
+⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order. This section is now that
+table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and
+it must be a PARSEABLE TABLE, not a prose sentence.** Both halves restated rather than
+cross-referenced, per §21.3's own instruction.

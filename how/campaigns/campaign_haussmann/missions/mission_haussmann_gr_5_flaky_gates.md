@@ -215,14 +215,72 @@ lane and out of `GR-5`'s scope.
 | # | Objective | Output | Gate |
 |---|---|---|---|
 | O0 | This convention-13 pass + the ⛩ ruling above | this file | ⛩ **HALT** |
-| O1 | The rate harness — parameterised by tree **and** config; rates with n, power and wall-clock | harness + rate report | — |
-| O2 | The `gate-47` discriminating experiment (`reducedMotion` on/off, equal n) | measurement + verdict | — |
+| O1 | ✅ **DONE 2026-09-05** — the rate harness; all three families **0/100**, `n=100` clears `n_required=97` | `artifacts/gr_5/o1_rate_record.md` | — |
+| O2 | ⛩ **INAPPLICABLE 2026-09-05** — the experiment lost its subject; ruled option 3 | `artifacts/gr_5/o2_inapplicable_record.md` | ⛩ (ruled at O1's close) |
 | O3 | The `gate-39` pin, **per the ruling** | pin or advisory | ⛩ (ruled at O0) |
 | O4 | Red-proofs of whatever exists to prove | mutation records | — |
 | O5 | Close cascade — register, counts, AAR, STATE | records | — |
 
 ⭐ **O1 before O2 before O3 is not a preference, it is the dependency**: O2 needs O1's instrument,
 and the ruling's option (1) needs O1's CI-lane rate.
+
+> ⛩⛩ **O1 CLOSED AND O2 RULED INAPPLICABLE — 2026-09-05. `AC-1` ✅ · `AC-2` ⊘ · `V1` ✅ · `V2` ⊘.**
+> Records: [[o1_rate_record]] · [[o2_inapplicable_record]]; register **§23** (which **moves no row and
+> adds no id** — counts re-derived *after* writing and **unchanged at 189 / 174 / 0**, the correct
+> result).
+>
+> ⭐⭐ **THE MISSION'S SUBJECT DID NOT REPRODUCE, AND THAT IS A DIFFERENT RESULT FROM THE ONE IT WAS
+> CONVENED EXPECTING.** All three sampled families read **0 failures in 100 runs** on the host, at
+> `n=100` clearing `O1`'s computed `n_required = 97` — so for the first time in `F-ab`'s life these
+> families return a verdict that is **not INCONCLUSIVE**, and it is the opposite of the expected one.
+> §22.4's `40–60 %` is excluded **as a rate for this configuration** by arithmetic, not by opinion
+> (`P(0 | p=0.4, n=100) ≈ 6.6 × 10⁻²³`).
+>
+> ⛔⛔ **`AC-2` IS INAPPLICABLE, NOT REFUTED, AND COLLAPSING THE TWO WOULD BE THE OVERCLAIM.**
+> `DEFECT-3`'s ratified refutation branch presumes *the phenomenon occurred and the treatment failed to
+> move it* — a null result, evidence **against** the hypothesis. What happened is a **third state the
+> criterion does not name**: *the phenomenon did not reproduce at all in the sampled regime*, which is
+> evidence **in neither direction**. With a control arm at zero, both arms read zero and **no
+> separation is detectable at any `n` this node can afford.** `V2` is inapplicable **with** its
+> criterion, and `AC-4` reports **INAPPLICABLE** for this objective by its own clause — ⛔ never a
+> blank, and never a miss, because reading a null regime as a miss converts an honest result into a
+> mission failure.
+>
+> ⭐⭐ **THE LOAD-BEARING FINDING IS A CONTRADICTION BETWEEN TWO OF OUR OWN HOST MEASUREMENTS, ONE DAY
+> APART.** §22.4 measured this exact assertion at **2/5 and 3/5 failing**; `O1` measured it at
+> **0/100** — same machine, both `[D]`. **40–60 % and 0 % cannot describe one phenomenon in one
+> regime**, so they describe two. ⚠ **And the regimes differ in TWO variables, not one**: the
+> **rebuild between runs** (§22.4 rebuilt; the harness builds once per tree — so §22.4 may have been
+> *generating* the load whose effect it attributed to the increment) **and the selection breadth**
+> (1 test vs 11 — a different execution envelope for an assertion whose subject *is* focus order
+> across a live document). ⛔ **Either alone suffices and nothing separates them ⇒ recorded as a
+> CONFOUND, not a diagnosis** (GR-2: verify the cause before authoring the fix).
+> ⇒ *A count is only comparable to a count produced by the same command* — arriving with unusual
+> force, because these two counts were about to be read as a contradiction **about the site**. They
+> are not; they are a statement that ***the command is part of the phenomenon.***
+>
+> ⭐ **A REPRODUCING REGIME IS KNOWN TO EXIST, so this is a deferral and not an impossibility** — said
+> because a bare *"INAPPLICABLE"* reads as *"this can never be done"*. §22.4's regime reproduces at
+> 40–60 %; whoever resumes `AC-2` re-runs both arms **there**, at **`n ≥ 97`**, and needs **no new
+> instrument** — `flake_rate_measure.mjs` is already parameterised by tree and config, so it is
+> configuration rather than authorship. ⭐ **`DEFECT-1` paying off exactly as it was written to.**
+>
+> ⚠ **A naming correction made rather than propagated: there is no `F-ab(c)`.** `F-ab` is one row
+> (`claim_register.md:2098`) lettering exactly **two** debts; §22.4 is an **extension**, not a third
+> limb. Minting a sub-letter in prose is what **`F-y`** was registered for — ***an `F-` ID is minted by
+> writing the row*** — and it was caught the same way, by opening the row instead of citing the plan
+> that cited it (`F-u`'s class). **`F-ab` stays `live`; nothing here fixed anything**, and *a fix's
+> commit is not the register's strike* (`F-n`).
+>
+> ⛔ **What O2 explicitly does NOT claim:** that `gate-47` is fixed, healthy, or no longer flaky. `O1`'s
+> `STABLE` verdict is a statement about **one regime on one machine**, and `O1`'s own record flags that
+> such a verdict *"is exactly the shape that gets cited later as 'F-ab was measured and it was fine.'"*
+>
+> ⏭ **NEXT: `O3`** — and `O1`'s decisive limit is what points at it. The **same assertion, on the same
+> bytes, failed in CI and did not fail once in 100 host runs** (`DATUM 1`), so ***a host run cannot
+> refute a CI flake***: whatever the mechanism is, **it is something CI has and this Mac does not**, and
+> no further host sampling will find it. ⛩ Ruling 1 selected the CI re-derivation **before** that datum
+> existed. ⛔ O3 needs its own ⛩ push GO — it drives CI, and a push is an outward act.
 
 ## ⛩ Convention-13 pre-build pass — COMPLETE, 24/24, COVERAGE RECORDED
 
