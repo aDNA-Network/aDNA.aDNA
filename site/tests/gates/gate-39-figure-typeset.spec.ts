@@ -30,6 +30,34 @@
  * produces a light-named screenshot of a dark page (the P4.1 O2 capture defect).
  */
 import { test, expect } from '@playwright/test';
+import { mkdirSync, writeFileSync } from 'node:fs';
+
+/* ⭐ GR-5 O3 — THE MEASUREMENT IS EMITTED ON EVERY RUN, PASS OR FAIL.
+ *
+ * This is an EMISSION, not an assertion. It moves no pin, changes no threshold and cannot alter
+ * whether this gate passes — which is what keeps GR-5's AC-5 ("no gate is loosened in the dark")
+ * satisfiable alongside AC-3 ("re-derive the pin"): the two criteria are met by opposite states of
+ * this file if a pin moves carelessly, so the re-derivation is built to need no pin change to
+ * PRODUCE its evidence.
+ *
+ * WHY IT EXISTS. F-ab(b) is that `netdiagram-svg`'s pinned `worstPx = 7.9` was taken from a LOCAL
+ * measurement CI does not reproduce — CI has read 7.4 on bytes that went green twice. Before this,
+ * the measured value surfaced ONLY inside a failure message (see the `below-floor (regression)`
+ * finding), so a PASSING run emitted nothing and the distribution could never be sampled. The pin
+ * could therefore only ever be re-derived from the runs where it was already wrong.
+ *
+ * ⇒ every run now writes what it actually measured, so `n` runs in CI's own environment produce a
+ * distribution rather than an anecdote. `A control is a rate, not a run` (§22.4), applied to a
+ * continuous quantity.
+ *
+ * ⚠ SURFACE, NAMED (convention 18): this records what THIS run's browser, at THIS viewport, on THIS
+ * machine, painted. It is not a claim about any other environment — which is the whole point, since
+ * the host and CI demonstrably disagree (GR-5 DATUM 1).
+ *
+ * ⚠ `evidence/` is gitignored, deliberately: this is per-run measurement, not a committed artifact.
+ * CI reaches it by uploading the directory as a workflow artifact.
+ */
+const MEASUREMENT_DIR = 'evidence/gate39_typeset';
 
 const WIDTHS = [320, 390, 1024, 1440, 1920];
 const FLOOR_PX = 12;
@@ -147,6 +175,16 @@ test.describe('Gate 39 — figure typeset floor (lock O1)', () => {
 
       const findings: Finding[] = [];
       let measured = 0;
+
+      /* GR-5 O3's emission accumulator. Keyed by BASELINE key, so it re-derives exactly the quantity
+         the pin is: the WORST (smallest) rendered size that figure paints anywhere in the sweep.
+         Tracked over `belowFloor` because all three pinned figures sit below the 12px floor at their
+         worst, so their minimum is necessarily in that set — stated rather than assumed, and asserted
+         by G39f below so the assumption cannot rot silently if a figure improves past the floor. */
+      const observed: Record<
+        string,
+        { minRendered: number; samples: number; at: { route: string; width: number } }
+      > = {};
 
       for (const route of FIGURE_ROUTES) {
         for (const width of WIDTHS) {
@@ -269,6 +307,20 @@ test.describe('Gate 39 — figure typeset floor (lock O1)', () => {
              known noise nobody reads. */
           for (const f of r.belowFloor) {
             const key = baselineKey(f.svgClass);
+
+            /* GR-5 O3 emission — recorded for EVERY below-floor sample, including the ones the
+               ratchet forgives, and BEFORE the grading branch below. A sample that does not red the
+               gate is exactly the sample the re-derivation needs: pinning from failures alone would
+               re-derive the pin from the tail that already breached it. */
+            if (key !== null) {
+              const prev = observed[key];
+              if (!prev || f.rendered < prev.minRendered) {
+                observed[key] = { minRendered: f.rendered, samples: (prev?.samples ?? 0) + 1, at: { route, width } };
+              } else {
+                prev.samples += 1;
+              }
+            }
+
             if (key === null) {
               findings.push({
                 route,
@@ -291,6 +343,54 @@ test.describe('Gate 39 — figure typeset floor (lock O1)', () => {
       }
 
       await ctx.close();
+
+      /* GR-5 O3 — WRITE BEFORE THE ASSERTIONS, DELIBERATELY.
+         A failing run is the most informative sample there is: it is the only one that has ever shown
+         CI's 7.4. Emitting after the `expect`s would discard precisely the runs F-ab is about, and the
+         re-derivation would be built from survivors only. */
+      mkdirSync(MEASUREMENT_DIR, { recursive: true });
+      writeFileSync(
+        `${MEASUREMENT_DIR}/measurement-${theme}.json`,
+        JSON.stringify(
+          {
+            gate: 'gate-39-figure-typeset',
+            theme,
+            measuredElements: measured,
+            floorPx: FLOOR_PX,
+            routes: FIGURE_ROUTES,
+            widths: WIDTHS,
+            /* Each entry is THIS RUN's worst rendered size for that figure — the same quantity
+               BASELINE[key].worstPx pins. `pinned` is carried alongside so a consumer never has to
+               re-read this file's constants to interpret the reading. */
+            figures: Object.fromEntries(
+              Object.entries(observed).map(([key, o]) => [
+                key,
+                { ...o, pinned: BASELINE[key].worstPx, deltaFromPin: +(o.minRendered - BASELINE[key].worstPx).toFixed(3) },
+              ]),
+            ),
+            /* ⚠ An ABSENT key means "no below-floor sample for this figure in this run", which for a
+               currently-pinned figure would itself be a finding (it improved past the 12px floor).
+               Recorded as a distinguishable state rather than an empty object, because `missing` and
+               `zero` are different readings and collapsing them is how a broken accumulator reads as
+               a clean measurement. */
+            figuresAbsent: Object.keys(BASELINE).filter((k) => !(k in observed)),
+          },
+          null,
+          2,
+        ) + '\n',
+      );
+
+      /* G39f (GR-5 O3) — THE EMISSION IS NON-VACUOUS.
+         Without this the accumulator can silently record nothing — a broken `baselineKey`, a changed
+         svg class, a figure that stops being recognised — and the re-derivation would consume an empty
+         file that looks exactly like a clean run. That is B0's `control that passed for the wrong
+         reason` and O1's self-test W8 (`a grep matching zero tests is a HARNESS ERROR, never a pass`),
+         and it is the single cheapest way this whole objective could produce a confident wrong pin.
+         ⚠ Placed BEFORE the findings assertion so the CAUSE reports ahead of the SYMPTOM (GR-3). */
+      expect(
+        Object.keys(observed),
+        `gate-39 emitted measurements for ${Object.keys(observed).length} figure(s) — expected all ${Object.keys(BASELINE).length} pinned figures to yield at least one below-floor sample. Absent: ${JSON.stringify(Object.keys(BASELINE).filter((k) => !(k in observed)))}. Either a figure improved past the ${FLOOR_PX}px floor (tighten its baseline — see the ratchet law) or the emission stopped seeing it, and those are different repairs.`,
+      ).toHaveLength(Object.keys(BASELINE).length);
 
       // Assert the gate measured something. A selector change that finds zero <text> elements would
       // otherwise produce a perfect green — the exact shape of the upstream failure this lock records.

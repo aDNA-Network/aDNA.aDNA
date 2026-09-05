@@ -1,0 +1,187 @@
+name: typeset-pin-rederive
+
+# HAUSSMANN GR-5 O3 — re-derive gate-39's `worstPx` pin in CI's OWN environment.
+#
+# ⛩ THE RULING THIS EXISTS TO EXECUTE (operator, 2026-09-04, option (1) of two):
+#   "re-derive netdiagram-svg's worstPx in CI's own environment, so the pin becomes a fact about the
+#    environment that asserts it" — ordered strictly AFTER AC-1, plus a conditional fallback rider:
+#    if the CI re-derivation is ITSELF unstable across n runs, fall back to advisory automatically
+#    with the measured instability as the reason, no second trip to the operator.
+#   ⛔⛔ NEVER 7.9 → 7.4. Loosening a pin to make a test pass is what convention 1 forbids and what
+#   gate-39's own ratchet_law (:268) reserves for an operator gate. The number is not the subject.
+#
+# WHY A CI WORKFLOW AND NOT A LOCAL RUN. F-ab(b) is that the pin was taken from a LOCAL measurement
+# CI does not reproduce. GR-5 O1 then measured, at n=100 on the host, ZERO failures in the very
+# family CI had just failed on byte-identical bytes (DATUM 1) — so:
+#
+#   ⇒ A HOST RUN CANNOT REFUTE A CI FLAKE. Whatever the mechanism is, it is something CI has and
+#     this Mac does not, and no amount of further host sampling will find it.
+#
+# This is the only surface that can answer the question, which is why O1's record concluded the
+# evidence now points AT O3 rather than merely leaving it runnable.
+#
+# ⛔ ITS OWN CONCURRENCY GROUP, DELIBERATELY — NOT `gates-${{ github.ref }}`.
+# gates.yml sets `cancel-in-progress: true` on that group. Joining it would mean any push landing
+# mid-run CANCELS the measurement — the exact hazard already observed against unlighthouse-sweep,
+# whose first-ever run was at risk from a push inside its window. A sampler that can be silently
+# truncated reports a smaller n than it claims, and `n` is the whole point of this workflow.
+#
+# ⛔ NO `safe.directory` DIVERGENCE FROM gates.yml. This job uses the same `container:` block, so it
+# inherits the same uid mismatch GR-2 O4 diagnosed and needs the same fix. (unlighthouse-sweep.yml
+# deliberately does NOT carry it — it has no container, so there is no refusal to fix, and adding it
+# there would have destroyed the negative arm that MEASURED the container as the differentiating
+# variable. Here the container is present, so the step belongs.)
+
+on:
+  workflow_dispatch:
+    inputs:
+      runs:
+        description: "How many times to run gate-39 (see the note on n below)"
+        required: false
+        default: "20"
+
+permissions:
+  contents: read
+
+# ⭐ Its own group. Queues against itself so two dispatches cannot interleave their emissions into one
+# artifact, and `cancel-in-progress: false` so a second dispatch never truncates a sampler mid-run.
+concurrency:
+  group: typeset-pin-rederive-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  rederive:
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.59.1-noble
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # GR-2 O4's fix, for the same reason and scoped the same way: the runner creates the workspace
+      # as its own uid and this job runs in a container, so git refuses the repo as dubiously owned.
+      # Scoped to $GITHUB_WORKSPACE, NEVER `*`. Must come AFTER checkout — and for two reasons, not
+      # one: the directory does not exist before it, and `defaults.run.working-directory: site` means
+      # a step placed earlier cannot cd into a path that is not there yet.
+      - name: Trust the workspace (the container's uid does not own the checkout)
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Posture-safe, exactly as gates.yml: `npx astro build`, NEVER `npm run build` — the npm
+      # prebuild regenerates vault data from sibling vaults that are not in this checkout.
+      - name: Build (posture-safe — committed data, no prebuild regen)
+        run: npx astro build
+
+      # ⭐ THE SAMPLER. Runs gate-39 n times and keeps EVERY run's emission, including the runs where
+      # the gate goes RED — those are the only samples that have ever shown CI's 7.4, and a sampler
+      # that kept survivors only would re-derive the pin from the tail that already breached it.
+      # `|| true` on the gate is therefore load-bearing, not laziness: this job's product is the
+      # MEASUREMENT, and a red gate is a datum, not a job failure.
+      - name: Sample gate-39 n times
+        run: |
+          set -u
+          N="${{ github.event.inputs.runs }}"
+          case "$N" in ''|*[!0-9]*) echo "::error::runs must be a positive integer, got '$N'"; exit 2 ;; esac
+          [ "$N" -ge 1 ] || { echo "::error::runs must be >= 1"; exit 2; }
+          mkdir -p ../typeset-samples
+          reds=0
+          for i in $(seq 1 "$N"); do
+            rm -rf evidence/gate39_typeset
+            if npx playwright test tests/gates/gate-39-figure-typeset.spec.ts \
+                 --project=chromium --grep "G39 figure-typeset" --reporter=line > "../typeset-samples/run-$i.log" 2>&1; then
+              verdict=green
+            else
+              verdict=RED; reds=$((reds + 1))
+            fi
+            for theme in dark light; do
+              src="evidence/gate39_typeset/measurement-$theme.json"
+              if [ -f "$src" ]; then
+                cp "$src" "../typeset-samples/run-$i-$theme.json"
+              else
+                # A missing emission is a DISTINCT state from a red gate, and collapsing them would
+                # hide a broken accumulator behind a plausible flake. Recorded as its own datum.
+                echo "{\"run\":$i,\"theme\":\"$theme\",\"error\":\"no emission written\"}" > "../typeset-samples/run-$i-$theme.json"
+              fi
+            done
+            echo "run $i/$N: $verdict"
+          done
+          echo "reds=$reds of $N" | tee ../typeset-samples/_verdicts.txt
+
+      # ⭐ SUMMARISE IN THE LOG, not only in the artifact. A measurement that can only be read by
+      # downloading a zip is a measurement nobody reads — convention 19's finding (an instrument
+      # nobody reads is indistinguishable from one that does not exist) applied to our own output.
+      - name: Summarise the distribution
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json, glob, statistics, collections, os, platform
+          rows = collections.defaultdict(list)
+          errors = 0
+          # ⚠ The environment is DERIVED, never asserted. This same summariser was exercised on the
+          # host before it shipped, where a hardcoded "CI environment" header would have printed a
+          # false claim about the one variable this whole objective turns on (convention 18: say what
+          # the instrument ran against, and whether that is the surface the claim is about).
+          env = 'GitHub Actions runner' if os.environ.get('GITHUB_ACTIONS') == 'true' else 'NOT CI — a local run'
+          host = f"{platform.system()} {platform.machine()} · py{platform.python_version()}"
+          for p in sorted(glob.glob('../typeset-samples/run-*-*.json')):
+              try:
+                  d = json.load(open(p))
+              except Exception:
+                  errors += 1; continue
+              if 'error' in d:
+                  errors += 1; continue
+              for key, v in d.get('figures', {}).items():
+                  rows[(key, d['theme'])].append((v['minRendered'], v['pinned']))
+          print()
+          print('=' * 78)
+          print('GR-5 O3 — gate-39 worstPx re-derivation')
+          print(f'environment: {env}   [{host}]')
+          print('=' * 78)
+          if errors:
+              print(f'!! {errors} sample(s) carried no usable emission — NOT counted in n below.')
+          if not rows:
+              print('!! NO SAMPLES. The distribution is empty; this is a harness result, not a')
+              print('   measurement. Do not re-pin from this run.')
+          for (key, theme), vals in sorted(rows.items()):
+              mins = [v[0] for v in vals]
+              pin = vals[0][1]
+              spread = max(mins) - min(mins)
+              print()
+              print(f'{key}  [{theme}]   n={len(mins)}  pinned={pin}')
+              print(f'  observed min : {min(mins):.4f}      max: {max(mins):.4f}')
+              print(f'  median       : {statistics.median(mins):.4f}')
+              print(f'  SPREAD       : {spread:.4f}   <- the fallback rider keys on THIS')
+              print(f'  worst vs pin : {min(mins) - pin:+.4f}')
+              if spread == 0:
+                  print('  => STABLE in this environment across every sample.')
+              else:
+                  print('  => NOT stable. A single-run re-pin would pin to whichever run it happened')
+                  print('     to take, which is F-ab(b) reproduced in the other lane (CONSTRAINT-1).')
+          print()
+          print('READ THIS BEFORE RE-PINNING:')
+          print('  * n here is a CI-lane sample count. O1\'s n>=97 was derived for a PROPORTION in a')
+          print('    40-60% band and does NOT transplant to a continuous extremum. State the n you')
+          print('    used and why; do not quote 97.')
+          print('  * SPREAD = 0 across n runs supports pinning to the observed min.')
+          print('  * SPREAD > 0 fires the ratified fallback rider: the gate goes ADVISORY with the')
+          print('    measured instability as the reason, automatically, no second operator trip.')
+          print('  * NEVER loosen 7.9 -> 7.4. That is moving a bar to make a test pass.')
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: typeset-samples
+          path: typeset-samples/
+          retention-days: 14

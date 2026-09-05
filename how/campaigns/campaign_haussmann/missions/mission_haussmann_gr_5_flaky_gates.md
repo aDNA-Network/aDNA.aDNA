@@ -217,7 +217,7 @@ lane and out of `GR-5`'s scope.
 | O0 | This convention-13 pass + the ⛩ ruling above | this file | ⛩ **HALT** |
 | O1 | ✅ **DONE 2026-09-05** — the rate harness; all three families **0/100**, `n=100` clears `n_required=97` | `artifacts/gr_5/o1_rate_record.md` | — |
 | O2 | ⛩ **INAPPLICABLE 2026-09-05** — the experiment lost its subject; ruled option 3 | `artifacts/gr_5/o2_inapplicable_record.md` | ⛩ (ruled at O1's close) |
-| O3 | The `gate-39` pin, **per the ruling** | pin or advisory | ⛩ (ruled at O0) |
+| O3 | ⏸ **BUILT, NOT MEASURED 2026-09-05** — the emission + the CI sampler exist and are red-proven **6/6**; the re-derivation itself needs a ⛩ push GO | `artifacts/gr_5/o3_pin_rederivation_record.md` | ⛩ (ruled at O0; **⛩ push GO owed**) |
 | O4 | Red-proofs of whatever exists to prove | mutation records | — |
 | O5 | Close cascade — register, counts, AAR, STATE | records | — |
 
