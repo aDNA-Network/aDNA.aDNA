@@ -4,7 +4,7 @@ title: "GR-5 O3 — the pin re-derivation: the instrument, and what the host mea
 campaign: campaign_haussmann
 mission: mission_haussmann_gr_5_flaky_gates
 objective: O3
-status: in_progress   # ⛩ BUILT, NOT YET MEASURED. The emission + the CI sampler are built and red-proven; the RE-DERIVATION needs a ⛩ push GO, because the workflow can only run from `origin`. No pin has moved and none may move before the measurement lands.
+status: complete   # ⛩ MEASURED AND RULED 2026-09-05. ~~in_progress~~ (SO-6). The CI re-derivation RAN (run 33941189252, n=30) and the ratified FALLBACK RIDER FIRED on its result: `netdiagram-svg` is unstable in CI (spread 0.64) ⇒ advisory, automatically, no second operator trip. ⛔ NO PIN MOVED — `worstPx` still reads 7.9, verified by diff with a positive control.
 created: 2026-09-05
 updated: 2026-09-05
 last_edited_by: agent_rosetta
@@ -160,3 +160,118 @@ re-derived fact about the asserting environment**, which is a different act from
 make a test pass — and the record must say which one happened, because **the two produce the identical
 diff.** ⭐ That distinction is the whole of ⛩ Ruling 1, and it is why the ruling exists rather than a
 one-line fix.
+
+---
+
+## Results — the re-derivation ran, and the rider fired
+
+**Run `33941189252`**, `typeset-pin-rederive`, `workflow_dispatch`, **n=30**, at `ddac91b`, on a
+GitHub Actions runner in the image `gates.yml` pins. **`success`**, 3m50s, `reds=1 of 30` `[D]`.
+
+| Figure | theme | n | min | max | **spread** | vs pin | verdict |
+|---|---|---|---|---|---|---|---|
+| **`netdiagram-svg`** | **dark** | 30 | **7.3600** | 8.0000 | **0.6400** | **−0.5400** | ⛔ **NOT STABLE** |
+| `netdiagram-svg` | light | 30 | 8.0000 | 8.0000 | 0.0000 | +0.1000 | stable |
+| `hero-graph-svg` | both | 30 | 3.5403 | 3.5403 | 0.0000 | +0.1403 | stable |
+| `convergence-funnel` | both | 30 | 8.5000 | 8.5000 | 0.0000 | +0.1000 | stable |
+
+⇒ ⛩ **THE RATIFIED FALLBACK RIDER FIRES, ON THE MEASUREMENT AND NOT ON A JUDGEMENT.** Spread > 0 for
+`netdiagram-svg` ⇒ the figure goes **advisory**, with the measured instability as the reason on the
+gate's face, **automatically, no second trip to the operator** — exactly as ⛩ Ruling 1 specified.
+
+⭐ **THE FLAKE IS ONE FIGURE, NOT THE GATE.** Everything else is *perfectly* deterministic in CI
+across 30 runs. That is what makes this a **scoped** rider rather than a retreat, and it is a result
+no amount of host sampling could have produced.
+
+### ⭐⭐ THE MEASUREMENT REFUTES THE OBVIOUS REMEDY TWICE — the reason ⛩ Ruling 1 existed at all
+
+1. **CI's observed worst is `7.3600`, BELOW the `7.4` `F-ab` recorded.** Anyone who had *"just
+   loosened it to 7.4"* — the move the ruling forbade — would have pinned **above the true floor** and
+   the gate would still flake. **The forbidden shortcut was not merely against principle; it did not
+   even work.**
+2. **Pinning to `7.3600` is no better.** It is the extremum of a distribution with **0.64** of spread
+   and a ~3 % event rate ⇒ a pin taken from a measurement the environment does not reproduce, which is
+   **`F-ab`(b) reproduced in the other lane** and precisely what `CONSTRAINT-1` forbids.
+
+⇒ **There was no pin to re-derive.** Option (1) was executed in full and its honest answer is that the
+quantity it sought **does not exist as a stable value in that environment.** The rider is not a
+consolation branch here; it is the correct terminal state, and the measurement is what establishes
+that rather than anyone's judgement.
+
+### ⭐⭐ THE SCOPE DECISION, AND AN INDEPENDENT CI EVENT THAT BEARS ON IT
+
+The rider is scoped to the **FIGURE**, not to the theme, though instability was observed only in dark.
+Scoping to dark alone would **over-fit a single event**: at the measured ~3.3 % rate,
+`P(0 events in 30 light runs) = 0.967³⁰ ≈ 36 %`. **n=30 cannot distinguish *"light is stable"* from
+*"light did not happen to fire"***, so asserting the former would be a rate claimed from a run —
+`O1`'s finding and §22.4's, in a new place.
+
+✅ **And the standing `gates` run on the same commit failed on `netdiagram-svg` in LIGHT** — run
+`33941190271` at `ddac91b`: *"/network/ @320 **light** … 'the network' renders at **7.4px** … worse
+than netdiagram-svg's pinned baseline of 7.9px"* `[D]`. **The theme the sampler had just measured at
+spread 0.0000 across 30 runs.**
+
+⛔ **STATED AT ITS EXACT WIDTH, BECAUSE THIS IS WHERE A GOOD RESULT GETS OVERCLAIMED. This is
+CORROBORATION, NOT A PREDICTION.** The failing run began at **03:12:03** and recorded that assertion
+at **03:18:30**; the scoping reasoning was written afterwards **without knowledge of it**, but the
+event nonetheless **precedes** the reasoning in wall-clock. It is therefore **not unretrofittable**
+the way `GR-2`'s filed-before-the-run prediction was, and calling it one would be exactly the move
+this campaign keeps catching. What it *is*: an independent observation, from a different workflow,
+confirming that the light arm's 0/30 was **sampling luck and not stability** — and demonstrating that
+the tempting narrower scope would have left this red firing.
+
+### ⚠ What the rider costs, said rather than buried
+
+A **genuine regression** in `netdiagram-svg`'s typeset size will now be **reported and will not fail**.
+That is what advisory means, it is what ⛩ Ruling 1 ratified, and it is why the gate prints its
+advisory line **unconditionally** — including a `0 below-pin readings this run` line, so *"nothing to
+report"* is a stated result rather than an absence a reader must infer. *An advisory nobody reads is
+indistinguishable from no check at all* (convention 19), and this one now carries the only remaining
+evidence about a figure the ratchet no longer enforces.
+
+⛔ **The ratchet remains fully enforcing for `hero-graph-svg` and `convergence-funnel`**, both measured
+stable at spread 0.0000. ⛔ **`worstPx` still reads `7.9`.** Removing a figure from `ADVISORY_UNSTABLE`
+restores enforcement; **changing a pin** would be the act convention 1 forbids, and `AC-5` is verified
+by diff below.
+
+### `AC-5` — no gate loosened in the dark, verified with a positive control
+
+`git diff -U0 -- site/tests/gates/gate-39-figure-typeset.spec.ts` grepped for
+`worstPx:|FLOOR_PX =|MAX_TILT_DEG =|RUNNING_TEXT_MIN_CHARS =|MIN_MEASURED =` on changed lines →
+**zero matches**, against a positive control showing the file **is** modified (75 insertions,
+7 deletions) `[D]`.
+
+⚠ **The FIRST run of that check was a FALSE GREEN and it is recorded rather than quietly re-run.**
+It was issued from `site/`, so the repo-relative path was wrong, `git diff` exited with
+*"ambiguous argument"*, and the `|| echo "ZERO pin/threshold lines changed"` fallback **printed the
+reassuring message**. ⇒ ***a zero meaning "the command failed", not "the thing is absent"*** — §22.5's
+own defect, **on an acceptance criterion**, in the sitting that cites it. The re-run leads with a
+positive control for exactly that reason.
+
+## Red-proof — `8 pass / 0 fail`
+
+`site/scripts/typeset_emission_redtest.sh`, extended with the rider's two halves.
+
+| # | Mutation | Aimed at | Result |
+|---|---|---|---|
+| 1 | accumulator disabled | `G39f` | ✅ |
+| 2 | `convergence-funnel` pin → 9.0 | findings | ✅ |
+| 2b | emission after that red run | write-before-assert | ✅ file present |
+| 3 | `<` → `>` in the accumulator | *(artifact-read)* | ✅ 8.0 → 11.96 |
+| **5a** | forced below-pin on an advisory figure | **the rider** | ✅ **reported, gate green** |
+| **5b** | same condition, advisory removed | **the control for 5a** | ✅ **red via findings** |
+| 4 / 4b | controls | — | ✅ |
+
+⭐⭐ **5b IS THE CASE THAT MAKES 5a MEAN ANYTHING.** Without it, 5a's green cannot distinguish *"the
+rider suppressed a failure"* from *"nothing was ever going to fail here"* — **B0's control that passed
+for the wrong reason**, which certified a mechanism it never exercised.
+
+⚠⚠ **AND ADDING THE RIDER SILENTLY INVALIDATED TWO EXISTING CASES, WHICH THE HARNESS CAUGHT.** Case 2
+forced its red through `netdiagram-svg` — the figure the rider had just made advisory — so it could no
+longer red, **and case 2b, which asserts the emission survives a FAILING run, passed against a GREEN
+one.** A control passing for the wrong reason, created by a change three lines away. Case 2 now targets
+`convergence-funnel`, a figure the ratchet still enforces.
+⇒ ***A RED-TEST CASE IS COUPLED TO THE BEHAVIOUR IT MUTATES, so changing that behaviour is a same-diff
+change to its own harness*** — GR-4 O5's finding (*a copy edit is a same-diff change to its own
+harness*) arriving one gate over, in a **behaviour** edit rather than a copy one. ⭐ It failed **alone**,
+with every other case clean, which is `O3`'s own `applied()`/`restore_all` discipline earning itself.

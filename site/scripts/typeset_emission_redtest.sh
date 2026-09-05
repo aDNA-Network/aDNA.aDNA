@@ -122,17 +122,26 @@ fi
 # ── 2 ── the measurement is written on a FAILING run ────────────────────────────────────────────
 # The design's central claim: a failing run is the most informative sample there is (it is the only
 # kind that has ever shown CI's 7.4), so emitting after the expects would discard exactly the runs
-# F-ab is about. Raise a pin ABOVE the host's measured 8.0 to force the findings assertion red.
+# F-ab is about. Raise a pin ABOVE the host's measured value to force the findings assertion red.
+#
+# ⚠ USES `convergence-funnel` (pin 8.4, host paints 8.5), NOT `netdiagram-svg`, AND THE REASON IS A
+# DEFECT THIS HARNESS ALREADY CAUGHT ONCE. This case was originally written against netdiagram-svg;
+# GR-5 O3's rider then made that figure ADVISORY, so it can no longer red the findings assertion —
+# case 2 went red as stale, and case 2b, which asserts the emission survives a FAILING run, quietly
+# passed against a GREEN one. A control passing for the wrong reason (B0's class).
+# ⇒ A RED-TEST CASE IS COUPLED TO THE BEHAVIOUR IT MUTATES, so changing that behaviour is a same-diff
+#   change to its own harness (GR-4 O5's finding, one gate over). The case must therefore target a
+#   figure the ratchet still ENFORCES, or it is not testing a failing run at all.
 rm -rf "$EMIT_DIR"
 python3 - "$SPEC" <<'PY'
 import sys, pathlib
 p = pathlib.Path(sys.argv[1]); s = p.read_text()
-s = s.replace("worstPx: 7.9,", "worstPx: 9.0, /*MUT2*/", 1)
+s = s.replace("worstPx: 8.4,", "worstPx: 9.0, /*MUT2*/", 1)
 p.write_text(s)
 PY
 if applied "worstPx: 9.0, /*MUT2*/" "2 write-on-red"; then
   judge "2 write-on-red (gate goes red)" "$GREP_DARK" "$SIG_FINDINGS" "findings" \
-        "raising netdiagram-svg's pin to 9.0 did not red the gate — the ratchet is not grading"
+        "raising convergence-funnel's pin to 9.0 did not red the gate — the ratchet is not grading, so case 2b is asserting the emission survives a run that never failed"
   if [ -f "$EMIT_DARK" ]; then
     echo "  ✓ 2b write-on-red → the measurement file EXISTS after a failing run"; PASS=$((PASS + 1))
   else
@@ -177,6 +186,49 @@ except Exception: print('ERR')
     echo "  ✓ 3 min-not-last → flipping \`<\` to \`>\` moved the emitted value $TRUE_MIN → $MUT_MIN"
     echo "        (the gate stays GREEN, which is why this case reads the artifact and not the exit code)"
     PASS=$((PASS + 1))
+  fi
+  restore_all
+fi
+
+# ── 5 ── ⛩ THE RIDER: an advisory figure REPORTS and does not FAIL ──────────────────────────────
+# Two halves, and neither alone proves anything. Half A shows the advisory suppresses a failure that
+# would otherwise occur; half B shows that WITHOUT the advisory the same condition really does red.
+# Half B is what separates "the rider works" from "nothing was ever going to fail here" — B0's
+# control-that-passed-for-the-wrong-reason, which certified a mechanism it never exercised.
+rm -rf "$EMIT_DIR"
+python3 - "$SPEC" <<'PY'
+import sys, pathlib
+p = pathlib.Path(sys.argv[1]); s = p.read_text()
+s = s.replace("worstPx: 7.9,", "worstPx: 9.0, /*MUT5*/", 1)   # force a below-pin reading (host paints 8.0)
+p.write_text(s)
+PY
+if applied "worstPx: 9.0, /*MUT5*/" "5a rider suppresses"; then
+  OUT5="$(run_gate "$GREP_DARK")"
+  case "$OUT5" in
+    *" passed"*)
+      case "$OUT5" in
+        *"ADVISORY, not a failure"*)
+          echo "  ✓ 5a rider → below-pin reading REPORTED as advisory, gate stayed green"; PASS=$((PASS + 1)) ;;
+        *)
+          echo "  ✗ 5a rider: gate green but NO advisory line printed — the reading vanished instead of"
+          echo "        being reported, which is worse than failing: it is silent."; FAIL=$((FAIL + 1)) ;;
+      esac ;;
+    *)
+      echo "  ✗ 5a rider: the gate FAILED on a figure declared advisory — the rider is not applied"
+      FAIL=$((FAIL + 1)) ;;
+  esac
+
+  # Half B — same forced condition, advisory removed. MUST red, or half A proved nothing.
+  python3 - "$SPEC" <<'PY'
+import sys, pathlib
+p = pathlib.Path(sys.argv[1]); s = p.read_text()
+s = s.replace("const ADVISORY_UNSTABLE: Record<string, string> = {", "const ADVISORY_UNSTABLE: Record<string, string> = { /*MUT5B*/", 1)
+s = s.replace("  'netdiagram-svg':\n", "  'netdiagram-svg-DISABLED':\n", 1)
+p.write_text(s)
+PY
+  if applied "netdiagram-svg-DISABLED" "5b advisory removed"; then
+    judge "5b advisory removed (the control for 5a)" "$GREP_DARK" "$SIG_FINDINGS" "findings" \
+          "the gate stayed GREEN with the advisory REMOVED and a below-pin reading present — 5a's green proved nothing, because nothing was ever going to fail"
   fi
   restore_all
 fi

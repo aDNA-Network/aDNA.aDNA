@@ -93,6 +93,49 @@ const RUNNING_TEXT_MIN_CHARS = 12;
  * non-regression fence is not the rule, and calling it the rule would be the fake-enforcement the
  * lock's own text names.
  */
+/* ⛩⛩ THE FALLBACK RIDER, FIRED ON A MEASUREMENT — GR-5 O3, 2026-09-05.
+ *
+ * ⛩ Ruling 1 (operator, 2026-09-04) ordered `netdiagram-svg`'s pin re-derived in CI's own
+ * environment, "plus a conditional fallback rider — if the CI re-derivation is ITSELF unstable
+ * across n runs, fall back to advisory automatically with the measured instability as the reason,
+ * no second trip to the operator."
+ *
+ * IT IS UNSTABLE. Run 33941189252, `typeset-pin-rederive`, n=30 on a GitHub Actions runner in the
+ * image gates.yml pins, at ddac91b [D]:
+ *
+ *   netdiagram-svg [dark]   n=30  min 7.3600  max 8.0000  median 8.0000  SPREAD 0.6400   1 red / 30
+ *   netdiagram-svg [light]  n=30  min 8.0000  max 8.0000  SPREAD 0.0000
+ *   hero-graph-svg    both  n=30  SPREAD 0.0000
+ *   convergence-funnel both n=30  SPREAD 0.0000
+ *
+ * ⇒ THE FLAKE IS ONE FIGURE, NOT THE GATE. Everything else is perfectly deterministic in CI across
+ * 30 runs, which is the result that makes this a scoped rider rather than a blanket retreat.
+ *
+ * ⭐⭐ AND THE MEASUREMENT REFUTES THE OBVIOUS REMEDY TWICE OVER:
+ *   1. The observed CI worst is 7.3600 — BELOW the 7.4 that F-ab recorded. Anyone who had "just
+ *      loosened it to 7.4" would have pinned ABOVE the true floor and the gate would still flake.
+ *   2. Pinning to 7.3600 would pin to the extremum of a distribution with 0.64 of spread and a ~3%
+ *      event rate. That is F-ab(b) reproduced in the other lane — a pin taken from a measurement the
+ *      environment does not reproduce — which is exactly what CONSTRAINT-1 forbids.
+ *
+ * ⚠ SCOPED TO THE FIGURE, NOT TO THE THEME, AND THAT IS DELIBERATE OVER-COVERAGE. The instability
+ * was observed only in dark. It is TEMPTING to scope the rider to dark alone — and it would be
+ * over-fitting a single event: at the measured ~3.3% rate, seeing ZERO in 30 light runs has
+ * probability 0.967^30 ≈ 36%. n=30 cannot distinguish "light is stable" from "light did not happen
+ * to fire", so claiming the former would be a rate asserted from a run (O1's finding, and §22.4's).
+ *
+ * ⛔ THE COST, STATED RATHER THAN BURIED: a genuine regression in netdiagram-svg's typeset size will
+ * now be REPORTED AND NOT FAIL. That is what advisory means, it is what the rider ratified, and it is
+ * why the console line below is loud. The ratchet remains fully enforcing for the other two figures.
+ * ⛔ NOTHING WAS LOOSENED: `worstPx` still reads 7.9. Removing a figure from this set restores
+ * enforcement; changing a pin would be the act convention 1 forbids.
+ */
+const ADVISORY_UNSTABLE: Record<string, string> = {
+  'netdiagram-svg':
+    'CI run 33941189252 (n=30, ddac91b): dark min 7.3600 / max 8.0000, SPREAD 0.6400, 1 red in 30 (~3.3%). ' +
+    'The pin is not re-derivable from an environment that does not reproduce its own measurement.',
+};
+
 const BASELINE: Record<string, { worstPx: number; why: string }> = {
   'hero-graph-svg': {
     worstPx: 3.4,
@@ -174,6 +217,11 @@ test.describe('Gate 39 — figure typeset floor (lock O1)', () => {
       const page = await ctx.newPage();
 
       const findings: Finding[] = [];
+      /* ⛩ Advisory readings (GR-5 O3's rider): real below-pin observations that must be SEEN and must
+         not fail the build. Printed unconditionally at the end — an advisory nobody reads is
+         indistinguishable from no check at all (convention 19), and this one is carrying the only
+         remaining evidence about a figure the ratchet no longer enforces. */
+      const advisories: string[] = [];
       let measured = 0;
 
       /* GR-5 O3's emission accumulator. Keyed by BASELINE key, so it re-derives exactly the quantity
@@ -330,19 +378,39 @@ test.describe('Gate 39 — figure typeset floor (lock O1)', () => {
                 detail: `${f.detail} — svg class "${f.svgClass.slice(0, 40)}" is not in gate-39's BASELINE. A NEW figure must clear the ${FLOOR_PX}px floor; it does not inherit the known-bad exemption.`,
               });
             } else if (f.rendered < BASELINE[key].worstPx) {
-              findings.push({
-                route,
-                width,
-                theme,
-                kind: 'below-floor (regression)',
-                detail: `${f.detail} — worse than "${key}"'s pinned baseline of ${BASELINE[key].worstPx}px. Tighten the baseline when you improve a figure; never loosen it.`,
-              });
+              /* ⛩ THE RIDER: a figure MEASURED unstable in CI reports and does not fail. The reading
+                 is real either way — what changes is whether it can red a build that has no defect. */
+              if (key in ADVISORY_UNSTABLE) {
+                advisories.push(
+                  `${route} @${width} ${theme}: ${f.detail} — below "${key}"'s pinned ${BASELINE[key].worstPx}px. ADVISORY, not a failure: ${ADVISORY_UNSTABLE[key]}`,
+                );
+              } else {
+                findings.push({
+                  route,
+                  width,
+                  theme,
+                  kind: 'below-floor (regression)',
+                  detail: `${f.detail} — worse than "${key}"'s pinned baseline of ${BASELINE[key].worstPx}px. Tighten the baseline when you improve a figure; never loosen it.`,
+                });
+              }
             }
           }
         }
       }
 
       await ctx.close();
+
+      /* ⛩ The advisory report. Printed BEFORE the assertions so it survives a red run, and printed
+         even when empty so that "no advisory readings this run" is a stated result rather than an
+         absence a reader has to infer — the distinction between `missing` and `zero` this gate's own
+         emission already draws for `figuresAbsent`. */
+      if (advisories.length) {
+        console.log(`\n⛩ gate-39 ADVISORY (${theme}) — ${advisories.length} below-pin reading(s), NOT failing the build:`);
+        for (const a of advisories) console.log(`   • ${a}`);
+        console.log('   Scope: figures measured unstable in CI (GR-5 O3). The ratchet still ENFORCES every other figure.\n');
+      } else {
+        console.log(`⛩ gate-39 advisory (${theme}): 0 below-pin readings for ${Object.keys(ADVISORY_UNSTABLE).join(', ')} this run.`);
+      }
 
       /* GR-5 O3 — WRITE BEFORE THE ASSERTIONS, DELIBERATELY.
          A failing run is the most informative sample there is: it is the only one that has ever shown
