@@ -81,19 +81,47 @@ how noise gets baked into a ratchet (`AMENDMENT 1`'s finding).
 
 ## Completed
 
-*(appended as work lands)*
+- **Session hygiene** — two finished sessions filed to `history/2026-09/`, one with a reconstructed
+  actual. GR-4 O1's finding, twice.
+- **`GR-5` O2** (`d9e0411`) — `AC-2` **INAPPLICABLE**, ⛩ ruled. Register **§23**.
+- **`GR-5` O3 built** (`c0db050`) — `gate-39` emits its measurement on every run; CI sampler;
+  red-test 6/6. ⛩ **Push GO taken**, `fe2bba6..c0db050`, gitleaks clean, verified at the remote.
+- **Sampler node fix** (`ddac91b`) — it died in 78 s on a **typed** `node-version: 20`.
+- **`GR-5` O3 measured** (`517fb3b`) — run `33941189252`, n=30: `netdiagram-svg` **spread 0.6400**
+  ⇒ ⛩ **the rider fired**; all other figures **0.0000**. ⛔ **No pin moved.** Red-test 8/8.
+- **Course-deploy C1 + C2** (`267d9a8`) — `/privacy` enumerates and never totals; **`gate-55`**
+  (red-test 6/6); `gate-4` +2 routes; `twin_manifest`; STATE's *"7-lesson"* correction.
+- **`GR-5` CLOSED** — AAR filed (SO#5), register **§24**, `token_budget_actual` **recorded at the
+  time** (≈195–235 kT vs a ratified ~220), STATE + MANIFEST + campaign index moved in the cascade.
 
-- Session hygiene: two finished sessions filed to `history/2026-09/`, one with a reconstructed actual.
+**Suite: 693 chromium (692 passed / 1 skipped / 0 failed)**, re-run **after** the record edits.
+Delta from 685 isolated with `--list`: `gate-55` **+4**, `gate-4` **48 → 52**.
 
 ## In progress
 
-- `GR-5` O2 — the INAPPLICABLE record.
+- Nothing. The sitting's agent-reachable work is done; what remains is a ⛩ gate.
 
 ## Next up
 
-O2 → O3 (emission + the `workflow_dispatch` CI harness, **its own concurrency group**, n stated with
-its basis — ⛔ `n=97` was derived for a **proportion** and does not transplant to a continuous
-extremum) → Phase C (one same-diff commit) → ⛩ push → read CI → ⛩ deploy.
+⛩ **A push GO, then a ⛩ deploy GO**, in that order — `inject_build_stamp.mjs:83` stamps HEAD and
+nothing checks HEAD is public. The deploy would put the **intro course** live (`/learn/course/*` is
+404 today) alongside C1/C2. Then `P5.1` recruitment opens — **and not before**, because `AC-1` pins
+its stimulus to the live build at a recorded stamp.
+
+## Findings this sitting
+
+- ⭐⭐ **There was no pin to re-derive**, and `7.9 → 7.4` would have pinned **above** CI's true worst
+  of **7.3600** ⇒ *a bar moved to make a test pass does not even reliably make the test pass.*
+- ⭐⭐ **A red-test case is coupled to the behaviour it mutates** — the rider silently invalidated two
+  cases, one of which then passed against a green run while claiming to test a red one.
+- ⭐ **`gate-55`'s first design was falsified by measuring the real bundles** — the literal-only
+  pattern was blind to the very key that motivated the gate.
+- ⚠ **Six of my instruments wrong before their subject**, including a **false-green `AC-5` check**
+  (`|| echo` printing the all-clear after `git diff` errored) and a **typed `node-version`** inside
+  the instrument built to replace a typed pin.
+- ⚠ **G41d fired on the cascade for the third consecutive time** — *a close cascade that edits STATE
+  is a change the suite can see.* MANIFEST re-derived, **zero drift**; and the naive subtopic
+  predicate read **34** against a correct **27**, so it would have "fixed" a right number.
 
 ## Blockers
 

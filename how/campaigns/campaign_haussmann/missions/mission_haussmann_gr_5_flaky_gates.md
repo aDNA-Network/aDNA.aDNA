@@ -6,11 +6,11 @@ campaign: campaign_haussmann
 phase: GR   # corrected 2026-09-04 at the signature: was `P4`, the only GR mission so tagged. The charter's GR section rules that GR missions carry no phase number. GR-1..GR-4 all read `GR`; this was a typo, caught by deriving the set rather than reading the file.
 decade: 2
 owner: stanley
-status: active   # ⛩ SIGNED — Stanley (operator), 2026-09-04. The one owed ruling is TAKEN: **option (1), re-derive the `gate-39` pin in CI's own environment**, ordered strictly AFTER AC-1 per CONSTRAINT-1, **plus a conditional fallback rider** (§The ⛩ ruling). Budget RATIFIED at the TOP of the band, ~220 kT, which is what option (1) selects. ⭐ A FOURTH surface arrived unbidden on the day of the signature — see §AMENDMENT 1. ⛔ O1 → O2 → O3 is a dependency, not a preference.
+status: completed   # ✅✅ CLOSED 2026-09-05, AAR filed (SO#5). ~~active~~ (SO-6). AC-1 ✅ · AC-2 ⊘ INAPPLICABLE · AC-3 ✅ · AC-4 ✅ · AC-5 ✅ · AC-6 ✅ · V1 ✅ · V2 ⊘ · V3 ✅. ⛩ The ratified fallback rider FIRED on the CI measurement (run 33941189252, n=30: `netdiagram-svg` spread 0.6400 ⇒ advisory; every other figure 0.0000 ⇒ still enforcing). ⛔ NO PIN MOVED — `worstPx` still reads 7.9. ⛔ F-ab stays LIVE: (b) discharged by ruling, (a) narrowed to a measured ~3.3% with its cause STILL UNVERIFIED, §22.4's gate-47 half unrunnable, AMENDMENT 1's gate-49/home untouched. Nothing deployed and nothing owed to production — the shipped bytes never changed. ~~⛩ SIGNED — Stanley (operator), 2026-09-04.~~ Prior signature note retained: The one owed ruling is TAKEN: **option (1), re-derive the `gate-39` pin in CI's own environment**, ordered strictly AFTER AC-1 per CONSTRAINT-1, **plus a conditional fallback rider** (§The ⛩ ruling). Budget RATIFIED at the TOP of the band, ~220 kT, which is what option (1) selects. ⭐ A FOURTH surface arrived unbidden on the day of the signature — see §AMENDMENT 1. ⛔ O1 → O2 → O3 is a dependency, not a preference.
 mission_class: verification
 executor_tier: opus   # the subject is measurement design under non-determinism — the one class where a cheaper tier reproduces the defect being fixed (it concludes from n=1, which is this finding's own headline).
 token_budget_estimated: "⛩ RATIFIED 2026-09-04 — **~220 kT / 1–2 sessions**, the TOP of the proposed 140–220 band, because the ⛩ ruling selected **option (1)** and option (1) is what the top of the band was costed for. The conditional band is now a number, which is the whole reason the ruling was put at the gate. Per-objective as proposed: O0 ~20–30 [SPENT] · O1 ~35–55 · O2 ~25–40 · O3 ~45 (option (1)) · O4 ~20–30 · O5 ~15–20. ⚠ **AMENDMENT 1 may push past this and it is FLAGGED, not silently absorbed** — a fourth flaky surface (`gate-49`/`home`) is the most expensive of the four to sample: ~38 s per in-container run against milliseconds for the others, so an n=20 rate on it is ~13 min of wall-clock per tree × two trees. If O1's design needs that, it is re-costed AT O1 and reported, never quietly. ⚠ ~40 kT of any HAUSSMANN sitting is the campaign CLAUDE.md, auto-loaded — inside this band, not beside it."
-token_budget_actual:
+token_budget_actual: "≈195–235 kT across 2 sessions (O0 + O1 in `session_stanley_20260904_230810`; O2 + O3 + the close in `session_stanley_20260905_024313`) — ⭐ **RECORDED AT THE TIME, not reconstructed at the close**, which is the P4.3-class defect this campaign has now hit four times and the one AC-6 names explicitly. Against the ⛩ ratified **~220 kT / 1–2 sessions**: inside the band and inside the session count. **No SO#11 retrospective triggers** (nowhere near 2×). ⭐ The band held *because* ⛩ Ruling 1 was taken at the gate rather than mid-mission — GR-4's finding (*a budget ratified before the operator's rulings is costed against a scope nobody has chosen yet*) applied in advance for once, and O3's per-objective ~45 kT estimate for option (1) was close to right. ⚠ AMENDMENT 1's flagged overrun risk **did not materialise**: the `gate-49`/`home` sampling it warned about was never run, because O1's result made the cheap families decisive and O3 needed only one CI dispatch."
 created: 2026-09-04
 last_edited_by: agent_rosetta
 grounded_in:
@@ -332,3 +332,59 @@ partial pass reported like a complete one.
 > the course lane's ADR-057 debt, diagnosed in `session_stanley_20260904_155111`, NOT `F-ab` and NOT
 > this mission's.** On the signature, O1 first (the harness is the only part with a real design in it),
 > then O2, then O3.
+
+---
+
+## ✅✅ `GR-5` IS CLOSED — 2026-09-05
+
+**AC-1 ✅ · AC-2 ⊘ INAPPLICABLE · AC-3 ✅ · AC-4 ✅ · AC-5 ✅ · AC-6 ✅ · V1 ✅ · V2 ⊘ · V3 ✅.**
+Records: [[o1_rate_record]] · [[o2_inapplicable_record]] · [[o3_pin_rederivation_record]]; register
+**§23** and **§24**. Chromium **693** (692 passed / 1 skipped / 0 failed), delta isolated with
+`--list`. ⛔ **Nothing deployed by this mission and nothing owed to production** — `F-ab` was always a
+CI/instrument finding, and the shipped bytes never changed.
+
+### The five-line AAR (SO#5)
+
+- **Worked.** ⛩ **A ratified conditional rider executed itself on a measurement.** The operator ruled
+  the branch *and* its fallback at one gate, so when CI answered *"unstable"* no second trip was
+  needed and no judgement was substituted for a number.
+- **Didn't.** The CI sampler **died in 78 s on its first live run** — `node-version: 20` **typed** into
+  a workflow whose header says it mirrors `gates.yml`, which pins **24** three lines away in a sibling
+  file. Sixth instrument of this desk's wrong before its subject.
+- **Finding.** ***There was no pin to re-derive.*** Option (1) executed in full returned *the quantity
+  does not exist as a stable value in that environment* — and the forbidden shortcut turns out to fail
+  on its own terms: CI's worst is **7.3600**, *below* the 7.4 anyone would have loosened to.
+- **Change.** `gate-39` **emits its measurement on every run** (pass or fail), and one figure is
+  **advisory with its instability quoted on the gate's face**. No pin moved.
+- **Follow-up.** `F-ab` stays **live**: (a) narrowed to a measured ~3.3 % on one figure, **cause still
+  unverified**; §22.4's `gate-47` half **unrunnable** in the sampleable regime; `AMENDMENT 1`'s
+  `gate-49`/`home` **untouched**.
+
+### ⭐⭐ The two findings worth carrying out of this mission
+
+**1. A demonstration is only worth what it can attribute — now at the level of a MUTATION SET.**
+GR-3 established the clause for individual cases. Here, adding the rider **silently invalidated two
+existing red-test cases**: case 2 forced its red through the figure the rider had just made advisory,
+so it could no longer red — **and case 2b, which asserts the emission survives a *failing* run, passed
+against a *green* one.** A control passing for the wrong reason, manufactured by a change three lines
+away. ⇒ ***A RED-TEST CASE IS COUPLED TO THE BEHAVIOUR IT MUTATES, so changing that behaviour is a
+same-diff change to its own harness*** (GR-4 O5's copy-edit finding, arriving in a behaviour edit).
+⭐ It failed **alone**, every other case clean — O3's own `applied()`/`restore_all` discipline paying
+off for the third time.
+
+**2. An over-fit scope is the tempting one, and n=30 was not enough to license it.** The rider covers
+the **figure**, not the theme, because at ~3.3 % `P(0 in 30 light runs) ≈ 36 %` — n=30 cannot separate
+*"light is stable"* from *"light did not fire"*. The standing `gates` run then failed on **light**.
+⛔ **Corroboration, not prediction**, and the record says so: the failure was recorded at 03:18:30 and
+the reasoning written after it, without knowledge of it, so it is retrofittable in principle and
+unlike `GR-2`'s genuinely-filed-in-advance prediction.
+
+⚠ **`token_budget_actual` recorded at the time, not reconstructed** — the P4.3/GR-4 defect this
+campaign has now hit four times. See the frontmatter field.
+
+⚠ **Two further defects of mine, both caught by their own output:** an `AC-5` verification that
+produced a **FALSE GREEN** (run from `site/`, `git diff` exited *"ambiguous argument"*, and `|| echo`
+printed the all-clear — *a zero meaning the command failed*, on an acceptance criterion, in the sitting
+that cites §22.5), re-run with a positive control; and a summariser header asserting *"CI environment"*
+while being exercised **on the host**, which would have printed a false claim about the one variable
+this mission turns on — corrected to derive from `GITHUB_ACTIONS`, **before** its first live run.

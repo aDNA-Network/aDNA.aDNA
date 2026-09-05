@@ -2325,3 +2325,72 @@ about the predicate.
 table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and
 it must be a PARSEABLE TABLE, not a prose sentence.** Both halves restated rather than
 cross-referenced, per §21.3's own instruction.
+
+---
+
+## §24 — GR-5 CLOSES: `F-ab`(b) DISCHARGED BY RULING, `F-ab`(a) NARROWED TO A MEASUREMENT
+
+Records: `artifacts/gr_5/o1_rate_record.md` · `o2_inapplicable_record.md` ·
+`o3_pin_rederivation_record.md`. ⛔ **`F-ab` stays `live`** — this section moves **no row and adds no
+id**; it records which of the row's limbs closed and which did not, because a row with two lettered
+debts can be half-discharged and *"still live"* would hide that.
+
+### §24.1 The disposition, limb by limb
+
+| Limb | Was | Now |
+|---|---|---|
+| **`F-ab`(a)** — the flake, cause unverified | hypothesis: container width at measure time | ⚠ **NARROWED, not discharged.** Measured in CI at n=30: **one figure** (`netdiagram-svg`), **spread 0.6400**, **~3.3 %** event rate; every other figure **0.0000**. The **cause is still unverified** and no fix is authored. |
+| **`F-ab`(b)** — the pin came from a local measurement CI does not reproduce | *"the ratchet's tooth is not where it is documented to be"* | ✅ **DISCHARGED BY ⛩ RULING.** The tooth is now documented exactly where it is: `netdiagram-svg` is **advisory** with its measured instability on the gate's face; the other two remain **enforcing** at spread 0.0000. |
+| **§22.4's `gate-47` extension** | live | ⚠ **live** — `AC-2` INAPPLICABLE, subject absent from the sampleable regime (§23). |
+| **`AMENDMENT 1`'s `gate-49`/`home`** | live | ⚠ **live and untouched** — out of GR-5's executed scope. |
+
+### §24.2 ⭐⭐ There was no pin to re-derive, and that is the finding
+
+⛩ Ruling 1 asked for `netdiagram-svg`'s `worstPx` **re-derived in CI's own environment**. Executed in
+full, the honest answer is that **the quantity does not exist as a stable value there.** The rider was
+not a consolation branch; it is the **correct terminal state**, and a **measurement** established that
+rather than anyone's judgement.
+
+⭐ **The forbidden shortcut fails on its own terms, which is worth more than the principle.**
+`7.9 → 7.4` was barred by convention 1 and by `gate-39`'s own `ratchet_law`. It also **would not have
+worked**: CI's observed worst is **7.3600**, *below* 7.4, so that pin sits **above the true floor** and
+the gate keeps flaking. ⇒ ***a bar moved to make a test pass does not even reliably make the test
+pass.***
+
+### §24.3 ⭐ The scope decision, and the corroboration — stated at its width
+
+The rider is scoped to the **figure**, not the theme, though instability appeared only in dark:
+at ~3.3 %, `P(0 events in 30 light runs) = 0.967³⁰ ≈ 36 %`, so **n=30 cannot separate *"light is
+stable"* from *"light did not fire"***. Scoping to dark would be a **rate asserted from a run** —
+§22.4's own defect.
+
+✅ The standing `gates` run on the same commit **failed on `netdiagram-svg` in LIGHT at 7.4 px** — the
+theme just measured at spread 0.0000. ⛔ **CORROBORATION, NOT A PREDICTION**: that run recorded the
+failure at **03:18:30** and the reasoning was written afterwards *without knowledge of it*, so the
+event **precedes** the writing. Unlike `GR-2`'s filed-before-the-run prediction it is **retrofittable
+in principle**, and saying otherwise would be the overclaim this campaign keeps catching.
+
+### §24.4 ⚠ The cost of the rider, recorded so it is never inferred as a fix
+
+A **genuine regression** in `netdiagram-svg`'s typeset size now **reports and does not fail**. The gate
+prints its advisory **unconditionally** — including a `0 below-pin readings this run` line — because
+*an advisory nobody reads is indistinguishable from no check at all* (convention 19), and it now
+carries the **only** remaining evidence about a figure the ratchet no longer enforces. **Lock O1 stays
+`gap`**; nothing here moves it, and a non-regression fence was never the rule.
+
+### §24.5 Counts — derived last
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **189** |
+| **Unique ids** | **174** (14 `G-*` + 160 `R-*`, `R-11`…`R-170`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, **not typed**, re-run *after* §24 was written.
+⭐ **Unchanged from §23.5 — the correct result**: this section adds no row and moves none.
+⚠ §24.1's table carries `**F-ab**(a)` in first cells; the count holding at 189 is what **proves** no
+phantom claim row was minted (§22.4's trap), checked by re-deriving rather than by reasoning.
+
+⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order. This section is now that
+table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and
+it must be a PARSEABLE TABLE, not a prose sentence.**

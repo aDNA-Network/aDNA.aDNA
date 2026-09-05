@@ -3070,6 +3070,135 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > re-stamps against whatever tree this ships, so the deploy precedes the panel by the ⛩ ruling
 > *fix → deploy → panel*.
 
+> ✅✅ **`GR-5` IS CLOSED 2026-09-05 — ALL CRITERIA RESOLVED, AAR FILED (SO#5), mission `completed`.**
+> **AC-1 ✅ · AC-2 ⊘ INAPPLICABLE · AC-3 ✅ · AC-4 ✅ · AC-5 ✅ · AC-6 ✅ · V1 ✅ · V2 ⊘ · V3 ✅.**
+> Records: [[o1_rate_record]] · [[o2_inapplicable_record]] · [[o3_pin_rederivation_record]]; register
+> **§23 + §24**, both of which **move no row and add no id** (counts **189 / 174 / 0**, re-derived
+> *after* writing — the correct result). Chromium **685 → 693**, delta isolated with `--list`
+> (`gate-55` **+4**, `gate-4` **48 → 52**): **692 passed / 1 skipped / 0 failed**. ⛔ **Nothing
+> deployed and nothing owed to production** — `F-ab` was always a CI/instrument finding and the
+> shipped bytes never changed.
+>
+> ⭐⭐ **⛩ RULING 1 WAS EXECUTED IN FULL AND ITS HONEST ANSWER IS THAT THERE WAS NO PIN TO
+> RE-DERIVE.** Run **`33941189252`**, n=30, in the image `gates.yml` pins `[D]`: `netdiagram-svg`
+> **[dark] min 7.3600 · max 8.0000 · SPREAD 0.6400 · 1 red / 30 (~3.3 %)**; `netdiagram-svg` [light],
+> `hero-graph-svg` and `convergence-funnel` **all SPREAD 0.0000**. ⇒ **the ratified fallback rider
+> fires ON THE MEASUREMENT rather than on a judgement** — that figure goes **advisory** with its
+> instability quoted on the gate's face, automatically, **no second trip to the operator**.
+> ⭐ **The flake is ONE FIGURE, not the gate**, which is what makes this a scoped rider and not a
+> retreat — and a result no amount of host sampling could have produced.
+>
+> ⭐⭐ **THE FORBIDDEN SHORTCUT FAILS ON ITS OWN TERMS, AND THAT IS WORTH MORE THAN THE PRINCIPLE.**
+> `7.9 → 7.4` was barred by convention 1 and by `gate-39`'s own `ratchet_law`. It also **would not
+> have worked**: CI's observed worst is **7.3600**, *below* 7.4, so that pin sits **above the true
+> floor** and the gate keeps flaking. ⇒ ***a bar moved to make a test pass does not even reliably make
+> the test pass.*** ⛔ **No pin moved** — `worstPx` still reads **7.9**, `AC-5` verified by diff
+> against a positive control (75 insertions, 7 deletions; **zero** pin/threshold value lines).
+>
+> ⭐⭐ **`AC-2` IS INAPPLICABLE, NOT REFUTED, AND COLLAPSING THE TWO WOULD BE THE OVERCLAIM.** `O1`
+> measured all three families at **0 failures / 100 host runs** at `n=100`, clearing its own computed
+> `n_required = 97` — so with a control arm at zero, **both arms read zero and no separation is
+> detectable at any affordable `n`.** `DEFECT-3`'s refutation branch presumes *the phenomenon occurred
+> and the treatment failed to move it*; this is a **third state the criterion does not name** — *it
+> did not reproduce at all* — which is evidence **in neither direction**. ⭐ A reproducing regime is
+> **known to exist** (§22.4's), so it is a **deferral, not an impossibility**, and it needs **no new
+> instrument** — `DEFECT-1`'s parameterisation paying off exactly as written.
+>
+> ⭐⭐ **AND THE LOAD-BEARING FINDING IS A CONTRADICTION BETWEEN TWO OF OUR OWN HOST MEASUREMENTS ONE
+> DAY APART** — §22.4's **2/5 and 3/5** against `O1`'s **0/100**, same machine, both `[D]`. They
+> describe **two regimes**, differing in **TWO variables**: the **rebuild between runs** (so §22.4 may
+> have been *generating* the load whose effect it attributed to the increment) **and the selection
+> breadth** (1 test vs 11). ⛔ Either alone suffices; nothing separates them ⇒ **a confound, not a
+> diagnosis.** ⇒ *A count is only comparable to a count produced by the same command* — arriving where
+> the two counts were about to be read as a contradiction **about the site**. They are not; ***the
+> command is part of the phenomenon.***
+>
+> ⭐ **THE SCOPE DECISION, AND WHY THE TEMPTING ONE WAS WRONG.** The rider covers the **figure**, not
+> the theme, though instability appeared only in dark: at ~3.3 %, `P(0 events in 30 light runs) =
+> 0.967³⁰ ≈ 36 %`, so **n=30 cannot separate *"light is stable"* from *"light did not fire"***.
+> ✅ The standing `gates` run on the same commit then **failed on `netdiagram-svg` in LIGHT at 7.4 px**.
+> ⛔ **Stated at its width: CORROBORATION, NOT A PREDICTION** — that run recorded the failure at
+> **03:18:30** and the reasoning was written afterwards *without knowledge of it*, so the event
+> **precedes** the writing and it is retrofittable in principle, unlike `GR-2`'s genuinely-filed-in-
+> advance prediction. Calling it one would be the move this campaign keeps catching.
+>
+> ⚠ **THE RIDER'S COST, SAID RATHER THAN BURIED:** a **genuine** regression in that figure now
+> **reports and does not fail**. The advisory prints **unconditionally**, including a `0 below-pin
+> readings this run` line, because *an advisory nobody reads is indistinguishable from no check at
+> all* (convention 19) — and it now carries the **only** remaining evidence about a figure the ratchet
+> no longer enforces. **Lock O1 stays `gap`.**
+>
+> ⛔ **`F-ab` STAYS `live`, HALF-DISCHARGED, and §24 says which half:** **(b)** — the pin taken from a
+> measurement CI does not reproduce — is **discharged by ruling**; **(a)** is **narrowed** to a
+> measured ~3.3 % on one figure with its **cause still unverified**; §22.4's `gate-47` half is
+> **unrunnable**; `AMENDMENT 1`'s `gate-49`/`home` is **untouched**.
+>
+> ⚠⚠ **SIX INSTRUMENTS OF THIS DESK'S WRONG BEFORE THEIR SUBJECT, and two are worth carrying.**
+> ⭐ **The CI sampler died in 78 s on a TYPED `node-version: 20`** — in a workflow whose own header
+> says it mirrors `gates.yml`, which pins **24** three lines away in a sibling file. **KW-14 committed
+> inside the instrument built to replace a typed pin with a measured one.** ⭐⭐ **And an `AC-5` check
+> produced a FALSE GREEN**: run from `site/`, `git diff` exited *"ambiguous argument"*, and the
+> `|| echo` fallback **printed the all-clear** — ***a zero meaning "the command failed"***, §22.5's own
+> defect, **on an acceptance criterion**, in the sitting that cites it. Re-run with a positive control.
+> Also: a summariser header asserting *"CI environment"* while being exercised **on the host**
+> (corrected to derive from `GITHUB_ACTIONS` **before** its first live run — convention 18 caught early
+> for once), and two shell defects in the red-test harness.
+>
+> ⭐⭐ **THE FINDING THAT OUTLIVES THE MISSION: A RED-TEST CASE IS COUPLED TO THE BEHAVIOUR IT
+> MUTATES.** Adding the rider **silently invalidated two existing cases** — case 2 forced its red
+> through the figure the rider had just made advisory, so it could no longer red, **and case 2b, which
+> asserts the emission survives a *failing* run, passed against a *green* one.** A control passing for
+> the wrong reason, manufactured by a change three lines away. ⇒ **changing a behaviour is a same-diff
+> change to its own harness** (GR-4 O5's copy-edit finding, arriving in a behaviour edit). ⭐ It failed
+> **alone**, every other case clean — O3's own `applied()`/`restore_all` discipline paying off a third
+> time. Red-proofs: `typeset_emission_redtest.sh` **8/8** · `client_storage_redtest.sh` **6/6**.
+>
+> ⚠ **`token_budget_actual` RECORDED AT THE TIME** (≈195–235 kT / 2 sessions against a ratified
+> ~220 kT / 1–2) — not reconstructed, which is the P4.3-class defect this campaign has hit four times
+> and the one `AC-6` names. No SO#11 retrospective. ⭐ The band held **because ⛩ Ruling 1 was taken at
+> the gate rather than mid-mission** — GR-4's *"a budget ratified before the operator's rulings is
+> costed against a scope nobody has chosen yet"*, applied in advance for once.
+
+> ✅ **COURSE-DEPLOY C1 + C2 ARE BUILT — 2026-09-05, and the ⛩ deploy GO is now unblocked.**
+> ⛩ Operator-ruled *hold, fix, then deploy*. **One commit**, because ADR-057 is same-diff by
+> definition. Design: `artifacts/course_deploy/c1_c2_design.md`.
+>
+> **C1** — `/privacy` said *"That is the only thing the site stores"* while the course ships a
+> **second** key (`adna:course:v1`): an **unscoped absolute about a COUNT, on the trust page** — the
+> `R-64`/`R-97`/`R-161`/`R-167` over-promise class on a **fifth surface**. Rewritten to **ENUMERATE
+> AND NEVER TOTAL**, because *"two things"* would be the identical defect with a different integer,
+> going stale on the third key exactly as *"one"* went stale on the second. ⭐ **Said in fairness:**
+> `progress.ts:7` documents that `localStorage` **is** the whole transport, so the zero-network
+> property holds and **`R-97` is not contradicted** — the defect was **a count in a sentence, not a
+> transport**. Unpinned (no register row, no `gate-26` fixture, no `claim_trace_manifest` entry),
+> so no same-diff churn, and the claim moves **DOWN**. FKGL **9.98 → 9.55** against a target of 12,
+> **both ends on one instrument** (HAZARD-2), the *before* reproducing GR-4 O5's recorded 9.98
+> **exactly** — the control that makes the after legible.
+>
+> **C2** — `grep -rn "learn/course" tests/ scripts/` → **0**, and `b2e943b` touched **no** test file:
+> **P4.3 verbatim**, *"a 620-green suite knew nothing about the new route."* **`gate-55`** now binds
+> `/privacy`'s enumeration to the keys the shipped bundles actually write, **in both directions** (a
+> page naming a **retired** key is also a false claim, just in the reassuring direction). `gate-4`
+> gains **both** course routes — index and lesson are different templates carrying **different**
+> islands, so sweeping one leaves the other unaxed; **52/52, zero violations ⇒ a REGRESSION GUARD,
+> not a discovery.** ⛔ Deliberately **not** added to `audit-p1s3-sweep` (whose contract is *"every
+> route class `gate-4` does NOT already cover"*) — **P4.3's own first wrong fix.**
+>
+> ⭐⭐ **`gate-55`'s FIRST DESIGN WAS FALSIFIED BY MEASURING THE REAL BUNDLES.** A
+> `localStorage.setItem("<literal>")` pattern finds `theme` and **misses `adna:course:v1` entirely** —
+> the bundler hoists it to `const i={…},c="adna:course:v1"` and calls `getItem(c)`. **A gate shipped
+> on that pattern would have gone green while blind to the very key that motivated it** (B0's
+> *control that passed for the wrong reason*). Hence a two-form resolver, and hence `unresolved` is an
+> **asserted zero** rather than a silent skip. Measured: **293 files scanned, 230 carry
+> `localStorage`, extraction yields exactly `["theme","adna:course:v1"]`, unresolved 0.**
+>
+> ⚠ **`twin_manifest.json`** — `b2e943b` changed routes without regenerating this **tracked** build
+> artifact; same-diff omission, folded in. ⚠ **`STATE.md` said the course was a *"7-lesson ladder,
+> complete in-tree"* — FALSE, disk holds 2** and `b2e943b`'s own message says *"lessons 1–2"*.
+> Corrected, not deleted (SO-6). ⭐ Note which surface was honest: `course/index.astro` **derives** its
+> count, so a reader was always told **2**; only the index said 7 — **and it would have gone out as an
+> operator-facing description of what a deploy ships.**
+
 > ⛩⛩ **`GR-5` IS SIGNED AND `active` (2026-09-04) — `F-ab`: three gates that are bets on how busy the
 > machine is, plus a ratchet whose tooth moves.** `missions/mission_haussmann_gr_5_flaky_gates.md`.
 > ⛔⛔ **THIS BLOCK IS ITSELF THE FINDING THAT PROMPTED IT.** GR-5's authoring (`7c1800c`), its ⛩
