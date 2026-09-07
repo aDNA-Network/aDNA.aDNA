@@ -263,8 +263,30 @@ verification at `P5.2`'s open. **They chose to sign as proposed.** ⇒ *the devi
 excused* — and the distinction matters to `P5.2`, which will read this mission as the provenance of the
 instrument it scores on.
 
-⏭ **NEXT: `O2`** — the re-authored production crawler, red-proven. Then O3 (packet scope, after O2 per
-`CONSTRAINT-1`) and O4 (close).
+~~⏭ **NEXT: `O2`**~~ ✅ **O2 IS DONE 2026-09-07 — `AC-2` ✅ · `V2` ✅.** Record:
+`artifacts/gr_6/o2_crawler_record.md`. Built `scripts/crawl_haussmann_b1.mjs` +
+`scripts/crawl_haussmann_b1_redtest.mjs`. **Self-test 17/17 · red-proof 6 pass / 0 fail / 0 harness
+bug**, every case red at its **declared** assertion set. Header **13/13 IDENTICAL** to the committed
+contract, parsed at run time and never transcribed. Live run: **228 routes · 0 non-200 · 0 orphans**.
+
+⭐⭐ **THE LIVE RUN REPRODUCED TWO CLOSED MISSIONS FROM THE OUTSIDE, UNPROMPTED.** Against the genesis
+packet: **61 new · 35 gone · `202 − 35 + 61 = 228`** ✅. Of the 35 departures, **24 are
+`/vaults/<MixedCase>.aDNA/`** (`mixed_case_url` **24 → 0**) — **ADR-051 / P2.1's canonicalization** — and
+**11 are audience-segment routes** (`/adopters/*`, `/compliance/`, `/educators/`, `/enterprise/`,
+`/researchers/`, `/startup-first-hour/`) — **P2.2's IA consolidation**, which retired exactly the
+*"audience-segment pages as IA"* shape the instrument names as a D2 failure mode. ⇒ *an instrument that
+independently re-derives two ratified outcomes it was never told about is measuring the world rather
+than its own expectations.*
+
+⚠ **The self-test's first run failed and the failure was the TEST's** — word count asserted 6, returned
+10; anchor text is body text and the extractor was right. Corrected **in the test's own comment**, not
+quietly: *a test edited to match its subject is worthless unless you can say which one moved.*
+
+⛔ **The committed packet is NOT overwritten** — `AC-2` builds the instrument, `AC-3` scopes the
+refresh, and the refresh itself is `P5.2`'s O0. Overwriting would also destroy the 2026-08-16 baseline
+the delta above is measured against. `git diff` over `evidence/` is **empty**.
+
+⏭ **NEXT: `O3`** (packet scope — after O2 per `CONSTRAINT-1`), then **O4** (close).
 
 ## AAR (SO#5)
 
