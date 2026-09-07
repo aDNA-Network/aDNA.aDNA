@@ -21,6 +21,31 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
 
+> ⛩⛩ **2026-09-07 — A `skill_template_release` GATE IS OPEN AND PREPARED. IT IS THE LIVE ITEM.**
+> Ledger: `campaign_haussmann/artifacts/template_release/release_staging_ledger.md` (**`proposed`**);
+> candidates staged at `…/template_release/staged/`. Session:
+> `history/2026-09/session_stanley_20260907_075718_haussmann_template_release_prep.md`.
+> **Dry-run GREEN** in a throwaway clone — exactly 3 payload paths under `.adna/`, `gitleaks` clean,
+> `adna_validate --governance` **zero drift**, self-test passing with the new fixture caught.
+> ⛔ **Nothing committed, tagged or pushed; `.adna/` untouched.** **Six ⛩ questions in §3 gate
+> everything.**
+>
+> ⚠⚠ **THE BLOCK BELOW IS QUALIFIED, NOT WRONG — AND THE QUALIFICATION IS THE FINDING.** *"No
+> agent-reachable work left"* was **true of the P-numbered backbone and false of the owed list**,
+> which held two agent-reachable items. Read literally at a cold start it retires a campaign that
+> still had work. ⇒ ***a scope stated once is read as the whole world*** — the same class as
+> `F-u`'s "routed", one altitude up. `P5.1` remains the critical path and remains entirely human.
+>
+> ⛔⛔ **AND ONE LOAD-BEARING CORRECTION: THE RELEASE IS *NOT* DEPLOY-HOLD-SAFE, WHICH ITS OWN
+> APPROVED PLAN ASSERTED.** `build_tour_files.mjs` STALE-checks the trust-page manifest on
+> `source_ref` **and** `local_sync_sha`, both of which a release moves ⇒ **a release invalidates
+> `/get-started/what-your-agent-reads/` by construction**, before `F-w` changes a byte. **Fire the
+> release AND its deploy tail together, or hold both** — firing without the deploy publishes `v8.9`
+> provenance for a standard that has moved, *a stale claim on the one surface built to be checked*.
+> ⚠ `P5.1` recruitment was **unscheduled** on 2026-09-07 so the window was open; **re-derive that at
+> the object before relying on it.**
+
+
 > ⛔⛔ **2026-09-07 — THE CAMPAIGN HAS NO AGENT-REACHABLE WORK LEFT. THE ENDGAME IS `P5.1` AND IT IS
 > ENTIRELY HUMAN.** This is the whole handoff; everything below it is history.
 >
