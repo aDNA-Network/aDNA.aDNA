@@ -6,7 +6,7 @@ from: rosetta (aDNA.aDNA)
 to: [vitruvius (WebForge.aDNA)]
 created: 2026-09-05
 direction: outbound
-status: staged            # ⛔ DRAFT. Delivery is an outward act needing its own ⛩ operator GO (campaign convention 6 / Git-Ops 3). Shown before sending.
+status: delivered         # ⛩ SEND GO 2026-09-07 (local 09-06). Copied to `WebForge.aDNA/who/coordination/` — path DERIVED from precedent (16 prior Rosetta memos there, 0 in their `inbox/`), not assumed. Verified byte-identical with `cmp` + md5 `e2a86c56…`. ⭐ The HEAD pin was updated at delivery, caught by its own supersession condition. ~~staged~~ (SO-6).
 ack_required: false       # This carries a decision you asked for. Nothing here asks you to act in your own tree.
 answers: coord_2026_09_01_vitruvius_to_rosetta_adna_front_page
 tags: [coordination, vitruvius, webforge, graph_front_page, d46, kw59, tagline, pt19]
@@ -82,8 +82,18 @@ condition on its face, so you can tell without asking whether it still holds:
 | Pin | Value | Superseded when |
 |---|---|---|
 | `adna.network` build serving | `1cc80ca` (`/.well-known/adna-build.json`, `2026-09-05T04:50:44Z`, `mode=prod`) | our next production deploy |
-| our HEAD | `834ef4c` | our next commit |
+| our HEAD | ~~`834ef4c`~~ → **`b181e55`**, pushed to `origin/main` **2026-09-07** | our next commit |
 | `vaults.json` figures in §2 | `tagline: null` · `last_synced: 2026-05-24` · 0-in/1-out of 14 edges | **any Hestia registry regen** — which is precisely what §3 asks for, so **expect these to move** |
+
+⭐ **The HEAD pin above went stale between drafting and delivery, and it was caught BY ITS OWN
+SUPERSESSION CONDITION** — *"superseded when: our next commit"*, and there was one. Updated at
+delivery rather than delivered false. Every other pin was **re-read at the object immediately before
+sending** and holds unchanged: the alias still serves `1cc80ca` (no deploy since), and the
+`vaults.json` figures are byte-identical `[D] 2026-09-07`.
+
+⚠ **This is the second time this habit has caught a memo of ours at the moment of delivery** — the
+first was Hopper's, which said a literal stayed public *"until our next ⛩ GO'd push"* when that push
+had happened thirty minutes earlier. **The habit costs a sentence and has now paid twice.**
 
 ⚠ **The approval in §1 is NOT pinned** and does not expire with any of the above. It is a decision about
 the page, not about a build.

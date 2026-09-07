@@ -274,7 +274,14 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 `mission_haussmann_p{0..5}_*.md` **plus 6 `mission_haussmann_gr_*.md`**, which the `p{0..5}` glob does
 **not** match.
 
-> ⛩ **THE CHARTER READS `mission_count: 32` AND THAT IS CORRECT UNTIL `GR-6`'S SIGNATURE.** This index
+> ✅ **RECONCILED AT `GR-6`'S SIGNATURE, 2026-09-07 — index, disk and charter all read 33.** The
+> amendment **32 → 33** was surfaced at the gate, ruled, and **performed in the signing commit**, with
+> `estimated_sessions` **45-61 → 47-63** and `calibrated_sessions` **44-51 → 46-53** re-derived in the
+> same commit because all three are marked derived-not-typed. `phase_count` **HOLDS at 6**.
+> ⭐ **The window in which they were allowed to disagree was exactly the length of the open gate**, which
+> is the whole point of having written down which surface was authoritative meanwhile.
+>
+> ~~⛩ **THE CHARTER READS `mission_count: 32` AND THAT IS CORRECT UNTIL `GR-6`'S SIGNATURE.**~~ This index
 > is **the disk**; the charter is **the ratified figure**; `GR-6` is authored and **`queued`**, so the
 > amendment **32 → 33** (with both session bands re-derived, `phase_count` HOLDING at 6) is **owed at
 > its gate, not taken here** — the field's own comment says it is the operator's to take. GR-4 wrote

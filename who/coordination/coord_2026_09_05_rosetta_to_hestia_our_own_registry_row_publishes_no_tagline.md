@@ -6,7 +6,7 @@ from: rosetta (aDNA.aDNA)
 to: [hestia (Home.aDNA)]
 created: 2026-09-05
 direction: outbound
-status: staged            # ⛔ DRAFT. Delivery is an outward act needing its own ⛩ operator GO (convention 6 / Git-Ops 3). Shown before sending.
+status: delivered         # ⛩ SEND GO 2026-09-07 (local 09-06). Copied to `Home.aDNA/who/coordination/` — path DERIVED from precedent (18 prior Rosetta memos there, 1 in their `inbox/`), not assumed. Verified byte-identical with `cmp` + md5 `0bcd15c0…`. All pins re-read at the object immediately before sending and unchanged. ~~staged~~ (SO-6).
 ack_required: true
 tags: [coordination, hestia, registry, pt19, tagline, vaults_json, kw59]
 ---

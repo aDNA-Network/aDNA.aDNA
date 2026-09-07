@@ -6,10 +6,10 @@ campaign: campaign_haussmann
 phase: GR
 decade: 2
 owner: stanley
-status: queued   # ⏸ HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE, 2026-09-05. Criteria NOT ratified, budget NOT ratified. ⚠⚠ READ THE DEVIATION IN §Progress BEFORE READING THE CRITERIA: `AC-1` was PERFORMED at this gate under the operator-approved plan for the sitting, so this mission documents completed work for one criterion and gates the rest. That is a departure from "pass first, no build until signed" and it is named rather than absorbed.
+status: in_progress   # ⛩⛩ **SIGNED 2026-09-07 (local 09-06) — THE PRE-BUILD GATE IS PASSED, SIGNED AS PROPOSED.** All four criteria, all four V-limbs and the band ratified without amendment; the three defects and one ordering constraint the convention-13 pass found were already applied to the criteria before the file reached disk. Budget ⛩ **RATIFIED at ~140–210 kT / 2 sessions for O2–O4**, explicitly EXCLUDING `AC-1`'s already-spent ≈95–130 kT — *a band that covers spent work is unfalsifiable*. Charter same-diff **`mission_count` 32 → 33** performed in the signing commit. ⚠⚠ **THE DEVIATION IS RATIFIED WITH THE MISSION, NOT WAIVED BY IT: `AC-1` was performed AT the gate**, so it is ratified **post-hoc** and the convention-13 pass is a **post-hoc coherence check for `AC-1` and a pre-build gate for `AC-2`–`AC-4`**. The operator was shown this before signing and signed anyway; that is a decision, not an oversight, and it is recorded as one. ⏭ O2 → O3 → O4 may now begin. ~~queued~~ · prior gate note follows: ⏸ HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE, 2026-09-05. Criteria NOT ratified, budget NOT ratified. ⚠⚠ READ THE DEVIATION IN §Progress BEFORE READING THE CRITERIA: `AC-1` was PERFORMED at this gate under the operator-approved plan for the sitting, so this mission documents completed work for one criterion and gates the rest. That is a departure from "pass first, no build until signed" and it is named rather than absorbed.
 mission_class: instrument
 executor_tier: opus   # per-increment, on the P4.4 precedent (a declared tier nobody honours is worse than none): O1 authoring = opus (DONE) · O2 crawler = sonnet (mechanical, with red-proof) · O3 packet scope = sonnet · O4 close = opus
-token_budget_estimated: "⛩ NOT RATIFIED — proposed **~140–210 kT across 2 sessions** for the REMAINING work (O2 crawler + its red-proof · O3 packet-refresh scope · O4 close cascade + AAR). ⛔ This band EXCLUDES `AC-1`, which was performed at the gate sitting at ≈95–130 kT and is recorded there, not here — quoting a band that covers already-spent work would make the band unfalsifiable. ⚠ ~40 kT of any HAUSSMANN sitting is the campaign CLAUDE.md, auto-loaded — inside this band, not beside it. ⛔ The Speed Insights transport is NOT in this band and NOT in this mission: it is its own gate (`artifacts/gr_6/speed_insights_transport_design.md`). (ADR-016 / SO#11)"
+token_budget_estimated: "⛩⛩ **RATIFIED AS PROPOSED 2026-09-07** — **~140–210 kT across 2 sessions** for the REMAINING work (O2 crawler + its red-proof · O3 packet-refresh scope · O4 close cascade + AAR). ⛔ This band EXCLUDES `AC-1`, which was performed at the gate sitting at ≈95–130 kT and is recorded there, not here — quoting a band that covers already-spent work would make the band unfalsifiable. ⚠ ~40 kT of any HAUSSMANN sitting is the campaign CLAUDE.md, auto-loaded — inside this band, not beside it. ⛔ The Speed Insights transport is NOT in this band and NOT in this mission: it is its own gate (`artifacts/gr_6/speed_insights_transport_design.md`). (ADR-016 / SO#11)"
 token_budget_actual:
 created: 2026-09-05
 last_edited_by: agent_rosetta
@@ -233,7 +233,38 @@ assertion load-bearing rather than ceremonial (convention 14's second clause, an
    disk and charter both read **32** `[D]`; the approved plan for this sitting inherited the stale 31,
    which is `F-u`'s class in the plan written to fix an orphan of that kind. Corrected in the same commit.
 
-⏭ **NEXT: ⛩ THE SIGNATURE. Until then, O2/O3/O4 do not begin.**
+~~⏭ **NEXT: ⛩ THE SIGNATURE. Until then, O2/O3/O4 do not begin.**~~
+
+### ⛩⛩ SIGNED 2026-09-07 — AS PROPOSED. O2 IS OPEN
+
+Session `session_stanley_20260907_063127_haussmann_gr_6_signature_and_o2`.
+
+> **decision**: ratify GR-6's four criteria, four V-limbs and band **as proposed**, with `AC-1`
+> ratified post-hoc and the deviation standing on the record.
+> **ratified-by**: operator (⛩, via AskUserQuestion at the 2026-09-07 session-planning gate)
+> **date**: 2026-09-07 (local 2026-09-06)
+> **status**: accepted
+
+**Three admin items performed in the signing commit, not recorded as taken** (GR-2 left an identical
+ruling unperformed at the charter for four days):
+
+| Field | Was | Now | Derivation |
+|---|---|---|---|
+| `mission_count` | 32 | **33** | `ls missions/mission_haussmann_*.md \| wc -l` → 33 = 27 `p{0..5}` + **6** `gr_*` |
+| `estimated_sessions` | 45-61 | **47-63** | + GR-6's ratified 2 |
+| `calibrated_sessions` | 44-51 | **46-53** | + GR-6's ratified 2 |
+
+⚠ `phase_count` **HOLDS at 6** — GR is a lane, not a seventh phase.
+
+⭐ **What the operator was shown before signing, because a post-hoc ratification is only honest if the
+signer knew:** that `AC-1` was already built, that the pass could therefore no longer *prevent* that
+build, and that the alternative on the table was to sign `AC-2`–`AC-4` and hold `AC-1` for independent
+verification at `P5.2`'s open. **They chose to sign as proposed.** ⇒ *the deviation is ratified, not
+excused* — and the distinction matters to `P5.2`, which will read this mission as the provenance of the
+instrument it scores on.
+
+⏭ **NEXT: `O2`** — the re-authored production crawler, red-proven. Then O3 (packet scope, after O2 per
+`CONSTRAINT-1`) and O4 (close).
 
 ## AAR (SO#5)
 
