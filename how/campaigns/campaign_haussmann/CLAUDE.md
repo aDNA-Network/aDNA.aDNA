@@ -3497,3 +3497,91 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > (enabled by the operator 09-06; designed at `artifacts/gr_6/speed_insights_transport_design.md`;
 > **the p75 clock has not started**) · **Hopper's 4.2.0 ack** · `F-w` → next `skill_template_release` ·
 > `F-ab`(a), cause still unverified · `sweep/jsonld_census.md`'s missing instrument.
+
+> 🚀 **2026-09-07 — THE FIELD-CWV TRANSPORT IS LIVE, AND `/privacy` CHANGED FIRST BECAUSE IT HAD
+> PROMISED TO.** `deploy_record: 2026-09-07T07:41:57Z mode=prod tree=010cc4f`. No override flags;
+> alias-ancestry guard passed on its own terms; live headers **4/4 by name AND value**. Probe
+> **9 PASS / 0 FAIL** against its own pre-deploy **2 PASS / 7 FAIL** on `1cc80ca`. ⛔ **NOT a mission
+> and NOT in `GR-6`'s band** — an operator-ruled increment on the course-deploy / R-97 precedent.
+>
+> ⭐ **The ordering IS the deliverable.** `/privacy` carried, in the site's own rendered voice,
+> *"we will update this page before that ships"* — a promise about **sequence**, keepable only by
+> moving the page first. The disclosure and the transport are **one commit**, with the page's
+> description of the new behaviour written before the behaviour existed. *A promise kept by intention
+> is not kept.*
+>
+> ⭐⭐ **THE DESIGN WAS WRONG ABOUT WHICH ASSERTION THE TRANSPORT WOULD BREAK, AND MEASURING FIRST IS
+> THE ONLY REASON THE REMEDY LANDED IN THE RIGHT PLACE.** `speed_insights_transport_design.md` P-2
+> predicted `gate-42`'s **`assetFailures`**. Measured: a missing file yields a **404 RESPONSE**, so
+> `requestfailed` never fires; Chromium logs *"Failed to load resource… 404"* as a **console error**,
+> and `hits` is asserted **first**. ⇒ **that is GR-3's own finding about this very gate, arriving
+> again** — and a remedy written where the design said would not have worked, after which the
+> temptation is always to widen until green. **The plan's "measure P-2 before writing the exclusion"
+> is what caught it**, and it is the reusable part.
+>
+> ⛔ **A PLATFORM STUB, NOT AN ALLOWLIST — because the console message does not name the URL.** An
+> allowlist matching its text would have blinded `gate-42` to **every 404 on the site**: the
+> over-masking shape B0 caught *"disguised as a flake remedy"*, arriving as a convenience. The gate
+> instead **SUPPLIES** what `astro preview` lacks and production has, and **`platformStubHits` is
+> asserted `> 0`** — so if the package changes its path the stub stops firing and the gate **reds**,
+> rather than quietly covering nothing while reading as coverage. ⭐ **P-3 held and was NOT "fixed"**:
+> `connect-src 'self'` already covers a same-origin beacon, so *"widen the CSP"* would have loosened
+> the site's strongest header for a reason that does not exist. ***A constraint list is not a
+> diagnosis***, and the entry that binds was the one it mentions last.
+>
+> **`gate-56` asserts MOUNTED, not merely installed** (`V4`'s *shipped is not wired*) and binds
+> `/privacy` in **both directions** — a page describing a transport that is gone is a false claim in
+> the reassuring direction. One exclusion, **enumerated and asserted**: `install.html`, a
+> hand-authored static file in `public/` that never passes through Astro. Red-proof **6 pass / 0 fail
+> / 0 harness bug**, every case red at its **declared** assertion.
+>
+> ⭐ **The dashboard enable was CONFIRMED BY MEASUREMENT, not taken on trust** —
+> `/_vercel/speed-insights/script.js` already returned **200 in production before the deploy**. The
+> platform half was live; only our mount was missing.
+>
+> ⚠⚠ **FOUR DEFECTS, ALL IN THIS DESK'S OWN INSTRUMENTS, ALL CAUGHT BY THEIR OWN OUTPUT — the
+> standing streak, now at twelve.**
+> **(1)** The red-test's `failing_set` grepped the **line reporter** for `G56[a-z]` and matched test
+> **NAMES**, reporting all six assertions red on a **GREEN** baseline. ⭐ **Blind in the OPPOSITE
+> direction from the usual defect, and more dangerous** — *"the control is red"* reads like a broken
+> tree rather than a broken instrument, and would have sent the next hour into the wrong subject.
+> **(2)** **`G56d` was WEAK and the red-proof caught it**: `includes('sent to') && includes('Vercel')`
+> passed with the **entire disclosure sentence mutated away**, because both substrings occur
+> elsewhere on that page (**2×** and **8×**) in unrelated copy. Now asserts the **sentence**, on
+> flattened text — required anyway, since Astro stamps `data-astro-cid-*` **inside** every tag.
+> **(3)** A changelog heading collided with the 09-04 entry's on `/changelog/`, producing a duplicate
+> `id`; caught by **`html-validate no-dup-id`** before it shipped — the control working, not
+> vigilance.
+> **(4)** ⛔⛔ **A PROBE ASSERTION THAT NEVER DISCRIMINATED.** It asserted the frontmatter **title**
+> appears on `/changelog/`; that page renders **version + date + body**, never the title. **Red before
+> the deploy AND red after, for the same reason both times** — `F-z` exactly. ⚠ Its replacement has
+> **NOT** been demonstrated red against the pre-deploy build, because production had moved by the time
+> the defect was found; that the old build lacked `2026-09-07` is an **inference, not a measurement**.
+> **Recorded as a limit** on GR-4's precedent for its four strip assertions. ⇒ **Honest restatement of
+> the pre-deploy red: 6 of 8 discriminating assertions, plus one that could never have passed.**
+>
+> **Suite**: chromium **698 passed / 1 skipped / 0 failed** · all-projects **700** · in-container
+> snapshot **26** · `html-validate` **0**, control-checked against a deliberately invalid file that
+> exits 1. `gate-49` red confirmed **in-container first** (2 failed / 24 passed), regenerated, control
+> **exactly 2 of 24** — and the **AMENDMENT-1 discriminator was applied rather than the pixel count
+> trusted**: the strip now leads with *"Sep 7, 2026 — Page-speed numbers now leave your browser"*, so
+> this is **content**, not the recorded noise. `gate-30`'s two reds were convention 6's documented
+> case (a rebuild drops the redirect config), diagnosed by asking which step produces what the gate
+> asserts.
+>
+> ✅ **Hopper's 4.2.0 ack DELIVERED** to `Git.aDNA/who/coordination/` (path derived from precedent,
+> **9 vs 2**). ⭐ **The pre-send pin re-read caught a path defect IN THE PARAGRAPH ASSERTING PATHS
+> RESOLVE FROM THE RECIPIENT'S ROOT** — it wrote `aDNA.aDNA/.adna/…`, and `.adna/` is a **SIBLING** of
+> `aDNA.aDNA/`, not a child, so the one sentence claiming reachability carried a path that resolves
+> from **nobody's** root. **Second time in two outings that the pre-send re-read has found what the
+> drafting did not.** Mondrian's erratum E2 committed on receipt (`ack_required: false`).
+>
+> ⏭⏭ **THE CAMPAIGN HAS NO AGENT-REACHABLE WORK LEFT.** `GR-6` discharged `P5.2`'s preconditions; the
+> transport was the last increment outside the backbone. **`P5.2` is blocked on `P5.1` alone, and
+> `P5.1` is entirely human** — five recruited cold readers (⛔ agents must not recruit), a fresh macOS
+> account, the operator as outsider. ⭐ Its `AC-3 → AC-2` ordering was **released** 2026-09-05, so two
+> of the three may run **concurrently**. ⚠⚠ **A DEPLOY HOLD BECOMES LIVE THE MOMENT RECRUITMENT
+> STARTS** — `AC-1` pins the stimulus to a build stamp, and today's deploy was safe **only because
+> recruitment was unscheduled**, which was measured at the gate rather than assumed. ⚠ Owed and
+> undated: the `skill_template_release` gate (`F-w` + Hopper's 4.0.1 → 4.2.0, **F-P7b-as first**) ·
+> `sweep/jsonld_census.md`'s missing instrument · `F-ab`(a) · ADR-056 clause 5 · `F-v`.
