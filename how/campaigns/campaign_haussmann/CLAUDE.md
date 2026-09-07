@@ -3428,3 +3428,72 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > `mission_count` **32 → 33** with both session bands re-derived, `phase_count` **HOLDING at 6**.
 > **Until then, O2/O3/O4 do not begin.** ⛔ Held: **P5.1** with the humans — still the campaign's true
 > critical path, and nothing here moves it.
+
+> ✅✅ **`GR-6` IS CLOSED 2026-09-07 — ALL FOUR CRITERIA MET, AAR FILED (SO#5), mission `completed`.
+> `P5.2`'S TWO HARD PRECONDITIONS ARE DISCHARGED.**
+> **AC-1 ✅ AC-2 ✅ AC-3 ✅ AC-4 ✅ · V1 ✅ V2 ✅ V3 ✅ V4 ✅.** Records: `artifacts/gr_6/`
+> (`anchor_defect_derivation` · `o2_crawler_record` · `o3_packet_refresh_scope` ·
+> `speed_insights_transport_design`). Self-test **17/17** · crawler red-proof **6 pass / 0 fail / 0
+> harness bug** · CSV header **13/13 IDENTICAL** · live crawl **228 routes / 0 non-200 / 0 orphans** ·
+> packet table **21/21** rows with a disposition **and** an instrument · `git diff` over `evidence/`
+> **empty**. ⛔ **Nothing deployed and nothing owed to production** — GR-6 carries no site bytes; prod
+> serves `1cc80ca`. ⛩ **SIGNED at this sitting's open and CLOSED at its end — one session against a
+> ratified two**, at ≈150–190 kT inside a ~140–210 kT band.
+>
+> ⭐⭐ **THE FINDING: AN INSTRUMENT THAT RE-DERIVES OUTCOMES IT WAS NEVER TOLD ABOUT IS MEASURING THE
+> WORLD RATHER THAN ITS OWN EXPECTATIONS.** The re-authored crawler's **first** live run reproduced two
+> closed missions from a sitemap alone: **24 `/vaults/<MixedCase>.aDNA/` routes gone and
+> `mixed_case_url` 24 → 0** (**ADR-051 / P2.1**), and **11 audience-segment routes gone** — `/adopters/*`,
+> `/compliance/`, `/educators/`, `/enterprise/`, `/researchers/`, `/startup-first-hour/` (**P2.2's IA
+> consolidation**, which retired exactly the *"audience-segment pages as IA"* shape the instrument names
+> as a D2 failure mode). **No assertion in the harness was aimed at either**; arithmetic checks out at
+> `202 − 35 + 61 = 228`. ⇒ **a stronger validation than any single test could be**, and free to any
+> instrument whose subject has a recorded history.
+>
+> ⭐⭐ **AND THE FIELD THAT FELT LIKE BOOKKEEPING FOUND THE HOLE.** `AC-3` demanded a **named instrument
+> per row**, not a disposition per packet — and `sweep/jsonld_census.md` turns out to have **none**
+> (`grep -rln "jsonld\|json-ld" scripts/ site/scripts/` → **0** `[D]`), while every sibling in that
+> packet has one. ⇒ **`sweep/` is only PARTLY refreshable**, and a bare *"refreshable-by-instrument"*
+> row would have been the precise defect `AC-3` forbids — *a disposition asserted about a packet rather
+> than about its contents*. ⛔ **Not built** (an eighth instrument at a sitting's tail is what
+> conventions 15/16/17 each ruled against); named for `P5.2` with its cost stated.
+>
+> ⇒ ⭐ **`P5.2`'s O0 statement is now CONSTRUCTIBLE IN ADVANCE** — *"refreshed 3, ran 3 of 4, deferred
+> `coldreads/` to P5.1, left 14 historical untouched by design, and `jsonld_census.md` has no
+> instrument."* **That sentence could not be written yesterday, and its unconstructibility — not any
+> missing file — is what made the precondition unfalsifiable.**
+>
+> ⚠⚠ **THE DEVIATION IS RATIFIED, NOT WAIVED, AND THE DISTINCTION IS FOR `P5.2` TO READ.** `AC-1` was
+> built at the 09-05 gate, so the convention-13 pass was **post-hoc for `AC-1` and pre-build for
+> `AC-2`–`AC-4`**. The operator was shown the alternative — sign `AC-2`–`AC-4`, hold `AC-1` for
+> independent verification at `P5.2`'s open — and **signed as proposed**. `P5.2` reads this mission as
+> the provenance of the instrument it scores on, so it is recorded as a decision rather than absorbed.
+>
+> ⚠ **TWO of this sitting's defects were in MY OWN checks, not in their subjects** — the self-test
+> asserted a word count of **6** and the extractor's **10** was right (anchor text is body text), and
+> the instrument-existence check returned **seven false MISSINGs** by running from `evidence/` instead
+> of the vault root (**convention 16, eighth sighting, inside the artifact whose purpose is naming
+> instruments correctly**). **Both caught by reading output rather than trusting an exit code**, and
+> the word-count correction is recorded **in the test's own comment** — *a test edited to match its
+> subject is worthless unless you can say which one moved.*
+>
+> ✅ **Also cleared this sitting, each its own ⛩ GO:** `b181e55` **pushed** and verified at the remote
+> (closing convention 19's width gap — every GR-6 figure had been local-lane only) · **both staged
+> memos DELIVERED and RESYNCed** so both ends carry the delivered stamp, to `WebForge.aDNA/` and
+> `Home.aDNA/who/coordination/`, **paths DERIVED from precedent** (16/0 and 18/1 against their `inbox/`
+> variants — both vaults have both directories, so choosing by convention had a 50% chance of filing
+> into a drop-box nobody reads). ⭐ **The Vitruvius memo's HEAD pin had gone stale between drafting and
+> delivery and was caught BY ITS OWN SUPERSESSION CONDITION** (*"superseded when: our next commit"* —
+> and there was one); updated at delivery rather than delivered false. **Second time this habit has
+> caught a memo of ours at the moment of delivery.**
+>
+> ⏭ **NEXT: the campaign's endgame, and it is HUMAN-GATED — `P5.1`.** Nothing agent-reachable remains
+> in the backbone: GRANDE REVUE's Gate-1 order is complete, `GR-6` has discharged `P5.2`'s
+> preconditions, and `P5.2`'s only remaining dependency is `P5.1`'s five recruited cold readers, its
+> fresh macOS account and the operator-as-outsider run. ⭐ **Newly cheaper**: the `AC-3 → AC-2` ordering
+> was released 2026-09-05, so the TTFS run and the contribution run may be scheduled **concurrently**.
+> ⚠ **It is a window, not a property** — `AC-1` pins the stimulus to a build stamp, so **a deploy
+> landing mid-panel invalidates the panel**. ⚠ Owed: the ⛩ **Speed Insights transport at its own gate**
+> (enabled by the operator 09-06; designed at `artifacts/gr_6/speed_insights_transport_design.md`;
+> **the p75 clock has not started**) · **Hopper's 4.2.0 ack** · `F-w` → next `skill_template_release` ·
+> `F-ab`(a), cause still unverified · `sweep/jsonld_census.md`'s missing instrument.

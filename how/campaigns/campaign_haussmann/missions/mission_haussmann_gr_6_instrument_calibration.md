@@ -6,11 +6,11 @@ campaign: campaign_haussmann
 phase: GR
 decade: 2
 owner: stanley
-status: in_progress   # ⛩⛩ **SIGNED 2026-09-07 (local 09-06) — THE PRE-BUILD GATE IS PASSED, SIGNED AS PROPOSED.** All four criteria, all four V-limbs and the band ratified without amendment; the three defects and one ordering constraint the convention-13 pass found were already applied to the criteria before the file reached disk. Budget ⛩ **RATIFIED at ~140–210 kT / 2 sessions for O2–O4**, explicitly EXCLUDING `AC-1`'s already-spent ≈95–130 kT — *a band that covers spent work is unfalsifiable*. Charter same-diff **`mission_count` 32 → 33** performed in the signing commit. ⚠⚠ **THE DEVIATION IS RATIFIED WITH THE MISSION, NOT WAIVED BY IT: `AC-1` was performed AT the gate**, so it is ratified **post-hoc** and the convention-13 pass is a **post-hoc coherence check for `AC-1` and a pre-build gate for `AC-2`–`AC-4`**. The operator was shown this before signing and signed anyway; that is a decision, not an oversight, and it is recorded as one. ⏭ O2 → O3 → O4 may now begin. ~~queued~~ · prior gate note follows: ⏸ HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE, 2026-09-05. Criteria NOT ratified, budget NOT ratified. ⚠⚠ READ THE DEVIATION IN §Progress BEFORE READING THE CRITERIA: `AC-1` was PERFORMED at this gate under the operator-approved plan for the sitting, so this mission documents completed work for one criterion and gates the rest. That is a departure from "pass first, no build until signed" and it is named rather than absorbed.
+status: completed   # ✅✅ **CLOSED 2026-09-07 — ALL FOUR CRITERIA MET, AAR FILED (SO#5). AC-1 ✅ AC-2 ✅ AC-3 ✅ AC-4 ✅ · V1 ✅ V2 ✅ V3 ✅ V4 ✅.** Self-test 17/17 · crawler red-proof 6/0/0 · header 13/13 IDENTICAL · live 228 routes · packet table 21/21 rows with a disposition AND an instrument · `git diff` over `evidence/` **empty**. ⛔ **Nothing deployed and nothing owed to production** — GR-6 carries no site bytes; prod serves `1cc80ca`. ⇒ **`P5.2`'s two hard preconditions are DISCHARGED**; what still blocks it is `P5.1`, which is human. ~~in_progress~~ · signature note follows: ⛩⛩ **SIGNED 2026-09-07 (local 09-06) — THE PRE-BUILD GATE IS PASSED, SIGNED AS PROPOSED.** All four criteria, all four V-limbs and the band ratified without amendment; the three defects and one ordering constraint the convention-13 pass found were already applied to the criteria before the file reached disk. Budget ⛩ **RATIFIED at ~140–210 kT / 2 sessions for O2–O4**, explicitly EXCLUDING `AC-1`'s already-spent ≈95–130 kT — *a band that covers spent work is unfalsifiable*. Charter same-diff **`mission_count` 32 → 33** performed in the signing commit. ⚠⚠ **THE DEVIATION IS RATIFIED WITH THE MISSION, NOT WAIVED BY IT: `AC-1` was performed AT the gate**, so it is ratified **post-hoc** and the convention-13 pass is a **post-hoc coherence check for `AC-1` and a pre-build gate for `AC-2`–`AC-4`**. The operator was shown this before signing and signed anyway; that is a decision, not an oversight, and it is recorded as one. ⏭ O2 → O3 → O4 may now begin. ~~queued~~ · prior gate note follows: ⏸ HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE, 2026-09-05. Criteria NOT ratified, budget NOT ratified. ⚠⚠ READ THE DEVIATION IN §Progress BEFORE READING THE CRITERIA: `AC-1` was PERFORMED at this gate under the operator-approved plan for the sitting, so this mission documents completed work for one criterion and gates the rest. That is a departure from "pass first, no build until signed" and it is named rather than absorbed.
 mission_class: instrument
 executor_tier: opus   # per-increment, on the P4.4 precedent (a declared tier nobody honours is worse than none): O1 authoring = opus (DONE) · O2 crawler = sonnet (mechanical, with red-proof) · O3 packet scope = sonnet · O4 close = opus
 token_budget_estimated: "⛩⛩ **RATIFIED AS PROPOSED 2026-09-07** — **~140–210 kT across 2 sessions** for the REMAINING work (O2 crawler + its red-proof · O3 packet-refresh scope · O4 close cascade + AAR). ⛔ This band EXCLUDES `AC-1`, which was performed at the gate sitting at ≈95–130 kT and is recorded there, not here — quoting a band that covers already-spent work would make the band unfalsifiable. ⚠ ~40 kT of any HAUSSMANN sitting is the campaign CLAUDE.md, auto-loaded — inside this band, not beside it. ⛔ The Speed Insights transport is NOT in this band and NOT in this mission: it is its own gate (`artifacts/gr_6/speed_insights_transport_design.md`). (ADR-016 / SO#11)"
-token_budget_actual:
+token_budget_actual: "≈150–190 kT for O2+O3+O4 — **RECORDED AT THE TIME**, not reconstructed (the P4.3-class defect this campaign has hit four times). Against the ⛩ ratified **~140–210 kT / 2 sessions**: **inside the band, and delivered in ONE session rather than two.** ⛔ Outside it and declared as such at the session open, never absorbed: the four outward acts (push + two deliveries + the Hopper draft) at ≈40–55 kT. ⭐ The band held for the reason GR-4 named and GR-5 confirmed — **the scope was ruled at the gate before any of it was built**, so nothing was costed against a scope nobody had chosen. No SO#11 retrospective."
 created: 2026-09-05
 last_edited_by: agent_rosetta
 grounded_in:
@@ -286,8 +286,63 @@ quietly: *a test edited to match its subject is worthless unless you can say whi
 refresh, and the refresh itself is `P5.2`'s O0. Overwriting would also destroy the 2026-08-16 baseline
 the delta above is measured against. `git diff` over `evidence/` is **empty**.
 
-⏭ **NEXT: `O3`** (packet scope — after O2 per `CONSTRAINT-1`), then **O4** (close).
+~~⏭ **NEXT: `O3`**~~ ✅ **O3 IS DONE — `AC-3` ✅ · `V3` ✅.** Record:
+`artifacts/gr_6/o3_packet_refresh_scope.md`. **21 packets** (count derived from disk), every row
+carrying a disposition **and a named instrument**: **3 `refreshable-by-instrument` · 4 `needs-a-run` ·
+14 `historical-do-not-refresh`**, re-derived from the table itself.
+
+⭐⭐ **THE FIELD THAT FELT LIKE BOOKKEEPING IS THE FIELD THAT FOUND THE HOLE.**
+`sweep/jsonld_census.md` **has no instrument** — `grep -rln "jsonld\|json-ld" scripts/ site/scripts/`
+→ **0** `[D]`. Its siblings in that packet each have one. ⇒ **`sweep/` is only PARTLY refreshable, and
+a row reading "refreshable-by-instrument" without that qualifier would have been the exact defect
+`AC-3` forbids** — a disposition asserted about a *packet* rather than about its *contents*. A table
+carrying dispositions alone would have marked it refreshable and moved on. ⛔ **Not built**: an eighth
+instrument at a sitting's tail is what conventions 15/16/17 each ruled against; it is named for `P5.2`
+as a known gap with a stated cost.
+
+⚠ **And the instrument-existence check returned SEVEN FALSE MISSINGs on its first run** — executed from
+`evidence/` rather than the vault root, so every relative path failed. ***A negative result is only as
+wide as the command that produced it*** (convention 16), committed inside the artifact whose whole
+purpose is naming instruments correctly. Caught in the same minute by reading the output rather than
+trusting it — **eighth member of that family.**
+
+⇒ **`P5.2`'s O0 statement is now CONSTRUCTIBLE IN ADVANCE**: *"refreshed 3, ran 3 of 4, deferred
+`coldreads/` to P5.1, left 14 historical untouched by design, and `jsonld_census.md` has no
+instrument."* ⭐ **That sentence could not be written yesterday, and its unconstructibility — not any
+missing file — was what made the precondition unfalsifiable.**
+
+---
 
 ## AAR (SO#5)
 
-*(before `completed`)*
+**Worked.** Deriving instead of inheriting, three times over, and each time it changed the work:
+the *"five filed anchor defects"* list **did not exist** (O1); the crawler's schema came from the
+**committed CSV header** rather than from memory; and O3's per-row **instrument** field found a packet
+with no instrument. ⭐ The convention-13 pass has now paid for itself on **twelve consecutive missions**.
+
+**Didn't.** `AC-1` was built **before** its gate, so for that criterion the pass could only be a
+post-hoc coherence check. It still found `DEFECT-1` — V1 asserting one of five deliverables — but it
+could no longer have *prevented* anything. The operator was shown this and ratified it deliberately;
+that makes it a decision rather than a slip, and it is still a departure worth not repeating.
+
+**Finding.** ⭐⭐ **An instrument that independently re-derives outcomes it was never told about is
+measuring the world rather than its own expectations.** The crawler's first live run reproduced
+**ADR-051/P2.1** (24 `/vaults/<MixedCase>.aDNA/` gone, `mixed_case_url` **24 → 0**) and **P2.2's IA
+consolidation** (11 audience-segment routes gone) from a sitemap alone. No assertion in the harness was
+aimed at either. **That is a stronger validation than any single test could be**, and it is available
+for free to any instrument whose subject has a recorded history.
+
+**Change.** Two habits earned themselves this sitting and are worth carrying rather than re-deriving:
+**(1)** a red-test case must declare the assertion it targets, so a red through a different one reports
+as `HARNESS BUG` — authored at the start here rather than discovered in a harness's fourteenth day;
+**(2)** a scope table must demand a **named instrument per row**, not a disposition per packet.
+
+**Follow-up.** `sweep/jsonld_census.md` has **no instrument** — named for `P5.2`, deliberately unbuilt.
+The `inventory/` packet is **stale by 26 routes and two closed missions** and is now refreshable; the
+refresh is `P5.2`'s O0, not this mission's. ⛔ **`P5.2` is still blocked, and no longer by us** — its
+remaining dependency is `P5.1`, which is human.
+
+⚠ **Two of this sitting's four instrument-adjacent defects were in MY OWN checks, not in the subject**
+(the word-count expectation; the seven false MISSINGs). Both were caught by reading output rather than
+trusting an exit code. **The streak continues, and so does what catches it: structure, not vigilance.**
+
