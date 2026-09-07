@@ -3,6 +3,7 @@ import { ClientRouter } from 'astro:transitions';
 import SEOHead from '../components/common/SEOHead.astro';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 import '@fontsource/space-grotesk/400.css';
 import '@fontsource/space-grotesk/700.css';
 import '@fontsource/inter/400.css';
@@ -82,10 +83,26 @@ const {
     </script>
 
     <!-- Field CWV instrument (P4.4b B1): bundled same-origin module, zero-network.
-         Gate-50 asserts it is shipped AND emitting; see src/scripts/vitals.ts. -->
+         Gate-50 asserts it is shipped AND emitting; see src/scripts/vitals.ts.
+         ⛔ UNTOUCHED by the 2026-09-07 transport increment, deliberately. This is a SECOND,
+         in-page measurement that has never left the browser and still does not; the transport
+         below is additive beside it, not a replacement for it. /privacy distinguishes the two. -->
     <script>
       import '../scripts/vitals';
     </script>
+
+    <!-- Field CWV TRANSPORT (2026-09-07): Vercel Speed Insights. Renders a
+         <vercel-speed-insights> custom element whose script injects
+         /_vercel/speed-insights/script.js — a FIRST-PARTY path served by the Vercel platform,
+         not emitted into dist/. Measured, not assumed: `grep -rho "/_vercel/[a-z0-9/_.-]*"
+         node_modules/@vercel/speed-insights/dist/` -> that exact path [D] 2026-09-07.
+         ⇒ under `astro preview` there is no platform, so the request 404s and gate-42 sees a
+         same-origin failure. gate-42 carries a SINGLE enumerated exclusion for that one path;
+         it is asserted, never assumed, and every other same-origin failure still reds.
+         gate-56 asserts this is MOUNTED, not merely installed — a dependency in package.json
+         is not a transport (V4's "shipped is not wired"). /privacy shipped FIRST, in the same
+         commit, because that page promised in its own voice to change before this did. -->
+    <SpeedInsights />
 
     <ClientRouter />
   </head>

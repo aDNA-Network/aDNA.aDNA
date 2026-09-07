@@ -71,15 +71,30 @@ const updated = '2026-09-03';
       not to identify you.
     </p>
 
-    <h2 id="performance">Performance measurement (stays on your device)</h2>
+    {/* ⛔ THIS SECTION SHIPPED BEFORE THE TRANSPORT IT DESCRIBES, DELIBERATELY. The previous
+        wording said those numbers were "not sent anywhere" and promised, in the site's own voice,
+        that "we will update this page before that ships". Sending them first would have falsified a
+        live trust-page sentence IN THE SAME ACT — so the page moved first and the transport followed
+        in the same commit. The promise was kept by ordering, not by intention. */}
+    <h2 id="performance">Performance measurement</h2>
     <p>
-      The site runs a small script that measures how fast each page loads <em>in your own
-      browser</em> — standard web performance numbers like "how long until the largest element
-      painted". Today those numbers are <strong>not sent anywhere</strong>: they exist only in the
-      page's memory while it is open and are discarded when you leave. Nothing in them identifies
-      you, and nothing is stored. If we ever start collecting these numbers in aggregate to watch
-      site performance — a change we may make — we will update this page before that ships, per the
-      commitment below.
+      The site measures how fast each page loads <em>in your own browser</em> — standard web
+      performance numbers like "how long until the largest element painted". Those numbers are
+      now <strong>sent to Vercel</strong>, the host described above, so we can see whether the site
+      is actually fast for the people using it rather than only on our own machines.
+    </p>
+    <p>
+      What is sent is the timing itself, the page it belongs to, and coarse technical context your
+      browser already reveals to any site. <strong>No cookie is set for this</strong>, nothing extra
+      is stored on your device, and we do not receive anything that names you or lets us follow you
+      between pages. We see aggregate speed, not visitors. Vercel's handling of what it receives is
+      governed by <a href={vercelPrivacyUrl} target="_blank" rel="noopener">Vercel's privacy
+      policy</a>, exactly as with the server logs above.
+    </p>
+    <p>
+      A second measurement still stays entirely on your device: the same timings are also raised
+      inside the page itself, where they exist only in memory while the page is open and are
+      discarded when you leave. That one has never been sent anywhere and still is not.
     </p>
 
     <h2 id="hosting">Hosting &amp; server logs</h2>

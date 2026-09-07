@@ -82,6 +82,34 @@ const MODES = [
 
 type Hit = { route: string; mode: string; kind: string; detail: string };
 
+/* ── THE PLATFORM STUB (2026-09-07, Speed Insights transport) ────────────────────────────────────
+ *
+ * `@vercel/speed-insights` injects `/_vercel/speed-insights/script.js` — a FIRST-PARTY path served
+ * by the Vercel PLATFORM, never emitted into `dist/`. Measured, not assumed, at the increment:
+ *   grep -rho "/_vercel/[a-z0-9/_.-]*" node_modules/@vercel/speed-insights/dist/  → that one path
+ *   ls dist/_vercel                                                              → absent
+ * ⇒ under `astro preview` there is no platform, the request 404s on every route, and this gate reds.
+ *
+ * ⭐⭐ THE FAILURE ARRIVES THROUGH THE CONSOLE PREDICATE, NOT THROUGH `assetFailures` — and that was
+ * MEASURED before anything was written here, which is the only reason this stub is in the right
+ * place. A missing file yields a 404 RESPONSE, so `requestfailed` never fires; Chromium logs
+ * "Failed to load resource: … 404" as a console error, and `hits` is asserted first. That is GR-3's
+ * own finding about THIS gate, arriving again. A remedy written where the design predicted
+ * (`assetFailures`) would not have worked, and the temptation would then have been to widen until
+ * green.
+ *
+ * ⛔ WHY A STUB AND NOT AN ALLOWLIST ENTRY. The console message is generic — it does NOT name the
+ * URL — so an allowlist matching its text would blind this gate to EVERY 404 on the site. That is
+ * the over-masking shape B0 caught "disguised as a flake remedy", and it would silently delete the
+ * assertion's whole value. Instead we SUPPLY the thing preview lacks: production serves this path,
+ * so the stub makes preview resemble production rather than making the gate ignore preview.
+ * Every other same-origin failure, and every other console error, still reds.
+ *
+ * ⚠ ASSERTED, NEVER ASSUMED (gate-48's ratified discipline). `platformStubHits` is asserted > 0
+ * below: if the package ever changes that path, the stub stops firing, the count goes to zero and
+ * this gate reds — rather than the stub quietly covering nothing while reading as coverage. */
+const PLATFORM_STUB_PATH = '**/_vercel/speed-insights/script.js';
+
 test.describe('gate-42 — zero console error', () => {
   // 224 routes × 2 themes. Generous, because the failure mode of a tight timeout here is a
   // truncated sweep reporting the clean prefix it managed to reach.
@@ -107,6 +135,14 @@ test.describe('gate-42 — zero console error', () => {
       const unsettled: string[] = [];
 
       if (mode.seed) await page.addInitScript(mode.seed);
+
+      // The platform stub — see PLATFORM_STUB_PATH above. Supplies what `astro preview` lacks and
+      // production has; it does NOT relax any assertion.
+      let platformStubHits = 0;
+      await page.route(PLATFORM_STUB_PATH, async (route) => {
+        platformStubHits++;
+        await route.fulfill({ status: 200, contentType: 'application/javascript', body: '' });
+      });
 
       let current = '(none)';
       page.on('console', (msg) => {
@@ -178,6 +214,17 @@ test.describe('gate-42 — zero console error', () => {
         }
         if (!settled) unsettled.push(`${route} → ${inflight} request(s) still in flight after ${SETTLE_TIMEOUT_MS} ms`);
       }
+
+      // ⚠ ASSERTED FIRST, and deliberately: if the stub never fired, every console assertion below
+      // is being made about a page that did not attempt the request — a green that means nothing.
+      // A path change in @vercel/speed-insights lands here, loudly, instead of silently.
+      expect(
+        platformStubHits,
+        `the /_vercel/speed-insights/script.js stub never fired across ${routes.length} route(s) in ` +
+          `${mode.name} mode. Either the transport is no longer mounted (see gate-56) or the package ` +
+          `changed the path it injects — in both cases this gate's console assertions below are ` +
+          `about a page that never made the request, and their green is vacuous.`,
+      ).toBeGreaterThan(0);
 
       expect(
         badStatus.slice(0, 20),
