@@ -1,0 +1,25 @@
+transport deploy probe — origin https://adna.network
+
+  serving commit: 1cc80ca  built 2026-09-05T04:50:44.029Z
+
+  PASS  EXTRACTION: /privacy fetched 200 and flattened to real text
+        status 200, 7749 chars of flattened text (a short/empty extraction would make every assertion below fail against NOTHING)
+  FAIL  MOUNT: the live homepage renders <vercel-speed-insights>
+        status 200; marker ABSENT
+  FAIL  MOUNT: the live /privacy renders <vercel-speed-insights>
+        marker ABSENT
+  PASS  PLATFORM: /_vercel/speed-insights/script.js is served (200), not 404
+        status 200 — this is the path the component injects. Under astro preview it 404s by construction; in PRODUCTION the Vercel platform must serve it or nothing is collected.
+  FAIL  DISCLOSURE: /privacy carries the transport sentence
+        "Those numbers are now sent to Vercel" ABSENT
+  FAIL  DISCLOSURE: the pre-transport claim "not sent anywhere" is GONE
+        "not sent anywhere" STILL PRESENT — the page contradicts itself
+  FAIL  DISCLOSURE: /privacy still distinguishes the second, in-page measurement
+        the in-page emitter is unchanged and the page must still say so
+  FAIL  CHANGELOG: the 2026-09-07 entry is live
+        entry title ABSENT
+  FAIL  CHANGELOG: the homepage latest-strip leads with it
+        the strip is derived from the collection, so this also proves the derivation ran
+
+2 PASS / 7 FAIL  (9 assertions)
+⇒ RED. Run before the deploy this is the REQUIRED result — it is what makes the post-deploy green mean something.
