@@ -5,8 +5,8 @@ title: "v8.10 governance release (Operation Lantern) — ship the R5/R6 fail-ope
 codename: "Operation Lantern"        # proposed, operator-chosen per the Palimpsest precedent; renameable at G1
 owner: stanley
 persona: rosetta
-status: active           # OPENED 2026-09-07 at the ⛩ template-release gate, on the operator's ruling of all six questions
-phase: P1/1              # single-phase FIRE campaign — the payload was authored, staged and dry-run GREEN under HAUSSMANN before this campaign existed
+status: completed        # ✅ v8.10 SHIPPED 2026-09-08 — 3dec601 + tag v8.10 on aDNA-Network/aDNA; local .adna synced 6f8f3d2; site deployed tree=a2ad53b. Gov 8.9→8.10, standard v2.5 held, counts unmoved. Campaign CLOSED — do NOT re-open.
+phase: P1/1              # ✅ FIRE complete 2026-09-08 — single-phase by design — the payload was authored, staged and dry-run GREEN under HAUSSMANN before this campaign existed
 opened_when: "2026-09-07 — operator ruled Q1–Q6 at the prepared gate; the campaign dir is created AT the gate, once the version is ruled"
 governance_bump: "8.9 → 8.10"
 standard_version: "v2.5 (held — no normative change)"
@@ -16,14 +16,14 @@ ratified_at: "⛩ template-release gate, 2026-09-07 — Q1–Q6 ruled; see §2"
 executor_tier: opus
 token_budget_estimated: 120-190
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-08
 last_edited_by: agent_rosetta
-tags: [campaign, v8_10, lantern, release, template_release, governance, pre_push_sanitize, f_w, active]
+tags: [campaign, v8_10, lantern, release, template_release, governance, pre_push_sanitize, f_w, completed, shipped]
 ---
 
 # Campaign: v8.10 governance release — Operation Lantern
 
-> **`status: active` — OPENED 2026-09-07 at the ⛩ gate.** This campaign is **unusual in its lineage
+> **`status: completed` — OPENED 2026-09-07 at the ⛩ gate, SHIPPED 2026-09-08 (see §7).** This campaign is **unusual in its lineage
 > and the difference matters to anyone reading it later**: v8.6–v8.9 each ran a P0→P3 arc that
 > *authored* its payload. **This one's payload was authored, staged, and dry-run GREEN under
 > HAUSSMANN before this campaign existed** — the ledger
@@ -44,7 +44,7 @@ tags: [campaign, v8_10, lantern, release, template_release, governance, pre_push
 | **P1** | Hook `4.0.1 → 4.3.0` — **executable only** (crosses 4.1.0 · 4.2.0 · 4.3.0) | `.adna/how/standard/hooks/pre-push-sanitize.sh` |
 | **P2** | Re-authored header — **a contract, not provenance** | same file |
 | **P3** | `F-P7b-as`, the dead tty guard — **rides P1** (`:660` in theirs, re-derived exact) | same file |
-| **P4** | ⭐ Fixture `dirty/test_confidential.yaml` — **the repair is UNGUARDED upstream without it** | `.adna/…/test_fixtures/dirty/` |
+| **P4** | ⭐ **TWO** fixtures — `dirty/control_confidential.md` + `dirty/test_confidential.yaml`. ⚠ The row said *one*; §3 finding 3 is why | `.adna/…/test_fixtures/dirty/` |
 | **P5** | `F-w` (a) — `skill_onboarding.md:208`, the marketplace promise | `.adna/how/skills/` |
 | **P6** | `F-w` (b) — the HOME exemplar template, **at the corrected path** (§3) | `.adna/how/templates/template_node_adna_exemplar/` |
 | **P7** | Five version surfaces → `8.10` | `.adna/` + the clone |
@@ -147,3 +147,44 @@ unintended is in the clone.**
   authoring an instrument at a sitting's tail, and this desk's standing count of later-defective
   instruments is the argument.
 - ⛔ **No repoint of the dangling `Spec:` pointer** (§3) — named as owed, not folded in.
+
+
+---
+
+## §7 · ✅ SHIPPED — the record (2026-09-08)
+
+| | |
+|---|---|
+| public image | `b94ec45..3dec601` on `main`, **tag `v8.10`** — verified **at the remote** (`git ls-remote`), releases page **200** |
+| local `.adna` | synced + committed **`6f8f3d2`**; **0 residual content differences** against the image; self-test **PASSED** |
+| site | `deploy_record: 2026-09-08T03:37:42Z mode=prod tree=a2ad53b`; live headers **4/4 by name AND value**; no override flags |
+| post-deploy probe | **7 PASS / 0 FAIL** on the **alias** |
+| suite | chromium **698 passed / 1 skipped / 0 failed** · snapshot **26** · `html-validate` **0** |
+| governance | **8.9 → 8.10** · standard **v2.5 HELD** · counts **unmoved** (predicted, then met) |
+
+⭐⭐ **The probe's green is ATTRIBUTABLE BY MEASUREMENT, not by inference.** The probe was not run
+pre-deploy, so instead the previously-deployed tree was read back: `010cc4f` genuinely carried
+`source_ref: v8.9`, the marketplace promise **×1**, and the old changelog title. ⇒ **every assertion
+was red on the tree that was live** — the difference between *"the probe passes"* and *"the probe
+detects something."*
+
+⚠ **`gate-27` caught `"Operation Lantern"` reaching public copy and was RIGHT TO.** The token is
+allowlisted at the ratified surface (`get-started/what-your-agent-reads/**` · `op_codename`), and the
+**procedural finding** is recorded in the entry itself: the 2026-08-19 rationale had routed *"fixing
+the image's carriage of internal codenames"* forward to *"the next template release"* — **this one** —
+and it was read **at the gate, after the tag**. Past the tag the fix is unavailable, because the
+manifest publishes the immutable tag URL beside a sha256, so editing `.adna/CLAUDE.md` afterwards
+would make vendored content disagree with the tag it cites. ⇒ ***a forward-routed editorial item must
+be a PRE-TAG checklist line in `skill_template_release`, not a note in an allowlist rationale, which is
+only read once the gate has already gone red.*** Carried as owed.
+
+## §8 · Owed, and deliberately not folded in
+
+- **`sweep/jsonld_census.md` has no instrument** — the only remaining agent-reachable build; **its own
+  sitting**, with a red-proof and controls.
+- **R3's fixture** — a false ✅ in every clone. Named at both ends (ours and Hopper's); the repair is a
+  decision (gitignore exception vs renamed fixture), not a mechanical edit.
+- **The dangling `# Spec:` pointer** — removed from the shipped header because it resolved nowhere in
+  `.adna/`; **repointing it at a public URL is not taken here.**
+- **The pre-tag checklist line** for forward-routed editorial items (above).
+- **Two Q3 memos STAGED, not sent** — Hestia (`Home.aDNA/HOME.md:45`), Venus (`Network.aDNA/HOME.md:47`).
