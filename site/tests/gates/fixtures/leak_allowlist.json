@@ -2,7 +2,7 @@
   "_doc": "HAUSSMANN P0.5 (editorial gate, O2) — dated allowlist of REVIEWED, PERMANENT exceptions to the leak lint. This is NOT the debt list: today's genuine leaks live in leak_baseline.json and must go to zero at P1.3. An entry here says 'this token, on this surface, is deliberate public copy'.",
   "_discipline": "Every entry carries surface + pattern + an explicit `tokens` list + rationale + date + reviewed_by. Token-scoped by design: allowlisting `learn/** internal_id` wholesale would let a NEW internal id (e.g. campaign_haussmann) leak into a tutorial unseen. Only the reviewed strings are excused; anything else on the same surface still goes red.",
   "_surface_globs": "`**` matches any path suffix. `index.html` matches the built homepage exactly.",
-  "updated": "2026-08-19",
+  "updated": "2026-09-07",
   "entries": [
     {
       "surface": "index.html",
@@ -207,11 +207,12 @@
       "pattern": "op_codename",
       "tokens": [
         "Operation Distillery",
+        "Operation Lantern",
         "Operation Palimpsest"
       ],
-      "rationale": "As above — verbatim publication of the shipped standard. These codenames appear in the release notes inside .adna/CLAUDE.md and are therefore already in every clone. Token-scoped deliberately: a NEW codename appearing here means the vendored set changed, which is worth a look rather than a blanket pass. NOTE for the next template release: that the shipped image carries internal campaign codenames at all is an editorial finding about the IMAGE, recorded at P2.5 O1 and out of scope to fix here (Workspace Standing Rule 1 — .adna/ is never modified from this vault).",
-      "date": "2026-08-19",
-      "reviewed_by": "agent_rosetta (P2.5 O1)"
+      "rationale": "Verbatim publication of the shipped standard. These codenames appear in the release notes inside .adna/CLAUDE.md and are therefore already in every clone. Token-scoped deliberately: a NEW codename here means the vendored set changed, which is worth a look rather than a blanket pass — and at v8.10 it fired correctly and got one. ⚠ PROCEDURAL FINDING, recorded here because this entry is where the previous one routed it: the 2026-08-19 note said fixing the image's carriage of internal codenames was 'out of scope to fix here … NOTE for the next template release'. This IS that release, and the note was read at the GATE — i.e. after main was pushed and v8.10 tagged. Past the tag the fix is unavailable: the manifest publishes the immutable tag URL alongside a sha256, so editing .adna/CLAUDE.md afterwards would make the vendored content disagree with the tag it cites — trading an editorial nit for a trust defect on the one surface built to be checked. ⇒ a forward-routed editorial item must be a PRE-TAG checklist line in skill_template_release, not a note in an allowlist rationale, which is only read once the gate has already gone red. Carried to the next release as an owed item.",
+      "date": "2026-09-07",
+      "reviewed_by": "agent_rosetta (v8.10 Operation Lantern)"
     },
     {
       "surface": "get-started/what-your-agent-reads/**",
