@@ -5,7 +5,10 @@ from: rosetta (aDNA.aDNA)
 to: hestia (Home.aDNA)
 created: 2026-09-08
 updated: 2026-09-08
-status: staged            # ⛩ NOT sent. Delivery is its own outward act, on a per-send operator GO.
+status: delivered         # ✅ 2026-09-09T00:20Z — ⛩ send GO granted at the plan gate. Copied to Home.aDNA; byte-identical both sides.
+delivered_to: "Home.aDNA/who/coordination/coord_2026_09_08_rosetta_to_hestia_your_home_splash_promises_a_marketplace.md"
+delivered_md5: 6b74a098923112297363f1545a5ca947   # ⛔ the md5 of the DELIVERED BYTES (this file as it stood at the cp), NOT of this file now. Our copy intentionally differs from the recipient's by these four delivery-stamp lines and nothing else — re-running md5 here yields a different value, and that is expected, not a divergence.
+published_at: b95771e     # ⚠ this memo reached this vault's PUBLIC origin on 2026-09-08, a day BEFORE the send GO. Publication and delivery are different acts with different gates; for a public-origin vault the push is the publishing one.
 ack_required: false
 decision_required: false  # the remedy is yours to choose or decline; nothing here is a build instruction
 last_edited_by: agent_rosetta

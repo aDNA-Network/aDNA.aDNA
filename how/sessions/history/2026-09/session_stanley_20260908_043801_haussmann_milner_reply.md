@@ -6,11 +6,11 @@ campaign: campaign_haussmann
 mission: null                # not a mission — an operator-ruled increment on the R-97 / course-deploy precedent
 created: 2026-09-08
 updated: 2026-09-08
-status: active
+status: completed         # closed 2026-09-09 by the following session; its own SITREP was complete, only the lease was left open
 last_edited_by: agent_rosetta
 executor_tier: opus
 token_budget_estimated: 60-90kT
-token_budget_actual:         # ⛔ filled AT THE CLOSE, never reconstructed — the P4.3-class defect, hit four times
+token_budget_actual: UNRECOVERABLE   # ⛔⛔ AND THIS IS THE FIFTH TIME. The field's own comment said "filled AT THE CLOSE, never reconstructed" — and then the session ended without closing its lease, so there was no close at which to fill it. Left UNRECOVERABLE by the following session rather than estimated: a plausible invented number is worse than an honest blank, because it enters the ADR-016 corpus as data. ⭐ The instruction was correct and was followed to the letter; what failed is that it assumes a close happens. A rule conditioned on an event nobody guarantees is not a rule, it is a hope.
 tags: [session, haussmann, coordination, milner, adr_004, wrapper, reply]
 ---
 

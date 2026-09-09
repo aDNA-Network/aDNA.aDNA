@@ -5,13 +5,55 @@ title: "Template-release staging ledger — the hook fold (4.0.1 → 4.3.0), F-w
 campaign: campaign_haussmann
 created: 2026-09-07
 updated: 2026-09-07
-status: proposed          # ⛩ NOT ratified. Every row is a HYPOTHESIS to be re-verified against disk at fire time.
+status: accepted          # ⛩ RATIFIED + FIRED — see the ratification block below. ~~proposed~~ (SO-6: struck, not deleted; every row WAS a hypothesis, and the block records which way each resolved).
 last_edited_by: agent_rosetta
 session: session_stanley_20260907_075718_haussmann_template_release_prep
 tags: [artifact, template_release, ledger, pre_push_sanitize, f_w, f_p7b_as, gate]
 ---
 
 # Template-release staging ledger
+
+## ⛩⛩ RATIFICATION — FIRED AS v8.10 (*Operation Lantern*), recorded 2026-09-09
+
+| Field | Value |
+|---|---|
+| **Decision** | Fire the template release with the payload below, re-ranked per Q2, including P6 and the P8 deploy tail |
+| **Ratified by** | Operator (Stanley), at the 2026-09-07 gate |
+| **Date** | Ruled + fired **2026-09-07**; this record written **2026-09-09** |
+| **Status** | **accepted — and performed**: `aDNA-Network/aDNA` at `3dec601`, tag **`v8.10`** (immutable, verified at the remote) |
+
+> ⛔⛔ **WHY THIS BLOCK EXISTS, AND IT IS THE FINDING.** The gate fired on **2026-09-07** and this
+> ledger still read **`status: proposed` — "6 questions awaiting rulings"** for two days. A reader
+> arriving at the **ratification record itself** to learn what was decided was told **nothing was**.
+> ⭐ This is the campaign's own *index-vs-artifact* class **with the pointer being the decision
+> surface** — the sharpest form, because every other surface in the vault correctly said v8.10 had
+> shipped, and the one document whose entire job is to record the decision was the one that denied it.
+> *A record that is right when written and never re-read is indistinguishable from a wrong one.*
+
+**The six rulings, each DERIVED AT THE OBJECT 2026-09-09 — none reconstructed from the commit
+message, because what a release says it did and what it did are different claims:**
+
+| # | Ruled | Evidence, measured today |
+|---|---|---|
+| **Q1** | **`v8.10`**, not `v9.0`. Standard held at **v2.5** | `.adna/CLAUDE.md` → `version: "8.10"`; tag `v8.10` at the remote |
+| **Q2** | **Re-ranked — the R5/R6 fail-open first**, `F-P7b-as` demoted | hook ships `LAYER_CONTRACT_VERSION=4.3.0` with the R5/R6 predicate; the fail-open is the release record's headline |
+| **Q3** | **YES — fold `F-w`(b)** | `.adna/how/templates/template_node_adna_exemplar/HOME.md.template:54` now offers *"browse the public vault registry"*; the marketplace promise is gone |
+| **Q4** | **YES — ship the fixture** | `test_confidential.yaml` is TRACKED in `.adna` (`git ls-files`), not merely present on disk |
+| **Q5** | **YES — release AND deploy tail together**, before recruitment | `deploy_record: 2026-09-08T03:37:42Z mode=prod tree=a2ad53b` |
+| **Q6** | **DELIVER the Hopper memo** | the memo's own frontmatter: `status: delivered # ✅ 2026-09-08 — ⛩ Q6 ruled DELIVER` |
+
+**Two residues found while deriving the above, named rather than smoothed:**
+
+- ⚠ **`HOME.md.template:31` still says *"marketplace link"*** — a structural layout comment, not a
+  user-facing promise, so `F-w`(b) is genuinely discharged. But the comment now **misdescribes the
+  link it names**, which points at the vault registry. Cosmetic, in the image, **owed to the next
+  release** rather than hand-edited into `.adna/` (Standing Rule 1).
+- ⚠ **Q3's evidence was nearly read wrong.** The first grep for `marketplace` in the shipped
+  template returned **0** — because the path in this ledger's P6 row (`.adna/how/templates/…`) is
+  **not where the file is**; it lives under `template_node_adna_exemplar/`. ⇒ **a zero from a
+  missing file is indistinguishable from a zero meaning "absent"**, convention 16 again, caught only
+  by testing `-f` before believing the count. **The P6 row's path is imprecise and is left as
+  written**, with this correction beside it.
 
 > ⛩ **This is a decision surface, not a plan of record.** Nothing here is ratified, nothing is
 > built, and no `.adna/` byte has been touched (Standing Rule 1). The release campaign directory

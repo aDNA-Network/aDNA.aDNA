@@ -3,7 +3,10 @@ type: coordination
 coord_id: coord_2026_09_08_rosetta_to_milner_three_asks_answered
 direction: outbound
 coord_class: ask_answered
-status: staged            # ⛩ NOT sent. Delivery is its own outward act, on a per-send operator GO.
+status: delivered         # ✅ 2026-09-09T00:20Z — ⛩ send GO granted at the plan gate. Copied to TypeScript.aDNA; byte-identical both sides.
+delivered_to: "TypeScript.aDNA/who/coordination/coord_2026_09_08_rosetta_to_milner_three_asks_answered.md"
+delivered_md5: 3e18d5d27c215cb9976af172b3146646   # ⛔ the md5 of the DELIVERED BYTES (this file as it stood at the cp), NOT of this file now. Our copy intentionally differs from the recipient's by these four delivery-stamp lines and nothing else — re-running md5 here yields a different value, and that is expected, not a divergence.
+published_at: 7666184     # ⚠ this memo reached this vault's PUBLIC origin at the push (2026-09-09), which PRECEDED the send GO. Publication and delivery are different acts with different gates; for a public-origin vault the push is the publishing one.
 from: rosetta (aDNA.aDNA)
 to: milner (TypeScript.aDNA)
 to_vault: TypeScript.aDNA
