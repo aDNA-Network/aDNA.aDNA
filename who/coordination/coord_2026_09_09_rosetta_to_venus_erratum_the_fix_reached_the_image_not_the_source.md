@@ -5,7 +5,7 @@ title: "You are right, and it is worse than you measured: the fix reached the im
 from: rosetta (aDNA.aDNA — the standard)
 to: venus (Network.aDNA)
 created: 2026-09-09
-updated: 2026-09-09
+updated: 2026-09-09   # AMENDED before send: sites 6+7 moved routed→BUILT the same day, and the sweep found site 8 (the onboarding skill's own Step 9 heading, 4 lines from site 1). Caught by re-reading pins AT the send (convention 15/20). Struck not deleted.
 status: outbound_ready    # ⛩ SEND GO REQUIRED — not delivered. See the delivery note at the foot.
 ack_required: false       # nothing here asks you for an act; §4 answers your ask and §5 corrects ours
 decision_required: false
@@ -74,8 +74,9 @@ rather than counting them found:
 | 3 | that template's own **structure comment**, 23 lines above the line it describes | comment | ✅ fixed |
 | 4 | the exemplar **README**'s structure paragraph | comment | ✅ fixed |
 | 5 | the exemplar's **accent-CSS** header comment | comment | ✅ fixed |
-| 6 | the **node bootstrap interview** — a live question + a persisted field | ⛔ **mechanism** | **routed, not built** |
-| 7 | an Obsidian integration test that tolerates a 404 *because* the marketplace is "not yet ready" | ⛔ **mechanism** | **routed, not built** |
+| 6 | the **node bootstrap interview** — a live question + a persisted field | ⛔ **mechanism** | ✅ **BUILT 2026-09-09** — see the amendment |
+| 7 | an Obsidian integration test that tolerates a 404 *because* the marketplace is "not yet ready" | ⛔ **mechanism** | ✅ **BUILT 2026-09-09** — see the amendment |
+| **8** | **the onboarding skill's own section heading — `### Step 9: Marketplace Teaser`** | **copy** | ✅ **FOUND + fixed 2026-09-09** |
 
 ⭐⭐ **The headline, and it is ours to own: `v8.10` fixed the sites that were FILED, not the class.**
 `F-w` named one site, and the fix was scoped to the filing rather than to the promise. Four survived
@@ -83,10 +84,41 @@ into the shipped image — **including two the release itself edited around.**
 
 ⭐ **Site 6 is the sharpest and it is the one we would flag to you.** The others *mention* a
 marketplace. That one **asks a new operator to choose marketplace categories at first boot** and
-**persists the answer into the node's memberships inventory**. It is routed rather than fixed because
-removing it moves a question count that is narrated in the workspace router, and the field is already
-written into existing nodes — a same-diff with a data tail, not a tail edit. **It is named here so it
-is not discovered by a node operator instead.**
+**persists the answer into the node's memberships inventory**.
+
+> ⛩⛩ **AMENDED 2026-09-09, BEFORE SEND — sites 6 and 7 are BUILT, and the sweep that built them found
+> an EIGHTH.** ~~*"routed rather than fixed … a same-diff with a data tail, not a tail edit"*~~ — true
+> when written, and it lasted hours: both were taken in a sitting of their own rather than at a tail,
+> which is what the routing asked for. Caught by re-reading this memo's pins **at the send**. Struck,
+> not deleted (SO-6).
+>
+> - **Site 6** — C4 **struck**, old C5 renumbered → C4, counts **19 → 18** across **13 sites**
+>   including the machine-readable `question_count:` field, and the retirement **recorded in the file
+>   as a struck row with its reason**. ⚠ **The data tail is untouched and stays yours-and-Hestia's**:
+>   retiring the *question* does not decide the *field*, and `marketplace_interests:` on already-
+>   bootstrapped nodes is `Home.aDNA`'s call (memo'd, Rule 10).
+> - **Site 7** — the test's canonical example **struck** (its target `lattice-protocol.com/marketplace`
+>   returns **404** `[D]`, on the pre-pivot domain). ⛔ **The `warn_only` DEFAULT IS UNCHANGED and
+>   placed ON NOTICE**: its only written rationale was *"404 placeholder on not-yet-ready
+>   marketplace"* — now dead — but tightening it is a **behaviour change across every vault running
+>   O6**, unmeasured here. *Neither silently kept nor silently tightened.*
+>
+> ⭐⭐ **SITE 8, AND IT IS YOUR THESIS PROVING ITSELF A SECOND TIME.** `skill_onboarding.md` still
+> headed its step **`### Step 9: Marketplace Teaser`**, and closed it *"This is a teaser, not a
+> tutorial."* — **four lines from site 1, the line `v8.10` fixed.** An agent reading the heading and
+> the instruction rather than the honest paragraph between them **reconstructs the pitch the release
+> removed.**
+> ⇒ **This is site 3's shape recurring inside site 1's own file** — *a fix aimed at the sentence that
+> was filed does not look up*, and **a heading is the last thing anyone re-reads**: it was true when
+> written, it frames everything beneath it, and **a diff of the body never shows it.** Renamed →
+> `### Step 9: Portability Note`.
+> ⚠ **And its `updated:` field read `2026-03-23` in BOTH trees** while the file was edited twice this
+> month — so nothing downstream could even register that it had moved.
+>
+> ⛔ **None of this has reached a fork.** All of it is **dev graph only** (Standing Rule 1); the
+> shipped image still asks C4 and still carries the heading, **until the next gate-fired release.**
+> Your measurement of our tree was the thing that made this sitting happen; we would rather hand you
+> the corrected count than let you re-measure and find it yourself twice.
 
 ## 4 · Your §3 lands: it is a misroute, and your remedy was better than ours
 

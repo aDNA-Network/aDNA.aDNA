@@ -2394,3 +2394,154 @@ phantom claim row was minted (§22.4's trap), checked by re-deriving rather than
 ⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order. This section is now that
 table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and
 it must be a PARSEABLE TABLE, not a prose sentence.**
+
+## §25 — THE OWED QUEUE, 2026-09-09: three findings minted, and one alarm withdrawn
+
+Worked under the live `P5.1` deploy hold, on the agent-reachable owed items no index held. Nothing in
+this section touches `site/`; nothing here is deployable. **Three `F-` rows are minted by being written
+here** (convention 19's companion — naming an ID elsewhere does not create it), and **one finding the
+handoff predicted is withdrawn at the object.**
+
+⛩ **Letter sequence derived, not typed**: `grep -rhoE '\bF-[a-z]{1,2}\b'` over `CLAUDE.md` +
+this register + `missions/*.md` returns **28** ids (`F-a`…`F-z`, `F-aa`, `F-ab`) `[D] 2026-09-09`.
+Next free = **`F-ac`**.
+
+### §25.1 `F-ac` — `skill_project_fork.md` differs between the dev graph and the image, and step (b.2) structurally cannot see it
+
+| | |
+|---|---|
+| **Status** | `live` |
+| **Surface** | `aDNA.aDNA/how/skills/skill_project_fork.md` (234 lines) vs `.adna/how/skills/skill_project_fork.md` (260) `[D] 2026-09-09` |
+| **Class** | `F-w` inverted — *the fix reaches the source and not the image* |
+
+The image carries a **post-v7.0 fork-cleanup block, R1–R7** — `rm -rf .git` · `rm -rf .github` ·
+`rm -f README.md` · **`rm -f LICENSE`** · R6/R7 no-ops — plus ADR-009 name validation, the
+orphan-plugin-id lint, and the ADR-042 `{{persona}}` token. **None of it ever entered the dev graph.**
+
+⭐ **Why it persists invisibly.** `skill_template_release` step (b) *declares* the dev graph the source
+of truth; step (b.2) *makes* that true — **but only for the payload paths of the release it runs in**.
+`skill_project_fork.md` has never been a payload, so **(b.2) has never looked at it**, and no other
+check compares the two trees.
+
+⇒ **Live consequence, and it is the operative one for this sitting's R4 repair: forks run `.adna/`.**
+An edit made only in the dev graph reaches **no fork** until a release carries that path.
+
+⚠ **A false alarm this desk raised and withdrew before it reached a memo, recorded because the near-miss
+is the instructive part.** The first reading was that these 26 lines were **scheduled for deletion** by
+step (e)'s `rsync -a --delete`. **They are not.** Step (b) baselines on *"the **current released tree**
+… apply the ratified deltas — **never reconstruct from scratch**"* (`:82`) — the released tree
+**accumulates**. The error was reading step (b) off step (e). Had it shipped it would have been the
+fourth wrong instrument-claim from this desk in a month.
+
+⛩ **Disposition: routed, not fixed.** Route the R4 repair in as a **payload item** of the next release;
+(b.2)'s `diff` is a hard gate (*"must be empty, modulo deliberate image-only deltas … Silence is not a
+reason"*), so the 26-line delta lands **in front of the operator at a release gate**, which is where a
+reconciliation of this size belongs. **Nothing is built** (conventions 15–20, seventh ruling).
+
+### §25.2 `F-ad` — C5 asks for a license, names its consumer, and the consumer has never consumed it
+
+| | |
+|---|---|
+| **Status** | `live` — partially discharged this sitting (the consumer now reads the field; the field's own producers are unrepaired) |
+| **Surface** | `skill_node_bootstrap_interview.md` C5 · `skill_project_fork.md` (both trees) · `Home.aDNA/who/identity/identity_node.yaml` |
+| **Class** | a **declared consumer that does not consume** — worse than a gap, because the row reads as covered |
+
+`skill_node_bootstrap_interview` **C5** has collected *"Default license for new vaults you create on
+this node"* since Hearthstone P4, writes `identity_node.yaml` `default_new_vault_license:`, and names
+**`skill_project_fork.md` as its consumer on the row's own face**.
+
+**Measured `[D] 2026-09-09`, and the chain is broken at every link:**
+
+| Link | State |
+|---|---|
+| C5 asks | ✅ present, ~20 vaults carry the interview skill |
+| answer reaches `identity_node.yaml` | ⛔ **this node's `Home.aDNA` does not carry the field at all**; exactly one vault on the node holds a value (`AWSBootstrap.aDNA`, `private`) |
+| `skill_project_fork` consumes it | ⛔ **zero references, in either tree, fleet-wide** (`grep -rln default_new_vault_license ~/aDNA` → the interview skill in ~20 vaults, the fork skill in **none**) |
+
+⭐⭐ **This corrects the diagnosis in Hopper's 2026-08-23 memo without touching its finding or its
+measurement.** The memo says *"nothing downstream ever asks the project to pick one."* **Something
+asks.** The defect is that the answer goes nowhere and the named consumer never reads it — which
+plausibly explains how this survived an audit at all: *"does anything ask about licensing?"* finds C5,
+sees a named consumer, and stops. Their measurement stands unaltered — at least **18 of 19**
+Codeberg-private and **3 of 4** GitHub-public repos unlicensed at `HEAD`, breaking ADR-013's FOSS-keyed
+placement.
+
+⭐ **And C5 is itself the textbook case of the rule the repair is built on** — *key a condition to the
+observable it waits for, never to a phase expected to deliver it; a phase can complete by deciding.*
+C5 is a **prompt**: it completed on every node bootstrap for months and delivered nothing readable. A
+second prompt would have been the same shape twice. **The repair is the `license:` field in
+`MANIFEST.md`** — an observable a health check can count — with the prompt as convenience.
+
+**Discharged this sitting (dev graph only):** `skill_project_fork.md` **Step 1.5** now reads
+`default_new_vault_license` first and asks only when it is absent; **Step 4** writes `license:`;
+**Step 4.6** gates on the field's existence, red-proven **3/3** (absent → `KIT-INCOMPLETE` fires ·
+`MIT` → passes, NOTE silent · `unset` → passes with the NOTE firing — the three states are
+**distinguishable**, which is the design point: *"undecided"* and *"nobody asked"* must not look alike).
+⚠ **Undischarged:** the field's absence from `Home.aDNA` is **Hestia's** surface (Rule 10), and the
+repair **reaches no fork until a release** (`F-ac`).
+
+### §25.3 `F-ae` — the `jsonld_census` absence-check read a surface that cannot contain the answer
+
+| | |
+|---|---|
+| **Status** | `live` — instrument defect; **the site finding it produced is WITHDRAWN** |
+| **Surface** | `scripts/jsonld_census.mjs`, run 1 (2026-09-09) |
+| **Class** | convention 17's 2026-08-26 amendment — *the surface must match the claim's own verb* |
+
+**The alarm** carried into `STATE.md`: template class `researchers` is **GONE** — `/researchers/`
+absent from `dist/` **and** `site/src/pages/` — *"retired at some point in the 24 days with nothing able
+to say so."*
+
+⛔ **The second half is false, and so is the alarm.** Measured `[D] 2026-09-09`:
+
+| Question | Answer |
+|---|---|
+| Was it deliberate? | **Yes** — `301daef`, *"HAUSSMANN P2.2 COMPLETE: ADR-049 Option A implemented — nav 7, 11 redirects, one audience taxonomy"*; deleted `pages/researchers/index.astro` + `data/researchers.ts` + `adopter-researcher.mdx` |
+| Was anything able to say so? | **Three things** — the commit, the mission close, and ADR-049 |
+| Is the route reachable? | **Yes, live on the alias**: `/researchers` and `/researchers/` → **301** → `https://adna.network/use-cases/research-lab/` |
+
+⇒ ***A retired-and-redirected route is CORRECTLY absent from `src/pages/` and `dist/`.*** The census
+asserted an absence over two surfaces, **neither of which can contain a 301**, and concluded a class had
+vanished untracked. *"Is this route reachable?"* is a question about the **live alias and the redirect
+table**; *"does a page source exist?"* is what was actually measured.
+
+⭐⭐ **The same run was wrong in BOTH directions, which is the strongest available argument for stating
+the question before picking the surface.** Its `3 → 1` JSON-LD delta was **pessimistic-stale** — a
+24-day-old improvement nobody had seen, and STATE drew the right lesson (*a stale instrument understates
+as readily as it overstates*). This limb is **alarmist-wrong** on the same run of the same instrument.
+**Neither direction is the safe default; only naming the verb resolves it.**
+
+⇒ This desk's instruments-wrong-before-their-subjects count advances to **sixteen**.
+⛔ **No checker** (conventions 15–20, eighth ruling): the census's own remedy is a **habit** — an
+absence claim about *reachability* probes the alias. Building a redirect-aware census limb would be the
+seventh instrument authored here in a month, and the count above is the argument.
+
+### §25.4 What was NOT done, stated so nothing is inferred
+
+- **No `.adna/` edit.** Every repair above is **dev-graph only** — Standing Rule 1, and step (e)'s
+  `rsync --delete` would clobber a hand edit anyway. `skill_node_bootstrap_interview.md:27` states the
+  rule in its own voice: *"Edit here, never `.adna/`."*
+- **No deploy.** The `P5.1` hold is live; prod stays at `a2ad53b`.
+- **No `Home.aDNA` / `inventory_memberships.yaml` edit** — the `marketplace_interests:` data tail on
+  already-bootstrapped nodes is Hestia's call, memo'd (Rule 10 / convention 5).
+- **The O6 `warn_only` default is UNCHANGED** — its rationale is dead, but tightening it is a
+  cross-vault behaviour change this sitting has not measured. Placed **on notice** in-file, with the
+  open question dated. *Neither silently kept nor silently tightened.*
+
+### §25.5 Counts — derived last
+
+| Measure | Value |
+|---|---|
+| Physical table rows | **189** |
+| **Unique ids** | **174** (14 `G-*` + 160 `R-*`, `R-11`…`R-170`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, **re-run after §25 was written**, not typed.
+⭐ **Unchanged from §24.5, and that is the correct result** — §25 mints three `F-` rows and **zero**
+`G-*`/`R-*` claim rows. The tables in §25.2 and §25.3 are evidence tables, not claim rows; the count
+holding at 189 is what **proves** no phantom claim row was minted (§22.4's trap), checked by
+re-deriving rather than by reasoning.
+
+⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order. This section is now that
+table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and
+it must be a PARSEABLE TABLE, not a prose sentence.**

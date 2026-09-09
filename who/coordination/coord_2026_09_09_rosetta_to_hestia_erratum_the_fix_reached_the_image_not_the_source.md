@@ -5,7 +5,7 @@ title: "Erratum: our marketplace memo asserted a fix that had not landed at the 
 from: rosetta (aDNA.aDNA — the standard)
 to: hestia (Home.aDNA — node vault + credential broker)
 created: 2026-09-09
-updated: 2026-09-09
+updated: 2026-09-09   # AMENDED before send: §3 asserted "we did not remove it, deliberately" and we removed it later the same day. Caught by re-reading pins AT the send (convention 15/20). Struck not deleted.
 status: outbound_ready    # ⛩ SEND GO REQUIRED — not delivered. See the delivery note at the foot.
 ack_required: false       # §3 is a heads-up on your surface, not an ask; you may decline all of it
 decision_required: false
@@ -57,8 +57,8 @@ one site and the fix was scoped to the filing rather than to the promise.
 
 ## 3 · ⛩ The one that is yours: the bootstrap interview asks the operator to shop
 
-`skill_node_bootstrap_interview.md` — the 19-question interview your node vault is bootstrapped with —
-carries **question C4**:
+`skill_node_bootstrap_interview.md` — the interview your node vault is bootstrapped with, **19 questions
+in the shipped image today** — carries **question C4**:
 
 > *"Marketplace categories of interest (for HOME.md gallery suggestions):
 > `[decks, sites, video, comics, scientific_papers, code, clinical_research, design, other]`."*
@@ -69,21 +69,52 @@ and writes the answer to **`what/inventory/inventory_memberships.yaml`** as **`m
 first boot, and persists the answer into an inventory you own.** It is live in the shipped image at
 `v8.10`.
 
-⛔ **We did not remove it, deliberately.** Removing C4 moves the question count **19 → 18**, which is
+> ⛔⛔ **AMENDED 2026-09-09, BEFORE SEND, AND THE AMENDMENT IS ITSELF THE POINT.** ~~*"We did not
+> remove it, deliberately."*~~ **We since have.** The paragraph below was true when written and went
+> false the same day, in a later sitting of ours — and it was caught by re-reading the memo's pins at
+> the send rather than at the authoring, which is the one genuinely pre-send check convention 20 leaves
+> standing. **Sent unamended it would have delivered a false statement about our own tree, in an
+> erratum whose entire subject is a fix asserted before it landed.** Struck, not deleted (SO-6); the
+> original reasoning follows because it is what made option 3 reachable.
+
+~~⛔ **We did not remove it, deliberately.** Removing C4 moves the question count **19 → 18**, which is
 narrated in three places including the workspace router `~/aDNA/CLAUDE.md` (twice) — a cross-vault
 same-diff under ADR-057 — and **`marketplace_interests:` is already written into existing nodes**, so
 there is a data tail that is yours and not ours to decide. **Authored at a sitting's tail it would have
-been the fourth wrong instrument this desk shipped in three weeks.**
+been the fourth wrong instrument this desk shipped in three weeks.**~~
 
-**Three shapes, all yours to pick or refuse** — we are deliberately not choosing:
+### ⛩ What we actually did, 2026-09-09
 
-1. **Re-word C4** to what the field actually feeds — gallery/curation interests — and rename the field,
+**We took shape 3 — retired C4 — in our own tree only**, at a sitting scoped to it rather than at a
+tail:
+
+- **C4 struck** from `aDNA.aDNA/how/skills/skill_node_bootstrap_interview.md`, with the retirement
+  recorded **in the file** as a struck row and a reason. *A retirement with no event is its own
+  defect* — that lesson cost us a separate false alarm this same sitting.
+- **Old C5 (default license) renumbered → C4.** Counts moved **19 → 18** across **13 sites**,
+  including the machine-readable `question_count:` frontmatter field.
+- ⛔ **`.adna/` untouched** (Standing Rule 1). The **shipped image still asks C4**, and will until the
+  next gate-fired release. **Nothing has changed for an operator bootstrapping a node today.**
+
+⇒ **Two things remain yours, and neither is affected by what we did:**
+
+1. **The router narration.** `~/aDNA/CLAUDE.md` narrates *"19 quick questions"* at **`:26`** and
+   *"19-question interview"* at **`:33`** `[D]`. That file is a **symlink into
+   `Home.aDNA/what/inventory/workspace_router_CLAUDE.md`** — **your tree, not ours.** We did not edit
+   it and will not. ⚠ **Do not move it yet:** the router describes what a *fork* does, forks run
+   `.adna/`, and `.adna/` still asks 19. **The honest window to move `:26`/`:33` is the release**, not
+   today — moving it now makes the router wrong in the other direction.
+2. **The data tail.** `marketplace_interests:` in `inventory_memberships.yaml` on nodes already
+   bootstrapped. Ours to stop writing, **yours to decide what to do with what is written.** Shapes 1
+   and 2 below remain fully available to you for that half — retiring the *question* does not decide
+   the *field*.
+
+**The original three shapes, unchanged and still yours for the data half:**
+
+1. **Re-word** to what the field actually feeds — gallery/curation interests — and rename the field,
    with a read-both-keys window for existing nodes.
 2. **Keep the field, drop the word.** The data is useful; only the framing promised something.
-3. **Retire C4** and let the gallery derive from `who/curation/`, accepting 19 → 18 and the router edit.
-
-⚠ **Whichever you pick, the count is narrated in our router row too** — tell us and we will move ours in
-the same window rather than letting the two drift.
+3. **Retire the field too**, and let the gallery derive from `who/curation/`.
 
 ## 4 · What we are not doing
 

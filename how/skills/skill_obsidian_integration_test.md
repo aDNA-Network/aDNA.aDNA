@@ -2,7 +2,7 @@
 type: skill
 skill_type: agent
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-09-09   # O6: the M-LWX-03 marketplace example STRUCK (target `lattice-protocol.com/marketplace` = 404 `[D]`, pre-pivot domain) — the defect is that a test's canonical example asserted a marketplace link SHOULD BE CLICKABLE, encoding F-w's promise as a test expectation, the most durable place to put one. ⛔ The `warn_only` DEFAULT IS UNCHANGED but placed ON NOTICE: its only written rationale was the marketplace placeholder and that rationale is now dead; tightening it is a cross-vault behaviour change this sitting has not measured. Open question dated and owned in-file.
 status: active
 category: obsidian_operations
 trigger: "Run vault-agnostic Obsidian deployment integration test (O1-O7) against a target vault. Validates post-fork or post-setup integrity at seven operator-side dimensions. Vault-agnostic checklist + per-vault profile customization slots. Delegates binary-presence (O4) to skill_obsidian_canonicalize.md --verify (cross-skill primitive composition; first explicit instance in M3.x cohort)."
@@ -345,12 +345,19 @@ fi
 
 **What it tests**: external `https://...` or `http://...` URLs in the home page return non-5xx HTTP status.
 
-**Source from M-LWX-03**: "Marketplace link clickable → browser opens to `https://lattice-protocol.com/marketplace`."
+**Source from M-LWX-03**: ~~"Marketplace link clickable → browser opens to `https://lattice-protocol.com/marketplace`."~~
+
+> ⛩ **The example is retired 2026-09-09, and the reason is not that it aged — it is `F-w`'s family.** `[D] 2026-09-09`: that URL returns **404**, and `lattice-protocol.com` is the pre-pivot brand domain (the network's face is `adna.network`). But the defect is not the dead link. **It is that a test's canonical example asserted a marketplace link *should be clickable*** — encoding a promise the product does not keep as a **test expectation**, which is the most durable place to put one. Struck alongside the same sitting's `skill_node_bootstrap_interview` C4 and `v8.10`'s `skill_onboarding` fix; this is the **seventh** site of the same promise and the only one that lived in a *test*.
+> **Any non-404 external link in the vault's home page serves as the example.** No replacement URL is pinned here — a pinned example is what went stale (convention 15).
 
 **Per-profile customization** — `external_link_policy`:
 
 - `skip` — skip O6 entirely (PASS unconditionally with note)
-- `warn_only` — 4xx reports WARN, not FAIL (default — 404 placeholder on not-yet-ready marketplace is acceptable)
+- `warn_only` — 4xx reports WARN, not FAIL **(default, and the default is RETAINED — but its stated justification is now dead; see below)**
+
+> ⚠⚠ **THE DEFAULT IS UNJUSTIFIED AS OF 2026-09-09 AND IS DELIBERATELY NOT CHANGED HERE.** Its only written rationale was *"404 placeholder on not-yet-ready marketplace is acceptable"* — a marketplace that **is not coming**, whose promise this sitting struck from its remaining sites. ⇒ **the tolerance now carries a retired promise forward as a test rationale**, which is `F-w` surviving inside the instrument that was supposed to check things.
+> ⛔ **Not silently tightened, and not silently kept.** Flipping the default to `fail_on_4xx` is a **behaviour change across every vault that runs this suite** (O6 is vault-agnostic by design) and could turn peers red for 404s that have nothing to do with the marketplace — a blast radius this sitting has neither measured nor been asked to take. Keeping it *without saying so* would leave a default whose only reason is false.
+> ⇒ ⛩ **Open question, owned and dated, for whoever next runs an Obsidian-deployment gate:** *does O6 still want a permissive default, and on what reason?* Either supply a new justification or tighten it — **but measure the 4xx population across consuming vaults first.** Until then the default stands **on notice, not on its old reason.**
 - `fail_on_4xx` — 4xx reports FAIL
 
 **Vault-agnostic shape**:

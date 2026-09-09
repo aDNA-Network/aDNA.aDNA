@@ -313,7 +313,7 @@ Per-check results:
   O3  Content tables enumerate                       PASS  (1 assertion in profile; 21 rows confirmed)
   O4  Plugin binary-presence (DELEGATE → T6)         PASS  Enabled: 16 / Installed: 16 / Missing: 0
   O5  Cross-vault links (REST + MCP)                 PASS  (4 links checked via MCP file-lookup)
-  O6  External links (DELEGATE → T6 curl)            WARN  (1 link 404; marketplace placeholder)
+  O6  External links (DELEGATE → T6 curl)            WARN  (1 link 404; see O6 policy note)
   O7  Theme + accent (REST API)                       PASS  (Tokyo Night + #663399)
 
 Agent-driven inspection: 5/5 PASS agent-driven (O4 + O6 DELEGATED → T6); 1 WARN non-fatal per default policy

@@ -2,12 +2,12 @@
 type: skill
 skill_type: agent
 created: 2026-03-23
-updated: 2026-07-24
+updated: 2026-09-09   # Step 1.5 added — R4's missing half: the fork now ASKS which license the project takes, and records it as a `license:` field in MANIFEST.md (an observable a health check can read) rather than only as a prompt (a phase that completes by deciding). Answers Hopper's 2026-08-23 ask, unanswered 16 days; measured cause = at least 18/19 Codeberg-private + 3/4 GitHub-public repos unlicensed at HEAD, breaking ADR-013's FOSS-keyed host placement. ⭐⭐ AND THE DIAGNOSIS IS CORRECTED, not merely implemented: the ask was NOT missing. `skill_node_bootstrap_interview` **C5** has collected `default_new_vault_license:` since Hearthstone P4 and names THIS SKILL as its consumer on the row's face — and this skill has never referenced it, in either tree, fleet-wide `[D]`; this node's own `Home.aDNA/identity_node.yaml` does not even carry the field. A declared consumer that does not consume, which is worse than a gap because the row reads as covered. Step 1.5 now READS that field first and only asks when it is absent — wiring the existing mechanism rather than adding a parallel one. ⛔ Authored in the DEV GRAPH ONLY — `.adna/` is never edited directly (Standing Rule 1; and step (e)'s `rsync --delete` would clobber it). Reaches forks at the next gate-fired release, NOT before. Step 3 carries a divergence note: the image's R1–R7 fork-cleanup block (incl. the `rm -f LICENSE` this repairs) never entered the dev graph.
 status: active
 category: onboarding
 trigger: "Root CLAUDE.md project creation flow — user wants to create a new project"
 last_edited_by: agent_rosetta
-tags: [skill, project, fork, onboarding, lattice, exemplar_home, hearthstone_p4]
+tags: [skill, project, fork, onboarding, lattice, exemplar_home, hearthstone_p4, licensing, r4, adr_013]
 
 requirements:
   tools: []
@@ -70,6 +70,37 @@ Validate the project name:
 
 **Home-class fork**: `project_name = Home` (or a `--home` flag) is a recognized special class — it creates the per-node operational vault `Home.aDNA/` and triggers the Hestia governance install in **Step 3.5**. It is normally invoked by the workspace router's Step 0.3 "offer to bootstrap Home" chain (followed by `skill_inventory_refresh` → `skill_node_bootstrap_interview` → `skill_node_health_check`).
 
+### Step 1.5: Ask which license the project takes
+
+**R4 strips the template's `LICENSE` at fork — correctly.** A template must not impose its license on every downstream project. **This step is the other half: the choice must be *recorded*.** Without it a project is born unlicensed **by design** and then placed on a host whose ToS assumes it is not.
+
+**First read the node default — do not ask for what the node already answered:**
+
+```bash
+grep '^default_new_vault_license:' ~/aDNA/Home.aDNA/who/identity/identity_node.yaml
+```
+
+- **Field present** → use its value as the offered default (`private` maps to `license: unset` in `MANIFEST.md` — *private* is a posture, not an SPDX identifier). Confirm rather than re-ask, per this vault's standing never-re-ask-what-is-known rule.
+- **Field absent, or no `Home.aDNA`** → ask:
+
+> "This project needs a license. It won't inherit one from the template — that's deliberate, so the choice is yours. **MIT** is the network default for open work. If this is private or proprietary, or you'd rather decide later, say so and I'll record `unset`. Note that **`unset` restricts where it can be hosted**: ADR-013 places FOSS-bound work on Codeberg and released-FOSS on GitHub-public, and both key off an actual license."
+
+Record the answer as `license:` in `MANIFEST.md` at **Step 4** — an SPDX identifier (`MIT`, `Apache-2.0`, `BSL-1.1`, …) or the literal `unset`.
+
+> ⛔⛔ **READ THIS BEFORE ASSUMING THE NODE DEFAULT WILL BE THERE — the wiring above is being connected here for the first time, and the disconnection is the actual defect.**
+> `skill_node_bootstrap_interview.md` **C5** has asked *"Default license for new vaults you create on this node"* since Hearthstone P4, writes `identity_node.yaml` `default_new_vault_license:`, and names **`skill_project_fork.md` as its consumer on the row's own face**. `[D] 2026-09-09`: **this skill has never referenced that field, in either tree, and the reference is absent fleet-wide** — `grep -rln default_new_vault_license ~/aDNA` returns the interview skill in ~20 vaults and **the fork skill in none**.
+> ⚠ **And the chain is broken at every link, not just this one:** this node's own `Home.aDNA/who/identity/identity_node.yaml` **does not carry the field at all** `[D]`. Exactly one vault on the node holds a value (`AWSBootstrap.aDNA`, `private`).
+> ⇒ ***The defect was never "nothing asks."*** Something asks, names its consumer, and the consumer never consumed. **That is worse than a gap, because the row reads as covered**: an audit of *"does anything ask about licensing?"* finds C5, sees a named consumer, and stops — which is plausibly why this survived a measurement that scored **at least 18 of 19** Codeberg-private and **3 of 4** GitHub-public repos unlicensed at `HEAD`.
+> *(Correcting Hopper's diagnosis, not their finding: the finding is right and the measurement is theirs. `Git.aDNA/what/inventory/foss_predicate_measurement.md`, 2026-08-24.)*
+
+⛔ **`unset` is a valid, recorded answer — never a blank and never a skipped field.** *"Undecided"* and *"nobody asked"* must not look identical downstream, and a missing field cannot tell them apart. Write the field either way.
+
+> ⭐ **Why the repair is a *field* and not another prompt** — and C5 is why this needed saying twice. The reasoning is Hopper's (`Git.aDNA`) and belongs on the skill's face: ***key a condition to the observable it waits for, never to a phase expected to deliver it — a phase can complete by deciding.*** **C5 is a prompt, and it is exactly what a phase-keyed condition looks like when it fails**: it completed, on every node bootstrap, for months, and delivered nothing that any later step could read. A second prompt here would be the same shape a second time. The `license:` field in `MANIFEST.md` is an **observable**: `skill_node_health_check` can count `license: unset` across a node, and the ADR-013 placement predicate finally has something to read. **The prompt is convenience; the field is the repair.**
+>
+> ⚠ **The two exceptions in the measurement make the point:** `Exchange.aDNA` (MIT) and `Astro.aDNA` (BSL-1.1) are the only licensed vaults, and they are exactly the two where a human made an explicit licensing decision — *the mechanism works whenever it is invoked; it was simply never invoked.* The public lane is the worse one: it is being distributed **now** under default copyright, which reserves all rights and grants no permission to read, fork, or reuse.
+>
+> ⛔ **Out of scope here, deliberately:** *which* license a given project should take is an org/legal call, not this skill's; and remediating already-published unlicensed repos is downstream of that call. This step establishes the predicate. It does not adjudicate it.
+
 ### Step 2: Confirm Target Location
 
 The target directory is `<workspace_root>/<project_name>.aDNA/` (the `.aDNA` suffix marks it as an aDNA project — see Standard §3.5).
@@ -97,6 +128,27 @@ rm -f .obsidian/workspace.json .obsidian/graph.json
 ```
 
 Note: `.adna/` has no `.git/` directory (it's inside the parent repo), so no git cleanup needed.
+
+> ⛔⛔ **THIS STEP IS BEHIND THE SHIPPED IMAGE, AND STEP 1.5 REFERS TO A RULE THAT IS NOT ON THIS PAGE.**
+> `[D] 2026-09-09` The image's copy (`.adna/how/skills/skill_project_fork.md`, 260 lines vs this file's
+> 234) carries a **post-v7.0 fork-cleanup block, R1–R7**, that never entered the dev graph:
+> `rm -rf .git` (R1) · `rm -rf .github` (R2) · `rm -f README.md` (R3) · **`rm -f LICENSE` (R4)** · R6/R7
+> no-ops. It also carries ADR-009 name validation, the orphan-plugin-id lint, and the ADR-042
+> `{{persona}}` token. **The R4 that Step 1.5 above repairs lives in the image, not here** — noted at the
+> point of inconsistency rather than left for a reader to trip over.
+>
+> ⚠ **The direction matters and is easy to get backwards.** These lines are **not** at risk from a
+> release: `skill_template_release` step (b) baselines on *"the current released tree … apply the
+> ratified deltas — never reconstruct from scratch"*, so the released tree **accumulates** and does not
+> get rebuilt from this file. What is true is the inverse — **forks run `.adna/`, so an edit made only
+> here reaches no fork**, including Step 1.5 above, until a release carries this path as a payload.
+>
+> ⇒ **Disposition: routed, not fixed here.** Step (b.2)'s `diff` is a hard gate — *"must be empty, modulo
+> deliberate image-only deltas … Silence is not a reason"* — so routing this repair in as a **payload
+> item** puts the 26-line delta in front of the operator at a release gate, which is where a
+> reconciliation of this size belongs. Reconciling it inside a licensing repair would be the same
+> "rides in as a side effect" this desk was asked not to do. Finding:
+> [[finding_fork_skill_dev_image_divergence]].
 
 This gives the new project:
 - The full `who/what/how/` triad structure
@@ -132,6 +184,7 @@ Edit the forked project's governance files to set up first-run detection:
 - Remove `role: template` from frontmatter (or delete the field entirely)
 - Set `last_edited_by: agent_init`
 - Set `updated: <today's date>`
+- **Set `license:` to the Step 1.5 answer** — an SPDX identifier or the literal `unset`. The template ships `license: unset`, so a fork that skipped Step 1.5 is *visible* rather than silent. ⛔ Never delete the field.
 - If the user provided a project description in Step 1, update the project description section
 
 **STATE.md:**
@@ -170,13 +223,19 @@ Before the fork is declared done, verify the **4-file root governance kit** is p
 |----------|------|-----------------------|
 | `CLAUDE.md` | master agent context + first-run detection | yes (Step 4) |
 | `AGENTS.md` | root agent-orientation ladder (root → layer → local) | yes (Step 4) |
-| `MANIFEST.md` | project overview, `role: template` stripped | yes (Step 4) |
+| `MANIFEST.md` | project overview, `role: template` stripped, **`license:` recorded** | yes (Step 4) |
 | `STATE.md` | operational snapshot | yes (Step 4) |
 
 ```bash
 for f in CLAUDE.md AGENTS.md MANIFEST.md STATE.md; do
   test -f "<project_name>.aDNA/$f" || echo "KIT-INCOMPLETE: missing $f"
 done
+
+# License predicate (Step 1.5) — the field must EXIST. Its value may legitimately be `unset`.
+grep -q '^license:' "<project_name>.aDNA/MANIFEST.md" \
+  || echo "KIT-INCOMPLETE: MANIFEST.md carries no license: field (Step 1.5 was skipped)"
+grep -q '^license: unset' "<project_name>.aDNA/MANIFEST.md" \
+  && echo "NOTE: license is unset — ADR-013 host placement cannot be established until it is decided"
 ```
 
 Any `KIT-INCOMPLETE` line is a fork failure — re-copy the missing file from `.adna/` and re-stamp it `agent_init` before proceeding. The Step 3 `cp -r .adna/` normally carries all four; this gate catches the historical class where a fork came through a non-standard path and silently shipped without a root `AGENTS.md` (Operation Clear Hearth found 10 active graphs that needed hand-backfill — the kit outcome had depended on which fork path a vault came through, not on policy).

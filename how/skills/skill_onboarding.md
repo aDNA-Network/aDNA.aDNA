@@ -2,7 +2,7 @@
 type: skill
 skill_type: agent
 created: 2026-02-19
-updated: 2026-03-23
+updated: 2026-09-09   # Step 9 renamed `Marketplace Teaser` → `Portability Note`; the *"this is a teaser"* instruction struck. `v8.10` (image, 09-07) and `c5ff7da` (dev graph, 09-09) each rewrote this step's BODY to be honest and **each left the heading naming the thing** — F-w's eighth site, in the file the fix edited, four lines from the line it fixed. ⛔ DEV GRAPH ONLY (Standing Rule 1); the image still carries the heading and reaches parity at the next release. ⚠ AND THIS FIELD WAS ITSELF STALE: it read `2026-03-23` in BOTH trees while the file was edited twice this month — G41d's rule (*"`updated:` claims the content was reviewed that day"*) breached inside the file, which is why the two body fixes could land without anything downstream registering that the file had moved.
 status: active
 category: onboarding
 trigger: "First-run detection in CLAUDE.md indicates uncustomized forked project (no role: template, last_edited_by: agent_init)"
@@ -201,13 +201,17 @@ Conversational offer — don't make it a big deal:
 **If user keeps Berthier:**
 - Confirm and move on. No changes needed.
 
-### Step 9: Marketplace Teaser
+### Step 9: Portability Note
 
 Brief mention — 2-3 sentences max:
 
 "One more thing — what you build here has value beyond your project. Ontology extensions, lattice definitions, skills, and templates are portable and composable by design: they are plain files in a documented layout, so they can be copied, forked, and shared directly, without a platform in between. There is no marketplace today and none is promised here."
 
-This is a teaser, not a tutorial. Don't oversell.
+State it and move on. **Do not restore a forward-looking frame** — the value being described is *present-tense and real* (plain files, documented layout, no platform in between), and it does not need one.
+
+> ⛩ **Renamed 2026-09-09, and the rename is the whole finding.** ~~`Step 9: Marketplace Teaser`~~ / ~~*"This is a teaser, not a tutorial. Don't oversell."*~~
+> **`v8.10` rewrote this step's BODY to be honest and left its HEADING naming the thing** — an agent reading *"Marketplace Teaser"* and *"this is a teaser"*, rather than the paragraph between them, reconstructs the pitch the release removed. ⇒ **the eighth site of `F-w`'s promise, in the same file the release edited, four lines from the line it fixed.**
+> ⭐ **This is not a second miss — it is the same miss, and its shape is now unmistakable.** `v8.10` also left the template's own structure comment **23 lines above** the line it corrected. A fix aimed at *the sentence that was filed* does not look up, and **a heading is the last place anyone re-reads**: it was true when written, it frames everything under it, and nothing in a diff of the body ever shows it.
 
 ### Step 10: Next Steps and Session Close
 
