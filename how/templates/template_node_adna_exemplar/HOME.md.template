@@ -28,7 +28,7 @@ tags: [home, lattice_home, gallery, {{persona_lower}}, node_adna, exemplar]
   accent-hex trio, the count trio) are exemplar-only.
 
   STRUCTURE (resting view ≈1.5 viewports; everything else one click down):
-    banner → landing strip + adna.network CTA + marketplace link → dashboard band (5-second status)
+    banner → landing strip + adna.network CTA + registry link → dashboard band (5-second status)
     → identity line → greeting → §Gallery (Bases) → §Topology (link) → 4 disclosure folds.
   §GALLERY ENGINE = Bases (Prytaneion M3.2; DataviewJS retired node-wide). Pairs with: the
   persona_lower-named accent.css (styles the classes below) + what/inventory/curation_gallery.base
@@ -51,7 +51,7 @@ action:
   link: https://adna.network
 ```
 
-<span class="landing-secondary">↗ &nbsp;browse the <a href="https://adna.network">context-graph marketplace</a> — <em>coming soon, via the Lighthouse network</em></span>
+<span class="landing-secondary">↗ &nbsp;browse the <a href="https://adna.network/vaults">public vault registry</a> — context graphs are plain files, shared directly</span>
 
 <div class="dashboard-band">
 <span class="db-num"><strong>{{vault_count}}</strong> vaults</span><span class="db-ok">&#10003;&nbsp;{{drift_count}} drift</span><span class="db-ok">&#10003;&nbsp;{{blocked_count}} blocked</span><span class="db-stamp">last full check&nbsp; {{last_health_check}}</span>

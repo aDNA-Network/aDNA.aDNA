@@ -102,6 +102,41 @@ Before any assembled artifact folds into the public image, sweep the release tre
 
 > **Why this lives here (self-reference, Standing Order #8).** This is the very step **P3 of Operation Palimpsest** runs when it fires this skill — hardening it *before* the fire closes the loop on the skill's own release, and keeps the public image reading as generic, never as a snapshot of this node's private graph.
 
+### Step (b.2) — Back-write every payload path to the dev graph (hard gate)
+
+**Step (b) asserts that the dev graph is the source of truth for the standard's content. This step is
+what makes that true rather than assumed.**
+
+For **every** payload item whose path also exists in this vault, the corrected content is written **in
+the dev graph as well as into the release tree**, and the fold is **verified in both**:
+
+```bash
+# For each payload path P (dev-graph-relative):
+diff <(cat "$P") <(cat "$ASSEMBLY/$P")   # must be empty, modulo deliberate image-only deltas
+# Deliberate deltas are recorded by path + reason in the release session file. Silence is not a reason.
+```
+
+⛔ **Hard gate**: a payload path that exists in the dev graph and was **not** written there blocks the
+release. `outbound_ready`-style "it's staged" is not the same as landed.
+
+> ⛔⛔ **Why this step exists — `v8.10`, and it was found by a peer, not by us.** The release ledger's
+> payload rows read *"authored here → `.adna/how/skills/`"* and *"→ `.adna/how/templates/…`"*. The
+> authoring surface was a campaign `staged/` directory and the destination was **the image alone**, so
+> `F-w`'s fix corrected the artifact and left the **dev graph carrying the promise it removed**. Venus
+> (Network.aDNA) measured our tree after receiving a memo asserting the fix and found it intact.
+> ⇒ ***a release that folds one way only is a re-introduction channel, not a one-time miss*** — the
+> next fold reads the source, and the source never learned.
+>
+> ⭐ **The companion failure is scope, and it is the bigger one**: `F-w` named **one** site, the promise
+> lived at **six**, and the release fixed **two**. **Scope a payload item to the CLASS, not to the
+> filing** — grep the assembled tree for what the defect *claimed*, not only for the artifact that
+> claimed it (convention 17's inverse), and read the hits rather than counting them. Four of the six
+> sites were comments and mechanisms that *described* the promise without rendering it.
+>
+> ⛔ **Deliberately a STEP, not a checker** (convention 15): the habit costs a `diff` and cannot itself
+> be wrong; a checker costs a sitting and can. Fifteen instruments from this desk have been wrong before
+> their subjects.
+
 ### Step (c) — Sync a fresh clone of the release repo
 
 ```bash

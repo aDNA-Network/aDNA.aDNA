@@ -23,7 +23,7 @@ blocks: [mission_haussmann_p5_2_rescore_capstone]
 acceptance_criteria:            # ⛩⛩ REPLACED AT THE SIGNATURE 2026-08-26 — `artifacts/p5_1/ac_amendment_proposal.md` is `accepted` (ratification block on its face). The freeze-sweep set of 2026-08-24 is superseded, NOT deleted: it survives in this file's git history and in §2 of the proposal, which traces every change to a numbered finding. Convention 13's pass ran 15/15 both directions and found 3 failures · 2 structural gaps · 2 unstated constraints · 1 open choice, now closed by ruling 4.
   - "AC-P (unchanged in force, NOW VERIFIABLE) — ⛔⛔ P5.1 must not run until the deploy freeze has lifted AND the built-not-deployed backlog is deployed and live-verified. ⭐ THIS IS NOT A 'CANNOT BE MET' CONSTRAINT — IT IS THE OPPOSITE, AND THAT IS WHY IT IS DANGEROUS: run against a stale production and all three evidence criteria go GREEN while the capstone evidence is SILENTLY INVALID. VERIFIED THROUGH AC-4's STAMP CHECK, NOT BY ASSERTION (GAP-1): a transcript, a recording and a friction log are statements about what a HUMAN DID; none is a statement about what PRODUCTION CONTAINED, so read V→AC this criterion was tested by nothing — G-11's own defect reappearing inside the criterion written to prevent it. Status at signature: HELD `[D]` — freeze lifted 2026-08-25; alias serves 51af717; `git diff 51af717..HEAD -- site/` = 1 non-rendering log file."
   - "AC-1 (amended — FAIL-3) — Human cold-reader re-panel ≥5 across the 3 profiles (senior engineer / domain expert unfamiliar with agents / prospective contributor): verbatim transcripts, no coaching. ⛔ STIMULUS IS THE LIVE PRODUCTION HERO AT THE RECORDED BUILD STAMP, NOT the P0.1 A-direction draft — that draft's own condition (`not production, which keeps the current hero until DP2`) EXPIRED when DP2 ratified and P4.5b rewrote the very copy panellists cold-read. ≥4/5 pass Q1–Q3 unaided within ~30s, scored against ADR-048's positioning statement by TWO INDEPENDENT SCORERS whose raw sheets are committed BEFORE reconciliation opens (mechanism reused from artifacts/p2_6/scorer_isolation_protocol.md, not re-authored); disagreement is RECORDED AS A FINDING, never resolved away. Records the commit each panellist saw, read from /.well-known/adna-build.json."
-  - "AC-2 (amended — FAIL-1, FAIL-2, ruling 1, ruling 4) — TTFS run per artifacts/p2_5/ttfs_runbook_fresh_account.md on a FRESH macOS ACCOUNT, with the condition LABELLED ON THE REPORT'S FACE: 'prerequisites pre-installed; not the cold case; the true cold case needs a VM' — promoted out of the kit's prose into the criterion so it cannot be dropped downstream. ⛔ `by someone who did not build the system` is STRUCK (ruling 4): the OPERATOR runs it with the CONFLICT OF INTEREST DECLARED, not managed away. Stopwatch + screen recording + friction log. THE DELIVERABLE IS THE NUMBER WITH ITS CONDITIONS ATTACHED, reported as ONE OBSERVATION AND NOT A DISTRIBUTION; `< 10 min` is a STATED EXPECTATION WHOSE MISS IS A FINDING, NOT A FAIL, and 'did not complete' is a valid result — never a blank and never a retry until it works (ttfs_instrument_kit.md §5, which a pass/fail bar on n=1 would have breached). Records the commit serving the alias at run time."
+  - "AC-2 (amended — FAIL-1, FAIL-2, ruling 1, ruling 4) — TTFS run per artifacts/p2_5/ttfs_runbook_fresh_account.md on a FRESH macOS ACCOUNT, with the condition LABELLED ON THE REPORT'S FACE: 'prerequisites pre-installed; not the cold case; the true cold case needs a VM' — promoted out of the kit's prose into the criterion so it cannot be dropped downstream. ~~⛔ `by someone who did not build the system` is STRUCK (ruling 4): the OPERATOR runs it with the CONFLICT OF INTEREST DECLARED, not managed away.~~ ⛩⛩ **RE-INSTATED 2026-09-04 BY AMENDMENT 2, AND THIS TEXT NEVER LEARNED IT — corrected 2026-09-09, strike-not-delete (SO-6). THE RUNNER IS A RECRUITED NON-BUILDER, NOT THE OPERATOR**, and one of `AC-1`'s five cold readers performs it, artifact labelled for **both** `P5.1 AC-2` and `P2.6 O0b`. ⛔⛔ **This mattered**: AMENDMENT 2 and AMENDMENT 3 are prose sections at §101/§154 and **the criterion they amend was never rewritten**, so an agent reading the machine-checkable `acceptance_criteria` field — the field this vault's own discipline says to prefer over prose — puts the **operator** on AC-2, which **does not discharge `P2.6` O0b** (it requires an unassisted non-builder) and silently re-opens the campaign's longest-standing ⛩. ⇒ ***an amendment recorded beside a criterion has not amended it*** — the same shape as this sitting's `F-w` finding one altitude apart: **the fix landed in the record and never in the source.** Found while recording the `P5.1` GO, by reading the criterion instead of the amendment. Stopwatch + screen recording + friction log. THE DELIVERABLE IS THE NUMBER WITH ITS CONDITIONS ATTACHED, reported as ONE OBSERVATION AND NOT A DISTRIBUTION; `< 10 min` is a STATED EXPECTATION WHOSE MISS IS A FINDING, NOT A FAIL, and 'did not complete' is a valid result — never a blank and never a retry until it works (ttfs_instrument_kit.md §5, which a pass/fail bar on n=1 would have breached). Records the commit serving the alias at run time."
   - "AC-3 (amended — GAP-2, DEFECT-4, DEFECT-5, ruling 2) — Contribution run against the LIVE FUNNEL, NAMED: /community/proposals (ADR-055, verified 200 on the alias at signature `[D]`), end-to-end, every stage timed, the funnel's truth recorded. OPERATOR-AS-OUTSIDER DISCIPLINE with the CONFLICT OF INTEREST DECLARED IN THE ARTIFACT — `without privileged access` is a discipline, not a fact, and no artifact can demonstrate a discipline was kept, so: every use of knowledge a stranger would not have is a LOGGED ENTRY, and an EMPTY SUCH LIST IS REPORTED AS SUSPECT (the kit's own §4 reasoning about empty friction logs). RECORDS BOTH the alias build stamp AND the origin/main HEAD read and forked — a contribution run's subject is the REPO AND THE FUNNEL, not the rendered site, so the alias stamp alone records half the world the run happened in. ~~⛔ AC-3 PRECEDES AC-2, UNCONDITIONALLY (rulings 2 + 4 put both runs on the operator): a TTFS run walks the runner through the entire quickstart, so a contribution run afterwards is performed by someone just onboarded. Order changes the measurement; the ordering and its reasoning are stated on both artifacts' faces.~~ ⛩⛩ **RELEASED 2026-09-05 — see AMENDMENT 3.** Struck, not deleted (SO-6): its reasoning is the reusable part and its premise is what lapsed, not its logic. AMENDMENT 2 moved AC-2 to a recruited cold reader while AC-3 stayed with the operator ⇒ **two different people perform the two runs**, so the contamination this clause names **cannot occur**. **AC-2 and AC-3 may now run in either order or in parallel.** ⛔ Unchanged by the release: AC-2's recruited-non-builder runner, AC-3's operator-as-outsider CoI discipline, and the requirement that each artifact state on its face which run happened when."
   - "AC-4 (amended — GAP-1's remedy) — All three artifacts filed to evidence/ with consent records WHERE PARTICIPANTS EXIST (named explicitly for the operator-as-runner case, so an absent consent record reads as INAPPLICABLE and not as an omission). Each artifact carries its build stamp ON ITS FACE, and ⭐ EACH RECORDED STAMP IS CHECKED, NOT MERELY RECORDED: `git merge-base --is-ancestor <recorded_commit> HEAD` AND the recorded commit contains the closed missions' work. That converts AC-P from an unverifiable gate into a CHECKABLE PROPERTY OF THE FILED ARTIFACTS, at the cost of ONE COMMAND PER ARTIFACT and ZERO NEW INSTRUMENTS — conventions 15/16/17 each ruled against authoring an instrument at the tail of a sitting, and three of this desk's last four instrument defects are why."
 verification_method: |         # ⛩ V1–V5 ADDED AT THE SIGNATURE. ⛔ The prior value — "the artifacts themselves (transcripts/recording/log) — this mission IS verification" — was a SELF-CERTIFICATION, which convention 4 forbids in terms (the builder never self-certifies). Struck, not deleted: it survives in git history and in §2.1 of the proposal.
@@ -258,6 +258,53 @@ unstarted (nothing built) and P4.3's O2 deferred as register row **F-v**, a defe
 ⏭ **NEXT: ⛩ the signature.** On signature — criteria replaced per §2, V1–V5 added, budget ratified,
 then O0 (panel kit v2 · recruitment brief · TTFS run-record scaffold · contribution protocol).
 **Until then, no kit.**
+
+## ⛩⛩ AMENDMENT 4 — 2026-09-09: **RECRUITMENT IS GO. THE DEPLOY HOLD IS LIVE.**
+
+**Operator ruling, 2026-09-09 planning gate** (`session_stanley_20260909_023344_haussmann_fw_at_source`).
+`P5.1` moves off the ⛩ and into recruitment. Nothing agent-side performed it; this records it.
+
+| Field | Value |
+|---|---|
+| **Decision** | Open `P5.1` recruitment now |
+| **Ratified by** | Stanley (operator), at the plan gate |
+| **Date** | 2026-09-09 |
+| **Status** | accepted |
+
+### The panel's build stamp — pin it before the first reader
+
+**Production serves `a2ad53b`** (carried from `STATE.md`'s 2026-09-08 block). ⛔⛔ **DERIVE IT AT THE
+OBJECT BEFORE THE FIRST PANELLIST**, from `/.well-known/adna-build.json` on the **alias** — convention 16
+governs: this value was true when written and **nothing has re-asserted it since**, and `AC-1` requires
+the commit *each panellist saw*, not the commit a governance file remembered.
+
+### ⛔⛔ THE DEPLOY HOLD IS LIVE FROM THIS RULING
+
+`AC-1` pins the stimulus to the live production hero **at the recorded build stamp**, so **any `prod`
+deploy landing mid-panel means the panel evaluated a site that no longer exists** — and it cannot
+cheaply be re-run, because it needs five recruited humans. **No `deploy_adna.sh prod` from any checkout
+until the panel closes or the operator lifts the hold.** ⚠ Prior sittings deployed safely *only because
+recruitment was unscheduled*; **that exemption is now spent.**
+
+⚠ **A PUSH IS NOT A DEPLOY, and the hold does not touch it.** A push publishes **source**; a deploy
+publishes **the site**. Convention 20 (adopted the same day) names the distinction. Conflating them
+would strand every outbound memo for the panel's duration for no protective gain.
+
+### Runner assignment — unchanged by this ruling, and now load-bearing
+
+- **`AC-1`** — five recruited cold readers across the 3 profiles. ⛔ **Agents must not recruit.**
+- **`AC-2`** — **a recruited NON-BUILDER**, one of the five (AMENDMENT 2; the criterion text itself was
+  corrected 2026-09-09 — see the strike in `acceptance_criteria`, which had still read *"the operator
+  runs it"*). ⭐ **This is what discharges `P2.6` O0b**, `in_progress` for that alone since 2026-08-19.
+  Label the artifact for **both** consumers or the second discharge does not happen.
+- **`AC-3`** — the operator as outsider, CoI declared, **halting before submission**.
+- **Ordering: none.** Released at AMENDMENT 3 — `AC-2` and `AC-3` may run **concurrently**.
+
+### What is owed back here at the panel's close
+
+`AC-4`'s stamp check is **one command per artifact and zero new instruments**:
+`git merge-base --is-ancestor <recorded_commit> HEAD`, plus the containment check. Run it — `AC-P` is
+otherwise verified by nothing, which is the defect `GAP-1` was raised to close.
 
 ## AAR (SO#5)
 

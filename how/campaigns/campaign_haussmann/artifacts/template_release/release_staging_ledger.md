@@ -84,8 +84,32 @@ message, because what a release says it did and what it did are different claims
 | **P2** | Re-authored hook header (contract, not provenance) | authored here | same file | proposed |
 | **P3** | `F-P7b-as` — the dead tty guard | rides P1 (`:660` in theirs) | same file | proposed |
 | **P4** | ⭐ **Fixture** `dirty/test_confidential.yaml` | authored here, red-proven | `.adna/…/test_fixtures/dirty/` | proposed |
-| **P5** | `F-w` (a) — `skill_onboarding.md:208` | authored here | `.adna/how/skills/` | proposed |
-| **P6** | `F-w` (b) — `HOME.md.template:54` | authored here | `.adna/how/templates/…` | ⛩ **scope question** |
+| **P5** | `F-w` (a) — `skill_onboarding.md:208` | authored here | ~~`.adna/how/skills/`~~ **`.adna/how/skills/` AND `aDNA.aDNA/how/skills/`** | shipped ⛔ **image only** — dev graph landed 2026-09-09 |
+| **P6** | `F-w` (b) — `HOME.md.template:54` | authored here | ~~`.adna/how/templates/…`~~ **`.adna/how/templates/…` AND `aDNA.aDNA/how/templates/…`** | shipped ⛔ **image only** — dev graph landed 2026-09-09 |
+
+> ⛔⛔ **AMENDED 2026-09-09 — THESE TWO ROWS ARE WHY THE FIX DID NOT LAND AT THE SOURCE.** Struck, not
+> deleted (SO-6): the original *"Ships to `.adna/…`"* was **true and incomplete**, and the incompleteness
+> was load-bearing. The pipeline's authoring surface is `staged/` and its destination was **the image
+> alone** ⇒ `v8.10` corrected the artifact and left the **dev graph — the source of record every future
+> fold reads — carrying the defect**. Found by Venus (Network.aDNA), who measured `aDNA.aDNA`'s copy
+> after receiving our memo asserting it was fixed.
+> ⇒ ***a payload row that names one destination makes the other destination invisible***, and a
+> release that folds one way only is a **re-introduction channel**, not a one-time miss.
+>
+> ⭐⭐ **AND THE SCOPE WAS WRONG TOO, WHICH IS THE BIGGER HALF.** `F-w` named **one** site; the promise
+> was at **six**. `v8.10` fixed **two**. Four survived into the shipped image — the template's own
+> structure comment 23 lines above the line P6 edited, the exemplar README, the exemplar accent-CSS
+> header, and **`skill_node_bootstrap_interview.md` C4**, which asks a new operator to choose
+> *"marketplace categories"* at first boot and persists `marketplace_interests:` to their inventory.
+> ⇒ ***the fix was scoped to the FILING, not to the CLASS*** — `F-u`'s family, *a scope stated once is
+> read as the whole world*, committed by the release that shipped while `STATE.md` carried that warning.
+> Sites 3–5 are fixed and staged (`exemplar_README.md.candidate`,
+> `persona_accent.css.template.candidate`, and the amended `HOME.md.template.candidate`); **C4 and the
+> Obsidian-test tolerance are ROUTED, not built** — each is a mechanism with a same-diff or a data tail.
+>
+> **Remedy, and it is a step rather than a checker** (convention 15): `skill_template_release` now
+> requires that *a payload path which exists in the dev graph is written in the dev graph too, and the
+> fold is verified in both trees.*
 | **P7** | Five version surfaces | — | `.adna/` + the clone | proposed |
 | **P8** | Tour manifest regen + **site deploy** | `build_tour_files.mjs` | `site/` → `adna.network` | ⛩ **the deploy tail** |
 

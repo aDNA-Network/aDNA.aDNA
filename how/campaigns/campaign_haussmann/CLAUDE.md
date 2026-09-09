@@ -264,6 +264,43 @@ tags: [campaign_governance, haussmann]
       were both cited by ID for days with no row in the register — and **any register tally quoted
       anywhere is re-derived by its three greps at the commit that quotes it**, never carried.
 
+20. ⛩ **FOR A PUBLIC-ORIGIN VAULT, THE *PUSH* IS THE PUBLISHING ACT; THE SEND IS ONLY DELIVERY.**
+    *(Proposed 2026-09-09 at the `jsonld_census` sitting; ⛩ **ADOPTED, AMENDED**, at the `F-w`-at-source
+    plan gate the same day. The amendment is where the guard sits.)*
+    The publication scan runs **pre-push**. The pre-send scan **survives as a re-check, not as the
+    gate** — *it cannot protect what the push already published.*
+    - **The measurement that forced it:** all three memos delivered 2026-09-08 under their own ⛩ send
+      GOs were **already on this vault's public origin before any of those GOs were granted** — two of
+      them since `b95771e`, a day earlier `[D]`. The send guard was doing its work honestly and
+      **measuring the wrong act.**
+    - ⇒ ***a publication scan that runs after publication is not a guard, it is a record.*** Both are
+      worth having; only one of them can refuse.
+    - **Consequence for outbound memos**, and it is why this is stated rather than merely fixed: a memo
+      sitting at `status: outbound_ready` in a public-origin tree **is already published** the moment
+      the branch carrying it is pushed. *"Not yet sent"* describes the recipient's inbox, **not the
+      world.** Say so on the memo's face rather than letting a reader infer confidentiality from a
+      status field that never promised it.
+    - ⭐ **Why this is convention 16's family and not a new one:** 16 says a verification with no
+      recurrence is *a claim about the past wearing the grammar of the present.* Here the verification
+      **recurs perfectly** — it runs at every send — and is simply **pointed at the wrong event**. ⇒ *an
+      instrument can be current, honest, and structurally incapable of seeing its own subject*, which no
+      amount of re-running repairs.
+    - ⛔ **NO CHECKER** (conventions 15/16/17/18/19, sixth ruling). The pre-push scan already exists;
+      this moves which scan is load-bearing. **Nothing new is built.**
+    - ⭐⭐ **AND THE REPOINT FOUND THERE WAS NOTHING TO REPOINT — which is the sharper result.** The
+      adoption ordered a sweep for pre-send publication scans to move. Surface swept (convention 17):
+      `how/skills/**`, this file, and the vault `CLAUDE.md`. **Result: none exists.** The publication
+      guard is **already pre-push and already installed** — `CLAUDE.md:224` mandates it, and
+      `.git/hooks/pre-push` is present, executable, and invokes `gitleaks` at **28** sites `[D]
+      2026-09-09`. The one genuinely pre-**send** instrument is convention 15's **pin re-read**, which
+      is about *accuracy* rather than publication and **correctly belongs at the send.**
+      ⇒ ***the instrument was in the right place the whole time; what was misplaced was the belief
+      recorded in the sittings*** — memos and gates treated the ⛩ send GO as the publication gate and
+      wrote confidentiality language against it. **So the remedy is a habit, not a move**, and the
+      convention above is the habit. *A grep run to find what to change is also a grep that can find
+      nothing needs changing — and reporting that honestly is cheaper than authoring a move to justify
+      the sweep.*
+
 ## What this campaign protects (do not regress)
 
 The honesty strata (`/about`, `/community` empty-state candor, zero-count displays) · true load-bearing numbers · hero visual quality · dark/light parity · axe-0 record · perf 97–100 · curated llms.txt · the graph keyboard-twin pattern.

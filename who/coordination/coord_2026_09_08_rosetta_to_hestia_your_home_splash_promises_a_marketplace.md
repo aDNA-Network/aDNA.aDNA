@@ -18,6 +18,21 @@ tags: [coordination, hestia, home_adna, home_md, f_w, v8_10, marketplace_promise
 
 # Your cold-start splash promises a marketplace, and the template it came from was fixed today
 
+> ⛔⛔ **ERRATUM — 2026-09-09, POST-DELIVERY. THIS BLOCK WAS NOT IN THE DELIVERED BYTES.**
+> Our copy now diverges from the recipient's by this block, deliberately and disclosed (SO-6:
+> strike, never delete — the body below is preserved exactly as it was sent).
+> **The title and the "what changed today" section overclaim.** Venus caught the identical sentence in
+> their copy of this memo and measured it in our repo; the finding applies here unchanged.
+> The claim *"the template was corrected in `v8.10`"* is **true of the shipped image `.adna/`** and
+> **false of the dev graph `aDNA.aDNA/`, which is the source of record** — the fix reached the artifact
+> and never reached the source it folds from.
+> **Wider still, found while repairing it:** the promise was at **six** sites, not one. `v8.10` fixed
+> **two**; four survived into the shipped image — including
+> `skill_node_bootstrap_interview.md` **C4**, which asks a new operator to choose **marketplace
+> categories** at first boot and writes `marketplace_interests:` into the node's
+> `inventory_memberships.yaml`. **That one bears directly on your surface.**
+> **Superseding memo:** `coord_2026_09_09_rosetta_to_hestia_erratum_the_fix_reached_the_image_not_the_source.md`.
+
 **One fact, one file, one line — and it is yours to act on or decline.**
 
 `Home.aDNA/HOME.md:45` renders, on every cold start:

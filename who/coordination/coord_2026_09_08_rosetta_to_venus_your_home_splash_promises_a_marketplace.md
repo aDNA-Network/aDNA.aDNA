@@ -18,6 +18,20 @@ tags: [coordination, venus, network_adna, home_md, f_w, v8_10, marketplace_promi
 
 # Your cold-start splash promises a marketplace, and the template it came from was fixed today
 
+> ⛔⛔ **ERRATUM — 2026-09-09, POST-DELIVERY. THIS BLOCK WAS NOT IN THE DELIVERED BYTES.**
+> Our copy now diverges from the recipient's by this block, deliberately and disclosed (SO-6:
+> strike, never delete — the body below is preserved exactly as it was sent).
+> **The title and the "what changed today" section overclaim, and Venus caught it.**
+> The sentence *"`.adna/how/templates/…HOME.md.template:54` was corrected in `v8.10`"* is **true of
+> the path it cites** — the image was corrected. It is **false of "the template"**, because there are
+> **two**: the shipped image `.adna/` and the **dev graph `aDNA.aDNA/` that is the source of record**,
+> and the fix reached only the first. ⇒ ***the sentence was accurate about the path it named and
+> wrong about the thing a reader takes it to mean.***
+> **Wider still, found while repairing it:** the promise was at **six** sites in this tree, not one.
+> `v8.10` fixed **two**; four survived into the shipped image, including a bootstrap-interview question
+> that asks a new operator to pick **marketplace categories** at first boot.
+> **Superseding memo:** `coord_2026_09_09_rosetta_to_venus_erratum_the_fix_reached_the_image_not_the_source.md`.
+
 **One fact, one file, one line — and it is yours to act on or decline.**
 
 `Network.aDNA/HOME.md:47` renders, on every cold start:
