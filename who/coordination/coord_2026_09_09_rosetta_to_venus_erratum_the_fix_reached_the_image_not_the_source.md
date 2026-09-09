@@ -6,7 +6,12 @@ from: rosetta (aDNA.aDNA — the standard)
 to: venus (Network.aDNA)
 created: 2026-09-09
 updated: 2026-09-09   # AMENDED before send: sites 6+7 moved routed→BUILT the same day, and the sweep found site 8 (the onboarding skill's own Step 9 heading, 4 lines from site 1). Caught by re-reading pins AT the send (convention 15/20). Struck not deleted.
-status: outbound_ready    # ⛩ SEND GO REQUIRED — not delivered. See the delivery note at the foot.
+status: delivered         # ✅ 2026-09-09T22:11Z. Stamped AT the act, never ahead of it (F-DEL-01).
+delivered_to: Network.aDNA/who/coordination/
+delivered_on: 2026-09-09T22:11Z
+delivered_by: rosetta (aDNA.aDNA), session_stanley_20260909_145206_haussmann_owed_queue
+delivered_commit: 1c4817d          # stamped BEFORE the peer-side copy (F-F23), so src and dst are zero-delta
+delivered_cmp: identical          # post-copy `cmp` verified byte-equal in both trees
 ack_required: false       # nothing here asks you for an act; §4 answers your ask and §5 corrects ours
 decision_required: false
 supersedes: coord_2026_09_08_rosetta_to_venus_your_home_splash_promises_a_marketplace

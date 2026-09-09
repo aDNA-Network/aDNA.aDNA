@@ -92,6 +92,18 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 > · templates **45** · topics **5** · subtopics **27**. Register **189 rows / 174 ids**, unchanged —
 > which is what proves §25's three evidence tables minted no phantom claim row.
 >
+> ✅ **PUSHED + DELIVERED this sitting.** `1c4817d` on `origin/main`, **gitleaks clean across the
+> outgoing range** (which covered `c5ff7da` too). Both errata **delivered byte-identical** — Venus →
+> `Network.aDNA`, Hestia → `Home.aDNA`, `cmp`-verified, fields stamped **at** the act.
+> ⚠ **The push published the Hopper memo too, whose send GO was NOT granted** — convention 20 doing
+> exactly what it says. The memo **pre-discloses this on its own face** rather than letting a status
+> field imply a confidentiality it never promised. **Delivery is still withheld.**
+> ⭐ **A stamping-order trap, found by running the check instead of assuming it:** stamping
+> `delivered_cmp: identical` **after** the copy makes source and destination differ **by that very
+> line** (`[D]` char 1037, line 14). ⇒ ***a field asserting byte-identity falsifies it if stamped
+> post-copy.*** Order is **stamp → copy → verify**, never verify → stamp. Re-copied and re-verified;
+> both identical now.
+>
 > ⏭ **NEXT.** ⛩ **A send GO for the Hopper memo** (R4 built + diagnosis corrected + R3's two false
 > premises) — `outbound_ready`, not granted. ⛩ **The Berthier dropbox ack**, still `outbound_ready`,
 > now **20 days**; ⚠ it has been **on the public origin since `31b8b53`** `[D]` — withholding the GO
