@@ -1,10 +1,13 @@
 ---
 type: backlog_idea
-status: open
+status: completed
 priority: medium
 created: 2026-08-21
-updated: 2026-08-21
+updated: 2026-09-10
 last_edited_by: agent_rosetta
+completed_on: 2026-09-10
+delivered_artifact: what/doctrine/doctrine_coordination_dropbox.md
+delivered_session: session_stanley_20260910_025243_haussmann_dropbox_doctrine
 filed_from: who/coordination/coord_2026_08_21_berthier_to_rosetta_dropbox_doctrine_graduation.md
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
@@ -83,7 +86,64 @@ process defect wearing a discipline's clothes.
 
 ## Definition of done
 
-- `what/doctrine/doctrine_coordination_dropbox.md` exists, authored from the register texts.
-- It carries the delivery guard, the RESYNC cure, the coverage laws, **and a discovery clause**.
-- The six-plus per-vault inbox READMEs point at it rather than restating it.
-- Berthier acked; the upstream fold rides the next `skill_template_release` gate.
+- ✅ `what/doctrine/doctrine_coordination_dropbox.md` exists, authored from the register texts.
+- ✅ It carries the delivery guard, the RESYNC cure, the coverage laws, **and a discovery clause**.
+- ⛔ ~~The six-plus per-vault inbox READMEs point at it rather than restating it.~~ **ROUTED — see below.**
+- ✅ Berthier acked; the upstream fold rides the next `skill_template_release` gate.
+
+---
+
+## ✅ CLOSED 2026-09-10 — `session_stanley_20260910_025243_haussmann_dropbox_doctrine`
+
+**Delivered:** `what/doctrine/doctrine_coordination_dropbox.md` (§0 self-reference · §1 the box ·
+§2 the three branches · §3 receipts + §3a failure mode + §3b the stamp-order bound · §4 coverage
+laws · §5 discovery + §5a the `-uall` trap · §6 replies-owed · §7 commitments-carry-dates ·
+§8 boundaries), plus `who/coordination/inbox/README.md` — **this vault's own drop-box, opened at
+last.** Authored from the canonical draft (sha256 `05bc9991…f4d2`, read on the authoring day) and
+`aDNALabs.aDNA@43a41d5`. Ack **delivered** to Berthier the same sitting, **nine days inside** its own
+2026-09-30 commitment.
+
+### ⚠ Three corrections this file itself needed, recorded rather than silently fixed
+
+1. **"six-plus per-vault inbox READMEs" was wrong. Measured `[D]`: THIRTY.**
+   `ls -d */who/coordination/inbox` → 30 vaults — and `aDNA.aDNA` was **not one of them** until this
+   sitting. The drift channel was **five times wider** than the filing that opened to close it.
+   ⇒ *thirty vaults running one convention with no canonical text is not a fleet convention; it is
+   thirty local habits.*
+
+2. **The pinned source path had lapsed.** `campaign_deputy_fleet/artifacts/…` is now a 19-line
+   `status: relocated` pointer; the draft moved to `campaign_estafette/` on **2026-08-21 — the same
+   day the ack that pinned it was written.** The ack had *corrected Berthier for pinning a mutable
+   path without a supersession condition*, and its own pin went stale faster than the one it
+   corrected. ⇒ ***stating a rule is not complying with it.*** Caught only by reading at the object
+   on the authoring day, exactly as the ack promised.
+
+3. **The ack sat `outbound_ready` for 20 days**, so the 2026-09-30 date it committed to **was never
+   delivered and its escape hatch never armed**. This became **§7** of the doctrine, with this memo
+   as its attached incident.
+
+### ⛩ ROUTED, not discharged — the third DoD line, with its count
+
+**30 per-vault inbox READMEs still restate the convention locally.** Repointing them at the doctrine
+is **30 cross-vault writes**, which are **memos, not edits** (workspace Rule 10) — *not ours to
+perform*. Stated with its number so the scope is not read as covered: **the doctrine exists and the
+consumers do not yet cite it.**
+
+The cheap path is the **image**: `.adna/` gains the doctrine + a drop-box README at the next
+[[skill_template_release]] gate, so **every future fork inherits a box and a pointer** and the
+population stops growing. The 30 extant vaults remain a per-vault ask.
+
+⭐ **This is the finding the campaign keeps re-learning, and it is why the count is written here:**
+`F-w`'s scope error was *a fix aimed at the filing rather than the class*. Closing this idea because
+the doctrine exists — while 30 consumers still restate it — would be the same shape. It is closed on
+**authorship**, and the propagation is named, counted, and owed.
+
+### ⭐ One clause the draft did not have, earned by breaking it in this sitting
+
+**§6, replies-owed.** A reply sweep run 2026-09-09 keyed on `ack_required: true` and found two owed
+items; re-derived from outbound-vs-inbound dates, the true figure was **five counterparts, four never
+replied to at all** — including Mondrian (Canvas), **5 memos in, 0 out, two awaiting rulings**.
+⇒ ***`ack_required: false` states the sender's expectation, not whether a question was asked.***
+Register twin: aDNALabs `F-S229-03` (the seen-test was **filename**-keyed and the fleet renames on
+delivery); shared law `F-S390-03`, *the checks are honest about what they measured and wrong about
+what they covered.*
