@@ -7,15 +7,15 @@ tags: [session, haussmann, increment_2, pattern, diagrammatic_context, federatio
 session_id: session_stanley_20260911_015723_haussmann_increment_2
 user: stanley
 started: 2026-09-11T01:57:23Z
-status: active
+status: completed
 campaign: campaign_haussmann
 executor_tier: opus
 token_budget_estimated: "~90–140 kT — Increment 2 in full (the pattern authored against a derived adoption census, the pin-field spec clause, and three memos with derived delivery paths) plus a fresh v8.11 staging ledger whose every row is measured against disk. ⛔ Excludes firing the release, which is Increment 3 and its own sitting."
 intent: "Build HAUSSMANN Increment 2 (ruling R1's pattern + pin-field clause + the Astro memo owed under Rule 10), answer Berthier's accepted routing, and prepare the ⛩ v8.11 release gate to a decision surface — halting at the GO. ⛔ NO `.adna/` byte touched, NO deploy, NO site change."
 files_created: [what/patterns/pattern_diagrammatic_context.md, how/backlog/idea_windows_member_workstation_claude_cli_recipe.md, how/campaigns/campaign_haussmann/artifacts/template_release/release_staging_ledger_v8_11.md, who/coordination/coord_2026_09_11_rosetta_to_astro_version_is_canonical_and_your_own_worked_example_is_the_evidence.md, who/coordination/coord_2026_09_11_rosetta_to_mondrian_the_pattern_exists_now_and_it_ships_draft_because_the_census_says_two.md, who/coordination/coord_2026_09_11_rosetta_to_berthier_routing_accepted_and_clause_3_is_not_ours_to_claim.md]
 files_modified: [what/specs/spec_forge_ecosystem.md, STATE.md, how/campaigns/campaign_haussmann/CLAUDE.md]
-completed:
-token_budget_actual:
+completed: 2026-09-11T03:00Z   # ⚠ back-stamped at the Increment-3 open: the work and its commit (`11c8b2c`) landed, and the file was left in `active/` with this field empty.
+token_budget_actual: "≈120–150 kT — ⚠ RECONSTRUCTED at the Increment-3 open, not recorded at the time, and LABELLED as reconstructed (the P4.3 class, fifth instance). Inside the ratified ~90–140 kT band at its top edge / marginally over; no SO#11 retrospective (well inside 2×). The overrun is the census: three predicates were run where one was budgeted, and the disagreement between them was the increment's main finding."
 ---
 
 ## Derived at open (conventions 16 + 19 — re-asserted, never carried)
@@ -190,6 +190,20 @@ notification, the Berthier acceptance + its backlog row, the v8.11 ledger.
 **deploy tail**, and only then does `P5.1` recruitment open against a freshly re-derived build stamp.
 
 **Blockers** — none agent-side. Everything remaining is an operator act.
+
+## ⛔ Closed at the Increment-3 open (2026-09-11), NOT at its own end — and that is the second half of this file's own finding
+
+This file recorded, in its own §"Derived at open", that *"a lease that is not written down is not a lease."*
+It then **stayed in `how/sessions/active/` at `status: active` with `token_budget_actual:` empty** after its
+work was committed at `11c8b2c` — so for the interval between that commit and this close, a cold agent
+following the startup checklist read it as a **live peer session**, which is the one signal the
+Single-Writer Lease uses to decide whether a file may be co-written.
+
+⇒ ***the file that diagnosed an unpublished lease then published a lease nobody was holding.*** The
+opening deviation was *written too late*; this one is *withdrawn too late*, and they are the same seam
+entered from opposite ends — GR-4 O1 recorded the second form (*a finished session left in `active/` is a
+lease nobody is holding*) and this desk has now produced both within one file. **Fourth instance of a
+session closing without its actual recorded**; the figure above is reconstructed and says so.
 
 **Next Session Prompt** — *Open `how/campaigns/campaign_haussmann/artifacts/template_release/release_staging_ledger_v8_11.md`
 and re-verify every §2 row against disk before firing — rows are hypotheses, and re-derive the R2

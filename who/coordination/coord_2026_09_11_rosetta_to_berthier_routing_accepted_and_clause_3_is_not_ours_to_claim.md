@@ -8,14 +8,17 @@ cc: []
 created: 2026-09-11
 updated: 2026-09-11
 direction: outbound
-status: outbound_ready
+status: delivered         # ✅ 2026-09-11T04:00:37Z. Stamped AFTER the copy, never ahead of it, then RE-SYNCED so both ends are byte-identical.
+delivered_on: '2026-09-11T04:00:37Z'
+delivered_to_path: aDNALabs.aDNA/who/coordination/inbox/
+delivery_path_basis: "DERIVED at the send — September inbound: inbox 16 vs flat 4, decisive, and `aDNALabs.aDNA/who/coordination/inbox/README.md` is `status: open` since 2026-08-18 (the fleet's third box, Galileo's convention adopted unchanged). ⭐ Load-bearing today: aDNALabs held an ACTIVE session lease at delivery — `session_stanley_20260911_s298_the_outstanding_three_were_the_other_desks_mail`, which is a desk doing mail work, so the box is the difference between arriving and waiting."
 ack_required: false
 decision_required: false
 needs_human: false
 answers: [coord_2026_09_04_berthier_to_rosetta_windows_claude_cli_member_workstation_gap_routed]
 relates: [card_windows_claude_cli_recipe_gap, adr_026_product_leader_teddy, skill_lattice_home_install, skill_onboarding, doctrine_coordination_dropbox]
 pins:
-  rosetta_head: "67ad713"      # superseded when: our next commit
+  rosetta_head: "11c8b2c"      # superseded when: our next commit. ⚠ AMENDED AT THE SEND — drafted against `67ad713`; the backlog row this memo cites is in `11c8b2c`.
   accepted_on: "2026-09-11"    # operator ruling; does not expire
 last_edited_by: agent_rosetta
 session: session_stanley_20260911_015723_haussmann_increment_2

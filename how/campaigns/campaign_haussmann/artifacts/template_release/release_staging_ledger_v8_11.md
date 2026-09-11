@@ -190,7 +190,23 @@ fires — confirm the red in-container first, regenerate, then assert exactly 2 
 `title ≤ 70` / `description ≤ 160` from `src/content.config.ts`; **both of the last entry's fields
 were over on the first try.**
 
-## §3 · ⛩ Questions carried to the gate
+## §3 · ⛩ Questions carried to the gate — ✅ **ALL FIVE RULED 2026-09-11**
+
+> ⛩ **Ruled at the fire gate, operator Stanley, 2026-09-11.** Every question was ruled **as
+> recommended**; the recommendations are left standing below unedited so a later reader can see what was
+> put and what came back, rather than a table that reads as if it had always been settled.
+>
+> | # | Ruling |
+> |---|---|
+> | **Q1** | **`v8.11`.** Standard **HOLDS at v2.5**. |
+> | **Q2** | **Correct OURS to 18** with the divergence named; **HOLD the router at 19** until the release fires; **then memo Hestia** (Rule 10 — never an edit from here). |
+> | **Q3** | **KEEP** the historical lines, **add a one-line pointer** naming the rename. P1's expected-hit list moves in the same act. |
+> | **Q4** | **Fire the release AND its deploy tail together**, before recruitment produces evidence — R2 restated at the gate. |
+> | **Q5** | **REPLACE**, not delete. `:15` is a same-diff obligation of the section edit. |
+>
+> ⭐ **Q3 turned out to govern more than P7.** It settles a *class* — *keep the historical record, add a
+> pointer, do not falsify it* — and §5.4 applies it to the step-(b.1) keep-vs-genericize calls the fold
+> raises, rather than returning to the operator with a sixth question whose answer had just been given.
 
 | # | Question | Recommendation |
 |---|---|---|
@@ -224,3 +240,112 @@ were over on the first try.**
 - [ ] ⛩ **Update this ledger's `status:` and write its ratification block IN THE FIRING COMMIT.**
       *v8.10's ledger read `proposed` — "6 questions awaiting rulings" — for two days after its gate
       fired, so a reader arriving at the ratification record itself was told nothing was decided.*
+
+---
+
+## §5 · ⛩ RE-VERIFICATION AT THE FIRE GATE — `[D] 2026-09-11T04:0xZ`
+
+Every §2 row was re-measured against disk, as §0's own banner demands. **Six rows reproduced exactly.
+Three things moved, and one of them is a defect in this ledger's own control.**
+
+### §5.1 · What reproduced
+
+| Row | Re-measured | Result |
+|---|---|---|
+| **P1** | promise-class hits in both trees, **read** | ✅ reproduces — dev clean of the *promise*, image carries the heading at `skill_onboarding.md:204` and the `C4` row + table cell at `skill_node_bootstrap_interview.md:69,153` |
+| **P2** | `.adna/HOME.md` | ✅ reproduces **verbatim** — `:15` intro clause and the whole `## Marketplace` section with the live link and the *"until the marketplace is live"* note |
+| **P3** | all 8 canvases, both trees | ✅ reproduces **8/8** — top-level `metadata._reserved` present, `metadata.frontmatter` present and empty |
+| **P4** | `.adna/CLAUDE.md:3` = `8.10`; `README.md:10` badge + release-tag URL | ✅ reproduces |
+| **P7** | `example_mission_product_launch.md:76,79`, both trees | ✅ reproduces |
+| §0 hook | `.adna/` = **4.3.0** | ✅ reproduces ⇒ **no hook payload row**, confirmed not assumed |
+| §0 governance | `adna_validate --governance .` | ✅ **Zero drift** |
+
+### §5.2 · ⚠ Two §0 figures were stale, neither changing a decision
+
+- **`unpushed: 0` → `1`.** HEAD is `11c8b2c` (Increment 2); `origin/main` is `67ad713`, read **at the
+  remote**. True when the ledger was written, false by the time it was committed — *the ledger was
+  invalidated by the commit that contained it.*
+- ⛔ **`evidence/coldreads/` is EIGHT files, not six.** §0 says *"all **six** … are SYNTHETIC"*. Disk
+  holds **8**, and the discriminating fact is not the count but the field: **8/8 carry
+  `synthetic: true`**, including the one whose filename lacks `SYNTHETIC`
+  (`coldread_synthesis_p2_6.md`), which also says on its face *"PRE-SCREEN only; the human panel is
+  P5.1."*
+  ⇒ **R2's window re-derives OPEN and its arithmetic was wrong.** *Six* was a **typed** figure (KW-14)
+  sitting inside the paragraph whose own closing line reads ***"Re-derive it at the gate; do not quote
+  this paragraph."***
+  ⭐ **The supersession clause is what caught it**, and it caught it in the direction nobody checks —
+  the one where the conclusion is right anyway. ⚠ Width: *8/8 synthetic* is a claim about the
+  `coldreads/` packet; **`evidence/p5_1/` being ABSENT** is the separate measurement that carries
+  *"zero human evidence exists"*, and it re-derives **ABSENT**.
+
+### §5.3 · ⛔⛔ THE DEFECT: P1's post-fold control names THREE expected hits and the true figure is SEVEN
+
+§2 P1's control says the post-fold grep *"must return **only** the three legitimate hits"* —
+`adna_reference.md` · `CHANGELOG.md` · `CLAUDE.md`'s version comment — *"plus whatever Q3 rules for P7."*
+
+**Derived from the post-fold state rather than the current one, the image will legitimately carry the
+string in seven files.** The two skills the fold *brings over* are the ones the list forgets:
+
+| File | Post-fold hits | Legitimate because |
+|---|---|---|
+| `how/skills/skill_onboarding.md` | `:5` · `:208` · `:212` · `:213` | `:208` is **the honest sentence itself** (*"There is no marketplace today and none is promised here"*) — already byte-identical in **both** trees; `:212-213` is the SO-6 strike record of the rename |
+| `how/skills/skill_node_bootstrap_interview.md` | `:5` · `:14` · `:155`–`:163` | the SO-6 retirement record for `C4`, which is what stops a later agent "correcting" the question back |
+| `how/templates/examples/example_mission_product_launch.md` | `:76` · `:79` + the new pointer | ⛩ **Q3 ruled KEEP** |
+| `what/docs/adna_reference.md` | `:59` | `MarketplaceRegistry`, a real registry class |
+| `CHANGELOG.md` | `:39` + the new v8.11 entry | the entries that **retire** the promise |
+| `CLAUDE.md` | `:10` + the new v8.11 comment | version-history comments |
+| `HOME.md` | **0** after P2 | replaced |
+
+⇒ **run as written, the control reds on a CORRECT fold** — and the cheap way to make it green is to
+strike the retirement records, which would breach **SO-6** and delete the exact provenance that prevents
+the regression. ***A control derived from an artifact's current state cannot certify the state the
+change produces.*** This is the ledger's own *"read the hits; do not count them"* rule turned on the
+ledger: the expected-hit list was assembled by reading **today's image**, and the fold's whole purpose
+is to make today's image obsolete.
+
+⚠ **Said in fairness:** `:208` is **already honest in the image**. §2 P1's table marks it `⛔ :204
+heading + :208 body`, which reads as two defects; **`:208` is not one** — v8.10 fixed the body and left
+the heading, which is precisely what that row's own prose says elsewhere. The fold is still correct
+(it carries the heading rename); only the row's characterisation was.
+
+### §5.4 · ⛩ Step (b.1) dispositions — settled by the Q3 ruling, not re-asked
+
+The fold carries **dev-graph-specific referents** into the image, which step (b.1).2's commit-SHA and
+dev-name scan surfaces and requires a **keep-vs-genericize** call on. The class was ruled **this
+morning at Q3** — *keep the historical record, add a pointer, do not falsify it* — so it is applied
+rather than put back to the operator:
+
+| Hit | Call | Reason |
+|---|---|---|
+| `skill_node_bootstrap_interview.md:27` — *"This is the dev-graph copy of the skill; `.adna/…` is the mirror"* | **GENERICIZE** | folded verbatim it becomes a file inside `.adna/` asserting it is *not* the file inside `.adna/` — **self-falsifying on arrival** |
+| `skill_onboarding.md:5` — `updated:` comment citing dev commit **`c5ff7da`** | **GENERICIZE** | a real dev-graph SHA in a shipped how-to; (b.1).2 names this exact shape, and the SHA resolves in no clone of the image |
+| `…:5` / `…:5` — *"⛔ DEV GRAPH ONLY — `.adna/` is never edited"* | **GENERICIZE** | an instruction that is false in the tree it lands in |
+| `skill_onboarding.md:212-213` — the ⛩ Step-9 rename record | **KEEP** | SO-6; and it is what stops the heading being restored |
+| `skill_node_bootstrap_interview.md:155-163` — the `C4` retirement record | **KEEP** | SO-6; convention 17 — *a surface documenting a retirement contains the retired string* |
+| `…:162-163` — the ⛩ R3 ruling + Hestia's zero-tail measurement | **KEEP, TRIMMED** | the *ruling* is standard-relevant; the **node-specific** measurement (`Home.aDNA`, this node's grep) is not, and naming another operator's vault in the public image is the leak (b.1) exists to stop |
+
+⛔ **Every disposition is recorded in the release session file as (b.1).3 requires. A silent skip is
+the failure mode that step exists to close.**
+
+### §5.5 · ⛔⛔ P2 IS WORSE THAN RECORDED: the link is DEAD, measured — `[D] 2026-09-11`
+
+| Link | HTTP |
+|---|---|
+| `https://lattice-protocol.com/marketplace` — what `.adna/HOME.md:76` ships today | ⛔ **404** |
+| `https://adna.network/vaults` — the replacement | ✅ **200** |
+
+Every row above described P2 as a **false promise**. It is also a **broken link**, and nobody had
+clicked it. The template node-home is substituted into **every bootstrapped node**, so the first page a
+new operator opens has been offering them a **404** under a heading promising a marketplace — and the
+note beneath it (*"Update this section when the destination is confirmed"*) is an instruction to a
+future maintainer that has sat unexecuted long enough for the destination to stop existing.
+
+⇒ ***a claim can rot in two independent ways at once, and checking the one you filed does not check the
+other.*** `F-w` was filed as a **copy-honesty** defect; the link was never in scope, so no sweep ever
+resolved it — and a promise nobody can follow reads, to a reader, as exactly the same page as a promise
+they can. ⭐ **It cost one `curl`**, and the only reason it ran is the standing habit of verifying an
+external destination at the object before shipping it — here applied to the link being **removed**,
+which is not where anyone thinks to look.
+
+**Candidate staged** at `staged/node_home_HOME.md.candidate`, diff asserted to be **exactly** the three
+intended edits plus the retired note (167 → 165 lines), **0** promise-class hits remaining.
