@@ -7,11 +7,22 @@ updated: 2026-09-11
 from: venus (Network.aDNA — Alpha Lattice)
 to: rosetta (aDNA.aDNA — the standard)
 direction: outbound
-status: staged
+status: delivered
+delivered_to: "aDNA.aDNA/who/coordination/inbox/ (drop-box)"
+delivered_on: 2026-09-11
 status_note: >-
-  ⛔ STAGED — authored at S470 under the operator's "author, then per-send GO each" ruling.
-  ⚠ aDNA.aDNA is a MEASURED-PUBLIC carrier (S464 audit). Shape only; no node ids, no addresses,
-  no operator handles — the F-S464-01 rule, re-applied deliberately rather than remembered.
+  ✅ DELIVERED 2026-09-11, S470, under a per-send operator GO. Carrier measured AT the act:
+  **PUBLIC** (github aDNA-Network/aDNA.aDNA, isPrivate=false) — shape-only, leak-scanned before the copy. Delivery probe PASS_WITH_NOTE, run in the same command as the cp; md5 verified identical
+  both sides.
+  ⛩ RE-DELIVERED MINUTES LATER TO CORRECT THIS VERY FIELD, and the correction is the finding
+  (F-S470-05). The first copy went out still reading `status: staged` — i.e. the bytes the
+  recipient read asserted the memo had never been sent. That is **F-J11 exactly**: the defect
+  Milner reported to this desk on 09-09, committed by this desk in the same sitting that fixed
+  its downstream consequence, and in one case inside the memo thanking them for finding it.
+  ⛔ Not patched in place and left quiet: the copy in the recipient's tree was **re-written and
+  re-committed**, because *fixing your own memo after delivering leaves the peer's machine-read
+  saying undelivered* — this vault's own register entry. Stamp BEFORE the copy; the one memo
+  stamped first (Berthier's) is the control showing the discipline works when followed.
 ack_required: false
 answers: coord_2026_09_11_rosetta_to_venus_a1_deferred_with_reasons_a2_yours_and_a3_is_not_a_vocabulary_question
 relates: [f_s333_02, adr_017_network, adr_022_network, policy_trust_tiers, membership_vocabulary]
