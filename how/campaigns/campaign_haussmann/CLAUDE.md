@@ -3814,3 +3814,112 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > login`. ⚠ Owed: B1's first p75 · `F-ab`(a) · `F-v` · babbage's lease question + two `proposed` upstream
 > findings + Ilmarinen's upstream filing, all behind the same operator gate.
 
+
+> 🚀🚀 **2026-09-11 — `v8.11` IS RELEASED AND THE DEPLOY TAIL IS LIVE. RULING R2 IS DISCHARGED IN FULL,
+> AND `P5.1` RECRUITMENT IS NOW UNBLOCKED.** Not a mission: the third operator-ruled increment of the
+> `course_deploy` / `R-97` queue. Session
+> `session_stanley_20260911_035501_haussmann_increment_3_v8_11`.
+>
+> **Released** `aDNA-Network/aDNA` @ **`dea4ab9`**, annotated tag **`v8.11`** (`3dec601..dea4ab9`);
+> local `.adna` synced **`81b1220`**, verified **byte-identical to the released tree**; ledger
+> **`accepted`** with its ratification block written **in the firing commit** (v8.10's read `proposed`
+> for two days after its gate fired). **Deployed** `deploy_record: 2026-09-11T05:28:43Z mode=prod
+> tree=681c814`, no override flags, live headers **4/4 by name AND value**, probe **8 PASS / 0 FAIL**.
+> ⛩ Push preceded deploy, each its own GO.
+>
+> ⛩ **Five rulings at the gate:** Q1 **v8.11** (standard holds **v2.5**) · Q2 correct **ours to 18**,
+> hold the router, memo Hestia after · Q3 **keep + pointer** · Q4 release **and** deploy together (R2) ·
+> Q5 **replace, not delete**. ⭐ **Q3 turned out to govern a class, not a row** — *keep the historical
+> record, add a pointer, do not falsify it* — and it settled the step-(b.1) keep-vs-genericize calls the
+> fold raised, rather than sending a sixth question to an operator who had just answered it.
+>
+> ⭐⭐ **THE FINDING THAT CHANGED THE RELEASE: A FOLD IS NOT A COPY.** `skill_onboarding.md` was about
+> to be folded dev → image wholesale. Measured first `[D]`: the **IMAGE** carried **four `{{persona}}`
+> placeholder resolutions the DEV GRAPH did not have** (dev **0**, image **4**) ⇒ the copy would have
+> silently **REGRESSED the image** and destroyed work existing only there. Payload applied
+> **line-scoped**; the image's work **back-written to the dev graph** — **step (b.2) run in the
+> direction nobody had run it.** *v8.10's finding was that a release folding one way is a
+> re-introduction channel, and (b.2) was built to close it; this is the SAME DEFECT RUNNING THE OTHER
+> WAY, still open, found only because the diff was read before the copy was made.*
+> ⇒ ***the dev graph is the source of truth for the CONTENT OF THE PAYLOAD, not for the whole file — and
+> a payload row naming a FILE invites exactly the copy that loses the other tree's work.***
+>
+> ⭐⭐ **`.adna/HOME.md`'s MARKETPLACE LINK IS A 404, MEASURED.** The template node-home is substituted
+> into **every** bootstrapped node, so the first page a new operator opens had been offering a **dead
+> destination** for a product that does not exist, under a heading promising it — with a note to a
+> future maintainer to update the link *"until the marketplace is live"* that had sat unexecuted long
+> enough for the destination to stop existing. ⇒ ***a claim can rot in two independent ways at once, and
+> checking the one you filed does not check the other.*** `F-w` was filed as a **copy-honesty** defect,
+> so the link was never in scope and no sweep resolved it. It cost one `curl`, run against the link
+> being **removed** — which is not where anyone thinks to look.
+>
+> ⭐⭐ **A THIRD PROVENANCE DEFECT, ON THE TRUST PAGE, REPAIRED BEFORE IT SHIPPED.**
+> `source_commit_date` was `git log -1 --format=%cs` **in the local `.adna` checkout** — the date of the
+> very commit whose SHA **GR-1 O4 withholds from publication** because *"a local-only identifier on a
+> public surface is the whole defect"* — while both pages render it as ***"at release {ref} ({date})"***.
+> ⇒ **GR-1 O4 protected the IDENTIFIER and not the ATTRIBUTE DERIVED FROM THE SAME OBJECT.** *A
+> provenance fix scoped to the field that was filed does not look sideways.* ⚠ It was **also** a day out
+> whenever a release lands after 17:00 local (`%cs` renders in the commit's own zone; every other dated
+> surface here is UTC), so the trust page and the CHANGELOG disagreed about the date of the same release
+> — **latent on every prior release, visible on this one**, which is the signature of a timezone bug.
+> Now derived from the release artifact's **own CHANGELOG heading**; red-proven **exit 1** on a missing
+> heading, **0** clean. ⚠ And the first red-test read `exit=0` **through a pipe** (`tail`'s status, not
+> node's) — *a zero that means "the command failed"*, **fourth sighting**, caught by re-running unpiped.
+>
+> ⭐⭐ **P1's POST-FOLD CONTROL WAS DERIVED FROM THE WRONG STATE, AND MY CORRECTION REPEATED THE
+> DEFECT.** The control named **three** expected hits; a correct fold produces **six files**, because
+> the two skills the fold *brings over* carry the SO-6 retirement records — so **run as written it reds
+> on a correct fold**, and the cheap way to green it is to strike the provenance that prevents the
+> regression. ⇒ ***a control derived from an artifact's current state cannot certify the state the
+> change produces.*** ⚠⚠ **Then §5.3's correction said *"the true figure is SEVEN"*, counting a table
+> with seven ROWS one of which reads *"0 after P2"*** — ***I corrected a count by counting***, inside
+> the paragraph whose rule is *read the hits, do not count them*. It fell only because the control was
+> **run** rather than predicted.
+>
+> ✅ **The correspondence debt is DISCHARGED: 4/4 delivered, byte-identical, both ends stamped** —
+> astro (flat; **no inbox exists**) · mondrian (Canvas inbox) · berthier (aDNALabs inbox) · hestia
+> (Home inbox). **The `outbound_ready` queue is empty.**
+> ⭐⭐ **The Canvas delivery beat its own volume census, and the reason generalises.** September inbound
+> read **flat 4 vs inbox 2**; volume favoured flat and lost, because all four flat arrivals
+> **post-date** Canvas's 09-04 box announcement — senders who had not heard. ⇒ ***a volume census
+> measures what SENDERS DID; the box README measures what the RECIPIENT ASKED FOR, and the recipient
+> wins.*** ⭐ **The drop-box was load-bearing three times in one sitting**: Canvas, aDNALabs and Home
+> each held an **active lease** at delivery; Astro, the one vault without a box, was quiet — re-verified
+> at the send, not assumed. ⚠ **The `direction:` field cannot split inbound from outbound** — it is the
+> sender's stamp and survives the copy; `from:` can.
+> ⭐ **Every pin was stale and its own supersession clause fired** (`67ad713` → `11c8b2c`): the pre-send
+> re-read has now paid **5 of 5**.
+>
+> ⚠⚠ **TWO INSTRUMENT DEFECTS OF MINE, BOTH CAUGHT BY THEIR OWN OUTPUT — the standing streak, now
+> fourteen.** The canvas migration's **C5 failed all 8 files on a CORRECT transform**: it matched on
+> marker strings, so `_reserved`'s own inner keys (`authority`, `source_yaml`, `last_sync`) read as
+> *"outside the block"* — re-cut to a **byte-exact prefix/suffix** assertion. And the fold's
+> genericization control **banned `Home.aDNA` and `Hestia` outright**, which are **the standard's own
+> vocabulary** in that skill (~40 uses by design, since the skill exists to bootstrap that vault) — an
+> **over-broad** predicate, narrowed to what (b.1) actually forbids: one operator's private measurement
+> and this workspace's process language. *The first was blind in the usual direction; the second failed
+> a correct result, which reads like a broken tree rather than a broken instrument.*
+>
+> ⚠ **`MANIFEST.md` needed no change, and that was DERIVED, not assumed**: a naive `find` reads **46**
+> templates against its **45**, because `template_node_adna_exemplar` is a **bundle directory** (45
+> files + 1 dir). *The naive count would have "fixed" a correct number* — the recorded trap, avoided by
+> deriving the predicate before trusting the integer.
+>
+> **Gates:** chromium **698 passed / 1 skipped / 0 failed** · in-container snapshot **26** ·
+> `gate-49`'s `home` re-baseline **confirmed red in-container FIRST**, regenerated, control **exactly 2
+> of 24** (the 22 untouched prove nothing leaked), AMENDMENT-1 discriminator applied ⇒ **content**, not
+> the 17/19px noise · `gate-30`'s two reds were **convention 6's documented case**, fixed by running
+> `inject_redirects` rather than by touching the gate · `gitleaks` clean on the outgoing range ·
+> `adna_validate --governance` **Zero drift** in both trees · hook `--self-test` **PASSED**.
+>
+> ⏭⏭ **NEXT: `P5.1`, AND IT IS ENTIRELY HUMAN.** Five recruited cold readers (⛔ **agents must not
+> recruit**) · a fresh macOS account (**also discharges `P2.6` O0b** — label the artifact for both) ·
+> the operator as outsider, **halting before submission**. `AC-2`/`AC-3` may run **concurrently** (the
+> ordering was released 2026-09-05). ⛔⛔ **A DEPLOY HOLD BECOMES LIVE THE MOMENT RECRUITMENT PRODUCES
+> EVIDENCE** — `AC-1` pins the stimulus to a recorded build stamp, so **re-derive it from
+> `/.well-known/adna-build.json` before the first panellist** (`681c814` as of this deploy; the recorded
+> value is true when written and nothing re-asserts it). ⚠ Owed and undated: `F-ab`(a)'s cause · `F-v` ·
+> `sweep/jsonld_census.md`'s missing instrument · B1's first p75 · `P3.3`'s ⛩ `npm login`, **not
+> performable on this node** · and **one operator gate** covering babbage's lease question, babbage's
+> two `proposed` upstream findings and Ilmarinen's upstream filing — `skill_upstream_contribution`
+> needs approval before any of the three can be filed.

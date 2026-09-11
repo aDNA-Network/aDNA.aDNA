@@ -1,7 +1,7 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-09-11  # 2026-09-11 🚀 **v8.11 SHIPPED** to aDNA-Network/aDNA (`dea4ab9` + tag `v8.11`); local .adna synced `81b1220`, byte-identical to the released tree; ledger `accepted` with its ratification block IN the firing commit. 3 memos DELIVERED (queue empty). ⭐ A FOLD IS NOT A COPY — the image carried 4 `{{persona}}` resolutions the dev graph lacked, so a wholesale fold would have REGRESSED it; payload applied line-scoped and the image's work back-written (step b.2, the direction nobody ran). ⭐ `.adna/HOME.md`'s marketplace link measured **404** — a claim can rot in two ways at once. ⛩ Deploy tail BUILT, awaiting its GO; prod still `a2ad53b`.
+updated: 2026-09-11  # 2026-09-11 🚀🚀 **v8.11 SHIPPED + DEPLOYED** — release `dea4ab9` + tag `v8.11` to aDNA-Network/aDNA; site `deploy_record: 2026-09-11T05:28:43Z mode=prod tree=681c814`, probe 8/0, trust page now publishes v8.11 provenance. 4 memos delivered (astro · mondrian · berthier · hestia); outbound queue EMPTY. ⭐ A FOLD IS NOT A COPY — the image carried 4 `{{persona}}` resolutions the dev graph lacked; payload applied line-scoped and the image's work back-written (step b.2, the direction nobody ran). ⭐ `.adna/HOME.md`'s marketplace link measured **404**. ⭐ `source_commit_date` was publishing a LOCAL-ONLY commit's date as the release's — GR-1 O4 withheld the SHA and not the attribute derived from it. ⏭ P5.1 recruitment is UNBLOCKED and entirely human.
 status: active
 phase: "P4/6 — ✅✅ **THE GRANDE REVUE'S RATIFIED GATE-1 ORDER IS COMPLETE 2026-09-03: `GR-4` (Lane D) CLOSED, and it was the LAST LANE.** GR lane: **GR-1 ✅ (08-28, deployed 08-29) · GR-2 ✅ (09-01) · GR-3 ✅ (09-01) · GR-4 ✅ (09-03)** — order B → P4.4b B1+B2a → GR-1 → Lane D, all four closed. ⏭ **NEXT is not queued by anything**: the ratified sequence is spent. Candidates are **P4.4b B3** and the **endgame (P5.1 → P5.2)**, and P5.1 is held with the humans. ⛔ **Five increments of new public copy are BUILT AND UNSEEN** (two doctrine pages · `/commons` · `/network` · `/`'s strip · `/privacy`) — Lane D is met on-build and **no deploy has been GO'd**, which is also what `R-124`'s discharge waits on. ~~prior: ✅✅ `P4.4` CLOSED 2026-09-02 (both halves; AC0–AC4 + V1–V5 all met, AAR filed) — the last multi-increment P4 mission is done. ⏭ NEXT = Lane D (needs an ⛩ audience/scope decision first).~~ ⛔ Held: **P5.1** (with the humans) · the **Hopper reply** + the **babbage reply** (each its own ⛩ send GO) · B1's Speed-Insights → transport → first p75. ~~prior:~~ ✅ **P4.5b CLOSED + DEPLOYED 2026-08-27** (tree=51af717; the whole P4.5 mission with it). ⛩⛩ **P4.4b SIGNED 2026-08-26** (§4 ruled **(c)**: build B2a, **HOLD B2b** on ⊳ D-E) and ✅ **B0 CLOSED** (gate-49, `1816993`) — AC1 ✅; ~~next agent increments **B1 → B2a**~~ ✅ **B1 + B2a DONE 2026-08-28** (`9c8d79b` · `f852060` — AC2 ✅ on-build, AC3 ✅, AC4 ◐ owed to B2b; suite 659 → **667**); remainder **B3** (+ B2b at its own ⛩ gate on the Vitruvius reply). ⛩⛩ **P5.1 SIGNED, O0 CLOSED, HANDED OFF** — waits on humans only (run order AC-3 → AC-2; AC-3 halts before submitting). **GRANDE REVUE** (chief-of-staff order 08-27) executes inside the campaign: P0 closed at Gate 0; Phase 1 closed at Gate 1 (Mid-Campaign Review 0 P0 · 8 P1 · 7 P2); ⛩⛩ **Gate 1 SIGNED AS PROPOSED 2026-08-28** — battle plan `accepted`, Lanes B + C executed same sitting (register live count 5, derived); ~~**live line of advance: P4.4b B1 → B2a**, then GR-1 Lane A at its own conv-13 gate~~ ✅ **B1 + B2a BUILT 2026-08-28** (`9c8d79b` · `f852060`); ~~**live line of advance = `GR-1`, OPEN AND HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE**~~ ✅ **GR-1 CLOSED 2026-08-28** (signed, built, AAR filed; 5/5 criteria, suite 526/1skip). **Live line of advance = ⛩ a push GO then a ⛩ deploy GO**, then **Lane D** (or P4.4b B3). Closed to date: P4.5a ✅ · P3.5 ✅ · P3.1 ✅ · P3.2 ✅ · P3.4 ✅ · P4.1 ✅ · P4.2 ✅ · P4.4a ✅ · P4.3 ✅ · P4.5b ✅. Open: P2.6 (⛩ O0b only) · P3.3 (⛩ npm login, not performable here) · P4.4b (B1/B2a; ~~every criterion waits on an actor outside the session~~ — struck 2026-08-26 as FALSE for AC1–AC3, FINDING 9 of the signed amendment; only AC4 branches on ⊳ D-E) · P5.1 (humans). Queued: P5.2. Suite: fast lane **526/1skip** derived (522 → 523 G42e → 524 G18 → 526 at G19 + gate-36's split limb); full suite **667 → 671**. ⚠ The prior **659** was true when written and went stale at `f852060` — the index-vs-artifact class, corrected same-diff rather than left for a cold agent to quote forward. ⚠ Read convention 11's ruled order, not mission numbering."
 campaigns: [campaign_haussmann]                      # RATIFIED §7.7 2026-08-16 (Gate C, operator) — 6 phases / 27 missions; charter: how/campaigns/campaign_haussmann/campaign_haussmann.md
@@ -63,7 +63,27 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 > 24** (the 22 untouched prove nothing leaked) · AMENDMENT-1 discriminator applied — the strip now leads
 > *"Sep 11, 2026 — aDNA v8.11…"*, so this is **content**, not the recorded 17/19px noise.
 >
-> ⏭ **NEXT: ⛩ the dev-graph push GO, then ⛩ the deploy GO**, in that order —
+> 🚀🚀 **DEPLOYED 2026-09-11.** `deploy_record: 2026-09-11T05:28:43Z mode=prod tree=681c814`
+> (`url=https://adna-docs-77fivqij4-science-stanleys-projects.vercel.app`, `token=SS_VERCEL_TOKEN`).
+> **No override flags** — the alias-ancestry guard passed on its own terms; live headers **4/4 by name
+> AND value**. Push preceded deploy, each its own ⛩ GO (`67ad713..681c814`, gitleaks clean, verified at
+> the remote). Post-deploy probe **8 PASS / 0 FAIL**: build stamp == deployed tree · trust page
+> publishes **v8.11** and dates it **2026-09-11**, matching the CHANGELOG · **no stale v8.10** · the
+> homepage strip leads with the v8.11 entry · `/changelog/` renders it · `/vaults` **200**, the new
+> `HOME.md` destination.
+>
+> ✅ **The Hestia memo is DELIVERED** (`Home.aDNA/who/coordination/inbox/`, byte-identical, both ends
+> stamped): the router's two `19`s are now the wrong number and the trigger they were keyed to has
+> fired. ⛔ Not edited from here — it is their file (Rule 10). **The `outbound_ready` queue is empty.**
+>
+> ⏭ **NEXT: `P5.1` recruitment is now UNBLOCKED and is entirely human** — five recruited cold readers
+> (⛔ agents must not recruit) · a fresh macOS account (also discharges `P2.6` O0b — label the artifact
+> for both) · the operator as outsider, halting **before** submission. `AC-2`/`AC-3` may run
+> concurrently. ⛔ **Re-derive the panel build stamp from `/.well-known/adna-build.json` before the
+> first panellist** — it is `681c814` as of this deploy, and a deploy mid-panel invalidates a panel that
+> needs five recruited humans and cannot cheaply be re-run.
+>
+> ~~⏭ **NEXT: ⛩ the dev-graph push GO, then ⛩ the deploy GO**, in that order —
 > `inject_build_stamp.mjs:83` stamps HEAD and nothing checks HEAD is public. ⛔ **Re-derive the R2 window
 > immediately before the deploy**: `evidence/p5_1/` must still be absent. Then the close cascade + the
 > ⛩ **Hestia memo** (the router's `19 → 18` trigger has now fired — it was the gate-fired release, not a
