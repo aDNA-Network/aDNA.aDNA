@@ -1,7 +1,7 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-09-11  # 2026-09-11 🚀🚀 **v8.11 SHIPPED + DEPLOYED** — release `dea4ab9` + tag `v8.11` to aDNA-Network/aDNA; site `deploy_record: 2026-09-11T05:28:43Z mode=prod tree=681c814`, probe 8/0, trust page now publishes v8.11 provenance. 4 memos delivered (astro · mondrian · berthier · hestia); outbound queue EMPTY. ⭐ A FOLD IS NOT A COPY — the image carried 4 `{{persona}}` resolutions the dev graph lacked; payload applied line-scoped and the image's work back-written (step b.2, the direction nobody ran). ⭐ `.adna/HOME.md`'s marketplace link measured **404**. ⭐ `source_commit_date` was publishing a LOCAL-ONLY commit's date as the release's — GR-1 O4 withheld the SHA and not the attribute derived from it. ⏭ P5.1 recruitment is UNBLOCKED and entirely human.
+updated: 2026-09-11  # 2026-09-11 (b) 🚀 **QUEUE RECONCILED + THE PUBLISHING-DOCS CLAIM CLUSTER REPAIRED AND DEPLOYED** — `deploy_record: 2026-09-11T19:23:02Z mode=prod tree=eda4cbf`, probe **12 PASS / 0 FAIL**, gates **698/1skip/0fail** (baseline, no regression), governance validator green. ⭐⭐ `/how/publishing/content-mapping` shipped a "Current Gaps" section saying the HOW leg **is not yet published — "including the document you are reading"** — while 15 `/how/` pages are live and the page is **row 2 of `publishingMapping` in the very script it cites**. ⭐⭐ **THE OPERATOR QUEUE WAS STALE IN SIX PLACES, TWO OF THEM DECISIONS ALREADY TAKEN *AND SHIPPED*** (⊳ D-D ruled 08-19 + MIT `LICENSE` live, both its `#needs-human` tags surviving — one directly above its own ruling; the jsonld instrument built 09-09). ⭐ `R-177`: the **vault source** claimed a route that 301s away while the **served twin** was already correct — the fold defect running a **third** direction, and a transform run would have re-introduced it. Register **189 → 196**, `R-11…R-177`, 0 gaps. New: `artifacts/operator_queue_reconciled_20260911.md`. ⛔ No gate authored (rule ruled 5×) — and the build proved why: the SO-6 correction keeps the false sentence as a **quotation**, so a naive gate would red on the fix. ⏭ `P5.1` remains the only critical path and is entirely human. || PRIOR: 2026-09-11 🚀🚀 **v8.11 SHIPPED + DEPLOYED** — release `dea4ab9` + tag `v8.11` to aDNA-Network/aDNA; site `deploy_record: 2026-09-11T05:28:43Z mode=prod tree=681c814`, probe 8/0, trust page now publishes v8.11 provenance. 4 memos delivered (astro · mondrian · berthier · hestia); outbound queue EMPTY. ⭐ A FOLD IS NOT A COPY — the image carried 4 `{{persona}}` resolutions the dev graph lacked; payload applied line-scoped and the image's work back-written (step b.2, the direction nobody ran). ⭐ `.adna/HOME.md`'s marketplace link measured **404**. ⭐ `source_commit_date` was publishing a LOCAL-ONLY commit's date as the release's — GR-1 O4 withheld the SHA and not the attribute derived from it. ⏭ P5.1 recruitment is UNBLOCKED and entirely human.
 status: active
 phase: "P4/6 — ✅✅ **THE GRANDE REVUE'S RATIFIED GATE-1 ORDER IS COMPLETE 2026-09-03: `GR-4` (Lane D) CLOSED, and it was the LAST LANE.** GR lane: **GR-1 ✅ (08-28, deployed 08-29) · GR-2 ✅ (09-01) · GR-3 ✅ (09-01) · GR-4 ✅ (09-03)** — order B → P4.4b B1+B2a → GR-1 → Lane D, all four closed. ⏭ **NEXT is not queued by anything**: the ratified sequence is spent. Candidates are **P4.4b B3** and the **endgame (P5.1 → P5.2)**, and P5.1 is held with the humans. ✅✅ **ALL FIVE INCREMENTS ARE DEPLOYED AND LIVE** (09-04 · 09-05 · 09-07 · 09-08 · 09-11; prod serves `681c814`, probe 8/0) — ~~⛔ **Five increments of new public copy are BUILT AND UNSEEN**~~ *(struck 2026-09-11, SO-6: the sentence stayed after every one of the five deploys that falsified it, so a cold read of this field concluded there was a deploy backlog when there was none)* (two doctrine pages · `/commons` · `/network` · `/`'s strip · `/privacy`) — Lane D is met on-build and **no deploy has been GO'd**, which is also what `R-124`'s discharge waits on. ~~prior: ✅✅ `P4.4` CLOSED 2026-09-02 (both halves; AC0–AC4 + V1–V5 all met, AAR filed) — the last multi-increment P4 mission is done. ⏭ NEXT = Lane D (needs an ⛩ audience/scope decision first).~~ ⛔ Held: **P5.1** (with the humans) · the **Hopper reply** + the **babbage reply** (each its own ⛩ send GO) · B1's Speed-Insights → transport → first p75. ~~prior:~~ ✅ **P4.5b CLOSED + DEPLOYED 2026-08-27** (tree=51af717; the whole P4.5 mission with it). ⛩⛩ **P4.4b SIGNED 2026-08-26** (§4 ruled **(c)**: build B2a, **HOLD B2b** on ⊳ D-E) and ✅ **B0 CLOSED** (gate-49, `1816993`) — AC1 ✅; ~~next agent increments **B1 → B2a**~~ ✅ **B1 + B2a DONE 2026-08-28** (`9c8d79b` · `f852060` — AC2 ✅ on-build, AC3 ✅, AC4 ◐ owed to B2b; suite 659 → **667**); ~~remainder **B3** (+ B2b at its own ⛩ gate on the Vitruvius reply)~~ ✅ **B3 AND B2b BOTH CLOSED 2026-09-02** — P4.4 is `completed`, both halves, AC1–AC4 ✅ and V1–V4 ✅; B2b closed AC4 by **sourcing** the bars (`bar_provenance.json` + `gate-53`, `1f495c6`), not by moving one. *(struck 2026-09-11, SO-6 — this field named B3 as remaining for nine days after it closed, and a peer review reading this field re-reported it as open.)*. ⛩⛩ **P5.1 SIGNED, O0 CLOSED, HANDED OFF** — waits on humans only (run order AC-3 → AC-2; AC-3 halts before submitting). **GRANDE REVUE** (chief-of-staff order 08-27) executes inside the campaign: P0 closed at Gate 0; Phase 1 closed at Gate 1 (Mid-Campaign Review 0 P0 · 8 P1 · 7 P2); ⛩⛩ **Gate 1 SIGNED AS PROPOSED 2026-08-28** — battle plan `accepted`, Lanes B + C executed same sitting (register live count 5, derived); ~~**live line of advance: P4.4b B1 → B2a**, then GR-1 Lane A at its own conv-13 gate~~ ✅ **B1 + B2a BUILT 2026-08-28** (`9c8d79b` · `f852060`); ~~**live line of advance = `GR-1`, OPEN AND HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE**~~ ✅ **GR-1 CLOSED 2026-08-28** (signed, built, AAR filed; 5/5 criteria, suite 526/1skip). **Live line of advance = ⛩ a push GO then a ⛩ deploy GO**, then **Lane D** (or P4.4b B3). Closed to date: P4.5a ✅ · P3.5 ✅ · P3.1 ✅ · P3.2 ✅ · P3.4 ✅ · P4.1 ✅ · P4.2 ✅ · P4.4a ✅ · P4.3 ✅ · P4.5b ✅. Open: P2.6 (⛩ O0b only) · P3.3 (⛩ npm login, not performable here) · P4.4b (B1/B2a; ~~every criterion waits on an actor outside the session~~ — struck 2026-08-26 as FALSE for AC1–AC3, FINDING 9 of the signed amendment; only AC4 branches on ⊳ D-E) · P5.1 (humans). Queued: P5.2. Suite: fast lane **526/1skip** derived (522 → 523 G42e → 524 G18 → 526 at G19 + gate-36's split limb); full suite **667 → 671**. ⚠ The prior **659** was true when written and went stale at `f852060` — the index-vs-artifact class, corrected same-diff rather than left for a cold agent to quote forward. ⚠ Read convention 11's ruled order, not mission numbering."
 campaigns: [campaign_haussmann]                      # RATIFIED §7.7 2026-08-16 (Gate C, operator) — 6 phases / 27 missions; charter: how/campaigns/campaign_haussmann/campaign_haussmann.md
@@ -20,6 +20,77 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 > **State router** (split from monolithic STATE.md at M2.1 S2 2026-05-19; pre-split SHA `1e337db`). For historical session prose (19 DEPRECATED-marker `## Last Session` blocks + retired Next Session Prompts) see [[STATE_archive.md|STATE_archive.md]]. Most-recent live session block + most-recent Next Session Prompt stay here.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
+
+> 🚀 **2026-09-11 (b) — THE QUEUE IS TRUE AGAIN AND THE DOCS CLUSTER IS LIVE.**
+> `deploy_record: 2026-09-11T19:23:02Z mode=prod tree=eda4cbf`
+> (`url=https://adna-docs-ihn7fpydo-science-stanleys-projects.vercel.app`, `token=SS_VERCEL_TOKEN`), **no override
+> flags**, live headers **4/4 by name AND value**. Push preceded deploy, each its own ⛩ GO
+> (`ee87021..eda4cbf`, gitleaks clean). Session `session_stanley_20260911_110421_haussmann_queue_reconcile`.
+>
+> ⭐⭐ **A PAGE DENIED ITS OWN EXISTENCE, IN PUBLIC, AND ITS OWN "RELATED" LIST LINKED THE PROOF.**
+> `/how/publishing/content-mapping` carried *"The **HOW** triad leg … is not yet published to the site. This
+> content — **including the document you are reading** — exists in the vault but has no site pathway."* There
+> are **15 built `/how/` pages**; the page is **served**; and it is **row 2 of `publishingMapping`** in the very
+> script it says its tables are extracted from. ⇒ ***a sentence asserting that something is MISSING proposes no
+> work, so nothing schedules a look.*** Rows with a task attached get verified; a row claiming *nothing to do*
+> is self-exempting. Registered `R-171`.
+>
+> ⭐⭐ **THE OPERATOR QUEUE WAS STALE IN SIX PLACES — AND TWO WERE DECISIONS ALREADY TAKEN *AND SHIPPED*.**
+> ⊳ **D-D** (docs-repo licence) was **ruled 2026-08-19** and the MIT `LICENSE` shipped at `8e0efa4` (public
+> **200**) — and **both** its `#needs-human` tags survived, **one of them directly above its own ruling**. The
+> `jsonld_census` instrument was **built 09-09** and its owed-row never retired. `STATE`'s own `phase:` field
+> claimed five increments undeployed (**all five shipped**) and named **B3** as remaining (**B3+B2b closed
+> 09-02** — and a peer review re-reported it as open *from this field*). ⇒ ***a stale owed-row does not merely
+> misinform — it SPENDS OPERATOR ATTENTION on a closed question.*** Making a decision and retiring the record of
+> needing it are two acts, and only the first one feels like finishing.
+>
+> ⭐ **`session_prompts_haussmann.md` had TWO rows simultaneously claiming `⬅ CURRENT`** (P4.2 and GR-4, both
+> closed) nine days after its own note said *"a pointer cited as the fix must be maintained like one."* **Two
+> mutually exclusive CURRENTs are self-contradictory on the face of the index** — detectable without opening a
+> single mission file, which one stale pointer is not.
+>
+> ⭐ **`R-177` — the fold defect running a THIRD direction.** The **vault source** claimed `who/adopters/`
+> publishes at `/adopters/{slug}`; that route **301s to `/use-cases/`**. The **served twin did not carry it** —
+> the site tree had been repaired and the vault source, *which the build reads*, had not. A routine transform
+> run would have **re-introduced it to the live site**. ⇒ ***when one artifact is generated from another,
+> "which is right?" has no default answer, and the generated one being right is the case that silently
+> un-fixes itself.*** Every repair applied to **both trees**, with a zero-survivor control.
+>
+> ⚠ **Two of my own errors, both caught by probing rather than care.** *"230 pages"* was `dist/**/*.html`
+> **including `404.html`**; the build says **229** — the wrong denominator reached for **while repairing a
+> denominator defect**. And the session plan called `canonical.ts:29` a false comment: its subject is
+> **`adna.dev`**, not the vercel alias, and `adna.dev` genuinely does not resolve — **the comment is correct and
+> no edit was made.** ⚠ The vercel alias returns **200**, so `R-174` is an **identity** defect, not a dead link,
+> and was nearly filed as one.
+>
+> ⛔ **NO GATE WAS AUTHORED** (*no new checker at a sitting's tail* — ruled 5×). Filed
+> `how/backlog/idea_gate_self_negating_route_claim.md` at `proposed` — **and the build proved the restraint
+> right**: SO-6 keeps the false sentence as a **quotation**, so `grep -c` still returns **1** on the repaired
+> page. *A gate written against this instance would red on the fix for this instance* — the `adna_validate`
+> skills-count defect, arriving **before** the checker instead of after.
+>
+> ⚠ **Concurrency, recorded:** two Venus commits (`9d50307`, `eda4cbf`) landed **on top of this session's commit
+> mid-sitting**, so `HEAD` moved between commit and push. Diffed before deploying: **one inbound memo, zero
+> `site/` bytes**, `ack_required: false`. *A changed HEAD is a question, not an incident — but it must be asked.*
+>
+> ⏭ **NEXT is unchanged and still entirely human: `P5.1`.** Five recruited cold readers (⛔ agents must not
+> recruit) · a recruited **non-builder** on a fresh macOS account (**label the artifact for `P5.1 AC-2` AND
+> `P2.6 O0b`**) · the operator as outsider, halting before submission. ⛔ **Re-derive the panel build stamp from
+> `/.well-known/adna-build.json` before the first panellist** — it is **`eda4cbf`** as of this deploy, and that
+> figure is under the same warning: *re-derive it, do not quote it.*
+>
+> ⛩ **The true queue is now one artifact:** `how/campaigns/campaign_haussmann/artifacts/operator_queue_reconciled_20260911.md`
+> — **ADRs 53 accepted / 1 amended / 0 proposed, nothing awaits ratification.** Live gates: `P5.1`'s three human
+> acts · a **Speed-Insights dashboard check** that may gate `P5.2` *independently of P5.1* · one
+> peer-ratification sitting (Babbage ×2 + lease, Ilmarinen, Venus `A1`) · **H1 the Wilhelm co-sign embargo —
+> re-probed LIVE**, two `/commons` cards naming real third parties with no recorded clearance · **H5** the CoC
+> confidential reporting address.
+>
+> ⚠ **Owed, unchanged:** `F-ab`(a) cause · `F-v` · B1's first p75 · `P3.3`'s ⛩ `npm login` (ruled *out* of the
+> gate queue — a credential, not a decision). ⚠ **New and NOT done: 229 docs pages have never been read against
+> the claim register** (§26.1) — the register censused the persuasion surface and the docs corpus was never in
+> scope. ⛩ **Flagged, not edited:** `adr_023:73` names the legacy host inside a **ratified** contract clause.
+
 
 > 🚀🚀 **2026-09-11 — `v8.11` IS SHIPPED TO THE PUBLIC IMAGE, AND THE DEPLOY TAIL IS BUILT AND
 > AWAITING ITS ⛩ GO.** Released `aDNA-Network/aDNA` @ **`dea4ab9`**, annotated tag **`v8.11`**
