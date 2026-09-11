@@ -3622,3 +3622,88 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > recruitment was unscheduled**, which was measured at the gate rather than assumed. ⚠ Owed and
 > undated: the `skill_template_release` gate (`F-w` + Hopper's 4.0.1 → 4.2.0, **F-P7b-as first**) ·
 > `sweep/jsonld_census.md`'s missing instrument · `F-ab`(a) · ADR-056 clause 5 · `F-v`.
+
+> ⛩⛩ **2026-09-11 — FIVE OPERATOR RULINGS TAKEN, THE CANVAS QUEUE IS ANSWERED, AND THE CORRESPONDENCE
+> DEBT IS DISCHARGED — six memos delivered, `cmp`-identical, 6/6.** Not a mission: an operator-ruled
+> increment on the `course_deploy` / `R-97` precedent. ⛔ **Nothing deployed; prod stays at `a2ad53b`.**
+> Session `session_stanley_20260911_004214_haussmann_canvas_queue`.
+>
+> | # | Ruling |
+> |---|---|
+> | **R1** | **Canvas queue — all three accepted.** ADR-011 migration → the **v8.11 payload** (never a hand edit to `.adna/`) · `b1.5` **ADOPTED** with E2's **split authority axis**, `authority` doctrine-enforced only until LIP-0010 · pin-field proposal **ACCEPTED**, and **ours**. |
+> | **R2** | **v8.11 release + deploy tail fire BEFORE `P5.1` recruitment produces evidence.** |
+> | **R3** | **`marketplace_interests` DROPPED** (shape 3), with Hestia's one-node bound carried *into* the ruling. |
+> | **R4** | **Venus A1 deferred with reasons + a non-binding leaning; A2 endorsed-but-theirs; ⛔ A3 NOT deferred.** |
+> | **R5** | **ADR-056 clause 5 OUT of the gate queue** — a credential, not a decision, re-listed at four consecutive cold starts. |
+>
+> ⭐⭐ **THE OPENING MEASUREMENT IS WHAT MADE `R2` PERFORMABLE RATHER THAN MERELY PREFERRED.**
+> Recruitment opened 2026-09-09, which made the deploy hold live — so R2 reads on its face like
+> re-sequencing an engaged protection. Measured instead `[D]`: **`evidence/p5_1/` does not exist**,
+> both instruments still read `ready_for_operator`, and all **6** files in `evidence/coldreads/` are
+> `SYNTHETIC` from P2.6/P4.5b. ⇒ **zero human evidence is pinned to `a2ad53b`.** Recruitment is open
+> as a **permission**, not as a state with evidence in it.
+> ⭐ **That is the 2026-08-25 freeze lift's reasoning recurring:** *a hold's RELEASE CONDITION and its
+> PROTECTIVE PURPOSE can come apart, and its own text merges them.* ⛔ Stated at its width: it does
+> **not** lift the hold (only the operator does, and R2 already has), and it carries a **supersession
+> condition** — the moment any `evidence/p5_1/` artifact exists, the measurement is void.
+>
+> ⛔⛔ **THE SESSION'S APPROVED PLAN CARRIED A FALSE "ALREADY DISCHARGED", AND THE CLASS IS NEW HERE.**
+> The plan recorded Aspasia's seven dead wikilinks as *"already discharged at the object … cosmetic."*
+> Measured before replying: **7 live, distributed 2 / 3 / 2 — their exact count, nine days untouched.**
+> All seven applied, each pattern required to match **exactly once**, replacement paths **re-verified
+> to exist today** (5/5), control after: `grep '\[\[\.\./\.\./'` → **0**.
+> ⇒ ***A plan is a hypothesis, and the row that says "already done" is the one nobody re-measures,
+> because it proposes no work.*** Rows with a task attached get verified; a row asserting *nothing to
+> do* is **self-exempting**. The *index-vs-artifact* class arriving in a **plan** rather than an index.
+>
+> ⛔⛔ **AND A DELIVERY-PATH PROBE OF MINE PRODUCED A CONFIDENT FALSE ZERO, TWICE OVER.** The first
+> per-vault probe reported *"every recipient has ZERO September inbox traffic"* — a zsh **no-match
+> abort** on a `*2026-09*` glob variant, with `wc -l` counting the empty pipe as `0`. That is
+> GR-5 §22.5's *a zero meaning "the command failed", not "the string is absent"*, committed one
+> sitting after this campaign recorded it. Caught by running a second, differently-shaped command.
+> ⭐⭐ **The corrected probe was then wrong in a SECOND way, and this one inverts a decision.** Comparing
+> `inbox/` count against **flat-directory total** compares the wrong things: the flat directory holds
+> a vault's **own outbound** as well as its inbound. Split `[D]`, Canvas is **flat-inbound 1 vs inbox
+> 1** — a tie — not the `1 : 22` the naive count showed, because **21 of those 22 are Canvas's own
+> outbound**. ⇒ ***an active correspondent looks like a well-fed inbox if you count the mail it
+> sends.*** Tie broken by their own memo: Canvas opened its drop-box **2026-09-04** and said so.
+>
+> **Delivery surfaces, all DERIVED and each recorded on the memo's face** (`delivery_path_basis:`):
+> Canvas **inbox** · Forgejo **inbox** (5 vs 4) · Fluxer **flat** (inbox 0 vs 19) · APScheduler
+> **flat** (*no inbox directory exists*) · Network **inbox** (28 vs 18) · Home **inbox** (22 vs 17 —
+> ⭐ **their inbox went live since our 09-07 delivery, which correctly chose flat at 18/1 THEN**; a
+> path derived once is not a path derived).
+>
+> ⭐ **The Ilmarinen memo is the reply worth reading, because the reason it was late is structural.**
+> Its §1 (a redacted overlay literal) was closed in two days; its §2 — **three standard-shaped
+> questions the memo itself called *"bigger than the file"*** — went unanswered for **sixteen**.
+> ⇒ ***a memo is not a unit of work, and closing the half with a command attached to it reads exactly
+> like closing the memo.*** All three now answered with positions, not deferrals: content-class
+> declaration is a real gap in ADR-013 · a publication boundary must be **declarable** (checkable
+> later, in its own sitting, per the six standing no-checker rulings) · the shape is **upstream**,
+> with the filing itself named as operator-gated rather than promised.
+>
+> ⭐ **Venus's three asks got three dispositions, and giving them one would have buried A3.** Their own
+> filing said A3 is *"distinct from A1/A2 — already a contradiction inside ratified policy"*
+> (`MEMBERSHIP_TRUST_TIER_CHANGED` named in `policy_trust_tiers` §5.3, absent from the frozen enum,
+> open **44 days**). A deferral is coherent for *what should the standard say* and is simply the
+> **wrong instrument** for *two ratified documents already disagree*. ⛔ And the LIP reading was
+> **deliberately not confirmed** — our own backlog entry warns the acking session never verified it at
+> the object, and *an unearned confirmation is worse than a deferral*.
+>
+> ⚠ **The census re-derivation corroborated Mondrian and corrected a method.** Archived population
+> **74 / 17 reproduces their +74 EXACTLY**; live is **208 / 52** today against their 200/47 on 09-08,
+> confirming their growth prediction by measurement. ⛔ But a naive `ls */what/lattices/examples/*.canvas`
+> from the workspace root reads **254 / 62** — inflated by **14 root-level shims** that a `*/` glob
+> follows, five into live vaults under old names and nine **into `Archive.aDNA`**, re-importing the
+> archived set into the live one. `find -P` is the predicate that answers the question.
+> ⇒ ***a shim is a second true name for one object, and a glob cannot tell a name from a thing.***
+>
+> ⏭ **NEXT: Increment 2** — author `what/patterns/pattern_diagrammatic_context.md` (split axis;
+> **24** patterns today and it is not among them), plus the `version:` / `pin_location:` clause. ⚠ The
+> pin clause has a **placement finding**: the canonical artifact is `Astro.aDNA/what/artifacts/sf_forge_pattern_spec.md`,
+> **not ours** — so "it is ours" is true of the *ruling* and half true of the *edit*; an Astro memo is
+> owed under Rule 10. ⏭ **Then Increment 3: ⛩ the v8.11 release + deploy tail (R2), and only then does
+> `P5.1` recruitment open** against a freshly re-derived stamp. ⛔ Held: `P5.1` with the humans ·
+> `P3.3`'s ⛩ `npm login`. ⚠ Owed: B1's first p75 · `F-ab`(a) · `F-v` · babbage's lease question +
+> two `proposed` upstream findings · **Ilmarinen's upstream filing, behind the same gate as babbage's**.

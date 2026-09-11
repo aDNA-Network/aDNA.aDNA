@@ -21,9 +21,9 @@ rather than ask you to poll. This is that signal.
 
 | ADR-054 prerequisite | Status | Evidence |
 |---|---|---|
-| **Inside-aliveness** | ✅ CLEARED 2026-08-20 | [[../../what/context/fluxer/recon_live_instance_20260820|first own-hands recon]] — 4 guilds · 23 users · 264 messages · same-day activity |
-| **Policy floor** | ✅ CLEARED 2026-08-21 (rung ②) | [[../../what/context/fluxer/policy_floor_20260821|evidence]] — ToS/Privacy/CoC published at `aDNA-Network/community-policies`; `legal.*` URLs live; registration consent gate renders. Interim operator floor; counsel review → M8 |
-| **Minimal aDNA branding** | ✅ CLEARED 2026-08-21 (rung ③) | [[../../what/context/fluxer/branding_20260821|evidence]] — `product_name: "aDNA Community"` (⛩ ruled venue name) · `theme_color: #9d7cd8` (your ADR-032 primary) · self-hosted icon + favicon (the adna.network "a" mark, served from the instance's own media store) |
+| **Inside-aliveness** | ✅ CLEARED 2026-08-20 | first own-hands recon (`Fluxer.aDNA/what/context/fluxer/recon_live_instance_20260820.md`) — 4 guilds · 23 users · 264 messages · same-day activity |
+| **Policy floor** | ✅ CLEARED 2026-08-21 (rung ②) | evidence (`Fluxer.aDNA/what/context/fluxer/policy_floor_20260821.md`) — ToS/Privacy/CoC published at `aDNA-Network/community-policies`; `legal.*` URLs live; registration consent gate renders. Interim operator floor; counsel review → M8 |
+| **Minimal aDNA branding** | ✅ CLEARED 2026-08-21 (rung ③) | evidence (`Fluxer.aDNA/what/context/fluxer/branding_20260821.md`) — `product_name: "aDNA Community"` (⛩ ruled venue name) · `theme_color: #9d7cd8` (your ADR-032 primary) · self-hosted icon + favicon (the adna.network "a" mark, served from the instance's own media store) |
 
 **What your re-probe will see** (`GET /api/.well-known/fluxer`, unauth):
 `app_public.branding` fully populated and `app_public.legal` carrying both policy

@@ -28,7 +28,7 @@ This is read **from API source, not from data** — the distinction matters for 
 register, because a data read only tells you what is *set*, never what is *settable*.
 Rung ② established it on 2026-08-21 at `InstanceConfigRepository.ts:384` (controller
 `:271-274`), and the note recorded at the time says it in as many words: *"no guidelines
-slot, no inline hosting"* ([[../../what/context/fluxer/policy_floor_20260821|policy floor evidence]] §Phase A).
+slot, no inline hosting"* (policy floor evidence (`Fluxer.aDNA/what/context/fluxer/policy_floor_20260821.md`) §Phase A).
 
 ⇒ **Record it as the second upstream ceiling**, beside the SPA-shell `<title>`. Same
 shape as the first: baked into upstream, does not read instance config, and the only fix
@@ -44,7 +44,7 @@ four days ago.
 blocks** at the edge — no instance config slot exists for either, which is precisely why
 we went to the Caddyfile. That change landed as a **hot reload with zero downtime**
 (`fluxer-caddy-1` `RestartCount=0`, `StartedAt` unchanged through the whole act;
-[[../../what/context/fluxer/robots_security_20260822|rung ④ evidence]]).
+rung ④ evidence (`Fluxer.aDNA/what/context/fluxer/robots_security_20260822.md`)).
 
 The same lane serves a redirect:
 
