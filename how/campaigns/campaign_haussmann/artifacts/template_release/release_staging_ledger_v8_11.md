@@ -278,7 +278,15 @@ Three things moved, and one of them is a defect in this ledger's own control.**
   `coldreads/` packet; **`evidence/p5_1/` being ABSENT** is the separate measurement that carries
   *"zero human evidence exists"*, and it re-derives **ABSENT**.
 
-### §5.3 · ⛔⛔ THE DEFECT: P1's post-fold control names THREE expected hits and the true figure is SEVEN
+### §5.3 · ⛔⛔ THE DEFECT: P1's post-fold control names THREE expected hits; **SIX** files legitimately carry the string
+
+> ⚠⚠ **This heading read *"the true figure is SEVEN"* until the control was actually run, and it was
+> wrong in the same way the thing it corrects was wrong.** The table below has **seven rows**, but one of
+> them — `HOME.md` — reads **"0 after P2"**. Counting the rows instead of reading them gives 7; reading
+> them gives **6 files**, which is what the post-fold grep returns `[D]`.
+> ⇒ ***I corrected a count by counting.*** The ledger's own rule is *read the hits, do not count them*,
+> and the correction to it was drafted by counting a table. **Same defect, one level up, committed inside
+> the paragraph naming the defect** — and it only fell because the control was run rather than predicted.
 
 §2 P1's control says the post-fold grep *"must return **only** the three legitimate hits"* —
 `adna_reference.md` · `CHANGELOG.md` · `CLAUDE.md`'s version comment — *"plus whatever Q3 rules for P7."*
