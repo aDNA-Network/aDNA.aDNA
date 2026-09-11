@@ -128,11 +128,37 @@ let sourceRef;
 let sourceCommitDate;
 try {
   localSyncSha = git(['rev-parse', 'HEAD']);
-  sourceCommitDate = git(['log', '-1', '--format=%cs']);
   const standardClaude = readFileSync(join(TEMPLATE_ROOT, 'CLAUDE.md'), 'utf8');
   const v = /^version:\s*"?([0-9]+\.[0-9]+)"?\s*$/m.exec(standardClaude);
   if (!v) throw new Error('no `version:` in .adna/CLAUDE.md frontmatter — nothing to derive a release ref from');
   sourceRef = `v${v[1]}`;
+
+  /**
+   * ⛩ v8.11 — THE SHA WAS WITHHELD AND ITS DATE WAS PUBLISHED ANYWAY.
+   *
+   * This was `git log -1 --format=%cs` in TEMPLATE_ROOT — i.e. the date of the LOCAL `.adna`
+   * sync commit, the very commit whose SHA the comment above withholds because "a local-only
+   * identifier on a public surface is the whole defect". Both pages render the value as
+   * *"at release {source_ref} ({source_commit_date})"* — so a local-only commit's date was
+   * being presented to a reader as the RELEASE's date.
+   *
+   * ⇒ GR-1 O4 protected the identifier and not the attribute DERIVED FROM THE SAME OBJECT.
+   *   A provenance fix scoped to the field that was filed does not look sideways.
+   *
+   * It was also a day out whenever a release lands after 17:00 local: `%cs` renders in the
+   * commit's own zone, while every other dated surface in this vault is stamped UTC — so the
+   * trust page and the CHANGELOG disagreed about the date of the same release. Latent for
+   * every prior release, visible on this one, which is the signature of a timezone bug.
+   *
+   * Derived instead from the release artifact's OWN CHANGELOG heading — authored deliberately
+   * at release time, part of the published tree, and the same object `source_ref` names.
+   * Refuse rather than guess: an unpinned tour is just a copy (the script's existing rule).
+   */
+  const standardChangelog = readFileSync(join(TEMPLATE_ROOT, 'CHANGELOG.md'), 'utf8');
+  const esc = sourceRef.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const d = new RegExp(`^##\\s*\\[${esc}\\]\\s*[—-]\\s*(\\d{4}-\\d{2}-\\d{2})\\s*$`, 'm').exec(standardChangelog);
+  if (!d) throw new Error(`no \`## [${sourceRef}] — YYYY-MM-DD\` heading in .adna/CHANGELOG.md — cannot date the release it pins`);
+  sourceCommitDate = d[1];
 } catch {
   console.error('[build_tour_files] REFUSING: cannot read a commit from the standard checkout.');
   console.error('  The tour\'s claim is "these bytes came from that commit". Without a resolvable');

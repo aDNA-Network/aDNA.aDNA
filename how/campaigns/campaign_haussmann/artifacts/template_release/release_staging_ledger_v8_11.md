@@ -5,7 +5,7 @@ title: "v8.11 staging ledger — the F-w fold at its source, the ADR-011 canvas 
 campaign: campaign_haussmann
 created: 2026-09-11
 updated: 2026-09-11
-status: proposed          # ⛩ DECISION SURFACE — nothing ratified, nothing built, no `.adna/` byte touched (Standing Rule 1)
+status: accepted          # ⛩ RATIFIED AND FIRED 2026-09-11 — see the ratification block below. Written IN the firing commit, because v8.10's ledger read `proposed` for two days after its gate fired and a reader arriving at the ratification record itself was told nothing had been decided.
 last_edited_by: agent_rosetta
 session: session_stanley_20260911_015723_haussmann_increment_2
 supersedes_none: true
@@ -13,7 +13,36 @@ relates: [release_staging_ledger_template_release_prep, skill_template_release, 
 tags: [artifact, template_release, ledger, v8_11, f_w, adr_011, canvas_migration, marketplace, deploy_tail, gate]
 ---
 
-# v8.11 staging ledger — ⛩ a decision surface, not a plan of record
+# v8.11 staging ledger — ⛩ RATIFIED AND FIRED
+
+> ## ⛩ Ratification record
+>
+> | Field | Value |
+> |---|---|
+> | **Decision** | Fire **v8.11** with the §2 payload as amended by §5, on the five §3 rulings. Standard **holds at v2.5**. |
+> | **Ratified by** | Operator (Stanley) |
+> | **Date** | 2026-09-11 |
+> | **Status** | **accepted — fired** |
+>
+> **Released:** `aDNA-Network/aDNA` @ **`dea4ab9`**, annotated tag **`v8.11`**, pushed `3dec601..dea4ab9`.
+> Local `.adna` synced at **`81b1220`** (step e) and verified **byte-identical to the released tree**.
+> Fresh-clone smoke: version surfaces **8.11** ×3 · `question_count: 18` · `HOME.md` marketplace hits
+> **0** · canvases **4/4** migrated · step (f) checks **1–6 PASS**.
+>
+> **Gates at the fire:** payload files **15**, exactly the enumerated set · step (b.2) payload-path diff
+> **8/10 byte-identical**, 2 deliberate genericizations recorded at §5.4 · (b.1) scoped to added lines —
+> **0** private paths, **0** bare SHAs, 1 wikilink that resolves, 2 name hits that are the standard's own
+> vocabulary · `gitleaks` **no leaks** · hook `--self-test` **PASSED** · `adna_validate --governance`
+> **Zero drift** in both trees · P1 post-fold control **read, 6 files, all legitimate** · P3 **4/4, 0
+> legacy**.
+>
+> ⭐ **Two findings changed the release itself, and both came from measuring before acting.**
+> `skill_onboarding.md` was about to be folded wholesale; the **image** carried four `{{persona}}`
+> resolutions the dev graph did not (dev 0, image 4), so a copy would have **regressed** it — the payload
+> was applied line-scoped and the image's work **back-written** to the dev graph, which is step (b.2) run
+> in the direction nobody had. And `.adna/HOME.md`'s marketplace link was measured at **HTTP 404**.
+
+# v8.11 staging ledger — the decision surface it was before it fired
 
 > ⛩ **Ordered by ruling R2 (2026-09-11): the v8.11 release AND its deploy tail fire BEFORE `P5.1`
 > recruitment produces evidence.** Re-derived at this ledger's authoring `[D] 2026-09-11`:
