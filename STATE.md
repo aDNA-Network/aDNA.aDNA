@@ -1,7 +1,7 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-09-11  # 2026-09-11 ⛩⛩ FIVE OPERATOR RULINGS TAKEN AND THE CORRESPONDENCE DEBT DISCHARGED — R1 the Canvas queue accepted in full (ADR-011 → the v8.11 payload · b1.5 ADOPTED with E2's split authority axis · the pin field ACCEPTED and ours), R2 the v8.11 release + deploy tail fire BEFORE P5.1 recruitment produces evidence, R3 marketplace_interests DROPPED, R4 Venus A1 deferred-with-reasons / A3 explicitly NOT deferred, R5 ADR-056 clause 5 out of the gate queue. Six memos delivered cmp-identical 6/6. ⛔ No deploy; prod stays at a2ad53b. ⭐ R2 was shown PERFORMABLE by measurement — evidence/p5_1/ does not exist and all 6 coldreads are SYNTHETIC, so zero human evidence is pinned to the current stamp.
+updated: 2026-09-11  # 2026-09-11 ✅ INCREMENT 2 BUILT + THE ⛩ v8.11 GATE PREPARED — pattern_diagrammatic_context authored (shelf 24→25; status draft on a DERIVED 2-adoption census), spec_forge_ecosystem v0.1→v0.2 (federation-pin clause), release_staging_ledger_v8_11 proposed (8 rows / 5 ⛩ questions), Berthier's routing ACCEPTED, 3 memos outbound_ready. ⛔ No deploy, no .adna/ byte, no site/ change; prod stays a2ad53b. ⭐ F-w is closed AT ITS SOURCE and the whole surviving population is in the image — and .adna/HOME.md's ## Marketplace section, in no prior list, is image-only because aDNA.aDNA is a fork and .adna/ is the template: a path is not an identity.
 status: active
 phase: "P4/6 — ✅✅ **THE GRANDE REVUE'S RATIFIED GATE-1 ORDER IS COMPLETE 2026-09-03: `GR-4` (Lane D) CLOSED, and it was the LAST LANE.** GR lane: **GR-1 ✅ (08-28, deployed 08-29) · GR-2 ✅ (09-01) · GR-3 ✅ (09-01) · GR-4 ✅ (09-03)** — order B → P4.4b B1+B2a → GR-1 → Lane D, all four closed. ⏭ **NEXT is not queued by anything**: the ratified sequence is spent. Candidates are **P4.4b B3** and the **endgame (P5.1 → P5.2)**, and P5.1 is held with the humans. ⛔ **Five increments of new public copy are BUILT AND UNSEEN** (two doctrine pages · `/commons` · `/network` · `/`'s strip · `/privacy`) — Lane D is met on-build and **no deploy has been GO'd**, which is also what `R-124`'s discharge waits on. ~~prior: ✅✅ `P4.4` CLOSED 2026-09-02 (both halves; AC0–AC4 + V1–V5 all met, AAR filed) — the last multi-increment P4 mission is done. ⏭ NEXT = Lane D (needs an ⛩ audience/scope decision first).~~ ⛔ Held: **P5.1** (with the humans) · the **Hopper reply** + the **babbage reply** (each its own ⛩ send GO) · B1's Speed-Insights → transport → first p75. ~~prior:~~ ✅ **P4.5b CLOSED + DEPLOYED 2026-08-27** (tree=51af717; the whole P4.5 mission with it). ⛩⛩ **P4.4b SIGNED 2026-08-26** (§4 ruled **(c)**: build B2a, **HOLD B2b** on ⊳ D-E) and ✅ **B0 CLOSED** (gate-49, `1816993`) — AC1 ✅; ~~next agent increments **B1 → B2a**~~ ✅ **B1 + B2a DONE 2026-08-28** (`9c8d79b` · `f852060` — AC2 ✅ on-build, AC3 ✅, AC4 ◐ owed to B2b; suite 659 → **667**); remainder **B3** (+ B2b at its own ⛩ gate on the Vitruvius reply). ⛩⛩ **P5.1 SIGNED, O0 CLOSED, HANDED OFF** — waits on humans only (run order AC-3 → AC-2; AC-3 halts before submitting). **GRANDE REVUE** (chief-of-staff order 08-27) executes inside the campaign: P0 closed at Gate 0; Phase 1 closed at Gate 1 (Mid-Campaign Review 0 P0 · 8 P1 · 7 P2); ⛩⛩ **Gate 1 SIGNED AS PROPOSED 2026-08-28** — battle plan `accepted`, Lanes B + C executed same sitting (register live count 5, derived); ~~**live line of advance: P4.4b B1 → B2a**, then GR-1 Lane A at its own conv-13 gate~~ ✅ **B1 + B2a BUILT 2026-08-28** (`9c8d79b` · `f852060`); ~~**live line of advance = `GR-1`, OPEN AND HALTED AT ITS ⛩ CONVENTION-13 PRE-BUILD GATE**~~ ✅ **GR-1 CLOSED 2026-08-28** (signed, built, AAR filed; 5/5 criteria, suite 526/1skip). **Live line of advance = ⛩ a push GO then a ⛩ deploy GO**, then **Lane D** (or P4.4b B3). Closed to date: P4.5a ✅ · P3.5 ✅ · P3.1 ✅ · P3.2 ✅ · P3.4 ✅ · P4.1 ✅ · P4.2 ✅ · P4.4a ✅ · P4.3 ✅ · P4.5b ✅. Open: P2.6 (⛩ O0b only) · P3.3 (⛩ npm login, not performable here) · P4.4b (B1/B2a; ~~every criterion waits on an actor outside the session~~ — struck 2026-08-26 as FALSE for AC1–AC3, FINDING 9 of the signed amendment; only AC4 branches on ⊳ D-E) · P5.1 (humans). Queued: P5.2. Suite: fast lane **526/1skip** derived (522 → 523 G42e → 524 G18 → 526 at G19 + gate-36's split limb); full suite **667 → 671**. ⚠ The prior **659** was true when written and went stale at `f852060` — the index-vs-artifact class, corrected same-diff rather than left for a cold agent to quote forward. ⚠ Read convention 11's ruled order, not mission numbering."
 campaigns: [campaign_haussmann]                      # RATIFIED §7.7 2026-08-16 (Gate C, operator) — 6 phases / 27 missions; charter: how/campaigns/campaign_haussmann/campaign_haussmann.md
@@ -20,6 +20,73 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 > **State router** (split from monolithic STATE.md at M2.1 S2 2026-05-19; pre-split SHA `1e337db`). For historical session prose (19 DEPRECATED-marker `## Last Session` blocks + retired Next Session Prompts) see [[STATE_archive.md|STATE_archive.md]]. Most-recent live session block + most-recent Next Session Prompt stay here.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
+
+> ✅ **2026-09-11 — INCREMENT 2 IS BUILT AND THE ⛩ v8.11 GATE IS PREPARED. Berthier's routing is
+> ACCEPTED.** ⛔ **No deploy, no `.adna/` byte, no `site/` change** — prod stays at `a2ad53b`.
+> Session `session_stanley_20260911_015723_haussmann_increment_2`.
+>
+> **Built:** `what/patterns/pattern_diagrammatic_context.md` (⛩ R1; shelf **24 → 25**) ·
+> `what/specs/spec_forge_ecosystem.md` **v0.1 → v0.2** §*The federation pin* ·
+> `artifacts/template_release/release_staging_ledger_v8_11.md` (**`proposed`** — 8 payload rows,
+> 5 ⛩ questions) · `how/backlog/idea_windows_member_workstation_claude_cli_recipe.md` ·
+> **three memos `outbound_ready`** (astro · mondrian · berthier), **each send its own ⛩ act.**
+>
+> ⭐⭐ **THE CENSUS SET THE PATTERN'S STATUS, AND THE PREDICATE MATCHING THE CLAIM'S OWN WORDS MISSED
+> ITS BEST EVIDENCE.** *"A conformant `.canvas` **beside** its prose"* read literally means filename
+> adjacency ⇒ **2 files, 1 vault**. That predicate **misses `Emacs.aDNA` entirely** — thirteen months
+> of ratified REQ-Q01 practice — because their canvases are keyed by **ID** (`C-01`…`C-06`) and
+> declared companions in `ARCHITECTURE.md`. ⇒ ***"beside" is a declared relationship, not a directory
+> listing.*** Censused on **governance-declared duty** instead: **2 adoptions** (Canvas · Emacs) against
+> **366 canvas files** fleet-wide ⇒ **`status: draft`** by the shelf's own below-3 rule, with the
+> `graduation:` field recording **the predicate, not just the integer**. ⭐ It also corroborates
+> Canvas's bimodal reading by measurement: ScienceStanley 29 · SuperLeague 13 · Regenesis 11 ·
+> Operations 10 · LatticeProtocol 7 canvases, **zero declared duty between them**.
+>
+> ⭐⭐ **`F-w` IS CLOSED AT ITS SOURCE — the whole surviving population is in the IMAGE.** The dev
+> graph's five payload files are **clean of the promise** (Step 9 renamed *Marketplace Teaser →
+> Portability Note*; C4 struck; both 09-09) while `.adna/` carries **nine promise-class hits across six
+> files** ⇒ **v8.11's `F-w` half is a FOLD, not an authoring job.**
+>
+> ⛔⛔ **AND THE LOUDEST SURVIVOR IS IN NO RECORDED LIST — `.adna/HOME.md` carries a whole
+> `## Marketplace` section** (`:74-78`) with a live external link, plus `:15` in the intro: the most
+> user-facing instance in the image, on the first page a bootstrapped node opens. **None of the six
+> recorded `F-w` sites is this file.**
+>
+> ⭐⭐ **IT ALSO CANNOT BE FOLDED, AND WHY CORRECTED HOW THE WHOLE PAYLOAD MUST BE READ.** A whole-tree
+> diff reports divergence nearly everywhere (**418** files; every governance file differs) because
+> **`aDNA.aDNA` is a customized fork and `.adna/` is the pristine template** — same paths, different
+> objects. Ours is a generated dashboard; theirs is a `{{node_hostname}}` template. **Folded on path
+> identity it would overwrite the template with our splash.** ⇒ ***a path is not an identity, and a
+> fold rule keyed on paths cannot tell a counterpart from a namesake*** ⇒ **the payload is an
+> ENUMERATED list, never a tree diff.**
+> ⚠ **Said in fairness — `skill_template_release` is NOT defective.** Step (b.2) already allows
+> *"deliberate image-only deltas … recorded by path + reason."* The escape clause exists; ledger row
+> **P2 is that record**. What would have failed is a mechanical application, which is what a ledger is
+> for. *Naming an instrument's limit is not finding a defect in it.*
+>
+> ⭐ **Berthier ACCEPTED, with the half we can never supply named up front.** Their clause 1 wanted an
+> owner *named **and** accepting* — now fully met. ⛔ Their clause 3 (*"run on Teddy's box with the CLI
+> reachable"*) is **not claimable from this node, ever** — the *prerequisite-absent-on-the-performing-tree*
+> class, **sixth sighting**. Acceptance moves the gap from *unowned* to **owned and unscheduled**;
+> `aDLabs-ADR-026`'s role stays not-fully-exercisable until clause 3, **not** clause 1. Recorded as a
+> backlog **row with a gate, not a sentence in a memo** (`F-v`'s precedent).
+>
+> ⚠ **Controls that paid, both directions.** The wikilink sweep caught **`[[glossary_lattice]]` — which
+> does not exist** — and a link cited for a claim it has nothing to do with ⇒ ***a wikilink that
+> resolves is not thereby one that points at the right thing.*** And `grep -rl "^section: patterns"`
+> returned **0** against a true population of **8**, because the field is quoted — *a negative result is
+> only as wide as the command that produced it*, third sighting this fortnight.
+>
+> ✅ **Measured, not assumed:** `/patterns/*` renders from **8 hand-authored MDX** files under
+> `site/src/content/docs/`, **not** from `what/patterns/` ⇒ the new pattern creates **no route**, fires
+> **no ADR-057 obligation**, and needs **no deploy**. No governance surface narrates a pattern count.
+>
+> ⏭ **NEXT: ⛩ three sends, then ⛩ the v8.11 gate** (ledger §3's five questions), then its **deploy
+> tail** — and only then does `P5.1` recruitment open against a freshly re-derived stamp. ⚠ **Re-derive
+> the R2 window at the gate**: `evidence/p5_1/` was ABSENT at 2026-09-11T02:00Z, and the hold engages
+> the moment it is not. ⛔ Held: `P5.1` with the humans · `P3.3`'s ⛩ `npm login`. ⚠ Owed: B1's first
+> p75 · `F-ab`(a) · `F-v` · babbage ×2 + Ilmarinen's upstream filing, same operator gate.
+
 
 > ⛩⛩ **2026-09-11 — FIVE RULINGS TAKEN AND THE CORRESPONDENCE DEBT IS DISCHARGED. 6/6 MEMOS
 > DELIVERED, `cmp`-IDENTICAL.** ⛔ **No deploy** — prod stays at `a2ad53b`; nothing touched `site/`.

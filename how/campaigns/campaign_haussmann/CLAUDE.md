@@ -3707,3 +3707,110 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > `P5.1` recruitment open** against a freshly re-derived stamp. ⛔ Held: `P5.1` with the humans ·
 > `P3.3`'s ⛩ `npm login`. ⚠ Owed: B1's first p75 · `F-ab`(a) · `F-v` · babbage's lease question +
 > two `proposed` upstream findings · **Ilmarinen's upstream filing, behind the same gate as babbage's**.
+
+> ✅ **2026-09-11 — INCREMENT 2 IS BUILT AND THE ⛩ v8.11 GATE IS PREPARED.** Not a mission: the second
+> operator-ruled increment of the `course_deploy` / `R-97` queue. ⛔ **Nothing deployed, no `.adna/`
+> byte touched, no `site/` change** — prod stays at `a2ad53b`. Session
+> `session_stanley_20260911_015723_haussmann_increment_2`.
+>
+> **Delivered:** `what/patterns/pattern_diagrammatic_context.md` (⛩ R1) · `what/specs/spec_forge_ecosystem.md`
+> **v0.1 → v0.2**, §*The federation pin* · `artifacts/template_release/release_staging_ledger_v8_11.md`
+> (**`proposed`**, 8 payload rows + 5 ⛩ questions + a fire-time checklist) ·
+> `how/backlog/idea_windows_member_workstation_claude_cli_recipe.md` · **three memos `outbound_ready`**
+> (astro · mondrian · berthier), each send its own ⛩ outward act.
+>
+> ⭐⭐ **THE PATTERN'S STATUS WAS SET BY A CENSUS, AND THE PREDICATE THAT MATCHED THE CLAIM'S OWN WORDS
+> WOULD HAVE EXCLUDED ITS BEST EVIDENCE.** The pattern's headline is *"a conformant `.canvas` **beside**
+> its prose."* Read literally, "beside" is filesystem adjacency, so the obvious census is *a `.canvas`
+> whose stem matches a sibling `.md`* — run `[D]`: **2 files, 1 vault.** It **misses `Emacs.aDNA`
+> entirely**, the pattern's oldest and strongest adoption (thirteen months of ratified REQ-Q01
+> practice), because their canvases are keyed by **ID** (`C-01`…`C-06`) and declared companions in
+> `ARCHITECTURE.md`, adjacent to nothing.
+> ⇒ ***"Beside" is a declared relationship, not a directory listing*** — and the predicate would have
+> reported *"1 adoption"* with a straight face. Re-censused on **governance-declared duty**:
+> **2 vault-level adoptions** (Canvas.aDNA · Emacs.aDNA) against **366 canvas files** across the live
+> workspace ⇒ **`status: draft`** by `what/patterns/AGENTS.md`'s own below-3 rule, and the
+> `graduation:` field records **the predicate**, not just the integer.
+> ⭐ It also **corroborates Canvas's bimodal reading by measurement rather than repeating it**: the five
+> largest canvas holders — ScienceStanley 29 · SuperLeague 13 · Regenesis 11 · Operations 10 ·
+> LatticeProtocol 7 — declare **zero** duty between them. ⛔ `find -P` throughout: a `*/` glob from the
+> workspace root follows **14 root-level shims**, nine into `Archive.aDNA`.
+>
+> ⭐ **Canvas deliberately left one question open and it was resolved WITH the argument on the record so
+> they can reject it.** They declined to *propose* the two-field (`authority` + `production`) shape
+> because it reads as a schema change. Adopted anyway: **while `canvas_std` validates neither key, a
+> sibling to an unvalidated key changes nothing any validator sees** — it becomes a schema question only
+> when LIP-0010 makes either key binding, at which point both bind together, which is the cheaper moment
+> to have them already separated. Ships `draft`, which is the state for exactly this.
+>
+> ⭐⭐ **`F-w` IS CLOSED AT ITS SOURCE, AND THAT CHANGES WHAT KIND OF RELEASE v8.11 IS.** Measured
+> `[D] 2026-09-11`: the dev graph's five payload files carry **zero** promise-class hits — Step 9 renamed
+> *Marketplace Teaser → **Portability Note*** and C4 struck, both 09-09 — while `.adna/` carries **nine
+> hits across six files**. ⇒ **the `F-w` half of v8.11 is a FOLD, not an authoring job**, and its control
+> is a re-grep of the image against a **named expected-hit list** (`MarketplaceRegistry`, the CHANGELOG
+> retirement entry, the version comment). **Read the hits; do not count them** — counting is how v8.10
+> fixed two of six.
+>
+> ⛔⛔ **THE LOUDEST SURVIVOR APPEARS IN NO RECORDED LIST.** `.adna/HOME.md` — the **template node-home**,
+> substituted into every bootstrapped node — carries a whole **`## Marketplace`** section (`:74-78`) with
+> a live link to `lattice-protocol.com/marketplace` and a *"until the marketplace is live"* note, plus
+> `:15`'s *"link out to the marketplace"* in the intro. **None of the six recorded `F-w` sites is this
+> file**, and it is the most user-facing of them all: a rendered section on the first page a new operator
+> opens.
+>
+> ⭐⭐ **AND IT CANNOT BE FOLDED — FINDING OUT WHY CORRECTED HOW THE ENTIRE PAYLOAD MUST BE READ.** A
+> whole-tree diff between the two trees reports divergence **nearly everywhere** (418 files in the image;
+> every governance file among them differs) — because **`aDNA.aDNA` is a CUSTOMIZED FORK and `.adna/` is
+> the PRISTINE TEMPLATE**. Same relative paths, different objects: our `HOME.md` is this vault's generated
+> dashboard (`generated_by: build_home.py`, persona `rosetta`), theirs is the `{{node_hostname}}` template.
+> **Folded dev→image on path identity, it would overwrite the template with our splash.**
+> ⇒ ***a path is not an identity, and a fold rule keyed on paths cannot tell a counterpart from a
+> namesake*** ⇒ **the release payload is an ENUMERATED list, never a tree diff**, and step (b.2)'s *"diff
+> both trees"* means *diff the payload paths in both trees.*
+> ⚠ **Said in fairness, because the instrument is not at fault:** `skill_template_release` step (b.2)
+> **already** permits *"deliberate image-only deltas … recorded by path + reason … Silence is not a
+> reason."* The escape clause exists and ledger row **P2 is that record**. What would have failed is a
+> *mechanical* application of the gate — which is what a ledger is for. ***Naming an instrument's limit
+> is not the same as finding a defect in it, and conflating the two is its own error.***
+>
+> ⭐ **Berthier's routing ACCEPTED (⛩ operator), with the half this desk can never supply stated up
+> front.** Their §5 clause 1 required an owner *named **and** accepting*; it is now fully met. ⛔ Clause 3
+> — *"it has been run on Teddy's box with the CLI reachable"* — is **not claimable from this node, ever**:
+> a statement about a machine no agent here can reach, the *"a GO on an act whose prerequisite does not
+> exist on the performing tree"* class, **sixth sighting**. Said now rather than discovered at card-close.
+> ⇒ acceptance moves the gap from *unowned* to **owned and unscheduled**, and `aDLabs-ADR-026`'s Product
+> Leader role stays not-fully-exercisable until clause 3, **not** clause 1. Recorded as a backlog **row
+> with a gate rather than a sentence in a memo** (P4.3's `F-v` precedent).
+>
+> ⚠ **Two controls paid, and one of them in a direction the campaign has not recorded before.** The
+> wikilink sweep over the new pattern caught **`[[glossary_lattice]]`, which does not exist** (the
+> glossary has no `lattice` entry at all — surfaced in the pattern, deliberately **not** fixed, since a
+> glossary edit at a pattern's tail is the unforced widening this campaign keeps catching) **and** a link
+> that resolved perfectly while pointing at a document with nothing to do with the claim it supported
+> (`pattern_agents_md` cited for the same-diff law; the right target is `adr_057_measurement_regime`,
+> whose own title carries *"plus the same-diff gate law"*). ⇒ ***a wikilink that resolves is not thereby
+> a wikilink that points at the right thing***, and only the second half needs a reader.
+> ⚠ **And a quoted-field grep produced a confident zero**: `grep -rl "^section: patterns"` returned **0**
+> against a true population of **8**, because the field is `section: "patterns"`. *A negative result is
+> only as wide as the command that produced it* — **third sighting this fortnight**, after the zsh
+> no-match abort and the outbound-inflated inbox denominator.
+>
+> ✅ **Measured before being assumed, and it kept the increment out of the deploy queue:** `/patterns/*`
+> renders from **8 hand-authored MDX files** under `site/src/content/docs/` where `section: "patterns"`,
+> **not** from `what/patterns/` ⇒ authoring a vault pattern creates **no route**, fires **no ADR-057
+> obligation**, and needs **no deploy**. Publishing it would be a separate decision that does all three,
+> and it would collide with ⛩ R2's ordering. **Not taken.** Likewise derived: **no governance surface
+> narrates a pattern count**, so no same-diff count obligation fires.
+>
+> ⚠ **Protocol deviation, recorded rather than tidied:** the session file was written **after** the work
+> rather than before it. No peer lease existed (checked at open), so nothing was risked — but the lease
+> was held in the agent's head instead of published. ⇒ ***a lease that is not written down is not a
+> lease*** — GR-4 O1's finding entered from the other end.
+>
+> ⏭ **NEXT: ⛩ the three sends, then ⛩ Increment 3 — the v8.11 release + its deploy tail (R2)**, whose
+> five questions are in the ledger's §3 and whose every row must be **re-verified against disk before
+> firing**. ⚠ **Re-derive the R2 window at the gate**: `evidence/p5_1/` was ABSENT at `2026-09-11T02:00Z`
+> and the deploy hold engages the instant it is not. ⛔ Held: `P5.1` with the humans · `P3.3`'s ⛩ `npm
+> login`. ⚠ Owed: B1's first p75 · `F-ab`(a) · `F-v` · babbage's lease question + two `proposed` upstream
+> findings + Ilmarinen's upstream filing, all behind the same operator gate.
+

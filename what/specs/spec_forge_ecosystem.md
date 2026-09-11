@@ -3,11 +3,11 @@ type: spec
 kind: ecosystem_spec
 name: forge_ecosystem
 created: 2026-05-20
-updated: 2026-06-30
-version: "0.1"
+updated: 2026-09-11
+version: "0.2"
 status: active
-last_edited_by: agent_stanley
-tags: [spec, ecosystem, forge, aDNA_pattern]
+last_edited_by: agent_rosetta
+tags: [spec, ecosystem, forge, aDNA_pattern, federation_pin, pin_location, canvas_adna]
 extraction_source: ~/aDNA/CLAUDE.md lines 161-176 (extracted at compliance campaign M01)
 co_signed_adr: aDNA.aDNA/what/decisions/adr_012_ecosystem_spec_extraction.md
 ---
@@ -42,6 +42,40 @@ Authoritative reference for the **Forge.aDNA** aDNA pattern category. Workspace 
 ## Canonical Spec
 
 `Astro.aDNA/what/artifacts/sf_forge_pattern_spec.md` — the reference implementation of the standalone forge pattern. All forges follow this spec for consumer wrappers, federation, context grafting, and version policy.
+
+## The federation pin
+
+> ⛩ **Ruled 2026-09-11** (HAUSSMANN, ruling **R1**), on
+> [[coord_2026_09_08_mondrian_to_rosetta_the_pin_field_has_six_spellings_and_that_is_why_our_index_drifted|Canvas.aDNA's finding]]
+> that no federation index can be *derived* because the pin is spelled differently in every wrapper.
+> **This section restates a canonical form; it does not legislate a new one** — see clause 1.
+
+1. **`version:` is the canonical pin field, and already was.** It is the form the Canonical Spec's own
+   worked example uses (`Astro.aDNA/what/artifacts/sf_forge_pattern_spec.md`, inside the
+   `federation_ref:` block), and that file is the spec every forge follows. ⇒ **The spellings found in
+   the wild are not the absence of a canonical form — they are drift away from one that exists and
+   that nothing enforces.** That is a worse finding than under-specification, and it has a name in
+   this vault: *a specification with no consumer.*
+
+2. **The pin is machine-readable: one key, one semver-or-labelled value.** A pin a reader must parse
+   out of a prose sentence is not a pin an index can derive, which is the whole point of having one.
+
+3. **`pin_location:` indirection is conformant.** A wrapper may **point at** where the pin lives
+   rather than restate it — `pin_location: MANIFEST.md` — and a consumer resolves it there.
+   ⭐ **This adopts `Videos.aDNA`'s practice, which is better than this spec's was**: pins live in
+   `MANIFEST.md` alone, wrappers point and never restate, so **a pin cannot be stale in two places at
+   once.** For contrast, this vault's own `how/federation/git/CLAUDE.md` carries **two** pin-shaped
+   fields in one block (`version:` and `pinned_at_commit:`) — the exact failure mode the indirection
+   avoids.
+
+⛔ **No fleet sweep is implied and none is authorised.** A wrapper carrying a pin in some other
+spelling is in breach of nothing; clause 1 describes where the canonical form lives, not a compliance
+deadline.
+
+⚠ **Scope of the edit, stated because it is the interesting half:** the **canonical** artifact is
+`Astro.aDNA`'s, not this vault's. This section is the standard's *statement about* the pattern; the
+reference implementation is theirs to change, and the corresponding clause there is carried by memo
+under workspace Rule 10, never edited from here.
 
 ## Cross-Forge Composition
 
