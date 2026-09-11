@@ -5,7 +5,7 @@ lattice:
   description: >
     Vault-to-site publishing pipeline for aDNA.aDNA. Transforms vault Markdown
     into Astro MDX content collections and deploys to Vercel. Self-referential:
-    this lattice models the exact pipeline that built adna-docs.vercel.app.
+    this lattice models the exact pipeline that built adna.network.
     See how/publishing/publishing_vault_to_site.md for the narrative description.
   execution:
     mode: hybrid
@@ -47,7 +47,7 @@ lattice:
       description: "Deploy to Vercel via vercel --prod"
     - id: live_site
       type: dataset
-      description: "Live documentation site at adna-docs.vercel.app"
+      description: "Live documentation site at adna.network"
   edges:
     - from: vault_content
       to: content_mapping

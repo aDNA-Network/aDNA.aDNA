@@ -3,7 +3,7 @@ plan_id: mission_haussmann_gr_3_false_red
 type: plan
 title: "GR-3 — the false red: gate-42 fails the site for requests gate-42 cancelled"
 campaign: campaign_haussmann
-phase: P4
+phase: GR   # ⛩ corrected 2026-09-11 — read `P4` while all five sibling GR missions read `GR`, and the charter treats this as a GR lane. A frontmatter field is what a machine reads; the body was always right, which is precisely why nobody noticed the field was not.
 decade: 2
 owner: stanley
 status: completed   # ✅ CLOSED 2026-09-01 — ALL SEVEN CRITERIA MET, AAR FILED (SO#5). AC-1 ✅ AC-2 ✅ AC-3 ✅ AC-4 ✅ AC-5 ✅ AC-6 ✅ AC-7 ✅. CI `33572683681` on `9419b4e` **success**: 650 passed / 0 failed / 3 skipped against the red control `33558250778`'s 649 / 1 / 3 — **exactly one assertion changed state**, no silent improvement elsewhere. ⛔ Nothing deployed and nothing owed to production: the diff carries no site bytes. Prior: ⛩ PRE-BUILD GATE PASSED 2026-09-01 — convention-13 pass COMPLETE at 35/35 with coverage recorded below (3 defects found, all resolved in the criteria BEFORE the signature); budget RATIFIED at the full ~120–180 kT band; O5b (F-s backfill) RULED IN. O1 executed ahead of the gate by design (it is measurement, not build, and three criteria were unwritable without its verdict — see "Why O1 ran first"). Build (O2/O3) and push (O4) begin on this signature.

@@ -1,10 +1,10 @@
 ---
 type: publishing
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-09-11
 status: active
 target: docs
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [publishing, content-mapping, architecture, docs]
 ---
 
@@ -12,7 +12,12 @@ tags: [publishing, content-mapping, architecture, docs]
 
 ## Overview
 
-Every vault entity type maps to a specific site section and URL pattern. This document is the registry of those mappings — the bridge between vault architecture and web architecture. The mapping tables below are extracted from the same `transform-content.mjs` script that builds adna-docs.vercel.app.
+Every vault entity type maps to a specific site section and URL pattern. This document is the registry of those mappings — the bridge between vault architecture and web architecture. The mapping tables below are extracted from the same `transform-content.mjs` script that builds [adna.network](https://adna.network).
+
+> **Every count on this page is derived, not remembered.** Re-derive before quoting: the mapping-table sizes
+> from `site/scripts/transform-content.mjs`, the published totals from a fresh `site/dist/`. Figures below were
+> derived 2026-09-11. A count in prose is a claim with an expiry date, and this page has already outlived one
+> set — see *Current Gaps*.
 
 ## Two Publishing Pathways
 
@@ -20,7 +25,7 @@ Content reaches the site through two distinct mechanisms:
 
 ### Pathway 1: Transform Script
 
-The `transform-content.mjs` script handles content from the **WHAT** triad leg. Six mapping tables define source-to-output transformations:
+The `transform-content.mjs` script handles content from the **WHAT** and **HOW** triad legs. Eight mapping tables define source-to-output transformations:
 
 | Vault Directory | Entity Type | Site Collection | URL Pattern | Count |
 |----------------|-------------|-----------------|-------------|-------|
@@ -30,24 +35,25 @@ The `transform-content.mjs` script handles content from the **WHAT** triad leg. 
 | `what/use_cases/` | use_case | `content/docs/` | `/use-cases/{slug}` | 6 |
 | `what/tutorials/` | tutorial | `content/guides/` | `/learn/tutorials/{slug}` | 9 |
 | `what/docs/` | reference | `content/reference/` | `/reference/{slug}` | 8 |
+| `how/publishing/` | publishing | `content/docs/` | `/how/publishing/{slug}` | 3 |
+| `how/workshops/` | workshop | `content/docs/` | `/how/workshops/{slug}` | 4 |
 
 Each mapping entry defines: `source` (vault filename), `slug` (URL segment), `title` (display name), and type-specific fields (`order`, `difficulty`, `time`, `stability`, `version`).
 
 ### Pathway 2: Direct Astro Pages
 
-Content added during Phase 4.5 (M21) uses direct `.astro` pages with dynamic `[...slug].astro` routes. These bypass the transform script and read content directly:
+Some collections use direct `.astro` pages with dynamic `[...slug].astro` routes. These bypass the transform script and read content directly:
 
 | Vault Directory | Entity Type | URL Pattern | Count |
 |----------------|-------------|-------------|-------|
 | `what/glossary/` | glossary_entry | `/glossary/{slug}` | 25 |
 | `who/community/` | community | `/community/{slug}` | 3 |
-| `who/adopters/` | adopter | `/adopters/{slug}` | 5 |
 
-This second pathway emerged when Phase 4.5 added WHO-triad content that did not fit the original transform script's WHAT-only architecture. Both pathways coexist — the transform script handles bulk content with complex transformations, while direct pages handle smaller collections with simpler needs.
+This second pathway emerged when WHO-triad content arrived that did not fit the transform script's original WHAT-only architecture. Both pathways coexist — the transform script handles bulk content with complex transformations, while direct pages handle smaller collections with simpler needs.
 
 ## The Wikilink Registry
 
-The transform script maintains a 48-entry wikilink map that converts Obsidian `[[wikilinks]]` to site URLs. Every content entity gets a registered entry:
+The transform script maintains a 60-entry wikilink map that converts Obsidian `[[wikilinks]]` to site URLs. Every content entity gets a registered entry:
 
 ```javascript
 'concept_triad': { url: '/learn/concepts/triad', label: 'The Triad' },
@@ -69,7 +75,32 @@ To publish a new vault entity type on the site:
 
 ## Current Gaps
 
-The **HOW** triad leg (`how/publishing/`, `how/workshops/`) is not yet published to the site. This content — including the document you are reading — exists in the vault but has no site pathway. Adding HOW content is planned for Phase 6 (M19: Website v2).
+> ⛔ **Corrected 2026-09-11.** This section used to read: *"The **HOW** triad leg (`how/publishing/`,
+> `how/workshops/`) is not yet published to the site. This content — including the document you are reading —
+> exists in the vault but has no site pathway."* **Every clause of that was false when you read it.** There are
+> 15 built `/how/` pages; this document is served at `/how/publishing/content-mapping`; and it is row 2 of the
+> `publishingMapping` table in the very script this page says its tables are extracted from. The claim outlived
+> the gap it described and nothing re-read it, because **a sentence asserting that something is missing proposes
+> no work — so nothing schedules a look.** Kept rather than deleted: the failure is the most useful thing on
+> the page.
+
+Not everything in the vault reaches the site, and the gaps are real ones — derived 2026-09-11 by counting vault
+sources against built output:
+
+| Vault content | On the site | Gap |
+|---|---|---|
+| `what/patterns/` (25) | 8 published | 17 patterns exist only in the vault |
+| `what/docs/` (20) | 8 mapped to `/reference/` | 12 unmapped |
+| `what/glossary/` (30) | 25 published | 5 unmapped |
+| `who/reviewers/` (16) | — | no route; reviewer personas are an internal review instrument |
+| `who/adopters/` (16) | — | no route of its own; `/adopters/` redirects to `/use-cases/` |
+
+The operational **HOW** entities — `campaigns/`, `missions/`, `sessions/`, `backlog/`, `skills/`, `templates/` —
+are **deliberately** unpublished. They are the vault's working record, not its public face; the [[concept_triad|Triad]]
+publishes what a reader needs, not everything the vault holds. Likewise `who/governance/` and `who/coordination/`.
+
+**A gap in this table is a claim like any other.** If you are reading this more than a release or two after the
+derivation date above, re-derive it before repeating it.
 
 ## Self-Reference
 

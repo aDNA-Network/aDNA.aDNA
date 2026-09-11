@@ -3,7 +3,7 @@ type: evidence
 packet: B5
 campaign: campaign_haussmann
 created: 2026-08-16
-updated: 2026-08-21
+updated: 2026-09-11
 status: active
 last_edited_by: agent_rosetta
 tags: [claim_register, evidence, vitruvius_d6_d7, h13]
@@ -2541,6 +2541,95 @@ Derived by `artifacts/p3_5/derive_register_counts.py`, **re-run after §25 was w
 `G-*`/`R-*` claim rows. The tables in §25.2 and §25.3 are evidence tables, not claim rows; the count
 holding at 189 is what **proves** no phantom claim row was minted (§22.4's trap), checked by
 re-deriving rather than by reasoning.
+
+⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order. This section is now that
+table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and
+it must be a PARSEABLE TABLE, not a prose sentence.**
+
+---
+
+## §26 — THE DOCS CORPUS WAS NEVER IN SCOPE, AND IT HELD A PAGE THAT DENIED ITS OWN EXISTENCE
+
+**Session** `session_stanley_20260911_110421_haussmann_queue_reconcile`, 2026-09-11. Seven claim rows minted,
+**all seven repaired in the same sitting**, both trees. Ids continue the sequence from `R-170` — derived by
+re-running `artifacts/p3_5/derive_register_counts.py`, not by reading the last row.
+
+### §26.1 ⭐⭐ The scope finding, which matters more than any single row
+
+This register's 189 rows cover `/`, `/network`, `/commons`, `/about`, `/vaults`, `/community`,
+`/state-of-the-network` — **the persuasion surface**. That was the right target: B5's mission was *"every
+factual/quantitative claim from the site's key surfaces"*, and a launch-blocking overstatement lives where the
+site argues for itself.
+
+⛔ **But "key surfaces" was never re-read as a scope limit, and the docs corpus — 229 built pages — was
+outside it from the first row to the 170th.** The register measured **where claims were expected to be**, which
+is not the same as where they are. Nothing in the register says it excludes the docs corpus, so a reader of the
+register concludes the site's claims are covered.
+
+⇒ ***A census records what it looked at; only its stated scope records what it did not — and a scope that was
+never written is read as "everything."*** This is `F-u`'s *"routed"* and the 2026-09-07 *"no agent-reachable
+work left"* correction, arriving a third time at a third altitude. The pattern is stable enough to name: **a
+statement true of its subject is read as a claim about the world**, and the defect is never in the sentence, it
+is in the absence of a stated boundary.
+
+⭐ **Corroboration that the boundary was load-bearing, not theoretical:** the very first docs page anyone read
+under the new scope was **flatly false about itself**, and had been for the life of the register.
+
+### §26.2 The rows
+
+| # | Surface | Claim (quoted) | Class | Evidence/ground truth | Severity | Prov |
+|---|---------|----------------|-------|----------------------|----------|------|
+| R-171 | /how/publishing/content-mapping "Current Gaps" | "The **HOW** triad leg (`how/publishing/`, `how/workshops/`) is not yet published to the site. This content — including the document you are reading — exists in the vault but has no site pathway." | **FALSE** | **15 built `/how/` pages** (`how/` hub + publishing 1+3 + workshops 1+4 + lattice-examples 1+4); the page is served at `/how/publishing/content-mapping`; and it is **row 2 of `publishingMapping`** in `site/scripts/transform-content.mjs` — the script the page says its tables are extracted from. Its own "Related" list links three of the pages it says do not exist | **S2** | [D] |
+| R-172 | /how/publishing/content-mapping §Pathway 1 | "handles content from the **WHAT** triad leg. **Six** mapping tables define source-to-output transformations" | **FALSE** | `transform-content.mjs` defines **8** mapping tables — the six listed plus `publishingMapping` (3) and `workshopMapping` (4), transformed from `how/publishing` and `how/workshops`. The two omitted are exactly the HOW tables whose absence R-171 then asserts as a gap | S3 | [D] |
+| R-173 | /how/publishing/content-mapping §Wikilink Registry | "a **48-entry** wikilink map" | **FALSE** | `wikilinkMap` spans lines 21–99 of `transform-content.mjs` and holds **60** entries | S3 | [D] |
+| R-174 | /how/publishing/content-mapping · /how/publishing/vault-to-site · /how/lattice-examples/lattice-content-pipeline | "the site at **adna-docs.vercel.app**" (×5 across 3 served pages) | **FALSE** (identity) | Canonical origin is `SITE_ORIGIN = 'https://adna.network'` (`site/src/data/canonical.ts:34`). ⚠ **The alias resolves — HTTP 200** `[D]`, so this is an *identity* defect, not a dead link: the pages naming the site's home name a deployment alias instead of the domain. **Not a reachability finding, and was nearly filed as one** | **S2** | [D] |
+| R-175 | /how/publishing/vault-to-site §Self-Reference | "published **65+** documentation pages from Phase 1-4 content" | **FALSE** (stale) | `npx astro build` reports **229 page(s) built** `[D] 2026-09-11`. ⚠ **`dist/**/*.html` counts 230** — the extra is `404.html`, the denominator quirk `evidence/sweep/jsonld_census.md` documents. **This row was first written as 230 and corrected before commit**: the wrong denominator was reached for even while repairing a denominator defect | S3 | [D] |
+| R-176 | /how/publishing/vault-to-site §Deploy | "A Vercel Git integration would enable auto-deploy on push (see Content Mapping for **the planned improvement**)" | **FALSE** | Two independent failures. (a) The pointer **dangles and always did** — no section of `content-mapping` has ever described a Git-integration improvement; it was not created by this session's edit. (b) The improvement is **contrary to ratified doctrine**: push and deploy are separate operator GOs precisely so `check_alias_ancestry.mjs` can refuse a tree not containing the serving commit — a guard auto-deploy-on-push would have nothing to run | S3 | [D] |
+| R-177 | vault source `how/publishing/publishing_content_mapping.md` §Pathway 2 (**vault-only; never served**) | "`who/adopters/` → adopter → `/adopters/{slug}` → 5" | **FALSE** | No `/adopters/` route exists: absent from `dist/`, no page source, and live `/adopters/` returns **301 → `/use-cases/`** `[D]`. ⭐⭐ **The served twin did NOT carry this row — the site tree had been corrected and the vault source never was.** The vault source is what `transform-content.mjs` reads, so the next transform run would have **re-introduced it to the live site** | S3 | [D] |
+
+### §26.3 ⭐⭐ `R-177` is the v8.10 finding running a third direction
+
+v8.10: *a release that folds one way is a re-introduction channel.* v8.11: *a fold is not a copy — the image
+held work the dev graph lacked.* Here: **the site tree was repaired and the vault source, which the build reads,
+was not** — so the correct tree was the *downstream* one, and a routine transform run would have reverted it.
+
+⇒ ***Whenever one artifact is generated from another, "which one is right?" has no default answer — and the
+generated one being right is the case that silently un-fixes itself.*** Every repair in this sitting was
+therefore applied to **both trees**, with a control asserting zero survivors across `how/publishing/`,
+`what/lattices/examples/` and `site/src/`.
+
+### §26.4 What was NOT done, stated so nothing is inferred
+
+- ⛔ **No gate was authored.** The class — *a page asserting a route is unpublished while that route exists in
+  `dist/`* — is uncovered: `gate-21` checks rendered vault-state numbers, `gate-14` checks repo/publisher
+  literals, neither sees this. Filed as `how/backlog/idea_gate_self_negating_route_claim.md` at `proposed`.
+  **The standing rule — no new checker at a sitting's tail — has been ruled five times and is honoured here.**
+- ⛔ **The docs corpus was NOT swept.** Three pages were repaired because a targeted grep surfaced them. **229
+  pages have not been read against this register**, and §26.1 is the reason that is now a known gap rather than
+  an assumed absence. Scoping that sweep is a successor item, not a claim of coverage.
+- ⛔ **`what/decisions/adr_023_*.md:73` was NOT edited.** It names `adna-docs.vercel.app/vaults/` inside a
+  ratified contract clause. Rewriting ratified ADR text is not an agent's act (§7.7); **flagged to the operator**.
+  Line 146 of the same file is a dated historical record and is correctly left alone.
+- ⛔ **`adr_006`, the III result JSONs, and `idea_theme_persistence_bug.md` were NOT edited** — all are dated
+  provenance where the old hostname is the subject, not a defect (SO-6/SO-7).
+- ⚠ **`site/src/data/canonical.ts:29` was checked and is CORRECT.** The session plan listed it as a false
+  comment claiming the legacy host "no longer resolves at all". Its subject is **`adna.dev`**, not the vercel
+  alias — and `adna.dev` returns **no DNS and connection failure** `[D]`. *The plan conflated two hostnames;
+  the probe caught it before an edit.* Recorded because a correct thing nearly edited is worth the same note as
+  a wrong thing nearly shipped.
+
+### §26.5 Counts — derived last
+
+| Metric | Value |
+|---|---|
+| Physical table rows | **196** |
+| **Unique ids** | **181** (14 `G-*` + 167 `R-*`, `R-11`…`R-177`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, **re-run after §26 was written**, not typed.
+Δ from §25.5: rows **189 → 196** (+7), unique ids **174 → 181** (+7), `R-*` **160 → 167**. The deltas are
+equal because §26 mints seven claim rows and no evidence-only tables — the §22.4 phantom-row trap checked by
+re-deriving, not by reasoning.
 
 ⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order. This section is now that
 table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and

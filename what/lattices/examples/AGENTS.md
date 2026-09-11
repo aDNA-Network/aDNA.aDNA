@@ -33,7 +33,7 @@ Lattices that model this vault's own workflows — the structure IS the lesson.
 
 | File | Lattice Type | Execution Mode | Demonstrates |
 |------|-------------|---------------|-------------|
-| `content_pipeline.lattice.yaml` | pipeline | hybrid | Vault-to-site publishing pipeline — models the exact process that built adna-docs.vercel.app |
+| `content_pipeline.lattice.yaml` | pipeline | hybrid | Vault-to-site publishing pipeline — models the exact process that built adna.network |
 | `campaign_execution.lattice.yaml` | workflow | workflow | Campaign hierarchy — models Operation Rosetta's own Campaign → Mission → Objective flow |
 | `context_serving.lattice.yaml` | context_graph | reasoning | Convergence model — models the startup protocol every agent session uses |
 | `dual_audience_review.lattice.yaml` | agent | hybrid | Quality review agent — models the quality gate every content file passed |

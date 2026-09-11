@@ -1,10 +1,10 @@
 ---
 type: publishing
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-09-11
 status: active
 target: website
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [publishing, pipeline, transform, website]
 ---
 
@@ -12,7 +12,7 @@ tags: [publishing, pipeline, transform, website]
 
 ## Overview
 
-This document describes how aDNA.aDNA vault content becomes a live documentation website. The pipeline transforms Markdown files from vault directories into Astro content collections, then deploys to Vercel. You are reading a file that was produced by the same vault this pipeline publishes — the process described here built the site at adna-docs.vercel.app.
+This document describes how aDNA.aDNA vault content becomes a live documentation website. The pipeline transforms Markdown files from vault directories into Astro content collections, then deploys to Vercel. You are reading a file that was produced by the same vault this pipeline publishes — the process described here built the site at [adna.network](https://adna.network).
 
 ## The Pipeline
 
@@ -62,11 +62,16 @@ Deploy to Vercel with:
 cd site && vercel --prod
 ```
 
-Currently manual. A Vercel Git integration would enable auto-deploy on push (see [[publishing_content_mapping|Content Mapping]] for the planned improvement).
+Manual, and **deliberately so** — corrected 2026-09-11. This line used to call auto-deploy-on-push a planned
+improvement and point at a section of [[publishing_content_mapping|Content Mapping]] that never described one.
+Both halves are now retired: the pointer dangled, and the improvement was ruled against. A push publishes
+*source*; a deploy publishes *the site*. Keeping them as two separate acts is what lets a guard refuse to publish
+a tree that does not contain the commit currently serving production — a check auto-deploy-on-push would have
+nothing to run.
 
 ## Self-Reference
 
-This pipeline is the mechanism that published 65+ documentation pages from Phase 1-4 content. The [[concept_convergence|Convergence Model]] describes why vault content is structured for token selection — this pipeline is where that structure pays off on the web side. Every concept, tutorial, and pattern page on adna-docs.vercel.app passed through these four stages.
+This pipeline is the mechanism that publishes the site: **229 pages** as of 2026-09-11, derived from a fresh build, not remembered. The [[concept_convergence|Convergence Model]] describes why vault content is structured for token selection — this pipeline is where that structure pays off on the web side. Every concept, tutorial, and pattern page on adna.network passed through these four stages.
 
 ## Related
 

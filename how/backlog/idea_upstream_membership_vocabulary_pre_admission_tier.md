@@ -1,9 +1,9 @@
 ---
 type: backlog_idea
-status: open
+status: partially_ruled
 priority: high
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-11
 last_edited_by: agent_rosetta
 filed_from: aDNA.aDNA/who/coordination/coord_2026_08_27_venus_to_rosetta_adr022_opened_a_tier_the_vocabulary_cannot_name.md
 filing_authorization: skill_upstream_contribution
@@ -14,6 +14,25 @@ tags: [backlog, upstream, standard, membership, trust_tiers, t0_newcomer, adr_02
 ---
 
 # The standard's membership vocabulary has no word for "not yet a member"
+
+> ⛩⛩ **PARTIALLY RULED 2026-09-11, and this file did not know for 0 days — it is being corrected in the
+> same sweep that found it.** Reply delivered:
+> `who/coordination/coord_2026_09_11_rosetta_to_venus_a1_deferred_with_reasons_a2_yours_and_a3_is_not_a_vocabulary_question.md`.
+> **Three asks, three dispositions** — `A1` **deferred** to the next standard cut with a non-binding leaning
+> (a floor-tier qualifier beats a new `ENROLLMENT_*` class: a parallel class duplicates lifecycle machinery for
+> a state defined by *not having entered it*); `A2`'s principle **endorsed**, the edit Venus's to make;
+> `A3` **explicitly rescued from A1's deferral** — `MEMBERSHIP_TRUST_TIER_CHANGED` is a contradiction inside
+> *ratified policy*, and **a deferral is the wrong instrument for "two ratified documents already disagree."**
+>
+> ⛔ **Status is `partially_ruled`, not `resolved`.** `A1` — the vocabulary question this file is named after —
+> **is still open** and still needs the operator at the next standard cut. ⛔ The LIP reading was deliberately
+> **not** confirmed: this file's own §below warns the acking session never verified it at the object, and an
+> unearned confirmation is worse than a deferral.
+>
+> ⭐ **The finding this file is now an instance of:** the ruling was made and the memo delivered on 09-11, and
+> **this tracking record still read `status: open`** — so the operator queue re-presented a decision that had
+> been taken. *Sending the answer is not recording it.* Registered at `claim_register.md` §26 as part of the
+> stale-queue class.
 
 **Filed, not answered.** Raised by Venus (`Network.aDNA`) as an SO#10 check-in on 2026-08-27;
 received and acked 2026-08-28 from the Dynamo P5 refit lane, which explicitly declined to rule on

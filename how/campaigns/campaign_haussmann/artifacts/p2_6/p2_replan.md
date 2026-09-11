@@ -5,7 +5,7 @@ title: "HAUSSMANN Decade-2 re-plan — measured against live P0–P2"
 owner: stanley
 status: accepted   # ⛩ DP6 RATIFIED by the operator 2026-08-19 (session_stanley_20260819_190213); all 9 ⊳ stamped (D-A…D-H in §3, D-I in §2's P3.2)
 created: 2026-08-19
-updated: 2026-08-19
+updated: 2026-09-11
 last_edited_by: agent_rosetta
 grounded_in: "evidence/scoring/reconciliation_p2_6.md · artifacts/p2_6/decade2_premise_audit.md · artifacts/p2_6/gate_rebaseline.md · evidence/coldreads/coldread_synthesis_p2_6.md"
 supersedes_scope_of: none   # first firing of DP6's recurring shape
@@ -157,10 +157,23 @@ CTA points at) and **R-123** (license the docs repo). Original scope — ADR-055
 constitution page, the numbered archive + JSON index, proposal #1 filed through the process itself —
 unchanged.
 
-> **⊳ Sub-decision D-D (operator, legal).** `aDNA-Network/aDNA.aDNA` has **no license**, and "Edit this
+> ✅✅ **⊳ D-D IS DISCHARGED — verified at the object 2026-09-11, and it had been done for some time.**
+> `LICENSE` (MIT, "Copyright (c) 2026 aDNA Labs") is committed at **`8e0efa4`**, present on `origin/main`,
+> and publicly reachable — `raw.githubusercontent.com/aDNA-Network/aDNA.aDNA/main/LICENSE` returns **200**
+> `[D]`. The recommendation was taken. Inbound contributions now arrive under stated terms.
+>
+> ⛔ **`#needs-human` is cleared here, and this row is the reason the clearing matters.** The decision was made
+> and the artifact that tracked it was never updated, so **every cold read of the gate queue since has
+> re-presented a settled legal question to the operator.** A stale owed-row does not merely misinform — it
+> *spends operator attention on a closed question*, which is the most expensive failure mode an operator queue
+> has. Registered at `claim_register.md` §26. ⇒ ***Making a decision and retiring the record of needing it are
+> two acts, and only the first one feels like finishing.***
+>
+> ~~**⊳ Sub-decision D-D (operator, legal).** `aDNA-Network/aDNA.aDNA` has **no license**, and "Edit this
 > page" routes contributor PRs into it. **Recommendation: MIT, matching the image repo.** This is
 > flagged `#needs-human` — choosing a license is not an agent's call, and inbound contributions under no
-> stated terms is the one finding in this batch with a legal edge rather than an editorial one.
+> stated terms is the one finding in this batch with a legal edge rather than an editorial one.~~
+> *(Struck, not deleted — SO-6. Its reasoning is the reusable part; its premise is what lapsed.)*
 
 ### P4.1 — Tokens + visual voice · **KEEP UNCHANGED**
 
@@ -290,7 +303,15 @@ explain does not belong in the first sentence a stranger reads.
 > pending exactly this ruling — it now needs a claim-register row so P4.5a inherits it the same way it
 > inherits R-111/R-120/R-121/R-124. Filed below as a handoff item.
 
-**⊳ D-D — the docs-repo license.** See P3.5. **Recommendation: MIT.** `#needs-human`.
+**⊳ D-D — the docs-repo license.** See P3.5. ✅ **RULED 2026-08-19 (MIT) · SHIPPED at `8e0efa4` · verified
+public 200 on 2026-09-11.** ~~`#needs-human`~~ — **cleared 2026-09-11** (SO-6: struck, not deleted).
+
+> ⚠ **This tag was the second of two, and the pair is the finding.** D-D was **ruled on 2026-08-19** — the
+> ruling sits three lines below this one — **and then shipped**. Both `#needs-human` tags survived anyway, in
+> the same file, one of them directly above its own ruling. ⇒ ***a tag is not retired by the act it was waiting
+> for; something has to retire it, and nothing was assigned to.*** Repairing only the first occurrence would
+> have been `F-w` exactly: **the fix scoped to the filing rather than the class.** Grepped for what the tag
+> *claimed*, not for the row that claimed it.
 
 > **⛩ RULED 2026-08-19 — MIT**, matching the image repo `aDNA-Network/aDNA` and the licence badge the
 > site already displays. **Owner: P3.5**, alongside the R-122 funnel repair. Two conditions on the

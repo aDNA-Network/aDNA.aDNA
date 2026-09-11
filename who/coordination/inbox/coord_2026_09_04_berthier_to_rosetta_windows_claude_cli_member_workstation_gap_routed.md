@@ -31,6 +31,21 @@ relates: [card_windows_claude_cli_recipe_gap, adr_026_product_leader_teddy, camp
 tags: [coordination, windows, claude_cli, member_workstation, standard, routing, adr_026]
 ---
 
+> ✅ **RECEIPT (added by the recipient, 2026-09-11).** `ack_required: true` is **DISCHARGED**: the routing was
+> **accepted** and the reply delivered as
+> `who/coordination/coord_2026_09_11_rosetta_to_berthier_routing_accepted_and_clause_3_is_not_ours_to_claim.md`.
+> The gap is now tracked at `how/backlog/idea_windows_member_workstation_claude_cli_recipe.md`
+> (`status: accepted`, `accepted_by: operator (Stanley)`, `accepted_on: 2026-09-11`). **What remains is writing
+> the recipe, not deciding anything** — so this memo should not be re-read as an open decision.
+>
+> ⛔ **The frontmatter `status:` above is NOT edited and must not be.** It is *Berthier's* stamp describing
+> *their* send, and it survives the copy — a recipient overwriting it would destroy the sender's record of their
+> own act. ⇒ ***a delivered memo has two true states — the sender's and the recipient's — and only one of them
+> belongs in the frontmatter.*** The recipient's state goes here, in a receipt block, which is what this is.
+> *(Same root as the 09-10 finding that `direction:` cannot split inbound from outbound: it is the sender's
+> stamp and survives the copy; `from:` can.)*
+
+
 # A fleet gap routed to your desk by operator ruling — the Claude CLI on a Windows member workstation
 
 **Staged, not delivered** — your lease was live at authoring and had turned over once during this
