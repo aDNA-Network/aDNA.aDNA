@@ -6,7 +6,7 @@ import { buildWebPageJsonLD } from '../utils/seo';
 import subnetworksData from '../data/subnetworks.json';
 // HAUSSMANN P1.2 — derived counts, shared with the home hero + /state-of-the-network so the three
 // surfaces cannot disagree.
-import { subnetworkCount, subnetworksWithPublicUrl } from '../data/network_state';
+import { subnetworkCount, subnetworksWithPublicUrl, subnetworkIsPublishable } from '../data/network_state';
 
 // Storyweave P1 — the "who's behind this" credibility surface. Answers the O4 skeptic gap
 // (network-of-one / no real humans / democracy-vs-Founding-Architect) with the operator-
@@ -26,9 +26,22 @@ const jsonLD = buildWebPageJsonLD({
 });
 
 // Public-good band — single-sourced from the same fixture /commons uses (no hardcoded names).
-const subnetworks = (subnetworksData as any).subnetworks ?? [];
+// Gated by `publish_status` at the shared seam (network_state.ts). This page was the SECOND surface
+// rendering the Wilhelm-Foundation attribution; the queue row naming this finding named only
+// /commons, so a remedy aimed there would have left these rows live.
+const subnetworks = ((subnetworksData as any).subnetworks ?? []).filter(subnetworkIsPublishable);
 // The Wilhelm-anchored open project we can point at today (operator-cleared public URL).
 const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? null;
+
+// Does the WF pair clear the publication gate? Read from the UNGATED overlay on purpose: asking
+// "did these entries survive the filter" of an already-filtered array cannot distinguish "withheld"
+// from "absent from the overlay entirely", and those need different answers.
+// ⚠ `.every()` is TRUE on an empty array, so a bare `.every()` would render this card if the pair
+// were removed from the overlay entirely — while its own bio says their work "grounds two of the
+// public-good subnetworks on aDNA", which would then be false. Presence is required explicitly.
+const wilhelmPair = ((subnetworksData as any).subnetworks ?? [])
+  .filter((s: any) => s.id === 'wilhelm_ai' || s.id === 'rare_archive');
+const wilhelmPairPublishable = wilhelmPair.length === 2 && wilhelmPair.every(subnetworkIsPublishable);
 ---
 
 <BaseLayout title="Who's behind aDNA" description={description} jsonLD={jsonLD}>
@@ -81,6 +94,16 @@ const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? nul
           </p>
         </article>
 
+        {/* ⛩ COUPLED TO THE SAME PUBLICATION GATE, and the coupling is an interpretation the operator
+            may reject. This card is AUTHORED COPY, not overlay data, so `publish_status` could never
+            reach it — the red-proof for the gate withheld the two data-driven renderings and left
+            THIS one live, naming both individuals in the page's own voice, in the most human-readable
+            place on the site. A gate that withholds the data and not the prose reads as working.
+            It is therefore keyed to the same predicate so that ONE disposition covers every surface
+            naming these people. ⚠ The 2026-06-07 clearance was granted "for the commons feature"; if
+            the Foundation's anchor-partner role is separately cleared, decouple it here rather than
+            widening that clearance by silence. Inert at current data. */}
+        {wilhelmPairPublishable && (
         <article class="person-card">
           <h3 class="person-name">The Wilhelm Foundation</h3>
           <p class="person-role">Anchor partner &middot; Helene &amp; Mikk Cederroth</p>
@@ -99,6 +122,7 @@ const rareArchive = subnetworks.find((s: any) => s.id === 'rare_archive') ?? nul
             </p>
           )}
         </article>
+        )}
       </div>
     </div>
   </section>

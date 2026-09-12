@@ -1,7 +1,7 @@
 ---
 type: glossary_entry
 created: 2026-04-14
-updated: 2026-07-02
+updated: 2026-09-12
 status: active
 term: "Mission"
 spec_section: "§9.1"
@@ -22,7 +22,7 @@ A multi-session work decomposition unit that lives in `how/missions/`. A mission
 
 ## Usage Examples
 
-- This vault has 19 missions (M00-M19) defined for Operation Rosetta, organized into 7 phases. Each mission file lives in `how/campaigns/campaign_rosetta/missions/` — for example, M15 (this glossary's parent mission) defines 3 objectives spanning 2 sessions.
+- This vault has 35 missions (M01-M35) defined for Operation Rosetta, organized into 7 phases. Each mission file lives in `how/campaigns/campaign_rosetta/missions/` — for example, M15 (this glossary's parent mission) defines 3 objectives spanning 2 sessions.
 - Mission handoff: when one session ends mid-mission, the SITREP's "Next Session Prompt" tells the next agent exactly where to pick up.
 
 ## See Also

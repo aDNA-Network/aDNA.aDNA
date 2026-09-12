@@ -71,6 +71,10 @@ campaign close — waits here, and **nothing agent-side moves it.**
 
 ⛔⛔ **A DEPLOY HOLD GOES LIVE THE MOMENT `evidence/p5_1/` IS NON-EMPTY.** Re-derive the panel build stamp
 from the alias' `/.well-known/adna-build.json` **before the first panellist** — do not quote a recorded one.
+⚠ **Re-derived 2026-09-12: `evidence/p5_1/` is still ABSENT**, so the hold is not engaged and the docs-sweep
+increment was free to build. The stamp recorded here on 09-11 was `681c814`; prod moved to **`eda4cbf`** at
+19:23Z the same day — **which is the second time in two days a recorded stamp has aged inside this
+artifact**, and the reason the instruction is *re-derive*, not *read*.
 
 ### ⛩ G2 — check Speed Insights before scheduling the panel *(cheap, and it may move the close date)*
 
@@ -90,19 +94,61 @@ The only genuine ratification queue left. Bundle into one sitting:
   header says *"authored by an agent; ratification is the operator's."*
 - **Babbage's lease question.**
 - **Ilmarinen's upstream filing** (`skill_upstream_contribution` needs approval).
-- **Venus `A1`** — the pre-admission-tier vocabulary, the one disposition of three still open (§1).
+- ~~**Venus `A1`** — the pre-admission-tier vocabulary, the one disposition of three still open (§1).~~
+  ⛔ **CLOSED, struck 2026-09-12 (SO-6).** Venus's reply landed **the same day this artifact was written**
+  (`inbox/coord_2026_09_11_venus_to_rosetta_a3_taken_as_ours_a1_accepted_and_a2_queued.md`, §1:
+  *"A1 — deferral **ACCEPTED**"*, `ack_required: false`) — arriving on two commits that landed **on top of
+  this session's own commit mid-sitting**. ⇒ ***this row went stale within hours of being authored, in the
+  artifact whose entire subject is stale rows***, and it would have spent operator attention on a settled
+  question at the very next gate. **G3 is three items, not four.**
 
-### ⛩ G4 — H1, the Wilhelm co-sign embargo · **re-probed, LIVE, and higher than previously ranked**
+### ⛩ G4 — H1, the Wilhelm co-sign embargo · ⛔⛔ **RESTATED 2026-09-12 — THIS ROW WAS WRONG**
 
-`site/src/data/subnetworks.json` (`generated_at: 2026-07-06`) carries **`attribution: "Wilhelm Foundation
-(Helene & Mikk Cederroth)"`** on the `wilhelm_ai` and `rare_archive` entries, and **all four cards render live
-on `/commons`** `[D] 2026-09-11`. The written co-sign clearance the audit asked for is **not recorded anywhere
-in this vault.**
+~~The written co-sign clearance the audit asked for is **not recorded anywhere in this vault.**~~
+⛔ **FALSE, and struck (SO-6).** The clearance **is** on the record: the operator **explicitly cleared the
+WF pair on 2026-06-07** (AskUserQuestion, WilhelmAI ADR-010-window override), recorded in
+`site/src/data/subnetworks.yaml`'s own provenance header and in
+`who/coordination/coord_2026_06_07_rosetta_to_hygieia_commons_feature.md`.
 
-⇒ **Real, named third parties are published on a live public page under an embargo that was never lifted on
-the record.** Either obtain clearance in writing or feature-flag the two cards. ⛔ Worth clearing **before the
-panel** — `/commons` is a `gate-49` template and a cold reader lands on it, and the claim register already
-scores its copy `unsupported` (R-49, R-52).
+⚠ **Why both this row and its 2026-09-12 re-probe missed it:** the search ran over `who/`,
+`what/decisions/` and the campaign artifacts — and the record lives in **`site/src/data/`**, a surface
+neither command covered. ***A negative result is only as wide as the command that produced it***
+(convention 16) — committed here **inside an investigation of a supposedly-missing record**, and the false
+negative was then carried into the operator's question and framed their ruling. Corrected at the object.
+
+**The real finding is sharper than the one this row claimed.** The 2026-06-07 clearance was **conditional**,
+and the memo's §2 is explicit: the WF pair is *"**commit-only** until the operator green-lights the **E5
+close deploy**"*, with *"silence-until-close is **not** taken as consent — if no ack by the E5 close-deploy
+gate, Rosetta surfaces the WF-pair go/no-go to the operator again at that gate."*
+
+⛔⛔ **E5 NEVER REACHED A CLOSE DEPLOY.** It was **subsumed** into `campaign_website_adna` on **2026-06-18**
+(`status: subsumed`), its fixtures — `subnetworks.*` by name — carried forward as *"resolved inputs."*
+⇒ **the release event cannot occur, and the safeguard that was supposed to re-surface this decision died
+with the gate it was keyed to.** The cards have been live on production ever since.
+
+⇒ ***A condition keyed to a gate is discharged by nothing when the gate is ABOLISHED rather than passed***
+— P4.4b's *"the antecedent is not 'not yet' but 'never'"*, arriving on a **third-party publication
+embargo** instead of an acceptance criterion, and converting a conditional clearance into an unconditional
+one without anyone deciding to.
+
+⚠ **And the field that recorded the condition enforced nothing.** `publish_status` was projected into
+`subnetworks.json` and read by **no code at all** — *a publication condition recorded in a data field is
+not a publication gate.*
+
+✅ **BUILT, NOT FIRED (⛩ operator ruling 2026-09-12).** `publish_status` is now the live gate at one seam
+(`site/src/data/network_state.ts` → `subnetworkIsPublishable`), honoured by **all four** renderings — and
+there were four, not the one this row named: `/commons` card attribution · `/about` proof-list attribution ·
+`/about`'s **hardcoded Wilhelm Foundation person card** (authored copy, invisible to any data gate — the
+red-proof withheld the other three and left this one live) · and the derived counts. **Inert at current
+data**: `/commons` and `/about` are byte-unchanged, proven against a no-change control. Red-proven both
+ways: flipping the status takes `Cederroth` 3→0 on both pages, the declared count 4→2, the person card
+1→0, with WGA and Context Commons unaffected.
+
+⇒ **What is owed is now a ruling, not work.** Three options, and the cost of each is one value-change in
+`subnetworks.yaml`: **(a)** rule the 2026-06-07 clearance discharged notwithstanding the dead E5 gate and
+record that, **(b)** fire the gate until the ADR-010 Wilhelm-batch co-sign lands, or **(c)** ask Hygieia /
+the Foundation directly. ⛔ Worth settling **before the panel** — `/commons` is a `gate-49` template a cold
+reader lands on, and the register already scores its copy `unsupported` (R-49, R-52).
 
 ### ⛩ G5 — H5, the CoC confidential reporting address · **re-probed, still open**
 

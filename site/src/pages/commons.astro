@@ -8,6 +8,7 @@ import heroCommons from '../assets/heroes/hero_commons.png';
 import { buildWebPageJsonLD } from '../utils/seo';
 import subnetworksData from '../data/subnetworks.json';
 import vaultsData, { canonicalVaultSlug } from '../data/vaults';
+import { subnetworkIsPublishable } from '../data/network_state';
 
 // E5 / M5.12 — the Public-Good Commons. Hero copy = Stage-0-ratified Direction B ("A commons,
 // not a catalog"). Cycle history (per-cycle plan REALIGNED at the audit P2, 2026-06-10):
@@ -28,7 +29,10 @@ const jsonLD = buildWebPageJsonLD({
   url: Astro.url.href,
 });
 
-const subnetworks = (subnetworksData as any).subnetworks ?? [];
+// Gated by `publish_status` at the shared seam (network_state.ts) — see that file's PUBLICATION GATE
+// note for the 2026-06-07 conditional clearance and the E5 close-deploy gate that was abolished
+// rather than passed. Inert at current data; withholding is one value-change in subnetworks.yaml.
+const subnetworks = ((subnetworksData as any).subnetworks ?? []).filter(subnetworkIsPublishable);
 
 // ——— c164 · "The commons, today" — the first social surface, computed only from what the
 // registry truly records (who-not-how-many; zero fabricated metrics). Joins the curated

@@ -24,6 +24,22 @@
 #   cards (WilhelmAI ADR-002 attribution discipline); (2) the WF pair stays COMMIT-ONLY
 #   until the operator green-lights the E5 close deploy (a Hygieia/WilhelmAI coord note
 #   is on record at who/coordination/coord_2026_06_07_rosetta_to_hygieia_commons_feature.md).
+#
+# HAUSSMANN (2026-09-12) — `publish_status` IS NOW LOAD-BEARING. READ THIS BEFORE EDITING IT.
+#   Until today this field was projected into subnetworks.json and read by NOTHING: it recorded the
+#   publication condition above and enforced none of it. It is now the publication gate, applied at
+#   one seam (site/src/data/network_state.ts → subnetworkIsPublishable) and honoured by all three
+#   consumers (/commons, /about, and the derived counts). Cleared values are `ready` and
+#   `operator_cleared_YYYY_MM_DD`; ANY other value withholds the WHOLE ENTRY from every public
+#   surface, and the counts follow because they derive from the gated array.
+#   ⛔ Set it HERE, never in subnetworks.json — that file is projected and overwritten by
+#   scripts/build_vaults_data.mjs (which also re-stamps generated_at from the clock).
+#   ⚠ Clause (2) above is UNDISCHARGEABLE AS WRITTEN: the "E5 close deploy" it waits on never
+#   happened — E5 was subsumed into campaign_website_adna on 2026-06-18 and its fixtures were carried
+#   forward as "resolved inputs", so the release event cannot occur and the memo's "silence is not
+#   consent" safeguard died with the gate it was keyed to. The WF pair is nevertheless LIVE on
+#   production today. That disposition is an open ⛩ operator gate, not an agent's call; the gate is
+#   built and deliberately NOT fired, so nothing here changed what a reader sees.
 # ---------------------------------------------------------------------------
 
 subnetworks:

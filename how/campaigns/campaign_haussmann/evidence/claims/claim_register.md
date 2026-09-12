@@ -2634,3 +2634,99 @@ re-deriving, not by reasoning.
 ⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order. This section is now that
 table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and
 it must be a PARSEABLE TABLE, not a prose sentence.**
+
+## §27 — THE DOCS CORPUS, SWEPT: SIX SELF-DESCRIPTIONS THAT AGREED WITH THEMSELVES AND NOT WITH DISK
+
+**Session** `session_stanley_20260912_050048_haussmann_docs_sweep`, 2026-09-12. Seven claim rows minted,
+**all seven repaired in the same sitting**. This is the successor item §26.4 named — *"229 pages have not
+been read against this register"* — executed in triage order and **reported at the width it actually
+covered** (see §27.4).
+
+### §27.1 ⭐⭐ The shape: internally consistent arithmetic is the thing that lets a count rot
+
+Five of the seven are counts that **carry their own corroboration**, and that is precisely why they
+survived. `50 skills (21 base + 29 project-specific)` — the sum checks out. `41 templates (25 + 11 + 5)` —
+so does that one. `10 ontology extensions` shipped **with a ten-item list**, and the list was missing
+`reviewer` too, so the count and its enumeration agreed with each other for ~4.5 months while both
+disagreed with disk.
+
+⇒ ***A figure that can be checked against itself will be, and a reader who does that stops.*** The
+arithmetic check catches a typo and is structurally blind to staleness, because staleness moves every
+term together. This is KW-14's *derive, never type* with a sharper edge: **a typed figure that shows its
+working looks derived.**
+
+### §27.2 ⭐⭐ `R-177` INVERTED — the vault was repaired and the site was not
+
+§26.3 found the **site tree correct and the vault source stale**, and concluded that a transform run would
+have re-introduced the defect. The docs sweep found the **same corpus failing in the opposite direction**:
+`what/glossary/glossary_ontology_extension.md` already read **11**, `glossary_template.md` **45**,
+`glossary_skill.md` **57**, and `who/community/community_roles.md` literally read ***"10 (now 11)"*** —
+the correction visible in the vault, in the file, for months — while the published site went on saying
+10, 41 and 50.
+
+⛔ **And the mechanism is the absence of a mechanism.** `transform-content.mjs` holds **8 mapping tables**
+(§26.2 `R-172`); **`glossary` and `community` are not among them.** Those two sections — **29 published
+pages** — have a vault source and *no generator between them*, so a repair to either side is invisible to
+the other **forever**. The 8 mapped sections self-heal on a transform run; these cannot.
+
+⇒ ***When two trees hold the same claim and neither generates the other, there is no default answer to
+"which is right?" AND no propagation path — so the drift is permanent by construction.*** §26.3 asked
+which tree to trust; this asks the prior question, **whether anything connects them at all.**
+
+### §27.3 The rows
+
+| # | Surface | Claim (quoted) | Class | Evidence/ground truth | Severity | Prov |
+|---|---------|----------------|-------|----------------------|----------|------|
+| R-178 | /glossary/glossary-ontology-extension | "This vault adds **10** ontology extensions: … `community`, `adopter` (under `who/`) …" | **FALSE** | **11** on disk and in `CLAUDE.md` §Extended Ontology (twice). `who/reviewers/` has existed since **2026-04-23** `[D]`. ⭐ The count AND its ten-item enumeration were both missing `reviewer`, so **the list corroborated the count** — checking one against the other returns green. Vault source `what/glossary/glossary_ontology_extension.md` **already read 11** | **S2** | [D] |
+| R-179 | /community/community-processes | "the **10** ontology extensions added here" | **FALSE** | 11. Vault source `who/community/community_processes.md` **already read 11** | S3 | [D] |
+| R-180 | /community/community-roles | "customized with **10** ontology extensions" | **FALSE** | 11. ⭐ Vault source reads ***"10 (now 11)"*** — the correction was authored in the vault and never reached the page | S3 | [D] |
+| R-181 | /community/community-context-commons | "This vault created **13** ontology extensions, **26 content files**, and **25 glossary entries** during Operation Rosetta" | **FALSE** (×2 + 1 unscoped) | ⭐⭐ **A third figure for one property on one site**, and the sentence **linked to `/glossary/glossary-ontology-extension` — the page that said 10** ⇒ the citation a reader would follow to check it **disagreed with it**. Truth 11. "26 content files" has no stated predicate and no Rosetta-era snapshot ⇒ **scoped out, not replaced by a guess**. "25 glossary entries" is true of the **published** glossary and false of the **vault** (30) | **S2** | [D] |
+| R-182 | /glossary/glossary-template | "This vault has **41** templates (**25** base + 11 extension + **5** operational)" | **FALSE** (stale) | `ls how/templates/template_*.md` = **45**; `CLAUDE.md` + `MANIFEST.md` both read **45 (26 + 11 + 8)**. ⚠ A naive directory count reads **48** (`AGENTS.md` + two bundle dirs) and **would "fix" a correct number** — the trap Increment 3 recorded, hit again here | S3 | [D] |
+| R-183 | /glossary/glossary-skill | "This vault has **50** skills (**21** base + **29** project-specific)" | **FALSE** (stale) | `ls how/skills/skill_*.md` = **57**; `MANIFEST.md` reads **57 (27 + 30)**. All three figures stale; sum internally consistent | S3 | [D] |
+| R-184 | /glossary/glossary-mission | "**19** missions (**M00-M19**) defined for Operation Rosetta, organized into 7 phases" | **FALSE** (count + range) | Campaign table defines **M01–M35** (35 rows) and there is **no M00** `[D]`. ⭐ **"7 phases" is CORRECT and was deliberately not touched**: `campaign_rosetta.md` carries the machine-checked `phase_count: 7`; a heading sweep reads **9** by counting `Phase 4.5` and a one-off *"Phase 8 seeding"* mention inside M35's row — **the only row in this sweep stale in BOTH trees** (vault source repaired same-diff) | S3 | [D] |
+
+### §27.4 What was NOT done, stated so nothing is inferred
+
+- ⛔ **The sweep is PARTIAL and is reported as partial.** Four claim classes were run corpus-wide over the
+  **226 rendered twins** (self-negating route claims · derived counts · host identity · dangling pointers).
+  Classes 1, 3 and 4 returned **zero defects**; every defect found is class 2. **A page-by-page reading of
+  all 229 pages was NOT performed** — a claim can be false without matching any of four patterns.
+- ⛔ **No gate was authored.** The standing rule (ruled **five** times, and §26.4 demonstrated why for this
+  exact corpus) is honoured. The count class is arguably gate-able — every figure here is derivable from
+  disk — but an instrument authored at a sitting's tail is what conventions 15/16/17 forbid, and the
+  repairs carry their predicates in source comments so the next editor does not "correct" them back.
+- ⛔ **`what/decisions/adr_023_*.md:73` still NOT edited** — unchanged from §26.4; ratified ADR text, operator's.
+- ⚠ **The vault-side figure `who/community/community_context_commons.md` "55+ content files (… 22 patterns …)"
+  was NOT verified or repaired.** `CLAUDE.md` narrates **24** patterns. Named as a candidate, not swept:
+  it is vault content, outside this sweep's declared surface, and unforced widening at a sitting's tail is
+  this campaign's most-repeated defect.
+
+### §27.5 ⚠ Six false positives of my own, and they are a finding about the METHOD
+
+The triage patterns were tuned on the persuasion surface and **mis-transfer to the docs corpus, whose
+subject matter is file paths**. `/adopters/` matched **`who/adopters/`** in two ontology tables;
+`/compliance/` matched **`what/compliance/`** inside a **byte-vendored** tour file; `adna.dev` matched
+`/canonical-properties`'s deliberate *"Retired, and not us"* row (**second** time that page has nearly been
+filed as a defect); a naive template count read 48; a heading sweep read 9 phases; and `.every()` on an
+empty array reads `true`. **All six would have "repaired" correct content.**
+
+⇒ ***A route-shaped grep cannot tell a route from a vault path, and the docs corpus is the one surface
+where almost every such string is a path.*** O3's homonym finding — *a shared notation is not a shared
+referent* — arriving as a property of a **corpus** rather than of a term. §26.1 recorded that the register's
+**scope** did not transfer to the docs corpus; this records that its **instruments** do not either.
+
+### §27.6 Counts — derived last
+
+| Metric | Value |
+|---|---|
+| Physical table rows | **203** |
+| **Unique ids** | **188** (14 `G-*` + 174 `R-*`, `R-11`…`R-184`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, **re-run after §27 was written**, not typed.
+Δ from §26.5: rows **196 → 203** (+7), unique ids **181 → 188** (+7), `R-*` **167 → 174**. Equal deltas
+because §27 mints seven claim rows and no evidence-only tables — checked by re-deriving, not by reasoning.
+
+⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order. This section is now that
+table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and
+it must be a PARSEABLE TABLE, not a prose sentence.**

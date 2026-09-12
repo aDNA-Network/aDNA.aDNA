@@ -79,10 +79,54 @@ interface SubnetworkRecord {
   id: string;
   display_name: string;
   public_url?: string | null;
+  publish_status?: string | null;
 }
-const subnetworks = subnetworksData.subnetworks as SubnetworkRecord[];
 
-/** Subnetworks declared on the network. */
+/**
+ * PUBLICATION GATE for the curated subnetwork overlay (HAUSSMANN, 2026-09-12).
+ *
+ * `publish_status` has been carried in `subnetworks.yaml` → `subnetworks.json` since 2026-06-07 and
+ * was read by NOTHING: `grep -rn publish_status site/src site/scripts` matched only the data file
+ * itself. It records a publication CONDITION and enforced none of it — the same shape as
+ * "a migration announced in a comment is not a migration", in a data field.
+ *
+ * The condition it records, from `subnetworks.yaml`'s provenance header and
+ * `who/coordination/coord_2026_06_07_rosetta_to_hygieia_commons_feature.md` §2: the operator cleared
+ * the Wilhelm-Foundation pair on 2026-06-07 as an ADR-010-window override, **commit-only until the
+ * operator green-lights the E5 close deploy**, with the memo adding that "silence-until-close is not
+ * taken as consent". ⛔ E5 was SUBSUMED into `campaign_website_adna` on 2026-06-18 before it ever
+ * reached a close deploy, and its fixtures carried forward as "resolved inputs" — so the release
+ * event cannot occur and the re-surfacing safeguard died with the gate it was keyed to.
+ *
+ * ⚠ This gate is DELIBERATELY INERT AT ITS CURRENT DATA: every live entry is `ready` or
+ * `operator_cleared_*`, so it changes no rendered byte today. It is built so the disposition is one
+ * value-change in the YAML (the source — never the projected JSON, which `scripts/build_vaults_data.mjs`
+ * overwrites), and so a NEW entry that has not been cleared cannot reach a public surface by default.
+ *
+ * ⛔ It withholds the WHOLE ENTRY, not just the attribution line, and that is forced rather than
+ * chosen: clause (1) of the same ratification makes per-surface attribution + license MANDATORY on
+ * these cards (WilhelmAI ADR-002), so a card rendered without its attribution would breach the
+ * ratification that authorises the card. The narrower remedy is unavailable here.
+ */
+const SUBNETWORK_PUBLISH_ALLOW = /^(ready|operator_cleared_\d{4}_\d{2}_\d{2})$/;
+
+/** True when an overlay entry is cleared to reach a public surface. Absent status defaults to `ready`,
+ *  matching the projector's own default in `scripts/build_vaults_data.mjs`. */
+export function subnetworkIsPublishable(s: { publish_status?: string | null }): boolean {
+  return SUBNETWORK_PUBLISH_ALLOW.test(s.publish_status ?? 'ready');
+}
+
+const allSubnetworks = subnetworksData.subnetworks as SubnetworkRecord[];
+
+/** The gated overlay. Every public surface reads THIS, never `subnetworksData.subnetworks`. */
+export const subnetworks: SubnetworkRecord[] = allSubnetworks.filter(subnetworkIsPublishable);
+
+/** Entries present in the overlay but withheld from publication. Asserted, never assumed: a gate whose
+ *  withheld set is invisible cannot be told from a gate that is matching nothing. */
+export const subnetworksWithheldCount: number = allSubnetworks.length - subnetworks.length;
+
+/** Subnetworks declared on the network. Derived from the GATED set, so a withheld entry cannot be
+ *  counted in a sentence that no longer shows it (KW-14). */
 export const subnetworkCount: number = subnetworks.length;
 
 /** Subnetworks with a public property a reader can open today. */

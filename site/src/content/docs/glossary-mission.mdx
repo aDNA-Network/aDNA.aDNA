@@ -16,7 +16,13 @@ A multi-session work decomposition unit that lives in `how/missions/`. A mission
 
 ## Usage Examples
 
-- This vault has 19 missions (M00-M19) defined for Operation Rosetta, organized into 7 phases. Each mission file lives in `how/campaigns/campaign_rosetta/missions/` — for example, M15 (this glossary's parent mission) defines 3 objectives spanning 2 sessions.
+{/* Was "19 missions (M00-M19) ... organized into 7 phases". The count and the RANGE were both
+    false — the campaign table defines M01–M35 (35 rows) and there is no M00 — while "7 phases"
+    is CORRECT and is deliberately untouched: `campaign_rosetta.md` frontmatter carries the
+    machine-checked `phase_count: 7`. A heading sweep reads 9 by counting Phase 4.5 and a
+    one-off mention of "Phase 8 seeding" in M35's row, and would have "corrected" a right number.
+    ⚠ M19 has a table row and no mission file; the table is authoritative for "defined". */}
+- This vault has 35 missions (M01-M35) defined for Operation Rosetta, organized into 7 phases. Each mission file lives in `how/campaigns/campaign_rosetta/missions/` — for example, M15 (this glossary's parent mission) defines 3 objectives spanning 2 sessions.
 - Mission handoff: when one session ends mid-mission, the SITREP's "Next Session Prompt" tells the next agent exactly where to pick up.
 
 ## See Also
