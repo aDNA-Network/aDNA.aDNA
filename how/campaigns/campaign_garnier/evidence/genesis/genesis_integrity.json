@@ -1,0 +1,9 @@
+{
+  "metadata": "pass",
+  "missions": 26,
+  "live_matrix_rows": 84,
+  "missing_row_control": "rejected",
+  "state_original_sha256": "5fea1c3176024bcc20ddaf6b99d6a833e0160f437684d66e24712d4745dceafd",
+  "state_block_sha256": "c3ac76b8cd14d7565c84b76942daf8eba510ad95544f27b3310b47b5643ea8d7",
+  "state_preserved_after_removing_single_block": true
+}

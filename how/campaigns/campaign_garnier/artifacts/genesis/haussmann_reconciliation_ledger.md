@@ -71,3 +71,7 @@ The status inventory does not independently prove that every historical acceptan
 
 
 Related: [[campaign_garnier]] · [[mission_garnier_genesis]].
+
+## Reconciled close disposition — current execution
+
+[D] The completed P3.3 mission is a **build close**, not an npm publication: its 2026-09-04 AAR moved publication to `how/backlog/idea_publish_adna_mcp_server.md`; ADR-056 clause 5 remains built/not-live. The public descriptor returned 404 this sitting. [D] P4.1's title mentions DTCG adoption, but ADR-059's accepted choice is validators-only with deliberate emission divergence. Protect that accepted choice, not an inference from the title. The table's completed labels describe mission lifecycle; they do not independently certify every surface as currently deployed.

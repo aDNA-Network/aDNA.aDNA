@@ -1,0 +1,1520 @@
+[
+  {
+    "class": "motion",
+    "path": "site/src/components/common/Footer.astro",
+    "matching_lines": [
+      107
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/common/Footer.astro",
+    "matching_lines": [
+      87,
+      93,
+      106,
+      116
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/common/Header.astro",
+    "matching_lines": [
+      255,
+      299,
+      328
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/components/common/Header.astro",
+    "matching_lines": [
+      66,
+      72
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/common/Header.astro",
+    "matching_lines": [
+      185,
+      285,
+      297,
+      323
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/components/common/SEOHead.astro",
+    "matching_lines": [
+      52
+    ]
+  },
+  {
+    "class": "social",
+    "path": "site/src/components/common/SEOHead.astro",
+    "matching_lines": [
+      9,
+      18,
+      38,
+      42,
+      57,
+      59,
+      60,
+      63,
+      64,
+      65,
+      72,
+      73,
+      74,
+      75,
+      76
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/common/SocialLinks.astro",
+    "matching_lines": [
+      27
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/components/common/SocialLinks.astro",
+    "matching_lines": [
+      12
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/components/diagrams/ConvergenceFunnel.astro",
+    "matching_lines": [
+      16,
+      82
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/diagrams/ConvergenceFunnel.astro",
+    "matching_lines": [
+      161
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/components/diagrams/TriadDiagram.astro",
+    "matching_lines": [
+      3,
+      55
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/diagrams/TriadDiagram.astro",
+    "matching_lines": [
+      122
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/islands/CourseCheck.astro",
+    "matching_lines": [
+      132,
+      198
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/components/islands/CourseCheck.astro",
+    "matching_lines": [
+      106,
+      150,
+      209
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/components/islands/CourseProgress.astro",
+    "matching_lines": [
+      17
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/islands/CourseProgress.astro",
+    "matching_lines": [
+      48
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/islands/DarkModeToggle.astro",
+    "matching_lines": [
+      46
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/components/islands/DarkModeToggle.astro",
+    "matching_lines": [
+      7,
+      18
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/components/islands/MermaidDiagram.astro",
+    "matching_lines": [
+      52,
+      60,
+      67
+    ]
+  },
+  {
+    "class": "code",
+    "path": "site/src/components/islands/MermaidDiagram.astro",
+    "matching_lines": [
+      20,
+      62
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/components/islands/MermaidDiagram.astro",
+    "matching_lines": [
+      8,
+      11,
+      13,
+      23,
+      30,
+      33,
+      36,
+      39,
+      42,
+      54,
+      56,
+      61,
+      78,
+      82,
+      92,
+      97
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/islands/MermaidDiagram.astro",
+    "matching_lines": [
+      98
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/Breadcrumb.astro",
+    "matching_lines": [
+      91,
+      152
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/Breadcrumb.astro",
+    "matching_lines": [
+      86,
+      106,
+      122
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/components/sections/Callout.astro",
+    "matching_lines": [
+      58
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/Callout.astro",
+    "matching_lines": [
+      72,
+      77,
+      81
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/CardGrid.astro",
+    "matching_lines": [
+      60
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/CardGrid.astro",
+    "matching_lines": [
+      76,
+      83,
+      115,
+      120
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/ClosingCTA.astro",
+    "matching_lines": [
+      58
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/CodeBlock.astro",
+    "matching_lines": [
+      84
+    ]
+  },
+  {
+    "class": "code",
+    "path": "site/src/components/sections/CodeBlock.astro",
+    "matching_lines": [
+      26,
+      34
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/components/sections/CodeBlock.astro",
+    "matching_lines": [
+      17
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/CodeBlock.astro",
+    "matching_lines": [
+      54,
+      88
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/EmptyStateMark.astro",
+    "matching_lines": [
+      102,
+      103
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/components/sections/EmptyStateMark.astro",
+    "matching_lines": [
+      3,
+      6,
+      17,
+      28,
+      55,
+      56,
+      62,
+      71,
+      94,
+      103
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/EmptyStateMark.astro",
+    "matching_lines": [
+      97
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/GlossaryTooltip.astro",
+    "matching_lines": [
+      73,
+      100,
+      102
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/GlossaryTooltip.astro",
+    "matching_lines": [
+      49,
+      68,
+      81
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/HomeHero.astro",
+    "matching_lines": [
+      442,
+      592,
+      593,
+      822,
+      858,
+      1117,
+      1133,
+      1141,
+      1144,
+      1203,
+      1216,
+      1218
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/components/sections/HomeHero.astro",
+    "matching_lines": [
+      189,
+      337
+    ]
+  },
+  {
+    "class": "code",
+    "path": "site/src/components/sections/HomeHero.astro",
+    "matching_lines": [
+      630,
+      634
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/components/sections/HomeHero.astro",
+    "matching_lines": [
+      78,
+      80,
+      83,
+      141,
+      142,
+      148,
+      168,
+      238,
+      303,
+      306,
+      452,
+      1222
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/HomeHero.astro",
+    "matching_lines": [
+      706,
+      721,
+      735,
+      750,
+      762,
+      789,
+      799,
+      851,
+      892,
+      898,
+      917,
+      947,
+      1072,
+      1183,
+      1208,
+      1293
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/components/sections/MediaPlaceholder.astro",
+    "matching_lines": [
+      19
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/MediaPlaceholder.astro",
+    "matching_lines": [
+      64,
+      69,
+      75,
+      81
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/NetworkDiagram.astro",
+    "matching_lines": [
+      12,
+      260,
+      268,
+      287
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/components/sections/NetworkDiagram.astro",
+    "matching_lines": [
+      30
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/components/sections/NetworkDiagram.astro",
+    "matching_lines": [
+      3,
+      72,
+      116
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/NetworkDiagram.astro",
+    "matching_lines": [
+      184,
+      185,
+      186,
+      221,
+      242,
+      249
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/PersonaPage.astro",
+    "matching_lines": [
+      93
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/PrevNextNav.astro",
+    "matching_lines": [
+      45
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/PrevNextNav.astro",
+    "matching_lines": [
+      67,
+      76
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/RegistryCard.astro",
+    "matching_lines": [
+      72
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/RegistryCard.astro",
+    "matching_lines": [
+      90,
+      98,
+      124,
+      132,
+      139,
+      147
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/SidebarNav.astro",
+    "matching_lines": [
+      166,
+      237,
+      252
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/components/sections/SidebarNav.astro",
+    "matching_lines": [
+      60,
+      65
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/SidebarNav.astro",
+    "matching_lines": [
+      143,
+      188,
+      227,
+      238
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/SubnetworkCard.astro",
+    "matching_lines": [
+      94,
+      183,
+      239,
+      241
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/SubnetworkCard.astro",
+    "matching_lines": [
+      107,
+      114,
+      135,
+      143,
+      163,
+      176,
+      213,
+      226
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/TOCPanel.astro",
+    "matching_lines": [
+      94
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/TOCPanel.astro",
+    "matching_lines": [
+      58,
+      63,
+      91
+    ]
+  },
+  {
+    "class": "code",
+    "path": "site/src/components/sections/TryInClaudeCode.astro",
+    "matching_lines": [
+      41
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/components/sections/TryInClaudeCode.astro",
+    "matching_lines": [
+      15,
+      28
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/TryInClaudeCode.astro",
+    "matching_lines": [
+      80,
+      86,
+      106
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/VaultCard.astro",
+    "matching_lines": [
+      107
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/components/sections/VaultCard.astro",
+    "matching_lines": [
+      32,
+      33,
+      37,
+      38
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/VaultCard.astro",
+    "matching_lines": [
+      110,
+      117,
+      127,
+      129
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/components/sections/VaultFacetChip.astro",
+    "matching_lines": [
+      31
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/VaultFacetChip.astro",
+    "matching_lines": [
+      30
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/components/sections/VaultRelationshipBlock.astro",
+    "matching_lines": [
+      70,
+      73,
+      75,
+      80
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/content.config.ts",
+    "matching_lines": [
+      102,
+      126,
+      155,
+      173
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/data/home.ts",
+    "matching_lines": [
+      168,
+      169,
+      172
+    ]
+  },
+  {
+    "class": "code",
+    "path": "site/src/data/home.ts",
+    "matching_lines": [
+      65,
+      87,
+      109
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/data/vaults.ts",
+    "matching_lines": [
+      21
+    ]
+  },
+  {
+    "class": "social",
+    "path": "site/src/layouts/BaseLayout.astro",
+    "matching_lines": [
+      23,
+      33,
+      60
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/layouts/DocumentationLayout.astro",
+    "matching_lines": [
+      243,
+      308
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/layouts/DocumentationLayout.astro",
+    "matching_lines": [
+      29,
+      30,
+      31,
+      35,
+      107
+    ]
+  },
+  {
+    "class": "code",
+    "path": "site/src/layouts/DocumentationLayout.astro",
+    "matching_lines": [
+      142,
+      172
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/layouts/DocumentationLayout.astro",
+    "matching_lines": [
+      167
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/layouts/DocumentationLayout.astro",
+    "matching_lines": [
+      232,
+      244,
+      275,
+      343
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/pages/.astro/content.d.ts",
+    "matching_lines": [
+      91,
+      132,
+      133,
+      136
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/pages/404.astro",
+    "matching_lines": [
+      58
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/404.astro",
+    "matching_lines": [
+      32,
+      39
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/pages/about.astro",
+    "matching_lines": [
+      39
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/about.astro",
+    "matching_lines": [
+      297,
+      305,
+      329,
+      340,
+      369,
+      376,
+      394,
+      457,
+      462,
+      490,
+      536,
+      543,
+      550,
+      561,
+      615,
+      619
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/accessibility/index.astro",
+    "matching_lines": [
+      214,
+      219,
+      223,
+      241,
+      249,
+      267
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/canonical-properties/index.astro",
+    "matching_lines": [
+      220,
+      225,
+      229,
+      272,
+      284,
+      296,
+      314
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/pages/changelog.astro",
+    "matching_lines": [
+      84,
+      85
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/changelog.astro",
+    "matching_lines": [
+      70,
+      88
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/commons.astro",
+    "matching_lines": [
+      342,
+      350,
+      410,
+      419,
+      438,
+      467,
+      481,
+      499,
+      509,
+      549
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/community/index.astro",
+    "matching_lines": [
+      176,
+      192,
+      202,
+      211,
+      231
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/community/proposals/[...slug].astro",
+    "matching_lines": [
+      153,
+      165,
+      178,
+      193,
+      213,
+      240
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/community/proposals/index.astro",
+    "matching_lines": [
+      162,
+      175,
+      200
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/pages/design-system.astro",
+    "matching_lines": [
+      4,
+      76,
+      335,
+      346,
+      349,
+      359
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/pages/design-system.astro",
+    "matching_lines": [
+      141,
+      401,
+      405
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/design-system.astro",
+    "matching_lines": [
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      215,
+      647,
+      660,
+      667,
+      673,
+      694,
+      695,
+      708,
+      711,
+      712,
+      714,
+      742,
+      745,
+      758,
+      771
+    ]
+  },
+  {
+    "class": "code",
+    "path": "site/src/pages/get-started/what-your-agent-reads/[...slug].astro",
+    "matching_lines": [
+      5,
+      114
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/get-started/what-your-agent-reads/[...slug].astro",
+    "matching_lines": [
+      119,
+      130,
+      151,
+      172
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/get-started/what-your-agent-reads/index.astro",
+    "matching_lines": [
+      151,
+      163,
+      188,
+      191
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/pages/get-started.astro",
+    "matching_lines": [
+      42
+    ]
+  },
+  {
+    "class": "code",
+    "path": "site/src/pages/get-started.astro",
+    "matching_lines": [
+      117,
+      124,
+      155,
+      185
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/pages/index.astro",
+    "matching_lines": [
+      52
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/pages/index.astro",
+    "matching_lines": [
+      4,
+      22,
+      24,
+      43,
+      169,
+      170,
+      218
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/index.astro",
+    "matching_lines": [
+      469,
+      482,
+      496,
+      504,
+      516,
+      552,
+      565,
+      587,
+      635,
+      640,
+      662,
+      670,
+      717,
+      726,
+      737,
+      765,
+      771,
+      806,
+      852,
+      858,
+      865,
+      922,
+      938,
+      991,
+      1003,
+      1013,
+      1033,
+      1037
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/pages/learn/what-is-adna.astro",
+    "matching_lines": [
+      229
+    ]
+  },
+  {
+    "class": "code",
+    "path": "site/src/pages/learn/what-is-adna.astro",
+    "matching_lines": [
+      84,
+      131
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/learn/what-is-adna.astro",
+    "matching_lines": [
+      218,
+      230
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/pages/llms-full.txt.ts",
+    "matching_lines": [
+      74
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/pages/llms.txt.ts",
+    "matching_lines": [
+      67
+    ]
+  },
+  {
+    "class": "code",
+    "path": "site/src/pages/network.astro",
+    "matching_lines": [
+      176
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/pages/network.astro",
+    "matching_lines": [
+      4,
+      31,
+      74,
+      438
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/network.astro",
+    "matching_lines": [
+      296,
+      304,
+      337,
+      368,
+      465,
+      477,
+      516,
+      571,
+      576,
+      595,
+      608,
+      690,
+      707,
+      722,
+      726
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/privacy/index.astro",
+    "matching_lines": [
+      200,
+      205,
+      209,
+      219,
+      232
+    ]
+  },
+  {
+    "class": "code",
+    "path": "site/src/pages/provenance-audit/index.astro",
+    "matching_lines": [
+      154
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/provenance-audit/index.astro",
+    "matching_lines": [
+      149
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/pages/reference/[...slug].astro",
+    "matching_lines": [
+      120
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/reference/[...slug].astro",
+    "matching_lines": [
+      76,
+      87
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/reference/index.astro",
+    "matching_lines": [
+      126
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/reference/specification/[...slug].astro",
+    "matching_lines": [
+      90
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/reference/specification/full.astro",
+    "matching_lines": [
+      67
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/pages/reference/specification/index.astro",
+    "matching_lines": [
+      33,
+      53
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/reference/specification/index.astro",
+    "matching_lines": [
+      183,
+      195,
+      225
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/security/index.astro",
+    "matching_lines": [
+      94,
+      99,
+      103,
+      121,
+      139
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/state-of-the-network/index.astro",
+    "matching_lines": [
+      262,
+      267,
+      271,
+      281,
+      318,
+      328,
+      346
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/use-cases/[...slug].astro",
+    "matching_lines": [
+      58
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/pages/vaults/[slug].astro",
+    "matching_lines": [
+      39,
+      79
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/pages/vaults/[slug].astro",
+    "matching_lines": [
+      42
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/vaults/[slug].astro",
+    "matching_lines": [
+      206,
+      208,
+      209,
+      210,
+      224,
+      234,
+      239,
+      241,
+      245,
+      247,
+      254,
+      258,
+      261
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/pages/vaults/graph.astro",
+    "matching_lines": [
+      351,
+      363,
+      376,
+      381
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/pages/vaults/graph.astro",
+    "matching_lines": [
+      22,
+      213,
+      384
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/pages/vaults/graph.astro",
+    "matching_lines": [
+      8,
+      16,
+      35,
+      62,
+      207,
+      267,
+      268,
+      269,
+      270,
+      322,
+      323,
+      360,
+      385,
+      387,
+      389,
+      407,
+      410,
+      411,
+      421,
+      422,
+      435,
+      438,
+      439,
+      440,
+      451,
+      610
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/vaults/graph.astro",
+    "matching_lines": [
+      403,
+      423,
+      475,
+      488,
+      490,
+      504,
+      550,
+      584,
+      591,
+      594,
+      602
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/pages/vaults/index.astro",
+    "matching_lines": [
+      475
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/pages/vaults/index.astro",
+    "matching_lines": [
+      57,
+      142,
+      166,
+      226,
+      261,
+      274,
+      299,
+      304,
+      334,
+      370,
+      375,
+      384,
+      385
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/pages/vaults/index.astro",
+    "matching_lines": [
+      367,
+      399,
+      402,
+      414,
+      427,
+      432,
+      439,
+      459,
+      469,
+      488
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/scripts/course/progress.ts",
+    "matching_lines": [
+      10
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/styles/global.css",
+    "matching_lines": [
+      46,
+      192,
+      230,
+      259,
+      272
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/styles/global.css",
+    "matching_lines": [
+      55,
+      66,
+      74,
+      80,
+      86,
+      118,
+      125,
+      190,
+      255
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/styles/glossary.css",
+    "matching_lines": [
+      42,
+      54
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/styles/glossary.css",
+    "matching_lines": [
+      9,
+      52,
+      72,
+      79,
+      96,
+      103
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/styles/palette.ts",
+    "matching_lines": [
+      38,
+      41,
+      50
+    ]
+  },
+  {
+    "class": "motion",
+    "path": "site/src/styles/tokens.css",
+    "matching_lines": [
+      127
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/styles/tokens.css",
+    "matching_lines": [
+      91,
+      120
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/styles/tokens.css",
+    "matching_lines": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      33
+    ]
+  },
+  {
+    "class": "type",
+    "path": "site/src/styles/tutorial-meta.css",
+    "matching_lines": [
+      9
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/utils/contentSource.ts",
+    "matching_lines": [
+      24,
+      59,
+      62
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/utils/navigation.ts",
+    "matching_lines": [
+      117
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/utils/registryJson.ts",
+    "matching_lines": [
+      23,
+      96,
+      115,
+      149
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/utils/seo.ts",
+    "matching_lines": [
+      7
+    ]
+  },
+  {
+    "class": "diagrams",
+    "path": "site/src/utils/twin.ts",
+    "matching_lines": [
+      97,
+      98,
+      99,
+      105,
+      106,
+      143,
+      147,
+      150
+    ]
+  },
+  {
+    "class": "states",
+    "path": "site/src/utils/vaultLabels.ts",
+    "matching_lines": [
+      73,
+      128
+    ]
+  }
+]

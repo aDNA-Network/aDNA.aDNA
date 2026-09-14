@@ -31,3 +31,7 @@ D-1 GARNIER; D-2 freeze HAUSSMANN evidence before publication; D-3 evolve the fi
 
 
 Related: [[campaign_garnier]] · [[mission_garnier_genesis]].
+
+## Execution update — 2026-09-14
+
+[D] Full local suite now passed 698 with one existing skip; container visual suite 26. The seven-route live matrix reached 84 combinations with zero reported axe violations. See [[evidence_index]] for scope, local Lighthouse metrics and limitations. [D] MCP remains built/not-live; Operations ADR-025 §D5 is the actual community authority. [I] Campaign proposal: 26 missions, 26 sessions, 1,637 kT content-load; Decade 2 provisional. Charter and ISS are proposed at [[charter_gate]]. No publication authority is implied.

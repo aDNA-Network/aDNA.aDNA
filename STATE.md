@@ -21,6 +21,15 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
 
+### 2026-09-14 — GARNIER genesis: charter ready, execution not ratified
+
+[D] `last_edited_by: agent_codex`; runtime Codex; [[campaign_garnier]] remains **planning**. Next live GARNIER decision: [[how/campaigns/campaign_garnier/artifacts/genesis/charter_gate|DP1 charter gate]] (HTML companion available). Proposed 26 missions / 26 sessions / 1,637 kT content-load, derived from mission files; Decade 2 provisional. [[how/campaigns/campaign_garnier/artifacts/genesis/verification_report|Genesis verification]] records scope and omissions. No site/src, registry, .adna, HAUSSMANN/VITRINE, peer writes, push or deploy. Existing unrelated changes preserved.
+
+[D] Current evidence: safe build 229 pages/226 twins; full gates 698 pass plus one existing skip; container visual 26 pass; seven-route live matrix 84 combinations with zero reported axe violations. MCP remains built/not-live; actual community authority is Operations ADR-025 §D5. [I] Retain Agentic DNA; mechanism before shared-heritage mission. HAUSSMANN's panel/rescore/integration and G4/counsel holds remain theirs.
+
+**Resume / next session:** Read root/campaign governance, active leases and the charter gate. Obtain Stanley's D-1…D-10 ratification before executing queued GARNIER missions; then begin [[mission_garnier_p0_1_baseline]]. Do not infer campaign or publication GO from the completed genesis. Session: [[session_stanley_20260914_030114_garnier_genesis_s0]].
+
+
 > 🎭 **2026-09-14 — WOUND DOWN. THE NEXT MAIN-CAMPAIGN SESSION OPENS ON A QUEUED MISSION, NOT ON A
 > RE-DERIVATION.** Session `session_stanley_20260914_011441_haussmann_winddown_vitrine_setup`.
 > ⛔ **Records only — nothing built, pushed or deployed.**

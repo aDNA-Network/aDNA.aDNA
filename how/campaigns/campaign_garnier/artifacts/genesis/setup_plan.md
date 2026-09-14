@@ -35,3 +35,7 @@ No deployment, public hosting, registry regeneration, connector connection, cred
 
 
 Related: [[campaign_garnier]] · [[mission_garnier_genesis]].
+
+## Actual setup ledger at close
+
+[D] No new package was installed. Existing cached Lighthouse 13.4.1, system Python/PyYAML, installed Playwright and the existing pinned container were used. Existing Astro ISS generator rendered locally with system fonts; no receiver, service, connector or peer wrapper was installed. Corrected preview invocation uses `node_modules/astro/bin/astro.mjs`. The source tree and hooks were not changed. Generator round-trip submission is untested and not an authority channel by itself.

@@ -1,0 +1,140 @@
+{
+  "title": "GARNIER charter review",
+  "title_main": "Operation",
+  "title_em": "GARNIER",
+  "wordmark": "aDNA \u00b7 Rosetta for Stanley",
+  "subtitle": "Review the proposed campaign; publication remains separately gated.",
+  "gate_id": "garnier_charter_20260914",
+  "vault": "aDNA.aDNA",
+  "created_at": "2026-09-14",
+  "footer_text": "Commissioned through Berthier. Agent-authored proposal; Stanley ratifies.",
+  "section_count": 10,
+  "sections": [
+    {
+      "id": "1",
+      "short_label": "D-1",
+      "title": "Keep the codename GARNIER",
+      "question": "Keep the codename GARNIER?",
+      "rec_class": "approve",
+      "rec_label": "Proposed",
+      "verdict": "Use GARNIER as the working codename.",
+      "analysis": "Alternative and effect: Rename it before ratification; update only GARNIER-owned references.",
+      "actions": []
+    },
+    {
+      "id": "2",
+      "short_label": "D-2",
+      "title": "Preserve the predecessor measurement boundary",
+      "question": "Preserve the predecessor measurement boundary?",
+      "rec_class": "approve",
+      "rec_label": "Proposed",
+      "verdict": "Plan and instrument now; preserve the predecessor evidence pack before publishing changes.",
+      "analysis": "Alternative and effect: Authorize parallel work against a separately frozen predecessor tree, or explicitly make P5.2 ride a declared GARNIER baseline.",
+      "actions": []
+    },
+    {
+      "id": "3",
+      "short_label": "D-3",
+      "title": "Evolve the existing visual voice",
+      "question": "Evolve the existing visual voice?",
+      "rec_class": "approve",
+      "rec_label": "Proposed",
+      "verdict": "Evolve and enforce the five-slot Ghibli-pixel program under ADR-053 and the ADR-059 token choice.",
+      "analysis": "Alternative and effect: Commission a separately scoped design spike before adopting a new voice.",
+      "actions": []
+    },
+    {
+      "id": "4",
+      "short_label": "D-4",
+      "title": "Constrain generated imagery",
+      "question": "Constrain generated imagery?",
+      "rec_class": "approve",
+      "rec_label": "Proposed",
+      "verdict": "If used, permit abstract-only generated imagery governed by VisualDNA, with provenance and alt consequences.",
+      "analysis": "Alternative and effect: Use no generated imagery; reuse cleared assets or code-native diagrams.",
+      "actions": []
+    },
+    {
+      "id": "5",
+      "short_label": "D-5",
+      "title": "Serve funders through evidence",
+      "question": "Serve funders through evidence?",
+      "rec_class": "approve",
+      "rec_label": "Proposed",
+      "verdict": "Use people, lineage, operational state and contribution surfaces; no dedicated investors page.",
+      "analysis": "Alternative and effect: Propose one funder evidence page within the existing navigation cap.",
+      "actions": []
+    },
+    {
+      "id": "6",
+      "short_label": "D-6",
+      "title": "Use three human reader classes",
+      "question": "Use three human reader classes?",
+      "rec_class": "approve",
+      "rec_label": "Proposed",
+      "verdict": "Operator recruits at least five engineers, five funders and five scientists; \u226580% correct per class in each test window.",
+      "analysis": "Alternative and effect: Fold recruitment into the HAUSSMANN panel process with explicitly separate tasks, evidence identity and ownership.",
+      "actions": []
+    },
+    {
+      "id": "7",
+      "short_label": "D-7",
+      "title": "Keep the tier enum unchanged",
+      "question": "Keep the tier enum unchanged?",
+      "rec_class": "approve",
+      "rec_label": "Proposed",
+      "verdict": "Use executor_tier opus and additive executor_runtime codex; no enum extension.",
+      "analysis": "Alternative and effect: Request a proposed ADR before extending the governed enum.",
+      "actions": []
+    },
+    {
+      "id": "8",
+      "short_label": "D-8",
+      "title": "Keep setup local and pinned",
+      "question": "Keep setup local and pinned?",
+      "rec_class": "approve",
+      "rec_label": "Proposed",
+      "verdict": "Use local pinned tools and ignored raw evidence; no outward installs. Genesis installed no new package.",
+      "analysis": "Alternative and effect: Permit no new installs; mark any unavailable future instrument unmeasured.",
+      "actions": []
+    },
+    {
+      "id": "9",
+      "short_label": "D-9",
+      "title": "Adopt the derived campaign envelope",
+      "question": "Adopt the derived campaign envelope?",
+      "rec_class": "approve",
+      "rec_label": "Proposed",
+      "verdict": "Propose 26 missions and 26 sessions, totaling 1,637 kT content-load; Decade 2 stays provisional until midpoint.",
+      "analysis": "Alternative and effect: Cap the budget and explicitly remove or defer named missions; keep mandatory P6 closure.",
+      "actions": []
+    },
+    {
+      "id": "10",
+      "short_label": "D-10",
+      "title": "Adopt measured prose budgets",
+      "question": "Adopt measured prose budgets?",
+      "rec_class": "approve",
+      "rec_label": "Proposed",
+      "verdict": "Propose home 600, quickstart 900, explainer 500, community 500, about 450, commons 450 and network 550 words.",
+      "analysis": "Alternative and effect: Amend per-surface caps without removing disclosures, prerequisites or accessible explanation.",
+      "actions": []
+    }
+  ],
+  "composite_id": "DP1",
+  "composite_title": "Adopt the proposed GARNIER charter",
+  "composite_question": "Adopt Decade 1 and provisional Decade 2 with the decisions recorded above?",
+  "validate_authoring": true,
+  "show_fallback_tiers": true,
+  "show_provenance": true,
+  "show_post_submit_explainer": true,
+  "sitrep": {
+    "campaign": "GARNIER",
+    "phase": "Genesis / charter",
+    "mission": "mission_garnier_genesis",
+    "gate_purpose": "Ratify the 26-mission campaign after reviewing evidence limits.",
+    "importance": "load-bearing",
+    "importance_reason": "Sets scope, budget and human gates.",
+    "output_destination": "charter_gate.output.json"
+  }
+}

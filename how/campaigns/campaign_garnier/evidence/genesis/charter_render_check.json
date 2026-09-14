@@ -1,0 +1,16 @@
+[
+  {
+    "width": 375,
+    "cards": 10,
+    "submitDisabled": true,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "cards": 10,
+    "submitDisabled": true,
+    "overflow": false,
+    "errors": []
+  }
+]
