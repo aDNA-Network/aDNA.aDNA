@@ -1,0 +1,69 @@
+checking 141 unique external link(s) from 230 built page(s)
+
+  reachable        81
+  access-gated     60   (401/403/429 — posture, not rot)
+  needs a look     0
+
+--- access-gated (informational) ---
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/course/four-files-your-agent-reads-first.md
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/course/what-is-an-adna-graph.md
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/agentic-literacy.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/agents-md.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/base-extension.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/context-commons.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/context-optimization.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/context-recipe.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/convergence.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/dual-audience-writing.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/dual-audience.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/educator.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/enterprise-team.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/fair-envelope.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/fair-metadata.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/federation-readiness.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/governance-files.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/knowledge-graph.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/lattice-composition.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/mission-decomposition.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/ontology.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/open-source-project.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/open-standard.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/question-test.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/research-lab.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/solo-developer.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/startup.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/token-selection.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/docs/triad.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/guides/build-a-lattice.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/guides/design-a-mission.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/guides/exchange-adoption-path.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/guides/extend-the-ontology.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/guides/federate-a-vault.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/guides/first-claude-md.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/guides/navigate-a-vault.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/guides/question-test.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/guides/run-a-campaign.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/guides/write-a-context-file.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/reference/agent-first-guide.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/reference/design-rationale.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/reference/governance-model.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/reference/migration-guide.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/reference/quality-rubric.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/reference/reading-guide.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/reference/registry-api.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/reference/tool-setup.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/reference/visual-identity-v2.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/edit/main/site/src/content/reference/writing-guidelines.mdx
+  429  https://github.com/aDNA-Network/aDNA.aDNA/issues
+  429  https://github.com/aDNA-Network/aDNA/blob/main/.adna/how/skills/AGENTS.md
+  429  https://github.com/aDNA-Network/aDNA/blob/main/.adna/how/skills/skill_onboarding.md
+  429  https://github.com/aDNA-Network/aDNA/blob/main/.adna/how/templates/template_workspace_claude.md
+  429  https://github.com/aDNA-Network/aDNA/blob/main/.adna/what/docs/adna_bridge_patterns.md
+  429  https://github.com/aDNA-Network/aDNA/blob/main/.adna/what/docs/adna_standard.md
+  429  https://github.com/aDNA-Network/aDNA/blob/main/.adna/what/docs/projects_folder_pattern.md
+  429  https://github.com/aDNA-Network/aDNA/blob/main/CLAUDE.md
+  429  https://github.com/aDNA-Network/aDNA/blob/main/SECURITY.md
+  429  https://github.com/aDNA-Network/aDNA/security/advisories/new
+  429  https://github.com/aDNA-Network/aDNA/tree/main/.adna/how/templates
+
+no external link needs attention — non-blocking by design

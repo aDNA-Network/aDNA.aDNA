@@ -1,0 +1,97 @@
+[
+  {
+    "file": "evidence/genesis/captures/references/nous_desktop_light.png",
+    "sha256": "0a067929fe4b4d82d2803c38987032f32516b7f105d01ee274f29128a03c91b8",
+    "source": "https://nousresearch.com/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/mastra_desktop_light.png",
+    "sha256": "f6e38d2142e3000920168a9537b7672a27e2def4df5eb6363b833c7edb2cd1af",
+    "source": "https://mastra.ai/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/mcp_desktop_light.png",
+    "sha256": "52a9d8524f213dca06984c6b77d866fb00410e0021da2dba1e900c604965e5b4",
+    "source": "https://modelcontextprotocol.io/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/e2b_desktop_light.png",
+    "sha256": "d8229c773ec950980950dfa52d26739ea738568a404060a6a4c1f5c19ae3de02",
+    "source": "https://e2b.dev/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/letta_desktop_light.png",
+    "sha256": "b3862dbce84c1311cf27fdf4322c680bf0c0e74ffa58519cd490560d0a58fdbf",
+    "source": "https://letta.com/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/openhands_desktop_light.png",
+    "sha256": "524d8e7b27b44cfcfc590cd8d1c298b426d0c3878f6735d20217cce5dde05a14",
+    "source": "https://all-hands.dev/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/goose_desktop_light.png",
+    "sha256": "6720c181f9a6dd18de7255da75ad7105cb3e0dd5fca6dcaa0cf9559f4e13e0c7",
+    "source": "https://block.github.io/goose/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/pydantic_ai_desktop_light.png",
+    "sha256": "6967c5dbf65defc289b940f82472958831eb3f113f402c00317e42f74e6febb0",
+    "source": "https://ai.pydantic.dev/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/browser_use_desktop_light.png",
+    "sha256": "1f0441ef0d2287e8967c67a3fc9a5b6838ea9eef5fcc513ea55980f0376df3d9",
+    "source": "https://browser-use.com/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/openclaw_desktop_light.png",
+    "sha256": "64d892cef5e5c919868f23376ce35342cf18cd460e691de27639525f00116958",
+    "source": "https://openclaw.ai/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/openai_research_desktop_light.png",
+    "sha256": "f3456d571573db8f132a5a15fd122826ca6a9644691d9bfc9baa2b85e2eefef5",
+    "source": "https://openai.com/research/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/anthropic_desktop_light.png",
+    "sha256": "9cdaeee0d2270c1c7940f53c5c1cb2b0fe1086cd952d2bf08625a36076793e8f",
+    "source": "https://www.anthropic.com/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/hugging_face_desktop_light.png",
+    "sha256": "fce2f87276cf0ccf2c7f0603b132b425df399b05a54b933959ba89079d13307b",
+    "source": "https://huggingface.co/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/stripe_docs_desktop_light.png",
+    "sha256": "53b2ad24cff7c806624d545718456ff50bed393f4a82c1e4e835b51f8b658054",
+    "source": "https://docs.stripe.com/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/linear_desktop_light.png",
+    "sha256": "e92cd03b2f0a050cd3422b9c42e6efd5a69c063b72d81ca855f46c05d0f1cb38",
+    "source": "https://linear.app/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/vercel_desktop_light.png",
+    "sha256": "d1b21f740a861c6b5ffe5a30507f086feac9108054fe4c661976cd1d3b8cd82f",
+    "source": "https://vercel.com/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/astro_desktop_light.png",
+    "sha256": "023f5dd45dc6bcc7a9f5a3595282dc1d4316bfabc501049ee0d1819b779b6738",
+    "source": "https://astro.build/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/mozilla_desktop_light.png",
+    "sha256": "6f3e3aeeb1c2805fffc6db9d0d651562481300d1c662c604eaee0c53f9b6623c",
+    "source": "https://www.mozilla.org/en-US/"
+  },
+  {
+    "file": "evidence/genesis/captures/references/our_world_in_data_desktop_light.png",
+    "sha256": "a1c492cbe0eebb0b13a850bb901acef0bbf85ed8f48b0cb2483979e92890c123",
+    "source": "https://ourworldindata.org/"
+  }
+]

@@ -1,0 +1,49 @@
+---
+type: artifact
+created: 2026-09-14
+updated: 2026-09-14
+status: proposed
+last_edited_by: agent_codex
+tags: [garnier, genesis]
+---
+
+# Reference dossier — mechanisms, not imitation
+
+## Scope and fixed rubric
+
+[D] Nineteen unique references were attempted: the ten VITRUVIUS properties plus twelve craft candidates, with overlaps deduplicated. T0 generated twelve PNGs per property (six canonical viewports × two requested system themes). First-screen desktop crops of all properties were visually inspected. The raw full-page matrix is retained locally; selected unaltered desktop PNGs are committed with SHA-256 in `evidence/genesis/reference_capture_manifest.json`.
+
+The fixed rubric is: first-contact definition → visible proof → task entry → reading hierarchy → public-purpose placement → transfer limit → accessibility consequence. No reference's copy, brand, illustration or numerical claim is adopted.
+
+## What this pass could not see
+
+OpenAI Research returned a verification challenge, so it is excluded from the visual cohort: eleven craft references remain, within the requested 10–12 band. Stripe rendered documentation but did not reach network-idle within the timeout; it supports a visual observation only, not an HTTP availability claim. The T0 harness imposes a system preference and `.dark` class: paired files are NOT proof each foreign site offers native theme controls. Desktop observations below are admissible only for the shown first screen. This pass did not evaluate every reference interaction or every below-fold section; no performance, accessibility conformance, or product-claim truth is inferred from these images.
+
+| Property | Observed first-screen mechanism | Proposed aDNA transfer | What is refused / unresolved | Dimensions | Capture evidence |
+|---|---|---|---|---|---|
+| nous · https://nousresearch.com/ | [D] An editorial list combines images, compact project descriptions and item metadata in repeated rows. | [I] Use a consistent grammar for a small number of real projects or research outputs. | Compact blue monospace treatments need independent contrast and size validation. | D5/D7 | `evidence/genesis/captures/references/nous_desktop_light.png`; T0 status 200; 12 PNGs |
+| mastra · https://mastra.ai/ | [D] A short headline, agent-workflow illustration and copy-agent-prompt control appear together. | [I] Expose a useful executable prompt or command with its prerequisites. | Do not imply an illustration ran; copy controls must copy the executable string. | D3/D10 | `evidence/genesis/captures/references/mastra_desktop_light.png`; T0 status 200; 12 PNGs |
+| mcp · https://modelcontextprotocol.io/ | [D] The landing surface is documentation with definition, side navigation and a simple system diagram. | [I] Keep a zero-install, source-linked explanation a first-class entry path. | A metaphor supplements the mechanism; it cannot replace it. | D2/D4/D10 | `evidence/genesis/captures/references/mcp_desktop_light.png`; T0 status 200; 12 PNGs |
+| e2b · https://e2b.dev/ | [D] A short capability headline sits beside a terminal-shaped product demonstration. | [I] Treat command output and source as first-contact proof. | Do not copy scale counters or infer code correctness from a screenshot. | D3/D7 | `evidence/genesis/captures/references/e2b_desktop_light.png`; T0 status 200; 12 PNGs |
+| letta · https://letta.com/ | [D] A compact lab description, a visual and a dated research entry establish a sparse editorial sequence. | [I] Give lineage and actual work stable, easy-to-find homes. | Small monospace text is not a readability model to copy. | D6/D7 | `evidence/genesis/captures/references/letta_desktop_light.png`; T0 status 200; 12 PNGs |
+| openhands · https://all-hands.dev/ | [D] A product statement and interface demonstration occupy the main panel, with separate cloud/start choices. | [I] Show an actual use case before expanded ecosystem explanation. | Do not copy unsupported product or institution affiliations. | D1/D7 | `evidence/genesis/captures/references/openhands_desktop_light.png`; T0 status 200; 12 PNGs |
+| goose · https://block.github.io/goose/ | [D] A centered identity, plain task description and install/quickstart choices precede explanatory content. | [I] Keep installation and evaluation paths distinct and plainly labelled. | Popularity counters do not establish suitability or safety. | D1/D3 | `evidence/genesis/captures/references/goose_desktop_light.png`; T0 status 200; 12 PNGs |
+| pydantic_ai · https://ai.pydantic.dev/ | [D] Documentation opens with a definition and a task-choice section within the technical navigation. | [I] Offer the engineer a README-grade entry path without an additional marketing layer. | Dense technical navigation is a later-depth pattern, not the novice hero. | D3/D4 | `evidence/genesis/captures/references/pydantic_ai_desktop_light.png`; T0 status 200; 12 PNGs |
+| browser_use · https://browser-use.com/ | [D] A concise capability sentence, demonstration image and two task-labelled controls occupy one panel. | [I] Make the primitive visible next to its explanation. | A decorative example does not prove execution; provide a real inspectable artifact. | D1/D3 | `evidence/genesis/captures/references/browser_use_desktop_light.png`; T0 status 200; 12 PNGs |
+| openclaw · https://openclaw.ai/ | [D] A single capability statement and action cluster lead into a visible quickstart. | [I] Connect the promise directly to a first task and inspectable output. | A long string of benefits under the hero can recreate aDNA's density problem. | D1/D3 | `evidence/genesis/captures/references/openclaw_desktop_light.png`; T0 status 200; 12 PNGs |
+| openai_research · https://openai.com/research/ | [D] The capture reached a verification challenge, not the research page. | [I] Exclude from visual conclusions; retain the failed capture as coverage evidence. | Do not interpret the challenge as the site design. | unassessed | `evidence/genesis/captures/references/openai_research_desktop_light.png`; T0 status 0; 12 PNGs |
+| anthropic · https://www.anthropic.com/ | [D] A short research/product statement sits beside a separate mission paragraph; the next band presents a named output. | [I] Separate mechanism and purpose in reading order; use actual aDNA outputs as the next evidence. | Do not import institutional scale claims or artwork. | D1/D5/D6 | `evidence/genesis/captures/references/anthropic_desktop_light.png`; T0 status 200; 12 PNGs |
+| hugging_face · https://huggingface.co/ | [D] The community claim is accompanied by a rendered view of concrete models and platform objects. | [I] Show actual public artifacts alongside the invitation to participate. | The visible breadth is theirs; one-node aDNA must disclose its true breadth. | D7/D8 | `evidence/genesis/captures/references/hugging_face_desktop_light.png`; T0 status 200; 12 PNGs |
+| stripe_docs · https://docs.stripe.com/ | [D] A documentation hub groups tasks and exposes an example request. T0 timed out waiting for network idle despite rendered content. | [I] Group tasks by what the reader wants to do and attach a runnable example. | Do not treat networkidle status 0 as an HTTP failure or a successful origin assertion. | D2/D3/D4 | `evidence/genesis/captures/references/stripe_docs_desktop_light.png`; T0 status 0; 12 PNGs |
+| linear · https://linear.app/ | [D] One large product statement leads into a detailed product view under restrained navigation. | [I] Let a real vault view carry explanatory load once the primitive is named. | A polished screenshot still needs accessible equivalent content. | D1/D5 | `evidence/genesis/captures/references/linear_desktop_light.png`; T0 status 200; 12 PNGs |
+| vercel · https://vercel.com/ | [D] A sparse headline, short capability list and two actions form a wide first-screen composition. | [I] Use hierarchy to reduce competing first-contact messages. | Do not copy the brand mark, broad empty space, or customer strip. | D1/D5 | `evidence/genesis/captures/references/vercel_desktop_light.png`; T0 status 200; 12 PNGs |
+| astro · https://astro.build/ | [D] A centered product definition and primary start control precede social proof. The wide capture includes a large dark right region. | [I] Test one dominant entry action; inspect the wide-region anomaly before using this capture for responsive judgments. | Logo walls are not transferable evidence of aDNA adoption. | D1/D5 | `evidence/genesis/captures/references/astro_desktop_light.png`; T0 status 200; 12 PNGs |
+| mozilla · https://www.mozilla.org/en-US/ | [D] A large welcome, brief people-first mission and one learn-more action dominate the first screen. | [I] Give the public-good invitation a distinct, legible place after the mechanism. | Do not replace aDNA's definition with a generic welcome. | D1/D8 | `evidence/genesis/captures/references/mozilla_desktop_light.png`; T0 status 200; 12 PNGs |
+| our_world_in_data · https://ourworldindata.org/ | [D] A public-purpose statement sits above searchable data and research objects. | [I] Make shared-knowledge ambition actionable through discoverable real material. | Topic breadth and impact are not aDNA facts; cookie banner limits visible area. | D4/D8 | `evidence/genesis/captures/references/our_world_in_data_desktop_light.png`; T0 status 200; 12 PNGs |
+
+## Shared accessibility consequence
+
+[I] Every transferred hierarchy keeps semantic headings and meaningful DOM order; proof images receive equivalent text or executable source; diagrams retain readable labels and non-color distinctions; motion gets a static reduced-motion state. Typography and spacing are tested at all canonical widths and zoom rather than copied from peers. This requirement applies to every recommendation row above.
+
+
+Related: [[campaign_garnier]] · [[mission_garnier_genesis]].

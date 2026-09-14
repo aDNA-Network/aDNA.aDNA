@@ -1,0 +1,615 @@
+⛩ gate-49 in-container (check) — mcr.microsoft.com/playwright:v1.59.1-noble
+  vault: /Users/stanley/aDNA/aDNA.aDNA
+
+[2m03:12:59[22m [34m[content][39m Syncing content
+[2m03:12:59[22m [34m[content][39m Synced content
+[2m03:12:59[22m [34m[types][39m Generated [2m358ms[22m
+[2m03:13:00[22m [34m[build][39m output: [34m"static"[39m
+[2m03:13:00[22m [34m[build][39m mode: [34m"static"[39m
+[2m03:13:00[22m [34m[build][39m directory: [34m/work/site/dist/[39m
+[2m03:13:00[22m [34m[build][39m adapter: [32m@astrojs/vercel[39m
+[2m03:13:00[22m [34m[build][39m Collecting build info...
+[2m03:13:00[22m [34m[build][39m [32m✓ Completed in 660ms.[39m
+[2m03:13:00[22m [34m[build][39m Building static entrypoints...
+[2m03:13:04[22m [34m[vite][39m [32m✓ built in 4.03s[39m
+[33m[1m03:13:08[22m [WARN] [vite][39m [33m
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[2m03:13:08[22m [34m[vite][39m [32m✓ built in 3.48s[39m
+[2m03:13:08[22m [34m[build][39m Rearranging server assets...
+
+[42m[30m generating static routes [39m[49m
+[2m03:13:08[22m   [34m├─[39m [2m/404.html[22m [2m(+18ms)[22m 
+[2m03:13:08[22m   [34m├─[39m [2m/about/index.html[22m [2m(+6ms)[22m 
+[2m03:13:08[22m   [34m├─[39m [2m/accessibility/index.html[22m [2m(+5ms)[22m 
+[2m03:13:08[22m   [34m├─[39m [2m/adopters/adopter-educator/index.html[22m [2m(+1ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:08[22m   [34m├─[39m [2m/adopters/adopter-enterprise-team/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:08[22m   [34m├─[39m [2m/adopters/adopter-researcher/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:08[22m   [34m├─[39m [2m/adopters/adopter-solo-developer/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:08[22m   [34m├─[39m [2m/adopters/adopter-startup/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:08[22m   [34m├─[39m [2m/adopters/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:08[22m   [34m├─[39m [2m/api/registry.v1.json[22m [2m(+5ms)[22m 
+[2m03:13:08[22m   [34m├─[39m [2m/canonical-properties/index.html[22m [2m(+4ms)[22m 
+[2m03:13:08[22m   [34m├─[39m [2m/changelog/index.html[22m [2m(+8ms)[22m 
+[2m03:13:08[22m   [34m├─[39m [2m/commons/index.html[22m [2m(+10ms)[22m 
+[2m03:13:08[22m   [34m├─[39m [2m/community/proposals/index.html[22m [2m(+6ms)[22m 
+[2m03:13:08[22m   [34m├─[39m [2m/community/proposals/aep-1/index.html[22m
+freshness: git answered — last-updated dates derived from history.
+ [31m(+779ms)[39m 
+[2m03:13:09[22m   [34m├─[39m [2m/community/proposals/aep-2/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/community/proposals.json[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/community/index.html[22m [2m(+7ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/community/community-context-commons/index.html[22m [2m(+7ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/community/community-contribution-standards/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/community/community-processes/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/community/community-roles/index.html[22m [2m(+7ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/compliance/index.html[22m [2m(+1ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/design-system/index.html[22m [2m(+10ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/educators/index.html[22m [2m(+1ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/enterprise/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/get-started/what-your-agent-reads/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/get-started/what-your-agent-reads/workspace-router/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/get-started/what-your-agent-reads/standard-governance/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/get-started/what-your-agent-reads/skill-project-fork/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/get-started/what-your-agent-reads/skill-onboarding/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/get-started/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-adna/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-agents-md/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-bare-triad/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-collision-prevention/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-conformance-level/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-conformant-instance/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-content-as-code/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-context-library/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-coordination-note/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-deployment-form/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-embedded-triad/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-frontmatter/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-governance-file/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-how/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-mission/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-ontology-extension/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-question-test/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-readme-md/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-session/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-sitrep/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-skill/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-template/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-triad/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-what/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-who/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/lattice-examples/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/lattice-examples/lattice-campaign-execution/index.html[22m [2m(+11ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/lattice-examples/lattice-content-pipeline/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/lattice-examples/lattice-context-serving/index.html[22m [2m(+7ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/lattice-examples/lattice-dual-audience-review/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/publishing/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/publishing/content-mapping/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/publishing/social-sharing/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/publishing/vault-to-site/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/workshops/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/workshops/build-your-first-vault/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/workshops/facilitation-guide/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/workshops/lattice-design/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/workshops/vault-exploration/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/comparisons/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/comparisons/adna-vs-johnny-decimal/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/comparisons/adna-vs-notion/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/comparisons/adna-vs-para/index.html[22m [2m(+8ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/comparisons/adna-vs-plain-markdown/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/comparisons/adna-vs-zettelkasten/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/agentic-literacy/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/context-commons/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/context-optimization/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/convergence/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/dual-audience/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/fair-metadata/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/governance-files/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/knowledge-graph/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/lattice-composition/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/ontology/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/open-standard/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/token-selection/index.html[22m [2m(+7ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/triad/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/course/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/course/what-is-an-adna-graph/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/course/four-files-your-agent-reads-first/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/build-a-lattice/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/design-a-mission/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/exchange-adoption-path/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/extend-the-ontology/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/federate-a-vault/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/first-claude-md/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/navigate-a-vault/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/question-test/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/run-a-campaign/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/write-a-context-file/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/what-is-adna/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/llms-full.txt[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/llms.txt[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/network/index.html[22m [2m(+7ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/org-context-graphs/index.html[22m [2m(+3ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/dual-audience/index.html[22m [2m(+1ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/agents-md/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/base-extension/index.html[22m [2m(+7ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/context-recipe/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/dual-audience-writing/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/fair-envelope/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/federation-readiness/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/mission-decomposition/index.html[22m [2m(+8ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/question-test/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/privacy/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/provenance-audit/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/01_adna_standard.md/index.html[22m [2m(+1ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/reference/adna_design.md/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/reference/adna_standard.md/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/reference/agent_first_guide.md/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/reference/migration_guide.md/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/full/index.html[22m [2m(+25ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/1-introduction-scope/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/2-terminology/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/3-triad-architecture/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/4-governance-files/index.html[22m [2m(+7ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/5-directory-structure/index.html[22m [2m(+7ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/6-naming-conventions/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/7-frontmatter-system/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/8-session-model/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/9-mission-system/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/10-context-library/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/11-coordination-protocol/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/12-template-system/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/13-collision-prevention/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/14-content-as-code-pipelines/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/15-archive-versioning/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/16-tool-integration-tiers/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/17-error-recovery-protocol/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/18-success-criteria/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/19-optional-extensions/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/specification/20-appendices/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/agent-first-guide/index.html[22m [2m(+9ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/design-rationale/index.html[22m [2m(+9ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/governance-model/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/migration-guide/index.html[22m [2m(+9ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/quality-rubric/index.html[22m [2m(+7ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/reading-guide/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/registry-api/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/tool-setup/index.html[22m [2m(+10ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/visual-identity-v2/index.html[22m [2m(+7ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/reference/writing-guidelines/index.html[22m [2m(+7ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/researchers/index.html[22m [2m(+1ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/rss.xml[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/security/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/startup-first-hour/index.html[22m [2m(+1ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/state-of-the-network/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/use-cases/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/use-cases/educator/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/use-cases/enterprise-team/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/use-cases/open-source-project/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/use-cases/research-lab/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/use-cases/solo-developer/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/use-cases/startup/index.html[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/aDNA.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/Astro.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/CakeHealth.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/ComfyUI.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/ContextCommons.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/graph/index.html[22m [2m(+8ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/Harness.aDNA/index.html[22m [2m(+1ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/Home.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/III.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/LAVentureGraph.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/Molecules.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/Network.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/Obsidian.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/Operations.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/Oration.aDNA/index.html[22m [2m(+1ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/RareArchive.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/RemoteControl.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/Spacemacs.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/SuperLeague.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/TappProtocol.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/VAAS.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/Videos.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/wga.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/WilhelmAI.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/zeta.aDNA/index.html[22m [2m(+0ms)[22m [33m(file not created, response body was empty)[39m
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/operations/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/astro/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/comfyui/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/d3/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/llamacppforge/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/molecules/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/oration/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/regenesis/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/threejs/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/videos/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/git/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/iii/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/organization/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/react/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/tailwind/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/typescript/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/visualdna/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/vaas/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/laventuregraph/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/network/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/home/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/cakehealth/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/percysleep/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/rareanthropic/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/superleague/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/adnalabs/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/contextcommons/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/rarearchive/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/sciencestanley/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/wga/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/wilhelmai/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/zenzachary/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/ailp-dataroom/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/apscheduler/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/awsbootstrap/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/bitwarden/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/caddy/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/cakeprotocol/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/canvas/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/container/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/context/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/dashboards/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/datarooms/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/emacs/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/exchange/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/fastapi/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/fluxer/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/forgejo/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/gotfn/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/groupware/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/harness/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/inference/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/jupyter/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/latticeprotocol/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/lighthouse/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/nebula/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/neo4j/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/nextcloud/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/obsidian/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/prefect/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/realityscan/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/remotecontrol/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/store/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/tappprotocol/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/terminal/index.html[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/vercel/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/warp/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/webforge/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/adna/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/datasets/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/magnapetra/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/worldgenome/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/spacemacs/index.html[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/zeta/index.html[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults/index.html[22m [2m(+5ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/vaults.json[22m [2m(+4ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/index.html[22m [2m(+6ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/agentic-literacy.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/context-commons.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/context-optimization.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/convergence.md[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/dual-audience.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/fair-metadata.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/governance-files.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/knowledge-graph.md[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/lattice-composition.md[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/ontology.md[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/open-standard.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/token-selection.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/concepts/triad.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/comparisons/adna-vs-johnny-decimal.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/comparisons/adna-vs-notion.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/comparisons/adna-vs-para.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/comparisons/adna-vs-plain-markdown.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/comparisons/adna-vs-zettelkasten.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-adna.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-agents-md.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-bare-triad.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-collision-prevention.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-conformance-level.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-conformant-instance.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-content-as-code.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-context-library.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-coordination-note.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-deployment-form.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-embedded-triad.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-frontmatter.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-governance-file.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-how.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-mission.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-ontology-extension.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-question-test.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-readme-md.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-session.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-sitrep.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-skill.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-template.md[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-triad.md[22m [2m(+3ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-what.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/glossary/glossary-who.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/agents-md.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/base-extension.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/context-recipe.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/dual-audience-writing.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/fair-envelope.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/federation-readiness.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/mission-decomposition.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/patterns/question-test.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/use-cases/educator.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/use-cases/enterprise-team.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/use-cases/open-source-project.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/use-cases/research-lab.md[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/use-cases/solo-developer.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/use-cases/startup.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/community/community-context-commons.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/community/community-contribution-standards.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/community/community-processes.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/community/community-roles.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/publishing/content-mapping.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/publishing/social-sharing.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/publishing/vault-to-site.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/workshops/build-your-first-vault.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/workshops/facilitation-guide.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/workshops/lattice-design.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/workshops/vault-exploration.md[22m [2m(+2ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/lattice-examples/lattice-campaign-execution.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/lattice-examples/lattice-content-pipeline.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/lattice-examples/lattice-context-serving.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/how/lattice-examples/lattice-dual-audience-review.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/build-a-lattice.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/design-a-mission.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/exchange-adoption-path.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/extend-the-ontology.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/federate-a-vault.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/first-claude-md.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/navigate-a-vault.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/question-test.md[22m [2m(+1ms)[22m 
+[2m03:13:09[22m   [34m├─[39m [2m/learn/tutorials/run-a-campaign.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/learn/tutorials/write-a-context-file.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/agent-first-guide.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/design-rationale.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/governance-model.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/migration-guide.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/quality-rubric.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/reading-guide.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/registry-api.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification.md[22m [2m(+2ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/tool-setup.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/visual-identity-v2.md[22m [2m(+5ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/writing-guidelines.md[22m [2m(+2ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/1-introduction-scope.md[22m [2m(+2ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/2-terminology.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/3-triad-architecture.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/4-governance-files.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/5-directory-structure.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/6-naming-conventions.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/7-frontmatter-system.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/8-session-model.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/9-mission-system.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/10-context-library.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/11-coordination-protocol.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/12-template-system.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/13-collision-prevention.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/14-content-as-code-pipelines.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/15-archive-versioning.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/16-tool-integration-tiers.md[22m [2m(+2ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/17-error-recovery-protocol.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/18-success-criteria.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/19-optional-extensions.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/reference/specification/20-appendices.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/community/proposals/aep-1.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/community/proposals/aep-2.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/operations.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/astro.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/comfyui.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/d3.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/llamacppforge.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/molecules.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/oration.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/regenesis.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/threejs.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/videos.md[22m [2m(+2ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/git.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/iii.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/organization.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/react.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/tailwind.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/typescript.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/visualdna.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/vaas.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/laventuregraph.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/network.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/home.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/cakehealth.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/percysleep.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/rareanthropic.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/superleague.md[22m [2m(+2ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/adnalabs.md[22m [2m(+3ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/contextcommons.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/rarearchive.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/sciencestanley.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/wga.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/wilhelmai.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/zenzachary.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/ailp-dataroom.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/apscheduler.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/awsbootstrap.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/bitwarden.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/caddy.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/cakeprotocol.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/canvas.md[22m [2m(+2ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/container.md[22m [2m(+2ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/context.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/dashboards.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/datarooms.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/emacs.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/exchange.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/fastapi.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/fluxer.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/forgejo.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/gotfn.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/groupware.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/harness.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/inference.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/jupyter.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/latticeprotocol.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/lighthouse.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/nebula.md[22m [2m(+2ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/neo4j.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/nextcloud.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/obsidian.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/prefect.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/realityscan.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/remotecontrol.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/store.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/tappprotocol.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/terminal.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/vercel.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/warp.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/webforge.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/adna.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/datasets.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/magnapetra.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/worldgenome.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/spacemacs.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults/zeta.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m   [34m├─[39m [2m/vaults.md[22m [2m(+1ms)[22m 
+[2m03:13:10[22m [32m✓ Completed in 2.04s.
+[39m
+[42m[30m generating optimized images [39m[49m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_commons.DEYU-_P9_ZyRgwe.avif [2m(reused cache entry)[22m [2m(+2ms)[22m [2m(1/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_how.DNyvRPgP_ZcGE7R.webp [2m(reused cache entry)[22m [2m(+2ms)[22m [2m(2/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_get_started.CcOIydjd_Z17owc5.webp [2m(reused cache entry)[22m [2m(+2ms)[22m [2m(3/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_reference.Da_Cm9Qj_ZwroxJ.webp [2m(reused cache entry)[22m [2m(+2ms)[22m [2m(4/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_network.PZ9OCek9_2aGLTu.avif [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(5/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_helix.CfEt8u2F_ZBIDGR.avif [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(6/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_learn.EqTRqJWZ_ZgRX6E.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(7/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_network.C7JTfhkO_CzDUh.avif [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(8/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_patterns.BI7AClxH_32P9y.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(9/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_commons.DEYU-_P9_vRvQf.avif [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(10/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_get_started.CcOIydjd_1OsEEB.webp [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(11/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_how.DNyvRPgP_Z1XvH3Y.webp [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(12/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_reference.Da_Cm9Qj_ZxT5Ej.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(13/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_network.PZ9OCek9_ZbLLkK.avif [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(14/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_helix.CfEt8u2F_2sbQGX.avif [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(15/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_learn.EqTRqJWZ_fSPz.webp [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(16/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_patterns.BI7AClxH_1c16Xh.webp [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(17/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_network.C7JTfhkO_2fFc6s.avif [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(18/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_commons.DEYU-_P9_Z1Nnhbv.avif [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(19/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_get_started.CcOIydjd_2mODTG.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(20/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_how.DNyvRPgP_Z2na2MQ.webp [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(21/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_reference.Da_Cm9Qj_ZUsG80.webp [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(22/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_network.PZ9OCek9_Oq3eG.avif [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(23/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_helix.CfEt8u2F_Z1yd7R4.avif [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(24/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_learn.EqTRqJWZ_sbDoF.webp [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(25/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_patterns.BI7AClxH_Z1OhUDn.webp [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(26/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_network.C7JTfhkO_Z4zAVi.avif [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(27/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_commons.DEYU-_P9_Z1nap0c.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(28/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_get_started.CcOIydjd_pWUDd.webp [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(29/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_how.DNyvRPgP_4eB2j.webp [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(30/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_reference.Da_Cm9Qj_Z1gbnSo.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(31/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_network.PZ9OCek9_Z1cNqpP.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(32/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_helix.CfEt8u2F_2fjVqo.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(33/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_learn.EqTRqJWZ_Z1iIYkB.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(34/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_network.C7JTfhkO_ZaHtxG.webp [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(35/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_patterns.BI7AClxH_15DQSO.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(36/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_commons.DEYU-_P9_SDVdV.webp [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(37/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_network.PZ9OCek9_1DwtvH.webp [2m(reused cache entry)[22m [2m(+2ms)[22m [2m(38/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_helix.CfEt8u2F_Z6ymOI.webp [2m(reused cache entry)[22m [2m(+2ms)[22m [2m(39/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_network.C7JTfhkO_Z2rJwkM.webp [2m(reused cache entry)[22m [2m(+2ms)[22m [2m(40/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_commons.DEYU-_P9_Z1qAQNO.webp [2m(reused cache entry)[22m [2m(+2ms)[22m [2m(41/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_helix.CfEt8u2F_WdLpb.webp [2m(reused cache entry)[22m [2m(+1ms)[22m [2m(42/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_network.PZ9OCek9_Z2prOHM.webp [2m(reused cache entry)[22m [2m(+1ms)[22m [2m(43/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_network.C7JTfhkO_ibNqo.webp [2m(reused cache entry)[22m [2m(+1ms)[22m [2m(44/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_network.PZ9OCek9_Z2tcur7.png [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(45/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_commons.DEYU-_P9_Zh4Q03.png [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(46/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_helix.CfEt8u2F_Z1duDxE.png [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(47/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_network.C7JTfhkO_Un4rs.png [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(48/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_commons.DEYU-_P9_ZATMq2.png [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(49/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_network.PZ9OCek9_Z25ixoo.png [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(50/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_helix.CfEt8u2F_ZX5C9C.png [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(51/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_network.C7JTfhkO_17RROb.png [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(52/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_commons.DEYU-_P9_291xl9.png [2m(reused cache entry)[22m [2m(+11ms)[22m [2m(53/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_network.PZ9OCek9_Z145HNW.png [2m(reused cache entry)[22m [2m(+10ms)[22m [2m(54/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_adna_helix.CfEt8u2F_5Gw5h.png [2m(reused cache entry)[22m [2m(+10ms)[22m [2m(55/56)[22m
+[2m03:13:10[22m   [32m▶[39m /_astro/hero_network.C7JTfhkO_Z1cmUdz.png [2m(reused cache entry)[22m [2m(+10ms)[22m [2m(56/56)[22m
+[2m03:13:10[22m [32m✓ Completed in 37ms.
+[39m
+[2m03:13:10[22m [34m[build][39m [32m✓ Completed in 9.74s.[39m
+[2m03:13:10[22m [34m[@astrojs/sitemap][39m `sitemap-index.xml` created at `dist`
+[2m03:13:10[22m [34m[adna-strip-html-comments][39m dev-comment strip: removed 7176 comment(s) from 229 file(s)
+[2m03:13:10[22m [34m[adna-emit-bespoke-twins][39m emit_bespoke_twins: wrote 36 tier-C twin(s); advertised 226 via rel=alternate; corpus 1020 KB from 226 page(s); manifest lists 226 total; skipped 192 (/community/community-context-commons (tier A/B), /community/community-contribution-standards (tier A/B), /community/community-processes (tier A/B), /community/community-roles (tier A/B), /community/proposals/aep-1 (tier A/B), /community/proposals/aep-2 (tier A/B), …)
+[2m03:13:10[22m [34m[@astrojs/vercel][39m Copying static files to .vercel/output/static
+[2m03:13:11[22m [34m[build][39m 229 page(s) built in [1m11.63s[22m
+[2m03:13:11[22m [34m[build][39m [1mComplete![22m
+
+Running 26 tests using 1 worker
+
+  ✓   1 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:234:3 › gate-49 — visual regression › G49a: the template frame is what it claims to be (3ms)
+  ✓   2 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:252:3 › gate-49 — visual regression › G49b: the mask set and the non-mask set are both asserted, not assumed (6.7s)
+      masked 0.0047% of home [dark] (budget 0.15%)
+  ✓   3 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [dark]: home (/) matches its baseline (3.9s)
+      masked 0.0085% of about [dark] (budget 0.15%)
+  ✓   4 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [dark]: about (/about/) matches its baseline (821ms)
+      masked 0.0069% of commons [dark] (budget 0.15%)
+  ✓   5 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [dark]: commons (/commons/) matches its baseline (970ms)
+      masked 0.0050% of vaults-index [dark] (budget 0.15%)
+  ✓   6 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [dark]: vaults-index (/vaults/) matches its baseline (1.1s)
+      masked 0.0360% of vault-card [dark] (budget 0.15%)
+  ✓   7 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [dark]: vault-card (/vaults/adna/) matches its baseline (655ms)
+      masked 0.0087% of vaults-graph [dark] (budget 0.15%)
+  ✓   8 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [dark]: vaults-graph (/vaults/graph/) matches its baseline (870ms)
+      masked 0.0076% of state-network [dark] (budget 0.15%)
+  ✓   9 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [dark]: state-network (/state-of-the-network/) matches its baseline (868ms)
+      masked 0.0203% of policy [dark] (budget 0.15%)
+  ✓  10 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [dark]: policy (/security/) matches its baseline (688ms)
+      masked 0.0117% of doc-hub [dark] (budget 0.15%)
+  ✓  11 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [dark]: doc-hub (/learn/) matches its baseline (789ms)
+      masked 0.0719% of doc-leaf [dark] (budget 0.15%)
+  ✓  12 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [dark]: doc-leaf (/learn/concepts/agentic-literacy/) matches its baseline (918ms)
+      masked 0.0031% of design-system [dark] (budget 0.15%)
+  ✓  13 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [dark]: design-system (/design-system/) matches its baseline (1.3s)
+      masked 0.0089% of community [dark] (budget 0.15%)
+  ✓  14 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [dark]: community (/community/) matches its baseline (822ms)
+      masked 0.0047% of home [light] (budget 0.15%)
+  ✓  15 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [light]: home (/) matches its baseline (3.6s)
+      masked 0.0085% of about [light] (budget 0.15%)
+  ✓  16 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [light]: about (/about/) matches its baseline (816ms)
+      masked 0.0069% of commons [light] (budget 0.15%)
+  ✓  17 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [light]: commons (/commons/) matches its baseline (950ms)
+      masked 0.0050% of vaults-index [light] (budget 0.15%)
+  ✓  18 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [light]: vaults-index (/vaults/) matches its baseline (1.1s)
+      masked 0.0360% of vault-card [light] (budget 0.15%)
+  ✓  19 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [light]: vault-card (/vaults/adna/) matches its baseline (655ms)
+      masked 0.0087% of vaults-graph [light] (budget 0.15%)
+  ✓  20 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [light]: vaults-graph (/vaults/graph/) matches its baseline (863ms)
+      masked 0.0076% of state-network [light] (budget 0.15%)
+  ✓  21 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [light]: state-network (/state-of-the-network/) matches its baseline (865ms)
+      masked 0.0203% of policy [light] (budget 0.15%)
+  ✓  22 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [light]: policy (/security/) matches its baseline (711ms)
+      masked 0.0117% of doc-hub [light] (budget 0.15%)
+  ✓  23 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [light]: doc-hub (/learn/) matches its baseline (784ms)
+      masked 0.0719% of doc-leaf [light] (budget 0.15%)
+  ✓  24 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [light]: doc-leaf (/learn/concepts/agentic-literacy/) matches its baseline (924ms)
+      masked 0.0031% of design-system [light] (budget 0.15%)
+  ✓  25 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [light]: design-system (/design-system/) matches its baseline (1.2s)
+      masked 0.0089% of community [light] (budget 0.15%)
+  ✓  26 [snapshot] › tests/gates/gate-49-visual-regression.spec.ts:276:7 › gate-49 — visual regression › G49c/d [light]: community (/community/) matches its baseline (812ms)
+
+  26 passed (35.0s)

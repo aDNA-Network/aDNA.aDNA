@@ -1,0 +1,595 @@
+[
+  {
+    "phase": 0,
+    "n": 1,
+    "slug": "baseline",
+    "title": "Freeze baseline and reconcile authority",
+    "work": 35,
+    "scope": "Pin the local source tree, live deployment and HAUSSMANN evidence boundary; reconcile MCP built/not-live, G4 and Operations ADR-025. Do not rescore old numbers as if v1.1 produced them.",
+    "output": "baseline_manifest.md and two isolated v1.1 sheets with reconciliation",
+    "test": "Every score clause cites a reached surface; two fixed cohort exemplars are scored alongside the target on the same version. Preserve absent human measurements as provisional.",
+    "red": "Give the manifest validator a mismatched commit and give scorers an evidence pack missing TTFS; neither may report an unqualified full pass.",
+    "dims": [
+      "D1",
+      "D7",
+      "D10"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [],
+    "id": "mission_garnier_p0_1_baseline",
+    "key": "P0.1",
+    "budget": 58
+  },
+  {
+    "phase": 0,
+    "n": 2,
+    "slug": "instruments",
+    "title": "Calibrate the added instruments",
+    "work": 42,
+    "scope": "Version the consumer word/claim census, complete capture matrix and expanded component population. Reuse existing instruments; route missing reusable patterns back to WebForge.",
+    "output": "instrument_contract.md, controls and consumer bar manifest",
+    "test": "Prove every instrument reaches its named route/population and run both failing and passing fixtures before using a verdict.",
+    "red": "Insert a banned word, overflow paragraph, missing viewport and token bypass into disposable fixtures; each relevant detector must fail separately.",
+    "dims": [
+      "D5",
+      "D6",
+      "D11"
+    ],
+    "pattern": "word-budget and complete-capture consumer contract",
+    "deps": [
+      "mission_garnier_p0_1_baseline"
+    ],
+    "id": "mission_garnier_p0_2_instruments",
+    "key": "P0.2",
+    "budget": 65
+  },
+  {
+    "phase": 1,
+    "n": 1,
+    "slug": "homepage_voice",
+    "title": "Make the homepage demonstrate the mechanism",
+    "work": 42,
+    "scope": "Edit homepage copy and low-fidelity hierarchy only after P0 exit. Retain Agentic DNA, local ownership and opt-in sharing. Put the real primitive before the supporting DNA/shared-cultural-heritage explanation; show democratic participation through existing artifacts.",
+    "output": "homepage_copy_diff.md and measured homepage revision",
+    "test": "The rendered home and twin meet the ratified word budget, one-new-term rule and claim register; the working artifact is adjacent to the capability claim.",
+    "red": "A disposable version containing a fictitious benchmark or undefined second new term must fail editorial review.",
+    "dims": [
+      "D1",
+      "D3",
+      "D6"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p0_2_instruments"
+    ],
+    "id": "mission_garnier_p1_1_homepage_voice",
+    "key": "P1.1",
+    "budget": 65
+  },
+  {
+    "phase": 1,
+    "n": 2,
+    "slug": "quickstart_voice",
+    "title": "Bring the first task into focus",
+    "work": 40,
+    "scope": "Clarify get-started and its immediate explainer path; account for prerequisites, expected result, rollback and provenance credit without inventing timings or terminal output.",
+    "output": "quickstart_copy_diff.md and instruction ledger",
+    "test": "Read rendered pages and twins, copy exact commands, run the documented task in a disposable environment; keep actual human TTFS owed.",
+    "red": "Reject a command with a prompt prefix and a fixture with an omitted prerequisite; compare successful output with the documented expectation.",
+    "dims": [
+      "D3",
+      "D6",
+      "D11"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p1_1_homepage_voice"
+    ],
+    "id": "mission_garnier_p1_2_quickstart_voice",
+    "key": "P1.2",
+    "budget": 63
+  },
+  {
+    "phase": 1,
+    "n": 3,
+    "slug": "mission_voice",
+    "title": "Make the public-good invitation concise",
+    "work": 38,
+    "scope": "Revise about, community, commons and network first-contact prose under existing positioning. Distinguish shared cultural heritage as an ethical thesis from private data, current ownership and future governance. Preserve held third-party text pending its owner decision.",
+    "output": "mission_copy_diff.md and claim-to-evidence map",
+    "test": "Each revised claim has an artifact or an explicit aspiration label; all four prose budgets and standing-reader paths are checked on rendered pages and twins.",
+    "red": "A fixture calling founder-controlled nodes independent adoption must be rejected; a community instruction for agent transport must be rejected.",
+    "dims": [
+      "D1",
+      "D6",
+      "D7",
+      "D8"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p1_2_quickstart_voice"
+    ],
+    "id": "mission_garnier_p1_3_mission_voice",
+    "key": "P1.3",
+    "budget": 61
+  },
+  {
+    "phase": 2,
+    "n": 1,
+    "slug": "proof_lineage",
+    "title": "Show a reproducible example and its lineage",
+    "work": 45,
+    "scope": "Select one real, public governed vault example and trace a task from source to result. Connect prior art and research lineage at true strength; state absent comparative evaluations honestly. No new lab-performance claims.",
+    "output": "worked_example.md, reproducibility record and lineage map",
+    "test": "Reproduce the published example from its pinned public inputs in a disposable directory and follow every lineage citation.",
+    "red": "Change an expected artifact hash and remove a necessary input; the example verification must fail, while an explicit unknown evaluation remains admissible.",
+    "dims": [
+      "D1",
+      "D3",
+      "D7"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p1_3_mission_voice"
+    ],
+    "id": "mission_garnier_p2_1_proof_lineage",
+    "key": "P2.1",
+    "budget": 68
+  },
+  {
+    "phase": 2,
+    "n": 2,
+    "slug": "source_fidelity",
+    "title": "Reconcile glossary and community publishing ownership",
+    "work": 48,
+    "scope": "Enumerate the 25 glossary and 4 community mirrors afresh. Assign an authoritative source/transform or a documented authored exception to every row; repair only website-owned paths.",
+    "output": "source_fidelity_ledger.md and source-to-HTML/twin checks",
+    "test": "Mutate a disposable source for each transform family and prove corresponding served HTML and Markdown change together; enumerate every mirror with zero unassigned rows.",
+    "red": "Disable one transform or substitute stale output in a disposable build; the comparison must fail for the affected family.",
+    "dims": [
+      "D4",
+      "D7",
+      "D10"
+    ],
+    "pattern": "source-to-served-output fidelity contract",
+    "deps": [
+      "mission_garnier_p2_1_proof_lineage"
+    ],
+    "id": "mission_garnier_p2_2_source_fidelity",
+    "key": "P2.2",
+    "budget": 71
+  },
+  {
+    "phase": 2,
+    "n": 3,
+    "slug": "docs_review",
+    "title": "Review the remaining documentation by risk",
+    "work": 50,
+    "scope": "Derive a full docs inventory, classify tutorial/how-to/reference/explanation and inspect all high-risk instructions, renamed terms and claim-bearing pages. Assign every remaining route to reviewed or a named follow-up tranche before accepting coverage.",
+    "output": "docs_review_ledger.md and bounded correction batch",
+    "test": "Every built content route has a disposition; changed examples execute and changed source/HTML/twin triples agree. If the review exceeds this context budget, propose a tranche mission before closing.",
+    "red": "Seed an obsolete command and orphaned glossary definition in disposable copies; the review must identify both by route.",
+    "dims": [
+      "D4",
+      "D6",
+      "D7"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p2_2_source_fidelity"
+    ],
+    "id": "mission_garnier_p2_3_docs_review",
+    "key": "P2.3",
+    "budget": 73
+  },
+  {
+    "phase": 2,
+    "n": 4,
+    "slug": "trust_surfaces",
+    "title": "Bring current state and governance beside the invitation",
+    "work": 40,
+    "scope": "Connect dated state-of-network, people, canonical properties and actual contribution paths from first-contact pages. Make founder operation, proposal authority and unoccupied roles visible without new nav categories or an investor page.",
+    "output": "trust_path_map.md and current-state evidence map",
+    "test": "Trace each decisive reader from home to people, lineage and state in at most two clicks; compare every institutional assertion with its clearance record.",
+    "red": "An unapproved institution card and an unsupported external-adopter label must block review; empty-state candor must not be rejected.",
+    "dims": [
+      "D2",
+      "D7",
+      "D8"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p2_3_docs_review"
+    ],
+    "id": "mission_garnier_p2_4_trust_surfaces",
+    "key": "P2.4",
+    "budget": 63
+  },
+  {
+    "phase": 2,
+    "n": 5,
+    "slug": "midpoint",
+    "title": "Measure Decade 1 and ratify the craft wave",
+    "work": 38,
+    "scope": "Freeze Decade 1 output, run two isolated v1.1 scorers plus the same two cohort exemplars, and re-plan every provisional P3\u2013P6 mission against current findings.",
+    "output": "midpoint_reconciliation.md and revised Decade 2 envelope",
+    "test": "Display all dimensions, ceilings and changes in instrument reach; list each provisional mission retained, amended or deferred with its cost and owner.",
+    "red": "Supply mismatched instrument hashes or omit a scorer; the measure gate must refuse an incomparable composite.",
+    "dims": [
+      "D1",
+      "D5",
+      "D6",
+      "D7"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p2_4_trust_surfaces"
+    ],
+    "id": "mission_garnier_p2_5_midpoint",
+    "key": "P2.5",
+    "budget": 61
+  },
+  {
+    "phase": 3,
+    "n": 1,
+    "slug": "design_system",
+    "title": "Enforce the evolved visual system",
+    "work": 45,
+    "scope": "Consume WebForge through the local wrapper; honor ADR-059 validators-only tokens and ADR-053 five slots. Inventory actual type roles and component exceptions, then implement ratified consumer constraints and a VisualDNA bundle.",
+    "output": "design_system_contract.md and validated consumer bundle",
+    "test": "Census the declared full component population, inspect design-system plus representative templates in both themes and validate the bundle against its pinned schema.",
+    "red": "Plant an unapproved token and a bundle missing an a11y field; each relevant validation fails before approving the clean fixture.",
+    "dims": [
+      "D5",
+      "D11"
+    ],
+    "pattern": "semantic type roles and five-slot VisualDNA bundle",
+    "deps": [
+      "mission_garnier_p2_5_midpoint"
+    ],
+    "id": "mission_garnier_p3_1_design_system",
+    "key": "P3.1",
+    "budget": 68
+  },
+  {
+    "phase": 3,
+    "n": 2,
+    "slug": "hero_slots",
+    "title": "Craft the hero and illustration slots",
+    "work": 47,
+    "scope": "Apply the ratified hierarchy to home and the five approved illustration slots. Abstract-only generated assets if authorized; no fabricated people, institutions or implied deployments. Preserve origin/credit and alt decisions.",
+    "output": "slot_contact_sheet.md and asset provenance ledger",
+    "test": "Inspect all six viewports in both themes, at 200/400% reflow, with art disabled; the same mechanism and task remain available as text.",
+    "red": "A deliberately cropped key label or missing meaningful alt must fail review; decorative alt remains empty where justified.",
+    "dims": [
+      "D1",
+      "D5",
+      "D11"
+    ],
+    "pattern": "five-slot responsive art composition",
+    "deps": [
+      "mission_garnier_p3_1_design_system"
+    ],
+    "id": "mission_garnier_p3_2_hero_slots",
+    "key": "P3.2",
+    "budget": 70
+  },
+  {
+    "phase": 3,
+    "n": 3,
+    "slug": "diagram_code",
+    "title": "Unify diagrams and code treatment",
+    "work": 45,
+    "scope": "Apply one symbol/edge grammar to architecture diagrams and preserve a genuinely equivalent keyboard/text graph twin. Unify code labels, overflow and copy states without faking executable output.",
+    "output": "diagram_grammar.md and code-state verification",
+    "test": "Compare graph data with keyboard twin, exercise keyboard navigation and copy each command exactly; test clipboard rejection and narrow-width code overflow.",
+    "red": "Delete one graph edge from the twin and deny clipboard permission; parity check and accessible recovery behavior must expose the failures.",
+    "dims": [
+      "D5",
+      "D10",
+      "D11"
+    ],
+    "pattern": "diagram semantic grammar and clipboard recovery",
+    "deps": [
+      "mission_garnier_p3_2_hero_slots"
+    ],
+    "id": "mission_garnier_p3_3_diagram_code",
+    "key": "P3.3",
+    "budget": 68
+  },
+  {
+    "phase": 3,
+    "n": 4,
+    "slug": "motion_social",
+    "title": "Finish motion, states and social previews",
+    "work": 42,
+    "scope": "Inventory and rationalize motion, loading/empty/error states, icons and OG cards across templates; extend the existing visual voice to each. Avoid new third-party scripts unless justified and separately accepted.",
+    "output": "motion_state_inventory.md and social contact sheet",
+    "test": "Exercise normal/reduced motion, no-JS and failed-request states; inspect actual generated OG images for the selected route classes at social-preview dimensions.",
+    "red": "Block an image or request, force an empty result and emulate reduced motion; each state remains understandable and navigable.",
+    "dims": [
+      "D5",
+      "D11",
+      "D12"
+    ],
+    "pattern": "motion/state vocabulary consumer",
+    "deps": [
+      "mission_garnier_p3_3_diagram_code"
+    ],
+    "id": "mission_garnier_p3_4_motion_social",
+    "key": "P3.4",
+    "budget": 65
+  },
+  {
+    "phase": 4,
+    "n": 1,
+    "slug": "performance",
+    "title": "Harden performance and field measurement",
+    "work": 43,
+    "scope": "Run local and deployed lab checks separately; inspect field p75 mobile/desktop access and sample sufficiency. Read provider Lighthouse bars from their owner file, never transcribe them.",
+    "output": "performance_pack.md and CI payload budget checks",
+    "test": "Five critical templates meet ratified lab budgets with waterfall evidence; field LCP/INP/CLS are green on a stated sample or explicitly unmeasured at the publication gate.",
+    "red": "Add an oversized asset in a disposable fixture and remove field sample metadata; budget check fails and the field report refuses a green claim.",
+    "dims": [
+      "D12"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p3_4_motion_social"
+    ],
+    "id": "mission_garnier_p4_1_performance",
+    "key": "P4.1",
+    "budget": 66
+  },
+  {
+    "phase": 4,
+    "n": 2,
+    "slug": "accessibility",
+    "title": "Verify accessibility beyond automation",
+    "work": 48,
+    "scope": "Run all-template axe matrices, keyboard flows, zoom/reflow, code/diagram contrast and human VoiceOver/NVDA passes; recruit no users as an agent.",
+    "output": "accessibility_pack.md and limitation statement",
+    "test": "Zero automated violations in the enumerated matrix; manual primary flows pass WCAG 2.2 AA checks with named evidence and assistive-tech coverage.",
+    "red": "Introduce a focus trap, missing label and low-contrast fixture; the corresponding automated/manual protocols detect each.",
+    "dims": [
+      "D5",
+      "D11"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p4_1_performance"
+    ],
+    "id": "mission_garnier_p4_2_accessibility",
+    "key": "P4.2",
+    "budget": 71
+  },
+  {
+    "phase": 4,
+    "n": 3,
+    "slug": "regression",
+    "title": "Refresh regression and machine evidence",
+    "work": 43,
+    "scope": "Grow gates only for demonstrated regression classes; preserve derived fixtures and same-diff updates. Recheck headers, redirects, all internal links, twin parity, registry and self-conformance boundary.",
+    "output": "regression_pack.md and same-diff audit",
+    "test": "Build safely, apply all CI injections, pass fast/full/container gates without new skips or xfails, and reach the final intended origin in live probes.",
+    "red": "Wrong-origin, missing header, stale twin and broken internal-link fixtures each fail the matching instrument.",
+    "dims": [
+      "D2",
+      "D7",
+      "D10",
+      "D12"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p4_2_accessibility"
+    ],
+    "id": "mission_garnier_p4_3_regression",
+    "key": "P4.3",
+    "budget": 66
+  },
+  {
+    "phase": 5,
+    "n": 1,
+    "slug": "human_panel",
+    "title": "Run the decisive and standing reader panels",
+    "work": 38,
+    "scope": "Prepare sealed tasks and practice controls; operator supplies consenting humans. Record independent 3-second and 3-minute answers without coaching, plus clinician, OSS and agent regression paths. Keep HAUSSMANN panel ownership separate.",
+    "output": "human_panel_pack.md with consent-safe verbatims and denominators",
+    "test": "At least five per decisive class; \u226580% in every class answer each window correctly under predeclared rubric. Record disagreement and standing-reader failures.",
+    "red": "Use an ambiguous practice page and an answer that confuses aspiration with fact; the rubric must mark failure rather than award sympathy points.",
+    "dims": [
+      "D1",
+      "D3",
+      "D7",
+      "D8"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p4_3_regression"
+    ],
+    "id": "mission_garnier_p5_1_human_panel",
+    "key": "P5.1",
+    "budget": 61
+  },
+  {
+    "phase": 5,
+    "n": 2,
+    "slug": "rescore",
+    "title": "Rescore and prepare the integration handoff",
+    "work": 42,
+    "scope": "Freeze evidence, run two isolated v1.1 scorers and cohort exemplars, reconcile clause-level differences and prepare a staged integration packet for HAUSSMANN GR-7.",
+    "output": "capstone_scorecard.md and staged integration handoff",
+    "test": "No composite without full breakdown, ceilings and provenance; all protected invariants have evidence and all S1/S2 findings have dispositions accepted at gate.",
+    "red": "Omit a required score clause or substitute an older build pack; reconciliation must refuse sign-off.",
+    "dims": [
+      "D1",
+      "D5",
+      "D6",
+      "D7",
+      "D11",
+      "D12"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p5_1_human_panel"
+    ],
+    "id": "mission_garnier_p5_2_rescore",
+    "key": "P5.2",
+    "budget": 65
+  },
+  {
+    "phase": 5,
+    "n": 3,
+    "slug": "publication",
+    "title": "Present the public-launch decision",
+    "work": 30,
+    "scope": "Prepare the exact reviewed diff, final evidence manifest, clearance dispositions and rollback plan. Publication remains a separate operator act after HAUSSMANN boundary and GR-7 ownership checks.",
+    "output": "publication_gate.md and reproducible release manifest",
+    "test": "Confirm source/CI/deployment candidates match, all clearances are recorded and operator explicitly authorizes each outward act; no inferred GO from prior planning.",
+    "red": "A candidate with a different source hash or an unresolved G4 hold must be rejected before any deploy invocation.",
+    "dims": [
+      "D7",
+      "D12"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p5_2_rescore"
+    ],
+    "id": "mission_garnier_p5_3_publication",
+    "key": "P5.3",
+    "budget": 53
+  },
+  {
+    "phase": 6,
+    "n": 1,
+    "slug": "campaign_aar",
+    "title": "Write the full campaign AAR",
+    "work": 32,
+    "scope": "Write five-line and full-template AARs with complete scorecards, instrument drift, per-session estimates/actuals and both content-load and available API-billing evidence.",
+    "output": "campaign_aar.md and campaign_aar_lightweight.md",
+    "test": "Reconcile delivered objectives to mission AARs; budget totals derive from records, unavailable billing is stated rather than estimated from another runtime.",
+    "red": "Omit a session or change its recorded cost in a fixture; totals reconciliation flags the discrepancy.",
+    "dims": [
+      "D7"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p5_3_publication"
+    ],
+    "id": "mission_garnier_p6_1_campaign_aar",
+    "key": "P6.1",
+    "budget": 55
+  },
+  {
+    "phase": 6,
+    "n": 2,
+    "slug": "decadal_aar",
+    "title": "Run the decadal reviewer and adopter pass",
+    "work": 42,
+    "scope": "Apply skill_decadal_aar: all sixteen reviewer lenses, canonical adopter ranker and preserved parallel scorecard. No synthetic score substitutes for human evidence.",
+    "output": "decadal_aar.md and parallel reviewer scorecard",
+    "test": "All sixteen lenses have evidence and dispositions; capstone primary ranker \u22654.95 on its existing aggregation, secondary dimensions remain separate.",
+    "red": "Remove one reviewer and merge secondary scores into the primary total; completeness and aggregation checks must fail.",
+    "dims": [
+      "D1",
+      "D5",
+      "D6",
+      "D7"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p6_1_campaign_aar"
+    ],
+    "id": "mission_garnier_p6_2_decadal_aar",
+    "key": "P6.2",
+    "budget": 65
+  },
+  {
+    "phase": 6,
+    "n": 3,
+    "slug": "graduation",
+    "title": "Graduate reusable context",
+    "work": 37,
+    "scope": "Promote validated lessons into local context/doctrine/skills/templates and reviewer/glossary amendments where justified; stage upstream/template-release proposals without editing .adna.",
+    "output": "graduation_ledger.md and local governed amendments",
+    "test": "Every promoted claim links evidence and an owner; existing indices resolve; no invented provider pattern is embedded locally.",
+    "red": "A proposed lesson without evidence or a copied provider gate bar must be rejected by graduation review.",
+    "dims": [
+      "D4",
+      "D7"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p6_2_decadal_aar"
+    ],
+    "id": "mission_garnier_p6_3_graduation",
+    "key": "P6.3",
+    "budget": 60
+  },
+  {
+    "phase": 6,
+    "n": 4,
+    "slug": "graph_updates",
+    "title": "Prepare the graph-update wave",
+    "work": 34,
+    "scope": "For every named related graph, record concrete lessons, changes, owners, gates and local-versus-memo disposition. Stage all peer memos inside this vault; deliver none without authority.",
+    "output": "artifacts/p6/graph_update_ledger.md and staged memos",
+    "test": "Every required graph has a row, each actionable row has a concrete proposed diff or memo and destination, and no peer tree was modified.",
+    "red": "An omitted graph, unowned row or direct peer-write proposal must fail ledger review.",
+    "dims": [
+      "D7",
+      "D10"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p6_3_graduation"
+    ],
+    "id": "mission_garnier_p6_4_graph_updates",
+    "key": "P6.4",
+    "budget": 57
+  },
+  {
+    "phase": 6,
+    "n": 5,
+    "slug": "followup",
+    "title": "Scope follow-up and review cadence",
+    "work": 28,
+    "scope": "Scope evidence gaps and next campaign without changing launch claims. Assign full review every two quarters, claims/links monthly and TTFS on each quickstart release to named owners.",
+    "output": "followup_scope.md and cadence handoff",
+    "test": "Every unresolved item has an owner, next evidence event and acceptance criterion; schedules remain proposed unless separately authorized.",
+    "red": "An unresolved issue with no owner or cadence without a trigger must fail handoff review.",
+    "dims": [
+      "D4",
+      "D7",
+      "D12"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p6_4_graph_updates"
+    ],
+    "id": "mission_garnier_p6_5_followup",
+    "key": "P6.5",
+    "budget": 51
+  },
+  {
+    "phase": 6,
+    "n": 6,
+    "slug": "close",
+    "title": "Ratify closure and file the close splash",
+    "work": 25,
+    "scope": "Use template_campaign_close_splash; reconcile every mission/AAR/graduation/graph-update row, present P6 operator exit and only then close campaign and STATE.",
+    "output": "close_splash.md and closure ratification record",
+    "test": "No completed status until P6 is ratified, all mandatory outputs exist and outstanding peer deliveries are explicitly held or accepted as follow-ups.",
+    "red": "A missing full AAR, omitted graph row or unsigned P6 gate must prevent completed status.",
+    "dims": [
+      "D7"
+    ],
+    "pattern": "existing consumer patterns",
+    "deps": [
+      "mission_garnier_p6_5_followup"
+    ],
+    "id": "mission_garnier_p6_6_close",
+    "key": "P6.6",
+    "budget": 48
+  }
+]

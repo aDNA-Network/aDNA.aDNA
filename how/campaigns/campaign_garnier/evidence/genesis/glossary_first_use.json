@@ -1,0 +1,55 @@
+{
+  "dist": "dist",
+  "derived": 25,
+  "excluded": 5,
+  "checkable": 20,
+  "routes_requested": 4,
+  "routes_measured": 4,
+  "errors": [],
+  "mentions": 6,
+  "rows": [
+    {
+      "route": "/",
+      "term": "AGENTS.md",
+      "slug": "glossary-agents-md",
+      "at": 4327,
+      "linked": true
+    },
+    {
+      "route": "/",
+      "term": "Governance File",
+      "slug": "glossary-governance-file",
+      "at": 3521,
+      "linked": true
+    },
+    {
+      "route": "/get-started",
+      "term": "Triad",
+      "slug": "glossary-triad",
+      "at": 3202,
+      "linked": true
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "term": "Frontmatter",
+      "slug": "glossary-frontmatter",
+      "at": 4156,
+      "linked": true
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "term": "Governance File",
+      "slug": "glossary-governance-file",
+      "at": 1526,
+      "linked": true
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "term": "Triad",
+      "slug": "glossary-triad",
+      "at": 1259,
+      "linked": true
+    }
+  ],
+  "violations": []
+}

@@ -1,0 +1,2 @@
+live-headers https://adna.network → 4/5 match by value: Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy
+live-headers DRIFT: missing X-Bogus-Header-That-Cannot-Exist — deployed artifact does not match vercel.json

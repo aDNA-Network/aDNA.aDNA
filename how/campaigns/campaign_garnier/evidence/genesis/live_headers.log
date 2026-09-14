@@ -1,0 +1,2 @@
+live-headers https://adna.network → 4/4 match by value: Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy
+live-headers OK — no drift (names and values)

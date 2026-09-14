@@ -1,0 +1,103 @@
+[
+  {
+    "url": "/llms.txt",
+    "status": 200,
+    "final_url": "https://adna.network/llms.txt",
+    "content_type": "text/plain; charset=utf-8",
+    "sha256": "978b0991d6938b8285311ce711ad5553dc0af9a99c7b9244ef9d9ea260d399b7",
+    "bytes": 3146,
+    "sample": "# aDNA \u2014 Agentic DNA Knowledge Architecture\n\n> An open standard for organizing project knowledge so both humans and AI agents can navigate it. Clone-and-run: one command gives you the standard, the skills, and the templates \u2014 ready for an agent. Local-first; federation is opt-in.\n\n## Install\n\n```\ngit clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude\n```\n\n## Standard\n\n- Version: v2.5 (16 base entity types, 3 conformance levels)\n- License: MIT\n- Repository: https://github.com/aDNA-Network/aDNA\n- Published by: aDNA Network\n\n## Key pages\n\n- [What is aDNA?](https://adna.network/learn/what-is-adna): the five-minute conceptual tour\n- [Get started](https://adna.network/get-started): set up your own workspace in one command\n- [The network](https://adna.network/network): how aDNA nodes federate, local-first\n- [Vaults](https://adna.network/vaults): the registry of 74 vaults\n- [Network graph](https://adna.network/vaults/graph): the federation topology, drawn\n- [Reference](https://adna.network/reference/specification): the specification\n- [Glossary](https://adna.network/glossary): canonical terms\n- [Community](https://adna.network/community): how the commons is governed\n- [State of the network](https://adna.network/state-of-the-network): what runs, what is opera"
+  },
+  {
+    "url": "/robots.txt",
+    "status": 200,
+    "final_url": "https://adna.network/robots.txt",
+    "content_type": "text/plain; charset=utf-8",
+    "sha256": "cc03f14b17a9c31fc2eb19cb1df972e075e1830209dfffc232ab3b193806e8de",
+    "bytes": 608,
+    "sample": "User-agent: *\nAllow: /\n\nSitemap: https://adna.network/sitemap-index.xml\n\n# Machine-readable surfaces (HAUSSMANN P3.1, ADR-056):\n#   /llms.txt       \u2014 curated index of this site, hand-written descriptions\n#   /llms-full.txt  \u2014 the full corpus: every page's markdown, concatenated\n#   <path>.md       \u2014 the markdown twin of any content URL, e.g. /learn/what-is-adna.md\n#                     Also served on <path> itself via `Accept: text/markdown`.\n# Each twin front-loads a pointer back to the index and carries the build date it\n# was generated from \u2014 these are build-time snapshots, not live state.\n"
+  },
+  {
+    "url": "/sitemap-index.xml",
+    "status": 200,
+    "final_url": "https://adna.network/sitemap-index.xml",
+    "content_type": "application/xml",
+    "sha256": "f195e1b801c10415608483ce88cb0fc1dff90c232057583363af9329f1bb7f58",
+    "bytes": 183,
+    "sample": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"><sitemap><loc>https://adna.network/sitemap-0.xml</loc></sitemap></sitemapindex>"
+  },
+  {
+    "url": "/rss.xml",
+    "status": 200,
+    "final_url": "https://adna.network/rss.xml",
+    "content_type": "application/xml",
+    "sha256": "2687000cd0ebd915c0b2d7234afdc183cb0f56b528a693d683f3c088426956b0",
+    "bytes": 5988,
+    "sample": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\n  <channel>\n    <title>aDNA \u2014 the open standard &amp; network for shared context</title>\n    <link>https://adna.network/</link>\n    <description>Release notes and changelog for the aDNA standard and adna.network. The open standard and network to build, share, and govern the context that powers AI.</description>\n    <language>en</language>\n    <lastBuildDate>Fri, 11 Sep 2026 00:00:00 GMT</lastBuildDate>\n    <atom:link href=\"https://adna.network/rss.xml\" rel=\"self\" type=\"application/rss+xml\" />\n    <item>\n      <title>2026-09-11 \u2014 aDNA v8.11: a promise retired, and a dead link found</title>\n      <link>https://adna.network/changelog/#2026-09-11</link>\n      <guid isPermaLink=\"false\">adna-changelog-2026-09-11</guid>\n      <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>\n      <description>aDNA v8.11 retires a marketplace promise from every place it still lived \u2014 including the first page a new node opens, where the link turned out to be dead.</description>\n    </item>\n    <item>\n      <title>2026-09-07 \u2014 Field speed data, and a v8.10 fix to the standard</title>\n      <link>https://adna.network/changelog/#2026-09-07</link>\n      <guid isPermaLink=\"false\">adna-changelog-2026-09-0"
+  },
+  {
+    "url": "/index.md",
+    "status": 200,
+    "final_url": "https://adna.network/index.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "2369d68c111e299cb6aaf075e1e5011887bffbdf534fb24ef7aec8b272ddf3d1",
+    "bytes": 10638,
+    "sample": "> Markdown twin of https://adna.network/\n> Index: https://adna.network/llms.txt \u00b7 Full corpus: https://adna.network/llms-full.txt\n> State is a build-time snapshot generated 2026-09-11 (UTC); nothing here is live.\n> Derived from the rendered page \u2014 this route has no markdown source.\n\n*[image: A pixel-art hero in the Tokyo Night palette: a glowing cyan DNA double-helix rising from a row of small computers and branching at the top into a network of connected nodes \u2014 shared inheritance resolving into the aDNA network.]*\n\nOpen standard \u00b7 MIT\n\n# The aDNA Network\n\naDNA (agentic DNA) is an open standard for organizing a project's files, so that AI agents and the people working with them can always find what they need. Three folders, plain Markdown, tracked in git. This site is the standard itself, its docs, and the registry of the workspaces \u2014 'vaults' \u2014 that run it.\n\nFor teams working with agentic coding tools on real projects. Not a product or service \u2014 no server, no signup; aDNA itself sends nothing.\n\nYour context is just the notes, docs and decisions you already keep \u2014 now in a shape your agents can follow. The standard that gives it that shape is open. Your files stay on your machine.\n\n[Explore the network](/vaults) [Get Started](/get-started)\n\n$ `git clone https://git"
+  },
+  {
+    "url": "/get-started.md",
+    "status": 200,
+    "final_url": "https://adna.network/get-started.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "sha256": "23e74ac1633bae661eeed89e47789c927990dcd459c1b53fa4fd863270f26f29",
+    "bytes": 10164,
+    "sample": "> Markdown twin of https://adna.network/get-started/\n> Index: https://adna.network/llms.txt \u00b7 Full corpus: https://adna.network/llms-full.txt\n> State is a build-time snapshot generated 2026-09-11 (UTC); nothing here is live.\n> Derived from the rendered page \u2014 this route has no markdown source.\n\n*[image: Cozy pixel-art scene of a desk and computer with a glowing cyan DNA helix rising from the screen \u2014 a new aDNA workspace coming alive]*\nIllustration generated with Google Imagen 4 Ultra (imagen-4.0-ultra-generate-001) in the ss-ghibli-pixel / Tokyo Night register, commissioned under ADR-032 and now governed by ADR-053.\n\n# Get Started\n\nSet up your own aDNA workspace \u2014 a local, agent-readable home for every project's context \u2014 in\nabout 5 minutes. The workspace is files on your machine and makes no network calls of its own.\n\n\u2139 Prerequisites\n\nGit, and [Claude Code](https://docs.anthropic.com/en/docs/claude-code)\ninstalled via `npm install -g @anthropic-ai/claude-code`. Obsidian is optional \u2014 vaults are\nplain Markdown, so any editor works.\n\n\ud83d\udca1 What you'll have when you're done\n\nA `~/aDNA/` workspace that ships ready: the workspace `CLAUDE.md` router\n(your agent's map between projects) pre-instantiated at the root; the standard itself embedded in a hidden\n`.adna/` folder ("
+  },
+  {
+    "url": "/api/vaults.json",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "/.well-known/adna-build.json",
+    "status": 200,
+    "final_url": "https://adna.network/.well-known/adna-build.json",
+    "content_type": "application/json; charset=utf-8",
+    "sha256": "c98b3ee66a57a5b0c42f3c2cb59eefad651845e4f030bbff0ab58666ee18fbb6",
+    "bytes": 119,
+    "sample": "{\n  \"commit\": \"eda4cbfc2857a6d2d9df7d80a5db170957d45cab\",\n  \"built_at\": \"2026-09-11T19:22:47.036Z\",\n  \"mode\": \"prod\"\n}\n"
+  },
+  {
+    "url": "/api/registry.v1.json",
+    "accept": null,
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "vary": null,
+    "bytes": 80997,
+    "sha256": "2e02518ebe951ef505a6da0261866c2beb9b8b6da58195da27ddc342f99eb469",
+    "sample": "{\n  \"schema_version\": \"1.0\",\n  \"about\": {\n    \"name\": \"The aDNA vault registry\",\n    \"description\": \"Every context graph listed in the aDNA registry, with the same fields the registry pages render.\",\n    \"documentation\": \"https://adna.network/vaults/\",\n    \"canonical_url\": \"https://adna.network/vaults.json\",\n    \"versioned_url\": \"https://adna.network/api/registry.v1.json\",\n    \"versioning\": \"Breaking changes get a NEW versioned URL (\u2026/registry.v2.json). The canonical /vaults.json follows the newest version only after that version has been served at its versioned URL for at least 90 days. Additive fields are not breaking and may appear at any time.\",\n    \"license\": \"MIT\"\n  },\n  \"generated_at\": \"2026-08-17\",\n  \"built_at\": \"2026-09-11 (UTC)\",\n  \"snapshot_note\": \"State is a build-time snapshot generated 2026-09-11 (UTC); nothing here is live.\",\n  \"registry_schema_version\": \"0.2\",\n  \"source_inventory_sha\": \"779ad792f39fab04\",\n  \"caveat\": \"Every entry is self-declared by its vault and reflects a single operator-run node. The graph is a graph of declared relationships, not evidence of ado"
+  },
+  {
+    "url": "/llms-full.txt",
+    "accept": null,
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "vary": null,
+    "bytes": 1044251,
+    "sha256": "7e4a93dffa14921d0db4c8e14c3dde4220b2b9921d1e8ec196ee0c73cff344bf",
+    "sample": "# aDNA \u2014 Agentic DNA Knowledge Architecture (full corpus)\n\n> An open standard for organizing project knowledge so both humans and AI agents can navigate it. Clone-and-run: one command gives you the standard, the skills, and the templates \u2014 ready for an agent. Local-first; federation is opt-in.\n\nState is a build-time snapshot generated 2026-09-11 (UTC); nothing here is live.\n\nEvery page of this site follows, in path order, as markdown. Each page is also available on its\nown at the same URL with a `.md` suffix, or by sending `Accept: text/markdown` to the HTML URL.\nThe curated short index is at https://adna.network/llms.txt.\n\n## Install\n\n```\ngit clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude\n```\n\n## Standard\n\n- Version: v2.5 (16 base entity types, 3 conformance levels)\n- License: MIT\n- Repository: https://github.com/aDNA-Network/aDNA\n- Published by: aDNA Network\n\n## Key routes\n\n- [Home](https://adna.network/)\n- [Get started](https://adna.network/get-started)\n- [Learn: What is aDNA?](https://adna.network/learn/what-is-adna) \u2014 and the Learn hub (concep"
+  },
+  {
+    "url": "/get-started",
+    "accept": "text/markdown",
+    "status": 200,
+    "content_type": "text/markdown; charset=utf-8",
+    "vary": "Accept",
+    "bytes": 10164,
+    "sha256": "23e74ac1633bae661eeed89e47789c927990dcd459c1b53fa4fd863270f26f29",
+    "sample": "> Markdown twin of https://adna.network/get-started/\n> Index: https://adna.network/llms.txt \u00b7 Full corpus: https://adna.network/llms-full.txt\n> State is a build-time snapshot generated 2026-09-11 (UTC); nothing here is live.\n> Derived from the rendered page \u2014 this route has no markdown source.\n\n*[image: Cozy pixel-art scene of a desk and computer with a glowing cyan DNA helix rising from the screen \u2014 a new aDNA workspace coming alive]*\nIllustration generated with Google Imagen 4 Ultra (imagen-4.0-ultra-generate-001) in the ss-ghibli-pixel / Tokyo Night register, commissioned under ADR-032 and now governed by ADR-053.\n\n# Get Started\n\nSet up your own aDNA workspace \u2014 a local, agent-readable home for every project's context \u2014 in\nabout 5 minutes. The workspace is files on your machine and makes no network calls of its own.\n\n\u2139 Prerequisites\n\nGit, and [Claude Code](https://docs.anthropic.com/en/docs/claude-code)\ninstalled via `npm install -g @anthropic-ai/claude-code`. Obsidian is optional \u2014 vaults are\nplain Markdown, so any editor works.\n\n\ud83d\udca1 What you'll have when you're don"
+  },
+  {
+    "url": "/.well-known/mcp.json",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

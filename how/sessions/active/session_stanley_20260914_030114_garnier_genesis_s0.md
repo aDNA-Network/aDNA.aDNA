@@ -19,7 +19,7 @@ token_budget_actual: pending
 scope:
   directories: [how/campaigns/campaign_garnier]
   files: [how/missions/mission_garnier_genesis.md, STATE.md]
-heartbeat: 2026-09-14T03:01:14.996638+00:00
+heartbeat: 2026-09-14T03:30:31.383764+00:00
 files_created: []
 files_modified: []
 ---

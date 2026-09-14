@@ -1,0 +1,4 @@
+⛩ gate-49 in-container (check) — mcr.microsoft.com/playwright:v1.59.1-noble
+  vault: /Users/stanley/aDNA/aDNA.aDNA
+
+scripts/visual_regression_container.sh: line 68: TTY_FLAGS[@]: unbound variable

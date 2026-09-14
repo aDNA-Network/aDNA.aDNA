@@ -1,0 +1,235 @@
+{
+ "frameSize": 32,
+ "results": [
+  {
+   "file": "components/common/Footer.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/common/Header.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/common/SEOHead.astro",
+   "hasStyle": false,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/common/SocialLinks.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/diagrams/ConvergenceFunnel.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/diagrams/TriadDiagram.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/islands/CourseCheck.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/islands/CourseProgress.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/islands/DarkModeToggle.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/islands/MermaidDiagram.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/Breadcrumb.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/Callout.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/CardGrid.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/ClosingCTA.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/CodeBlock.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/EmptyStateMark.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/GlossaryTooltip.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": [
+    {
+     "family": "shadow",
+     "value": "box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18)",
+     "reason": "A floating tooltip needs more separation from the page than any card does, and no --shadow-* token matches: the literal is `0 6px 16px / 0.18`, while md is `0 4px 6px / 0.07` and lg is `0 10px 15px / 0.1`. Substituting lg would be a VISIBLE elevation change made to satisfy a lint — the O1 `role=\"list\"` ruling, same shape: the question is whether anything is lost, and here rendering would be. If a --shadow-overlay token is ever added, this becomes a finding again."
+    }
+   ]
+  },
+  {
+   "file": "components/sections/HomeHero.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/MediaPlaceholder.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/NetworkDiagram.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": [
+    {
+     "family": "type",
+     "value": "font-size: 14px",
+     "reason": "SVG user units inside viewBox coordinate spaces (640×384 landscape, 340×440 portrait), not layout px. A rem-based --text-* token would scale independently of the coordinate space and break the diagram proportions."
+    },
+    {
+     "family": "type",
+     "value": "font-size: 20px",
+     "reason": "SVG user units inside viewBox coordinate spaces (640×384 landscape, 340×440 portrait), not layout px. A rem-based --text-* token would scale independently of the coordinate space and break the diagram proportions."
+    },
+    {
+     "family": "type",
+     "value": "font-size: 10px",
+     "reason": "SVG user units inside viewBox coordinate spaces (640×384 landscape, 340×440 portrait), not layout px. A rem-based --text-* token would scale independently of the coordinate space and break the diagram proportions."
+    },
+    {
+     "family": "type",
+     "value": "font-size: 13px",
+     "reason": "SVG user units inside viewBox coordinate spaces (640×384 landscape, 340×440 portrait), not layout px. A rem-based --text-* token would scale independently of the coordinate space and break the diagram proportions."
+    },
+    {
+     "family": "type",
+     "value": "font-size: 22px",
+     "reason": "SVG user units inside viewBox coordinate spaces (640×384 landscape, 340×440 portrait), not layout px. A rem-based --text-* token would scale independently of the coordinate space and break the diagram proportions."
+    },
+    {
+     "family": "type",
+     "value": "font-size: 11px",
+     "reason": "SVG user units inside viewBox coordinate spaces (640×384 landscape, 340×440 portrait), not layout px. A rem-based --text-* token would scale independently of the coordinate space and break the diagram proportions."
+    }
+   ]
+  },
+  {
+   "file": "components/sections/PersonaPage.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/PrevNextNav.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/RegistryCard.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/SidebarNav.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/SubnetworkCard.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/TOCPanel.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/TryInClaudeCode.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/VaultCard.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/VaultFacetChip.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "components/sections/VaultRelationshipBlock.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "layouts/BaseLayout.astro",
+   "hasStyle": false,
+   "findings": [],
+   "excluded": []
+  },
+  {
+   "file": "layouts/DocumentationLayout.astro",
+   "hasStyle": true,
+   "findings": [],
+   "excluded": []
+  }
+ ],
+ "totals": {}
+}
