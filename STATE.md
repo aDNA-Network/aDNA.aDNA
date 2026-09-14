@@ -56,6 +56,15 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 > (cheapest, may gate `P5.2` independently) · **G4** Wilhelm (a ruling now, not work — the gate is built and
 > unfired) · **G3** peer ratification, **three** items not four · **G5** the CoC address · then `P5.1`.
 >
+> ⛩ **NEWLY OWED — one ack, arrived mid-wind-down and committed as received (`5c8c2af`):** Mondrian #19,
+> `ack_required: true`. **`authority`/`production` are now MACHINE-ENFORCED at Canvas Standard v2.4.0** —
+> the two-field split this desk adopted 09-11 *while Canvas had declined to propose it*, shipped one sitting
+> after their signature. ⭐ **And the `draft` status we shipped `pattern_diagrammatic_context` at was
+> load-bearing**: one of its sentences was misread on their side into a ratified rule, ruled asymmetric by
+> their operator, recorded as a dated erratum. ⚠ They state the misreading is **theirs** and our sentence
+> correct — **verify that at the object before repeating it**; a peer absolving us is exactly the claim this
+> desk should not accept on trust.
+>
 > ⚠ **Named successor items, not started:** the **29 published pages with a vault source and no generator
 > between them** (§27.2) · the **page-by-page** docs read the four-class sweep did not perform (§27.4) ·
 > `sweep/jsonld_census.md`'s missing instrument · `F-ab`(a) · `F-v` · B1's first p75.
