@@ -3923,3 +3923,117 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > performable on this node** · and **one operator gate** covering babbage's lease question, babbage's
 > two `proposed` upstream findings and Ilmarinen's upstream filing — `skill_upstream_contribution`
 > needs approval before any of the three can be filed.
+
+> 📚 **2026-09-12 — THE DOCS CORPUS IS SWEPT (the §26.4 successor item), AND THE WILHELM GATE IS BUILT,
+> NOT FIRED.** Not a mission: an operator-ruled increment on the `course_deploy` / `R-97` precedent.
+> Session `session_stanley_20260912_050048_haussmann_docs_sweep`. Register **§27** (`R-178`…`R-184`),
+> counts **203 / 188 / 0** re-derived by script *after* writing. Records:
+> `artifacts/docs_sweep/docs_corpus_sweep_record.md` (coverage) + `aar_docs_corpus_sweep.md` (AAR).
+> Chromium **698 passed / 1 skipped / 0 failed** — baseline, no regression, **no new assertions** (the
+> no-checker rule, ruled 5×) · `check:markup` **0**, control-checked · `gate-41` **4/4** re-run after the
+> governance edits · `adna_validate --governance` **Zero drift**. ⛔ **Nothing deployed and nothing pushed.**
+>
+> ⛔⛔ **AND THIS BLOCK IS ITSELF THE FINDING — IT WAS WRITTEN TWO DAYS LATE.** At the wind-down,
+> `grep -c "docs_sweep\|docs-corpus\|R-184"` over this file returned **0**: the sweep had reached
+> `STATE.md`, `MANIFEST.md`, the register and two artifacts, and **never the index a cold agent reads
+> first.** ⇒ ***`GR-5`'s own recorded finding — "a mission's OPEN is as index-coupled as its close" —
+> recurring in the very next increment***, and the **ninth** sighting of the index-vs-artifact class.
+> ⚠ The honest diagnosis is structural, not "try harder": **convention 7 binds the close of a MISSION, and
+> an operator-ruled INCREMENT has no close cascade** — every increment since `course_deploy` updated this
+> index only because somebody remembered. ⛔ **No checker authored** (six standing rulings).
+>
+> ⭐⭐ **INTERNALLY CONSISTENT ARITHMETIC IS WHAT LETS A COUNT ROT.** `50 skills (21+29)` sums correctly.
+> `41 templates (25+11+5)` sums correctly. `10 ontology extensions` shipped **with a ten-item list that was
+> also missing `reviewer`**, so the count and its own enumeration corroborated each other for ~4.5 months
+> while both disagreed with disk. ⇒ ***the check that catches a typo is structurally blind to staleness,
+> because staleness moves every term together — and a typed figure that shows its working looks derived.***
+> The site published **10, 11 and 13** for one property across six pages; one sentence citing "13" **linked
+> to the page that said 10**.
+>
+> ⭐⭐ **`R-177` INVERTED — THE VAULT WAS RIGHT AND THE SITE WAS STALE.** Four of the seven defects were
+> **already correct in `what/glossary/`**, and `who/community/community_roles.md` literally read
+> ***"10 (now 11)"*** — the correction authored in place, for months, never reaching the page. Cause:
+> `transform-content.mjs` holds **8 mapping tables** and **`glossary` and `community` are not among them**
+> ⇒ **29 published pages have a vault source and NO generator between them.** ⇒ ***§26.3 asked which of two
+> trees to trust; this asks the prior question — whether anything connects them — and for those 29 the
+> answer is nothing, so the drift is permanent by construction.*** **Named, not remedied** (a successor
+> item: regenerating them is a content change, not a sweep).
+>
+> ⛔⛔ **G4 RESTATED, AND THE QUEUE ROW WAS FALSE — AS WAS MY PROBE.** The row said no Wilhelm clearance was
+> recorded anywhere in this vault. **It is**: operator, **2026-06-07**, ADR-010-window override, in
+> `subnetworks.yaml`'s provenance header and a named coord memo. Both searches covered `who/` and
+> `what/decisions/` and **neither covered `site/src/data/`** — convention 16 breached **inside an
+> investigation of a supposedly-missing record**, and ⚠ **the false negative was carried into the
+> AskUserQuestion that framed the operator's ruling.** *An agent's wrong answer becomes the operator's
+> premise the moment it is put in a question.*
+> ⭐ The real finding is sharper: the clearance was **conditional** on an *"E5 close deploy"* green-light,
+> and **E5 was SUBSUMED 2026-06-18** before reaching one, carrying `subnetworks.*` forward as *"resolved
+> inputs"*. ⇒ ***a condition keyed to a gate is discharged by nothing when the gate is ABOLISHED rather
+> than passed*** — P4.4b's *"the antecedent is not 'not yet' but 'never'"*, arriving on a **third-party
+> publication embargo** — and the memo's own *"silence is not consent"* safeguard **died with the gate it
+> named.** Meanwhile `publish_status` recorded the condition and **was read by no code at all.**
+> ✅ Gate now wired at one seam (`network_state.ts` → `subnetworkIsPublishable`) over **four** renderings,
+> not the one the row named — the red-proof withheld three and left `/about`'s **hardcoded** Wilhelm person
+> card live, which no data gate could see. **Inert**: `/commons` and `/about` byte-unchanged against a
+> no-change control (the 15 differing files are GR-2's recorded diagram-id churn, attributed by rebuilding
+> twice with zero source change — **identical set**). Red-proven both ways; `subnetworks.json` restored clean.
+>
+> ⚠ **Six false positives of mine, and they are a finding about METHOD**: `/adopters/` matching
+> `who/adopters/`, `/compliance/` matching `what/compliance/` in a **vendored** file, `adna.dev`'s deliberate
+> *"retired, not us"* row, a naive template count of 48 against the written predicate's 45, a heading sweep
+> reading 9 phases against `phase_count: 7`, and `.every()` on an empty array. **All six would have
+> "repaired" correct content.** ⇒ ***a route-shaped grep cannot tell a route from a vault path, and the docs
+> corpus is the one surface where nearly every such string IS a path.*** §26.1 found the register's **scope**
+> did not transfer to this corpus; §27.5 finds its **instruments** did not either — **and the second is more
+> dangerous, because a pattern that worked elsewhere arrives pre-trusted.**
+>
+> ⚠ **And a tense error in my own repair**, two steps after flagging the distinction: a present-tense figure
+> placed in a clause reading *"during Operation Rosetta"*. Caught by `git log --diff-filter=A`. ⭐ The vault
+> source had **already** solved it by widening the period, so its framing was adopted rather than a third
+> phrasing invented (`F-aa`'s lesson). *Knowing a rule and applying it while wearing a different hat are
+> separate acts.*
+
+> ⏸⛩ **`GR-7` IS AUTHORED AND QUEUED — VITRINE INTEGRATION (2026-09-14).** Nothing built, criteria NOT
+> ratified, budget NOT ratified, convention-13 pass **OWED not run**.
+> `missions/mission_haussmann_gr_7_vitrine_integration.md`, **`queued`**.
+>
+> **Operation VITRINE** ([[campaign_vitrine]], `status: proposed`) is a **side-campaign executed by a Codex
+> agent** on branch `vitrine/design` (⛩ operator ruling: dedicated branch, **same working directory**;
+> **full claim authority**; scope = site surfaces + *proposed* doctrine/positioning + *proposed* visual
+> assets). Brief: [[coord_2026_09_13_rosetta_to_codex_vitrine_design_brief]] — self-contained, for an agent
+> that has never read this vault. **GR-7 receives it.**
+>
+> ⭐⭐ **The framing handed to Codex, and the reason it is the right one: HERE, CANDOR IS THE PITCH.** The
+> instrument's own D10×D1 — *"machine legibility IS positioning; demonstrated self-conformance is the
+> strongest possible proof-of-thesis"* — plus `reconciliation.md:36`'s *"the efficient path up is
+> claim-truth + channel-liveness, **not more polish**."* A site selling *context you can trust* that
+> overstates its own ledger refutes itself above the fold. ⇒ **the honest surfaces are the thing to make
+> most beautiful, not the thing to design around.**
+>
+> ⛔⛔ **THE EXCHANGE/LEDGER BRIEF IS THE MOST EMBARGOED THING ON THE SITE, AND THE MEMO SAYS SO.** `D-8` has
+> **not ruled**: no public protocol distribution or whitepaper links, and **every protocol claim auto-flags
+> S1** (`dependency_map.md:36`). Measured for the brief `[D]`: the registry is local-first and **nothing has
+> ever been published from this vault**; cross-node exchange is horizon; `lattice-ledger` is a **draft** spec
+> in a **pre-public-launch** repo; ⚠ *"network effect"* appears on **0 pages**. ⭐ **Full claim authority was
+> granted and is recorded — and it does not dissolve a hold owned by another vault and its counsel**, so the
+> memo gives Codex the authority *and* the constraint, plus the cheap path: the ratified
+> `PASS`/`TAUGHT-AS-DESIGN`/`HORIZON` pattern already live on `exchange-adoption-path`. **Sharpen the
+> telling; label the tense.**
+>
+> ⚠ **The figure NOT to quote forward: 51.6.** That is the **genesis** baseline (2026-08-16, instrument
+> **v1.0**). The most recent re-score is **63.2 / 100 normalized on 11 dimensions with D3 withheld**
+> (P2.6, ~08-19) — and even that predates all of P3–P5 and the entire Grande Revue. **No current full
+> composite exists; `P5.2` owns it.** And the instrument is now **v1.1** (GR-6), so any cross-line
+> comparison **crosses an instrument boundary and is not pure site movement** — stated in advance this
+> time, which GR-6 recorded as the only cheap moment.
+>
+> ⛩ **`mission_count: 33 → 34` is SURFACED, NOT TAKEN** — the operator's by that field's own terms. Until
+> the gate rules, **this index is the disk and the charter is the ratified figure**, and they are allowed
+> to disagree for exactly that long provided somebody says which is which (GR-4's discipline).
+> `phase_count` **HOLDS at 6** — GR is a lane, not a seventh phase.
+>
+> ⏭ **NEXT: ⛩ ratify (or amend) the VITRINE charter, then hand the brief to Codex.** Agent-side work on the
+> main campaign resumes at **GR-7's convention-13 gate**, against the diff that actually arrives. ⛔ Still
+> held: **P5.1** with the humans — and ⚠ **its ordering against Vitrine is now the most consequential open
+> question on the campaign** (a panel run on pre-Vitrine copy measures a site about to be replaced; a deploy
+> landing mid-panel invalidates the panel).
