@@ -18,3 +18,7 @@ last_edited_by: agent_codex
 - **Follow-up:** [I] Begin P0 with fresh source/live identity, sealed v1.1 scoring and instrument controls; keep human and field tasks owed until observed.
 
 Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
+
+## Estimate and completion evidence
+
+[D] Three amendment objectives completed, with evidence in [[amendment_verification]]. [I] Estimate 80 kT content-load; rough actual 110 kT ±40%, +30 kT (+37.5%). This is an author estimate, not token-meter or billing data. API billing remains unavailable. P0 has not started; its separate envelope is unaffected by this amendment sitting.

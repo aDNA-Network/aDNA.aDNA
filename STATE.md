@@ -21,6 +21,16 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
 
+### 2026-09-15 — GARNIER DP1 accepted with amendments; P0 ready
+
+[D] `last_edited_by: agent_codex`; runtime Codex. Stanley approved the five charter amendments and then instructed their implementation. [[how/campaigns/campaign_garnier/artifacts/amendments/charter_ratification_20260915|DP1 ratification]] is **accepted with amendments**; [[campaign_garnier]] is active. This supersedes the pending GARNIER decision in the historical block below. The original proposal is archived, the pending marker archived, and the current HTML gate is a read-only receipt.
+
+[D] Amended mission frontmatters derive 38 missions / 47 estimated agent sittings / 2,310 kT content-load, **uncalibrated**. Only P0's 123 kT envelope is committed; later budgets are phase-gated. Twelve named documentation tranches cover 118 content routes, with the other 111 built routes assigned to existing missions. Inventory is not completed review. Storyboard and early human feedback precede visual production; word targets are advisory; unsupported claims remain blocking. Missing field data stays unmeasured under the accepted collection/lab/follow-up exception.
+
+[D] [[how/campaigns/campaign_garnier/artifacts/amendments/amendment_verification|Amendment verification]] passed: mission contracts/DAG/totals, twelve negative fixtures, immutable predecessor conventions/protections and archive hashes; resolved receipt passes mobile/desktop render and axe checks. No website source change, P0 score, human panel, push, deploy or peer delivery occurred. Unrelated workspace changes were preserved.
+
+**Resume / next session:** Read root and campaign governance, this ratification, active leases and [[mission_garnier_p0_1_baseline]]. DP1 is already accepted; do not request it again. Begin P0 with fresh source/live identity and a frozen v1.1 evidence pack, two isolated scorers and the fixed Nous/Mastra exemplars. Execute within the P0 envelope and hold at DP2 for the human exit/P1 budget. Preserve HAUSSMANN P5.1/P5.2/GR-7 ownership and G4/counsel holds. No publication authority is implied. Session: [[session_stanley_20260915_060016_garnier_charter_amendments]].
+
 ### 2026-09-14 — GARNIER genesis: charter ready, execution not ratified
 
 [D] `last_edited_by: agent_codex`; runtime Codex; [[campaign_garnier]] remains **planning**. Next live GARNIER decision: [[how/campaigns/campaign_garnier/artifacts/genesis/charter_gate|DP1 charter gate]] (HTML companion available). Proposed 26 missions / 26 sessions / 1,637 kT content-load, derived from mission files; Decade 2 provisional. [[how/campaigns/campaign_garnier/artifacts/genesis/verification_report|Genesis verification]] records scope and omissions. No site/src, registry, .adna, HAUSSMANN/VITRINE, peer writes, push or deploy. Existing unrelated changes preserved.

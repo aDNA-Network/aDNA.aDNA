@@ -38,3 +38,7 @@ last_edited_by: agent_codex
 
 
 Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
+
+## Closure verification
+
+[D] STATE gained one dated QUEUED block; removing exactly that block reproduces the opening file SHA-256 byte-for-byte (`evidence/amendments/state_append_verification.json`). Actual git diff against the opening HEAD contains no tracked changes to site/src, .adna, HAUSSMANN or VITRINE; historical genesis evidence hashes are unchanged except the explicitly amended budget-reporting script. Campaign changes were committed locally at e38fb69; the final closure commit records this verification, mission/session AAR and STATE. No push occurred.
