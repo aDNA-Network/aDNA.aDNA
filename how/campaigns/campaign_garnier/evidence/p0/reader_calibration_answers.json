@@ -1,0 +1,44 @@
+[
+  {
+    "id": "K17",
+    "role": "engineer",
+    "short": "It is a reusable folder-and-file convention for an agent\u2019s project context. I can clone the published workspace now.",
+    "long": "The initial command is git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude. Git and Claude Code are prerequisites; the agent needs its own Anthropic account. The workspace router is CLAUDE.md; projects keep their governance in their own CLAUDE.md and context in what/how/who.",
+    "source": "/get-started"
+  },
+  {
+    "id": "K04",
+    "role": "funder",
+    "short": "A publicly owned frontier AI model federation with multiple independent partner institutions; I can invest in its established network.",
+    "long": "Stanley is one steward among elected community owners today. The independent network is already established and the foundation endorses it; the ask is to buy into its model service.",
+    "source": "synthetic failing calibration"
+  },
+  {
+    "id": "K22",
+    "role": "scientist",
+    "short": "A standard for organizing project context as files that an AI agent can read; I can inspect the source repository now.",
+    "long": "The mechanism is a project governance file plus separate knowledge, operations and people folders with linked Markdown. The public aDNA-Network/aDNA.aDNA repository applies the standard to itself, and the specification is linked from the site. Get Started explicitly says a clean-machine first-run recording has not yet been made; the source can be inspected, but that is not measured evidence of better model performance.",
+    "source": "/get-started; /canonical-properties; /learn/what-is-adna"
+  },
+  {
+    "id": "K09",
+    "role": "engineer",
+    "short": "It is a trained frontier model that already pools every member\u2019s context; I can use its hosted inference service.",
+    "long": "Open a cloud account and invoke the model; no local files or prerequisites are needed because the democratic federation hosts the governance.",
+    "source": "synthetic failing calibration"
+  },
+  {
+    "id": "K31",
+    "role": "funder",
+    "short": "It is an open file standard for agent context; I can inspect or clone what is already published.",
+    "long": "Stanley Bishop is the named Founding Architect and current single steward. The workspace and specification are available now; a second independent node and democratic stewardship are plans. The current ask is to clone it, contribute or propose a change, or join the community; a related-party relationship is not independent endorsement.",
+    "source": "/about; /state-of-the-network; /community"
+  },
+  {
+    "id": "K13",
+    "role": "scientist",
+    "short": "The DNA metaphor describes an already evaluated frontier model; I can reproduce its validated intelligence gains.",
+    "long": "Democratic ownership itself is the mechanism. The site\u2019s biological metaphor proves novelty and the current multi-operator federation proves better reasoning in controlled trials.",
+    "source": "synthetic failing calibration"
+  }
+]

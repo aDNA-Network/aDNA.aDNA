@@ -1,0 +1,208 @@
+{
+  "version": "garnier_consumer_v1",
+  "controls": [
+    {
+      "id": "valid_prose",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "id": "banned_prose",
+      "actual": [
+        "seamless"
+      ],
+      "expected": [
+        "seamless"
+      ],
+      "pass": true
+    },
+    {
+      "id": "split_inline_heading",
+      "actual": [
+        "next-generation"
+      ],
+      "expected": [
+        "next-generation"
+      ],
+      "pass": true
+    },
+    {
+      "id": "quote_code_exclusions",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "id": "exclusion_receipt",
+      "actual": 2,
+      "expected": 2,
+      "pass": true
+    },
+    {
+      "id": "quote_does_not_mask_adjacent_prose",
+      "actual": [
+        "unlock"
+      ],
+      "expected": [
+        "unlock"
+      ],
+      "pass": true
+    },
+    {
+      "id": "missing_main",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "word_positive",
+      "actual": "PASS",
+      "expected": "PASS",
+      "pass": true
+    },
+    {
+      "id": "word_negative_is_advisory",
+      "actual": "WARN",
+      "expected": "WARN",
+      "pass": true
+    },
+    {
+      "id": "coverage_positive",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "id": "missing_jsx",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "missing_route",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "duplicate_not_coverage",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "matrix_positive",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "id": "wrong_theme",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "missing_png",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "checkpoint_wrong_surface",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "missing_axe",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "token_positive",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "id": "token_bypass_families",
+      "actual": [
+        "colour",
+        "radius",
+        "shadow",
+        "spacing",
+        "type",
+        "weight"
+      ],
+      "expected": [
+        "colour",
+        "radius",
+        "shadow",
+        "spacing",
+        "type",
+        "weight"
+      ],
+      "pass": true
+    }
+  ],
+  "token_positive": {
+    "frameSize": 1,
+    "results": [
+      {
+        "file": "components/Fixture.astro",
+        "hasStyle": true,
+        "findings": [],
+        "excluded": []
+      }
+    ],
+    "totals": {}
+  },
+  "token_negative": {
+    "frameSize": 1,
+    "results": [
+      {
+        "file": "components/Fixture.astro",
+        "hasStyle": true,
+        "findings": [
+          {
+            "family": "colour",
+            "value": "#123456"
+          },
+          {
+            "family": "type",
+            "value": "font-size: 19px"
+          },
+          {
+            "family": "radius",
+            "value": "border-radius: 7px"
+          },
+          {
+            "family": "shadow",
+            "value": "box-shadow: 1px 3px 7px black"
+          },
+          {
+            "family": "weight",
+            "value": "font-weight: 650"
+          },
+          {
+            "family": "spacing",
+            "value": "padding: 13px"
+          }
+        ],
+        "excluded": []
+      }
+    ],
+    "totals": {
+      "colour": 1,
+      "type": 1,
+      "radius": 1,
+      "shadow": 1,
+      "weight": 1,
+      "spacing": 1
+    }
+  },
+  "all_pass": true
+}

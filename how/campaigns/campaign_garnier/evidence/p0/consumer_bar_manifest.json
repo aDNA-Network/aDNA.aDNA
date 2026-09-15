@@ -1,0 +1,40 @@
+{
+  "version": "garnier_consumer_v1",
+  "created": "2026-09-15T08:39:21.846526+00:00",
+  "provider": {
+    "consumer_record": "site/tests/gates/bar_provenance.json",
+    "consumer_sha256": "a9ad47fcd568c068c4ab8f688fde2dfde292ec53b8e1687ecd934322f1d81eda",
+    "owner_path": "/Users/stanley/aDNA/WebForge.aDNA/what/lib/gates/lighthouse_profiles.json",
+    "json_pointer": "/classes/content_static",
+    "provider_subtree_sha256": "f2292ca946b3cd0287bf1e458051d46cd5a6547c54cddeed893600639be0c764",
+    "consumer_expected_sha256": "f2292ca946b3cd0287bf1e458051d46cd5a6547c54cddeed893600639be0c764",
+    "matches": true,
+    "provider_head": "a7bd3794d9fe4de387ade07fd6d06c1cd8e1250b"
+  },
+  "local_owners": [
+    {
+      "path": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/artifacts/genesis/word_budgets.md",
+      "sha256": "bc8f1f579228055c68d6d9d824570a024d5a9e4f38602713fd0d27630ed0dcbd"
+    },
+    {
+      "path": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/artifacts/amendments/reader_protocol.md",
+      "sha256": "609bfd8cea1db2835fc57545a4d70bf9a5d05b90e495e9271636d718b3ece30b"
+    },
+    {
+      "path": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/artifacts/p0/instrument_contract.md",
+      "sha256": "9dedabef07b3397438aeef060b8f634fbbcfd3acbb8ac593cf1baf69721888c7"
+    },
+    {
+      "path": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/instruments/consumer_probe.mjs",
+      "sha256": "36536781398ed7290c1a606d2427c75a5c1ddf8c8391fc41e8a81593fe39d8e1"
+    }
+  ],
+  "semantics": {
+    "words": "advisory",
+    "banned_authored_prose": "blocking after exemption review",
+    "unsupported_claim": "blocking editorial evidence review",
+    "token_candidate": "advisory semantic review",
+    "coverage_or_wrong_surface": "instrument failure"
+  },
+  "no_provider_threshold_copy": true
+}
